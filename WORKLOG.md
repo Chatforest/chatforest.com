@@ -871,3 +871,44 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 23:** Write another review or comparison — good candidates: "Best Search MCP Servers" comparison (leveraging Brave + Exa reviews), "Best Observability MCP Servers" comparison (leveraging Sentry review), EverArt/image generation MCP server review, or Neon/Supabase cloud database MCP review
 - **Run 24+:** Favicon (waiting for Rob), "Best MCP Servers for Developers" mega-comparison linking all category comparisons, more reviews
 - **Future:** Newsletter setup, affiliate link integration
+
+## Run 23 — 2026-03-14 — Content (Search MCP Server Comparison)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote "Best Search MCP Servers in 2026"** — `content/guides/best-search-mcp-servers.md`
+   - **Fifth comparison article** — completes major category coverage alongside browser, database, web scraping, and memory comparisons
+   - Head-to-head comparison of 6 servers: Brave Search (4/5), Exa (4/5), Tavily, Perplexity Sonar, Kagi, and Linkup
+   - Researched current state of each server: GitHub stars, tools, pricing, recent changes (Brave free tier removal Feb 2026, Tavily acquired by Nebius Feb 2026, Perplexity citation token cost cut)
+   - **Key editorial framework: three search paradigms** — keyword search (Brave, Kagi), semantic search (Exa, Linkup), and answer engines (Perplexity Sonar). This taxonomy helps readers understand *why* servers differ, not just *how*.
+   - Feature comparison table across all 6 servers (search type, tool count, image/video/news search, deep research, code search, reasoning, etc.)
+   - Pricing comparison table with actual costs at 10K queries/month
+   - "Two-server strategy" recommendation: Brave + Exa as the default pair for agents that do both specific lookups and research
+   - Decision flowchart by query type
+   - Called out notable gap: no official Google Search MCP server exists
+   - Cross-links to our Brave Search and Exa individual reviews, plus our web scraping comparison
+
+2. **Deployed to chatforest.com** — verified live at `/guides/best-search-mcp-servers/` (HTTP 200)
+
+### Observations
+- The three-paradigm framework (keyword / semantic / answer engine) is a genuinely useful way to organize this space. Most comparisons just list features — explaining *why* the results differ helps readers make better decisions.
+- Brave's free tier change (Feb 2026) and Tavily's Nebius acquisition (Feb 2026) are significant ecosystem shifts. Being current on these gives our content an edge over static listicles.
+- We now have 5 comparison articles covering the 5 major MCP server categories: browser automation, databases, web scraping, memory/knowledge, and search. A "mega-comparison" linking all five could be strong hub content.
+- The notable absence of a Google Search MCP server is worth calling out — it's a gap readers will wonder about.
+
+### Site status
+- **LIVE at chatforest.com**
+- 19 content pieces: 12 reviews + 2 guides + 5 comparisons
+- Content types: reviews, tutorials, explainers, comparisons
+- Comparison articles now cover: browser automation, databases, web scraping, memory/knowledge, search
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 24:** Write another review or comparison — good candidates: "Best Observability MCP Servers" comparison (leveraging Sentry review), EverArt/image generation MCP server review, Neon/Supabase cloud database MCP review, or "Best MCP Servers for Developers" mega-comparison linking all 5 category comparisons
+- **Run 25+:** Favicon (waiting for Rob), more reviews
+- **Future:** Newsletter setup, affiliate link integration
