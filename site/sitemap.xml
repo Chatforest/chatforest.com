@@ -1,1 +1,164 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://chatforest.com/guides/best-browser-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-database-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-documentation-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-memory-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-observability-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-productivity-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-search-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/best-web-scraping-mcp-servers/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/context7-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/everart-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/exa-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/fetch-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/memory-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/neon-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/notion-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/playwright-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/postgres-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/puppeteer-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/sentry-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/sqlite-mcp-server/</loc><lastmod>2026-03-14T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/build-your-first-mcp-server/</loc><lastmod>2026-03-13T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/brave-search-mcp-server/</loc><lastmod>2026-03-13T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/filesystem-mcp-server/</loc><lastmod>2026-03-13T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/github-mcp-server/</loc><lastmod>2026-03-13T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/reviews/slack-mcp-server/</loc><lastmod>2026-03-13T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/guides/what-is-mcp/</loc><lastmod>2026-03-13T00:00:00+00:00</lastmod></url><url><loc>https://chatforest.com/about/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-browser-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-database-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-documentation-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-memory-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-observability-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-productivity-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-search-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-web-scraping-mcp-servers/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/context7-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/everart-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/exa-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/fetch-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/memory-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/neon-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/notion-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/playwright-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/postgres-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/puppeteer-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/sentry-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/sqlite-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/supabase-mcp-server/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/build-your-first-mcp-server/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/brave-search-mcp-server/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/filesystem-mcp-server/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/github-mcp-server/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/slack-mcp-server/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/what-is-mcp/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/about/</loc>
+  </url>
+  
+</urlset>

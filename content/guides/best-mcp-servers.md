@@ -1,15 +1,15 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14
-description: "We've reviewed 16 MCP servers and compared 40+ across 9 categories. Here are the ones worth installing — and the ones to avoid."
-og_description: "We've tested 16 MCP servers and compared 40+ across 9 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
+description: "We've reviewed 17 MCP servers and compared 40+ across 9 categories. Here are the ones worth installing — and the ones to avoid."
+og_description: "We've tested 17 MCP servers and compared 40+ across 9 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
-card_description: "We've reviewed 16 MCP servers across 9 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
+card_description: "We've reviewed 17 MCP servers across 9 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
 ---
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [16 in-depth reviews](/reviews/) and [9 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [17 in-depth reviews](/reviews/) and [9 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -23,7 +23,8 @@ If you want to skip the details:
 | Search (keyword) | [Brave Search](/reviews/brave-search-mcp-server/) | 4/5 | Kagi |
 | Search (semantic) | [Exa](/reviews/exa-mcp-server/) | 4/5 | Tavily |
 | Web fetching | zcaceres/fetch-mcp | — | [Official Fetch](/reviews/fetch-mcp-server/) (3.5/5) |
-| Database (cloud Postgres) | [Neon MCP](/reviews/neon-mcp-server/) | 4/5 | Supabase (not yet reviewed) |
+| Database (cloud Postgres) | [Neon MCP](/reviews/neon-mcp-server/) | 4/5 | [Supabase MCP](/reviews/supabase-mcp-server/) (4/5) |
+| Backend-as-a-Service | [Supabase MCP](/reviews/supabase-mcp-server/) | 4/5 | — |
 | Database (self-hosted Postgres) | Postgres MCP Pro (crystaldba) | — | DBHub (multi-database) |
 | Database (SQLite) | jparkerweb/mcp-sqlite | — | [Official SQLite](/reviews/sqlite-mcp-server/) (3/5, archived) |
 | Memory | Zep | — | [Official Memory](/reviews/memory-mcp-server/) (3.5/5, small use cases) |
@@ -97,7 +98,7 @@ The [official PostgreSQL server](/reviews/postgres-mcp-server/) (2.5/5) has a SQ
 
 The [official SQLite server](/reviews/sqlite-mcp-server/) (3/5) is a good learning tool but runs `DROP TABLE` without asking. No safety guardrails, no parameterized queries. Fine for demos, not for real data.
 
-**For cloud Postgres:** [Neon MCP](/reviews/neon-mcp-server/) (4/5) is the standout. 20 tools, OAuth authentication, and a branch-based migration workflow that makes schema changes safe by default. The best database MCP experience we've reviewed — but it only works with Neon's serverless Postgres.
+**For cloud Postgres:** [Neon MCP](/reviews/neon-mcp-server/) (4/5) is the standout for pure database work. 20 tools, OAuth authentication, and a branch-based migration workflow that makes schema changes safe by default. For full backend management, [Supabase MCP](/reviews/supabase-mcp-server/) (4/5) covers database, edge functions, storage, and debugging in one server — broader scope but weaker branching (schema-only, paid plans only).
 
 **For self-hosted PostgreSQL:** Use **Postgres MCP Pro** by crystaldba (2,300+ GitHub stars). It adds query analysis, performance tuning, and actual safety features. Or use **DBHub** by Bytebase for multi-database support (Postgres, MySQL, SQLite, and more).
 
@@ -217,7 +218,6 @@ A growing category as every SaaS vendor adds MCP support. The dominant pattern: 
 Some popular servers we haven't covered yet but are on our list:
 - **Figma Dev Mode** — exposes live Figma design structures to AI. Strong for frontend workflows.
 - **Vercel MCP** — deployment monitoring and management.
-- **Supabase** — cloud-hosted database server with serverless scaling (Neon now [reviewed](/reviews/neon-mcp-server/)).
 
 We'll review these as the site grows. Subscribe to our [RSS feed](/feed.xml) to get notified.
 
@@ -225,7 +225,7 @@ We'll review these as the site grows. Subscribe to our [RSS feed](/feed.xml) to 
 
 ## The pattern: official servers as starting points
 
-After reviewing 16 MCP servers, a clear pattern has emerged:
+After reviewing 17 MCP servers, a clear pattern has emerged:
 
 **Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are archived with security issues (2.5-3/5), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
 
@@ -238,7 +238,7 @@ Our rating distribution tells the story:
 | Rating | Count | Servers |
 |--------|-------|---------|
 | 4.5/5 | 1 | Playwright |
-| 4.0/5 | 7 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon |
+| 4.0/5 | 8 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase |
 | 3.5/5 | 5 | Context7, Puppeteer, Memory, Fetch, Notion |
 | 3.0/5 | 1 | SQLite |
 | 2.5/5 | 2 | PostgreSQL, EverArt |

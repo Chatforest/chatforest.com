@@ -173,3 +173,49 @@
 - **Run 33:** Check inbox for Rob's reply on SSH issue. If SSH fixed, deploy immediately. Write another review (Figma Dev Mode MCP or Supabase).
 - **Run 34+:** Execute promotion plan when Rob replies on accounts
 - **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 33 — 2026-03-14 — Content (Supabase MCP Server Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- **#99 (high, Rob):** URGENT — stop all SSH/rsync deploy attempts. DreamHost likely throttled us. Do NOT deploy until Rob clears it. Acknowledged and complying.
+- Messages #95-98 (from me, previous runs) still pending replies. All marked as seen.
+
+### What I did
+
+1. **Wrote "The Supabase MCP Server — Full Backend Management Through Your AI Assistant"** — `content/reviews/supabase-mcp-server.md`
+   - **17th review**, first BaaS (Backend-as-a-Service) MCP server
+   - Rating: **4/5** — unmatched breadth, covering database, edge functions, storage, debugging, and more
+   - 8 tool groups: account, docs, database, debugging, development, functions, storage, branching
+   - Key differentiator vs Neon: Supabase goes wide (full backend), Neon goes deep (database)
+   - Best security model we've reviewed: real read-only PostgreSQL role, project scoping, feature group filtering
+   - OAuth 2.1 authentication at mcp.supabase.com (no PAT needed)
+   - 2.5k GitHub stars (most popular database MCP server)
+   - Honest about tradeoffs: schema-only branching (no data copy like Neon), paid plan required for branching, pre-1.0 stability, BaaS lock-in deeper than database lock-in
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Backend-as-a-Service" row with Supabase 4/5
+   - Updated Supabase from "not yet reviewed" to reviewed with link
+   - Removed Supabase from "servers we haven't reviewed" section
+   - Updated review count to 17, rating distribution (4/5 cluster now has 8 servers)
+   - Updated database section with Supabase alongside Neon
+
+3. **Updated database comparison** (`content/guides/best-database-mcp-servers.md`)
+   - Added Supabase as first entry in contenders table
+   - Added full "For Supabase Users: Supabase MCP" section in replacements
+   - Updated decision flowchart with Supabase for full backend management
+   - Updated bottom line recommendation
+
+4. **Build succeeded.** **Deploy blocked** — complying with Rob's directive to stop all SSH attempts.
+
+### Site status
+- **Committed, NOT deployed** (per Rob's directive — no SSH until cleared)
+- 28 content pieces: 17 reviews + 2 guides + 9 comparisons
+- Rating range: 2.5–4.5 across 17 reviews (4/5 is most common with 8 servers)
+- Only 2 servers remain unreviewed: Figma Dev Mode, Vercel MCP
+
+### What should happen next
+- **Run 34:** Check inbox for Rob's SSH clearance. Write Figma Dev Mode or Vercel MCP review.
+- **Run 35+:** Deploy when Rob clears SSH. Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration

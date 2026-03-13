@@ -15,6 +15,7 @@ The good news: the community has built better alternatives. Here's how they comp
 
 | Server | Database | Rating | Best For |
 |--------|----------|--------|----------|
+| [Supabase MCP](/reviews/supabase-mcp-server/) | Supabase (BaaS) | 4/5 | Full backend management |
 | [Neon MCP](/reviews/neon-mcp-server/) | Neon Postgres | 4/5 | Cloud Postgres with AI workflows |
 | [Official SQLite MCP](/reviews/sqlite-mcp-server/) | SQLite | 3/5 | Learning MCP only |
 | [Official Postgres MCP](/reviews/postgres-mcp-server/) | PostgreSQL | 2.5/5 | Nothing (vulnerable) |
@@ -62,6 +63,31 @@ If you're using either of these, stop. Not eventually — now.
 ```
 
 **The catch:** Neon-only. This server works exclusively with Neon's serverless Postgres. If your database is on RDS, Supabase, or self-hosted, use Postgres MCP Pro instead. [Read our full review](/reviews/neon-mcp-server/).
+
+### For Supabase Users: Supabase MCP
+
+**[Supabase MCP](/reviews/supabase-mcp-server/)** (4/5) is the only BaaS MCP server we've reviewed — it manages your entire backend, not just the database. 8 tool groups cover database queries, edge function deployment, storage management, branch-based development, debugging logs, and TypeScript type generation.
+
+**What it offers beyond database:**
+- Edge function deployment directly from your AI assistant
+- Storage bucket management
+- Service logs (API, Postgres, edge functions, auth, storage, realtime)
+- TypeScript type generation from database schema
+- OAuth 2.1 authentication with project scoping
+- Read-only mode using a real PostgreSQL role (not query filtering)
+
+**Setup (remote, recommended):**
+```json
+{
+  "mcpServers": {
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp?project_ref=YOUR_PROJECT_REF&read_only=true"
+    }
+  }
+}
+```
+
+**How it compares to Neon:** Supabase goes wide (full backend), Neon goes deep (database). Neon's copy-on-write branching includes data; Supabase's is schema-only and requires a paid plan. For pure database work, Neon is better. For managing your entire Supabase stack from one server, Supabase wins. [Read our full review](/reviews/supabase-mcp-server/).
 
 ### For Self-Hosted PostgreSQL: Postgres MCP Pro
 
@@ -215,6 +241,7 @@ The official SQLite server is still worth reading as a learning resource. The in
 **What database engine are you using?**
 
 - **PostgreSQL (Neon)** → [Neon MCP](/reviews/neon-mcp-server/)
+- **Supabase (full backend)** → [Supabase MCP](/reviews/supabase-mcp-server/)
 - **PostgreSQL (self-hosted/RDS/other)** → Postgres MCP Pro
 - **SQLite** → jparkerweb/mcp-sqlite
 - **DuckDB** → MotherDuck DuckDB MCP
@@ -224,6 +251,7 @@ The official SQLite server is still worth reading as a learning resource. The in
 **What's your primary use case?**
 
 - **Cloud Postgres with AI workflows** → [Neon MCP](/reviews/neon-mcp-server/) (branch-based migrations)
+- **Full Supabase backend management** → [Supabase MCP](/reviews/supabase-mcp-server/) (database + edge functions + storage)
 - **Querying a production database** → Postgres MCP Pro (restricted mode)
 - **Data analysis / reporting** → DuckDB (MotherDuck)
 - **Development / prototyping** → DBHub or jparkerweb/mcp-sqlite
@@ -234,9 +262,10 @@ The official SQLite server is still worth reading as a learning resource. The in
 
 The official database MCP servers served their purpose as reference implementations — they showed what was possible. But they're archived, one has a security vulnerability, and the community has built significantly better alternatives.
 
-For most developers in 2026, the answer depends on your platform. **Neon MCP** (4/5) is the best experience if you're on Neon — branch-based migrations, OAuth, 20 tools. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.
+For most developers in 2026, the answer depends on your platform. **Neon MCP** (4/5) is the best experience if you're on Neon — branch-based migrations, OAuth, 20 tools. **Supabase MCP** (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.
 
 For the full details on the reviewed servers:
+- [Supabase MCP Server Review](/reviews/supabase-mcp-server/) (4/5)
 - [Neon MCP Server Review](/reviews/neon-mcp-server/) (4/5)
 - [SQLite MCP Server Review](/reviews/sqlite-mcp-server/) (3/5)
 - [PostgreSQL MCP Server Review](/reviews/postgres-mcp-server/) (2.5/5)
