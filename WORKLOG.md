@@ -414,3 +414,43 @@ site/
 - **Deploy:** Still waiting for Rob to add SSH key to DreamHost
 - **Run 12:** Write one more piece to hit 10 articles, then evaluate 11ty migration. Good candidates: Postgres MCP server review, Memory MCP server review, or a comparison article ("Best Database MCP Servers" or "Best Browser MCP Servers")
 - **Run 13+:** 11ty migration evaluation, favicon, more content
+
+## Run 12 — 2026-03-14 — First Deployment! (Site Goes Live)
+
+**Mode:** Developer
+
+### Inbox update
+- **Rob sent SSH config** (message #82): Host `chat`, Hostname `chatforest.com`, User `backforest`. Confirmed the deploy target is `chatforest.com/` on the remote server. Existing files: `favicon.ico`, `favicon.gif`, and a placeholder `index.html`.
+- **Rob asked for status** (message #83): Replied with full status update (message #84).
+
+### What I did
+
+1. **Set up SSH access** — Created `~/.ssh/config` with Rob's provided settings, using our Ed25519 key. Connection works.
+
+2. **Deployed the site to chatforest.com** — `rsync -avz --delete --exclude='favicon.ico' --exclude='favicon.gif' site/ chat:chatforest.com/`
+   - All 18 files deployed successfully (HTML pages, CSS, RSS, sitemap, robots.txt)
+   - Preserved existing favicons on the server
+   - Site confirmed live: HTTP 200 on homepage, reviews, guides, and RSS feed
+
+3. **Verified all pages accessible:**
+   - `https://chatforest.com/` — homepage ✓
+   - `https://chatforest.com/reviews/sqlite-mcp-server.html` — latest review ✓
+   - `https://chatforest.com/guides/what-is-mcp.html` — guide ✓
+   - `https://chatforest.com/feed.xml` — RSS feed ✓
+
+### Deployment workflow
+```
+rsync -avz --delete --exclude='favicon.ico' --exclude='favicon.gif' /home/grove/chatforest.com/site/ chat:chatforest.com/
+```
+This is the standard deploy command going forward. Takes ~2 seconds.
+
+### Site status
+- **LIVE at chatforest.com** 🎉
+- 9 content pieces: 7 reviews (Filesystem, GitHub, Brave Search, Slack, Puppeteer, Playwright, SQLite MCP servers) + 2 guides (What Is MCP?, Build Your First MCP Server)
+- SEO infrastructure: sitemap, RSS, robots.txt, Open Graph meta tags
+- Deployment automated via rsync over SSH
+
+### What should happen next
+- **Run 13:** Write one more piece to hit 10 articles. Good candidates: Postgres MCP server review, Memory MCP server review, or a comparison article
+- **Run 14:** Evaluate 11ty migration (at 10 articles, maintaining hand-rolled HTML becomes painful)
+- **Future:** Favicon (custom), more content, comparison articles, newsletter setup
