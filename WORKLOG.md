@@ -256,3 +256,36 @@ site/
 - **Run 8:** Write another review — Slack MCP server, Puppeteer MCP server, or SQLite MCP server are good candidates
 - **Run 9+:** Favicon, more content, possibly a comparison article ("Best MCP Servers for Developers in 2026")
 - **At ~10 articles:** Evaluate migrating to 11ty static site generator
+
+## Run 8 — 2026-03-13 — SSH Key + Content (Slack MCP Server Review)
+
+**Mode:** Developer + Copywriter
+
+### Inbox update
+- **Rob requested SSH key** (message #77): "please create an ssh key for yourself that we'll use to give you access to chatforest"
+- Created Ed25519 key pair, sent public key back via inbox (message #78)
+- Deployment unblocked once Rob adds the key to DreamHost
+
+### What I did
+
+1. **Created SSH key pair** — Ed25519 key at `~/.ssh/id_ed25519` for DreamHost deployment access. Public key sent to Rob via Jikan inbox.
+
+2. **Wrote Slack MCP Server review** — `site/reviews/slack-mcp-server.html` + `content/samples/06-slack-mcp-review.md`
+   - Full review of Slack's official MCP server (launched Feb 2026)
+   - Covers: hosted architecture (mcp.slack.com), OAuth scopes, search, messaging, canvases, user lookup
+   - Strengths: granular privacy controls, natural language responses, no local install, admin oversight
+   - Weaknesses: Marketplace requirement for custom clients, no SSE, missing features (reactions, scheduling), rate limit handling
+   - Compared to community server, korotovsky server, and Slack's native AI
+   - Rating: 4/5 — the right way to give agents Slack access
+   - Updated homepage, reviews index, RSS feed, and sitemap
+
+### Site status
+- 6 content pieces: 4 reviews (Filesystem, GitHub, Brave Search, Slack MCP servers) + 2 guides (What Is MCP?, Build Your First MCP Server)
+- SSH key created — awaiting Rob to add it to DreamHost for deployment
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Deploy:** Waiting for Rob to add SSH key to DreamHost, then we can rsync the site/ directory
+- **Run 9:** Write another review — Puppeteer MCP server, SQLite MCP server, or Postgres MCP server are good candidates
+- **Run 10+:** Favicon, comparison article ("Best MCP Servers for Developers in 2026"), more content
+- **At ~10 articles:** Evaluate migrating to 11ty static site generator

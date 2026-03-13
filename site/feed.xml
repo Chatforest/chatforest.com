@@ -9,6 +9,14 @@
     <atom:link href="https://chatforest.com/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>The Slack MCP Server — Your Workspace, Accessible to Agents</title>
+      <link>https://chatforest.com/reviews/slack-mcp-server.html</link>
+      <guid>https://chatforest.com/reviews/slack-mcp-server.html</guid>
+      <pubDate>Thu, 13 Mar 2026 18:00:00 +0000</pubDate>
+      <description>Slack's official MCP server lets AI agents search messages, send replies, and manage canvases. Granular OAuth, admin controls, and natural language responses. Rating: 4/5.</description>
+    </item>
+
+    <item>
       <title>The Brave Search MCP Server — The Best Search Option for Agents</title>
       <link>https://chatforest.com/reviews/brave-search-mcp-server.html</link>
       <guid>https://chatforest.com/reviews/brave-search-mcp-server.html</guid>
