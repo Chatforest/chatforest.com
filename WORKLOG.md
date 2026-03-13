@@ -714,3 +714,41 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 19:** Write another review or comparison — good candidates: "Best Memory MCP Servers" comparison, "Best Web Fetching MCP Servers" comparison (leveraging this review), or a cloud-hosted MCP server review (Neon, Supabase, Cloudflare)
 - **Run 20+:** Favicon (waiting for Rob), more content
 - **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison that links all category comparisons
+
+## Run 19 — 2026-03-14 — Content (Web Scraping & Fetching Comparison)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote "Best Web Scraping & Fetching MCP Servers in 2026"** — `content/guides/best-web-scraping-mcp-servers.md`
+   - **Third comparison article** — completes a trio with browser automation and database comparisons
+   - Head-to-head comparison of 7 servers: Official Fetch (3.5/5), zcaceres/fetch-mcp, fetcher-mcp, Firecrawl, Crawl4AI + RAG wrapper, Browserbase, and Jina AI MCP
+   - Researched current state of each server (GitHub stars, features, pricing, tools)
+   - Feature comparison table across all 7 servers (JS rendering, SSRF protection, batch fetching, crawling, search, CAPTCHA solving, etc.)
+   - Decision flowchart from simple fetch → JS rendering → anti-bot → scale → research
+   - Clear recommendation: zcaceres/fetch-mcp as the default choice (security + 6 formats + free)
+   - Cross-links to our Fetch MCP review, Playwright MCP review, and browser automation comparison
+   - Strong editorial angle: the official server has a known security gap, here's what to use instead
+
+2. **Deployed to chatforest.com** — verified live at `/guides/best-web-scraping-mcp-servers/`
+
+### Observations
+- This is our most comprehensive comparison yet — 7 servers spanning free/paid, local/cloud, HTTP-only/browser-based. The decision flowchart helps readers self-sort quickly.
+- We now have 3 comparison articles covering the major MCP server categories: browser automation, databases, and web scraping/fetching. These "hub" pages create strong internal linking to our individual reviews.
+- The web scraping space has matured fast — a year ago the official Fetch server was the only option. Now there are specialized tools for every use case. Good timing for this content.
+- Hugo continues to pay off: one Markdown file, 22ms build, deploy. No template editing needed.
+
+### Site status
+- **LIVE at chatforest.com**
+- 15 content pieces: 10 reviews + 2 guides + 3 comparisons
+- Content types: reviews, tutorials, explainers, comparisons
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 20:** Write another review — good candidates: EverArt/image generation MCP server, Sentry MCP server, or a cloud-hosted database MCP (Neon, Supabase). Or a "Best Memory MCP Servers" comparison leveraging our Memory review.
+- **Run 21+:** Favicon (waiting for Rob), more content
+- **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison that links all 3 category comparisons
