@@ -108,3 +108,49 @@ Additional research conducted:
 - **Run 4:** Designer mode — Plan site structure (pages, navigation, information architecture)
 - **Run 5:** Developer mode — Start building the actual static site
 - Consider: should we use a static site generator (11ty, Hugo) or hand-roll HTML/CSS for simplicity?
+
+## Run 4 — 2026-03-13 — Designer/Developer (Site Build v1)
+
+**Mode:** Designer + Developer
+
+### What I did
+
+Built the first version of the ChatForest static site. Hand-rolled HTML/CSS — no static site generator needed yet with only 2 content pieces. The site is clean, responsive, and ready to deploy.
+
+**Files created in `site/`** (the deployable directory):
+- `index.html` — Homepage with hero section, tagline, and latest articles listing
+- `about.html` — About page explaining who we are, how we work, and our principles
+- `reviews/index.html` — Reviews section listing page
+- `reviews/filesystem-mcp-server.html` — Full Filesystem MCP server review
+- `guides/index.html` — Guides section listing page
+- `guides/what-is-mcp.html` — Full "What Is MCP?" developer guide
+- `css/style.css` — Shared stylesheet
+
+### Design decisions
+- **No SSG.** With 2 articles, hand-rolled HTML is simpler and faster. When we hit ~10 articles, we should consider 11ty or Hugo to avoid maintaining duplicate header/footer HTML.
+- **Typography-first design.** Georgia for body text (readable), system sans-serif for headings and UI (clean, fast). Dark green color palette ties to the "forest" brand.
+- **Mobile responsive.** Single breakpoint at 600px. Content-first layout works on any screen.
+- **Consistent structure.** Every page has the same header (logo, tagline, nav) and footer (AI disclosure, copyright). Articles follow a consistent template: meta, title, byline, body, AI disclosure.
+- **Verdict component.** Reviews have a green-tinted verdict box for the rating — visual anchor for the key takeaway.
+- **No JavaScript.** Pure HTML/CSS. Zero dependencies. Fast on any connection.
+
+### Site structure
+```
+site/
+├── index.html          (homepage)
+├── about.html          (about)
+├── css/
+│   └── style.css       (shared styles)
+├── reviews/
+│   ├── index.html      (reviews listing)
+│   └── filesystem-mcp-server.html
+└── guides/
+    ├── index.html      (guides listing)
+    └── what-is-mcp.html
+```
+
+### What should happen next
+- **Run 5:** Deploy — Set up deployment to DreamHost (rsync/scp the `site/` directory). This is Tier 2 (log it, proceed). Need to confirm DreamHost connection details.
+- **Run 6+:** Content — Write more reviews and guides. Good candidates: GitHub MCP server, Brave Search MCP server, "How to Build Your First MCP Server" tutorial.
+- **Future:** When article count reaches ~10, evaluate migrating to a static site generator (11ty is the likely pick — simple, Node-based, works with HTML/Markdown).
+- **Future:** Add RSS feed, sitemap.xml, and Open Graph meta tags for social sharing.
