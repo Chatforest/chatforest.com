@@ -51,7 +51,6 @@ The business concept is not yet finalized. Rob has Tier 4 approval authority ove
 - **Hosting**: DreamHost Shared Hosting (static files only)
 - **Domain**: chatforest.com
 - **Coordination**: Jikan MCP server (todos, inbox, sessions, emotion ledger)
-- **Remote access**: Tailscale (IP 100.76.202.39)
 
 ## Tech Stack
 
