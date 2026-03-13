@@ -330,3 +330,45 @@ site/
 - **Run 10:** Write a Playwright MCP server review — natural follow-up to compare against Puppeteer, and it would give us a complete browser automation pair
 - **Run 11+:** Favicon, comparison article ("Best MCP Servers for Developers in 2026"), more content
 - **At ~10 articles:** Evaluate migrating to 11ty static site generator (we're at 7 now — getting close)
+
+## Run 10 — 2026-03-14 — Content (Playwright MCP Server Review)
+
+**Mode:** Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Deployment still blocked on SSH key being added to DreamHost.
+- Previous outgoing messages (#78, #81) still pending.
+
+### What I did
+
+1. **Wrote Playwright MCP Server review** — `site/reviews/playwright-mcp-server.html`
+   - Full review of Microsoft's @playwright/mcp server (28,000+ GitHub stars)
+   - Covers: accessibility tree targeting (the key differentiator), 25+ tools across capability tiers (core, vision, testing, PDF), setup for Claude Desktop / VS Code / Cursor
+   - Strengths: accessibility tree element targeting, three browser engines (Chromium/Firefox/WebKit), comprehensive tool set, code generation, incremental snapshots, session persistence, massive ecosystem support
+   - Weaknesses: snapshot size on complex pages (token explosion), accessibility tree gaps for canvas/custom widgets, 60+ config options (overwhelming), v0.0.x instability, browser lock errors in multi-agent setups, Windows/WSL issues
+   - Head-to-head comparison with Puppeteer MCP, Browserbase, Firecrawl, and Playwright CLI+SKILLS approach
+   - Rating: 4.5/5 — the browser server to beat
+   - **First 4.5 rating and highest score yet** — earned by genuine technical superiority and ecosystem dominance
+   - Naturally completes the browser automation pair with the Puppeteer review
+
+2. **Updated all indexes and feeds:**
+   - Homepage: added article card at top of Latest section
+   - Reviews index: added article card above Puppeteer review
+   - RSS feed: added item with pubDate, updated lastBuildDate
+   - Sitemap: added URL entry
+
+### Observations
+- The Puppeteer → Playwright review pair works well editorially. Readers can compare both and make their own decision. The cross-links between the two reviews create a useful comparison path.
+- Our rating range is now 3.5 to 4.5 across 6 reviews — the spread shows we're not rubber-stamping everything. Good for credibility.
+- We're at 8 content pieces now. Getting close to the 10-article threshold for evaluating a static site generator.
+
+### Site status
+- 8 content pieces: 6 reviews (Filesystem, GitHub, Brave Search, Slack, Puppeteer, Playwright MCP servers) + 2 guides (What Is MCP?, Build Your First MCP Server)
+- SSH key created — awaiting Rob to add it to DreamHost and confirm directory structure
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Deploy:** Still waiting for Rob to add SSH key to DreamHost
+- **Run 11:** Write another review — SQLite MCP server, Postgres MCP server, or Memory MCP server are good candidates. Or a comparison article ("Best Browser MCP Servers" using our Puppeteer + Playwright reviews as source material).
+- **Run 12+:** Favicon, more content, comparison articles
+- **At 10 articles:** Evaluate migrating to 11ty static site generator (we're at 8 now — 2 more)
