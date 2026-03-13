@@ -1176,3 +1176,49 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 30:** While waiting for Rob's reply on the promotion plan, write another review or comparison. Good candidates: Neon MCP server (cloud database), "Best Observability MCP Servers" comparison, or "Best Productivity MCP Servers" comparison
 - **Run 31+:** Execute promotion plan once Rob approves accounts, update mega-comparison with Notion
 - **Future:** Favicon, newsletter setup, affiliate links
+
+## Run 30 — 2026-03-14 — Content (Best Productivity & Knowledge Management MCP Servers Comparison)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- Pending message #89 (from me, re: traffic/promotion plan) still unanswered. No new messages from Rob.
+
+### What I did
+
+1. **Wrote "Best Productivity & Knowledge Management MCP Servers in 2026"** — `content/guides/best-productivity-mcp-servers.md`
+   - **8th comparison article** — completes coverage of all major MCP server categories (browser, database, web scraping, memory, search, documentation, productivity, plus mega-comparison)
+   - Head-to-head comparison of 8 servers: Notion (3.5/5), Linear, Todoist, Asana, Google Calendar, Obsidian, Slack (4/5), Google Workspace
+   - Researched current state of each: Linear's Feb 2026 PM tools expansion, Todoist's MCP Apps feature, Asana V2 migration, Google Calendar community server, Obsidian's fragmented ecosystem
+   - Identified three architectural patterns: first-party hosted (Notion/Linear/Todoist/Asana/Slack), community local (Google Calendar/Google Workspace), local knowledge (Obsidian)
+   - Feature comparison table, decision flowchart by use case, recommended stack
+   - Key insight: Google has no official MCP server for any product — the biggest gap in the productivity MCP space
+   - Cross-links to our Notion and Slack reviews
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Productivity & knowledge management" section with all server recommendations
+   - Added productivity rows to summary table (Notion 3.5/5 for knowledge, Linear for tasks)
+   - Updated Notion from "not yet reviewed" to reviewed with full section
+   - Removed Notion and Linear from "servers we haven't reviewed" section
+   - Updated review count to 15, comparison count to 8
+   - Added Notion to rating distribution table (3.5/5 cluster now has 5 servers)
+
+3. **Deploy failed** — SSH to chatforest.com returned "Network is unreachable." Likely a network issue on the build server or DreamHost side. Content is committed and ready to deploy next run.
+
+### Observations
+- We now have 8 comparison articles covering every major MCP server category. The content pyramid is complete: mega-comparison → 8 category comparisons → 15 individual reviews.
+- The first-party hosted pattern (OAuth, vendor-managed) is clearly winning in productivity. Notion, Linear, Todoist, Asana, and Slack all use it. This matches what we saw with Sentry in observability.
+- Google's absence is the biggest story. They're the only major productivity platform without an official MCP server. Community options fill some gaps (Calendar) but Drive/Docs/Sheets/Gmail are underserved.
+- Todoist's MCP Apps feature (interactive UI widgets in chat) is genuinely novel and worth watching — if other vendors adopt it, it could change how agents present structured data.
+
+### Site status
+- **Committed, NOT deployed** (network issue)
+- 25 content pieces: 15 reviews + 2 guides + 8 comparisons
+- Content types: reviews, tutorials, explainers, comparisons, mega-comparison
+- Comparison articles now cover ALL major categories: browser automation, databases, web scraping, memory/knowledge, search, documentation, productivity/knowledge management, plus mega-comparison
+- SEO infrastructure up to date
+
+### What should happen next
+- **Run 31:** Deploy (retry rsync). Write another review — good candidates: "Best Observability MCP Servers" comparison (leveraging Sentry review), Neon MCP server review (cloud database), or Figma Dev Mode MCP review
+- **Run 32+:** Favicon (waiting for Rob), execute promotion plan when Rob replies
+- **Future:** Newsletter setup, affiliate link integration
