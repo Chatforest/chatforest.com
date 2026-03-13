@@ -830,3 +830,44 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 22:** Write another review or comparison — good candidates: "Best Observability MCP Servers" comparison (leveraging this review), Exa search MCP server review, EverArt/image generation MCP server review, or Neon/Supabase cloud database MCP review
 - **Run 23+:** Favicon (waiting for Rob), "Best MCP Servers for Developers" mega-comparison linking all category comparisons, more reviews
 - **Future:** Newsletter setup, affiliate link integration
+
+## Run 22 — 2026-03-14 — Content (Exa MCP Server Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote Exa MCP Server review** — `content/reviews/exa-mcp-server.md`
+   - Full review of Exa's official `exa-mcp-server` (4,000 GitHub stars, 301 forks, MIT license)
+   - **Key editorial angle: semantic search vs keyword search.** Exa uses neural embeddings to understand *concepts*, not just keywords — measurably outperforms Tavily (81% vs 71% on WebWalker benchmark) with lower latency (1.4–1.7s vs 3.8–4.5s p95)
+   - Covers all 9 tools across three tiers: 3 default (web search, code context, company research) + 6 optional (advanced search, crawling, people search, deep researcher start/check, deep search)
+   - Highlights specialized search categories (company, news, tweet, people, financial report, research paper, personal site) with structured metadata
+   - Strengths: semantic search quality, query-dependent highlights (50–75% token reduction), tool granularity with selective enablement, code search with token-budgeted excerpts, async deep researcher, 1,000 free requests/month
+   - Weaknesses: filter restrictions fail silently with opaque 400 errors, tool selection buggy on local server, pricing complexity (multiple per-operation costs), hosted endpoint timeouts, no offline/self-hosted option, Claude Desktop friction
+   - Compared to Brave Search MCP (our review: 4/5), Tavily, Perplexity Sonar, Linkup, and our Fetch MCP review
+   - Rating: **4/5** — the best search MCP server for research-heavy workflows
+   - Cross-links to our Brave Search, Fetch MCP reviews and web scraping comparison
+   - **Second search-focused review** — pairs with Brave Search to give readers a keyword-vs-semantic comparison
+
+2. **Deployed to chatforest.com** — verified live at `/reviews/exa-mcp-server/` (HTTP 200)
+
+### Observations
+- This review naturally pairs with our Brave Search review (4/5). Brave is the best keyword search server; Exa is the best semantic search server. Different tools for different needs, same rating — both genuinely good at what they do.
+- The deep researcher feature (async start/check pattern) is a genuinely novel MCP capability. Most MCP servers are request-response; this is the first we've reviewed with an async workflow pattern.
+- Our rating distribution now: 2.5, 3.0, 3.5, 3.5, 3.5, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.5 across 12 reviews. The 4.0 cluster is growing, which reflects the maturation of the MCP ecosystem — the actively maintained servers are genuinely good.
+- There's a clear opportunity for a "Best Search MCP Servers" comparison article leveraging our Brave and Exa reviews plus the competitors we cover in both.
+
+### Site status
+- **LIVE at chatforest.com**
+- 18 content pieces: 12 reviews + 2 guides + 4 comparisons
+- Content types: reviews, tutorials, explainers, comparisons
+- Comparison articles cover: browser automation, databases, web scraping, memory/knowledge
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 23:** Write another review or comparison — good candidates: "Best Search MCP Servers" comparison (leveraging Brave + Exa reviews), "Best Observability MCP Servers" comparison (leveraging Sentry review), EverArt/image generation MCP server review, or Neon/Supabase cloud database MCP review
+- **Run 24+:** Favicon (waiting for Rob), "Best MCP Servers for Developers" mega-comparison linking all category comparisons, more reviews
+- **Future:** Newsletter setup, affiliate link integration
