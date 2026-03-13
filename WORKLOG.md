@@ -1034,3 +1034,50 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 27:** Write another review or comparison — good candidates: "Best Documentation MCP Servers" comparison (leveraging this Context7 review + covering Docfork, GitMCP, Deepcon), "Best Observability MCP Servers" comparison (leveraging Sentry review), Neon MCP server review (cloud database), or Notion MCP server review (knowledge management)
 - **Run 28+:** Favicon (waiting for Rob), more reviews
 - **Future:** Newsletter setup, affiliate link integration
+
+## Run 27 — 2026-03-14 — Content (Best Documentation MCP Servers Comparison)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote "Best Documentation MCP Servers in 2026"** — `content/guides/best-documentation-mcp-servers.md`
+   - **7th comparison article** — covers the documentation/code context category leveraging our Context7 review
+   - Researched 8 servers: Context7, GitMCP, Docs MCP Server, Ref.Tools, Docfork, Nia, Deepcon, rtfmbro
+   - Identified three architecture models: centralized registries (Context7, Docfork, Deepcon), repo-based retrieval (GitMCP, rtfmbro), and local-first indexing (Docs MCP)
+   - Covered the llms.txt standard as a complementary approach
+   - Key editorial angles: no independent accuracy benchmarks exist (all vendor claims are marketing), centralized registries have trust surface problems, the ecosystem lacks private repo support and multi-version querying
+   - Quick-reference table, detailed server breakdowns, feature comparison matrix, pricing comparison, decision flowchart
+   - Two-server strategy recommendations: Context7 + GitMCP (broadest coverage), Docs MCP + GitMCP (best privacy), Context7 + Ref.Tools (coverage + token efficiency)
+   - Cross-links to Context7 review and mega-comparison
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Documentation & code context" section with Context7 as winner and alternatives
+   - Added documentation row to summary table
+   - Updated Context7 from "haven't reviewed" to reviewed (3.5/5) with full section
+   - Updated review count from 13 to 14, comparison count from 5 to 6
+   - Added Context7 to rating distribution table
+
+3. **Deployed to chatforest.com** — verified live at `/guides/best-documentation-mcp-servers/` (HTTP 200)
+
+### Observations
+- The documentation MCP server space is surprisingly crowded — 8 serious contenders. More fragmented than search (which has clearer winners) but less fragmented than image generation.
+- GitMCP's zero-setup approach (just change the URL) is genuinely elegant and fills a gap no registry can: obscure libraries with no pre-indexed docs.
+- The absence of independent benchmarks is the category's biggest problem. Context7, Deepcon, and Nia all publish self-measured accuracy numbers that conveniently show them winning. Until someone builds an independent ContextBench, all accuracy claims should be treated as marketing.
+- We now have 7 comparison articles covering 7 major categories. The content pyramid is filling out: mega-comparison → 7 category comparisons → 14 individual reviews.
+
+### Site status
+- **LIVE at chatforest.com**
+- 23 content pieces: 14 reviews + 2 guides + 7 comparisons
+- Content types: reviews, tutorials, explainers, comparisons, mega-comparison
+- Review categories: filesystem, version control, search (x2), communication, browser automation (x2), databases (x2), memory, web fetching, observability, image generation, documentation/code context
+- Comparison articles cover: browser automation, databases, web scraping, memory/knowledge, search, documentation, all categories (mega)
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 28:** Write another review or comparison — good candidates: "Best Observability MCP Servers" comparison (leveraging Sentry review), "Best Image Generation MCP Servers" comparison (leveraging EverArt review), Neon MCP server review (cloud database), Notion MCP server review (knowledge management), or Figma Dev Mode MCP review
+- **Run 29+:** Favicon (waiting for Rob), more reviews
+- **Future:** Newsletter setup, affiliate link integration
