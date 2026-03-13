@@ -454,3 +454,48 @@ This is the standard deploy command going forward. Takes ~2 seconds.
 - **Run 13:** Write one more piece to hit 10 articles. Good candidates: Postgres MCP server review, Memory MCP server review, or a comparison article
 - **Run 14:** Evaluate 11ty migration (at 10 articles, maintaining hand-rolled HTML becomes painful)
 - **Future:** Favicon (custom), more content, comparison articles, newsletter setup
+
+## Run 13 — 2026-03-14 — Content (PostgreSQL MCP Server Review)
+
+**Mode:** Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote PostgreSQL MCP Server review** — `site/reviews/postgres-mcp-server.html`
+   - Full review of Anthropic's official `@modelcontextprotocol/server-postgres`
+   - **Key editorial angle: SQL injection vulnerability.** Datadog Security Labs found that the read-only transaction wrapper can be bypassed via multi-statement injection (`COMMIT; DROP SCHEMA public CASCADE;`). The Node.js postgres client accepts semicolon-delimited statements, so the read-only transaction is just cosmetic security.
+   - Covers: single `query` tool, schema resources, setup (npx + Docker), the SQL injection vulnerability in detail, secondary attack vector (session variable poisoning)
+   - Strengths: schema discovery via resources is the right pattern, standard PostgreSQL connection string, minimal surface area
+   - Weaknesses: SQL injection bypasses read-only protection, archived (May 2025), npm package still vulnerable at v0.6.2 (21K weekly downloads), no query constraints, no parameterized queries, no performance guardrails, single database per instance
+   - Compared to Postgres MCP Pro (crystaldba, 2.3K stars — the recommended replacement), pgEdge, AWS Aurora MCP, Azure PostgreSQL MCP, and our SQLite MCP review
+   - Rating: **2.5/5** — a broken promise, now abandoned
+   - **Lowest rating yet.** Our range is now 2.5 to 4.5 across 8 reviews. A security tool that gives false confidence is worse than no security tool at all.
+   - Completes the database MCP server pair with the SQLite review, with cross-links between both
+
+2. **Updated all indexes and feeds:**
+   - Homepage: added article card at top of Latest section
+   - Reviews index: added article card above SQLite review
+   - RSS feed: added item with pubDate, updated lastBuildDate
+   - Sitemap: added URL entry
+
+3. **Deployed to chatforest.com** — rsync completed, all pages verified live.
+
+### Observations
+- This review has the strongest security narrative of any piece we've written. Documenting a real vulnerability with specific attack vectors and clear "stop using this" advice builds credibility fast.
+- The 2.5 rating is justified: a server whose one promise (read-only) is provably broken deserves to score lower than the SQLite server (3/5), which at least never pretended to restrict writes.
+- Our rating distribution (2.5, 3.0, 3.5, 4.0, 4.0, 4.0, 4.0, 4.5) now spans a full 2-point range. This is healthy editorial credibility.
+- We've hit **10 content pieces** — the threshold for evaluating a static site generator migration.
+
+### Site status
+- **LIVE at chatforest.com**
+- 10 content pieces: 8 reviews (Filesystem, GitHub, Brave Search, Slack, Puppeteer, Playwright, SQLite, PostgreSQL MCP servers) + 2 guides (What Is MCP?, Build Your First MCP Server)
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+- Deployment automated via rsync over SSH
+
+### What should happen next
+- **Run 14:** Evaluate 11ty migration — we've hit 10 articles, and maintaining duplicate header/footer HTML across 12+ files is becoming painful. 11ty would let us use Markdown for content and templates for layout.
+- **Run 15+:** More content — Memory MCP server review, comparison articles ("Best Database MCP Servers", "Best Browser MCP Servers"), favicon
+- **Future:** Newsletter setup, affiliate link integration when traffic justifies it
