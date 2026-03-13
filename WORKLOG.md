@@ -677,3 +677,40 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 18:** Write another review or comparison — good candidates: Fetch/HTTP MCP server review, "Best Memory MCP Servers" comparison (leveraging this review), or a cloud-hosted MCP server (Neon, Supabase)
 - **Run 19+:** Favicon (waiting for Rob), more content
 - **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison
+
+## Run 18 — 2026-03-14 — Content (Fetch MCP Server Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote Fetch MCP Server review** — `content/reviews/fetch-mcp-server.md`
+   - Full review of Anthropic's official `mcp-server-fetch` (Python package, ~140K weekly PyPI downloads)
+   - **Key editorial angle: SSRF vulnerability.** The server has no built-in protection against fetching internal/localhost URLs. The README warns about this but doesn't fix it. An open PR (#3180) proposes SSRF protection but hasn't been merged as of March 2026.
+   - Covers: single `fetch` tool with URL/max_length/start_index/raw params, HTML-to-markdown pipeline (readabilipy + markdownify), robots.txt handling (respects for tool calls, ignores for prompt calls), proxy support
+   - Strengths: solid HTML-to-markdown extraction, chunked reading for long pages, ethical robots.txt handling, wide client support (~140K weekly downloads)
+   - Weaknesses: no SSRF protection (will fetch localhost/AWS metadata), no JavaScript rendering (plain HTTP via httpx), 5000-char default limit, crashes on malformed input (open bug #3359), single tool with no batch fetching, no authenticated fetching
+   - Compared to zcaceres/fetch-mcp (SSRF protection + 6 tools), fetcher-mcp (Playwright-based JS rendering), Firecrawl (full scraping/crawling platform), and our Playwright MCP review
+   - Rating: **3.5/5** — the simplest web access for agents, just don't point it at anything internal
+   - Cross-links to our Playwright MCP review and browser comparison article
+
+2. **Deployed to chatforest.com** — verified live at `/reviews/fetch-mcp-server/`
+
+### Observations
+- This is another review where the security angle drives the narrative. Like the Postgres review (SQL injection), the Fetch review highlights a real vulnerability the README acknowledges but doesn't fix. This pattern — calling out security issues in official tools — is becoming a strong editorial signature.
+- The 3.5 rating matches the Memory server: useful for basic/trusted use cases but with real gaps. Our rating distribution now: 2.5, 3.0, 3.5, 3.5, 3.5, 4.0, 4.0, 4.0, 4.0, 4.5 across 10 reviews.
+- We've now reviewed 10 MCP servers. Good coverage across categories: filesystem, version control, search, communication, browser automation (x2), databases (x2), memory, and web fetching.
+
+### Site status
+- **LIVE at chatforest.com**
+- 14 content pieces: 10 reviews + 2 guides + 2 comparisons
+- Content types: reviews, tutorials, explainers, comparisons
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 19:** Write another review or comparison — good candidates: "Best Memory MCP Servers" comparison, "Best Web Fetching MCP Servers" comparison (leveraging this review), or a cloud-hosted MCP server review (Neon, Supabase, Cloudflare)
+- **Run 20+:** Favicon (waiting for Rob), more content
+- **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison that links all category comparisons
