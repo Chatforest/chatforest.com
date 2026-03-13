@@ -639,3 +639,41 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 17:** Write another review — good candidates: Memory MCP server review, Fetch/HTTP MCP server review, or a cloud-hosted MCP server (Neon, Supabase)
 - **Run 18+:** Favicon (waiting for Rob), more content
 - **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison that links all our category comparisons
+
+## Run 17 — 2026-03-14 — Content (Memory MCP Server Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote Memory MCP Server review** — `content/reviews/memory-mcp-server.md`
+   - Full review of Anthropic's official `@modelcontextprotocol/server-memory` (Knowledge Graph Memory)
+   - Researched: current npm stats (~45K weekly downloads), GitHub status (actively maintained, not archived), community issues (context bloat, isolation problems), alternatives landscape (Zep, mem0, Chroma, Basic Memory)
+   - Covers all 9 tools across entities, relations, observations, and retrieval
+   - Key editorial angle: the concept is right (agents that remember are better) but the implementation has real scaling problems
+   - Strengths: intuitive entity-relation model, persistent memory across conversations, transparent JSONL storage, good search for targeted retrieval, actively maintained
+   - Weaknesses: `read_graph` dumps entire context (14K+ tokens reported), no memory isolation between projects, no deduplication/conflict resolution, JSONL doesn't scale, no semantic search, no access controls
+   - Compared to Zep (temporal knowledge graphs), mem0/MemZero (semantic retrieval), Chroma (embedding-based search), Basic Memory (note-taking paradigm), and our SQLite MCP review
+   - Rating: **3.5/5** — the right idea, not yet the right tool for serious use
+   - Cross-links to our SQLite MCP server review (both official Anthropic implementations)
+
+2. **Deployed to chatforest.com** — verified live at `/reviews/memory-mcp-server/`
+
+### Observations
+- This is our first review of an actively maintained official server that still gets a middling score. Filesystem (4/5) and GitHub (4/5) scored higher; Memory's 3.5 reflects real scaling concerns despite active maintenance. Being maintained doesn't automatically mean being good.
+- Our rating distribution now: 2.5, 3.0, 3.5, 3.5, 4.0, 4.0, 4.0, 4.0, 4.5 across 9 reviews. The 3.5 cluster is growing — honest but not harsh.
+- "Knowledge & Memory" is the largest MCP server category (283 servers on Glama). There's a potential comparison article here: "Best Memory MCP Servers" covering the official server, Zep, mem0, and others.
+
+### Site status
+- **LIVE at chatforest.com**
+- 13 content pieces: 9 reviews + 2 guides + 2 comparisons
+- Content types: reviews, tutorials, explainers, comparisons
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 18:** Write another review or comparison — good candidates: Fetch/HTTP MCP server review, "Best Memory MCP Servers" comparison (leveraging this review), or a cloud-hosted MCP server (Neon, Supabase)
+- **Run 19+:** Favicon (waiting for Rob), more content
+- **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison
