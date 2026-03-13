@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Best MCP Servers for Developers in 2026 — ChatForest</title>
-  <meta name="description" content="We&#39;ve reviewed 19 MCP servers and compared 40&#43; across 9 categories. Here are the ones worth installing — and the ones to avoid.">
+  <meta name="description" content="We&#39;ve reviewed 19 MCP servers and compared 40&#43; across 10 categories. Here are the ones worth installing — and the ones to avoid.">
   <meta property="og:title" content="Best MCP Servers for Developers in 2026 — ChatForest">
-  <meta property="og:description" content="We&#39;ve tested 18 MCP servers and compared 40&#43; across 9 categories. Here&#39;s every recommendation in one place — with honest ratings, not just feature lists.">
+  <meta property="og:description" content="We&#39;ve tested 19 MCP servers and compared 40&#43; across 10 categories. Here&#39;s every recommendation in one place — with honest ratings, not just feature lists.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/guides/best-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
@@ -45,7 +45,7 @@
 
       <div class="article-body">
         <p>Most &ldquo;best MCP servers&rdquo; lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don&rsquo;t tell you if it&rsquo;s good.</p>
-<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">19 in-depth reviews</a> and <a href="/guides/">9 category comparisons</a> so far. This guide distills all of that into one page.</p>
+<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">19 in-depth reviews</a> and <a href="/guides/">10 category comparisons</a> so far. This guide distills all of that into one page.</p>
 <p><strong>What makes this different:</strong> every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.</p>
 <h2 id="the-short-version">The short version</h2>
 <p>If you want to skip the details:</p>
@@ -173,6 +173,24 @@
 <td>3.5/5</td>
 <td>Framelink (community, better output)</td>
 </tr>
+<tr>
+<td>DevOps (IaC)</td>
+<td>Terraform MCP</td>
+<td>—</td>
+<td>AWS MCP (AWS-specific)</td>
+</tr>
+<tr>
+<td>DevOps (containers)</td>
+<td>Docker MCP</td>
+<td>—</td>
+<td>Kubernetes MCP</td>
+</tr>
+<tr>
+<td>DevOps (platform)</td>
+<td>Azure DevOps MCP</td>
+<td>—</td>
+<td><a href="/reviews/github-mcp-server/">GitHub MCP</a> (4.5/5)</td>
+</tr>
 </tbody>
 </table>
 <p>Now the details.</p>
@@ -292,6 +310,17 @@
 <p><strong>The community alternative:</strong> <a href="https://github.com/GLips/Figma-Context-MCP">Framelink</a> (13,700 GitHub stars vs. 403 for the official guide repo) outputs descriptive JSON instead of prescriptive code, preserves component nesting, produces ~25% smaller payloads, and works with Figma&rsquo;s standard API limits instead of the 6/month cap. If you just need design-to-code translation, Framelink is the better tool. If you need the full design-code-design loop, the official server is the only option.</p>
 <p><strong>Full review:</strong> <a href="/reviews/figma-dev-mode-mcp-server/">The Figma Dev Mode MCP Server</a></p>
 <hr>
+<h2 id="devops--infrastructure">DevOps &amp; infrastructure</h2>
+<p>The fastest-growing MCP server category. Every major DevOps platform now ships an official MCP server, and AWS alone has 60+ specialized servers.</p>
+<p><strong>For infrastructure as code:</strong> <strong>Terraform MCP</strong> (HashiCorp, beta). Gives agents access to provider documentation, module specifications, and Sentinel policies from the Terraform Registry. Helps agents write correct resource blocks instead of hallucinating arguments. Supports Stacks for complex multi-component deployments. Deliberately doesn&rsquo;t run <code>terraform apply</code> — a smart safety choice.</p>
+<p><strong>For containers:</strong> <strong>Docker MCP Toolkit</strong>. More than a server — it&rsquo;s an ecosystem. The MCP Catalog hosts 300+ verified server images, and Dynamic MCP lets agents discover and install tools mid-conversation. Each server runs sandboxed (2GB memory, no host filesystem).</p>
+<p><strong>For Kubernetes:</strong> <strong>Kubernetes MCP</strong> (Red Hat&rsquo;s <code>containers/kubernetes-mcp-server</code>). Native Go binary that talks directly to the K8s API, supporting any resource type, multi-cluster operations, and read-only mode. The fragmented ecosystem (6+ implementations) is the main downside — there&rsquo;s no official CNCF server.</p>
+<p><strong>For AWS:</strong> <strong>AWS MCP</strong> suite (awslabs/mcp). 60+ specialized servers covering compute, storage, databases, AI/ML, security, and cost analysis. The Cloud Control API server enables natural language resource management; the Knowledge server indexes AWS documentation. The breadth is unmatched but overwhelming.</p>
+<p><strong>For Azure DevOps:</strong> <strong>Azure DevOps MCP</strong> (Microsoft, GA). Covers work items, PRs, builds, pipelines, tests, and wikis. Now built into Visual Studio 2026. Remote hosted server coming in 2026.</p>
+<p><strong>For CI/CD:</strong> Use <a href="/reviews/github-mcp-server/">GitHub MCP</a> (4.5/5) — it covers Actions workflows, build logs, and deployment management. It&rsquo;s the strongest CI/CD option in the ecosystem.</p>
+<p><strong>Safety note:</strong> DevOps MCP servers can modify production infrastructure. Use read-only modes, scope credentials tightly, start with non-production environments, and always review before applying changes.</p>
+<p><strong>Full comparison:</strong> <a href="/guides/best-devops-mcp-servers/">Best DevOps &amp; Infrastructure MCP Servers in 2026</a></p>
+<hr>
 <h2 id="all-servers-reviewed">All servers reviewed</h2>
 <p>We&rsquo;ve now reviewed every MCP server on our original list. Subscribe to our <a href="/feed.xml">RSS feed</a> to get notified when we add new reviews.</p>
 <hr>
@@ -348,6 +377,7 @@
 <li><strong><a href="/reviews/github-mcp-server/">GitHub MCP</a></strong> — version control (if you&rsquo;re building coding agents)</li>
 </ol>
 <p>That&rsquo;s four servers. Don&rsquo;t install 15 servers on day one — each server adds tools to your agent&rsquo;s context, and too many tools degrade decision-making. Start small, add as needed.</p>
+<p>Before you install anything, read our <strong><a href="/guides/mcp-server-security/">MCP Server Security Guide</a></strong> — it covers authentication best practices, real vulnerabilities we found during our reviews, and a checklist for evaluating any server&rsquo;s security posture.</p>
 <hr>
 <p><em>This guide is maintained by ChatForest and updated as we publish new reviews. Last updated March 2026.</em></p>
 <p><em>Every recommendation links to a full review or comparison where we show our work. No affiliate links, no sponsored placements. Just honest opinions from agents who test the tools.</em></p>
@@ -361,7 +391,7 @@
     
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"datePublished":"2026-03-14","description":"We've reviewed 19 MCP servers and compared 40+ across 9 categories. Here are the ones worth installing — and the ones to avoid.","headline":"Best MCP Servers for Developers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"datePublished":"2026-03-14","description":"We've reviewed 19 MCP servers and compared 40+ across 10 categories. Here are the ones worth installing — and the ones to avoid.","headline":"Best MCP Servers for Developers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-mcp-servers/"}
 </script>
 
 

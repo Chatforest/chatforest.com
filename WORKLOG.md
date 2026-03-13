@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 37 — 2026-03-14 — Guide (MCP Server Security: A Practical Guide for 2026)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. No SSH clearance from Rob yet. Complying with deploy ban.
+
+### What I did
+
+1. **Wrote "MCP Server Security: A Practical Guide for 2026"** — `content/guides/mcp-server-security.md`
+   - **3rd guide** (after "What is MCP" and "Build Your First MCP Server") — first security-focused content
+   - Researched OWASP MCP Top 10, OWASP cheatsheets for using/building MCP servers, OAuth 2.1 spec evolution (March → June → November 2025 revisions)
+   - Analyzed security posture of all 19 reviewed servers, organized by strength (Strong → Adequate → Weak → Dangerous)
+   - Three real vulnerabilities documented with code examples:
+     - SQL injection in PostgreSQL MCP (multi-statement bypass of read-only transaction)
+     - SSRF in Fetch MCP (unpatched, can reach AWS metadata/localhost)
+     - ContextCrush prompt injection in Context7 (patched Feb 2026)
+   - Authentication transition section: local API keys → remote OAuth 2.1 Resource Servers
+   - Practical security checklist (20 items across 5 categories: auth, data protection, input validation, operational security, supply chain)
+   - Best practices section: prefer OAuth, scope down, isolate by context, use read-only modes, audit regularly
+   - Cross-links to all 19 reviews and OWASP resources
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added security guide reference in the "starter stack" section
+
+3. **Build succeeded** (31ms, 37 pages). **Deploy blocked** — complying with Rob's directive to stop all SSH attempts.
+
+### Site status
+- **Committed, NOT deployed** (per Rob's directive — no SSH until cleared)
+- 32 content pieces: 19 reviews + 3 guides + 10 comparisons
+- 7 runs of content waiting to deploy
+- Content now includes security-focused material — high-value for SEO (OWASP references, vulnerability documentation)
+
+### What should happen next
+- **Run 38:** Check inbox for Rob's SSH clearance. Could write another new server review (Cloudflare Workers MCP, Stripe MCP, or Chroma MCP are trending) or a workflow guide ("Setting Up Your First MCP Server Stack").
+- **Run 39+:** Deploy when Rob clears SSH. Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 36 — 2026-03-14 — Content (Best DevOps & Infrastructure MCP Servers Comparison)
 
 **Mode:** Researcher + Copywriter + Developer

@@ -1,3 +1,7 @@
+Run 37: Wrote "MCP Server Security: A Practical Guide for 2026" — 3rd guide, covers real vulnerabilities from our 19 reviews (SQL injection, SSRF, prompt injection), OAuth 2.1 transition, security checklist, server-by-server security ratings. Updated mega-comparison with security guide link. Deploy still blocked per Rob's directive.
+
+Run 36: Wrote Best DevOps & Infrastructure MCP Servers comparison (10th category). Updated mega-comparison. Deploy still blocked.
+
 Run 35: Wrote Figma Dev Mode MCP Server review (3.5/5) — 19th review, last unreviewed server. All servers from original list now reviewed. Updated mega-comparison with design-to-code category. Deploy still blocked per Rob's directive.
 
 Run 34: Wrote Vercel MCP Server review (3.5/5) — 18th review, first deployment platform MCP server. Updated mega-comparison. Only Figma Dev Mode left unreviewed. Deploy still blocked per Rob's directive.
@@ -508,3 +512,18 @@ Run 33 complete. Here's what I did:
 2026-03-13T23:21:01Z STARTED run 79001
 2026-03-13T23:27:57Z FINISHED run 79001
 2026-03-13T23:28:01Z STARTED run 79217
+Run 36 complete (4m 42s). Here's what I did:
+
+**Wrote "Best DevOps & Infrastructure MCP Servers in 2026"** — 10th comparison article, first new category beyond the original server list. Covers Docker MCP (Toolkit + 300+ verified catalog), Kubernetes MCP (Red Hat's native Go implementation), Terraform MCP (HashiCorp, registry-focused), AWS MCP (60+ specialized servers), and Azure DevOps MCP (Microsoft, GA, built into VS 2026).
+
+Key insights:
+- DevOps is the fastest-growing MCP category — every major platform now has an official server
+- IaC servers are deliberately documentation-first, not execution-first (safety by design)
+- Kubernetes is the most fragmented (6+ implementations, no official CNCF server)
+- AWS's breadth is unmatched (60+ servers) but overwhelming
+
+Also updated the mega-comparison with DevOps category section and summary table rows.
+
+**Site status:** 31 content pieces (19 reviews + 2 guides + 10 comparisons), 6 runs waiting to deploy (SSH still blocked per Rob's directive).
+2026-03-13T23:33:00Z FINISHED run 79217
+2026-03-13T23:35:01Z STARTED run 79563
