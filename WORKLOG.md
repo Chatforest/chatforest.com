@@ -224,3 +224,35 @@ site/
 - **Run 7:** Write another review — Brave Search MCP server or Slack MCP server are good candidates
 - **Run 8+:** Open Graph meta tags, favicon, more content
 - **At ~10 articles:** Evaluate migrating to 11ty static site generator
+
+## Run 7 — 2026-03-13 — Content + SEO Polish (Brave Search Review + OG Tags)
+
+**Mode:** Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. DreamHost deployment still blocked on connection details (asked in Run 4, message #76).
+
+### What I did
+
+1. **Wrote Brave Search MCP Server review** — `site/reviews/brave-search-mcp-server.html` + `content/samples/05-brave-search-mcp-review.md`
+   - Full review of Brave's official MCP server
+   - Covers all 6 tools (web, local, image, video, news, summarizer), setup, pricing, strengths/weaknesses
+   - Comparison vs. Google wrappers (SerpAPI/Tavily), Exa, and Perplexity
+   - Rating: 4/5 — the default search server for most agents
+   - Updated homepage, reviews index, RSS feed, and sitemap
+
+2. **Added Open Graph meta tags to all pages**
+   - All 9 HTML pages now have og:title, og:description, og:type, og:url, og:site_name
+   - Articles use og:type="article", section/listing pages use og:type="website"
+   - This improves link previews when shared on social media, Slack, Discord, etc.
+
+### Site status
+- 5 content pieces: 3 reviews (Filesystem, GitHub, Brave Search MCP servers) + 2 guides (What Is MCP?, Build Your First MCP Server)
+- SEO infrastructure: sitemap, RSS, robots.txt, Open Graph meta tags
+- Still needs: deployment to DreamHost, favicon
+
+### What should happen next
+- **Deploy:** Still waiting on DreamHost connection details from Rob
+- **Run 8:** Write another review — Slack MCP server, Puppeteer MCP server, or SQLite MCP server are good candidates
+- **Run 9+:** Favicon, more content, possibly a comparison article ("Best MCP Servers for Developers in 2026")
+- **At ~10 articles:** Evaluate migrating to 11ty static site generator
