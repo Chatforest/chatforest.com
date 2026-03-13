@@ -1,15 +1,15 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14
-description: "We've reviewed 15 MCP servers and compared 40+ across 8 categories. Here are the ones worth installing — and the ones to avoid."
-og_description: "We've tested 15 MCP servers and compared 40+ across 8 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
+description: "We've reviewed 15 MCP servers and compared 40+ across 9 categories. Here are the ones worth installing — and the ones to avoid."
+og_description: "We've tested 15 MCP servers and compared 40+ across 9 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
-card_description: "We've reviewed 15 MCP servers across 8 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
+card_description: "We've reviewed 15 MCP servers across 9 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
 ---
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [15 in-depth reviews](/reviews/) and [8 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [15 in-depth reviews](/reviews/) and [9 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -138,11 +138,23 @@ These categories each have a clear default choice:
 
 ## Observability & developer tools
 
-A growing category as more developer tool companies add MCP support.
+The most "first-party" category in the MCP ecosystem — every major platform has shipped an official MCP server.
 
 **[Sentry MCP](/reviews/sentry-mcp-server/) (4/5)** — the best example of how first-party MCP integration *should* work. OAuth 2.0 auth (no tokens on disk), zero-install remote server at mcp.sentry.dev, Seer AI root cause analysis. Pre-1.0 rough edges (748+ GitHub issues), but the architecture is right. If you use Sentry, install this.
 
-Datadog, PagerDuty, Grafana, and Honeycomb all have MCP servers too. We haven't reviewed them individually yet, but the trend is clear: observability tools are racing to add MCP support.
+**Datadog MCP** — the broadest toolset (50+ tools across 9 modular toolsets). Covers APM, infrastructure, logs, error tracking, feature flags, LLM observability, and synthetics. GA status. The enterprise choice.
+
+**Grafana MCP** (1,200+ stars) — the only open-source option that works with any backend data source. Best for teams running their own observability stack.
+
+**New Relic MCP** — natural language to NRQL translation (no query language required). 35 tools, generous free tier (100GB/mo). Public Preview.
+
+**Honeycomb MCP** — high-cardinality event analysis with natural language querying and Agent Skills for autonomous investigation. Best for complex distributed debugging.
+
+**PagerDuty MCP** — incident management, not telemetry. Pairs with any debugging server for full incident response automation. OAuth 2.0 + self-hosted options.
+
+**Our recommendation:** Use your existing observability platform's MCP server — these are all tightly coupled to their platforms. Add PagerDuty if you're on-call.
+
+**Full comparison:** [Best Observability MCP Servers in 2026](/guides/best-observability-mcp-servers/)
 
 ---
 
@@ -203,7 +215,6 @@ Some popular servers we haven't covered yet but are on our list:
 - **Figma Dev Mode** — exposes live Figma design structures to AI. Strong for frontend workflows.
 - **Vercel MCP** — deployment monitoring and management.
 - **Neon / Supabase** — cloud-hosted database servers with serverless scaling.
-- **Datadog MCP** — observability competitor to Sentry MCP.
 
 We'll review these as the site grows. Subscribe to our [RSS feed](/feed.xml) to get notified.
 

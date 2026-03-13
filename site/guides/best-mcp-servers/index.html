@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Best MCP Servers for Developers in 2026 — ChatForest</title>
-  <meta name="description" content="We&#39;ve reviewed 15 MCP servers and compared 40&#43; across 8 categories. Here are the ones worth installing — and the ones to avoid.">
+  <meta name="description" content="We&#39;ve reviewed 15 MCP servers and compared 40&#43; across 9 categories. Here are the ones worth installing — and the ones to avoid.">
   <meta property="og:title" content="Best MCP Servers for Developers in 2026 — ChatForest">
-  <meta property="og:description" content="We&#39;ve tested 15 MCP servers and compared 40&#43; across 8 categories. Here&#39;s every recommendation in one place — with honest ratings, not just feature lists.">
+  <meta property="og:description" content="We&#39;ve tested 15 MCP servers and compared 40&#43; across 9 categories. Here&#39;s every recommendation in one place — with honest ratings, not just feature lists.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/guides/best-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
@@ -45,7 +45,7 @@
 
       <div class="article-body">
         <p>Most &ldquo;best MCP servers&rdquo; lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don&rsquo;t tell you if it&rsquo;s good.</p>
-<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">15 in-depth reviews</a> and <a href="/guides/">8 category comparisons</a> so far. This guide distills all of that into one page.</p>
+<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">15 in-depth reviews</a> and <a href="/guides/">9 category comparisons</a> so far. This guide distills all of that into one page.</p>
 <p><strong>What makes this different:</strong> every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.</p>
 <h2 id="the-short-version">The short version</h2>
 <p>If you want to skip the details:</p>
@@ -210,9 +210,15 @@
 <p><strong><a href="/reviews/slack-mcp-server/">Slack MCP</a> (4/5)</strong> — Slack&rsquo;s official server (launched Feb 2026). Hosted architecture at mcp.slack.com, OAuth scopes, granular privacy controls. The right way to give agents Slack access — no bot tokens on disk, admin oversight built in.</p>
 <hr>
 <h2 id="observability--developer-tools">Observability &amp; developer tools</h2>
-<p>A growing category as more developer tool companies add MCP support.</p>
+<p>The most &ldquo;first-party&rdquo; category in the MCP ecosystem — every major platform has shipped an official MCP server.</p>
 <p><strong><a href="/reviews/sentry-mcp-server/">Sentry MCP</a> (4/5)</strong> — the best example of how first-party MCP integration <em>should</em> work. OAuth 2.0 auth (no tokens on disk), zero-install remote server at mcp.sentry.dev, Seer AI root cause analysis. Pre-1.0 rough edges (748+ GitHub issues), but the architecture is right. If you use Sentry, install this.</p>
-<p>Datadog, PagerDuty, Grafana, and Honeycomb all have MCP servers too. We haven&rsquo;t reviewed them individually yet, but the trend is clear: observability tools are racing to add MCP support.</p>
+<p><strong>Datadog MCP</strong> — the broadest toolset (50+ tools across 9 modular toolsets). Covers APM, infrastructure, logs, error tracking, feature flags, LLM observability, and synthetics. GA status. The enterprise choice.</p>
+<p><strong>Grafana MCP</strong> (1,200+ stars) — the only open-source option that works with any backend data source. Best for teams running their own observability stack.</p>
+<p><strong>New Relic MCP</strong> — natural language to NRQL translation (no query language required). 35 tools, generous free tier (100GB/mo). Public Preview.</p>
+<p><strong>Honeycomb MCP</strong> — high-cardinality event analysis with natural language querying and Agent Skills for autonomous investigation. Best for complex distributed debugging.</p>
+<p><strong>PagerDuty MCP</strong> — incident management, not telemetry. Pairs with any debugging server for full incident response automation. OAuth 2.0 + self-hosted options.</p>
+<p><strong>Our recommendation:</strong> Use your existing observability platform&rsquo;s MCP server — these are all tightly coupled to their platforms. Add PagerDuty if you&rsquo;re on-call.</p>
+<p><strong>Full comparison:</strong> <a href="/guides/best-observability-mcp-servers/">Best Observability MCP Servers in 2026</a></p>
 <hr>
 <h2 id="image-generation">Image generation</h2>
 <p>The most fragmented category we&rsquo;ve covered. There&rsquo;s no single dominant server.</p>
@@ -253,7 +259,6 @@
 <li><strong>Figma Dev Mode</strong> — exposes live Figma design structures to AI. Strong for frontend workflows.</li>
 <li><strong>Vercel MCP</strong> — deployment monitoring and management.</li>
 <li><strong>Neon / Supabase</strong> — cloud-hosted database servers with serverless scaling.</li>
-<li><strong>Datadog MCP</strong> — observability competitor to Sentry MCP.</li>
 </ul>
 <p>We&rsquo;ll review these as the site grows. Subscribe to our <a href="/feed.xml">RSS feed</a> to get notified.</p>
 <hr>
@@ -323,7 +328,7 @@
     
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"datePublished":"2026-03-14","description":"We've reviewed 15 MCP servers and compared 40+ across 8 categories. Here are the ones worth installing — and the ones to avoid.","headline":"Best MCP Servers for Developers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"datePublished":"2026-03-14","description":"We've reviewed 15 MCP servers and compared 40+ across 9 categories. Here are the ones worth installing — and the ones to avoid.","headline":"Best MCP Servers for Developers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-mcp-servers/"}
 </script>
 
 

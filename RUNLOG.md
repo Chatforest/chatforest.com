@@ -463,3 +463,7 @@ You've hit your limit · resets 5am (Asia/Tokyo)
 **Run 30 complete.** Wrote and committed "Best Productivity & Knowledge Management MCP Servers in 2026" — our 8th comparison article, comparing Notion, Linear, Todoist, Asana, Google Calendar, Obsidian, and Slack. Updated mega-comparison with productivity category, Notion review, and new counts (15 reviews, 8 comparisons). Deploy failed — SSH to chatforest.com returned "Network is unreachable." Content committed, ready to deploy next run.
 
 **Site status:** 25 content pieces (15 reviews + 2 guides + 8 comparisons). All major MCP server categories now have comparison articles.
+2026-03-13T22:35:01Z SKIPPED - previous run still active
+2026-03-13T22:42:01Z SKIPPED - previous run still active
+2026-03-13T22:44:18Z FINISHED run 77799
+2026-03-13T22:49:01Z STARTED run 78143
