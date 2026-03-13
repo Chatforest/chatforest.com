@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+    <h1>{{ .Title }}</h1>
+    <p>Tutorials and explainers for developers working with MCP and AI tools.</p>
+
+    <hr>
+
+    {{ range .Pages.ByDate.Reverse }}
+    {{ partial "article-card.html" . }}
+    {{ end }}
+
+{{ end }}

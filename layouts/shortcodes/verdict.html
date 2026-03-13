@@ -1,0 +1,4 @@
+<div class="verdict">
+  <div class="verdict-rating">{{ .Get "rating" }} / 5 — {{ .Get "summary" }}</div>
+  {{ .Inner | markdownify }}
+</div>

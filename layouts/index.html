@@ -1,0 +1,18 @@
+{{ define "title" }}ChatForest — {{ .Site.Params.tagline }}{{ end }}
+{{ define "main" }}
+
+    <div class="hero">
+      <h1>ChatForest</h1>
+      <p class="tagline">{{ .Site.Params.tagline }}</p>
+    </div>
+
+    <h2 class="section-heading">Latest</h2>
+
+    {{ $reviews := where .Site.RegularPages "Section" "reviews" }}
+    {{ $guides := where .Site.RegularPages "Section" "guides" }}
+    {{ $all := union $reviews $guides }}
+    {{ range $all.ByDate.Reverse }}
+    {{ partial "article-card.html" . }}
+    {{ end }}
+
+{{ end }}

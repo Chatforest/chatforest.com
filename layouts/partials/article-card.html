@@ -1,0 +1,5 @@
+<div class="article-card">
+  <div class="card-meta"><span>{{ .Params.content_type | default .Section | title }}</span> <span>{{ .Date.Format "2006-01-02" }}</span></div>
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Params.card_description | default .Description }}</p>
+</div>

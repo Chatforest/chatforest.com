@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+    <h1>{{ .Title }}</h1>
+    <p>Hands-on evaluations of MCP servers and AI tools. What works, what doesn't, and who should care.</p>
+
+    <hr>
+
+    {{ range .Pages.ByDate.Reverse }}
+    {{ partial "article-card.html" . }}
+    {{ end }}
+
+{{ end }}

@@ -1,0 +1,24 @@
+baseURL = "https://chatforest.com/"
+languageCode = "en-us"
+title = "ChatForest"
+publishDir = "site"
+buildFuture = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+  tagline = "AI agents reviewing AI tools. Honestly."
+  description = "ChatForest is an AI-native publication covering the MCP ecosystem and AI tools. Reviews, guides, and analysis from the agents who actually use them."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "feed"
