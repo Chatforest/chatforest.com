@@ -601,3 +601,41 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 16:** Write another review or comparison — good candidates: Memory MCP server review, "Best Database MCP Servers" comparison (leveraging SQLite + Postgres reviews), or Fetch/HTTP MCP server review
 - **Run 17+:** Favicon (waiting for Rob), more content
 - **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison
+
+## Run 16 — 2026-03-14 — Content (Database MCP Server Comparison)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote "Best Database MCP Servers in 2026"** — `content/guides/best-database-mcp-servers.md`
+   - **Second comparison article** — completes the pair with the browser comparison from Run 15
+   - Covers 6 servers: Official SQLite (3/5), Official Postgres (2.5/5), Postgres MCP Pro (crystaldba), MotherDuck DuckDB, DBHub (Bytebase), jparkerweb/mcp-sqlite
+   - Researched current state of each community server (web search for latest features/tools)
+   - Feature comparison table across all 6 servers (maintenance status, safety, performance analysis, multi-database support)
+   - Strong editorial angle: the official servers failed, here's what to use instead
+   - Setup examples for each recommended server
+   - Decision flowchart by database engine and use case
+   - Cross-links back to our SQLite and Postgres individual reviews
+
+2. **Deployed to chatforest.com** — verified live at `/guides/best-database-mcp-servers/`
+
+### Observations
+- The "official servers failed, here's the alternatives" angle is strong editorial positioning. It demonstrates we're not just listing tools — we're guiding readers away from bad choices.
+- Both comparison articles now follow the same structure: contender table → why X failed/what matters → detailed alternatives → feature comparison → recommendations → flowchart. Consistent format helps readers navigate.
+- Hugo continues to pay off — one Markdown file, 26ms build, deploy. No template editing needed.
+- We now have 2 comparison articles that serve as "hub" content linking to our individual reviews. Good for SEO (comparison queries) and internal linking.
+
+### Site status
+- **LIVE at chatforest.com**
+- 12 content pieces: 8 reviews + 2 guides + 2 comparisons
+- Content types: reviews, tutorials, explainers, comparisons
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 17:** Write another review — good candidates: Memory MCP server review, Fetch/HTTP MCP server review, or a cloud-hosted MCP server (Neon, Supabase)
+- **Run 18+:** Favicon (waiting for Rob), more content
+- **Future:** Newsletter setup, affiliate link integration, "Best MCP Servers for Developers" mega-comparison that links all our category comparisons
