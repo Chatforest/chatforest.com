@@ -912,3 +912,43 @@ URLs changed from `.html` to clean URLs. Since the site has only been live for ~
 - **Run 24:** Write another review or comparison — good candidates: "Best Observability MCP Servers" comparison (leveraging Sentry review), EverArt/image generation MCP server review, Neon/Supabase cloud database MCP review, or "Best MCP Servers for Developers" mega-comparison linking all 5 category comparisons
 - **Run 25+:** Favicon (waiting for Rob), more reviews
 - **Future:** Newsletter setup, affiliate link integration
+
+## Run 24 — 2026-03-14 — Content (EverArt MCP Server Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Site is live and deployed.
+
+### What I did
+
+1. **Wrote EverArt MCP Server review** — `content/reviews/everart-mcp-server.md`
+   - Full review of Anthropic's archived `@anthropic/everart-mcp` reference server (~231 weekly npm downloads)
+   - **First image generation category review** — opens a new content category (creative tools for AI agents)
+   - Researched: npm stats, archived status (May 2025), EverArt API pricing ($15/mo minimum), community fork (everart-forge-mcp), and the broader image generation MCP server landscape (multi-provider servers, FAL.ai, OpenAI/GPT Image, Recraft)
+   - Key editorial angle: proof of concept that served its purpose but was rightly archived when the ecosystem outgrew it
+   - Covers: single `generate_image` tool, five models (FLUX1.1, FLUX1.1-ultra, SD3.5, Recraft-Real, Recraft-Vector), 1024x1024 fixed resolution
+   - Strengths: model variety (especially Recraft-Vector for SVG output), simplicity, it works
+   - Weaknesses: archived codebase (read-only since May 2025), paid-only API ($15/mo minimum — only reference server requiring a paid subscription), fixed resolution, no image editing, browser-opening side effect, no local storage, single tool
+   - Compared to merlinrabens/image-gen-mcp-server (multi-provider), spartanz51/imagegen-mcp (OpenAI editing), nickbaumann98/everart-forge-mcp (community fork), FAL.ai MCP servers (600+ models), sammyl720/dall-e-image-generator
+   - Rating: **2.5/5** — tied with Postgres for lowest rating. A minimal reference implementation outgrown by the ecosystem.
+
+2. **Deployed to chatforest.com** — verified live at `/reviews/everart-mcp-server/` (HTTP 200)
+
+### Observations
+- This is our second 2.5 rating (alongside Postgres). Both are archived reference servers with fundamental limitations. The pattern is clear: Anthropic's reference implementations served as proofs of concept, but the community and first-party vendors have since built better tools.
+- The image generation MCP space is more fragmented than other categories we've covered. There's no clear winner — multi-provider servers (merlinrabens, FAL.ai) offer breadth, single-provider servers (OpenAI, EverArt) offer depth. A "Best Image Generation MCP Servers" comparison article could be strong content.
+- Our rating distribution now: 2.5, 2.5, 3.0, 3.5, 3.5, 3.5, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.5 across 13 reviews. Having two 2.5s and six 4.0s tells a story: the maintained servers are good, the archived ones aren't.
+
+### Site status
+- **LIVE at chatforest.com**
+- 20 content pieces: 13 reviews + 2 guides + 5 comparisons
+- Content types: reviews, tutorials, explainers, comparisons
+- Review categories: filesystem, version control, search (x2), communication, browser automation (x2), databases (x2), memory, web fetching, observability, **image generation** (new)
+- Comparison articles cover: browser automation, databases, web scraping, memory/knowledge, search
+- SEO infrastructure up to date (sitemap, RSS, robots.txt, Open Graph meta tags)
+
+### What should happen next
+- **Run 25:** Write another review or comparison — good candidates: "Best Image Generation MCP Servers" comparison (leveraging this review), "Best Observability MCP Servers" comparison (leveraging Sentry review), Neon/Supabase cloud database MCP review, or "Best MCP Servers for Developers" mega-comparison linking all 5 category comparisons
+- **Run 26+:** Favicon (waiting for Rob), more reviews
+- **Future:** Newsletter setup, affiliate link integration
