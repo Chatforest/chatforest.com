@@ -1,15 +1,15 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14
-description: "We've reviewed 19 MCP servers and compared 40+ across 9 categories. Here are the ones worth installing — and the ones to avoid."
-og_description: "We've tested 18 MCP servers and compared 40+ across 9 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
+description: "We've reviewed 19 MCP servers and compared 40+ across 10 categories. Here are the ones worth installing — and the ones to avoid."
+og_description: "We've tested 19 MCP servers and compared 40+ across 10 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
-card_description: "We've reviewed 19 MCP servers across 9 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
+card_description: "We've reviewed 19 MCP servers across 10 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
 ---
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [19 in-depth reviews](/reviews/) and [9 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [19 in-depth reviews](/reviews/) and [10 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -38,6 +38,9 @@ If you want to skip the details:
 | Productivity (tasks) | Linear MCP | — | Todoist (personal) |
 | Deployment | [Vercel MCP](/reviews/vercel-mcp-server/) | 3.5/5 | Community alternatives (more tools) |
 | Design-to-code | [Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) | 3.5/5 | Framelink (community, better output) |
+| DevOps (IaC) | Terraform MCP | — | AWS MCP (AWS-specific) |
+| DevOps (containers) | Docker MCP | — | Kubernetes MCP |
+| DevOps (platform) | Azure DevOps MCP | — | [GitHub MCP](/reviews/github-mcp-server/) (4.5/5) |
 
 Now the details.
 
@@ -240,6 +243,28 @@ The catch: Figma's free tier gives you **6 tool calls per month** — the most a
 **The community alternative:** [Framelink](https://github.com/GLips/Figma-Context-MCP) (13,700 GitHub stars vs. 403 for the official guide repo) outputs descriptive JSON instead of prescriptive code, preserves component nesting, produces ~25% smaller payloads, and works with Figma's standard API limits instead of the 6/month cap. If you just need design-to-code translation, Framelink is the better tool. If you need the full design-code-design loop, the official server is the only option.
 
 **Full review:** [The Figma Dev Mode MCP Server](/reviews/figma-dev-mode-mcp-server/)
+
+---
+
+## DevOps & infrastructure
+
+The fastest-growing MCP server category. Every major DevOps platform now ships an official MCP server, and AWS alone has 60+ specialized servers.
+
+**For infrastructure as code:** **Terraform MCP** (HashiCorp, beta). Gives agents access to provider documentation, module specifications, and Sentinel policies from the Terraform Registry. Helps agents write correct resource blocks instead of hallucinating arguments. Supports Stacks for complex multi-component deployments. Deliberately doesn't run `terraform apply` — a smart safety choice.
+
+**For containers:** **Docker MCP Toolkit**. More than a server — it's an ecosystem. The MCP Catalog hosts 300+ verified server images, and Dynamic MCP lets agents discover and install tools mid-conversation. Each server runs sandboxed (2GB memory, no host filesystem).
+
+**For Kubernetes:** **Kubernetes MCP** (Red Hat's `containers/kubernetes-mcp-server`). Native Go binary that talks directly to the K8s API, supporting any resource type, multi-cluster operations, and read-only mode. The fragmented ecosystem (6+ implementations) is the main downside — there's no official CNCF server.
+
+**For AWS:** **AWS MCP** suite (awslabs/mcp). 60+ specialized servers covering compute, storage, databases, AI/ML, security, and cost analysis. The Cloud Control API server enables natural language resource management; the Knowledge server indexes AWS documentation. The breadth is unmatched but overwhelming.
+
+**For Azure DevOps:** **Azure DevOps MCP** (Microsoft, GA). Covers work items, PRs, builds, pipelines, tests, and wikis. Now built into Visual Studio 2026. Remote hosted server coming in 2026.
+
+**For CI/CD:** Use [GitHub MCP](/reviews/github-mcp-server/) (4.5/5) — it covers Actions workflows, build logs, and deployment management. It's the strongest CI/CD option in the ecosystem.
+
+**Safety note:** DevOps MCP servers can modify production infrastructure. Use read-only modes, scope credentials tightly, start with non-production environments, and always review before applying changes.
+
+**Full comparison:** [Best DevOps & Infrastructure MCP Servers in 2026](/guides/best-devops-mcp-servers/)
 
 ---
 
