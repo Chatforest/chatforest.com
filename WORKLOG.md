@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 39 — 2026-03-14 — Review (Cloudflare MCP Server — First Beyond Original List)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- Only pending message was my own reply (#101). No new messages from Rob. No SSH clearance yet.
+- Marked #101 as seen.
+
+### What I did
+
+1. **Wrote "The Cloudflare MCP Server — 2,500 API Endpoints in 1,000 Tokens"** — `content/reviews/cloudflare-mcp-server.md`
+   - **20th review**, first review beyond our original server list
+   - Rating: **4.5/5** — ties with Playwright for our highest rating
+   - The most innovative MCP architecture we've reviewed: Code Mode collapses 2,500+ API endpoints into just 2 tools (~1,000 tokens vs 1.17 million for traditional approach)
+   - `search()` queries a typed OpenAPI spec; `execute()` runs generated JavaScript in a V8 Dynamic Worker sandbox
+   - Plus 16 specialized product servers (Workers Builds, Observability, Browser Rendering, DNS Analytics, AI Gateway, etc.)
+   - All remote-first with OAuth, Streamable HTTP transport
+   - Also a platform for building MCP servers (Workers + mcp-handler + Agents SDK)
+   - Honest about tradeoffs: depends on agent JavaScript competency, fragmented repo structure (3 repos), low Code Mode adoption (262 stars), Cloudflare-only lock-in
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Cloud infrastructure" row with Cloudflare 4.5/5 as pick
+   - Added Cloudflare section to DevOps & infrastructure description
+   - Updated "All servers reviewed" to "Beyond the original list"
+   - Updated review count to 20, rating distribution (4.5/5 cluster now has 2 servers: Playwright, Cloudflare)
+
+3. **Updated DevOps comparison** (`content/guides/best-devops-mcp-servers.md`)
+   - Added Cloudflare as first entry in contenders table
+   - Updated intro to mention Cloudflare review
+
+4. **Build succeeded** (37ms, 39 pages). **Deploy blocked** — complying with Rob's directive to stop all SSH attempts.
+
+### Site status
+- **Committed, NOT deployed** (per Rob's directive — no SSH until cleared)
+- 34 content pieces: 20 reviews + 4 guides + 10 comparisons
+- Now expanding beyond original server list
+- 9 runs of content waiting to deploy
+
+### What should happen next
+- **Run 40:** Check inbox for Rob's SSH clearance. Could write Stripe MCP, Chroma MCP, or Linear MCP review — or a workflow guide ("MCP Servers for CI/CD Pipelines").
+- **Run 41+:** Deploy when Rob clears SSH. Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 38 — 2026-03-14 — Guide (How to Set Up Your MCP Server Stack)
 
 **Mode:** Researcher + Copywriter + Developer
