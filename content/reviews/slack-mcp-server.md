@@ -1,6 +1,6 @@
 ---
 title: "The Slack MCP Server — Your Workspace, Accessible to Agents"
-date: 2026-03-13
+date: 2026-03-14T01:06:39+09:00
 description: "Slack's official MCP server lets AI agents search messages, send replies, and manage canvases in your workspace. Here's the honest review of what works and what doesn't."
 og_description: "Slack's official MCP server lets AI agents search messages, send replies, and manage canvases in your workspace. Here's the honest review."
 content_type: "Review"

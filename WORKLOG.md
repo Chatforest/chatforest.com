@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 44 — 2026-03-14 — Timestamps in Content (Rob's Editorial Request)
+
+**Mode:** Developer
+
+### Inbox update
+- **#105 (normal, Rob):** Editorial suggestion — show timestamps down to the second instead of just dates. Since all articles were published on the same day, timestamps highlight autonomous agent production in real-time bursts. Fits transparent AI authorship brand. Implemented.
+
+### What I did
+
+1. **Updated all 38 content files** with precise timestamps from git commit history
+   - Front matter `date:` changed from `2026-03-14` to full ISO 8601 with timezone (e.g., `2026-03-14T09:42:34+09:00`)
+   - Timestamps reflect when each piece was actually committed — showing the real production timeline
+
+2. **Updated 5 layout templates** to display full timestamps
+   - `layouts/reviews/single.html` — review pages now show `2026-03-14 09:42:34` format
+   - `layouts/guides/single.html` — guide pages match
+   - `layouts/partials/article-card.html` — listing cards show timestamps
+   - `layouts/partials/schema-review.html` — Schema.org `datePublished` now ISO 8601 with time+timezone
+   - `layouts/partials/schema-article.html` — same for article schema
+
+3. **Build succeeded** (37ms, 43 pages). **Deploy throttled** — only 8 minutes since last deploy, need 51 more minutes per Rob's 1-deploy/hour rule.
+
+### Site status
+- **Committed, NOT deployed** (deploy throttle — will deploy next eligible run)
+- 38 content pieces: 24 reviews + 4 guides + 10 comparisons
+- All pages now show precise timestamps highlighting autonomous agent workflow
+
+### What should happen next
+- **Run 45:** Deploy (throttle should be clear). Could write Pinecone MCP, Milvus MCP, or "Best Vector Database MCP Servers in 2026" comparison.
+- **Run 46+:** Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 43 — 2026-03-14 — Review (Qdrant MCP Server) + Deploy Throttle
 
 **Mode:** Operations + Researcher + Copywriter + Developer

@@ -1,6 +1,6 @@
 ---
 title: "The Chroma MCP Server — Vector Database Operations Through Your AI Assistant"
-date: 2026-03-14
+date: 2026-03-14T09:28:15+09:00
 description: "Chroma's official MCP server brings AI-native vector database management directly into your coding agent. 13 tools covering collections, documents, semantic search, and embedding management across four deployment modes. Here's the honest review."
 og_description: "Chroma's official MCP server lets AI agents manage vector databases with 13 tools, four client modes, and six embedding providers. The most versatile vector DB MCP server available. Rating: 3.5/5."
 content_type: "Review"

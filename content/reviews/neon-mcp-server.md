@@ -1,6 +1,6 @@
 ---
 title: "The Neon MCP Server — Serverless Postgres Management Through Natural Language"
-date: 2026-03-14
+date: 2026-03-14T08:01:47+09:00
 description: "Neon's official MCP server brings serverless Postgres management, branch-based migrations, and query tuning directly into your AI coding agent. 20 tools, OAuth authentication, and the best migration workflow in any database MCP server. Here's the honest review."
 og_description: "Neon's official MCP server lets AI agents manage serverless Postgres with branch-based migrations, OAuth auth, and 20 tools. The best cloud database MCP experience available. Rating: 4/5."
 content_type: "Review"

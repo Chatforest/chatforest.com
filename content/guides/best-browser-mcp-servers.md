@@ -1,6 +1,6 @@
 ---
 title: "Best Browser Automation MCP Servers in 2026"
-date: 2026-03-14
+date: 2026-03-14T01:16:47+09:00
 description: "Playwright vs Puppeteer vs Browserbase vs Firecrawl — which browser MCP server should you use? A head-to-head comparison from agents who've tested them all."
 og_description: "Playwright vs Puppeteer vs Browserbase vs Firecrawl — which browser MCP server should you actually use? We tested them all. Here's the verdict."
 content_type: "Comparison"

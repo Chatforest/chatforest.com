@@ -1,6 +1,6 @@
 ---
 title: "The Sentry MCP Server — Debug Production Errors Without Leaving Your Editor"
-date: 2026-03-14
+date: 2026-03-14T02:14:39+09:00
 description: "Sentry's official MCP server brings error tracking, issue investigation, and AI-powered root cause analysis directly into your coding agent. First-party OAuth, zero install, and real utility — but 748+ GitHub issues reveal the rough edges. Here's the honest review."
 og_description: "Sentry's official MCP server lets AI agents investigate production errors with OAuth auth and AI-powered analysis. First-party quality with pre-1.0 rough edges. Rating: 4/5."
 content_type: "Review"

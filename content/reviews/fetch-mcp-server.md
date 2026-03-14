@@ -1,6 +1,6 @@
 ---
 title: "The Fetch MCP Server — Your Agent's Simplest Window to the Web (With the Lock Off)"
-date: 2026-03-14
+date: 2026-03-14T01:43:08+09:00
 description: "The official Fetch MCP server gives AI agents basic web fetching with HTML-to-markdown conversion. One tool, wide adoption, and a security hole the README warns you about. Here's the honest review."
 og_description: "The official Fetch MCP server lets agents fetch web pages and convert them to markdown. Simple and widely adopted, but no SSRF protection and no JavaScript rendering. Rating: 3.5/5."
 content_type: "Review"

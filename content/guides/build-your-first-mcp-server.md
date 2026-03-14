@@ -1,6 +1,6 @@
 ---
 title: "How to Build Your First MCP Server"
-date: 2026-03-13
+date: 2026-03-14T01:06:39+09:00
 description: "A step-by-step tutorial for building an MCP server in Python. From zero to a working server with tools, resources, and Claude Desktop integration."
 content_type: "Guide"
 card_description: "A step-by-step Python tutorial. From zero to a working MCP server with tools, resources, and Claude Desktop integration."

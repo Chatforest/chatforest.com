@@ -1,6 +1,6 @@
 ---
 title: "Best Database MCP Servers in 2026"
-date: 2026-03-14
+date: 2026-03-14T01:24:23+09:00
 description: "SQLite vs PostgreSQL vs DuckDB — which database MCP server should you use? We compare the official servers, their replacements, and the best community alternatives."
 og_description: "Official Anthropic database servers are archived. Here's what to use instead: Postgres MCP Pro, MotherDuck DuckDB, DBHub, and more. A head-to-head comparison."
 content_type: "Comparison"

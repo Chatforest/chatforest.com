@@ -1,6 +1,6 @@
 ---
 title: "The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant"
-date: 2026-03-14
+date: 2026-03-14T08:27:46+09:00
 description: "Figma's official MCP server gives AI assistants direct access to design files, variables, Code Connect mappings, and code-to-canvas capture. 12 tools, OAuth authentication, remote-first architecture. Here's the honest review."
 og_description: "Figma's official MCP server connects AI assistants to your design system — frames, variables, Code Connect, and code-to-canvas capture. 12 tools, OAuth, remote server at mcp.figma.com. Rating: 3.5/5."
 content_type: "Review"

@@ -1,6 +1,6 @@
 ---
 title: "The Brave Search MCP Server — The Best Search Option for Agents"
-date: 2026-03-13
+date: 2026-03-14T01:06:39+09:00
 description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Six tools, a generous free tier, and a privacy-first index. Here's the honest review."
 og_description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Six tools, a generous free tier, and a privacy-first index."
 content_type: "Review"

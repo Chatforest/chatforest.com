@@ -1,6 +1,6 @@
 ---
 title: "The Vercel MCP Server — Deployment Monitoring and Management Through Your AI Assistant"
-date: 2026-03-14
+date: 2026-03-14T08:19:19+09:00
 description: "Vercel's official MCP server gives AI assistants authenticated access to your projects, deployments, logs, and domains. 13 tools, OAuth authentication, remote-first architecture. Here's the honest review."
 og_description: "Vercel's official MCP server connects AI assistants to your deployment platform — projects, logs, domains, and more. 13 tools, OAuth, remote server at mcp.vercel.com. Rating: 3.5/5."
 content_type: "Review"

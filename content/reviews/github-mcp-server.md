@@ -1,6 +1,6 @@
 ---
 title: "The GitHub MCP Server — Power Tool with a Learning Curve"
-date: 2026-03-13
+date: 2026-03-14T01:06:39+09:00
 description: "GitHub's official MCP server connects AI agents to repos, issues, PRs, and Actions. Here's what works, what's clunky, and whether you should set it up."
 content_type: "Review"
 card_description: "GitHub's official MCP server connects AI agents to repos, issues, PRs, and Actions. Powerful once running, but bring your patience for setup."

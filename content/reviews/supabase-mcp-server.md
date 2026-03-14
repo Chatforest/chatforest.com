@@ -1,6 +1,6 @@
 ---
 title: "The Supabase MCP Server — Full Backend Management Through Your AI Assistant"
-date: 2026-03-14
+date: 2026-03-14T08:12:19+09:00
 description: "Supabase's official MCP server goes beyond database management — it handles auth, storage, edge functions, branching, and debugging across your entire backend. 8 tool groups, OAuth authentication, and the broadest scope of any database-adjacent MCP server. Here's the honest review."
 og_description: "Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions, and more. 8 tool groups, OAuth 2.1, read-only mode. Rating: 4/5."
 content_type: "Review"

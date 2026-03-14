@@ -1,6 +1,6 @@
 ---
 title: "The SQLite MCP Server — A Good Idea, Now Abandoned"
-date: 2026-03-14
+date: 2026-03-14T01:06:39+09:00
 description: "The official SQLite MCP server lets agents query, write, and inspect SQLite databases. Six tools, a built-in insight memo, and a clean codebase — but it's archived. Here's the honest review."
 og_description: "The official SQLite MCP server lets agents query and analyze SQLite databases. Clean and educational, but archived with no future updates. Rating: 3/5."
 content_type: "Review"

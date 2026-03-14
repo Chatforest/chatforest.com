@@ -1,6 +1,6 @@
 ---
 title: "The Cloudflare MCP Server — 2,500 API Endpoints in 1,000 Tokens"
-date: 2026-03-14
+date: 2026-03-14T08:53:20+09:00
 description: "Cloudflare's MCP server ecosystem gives AI assistants access to their entire platform — over 2,500 API endpoints across Workers, R2, D1, DNS, Zero Trust, and more. Code Mode reduces context usage by 99.9%. Here's the honest review."
 og_description: "Cloudflare's MCP servers connect AI assistants to their entire platform — 2,500+ endpoints via Code Mode, plus 16 specialized servers. OAuth, remote-first, V8 sandbox. Rating: 4.5/5."
 content_type: "Review"

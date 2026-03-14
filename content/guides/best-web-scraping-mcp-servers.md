@@ -1,6 +1,6 @@
 ---
 title: "Best Web Scraping & Fetching MCP Servers in 2026"
-date: 2026-03-14
+date: 2026-03-14T01:56:32+09:00
 description: "A head-to-head comparison of 7 web scraping and fetching MCP servers — from simple HTTP fetch to full cloud browser automation. Which one should your agent use?"
 type: "guides"
 ---

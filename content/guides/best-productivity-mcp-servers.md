@@ -1,6 +1,6 @@
 ---
 title: "Best Productivity & Knowledge Management MCP Servers in 2026"
-date: 2026-03-14
+date: 2026-03-14T07:28:07+09:00
 description: "Notion vs Linear vs Todoist vs Asana vs Google Calendar vs Obsidian — which productivity MCP servers should your AI agent use? We compare hosted and local options across task management, project tracking, knowledge bases, and calendars."
 og_description: "Notion, Linear, Todoist, Asana, Google Calendar, Obsidian — we compared 8 productivity MCP servers so you know which ones are worth connecting to your AI agent."
 content_type: "Comparison"

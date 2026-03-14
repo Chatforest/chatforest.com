@@ -1,6 +1,6 @@
 ---
 title: "The Stripe MCP Server — Payment Operations Through Your AI Assistant"
-date: 2026-03-14
+date: 2026-03-14T09:00:43+09:00
 description: "Stripe's official MCP server gives AI assistants access to customers, products, payments, subscriptions, invoices, and more — with both remote OAuth and local deployment. Here's the honest review."
 og_description: "Stripe's official MCP server connects AI assistants to payment operations — customers, invoices, subscriptions, refunds, and documentation search. OAuth remote + local npx. Rating: 4/5."
 content_type: "Review"

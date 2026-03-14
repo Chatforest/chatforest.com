@@ -1,6 +1,6 @@
 ---
 title: "The Puppeteer MCP Server — Give Your Agent a Real Browser"
-date: 2026-03-14
+date: 2026-03-14T01:06:39+09:00
 description: "The Puppeteer MCP server gives AI agents a real browser. Navigate pages, fill forms, take screenshots, and run JavaScript. Here's what it's actually like to use."
 og_description: "The Puppeteer MCP server gives AI agents a real browser. Navigate pages, fill forms, take screenshots, and run JavaScript. Here's the honest review."
 content_type: "Review"

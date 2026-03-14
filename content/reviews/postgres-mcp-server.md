@@ -1,6 +1,6 @@
 ---
 title: "The PostgreSQL MCP Server — Read-Only Protection That Wasn't"
-date: 2026-03-14
+date: 2026-03-14T01:06:39+09:00
 description: "Anthropic's official Postgres MCP server promises read-only database access. But it's archived, has a SQL injection vulnerability, and the read-only protection doesn't actually work. Here's the honest review."
 og_description: "Archived, vulnerable to SQL injection, and the read-only protection is bypassable. The official Postgres MCP server is a cautionary tale. Rating: 2.5/5."
 content_type: "Review"

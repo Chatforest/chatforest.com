@@ -1,6 +1,6 @@
 ---
 title: "The Memory MCP Server — A Knowledge Graph That Needs a Better Brain"
-date: 2026-03-14
+date: 2026-03-14T01:31:46+09:00
 description: "The official Knowledge Graph Memory MCP server gives agents persistent memory across conversations. Nine tools, JSONL storage, and a simple entity-relation model — but scalability and context issues hold it back. Here's the honest review."
 og_description: "The official Memory MCP server gives agents persistent memory via a knowledge graph. Simple and useful for small-scale memory, but scaling problems and context bloat limit it. Rating: 3.5/5."
 content_type: "Review"

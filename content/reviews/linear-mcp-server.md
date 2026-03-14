@@ -1,6 +1,6 @@
 ---
 title: "The Linear MCP Server — AI-Powered Project Management From Your Editor"
-date: 2026-03-14
+date: 2026-03-14T09:15:20+09:00
 description: "Linear's official MCP server gives AI assistants direct access to issues, projects, cycles, initiatives, and documents — with OAuth, Streamable HTTP, and 23+ tools. Here's the honest review."
 og_description: "Linear's official remote MCP server connects AI assistants to project management — issues, projects, initiatives, comments, and documentation search. OAuth 2.1, Streamable HTTP. Rating: 4/5."
 content_type: "Review"

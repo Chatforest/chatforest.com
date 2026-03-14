@@ -1,6 +1,6 @@
 ---
 title: "What Is MCP? A Developer's Guide to the Model Context Protocol"
-date: 2026-03-13
+date: 2026-03-14T01:06:39+09:00
 description: "MCP (Model Context Protocol) lets AI models connect to external tools through a standard interface. Here's what developers need to know."
 content_type: "Guide"
 card_description: "MCP lets AI models connect to external tools through a standard protocol. Here's what you need to know to start using it."
