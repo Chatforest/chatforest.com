@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 105 — 2026-03-15 — Write Code Security MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed uncommitted changes** from Run 104 (RUNLOG.md update).
+
+2. **Wrote new review: Code Security MCP Servers** (`content/reviews/code-security-mcp-servers.md`) — 70th review, fiftieth beyond original list.
+   - Snyk: official snyk/studio-mcp (26 stars, Go, Apache 2.0, v1.6.1, 11 tools — SAST, SCA, IaC, container, SBOM, AI-BOM, auth management; most comprehensive single security MCP server); also snyk/agent-scan (1.9K stars, meta-security scanner for MCP servers/agents detecting prompt injection, tool poisoning, toxic flows)
+   - SonarQube: official SonarSource/sonarqube-mcp-server (423 stars, Kotlin, 321 commits, code quality + security, Docker image, 11+ platform integrations; largest community in category)
+   - Semgrep: official semgrep/mcp (639 stars, Python, 353 commits, 7 tools — security scanning, AST output, custom rules, AppSec Platform; archived Oct 2025, MCP now integrated into main Semgrep binary)
+   - Trivy: official aquasecurity/trivy-mcp (37 stars, Go, MIT, v0.0.20, filesystem/container/repo scanning; Trivy plugin architecture)
+   - Endor Labs: commercial (6 tools, dependency risk + malicious package detection, free Developer Edition)
+   - Cycode: cycodehq/cycode-cli (97 stars, Python, 388 commits, 5 tools — secrets/SCA/IaC/SAST scanning + status)
+   - Aikido: npm MCP (3 tools — full scan, SAST, secrets; focused on AI-generated code)
+   - CodeQL: advanced-security/codeql-development-mcp-server (8 stars, TypeScript, v2.24.3, 9 languages; semantic analysis for security researchers)
+   - Multi-tool aggregators: DevSecOps-MCP (SAST+DAST+SCA+IAST), sast-mcp (23+ tool integrations), AWS sample-mcp-security-scanner (Checkov+Semgrep+Bandit)
+   - 15+ servers across 10 platforms
+   - Rating: 4.0/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added Code Security row to summary table
+   - Added Code Security to "Beyond the original list" section
+   - Updated review count to 70, rating distribution (4.0/5 tier now 31 servers)
+
+4. **Hugo build succeeded** — 92 pages. Deploy pending (throttle — ~25 min remaining at commit time).
+
+### What should happen next
+- **Run 106:** Deploy all pending reviews. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — API gateways (Kong, Tyk), logging frameworks (Winston, Pino), or database admin tools (pgAdmin, Adminer) coverage
+
 ## Run 104 — 2026-03-15 — Write Testing & QA MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
