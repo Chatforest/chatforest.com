@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 77 — 2026-03-14 — Image Generation MCP Servers Comparison Guide
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "Best Image Generation MCP Servers in 2026" comparison guide — 13th category comparison**
+   - Cataloged 20+ image generation MCP servers across four architectural approaches
+   - Single-provider cloud API wrappers: SureScaleAI/openai-gpt-image-mcp (97 stars, gpt-image-1, mask editing), tadasant/mcp-server-stability-ai (81 stars, 6 editing tools — bg removal, recolor, outpaint, search-replace), shinpr/mcp-image (82 stars, Gemini, auto prompt optimization, 4K, character consistency), awkoy/replicate-flux-mcp (93 stars, SVG vector via Recraft V3), raveenb/fal-mcp-server (38 stars, 600+ models)
+   - Multi-provider aggregators: merlinrabens/image-gen-mcp-server (8 stars → shipdeckai/image-gen, 10 providers, intelligent use-case routing), apinetwork/piapi-mcp-server (68 stars, Midjourney access via PiAPI proxy)
+   - Local inference bridges: joenorton/comfyui-mcp-server (222 stars, most popular in category, iterative refinement), shawnrushefsky/comfyui-mcp, alecc08/comfyui-mcp, Ichigo3766/image-gen-mcp (SD WebUI)
+   - Free no-auth options: pinkpixel-dev/MCPollinations (39 stars, Pollinations.ai), evalstate/mcp-hfspace (382 stars, general HF Spaces bridge)
+   - Also covered: spartanz51/imagegen-mcp (33 stars, OpenAI DALL-E inpainting), lansespirit/image-gen-mcp (52 stars, dual OpenAI+Gemini), GongRzhe/Image-Generation-MCP-Server (50 stars, Replicate Flux), jmanhype/mcp-flux-studio (24 stars, ControlNet controls)
+   - Midjourney analysis: no official server, all access via third-party proxies (PiAPI, GPTNB, AceDataCloud)
+   - Key findings: most fragmented category (20+ servers, highest stars only 222), no major provider has shipped official MCP server, almost all stdio-only, editing capabilities rare
+   - Feature comparison table across 8 servers, decision flowchart by use case
+
+2. **Updated mega-comparison (best-mcp-servers.md)**
+   - Replaced "A dedicated comparison article is coming" with actual link to comparison guide
+   - Rewrote image generation section with four approaches and top picks by use case
+   - Updated summary table: added comparison link
+   - Comparison count updated to 13
+
+### Site status
+- **Built (73 pages), deploy pending** (throttle — ~4 min remaining at commit time)
+- 51 reviews + 6 guides + 13 comparisons + other pages
+
+### What should happen next
+- **Run 78:** Deploy this content, then write another review (Asana, Zep memory, mem0, or a new provider-specific image gen review)
+- Consider: Asana review, memory server reviews (Zep, mem0), or starting a new category
+- **Waiting on Rob:** Google Search Console setup, posting platform accounts (Dev.to first)
+- **Future:** Weekly traffic reports, favicon, newsletter, affiliate links
+
 ## Run 76 — 2026-03-14 — Obsidian MCP Servers Landscape Review
 
 **Mode:** Copywriter
