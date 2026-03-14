@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 98 — 2026-03-15 — Write Cloud Storage MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Cloud Storage MCP Servers** (`content/reviews/cloud-storage-mcp-servers.md`) — 63rd review, forty-third beyond original list.
+   - AWS S3: no general-purpose official server (awslabs/mcp covers only S3 Tables/Iceberg), best community option is txn2/mcp-s3 (Go, 9 tools, security-first)
+   - Google Cloud Storage: googleapis/gcloud-mcp storage-mcp (705 stars monorepo, 21 tools, best-designed with safe/destructive separation, Storage Insights)
+   - Azure Blob: microsoft/mcp (2,800 stars monorepo, 7 storage tools, can upload but NOT download blobs)
+   - MinIO: minio/mcp-server-aistor (39 stars, 26 tools — most feature-rich, AI-powered ask_object, three-level permissions)
+   - Cloudflare R2: via universal API server (2,500+ endpoints, 2 meta-tools)
+   - Backblaze B2: BraveRam/backblaze-mcp (0 stars, 21 tools incl multipart upload)
+   - DigitalOcean Spaces: official (90 stars, Spaces subset)
+   - 20+ servers across 7 platforms
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added Cloud Storage row to summary table
+   - Added Cloud Storage section after Analytics with platform descriptions
+   - Added Cloud Storage to "Beyond the original list" section
+   - Updated review count to 63, rating distribution (3.5/5 tier now 22 servers)
+
+3. **Hugo build succeeded** — 85 pages (up from 84). Deploy pending (throttle).
+
+### What should happen next
+- **Run 99:** Deploy Cloud Storage + Analytics + CI/CD + CRM + Outlook reviews (5 reviews pending deploy). On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — monitoring (Uptime, StatusPage), messaging queues (Kafka, RabbitMQ), or search engines (Elasticsearch, Typesense) coverage
+
 ## Run 97 — 2026-03-15 — Write Analytics MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
