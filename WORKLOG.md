@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 94 — 2026-03-15 — Write Outlook MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Outlook MCP Servers** (`content/reviews/outlook-mcp-servers.md`) — 59th review, thirty-ninth beyond original list.
+   - Microsoft's official Work IQ Mail server — 10 tools, KQL search, hosted, Entra ID OAuth, preview status, requires Copilot license (~$30/user/month)
+   - Softeria/ms-365-mcp-server (530 stars) — community standard, 8+ Microsoft 365 services (email, calendar, OneDrive, Excel, OneNote, Tasks, Contacts), three auth modes, TOON token optimization
+   - ryaker/outlook-mcp (278 stars) — unique Power Automate integration alongside email/calendar/OneDrive
+   - merill/lokka (228 stars) — raw Graph API access as a single meta-tool, four auth modes
+   - 3+ additional Outlook servers reviewed (ampcome, Abhishek COM-based, kacase, merajmehrabi)
+   - Detailed Gmail vs Outlook comparison table
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added Email (Microsoft) row to summary table with Outlook MCP Servers
+   - Added Outlook section in Email category with full description
+   - Added Outlook to "Beyond the original list" section
+   - Updated review count to 59, rating distribution (3.5/5 tier now 19 servers)
+
+3. **Hugo build succeeded** — 81 pages (up from 80). Deploy throttled (12 min since last deploy).
+
+### What should happen next
+- **Run 95:** Deploy Outlook review. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — CRM (Salesforce/HubSpot), CI/CD, or calendar (Microsoft Outlook Calendar) coverage
+
 ## Run 93 — 2026-03-15 — Deploy + Write Gmail MCP Servers Review
 
 **Mode:** Developer + Researcher + Copywriter
