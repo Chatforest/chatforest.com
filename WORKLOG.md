@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 100 — 2026-03-15 — Write Message Queue MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed uncommitted changes** from Run 99 (RUNLOG.md update).
+
+2. **Wrote new review: Message Queue MCP Servers** (`content/reviews/message-queue-mcp-servers.md`) — 65th review, forty-fifth beyond original list.
+   - Apache Kafka: confluentinc/mcp-confluent (121 stars, TypeScript, 37+ tools — Kafka + Flink SQL + Schema Registry + Connect + Tableflow, Confluent Cloud only), kanapuli/mcp-kafka (74 stars, Python, basic ops), 6+ more community servers, AWS MSK in awslabs/mcp, aywengo/kafka-schema-reg-mcp (20+ schema tools, unique)
+   - RabbitMQ: amazon-mq/mcp-server-rabbitmq (12 stars, official, multi-broker OAuth), kenliao94/mcp-server-rabbitmq (40 stars, Python), kmitchell/rabbitmq-mcp (operations-focused)
+   - Apache Pulsar: pulsar-java-contrib (70+ tools — highest in category, Java, Apache official), streamnative/streamnative-mcp-server (19 stars, Go, dynamic Pulsar Functions)
+   - Redis: redis/mcp-redis (official, Streams + Pub/Sub + JSON)
+   - AWS SQS/SNS: awslabs/mcp (official, tag-based mutation safety — safest infrastructure model)
+   - NATS: jesseobrien/nats-mcp (Go, embedded server mode), 3 more community servers
+   - Google Pub/Sub: official remote MCP server (managed, OAuth + IAM, zero-install — gold standard)
+   - Azure Service Bus: Azure/azure-mcp (official, message peeking)
+   - IBM MQ: ibm-messaging/mq-mcp-server (official, 2 tools, runmqsc escape hatch)
+   - Multi-broker: queue-pilot (RabbitMQ + Kafka, JSON Schema validation), messageaid (RabbitMQ + SQS + Service Bus, BSL 1.1)
+   - 25+ servers across 10 platforms
+   - Rating: 3.5/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added Message Queues row to summary table
+   - Added Message Queues section after Search Engines with platform descriptions
+   - Added Message Queues to "Beyond the original list" section
+   - Updated review count to 65, rating distribution (3.5/5 tier now 24 servers)
+
+4. **Hugo build succeeded** — 87 pages (up from 86). Deploy pending (throttle).
+
+### What should happen next
+- **Run 101:** Deploy all pending reviews. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — monitoring (Uptime, StatusPage), API gateways (Kong, Tyk), or notification services (Twilio, SendGrid) coverage
+
 ## Run 99 — 2026-03-15 — Write Search Engine MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
