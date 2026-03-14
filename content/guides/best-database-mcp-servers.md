@@ -1,8 +1,8 @@
 ---
 title: "Best Database MCP Servers in 2026"
 date: 2026-03-14T01:24:23+09:00
-description: "SQLite vs PostgreSQL vs DuckDB — which database MCP server should you use? We compare the official servers, their replacements, and the best community alternatives."
-og_description: "Official Anthropic database servers are archived. Here's what to use instead: Postgres MCP Pro, MotherDuck DuckDB, DBHub, and more. A head-to-head comparison."
+description: "MongoDB vs PostgreSQL vs SQLite vs DuckDB — which database MCP server should you use? We compare official servers, community alternatives, and the new MongoDB MCP that changes the game."
+og_description: "MongoDB's 37-tool MCP server leads the pack. Plus Neon, Supabase, Postgres MCP Pro, DuckDB, DBHub, and more. A head-to-head comparison."
 content_type: "Comparison"
 card_description: "The official database MCP servers are archived. Here's what actually works: Postgres MCP Pro, DuckDB, DBHub, and the community alternatives worth using."
 ---
@@ -15,6 +15,7 @@ The good news: the community has built better alternatives. Here's how they comp
 
 | Server | Database | Rating | Best For |
 |--------|----------|--------|----------|
+| [MongoDB MCP](/reviews/mongodb-mcp-server/) | MongoDB | 4/5 | MongoDB + Atlas management |
 | [Supabase MCP](/reviews/supabase-mcp-server/) | Supabase (BaaS) | 4/5 | Full backend management |
 | [Neon MCP](/reviews/neon-mcp-server/) | Neon Postgres | 4/5 | Cloud Postgres with AI workflows |
 | [Official SQLite MCP](/reviews/sqlite-mcp-server/) | SQLite | 3/5 | Learning MCP only |
@@ -88,6 +89,36 @@ If you're using either of these, stop. Not eventually — now.
 ```
 
 **How it compares to Neon:** Supabase goes wide (full backend), Neon goes deep (database). Neon's copy-on-write branching includes data; Supabase's is schema-only and requires a paid plan. For pure database work, Neon is better. For managing your entire Supabase stack from one server, Supabase wins. [Read our full review](/reviews/supabase-mcp-server/).
+
+### For MongoDB: MongoDB MCP Server
+
+**[MongoDB MCP](/reviews/mongodb-mcp-server/)** (4/5) is the most comprehensive database MCP server we've reviewed — 37+ tools across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search.
+
+**What it offers:**
+- 21 database tools: find, aggregate, count, insert/update/delete, index management, schema inspection, explain, export, logs
+- 12 Atlas management tools: create projects, provision clusters, manage users, inspect access lists, monitor alerts
+- 4 local deployment tools: create and manage local MongoDB clusters via Docker
+- Performance Advisor: suggested indexes, drop recommendations, schema advice, slow query analysis
+- Knowledge search: natural language queries against MongoDB documentation
+- Automatic embedding generation for vector search indexes during insert operations
+
+**Setup:**
+```json
+{
+  "mcpServers": {
+    "mongodb": {
+      "command": "npx",
+      "args": ["-y", "mongodb-mcp-server"],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "mongodb+srv://...",
+        "MDB_MCP_READ_ONLY": "true"
+      }
+    }
+  }
+}
+```
+
+**Why it wins:** No other database MCP server covers the full lifecycle — from provisioning infrastructure to querying data to optimizing performance. The Performance Advisor integration is unique: your agent can ask why a query is slow, get index suggestions, and create the index, all through MCP. The 1-2 week release cadence shows serious investment. Set `MDB_MCP_READ_ONLY=true` — the default-writable mode is the main safety concern. [Read our full review](/reviews/mongodb-mcp-server/).
 
 ### For Self-Hosted PostgreSQL: Postgres MCP Pro
 
@@ -201,18 +232,20 @@ dsn = "sqlite:///path/to/local.db"
 
 ## Feature Comparison
 
-| Feature | Postgres MCP Pro | DuckDB (MotherDuck) | DBHub | jparkerweb/mcp-sqlite | Official SQLite | Official Postgres |
-|---------|-----------------|---------------------|-------|----------------------|----------------|-------------------|
-| Actively maintained | Yes | Yes | Yes | Yes | No (archived) | No (archived) |
-| Read-only mode | Yes (works) | Yes (default) | Yes | N/A | No | Yes (broken) |
-| Schema inspection | Yes | Yes | Yes | Yes | Yes | Yes |
-| SQL execution | Yes | Yes | Yes | Structured CRUD | Raw SQL | Raw SQL |
-| Performance analysis | EXPLAIN, index tuning | No | No | No | No | No |
-| Health checks | Yes | No | No | No | No | No |
-| Multi-database | No | No | Yes | No | No | No |
-| Parquet/CSV support | No | Native | No | No | No | No |
-| Safety guardrails | Yes | Row/char limits | Yes | Input validation | None | Broken |
-| Docker support | Yes | No | Yes | No | Yes | Yes |
+| Feature | [MongoDB MCP](/reviews/mongodb-mcp-server/) | Postgres MCP Pro | DuckDB (MotherDuck) | DBHub | jparkerweb/mcp-sqlite | Official SQLite | Official Postgres |
+|---------|------------|-----------------|---------------------|-------|----------------------|----------------|-------------------|
+| Actively maintained | Yes (1-2 week releases) | Yes | Yes | Yes | Yes | No (archived) | No (archived) |
+| Read-only mode | Yes (opt-in) | Yes (works) | Yes (default) | Yes | N/A | No | Yes (broken) |
+| Schema inspection | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Query execution | MongoDB queries | SQL | SQL | Structured CRUD | Structured CRUD | Raw SQL | Raw SQL |
+| Performance analysis | Performance Advisor, explain | EXPLAIN, index tuning | No | No | No | No | No |
+| Health checks | Atlas alerts | Yes | No | No | No | No | No |
+| Cloud management | Atlas (full) | No | MotherDuck | No | No | No | No |
+| Multi-database | No (MongoDB only) | No | No | Yes | No | No | No |
+| Vector search | Yes (with embeddings) | No | No | No | No | No | No |
+| Safety guardrails | Read-only mode, maxTimeMS | Yes | Row/char limits | Yes | Input validation | None | Broken |
+| Docker support | Yes | Yes | No | Yes | No | Yes | Yes |
+| Tool count | 37+ | ~10 | ~3 | 2 | ~5 | ~6 | ~3 |
 
 ## Our Recommendations
 
@@ -240,6 +273,7 @@ The official SQLite server is still worth reading as a learning resource. The in
 
 **What database engine are you using?**
 
+- **MongoDB** → [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5, 37+ tools)
 - **PostgreSQL (Neon)** → [Neon MCP](/reviews/neon-mcp-server/)
 - **Supabase (full backend)** → [Supabase MCP](/reviews/supabase-mcp-server/)
 - **PostgreSQL (self-hosted/RDS/other)** → Postgres MCP Pro
@@ -255,6 +289,7 @@ The official SQLite server is still worth reading as a learning resource. The in
 - **Querying a production database** → Postgres MCP Pro (restricted mode)
 - **Data analysis / reporting** → DuckDB (MotherDuck)
 - **Development / prototyping** → DBHub or jparkerweb/mcp-sqlite
+- **MongoDB + Atlas management** → [MongoDB MCP](/reviews/mongodb-mcp-server/) (provisioning, queries, performance optimization)
 - **Database performance tuning** → Postgres MCP Pro or Neon MCP (both have EXPLAIN + tuning)
 - **Vector search / RAG** → [Chroma MCP](/reviews/chroma-mcp-server/) (3.5/5, 13 tools, four deployment modes) or [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5, if you need remote MCP transport). See our [full vector database comparison](/guides/best-vector-database-mcp-servers/) for Pinecone, Milvus, and more.
 - **Learning MCP** → Read the official SQLite server's source code
@@ -263,9 +298,10 @@ The official SQLite server is still worth reading as a learning resource. The in
 
 The official database MCP servers served their purpose as reference implementations — they showed what was possible. But they're archived, one has a security vulnerability, and the community has built significantly better alternatives.
 
-For most developers in 2026, the answer depends on your platform. **Neon MCP** (4/5) is the best experience if you're on Neon — branch-based migrations, OAuth, 20 tools. **Supabase MCP** (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.
+For most developers in 2026, the answer depends on your database. **MongoDB MCP** (4/5) leads in raw capability with 37+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. **Neon MCP** (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. **Supabase MCP** (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.
 
 For the full details on the reviewed servers:
+- [MongoDB MCP Server Review](/reviews/mongodb-mcp-server/) (4/5)
 - [Supabase MCP Server Review](/reviews/supabase-mcp-server/) (4/5)
 - [Neon MCP Server Review](/reviews/neon-mcp-server/) (4/5)
 - [SQLite MCP Server Review](/reviews/sqlite-mcp-server/) (3/5)
