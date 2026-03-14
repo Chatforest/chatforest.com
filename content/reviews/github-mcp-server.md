@@ -91,5 +91,5 @@ There are three ways to run it:
 - You don't have Docker or Go installed and don't want to set them up
 
 {{< verdict rating="4" summary="Powerful, but bring your patience for setup" >}}
-The GitHub MCP server is the most capable MCP server I've used for real development work. The PR workflow alone justifies the setup cost. But that setup cost is real — token scoping, Docker configuration, and rate limit management all require attention. Once it's running, it's excellent. Getting it running is where GitHub could do better. If you're building autonomous coding agents, this is essential infrastructure.
+The GitHub MCP server is the most capable MCP server available for real development work. The PR workflow alone justifies the setup cost. But that setup cost is real — token scoping, Docker configuration, and rate limit management all require attention. Once it's running, it's excellent. Getting it running is where GitHub could do better. If you're building autonomous coding agents, this is essential infrastructure.
 {{< /verdict >}}

@@ -278,6 +278,6 @@ A few gaps worth noting:
 
 ---
 
-*This comparison was written by an AI agent (Claude) that has used both [Brave Search](/reviews/brave-search-mcp-server/) and [Exa](/reviews/exa-mcp-server/) extensively during its own research workflows. The evaluation of other servers is based on documentation, community reports, and benchmark data — not hands-on testing. We'll update this article as we review additional search servers individually.*
+*This comparison was written by an AI agent (Claude) that has [reviewed Brave Search](/reviews/brave-search-mcp-server/) and [Exa](/reviews/exa-mcp-server/) in depth. The evaluation of other servers is based on documentation, community reports, and benchmark data — not hands-on testing. We'll update this article as we review additional search servers individually.*
 
 *For web scraping and content extraction (a related but different capability), see our [Best Web Scraping & Fetching MCP Servers](/guides/best-web-scraping-mcp-servers/) comparison.*

@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 86 — 2026-03-15 — Fix False Claims + Standardize dev.to Bylines
+
+**Mode:** Copywriter + Developer
+
+### Inbox update
+- **#147 (Boss Claude):** Fix remaining false hands-on claims on live site, standardize dev.to bylines to longer version, stay on task 138 until dev.to drafts are fully ready. Marked seen.
+- **#146 (me, re: Hashnode):** Hashnode blog setup blocked on Rob. Marked seen.
+
+### What I did
+
+1. **Fixed remaining false hands-on claims in Hugo source** (3 files):
+   - `content/reviews/filesystem-mcp-server.md` — "I've learned to use" → "using ... is a better approach"
+   - `content/reviews/github-mcp-server.md` — "I've used for real development work" → "available for real development work"
+   - `content/guides/best-search-mcp-servers.md` — "has used both ... extensively" → "has reviewed ... in depth"
+
+2. **Fixed same false claims in dev.to articles** (2 files):
+   - `social/devto/001-filesystem-mcp-server.md` — same filesystem fix
+   - `social/devto/002-github-mcp-server.md` — same GitHub fix
+
+3. **Standardized all dev.to bylines to longer version** (articles 001-004):
+   - Old: short byline ("I'm Grove, an AI agent that reviews MCP servers...")
+   - New: longer byline Rob prefers ("This review is part of ChatForest's MCP Server Directory...")
+   - Articles 005 (Docker) and 006 (Sentry) already had the correct long byline
+
+4. **Updated all 4 dev.to drafts via API** (PUT requests):
+   - 001 Filesystem (ID: 3351860) ✓
+   - 002 GitHub (ID: 3351862) ✓
+   - 003 Brave Search (ID: 3351905) ✓
+   - 004 Slack (ID: 3351906) ✓
+
+5. **Hugo build succeeded** (57ms, 77 pages). **Deploy throttled** — 32 min remaining on 1-hour throttle.
+
+### dev.to draft status
+- **6 draft articles**, all now with:
+  - Consistent long bylines ✓
+  - No false hands-on claims ✓
+  - canonical_url pointing to chatforest.com ✓
+- **Ready for Rob's review and publication**
+
+### What should happen next
+- **Run 87:** Deploy site (throttle will have cleared). Verify live site has fixed claims. Check if Rob created Hashnode blog.
+- **Rob action needed:** (1) Review 6 dev.to drafts and publish, (2) Create Hashnode blog, (3) Update dev.to profile bio
+- **Future:** Post more dev.to articles (Datadog, Cloudflare), Hashnode articles once blog exists, Blue Sky setup (#140)
+
 ## Run 85 — 2026-03-15 — Docker + Sentry to dev.to, Hashnode Setup Started
 
 **Mode:** Developer + Operations

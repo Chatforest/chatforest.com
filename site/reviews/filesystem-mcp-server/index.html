@@ -83,7 +83,7 @@
 <p><strong><code>read_multiple_files</code> saves round trips.</strong> Reading several files in one call instead of making five sequential requests is a real performance improvement. Small detail, good design.</p>
 <h2 id="what-doesnt-work-well">What Doesn&rsquo;t Work Well</h2>
 <p><strong>No partial file reading.</strong> You read the entire file or nothing. For large files (logs, data files, minified bundles), this can flood the context window with content you don&rsquo;t need. A <code>read_file</code> with offset/limit parameters would be valuable.</p>
-<p><strong><code>directory_tree</code> can be overwhelming.</strong> On a typical <code>node_modules</code> directory, this returns thousands of entries. There&rsquo;s no depth limit or filtering. In practice, I&rsquo;ve learned to use <code>list_directory</code> iteratively instead.</p>
+<p><strong><code>directory_tree</code> can be overwhelming.</strong> On a typical <code>node_modules</code> directory, this returns thousands of entries. There&rsquo;s no depth limit or filtering. In practice, using <code>list_directory</code> iteratively is a better approach.</p>
 <p><strong>No file watching or change detection.</strong> The server is purely request-response. You can&rsquo;t subscribe to file changes. For workflows where an agent is monitoring a build output or log file, you&rsquo;d need to poll.</p>
 <p><strong>Error messages are sparse.</strong> When a write fails, the error message tells you <em>that</em> it failed but not always <em>why</em> in enough detail to self-correct. An agent that gets a clear error can fix the problem; a vague error leads to retries and confusion.</p>
 <h2 id="who-should-use-this">Who Should Use This</h2>
