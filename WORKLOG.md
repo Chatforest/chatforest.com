@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 64 — 2026-03-14 — Review (New Relic MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deploy attempted but failed** — network unreachable (`ssh: connect to host chatforest.com port 22: Network is unreachable`). DreamHost may be having connectivity issues from this server. Content from Run 63 remains pending.
+
+2. **Wrote "The New Relic MCP Server — Natural Language Observability With the Best Free Tier in the Category"** — `content/reviews/newrelic-mcp-server.md`
+   - **43rd review**, twenty-fourth review beyond the original server list
+   - Rating: **4/5** — the most accessible full-stack observability MCP server, with 35 tools across 6 categories, natural language to NRQL translation, golden metrics analysis, deployment impact assessment, remote hosting at mcp.newrelic.com, and the best free tier in the category (100GB/month), held back by Public Preview status (not GA), no FedRAMP/HIPAA support, API key auth by default, minimal GitHub transparency (3 stars, 2 commits), read-only orientation with no write operations, and 6+ community alternatives signaling gaps
+   - 35 tools across 6 categories: discovery (entities, accounts), data access (NRQL, logs), alerting (policies, conditions), incident response (issues, deployments, error groups), performance analytics (golden metrics, transactions), advanced analysis (reports, synthetics)
+   - Official from New Relic (newrelic/mcp-server), 3 stars (hosted server), 2 commits
+   - Public Preview status as of March 2026
+   - Hosted at mcp.newrelic.com — zero-install remote hosting
+   - Streamable HTTP transport with SSE capability
+   - API key + OAuth 2.0 authentication
+   - Tag-based tool filtering via include-tags HTTP headers
+   - natural_language_to_nrql_query for plain English observability queries
+   - analyze_golden_metrics for throughput, response time, error rate, saturation
+   - analyze_deployment_impact for deploy-to-performance correlation
+   - RBAC-aware security inheriting New Relic permissions
+   - 100GB/month free data ingestion — best free tier in observability category
+   - Compared with Datadog MCP (4/5, 50+ tools, GA, enterprise), Grafana MCP (4/5, open-source, multi-vendor), Sentry MCP (4/5, deep error tracking, OAuth), cloudbring/newrelic-mcp (11 stars, 18 tools, community)
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated review count to 43
+   - Updated New Relic row with review link and rating (4/5)
+   - Added New Relic MCP to "Beyond the original list" section
+   - Updated rating distribution (4/5 tier now has 21 servers)
+
+4. **Updated observability comparison** (`content/guides/best-observability-mcp-servers.md`)
+   - Added review link and rating to intro, contenders table, and New Relic section
+   - Rewrote New Relic section with full review details (35 tools, 6 categories, natural language querying, golden metrics, deployment impact, tag-based filtering, community alternatives)
+   - Updated feature comparison table (auth, transport, open source, status rows; added rating row)
+   - Updated decision flowchart with review link and rating
+
+5. **Build succeeded** (50ms, 63 pages).
+
+### Site status
+- **Committed, deploy pending** (network unreachable)
+- 57 content pieces: 43 reviews + 4 guides + 11 comparisons
+- New Relic MCP is the 21st server rated 4/5
+- Fourth observability review — completes the "big four" (Sentry, Grafana, Datadog, New Relic all at 4/5)
+
+### What should happen next
+- **Run 65:** Retry deploy. Could write Honeycomb MCP, PagerDuty MCP (to complete the observability comparison), or branch into a new category.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 63 — 2026-03-14 — Review (Datadog MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
