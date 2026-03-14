@@ -9,7 +9,7 @@ card_description: "We've reviewed 28 MCP servers across 11 categories. Here are 
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [28 in-depth reviews](/reviews/) and [11 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [29 in-depth reviews](/reviews/) and [11 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -21,7 +21,7 @@ If you want to skip the details:
 |----------|----------|--------|-----------|
 | Browser automation | [Playwright MCP](/reviews/playwright-mcp-server/) | 4.5/5 | [Browserbase](/reviews/browserbase-mcp-server/) (3.5/5, cloud) |
 | Search (keyword) | [Brave Search](/reviews/brave-search-mcp-server/) | 4/5 | Kagi |
-| Search (semantic) | [Exa](/reviews/exa-mcp-server/) | 4/5 | Tavily |
+| Search (semantic) | [Exa](/reviews/exa-mcp-server/) | 4/5 | [Tavily](/reviews/tavily-mcp-server/) (4/5) |
 | Web fetching | zcaceres/fetch-mcp | — | [Official Fetch](/reviews/fetch-mcp-server/) (3.5/5) |
 | Database (cloud Postgres) | [Neon MCP](/reviews/neon-mcp-server/) | 4/5 | [Supabase MCP](/reviews/supabase-mcp-server/) (4/5) |
 | Backend-as-a-Service | [Supabase MCP](/reviews/supabase-mcp-server/) | 4/5 | — |
@@ -72,6 +72,9 @@ Search is the most fundamental agent capability, and there are three paradigms t
 
 **Semantic search** — neural embeddings that understand concepts, not just keywords. Best for research, finding similar content, and exploratory queries.
 - **Our pick: [Exa](/reviews/exa-mcp-server/) (4/5).** Outperforms Tavily on benchmarks (81% vs 71% WebWalker) with lower latency. Query-dependent highlights reduce token usage by 50-75%. Nine tools including async deep researcher. 1,000 free requests/month.
+
+**Search + extraction** — search the web, then extract and crawl the results. Best for RAG pipelines and content ingestion.
+- **Worth considering: [Tavily](/reviews/tavily-mcp-server/) (4/5).** Four tools covering search, extract, crawl, and map. The default search API for LangChain and LlamaIndex. Hosted remote server with zero-install setup. Keyword search quality trails semantic engines, but the search-to-extract pipeline is unmatched.
 
 **Answer engines** — return synthesized answers with citations, not just links.
 - **Worth considering:** Perplexity Sonar. Good for quick factual answers. Not a replacement for search — it's a complement.
@@ -307,13 +310,13 @@ The fastest-growing MCP server category. Every major DevOps platform now ships a
 
 ## Beyond the original list
 
-We've reviewed every MCP server on our original list — and we're now expanding to new servers. Recent additions: [Browserbase MCP](/reviews/browserbase-mcp-server/) (3.5/5) for cloud browser automation with AI-native targeting, [Firecrawl MCP](/reviews/firecrawl-mcp-server/) (4/5) for production web scraping with autonomous research, [Todoist MCP](/reviews/todoist-mcp-server/) (4/5) for task management with MCP Apps, [Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5) for cloud vector search with reranking, [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5) for semantic memory, [Chroma MCP](/reviews/chroma-mcp-server/) (3.5/5) for vector databases, [Linear MCP](/reviews/linear-mcp-server/) (4/5) for project management, [Stripe MCP](/reviews/stripe-mcp-server/) (4/5) for payment operations, and [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
+We've reviewed every MCP server on our original list — and we're now expanding to new servers. Recent additions: [Tavily MCP](/reviews/tavily-mcp-server/) (4/5) for search + extraction + crawling in one server, [Browserbase MCP](/reviews/browserbase-mcp-server/) (3.5/5) for cloud browser automation with AI-native targeting, [Firecrawl MCP](/reviews/firecrawl-mcp-server/) (4/5) for production web scraping with autonomous research, [Todoist MCP](/reviews/todoist-mcp-server/) (4/5) for task management with MCP Apps, [Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5) for cloud vector search with reranking, [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5) for semantic memory, [Chroma MCP](/reviews/chroma-mcp-server/) (3.5/5) for vector databases, [Linear MCP](/reviews/linear-mcp-server/) (4/5) for project management, [Stripe MCP](/reviews/stripe-mcp-server/) (4/5) for payment operations, and [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
 
 ---
 
 ## The pattern: official servers as starting points
 
-After reviewing 28 MCP servers, a clear pattern has emerged:
+After reviewing 29 MCP servers, a clear pattern has emerged:
 
 **Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are archived with security issues (2.5-3/5), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
 
@@ -326,7 +329,7 @@ Our rating distribution tells the story:
 | Rating | Count | Servers |
 |--------|-------|---------|
 | 4.5/5 | 2 | Playwright, Cloudflare |
-| 4.0/5 | 12 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl |
+| 4.0/5 | 13 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily |
 | 3.5/5 | 9 | Context7, Puppeteer, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase |
 | 3.0/5 | 3 | SQLite, Qdrant, Pinecone |
 | 2.5/5 | 2 | PostgreSQL, EverArt |

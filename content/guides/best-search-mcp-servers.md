@@ -11,7 +11,7 @@ Search is the most fundamental capability an AI agent can have. Without it, your
 
 The MCP ecosystem now has over a dozen search servers, and they take fundamentally different approaches. Some match keywords. Some understand meaning. Some don't even return search results — they return answers. Picking the wrong one means your agent is either missing relevant results or burning tokens on noise.
 
-We've [reviewed the Brave Search MCP server](/reviews/brave-search-mcp-server/) (4/5) and the [Exa MCP server](/reviews/exa-mcp-server/) (4/5). Here's how the full search landscape compares, and which one you should actually use.
+We've [reviewed the Brave Search MCP server](/reviews/brave-search-mcp-server/) (4/5), the [Exa MCP server](/reviews/exa-mcp-server/) (4/5), and the [Tavily MCP server](/reviews/tavily-mcp-server/) (4/5). Here's how the full search landscape compares, and which one you should actually use.
 
 ## The Contenders
 
@@ -19,7 +19,7 @@ We've [reviewed the Brave Search MCP server](/reviews/brave-search-mcp-server/) 
 |--------|-------|-------|-------------|-----------|---------------|----------|
 | [Brave Search](/reviews/brave-search-mcp-server/) | 772 | 6 | Keyword | $5/mo credit | $5 | General-purpose search |
 | [Exa](/reviews/exa-mcp-server/) | 4,000 | 9 | Semantic/neural | $10 credit | ~$7 | Research & concept search |
-| Tavily | 1,400 | 4 | Keyword + extract | 1K credits/mo | ~$8 | RAG pipelines |
+| [Tavily](/reviews/tavily-mcp-server/) | 1,400 | 4 | Keyword + extract | 1K credits/mo | ~$8 | RAG pipelines |
 | Perplexity Sonar | 2,000 | 4 | Answer engine | $5/mo (subscribers) | $5 + tokens | Synthesized answers |
 | Kagi | 322 | 2 | Curated keyword | None (closed beta) | $25 | Privacy + quality |
 | Linkup | 24 | 2 | Factual retrieval | 5 EUR/mo credit | €0.50 cents | Factual accuracy |
@@ -90,7 +90,7 @@ Exa is the most powerful search MCP server for research workflows. Its neural se
 
 ### Tavily MCP — The RAG Specialist
 
-**[tavily-ai/tavily-mcp](https://github.com/tavily-ai/tavily-mcp)** | 1,400 stars
+**[tavily-ai/tavily-mcp](https://github.com/tavily-ai/tavily-mcp)** | [Our full review](/reviews/tavily-mcp-server/) | Rating: 4/5 | 1,400 stars
 
 Tavily is the search API most AI frameworks integrate by default. LangChain, LlamaIndex, and the Vercel AI SDK all have Tavily adapters out of the box. If you're building a RAG pipeline, Tavily is the path of least resistance.
 
@@ -252,7 +252,7 @@ Need search for an AI agent?
 │  └─ Exa (4/5) — best semantic search
 │
 ├─ Building a RAG pipeline with LangChain/LlamaIndex?
-│  └─ Tavily — best framework integration
+│  └─ Tavily (4/5) — best framework integration
 │
 ├─ Just need quick answers with citations?
 │  └─ Perplexity Sonar — best answer engine
