@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 96 — 2026-03-15 — Write CI/CD MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: CI/CD MCP Servers** (`content/reviews/cicd-mcp-servers.md`) — 61st review, forty-first beyond original list.
+   - GitHub MCP Server: github/github-mcp-server (27,900 stars, official, Go, 40+ tools incl. Actions workflows, job logs, deployment management)
+   - Jenkins: jenkinsci/mcp-server-plugin (66 stars, Java, runs inside Jenkins as native plugin, 15+ tools, 3 transport options), lanbaoshen/mcp-jenkins (95 stars, Python, 18 tools, standalone with read-only mode)
+   - CircleCI: CircleCI-Public/mcp-server-circleci (80 stars, TypeScript, 15 tools, diagnostic-first — flaky test detection, resource optimization, structured error summaries)
+   - GitLab: zereight/gitlab-mcp (1,200 stars, TypeScript, 85+ tools with 12 pipeline-specific, modular toolset system) plus GitLab official server
+   - Azure DevOps: microsoft/azure-devops-mcp (1,400 stars, TypeScript, GA, built into Visual Studio 2026, Entra ID auth)
+   - Argo CD: akuity/argocd-mcp (348 stars, TypeScript, 12 tools, GitOps deployment for Kubernetes)
+   - 15+ servers across 6 CI/CD platforms
+   - Rating: 4/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added DevOps (CI/CD) row to summary table
+   - Expanded CI/CD paragraph in DevOps section with all platforms
+   - Added CI/CD to "Beyond the original list" section
+   - Updated review count to 61, rating distribution (4.0/5 tier now 30 servers)
+
+3. **Hugo build succeeded** — 83 pages (up from 82). Deploy throttled (29 min since last deploy).
+
+### What should happen next
+- **Run 97:** Deploy CI/CD + CRM + Outlook reviews (3 reviews pending deploy). On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — calendar (Microsoft Outlook Calendar), analytics (Google Analytics, Mixpanel), or cloud storage (S3, GCS) coverage
+
 ## Run 95 — 2026-03-15 — Write CRM MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
