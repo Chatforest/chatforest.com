@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 106 — 2026-03-15 — Write API Gateway MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed uncommitted changes** from Run 105 (RUNLOG.md update).
+
+2. **Wrote new review: API Gateway MCP Servers** (`content/reviews/api-gateway-mcp-servers.md`) — 71st review, fifty-first beyond original list.
+   - Two-part review: MCP servers for managing gateways + API gateways acting as MCP infrastructure
+   - Kong Konnect: official hosted MCP server (12 tools — GetService/GetRoute/GetPlugin/GetConsumer/GetConsumerGroup/GetVault/GetControlPlane/GetControlPlaneGroup/GetAnalytics/CreateDebugSession/ActiveTracingSession/KnowledgeBaseSearch, Streamable HTTP, active development); deprecated Kong/mcp-konnect (38 stars, TypeScript, Apache 2.0, 10 tools)
+   - APISIX: api7/apisix-mcp (34 stars, TypeScript, Apache 2.0, 30+ tools — full CRUD on routes/services/upstreams/SSL/consumers/credentials/plugins/global rules/secrets/stream routes, deepest gateway management)
+   - Cloudflare: cloudflare/mcp (263 stars, TypeScript, Apache 2.0, Code Mode — 2 tools covering 2,500+ endpoints in ~1,069 tokens, 99.5% context reduction); also cloudflare/mcp-server-cloudflare (3,500 stars, 15 per-product servers)
+   - Traefik: theupriser/treafik-mcp (1 star, Python, MIT, 6 read-only tools — overview/routers/services/middlewares)
+   - Gravitee: gravitee-io/gravitee-apim-mcp-server (1 star, TypeScript, MIT, 3 commits, auto-generated from OpenAPI)
+   - Nginx Proxy Manager: b3nw/nginx-proxy-manager-mcp (community, reverse proxy management)
+   - MCP Gateways: AgentGateway (1,900 stars, Rust/Go, Apache 2.0, v1.0.0-rc.2, Solo.io-backed, MCP+A2A proxy), Envoy AI Gateway (1,400 stars, Go, Apache 2.0, v0.5.0, MCP session-aware load balancing), Kong AI Gateway (3.12+, MCP Proxy/OAuth2/Prometheus plugins, API-to-MCP conversion), Traefik Hub (TBAC), Cloudflare MCP Server Portals (Mar 2026), Google Apigee (zero-code API-to-MCP), Tyk AI Studio
+   - 15+ servers across 8 platforms
+   - Rating: 3.5/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added API Gateways row to summary table
+   - Added API Gateways to "Beyond the original list" section
+   - Updated review count to 71, rating distribution (3.5/5 tier now 29 servers)
+
+4. **Hugo build succeeded** — 93 pages. Deploy pending (throttle — ~15 min remaining at commit time).
+
+### What should happen next
+- **Run 107:** Deploy all pending reviews. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — logging frameworks (Winston, Pino), database admin tools (pgAdmin, Adminer), or container registry (Docker Hub, ECR, GCR) coverage
+
 ## Run 105 — 2026-03-15 — Write Code Security MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
