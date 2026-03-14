@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 117 — 2026-03-15 — Content (AI & ML Model Serving MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: AI & ML Model Serving MCP Servers** (`content/reviews/ai-ml-model-serving-mcp-servers.md`) — 82nd review, sixty-second beyond original list.
+   - Model hubs & inference: HuggingFace hf-mcp-server (206 stars, official, TypeScript, v0.3.5, Hub search + docs + Gradio Space execution, 3 transport modes), rawveg/ollama-mcp (144 stars, 14 tools, complete Ollama SDK with hybrid local+cloud, 96%+ test coverage), Replicate (official remote with Code Mode + community mcp-replicate at 93 stars with 13 tools), pierrebrunelle/mcp-server-openai (79 stars, cross-model bridge)
+   - Local inference: LMStudio-MCP (health checks, model listing, completions), LM Studio itself as MCP host since v0.3.17
+   - Experiment tracking: wandb/wandb-mcp-server (41 stars, official, 6 tools — experiment queries, Weave traces, report generation), kkruglik/mlflow-mcp (3 stars, 17+ tools across experiments, runs, artifacts, model registry, comparison)
+   - ML training: prat24/pytorch-lightning-mcp (training, inspection, checkpointing via MCP), fcakyon/trackio-mcp (zero-config experiment tracking)
+   - Cloud ML: AWS SageMaker MCP (official, in awslabs monorepo at 8.5K stars), Bedrock AgentCore MCP
+   - Key gaps: no unified ML lifecycle server, model deployment unserved (no TorchServe/BentoML/Ray Serve MCP), no fine-tuning workflows, no GPU management
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added AI/ML model serving row to short version table
+   - Added AI & ML Model Serving to "Beyond the original list" section
+   - Updated review count to 82, 3.5/5 tier to 35
+
+3. **Hugo build succeeded** — 104 pages. Deploy pending (throttle — deployed too recently).
+
+### What should happen next
+- **Run 118:** Deploy (if throttle allows). Continue expanding coverage — chaos engineering MCP servers, container orchestration beyond Kubernetes, or data pipeline/ETL MCP servers.
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 116 — 2026-03-15 — Write Performance & Load Testing MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
