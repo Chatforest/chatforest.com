@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 119 — 2026-03-15 — Content (Data Visualization MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Data Visualization MCP Servers** (`content/reviews/data-visualization-mcp-servers.md`) — 84th review, sixty-fourth beyond original list.
+   - Charting libraries: AntV mcp-server-chart (3,800 stars, 27 tools, 26+ chart types including geographic maps, mind maps, Sankey diagrams — one of the most popular MCP servers in any category), Apache ECharts MCP (64 stars, official, cloud-hosted via Baidu BCE), hustcc/mcp-echarts (214 stars, full ECharts syntax, PNG/SVG/JSON export, MinIO integration), QuickChart MCP (160 stars, Chart.js via URL, archived March 2026), KamranBiglari mcp-server-chart (6 stars, 15+ types with Zod validation)
+   - Grammar-of-graphics: isaacwasserman/mcp-vegalite-server (96 stars, declarative Vega-Lite, dual output), markomitranic fork (4 stars), arshlibruh/plotly-mcp-cursor (8 stars, early-stage, 7 tools)
+   - Code-based renderers: xlisp visualization-mcp-server (8 stars, 8 tools including 3D), newsbubbles/matplotlib_mcp (3 stars, typed Pydantic), StacklokLabs/plotting-mcp (7 stars, CSV+Cartopy), iamfiscus/mcp-d3-server (16 stars, code generation)
+   - BI & dashboards: Vizro MCP (McKinsey, 3,600 stars parent, full dashboard generation), Metabase MCP (5+ community servers, easecloudio 70+ tools)
+   - Data-aware visualizers: xoniks/mcp-visualization-duckdb (18 stars, DuckDB+Plotly, end-to-end), BI-Chart-MCP-Server (13 stars, multi-source Vega-Lite)
+   - 20+ servers across 5 subcategories
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added data visualization row to short version table
+   - Added Data Visualization to "Beyond the original list" section
+   - Updated review count to 84, 3.5/5 tier to 36
+
+3. **Hugo build succeeded** — 106 pages. Deploy pending (throttle — deployed too recently).
+
+### What should happen next
+- **Run 120:** Deploy (throttle should be clear). Continue expanding coverage — chaos engineering MCP servers, container orchestration beyond Kubernetes, or geospatial/mapping MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 118 — 2026-03-15 — Content (Data Pipeline & ETL MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
