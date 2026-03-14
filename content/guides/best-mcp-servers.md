@@ -1,15 +1,15 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14
-description: "We've reviewed 20 MCP servers and compared 40+ across 10 categories. Here are the ones worth installing — and the ones to avoid."
-og_description: "We've tested 20 MCP servers and compared 40+ across 10 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
+description: "We've reviewed 21 MCP servers and compared 40+ across 10 categories. Here are the ones worth installing — and the ones to avoid."
+og_description: "We've tested 21 MCP servers and compared 40+ across 10 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
-card_description: "We've reviewed 20 MCP servers across 10 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
+card_description: "We've reviewed 21 MCP servers across 10 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
 ---
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [20 in-depth reviews](/reviews/) and [10 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [21 in-depth reviews](/reviews/) and [10 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -38,6 +38,7 @@ If you want to skip the details:
 | Productivity (tasks) | Linear MCP | — | Todoist (personal) |
 | Deployment | [Vercel MCP](/reviews/vercel-mcp-server/) | 3.5/5 | Community alternatives (more tools) |
 | Design-to-code | [Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) | 3.5/5 | Framelink (community, better output) |
+| Payments | [Stripe MCP](/reviews/stripe-mcp-server/) | 4/5 | Community Python alternatives |
 | Cloud infrastructure | [Cloudflare MCP](/reviews/cloudflare-mcp-server/) | 4.5/5 | AWS MCP (60+ servers) |
 | DevOps (IaC) | Terraform MCP | — | AWS MCP (AWS-specific) |
 | DevOps (containers) | Docker MCP | — | Kubernetes MCP |
@@ -247,6 +248,22 @@ The catch: Figma's free tier gives you **6 tool calls per month** — the most a
 
 ---
 
+## Payments
+
+A new category — and one where the first-party server is clearly the right choice.
+
+**[Stripe MCP](/reviews/stripe-mcp-server/) (4/5)** — Stripe's official server, part of the broader [Agent Toolkit](https://github.com/stripe/agent-toolkit) (1,400 GitHub stars). 25 tools covering customers, products, prices, invoices, subscriptions, refunds, payment links, and disputes. The standout feature is **documentation search** — the agent can query Stripe's knowledge base directly, making it genuinely faster to build Stripe integrations through MCP than through the dashboard + docs workflow.
+
+The security model is best-in-class: OAuth via the hosted server at `mcp.stripe.com`, restricted API keys with per-resource permissions for local deployment, and dashboard-managed session oversight. Three layers of access control — more granular than any other MCP server we've reviewed.
+
+The limitation is coverage depth. Stripe has one of the largest APIs in the developer tools space, and the MCP server exposes roughly 10-15% of it. No Checkout Sessions, no Connect, no webhooks, no Terminal, no Tax. Most resources only support create and list — no updates. This makes it excellent for development workflows (prototyping, integration building, documentation lookup) but insufficient for daily payment operations.
+
+Local deployment is TypeScript-only (npx). Community Python alternatives exist but are limited.
+
+**Full review:** [The Stripe MCP Server](/reviews/stripe-mcp-server/)
+
+---
+
 ## DevOps & infrastructure
 
 The fastest-growing MCP server category. Every major DevOps platform now ships an official MCP server, and AWS alone has 60+ specialized servers.
@@ -273,13 +290,13 @@ The fastest-growing MCP server category. Every major DevOps platform now ships a
 
 ## Beyond the original list
 
-We've reviewed every MCP server on our original list — and we're now expanding to new servers. Our latest: [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
+We've reviewed every MCP server on our original list — and we're now expanding to new servers. Recent additions: [Stripe MCP](/reviews/stripe-mcp-server/) (4/5) for payment operations and [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
 
 ---
 
 ## The pattern: official servers as starting points
 
-After reviewing 19 MCP servers, a clear pattern has emerged:
+After reviewing 21 MCP servers, a clear pattern has emerged:
 
 **Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are archived with security issues (2.5-3/5), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
 
@@ -292,7 +309,7 @@ Our rating distribution tells the story:
 | Rating | Count | Servers |
 |--------|-------|---------|
 | 4.5/5 | 2 | Playwright, Cloudflare |
-| 4.0/5 | 8 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase |
+| 4.0/5 | 9 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe |
 | 3.5/5 | 7 | Context7, Puppeteer, Memory, Fetch, Notion, Vercel, Figma Dev Mode |
 | 3.0/5 | 1 | SQLite |
 | 2.5/5 | 2 | PostgreSQL, EverArt |

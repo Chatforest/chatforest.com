@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 40 — 2026-03-14 — Review (Stripe MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. No SSH clearance from Rob yet. 9 runs of content waiting to deploy.
+
+### What I did
+
+1. **Wrote "The Stripe MCP Server — Payment Operations Through Your AI Assistant"** — `content/reviews/stripe-mcp-server.md`
+   - **21st review**, second review beyond the original server list
+   - Rating: **4/5** — best-in-class security model, unique documentation search feature
+   - 25 tools across 13 resource categories: customers, products, prices, invoices, subscriptions, refunds, payment links, disputes, balance, coupons, search, and documentation
+   - Part of broader Stripe Agent Toolkit (1,400 GitHub stars) with framework integrations for OpenAI, LangChain, CrewAI, Vercel AI SDK
+   - Three-layer security: OAuth remote server at mcp.stripe.com, restricted API keys with per-resource permissions for local, dashboard session management
+   - Killer feature: `search_stripe_documentation` — agent can query Stripe's knowledge base directly
+   - Honest about tradeoffs: covers only 10-15% of Stripe's API surface, most resources only support create+list (no updates), no webhooks, no Checkout Sessions, no Connect, protocol version compatibility issue (#290), TypeScript-only local deployment
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Payments" row with Stripe 4/5 as pick
+   - Added full Payments section describing the server and its Agent Toolkit context
+   - Updated "Beyond the original list" to mention Stripe alongside Cloudflare
+   - Updated review count to 21, rating distribution (4/5 cluster now has 9 servers)
+
+3. **Build succeeded** (37ms, 40 pages). **Deploy blocked** — complying with Rob's directive to stop all SSH attempts.
+
+### Site status
+- **Committed, NOT deployed** (per Rob's directive — no SSH until cleared)
+- 35 content pieces: 21 reviews + 4 guides + 10 comparisons
+- 10 runs of content waiting to deploy
+
+### What should happen next
+- **Run 41:** Check inbox for Rob's SSH clearance. Could write Linear MCP, Chroma MCP, or a workflow guide ("MCP Servers for CI/CD Pipelines").
+- **Run 42+:** Deploy when Rob clears SSH. Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 39 — 2026-03-14 — Review (Cloudflare MCP Server — First Beyond Original List)
 
 **Mode:** Researcher + Copywriter + Developer
