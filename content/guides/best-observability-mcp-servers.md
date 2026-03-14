@@ -11,7 +11,7 @@ Every major observability platform now has an official MCP server. That happened
 
 This matters because observability is where AI agents add the most obvious value. Debugging production errors, correlating metrics with deploys, querying logs in natural language — these are tasks where context switching between your IDE and a dashboard wastes real time. An MCP server that puts your observability data inside your agent's context eliminates that round-trip.
 
-We've reviewed the [Sentry MCP server](/reviews/sentry-mcp-server/) (4/5), the [Grafana MCP server](/reviews/grafana-mcp-server/) (4/5), and the [Datadog MCP server](/reviews/datadog-mcp-server/) (4/5). Here's how the full observability landscape compares, and which ones are worth integrating.
+We've reviewed the [Sentry MCP server](/reviews/sentry-mcp-server/) (4/5), the [Grafana MCP server](/reviews/grafana-mcp-server/) (4/5), the [Datadog MCP server](/reviews/datadog-mcp-server/) (4/5), and the [New Relic MCP server](/reviews/newrelic-mcp-server/) (4/5). Here's how the full observability landscape compares, and which ones are worth integrating.
 
 ## The Contenders
 
@@ -20,7 +20,7 @@ We've reviewed the [Sentry MCP server](/reviews/sentry-mcp-server/) (4/5), the [
 | [Sentry](/reviews/sentry-mcp-server/) | Error tracking | 579 | Remote (SSE) | OAuth 2.0 | ~20 | Yes (10K events/mo) | Debugging production errors |
 | [Datadog](/reviews/datadog-mcp-server/) | Full-stack APM | 7 (hosted) | Remote (HTTP) | OAuth / API key | 50+ | No (14-day trial) | Enterprise full-stack observability |
 | [Grafana](/reviews/grafana-mcp-server/) | Dashboards + LGTM | 2,500 | stdio + SSE + HTTP | API token | 40+ | Yes (Grafana Cloud free) | Metrics/logs/traces visualization |
-| New Relic | Full-stack APM | 70+ | Remote (SSE) | API key | 35 | Yes (100GB/mo) | Natural language observability queries |
+| [New Relic](/reviews/newrelic-mcp-server/) | Full-stack APM | 3 (hosted) | Remote (HTTP) | API key / OAuth | 35 | Yes (100GB/mo) | Natural language observability queries |
 | Honeycomb | Event-based observability | 170+ | Remote (hosted) | API key | 15+ | Yes (20M events/mo) | High-cardinality event analysis |
 | PagerDuty | Incident management | 60+ | Both (hosted + local) | OAuth 2.0 | 20+ | Yes (5 users) | Incident response & on-call |
 
@@ -100,19 +100,21 @@ A key differentiator: Grafana's MCP server works with **any backend data source*
 
 ### New Relic MCP — Natural Language Observability
 
-**[New Relic AI MCP Server](https://docs.newrelic.com/docs/agentic-ai/mcp/overview/)** | Public Preview
+**[New Relic AI MCP Server](/reviews/newrelic-mcp-server/)** (4/5) | [Docs](https://docs.newrelic.com/docs/agentic-ai/mcp/overview/) | Public Preview
 
-New Relic's MCP server leans heavily into natural language querying. Its standout feature: you ask questions in plain English ("show me the slowest transactions in the payments service this week"), and the server translates them into NRQL (New Relic Query Language) queries. You don't need to learn NRQL to query your observability data.
+New Relic's MCP server leans heavily into natural language querying. Its standout feature: you ask questions in plain English ("show me the slowest transactions in the payments service this week"), and the server translates them into NRQL (New Relic Query Language) queries via the `natural_language_to_nrql_query` tool. You don't need to learn NRQL to query your observability data.
 
-The server provides 35 tools across data access, alerting, incident response, and advanced analysis. It works with GitHub Copilot, Claude, Cursor, and other MCP clients. Auth uses New Relic API keys.
+The server provides 35 tools across 6 categories: discovery (entities, accounts), data access (NRQL, logs), alerting (policies, conditions), incident response (issues, deployments, error groups), performance analytics (golden metrics, transactions), and advanced analysis (alert reports, user impact reports, synthetics). It's hosted at `mcp.newrelic.com` with Streamable HTTP transport — zero-install, always current. Auth supports both API keys and OAuth 2.0.
 
-New Relic's generous free tier (100GB/mo ingestion) makes it one of the more accessible platforms for smaller teams, and the MCP server inherits that advantage.
+New Relic's generous free tier (100GB/mo ingestion, no credit card required) makes it the most accessible full-stack observability MCP server. The `analyze_golden_metrics` tool surfaces throughput, response time, error rate, and saturation as a first-class tool — most other servers force agents to derive these from raw queries. The `analyze_deployment_impact` tool correlates deploys with performance changes automatically.
 
-**Strengths:** Natural language to NRQL translation (no query language learning curve), 35 tools, generous free tier (100GB/mo), broad MCP client support, remote hosting.
+The tag-based tool filtering system (`include-tags` headers) lets you present only relevant tool categories per request — cleaner than URL parameters (Datadog) or CLI flags (Grafana). But with 35 tools it trails Datadog (50+) and Grafana (40+), and the tool set is read-only — no muting, no downtime scheduling, no alert acknowledgment. Six community alternatives (cloudbring/newrelic-mcp with 18 tools being the most complete) cover some of these gaps.
 
-**Weaknesses:** Still in Public Preview (not GA), API key auth, dependent on New Relic's platform pricing for larger workloads, 3 community alternatives suggest the official server may have gaps.
+**Strengths:** Natural language to NRQL translation (no query language learning curve), 35 tools across 6 categories, best free tier in category (100GB/mo), golden metrics as a dedicated tool, deployment impact analysis, tag-based tool filtering, remote hosting, RBAC-aware security.
 
-**Best for:** Teams on New Relic who want to query observability data without learning NRQL.
+**Weaknesses:** Public Preview (not GA), no FedRAMP/HIPAA support, API key auth by default, minimal GitHub presence (3 stars, 2 commits), read-only orientation (no write operations), 6 community alternatives suggest gaps in the official server, trails Datadog and Grafana in tool count.
+
+**Best for:** Teams on New Relic who want natural language observability querying with the lowest barrier to entry in the category.
 
 ### Honeycomb MCP — High-Cardinality Event Analysis
 
@@ -157,10 +159,11 @@ The ~20 tools cover incidents, services, schedules, event orchestrations, and te
 | Infrastructure | No | Deep | Via data source | Yes | No | No |
 | Incident mgmt | No | Alerting | Alerting | Alerting | Triggers | Deep |
 | AI analysis | Seer (proprietary) | Bits AI | No | NRQL translation | Natural language | No |
-| Auth model | OAuth 2.0 | OAuth / API key | API token | API key | API key | OAuth 2.0 |
-| Transport | Remote (SSE) | Remote (HTTP) | stdio + SSE + HTTP | Remote | Remote (hosted) | Both |
-| Open source | Yes | No | Yes | Yes | Yes | Yes |
+| Auth model | OAuth 2.0 | OAuth / API key | API token | API key / OAuth | API key | OAuth 2.0 |
+| Transport | Remote (SSE) | Remote (HTTP) | stdio + SSE + HTTP | Remote (HTTP) | Remote (hosted) | Both |
+| Open source | Yes | No | Yes | No (hosted) | Yes | Yes |
 | Status | Pre-1.0 | GA | Active | Public Preview | Active | Active |
+| Rating | [4/5](/reviews/sentry-mcp-server/) | [4/5](/reviews/datadog-mcp-server/) | [4/5](/reviews/grafana-mcp-server/) | [4/5](/reviews/newrelic-mcp-server/) | — | — |
 
 ## How to Choose
 
@@ -170,7 +173,7 @@ The ~20 tools cover incidents, services, schedules, event orchestrations, and te
 
 **"I debug production errors daily"** → [Sentry MCP](/reviews/sentry-mcp-server/) (4/5). Deepest error investigation tools, OAuth auth, Seer AI analysis. Pair with PagerDuty if you're on-call.
 
-**"I need the full picture — metrics, traces, logs, everything"** → **[Datadog MCP](/reviews/datadog-mcp-server/) (4/5)** if you can afford it (broadest toolset, 10+ toolsets, GA, agent-native design). **New Relic MCP** if you want a generous free tier and natural language querying.
+**"I need the full picture — metrics, traces, logs, everything"** → **[Datadog MCP](/reviews/datadog-mcp-server/) (4/5)** if you can afford it (broadest toolset, 10+ toolsets, GA, agent-native design). **[New Relic MCP](/reviews/newrelic-mcp-server/) (4/5)** if you want a generous free tier, natural language querying, and golden metrics analysis.
 
 **"I run my own observability stack"** → **[Grafana MCP](/reviews/grafana-mcp-server/) (4/5)**. The only server that works with any backend data source. Open source, self-hostable, configurable tool categories, full incident pipeline.
 
