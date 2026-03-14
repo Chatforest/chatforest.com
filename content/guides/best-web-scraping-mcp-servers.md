@@ -17,7 +17,7 @@ The MCP ecosystem now has over a dozen servers for web access, ranging from a si
 | [zcaceres/fetch-mcp](https://github.com/zcaceres/fetch-mcp) | HTTP → Multiple formats | No | Local | Free | Secure multi-format fetch |
 | [fetcher-mcp](https://github.com/jae-jae/fetcher-mcp) | Playwright headless | Yes | Local | Free | JS-heavy pages without cloud |
 | [Firecrawl](/reviews/firecrawl-mcp-server/) | Cloud scraping platform | Yes | Cloud + self-host | Free tier, then $16-599/mo | Production scraping at scale |
-| [Crawl4AI + RAG wrapper](https://github.com/coleam00/mcp-crawl4ai-rag) | Open-source crawler + vector DB | Yes | Local | Free | RAG pipelines, knowledge bases |
+| [Crawl4AI](/reviews/crawl4ai-mcp-server/) (3.5/5) | Open-source crawler (built-in MCP) | Yes | Local (Docker) | Free | High-volume scraping, markdown extraction |
 | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | Cloud browser automation | Yes | Cloud | Free tier, then $20-99/mo | Bot-protected sites, CAPTCHAs |
 | [Jina AI MCP](https://github.com/jina-ai/MCP) | Remote reader + search + semantic | Via Reader API | Remote | Free (rate-limited) | Research, academic search |
 
@@ -124,30 +124,30 @@ The standout features are `firecrawl_agent` (autonomous multi-source research) a
 
 **Use it if:** You need production-grade scraping at scale, deep research capabilities, or site-wide crawling. The investment makes sense when web data is core to your workflow.
 
-### Crawl4AI + RAG Wrapper — The Open-Source Powerhouse
+### [Crawl4AI MCP Server](/reviews/crawl4ai-mcp-server/) — The Open-Source Powerhouse (3.5/5)
 
-**Crawl4AI: 61,900 GitHub stars | RAG wrapper: 2,000 stars**
+**61,900+ GitHub stars | Docker self-hosted | [Full review](/reviews/crawl4ai-mcp-server/)**
 
-Crawl4AI is the most-starred project in this entire space by a wide margin. It's an open-source LLM-friendly crawler that converts pages to clean markdown, with browser-based JavaScript rendering, structured extraction, and caching.
+Crawl4AI is the most-starred project in this entire space by a wide margin. It's an open-source LLM-friendly crawler that converts pages to clean markdown, with browser-based JavaScript rendering, structured extraction, and caching. Since v0.8, it ships with a built-in MCP server exposing 7 tools: `md` (markdown), `html`, `screenshot`, `pdf`, `execute_js`, `crawl`, and `ask`.
 
-Crawl4AI itself doesn't ship an official MCP server (yet — it's on their roadmap). The MCP story comes from community wrappers, most notably `coleam00/mcp-crawl4ai-rag`, which combines Crawl4AI with Supabase vector DB for RAG pipelines. Tools include `crawl_single_page`, `smart_crawl_url`, `get_available_sources`, and `perform_rag_query`.
+The MCP server runs through Docker, connecting via SSE or WebSocket. There are also community wrappers (e.g., `coleam00/mcp-crawl4ai-rag` for RAG pipelines), but the built-in MCP server is now the canonical option.
 
 **Strengths:**
-- Completely free and open source
-- Excellent markdown quality with noise reduction
-- LLM-driven structured data extraction
-- The RAG wrapper adds vector search over crawled content
-- Massive community (61.9K stars) means bugs get found and fixed fast
-- Purpose-built for AI/LLM consumption
+- Completely free and open source — no credit limits
+- Best-in-class "Fit Markdown" extraction with noise filtering
+- JavaScript execution for dynamic content
+- LLM-driven structured data extraction via LiteLLM
+- Massive community (61.9K+ stars) means bugs get found and fixed fast
+- Adaptive crawling and crash recovery for long-running jobs
 
 **Weaknesses:**
-- No official first-party MCP server yet
-- Community MCP wrappers vary in quality and maintenance
-- The RAG wrapper requires Supabase + OpenAI API keys (added complexity and cost)
-- Self-hosted only — you manage the infrastructure
-- Heavier setup than simple fetch tools
+- Docker-only — no `npx` or `pip install` path
+- MCP layer still maturing (SSE connection bugs #1316, schema issues #1311)
+- No stdio transport — SSE and WebSocket only
+- No hosted/cloud option
+- MCP tools are thin wrappers — full power is in the Python API
 
-**Use it if:** You're building a RAG pipeline or knowledge base from web content and want a free, powerful crawling engine. The `mcp-crawl4ai-rag` wrapper is the best open-source option for "crawl a site, then ask questions about it."
+**Use it if:** You need high-volume free web scraping with best-in-class markdown extraction. The built-in MCP server gives agents direct access to the most popular open-source crawler. Community RAG wrappers add vector search for knowledge base use cases.
 
 ### [Browserbase MCP Server](/reviews/browserbase-mcp-server/) — The Anti-Bot Specialist (3.5/5)
 
@@ -204,9 +204,9 @@ The unique feature is **server-side tool filtering**: you can exclude tools by n
 
 ## Feature Comparison
 
-| Feature | Official Fetch | zcaceres | fetcher-mcp | Firecrawl | Crawl4AI + RAG | Browserbase | Jina AI |
+| Feature | Official Fetch | zcaceres | fetcher-mcp | Firecrawl | Crawl4AI (3.5/5) | Browserbase | Jina AI |
 |---------|---------------|----------|-------------|-----------|----------------|-------------|---------|
-| Tools | 1 | 6 | 3 | 12+ | 4-8 | 5+ | 19 |
+| Tools | 1 | 6 | 3 | 12+ | 7 | 5+ | 19 |
 | JavaScript rendering | No | No | Yes | Yes | Yes | Yes | Via API |
 | SSRF protection | No | Yes | No | N/A (cloud) | No | N/A (cloud) | N/A (remote) |
 | Batch fetching | No | No | Yes | Yes | Yes | No | Yes |
@@ -230,7 +230,7 @@ The unique feature is **server-side tool filtering**: you can exclude tools by n
 
 **For production scraping at scale — use [Firecrawl](/reviews/firecrawl-mcp-server/) (4/5).** When you need batch processing, site crawling, LLM-powered extraction, or autonomous deep research across thousands of pages, Firecrawl's paid platform is worth the investment. The deep research agent and structured extraction are unmatched.
 
-**For building knowledge bases — use Crawl4AI + RAG wrapper.** Crawl sites, store them in a vector database, then query semantically. The best open-source option for "make a site searchable by AI."
+**For free high-volume scraping — use [Crawl4AI](/reviews/crawl4ai-mcp-server/) (3.5/5).** The most popular open-source crawler with best-in-class markdown extraction, no per-page costs, and 7 MCP tools including JavaScript execution. Docker required, MCP layer still maturing. Community RAG wrappers add vector search for knowledge base use cases.
 
 **For bot-protected sites — use Browserbase.** The only option with built-in CAPTCHA solving and stealth mode. If Cloudflare is blocking your fetch requests, this is the answer.
 
@@ -254,7 +254,7 @@ The unique feature is **server-side tool filtering**: you can exclude tools by n
 
 4. **Do you need to scrape many pages or entire sites?**
    - Yes, and you'll pay for reliability → **Firecrawl**
-   - Yes, and you want free/open-source → **Crawl4AI + RAG wrapper**
+   - Yes, and you want free/open-source → [**Crawl4AI**](/reviews/crawl4ai-mcp-server/) (3.5/5)
    - No, just individual pages → **fetcher-mcp** (local Playwright, free)
 
 5. **Do you also need search or academic papers?**
@@ -267,7 +267,7 @@ The web access MCP space has matured fast. A year ago, the official Fetch server
 
 **Our pick for most developers: zcaceres/fetch-mcp.** It fixes the official server's security gaps, adds five more output formats, and costs nothing. Start there, and reach for heavier tools only when you hit a wall.
 
-For the full picture of our web-related MCP server coverage, see our individual reviews of the [official Fetch server](/reviews/fetch-mcp-server/), [Firecrawl](/reviews/firecrawl-mcp-server/), and [Playwright MCP](/reviews/playwright-mcp-server/), plus our [browser automation comparison](/guides/best-browser-mcp-servers/).
+For the full picture of our web-related MCP server coverage, see our individual reviews of the [official Fetch server](/reviews/fetch-mcp-server/), [Firecrawl](/reviews/firecrawl-mcp-server/), [Crawl4AI](/reviews/crawl4ai-mcp-server/), and [Playwright MCP](/reviews/playwright-mcp-server/), plus our [browser automation comparison](/guides/best-browser-mcp-servers/).
 
 ---
 

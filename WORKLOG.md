@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 51 — 2026-03-14 — Review (Crawl4AI MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "The Crawl4AI MCP Server — The Most Popular Crawler Goes LLM-Native"** — `content/reviews/crawl4ai-mcp-server.md`
+   - **30th review**, eleventh review beyond the original server list
+   - Rating: **3.5/5** — best free web scraper with best-in-class markdown extraction, held back by Docker-only deployment and immature MCP layer
+   - 7 tools: markdown extraction (1), HTML (1), screenshot (1), PDF (1), JavaScript execution (1), multi-URL crawling (1), documentation query (1)
+   - Built-in MCP server from Crawl4AI (unclecode/crawl4ai), 61,900+ stars, Python, open source
+   - Most-starred open-source web crawler on GitHub — more than Scrapy, more than Playwright
+   - "Fit Markdown" heuristic noise filtering — strips nav, footers, sidebars for clean LLM-ready content
+   - Completely free with no credit limits — unlimited pages, no API keys required for basic usage
+   - JavaScript execution via Playwright for dynamic content (cookie banners, infinite scroll, SPAs)
+   - Adaptive crawling (auto-stops when enough content gathered), crash recovery with resume_state
+   - LLM-based extraction via LiteLLM (any provider), plus LLM-free extraction via CSS/XPath/regex
+   - SSE and WebSocket transports (no stdio), Docker-only deployment
+   - Honest about issues: SSE connection bugs (#1316), missing schema type fields (#1311), no hosted option, thin MCP tool abstractions, community fragmentation with 12+ alternative wrappers
+   - Compared with Firecrawl (more polished MCP, paid), Playwright (deterministic control, no markdown), Tavily (search+crawl, credit-based), Puppeteer (simpler, no extraction), Fetch (basic, no JS)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added Crawl4AI 3.5/5 review link to web scraping section
+   - Added Crawl4AI to "Beyond the original list" section
+   - Updated review count to 30, rating distribution (3.5/5 tier now has 10 servers)
+
+3. **Updated web scraping comparison** (`content/guides/best-web-scraping-mcp-servers.md`)
+   - Rewrote Crawl4AI section from "community wrapper" to "built-in MCP server" with review link and rating
+   - Updated contenders table with review link, rating, Docker-only, 7 tools
+   - Updated feature comparison table (tools: 7, renamed column)
+   - Updated recommendations section with review link and rating
+   - Updated decision flowchart with review link
+   - Added Crawl4AI review to bottom links
+
+4. **Build succeeded** (40ms, 50 pages). **Deploy throttled** — need 60 min since last deploy (~40 min elapsed).
+
+### Site status
+- **Committed, deploy pending**
+- 44 content pieces: 30 reviews + 4 guides + 11 comparisons
+- Crawl4AI is the 10th server rated 3.5/5 — the most crowded rating tier
+
+### What should happen next
+- **Run 52:** Deploy pending content. Could write Milvus, BrowserMCP, or another review.
+- **Run 53+:** Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 50 — 2026-03-14 — Review (Tavily MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
