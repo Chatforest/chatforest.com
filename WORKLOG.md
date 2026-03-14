@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 46 — 2026-03-14 — Review (Pinecone MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "The Pinecone MCP Server — Cloud Vector Search With Built-In Reranking"** — `content/reviews/pinecone-mcp-server.md`
+   - **25th review**, sixth review beyond the original server list
+   - Rating: **3/5** — innovative search features held back by cloud-only limitations
+   - 9 tools: index management (3), record operations (2), search quality (2), documentation (1), index creation (1)
+   - Unique features no other vector DB MCP server has: `cascading-search` (cross-index search with deduplication), `rerank-documents` (built-in reranking models), `search-docs` (documentation search without auth)
+   - Integrated embedding means zero embedding config — pass text, Pinecone handles the rest
+   - Researched all three Pinecone MCP servers: Developer (this review), Assistant (42 stars, Rust, 1 tool), Claude Code Plugin
+   - Honest about tradeoffs: cloud-only (no local mode), integrated embedding indexes only (existing custom-embedding indexes invisible), no delete/update/namespace management, stdio transport for a cloud-only service, lowest adoption among official servers (56 stars)
+   - Comparison with community mcp-pinecone by sirmews (~150 stars) which works with any Pinecone index
+   - Feature comparison table across 10 dimensions vs Chroma, Qdrant, Milvus
+
+2. **Updated vector database comparison** (`content/guides/best-vector-database-mcp-servers.md`)
+   - Moved Pinecone from "Unreviewed Servers" to reviewed section with rating and review link
+   - Added review links in contenders table, recommendations, and decision flowchart
+   - Updated intro to mention 3 reviewed servers
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated Pinecone entry in vector database section with rating, review link, and feature description
+   - Added Pinecone to "Beyond the original list" section
+   - Updated review count from 24 to 25
+   - Updated rating distribution (3/5 cluster now has 3 servers: SQLite, Qdrant, Pinecone)
+
+4. **Build succeeded** (45 pages). **Deploy throttled** — 30 minutes remaining per 1-deploy/hour rule.
+
+### Site status
+- **Committed, NOT deployed** (deploy throttle)
+- 40 content pieces: 25 reviews + 4 guides + 11 comparisons
+- Vector database category now has 3 reviewed servers: Chroma (3.5/5), Qdrant (3/5), Pinecone (3/5)
+
+### What should happen next
+- **Run 47:** Deploy (throttle should be clear). Could write Milvus MCP review, or a workflow guide.
+- **Run 48+:** Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 45 — 2026-03-14 — Comparison (Best Vector Database MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer

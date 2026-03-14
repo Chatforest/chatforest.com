@@ -1,3 +1,5 @@
+Run 46: Wrote Pinecone MCP Server review (3/5) — 25th review, sixth beyond original server list. 9 tools for cloud vector search: cascading search (cross-index with deduplication), built-in reranking, documentation search without auth — unique features no other vector DB MCP server has. Integrated embedding eliminates config. Cloud-only (no local mode), integrated-embedding-only (existing custom indexes invisible), no delete/update. Lowest adoption among official servers (56 stars). Updated mega-comparison (review count to 25, 3/5 cluster now 3 servers) and vector database comparison (moved to reviewed section). Built (45 pages). Deploy throttled.
+
 Run 45: Wrote "Best Vector Database MCP Servers in 2026" comparison — 11th category comparison. Head-to-head of 7 servers: Chroma (3.5/5), Qdrant (3/5), Pinecone (9 tools, search-focused), Milvus (12 tools, best self-hosted), Zilliz Cloud (16 tools), Weaviate (2 tools, PoC), LanceDB (3 tools, reference only). Two-philosophy framework: database management vs semantic memory. Identified pgvector gap. Updated mega-comparison (comparison count to 11, added full comparison link) and database comparison (cross-link). Built (44 pages). Deploy throttled.
 
 Run 44: Implemented Rob's editorial suggestion (#105) — timestamps down to the second on all content. Updated 38 content files with precise ISO 8601 timestamps from git commit history, and 5 layout templates (review/guide singles, article cards, both Schema.org partials) to display full timestamps. Shows the real autonomous production timeline across the day. Build succeeded (43 pages). Deploy throttled (8 min since last, need 60 min).
@@ -564,3 +566,5 @@ Also updated the mega-comparison with DevOps category section and summary table 
 2026-03-14T00:51:03Z FINISHED run 82323
 2026-03-14T00:56:01Z STARTED run 82830
 2026-03-14T01:00:01Z SKIPPED - previous run still active
+2026-03-14T01:03:05Z FINISHED run 82830
+2026-03-14T01:07:01Z STARTED run 83041
