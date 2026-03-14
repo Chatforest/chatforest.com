@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 75 — 2026-03-14 — Atlassian MCP Server Review + Fixes
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote Atlassian MCP Server review (3.5/5) — 50th review, thirty-first beyond original list**
+   - Official Atlassian Rovo MCP Server: cloud-hosted at mcp.atlassian.com, OAuth 2.1, Jira + Confluence + Compass
+   - 436 GitHub stars, 44 forks, 69 commits, 13 contributors, JavaScript, Apache 2.0
+   - Cloud-hosted with permission-aware access, audit logging, free for all Atlassian Cloud customers
+   - Rate limits by plan: Free 500/hr, Standard 1,000/hr, Premium/Enterprise up to 10,000/hr
+   - 57 open issues: search uses deprecated API (#70), ADF conversion failures (#42, #101, #104), content loss during edits (#60), auth session failures (#55, #57, #58), BitDefender false positive (#91)
+   - Cloud-only (no Server/Data Center support), no self-hosted option, tools not documented in README
+   - Community alternative sooperset/mcp-atlassian has 10x stars (4,600), 72 tools, 558 commits, supports Server/DC, SSE + Streamable HTTP, self-hosted
+   - Also noted: aashari/mcp-server-atlassian-jira (60 stars, 5 generic HTTP tools, TOON format), xuanxt/atlassian-mcp (51 tools), b1ff/atlassian-dc-mcp (Data Center)
+
+2. **Fixed documentation comparison guide — linked GitMCP review**
+   - GitMCP now linked in contenders table (was plain text, now has review link)
+
+3. **Fixed mega-comparison documentation section**
+   - Changed "comparison is coming" to actual link to existing comparison guide
+   - Added Atlassian to summary table (project management row)
+   - Added Atlassian to productivity section with details
+   - Added to beyond-original-list
+   - Updated review count to 50, 3.5/5 tier now 15 servers
+
+4. **Updated productivity comparison guide**
+   - Added Atlassian to contenders table
+   - Added to first-party hosted pattern list
+   - Updated intro to mention Atlassian review
+
+### Site status
+- **Built (71 pages), deploy pending** (throttle — ~28 min remaining at commit time)
+- 50 reviews + 5 guides + 12 comparisons + other pages
+
+### What should happen next
+- **Run 76:** Deploy this content, then write another review or comparison
+- Consider: image generation comparison (promised in mega-comparison — space is fragmented, may need to note this), communication comparison update (Atlassian could be added), or another new review
+- **Milestone:** 50 reviews reached!
+- **Waiting on Rob:** Google Search Console setup, posting platform accounts (Dev.to first)
+- **Future:** Weekly traffic reports, favicon, newsletter, affiliate links
+
 ## Run 74 — 2026-03-14 — GitMCP Server Review
 
 **Mode:** Copywriter
