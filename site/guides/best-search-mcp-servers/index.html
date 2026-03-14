@@ -46,7 +46,7 @@
       <div class="article-body">
         <p>Search is the most fundamental capability an AI agent can have. Without it, your agent is limited to its training data and whatever files you give it access to. With it, your agent can verify facts, find documentation, research competitors, and stay current.</p>
 <p>The MCP ecosystem now has over a dozen search servers, and they take fundamentally different approaches. Some match keywords. Some understand meaning. Some don&rsquo;t even return search results — they return answers. Picking the wrong one means your agent is either missing relevant results or burning tokens on noise.</p>
-<p>We&rsquo;ve <a href="/reviews/brave-search-mcp-server/">reviewed the Brave Search MCP server</a> (4/5), the <a href="/reviews/exa-mcp-server/">Exa MCP server</a> (4/5), and the <a href="/reviews/tavily-mcp-server/">Tavily MCP server</a> (4/5). Here&rsquo;s how the full search landscape compares, and which one you should actually use.</p>
+<p>We&rsquo;ve <a href="/reviews/brave-search-mcp-server/">reviewed the Brave Search MCP server</a> (4/5), the <a href="/reviews/exa-mcp-server/">Exa MCP server</a> (4/5), the <a href="/reviews/tavily-mcp-server/">Tavily MCP server</a> (4/5), and the <a href="/reviews/perplexity-mcp-server/">Perplexity MCP server</a> (4/5). Here&rsquo;s how the full search landscape compares, and which one you should actually use.</p>
 <h2 id="the-contenders">The Contenders</h2>
 <table>
 <thead>
@@ -89,11 +89,11 @@
 <td>RAG pipelines</td>
 </tr>
 <tr>
-<td>Perplexity Sonar</td>
+<td><a href="/reviews/perplexity-mcp-server/">Perplexity</a></td>
 <td>2,000</td>
 <td>4</td>
 <td>Answer engine</td>
-<td>$5/mo (subscribers)</td>
+<td>None (paid only)</td>
 <td>$5 + tokens</td>
 <td>Synthesized answers</td>
 </tr>
@@ -178,8 +178,8 @@
 </ul>
 <p><strong>The catch:</strong> Keyword-based search, not semantic — scores 71% on WebWalker vs Exa&rsquo;s 81%. Acquired by Nebius in February 2026, introducing roadmap uncertainty. Free tier credits don&rsquo;t roll over and expire after 90 days. At scale (100K queries), costs reach ~$800/month.</p>
 <p><strong>Best for:</strong> RAG pipelines and agent frameworks. If you&rsquo;re building with LangChain or LlamaIndex, Tavily&rsquo;s native integration removes friction. The crawl and extract tools also make it useful for content ingestion workflows.</p>
-<h3 id="perplexity-sonar-mcp--the-answer-engine">Perplexity Sonar MCP — The Answer Engine</h3>
-<p><strong><a href="https://github.com/perplexityai/modelcontextprotocol">perplexityai/modelcontextprotocol</a></strong> | 2,000 stars</p>
+<h3 id="perplexity-mcpreviewsperplexity-mcp-server--the-answer-engine-45"><a href="/reviews/perplexity-mcp-server/">Perplexity MCP</a> — The Answer Engine (4/5)</h3>
+<p><strong><a href="https://github.com/perplexityai/modelcontextprotocol">perplexityai/modelcontextprotocol</a></strong> | 2,000 stars | <a href="/reviews/perplexity-mcp-server/">Full review</a></p>
 <p>Perplexity Sonar is fundamentally different from the other servers here. Instead of returning search results for your agent to read, it returns synthesized answers with citations. It&rsquo;s not a search engine — it&rsquo;s an answer engine accessed through MCP.</p>
 <p><strong>Tools (4):</strong></p>
 <ul>
@@ -192,11 +192,11 @@
 <ul>
 <li>Returns answers, not links — eliminates the &ldquo;search, read page, extract answer&rdquo; pipeline</li>
 <li>Multiple model tiers: fast sonar for quick lookups, deep research for comprehensive reports, reasoning for logic-heavy questions</li>
-<li>Fastest median latency (358ms) for basic search</li>
-<li>One-click installers for Cursor and VS Code</li>
+<li>Zero open issues — best maintenance record of any search MCP server</li>
+<li>One-click installers for Cursor and VS Code, Docker support, proxy configuration for enterprise</li>
 <li>Citation tokens no longer billed (2026 cost cut)</li>
 </ul>
-<p><strong>The catch:</strong> Less control over the retrieval process — you get Perplexity&rsquo;s interpretation, not raw sources. Higher cost for heavy usage. The $5/month subscriber credit burns fast. Limited raw content access means your agent can&rsquo;t evaluate primary sources directly.</p>
+<p><strong>The catch:</strong> No free tier — highest entry barrier in the search category. Deep research can timeout in clients with short tool-call limits. Less control over the retrieval process — you get Perplexity&rsquo;s interpretation, not raw sources. Per-token pricing is harder to predict than flat-rate alternatives.</p>
 <p><strong>Best for:</strong> When your agent needs facts, not research. Direct questions, fact verification, quick lookups where you trust the synthesis model. Also strong for step-by-step reasoning tasks via the unique <code>perplexity_reason</code> tool.</p>
 <h3 id="kagi-mcp--the-privacy-purist">Kagi MCP — The Privacy Purist</h3>
 <p><strong><a href="https://github.com/kagisearch/kagimcp">kagisearch/kagimcp</a></strong> | 322 stars</p>
@@ -458,7 +458,7 @@
 <p><strong>&ldquo;Build a RAG pipeline with LangChain/LlamaIndex&rdquo;</strong>
 → <strong>Tavily.</strong> Native framework integration means less glue code. The crawl and extract tools help with content ingestion. But watch the Nebius acquisition — the roadmap may shift.</p>
 <p><strong>&ldquo;Answer this question for me&rdquo;</strong>
-→ <strong>Perplexity Sonar.</strong> Skip the &ldquo;search, read, extract&rdquo; pipeline entirely. Get a synthesized answer with citations. The reasoning tool is unique for logic-heavy queries. Best when your agent needs facts, not research.</p>
+→ <strong><a href="/reviews/perplexity-mcp-server/">Perplexity</a> (4/5).</strong> Skip the &ldquo;search, read, extract&rdquo; pipeline entirely. Get a synthesized answer with citations. The reasoning tool is unique for logic-heavy queries. Best when your agent needs facts, not research. <a href="/reviews/perplexity-mcp-server/">Read our full review</a>.</p>
 <p><strong>&ldquo;I want the highest-quality, ad-free results&rdquo;</strong>
 → <strong>Kagi.</strong> If you&rsquo;re already a Kagi subscriber and can get API access, the quality is genuinely excellent. But the closed beta, high cost, and minimal tooling make this impractical for most users today.</p>
 <h3 id="the-two-server-strategy">The Two-Server Strategy</h3>
@@ -468,7 +468,7 @@
 <p><strong>Brave + Exa</strong> — Keyword search for specific lookups + semantic search for research. Covers both paradigms with no overlap. This is our recommended default pair.</p>
 </li>
 <li>
-<p><strong>Brave + Perplexity</strong> — Keyword search for raw results + answer engine for quick facts. Good for agents that mix research with direct question-answering.</p>
+<p><strong>Brave + <a href="/reviews/perplexity-mcp-server/">Perplexity</a></strong> — Keyword search for raw results + answer engine for quick facts. Good for agents that mix research with direct question-answering.</p>
 </li>
 <li>
 <p><strong>Tavily + Exa</strong> — RAG pipeline search + semantic research. Best for LangChain/LlamaIndex projects that also need deep research capabilities.</p>
@@ -488,7 +488,7 @@
 │  └─ Tavily (4/5) — best framework integration
 │
 ├─ Just need quick answers with citations?
-│  └─ Perplexity Sonar — best answer engine
+│  └─ Perplexity (4/5) — best answer engine
 │
 ├─ Privacy-first, ad-free, cost is no object?
 │  └─ Kagi — best quality (if you can get API access)

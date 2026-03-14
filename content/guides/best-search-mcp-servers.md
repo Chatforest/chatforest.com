@@ -11,7 +11,7 @@ Search is the most fundamental capability an AI agent can have. Without it, your
 
 The MCP ecosystem now has over a dozen search servers, and they take fundamentally different approaches. Some match keywords. Some understand meaning. Some don't even return search results — they return answers. Picking the wrong one means your agent is either missing relevant results or burning tokens on noise.
 
-We've [reviewed the Brave Search MCP server](/reviews/brave-search-mcp-server/) (4/5), the [Exa MCP server](/reviews/exa-mcp-server/) (4/5), and the [Tavily MCP server](/reviews/tavily-mcp-server/) (4/5). Here's how the full search landscape compares, and which one you should actually use.
+We've [reviewed the Brave Search MCP server](/reviews/brave-search-mcp-server/) (4/5), the [Exa MCP server](/reviews/exa-mcp-server/) (4/5), the [Tavily MCP server](/reviews/tavily-mcp-server/) (4/5), and the [Perplexity MCP server](/reviews/perplexity-mcp-server/) (4/5). Here's how the full search landscape compares, and which one you should actually use.
 
 ## The Contenders
 
@@ -20,7 +20,7 @@ We've [reviewed the Brave Search MCP server](/reviews/brave-search-mcp-server/) 
 | [Brave Search](/reviews/brave-search-mcp-server/) | 772 | 6 | Keyword | $5/mo credit | $5 | General-purpose search |
 | [Exa](/reviews/exa-mcp-server/) | 4,000 | 9 | Semantic/neural | $10 credit | ~$7 | Research & concept search |
 | [Tavily](/reviews/tavily-mcp-server/) | 1,400 | 4 | Keyword + extract | 1K credits/mo | ~$8 | RAG pipelines |
-| Perplexity Sonar | 2,000 | 4 | Answer engine | $5/mo (subscribers) | $5 + tokens | Synthesized answers |
+| [Perplexity](/reviews/perplexity-mcp-server/) | 2,000 | 4 | Answer engine | None (paid only) | $5 + tokens | Synthesized answers |
 | Kagi | 322 | 2 | Curated keyword | None (closed beta) | $25 | Privacy + quality |
 | Linkup | 24 | 2 | Factual retrieval | 5 EUR/mo credit | €0.50 cents | Factual accuracy |
 
@@ -110,9 +110,9 @@ Tavily is the search API most AI frameworks integrate by default. LangChain, Lla
 
 **Best for:** RAG pipelines and agent frameworks. If you're building with LangChain or LlamaIndex, Tavily's native integration removes friction. The crawl and extract tools also make it useful for content ingestion workflows.
 
-### Perplexity Sonar MCP — The Answer Engine
+### [Perplexity MCP](/reviews/perplexity-mcp-server/) — The Answer Engine (4/5)
 
-**[perplexityai/modelcontextprotocol](https://github.com/perplexityai/modelcontextprotocol)** | 2,000 stars
+**[perplexityai/modelcontextprotocol](https://github.com/perplexityai/modelcontextprotocol)** | 2,000 stars | [Full review](/reviews/perplexity-mcp-server/)
 
 Perplexity Sonar is fundamentally different from the other servers here. Instead of returning search results for your agent to read, it returns synthesized answers with citations. It's not a search engine — it's an answer engine accessed through MCP.
 
@@ -125,11 +125,11 @@ Perplexity Sonar is fundamentally different from the other servers here. Instead
 **Why it's good:**
 - Returns answers, not links — eliminates the "search, read page, extract answer" pipeline
 - Multiple model tiers: fast sonar for quick lookups, deep research for comprehensive reports, reasoning for logic-heavy questions
-- Fastest median latency (358ms) for basic search
-- One-click installers for Cursor and VS Code
+- Zero open issues — best maintenance record of any search MCP server
+- One-click installers for Cursor and VS Code, Docker support, proxy configuration for enterprise
 - Citation tokens no longer billed (2026 cost cut)
 
-**The catch:** Less control over the retrieval process — you get Perplexity's interpretation, not raw sources. Higher cost for heavy usage. The $5/month subscriber credit burns fast. Limited raw content access means your agent can't evaluate primary sources directly.
+**The catch:** No free tier — highest entry barrier in the search category. Deep research can timeout in clients with short tool-call limits. Less control over the retrieval process — you get Perplexity's interpretation, not raw sources. Per-token pricing is harder to predict than flat-rate alternatives.
 
 **Best for:** When your agent needs facts, not research. Direct questions, fact verification, quick lookups where you trust the synthesis model. Also strong for step-by-step reasoning tasks via the unique `perplexity_reason` tool.
 
@@ -223,7 +223,7 @@ All search MCP servers require API keys (except Tavily's remote MCP, which uses 
 → **Tavily.** Native framework integration means less glue code. The crawl and extract tools help with content ingestion. But watch the Nebius acquisition — the roadmap may shift.
 
 **"Answer this question for me"**
-→ **Perplexity Sonar.** Skip the "search, read, extract" pipeline entirely. Get a synthesized answer with citations. The reasoning tool is unique for logic-heavy queries. Best when your agent needs facts, not research.
+→ **[Perplexity](/reviews/perplexity-mcp-server/) (4/5).** Skip the "search, read, extract" pipeline entirely. Get a synthesized answer with citations. The reasoning tool is unique for logic-heavy queries. Best when your agent needs facts, not research. [Read our full review](/reviews/perplexity-mcp-server/).
 
 **"I want the highest-quality, ad-free results"**
 → **Kagi.** If you're already a Kagi subscriber and can get API access, the quality is genuinely excellent. But the closed beta, high cost, and minimal tooling make this impractical for most users today.
@@ -234,7 +234,7 @@ Most serious agent setups benefit from pairing two search servers:
 
 1. **Brave + Exa** — Keyword search for specific lookups + semantic search for research. Covers both paradigms with no overlap. This is our recommended default pair.
 
-2. **Brave + Perplexity** — Keyword search for raw results + answer engine for quick facts. Good for agents that mix research with direct question-answering.
+2. **Brave + [Perplexity](/reviews/perplexity-mcp-server/)** — Keyword search for raw results + answer engine for quick facts. Good for agents that mix research with direct question-answering.
 
 3. **Tavily + Exa** — RAG pipeline search + semantic research. Best for LangChain/LlamaIndex projects that also need deep research capabilities.
 
@@ -255,7 +255,7 @@ Need search for an AI agent?
 │  └─ Tavily (4/5) — best framework integration
 │
 ├─ Just need quick answers with citations?
-│  └─ Perplexity Sonar — best answer engine
+│  └─ Perplexity (4/5) — best answer engine
 │
 ├─ Privacy-first, ad-free, cost is no object?
 │  └─ Kagi — best quality (if you can get API access)

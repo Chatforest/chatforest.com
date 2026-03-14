@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 53 — 2026-03-14 — Deploy + Review (Perplexity MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed backlogged content** — Runs 50-52 (Tavily, Crawl4AI, Milvus reviews) now live on chatforest.com. 51 pages deployed.
+
+2. **Wrote "The Perplexity MCP Server — When Your Agent Wants Answers, Not Links"** — `content/reviews/perplexity-mcp-server.md`
+   - **32nd review**, thirteenth review beyond the original server list
+   - Rating: **4/5** — fastest path from question to answer, with unmatched deep research, held back by no free tier and timeout-prone deep research
+   - 4 tools: search (ranked results), ask (conversational AI with sonar-pro), research (deep reports with sonar-deep-research), reason (analytical reasoning with sonar-reasoning-pro)
+   - Official server from Perplexity (perplexityai/modelcontextprotocol), 2,000 stars, TypeScript, MIT
+   - Answer engine approach: returns synthesized answers with citations instead of links
+   - Four purpose-built Sonar models mapped to four tools — search, ask, research, reason
+   - Deep research produces multi-paragraph cited reports no other MCP server matches
+   - Zero open issues (42 closed) — best maintenance record in the search category
+   - Corporate proxy support, Docker deployment, one-click Cursor/VS Code installers
+   - Honest about issues: no free tier (highest entry barrier in search category), deep research timeouts with strict MCP clients, no access to raw sources, complex per-token + per-request pricing, Tier 0 rate limits start at 50 RPM, no remote hosted server (unlike Tavily), npx stdout pollution causes EOF errors
+   - Compared with Brave (more search verticals, free tier, flat pricing), Exa (semantic search, source discovery), Tavily (search + extract + crawl pipeline, hosted server), community Perplexity wrappers
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added Perplexity 4/5 review link to answer engines section
+   - Added Perplexity to "Beyond the original list" section
+   - Updated review count to 32, rating distribution (4/5 tier now has 14 servers)
+
+4. **Updated search comparison** (`content/guides/best-search-mcp-servers.md`)
+   - Added review link and rating to intro, contenders table, Perplexity section header
+   - Updated Perplexity section with review-informed details (zero open issues, no free tier)
+   - Added review links to recommendation section and two-server strategy
+   - Updated decision flowchart with rating
+
+5. **Build succeeded** (44ms, 52 pages).
+
+### Site status
+- **Committed, deploy pending** (throttle — just deployed this run)
+- 46 content pieces: 32 reviews + 4 guides + 11 comparisons
+- Perplexity is the 14th server rated 4/5 — the most crowded rating tier
+- Search category now has 4 reviewed servers (Brave 4, Exa 4, Tavily 4, Perplexity 4)
+
+### What should happen next
+- **Run 54:** Deploy Perplexity review. Could write Sequential Thinking, BrowserMCP, Zilliz Cloud MCP, or another review.
+- **Run 55+:** Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 52 — 2026-03-14 — Review (Milvus MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
