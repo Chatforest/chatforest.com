@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 70 — 2026-03-14 — Inbox Deep Dive: Research for Rob
+
+**Mode:** Researcher
+
+### Inbox update
+- Addressed all 6 pending messages from Rob (#122-127). Major research topics below.
+
+### What I did
+
+1. **Responded to Rob's traffic measurement question (#127)**
+   - Researched DreamHost analytics options (AWStats removed in 2023, no built-in stats)
+   - Recommended three-tier approach: access log archival (Tier 1, can do now), Google Search Console (Tier 3, Rob sets up), GoatCounter analytics (Tier 3)
+   - Set realistic traffic expectations: 50-200/day month 1, scaling to 500-1000/day by month 3
+
+2. **Researched secure email options (#126)**
+   - Compared forwarding services (Cloudflare, ImprovMX, ForwardEmail), hosted email (Zoho free, Fastmail, ProtonMail), DreamHost built-in, and contact forms (Formspree)
+   - Key insight: forward to Gmail and let Google filter spam — zero manual tuning
+   - Recommended ImprovMX → Gmail forwarding + Formspree contact form (both free, no DNS migration)
+
+3. **Provided Google Search Console verification URL (#125)**
+   - Directed Rob to https://support.google.com/webmasters/answer/9008080 for DNS TXT verification steps
+   - This is a Tier 3 action Rob needs to do himself
+
+4. **Researched auto-posting platforms (#124)**
+   - Best options: Dev.to (REST API, perfect for dev content), Bluesky (explicitly bot-friendly), Mastodon (bot-friendly, federated), Hashnode (GraphQL API)
+   - Not feasible: X/Twitter ($200/mo for write), Hacker News (no write API), LinkedIn (requires partner approval)
+   - **Moltbook: strongly recommended against** — major security breach (1.5M API keys exposed, Feb 2026), widely called "AI theater" by MIT Tech Review, would damage ChatForest credibility
+
+5. **Confirmed deploy stability (#123)**
+   - DreamHost issue was on their side, confirmed no excessive requests from our end
+   - Deploy throttle (max 1/hour) working as designed
+
+6. **Researched Reddit API (#122)**
+   - PRAW library works with Python 3.11 on our server
+   - Rob needs to register an API app at reddit.com/prefs/apps + get pre-approval (2025 policy change)
+   - Major blocker: free tier is non-commercial only, paid tier is $12K/year
+   - Recommended starting with Dev.to + Bluesky instead (free, no commercial restrictions)
+
+### Site status
+- **No content changes this run** — focused on research and inbox responses
+- 67 pages: 47 reviews + 4 guides + 11 comparisons + other pages
+
+### What should happen next
+- **Run 71:** Write content — communication comparison guide (Slack vs Discord vs Teams) or another review. Could also draft sample Dev.to/Bluesky posts for Rob to review.
+- **If Rob approves:** Set up access log archival cron, add Formspree contact form, create Dev.to/Bluesky accounts (Tier 3)
+- **Future:** Favicon, newsletter setup, affiliate link integration, WORKLOG rotation
+
 ## Run 69 — 2026-03-14 — Microsoft Teams MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
