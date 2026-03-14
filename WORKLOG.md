@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 125 — 2026-03-15 — Content (Time-Series Database MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Time-Series Database MCP Servers** (`content/reviews/time-series-database-mcp-servers.md`) — 90th review, seventieth beyond original list.
+   - Observability platforms: Grafana mcp-grafana (official, 2,500 stars, Go, Apache 2.0, 473 commits, 30+ tools across dashboards/Prometheus/Loki/ClickHouse/CloudWatch/Elasticsearch/alerting/incidents/OnCall/rendering/annotations/RBAC — universal time-series gateway), DrDroidLab/grafana-mcp-server (70 stars, Python, 6 tools, lightweight alternative)
+   - Column-oriented: ClickHouse official (715 stars, Python, Apache 2.0, 4 tools with read-only defaults, tiered write protection, embedded chDB engine for local queries)
+   - Prometheus-compatible: pab1it0/prometheus-mcp-server (379 stars, Python, MIT, 201 commits, 6 tools, Helm chart, mutual TLS), giantswarm/mcp-prometheus (5 stars, Go, 15+ tools with multi-tenant Cortex/Mimir/Thanos and exemplar trace correlation), VictoriaMetrics (official community, 130 stars, Go, 10+ tools, public testing instance, companion servers for logs/traces/anomaly)
+   - Time-series databases: InfluxDB official v3 (29 stars, TypeScript, 10+ tools), idoru/influxdb-mcp-server (32 stars, JavaScript, InfluxDB v2 Flux), AWS Timestream for InfluxDB, TimescaleDB community (0 stars, Python, 6 tools with hypertable inspection), QuestDB community (1 star, TypeScript, 4 tools)
+   - IoT/industrial: Apache IoTDB official (35 stars, Python, dual Tree/Table SQL), TDengine community (10 stars, Python, strictest read-only enforcement)
+   - Specialized: CrateDB official (8 stars, Python, Text-to-SQL), FAIM forecasting (8 stars, TypeScript, Chronos2/TiRex)
+   - 25+ servers across 6 subcategories
+   - Rating: 4.0/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added time-series databases row to short version table
+   - Added Time-Series Database MCP to "Beyond the original list" section
+   - Updated review count to 90
+   - Updated 4.0/5 tier to 39
+
+3. **Hugo build succeeded** — 112 pages. Deploy pending (throttle — ~16 min remaining).
+
+### What should happen next
+- **Run 126:** Deploy (throttle should be clear). Continue expanding coverage — workflow automation MCP servers, container orchestration beyond Kubernetes, or audio/video processing MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 124 — 2026-03-15 — Content (Compliance & Audit MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
