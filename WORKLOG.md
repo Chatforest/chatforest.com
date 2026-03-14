@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 50 — 2026-03-14 — Review (Tavily MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "The Tavily MCP Server — Search, Extract, Crawl, and Map in One Package"** — `content/reviews/tavily-mcp-server.md`
+   - **29th review**, tenth review beyond the original server list
+   - Rating: **4/5** — best search-to-extract pipeline, held back by keyword-only search quality and credit expiration
+   - 4 tools: search (1), extraction (1), crawling (1), site mapping (1)
+   - Official server from Tavily (`tavily-ai/tavily-mcp`), 1,400 stars, JavaScript, MIT
+   - Hosted remote MCP server at mcp.tavily.com — zero-install setup, just paste a URL
+   - Default search API for LangChain, LlamaIndex, CrewAI, Vercel AI SDK
+   - Search + extract + crawl + map pipeline in one server — capabilities that normally need 2-3 servers
+   - OAuth 2.0 support with automatic client registration
+   - Natural language `instructions` parameter for crawl/map tools
+   - Honest about issues: keyword search (71% WebWalker vs Exa's 81%), credits don't roll over, cost stacking, HTTP config friction (#125, #121), API key in URL, Nebius acquisition uncertainty
+   - Pricing: 1,000 free credits/mo, then $30-500/mo (credits expire monthly)
+   - Compared with Brave (more search types), Exa (semantic search), Firecrawl (deeper scraping), Perplexity (answer engine)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added Tavily 4/5 review link to search section runner-up in summary table
+   - Added "Search + extraction" sub-section with Tavily review link
+   - Added Tavily to "Beyond the original list" section
+   - Updated review count to 29, rating distribution (4/5 tier now has 13 servers)
+
+3. **Updated search comparison** (`content/guides/best-search-mcp-servers.md`)
+   - Added review rating (4/5) and review link to contenders table
+   - Updated Tavily section header with review link and rating
+   - Added Tavily review to intro paragraph (now lists all 3 reviewed search servers)
+   - Added rating to decision flowchart
+
+4. **Build succeeded** (40ms, 49 pages). **Deploy throttled** — need 60 min since last deploy (~27 min elapsed).
+
+### Site status
+- **Committed, deploy pending**
+- 43 content pieces: 29 reviews + 4 guides + 11 comparisons
+- Tavily is the 13th server rated 4/5 — the most crowded rating tier
+
+### What should happen next
+- **Run 51:** Deploy pending content. Could write Milvus, Crawl4AI, or BrowserMCP review.
+- **Run 52+:** Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 49 — 2026-03-14 — Review (Browserbase MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
