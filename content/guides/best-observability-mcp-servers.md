@@ -11,7 +11,7 @@ Every major observability platform now has an official MCP server. That happened
 
 This matters because observability is where AI agents add the most obvious value. Debugging production errors, correlating metrics with deploys, querying logs in natural language — these are tasks where context switching between your IDE and a dashboard wastes real time. An MCP server that puts your observability data inside your agent's context eliminates that round-trip.
 
-We've reviewed the [Sentry MCP server](/reviews/sentry-mcp-server/) (4/5), the [Grafana MCP server](/reviews/grafana-mcp-server/) (4/5), the [Datadog MCP server](/reviews/datadog-mcp-server/) (4/5), the [New Relic MCP server](/reviews/newrelic-mcp-server/) (4/5), and the [Honeycomb MCP server](/reviews/honeycomb-mcp-server/) (4/5). Here's how the full observability landscape compares, and which ones are worth integrating.
+We've now reviewed all six: the [Sentry MCP server](/reviews/sentry-mcp-server/) (4/5), the [Grafana MCP server](/reviews/grafana-mcp-server/) (4/5), the [Datadog MCP server](/reviews/datadog-mcp-server/) (4/5), the [New Relic MCP server](/reviews/newrelic-mcp-server/) (4/5), the [Honeycomb MCP server](/reviews/honeycomb-mcp-server/) (4/5), and the [PagerDuty MCP server](/reviews/pagerduty-mcp-server/) (4/5). Here's how the full observability landscape compares, and which ones are worth integrating.
 
 ## The Contenders
 
@@ -22,7 +22,7 @@ We've reviewed the [Sentry MCP server](/reviews/sentry-mcp-server/) (4/5), the [
 | [Grafana](/reviews/grafana-mcp-server/) | Dashboards + LGTM | 2,500 | stdio + SSE + HTTP | API token | 40+ | Yes (Grafana Cloud free) | Metrics/logs/traces visualization |
 | [New Relic](/reviews/newrelic-mcp-server/) | Full-stack APM | 3 (hosted) | Remote (HTTP) | API key / OAuth | 35 | Yes (100GB/mo) | Natural language observability queries |
 | [Honeycomb](/reviews/honeycomb-mcp-server/) | Event-based observability | 41 (deprecated repo) | Remote (hosted) | OAuth 2.1 / API key | 14+ | Yes (20M events/mo) | High-cardinality event analysis |
-| PagerDuty | Incident management | 60+ | Both (hosted + local) | OAuth 2.0 | 20+ | Yes (5 users) | Incident response & on-call |
+| [PagerDuty](/reviews/pagerduty-mcp-server/) | Incident management | 56 | Both (hosted + local) | API token | 67 | Yes (5 users) | Incident response & on-call |
 
 **Notable addition:** Splunk has an MCP server for its Cloud Platform (updated Feb 2026), but it's primarily an enterprise play and not widely adopted in the MCP ecosystem yet. We're tracking it but not comparing it in detail here.
 
@@ -134,17 +134,19 @@ The hosted server uses **OAuth 2.1** for interactive clients (browser-based logi
 
 ### PagerDuty MCP — Incident Response Automation
 
-**[PagerDuty/pagerduty-mcp-server](https://github.com/PagerDuty/pagerduty-mcp-server)** | Both hosted + local
+**[PagerDuty/pagerduty-mcp-server](https://github.com/PagerDuty/pagerduty-mcp-server)** | [Our full review](/reviews/pagerduty-mcp-server/) | Rating: 4/5
 
 PagerDuty is the outlier in this comparison — it doesn't collect telemetry. Instead, it manages the human response to incidents: creating/acknowledging/resolving incidents, managing on-call schedules, escalating to the right engineer, and coordinating across teams.
 
-PagerDuty offers both a **hosted MCP service** at `mcp.pagerduty.com/mcp` (with OAuth 2.0) and a **self-hosted open-source server**. This dual-transport approach gives teams flexibility — use the hosted server for convenience or self-host for compliance requirements.
+PagerDuty offers both a **hosted MCP service** at `mcp.pagerduty.com/mcp` and a **self-hosted open-source server** (Apache-2.0, Python). This dual-deployment approach gives teams flexibility — use the hosted server for convenience or self-host for compliance requirements.
 
-The ~20 tools cover incidents, services, schedules, event orchestrations, and team management. The real value is combining PagerDuty MCP with another observability MCP server: your agent gets paged, acknowledges the incident via PagerDuty, pulls the error details from Sentry, checks the metrics in Grafana, and writes up the incident summary — all without you switching tabs.
+**67 tools across 13 categories** — the largest tool count of any server in this comparison. 14 incident tools (create, resolve, merge, snooze, response plays, multi-responder coordination), 8 event orchestration tools, 7 status page tools, 7 team tools, 6 schedule tools, 5 alert grouping tools, 4 change event tools, 4 service tools, 3 workflow tools, 2 escalation policy tools, 2 user tools, 2 log entry tools, 1 on-call tool. **Read-only by default** — 31 tools are enabled by default, the remaining 36 write tools require `--enable-write-tools`. This is the safest write-access model of any MCP server we've reviewed.
 
-**Strengths:** OAuth 2.0 (hosted) or API key (self-hosted), dual-transport flexibility, incident management focus (unique niche), complements other observability servers, real-time schedule/escalation management.
+The real value is combining PagerDuty MCP with another observability MCP server: your agent gets paged, acknowledges the incident via PagerDuty, pulls the error details from Sentry, checks the metrics in Grafana, and writes up the incident summary — all without you switching tabs.
 
-**Weaknesses:** Not a standalone observability tool — needs pairing with Sentry/Datadog/Grafana for actual debugging data, incident management is a narrower use case.
+**Strengths:** 67 tools (most comprehensive incident MCP), read-only defaults with explicit write opt-in, dual deployment (hosted + self-hosted), event orchestration (unique — no other server lets agents configure routing rules), status page management, Docker support, Apache-2.0 license, active community (267 commits, 27 forks).
+
+**Weaknesses:** API token auth only (no OAuth browser flow), no HTTP transport for self-hosted (issue #25), corporate proxy issues (issue #66), pagination bugs (issue #62), no AI analysis layer (pure API wrapper), limited free tier (5 users), 67 tools exceeds their own 20-25 recommendation.
 
 **Best for:** On-call engineers who want their AI agent to help manage incident response alongside debugging.
 
@@ -163,7 +165,7 @@ The ~20 tools cover incidents, services, schedules, event orchestrations, and te
 | Transport | Remote (SSE) | Remote (HTTP) | stdio + SSE + HTTP | Remote (HTTP) | Remote (HTTP) | Both |
 | Open source | Yes | No | Yes | No (hosted) | Deprecated (was MIT) | Yes |
 | Status | Pre-1.0 | GA | Active | Public Preview | Hosted (self-hosted deprecated) | Active |
-| Rating | [4/5](/reviews/sentry-mcp-server/) | [4/5](/reviews/datadog-mcp-server/) | [4/5](/reviews/grafana-mcp-server/) | [4/5](/reviews/newrelic-mcp-server/) | [4/5](/reviews/honeycomb-mcp-server/) | — |
+| Rating | [4/5](/reviews/sentry-mcp-server/) | [4/5](/reviews/datadog-mcp-server/) | [4/5](/reviews/grafana-mcp-server/) | [4/5](/reviews/newrelic-mcp-server/) | [4/5](/reviews/honeycomb-mcp-server/) | [4/5](/reviews/pagerduty-mcp-server/) |
 
 ## How to Choose
 
@@ -179,7 +181,7 @@ The ~20 tools cover incidents, services, schedules, event orchestrations, and te
 
 **"I need to debug complex distributed systems"** → **[Honeycomb MCP](/reviews/honeycomb-mcp-server/) (4/5)**. High-cardinality event analysis with BubbleUp anomaly decomposition is purpose-built for finding needles in haystacks. OAuth 2.1, hosted, works on all tiers including Free.
 
-**"I'm on-call and want to manage incidents from my agent"** → **PagerDuty MCP**. Pair it with whichever debugging server you use.
+**"I'm on-call and want to manage incidents from my agent"** → **[PagerDuty MCP](/reviews/pagerduty-mcp-server/) (4/5)**. 67 tools with read-only defaults. Pair it with whichever debugging server you use.
 
 ### The Stack We'd Recommend
 

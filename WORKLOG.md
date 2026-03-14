@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 66 — 2026-03-14 — Review (PagerDuty MCP Server) + Inbox Cleanup
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- **Message #111 (Rob):** Asked to check pending messages #105-109. Done — avatar reply already sent (#110), timestamps already implemented (#105). Messages #106-108 not found in inbox. Marked #111 done.
+- **Marked done:** Messages #99, #100, #102, #103, #104, #105, #109, #110, #111 — all previously acted on but never marked done. Inbox is now clean.
+- **Deploy still failing** — "Network is unreachable" since Run 63. Sent update as message #112.
+
+### What I did
+
+1. **Deploy attempted but failed** — network still unreachable. Content from Runs 63-65 remains pending.
+
+2. **Wrote "The PagerDuty MCP Server — 67 Tools for Incident Management With the Most Comprehensive Write API in the Category"** — `content/reviews/pagerduty-mcp-server.md`
+   - **45th review**, twenty-sixth review beyond the original server list
+   - Rating: **4/5** — most comprehensive incident management MCP server
+   - 67 tools across 13 categories: incidents (14), event orchestrations (8), status pages (7), teams (7), schedules (6), alert grouping (5), change events (4), services (4), incident workflows (3), escalation policies (2), users (2), log entries (2), on-call (1)
+   - Read-only by default (31 tools), write operations require `--enable-write-tools` flag — safest write-access model in the category
+   - Both hosted (mcp.pagerduty.com/mcp) and self-hosted (uvx pagerduty-mcp), Apache-2.0, Python
+   - 56 stars, 27 forks, 267 commits, 14 open issues
+   - Multi-region (US + EU)
+   - Docker support (build + compose)
+   - PagerDuty free tier: 5 users, basic on-call
+   - Known issues: no HTTP transport for self-hosted (#25), corporate proxy broken (#66), pagination bugs (#62), API token only (no OAuth), 67 tools exceeds their own 20-25 recommendation
+   - Community alternatives: wpfleger96 (7 stars, MIT, v3.1.1), naveen09 (0 stars, minimal)
+   - Compared with Sentry (error tracking), Datadog (full-stack), Grafana (open-source), Honeycomb (event-based), New Relic (natural language)
+   - Completes the "big six" observability comparison — all six now reviewed at 4/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated PagerDuty entry with review link, rating (4/5), 67 tools, dual deployment
+   - Added PagerDuty to "Beyond the original list" section
+   - Updated review count to 45
+   - Updated rating distribution (4/5 tier now has 23 servers)
+
+4. **Updated observability comparison** (`content/guides/best-observability-mcp-servers.md`)
+   - Updated intro to note all six servers now reviewed
+   - Updated contenders table (stars, auth, tools)
+   - Rewrote PagerDuty section with full review details (67 tools, 13 categories, read-only defaults, dual deployment, event orchestration, known issues)
+   - Updated feature comparison table rating row
+   - Updated decision flowchart with review link and rating
+
+5. **Build succeeded** (52ms, 65 pages).
+
+### Site status
+- **Committed, deploy pending** (network unreachable)
+- 59 content pieces: 45 reviews + 4 guides + 11 comparisons
+- PagerDuty is the 23rd server rated 4/5
+- All six "big six" observability servers now reviewed — all at 4/5
+
+### What should happen next
+- **Run 67:** Retry deploy. Could branch into a new category — perhaps AI/LLM tools (OpenAI, Anthropic), communication (Discord, Teams), or developer tools (Raygun, Axiom).
+- **Future:** Avatar/logo (waiting on Rob's feedback on concept), favicon, newsletter setup, affiliate link integration, WORKLOG rotation (approaching size limit again)
+
 ## Run 65 — 2026-03-14 — Review (Honeycomb MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
