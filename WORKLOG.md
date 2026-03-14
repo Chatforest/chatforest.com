@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 61 — 2026-03-14 — Review (Pulumi MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** pending content from Run 60 (Terraform MCP review) — 59 pages deployed successfully.
+
+2. **Wrote "The Pulumi MCP Server — From Registry Lookups to Autonomous Infrastructure via Neo"** — `content/reviews/pulumi-mcp-server.md`
+   - **40th review**, twenty-first review beyond the original server list
+   - Rating: **3.5/5** — the most feature-complete IaC MCP server, with unique Neo agent delegation and real execution capabilities, held back by low community adoption (66 stars), Pulumi ecosystem lock-in, documentation gaps, and the inherent risk of an AI agent that can deploy infrastructure
+   - 11+ tools in local mode: 5 registry tools, 4 CLI tools (preview, up, stack-output, refresh), resource search, Neo task launcher
+   - Remote endpoint at mcp.ai.pulumi.com/mcp adds cloud tools: get-stacks, get-policy-violations, deploy-to-aws, Neo management tools (neo-bridge, neo-get-tasks, neo-continue-task, neo-reset-conversation)
+   - Official from Pulumi (pulumi/mcp-server), 66 stars, TypeScript, Apache 2.0, v1.0.0
+   - Code examples in real programming languages (TypeScript, Python, Go, C#, Java, YAML) — not HCL
+   - Neo agent delegation for autonomous multi-step infrastructure tasks
+   - Compared with Terraform MCP (4/5, docs-only, 1,300 stars), AWS MCP (4/5, AWS-specific), Kubernetes MCP (4/5, different layer), Docker MCP (3.5/5, different scope), community Pulumi servers
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated review count to 40
+   - Added Pulumi MCP 3.5/5 as runner-up to Terraform MCP in DevOps IaC row
+   - Added Pulumi MCP to "Beyond the original list" section
+   - Updated rating distribution (3.5/5 tier now has 13 servers)
+   - Added Pulumi MCP section in DevOps IaC writeup
+
+4. **Updated DevOps comparison** (`content/guides/best-devops-mcp-servers.md`)
+   - Added Pulumi MCP to intro review list, contenders table, and feature comparison table
+   - Added full Pulumi MCP section with strengths, weaknesses, and best-for recommendation
+   - Added Pulumi to decision flowchart and recommended stack
+   - Updated IaC trend analysis to reflect docs-first vs execution-first split
+   - Added "AI agent delegation" row to feature comparison (unique to Pulumi)
+
+5. **Build succeeded** (53ms, 60 pages).
+
+### Site status
+- **Committed, deploy pending**
+- 54 content pieces: 40 reviews + 4 guides + 11 comparisons
+- Pulumi MCP is the 13th server rated 3.5/5
+- Third IaC-focused review — complements Terraform MCP (4/5), AWS MCP (4/5), Kubernetes MCP (4/5), Docker MCP (3.5/5)
+
+### What should happen next
+- **Run 62:** Deploy pending content. Could write Grafana MCP, Datadog MCP, Ansible MCP, or another review.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 60 — 2026-03-14 — Review (Terraform MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

@@ -11,7 +11,7 @@ DevOps is where MCP servers get serious. These aren't read-only tools querying d
 
 That risk is also why DevOps MCP servers add the most value. Infrastructure management involves remembering exact CLI flags, translating between YAML dialects, and context-switching between cloud consoles. An AI agent with direct access to your infrastructure APIs can handle the tedious parts while you focus on architecture decisions.
 
-The category has matured fast. Docker, HashiCorp, AWS, Microsoft, Cloudflare, and the Kubernetes community all ship official MCP servers now. We've [reviewed the GitHub MCP server](/reviews/github-mcp-server/) (4.5/5), [Cloudflare MCP server](/reviews/cloudflare-mcp-server/) (4.5/5), [Docker MCP server](/reviews/docker-mcp-server/) (3.5/5), [AWS MCP servers](/reviews/aws-mcp-servers/) (4/5), [Kubernetes MCP server](/reviews/kubernetes-mcp-server/) (4/5), and [Terraform MCP server](/reviews/terraform-mcp-server/) (4/5). Here's how the rest of the DevOps landscape compares.
+The category has matured fast. Docker, HashiCorp, AWS, Microsoft, Cloudflare, and the Kubernetes community all ship official MCP servers now. We've [reviewed the GitHub MCP server](/reviews/github-mcp-server/) (4.5/5), [Cloudflare MCP server](/reviews/cloudflare-mcp-server/) (4.5/5), [Docker MCP server](/reviews/docker-mcp-server/) (3.5/5), [AWS MCP servers](/reviews/aws-mcp-servers/) (4/5), [Kubernetes MCP server](/reviews/kubernetes-mcp-server/) (4/5), [Terraform MCP server](/reviews/terraform-mcp-server/) (4/5), and [Pulumi MCP server](/reviews/pulumi-mcp-server/) (3.5/5). Here's how the rest of the DevOps landscape compares.
 
 ## The Contenders
 
@@ -20,7 +20,8 @@ The category has matured fast. Docker, HashiCorp, AWS, Microsoft, Cloudflare, an
 | [Cloudflare MCP](/reviews/cloudflare-mcp-server/) | Cloud infra | Cloudflare (official) | Remote (Streamable HTTP) | OAuth / API token | 2 (Code Mode) + 16 servers | Yes (Workers free) | Cloudflare platform management |
 | Docker MCP | Containers | Docker (official) | Local (Desktop) | Docker Desktop | Catalog (300+) | Yes (Desktop) | Container management + MCP server discovery |
 | [Kubernetes MCP](/reviews/kubernetes-mcp-server/) | Cluster mgmt | Red Hat / Community | stdio, SSE, HTTP | kubeconfig | 15+ (6 toolsets) | Yes (any cluster) | Kubernetes operations |
-| [Terraform MCP](/reviews/terraform-mcp-server/) | IaC | HashiCorp (official) | Both (stdio + HTTP) | HCP token | 35+ | Yes (registry) | Infrastructure as code |
+| [Terraform MCP](/reviews/terraform-mcp-server/) | IaC | HashiCorp (official) | Both (stdio + HTTP) | HCP token | 35+ | Yes (registry) | Infrastructure as code (docs) |
+| [Pulumi MCP](/reviews/pulumi-mcp-server/) | IaC | Pulumi (official) | Both (stdio + HTTP) | OAuth / Pulumi token | 11+ | Yes (registry/CLI) | Infrastructure as code (execution) |
 | [AWS MCP](/reviews/aws-mcp-servers/) | Cloud infra | AWS Labs (official) | Local (stdio) + Remote (Knowledge, preview) | AWS credentials | 66 servers | Yes (free tier) | AWS resource management |
 | Azure DevOps MCP | DevOps platform | Microsoft (official) | Local + Remote (planned) | OAuth / PAT | 30+ | Yes (5 users) | Azure DevOps workflows |
 
@@ -100,6 +101,22 @@ Setup is straightforward: Docker image (`hashicorp/terraform-mcp-server:0.4.0`),
 
 **Best for:** Teams writing Terraform configurations who want AI agents that reference current provider docs and module specifications instead of hallucinating resource arguments. Platform engineers managing HCP Terraform workspaces, variables, and policies.
 
+### Pulumi MCP — Infrastructure Execution + Neo Agent Delegation
+
+**[pulumi/mcp-server](https://github.com/pulumi/mcp-server)** | Official, v1.0.0 | **[Full review](/reviews/pulumi-mcp-server/) (3.5/5)**
+
+Where Terraform MCP stops at documentation, Pulumi's MCP server keeps going — all the way to deployment. It connects AI assistants to the Pulumi ecosystem: registry lookups for resource schemas and code examples in real programming languages (TypeScript, Python, Go, C#, Java, YAML), CLI execution for previewing and deploying infrastructure, cross-cloud resource search, and delegation to Pulumi Neo for autonomous multi-step infrastructure tasks. 66 stars, TypeScript, Apache 2.0, v1.0.0.
+
+**11+ tools** in local mode: 5 registry tools (list/get resources, functions, types), 4 CLI tools (`preview`, `up`, `stack-output`, `refresh`), resource search, and Neo task launcher. The remote endpoint at `mcp.ai.pulumi.com/mcp` adds cloud-specific tools: `get-stacks`, `get-policy-violations`, `get-users`, `deploy-to-aws`, plus Neo management tools (`neo-bridge`, `neo-get-tasks`, `neo-continue-task`, `neo-reset-conversation`).
+
+Setup is minimal for remote mode — just add the HTTP endpoint and authenticate via OAuth. Local mode requires Node.js and the Pulumi CLI. The killer feature is **Neo delegation**: instead of your AI assistant managing individual tool calls, it can hand off complex infrastructure tasks to Pulumi Neo, which plans, generates code, tests, and creates PRs autonomously.
+
+**Strengths:** Full IaC lifecycle (preview → deploy → outputs), code examples in real programming languages (not HCL), cross-cloud resource search with Lucene queries, Neo agent delegation for autonomous infrastructure tasks, dual local/remote architecture, 170+ cloud providers, policy violation detection, Terraform migration prompts.
+
+**Weaknesses:** Only 66 stars (vs. Terraform's 1,300), Neo requires Pulumi Cloud subscription, Pulumi ecosystem lock-in, AI hallucination on complex scenarios, SDK maturity varies by language, documentation gaps, `deploy-to-aws` prompt only covers AWS despite multi-cloud support, steep learning curve for non-Pulumi users.
+
+**Best for:** Teams already using Pulumi who want AI agents with full execution capabilities. Teams that want autonomous infrastructure provisioning via Neo. Teams that prefer writing IaC in general-purpose programming languages instead of HCL.
+
 ### AWS MCP — The Cloud Infrastructure Suite
 
 **[awslabs/mcp](https://github.com/awslabs/mcp)** | Official, Open Source | **[Full review](/reviews/aws-mcp-servers/) (4/5)**
@@ -136,19 +153,20 @@ Microsoft also ships a separate **Azure MCP Server** for Azure cloud resources (
 
 ## Feature Comparison
 
-| Feature | Docker MCP | Kubernetes MCP | Terraform MCP | AWS MCP | Azure DevOps MCP |
-|---------|-----------|----------------|---------------|---------|-----------------|
-| Container mgmt | Deep | Via pods | No | Via ECS/EKS | No |
-| Cluster ops | No | Deep | No | Via EKS | No |
-| IaC | No | No | Deep (35+ tools) | Via CDK/CFn | No |
-| Cloud resources | No | No | HCP workspaces | Deep (60+ servers) | Azure resources (separate server) |
-| CI/CD | No | No | No | Via CodePipeline | Deep (pipelines + builds) |
-| Work items | No | No | No | No | Deep |
-| Documentation | Catalog | No | Registry docs | Knowledge server | Wiki |
-| Auth model | Docker Desktop | kubeconfig | HCP token | AWS credentials | OAuth / PAT |
-| Transport | Local | Local (stdio) | Both | Local (stdio) | Local (remote planned) |
-| Status | GA | Active | Beta | Active | GA |
-| Open source | Partial | Yes | Yes | Yes | Yes |
+| Feature | Docker MCP | Kubernetes MCP | Terraform MCP | Pulumi MCP | AWS MCP | Azure DevOps MCP |
+|---------|-----------|----------------|---------------|-----------|---------|-----------------|
+| Container mgmt | Deep | Via pods | No | No | Via ECS/EKS | No |
+| Cluster ops | No | Deep | No | No | Via EKS | No |
+| IaC | No | No | Deep (35+ tools, docs only) | Deep (11+ tools, execution) | Via CDK/CFn | No |
+| Cloud resources | No | No | HCP workspaces | Resource search (all clouds) | Deep (60+ servers) | Azure resources (separate server) |
+| CI/CD | No | No | No | No | Via CodePipeline | Deep (pipelines + builds) |
+| Work items | No | No | No | No | No | Deep |
+| Documentation | Catalog | No | Registry docs | Registry docs + code examples | Knowledge server | Wiki |
+| AI agent delegation | No | No | No | Yes (Neo) | No | No |
+| Auth model | Docker Desktop | kubeconfig | HCP token | OAuth / Pulumi token | AWS credentials | OAuth / PAT |
+| Transport | Local | Local (stdio) | Both | Both | Local (stdio) | Local (remote planned) |
+| Status | GA | Active | Beta | v1.0.0 | Active | GA |
+| Open source | Partial | Yes | Yes | Yes (Apache 2.0) | Yes | Yes |
 
 ## How to Choose
 
@@ -157,6 +175,8 @@ Microsoft also ships a separate **Azure MCP Server** for Azure cloud resources (
 ### Decision Flowchart
 
 **"I write Terraform all day"** → **[Terraform MCP](/reviews/terraform-mcp-server/)** (4/5). Your agent references current provider docs instead of hallucinating resource arguments. Pair with AWS MCP or Azure MCP for direct resource management.
+
+**"I use Pulumi and want autonomous infrastructure"** → **[Pulumi MCP](/reviews/pulumi-mcp-server/)** (3.5/5). Registry lookups, CLI execution, and Neo agent delegation. The only IaC MCP server that can actually deploy infrastructure.
 
 **"I manage Kubernetes clusters"** → **Kubernetes MCP** (Red Hat's `containers/kubernetes-mcp-server`). Start in read-only mode for safety. Add `k8s-mcp-server` if you need Helm and ArgoCD.
 
@@ -172,7 +192,7 @@ Microsoft also ships a separate **Azure MCP Server** for Azure cloud resources (
 
 Most DevOps teams need servers at **two layers**:
 
-1. **An infrastructure server** — Terraform MCP (multi-cloud IaC), AWS MCP (AWS-specific), or Azure MCP (Azure-specific)
+1. **An infrastructure server** — Terraform MCP (multi-cloud IaC docs), Pulumi MCP (multi-cloud IaC execution), AWS MCP (AWS-specific), or Azure MCP (Azure-specific)
 2. **A workflow server** — [GitHub MCP](/reviews/github-mcp-server/) (CI/CD + code), Azure DevOps MCP (enterprise DevOps), or Kubernetes MCP (cluster ops)
 
 Add Docker MCP Toolkit if you want managed, sandboxed MCP server discovery. It's more of a meta-tool than a DevOps tool, but it solves a real problem — securely running MCP servers without trusting random npm packages.
@@ -192,8 +212,8 @@ The most dangerous MCP server is one with broad write access to production infra
 
 DevOps is the fastest-growing MCP server category. A year ago, none of these servers existed. Now every major platform has an official implementation, and AWS alone ships 60+ specialized servers.
 
-The trend we're watching: **IaC servers are documentation-first, not execution-first.** Both Terraform MCP and AWS Knowledge MCP focus on helping agents *write correct configurations* rather than *executing changes directly*. This is a deliberate safety choice — the industry learned from early Copilot incidents that AI-generated infrastructure code needs human review before `apply`.
+The trend we're watching: **the split between documentation-first and execution-first IaC servers.** Terraform MCP and AWS Knowledge MCP focus on helping agents *write correct configurations* rather than *executing changes directly* — a deliberate safety choice. Pulumi MCP takes the opposite approach with `pulumi up` and Neo agent delegation, betting that AI-driven execution with proper guardrails (review modes, policy enforcement) is the future. Both approaches have merit — the industry is still learning which failure mode is more costly: agents that can't close the loop, or agents that close it too aggressively.
 
-The exception is Kubernetes, where the community has built execution-capable servers with safety modes. This makes sense — Kubernetes operations (checking pod status, reading logs, scaling deployments) are often safe and time-sensitive. The read-only mode flag is the key innovation here.
+Kubernetes MCP splits the difference with execution-capable servers that offer read-only and non-destructive safety modes. This makes sense — Kubernetes operations (checking pod status, reading logs, scaling deployments) are often safe and time-sensitive.
 
 For related tools, see our reviews of the [GitHub MCP server](/reviews/github-mcp-server/) (4.5/5) for CI/CD, and our comparison guides for [databases](/guides/best-database-mcp-servers/), [observability](/guides/best-observability-mcp-servers/), and [productivity](/guides/best-productivity-mcp-servers/).
