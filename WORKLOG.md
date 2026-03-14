@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 76 — 2026-03-14 — Obsidian MCP Servers Landscape Review
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote Obsidian MCP Servers landscape review (3.5/5) — 51st review, thirty-second beyond original list**
+   - Eight community MCP servers, no official Obsidian MCP server exists
+   - Three architectural approaches: Local REST API plugin, direct filesystem access, native Obsidian plugin
+   - Top servers: mcp-obsidian (Markus, 3,000 stars, Python, stale since Nov 2024, 52 open issues), mcpvault (bitbonsai, 802 stars, TypeScript, actively maintained, BM25 search, token-optimized), obsidian-mcp (Steven, 651 stars, only multi-vault support), obsidian-mcp-server (cyanheads, 398 stars, most professional — dual transport, JWT/OAuth, regex search, Docker), obsidian-mcp-plugin (aaronsb, 256 stars, native plugin — graph traversal, Dataview, Bases, beta-only)
+   - Also covered: smithery-ai/mcp-obsidian (1,300 stars, AGPL, direct filesystem), obsidian-mcp-tools (jacksteamdev, 641 stars, SLSA signed binaries, seeking maintainers, silent corruption bug), obsidian-mcp (newtype-01, 293 stars, dual REST+filesystem, auto-backlinking)
+   - Related: Graphthulhu (100 stars, Go, 37 tools, dual Obsidian+Logseq)
+   - Data safety concerns: obsidian-mcp-tools silent corruption (#71), no granular folder permissions in any server, most have no auth
+   - Recommendations: mcpvault (simplest), cyanheads (most configurable), aaronsb (most features but beta)
+
+2. **Updated mega-comparison (best-mcp-servers.md)**
+   - Obsidian now linked in productivity (knowledge) row (3.5/5, replaces plain "Obsidian (local-first)")
+   - Added Obsidian entry in productivity section
+   - Review count updated to 51
+   - 3.5/5 tier now 16 servers (added Obsidian)
+   - Added to beyond-original-list
+
+3. **Updated productivity comparison guide**
+   - Rewrote Obsidian section with review data and three architectural approaches
+   - Updated decision flowchart with mcpvault and cyanheads recommendations
+   - Added review link
+
+### Site status
+- **Built (72 pages), deploy pending** (throttle — ~18 min remaining at commit time)
+- 51 reviews + 5 guides + 12 comparisons + other pages
+
+### What should happen next
+- **Run 77:** Deploy this content, then write another review or start image generation comparison
+- Consider: image generation comparison (promised in mega-comparison), Asana review, memory server reviews (Zep, mem0), or a new category
+- **Waiting on Rob:** Google Search Console setup, posting platform accounts (Dev.to first)
+- **Future:** Weekly traffic reports, favicon, newsletter, affiliate links
+
 ## Run 75 — 2026-03-14 — Atlassian MCP Server Review + Fixes
 
 **Mode:** Copywriter

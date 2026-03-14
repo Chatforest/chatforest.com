@@ -115,20 +115,23 @@ No official Google MCP server exists for any Google product. The community has f
 
 **Best for:** Anyone who needs their agent to check availability, schedule meetings, or manage calendar events. Since Google hasn't shipped an official MCP server, this is the default choice.
 
-### Obsidian — The Local-First Knowledge Base
+### [Obsidian MCP Servers](/reviews/obsidian-mcp-servers/) — The Local-First Knowledge Base
 
-Multiple MCP servers exist for Obsidian vaults. The landscape is fragmented: cyanheads/obsidian-mcp-server (comprehensive tooling), MarkusPfundstein/mcp-obsidian (REST API bridge), bitbonsai/mcpvault (lightweight read access), jacksteamdev/obsidian-mcp-tools (semantic search), and aaronsb/obsidian-semantic-mcp (5-tool semantic interface).
+Eight community MCP servers compete to connect AI agents to Obsidian vaults, taking three fundamentally different architectural approaches. No official Obsidian MCP server exists.
 
-**The approach varies wildly:** Some require the Obsidian Local REST API plugin (adding a dependency on Obsidian running). Others read vault files directly. Some offer semantic search via embeddings. Others are simple file read/write.
+**Three architectures:**
+- **Local REST API plugin:** mcp-obsidian (Markus, 3,000 stars — stale since Nov 2024), obsidian-mcp-server (cyanheads, 398 stars — most professional), obsidian-mcp-tools (jacksteamdev, 641 stars — seeking maintainers). Requires Obsidian running with the Local REST API plugin.
+- **Direct filesystem access:** mcpvault (bitbonsai, 802 stars — actively maintained, token-optimized), obsidian-mcp (Steven, 651 stars — multi-vault support). No Obsidian plugin needed, works offline.
+- **Native Obsidian plugin:** obsidian-mcp-plugin (aaronsb, 256 stars). Runs inside Obsidian with full API access — graph traversal, Dataview queries, Bases support. Beta-only via BRAT.
 
-**The best option depends on your needs:**
-- **obsidian-mcp-server** (cyanheads): Most comprehensive — 15+ tools for notes, tags, frontmatter, search. Requires Obsidian REST API plugin.
-- **obsidian-mcp-tools** (jacksteamdev): Semantic search + Templater integration. Best if you want meaning-based retrieval across your vault.
-- **mcpvault** (bitbonsai): Lightweight, safe read-only access. Best for agents that should read but not modify your vault.
+**Top picks:**
+- **Simplest setup:** [mcpvault](https://github.com/bitbonsai/mcpvault) — one-line install, BM25 search with relevance reranking, 40-60% token reduction, no plugins needed.
+- **Most configurable:** [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) (cyanheads) — dual transport (stdio + HTTP), JWT/OAuth auth, regex search, structured logging, Docker support.
+- **Most features:** [obsidian-mcp-plugin](https://github.com/aaronsb/obsidian-mcp-plugin) — graph traversal, Dataview, Bases. Highest ceiling but beta-only.
 
-**The catch:** Fragmentation means no single "right answer." Most require Obsidian to be running (for the REST API plugin), which is fine on desktops but not servers. Semantic search options need an embedding API (OpenAI, etc.), adding a cloud dependency to an otherwise local tool.
+**The catch:** Fragmentation means no single "right answer." Data safety is a concern — obsidian-mcp-tools has a known silent corruption bug, and no server offers granular folder-level permissions. The most starred option (mcp-obsidian, 3,000 stars) is abandonware.
 
-**Best for:** Developers who keep their notes, documentation, and knowledge base in Obsidian. If your second brain is a vault of Markdown files, connecting it to your agent via MCP is the obvious next step.
+**Best for:** Developers who keep their notes, documentation, and knowledge base in Obsidian. If your second brain is a vault of Markdown files, connecting it to your agent via MCP is the obvious next step. [Full review →](/reviews/obsidian-mcp-servers/)
 
 ## Feature Comparison
 
@@ -157,7 +160,7 @@ Multiple MCP servers exist for Obsidian vaults. The landscape is fragmented: cya
 
 **"Knowledge base and documentation"**
 - Using Notion? → **[Notion MCP](/reviews/notion-mcp-server/)** (18 tools, connected search, token-efficient Markdown)
-- Using Obsidian? → **obsidian-mcp-server** by cyanheads (most comprehensive)
+- Using Obsidian? → **[mcpvault](https://github.com/bitbonsai/mcpvault)** (simplest) or **[cyanheads](https://github.com/cyanheads/obsidian-mcp-server)** (most configurable). [Full landscape review →](/reviews/obsidian-mcp-servers/)
 - Plain Markdown files? → Consider our [Filesystem MCP review](/reviews/filesystem-mcp-server/) instead
 
 **"Calendar and scheduling"**

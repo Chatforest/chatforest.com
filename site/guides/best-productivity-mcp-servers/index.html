@@ -46,7 +46,7 @@
       <div class="article-body">
         <p>AI agents that can read your codebase but not your project tracker are doing half the job. The missing link isn&rsquo;t intelligence — it&rsquo;s access to the tools where your actual work lives: task lists, project boards, knowledge bases, calendars.</p>
 <p>The MCP ecosystem now has productivity servers for nearly every major platform. But they vary wildly in maturity. Some are first-party, OAuth-authenticated, and actively maintained. Some are community projects with one contributor and no tests. Picking the wrong one means your agent is creating tasks in the wrong project, missing calendar conflicts, or silently failing on API changes.</p>
-<p>We&rsquo;ve reviewed <a href="/reviews/notion-mcp-server/">Notion MCP</a> (3.5/5), <a href="/reviews/slack-mcp-server/">Slack MCP</a> (4/5), <a href="/reviews/linear-mcp-server/">Linear MCP</a> (4/5), and <a href="/reviews/todoist-mcp-server/">Todoist MCP</a> (4/5) individually. Here&rsquo;s how the broader productivity MCP server landscape compares, and which ones are actually worth configuring.</p>
+<p>We&rsquo;ve reviewed <a href="/reviews/notion-mcp-server/">Notion MCP</a> (3.5/5), <a href="/reviews/slack-mcp-server/">Slack MCP</a> (4/5), <a href="/reviews/linear-mcp-server/">Linear MCP</a> (4/5), <a href="/reviews/todoist-mcp-server/">Todoist MCP</a> (4/5), and <a href="/reviews/atlassian-mcp-server/">Atlassian MCP</a> (3.5/5) individually. Here&rsquo;s how the broader productivity MCP server landscape compares, and which ones are actually worth configuring.</p>
 <h2 id="the-contenders">The Contenders</h2>
 <table>
 <thead>
@@ -123,6 +123,16 @@
 <td>Yes</td>
 </tr>
 <tr>
+<td><a href="/reviews/atlassian-mcp-server/">Atlassian</a></td>
+<td>Atlassian (official)</td>
+<td>Project mgmt + knowledge base</td>
+<td>436</td>
+<td>Undocumented</td>
+<td>OAuth 2.1</td>
+<td>Hosted</td>
+<td>Yes (with Atlassian plan)</td>
+</tr>
+<tr>
 <td><a href="/reviews/slack-mcp-server/">Slack</a></td>
 <td>Slack (official)</td>
 <td>Communication</td>
@@ -146,7 +156,7 @@
 </table>
 <h2 id="three-patterns-in-productivity-mcp">Three Patterns in Productivity MCP</h2>
 <p>Productivity MCP servers split into three distinct architectural patterns. Understanding these matters more than counting tools:</p>
-<h3 id="1-first-party-hosted-notion-linear-todoist-asana-slack">1. First-Party Hosted (Notion, Linear, Todoist, Asana, Slack)</h3>
+<h3 id="1-first-party-hosted-notion-linear-todoist-asana-atlassian-slack">1. First-Party Hosted (Notion, Linear, Todoist, Asana, Atlassian, Slack)</h3>
 <p>The platform vendor hosts and maintains the MCP server. Authentication is OAuth — no API keys stored on disk. The server runs at a URL like <code>mcp.notion.com</code> or <code>mcp.linear.app</code>. You connect, authorize, and the vendor handles updates, rate limiting, and API version changes.</p>
 <p><strong>When it works best:</strong> When you want the most complete, up-to-date integration with zero maintenance burden. Vendor updates their API? The MCP server updates too. New features? They land in the MCP server first.</p>
 <p><strong>When it fails:</strong> When the vendor breaks things. Notion&rsquo;s v2.0.0 renamed every database tool and broke all existing workflows. When OAuth tokens expire — Notion&rsquo;s expire 3+ times per week. When you need self-hosted deployment. When the vendor paywalls features behind premium tiers.</p>
@@ -188,17 +198,22 @@
 <p><strong>The standout features:</strong> Multi-account support (connect work and personal calendars), cross-account conflict detection, intelligent event import from images/PDFs/web links, and recurring event handling. For a community project, it&rsquo;s surprisingly complete.</p>
 <p><strong>The catch:</strong> OAuth setup requires creating a Google Cloud project and configuring consent screens — more friction than the hosted servers. No official backing means updates depend on one maintainer. The Google Calendar API is well-documented and stable, which mitigates the maintenance risk, but it&rsquo;s still a bus-factor-1 project.</p>
 <p><strong>Best for:</strong> Anyone who needs their agent to check availability, schedule meetings, or manage calendar events. Since Google hasn&rsquo;t shipped an official MCP server, this is the default choice.</p>
-<h3 id="obsidian--the-local-first-knowledge-base">Obsidian — The Local-First Knowledge Base</h3>
-<p>Multiple MCP servers exist for Obsidian vaults. The landscape is fragmented: cyanheads/obsidian-mcp-server (comprehensive tooling), MarkusPfundstein/mcp-obsidian (REST API bridge), bitbonsai/mcpvault (lightweight read access), jacksteamdev/obsidian-mcp-tools (semantic search), and aaronsb/obsidian-semantic-mcp (5-tool semantic interface).</p>
-<p><strong>The approach varies wildly:</strong> Some require the Obsidian Local REST API plugin (adding a dependency on Obsidian running). Others read vault files directly. Some offer semantic search via embeddings. Others are simple file read/write.</p>
-<p><strong>The best option depends on your needs:</strong></p>
+<h3 id="obsidian-mcp-serversreviewsobsidian-mcp-servers--the-local-first-knowledge-base"><a href="/reviews/obsidian-mcp-servers/">Obsidian MCP Servers</a> — The Local-First Knowledge Base</h3>
+<p>Eight community MCP servers compete to connect AI agents to Obsidian vaults, taking three fundamentally different architectural approaches. No official Obsidian MCP server exists.</p>
+<p><strong>Three architectures:</strong></p>
 <ul>
-<li><strong>obsidian-mcp-server</strong> (cyanheads): Most comprehensive — 15+ tools for notes, tags, frontmatter, search. Requires Obsidian REST API plugin.</li>
-<li><strong>obsidian-mcp-tools</strong> (jacksteamdev): Semantic search + Templater integration. Best if you want meaning-based retrieval across your vault.</li>
-<li><strong>mcpvault</strong> (bitbonsai): Lightweight, safe read-only access. Best for agents that should read but not modify your vault.</li>
+<li><strong>Local REST API plugin:</strong> mcp-obsidian (Markus, 3,000 stars — stale since Nov 2024), obsidian-mcp-server (cyanheads, 398 stars — most professional), obsidian-mcp-tools (jacksteamdev, 641 stars — seeking maintainers). Requires Obsidian running with the Local REST API plugin.</li>
+<li><strong>Direct filesystem access:</strong> mcpvault (bitbonsai, 802 stars — actively maintained, token-optimized), obsidian-mcp (Steven, 651 stars — multi-vault support). No Obsidian plugin needed, works offline.</li>
+<li><strong>Native Obsidian plugin:</strong> obsidian-mcp-plugin (aaronsb, 256 stars). Runs inside Obsidian with full API access — graph traversal, Dataview queries, Bases support. Beta-only via BRAT.</li>
 </ul>
-<p><strong>The catch:</strong> Fragmentation means no single &ldquo;right answer.&rdquo; Most require Obsidian to be running (for the REST API plugin), which is fine on desktops but not servers. Semantic search options need an embedding API (OpenAI, etc.), adding a cloud dependency to an otherwise local tool.</p>
-<p><strong>Best for:</strong> Developers who keep their notes, documentation, and knowledge base in Obsidian. If your second brain is a vault of Markdown files, connecting it to your agent via MCP is the obvious next step.</p>
+<p><strong>Top picks:</strong></p>
+<ul>
+<li><strong>Simplest setup:</strong> <a href="https://github.com/bitbonsai/mcpvault">mcpvault</a> — one-line install, BM25 search with relevance reranking, 40-60% token reduction, no plugins needed.</li>
+<li><strong>Most configurable:</strong> <a href="https://github.com/cyanheads/obsidian-mcp-server">obsidian-mcp-server</a> (cyanheads) — dual transport (stdio + HTTP), JWT/OAuth auth, regex search, structured logging, Docker support.</li>
+<li><strong>Most features:</strong> <a href="https://github.com/aaronsb/obsidian-mcp-plugin">obsidian-mcp-plugin</a> — graph traversal, Dataview, Bases. Highest ceiling but beta-only.</li>
+</ul>
+<p><strong>The catch:</strong> Fragmentation means no single &ldquo;right answer.&rdquo; Data safety is a concern — obsidian-mcp-tools has a known silent corruption bug, and no server offers granular folder-level permissions. The most starred option (mcp-obsidian, 3,000 stars) is abandonware.</p>
+<p><strong>Best for:</strong> Developers who keep their notes, documentation, and knowledge base in Obsidian. If your second brain is a vault of Markdown files, connecting it to your agent via MCP is the obvious next step. <a href="/reviews/obsidian-mcp-servers/">Full review →</a></p>
 <h2 id="feature-comparison">Feature Comparison</h2>
 <table>
 <thead>
@@ -317,7 +332,7 @@
 <p><strong>&ldquo;Knowledge base and documentation&rdquo;</strong></p>
 <ul>
 <li>Using Notion? → <strong><a href="/reviews/notion-mcp-server/">Notion MCP</a></strong> (18 tools, connected search, token-efficient Markdown)</li>
-<li>Using Obsidian? → <strong>obsidian-mcp-server</strong> by cyanheads (most comprehensive)</li>
+<li>Using Obsidian? → <strong><a href="https://github.com/bitbonsai/mcpvault">mcpvault</a></strong> (simplest) or <strong><a href="https://github.com/cyanheads/obsidian-mcp-server">cyanheads</a></strong> (most configurable). <a href="/reviews/obsidian-mcp-servers/">Full landscape review →</a></li>
 <li>Plain Markdown files? → Consider our <a href="/reviews/filesystem-mcp-server/">Filesystem MCP review</a> instead</li>
 </ul>
 <p><strong>&ldquo;Calendar and scheduling&rdquo;</strong></p>
