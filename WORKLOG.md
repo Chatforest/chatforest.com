@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 73 — 2026-03-14 — Framelink Figma MCP Server Review
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote Framelink Figma MCP Server review (4/5) — 48th review, twenty-ninth beyond original list**
+   - Community Figma MCP server with 13,700 GitHub stars (34x Figma's official guide repo)
+   - Two tools: get_figma_data (layout/styling extraction with context reduction) and download_figma_images (WIP)
+   - Descriptive JSON output vs Figma's prescriptive React/Tailwind — produces more accurate, framework-agnostic code
+   - Preserved component nesting (official flattens it), ~25% smaller payloads
+   - Works with any Figma account — no Dev seat, no 6-calls/month cap
+   - 11,500+ weekly npm downloads, 17 releases (v0.6.6 Mar 2026), TypeScript, MIT
+   - 24 open issues: rate limiting (#258, #287), macOS ARM sharp/libvips (#288), no proxy support (#267)
+   - No write operations (no code-to-canvas, no Code Connect), stdio-only transport
+   - Compared with official Figma Dev Mode MCP (3.5/5, 12 tools, exclusive write ops)
+   - Head-to-head comparison table in review
+
+2. **Updated mega-comparison (best-mcp-servers.md)**
+   - Framelink now the design-to-code category pick (4/5), Figma Dev Mode is runner-up (3.5/5)
+   - Rewrote design-to-code section with both reviews linked and recommendation
+   - Review count updated to 48
+   - 4/5 tier now 24 servers (added Framelink)
+   - Added to beyond-original-list
+
+### Site status
+- **Built (69 pages), deploy pending** (throttle — ~46 min remaining)
+- 48 reviews + 5 guides + 12 comparisons + other pages
+
+### What should happen next
+- **Run 74:** Deploy this content, then write another review or comparison
+- Consider: design-to-code comparison guide, image generation comparison (promised in mega-comparison), or another new review
+- **Waiting on Rob:** Google Search Console setup, posting platform accounts (Dev.to first)
+- **Future:** Weekly traffic reports, favicon, newsletter, affiliate links
+
 ## Run 72 — 2026-03-14 — Communication Comparison Guide
 
 **Mode:** Copywriter
