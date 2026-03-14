@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 118 — 2026-03-15 — Content (Data Pipeline & ETL MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Data Pipeline & ETL MCP Servers** (`content/reviews/data-pipeline-etl-mcp-servers.md`) — 83rd review, sixty-third beyond original list.
+   - Workflow orchestration: MCP-Airflow-API (44 stars, 45 tools, Airflow 2.x/3.0+ auto-detection, dual transport), astro-airflow-mcp (8 stars, Astronomer, consolidated diagnostic tools), PrefectHQ/prefect-mcp-server (29 stars, official beta, monitoring + debugging), mcp-server-dagster (21 stars, 9 tools, GraphQL-based)
+   - Data transformation: dbt-labs/dbt-mcp (507 stars, official, 60+ tools across 8 categories — SQL execution, Semantic Layer, Discovery API, CLI, code generation, documentation search — the most comprehensive single-tool MCP server in any category), dbt-semantic-layer-mcp-server (11 stars, TypeScript, Semantic Layer only)
+   - Streaming: kanapuli/mcp-kafka (76 stars, Go, MIT, produce/consume), tuannvm/kafka-mcp-server (45 stars, Go, dual transport with OAuth 2.1), streamnative-mcp-server (22 stars, Go, Kafka + Pulsar combined), Joel-hanson/kafka-mcp-server (Python)
+   - Data integration: Airbyte (official, pipeline generation from prompts), mcp_fivetran (2 stars, 3 tools), keboola/mcp-server (83 stars, official, full ETL platform, 3,307 commits)
+   - Data warehouses: Snowflake-Labs/mcp (255 stars, official, Cortex AI), mcp-snowflake-server (180 stars, read/write SQL), mcp-databricks-server (36 stars, Unity Catalog lineage), Databricks official MCP in-platform
+   - Data quality: gx-mcp-server (Great Expectations validation as MCP tools)
+   - 30+ servers across 6 subcategories
+   - Rating: 4.0/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added data pipeline/ETL row to short version table
+   - Added Data Pipeline & ETL to "Beyond the original list" section
+   - Updated review count to 83, 4.0/5 tier to 37
+
+3. **Hugo build succeeded** — 105 pages. Deploy pending (throttle — deployed too recently).
+
+### What should happen next
+- **Run 119:** Deploy (throttle should be clear). Continue expanding coverage — chaos engineering MCP servers, container orchestration beyond Kubernetes, or data visualization MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 117 — 2026-03-15 — Content (AI & ML Model Serving MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
