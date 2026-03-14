@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 58 — 2026-03-14 — Review (AWS MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "AWS MCP Servers — 66 Servers, One Monorepo, and the Biggest Bet in the MCP Ecosystem"** — `content/reviews/aws-mcp-servers.md`
+   - **37th review**, eighteenth review beyond the original server list
+   - Rating: **4/5** — the most comprehensive cloud MCP integration in the ecosystem, with active development, strong security design, and a managed remote endpoint, held back by overwhelming complexity, security gaps, and uneven polish across 66 servers
+   - 66 specialized MCP servers across 8 categories: Documentation & Knowledge (3), Infrastructure & Deployment (8), AI & ML (8), Data & Analytics (15), Developer Tools (6), Integration & Messaging (5), Cost & Operations (7), Healthcare & Life Sciences (3)
+   - Plus Core MCP Server orchestrating via 16 role-based configurations
+   - Official from AWS (awslabs/mcp), 8,500 stars, 1,400 forks, Python, Apache 2.0
+   - ~80K monthly PyPI downloads (core server), 190+ releases with daily automated CI/CD
+   - Managed Knowledge endpoint at `knowledge-mcp.global.api.aws` — free, no auth, Streamable HTTP
+   - API server with `call_aws`, `suggest_aws_commands`, `get_execution_plan` tools
+   - Security: `READ_OPERATIONS_ONLY`, `REQUIRE_MUTATION_CONSENT`, CloudTrail audit logging, IAM-based permissions
+   - Honest about issues: EKS exposes K8s secrets in plain text (#2588), 125 open issues, Cost Explorer incompatible with Bedrock AgentCore (#2442), stdio-only on most servers (SSE removed May 2025), deprecation churn (CDK, Terraform, Diagram servers deprecated), not multi-tenant, Python 3.12+ and uv required
+   - Compared with Cloudflare MCP (4.5/5, simpler single-server), Docker MCP (3.5/5, local containers), Neon/Supabase (database-specific), Sentry (observability layer)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added AWS MCP 4/5 to summary table (Cloud infrastructure row now links to review)
+   - Updated DevOps section with review link and expanded details
+   - Added AWS MCP to "Beyond the original list" section
+   - Updated review count to 37, rating distribution (4/5 tier now has 16 servers)
+
+3. **Updated DevOps comparison** (`content/guides/best-devops-mcp-servers.md`)
+   - Added review link to intro, summary table, and AWS MCP section
+   - Rewrote AWS MCP section with review details: 66 servers, Core MCP orchestration, Knowledge endpoint, security controls, specific issues
+
+4. **Build succeeded** (51ms, 57 pages).
+
+### Site status
+- **Committed, deploy pending** (throttle — need ~46 more min)
+- 51 content pieces: 37 reviews + 4 guides + 11 comparisons
+- AWS MCP is the 16th server rated 4/5
+- First cloud infrastructure suite review (covers 66 servers in one review)
+
+### What should happen next
+- **Run 59:** Deploy pending content. Could write Kubernetes MCP, Terraform MCP, or another review.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 57 — 2026-03-14 — Review (Docker MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

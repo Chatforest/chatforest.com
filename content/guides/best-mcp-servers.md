@@ -1,7 +1,7 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 36 MCP servers and compared 40+ across 11 categories. Here are the ones worth installing — and the ones to avoid."
+description: "We've reviewed 37 MCP servers and compared 40+ across 11 categories. Here are the ones worth installing — and the ones to avoid."
 og_description: "We've tested 33 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
@@ -9,7 +9,7 @@ card_description: "We've reviewed 28 MCP servers across 11 categories. Here are 
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [36 in-depth reviews](/reviews/) and [11 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [37 in-depth reviews](/reviews/) and [11 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -41,8 +41,8 @@ If you want to skip the details:
 | Deployment | [Vercel MCP](/reviews/vercel-mcp-server/) | 3.5/5 | Community alternatives (more tools) |
 | Design-to-code | [Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) | 3.5/5 | Framelink (community, better output) |
 | Payments | [Stripe MCP](/reviews/stripe-mcp-server/) | 4/5 | Community Python alternatives |
-| Cloud infrastructure | [Cloudflare MCP](/reviews/cloudflare-mcp-server/) | 4.5/5 | AWS MCP (60+ servers) |
-| DevOps (IaC) | Terraform MCP | — | AWS MCP (AWS-specific) |
+| Cloud infrastructure | [Cloudflare MCP](/reviews/cloudflare-mcp-server/) | 4.5/5 | [AWS MCP](/reviews/aws-mcp-servers/) (4/5, 66 servers) |
+| DevOps (IaC) | Terraform MCP | — | [AWS MCP](/reviews/aws-mcp-servers/) (4/5, AWS-specific) |
 | DevOps (containers) | [Docker MCP](/reviews/docker-mcp-server/) | 3.5/5 | Kubernetes MCP |
 | DevOps (platform) | Azure DevOps MCP | — | [GitHub MCP](/reviews/github-mcp-server/) (4.5/5) |
 | Vector database | [Chroma MCP](/reviews/chroma-mcp-server/) | 3.5/5 | [Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5, hybrid search) |
@@ -314,7 +314,7 @@ The fastest-growing MCP server category. Every major DevOps platform now ships a
 
 **For Kubernetes:** **Kubernetes MCP** (Red Hat's `containers/kubernetes-mcp-server`). Native Go binary that talks directly to the K8s API, supporting any resource type, multi-cluster operations, and read-only mode. The fragmented ecosystem (6+ implementations) is the main downside — there's no official CNCF server.
 
-**For AWS:** **AWS MCP** suite (awslabs/mcp). 60+ specialized servers covering compute, storage, databases, AI/ML, security, and cost analysis. The Cloud Control API server enables natural language resource management; the Knowledge server indexes AWS documentation. The breadth is unmatched but overwhelming.
+**For AWS:** **[AWS MCP](/reviews/aws-mcp-servers/) (4/5)** suite (awslabs/mcp). 66 specialized servers covering compute, storage, databases, AI/ML, security, and cost analysis. The Cloud Control API server enables natural language resource management; the Knowledge server at `knowledge-mcp.global.api.aws` is a free managed endpoint indexing all AWS documentation. The Core MCP Server orchestrates everything via role-based configurations. 8,500 stars, 190+ releases, active daily development. The breadth is unmatched but the complexity is overwhelming — start with the Knowledge server.
 
 **For Azure DevOps:** **Azure DevOps MCP** (Microsoft, GA). Covers work items, PRs, builds, pipelines, tests, and wikis. Now built into Visual Studio 2026. Remote hosted server coming in 2026.
 
@@ -328,13 +328,13 @@ The fastest-growing MCP server category. Every major DevOps platform now ships a
 
 ## Beyond the original list
 
-We've reviewed every MCP server on our original list — and we're now expanding to new servers. Recent additions: [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5) for the most comprehensive database MCP integration (37+ tools with Atlas management and performance advisors), [Sequential Thinking MCP](/reviews/sequential-thinking-mcp-server/) (3/5) for structured step-by-step reasoning (increasingly redundant with built-in model capabilities), [Perplexity MCP](/reviews/perplexity-mcp-server/) (4/5) for answer-engine search with deep research and reasoning, [Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5) for hybrid search on the most popular open-source vector database, [Crawl4AI MCP](/reviews/crawl4ai-mcp-server/) (3.5/5) for free open-source crawling with best-in-class markdown extraction, [Tavily MCP](/reviews/tavily-mcp-server/) (4/5) for search + extraction + crawling in one server, [Browserbase MCP](/reviews/browserbase-mcp-server/) (3.5/5) for cloud browser automation with AI-native targeting, [Firecrawl MCP](/reviews/firecrawl-mcp-server/) (4/5) for production web scraping with autonomous research, [Todoist MCP](/reviews/todoist-mcp-server/) (4/5) for task management with MCP Apps, [Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5) for cloud vector search with reranking, [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5) for semantic memory, [Chroma MCP](/reviews/chroma-mcp-server/) (3.5/5) for vector databases, [Linear MCP](/reviews/linear-mcp-server/) (4/5) for project management, [Stripe MCP](/reviews/stripe-mcp-server/) (4/5) for payment operations, [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen, [Git MCP](/reviews/git-mcp-server/) (3/5) for local git operations (solid but missing push/pull/merge), and [Docker MCP](/reviews/docker-mcp-server/) (3.5/5) for container management with 19 tools covering the full Docker lifecycle. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
+We've reviewed every MCP server on our original list — and we're now expanding to new servers. Recent additions: [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5) for the most comprehensive database MCP integration (37+ tools with Atlas management and performance advisors), [Sequential Thinking MCP](/reviews/sequential-thinking-mcp-server/) (3/5) for structured step-by-step reasoning (increasingly redundant with built-in model capabilities), [Perplexity MCP](/reviews/perplexity-mcp-server/) (4/5) for answer-engine search with deep research and reasoning, [Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5) for hybrid search on the most popular open-source vector database, [Crawl4AI MCP](/reviews/crawl4ai-mcp-server/) (3.5/5) for free open-source crawling with best-in-class markdown extraction, [Tavily MCP](/reviews/tavily-mcp-server/) (4/5) for search + extraction + crawling in one server, [Browserbase MCP](/reviews/browserbase-mcp-server/) (3.5/5) for cloud browser automation with AI-native targeting, [Firecrawl MCP](/reviews/firecrawl-mcp-server/) (4/5) for production web scraping with autonomous research, [Todoist MCP](/reviews/todoist-mcp-server/) (4/5) for task management with MCP Apps, [Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5) for cloud vector search with reranking, [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5) for semantic memory, [Chroma MCP](/reviews/chroma-mcp-server/) (3.5/5) for vector databases, [Linear MCP](/reviews/linear-mcp-server/) (4/5) for project management, [Stripe MCP](/reviews/stripe-mcp-server/) (4/5) for payment operations, [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen, [Git MCP](/reviews/git-mcp-server/) (3/5) for local git operations (solid but missing push/pull/merge), and [Docker MCP](/reviews/docker-mcp-server/) (3.5/5) for container management with 19 tools covering the full Docker lifecycle, and [AWS MCP](/reviews/aws-mcp-servers/) (4/5) for the most comprehensive cloud MCP integration — 66 servers covering every major AWS service with a managed Knowledge endpoint and role-based orchestration. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
 
 ---
 
 ## The pattern: official servers as starting points
 
-After reviewing 35 MCP servers, a clear pattern has emerged:
+After reviewing 37 MCP servers, a clear pattern has emerged:
 
 **Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are archived with security issues (2.5-3/5), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
 
@@ -347,7 +347,7 @@ Our rating distribution tells the story:
 | Rating | Count | Servers |
 |--------|-------|---------|
 | 4.5/5 | 2 | Playwright, Cloudflare |
-| 4.0/5 | 15 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB |
+| 4.0/5 | 16 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB, AWS |
 | 3.5/5 | 12 | Context7, Puppeteer, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase, Crawl4AI, Milvus, Docker |
 | 3.0/5 | 5 | SQLite, Sequential Thinking, Qdrant, Pinecone, Git |
 | 2.5/5 | 2 | PostgreSQL, EverArt |

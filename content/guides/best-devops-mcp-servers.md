@@ -11,7 +11,7 @@ DevOps is where MCP servers get serious. These aren't read-only tools querying d
 
 That risk is also why DevOps MCP servers add the most value. Infrastructure management involves remembering exact CLI flags, translating between YAML dialects, and context-switching between cloud consoles. An AI agent with direct access to your infrastructure APIs can handle the tedious parts while you focus on architecture decisions.
 
-The category has matured fast. Docker, HashiCorp, AWS, Microsoft, Cloudflare, and the Kubernetes community all ship official MCP servers now. We've [reviewed the GitHub MCP server](/reviews/github-mcp-server/) (4.5/5) and [Cloudflare MCP server](/reviews/cloudflare-mcp-server/) (4.5/5). Here's how the rest of the DevOps landscape compares.
+The category has matured fast. Docker, HashiCorp, AWS, Microsoft, Cloudflare, and the Kubernetes community all ship official MCP servers now. We've [reviewed the GitHub MCP server](/reviews/github-mcp-server/) (4.5/5), [Cloudflare MCP server](/reviews/cloudflare-mcp-server/) (4.5/5), [Docker MCP server](/reviews/docker-mcp-server/) (3.5/5), and [AWS MCP servers](/reviews/aws-mcp-servers/) (4/5). Here's how the rest of the DevOps landscape compares.
 
 ## The Contenders
 
@@ -21,7 +21,7 @@ The category has matured fast. Docker, HashiCorp, AWS, Microsoft, Cloudflare, an
 | Docker MCP | Containers | Docker (official) | Local (Desktop) | Docker Desktop | Catalog (300+) | Yes (Desktop) | Container management + MCP server discovery |
 | Kubernetes MCP | Cluster mgmt | Red Hat / Community | Local (stdio) | kubeconfig | 15+ | Yes (any cluster) | Kubernetes operations |
 | Terraform MCP | IaC | HashiCorp (official) | Both (stdio + HTTP) | HCP token | 15+ | Yes (registry) | Infrastructure as code |
-| AWS MCP | Cloud infra | AWS Labs (official) | Local (stdio) | AWS credentials | 60+ | Yes (free tier) | AWS resource management |
+| [AWS MCP](/reviews/aws-mcp-servers/) | Cloud infra | AWS Labs (official) | Local (stdio) + Remote (Knowledge, preview) | AWS credentials | 66 servers | Yes (free tier) | AWS resource management |
 | Azure DevOps MCP | DevOps platform | Microsoft (official) | Local + Remote (planned) | OAuth / PAT | 30+ | Yes (5 users) | Azure DevOps workflows |
 
 **Also relevant:** Our [GitHub MCP server review](/reviews/github-mcp-server/) (4.5/5) covers Actions-based CI/CD, pull request automation, and repository management. GitHub's MCP server is the strongest CI/CD option in the ecosystem.
@@ -100,19 +100,19 @@ The server supports both stdio and StreamableHTTP transports, making it usable i
 
 ### AWS MCP — The Cloud Infrastructure Suite
 
-**[awslabs/mcp](https://github.com/awslabs/mcp)** | Official, Open Source
+**[awslabs/mcp](https://github.com/awslabs/mcp)** | Official, Open Source | **[Full review](/reviews/aws-mcp-servers/) (4/5)**
 
-AWS doesn't ship one MCP server — it ships a suite of 60+ specialized servers covering the breadth of AWS services. The flagship is the **AWS MCP Server**, a managed remote server that provides authenticated access to most of the 15,000+ AWS APIs via a single `aws___call_aws` tool. Specialized servers cover CDK (infrastructure as code), CloudFormation, Lambda, ECS, S3, DynamoDB, Bedrock, CloudWatch, Cost Analysis, and more.
+AWS doesn't ship one MCP server — it ships a suite of 66 specialized servers covering the breadth of AWS services. 8,500 stars, 1,400 forks, 190+ releases with daily automated CI/CD. The flagship is the **AWS MCP Server** (preview), a managed remote server that provides authenticated access to AWS APIs with CloudTrail audit logging and IAM-based permissions.
 
-The **Cloud Control API MCP Server** deserves special mention — it provides natural language infrastructure management using AWS's unified API for creating, reading, updating, deleting, and listing any AWS resource that supports Cloud Control.
+The **Core MCP Server** (~80K monthly PyPI downloads) acts as an orchestration layer, dynamically importing and proxying other servers via 16 role-based configurations (solutions-architect, dev-tools, finops, etc.). The **API server** provides `call_aws`, `suggest_aws_commands`, and `get_execution_plan` tools with `READ_OPERATIONS_ONLY` and `REQUIRE_MUTATION_CONSENT` safety controls. The **Cloud Control API server** enables CRUDL on any AWS resource via natural language.
 
-The **Knowledge MCP Server** indexes AWS documentation including What's New posts, Getting Started guides, Builder Center guidance, blog posts, architectural references, and Well-Architected framework guidance. This is the AWS equivalent of what Terraform MCP does for the HashiCorp registry.
+The **Knowledge MCP Server** is the easiest entry point — a free managed endpoint at `knowledge-mcp.global.api.aws` with Streamable HTTP, no auth required, indexing AWS docs, blog posts, What's New, API references, and Well-Architected guidance.
 
-**Strengths:** Broadest coverage of any MCP server suite (60+ servers), covers infrastructure, compute, data, AI/ML, security, cost analysis, and more, official AWS maintenance, Cloud Control API for unified resource management, free and open source.
+**Strengths:** Broadest coverage of any MCP server suite (66 servers), covers infrastructure, compute, data, AI/ML, security, cost analysis, healthcare, and more, official AWS maintenance, role-based orchestration via Core MCP, managed Knowledge endpoint, CloudTrail audit logging, Apache 2.0.
 
-**Weaknesses:** Overwhelming number of servers to choose from, each server has its own setup and auth requirements, stdio transport only (no remote hosting), requires existing AWS credentials and IAM configuration, AWS-specific (no multi-cloud).
+**Weaknesses:** Overwhelming complexity (66 servers), EKS exposes K8s secrets in plain text (#2588), 125 open issues, stdio-only on most servers (SSE removed May 2025), Cost Explorer incompatible with Bedrock AgentCore (#2442), deprecation churn (CDK, Terraform, Diagram servers deprecated), requires Python 3.12+ and uv.
 
-**Best for:** Teams building on AWS who want AI agents with deep access to AWS services, documentation, and infrastructure management.
+**Best for:** Teams building on AWS who want AI agents with deep access to AWS services, documentation, and infrastructure management. Start with the Knowledge server, add specific servers as needs arise.
 
 ### Azure DevOps MCP — The DevOps Workflow Hub
 
