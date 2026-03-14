@@ -11,7 +11,7 @@ Vector databases are the infrastructure behind RAG, semantic search, and AI memo
 
 Some give you full collection management. Others give you two tools and call it done. Some only work with their own cloud service. Others run locally with zero infrastructure. The right choice depends on what you're actually trying to do — and whether the MCP server can keep up with the database behind it.
 
-We've [reviewed Chroma](/reviews/chroma-mcp-server/) (3.5/5), [Qdrant](/reviews/qdrant-mcp-server/) (3/5), and [Pinecone](/reviews/pinecone-mcp-server/) (3/5) in depth. Here's how every vector database MCP server compares.
+We've [reviewed Chroma](/reviews/chroma-mcp-server/) (3.5/5), [Milvus](/reviews/milvus-mcp-server/) (3.5/5), [Qdrant](/reviews/qdrant-mcp-server/) (3/5), and [Pinecone](/reviews/pinecone-mcp-server/) (3/5) in depth. Here's how every vector database MCP server compares.
 
 ## The Contenders
 
@@ -20,7 +20,7 @@ We've [reviewed Chroma](/reviews/chroma-mcp-server/) (3.5/5), [Qdrant](/reviews/
 | [Chroma MCP](/reviews/chroma-mcp-server/) | 515 | 13 | stdio | Full vector DB management |
 | [Qdrant MCP](/reviews/qdrant-mcp-server/) | 1,300 | 2 | stdio, SSE, Streamable HTTP | Semantic memory layer |
 | [Pinecone MCP](/reviews/pinecone-mcp-server/) | 56 | 9 | stdio | Cloud vector search with reranking |
-| Milvus MCP (Zilliz) | 220 | 12 | stdio, SSE | Self-hosted vector operations |
+| [Milvus MCP](/reviews/milvus-mcp-server/) (Zilliz) | 220 | 12 | stdio, SSE | Self-hosted vector operations |
 | Zilliz Cloud MCP | 32 | 16 | stdio, Streamable HTTP | Managed Milvus with cloud controls |
 | Weaviate MCP | 161 | 2 | stdio | Nothing yet (proof of concept) |
 | LanceDB MCP | 23 | 3 | stdio | Nothing yet (reference only) |
@@ -88,35 +88,27 @@ Which philosophy you want depends on your use case. Building a RAG pipeline that
 
 **Best for:** Pinecone users with integrated embedding indexes who want AI-assisted search with reranking and cross-index queries.
 
-## The Unreviewed Servers
+### Milvus MCP — Best Hybrid Search (3.5/5)
 
-### Milvus MCP — Most Complete Self-Hosted
+**[Read our full review](/reviews/milvus-mcp-server/)**
 
-[Zilliz's Milvus MCP server](https://github.com/zilliztech/mcp-server-milvus) (220 stars) is the most capable self-hosted vector database MCP server. Twelve tools covering everything from collection creation to hybrid search:
+[Zilliz's Milvus MCP server](https://github.com/zilliztech/mcp-server-milvus) (220 stars) brings the most popular open-source vector database (40,000+ GitHub stars) to MCP with 12 tools — the second-highest tool count in the category after Chroma's 13.
 
-**Search tools (5):**
-- `milvus_text_search` — full-text search
-- `milvus_vector_search` — vector similarity search
-- `milvus_hybrid_search` — combined text + vector search
-- `milvus_text_similarity_search` — text similarity (requires Milvus 2.6.0+)
-- `milvus_query` — filtered queries with expressions
-
-**Management tools (7):**
-- Collection CRUD: list, create, get info, load, release
-- `milvus_insert_data` — insert records
-- `milvus_delete_entities` — delete by filter expression
-
-**What it offers:**
+**What sets it apart:**
+- Five search modes — text, vector, hybrid, text similarity, filter queries — more than any other vector DB MCP server
+- Native hybrid search combining keyword precision with semantic recall in one query (Milvus 2.5+)
+- Memory management controls (`load_collection`, `release_collection`) — unique in the category
+- Full delete capability via filter expressions (unlike Qdrant and Pinecone)
+- Works identically with self-hosted Milvus and Zilliz Cloud
 - Stdio and SSE transport
-- Works with self-hosted Milvus or Zilliz Cloud
-- Full delete capability (unlike Qdrant)
-- Hybrid search combining dense vectors with full-text search
 
-**The catch:** Python-only. No versioned releases (35 commits, last updated December 2025). Requires a running Milvus instance — no embedded/local mode. Authentication is optional, which is good for development but concerning for production.
+**The catch:** No embedded/local mode — requires a running Milvus instance (Docker or Zilliz Cloud). No document update (must delete and re-insert). Pre-release maturity (35 commits, no versioned releases, last updated December 2025). Known service hang bug after errors (#51). No Streamable HTTP transport. Python-only.
 
-Zilliz also maintains a separate [Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) (32 stars, 16 tools) that adds cloud management — cluster creation, suspension, metrics — plus Streamable HTTP transport. Early stage (3 commits) but shows where the platform is heading.
+Zilliz also maintains a separate [Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) (32 stars, 16 tools) that adds cloud management — cluster creation, suspension, metrics — plus Streamable HTTP transport.
 
-**Best for:** Teams already running Milvus who want full database management through MCP.
+**Best for:** Teams running Milvus in production who want AI-assisted vector operations, especially hybrid search combining keyword and semantic retrieval.
+
+## The Unreviewed Servers
 
 ### Weaviate MCP — Too Early
 
@@ -156,6 +148,7 @@ LanceDB itself is excellent — embedded, serverless, multimodal, Rust-powered �
 | **OAuth** | No | No | No | No | No | No |
 | **GitHub stars** | 515 | 1,300 | 56 | 220 | 161 | 23 |
 | **Language** | Python | Python | TypeScript | Python | Go | Python |
+| **Rating** | 3.5/5 | 3/5 | 3/5 | 3.5/5 | — | — |
 | **Maturity** | Beta | Stable | v0.2.1 | Pre-release | PoC | Reference |
 
 ## The pgvector Gap
@@ -180,9 +173,9 @@ If you want to add persistent memory to a coding agent without thinking about ve
 
 If search quality matters more than flexibility — cascading search across indexes, built-in reranking, integrated embeddings — Pinecone's server is purpose-built for this. The limitation to Pinecone's integrated embedding models is significant, but if you're starting fresh on Pinecone, the search experience is the best in the category.
 
-### For self-hosted infrastructure: Milvus MCP
+### For self-hosted infrastructure: [Milvus MCP](/reviews/milvus-mcp-server/)
 
-If you're running Milvus and need full management through MCP — collections, inserts, deletes, hybrid search — the Milvus server has the best self-hosted story. Twelve tools with both stdio and SSE transport. The lack of versioned releases is a concern, but the tool coverage is solid.
+If you're running Milvus and need full management through MCP — collections, inserts, deletes, hybrid search — the [Milvus server](/reviews/milvus-mcp-server/) (3.5/5) has the best self-hosted story. Twelve tools with category-leading five search modes and both stdio and SSE transport. The lack of versioned releases is a concern, but the tool coverage is solid.
 
 ### For everything else: Wait
 
@@ -194,19 +187,19 @@ Weaviate and LanceDB both have MCP servers that aren't ready for real use. If yo
 
 → **Adding memory to a coding agent?** Use [Qdrant MCP](/reviews/qdrant-mcp-server/) for the simplest path, or [Chroma MCP](/reviews/chroma-mcp-server/) if you need to organize memories into collections.
 
-→ **Building a RAG pipeline?** Use [Chroma MCP](/reviews/chroma-mcp-server/) for local development with full collection management, or [Pinecone MCP](/reviews/pinecone-mcp-server/) for cloud deployment with reranking.
+→ **Building a RAG pipeline?** Use [Chroma MCP](/reviews/chroma-mcp-server/) for local development with full collection management, [Milvus MCP](/reviews/milvus-mcp-server/) for hybrid search (keyword + semantic), or [Pinecone MCP](/reviews/pinecone-mcp-server/) for cloud deployment with reranking.
 
-→ **Managing existing vector infrastructure?** Match the server to your database: Milvus MCP for Milvus, [Pinecone MCP](/reviews/pinecone-mcp-server/) for Pinecone (integrated embeddings only), Qdrant MCP for Qdrant. Chroma MCP covers Chroma across all four deployment modes.
+→ **Managing existing vector infrastructure?** Match the server to your database: [Milvus MCP](/reviews/milvus-mcp-server/) for Milvus, [Pinecone MCP](/reviews/pinecone-mcp-server/) for Pinecone (integrated embeddings only), Qdrant MCP for Qdrant. Chroma MCP covers Chroma across all four deployment modes.
 
-→ **Need remote MCP (not stdio)?** [Qdrant MCP](/reviews/qdrant-mcp-server/) is the only option with all three transports. Milvus has SSE. Zilliz Cloud MCP has Streamable HTTP. Everyone else is stdio-only.
+→ **Need remote MCP (not stdio)?** [Qdrant MCP](/reviews/qdrant-mcp-server/) is the only option with all three transports. [Milvus MCP](/reviews/milvus-mcp-server/) has SSE. Zilliz Cloud MCP has Streamable HTTP. Everyone else is stdio-only.
 
 → **Need zero infrastructure?** [Qdrant MCP](/reviews/qdrant-mcp-server/) with `QDRANT_LOCAL_PATH` or [Chroma MCP](/reviews/chroma-mcp-server/) in persistent mode — both run embedded without a separate server process.
 
 ## The Bottom Line
 
-The vector database MCP space is young. Even the best server here — Chroma at 3.5/5 — has significant gaps (no remote transport, stalling development). The most adopted server — Qdrant at 1,300 stars — has just two tools. No server in this category supports OAuth authentication. None have reached 1.0.
+The vector database MCP space is young. The two best servers here — Chroma and [Milvus](/reviews/milvus-mcp-server/) at 3.5/5 each — have significant gaps (Chroma: no remote transport; Milvus: no local mode, pre-release maturity). The most adopted server — Qdrant at 1,300 stars — has just two tools. No server in this category supports OAuth authentication. None have reached 1.0.
 
-But the trajectory is clear. Every major vector database vendor has planted a flag in the MCP ecosystem. The servers that invest in tool coverage, transport flexibility, and developer experience will pull ahead. Right now, Chroma leads on capability, Qdrant leads on simplicity and reach, Pinecone leads on search quality, and Milvus leads on self-hosted breadth.
+But the trajectory is clear. Every major vector database vendor has planted a flag in the MCP ecosystem. The servers that invest in tool coverage, transport flexibility, and developer experience will pull ahead. Right now, Chroma leads on deployment flexibility, Milvus leads on search breadth (hybrid search), Qdrant leads on simplicity and reach, and Pinecone leads on search quality.
 
 Pick the server that matches your database. If you don't have a database yet and want the most capable MCP experience, start with [Chroma](/reviews/chroma-mcp-server/). If you just want semantic memory with zero friction, start with [Qdrant](/reviews/qdrant-mcp-server/).
 

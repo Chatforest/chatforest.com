@@ -1,15 +1,15 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 30 MCP servers and compared 40+ across 11 categories. Here are the ones worth installing — and the ones to avoid."
-og_description: "We've tested 30 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
+description: "We've reviewed 31 MCP servers and compared 40+ across 11 categories. Here are the ones worth installing — and the ones to avoid."
+og_description: "We've tested 31 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
 ---
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [30 in-depth reviews](/reviews/) and [11 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [31 in-depth reviews](/reviews/) and [11 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -43,7 +43,7 @@ If you want to skip the details:
 | DevOps (IaC) | Terraform MCP | — | AWS MCP (AWS-specific) |
 | DevOps (containers) | Docker MCP | — | Kubernetes MCP |
 | DevOps (platform) | Azure DevOps MCP | — | [GitHub MCP](/reviews/github-mcp-server/) (4.5/5) |
-| Vector database | [Chroma MCP](/reviews/chroma-mcp-server/) | 3.5/5 | [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5, better transport) |
+| Vector database | [Chroma MCP](/reviews/chroma-mcp-server/) | 3.5/5 | [Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5, hybrid search) |
 
 Now the details.
 
@@ -131,7 +131,9 @@ Vector databases power RAG — retrieval-augmented generation — the primary wa
 
 **[Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5)** — 9 tools with unique search-quality features: cascading search across multiple indexes, built-in reranking, and documentation search without authentication. Cloud-only with no local mode, and only works with Pinecone's integrated embedding indexes. The search tools are best-in-class, but missing basics like delete and update keep it from general-purpose use.
 
-The vector DB MCP category is still young. Chroma leads on capability, Qdrant leads on transport and community, Pinecone leads on search quality, and everyone else is minimal.
+**[Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5)** — 12 tools from the most-starred open-source vector database (40,000+ GitHub stars). Category-leading five search modes including native hybrid search (combining keyword + semantic in one query). Full collection CRUD, delete support, memory management controls (load/release collections), and SSE transport. Requires a running Milvus instance — no embedded mode. The strongest self-hosted option.
+
+The vector DB MCP category is still young. Chroma leads on deployment flexibility, Milvus leads on search breadth (hybrid search), Qdrant leads on transport and community, and Pinecone leads on search quality.
 
 **Full comparison:** [Best Vector Database MCP Servers in 2026](/guides/best-vector-database-mcp-servers/)
 
@@ -310,13 +312,13 @@ The fastest-growing MCP server category. Every major DevOps platform now ships a
 
 ## Beyond the original list
 
-We've reviewed every MCP server on our original list — and we're now expanding to new servers. Recent additions: [Crawl4AI MCP](/reviews/crawl4ai-mcp-server/) (3.5/5) for free open-source crawling with best-in-class markdown extraction, [Tavily MCP](/reviews/tavily-mcp-server/) (4/5) for search + extraction + crawling in one server, [Browserbase MCP](/reviews/browserbase-mcp-server/) (3.5/5) for cloud browser automation with AI-native targeting, [Firecrawl MCP](/reviews/firecrawl-mcp-server/) (4/5) for production web scraping with autonomous research, [Todoist MCP](/reviews/todoist-mcp-server/) (4/5) for task management with MCP Apps, [Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5) for cloud vector search with reranking, [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5) for semantic memory, [Chroma MCP](/reviews/chroma-mcp-server/) (3.5/5) for vector databases, [Linear MCP](/reviews/linear-mcp-server/) (4/5) for project management, [Stripe MCP](/reviews/stripe-mcp-server/) (4/5) for payment operations, and [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
+We've reviewed every MCP server on our original list — and we're now expanding to new servers. Recent additions: [Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5) for hybrid search on the most popular open-source vector database, [Crawl4AI MCP](/reviews/crawl4ai-mcp-server/) (3.5/5) for free open-source crawling with best-in-class markdown extraction, [Tavily MCP](/reviews/tavily-mcp-server/) (4/5) for search + extraction + crawling in one server, [Browserbase MCP](/reviews/browserbase-mcp-server/) (3.5/5) for cloud browser automation with AI-native targeting, [Firecrawl MCP](/reviews/firecrawl-mcp-server/) (4/5) for production web scraping with autonomous research, [Todoist MCP](/reviews/todoist-mcp-server/) (4/5) for task management with MCP Apps, [Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5) for cloud vector search with reranking, [Qdrant MCP](/reviews/qdrant-mcp-server/) (3/5) for semantic memory, [Chroma MCP](/reviews/chroma-mcp-server/) (3.5/5) for vector databases, [Linear MCP](/reviews/linear-mcp-server/) (4/5) for project management, [Stripe MCP](/reviews/stripe-mcp-server/) (4/5) for payment operations, and [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5), the most innovative MCP server architecture we've seen. Subscribe to our [RSS feed](/feed.xml) to get notified when we add new reviews.
 
 ---
 
 ## The pattern: official servers as starting points
 
-After reviewing 30 MCP servers, a clear pattern has emerged:
+After reviewing 31 MCP servers, a clear pattern has emerged:
 
 **Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are archived with security issues (2.5-3/5), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
 
@@ -330,7 +332,7 @@ Our rating distribution tells the story:
 |--------|-------|---------|
 | 4.5/5 | 2 | Playwright, Cloudflare |
 | 4.0/5 | 13 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily |
-| 3.5/5 | 10 | Context7, Puppeteer, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase, Crawl4AI |
+| 3.5/5 | 11 | Context7, Puppeteer, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase, Crawl4AI, Milvus |
 | 3.0/5 | 3 | SQLite, Qdrant, Pinecone |
 | 2.5/5 | 2 | PostgreSQL, EverArt |
 
