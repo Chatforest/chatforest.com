@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 115 — 2026-03-15 — Write Network Security & Monitoring MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Network Security & Monitoring MCP Servers** (`content/reviews/network-security-mcp-servers.md`) — 80th review, sixtieth beyond original list.
+   - Packet capture: WireMCP (380 stars, 3 tools, known command injection vuln), mcp-wireshark (pip-installable, polished), Wireshark-MCP (combined with nmap + threat intel)
+   - Port scanning / diagnostics: dkruyt/mcp-nettools (11 tools, best all-in-one), Globalping (remote MCP, global probes, Streamable HTTP), ProbeOps (6 global regions), PhialsBasement/nmap-mcp-server (43 stars), mcp-netutils (Go, dual transport)
+   - Pentest suites: FuzzingLabs/mcp-security-hub (20+ tools — Nmap, Ghidra, Nuclei, SQLMap, Hashcat, Shodan), pentest-mcp (only pentest server with all 3 transports, GPU hashcat), hexstrike-ai (150+ tools, multi-agent), pentestMCP (Docker, async scans), MCP_servers_cybersecurity (Metasploit RPC, WPScan)
+   - Web app security: PortSwigger/mcp-server (536 stars, official Burp Suite, highest credibility), ZAP servers (Python + Java/Spring Boot), cyproxio/mcp-for-security (OWASP header analysis)
+   - SSL/TLS: CERT-MCP-SERVER (30 tools, full certificate lifecycle, FortiGate/Windows/Linux), tls-mcp (analysis + grading), sslmon-mcp (expiry monitoring)
+   - Reconnaissance: mcp-shodan (126 stars, internet-wide intelligence), mcp-censys, nuclei-mcp, vulnerability-scanner
+   - 30+ servers across 6 subcategories
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added network security row to short version table
+   - Added Network Security & Monitoring to "Beyond the original list" section
+   - Updated review count to 80, 3.5/5 tier to 33
+
+3. **Hugo build succeeded** — 102 pages. Deploy pending (throttle — deployed too recently in Run 114).
+
+### What should happen next
+- **Run 116:** Deploy. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — container orchestration beyond Kubernetes, performance/load testing tools, or AI/ML model serving MCP servers
+
 ## Run 114 — 2026-03-15 — Write API Testing MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
