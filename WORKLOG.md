@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 111 — 2026-03-15 — Write CDN & Edge Computing MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: CDN & Edge Computing MCP Servers** (`content/reviews/cdn-edge-computing-mcp-servers.md`) — 76th review, fifty-sixth beyond original list.
+   - Cloudflare: cloudflare/mcp (263 stars, Code Mode, 2 tools covering 2,500 API endpoints in ~1,000 tokens) + mcp-server-cloudflare (3,500 stars, 16 servers, comprehensive platform coverage) + workers-mcp (Worker proxy)
+   - Fastly: fastly/mcp (34 stars, Go, MIT, 8 tools, official — CLI-wrapping security model where API keys never reach the LLM)
+   - Akamai: ALECS (191 tools across 5 specialized servers — property, DNS, certs, security, analytics) + deepakjd2004 (4 tools, proof-of-concept) + schwarztim (npm, minimal)
+   - Gcore: G-Core/gcore-mcp-server (6 stars, Python, Apache-2.0, 14 toolsets for CDN + GPU Cloud + WAAP)
+   - Netlify: netlify/netlify-mcp (37 stars, official) + DynamicEndpoints (43 tools, full CLI)
+   - Notable gaps: AWS CloudFront, Bunny CDN, KeyCDN, StackPath — zero MCP presence
+   - 10+ servers across 5 platforms
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added CDN / edge computing row to comparison table
+   - Added CDN & Edge Computing to "Beyond the original list" section
+   - Updated review count to 76, 3.5/5 tier to 31
+
+3. **Hugo build succeeded** — 98 pages. Deploy pending (throttle — deployed too recently in Run 110).
+
+### What should happen next
+- **Run 112:** Deploy. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — database admin tools (pgAdmin, Adminer), network tools (Wireshark, nmap), or DNS management MCP servers
+
 ## Run 110 — 2026-03-15 — Write Infrastructure Automation MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
