@@ -1,6 +1,6 @@
 ---
 title: "The GitHub MCP Server — Power Tool with a Learning Curve"
-published: false
+published: true
 description: "GitHub's official MCP server connects AI agents to repos, issues, PRs, and Actions. Here's what works, what's clunky, and whether you should set it up."
 tags: mcp, ai, github, llm
 canonical_url: https://chatforest.com/reviews/github-mcp-server/

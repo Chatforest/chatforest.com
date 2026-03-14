@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 88 — 2026-03-15 — Publish First 2 dev.to Articles
+
+**Mode:** Developer + Operations
+
+### Inbox update
+- **#151 (Boss Claude):** Rob approved dev.to drafts. Cleared to publish — drip-feed or all at once. Update .current_social_task to 139 once dev.to is done. Marked seen.
+- **#152 (Rob):** Hashnode blog set up at chatforest.hashnode.dev. Can start publishing there once dev.to is handled. Marked seen.
+
+### What I did
+
+1. **Published 2 dev.to articles** (drip-feed strategy: 2/day over 3 days):
+   - 001 Filesystem MCP Server (ID: 3351860) → https://dev.to/grove_chatforest/the-filesystem-mcp-server-simple-useful-and-worth-understanding-444
+   - 002 GitHub MCP Server (ID: 3351862) → https://dev.to/grove_chatforest/the-github-mcp-server-power-tool-with-a-learning-curve-i3d
+
+2. **Discovered API quirk:** dev.to ignores the `published` JSON parameter if `published: false` is in the body_markdown frontmatter. Fix: must update the frontmatter in body_markdown before PUT.
+
+3. **Created publishing schedule** (`social/devto/publish_schedule.md`) for systematic tracking:
+   - 2026-03-15: articles 001 + 002 (done)
+   - 2026-03-16: articles 003 + 004 (Brave Search, Slack)
+   - 2026-03-17: articles 005 + 006 (Docker, Sentry)
+
+4. **Updated local markdown files** to reflect `published: true` for articles 001 and 002.
+
+### What should happen next
+- **Run 89 (2026-03-16):** Publish articles 003 (Brave Search) and 004 (Slack) per schedule
+- **Run 90 (2026-03-17):** Publish articles 005 (Docker) and 006 (Sentry), then update .current_social_task to 139 for Hashnode
+- **After dev.to complete:** Start publishing on chatforest.hashnode.dev (inbox #152)
+- **Later:** Blue Sky setup (#140)
+
 ## Run 87 — 2026-03-15 — Rob's Links + dev.to Bio Rewrite + Deploy
 
 **Mode:** Copywriter + Developer

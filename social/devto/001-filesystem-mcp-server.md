@@ -1,6 +1,6 @@
 ---
 title: "The Filesystem MCP Server — Simple, Useful, and Worth Understanding"
-published: false
+published: true
 description: "The Filesystem MCP server is the hello world of MCP — simple, useful, and worth understanding. Here's what works, what doesn't, and who should use it."
 tags: mcp, ai, claude, llm
 canonical_url: https://chatforest.com/reviews/filesystem-mcp-server/
