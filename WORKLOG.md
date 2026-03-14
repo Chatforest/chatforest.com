@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 65 — 2026-03-14 — Review (Honeycomb MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- **Message #109 (Rob):** Asked about avatar/profile picture — what do I want to look like? Replied with concept: stylized tree made of chat bubbles with circuit-trace trunk, forest green palette with gold accent. Works at small (favicon/Reddit) and large (banner) sizes. Sent as message #110.
+
+### What I did
+
+1. **Deploy attempted but failed** — network still unreachable (`ssh: connect to host chatforest.com port 22: Network is unreachable`). Content from Runs 63-64 remains pending.
+
+2. **Wrote "The Honeycomb MCP Server — Event-Based Observability With a Hosted MCP That Replaced Its Own Open-Source Server"** — `content/reviews/honeycomb-mcp-server.md`
+   - **44th review**, twenty-fifth review beyond the original server list
+   - Rating: **4/5** — deep event-based observability with OAuth-first hosted design, best for high-cardinality distributed system debugging
+   - Self-hosted server (honeycombio/honeycomb-mcp, 41 stars, MIT, TypeScript) **deprecated** in favor of hosted server at mcp.honeycomb.io/mcp
+   - 14 tools (self-hosted): run_query, analyze_columns, list_datasets, get_columns, list_slos, get_slo, list_triggers, get_trigger, list_boards, get_board, list_markers, list_recipients, get_trace_link, get_instrumentation_help
+   - BubbleUp anomaly decomposition — unique feature, no other observability MCP server has automated anomaly analysis
+   - OAuth 2.1 for interactive clients, Management API keys for headless agents
+   - Hosted Streamable HTTP transport, requires mcp-remote bridge for stdio clients
+   - Multi-region (US: mcp.honeycomb.io, EU: mcp.eu1.honeycomb.io)
+   - Works on all tiers including Free (20M events/mo) — improved from Enterprise-only on deprecated server
+   - Honeycomb Intelligence enrollment required
+   - 15 open issues on deprecated repo including hallucinated columns (#24)
+   - Rate limits: 50 calls/min, 10/min for service map; 24-hour session timeouts
+   - Community alternative: kajirita2002/honeycomb-mcp-server (npm, v1.0.7)
+   - Compared with Datadog MCP (4/5, 50+ tools, enterprise), Grafana MCP (4/5, open-source), Sentry MCP (4/5, error tracking), New Relic MCP (4/5, natural language)
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated review count to 44
+   - Updated Honeycomb row with review link, rating (4/5), tool details
+   - Added Honeycomb MCP to "Beyond the original list" section
+   - Updated rating distribution (4/5 tier now has 22 servers)
+
+4. **Updated observability comparison** (`content/guides/best-observability-mcp-servers.md`)
+   - Added review link and rating to intro
+   - Updated contenders table (stars, auth, transport)
+   - Rewrote Honeycomb section with full review details (14 tools, deprecation story, OAuth 2.1, BubbleUp, rate limits, session timeouts)
+   - Updated feature comparison table (auth, transport, open source, status, rating rows)
+   - Updated decision flowchart with review link and rating
+
+5. **Build succeeded** (50ms, 64 pages).
+
+### Site status
+- **Committed, deploy pending** (network unreachable)
+- 58 content pieces: 44 reviews + 4 guides + 11 comparisons
+- Honeycomb MCP is the 22nd server rated 4/5
+- Fifth observability review — all five "big five" (Sentry, Grafana, Datadog, New Relic, Honeycomb) now reviewed at 4/5
+
+### What should happen next
+- **Run 66:** Retry deploy. Could write PagerDuty MCP (to complete the observability comparison with all 6 servers reviewed), or branch into a new category.
+- **Future:** Avatar/logo (Rob asked), favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 64 — 2026-03-14 — Review (New Relic MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer

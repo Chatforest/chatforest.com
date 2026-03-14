@@ -46,7 +46,7 @@
       <div class="article-body">
         <p>Every major observability platform now has an official MCP server. That happened fast — in early 2025, only Sentry had one. By March 2026, Datadog, Grafana, New Relic, Honeycomb, PagerDuty, and Splunk have all shipped their own. The observability category is the most &ldquo;first-party&rdquo; MCP space we&rsquo;ve covered.</p>
 <p>This matters because observability is where AI agents add the most obvious value. Debugging production errors, correlating metrics with deploys, querying logs in natural language — these are tasks where context switching between your IDE and a dashboard wastes real time. An MCP server that puts your observability data inside your agent&rsquo;s context eliminates that round-trip.</p>
-<p>We&rsquo;ve reviewed the <a href="/reviews/sentry-mcp-server/">Sentry MCP server</a> (4/5), the <a href="/reviews/grafana-mcp-server/">Grafana MCP server</a> (4/5), the <a href="/reviews/datadog-mcp-server/">Datadog MCP server</a> (4/5), and the <a href="/reviews/newrelic-mcp-server/">New Relic MCP server</a> (4/5). Here&rsquo;s how the full observability landscape compares, and which ones are worth integrating.</p>
+<p>We&rsquo;ve reviewed the <a href="/reviews/sentry-mcp-server/">Sentry MCP server</a> (4/5), the <a href="/reviews/grafana-mcp-server/">Grafana MCP server</a> (4/5), the <a href="/reviews/datadog-mcp-server/">Datadog MCP server</a> (4/5), the <a href="/reviews/newrelic-mcp-server/">New Relic MCP server</a> (4/5), and the <a href="/reviews/honeycomb-mcp-server/">Honeycomb MCP server</a> (4/5). Here&rsquo;s how the full observability landscape compares, and which ones are worth integrating.</p>
 <h2 id="the-contenders">The Contenders</h2>
 <table>
 <thead>
@@ -103,12 +103,12 @@
 <td>Natural language observability queries</td>
 </tr>
 <tr>
-<td>Honeycomb</td>
+<td><a href="/reviews/honeycomb-mcp-server/">Honeycomb</a></td>
 <td>Event-based observability</td>
-<td>170+</td>
+<td>41 (deprecated repo)</td>
 <td>Remote (hosted)</td>
-<td>API key</td>
-<td>15+</td>
+<td>OAuth 2.1 / API key</td>
+<td>14+</td>
 <td>Yes (20M events/mo)</td>
 <td>High-cardinality event analysis</td>
 </tr>
@@ -171,13 +171,13 @@
 <p><strong>Weaknesses:</strong> Public Preview (not GA), no FedRAMP/HIPAA support, API key auth by default, minimal GitHub presence (3 stars, 2 commits), read-only orientation (no write operations), 6 community alternatives suggest gaps in the official server, trails Datadog and Grafana in tool count.</p>
 <p><strong>Best for:</strong> Teams on New Relic who want natural language observability querying with the lowest barrier to entry in the category.</p>
 <h3 id="honeycomb-mcp--high-cardinality-event-analysis">Honeycomb MCP — High-Cardinality Event Analysis</h3>
-<p><strong><a href="https://docs.honeycomb.io/integrations/mcp">Honeycomb MCP</a></strong> | Hosted</p>
-<p>Honeycomb is the pioneer of observability-as-debugging — treating every request as a structured event with arbitrary dimensions, then letting you slice and dice without pre-defined dashboards. Their MCP server brings this approach to AI agents.</p>
-<p>The hosted MCP server lets agents query, analyze, and visualize traces, triggers, and SLOs using natural language. As of March 2026, Honeycomb expanded MCP integrations across Claude Code, Cursor, and AWS DevOps Agent, with &ldquo;Agent Skills&rdquo; that let the server take autonomous investigative actions.</p>
-<p>Honeycomb&rsquo;s approach is fundamentally different from Sentry or Datadog: instead of pre-defined metrics and issue groups, everything is a queryable event. This is powerful for high-cardinality debugging (finding the one user, in the one region, hitting the one slow query) but requires buying into Honeycomb&rsquo;s event-based mental model.</p>
-<p><strong>Strengths:</strong> High-cardinality event analysis (no pre-defined dimensions), hosted MCP server, natural language querying, Agent Skills for autonomous investigation, SLO integration, expanded March 2026 integrations.</p>
-<p><strong>Weaknesses:</strong> Smaller ecosystem than Datadog/New Relic, event-based paradigm has a learning curve, fewer tools than full-stack APM servers, pricing can surprise at scale.</p>
-<p><strong>Best for:</strong> Teams already on Honeycomb who do high-cardinality debugging and want agents that can autonomously investigate performance issues.</p>
+<p><strong><a href="https://github.com/honeycombio/honeycomb-mcp">honeycombio/honeycomb-mcp</a></strong> | <a href="/reviews/honeycomb-mcp-server/">Our full review</a> | Rating: 4/5</p>
+<p>Honeycomb is the pioneer of observability-as-debugging — treating every request as a structured event with arbitrary dimensions, then letting you slice and dice without pre-defined dashboards. Their MCP integration has an unusual history: they built an open-source self-hosted server (41 stars, MIT, 14 tools), then <strong>deprecated it</strong> in favor of a hosted MCP server at <code>mcp.honeycomb.io/mcp</code>.</p>
+<p>The self-hosted server exposed 14 well-documented tools: <code>run_query</code> (analytics with calculations, breakdowns, filters), <code>analyze_columns</code> (statistical analysis), <code>list_datasets</code>/<code>get_columns</code> (schema exploration), <code>list_slos</code>/<code>get_slo</code>, <code>list_triggers</code>/<code>get_trigger</code>, <code>list_boards</code>/<code>get_board</code>, <code>list_markers</code>, <code>list_recipients</code>, <code>get_trace_link</code> (deep links), and <code>get_instrumentation_help</code> (OpenTelemetry guidance). The hosted server continues these capabilities with BubbleUp anomaly analysis — Honeycomb&rsquo;s signature feature that automatically identifies what&rsquo;s different about a subset of events compared to the baseline.</p>
+<p>The hosted server uses <strong>OAuth 2.1</strong> for interactive clients (browser-based login, team selection, scope grants) and Management API keys for headless agents. It requires the <code>mcp-remote</code> npm bridge for stdio clients. Multi-region support with separate US and EU endpoints addresses data residency. Works on all Honeycomb tiers including Free (20M events/mo) — a major improvement from the deprecated server which required Enterprise.</p>
+<p><strong>Strengths:</strong> OAuth 2.1 authentication (matches Sentry as best auth in category), BubbleUp anomaly decomposition (unique — no other MCP server has automated anomaly analysis), high-cardinality event debugging by design, OpenTelemetry instrumentation guidance, available on all tiers including free (20M events/mo), multi-region (US/EU endpoints), zero-install hosted server.</p>
+<p><strong>Weaknesses:</strong> Messy deprecation transition (self-hosted deprecated, hosted tools not publicly documented at same granularity), 15 open issues on deprecated repo including hallucinated columns (#24), tight rate limits (50 calls/min, 10/min for service map), 24-hour session timeouts, can&rsquo;t add queries to existing boards, <code>mcp-remote</code> bridge dependency for stdio clients, fewer tools than Datadog (50+) or Grafana (40+), Enterprise features gated (service map, SLO reporting).</p>
+<p><strong>Best for:</strong> Teams already on Honeycomb who do high-cardinality debugging on distributed systems and want OAuth-first agent integration with BubbleUp analysis.</p>
 <h3 id="pagerduty-mcp--incident-response-automation">PagerDuty MCP — Incident Response Automation</h3>
 <p><strong><a href="https://github.com/PagerDuty/pagerduty-mcp-server">PagerDuty/pagerduty-mcp-server</a></strong> | Both hosted + local</p>
 <p>PagerDuty is the outlier in this comparison — it doesn&rsquo;t collect telemetry. Instead, it manages the human response to incidents: creating/acknowledging/resolving incidents, managing on-call schedules, escalating to the right engineer, and coordinating across teams.</p>
@@ -269,7 +269,7 @@
 <td>OAuth / API key</td>
 <td>API token</td>
 <td>API key / OAuth</td>
-<td>API key</td>
+<td>OAuth 2.1 / API key</td>
 <td>OAuth 2.0</td>
 </tr>
 <tr>
@@ -278,7 +278,7 @@
 <td>Remote (HTTP)</td>
 <td>stdio + SSE + HTTP</td>
 <td>Remote (HTTP)</td>
-<td>Remote (hosted)</td>
+<td>Remote (HTTP)</td>
 <td>Both</td>
 </tr>
 <tr>
@@ -287,7 +287,7 @@
 <td>No</td>
 <td>Yes</td>
 <td>No (hosted)</td>
-<td>Yes</td>
+<td>Deprecated (was MIT)</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -296,7 +296,7 @@
 <td>GA</td>
 <td>Active</td>
 <td>Public Preview</td>
-<td>Active</td>
+<td>Hosted (self-hosted deprecated)</td>
 <td>Active</td>
 </tr>
 <tr>
@@ -305,7 +305,7 @@
 <td><a href="/reviews/datadog-mcp-server/">4/5</a></td>
 <td><a href="/reviews/grafana-mcp-server/">4/5</a></td>
 <td><a href="/reviews/newrelic-mcp-server/">4/5</a></td>
-<td>—</td>
+<td><a href="/reviews/honeycomb-mcp-server/">4/5</a></td>
 <td>—</td>
 </tr>
 </tbody>
@@ -316,7 +316,7 @@
 <p><strong>&ldquo;I debug production errors daily&rdquo;</strong> → <a href="/reviews/sentry-mcp-server/">Sentry MCP</a> (4/5). Deepest error investigation tools, OAuth auth, Seer AI analysis. Pair with PagerDuty if you&rsquo;re on-call.</p>
 <p><strong>&ldquo;I need the full picture — metrics, traces, logs, everything&rdquo;</strong> → <strong><a href="/reviews/datadog-mcp-server/">Datadog MCP</a> (4/5)</strong> if you can afford it (broadest toolset, 10+ toolsets, GA, agent-native design). <strong><a href="/reviews/newrelic-mcp-server/">New Relic MCP</a> (4/5)</strong> if you want a generous free tier, natural language querying, and golden metrics analysis.</p>
 <p><strong>&ldquo;I run my own observability stack&rdquo;</strong> → <strong><a href="/reviews/grafana-mcp-server/">Grafana MCP</a> (4/5)</strong>. The only server that works with any backend data source. Open source, self-hostable, configurable tool categories, full incident pipeline.</p>
-<p><strong>&ldquo;I need to debug complex distributed systems&rdquo;</strong> → <strong>Honeycomb MCP</strong>. High-cardinality event analysis is purpose-built for finding needles in haystacks.</p>
+<p><strong>&ldquo;I need to debug complex distributed systems&rdquo;</strong> → <strong><a href="/reviews/honeycomb-mcp-server/">Honeycomb MCP</a> (4/5)</strong>. High-cardinality event analysis with BubbleUp anomaly decomposition is purpose-built for finding needles in haystacks. OAuth 2.1, hosted, works on all tiers including Free.</p>
 <p><strong>&ldquo;I&rsquo;m on-call and want to manage incidents from my agent&rdquo;</strong> → <strong>PagerDuty MCP</strong>. Pair it with whichever debugging server you use.</p>
 <h3 id="the-stack-wed-recommend">The Stack We&rsquo;d Recommend</h3>
 <p>For most teams, you want <strong>two</strong> observability MCP servers:</p>
