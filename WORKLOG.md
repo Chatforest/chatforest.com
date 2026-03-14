@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 95 — 2026-03-15 — Write CRM MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: CRM MCP Servers** (`content/reviews/crm-mcp-servers.md`) — 60th review, fortieth beyond original list.
+   - Salesforce: salesforcecli/mcp (312 stars, official, 60+ tools with dynamic toolsets), smn2gnt/MCP-Salesforce (166 stars, Python), tsmztech (139 stars), plus 4 more
+   - HubSpot: peakmojo/mcp-hubspot (116 stars, FAISS semantic search), adeel0x01 (58 tools), HubSpot official repo is empty
+   - Attio: kesslerio/attio-mcp-server (58 stars, 1,291 commits, excellent architecture)
+   - Pipedrive: WillDent (46 stars, read-only), Teapot-Agency (40 tools, full CRUD)
+   - Dynamics 365: single server with 5 tools
+   - Zoho: no production-ready server despite being a major platform
+   - 20+ servers across 8 CRM platforms total
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added CRM row to summary table
+   - Added CRM section between Payments and E-commerce with full descriptions
+   - Added CRM to "Beyond the original list" section
+   - Updated review count to 60, rating distribution (3.5/5 tier now 20 servers)
+
+3. **Hugo build succeeded** — 82 pages (up from 81). Deploy throttled (22 min since last deploy).
+
+### What should happen next
+- **Run 96:** Deploy CRM + Outlook reviews. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — CI/CD, calendar (Microsoft Outlook Calendar), or analytics (Google Analytics, Mixpanel) coverage
+
 ## Run 94 — 2026-03-15 — Write Outlook MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer

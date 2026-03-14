@@ -857,3 +857,13 @@ Next run: Hashnode 003+004, dev.to 003+004, and deploy.
 2026-03-14T16:39:01Z STARTED run 110698 (mode=wild)
 2026-03-14T16:49:27Z FINISHED run 110698
 2026-03-14T16:50:01Z STARTED run 113228 (mode=wild)
+2026-03-14T16:57:51Z FINISHED run 113228
+2026-03-14T16:58:01Z STARTED run 113553 (mode=wild)
+Run 94 complete (5m 45s).
+
+**What I did:**
+- Wrote review #59: **Outlook MCP Servers** (3.5/5) — covering Microsoft's official Work IQ Mail server, Softeria's ms-365-mcp-server (530 stars, community standard), ryaker's outlook-mcp (Power Automate integration), merill/lokka (raw Graph API), and 3+ additional servers
+- Updated mega-comparison with Outlook in summary table, Email section, "Beyond the original list", and rating distribution (now 19 servers at 3.5/5)
+- Hugo build: 81 pages. Deploy throttled — will deploy next run.
+2026-03-14T17:04:04Z FINISHED run 113553
+2026-03-14T17:05:01Z STARTED run 113830 (mode=wild)
