@@ -9,7 +9,7 @@ card_description: "We've reviewed 28 MCP servers across 11 categories. Here are 
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [51 in-depth reviews](/reviews/) and [12 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [51 in-depth reviews](/reviews/) and [13 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -34,7 +34,7 @@ If you want to skip the details:
 | Version control (local git) | [Git MCP](/reviews/git-mcp-server/) | 3/5 | cyanheads/git-mcp-server (28 tools) |
 | Communication | [Slack MCP](/reviews/slack-mcp-server/) | 4/5 | [Teams MCP](/reviews/teams-mcp-servers/) (3.5/5, official + community), [Discord MCP](/reviews/discord-mcp-servers/) (3/5, community). [Full comparison →](/guides/best-communication-mcp-servers/) |
 | Observability | [Sentry MCP](/reviews/sentry-mcp-server/) | 4/5 | [Grafana MCP](/reviews/grafana-mcp-server/) (4/5, open source) |
-| Image generation | Multi-provider servers | — | Not [EverArt](/reviews/everart-mcp-server/) (2.5/5) |
+| Image generation | Use-case dependent | — | Not [EverArt](/reviews/everart-mcp-server/) (2.5/5). [Full comparison →](/guides/best-image-generation-mcp-servers/) |
 | Documentation | [Context7](/reviews/context7-mcp-server/) | 3.5/5 | [GitMCP](/reviews/gitmcp-server/) (4/5, free, any repo) |
 | Productivity (knowledge) | [Notion MCP](/reviews/notion-mcp-server/) | 3.5/5 | [Obsidian MCP](/reviews/obsidian-mcp-servers/) (3.5/5, local-first) |
 | Productivity (tasks) | [Linear MCP](/reviews/linear-mcp-server/) | 4/5 | [Todoist MCP](/reviews/todoist-mcp-server/) (4/5, personal) |
@@ -216,16 +216,18 @@ The most "first-party" category in the MCP ecosystem — every major platform ha
 
 ## Image generation
 
-The most fragmented category we've covered. There's no single dominant server.
+The most fragmented category we've covered — 20+ servers, no dominant player, no working official server. The [EverArt reference server](/reviews/everart-mcp-server/) (2.5/5) was archived in May 2025. No major provider (OpenAI, Stability, Google, Midjourney) has shipped their own MCP server yet.
 
-The [official EverArt server](/reviews/everart-mcp-server/) (2.5/5) is archived and requires a $15/month paid API — the only reference server with a paid requirement. It was a proof of concept that served its purpose.
+Four approaches have emerged: single-provider API wrappers (OpenAI, Stability, Gemini, Replicate), multi-provider aggregators (merlinrabens with 10 providers, PiAPI for Midjourney access), local inference bridges (ComfyUI at 222 stars — the most popular server in the category), and free no-auth options (MCPollinations, HuggingFace Spaces bridge).
 
-**Better options:**
-- **merlinrabens/image-gen-mcp-server** — multi-provider (OpenAI, Stability AI, Replicate). Pick the best model for each job.
-- **FAL.ai MCP servers** — 600+ models, serverless inference. The broadest model selection.
-- **spartanz51/imagegen-mcp** — OpenAI-focused with editing capabilities (inpainting, variations), not just generation.
+**Top picks by use case:**
+- **Best quality:** SureScaleAI/openai-gpt-image-mcp (97 stars) — OpenAI gpt-image-1, best prompt adherence
+- **Best editing:** tadasant/mcp-server-stability-ai (81 stars) — background removal, recoloring, outpainting, search-and-replace
+- **Most models:** raveenb/fal-mcp-server (38 stars) — 600+ models on FAL.ai
+- **Free, local:** joenorton/comfyui-mcp-server (222 stars) — any model, no API costs
+- **Zero friction:** pinkpixel-dev/MCPollinations (39 stars) — free, no auth, no signup
 
-This space is moving fast. A dedicated comparison article is coming.
+See our full [image generation MCP server comparison](/guides/best-image-generation-mcp-servers/) for all 20+ servers across four architectural approaches — including a decision flowchart.
 
 ---
 
