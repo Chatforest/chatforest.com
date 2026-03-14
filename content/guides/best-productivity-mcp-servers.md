@@ -11,7 +11,7 @@ AI agents that can read your codebase but not your project tracker are doing hal
 
 The MCP ecosystem now has productivity servers for nearly every major platform. But they vary wildly in maturity. Some are first-party, OAuth-authenticated, and actively maintained. Some are community projects with one contributor and no tests. Picking the wrong one means your agent is creating tasks in the wrong project, missing calendar conflicts, or silently failing on API changes.
 
-We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/reviews/slack-mcp-server/) (4/5), and [Linear MCP](/reviews/linear-mcp-server/) (4/5) individually. Here's how the broader productivity MCP server landscape compares, and which ones are actually worth configuring.
+We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/reviews/slack-mcp-server/) (4/5), [Linear MCP](/reviews/linear-mcp-server/) (4/5), and [Todoist MCP](/reviews/todoist-mcp-server/) (4/5) individually. Here's how the broader productivity MCP server landscape compares, and which ones are actually worth configuring.
 
 ## The Contenders
 
@@ -19,7 +19,7 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 |--------|-----------|------|-------|-------|------|---------|-------|
 | [Notion](/reviews/notion-mcp-server/) | Notion (official) | Knowledge base + project mgmt | ~4,000 | 18 | OAuth (hosted) / API key (local) | Hosted + local | Yes |
 | [Linear](/reviews/linear-mcp-server/) | Linear (official) | Issue tracking + project mgmt | N/A | 23+ | OAuth | Hosted | Yes (with Linear plan) |
-| Todoist | Doist (official) | Task management | 172 | 20+ | OAuth | Hosted | Yes (with Todoist plan) |
+| [Todoist](/reviews/todoist-mcp-server/) | Doist (official) | Task management | 382 | 28+ | OAuth | Hosted + local | Yes (with Todoist plan) |
 | Asana | Asana (official) | Project management | N/A | 30+ | OAuth | Hosted | Yes (with Asana plan) |
 | Google Calendar | nspady (community) | Calendar management | ~1,000 | 12 | OAuth | Local | Yes |
 | Obsidian | cyanheads (community) | Knowledge base (local) | — | 15+ | None (local) | Local | Yes |
@@ -80,17 +80,17 @@ Linear's official hosted MCP server at `mcp.linear.app` follows the authenticate
 
 **Best for:** Engineering teams already on Linear. The issue → project → initiative hierarchy maps cleanly to how engineering work is organized. If you're using Linear for sprint planning, the MCP server lets your agent create issues from code comments, update status from CI results, and track progress across projects.
 
-### Todoist — The Best for Personal Task Management
+### [Todoist](/reviews/todoist-mcp-server/) (4/5) — The Best for Personal Task Management
 
-Doist's official server (migrated from `Doist/todoist-mcp` to `Doist/todoist-ai`) is available as a hosted streamable HTTP service at `ai.todoist.net/mcp`. It's one of the most feature-complete task management MCP servers available.
+Doist's official server (migrated from `Doist/todoist-mcp` to `Doist/todoist-ai`) is available as a hosted streamable HTTP service at `ai.todoist.net/mcp`. It's the most feature-complete task management MCP server available, with an SDK-first architecture — the same tools work across MCP, Vercel AI SDK, and custom pipelines.
 
-**20+ tools** covering tasks (create, update, move, close, reopen, delete), projects, sections, comments, labels, and productivity stats. The natural language task creation is a standout — "Submit report by Friday 5pm #Work" gets parsed into the right project with the right due date.
+**28+ tools** covering tasks (create, update, find, complete, uncomplete, delete), projects, sections, comments, labels, assignments, workspaces, and activity tracking. The `get-overview` tool gives agents a dashboard-style snapshot without multiple calls. Full CRUD including delete — something Linear's MCP still lacks.
 
-**What sets it apart:** Todoist's MCP server supports MCP Apps — interactive UI widgets rendered inline in AI chat interfaces. Instead of plain text task lists, you get rich visual representations. This is a genuinely novel feature that other productivity MCP servers haven't adopted yet.
+**What sets it apart:** Three transport protocols (Streamable HTTP, SSE, stdio) — rare for any MCP server. MCP Apps render interactive UI widgets inline in chat interfaces. The SDK-first design means tools are tested across multiple surfaces, not just MCP.
 
-**The catch:** 172 GitHub stars — modest compared to the platform's popularity. The deprecation of the original repo (todoist-mcp → todoist-ai) means older tutorials and configs are broken. Todoist's free tier is limited (5 active projects) — the MCP server inherits those limits.
+**The catch:** Two p1 bugs — `add-sections` is non-functional and `manage-assignments` silently fails. Project hierarchy management is incomplete (no workspace/folder placement, missing parent fields). Batch task creation can time out. The project self-describes as "early stages."
 
-**Best for:** Individual developers and small teams who use Todoist as their daily task manager. The natural language input and MCP Apps features make it the most pleasant task management MCP to actually use.
+**Best for:** Individual developers and small teams who use Todoist as their daily task manager. The transport flexibility and MCP Apps make it the most architecturally advanced task management MCP server. [Full review →](/reviews/todoist-mcp-server/)
 
 ### Asana — The Enterprise Option
 
@@ -185,7 +185,7 @@ The gap is Google. No official MCP server exists for Calendar, Drive, Docs, Shee
 **Our recommended stack:**
 - **Knowledge base:** [Notion](/reviews/notion-mcp-server/) (3.5/5) or Obsidian (local-first)
 - **Issue tracking:** Linear (for engineering) or Asana (for cross-functional teams)
-- **Task management:** Todoist (for individuals)
+- **Task management:** [Todoist](/reviews/todoist-mcp-server/) (4/5, for individuals)
 - **Calendar:** nspady/google-calendar-mcp
 - **Communication:** [Slack](/reviews/slack-mcp-server/) (4/5)
 

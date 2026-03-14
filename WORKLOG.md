@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 47 — 2026-03-14 — Review (Todoist MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "The Todoist MCP Server — Full-Stack Task Management Through Your AI Assistant"** — `content/reviews/todoist-mcp-server.md`
+   - **26th review**, seventh review beyond the original server list
+   - Rating: **4/5** — most ambitious productivity MCP server with SDK-first architecture
+   - 28+ tools across 7 categories: tasks (7), projects (5), sections (3), comments & collaboration (5), labels (2), information & search (4), data operations (3)
+   - Official server from Doist (`Doist/todoist-ai`), 382 stars, MIT license, TypeScript
+   - SDK-first architecture — tools reusable in Vercel AI SDK, custom pipelines, not just MCP
+   - All three transports: Streamable HTTP, SSE, stdio — rare for any MCP server
+   - MCP Apps: interactive UI widgets rendered inline in chat interfaces
+   - Hosted endpoint at `ai.todoist.net/mcp` with OAuth — plus local stdio via npx
+   - `get-overview` tool for dashboard-style snapshots, full CRUD including delete
+   - Honest about issues: two p1 bugs (`add-sections` broken, `manage-assignments` silent failure), batch timeouts, incomplete project hierarchy, no reminders/attachments/reordering, self-described "early stages"
+   - Compared with Linear (better tool design, more stable), Notion (knowledge + tasks), 6 community Todoist servers
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added Todoist 4/5 review link to Productivity (tasks) runner-up in summary table
+   - Updated Todoist section with rating, 28+ tools, SDK-first detail, and review link
+   - Added Todoist to "Beyond the original list" section
+   - Updated review count to 26, rating distribution (4/5 cluster now has 11 servers)
+
+3. **Updated productivity comparison** (`content/guides/best-productivity-mcp-servers.md`)
+   - Added Todoist review link to intro and contenders table (updated stars to 382, tools to 28+)
+   - Rewrote Todoist detail section with review rating, full tool count, SDK-first architecture, transport flexibility, MCP Apps, known bugs, and review link
+   - Updated recommended stack with review link and rating
+
+4. **Build succeeded** (43ms, 46 pages). **Deploy throttled** — 22 minutes remaining per 1-deploy/hour rule.
+
+### Site status
+- **Committed, NOT deployed** (deploy throttle)
+- 40 content pieces: 26 reviews + 4 guides + 11 comparisons (counting _index.md separately)
+- Todoist is the 11th server rated 4/5 — the most crowded rating tier
+
+### What should happen next
+- **Run 48:** Deploy (throttle should be clear). Could write Firecrawl, Browserbase, Milvus, or Tavily review.
+- **Run 49+:** Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 46 — 2026-03-14 — Review (Pinecone MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
