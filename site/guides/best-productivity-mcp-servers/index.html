@@ -46,7 +46,7 @@
       <div class="article-body">
         <p>AI agents that can read your codebase but not your project tracker are doing half the job. The missing link isn&rsquo;t intelligence — it&rsquo;s access to the tools where your actual work lives: task lists, project boards, knowledge bases, calendars.</p>
 <p>The MCP ecosystem now has productivity servers for nearly every major platform. But they vary wildly in maturity. Some are first-party, OAuth-authenticated, and actively maintained. Some are community projects with one contributor and no tests. Picking the wrong one means your agent is creating tasks in the wrong project, missing calendar conflicts, or silently failing on API changes.</p>
-<p>We&rsquo;ve reviewed <a href="/reviews/notion-mcp-server/">Notion MCP</a> (3.5/5), <a href="/reviews/slack-mcp-server/">Slack MCP</a> (4/5), <a href="/reviews/linear-mcp-server/">Linear MCP</a> (4/5), <a href="/reviews/todoist-mcp-server/">Todoist MCP</a> (4/5), and <a href="/reviews/atlassian-mcp-server/">Atlassian MCP</a> (3.5/5) individually. Here&rsquo;s how the broader productivity MCP server landscape compares, and which ones are actually worth configuring.</p>
+<p>We&rsquo;ve reviewed <a href="/reviews/notion-mcp-server/">Notion MCP</a> (3.5/5), <a href="/reviews/slack-mcp-server/">Slack MCP</a> (4/5), <a href="/reviews/linear-mcp-server/">Linear MCP</a> (4/5), <a href="/reviews/todoist-mcp-server/">Todoist MCP</a> (4/5), <a href="/reviews/atlassian-mcp-server/">Atlassian MCP</a> (3.5/5), and <a href="/reviews/asana-mcp-server/">Asana MCP</a> (4/5) individually. Here&rsquo;s how the broader productivity MCP server landscape compares, and which ones are actually worth configuring.</p>
 <h2 id="the-contenders">The Contenders</h2>
 <table>
 <thead>
@@ -93,20 +93,20 @@
 <td>Yes (with Todoist plan)</td>
 </tr>
 <tr>
-<td>Asana</td>
+<td><a href="/reviews/asana-mcp-server/">Asana</a></td>
 <td>Asana (official)</td>
 <td>Project management</td>
 <td>N/A</td>
-<td>30+</td>
+<td>44</td>
 <td>OAuth</td>
 <td>Hosted</td>
 <td>Yes (with Asana plan)</td>
 </tr>
 <tr>
-<td>Google Calendar</td>
+<td><a href="/reviews/google-calendar-mcp-server/">Google Calendar</a></td>
 <td>nspady (community)</td>
 <td>Calendar management</td>
-<td>~1,000</td>
+<td>1,000+</td>
 <td>12</td>
 <td>OAuth</td>
 <td>Local</td>
@@ -187,17 +187,18 @@
 <p><strong>What sets it apart:</strong> Three transport protocols (Streamable HTTP, SSE, stdio) — rare for any MCP server. MCP Apps render interactive UI widgets inline in chat interfaces. The SDK-first design means tools are tested across multiple surfaces, not just MCP.</p>
 <p><strong>The catch:</strong> Two p1 bugs — <code>add-sections</code> is non-functional and <code>manage-assignments</code> silently fails. Project hierarchy management is incomplete (no workspace/folder placement, missing parent fields). Batch task creation can time out. The project self-describes as &ldquo;early stages.&rdquo;</p>
 <p><strong>Best for:</strong> Individual developers and small teams who use Todoist as their daily task manager. The transport flexibility and MCP Apps make it the most architecturally advanced task management MCP server. <a href="/reviews/todoist-mcp-server/">Full review →</a></p>
-<h3 id="asana--the-enterprise-option">Asana — The Enterprise Option</h3>
-<p>Asana&rsquo;s official V2 MCP server at <code>mcp.asana.com/v2/mcp</code> is the most tool-rich productivity MCP server we found, with 30+ tools across tasks, projects, goals, and workflows.</p>
-<p><strong>30+ tools</strong> covering task creation and management, project setup and tracking, goal management, status updates, and assignments. The breadth matches Asana&rsquo;s position as an enterprise project management platform.</p>
-<p><strong>The catch:</strong> The V1 (beta) server is being deprecated on May 11, 2026 — if you set up Asana MCP before V2, you need to migrate. Enterprise platforms mean enterprise complexity: Asana&rsquo;s data model (workspaces, teams, projects, sections, tasks, subtasks, custom fields) requires more agent context to navigate correctly. OAuth authentication is mandatory.</p>
-<p><strong>Best for:</strong> Teams already deep in Asana for project management. The 30+ tools mean your agent can do nearly anything you&rsquo;d do in the Asana UI. But if you&rsquo;re not already an Asana shop, the complexity overhead isn&rsquo;t worth it.</p>
-<h3 id="google-calendar--the-calendar-gap-filler">Google Calendar — The Calendar Gap-Filler</h3>
-<p>No official Google MCP server exists for any Google product. The community has filled the gap — nspady/google-calendar-mcp (~1,000 GitHub stars) is the most-used calendar MCP server.</p>
+<h3 id="asanareviewsasana-mcp-server-45--the-enterprise-option"><a href="/reviews/asana-mcp-server/">Asana</a> (4/5) — The Enterprise Option</h3>
+<p>Asana&rsquo;s official V2 MCP server at <code>mcp.asana.com/v2/mcp</code> is the most tool-rich productivity MCP server we&rsquo;ve reviewed, with 44 tools across tasks, projects, goals, portfolios, and teams. V2 launched February 2026 with Streamable HTTP, replacing the deprecated V1 beta (SSE, shutdown May 11, 2026).</p>
+<p><strong>44 tools</strong> covering six functional areas: task management (create, update, delete, search, dependencies, followers), projects and portfolios (create projects, sections, status updates, portfolio browsing), goals and time management (OKR tracking, goal metrics, time periods), team and user management (workspaces, teams, allocations), and collaboration (comments, activity history, attachments). The goal and portfolio tools are unique — no other productivity MCP server offers OKR tracking through MCP.</p>
+<p><strong>What sets it apart:</strong> 20+ verified client integrations (Claude, ChatGPT, Cursor, VS Code, Perplexity, Microsoft Teams, Zoom, and more) — the broadest client compatibility of any productivity MCP server. MCP-scoped OAuth tokens limit blast radius if compromised. Permission inheritance ensures agents can only access what the authenticated user can.</p>
+<p><strong>The catch:</strong> The V1→V2 transition was rocky — V2 initially launched with only ~15 tools, dropping subtask creation, comments, section placement, and dependencies. Most have been restored, but it shook early adopter confidence. No self-hosted option. No dynamic client registration — developers must pre-register in the Asana developer console. Asana pricing is the real barrier: free tier caps at 10 users, Starter is $10.99/user/month, Advanced (portfolios, workload) is $24.99/user/month. Goal tracking requires Business tier or higher.</p>
+<p><strong>Best for:</strong> Cross-functional teams already deep in Asana. The 44 tools cover the full Asana Work Graph — workspaces, teams, projects, goals, portfolios, allocations. If your organization manages quarterly OKRs and multi-project portfolios in Asana, this is the most complete AI integration available. Community alternative roychri/mcp-server-asana (129 stars, 33 tools, MIT) offers self-hosted deployment with Personal Access Token auth. <a href="/reviews/asana-mcp-server/">Full review →</a></p>
+<h3 id="google-calendar-mcpreviewsgoogle-calendar-mcp-server--the-calendar-gap-filler"><a href="/reviews/google-calendar-mcp-server/">Google Calendar MCP</a> — The Calendar Gap-Filler</h3>
+<p>No official Google MCP server exists for any Google product — Google briefly shipped and then removed MCP from their Workspace CLI in March 2026. The community has filled the gap — nspady/google-calendar-mcp (1,000+ GitHub stars, v2.6.1) is the de facto standard calendar MCP server.</p>
 <p><strong>12 tools:</strong> list-calendars, list-events, search-events, get-event, create-event, update-event, delete-event, get-freebusy, get-current-time, respond-to-event, list-colors, manage-accounts.</p>
-<p><strong>The standout features:</strong> Multi-account support (connect work and personal calendars), cross-account conflict detection, intelligent event import from images/PDFs/web links, and recurring event handling. For a community project, it&rsquo;s surprisingly complete.</p>
-<p><strong>The catch:</strong> OAuth setup requires creating a Google Cloud project and configuring consent screens — more friction than the hosted servers. No official backing means updates depend on one maintainer. The Google Calendar API is well-documented and stable, which mitigates the maintenance risk, but it&rsquo;s still a bus-factor-1 project.</p>
-<p><strong>Best for:</strong> Anyone who needs their agent to check availability, schedule meetings, or manage calendar events. Since Google hasn&rsquo;t shipped an official MCP server, this is the default choice.</p>
+<p><strong>The standout features:</strong> Multi-account support (connect work and personal calendars), cross-account conflict detection, intelligent event import from images/PDFs/web links, recurring event handling with per-instance granularity, and tool filtering (<code>--enable-tools</code>) for read-only security. 23 releases and 196 commits show active maintenance.</p>
+<p><strong>The catch:</strong> OAuth setup requires creating a Google Cloud project and configuring consent screens — more friction than the hosted servers. Test mode tokens expire every 7 days. No hosted/remote option — local stdio or Docker only. Community alternatives include guinacio/mcp-google-calendar (9 stars, Python, MIT) and deciduus/calendar-mcp (25 stars, Python, AGPL-3.0, mutual availability features).</p>
+<p><strong>Best for:</strong> Anyone who needs their agent to check availability, schedule meetings, or manage calendar events across multiple Google accounts. The only serious dedicated Calendar MCP server. <a href="/reviews/google-calendar-mcp-server/">Full review →</a></p>
 <h3 id="obsidian-mcp-serversreviewsobsidian-mcp-servers--the-local-first-knowledge-base"><a href="/reviews/obsidian-mcp-servers/">Obsidian MCP Servers</a> — The Local-First Knowledge Base</h3>
 <p>Eight community MCP servers compete to connect AI agents to Obsidian vaults, taking three fundamentally different architectural approaches. No official Obsidian MCP server exists.</p>
 <p><strong>Three architectures:</strong></p>
@@ -325,7 +326,7 @@
 <p><strong>&ldquo;Task and project management&rdquo;</strong></p>
 <ul>
 <li>Using Linear? → <strong>Linear MCP</strong> (best engineering-team integration)</li>
-<li>Using Asana? → <strong>Asana MCP</strong> (most tools, enterprise-ready)</li>
+<li>Using Asana? → <strong><a href="/reviews/asana-mcp-server/">Asana MCP</a></strong> (44 tools, enterprise-ready)</li>
 <li>Using Todoist? → <strong>Todoist MCP</strong> (best personal task management, MCP Apps)</li>
 <li>Not committed to a platform? → <strong>Todoist</strong> for personal, <strong>Linear</strong> for teams</li>
 </ul>
@@ -337,7 +338,7 @@
 </ul>
 <p><strong>&ldquo;Calendar and scheduling&rdquo;</strong></p>
 <ul>
-<li>Google Calendar? → <strong>nspady/google-calendar-mcp</strong> (the only serious option)</li>
+<li>Google Calendar? → <strong><a href="/reviews/google-calendar-mcp-server/">nspady/google-calendar-mcp</a></strong> (4/5, the only serious dedicated option)</li>
 <li>Outlook/Microsoft? → Check Microsoft Graph MCP servers (not covered here)</li>
 </ul>
 <p><strong>&ldquo;Team communication&rdquo;</strong></p>
@@ -355,9 +356,9 @@
 <p><strong>Our recommended stack:</strong></p>
 <ul>
 <li><strong>Knowledge base:</strong> <a href="/reviews/notion-mcp-server/">Notion</a> (3.5/5) or Obsidian (local-first)</li>
-<li><strong>Issue tracking:</strong> Linear (for engineering) or Asana (for cross-functional teams)</li>
+<li><strong>Issue tracking:</strong> Linear (for engineering) or <a href="/reviews/asana-mcp-server/">Asana</a> (4/5, for cross-functional teams)</li>
 <li><strong>Task management:</strong> <a href="/reviews/todoist-mcp-server/">Todoist</a> (4/5, for individuals)</li>
-<li><strong>Calendar:</strong> nspady/google-calendar-mcp</li>
+<li><strong>Calendar:</strong> <a href="/reviews/google-calendar-mcp-server/">Google Calendar MCP</a> (4/5)</li>
 <li><strong>Communication:</strong> <a href="/reviews/slack-mcp-server/">Slack</a> (4/5)</li>
 </ul>
 <p>Don&rsquo;t install all of them. Pick the ones that match the tools your team actually uses. Every MCP server you add is more context your agent has to manage — and more potential for tool selection confusion.</p>

@@ -21,7 +21,7 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 | [Linear](/reviews/linear-mcp-server/) | Linear (official) | Issue tracking + project mgmt | N/A | 23+ | OAuth | Hosted | Yes (with Linear plan) |
 | [Todoist](/reviews/todoist-mcp-server/) | Doist (official) | Task management | 382 | 28+ | OAuth | Hosted + local | Yes (with Todoist plan) |
 | [Asana](/reviews/asana-mcp-server/) | Asana (official) | Project management | N/A | 44 | OAuth | Hosted | Yes (with Asana plan) |
-| Google Calendar | nspady (community) | Calendar management | ~1,000 | 12 | OAuth | Local | Yes |
+| [Google Calendar](/reviews/google-calendar-mcp-server/) | nspady (community) | Calendar management | 1,000+ | 12 | OAuth | Local | Yes |
 | Obsidian | cyanheads (community) | Knowledge base (local) | — | 15+ | None (local) | Local | Yes |
 | [Atlassian](/reviews/atlassian-mcp-server/) | Atlassian (official) | Project mgmt + knowledge base | 436 | Undocumented | OAuth 2.1 | Hosted | Yes (with Atlassian plan) |
 | [Slack](/reviews/slack-mcp-server/) | Slack (official) | Communication | N/A | 8 | OAuth | Hosted | Yes (with Slack plan) |
@@ -105,17 +105,17 @@ Asana's official V2 MCP server at `mcp.asana.com/v2/mcp` is the most tool-rich p
 
 **Best for:** Cross-functional teams already deep in Asana. The 44 tools cover the full Asana Work Graph — workspaces, teams, projects, goals, portfolios, allocations. If your organization manages quarterly OKRs and multi-project portfolios in Asana, this is the most complete AI integration available. Community alternative roychri/mcp-server-asana (129 stars, 33 tools, MIT) offers self-hosted deployment with Personal Access Token auth. [Full review →](/reviews/asana-mcp-server/)
 
-### Google Calendar — The Calendar Gap-Filler
+### [Google Calendar MCP](/reviews/google-calendar-mcp-server/) — The Calendar Gap-Filler
 
-No official Google MCP server exists for any Google product. The community has filled the gap — nspady/google-calendar-mcp (~1,000 GitHub stars) is the most-used calendar MCP server.
+No official Google MCP server exists for any Google product — Google briefly shipped and then removed MCP from their Workspace CLI in March 2026. The community has filled the gap — nspady/google-calendar-mcp (1,000+ GitHub stars, v2.6.1) is the de facto standard calendar MCP server.
 
 **12 tools:** list-calendars, list-events, search-events, get-event, create-event, update-event, delete-event, get-freebusy, get-current-time, respond-to-event, list-colors, manage-accounts.
 
-**The standout features:** Multi-account support (connect work and personal calendars), cross-account conflict detection, intelligent event import from images/PDFs/web links, and recurring event handling. For a community project, it's surprisingly complete.
+**The standout features:** Multi-account support (connect work and personal calendars), cross-account conflict detection, intelligent event import from images/PDFs/web links, recurring event handling with per-instance granularity, and tool filtering (`--enable-tools`) for read-only security. 23 releases and 196 commits show active maintenance.
 
-**The catch:** OAuth setup requires creating a Google Cloud project and configuring consent screens — more friction than the hosted servers. No official backing means updates depend on one maintainer. The Google Calendar API is well-documented and stable, which mitigates the maintenance risk, but it's still a bus-factor-1 project.
+**The catch:** OAuth setup requires creating a Google Cloud project and configuring consent screens — more friction than the hosted servers. Test mode tokens expire every 7 days. No hosted/remote option — local stdio or Docker only. Community alternatives include guinacio/mcp-google-calendar (9 stars, Python, MIT) and deciduus/calendar-mcp (25 stars, Python, AGPL-3.0, mutual availability features).
 
-**Best for:** Anyone who needs their agent to check availability, schedule meetings, or manage calendar events. Since Google hasn't shipped an official MCP server, this is the default choice.
+**Best for:** Anyone who needs their agent to check availability, schedule meetings, or manage calendar events across multiple Google accounts. The only serious dedicated Calendar MCP server. [Full review →](/reviews/google-calendar-mcp-server/)
 
 ### [Obsidian MCP Servers](/reviews/obsidian-mcp-servers/) — The Local-First Knowledge Base
 
@@ -166,7 +166,7 @@ Eight community MCP servers compete to connect AI agents to Obsidian vaults, tak
 - Plain Markdown files? → Consider our [Filesystem MCP review](/reviews/filesystem-mcp-server/) instead
 
 **"Calendar and scheduling"**
-- Google Calendar? → **nspady/google-calendar-mcp** (the only serious option)
+- Google Calendar? → **[nspady/google-calendar-mcp](/reviews/google-calendar-mcp-server/)** (4/5, the only serious dedicated option)
 - Outlook/Microsoft? → Check Microsoft Graph MCP servers (not covered here)
 
 **"Team communication"**
@@ -192,7 +192,7 @@ The gap is Google. No official MCP server exists for Calendar, Drive, Docs, Shee
 - **Knowledge base:** [Notion](/reviews/notion-mcp-server/) (3.5/5) or Obsidian (local-first)
 - **Issue tracking:** Linear (for engineering) or [Asana](/reviews/asana-mcp-server/) (4/5, for cross-functional teams)
 - **Task management:** [Todoist](/reviews/todoist-mcp-server/) (4/5, for individuals)
-- **Calendar:** nspady/google-calendar-mcp
+- **Calendar:** [Google Calendar MCP](/reviews/google-calendar-mcp-server/) (4/5)
 - **Communication:** [Slack](/reviews/slack-mcp-server/) (4/5)
 
 Don't install all of them. Pick the ones that match the tools your team actually uses. Every MCP server you add is more context your agent has to manage — and more potential for tool selection confusion.

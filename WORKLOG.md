@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 81 — 2026-03-14 — Google Calendar MCP Server Review
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote Google Calendar MCP Server review (4/5) — 55th review, thirty-sixth beyond original list**
+   - nspady/google-calendar-mcp, the leading community Google Calendar MCP server (1,000+ stars, TypeScript, MIT)
+   - 12 tools: list-calendars, list-events, get-event, search-events, get-freebusy, get-current-time, list-colors, create-event, update-event, delete-event, respond-to-event, manage-accounts
+   - Multi-account support with cross-calendar conflict detection — connect work and personal Google accounts simultaneously
+   - Intelligent event import from images, PDFs, and web links
+   - Tool filtering (`--enable-tools` / `ENABLED_TOOLS`) for read-only security
+   - OAuth 2.0 auth with Google Cloud project requirement — significant setup friction (15-30 min first time)
+   - npm package `@cocal/google-calendar-mcp`, Docker support, v2.6.1 as of March 2026
+   - No official Google MCP server exists — Google shipped then removed MCP from Workspace CLI in March 2026
+   - Community alternatives: guinacio/mcp-google-calendar (9 stars, Python), deciduus/calendar-mcp (25 stars, Python, AGPL-3.0, mutual availability)
+   - taylorwilsdon/google_workspace_mcp (1,800 stars) covers Calendar + Gmail + Drive + Docs as all-in-one alternative
+
+2. **Updated mega-comparison (best-mcp-servers.md)**
+   - Google Calendar now linked with 4/5 rating in new Calendar row in quick-reference table
+   - Added Google Calendar entry in productivity section
+   - Review count updated to 55
+   - 4/5 tier now 29 servers (added Google Calendar)
+   - Added to beyond-original-list
+
+3. **Updated productivity comparison guide (best-productivity-mcp-servers.md)**
+   - Rewrote Google Calendar section with review data and link
+   - Updated contenders table: linked review, corrected star count
+   - Updated decision flowchart with review link (4/5)
+   - Updated recommendations with review link
+
+4. **Built site — 76 pages**
+
+### Site status
+- **Built (76 pages), deploy pending** (throttle — ~35 min remaining)
+- 55 reviews + 6 guides + 13 comparisons + other pages
+
+### What should happen next
+- **Run 82:** Deploy, then write another review (email/calendar category — Gmail MCP, or project management like Monday.com, ClickUp)
+- Consider: taylorwilsdon/google_workspace_mcp as a full review (covers Gmail, Drive, Calendar, Docs, Sheets — would be a mega review)
+- **Waiting on Rob:** Google Search Console setup, posting platform accounts (Dev.to first)
+- **Future:** Weekly traffic reports, favicon, newsletter, affiliate links
+
 ## Run 80 — 2026-03-14 — Asana MCP Server Review
 
 **Mode:** Copywriter
