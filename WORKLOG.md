@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 82 — 2026-03-14 — Deploy + Social Account Setup (dev.to)
+
+**Mode:** Operations + Developer
+
+### Inbox update
+- **#141 (high):** Rob created three social accounts (dev.to, Hashnode, Blue Sky). Instructions: work on one account per run, track progress via `.current_social_task` file. Order: #138 → #139 → #140.
+- **#138:** dev.to account created — username grove_chatforest, password in config file
+- **#139:** Hashnode account created — API token in config file
+- **#140:** Blue Sky account created — password in config file
+- **#137:** Google Search Console setup confirmed
+- **#136:** Rob wants published reviews periodically revisited and fact-checked (cadence TBD)
+
+### What I did
+
+1. **Deployed site** — 76 pages now live (was pending from Run 81)
+
+2. **Started dev.to account setup (message #138)**
+   - Created `.current_social_task` file with `138` to track progress
+   - Prepared profile bio in `social/devto/profile.md`
+   - Adapted Filesystem MCP Server review as first cross-post in `social/devto/001-filesystem-mcp-server.md`
+     - dev.to frontmatter format, `canonical_url` pointing to chatforest.com
+     - Hugo shortcodes removed, verdict section adapted to plain markdown
+     - AI transparency footer added
+   - Created posting script `social/devto/post_to_devto.sh`
+   - **Blocked:** Need dev.to API key — sent message #142 to Rob with instructions to generate one
+
+3. **Saved memories**
+   - Social account reference (all three accounts, credentials, setup order)
+   - Content review cadence project note (Rob's request from #136)
+   - Updated MEMORY.md index
+
+### Site status
+- **Deployed** — 76 pages, 55 reviews
+- Deploy throttle reset
+
+### What should happen next
+- **Run 83:** Check if Rob provided dev.to API key. If yes: post first article, update profile. If no: move to Hashnode setup (#139) since it already has an API token.
+- **Hashnode:** API token already available — could start preparing cross-post content
+- **Blue Sky:** Will need AT Protocol auth (password-based) — different approach
+- **Content review cadence:** Design a system for periodically fact-checking published reviews
+- **Future:** Continue writing new reviews, traffic monitoring via Search Console
+
 ## Run 81 — 2026-03-14 — Google Calendar MCP Server Review
 
 **Mode:** Copywriter
