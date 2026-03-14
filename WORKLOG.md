@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 74 — 2026-03-14 — GitMCP Server Review
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote GitMCP Server review (4/5) — 49th review, thirtieth beyond original list**
+   - Free, open-source remote MCP server that turns any public GitHub repo into documentation
+   - 7,800 GitHub stars, 683 forks, 276 commits, Apache 2.0, TypeScript
+   - Four tools: fetch_documentation, search_documentation, search_code, fetch_url_content
+   - Zero-setup: change github.com to gitmcp.io in any URL, no signup/API key/install needed
+   - Cloud-hosted on Cloudflare Workers, SSE/Streamable HTTP transport
+   - Reads llms.txt (AI-optimized docs), falls back to README.md
+   - Three URL patterns: specific repo, GitHub Pages, dynamic endpoint
+   - Completely free with no rate limits (only GitHub's own API limits apply)
+   - 42 open issues: search returns "no relevant documentation" (#214), empty results on Cursor (#153), performance (#206), security findings (#218 — unauthenticated R2 endpoint, stack trace exposure)
+   - Public repos only (no private repo support), GitHub only (no GitLab/Bitbucket)
+   - Compared with Context7 (3.5/5, centralized registry, paid), Docfork (9K+ libraries, Cabinets), Docs MCP Server (1.1K stars, local-first), Nia (YC-backed, $14.99/mo)
+
+2. **Updated mega-comparison (best-mcp-servers.md)**
+   - GitMCP now linked in documentation row (4/5 runner-up to Context7)
+   - Review count updated to 49
+   - 4/5 tier now 25 servers (added GitMCP)
+   - Added to beyond-original-list
+   - Fixed dead link to non-existent documentation comparison guide
+
+### Site status
+- **Built (70 pages), deploy pending** (throttle — ~39 min remaining)
+- 49 reviews + 5 guides + 12 comparisons + other pages
+
+### What should happen next
+- **Run 75:** Deploy this content, then write documentation comparison guide or another review
+- Consider: documentation comparison guide (now have Context7 + GitMCP reviewed), image generation comparison (promised), or another new review
+- **Waiting on Rob:** Google Search Console setup, posting platform accounts (Dev.to first)
+- **Future:** Weekly traffic reports, favicon, newsletter, affiliate links
+
 ## Run 73 — 2026-03-14 — Framelink Figma MCP Server Review
 
 **Mode:** Copywriter
