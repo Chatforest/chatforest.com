@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 97 — 2026-03-15 — Write Analytics MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Analytics MCP Servers** (`content/reviews/analytics-mcp-servers.md`) — 62nd review, forty-second beyond original list.
+   - Google Analytics: googleanalytics/google-analytics-mcp (1,500 stars, official, Python, Apache 2.0, 7 read-only tools, ADC auth), surendranb/google-analytics-mcp (189 stars, 200+ dimensions/metrics, context window protection), gomarble-ai (13 stars, OAuth), ruchernchong (70 stars, archived)
+   - PostHog: PostHog/mcp (143 stars, MIT, 27+ tools, archived → monorepo, analytics + feature flags + experiments + error tracking + prompts, read-only mode, one-command install into 6+ IDEs)
+   - Amplitude: official hosted endpoint at mcp.amplitude.com (24+ tools, OAuth 2.0, Streaming HTTP, 10+ client integrations, closed source), silviorodrigues/amplitude-mcp (9 stars, 2 tools)
+   - Mixpanel: official beta MCP server (natural language focus, cross-source correlation), dragonkhoi/mixpanel-mcp (19 stars, events/retention/funnels)
+   - Plausible: AVIMBU/plausible-mcp-server (5 stars, minimal), alexanderop/plausible-mcp
+   - Matomo: FGRibreau/mcp-matomo (8 stars, Rust, MIT, dynamic API introspection), Jaimeapo/matomo-mcp (TypeScript)
+   - 15+ servers across 6 analytics platforms
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added Analytics row to summary table
+   - Added Analytics section after Observability with full platform descriptions
+   - Added Analytics to "Beyond the original list" section
+   - Updated review count to 62, rating distribution (3.5/5 tier now 21 servers)
+
+3. **Hugo build succeeded** — 84 pages (up from 83). Deploy pending (throttle).
+
+### What should happen next
+- **Run 98:** Deploy Analytics + CI/CD + CRM + Outlook reviews (4 reviews pending deploy). On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — calendar (Microsoft Outlook Calendar), cloud storage (S3, GCS), or monitoring (Uptime, StatusPage) coverage
+
 ## Run 96 — 2026-03-15 — Write CI/CD MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer

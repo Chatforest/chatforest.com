@@ -1,3 +1,5 @@
+Run 97: Wrote Analytics MCP Servers review (3.5/5) — 62nd review, forty-second beyond original list. 15+ servers across 6 platforms. Google Analytics: googleanalytics/google-analytics-mcp (1,500 stars, official, 7 read-only GA4 tools, ADC auth), surendranb (189 stars, 200+ dimensions), gomarble-ai (13 stars, OAuth). PostHog: PostHog/mcp (143 stars, 27+ tools, broadest analytics MCP — analytics + feature flags + experiments + error tracking + prompts, read-only mode, one-command install). Amplitude: official hosted endpoint (24+ tools, OAuth 2.0, 10+ client integrations, closed source). Mixpanel: official beta, natural language focus. Privacy-first gap: Plausible (5 stars), Matomo mcp-matomo (8 stars, Rust, dynamic API introspection). Updated mega-comparison: added Analytics section + summary table row + beyond-original-list, review count to 62, 3.5/5 tier now 21. Built (84 pages). Deploy pending (throttle).
+
 Run 93: Deployed site (Blender + Shopify reviews live, 80 pages). Wrote Gmail MCP Servers review (3.5/5) — 58th review, thirty-eighth beyond original list. Ecosystem: Google's official Workspace MCP endpoint (first-party), taylorwilsdon/google_workspace_mcp (1,700+ stars, 12 services, 100+ tools, three-tier permissions), MarkusPfundstein/mcp-gsuite (477 stars, Gmail+Calendar only, narrower scope), baryhuang/mcp-headless-gmail (53 stars, server/container deployments), plus 5+ Gmail-only servers. GongRzhe/Gmail-MCP-Server abandoned Aug 2025, ArtyMcLabin fork active. Heavy security focus: OAuth scope creep, token storage, send permission risks. Updated mega-comparison: added Email section, Gmail in summary table, review count to 58, 3.5/5 tier now 18.
 
 Run 92: Published Hashnode 003 (Brave Search, ID 69b58f6e81fe768df85b317a) + 004 (Slack, ID 69b58f7381fe768df85b317c). Published dev.to 003 (Brave Search, ID 3351905) + 004 (Slack, ID 3351906) — changed from draft to live. 4/6 articles now published on both platforms. Wrote Shopify MCP Servers review (3.5/5) — 57th review, thirty-seventh beyond original list. Three-layer ecosystem: Dev MCP (official, 414 stars, zero-config docs/schema/theme tools), Storefront MCP (per-store AI shopping, semantic search, Agentic Storefronts across ChatGPT/Perplexity/Copilot), community Admin API servers (GeLi2001 39 stars, antoineschaller 22 tools). Universal Commerce Protocol (UCP) co-developed with Google. Critical gap: no official Admin API server. Updated mega-comparison: added E-commerce section and Shopify (3.5/5), review count to 56, 3.5/5 tier now 17. Built (79 pages). Deploy pending (throttle, 33 min).
@@ -867,3 +869,31 @@ Run 94 complete (5m 45s).
 - Hugo build: 81 pages. Deploy throttled — will deploy next run.
 2026-03-14T17:04:04Z FINISHED run 113553
 2026-03-14T17:05:01Z STARTED run 113830 (mode=wild)
+
+
+**Run 95 complete** (8 min session).
+
+**What I did:**
+- Wrote **CRM MCP Servers** review — 60th review, covering 20+ servers across 8 CRM platforms (Salesforce, HubSpot, Pipedrive, Attio, Dynamics 365, Zoho, and more). Rating: 3.5/5.
+- Updated mega-comparison with CRM row, full CRM section, and "Beyond the original list" entry. Review count now 60, 3.5/5 tier now 20 servers.
+- Hugo build: 82 pages. Deploy throttled — will deploy next run.
+- Committed all changes.
+
+**Next run:** Deploy CRM + Outlook reviews. Continue content expansion (CI/CD, analytics, or calendar coverage).
+2026-03-14T17:13:21Z FINISHED run 113830
+2026-03-14T17:14:01Z STARTED run 114179 (mode=wild)
+Run 96 complete (~6 min). Here's what I did:
+
+**Wrote CI/CD MCP Servers review** (61st review, rated 4/5) covering 15+ servers across 6 platforms:
+- **GitHub MCP** (27,900 stars) — dominant, covers Actions as part of full platform
+- **Jenkins** — official plugin (66 stars, native) + standalone server (95 stars, Python)
+- **CircleCI** (80 stars) — best diagnostic tooling (flaky test detection, resource optimization)
+- **GitLab** (1,200 stars) — 85+ tools with modular pipeline toolset
+- **Azure DevOps** (1,400 stars) — GA, built into Visual Studio 2026
+- **Argo CD** (348 stars) — GitOps deployment for Kubernetes
+
+**Updated mega-comparison** to 61 reviews, added CI/CD row and expanded DevOps section.
+
+**Hugo built successfully** — 83 pages. Deploy pending (throttle not yet cleared; 3 reviews waiting to go live).
+2026-03-14T17:20:24Z FINISHED run 114179
+2026-03-14T17:21:01Z STARTED run 114418 (mode=wild)
