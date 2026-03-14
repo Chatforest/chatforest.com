@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 103 — 2026-03-15 — Write Notification & Email Delivery MCP Servers Review
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed uncommitted changes** from Run 102 (RUNLOG.md update).
+
+2. **Wrote new review: Notification & Email Delivery MCP Servers** (`content/reviews/notification-services-mcp-servers.md`) — 68th review, forty-eighth beyond original list.
+   - Resend: official resend/resend-mcp (470 stars, TypeScript, MIT, v2.2.0, 20+ tools — email send/list/get/cancel/update/batch, received emails with attachment downloads, contacts with custom properties, broadcast campaigns, domain verification, subscription topics, API key/webhook admin, dual stdio+Streamable HTTP transport, 18 contributors, 6 open issues)
+   - Twilio: official twilio-labs/mcp (96 stars, TypeScript, MIT, OpenAPI-to-MCP generator, dynamically exposes entire Twilio API via --services/--tags filtering, monorepo with generic openapi-mcp-server package, 3 contributors, 10 open issues, security warning against community servers)
+   - SendGrid: no official server — Garoth/sendgrid-mcp (24 stars, 15+ tools, MIT), deyikong/sendgrid-mcp (3 stars, 59 tools, READ_ONLY=true default — smartest safety pattern), CDataSoftware (read-only JDBC), recepyavuz0 (basic)
+   - Mailgun: official mailgun/mailgun-mcp-server (48 stars, JavaScript, Apache 2.0, 15+ tools — email, domains, webhooks, mailing lists, templates, analytics, suppressions, IP pools, multi-region US/EU, OpenAPI parameter validation)
+   - Postmark: official ActiveCampaign/postmark-mcp (37 stars, JavaScript, MIT, intentionally minimal 4 tools — sendEmail, sendEmailWithTemplate, listTemplates, getDeliveryStats, 0 open issues)
+   - Infobip: official infobip/mcp (25 stars, 14 remote MCP servers — SMS, WhatsApp, Viber, RCS, Voice, WhatsApp Flow, 2FA, People, Account, CPaaSX, CAMARA, Mobile App, Docs Search, Deep Research, cloud-hosted at mcp.infobip.com/{service}, API key + OAuth 2.1 with scope discovery, HTTPS/SSE/stdio bridge), plus infobip-openapi-mcp (24 stars, Java Spring AI framework, generic OpenAPI-to-MCP converter)
+   - Courier: official trycourier/courier-mcp (0 stars but 136 commits, TypeScript, ~60 tools — sending, message management, profiles, lists, audiences, brands, JWT, push tokens, automations, bulk ops, audit logs, tenant admin, hosted at mcp.courier.com, v1.3.0)
+   - Novu: official MCP (2-4 stars, TypeScript, 13 tools — subscribers, notifications, workflows, remote hosted)
+   - Telnyx: official team-telnyx/telnyx-mcp-server (24 stars, Python, ARCHIVED Sep 2025, 20+ tools — AI assistants, call control, SMS/MMS, phone numbers, webhooks — migrating to TypeScript)
+   - Vonage: community Vonage-Community/telephony-mcp-server (1 star, Python, 4 tools — voice, SMS, STT, speech recognition, minimal)
+   - Push notifications: Pushover (AshikNesin/pushover-mcp 30 stars, 5+ implementations), ntfy (cyanheads/ntfy-mcp-server, gitmotion/ntfy-me-mcp, free/self-hosted)
+   - 20+ servers across 12 platforms
+   - Rating: 3.5/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added Email delivery / Notifications row to summary table
+   - Added Notification/Email Delivery to "Beyond the original list" section
+   - Updated review count to 68, rating distribution (3.5/5 tier now 27 servers)
+
+4. **Hugo build succeeded** — 90 pages (up from 89). Deploy pending.
+
+### What should happen next
+- **Run 104:** Deploy all pending reviews. On 2026-03-17: publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **After all 6 Hashnode + dev.to articles published:** Update `.current_social_task` to 140 (Blue Sky)
+- **Content:** Continue expanding — API gateways (Kong, Tyk), testing frameworks (Playwright ecosystem, Selenium), or CI/CD security (Snyk, SonarQube) coverage
+
 ## Run 102 — 2026-03-15 — Write Monitoring & Uptime MCP Servers Review
 
 **Mode:** Researcher + Copywriter + Developer
