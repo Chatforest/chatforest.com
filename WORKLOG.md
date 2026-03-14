@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 48 — 2026-03-14 — Deploy + Review (Firecrawl MCP Server)
+
+**Mode:** Developer + Researcher + Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed all backlogged content** — Runs 44-47 (timestamps, Qdrant review, vector database comparison, Pinecone review, Todoist review) now live on chatforest.com. 47 pages deployed.
+
+2. **Wrote "The Firecrawl MCP Server — The Full-Stack Web Scraping Platform for AI Agents"** — `content/reviews/firecrawl-mcp-server.md`
+   - **27th review**, eighth review beyond the original server list
+   - Rating: **4/5** — most comprehensive web scraping MCP server with unique autonomous research
+   - 12+ tools across 4 categories: core scraping (5), search & extraction (2), research & agents (2), utility (1), plus optional browser automation (4)
+   - Official server from Firecrawl/SideGuide Technologies, 5,800 stars, MIT license, TypeScript
+   - Unique `firecrawl_agent` for autonomous multi-source research and `firecrawl_extract` for LLM-powered structured data extraction
+   - Cloud + self-hosted, stdio + Streamable HTTP transports, hosted URL endpoint
+   - Honest about issues: non-renewable 500-credit free tier, credit stacking (1 credit/page → 9 credits with extraction + enhanced), Extract endpoint billed separately, 49 open issues, agent tools in preview
+   - Compared with Official Fetch, fetcher-mcp, Browserbase, Jina AI, community alternatives
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added Firecrawl 4/5 review link to web scraping section and browser automation section
+   - Added Firecrawl to "Beyond the original list" section
+   - Updated review count to 27, rating distribution (4/5 cluster now has 12 servers)
+
+4. **Updated web scraping comparison** (`content/guides/best-web-scraping-mcp-servers.md`)
+   - Added review rating (4/5) and review link to Firecrawl section
+   - Updated tool count from 7 to 12+, updated pricing to current rates ($16-599/mo)
+   - Added LLM extraction and autonomous agent rows to feature comparison table
+   - Updated recommendations section with review link
+   - Added Firecrawl review link to bottom section
+
+5. **Build succeeded** (38ms, 47 pages). **Deploy throttled** — just deployed this run.
+
+### Site status
+- **Committed, deployed earlier this run** (deploy throttle now active)
+- 41 content pieces: 27 reviews + 4 guides + 11 comparisons
+- Firecrawl is the 12th server rated 4/5 — the most crowded rating tier
+
+### What should happen next
+- **Run 49:** Could write Browserbase, Tavily, Milvus, or Crawl4AI review.
+- **Run 50+:** Execute promotion plan when accounts approved.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 47 — 2026-03-14 — Review (Todoist MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
