@@ -16,7 +16,7 @@ We [reviewed the official Memory MCP server](/reviews/memory-mcp-server/) and ga
 | Server | Stars | Tools | Search Type | Storage | Pricing | Best For |
 |--------|-------|-------|-------------|---------|---------|----------|
 | [Official Memory](/reviews/memory-mcp-server/) | 81K\* | 9 | Text match | JSONL file | Free | Simple personal memory |
-| Zep | 4.2K | 13 | Graph RAG + temporal | Cloud | Free–$475/mo | Enterprise temporal memory |
+| [Zep/Graphiti](/reviews/zep-graphiti-mcp-server/) | 23.7K | 9 | Graph RAG + temporal | Self-hosted or Cloud | Free (OSS) or $25–$475/mo | Enterprise temporal memory |
 | mem0 | 49.7K\* | 9 | Semantic/vector | Cloud or self-hosted | Free tier + paid | Multi-scope agent memory |
 | Basic Memory | 2.6K | 15+ | Hybrid (FTS + vector) | Local Markdown | Free (cloud sync paid) | Human-readable local memory |
 | Chroma | 513 | 12 | Vector + metadata | Multiple backends | Free | Custom embedding workflows |
@@ -44,25 +44,28 @@ The [official Memory MCP server](/reviews/memory-mcp-server/) (`@modelcontextpro
 
 If you're a solo developer who wants their Claude Desktop to remember your name and your preferred programming language, the official server works. For anything beyond that, keep reading.
 
-## For Enterprise: Zep
+## For Enterprise: Zep/Graphiti
 
-**[Zep](https://github.com/getzep/zep)** (4,200 stars) is the most sophisticated option. It builds temporal knowledge graphs — facts have `valid_at` and `invalid_at` timestamps, so the system knows when information changed, not just what it is now.
+**[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5) — (23,700 stars, Apache 2.0) is the most architecturally sophisticated option. Graphiti is Zep's open-source temporal knowledge graph framework, now the centerpiece of their strategy. It builds temporal knowledge graphs — facts have validity windows, so the system knows when information changed, not just what it is now.
 
-The MCP server exposes 13 read-only tools across users, threads, graph nodes, edges, and episodes. The underlying Graphiti engine (open-source) handles entity extraction, fact invalidation, and relationship-aware retrieval automatically. Zep claims sub-200ms P95 retrieval latency and 80.32% accuracy on the LoCoMo conversational memory benchmark.
+The Graphiti MCP server (v1.0, March 2026) exposes nine tools: `add_episode` (text/JSON/message input with automatic entity extraction), `search_nodes` (entity summaries), `search_facts` (edges between entities with temporal context), `get_episodes`, `delete_episode`, `get_entity_edge`, `delete_entity_edge`, `clear_graph`, and `get_status`. Unlike the old Zep Cloud MCP which was read-only, Graphiti's MCP server supports both reads and writes.
 
 **Strengths:**
-- Temporal awareness is unique — "Alice worked at Acme until 2025" is fundamentally different from "Alice works at Acme," and Zep tracks both
-- Automatic entity extraction from conversations (no manual graph building)
-- Graph RAG retrieval considers relationship paths, not just individual nodes
-- Enterprise features: SOC2, HIPAA compliance, custom extraction rules
+- Temporal awareness is unique — "Alice worked at Acme until 2025" is fundamentally different from "Alice works at Acme," and Graphiti tracks both with validity windows
+- Multi-database: FalkorDB (default, Redis-based), Neo4j, Kuzu, Amazon Neptune
+- Multi-LLM provider: OpenAI, Anthropic, Google Gemini, Groq, Azure OpenAI — avoids hard vendor lock-in
+- Fully open source (Apache 2.0) — runs entirely locally, no cloud dependency required
+- Nine preconfigured entity types (Preference, Requirement, Procedure, Location, Event, Organization, Document, Topic, Object) optimized for extraction accuracy
+- Graph quality engineering: entropy-gated fuzzy matching, MinHash + LSH deduplication, LRU caching
 
 **Weaknesses:**
-- MCP server is **read-only** — agents can query memory but can't write to it via MCP. Writes go through the Zep SDK.
-- Requires a Zep Cloud account even for basic use (Community Edition is deprecated)
-- Pricing scales fast: free tier caps at 1,000 episodes/month, production use starts at $25/mo and climbs to $475/mo+
-- Setup requires building from Go source or Docker, plus API key configuration
+- Heavy infrastructure: Docker + graph database + LLM API key minimum
+- LLM extraction costs add up at scale — every episode triggers multiple LLM calls
+- 192 open issues including hallucination in extraction (#760) and model compatibility problems
+- "Experimental" status despite the 1.0 label
+- No hosted/remote server — self-hosted only (Zep Cloud is a separate product with separate pricing: free 1,000 episodes/month, $25-$475/month)
 
-**Best for:** Teams building conversational agents that need to track evolving user context over time. If you're building a customer support agent that needs to know a user changed their plan last Tuesday, Zep is the right tool. If you're building a personal coding assistant, it's massive overkill.
+**Best for:** Teams building conversational agents that need to track evolving user context over time. If you're building a customer support agent that needs to know a user changed their plan last Tuesday, Graphiti is the right tool. If you're building a personal coding assistant, it's massive overkill.
 
 ## For Semantic Retrieval: mem0
 
@@ -154,17 +157,18 @@ Thirteen tools include `mem_save`, `mem_search`, `mem_context`, `mem_timeline`, 
 
 ## Feature Comparison
 
-| Feature | Official | Zep | mem0 | Basic Memory | Chroma | Engram |
+| Feature | Official | [Zep/Graphiti](/reviews/zep-graphiti-mcp-server/) | [mem0](/reviews/mem0-mcp-server/) | Basic Memory | Chroma | Engram |
 |---------|----------|-----|------|-------------|--------|--------|
+| Rating | 3.5/5 | 4/5 | 4/5 | — | 3.5/5 | — |
 | Semantic search | No | Yes (Graph RAG) | Yes (vector) | Yes (hybrid) | Yes (vector) | No (FTS5) |
 | Temporal awareness | No | Yes | No | No | No | Partial (timeline) |
-| Memory isolation | No | Yes (users/threads) | Yes (user/agent/app) | Yes (projects) | Yes (collections) | Yes (topics) |
-| Local storage | Yes (JSONL) | No (cloud) | Optional | Yes (Markdown) | Yes (multiple) | Yes (SQLite) |
-| Read + write via MCP | Yes | Read only | Yes | Yes | Yes | Yes |
+| Memory isolation | No | Yes (groups) | Yes (user/agent/app) | Yes (projects) | Yes (collections) | Yes (topics) |
+| Local storage | Yes (JSONL) | Yes (FalkorDB/Neo4j/Kuzu) | Optional (OpenMemory) | Yes (Markdown) | Yes (multiple) | Yes (SQLite) |
+| Read + write via MCP | Yes | Yes | Yes | Yes | Yes | Yes |
 | Knowledge graph | Yes | Yes (temporal) | Optional | Yes | No | No |
 | Human-readable storage | No | No | No | Yes (Markdown) | No | No |
 | Zero-config setup | Yes | No | No | No | No | Yes |
-| Free (no account needed) | Yes | No | No | Yes | Yes | Yes |
+| Free (no account needed) | Yes | Yes (OSS) | No | Yes | Yes | Yes |
 
 ## Which One Should You Use?
 
@@ -172,7 +176,7 @@ Thirteen tools include `mem_save`, `mem_search`, `mem_context`, `mem_timeline`, 
 
 **"I just want my Claude Desktop to remember me"** → Use the [official Memory server](/reviews/memory-mcp-server/). It's free, takes 30 seconds to set up, and handles simple personal context fine. You'll outgrow it, but it's the right starting point.
 
-**"I need agents that track evolving user context over time"** → Use **Zep**. Temporal knowledge graphs are unique to Zep, and if your use case involves facts that change (customer plans, project status, team membership), nothing else handles that natively. Budget for the cloud costs.
+**"I need agents that track evolving user context over time"** → Use **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5). Temporal knowledge graphs are unique to Graphiti, and if your use case involves facts that change (customer plans, project status, team membership), nothing else handles that natively. The open-source version (Apache 2.0) is fully self-hosted and free — you need Docker + a graph database + an LLM API key. Zep Cloud is the managed alternative if you want zero-ops ($25-$475/month).
 
 **"I want smart memory retrieval without managing a graph"** → Use **mem0**. Semantic search finds related memories without you having to build explicit entity relationships. The multi-scope system (user/agent/app) provides natural isolation. Start with the free tier.
 
@@ -184,7 +188,7 @@ Thirteen tools include `mem_save`, `mem_search`, `mem_context`, `mem_timeline`, 
 
 ## The Bottom Line
 
-The memory MCP space has matured past the "one knowledge graph file" era. The official server is a starting point, not a destination. The right choice depends on whether you need temporal awareness (Zep), semantic retrieval (mem0), human-readable storage (Basic Memory), embedding control (Chroma), or coding-specific session memory (Engram).
+The memory MCP space has matured past the "one knowledge graph file" era. The official server is a starting point, not a destination. The right choice depends on whether you need temporal awareness ([Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)), semantic retrieval ([mem0](/reviews/mem0-mcp-server/)), human-readable storage (Basic Memory), embedding control (Chroma), or coding-specific session memory (Engram).
 
 The trend is clear: memory is moving from simple key-value stores toward context-aware retrieval systems that understand not just what was stored, but when it was relevant and how it connects to everything else. Pick the server that matches where your use case sits on that spectrum.
 

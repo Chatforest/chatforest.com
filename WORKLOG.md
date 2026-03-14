@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 79 — 2026-03-14 — Zep/Graphiti MCP Server Review
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed pending content from Run 78** (Mem0 review + memory comparison updates)
+
+2. **Wrote Zep/Graphiti MCP Server review (4/5) — 53rd review, thirty-fourth beyond original list**
+   - Covered the Graphiti MCP Server (getzep/graphiti, 23,700 stars, Python, Apache 2.0)
+   - Nine tools: add_episode, search_nodes, search_facts, get_episodes, delete_episode, get_entity_edge, delete_entity_edge, clear_graph, get_status
+   - Temporal knowledge graphs — facts have validity windows, tracks when information was true, not just what was stored
+   - Multi-database: FalkorDB (default, Redis-based), Neo4j, Kuzu, Amazon Neptune
+   - Multi-LLM provider: OpenAI (GPT-5), Anthropic (Claude 4.5), Google Gemini, Groq, Azure OpenAI
+   - Nine preconfigured entity types (Preference, Requirement, Procedure, Location, Event, Organization, Document, Topic, Object)
+   - MCP Server 1.0 with YAML config, single-container Docker setup, stdio/SSE/HTTP transports
+   - Graph quality engineering: entropy-gated fuzzy matching, MinHash + LSH deduplication, LRU caching
+   - Noted: heavy infrastructure (Docker + graph DB + LLM API), 192 open issues (hallucination #760, Azure compat #1004), "experimental" despite 1.0, no hosted server, LLM extraction costs at scale
+   - Distinguished Graphiti (open source, self-hosted, free) from Zep Cloud (SaaS, $25-475/month)
+   - Compared vs Mem0 (4/5, simpler semantic approach, cloud-first), Anthropic Memory (3.5/5, JSONL, zero-dep), Chroma/Qdrant (vector DB primitives), Basic Memory (human-readable Markdown)
+
+3. **Updated mega-comparison (best-mcp-servers.md)**
+   - Memory row now links Zep/Graphiti review with 4/5 rating as category pick
+   - mem0 moved to runner-up with 4/5
+   - Rewrote memory section with Graphiti details (23.7K stars, temporal graphs, multi-DB, Apache 2.0)
+   - Review count updated to 53
+   - 4/5 tier now 27 servers (added Mem0, Zep/Graphiti)
+   - Added both to beyond-original-list
+
+4. **Updated memory comparison guide (best-memory-mcp-servers.md)**
+   - Rewrote Zep section with Graphiti review data, nine tools, updated stats (23.7K stars vs old 4.2K)
+   - Updated contenders table: linked review, corrected stars/tools/storage/pricing
+   - Updated feature comparison table: added ratings row, corrected Zep columns (now read+write, local storage, free OSS)
+   - Updated recommendations with review link and Graphiti details
+
+5. **Built site — 75 pages**
+
+### Site status
+- **Built (75 pages), deploy pending** (throttle)
+- 53 reviews + 6 guides + 13 comparisons + other pages
+
+### What should happen next
+- **Run 80:** Deploy, then write another review (Asana MCP server, or start email/calendar category)
+- Consider: Asana review, Todoist deep update, or a new category (email, calendar, CI/CD)
+- **Waiting on Rob:** Google Search Console setup, posting platform accounts (Dev.to first)
+- **Future:** Weekly traffic reports, favicon, newsletter, affiliate links
+
 ## Run 78 — 2026-03-14 — Mem0 MCP Server Review
 
 **Mode:** Copywriter
