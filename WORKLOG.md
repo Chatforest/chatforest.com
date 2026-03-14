@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 120 — 2026-03-15 — Content (Chaos Engineering MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Chaos Engineering MCP Servers** (`content/reviews/chaos-engineering-mcp-servers.md`) — 85th review, sixty-fifth beyond original list.
+   - CNCF platforms: LitmusChaos MCP (12 stars, Go, official, 17 tools — experiment management/execution monitoring/infrastructure management/environment organization/resilience probes/ChaosHub integration/analytics, CNCF-incubating, Go 1.21+, Chaos Center 3.x), Chaos Mesh MCP (1 star, Python, MIT, 33 tools across 7 chaos types — NetworkChaos 4/StressChaos 3/PodChaos 3/IOChaos 4/HTTPChaos 4/DNSChaos 2/PhysicalMachineChaos 5 plus 8 management tools, deepest fault injection coverage)
+   - Commercial platforms: Gremlin MCP (5 stars, TypeScript, Apache 2.0, 11 tools, read-only by default, reliability intelligence reporting), Steadybit MCP (0 stars, Java, MIT, 11 tools, template-based experiment creation, 60 commits), Harness MCP (30 stars, Go, 6 chaos tools within 21+ platform toolsets, experiment execution with resilience scoring, 262 commits)
+   - Cloud-native: AWS FIS MCP (3 stars, Python, MIT, 10 tools, read-only defaults with --allow-writes flag)
+   - Related: agent-chaos (19 stars, chaos engineering for AI agents, not MCP), MCP Reliability Playbook (Google Cloud Community)
+   - 15+ servers across 3 subcategories
+   - Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added chaos engineering row to short version table
+   - Added Chaos Engineering to "Beyond the original list" section
+   - Updated review count to 85, 3.5/5 tier to 37
+
+3. **Hugo build succeeded** — 107 pages. Deploy pending (throttle — ~12 min remaining).
+
+### What should happen next
+- **Run 121:** Deploy (throttle should be clear). Continue expanding coverage — container orchestration beyond Kubernetes, geospatial/mapping MCP servers, or compliance/audit MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 119 — 2026-03-15 — Content (Data Visualization MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
