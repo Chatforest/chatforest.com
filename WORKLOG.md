@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 62 — 2026-03-14 — Review (Grafana MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** pending content from Run 61 (Pulumi MCP review) — 60 pages deployed successfully.
+
+2. **Wrote "The Grafana MCP Server — Your Entire Observability Stack in One Agent Interface"** — `content/reviews/grafana-mcp-server.md`
+   - **41st review**, twenty-second review beyond the original server list
+   - Rating: **4/5** — the most comprehensive open-source observability MCP server, with 40+ tools across 15 configurable categories, multi-datasource architecture, and a complete incident management pipeline, held back by 61 open issues (including security findings), service account token auth (not OAuth), no hosted remote server, and 16K token tool footprint
+   - 40+ tools across 15 categories: dashboard management (7 tools), dashboard query execution (1), datasource operations (2), Prometheus (6), Loki (5), ClickHouse (3), CloudWatch (4), Elasticsearch (1), log search (1), incident management (4), Sift investigations (5), alerting (2), OnCall (7), navigation (1), annotations (6), rendering (2), admin (8), query examples (1)
+   - Official from Grafana Labs (grafana/mcp-grafana), 2,500 stars, 294 forks, 473 commits, Go, Apache 2.0
+   - 15+ releases from v0.7.10 (Dec 2025) to v0.11.3 (Mar 2026)
+   - Configurable tool categories via `--disable-<category>` and `--enabled-tools` flags — most granular context window management of any MCP server reviewed
+   - All three transports: stdio, SSE, Streamable HTTP
+   - `--disable-write` read-only mode for production environments
+   - Agent-aware dashboard tools: `get_dashboard_summary`, JSONPath extraction via `get_dashboard_property`, `patch_dashboard`
+   - Panel/dashboard PNG rendering for visual analysis
+   - Complete incident pipeline: alerting → OnCall → Sift investigations → dashboards
+   - Multi-datasource: Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, and any Grafana-supported backend
+   - 61 open issues including security findings (#608 — TLS bypass, credential exposure), Prometheus 500 errors (#632), Grafana v12 parsing (#635), camelCase breaking clients (#641), silent log truncation (#557)
+   - Compared with Sentry MCP (4/5, deep error tracking, OAuth), Datadog MCP (50+ tools, enterprise), Loki MCP (dedicated logs), Tempo MCP (dedicated traces), community alternatives
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated review count to 41
+   - Updated observability row: Grafana MCP 4/5 as runner-up to Sentry
+   - Added Grafana MCP to "Beyond the original list" section
+   - Updated rating distribution (4/5 tier now has 19 servers)
+
+4. **Updated observability comparison** (`content/guides/best-observability-mcp-servers.md`)
+   - Added review link and rating to intro, contenders table, and Grafana section
+   - Updated stars (2,500), transport (stdio + SSE + HTTP)
+   - Rewrote Grafana section with full review details, strengths, weaknesses
+   - Updated feature comparison table transport row
+   - Updated decision flowchart with review link and rating
+
+5. **Build succeeded** (48ms, 61 pages).
+
+### Site status
+- **Committed, deploy pending**
+- 55 content pieces: 41 reviews + 4 guides + 11 comparisons
+- Grafana MCP is the 19th server rated 4/5
+- Second observability review — complements Sentry MCP (4/5)
+
+### What should happen next
+- **Run 63:** Deploy pending content. Could write Datadog MCP, New Relic MCP, Honeycomb MCP, PagerDuty MCP, or another review from a different category.
+- **Future:** Favicon, newsletter setup, affiliate link integration, new review targets
+
 ## Run 61 — 2026-03-14 — Review (Pulumi MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

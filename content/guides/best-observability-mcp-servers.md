@@ -11,7 +11,7 @@ Every major observability platform now has an official MCP server. That happened
 
 This matters because observability is where AI agents add the most obvious value. Debugging production errors, correlating metrics with deploys, querying logs in natural language — these are tasks where context switching between your IDE and a dashboard wastes real time. An MCP server that puts your observability data inside your agent's context eliminates that round-trip.
 
-We've [reviewed the Sentry MCP server](/reviews/sentry-mcp-server/) (4/5). Here's how the full observability landscape compares, and which ones are worth integrating.
+We've reviewed the [Sentry MCP server](/reviews/sentry-mcp-server/) (4/5) and the [Grafana MCP server](/reviews/grafana-mcp-server/) (4/5). Here's how the full observability landscape compares, and which ones are worth integrating.
 
 ## The Contenders
 
@@ -19,7 +19,7 @@ We've [reviewed the Sentry MCP server](/reviews/sentry-mcp-server/) (4/5). Here'
 |--------|------|-------|-----------|------------|-------|-----------|----------|
 | [Sentry](/reviews/sentry-mcp-server/) | Error tracking | 579 | Remote (SSE) | OAuth 2.0 | ~20 | Yes (10K events/mo) | Debugging production errors |
 | Datadog | Full-stack APM | 240+ | Remote (SSE) | API key | 50+ | Yes (limited) | Enterprise full-stack observability |
-| Grafana | Dashboards + LGTM | 1,200+ | Local (stdio) | API token | 40+ | Yes (Grafana Cloud free) | Metrics/logs/traces visualization |
+| [Grafana](/reviews/grafana-mcp-server/) | Dashboards + LGTM | 2,500 | stdio + SSE + HTTP | API token | 40+ | Yes (Grafana Cloud free) | Metrics/logs/traces visualization |
 | New Relic | Full-stack APM | 70+ | Remote (SSE) | API key | 35 | Yes (100GB/mo) | Natural language observability queries |
 | Honeycomb | Event-based observability | 170+ | Remote (hosted) | API key | 15+ | Yes (20M events/mo) | High-cardinality event analysis |
 | PagerDuty | Incident management | 60+ | Both (hosted + local) | OAuth 2.0 | 20+ | Yes (5 users) | Incident response & on-call |
@@ -82,19 +82,19 @@ The server connects via Streamable HTTP and works with Claude Code, Cursor, Open
 
 ### Grafana MCP — The Open-Source Metrics Gateway
 
-**[grafana/mcp-grafana](https://github.com/grafana/mcp-grafana)** | 1,200+ stars
+**[grafana/mcp-grafana](https://github.com/grafana/mcp-grafana)** | [Our full review](/reviews/grafana-mcp-server/) | Rating: 4/5
 
-Grafana's MCP server is the most popular observability MCP server by GitHub stars, and the only one with a truly open-source architecture. It connects to your Grafana instance (9.0+) and the surrounding LGTM stack — Loki for logs, Tempo for traces, Mimir for metrics, and Grafana's own dashboards.
+Grafana's MCP server is the most popular observability MCP server by GitHub stars (2,500), and the only one with a truly open-source architecture. It connects to your Grafana instance (9.0+) and the surrounding LGTM stack — Loki for logs, Tempo for traces, Mimir for metrics, and Grafana's own dashboards.
 
-The tool list is configurable with `--disable-<category>` flags, so you can trim it to just the capabilities you need. Grafana also ships separate dedicated MCP servers for [Loki](https://github.com/grafana/loki-mcp) (log querying) and [Tempo](https://grafana.com/docs/tempo/latest/api_docs/mcp-server/) (distributed tracing), so you can go deep on specific telemetry types.
+The 40+ tools span 15 configurable categories: dashboard management, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, log search, incidents, Sift investigations, alerting, OnCall, navigation, annotations, rendering, and admin. The `--disable-<category>` and `--enabled-tools` flags let you trim this to exactly the tools you need — the most granular context window management of any MCP server we've reviewed. Grafana also ships separate dedicated MCP servers for [Loki](https://github.com/grafana/loki-mcp) (log querying) and [Tempo](https://grafana.com/docs/tempo/latest/api_docs/mcp-server/) (distributed tracing), so you can go deep on specific telemetry types.
 
-A key differentiator: Grafana's MCP server works with **any backend data source** Grafana supports — Prometheus, InfluxDB, Elasticsearch, CloudWatch, and dozens more. You're not locked into one vendor's telemetry pipeline.
+A key differentiator: Grafana's MCP server works with **any backend data source** Grafana supports — Prometheus, InfluxDB, Elasticsearch, CloudWatch, and dozens more. You're not locked into one vendor's telemetry pipeline. The incident management loop (alerting → OnCall → Sift investigations → dashboards) is the most complete in any single MCP server.
 
-**Strengths:** Open source, largest GitHub community (1,200+ stars), works with any Grafana data source, configurable tool categories, separate Loki/Tempo servers for deep dives, self-hostable.
+**Strengths:** Open source (Apache 2.0), largest GitHub community (2,500 stars), works with any Grafana data source, configurable tool categories, separate Loki/Tempo servers for deep dives, self-hostable, all three transports (stdio + SSE + Streamable HTTP), active development (15+ releases in 4 months), agent-aware dashboard tools (`get_dashboard_summary`, JSONPath extraction, `patch_dashboard`), panel/dashboard PNG rendering.
 
-**Weaknesses:** Local stdio transport only (no hosted remote server), requires Grafana 9.0+, API token auth, more complex setup than hosted alternatives, visualization-focused rather than investigation-focused.
+**Weaknesses:** No hosted remote server (must run yourself), service account token auth (not OAuth), 61 open issues including security findings ([#608](https://github.com/grafana/mcp-grafana/issues/608) — TLS bypass, credential exposure), requires Grafana 9.0+, 16K token tool description footprint, some tool categories require Grafana Cloud (incidents, OnCall, Sift).
 
-**Best for:** Teams running their own Grafana stack who want agent-assisted metrics, logs, and traces queries.
+**Best for:** Teams running their own Grafana stack who want agent-assisted metrics, logs, traces, alerting, and incident management queries.
 
 ### New Relic MCP — Natural Language Observability
 
@@ -156,7 +156,7 @@ The ~20 tools cover incidents, services, schedules, event orchestrations, and te
 | Incident mgmt | No | Alerting | Alerting | Alerting | Triggers | Deep |
 | AI analysis | Seer (proprietary) | Bits AI | No | NRQL translation | Natural language | No |
 | Auth model | OAuth 2.0 | API key | API token | API key | API key | OAuth 2.0 |
-| Transport | Remote (SSE) | Remote | Local (stdio) | Remote | Remote (hosted) | Both |
+| Transport | Remote (SSE) | Remote | stdio + SSE + HTTP | Remote | Remote (hosted) | Both |
 | Open source | Yes | No | Yes | Yes | Yes | Yes |
 | Status | Pre-1.0 | GA | Active | Public Preview | Active | Active |
 
@@ -170,7 +170,7 @@ The ~20 tools cover incidents, services, schedules, event orchestrations, and te
 
 **"I need the full picture — metrics, traces, logs, everything"** → **Datadog MCP** if you can afford it (broadest toolset, 9 toolsets, GA). **New Relic MCP** if you want a generous free tier and natural language querying.
 
-**"I run my own observability stack"** → **Grafana MCP**. The only server that works with any backend data source. Open source, self-hostable, configurable.
+**"I run my own observability stack"** → **[Grafana MCP](/reviews/grafana-mcp-server/) (4/5)**. The only server that works with any backend data source. Open source, self-hostable, configurable tool categories, full incident pipeline.
 
 **"I need to debug complex distributed systems"** → **Honeycomb MCP**. High-cardinality event analysis is purpose-built for finding needles in haystacks.
 
@@ -183,7 +183,7 @@ For most teams, you want **two** observability MCP servers:
 1. **A debugging server** — Sentry (error-focused), Datadog or New Relic (full-stack), or Honeycomb (event-based)
 2. **An incident server** — PagerDuty (if you use it for on-call)
 
-Add Grafana if you have custom dashboards you want your agent to query.
+Add [Grafana](/reviews/grafana-mcp-server/) if you have custom dashboards you want your agent to query, or if you run a multi-vendor observability stack.
 
 Don't try to install all six. MCP servers compete for context window space, and each one you add reduces the tokens available for actual work. Pick the ones that match your existing observability stack.
 
