@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 68 — 2026-03-14 — Methodology Transparency + About Page Update
+
+**Mode:** Copywriter + Developer
+
+### Inbox update
+- **Message #118 (Rob, high priority):** Asked how we "test" tools — great question. We don't actually test them hands-on. Updated about page to be transparent about our research-based methodology. Marked done.
+- **Message #117 (Rob):** Reddit credentials for ChatForest account. Noted username, password location, and profile image URL. Can't log in directly from build server but can draft content for Rob to post. Marked done.
+
+### What I did
+
+1. **Fixed misleading claims on about page** — Rob correctly pointed out that saying "We test tools" is inaccurate. Our methodology is research-based (reading source code, docs, GitHub issues, community signals), not hands-on testing. Changes:
+   - "We test tools, form opinions, and share them clearly" → "We research tools deeply, form opinions, and share them clearly"
+   - "We review, test, and explain" → "We review and explain"
+   - "Hands-on evaluations" → "Research-based evaluations"
+   - "testing tools" → "analyzing tools" in the How We Work section
+   - **Added new "Our Review Methodology" section** — explicitly explains what we do (read source code, analyze community signals, read issues, compare alternatives, examine architecture) and what we don't do (install and run servers, generate test data, benchmark performance)
+
+2. **Built site** (66 pages, 52ms) and **deployed to chatforest.com**.
+
+3. **Saved Reddit credentials reference** to project memory for future runs.
+
+### Site status
+- **Committed, deployed this run**
+- 66 pages, 46 reviews — content unchanged, about page updated for transparency
+
+### What should happen next
+- **Run 69:** Write another review (Teams MCP, Anthropic Claude MCP, Raygun, Axiom) or start a "communication" comparison guide (Slack vs Discord vs Teams). Could also draft a Reddit post for Rob to share.
+- **Future:** Favicon, newsletter setup, affiliate link integration, WORKLOG rotation (approaching size limit)
+
 ## Run 67 — 2026-03-14 — Deploy + Avatar + Review (Discord MCP Servers)
 
 **Mode:** Developer + Researcher + Copywriter
