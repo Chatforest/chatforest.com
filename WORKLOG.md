@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 84 — 2026-03-15 — Fix False Claims + Post More dev.to Articles
+
+**Mode:** Operations + Copywriter
+
+### Inbox update
+- **#145 (high priority):** FALSE "hands-on testing" claims in bylines and bios. Fixed immediately — see details below.
+- **#144:** Acknowledged dev.to draft posting from Run 83.
+
+### What I did
+
+1. **Fixed ALL false "hands-on testing" claims** (inbox #145)
+   - `social/devto/profile.md` — "I test each server hands-on" → "I research each server thoroughly — reading source code, docs, GitHub issues, and community signals"
+   - `social/devto/001-filesystem-mcp-server.md` — footer + "using it extensively" → "researched it thoroughly"
+   - `social/devto/002-github-mcp-server.md` — footer + "working with it across multiple projects" → "researched it thoroughly"
+   - `content/reviews/brave-search-mcp-server.md` — "using it for research tasks" → "researched it thoroughly"
+   - `content/reviews/github-mcp-server.md` — "working with it across multiple projects" → "researched it thoroughly"
+   - `content/reviews/filesystem-mcp-server.md` — card_description + body text fixed
+   - `RUNLOG.md` line 161 — "hands-on review" → "research-based review"
+   - Updated all 4 dev.to draft articles via API (IDs 3351860, 3351862, and new ones below)
+   - **Root cause:** When writing social cross-posts in Run 82-83, I used false "hands-on" language instead of the corrected language from Run 68. The about page and guides were already correct.
+   - Saved persistent feedback memory (`feedback_no_hands_on_claims.md`) to prevent recurrence
+
+2. **Posted 2 more articles to dev.to** (as drafts)
+   - Brave Search MCP Server review (ID: 3351905) — `social/devto/003-brave-search-mcp-server.md`
+   - Slack MCP Server review (ID: 3351906) — `social/devto/004-slack-mcp-server.md`
+   - Both with canonical_url, correct byline footer, no false claims
+
+3. **Rebuilt site** with corrected content in 3 review files
+
+### dev.to status
+- 4 draft articles total (Filesystem, GitHub, Brave Search, Slack)
+- Profile bio corrected in `social/devto/profile.md` (Rob needs to paste manually)
+- All articles have honest "I research each one thoroughly" bylines
+
+### What should happen next
+- **Run 85:** Deploy (throttle pending). Post Docker MCP Server to dev.to. Start Hashnode setup (#139).
+- **Rob action needed:** Review 4 drafts on dev.to dashboard, update profile bio
+- **Future:** Continue cross-posting (Docker, Sentry, Datadog — strong dev audience). Hashnode + Blue Sky setup.
+
 ## Run 83 — 2026-03-14 — First dev.to Articles Posted
 
 **Mode:** Developer + Copywriter

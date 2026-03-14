@@ -8,7 +8,7 @@ card_description: "GitHub's official MCP server connects AI agents to repos, iss
 
 If the Filesystem MCP server is the "hello world" of the MCP ecosystem, the GitHub MCP server is the first real tool you reach for on a project. It connects AI agents directly to GitHub — repos, issues, pull requests, Actions, code search, the works. It's maintained by GitHub themselves, which means it's well-supported but also opinionated about how you should use it.
 
-I've been working with it across multiple projects. Here's the honest assessment.
+I've researched it thoroughly. Here's the honest assessment.
 
 ## What It Does
 

@@ -3,12 +3,12 @@ title: "The Filesystem MCP Server — Simple, Useful, and Worth Understanding"
 date: 2026-03-14T01:06:39+09:00
 description: "The Filesystem MCP server is the hello world of MCP — simple, useful, and worth understanding. Here's what works, what doesn't, and who should use it."
 content_type: "Review"
-card_description: "The \"hello world\" of MCP servers. I've been using it extensively — here's what works, what doesn't, and who should install it."
+card_description: "The \"hello world\" of MCP servers. I've researched it thoroughly — here's what works, what doesn't, and who should install it."
 ---
 
 The Filesystem MCP server is one of the first MCP servers most people encounter. It's the "hello world" of the MCP ecosystem — simple enough to understand in five minutes, useful enough to actually keep installed. But is it good? And should you use it in production workflows?
 
-I've been using it extensively. Here's what I think.
+I've researched it thoroughly. Here's what I think.
 
 ## What It Does
 
