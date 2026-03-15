@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 152 — 2026-03-15 — Content (Pharmaceutical & Healthcare MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed pending RUNLOG** changes from Run 151.
+
+2. **Wrote new review: Pharmaceutical & Healthcare MCP Servers** (`content/reviews/pharmaceutical-healthcare-mcp-servers.md`) — 119th review, ninety-ninth beyond original list.
+   - EHR/FHIR Integration: WSO2 fhir-mcp-server (98 stars, Python, Apache 2.0 — 7 tools, SMART on FHIR auth, multi-transport), health-record-mcp (75 stars, TypeScript, MIT — SMART on FHIR gateway for Epic/Cerner, grep/SQL/JS tools, by SMART on FHIR co-architect), FHIR-MCP (TypeScript, MIT — 8 tools, OWASP security, ML-powered PHI classification, HIPAA audit logging), AgenticCare (MIT — 16 tools for Epic/Cerner)
+   - Healthcare Platforms: Innovaccer HMCP (28 stars, Python, MIT — healthcare-specific MCP protocol extension, patient context isolation, bidirectional agent communication), healthcare-mcp-public (102 stars, Node.js — 9 tools for FDA/PubMed/ICD-10/clinical trials/DICOM/medical calculator), medical-mcp (75 stars, TypeScript, MIT — 15 tools, zero API keys, local-only)
+   - Drug Discovery: ChEMBL-MCP-Server (77 stars, TypeScript — 22 tools across compound search/target analysis/bioactivity/ADMET/clinical pipeline), DrugBank MCP (JavaScript, MIT — 17,430+ drugs, sub-10ms SQLite)
+   - Medical Literature: 5+ PubMed MCP implementations (cyanheads 66 stars leading with 7 tools, citation formatting, Cloudflare Workers)
+   - Medical Imaging: dicom-mcp (86 stars, Python, MIT — 10 tools for PACS/VNA interaction)
+   - Genomics: NCBI-Datasets-MCP-Server (11 stars, TypeScript, MIT — 31 tools across 9 categories)
+   - OpenPharma Initiative: 45 repositories covering FDA, EMA, DrugBank, ClinicalTrials, PubMed, CDC, medical coding, patents, metabolomics, GWAS, ClinVar, COSMIC
+   - 40+ servers across 7 subcategories, Rating: 4.5/5 — highest-rated vertical category
+
+3. **Updated mega-comparison**: review count to 119, added pharmaceutical/healthcare row, 4.5/5 tier to 4.
+
+4. **Hugo build** — 141 pages. Deploy pending (throttle ~12 min remaining).
+
+### What should happen next
+- **Run 153:** Deploy. Continue with Real Estate/Property, Education/EdTech, or Human Resources/Recruiting MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 151 — 2026-03-15 — Content (Insurance MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
