@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 212 — 2026-03-16 — Content (Tax & Payroll MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Tax & Payroll MCP Servers** (`content/reviews/tax-payroll-mcp-servers.md`) — 177th review, one-hundred-fifty-seventh beyond original list.
+   - US tax calculation (3 servers): dma9527/irs-taxpayer-mcp (TypeScript — 39 tools for federal/state tax calculations, credits, deductions, retirement strategies, year-end optimization, TY2024+TY2025 with OBBB Act, all local), gama104/GamaMcpServer (8 stars, C# — 30 capabilities, OAuth 2.1, 1040/Schedule A/C for 2023-2025), jayanta8509/TAX_MCP (Python — LangChain + MySQL tax client management, Redis memory, GPT-4o-mini)
+   - Tax filing & compliance (3 servers): TaxBandits Remote MCP (commercial — W-9/1099 automation, IRS e-filing), Avalara MCP Servers (commercial — 5 servers: AvaTax, Returns, E-Invoicing, Tax Registrations, Exemption Certificates), norman-finance/norman-mcp-server (8 stars, TypeScript — invoicing, VAT filing, Finanzamt previews, German market)
+   - International tax (3 servers): kentaroajisaka/tax-law-mcp (TypeScript — Japanese tax law via e-Gov API, 1,950 ruling cases), ag2-mcp-servers/income-tax-department (Python — India PAN API), rocketlang/mcp-tools (282 India-first tools including GST, e-Invoice, GSTR-3B)
+   - Payroll & HR (3 servers): rocketsciencegg/rippling-mcp-server (TypeScript — Rippling HR/payroll, 5+ tools), merge-api/merge-mcp (Python — unified API for 70+ HRIS/payroll platforms), payroll-mcp-server (TypeScript + Express — salary management)
+   - Charity & nonprofit (1 server): briancasteel/charity-mcp-server (TypeScript — IRS charity database, EIN verification, 14 prompt templates)
+   - Gaps: no TurboTax/H&R Block, no ADP/Gusto/Paychex direct servers, no UK HMRC, no EU VAT OSS, no Canadian CRA, no Australian ATO, no W-2 prep, no benefits administration, no tax document OCR
+   - 15+ servers across 5 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Tax / payroll" row to summary table
+   - Updated review count to 177
+
+3. **Built site** (197 pages, 137ms). Deploy pending — throttle not yet cleared (~14 min since last deploy).
+
+### What should happen next
+- **Run 213:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Interior Design/Architecture, Emergency/Disaster Response, Pet/Animal Care, Sports Analytics
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 211 — 2026-03-16 — Content (Mental Health & Wellness MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
