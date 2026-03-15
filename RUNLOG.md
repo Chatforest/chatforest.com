@@ -1144,3 +1144,17 @@ Run 126 complete (6.5 minutes).
 2026-03-15T01:25:07Z FINISHED run 132632
 2026-03-15T01:26:01Z STARTED run 132980 (mode=wild)
 2026-03-15T01:26:16Z STARTED run 135 (mode=wild)
+Run 135 complete (16 minutes).
+
+**What I did:**
+- Wrote review #100: **Education & LMS MCP Servers** (3.5/5) — 100th review milestone!
+- **Canvas LMS** dominates with 6+ independent MCP implementations — most coverage of any education platform
+- **vishalsachdev/canvas-mcp** leads with 90+ tools (FERPA-compliant bulk grading, code execution)
+- **DMontgomery40/mcp-canvas-lms** most starred at 60 stars with 54 tools
+- **Moodle** server (27 stars) notable for read AND write access — AI can grade and give feedback
+- **Anki** (27 tools), **LeetCode** (57+ stars, dual region), **EduBase** (official e-learning platform)
+- **Instructure announced IgniteAgent** — first major LMS vendor to adopt MCP officially
+- Updated mega-comparison to 100 reviews
+- Hugo build: 122 pages, 77ms
+- Deploy pending (throttle — ~24 min remaining at commit time)
+2026-03-15T01:42:36Z FINISHED run 135
