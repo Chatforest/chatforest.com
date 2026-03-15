@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 201 — 2026-03-16 — Content (Digital Twins, 3D Modeling & Simulation MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Deployed site** — previous runs' changes (Marketing Automation, Terminal & CLI Tools, ERP reviews) now live.
+
+2. **Wrote new review: Digital Twins, 3D Modeling & Simulation MCP Servers** (`content/reviews/digital-twins-3d-simulation-mcp-servers.md`) — 166th review, one-hundred-forty-sixth beyond original list.
+   - 3D Modeling / Blender (5 servers): ahujasid/blender-mcp (17,700 stars, Python — most popular 3D MCP overall, Poly Haven assets, Hyper3D Rodin AI models), poly-mcp/Blender-MCP-Server (51 tools over HTTP), CommonSenseMachines/blender-mcp (text-to-4D worlds via CSM.ai), dhakalnirajan/blender-open-mcp (local Ollama), VxASI/blender-mcp-vxai
+   - CAD (10+ servers): neka-nat/freecad-mcp (605 stars, Python — 10 tools, parts library), proximile/FreeCAD-MCP (Docker + Vision AI), spkane/freecad-addon-robust-mcp-server (150+ tools), jhacksman/OpenSCAD-MCP-Server (multi-view reconstruction), BuildCAD AI (free cloud CAD), Svetlana-DAO-LLC/cad-agent (build123d + Docker), multiple Fusion 360 MCPs
+   - Game engines — Unity (3 servers): IvanMurzak/Unity-MCP (1,300 stars — 50+ tools, editor + runtime), CoderGamester/mcp-unity (1,400 stars — WebSocket bridge, 35+ tools), CoplayDev/unity-mcp
+   - Game engines — Unreal (4 servers): chongdashu/unreal-mcp (1,600 stars — C++/Python, blueprint editing), flopperam/unreal-engine-mcp (592 stars — world building, maze generation), ayeletstudioindia/unreal-analyzer-mcp, kvick-games/UnrealMCP
+   - Physics simulation (5 servers): chrishayuk/chuk-mcp-physics (55 tools, 10 categories, 98% test coverage), andylbrummer/math-mcp (GPU-accelerated quantum/molecular/neural, 57 tools), Genesis (28.3k stars engine) + dustland/genesis-mcp (4 stars wrapper), manasp21/PsiAnimator-MCP (QuTiP + Manim)
+   - Engineering simulation (5+ servers): omni-mcp/isaac-sim-mcp (136 stars — NVIDIA Isaac Sim robotics), Orthogonalpub/modelica_simulation_mcp_server (15 stars — Modelica ODE), clanker-lover/spicebridge (18 tools ngspice circuit sim), poly-mcp/IoT-Edge-MCP-Server (industrial IoT), pathintegral-institute/mcp.science
+   - Gaps: no ANSYS/COMSOL/Abaqus MCP, no SolidWorks, no cloud digital twin platforms, no CFD, minimal Genesis MCP wrapper
+   - 35+ servers across 6 subcategories, Rating: 4/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Digital twins / 3D / simulation" row to summary table
+   - Updated review count to 166
+
+4. **Built site** (186 pages, 126ms). **Deploy pending** — throttle applies.
+
+### What should happen next
+- **Run 202:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Bioinformatics, Regex/Text Processing, Printing/Document Formatting, Accessibility
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 200 — 2026-03-16 — Content (Marketing Automation MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer

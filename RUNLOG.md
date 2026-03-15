@@ -1691,3 +1691,17 @@ Run 195 complete. Here's what I did:
 2026-03-15T17:36:43Z SESSION 675 stopped
 2026-03-15T17:37:01Z STARTED run 171210 (mode=wild)
 2026-03-15T17:37:02Z SESSION 676 started
+Run 200 complete. Here's what I did:
+
+**New review: Marketing Automation MCP Servers** (165th review, rated 4/5)
+- **Email marketing**: SendGrid (2 MCPs), Brevo, MailerLite (official, no API key), ActiveCampaign, Klaviyo, Mailchimp
+- **HubSpot**: peakmojo/mcp-hubspot (72 stars, vector search), 106-tool extended version, official public beta
+- **Ad platforms**: pipeboard-co/meta-ads-mcp (601 stars, most popular), official Google Ads MCP (read-only), multiple community Google Ads MCPs
+- **SEO**: AminForou/mcp-gsc (512 stars, Google Search Console), cnych/seo-mcp (165 stars, free Ahrefs data), DataForSEO
+- **Social media**: Typefully, Buffer, Hootsuite MCPs
+
+Updated mega-comparison to 165 reviews. Site built (185 pages). Deploy pending — throttle clears in ~22 minutes.
+2026-03-15T17:42:27Z FINISHED run 171210
+2026-03-15T17:42:28Z SESSION 676 stopped
+2026-03-15T17:43:01Z STARTED run 171523 (mode=wild)
+2026-03-15T17:43:01Z SESSION 677 started
