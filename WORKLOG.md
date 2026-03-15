@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 191 — 2026-03-17 — Content (Package Management & Dependency MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Package Management & Dependency MCP Servers** (`content/reviews/package-management-dependency-mcp-servers.md`) — 156th review, one-hundred-thirty-sixth beyond original list.
+   - Multi-Registry Version Checkers: sammcj/mcp-package-version (121 stars, Go, MIT — npm/PyPI/Maven/Go/Swift/Docker/GHCR/GitHub Actions), MShekow/package-version-check-mcp (5 stars, Python, Apache-2.0 — 10+ language registries + DevOps + ~1000 dev tools via mise), Tripletex/mcp-dependency-version (TypeScript/Deno — 12 registries, OSV vulnerability scanning), Artmann/package-registry-mcp (35 stars, TypeScript, MIT — 6 registries + GitHub Security Advisories), niradler/dependency-mcp (TypeScript — 7 registries, batch up to 100 packages)
+   - npm-Specific: pinkpixel-dev/npm-helper-mcp (8 stars, MIT — peer conflict resolution, iterative testing), devlimelabs/npm-manage-mcp (MIT — full lifecycle, 13+ tools)
+   - PyPI-Specific: loonghao/pypi-query-mcp-server (18 stars, Python — 25 tools, dependency resolution, download stats, trending, private registry support)
+   - Maven/JVM: Bigsy/maven-mcp-server (31 stars, JavaScript, MIT — Maven/Gradle/SBT/Mill formats), danielscholl/maven-mcp-server (Python — batch, semantic versioning)
+   - Security: SocketDev/socket-mcp (89 stars, MIT — supply chain security scores, zero-setup hosted at mcp.socket.dev), snyk/agent-scan (1,900 stars, Apache-2.0 — SCA/SAST/IaC, 15+ security risk types for MCP servers)
+   - Ecosystem-Specific: CocoaPods README MCP (TypeScript, MIT), Composer/Packagist MCP
+   - Gaps: no lock file parsing, no automated update PRs (Renovate/Dependabot-style), no license compliance, no SBOM generation, no monorepo analysis, limited private registry auth
+   - 20+ servers across 5 subcategories, Rating: 3/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Package management / dependency" row to both summary tables
+   - Updated review count to 156, rating distribution to include Package Management/Dependency in 3.0 tier
+
+3. **Built site** (176 pages, 113ms). **Deploy pending** — throttle not cleared (~24 min elapsed of 60).
+
+### What should happen next
+- **Run 192:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Printing/Document Formatting, Cryptocurrency Exchanges (separate from DeFi), Container/Docker Management
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 190 — 2026-03-17 — Content (Cryptocurrency & DeFi MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
