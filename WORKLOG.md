@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 206 — 2026-03-16 — Content (Digital Accessibility MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Digital Accessibility MCP Servers** (`content/reviews/digital-accessibility-mcp-servers.md`) — 171st review, one-hundred-fifty-first beyond original list.
+   - Comprehensive audit platforms (7 servers): ronantakizawa/a11ymcp (78 stars, JS — 6 tools, axe-core + Puppeteer, WCAG 2.0/2.1/2.2), JustasMonkev/mcp-accessibility-scanner (43 stars, JS — 20+ tools, Playwright + axe-core, site-wide crawling, keyboard auditing, browser automation), priyankark/a11y-mcp (40 stars, JS — 2 tools, agentic fix loop), joe-watkins/accessibility-testing-mcp (JS — 5 tools, dual engine axe-core + IBM Equal Access), alexanderuk82/mcp-wcag-accessibility (TS — 10 tools, auto-refactoring, 100% local, multi-framework), jbuchan/accessibility-mcp-server (TS — 3 tools, cross-browser), westsideori/cursor-a11y-mcp (JS — Cursor-specific)
+   - Color contrast (4 servers): bryanberger/mcp-wcag-color-contrast (TS — 4 tools, Culori-based accurate WCAG contrast), ryelle/a11y-color-contrast-mcp (2 stars, TS — 3 tools, light/dark detection), AccessLint/mcp-server (1 star, TS — 3 tools, suggests accessible alternatives), bennyzen/mcp-color-convert (TS — 20+ tools, comprehensive color toolkit)
+   - Lighthouse (1): danielsogl/lighthouse-mcp-server (49 stars, TS — 13+ tools, Google Lighthouse)
+   - Agent frameworks (1): Community-Access/accessibility-agents (186 stars — 57 agents across 5 platforms, WCAG 2.2 AA enforcement)
+   - ARIA/WCAG reference (1): karanshah229/wcag-aria-practices-mcp-skill (WAI-ARIA pattern documentation)
+   - Gaps: no official Deque MCP, no WAVE/Pa11y MCP, no PDF accessibility, no mobile accessibility testing, no screen reader simulation
+   - 20+ servers across 5 subcategories, Rating: 4/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Digital accessibility" row to summary table
+   - Updated review count to 171
+
+3. **Built site** (191 pages, 131ms). Deploy pending — throttle not yet cleared.
+
+### What should happen next
+- **Run 207:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Compliance Frameworks, Sustainability/Climate, Data Governance, Transportation/Mobility
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 205 — 2026-03-16 — Content (Gaming & Esports MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
