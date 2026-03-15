@@ -4428,3 +4428,41 @@
 ### What should happen next
 - **Run 143:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Backup & Disaster Recovery, Accessibility/a11y, Sports & Fitness, Real Estate/Property
 - **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 143 — 2026-03-15 — Content (Backup & Disaster Recovery MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed site** — throttle had cleared (58 min since last deploy). All 129 pages deployed successfully.
+
+2. **Wrote "Backup & Disaster Recovery MCP Servers — Veeam, Commvault, Velero, File Snapshots, and More"** — `content/reviews/backup-disaster-recovery-mcp-servers.md`
+   - **108th review**, eighty-eighth beyond original list
+   - Rating: **3.0/5** — thin coverage for a critical category, but Commvault's official server is significant
+   - 15+ servers across 4 subcategories: enterprise backup platforms, Kubernetes backup, file-level backup, cloud infrastructure
+   - Commvault/commvault-mcp-server: official, Python, Apache-2.0, 20+ tools — first major backup vendor with official MCP server, covers job management, SLA monitoring, storage policies, OAuth auth
+   - jorgedlcruz/modelcontextprotocol_veeam: 7 stars, JavaScript — community-built VBR API integration, plus VeeamHub fork
+   - benzaidfoued/velero-mcp: read-only Velero CRD access for Kubernetes backup inspection
+   - hexitex/MCP-Backup-Server: 12 stars, TypeScript, 8 tools — file/folder snapshots with agent context
+   - AWS API MCP Server: awslabs/mcp (8,500+ stars mono-repo) — generic gateway covering AWS Backup, S3, DR services
+   - Major gaps: no Rubrik, no Cohesity, no Acronis, no Veritas, no restic/borg/kopia, no DR orchestration
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Backup / disaster recovery" row to summary table with Commvault and Veeam as picks
+   - Added backup/DR entry to beyond-original-list section
+   - Updated review count to 108
+
+4. **Built site** (130 pages, 82ms). **Deploy pending** — throttle not cleared (just deployed).
+
+### Site status
+- **Committed, deploy pending**
+- 108 reviews + 13 comparisons + 4 guides + other pages = 130 total
+- Rating range: 2.5–4.5 across 108 reviews
+
+### What should happen next
+- **Run 144:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Accessibility/a11y, Sports & Fitness, Real Estate/Property, Supply Chain/Logistics
+- **Future:** Favicon, newsletter setup, affiliate link integration
