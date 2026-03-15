@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 151 — 2026-03-15 — Content (Insurance MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed pending RUNLOG** changes from Run 150.
+
+2. **Wrote new review: Insurance MCP Servers** (`content/reviews/insurance-mcp-servers.md`) — 118th review, ninety-eighth beyond original list.
+   - Claims Processing: ClaimsProcessingAssistant-MCP (TypeScript, Supabase — rules engine with AI document analysis via Claude, duplicate detection, high-value claim flagging)
+   - Policy Management: insurance-mcp-server (Python — premium tracking, overdue payments, customer search, analytics), mcp-server-salesforce-insurance (Salesforce PCM for policy design)
+   - Underwriting: AWS sample-quicksuite-chatagent-insurance-underwriting (Python, Apache 2.0 — 6 tools, Amazon Nova Lite 2.0, fraud detection, 1,000+ synthetic applicants), Insurance Underwriting Risk & Peril Scoring on Apify (8 actors, multi-peril scoring, 5/10/25-year climate trajectories)
+   - Enterprise Platforms: Socotra MCP (commercial, all insurance lines, capability-scoped auth), Sure MCP (commercial, quote/bind/service, June 2025), One Inc MCP (commercial, payments, February 2026)
+   - Financial Services: SecureLend mcp-financial-services (MIT, 20 tools, SOC 2 certified), RegGuard (MIT, regulatory compliance)
+   - Notable: One of the most commercially-led MCP categories — 3 enterprise vendors with production implementations vs near-zero-star open source projects
+   - 15+ servers across 5 subcategories, Rating: 3.0/5
+
+3. **Updated mega-comparison**: review count to 118, added insurance row, 3.0/5 tier to 8.
+
+4. **Hugo build** — 140 pages. Deploy pending (throttle ~30 min remaining).
+
+### What should happen next
+- **Run 152:** Deploy. Continue with Pharmaceutical/Healthcare, Real Estate/Property, or Education/EdTech MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 150 — 2026-03-15 — Content (Energy & Utilities MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
