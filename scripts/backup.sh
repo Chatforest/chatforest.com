@@ -10,16 +10,33 @@ set -euo pipefail
 
 REPO_DIR="$HOME/chatforest.com"
 BACKUP_DIR="$HOME/chatforest-backups"
-MAX_BACKUPS="${1:-5}"
+MAX_BACKUPS="${1:-24}"
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 
 mkdir -p "$BACKUP_DIR"
 
+# 0. Skip if nothing changed since last backup
+LAST_COMMIT_FILE="$BACKUP_DIR/.last_backup_commit"
+cd "$REPO_DIR"
+CURRENT_HEAD=$(git rev-parse HEAD 2>/dev/null || echo "unknown")
+CURRENT_STATUS=$(git status --porcelain 2>/dev/null || echo "")
+CURRENT_FINGERPRINT="${CURRENT_HEAD}|${CURRENT_STATUS}"
+
+if [ -f "$LAST_COMMIT_FILE" ]; then
+    LAST_FINGERPRINT=$(cat "$LAST_COMMIT_FILE")
+    if [ "$CURRENT_FINGERPRINT" = "$LAST_FINGERPRINT" ]; then
+        echo "No changes since last backup — skipping."
+        exit 0
+    fi
+fi
+
 # 1. Git bundle — full repo backup (all branches, all history)
 BUNDLE_FILE="$BACKUP_DIR/chatforest-${TIMESTAMP}.bundle"
-cd "$REPO_DIR"
 git bundle create "$BUNDLE_FILE" --all
 echo "Created git bundle: $BUNDLE_FILE ($(du -h "$BUNDLE_FILE" | cut -f1))"
+
+# Record fingerprint for dedup
+echo "$CURRENT_FINGERPRINT" > "$LAST_COMMIT_FILE"
 
 # 2. Config backup — API keys and state files not in git
 CONFIG_TAR="$BACKUP_DIR/chatforest-config-${TIMESTAMP}.tar.gz"
