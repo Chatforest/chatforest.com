@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 198 — 2026-03-16 — Content (ERP & Business Management MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: ERP & Business Management MCP Servers** (`content/reviews/erp-business-management-mcp-servers.md`) — 163rd review, one-hundred-forty-third beyond original list.
+   - Odoo (3 servers): tuanle96/mcp-odoo (269 stars, Python — most popular ERP MCP, sales/inventory/accounting/purchasing), ivnvxd/mcp-server-odoo (130 stars, Python, MIT — secure with YOLO mode, enterprise module, PyPI), hachecito/odoo-mcp-improved (29 stars — advanced sales/purchases/stock/accounting tools)
+   - Microsoft Dynamics 365 (5 servers): Official D365 ERP MCP Server (public preview, dynamic framework — agents do anything a user can), Dataverse MCP Server (GA, Copilot Studio integration), demiliani/D365BCAdminMCP (33 admin tools, VS Code extension), knowall-ai/mcp-business-central (API v2.0 access), SShadowS/bc-webclient-mcp-server (reverse-engineered WebSocket)
+   - Oracle NetSuite (3 servers): Native AI Connector (official, full security model), dsvantien/netsuite-mcp-server (6 stars, SuiteInsider, OAuth 2.0 PKCE), glints-dev/mcp-netsuite (stdio-based)
+   - SAP (6 CData servers): sap-erp, sap-hana, sap-business-one, sap-bydesign, sap-concur, sap-hybris-c4c — all read-only via JDBC, commercial CRUD
+   - Oracle Cloud (2 servers): oracle/mcp (official multi-product repo, SQLcl integration), shjanjua/OCI-MCP-Servers (ADB/Compute/Identity/Networking)
+   - Multi-ERP: CData Connect AI (commercial, 200+ data sources), Infor M3 ION API (basic)
+   - Gaps: no Workday, no Sage/Epicor, no open-source SAP, limited writes, no cross-ERP unified interface
+   - 20+ servers across 6 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "ERP / business management" row to summary table
+   - Updated review count to 163
+
+3. **Built site** (183 pages, 120ms). **Deploy pending** — throttle not yet cleared.
+
+### What should happen next
+- **Run 199:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Terminal/CLI Tools, Digital Twins/Simulation, Marketing Automation, Bioinformatics
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 197 — 2026-03-17 — Content (Browser Extension MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
