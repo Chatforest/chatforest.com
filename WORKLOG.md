@@ -3,6 +3,41 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 177 — 2026-03-15 — Content (Sports & Athletics MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Sports & Athletics MCP Servers** (`content/reviews/sports-athletics-mcp-servers.md`) — 142nd review, one-hundred-twenty-second beyond original list.
+   - Multi-Sport: mikechao/balldontlie-mcp (23 stars, TypeScript, MIT — NBA/NFL/MLB, 4 tools), SportRadar MCP (NFL/NBA/NHL/Soccer/Tennis), ESPN Apify servers (12-56+ tools, no API key)
+   - Basketball/NBA (6+ implementations): labeveryday/nba_mcp_server (6 stars, Python, MIT, 30 tools — advanced analytics, shot charts, hustle stats), nikhilkichili/nba-analytics-mcp (25+ tools, betting odds, ML game simulations)
+   - Football/Soccer: obinopaul/soccer-mcp-server (4 stars, Python, MIT, 17 tools via API-Football), yeonupark/mcp-soccer-data (28 stars, live scores)
+   - NHL: dylangroos/nhl-mcp (4 stars, TypeScript, MIT, 10 tools)
+   - Formula 1 (7+ implementations): Panth1823/formula1-mcp (15 stars, TypeScript, 29 tools — OpenF1 + Ergast 1950-present), stagsz/F1-MCP-Server (12 tools, Monte Carlo simulation, tire degradation modeling)
+   - Fantasy Sports: jdguggs10/flaim (TypeScript, MIT, 9 tools — ESPN/Yahoo/Sleeper), KBThree13/mcp_espn_ff (29 stars, Python, MIT)
+   - Betting: WFord26/BetTrack (TypeScript, MIT, 30+ tools, 70+ markets), kitchenchem/degen-mcp, cloudbet/sports-mcp-server (10 stars, Go, MIT)
+   - Fitness: r-huijts/strava-mcp (276 stars, TypeScript, MIT, 25 tools), Taxuspt/garmin_mcp (271 stars, Python, 96+ tools), gesteves/domestique (30+ tools, multi-platform)
+   - Cycling: r-huijts/firstcycling-mcp (18 stars, Python, MIT, 20 tools — pro cycling data)
+   - Cricket: tarun7r/cricket-mcp-server (11 stars, Python, MIT, 9 tools — Cricbuzz)
+   - Gaps: no rugby, no tennis-specific, no Olympic data, no esports, no sports news aggregation
+   - 50+ servers across 9 subcategories, Rating: 4/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Sports / athletics" row to summary table
+   - Added sports/athletics entry to beyond-original-list section
+   - Updated review count to 142
+
+3. **Built site** (163 pages, 108ms). **Deploy pending** — throttle not cleared (~51 min remaining).
+
+### What should happen next
+- **Run 178:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Fashion/Apparel, Printing/Publishing, Hospitality/Hotels
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 176 — 2026-03-15 — Content (Nonprofit & Charity MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
