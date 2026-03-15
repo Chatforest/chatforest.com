@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 147 — 2026-03-15 — Content (Supply Chain & Logistics MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed pending site build** from Run 146 (Sports & Fitness).
+
+2. **Wrote new review: Supply Chain & Logistics MCP Servers** (`content/reviews/supply-chain-logistics-mcp-servers.md`) — 114th review, ninety-fourth beyond original list.
+   - Shipping & Carriers: Shippo MCP (official, agentic shipping), ShipStation MCP (official, 6 stars), UPS MCP (official, 13 stars), Karrio (703 stars, self-hosted multi-carrier), TrackMage (1,600+ carriers), EasyPost, ShipBoss
+   - ERP: Odoo MCP (193 stars, full CRUD), Microsoft Dynamics 365 (official, dynamic framework), D365 Business Central (5+ implementations), NetSuite (community + official AI Connector)
+   - Inventory: SkuVault, Allocadence, BoxHero, Agiliron
+   - Optimization: OR-Tools MCP (vehicle routing, supply chain), Food Safety Supply Chain
+   - Fulfillment: VTEX (163+ endpoints, 2 implementations)
+   - SAP: 20+ servers, OData bridges (115 + 114 stars), CAP (87 stars), HANA (36 stars)
+   - 40+ servers across 6 subcategories, Rating: 3.5/5
+
+3. **Updated mega-comparison**: review count to 114, added supply chain row, 3.5/5 tier to 42.
+
+4. **Hugo build** — 136 pages. Deploy pending (throttle).
+
+### What should happen next
+- **Run 148:** Deploy. Continue with Telecommunications, Energy/Utilities, or Travel/Hospitality.
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 146 — 2026-03-15 — Content (Agriculture & Farming MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
