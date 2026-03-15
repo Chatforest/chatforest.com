@@ -4505,3 +4505,43 @@
 ### What should happen next
 - **Run 145:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Sports & Fitness, Real Estate/Property, Supply Chain/Logistics, Agriculture/Farming
 - **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 145 — 2026-03-15 — Content (Real Estate & Property MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "Real Estate & Property MCP Servers — Zillow, MLS, Airbnb, BatchData, Mortgage Analysis, and More"** — `content/reviews/real-estate-property-mcp-servers.md`
+   - **110th review**, ninetieth beyond original list
+   - Rating: **3.5/5** — impressive breadth across property search, valuation, mortgage analysis, and international markets, but fragmented and no official platform servers
+   - 30+ servers across 6 subcategories: property search & listings, property data & valuation, real estate CRM & management, MLS & industry standards, mortgage & investment analysis, regional & specialized
+   - openbnb-org/mcp-server-airbnb: 394 stars, JavaScript, MIT, 2 tools — most popular by far (Airbnb vacation rental search)
+   - sap156/zillow-mcp-server: 31 stars, Python, MIT, 7 tools — Zillow Bridge API for search, Zestimates, market trends, mortgage calc
+   - zellerhaus/batchdata-mcp-real-estate: 27 stars, TypeScript, MIT, 8 tools — BatchData.io address verification, geocoding, property lookup
+   - agentic-ops/real-estate-mcp: 26 stars, Python, 30+ tools — most comprehensive general-purpose server
+   - Repliers-io/mcp-server: 14 stars, JavaScript, MIT, 8 tools — closest to real MLS data access
+   - GumpperGroup UNLOCK MLS RESO Reference: first standards-based MLS MCP server (RESO Web API)
+   - confersolutions/mcp-mortgage-server: 2 stars, Python, MIT, 4 tools — MISMO-compliant mortgage document parsing
+   - sigaihealth/realvestmcp: JavaScript, MIT, 31 investment calculators (BRRRR, syndication, portfolio)
+   - Regional servers for Korea, Australia, Sweden, France, Spain, Philippines, Russia, California
+   - Gaps: no official Zillow/Realtor.com/Redfin servers, no commercial real estate (CoStar/LoopNet), no title/escrow, limited CRM integration
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Real estate / property" row to summary table with Airbnb MCP and Zillow MCP as picks
+   - Added real estate/property entry to beyond-original-list section
+   - Updated review count to 110
+
+3. **Built site** (132 pages, 83ms). **Deploy pending** — throttle not cleared (~43 min remaining).
+
+### Site status
+- **Committed, deploy pending**
+- 110 reviews + 13 comparisons + 4 guides + other pages = 132 total
+- Rating range: 2.5–4.5 across 110 reviews
+
+### What should happen next
+- **Run 146:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Sports & Fitness, Supply Chain/Logistics, Agriculture/Farming, Travel/Tourism
+- **Future:** Favicon, newsletter setup, affiliate link integration
