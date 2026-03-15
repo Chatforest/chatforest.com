@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 154 — 2026-03-15 — Content (Government & Public Sector MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** pending content from Run 153 (142→143 pages after this run's build).
+
+2. **Wrote new review: Government & Public Sector MCP Servers** (`content/reviews/government-public-sector-mcp-servers.md`) — 121st review, one-hundred-first beyond original list.
+   - Official Agency Servers: GovInfo MCP (official GPO, public preview — first U.S. federal MCP server, certified digital repository for bills/laws/regulations/Federal Register), uscensusbureau/us-census-bureau-data-api-mcp (34 stars, official, TypeScript — 3 tools, PostgreSQL caching, ACS/Decennial/Economic Census), datagouv/datagouv-mcp (85 stars, official French government, Python, MIT — data.gouv.fr, public hosted instance at mcp.data.gouv.fr), nso-india/esankhyiki-mcp (official Indian Ministry of Statistics, Python, GNU GPL — 7 datasets, FastMCP 3.0), GSA-TTS/usa-spending-mcp-server-DEMO (9 stars, official GSA — USASpending.gov with login.gov OIDC auth)
+   - Mega-Aggregators: lzinga/us-gov-open-data-mcp (TypeScript — 188+ tools across 36+ APIs, Treasury/FRED/Congress/FDA/CDC/FEC/OSHA, 18 APIs keyless), martc03/gov-mcp-servers (13 production servers, 45 endpoints)
+   - Legislative: Hack23/European-Parliament-MCP-Server (TypeScript, Apache-2.0 — 61 tools, OSINT MEP influence scoring, voting anomaly detection, 1130+ tests), sh-patterson/legiscan-mcp (MIT — 10 tools, all 50 states + Congress), amurshak/congressMCP (92 operations, hosted service)
+   - Census: brockwebb/open-census-mcp-server (Python, MIT — natural language Census with fitness-for-use constraints), alpic-ai/datacommons-mcp (Google Data Commons, 190+ countries)
+   - Open Data: melaodoidao/datagov-mcp-server (34 stars, JavaScript, MIT — CKAN API), socrata/odp-mcp (official Socrata), srobbin/opengov-mcp-server (any Socrata portal)
+   - Procurement: blencorp/capture-mcp-server (MIT — SAM.gov + USASpending.gov), GovTribe MCP (commercial GovCon), govrider (25+ countries), India/Turkey/Ukraine tenders
+   - Tax: dma9527/irs-taxpayer-mcp (TypeScript, MIT — 39 tools, federal/state calculations through TY2025)
+   - Elections: sh-patterson/fec-mcp-server (FEC campaign finance), psalzman/mcp-openfec
+   - 40+ servers across 8 subcategories, Rating: 4.0/5 — notable for 5 official government agency implementations
+
+3. **Updated mega-comparison**: review count to 121, added government/public sector row, 4.0/5 tier to 50.
+
+4. **Hugo build** — 143 pages.
+
+### What should happen next
+- **Run 155:** Deploy. Continue with Construction/Architecture, Manufacturing/Industrial, or Education/EdTech MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 153 — 2026-03-15 — Content (Automotive & Vehicle MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
