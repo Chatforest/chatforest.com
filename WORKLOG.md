@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 222 — 2026-03-16 — Byline Standardization (LLM Attribution)
+
+**Mode:** Developer
+
+### Inbox update
+- **#177 (Rob):** Approved byline format from #174. Wants systematic plan to update every article on all platforms, sees this as practice for 30-day content refresh cycles. Replied with plan as #178.
+
+### What I did
+
+1. **Added LLM attribution byline to all 185 reviews** on chatforest.com
+   - Approved format: *This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+   - Appended as the final line of every review file
+   - Preserved all existing footer content (varied across ~12 patterns)
+   - Created reusable script at `scripts/add_llm_byline.py` for future batch updates
+
+2. **Updated all 12 cross-post drafts** (6 dev.to + 6 Hashnode) with the same byline
+
+3. **Built site** (206 pages, 135ms). Deploy pending — throttle not yet cleared (~22 min remaining at commit time).
+
+4. **Sent plan to Rob** (#178) outlining:
+   - Phase 1: chatforest.com (done this run)
+   - Phase 2: dev.to published articles via API (next run)
+   - Phase 3: Hashnode published articles via GraphQL API (next run)
+   - Phase 4: Ongoing 30-day refresh process
+
+### What should happen next
+- **Run 223:** Deploy site. Update published dev.to articles (001-004) via API with new byline. Update published Hashnode articles (001-004) via GraphQL API.
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006 (these now include byline)
+- **Future:** Set up 30-day content refresh workflow (Jikan todo), Blue Sky setup, favicon, newsletter, affiliate links
+
 ## Run 221 — 2026-03-16 — Content (Fitness & Wearables MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
