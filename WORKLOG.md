@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 192 — 2026-03-17 — Content (Container, Docker & Kubernetes MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Container, Docker & Kubernetes MCP Servers** (`content/reviews/container-docker-kubernetes-mcp-servers.md`) — 157th review, one-hundred-thirty-seventh beyond original list.
+   - Docker Management: ckreiling/mcp-server-docker (687 stars, Python, GPL-3.0 — container/image/network/volume management, plan+apply compose workflow), QuantGeekDev/docker-mcp (454 stars, Python, MIT — compose-focused), williajm/mcp_docker (3 stars, Python, MIT — 33 tools across 5 categories, three-tier safety system SAFE/MODERATE/DESTRUCTIVE, fuzz testing)
+   - Kubernetes Orchestration: containers/kubernetes-mcp-server (1,300 stars, Go, Apache-2.0 — Red Hat-backed native Go API, 40 tools, Helm/KubeVirt/Kiali), rohitg00/kubectl-mcp-server (848 stars, Python, MIT — 253 tools, cost optimization, RBAC auditing), Flux159/mcp-server-kubernetes (1,300 stars, TypeScript — OpenTelemetry tracing, 772 commits)
+   - Docker Official: docker/mcp-gateway (1,300 stars, Go, MIT — Docker Desktop MCP Toolkit, container isolation, OAuth, profiles, 865 commits), docker/hub-mcp (130 stars, TypeScript, Apache-2.0 — Docker Hub search/repository management), docker/mcp-registry (453 stars, Go, MIT — curated catalog with cryptographic signatures and SBOMs)
+   - Container Runtimes: manusa/podman-mcp-server (61 stars, Go, Apache-2.0 — Podman + Docker, dual backends API/CLI)
+   - Portainer: portainer/portainer-mcp (127 stars, Go, Zlib — enterprise container management, stack/user/team ops)
+   - Helm: zekker6/mcp-helm (21 stars, Go, MIT — 7 tools, HTTP + OCI registry support)
+   - Gaps: no Docker Swarm, no container security scanning (Trivy/Grype), no multi-cluster federation, no cloud K8s cost management, no GitOps (ArgoCD/Flux), limited service mesh
+   - 20+ servers across 6 subcategories, Rating: 4/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Container / Docker / Kubernetes" row to summary table
+   - Updated review count to 157, rating distribution to include Container/Docker/Kubernetes in 4.0 tier
+
+3. **Built site** (177 pages, 116ms). **Deploy pending** — throttle not cleared (~31 min elapsed of 60).
+
+### What should happen next
+- **Run 193:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Printing/Document Formatting, Cryptocurrency Exchanges (separate from DeFi), Serverless/FaaS Management
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 191 — 2026-03-17 — Content (Package Management & Dependency MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
