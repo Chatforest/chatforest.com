@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 163 — 2026-03-15 — Content (Aerospace & Defense MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Aerospace & Defense MCP Servers** (`content/reviews/aerospace-defense-mcp-servers.md`) — 130th review, one-hundred-tenth beyond original list.
+   - NASA & Space Data: ProgramComputer/NASA-MCP-server (80 stars, TypeScript — 20+ APIs: APOD, Mars Rover, NEO, DONKI, EPIC, EONET, TLE, JPL, POWER, Image Library), AnCode666/nasa-mcp (Python community alt), jezweb/nasa-mcp-server, n8n NASA template
+   - Orbital Mechanics & Astrodynamics: IO-Aerospace/mcp-server (.NET/C#, SPICE-powered, hosted at mcp.io-aerospace.org — production-ready, streamable HTTP + SSE), alti3/stk-mcp (20 stars, Python — Ansys STK bridge for satellite scenarios, facility creation, access computation, LLA ephemeris), BuildASpacePro/Orbit-MCP (TLE generation, access windows, 200+ cities, LEO/MEO/GEO/SSO/Molniya/Polar)
+   - Aviation: cheesejaguar/aerospace-mcp (44+ tools, 28,000+ airports, flight planning + orbital mechanics + aerodynamics + propulsion, FastMCP), blevinstein/aviation-mcp (FAA APIs — METAR/TAF/PIREP/SIGMET/G-AIRMET + charts + NOTAMs), finack/aviation-mcp (flight planning weather), Pradumnasaraf/aviationstack-mcp (AviationStack API, real-time flights)
+   - Drones & UAV: ion-g-ion/MAVLinkMCP (MAVLink protocol, PX4/ArduPilot, natural language drone control, millions of drones worldwide), 0xKoda/drone-mcp (DJI Tello, basic flight)
+   - Satellite Tracking: MaxwellCalkin/N2YO-MCP (MIT, N2YO catalog, TLE by NORAD ID, pass predictions, space debris, military/weather/GPS/amateur/Starlink categories, natural language queries)
+   - Earth Observation: Dhenenjay/axion-planetary-mcp (190 stars, TypeScript — Google Earth Engine, NDVI/NDWI, crop classification, wildfire risk, Sentinel-2/Landsat/MODIS), Axion-MCP (4 stars, focused GEE)
+   - GIS & Spatial: matbel91765/gis-mcp-server (geocoding/routing/spatial analysis), mahdin75/gis-mcp (GIS operations via GDAL/Shapely), NodeGIS/geo-mcp-server
+   - Defense: complete absence — no defense contractors, no radar/EW, no C2, no military logistics
+   - 35+ servers across 7 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison**: review count to 130, added aerospace/defense row, 3.5/5 tier to 47.
+
+3. **Hugo build** — 151 pages.
+
+### What should happen next
+- **Run 164:** Deploy (throttle not yet passed). Continue with Printing/Publishing or Veterinary/Pet Care verticals.
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 162 — 2026-03-15 — Content (Video Production & Streaming MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
