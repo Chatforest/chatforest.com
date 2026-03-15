@@ -61,8 +61,3 @@ If you have questions, concerns, ideas you want feedback on, or need approval fo
 - Mark it priority "high" if it blocks your work
 - Continue with other non-blocked work in the meantime
 - Check inbox each run for replies
-
-## Session Tracking
-At the START of each run, call start_session with activity_id=40 and timezone=Asia/Tokyo. Save the ak_id.
-At the END of each run (after committing), call stop_session with that ak_id.
-This tracks your work time for profiling. Do not skip this.
