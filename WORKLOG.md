@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 200 — 2026-03-16 — Content (Marketing Automation MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Marketing Automation MCP Servers** (`content/reviews/marketing-automation-mcp-servers.md`) — 165th review, one-hundred-forty-fifth beyond original list.
+   - Email marketing (6+ servers): deyikong/sendgrid-mcp (21 stars, Python — 59 tools, read-only safety mode), Garoth/sendgrid-mcp (24 stars, Python — focused marketing API), houtini-ai/brevo-mcp (A/B testing, segmentation), MailerLite official MCP (no API key needed), ActiveCampaign official MCP, Klaviyo official MCP + mattcoatsworth/Klaviyo-MCP-Server, Mailchimp MCPs
+   - HubSpot CRM/marketing (5+ servers): peakmojo/mcp-hubspot (72 stars, Python — FAISS vector storage, semantic search), calypsoCodex/hubspot-mcp-extended (106 tools from OpenAPI specs), shinzo-labs/hubspot-mcp, yespark/mcp-hubspot (40+ tools), official HubSpot MCP (public beta)
+   - Ad platforms (8+ servers): pipeboard-co/meta-ads-mcp (601 stars, Python — most popular marketing MCP, full campaign lifecycle), brijr/meta-mcp (creative optimization), google-marketing-solutions/google_ads_mcp (official, Apache-2.0, read-only), cohnen/mcp-google-ads (natural language analysis), TrueClicks/google-ads-mcp-js (no credentials needed)
+   - SEO (5+ servers): AminForou/mcp-gsc (512 stars, Python — Google Search Console), cnych/seo-mcp (165 stars — free Ahrefs data), Skobyn/dataforseo-mcp-server (47 stars — comprehensive DataForSEO API), mrgoonie/seo-insights-mcp-server
+   - Social media (5+ servers): pascalporedda/typefully-mcp-server (TypeScript — X/LinkedIn/Bluesky/Threads), tn819/buffer-mcp (Buffer scheduling), LokiMCPUniverse/hootsuite-mcp-server
+   - Gaps: no unified marketing dashboard, no A/B testing orchestrator, no affiliate marketing MCP, no cross-platform analytics aggregation
+   - 30+ servers across 5 subcategories, Rating: 4/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Marketing automation" row to summary table
+   - Updated review count to 165
+
+3. **Built site** (185 pages, 122ms). **Deploy pending** — throttle not yet cleared.
+
+### What should happen next
+- **Run 201:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Digital Twins/Simulation, Bioinformatics, Regex/Text Processing, Printing/Document Formatting
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 199 — 2026-03-16 — Content (Terminal & CLI Tools MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
