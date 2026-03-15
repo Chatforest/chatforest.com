@@ -3,6 +3,41 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 215 — 2026-03-16 — Content (Interior Design & Architecture MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new messages from Rob. Marked #174 and #175 (my own replies) as seen.
+- Still awaiting Rob's reply on: #174 (byline format), #175 (Blue Sky acknowledged)
+
+### What I did
+
+1. **Wrote new review: Interior Design & Architecture MCP Servers** (`content/reviews/interior-design-architecture-mcp-servers.md`) — 180th review, one-hundred-sixtieth beyond original list.
+   - Blender (1 dominant server): ahujasid/blender-mcp (17.6k stars, Python — 18+ tools, geometry nodes, Polyhaven/Sketchfab asset libraries, Hyper3D generation, viewport screenshots), seehiong/blender-mcp-n8n (45+ tools via n8n automation)
+   - AutoCAD (4+ servers): puran-water/autocad-mcp (159 stars, Python — AutoLISP execution, 8 tools, 600+ P&ID symbols, ezdxf headless backend), AnCode666/multiCAD-mcp (46 tools, 4 CAD platforms), daobataotie/CAD-MCP (multi-CAD NLP), chichicaste/mcp-autocad-server (learning reference)
+   - FreeCAD (5+ servers): proximile/FreeCAD-MCP (57 tools, Docker headless, Vision AI, TRELLIS.2 image-to-3D, Gradio UI), bonninr/freecad_mcp, lucygoodchild/freecad-mcp-server, spkane/freecad-addon-robust-mcp-server, contextform/freecad-mcp
+   - SketchUp (2 servers): mhyrr/sketchup-mcp (182 stars, Ruby/Python — woodworking joints, component manipulation), BearNetwork-BRNKC/SketchUp-MCP
+   - Rhino & Grasshopper (5+ servers): jingcheng-chen/rhinomcp (274 stars, Python — object/layer management, script execution), veoery/GH_mcp_server (GHPython generation), dongwoosuk/rhino-grasshopper-mcp (ML auto-layout), alfredatnycu/grasshopper-mcp (intent recognition), reer-ide/rhino_mcp
+   - Revit/BIM (2+ servers): revit-mcp/revit-mcp (18 stars, C#/Python — CRUD on BIM elements, plugin architecture)
+   - Fusion 360 (4+ servers): AuraFriday (thread-safe), mycelia1 (script gen+exec), Joe-Spencer (ADSK resources)
+   - OpenSCAD (3+ servers): quellant/openscad-mcp (multi-perspective rendering, 300 tests), fboldo (STL+PNG), rahulgarg123
+   - Specialized: cad-agent (build123d for 3D printing), mcp_3d_relief (image-to-STL)
+   - Gaps: no room layout/furniture placement, no floor plan generators, no color palettes, no furniture catalogs (IKEA/Wayfair), no AR/VR, no rendering engines (V-Ray/Lumion), no landscape architecture, no building codes, no SolidWorks
+   - 30+ servers across 7 subcategories, Rating: 4/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Interior design / architecture" row to summary table
+   - Updated review count to 180
+
+3. **Built site** (200 pages, 131ms). Deploy pending — throttle not yet cleared (~36 min since last deploy).
+
+### What should happen next
+- **Run 216:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Emergency/Disaster Response, Insurance/InsurTech, Logistics/Supply Chain (already have one?), Genealogy/Family History
+- **Awaiting Rob's reply on:** #174 (byline format), #175 (Blue Sky acknowledged)
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Implement byline attribution once Rob approves format, Blue Sky setup, favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 214 — 2026-03-16 — Content (Sports & Fitness Analytics MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
