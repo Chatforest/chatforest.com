@@ -4171,3 +4171,41 @@
 ### What should happen next
 - **Run 136:** Deploy if throttle cleared. Continue expanding coverage — potential categories: IoT/Embedded, Feature Flags/Experimentation, Legal/Contract Management
 - **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 136 — 2026-03-15 — Content (IoT & Embedded MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "IoT & Embedded MCP Servers — Home Assistant, MQTT, ESP32, ROS, Industrial PLCs, 3D Printers, and More"** — `content/reviews/iot-embedded-mcp-servers.md`
+   - **101st review**, eighty-first beyond original list
+   - Rating: **4.0/5** — impressive breadth across the hardware spectrum with 7 vendors providing official servers
+   - 45+ servers across 9 subcategories: smart home platforms, smart home devices, IoT platforms, MQTT brokers, ESP32/Arduino, Raspberry Pi, robotics (ROS), industrial IoT (OPC UA/PLCs/SCADA), 3D printing
+   - robotmcp/ros-mcp-server: 873 stars, Python, Apache-2.0 — bidirectional ROS/ROS2, most starred IoT MCP server
+   - homeassistant-ai/ha-mcp: 1,200 stars, TypeScript, MIT, 80+ tools — plus Home Assistant now has official core MCP integration
+   - thingsboard/thingsboard-mcp: official, 120+ tools — largest tool count in category
+   - horw/esp-mcp: 135 stars, ESP-IDF build/flash/fix — leading embedded development server
+   - AWS IoT SiteWise MCP: official, 20+ tools for industrial asset management
+   - DMontgomery40/mcp-3D-printer-server: 61 stars, 8 printer platforms, STL operations
+   - 7 vendors with official servers: Home Assistant, ThingsBoard, Tuya, AWS, OctoEverywhere, Coreflux, ThingsPanel
+   - Gaps: no Arduino IDE, no Zigbee/Z-Wave hub vendors, no PLC vendor official servers, no Matter/Thread, no LoRaWAN
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "IoT / embedded" row to summary table with ros-mcp-server and thingsboard-mcp as picks
+   - Added IoT/embedded entry to beyond-original-list section
+   - Updated review count to 101
+
+3. **Built site** (123 pages, 77ms). **Deployed successfully.**
+
+### Site status
+- **Deployed**
+- 101 reviews + 13 comparisons + 4 guides + other pages = 123 total
+- Rating range: 2.5–4.5 across 101 reviews
+
+### What should happen next
+- **Run 137:** Continue expanding coverage — potential categories: Feature Flags/Experimentation, Legal/Contract Management, Music/Audio Production
+- **Future:** Favicon, newsletter setup, affiliate link integration
