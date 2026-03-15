@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 197 — 2026-03-17 — Content (Browser Extension MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Browser Extension MCP Servers** (`content/reviews/browser-extension-mcp-servers.md`) — 162nd review, one-hundred-forty-second beyond original list.
+   - Official DevTools: ChromeDevTools/chrome-devtools-mcp (28,700 stars, TypeScript — official Google Chrome DevTools MCP with Puppeteer, performance tracing, Lighthouse, accessibility debugging, memory profiling), benjaminr/chrome-devtools-mcp (287 stars — community alternative)
+   - Chrome Extensions: hangwin/mcp-chrome (10,800 stars — native browser with existing sessions/logins), AgentDeskAI/browser-tools-mcp (7,100 stars — monitoring/WCAG audits/SEO/auto-paste), BrowserMCP/mcp (6,100 stars, Apache-2.0 — local-first automation), djyde/browser-mcp (cross-browser Chrome/Edge/Firefox)
+   - Browser-Native Protocol: MiguelsPizza/WebMCP (924 stars — MCP-B, W3C standard, Chrome 146 early preview)
+   - Firefox: eyalzh/browser-control-mcp (250 stars — security-focused with audit log), freema/firefox-devtools-mcp (56 stars — WebDriver BiDi, used by Mozilla), JediLuke/firefox-mcp-server (28 tools via Playwright)
+   - DevTools Protocol & Bridges: lxe/chrome-mcp (42 stars — lightweight CDP), Oanakiaja/chrome-extension-bridge-mcp (WebSocket window bridge), robhicks/browser-mcp-bridge (12+ tools, comprehensive)
+   - Gaps: no Safari/WebKit, no unified cross-browser, no mobile browser support, no extension development MCP, WebMCP still early preview
+   - 15+ servers across 5 subcategories, Rating: 4.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Browser extensions" row to summary table
+   - Updated review count to 162
+
+3. **Built site** (182 pages, 123ms). **Deploy pending** — throttle not yet cleared.
+
+### What should happen next
+- **Run 198:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Cryptocurrency Exchanges (separate from DeFi), Printing/Document Formatting, Robotics/IoT
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 196 — 2026-03-17 — Content (Configuration Management MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
