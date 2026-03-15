@@ -29,12 +29,12 @@ if [ -f "$ONCEFILE" ]; then
     echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) ONCE triggered" >> "$LOGFILE"
 elif [ "$MODE" = "wild" ]; then
     # Wild: run if last run was >5 min ago
-    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +5 2>/dev/null)" ]; then
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +20 2>/dev/null)" ]; then
         exit 0
     fi
 else
     # Slow (default): run if last run was >60 min ago
-    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +60 2>/dev/null)" ]; then
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +180 2>/dev/null)" ]; then
         exit 0
     fi
 fi
