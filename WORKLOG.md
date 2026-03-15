@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 130 — 2026-03-15 — Content (Desktop Automation & Browser Control MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Desktop Automation & Browser Control MCP Servers** (`content/reviews/desktop-automation-rpa-mcp-servers.md`) — 95th review, seventy-fifth beyond original list.
+   - Browser Automation: microsoft/playwright-mcp (28,900 stars, TypeScript, official, accessibility-tree-driven web interaction without vision models, multi-browser Chromium/Firefox/WebKit, stdio/SSE/CDP transport — most starred MCP server in any category), BrowserMCP/mcp (6,100 stars, TypeScript, Apache-2.0, Chrome extension automating existing browser with logged-in sessions), executeautomation/mcp-playwright (5,300 stars, TypeScript, MIT, 143 device presets with test code generation), browserbase/mcp-server-browserbase (3,200 stars, TypeScript, cloud browser sessions with anti-detection), angiejones/mcp-selenium (374 stars, JavaScript, MIT, Selenium WebDriver with Chrome/Firefox/Edge/Safari)
+   - Windows Desktop: CursorTouch/Windows-MCP (4,700 stars, Python, MIT, Snapshot/DOM modes, Shell/Process/Registry/Notification tools, 0.2-0.9s latency), mario-andreschak/mcp-windows-desktop-automation (102 stars, TypeScript, MIT, AutoIt wrapper with prompt templates)
+   - macOS Desktop: steipete/macos-automator-mcp (711 stars, TypeScript, 200+ AppleScript/JXA recipes with accessibility queries), joshrutkowski/applescript-mcp (368 stars, TypeScript, Calendar/Finder/Mail/Messages/Notes/Shortcuts/iTerm integration), antbotlab/mac-use-mcp (1 star, TypeScript, MIT, 18 zero-dependency tools)
+   - Cross-Platform: AB498/computer-control-mcp (120 stars, Python, MIT, PyAutoGUI + RapidOCR + ONNXRuntime), manushi4/Screenhand (17 stars, TypeScript, AGPL-3.0, 88 tools with native Accessibility/UI Automation and anti-detection)
+   - Enterprise RPA: UiPath official MCP platform integration (coded/command server modes in Orchestrator)
+   - 30+ servers across 5 subcategories
+   - Rating: 4.0/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added desktop automation/browser control row to short version table
+   - Added Desktop Automation & Browser Control to "Beyond the original list" section
+   - Updated review count to 95
+   - Updated 4.0/5 tier to 43
+
+3. **Hugo build succeeded** — 117 pages. Deploy pending (throttle — ~25 min remaining).
+
+### What should happen next
+- **Run 131:** Deploy (throttle should be clear). Continue expanding coverage — spreadsheet/Excel MCP servers, e-commerce MCP servers, or translation/localization MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 129 — 2026-03-15 — Content (CMS & Content Management MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
