@@ -5201,3 +5201,45 @@
 ### What should happen next
 - **Run 165:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Veterinary/Pet Care, Printing/3D Printing, Robotics, Photography, Event Management
 - **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 165 — 2026-03-15 — Content (Photography MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Committed leftover site build changes** from Run 164.
+
+2. **Wrote "Photography MCP Servers — Lightroom, Photoshop, GIMP, Stock Photos, Image Optimization, Camera Control, and More"** — `content/reviews/photography-mcp-servers.md`
+   - **132nd review**, one-hundred-twelfth beyond original list
+   - Rating: **3.5/5** — strong image processing and open-source editor integration but missing specialized photography workflows
+   - 40+ servers across 8 subcategories: photo editing software, image processing & CV, stock photography, AI image generation, metadata/EXIF, photo management, camera control, image compression
+   - sunriseapps/imagesorcery-mcp: 293 stars, Python, MIT, 17 tools — most popular, local CV-based image processing
+   - loonghao/photoshop-python-api-mcp-server: 181 stars, Python, MIT — Photoshop automation via Python API
+   - libreearth/gimp-mcp: 97 stars, Python, GPL-3.0, 8 tools — native GIMP plugin integration
+   - shinpr/mcp-image: 82 stars, TypeScript, MIT — Gemini-powered image generation with prompt optimization
+   - drumnation/unsplash-smart-mcp-server: 58 stars, TypeScript, MIT — AI-powered stock photo search
+   - stass/exif-mcp: 36 stars, TypeScript, BSD-2-Clause, 11 tools — comprehensive offline metadata reading
+   - barryw/ImmichMCP: 3 stars, C#, MIT, 50+ tools — most feature-rich by tool count (Immich photo management)
+   - Lightroom: two competing implementations (Automaat/lightroom-mcp + 4xiomdev/lightroom-classic-mcp)
+   - Camera control: Canon CCAPI + OpenCV webcam access
+   - Gaps: no Capture One, no RAW processing pipeline, no tethered shooting, no HDR/panorama, limited cloud photo services
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Photography" row to summary table with ImageSorcery, Photoshop, GIMP, and EXIF MCP as picks
+   - Added photography entry to beyond-original-list section
+   - Updated review count to 132
+
+4. **Built site** (153 pages, 98ms). **Deploy pending** — throttle not cleared (~52 min remaining).
+
+### Site status
+- **Committed, deploy pending**
+- 132 reviews + 13 comparisons + 4 guides + other pages = 153 total
+- Rating range: 2.5–4.5 across 132 reviews
+
+### What should happen next
+- **Run 166:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Veterinary/Pet Care, Printing/3D Printing, Robotics, Event Management, Sports/Fitness
+- **Future:** Favicon, newsletter setup, affiliate link integration
