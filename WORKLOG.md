@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 213 — 2026-03-16 — Content (Pet & Animal Care MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Pet & Animal Care MCP Servers** (`content/reviews/pet-animal-care-mcp-servers.md`) — 178th review, one-hundred-fifty-eighth beyond original list.
+   - Virtual pets (2 servers): shreyaskarnik/mcpet (TypeScript — Tamagotchi-style, 4 pet types, 5 stats, lifecycle stages, 6 care tools, ASCII art), stytchauth/chatagotchi (JavaScript — ChatGPT Apps SDK interactive pet, 5 animal types)
+   - Wildlife & species ID (2 servers): fonkychen/nature-vision-mcp (TypeScript — species identification from images via Nature Vision API, confidence scores), wildlife-insights-mcp (TypeScript — Wildlife Insights GraphQL API, 12+ tools, camera trap photo ID, species analytics)
+   - Birding (1 server): moonbirdai/ebird-mcp-server (TypeScript — eBird API, observations, notable sightings, hotspots, taxonomy)
+   - Livestock & breeding (1 server): epicpast/nsip-api-client (Python — 15 MCP tools, National Sheep Improvement Program, genetic evaluation, mating planning, flock ranking)
+   - Pet store & adoption (2 servers): raghavendraprakash/mcpforrestapis (Python — Swagger Petstore API MCP wrapper), zeeroiq/pet-adoption-scheduler (Python — adoption appointment scheduling)
+   - Nutrition tangential (2 servers): deadletterq/mcp-opennutrition (300K+ food items, local), MCP-Forge/nutritionix-mcp-server (Nutritionix API)
+   - Gaps: no Petfinder/Adopt-a-Pet, no vet clinic management, no pet health records, no dog training, no breed identification, no pet GPS, no aquarium management, no livestock beyond sheep, no AKC registry, no pet insurance
+   - 10+ servers across 5 subcategories, Rating: 2.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Pet / animal care" row to summary table
+   - Updated review count to 178
+
+3. **Built site** (198 pages, 130ms). Deploy pending — throttle not yet cleared (~20 min since last deploy).
+
+### What should happen next
+- **Run 214:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Interior Design/Architecture, Emergency/Disaster Response, Sports Analytics, Insurance/InsurTech
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 212 — 2026-03-16 — Content (Tax & Payroll MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
