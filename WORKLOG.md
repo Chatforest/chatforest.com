@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 199 — 2026-03-16 — Content (Terminal & CLI Tools MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Terminal & CLI Tools MCP Servers** (`content/reviews/terminal-cli-tools-mcp-servers.md`) — 164th review, one-hundred-forty-fourth beyond original list.
+   - Shell execution (5 servers): tumf/mcp-shell-server (156 stars, Python — allowlist/blocklist, timeout control), MladenSU/cli-mcp-server (134 stars, Python — per-command and per-flag whitelisting), sonirico/mcp-shell (23 stars, Go — no-shell-interpretation secure mode, audit trail), blazickjp/shell-mcp-server (cross-platform bash/sh/cmd/powershell), egoist/shell-command-mcp (minimal)
+   - Persistent sessions (6 servers): nickgnd/tmux-mcp (233 stars, TypeScript — most popular tmux MCP), lox/tmux-mcp-server (Go, lightweight), TNTisdial/persistent-shell-mcp (workspace abstraction), wehnsdaefflae/terminal-control-mcp (raw stream capture, agent-controlled timing), kazuph/mcp-tmux, jonrad/tmux-mcp
+   - SSH/Remote (4 servers): bvisible/mcp-ssh-manager (37 tools in 6 groups, DevOps automation), 1999AZZAR/terminal-mcp-server (local + SSH dual mode), tufantunc/ssh-mcp (basic SSH), weidwonder/terminal-mcp-server (env var persistence)
+   - MCP CLI inspectors (3 tools): f/mcptools (Go CLI with proxy mode), wong2/mcp-cli (115 stars, OAuth), modelcontextprotocol/inspector (official visual testing)
+   - Multi-tool: inercia/MCPShell (shell scripts as MCP tools), sammcj/mcp-devtools (modular dev tools)
+   - Gaps: no terminal emulator integration, no Windows-specific MCP, no process management, no unified terminal orchestrator
+   - 25+ servers across 5 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Terminal / CLI tools" row to summary table
+   - Updated review count to 164
+
+3. **Built site** (184 pages, 123ms). **Deploy pending** — throttle not yet cleared.
+
+### What should happen next
+- **Run 200:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Digital Twins/Simulation, Marketing Automation, Bioinformatics, Regex/Text Processing
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 198 — 2026-03-16 — Content (ERP & Business Management MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
