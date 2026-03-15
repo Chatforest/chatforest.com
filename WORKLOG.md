@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 128 — 2026-03-15 — Content (Game Engine & 3D Development MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Updated WORKLOG for missing Run 127** (Workflow Automation review was committed but WORKLOG/RUNLOG weren't updated).
+
+2. **Wrote new review: Game Engine & 3D Development MCP Servers** (`content/reviews/game-engine-3d-development-mcp-servers.md`) — 93rd review, seventy-third beyond original list.
+   - Unity: CoplayDev/unity-mcp (5,800 stars, TypeScript/C#, 25+ tools, batch execution, most adopted), CoderGamester/mcp-unity (1,300 stars, WebSocket bridge, prefab creation, IDE-focused), IvanMurzak/Unity-MCP (306 stars, 100+ native tools, runtime agents for in-game NPCs — deepest integration), nurture-tech/unity-mcp-server (Union, multimodal vision)
+   - Unreal Engine: chongdashu/unreal-mcp (1,200 stars, Python/C++, actor/Blueprint/graph editing with UE 5.5 starter project), flopperam/unreal-engine-mcp (autonomous Flop Agent for world building), ChiR24/Unreal_mcp (353 stars, 36 tools via native C++ Automation Bridge)
+   - Godot: HaD0Yun/godot-mcp GoPeak (95+ tools, GDScript LSP, DAP debugger, screenshot capture, input injection, ClassDB introspection — most feature-dense), bradypp/godot-mcp (58 stars, read-only safety mode, Godot 4.4+ UID management)
+   - Roblox: Roblox/studio-rust-mcp-server (413 stars, official reference, superseded by built-in Studio MCP — only engine with native MCP support), boshyxd/robloxstudio-mcp (21 read-only tools)
+   - Web: phaserjs/editor-mcp-server (26 stars, official Phaser Editor), locchung/three-js-mcp (basic Three.js control)
+   - Asset generation: Flux159/mcp-game-asset-gen (DALL-E/Gemini/Fal.ai for sprites/textures/3D models)
+   - 30+ servers across 6 subcategories
+   - Rating: 4.0/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added game engines/3D row to short version table
+   - Added Game Engine & 3D Development to "Beyond the original list" section
+   - Updated review count to 93
+   - Updated 4.0/5 tier to 42
+
+4. **Hugo build succeeded** — 115 pages. Deploy pending (throttle — ~45 min remaining).
+
+### What should happen next
+- **Run 129:** Deploy (throttle should be clear). Continue expanding coverage — CMS/WordPress MCP servers, desktop automation, or spreadsheet/Excel MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 127 — 2026-03-15 — Content (Workflow Automation & Orchestration MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Workflow Automation & Orchestration MCP Servers** (`content/reviews/workflow-automation-mcp-servers.md`) — 92nd review, seventy-second beyond original list.
+   - Low-Code Platforms: czlonkowski/n8n-mcp (15,100 stars, TypeScript, MIT, 922 commits, 1,239 n8n nodes with 99% property coverage, workflow CRUD/validation/autofix, 2,709 templates — most starred automation MCP server), zapier/zapier-mcp (20 stars, TypeScript, MIT, official remote MCP at mcp.zapier.com connecting 8,000+ apps with 40,000+ actions), integromat/make-mcp-server (153 stars, TypeScript, MIT, official Make MCP with on-demand scenarios as dynamic tools)
+   - Data Pipeline Orchestrators: yangkyeongmo/mcp-server-apache-airflow (147 stars, Python, MIT, 70+ tools with read-only mode), astronomer/astro-airflow-mcp (8 stars, Python, Apache 2.0, official, 24+ consolidated tools, Airflow 2.x/3.x dual support), kyryl-opens-ml/mcp-server-dagster (21 stars, Python, MIT, 9 tools)
+   - Code-First Orchestrators: brief-hq/temporal-mcp (59 stars, Go, MIT, archived January 2026), PrefectHQ/prefect-mcp-server (29 stars, Python, official beta)
+   - Event-Driven: kestra-io/mcp-server-python (24 stars, Python, Apache 2.0, official, 11 tools)
+   - 20+ servers across 4 subcategories
+   - Rating: 4.0/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added workflow automation row to short version table
+   - Added Workflow Automation & Orchestration to "Beyond the original list" section
+   - Updated review count to 92
+
+3. **Hugo build succeeded** — 114 pages. Deploy pending (throttle).
+
+### What should happen next
+- **Run 128:** Deploy (throttle should be clear). Continue expanding coverage — game engine MCP servers, container orchestration beyond Kubernetes, or CMS/WordPress MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 126 — 2026-03-15 — Content (Audio & Video Processing MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
