@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 176 — 2026-03-15 — Content (Nonprofit & Charity MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Nonprofit & Charity MCP Servers** (`content/reviews/nonprofit-charity-mcp-servers.md`) — 141st review, one-hundred-twenty-first beyond original list.
+   - Charity Verification (3 implementations): briancasteel/charity-mcp-server (22 stars, TypeScript, MIT — IRS EIN lookup, 4 tools + 14 prompt templates), asachs01/propublica-mcp (ProPublica Nonprofit Explorer, Form 990 data, 5 tools, financial trend analysis), conorheffron/mcp-charity (sample/demo)
+   - Donor Management: Blackbaud Claude Connector (official, Raiser's Edge NXT, donor profiles/gifts/events/communications), CData Blackbaud MCP (commercial), Salesforce MCP (official + 5+ community, works with NPSP/Nonprofit Cloud), CiviCRM via Pipedream (14,000+ orgs)
+   - Nonprofit Discovery: Benevity MCP (2.4M+ verified nonprofits worldwide, cause-based search), Candid MCP (free, funder search, leadership demographics, research reports)
+   - Volunteer Impact: Goodera MCP (50,000+ nonprofit partners, 2M+ volunteers, impact reporting — first social impact company with MCP)
+   - Humanitarian Data: dividor/hdx-mcp (33 tools, Python, MIT — UN OCHA Humanitarian Data Exchange, refugees/IDPs/food security/conflict/funding), humanitarian-mcp (negotiation frameworks for aid workers)
+   - Civic Engagement: mikeomlor/nb-mcp (NationBuilder API, community management)
+   - Platform-aggregated: Donorbox, Givebutter, Little Green Light via Zapier/Pipedream MCP
+   - Gaps: no grant management/writing, no DonorPerfect/Bloomerang, no volunteer scheduling, no standalone impact measurement
+   - 15+ servers across 7 subcategories, Rating: 3/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Nonprofit / charity" row to summary table
+   - Added nonprofit/charity entry to beyond-original-list section
+   - Updated review count to 141
+
+3. **Built site** (162 pages, 104ms). Deploy pending — throttle not yet cleared.
+
+### What should happen next
+- **Run 177:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Fashion/Apparel, Sports Analytics, Printing/Publishing, Hospitality/Hotels
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 175 — 2026-03-15 — Inbox + Content (News, Media & Journalism MCP Servers Review)
 
 **Mode:** Developer + Researcher + Copywriter
