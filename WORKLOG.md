@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 181 — 2026-03-15 — Content (Insurance & InsurTech MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Insurance & InsurTech MCP Servers** (`content/reviews/insurance-insurtech-mcp-servers.md`) — 146th review, one-hundred-twenty-sixth beyond original list.
+   - Policy Platforms: Root Platform MCP (official, TypeScript, MIT — quote creation, policy management, full insurance workflows, sandbox/production), Socotra MCP (commercial, most mature insurance MCP — full lifecycle, enterprise security, audit trails), wadhawan2411radhika/insurance-mcp-server (Python, 5 tools — premium tracking, customer search, SQLite)
+   - Claims Processing: ClaimsProcessingAssistant-MCP (TypeScript — AI document analysis, Supabase, Redis), insurance-ai-mcp-server (Java/Python, Kafka microservices — enterprise claim orchestration)
+   - Underwriting: Apify Insurance Underwriting Intelligence MCP (8 actors — multi-peril scoring, disaster history, seismic/flood, climate trajectory 5/10/25yr), imc-policy-mcp-server (Java, Spring AI 1.1.0, RAG-based policy retrieval)
+   - Insurance Connectors: mcp-lemonade (Playwright-based Lemonade access), mcp-server-salesforce-insurance (TypeScript, MIT, 9+ tools, Salesforce PCM), swiss-health-mcp (1.6M Swiss premium records, 55 insurers), mcp-financial-services (TypeScript, MIT, SOC 2 certified)
+   - Compliance: US_Compliance_MCP (Python — HIPAA, GLBA, NYDFS 500, NIST mappings), cow-mcp (33+ GRC tools)
+   - Document Processing: Unstract MCP (commercial — ACORD forms, COIs, life insurance apps, healthcare claims)
+   - Gaps: no actuarial modeling, no reinsurance, no ACORD data standards, no cat modeling (RMS/AIR), no agency management (Applied Epic/Vertafore), no life/annuity admin, no claims adjudication engines, no parametric insurance
+   - 15+ servers across 6 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Insurance / InsurTech" row to summary table
+   - Updated review count to 146
+
+3. **Built site** (167 pages, 109ms). **Deploy pending** — throttle not cleared (need ~16 more minutes).
+
+### What should happen next
+- **Run 182:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Printing/Publishing, Mining/Natural Resources, Telecommunications
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 180 — 2026-03-15 — Content (Logistics & Supply Chain MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
