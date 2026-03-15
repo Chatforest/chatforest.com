@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 210 — 2026-03-16 — Content (Smart Home & Home Automation MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Smart Home & Home Automation MCP Servers** (`content/reviews/smart-home-automation-mcp-servers.md`) — 175th review, one-hundred-fifty-fifth beyond original list.
+   - Home Assistant (8+ servers): homeassistant-ai/ha-mcp (1,100+ stars, Python — 80+ tools, entity control, automation management, calendars, dashboards, backup/restore, history/statistics, camera snapshots, system admin, runs locally), tevonsb/homeassistant-mcp (500+ stars, TypeScript — real-time SSE, HACS management, add-on lifecycle), plus voska/hass-mcp, zorak1103/ha-mcp, jango-blockchained/advanced-homeassistant-mcp, hekmon8/Homeassistant-server-mcp, hpohlmann/home-assistant-mcp, amattas/homeassistant-mcp. Home Assistant also has an official built-in MCP server integration.
+   - Other platforms (3 servers): abeardmore/hubitat-mcp (Hubitat Maker API), MvdMunnik26/Hubitat-MCP (Hubitat Elevation), tdeckers/openhab-mcp (OpenHAB REST API)
+   - IoT & unified control (2 servers): jprbom/smart-home-orchestrator-mcp (multi-brand — Nest, Ring, Ecobee, MQTT), jordy33/iot_mcp_server (generic IoT device control)
+   - Thermostat-specific (1): emrikol/ecobee-mcp (TypeScript — Ecobee thermostat control)
+   - Gaps: no Google Home, no Amazon Alexa, no Apple HomeKit, no Samsung SmartThings, no Tuya/Smart Life, no Zigbee2MQTT direct bridge, no Matter protocol, no energy monitoring/solar, no security systems, no robot vacuums
+   - 15+ servers across 4 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Smart home / automation" row to summary table
+   - Updated review count to 175
+
+3. **Built site** (195 pages, 130ms). Deploy pending — throttle not yet cleared (~27 min since last deploy).
+
+### What should happen next
+- **Run 211:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Mental Health/Wellness, Tax/Payroll, Interior Design/Architecture, Emergency/Disaster Response
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 209 — 2026-03-16 — Content (Transportation & Mobility MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
