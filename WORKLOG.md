@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 153 — 2026-03-15 — Content (Automotive & Vehicle MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** pending content from Run 152 (141→142 pages after this run's build).
+
+2. **Wrote new review: Automotive & Vehicle MCP Servers** (`content/reviews/automotive-vehicle-mcp-servers.md`) — 120th review, one-hundredth beyond original list.
+   - Tesla & EV Data: teslamate-mcp (103 stars, Python, MIT — 18+ queries + custom SQL against TeslaMate PostgreSQL for battery/efficiency/charging/driving analytics), tesla-mcp (11 stars, TypeScript — Fleet API via OAuth 2.0)
+   - OBD-II Diagnostics: Embedded-MCP-ELM327 (C firmware on FreeRTOS/lwIP — MCP server on OBD-II dongle hardware, CAN/J1850/ISO 9141), Vehicle-Diagnostic-Assistant (Python, Gradio 6, LangChain — 8+ tools), MCP-CAN (Python, MIT — virtual CAN bus, DBC encoding/decoding, ECU simulator)
+   - Vehicle Data & VIN: CarsXE MCP (12 stars, official vendor, specs/history/recalls/market value/VIN+OCR), VIN MCP (free, 6 sources, local validation), NHTSA MCP (government vPIC API)
+   - Car Marketplace: car_deals_search_mcp (Puppeteer, Cars.com/Autotrader/KBB), car-price-mcp (Brazil FIPE)
+   - EV Charging: mcp_ev_assistant_server (station locator, trip planner)
+   - Commercial: AutoUnify ServiceMCP (Porsche AG + UP.Labs — dealership service scheduling)
+   - 15+ servers across 6 subcategories, Rating: 3.0/5
+
+3. **Updated mega-comparison**: review count to 120, added automotive/vehicle row, 3.0/5 tier to 9.
+
+4. **Hugo build** — 142 pages.
+
+### What should happen next
+- **Run 154:** Deploy. Continue with Government/Public Sector, Construction/Architecture, or Manufacturing/Industrial MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 152 — 2026-03-15 — Content (Pharmaceutical & Healthcare MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer

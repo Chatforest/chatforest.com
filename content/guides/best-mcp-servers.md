@@ -1,7 +1,7 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 119 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
+description: "We've reviewed 120 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
 og_description: "We've tested 33 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories and beyond. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
@@ -9,7 +9,7 @@ card_description: "We've reviewed 28 MCP servers across 11 categories and beyond
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [118 in-depth reviews](/reviews/) and [13 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [119 in-depth reviews](/reviews/) and [13 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -111,6 +111,7 @@ If you want to skip the details:
 | Energy / utilities | [Energy & Utilities MCP](/reviews/energy-utilities-mcp-servers/) | 3.5/5 | [Power-Agent/PowerMCP](https://github.com/Power-Agent/PowerMCP) (88 stars, 9 power system simulators), [LBNL-ETA/EnergyPlus-MCP](https://github.com/LBNL-ETA/EnergyPlus-MCP) (69 stars, 35 tools from LBNL), [cdgaete/pypsa-mcp](https://github.com/cdgaete/pypsa-mcp) (49 stars, energy modeling) |
 | Insurance | [Insurance MCP](/reviews/insurance-mcp-servers/) | 3.0/5 | [Socotra MCP](https://docs.socotra.com/aiGuide/mcpServer/mcpServerOverview.html) (commercial, all insurance lines), [AWS Insurance Underwriting](https://github.com/aws-samples/sample-quicksuite-chatagent-insurance-underwriting) (6 tools, Apache 2.0), Sure MCP (commercial, quote/bind/service) |
 | Pharmaceutical / healthcare | [Pharmaceutical & Healthcare MCP](/reviews/pharmaceutical-healthcare-mcp-servers/) | 4.5/5 | [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) (102 stars, 9 tools), [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) (98 stars, FHIR bridge), [ChEMBL-MCP-Server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) (77 stars, 22 drug discovery tools), [OpenPharma](https://github.com/openpharma-org) (45 repos) |
+| Automotive / vehicle | [Automotive & Vehicle MCP](/reviews/automotive-vehicle-mcp-servers/) | 3.0/5 | [cobanov/teslamate-mcp](https://github.com/cobanov/teslamate-mcp) (103 stars, 18+ queries, TeslaMate analytics), [carsxe/carsxe-mcp-server](https://github.com/carsxe/carsxe-mcp-server) (12 stars, official vendor, VIN/specs/recalls), [Embedded-MCP-ELM327](https://github.com/castlebbs/Embedded-MCP-ELM327) (MCP on OBD-II hardware) |
 | Vector database | [Chroma MCP](/reviews/chroma-mcp-server/) | 3.5/5 | [Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5, hybrid search) |
 
 Now the details.
@@ -549,7 +550,7 @@ Our rating distribution tells the story:
 | 4.5/5 | 4 | Playwright, Cloudflare, CMS/Content Management, Pharmaceutical/Healthcare |
 | 4.0/5 | 49 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB, AWS, Kubernetes, Terraform, Grafana, Datadog, New Relic, Honeycomb, PagerDuty, Framelink, GitMCP, Mem0, Zep/Graphiti, Asana, Google Calendar, CI/CD, Code Security, Secret Management, Log Management, Infrastructure Automation, Database Administration, API Testing, Data Pipeline/ETL, Geospatial/Mapping, Time-Series Databases, Audio/Video Processing, Workflow Automation, Game Engines/3D, Desktop Automation/Browser Control, E-Commerce/Shopping, Feature Flags/Experimentation, Calendar/Scheduling, Sports/Fitness, Travel/Tourism, Telecommunications/Communications |
 | 3.5/5 | 43 | Context7, Puppeteer, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase, Crawl4AI, Milvus, Docker, Pulumi, Teams, Atlassian, Obsidian, Shopify, Gmail, Outlook, CRM, Analytics, Cloud Storage, Search Engines, Message Queues, PDF/Documents, Monitoring/Uptime, Notification/Email Delivery, Testing/QA, API Gateways, Container Registries, CDN/Edge Computing, DNS/Domains, Network Security, Performance/Load Testing, AI/ML Model Serving, Data Visualization, Chaos Engineering, Blockchain/Web3, Identity/Auth, Legal/Contract Management, Customer Support/Helpdesk, Supply Chain/Logistics, Energy/Utilities |
-| 3.0/5 | 8 | SQLite, Sequential Thinking, Qdrant, Pinecone, Git, Discord, Agriculture/Farming, Insurance |
+| 3.0/5 | 9 | SQLite, Sequential Thinking, Qdrant, Pinecone, Git, Discord, Agriculture/Farming, Insurance, Automotive/Vehicle |
 | 2.5/5 | 2 | PostgreSQL, EverArt |
 
 The actively maintained servers cluster at 4.0. The archived ones cluster at 2.5-3.0. Maintenance matters more than feature count.
