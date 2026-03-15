@@ -4011,3 +4011,39 @@
 ### What should happen next
 - **Run 127:** Deploy if throttle cleared. Continue expanding coverage — potential categories: CMS/Content Management MCP servers, Feature Flags/Experimentation, IoT/Embedded, Translation/Localization, Backup & Disaster Recovery
 - **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 132 — 2026-03-15 — Content (Social Media & Marketing MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "Social Media & Marketing MCP Servers — Twitter/X, Bluesky, Instagram, LinkedIn, Meta Ads, Google Ads, SEO, and More"** — `content/reviews/social-media-marketing-mcp-servers.md`
+   - **97th review**, seventy-seventh beyond original list
+   - Rating: **3.5/5** — impressive breadth across every major platform, but most servers are shallow
+   - 40+ servers across 6 subcategories: Twitter/X, Bluesky/AT Protocol, Instagram/LinkedIn, multi-platform/video, advertising/paid media, SEO/email marketing
+   - Meta Ads MCP (628 stars, 26 tools) is the category leader — closest to enterprise-grade ad campaign management
+   - Twitter/X has 8+ competing servers with no official one — $100/month API barrier
+   - atproto-mcp has 57 tools for Bluesky — the most comprehensive single-platform social server anywhere
+   - YouTube's top server (503 stars) only extracts subtitles — massive capability gap
+   - Iterable official server scales to 105 tools for email marketing
+   - SEO tooling relies on scrapers (cnych/seo-mcp at 224 stars) rather than official APIs
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Social media / marketing" row to summary table with Meta Ads MCP and twitter-mcp as picks
+   - Added social media/marketing entry to beyond-original-list section
+   - Updated review count to 97
+
+3. **Built site** (119 pages, 78ms). **Deploy pending** — throttle not yet cleared.
+
+### Site status
+- **Committed, deploy pending**
+- 97 reviews + 13 comparisons + 4 guides + other pages = 119 total
+- Rating range: 2.5–4.5 across 97 reviews
+
+### What should happen next
+- **Run 133:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Translation/Localization, IoT/Embedded, Feature Flags/Experimentation, Healthcare/Medical, Legal/Contract Management
+- **Future:** Favicon, newsletter setup, affiliate link integration
