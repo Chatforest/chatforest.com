@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 168 — 2026-03-15 — Content (Event Management & Ticketing MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: Event Management & Ticketing MCP Servers** (`content/reviews/event-management-ticketing-mcp-servers.md`) — 135th review, one-hundred-fifteenth beyond original list.
+   - Calendar & Scheduling: nspady/google-calendar-mcp (1,100 stars, TypeScript, MIT, 12 tools — multi-account, smart scheduling, free/busy, intelligent import from images/PDFs), shade-solutions/calender-mcp (60+ tools — analytics, batch operations, focus time, AI extraction), 8+ additional Google Calendar implementations, Omar-V2/mcp-ical (278 stars, Python, MIT — macOS Calendar natural language), shadowfax92/apple-calendar-mcp, somethingwithproof/calendar-mcp, anoopt/outlook-meetings-scheduler (Microsoft Graph), elyxlz/microsoft-mcp (Outlook+Calendar+OneDrive), merajmehrabi/Outlook_Calendar_MCP (Windows local), calendar-mcp.com (hosted iCal remote)
+   - Ticket Discovery: delorenj/mcp-server-ticketmaster (23 stars, TypeScript, MIT, 6 tools — Ticketmaster Discovery API, events/venues/attractions, dual JSON/text output), mmmaaatttttt/mcp-live-events (2 stars, Python — live music), mochow13/ticketmaster-mcp-server (1 star, TypeScript — Streamable HTTP), PeterShin23/seatgeek-mcp (3 stars, TypeScript, MIT, 4 tools — venue seating layouts, performer recommendations)
+   - Event Platforms: joshuachestang/eventbrite-mcp-server (2 stars, JavaScript, MIT, 8 tools — full lifecycle create/update/publish/cancel), vishalsachdev/eventbrite-mcp (2 stars, analytics planned), punkpeye/eventbrite-mcp (1 star, 4 tools), the-events-calendar/mcp-server (1 star, TypeScript — official WordPress Events Calendar CRUD), the-plus-io/quick-event-mcp (hosted, creates full event pages with registration/tickets/QR)
+   - Community Events: d4nshields/mcp-meetup (Python, MIT, 4 tools), ajeetraina/meetup-mcp-server (JavaScript), imagineering-cc/events-mcp (Meetup+Luma via Playwright)
+   - Conference Navigation: manu-mishra/reinvent-mcp-2025 (5 stars, MIT, 13 tools — 1,843 re:Invent sessions), doozMen/tech-conf-agent (3 stars, Swift, MIT, 6 tools — ServerSide.swift 2025)
+   - Commercial: Eventtia "agentic event software" vision (no public server yet)
+   - 35+ servers across 6 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Event management / ticketing" row to summary table
+   - Added event management entry to beyond-original-list section
+   - Updated review count to 135
+
+3. **Built site** (156 pages, 100ms). **Deploy pending** — throttle not cleared (~23 min remaining).
+
+### What should happen next
+- **Run 169:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Robotics, Genealogy, Astrology, Sports & Fitness
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 163 — 2026-03-15 — Content (Aerospace & Defense MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
