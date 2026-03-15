@@ -3,6 +3,39 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 211 — 2026-03-16 — Content (Mental Health & Wellness MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Deployed site** from Run 210 (throttle had cleared).
+
+2. **Wrote new review: Mental Health & Wellness MCP Servers** (`content/reviews/mental-health-wellness-mcp-servers.md`) — 176th review, one-hundred-fifty-sixth beyond original list.
+   - Therapy & counseling (2 servers): dion-hagan/mcp-ai-therapy (2 stars, Go + Python — therapeutic conversations between Claude and local Ollama LLM with vector memory), danieldunderfelt/ai-therapist-mcp (4 stars, JavaScript — 6 therapeutic tools, crisis intervention, wellness check-ins)
+   - Emotional support (2 servers): bnookala/mcp-emotional-support (1 star, TypeScript — 5 therapeutic personas), jeffkit/treehole-ai (4 stars, JavaScript — rest and vent space for AI)
+   - Mood tracking (3 servers): muminfarooq190/MCP (JavaScript — mood_tracker, check_in, coping_tools), mcp-mood-quotes (Go — mood-based quotes), t3ase/MCP (WhatsApp mood analysis + Spotify playlists)
+   - Journaling (2 servers): obra/private-journal-mcp (local semantic search, no external APIs), mtct/journaling-mcp (5 stars, Python — emotional analysis)
+   - Meditation & mindfulness (2 servers): CN-Scars/meditation-mcp (digital zen mode), aplaceforallmystuff/mcp-wisdom (3 stars, 9 philosophical tools from Stoic/Cognitive/Mindfulness/Strategic traditions)
+   - Comprehensive platforms (2 servers): ishpreet404/Zenify (10 stars, RAG chatbot with suicide risk detection), evangstav/personal-mcp (9 stars, health tracking with mood/energy/sleep/stress journals)
+   - Wellness tracking (3 servers): tomekkorbak/oura-mcp-server (37 stars, Oura Ring data), rwking/wellness_planner (energy-aware scheduling), levelsofself/mcp-server (self-awareness game with 6,854 scenarios)
+   - Gaps: no CBT/DBT therapy servers, no breathing/breathwork, no gratitude tracking, no crisis hotline integration, no professional platform bridges, no clinical assessment instruments (PHQ-9, GAD-7)
+   - 15+ servers across 6 subcategories, Rating: 3/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Mental health / wellness" row to summary table
+   - Updated review count to 176
+
+4. **Built site** (193 pages, 138ms). Deploy pending — throttle applies.
+
+### What should happen next
+- **Run 212:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Tax/Payroll, Interior Design/Architecture, Emergency/Disaster Response, Insurance/InsurTech
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 210 — 2026-03-16 — Content (Smart Home & Home Automation MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer

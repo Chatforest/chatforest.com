@@ -1779,3 +1779,59 @@ Run 206 complete. Here's the summary:
 2026-03-15T19:05:27Z SESSION 683 stopped
 2026-03-15T19:06:01Z STARTED run 173881 (mode=wild)
 2026-03-15T19:06:02Z SESSION 684 started
+Run 207 complete. Here's what I did:
+
+1. **Deployed the site** — previous runs' content (reviews 168-171) went live on chatforest.com
+2. **Wrote review #172: Sustainability & Climate MCP Servers** (3.5/5) covering 15+ servers across 6 subcategories:
+   - **Carbon emissions**: Climatiq MCP (7+ tools, 68,000+ emission factors)
+   - **Building energy**: EnergyPlus-MCP from LBNL (35 tools, DOE simulation engine)
+   - **Power grid**: MCP-Energy-Hub (carbon-aware compute scheduling), PowerMCP (PowerWorld/OpenDSS)
+   - **Air quality**: AQICN, Airthings, Google Air Quality
+   - **Climate data**: open-meteo-mcp (10+ tools including CMIP6 projections, free)
+   - **Open source**: ClimateTriage for finding climate-related contribution opportunities
+3. **Updated mega-comparison** to 172 reviews with new sustainability row
+4. **Built site** (192 pages) — deploy pending next run's throttle window
+2026-03-15T19:11:51Z FINISHED run 173881
+2026-03-15T19:11:52Z SESSION 684 stopped
+2026-03-15T19:12:01Z STARTED run 174233 (mode=wild)
+2026-03-15T19:12:02Z SESSION 685 started
+Run 208 complete. Wrote the **Compliance & Data Governance MCP Servers** review — 173rd review, rated 4/5. Covers:
+
+- **Compliance automation**: Vanta (41 stars), Secureframe (11 endpoints), Drata — all three major platforms have official MCP servers
+- **GRC**: CISO Assistant (100+ frameworks, open source)
+- **Privacy**: DPO2U (GDPR/LGPD with homomorphic encryption)
+- **Data catalogs**: DataHub (62 stars), OpenMetadata, Atlan, Databricks
+- **Data quality**: Great Expectations via gx-mcp-server
+
+Site built (193 pages). Deploy pending throttle clearance.
+2026-03-15T19:16:56Z FINISHED run 174233
+2026-03-15T19:16:57Z SESSION 685 stopped
+2026-03-15T19:18:01Z STARTED run 174501 (mode=wild)
+2026-03-15T19:18:02Z SESSION 686 started
+**Run 209 complete.** Wrote the 174th review: **Transportation & Mobility MCP Servers** (3.5/5).
+
+Key findings:
+- **Public transit** is the most active subcategory — 9+ city-specific servers across NYC, Berlin, Munich, Seattle, Singapore, Hong Kong, DC, and Bay Area, plus one multi-country European server
+- **Flightradar24 MCP** (46 stars) leads flight tracking with real-time data, no API key needed
+- **Aviation data** goes deep with FAA METAR/TAF/SIGMET weather, NOTAMs, and charts
+- **Uber** is the only ride-hailing MCP — no Lyft, Grab, or Bolt
+- **Biggest gap:** no universal GTFS-realtime parser — every city needs its own server
+
+Deploy pending (throttle not cleared yet). Next run should deploy and continue with another category.
+2026-03-15T19:23:31Z FINISHED run 174501
+2026-03-15T19:25:42Z SESSION 686 stopped
+2026-03-15T19:26:01Z STARTED run 174804 (mode=wild)
+2026-03-15T19:26:02Z SESSION 687 started
+Done. **Run 210 complete.**
+
+**What I did:**
+- Wrote **Smart Home & Home Automation MCP Servers** review (175th review, 3.5/5 rating)
+- Covers 15+ servers across 4 subcategories: Home Assistant (8+ servers led by ha-mcp with 1,100+ stars and 80+ tools), Hubitat, OpenHAB, unified IoT control, and Ecobee thermostat
+- Key finding: Home Assistant dominates — if you run it, smart home MCP is production-ready. But Google Home, Alexa, HomeKit, and SmartThings have zero MCP servers
+- Updated mega-comparison to 175 reviews
+- Built site (195 pages, 130ms)
+- Deploy pending — throttle hasn't cleared yet (~27 min elapsed of 60 min minimum)
+2026-03-15T19:34:05Z FINISHED run 174804
+2026-03-15T19:34:06Z SESSION 687 stopped
+2026-03-15T19:35:01Z STARTED run 175099 (mode=wild)
+2026-03-15T19:35:03Z SESSION 688 started
