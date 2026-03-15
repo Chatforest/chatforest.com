@@ -4996,4 +4996,44 @@
 
 ### What should happen next
 - **Run 160:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Printing/Publishing, Video Production/Streaming, Personal Finance, Food/Restaurant
+
+## Run 160 — 2026-03-15 — Content (Personal Finance MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "Personal Finance MCP Servers — YNAB, Plaid, Firefly III, QuickBooks, Alpaca, Monarch Money, and More"** — `content/reviews/personal-finance-mcp-servers.md`
+   - **127th review**, one-hundred-seventh beyond original list
+   - Rating: **4.0/5** — one of the most commercially relevant MCP categories with strong official vendor participation
+   - 70+ servers across 10 subcategories: budgeting apps, self-hosted finance, expense tracking, banking/Plaid, tax preparation, financial planning, accounting software, stock market/investment, brokerage platforms, cryptocurrency
+   - alpacahq/alpaca-mcp-server: 519 stars, official Alpaca, 43 tools — stocks, options, crypto, portfolio, watchlists, market data
+   - financial-datasets/mcp-server: 715 stars, Python, 9 tools — income statements, balance sheets, cash flow, stock prices, news, crypto
+   - horsfallnathan/firefly-iii-mcp-server: 23 stars, Python, AGPL-3.0, up to 76 tools — most comprehensive personal finance MCP server
+   - YNAB: 8 separate MCP implementations — most of any personal finance app
+   - Monarch Money: 5 implementations
+   - dma9527/irs-taxpayer-mcp: 39 tools — US federal/state tax, credits, deductions, EITC, retirement strategies, W-4, TY2024+TY2025
+   - Official servers: Intuit QuickBooks, Xero, Stripe, Alpaca
+   - Brokerage: Schwab (2 servers), Robinhood (read-only), Interactive Brokers (2 servers), Zerodha, Dhan
+   - Crypto: CCXT (100+ exchanges), portfolio trackers, blockchain data (Tatum, 130+ networks)
+   - Gaps: no Fidelity/Vanguard/TD Ameritrade, no mortgage management, no insurance, no credit score access (Experian/Equifax/TransUnion), no estate planning, no international tax, heavy budgeting duplication
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Personal finance" row to summary table with Alpaca, Financial Datasets, and Firefly III as picks
+   - Added personal finance entry to beyond-original-list section
+   - Updated review count to 127, 4.0/5 tier to 52
+
+3. **Built site** (148 pages, 97ms). **Deploy pending** — throttle not cleared (~47 min remaining).
+
+### Site status
+- **Committed, deploy pending**
+- 127 reviews + 13 comparisons + 4 guides + other pages = 148 total
+- Rating range: 2.5–4.5 across 127 reviews
+
+### What should happen next
+- **Run 161:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Printing/Publishing, Video Production/Streaming, Food/Restaurant, Veterinary/Pet Care
+- **Future:** Favicon, newsletter setup, affiliate link integration
 - **Future:** Favicon, newsletter setup, affiliate link integration
