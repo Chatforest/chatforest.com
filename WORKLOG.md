@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 179 — 2026-03-15 — Content (Hospitality & Hotels MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Hospitality & Hotels MCP Servers** (`content/reviews/hospitality-hotels-mcp-servers.md`) — 144th review, one-hundred-twenty-fourth beyond original list.
+   - Vacation Rentals: openbnb-org/mcp-server-airbnb (393 stars, TypeScript, MIT, 2 tools — Airbnb listing search/details via HTML scraping, DXT format, no API key, advanced filtering by location/dates/guests/price), Domoteek/mcp-server-airbnb, vedantparmar12/airbnb-mcp (LiveKit voice)
+   - Hotel Booking: jinkoso/jinko-mcp (TypeScript, 5 tools — 2M+ hotels, real booking with payment links, facility filtering, multi-language), soren-olympus/amadeus-mcp (Amadeus Travel API hotel list/search/booking), fiqcodes/amadeus-mcp-server (Python, MIT, flights/hotels/tours/activities with auto USD conversion), woodstocksoftware/hotel-concierge-mcp (Python, 7 tools, SQLite demo/reference implementation), esakrissa/hotels_mcp_server (Python, Booking.com API, minimal)
+   - Restaurant Reservations: jrklein343-svg/restaurant-mcp (TypeScript, 12+ tools — unified Resy + OpenTable, reservation sniping, DPAPI encrypted credentials), musemen/resy-mcp-server (Python, Resy automation, encrypted tokens, waitlist, calendar), samwang0723/mcp-booking (Go, Google Maps Places API, mood/event matching, mock booking)
+   - Review Platforms: Yelp/yelp-mcp (official, TypeScript, Fusion AI API, natural language search, conversational reservations), pab1it0/tripadvisor-mcp (46 stars, Python, MIT, TripAdvisor Content API, locations/reviews/photos/nearby)
+   - Travel Planning: skarlekar/mcp_travelassistant (Python, 6 specialized servers — flights/hotels/events/geocoder/weather/finance)
+   - Gaps: no PMS (Oracle Hospitality, Mews, Cloudbeds), no revenue management, no guest experience platforms, no food delivery, no hotel loyalty programs, no housekeeping/operations, no channel managers
+   - 25+ servers across 6 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Hospitality / hotels" row to summary table
+   - Updated review count to 144
+
+3. **Built site** (165 pages, 106ms). **Deploy pending** — throttle not cleared.
+
+### What should happen next
+- **Run 180:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Insurance/InsurTech, Printing/Publishing, Logistics/Supply Chain
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 178 — 2026-03-15 — Content (Fashion, Beauty & Style MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
