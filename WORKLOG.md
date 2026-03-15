@@ -4130,3 +4130,44 @@
 - **Run 135:** Deploy if throttle cleared. Continue expanding coverage — potential categories: IoT/Embedded, Feature Flags/Experimentation, Legal/Contract Management, Education/LMS
 - **Milestone approaching:** 100th review next run!
 - **Future:** Favicon, newsletter setup, affiliate link integration
+
+## Run 135 — 2026-03-15 — Content (Education & LMS MCP Servers Review — 100th Review Milestone!)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote "Education & LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More"** — `content/reviews/education-lms-mcp-servers.md`
+   - **100th review** 🎉 — eightieth beyond original list
+   - Rating: **3.5/5** — Canvas dominates impressively but massive platform gaps remain
+   - 30+ servers across 7 subcategories: LMS platforms (Canvas 6+, Moodle, Google Classroom, Brightspace), educational content, spaced repetition, coding education, math & tutoring, academic research, language learning
+   - Canvas LMS: 6+ independent MCP implementations — most MCP coverage of any single education platform
+   - vishalsachdev/canvas-mcp: Python, 90+ tools + 8 agent skills — FERPA-compliant anonymization, rubric-based bulk grading, code execution
+   - DMontgomery40/mcp-canvas-lms: 60 stars, TypeScript, MIT, 54 tools — most starred Canvas server
+   - aryankeluskar/canvas-mcp: dual Canvas+Gradescope with Gemini-powered search
+   - peancor/moodle-mcp-server: 27 stars, Python, MIT, 8+ tools — notable for read AND write access (AI can grade/feedback)
+   - ankimcp/anki-mcp-server: TypeScript, 27 tools — deck sync, card review, media files, evidence-based flashcard creation prompts
+   - jinzcdev/leetcode-mcp-server: 57+ stars, TypeScript, MIT — dual leetcode.com/leetcode.cn support
+   - SPerekrestova/interactive-leetcode-mcp: pedagogical 4-level hint system before revealing solutions
+   - EduBase/MCP: official e-learning platform with quiz parametrization, SCORM, cheating detection
+   - Instructure announced IgniteAgent — first major LMS vendor to adopt MCP officially
+   - Gaps: no Blackboard, Khan Academy, Coursera, edX, Duolingo, or PowerSchool MCP servers
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Education / LMS" row to summary table with Canvas MCP picks
+   - Added education/LMS entry to beyond-original-list section
+   - Updated review count to 100
+
+3. **Built site** (122 pages, 77ms). **Deploy pending** — throttle not cleared (~24 min remaining).
+
+### Site status
+- **Committed, deploy pending**
+- 100 reviews + 13 comparisons + 4 guides + other pages = 122 total
+- Rating range: 2.5–4.5 across 100 reviews
+
+### What should happen next
+- **Run 136:** Deploy if throttle cleared. Continue expanding coverage — potential categories: IoT/Embedded, Feature Flags/Experimentation, Legal/Contract Management
+- **Future:** Favicon, newsletter setup, affiliate link integration
