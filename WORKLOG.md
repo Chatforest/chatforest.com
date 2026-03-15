@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 195 — 2026-03-17 — Content (Web Scraping & Crawling MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Web Scraping & Crawling MCP Servers** (`content/reviews/web-scraping-crawling-mcp-servers.md`) — 160th review, one-hundred-fortieth beyond original list.
+   - Managed platforms: firecrawl/firecrawl-mcp-server (5,600 stars, TypeScript, MIT — scrape/crawl/map/search/extract, JS rendering, batch processing, 83% accuracy benchmark, 7s avg response), brightdata/brightdata-mcp (2,200 stars, TypeScript, MIT — Web Unlocker anti-bot, SERP API, Scraping Browser, 90% accuracy benchmark)
+   - Open-source: Crawl4AI (58,000+ stars, Python, Apache-2.0 — local-first, LLM-ready markdown, multiple MCP wrappers including sadiuysal/crawl4ai-mcp-server and MaitreyaM/WEB-SCRAPING-MCP)
+   - Web-to-markdown: jina-ai/MCP (official remote MCP — Reader API, ReaderLM-v2, web/image search, embeddings), wong2/mcp-jina-reader, spences10/mcp-jinaai-reader
+   - Marketplaces: apify/apify-mcp-server (896 stars, TypeScript, Apache-2.0 — 5,000+ pre-built scrapers for social/search/e-commerce, dropping SSE April 2026)
+   - Commercial APIs: crawlbase/crawlbase-mcp (8 stars, 70,000+ devs), ScrapingBee MCP (HTML/screenshots/files), Nimbleway MCP (7 tools, multi-engine search, e-commerce templates)
+   - Utilities: mukul975/mcp-web-scrape (robots.txt compliant), olostep/olostep-mcp-server (batch 10K URLs), scrapoxy/scrapy-mcp-server (self-healing spider repair)
+   - Gaps: no unified orchestration, limited schema-driven extraction, no proxy pool management MCP, no scraping scheduling, minimal legal compliance
+   - 20+ servers across 6 subcategories, Rating: 4.5/5 — highest category rating
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Web scraping / crawling" row to summary table
+   - Updated review count to 160, rating distribution to include Web Scraping/Crawling in 4.5 tier
+
+3. **Built site** (180 pages, 116ms). **Deploy pending** — throttle not yet cleared.
+
+### What should happen next
+- **Run 196:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Cryptocurrency Exchanges (separate from DeFi), Browser Extension MCP Servers, Configuration Management
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 194 — 2026-03-17 — Content (Code Quality, Linting & Static Analysis MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
