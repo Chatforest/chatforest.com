@@ -3,6 +3,39 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 207 — 2026-03-16 — Content (Sustainability & Climate MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Deployed site** — throttle cleared (63+ minutes since last deploy). Deployed runs 204-206 content (Network Automation, Gaming & Esports, Digital Accessibility, Regex & Text Processing reviews).
+
+2. **Wrote new review: Sustainability & Climate MCP Servers** (`content/reviews/sustainability-climate-mcp-servers.md`) — 172nd review, one-hundred-fifty-second beyond original list.
+   - Carbon emissions (1 server): jagan-shanmugam/climatiq-mcp-server (6 stars, Python — 7+ tools, Climatiq API for electricity, travel, cloud, freight, procurement emissions, 68,000+ emission factors)
+   - Building energy simulation (1): LBNL-ETA/EnergyPlus-MCP (Python — 35 tools, DOE EnergyPlus whole-building simulation, HVAC topology, automated simulation, published in SoftwareX journal)
+   - Power grid intelligence (2): karthikravva/MCP-Energy-Hub (Python — 8 tools, US power grid via EIA API, carbon-aware compute scheduling across CAISO/ERCOT/PJM/NYISO/MISO), Power-Agent/PowerMCP (Python — PowerWorld + OpenDSS simulation, part of broader Power-Agent ecosystem)
+   - Air quality monitoring (3): mattmarcin/aqicn-mcp (Python — 3 tools, AQICN.org global AQI), michaelahern/airthings-consumer-mcp (TypeScript — Airthings hardware), danielrosehill/Google-Air-Quality-MCP (Go — Google Maps Air Quality API, WIP)
+   - Climate data (1): cmer81/open-meteo-mcp (TypeScript — 10+ tools, weather forecasts, ERA5 archives from 1940, air quality, marine, flood forecasts, CMIP6 climate projections, seasonal predictions)
+   - Open source contribution (1): Codeshark-NET/climate-triage-mcp (TypeScript — search climate-related OSS issues)
+   - Also noted: ahmedelshazly27/opendss-mcp-server (dedicated OpenDSS distribution system analysis)
+   - Gaps: no carbon registry MCPs (Gold Standard, Verra), no LCA tools, no ESG/CSRD reporting, no waste management, no satellite environmental monitoring, no supply chain Scope 3 tracking
+   - 15+ servers across 6 subcategories, Rating: 3.5/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Sustainability / climate" row to summary table
+   - Updated review count to 172
+
+4. **Built site** (192 pages, 124ms). Deploy pending — throttle applies.
+
+### What should happen next
+- **Run 208:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Compliance Frameworks, Data Governance, Transportation/Mobility, Supply Chain/Logistics
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 206 — 2026-03-16 — Content (Digital Accessibility MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
