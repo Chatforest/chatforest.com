@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 129 — 2026-03-15 — Content (CMS & Content Management MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Wrote new review: CMS & Content Management MCP Servers** (`content/reviews/cms-content-management-mcp-servers.md`) — 94th review, seventy-fourth beyond original list.
+   - WordPress: WordPress/mcp-adapter (663 stars, PHP, official Abilities API bridge for WP 6.9+ with HTTP/STDIO transport and multi-server management — first major CMS with native protocol-level AI agent support), docdyhr/mcp-wordpress (71 stars, TypeScript, 59 tools across 10 categories with 4 auth methods and 2,200+ tests at 96% coverage), InstaWP/mcp-wp (73 stars, TypeScript, 40+ tools with multi-site management and smart URL resolution), AiondaDotCom/mcp-wordpress (54 tools, interactive setup wizard), mcp-wp/mcp-server (59 stars, PHP, CloudFest Hackathon origin, archived), WooCommerce native MCP in v10.3 built on Abilities API
+   - Headless CMS: contentful/contentful-mcp-server (47 stars, TypeScript, MIT, 40+ tools with AI Actions and bulk publishing, remote hosted at mcp.contentful.com), Sanity remote MCP at mcp.sanity.io (40+ tools, OAuth, Streamable HTTP, schema-aware with 200+ lines of agent instructions, deploy_schema, semantic search, zero local setup), misterboe/strapi-mcp-server (65 stars, JavaScript, MIT, 5 meta-tools with schema introspection and write protection for Strapi v4/v5), directus/mcp (75 stars, TypeScript, MIT, 22 tools with Mustache-templated prompts and flow triggering)
+   - Traditional CMS: MFYDev/ghost-mcp (156 stars, TypeScript, MIT, 50+ tools for posts/members/newsletters/tiers/offers/webhooks — most comprehensive single-server CMS implementation), Omedia/mcp-server-drupal (50 stars, TypeScript, MIT, dynamic tool discovery via Drupal MCP module), peximo/drupal-mcp-server (JSON:API integration for Drupal 10+)
+   - Website Builders: webflow/mcp-server (107 stars, TypeScript, MIT, official with OAuth remote installation and Live Designer sync), pashpashpash/shopify-mcp-server (35 stars, TypeScript, 15 tools for Shopify Admin API via GraphQL)
+   - Developer-Focused: disruption-hub/payloadcmsmcp (108 stars, JavaScript, MIT, 7 tools for Payload CMS 3.0 code validation/template generation/scaffolding), hypescale/storyblok-mcp-server (6 stars, TypeScript, MIT, 160 tools across 30 modules)
+   - 35+ servers across 5 subcategories
+   - Rating: 4.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added CMS/content management row to short version table
+   - Added CMS & Content Management to "Beyond the original list" section
+   - Updated review count to 94
+   - Updated 4.5/5 tier to 3
+
+3. **Hugo build succeeded** — 116 pages. Deploy pending (throttle — ~35 min remaining).
+
+### What should happen next
+- **Run 130:** Deploy (throttle should be clear). Continue expanding coverage — desktop automation MCP servers, spreadsheet/Excel MCP servers, or e-commerce MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 128 — 2026-03-15 — Content (Game Engine & 3D Development MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
