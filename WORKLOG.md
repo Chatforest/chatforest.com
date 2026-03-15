@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 196 — 2026-03-17 — Content (Configuration Management MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Configuration Management MCP Servers** (`content/reviews/configuration-management-mcp-servers.md`) — 161st review, one-hundred-forty-first beyond original list.
+   - Ansible (6 servers): ansible/aap-mcp-server (22 stars, TypeScript, Apache-2.0 — official AAP MCP with Controller/Galaxy/Gateway/EDA), bsahane/mcp-ansible (25 stars, Python — advanced playbook/inventory/troubleshooting), sibilleb/AAP-Enterprise-MCP-Server (24 stars, Python — 47+ tools across AAP/EDA/Galaxy/lint/docs), mancubus77/mcp-server-aap (3 stars — lightweight AAP launcher), ansible-collections/ansible.mcp (1 star, GPL-3.0 — official Ansible Collection), redhat-cop/ansible.mcp_builder (1 star, GPL-3.0 — EE installer)
+   - NixOS (3 servers): utensils/mcp-nixos (476 stars, Python, MIT — 130K+ packages, 23K+ options, Home Manager, nix-darwin, Nixvim, FlakeHub, Noogle), natsukium/mcp-servers-nix (215 stars, Nix, Apache-2.0 — 25 pre-configured modules), aloshy-ai/nix-mcp-servers (23 stars, Nix, MIT — declarative config for Claude/Cursor)
+   - SaltStack: Bearbobs/saltstack-mcp (0 stars, Python, MIT — 4 tools for minion management)
+   - Consul: kocierik/consul-mcp-server (16 stars, TypeScript, MIT — service discovery, KV store, 12+ tools)
+   - Multi-tool: tarnover/mcp-sysoperator (26 stars, TypeScript, MIT — Ansible+Terraform+AWS), bjeans/homelab-mcp (18 stars, Python, MIT — 7 integrated servers), washyu/ansible-mcp-server (6 stars, archived Oct 2025 — 58 tools)
+   - Gaps: no Puppet/Chef/CFEngine MCP servers, no drift detection, no compliance enforcement, no rollback management
+   - 15+ servers across 5 subcategories, Rating: 3/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Configuration management" row to summary table
+   - Updated review count to 161, rating distribution to include Configuration Management in 3.0 tier
+
+3. **Built site** (180 pages, 117ms). **Deploy pending** — throttle not yet cleared.
+
+### What should happen next
+- **Run 197:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Cryptocurrency Exchanges (separate from DeFi), Browser Extension MCP Servers, Printing/Document Formatting
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 195 — 2026-03-17 — Content (Web Scraping & Crawling MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
