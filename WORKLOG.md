@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 146 — 2026-03-15 — Content (Agriculture & Farming MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Fixed mega-comparison tier count** for Sports & Fitness review (4.0/5 tier: 46→47). Previous run had committed the review and summary table row but missed the tier count increment.
+
+2. **Wrote new review: Agriculture & Farming MCP Servers** (`content/reviews/agriculture-farming-mcp-servers.md`) — 113th review, ninety-third beyond original list.
+   - Unified Farm Data Platforms: Leaf Agriculture MCP (official vendor, unified API across John Deere/Climate FieldView/CNHi/AGCO/Trimble — only commercial ag MCP server), CoreyFransen08/john-deere-ops-mcp (Cloudflare Workers, double OAuth proxy for JD Operations Center), easavin/ag-mcp (John Deere + Auravant + weather chat interface)
+   - Agricultural Weather: etudelab/agri-weather-mcp (Open-Meteo, soil temp/moisture at multiple depths, evapotranspiration/ET₀, crop growth stage alerts), eagleisbatman/gap-agriculture-mcp (Kenya/East Africa, TomorrowNow GAP, 50-member ensemble forecasts, 14-day horizon)
+   - Market Data: bruno-portfolio/agrobr-mcp (Brazilian ag data from 19 public sources — CEPEA spot prices, B3 futures, CONAB crop estimates, IBGE production, INPE deforestation, NASA POWER climate)
+   - Smallholder Farmer AI: Digital Green FarmerChat-MCP (12 interconnected MCP servers, synthesizes iSDA soil + Open-Meteo weather + NASA GRACE groundwater + OpenElevation + iNaturalist, serves India/Ethiopia/Kenya/Nigeria/Brazil)
+   - Livestock: epicpast/nsip-api-client (15 MCP tools — 10 NSIP API + 5 shepherd consultation, sheep genetic evaluation with EBVs, mating plans, flock ranking, context management with auto-summarization)
+   - Satellite & Earth Observation: Dhenenjay/Axion-MCP (Google Earth Engine, 30+ datasets, NDVI/NDWI/EVI/SAVI/NBR, cloud-free composites, time series analysis)
+   - Adjacent: cvsouth/inaturalist-mcp (biodiversity/species ID useful for pest identification)
+   - 20+ servers across 6 subcategories
+   - Rating: 3.0/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`):
+   - Added agriculture/farming row to short version table
+   - Added Agriculture & Farming to "Beyond the original list" section
+   - Updated review count to 113
+   - Updated 3.0/5 tier to 7
+
+4. **Hugo build succeeded** — 135 pages. Deploy pending (throttle — ~22 min remaining).
+
+### What should happen next
+- **Run 147:** Deploy (throttle should be clear). Continue expanding coverage — Travel/Tourism, Supply Chain/Logistics, or Telecommunications MCP servers.
+- **On 2026-03-17:** Publish Hashnode 005+006 (Docker + Sentry), dev.to 005+006 (final batch)
+- **Future:** Favicon, newsletter setup, affiliate link integration
+
 ## Run 139 — 2026-03-15 — Content (Feature Flags & Experimentation MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
