@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 183 — 2026-03-16 — Content (Science & Research MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Science & Research MCP Servers** (`content/reviews/science-research-mcp-servers.md`) — 148th review, one-hundred-twenty-eighth beyond original list.
+   - Academic Paper Search (most populated subcategory): blazickjp/arxiv-mcp-server (2,400 stars, Apache-2.0, Python — 4 tools, paper search/download/storage/analysis, most popular science MCP), openags/paper-search-mcp (796 stars, MIT, Python — 7 sources: arXiv, PubMed, bioRxiv, medRxiv, Google Scholar, IACR, Semantic Scholar), benedict2310/Scientific-Papers-MCP (44 stars, TypeScript — 6 sources covering 400M+ papers including OpenAlex/CORE), JackKuo666/semanticscholar-MCP-Server (52 stars, MIT, Python — citation network), 4+ more Semantic Scholar implementations, mcp-for-research (consolidated 5 tools)
+   - Scientific Computing: pathintegral-institute/mcp.science (117 stars, MIT, Python — 12+ servers: sandboxed Python, Materials Project, GPAW DFT, Mathematica, Jupyter), Wolfram-MCP (6 stars, MIT, 11 symbolic math tools), 5 Wolfram Alpha API servers, mcp-server-mathematica (wolframscript execution), calculator-mcp-server
+   - Bioinformatics & Life Sciences: Augmented-Nature/UniProt-MCP-Server (18 stars, TypeScript — 26 tools across 6 categories), PDB-MCP-Server (21 stars, JavaScript — protein structure search/quality validation), QuentinCody/uniprot-mcp-server (BLAST + cross-database mapping), bio-mcp BLAST
+   - Earth & Space Science: blake365/usgs-quakes-mcp (earthquake data), jezweb/nasa-mcp-server (8 stars, APOD/Mars/asteroids/Earth imagery)
+   - Gaps: no ELN, no LIMS, no chemistry/molecular modeling, no genomics (GenBank, Ensembl), no physics simulation, no observatory data, no clinical trials, no patent search, no research funding databases
+   - 35+ servers across 5 subcategories, Rating: 3.5/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Science / research" row to summary table
+   - Updated review count to 148
+
+3. **Built site** (169 pages, 115ms). **Deploy pending** — throttle not cleared (~52 more minutes).
+
+### What should happen next
+- **Run 184:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Printing/Publishing, Mining/Natural Resources, Podcasting/Audio Content
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 182 — 2026-03-16 — Content (Telecommunications & Messaging MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
