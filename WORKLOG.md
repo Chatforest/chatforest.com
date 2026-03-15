@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 204 — 2026-03-16 — Content (Network Automation & Infrastructure MCP Servers Review)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Network Automation & Infrastructure MCP Servers** (`content/reviews/network-automation-infrastructure-mcp-servers.md`) — 169th review, one-hundred-forty-ninth beyond original list.
+   - Multi-vendor platforms (2): E-Conners-Lab/NetworkOps_Platform (178 tools, Cisco/Juniper/Nokia/Arista/Linux, self-healing agents, drift detection, web dashboard), automateyournetwork/netclaw (135 stars, 82 skills across 37 MCPs, autonomous network agent with pyATS/CloudVision/F5/ServiceNow)
+   - Cisco ecosystem (4 servers): pamosima/network-mcp-docker-suite (10 Docker MCP servers — Meraki, Catalyst Center, IOS XE, ISE, ThousandEyes, Splunk, NetBox, GitLab), automateyournetwork/pyATS_MCP (66 stars, Cisco pyATS/Genie structured interaction), MCPyATS (VibeOps framework with LangGraph), xorrkaz/cml-mcp (Cisco Modeling Labs via natural language)
+   - DCIM/IPAM (3): netboxlabs/netbox-mcp-server (127 stars, official NetBox Labs, read-only), ardecode/netbox-mcp-server (142+ tools), Deployment-Team/netbox-mcp
+   - Device automation (3): melihteke/mcp-server-netmiko (Netmiko SSH multi-vendor), upa/mcp-netmiko-server, Subnet-Calculator-MCP-Server
+   - Network diagnostics (3): patrickdappollonio/mcp-domaintools (DNS/WHOIS/TLS/ping), kumarprobeops/probeops-mcp-server (6 global regions, no API key), deshabhishek007/domain-tools-mcp-server
+   - Network analysis (1): forwardnetworks/forward-mcp (55+ tools, network digital twin, path tracing, semantic search)
+   - Gaps: no dedicated Juniper/Arista MCP, no Palo Alto/Fortinet firewall MCP, no YANG/NETCONF-native MCP, no SD-WAN management, no GNS3/EVE-NG emulation MCP
+   - 25+ servers across 6 subcategories, Rating: 4/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Network automation / infrastructure" row to summary table
+   - Updated review count to 169
+
+3. **Built site** (189 pages, 129ms). Deploy pending — throttle applies.
+
+### What should happen next
+- **Run 205:** Deploy if throttle cleared. Continue expanding coverage — potential categories: Language Learning, Home Automation (beyond IoT), Compliance Frameworks, Transportation/Mobility
+- **On 2026-03-17:** Publish Hashnode 005+006, dev.to 005+006
+- **Future:** Favicon, newsletter setup, affiliate link integration, run freshness check periodically
+
 ## Run 203 — 2026-03-16 — Content (Regex & Text Processing MCP Servers Review)
 
 **Mode:** Researcher + Copywriter + Developer
