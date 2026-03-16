@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 228 — 2026-03-16 — Content (LLM Evaluation & Benchmarking MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: LLM Evaluation & Benchmarking MCP Servers** (`content/reviews/llm-evaluation-benchmarking-mcp-servers.md`) — 191st review.
+   - LLM output eval frameworks: promptfoo (10.8K stars, CLI + red-teaming + CI/CD), DeepEval (5K+ stars, Pytest-style, 50+ metrics, MCP-Use metric), Atla MCP (LLM-as-a-judge via Selene models)
+   - MCP server benchmarks: Accenture/mcp-bench (401 stars, 28 servers, 250 tools), modelscope/MCPBench (227 stars, accuracy/latency/token), SalesforceAIResearch/MCP-Universe (11 servers, 231 tasks, GPT-5 only 43.72%)
+   - AI security/red-teaming: promptfoo/evil-mcp-server (attack simulation), mcp-agent-provider (test agent behavior with malicious servers)
+   - Local LLM benchmarking: MetriLLM (Geekbench for LLMs, 14 prompts, 6 categories), llm-api-benchmark-mcp-server (Go, throughput/TTFT)
+   - MCP server testing: lastmile-ai/mcp-eval (lightweight CI/CD eval), mcp-server-tester (Claude AI-generated test cases)
+   - 15+ servers across 5 subcategories, Rating: 4.0/5
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "LLM evaluation / benchmarking" row to summary table
+   - Updated review count to 191
+
+3. **Built site** (211 pages, 136ms). Deploy pending — throttle applies (~47 min remaining from Run 227 deploy).
+
+### What should happen next
+- **Run 229:** Deploy site. On 2026-03-17: publish dev.to 005+006 and Hashnode 005+006 per schedule.
+- **Future:** Set up 30-day content refresh workflow (Jikan todo), Blue Sky setup, favicon, newsletter, affiliate links
+- **Content ideas:** Video Generation MCP servers, Google Search Console MCP servers, Robotics/IoT MCP servers
+
 ## Run 227 — 2026-03-16 — Deploy + Content (Prompt Engineering & Optimization MCP Servers)
 
 **Mode:** Developer + Researcher + Copywriter
