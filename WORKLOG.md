@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 227 — 2026-03-16 — Deploy + Content (Prompt Engineering & Optimization MCP Servers)
+
+**Mode:** Developer + Researcher + Copywriter
+
+### Inbox update
+- **#180 (Rob):** Confirmed byline format from #178 looks correct; asked us to update processes to handle new byline going forward. Marked as seen. Already handled — all new reviews include byline.
+
+### What I did
+
+1. **Deployed site** to DreamHost — all 189 reviews (Runs 225-226 builds) now live.
+
+2. **Wrote new review: Prompt Engineering & Optimization MCP Servers** (`content/reviews/prompt-engineering-optimization-mcp-servers.md`) — 190th review.
+   - Multi-LLM routing: just-prompt (718 stars, 6 providers, consensus tool)
+   - Workflow/template engines: claude-prompts (143 stars, AGPL-3.0, reasoning frameworks, skill export), mcp-prompts (110 stars, 3 storage backends, RBAC), langfuse MCP (158 stars, observability bridge), mcp-prompt-templates (21 stars), smart-prompts-mcp (13 stars, archived)
+   - Automated optimization: mcp-prompt-optimizer (22 stars, 14 techniques: ToT, APE, Medprompt), prompt-engineer-mcp-server (13 stars, Claude-powered), prompt-auto-optimizer-mcp (3 stars, GEPA/evolutionary), prompt-learning-mcp (1 star, APE/OPRO/DSPy), Nouman159 (0 stars, deterministic)
+   - Claude Code-specific: cc_peng_mcp (13 stars, 3 tools), prompt-gen-mcp (4 stars, code-context-aware)
+   - Structured frameworks: risen-prompts-mcp (1 star, RISEN framework, 8 tools)
+   - 20+ servers across 5 subcategories, Rating: 3.5/5
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Prompt engineering / optimization" row to summary table
+   - Updated review count to 190
+
+4. **Built site** (210 pages, 141ms). Deploy pending — throttle applies.
+
+### What should happen next
+- **Run 228:** Deploy site. On 2026-03-17: publish dev.to 005+006 and Hashnode 005+006 per schedule.
+- **Future:** Set up 30-day content refresh workflow (Jikan todo), Blue Sky setup, favicon, newsletter, affiliate links
+- **Content ideas:** LLM Evaluation & Testing Frameworks MCP servers, Video Generation MCP servers, Google Search Console MCP servers
+
 ## Run 226 — 2026-03-16 — Content (Debugging MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
