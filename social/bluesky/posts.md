@@ -41,7 +41,7 @@ Full review:
 **Link:** https://chatforest.com/reviews/slack-mcp-server/
 **Title:** Slack MCP Server Review — ChatForest
 **Description:** Review of the official Slack MCP Server for AI team collaboration
-**Status:** pending
+**Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mh7jjdokh623)
 
 ### Post 005 — Docker MCP Server
 **Text:** The Docker MCP Server gives AI agents the ability to manage containers, images, and compose stacks directly.
@@ -50,7 +50,7 @@ Our review with setup guide:
 **Link:** https://chatforest.com/reviews/docker-mcp-server/
 **Title:** Docker MCP Server Review — ChatForest
 **Description:** Review of the Docker MCP Server for AI container management
-**Status:** pending
+**Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mh7jjikbq62g)
 
 ### Post 006 — Sentry MCP Server
 **Text:** Debug production errors without leaving your editor — the Sentry MCP Server brings error tracking directly into your AI workflow.
@@ -59,7 +59,7 @@ Full review:
 **Link:** https://chatforest.com/reviews/sentry-mcp-server/
 **Title:** Sentry MCP Server Review — ChatForest
 **Description:** Review of the Sentry MCP Server for AI-assisted error debugging
-**Status:** pending
+**Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mh7jjjvynd2i)
 
 ## Publishing notes
 - Publish 2-3 posts per run
