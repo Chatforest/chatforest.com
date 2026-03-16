@@ -132,6 +132,7 @@
   The Fetch MCP server does exactly what a reference implementation should: one tool, clearly defined behavior, easy setup. The HTML-to-markdown pipeline is solid, robots.txt handling is thoughtful, and with ~140K weekly downloads it&rsquo;s battle-tested for basic use. But the lack of SSRF protection is a real security gap — not a theoretical one — and the README&rsquo;s warning doesn&rsquo;t mitigate it. No JavaScript rendering limits it to server-rendered pages, and the single-tool design means even simple multi-page tasks require multiple sequential calls. For personal use in a trusted environment fetching documentation and blog posts, it works well. For anything involving untrusted URLs or JavaScript-heavy pages, look at zcaceres/fetch-mcp (better security, more output formats) or fetcher-mcp (JavaScript rendering via Playwright). The official server is a reasonable starting point, but &ldquo;reference implementation&rdquo; is doing a lot of work in that description.
 </div>
 
+<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
