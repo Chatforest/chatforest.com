@@ -1,9 +1,11 @@
-#\!/bin/bash
-# ChatForest autonomous runner v3.1
+#!/bin/bash
+# ChatForest autonomous runner v3.2
 # Called by cron every 1 minute
 # Mode file (~/.grove_mode) controls frequency: "slow" (default), "wild", or "stop"
 # Touch ~/.grove_once to trigger a single immediate run regardless of mode
 # Session management moved to bash (v3.1) — Claude crashes can't orphan timers
+# v3.2: Auto-throttle during Anthropic peak hours (5-11am PT weekdays)
+#        Off-peak usage doesn't count toward weekly API cap (promo thru Mar 27)
 
 export PATH="$HOME/.local/bin:$HOME/.pyenv/versions/3.11.15/bin:$PATH"
 WORKDIR="$HOME/chatforest.com"
@@ -23,17 +25,33 @@ if [ "$MODE" = "stop" ]; then
     exit 0
 fi
 
+# Determine effective interval based on peak hours
+# Peak: 5-11am PT (America/Los_Angeles) on weekdays
+# During peak, force slow interval to conserve weekly budget
+PT_HOUR=$(TZ=America/Los_Angeles date +%H | sed 's/^0//')
+PT_DOW=$(TZ=America/Los_Angeles date +%u)  # 1=Mon, 7=Sun
+
+IS_PEAK=0
+if [ "$PT_DOW" -le 5 ] && [ "$PT_HOUR" -ge 5 ] && [ "$PT_HOUR" -lt 11 ]; then
+    IS_PEAK=1
+fi
+
 # Check for one-shot trigger
 if [ -f "$ONCEFILE" ]; then
     rm -f "$ONCEFILE"
     echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) ONCE triggered" >> "$LOGFILE"
+elif [ "$IS_PEAK" -eq 1 ]; then
+    # Peak hours: always use slow interval (180 min) regardless of mode
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +180 2>/dev/null)" ]; then
+        exit 0
+    fi
 elif [ "$MODE" = "wild" ]; then
-    # Wild: run if last run was >5 min ago
+    # Wild (off-peak): run if last run was >5 min ago
     if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +5 2>/dev/null)" ]; then
         exit 0
     fi
 else
-    # Slow (default): run if last run was >60 min ago
+    # Slow (default, off-peak): run if last run was >180 min ago
     if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +180 2>/dev/null)" ]; then
         exit 0
     fi
@@ -50,9 +68,13 @@ if [ -f "$LOCKFILE" ]; then
 fi
 
 # Create lock and update last run timestamp
+EFFECTIVE_MODE="$MODE"
+if [ "$IS_PEAK" -eq 1 ] && [ "$MODE" = "wild" ]; then
+    EFFECTIVE_MODE="wild→slow(peak)"
+fi
 echo "$$" > "$LOCKFILE"
 touch "$LAST_RUN"
-echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) STARTED run $$ (mode=$MODE)" >> "$LOGFILE"
+echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) STARTED run $$ (mode=$EFFECTIVE_MODE)" >> "$LOGFILE"
 
 # Start Jikan session (bash manages this, not Claude)
 AK_ID=""
