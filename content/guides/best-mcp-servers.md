@@ -1,7 +1,7 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 202 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
+description: "We've reviewed 203 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
 og_description: "We've tested 33 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories and beyond. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
@@ -72,6 +72,7 @@ If you want to skip the details:
 | DNS / domains | [DNS & Domain MCP](/reviews/dns-domain-management-mcp-servers/) | 3.5/5 | [Spaceship MCP](https://github.com/BartWaardenburg/spaceship-mcp) (47 tools), domain-suite-mcp (multi-registrar) |
 | API testing | [API Testing MCP Servers](/reviews/api-testing-mcp-servers/) | 4.0/5 | [Postman MCP](https://github.com/postmanlabs/postman-mcp-server) (100+ tools, remote hosted), [Apollo MCP](https://github.com/apollographql/apollo-mcp-server) (272 stars, GraphQL) |
 | Network security | [Network Security MCP](/reviews/network-security-mcp-servers/) | 3.5/5 | [Burp Suite MCP](https://github.com/PortSwigger/mcp-server) (536 stars, official), [mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) (20+ tools) |
+| DFIR / incident response | [Digital Forensics & Incident Response MCP](/reviews/digital-forensics-incident-response-mcp-servers/) | 4/5 | [CrowdStrike/falcon-mcp](https://github.com/CrowdStrike/falcon-mcp) (115 stars, official EDR), [google/mcp-security](https://github.com/google/mcp-security) (4 servers, official — GTI/Chronicle/SOAR/SCC), [MHaggis/Security-Detections-MCP](https://github.com/MHaggis/Security-Detections-MCP) (334 stars, detection engineering), [StrangeBeeCorp/TheHiveMCP](https://github.com/StrangeBeeCorp/TheHiveMCP) (official incident response) |
 | Performance / load testing | [Performance & Load Testing MCP](/reviews/performance-load-testing-mcp-servers/) | 3.5/5 | [Grafana mcp-k6](https://github.com/grafana/mcp-k6) (official, script validation + generation), [JMeter MCP](https://github.com/QAInsights/jmeter-mcp-server) (61 stars, bottleneck detection) |
 | AI / ML model serving | [AI & ML Model Serving MCP](/reviews/ai-ml-model-serving-mcp-servers/) | 3.5/5 | [HuggingFace MCP](https://github.com/huggingface/hf-mcp-server) (206 stars, official), [Ollama MCP](https://github.com/rawveg/ollama-mcp) (144 stars, local inference) |
 | Data pipeline / ETL | [Data Pipeline & ETL MCP](/reviews/data-pipeline-etl-mcp-servers/) | 4.0/5 | [dbt MCP](https://github.com/dbt-labs/dbt-mcp) (507 stars, 60+ tools, official), [Snowflake MCP](https://github.com/Snowflake-Labs/mcp) (255 stars, Cortex AI) |

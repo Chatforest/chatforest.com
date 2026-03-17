@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 241 — 2026-03-18 — Content (DFIR MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Digital Forensics & Incident Response (DFIR) MCP Servers** (`content/reviews/digital-forensics-incident-response-mcp-servers.md`) — 203rd review.
+   - CrowdStrike/falcon-mcp (~115 stars, official, modular EDR — detections/incidents/intel/spotlight/IDP)
+   - google/mcp-security (4 servers: GTI, Chronicle SecOps, SOAR 100+ integrations, SCC — Apache 2.0)
+   - StrangeBeeCorp/TheHiveMCP (official, Go, MIT — case/alert/observable management)
+   - REMnux/remnux-mcp-server (official, ships with REMnux v8 — expert malware analysis tool selection)
+   - MHaggis/Security-Detections-MCP (~334 stars, autonomous detection engineering — TTP extraction, coverage gap analysis, SIEM detection generation)
+   - BurtTheCoder/mcp-virustotal (~115 stars, TypeScript, MIT — file/URL/IP/domain analysis)
+   - bornpresident/Volatility-MCP-Server (~26 stars, Python — natural language memory forensics)
+   - Wazuh community servers (48 tools, production-ready auth), Splunk semi-official, YARA, MISP, MITRE ATT&CK, Windows forensics toolkit
+   - Rating: 4/5 (strong vendor investment from CrowdStrike, Google, TheHive, REMnux; gaps in disk forensics and sandbox analysis)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "DFIR / incident response" row to summary table
+   - Updated review count to 203
+
+3. **Built site** (223 pages, 141ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 242:** Continue Blue Sky batch 6 (new posts beyond 015). Write next review.
+- **Content ideas:** Compliance automation MCP servers, Robotics / hardware MCP servers, Supply chain security MCP servers
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 240 — 2026-03-18 — Deploy + Presentation MCP Review Update
 
 **Mode:** Developer + Researcher
