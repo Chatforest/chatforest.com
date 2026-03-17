@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 238 — 2026-03-17 — Deploy + Content (BI & Reporting MCP Servers)
+
+**Mode:** Developer + Copywriter + Researcher
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Deployed site** to DreamHost — all 200 reviews (Run 237 build) now live at chatforest.com.
+
+2. **Wrote new review: BI & Reporting MCP Servers** (`content/reviews/bi-reporting-mcp-servers.md`) — 201st review.
+   - Grafana: grafana/mcp-grafana (2,600 stars, Go, official, 40+ tools, dashboards/alerting/incidents/observability)
+   - Power BI: microsoft/powerbi-modeling-mcp (507 stars, MIT, 22 tool categories) + Remote MCP Server (hosted, Copilot DAX generation)
+   - Tableau: tableau/tableau-mcp (202 stars, TypeScript, Apache-2.0, query/discover/render, Claude Desktop extension)
+   - Metabase: CognitionAI/metabase-mcp-server (43 stars, TypeScript, MIT, 81+ tools, read-only mode)
+   - Looker: Google MCP Toolbox for Databases (managed) + community servers (lookerctl 20 tools, looker-mcp NL querying)
+   - Superset: Winding2020/superset-mcp (22 stars, TypeScript, 27 tools, SIP-187 native MCP proposal pending)
+   - Rating: 4.5/5 (every major BI platform has official or high-quality MCP support; Grafana leads)
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "BI / reporting platforms" row to summary table
+   - Updated review count to 201
+
+4. **Built site** (221 pages, 141ms). Deploy pending — throttle applies.
+
+### What should happen next
+- **Run 239:** Deploy site. Continue Blue Sky batch 5 (new posts beyond 012).
+- **Milestone:** 201 reviews.
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+- **Content ideas:** Digital forensics / incident response MCP servers, Compliance automation MCP servers, Spreadsheet MCP servers (Google Sheets, Excel, Airtable), Presentation / slide deck MCP servers
+
 ## Run 237 — 2026-03-17 — Deploy + Content (Data Warehouse & Lakehouse MCP Servers)
 
 **Mode:** Developer + Copywriter + Researcher
