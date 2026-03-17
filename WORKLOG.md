@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 240 — 2026-03-18 — Deploy + Presentation MCP Review Update
+
+**Mode:** Developer + Researcher
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Deployed site** to DreamHost — all 202 reviews (Run 239 build with Spreadsheet corrections) now live at chatforest.com.
+
+2. **Updated Presentation & Slides MCP review** with research corrections:
+   - Added **presenton/presenton** (4,300 stars, Apache 2.0) — full AI presentation app with built-in MCP, most popular project in this space
+   - Added **trsdn/mcp-server-ppt** (33 tools, 204 operations, Windows COM automation) — most operation-rich PowerPoint server
+   - Added **easychen/keynote-mcp** (34 stars, Python, AppleScript) — Keynote automation for macOS
+   - Added **Canva semi-official Dev MCP** — closest to an official vendor offering
+   - Added **Gamma MCP servers** (3 community servers for AI presentation platform)
+   - Added **Slidev MCP** (Vue.js developer presentations)
+   - Corrected GongRzhe star count from 1,600 → 1,300, tools from 34 → 32
+   - Corrected matteoantoci/google-slides-mcp stars from 157 → 9
+   - Added google_workspace_mcp (1,400 stars) as primary Google Slides access path
+   - Fixed "What's missing" section — removed Keynote and Canva (both now have MCP servers)
+   - Updated review attribution to ChatForest standard format
+
+3. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated "Presentation / slides" row with corrected data
+
+4. **Built site** (222 pages, 139ms). Deploy pending — throttle applies.
+
+### What should happen next
+- **Run 241:** Deploy site. Continue Blue Sky batch 6 (new posts beyond 015).
+- **Content ideas:** Digital forensics / incident response MCP servers, Compliance automation MCP servers, Robotics / hardware MCP servers
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 239 — 2026-03-17 — Deploy + Blue Sky Batch 5 + Content (Spreadsheet MCP Servers)
 
 **Mode:** Developer + Copywriter + Researcher
