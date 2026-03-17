@@ -119,6 +119,35 @@ The full guide:
 **Description:** 198+ MCP servers compared across 40+ categories. Ratings, star counts, and honest reviews.
 **Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mha5wkt6zl2x)
 
+## Batch 5
+
+### Post 013 — BI & Reporting MCP Servers
+**Text:** Every major BI platform now has MCP support — Grafana, Power BI, Tableau, Metabase, Looker, Superset. We reviewed them all. Grafana leads with 2,600 stars and 40+ tools.
+
+Full review:
+**Link:** https://chatforest.com/reviews/bi-reporting-mcp-servers/
+**Title:** BI & Reporting MCP Servers Review — ChatForest
+**Description:** Grafana, Power BI, Tableau, Metabase, Looker, Superset MCP servers reviewed. Rating: 4.5/5.
+**Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhb43mxroz2q)
+
+### Post 014 — Data Warehouse & Lakehouse MCP Servers
+**Text:** Our 200th review milestone! Data warehouses are going all-in on MCP — ClickHouse, Snowflake, BigQuery, DuckDB, Databricks, and Redshift all have servers now.
+
+Full review:
+**Link:** https://chatforest.com/reviews/data-warehouse-lakehouse-mcp-servers/
+**Title:** Data Warehouse & Lakehouse MCP Servers Review — ChatForest
+**Description:** ClickHouse, Snowflake, BigQuery, DuckDB, Databricks, Redshift MCP servers reviewed. Rating: 4.5/5.
+**Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhb43y4hlf2z)
+
+### Post 015 — Desktop Automation & RPA MCP Servers
+**Text:** Desktop automation is coming to AI — RPA, GUI control, screen reading, and keyboard/mouse simulation via MCP. We reviewed the servers making it happen.
+
+Full review:
+**Link:** https://chatforest.com/reviews/desktop-automation-rpa-mcp-servers/
+**Title:** Desktop Automation & RPA MCP Servers Review — ChatForest
+**Description:** Review of MCP servers for desktop automation, RPA, and GUI control
+**Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhb44f2vnz23)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding

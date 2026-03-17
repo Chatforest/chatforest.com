@@ -1,7 +1,7 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 201 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
+description: "We've reviewed 202 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
 og_description: "We've tested 33 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories and beyond. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
@@ -77,6 +77,7 @@ If you want to skip the details:
 | Data pipeline / ETL | [Data Pipeline & ETL MCP](/reviews/data-pipeline-etl-mcp-servers/) | 4.0/5 | [dbt MCP](https://github.com/dbt-labs/dbt-mcp) (507 stars, 60+ tools, official), [Snowflake MCP](https://github.com/Snowflake-Labs/mcp) (255 stars, Cortex AI) |
 | Data warehouse / lakehouse | [Data Warehouse & Lakehouse MCP](/reviews/data-warehouse-lakehouse-mcp-servers/) | 4.5/5 | [ClickHouse MCP](https://github.com/ClickHouse/mcp-clickhouse) (720 stars, official), [DuckDB/MotherDuck](https://github.com/motherduckdb/mcp-server-motherduck) (441 stars), BigQuery managed remote |
 | BI / reporting platforms | [BI & Reporting MCP](/reviews/bi-reporting-mcp-servers/) | 4.5/5 | [Grafana mcp-grafana](https://github.com/grafana/mcp-grafana) (2,600 stars, 40+ tools), [Power BI Modeling](https://github.com/microsoft/powerbi-modeling-mcp) (507 stars, 22 categories + remote DAX), [Tableau](https://github.com/tableau/tableau-mcp) (202 stars, official) |
+| Spreadsheets | [Spreadsheet MCP](/reviews/spreadsheet-mcp-servers/) | 3.5/5 | [google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) (1,800 stars, 10+ Google services), [excel-mcp-server](https://github.com/negokaz/excel-mcp-server) (883 stars, Go, cross-platform), [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) (427 stars, 16 tools) |
 | Data visualization | [Data Visualization MCP](/reviews/data-visualization-mcp-servers/) | 3.5/5 | [AntV mcp-server-chart](https://github.com/antvis/mcp-server-chart) (3,800 stars, 27 tools), [mcp-echarts](https://github.com/hustcc/mcp-echarts) (214 stars, full ECharts) |
 | Chaos engineering | [Chaos Engineering MCP](/reviews/chaos-engineering-mcp-servers/) | 3.5/5 | [LitmusChaos MCP](https://github.com/litmuschaos/litmus-mcp-server) (12 stars, official, 17 tools), [Chaos Mesh MCP](https://github.com/ernestolee13/chaos-mesh-mcp) (33 tools, 7 chaos types) |
 | Geospatial / mapping | [Geospatial & Mapping MCP](/reviews/geospatial-mapping-mcp-servers/) | 4.0/5 | [Mapbox MCP](https://github.com/mapbox/mcp-server) (315 stars, official, 20 tools, hosted), [gis-mcp](https://github.com/mahdin75/gis-mcp) (120 stars, 100+ tools, 6 GIS libraries) |
