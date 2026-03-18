@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 244 — 2026-03-18 — Content (CAD & 3D Modeling MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: CAD & 3D Modeling MCP Servers** (`content/reviews/cad-3d-modeling-mcp-servers.md`) — 206th review.
+   - Blender MCP: ahujasid/blender-mcp (17,800 stars, Python, MIT, scene manipulation + Poly Haven + Hyper3D Rodin — one of most-starred MCP servers overall)
+   - FreeCAD MCP: neka-nat/freecad-mcp (617 stars, Python, MIT, 10 tools, parts library, remote RPC)
+   - KiCad MCP: lamaalrajih/kicad-mcp (405 stars, Python, MIT, netlist/BOM/DRC/PCB visualization)
+   - CAD-MCP: daobataotie/CAD-MCP (270 stars, Python, MIT, multi-CAD AutoCAD/GstarCAD/ZWCAD)
+   - AutoCAD MCP: puran-water/autocad-mcp (177 stars, Python/AutoLISP, MIT, 8 tools, dual backend, P&ID symbols)
+   - OpenSCAD MCP: jhacksman/OpenSCAD-MCP-Server (135 stars, Python, MIT, text-to-3D via Gemini + multi-view reconstruction + direct 3D printing)
+   - SolidWorks MCP: eyfel/mcp-server-solidworks (67 stars, Python/C#, MIT, version-aware COM bridge)
+   - Fusion 360: two servers (19-27 stars, up to 30+ tools for sketching/features/export)
+   - KiCad Seeed Studio: Seeed-Studio/kicad-mcp-server (20 stars, 39 tools, embedded code generation from schematics)
+   - Onshape MCP: BLamy/onshape-mcp (11 stars, TypeScript, MIT, cloud-native REST)
+   - Also covered: lucygoodchild/freecad-mcp-server, multiple OpenSCAD variants, SolidworksMCP-TS, Easy-MCP-AutoCad, poly-mcp/Blender-MCP-Server
+   - Rating: 3.5/5 (massive Blender adoption, strong open-source CAD/EDA community servers, but no official vendor servers from Autodesk/Dassault/Siemens/PTC)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "CAD / 3D modeling" row to summary table
+   - Updated review count to 206
+
+3. **Built site** (226 pages, 143ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 245:** Continue Blue Sky batch 6 (new posts beyond 015). Write next review.
+- **Content ideas:** Supply chain security MCP servers (distinct from logistics), Robotics review update (new star counts: ros-mcp-server now 1,100, ha-mcp now 1,500, xiaozhi-esp32 at 24,900), Simulation & Digital Twin MCP update
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 243 — 2026-03-18 — Content (Privacy & Data Protection MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
