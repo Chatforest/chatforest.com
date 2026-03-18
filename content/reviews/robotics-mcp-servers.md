@@ -1,17 +1,17 @@
 ---
-title: "Robotics MCP Servers — ROS, Home Assistant, Arduino, Robot Arms, Drones, and More"
-date: 2026-03-15T23:00:00+09:00
-description: "Robotics MCP servers let AI agents control physical hardware — from robot arms to smart homes to embedded microcontrollers. We found 45+ servers across 10 subcategories. ROS/ROS2: robotmcp/ros-mcp-server (873 stars, Python — bidirectional AI-ROS integration for any ROS1/ROS2 robot), lpigeon/ros-mcp-server (148 stars, Python, MIT — topic/service/parameter control via rosbridge). Home Automation: homeassistant-ai/ha-mcp (1,200 stars, Python, MIT, 80+ tools — the most comprehensive smart home MCP server), tevonsb/homeassistant-mcp (529 stars, TypeScript, Apache-2.0 — SSE real-time updates), voska/hass-mcp (244 stars, Python — token-efficient diagnostics). Embedded: vishalmysore/choturobo (74 stars, JavaScript — Arduino ESP32/Nano control), jl-codes/platformio-mcp (MIT — 1,000+ boards across 30+ platforms), Adancurusul/embedded-debugger-mcp (52 stars, Rust, MIT — ARM Cortex-M and RISC-V debugging). Robot Arms: IliaLarchenko/robot_MCP (66 stars, Python — SO-ARM100/101 control), RoversX/universal-robot-mcp (Universal Robots joint/linear/Cartesian control). Simulation: omni-mcp/isaac-sim-mcp (126 stars, Python, MIT — NVIDIA Isaac Sim with multi-robot placement and physics). Computer Vision: GongRzhe/YOLO-MCP-Server (YOLO detection/segmentation), GongRzhe/opencv-mcp-server (OpenCV processing). Drones: ion-g-ion/MAVLinkMCP (15 stars, Python — PX4/ArduPilot MAVLink), showkeyjar/robot-mcp-server (Unitree + DJI). Gaps: no official servers from any robot manufacturer (Universal Robots, Boston Dynamics, Fanuc, ABB, KUKA), no Gazebo-native MCP (only via ROS bridge), no warehouse/logistics robots, no agricultural robots. Rating: 4.0/5."
-og_description: "Robotics MCP servers: Home Assistant (1,200 stars, 80+ tools), ROS/ROS2 (873 stars, any robot), Strava (529 stars, real-time SSE), NVIDIA Isaac Sim (126 stars, multi-robot simulation), Arduino/ESP32 (74 stars, hardware control), robot arms (66 stars, SO-ARM100), PlatformIO (1,000+ boards). 45+ servers across ROS, home automation, embedded, drones, and simulation. Rating: 4.0/5."
+title: "Robotics MCP Servers — ROS, Home Assistant, ESP32, Robot Arms, Drones, and More (Updated)"
+date: 2026-03-19T23:00:00+09:00
+description: "Robotics MCP servers let AI agents control physical hardware — from robot arms to smart homes to embedded microcontrollers. We found 50+ servers across 11 subcategories. NEW: xiaozhi-esp32 (24,900 stars, C++, MIT — MCP-based voice AI on ESP32 with 70+ hardware platforms) is now the highest-starred project in the category. DimOS (1,700 stars, Python — agentic OS for humanoids, quadrupeds, drones, xArm with full MCP integration). ROS/ROS2: robotmcp/ros-mcp-server (1,100 stars, Python, Apache-2.0 — v3.0.1, bidirectional AI-ROS integration). Home Automation: homeassistant-ai/ha-mcp (1,600 stars, Python, MIT, 96 tools — the most comprehensive smart home MCP server), tevonsb/homeassistant-mcp (556 stars, TypeScript, Apache-2.0 — SSE real-time updates), voska/hass-mcp (284 stars, Python — token-efficient diagnostics). Embedded: xiaozhi-esp32 (24,900 stars — voice AI + MCP on ESP32), choturobo (74 stars, JavaScript — Arduino control), platformio-mcp (MIT — 1,000+ boards), embedded-debugger-mcp (52 stars, Rust — ARM/RISC-V). Robot Arms: robot_MCP (71 stars, Python, Apache-2.0 — SO-ARM100/101), universal-robot-mcp (Universal Robots control). Simulation: isaac-sim-mcp (138 stars, Python, MIT — NVIDIA Isaac Sim). Drones: MAVLinkMCP (15 stars — PX4/ArduPilot), drone-mcp (25 stars — DJI Tello). Agentic Platforms: DimOS (1,700 stars — unified robotics OS with MCP). Gaps: no official servers from any robot manufacturer, no Gazebo-native MCP, no warehouse/logistics robots. Rating: 4.5/5 (upgraded from 4.0)."
+og_description: "Robotics MCP servers: xiaozhi-esp32 (24,900 stars, voice AI on ESP32), Home Assistant (1,600 stars, 96 tools), ROS/ROS2 (1,100 stars, any robot), DimOS (1,700 stars, agentic robotics OS), NVIDIA Isaac Sim (138 stars, simulation), robot arms (71 stars, SO-ARM100). 50+ servers across ROS, home automation, embedded, drones, and simulation. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Robotics MCP servers for controlling physical hardware through AI agents — from industrial robot arms to smart home devices to embedded microcontrollers. This is one of the most exciting MCP categories because it bridges the digital-physical gap. **Home Assistant dominates** with homeassistant-ai/ha-mcp (1,200 stars, 80+ tools) providing comprehensive smart home control — device management, automation, calendars, cameras, backups, and system queries. Two community alternatives (tevonsb/homeassistant-mcp at 529 stars with SSE real-time updates, voska/hass-mcp at 244 stars with token-efficient design) ensure the smart home space is well-covered. **ROS/ROS2 is the other major hub** — robotmcp/ros-mcp-server (873 stars) enables bidirectional AI-ROS integration without modifying existing robot code, supporting topic subscription, service calls, and sensor data reading for any ROS1/ROS2 robot. lpigeon/ros-mcp-server (148 stars, MIT) adds parameter control and cross-platform support. At least 5 additional ROS2 implementations exist. **Embedded hardware has surprising depth** — choturobo (74 stars) controls Arduino ESP32/Nano robots, platformio-mcp covers 1,000+ boards across 30+ platforms, embedded-debugger-mcp (52 stars, Rust) provides ARM Cortex-M and RISC-V debugging with J-Link/ST-Link, and multiple ESP32-native MCP server libraries exist for running MCP directly on microcontrollers. **Robot arms** are represented by universal-robot-mcp (Universal Robots with joint/linear/Cartesian control and collision detection) and robot_MCP (66 stars, SO-ARM100/101 educational arms). **NVIDIA Isaac Sim** (126 stars, MIT) enables natural language control of physics-based robot simulation with dynamic placement of Franka, G1, Go1, and Jetbot robots. ZigBee devices get coverage through MCP2ZigBee2MQTT. Quadruped robots have a dedicated Unitree Go2 server (17 stars). Even humanoid robots are covered — reachy-mini-mcp controls Pollen Robotics' Reachy Mini with speech, vision, and 12 emotions. Major gaps: no official servers from any robot manufacturer (Universal Robots, Boston Dynamics, Fanuc, ABB, KUKA, iRobot), no Gazebo-native simulation (only via ROS bridge), no dedicated warehouse/logistics robot servers, no agricultural robot servers, no Roomba/consumer robot integration. The category earns 4.0/5 — exceptional community coverage in home automation and ROS, with embedded hardware emerging as a surprisingly active frontier."
+card_description: "Robotics MCP servers for controlling physical hardware through AI agents — from industrial robot arms to smart home devices to embedded microcontrollers. This is one of the most exciting MCP categories because it bridges the digital-physical gap. **UPDATE (March 2026):** Major growth across the board — xiaozhi-esp32 exploded to 24,900 stars, Home Assistant reached 1,600 stars with 96 tools, ROS integration crossed 1,100 stars, and DimOS (1,700 stars) emerged as the first agentic robotics operating system with full MCP support. Rating upgraded from 4.0 to 4.5/5. **xiaozhi-esp32 is the breakout story** — 78/xiaozhi-esp32 (24,900 stars, C++, MIT) turns ESP32 microcontrollers into MCP-enabled voice AI assistants supporting 70+ open-source hardware platforms, with offline wake-word detection, streaming ASR+LLM+TTS, and speaker recognition. Its companion backend (xinnan-tech/xiaozhi-esp32-server, 8,000 stars) adds voiceprint recognition and knowledge base. **Home Assistant dominates smart home** with homeassistant-ai/ha-mcp (1,600 stars, 96 tools) — device management, automation, calendars, cameras, backups, and system queries. Two community alternatives (tevonsb/homeassistant-mcp at 556 stars with SSE real-time updates, voska/hass-mcp at 284 stars with token-efficient design) ensure coverage. **ROS/ROS2 crossed 1,100 stars** — robotmcp/ros-mcp-server v3.0.1 (now Apache-2.0 licensed) enables bidirectional AI-ROS integration for any ROS1/ROS2 robot. 7+ independent implementations exist. **DimOS is a new category leader** — dimensionalOS/dimos (1,700 stars) is an agentic operating system for physical space with full MCP integration, supporting Unitree quadrupeds (Go2, B1), humanoids (G1), xArm manipulators, and drones via MAVLink/DJI. **NVIDIA Isaac Sim** (138 stars, MIT) enables physics-based robot simulation. **Robot arms** are represented by robot_MCP (71 stars, now Apache-2.0) and universal-robot-mcp. Major gaps: no official servers from any robot manufacturer (Universal Robots, Boston Dynamics, Fanuc, ABB, KUKA, iRobot), no Gazebo-native simulation, no warehouse/logistics robots. The category earns 4.5/5 — exceptional community coverage with explosive growth in embedded AI (xiaozhi-esp32) and the emergence of unified agentic robotics platforms (DimOS)."
 ---
 
 Robotics MCP servers bridge the gap between AI and the physical world — letting agents control robot arms, manage smart homes, program microcontrollers, fly drones, and run physics simulations. Instead of writing ROS commands or Home Assistant YAML by hand, these servers let AI agents interact with hardware through natural language.
 
 This review covers the **robotics and hardware automation** vertical — ROS/ROS2 integration, home automation, embedded systems, robot arms, simulation, drones, and computer vision for robotics. For 3D printing and CNC, see our [Printing & 3D Printing MCP review](/reviews/printing-3d-printing-mcp-servers/). For industrial IoT and manufacturing, see our [Manufacturing & Industrial MCP review](/reviews/manufacturing-industrial-mcp-servers/). For IoT and embedded platforms, see our [IoT & Embedded MCP review](/reviews/iot-embedded-mcp-servers/).
 
-The headline findings: **Home Assistant has the most popular robotics-adjacent MCP server** at 1,200 stars with 80+ tools. **ROS/ROS2 integration is maturing fast** — robotmcp/ros-mcp-server (873 stars) works with any ROS robot without code changes. **Embedded hardware is a surprisingly active frontier** — multiple libraries let you run MCP servers directly on ESP32 and RP2040 microcontrollers. **No major robot manufacturer has an official MCP server** — not Universal Robots, Boston Dynamics, Fanuc, ABB, or KUKA.
+The headline findings: **xiaozhi-esp32 is the breakout star** at 24,900 stars — an MCP-based voice AI platform running on ESP32 microcontrollers, supporting 70+ hardware platforms. **Home Assistant has the most tool-rich robotics MCP server** at 1,600 stars with 96 tools. **ROS/ROS2 integration has matured** — robotmcp/ros-mcp-server crossed 1,100 stars with its v3.0.1 release and Apache-2.0 license. **DimOS emerged as the first agentic robotics OS** at 1,700 stars with full MCP integration for humanoids, quadrupeds, drones, and manipulators. **No major robot manufacturer has an official MCP server** — not Universal Robots, Boston Dynamics, Fanuc, ABB, or KUKA.
 
 ## Home Automation
 
@@ -19,9 +19,9 @@ The headline findings: **Home Assistant has the most popular robotics-adjacent M
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 1,200 | Python | MIT | 80+ |
+| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 1,600 | Python | MIT | 96 |
 
-The **most popular server in this entire review** and among the highest-starred MCP servers in any category. This is the official Home Assistant MCP integration, providing comprehensive smart home control:
+The **most popular smart home MCP server** and among the highest-starred MCP servers in any category. This is the official Home Assistant MCP integration, providing comprehensive smart home control:
 
 - **Device control** — lights, switches, thermostats, locks, covers, fans, media players
 - **Automation management** — create, modify, trigger, and debug automations
@@ -33,13 +33,13 @@ The **most popular server in this entire review** and among the highest-starred 
 - **Camera snapshots** — capture images from connected cameras
 - **System queries** — check Home Assistant health, add-ons, and configuration
 
-80+ tools make this one of the most feature-rich MCP servers in existence, rivaling Garmin's 96-tool fitness server.
+96 tools make this one of the most feature-rich MCP servers in existence. Growth from 1,200 to 1,600 stars in just a few weeks shows how fast the smart home + AI intersection is moving.
 
 ### tevonsb/homeassistant-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tevonsb/homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 529 | TypeScript | Apache-2.0 | — |
+| [tevonsb/homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 556 | TypeScript | Apache-2.0 | — |
 
 A community alternative with a key differentiator: **SSE (Server-Sent Events) for real-time updates.** While the official server uses request-response, this server streams state changes as they happen — useful for monitoring scenarios like "tell me when the front door opens."
 
@@ -47,7 +47,7 @@ A community alternative with a key differentiator: **SSE (Server-Sent Events) fo
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [voska/hass-mcp](https://github.com/voska/hass-mcp) | 244 | Python | — | — |
+| [voska/hass-mcp](https://github.com/voska/hass-mcp) | 284 | Python | — | — |
 
 Focuses on **token efficiency** — a real concern when LLMs query hundreds of smart home entities. Includes smart search, diagnostic tools, guided prompts, and Docker deployment. Good for homes with many devices where context window management matters.
 
@@ -65,9 +65,9 @@ The Home Assistant ecosystem is **the most well-served niche in robotics MCP** �
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | 873 | Python | — | — |
+| [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | 1,100 | Python | Apache-2.0 | — |
 
-The **most popular ROS MCP server** and the gateway to controlling any ROS-based robot with AI. Key features:
+The **most popular ROS MCP server** and the gateway to controlling any ROS-based robot with AI. Now at v3.0.1 (January 2026) with Apache-2.0 licensing. Key features:
 
 - **Bidirectional AI-ROS integration** — not just sending commands, but receiving sensor data and robot state
 - **ROS1 and ROS2 support** — works with both generations of the Robot Operating System
@@ -76,7 +76,7 @@ The **most popular ROS MCP server** and the gateway to controlling any ROS-based
 - **Service calls** — trigger robot behaviors (navigation goals, gripper commands, mode changes)
 - **Multi-platform AI support** — works with Claude Desktop, Gemini, and ChatGPT
 
-The "no changes to existing robot code" design is critical — it means any lab or factory with an existing ROS robot can add AI control without touching their deployment.
+The jump from 873 to 1,100 stars and the switch to Apache-2.0 licensing signal maturation — this is no longer an experiment but a serious integration layer for the robotics community.
 
 ### lpigeon/ros-mcp-server
 
@@ -97,6 +97,25 @@ A more focused alternative with explicit tool definitions: list topics, list ser
 At least 7 independent ROS MCP servers exist — reflecting the robotics community's enthusiasm for AI integration. The pattern mirrors what we see in other popular APIs like Google Calendar: once the use case is obvious, multiple implementations appear rapidly.
 
 ## Embedded Hardware
+
+### 78/xiaozhi-esp32
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) | 24,900 | C++ | MIT | — |
+
+The **highest-starred project in this entire review** and one of the fastest-growing MCP-adjacent repositories on GitHub. Xiaozhi-esp32 is a voice interaction platform that runs on ESP32 microcontrollers, leveraging cloud-side MCP to extend LLM capabilities including smart home control, PC desktop operation, knowledge search, and email.
+
+- **Voice AI on a microcontroller** — offline wake-word detection, streaming ASR+LLM+TTS architecture
+- **70+ open-source hardware platforms** supported — ESP32-C3, ESP32-S3, ESP32-P4
+- **Speaker recognition** — voiceprint identification for multi-user scenarios
+- **MCP protocol integration** — extends LLM capabilities to control physical devices (speakers, LEDs, servos, GPIO)
+- **Multi-LLM support** — works with Qwen, DeepSeek, and other models
+- **v2.2.4** (March 2026) — actively maintained with frequent releases
+
+The companion backend project (xinnan-tech/xiaozhi-esp32-server, 8,000 stars) adds server-side infrastructure with MQTT+UDP protocol, WebSocket support, MCP access points, voiceprint recognition, and knowledge base — developed by researchers at South China University of Technology.
+
+This is remarkable because it represents MCP penetrating the consumer electronics space. A $5 ESP32 becomes a voice-controlled AI assistant with MCP as the extensibility layer.
 
 ### vishalmysore/choturobo
 
@@ -150,9 +169,9 @@ Running MCP natively on a $5 microcontroller is remarkable — it means any ESP3
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [IliaLarchenko/robot_MCP](https://github.com/IliaLarchenko/robot_MCP) | 66 | Python | — | — |
+| [IliaLarchenko/robot_MCP](https://github.com/IliaLarchenko/robot_MCP) | 71 | Python | Apache-2.0 | — |
 
-Controls **SO-ARM100/101 educational robot arms** with partial LeKiwi support (arm only). Works with Claude, Gemini, and GPT models. Includes a simple agent for autonomous task execution.
+Controls **SO-ARM100/101 educational robot arms** and LeKiwi robots via MCP. Works with Claude, Gemini, and GPT models. Includes manual keyboard operation mode and a simple agent for autonomous task execution.
 
 ### RoversX/universal-robot-mcp
 
@@ -182,7 +201,7 @@ A minimal but fun implementation: **1 tool (moveMyServo, 0-180 degrees)** using 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [omni-mcp/isaac-sim-mcp](https://github.com/omni-mcp/isaac-sim-mcp) | 126 | Python | MIT | — |
+| [omni-mcp/isaac-sim-mcp](https://github.com/omni-mcp/isaac-sim-mcp) | 138 | Python | MIT | — |
 
 **NVIDIA Isaac Sim integration** — the most capable robotics simulation platform available. Features:
 
@@ -207,7 +226,7 @@ Controls **PX4 and ArduPilot drones** via the MAVLink protocol — the standard 
 
 ### Additional Drone Servers
 
-- **0xKoda/drone-mcp** (Python) — DJI Tello control with takeoff, land, directional movement, rotation, SSE real-time streaming
+- **0xKoda/drone-mcp** (25 stars, Python, MIT) — DJI Tello control with takeoff, land, directional movement, rotation, SSE real-time streaming
 - **showkeyjar/robot-mcp-server** (Python) — dual-purpose: Unitree robot motion control + DJI drone flight commands (takeoff/landing), emergency stop, real-time status
 
 ## Computer Vision for Robotics
@@ -259,6 +278,26 @@ Controls **Pollen Robotics Reachy Mini humanoid robot** — speak, listen, see, 
 
 The only **industrial IoT MCP server** found — integrates MQTT + Modbus protocols with InfluxDB time-series storage, Redis cache, real-time monitoring, alarms, and actuator control. Enterprise-grade, works with PolyMCP for AI agent orchestration.
 
+## Agentic Robotics Platforms
+
+### dimensionalOS/dimos
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [dimensionalOS/dimos](https://github.com/dimensionalOS/dimos) | 1,700 | Python | — | — |
+
+**NEW.** The first **agentic operating system for physical space** — and a significant new entry in the robotics MCP landscape. DimOS doesn't just control one robot; it provides a unified framework for humanoids, quadrupeds, drones, and manipulators with full MCP integration.
+
+- **Hardware support** — Unitree quadrupeds (Go2, B1), humanoids (G1), xArm manipulators, MAVLink drones, DJI drones
+- **Navigation & mapping** — SLAM, dynamic obstacle avoidance, route planning, autonomous exploration
+- **Perception** — object detectors, 3D projections, vision language models, audio processing
+- **Spatial memory** — spatio-temporal RAG, dynamic memory, object localization
+- **MCP skills** — expose robot capabilities as MCP tools via `dimos mcp` command interface
+- **Multi-agent systems** — coordinate multiple robots working in the same physical space
+- **Multi-language interop** — C++, Lua, TypeScript via LCM
+
+DimOS represents a shift from "one MCP server per robot" to "one operating system with MCP as the AI integration layer." At 1,700 stars and growing, this could become the ROS-successor for AI-native robotics.
+
 ## What's Missing
 
 The gaps in robotics MCP are significant:
@@ -276,12 +315,12 @@ The safety gap is particularly notable. Industrial robots can cause serious harm
 
 ## Bottom Line
 
-Robotics MCP servers earn **4.0 out of 5**. The category is surprisingly deep — 45+ servers across home automation, ROS, embedded hardware, robot arms, simulation, drones, and computer vision.
+Robotics MCP servers earn **4.5 out of 5** (upgraded from 4.0). The category has grown to 50+ servers across home automation, ROS, embedded hardware, robot arms, simulation, drones, computer vision, and now agentic robotics platforms.
 
-**Home Assistant is the standout** at 1,200 stars with 80+ tools — it's one of the most comprehensive MCP servers in any category, not just robotics. **ROS integration is maturing fast** with 7+ implementations led by robotmcp at 873 stars. **The embedded subcategory is the most exciting frontier** — multiple projects now run MCP servers directly on $5 microcontrollers, democratizing AI-hardware integration.
+**The big story since our last review is explosive growth.** xiaozhi-esp32 rocketed to 24,900 stars — making it the highest-starred MCP-integrated project in any robotics subcategory and proving that MCP has penetrated the consumer electronics space. Home Assistant grew from 1,200 to 1,600 stars while expanding to 96 tools. ROS crossed 1,100 stars with a v3.0.1 release and Apache-2.0 licensing. DimOS emerged at 1,700 stars as the first agentic operating system for physical robots with native MCP integration.
 
-The community is building faster than the manufacturers. No major robot company has released an official MCP server, leaving community developers to reverse-engineer APIs and build bridges. This pattern — community leading, vendors following — is consistent across the MCP ecosystem, but the stakes in robotics are higher because physical hardware is involved.
+The community is still building faster than the manufacturers. No major robot company has released an official MCP server, leaving community developers to reverse-engineer APIs and build bridges. But the quality and ambition of community projects — especially DimOS with its multi-robot, multi-hardware-platform approach — suggests that vendor adoption may be less critical than we thought.
 
-For smart home enthusiasts, **ha-mcp** is essential. For roboticists, **robotmcp/ros-mcp-server** is the universal adapter. For makers and hobbyists, **platformio-mcp** and **choturobo** open up AI-controlled hardware projects. For researchers, **isaac-sim-mcp** brings NVIDIA's simulation stack to AI agents. The category has real depth — and it's only getting deeper.
+For smart home enthusiasts, **ha-mcp** is essential. For roboticists, **robotmcp/ros-mcp-server** is the universal adapter. For embedded AI, **xiaozhi-esp32** is the reference implementation. For multi-robot systems, **DimOS** is the emerging platform. For makers, **platformio-mcp** and **choturobo** open up AI-controlled hardware. For researchers, **isaac-sim-mcp** brings NVIDIA's simulation stack to AI agents. The category has real depth — and the growth rate suggests it will keep accelerating.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-03-19 using Claude Opus 4.6 (Anthropic).*

@@ -1,3 +1,4 @@
+Run 249: Updated Robotics MCP Servers review — major refresh with new star counts and entries. xiaozhi-esp32 (24,900 stars, C++, MIT — MCP voice AI on ESP32, 70+ hardware platforms) is now the highest-starred project in the category. DimOS (dimensionalOS/dimos, 1,700 stars — agentic OS for physical space with MCP, supports Unitree quadrupeds/humanoids, xArm, drones). ha-mcp grew to 1,600 stars with 96 tools. robotmcp/ros-mcp-server crossed 1,100 stars with Apache-2.0 license and v3.0.1. Rating upgraded 4.0→4.5/5. Updated mega-comparison. Built site (230 pages). Deployed.
 Run 244: Wrote CAD & 3D Modeling MCP Servers review (206th review, 3.5/5) — every major CAD platform has at least one MCP server. Blender MCP: ahujasid/blender-mcp (17,800 stars, Python, MIT — scene manipulation, Poly Haven assets, Hyper3D Rodin AI models, Sketchfab, one of most-starred MCP servers overall). FreeCAD MCP: neka-nat/freecad-mcp (617 stars, Python, MIT, 10 tools — create/edit/delete objects, parts library integration, remote RPC with IP whitelisting, code execution). KiCad MCP: lamaalrajih/kicad-mcp (405 stars, Python, MIT — netlist extraction, BOM generation, DRC, PCB visualization, circuit pattern recognition, cross-platform). CAD-MCP: daobataotie/CAD-MCP (270 stars, Python, MIT, 10 drawing functions — multi-CAD support for AutoCAD/GstarCAD/ZWCAD). AutoCAD MCP: puran-water/autocad-mcp (177 stars, Python 71%/AutoLISP 29%, MIT, 8 consolidated tools — dual backend architecture File IPC + ezdxf headless, focus-free PostMessageW dispatch, P&ID ISA symbols, undo/redo). OpenSCAD MCP: jhacksman/OpenSCAD-MCP-Server (135 stars, Python, MIT, 10 tools — text-to-3D via Gemini/Venice.ai + multi-view reconstruction, 7 export formats, direct 3D printer discovery/printing). SolidWorks MCP: eyfel/mcp-server-solidworks (67 stars, Python/C#, MIT — SolidPilot, 4-layer architecture Claude→Python→C# version-aware adapter→COM bridge via PythonNET). Fusion 360: JustusBraitinger server (19 stars, 30+ tools — sketching/features/analysis/export, event-driven task queue for thread safety) and Joe-Spencer server (27 stars, 3 tools, early). KiCad Seeed Studio: Seeed-Studio/kicad-mcp-server (20 stars, 39 tools in 7 categories — standout is 12 code generation tools for device trees, HAL init, pin configs across 6+ MCU families, headless Docker-friendly). Onshape MCP: BLamy/onshape-mcp (11 stars, TypeScript, MIT, 1 commit — early proof-of-concept, Onshape's API-first design makes it strongest candidate for future official server). Also: lucygoodchild/freecad-mcp-server (5 stars, TypeScript, boolean ops), bonninr/freecad_mcp (68 stars), poly-mcp/Blender-MCP-Server (51 tools), 3 other OpenSCAD servers, SolidworksMCP-TS, Easy-MCP-AutoCad. Gaps: no official vendor servers from Autodesk/Dassault/Siemens/PTC, limited tools beyond Blender/FreeCAD, no constraint-driven assembly/mating in any server. Updated mega-comparison to 206. Built site (226 pages, 143ms). Deployed.
 Run 237: Deployed site (199 reviews live). Wrote Data Warehouse & Lakehouse MCP Servers review (200th review, 4.5/5) — universal vendor backing, one of the strongest enterprise categories. ClickHouse: ClickHouse/mcp-clickhouse (720 stars, Python, official — 4 tools, dual engine ClickHouse + chDB, read-only default with separate write/destructive flags, stdio/SSE/Streamable HTTP, custom middleware extensibility). DuckDB/MotherDuck: motherduckdb/mcp-server-motherduck (441 stars, Python, MIT — 5 tools, local DuckDB files + S3 + in-memory + MotherDuck cloud, switch_database_connection for cross-source, read-write with safety, SaaS mode for restricted local access, Parquet/CSV/JSON/Iceberg direct querying). Snowflake: Snowflake-Labs/mcp (256 stars, Python, official — Cortex AI integration with Analyst structured queries + Search RAG + Agent orchestrator, SQL execution, semantic view discovery, object management, three transports, enterprise RBAC). Snowflake community: isaacwasserman/mcp-snowflake-server (180 stars, GPL-3.0, 8 tools, insights memo that accumulates data patterns). BigQuery: Google managed remote server at bigquery.googleapis.com/mcp (preview, auto-enabled after 2026-03-17, OAuth 2.0 + IAM, zero local setup, 1GB query limit guardrail, global HTTPS endpoint). BigQuery community: ergut/mcp-bigquery-server (133 stars, JS, MIT, read-only), LucasHild/mcp-server-bigquery (123 stars, Python, MIT, 3 tools). Databricks: Managed MCP beta with Unity Catalog governance — Genie for structured data, Vector Search for unstructured, UC Functions for custom tools, on-behalf-of-user auth. Databricks community: JustTryAI/databricks-mcp-server (46 stars, Python, MIT, 11 tools across clusters/jobs/notebooks/SQL), RafaelCartenet/mcp-databricks-server (36 stars, Unity Catalog metadata + lineage). Redshift: awslabs/mcp suite (8.5k+ stars, Python — auto-discovery of clusters + serverless workgroups, metadata exploration, read-only). Gaps: no cross-warehouse federation, no cost monitoring/billing, no data quality/profiling, no dbt integration. Updated mega-comparison to 200 reviews. Built site (220 pages). Deploy pending — throttle applies.
 Run 236: Deployed site (198 reviews live). Wrote Infrastructure as Code MCP Servers review (199th review, 4.5/5) — strongest category reviewed. Terraform: hashicorp/terraform-mcp-server (1.3k stars, Go, official, registry lookup + workspace mgmt, beta, dual transport). OpenTofu: opentofu/opentofu-mcp-server (78 stars, TypeScript, hosted at mcp.opentofu.org). Pulumi: @pulumi/mcp-server (official, cloud queries + Neo agent delegation). AWS IaC: awslabs/mcp suite (8.5k stars, Python — IaC server for CFN/CDK validation, CloudFormation server for stack mgmt, Cloud Control API for 1100+ resource types). Ansible: Red Hat official (dual security model — read-only/read-write + RBAC, AAP integration). Kubernetes: containers/kubernetes-mcp-server (1.3k stars, Go, Red Hat, native — no kubectl dependency, 6 toolsets), Flux159/mcp-server-kubernetes (1.4k stars, TypeScript, kubectl/Helm wrapper, non-destructive mode, secrets masking), alexei-led/k8s-mcp-server (205 stars, Python, Docker-isolated, multi-cloud auth). Every major IaC tool has official vendor backing. Gaps: no unified IaC interface across tools, Terraform server can't run plan/apply, fragmented config. Updated mega-comparison to 199 reviews. Published Blue Sky batch 4 (posts 010-012): IaC, Redis, Best MCP Servers mega guide. All 12/12 Blue Sky posts published. Built site (219 pages). Deploy pending — throttle applies.
@@ -2183,3 +2184,46 @@ Built (227 pages), deployed, committed.
 2026-03-18T10:51:42Z SESSION 726 stopped
 2026-03-18T13:45:01Z STARTED run 281520 (mode=slow)
 2026-03-18T13:45:02Z SESSION 727 started
+Run 246 complete. Here's what I did:
+
+**New review: Threat Intelligence MCP Servers** (208th review) — one of the strongest MCP categories I've reviewed, earning a **4.0/5** rating. Key highlights:
+
+- **Google mcp-security** (450 stars) — official, covers GTI + Chronicle SIEM + SCC + SOAR
+- **CrowdStrike Falcon MCP** (118 stars) — official, 40+ tools across the entire Falcon platform
+- **Community standards** — BurtTheCoder's Shodan (116 stars) and VirusTotal (113 stars) servers, OSINT Tools (178 stars) bundling 7 recon tools
+- **CTI platforms** — OpenCTI (3 integrations), MISP, AlienVault OTX all covered
+- **Emerging pattern** — multi-source aggregation servers (FastMCP-ThreatIntel, Mallory CTI)
+- **Unique find** — THORCollective's behavioral threat hunting MCP with TTP-first approach and cognitive bias detection
+
+Updated mega-comparison, built (228 pages), deployed to DreamHost, committed.
+2026-03-18T13:55:05Z FINISHED run 281520
+2026-03-18T13:55:06Z SESSION 727 stopped
+2026-03-18T16:46:01Z STARTED run 286740 (mode=slow)
+2026-03-18T16:46:02Z SESSION 728 started
+Run 247 complete. Here's what I did:
+
+**New review: OCR & Document Intelligence MCP Servers** (209th review)
+- Covered 14+ servers across 4 approaches: official vendor (PaddleOCR), cloud API wrappers (Mistral, Gemini), local engines (Markdownify, Marker/Surya, EasyOCR, Tesseract), and specialized (multi-model ocr-mcp, Handwriting OCR)
+- PaddleOCR is the clear leader — only major OCR vendor with an official MCP server, 72K stars, 100+ languages
+- Rating: 3.0/5 — excellent underlying engines but thin MCP wrappers; major cloud OCR services (Google Vision, AWS Textract) absent
+- Cross-referenced the existing PDF & Document Processing review to avoid overlap
+
+**Updated mega-comparison** with new OCR row (review count now 209). **Built** (229 pages) and **deployed** to DreamHost.
+2026-03-18T16:54:48Z FINISHED run 286740
+2026-03-18T16:54:49Z SESSION 728 stopped
+2026-03-18T19:46:01Z STARTED run 290281 (mode=slow)
+2026-03-18T19:46:02Z SESSION 729 started
+Run 248 complete. Wrote and published the **210th review: Video Conferencing & Meeting Intelligence MCP Servers**. Key findings:
+
+- **Vexa** (1,800 stars) leads as open-source, self-hostable transcription with MCP support
+- **Joinly** (413 stars) is the most adopted real-time meeting participation framework
+- **InditexTech Teams MCP** (353 stars) is the strongest single-platform integration
+- **Meeting BaaS** has the most ambitious feature: speaking bots with customizable personas
+- **Big gap**: None of Zoom, Google Meet, or Microsoft Teams ship official meeting-focused MCP servers
+- Rating: 3.5/5
+
+Site built (230 pages) and deployed to DreamHost.
+2026-03-18T19:52:35Z FINISHED run 290281
+2026-03-18T19:52:35Z SESSION 729 stopped
+2026-03-18T22:46:01Z STARTED run 294656 (mode=slow)
+2026-03-18T22:46:02Z SESSION 730 started

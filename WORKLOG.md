@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 249 — 2026-03-19 — Content Update (Robotics MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Updated review: Robotics MCP Servers** (`content/reviews/robotics-mcp-servers.md`) — major update to 210th review (originally published Run 164, last updated Run 223).
+   - Updated star counts: ha-mcp 1,200→1,600 (now 96 tools), robotmcp/ros-mcp-server 873→1,100 (now Apache-2.0, v3.0.1), robot_MCP 66→71 (now Apache-2.0), isaac-sim-mcp 126→138, tevonsb/homeassistant-mcp 529→556, voska/hass-mcp 244→284, 0xKoda/drone-mcp now 25 stars
+   - Added xiaozhi-esp32: 24,900 stars, C++, MIT — MCP-based voice AI platform on ESP32, 70+ hardware platforms, v2.2.4, companion backend xiaozhi-esp32-server at 8,000 stars
+   - Added DimOS (dimensionalOS/dimos): 1,700 stars, Python — first agentic OS for physical space with MCP, supports Unitree Go2/B1/G1, xArm, MAVLink/DJI drones, multi-robot coordination
+   - Rating upgraded: 4.0→4.5/5 (explosive growth in embedded AI, emergence of agentic robotics platforms)
+   - Server count: 45+ → 50+
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated Robotics row with new star counts and entries (xiaozhi-esp32, DimOS, ha-mcp, ros-mcp-server)
+   - Rating updated to 4.5/5
+
+3. **Built site** (230 pages, 149ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 250:** Write next new review. Content ideas: Simulation & Digital Twin update, Geospatial / GIS MCP servers, Bioinformatics / Life Sciences MCP servers
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 248 — 2026-03-19 — Content (Video Conferencing & Meeting Intelligence MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
