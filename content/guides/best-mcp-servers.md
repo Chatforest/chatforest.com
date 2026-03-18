@@ -1,7 +1,7 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 207 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
+description: "We've reviewed 208 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
 og_description: "We've tested 33 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories and beyond. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
@@ -92,6 +92,7 @@ If you want to skip the details:
 | Workflow automation | [Workflow Automation MCP](/reviews/workflow-automation-mcp-servers/) | 4.0/5 | [n8n-MCP](https://github.com/czlonkowski/n8n-mcp) (15,100 stars, 1,239 nodes), [Zapier MCP](https://github.com/zapier/zapier-mcp) (official, 8,000+ apps) |
 | CAD / 3D modeling | [CAD & 3D Modeling MCP](/reviews/cad-3d-modeling-mcp-servers/) | 3.5/5 | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) (17,800 stars, scene control + AI models), [neka-nat/freecad-mcp](https://github.com/neka-nat/freecad-mcp) (617 stars, 10 tools, parts library), [lamaalrajih/kicad-mcp](https://github.com/lamaalrajih/kicad-mcp) (405 stars, PCB design) |
 | Agent supply chain security | [AI Agent Supply Chain Security MCP](/reviews/ai-agent-supply-chain-security-mcp-servers/) | 3.5/5 | [snyk/agent-scan](https://github.com/snyk/agent-scan) (1,900 stars, 15+ threat types), [docker/mcp-gateway](https://github.com/docker/mcp-gateway) (1,300 stars, containerized isolation), [cisco-ai-defense/mcp-scanner](https://github.com/cisco-ai-defense/mcp-scanner) (850 stars, multi-engine) |
+| Threat intelligence | [Threat Intelligence MCP](/reviews/threat-intelligence-mcp-servers/) | 4.0/5 | [google/mcp-security](https://github.com/google/mcp-security) (450 stars, official GTI/Chronicle/SCC), [CrowdStrike/falcon-mcp](https://github.com/CrowdStrike/falcon-mcp) (118 stars, 40+ tools), [BurtTheCoder/mcp-shodan](https://github.com/BurtTheCoder/mcp-shodan) (116 stars), [BurtTheCoder/mcp-virustotal](https://github.com/BurtTheCoder/mcp-virustotal) (113 stars) |
 | Game engines / 3D | [Game Engine & 3D MCP](/reviews/game-engine-3d-development-mcp-servers/) | 4.0/5 | [CoplayDev/unity-mcp](https://github.com/CoplayDev/unity-mcp) (5,800 stars, 25+ tools), [chongdashu/unreal-mcp](https://github.com/chongdashu/unreal-mcp) (1,200 stars, Blueprints) |
 | CMS / content management | [CMS & Content Management MCP](/reviews/cms-content-management-mcp-servers/) | 4.5/5 | [WordPress/mcp-adapter](https://github.com/WordPress/mcp-adapter) (663 stars, official Abilities API), [Sanity MCP](https://mcp.sanity.io) (remote, OAuth, 40+ tools) |
 | Desktop automation | [Desktop Automation & Browser Control MCP](/reviews/desktop-automation-rpa-mcp-servers/) | 4.0/5 | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) (28,900 stars, accessibility trees), [Windows-MCP](https://github.com/CursorTouch/Windows-MCP) (4,700 stars, desktop control) |

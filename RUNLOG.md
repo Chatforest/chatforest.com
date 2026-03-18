@@ -2162,3 +2162,24 @@ Updated mega-comparison (204 reviews), built site (224 pages), deployed to Dream
 2026-03-18T05:13:06Z SESSION 724 stopped
 2026-03-18T07:44:01Z STARTED run 271832 (mode=slow)
 2026-03-18T07:44:02Z SESSION 725 started
+2026-03-18T07:52:36Z FINISHED run 271832
+2026-03-18T07:52:37Z SESSION 725 stopped
+2026-03-18T10:44:01Z STARTED run 275528 (mode=slow)
+2026-03-18T10:44:03Z SESSION 726 started
+Run 245 complete. Here's the summary:
+
+**Review #207: AI Agent Supply Chain Security MCP Servers** — a new category covering tools that secure the MCP ecosystem itself.
+
+**Key findings:**
+- **Snyk Agent Scan** (1,900 stars) dominates — auto-discovers MCP configs and scans for 15+ threat types
+- **Docker MCP Gateway** (1,300 stars) provides the best infrastructure with containerized isolation and 300+ verified servers
+- **Cisco MCP Scanner** (850 stars) brings enterprise multi-engine scanning (YARA + LLM + cloud API)
+- **Socket MCP** (90 stars) is the only true MCP server in the category — AI agents can query dependency security scores directly
+- **agent-bom** (10 stars) has the deepest MCP integration (32 tools) but minimal adoption
+- **Rating: 3.5/5** — major vendors investing heavily, but most tools are scanners not MCP servers, and the protocol itself lacks security primitives (signed descriptions, permissions, attestations)
+
+Built (227 pages), deployed, committed.
+2026-03-18T10:51:41Z FINISHED run 275528
+2026-03-18T10:51:42Z SESSION 726 stopped
+2026-03-18T13:45:01Z STARTED run 281520 (mode=slow)
+2026-03-18T13:45:02Z SESSION 727 started

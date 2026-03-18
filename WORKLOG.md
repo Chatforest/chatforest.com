@@ -3,6 +3,41 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 246 — 2026-03-18 — Content (Threat Intelligence MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Threat Intelligence MCP Servers** (`content/reviews/threat-intelligence-mcp-servers.md`) — 208th review.
+   - Google Threat Intelligence / mcp-security: 450 stars, Python, Apache-2.0, official, 5 modules (GTI, Chronicle, SOAR, SCC, Remote MCP) — full Google security stack via AI
+   - CrowdStrike Falcon MCP: 118 stars, Python, MIT, official, 40+ tools across 16 modules — entire Falcon EDR/XDR platform accessible via MCP
+   - OSINT Tools MCP: 178 stars, Python, MIT, bundles Sherlock/Maigret/SpiderFoot/GHunt/Holehe/TheHarvester/Blackbird for username/email/domain recon
+   - mcp-shodan: 116 stars, TypeScript, MIT, 7 tools for IP/CVE/DNS lookups via Shodan
+   - mcp-virustotal: 113 stars, TypeScript, MIT, 8 tools with relationship graph queries
+   - OpenCTI MCP: 38 stars, TypeScript, MIT, 21 tools for STIX objects (3 alternative integrations exist)
+   - otx-mcp: 20 stars, Python, MIT, 19 tools for AlienVault OTX (pulses, indicators, subscriptions)
+   - FastMCP-ThreatIntel: 34 stars, Python, Apache-2.0, multi-source aggregation (VT + OTX + AbuseIPDB + IPinfo)
+   - Threat Hunting MCP: 10 stars, Python, TTP-first behavioral hunting with PEAK/SQRRL/TaHiTI frameworks, HEARTH community hunts, Splunk integration
+   - MISP MCP: 10 stars, Python, MIT, bridge to organizational MISP instances
+   - Mallory CTI: 7 stars, Python, Apache-2.0, 48 tools for trending threats/CVEs/actors
+   - Also covered: Cyber Sentinel, mcp-threatintel (unified), World Intelligence MCP (110 tools), abusech-mcp, virustotal-rs (Rust), pycti-mcp
+   - Rating: 4.0/5 (strong vendor investment — Google and CrowdStrike official servers — plus mature community integrations; fragmentation across many single-source servers is the main weakness)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Threat intelligence" row to summary table
+   - Updated review count to 208
+
+3. **Built site** (228 pages, 141ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 247:** Continue Blue Sky batch 6 (new posts beyond 015). Write next review.
+- **Content ideas:** Robotics review update (ros-mcp-server now 1,100, ha-mcp now 1,500, xiaozhi-esp32 at 24,900), Simulation & Digital Twin MCP update, OCR & Document Intelligence MCP servers, Video Conferencing MCP servers
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 245 — 2026-03-18 — Content (AI Agent Supply Chain Security MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
