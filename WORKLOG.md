@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 248 — 2026-03-19 — Content (Video Conferencing & Meeting Intelligence MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Video Conferencing & Meeting Intelligence MCP Servers** (`content/reviews/video-conferencing-mcp-servers.md`) — 210th review.
+   - Vexa: 1,800 stars, Python, open-source, self-hostable, Google Meet/Teams/Zoom, real-time Whisper transcription (100 languages), MCP server microservice
+   - tl;dv MCP: 7 stars, official vendor server, multi-platform meeting intelligence (transcripts, highlights, metadata)
+   - Meeting BaaS: 25 stars, TypeScript, speaking bots with customizable personas via Pipecat, self-hostable
+   - Joinly: 413 stars, real-time meeting participation — AI agents join calls, access live transcripts, speak, and send chat
+   - InditexTech Teams MCP: 353 stars, Python, Docker, messaging (threads, replies, mentions) — built by Fortune 500 (Zara parent)
+   - floriscornel Teams MCP: 67 stars, TypeScript, 25+ tools (read + write), OAuth 2.0 auto-refresh, npm package
+   - echelon-ai-labs Zoom MCP: 18 stars, Python, Server-to-Server OAuth, users/meetings/recordings/settings
+   - INSIDE-HAIR Google Meet MCP: low stars, TypeScript, 23 tools, Calendar API v3 + Meet API v2, Docker
+   - Webex Messaging MCP: 6 stars, TypeScript, 52 tools, hosted under webex org, dual transport (STDIO/HTTP)
+   - Also covered: Prathamesh0901 Zoom, forayconsulting Zoom transcript, peakmojo Zoom noauth, Meetily (7K stars, not MCP but adjacent)
+   - Rating: 3.5/5 (three-tier ecosystem — intelligence platforms, platform wrappers, real-time participation — but no official servers from Zoom, Google Meet, or Microsoft Teams)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Video conferencing / meetings" row to summary table
+   - Updated review count to 210
+
+3. **Built site** (230 pages, 143ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 249:** Write next review. Content ideas: Robotics update (ros-mcp-server 1,100, ha-mcp 1,500, xiaozhi-esp32 24,900), Simulation & Digital Twin update, Geospatial / GIS MCP servers update
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 247 — 2026-03-19 — Content (OCR & Document Intelligence MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
