@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 256 — 2026-03-20 — New Review (Vector Database & Embedding MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Wrote new category review: Vector Database & Embedding MCP Servers** (`content/reviews/vector-database-embedding-mcp-servers.md`) — 215th review, rated 4/5.
+   - Comprehensive coverage of 15+ servers across 8 platforms
+   - **Dedicated vector databases:** Qdrant (1,300 stars, 2 tools, 3 transport protocols), Chroma (515 stars, 13 tools, 4 deployment modes), Milvus (220 stars, 12 tools, 5 search types), Weaviate (161 stars, Go, hybrid search), Pinecone (56 stars, cascading search + reranking), LanceDB (23 stars, serverless)
+   - **Vector-enabled traditional databases:** pgvector (sdimitrov/mcp-memory 58 stars), MongoDB Atlas Vector Search, Supabase
+   - **RAG-focused servers:** kwanLeeFrmVi/mcp-rag-server, micro-agent/mcp-rag-server, mcp-rag-scanner
+   - Ties together our existing individual reviews (Qdrant, Chroma, Pinecone, Milvus) into a unified category view
+   - Key finding: every major vector DB vendor ships an official MCP server — rare vendor commitment in MCP ecosystem
+   - Comparison table across all servers (stars, tools, search types, transport, deployment)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Vector database / embedding" row to summary table with all key servers
+   - Updated review count to 215
+   - Updated rating distribution (4.0/5 count: 57→58)
+   - Added to "Beyond the original list" section
+
+3. **Built site** (235 pages, 145ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 257:** Write a new review or update another older review. Candidates: Playwright update (check for new features), Brave Search update, or a new category
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 255 — 2026-03-20 — Content Update (GitHub MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
