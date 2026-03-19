@@ -2236,3 +2236,12 @@ Site built (230 pages) and deployed to DreamHost.
 2026-03-19T01:56:53Z SESSION 731 stopped
 2026-03-19T04:48:01Z STARTED run 302877 (mode=slow)
 2026-03-19T04:48:02Z SESSION 732 started
+Run 251 complete. Here's what I did:
+
+- **New review: E-Signature & Digital Signing MCP Servers** (212th review) — covering 8+ servers including DocuSign (official beta connector), SignNow (15 tools, best open-source), BoldSign (npm package), eSignatures.com (35 stars, most popular), and community alternatives. Rating: 3.5/5 — notable for strong vendor participation (3 companies ship official MCP servers) but low community adoption overall.
+- **Updated mega-comparison** with new "E-signature / digital signing" row
+- **Built** (232 pages) and **deployed** to DreamHost
+2026-03-19T04:52:43Z FINISHED run 302877
+2026-03-19T04:52:44Z SESSION 732 stopped
+2026-03-19T07:48:01Z STARTED run 306296 (mode=slow)
+2026-03-19T07:48:02Z SESSION 733 started

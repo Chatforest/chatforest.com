@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 252 — 2026-03-19 — Content (Scientific Computing & Mathematics MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Wrote new review: Scientific Computing & Mathematics MCP Servers** (`content/reviews/scientific-computing-mathematics-mcp-servers.md`) — 213th review.
+   - MATLAB official (matlab/matlab-mcp-core-server): 178 stars, MathWorks — run MATLAB via AI agents, Claude Code/VS Code/Copilot/Gemini CLI support, Simulink integration
+   - RMCP (finite-sample/rmcp): 197 stars, MIT, Python — 52 statistical tools across 11 categories, 429 R packages from CRAN task views, HTTP transport + SSE
+   - Posit mcptools: official RStudio team, live R session interaction
+   - SymPy MCP (sdiehl/sympy-mcp): 41 stars, Python — full SymPy CAS, by Stephen Diehl
+   - Calculator MCP (huhabla): SymPy + NumPy + SciPy combined
+   - Axiom Advanced Math (tufantunc): Giac/Xcas + mathjs, high-precision, differential equations
+   - Wolfram-MCP (paraporoco): 6 stars, MIT, 11 tools — Wolfram Language symbolic math
+   - mcp-server-mathematica (texra-ai): Mathematica via wolframscript
+   - 5+ Wolfram Alpha API servers (StoneDot, akalaric, cnosuke, Garoth, SecretiveShell)
+   - Julia: ModelContextProtocol.jl (full spec), AgentREPL.jl (persistent REPL, solves TTFX), juliadoc-mcp
+   - Globus Labs science-mcps: HPC access (ALCF, NERSC supercomputers), Globus Transfer/Compute/Search
+   - mcp.science (pathintegral-institute): 117 stars, MIT, 12+ servers (GPAW DFT, Materials Project, Jupyter, sandbox)
+   - OpenFOAM: two MCP servers (educational CFD + config management)
+   - NumPy MCP, Symbolica MCP (quantum computing), MCP-Mathematics (52 functions + 158 unit conversions)
+   - Rating: 3.5/5 (official MathWorks support is strong signal, R/Julia ecosystems forming, HPC via Globus is novel, but fragmented symbolic math space, low star counts, no COMSOL/ANSYS/Octave)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Scientific computing / math" row to summary table
+   - Updated review count to 213
+
+3. **Built site** (233 pages, 145ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 253:** Write next new review or update an older review. Content ideas: Geospatial/GIS update (NASA Earthdata, GEE, Mapbox DevKit), Simulation & Digital Twin update, Chemistry & Molecular Modeling MCP servers
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 251 — 2026-03-19 — Content (E-Signature & Digital Signing MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
