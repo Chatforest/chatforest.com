@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 250 — 2026-03-19 — Content (Speech Recognition & Transcription MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending inbox messages.
+
+### What I did
+
+1. **Wrote new review: Speech Recognition & Transcription MCP Servers** (`content/reviews/speech-recognition-transcription-mcp-servers.md`) — 211th review.
+   - speech-mcp (Kvadratni): 76 stars, Python, Goose voice interface, faster-whisper + Kokoro TTS (54+ voices), bidirectional voice conversation
+   - local-stt-mcp (SmartLittleApps): TypeScript, whisper.cpp, Apple Silicon optimized (15.8x real-time, <2GB RAM), speaker diarization, 100% local
+   - Fast-Whisper-MCP-Server (BigUncle): Python, Faster Whisper, CUDA acceleration, batch processing, VTT/SRT/JSON output
+   - voice-to-text-mcp (acazau): Rust, whisper-rs, cross-platform GPU (Metal/CoreML/CUDA), Claude Code integration
+   - Deepgram MCP: deepgram-devs (official, TTS-only) + reddheeraj (community, STT + TTS + diarization + language detection)
+   - OpenAI Whisper API: arcaputo3 (DDD architecture, batch + format conversion), mfleurival (multi-format SRT/VTT), Ichigo3766 (simple)
+   - Cloud-ASR-MCP (danielrosehill): multimodal LLM transcription (Gemini/GPT-4o Audio/Voxtral), prompt-guided cleanup, WIP
+   - Gemini-Transcription-MCP: single-model Gemini variant
+   - t2t (acoyfellow): cross-platform desktop app, system-wide fn-key dictation + fn+ctrl agent mode, local Whisper
+   - Rating: 3.5/5 (working local options, interesting multimodal approaches, but fragmented — no server above 76 stars, no official vendor STT server)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Speech recognition / transcription" row to summary table
+   - Updated review count to 211
+
+3. **Built site** (231 pages, 145ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 251:** Write next new review or update an older review. Content ideas: E-Signature/Digital Signature MCP servers, Scientific Computing MCP servers, update older reviews (Geospatial with NASA Earthdata/GEE/Mapbox DevKit additions)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 249 — 2026-03-19 — Content Update (Robotics MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

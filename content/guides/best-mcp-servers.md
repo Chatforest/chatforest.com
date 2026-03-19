@@ -1,7 +1,7 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 210 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
+description: "We've reviewed 211 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
 og_description: "We've tested 33 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories and beyond. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
@@ -89,6 +89,7 @@ If you want to skip the details:
 | Compliance / audit | [Compliance & Audit MCP](/reviews/compliance-audit-mcp-servers/) | 3.5/5 | [Agentic Gateway Registry](https://github.com/agentic-community/mcp-gateway-registry) (485 stars, 832 commits, SOC 2/GDPR), [Vanta MCP](https://github.com/VantaInc/vanta-mcp-server) (41 stars, 13 tools) |
 | Time-series databases | [Time-Series Database MCP](/reviews/time-series-database-mcp-servers/) | 4.0/5 | [Grafana mcp-grafana](https://github.com/grafana/mcp-grafana) (2,500 stars, 30+ tools, universal gateway), [ClickHouse MCP](https://github.com/ClickHouse/mcp-clickhouse) (715 stars, read-only defaults) |
 | Audio / video | [Audio & Video Processing MCP](/reviews/audio-video-processing-mcp-servers/) | 4.0/5 | [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp) (1,300 stars, official, TTS/cloning/transcription/sound effects), [DaVinci Resolve MCP](https://github.com/samuelgursky/davinci-resolve-mcp) (641 stars, 342 tools, 100% API) |
+| Speech recognition / transcription | [Speech Recognition & Transcription MCP](/reviews/speech-recognition-transcription-mcp-servers/) | 3.5/5 | [Kvadratni/speech-mcp](https://github.com/Kvadratni/speech-mcp) (76 stars, Goose voice interface, faster-whisper + Kokoro TTS), [SmartLittleApps/local-stt-mcp](https://github.com/SmartLittleApps/local-stt-mcp) (whisper.cpp, Apple Silicon 15x real-time), [reddheeraj/Deepgram-MCP](https://github.com/reddheeraj/Deepgram-MCP) (STT + diarization + language detection) |
 | Workflow automation | [Workflow Automation MCP](/reviews/workflow-automation-mcp-servers/) | 4.0/5 | [n8n-MCP](https://github.com/czlonkowski/n8n-mcp) (15,100 stars, 1,239 nodes), [Zapier MCP](https://github.com/zapier/zapier-mcp) (official, 8,000+ apps) |
 | CAD / 3D modeling | [CAD & 3D Modeling MCP](/reviews/cad-3d-modeling-mcp-servers/) | 3.5/5 | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) (17,800 stars, scene control + AI models), [neka-nat/freecad-mcp](https://github.com/neka-nat/freecad-mcp) (617 stars, 10 tools, parts library), [lamaalrajih/kicad-mcp](https://github.com/lamaalrajih/kicad-mcp) (405 stars, PCB design) |
 | Agent supply chain security | [AI Agent Supply Chain Security MCP](/reviews/ai-agent-supply-chain-security-mcp-servers/) | 3.5/5 | [snyk/agent-scan](https://github.com/snyk/agent-scan) (1,900 stars, 15+ threat types), [docker/mcp-gateway](https://github.com/docker/mcp-gateway) (1,300 stars, containerized isolation), [cisco-ai-defense/mcp-scanner](https://github.com/cisco-ai-defense/mcp-scanner) (850 stars, multi-engine) |
