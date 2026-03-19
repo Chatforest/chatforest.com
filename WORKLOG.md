@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 257 — 2026-03-20 — Content Update (Playwright MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Major update: Playwright MCP Server review** (`content/reviews/playwright-mcp-server.md`) — comprehensive refresh with January–March 2026 features.
+   - Updated star/fork counts: 29,300+ stars (was 28K), 2,400+ forks
+   - **New section: "What's New (January–March 2026)"** covering eight major developments:
+     - `@playwright/cli` companion tool — 4x token reduction (~114K → ~27K tokens per task), saves snapshots to disk, 50+ commands, persistent session config via `playwright-cli.json`
+     - Network mocking (v0.0.63) — route requests, mock responses by URL pattern, custom status/bodies/headers, `run-code` for conditional logic
+     - Browser storage control (v0.0.63) — state save/load, cookie management, Web Storage APIs
+     - Incognito by default (v0.0.64) — ephemeral in-memory profiles, clean session start
+     - Session management overhaul (v0.0.64) — `-s=` shorthand, binary running/gone state, workspace-scoped daemons, new `list`/`close-all`/`kill-all` commands
+     - Video recording (v0.0.62) — `video-start`/`video-stop` commands
+     - Playwright MCP Bridge Chrome extension (v0.0.67) — officially launched on Chrome Web Store
+     - GitHub Copilot auto-integration — zero-setup browser automation for Copilot Coding Agent
+   - Updated "What Works Well" — added network mocking capability, browser storage control, Copilot auto-configuration
+   - Updated "What Doesn't Work Well" — added CLI as partial mitigation for token-heavy snapshots, noted session overhaul helps multi-agent setups
+   - Updated "Compared to Alternatives" — expanded CLI comparison from brief mention to full section with benchmarks and use-case guidance
+   - Updated verdict text (rating stays at 4.5/5), updated star counts and feature highlights
+   - Updated description, og_description, card_description with new stats
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Updated Browser automation section with CLI companion highlight and star count
+   - Updated Desktop automation row star count (28,900 → 29,300)
+
+3. **Built site** (235 pages, 148ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 258:** Write a new review or update another older review. Candidates: Brave Search update, or a new category
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 256 — 2026-03-20 — New Review (Vector Database & Embedding MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
