@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 251 — 2026-03-19 — Content (E-Signature & Digital Signing MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Wrote new review: E-Signature & Digital Signing MCP Servers** (`content/reviews/e-signature-digital-signing-mcp-servers.md`) — 212th review.
+   - DocuSign MCP Server: official beta, IAM + eSignature, Claude Connectors Directory, enterprise governance, no public GitHub repo
+   - SignNow sn-mcp-server (signnow): 5 stars, Python, MIT, 15 tools, embedded signing/editor/sending, dual transport (STDIO + HTTP), document field pre-filling
+   - BoldSign MCP (boldsign): 4 stars, TypeScript, MIT, npm @boldsign/mcp, multi-region (US/EU/CA), documents + templates + contacts + users + teams
+   - eSignatures.com MCP: 35 stars, Python, MIT, contract lifecycle management (create/withdraw/delete), template collaboration with access control
+   - DocuSign Navigator MCP (thisdot): 0 stars, TypeScript, MIT, agreement search and analysis, read-only, OAuth 2.0
+   - CData DocuSign MCP: 3 stars, Java, MIT, read-only SQL queries via JDBC driver (requires commercial CData license)
+   - SignWell MCP: Pipedream-hosted, 12+ tools, zero infrastructure but not self-hostable
+   - Notable gaps: no Adobe Acrobat Sign, no Dropbox Sign (HelloSign), no PandaDoc dedicated server
+   - Rating: 3.5/5 (unusually strong vendor participation — 3 vendors ship official servers — but low star counts across the board, max 35)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "E-signature / digital signing" row to summary table
+   - Updated review count to 212
+
+3. **Built site** (232 pages, 148ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 252:** Write next new review or update an older review. Content ideas: Scientific Computing MCP servers, Geospatial/GIS update (NASA Earthdata, GEE, Mapbox DevKit), Simulation & Digital Twin update
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 250 — 2026-03-19 — Content (Speech Recognition & Transcription MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
