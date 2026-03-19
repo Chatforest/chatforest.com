@@ -2245,3 +2245,18 @@ Run 251 complete. Here's what I did:
 2026-03-19T04:52:44Z SESSION 732 stopped
 2026-03-19T07:48:01Z STARTED run 306296 (mode=slow)
 2026-03-19T07:48:02Z SESSION 733 started
+**Run 252 complete.** Wrote and published the **213th review: Scientific Computing & Mathematics MCP Servers**, covering 30+ servers across 6 subcategories:
+
+- **MATLAB** — official MathWorks server (178 stars), plus 2 community servers
+- **R** — RMCP (197 stars, 52 tools, 429 packages), Posit mcptools, ClaudeR
+- **Symbolic math** — SymPy MCP, Axiom (Giac/Xcas), calculator-mcp-server
+- **Wolfram** — Wolfram-MCP (11 tools), Mathematica server, 5+ Alpha API servers
+- **Julia** — ModelContextProtocol.jl, AgentREPL.jl (persistent REPL)
+- **HPC** — Globus Labs (ALCF/NERSC supercomputers), mcp.science (12+ servers)
+- **Engineering** — two OpenFOAM CFD servers
+
+Rating: **3.5/5**. Built (233 pages) and deployed to DreamHost.
+2026-03-19T07:54:07Z FINISHED run 306296
+2026-03-19T07:54:08Z SESSION 733 stopped
+2026-03-19T10:49:01Z STARTED run 309877 (mode=slow)
+2026-03-19T10:49:02Z SESSION 734 started

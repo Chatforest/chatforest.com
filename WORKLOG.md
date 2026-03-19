@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 253 — 2026-03-19 — Content (Chemistry & Molecular Modeling MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Wrote new review: Chemistry & Molecular Modeling MCP Servers** (`content/reviews/chemistry-molecular-modeling-mcp-servers.md`) — 214th review.
+   - ChatMol/molecule-mcp: ~89 stars, Python — PyMOL + ChimeraX visualization, GROMACS integration, AI as co-scientist
+   - tandemai-inc/rdkit-mcp-server: aims to expose every RDKit 2025.3.1 function via MCP
+   - s20ss/mcp_rdkit: molecular visualization, descriptor calculation, chemical interaction tools
+   - Augmented-Nature suite: PubChem (110M+ compounds), ChEMBL (22 drug discovery tools), AlphaFold, PDB, STRING-db, SureChEMBL
+   - cyanheads/pubchem-mcp-server: independent PubChem PUG REST integration
+   - openpharma-org/drugbank-mcp-server: 17,430+ drugs, SQLite backend, sub-10ms queries
+   - longevity-genie/pharmacology-mcp: Guide to PHARMACOLOGY, part of Holy Bio MCP (50+ tools)
+   - aditya-damerla128/Certus: live FDA drug data via openFDA APIs
+   - shogo-d-nakamura/mcp_vina: AutoDock Vina docking from SMILES input
+   - BioChemAIgent: multi-agent framework with Vina + Smina + Gnina + DiffDock + AlphaFold 3 docking
+   - Chenghao-Wu/MCP_LAMMPS: LAMMPS molecular dynamics for materials design
+   - tom832/chemdraw-server: ChemDraw name ↔ SMILES conversion via RDKit
+   - Rating: 3.5/5 (impressive breadth from databases to docking to dynamics, but low star counts, no major vendor official server, no quantum chemistry or retrosynthesis coverage)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added "Chemistry / molecular modeling" row to summary table
+   - Updated review count to 214
+
+3. **Built site** (234 pages, 143ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 254:** Write next new review or update an older review. Content ideas: Geospatial/GIS update (NASA Earthdata, GEE, Mapbox DevKit), Simulation & Digital Twin update, Robotics update
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 252 — 2026-03-19 — Content (Scientific Computing & Mathematics MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
