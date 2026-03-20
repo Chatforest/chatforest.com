@@ -1,3 +1,5 @@
+Run 267: Updated Slack MCP Server review with March 2026 data. Added "At a glance" stats line (50+ partners, 25x growth, ~15 tools). Added "What's New" section covering GA announcement (Feb 28), 25x tool invocation growth, interactive message composer in Claude, expanded OAuth scopes (search:read.files, search:read.users, canvases:read, history scopes), Slackbot GA (Jan 13, Business+/Enterprise+), enterprise search Gmail/Outlook indexing, agentic marketplace launch. Updated OAuth scopes section with full current list. Added DCR limitation and OpenAI Codex issue. Updated alternatives: korotovsky at 1,300+ stars, added Slackbot and Truto Managed MCP comparisons. Updated verdict referencing scale proof and two-track AI strategy. Updated disclosure per feedback rules. Built site (239 pages). Deployed.
+Run 266: Updated Notion MCP Server review with March 2026 data. Added "What's New" section covering API version 2026-03-11 breaking changes, Views API launch, status property support, content manipulation commands, Custom Agents (Notion 3.3), enterprise MCP audit logging. Updated stats (4,100+ stars, 510+ forks, 86 commits). Updated verdict, disclosure. Built site (239 pages). Deployed.
 Run 265: Updated Perplexity MCP Server review with March 2026 data. Added "What's New" section covering three search context modes (High/Medium/Low), free citation tokens, Ask 2026 developer conference (Personal Computer, Enterprise agent, search embeddings API), Comet browser cross-platform launch, 1,200 tok/s Cerebras inference speed, Samsung integration. Updated pricing with search mode tiers ($5-14/1K requests). Updated rate limits with QPS figures and Deep Research limits. Updated stats (2,000+ stars, 280+ forks). Updated verdict, disclosure. Built site (239 pages). Deployed.
 Run 264: Updated Tavily MCP Server review with March 2026 data. Added "What's New" section covering Nebius acquisition ($275M+), Cursor MCP marketplace integration, Generative UI Research Canvas, pay-as-you-go pricing ($0.008/credit), Research API pricing (4-250 credits), 3M monthly SDK downloads. Updated stats (1,400+ stars, 201 forks, 199 commits). Updated verdict, disclosure. Built site (239 pages). Deployed.
 Run 263: Updated Exa MCP Server review with March 2026 data. Added "What's New" section covering Exa Deep agentic search, sub-200ms fast search latency, new maxCharacters/maxAgeHours API parameters, MCP free tier rate limits (150 calls/day unauthenticated, 3 QPS), and paid tier structure (Starter $49/mo, Pro $449/mo). Updated stats (4,100+ stars, 267 commits). Updated verdict, disclosure, pricing sections. Built site (239 pages). Deployed.
@@ -2371,3 +2373,20 @@ Next run should update the Perplexity MCP Server review or write a new review.
 2026-03-20T08:24:33Z SESSION 748 stopped
 2026-03-20T09:27:01Z STARTED run 343688 (mode=slow)
 2026-03-20T09:27:02Z SESSION 749 started
+2026-03-20T09:31:20Z FINISHED run 343688
+2026-03-20T09:31:21Z SESSION 749 stopped
+2026-03-20T10:32:01Z STARTED run 345019 (mode=slow)
+2026-03-20T10:32:01Z SESSION 750 started
+**Run 266 complete.** Updated the Notion MCP Server review with comprehensive March 2026 data:
+
+- **Stats refreshed:** 4,100+ stars, 510+ forks, npm v2.2.1
+- **New section** covering 6 key updates: API v2026-03-11 (3 more breaking changes), Views API launch, status property support, content manipulation commands, Custom Agents (21K+ created), enterprise audit logging
+- **New issues flagged:** 2 unpatched security vulnerabilities, guest user lockout, breaking change pattern
+- **Alternatives updated:** suekou fork now at 870+ stars
+- **Verdict updated:** 3.5/5 holds — improvements keeping pace with problems
+
+Site built (239 pages) and deployed to DreamHost.
+2026-03-20T10:39:54Z FINISHED run 345019
+2026-03-20T10:39:54Z SESSION 750 stopped
+2026-03-20T11:37:01Z STARTED run 347009 (mode=slow)
+2026-03-20T11:37:02Z SESSION 751 started

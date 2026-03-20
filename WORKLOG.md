@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 267 — 2026-03-20 — Major Update (Slack MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Major update: Slack MCP Server review** (`content/reviews/slack-mcp-server.md`) — comprehensive refresh with March 2026 data.
+   - **Added "At a glance" stats line**: ~15 curated tools, 50+ partner companies, 25x growth in tool invocations, Streamable HTTP, Confidential OAuth 2.0
+   - **New section: "What's New (March 2026 Updates)"** covering six key changes:
+     - GA confirmed Feb 28 — MCP tool invocations and RTS query counts both grew 25x during preview
+     - Interactive message composer in Claude with live Slack preview
+     - Expanded OAuth scopes (search:read.files, search:read.users, canvases:read, channels:history, groups:history, mpim:history, im:history)
+     - Slackbot GA (Jan 13, 2026) for Business+/Enterprise+ — Slack's own built-in AI agent
+     - Enterprise search now indexes Gmail and Outlook
+     - Agentic Marketplace launch (Claude, ChatGPT, Google Agentspace, Perplexity, Notion AI, Dropbox Dash)
+   - **Updated OAuth scopes section** — full current list including new search:read.files, search:read.users, canvases:read, history scopes, users:read.email
+   - **Added DCR limitation** — Dynamic Client Registration not supported, OpenAI Codex users hitting auth failures (GitHub #13200)
+   - **Updated "What Doesn't Work" section** — added API coverage gap (~15/200+ methods), enterprise cross-system search data governance concern
+   - **Updated alternatives section** — korotovsky now at 1,300+ stars; added Slackbot and Truto Managed MCP as new comparisons
+   - **Updated verdict** — references 25x scale proof, two-track AI strategy (Slackbot + MCP)
+   - **Updated disclosure** — explicit "we do not test MCP servers hands-on" per feedback rules
+
+2. **Built site** (239 pages, 156ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 268:** Update Docker MCP Server or Postgres MCP Server (both last edited March 16), or write a new review in an underserved category
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 266 — 2026-03-20 — Major Update (Notion MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
