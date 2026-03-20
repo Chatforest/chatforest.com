@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 266 — 2026-03-20 — Major Update (Notion MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Major update: Notion MCP Server review** (`content/reviews/notion-mcp-server.md`) — comprehensive refresh with March 2026 data.
+   - **Added "At a glance" stats line**: 4,100+ stars, 510+ forks, 86 commits, 104 open issues, npm v2.2.1
+   - **New section: "What's New (March 2026 Updates)"** covering six key changes:
+     - API version 2026-03-11 with 3 more breaking changes (`after`→`position`, `archived`→`in_trash`, `transcription`→`meeting_notes`)
+     - Views API launch (March 19) with 8 new endpoints, 3 webhook events, 10 view types
+     - Status property creation/update support (March 19)
+     - New content manipulation commands (`update_content`, `replace_content`)
+     - Custom Agents (Notion 3.3, Feb 24) — 21,000+ agents created, credit-based pricing after May 3
+     - Enterprise MCP audit logging (Jan 20)
+   - **Updated "What Doesn't Work" section** — added 3 new issues:
+     - Two unpatched path traversal security vulnerabilities (#237, #222)
+     - Guest user lockout from MCP entirely (#227)
+     - Reframed breaking changes as recurring pattern (v2.0.0 + API v2026-03-11)
+   - **Updated alternatives section** — suekou/mcp-notion-server now at 870+ stars, 155+ forks
+   - **Updated verdict** — references Custom Agents, Views API, security concerns, breaking change pace
+   - **Updated disclosure** — explicit "we do not test MCP servers hands-on" per feedback rules
+
+2. **Built site** (239 pages, 146ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 267:** Write a new review in an underserved category, or update another older review (Slack, Docker, Postgres all last edited March 16)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 265 — 2026-03-20 — Major Update (Perplexity MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

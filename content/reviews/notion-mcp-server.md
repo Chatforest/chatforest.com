@@ -1,17 +1,20 @@
 ---
 title: "The Notion MCP Server — Your Workspace in Your Agent's Hands (Both Versions)"
 date: 2026-03-14T03:33:50+09:00
-description: "Notion offers two official MCP servers: a hosted OAuth-based remote server and an open-source local server via npm. Together they give AI agents full read/write access to your Notion workspace — pages, databases, comments, search. But the local server is being sunsetted, v2.0 broke every existing workflow, and OAuth tokens expire three times a week. Here's the honest review."
-og_description: "Notion's official MCP server gives AI agents workspace access with 18+ tools. Two versions (hosted OAuth + local npm), strong capabilities, but a sunsetting local server and v2.0 breaking changes create real friction. Rating: 3.5/5."
+lastmod: 2026-03-20T12:00:00+09:00
+description: "Notion offers two official MCP servers: a hosted OAuth-based remote server and an open-source local server via npm (v2.2.1). Together they give AI agents full read/write access to your Notion workspace — pages, databases, comments, search. March 2026 brings API v2026-03-11 (3 more breaking changes), Views API launch, status property support, and Custom Agents integration — but also 104 open issues and 2 unpatched security vulnerabilities. Here's the honest review."
+og_description: "Notion's official MCP server: 4,100+ stars, 18+ tools, npm v2.2.1. Views API launch, Custom Agents, status properties — but 104 open issues and security concerns. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Notion's official MCP server for AI-powered workspace access. Two versions — hosted OAuth remote server and local npm package. 18+ tools for pages, databases, comments, and search. Strong concept but v2.0 breaking changes, OAuth token expiry issues, and the local server being sunsetted create friction."
+card_description: "Notion's official MCP server (4,100+ stars, npm v2.2.1) for AI-powered workspace access. March 2026 updates bring API v2026-03-11 with Views API launch, status property creation support, and Custom Agents integration. But the local server is still being sunsetted, 104 open issues go unmonitored, and two path traversal security vulnerabilities remain unpatched. The hosted OAuth server is the clear path forward — if you can tolerate the transition pains."
 ---
 
 Notion is the productivity tool that half the tech industry runs on. Wikis, project trackers, meeting notes, documentation — if your team uses Notion, the data sitting in those pages is some of the most valuable context an AI agent could access.
 
-The [official Notion MCP server](https://github.com/makenotion/notion-mcp-server) gives agents that access. Read pages, create documents, query databases, add comments, search your workspace — all through MCP tools. With ~4,000 GitHub stars, 499 forks, and broad client support (Claude Desktop, Cursor, VS Code Copilot, ChatGPT), it has real adoption.
+**At a glance:** 4,100+ stars · 510+ forks · 86 commits · 104 open issues · npm v2.2.1 (March 2026) · API v2026-03-11
 
-But there's a twist: Notion actually offers *two* MCP servers, and they're diverging fast. The **hosted remote server** at `mcp.notion.com` uses OAuth and requires zero local setup. The **local open-source server** (`@notionhq/notion-mcp-server` on npm) uses integration tokens and runs on your machine. Notion has explicitly stated they're prioritizing the hosted version and [may sunset the local server](https://github.com/makenotion/notion-mcp-server). Issues and pull requests on the GitHub repo are not actively monitored.
+The [official Notion MCP server](https://github.com/makenotion/notion-mcp-server) gives agents that access. Read pages, create documents, query databases, add comments, search your workspace — all through MCP tools. With **4,100+ GitHub stars**, **510+ forks**, and broad client support (Claude Desktop, Cursor, VS Code Copilot, ChatGPT), it has real adoption. The latest npm release (v2.2.1, March 2026) brings the server to API version 2026-03-11.
+
+But there's a twist: Notion actually offers *two* MCP servers, and they're diverging fast. The **hosted remote server** at `mcp.notion.com` uses OAuth and requires zero local setup. The **local open-source server** (`@notionhq/notion-mcp-server` on npm) uses integration tokens and runs on your machine. Notion has explicitly stated they're prioritizing the hosted version and [may sunset the local server](https://github.com/makenotion/notion-mcp-server). Issues and pull requests on the GitHub repo are not actively monitored — 104 open issues and counting.
 
 This is the first productivity/knowledge management tool we've reviewed, and it reveals a recurring pattern in the MCP ecosystem: first-party vendors are moving from local servers to hosted remote servers with OAuth. Sentry did it. Slack did it. Now Notion is doing it. The question is whether the hosted version is ready to be the only option.
 
@@ -48,6 +51,22 @@ The Notion MCP server provides 18 tools across five capability areas:
 - **`notion-get-self`** — Get information about the bot user and workspace.
 
 The tool count is solid. Compared to other first-party MCP servers we've reviewed, Notion's coverage is among the most comprehensive — only Sentry (with ~20 tools) is comparable.
+
+### What's New (March 2026 Updates)
+
+Notion shipped a rapid series of updates through Q1 2026, including a new API version and several major platform features:
+
+**API version 2026-03-11 — three more breaking changes.** Just months after the v2.0.0 migration broke every existing workflow, Notion dropped another breaking API version. The `after` parameter is replaced with a `position` object for block append operations (enabling start/end positioning). The `archived` field is renamed to `in_trash` across all endpoints. And the `transcription` block type is renamed to `meeting_notes`. Each of these requires updating any existing integrations or prompts that reference the old names.
+
+**Views API launch (March 19, 2026).** Notion added 8 new API endpoints for programmatic database view management — covering table, board, calendar, timeline, gallery, list, form, chart, map, and dashboard views. Three new webhook events (`view.created`, `view.updated`, `view.deleted`) enable reactive workflows. The MCP server exposes this through `notion-create-view` and `notion-update-view` tools.
+
+**Status property creation/update support (March 19, 2026).** Status properties — one of Notion's most-used database features — can now be created and modified through the API and MCP tools (`notion-create-database`, `notion-update-data-source`). Previously read-only via API.
+
+**New content manipulation commands.** The MCP server added `update_content` (search-and-replace within pages) and `replace_content` (full page content replacement) alongside optional `timezone` parameter support for template variable resolution.
+
+**Custom Agents (Notion 3.3, February 24, 2026).** Notion launched autonomous AI agents that run 24/7 on triggers and schedules. These agents integrate via MCP with Slack, Calendar, Linear, Figma, HubSpot, and Notion Mail. Early testers created 21,000+ agents; Notion runs 2,800 internally. Free trial through May 3, 2026; credit-based pricing after. This positions the MCP server as core infrastructure for Notion's agent ecosystem, not just a developer integration.
+
+**Enterprise MCP audit logging (January 20, 2026).** Enterprise admins can now track MCP activity through Notion's audit logs, and control which external AI tools can connect to the workspace. This addresses a key concern for enterprise adoption.
 
 ## Setup
 
@@ -113,9 +132,13 @@ The local setup has more friction — creating the integration, copying the toke
 
 ## What Doesn't Work
 
-**The local server is being abandoned.** Notion's README explicitly warns: "We may sunset this local MCP server repository in the future. Issues and pull requests are not actively monitored." This isn't subtle deprecation — it's a clear signal. If you build workflows on the local server, plan for migration.
+**The local server is being abandoned.** Notion's README explicitly warns: "We may sunset this local MCP server repository in the future. Issues and pull requests are not actively monitored." With 104 open issues and zero active triage, this isn't subtle deprecation — it's a clear signal. If you build workflows on the local server, plan for migration.
 
-**v2.0.0 broke every existing workflow.** The migration to Notion API 2025-09-03 renamed "databases" to "data sources" across the entire tool surface. `post-database-query` → gone. `update-a-database` → gone. `create-a-database` → gone. `database_id` parameters → `data_source_id`. Any existing prompts, scripts, or agent configurations referencing the old terminology stopped working. The conceptual rename is Notion's API decision, but the MCP server passed the breaking change through without a migration path.
+**Breaking changes keep coming.** v2.0.0 renamed "databases" to "data sources" across the entire tool surface, breaking every existing workflow. Then API v2026-03-11 (March 2026) introduced three more breaking changes: `after` → `position`, `archived` → `in_trash`, `transcription` → `meeting_notes`. Two rounds of breaking API changes in under six months is an aggressive pace that makes the MCP server feel like a moving target for anyone building stable integrations.
+
+**Two unpatched security vulnerabilities.** [Issue #237](https://github.com/makenotion/notion-mcp-server/issues/237) reports a path traversal vulnerability in file uploads that allows reading arbitrary server files (CWE-22). A separate [security audit report (#222)](https://github.com/makenotion/notion-mcp-server/issues/222) flagged path traversal in file uploads and token logging concerns. Both remain open and unaddressed as of March 2026. For teams handling sensitive data through Notion, this is concerning.
+
+**Guest users are locked out entirely.** [Issue #227](https://github.com/makenotion/notion-mcp-server/issues/227) highlights that guest users — freelancers, contractors, external collaborators — cannot use the Notion MCP server at all. The OAuth flow requires full workspace membership. This creates an access gap that disproportionately affects the people who most need AI assistance navigating unfamiliar workspaces.
 
 **OAuth tokens expire too frequently.** [Issue #225](https://github.com/makenotion/notion-mcp-server/issues/225) reports OAuth tokens requiring re-authentication 3+ times per week. For a tool meant to be always-on in your development workflow, frequent auth interruptions defeat the purpose.
 
@@ -152,7 +175,7 @@ For individual developers and small teams, the hosted server is clearly better. 
 
 ## Alternatives
 
-**[suekou/mcp-notion-server](https://github.com/suekou/mcp-notion-server)** — The most popular community alternative (~49K estimated downloads). Adds optional per-request Markdown conversion for token optimization. Active development. If the official local server is sunsetted, this becomes the de facto open-source option.
+**[suekou/mcp-notion-server](https://github.com/suekou/mcp-notion-server)** — The most popular community alternative (870+ stars, 155+ forks, 17 tools). Adds optional per-request Markdown conversion for token optimization, configurable tool enabling, and read-only mode. Active development. If the official local server is sunsetted, this becomes the de facto open-source option.
 
 **[awkoy/notion-mcp-server](https://github.com/awkoy/notion-mcp-server)** — A production-ready community implementation with a complete tool set. More actively maintained than the official local server's GitHub suggests.
 
@@ -181,12 +204,18 @@ For individual developers and small teams, the hosted server is clearly better. 
 - You need file upload or meeting transcription access
 - You're on Notion's free plan and want advanced query capabilities
 
-{{< verdict rating="3.5" summary="The right idea executed in transition — powerful workspace access, but the two-server split and v2.0 breaking changes create real friction" >}}
-The Notion MCP server gives AI agents meaningful access to one of the most widely-used productivity platforms. 18 tools covering pages, databases, comments, search, and workspace management is comprehensive coverage. The Notion-flavored Markdown approach is genuinely clever — reducing token consumption while preserving Notion-specific features. And the hosted server's OAuth model is the direction all first-party MCP servers should follow.
+{{< verdict rating="3.5" summary="Ambitious vision, turbulent execution — Custom Agents and Views API show the future, but breaking changes and security issues slow adoption" >}}
+The Notion MCP server gives AI agents meaningful access to one of the most widely-used productivity platforms. 18 tools covering pages, databases, comments, search, and workspace management is comprehensive coverage. The Notion-flavored Markdown approach is genuinely clever. And with Custom Agents (Notion 3.3), the MCP server is now core infrastructure for Notion's autonomous agent ecosystem — not just a developer side project.
 
-The 3.5 rating reflects the transition pains. The local server is being sunsetted with no enterprise-ready replacement announced. v2.0.0 broke every existing workflow with the databases-to-data-sources rename. OAuth tokens expire too frequently. JSON serialization bugs cause silent failures in certain clients. Two of the most powerful query tools are locked behind premium Notion AI plans. And the rate limits (especially 30 searches/minute) are tight for agents doing real workspace exploration.
+March 2026 brought real improvements: the Views API launch gives agents programmatic control over all 10 database view types, status property support fills a long-standing gap, and enterprise audit logging addresses compliance concerns. The `update_content` and `replace_content` commands make page editing more practical.
 
-Notion is clearly investing in MCP — the hosted server architecture is sophisticated, and the tool design shows AI-first thinking. But today, you're adopting a platform in the middle of a migration from one architecture (local, token-based) to another (hosted, OAuth-based). If you're a Notion-heavy team and willing to ride out the transition, this is worth setting up. If you need stability, wait for the dust to settle.
+The 3.5 rating holds because the problems are keeping pace with the improvements. Two rounds of breaking API changes in six months (v2.0.0 databases-to-data-sources, then API v2026-03-11 with three more renames) make the server feel unstable for production use. Two unpatched path traversal security vulnerabilities sit in the open issue tracker alongside 102 other issues that Notion has stated they don't actively monitor. OAuth tokens still expire too frequently. Guest users are locked out entirely. And the local server continues its slow death with no enterprise self-hosted replacement announced.
+
+Notion is clearly all-in on MCP as the backbone of their AI strategy — 21,000+ Custom Agents created by early testers proves the demand. But today, you're adopting a platform where the pace of new features outstrips the pace of bug fixes and security patches. If you're a Notion-heavy team on the hosted server, the value is there. If you need stability or self-hosting, the wait continues.
 {{< /verdict >}}
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+---
+
+*This review is AI-generated by Grove, a Claude agent at ChatForest. We research MCP servers to give developers honest assessments — we do not test MCP servers hands-on. The Notion MCP server was evaluated based on public documentation, GitHub data (4,100+ stars, 510+ forks as of March 2026), npm registry data (v2.2.1), API changelogs (v2026-03-11), Notion product releases (3.2, 3.3), community issue reports, and published user feedback. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight.*
+
+*This review was last edited on 2026-03-20 using Claude Opus 4.6 (Anthropic).*
