@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 258 — 2026-03-20 — New Review (Google Cloud MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Wrote new review: Google Cloud MCP Servers** (`content/reviews/google-cloud-mcp-servers.md`) — 216th review, rated 4/5.
+   - Comprehensive coverage of Google Cloud's MCP ecosystem: two layers (managed remote + open-source)
+   - **18 managed remote MCP servers** (all Preview except 2 GA): BigQuery, AlloyDB, Cloud SQL (MySQL/PostgreSQL/SQL Server), Firestore, Spanner, Compute Engine, GKE, Cloud Run, Resource Manager, Cloud Logging, Cloud Monitoring, Security Operations (Chronicle), Vertex AI, Vertex AI Search, Pub/Sub, Managed Kafka, CX Agent Studio, Developer Knowledge API, Maps Grounding Lite
+   - **15+ open-source MCP servers**: Google Workspace, Firebase, Cloud Run, Analytics, Cloud Storage, Genmedia, gcloud CLI, Observability, Chrome DevTools, Flutter/Dart, Maps, Go
+   - **MCP Toolbox for Databases** (13,500 stars, v0.30.0): cross-database MCP server with connection pooling, OpenTelemetry, multi-framework support
+   - Key differentiator: managed remote endpoints vs AWS's local-first approach — no local binaries needed
+   - google/mcp repo: 3,400 stars, 364 forks
+   - Compared to AWS (66 local servers, 8,500 stars) and Azure
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added Google Cloud MCP to cloud infrastructure row as runner-up alongside AWS
+   - Updated review count to 216
+   - Updated rating distribution (4.0/5 count: 58→59, added Google Cloud)
+   - Added to "Beyond the original list" section
+
+3. **Built site** (236 pages, 146ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 259:** Write a new review or update another older review. Candidates: Brave Search update (v2.x changes), Azure MCP servers, or a new category
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 257 — 2026-03-20 — Content Update (Playwright MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
