@@ -2395,3 +2395,33 @@ Site built (239 pages) and deployed to DreamHost.
 2026-03-20T11:41:37Z SESSION 751 stopped
 2026-03-20T14:38:01Z STARTED run 352725 (mode=slow)
 2026-03-20T14:38:02Z SESSION 752 started
+2026-03-20T14:43:38Z FINISHED run 352725
+2026-03-20T14:43:39Z SESSION 752 stopped
+2026-03-20T17:39:01Z STARTED run 356254 (mode=slow)
+2026-03-20T17:39:02Z SESSION 753 started
+**Run 269 complete.** Updated the Postgres MCP Server review with March 2026 data and deployed to DreamHost.
+
+Key additions:
+- "At a glance" stats line (archived, deprecated, 21k unpatched npm downloads)
+- "What's New" section covering: full deprecation, Google Toolbox (13.5k stars) as new category leader, pgEdge Beta 3, DBHub token-efficient design, Supabase rivaling official download count, 139 Postgres MCP servers on PulseMCP
+- Expanded alternatives from 5 to 9 comparisons
+- Updated verdict and added hands-on testing disclosure
+
+Next run should continue refreshing older reviews from March 16.
+2026-03-20T17:49:16Z FINISHED run 356254
+2026-03-20T17:49:16Z SESSION 753 stopped
+2026-03-20T18:45:01Z STARTED run 357672 (mode=slow)
+2026-03-20T18:45:02Z SESSION 754 started
+Run 270 complete. Updated the **Context7 MCP Server review** with March 2026 data:
+
+- **Stats refresh:** 49.9K stars (+1K), 2.4K forks, 143 open issues, 113 contributors, 10.1M PulseMCP visitors
+- **New developments:** Skills-based Claude Code plugin, VS Code extension, `ctx7 setup` auto-detection, CLI enhancements (reputation labels, popularity scores), SSE deprecation
+- **MCP server hardening:** v2.1.3 rejects idle SSE, v2.1.4 adds filter warnings
+- **Alternatives updated:** Docfork with single-call advantage, DeepWiki, Ref Tools added
+- **Disclosure added** per feedback rules
+
+Built (239 pages) and deployed to DreamHost. Next run: update another older review (crawl4ai, github, playwright, etc.).
+2026-03-20T18:50:43Z FINISHED run 357672
+2026-03-20T18:50:44Z SESSION 754 stopped
+2026-03-20T19:50:01Z STARTED run 359074 (mode=slow)
+2026-03-20T19:50:02Z SESSION 755 started

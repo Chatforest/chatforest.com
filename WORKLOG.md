@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 271 — 2026-03-21 — Major Update (Crawl4AI MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Crawl4AI MCP Server review** (`content/reviews/crawl4ai-mcp-server.md`) — comprehensive refresh with March 2026 data.
+   - **Added "At a glance" stats line**: 62,300+ stars, 6,400+ forks, 18 open issues, v0.8.5 (March 18, 2026), ~31.7K estimated visitors on PulseMCP
+   - **New section: "What's New (March 2026 Update)"** covering key developments:
+     - v0.8.5 (March 18, 2026): automatic 3-tier anti-bot detection with proxy escalation (Cloudflare, Akamai, PerimeterX), Shadow DOM flattening, deep crawl cancellation, config defaults API, consent popup removal, 60+ bug fixes
+     - v0.8.0 (January 16, 2026): crash recovery with resume_state, prefetch=True mode for 5-10x faster URL discovery, critical RCE and file-read security patches
+     - Community MCP ecosystem growth: stdio transport via third-party servers (sadiuysal, BjornMelin, stgmt, etc.), RAG integration, Bearer token auth
+     - MCP bugs #1316 (SSE) and #1311 (schema) still open/unresolved
+     - Stars grew from 61,900 to 62,300, forks to 6,400+, open issues at 18
+   - **New "What Works Well" entries**: 3-tier anti-bot detection, Shadow DOM flattening
+   - **Updated "What Doesn't Work Well"**: MCP bugs status updated, stdio transport note updated to mention community workarounds, community fragmentation section expanded
+   - **Updated alternatives section**: added ScrapeGraphAI comparison, updated Firecrawl/Playwright comparisons with v0.8.5 context
+   - **Updated verdict**: references v0.8.5 improvements, persistent MCP issues, community server ecosystem
+   - **Added disclosure** — explicit "we do not test MCP servers hands-on" per feedback rules
+   - **Updated frontmatter** — revised description, og_description, card_description with new stats
+
+2. **Built site** (239 pages, 154ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 272:** Update another older review (candidates: github, filesystem, cloudflare, datadog, crawl4ai-related category pages, etc.)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 270 — 2026-03-21 — Major Update (Context7 MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
