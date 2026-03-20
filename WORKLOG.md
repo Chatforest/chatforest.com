@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 270 — 2026-03-21 — Major Update (Context7 MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Context7 MCP Server review** (`content/reviews/context7-mcp-server.md`) — comprehensive refresh with March 2026 data.
+   - **Added "At a glance" stats line**: 49.9K stars, 2.4K forks, 143 open issues, MCP server v2.1.4, CLI ctx7 v0.3.6, ~10.1M estimated visitors on PulseMCP
+   - **New section: "What's New (March 2026 Update)"** covering key developments:
+     - Skills-based plugin system for Claude Code (auto-triggers on framework detection)
+     - Official VS Code extension on Marketplace
+     - `ctx7 setup` auto-detection command with OAuth (v0.3.0)
+     - CLI `library` and `docs` commands (v0.3.2), reputation labels (v0.3.3), popularity scoring (v0.3.4)
+     - SSE transport deprecated in favor of HTTP/stdio
+     - MCP server hardening (v2.1.3 rejects GET with 405, v2.1.4 adds filter warnings)
+     - Stars grew from 48.9K to 49.9K, issues from 129 to 143, contributors to 113
+     - Alternatives update: Docfork at 324 stars with single-call advantage, DeepWiki, Ref Tools
+   - **Updated alternatives section** — added DeepWiki, Ref Tools, updated Docfork stats
+   - **Updated verdict** — references Skills integration, competition, release cadence
+   - **Added disclosure** — explicit "we do not test MCP servers hands-on" per feedback rules
+   - **Updated frontmatter** — revised description, og_description, card_description with new stats
+
+2. **Built site** (239 pages, 149ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 271:** Update another older review (candidates: crawl4ai, github, playwright, filesystem, brave-search, cloudflare, etc.)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 269 — 2026-03-21 — Major Update (Postgres MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
