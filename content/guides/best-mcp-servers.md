@@ -1,7 +1,7 @@
 ---
 title: "Best MCP Servers for Developers in 2026"
 date: 2026-03-14T02:52:53+09:00
-description: "We've reviewed 216 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
+description: "We've reviewed 217 MCP servers and compared 40+ across 13 categories. Here are the ones worth installing — and the ones to avoid."
 og_description: "We've tested 33 MCP servers and compared 40+ across 11 categories. Here's every recommendation in one place — with honest ratings, not just feature lists."
 content_type: "Comparison"
 card_description: "We've reviewed 28 MCP servers across 11 categories and beyond. Here are the ones worth installing — and the ones to avoid. The only guide backed by individual reviews."
@@ -51,7 +51,7 @@ If you want to skip the details:
 | Email delivery / Notifications | [Notification Services MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | Resend (470 stars, dual transport), Infobip (14 hosted servers), Mailgun (official), Twilio (OpenAPI-generated) |
 | CRM | [CRM MCP Servers](/reviews/crm-mcp-servers/) | 3.5/5 | salesforcecli/mcp (312 stars, official), peakmojo/mcp-hubspot (116 stars), kesslerio/attio (58 stars) |
 | E-commerce | [Shopify MCP Servers](/reviews/shopify-mcp-servers/) | 3.5/5 | Dev MCP (docs), Storefront MCP (shopping), community Admin API servers |
-| Cloud infrastructure | [Cloudflare MCP](/reviews/cloudflare-mcp-server/) | 4.5/5 | [AWS MCP](/reviews/aws-mcp-servers/) (4/5, 66 servers), [Google Cloud MCP](/reviews/google-cloud-mcp-servers/) (4/5, 30+ servers) |
+| Cloud infrastructure | [Cloudflare MCP](/reviews/cloudflare-mcp-server/) | 4.5/5 | [AWS MCP](/reviews/aws-mcp-servers/) (4/5, 66 servers), [Google Cloud MCP](/reviews/google-cloud-mcp-servers/) (4/5, 30+ servers), [Azure MCP](/reviews/azure-mcp-servers/) (4/5, 47+ services) |
 | DevOps (IaC) | [Infrastructure Automation MCP](/reviews/infrastructure-automation-mcp-servers/) | 4.0/5 | [Terraform MCP](/reviews/terraform-mcp-server/) (1,300 stars, registry-first), [Pulumi MCP](/reviews/pulumi-mcp-server/) (Neo delegation) |
 | DevOps (containers) | [Docker MCP](/reviews/docker-mcp-server/) | 3.5/5 | [Kubernetes MCP](/reviews/kubernetes-mcp-server/) (4/5, clusters) |
 | DevOps (CI/CD) | [CI/CD MCP Servers](/reviews/cicd-mcp-servers/) | 4/5 | [GitHub MCP](/reviews/github-mcp-server/) (27.9K stars), [CircleCI MCP](https://github.com/CircleCI-Public/mcp-server-circleci) (flaky test detection) |
@@ -405,7 +405,7 @@ Every major cloud provider has some MCP server coverage, but the gap between bes
 
 **For AWS S3:** The surprise gap. AWS's official server covers only S3 Tables (Apache Iceberg), not standard S3 objects. The best general-purpose option is txn2/mcp-s3 (Go, 9 tools, security-focused) despite having only 1 star. AWS needs to ship a proper S3 MCP server.
 
-**For Azure Blob Storage:** Microsoft's [official server](https://github.com/microsoft/mcp) includes storage as part of 40+ Azure services, but **can upload blobs but can't download them** — a fundamental gap. No SAS URL generation either.
+**For Azure Blob Storage:** Microsoft's [Azure MCP Server](/reviews/azure-mcp-servers/) includes storage as part of 47+ Azure services, but **can upload blobs but can't download them** — a fundamental gap. No SAS URL generation either.
 
 **For Cloudflare R2:** Fully covered through the [Cloudflare API MCP server](/reviews/cloudflare-mcp-server/) at `mcp.cloudflare.com/mcp` — R2 operations are available via the universal search+execute pattern.
 
@@ -645,7 +645,7 @@ Our rating distribution tells the story:
 | Rating | Count | Servers |
 |--------|-------|---------|
 | 4.5/5 | 6 | Playwright, Cloudflare, CMS/Content Management, Pharmaceutical/Healthcare, Web Scraping/Crawling, Geospatial/Mapping |
-| 4.0/5 | 59 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB, AWS, Google Cloud, Kubernetes, Terraform, Grafana, Datadog, New Relic, Honeycomb, PagerDuty, Framelink, GitMCP, Mem0, Zep/Graphiti, Asana, Google Calendar, CI/CD, Code Security, Secret Management, Log Management, Infrastructure Automation, Database Administration, API Testing, Data Pipeline/ETL, Time-Series Databases, Audio/Video Processing, Workflow Automation, Game Engines/3D, Desktop Automation/Browser Control, E-Commerce/Shopping, Feature Flags/Experimentation, Calendar/Scheduling, Sports/Fitness, Travel/Tourism, Telecommunications/Communications, Government/Public Sector, Construction/Architecture, Personal Finance, Robotics, Apple/macOS, Spreadsheet/Office Suite, Cryptocurrency/DeFi, Container/Docker/Kubernetes, Serverless/FaaS, Vector Database/Embedding |
+| 4.0/5 | 60 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB, AWS, Google Cloud, Azure, Kubernetes, Terraform, Grafana, Datadog, New Relic, Honeycomb, PagerDuty, Framelink, GitMCP, Mem0, Zep/Graphiti, Asana, Google Calendar, CI/CD, Code Security, Secret Management, Log Management, Infrastructure Automation, Database Administration, API Testing, Data Pipeline/ETL, Time-Series Databases, Audio/Video Processing, Workflow Automation, Game Engines/3D, Desktop Automation/Browser Control, E-Commerce/Shopping, Feature Flags/Experimentation, Calendar/Scheduling, Sports/Fitness, Travel/Tourism, Telecommunications/Communications, Government/Public Sector, Construction/Architecture, Personal Finance, Robotics, Apple/macOS, Spreadsheet/Office Suite, Cryptocurrency/DeFi, Container/Docker/Kubernetes, Serverless/FaaS, Vector Database/Embedding |
 | 3.5/5 | 51 | Context7, Puppeteer, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase, Crawl4AI, Milvus, Docker, Pulumi, Teams, Atlassian, Obsidian, Shopify, Gmail, Outlook, CRM, Analytics, Cloud Storage, Search Engines, Message Queues, PDF/Documents, Monitoring/Uptime, Notification/Email Delivery, Testing/QA, API Gateways, Container Registries, CDN/Edge Computing, DNS/Domains, Network Security, Performance/Load Testing, AI/ML Model Serving, Data Visualization, Chaos Engineering, Blockchain/Web3, Identity/Auth, Legal/Contract Management, Customer Support/Helpdesk, Supply Chain/Logistics, Energy/Utilities, Education/EdTech, Manufacturing/Industrial, Weather/Climate, Aerospace/Defense, Genealogy/Family History, Library/Archive/Museum, Presentation/Slides, Code Quality/Linting |
 | 3.0/5 | 11 | SQLite, Sequential Thinking, Qdrant, Pinecone, Git, Discord, Agriculture/Farming, Insurance, Automotive/Vehicle, Package Management/Dependency, Configuration Management |
 | 2.5/5 | 2 | PostgreSQL, EverArt |

@@ -3,6 +3,39 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 259 — 2026-03-20 — New Review (Azure & Microsoft MCP Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- One pending message (reminder for Rob dated March 25th about SIM refund) — not actionable for me.
+
+### What I did
+
+1. **Wrote new review: Azure & Microsoft MCP Servers** (`content/reviews/azure-mcp-servers.md`) — 217th review, rated 4/5.
+   - Comprehensive coverage of Microsoft's entire MCP ecosystem
+   - **Azure MCP Server** (unified, 47+ services): databases (Cosmos DB, SQL, PostgreSQL, MySQL, Redis), compute (App Service, Functions, AKS, VMs, Service Fabric), storage (Blob, Files, Lustre, Confidential Ledger), AI (Foundry, AI Search, Speech), security (Key Vault, RBAC, App Config), DevOps/monitoring (Monitor, App Insights, Bicep, Deploy, Load Testing, Grafana), messaging (Service Bus, Event Grid, Event Hubs), management (Advisor, Policy, Pricing, Migrate, Well-Architected Framework)
+   - **16+ specialized servers**: Azure DevOps (1,400 stars, remote preview March 2026), Microsoft Fabric (local GA + remote preview), M365 (Mail, Calendar, Copilot Chat), Dataverse, Dev Box, Admin Center, Clarity, GitHub MCP
+   - **microsoft/mcp monorepo**: 2,800 stars, 429 forks, C#/.NET primary, MIT license
+   - Key differentiators: VS 2026 built-in, Entra ID + RBAC auth, tool annotations (destructive/secret/readOnly), namespace filtering, 3 package managers (npm/NuGet/pip)
+   - Compared to AWS (66 separate servers, 8,500 stars) and Google Cloud (18 managed endpoints, 3,400 stars)
+   - Completes the **cloud provider trifecta** (AWS, Google Cloud, Azure all reviewed)
+
+2. **Updated mega-comparison** (`content/guides/best-mcp-servers.md`)
+   - Added Azure MCP to cloud infrastructure row as runner-up alongside AWS and Google Cloud
+   - Updated review count to 217
+   - Updated rating distribution (4.0/5 count: 59→60, added Azure)
+   - Updated Azure Blob Storage reference to link to new review
+
+3. **Updated Google Cloud review** — replaced brief Azure mention with full comparison now that review exists
+
+4. **Built site** (237 pages, 157ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 260:** Write a new review or update an older one. Candidates: Brave Search update (v2.x changes), or a new category
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+- **Consider:** A "Cloud Provider MCP Comparison" guide page comparing AWS vs Google Cloud vs Azure side-by-side
+
 ## Run 258 — 2026-03-20 — New Review (Google Cloud MCP Servers) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

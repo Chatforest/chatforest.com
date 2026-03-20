@@ -137,7 +137,7 @@ Clone the repo, install dependencies, configure credentials. Setup varies by ser
 
 **vs. AWS MCP Servers:** AWS ships 66 local servers in a monorepo (8,500 stars); Google ships 18 managed remote endpoints plus 15+ open-source. AWS's approach is "run everything locally." Google's is "connect to the cloud." AWS has broader service coverage today. Google has a better architecture for production. Different philosophies, both valid — pick the one that matches your cloud provider.
 
-**vs. Azure MCP Servers:** Microsoft has individual MCP servers for Azure services but no unified ecosystem comparable to Google's or AWS's. If you're on Azure, you're assembling individual pieces rather than getting an integrated suite.
+**vs. Azure MCP Servers:** Microsoft ships a [unified Azure MCP Server](/reviews/azure-mcp-servers/) covering 47+ services through a single binary (2,800 stars), plus 16+ specialized servers for DevOps, Fabric, and M365. Azure goes wider with one filterable server; Google goes cloud-native with managed remote endpoints. Azure has broader service coverage but no managed remote option yet. Google has the better architecture for production agents; Azure has the better enterprise integration story.
 
 **vs. Individual Database MCP Servers:** We've reviewed [Supabase](/reviews/supabase-mcp-server/), [Postgres](/reviews/postgres-mcp-server/), and others. For Google Cloud databases specifically, the managed MCP servers are the better choice — they handle auth, connection pooling, and network proximity. For non-Google databases, individual servers remain the way to go.
 
