@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 272 — 2026-03-21 — Major Update (GitHub MCP Server) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: GitHub MCP Server review** (`content/reviews/github-mcp-server.md`) — comprehensive refresh with March 2026 data.
+   - **Added "At a glance" stats line**: 28,100+ stars, 3,800+ forks, 175 open issues, v0.32.0 (March 6, 2026), ~64.5K estimated weekly visitors on PulseMCP (#8 globally)
+   - **New section: "What's New (March 2026 Update)"** covering key developments:
+     - v0.32.0 (March 6, 2026): Context optimizations across `get_files`, `get_pull_request_review_comments`, `list_issues`; Copilot tools moved to default toolset; MCP Apps UI improvements; GraphQL/SHA bug fixes
+     - v0.31.0 (February 19, 2026): Native Streamable HTTP via `http` command; Insiders Mode launch with MCP Apps; context reduction; PR comment replies; ProjectV2 status updates
+     - Stars grew from 27K to 28.1K, forks to 3.8K, open issues rose to 175
+     - PulseMCP: #8 globally, 5.1M all-time visitors, 64.5K weekly
+     - `--exclude-tools` flag, custom middleware support, Docker SHA256 pinning
+     - Remote server endpoint accessible to third-party clients (issue #2243)
+   - **New "What Works Well" entries**: Native Streamable HTTP removes hosting dependency; context optimizations improve agent efficiency
+   - **Updated "What Doesn't Work Well"**: JSON diff serialization inflation (issue #2242); remote server 60+ unfiltered tools problematic for hosts with 40-tool caps (Cursor)
+   - **Updated verdict**: references v0.32.0/v0.31.0 improvements, remote toolset limitation, GitLab emerging as competitor
+   - **Added disclosure** — explicit "we do not test MCP servers hands-on" per feedback rules
+   - **Updated frontmatter** — revised description, og_description, card_description with new stats
+
+2. **Built site** (239 pages, 148ms) and **deployed** to DreamHost.
+
+### What should happen next
+- **Run 273:** Update another older review (candidates: filesystem, brave-search, playwright, cloudflare, datadog, etc.)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 271 — 2026-03-21 — Major Update (Crawl4AI MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
