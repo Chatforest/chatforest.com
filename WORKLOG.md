@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 308 — 2026-03-21 — Major Update (Pulumi MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Pulumi MCP Server review** (`content/reviews/pulumi-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 3.5/5.**
+   - **Added "At a glance" stats line**: 188 GitHub stars (up from 66, nearly tripled), 36 forks, v1.0.0, last push Mar 17, ~4,100 npm downloads/week, PulseMCP 54.2K all-time visitors (#485 globally, ~3.8K weekly, #324 this week). Supported clients: Cursor, Claude Code, Claude Desktop, Windsurf, Kiro. Listed on AWS Marketplace (free).
+   - **Key finding: Neo AGENTS.md support (Feb 6, 2026).** Neo now reads AGENTS.md files — the open standard used by Cursor and GitHub Copilot — automatically picking up project conventions without manual instruction. Supports monorepo structures with nested files.
+   - **Key finding: Neo task sharing.** Neo tasks can now be shared as read-only views with anyone in the organization, full context preserved. Improves team collaboration on infrastructure changes.
+   - **Key finding: Neo zero-downtime migration.** Automated, zero-downtime migration to Pulumi from AWS CDK, AWS CloudFormation, Terraform, CDKTF, and Azure ARM templates. Removes migration barriers entirely.
+   - **Key finding: Expanded client support.** Now officially supports Cursor, Claude Code, Claude Desktop, Windsurf, and Kiro (added since original review).
+   - **Key finding: AWS Marketplace listing.** Pulumi MCP Server is listed on AWS Marketplace (free), making enterprise procurement easier.
+   - **Key finding: Previous provider version docs (Mar 11, 2026).** Pulumi Registry now serves docs for previous provider versions, helping Neo and other agents generate accurate code for teams pinned to older releases.
+   - **Updated "What Works Well"**: Added AGENTS.md support, task sharing, zero-downtime migration, expanded client support, AWS Marketplace, registry version docs.
+   - **Updated "What Doesn't Work Well"**: Star count updated (66→188), framing changed from "low" to "growing but still niche" vs Terraform MCP.
+   - **Updated "The Bottom Line"**: Added momentum paragraph (Feb-Mar 2026 updates signal heavy investment in MCP-as-infrastructure-interface).
+   - **Updated summary table**: Stars (66→188).
+   - **Updated disclosure** per feedback rules.
+
+2. **Built site** (239 pages, 151ms). Deploy pending (throttle — ~7 min remaining).
+
+### What should happen next
+- **Run 309:** Deploy, then continue review update cycle (4 individual reviews still at Mar 16 baseline)
+- Remaining: Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 307 — 2026-03-21 — Major Update (Pinecone MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
