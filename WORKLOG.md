@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 306 — 2026-03-21 — Major Update (PagerDuty MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: PagerDuty MCP Server review** (`content/reviews/pagerduty-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Added "At a glance" stats line**: 57 GitHub stars (up from 56), 30 forks (up from 27), 270 commits (up from 267), v0.15.1 (Mar 12, 2026), last commit Mar 19, 12 open issues, 9 open PRs, ~809 PyPI downloads/month, PulseMCP 126K all-time visitors (#256 globally, ~8.6K weekly, #176 this week).
+   - **Key finding: Spring 2026 AI ecosystem expansion (Mar 12, 2026).** PagerDuty added 30+ AI partners across 11 categories. Three integration pathways for MCP. Strategic partnerships with Anthropic (Claude Code plugin with pre-commit risk scoring), Cursor (MCP plugin in Marketplace), and LangChain (LangSmith native integration). SRE Agent evolving into virtual responder (Q2 2026 early access), fully autonomous in H2 2026. Multi-agent MCP fabric with AWS DevOps Agent and Azure AI SRE.
+   - **Key finding: Azure SRE Agent integration is production-ready.** Microsoft published official guide for connecting PagerDuty MCP via Streamable HTTP. Includes `QueryPagerDutyIncidentChat` tool for root-cause analysis. First major cloud platform with official PagerDuty MCP docs.
+   - **Key finding: Anthropic MCP directory review addressed (Mar 4).** PR #100 fixed 5 findings (2 critical, 3 medium): optional `requester_id`, structured objects instead of JSON strings, improved docs, simplified schemas, confirmation strings for deletes. 37/37 validation + 338 unit tests passed.
+   - **Key finding: Critical $ref/$defs schema bug (Mar 19).** Issue #103 — 15+ tools use `$ref`/`$defs` that most MCP clients can't dereference. Breaks Cursor, GitHub Copilot CLI, AWS Bedrock AgentCore. Agents send empty objects, get validation failures. Three proposed fixes but no resolution yet.
+   - **Key finding: Docs website added (Mar 19).** PR #105 added dedicated documentation website with deploy workflow.
+   - **Key finding: Eval test framework separated (Mar 5).** PR #95 refactored eval test cases into reusable package for testing tool parameter validation.
+   - **Updated tool count**: 67 → 60+ (aligning with current README).
+   - **Updated "What's Good"**: Added Spring 2026 ecosystem expansion, Azure SRE integration, Anthropic review compliance.
+   - **Updated "What's Not"**: Added critical $ref/$defs bug (#103), SRE Agent note for AI analysis gap.
+   - **Updated alternatives**: wpfleger96 stats (7 stars, 13 forks, 25 commits).
+   - **Updated "Who Should Use This"**: Azure/AWS multi-agent integration note.
+   - **Updated verdict, disclosure** per feedback rules.
+
+2. **Built site** (239 pages, 150ms). Deploy pending (throttle — will deploy shortly).
+
+### What should happen next
+- **Run 307:** Deploy, then continue review update cycle (6 individual reviews still at Mar 16 baseline)
+- Remaining: Pinecone, Pulumi, Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 305 — 2026-03-21 — Major Update (New Relic MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
