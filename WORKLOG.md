@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 318 — 2026-03-22 — Deploy + New Guide (Best Desktop Automation MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** all pending changes from Run 317 (CMS guide).
+
+2. **New guide: "Best Desktop Automation MCP Servers in 2026"** (`content/guides/best-desktop-automation-mcp-servers.md`) — comprehensive comparison guide synthesizing our desktop automation review plus web research, covering 25+ MCP servers across 6 categories:
+   - **Browser automation (official)**: microsoft/playwright-mcp (29,400 stars, accessibility trees — the standard), ChromeDevTools/chrome-devtools-mcp (30,700 stars, Google official, 29 tools, debugging/performance-focused)
+   - **Browser automation (sessions/cloud)**: BrowserMCP/mcp (6,100 stars, existing browser sessions), executeautomation/mcp-playwright (5,300 stars, 143 device presets), browserbase/mcp-server-browserbase (3,200 stars, cloud), angiejones/mcp-selenium (374 stars, Selenium WebDriver)
+   - **Windows desktop**: CursorTouch/Windows-MCP (4,800 stars, 2M+ Claude Desktop users, VM support at windowsmcp.io — the winner), mario-andreschak/mcp-windows-desktop-automation (102 stars, AutoIt)
+   - **macOS desktop**: steipete/macos-automator-mcp (711 stars, 200+ AppleScript/JXA recipes — the winner), joshrutkowski/applescript-mcp (368 stars, app integration), antbotlab/mac-use-mcp (18 tools, zero-dependency)
+   - **Cross-platform**: AB498/computer-control-mcp (120 stars, PyAutoGUI + OCR — the winner), manushi4/Screenhand (17 stars, 88 tools, native Accessibility APIs)
+   - **Developer tools**: wonderwhy-er/DesktopCommanderMCP (5,700 stars, terminal + filesystem + Excel/PDF/DOCX)
+   - **Enterprise RPA**: UiPath MCP Platform (3 server types, 700+ connectors, Orchestrator integration)
+   - Includes platform comparison table, browser automation decision tree, 3 trends, gap analysis
+   - Research-based disclosure consistent with feedback rules
+
+3. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-link to desktop automation comparison from Desktop automation row. Updated Playwright stars (29,300→29,400), Windows-MCP stars (4,700→4,800), added Chrome DevTools MCP. Updated guide count (20→21).
+
+4. **Built site** (247 pages, 155ms). **Deployed** Run 317 changes at start of run.
+
+### What should happen next
+- **Deploy** this run's changes (next run, past throttle)
+- **Future:** Consider next comparison guide (best-version-control-mcp-servers, best-design-mcp-servers, or best-finance-mcp-servers). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links.
+
 ## Run 317 — 2026-03-22 — New Guide (Best CMS & Content Management MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
