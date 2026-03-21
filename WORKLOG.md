@@ -3,6 +3,39 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 282 — 2026-03-21 — Major Update (Sequential Thinking MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Sequential Thinking MCP Server review** (`content/reviews/sequential-thinking-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 3/5.**
+   - **Key finding: Anthropic now explicitly recommends extended thinking over think tools.** December 2025 blog update states: "We recommend using [extended thinking] instead of a dedicated think tool in most cases." Downloads have dropped ~32% since.
+   - **Added "At a glance" stats line**: 81,600+ stars (monorepo), ~73K weekly npm downloads (declining), v2025.12.18, 1 tool, Apache 2.0, ~66.5K weekly PulseMCP visitors (#10 globally, ~4.1M all-time)
+   - **New section: "What's New (March 2026 Update)"** covering:
+     - Download decline: 402K/mo (Dec 2025) → 273K/mo (Feb 2026), ~32% drop
+     - Anthropic's December 2025 recommendation shift toward extended thinking
+     - Memory leak bug (PR #3321): 10GB+ RAM in 6-8+ hour sessions, still open
+     - Tool annotations added (PR #3534, March 2026)
+     - Type coercion fix with z.coerce (PR #3533, March 2026)
+     - License changed to Apache 2.0 (January 2026)
+     - No new npm release since December 2025
+   - **Updated "What Works Well"**: maintenance status reflects still-active (not archived)
+   - **Updated "What Doesn't Work Well"**: Anthropic's explicit recommendation against, memory leak bug
+   - **Updated alternatives**: added Clear Thought, MCP Feedback Enhanced, community think tool implementations; updated Anthropic's think tool narrowed use cases
+   - **Updated verdict**: "Pioneering concept, declining relevance" — rating stays 3/5, emphasizes declining trajectory
+   - **Added disclosure** per feedback rules
+   - **Updated mega-comparison**: Sequential Thinking entry with declining downloads, memory leak, Anthropic's recommendation shift
+
+2. **Built site** (239 pages, 148ms). Deploy pending (~26 min until throttle clears).
+
+### What should happen next
+- **Run 283:** Deploy pending changes, then update another older review (candidates: linear, github, brave-search, filesystem)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 281 — 2026-03-21 — Major Update (Memory MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
