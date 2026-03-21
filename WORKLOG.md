@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 280 — 2026-03-21 — Major Update (SQLite MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: SQLite MCP Server review** (`content/reviews/sqlite-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating downgraded 3/5 → 2.5/5.**
+   - **Key finding: SQL injection vulnerability publicly disclosed.** In June 2025, Trend Micro principal threat researcher Sean Park disclosed a SQL injection flaw — unsanitized table names concatenated via f-strings in `server.py`. The attack chain enables stored prompt injection: payload planted in a DB field hijacks the AI agent when it reads the data. Anthropic declined to patch it. No CVE assigned.
+   - **Added "At a glance" stats line**: 236 stars (servers-archived repo), ~13K weekly PyPI downloads, v2025.4.25 (last release April 2025), 6 tools, archived on PyPI, ~7.7K weekly PulseMCP visitors (#130 globally, ~279K all-time)
+   - **New section: "What's New (March 2026 Update)"** covering:
+     - SQL injection vulnerability disclosure (June 2025, Trend Micro)
+     - Still ~13K weekly downloads despite archival and "no new releases" status
+     - Last release was v2025.4.25 (April 2025, MCP SDK 1.6.0 update)
+     - DBHub emergence as leading multi-database alternative (2,369 stars)
+     - 165+ SQLite MCP server implementations now exist in community
+     - PulseMCP traffic: ~7.7K weekly, ~279K all-time, #130 globally
+   - **Updated "What Doesn't Work Well"**: SQL injection vulnerability now the #1 issue
+   - **Updated alternatives**: added DBHub (2,369 stars), updated jparkerweb/mcp-sqlite (93 stars), sqlite-explorer-fastmcp (104 stars), noted Postgres MCP server also vulnerable
+   - **Updated "Who Should Use This"**: added warning about untrusted data
+   - **Updated verdict**: 2.5/5 — downgrade reflects SQL injection + archived status
+   - **Added disclosure** per feedback rules
+   - **Updated mega-comparison**: rating distribution (3.0/5: 11→10, 2.5/5: 3→4), SQLite entry, database section, reference implementations summary
+
+2. **Built site** (239 pages, 146ms). Deploy pending (~30 min until throttle clears).
+
+### What should happen next
+- **Run 281:** Deploy pending changes, then update another older review (candidates: memory, linear, sequential-thinking)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 279 — 2026-03-21 — Major Update (Puppeteer MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
