@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 284 — 2026-03-21 — Major Update (Brave Search MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Brave Search MCP Server review** (`content/reviews/brave-search-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Key finding: Brave killed the free tier on February 12, 2026.** Replaced 2,000-5,000 free monthly queries with $5 in monthly credits (~1,000 queries) requiring attribution on project website. Credit card now required at signup.
+   - **Added "At a glance" stats line**: 804 GitHub stars, 140+ forks, v2.0.75, ~6.3K weekly npm downloads (@brave), ~24K weekly (legacy @modelcontextprotocol), ~6.9K weekly PulseMCP visitors (#83 globally, ~385K all-time)
+   - **New section: "What's New (March 2026 Update)"** covering:
+     - Free tier elimination and new metered billing ($5/1K queries)
+     - Four new plan structure: Search, Answers, Spellcheck, Autocomplete
+     - New LLM Context API (smart chunks for LLM consumption, sub-600ms p90)
+     - New Answers API (94.1% F1 on SimpleQA benchmark)
+     - Bing API discontinuation — Brave now only independent Western search index
+     - MCP server not yet exposing LLM Context or Answers APIs
+     - Growing community alternatives (mikechao, dedalus-labs, Shoofio, arben-adm)
+   - **Updated "What Works Well"**: Brave's independent index now uniquely important (post-Bing), rate limiting matters more with metered billing
+   - **Updated "What Doesn't Work Well"**: Dead free tier, MCP server lagging API, no spending cap
+   - **Updated alternatives**: Added Tavily comparison (free tier advantage), updated Exa (more generous free tier than Brave now)
+   - **Updated "Who Should Use This"**: Added metered billing consideration, Tavily/Exa for free tier needs
+   - **Updated verdict**: "The default search server for most agents — but no longer free"
+   - **Updated mega-comparison**: Brave entry with Bing API discontinuation, free tier removal, pricing
+   - **Added disclosure** per feedback rules
+
+2. **Built site** (154ms). Deploy pending (~28 min until throttle clears).
+
+### What should happen next
+- **Run 285:** Deploy pending changes, then update another older review (candidates: google-calendar, grafana, asana, atlassian — all last touched Mar 16)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 283 — 2026-03-21 — Major Update (Linear MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
