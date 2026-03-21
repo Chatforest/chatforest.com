@@ -1,21 +1,23 @@
 ---
 title: "The MongoDB MCP Server — The Most Comprehensive Database Server We've Reviewed"
 date: 2026-03-14T11:49:11+09:00
-description: "MongoDB's official MCP server packs 37+ tools spanning database operations, Atlas cluster management, local deployments, performance advisory, and knowledge search. Here's the honest review."
-og_description: "MongoDB's official MCP server has 37+ tools covering queries, indexes, Atlas clusters, local deployments, and performance advisors. 959 stars, rapid releases. Rating: 4/5."
+description: "MongoDB's official MCP server packs 40+ tools spanning database operations, Atlas cluster management, stream processing, local deployments, performance advisory, and knowledge search. Here's the honest review."
+og_description: "MongoDB's official MCP server has 40+ tools covering queries, indexes, Atlas clusters, stream processing, local deployments, and performance advisors. 968 stars, rapid releases. Rating: 4/5."
 content_type: "Review"
-card_description: "The most comprehensive database MCP server we've reviewed — 37+ tools for queries, indexes, Atlas management, local clusters, performance advisors, and knowledge search. All from MongoDB's official team."
+card_description: "The most comprehensive database MCP server we've reviewed — 40+ tools for queries, indexes, Atlas management, stream processing, local clusters, performance advisors, and knowledge search. All from MongoDB's official team."
 ---
 
 No other database MCP server comes close to this tool count.
 
-The MongoDB MCP server ships with 37+ tools across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search. For context, [Neon](/reviews/neon-mcp-server/) has 20 tools (impressive for Postgres). [Supabase](/reviews/supabase-mcp-server/) has 20+ across multiple services. MongoDB has nearly double — and covers everything from `find` queries to spinning up local clusters to getting index recommendations from the Atlas Performance Advisor.
+**At a glance:** 968 GitHub stars, 209 forks, 40+ tools across six categories (database ops, Atlas clusters, stream processing, local deployments, performance advisory, knowledge search), 8 open issues, v1.8.1 current (Mar 13 2026), 675 commits, shipping every 1-2 weeks.
+
+The MongoDB MCP server ships with 40+ tools across six categories: database operations, Atlas cluster management, Atlas Stream Processing, Atlas local deployments, performance advisory, and knowledge search. For context, [Neon](/reviews/neon-mcp-server/) has 20 tools (impressive for Postgres). [Supabase](/reviews/supabase-mcp-server/) has 20+ across multiple services. MongoDB has double — and covers everything from `find` queries to spinning up local clusters to building stream processing pipelines to getting index recommendations from the Atlas Performance Advisor.
 
 This is what happens when a database company goes all-in on MCP. MongoDB didn't just wrap a connection driver in a tool. They built a full operational interface that handles the entire lifecycle — from creating a project and provisioning a cluster to querying data, analyzing performance, and cleaning up.
 
 ## What It Does
 
-The MongoDB MCP server connects AI agents to MongoDB databases — both self-hosted instances and MongoDB Atlas cloud clusters — through five tool categories:
+The MongoDB MCP server connects AI agents to MongoDB databases — both self-hosted instances and MongoDB Atlas cloud clusters — through six tool categories:
 
 ### Database Operations (21 tools)
 
@@ -42,6 +44,16 @@ For teams on MongoDB Atlas, these tools manage cloud infrastructure without leav
 - **atlas-inspect-access-list** / **atlas-create-access-list** — IP allowlist management.
 - **atlas-list-alerts** — Monitor cluster alerts.
 - **atlas-get-performance-advisor** — New in Winter 2026. Access the Atlas Performance Advisor for suggested indexes, drop-index recommendations, schema advice, and slow query identification.
+
+### Atlas Stream Processing (3 tools)
+
+New in v1.8.1 (March 2026). Tools for building and managing real-time streaming data pipelines on Atlas Stream Processing:
+
+- **atlas-streams-build** — Create workspaces, connections (Kafka, Cluster, S3, etc.), processors, and PrivateLink setups.
+- **atlas-streams-discover** — Inspect resources and diagnose processor health.
+- **atlas-streams-manage** — Start/stop processors and modify configurations.
+
+These tools bring Atlas Stream Processing into the MCP workflow — agents can now set up and manage streaming pipelines alongside database operations, without switching to the Atlas UI or CLI.
 
 ### Atlas Local Deployments (4 tools)
 
@@ -101,31 +113,46 @@ npx mongodb-mcp-server --transport http --httpPort 3000
 **Setup difficulty: Moderate.** The connection string gets you database operations immediately. Atlas management requires service account credentials (API client ID and secret). The server works without Atlas credentials — you just won't have the cluster management tools.
 
 **Configuration options worth knowing:**
-- `MDB_MCP_READ_ONLY` / `--readOnly` — Restricts all write operations. **Default is writable**, which is unusual — most database MCP servers default to read-only. Set this to true in production.
+- `MDB_MCP_READ_ONLY` / `--readOnly` — Restricts all write operations. **All official examples now include `--readOnly` by default** (a welcome change — see "What's New" below). Remove the flag explicitly if you need write access.
 - `MDB_MCP_MAX_TIME_MS` / `--maxTimeMs` — Sets `maxTimeMS` on all `find()` and `aggregate()` operations. Protects against runaway queries locking up connections.
+- `MDB_MCP_IDLE_TIMEOUT_MS` — Auto-disconnects idle clients after a timeout. Helps mitigate connection accumulation during long sessions.
 - `--disableTools` — Comma-separated list of tools to disable. Useful for stripping away Atlas tools in self-hosted setups.
 - `--transport` — `stdio` (default) or `http`. HTTP mode supports configurable host and port.
 - `MDB_MCP_EXTERNALLY_MANAGED_SESSIONS` — For framework integrations managing their own session lifecycles.
 
+## What's New (March 2026)
+
+**Atlas Stream Processing tools (v1.8.1, March 13).** Three new tools — `atlas-streams-build`, `atlas-streams-discover`, `atlas-streams-manage` — bring real-time streaming pipelines into the MCP workflow. Agents can now create workspaces, configure connections (Kafka, S3, MongoDB clusters), build and manage stream processors, and diagnose pipeline health. This is a sixth tool category, expanding the server from 37+ to 40+ tools.
+
+**readOnly now the documented default.** All official setup examples now include `--readOnly`, reversing the previous default-writable posture. This was our primary safety criticism in the original review. The underlying config still defaults to writable if you omit the flag, but MongoDB's docs now guide users toward read-only from the start.
+
+**v1.8.0 (March 4):** Atlas local deployments now use the preview Docker image. HTTP server improvements for session/option passthrough.
+
+**v1.8.1 (March 13):** Fixed `find` tool count query limits. Logging infrastructure refactored. Atlas Stream Processing API types and client methods added. Event deduplication via locking.
+
+**v1.8.2-prerelease (March 17-18):** Metrics service and process metrics instrumentation — heading toward built-in observability.
+
+**Three releases in March alone** (plus two pre-releases), maintaining the rapid shipping cadence.
+
 ## What Works Well
 
-**The most comprehensive database MCP server available.** 37+ tools is nearly double the next-closest database server. The breadth is genuine — you can go from "create a project in Atlas" to "provision a cluster" to "insert data" to "check why this query is slow" to "add the suggested index" without ever leaving your agent. No other database MCP server supports the full provisioning-to-optimization lifecycle.
+**The most comprehensive database MCP server available.** 40+ tools is double the next-closest database server. The breadth is genuine — you can go from "create a project in Atlas" to "provision a cluster" to "insert data" to "build a streaming pipeline" to "check why this query is slow" to "add the suggested index" without ever leaving your agent. No other database MCP server supports the full provisioning-to-optimization lifecycle.
 
 **Atlas Performance Advisor integration is a standout.** The Winter 2026 update added four Performance Advisor capabilities: suggested indexes, drop-index recommendations, schema advice, and slow query identification. This is the first database MCP server that proactively helps optimize performance rather than just running queries. An agent can ask "why is this query slow?", get index suggestions, and create the recommended index — all through MCP tools.
 
 **Automatic embedding generation solves a real pain point.** The `insert-many` tool detects vector search index configurations and automatically generates embeddings using Voyage AI models during insertion. No manual embedding step, no separate embedding API calls. For teams building RAG pipelines on MongoDB Atlas, this removes the most tedious step.
 
-**Rapid, reliable release cadence.** 16+ releases since launch, shipping every 1-2 weeks. The project uses pre-release versions for testing before stable releases, indicating mature engineering practices. For comparison, many MCP servers we've reviewed haven't released in months.
+**Rapid, reliable release cadence.** 20+ releases since launch, shipping every 1-2 weeks with 675 commits. The project uses pre-release versions for testing before stable releases, indicating mature engineering practices. For comparison, many MCP servers we've reviewed haven't released in months.
 
-**Only 10 open issues.** With 959 stars and 207 forks, having just 10 open issues signals strong maintenance. Several of those are feature requests, not bugs. The team actively responds to and resolves issues.
+**Only 8 open issues — zero labeled as bugs.** With 968 stars and 209 forks, having just 8 open issues (down from 10 a week ago) signals strong maintenance. The team actively responds to and resolves issues, and as of this update, none of the open issues carry a bug label.
 
 **Flexible deployment.** Stdio and HTTP transports. Docker support. Works with VS Code (GitHub Copilot), Cursor, Claude Desktop, Windsurf, and the GitHub Copilot CLI. The HTTP transport enables remote access for team setups, though it needs careful security configuration.
 
 ## What Doesn't Work
 
-**Default-writable is a dangerous choice.** Most database MCP servers default to read-only mode. MongoDB's MCP server defaults to full read-write access, which means `drop-database` works out of the box. You must explicitly set `MDB_MCP_READ_ONLY=true` for safety. This should be the default, not an opt-in.
+**Default-writable without the flag — but docs now guide toward read-only.** MongoDB's official examples now include `--readOnly`, which is a significant improvement over the original posture. However, the underlying default is still writable if you omit the flag — so copying a bare `npx mongodb-mcp-server` command from a third-party tutorial still gives full write access including `drop-database`. The config default should match the documentation guidance.
 
-**Connection flooding during extended sessions.** Issue [#936](https://github.com/mongodb-js/mongodb-mcp-server/issues/936) reports that running the MCP server for extended periods floods the cluster with connections. For agents that maintain long-lived sessions, this can exhaust connection limits. There's no built-in connection pooling strategy to prevent this.
+**Connection flooding during extended sessions.** Issue [#936](https://github.com/mongodb-js/mongodb-mcp-server/issues/936) remains open. Running the MCP server for extended periods floods the cluster with connections — growing from ~700 to 3,000+. The new `MDB_MCP_IDLE_TIMEOUT_MS` env var and connection string pool limits (`maxPoolSize`, `maxIdleTimeMS`) help mitigate but don't fully solve the problem — users report connections still accumulating beyond pool limits. The team has requested reproduction steps for deeper investigation.
 
 **No remote hosted server option.** Despite being from MongoDB Inc., there's no hosted MCP endpoint at `mcp.mongodb.com` or similar. You must run the server locally via npx or Docker. Compare this with [Stripe](/reviews/stripe-mcp-server/) (agent toolkit), [Linear](/reviews/linear-mcp-server/) (hosted at mcp.linear.app), or [Todoist](/reviews/todoist-mcp-server/) (hosted at ai.todoist.net). Feature request [#641](https://github.com/mongodb-js/mongodb-mcp-server/issues/641) has been open since October 2025.
 
@@ -141,7 +168,7 @@ npx mongodb-mcp-server --transport http --httpPort 3000
 
 The database MCP landscape splits into relational and document/NoSQL categories. MongoDB is the first document database MCP server we've reviewed, so direct comparisons are limited, but the tool design choices are instructive:
 
-**vs. [Neon](/reviews/neon-mcp-server/) (4/5):** Neon has 20 tools focused on cloud Postgres — branching, migrations, and SQL execution. MongoDB has nearly double the tools but covers a different database paradigm. Neon's branch-based migration workflow is the gold standard for safe schema changes; MongoDB has no equivalent. But Neon can't provision clusters or analyze performance.
+**vs. [Neon](/reviews/neon-mcp-server/) (4/5):** Neon has 20 tools focused on cloud Postgres — branching, migrations, and SQL execution. MongoDB has double the tools but covers a different database paradigm. Neon's branch-based migration workflow is the gold standard for safe schema changes; MongoDB has no equivalent. But Neon can't provision clusters or analyze performance.
 
 **vs. [Supabase](/reviews/supabase-mcp-server/) (4/5):** Supabase covers database plus edge functions, storage, and debugging — broader platform scope. MongoDB goes deeper into database operations — more query tools, index management, performance analysis. Different philosophies: Supabase is a platform server, MongoDB is a database server.
 
@@ -153,25 +180,25 @@ The database MCP landscape splits into relational and document/NoSQL categories.
 
 ## The Bottom Line
 
-The MongoDB MCP server is the most feature-rich database MCP server we've reviewed. 37+ tools across five categories, rapid release cadence, strong maintenance, and genuine innovation with the Performance Advisor and automatic embedding features.
+The MongoDB MCP server is the most feature-rich database MCP server we've reviewed. 40+ tools across six categories, rapid release cadence, strong maintenance, and genuine innovation with the Performance Advisor, automatic embedding, and now Atlas Stream Processing features.
 
-The main concerns are the default-writable mode (flip this immediately), connection flooding under extended use, and the public preview label. But these are solvable problems — and MongoDB's engineering team is clearly investing in this server as a first-class product.
+The main concerns are the underlying default-writable config (official docs now guide toward read-only, but the flag default hasn't changed), connection flooding under extended use, and the public preview label. But these are solvable problems — and MongoDB's engineering team is clearly investing in this server as a first-class product, with three releases in March 2026 alone.
 
 If your stack includes MongoDB, this is an easy install. If you're choosing between MongoDB and Postgres for a new project and MCP integration matters to you, MongoDB's MCP server is significantly ahead of any Postgres option — though the database choice should be driven by your data model needs, not the MCP server quality.
 
-**Rating: 4 out of 5** — the deepest database MCP integration available, with active development and genuine innovation, held back by default-writable safety concerns and public preview status.
+**Rating: 4 out of 5** — the deepest database MCP integration available, with active development and genuine innovation, partially improved by the read-only documentation shift but still held back by the underlying config default and public preview status.
 
 | | |
 |---|---|
 | **MCP Server** | MongoDB MCP Server |
 | **Publisher** | MongoDB, Inc. (official) |
 | **Repository** | [mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |
-| **Stars** | ~960 |
-| **Tools** | 37+ (21 database + 12 Atlas + 4 local + 2 knowledge) |
+| **Stars** | ~968 |
+| **Tools** | 40+ (21 database + 12 Atlas + 3 stream processing + 4 local + 2 knowledge) |
 | **Transport** | stdio, HTTP |
 | **Language** | TypeScript |
 | **License** | Apache 2.0 |
 | **Pricing** | Free (server). MongoDB Atlas has free tier; paid plans for production. |
 | **Our rating** | 4/5 |
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review reflects research conducted by ChatForest using publicly available sources including GitHub, PulseMCP, and MongoDB's official documentation. We have not personally installed or tested this MCP server. Last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
