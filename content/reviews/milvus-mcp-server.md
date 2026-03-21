@@ -2,14 +2,16 @@
 title: "The Milvus MCP Server — The Most Popular Vector Database Gets an AI Interface"
 date: 2026-03-14T11:07:09+09:00
 description: "Zilliz's official MCP server for Milvus brings 12 tools covering five search types, full collection management, and data operations to your AI coding agent. Here's the honest review."
-og_description: "Milvus has 40,000+ GitHub stars and powers AI at NVIDIA, Salesforce, and eBay. Its MCP server has 12 tools with hybrid search, full CRUD, and SSE transport. Rating: 3.5/5."
+og_description: "Milvus has 43,000+ GitHub stars and powers AI at NVIDIA, Salesforce, and eBay. Its MCP server has 12 tools with hybrid search, full CRUD, and SSE transport. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Zilliz's official MCP server for the most-starred open-source vector database. 12 tools covering five search modes, full collection CRUD, and data operations — the strongest self-hosted vector DB MCP experience."
 ---
 
-The Milvus MCP server is the official tool for connecting AI coding agents to Milvus, the open-source vector database that has become the most-starred in its category on GitHub with over 40,000 stars. Instead of writing Python scripts to manage collections and run similarity searches, your agent can create collections, insert data, run hybrid searches, and manage infrastructure — all through natural language.
+**At a glance:** 222 GitHub stars, 64 forks, 35 commits, last commit Dec 24, 2025, v0.1.1.dev9 (PyPI), 12 tools, Python, Apache-2.0, ~6,934 PyPI downloads total, PulseMCP 40.4K all-time visitors. Milvus core: 43.4K stars, 3.9K forks, v2.6.12 (Mar 13, 2026), 24,242 commits, 432 contributors.
 
-It's maintained by Zilliz (the company behind Milvus) at [zilliztech/mcp-server-milvus](https://github.com/zilliztech/mcp-server-milvus). With 220 GitHub stars, 63 forks, and support for both stdio and SSE transport, it's the most complete self-hosted vector database MCP server available. Milvus itself powers AI systems at NVIDIA, Salesforce, eBay, Airbnb, and DoorDash — over 10,000 enterprise teams in production.
+The Milvus MCP server is the official tool for connecting AI coding agents to Milvus, the open-source vector database that has become the most-starred in its category on GitHub with over 43,000 stars. Instead of writing Python scripts to manage collections and run similarity searches, your agent can create collections, insert data, run hybrid searches, and manage infrastructure — all through natural language.
+
+It's maintained by Zilliz (the company behind Milvus) at [zilliztech/mcp-server-milvus](https://github.com/zilliztech/mcp-server-milvus). With 222 GitHub stars, 64 forks, and support for both stdio and SSE transport, it's the most complete self-hosted vector database MCP server available. Milvus itself powers AI systems at NVIDIA, Salesforce, eBay, Airbnb, and DoorDash — over 10,000 enterprise teams in production.
 
 This is our fourth vector database MCP server review after [Chroma](/reviews/chroma-mcp-server/) (3.5/5), [Qdrant](/reviews/qdrant-mcp-server/) (3/5), and [Pinecone](/reviews/pinecone-mcp-server/) (3/5). The Milvus server matches Chroma's ambition with a different set of strengths.
 
@@ -112,9 +114,9 @@ The catch: you need a running Milvus instance. Unlike [Chroma](/reviews/chroma-m
 
 **No document update.** You can insert and delete, but you can't update existing entities in-place. To modify a record, you must delete and re-insert. [Chroma MCP](/reviews/chroma-mcp-server/) has `update_documents`. For iterative RAG pipeline development where your agent is refining document content or metadata, the delete-and-reinsert cycle is friction.
 
-**Pre-release maturity.** 35 commits. No versioned releases. The last update was December 2025 — three months ago. Six open issues with no assignees, including an OOM exception report (#44) and a bug where the service becomes unresponsive after errors (#51). This isn't a shipped product yet; it's a maintained prototype.
+**Pre-release maturity — and stagnating.** 35 commits. No versioned releases. The last commit was December 24, 2025 — three months ago. Six open issues with no assignees, including an OOM exception report (#44) and a bug where the service becomes unresponsive after errors (#51). Two open PRs — one for Streamable HTTP support (#57, Dec 26) and a bug fix for `create_collection` (#58, Feb 27) — sit unreviewed. Meanwhile, Milvus core has shipped v2.6.9 through v2.6.12 with security fixes, spatial data, JSON shredding, and INT8 vectors. The gap between the database's pace and the MCP server's pace is widening.
 
-**No Streamable HTTP transport.** SSE is good but the MCP ecosystem is moving toward Streamable HTTP. Qdrant already supports it. There's an open feature request (#40) for Streamable HTTP, but no response from maintainers. For forward-looking deployments, this gap matters.
+**No Streamable HTTP transport.** SSE is good but the MCP ecosystem is moving toward Streamable HTTP. Qdrant already supports it. Zilliz's own Cloud MCP server supports it. There's an open PR (#57) adding Streamable HTTP support to this server, but it's been sitting unreviewed since December 26, 2025. The feature request (#40) also remains open. For forward-looking deployments, this gap matters.
 
 **Python-only.** Requires Python 3.10+ and the `uv` package manager. No npm package, no Go binary. If your development stack is Node.js or Go, you'll need Python infrastructure for this server. [Pinecone MCP](/reviews/pinecone-mcp-server/) is TypeScript-based, which integrates more naturally into JavaScript workflows.
 
@@ -126,7 +128,7 @@ The catch: you need a running Milvus instance. Unlike [Chroma](/reviews/chroma-m
 
 | Feature | Milvus MCP | Chroma MCP | Qdrant MCP | Pinecone MCP |
 |---------|-----------|------------|------------|--------------|
-| **Stars** | 220 | 515 | 1,300 | 56 |
+| **Stars** | 222 | 515 | 1,300 | 56 |
 | **Tools** | 12 | 13 | 2 | 9 |
 | **Transport** | stdio, SSE | stdio only | stdio, SSE, Streamable HTTP | stdio |
 | **Search types** | 5 (text, vector, hybrid, similarity, filter) | 3 (semantic, full-text, regex) | 1 (semantic) | 2 (text, metadata) |
@@ -149,22 +151,24 @@ The Milvus MCP server's strongest argument is for teams already running Milvus i
 
 ## The Bigger Picture
 
-Milvus is the most-deployed open-source vector database, with 40,000+ GitHub stars and adoption at companies like NVIDIA, Salesforce, and eBay. Zilliz, the company behind it, also offers Zilliz Cloud (managed Milvus) and maintains a [separate Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) with 16 tools including cluster management and Streamable HTTP transport.
+Milvus is the most-deployed open-source vector database, with 43,400+ GitHub stars and adoption at companies like NVIDIA, Salesforce, and eBay. The core database has been on a tear — v2.6.12 (March 13, 2026) brought replication topology inspection and TLS improvements, following v2.6.10's critical security fix (CVE-2026-26190) and v2.6.9's highlight scores for search results. Spatial data, timezone-aware timestamps, INT8 vectors, JSON shredding (100x metadata filtering speedup), and expanded embedding functions (OpenAI, VoyageAI, Cohere) are all now part of the 2.6.x series. The database is evolving fast.
 
-The split between two MCP servers is worth noting. The Milvus MCP server handles database operations (what's inside Milvus). The Zilliz Cloud MCP server handles infrastructure operations (the Milvus deployment itself). This makes architectural sense but creates confusion — the same vendor maintaining two MCP servers for the same database, each with different tool sets and transport support.
+The MCP server is not. Zilliz also maintains a [separate Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) (32 stars, 16 tools) with cluster management and Streamable HTTP transport. The split makes architectural sense — database operations vs. infrastructure operations — but creates confusion when the Cloud server gets Streamable HTTP and the open-source one doesn't.
 
-The pre-release maturity is also worth weighing against Milvus's production reputation. The database itself is battle-tested at massive scale — GPU-accelerated indexing, HNSW/IVF/DiskANN, multi-tenancy, high availability. The MCP server exposes a fraction of those capabilities through 12 tools with 35 commits and known stability issues. There's a gap between the database's maturity and the MCP server's maturity.
+A third-party alternative has also emerged: [TaiLabs mcp-milvus](https://github.com/tailabs/mcp-milvus) (1 star, v0.1.0), a Go implementation with 15 tools, session-aware connection management, and Ristretto cache-based connection pooling. It's too early to recommend, but the fact that community alternatives are appearing underscores demand for a more actively maintained MCP layer.
+
+The gap between the database's maturity and the MCP server's maturity is the central tension here. Milvus core has 24,242 commits, 432 contributors, and ships monthly security patches. The MCP server has 35 commits, no versioned releases, and hasn't merged a PR since December 2025. PyPI downloads are growing (~6,934 total, with recent daily spikes to 174), suggesting adoption is outpacing maintenance.
 
 That said, what's here is solid. Five search modes with native hybrid search is genuinely category-leading. Full collection CRUD plus delete fills gaps that Qdrant and Pinecone leave open. SSE transport enables remote access. And the fact that it works identically with self-hosted Milvus and Zilliz Cloud means you're not locked into a deployment model.
 
-For the vector database MCP space — still young, still fragmented — the Milvus MCP server is one of the two most capable options alongside Chroma. If hybrid search matters to your RAG pipeline (and it should), this is the server to use.
+For the vector database MCP space — still young, still fragmented — the Milvus MCP server is one of the two most capable options alongside Chroma. If hybrid search matters to your RAG pipeline (and it should), this is the server to use. But watch the maintenance pace — if the Streamable HTTP PR (#57) and bug fix PR (#58) remain unmerged much longer, the server risks falling behind the ecosystem.
 
 ## Rating: 3.5/5
 
-The Milvus MCP server earns a 3.5/5 for bringing the most popular open-source vector database's key capabilities to AI coding agents — 12 tools with category-leading search breadth (five modes including native hybrid search), full collection CRUD, delete support, memory management controls, and SSE transport. It loses points for requiring a running Milvus instance (no embedded/local mode), pre-release maturity (35 commits, no versioned releases, three months since last update), no document update capability, a known service hang bug (#51), and no Streamable HTTP transport. The database behind it is world-class; the MCP layer is catching up.
+The Milvus MCP server earns a 3.5/5 for bringing the most popular open-source vector database's key capabilities to AI coding agents — 12 tools with category-leading search breadth (five modes including native hybrid search), full collection CRUD, delete support, memory management controls, and SSE transport. It loses points for requiring a running Milvus instance (no embedded/local mode), stagnating development (35 commits, no versioned releases, no merges since December 2025, two PRs sitting unreviewed), no document update capability, a known service hang bug (#51), and no Streamable HTTP transport. The database behind it is world-class and shipping monthly; the MCP layer is falling behind.
 
 **Use this if:** You're running Milvus in production and want AI-assisted vector operations, especially hybrid search combining keyword and semantic retrieval.
 
 **Skip this if:** You want zero-setup vector memory (use Qdrant's embedded mode), you need the most polished MCP experience (use Chroma), or your stack is JavaScript-based (use Pinecone's TypeScript server).
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and has not been independently verified through hands-on testing. All claims are based on publicly available documentation, GitHub repositories, and community sources. Last edited 2026-03-21.*
