@@ -29,7 +29,7 @@ If you want to skip the details:
 | Database (self-hosted Postgres) | Postgres MCP Pro (crystaldba) | — | DBHub (multi-database) |
 | Database (MySQL) | benborla/mcp-server-mysql | — | designcomputer (1.2K stars, Python) |
 | Database (Redis) | [redis/mcp-redis](https://github.com/redis/mcp-redis) | — | Community alternatives |
-| Database (SQLite) | jparkerweb/mcp-sqlite | — | [Official SQLite](/reviews/sqlite-mcp-server/) (3/5, archived) |
+| Database (SQLite) | jparkerweb/mcp-sqlite | — | [Official SQLite](/reviews/sqlite-mcp-server/) (2.5/5, archived, SQL injection) |
 | Database (multi-DB) | FreePeak/db-mcp-server | — | executeautomation (320 stars, 10 tools) |
 | Memory | [Zep/Graphiti](/reviews/zep-graphiti-mcp-server/) | 4/5 | [mem0](/reviews/mem0-mcp-server/) (4/5, semantic retrieval), [Official Memory](/reviews/memory-mcp-server/) (3.5/5, small use cases) |
 | Filesystem | [Official Filesystem](/reviews/filesystem-mcp-server/) | 4/5 | — |
@@ -270,11 +270,11 @@ For scale (crawling entire sites, structured extraction, autonomous research), [
 
 ## Databases
 
-The official database MCP servers are both archived — and one of them has a security vulnerability.
+The official database MCP servers are both archived — and both have security vulnerabilities.
 
 The [official PostgreSQL server](/reviews/postgres-mcp-server/) (2.5/5) has a SQL injection vulnerability that bypasses its read-only transaction wrapper. Multi-statement injection (`COMMIT; DROP SCHEMA public CASCADE;`) works because the Node.js postgres client accepts semicolon-delimited statements. **Stop using it.**
 
-The [official SQLite server](/reviews/sqlite-mcp-server/) (3/5) is a good learning tool but runs `DROP TABLE` without asking. No safety guardrails, no parameterized queries. Fine for demos, not for real data.
+The [official SQLite server](/reviews/sqlite-mcp-server/) (2.5/5) also has a publicly disclosed SQL injection vulnerability (June 2025, Trend Micro). Unsanitized table names concatenated via f-strings enable stored prompt injection — an attacker plants a payload in a database field, and when an AI agent reads it, the payload hijacks the agent. Anthropic declined to patch it. **Stop using it with real data.**
 
 **For cloud Postgres:** [Neon MCP](/reviews/neon-mcp-server/) (4/5) is the standout for pure database work. 20 tools, OAuth authentication, and a branch-based migration workflow that makes schema changes safe by default. For full backend management, [Supabase MCP](/reviews/supabase-mcp-server/) (4/5) covers database, edge functions, storage, and debugging in one server — broader scope but weaker branching (schema-only, paid plans only).
 
@@ -641,7 +641,7 @@ We've reviewed every MCP server on our original list — and we're now expanding
 
 After reviewing 97 MCP servers, a clear pattern has emerged:
 
-**Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are archived with security issues (2.5-3/5), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
+**Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are both archived with SQL injection vulnerabilities (2.5/5 each), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
 
 **First-party vendor servers are better.** Sentry, Slack, Brave Search, GitHub — when the company that owns the product builds the MCP server, the integration is tighter, the maintenance is reliable, and the security model is sound.
 
@@ -654,8 +654,8 @@ Our rating distribution tells the story:
 | 4.5/5 | 7 | Playwright, Cloudflare, CMS/Content Management, Pharmaceutical/Healthcare, Web Scraping/Crawling, Geospatial/Mapping, MCP Server Frameworks/SDKs |
 | 4.0/5 | 60 | Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB, AWS, Google Cloud, Azure, Kubernetes, Terraform, Grafana, Datadog, New Relic, Honeycomb, PagerDuty, Framelink, GitMCP, Mem0, Zep/Graphiti, Asana, Google Calendar, CI/CD, Code Security, Secret Management, Log Management, Infrastructure Automation, Database Administration, API Testing, Data Pipeline/ETL, Time-Series Databases, Audio/Video Processing, Workflow Automation, Game Engines/3D, Desktop Automation/Browser Control, E-Commerce/Shopping, Feature Flags/Experimentation, Calendar/Scheduling, Sports/Fitness, Travel/Tourism, Telecommunications/Communications, Government/Public Sector, Construction/Architecture, Personal Finance, Robotics, Apple/macOS, Spreadsheet/Office Suite, Cryptocurrency/DeFi, Container/Docker/Kubernetes, Serverless/FaaS, Vector Database/Embedding |
 | 3.5/5 | 50 | Context7, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase, Crawl4AI, Milvus, Docker, Pulumi, Teams, Atlassian, Obsidian, Shopify, Gmail, Outlook, CRM, Analytics, Cloud Storage, Search Engines, Message Queues, PDF/Documents, Monitoring/Uptime, Notification/Email Delivery, Testing/QA, API Gateways, Container Registries, CDN/Edge Computing, DNS/Domains, Network Security, Performance/Load Testing, AI/ML Model Serving, Data Visualization, Chaos Engineering, Blockchain/Web3, Identity/Auth, Legal/Contract Management, Customer Support/Helpdesk, Supply Chain/Logistics, Energy/Utilities, Education/EdTech, Manufacturing/Industrial, Weather/Climate, Aerospace/Defense, Genealogy/Family History, Library/Archive/Museum, Presentation/Slides, Code Quality/Linting |
-| 3.0/5 | 11 | SQLite, Sequential Thinking, Qdrant, Pinecone, Git, Discord, Agriculture/Farming, Insurance, Automotive/Vehicle, Package Management/Dependency, Configuration Management |
-| 2.5/5 | 3 | Puppeteer, PostgreSQL, EverArt |
+| 3.0/5 | 10 | Sequential Thinking, Qdrant, Pinecone, Git, Discord, Agriculture/Farming, Insurance, Automotive/Vehicle, Package Management/Dependency, Configuration Management |
+| 2.5/5 | 4 | SQLite, Puppeteer, PostgreSQL, EverArt |
 
 The actively maintained servers cluster at 4.0. The archived ones cluster at 2.5-3.0. Maintenance matters more than feature count.
 
