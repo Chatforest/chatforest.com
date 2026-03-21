@@ -7,11 +7,13 @@ content_type: "Review"
 card_description: "HashiCorp's Terraform MCP server — real-time registry documentation, 35+ tools across registry, workspace management, variable sets, stacks, and policy governance. Dual transport, Go-native."
 ---
 
+**At a glance:** 1,300 GitHub stars, 136 forks (up from 134), 323 commits, 10 releases, v0.4.0 (Jan 22, 2026), last commit Mar 10, 11 open issues, 20 open PRs. Available on AWS Marketplace (free) and Docker MCP Catalog. HashiCorp BSL.
+
 Every AI coding assistant hallucinates Terraform resource arguments. This server fixes that.
 
 The [Terraform MCP server](https://github.com/hashicorp/terraform-mcp-server) from HashiCorp gives AI agents real-time access to the Terraform Registry — provider documentation, module specifications, Sentinel policies, and version information. Instead of guessing that an `aws_instance` resource takes `instance_type` (correct) or `size` (wrong, that's Azure), the agent looks it up.
 
-With 1,300 stars, 134 forks, 323 commits, and 10 releases since May 2025, it's the official IaC MCP server from the company that invented Terraform. And it makes a deliberate choice that defines its philosophy: **it doesn't run `terraform apply`**.
+With 1,300 stars, 136 forks, 323 commits, and 10 releases since May 2025, it's the official IaC MCP server from the company that invented Terraform. And it makes a deliberate choice that defines its philosophy: **it doesn't run `terraform apply`**.
 
 ## What It Does
 
@@ -139,13 +141,19 @@ TRANSPORT_MODE=streamable-http terraform-mcp-server
 
 **Rate limiting.** Built-in rate limiting with configurable global (default 10 rps, 20 burst) and per-session (default 5 rps, 10 burst) limits. This protects both the Terraform Registry API and HCP Terraform from overzealous AI agents making rapid-fire requests.
 
+**Active development cadence (post-v0.4).** Since the v0.4.0 release in January 2026, the main branch has seen consistent commits — multiple per week through February and March 2026. Notable additions include a `--heartbeat-interval` flag for connection health monitoring, `--log-level` and `--log-format` CLI arguments for better observability, session handling fixes for stateless and load-balanced environments, corporate proxy/TLS inspection troubleshooting docs, and a Go 1.25.7 bump to patch security vulnerabilities. This isn't a dormant project — it's a project accumulating toward a v0.5.0 release.
+
+**Formal security model.** HashiCorp published a [dedicated security model](https://developer.hashicorp.com/terraform/mcp-server/security) covering five threat categories: hallucinations, prompt injection, tool poisoning, rug pull attacks, and tool shadowing. This is more security documentation than most MCP servers provide — and appropriate for a server that handles HCP Terraform tokens and workspace management.
+
+**Growing ecosystem presence.** The server is now listed on AWS Marketplace (free), the Docker MCP Catalog, and supports one-click installation for VS Code, Cursor, Claude Desktop, Amazon Q, and Claude Code. HashiCorp is also expanding their MCP portfolio — Vault, Vault Radar, and Consul MCP servers are in development, signaling long-term investment in the MCP-as-infrastructure-interface pattern.
+
 ## What Doesn't Work Well
 
-**No `terraform plan` or `terraform apply`.** This is the safety-by-design choice, and it's correct — but it means the server can't close the loop. An agent can help you write perfect Terraform, but can't tell you what it would actually change in your infrastructure or apply it. You still need to alt-tab to your terminal. Some users will find this frustrating, and the gap creates an opportunity for community alternatives that are less cautious.
+**No `terraform plan` or `terraform apply` — but that may change.** This is the safety-by-design choice, and it's correct — but it means the server can't close the loop. An agent can help you write perfect Terraform, but can't tell you what it would actually change in your infrastructure or apply it. You still need to alt-tab to your terminal. Some users will find this frustrating. PR [#276](https://github.com/hashicorp/terraform-mcp-server/pull/276) (February 2026, targeting v0.5.0) proposes adding `get_plan_json_output`, `get_plan_details`, `get_plan_logs`, `get_apply_details`, and `get_apply_logs` — read-only plan/apply visibility tools that would narrow this gap without granting execution authority.
 
-**Beta status.** HashiCorp labels this feature as beta — "should not be used in beta functionality in production environments." Combined with only 10 releases over 8 months, this signals the API surface may still change. Tool names, parameters, and behaviors are not guaranteed stable.
+**Beta status, no release in 2 months.** HashiCorp labels this feature as beta — "should not be used in beta functionality in production environments." The last release was v0.4.0 on January 22, 2026 — two months ago. The main branch has accumulated significant improvements (heartbeat, logging, session handling, security patches) that aren't yet in a tagged release. With 20 open PRs including dependency bumps, new features, and community contributions, the gap between `main` and the latest release is widening. Users running Docker images pinned to v0.4.0 are missing fixes already merged.
 
-**Security findings.** Issue [#288](https://github.com/hashicorp/terraform-mcp-server/issues/288) (February 2026) reports an AgentAudit scan finding insecure TLS configuration and unverified CI binary downloads. For a server that handles HCP Terraform tokens and workspace management, security issues deserve attention.
+**Security findings.** Issue [#288](https://github.com/hashicorp/terraform-mcp-server/issues/288) (February 2026) reports an AgentAudit scan finding insecure TLS configuration and unverified CI binary downloads. While HashiCorp published a formal security model (see above), this specific issue remains open. The Go 1.25.7 bump (Feb 10) patched some security vulnerabilities, and PR [#291](https://github.com/hashicorp/terraform-mcp-server/pull/291) adds proxy-friendly headers and address locking — but the AgentAudit findings haven't been fully resolved.
 
 **Terraform-only ecosystem.** The server doesn't support OpenTofu (the open-source Terraform fork), Pulumi, or any other IaC tool. If your organization uses OpenTofu — increasingly common since HashiCorp's BSL license change — this server is useless for your private registry, though public registry lookups may still work. The Terraform ecosystem lock-in is a real consideration.
 
@@ -153,13 +161,13 @@ TRANSPORT_MODE=streamable-http terraform-mcp-server
 
 **Proxy and networking issues.** Issue [#267](https://github.com/hashicorp/terraform-mcp-server/issues/267) reports TFE_TOKEN header rejection behind nginx proxies. Issue [#250](https://github.com/hashicorp/terraform-mcp-server/issues/250) reports Docker networking problems despite `--network host`. Enterprise environments with proxies and custom networking may hit friction.
 
-**11 open issues, but low velocity on some.** The issue count is low compared to larger projects, but some issues have been open for months. With only 10 releases and a small contributor base, response times vary.
+**20 open PRs, 11 open issues.** The issue count is low, but the 20 open PRs tell a story. Several are dependabot bumps that should be routine merges. Others are meaningful community contributions: pagination limits (#271, #293), disable-streaming flag (#294), GitHub Copilot CLI instructions (#266), and `credentials.tfrc.json` auth support (#265). The v0.5.0 milestone exists but no release date is set. For a project backed by HashiCorp (now IBM), the PR review cadence could be faster.
 
 **No local state support.** The workspace management tools only work with HCP Terraform (Terraform Cloud) or Terraform Enterprise. If you use Terraform with local state files or alternative backends (S3, GCS, Consul), the workspace tools are irrelevant. You get registry lookups only.
 
 ## How It Compares
 
-**vs. Pulumi MCP Server:** Pulumi's MCP server takes a fundamentally different approach — it provides `resource-search` for querying deployed infrastructure, `get-stacks` for listing stacks, and a `neo-bridge` tool that delegates to Pulumi's AI agent (Neo) for autonomous infrastructure provisioning. Where Terraform MCP is a documentation and management server, Pulumi MCP is closer to an execution engine. Pulumi also includes deployment tools (`deploy-to-aws`) and policy violation checking. Choose Terraform MCP for registry-informed Terraform writing; choose Pulumi MCP if you want AI-driven infrastructure execution.
+**vs. [Pulumi MCP Server](/reviews/pulumi-mcp-server/) ([3.5/5](/reviews/pulumi-mcp-server/)):** Pulumi's MCP server takes a fundamentally different approach — it provides `resource-search` for querying deployed infrastructure, `get-stacks` for listing stacks, and a `neo-bridge` tool that delegates to Pulumi's AI agent (Neo) for autonomous infrastructure provisioning. Where Terraform MCP is a documentation and management server, Pulumi MCP is closer to an execution engine. Pulumi also includes deployment tools (`deploy-to-aws`) and policy violation checking. Pulumi's star count has nearly tripled (66→188) while Terraform's held steady at ~1,300 — smaller base but faster growth. Choose Terraform MCP for registry-informed Terraform writing; choose Pulumi MCP if you want AI-driven infrastructure execution.
 
 **vs. AWS MCP Servers ([4/5](/reviews/aws-mcp-servers/)):** AWS's 66-server suite includes deprecated Terraform and CDK servers. The AWS approach is broader (covering dozens of AWS services) but AWS-specific. Terraform MCP is cloud-agnostic — its registry covers AWS, Azure, GCP, and hundreds of other providers. Use Terraform MCP for multi-cloud IaC writing; use AWS MCP for deep AWS service integration.
 
@@ -175,7 +183,9 @@ HashiCorp's Terraform MCP server solves one problem extremely well: it gives AI 
 
 The 35+ tools span from simple registry lookups (free, no auth) to full HCP Terraform workspace management (requires token). The deliberate choice not to run `terraform apply` is the right safety trade-off for most teams — better an agent that writes correct code than one that deploys incorrect infrastructure.
 
-But it's beta software with security findings, limited to the Terraform ecosystem (no OpenTofu), and dependent on HCP Terraform for anything beyond documentation lookups. The provider search bug (#178) — returning community providers instead of official ones — undermines the core value proposition. And the absence of `terraform plan` means agents can never give you the "here's what would change" preview that makes infrastructure changes safe.
+But it's beta software with security findings, limited to the Terraform ecosystem (no OpenTofu), and dependent on HCP Terraform for anything beyond documentation lookups. The provider search bug (#178) — returning community providers instead of official ones — undermines the core value proposition. And the absence of `terraform plan` means agents can never give you the "here's what would change" preview that makes infrastructure changes safe — though PR #276's plan/apply visibility tools may change this in v0.5.0.
+
+The March 2026 picture is encouraging: active commits, a published security model, AWS Marketplace and Docker MCP Catalog listings, and HashiCorp expanding to Vault/Consul MCP servers. The main concern is the gap between commit activity and releases — v0.4.0 is two months old, and users not building from source are missing real improvements.
 
 For the core use case — "agent, look up the actual provider docs before you write this resource block" — it's indispensable. For platform teams managing HCP Terraform workspaces, the variable set and policy management tools add real value. For anyone wanting AI-driven infrastructure execution, this isn't the tool — by design.
 
@@ -187,6 +197,7 @@ For the core use case — "agent, look up the actual provider docs before you wr
 | **Publisher** | HashiCorp (official) |
 | **Repository** | [hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) |
 | **Stars** | ~1,300 |
+| **Forks** | 136 |
 | **Tools** | 35+ (registry, workspace, variable, policy, stacks) |
 | **Transport** | stdio, Streamable HTTP |
 | **Language** | Go |
@@ -194,4 +205,4 @@ For the core use case — "agent, look up the actual provider docs before you wr
 | **Pricing** | Free (registry); HCP Terraform required for workspace tools |
 | **Our rating** | 4/5 |
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) based on publicly available documentation, GitHub repository data, and web sources. We have not installed or directly tested this MCP server. Last updated 2026-03-22.*
