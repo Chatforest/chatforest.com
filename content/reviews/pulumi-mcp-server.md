@@ -1,7 +1,7 @@
 ---
 title: "The Pulumi MCP Server — From Registry Lookups to Autonomous Infrastructure via Neo"
 date: 2026-03-14T13:30:00+09:00
-description: "Pulumi's MCP server bridges AI assistants to the Pulumi ecosystem — registry lookups, stack management, resource search, and delegation to Neo for autonomous infrastructure provisioning. 66 stars, 11+ tools, TypeScript, dual local/remote modes."
+description: "Pulumi's MCP server bridges AI assistants to the Pulumi ecosystem — registry lookups, stack management, resource search, and delegation to Neo for autonomous infrastructure provisioning. 188 stars, 11+ tools, TypeScript, dual local/remote modes."
 og_description: "Pulumi MCP server: registry docs, resource search, Neo agent delegation, deploy-to-aws, local + remote modes. 11+ tools, TypeScript. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Pulumi's MCP server — registry documentation, stack management, resource search across clouds, and autonomous infrastructure via Neo agent delegation. Local npm + remote hosted modes."
@@ -9,9 +9,11 @@ card_description: "Pulumi's MCP server — registry documentation, stack managem
 
 Where the [Terraform MCP server](/reviews/terraform-mcp-server/) deliberately stops at documentation, Pulumi's MCP server keeps going.
 
+**At a glance:** 188 GitHub stars (up from 66), 36 forks, v1.0.0, last push Mar 17 2026, ~4,100 npm downloads/week, PulseMCP 54.2K all-time visitors (#485 globally, ~3.8K weekly, #324 this week). Supported clients: Cursor, Claude Code, Claude Desktop, Windsurf, Kiro. Listed on AWS Marketplace (free).
+
 The [Pulumi MCP server](https://github.com/pulumi/mcp-server) connects AI coding assistants to Pulumi's full ecosystem — the registry for resource schemas and code examples, the CLI for previewing and deploying infrastructure, Pulumi Cloud for searching deployed resources across stacks, and Pulumi Neo for delegating complex multi-step infrastructure tasks to an autonomous AI agent. It doesn't just tell you what an S3 bucket looks like — it can create one.
 
-With 66 GitHub stars, a v1.0.0 release, and a remote hosted endpoint at `mcp.ai.pulumi.com/mcp`, it's the official MCP integration from the company that pioneered infrastructure-as-code in general-purpose programming languages.
+With 188 GitHub stars (nearly tripled since our original review), a v1.0.0 release, and a remote hosted endpoint at `mcp.ai.pulumi.com/mcp`, it's the official MCP integration from the company that pioneered infrastructure-as-code in general-purpose programming languages.
 
 ## What It Does
 
@@ -83,7 +85,7 @@ docker pull mcp/pulumi:latest
 
 **Resource search across all cloud infrastructure.** The `resource-search` tool uses Lucene query syntax to search deployed resources across all stacks and cloud providers. Ask "show me all RDS databases without encryption enabled" and get real answers from your actual infrastructure. This is observability you can query conversationally, not just another dashboard.
 
-**Neo delegation for complex tasks.** The `neo-bridge` tool is unique in the MCP ecosystem. Instead of an AI assistant trying to manage multi-step infrastructure changes through individual tool calls, it can delegate the entire task to Neo — Pulumi's purpose-built infrastructure AI agent. Neo analyzes the request, creates an execution plan, generates code across multiple stacks, runs tests, and creates pull requests with explanations. Werner Enterprises reportedly reduced provisioning time from 3 days to 4 hours using Neo.
+**Neo delegation for complex tasks — now with AGENTS.md and task sharing.** The `neo-bridge` tool is unique in the MCP ecosystem. Instead of an AI assistant trying to manage multi-step infrastructure changes through individual tool calls, it can delegate the entire task to Neo — Pulumi's purpose-built infrastructure AI agent. Neo analyzes the request, creates an execution plan, generates code across multiple stacks, runs tests, and creates pull requests with explanations. Werner Enterprises reportedly reduced provisioning time from 3 days to 4 hours using Neo. Since February 2026, Neo reads AGENTS.md files — the same open standard used by Cursor and GitHub Copilot — so it automatically picks up project conventions without being told. Neo also introduced task sharing: any Neo task can be shared as a read-only view with anyone in your organization, preserving full context.
 
 **The full IaC lifecycle.** Unlike servers that stop at documentation, Pulumi MCP includes `pulumi-cli-preview` and `pulumi-cli-up`. An agent can write infrastructure code, preview what would change, deploy it, and retrieve the outputs — all without leaving the IDE. This is the execution capability that Terraform MCP deliberately omits.
 
@@ -93,11 +95,15 @@ docker pull mcp/pulumi:latest
 
 **Policy violation detection.** The `get-policy-violations` tool surfaces compliance issues detected by Pulumi's policy-as-code engine. An agent can check whether proposed changes would violate organizational policies before deployment.
 
-**Terraform migration support.** The `convert-terraform-to-typescript` prompt helps teams migrating from Terraform to Pulumi. Given HCL code, it generates equivalent Pulumi TypeScript — a practical onboarding tool for teams making the switch.
+**Zero-downtime migration from five IaC platforms.** Neo now handles automated, zero-downtime migration to Pulumi from AWS CDK, AWS CloudFormation, Terraform, CDKTF, and Azure ARM templates — not just the `convert-terraform-to-typescript` prompt. This removes a significant barrier for teams evaluating Pulumi.
+
+**Expanded client support and AWS Marketplace listing.** The remote MCP server now officially supports Cursor, Claude Code, Claude Desktop, Windsurf, and Kiro. The server is also listed on AWS Marketplace (free), making enterprise procurement easier. The OAuth-based authentication through Pulumi Cloud eliminates per-machine credential storage.
+
+**Previous provider version docs in registry (March 2026).** The Pulumi Registry now serves documentation for previous provider versions, which helps Neo and other AI agents generate accurate code for teams pinned to older provider releases.
 
 ## What Doesn't Work Well
 
-**66 stars and limited community adoption.** Compare this to Terraform MCP's 1,300 stars, Kubernetes MCP's 1,300 stars, or Docker MCP's 900+ stars. The low star count reflects both Pulumi's smaller market share relative to Terraform and the relatively new nature of the MCP server. Community examples, troubleshooting guides, and third-party integrations are sparse.
+**Growing but still niche community adoption.** Stars have nearly tripled from 66 to 188 and npm downloads are a healthy 4,100/week, but compare this to Terraform MCP's 1,300+ stars or Kubernetes MCP's 1,300+ stars. The gap reflects Pulumi's smaller market share. Community examples, troubleshooting guides, and third-party integrations remain sparser than Terraform MCP's ecosystem.
 
 **Neo dependency for key features.** The most compelling capability — autonomous multi-step infrastructure management — requires Pulumi Neo, which requires a Pulumi Cloud account with appropriate access. Neo's autonomy modes (Review, Balanced, Auto) and the agent delegation pattern are powerful but add organizational complexity. If your organization hasn't adopted Pulumi Cloud, a significant portion of the server's value proposition is inaccessible.
 
@@ -129,7 +135,9 @@ docker pull mcp/pulumi:latest
 
 Pulumi's MCP server is the most ambitious IaC MCP server available. Where Terraform MCP stops at documentation and the others focus on specific runtime environments, Pulumi MCP spans the full lifecycle: look up resource schemas, write type-safe infrastructure code in your preferred language, preview changes, deploy them, search what's running, check for policy violations, and delegate complex multi-step tasks to an autonomous AI agent.
 
-The ambition is also its weakness. Neo delegation requires Pulumi Cloud adoption. The `deploy-to-aws` prompt covers only one cloud. Documentation is thin. Community adoption is a fraction of Terraform MCP's. And the AI-driven execution model — where an agent can run `pulumi up` — is genuinely powerful but genuinely risky. A hallucinated Terraform resource fails at `terraform plan`; a hallucinated Pulumi resource might get deployed.
+The ambition is also its weakness. Neo delegation requires Pulumi Cloud adoption. The `deploy-to-aws` prompt covers only one cloud. Documentation is thin. Community adoption, while growing fast (66 → 188 stars, 4.1K npm downloads/week), is still a fraction of Terraform MCP's. And the AI-driven execution model — where an agent can run `pulumi up` — is genuinely powerful but genuinely risky. A hallucinated Terraform resource fails at `terraform plan`; a hallucinated Pulumi resource might get deployed.
+
+The February-March 2026 updates show clear momentum. AGENTS.md support, task sharing, zero-downtime migration from five IaC platforms, previous provider version docs, expanded client support (now including Kiro), and an AWS Marketplace listing all signal that Pulumi is investing heavily in the MCP-as-infrastructure-interface story.
 
 For teams already using Pulumi, this is essential — it brings the full Pulumi ecosystem into your AI workflow. For teams evaluating IaC tools, the MCP server makes a strong case for Pulumi's programming-language-first approach. For teams using Terraform, the Terraform MCP server remains the better fit — it has more community support, better documentation, and the safety of not executing anything.
 
@@ -140,7 +148,7 @@ For teams already using Pulumi, this is essential — it brings the full Pulumi 
 | **MCP Server** | Pulumi MCP Server |
 | **Publisher** | Pulumi (official) |
 | **Repository** | [pulumi/mcp-server](https://github.com/pulumi/mcp-server) |
-| **Stars** | ~66 |
+| **Stars** | ~188 |
 | **Tools** | 11+ (registry, CLI, resource search, Neo delegation) |
 | **Transport** | stdio (local), HTTP (remote at mcp.ai.pulumi.com/mcp) |
 | **Language** | TypeScript |
@@ -148,4 +156,4 @@ For teams already using Pulumi, this is essential — it brings the full Pulumi 
 | **Pricing** | Free (registry/CLI); Pulumi Cloud required for resource search, Neo |
 | **Our rating** | 3.5/5 |
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) based on publicly available documentation, GitHub data, and web sources. We have not tested this MCP server hands-on. [Rob Nugen](https://robnugen.com) maintains editorial oversight. Last updated 2026-03-21.*
