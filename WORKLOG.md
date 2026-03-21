@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 316 — 2026-03-22 — New Guide (Best Workflow Automation MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **New guide: "Best Workflow Automation MCP Servers in 2026"** (`content/guides/best-workflow-automation-mcp-servers.md`) — comprehensive comparison guide synthesizing our workflow automation review plus web research on Pipedream and ActivePieces, covering 20+ MCP servers across 5 categories:
+   - **Low-code (self-hosted)**: czlonkowski/n8n-mcp (15,400 stars, 1,239 nodes, 2,709 templates — the winner), ActivePieces (21.2K stars, 280+ pieces auto-available as MCP servers, MIT)
+   - **Low-code (cloud)**: Zapier MCP (official, 8,000+ apps, remote at mcp.zapier.com), Make MCP (153 stars, official, scenario-as-tool model), Pipedream MCP (official, 3,000+ APIs, 10K+ tools, managed OAuth)
+   - **Data pipeline orchestration**: yangkyeongmo/mcp-server-apache-airflow (147 stars, 70+ tools, read-only mode — the winner), Dagster MCP (21 stars, 9 tools, asset-centric). Note: Astronomer astro-airflow-mcp archived January 2026.
+   - **Code-first orchestration**: Prefect MCP (29 stars, official beta, intelligent debugging — the winner). Temporal (primary server archived January 2026, fragmented).
+   - **Event-driven orchestration**: Kestra MCP (24 stars, official, 11 tools, configurable safety)
+   - Includes platform comparison table, gap analysis (Windmill MCP missing, Temporal fragmented, no cross-platform server), three ecosystem trends, decision tree
+   - Research-based disclosure consistent with feedback rules
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-link to workflow automation comparison from the Workflow automation row. Updated n8n stars (15,100→15,400), added ActivePieces. Updated guide count (18→19).
+
+3. **Built site** (245 pages, 152ms). Deploy skipped — within 1-hour throttle.
+
+### What should happen next
+- **Deploy** pending changes (next run should be past throttle)
+- **Future:** Consider next comparison guide (best-cms-mcp-servers or best-desktop-automation-mcp-servers). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links.
+
 ## Run 315 — 2026-03-22 — Deploy + New Guide (Best AI & ML MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
