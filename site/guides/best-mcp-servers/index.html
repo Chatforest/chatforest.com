@@ -45,7 +45,7 @@
 
       <div class="article-body">
         <p>Most &ldquo;best MCP servers&rdquo; lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don&rsquo;t tell you if it&rsquo;s good.</p>
-<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">168 in-depth reviews</a> and <a href="/guides/">25 category comparisons</a> so far. This guide distills all of that into one page.</p>
+<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">168 in-depth reviews</a> and <a href="/guides/">26 category comparisons</a> so far. This guide distills all of that into one page.</p>
 <p><strong>What makes this different:</strong> every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.</p>
 <h2 id="the-short-version">The short version</h2>
 <p>If you want to skip the details:</p>
@@ -243,7 +243,7 @@
 <td>CRM</td>
 <td><a href="/reviews/crm-mcp-servers/">CRM MCP Servers</a></td>
 <td>3.5/5</td>
-<td>salesforcecli/mcp (312 stars, official), peakmojo/mcp-hubspot (116 stars), kesslerio/attio (58 stars)</td>
+<td>salesforcecli/mcp (312 stars, official), HubSpot (official, mcp.hubspot.com), Zoho MCP (official platform), kesslerio/attio (58 stars, 35 tools). <a href="/guides/best-crm-mcp-servers/">Full CRM comparison →</a></td>
 </tr>
 <tr>
 <td>E-commerce</td>
@@ -1415,11 +1415,12 @@
 <p><strong>Full review:</strong> <a href="/reviews/outlook-mcp-servers/">Outlook MCP Servers</a></p>
 <hr>
 <h2 id="crm">CRM</h2>
-<p>CRM data — contacts, deals, pipeline stages, revenue forecasts — is some of the most commercially valuable information a business owns. The MCP ecosystem for CRM is dominated by Salesforce, with significant gaps elsewhere.</p>
+<p>CRM data — contacts, deals, pipeline stages, revenue forecasts — is some of the most commercially valuable information a business owns. The MCP ecosystem for CRM is rapidly maturing, with three major platforms now offering official servers.</p>
 <p><strong><a href="/reviews/crm-mcp-servers/">CRM MCP Servers</a> (3.5/5)</strong> — Salesforce leads with <strong><a href="https://github.com/salesforcecli/mcp">salesforcecli/mcp</a></strong> (312 stars, Apache 2.0, official beta) — 60+ tools with dynamic toolset loading for metadata, SOQL, Apex, LWC, and DevOps Center, plus a hosted deployment option via forcedotcom/mcp-hosted. The community offers <strong><a href="https://github.com/smn2gnt/MCP-Salesforce">smn2gnt/MCP-Salesforce</a></strong> (166 stars, Python) and <strong><a href="https://github.com/tsmztech/mcp-server-salesforce">tsmztech/mcp-server-salesforce</a></strong> (139 stars) for alternative approaches.</p>
-<p>HubSpot&rsquo;s official <a href="https://github.com/HubSpot/mcp-server">mcp-server repo</a> exists but is empty. <strong><a href="https://github.com/peakmojo/mcp-hubspot">peakmojo/mcp-hubspot</a></strong> (116 stars) fills the gap with 7 tools and a unique FAISS semantic search feature. For broader coverage, adeel0x01/hubspot-mcp-tools offers 58 tools across 9 categories.</p>
-<p><strong><a href="https://github.com/kesslerio/attio-mcp-server">kesslerio/attio-mcp-server</a></strong> (58 stars, 1,291 commits) is surprisingly excellent for the smaller Attio CRM — 14 universal tools, batch operations, and the most active maintenance by commit count. Pipedrive&rsquo;s top server (WillDent, 46 stars) is read-only; Teapot-Agency offers full CRUD with 40 tools. Dynamics 365 has just one server with 5 tools. Zoho has no production-ready MCP server despite being one of the largest CRM platforms globally.</p>
-<p><strong>Full review:</strong> <a href="/reviews/crm-mcp-servers/">CRM MCP Servers</a></p>
+<p>HubSpot now has an <strong><a href="https://developers.hubspot.com/mcp">official Remote MCP Server</a></strong> (Public Beta, mcp.hubspot.com) with read-only access to 12+ CRM object types via OAuth 2.0, plus a <strong>Developer MCP Server</strong> (GA since Feb 2026) for app/CMS building. Community leader <strong><a href="https://github.com/peakmojo/mcp-hubspot">peakmojo/mcp-hubspot</a></strong> (116 stars) adds FAISS semantic search; adeel0x01/hubspot-mcp-tools offers 58 tools with write access.</p>
+<p><strong><a href="https://www.zoho.com/mcp/">Zoho MCP</a></strong> launched as an official platform covering CRM, Mail, Calendar, Desk, and 500+ third-party apps — a unified approach rather than a dedicated CRM server.</p>
+<p><strong><a href="https://github.com/kesslerio/attio-mcp-server">kesslerio/attio-mcp-server</a></strong> (58 stars, 1,291+ commits) is surprisingly excellent for the smaller Attio CRM — now 35 tools (consolidated from 70+), batch operations, and the most active maintenance by commit count. Pipedrive&rsquo;s top server (WillDent, 46 stars) is read-only; Teapot-Agency offers full CRUD with 40 tools. Dynamics 365 has just one server with 5 tools.</p>
+<p><strong>Full review:</strong> <a href="/reviews/crm-mcp-servers/">CRM MCP Servers</a> · <strong>Full comparison:</strong> <a href="/guides/best-crm-mcp-servers/">Best CRM MCP Servers in 2026</a></p>
 <hr>
 <h2 id="e-commerce">E-commerce</h2>
 <p>Shopify is the first major e-commerce platform to ship MCP servers — and they&rsquo;ve shipped two.</p>

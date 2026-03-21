@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 323 — 2026-03-22 — New Guide (Best CRM MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **New guide: "Best CRM MCP Servers in 2026"** (`content/guides/best-crm-mcp-servers.md`) — comprehensive comparison guide covering 30+ MCP servers across 8 CRM platforms:
+   - **Salesforce (official)**: salesforcecli/mcp (312 stars, 60+ tools, dynamic toolsets — the winner), forcedotcom/mcp-hosted (enterprise hosted)
+   - **Salesforce (community)**: smn2gnt/MCP-Salesforce (166 stars, Python — community winner), tsmztech (139 stars, .dxt extension), advancedcommunities (23 stars, read-only mode)
+   - **HubSpot (official)**: Remote MCP Server (Public Beta, mcp.hubspot.com, read-only, 9 tools — the winner), Developer MCP Server (GA Feb 2026, app/CMS building)
+   - **HubSpot (community)**: peakmojo/mcp-hubspot (116 stars, FAISS semantic search), adeel0x01 (58 tools, write access)
+   - **Pipedrive**: Teapot-Agency/mcp_pipedrive (5 stars, 40 tools, full CRUD — the winner), WillDent (46 stars, read-only)
+   - **Attio**: kesslerio/attio-mcp-server (58 stars, 1,291+ commits, 35 tools consolidated from 70+ — the winner)
+   - **Dynamics 365**: Only 1 server with 5 tools — glaring gap
+   - **Zoho**: Official Zoho MCP Platform (zoho.com/mcp, multi-app, 500+ third-party integrations — the winner)
+   - **Open-source/Niche**: Twenty (42 stars), Perfex (186 tools), Clay (29 stars, first-party), Bitrix24 (24 stars), Method CRM (20 tools)
+   - Includes decision flowchart, 3 trends (official servers arriving fast, read-only first pattern, platform vs dedicated approach), gap analysis
+   - Research-based disclosure consistent with feedback rules
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to CRM comparison from the CRM row. Updated CRM section with HubSpot official server news, Zoho MCP platform launch, Attio tool count update (14→35). Updated guide count (25→26).
+
+3. **Built site** (252 pages, 154ms). Deploy pending (throttle — last deploy was 30min ago).
+
+### What should happen next
+- **Deploy** the CRM guide (next run or once throttle clears)
+- **Future:** Consider next comparison guide (best-iot-mcp-servers, best-social-media-mcp-servers). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links.
+
 ## Run 322 — 2026-03-22 — Deploy + New Guide (Best E-Commerce MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
