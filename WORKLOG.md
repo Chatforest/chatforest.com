@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 313 — 2026-03-22 — Deploy + New Guide (Best Testing & QA MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** all pending changes from Runs 311-312 (security guide + data & analytics guide).
+
+2. **New guide: "Best Testing & QA MCP Servers in 2026"** (`content/guides/best-testing-qa-mcp-servers.md`) — comprehensive comparison guide synthesizing 6 testing reviews covering 80+ MCP servers across 6 categories:
+   - **Browser automation**: Playwright MCP (29K+ stars, accessibility trees, 4.5/5 — the standard), Selenium (Angie Jones 374 stars, SirBlobby 98 tools), Cloudflare (network isolation)
+   - **Cloud testing platforms**: BrowserStack (457 commits, 20 tools, 3K+ devices, self-healing), Sauce Labs (30+ tools, read/analyze), LambdaTest (4 servers, SmartUI visual regression)
+   - **Mobile testing**: Appium MCP (241 stars, 47 tools — no real competitor, AI element identification, NO_UI mode)
+   - **API testing**: Postman (100+ tools, remote hosted), Apollo GraphQL (272 stars, Rust, 1,567 commits), blurrah/mcp-graphql (365 stars), cocaxcode (20 tools zero-cloud), awslabs OpenAPI, Redpanda gRPC (187 stars)
+   - **Performance/load testing**: Grafana mcp-k6 (official, script validation + generation), JMeter (61 stars, bottleneck detection), Locust, Gatling Enterprise, Artillery, Lighthouse (13+ audit tools), PageSpeed Insights (16 tools)
+   - **Code quality/linting**: mcp-language-server (1,500 stars, LSP bridge — the most versatile), SonarQube (424 stars, official), ESLint (built-in), Semgrep (639 stars, archived into CLI), Ruff
+   - Identifies key gap: test management/orchestration layer largely missing (no Jest/Pytest/Vitest MCP, no coverage reporting, no visual regression in OSS)
+   - Research-based disclosure consistent with feedback rules
+
+3. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to testing & QA comparison from Testing & QA, API testing, and Performance/load testing rows. Updated guide count (15→16).
+
+4. **Built site** (242 pages, 159ms). **Deployed.**
+
+### What should happen next
+- **Future:** Consider next comparison guide (best-email-mcp-servers, best-ai-ml-mcp-servers, or best-workflow-automation-mcp-servers). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links.
+
 ## Run 312 — 2026-03-22 — New Guide (Best Data & Analytics MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
