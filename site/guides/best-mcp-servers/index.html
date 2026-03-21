@@ -45,7 +45,7 @@
 
       <div class="article-body">
         <p>Most &ldquo;best MCP servers&rdquo; lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don&rsquo;t tell you if it&rsquo;s good.</p>
-<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">168 in-depth reviews</a> and <a href="/guides/">23 category comparisons</a> so far. This guide distills all of that into one page.</p>
+<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">168 in-depth reviews</a> and <a href="/guides/">25 category comparisons</a> so far. This guide distills all of that into one page.</p>
 <p><strong>What makes this different:</strong> every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.</p>
 <h2 id="the-short-version">The short version</h2>
 <p>If you want to skip the details:</p>
@@ -213,7 +213,7 @@
 <td>Design-to-code</td>
 <td><a href="/reviews/framelink-figma-mcp-server/">Framelink MCP</a></td>
 <td>4/5</td>
-<td><a href="/reviews/figma-dev-mode-mcp-server/">Figma Dev Mode</a> (3.5/5, exclusive write ops)</td>
+<td><a href="/reviews/figma-dev-mode-mcp-server/">Figma Dev Mode</a> (3.5/5, exclusive write ops), <a href="https://github.com/grab/cursor-talk-to-figma-mcp">TalkToFigma</a> (6,300 stars, bidirectional). <a href="/guides/best-design-mcp-servers/">Full design comparison →</a></td>
 </tr>
 <tr>
 <td>Payments</td>
@@ -249,7 +249,7 @@
 <td>E-commerce</td>
 <td><a href="/reviews/shopify-mcp-servers/">Shopify MCP Servers</a></td>
 <td>3.5/5</td>
-<td>Dev MCP (docs), Storefront MCP (shopping), community Admin API servers</td>
+<td>Dev MCP (414 stars), Storefront MCP (every store), GeLi2001/shopify-mcp (139 stars, 31+ admin tools), WooCommerce, Magento, Saleor, Medusa. <a href="/guides/best-ecommerce-mcp-servers/">Full e-commerce comparison →</a></td>
 </tr>
 <tr>
 <td>Cloud infrastructure</td>
@@ -549,7 +549,7 @@
 <td>E-commerce / shopping</td>
 <td><a href="/reviews/ecommerce-shopping-mcp-servers/">E-Commerce &amp; Shopping MCP</a></td>
 <td>4.0/5</td>
-<td><a href="https://shopify.dev/docs/apps/build/storefront-mcp">Shopify Storefront MCP</a> (official, every store), <a href="https://github.com/stripe/agent-toolkit">stripe/agent-toolkit</a> (1,400 stars, 25 payment tools)</td>
+<td><a href="https://shopify.dev/docs/apps/build/storefront-mcp">Shopify Storefront MCP</a> (official, every store), <a href="https://github.com/GeLi2001/shopify-mcp">GeLi2001/shopify-mcp</a> (139 stars, 31+ admin tools), <a href="https://github.com/boldcommerce/magento2-mcp">boldcommerce/magento2-mcp</a> (27+ stars), <a href="https://github.com/saleor/saleor-mcp">saleor/saleor-mcp</a> (official). <a href="/guides/best-ecommerce-mcp-servers/">Full e-commerce comparison →</a></td>
 </tr>
 <tr>
 <td>Social media / marketing</td>
@@ -1394,7 +1394,8 @@
 <p><strong><a href="/reviews/figma-dev-mode-mcp-server/">Figma Dev Mode MCP</a> (3.5/5)</strong> — Figma&rsquo;s official hosted server at <code>mcp.figma.com/mcp</code>. 12 tools with exclusive write capabilities: code-to-canvas capture (<code>generate_figma_design</code>), Code Connect component mappings, FigJam diagram generation. OAuth authentication, zero-install remote architecture.</p>
 <p>The official server&rsquo;s draw is the design-code-design loop — no community server can push code back into Figma as editable designs. Code Connect improves code generation accuracy over time by mapping Figma components to your codebase. But the free tier gives you <strong>6 tool calls per month</strong>, prescriptive output can conflict with your codebase conventions, and nested components get flattened.</p>
 <p><strong>Recommendation:</strong> Start with Framelink for design-to-code translation. Add the official server only if you need code-to-canvas capture, Code Connect, or FigJam integration — and have a paid Figma plan.</p>
-<p><strong>Full reviews:</strong> <a href="/reviews/framelink-figma-mcp-server/">Framelink MCP</a> · <a href="/reviews/figma-dev-mode-mcp-server/">Figma Dev Mode MCP</a></p>
+<p><strong>Beyond Figma:</strong> The design MCP ecosystem now includes Penpot (official MCP, open-source), Adobe Creative Suite (community servers for Photoshop, Illustrator, Premiere), TalkToFigma (6,300 stars, bidirectional Figma manipulation), and UI component libraries (21st-dev Magic, shadcn/ui, Magic UI).</p>
+<p><strong>Full reviews:</strong> <a href="/reviews/framelink-figma-mcp-server/">Framelink MCP</a> · <a href="/reviews/figma-dev-mode-mcp-server/">Figma Dev Mode MCP</a> · <a href="/guides/best-design-mcp-servers/">Full design comparison →</a></p>
 <hr>
 <h2 id="payments">Payments</h2>
 <p>A new category — and one where the first-party server is clearly the right choice.</p>
@@ -1423,7 +1424,8 @@
 <h2 id="e-commerce">E-commerce</h2>
 <p>Shopify is the first major e-commerce platform to ship MCP servers — and they&rsquo;ve shipped two.</p>
 <p><strong><a href="/reviews/shopify-mcp-servers/">Shopify MCP Servers</a> (3.5/5)</strong> — A multi-server ecosystem with distinct layers. The <strong>Dev MCP</strong> (414 stars, <code>@shopify/dev-mcp</code>) is a zero-config developer assistant: docs search, GraphQL schema introspection, theme validation, and code validation against Shopify&rsquo;s APIs. No API key needed. The <strong>Storefront MCP</strong> is a per-store endpoint for AI-powered shopping: semantic product search (vector embeddings), cart operations, policy Q&amp;A, and interactive UI components — powering &ldquo;Agentic Storefronts&rdquo; across ChatGPT, Perplexity, and Copilot.</p>
-<p>The critical gap: <strong>no official Admin API MCP server</strong>. For store management (products, orders, inventory, fulfillment), you need community servers like GeLi2001/shopify-mcp (39 stars, ~12 tools) or antoineschaller/shopify-mcp-server (22 tools). All are immature with low adoption. Shopify also co-developed the Universal Commerce Protocol (UCP) with Google — an open standard for AI-agent-to-commerce-backend communication.</p>
+<p>The critical gap: <strong>no official Admin API MCP server</strong>. For store management (products, orders, inventory, fulfillment), you need community servers like <a href="https://github.com/GeLi2001/shopify-mcp">GeLi2001/shopify-mcp</a> (139 stars, 31+ tools) or antoineschaller/shopify-mcp-server (22 tools). Adoption is growing but still community-driven. Shopify also co-developed the Universal Commerce Protocol (UCP) with Google — an open standard for AI-agent-to-commerce-backend communication.</p>
+<p>Beyond Shopify, the e-commerce MCP landscape includes <a href="https://github.com/techspawn/woocommerce-mcp-server">techspawn/woocommerce-mcp-server</a> (26 stars, WP REST API), <a href="https://github.com/boldcommerce/magento2-mcp">boldcommerce/magento2-mcp</a> (27+ stars, Magento 2 REST API), <a href="https://github.com/saleor/saleor-mcp">saleor/saleor-mcp</a> (official, hosted at mcp.saleor.app), Medusa MCP implementations (14 admin tools), BigCommerce Storefront MCP (closed beta), and Amazon seller tools (Seller Labs MCP, community SP-API servers). <a href="/guides/best-ecommerce-mcp-servers/">Full e-commerce comparison →</a></p>
 <p><strong>Full review:</strong> <a href="/reviews/shopify-mcp-servers/">Shopify MCP Servers</a></p>
 <hr>
 <h2 id="devops--infrastructure">DevOps &amp; infrastructure</h2>

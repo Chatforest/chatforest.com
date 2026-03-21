@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 322 — 2026-03-22 — Deploy + New Guide (Best E-Commerce MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** all pending changes from Run 321 (Design MCP Servers guide).
+
+2. **New guide: "Best E-Commerce MCP Servers in 2026"** (`content/guides/best-ecommerce-mcp-servers.md`) — comprehensive comparison guide covering 30+ MCP servers across 7 categories:
+   - **Shopify storefront (official)**: Shopify Storefront MCP (GA, live on every store, zero config, semantic search, cart ops, checkout — the winner), Shopify Dev MCP (414 stars, 4 dev tools)
+   - **Shopify admin (community)**: GeLi2001/shopify-mcp (139 stars, 31+ tools, GraphQL Admin API — the winner), antoineschaller/shopify-mcp-server (22 tools), trigga6006 fork (70+ tools)
+   - **WooCommerce**: techspawn/woocommerce-mcp-server (26 stars, FastMCP, WP REST API — the winner), iOSDevSK/mcp-for-woocommerce (WordPress plugin approach), plus 4 community implementations
+   - **Magento/Adobe Commerce**: boldcommerce/magento2-mcp (27+ stars, products/customers/orders/revenue — the winner), elgentos/magento2-dev-mcp (dev assistant)
+   - **Amazon (seller)**: Seller Labs MCP (commercial, 50+ data tables, multi-account, read-only — the winner), mattcoatsworth/AmazonSeller-mcp-server (SP-API), Amazon Ads MCP (official)
+   - **BigCommerce**: BigCommerce Storefront MCP (closed beta — the winner), CData read-only server, community implementations
+   - **Headless (Saleor/Medusa/PrestaShop)**: saleor/saleor-mcp (official, hosted at mcp.saleor.app — the winner), minimalart/mcp-medusa (14 admin tools), SGFGOV/medusa-mcp (SDK integration), 3 PrestaShop implementations
+   - Includes decision flowchart, 3 trends (agentic commerce proven by Shopify, admin gap is biggest opportunity, UCP could unify landscape), gap analysis (no official Shopify Admin MCP, no eBay/Etsy, no multi-platform, no shipping/logistics, no PIM, no A/B testing)
+   - Research-based disclosure consistent with feedback rules
+
+3. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to e-commerce comparison from both E-commerce rows (original and Beyond list). Updated GeLi2001 stars (39→139, ~12→31+ tools). Added WooCommerce, Magento, Saleor, Medusa, BigCommerce, Amazon mentions with comparison links. Updated guide count (24→25).
+
+4. **Built site** (251 pages, 154ms). **Deployed** to chatforest.com.
+
+### What should happen next
+- **Future:** Consider next comparison guide (best-crm-mcp-servers, best-iot-mcp-servers). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links.
+
 ## Run 321 — 2026-03-22 — New Guide (Best Design MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
