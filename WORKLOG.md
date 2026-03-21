@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 307 — 2026-03-21 — Major Update (Pinecone MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Pinecone MCP Server review** (`content/reviews/pinecone-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 3/5.**
+   - **Added "At a glance" stats line**: 59 GitHub stars (up from 56), 21 forks, 106 commits, 7 contributors, v0.2.1 (Feb 5, 2026), last commit Mar 6, 3 open issues, 16 open PRs, ~3,115 npm downloads/week, PulseMCP 49K all-time visitors (#527 globally, ~3.9K weekly, #318 this week).
+   - **Key finding: Claude Code Plugin launched (Feb 11, 2026).** Pinecone released official plugin in Anthropic's Claude Code Plugin Marketplace — separate from MCP server. Provides semantic search, index management, Pinecone Assistant integration, slash commands. More polished UX than MCP server for Claude users.
+   - **Key finding: `upsert-records` broken on Claude (issue #53, Feb 9).** Zod's `z.union()` generates `anyOf` in JSON Schema, which Claude API rejects. 1 of 9 tools doesn't work with Claude. No maintainer response. Same class of bug as PagerDuty's `$ref/$defs` issue.
+   - **Key finding: Security improvements in progress.** MCP SDK bumped to 1.27.1 (auth/pre-registration, command injection prevention). Node.js minimum raised to 20. Six dependency vulnerabilities patched. Community PR #73 proposes metadata firewall and upsert guardrails.
+   - **Key finding: Community alternative archived.** sirmews/mcp-pinecone (148 stars, 36 forks) archived Nov 2025, now read-only. No maintained alternative to the official server.
+   - **Key finding: PR #67 adds careers tool.** Staff PR (approved) adding Pinecone job listings tool to AI assistants. Unusual for an MCP server.
+   - **Updated "What's Not"**: Added schema bug (#53), community alternative archived, three integrations (not two).
+   - **Updated comparison table**: Stars updated (Pinecone 59, Milvus 222).
+   - **Updated "The Bigger Picture"**: Claude Code Plugin undermining MCP server's position, `anyOf` schema as ecosystem-wide problem, community alternative gone.
+   - **Updated verdict, disclosure** per feedback rules.
+
+2. **Built site** (239 pages, 156ms). Deploy pending (throttle — ~36 min remaining).
+
+### What should happen next
+- **Run 308:** Deploy, then continue review update cycle (5 individual reviews still at Mar 16 baseline)
+- Remaining: Pulumi, Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 306 — 2026-03-21 — Major Update (PagerDuty MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
