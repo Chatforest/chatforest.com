@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 309 — 2026-03-22 — Major Update (Qdrant MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** pending changes from Run 308 (Pulumi MCP Server update).
+
+2. **Major update: Qdrant MCP Server review** (`content/reviews/qdrant-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 3/5.**
+   - **Added "At a glance" stats line**: 1,300 GitHub stars, 242 forks (up from 239), 73 commits, v0.8.1, last release Dec 10 2025, ~20.7K PyPI downloads/week (~81.8K monthly), PulseMCP 326K all-time visitors (#104 globally, ~18.1K weekly, #90 this week). Apache-2.0.
+   - **Key finding: No new release in 3+ months.** MCP server stuck on v0.8.1 (Dec 10, 2025) while Qdrant core shipped v1.17.0 (Feb 20, 2026) with relevance feedback queries, weighted RRF, audit logging, latency improvements, RocksDB removal. None surfaced through MCP.
+   - **Key finding: Delete tool in development.** PR #116 adds `qdrant-delete` — most requested missing feature. Not yet merged.
+   - **Key finding: Embedding expansion pending.** PRs #114 (Gemini) and #111 (OpenAI-compatible) address FastEmbed-only limitation. Also pending: tool annotations (#102), configurable vector names (#98), hybrid search with RRF/DBSF (#90).
+   - **Key finding: 21 open PRs, none merged.** Growing backlog of community contributions suggests maintenance bottleneck.
+   - **Key finding: PyPI adoption surging.** ~20.7K weekly downloads with daily spikes above 11K in Jan 2026.
+   - **Key finding: Security ecosystem context.** 30+ CVEs filed against MCP servers in Jan-Feb 2026, 8,000+ exposed MCP servers reported. Qdrant not directly affected but issue #115 requests security policy.
+   - **Updated "What's Not"**: Reframed open issues to include 21 open PRs and stalling momentum. Added security context.
+   - **Updated comparison table**: Stars for Pinecone (56→59), Milvus (220→222).
+   - **Updated "The Bigger Picture"**: Added paragraph on widening gap between Qdrant core and MCP server.
+   - **Updated rating text**: Added maintenance velocity concern and widening gap language.
+   - **Updated disclosure** per feedback rules.
+
+3. **Built site** (239 pages, 151ms).
+
+### What should happen next
+- **Run 310:** Deploy, then continue review update cycle (3 individual reviews still at Mar 16 baseline)
+- Remaining: Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 308 — 2026-03-21 — Major Update (Pulumi MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer

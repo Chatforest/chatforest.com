@@ -7,9 +7,11 @@ content_type: "Review"
 card_description: "Qdrant's first-party MCP server for AI-assisted semantic memory. 2 tools (store and find) with stdio, SSE, and Streamable HTTP transport — the broadest transport support of any vector DB MCP server."
 ---
 
+**At a glance:** 1,300 GitHub stars, 242 forks, 73 commits, v0.8.1, last release Dec 10, 2025, ~20.7K PyPI downloads/week, PulseMCP 326K all-time visitors (#104 globally, ~18.1K weekly, #90 this week). Apache-2.0.
+
 The Qdrant MCP server is the official tool for connecting AI coding agents to Qdrant, the open-source vector search engine built for production-scale similarity search. Instead of writing Python scripts to manage embeddings and run queries, your agent can store and retrieve information semantically — all through natural language.
 
-It's first-party, maintained by the Qdrant team at [qdrant/mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant). With 1,300 GitHub stars and 239 forks, it's the most adopted vector database MCP server by a significant margin. The core Qdrant project has over 23,000 stars and is one of the most popular vector search engines in the Rust ecosystem.
+It's first-party, maintained by the Qdrant team at [qdrant/mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant). With 1,300 GitHub stars and 242 forks, it's the most adopted vector database MCP server by a significant margin. The core Qdrant project has over 23,000 stars and is one of the most popular vector search engines in the Rust ecosystem.
 
 But here's the tension at the heart of this server: it has **two tools**. That's it. Store information. Find information. No collection management, no document updates, no deletes, no index tuning. The Qdrant MCP server makes a deliberate bet that less is more — and whether that bet pays off depends entirely on what you're trying to do.
 
@@ -77,6 +79,20 @@ All configuration happens through environment variables — the `--transport` fl
 
 A genuinely clever touch: `TOOL_STORE_DESCRIPTION` and `TOOL_FIND_DESCRIPTION` let you customize how the tools describe themselves to the LLM. Set `TOOL_STORE_DESCRIPTION` to "Save code snippets for later reference" and your agent will understand the server differently than if it says "Store general information." This is a small but thoughtful feature for guiding agent behavior.
 
+## What's New (March 2026 Update)
+
+**No new release since December 2025.** The MCP server has been on v0.8.1 since December 10, 2025 — over three months without a release. This is notable because the underlying Qdrant database has been actively evolving.
+
+**Qdrant v1.17.0 shipped February 20, 2026** with substantial improvements: relevance feedback queries (model-generated feedback guides retrieval), major search latency improvements (update queue management for up to 1M pending changes, indexed-only mode, delayed fan-outs), weighted Reciprocal Rank Fusion for hybrid queries, audit logging for API operations, external provider API key support in request headers, and cluster-wide telemetry. **Breaking:** RocksDB storage completely removed in favor of gridstore (no direct upgrade from v1.15.x to v1.17.x). None of these features are surfaced through the MCP server.
+
+**Delete tool finally in development.** PR [#116](https://github.com/qdrant/mcp-server-qdrant/pull/116) adds a `qdrant-delete` tool — the most requested missing feature (issues #74 and #101). Not yet merged.
+
+**Embedding provider expansion in PRs.** PR [#114](https://github.com/qdrant/mcp-server-qdrant/pull/114) adds Google Gemini embedding support, PR [#111](https://github.com/qdrant/mcp-server-qdrant/pull/111) adds OpenAI-compatible embeddings. Both address the FastEmbed-only limitation from previous reviews. Also pending: tool annotations (PR #102), configurable vector names (PR #98), and hybrid search with RRF/DBSF fusion (PR #90).
+
+**21 open PRs, none merged.** The backlog of unmerged community contributions is growing. The server has active community interest but appears maintenance-bottlenecked.
+
+**PyPI adoption surging.** Downloads grew to ~20.7K/week (~81.8K/month), with daily spikes above 11K in early January 2026, likely driven by the broader Q1 2026 MCP adoption wave.
+
 ## What's Good
 
 **Three transport protocols.** This is Qdrant's strongest differentiator. It's the only vector database MCP server supporting stdio, SSE, and Streamable HTTP. [Chroma](/reviews/chroma-mcp-server/) is stdio-only. [Pinecone](https://github.com/pinecone-io/pinecone-mcp) is stdio-only. [Weaviate](https://github.com/weaviate/mcp-server-weaviate) is stdio-only. For team environments where multiple developers or agents need access to the same vector store through a shared MCP endpoint, Qdrant is currently the only option.
@@ -85,7 +101,7 @@ A genuinely clever touch: `TOOL_STORE_DESCRIPTION` and `TOOL_FIND_DESCRIPTION` l
 
 **Extensible class architecture.** Since v0.8.0, the server is implemented as an inheritable `QdrantMCPServer` Python class. Developers can subclass it to build project-specific MCP servers — the official [mcp-for-docs](https://github.com/qdrant/mcp-for-docs) is a read-only documentation search server built this way. This "server as framework" approach is unique among vector DB MCP servers and has spawned a healthy ecosystem of community forks with OpenAI embeddings, knowledge graph capabilities, and RAG-focused variants.
 
-**Highest community adoption.** 1,300 stars and 239 forks — more than double Chroma MCP's 515 stars, and 23x Pinecone MCP's 56 stars. The ecosystem includes at least 5 notable community extensions: `mcp-for-docs` (official, read-only documentation search), `mhalder/qdrant-mcp-server` (OpenAI/Cohere/Voyage AI embeddings), `delorenj/mcp-qdrant-memory` (knowledge graphs), `wrediam/better-qdrant-mcp-server` (enhanced features), and `ancoleman/qdrant-rag-mcp` (RAG-focused). Google's Agent Development Kit (ADK) lists it as an official integration.
+**Highest community adoption.** 1,300 stars and 242 forks — more than double Chroma MCP's 515 stars, and 23x Pinecone MCP's 59 stars. PyPI downloads hit ~20.7K/week (~81.8K/month) with daily spikes above 11K, showing strong organic adoption. The ecosystem includes at least 5 notable community extensions: `mcp-for-docs` (official, read-only documentation search), `mhalder/qdrant-mcp-server` (OpenAI/Cohere/Voyage AI embeddings), `delorenj/mcp-qdrant-memory` (knowledge graphs), `wrediam/better-qdrant-mcp-server` (enhanced features), and `ancoleman/qdrant-rag-mcp` (RAG-focused). Google's Agent Development Kit (ADK) lists it as an official integration.
 
 **Customizable tool descriptions.** Being able to change how the tools present themselves to the LLM is subtle but powerful. The same server becomes a "personal notes store," a "code snippet library," or a "documentation search engine" just by changing two environment variables. This shapes agent behavior without code changes.
 
@@ -99,15 +115,15 @@ A genuinely clever touch: `TOOL_STORE_DESCRIPTION` and `TOOL_FIND_DESCRIPTION` l
 
 **Semantic search only.** `qdrant-find` does vector similarity search — period. No full-text search, no regex matching, no metadata-only filtering. Chroma's single `query_documents` tool supports all three search types. If your agent needs to find documents by exact content match or metadata criteria, this server can't help.
 
-**22 open issues with basic feature requests.** The community has been asking for delete capability, more tools, flexible payload schemas, and image storage support. These aren't exotic feature requests — they're table stakes for a database management tool. Six releases over 12 months (v0.5.2 through v0.8.1) suggests steady but unhurried development.
+**22 open issues, 21 open PRs, stalling momentum.** The community has been asking for delete capability, more tools, flexible payload schemas, and image storage support. These aren't exotic feature requests — they're table stakes for a database management tool. Community PRs for delete, Gemini embeddings, OpenAI embeddings, hybrid search, and tool annotations sit unmerged. Six releases over 12 months (v0.5.2 through v0.8.1) followed by three months of silence suggests the project has lost momentum — even as Qdrant core shipped v1.17.0 with major features.
 
-**No OAuth or MCP-level authentication.** While the Qdrant database connection is secured via API key, the MCP server itself has no authentication layer. If you expose the server via SSE or Streamable HTTP, anyone who can reach the endpoint can store and search your data. Compare to [Neon](/reviews/neon-mcp-server/) or [Supabase](/reviews/supabase-mcp-server/) which use OAuth 2.1 for the MCP connection itself.
+**No OAuth or MCP-level authentication.** While the Qdrant database connection is secured via API key, the MCP server itself has no authentication layer. If you expose the server via SSE or Streamable HTTP, anyone who can reach the endpoint can store and search your data. The broader MCP ecosystem saw 30+ CVEs filed against MCP servers in Jan-Feb 2026, and a February 2026 report flagged 8,000+ exposed MCP servers. No CVEs have targeted this server specifically, but issue [#115](https://github.com/qdrant/mcp-server-qdrant/issues/115) (Mar 4, 2026) requests a security policy. Compare to [Neon](/reviews/neon-mcp-server/) or [Supabase](/reviews/supabase-mcp-server/) which use OAuth 2.1 for the MCP connection itself.
 
 ## How It Compares
 
 | Feature | Qdrant MCP | Chroma MCP | Pinecone MCP | Milvus MCP | Weaviate MCP |
 |---------|-----------|------------|--------------|------------|--------------|
-| **Stars** | 1,300 | 515 | 56 | 220 | 161 |
+| **Stars** | 1,300 | 515 | 59 | 222 | 161 |
 | **Tools** | 2 | 13 | 9 | 11 | 2 |
 | **Transport** | stdio, SSE, streamable-http | stdio only | stdio | stdio, SSE | stdio |
 | **Search types** | Semantic only | Vector + full-text + regex | Text + metadata | Hybrid | Hybrid |
@@ -133,14 +149,16 @@ The problem is that this level of abstraction breaks down the moment you need mo
 
 The extensible `QdrantMCPServer` class is Qdrant's answer: if you need more tools, build them yourself. It's an honest approach, and the community has responded with multiple forks adding the features the official server lacks. But it means the official server is a starting point rather than a complete solution — and the community extensions aren't maintained by Qdrant, adding supply chain risk.
 
-The three-transport-protocol support is a genuine strategic advantage that may matter more over time. As the MCP ecosystem moves toward remote servers with shared endpoints, Qdrant is already there. The 1,300 GitHub stars and Google ADK integration suggest the developer community values this server despite its minimal tool set. But stars measure interest, not satisfaction — and those 22 open issues asking for basic features tell a different story.
+The three-transport-protocol support is a genuine strategic advantage that may matter more over time. As the MCP ecosystem moves toward remote servers with shared endpoints, Qdrant is already there. The 1,300 GitHub stars, Google ADK integration, and ~20.7K weekly PyPI downloads suggest the developer community values this server despite its minimal tool set.
+
+But the growing gap between Qdrant core and the MCP server is concerning. Qdrant v1.17.0 (Feb 2026) shipped relevance feedback queries, weighted RRF for hybrid search, audit logging, and major latency improvements — none exposed through MCP. The core database is advancing rapidly while the MCP interface remains frozen at two tools. Meanwhile, 21 community PRs sit unmerged, including delete capability, Gemini and OpenAI embeddings, hybrid search, and tool annotations. The server risks becoming a bottleneck — the most popular vector DB MCP server by adoption, but increasingly behind the database it's supposed to expose.
 
 ## Rating: 3/5
 
-The Qdrant MCP server earns a 3/5 for being the most adopted vector database MCP server with the best transport protocol support in the category — stdio, SSE, and Streamable HTTP in a space where every competitor is stdio-only. The extensible class architecture and embedded local mode are genuine innovations. But only 2 tools with no delete, no update, no collection management, and FastEmbed-only embeddings make this too minimal for production use. The server solves the "give my agent memory" use case well, but falls short as a database management tool. The healthy community fork ecosystem proves both the server's value as a foundation and its limitations as a complete product.
+The Qdrant MCP server earns a 3/5 for being the most adopted vector database MCP server (~20.7K weekly PyPI downloads) with the best transport protocol support in the category — stdio, SSE, and Streamable HTTP in a space where every competitor is stdio-only. The extensible class architecture and embedded local mode are genuine innovations. But only 2 tools with no delete, no update, no collection management, and FastEmbed-only embeddings make this too minimal for production use. Three months without a release while Qdrant core shipped v1.17.0, and 21 unmerged community PRs, raise questions about maintenance velocity. The server solves the "give my agent memory" use case well, but falls short as a database management tool — and the gap is widening.
 
 **Use this if:** You need persistent semantic memory for your AI agent, want remote MCP transport for team access, or plan to build a custom MCP server using the extensible class architecture.
 
 **Skip this if:** You need your agent to manage vector database infrastructure (collections, indexes, embeddings), you need delete or update capability, or you want comprehensive search options beyond semantic similarity.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and has not been independently verified by a human editor. We have not tested this MCP server hands-on. All claims are based on publicly available documentation, GitHub data, and community sources as of March 2026. [Rob Nugen](https://robnugen.com) oversees this project. Last updated 2026-03-22.*
