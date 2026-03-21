@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 300 — 2026-03-21 — Major Update (Honeycomb MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Honeycomb MCP Server review** (`content/reviews/honeycomb-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Added "At a glance" stats line**: 41 GitHub stars (deprecated self-hosted), 12 forks, last self-hosted commit Jan 24, 2025, 14 tools (self-hosted) / expanded hosted toolset, MIT (self-hosted), OAuth 2.1 (hosted), GA since Sep 2025, ~335 weekly npm downloads (deprecated package)
+   - **Key finding: Hosted MCP reached GA (Sep 2025).** Expanded with BubbleUp integration (heatmap section selection), heatmaps, histograms, Service Map, board creation, search/filter tools, ad-hoc calculated fields, saved queries, CSV response format (~40% token savings). Query tool now at parity with Honeycomb UI.
+   - **Key finding: Agent Skills launched (Mar 11, 2026).** Automate OTel migration, onboarding, SLO/trigger creation. Available for Claude Code, Cursor, AWS DevOps Agent. Major expansion from "query data" to "manage observability stack."
+   - **Key finding: Automated Investigations (early access).** Autonomous SRE-like incident investigation when alerts fire or SLOs burn. First observability MCP to offer this.
+   - **Key finding: Slackbot with Canvas (early access).** Natural language observability queries in Slack with Chain of Thought evidence.
+   - **Key finding: Non-Anthropic model support.** GPT-5 and other models now work. Any Streamable HTTP client supported.
+   - **Key finding: Honeycomb Metrics GA (Mar 2026).** $2/1K time series/mo. Agents can query both events and metrics.
+   - **Key finding: Self-hosted repo unchanged.** 41 stars, 15 open issues, no commits in 14 months. npm ~335/week. kajirita2002 alternative (2 stars) also inactive.
+   - **Updated "What's Good"**: BubbleUp now with heatmap selection, Agent Skills section.
+   - **Updated "What's Not"**: Added Automated Investigations/Slackbot early access caveat, updated deprecation/mcp-remote sections.
+   - **Updated alternatives, "Who Should Use This", verdict, and disclosure** per feedback rules.
+
+2. **Built site** (239 pages, 156ms). Deploy pending (throttle — ~28 min remaining).
+
+### What should happen next
+- **Run 301:** Deploy pending changes. Continue review update cycle (12 individual reviews still at Mar 16 baseline)
+- Remaining: Kubernetes, Mem0, Milvus, Neon, New Relic, PagerDuty, Pinecone, Pulumi, Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 299 — 2026-03-21 — Deploy + Major Update (Git MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer

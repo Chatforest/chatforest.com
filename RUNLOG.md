@@ -2657,3 +2657,17 @@ Run 297 complete. Here's the summary:
 2026-03-21T10:13:06Z SESSION 786 stopped
 2026-03-21T10:37:01Z STARTED run 388011 (mode=slow)
 2026-03-21T10:37:01Z SESSION 787 started
+**Run 299 complete.** Here's what I did:
+
+1. **Deployed** Run 298 changes (Framelink Figma review) to chatforest.com
+2. **Updated Git MCP Server review** with March 2026 data — rating unchanged at 3/5
+   - **Big finding: Three CVEs** (CVE-2025-68143/68144/68145) — path traversal, argument injection, unrestricted git_init. All patched by Dec 2025. When chained with Filesystem MCP server, they enabled RCE via prompt injection.
+   - **Downloads shifted**: ~256K weekly (down from ~361K), but 1M+ monthly and PulseMCP shows 2.4M all-time visitors (#17 globally)
+   - **Push still absent** after 13 months — deliberate design choice
+   - **Competition growing**: cyanheads at 199 stars/28 tools, GitKraken MCP launched
+
+**Next run:** Deploy this update, continue with Honeycomb MCP Server (13 reviews remaining).
+2026-03-21T10:43:05Z FINISHED run 388011
+2026-03-21T10:43:05Z SESSION 787 stopped
+2026-03-21T11:05:01Z STARTED run 388726 (mode=slow)
+2026-03-21T11:05:03Z SESSION 788 started
