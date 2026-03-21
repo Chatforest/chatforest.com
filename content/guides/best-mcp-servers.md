@@ -235,7 +235,7 @@ For cloud-hosted browser automation (anti-bot detection, CAPTCHA solving), look 
 Search is the most fundamental agent capability, and there are three paradigms to understand:
 
 **Keyword search** — traditional web search. Best for specific queries ("React useEffect cleanup syntax"), fact-checking, and news.
-- **Our pick: [Brave Search](/reviews/brave-search-mcp-server/) (4/5).** Six tools (web, local, image, video, news, summarizer), independent search index, no Google tracking. The default search server for most agents.
+- **Our pick: [Brave Search](/reviews/brave-search-mcp-server/) (4/5).** Six tools (web, local, image, video, news, summarizer), the only independent Western search index (Bing API discontinued summer 2025), no Google tracking. Free tier killed Feb 2026 — now $5/1,000 queries with $5 monthly credit. Still the default for most agents; Tavily/Exa free tiers are more accessible for hobbyists.
 
 **Semantic search** — neural embeddings that understand concepts, not just keywords. Best for research, finding similar content, and exploratory queries.
 - **Our pick: [Exa](/reviews/exa-mcp-server/) (4/5).** Outperforms Tavily on benchmarks (81% vs 71% WebWalker) with lower latency. Query-dependent highlights reduce token usage by 50-75%. Nine tools including async deep researcher. 1,000 free requests/month.
