@@ -3,6 +3,33 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 319 — 2026-03-22 — New Guide (Best Finance & Payments MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **New guide: "Best Finance & Payments MCP Servers in 2026"** (`content/guides/best-finance-mcp-servers.md`) — comprehensive comparison guide covering 30+ MCP servers across 6 categories:
+   - **Payment processors**: stripe/agent-toolkit (1,400 stars, remote MCP at mcp.stripe.com, multi-framework — the winner), paypal/agent-toolkit (181 stars, 30+ tools across 7 categories including subscriptions and disputes)
+   - **Commerce platforms**: square/square-mcp-server (95 stars, 3 meta-tools covering 40+ Square API services — the winner), Adyen/adyen-mcp (20 stars, 21 tools, 9 terminal management tools)
+   - **Accounting**: XeroAPI/xero-mcp-server (212 stars, 48 tools, official — the winner), intuit/quickbooks-online-mcp-server (121 stars, 11 entities, Intuit-Anthropic partnership spring 2026)
+   - **Market data**: financial-datasets/mcp-server (1,700 stars, stocks + crypto — the winner), Alpha Vantage MCP (official vendor-hosted remote)
+   - **Banking & expense**: Plaid community implementations (no official server yet), Brex expense tracking, Wise international transfers
+   - **Crypto & agentic payments**: coinbase/payments-mcp (51 stars, x402 protocol — the winner), base/base-mcp (onchain tools)
+   - Includes decision flowchart, 3 trends (official toolkits winning, remote hosted MCP becoming default, agentic commerce is real), gap analysis (no official Plaid, no tax prep, no insurance, no payroll beyond Xero, no multi-platform reconciliation)
+   - Research-based disclosure consistent with feedback rules
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-link to finance & payments comparison from Payments row (updated with Stripe 1,400 stars + PayPal details) and Accounting row (updated Xero 207→212 stars, QBO 108→121 stars + comparison link). Updated guide count (21→22).
+
+3. **Built site** (248 pages, 159ms). Deploy pending throttle (~26 min remaining at time of build).
+
+### What should happen next
+- **Deploy** this run's changes (next run, past throttle)
+- **Future:** Consider next comparison guide (best-version-control-mcp-servers, best-design-mcp-servers, or best-ecommerce-mcp-servers). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links.
+
 ## Run 318 — 2026-03-22 — Deploy + New Guide (Best Desktop Automation MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
