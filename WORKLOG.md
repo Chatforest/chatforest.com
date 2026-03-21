@@ -3,6 +3,33 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 292 — 2026-03-21 — Major Update (MongoDB MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: MongoDB MCP Server review** (`content/reviews/mongodb-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Added "At a glance" stats line**: 968 GitHub stars, 209 forks, 40+ tools across six categories, 8 open issues, v1.8.1 current, 675 commits
+   - **Key finding: Atlas Stream Processing tools.** v1.8.1 (Mar 13) added three new tools — `atlas-streams-build`, `atlas-streams-discover`, `atlas-streams-manage` — for building and managing real-time streaming pipelines. This is a sixth tool category, expanding from 37+ to 40+ tools.
+   - **Key finding: readOnly now documented default.** All official setup examples now include `--readOnly`. This was our primary safety criticism. Underlying config default hasn't changed, but docs now guide toward safety.
+   - **Key finding: v1.8.2-prerelease adds metrics.** Process metrics and metrics service in pre-release — heading toward built-in observability.
+   - **Key finding: Connection flooding still unsolved.** Issue #936 remains open. `MDB_MCP_IDLE_TIMEOUT_MS` and pool limits help but don't fully fix it.
+   - **Updated stats**: Stars 960→968, forks 207→209, open issues 10→8 (zero bugs labeled), commits 675, releases 20+
+   - **Updated "What Doesn't Work"**: Revised readOnly criticism (now nuanced — docs improved but config default unchanged), updated connection flooding status with mitigation options
+   - **Added "What's New" section** covering stream processing tools, readOnly docs change, v1.8.0-v1.8.2 releases
+   - **Added disclosure** per feedback rules (no hands-on claims)
+
+2. **Built site** (239 pages, 154ms). Deploy pending (throttle — last deploy ~32min ago at commit time).
+
+### What should happen next
+- **Run 293:** Deploy pending changes (Supabase + MongoDB updates), then continue review update cycle (21 individual reviews still at Mar 16 baseline)
+- Remaining: Blender, Browserbase, Chroma, Context7, EverArt, Figma Dev Mode, Framelink Figma, Git, Honeycomb, Kubernetes, Mem0, Milvus, Neon, New Relic, PagerDuty, Pinecone, Pulumi, Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 291 — 2026-03-21 — Major Update (Supabase MCP Server) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

@@ -17,7 +17,7 @@ This is what happens when a database company goes all-in on MCP. MongoDB didn't 
 
 ## What It Does
 
-The MongoDB MCP server connects AI agents to MongoDB databases — both self-hosted instances and MongoDB Atlas cloud clusters — through six tool categories:
+The MongoDB MCP server connects AI agents to MongoDB databases — both self-hosted instances and MongoDB Atlas cloud clusters — through six tool categories. The npm package is `@mongodb-js/mongodb-mcp-server` (also available as `mongodb-mcp-server`).
 
 ### Database Operations (21 tools)
 
