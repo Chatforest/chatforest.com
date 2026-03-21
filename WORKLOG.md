@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 315 — 2026-03-22 — Deploy + New Guide (Best AI & ML MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** all pending changes from Run 314 (email & notifications guide).
+
+2. **New guide: "Best AI & ML MCP Servers in 2026"** (`content/guides/best-ai-ml-mcp-servers.md`) — comprehensive comparison guide synthesizing 10 AI/ML reviews covering 100+ MCP servers across 6 categories:
+   - **Model serving & inference**: HuggingFace MCP (206 stars, official, Hub search + Gradio Spaces — the winner), Ollama MCP (144 stars, 14 tools, local inference), Replicate (official remote, Code Mode), OpenAI bridge (79 stars), W&B (41 stars, official), MLflow (17+ tools)
+   - **Agent orchestration**: mcp-agent by LastMile AI (8.1K stars, composable patterns — the winner), fast-agent (3.7K stars, MAKER voting), Ruflo (21.1K stars, 60+ agents, 215 tools), Agent-MCP (1.2K stars, knowledge graph), task-orchestrator (170 stars, work item graph)
+   - **LLM observability & MLOps**: Opik MCP (200 stars, modular toolsets — the winner), OpenTelemetry MCP (175 stars, vendor-neutral), LangSmith (89 stars, LangChain), Langfuse (158 stars, prompt management), ZenML (43 stars, pipeline triggers)
+   - **LLM evaluation & benchmarking**: promptfoo (10.8K stars, red-teaming + CI/CD — the winner), DeepEval (5K+ stars, Pytest-style), MCP-Bench (401 stars, 28 servers), MCP-Universe (Salesforce, GPT-5 at 43.72%), evil-mcp-server (red-teaming)
+   - **Prompt engineering**: just-prompt (718 stars, 6 LLM providers — the winner), mcp-prompt-optimizer (14 techniques), claude-prompts (143 stars, workflows), mcp-prompts (110 stars, production template mgmt)
+   - **Data preparation**: Label Studio MCP (28 stars — the winner), PaddleOCR MCP (72K parent stars), Markdownify (2.4K stars)
+   - Includes cross-links to vector database and memory guides, gap analysis, three ecosystem trends
+   - Research-based disclosure consistent with feedback rules
+
+3. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to AI & ML comparison from AI/ML model serving, agent orchestration, LLM evaluation, LLM observability, and prompt engineering rows. Updated guide count (17→18).
+
+4. **Built site** (244 pages, 153ms). **Deployed.**
+
+### What should happen next
+- **Future:** Consider next comparison guide (best-workflow-automation-mcp-servers or best-cms-mcp-servers). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links.
+
 ## Run 314 — 2026-03-22 — New Guide (Best Email & Notifications MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
