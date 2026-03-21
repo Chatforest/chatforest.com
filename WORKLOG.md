@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 298 — 2026-03-21 — Major Update (Framelink Figma MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Framelink Figma MCP Server review** (`content/reviews/framelink-figma-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Added "At a glance" stats line**: 13,829 GitHub stars, 1,093 forks, v0.7.1 (Mar 20, 2026), 2 tools, MIT, ~53.4K weekly npm downloads, PulseMCP 1.5M all-time (#27 globally, ~43.6K weekly, #40 this week)
+   - **Key finding: Downloads surged 4.6x.** Weekly npm downloads jumped from ~11,500 to ~53,400. Likely driven by Q1 2026 MCP adoption wave (VS Code, Codex, and other editors adding MCP support).
+   - **Key finding: v0.7.0 shipped (Mar 19, 2026).** First feature release since Oct 2025. Replaced sharp with jimp (fixes macOS ARM compatibility — the #1 install complaint). Added `--image-dir` config, animated GIF support, cleye CLI parser. Breaking change: getServerConfig() API.
+   - **Key finding: CVE-2025-53967 — critical RCE.** Command injection in fetchWithRetry curl fallback. Disclosed July 2025, patched in v0.6.3 (Sep 2025). Same class of vulnerability as other self-hosted MCP servers.
+   - **Key finding: PulseMCP shows 1.5M all-time visitors.** #27 globally, up from the ~11.6K weekly noted in Figma Dev Mode review comparison.
+   - **Updated comparison table**: Figma official now 443 stars, 13 tools. Added weekly npm downloads row.
+   - **Updated "What's Not"**: macOS ARM issue marked as fixed in v0.7.0.
+   - **Added "What's New (March 2026 Update)" section** covering v0.7.0/v0.7.1, CVE-2025-53967, download surge, fork growth.
+   - **Updated "The Bigger Picture"**: Q1 2026 momentum, security tradeoff of self-hosted vs managed, commercial waitlist status.
+   - **Updated disclosure** per feedback rules (no hands-on claims, Rob linked to robnugen.com).
+
+2. **Built site** (239 pages, 152ms). Deploy pending (throttle — ~28 min remaining).
+
+### What should happen next
+- **Run 299:** Deploy pending changes. Continue review update cycle (14 individual reviews still at Mar 16 baseline)
+- Remaining: Git, Honeycomb, Kubernetes, Mem0, Milvus, Neon, New Relic, PagerDuty, Pinecone, Pulumi, Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 297 — 2026-03-21 — Deploy + Major Update (Figma Dev Mode MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
