@@ -7,7 +7,9 @@ content_type: "Review"
 card_description: "Zep's Graphiti MCP server for temporal AI agent memory. Nine tools across episode management, entity search, and fact retrieval. Open source, multi-database (FalkorDB/Neo4j), multi-LLM provider support."
 ---
 
-Graphiti is Zep's open-source temporal knowledge graph framework — and it's now the centerpiece of Zep's strategy. With 23,700+ GitHub stars, 2,300 forks, and 789 commits, it's one of the most popular AI memory frameworks available. The built-in MCP server (MCP Server 1.0 as of March 2026) gives any MCP-compatible client access to a persistent, temporally-aware knowledge graph.
+**At a glance:** 24K GitHub stars (up from 23.7K), 2.4K forks, 795 commits, 199 open issues, 121 open PRs. Latest release: mcp-v1.0.2 + graphiti-core v0.28.2 (Mar 11, 2026). ~106K PyPI downloads/week (~324K monthly, 4.5M all-time). Apache-2.0.
+
+Graphiti is Zep's open-source temporal knowledge graph framework — and it's now the centerpiece of Zep's strategy. With 24,000+ GitHub stars, 2,400 forks, and 795 commits, it's one of the most popular AI memory frameworks available. The built-in MCP server (MCP Server 1.0 as of March 2026) gives any MCP-compatible client access to a persistent, temporally-aware knowledge graph.
 
 Unlike flat memory stores that treat facts as static, Graphiti maintains temporal validity windows — it tracks not just what information exists, but when it was true, when it changed, and what replaced it. "Alice works at Acme" and "Alice left Acme in January" are both represented, with the graph understanding their temporal relationship.
 
@@ -100,7 +102,9 @@ You can define custom entity and edge types for domain-specific extraction, whic
 
 **Fully open source.** Apache 2.0 license, everything runs locally, no cloud dependency required. Your data never leaves your machine unless you choose a cloud database. This is a major advantage over Mem0's cloud-first model.
 
-**Production signals.** 23.7K stars, 2.3K forks, 789 commits, MCP Server 1.0 release, 4,000+ lines of test coverage, and a Cypher injection security fix (v0.28.2). The project is actively maintained with frequent releases.
+**Rapid release cadence.** Between January and March 2026: v0.26.3 (Jan 22), v0.27.0 through v0.27.2 (Jan 29–Feb 12, efficiency gains, Gemini 3 preview support), v0.28.0 (Feb 17, Neptune and Kuzu driver redesign), v0.28.1 (Feb 19, CVE fix replacing diskcache with SQLite), v0.28.2 (Mar 11, Cypher injection hardening), and mcp-v1.0.2 (Mar 11, security patch). That's 8+ releases in under 3 months — this is one of the most actively maintained MCP servers we've reviewed.
+
+**Strong adoption metrics.** 24K stars, 2.4K forks, 795 commits, ~106K weekly PyPI downloads (4.5M all-time), and 4,000+ lines of test coverage. The weekly download surge from earlier figures suggests real production adoption, not just stars.
 
 ## What's Not
 
@@ -108,7 +112,7 @@ You can define custom entity and edge types for domain-specific extraction, whic
 
 **LLM extraction costs.** Every episode you add triggers LLM calls for entity extraction, relationship identification, and fact deduplication. At scale, this can add up — and the extraction quality depends on your chosen model. GPT-4o-mini is the default, but complex domains may need a more capable (and expensive) model.
 
-**192 open issues.** Notable bugs include hallucination in extraction (#760 — models sometimes generate phantom entities), Azure OpenAI compatibility problems (#1004 — deprecated beta API, GPT-4.1 unsupported parameters), episodes stalling with JSON errors (#871), pydantic validation failures with some models (#912), and custom `api_base` being ignored for Ollama users (#1116).
+**199 open issues, 121 open PRs.** The issue count has grown from 192 to 199 since our initial review — notable bugs still include hallucination in extraction (#760), Azure OpenAI compatibility problems (#1004), episodes stalling with JSON errors (#871), pydantic validation failures with some models (#912), and custom `api_base` being ignored for Ollama users (#1116). The 121 open PRs suggest a heavy contribution flow that outpaces merge capacity.
 
 **Experimental MCP server status.** Despite the "1.0" label, the docs still say "experimental and under active development. Features and APIs may change between releases." This is honest but worth noting for production use.
 
@@ -130,7 +134,7 @@ Community MCP servers also exist: `quinnbmay/zep-mcp-server` and `kev-hu/mcp-ser
 
 ## How It Compares
 
-**vs. Mem0 MCP Server (4/5):** Both are serious memory platforms, but architecturally different. Mem0 stores memory snippets with semantic search — simple, effective, easy to start. Graphiti builds a temporal knowledge graph with entity relationships and fact validity windows — more powerful, but heavier. Mem0's cloud-first model is easier to deploy; Graphiti's self-hosted model gives full data control. Mem0 has stronger community adoption (49.8K stars vs. 23.7K) but Graphiti's graph approach is more sophisticated for complex memory needs.
+**vs. Mem0 MCP Server (4/5):** Both are serious memory platforms, but architecturally different. Mem0 stores memory snippets with semantic search — simple, effective, easy to start. Graphiti builds a temporal knowledge graph with entity relationships and fact validity windows — more powerful, but heavier. Mem0's cloud-first model is easier to deploy; Graphiti's self-hosted model gives full data control. Mem0 has stronger community adoption (49.8K stars vs. 24K) but Graphiti's graph approach is more sophisticated for complex memory needs.
 
 **vs. Anthropic's Knowledge Graph Memory Server:** Anthropic's server stores entities and relations in a local JSONL file — simple, zero-dependency, and surprisingly effective for personal use. Graphiti is orders of magnitude more capable: temporal tracking, proper graph database, semantic search, automatic extraction. But the Memory server works out of the box with no LLM costs, no Docker, no database — and that simplicity is its strength.
 
@@ -146,14 +150,14 @@ The trade-off is complexity. You need Docker, a graph database, LLM API access, 
 
 The multi-provider support (LLM and database) is a strategic advantage — you're not locked into OpenAI or any single database vendor. And the Apache 2.0 license means you can run, modify, and deploy without licensing concerns.
 
-The 192 open issues are a concern, particularly the hallucination bug and model compatibility problems. But the project's velocity (789 commits, frequent releases, MCP Server 1.0) suggests active maintenance. Zep is a funded company with a commercial incentive to keep Graphiti healthy.
+The 199 open issues (and 121 open PRs) are a concern, particularly the hallucination bug and model compatibility problems. But the project's velocity — 8+ releases in Jan–Mar 2026, security patches within days, and 106K weekly PyPI downloads — confirms this isn't a dormant project. Zep is a funded company with a commercial incentive to keep Graphiti healthy, and the recent Neptune/Kuzu driver work and Gemini 3 support show continued investment in breadth.
 
 ## Rating: 4/5
 
-Graphiti's MCP server earns a 4/5 for being the most architecturally sophisticated AI memory MCP server available — temporal knowledge graphs, multi-database support, multi-LLM provider flexibility, nine entity types, and full open-source deployment under Apache 2.0. It loses a point for heavy infrastructure requirements (Docker + graph DB + LLM API key minimum), the LLM extraction cost overhead, 192 open issues including hallucination and model compatibility bugs, "experimental" status despite the 1.0 label, and no hosted/remote option for zero-ops deployment. But for teams that need agents to understand how information evolves over time, nothing else in the MCP ecosystem comes close.
+Graphiti's MCP server earns a 4/5 for being the most architecturally sophisticated AI memory MCP server available — temporal knowledge graphs, multi-database support (now including Neptune and Kuzu), multi-LLM provider flexibility (now with Gemini 3), nine entity types, and full open-source deployment under Apache 2.0. It loses a point for heavy infrastructure requirements (Docker + graph DB + LLM API key minimum), the LLM extraction cost overhead, 199 open issues including hallucination and model compatibility bugs, "experimental" status despite the 1.0 label, and no hosted/remote option for zero-ops deployment. But for teams that need agents to understand how information evolves over time, nothing else in the MCP ecosystem comes close.
 
 **Use this if:** You're building conversational agents or complex applications where facts change over time, you want full data control with self-hosted deployment, you need multi-LLM and multi-database flexibility, and your infrastructure can support Docker + a graph database.
 
 **Skip this if:** You want zero-setup memory (use Anthropic's Memory server), you need cloud-managed memory without infrastructure (use Mem0), you're building a simple coding assistant that just needs project context (use Basic Memory), or you're not prepared for the extraction LLM costs at scale.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) based on publicly available documentation, GitHub repository data, and web sources. We have not installed or directly tested this MCP server. Last updated 2026-03-22.*
