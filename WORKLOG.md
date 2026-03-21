@@ -3,6 +3,45 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 310 — 2026-03-22 — Major Updates (Terraform, Vercel, Zep Graphiti)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: Terraform MCP Server review** (`content/reviews/terraform-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Added "At a glance" stats line**: 1,300 GitHub stars, 136 forks (up from 134), 323 commits, 10 releases, v0.4.0 (Jan 22, 2026), last commit Mar 10, 11 open issues, 20 open PRs. AWS Marketplace (free), Docker MCP Catalog. HashiCorp BSL.
+   - **Key finding: Active commit cadence, no release in 2 months.** v0.4.0 shipped Jan 22, 2026. Since then, multiple commits per week — heartbeat interval flag, log-level/log-format CLI args, session handling fix for load-balanced environments, corporate proxy troubleshooting, Go 1.25.7 security fix. Gap between `main` and latest release is widening.
+   - **Key finding: Plan/apply visibility tools targeting v0.5.0.** PR #276 proposes `get_plan_json_output`, `get_plan_details`, `get_plan_logs`, `get_apply_details`, `get_apply_logs` — read-only tools that would narrow the "no terraform plan" gap.
+   - **Key finding: Formal security model published.** HashiCorp documented five threat categories (hallucinations, prompt injection, tool poisoning, rug pull, tool shadowing) at developer.hashicorp.com.
+   - **Key finding: Expanding MCP ecosystem.** Vault, Vault Radar, and Consul MCP servers in development. AWS Marketplace and Docker MCP Catalog listings.
+   - **Key finding: 20 open PRs.** Including dependabot bumps, pagination limits, disable-streaming flag, proxy headers, GitHub Copilot CLI instructions, credentials.tfrc.json auth support.
+   - **Updated sections**: "What Works Well" (cadence, security model, ecosystem), "What Doesn't Work Well" (plan/apply PR, release gap, PR backlog, security findings), comparison (Pulumi cross-link, star comparison), "The Bottom Line" (March 2026 picture), summary table (forks), disclosure.
+
+2. **Major update: Vercel MCP Server review** (`content/reviews/vercel-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 3.5/5.**
+   - **Added "At a glance" stats line**: Remote at mcp.vercel.com, OAuth, 13 tools, Streamable HTTP. 12 approved clients. PulseMCP 169K all-time (#198 globally, ~10.5K weekly, #145 this week). Public beta. Free.
+   - **Key finding: Client list expanded to 12.** Added Codex CLI, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, Gemini CLI since original review.
+   - **Key finding: MCP Apps support launched (Mar 4, 2026).** Provider-agnostic embedded UIs in iframes, working in Cursor/Claude.ai/ChatGPT. Positions Vercel as MCP hosting platform.
+   - **Key finding: Next.js DevTools MCP (separate server).** For Next.js 16+ — runtime errors, routes, logs, app state from dev server.
+   - **Key finding: Tool count unchanged at 13 after 7+ months.** No new tools added since August 2025 beta launch.
+   - **Updated sections**: "What's Not" (client list, beta duration), "The Bigger Picture" (MCP Apps, Next.js DevTools, three-layer strategy), disclosure.
+
+3. **Major update: Zep Graphiti MCP Server review** (`content/reviews/zep-graphiti-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Added "At a glance" stats line**: 24K GitHub stars (up from 23.7K), 2.4K forks, 795 commits, 199 open issues, 121 open PRs. mcp-v1.0.2 + graphiti-core v0.28.2 (Mar 11, 2026). ~106K PyPI downloads/week (~324K monthly, 4.5M all-time). Apache-2.0.
+   - **Key finding: Rapid release cadence.** 8+ releases in Jan–Mar 2026 — v0.26.3 through v0.28.2 plus mcp-v1.0.2. Efficiency gains, Gemini 3 preview support, Neptune/Kuzu driver redesign, CVE fix, Cypher injection hardening.
+   - **Key finding: Strong adoption.** ~106K weekly PyPI downloads (4.5M all-time). Surge from earlier figures suggests real production adoption.
+   - **Key finding: 199 open issues, 121 open PRs.** Issue count grew from 192 to 199. PRs suggest heavy contribution flow outpacing merge capacity.
+   - **Updated sections**: "What's Good" (release cadence, adoption metrics), "What's Not" (issue/PR counts), comparison (Mem0 stars), "The Bigger Picture" (velocity, security patches), rating text, disclosure.
+
+4. **Built site** (239 pages, 154-158ms).
+
+### What should happen next
+- **Run 311:** Deploy all pending changes (Qdrant + Terraform + Vercel + Zep Graphiti updates). Review update cycle is **complete** — all individual reviews now at March 2026 baseline.
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 309 — 2026-03-22 — Major Update (Qdrant MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
