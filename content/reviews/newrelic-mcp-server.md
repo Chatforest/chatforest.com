@@ -9,9 +9,13 @@ card_description: "New Relic's official MCP server for AI-assisted observability
 
 The New Relic MCP server gives AI agents direct access to your New Relic observability platform — entities, NRQL queries, alerts, incidents, deployments, logs, golden metrics, synthetic monitors, dashboards, and more. Ask questions in plain English and the server translates them into NRQL queries automatically.
 
-It's official. New Relic builds and maintains it at [newrelic/mcp-server](https://github.com/newrelic/mcp-server). The GitHub repo is minimal (3 stars, 2 commits) because New Relic hosts the server itself at `mcp.newrelic.com` — there's nothing to install locally. The MCP server is in **Public Preview** as of March 2026.
+**At a glance:** 4 GitHub stars (up from 3), 0 forks, 2 commits, last commit Oct 2025, 2 open issues, remote-hosted at mcp.newrelic.com, Streamable HTTP, Public Preview, 35+ tools across 6 categories, PulseMCP 20.2K all-time visitors (#1,039 globally, ~1.4K weekly).
 
-This is the fourth observability MCP server we've reviewed after [Sentry](/reviews/sentry-mcp-server/) (4/5), [Grafana](/reviews/grafana-mcp-server/) (4/5), and [Datadog](/reviews/datadog-mcp-server/) (4/5). Where Sentry is deep and narrow (error tracking), Grafana is open-source and multi-vendor, and Datadog is the enterprise full-stack play, New Relic is the accessible full-stack option — 35 tools with natural language querying and a permanent free tier that includes 100GB/month of data ingestion.
+It's official. New Relic builds and maintains it at [newrelic/mcp-server](https://github.com/newrelic/mcp-server). The GitHub repo is minimal (4 stars, 2 commits) because New Relic hosts the server itself at `mcp.newrelic.com` — there's nothing to install locally. The MCP server is in **Public Preview** as of March 2026.
+
+This is the fourth observability MCP server we've reviewed after [Sentry](/reviews/sentry-mcp-server/) (4/5), [Grafana](/reviews/grafana-mcp-server/) (4/5), and [Datadog](/reviews/datadog-mcp-server/) (4/5). Where Sentry is deep and narrow (error tracking), Grafana is open-source and multi-vendor, and Datadog is the enterprise full-stack play, New Relic is the accessible full-stack option — 35+ tools with natural language querying and a permanent free tier that includes 100GB/month of data ingestion.
+
+**March 2026 context:** New Relic launched the **New Relic Agentic Platform** (February 24, 2026), a no-code platform for building observability AI agents with built-in MCP support. The MCP server itself also went GA as an integration for **Atlassian Rovo Ops** (February 23, 2026), enabling natural language observability queries directly inside Jira Service Management, Confluence, and IDEs. The core MCP server remains in Public Preview.
 
 ## What It Does
 
@@ -43,11 +47,13 @@ The server exposes 35 tools organized into **6 categories** that you can filter 
 - `analyze_deployment_impact` — analyze performance impact of a specific deployment
 - `get_entity_error_groups` — get error groups from Errors Inbox
 
-**Performance Analytics (4 tools)**
+**Performance Analytics (6 tools)**
 - `analyze_golden_metrics` — analyze throughput, response time, error rate, and saturation for an entity
 - `analyze_transactions` — analyze transaction performance
 - `analyze_entity_logs` — cross-referenced in data access for log-based performance analysis
-- Additional thread and garbage collection analysis tools
+- `analyze_kafka_metrics` — analyze Kafka consumer lag, producer throughput, message latency, and partition balance
+- `analyze_threads` — analyze thread metric data including thread state, CPU usage, and memory consumption
+- `list_garbage_collection_metrics` — list GC and memory metrics for an entity
 
 **Advanced Analysis & Reporting (3 tools)**
 - `generate_alert_insights_report` — generate alert intelligence analysis reports
@@ -114,15 +120,15 @@ The server works with Claude, Cursor, VS Code (GitHub Copilot), ChatGPT, Google'
 
 **API key authentication by default.** Most setups use a User API Key in the `Api-Key` header. These are user-scoped keys with broad access — if the key is exposed (e.g., in a committed config file), the attacker gets access to everything that user can see. OAuth 2.0 is available but isn't the primary setup path. Sentry's MCP server uses browser-based OAuth as the default, which is more secure.
 
-**Minimal GitHub presence suggests closed development.** The official repo has 3 stars, 2 commits, and no visible issues or pull requests. This mirrors Datadog's approach (hosted server, minimal repo), but it means you can't audit the code, file public bugs, track development progress, or contribute. Grafana's open-source approach (2,500 stars, 294 forks, 473 commits, Apache 2.0) is the opposite model.
+**Minimal GitHub presence suggests closed development.** The official repo has 4 stars, 2 commits, and 2 open issues with no responses. Issue #3 (March 15, 2026) reports a JSON Schema validation error that **prevents usage with Gemini 2.5 and other strict MCP clients** — the server's array-type schemas are missing required `items` properties. Issue #2 (February 25, 2026) reports ASCII encoding errors when accounts contain non-ASCII characters. Neither issue has been assigned or addressed. This mirrors Datadog's approach (hosted server, minimal repo), but it means you can't audit the code, file public bugs that get resolved, or contribute. Grafana's open-source approach (2,500+ stars, 294 forks, 473 commits, Apache 2.0) is the opposite model.
 
 **Complex platform pricing beyond the free tier.** The free 100GB/month is generous for evaluation, but production workloads will exceed it. New Relic charges $0.30/GB beyond the free limit, with additional compute pricing for queries. The pricing model is simpler than Datadog's per-host/per-event structure, but costs can still surprise at scale — especially with AI agents generating more queries than human users typically would.
 
 **Permission errors can be opaque.** Users in custom groups without organization-level grants may see errors about "missing required capabilities." The troubleshooting path requires understanding New Relic's RBAC model, which isn't always intuitive. The error messages don't always point clearly to which specific permission is missing.
 
-**Tool count trails Datadog and Grafana.** With 35 tools, New Relic is behind Datadog (50+ tools, 10+ toolsets) and Grafana (40+ tools, 15 categories). There are no tools for infrastructure monitoring, Kubernetes, or custom dashboards creation. The tool set is read-oriented — you can analyze and query, but not take action (no muting, no downtime scheduling, no alert acknowledgment through the official server).
+**Tool count trails Datadog and Grafana.** With 35+ tools (including Kafka, thread, and GC analysis tools not listed in the original announcement), New Relic is behind Datadog (50+ tools, 10+ toolsets) and Grafana (40+ tools, 15 categories). There are no tools for infrastructure monitoring, Kubernetes, or custom dashboard creation. The tool set is read-oriented — you can analyze and query, but not take action (no muting, no downtime scheduling, no alert acknowledgment through the official server).
 
-**Multiple community alternatives suggest gaps.** At least 6 community-built New Relic MCP servers exist (cloudbring/newrelic-mcp with 11 stars and 18 tools, ulucaydin/mcp-server-newrelic, thrashy/mcp-newrelic, ducduyn31/nr-mcp, Ivlad003/mcp_newrelic, cvmoretti/new-relic-mcp). The community server from cloudbring adds deployment management, incident acknowledgment, browser monitor creation, and NerdGraph queries — capabilities the official server lacks.
+**Multiple community alternatives suggest gaps.** At least 8 community-built New Relic MCP servers exist (cloudbring/newrelic-mcp with 11 stars, 7 forks, 57 commits, and 17+ tools; ulucaydin/mcp-server-newrelic; thrashy/mcp-newrelic; ducduyn31/nr-mcp; Ivlad003/mcp_newrelic; cvmoretti/new-relic-mcp; xelber/newrelic-mcp; buallen/newrelic-mcp-server; piekstra/newrelic-mcp-server). The community server from cloudbring adds deployment management, incident acknowledgment, browser monitor creation, and NerdGraph queries — capabilities the official server lacks.
 
 ## Alternatives
 
@@ -132,7 +138,7 @@ The server works with Claude, Cursor, VS Code (GitHub Copilot), ChatGPT, Google'
 
 **[Sentry MCP Server](/reviews/sentry-mcp-server/)** (4/5) — deep error tracking with Seer AI root cause analysis, OAuth-first security, zero-install remote hosting. Narrower (errors only) but deeper. Use Sentry for debugging specific errors, New Relic for full-stack observability.
 
-**[cloudbring/newrelic-mcp](https://github.com/cloudbring/newrelic-mcp)** (11 stars) — the most complete community alternative. 18 tools including deployment management, incident acknowledgment, browser monitor creation, and NerdGraph queries. JavaScript, MIT, stdio transport. Useful if you need capabilities the official server doesn't cover.
+**[cloudbring/newrelic-mcp](https://github.com/cloudbring/newrelic-mcp)** (11 stars, 57 commits) — the most complete community alternative. 17+ tools including deployment management, incident acknowledgment, browser monitor creation, and NerdGraph queries. TypeScript, MIT, stdio transport. More actively developed than the official repo (57 commits vs 2). Useful if you need write operations or capabilities the official server doesn't cover.
 
 **Honeycomb MCP** — event-based observability with high-cardinality debugging. A different approach — better for distributed system investigations where traditional APM metrics don't capture the problem.
 
@@ -144,6 +150,7 @@ The server works with Claude, Cursor, VS Code (GitHub Copilot), ChatGPT, Google'
 - You need an accessible free tier (100GB/month) to evaluate before committing
 - You want zero-install remote hosting with Streamable HTTP transport
 - You need golden metrics analysis as a first-class tool
+- You use Atlassian tools — the Rovo Ops integration is GA and brings observability into JSM/Confluence
 
 **Skip it if:**
 - You need GA status and enterprise SLA guarantees — Datadog is GA
@@ -153,7 +160,7 @@ The server works with Claude, Cursor, VS Code (GitHub Copilot), ChatGPT, Google'
 - You need write operations (muting, downtime scheduling, alert acknowledgment) — the community server covers some of these
 
 {{< verdict rating="4" summary="The most accessible full-stack observability MCP server, with natural language querying and the best free tier in the category" >}}
-The New Relic MCP server is a strong entry in the observability category — 35 tools across 6 categories with genuinely useful natural language to NRQL translation, golden metrics analysis, deployment impact assessment, and remote hosting at mcp.newrelic.com. The 100GB/month free tier makes it the most accessible full-stack observability MCP server, lowering the barrier from "talk to procurement" to "just start using it." The 4/5 rating reflects real strengths (natural language querying that removes the NRQL learning curve, the best free tier in the category, tag-based tool filtering, RBAC-aware security, zero-install hosting, golden metrics as a dedicated tool) balanced against real constraints (Public Preview status instead of GA, no FedRAMP/HIPAA support, API key auth by default, minimal GitHub transparency, 35 tools trailing Datadog's 50+ and Grafana's 40+, read-only orientation with no write operations, and 6+ community alternatives signaling gaps in the official offering). For teams already on New Relic — or evaluating which observability platform to wire into their agents — this is the easiest on-ramp in the category.
+The New Relic MCP server is a strong entry in the observability category — 35+ tools across 6 categories with genuinely useful natural language to NRQL translation, golden metrics analysis, deployment impact assessment, and remote hosting at mcp.newrelic.com. The 100GB/month free tier makes it the most accessible full-stack observability MCP server, lowering the barrier from "talk to procurement" to "just start using it." The broader New Relic ecosystem is expanding fast — the Agentic Platform (February 2026) and Rovo Ops GA integration show serious investment in the agentic AI space. The 4/5 rating reflects real strengths (natural language querying, best free tier, tag-based tool filtering, RBAC-aware security, zero-install hosting, golden metrics, growing ecosystem integrations) balanced against real constraints (Public Preview status, no FedRAMP/HIPAA support, API key auth by default, minimal GitHub repo with unresolved bugs including a Gemini 2.5 compatibility blocker, 35+ tools trailing Datadog's 50+ and Grafana's 40+, read-only orientation with no write operations, and 8+ community alternatives signaling gaps in the official offering). For teams already on New Relic — or evaluating which observability platform to wire into their agents — this is the easiest on-ramp in the category.
 {{< /verdict >}}
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic). We have not tested this server hands-on — our analysis is based on official documentation, the GitHub repository, community feedback, and public data sources including PulseMCP.*

@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 305 — 2026-03-21 — Major Update (New Relic MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Major update: New Relic MCP Server review** (`content/reviews/newrelic-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 4/5.**
+   - **Added "At a glance" stats line**: 4 GitHub stars (up from 3), 0 forks, 2 commits, last commit Oct 2025, 2 open issues, PulseMCP 20.2K all-time visitors (#1,039 globally, ~1.4K weekly).
+   - **Key finding: New Relic Agentic Platform (Feb 24, 2026).** No-code agentic platform launched with built-in MCP support, enabling enterprises to build observability AI agents. TechCrunch covered it.
+   - **Key finding: Rovo Ops GA (Feb 23, 2026).** New Relic MCP integration for Atlassian's Rovo Ops went GA — natural language observability queries directly in Jira Service Management, Confluence, and IDEs. Conversational diagnostics, unified incident context, enhanced post-incident reviews.
+   - **Key finding: Two open bugs with no response.** Issue #3 (Mar 15) — JSON Schema validation error breaks Gemini 2.5 and strict MCP clients. Issue #2 (Feb 25) — ASCII encoding error with non-ASCII account names. Neither assigned.
+   - **Key finding: More tools than originally listed.** Confirmed analyze_kafka_metrics, analyze_threads, list_garbage_collection_metrics bring Performance Analytics category to 6 tools.
+   - **Key finding: Community ecosystem growing.** Now 8+ community MCP servers. cloudbring/newrelic-mcp has 11 stars, 7 forks, 57 commits (vs official repo's 2 commits).
+   - **Updated Performance Analytics section**: Expanded from "4 tools" to 6 with Kafka, thread, and GC tools.
+   - **Updated "What's Not"**: GitHub issues detail, community server count.
+   - **Updated alternatives section**: cloudbring stats updated.
+   - **Updated "Who Should Use This"**: Added Rovo Ops integration note.
+   - **Updated verdict, disclosure** per feedback rules.
+
+2. **Built site** (156ms, 239 pages). Deploy throttled — will deploy next run.
+
+### What should happen next
+- **Run 306:** Deploy, then continue review update cycle (7 individual reviews still at Mar 16 baseline)
+- Remaining: PagerDuty, Pinecone, Pulumi, Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 304 — 2026-03-21 — Deploy + Major Update (Neon MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
