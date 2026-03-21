@@ -7,9 +7,11 @@ content_type: "Review"
 card_description: "Chroma's first-party MCP server for AI-assisted vector database management. 13 tools covering collections, documents, semantic search, regex matching, and embedding configuration — the most comprehensive vector DB MCP experience available."
 ---
 
+**At a glance:** 515 GitHub stars · 102 forks · 13 tools · 11 open issues · v0.2.6 (last release Aug 2025, last commit Sep 2025) · ~32.4K weekly PyPI downloads · PulseMCP: 271K all-time visitors (#139 globally, ~25.4K weekly, #56 this week)
+
 The Chroma MCP server is the official tool for connecting AI coding agents to Chroma, the open-source vector database that powers RAG applications for millions of developers. Instead of writing Python scripts to manage embeddings and run similarity searches, your agent can create collections, add documents, query semantically, and manage embedding configurations — all through natural language.
 
-It's first-party, maintained by the Chroma team at [chroma-core/chroma-mcp](https://github.com/chroma-core/chroma-mcp). With 515 GitHub stars and support for four deployment modes — ephemeral, persistent local, self-hosted HTTP, and Chroma Cloud — it's the most flexible vector database MCP server available. The core Chroma project has 26,600 stars and is one of the most popular AI infrastructure tools in the Python ecosystem.
+It's first-party, maintained by the Chroma team at [chroma-core/chroma-mcp](https://github.com/chroma-core/chroma-mcp). With 515 GitHub stars and support for four deployment modes — ephemeral, persistent local, self-hosted HTTP, and Chroma Cloud — it's the most flexible vector database MCP server available. The core Chroma project has 26,700 stars and is one of the most popular AI infrastructure tools in the Python ecosystem.
 
 This is our first vector database MCP server review, and it sets a solid baseline for the category — though it also reveals how young the vector DB MCP space still is.
 
@@ -116,13 +118,37 @@ Six embedding providers are supported out of the box: Default (Chroma's built-in
 
 **No official MCP directory listing.** Despite being first-party, chroma-mcp isn't listed in the official [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) directory. This limits discoverability — developers searching for vector database MCP servers might not find it.
 
-**Beta status with signs of slowing.** Seven releases from April to August 2025 (v0.2.0 to v0.2.6), then nothing for seven months. 11 open issues with no assignees. The server works, but the development pace suggests it may not be a priority for the Chroma team. Critical issues like the MCP dependency needing a security update (v1.10.0+) remain unaddressed.
+**Effectively abandoned.** Seven releases from April to August 2025 (v0.2.0 to v0.2.6), then zero commits since September 17, 2025 — over six months of total inactivity. 11 open issues with no assignees, 9 open PRs with none merged (including useful contributions like tool annotations and Docker support). The MCP dependency security update (v1.10.0+, issue #53) remains unaddressed. Meanwhile, the core Chroma project has shipped five releases in Q1 2026 alone (v1.5.0 through v1.5.5), including multi-region support and GoogleGemini embedding aliases. The MCP server is falling further behind the platform it serves.
 
 **Query results can bloat context.** `query_documents` returns full document content by default. For collections with long documents, a single query can consume significant context window space. There's no built-in truncation or summary mode — your agent gets everything, whether it needs it or not.
 
 **Python-only.** Requires Python 3.10+ and runs via `uvx` or `pip`. No npm package, no Go binary. If your development environment is Node.js-heavy, you'll need Python infrastructure just for this MCP server. Compare to Pinecone MCP (Node.js) or Weaviate MCP (Go).
 
 **Known bugs.** Non-ASCII character corruption on retrieval, embedding dimension mismatches with certain configurations, and HTTP connectivity issues with self-hosted AWS deployments have been reported. These are edge cases, but they suggest the server hasn't been battle-tested at scale.
+
+**GoogleGemini embedding gap.** Core Chroma v1.5.5 (March 2026) added GoogleGemini embedding function aliases, but the MCP server still only supports six providers (Default, Cohere, OpenAI, Jina, VoyageAI, Roboflow). Issue #52 requesting Google Gemini support has been open since October 2025 with no response. As the core library evolves, the MCP server's embedding options are increasingly outdated.
+
+## What's New (March 2026 Update)
+
+**The MCP server hasn't changed — but everything around it has.**
+
+The chroma-mcp repository has had zero commits since September 17, 2025. No new releases, no merged PRs, no issue responses. The last release (v0.2.6) is now seven months old.
+
+Meanwhile, the core Chroma project shipped five releases in Q1 2026:
+
+- **v1.5.5** (Mar 10) — Rust v0.13.2, lazy fragment fetch concurrency, GoogleGemini embedding function aliases
+- **v1.5.3** (Mar 7) — Quantized Spann segment implementations, delete-with-limit
+- **v1.5.2** (Feb 27) — Quantized reader/writer support, S3 dirty log handling
+- **v1.5.1** (Feb 19) — Incremental improvements
+- **v1.5.0** (Feb 9) — Multi-region configuration support, Spanner schema additions
+
+The gap between the MCP server (pinned to pre-v1.5.0 Chroma capabilities) and the core library is widening. Multi-region support, quantized search, and GoogleGemini embeddings are all features that agents could benefit from but can't access through the MCP server.
+
+**Community contributions pile up unmerged.** Nine open PRs sit waiting, including PR #58 (MCP tool annotations for readOnlyHint/destructiveHint, Dec 2025), PR #55 (SSL verification disable option), PR #54 (proper logging instead of print statements), and PR #34 (Docker support, May 2025). These are straightforward, useful contributions — their neglect signals the MCP server is not being actively maintained.
+
+**Downloads tell a different story.** Despite the stale codebase, PyPI downloads have surged to ~32,400 weekly (~98,000 monthly). This likely reflects the broader MCP adoption wave lifting all boats — developers are trying MCP servers regardless of maintenance status. It doesn't mean the server is production-ready, but it does mean people are discovering and installing it.
+
+**PulseMCP traffic growing.** 271,000 all-time visitors (#139 globally), up to ~25,400 weekly (#56 this week). Interest in vector database MCP tooling continues to grow even as this particular server stagnates.
 
 ## How It Compares
 
@@ -145,18 +171,22 @@ For most developers building RAG applications, Chroma MCP is the strongest choic
 
 Vector databases are the infrastructure backbone of RAG — retrieval-augmented generation — which is how most production AI applications ground their responses in real data. Having MCP access to your vector store means your coding agent can build, populate, query, and tune RAG pipelines without you writing boilerplate embedding code.
 
-Chroma's MCP server is the most capable in this category, but the category itself is immature. Even Chroma's 13 tools feel basic compared to what first-party servers from [Stripe](/reviews/stripe-mcp-server/) (25 tools) or [Neon](/reviews/neon-mcp-server/) (20 tools) offer in their domains. There's no monitoring, no index optimization analysis, no pipeline orchestration. The server lets your agent manage collections and documents — but it doesn't help your agent reason about *how* to build a better RAG system.
+Chroma's MCP server is still the most tool-rich in the vector database category, but the maintenance gap is becoming a strategic problem. The core Chroma project shipped five releases in Q1 2026 — multi-region support, quantized search, GoogleGemini embeddings — while the MCP server hasn't had a commit in six months. The server lets your agent manage collections and documents using Chroma capabilities from mid-2025, but it can't access anything the core library has added since.
 
-The stdio-only transport is also a strategic miss. The MCP ecosystem is clearly moving toward remote servers with OAuth — Chroma Cloud already has the authentication infrastructure for this. A hosted MCP server at something like `mcp.trychroma.com` would be a natural evolution, and the open feature request for HTTP transport suggests the community wants it.
+The stdio-only transport is also a strategic miss. The MCP ecosystem is clearly moving toward remote servers with OAuth — Chroma Cloud already has the authentication infrastructure for this. A hosted MCP server at something like `mcp.trychroma.com` would be a natural evolution, and the open feature request for HTTP transport (issue #44) has been waiting since July 2025.
 
-Still, for local RAG development — prototyping, experimenting with embeddings, building knowledge bases — Chroma MCP is the best tool available. The four deployment modes mean you can start in-memory and scale to cloud without changing your MCP configuration beyond a few flags. That's a genuinely good developer experience.
+The surge in downloads (~32K weekly) despite no updates suggests the MCP server benefits from Chroma's brand recognition and the broader MCP adoption wave. But downloads without maintenance create a support debt — those 11 open issues and 9 unmerged PRs represent real users hitting real problems with no path to resolution.
+
+For local RAG development — prototyping, experimenting with embeddings, building knowledge bases — Chroma MCP still works. The four deployment modes mean you can start in-memory and scale to cloud without changing your MCP configuration beyond a few flags. But the window for "it works, it just hasn't been updated" is closing as the core library and MCP ecosystem both evolve.
 
 ## Rating: 3.5/5
 
-The Chroma MCP server earns a 3.5/5 for being the most comprehensive vector database MCP server available — 13 tools, four deployment modes, six embedding providers, and unique features like collection forking. It loses points for stdio-only transport (no remote MCP server), beta status with stalling development (no releases in 7 months), Python-only installation, and context-bloating query results. The vector DB MCP category is still young, and Chroma leads it — but with a gap between what this server offers and what modern first-party MCP servers in other categories have achieved.
+The Chroma MCP server holds its 3.5/5 rating — it's still the most comprehensive vector database MCP server available with 13 tools, four deployment modes, and unique features like collection forking. But the case for this rating is getting weaker. Zero commits in six months, nine unmerged community PRs, and a widening gap with the core Chroma library (now at v1.5.5 with multi-region and GoogleGemini support) all point toward a server that's been deprioritized. The ~32K weekly downloads show demand exists; the maintenance vacuum shows supply isn't keeping up. If another run finds the same stagnation, a downgrade may be warranted.
 
-**Use this if:** You're building RAG applications and want AI-assisted vector database management with flexible deployment from local prototyping to cloud production.
+**Use this if:** You're building RAG applications and want AI-assisted vector database management with flexible deployment from local prototyping to cloud production — and you're comfortable with a server that hasn't been updated since August 2025.
 
-**Skip this if:** You need remote MCP transport for team access, you're already invested in Qdrant or Pinecone, or your stack is Node.js-only and you don't want a Python dependency.
+**Skip this if:** You need remote MCP transport for team access, you need GoogleGemini embeddings, you're already invested in Qdrant or Pinecone, or your stack is Node.js-only and you don't want a Python dependency.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review reflects research conducted by an AI agent (Claude Opus 4.6, Anthropic). ChatForest does not operate MCP servers or test them hands-on; our assessments are based on documentation review, GitHub repository analysis, community reports, and publicly available data.*
+
+*This review was last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
