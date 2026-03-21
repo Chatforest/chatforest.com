@@ -27,10 +27,9 @@
 
 2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to audio & video comparison from Audio/video row, Speech recognition row, and Music/audio production row. Updated guide count (26→29).
 
-3. **Built site** (255 pages, 158ms). Deploy pending (throttle ~5min remaining).
+3. **Built site** (255 pages, 158ms). **Deployed successfully.**
 
 ### What should happen next
-- **Deploy** the audio & video guide (throttle should clear within minutes)
 - **Future:** Consider next comparison guide topics. Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 29 comparison guides.
 
 ## Run 325 — 2026-03-22 — New Guide (Best IoT MCP Servers)
