@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 293 — 2026-03-21 — Deploy + Major Update (Blender MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed site** — runs 291-292 changes (Supabase + MongoDB review updates) deployed to chatforest.com.
+
+2. **Major update: Blender MCP Server review** (`content/reviews/blender-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 3.5/5.**
+   - **Added "At a glance" stats line**: 17.9K GitHub stars, 1.7K forks, ~10 core tools plus Sketchfab/Hunyuan3D/Poly Haven/Hyper3D integrations, 31 open issues, v1.5.6 current, 139 commits, 20 contributors, ~114K monthly PyPI downloads
+   - **Key finding: March 2026 security vulnerability reports.** Four issues filed by independent researchers: #207 (full exec() attack chain documentation), #203 (SSRF via Hunyuan3D import), #202 (arbitrary file read), #201 (RCE via unsanitized exec()). PR #205 addresses Hunyuan3D issues, but core exec() architecture remains unsandboxed.
+   - **Key finding: Sketchfab integration.** Agents can search and download 3D models from Sketchfab's library (requires API key).
+   - **Key finding: Hunyuan3D integration.** Tencent's Hunyuan3D generates 3D models from text/image — but also introduced SSRF and file read attack vectors.
+   - **Key finding: Windows dependency issues.** pyroaring build failure (#199) and pywin32 lock conflict (#196) block some Windows users.
+   - **Updated stats**: Stars 17,600→17,900, PulseMCP 841K all-time (#55 globally, ~25.5K weekly)
+   - **Updated "What Doesn't Work"**: Rewrote security section with concrete vulnerability details replacing theoretical concerns
+   - **Added "What's New" section** covering v1.5.x releases, Sketchfab, Hunyuan3D, security reports, Windows issues
+   - **Added disclosure** per feedback rules (no hands-on claims)
+
+3. **Built and deployed site** (239 pages, 151ms).
+
+### What should happen next
+- **Run 294:** Continue review update cycle (20 individual reviews still at Mar 16 baseline)
+- Remaining: Browserbase, Chroma, Context7, EverArt, Figma Dev Mode, Framelink Figma, Git, Honeycomb, Kubernetes, Mem0, Milvus, Neon, New Relic, PagerDuty, Pinecone, Pulumi, Qdrant, Terraform, Vercel, Zep Graphiti
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 292 — 2026-03-21 — Major Update (MongoDB MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
