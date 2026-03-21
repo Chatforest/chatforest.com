@@ -320,9 +320,9 @@ The vector DB MCP category is still young. Chroma leads on deployment flexibilit
 
 Agents that forget everything between sessions are expensive autocomplete. But persistent memory is hard to get right.
 
-The [official Memory server](/reviews/memory-mcp-server/) (3.5/5) has the right concept (entity-relation knowledge graph) but real scaling problems. The `read_graph` tool dumps the entire graph into context — 14K+ tokens reported — and there's no memory isolation between projects.
+The [official Memory server](/reviews/memory-mcp-server/) (3.5/5) has the right concept (entity-relation knowledge graph) but real scaling problems. The `read_graph` tool dumps the entire graph into context — 14K+ tokens reported — and there's no memory isolation between projects. The OWASP MCP Top 10 (March 2026) now formally identifies this "context over-sharing" pattern as a security risk category.
 
-**For temporal/enterprise use:** **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5) — temporal knowledge graphs with automatic entity extraction, relationship inference, and time-aware retrieval. 23.7K stars, nine tools, multi-database (FalkorDB/Neo4j/Kuzu/Neptune), multi-LLM provider, fully open source (Apache 2.0). The most sophisticated memory architecture available — tracks not just what's true, but when it was true and when it changed.
+**For temporal/enterprise use:** **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5) — temporal knowledge graphs with automatic entity extraction, relationship inference, and time-aware retrieval. 24K stars, MCP Server 1.0, multi-database (FalkorDB/Neo4j/Kuzu/Neptune), multi-LLM provider, fully open source (Apache 2.0). The most sophisticated memory architecture available — tracks not just what's true, but when it was true and when it changed.
 
 **For semantic retrieval:** **[mem0](/reviews/mem0-mcp-server/)** (4/5) — automatic embedding-based search, deduplication, and conflict resolution. 632 stars, nine tools, cloud-hosted with a free tier (10K memories) or self-hosted via OpenMemory (Docker+Postgres+Qdrant). Good for agents that need to find *relevant* memories, not dump *all* memories.
 

@@ -1,17 +1,19 @@
 ---
 title: "The Memory MCP Server — A Knowledge Graph That Needs a Better Brain"
 date: 2026-03-14T01:31:46+09:00
-description: "The official Knowledge Graph Memory MCP server gives agents persistent memory across conversations. Nine tools, JSONL storage, and a simple entity-relation model — but scalability and context issues hold it back. Here's the honest review."
-og_description: "The official Memory MCP server gives agents persistent memory via a knowledge graph. Simple and useful for small-scale memory, but scaling problems and context bloat limit it. Rating: 3.5/5."
+description: "The official Knowledge Graph Memory MCP server gives agents persistent memory across conversations. Nine tools, JSONL storage, and a simple entity-relation model — but scalability, context over-sharing, and a surging alternatives landscape hold it back. Updated March 2026."
+og_description: "The official Memory MCP server gives agents persistent memory via a knowledge graph. Simple and useful for small-scale memory, but OWASP-flagged context over-sharing and a booming alternatives market limit it. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Anthropic's knowledge graph memory server for persistent agent context. Simple, useful for small-scale memory, but read_graph dumps your entire context and there's no memory isolation."
+card_description: "Anthropic's knowledge graph memory server for persistent agent context. 61K weekly PulseMCP visitors, ~45K npm downloads — but read_graph context bombing is now an OWASP-recognized risk, and alternatives like Graphiti (24K stars) have pulled far ahead."
 ---
+
+**At a glance:** 81,600+ GitHub stars (monorepo), ~45,000 weekly npm downloads, v2026.1.26 (last release January 2026), 9 tools, actively maintained, ~61.2K weekly PulseMCP visitors (#21 globally, ~2M all-time)
 
 The Memory MCP server (`@modelcontextprotocol/server-memory`) is Anthropic's official solution for giving AI agents persistent memory across conversations. It maintains a local knowledge graph — entities, relations, and observations stored as JSONL — that agents can read and update over time. The idea is simple: your agent remembers who you are, what you're working on, and what you've told it before.
 
-It's one of the most popular MCP servers, pulling ~45,000 weekly npm downloads. Unlike the archived SQLite and PostgreSQL reference servers, Memory is still actively maintained in the main `servers` repository. And the core concept works — agents that remember context are genuinely more useful than ones that start fresh every session.
+It's one of the most popular MCP servers, pulling ~45,000 weekly npm downloads and ranking #21 globally on PulseMCP with over 2 million estimated all-time visitors. Unlike the archived SQLite and PostgreSQL reference servers, Memory is still actively maintained in the main `servers` repository. And the core concept works — agents that remember context are genuinely more useful than ones that start fresh every session.
 
-But there are real problems once you move past small-scale personal use.
+But the landscape has shifted. In March 2026, OWASP published its MCP Top 10, and "context over-sharing" — exactly what `read_graph` does — is now a recognized security risk category. Meanwhile, alternatives like Graphiti (24,000 stars), mem0, and Letta have matured rapidly. The Memory server still works for small personal use cases, but the gap between it and production-ready alternatives has widened significantly.
 
 ## What It Does
 
@@ -88,6 +90,26 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 
 **Setup difficulty: Very easy.** One line in your MCP config. The Docker approach needs a named volume for persistence (otherwise your memories disappear when the container stops), but that's standard Docker practice.
 
+## What's New (March 2026 Update)
+
+**OWASP MCP Top 10 flags context over-sharing.** In March 2026, OWASP published the MCP Top 10 security framework, and one of the recognized risk categories is "context over-sharing" — when context windows are shared, persistent, or insufficiently scoped, sensitive information from one task or user can leak to another. The Memory server's `read_graph` tool, which dumps the entire knowledge graph into the conversation context, is a textbook example. This isn't a vulnerability in the traditional sense — it's a design pattern the security community has formally identified as risky. OWASP's recommended mitigations include isolated context windows per user and per task, context expiration policies, and access controls on context retrieval — none of which the Memory server implements.
+
+**No new releases since January 2026.** The last published version is v2026.1.26, released in January 2026. The server hasn't received any feature updates, new tools, or architectural changes since the original review. The `servers` monorepo (81,600+ stars) remains active, but the Memory server specifically has seen minimal changes.
+
+**Default memory file path fix.** A community contribution (PR #2160) changed the default memory file location from the npm installation directory (which could be a transient npx cache path like `/home/user/.npm/_npx/.../memory.json`) to the current working directory. This addressed a persistent user complaint: memories silently written to temporary directories that would disappear. If you're using `MEMORY_FILE_PATH`, this change doesn't affect you.
+
+**VS Code integration added.** The README now includes one-click installation buttons for VS Code and VS Code Insiders, alongside the existing Claude Desktop and Docker configuration examples.
+
+**Docker upgrade note.** Users upgrading Docker containers now need to delete legacy `index.js` files from prior volumes before upgrading — a minor but potentially confusing breaking change.
+
+**Alternatives landscape has exploded.** The agent memory space has matured dramatically since the original review:
+- **Graphiti/Zep** has grown from ~23.7K to ~24,000 GitHub stars and released MCP Server 1.0. Zep has repositioned as a "context engineering platform" with temporal knowledge graphs, automatic entity extraction, and multi-database support (FalkorDB, Neo4j, Kuzu, Neptune).
+- **mem0** has grown significantly but paywalled graph features at $249/month (Pro tier). The free/starter tiers provide vector search only. The open-source OpenMemory option (Docker + Postgres + Qdrant) remains available for self-hosting.
+- **Letta** (formerly MemGPT) has emerged as a full agent runtime where agents actively manage their own memory using an OS-inspired tiered architecture — core memory, archival memory, and recall memory. A high-performance Rust-based MCP server provides 7 consolidated tools covering 103 operations.
+- **Hindsight** is a newer entrant offering all four retrieval strategies (vector, graph, temporal, keyword) at every tier including the free self-hosted option — more retrieval depth than mem0 Pro without the price.
+
+**PulseMCP traffic remains strong.** The Memory server draws ~61,200 weekly visitors on PulseMCP with ~2 million estimated all-time visitors, ranking #21 globally. That makes it one of the most-visited MCP server pages, reflecting genuine user interest in the agent memory problem — even if many visitors ultimately choose alternatives.
+
 ## What Works Well
 
 **The entity-relation-observation model is intuitive.** It maps naturally to how people think about memory: things (entities), how they connect (relations), and what we know about them (observations). Agents pick this up without much prompting — they naturally create entities for people, projects, and concepts they encounter, then link them together. No schema design required.
@@ -98,11 +120,11 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 
 **Search works well for targeted retrieval.** The `search_nodes` tool matches against entity names, types, and observation text. For queries like "what do I know about ProjectX?" or "find all people entities," it returns focused results — typically 200-500 tokens instead of dumping the whole graph. This is the right way to access memory in most cases.
 
-**Actively maintained.** Unlike the archived SQLite and Postgres MCP servers, Memory lives in the main `modelcontextprotocol/servers` repository with ongoing updates. Version 2026.1.26 is current, and the package sees regular maintenance.
+**Still maintained, not archived.** Unlike the archived SQLite and Postgres MCP servers, Memory lives in the main `modelcontextprotocol/servers` repository. Version 2026.1.26 is current, though it hasn't seen a release since January 2026. The server is stable but not actively evolving — no new tools, no architectural improvements, no response to the OWASP context over-sharing concerns.
 
 ## What Doesn't Work Well
 
-**`read_graph` is a context bomb.** This tool dumps your entire knowledge graph into the conversation context. For a small personal graph (50-100 entities), that's manageable — maybe 2,000-3,000 tokens. But knowledge graphs grow fast. Users with months of accumulated memory report 14,000+ token dumps from a single `read_graph` call. That's a significant chunk of your context window consumed by memory retrieval, leaving less room for the actual conversation. The recommended workaround — starting each chat with "Remembering..." to trigger a full graph load — makes this worse by front-loading the context cost.
+**`read_graph` is a context bomb — and now an OWASP-recognized risk.** This tool dumps your entire knowledge graph into the conversation context. For a small personal graph (50-100 entities), that's manageable — maybe 2,000-3,000 tokens. But knowledge graphs grow fast. Users with months of accumulated memory report 14,000+ token dumps from a single `read_graph` call. That's a significant chunk of your context window consumed by memory retrieval, leaving less room for the actual conversation. The recommended workaround — starting each chat with "Remembering..." to trigger a full graph load — makes this worse by front-loading the context cost. As of March 2026, the OWASP MCP Top 10 formally identifies "context over-sharing" as a security risk category. The `read_graph` pattern — dumping unscoped, persistent context into shared sessions — is exactly what OWASP warns about.
 
 **No memory isolation between projects or contexts.** All entities live in one flat graph. If you use the same Memory server for work projects and personal notes, your agent sees everything mixed together. Community benchmarks found that the system "couldn't separate the contexts of two projects," confusing memories when similar projects existed. It works for single-context use; it falls apart when you need boundaries.
 
@@ -116,15 +138,19 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 
 ## Compared to Alternatives
 
-**vs. Zep Knowledge Graph MCP:** Zep offers persistent, local knowledge graph memory with temporal awareness — it tracks when things were learned and can reason about time ("what was I working on last month?"). More sophisticated graph processing, still local-first. The better choice if you need time-aware memory or more advanced retrieval. Free and open-source.
+**vs. Zep/Graphiti (24,000 GitHub stars, MCP Server 1.0):** Zep has repositioned as a "context engineering platform" built on Graphiti, a temporal knowledge graph engine where time is a first-class dimension. Automatic entity extraction, relationship inference, multi-database support (FalkorDB, Neo4j, Kuzu, Neptune), and multi-LLM provider compatibility. The gap has widened since the original review — Graphiti now has MCP Server 1.0, 24K stars, and a $25/month Flex tier that gives full access without feature gating. The clear winner for anything beyond personal use. See our [Zep/Graphiti review](/reviews/zep-graphiti-mcp-server/).
 
-**vs. mem0 (MemZero):** A managed memory layer that provides semantic search over memories using vector embeddings. Finds contextually relevant memories even when the words don't match. Cloud-hosted (with a self-hosted option via Qdrant + Neo4j + Ollama). Better retrieval quality, but adds cloud dependency and complexity.
+**vs. mem0 (MemZero):** A managed memory layer using dual-store architecture: vector database for semantic search and knowledge graph for entity relationships. Graph features are now paywalled at $249/month (Pro tier) — the free and $19/month Standard tiers give vector search only. The open-source OpenMemory option (Docker + Postgres + Qdrant) remains available for self-hosting. Better retrieval quality than the official Memory server, but the pricing structure means the most interesting features require significant investment. See our [mem0 review](/reviews/mem0-mcp-server/).
 
-**vs. Chroma MCP Server (512 GitHub stars):** Vector database-backed retrieval. If your primary need is finding relevant context from a large corpus of memories, Chroma's embedding-based search will outperform Memory's string matching significantly. Different paradigm — more document retrieval than knowledge graph.
+**vs. Letta (formerly MemGPT):** A full agent runtime where agents actively manage their own memory using an OS-inspired tiered architecture — core memory, archival memory, and recall memory. A high-performance Rust-based MCP server provides 7 consolidated tools covering 103 operations with 68-96% response size reduction. A fundamentally different approach: instead of a memory *tool*, Letta is a memory *platform*. Overkill for personal assistant memory; worth considering for agentic workflows.
+
+**vs. Hindsight:** A newer entrant offering all four retrieval strategies — vector, graph, temporal, and keyword — at every tier, including the free self-hosted option. Provides more retrieval depth than mem0 Pro without the price jump, plus Python, TypeScript, and Go SDKs with MCP-first integration. Worth evaluating if you want graph + temporal memory without Zep's infrastructure requirements.
+
+**vs. Chroma MCP Server:** Vector database-backed retrieval with full-text search, metadata filtering, and multiple embedding functions (Cohere, OpenAI, Jina, Voyage). Different paradigm — more document retrieval than knowledge graph. Better for finding relevant context from a large corpus; less structured than entity-relation approaches.
 
 **vs. Basic Memory:** Focuses on note-taking and document memory rather than entity-relation graphs. Stores memories as Markdown files, which integrate naturally with tools like Obsidian. If your "memory" is more like notes than a graph of entities, Basic Memory may fit better.
 
-**vs. Our [SQLite MCP Server review](/reviews/sqlite-mcp-server/):** Both are official Anthropic reference implementations. Memory is actively maintained (SQLite is archived). Memory is more specialized (knowledge graph vs. general database). But both share the same limitation: simple design that works for demos and personal use but doesn't scale to production needs.
+**vs. Our [SQLite MCP Server review](/reviews/sqlite-mcp-server/):** Both are official Anthropic reference implementations. Memory is actively maintained (SQLite is archived with a SQL injection vulnerability). Memory is more specialized (knowledge graph vs. general database). But both share the same limitation: simple design that works for demos and personal use but doesn't scale to production needs.
 
 ## Who Should Use This
 
@@ -143,8 +169,10 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 - You need time-aware recall ("what did I discuss last Tuesday?")
 - You need guaranteed consistency (no deduplication or conflict resolution)
 
-{{< verdict rating="3.5" summary="The right idea, not yet the right tool for serious use" >}}
-The Memory MCP server solves a real problem — agents that remember are dramatically more useful than agents that don't. The entity-relation-observation model is intuitive, the JSONL storage is transparent and portable, and setup takes 30 seconds. For personal use with a small knowledge graph in a single context, it works well and it's actively maintained. But the scaling problems are real: `read_graph` dumps your entire context, there's no memory isolation between projects, no deduplication, no semantic search, and the JSONL storage becomes a bottleneck as your graph grows. The Memory server is a good starting point for personal agent memory, and the right choice if simplicity matters more than sophistication. But if you're building anything beyond a personal assistant, look at Zep (for temporal knowledge graphs), mem0 (for semantic retrieval), or Chroma (for embedding-based search). The official server proves the concept; the community has built the production-ready implementations.
+{{< verdict rating="3.5" summary="The right idea, but the market has moved on" >}}
+The Memory MCP server still solves a real problem — agents that remember are dramatically more useful than agents that don't. The entity-relation-observation model is intuitive, the JSONL storage is transparent and portable, and setup takes 30 seconds. For personal use with a small knowledge graph in a single context, it works and it's not archived. But the world around it has changed. The OWASP MCP Top 10 now formally identifies context over-sharing as a security risk — and `read_graph` is a textbook example. Graphiti has hit 24,000 stars and shipped MCP Server 1.0. Letta offers a full agent memory runtime. Even mem0's free self-hosted tier does semantic search. The Memory server remains the right choice if you want the simplest possible persistent memory with zero configuration — but that niche is shrinking fast. If you're starting a new project in March 2026, start with Zep/Graphiti (for temporal graphs), Hindsight (for multi-strategy retrieval), or Letta (for agent-managed memory). The official server proved the concept; the ecosystem has built the production-ready implementations.
 {{< /verdict >}}
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*ChatForest does not test MCP servers hands-on. This review is based on documentation analysis, source code review, GitHub issue tracking, npm download data, PulseMCP analytics, community benchmarks, OWASP MCP Top 10 security framework analysis, and comparative research across the agent memory ecosystem. We have no affiliation with Anthropic, Zep, mem0, Letta, or any memory server vendor.*
+
+*This review was last updated on 2026-03-21 using Claude Opus 4.6 (Anthropic).*

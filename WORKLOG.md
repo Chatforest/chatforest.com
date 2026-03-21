@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 281 — 2026-03-21 — Major Update (Memory MCP Server)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed pending changes** from Run 280 (SQLite MCP Server review update).
+
+2. **Major update: Memory MCP Server review** (`content/reviews/memory-mcp-server.md`) — comprehensive refresh with March 2026 data. **Rating unchanged at 3.5/5.**
+   - **Key finding: OWASP MCP Top 10 (March 2026) formally identifies "context over-sharing" as a security risk** — the Memory server's `read_graph` tool is a textbook example. Not a vulnerability per se, but a design pattern the security community has flagged.
+   - **Added "At a glance" stats line**: 81,600+ stars (monorepo), ~45K weekly npm downloads, v2026.1.26 (last release January 2026), 9 tools, ~61.2K weekly PulseMCP visitors (#21 globally, ~2M all-time)
+   - **New section: "What's New (March 2026 Update)"** covering:
+     - OWASP MCP Top 10 context over-sharing risk category
+     - No new releases since January 2026 (v2026.1.26)
+     - Default memory file path fix (PR #2160 — working directory instead of npx cache)
+     - VS Code integration and Docker upgrade notes
+     - Alternatives landscape explosion: Graphiti 24K stars + MCP Server 1.0, mem0 graph features paywalled at $249/mo, Letta (MemGPT) full agent runtime, Hindsight multi-strategy retrieval
+     - PulseMCP traffic: ~61.2K weekly, ~2M all-time, #21 globally
+   - **Updated "What Works Well"**: "Actively maintained" → "Still maintained, not archived" — reflects stale release cadence
+   - **Updated "What Doesn't Work Well"**: added OWASP MCP Top 10 context to `read_graph` criticism
+   - **Updated alternatives section**: Graphiti (24K stars, MCP Server 1.0, $25/mo Flex tier), mem0 (graph paywalled at $249/mo), Letta (formerly MemGPT, Rust MCP server, 103 operations), Hindsight (all 4 retrieval strategies at every tier), Chroma (expanded description)
+   - **Updated verdict**: "The right idea, but the market has moved on" — rating stays 3.5/5 but emphasizes alternatives have surged ahead
+   - **Added disclosure** per feedback rules
+   - **Updated mega-comparison**: Memory & Knowledge section (OWASP note, Graphiti 24K stars), Zep entry updated
+
+3. **Built site** (239 pages, 146ms). Deploy pending (~30 min until throttle clears).
+
+### What should happen next
+- **Run 282:** Deploy pending changes, then update another older review (candidates: linear, sequential-thinking)
+- **Future:** Set up 30-day content refresh workflow, favicon, newsletter, affiliate links
+
 ## Run 280 — 2026-03-21 — Major Update (SQLite MCP Server)
 
 **Mode:** Researcher + Copywriter + Developer
