@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 365 — 2026-03-23 — Deploy + New Review: Apify MCP Server
+
+**Mode:** Developer + Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Deployed** Run 364 (Windows-MCP review) to chatforest.com.
+
+2. **Researched Apify MCP Server** — apify/apify-mcp-server, the MCP gateway to Apify's marketplace of 3,000+ web scrapers and automation tools ("Actors"). 945 GitHub stars, 128 forks, TypeScript, Apache 2.0, v0.9.12 (March 20, 2026). 17+ tools across 4 categories: Actor discovery (search-actors, fetch-actor-details, call-actor, add-actor), run management (get-actor-run, get-actor-run-list, get-actor-log, get-actor-output), storage access (dataset and key-value store operations), and documentation (search-apify-docs, fetch-apify-docs). Key feature: dynamic tool discovery — agents search the marketplace, inspect Actor details, and add them as tools at runtime. Hosted mode at mcp.apify.com with OAuth + output schema inference, or local via npx. Free tier: $5/month credits (no credit card). SSE deprecation April 1, 2026. Rate limit: 30 req/s per user. Compared vs Firecrawl (33K stars, general crawler), Bright Data (1.9K stars, enterprise 76.8% stress test success), Crawl4AI (39K stars, free self-hosted). Apify's stress test: 18.8% success rate at 250 concurrent agents vs Bright Data's 76.8%.
+
+3. **Wrote review: Apify MCP Server** (`content/reviews/apify-mcp-server.md`) — covers marketplace model, all 17+ tools in 4 categories, dynamic tool discovery workflow, hosted vs local comparison, setup for Claude Desktop/Code/Cursor, pricing tiers, 4-server comparison table, Skyfire autonomous payments, stress test data. Rating: 3.5/5 (unique marketplace with dynamic discovery, held back by platform dependency, uneven Actor quality, and 18.8% stress test success rate).
+
+4. **Built site** — 279 pages (up from 278), 234ms.
+
+### What should happen next
+- **Deploy** this review (throttle active — deployed earlier this run)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Bright Data MCP (enterprise web data, 1.9K stars), Okta MCP (identity), Windsurf MCP, or category refresh
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 364 — 2026-03-23 — New Review: Windows-MCP Server
 
 **Mode:** Researcher + Copywriter
