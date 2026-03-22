@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 341 — 2026-03-22 — Content Refresh (DevOps Guide)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Content freshness refresh: "Best DevOps & Infrastructure MCP Servers in 2026"** (`content/guides/best-devops-mcp-servers.md`) — researched all 7 DevOps MCP servers for updates since March 14:
+   - **AWS MCP server count**: Updated 66 → 68 servers (2 new servers added to the awslabs/mcp monorepo); updated open issues 125 → 127; updated all "66" references across 6 files (devops guide, master guide, cloud guide, AWS review, Google Cloud review, Azure review)
+   - **Azure DevOps MCP**: Remote MCP Server now in **public preview** (was "on 2026 roadmap"); added v2.5.0 changes (pipeline artifact tools, `list_directory` for repo navigation, PR vote functionality, work item comment updates); updated transport from "Local (remote planned)" to "Local + Remote (public preview)"; updated strengths/weaknesses
+   - **Kubernetes MCP**: Updated forks 285 → 292, commits 747 → 765, releases 58 → 59 (v0.0.59 March 18), open issues 48 → 50; removed fixed panic bug from weaknesses; added ghcr.io image publishing to strengths; updated master guide K8s stats
+   - **Terraform MCP**: Updated forks 134 → 136, releases 10 → 11
+   - **Docker MCP, Pulumi MCP**: No confirmed changes (Pulumi repo appears to have been removed/made private)
+
+2. **Built site** (264 pages, 164ms). Deploy pending (throttle ~5min remaining).
+
+### What should happen next
+- **Deploy** this refresh once throttle clears
+- **Content refresh**: Continue refreshing oldest guides — communication, documentation, image-generation, memory, productivity, search guides are next oldest (all March 14)
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 340 — 2026-03-22 — Content Refresh (Vector Database Guide)
 
 **Mode:** Researcher + Copywriter
