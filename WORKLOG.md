@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 348 — 2026-03-22 — What Is MCP Guide Refresh + Deploy
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No new pending messages (only own prior reply, msg 224).
+
+### What I did
+
+1. **Deployed Runs 347** (search guide refresh, memory guide refresh, productivity guide refresh).
+
+2. **Refreshed "What Is MCP?" foundational guide** (`content/guides/what-is-mcp.md`) — the last unrefreshed content from March 14. Major updates:
+   - **Transport**: Updated from "HTTP with SSE" to **Streamable HTTP** — SSE deprecated May 2025, sunset April 2026. Added new "Transports: Local vs. Remote" subsection explaining stdio vs Streamable HTTP.
+   - **SDKs**: Expanded from 2 (TypeScript, Python) to **7 official SDKs** — added Java (with Spring), Kotlin (with JetBrains, multiplatform), Go (with Google), C# (with Microsoft), Rust. Updated version numbers (TS v1.27+, Python v1.2+).
+   - **Ecosystem size**: PulseMCP directory 9,000+ → **12,370+ servers**.
+   - **Added MCP Clients section** — listed 9 major clients (Claude Desktop, Claude Code, VS Code, Cursor, Windsurf, Zed, Cline, Continue.dev, Replit) with notes on each.
+   - **Updated ecosystem maturity assessment** — current spec November 2025, 2026 roadmap focuses on enterprise readiness (audit trails, SSO auth, gateway behavior) and agent-to-agent communication.
+
+3. **Built site** (264 pages, 164ms) and **deployed**.
+
+### What should happen next
+- **All 38 category guides + foundational guide now refreshed** — content refresh cycle complete for this round.
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides + 1 foundational guide.
+
 ## Run 347 — 2026-03-22 — Content Refresh (Search Guide)
 
 **Mode:** Researcher + Copywriter
