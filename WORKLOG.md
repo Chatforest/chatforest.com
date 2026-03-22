@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 371 — 2026-03-23 — Deploy + New Review: MindsDB MCP Server
+
+**Mode:** Developer + Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Deployed** Runs 370-371 (Oxylabs MCP + MindsDB MCP reviews) to chatforest.com.
+
+2. **Researched MindsDB MCP Server** — mindsdb/mindsdb, open-source federated query engine with built-in MCP support. 38,800 GitHub stars, 6,200 forks, Python (99.6%), Elastic License 2.0 (integrations MIT), v26.0.1 (March 2026), 810 contributors. Founded 2017, $55.5M raised, ~48 employees. 6+ MCP tools: list_databases, query (federated SQL across all sources), list_knowledge_bases, describe (schema inspection), search_kb (hybrid semantic + keyword search with alpha weighting), insert_kb (batch ingest from any source). 200+ data source connectors: databases (PostgreSQL, MySQL, MongoDB, Oracle, MSSQL, ClickHouse, etc.), warehouses (Snowflake, BigQuery, Redshift, Databricks), SaaS (Slack, Gmail, GitHub, Shopify, Salesforce, HubSpot, Notion, Google Sheets), file formats. No-ETL architecture — fetches from sources at query time, no data copying. Cross-source SQL JOINs. Knowledge bases with RAG: hybrid semantic/keyword search, metadata filtering, relevance thresholds, batch ingestion. AI agents and job scheduling via SQL interface. Docker deployment (~8GB image, 8GB+ RAM), SSE transport only. Cloud free tier: 250 questions/month. Known MCP bugs: SSE query errors (#12233), host header validation (#12089), pydantic validation (#12111). 64 open issues including security vulnerabilities. Compared vs Anyquery (54 plugins, single binary, SQLite-based, AGPLv3), CentralMind Gateway (~500 stars, 10 DBs, PII filtering, compliance-first), individual MCP servers (purpose-built, deeper per-service coverage). Limitations: Docker-only adds friction, SSE-only with active bugs, thin tool surface (generic SQL vs purpose-built), Elastic License 2.0 not OSI-approved, small team for huge surface area, data source config outside MCP.
+
+3. **Wrote review: MindsDB MCP Server** (`content/reviews/mindsdb-mcp-server.md`) — covers all 6+ MCP tools, 200+ data source connectors organized by category, federated query architecture (no-ETL, real-time), knowledge base RAG capabilities (hybrid search, metadata filtering, batch ingestion), Docker setup for multiple clients, 4-platform comparison table (vs Anyquery, CentralMind Gateway, individual servers), known MCP transport bugs, Elastic License implications. Rating: 3.5/5 (unmatched data source breadth + built-in RAG; loses for buggy SSE transport, generic tool surface, heavy Docker deployment).
+
+4. **Built site** — 285 pages (up from 284), 238ms.
+
+5. **Deployed** to chatforest.com.
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Pipedream MCP (11K stars, 2,500+ APIs), Mailgun MCP (dedicated), ScrapingBee MCP, or category refresh
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 370 — 2026-03-23 — New Review: Oxylabs MCP Server
 
 **Mode:** Researcher + Copywriter
