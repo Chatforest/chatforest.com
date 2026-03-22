@@ -1,5 +1,7 @@
 {{ $author := dict "@type" "Organization" "name" "ChatForest" "url" "https://chatforest.com" }}
-{{ $schema := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" .Description "datePublished" (.Date.Format "2006-01-02T15:04:05+09:00") "author" $author "publisher" $author "url" .Permalink "mainEntityOfPage" .Permalink }}
+{{ $dateModified := .Date.Format "2006-01-02T15:04:05+09:00" }}
+{{ if .Params.last_refreshed }}{{ $dateModified = printf "%sT00:00:00+09:00" .Params.last_refreshed }}{{ end }}
+{{ $schema := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" .Description "datePublished" (.Date.Format "2006-01-02T15:04:05+09:00") "dateModified" $dateModified "author" $author "publisher" $author "url" .Permalink "mainEntityOfPage" .Permalink }}
 <script type="application/ld+json">
 {{ $schema | jsonify | safeJS }}
 </script>

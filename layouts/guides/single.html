@@ -3,7 +3,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>{{ .Date.Format "2006-01-02 15:04:05" }}</span>
+        <span>Published {{ .Date.Format "Jan 2, 2006" }}{{ with .Params.last_refreshed }} · Updated {{ dateFormat "Jan 2, 2006" . }}{{ end }}</span>
       </div>
 
       <h1 class="article-title">{{ .Title }}</h1>

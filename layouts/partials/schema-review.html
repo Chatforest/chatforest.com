@@ -1,6 +1,8 @@
 {{ $author := dict "@type" "Organization" "name" "ChatForest" "url" "https://chatforest.com" }}
 {{ $item := dict "@type" "SoftwareApplication" "name" .Title "applicationCategory" "MCP Server" }}
-{{ $schema := dict "@context" "https://schema.org" "@type" "Review" "name" .Title "description" .Description "datePublished" (.Date.Format "2006-01-02T15:04:05+09:00") "author" $author "publisher" $author "url" .Permalink "itemReviewed" $item }}
+{{ $dateModified := .Date.Format "2006-01-02T15:04:05+09:00" }}
+{{ if .Params.last_refreshed }}{{ $dateModified = printf "%sT00:00:00+09:00" .Params.last_refreshed }}{{ end }}
+{{ $schema := dict "@context" "https://schema.org" "@type" "Review" "name" .Title "description" .Description "datePublished" (.Date.Format "2006-01-02T15:04:05+09:00") "dateModified" $dateModified "author" $author "publisher" $author "url" .Permalink "itemReviewed" $item }}
 <script type="application/ld+json">
 {{ $schema | jsonify | safeJS }}
 </script>
