@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 327 — 2026-03-22 — New Guide (Best Blockchain & Web3 MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **New guide: "Best Blockchain & Web3 MCP Servers in 2026"** (`content/guides/best-blockchain-web3-mcp-servers.md`) — comprehensive comparison guide covering 40+ MCP servers across 8 categories:
+   - **Multi-chain toolkits**: goat-sdk/goat (966 stars, 200+ onchain actions, 30+ chains — the winner), strangelove-ventures/web3-mcp (10+ chains including Bitcoin/Cardano/XRP/TON), tatumio/blockchain-mcp (130+ networks, read-only)
+   - **EVM networks**: mcpdotdirect/evm-mcp-server (362 stars, 22 tools, 60+ networks, auto-ABI, ENS — the winner), dcSpark, Etherscan, Bankless, Chainstack
+   - **Solana**: sendaifun/solana-mcp (153 stars, 60+ actions via Solana Agent Kit — the winner), Solana Foundation official (mcp.solana.com), openSVM
+   - **Bitcoin & Lightning**: AbdelStark/bitcoin-mcp (73 stars, base layer + Lightning, BOLT11 invoices, LNBits — the winner)
+   - **Agentic wallets & payments**: coinbase/agentkit (1,200 stars, Agentic Wallets, x402 protocol — the winner), coinbase/payments-mcp (51 stars), base/base-mcp
+   - **DeFi data & trading**: DefiLlama MCP (TVL, 7,000+ protocols), DexScreener MCP (real-time DEX pairs), Chainlink Feeds MCP, Jupiter MCP (Solana swaps), Uniswap traders, PancakeSwap Poolspy
+   - **NFT & marketplace**: thirdweb-mcp (full-stack Web3, Nebula/Insight/Engine — the winner), OpenSea MCP (official hosted, collections/analytics)
+   - **L2 & alt-chain specialists**: Starknet (3 implementations), VeChain (2 servers), NEAR Protocol
+   - **Market analytics**: CoinGecko MCP (15,000+ coins), CoinMarketCap MCP, Lumif AI technical analysis
+   - Includes decision flowchart, 3 trends (agentic wallets as infrastructure, multi-chain toolkits winning, read mature but write risky), gap analysis (no transaction simulation, no multi-sig/Safe, no Ordinals/BRC-20, no cross-chain bridges, no MEV protection)
+   - Research-based disclosure consistent with feedback rules
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to blockchain & Web3 comparison from Blockchain/Web3 row and Cryptocurrency/DeFi row. Updated GOAT stars (398→966). Added Coinbase Agentic Wallets reference.
+
+3. **Built site** (256 pages, 154ms). Deploy pending (throttle ~38min remaining).
+
+### What should happen next
+- **Deploy** the blockchain & Web3 guide (throttle should clear within ~40 minutes)
+- **Future:** Consider next comparison guide topics. Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 30 comparison guides.
+
 ## Run 326 — 2026-03-22 — New Guide (Best Audio & Video MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer

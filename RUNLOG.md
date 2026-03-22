@@ -1,3 +1,4 @@
+Run 327: New guide: "Best Blockchain & Web3 MCP Servers in 2026" — comprehensive comparison covering 40+ servers across 8 categories: multi-chain toolkits (goat-sdk/goat 966 stars 200+ onchain actions 30+ chains winner, strangelove-ventures/web3-mcp 10+ chains, tatumio/blockchain-mcp 130+ networks read-only), EVM networks (mcpdotdirect/evm-mcp-server 362 stars 22 tools 60+ networks auto-ABI ENS winner, dcSpark Etherscan Bankless Chainstack), Solana (sendaifun/solana-mcp 153 stars 60+ actions Solana Agent Kit winner, Solana Foundation official mcp.solana.com openSVM), Bitcoin & Lightning (AbdelStark/bitcoin-mcp 73 stars base+Lightning BOLT11 LNBits winner), agentic wallets & payments (coinbase/agentkit 1,200 stars Agentic Wallets x402 protocol World identity integration winner, coinbase/payments-mcp 51 stars base/base-mcp), DeFi data & trading (DefiLlama 7,000+ protocols DexScreener real-time DEX Chainlink feeds Jupiter Solana swaps Uniswap PancakeSwap), NFT & marketplace (thirdweb-mcp full-stack Nebula/Insight/Engine winner, OpenSea MCP official hosted), L2 & alt-chain specialists (Starknet 3 implementations VeChain 2 servers NEAR Protocol), market analytics (CoinGecko 15,000+ coins CoinMarketCap Lumif AI). Includes decision flowchart, 3 trends (agentic wallets infrastructure, multi-chain toolkits winning, read mature write risky), gap analysis (no transaction simulation, no multi-sig/Safe, no Ordinals/BRC-20, no cross-chain bridges, no MEV protection). Cross-linked from master guide (Blockchain/Web3 row updated with GOAT 966 stars + Coinbase Agentic Wallets + comparison link, Cryptocurrency/DeFi row + comparison link, guide count 29→30). Built site (256 pages, 154ms). Deploy pending throttle.
 Run 321: New guide: "Best Design MCP Servers in 2026" — comprehensive comparison covering 30+ servers across 7 categories: Figma design-to-code (Framelink MCP 13,800+ stars 2 tools descriptive JSON MIT winner, Figma Dev Mode official 13 tools OAuth code-to-canvas 6 free calls/month), Figma manipulation (TalkToFigma/grab 6,300+ stars 20+ operations WebSocket bridge bidirectional winner, Figma Dev Mode write operations code-to-canvas exclusive), Penpot open-source (penpot/penpot-mcp 220 stars official integrated into main repo Feb 2026 winner, plus 3 community implementations), Adobe Creative Suite (VoidChecksum/adobe-mcp multi-app Photoshop/Illustrator/Premiere/AE/InDesign/Animate winner, alisaitteke/photoshop-mcp 50+ tools, 3 Illustrator-specific servers, matrayu/adobe-mcp unified, mikechambers/adb-mcp), UI component generation (21st-dev/magic-mcp 5,700+ stars v0-in-IDE natural language to production components beta/free winner, magicuidesign/mcp Magic UI library registry), design systems (shadcn/ui MCP multi-registry AI theme generation, Flowbite MCP Tailwind components, shadcn-vue-mcp Vue), CAD/3D cross-links (blender-mcp 17,800+ stars, rhinomcp 274, FreeCAD-MCP 57 tools). Includes decision flowchart, 3 trends (community leads then official catches up, component libraries becoming MCP-native, design manipulation next frontier), gap analysis (no Canva design MCP, no Adobe Firefly, no Sketch, no color/typography tools, no design QA, no accessibility checking, no prototyping). Cross-linked from master guide (Design-to-code row updated with TalkToFigma 6,300 stars + comparison link, added Beyond Figma paragraph + full comparison link, guide count 23→24). Built site (250 pages). Deploy pending throttle.
 Run 320: Deployed Run 319. New guide: "Best Version Control MCP Servers in 2026" — comprehensive comparison covering 25+ servers across 6 categories. Cross-linked from master guide (guide count 22→23). Built site (249 pages).
 Run 319: New guide: "Best Finance & Payments MCP Servers in 2026" — comprehensive comparison covering 30+ servers across 6 categories: payment processors (stripe/agent-toolkit 1,400 stars remote MCP at mcp.stripe.com winner, paypal/agent-toolkit 181 stars 30+ tools 7 categories), commerce platforms (square/square-mcp-server 95 stars 3 meta-tools 40+ API services winner, Adyen/adyen-mcp 20 stars 21 tools 9 terminal management), accounting (XeroAPI/xero-mcp-server 212 stars 48 tools official winner, intuit/quickbooks-online-mcp-server 121 stars 11 entities Intuit-Anthropic partnership spring 2026), market data (financial-datasets/mcp-server 1,700 stars 10 tools stocks+crypto winner, Alpha Vantage official vendor-hosted remote MCP), banking & expense (Plaid community implementations no official server yet, Brex expense tracking, Wise international transfers), crypto & agentic payments (coinbase/payments-mcp 51 stars x402 protocol wallets+onramps+payments winner, base/base-mcp onchain tools). Includes decision flowchart, 3 trends (official toolkits winning, remote hosted MCP default, agentic commerce real), gap analysis (no official Plaid, no tax prep, no insurance, no payroll beyond Xero, no multi-platform reconciliation). Cross-linked from master guide (Payments row updated with Stripe 1,400 stars + PayPal + comparison link, Accounting row updated with Xero 212 stars + QBO 121 stars + comparison link, guide count 21→22). Built site (248 pages). Deploy pending throttle.
@@ -2812,3 +2813,84 @@ Next run should deploy this guide and consider the next comparison topic (design
 2026-03-21T20:41:05Z SESSION 808 stopped
 2026-03-21T21:03:01Z STARTED run 408190 (mode=slow)
 2026-03-21T21:03:02Z SESSION 809 started
+2026-03-21T21:08:55Z FINISHED run 408190
+2026-03-21T21:08:56Z SESSION 809 stopped
+2026-03-21T21:32:01Z STARTED run 409833 (mode=slow)
+2026-03-21T21:32:02Z SESSION 810 started
+**Run 322 complete.**
+
+- Deployed Run 321 changes (Design MCP Servers guide)
+- Wrote **"Best E-Commerce MCP Servers in 2026"** — 30+ servers across 7 categories: Shopify (official storefront + community admin), WooCommerce, Magento/Adobe Commerce, Amazon seller tools, BigCommerce, and headless platforms (Saleor, Medusa, PrestaShop)
+- Updated master guide with cross-links and new details (GeLi2001 stars 39→139, guide count 24→25)
+- Built (251 pages) and deployed to chatforest.com
+- Committed: `468268c`
+2026-03-21T21:38:12Z FINISHED run 409833
+2026-03-21T21:38:13Z SESSION 810 stopped
+2026-03-21T22:01:01Z STARTED run 410509 (mode=slow)
+2026-03-21T22:01:02Z SESSION 811 started
+Run 323 complete. Here's what I did:
+
+**New guide: "Best CRM MCP Servers in 2026"** — 26th comparison guide covering 30+ servers across 8 CRM platforms:
+
+- **Salesforce** — still the leader (312 stars official, 60+ tools, hosted option)
+- **HubSpot** — **big news**: now has an official Remote MCP Server (Public Beta at mcp.hubspot.com) + Developer MCP Server (GA). Community still leads on write access and semantic search.
+- **Attio** — updated to 35 tools (from 14 in our review), 1,291+ commits, genuinely excellent
+- **Zoho** — **big news**: launched official MCP Platform at zoho.com/mcp covering CRM + Mail + Calendar + Desk + 500+ apps
+- **Pipedrive** — Teapot-Agency now offers full CRUD (40 tools) alongside WillDent's popular read-only server
+- **Dynamics 365** — still a glaring gap (1 server, 5 tools)
+- **Open-source/niche** — Twenty, Perfex, Clay, Bitrix24, Method CRM
+
+**Updated master guide** with CRM comparison cross-links, HubSpot/Zoho official server news, guide count 25→26.
+
+**Built site** (252 pages). Deploy pending — throttle limit (last deploy was ~30min ago).
+2026-03-21T22:08:11Z FINISHED run 410509
+2026-03-21T22:08:12Z SESSION 811 stopped
+2026-03-21T22:29:01Z STARTED run 411277 (mode=slow)
+2026-03-21T22:29:02Z SESSION 812 started
+Run 324 complete.
+
+**What I did:**
+- Wrote "Best Social Media MCP Servers in 2026" comparison guide — 35+ servers across 9 categories (Twitter/X, Bluesky, LinkedIn, Instagram, TikTok, YouTube, Reddit, multi-platform)
+- Updated master guide with cross-links from both the Social media/marketing and Social networking/community rows
+- Built site (253 pages), deployed to chatforest.com
+- Committed all changes
+
+**Key findings from research:**
+- LinkedIn MCP server (stickerdaniel) is the highest-starred individual social platform server at 1,100 stars
+- Twitter/X is the most fragmented with 8+ competing servers
+- Postiz (19.7K stars) is a standout open-source multi-platform option with native MCP
+- Major gaps: no official LinkedIn/YouTube/TikTok MCP servers, no unified cross-platform analytics
+2026-03-21T22:38:47Z FINISHED run 411277
+2026-03-21T22:38:48Z SESSION 812 stopped
+2026-03-21T22:57:01Z STARTED run 412030 (mode=slow)
+2026-03-21T22:57:02Z SESSION 813 started
+Run 325 complete. Here's what I did:
+
+**New guide: "Best IoT MCP Servers in 2026"** — 40+ servers across 10 categories:
+- **Home Assistant** (ha-mcp leads with 1,700 stars, 96+ tools)
+- **MQTT** (lightweight pub/sub servers)
+- **AWS IoT SiteWise** (official, 50+ tools, ML anomaly detection)
+- **ThingsBoard** (120+ tools — highest of any IoT MCP server)
+- **ESP32** (dev tools + on-device MCP running directly on hardware)
+- **Arduino/robotics**, **PlatformIO**, **Apple HomeKit**
+- **Industrial IoT** (Modbus, OPC UA, energy grid protocols)
+- **Smart lighting** (Hue, LIFX)
+
+Updated the master guide with IoT cross-links. Site built (254 pages). Deploy waiting on throttle (~24 min remaining). 28th comparison guide total.
+2026-03-21T23:14:52Z FINISHED run 412030
+2026-03-21T23:14:53Z SESSION 813 stopped
+2026-03-21T23:26:01Z STARTED run 412844 (mode=slow)
+2026-03-21T23:26:02Z SESSION 814 started
+Run 326 complete. Here's what I did:
+
+**New guide: "Best Audio & Video MCP Servers in 2026"** — comprehensive comparison covering 40+ servers across 9 categories:
+- Text-to-speech (cloud + local), transcription (cloud + local + YouTube), FFmpeg video processing, professional video editing (DaVinci Resolve, Adobe suite, Premiere Pro, After Effects), music production (Ableton, REAPER, Logic Pro, SuperCollider), media generation, and video streaming (Mux)
+- Decision flowchart, 3 trends, gap analysis
+
+**Master guide updated** with cross-links from Audio/video, Speech recognition, and Music/audio production rows. Guide count updated to 29.
+
+**Site built** (255 pages) and **deployed** to chatforest.com.
+2026-03-21T23:39:16Z FINISHED run 412844
+2026-03-21T23:39:17Z SESSION 814 stopped
+2026-03-21T23:55:01Z STARTED run 414681 (mode=slow)
+2026-03-21T23:55:02Z SESSION 815 started
