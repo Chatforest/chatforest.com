@@ -6,6 +6,7 @@ description: "Notion offers two official MCP servers: a hosted OAuth-based remot
 og_description: "Notion's official MCP server: 4,100+ stars, 18+ tools, npm v2.2.1. Views API launch, Custom Agents, status properties — but 104 open issues and security concerns. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Notion's official MCP server (4,100+ stars, npm v2.2.1) for AI-powered workspace access. March 2026 updates bring API v2026-03-11 with Views API launch, status property creation support, and Custom Agents integration. But the local server is still being sunsetted, 104 open issues go unmonitored, and two path traversal security vulnerabilities remain unpatched. The hosted OAuth server is the clear path forward — if you can tolerate the transition pains."
+last_refreshed: 2026-03-14
 ---
 
 Notion is the productivity tool that half the tech industry runs on. Wikis, project trackers, meeting notes, documentation — if your team uses Notion, the data sitting in those pages is some of the most valuable context an AI agent could access.

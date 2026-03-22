@@ -5,6 +5,7 @@ description: "Brave vs Exa vs Tavily vs Perplexity Sonar — which search MCP se
 og_description: "Brave vs Exa vs Tavily vs Perplexity Sonar — which search MCP server should your agent use? We researched them all. Here's the verdict."
 content_type: "Comparison"
 card_description: "Brave vs Exa vs Tavily vs Perplexity Sonar vs Kagi vs Linkup — which search MCP server should your agent use? A side-by-side comparison with clear recommendations."
+last_refreshed: 2026-03-22
 ---
 
 Search is the most fundamental capability an AI agent can have. Without it, your agent is limited to its training data and whatever files you give it access to. With it, your agent can verify facts, find documentation, research competitors, and stay current.

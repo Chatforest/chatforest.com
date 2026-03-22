@@ -5,6 +5,7 @@ description: "CRM MCP servers let AI agents query leads, manage contacts, update
 og_description: "CRM MCP servers: Salesforce CLI (312 stars, official), HubSpot (116 stars community), Pipedrive, Attio, Dynamics 365, and more. 20+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
 card_description: "CRM MCP servers across Salesforce, HubSpot, Pipedrive, Attio, Dynamics 365, and more. Salesforce has the deepest ecosystem; most others are early-stage."
+last_refreshed: 2026-03-15
 ---
 
 CRM data is some of the most valuable information a business owns — contacts, deals, pipeline stages, revenue forecasts, customer histories. Giving an AI agent access to that data changes how sales teams, customer success managers, and operations work. Instead of clicking through dashboards, you ask.

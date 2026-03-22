@@ -5,6 +5,7 @@ description: "The official Knowledge Graph Memory MCP server gives agents persis
 og_description: "The official Memory MCP server gives agents persistent memory via a knowledge graph. Simple and useful for small-scale memory, but OWASP-flagged context over-sharing and a booming alternatives market limit it. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Anthropic's knowledge graph memory server for persistent agent context. 61K weekly PulseMCP visitors, ~45K npm downloads — but read_graph context bombing is now an OWASP-recognized risk, and alternatives like Graphiti (24K stars) have pulled far ahead."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 81,600+ GitHub stars (monorepo), ~45,000 weekly npm downloads, v2026.1.26 (last release January 2026), 9 tools, actively maintained, ~61.2K weekly PulseMCP visitors (#21 globally, ~2M all-time)

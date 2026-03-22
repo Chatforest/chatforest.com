@@ -5,6 +5,7 @@ description: "Tavily's official MCP server gives AI agents web search, content e
 og_description: "Tavily's official MCP server gives AI agents web search, content extraction, site crawling, and URL mapping. Four tools, a hosted remote server, and deep RAG framework integration."
 content_type: "Review"
 card_description: "Four tools covering search, extract, crawl, and map — plus a hosted remote server you can use without installing anything. The default search API for RAG pipelines, now reviewed."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 1,500+ stars · 201 forks · 199 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month

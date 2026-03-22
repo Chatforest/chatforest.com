@@ -4,6 +4,7 @@ date: 2026-03-22T19:00:00+09:00
 description: "MCP (Model Context Protocol) lets AI models connect to external tools through a standard interface. Here's what developers need to know."
 content_type: "Guide"
 card_description: "MCP lets AI models connect to external tools through a standard protocol. Here's what you need to know to start using it."
+last_refreshed: 2026-03-22
 ---
 
 MCP stands for Model Context Protocol. It's an open standard that lets AI models connect to external tools and data sources through a consistent interface. If you've used function calling or tool use with an LLM, MCP is the next step: a standardized way to package, distribute, and connect those tools.

@@ -5,6 +5,7 @@ description: "Browser testing, cloud platforms, mobile QA, API testing, load tes
 og_description: "80+ testing & QA MCP servers reviewed across browser automation, cloud testing, mobile QA, API testing, load testing, and code quality. Playwright, BrowserStack, Appium, Postman, k6, and more — with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to testing & QA MCP servers in 2026. We've reviewed 80+ servers across browser automation, cloud testing platforms, mobile QA, API testing, performance testing, and code quality. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Testing is where MCP servers deliver the most immediate developer productivity gains. Instead of context-switching between your AI assistant and test runners, browser consoles, API clients, and performance dashboards, a testing MCP server lets the agent run tests, analyze results, and fix issues in a single loop.

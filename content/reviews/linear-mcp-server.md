@@ -6,6 +6,7 @@ description: "Linear's official MCP server gives AI assistants direct access to 
 og_description: "Linear's official remote MCP server connects AI assistants to project management — issues, projects, initiatives, comments, and documentation search. OAuth 2.1, Streamable HTTP. Rating: 4/5."
 content_type: "Review"
 card_description: "Linear's first-party remote MCP server for AI-assisted project management. 23+ tools covering issues, projects, cycles, initiatives, milestones, comments, and documents. Remote OAuth server at mcp.linear.app with Streamable HTTP transport."
+last_refreshed: 2026-03-14
 ---
 
 The Linear MCP server is Linear's official, centrally hosted bridge between AI assistants and their project management system. Unlike many MCP servers that require local installation and API key management, Linear's server runs remotely at `mcp.linear.app` — you connect via OAuth, and Linear handles the rest.

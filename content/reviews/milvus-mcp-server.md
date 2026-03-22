@@ -5,6 +5,7 @@ description: "Zilliz's official MCP server for Milvus brings 12 tools covering f
 og_description: "Milvus has 43,000+ GitHub stars and powers AI at NVIDIA, Salesforce, and eBay. Its MCP server has 12 tools with hybrid search, full CRUD, and SSE transport. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Zilliz's official MCP server for the most-starred open-source vector database. 12 tools covering five search modes, full collection CRUD, and data operations — the strongest self-hosted vector DB MCP experience."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 222 GitHub stars, 64 forks, 35 commits, last commit Dec 24, 2025, v0.1.1.dev9 (PyPI), 12 tools, Python, Apache-2.0, ~6,934 PyPI downloads total, PulseMCP 40.4K all-time visitors. Milvus core: 43.4K stars, 3.9K forks, v2.6.12 (Mar 13, 2026), 24,242 commits, 432 contributors.

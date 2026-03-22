@@ -5,6 +5,7 @@ description: "Shopify ships two official MCP servers — Dev MCP for building ap
 og_description: "Shopify MCP servers: official Dev MCP (414 stars) + Storefront MCP, plus community Admin API servers. Agentic commerce is real but early. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Shopify's MCP ecosystem — official Dev MCP for app development, Storefront MCP for AI-powered shopping, and community servers for Admin API access. Agentic commerce arrives."
+last_refreshed: 2026-03-15
 ---
 
 Shopify isn't just adding MCP support — they're betting their platform on it. With the Winter '26 Edition, Shopify introduced "agentic commerce": the idea that AI agents will browse, recommend, and buy products on behalf of customers. MCP is the plumbing that makes this work.

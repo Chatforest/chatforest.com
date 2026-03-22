@@ -5,6 +5,7 @@ description: "Cloud storage MCP servers let AI agents manage buckets, upload and
 og_description: "Cloud storage MCP servers: GCS (21 tools, official), MinIO (26 tools, AI-powered), AWS S3 Tables only (no general S3), Azure Blob (partial). 20+ servers across 7 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Cloud storage MCP servers across AWS S3, Google Cloud Storage, Azure Blob, MinIO, Cloudflare R2, Backblaze B2, and DigitalOcean Spaces. Official servers exist for most platforms but vary widely in completeness."
+last_refreshed: 2026-03-15
 ---
 
 Cloud storage is table stakes for most AI workflows — agents need to read files, write results, manage data pipelines, and generate shareable links. Every major cloud provider now has some form of MCP server for their storage service, but the quality and completeness varies wildly.

@@ -5,6 +5,7 @@ description: "Note-taking and knowledge management MCP servers connect AI agents
 og_description: "Note-Taking & Knowledge Management MCP servers: 40+ servers across Obsidian (8 servers), Notion (official), Apple Notes (RAG search), Evernote, Joplin, Roam, Logseq, Tana, Capacities, and knowledge graph memory systems. Rating: 4.0/5."
 content_type: "Review"
 card_description: "Note-taking and knowledge management MCP servers across Obsidian, Notion, Apple Notes, Evernote, Joplin, Roam Research, Logseq, Tana, Capacities, and knowledge graph memory systems. The category spans 40+ servers and covers every major PKM platform. Obsidian leads with 8 community servers taking three architectural approaches. Notion has the strongest official integration. Apple Notes gets RAG-powered semantic search. Knowledge graph servers offer platform-agnostic persistent memory. The gap between 'note storage' and 'knowledge management' is where the most interesting servers live — tools like Memento MCP and Engram go beyond simple CRUD to offer semantic retrieval, temporal awareness, and hybrid search. Rating: 4.0/5."
+last_refreshed: 2026-03-16
 ---
 
 Note-taking and knowledge management tools are where people store their most valuable thinking — research notes, project plans, meeting records, personal wikis, and the connective tissue between ideas. Connecting AI agents to these systems is one of the most natural MCP use cases: instead of copy-pasting context into prompts, an agent can search, read, and update your notes directly.

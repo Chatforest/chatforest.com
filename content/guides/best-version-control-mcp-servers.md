@@ -5,6 +5,7 @@ description: "GitHub, GitLab, Bitbucket, Azure DevOps, and more — we've review
 og_description: "25+ version control MCP servers reviewed across GitHub, GitLab, Bitbucket, local Git, Azure DevOps, and code search. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to version control MCP servers in 2026. We've reviewed 25+ servers across GitHub, GitLab, Bitbucket, local Git, Azure DevOps, and code search. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Version control MCP servers are the backbone of AI-assisted development. These servers let AI agents manage repositories, create pull requests, review code, monitor CI/CD pipelines, and interact with Git — all through natural language instead of memorizing CLI flags or clicking through web UIs.

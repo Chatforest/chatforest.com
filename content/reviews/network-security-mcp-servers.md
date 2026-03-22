@@ -5,6 +5,7 @@ description: "Network security MCP servers let AI agents capture packets, scan p
 og_description: "Network security MCP servers: Burp Suite (536 stars, official), WireMCP (380 stars, Wireshark), mcp-security-hub (20+ tools, offensive security), mcp-nettools (11 tools, all-in-one diagnostics), Globalping (distributed probes, remote MCP), pentest-mcp (multi-transport, GPU hashcat), CERT-MCP-SERVER (30 tools, certificate lifecycle). 30+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Network security MCP servers across packet capture, port scanning, pentesting, web security, SSL/TLS, and reconnaissance. PortSwigger's Burp Suite MCP leads with 536 stars and official vendor backing. WireMCP brings Wireshark packet capture to AI agents. FuzzingLabs' mcp-security-hub bundles 20+ offensive tools. Globalping runs diagnostics from thousands of global probes without local installation."
+last_refreshed: 2026-03-15
 ---
 
 Network security is one of the most powerful — and most dangerous — applications of MCP. AI agents that can capture packets, scan ports, run vulnerability assessments, and perform reconnaissance have enormous potential for security professionals. They also have enormous potential for misuse. Every server in this review should be used only with proper authorization on systems you own or have explicit permission to test.

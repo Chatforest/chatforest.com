@@ -5,6 +5,7 @@ description: "Speech recognition and transcription MCP servers let AI agents con
 og_description: "Speech recognition MCP servers: speech-mcp (76 stars, Goose voice interface, faster-whisper + Kokoro TTS, 54 voices), local-stt-mcp (whisper.cpp, Apple Silicon 15x real-time, speaker diarization), Fast-Whisper-MCP-Server (CUDA acceleration, batch processing, VTT/SRT/JSON), voice-to-text-mcp (Rust, Metal/CoreML/CUDA), Deepgram MCP (official devs, Aura TTS), Cloud-ASR-MCP (Gemini/GPT-4o Audio/Voxtral multimodal). 14+ servers across 3 approaches. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Speech recognition and transcription MCP servers across local Whisper models, cloud APIs, and multimodal LLMs. The speech-mcp project leads with 76 stars and bidirectional voice interaction. Local options offer privacy and zero API cost — whisper.cpp on Apple Silicon hits 15x real-time. Cloud wrappers add convenience with Deepgram and OpenAI APIs. Multimodal approaches using Gemini and GPT-4o Audio are the newest frontier, transcribing with LLM-guided cleanup in a single pass."
+last_refreshed: 2026-03-19
 ---
 
 Speech recognition is the other half of voice AI — and the half that's harder to get right. While text-to-speech has a clear MCP leader (ElevenLabs, covered in our [Audio & Video Processing review](/reviews/audio-video-processing-mcp-servers/)), speech-to-text is fragmented across a dozen small projects with no dominant vendor server.

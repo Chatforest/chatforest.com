@@ -5,6 +5,7 @@ description: "Crawl4AI's built-in MCP server exposes the most-starred open-sourc
 og_description: "Crawl4AI's MCP server exposes the most-starred web crawler (62,300+ stars) to AI agents. v0.8.5 adds anti-bot detection and Shadow DOM. Seven tools for markdown, screenshots, PDFs, and crawling."
 content_type: "Review"
 card_description: "Seven tools from the most-starred open-source web crawler — now with 3-tier anti-bot detection and Shadow DOM support. Markdown extraction, screenshots, PDFs, JS execution, and multi-URL crawling. Free, self-hosted, Docker required."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 62,300+ stars, 6,400+ forks, 18 open issues, v0.8.5 (March 18, 2026), PyPI package, ~31.7K estimated visitors on PulseMCP (community servers)

@@ -5,6 +5,7 @@ description: "Obsidian has no official MCP server, but eight community projects 
 og_description: "Eight community MCP servers for Obsidian vaults. Three architectures, zero official support. A landscape review comparing the top options."
 content_type: "Review"
 card_description: "Eight community MCP servers bring AI agents to Obsidian. Three integration approaches, eight different trade-offs. A landscape review."
+last_refreshed: 2026-03-14
 ---
 
 Obsidian has over 6 million users and a passionate community that treats their vaults like a second brain. When AI agents need access to that brain, there's no official path — Obsidian has published no MCP server, made no announcement about MCP support, and the concept doesn't appear anywhere on their blog.

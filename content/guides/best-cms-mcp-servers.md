@@ -5,6 +5,7 @@ description: "WordPress, Contentful, Sanity, Strapi, Directus, Ghost, Webflow, a
 og_description: "35+ CMS and content management MCP servers reviewed across WordPress, headless CMS platforms, traditional CMS, website builders, and developer-focused CMS. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to CMS MCP servers in 2026. We've reviewed 35+ servers across WordPress, headless CMS, traditional CMS, website builders, and developer-focused CMS. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 CMS MCP servers solve one of the most practical problems in AI-assisted development: managing content at scale. Instead of switching between CMS dashboards, writing API calls, or navigating admin panels, these servers let AI agents create, edit, publish, and manage content across platforms through natural language.

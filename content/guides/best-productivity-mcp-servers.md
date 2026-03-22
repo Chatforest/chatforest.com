@@ -5,6 +5,7 @@ description: "Notion vs Linear vs Todoist vs Asana vs Google Calendar vs Obsidia
 og_description: "Notion, Linear, Todoist, Asana, Google Calendar, Obsidian — we compared 8 productivity MCP servers so you know which ones are worth connecting to your AI agent."
 content_type: "Comparison"
 card_description: "Notion vs Linear vs Todoist vs Asana vs Google Calendar vs Obsidian — which productivity MCP servers deserve a spot in your agent's config? A side-by-side comparison with clear recommendations."
+last_refreshed: 2026-03-22
 ---
 
 AI agents that can read your codebase but not your project tracker are doing half the job. The missing link isn't intelligence — it's access to the tools where your actual work lives: task lists, project boards, knowledge bases, calendars.

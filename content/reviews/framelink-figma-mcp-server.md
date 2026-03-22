@@ -6,6 +6,7 @@ description: "Framelink is the community Figma MCP server with 13,800+ GitHub st
 og_description: "Framelink is the community Figma MCP server with 13,800+ stars. Two tools (get_figma_data, download_figma_images), descriptive JSON, works with any Figma account. Rating: 4/5."
 content_type: "Review"
 card_description: "The community Figma MCP server with 13,800+ GitHub stars. Descriptive JSON output instead of prescriptive React code, preserved component nesting, 25% smaller payloads. Works with any Figma account — no Dev seat required."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 13,829 GitHub stars, 1,093 forks, v0.7.1 (Mar 20, 2026), 2 tools, MIT license, ~53.4K weekly npm downloads, PulseMCP 1.5M all-time visitors (#27 globally, ~43.6K weekly, #40 this week)

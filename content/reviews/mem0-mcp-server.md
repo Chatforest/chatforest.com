@@ -5,6 +5,7 @@ description: "Mem0's MCP server gives AI agents persistent, semantic memory with
 og_description: "Mem0's MCP server provides persistent AI memory with semantic search, graph memory, and nine tools. Free tier available, local self-hosting via OpenMemory. Rating: 4/5."
 content_type: "Review"
 card_description: "Mem0's MCP server for persistent AI agent memory. Nine tools, semantic search, optional graph memory, free tier with 10K memories, and a self-hosted OpenMemory option for full local control."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** ~50,600 GitHub stars (main repo), 5,600 forks, v1.0.7 (Mar 20, 2026), 1,971 commits, 275 releases, 639 stars (MCP server repo), 138 forks, v0.2.1 (MCP server), 9 tools, Python, Apache-2.0, PulseMCP 116K all-time (#268 globally, ~2.7K weekly, #410 this week)

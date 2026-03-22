@@ -5,6 +5,7 @@ description: "Vercel's official MCP server gives AI assistants authenticated acc
 og_description: "Vercel's official MCP server connects AI assistants to your deployment platform — projects, logs, domains, and more. 13 tools, OAuth, remote server at mcp.vercel.com. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Vercel's first-party MCP server for AI-assisted deployment management. OAuth authentication, 13 tools covering projects, deployments, logs, domains, and documentation — all from a remote server at mcp.vercel.com."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** Remote server at mcp.vercel.com, OAuth authentication, 13 tools, Streamable HTTP transport. 12 approved MCP clients (Claude, Cursor, VS Code Copilot, ChatGPT, Codex CLI, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, Gemini CLI). PulseMCP 169K all-time visitors (#198 globally, ~10.5K weekly, #145 this week). Public beta. Free.

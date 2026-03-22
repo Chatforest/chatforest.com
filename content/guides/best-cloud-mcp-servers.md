@@ -5,6 +5,7 @@ description: "AWS ships 68 local servers, Google Cloud ships 18 managed remote e
 og_description: "AWS vs Google Cloud vs Azure MCP servers compared: 68 servers vs 18 endpoints vs 1 unified binary. Architecture, coverage, and recommendations."
 content_type: "Comparison"
 card_description: "AWS (68 servers, 8,500 stars) vs Google Cloud (18 managed endpoints, 3,400 stars) vs Azure (1 unified server, 47+ services, 2,800 stars) — three radically different architectures for cloud MCP."
+last_refreshed: 2026-03-22
 ---
 
 The three major cloud providers have all shipped MCP servers. Each took a fundamentally different approach — and the architecture matters more than the feature list.

@@ -5,6 +5,7 @@ description: "We compared 25+ spreadsheet MCP servers across Excel, Google Sheet
 og_description: "25+ spreadsheet MCP servers compared: Excel, Google Sheets, Airtable, Smartsheet, LibreOffice. Honest recommendations from research."
 content_type: "Comparison"
 card_description: "excel-mcp-server (3,500 stars, Python, cross-platform) vs google_workspace_mcp (1,900 stars, full suite) vs Airtable (official + 429-star community) vs Smartsheet (official, 15 tools) — plus Go, C#, and LibreOffice options."
+last_refreshed: 2026-03-22
 ---
 
 Spreadsheets are arguably the world's most-used data tool, and connecting AI agents to them is a high-value use case — from financial modeling to data cleaning to automated reporting. The MCP ecosystem has responded with dozens of servers, and the landscape is more nuanced than you'd expect.

@@ -5,6 +5,7 @@ description: "Red Hat's containers/kubernetes-mcp-server gives AI agents direct 
 og_description: "Kubernetes MCP server: Go-native API access, 6 modular toolsets, multi-cluster support, read-only mode, elicitation. 1,300 stars, 765 commits. Rating: 4/5."
 content_type: "Review"
 card_description: "Go-native Kubernetes MCP server — direct API access without kubectl, 6 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP), multi-cluster support, read-only and non-destructive modes."
+last_refreshed: 2026-03-14
 ---
 
 Most Kubernetes MCP servers shell out to kubectl. This one doesn't.

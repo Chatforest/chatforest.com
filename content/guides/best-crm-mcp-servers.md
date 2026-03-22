@@ -5,6 +5,7 @@ description: "Salesforce, HubSpot, Pipedrive, Attio, Dynamics 365, Zoho, and mor
 og_description: "30+ CRM MCP servers reviewed across Salesforce, HubSpot, Pipedrive, Attio, Dynamics 365, Zoho, and open-source CRMs. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to CRM MCP servers in 2026. We've reviewed 30+ servers across Salesforce (official + community), HubSpot (official + community), Pipedrive, Attio, Dynamics 365, Zoho, and open-source CRMs like Twenty. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 CRM data is some of the most valuable information a business owns — contacts, deals, pipeline stages, revenue forecasts, customer histories. Giving an AI agent access to that data changes how sales teams, customer success managers, and operations work. Instead of clicking through dashboards, you ask.

@@ -5,6 +5,7 @@ description: "Stripe, PayPal, Square, QuickBooks, Xero, Plaid, and more — we'v
 og_description: "30+ finance and payment MCP servers reviewed across payment processors, accounting platforms, banking, market data, billing, and crypto. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to finance and payment MCP servers in 2026. We've reviewed 30+ servers across payment processing, accounting, banking, market data, billing, and crypto payments. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Finance MCP servers are where AI agents meet real money. These servers let AI assistants process payments, manage invoices, reconcile books, pull market data, and interact with banking APIs — all through natural language instead of dashboard-hopping or manual API calls.

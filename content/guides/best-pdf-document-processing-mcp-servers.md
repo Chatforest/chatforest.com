@@ -5,6 +5,7 @@ description: "We compared 25+ PDF and document processing MCP servers across mul
 og_description: "25+ PDF & document MCP servers compared: MarkItDown, Docling, Pandoc, Stirling PDF, Unstructured, AWS Document Loader. Honest recommendations from research."
 content_type: "Comparison"
 card_description: "MarkItDown (91.4K stars, 29+ formats) vs Docling (56.2K stars, layout analysis) vs markdownify-mcp (2,500 stars, 10 tools) vs mcp-pandoc (517 stars, format conversion) vs pdf-reader-mcp (571 stars, parallel processing) — plus Word, cloud API, and manipulation options."
+last_refreshed: 2026-03-22
 ---
 
 Document processing is one of the most immediately useful MCP capabilities. Converting PDFs to text, extracting tables, transforming between formats — these are tasks that come up constantly when working with AI assistants. The ecosystem has responded with servers ranging from simple PDF readers to comprehensive multi-format conversion suites.

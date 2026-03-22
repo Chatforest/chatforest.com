@@ -5,6 +5,7 @@ description: "Pinecone's official Developer MCP server connects AI coding agents
 og_description: "Pinecone's Developer MCP server brings cloud vector search to AI agents with 9 tools, cascading search, reranking, and documentation search. Cloud-only, integrated embedding only. Rating: 3/5."
 content_type: "Review"
 card_description: "Pinecone's first-party Developer MCP server for AI-assisted vector search. 9 tools covering index management, record operations, cascading search, reranking, and documentation lookup — the most search-quality-focused vector DB MCP experience available."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 59 GitHub stars, 21 forks, 106 commits, 7 contributors, v0.2.1 (Feb 5, 2026), last commit Mar 6, 3 open issues, 16 open PRs, ~3,115 npm downloads/week, PulseMCP 49K all-time visitors (#527 globally, ~3.9K weekly, #318 this week).

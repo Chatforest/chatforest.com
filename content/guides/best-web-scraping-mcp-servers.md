@@ -3,6 +3,7 @@ title: "Best Web Scraping & Fetching MCP Servers in 2026"
 date: 2026-03-22T22:30:00+09:00
 description: "A head-to-head comparison of 7 web scraping and fetching MCP servers — from simple HTTP fetch to full cloud browser automation. Which one should your agent use?"
 type: "guides"
+last_refreshed: 2026-03-22
 ---
 
 Your agent needs to read the web. The question is how much infrastructure you want between it and the HTML.

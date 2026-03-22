@@ -4,6 +4,7 @@ date: 2026-03-14T08:39:58+09:00
 description: "How to evaluate and secure MCP servers. Real vulnerabilities, authentication best practices, and a security checklist based on our review of 19 MCP servers."
 content_type: "Guide"
 card_description: "How to evaluate and secure MCP servers. Real vulnerabilities, a security checklist, and lessons from reviewing 19 servers."
+last_refreshed: 2026-03-22
 ---
 
 MCP servers connect your AI assistant to external tools and data. That connection is powerful — and risky. Every MCP server you install becomes a bridge between an AI model and your systems: your databases, your files, your cloud infrastructure.

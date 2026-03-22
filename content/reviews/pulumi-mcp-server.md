@@ -5,6 +5,7 @@ description: "Pulumi's MCP server bridges AI assistants to the Pulumi ecosystem 
 og_description: "Pulumi MCP server: registry docs, resource search, Neo agent delegation, deploy-to-aws, local + remote modes. 11+ tools, TypeScript. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Pulumi's MCP server — registry documentation, stack management, resource search across clouds, and autonomous infrastructure via Neo agent delegation. Local npm + remote hosted modes."
+last_refreshed: 2026-03-14
 ---
 
 Where the [Terraform MCP server](/reviews/terraform-mcp-server/) deliberately stops at documentation, Pulumi's MCP server keeps going.

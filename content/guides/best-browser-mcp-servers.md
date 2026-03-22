@@ -5,6 +5,7 @@ description: "Playwright vs Puppeteer vs Browserbase vs Firecrawl — which brow
 og_description: "Playwright vs Puppeteer vs Browserbase vs Firecrawl — which browser MCP server should you actually use? We researched them all. Here's the verdict."
 content_type: "Comparison"
 card_description: "Playwright vs Puppeteer vs Browserbase vs Firecrawl — which browser MCP server should you use? A side-by-side comparison with clear recommendations."
+last_refreshed: 2026-03-22
 ---
 
 Browser automation is one of the most requested capabilities for AI agents. Navigating pages, filling forms, clicking buttons, taking screenshots — these are things humans do in browsers every day, and agents need to do them too.

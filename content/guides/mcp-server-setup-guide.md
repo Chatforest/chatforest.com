@@ -4,6 +4,7 @@ date: 2026-03-14T08:46:01+09:00
 description: "Step-by-step instructions for installing and configuring MCP servers across Claude Desktop, VS Code, Cursor, and Claude Code. Includes recommended starter stacks by role."
 content_type: "Guide"
 card_description: "How to install and configure MCP servers in Claude Desktop, VS Code, Cursor, and Claude Code — with recommended starter stacks for every developer role."
+last_refreshed: 2026-03-22
 ---
 
 You know [what MCP is](/guides/what-is-mcp/). You've seen our [reviews of 19 servers](/reviews/). Now you want to actually set them up. This guide walks you through installing and configuring MCP servers across the four most popular clients, then recommends starter stacks based on what you do.

@@ -5,6 +5,7 @@ description: "Database administration MCP servers let AI agents query, manage, a
 og_description: "Database admin MCP servers: PostgreSQL (2,300 stars, index tuning), MongoDB (959 stars, 40+ tools), MySQL (1,300 stars), Redis (452 stars, official), Supabase (2,500 stars, 30+ tools), DynamoDB (AWS official, 8 tools). 25+ servers across 7 platforms. Rating: 4.0/5."
 content_type: "Review"
 card_description: "Database administration MCP servers across PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, Supabase, and SQLite. Postgres MCP Pro leads with 2,300 stars and index tuning. MongoDB official server offers 40+ tools. Multi-database servers cover MySQL/PostgreSQL/SQLite/Oracle in a single connection."
+last_refreshed: 2026-03-15
 ---
 
 Database administration is one of the oldest and most critical software tasks — and one of the most natural fits for AI assistance. Database administration MCP servers let AI agents inspect schemas, execute queries, analyze performance, tune indexes, manage migrations, and monitor health across production and development environments.

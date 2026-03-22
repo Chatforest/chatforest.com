@@ -5,6 +5,7 @@ description: "GitMCP turns any public GitHub repository into an MCP documentatio
 og_description: "GitMCP turns any GitHub repo into an MCP documentation server. 7,800 stars, zero setup, completely free. Works with any public repo — but search reliability and public-only access limit it. Rating: 4/5."
 content_type: "Review"
 card_description: "Turns any public GitHub repository into an MCP documentation server with zero setup. Four tools, cloud-hosted, completely free. 7,800 GitHub stars, 683 forks, Apache 2.0. The fastest way to give your AI agent project-specific documentation context."
+last_refreshed: 2026-03-14
 ---
 
 GitMCP has the simplest pitch in the documentation MCP space: change `github.com` to `gitmcp.io` in any repo URL and you have an MCP server. No signup, no API key, no npm install, no local dependencies. Your AI assistant immediately gets access to that project's documentation.

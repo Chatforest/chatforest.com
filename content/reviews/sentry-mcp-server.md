@@ -5,6 +5,7 @@ description: "Sentry's official MCP server brings error tracking, issue investig
 og_description: "Sentry's official MCP server lets AI agents investigate production errors with OAuth auth and AI-powered analysis. 603 stars, 19.4K npm weekly, v0.30.0 with parallelized API calls and security fixes. Rating: 4/5."
 content_type: "Review"
 card_description: "Sentry's first-party MCP server for AI-assisted debugging. 603 stars, ~19.4K npm weekly downloads, ~302K PulseMCP visitors. OAuth authentication, ~20 tools, Seer AI integration, and v0.30.0 with performance and security improvements."
+last_refreshed: 2026-03-14
 ---
 
 The Sentry MCP server is Sentry's official tool for connecting AI coding agents to your error tracking data. Instead of switching to the Sentry dashboard, copying stack traces, and pasting them back into your editor, your agent can pull issue details, search events, and even invoke Sentry's AI (Seer) for root cause analysis — all from your IDE.

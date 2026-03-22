@@ -5,6 +5,7 @@ description: "ckreiling's Docker MCP server gives AI agents full container lifec
 og_description: "Docker MCP server: 19 tools for containers, images, networks, volumes. 690 stars, 97 forks, PyPI v0.2.1, SSH remote support. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Community Docker MCP server — 19 tools for container lifecycle, image management, networks, and volumes. Remote Docker via SSH, docker_compose prompt, security-conscious defaults. Active PRs for security and schema fixes."
+last_refreshed: 2026-03-14
 ---
 
 Nineteen tools. One Docker socket. And suddenly your AI agent can spin up containers, build images, manage networks, and handle volumes — all through natural language.

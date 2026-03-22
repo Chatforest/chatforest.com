@@ -5,6 +5,7 @@ description: "We compared 30+ file and storage MCP servers across local filesyst
 og_description: "30+ file & storage MCP servers compared: local filesystem, Google Drive, S3, Dropbox, OneDrive, Box, MinIO. Honest recommendations from research."
 content_type: "Comparison"
 card_description: "Official Filesystem (81K stars monorepo) vs Google Workspace (1,900 stars) vs Box (97 stars, official) vs MinIO (39 stars, official) — plus S3, Dropbox, OneDrive, and multi-cloud adapters."
+last_refreshed: 2026-03-22
 ---
 
 File and storage MCP servers let AI assistants read, write, search, and manage files — whether on your local machine, in cloud storage, or across enterprise platforms. This is one of the most fundamental MCP categories: almost every AI workflow touches files somewhere.

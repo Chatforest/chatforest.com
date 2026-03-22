@@ -5,6 +5,7 @@ description: "We compared 30+ Kubernetes and container MCP servers across native
 og_description: "30+ Kubernetes & container MCP servers compared: native API vs kubectl wrappers, Docker management, Helm tools. Honest recommendations from research."
 content_type: "Comparison"
 card_description: "containers/kubernetes-mcp-server (1,200 stars, native Go API) vs Flux159 (1,041 stars, TypeScript) vs kubectl-mcp-server (850 stars, 270+ tools) — plus Docker, Helm, and read-only options."
+last_refreshed: 2026-03-22
 ---
 
 Kubernetes MCP servers let AI assistants manage clusters, debug pods, deploy workloads, and read logs — all through natural language. The ecosystem has matured fast: there are now 70+ Kubernetes-related MCP servers on registries like PulseMCP.

@@ -5,6 +5,7 @@ description: "We compared 35+ message queue and event streaming MCP servers acro
 og_description: "35+ message queue MCP servers compared: Confluent Kafka (141 stars, 24+ tools), Google Pub/Sub (managed remote), AWS SQS/SNS (official), NATS (42 tools), Apache Pulsar (70+ tools). Honest recommendations from research."
 content_type: "Comparison"
 card_description: "Confluent (141 stars, 24+ tools, Kafka+Flink+Schema Registry) vs kanapuli/mcp-kafka (76 stars, Go, self-managed) vs Google Pub/Sub (managed remote, 15 tools) vs AWS SQS/SNS (official, IAM) vs NATS (42 tools, embedded server) vs Apache Pulsar (70+ tools) — plus RabbitMQ, MQTT, Redis Streams, Azure, and IBM MQ."
+last_refreshed: 2026-03-22
 ---
 
 Message queues and event streaming are the nervous system of distributed systems — and now AI agents can produce messages, consume events, manage topics, monitor consumer lag, and orchestrate pipelines directly through MCP. Every major messaging platform has at least one MCP server, and several have official vendor-backed implementations.

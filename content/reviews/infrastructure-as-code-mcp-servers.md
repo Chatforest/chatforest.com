@@ -5,6 +5,7 @@ description: "Infrastructure as Code MCP servers reviewed: Terraform (official, 
 og_description: "IaC MCP servers: Terraform (1.3k stars), Pulumi (official), Ansible (Red Hat), AWS CloudFormation/CDK, Kubernetes (1.4k stars). 10+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
 card_description: "Infrastructure as Code has exceptional MCP coverage. Terraform and Kubernetes lead with multiple high-quality servers. Pulumi, Ansible, and AWS CloudFormation/CDK all have official support. This is one of the strongest MCP categories."
+last_refreshed: 2026-03-17
 ---
 
 Infrastructure as Code is one of the best-covered categories in the entire MCP ecosystem. Every major IaC tool — Terraform, Pulumi, Ansible, CloudFormation, CDK, Kubernetes — has at least one MCP server, and most have official backing from the tool's vendor. This makes sense: IaC involves complex provider schemas, module libraries, and configuration syntax that benefit enormously from AI-assisted lookup and generation.

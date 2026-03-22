@@ -5,6 +5,7 @@ description: "Search engine MCP servers let AI agents query indices, manage docu
 og_description: "Search engine MCP servers: OpenSearch (24+ tools, official), Meilisearch (20+ tools, official), Elasticsearch (deprecated → community 17+ tools), Algolia (experimental). 15+ servers across 7 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Search engine MCP servers across Elasticsearch, OpenSearch, Meilisearch, Algolia, Apache Solr, and Typesense. Official servers exist for most platforms but Elasticsearch's is deprecated and Algolia's are explicitly experimental."
+last_refreshed: 2026-03-15
 ---
 
 Search is fundamental to AI agent workflows — querying knowledge bases, analyzing logs, managing content indices, tuning relevance. Every major search platform now has some form of MCP server, but the quality ranges from comprehensive official implementations to tiny experimental projects.

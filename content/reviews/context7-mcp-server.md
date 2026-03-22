@@ -6,6 +6,7 @@ description: "Context7 is the most popular MCP server of 2026, feeding version-s
 og_description: "Context7 delivers version-specific library docs to AI coding agents. 50.1K GitHub stars, 10.1M visitors, new Skills plugin system — but a patched context poisoning vulnerability and aggressive free tier cuts raise questions. Rating: 3.5/5."
 content_type: "Review"
 card_description: "The most popular MCP server of 2026 — feeds real-time library documentation into your AI coding agent. 50.1K GitHub stars, 10.1M estimated visitors, new Skills plugin and VS Code extension. Solves the hallucinated API problem, but a patched context poisoning vulnerability and a 92% free tier cut show the risks of centralized doc delivery."
+last_refreshed: 2026-03-14
 ---
 
 Context7 is the most popular MCP server in 2026. Not by a small margin — with 10.1 million estimated visitors on PulseMCP (#4 globally, #3 this week as of March 2026), it dwarfs the competition. Built by [Upstash](https://upstash.com), it solves a genuine pain point: AI coding assistants hallucinate APIs that don't exist because their training data is months or years out of date.

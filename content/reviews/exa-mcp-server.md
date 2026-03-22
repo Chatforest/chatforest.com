@@ -5,6 +5,7 @@ description: "Exa's official MCP server gives AI agents semantic web search, cod
 og_description: "Exa's official MCP server gives agents semantic search, code context, company research, and deep research. Neural search outperforms keyword matching, but API costs add up. Rating: 4/5."
 content_type: "Review"
 card_description: "Exa's first-party MCP server for AI-native web search. Nine tools spanning semantic search, code search, company research, people search, and autonomous deep research — with neural search that genuinely outperforms keyword matching."
+last_refreshed: 2026-03-14
 ---
 
 The Exa MCP server is Exa's official tool for connecting AI agents to their semantic search API. Where traditional search engines match keywords, Exa uses neural embeddings to understand what you're actually looking for — and the difference shows up in practice. Ask for "startups building developer tools for LLM observability" and Exa returns companies that match the *concept*, not just pages containing those exact words.

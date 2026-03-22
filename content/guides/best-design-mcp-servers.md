@@ -5,6 +5,7 @@ description: "Figma, Penpot, Adobe Creative Suite, UI component libraries, and m
 og_description: "30+ design MCP servers reviewed across Figma, Penpot, Adobe Creative Suite, UI component libraries, design systems, and CAD/3D. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to design MCP servers in 2026. We've reviewed 30+ servers across Figma design-to-code, Figma manipulation, Penpot, Adobe Creative Suite, UI component libraries, design systems, and CAD/3D modeling. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Design MCP servers let AI agents interact with design tools — reading Figma layouts, generating UI components, controlling Adobe Creative Suite, manipulating Penpot files, and accessing component libraries. Instead of switching between your IDE and your design tool, you describe what you want and the agent builds it using data from the source.

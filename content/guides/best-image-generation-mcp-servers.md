@@ -5,6 +5,7 @@ description: "The most fragmented MCP category: 20+ image generation servers, no
 og_description: "20+ image generation MCP servers compared — cloud APIs, multi-provider aggregators, local ComfyUI. Clear recommendations for every use case."
 content_type: "Comparison"
 card_description: "The most fragmented MCP category with 20+ servers and no dominant player. Cloud APIs vs multi-provider aggregators vs local ComfyUI — compared with clear recommendations."
+last_refreshed: 2026-03-22
 ---
 
 Image generation is the most fragmented category in the MCP ecosystem. There's no dominant server, no official reference that works well (the [EverArt server](/reviews/everart-mcp-server/) scored 2.5/5 and was archived), and no consensus on whether the right approach is single-provider wrappers, multi-provider aggregators, or local inference bridges.

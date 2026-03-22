@@ -5,6 +5,7 @@ description: "Cloudflare's MCP server ecosystem gives AI assistants access to th
 og_description: "Cloudflare's MCP servers connect AI assistants to their entire platform — 2,500+ endpoints via Code Mode, plus 16 specialized servers. 3,500+ stars, 102K+ PulseMCP visitors. Rating: 4.5/5."
 content_type: "Review"
 card_description: "Cloudflare's first-party MCP server ecosystem for AI-assisted infrastructure management. Code Mode collapses 2,500+ API endpoints into ~1,000 tokens. 3,500+ stars, 102K+ PulseMCP visitors, 16 specialized product servers, all remote-first with OAuth authentication."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 3,500+ stars (product servers) / 277 stars (Code Mode), 353 forks, ~11K npm monthly downloads, 16 specialized servers, ~102K estimated all-time PulseMCP visitors, last release March 9, 2026.

@@ -6,6 +6,7 @@ description: "Stripe's official MCP server gives AI assistants access to custome
 og_description: "Stripe's official MCP server connects AI assistants to payment operations — customers, invoices, subscriptions, refunds, and documentation search. OAuth remote + local npx. Rating: 4/5."
 content_type: "Review"
 card_description: "Stripe's first-party MCP server for AI-assisted payment operations. 25 tools covering customers, products, invoices, subscriptions, and refunds. Remote OAuth server at mcp.stripe.com plus local npx deployment. Part of the broader Stripe AI monorepo and Agentic Commerce Suite."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 1.4K GitHub stars, 230 forks, 25 tools across 13 resource categories, ~992K all-time PulseMCP visitors (#47 globally, ~14.4K weekly), v0.3.1 current, ChatGPT + Claude Code + Cursor + VS Code supported, part of Stripe's Agentic Commerce Suite (March 2026).

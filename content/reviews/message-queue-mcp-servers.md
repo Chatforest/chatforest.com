@@ -5,6 +5,7 @@ description: "Message queue MCP servers let AI agents produce and consume messag
 og_description: "Message queue MCP servers: Confluent (37+ tools, official), Google Pub/Sub (official remote, OAuth), AWS SQS/SNS (official, IAM), RabbitMQ (Amazon MQ official), Redis Streams (official). 25+ servers across 10 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Message queue MCP servers across Kafka, RabbitMQ, Pulsar, NATS, SQS, Google Pub/Sub, Azure Service Bus, and IBM MQ. Official servers exist for most major platforms, with Kafka having the most fragmented community (8+ implementations)."
+last_refreshed: 2026-03-15
 ---
 
 Message queues and event streaming are the nervous system of modern distributed architectures — and now AI agents can interact with them directly. Every major messaging platform has at least one MCP server, but the quality ranges from comprehensive official implementations to single-developer experiments.

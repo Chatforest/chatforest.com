@@ -5,6 +5,7 @@ description: "Redis MCP servers reviewed: the official redis/mcp-redis (454 star
 og_description: "Redis MCP servers: official mcp-redis (454 stars, 25+ tools, vector search + RAG), Agent Memory Server (203 stars, two-tier semantic memory), mcp-redis-cloud (39 stars, infrastructure). 10+ servers reviewed. Rating: 4/5."
 content_type: "Review"
 card_description: "The official Redis MCP server covers all data structures plus vector search and RAG. The Agent Memory Server adds a semantic memory layer for AI agents. Redis Cloud MCP manages infrastructure. The ecosystem is strong and well-maintained."
+last_refreshed: 2026-03-17
 ---
 
 Redis has three official MCP servers — and they're all doing different things.

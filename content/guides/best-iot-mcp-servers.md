@@ -5,6 +5,7 @@ description: "Home Assistant, MQTT, AWS IoT, ESP32, Apple HomeKit, industrial Io
 og_description: "40+ IoT MCP servers reviewed across Home Assistant, MQTT, AWS IoT, ESP32, industrial protocols, and smart home platforms. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to IoT MCP servers in 2026. We've reviewed 40+ servers across Home Assistant (5+ implementations), MQTT, AWS IoT SiteWise, ESP32/Arduino, industrial protocols (Modbus, OPC UA), Apple HomeKit, ThingsBoard, Node-RED, and smart lighting. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 IoT is where MCP servers get physical. Instead of managing databases or deploying code, these servers control lights, read sensors, manage industrial equipment, and orchestrate smart homes — all through natural language. The category spans everything from a Raspberry Pi temperature sensor to AWS-scale industrial asset monitoring.

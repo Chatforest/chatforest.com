@@ -5,6 +5,7 @@ description: "E-signature MCP servers let AI agents send contracts, track signin
 og_description: "E-signature MCP servers: DocuSign official connector (beta, IAM + eSignature, Claude Connectors Directory), SignNow sn-mcp-server (5 stars, 15 tools, embedded signing/editor, STDIO + HTTP), eSignatures.com (35 stars, contract + template management, MIT), BoldSign (4 stars, official, TypeScript, npm package), DocuSign Navigator MCP (This Dot Labs, agreement search), CData DocuSign (read-only, JDBC), SignWell (Pipedream-hosted, 12+ tools). 8+ servers. Rating: 3.5/5."
 content_type: "Review"
 card_description: "E-signature MCP servers for AI-powered contract workflows. DocuSign offers an official MCP connector (beta) with full IAM and eSignature access through the Claude Connectors Directory. SignNow has the most complete open-source server with 15 tools including embedded signing. eSignatures.com leads community stars at 35 with contract lifecycle management. BoldSign provides an official npm package. The ecosystem is notable for vendor participation — three e-signature companies ship their own MCP servers."
+last_refreshed: 2026-03-19
 ---
 
 E-signatures are one of the few business workflows where AI automation has an obvious, immediate payoff. Draft a contract, fill in signer details, send for signature, track status, download the signed document — every step is API-shaped and benefits from natural language orchestration.

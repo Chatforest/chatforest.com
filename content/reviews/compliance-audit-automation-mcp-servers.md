@@ -5,6 +5,7 @@ description: "Compliance MCP servers reviewed: Vanta official (41 stars, TypeScr
 og_description: "Compliance MCP servers: Vanta (41 stars, official, 13 tools), Drata (hosted, experimental), Secureframe (6 stars, 11 endpoints), CISO Assistant (3,700 stars, 100+ frameworks), ComplianceCow (27+ tools). Rating: 3.5/5."
 content_type: "Review"
 card_description: "Compliance automation is getting MCP support from the major vendors. Vanta ships the most complete open-source compliance MCP server — 13 tools covering controls, tests, frameworks, risks, and vulnerabilities with full TypeScript type safety. Drata offers a hosted experimental server focused on AI-native trust management. Secureframe provides a read-only Python server for querying compliance data. On the open-source GRC side, CISO Assistant (3,700 stars, 100+ frameworks) has MCP integration, and ComplianceCow ships 27+ tools across four specialized servers. The gap: no MCP servers yet for Sprinto, OneLeet, or open-source policy engines like OPA."
+last_refreshed: 2026-03-18
 ---
 
 Compliance automation platforms are starting to ship MCP servers, giving AI agents access to the controls, tests, frameworks, and audit evidence that GRC teams manage daily. The pattern is clear: the three largest compliance automation vendors — Vanta, Drata, and Secureframe — all have MCP servers now. Open-source GRC platforms are following suit.

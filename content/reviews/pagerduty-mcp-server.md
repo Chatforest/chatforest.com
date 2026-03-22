@@ -6,6 +6,7 @@ description: "PagerDuty's official MCP server gives AI agents full incident life
 og_description: "PagerDuty's MCP server gives AI agents 60+ tools for incident management, on-call, and event orchestration. Both hosted and self-hosted, Apache-2.0. Rating: 4/5."
 content_type: "Review"
 card_description: "PagerDuty's official MCP server for AI-assisted incident management. 60+ tools across 13 categories — incidents, schedules, event orchestrations, status pages, teams. Both hosted and self-hosted options. Spring 2026 AI ecosystem expansion with Azure/AWS multi-agent support."
+last_refreshed: 2026-03-14
 ---
 
 PagerDuty's MCP server lets AI agents manage the full incident lifecycle — creating and resolving incidents, checking on-call schedules, managing escalation policies, orchestrating events, updating status pages, and coordinating across teams. It's not an observability tool. It doesn't collect metrics or traces. It manages the *human response* to when things break.

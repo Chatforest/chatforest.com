@@ -5,6 +5,7 @@ description: "CI/CD pipeline MCP servers reviewed: Jenkins (official plugin, 68 
 og_description: "CI/CD pipeline MCP servers: Jenkins (official plugin, 15+ tools), CircleCI (80 stars, 14 tools), GitHub Actions (27.9k stars), Argo CD (350 stars), Buildkite, Azure DevOps, GitLab. 15+ servers reviewed. Rating: 4/5."
 content_type: "Review"
 card_description: "CI/CD pipelines now have strong MCP coverage. Jenkins has an official plugin, CircleCI and GitHub Actions offer deep build intelligence, and Argo CD brings GitOps deployment management. The ecosystem is broad but fragmented across platforms."
+last_refreshed: 2026-03-17
 ---
 
 CI/CD is one of the better-covered categories in the MCP ecosystem — and that makes sense. Developers spend enormous amounts of time context-switching between their editor and their CI dashboard to check build statuses, debug failures, and re-trigger pipelines. MCP servers that bring pipeline data into the AI assistant eliminate that context switch.

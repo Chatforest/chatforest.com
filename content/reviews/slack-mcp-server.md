@@ -5,6 +5,7 @@ description: "Slack's official MCP server lets AI agents search messages, send r
 og_description: "Slack's official MCP server lets AI agents search messages, send replies, and manage canvases in your workspace. Here's the honest review."
 content_type: "Review"
 card_description: "Slack's official MCP server lets AI agents search messages, send replies, and manage canvases. The right way to give agents Slack access."
+last_refreshed: 2026-03-14
 ---
 
 Slack is where work conversations happen. The problem is that those conversations are locked inside Slack — an agent can't search your channels, read a thread, or post an update without some kind of integration. Slack's official MCP server changes that. Generally available since February 28, 2026, it gives AI agents direct, structured access to your workspace through the Model Context Protocol.

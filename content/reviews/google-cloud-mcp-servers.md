@@ -5,6 +5,7 @@ description: "Google Cloud ships 18 managed remote MCP servers and 15+ open-sour
 og_description: "Google Cloud MCP servers: 18 managed remote endpoints, 15+ open-source servers. BigQuery, Spanner, GKE, Vertex AI, Maps, and more. Rating: 4/5."
 content_type: "Review"
 card_description: "Google Cloud's MCP ecosystem — 18 managed remote servers plus 15+ open-source ones. BigQuery, Spanner, GKE, Vertex AI, Security Operations, Maps, and the 13.5K-star MCP Toolbox for Databases."
+last_refreshed: 2026-03-20
 ---
 
 Google Cloud hasn't just shipped MCP servers — they've shipped managed MCP *endpoints*. While AWS built 68 servers in a monorepo that you run locally, Google took a different approach: remote MCP servers hosted on googleapis.com that your agent connects to directly. No local binaries, no Docker, no Node.js. Just an HTTP endpoint and your Google Cloud credentials.

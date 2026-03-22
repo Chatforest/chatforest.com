@@ -5,6 +5,7 @@ description: "Outlook MCP servers let AI agents read, search, send, and manage M
 og_description: "Outlook MCP servers: Microsoft's official Work IQ Mail, Softeria's ms-365-mcp-server (530 stars), and 5+ community options. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Outlook MCP servers — from Microsoft's official Work IQ Mail to community Graph API wrappers. Let agents manage enterprise email. The licensing requirements are significant."
+last_refreshed: 2026-03-15
 ---
 
 If [Gmail MCP servers](/reviews/gmail-mcp-servers/) deal with personal inboxes, Outlook MCP servers deal with corporate ones. Microsoft 365 mail sits behind Entra ID, compliance policies, Data Loss Prevention rules, and IT admin controls. That's the whole point — and it's what makes the MCP integration story more complicated than Gmail's.

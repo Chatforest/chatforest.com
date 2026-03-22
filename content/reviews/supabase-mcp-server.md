@@ -5,6 +5,7 @@ description: "Supabase's official MCP server goes beyond database management —
 og_description: "Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions, and more. 8 tool groups, OAuth 2.1, read-only mode. Rating: 4/5."
 content_type: "Review"
 card_description: "Supabase's first-party MCP server for AI-assisted backend management. OAuth 2.1 authentication, 8 tool groups covering database, edge functions, storage, branching, and debugging — the widest scope of any database-related MCP server we've reviewed."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 2.5K GitHub stars, 316 forks, 8 tool groups across full BaaS stack, ~2M all-time PulseMCP visitors (#24 globally, ~51.2K weekly), v0.7.0 current, OAuth 2.1 remote server

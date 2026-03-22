@@ -5,6 +5,7 @@ description: "Jira, Linear, Asana, Notion, ClickUp, Monday.com, Trello, Todoist,
 og_description: "40+ project management MCP servers reviewed across Jira, Linear, Asana, Notion, ClickUp, Monday.com, Trello, and Todoist. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to project management MCP servers in 2026. We've reviewed 40+ servers across Jira/Atlassian (official + community), Linear, Asana, Notion, ClickUp, Monday.com, Trello, Todoist, Redmine, and more. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Project management is where AI agents deliver the most obvious productivity gains. Creating issues, searching backlogs, updating sprints, linking PRs to tickets — these are the repetitive tasks that eat hours every week. MCP servers turn them into natural-language commands inside your IDE or chat interface.

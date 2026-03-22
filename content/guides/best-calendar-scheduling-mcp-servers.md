@@ -5,6 +5,7 @@ description: "We compared 20+ calendar and scheduling MCP servers across Google 
 og_description: "20+ calendar & scheduling MCP servers compared: Google Calendar, Outlook, Apple Calendar, Cal.com, Calendly, CalDAV. Honest recommendations from research."
 content_type: "Comparison"
 card_description: "google-calendar-mcp (1,100 stars, 12 tools, multi-account) vs ms-365-mcp-server (547 stars, 70+ tools) vs mcp-ical (281 stars, macOS native) vs Calendly (official hosted) vs Cal.com (official) — plus CalDAV, multi-provider, and self-hosted options."
+last_refreshed: 2026-03-22
 ---
 
 Calendar integration is one of the most practical MCP use cases. Checking availability, scheduling meetings, finding conflicts across accounts — these are tasks AI assistants can genuinely make faster. The ecosystem has responded with servers for every major calendar platform.

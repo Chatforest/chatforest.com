@@ -5,6 +5,7 @@ description: "Microsoft ships a unified Azure MCP Server covering 47+ Azure serv
 og_description: "Azure MCP servers: one unified server for 47+ Azure services, plus DevOps, Fabric, M365 servers. Built into VS 2026. Rating: 4/5."
 content_type: "Review"
 card_description: "Microsoft's MCP ecosystem — one unified Azure MCP Server covering 47+ services (databases, compute, AI, security, storage), plus Azure DevOps (1,400 stars), Microsoft Fabric, M365, and more. Built into Visual Studio 2026."
+last_refreshed: 2026-03-20
 ---
 
 Microsoft didn't build 66 separate MCP servers like AWS. They didn't build 18 managed endpoints like Google Cloud. They built *one server* — the Azure MCP Server — that covers 47+ Azure services through a single binary. Then they built it into Visual Studio 2026. Then they shipped a dozen more specialized servers for everything else: DevOps, Fabric, M365, Dataverse, and more.

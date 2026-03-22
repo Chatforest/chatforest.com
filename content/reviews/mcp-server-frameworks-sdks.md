@@ -5,6 +5,7 @@ description: "MCP server frameworks and SDKs reviewed: FastMCP (23,600 stars, Py
 og_description: "MCP server frameworks: FastMCP (23,600 stars, powers 70% of servers), official Python SDK (22,200 stars), TypeScript SDK (11,900 stars), FastAPI-MCP (11,400 stars), mcp-go (8,400 stars), Go SDK (3,000 stars, Google), Kotlin SDK (JetBrains), Java SDK (Spring), Quarkus MCP, Spring AI MCP. 10+ frameworks across 5 languages. Rating: 4.5/5."
 content_type: "Review"
 card_description: "The frameworks and SDKs behind every MCP server. FastMCP dominates Python with 23,600 stars and powers an estimated 70% of all MCP servers across all languages — its decorator-based API turns a Python function into a tool in one line. The official Python SDK (22,200 stars) and TypeScript SDK (11,900 stars) provide lower-level control. FastAPI-MCP (11,400 stars) auto-converts existing FastAPI endpoints into MCP tools with zero configuration. mcp-go (8,400 stars) leads Go with 1,790 importers. Official Go, Java, and Kotlin SDKs cover the enterprise JVM and systems programming space. Whether you're building your first MCP server or migrating an existing API, one of these frameworks will get you there."
+last_refreshed: 2026-03-20
 ---
 
 Every MCP server is built on something. Behind the 5,000+ servers in the ecosystem, a surprisingly small number of frameworks and SDKs do the heavy lifting — handling JSON-RPC transport, tool schema generation, authentication, and the protocol handshake that makes MCP work.

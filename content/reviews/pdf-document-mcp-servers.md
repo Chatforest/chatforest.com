@@ -5,6 +5,7 @@ description: "PDF and document processing MCP servers let AI agents extract text
 og_description: "PDF & document MCP servers: MarkItDown (90.7K stars, 29+ formats, official), Docling (508 stars, IBM-backed, layout analysis), PDF Reader MCP (557 stars, fastest extraction). 15+ servers across 5 approaches. Rating: 3.5/5."
 content_type: "Review"
 card_description: "PDF and document processing MCP servers across MarkItDown, Docling, PDF Reader MCP, mcp-pandoc, eBook-MCP, and PDF.co. Microsoft and IBM both ship official servers, with the ecosystem split between universal converters and PDF-specific extractors."
+last_refreshed: 2026-03-15
 ---
 
 Every AI workflow eventually hits the same wall: "I need to read this PDF." Document processing is one of the most universally needed MCP capabilities, and the ecosystem has responded with servers ranging from Microsoft's 90,700-star universal converter to single-purpose PDF extractors built for speed.

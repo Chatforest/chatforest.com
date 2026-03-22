@@ -4,6 +4,7 @@ date: 2026-03-14T01:06:39+09:00
 description: "A step-by-step tutorial for building an MCP server in Python. From zero to a working server with tools, resources, and Claude Desktop integration."
 content_type: "Guide"
 card_description: "A step-by-step Python tutorial. From zero to a working MCP server with tools, resources, and Claude Desktop integration."
+last_refreshed: 2026-03-22
 ---
 
 You've read about [what MCP is](/guides/what-is-mcp/). Now let's build something. By the end of this guide, you'll have a working MCP server that exposes custom tools to Claude Desktop. We'll use Python because the SDK is clean and the code is readable — but the concepts apply to TypeScript too.

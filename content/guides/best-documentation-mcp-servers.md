@@ -5,6 +5,7 @@ description: "Context7 vs GitMCP vs Docfork vs Deepcon vs Nia vs Docs MCP — wh
 og_description: "Context7 vs GitMCP vs Docfork vs Deepcon — which documentation MCP server should your coding agent use? We compared them all. Here's the verdict."
 content_type: "Comparison"
 card_description: "Context7 vs GitMCP vs Docfork vs Deepcon vs Nia vs Docs MCP — which documentation MCP server feeds the best context to your AI coding agent? A side-by-side comparison with clear recommendations."
+last_refreshed: 2026-03-22
 ---
 
 AI coding agents hallucinate APIs. They invent function signatures that don't exist, reference deprecated parameters, and confidently generate code against last year's version of a library. The fix is straightforward: feed your agent the current documentation at query time instead of relying on stale training data.

@@ -5,6 +5,7 @@ description: "BlenderMCP connects Blender to AI agents through the Model Context
 og_description: "BlenderMCP lets AI agents control Blender through natural language. 17.9K GitHub stars, 114K monthly downloads — but fresh security vulns (SSRF, file read, RCE) and LLM spatial limits temper the magic. Rating: 3.5/5."
 content_type: "Review"
 card_description: "The most popular creative tool MCP server — lets AI agents control Blender through natural language for 3D modeling, scene creation, and manipulation. 17.9K GitHub stars, 114K monthly PyPI downloads, 841K PulseMCP visitors. Impressive demos and new Sketchfab/Hunyuan3D integrations, but multiple reported security vulnerabilities and LLM spatial reasoning limits mean production use requires caution."
+last_refreshed: 2026-03-15
 ---
 
 BlenderMCP is the first MCP server that made non-3D-artists pay attention to Blender. Built by Siddharth Ahuja, it connects Blender to Claude and other AI agents through the Model Context Protocol, letting you describe 3D scenes in plain English and watch them materialize in real time.

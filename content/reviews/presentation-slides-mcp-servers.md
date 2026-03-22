@@ -5,6 +5,7 @@ description: "Presentation MCP servers reviewed: presenton (4,300 stars, Apache 
 og_description: "Presentation MCP servers: presenton (4,300 stars, full AI app with MCP), Office-PowerPoint-MCP-Server (1,300 stars, 32 tools), trsdn/mcp-server-ppt (204 operations), Google Slides (1,400 stars workspace), Keynote (34 stars), Canva semi-official. 20+ servers. Rating: 3.5/5."
 content_type: "Review"
 card_description: "AI-generated presentations are a killer use case, and the MCP ecosystem has 20+ servers for it. presenton (4,300 stars, Apache 2.0) is a standalone AI presentation app with built-in MCP. GongRzhe/Office-PowerPoint-MCP-Server (1,300 stars, 32 tools) leads pure MCP servers. trsdn/mcp-server-ppt offers 204 operations via Windows COM. Google Slides is covered through taylorwilsdon/google_workspace_mcp (1,400 stars). Keynote has easychen/keynote-mcp (34 stars, AppleScript). Canva has a semi-official Dev MCP. But no major vendor has released an official presentation-specific MCP server."
+last_refreshed: 2026-03-18
 ---
 
 Presentation and slides MCP servers let AI assistants create slide decks, generate PowerPoint files, control Google Slides and Keynote, and build Markdown-based presentations. Instead of manually designing layouts, formatting text, and placing images, you can have AI agents produce complete presentations through the Model Context Protocol.

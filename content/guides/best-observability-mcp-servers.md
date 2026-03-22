@@ -5,6 +5,7 @@ description: "We compared 40+ monitoring and observability MCP servers across AP
 og_description: "40+ observability MCP servers compared: Grafana (2,500 stars, 40+ tools), Datadog (50+ tools, GA), Sentry (OAuth 2.0, Seer AI), Prometheus (340 stars), Dynatrace (173 stars), New Relic (35 tools). Honest recommendations from research."
 content_type: "Comparison"
 card_description: "Grafana (2,500 stars, 40+ tools, open source) vs Datadog (50+ tools, GA, agent-native) vs Sentry (OAuth 2.0, Seer AI) vs New Relic (35 tools, NRQL translation) vs Prometheus (340 stars, PromQL) vs Dynatrace (173 stars, DQL) — plus Honeycomb, PagerDuty, Splunk, Elastic, VictoriaMetrics, Axiom, SigNoz, OpsGenie, OpenTelemetry, and more."
+last_refreshed: 2026-03-22
 ---
 
 Monitoring and observability is the most vendor-invested category in the MCP ecosystem. Every major platform — Datadog, Grafana, Sentry, New Relic, Honeycomb, PagerDuty, Dynatrace, Splunk, Elastic, and more — has shipped an official MCP server. The open-source metrics stack (Prometheus, VictoriaMetrics, Grafana Loki) has strong community coverage too. No other MCP category has this level of first-party support.

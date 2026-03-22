@@ -5,6 +5,7 @@ description: "The official SQLite MCP server lets agents query, write, and inspe
 og_description: "The official SQLite MCP server is archived, has an unpatched SQL injection flaw, and ~13K weekly downloads despite being abandoned. Rating: 2.5/5."
 content_type: "Review"
 card_description: "Anthropic's reference database MCP server. Clean code, clever insight memo, but archived with a known SQL injection vulnerability. Learn from it, don't depend on it."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 236 stars (servers-archived repo), ~13K weekly PyPI downloads, v2025.4.25 (last release April 2025), 6 tools, archived on PyPI, known SQL injection vulnerability (unpatched), ~7.7K weekly PulseMCP visitors (#130 globally, ~279K all-time)

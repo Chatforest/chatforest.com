@@ -5,6 +5,7 @@ description: "Anthropic's official Postgres MCP server promises read-only databa
 og_description: "Archived, deprecated, vulnerable to SQL injection, still getting 21k weekly downloads. The official Postgres MCP server is a cautionary tale. Rating: 2.5/5."
 content_type: "Review"
 card_description: "Archived May 2025, deprecated July 2025, still unpatched on npm. The official Postgres MCP server's read-only protection doesn't work, and the ecosystem has moved on — Google Toolbox leads at 13.5k stars. Our lowest rating."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** Archived May 2025, deprecated July 2025, npm v0.6.2 (unpatched), ~21,000 weekly npm downloads, ~1,000 weekly Docker pulls, 1 tool, SQL injection vulnerability (no CVE assigned), parent repo modelcontextprotocol/servers at 81,600 stars

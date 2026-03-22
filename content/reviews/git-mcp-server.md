@@ -5,6 +5,7 @@ description: "Anthropic's official Git MCP server gives AI agents local git oper
 og_description: "Anthropic's official Git MCP server: 12 tools for local git operations, ~256K weekly PyPI downloads, 2.4M PulseMCP all-time (#17 globally). No push, pull, or merge. Rating: 3/5."
 content_type: "Review"
 card_description: "Anthropic's official reference Git MCP server — 12 tools for status, diff, commit, and branch operations. Massive adoption (2.4M PulseMCP visitors) but missing push, pull, merge, and remote operations entirely."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** ~81,700 GitHub stars (monorepo), 10,000+ forks, v2026.1.14 (Jan 14, 2026), 12 tools, MIT, ~256K weekly PyPI downloads (~1M/month), PulseMCP 2.4M all-time (#17 globally, ~341K weekly, #5 this week)

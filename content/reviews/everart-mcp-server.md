@@ -6,6 +6,7 @@ description: "EverArt's archived MCP server gives AI agents image generation thr
 og_description: "EverArt's MCP server gives agents image generation via FLUX, SD3.5, and Recraft. One tool, five models, archived since May 2025, $50/month minimum. Downloads down 64%. Rating: 2.5/5."
 content_type: "Review"
 card_description: "EverArt's archived MCP server for AI image generation. One tool spanning five models — FLUX1.1, FLUX1.1-ultra, SD3.5, Recraft-Real, and Recraft-Vector — but archived status, a $50/month API minimum (tripled from $15), and 83 weekly npm downloads show the ecosystem has moved on. Recraft's official 16-tool MCP server now exists."
+last_refreshed: 2026-03-14
 ---
 
 The EverArt MCP server is the official reference integration between EverArt's image generation API and the Model Context Protocol. It lets AI agents generate images from text prompts using five models spanning photorealistic, artistic, and vector styles — all through a single `generate_image` tool.

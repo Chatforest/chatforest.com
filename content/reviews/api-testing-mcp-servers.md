@@ -5,6 +5,7 @@ description: "API testing MCP servers let AI agents send HTTP requests, execute 
 og_description: "API testing MCP servers: Postman (100+ tools, remote hosted), Apollo GraphQL (272 stars, Rust, operation-to-tool), blurrah/mcp-graphql (365 stars, introspection), dkmaker/mcp-rest-api (90 stars, REST tester), cocaxcode (20 tools, load testing), awslabs OpenAPI (dynamic tool generation), Redpanda gRPC bridge (187 stars). 25+ servers reviewed. Rating: 4.0/5."
 content_type: "Review"
 card_description: "API testing MCP servers across REST clients, GraphQL tools, OpenAPI converters, and gRPC bridges. Postman's official MCP server leads with 100+ tools and remote hosting. Apollo MCP Server converts GraphQL operations to MCP tools with Rust performance. blurrah/mcp-graphql provides generic GraphQL introspection and query execution. For OpenAPI, awslabs dynamically generates tools from specs. Redpanda's protoc-gen-go-mcp bridges gRPC services to MCP with zero boilerplate."
+last_refreshed: 2026-03-15
 ---
 
 API testing is one of the most natural fits for MCP — AI agents that can send requests, inspect responses, validate contracts, and explore API documentation without leaving the conversation. API testing MCP servers let agents send HTTP requests, execute GraphQL queries, import and explore OpenAPI/Swagger specifications, run load tests, and even bridge gRPC services into the MCP ecosystem.

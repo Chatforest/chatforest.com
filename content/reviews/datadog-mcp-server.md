@@ -5,6 +5,7 @@ description: "Datadog's official MCP server puts 50+ tools across 14 modular too
 og_description: "Datadog's official MCP server: 50+ tools, 14 modular toolsets, GA since March 2026. 22 GitHub stars, ~10.8K weekly PulseMCP visitors. Azure SRE Agent + Codex integrations. Rating: 4/5."
 content_type: "Review"
 card_description: "Datadog's official MCP server for AI-assisted observability. 50+ tools across 14 modular toolsets covering logs, metrics, traces, APM, alerting, case management, workflows, database monitoring, error tracking, feature flags, LLM observability, and synthetics. Remote-first, Streamable HTTP, GA since March 9, 2026."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 22 GitHub stars, 13 commits, 3 contributors, MIT license, 50+ tools across 14 modular toolsets, GA since March 9 2026, ~10.8K weekly PulseMCP visitors (#142 this week, ~249K all-time), Azure SRE Agent + OpenAI Codex integrations

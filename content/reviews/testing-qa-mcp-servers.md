@@ -5,6 +5,7 @@ description: "Testing and QA MCP servers let AI agents run browser tests, manage
 og_description: "Testing & QA MCP servers: Selenium (374 stars, 20+ tools), BrowserStack (official, 457 commits, 20 tools), Sauce Labs (official, 30+ tools), LambdaTest (4 servers, commercial), Appium (official, 47 tools, mobile), Cypress (community only, page objects). 15+ servers across 8 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Testing and QA MCP servers across Selenium, BrowserStack, Sauce Labs, LambdaTest, Appium, and Cypress. BrowserStack has the most mature cloud testing integration. Appium dominates mobile testing with 47 tools. Selenium has strong community servers."
+last_refreshed: 2026-03-15
 ---
 
 The testing and QA MCP category covers three distinct domains: **browser test automation** (Selenium, Cypress), **cloud testing platforms** (BrowserStack, Sauce Labs, LambdaTest), and **mobile testing** (Appium). This review focuses on the testing-specific parts of the ecosystem — for browser automation servers like Playwright and Puppeteer, see our individual reviews of [Playwright MCP](/reviews/playwright-mcp-server/) (4.5/5) and [Puppeteer MCP](/reviews/puppeteer-mcp-server/) (3.5/5, archived).

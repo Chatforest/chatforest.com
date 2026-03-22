@@ -5,6 +5,7 @@ description: "API gateway MCP servers let AI agents manage routes, services, plu
 og_description: "API gateway MCP servers: Cloudflare (263 stars, 2-tool Code Mode covering 2,500+ endpoints), Kong Konnect (official hosted, 12 tools), APISIX (34 stars, 30+ tools, full CRUD), Envoy AI Gateway (1,400 stars, MCP routing), AgentGateway (1,900 stars, Rust, MCP+A2A proxy), Traefik Hub (MCP gateway with TBAC), Gravitee (MCP + Agent Mesh), Apigee (zero-code API-to-MCP). 15+ servers across 8 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "API gateway MCP servers across Kong, APISIX, Cloudflare, Envoy, Traefik, Gravitee, Apigee, and AgentGateway. Cloudflare's Code Mode is the most innovative approach — 2 tools covering 2,500+ endpoints in ~1,000 tokens. Kong Konnect offers the most polished hosted experience. APISIX provides the deepest gateway CRUD. The MCP gateway subcategory is exploding with enterprise-grade proxies."
+last_refreshed: 2026-03-15
 ---
 
 API gateways sit at the intersection of every API call in production infrastructure. Making them accessible to AI agents unlocks powerful capabilities: **natural language route configuration, automated traffic analysis, real-time debugging, and intelligent plugin management**. But this category splits into two distinct stories.

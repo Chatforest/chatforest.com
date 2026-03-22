@@ -5,6 +5,7 @@ description: "Neon's official MCP server brings serverless Postgres management, 
 og_description: "Neon's official MCP server lets AI agents manage serverless Postgres with branch-based migrations, OAuth auth, and 20 tools. The best cloud database MCP experience available. Rating: 4/5."
 content_type: "Review"
 card_description: "Neon's first-party MCP server for AI-assisted serverless Postgres management. OAuth authentication, 20 tools covering project management, branch-based migrations, query tuning, and SQL execution — the most thoughtful database MCP server we've reviewed."
+last_refreshed: 2026-03-14
 ---
 
 *At a glance: 565 GitHub stars, 103 forks, ~103 commits, 12 contributors, last commit Mar 16 2026, npm v0.6.5 (deprecated — remote server preferred), 20+ tools, MIT license, ~714 npm downloads/week, PulseMCP 104K all-time visitors (#297 globally, ~814 weekly). Neon platform: acquired by Databricks (May 2025), Postgres 14–18 support, storage pricing dropped 80% to $0.35/GB-month.*

@@ -5,6 +5,7 @@ description: "Shopify, WooCommerce, Magento, BigCommerce, Amazon, and headless p
 og_description: "30+ e-commerce MCP servers reviewed across Shopify, WooCommerce, Magento, Amazon, BigCommerce, headless platforms, and marketplace tools. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to e-commerce MCP servers in 2026. We've reviewed 30+ servers across Shopify (official + community), WooCommerce, Magento/Adobe Commerce, Amazon seller tools, BigCommerce, headless platforms (Saleor, Medusa), and marketplace aggregators. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 E-commerce MCP servers let AI agents interact with online stores — managing products, processing orders, searching catalogs, handling inventory, and powering AI-driven shopping experiences. Instead of clicking through admin dashboards or writing API calls manually, you describe what you want and the agent executes it against your store's backend.

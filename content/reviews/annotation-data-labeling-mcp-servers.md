@@ -5,6 +5,7 @@ description: "Annotation and data labeling MCP servers reviewed: Label Studio (o
 og_description: "Annotation & data labeling MCP servers: Label Studio (official, 28 stars), Labelbox (MCP client), Roboflow (CV annotation). The ecosystem is early-stage but growing. Rating: 2.5/5."
 content_type: "Review"
 card_description: "Data labeling meets MCP, but the ecosystem is thin. Label Studio has the only dedicated MCP server. Labelbox integrates MCP for agent evaluation workflows. Most annotation platforms haven't built MCP servers yet — expect this to change as agentic AI drives demand for labeled training data."
+last_refreshed: 2026-03-17
 ---
 
 Data labeling is the foundation of supervised machine learning — and it's one of the areas where MCP integration makes the most practical sense. An AI agent that can programmatically create labeling projects, import data, manage annotations, and push predictions into a labeling pipeline eliminates enormous amounts of manual coordination between ML engineers and annotation teams.

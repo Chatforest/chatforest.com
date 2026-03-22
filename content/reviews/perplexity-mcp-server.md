@@ -5,6 +5,7 @@ description: "Perplexity's official MCP server gives AI agents four tools spanni
 og_description: "Perplexity's official MCP server gives AI agents four tools spanning search, conversational AI, deep research, and reasoning — all powered by Sonar models."
 content_type: "Review"
 card_description: "Four tools that return synthesized answers instead of links — search, ask, research, and reason. The answer engine approach, now reviewed."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 2,000+ stars · 280+ forks · 124 commits · v0.8.4 · 0 open issues · MIT license · TypeScript

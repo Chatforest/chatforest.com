@@ -5,6 +5,7 @@ description: "Chroma vs Qdrant vs Pinecone vs Milvus — which vector database M
 og_description: "The vector DB MCP space is young and fragmented. Here's the honest comparison: Chroma leads on tools, Qdrant on adoption, Pinecone on search, and Milvus on breadth. Rating, tradeoffs, and recommendations."
 content_type: "Comparison"
 card_description: "Which vector database MCP server should you use? We compare Chroma, Qdrant, Pinecone, Milvus, Weaviate, and LanceDB — tools, transport, tradeoffs, and honest recommendations."
+last_refreshed: 2026-03-22
 ---
 
 Vector databases are the infrastructure behind RAG, semantic search, and AI memory — and every major vendor now has an MCP server. The problem: they're all at different stages of maturity, with wildly different approaches to what "vector database MCP" even means.

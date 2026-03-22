@@ -5,6 +5,7 @@ description: "Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — which
 og_description: "Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — which DevOps MCP server should your agent use? We compared them all."
 content_type: "Comparison"
 card_description: "Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — five DevOps and infrastructure MCP servers compared head-to-head with clear recommendations."
+last_refreshed: 2026-03-22
 ---
 
 DevOps is where MCP servers get serious. These aren't read-only tools querying documentation or fetching search results — they manage infrastructure, deploy containers, modify cloud resources, and trigger CI/CD pipelines. One bad tool call can take down production.

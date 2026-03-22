@@ -5,6 +5,7 @@ description: "Doist's official Todoist AI MCP server gives AI agents 37+ tools f
 og_description: "Doist's official Todoist AI MCP server connects AI assistants to task management — tasks, projects, sections, comments, assignments, filters, and productivity stats. OAuth, three transports, MCP Apps. Rating: 4/5."
 content_type: "Review"
 card_description: "Doist's official MCP server for AI-assisted task management. 37+ tools covering tasks, projects, sections, comments, labels, filters, assignments, attachments, and workspaces. Remote-first at ai.todoist.net with OAuth, plus local stdio and SSE. MCP Apps for interactive widgets."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 393 GitHub stars, 37 forks, v8.4.0, ~33.5K all-time PulseMCP visitors (#689 globally, ~700 weekly), 37+ tools across 9 categories, 22 contributors, MIT license

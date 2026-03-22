@@ -5,6 +5,7 @@ description: "Microsoft now has an official Teams MCP server with 24 tools for c
 og_description: "Microsoft now has an official Teams MCP server. Two community alternatives preceded it. Here's how they compare and which to pick."
 content_type: "Review"
 card_description: "Microsoft's official Work IQ Teams server brings 24 tools for chats, channels, and members. Two community servers offer different approaches. A landscape review."
+last_refreshed: 2026-03-22
 ---
 
 Microsoft Teams has 320 million monthly active users. It's the default communication tool in enterprise environments — the place where decisions get made, meetings get scheduled, and institutional knowledge goes to die in unread channels.

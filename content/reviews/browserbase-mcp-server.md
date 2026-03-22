@@ -5,6 +5,7 @@ description: "Browserbase's official MCP server gives AI agents cloud-hosted bro
 og_description: "Browserbase's MCP server gives agents cloud browsers with AI-native element targeting via Stagehand. 3.2K stars, cloud-only, paid service. Rating: 3.5/5."
 content_type: "Review"
 card_description: "The official Browserbase MCP server for cloud browser automation. 8 tools using Stagehand's natural language element targeting — navigate, act, extract, observe, screenshot, and session management. Cloud-hosted with stealth mode."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 3.2K GitHub stars · 339 forks · 8 tools via Stagehand v3 · 20 open issues · 193 commits · ~897 weekly npm downloads · [PulseMCP](https://pulsemcp.com/servers/browserbase-mcp-server): 741K all-time visitors (#60 globally, ~15.5K weekly)

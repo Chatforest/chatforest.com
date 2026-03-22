@@ -5,6 +5,7 @@ description: "The Playwright MCP server is the full-featured browser automation 
 og_description: "The Playwright MCP server is the full-featured browser automation standard for AI agents. 29K+ stars, CLI companion with 4x token savings, network mocking. Rating: 4.5/5."
 content_type: "Review"
 card_description: "Microsoft's browser MCP server uses accessibility tree targeting instead of CSS selectors. Three browser engines, 25+ tools, CLI companion for 4x token savings, and the ecosystem is behind it."
+last_refreshed: 2026-03-14
 ---
 
 If you read our [Puppeteer MCP review](/reviews/puppeteer-mcp-server/), you know the punchline: Playwright MCP has overtaken it for most use cases. Now it's time to explain why. The Playwright MCP server (`@playwright/mcp`) is Microsoft's official MCP interface for browser automation, maintained by the same team that builds Playwright itself. It has 29,300+ GitHub stars (up from 28K just weeks ago), 2,400+ forks, support from 15+ MCP clients, and one architectural decision that changes everything: the accessibility tree.

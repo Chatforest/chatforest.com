@@ -5,6 +5,7 @@ description: "GitHub's official MCP server (28.1K stars, 3.8K forks, v0.32.0) co
 og_description: "GitHub's official MCP server: 28.1K stars, v0.32.0. Native Streamable HTTP, Insiders mode, secret scanning, context optimizations. #8 on PulseMCP. Rating: 4/5."
 content_type: "Review"
 card_description: "GitHub's official MCP server (28.1K stars, v0.32.0) connects AI agents to repos, issues, PRs, Actions, Projects, and secret scanning. v0.31.0 brought native Streamable HTTP support and Insiders mode for experimental features like MCP Apps. v0.32.0 added context optimizations and moved Copilot tools into the default toolset. Secret scanning catches leaked credentials before commits. Remote server still can't limit its 60+ tools — a problem for hosts with tool caps. #8 on PulseMCP with 5.1M all-time visitors."
+last_refreshed: 2026-03-14
 ---
 
 If the Filesystem MCP server is the "hello world" of the MCP ecosystem, the GitHub MCP server is the first real tool you reach for on a project. It connects AI agents directly to GitHub — repos, issues, pull requests, Actions, Projects, code search, and now secret scanning. With **28,100 GitHub stars** and **3,800 forks**, it's one of the most popular MCP servers in the ecosystem. Maintained by GitHub themselves, it's well-supported and actively developed — v0.32.0 shipped in March 2026 with context optimizations across multiple tools.

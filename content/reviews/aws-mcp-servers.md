@@ -5,6 +5,7 @@ description: "AWS's awslabs/mcp monorepo ships 68 specialized MCP servers coveri
 og_description: "AWS MCP servers: 68 servers in one monorepo. 8,500 stars, 190+ releases, ~80K monthly core downloads. Cloud infrastructure through natural language. Rating: 4/5."
 content_type: "Review"
 card_description: "The AWS MCP ecosystem — 68 specialized servers for compute, databases, AI/ML, serverless, containers, security, and cost analysis. Core MCP Server orchestrates them via role-based configurations."
+last_refreshed: 2026-03-14
 ---
 
 Sixty-six MCP servers. One monorepo. And a managed remote endpoint in preview. AWS hasn't just built an MCP server — they've built an MCP operating system for cloud infrastructure.

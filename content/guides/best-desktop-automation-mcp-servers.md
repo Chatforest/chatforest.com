@@ -5,6 +5,7 @@ description: "Playwright, Windows-MCP, Chrome DevTools, Desktop Commander, macOS
 og_description: "25+ desktop automation and computer use MCP servers reviewed across browser automation, Windows desktop, macOS, cross-platform, enterprise RPA, and developer tools. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to desktop automation MCP servers in 2026. We've reviewed 25+ servers across browser automation, Windows desktop, macOS, cross-platform tools, enterprise RPA, and developer tools. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Desktop automation MCP servers give AI agents "eyes and hands" — the ability to see screens, click buttons, type text, and control applications through the Model Context Protocol. Instead of calling APIs, these servers let agents interact with computer interfaces the same way humans do.

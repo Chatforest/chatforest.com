@@ -6,6 +6,7 @@ description: "The Puppeteer MCP server gave AI agents a real browser — but it'
 og_description: "The Puppeteer MCP server is now archived and deprecated. 236 stars on the archive repo, 19.9K weekly npm downloads (vs Playwright MCP's 1.38M). Here's the honest review."
 content_type: "Review"
 card_description: "Archived and deprecated since May 2025. Still gets ~20K weekly npm downloads, but Playwright MCP now dominates at 70x the downloads. Know your options."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 236 stars (archive repo), ~19.9K weekly npm downloads, v2025.5.12 (last release May 2025), 7 tools, deprecated on npm, ~23.1K weekly PulseMCP visitors (#50 globally, ~955K all-time). Archived since May 2025.

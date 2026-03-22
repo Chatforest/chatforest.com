@@ -5,6 +5,7 @@ description: "Qdrant's official MCP server takes a deliberately minimalist appro
 og_description: "Qdrant's official MCP server gives AI agents semantic memory with just 2 tools and three transport protocols. The most adopted vector DB MCP server, but too minimal for serious use. Rating: 3/5."
 content_type: "Review"
 card_description: "Qdrant's first-party MCP server for AI-assisted semantic memory. 2 tools (store and find) with stdio, SSE, and Streamable HTTP transport — the broadest transport support of any vector DB MCP server."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 1,300 GitHub stars, 242 forks, 73 commits, v0.8.1, last release Dec 10, 2025, ~20.7K PyPI downloads/week, PulseMCP 326K all-time visitors (#104 globally, ~18.1K weekly, #90 this week). Apache-2.0.

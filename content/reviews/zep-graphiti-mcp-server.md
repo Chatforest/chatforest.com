@@ -5,6 +5,7 @@ description: "Graphiti is Zep's open-source temporal knowledge graph framework w
 og_description: "Zep's Graphiti MCP server builds temporal knowledge graphs for AI agents. Nine tools, multi-database support, open source (Apache 2.0), 24.1K stars. Rating: 4/5."
 content_type: "Review"
 card_description: "Zep's Graphiti MCP server for temporal AI agent memory. Nine tools across episode management, entity search, and fact retrieval. Open source, multi-database (FalkorDB/Neo4j), multi-LLM provider support."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 24.1K GitHub stars, 2.4K forks, 795 commits, 200 open issues, 121 open PRs. Latest release: mcp-v1.0.2 + graphiti-core v0.28.2 (Mar 11, 2026). ~106K PyPI downloads/week (~324K monthly, 4.5M all-time). Apache-2.0.

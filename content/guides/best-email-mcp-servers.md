@@ -5,6 +5,7 @@ description: "Personal email, enterprise email, transactional delivery, SMS, and
 og_description: "50+ email and notification MCP servers reviewed across Gmail, Outlook, transactional delivery, SMS/multi-channel, and push notifications. taylorwilsdon, Resend, Infobip, and more — with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to email and notification MCP servers in 2026. We've reviewed 50+ servers across personal email, enterprise email, transactional delivery, SMS/multi-channel, and push notifications. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Email is the most sensitive data most people have. Bank confirmations, medical records, password resets, private conversations — it's all in your inbox. Notifications are the outbound side: transactional emails, SMS alerts, push notifications, WhatsApp messages. Giving an AI agent access to either side deserves serious thought.

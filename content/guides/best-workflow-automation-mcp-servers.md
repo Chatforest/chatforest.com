@@ -5,6 +5,7 @@ description: "Low-code platforms, data pipeline orchestrators, code-first engine
 og_description: "20+ workflow automation MCP servers reviewed across n8n, Zapier, Make, Pipedream, ActivePieces, Airflow, Dagster, Prefect, Kestra, and Temporal. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to workflow automation MCP servers in 2026. We've reviewed 20+ servers across low-code platforms, data pipeline orchestrators, code-first engines, and event-driven schedulers. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Workflow automation is where MCP goes from "nice to have" to "genuinely changes how you work." Instead of navigating platform UIs to build workflows, check pipeline statuses, or debug failed runs, these servers let AI agents do it through natural language.

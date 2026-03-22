@@ -5,6 +5,7 @@ description: "Figma's official MCP server gives AI assistants direct access to d
 og_description: "Figma's official MCP server connects AI assistants to your design system — frames, variables, Code Connect, and code-to-canvas capture. 13 tools, OAuth, remote server at mcp.figma.com. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Figma's first-party MCP server for AI-assisted design-to-code workflows. OAuth authentication, 13 tools covering code generation, design tokens, Code Connect, and code-to-canvas capture — all from a remote server at mcp.figma.com."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 443 GitHub stars (guide repo), 13 tools, OAuth, remote server at mcp.figma.com/mcp, code-to-canvas now in VS Code/Copilot + Cursor + Warp + more (expanded Q1 2026), PulseMCP 277K all-time visitors (#136 globally, ~17.3K weekly, #94 this week), Framelink competitor at 13.8K stars / 1.5M PulseMCP visitors (#27 globally)

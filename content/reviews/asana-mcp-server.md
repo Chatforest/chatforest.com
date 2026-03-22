@@ -5,6 +5,7 @@ description: "Asana's official MCP server gives AI agents access to the Asana Wo
 og_description: "Asana's official MCP server: 44 tools for tasks, projects, goals, and portfolios. Hosted at mcp.asana.com, OAuth, Streamable HTTP. V2 launched Feb 2026. Rating: 4/5."
 content_type: "Review"
 card_description: "Asana's official MCP server for enterprise project management. 44 tools across tasks, projects, goals, portfolios, and teams. Hosted, OAuth-authenticated, Streamable HTTP transport."
+last_refreshed: 2026-03-21
 ---
 
 **At a glance:** Hosted at `mcp.asana.com/v2/mcp` — OAuth 2.0, Streamable HTTP, ~44 tools, 20 featured client integrations, ~186K all-time PulseMCP visitors (#184 globally, ~7.6K weekly), V1 shutdown May 11, 2026.

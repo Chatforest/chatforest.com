@@ -5,6 +5,7 @@ description: "CDN and edge computing MCP servers let AI agents manage content de
 og_description: "CDN & edge computing MCP servers: Cloudflare (3,500 stars, 2,500 API endpoints, Code Mode), Fastly (official, 34 stars, Go, CLI security), Akamai (community, 191 tools), Gcore (official, CDN + GPU Cloud). 10+ servers across 5 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "CDN & edge computing MCP servers across Cloudflare, Fastly, Akamai, Gcore, and Netlify. Cloudflare leads with 3,500+ stars and Code Mode covering 2,500 endpoints. Fastly ships official Go-based MCP with secure CLI wrapping. Community Akamai servers reach 191 tools for enterprise edge management."
+last_refreshed: 2026-03-15
 ---
 
 Content delivery networks are the invisible backbone of the modern web — **caching, routing, edge compute, security, and performance optimization**. CDN & edge computing MCP servers let AI agents manage these systems directly: purging caches, deploying edge workers, analyzing traffic patterns, configuring domains, and monitoring performance metrics.

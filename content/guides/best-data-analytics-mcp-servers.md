@@ -5,6 +5,7 @@ description: "Analytics platforms, data pipelines, visualization, and data wareh
 og_description: "60+ data & analytics MCP servers reviewed: dbt, Snowflake, Google Analytics, PostHog, Superset, Metabase, BigQuery, and more — with honest ratings and real data."
 content_type: "Comparison"
 card_description: "The definitive guide to data & analytics MCP servers in 2026. We've reviewed 60+ servers across analytics platforms, data pipelines, visualization, and data warehouses. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 Data teams are the next frontier for MCP adoption. The pattern is clear: instead of switching between your IDE and five analytics dashboards, data warehouse consoles, and pipeline orchestrators, you work through a single AI conversation. Query PostHog, build a dbt model, visualize the results, push to Snowflake — all without leaving your editor.

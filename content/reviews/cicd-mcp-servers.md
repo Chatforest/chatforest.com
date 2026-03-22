@@ -5,6 +5,7 @@ description: "CI/CD MCP servers let AI agents trigger builds, diagnose failures,
 og_description: "CI/CD MCP servers: GitHub MCP (27.9K stars, official), Jenkins plugin (66 stars, 15+ tools), CircleCI (80 stars, flaky test detection), GitLab (1.2K stars, 85+ tools). 15+ servers reviewed. Rating: 4/5."
 content_type: "Review"
 card_description: "CI/CD MCP servers across GitHub Actions, Jenkins, GitLab CI, CircleCI, Azure DevOps, and Argo CD. GitHub's official server dominates; Jenkins and CircleCI have unexpectedly strong integrations."
+last_refreshed: 2026-03-15
 ---
 
 CI/CD pipelines are the backbone of modern software delivery. When they break, development stops. Giving an AI agent access to your build system — to read logs, diagnose failures, trigger rebuilds, and analyze flaky tests — is one of the highest-value MCP integrations you can set up.

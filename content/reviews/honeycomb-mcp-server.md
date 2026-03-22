@@ -5,6 +5,7 @@ description: "Honeycomb's MCP integration gives AI agents access to high-cardina
 og_description: "Honeycomb's MCP server gives AI agents access to queries, traces, SLOs, triggers, boards, BubbleUp, heatmaps, and histograms. GA with Agent Skills and expanded capabilities. Rating: 4/5."
 content_type: "Review"
 card_description: "Honeycomb's MCP integration for AI-assisted observability. Query traces, metrics, SLOs, triggers, and boards via natural language. Now GA with Agent Skills, BubbleUp, heatmaps, histograms, and Automated Investigations."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 41 GitHub stars (deprecated self-hosted repo), 12 forks, last self-hosted commit Jan 24, 2025, 14 tools (self-hosted) / expanded hosted toolset, MIT (self-hosted), OAuth 2.1 (hosted), GA since Sep 2025, all Honeycomb tiers including free, ~335 weekly npm downloads (deprecated package), Agent Skills + Automated Investigations launched Mar 2026.

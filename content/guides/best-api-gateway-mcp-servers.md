@@ -5,6 +5,7 @@ description: "We compared 20+ API gateway and API management MCP servers across 
 og_description: "20+ API gateway MCP servers compared: Cloudflare (2,500+ endpoints, Code Mode), Kong Konnect (12 hosted tools), Traefik Hub (MCP Gateway, TBAC), AWS API Gateway (MCP proxy), Azure APIM, Apigee (zero-code), Gravitee (60+ tools), Bifrost (3.1K stars), ContextForge (3.5K stars). Honest recommendations from research."
 content_type: "Comparison"
 card_description: "Cloudflare (2,500+ endpoints, 2-tool Code Mode) vs Kong Konnect (hosted, 12 tools) vs Traefik Hub (MCP Gateway, TBAC, OTel) vs AWS API Gateway (MCP proxy) vs Azure APIM (REST-to-MCP) vs Apigee (zero-code MCP) vs Gravitee (60+ tools) vs Bifrost (3.1K stars, Go) vs ContextForge (3.5K stars, federation) — plus APISIX, Tyk, Lasso Security, Peta, and Agent Gateway."
+last_refreshed: 2026-03-22
 ---
 
 API gateways are the front door to every microservice, and now AI agents can manage routes, inspect traffic, configure plugins, analyze analytics, and even generate entire API clients — all through MCP. The convergence of API management and agentic AI is happening fast: Gartner projects 75% of API gateway vendors will integrate MCP features by end of 2026.

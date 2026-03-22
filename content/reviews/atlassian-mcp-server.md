@@ -5,6 +5,7 @@ description: "Atlassian's official Rovo MCP server connects AI agents to Jira, C
 og_description: "Atlassian's official Rovo MCP server gives AI agents access to Jira and Confluence. Here's the honest review of what works and what doesn't."
 content_type: "Review"
 card_description: "Atlassian's official Rovo MCP server connects AI agents to Jira, Confluence, and Compass via cloud-hosted OAuth 2.1. But a community server with 10x the stars may be the better choice."
+last_refreshed: 2026-03-14
 ---
 
 Jira and Confluence are the backbone of project management and documentation at thousands of companies. The problem is obvious: AI agents can't see your sprint board, can't search your knowledge base, and can't create tickets from conversation context without some kind of bridge.

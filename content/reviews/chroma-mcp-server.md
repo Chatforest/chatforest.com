@@ -5,6 +5,7 @@ description: "Chroma's official MCP server brings AI-native vector database mana
 og_description: "Chroma's official MCP server lets AI agents manage vector databases with 13 tools, four client modes, and six embedding providers. The most versatile vector DB MCP server available. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Chroma's first-party MCP server for AI-assisted vector database management. 13 tools covering collections, documents, semantic search, regex matching, and embedding configuration — the most comprehensive vector DB MCP experience available."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 515 GitHub stars · 102 forks · 13 tools · 11 open issues · v0.2.6 (last release Aug 2025, last commit Sep 2025) · ~32.4K weekly PyPI downloads · PulseMCP: 271K all-time visitors (#139 globally, ~25.4K weekly, #56 this week)

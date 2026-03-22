@@ -5,6 +5,7 @@ description: "The nspady/google-calendar-mcp server gives AI agents 13 tools for
 og_description: "Google Calendar MCP server: 13 tools for events, scheduling, and availability across multiple Google accounts. OAuth 2.0 with PKCE, npm package, multi-account support. Rating: 4/5."
 content_type: "Review"
 card_description: "Community-built MCP server for Google Calendar management. 13 tools covering events, bulk creation, scheduling, availability, and multi-account operations. OAuth 2.0 with PKCE, npm package, Docker support."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 1,100+ GitHub stars, 297 forks, v2.6.1, ~191K all-time PulseMCP visitors (#182 globally, ~2.8K weekly), 13 tools, MIT license.

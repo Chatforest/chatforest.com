@@ -5,6 +5,7 @@ description: "Slack vs Microsoft Teams vs Discord — which communication platfo
 og_description: "Slack vs Teams vs Discord MCP servers compared — official servers, auth models, search, and clear recommendations for AI agents."
 content_type: "Comparison"
 card_description: "Slack vs Microsoft Teams vs Discord — three communication platforms, three different MCP stories. Head-to-head comparison with clear recommendations."
+last_refreshed: 2026-03-22
 ---
 
 Communication platforms are where work happens. Slack channels, Teams threads, Discord servers — they hold institutional knowledge, decisions, and context that AI agents need but can't reach without an MCP integration.

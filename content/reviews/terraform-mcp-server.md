@@ -5,6 +5,7 @@ description: "HashiCorp's terraform-mcp-server gives AI agents real-time access 
 og_description: "Terraform MCP server: real-time registry docs, 35+ tools, HCP workspace management, dual transport, tool filtering. 1,300 stars, 323 commits. Rating: 4/5."
 content_type: "Review"
 card_description: "HashiCorp's Terraform MCP server — real-time registry documentation, 35+ tools across registry, workspace management, variable sets, stacks, and policy governance. Dual transport, Go-native."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 1,300 GitHub stars, 136 forks (up from 134), 323 commits, 10 releases, v0.4.0 (Jan 22, 2026), last commit Mar 10, 11 open issues, 20 open PRs. Available on AWS Marketplace (free) and Docker MCP Catalog. HashiCorp BSL.

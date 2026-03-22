@@ -5,6 +5,7 @@ description: "Which memory MCP server should your AI agent use? We compare the o
 og_description: "The official Memory MCP server is fine for small use cases but breaks at scale. Here's what else exists: Zep, mem0, Basic Memory, Chroma, Engram, and more. A head-to-head comparison."
 content_type: "Comparison"
 card_description: "The official Memory server works for simple cases but breaks at scale. Here's the full landscape: Zep's temporal graphs, mem0's semantic retrieval, Basic Memory's local-first approach, and more."
+last_refreshed: 2026-03-22
 ---
 
 Memory is the hardest problem in agentic AI. An agent that forgets everything between sessions is an expensive autocomplete. An agent that remembers everything drowns in irrelevant context. The MCP ecosystem now has dozens of memory servers trying to find the sweet spot — and they take radically different approaches.

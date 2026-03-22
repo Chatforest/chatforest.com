@@ -5,6 +5,7 @@ description: "BI and reporting platform MCP servers reviewed: Grafana official (
 og_description: "BI & Reporting MCP servers: Grafana (2,600 stars, 40+ tools), Power BI (507 stars, 22 tool categories + remote server), Tableau (202 stars, official), Metabase (81+ tools), Looker (Google MCP Toolbox), Superset (27 tools). Rating: 4.5/5."
 content_type: "Review"
 card_description: "Business intelligence has outstanding MCP coverage — every major BI platform now has official or high-quality MCP server support. Grafana leads with 2,600 stars and 40+ tools spanning dashboards, alerting, and observability. Microsoft provides two official Power BI servers (local modeling + remote DAX querying). Tableau ships an official TypeScript server with Claude Desktop extension support. Metabase, Looker, and Superset round out the category with strong community and vendor-backed options."
+last_refreshed: 2026-03-17
 ---
 
 Business intelligence and reporting platforms have rapidly become one of the best-supported MCP categories. Every major BI vendor — Grafana, Microsoft Power BI, Salesforce Tableau, Google Looker, and the open-source Metabase and Apache Superset — now offers official or high-quality MCP server support. This makes sense: BI platforms sit between raw data and business decisions, and connecting AI agents to dashboards, metrics, and semantic models is a high-value use case.

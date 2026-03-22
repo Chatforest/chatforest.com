@@ -5,6 +5,7 @@ description: "Analytics MCP servers let AI agents query traffic data, analyze us
 og_description: "Analytics MCP servers: Google Analytics (1.5K stars, official), PostHog (27+ tools, monorepo), Amplitude (24+ tools, OAuth hosted), Mixpanel (official beta). 15+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Analytics MCP servers across Google Analytics, PostHog, Amplitude, Mixpanel, Plausible, and Matomo. Official vendor servers lead; community implementations fill gaps for privacy-first platforms."
+last_refreshed: 2026-03-15
 ---
 
 Analytics is the MCP category where vendor adoption is strongest. Google, PostHog, Amplitude, and Mixpanel all ship official MCP servers. That's unusual — most categories still rely on community implementations. The trade-off: most of these official servers are cloud-hosted and require existing subscriptions to their platforms.

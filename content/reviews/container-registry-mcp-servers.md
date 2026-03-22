@@ -5,6 +5,7 @@ description: "Container registry MCP servers let AI agents search images, manage
 og_description: "Container registry MCP servers: Docker Hub (official, 13 tools, 130 stars), JFrog (official, 22+ tools, 112 stars), AWS ECR (via ECS+Finch, 10+ tools), Azure ACR (via microsoft/mcp, 2 tools), Harbor (11 tools), Nexus (16 tools), Trivy (image scanning). 12+ servers across 8 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Container registry MCP servers across Docker Hub, JFrog, AWS ECR, Azure ACR, Harbor, and Nexus. Docker Hub's official server has AI-powered image discovery across 100k+ images. JFrog covers the full artifact lifecycle with 22+ tools. AWS provides ECR integration through both ECS and Finch MCP servers."
+last_refreshed: 2026-03-15
 ---
 
 Container registries are the storage backbone of modern deployment — **every container that runs in production was pulled from one**. MCP servers for registries let AI agents search for images, manage repository metadata, push builds, and scan for vulnerabilities without the developer juggling CLI tools and web consoles.

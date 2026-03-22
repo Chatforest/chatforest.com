@@ -5,6 +5,7 @@ description: "Grafana's official MCP server connects AI agents to dashboards, Pr
 og_description: "Grafana's official MCP server gives AI agents access to dashboards, Prometheus, Loki, ClickHouse, alerts, incidents, and OnCall. 40+ tools, open source, 2,600 stars. Rating: 4/5."
 content_type: "Review"
 card_description: "Grafana's official MCP server for AI-assisted observability. 40+ configurable tools across dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, Sift, and admin management. Open source, Go, Apache 2.0."
+last_refreshed: 2026-03-14
 ---
 
 **At a glance:** 2,600+ GitHub stars, 303 forks, v0.11.3, 252K+ Docker Hub pulls, ~595K all-time PulseMCP visitors (#66 globally, ~20.8K weekly), 40+ tools across 15 categories, Apache 2.0.

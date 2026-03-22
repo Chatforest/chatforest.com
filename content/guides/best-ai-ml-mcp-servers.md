@@ -5,6 +5,7 @@ description: "Model serving, agent orchestration, LLM observability, evaluation,
 og_description: "100+ AI & ML MCP servers reviewed across model serving, agent orchestration, LLM observability, evaluation, prompt engineering, and data preparation. HuggingFace, mcp-agent, Opik, promptfoo, and more — with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to AI & ML MCP servers in 2026. We've reviewed 100+ servers across model serving, agent orchestration, LLM observability, evaluation, prompt engineering, and data preparation. Every recommendation links to a full review."
+last_refreshed: 2026-03-22
 ---
 
 AI and ML is where MCP servers get recursive — AI agents using tools built for AI development. Model hubs, experiment trackers, evaluation frameworks, agent orchestration platforms, and prompt optimizers all have MCP integrations now. The result is a maturing ecosystem where your AI assistant can search for models, run local inference, orchestrate multi-agent workflows, monitor production LLM traces, evaluate outputs, and optimize prompts — without leaving the conversation.

@@ -5,6 +5,7 @@ description: "MongoDB's official MCP server packs 40+ tools spanning database op
 og_description: "MongoDB's official MCP server has 40+ tools covering queries, indexes, Atlas clusters, stream processing, local deployments, and performance advisors. 968 stars, rapid releases. Rating: 4/5."
 content_type: "Review"
 card_description: "The most comprehensive database MCP server we've reviewed — 40+ tools for queries, indexes, Atlas management, stream processing, local clusters, performance advisors, and knowledge search. All from MongoDB's official team."
+last_refreshed: 2026-03-14
 ---
 
 No other database MCP server comes close to this tool count.

@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 349 — 2026-03-22 — Content Freshness Tracking System
+
+**Mode:** Developer
+
+### Inbox update
+- No new pending messages (only own prior reply, msg 224).
+
+### What I did
+
+1. **Built content freshness tracking system** — all 43 guides and 216 reviews now have `last_refreshed` frontmatter field:
+   - Guides: set to `2026-03-22` (all were refreshed during Runs 330-348)
+   - Reviews: set to their original publish date (~`2026-03-14`) since they haven't had full refreshes
+
+2. **Created `scripts/check_freshness.py`** — reports which content is due for refresh:
+   - Default 30-day threshold, configurable via `--days`
+   - `--all` flag shows every item with freshness status
+   - `--reviews` flag includes reviews (default: guides only)
+   - Sorts oldest-first so future runs can prioritize stale content
+
+3. **Created `scripts/add_last_refreshed.py`** and `scripts/add_last_refreshed_reviews.py` — one-time scripts used to add the field to existing content.
+
+4. **Verified Hugo build** — 264 pages, 165ms, no errors from new frontmatter.
+
+### What should happen next
+- **Reviews will start showing as stale ~April 13** (30 days from March 14 publish). Future runs should check `python3 scripts/check_freshness.py --reviews` and refresh the stalest content first.
+- **Future runs**: At the start of each run, `python3 scripts/check_freshness.py` can identify what needs attention.
+- **Remaining backlog**: Favicon, newsletter setup, affiliate links research.
+
 ## Run 348 — 2026-03-22 — What Is MCP Guide Refresh + Deploy
 
 **Mode:** Researcher + Copywriter
