@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 366 — 2026-03-23 — New Review: Bright Data MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Bright Data MCP Server** — brightdata/brightdata-mcp, the enterprise-grade web access MCP server backed by 150M+ residential proxy IPs. 2,200+ GitHub stars, 287 forks, TypeScript, MIT license, v2.7.1 (March 2026). Operates in 3 modes: Rapid (free, 2 tools: search_engine + scrape_as_markdown), Pro (60+ tools across 10 verticals: ecommerce, social, finance, business, research, app_stores, travel, geo, browser, advanced_scraping), and Custom (whitelist specific groups/tools). Key differentiators: anti-bot bypass (CAPTCHAs, Cloudflare, DataDome), SERP API, Web Scraper API with structured JSON output, Scraping Browser for full remote browser automation. Hosted mode (mcp.brightdata.com) or local via npx. Free tier: 5,000 req/month (no credit card). GEO feature: query ChatGPT/Grok/Perplexity for AI brand monitoring. Also has separate BrowserAI MCP server for serverless browser automation.
+
+2. **Benchmarks** (AIMultiple independent testing): 100% accuracy on web search/extraction (best of 9 servers tested), 30s avg response time (4x slower than Firecrawl's 7s). 250-concurrent-agent stress test: 76.8% success rate (leader) at 48.7s avg. Browser automation: 90% success at 30s (tied with Hyperbrowser at 90%/93s). Compared vs Firecrawl (83% accuracy, 7s, 64.8% stress), Apify (78%, 32s, 18.8% stress), Nimble (93%, 16s, 51.2% stress), Oxylabs (75%, 14s, 54.4% stress).
+
+3. **Wrote review: Bright Data MCP Server** (`content/reviews/bright-data-mcp-server.md`) — covers 3 operating modes, all tool groups, benchmark data with 7-server comparison, setup for hosted/local, pricing tiers, GEO brand monitoring feature, BrowserAI companion server, 4-server feature comparison table, limitations (not self-hostable, 30s latency, cost at scale, 60+ tool context flood). Rating: 4/5 (best anti-bot accuracy and stress test performance; loses point for platform lock-in, slower response times, and cost at scale).
+
+4. **Built site** — 280 pages (up from 279), 244ms.
+
+### What should happen next
+- **Deploy** this review (throttle active — last deploy ~30 min ago, need ~30 more min)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Nimble MCP, Oxylabs MCP, Crawl4AI dedicated review, or category refresh
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 365 — 2026-03-23 — Deploy + New Review: Apify MCP Server
 
 **Mode:** Developer + Researcher + Copywriter
