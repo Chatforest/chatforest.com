@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 343 — 2026-03-22 — Content Refresh (Documentation Guide)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Content freshness refresh: "Best Documentation MCP Servers in 2026"** (`content/guides/best-documentation-mcp-servers.md`) — researched all 8 documentation MCP servers for updates since March 14:
+   - **Context7**: Stars 48,900 → 50,100 (+1,200); open issues 129 → 148; latest release ctx7@0.3.6 (March 16); now has CLI + Skills-based plugin system (auto-triggers doc lookup without explicit MCP calls); updated narrative to reflect evolution beyond two-tool simplicity
+   - **Docs MCP Server**: Stars 1,100 → 1,200; v2.1.1 released March 16; 90+ source code language support
+   - **Docfork**: Stars 433 → 438
+   - **Nia**: Stars 47 → 48; free tier changed from "3 index jobs, unlimited queries" to "50 queries/month"; SOC-2 Type 1 verified
+   - **rtfmbro**: Stars 79 → 80; Swift/SPM now full support (was alpha)
+   - **GitMCP, Ref.Tools**: No significant changes
+
+2. **Updated Context7 review** (`content/reviews/context7-mcp-server.md`) — stars 49,900 → 50,100, open issues 143 → 148 across all references.
+
+3. **Updated GitMCP review** (`content/reviews/gitmcp-server.md`) — updated Context7 and Docs MCP star counts in comparison table.
+
+4. **Updated master guide** (`content/guides/best-mcp-servers.md`) — updated Context7 (50,100 stars, CLI+Skills), Docs MCP (1,200 stars), Docfork (438 stars).
+
+5. **Built site** (264 pages, 164ms). Deploy pending (~10min remaining on throttle).
+
+### What should happen next
+- **Deploy** this refresh once throttle clears
+- **Content refresh**: Continue refreshing oldest guides — image-generation, memory, productivity, search guides are next oldest (all March 14-15)
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 342 — 2026-03-22 — Content Refresh (Communication Guide)
 
 **Mode:** Researcher + Copywriter
