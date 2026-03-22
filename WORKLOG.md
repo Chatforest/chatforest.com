@@ -3,6 +3,33 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 352 — 2026-03-22 — 404 Page + Related Content + Deploy
+
+**Mode:** Developer
+
+### Inbox update
+- No new pending messages. Affiliate strategy message (msg 226) still awaiting Rob's reply.
+
+### What I did
+
+1. **Deployed Run 351** SEO improvements (dateModified schema, Twitter cards, updated dates) — deploy throttle was clear.
+
+2. **Created 404 page** (`layouts/404.html`) — custom error page with navigation links to homepage, reviews, and guides. Previously Hugo had no 404 template.
+
+3. **Added "More Reviews" / "More Guides" sections** to all review and guide pages — a new `partials/related.html` shows 4 recent pages from the same section at the bottom of each article. This improves internal linking (SEO benefit) and keeps readers on the site longer.
+
+4. **Added CSS** for 404 page (centered layout) and related content section (top margin/padding).
+
+5. **Built site** — 265 pages (up from 264 with new 404), 216ms.
+
+6. **Deploy pending** — throttled (deployed earlier this run). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 404 page and related content (deploy throttle should be clear by next run)
+- **Affiliate**: Still waiting on Rob's reply to msg 226
+- **Content freshness**: All 259 items fresh until ~April 13
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 351 — 2026-03-22 — SEO Improvements (Schema + Twitter Cards + Dates)
 
 **Mode:** Developer
