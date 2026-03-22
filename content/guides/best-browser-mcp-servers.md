@@ -16,7 +16,7 @@ But there are now multiple MCP servers competing for this role, each with a diff
 | Server | Approach | Rating | Best For |
 |--------|----------|--------|----------|
 | [Playwright MCP](/reviews/playwright-mcp-server/) | Accessibility tree targeting | 4.5/5 | Most projects |
-| [Puppeteer MCP](/reviews/puppeteer-mcp-server/) | CSS selectors + screenshots | 3.5/5 | Simple tasks, legacy projects |
+| [Puppeteer MCP](/reviews/puppeteer-mcp-server/) | CSS selectors + screenshots | 3.5/5 | ~~Simple tasks~~ **Deprecated** |
 | [Browserbase MCP](/reviews/browserbase-mcp-server/) | Cloud-hosted browsers | 3.5/5 | Production at scale |
 | Firecrawl MCP | Content extraction | — | Reading pages, not interacting |
 
@@ -30,7 +30,7 @@ This is the decision that matters most, and it separates these servers into two 
 
 The accessibility tree approach is fundamentally more reliable. It doesn't require a vision model, doesn't break when CSS changes, and maps directly to the semantic meaning of UI elements. This is why Playwright MCP has become the default recommendation for most new projects.
 
-**[Browserbase](/reviews/browserbase-mcp-server/)** (3.5/5) offloads the browser to the cloud. Your agent connects to a managed browser instance running on Browserbase's infrastructure, powered by Stagehand's AI-native element targeting — agents describe actions in natural language instead of crafting selectors. You don't worry about Chrome processes eating your RAM. The trade-off: you're paying for a service ($20-99+/mo after a 1-hour free tier), there's added latency from both network round-trips and LLM inference for element targeting, and the 8-tool set is thinner than Playwright's 25+.
+**[Browserbase](/reviews/browserbase-mcp-server/)** (3.5/5) offloads the browser to the cloud. Your agent connects to a managed browser instance running on Browserbase's infrastructure, powered by Stagehand's AI-native element targeting — agents describe actions in natural language instead of crafting selectors. You don't worry about Chrome processes eating your RAM. The trade-off: you're paying for a service ($20-99+/mo after a 1-hour free tier), there's added latency from both network round-trips and LLM inference for element targeting, and the 8-tool set is thinner than Playwright's 22+.
 
 **Firecrawl** takes a completely different approach — it's not really a browser automation server. It's a web scraping server. It extracts content from pages (converted to Markdown), crawls sitemaps, and maps websites. But it doesn't interact with pages. No clicking, no form filling, no navigation beyond URL-to-URL.
 
@@ -49,7 +49,7 @@ The accessibility tree approach is fundamentally more reliable. It doesn't requi
 | PDF generation | Yes | No | No | No |
 | Code generation | Yes (records sessions as test scripts) | No | No | No |
 | Content extraction | Via snapshots | Via JS evaluation | Via integration | Primary purpose |
-| Tool count | 25+ | 7 | 8 | 6 |
+| Tool count | 22 | 7 | 8 | 6 |
 | Local install | Yes | Yes | No (cloud) | No (API) |
 | Cost | Free | Free | Paid | Paid (free tier) |
 
@@ -57,7 +57,7 @@ The accessibility tree approach is fundamentally more reliable. It doesn't requi
 
 ### For most new projects: Playwright MCP
 
-This is the default answer in 2026. The accessibility tree targeting makes browser automation dramatically more reliable for AI agents. The tool set is comprehensive (25+ tools), it supports three browser engines, and the ecosystem has rallied behind it — Claude Desktop, VS Code, Cursor, and 15+ other MCP clients all recommend or bundle it.
+This is the default answer in 2026. The accessibility tree targeting makes browser automation dramatically more reliable for AI agents. The tool set is comprehensive (22 tools), it supports three browser engines, and the ecosystem has rallied behind it — Claude Desktop, VS Code, Cursor, and 15+ other MCP clients all recommend or bundle it.
 
 Read our [full Playwright MCP review](/reviews/playwright-mcp-server/) for the detailed breakdown.
 
@@ -73,19 +73,21 @@ Read our [full Playwright MCP review](/reviews/playwright-mcp-server/) for the d
 }
 ```
 
-### For simple tasks or existing Puppeteer projects: Puppeteer MCP
+### ~~For simple tasks or existing Puppeteer projects: Puppeteer MCP~~ — Deprecated
 
-If you need basic browser automation — navigate to a page, take a screenshot, fill a form — and you don't want to think about configuration, Puppeteer MCP still works. It's zero-config, straightforward, and reliable for simple use cases.
+**Update (March 2026):** Anthropic has officially deprecated and archived `@modelcontextprotocol/server-puppeteer`. The package has been moved to the [`servers-archived`](https://github.com/modelcontextprotocol/servers-archived) repository and is no longer maintained. If you're still using Puppeteer MCP, migrate to Playwright MCP — it's a straightforward switch and the accessibility tree approach is strictly better for AI agents.
 
-But be honest about the limitations: CSS selectors break on complex apps, it only supports Chrome, and it lacks features like file uploads and tab management. If your tasks are going to grow in complexity, start with Playwright instead.
+Community Puppeteer alternatives still exist for niche Chrome-only or stealth scraping workflows, but for general browser automation, Playwright MCP is the clear successor.
 
-Read our [full Puppeteer MCP review](/reviews/puppeteer-mcp-server/) for the detailed breakdown.
+Read our [full Puppeteer MCP review](/reviews/puppeteer-mcp-server/) for historical context.
 
 ### For production workloads at scale: [Browserbase](/reviews/browserbase-mcp-server/) (3.5/5)
 
-If you're running agents in production that need to automate browsers across hundreds or thousands of sessions, running local Chrome processes won't scale. Browserbase gives you managed, cloud-hosted browsers with session recording, anti-bot stealth, and Stagehand's natural language element targeting.
+If you're running agents in production that need to automate browsers across hundreds or thousands of sessions, running local Chrome processes won't scale. Browserbase gives you managed, cloud-hosted browsers with session recording, anti-bot stealth, and Stagehand's AI-native element targeting.
 
-The trade-off is cost ($20-99+/mo), vendor dependency, and a thinner tool set (8 tools vs. Playwright's 25+). There are also open bugs around screenshots and session initialization. For development and small-scale use, local Playwright is better. For production at scale, Browserbase is worth evaluating.
+**Update (March 2026):** Browserbase's MCP server now runs on **Stagehand v3.0**, which brings 20-40% faster performance across all core operations (act, extract, observe) via automatic caching, enhanced extraction across iframes and shadow roots, and multi-browser compatibility (Playwright, Puppeteer, Patchright drivers). Stagehand agents can now call tools and integrate with third-party MCP servers, expanding the scope of what browser agents can do. Stagehand v3 also removed the hard Playwright dependency, introducing a modular driver system.
+
+The trade-off is still cost ($20-99+/mo) and vendor dependency, though the tool set and performance have improved significantly. For development and small-scale use, local Playwright is better. For production at scale, Browserbase is worth evaluating.
 
 Read our [full Browserbase MCP review](/reviews/browserbase-mcp-server/) for the detailed breakdown.
 
@@ -107,11 +109,11 @@ But don't try to use it for browser automation. Firecrawl reads pages; it doesn'
 
 **Are your target pages complex (dynamic UIs, SPAs, frequently changing layouts)?**
 - **Yes** → Use Playwright MCP (accessibility tree handles complexity)
-- **No, just simple pages** → Puppeteer MCP works, but Playwright is still the safer bet
+- **No, just simple pages** → Playwright MCP (Puppeteer MCP is now deprecated)
 
 ## What About Stagehand?
 
-Stagehand (from Browserbase) takes a hybrid approach — it uses vision models and LLMs to identify page elements instead of CSS selectors or accessibility trees. Think of it as "AI-native" element targeting. It's promising for pages where neither CSS selectors nor accessibility trees work well (canvas apps, custom widgets), but it adds latency and cost from the extra LLM calls. Worth watching, not yet the default recommendation.
+Stagehand (from Browserbase) takes a hybrid approach — it uses vision models and LLMs to identify page elements instead of CSS selectors or accessibility trees. Think of it as "AI-native" element targeting. With **v3.0** (released early 2026), Stagehand is 44% faster on average, supports iframes and shadow roots, and works with multiple browser drivers beyond just Playwright. It's a strong option for pages where neither CSS selectors nor accessibility trees work well (canvas apps, custom widgets), though it still adds latency and cost from the LLM calls. Worth watching — and if you're already on Browserbase, it's now the default engine.
 
 ## The Bottom Line
 

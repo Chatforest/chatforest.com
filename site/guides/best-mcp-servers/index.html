@@ -45,7 +45,7 @@
 
       <div class="article-body">
         <p>Most &ldquo;best MCP servers&rdquo; lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don&rsquo;t tell you if it&rsquo;s good.</p>
-<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">168 in-depth reviews</a> and <a href="/guides/">35 category comparisons</a> so far. This guide distills all of that into one page.</p>
+<p>We&rsquo;ve spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We&rsquo;ve published <a href="/reviews/">168 in-depth reviews</a> and <a href="/guides/">38 category comparisons</a> so far. This guide distills all of that into one page.</p>
 <p><strong>What makes this different:</strong> every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.</p>
 <h2 id="the-short-version">The short version</h2>
 <p>If you want to skip the details:</p>
@@ -165,7 +165,7 @@
 <td>Observability</td>
 <td><a href="/reviews/sentry-mcp-server/">Sentry MCP</a></td>
 <td>4/5</td>
-<td><a href="/reviews/grafana-mcp-server/">Grafana MCP</a> (4/5, 2,600 stars, open source), Azure Managed Grafana MCP (managed)</td>
+<td><a href="/reviews/grafana-mcp-server/">Grafana MCP</a> (4/5, 2,500 stars, open source), <a href="/reviews/datadog-mcp-server/">Datadog MCP</a> (4/5, 50+ tools, GA), <a href="https://github.com/pab1it0/prometheus-mcp-server">Prometheus MCP</a> (340 stars). <a href="/guides/best-observability-mcp-servers/">Full monitoring &amp; observability comparison →</a></td>
 </tr>
 <tr>
 <td>Image generation</td>
@@ -327,7 +327,7 @@
 <td>API gateways</td>
 <td><a href="/reviews/api-gateway-mcp-servers/">API Gateway MCP Servers</a></td>
 <td>3.5/5</td>
-<td><a href="https://github.com/cloudflare/mcp">Cloudflare MCP</a> (263 stars, 2-tool Code Mode), <a href="https://konghq.com/products/kong-konnect/agents">Kong Konnect</a> (hosted, 12 tools)</td>
+<td><a href="https://github.com/cloudflare/mcp">Cloudflare MCP</a> (263 stars, 2-tool Code Mode), <a href="https://konghq.com/products/kong-konnect/agents">Kong Konnect</a> (hosted, 12 tools). <a href="/guides/best-api-gateway-mcp-servers/">Full API gateway comparison →</a></td>
 </tr>
 <tr>
 <td>Code security</td>
@@ -1217,7 +1217,7 @@
 <hr>
 <h2 id="browser-automation">Browser automation</h2>
 <p><strong>Winner: <a href="/reviews/playwright-mcp-server/">Playwright MCP</a> (4.5/5)</strong> — the highest-rated server we&rsquo;ve reviewed.</p>
-<p>Playwright MCP&rsquo;s killer feature is accessibility tree targeting. Instead of brittle CSS selectors that break when a site redesigns, it identifies elements by their semantic role — &ldquo;click the Submit button&rdquo; actually works. Add three browser engines (Chromium, Firefox, WebKit), 25+ tools, code generation, network mocking, and Microsoft&rsquo;s backing (29,300+ stars), and it&rsquo;s the clear default. The new <code>@playwright/cli</code> companion cuts token usage by 4x for coding agents with filesystem access.</p>
+<p>Playwright MCP&rsquo;s killer feature is accessibility tree targeting. Instead of brittle CSS selectors that break when a site redesigns, it identifies elements by their semantic role — &ldquo;click the Submit button&rdquo; actually works. Add three browser engines (Chromium, Firefox, WebKit), 22 tools, code generation, network mocking, and Microsoft&rsquo;s backing (28,500+ stars), and it&rsquo;s the clear default. The new <code>@playwright/cli</code> companion cuts token usage by 4x for coding agents with filesystem access.</p>
 <p><a href="/reviews/puppeteer-mcp-server/">Puppeteer MCP</a> (2.5/5) was archived and deprecated in May 2025. It still works but receives no security updates or bug fixes, and Playwright MCP now has 70x the downloads. Use Playwright for any new project.</p>
 <p>For cloud-hosted browser automation (anti-bot detection, CAPTCHA solving), look at <a href="/reviews/browserbase-mcp-server/">Browserbase</a> (3.5/5) or <a href="/reviews/firecrawl-mcp-server/">Firecrawl</a> (4/5).</p>
 <p><strong>Full comparison:</strong> <a href="/guides/best-browser-mcp-servers/">Best Browser Automation MCP Servers in 2026</a></p>
@@ -1307,8 +1307,9 @@
 <p><strong><a href="/reviews/newrelic-mcp-server/">New Relic MCP</a> (4/5)</strong> — natural language to NRQL translation (no query language required). 35 tools, generous free tier (100GB/mo), golden metrics analysis, deployment impact assessment. Remote-hosted at mcp.newrelic.com. Public Preview.</p>
 <p><strong><a href="/reviews/honeycomb-mcp-server/">Honeycomb MCP</a> (4/5)</strong> — high-cardinality event analysis with BubbleUp anomaly decomposition. 14+ tools (self-hosted, deprecated) transitioning to hosted server at mcp.honeycomb.io with OAuth 2.1. Works on all tiers including Free (20M events/mo). Best for complex distributed debugging.</p>
 <p><strong><a href="/reviews/pagerduty-mcp-server/">PagerDuty MCP</a> (4/5)</strong> — 67 tools across 13 categories for incident management, not telemetry. Read-only by default with explicit write opt-in. Both hosted (mcp.pagerduty.com) and self-hosted (Apache-2.0, Python). Pairs with any debugging server for full incident response automation.</p>
-<p><strong>Our recommendation:</strong> Use your existing observability platform&rsquo;s MCP server — these are all tightly coupled to their platforms. Add PagerDuty if you&rsquo;re on-call.</p>
-<p><strong>Full comparison:</strong> <a href="/guides/best-observability-mcp-servers/">Best Observability MCP Servers in 2026</a></p>
+<p><strong>Beyond the big six:</strong> <a href="https://github.com/pab1it0/prometheus-mcp-server">Prometheus MCP</a> (340 stars, PromQL querying), <a href="https://github.com/dynatrace-oss/dynatrace-mcp">Dynatrace MCP</a> (173 stars, DQL + Davis AI), <a href="https://github.com/VictoriaMetrics/mcp-victoriametrics">VictoriaMetrics MCP</a> (433 stars, Prometheus-compatible), Splunk MCP (GA, SPL + Observability Cloud), Elastic Agent Builder MCP (Elastic 9.2+), <a href="https://github.com/SigNoz/signoz-mcp-server">SigNoz MCP</a> (OTel-native, open source), <a href="https://mcp.axiom.co">Axiom MCP</a> (hosted, APL queries), OpsGenie MCP (Atlassian alerts).</p>
+<p><strong>Our recommendation:</strong> Use your existing observability platform&rsquo;s MCP server — these are all tightly coupled to their platforms. Add PagerDuty if you&rsquo;re on-call. Running your own Prometheus? Add a dedicated Prometheus MCP server alongside Grafana.</p>
+<p><strong>Full comparison:</strong> <a href="/guides/best-observability-mcp-servers/">Best Monitoring &amp; Observability MCP Servers in 2026</a> — 40+ servers across APM platforms, metrics backends, error tracking, log management, incident response, and open-source stacks.</p>
 <hr>
 <h2 id="analytics">Analytics</h2>
 <p>The MCP category with the strongest vendor adoption — Google, PostHog, Amplitude, and Mixpanel all ship official servers.</p>

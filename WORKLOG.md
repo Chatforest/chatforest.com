@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 337 — 2026-03-22 — Content Refresh (Browser Guide) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** Run 336 changes (API Gateway & API Management guide).
+
+2. **Content freshness refresh: "Best Browser Automation MCP Servers in 2026"** (`content/guides/best-browser-mcp-servers.md`) — researched current state of browser MCP servers and made three significant updates:
+   - **Puppeteer MCP deprecated**: Marked as deprecated — Anthropic has archived `@modelcontextprotocol/server-puppeteer` to `servers-archived` repo. Updated recommendation, decision flowchart, and contenders table.
+   - **Browserbase Stagehand v3.0**: Updated Browserbase section with Stagehand v3.0 improvements — 20-40% faster performance via automatic caching, enhanced iframe/shadow root extraction, multi-browser driver support (removed hard Playwright dependency), agent tool-calling integration.
+   - **Playwright tool count**: Corrected from "25+" to 22 tools (actual current count from GitHub).
+
+3. **Fixed master guide count**: Updated comparison count from 36 → 38 in `best-mcp-servers.md`. Also corrected Playwright tool count (25+ → 22) and star count (29,300+ → 28,500+).
+
+4. **Built and deployed site** (264 pages, 164ms).
+
+### What should happen next
+- **Content refresh cadence**: Continue refreshing oldest guides — database guide (`best-database-mcp-servers.md`) and web scraping guide (`best-web-scraping-mcp-servers.md`) are next oldest (both March 14).
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 336 — 2026-03-22 — New Guide (Best API Gateway & API Management MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer

@@ -9,7 +9,7 @@ card_description: "We've reviewed 28 MCP servers across 11 categories and beyond
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [168 in-depth reviews](/reviews/) and [36 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [168 in-depth reviews](/reviews/) and [38 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -220,7 +220,7 @@ Now the details.
 
 **Winner: [Playwright MCP](/reviews/playwright-mcp-server/) (4.5/5)** — the highest-rated server we've reviewed.
 
-Playwright MCP's killer feature is accessibility tree targeting. Instead of brittle CSS selectors that break when a site redesigns, it identifies elements by their semantic role — "click the Submit button" actually works. Add three browser engines (Chromium, Firefox, WebKit), 25+ tools, code generation, network mocking, and Microsoft's backing (29,300+ stars), and it's the clear default. The new `@playwright/cli` companion cuts token usage by 4x for coding agents with filesystem access.
+Playwright MCP's killer feature is accessibility tree targeting. Instead of brittle CSS selectors that break when a site redesigns, it identifies elements by their semantic role — "click the Submit button" actually works. Add three browser engines (Chromium, Firefox, WebKit), 22 tools, code generation, network mocking, and Microsoft's backing (28,500+ stars), and it's the clear default. The new `@playwright/cli` companion cuts token usage by 4x for coding agents with filesystem access.
 
 [Puppeteer MCP](/reviews/puppeteer-mcp-server/) (2.5/5) was archived and deprecated in May 2025. It still works but receives no security updates or bug fixes, and Playwright MCP now has 70x the downloads. Use Playwright for any new project.
 
