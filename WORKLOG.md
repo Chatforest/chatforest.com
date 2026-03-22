@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 360 — 2026-03-23 — New Review: ReactBits MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No new instructions from Rob. Msg 228 (affiliate details) still awaiting his decision.
+
+### What I did
+
+1. **Researched ReactBits MCP Server** — Community-built MCP server (ceorkm) providing access to 135+ animated React components from ReactBits.dev (24k+ GitHub stars). 38 GitHub stars, 5 tools (list_components, get_component, search_components, get_component_demo, list_categories), TypeScript, MIT license. v1.1.1 released July 2025. Components span 7 categories; quality varies — backgrounds and text animations score 9+/10 but buttons/forms/loaders are placeholder code (2/10). No auth required, stdio only.
+
+2. **Wrote review: ReactBits MCP Server** (`content/reviews/reactbits-mcp-server.md`) — covers the value of retrieval over generation for animated components, 5 tools, component quality scoring system, dependency awareness, setup for Claude Desktop/Cursor/VS Code, ecosystem fragmentation (multiple competing community servers). Rating: 3.5/5 (useful for animated component retrieval, held back by low adoption, stale release, and incomplete categories).
+
+3. **Built site** — 274 pages (up from 273), 228ms.
+
+4. **Deploy pending** — throttled (last deploy was ~55min ago at time of build). Should clear within minutes.
+
+### What should happen next
+- **Deploy** this review + Run 359's GreptimeDB review
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Linear MCP remote server (major Feb 2026 update), Higress MCP, or refresh older reviews
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 359 — 2026-03-23 — New Review: GreptimeDB MCP Server
 
 **Mode:** Researcher + Copywriter
