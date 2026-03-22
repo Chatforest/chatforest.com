@@ -162,11 +162,11 @@
 }
 </code></pre></div><p><strong>How it compares to Neon:</strong> Supabase goes wide (full backend), Neon goes deep (database). Neon&rsquo;s copy-on-write branching includes data; Supabase&rsquo;s is schema-only and requires a paid plan. For pure database work, Neon is better. For managing your entire Supabase stack from one server, Supabase wins. <a href="/reviews/supabase-mcp-server/">Read our full review</a>.</p>
 <h3 id="for-mongodb-mongodb-mcp-server">For MongoDB: MongoDB MCP Server</h3>
-<p><strong><a href="/reviews/mongodb-mcp-server/">MongoDB MCP</a></strong> (4/5) is the most comprehensive database MCP server we&rsquo;ve reviewed — 37+ tools across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search.</p>
+<p><strong><a href="/reviews/mongodb-mcp-server/">MongoDB MCP</a></strong> (4/5) is the most comprehensive database MCP server we&rsquo;ve reviewed — 40+ tools across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search.</p>
 <p><strong>What it offers:</strong></p>
 <ul>
 <li>21 database tools: find, aggregate, count, insert/update/delete, index management, schema inspection, explain, export, logs</li>
-<li>12 Atlas management tools: create projects, provision clusters, manage users, inspect access lists, monitor alerts</li>
+<li>13 Atlas management tools: create projects, provision clusters, manage users, inspect access lists, monitor alerts, Atlas Stream Processing</li>
 <li>4 local deployment tools: create and manage local MongoDB clusters via Docker</li>
 <li>Performance Advisor: suggested indexes, drop recommendations, schema advice, slow query analysis</li>
 <li>Knowledge search: natural language queries against MongoDB documentation</li>
@@ -185,9 +185,9 @@
     }
   }
 }
-</code></pre></div><p><strong>Why it wins:</strong> No other database MCP server covers the full lifecycle — from provisioning infrastructure to querying data to optimizing performance. The Performance Advisor integration is unique: your agent can ask why a query is slow, get index suggestions, and create the index, all through MCP. The 1-2 week release cadence shows serious investment. Set <code>MDB_MCP_READ_ONLY=true</code> — the default-writable mode is the main safety concern. <a href="/reviews/mongodb-mcp-server/">Read our full review</a>.</p>
+</code></pre></div><p><strong>Why it wins:</strong> No other database MCP server covers the full lifecycle — from provisioning infrastructure to querying data to optimizing performance. The v1.8 series added Atlas Stream Processing tools and process metrics. The Performance Advisor integration is unique: your agent can ask why a query is slow, get index suggestions, and create the index, all through MCP. The 1-2 week release cadence shows serious investment. Set <code>MDB_MCP_READ_ONLY=true</code> — the default-writable mode is the main safety concern. <a href="/reviews/mongodb-mcp-server/">Read our full review</a>.</p>
 <h3 id="for-self-hosted-postgresql-postgres-mcp-pro">For Self-Hosted PostgreSQL: Postgres MCP Pro</h3>
-<p><strong><a href="https://github.com/crystaldba/postgres-mcp">Postgres MCP Pro</a></strong> (crystaldba) is the community server that does everything the official one should have done. 2,300+ GitHub stars, actively maintained, and designed for real-world use.</p>
+<p><strong><a href="https://github.com/crystaldba/postgres-mcp">Postgres MCP Pro</a></strong> (crystaldba) is the community server that does everything the official one should have done. 2,400+ GitHub stars, actively maintained, and designed for real-world use.</p>
 <p><strong>What it offers:</strong></p>
 <ul>
 <li>Schema exploration (list schemas, objects, table details)</li>
@@ -402,7 +402,7 @@
 </tr>
 <tr>
 <td>Tool count</td>
-<td>37+</td>
+<td>40+</td>
 <td>~10</td>
 <td>~3</td>
 <td>2</td>
@@ -426,7 +426,7 @@
 <h2 id="decision-flowchart">Decision Flowchart</h2>
 <p><strong>What database engine are you using?</strong></p>
 <ul>
-<li><strong>MongoDB</strong> → <a href="/reviews/mongodb-mcp-server/">MongoDB MCP</a> (4/5, 37+ tools)</li>
+<li><strong>MongoDB</strong> → <a href="/reviews/mongodb-mcp-server/">MongoDB MCP</a> (4/5, 40+ tools)</li>
 <li><strong>PostgreSQL (Neon)</strong> → <a href="/reviews/neon-mcp-server/">Neon MCP</a></li>
 <li><strong>Supabase (full backend)</strong> → <a href="/reviews/supabase-mcp-server/">Supabase MCP</a></li>
 <li><strong>PostgreSQL (self-hosted/RDS/other)</strong> → Postgres MCP Pro</li>
@@ -449,7 +449,7 @@
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>The official database MCP servers served their purpose as reference implementations — they showed what was possible. But they&rsquo;re archived, one has a security vulnerability, and the community has built significantly better alternatives.</p>
-<p>For most developers in 2026, the answer depends on your database. <strong>MongoDB MCP</strong> (4/5) leads in raw capability with 37+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. <strong>Neon MCP</strong> (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. <strong>Supabase MCP</strong> (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. <strong>Postgres MCP Pro</strong> is the pick for self-hosted or other cloud PostgreSQL. <strong>DuckDB</strong> for analytics. <strong>DBHub</strong> for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.</p>
+<p>For most developers in 2026, the answer depends on your database. <strong>MongoDB MCP</strong> (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. <strong>Neon MCP</strong> (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. <strong>Supabase MCP</strong> (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. <strong>Postgres MCP Pro</strong> is the pick for self-hosted or other cloud PostgreSQL. <strong>DuckDB</strong> for analytics. <strong>DBHub</strong> for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.</p>
 <p>For the full details on the reviewed servers:</p>
 <ul>
 <li><a href="/reviews/mongodb-mcp-server/">MongoDB MCP Server Review</a> (4/5)</li>
