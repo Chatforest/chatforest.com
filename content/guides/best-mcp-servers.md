@@ -36,7 +36,7 @@ If you want to skip the details:
 | Version control (GitHub) | [GitHub MCP](/reviews/github-mcp-server/) | 4/5 | [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) (1,200 stars, GitLab), [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) (1,100 stars, Azure DevOps). [Full version control comparison →](/guides/best-version-control-mcp-servers/) |
 | Version control (local git) | [Git MCP](/reviews/git-mcp-server/) | 3/5 | [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) (183 stars, full push/pull/merge). [Full version control comparison →](/guides/best-version-control-mcp-servers/) |
 | Communication | [Slack MCP](/reviews/slack-mcp-server/) | 4/5 | [Teams MCP](/reviews/teams-mcp-servers/) (3.5/5, official + community), [Discord MCP](/reviews/discord-mcp-servers/) (3/5, community). [Full comparison →](/guides/best-communication-mcp-servers/) |
-| Observability | [Sentry MCP](/reviews/sentry-mcp-server/) | 4/5 | [Grafana MCP](/reviews/grafana-mcp-server/) (4/5, 2,600 stars, open source), Azure Managed Grafana MCP (managed) |
+| Observability | [Sentry MCP](/reviews/sentry-mcp-server/) | 4/5 | [Grafana MCP](/reviews/grafana-mcp-server/) (4/5, 2,500 stars, open source), [Datadog MCP](/reviews/datadog-mcp-server/) (4/5, 50+ tools, GA), [Prometheus MCP](https://github.com/pab1it0/prometheus-mcp-server) (340 stars). [Full monitoring & observability comparison →](/guides/best-observability-mcp-servers/) |
 | Image generation | Use-case dependent | — | Not [EverArt](/reviews/everart-mcp-server/) (2.5/5). [Full comparison →](/guides/best-image-generation-mcp-servers/) |
 | Documentation | [Context7](/reviews/context7-mcp-server/) | 3.5/5 | [GitMCP](/reviews/gitmcp-server/) (4/5, free, any repo) |
 | Productivity (knowledge) | [Notion MCP](/reviews/notion-mcp-server/) | 3.5/5 | [Obsidian MCP](/reviews/obsidian-mcp-servers/) (3.5/5, local-first) |
@@ -380,9 +380,11 @@ The most "first-party" category in the MCP ecosystem — every major platform ha
 
 **[PagerDuty MCP](/reviews/pagerduty-mcp-server/) (4/5)** — 67 tools across 13 categories for incident management, not telemetry. Read-only by default with explicit write opt-in. Both hosted (mcp.pagerduty.com) and self-hosted (Apache-2.0, Python). Pairs with any debugging server for full incident response automation.
 
-**Our recommendation:** Use your existing observability platform's MCP server — these are all tightly coupled to their platforms. Add PagerDuty if you're on-call.
+**Beyond the big six:** [Prometheus MCP](https://github.com/pab1it0/prometheus-mcp-server) (340 stars, PromQL querying), [Dynatrace MCP](https://github.com/dynatrace-oss/dynatrace-mcp) (173 stars, DQL + Davis AI), [VictoriaMetrics MCP](https://github.com/VictoriaMetrics/mcp-victoriametrics) (433 stars, Prometheus-compatible), Splunk MCP (GA, SPL + Observability Cloud), Elastic Agent Builder MCP (Elastic 9.2+), [SigNoz MCP](https://github.com/SigNoz/signoz-mcp-server) (OTel-native, open source), [Axiom MCP](https://mcp.axiom.co) (hosted, APL queries), OpsGenie MCP (Atlassian alerts).
 
-**Full comparison:** [Best Observability MCP Servers in 2026](/guides/best-observability-mcp-servers/)
+**Our recommendation:** Use your existing observability platform's MCP server — these are all tightly coupled to their platforms. Add PagerDuty if you're on-call. Running your own Prometheus? Add a dedicated Prometheus MCP server alongside Grafana.
+
+**Full comparison:** [Best Monitoring & Observability MCP Servers in 2026](/guides/best-observability-mcp-servers/) — 40+ servers across APM platforms, metrics backends, error tracking, log management, incident response, and open-source stacks.
 
 ---
 

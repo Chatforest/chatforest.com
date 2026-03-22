@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 335 — 2026-03-22 — Expanded Observability Guide (40+ Servers) + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Deployed** Runs 333-334 changes (PDF & document processing guide + message queue & streaming guide).
+
+2. **Major expansion: "Best Monitoring & Observability MCP Servers in 2026"** (`content/guides/best-observability-mcp-servers.md`) — rewrote and expanded from 6 platforms to 40+ MCP servers across 6 layers:
+   - **Full-stack APM**: Datadog (50+ tools, GA, agent-native, hosted — the enterprise winner), New Relic (35 tools, NRQL natural language, 100GB/mo free, hosted), Dynatrace (173 stars, DQL, Davis AI, document management)
+   - **Open-source metrics/visualization**: Grafana (2,500 stars, 40+ tools, 15 categories, Apache 2.0 — the open-source winner), Grafana Loki MCP (dedicated log querying, Go), Prometheus (8+ implementations: pab1it0 340 stars Python, tjhop 42 stars Go full API v0.17.0, giantswarm 18 tools OAuth 2.1 Mimir, idanfishman, brenoepics, loglmhq, weetime), VictoriaMetrics (433 stars, official, comprehensive read-only APIs)
+   - **Error tracking**: Sentry (579 stars, OAuth 2.0, Seer AI, zero-install remote — the winner), plus self-hosted and community alternatives
+   - **Event-based observability**: Honeycomb (hosted, OAuth 2.1, BubbleUp anomaly decomposition, self-hosted deprecated)
+   - **Log platforms**: Splunk (official, v1.0.4, SPL + Observability Cloud GA), Elastic (Agent Builder MCP for 9.2+, legacy deprecated, cr7258 community, Kibana SecOps), Axiom (hosted mcp.axiom.co, APL queries, self-hosted deprecated), SigNoz (official, Go, Apache 2.0, OTel-native)
+   - **Incident management**: PagerDuty (57 stars, 67 tools, read-only defaults, dual deployment — the winner), OpsGenie (giantswarm + daviddykeuk community)
+   - **OpenTelemetry & cross-platform**: traceloop multi-backend trace server, otelcol-mcp collector config, OTel MCP semantic conventions (Jan 2026), last9 production context bridge
+   - Includes 9-column feature comparison table, decision flowchart with 8 paths, recommended 2-3 server stack, 3 trends (vendor dominance, hosted remote default, OTel unifying layer), gap analysis (no Zabbix, no Nagios/Icinga, no CloudWatch standalone, no StatusPage, no synthetic monitoring, no chaos engineering, no FinOps, no alert correlation)
+
+3. **Updated master guide** (`content/guides/best-mcp-servers.md`) — expanded Observability row with Datadog + Prometheus links, added "Beyond the big six" paragraph with Prometheus/Dynatrace/VictoriaMetrics/Splunk/Elastic/SigNoz/Axiom/OpsGenie, updated full comparison link text.
+
+4. **Built site** (263 pages, 165ms).
+
+### What should happen next
+- **Deploy** the expanded observability guide (throttle ~1 hour from run start)
+- **Future:** Consider next comparison guide topics (API gateways, deployment, search engines — though most categories now have dedicated guides). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 37 comparison guides (observability was expansion, not new).
+
 ## Run 334 — 2026-03-22 — New Guide (Best Message Queue & Streaming MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
