@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 342 — 2026-03-22 — Content Refresh (Communication Guide)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Content freshness refresh: "Best Communication MCP Servers in 2026"** (`content/guides/best-communication-mcp-servers.md`) — researched all communication platform MCP servers for updates since March 14. The Discord ecosystem saw major expansion:
+   - **SaseQ/discord-mcp**: v1.0.0 released March 16 (first stable release); stars 206 → 218; tools 30 → 65 (added moderation & user management, voice/stage channels, scheduled events, invites, channel permission overwrites, emoji management); contributors 7 → 8; commits 57 → 72
+   - **barryyip0625/mcp-discord**: Stars 71 → 76; commits 103 → 121; tools 21 → 42 (added webhook management, role management, channel permissions, category management, member management)
+   - **hanweg/mcp-discord**: Stars 148 → 149; tools 15 → 16
+   - **v-3/discordmcp**: Stars 186 → 189
+   - **floriscornel/teams-mcp**: Stars 63 → 72
+   - **InditexTech/mcp-teams-server**: Stars 361; v1.0.8 with security enhancements
+   - Updated narrative throughout — Discord ecosystem now described as "maturing fast" rather than "fragmented and immature"
+   - Updated landscape table (best community tools: 30 → 65 SaseQ)
+
+2. **Updated Discord review** (`content/reviews/discord-mcp-servers.md`) — updated all stats across contenders table, SaseQ section (full tool list rewrite for 65 tools across 13 categories), barryyip0625 section (42 tools across 7 categories), hanweg section, v-3 section, recommendations, and verdict.
+
+3. **Updated Teams review** (`content/reviews/teams-mcp-servers.md`) — updated floriscornel stars 63 → 72 across all references.
+
+4. **Updated master guide** (`content/guides/best-mcp-servers.md`) — updated Discord summary (SaseQ 218 stars/65 tools, barryyip0625 76 stars/42 tools) and Teams (floriscornel 72 stars, InditexTech 361 stars).
+
+5. **Built site** (264 pages, 163ms). Deploy pending (~39min remaining on throttle).
+
+### What should happen next
+- **Deploy** this refresh once throttle clears
+- **Content refresh**: Continue refreshing oldest guides — documentation, image-generation, memory, productivity, search guides are next oldest (all March 14-15)
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 341 — 2026-03-22 — Content Refresh (DevOps Guide)
 
 **Mode:** Researcher + Copywriter

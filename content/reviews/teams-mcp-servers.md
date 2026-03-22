@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Teams MCP Servers — Official at Last, Community Got There First"
-date: 2026-03-14T19:20:00+09:00
+date: 2026-03-22T17:00:00+09:00
 description: "Microsoft now has an official Teams MCP server with 24 tools for chats, channels, and members. Two community servers were there first. Here's how they compare and which one to pick."
 og_description: "Microsoft now has an official Teams MCP server. Two community alternatives preceded it. Here's how they compare and which to pick."
 content_type: "Review"
@@ -128,7 +128,7 @@ The second community server takes the opposite approach from InditexTech: cover 
 
 **Transport:** stdio via npx.
 **Auth:** OAuth 2.0 with Microsoft Graph. Two modes: full access and read-only (`TEAMS_MCP_READ_ONLY=true`).
-**MIT license, TypeScript, 63 stars, 32 forks, 138 commits.**
+**MIT license, TypeScript, 72 stars, 32 forks, 138 commits.**
 
 ### What works well
 
@@ -148,7 +148,7 @@ The second community server takes the opposite approach from InditexTech: cover 
 
 **No Docker support.** Issue #1 has been open since the repo's creation (June 2025). Enterprise deployments that standardize on containers will need to write their own Dockerfile.
 
-**63 stars suggests limited adoption.** Compare with InditexTech's 358 or the broader microsoft/mcp catalog's 2,800. Lower adoption means less community validation, fewer bug reports, and a higher chance of encountering uncharted edge cases.
+**72 stars suggests limited adoption.** Compare with InditexTech's 358 or the broader microsoft/mcp catalog's 2,800. Lower adoption means less community validation, fewer bug reports, and a higher chance of encountering uncharted edge cases.
 
 **No calendar or meeting integration.** Issue #5 (calendar integration) has been open since June 2025. Teams meetings remain inaccessible.
 
@@ -184,7 +184,7 @@ The second community server takes the opposite approach from InditexTech: cover 
 
 **Use the official Work IQ Teams server if** you're building with Microsoft Agent 365, need enterprise-grade auth and compliance, can tolerate preview status, and your use case is chat/channel messaging without search or file operations.
 
-**Use floriscornel/teams-mcp if** you need message search, file uploads, or read-only mode. It's the most feature-complete Teams MCP server and the only one with KQL search. Accept that it's community-maintained with 63 stars and some auth issues.
+**Use floriscornel/teams-mcp if** you need message search, file uploads, or read-only mode. It's the most feature-complete Teams MCP server and the only one with KQL search. Accept that it's community-maintained with 72 stars and some auth issues.
 
 **Use InditexTech/mcp-teams-server if** your use case is posting to and reading from Teams channels — specifically thread-based workflows. Zero open issues, Docker support, and production maturity from a major enterprise (Inditex). Accept the narrow 5-tool scope.
 

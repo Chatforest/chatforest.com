@@ -356,9 +356,9 @@ These categories each have a clear default choice:
 
 **[Slack MCP](/reviews/slack-mcp-server/) (4/5)** — Slack's official server (launched Feb 2026). Hosted architecture at mcp.slack.com, OAuth scopes, granular privacy controls. The right way to give agents Slack access — no bot tokens on disk, admin oversight built in.
 
-**[Teams MCP Servers](/reviews/teams-mcp-servers/) (3.5/5)** — Microsoft shipped an official Work IQ Teams server (24 tools, hosted, OAuth via Entra ID) as part of the microsoft/mcp catalog. Full CRUD for chats, channels, teams, and members. Still in preview, lacks search and file operations, plain text only. Community alternatives from InditexTech (358 stars, 5 tools, zero open issues, Docker) and floriscornel (63 stars, 25 tools, KQL search, file uploads) fill the gaps. A half-step behind Slack.
+**[Teams MCP Servers](/reviews/teams-mcp-servers/) (3.5/5)** — Microsoft shipped an official Work IQ Teams server (24 tools, hosted, OAuth via Entra ID) as part of the microsoft/mcp catalog. Full CRUD for chats, channels, teams, and members. Still in preview, lacks search and file operations, plain text only. Community alternatives from InditexTech (361 stars, 5 tools, zero open issues, Docker) and floriscornel (72 stars, 25 tools, KQL search, file uploads) fill the gaps. A half-step behind Slack.
 
-**[Discord MCP Servers](/reviews/discord-mcp-servers/) (3/5)** — No official Discord MCP server exists. Five community alternatives fill the gap, led by SaseQ/discord-mcp (206 stars, Java, 30 tools) and hanweg/mcp-discord (148 stars, Python, 15 tools). All require bot tokens (no OAuth), no hosted option. The contrast with Slack's first-party server is stark — Discord's MCP story is fragmented and immature.
+**[Discord MCP Servers](/reviews/discord-mcp-servers/) (3/5)** — No official Discord MCP server exists. Five community alternatives fill the gap, led by SaseQ/discord-mcp (218 stars, Java, 65 tools — hit v1.0.0 in March 2026) and barryyip0625/mcp-discord (76 stars, TypeScript, 42 tools). All require bot tokens (no OAuth), no hosted option. The ecosystem is maturing fast but still lacks enterprise auth.
 
 **Full comparison:** [Best Communication MCP Servers in 2026](/guides/best-communication-mcp-servers/)
 

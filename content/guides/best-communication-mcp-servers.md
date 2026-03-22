@@ -1,6 +1,6 @@
 ---
 title: "Best Communication MCP Servers in 2026"
-date: 2026-03-14T20:50:00+09:00
+date: 2026-03-22T17:00:00+09:00
 description: "Slack vs Microsoft Teams vs Discord — which communication platform MCP server should your AI agent use? We compare official servers, auth models, search, and tool coverage with clear recommendations."
 og_description: "Slack vs Teams vs Discord MCP servers compared — official servers, auth models, search, and clear recommendations for AI agents."
 content_type: "Comparison"
@@ -21,7 +21,7 @@ We've reviewed all three: the [Slack MCP server](/reviews/slack-mcp-server/) (4/
 | Hosted endpoint | `mcp.slack.com` | `agent365.svc.cloud.microsoft` | None |
 | Auth model | OAuth (first-party) | OAuth (Entra ID) | Bot tokens only |
 | Tools (official) | ~15 | 24 | N/A |
-| Tools (best community) | N/A | 25 (floriscornel) | 30 (SaseQ) |
+| Tools (best community) | N/A | 25 (floriscornel) | 65 (SaseQ) |
 | Message search | Yes | No (official), Yes (floriscornel) | No |
 | File operations | No | No (official), Yes (floriscornel) | No |
 | Rich formatting | Yes | Plain text only | Varies |
@@ -52,7 +52,7 @@ Microsoft shipped an official server, which puts Teams ahead of Discord. But the
 
 **The official server** (24 tools) gives you full CRUD on chats, channels, teams, and members. Hosted at `agent365.svc.cloud.microsoft` with Entra ID OAuth. Enterprise-grade RBAC. OData query support for server-side filtering. But no search, no files, plain text only, and "Preview" status means Microsoft may change the API.
 
-**floriscornel/teams-mcp** (25 tools) is the community server that fills the gaps. KQL-based message search — the only Teams MCP server with search. File uploads with large file support. Read-only mode via environment variable. LLM-optimized markdown responses. But only 63 stars and some auth reliability issues.
+**floriscornel/teams-mcp** (25 tools) is the community server that fills the gaps. KQL-based message search — the only Teams MCP server with search. File uploads with large file support. Read-only mode via environment variable. LLM-optimized markdown responses. But only 72 stars and some auth reliability issues.
 
 **InditexTech/mcp-teams-server** (5 tools) is the most production-ready: zero open issues, Docker support, versioned releases from a major enterprise (Inditex). Narrowly focused on thread workflows — start threads, reply, read replies.
 
@@ -60,18 +60,18 @@ Microsoft shipped an official server, which puts Teams ahead of Discord. But the
 
 ### Discord — Waiting for Official (3/5)
 
-Discord has 200+ million monthly active users and is where the developer and AI community lives. And it has no official MCP server. The gap is filled by five community projects, none with more than 206 stars, none with OAuth, none hosted.
+Discord has 200+ million monthly active users and is where the developer and AI community lives. And it has no official MCP server. The gap is filled by five community projects, none with more than 218 stars, none with OAuth, none hosted. But the ecosystem is maturing fast — two servers shipped major expansions in March 2026.
 
 **The options:**
-- **SaseQ/discord-mcp** (206 stars, Java, 30 tools) — broadest admin coverage: channels, roles, categories, webhooks, DMs. Most contributors (7). But Java means heavyweight deployment.
-- **barryyip0625/mcp-discord** (71 stars, TypeScript, 21 tools) — only option with forum support, most active development (103 commits). Both stdio and HTTP transports.
-- **hanweg/mcp-discord** (148 stars, Python, 15 tools) — simplest setup, only option with moderation tools. Pairs with `mcp-discord-raw` for raw API access.
+- **SaseQ/discord-mcp** (218 stars, Java, 65 tools) — hit v1.0.0 on March 16 with massive expansion: moderation, voice/stage channels, scheduled events, invites, permission overwrites, and emoji management joined the existing channel/role/webhook tools. Most contributors (8). But Java means heavyweight deployment.
+- **barryyip0625/mcp-discord** (76 stars, TypeScript, 42 tools) — only option with forum support, most active development (121 commits). Added webhook management, role management, channel permissions, and category management. Both stdio and HTTP transports.
+- **hanweg/mcp-discord** (149 stars, Python, 16 tools) — simplest setup. Pairs with `mcp-discord-raw` for raw API access.
 - **HardHeadHackerHead/discord-mcp** (10 stars, TypeScript, 134 tools) — covers nearly the entire Discord API but zero community validation.
-- **v-3/discordmcp** (186 stars, ~5 tools) — early-mover advantage in stars, but 2 commits and minimal features.
+- **v-3/discordmcp** (189 stars, ~5 tools) — early-mover advantage in stars, but 2 commits and minimal features.
 
 **The fundamental problem:** Bot tokens. Every Discord MCP server uses a single bot token with static permissions. No per-user consent, no granular scopes, no audit trail. If the token leaks, full access to every server the bot is in. Compare this to Slack's OAuth with per-scope consent and admin visibility.
 
-**Bottom line:** Pick based on your specific need — forums (barryyip0625), admin breadth (SaseQ), simplicity (hanweg). But consider waiting for an official server. Given that Slack, GitHub, Stripe, and now Microsoft have all shipped official MCP servers, Discord will likely follow.
+**Bottom line:** The Discord MCP ecosystem took a big step forward in March 2026 — SaseQ hit v1.0.0 with 65 tools and barryyip0625 doubled to 42. Pick based on your specific need — forums (barryyip0625), full admin control (SaseQ), simplicity (hanweg). But the bot-token auth model still limits enterprise adoption. Given that Slack, GitHub, Stripe, and now Microsoft have all shipped official MCP servers, Discord will likely follow.
 
 ## Feature Comparison
 
@@ -142,7 +142,7 @@ The communication MCP landscape has a clear hierarchy: Slack leads, Teams is cat
 
 **Teams (3.5/5)** has the right architecture but isn't finished. The official server is in preview, missing search and rich formatting. The community fills the gaps but fragments the experience. When the official server exits preview and adds search, it will match Slack.
 
-**Discord (3/5)** needs an official server. The community options work for specific use cases, but bot-token auth, no search, no hosted option, and five competing projects aren't a sustainable ecosystem. Discord is the most important platform in AI/dev circles — the gap between its importance and its MCP maturity is the widest of any platform we've reviewed.
+**Discord (3/5)** is maturing rapidly — SaseQ's v1.0.0 (65 tools) and barryyip0625's expansion (42 tools) show serious community investment. But bot-token auth, no search, no hosted option, and no official backing still limit enterprise adoption. Discord is the most important platform in AI/dev circles — the gap between its importance and its MCP maturity is narrowing but still significant.
 
 ---
 
