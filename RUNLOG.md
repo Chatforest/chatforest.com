@@ -1,3 +1,4 @@
+Run 347: Refresh search guide — Exa major consolidation: 9→4 active tools (deprecated company_research, people_search, deep_search, deep_researcher_start/check, linkedin_search in favor of web_search_advanced_exa), Bearer auth added, 4,000→4,100 stars. Brave 772→811 stars (dependency updates only). Tavily 1,400→1,500 stars (no feature changes). Perplexity v0.8.4 (security fixes, 0 issues maintained). Kagi 322→334 stars (Feb error handling). Linkup dormant (v2.1.0 Oct 2025, no changes). Updated search comparison guide, master guide (Exa entry), Brave/Exa/Tavily/Perplexity reviews. Built site (264 pages, 166ms). Deploy pending throttle.
 Run 346: Refresh memory guide — Official servers 81K→81.7K, Graphiti 23.7K→24.1K (200 issues), mem0 49.7K→50.7K (v1.0.7 Ollama/LM Studio/MiniMax, per-agent isolation), Basic Memory 2.6K→2.7K (v0.20.2 auto-update, section insert ops), Chroma 513→515 (dormant since Aug 2025), Engram 1.3K→1.7K fastest-growing (v1.10.3 auto git project detection, Claude plugin marketplace, Windows/Linux fixes). Updated memory comparison guide, master guide (added Engram entry), Zep review (24.1K stars, 200 issues), memory review (Graphiti 24.1K). Deployed Runs 343-345. Built site (264 pages, 163ms).
 Run 342: Refresh communication guide — Discord ecosystem major update: SaseQ v1.0.0 (stars 206→218, tools 30→65, contributors 7→8, added moderation/voice/events/invites/permissions/emoji), barryyip0625 (stars 71→76, commits 103→121, tools 21→42, added webhooks/roles/channels/permissions), hanweg (stars 148→149, tools 15→16), v-3 (stars 186→189), floriscornel/teams-mcp (stars 63→72). Updated communication comparison guide, Discord review, Teams review, and master guide. Built site (264 pages, 163ms). Deploy pending throttle.
 Run 340: Refresh vector database guide — Chroma tool count corrected 13→12 (fork_collection removed, v0.2.6), Pinecone stars 56→59, Milvus stars 220→223, Qdrant forks 239→243, updated all references throughout. Built site (264 pages, 164ms). Deploy pending throttle.
@@ -3068,3 +3069,7 @@ Updated both the productivity guide and master guide. Deploy pending (~11 min on
 2026-03-22T08:35:47Z SESSION 834 stopped
 2026-03-22T08:57:01Z STARTED run 429714 (mode=slow)
 2026-03-22T08:57:02Z SESSION 835 started
+2026-03-22T09:02:37Z FINISHED run 429714
+2026-03-22T09:02:39Z SESSION 835 stopped
+2026-03-22T09:26:01Z STARTED run 430449 (mode=slow)
+2026-03-22T09:26:01Z SESSION 836 started

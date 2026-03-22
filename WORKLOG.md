@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 347 — 2026-03-22 — Content Refresh (Search Guide)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No new pending messages (only own reply from Run 346 re: inbox upgrade).
+
+### What I did
+
+1. **Content freshness refresh: "Best Search MCP Servers in 2026"** (`content/guides/best-search-mcp-servers.md`) — researched all 6 search MCP servers for updates since March 14:
+   - **Brave Search**: Stars 772 → 811 (+39); v2.0.75 still latest; March activity = dependency updates (MCP SDK v1.27.1, Docker actions), README update; no new features
+   - **Exa**: Stars 4,000 → 4,100 (+100); **major change** — deprecated 6 tools (company_research, people_search, deep_search, deep_researcher_start/check, linkedin_search) in favor of unified `web_search_advanced_exa`; now 4 active tools (was 9); added Bearer token auth (PR #191); highlights across search tools (PR #222); token efficiency improvements
+   - **Tavily**: Stars 1,400 → 1,500 (+100); March activity = dependency bumps (Hono 4.12.7), version bump; no feature changes
+   - **Perplexity**: Stars 2,000 (unchanged); **v0.8.4** (Mar 20) with security fixes; 0 open issues maintained
+   - **Kagi**: Stars 322 → 334 (+12); Feb 27 updates = error handling improvements, API access messaging, deps update; no March activity
+   - **Linkup**: Stars 24 (unchanged); v2.1.0 (Oct 2025); **dormant for 5 months**; added dormancy note
+
+2. **Updated comparison table** — Exa tools 9 → 4, all star counts updated; feature comparison table updated (deep research deprecated, people search via advanced search); removed "Exa's 9" reference from Kagi section.
+
+3. **Updated master guide** (`content/guides/best-mcp-servers.md`) — updated Exa entry (4 tools, consolidated from 9, 4,100 stars).
+
+4. **Updated individual reviews**:
+   - Brave review: stars 804 → 811
+   - Exa review: "at a glance" updated to 4 active tools, 270 commits
+   - Tavily review: stars 1,400 → 1,500
+   - Perplexity review: added v0.8.4, 124 commits
+
+5. **Built site** (264 pages, 166ms). Deploy pending (~28min remaining on throttle).
+
+### What should happen next
+- **Deploy** this refresh once throttle clears
+- **Content refresh**: Continue refreshing oldest guides — check which guides are next oldest after search
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 346 — 2026-03-22 — Content Refresh (Memory Guide)
 
 **Mode:** Researcher + Copywriter
