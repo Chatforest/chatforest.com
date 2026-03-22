@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 359 — 2026-03-23 — New Review: GreptimeDB MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No new instructions from Rob. Msg 228 (affiliate details) still awaiting his decision.
+
+### What I did
+
+1. **Researched GreptimeDB MCP Server** — Official MCP server from GreptimeTeam for their unified observability database (metrics, logs, traces). 26 GitHub stars, 10 tools (6 query/analysis + 4 pipeline management), Python, MIT license. v0.4.7 released March 2, 2026. Standout security: read-only enforcement, encoded bypass prevention, automatic data masking, audit logging, DNS rebinding protection. GreptimeDB itself is at v1.0.0-rc.2 (~6,100 stars), supports SQL + PromQL natively.
+
+2. **Wrote review: GreptimeDB MCP Server** (`content/reviews/greptimedb-mcp-server.md`) — covers the unified observability niche, 10 tools across query and pipeline management, security-first design, setup for Claude Desktop/Code, PromQL compatibility, prompt templates. Rating: 3.5/5 (strong security and unique niche, held back by low adoption and experimental status).
+
+3. **Built site** — 273 pages (up from 272), 233ms.
+
+4. **Deploy pending** — throttled (last deploy was ~27min ago). Next run should deploy.
+
+### What should happen next
+- **Deploy** this review (deploy throttle should clear by next run)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: ReactBits MCP, Linear MCP remote server, or refresh older reviews
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 358 — 2026-03-22 — New Review: Semgrep MCP Server + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

@@ -1,3 +1,4 @@
+Run 359: New review: GreptimeDB MCP Server — official MCP server for GreptimeDB unified observability database (metrics/logs/traces). 26 GitHub stars, 10 tools (execute_sql, execute_tql, query_range, describe_table, explain_query, health_check, list/create/dryrun/delete pipelines), Python, MIT, v0.4.7. Standout security posture: read-only enforcement, encoded bypass prevention, automatic data masking, audit logging, DNS rebinding protection. 7 prompt templates, 3 transport modes. GreptimeDB at v1.0.0-rc.2 (~6,100 stars), PromQL-compatible. Rating: 3.5/5. Built site (273 pages, 233ms). Deploy pending throttle.
 Run 348: Refresh "What Is MCP?" foundational guide — updated transport from SSE to Streamable HTTP (deprecated May 2025, sunset Apr 2026), expanded SDKs from 2 to 7 official (added Java/Spring, Kotlin/JetBrains, Go/Google, C#/Microsoft, Rust), PulseMCP directory 9K→12,370+ servers, added MCP Clients section (9 clients: Claude Desktop/Code, VS Code, Cursor, Windsurf, Zed, Cline, Continue.dev, Replit), updated ecosystem maturity (2026 roadmap: enterprise readiness, agent-to-agent communication). All 39 guides now refreshed. Deployed Run 347. Built site (264 pages, 164ms).
 Run 347: Refresh search guide — Exa major consolidation: 9→4 active tools (deprecated company_research, people_search, deep_search, deep_researcher_start/check, linkedin_search in favor of web_search_advanced_exa), Bearer auth added, 4,000→4,100 stars. Brave 772→811 stars (dependency updates only). Tavily 1,400→1,500 stars (no feature changes). Perplexity v0.8.4 (security fixes, 0 issues maintained). Kagi 322→334 stars (Feb error handling). Linkup dormant (v2.1.0 Oct 2025, no changes). Updated search comparison guide, master guide (Exa entry), Brave/Exa/Tavily/Perplexity reviews. Built site (264 pages, 166ms). Deploy pending throttle.
 Run 346: Refresh memory guide — Official servers 81K→81.7K, Graphiti 23.7K→24.1K (200 issues), mem0 49.7K→50.7K (v1.0.7 Ollama/LM Studio/MiniMax, per-agent isolation), Basic Memory 2.6K→2.7K (v0.20.2 auto-update, section insert ops), Chroma 513→515 (dormant since Aug 2025), Engram 1.3K→1.7K fastest-growing (v1.10.3 auto git project detection, Claude plugin marketplace, Windows/Linux fixes). Updated memory comparison guide, master guide (added Engram entry), Zep review (24.1K stars, 200 issues), memory review (Graphiti 24.1K). Deployed Runs 343-345. Built site (264 pages, 163ms).
@@ -3162,3 +3163,36 @@ Deploy is throttled (~28 min remaining). Next run should deploy these two new re
 2026-03-22T13:18:55Z SESSION 844 stopped
 2026-03-22T13:43:01Z STARTED run 439014 (mode=slow)
 2026-03-22T13:43:02Z SESSION 846 started
+
+
+**Run 356 complete.** Here's what got done:
+
+1. **New review: HubSpot MCP Server** — HubSpot's official public beta MCP server connecting AI agents to CRM data. Covers both server types (remote CRM + local developer), OAuth 2.0 auth, nine launch tools. Rated 4/5.
+
+2. **Deployed** all pending content (Runs 355-356) to chatforest.com — Google Colab MCP, Zapier MCP, and HubSpot MCP reviews now live. Site at 270 pages.
+
+**Next priorities:** Waiting on Rob's affiliate decision (msg 228). Ahrefs MCP and Semgrep MCP are good candidates for next reviews.
+2026-03-22T13:47:48Z FINISHED run 439014
+2026-03-22T13:47:49Z SESSION 846 stopped
+2026-03-22T14:12:01Z STARTED run 439734 (mode=slow)
+2026-03-22T14:12:02Z SESSION 847 started
+Run 357 complete. Wrote and committed a review for the **Ahrefs MCP Server** — their official remote MCP server with OAuth auth, covering backlink analysis, keyword research, domain ratings, and batch analysis. Rated 4/5.
+
+Site built successfully at 271 pages. Deploy is throttled (~33 min remaining) — next run will deploy.
+2026-03-22T14:14:53Z FINISHED run 439734
+2026-03-22T14:14:54Z SESSION 847 stopped
+2026-03-22T14:41:01Z STARTED run 440438 (mode=slow)
+2026-03-22T14:41:02Z SESSION 848 started
+**Run 358 complete.** Here's what I did:
+
+1. **Wrote a new review: Semgrep MCP Server** — covers the official security scanning MCP server (641 stars, 7 tools) that addresses "who watches AI-generated code?" Built into the Semgrep CLI with a plugin model (MCP + Hooks + Skills) for Cursor, Claude Code, and Windsurf. Free for up to 10 contributors. Rating: 4/5.
+
+2. **Built site** — 272 pages, 226ms.
+
+3. **Deployed** Runs 357-358 (Ahrefs MCP + Semgrep MCP reviews) to chatforest.com.
+
+No inbox messages. Still waiting on Rob's affiliate decision (msg 228).
+2026-03-22T14:47:06Z FINISHED run 440438
+2026-03-22T14:47:07Z SESSION 848 stopped
+2026-03-22T15:10:01Z STARTED run 441223 (mode=slow)
+2026-03-22T15:10:02Z SESSION 849 started
