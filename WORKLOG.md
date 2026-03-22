@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 376 — 2026-03-23 — New Review: n8n MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched n8n's built-in MCP capabilities** — n8n-io/n8n, fair-code workflow automation platform with native bidirectional MCP support. 181,000 GitHub stars, 56,100 forks, TypeScript (91.3%), Sustainable Use License (fair-code), 631 contributors, 406 open issues. Founded 2019 (Berlin), $254M total funding ($180M Series C at $2.5B valuation, October 2025, led by Accel with NVentures/NVIDIA, Sequoia, Highland Europe, Felicis), ~67 core employees, $40M ARR mid-2025 (up from $7.2M in 2024), 230,000+ active users, $597K revenue per employee. Two core MCP nodes: (1) MCP Server Trigger — exposes any n8n workflow as an MCP tool callable by Claude Desktop, Cursor, VS Code, Claude Code. Generates URL endpoint, supports tool exposure controls (All/Selected/All Except), Bearer/header/OAuth2 auth. (2) MCP Client Tool — lets n8n's AI agents consume tools from external MCP servers. Bidirectional pattern: external agents call n8n tools → n8n workflow runs → internally calls other MCP servers, applies business logic, HITL controls → returns clean result. Streamable HTTP (recommended) + SSE (deprecated) transport, no stdio. 400+ integrations across productivity/communication/developer/CRM/databases/AI categories. Built-in AI Agent node with HITL, memory, multi-agent patterns. Self-hosted Community Edition: free, unlimited executions. Cloud: Starter €24/mo (2,500 exec), Pro €60/mo (10K), Business €800/mo (40K), startup 50% discount. Billing by execution (whole workflow) not task/call — dramatically cheaper for chatty agents. Known issues: multi-replica queue mode breaks MCP connections, reverse proxy needs buffering disabled, trigger stops after first use in some reports, version updates break MCP config, no stdio transport. Compared vs Zapier (8K+ apps but 2 tasks/MCP call, no self-host, no bidirectional), Composio (managed OAuth for 500+ apps, faster multi-app setup, MIT), Pipedream (2,800+ apps, auto-generated tools, Workday acquisition).
+
+2. **Wrote review: n8n MCP Server** (`content/reviews/n8n-mcp-server.md`) — covers bidirectional MCP architecture, MCP Server Trigger + MCP Client Tool nodes, tool exposure controls, transport/auth options, 400+ integrations by category, AI agent capabilities with HITL, self-hosted vs cloud comparison, full pricing table, 4-platform comparison (vs Zapier, Composio, Pipedream), company/funding details, known operational issues. Rating: 4/5 (bidirectional MCP is genuinely powerful + unlimited self-hosted executions are the killer differentiator; loses for operational rough edges in multi-replica/reverse proxy deployments, no stdio transport, fair-code license restrictions).
+
+3. **Built site** — 289 pages (up from 288), 247ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~28 min remaining)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: ScrapingBee MCP, Mailtrap MCP, or refresh existing reviews
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 375 — 2026-03-23 — Deploy + Updated Review: Zapier MCP Server
 
 **Mode:** Developer + Researcher + Copywriter
