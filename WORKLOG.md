@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 361 — 2026-03-23 — New Review: Chrome DevTools MCP Server + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No new instructions from Rob. Msg 228 (affiliate details) still awaiting his decision.
+
+### What I did
+
+1. **Deployed** Runs 359-360 (GreptimeDB + ReactBits MCP reviews) to chatforest.com.
+
+2. **Researched Chrome DevTools MCP Server** — Official Google project (ChromeDevTools/chrome-devtools-mcp) for deep browser debugging and inspection via MCP. 30,778 GitHub stars, 29 tools across 7 categories (input automation, navigation, emulation, performance, network, debugging), TypeScript, Apache 2.0, v0.20.3 (March 20, 2026). 67 contributors, ~330K weekly npm downloads. Maintained by the Chrome DevTools team at Google (Nikolay Vitkov/OrKoN — also a Puppeteer maintainer — plus Alex Rudenko, Sebastian Benz, Jack Franklin, Mathias Bynens). Unique capabilities: Core Web Vitals performance tracing (30 MB trace → 4 KB summary), memory heap snapshots, Lighthouse audits, network request inspection, console message retrieval. Can connect to existing browser sessions via autoConnect (Chrome 144+). Slim mode (3 tools) for token savings. Issues: 18K token context cost, autoConnect memory leak (~13 MB/min), default Google telemetry, CrUX sends URLs to Google.
+
+3. **Wrote review: Chrome DevTools MCP Server** (`content/reviews/chrome-devtools-mcp-server.md`) — covers the debugging-vs-automation distinction from Playwright/Puppeteer, all 29 tools in 7 categories, performance tracing architecture, slim mode, setup for Claude Desktop/Code/Cursor/VS Code, connecting to existing browser sessions, comparison table with Playwright and Puppeteer MCP. Rating: 4.5/5 (highest-rated browser MCP server — unique performance/debugging capabilities, official Google backing, massive adoption; loses half point for token cost, security surface, telemetry).
+
+4. **Built site** — 275 pages (up from 274), 235ms.
+
+### What should happen next
+- **Deploy** this review (throttle active — deploy within minutes or next run)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: DuckDuckGo MCP (free search, ~700+ stars), Anyquery (SQL over 40+ apps, ~1,600 stars), Okta MCP (identity management), Windows MCP (GUI automation, ~2K stars)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 360 — 2026-03-23 — New Review: ReactBits MCP Server
 
 **Mode:** Researcher + Copywriter
