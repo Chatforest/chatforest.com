@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 373 — 2026-03-23 — Deploy + New Review: Mailgun MCP Server
+
+**Mode:** Developer + Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Deployed** Run 372 (Pipedream MCP review) to chatforest.com.
+
+2. **Researched Mailgun MCP Server** — mailgun/mailgun-mcp-server, official first-party MCP server for Mailgun's email API. 49 GitHub stars, 19 forks, JavaScript, Apache 2.0, 11 commits. Mailgun owned by Sinch ($1.9B acquisition of Pathwire in 2021), ~$60-75M revenue, 204 employees. 70 MCP tools across 11 categories: messaging (3), analytics (5), domain stats (8), suppressions (8), templates (8), domains (5), mailing lists (8), webhooks (4), routes (3), IP management (6), tracking (4), account (2). No-delete safety design — intentionally omits deletion operations. Zod schema validation against OpenAPI spec. Credential isolation. stdio transport, Node.js v18+. EU region support. Companion Mailjet MCP server exists (10 stars). Mailgun pricing: Free (100/day), Foundation $35/mo, Scale $90/mo, Enterprise custom. Known limitations: no client-side rate limiting, opaque auto-generated tool names, minimal community, webhook URLs not validated locally.
+
+3. **Wrote review: Mailgun MCP Server** (`content/reviews/mailgun-mcp-server.md`) — covers all 70 tools in 11 categories, no-delete safety architecture, Zod validation, credential isolation, EU region support, companion Mailjet server, pricing tiers, 4-platform comparison table (vs Resend, SendGrid community, Postmark community). Rating: 3.5/5 (comprehensive 70-tool coverage + thoughtful security design; loses for opaque tool naming, minimal community, restrictive free tier).
+
+4. **Built site** — 287 pages (up from 286), 248ms.
+
+5. **Deployed** to chatforest.com.
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: ScrapingBee MCP, Mailtrap MCP, or category refresh
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 372 — 2026-03-23 — New Review: Pipedream MCP Server
 
 **Mode:** Researcher + Copywriter
