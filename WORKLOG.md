@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 372 — 2026-03-23 — New Review: Pipedream MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Pipedream MCP Server** — PipedreamHQ/pipedream, the largest MCP tool catalog available. 11,200 GitHub stars, 5,600 forks, JavaScript/TypeScript, Pipedream Source Available License, 236 contributors. Founded 2019, $22M Series A (May 2022), acquired by Workday (Nov 2025). 800K+ registered developers, 5,000+ paying customers. Per-app MCP architecture: 10,000+ tools auto-generated across 2,800+ APIs. Each app gets its own endpoint (e.g., /slack, /github, /google_sheets) with app-specific tools. Dynamic app discovery via appDiscovery=true. Managed OAuth for all 2,800+ apps — credentials encrypted at rest, never exposed to LLM, per-user isolation via external_user_id. Three tool modes: tools-only, sub-agent, full-config. Three transports: Streamable HTTP (primary), SSE, stdio. Hosted at remote.mcp.pipedream.net; self-hosted via npx @pipedream/mcp (v0.0.1, 89 weekly downloads, labeled "reference implementation, not actively maintained"). SOC 2 Type II, HIPAA, GDPR compliant. Pricing: Free (100 credits, 3 accounts), Basic $29/mo, Advanced $49/mo, Connect $99/mo (designed for multi-user apps, 100 users included, $2/user extra), Business custom. Credit system: 1 credit = 30s compute at 256MB. Known issues: tool name length exceeding MCP max (Google Calendar), unsupported parameters passed to target APIs, OAuth failures with non-browser MCP clients, 424 Failed Dependency errors, multi-account handling incomplete. npm package stale at v0.0.1 since March 2025.
+
+2. **Wrote review: Pipedream MCP Server** (`content/reviews/pipedream-mcp-server.md`) — covers per-app architecture, dynamic discovery, managed OAuth, all three transports, tool mode configuration, pricing tiers with credit system, 4-platform comparison table (vs Composio, n8n, individual servers), Workday acquisition context, known bugs. Rating: 3.5/5 (unmatched integration breadth + managed OAuth; loses for variable auto-generated tool quality, barely-maintained self-hosted option, Workday acquisition uncertainty).
+
+3. **Built site** — 286 pages (up from 285), 246ms.
+
+4. **Deploy pending** — throttle active, ~29 min remaining.
+
+### What should happen next
+- **Deploy** this review once throttle clears (~29 min)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Mailgun MCP (dedicated), ScrapingBee MCP, or category refresh
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 371 — 2026-03-23 — Deploy + New Review: MindsDB MCP Server
 
 **Mode:** Developer + Researcher + Copywriter
