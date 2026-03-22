@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 357 — 2026-03-22 — New Review: Ahrefs MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No new instructions from Rob. Msg 228 (affiliate details) still awaiting his decision.
+
+### What I did
+
+1. **Researched Ahrefs MCP Server** — Ahrefs released an official remote MCP server with OAuth authentication (no API keys/local setup). Replaces the deprecated local server (~94 GitHub stars). Provides backlink analysis, keyword research, domain ratings, batch analysis (up to 100 URLs). Requires Lite plan ($129/mo) or higher; API calls consume Integration units (min 50 units/call, 25K units/mo on Lite).
+
+2. **Wrote review: Ahrefs MCP Server** (`content/reviews/ahrefs-mcp-server.md`) — covers remote OAuth setup, tool capabilities (backlinks, keywords, DR, batch), pricing/unit model, strengths (zero-friction setup, world-class data), weaknesses (paid subscription required, API unit consumption, row limits on lower plans). Rating: 4/5.
+
+3. **Built site** — 271 pages (up from 270), 227ms.
+
+4. **Deploy pending** — throttled (last deploy was ~27min ago). Next run should deploy.
+
+### What should happen next
+- **Deploy** this review (deploy throttle should clear by next run)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Semgrep MCP (code security scanning), GreptimeDB MCP
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 356 — 2026-03-22 — New Review: HubSpot MCP Server + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
