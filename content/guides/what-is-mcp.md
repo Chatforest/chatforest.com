@@ -1,12 +1,14 @@
 ---
 title: "What Is MCP? A Developer's Guide to the Model Context Protocol"
-date: 2026-03-14T01:06:39+09:00
+date: 2026-03-22T19:00:00+09:00
 description: "MCP (Model Context Protocol) lets AI models connect to external tools through a standard interface. Here's what developers need to know."
 content_type: "Guide"
 card_description: "MCP lets AI models connect to external tools through a standard protocol. Here's what you need to know to start using it."
 ---
 
 MCP stands for Model Context Protocol. It's an open standard that lets AI models connect to external tools and data sources through a consistent interface. If you've used function calling or tool use with an LLM, MCP is the next step: a standardized way to package, distribute, and connect those tools.
+
+With 12,000+ servers listed in directories like PulseMCP and official SDKs in seven languages, MCP has gone from experiment to industry standard in just over a year.
 
 Here's what you need to know.
 
@@ -23,21 +25,29 @@ This doesn't scale. Every combination of AI model + external tool required its o
 ```
 ┌──────────────┐     MCP Protocol     ┌──────────────┐
 │  MCP Client  │ ◄──────────────────► │  MCP Server  │
-│ (Claude, etc)│    JSON-RPC over     │ (filesystem,  │
-│              │    stdio or HTTP     │  GitHub, DB)  │
+│ (Claude, VS  │    JSON-RPC over     │ (filesystem,  │
+│  Code, etc.) │  stdio or Streamable │  GitHub, DB)  │
+│              │        HTTP          │              │
 └──────────────┘                      └──────────────┘
 ```
 
 1. **MCP Server** — A program that exposes tools, resources, or prompts. It might give access to a filesystem, a database, a web API, or anything else.
 2. **MCP Client** — The AI application (like Claude Desktop) that connects to servers and makes their tools available to the model.
-3. **The Protocol** — JSON-RPC messages over stdio (local servers) or HTTP with SSE (remote servers). The client discovers what tools the server offers, then calls them as needed.
+3. **The Protocol** — JSON-RPC messages over stdio (local servers) or Streamable HTTP (remote servers). The client discovers what tools the server offers, then calls them as needed.
 
-When you add an MCP server to Claude Desktop:
-1. Claude Desktop starts the server process
+When you add an MCP server to a client like Claude Desktop:
+1. The client starts the server process (or connects to a remote server via Streamable HTTP)
 2. The server announces its capabilities (what tools it has)
-3. When the AI model decides it needs a tool, Claude Desktop calls the server
+3. When the AI model decides it needs a tool, the client calls the server
 4. The server executes the tool and returns results
 5. The model incorporates the results into its response
+
+### Transports: Local vs. Remote
+
+MCP supports two transport types:
+
+- **stdio** — For local servers. The client launches the server as a subprocess and communicates via standard input/output. Simple, fast, no network required.
+- **Streamable HTTP** — For remote servers. The server runs as an HTTP service that any client can connect to. Replaced the earlier HTTP+SSE transport (deprecated May 2025, sunset April 2026). Supports streaming responses, multiple concurrent clients, and server-to-client notifications.
 
 ## The Three Things a Server Can Expose
 
@@ -69,7 +79,7 @@ Pre-built prompt templates that the server provides. Less common but useful for 
 
 ## Setting Up Your First MCP Server
 
-The fastest way to try MCP is with Claude Desktop.
+The fastest way to try MCP is with Claude Desktop (other clients like VS Code, Cursor, and Windsurf also work — see the clients section below).
 
 **Step 1:** Open your Claude Desktop config file.
 - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
@@ -102,17 +112,38 @@ That's it. You now have an AI agent with file system access.
 
 The ecosystem is growing fast:
 - **Official MCP Registry** — The canonical source, backed by Anthropic and GitHub
-- **PulseMCP** — The largest community directory with 9,000+ servers listed
+- **PulseMCP** — The largest community directory with 12,370+ servers listed (and growing daily)
 - **npm / PyPI** — Many servers are published as packages (`@modelcontextprotocol/server-*` on npm)
 - **GitHub** — Search for "mcp-server" to find community-built options
 
 Not all servers are equal. Some are well-maintained reference implementations, others are weekend projects that haven't been updated in months. This is one reason ChatForest exists — to help you figure out which ones are actually worth installing.
 
+## MCP Clients
+
+MCP is client-agnostic — a server built once works with any compliant client. Major clients include:
+
+- **Claude Desktop** — Anthropic's desktop app, the original MCP client
+- **Claude Code** — Anthropic's CLI coding agent with full MCP support
+- **VS Code** — GitHub Copilot supports MCP servers via extensions
+- **Cursor** — Built-in MCP support, no extension needed
+- **Windsurf** — MCP integration in the AI code editor
+- **Zed** — Native MCP support in the editor
+- **Cline** — Open-source VS Code extension with MCP support
+- **Continue.dev** — Open-source AI coding assistant with MCP support
+- **Replit** — Cloud IDE with MCP server support
+
+If you build an MCP server, it works everywhere. That's a key advantage over proprietary plugin systems.
+
 ## Building Your Own MCP Server
 
-If you can write a function, you can build an MCP server. The official SDKs handle the protocol layer:
-- **TypeScript:** `@modelcontextprotocol/sdk`
-- **Python:** `mcp`
+If you can write a function, you can build an MCP server. Official SDKs now cover seven languages:
+- **TypeScript:** `@modelcontextprotocol/sdk` (v1.27+)
+- **Python:** `mcp` (v1.2+)
+- **Java:** Official SDK maintained with Spring
+- **Kotlin:** Multiplatform SDK (JVM, Native, JS, Wasm), maintained with JetBrains
+- **Go:** Official SDK maintained with Google
+- **C#:** Official SDK maintained with Microsoft
+- **Rust:** Official SDK
 
 A minimal Python MCP server:
 
@@ -141,4 +172,4 @@ If you build software, MCP matters for two reasons:
 1. **As a user:** MCP servers extend what AI tools can do for you. File access, database queries, API calls, deployment tools — the ecosystem grows with every new server.
 2. **As a builder:** Wrapping your API or tool as an MCP server makes it accessible to every AI agent in the ecosystem. It's a distribution channel for your tool's capabilities.
 
-The MCP ecosystem is early. The protocol is stable, the tooling is solid, and the adoption curve is steep. Now is a good time to start building with it.
+The MCP ecosystem has matured rapidly. The current spec (November 2025) is stable, official SDKs cover seven languages, and the 2026 roadmap focuses on enterprise readiness (audit trails, SSO-integrated auth, gateway behavior) and agent-to-agent communication. With 12,000+ servers already built, adoption has moved past early-adopter into mainstream developer tooling.
