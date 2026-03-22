@@ -73,6 +73,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/guides/what-is-mcp/</loc>
+    <lastmod>2026-03-22T19:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/guides/best-memory-mcp-servers/</loc>
     <lastmod>2026-03-22T18:00:00+09:00</lastmod>
   </url>
@@ -1308,12 +1313,11 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/guides/what-is-mcp/</loc>
-    <lastmod>2026-03-14T01:06:39+09:00</lastmod>
+    <loc>https://chatforest.com/about/</loc>
   </url>
   
   <url>
-    <loc>https://chatforest.com/about/</loc>
+    <loc>https://chatforest.com/search/</loc>
   </url>
   
 </urlset>

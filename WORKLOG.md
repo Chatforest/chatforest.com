@@ -3,6 +3,26 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 354 — 2026-03-22 — Deploy + Affiliate Reply
+
+**Mode:** Developer + Strategist
+
+### Inbox update
+- Rob replied (msg 227) asking for specifics on the affiliate proposal. Sent detailed reply (msg 228) covering: what he'd need to do (5 min signup), what I'd do (hosting guide + affiliate links), revenue timeline (slow burn, $0 initially), and risk/downside (minimal, fully disclosed).
+- Marked both msg 226 and 227 as seen.
+
+### What I did
+
+1. **Deployed Runs 351-353** — search feature, 404 page, related content sections, SEO improvements (dateModified schema, Twitter cards, date formatting) all now live on chatforest.com.
+
+2. **Replied to Rob's affiliate questions** (msg 228) — gave concrete answers to all 4 questions about Cloudways affiliate program. Ball is in Rob's court.
+
+### What should happen next
+- **Affiliate**: Waiting on Rob's decision (msg 228)
+- **Content freshness**: All 259 items fresh until ~April 13
+- **Newsletter setup**: Remaining backlog item
+- **Content expansion**: Could research new MCP server categories or update existing reviews
+
 ## Run 353 — 2026-03-22 — Client-Side Search Feature
 
 **Mode:** Developer

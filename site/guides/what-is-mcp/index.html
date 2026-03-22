@@ -10,6 +10,10 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/guides/what-is-mcp/">
   <meta property="og:site_name" content="ChatForest">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What Is MCP? A Developer&#39;s Guide to the Model Context Protocol — ChatForest">
+  <meta name="twitter:description" content="MCP (Model Context Protocol) lets AI models connect to external tools through a standard interface. Here&#39;s what developers need to know.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   
 </head>
@@ -25,6 +29,7 @@
       <a href="/reviews/">Reviews</a>
       <a href="/guides/">Guides</a>
       <a href="/about/">About</a>
+      <a href="/search/">Search</a>
     </nav>
   </div>
 </header>
@@ -37,7 +42,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>2026-03-14 01:06:39</span>
+        <span>Published Mar 22, 2026 · Updated Mar 22, 2026</span>
       </div>
 
       <h1 class="article-title">What Is MCP? A Developer&#39;s Guide to the Model Context Protocol</h1>
@@ -45,6 +50,7 @@
 
       <div class="article-body">
         <p>MCP stands for Model Context Protocol. It&rsquo;s an open standard that lets AI models connect to external tools and data sources through a consistent interface. If you&rsquo;ve used function calling or tool use with an LLM, MCP is the next step: a standardized way to package, distribute, and connect those tools.</p>
+<p>With 12,000+ servers listed in directories like PulseMCP and official SDKs in seven languages, MCP has gone from experiment to industry standard in just over a year.</p>
 <p>Here&rsquo;s what you need to know.</p>
 <h2 id="the-problem-mcp-solves">The Problem MCP Solves</h2>
 <p>Every AI tool integration used to be bespoke. Want Claude to read files? Build a custom integration. Want GPT to query a database? Write another one. Want either of them to work with GitHub? Two more.</p>
@@ -53,22 +59,29 @@
 <h2 id="how-it-works-in-60-seconds">How It Works (in 60 Seconds)</h2>
 <pre><code>┌──────────────┐     MCP Protocol     ┌──────────────┐
 │  MCP Client  │ ◄──────────────────► │  MCP Server  │
-│ (Claude, etc)│    JSON-RPC over     │ (filesystem,  │
-│              │    stdio or HTTP     │  GitHub, DB)  │
+│ (Claude, VS  │    JSON-RPC over     │ (filesystem,  │
+│  Code, etc.) │  stdio or Streamable │  GitHub, DB)  │
+│              │        HTTP          │              │
 └──────────────┘                      └──────────────┘
 </code></pre><ol>
 <li><strong>MCP Server</strong> — A program that exposes tools, resources, or prompts. It might give access to a filesystem, a database, a web API, or anything else.</li>
 <li><strong>MCP Client</strong> — The AI application (like Claude Desktop) that connects to servers and makes their tools available to the model.</li>
-<li><strong>The Protocol</strong> — JSON-RPC messages over stdio (local servers) or HTTP with SSE (remote servers). The client discovers what tools the server offers, then calls them as needed.</li>
+<li><strong>The Protocol</strong> — JSON-RPC messages over stdio (local servers) or Streamable HTTP (remote servers). The client discovers what tools the server offers, then calls them as needed.</li>
 </ol>
-<p>When you add an MCP server to Claude Desktop:</p>
+<p>When you add an MCP server to a client like Claude Desktop:</p>
 <ol>
-<li>Claude Desktop starts the server process</li>
+<li>The client starts the server process (or connects to a remote server via Streamable HTTP)</li>
 <li>The server announces its capabilities (what tools it has)</li>
-<li>When the AI model decides it needs a tool, Claude Desktop calls the server</li>
+<li>When the AI model decides it needs a tool, the client calls the server</li>
 <li>The server executes the tool and returns results</li>
 <li>The model incorporates the results into its response</li>
 </ol>
+<h3 id="transports-local-vs-remote">Transports: Local vs. Remote</h3>
+<p>MCP supports two transport types:</p>
+<ul>
+<li><strong>stdio</strong> — For local servers. The client launches the server as a subprocess and communicates via standard input/output. Simple, fast, no network required.</li>
+<li><strong>Streamable HTTP</strong> — For remote servers. The server runs as an HTTP service that any client can connect to. Replaced the earlier HTTP+SSE transport (deprecated May 2025, sunset April 2026). Supports streaming responses, multiple concurrent clients, and server-to-client notifications.</li>
+</ul>
 <h2 id="the-three-things-a-server-can-expose">The Three Things a Server Can Expose</h2>
 <h3 id="1-tools">1. Tools</h3>
 <p>Functions the AI can call. &ldquo;Read this file,&rdquo; &ldquo;run this SQL query,&rdquo; &ldquo;create this GitHub issue.&rdquo; Tools are the most common capability.</p>
@@ -88,7 +101,7 @@
 <h3 id="3-prompts">3. Prompts</h3>
 <p>Pre-built prompt templates that the server provides. Less common but useful for servers that want to suggest specific interaction patterns.</p>
 <h2 id="setting-up-your-first-mcp-server">Setting Up Your First MCP Server</h2>
-<p>The fastest way to try MCP is with Claude Desktop.</p>
+<p>The fastest way to try MCP is with Claude Desktop (other clients like VS Code, Cursor, and Windsurf also work — see the clients section below).</p>
 <p><strong>Step 1:</strong> Open your Claude Desktop config file.</p>
 <ul>
 <li>macOS: <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
@@ -114,16 +127,35 @@
 <p>The ecosystem is growing fast:</p>
 <ul>
 <li><strong>Official MCP Registry</strong> — The canonical source, backed by Anthropic and GitHub</li>
-<li><strong>PulseMCP</strong> — The largest community directory with 9,000+ servers listed</li>
+<li><strong>PulseMCP</strong> — The largest community directory with 12,370+ servers listed (and growing daily)</li>
 <li><strong>npm / PyPI</strong> — Many servers are published as packages (<code>@modelcontextprotocol/server-*</code> on npm)</li>
 <li><strong>GitHub</strong> — Search for &ldquo;mcp-server&rdquo; to find community-built options</li>
 </ul>
 <p>Not all servers are equal. Some are well-maintained reference implementations, others are weekend projects that haven&rsquo;t been updated in months. This is one reason ChatForest exists — to help you figure out which ones are actually worth installing.</p>
-<h2 id="building-your-own-mcp-server">Building Your Own MCP Server</h2>
-<p>If you can write a function, you can build an MCP server. The official SDKs handle the protocol layer:</p>
+<h2 id="mcp-clients">MCP Clients</h2>
+<p>MCP is client-agnostic — a server built once works with any compliant client. Major clients include:</p>
 <ul>
-<li><strong>TypeScript:</strong> <code>@modelcontextprotocol/sdk</code></li>
-<li><strong>Python:</strong> <code>mcp</code></li>
+<li><strong>Claude Desktop</strong> — Anthropic&rsquo;s desktop app, the original MCP client</li>
+<li><strong>Claude Code</strong> — Anthropic&rsquo;s CLI coding agent with full MCP support</li>
+<li><strong>VS Code</strong> — GitHub Copilot supports MCP servers via extensions</li>
+<li><strong>Cursor</strong> — Built-in MCP support, no extension needed</li>
+<li><strong>Windsurf</strong> — MCP integration in the AI code editor</li>
+<li><strong>Zed</strong> — Native MCP support in the editor</li>
+<li><strong>Cline</strong> — Open-source VS Code extension with MCP support</li>
+<li><strong>Continue.dev</strong> — Open-source AI coding assistant with MCP support</li>
+<li><strong>Replit</strong> — Cloud IDE with MCP server support</li>
+</ul>
+<p>If you build an MCP server, it works everywhere. That&rsquo;s a key advantage over proprietary plugin systems.</p>
+<h2 id="building-your-own-mcp-server">Building Your Own MCP Server</h2>
+<p>If you can write a function, you can build an MCP server. Official SDKs now cover seven languages:</p>
+<ul>
+<li><strong>TypeScript:</strong> <code>@modelcontextprotocol/sdk</code> (v1.27+)</li>
+<li><strong>Python:</strong> <code>mcp</code> (v1.2+)</li>
+<li><strong>Java:</strong> Official SDK maintained with Spring</li>
+<li><strong>Kotlin:</strong> Multiplatform SDK (JVM, Native, JS, Wasm), maintained with JetBrains</li>
+<li><strong>Go:</strong> Official SDK maintained with Google</li>
+<li><strong>C#:</strong> Official SDK maintained with Microsoft</li>
+<li><strong>Rust:</strong> Official SDK</li>
 </ul>
 <p>A minimal Python MCP server:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mcp.server.fastmcp <span style="color:#f92672">import</span> FastMCP
@@ -145,7 +177,7 @@ mcp <span style="color:#f92672">=</span> FastMCP(<span style="color:#e6db74">&#3
 <li><strong>As a user:</strong> MCP servers extend what AI tools can do for you. File access, database queries, API calls, deployment tools — the ecosystem grows with every new server.</li>
 <li><strong>As a builder:</strong> Wrapping your API or tool as an MCP server makes it accessible to every AI agent in the ecosystem. It&rsquo;s a distribution channel for your tool&rsquo;s capabilities.</li>
 </ol>
-<p>The MCP ecosystem is early. The protocol is stable, the tooling is solid, and the adoption curve is steep. Now is a good time to start building with it.</p>
+<p>The MCP ecosystem has matured rapidly. The current spec (November 2025) is stable, official SDKs cover seven languages, and the 2026 roadmap focuses on enterprise readiness (audit trails, SSO-integrated auth, gateway behavior) and agent-to-agent communication. With 12,000+ servers already built, adoption has moved past early-adopter into mainstream developer tooling.</p>
 
       </div>
 
@@ -155,8 +187,48 @@ mcp <span style="color:#f92672">=</span> FastMCP(<span style="color:#e6db74">&#3
 
     
 
+
+<aside class="related-content">
+  <h2 class="section-heading">More Guides</h2>
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Comparison</span> <span>2026-03-22 23:45:00</span></div>
+  <h3><a href="/guides/best-message-queue-mcp-servers/">Best Message Queue &amp; Streaming MCP Servers in 2026 — Kafka vs RabbitMQ vs Pulsar vs NATS vs Cloud</a></h3>
+  <p>Confluent (141 stars, 24&#43; tools, Kafka&#43;Flink&#43;Schema Registry) vs kanapuli/mcp-kafka (76 stars, Go, self-managed) vs Google Pub/Sub (managed remote, 15 tools) vs AWS SQS/SNS (official, IAM) vs NATS (42 tools, embedded server) vs Apache Pulsar (70&#43; tools) — plus RabbitMQ, MQTT, Redis Streams, Azure, and IBM MQ.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Comparison</span> <span>2026-03-22 23:30:00</span></div>
+  <h3><a href="/guides/best-iot-mcp-servers/">Best IoT MCP Servers in 2026</a></h3>
+  <p>The definitive guide to IoT MCP servers in 2026. We&#39;ve reviewed 40&#43; servers across Home Assistant (5&#43; implementations), MQTT, AWS IoT SiteWise, ESP32/Arduino, industrial protocols (Modbus, OPC UA), Apple HomeKit, ThingsBoard, Node-RED, and smart lighting. Every recommendation links to a full review.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Comparison</span> <span>2026-03-22 23:30:00</span></div>
+  <h3><a href="/guides/best-pdf-document-processing-mcp-servers/">Best PDF &amp; Document Processing MCP Servers in 2026 — MarkItDown vs Docling vs Pandoc vs Dedicated PDF Tools</a></h3>
+  <p>MarkItDown (91.4K stars, 29&#43; formats) vs Docling (56.2K stars, layout analysis) vs markdownify-mcp (2,500 stars, 10 tools) vs mcp-pandoc (517 stars, format conversion) vs pdf-reader-mcp (571 stars, parallel processing) — plus Word, cloud API, and manipulation options.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Comparison</span> <span>2026-03-22 23:00:00</span></div>
+  <h3><a href="/guides/best-blockchain-web3-mcp-servers/">Best Blockchain &amp; Web3 MCP Servers in 2026</a></h3>
+  <p>The definitive guide to blockchain and Web3 MCP servers in 2026. We&#39;ve researched 40&#43; servers across multi-chain toolkits, EVM networks, Solana, Bitcoin, DeFi data, NFT marketplaces, L2/alt-chain specialists, and market analytics. Every recommendation links to a full review.</p>
+</div>
+
+  
+</aside>
+
+
+
+    
+
+
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"datePublished":"2026-03-14T01:06:39+09:00","description":"MCP (Model Context Protocol) lets AI models connect to external tools through a standard interface. Here's what developers need to know.","headline":"What Is MCP? A Developer's Guide to the Model Context Protocol","mainEntityOfPage":"https://chatforest.com/guides/what-is-mcp/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/what-is-mcp/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-22T00:00:00+09:00","datePublished":"2026-03-22T19:00:00+09:00","description":"MCP (Model Context Protocol) lets AI models connect to external tools through a standard interface. Here's what developers need to know.","headline":"What Is MCP? A Developer's Guide to the Model Context Protocol","mainEntityOfPage":"https://chatforest.com/guides/what-is-mcp/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/what-is-mcp/"}
 </script>
 
 
