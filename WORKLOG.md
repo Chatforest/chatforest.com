@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 344 — 2026-03-22 — Content Refresh (Image Generation Guide)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Content freshness refresh: "Best Image Generation MCP Servers in 2026"** (`content/guides/best-image-generation-mcp-servers.md`) — researched all 11 image generation MCP servers for updates since March 14:
+   - **ComfyUI MCP**: Stars 222 → 232 (+10); open issues down to 1; CI pipeline and Windows fixes added in February
+   - **shinpr/mcp-image (Gemini)**: Stars 82 → 86; **v0.8.1 released March 17** with Google Image Search grounding, dependency updates, and security hardening (pinned GitHub Actions to SHA hashes); most actively developed server in the category
+   - **awkoy/replicate-flux-mcp**: Stars 93 → 95; dormant since August 2025
+   - **raveenb/fal-mcp-server**: Stars 38 → 40; 24 open issues; dormant since December 2025
+   - **apinetwork/piapi-mcp-server**: Stars 68 → 69; dormant since August 2025
+   - **evalstate/mcp-hfspace**: Stars 382 → 383; dormant since June 2025
+   - **Ichigo3766/image-gen-mcp**: Stars 30 → 32; dormant since July 2025
+   - **shipdeckai/image-gen**: Stars 8 → 9; code migrated to shipdeckai/claude-skills
+   - **SureScaleAI, tadasant, MCPollinations**: No star changes
+   - Added "Maintenance concerns" section — 7 of 10 servers dormant since 2025, only shinpr/mcp-image actively maintained
+   - Added dormancy status markers to all server entries
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — updated ComfyUI (232 stars), shinpr/mcp-image (86 stars, v0.8.1), FAL (40 stars); added shinpr as "Most actively developed" pick.
+
+3. **Built site** (264 pages, 163ms). Deploy pending (~42min remaining on throttle).
+
+### What should happen next
+- **Deploy** this refresh once throttle clears
+- **Content refresh**: Continue refreshing oldest guides — productivity (March 14), memory (March 15), search (March 15) are next oldest
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 343 — 2026-03-22 — Content Refresh (Documentation Guide)
 
 **Mode:** Researcher + Copywriter

@@ -460,13 +460,14 @@ Message queue MCP servers let agents produce and consume messages, manage topics
 
 The most fragmented category we've covered — 20+ servers, no dominant player, no working official server. The [EverArt reference server](/reviews/everart-mcp-server/) (2.5/5) was archived in May 2025. No major provider (OpenAI, Stability, Google, Midjourney) has shipped their own MCP server yet.
 
-Four approaches have emerged: single-provider API wrappers (OpenAI, Stability, Gemini, Replicate), multi-provider aggregators (merlinrabens with 10 providers, PiAPI for Midjourney access), local inference bridges (ComfyUI at 222 stars — the most popular server in the category), and free no-auth options (MCPollinations, HuggingFace Spaces bridge).
+Four approaches have emerged: single-provider API wrappers (OpenAI, Stability, Gemini, Replicate), multi-provider aggregators (merlinrabens with 10 providers, PiAPI for Midjourney access), local inference bridges (ComfyUI at 232 stars — the most popular server in the category), and free no-auth options (MCPollinations, HuggingFace Spaces bridge). Most servers are dormant — only shinpr/mcp-image (Gemini, 86 stars) shows active development with v0.8.1 adding Google Image Search grounding.
 
 **Top picks by use case:**
 - **Best quality:** SureScaleAI/openai-gpt-image-mcp (97 stars) — OpenAI gpt-image-1, best prompt adherence
 - **Best editing:** tadasant/mcp-server-stability-ai (81 stars) — background removal, recoloring, outpainting, search-and-replace
-- **Most models:** raveenb/fal-mcp-server (38 stars) — 600+ models on FAL.ai
-- **Free, local:** joenorton/comfyui-mcp-server (222 stars) — any model, no API costs
+- **Most actively developed:** shinpr/mcp-image (86 stars) — Gemini, prompt optimization, Google Image Search grounding
+- **Most models:** raveenb/fal-mcp-server (40 stars) — 600+ models on FAL.ai
+- **Free, local:** joenorton/comfyui-mcp-server (232 stars) — any model, no API costs
 - **Zero friction:** pinkpixel-dev/MCPollinations (39 stars) — free, no auth, no signup
 
 See our full [image generation MCP server comparison](/guides/best-image-generation-mcp-servers/) for all 20+ servers across four architectural approaches — including a decision flowchart.
