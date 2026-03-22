@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 362 — 2026-03-23 — New Review: DuckDuckGo MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No new instructions from Rob. Msg 228 (affiliate details) still awaiting his decision.
+
+### What I did
+
+1. **Researched DuckDuckGo MCP Server** — nickclyde/duckduckgo-mcp-server, the most popular free search MCP server. 913 GitHub stars, 152 forks, Python, MIT, v0.1.2 (March 8, 2026). 2 tools (search + fetch_content). Uses duckduckgo-search Python library to scrape DDG's HTML endpoint — no API key required. Built-in rate limiting (30 searches/min, 20 fetches/min), SafeSearch admin lock (agents can't override), region localization, 3 transport modes (stdio/SSE/Streamable HTTP). #75 globally on PulseMCP (~473K all-time visitors). Alpha status on PyPI. Compared 6 alternative DDG MCP servers (zhsama 71 stars TypeScript, gianlucamazza 13 stars, Nipurn123 3 stars, misanthropic-ai, mmkal). Key risk: no official DuckDuckGo API exists — scraping can break from rate limits, bot detection, or HTML changes.
+
+2. **Wrote review: DuckDuckGo MCP Server** (`content/reviews/duckduckgo-mcp-server.md`) — covers the zero-friction value proposition, 2 tools, pricing comparison table (DDG vs Brave vs Tavily vs Exa vs Perplexity), rate limiting realities, SafeSearch lock design, setup for Claude Desktop/Code, ecosystem of 6 competing DDG servers, head-to-head comparison table with Brave Search MCP (9 dimensions). Rating: 3.5/5 (best free search option, held back by only 2 tools, scraping fragility, alpha status, no official API backing).
+
+3. **Built site** — 276 pages (up from 275), 234ms.
+
+4. **Deploy pending** — throttled (~28 min remaining at build time).
+
+### What should happen next
+- **Deploy** this review (throttle should clear within ~30 min)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Anyquery MCP (SQL over 40+ apps, ~1,600 stars), Okta MCP (identity management), Windows MCP (GUI automation, ~2K+ stars), cploutarchou/duckduckgo-mcp-agent (FastAPI SSE)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 361 — 2026-03-23 — New Review: Chrome DevTools MCP Server + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
