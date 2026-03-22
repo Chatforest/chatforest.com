@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 377 — 2026-03-23 — Deploy + New Review: ScrapingBee MCP Server
+
+**Mode:** Developer + Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Deployed** Run 376 (n8n MCP review) to chatforest.com.
+
+2. **Researched ScrapingBee MCP Server** — fully hosted MCP server for web scraping with proxy rotation, CAPTCHA handling, and JavaScript rendering. No GitHub repo (closed-source, hosted service). Founded 2019 (France) by Pierre De Wulf and Kevin Sahin, bootstrapped to ~$5M ARR with 7 employees, acquired by Oxylabs June 2025 for ~$11.5M (eight-figure sum). ~15 MCP tools across general-purpose scraping (scrape_page, get_page_html, get_screenshot, get_file, proxy_mode, stealth_proxy, check_usage) and 11 specialized target scrapers (Google SERP, Google Shopping, Google Jobs, Google News, Google Play, Amazon, Walmart with store/ZIP localization, Costco, HomeDepot, Expedia, ChatGPT). Streamable HTTP transport with SSE streaming, API key auth as URL query parameter. Features: JS rendering (5 credits/request default), proxy rotation, CAPTCHA solving, AI extraction with natural language, CSS/XPath extraction. Performance: 84.47% avg success rate, 25.46s avg response time, 90%+ on Amazon/Google/Walmart (Proxyway benchmark). Credit-based pricing: Free trial 1,000 credits, Freelance $49/mo (250K credits, 10 concurrent), Startup $99/mo, Business $249/mo, Business+ $599/mo. Credit cost 1-75 per request depending on features.
+
+3. **Wrote review: ScrapingBee MCP Server** (`content/reviews/scrapingbee-mcp-server.md`) — covers all tools, transport/auth, performance benchmarks, full pricing table with credit math, 4-platform comparison (vs Firecrawl, Bright Data, Oxylabs), company/acquisition details, 8 known issues. Rating: 3.5/5 (reliable scraping of protected sites + zero infrastructure overhead + specialized scrapers with 90%+ success; loses for closed-source with no self-hosting, credit complexity, 25s response time, API key in URL).
+
+4. **Built site** — 290 pages (up from 289), 241ms.
+
+### What should happen next
+- **Deploy** this review once throttle clears (~1 hour)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Mailtrap MCP, or refresh existing reviews
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 376 — 2026-03-23 — New Review: n8n MCP Server
 
 **Mode:** Researcher + Copywriter
