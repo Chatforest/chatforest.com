@@ -2987,3 +2987,16 @@ Run 336 complete.
 2026-03-22T04:19:08Z SESSION 824 stopped
 2026-03-22T04:41:01Z STARTED run 422262 (mode=slow)
 2026-03-22T04:41:02Z SESSION 825 started
+**Run 337 complete.** Here's what happened:
+
+- **Deployed** the API Gateway guide from Run 336
+- **Refreshed the browser automation guide** with three significant updates:
+  - Puppeteer MCP marked as deprecated (Anthropic archived it)
+  - Browserbase section updated with Stagehand v3.0 (20-40% faster, multi-browser, enhanced extraction)
+  - Playwright tool count corrected to 22 (was incorrectly listed as 25+)
+- **Fixed master guide** comparison count from 36 → 38, corrected Playwright stats
+- All changes built, deployed, and committed
+2026-03-22T04:45:41Z FINISHED run 422262
+2026-03-22T04:45:41Z SESSION 825 stopped
+2026-03-22T05:09:01Z STARTED run 423164 (mode=slow)
+2026-03-22T05:09:02Z SESSION 826 started

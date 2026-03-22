@@ -92,11 +92,11 @@ If you're using either of these, stop. Not eventually — now.
 
 ### For MongoDB: MongoDB MCP Server
 
-**[MongoDB MCP](/reviews/mongodb-mcp-server/)** (4/5) is the most comprehensive database MCP server we've reviewed — 37+ tools across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search.
+**[MongoDB MCP](/reviews/mongodb-mcp-server/)** (4/5) is the most comprehensive database MCP server we've reviewed — 40+ tools across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search.
 
 **What it offers:**
 - 21 database tools: find, aggregate, count, insert/update/delete, index management, schema inspection, explain, export, logs
-- 12 Atlas management tools: create projects, provision clusters, manage users, inspect access lists, monitor alerts
+- 13 Atlas management tools: create projects, provision clusters, manage users, inspect access lists, monitor alerts, Atlas Stream Processing
 - 4 local deployment tools: create and manage local MongoDB clusters via Docker
 - Performance Advisor: suggested indexes, drop recommendations, schema advice, slow query analysis
 - Knowledge search: natural language queries against MongoDB documentation
@@ -118,11 +118,11 @@ If you're using either of these, stop. Not eventually — now.
 }
 ```
 
-**Why it wins:** No other database MCP server covers the full lifecycle — from provisioning infrastructure to querying data to optimizing performance. The Performance Advisor integration is unique: your agent can ask why a query is slow, get index suggestions, and create the index, all through MCP. The 1-2 week release cadence shows serious investment. Set `MDB_MCP_READ_ONLY=true` — the default-writable mode is the main safety concern. [Read our full review](/reviews/mongodb-mcp-server/).
+**Why it wins:** No other database MCP server covers the full lifecycle — from provisioning infrastructure to querying data to optimizing performance. The v1.8 series added Atlas Stream Processing tools and process metrics. The Performance Advisor integration is unique: your agent can ask why a query is slow, get index suggestions, and create the index, all through MCP. The 1-2 week release cadence shows serious investment. Set `MDB_MCP_READ_ONLY=true` — the default-writable mode is the main safety concern. [Read our full review](/reviews/mongodb-mcp-server/).
 
 ### For Self-Hosted PostgreSQL: Postgres MCP Pro
 
-**[Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp)** (crystaldba) is the community server that does everything the official one should have done. 2,300+ GitHub stars, actively maintained, and designed for real-world use.
+**[Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp)** (crystaldba) is the community server that does everything the official one should have done. 2,400+ GitHub stars, actively maintained, and designed for real-world use.
 
 **What it offers:**
 - Schema exploration (list schemas, objects, table details)
@@ -245,7 +245,7 @@ dsn = "sqlite:///path/to/local.db"
 | Vector search | Yes (with embeddings) | No | No | No | No | No | No |
 | Safety guardrails | Read-only mode, maxTimeMS | Yes | Row/char limits | Yes | Input validation | None | Broken |
 | Docker support | Yes | Yes | No | Yes | No | Yes | Yes |
-| Tool count | 37+ | ~10 | ~3 | 2 | ~5 | ~6 | ~3 |
+| Tool count | 40+ | ~10 | ~3 | 2 | ~5 | ~6 | ~3 |
 
 ## Our Recommendations
 
@@ -273,7 +273,7 @@ The official SQLite server is still worth reading as a learning resource. The in
 
 **What database engine are you using?**
 
-- **MongoDB** → [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5, 37+ tools)
+- **MongoDB** → [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5, 40+ tools)
 - **PostgreSQL (Neon)** → [Neon MCP](/reviews/neon-mcp-server/)
 - **Supabase (full backend)** → [Supabase MCP](/reviews/supabase-mcp-server/)
 - **PostgreSQL (self-hosted/RDS/other)** → Postgres MCP Pro
@@ -298,7 +298,7 @@ The official SQLite server is still worth reading as a learning resource. The in
 
 The official database MCP servers served their purpose as reference implementations — they showed what was possible. But they're archived, one has a security vulnerability, and the community has built significantly better alternatives.
 
-For most developers in 2026, the answer depends on your database. **MongoDB MCP** (4/5) leads in raw capability with 37+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. **Neon MCP** (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. **Supabase MCP** (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.
+For most developers in 2026, the answer depends on your database. **MongoDB MCP** (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. **Neon MCP** (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. **Supabase MCP** (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.
 
 For the full details on the reviewed servers:
 - [MongoDB MCP Server Review](/reviews/mongodb-mcp-server/) (4/5)

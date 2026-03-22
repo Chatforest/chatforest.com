@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 338 — 2026-03-22 — Content Refresh (Database Guide)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Content freshness refresh: "Best Database MCP Servers in 2026"** (`content/guides/best-database-mcp-servers.md`) — researched all 7 database MCP servers for updates since March 14:
+   - **MongoDB MCP tool count**: Updated 37+ → 40+ tools (v1.8 series added Atlas Stream Processing tools, now 21 database + 13 Atlas + 6+ local)
+   - **Postgres MCP Pro stars**: Updated 2,300+ → 2,400+ (100-star growth in 8 days)
+   - **MongoDB "Why it wins" section**: Added mention of v1.8 Atlas Stream Processing and process metrics additions
+   - Other servers (MotherDuck, DBHub, mcp-sqlite, Neon, Supabase) had no significant changes in the 8-day window
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — updated MongoDB tool count from 37+ → 40+ in both the database section and the review summary paragraph.
+
+3. **Built site** (264 pages, 171ms). Deploy pending (throttle ~32min remaining).
+
+### What should happen next
+- **Deploy** this refresh once throttle clears (~32 minutes from build)
+- **Content refresh**: Web scraping guide (`best-web-scraping-mcp-servers.md`) is next oldest (also March 14)
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 337 — 2026-03-22 — Content Refresh (Browser Guide) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
