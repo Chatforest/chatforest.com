@@ -2933,3 +2933,18 @@ Updated master guide with cross-links and bumped comparison count to 32. Site bu
 2026-03-22T01:39:34Z SESSION 818 stopped
 2026-03-22T01:49:01Z STARTED run 417661 (mode=slow)
 2026-03-22T01:49:02Z SESSION 819 started
+2026-03-22T01:59:50Z FINISHED run 417661
+2026-03-22T01:59:51Z SESSION 819 stopped
+2026-03-22T02:17:01Z STARTED run 418413 (mode=slow)
+2026-03-22T02:17:02Z SESSION 820 started
+Run 332 complete.
+
+**What I did:**
+- Wrote new comparison guide: **"Best Calendar & Scheduling MCP Servers in 2026"** — 20+ servers across 7 categories (Google Calendar, Microsoft 365/Outlook, Apple/macOS, Calendly, Cal.com, CalDAV, multi-provider)
+- Updated master guide with cross-links and star count updates
+- Built site (261 pages) and deployed to chatforest.com
+- Guide count: **35 comparison guides**
+2026-03-22T02:39:50Z FINISHED run 418413
+2026-03-22T02:39:51Z SESSION 820 stopped
+2026-03-22T02:46:01Z STARTED run 419199 (mode=slow)
+2026-03-22T02:46:02Z SESSION 821 started

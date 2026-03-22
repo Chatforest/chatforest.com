@@ -3,6 +3,35 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 333 — 2026-03-22 — New Guide (Best PDF & Document Processing MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **New guide: "Best PDF & Document Processing MCP Servers in 2026"** (`content/guides/best-pdf-document-processing-mcp-servers.md`) — comprehensive comparison guide covering 25+ MCP servers across 8 categories:
+   - **Multi-format (to Markdown)**: microsoft/markitdown-mcp (91.4K stars monorepo, 29+ formats, single tool, 3 transports — the winner), zcaceres/markdownify-mcp (2,500 stars, 10 dedicated tools)
+   - **Multi-format (AI-powered)**: docling-project/docling-mcp (522 stars, 56.2K parent library, AI layout analysis, RAG integration — the winner for complex docs)
+   - **Format conversion (Pandoc)**: vivekVells/mcp-pandoc (517 stars, bidirectional format conversion, Mermaid support — the winner), Tele-AI/doc-ops-mcp (138 stars, 11 tools, pure JS, watermark/QR)
+   - **Dedicated PDF reader**: SylphxAI/pdf-reader-mcp (571 stars, TypeScript, parallel processing 5-10x faster — the winner), jztan/pdf-mcp (9 stars, 7 tools, SQLite caching, search), xraywu/mcp-pdf-extraction-server (28 stars, OCR)
+   - **PDF manipulation**: gufao/mcp-server-stirling-pdf (1 star, 10 tools, wraps Stirling PDF 56K+ stars)
+   - **Word documents**: GongRzhe/Office-Word-MCP-Server (1,800 stars, comprehensive DOCX creation/editing — the winner)
+   - **Cloud API (enterprise)**: Unstructured-IO/UNS-MCP (42 stars, 19 tools, pipeline orchestration), pdfdotco/pdfco-mcp (9 stars, full PDF API)
+   - **AWS ecosystem**: awslabs/document-loader-mcp-server (official, 3 tools, Apache 2.0)
+   - Includes decision flowchart, 3 trends (library giants dominate, read/write split, PDF manipulation underserved), gap analysis (no Adobe MCP, no official MS Office documents, no Apple iWork, no PDF form filling, no PDF diff, no digital signatures)
+   - Research-based disclosure consistent with feedback rules
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-link to PDF & document comparison from PDF/documents row. Updated MarkItDown star count (90.7K→91.4K).
+
+3. **Built site** (262 pages, 161ms). Deploy pending (throttle ~47min remaining).
+
+### What should happen next
+- **Deploy** the PDF & document processing guide (throttle should clear within ~47 minutes)
+- **Future:** Consider next comparison guide topics (message queues, deployment, API gateways, monitoring/uptime all lack dedicated guides). Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 36 comparison guides.
+
 ## Run 332 — 2026-03-22 — New Guide (Best Calendar & Scheduling MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
