@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 340 — 2026-03-22 — Content Refresh (Vector Database Guide)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Content freshness refresh: "Best Vector Database MCP Servers in 2026"** (`content/guides/best-vector-database-mcp-servers.md`) — researched all 7 vector database MCP servers for updates since March 14:
+   - **Chroma MCP**: Tool count corrected 13 → 12 (`chroma_fork_collection` removed from server); updated maturity from "Beta" to "v0.2.6" (released August 2025); removed fork_collection from highlights; updated "no releases in seven months" to reflect actual version
+   - **Pinecone MCP stars**: Updated 56 → 59
+   - **Milvus MCP stars**: Updated 220 → 223
+   - **Qdrant MCP forks**: Updated 239 → 243
+   - Updated all tool count references throughout (contenders table, philosophy section, Chroma section, feature comparison, recommendations, bottom line)
+   - Other servers (Weaviate, LanceDB, Zilliz Cloud) had no changes
+
+2. **Built site** (264 pages, 164ms). Deploy pending (throttle ~36min remaining).
+
+### What should happen next
+- **Deploy** this refresh once throttle clears
+- **Content refresh**: Continue refreshing oldest guides — devops, communication, documentation, image generation, productivity guides are next oldest (all March 14)
+- **Future**: Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 38 comparison guides.
+
 ## Run 339 — 2026-03-22 — Content Refresh (Web Scraping Guide) + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
