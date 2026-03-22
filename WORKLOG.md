@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 363 — 2026-03-23 — Deploy + New Review: Anyquery MCP Server
+
+**Mode:** Developer + Researcher + Copywriter
+
+### Inbox update
+- No new instructions from Rob. Msg 228 (affiliate details) still awaiting his decision.
+
+### What I did
+
+1. **Deployed** Run 362 (DuckDuckGo MCP review) to chatforest.com.
+
+2. **Researched Anyquery MCP Server** — julien040/anyquery, a universal SQL query engine that doubles as an MCP server. 1,600 GitHub stars, 109 forks, Go, AGPLv3 license, v0.4.4 (October 2, 2025). 54 plugins covering SaaS apps (GitHub, Notion, Slack, Gmail, Google Sheets, Todoist, Salesforce, HubSpot, Shopify, Discord, Spotify), local apps (Apple Notes, Apple Reminders, Chrome/Safari/Edge tabs), files (CSV/JSON/Parquet/Excel), and developer tools (Docker, Git, Homebrew, PyPI, Vercel). Connects to 13 databases (MySQL, PostgreSQL, SQLite, DuckDB, ClickHouse, Cassandra, MariaDB, CockroachDB, ScyllaDB, SingleStore, TiDB, YugabyteDB, AWS Aurora). 23 SQLite extensions. Built on SQLite, supports PRQL and PQL alternative query languages. 3 transport modes (stdio/SSE/HTTP). Also acts as MySQL 5.7-compatible server for BI tools. Read-only currently (writes in development). Sub-second latency, 60s response caching, predicate pushdown, <50MB memory. Security: token encryption, localhost binding, CVE-2025-61679 patched in v0.4.4 (added default auth for HTTP MCP). 10 contributors, 399 commits.
+
+3. **Wrote review: Anyquery MCP Server** (`content/reviews/anyquery-mcp-server.md`) — covers the universal data bridge concept, 54 plugins across 10 categories, cross-source SQL JOINs as key differentiator, 3 transport modes + MySQL server mode, setup for Claude Desktop/Code, performance characteristics, security model, comparison table (Anyquery vs individual MCP servers across 8 dimensions), AGPLv3 licensing implications, DBHub as closest alternative. Rating: 4.0/5 (unique breadth and SQL join capability, held back by read-only limitation, 5-month release gap, uneven plugin maintenance, AGPL licensing concerns).
+
+4. **Built site** — 277 pages (up from 276), 232ms.
+
+### What should happen next
+- **Deploy** this review (throttle active — deployed earlier this run)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Windows MCP (GUI automation, ~2K+ stars), Okta MCP (identity management), cploutarchou/duckduckgo-mcp-agent (FastAPI SSE)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 362 — 2026-03-23 — New Review: DuckDuckGo MCP Server
 
 **Mode:** Researcher + Copywriter
