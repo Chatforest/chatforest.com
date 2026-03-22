@@ -37,7 +37,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>2026-03-14 17:20:00</span>
+        <span>2026-03-22 17:00:00</span>
       </div>
 
       <h1 class="article-title">Discord MCP Servers — Five Community Servers, No Official One, and a Fragmented Landscape</h1>
@@ -61,15 +61,15 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/SaseQ/discord-mcp">SaseQ/discord-mcp</a></td>
-<td>206</td>
+<td>218</td>
 <td>Java (JDA)</td>
-<td>30</td>
-<td>57</td>
+<td>65</td>
+<td>72</td>
 <td>MIT</td>
 </tr>
 <tr>
 <td><a href="https://github.com/v-3/discordmcp">v-3/discordmcp</a></td>
-<td>186</td>
+<td>189</td>
 <td>TypeScript</td>
 <td>~5</td>
 <td>2</td>
@@ -77,18 +77,18 @@
 </tr>
 <tr>
 <td><a href="https://github.com/hanweg/mcp-discord">hanweg/mcp-discord</a></td>
-<td>148</td>
+<td>149</td>
 <td>Python</td>
-<td>15</td>
+<td>16</td>
 <td>25</td>
 <td>MIT</td>
 </tr>
 <tr>
 <td><a href="https://github.com/barryyip0625/mcp-discord">barryyip0625/mcp-discord</a></td>
-<td>71</td>
+<td>76</td>
 <td>TypeScript</td>
-<td>21</td>
-<td>103</td>
+<td>42</td>
+<td>121</td>
 <td>MIT</td>
 </tr>
 <tr>
@@ -103,51 +103,59 @@
 </table>
 <p>All five are MIT-licensed. All require a Discord bot token. None uses OAuth. None is hosted remotely — every one requires running a local process or container.</p>
 <h2 id="saseqdiscord-mcp--most-popular-most-complete">SaseQ/discord-mcp — Most Popular, Most Complete</h2>
-<p>The most-starred Discord MCP server runs on Java and JDA (Java Discord API). It&rsquo;s also the only one with a meaningful contributor base (7 contributors) and steady release cadence (57 commits).</p>
-<p><strong>30 tools across 7 categories:</strong></p>
+<p>The most-starred Discord MCP server runs on Java and JDA (Java Discord API). It&rsquo;s also the only one with a meaningful contributor base (8 contributors) and steady release cadence (72 commits). <strong>Hit v1.0.0 on March 16, 2026</strong> — the first stable release, with a massive expansion from 30 to 65 tools.</p>
+<p><strong>65 tools across 13 categories:</strong></p>
 <ul>
 <li><strong>Server Information (1):</strong> <code>get_server_info</code></li>
 <li><strong>User Management (5):</strong> <code>get_user_id_by_name</code>, <code>send_private_message</code>, <code>edit_private_message</code>, <code>delete_private_message</code>, <code>read_private_messages</code></li>
-<li><strong>Message Management (6):</strong> <code>send_message</code>, <code>edit_message</code>, <code>delete_message</code>, <code>read_messages</code>, <code>add_reaction</code>, <code>remove_reaction</code></li>
-<li><strong>Channel Management (4):</strong> <code>create_text_channel</code>, <code>delete_channel</code>, <code>find_channel</code>, <code>list_channels</code></li>
-<li><strong>Category Management (4):</strong> <code>create_category</code>, <code>delete_category</code>, <code>find_category</code>, <code>list_channels_in_category</code></li>
-<li><strong>Webhook Management (4):</strong> <code>create_webhook</code>, <code>delete_webhook</code>, <code>list_webhooks</code>, <code>send_webhook_message</code></li>
-<li><strong>Role Management (6):</strong> <code>list_roles</code>, <code>create_role</code>, <code>edit_role</code>, <code>delete_role</code>, <code>assign_role</code>, <code>remove_role</code></li>
+<li><strong>Message Management (7):</strong> send, edit, delete, read messages, reactions</li>
+<li><strong>Channel Management (7):</strong> create, delete, find, list, edit, move, info for text channels</li>
+<li><strong>Category Management (4):</strong> create, delete, find, list categories</li>
+<li><strong>Webhook Management (4):</strong> create, delete, list webhooks, send webhook messages</li>
+<li><strong>Role Management (6):</strong> list, create, edit, delete, assign, remove roles</li>
+<li><strong>Moderation &amp; User Management (7):</strong> bans, kicks, timeouts, user moderation</li>
+<li><strong>Voice &amp; Stage Channels (6):</strong> voice and stage channel management</li>
+<li><strong>Scheduled Events (5):</strong> create, edit, delete, list events</li>
+<li><strong>Channel Permission Overwrites (4):</strong> permission management</li>
+<li><strong>Invite Management (4):</strong> create, delete, list invites</li>
+<li><strong>Emoji Management (5):</strong> create, delete, list, edit emojis</li>
 </ul>
-<p><strong>What works well:</strong> Full CRUD across channels, roles, categories, and webhooks. DM support (send, edit, delete, read). Webhook message sending for bot-style announcements. Docker and Maven build options. 2 open issues — relatively clean.</p>
-<p><strong>What doesn&rsquo;t:</strong> Java ecosystem means heavyweight deployment — JDA pulls in the full Discord gateway. No forum or thread support. No voice channel management. No moderation tools (bans, kicks, timeouts). stdio transport only. No slash command registration.</p>
+<p><strong>What works well:</strong> Full CRUD across channels, roles, categories, and webhooks. DM support. Moderation tools (bans, kicks, timeouts) added in v1.0.0. Voice and stage channel management. Scheduled events. Docker image available. 2 open issues — clean.</p>
+<p><strong>What doesn&rsquo;t:</strong> Java ecosystem means heavyweight deployment — JDA pulls in the full Discord gateway. No forum or thread support. stdio transport only. No slash command registration. 65 tools is approaching the context window concern zone, though well below the 134 of HardHeadHackerHead.</p>
 <h2 id="hanwegmcp-discord--simplest-python-option">hanweg/mcp-discord — Simplest Python Option</h2>
-<p>The second most-starred option (148 stars) is also the simplest to understand. Python, 15 tools, clean design.</p>
-<p><strong>15 tools across 4 categories:</strong></p>
+<p>The second most-starred option (149 stars) is also the simplest to understand. Python, 16 tools, clean design.</p>
+<p><strong>16 tools across 5 categories:</strong></p>
 <ul>
 <li><strong>Server Info (5):</strong> <code>list_servers</code>, <code>get_server_info</code>, <code>get_channels</code>, <code>list_members</code>, <code>get_user_info</code></li>
 <li><strong>Messages (5):</strong> <code>send_message</code>, <code>read_messages</code>, <code>add_reaction</code>, <code>add_multiple_reactions</code>, <code>remove_reaction</code></li>
 <li><strong>Channels (2):</strong> <code>create_text_channel</code>, <code>delete_channel</code></li>
 <li><strong>Roles (2):</strong> <code>add_role</code>, <code>remove_role</code></li>
-<li><strong>Moderation (1):</strong> <code>moderate_message</code> (delete messages + timeout users)</li>
+<li><strong>Moderation (2):</strong> <code>moderate_message</code> (delete messages + timeout users)</li>
 </ul>
-<p><strong>What works well:</strong> Python means easy installation via <code>uv</code>. Includes moderation — the only server here with a dedicated <code>moderate_message</code> tool for deleting messages and timing out users. Clean, focused tool set that covers the basics without overwhelming the agent&rsquo;s context window.</p>
-<p><strong>What doesn&rsquo;t:</strong> 10 open issues with 25 commits suggests limited maintenance bandwidth. No webhook support, no forum/thread support, no DMs. No Docker image in the main repo. Fewer tools means fewer capabilities when you need them.</p>
+<p><strong>What works well:</strong> Python means easy installation via <code>uv</code>. Includes moderation via <code>moderate_message</code> for deleting messages and timing out users. Clean, focused tool set that covers the basics without overwhelming the agent&rsquo;s context window.</p>
+<p><strong>What doesn&rsquo;t:</strong> 10 open issues with 25 commits suggests limited maintenance bandwidth. No webhook support, no forum/thread support, no DMs. No Docker image in the main repo. Fewer tools means fewer capabilities when you need them. SaseQ&rsquo;s v1.0.0 now also includes moderation, reducing hanweg&rsquo;s unique advantage.</p>
 <p>Hanweg also maintains <code>mcp-discord-raw</code> — a complementary server that exposes a single tool for raw Discord API access. If the curated tools don&rsquo;t cover your use case, you can hit any Discord endpoint directly. Clever design, but it pushes Discord API knowledge onto the agent.</p>
 <h2 id="barryyip0625mcp-discord--most-mature-codebase">barryyip0625/mcp-discord — Most Mature Codebase</h2>
-<p>With 103 commits from 9 contributors, this is the most actively developed Discord MCP server despite having fewer stars (71). It&rsquo;s the only one with forum support.</p>
-<p><strong>21 tools across 5 categories:</strong></p>
+<p>With 121 commits, this is the most actively developed Discord MCP server despite having fewer stars (76). It&rsquo;s the only one with forum support, and it doubled its tool count in March 2026.</p>
+<p><strong>42 tools across 7 categories:</strong></p>
 <ul>
 <li><strong>Basic (4):</strong> <code>discord_login</code>, <code>discord_list_servers</code>, <code>discord_send</code>, <code>discord_get_server_info</code></li>
-<li><strong>Channels (2):</strong> <code>discord_create_text_channel</code>, <code>discord_delete_channel</code></li>
-<li><strong>Forums (5):</strong> <code>discord_get_forum_channels</code>, <code>discord_create_forum_post</code>, <code>discord_get_forum_post</code>, <code>discord_reply_to_forum</code>, <code>discord_delete_forum_post</code></li>
-<li><strong>Messages (5):</strong> <code>discord_search_messages</code>, <code>discord_read_messages</code>, <code>discord_add_reaction</code>, <code>discord_add_multiple_reactions</code>, <code>discord_remove_reaction</code>, <code>discord_delete_message</code></li>
-<li><strong>Webhooks (4):</strong> <code>discord_create_webhook</code>, <code>discord_send_webhook_message</code>, <code>discord_edit_webhook</code>, <code>discord_delete_webhook</code></li>
+<li><strong>Channel Management (10):</strong> create/edit/delete text, forum, and voice channels; category management; permission overrides</li>
+<li><strong>Forums (9):</strong> forum post CRUD, tag management, thread listing, replies</li>
+<li><strong>Messages &amp; Reactions (7):</strong> search, read, edit, delete messages; add/remove reactions</li>
+<li><strong>Webhooks (4):</strong> create, send, edit, delete webhooks</li>
+<li><strong>Role Management (6):</strong> list, create, edit, delete roles; assign/remove from members</li>
+<li><strong>Member Management (2):</strong> list and retrieve member info</li>
 </ul>
-<p><strong>What works well:</strong> Forum support is unique — creating, reading, and replying to forum posts is essential for community management. Message search. Both stdio and HTTP transports. Docker image on Docker Hub. npx installation. 103 commits shows sustained development. Only 1 open issue.</p>
-<p><strong>What doesn&rsquo;t:</strong> 71 stars despite being the most feature-rich and actively maintained server is puzzling. No role management. No DM support. <code>discord_login</code> as an explicit tool call is unusual — most servers handle authentication at startup. v1.3.5 release from October 2025 — last release is 5 months old.</p>
+<p><strong>What works well:</strong> Forum support is unique — creating, reading, and replying to forum posts is essential for community management. Message search. Both stdio and HTTP transports. Docker image on Docker Hub. npx installation. 121 commits shows sustained development. Only 1 open issue. New role management and channel permission features close previous gaps.</p>
+<p><strong>What doesn&rsquo;t:</strong> 76 stars despite being the most feature-rich and actively maintained server is puzzling. <code>discord_login</code> as an explicit tool call is unusual — most servers handle authentication at startup. No DM support.</p>
 <h2 id="hardheadhackerheaddiscord-mcp--134-tools-10-stars">HardHeadHackerHead/discord-mcp — 134 Tools, 10 Stars</h2>
 <p>This is the maximalist approach: 134 tools across 20 categories, covering everything from auto-moderation rules to onboarding configuration to server templates. It&rsquo;s the Discord equivalent of the AWS MCP Servers review — ambitious scope.</p>
 <p><strong>Categories include:</strong> Guild (2), Roles (11), Channels (20), Members (15), Messages (14), Reactions (1), Server Admin (16), Threads (10), Forums (5), Emojis &amp; Stickers (7), Webhooks (4), Scheduled Events (5), Stage Instances (3), Auto-Moderation (4), Polls (3), Direct Messages (2), Bot Presence (2), Server Templates (4), Application Commands (4), Onboarding (2).</p>
 <p><strong>What works well:</strong> Covers nearly the entire Discord API surface. Interactive setup wizard via <code>npx @quadslab.io/discord-mcp init</code>. Fuzzy name resolution. Pre-cached server data. Audit log integration. Thread, forum, stage, poll, and event management that no other server offers.</p>
 <p><strong>What doesn&rsquo;t:</strong> 10 stars and 14 commits. This is a brand-new project with zero community validation. 134 tools will consume significant context window — well beyond the 20-25 tool sweet spot. Published as an npm package under <code>@quadslab.io</code> — an unknown org. The scope-to-adoption ratio is a red flag: either the quality is there and discovery hasn&rsquo;t happened, or the tools are shallow wrappers. With no open issues and no community feedback, it&rsquo;s hard to tell.</p>
 <h2 id="v-3discordmcp--stars-without-substance">v-3/discordmcp — Stars Without Substance</h2>
-<p>186 stars from 2 commits and ~5 tools. This is likely a case of early-mover advantage in GitHub discoverability rather than quality. It reads messages and sends messages. That&rsquo;s it. Not worth considering for any production use case.</p>
+<p>189 stars from 2 commits and ~5 tools. This is likely a case of early-mover advantage in GitHub discoverability rather than quality. It reads messages and sends messages. That&rsquo;s it. Not worth considering for any production use case.</p>
 <h2 id="the-missing-official-server">The Missing Official Server</h2>
 <p>The elephant in the room: Discord doesn&rsquo;t have an official MCP server. Slack has one (hosted, OAuth, first-party). GitHub has one. Stripe has one. Discord — despite being the default communication platform for the developer and AI community — has nothing.</p>
 <p>This matters because:</p>
@@ -160,12 +168,12 @@
 </ol>
 <h2 id="which-one-should-you-use">Which One Should You Use?</h2>
 <p><strong>For community management with forums:</strong> barryyip0625/mcp-discord. It&rsquo;s the only one with forum support, has the most active development, and supports both stdio and HTTP transports.</p>
-<p><strong>For full server administration:</strong> SaseQ/discord-mcp. Most stars, most contributors, broadest tool coverage for channels, roles, categories, and webhooks. Java dependency is the main drawback.</p>
-<p><strong>For quick Python integration:</strong> hanweg/mcp-discord. Simplest setup, only option with moderation tools, pairs with mcp-discord-raw for edge cases.</p>
+<p><strong>For full server administration:</strong> SaseQ/discord-mcp. Most stars, most contributors, broadest tool coverage (65 tools including moderation, voice, events, permissions). v1.0.0 stable release. Java dependency is the main drawback.</p>
+<p><strong>For quick Python integration:</strong> hanweg/mcp-discord. Simplest setup, pairs with mcp-discord-raw for edge cases.</p>
 <p><strong>For everything else:</strong> Wait. The HardHeadHackerHead server is ambitious but unproven. The v-3 server is too minimal. An official Discord MCP server would make all of these obsolete overnight — and given Slack, GitHub, and Stripe all have official servers now, it&rsquo;s a matter of when, not if.</p>
 <h2 id="the-verdict">The Verdict</h2>
 <p><strong>Rating: 3/5 — for the landscape as a whole</strong></p>
-<p>The Discord MCP ecosystem has the right pieces in the wrong configuration. Five independent projects, none with more than 206 stars, none with a sustained development team, none with OAuth or hosted deployment. The best option depends on your specific needs — forums (barryyip0625), admin breadth (SaseQ), simplicity (hanweg) — but none matches the polish of official MCP servers from Slack, GitHub, or Stripe.</p>
+<p>The Discord MCP ecosystem matured significantly in March 2026. SaseQ&rsquo;s v1.0.0 (65 tools) and barryyip0625&rsquo;s expansion (42 tools) show serious community investment. But five independent projects, none with OAuth or hosted deployment, still can&rsquo;t match the polish of official MCP servers from Slack, GitHub, or Stripe. The best option depends on your needs — forums (barryyip0625), full admin control (SaseQ), simplicity (hanweg).</p>
 <p>Discord is too important a platform to have this fragmented an MCP story. When Discord ships an official server — and they should — it will likely make all five of these obsolete. Until then, the community options work, but they work the way community options always do: with caveats, rough edges, and the nagging feeling that the real thing is just around the corner.</p>
 <p><strong>Best for:</strong> Developers already running Discord bots who want to add MCP as another interface. Community managers who need agent-assisted moderation or forum management. Teams using Discord for internal communication who want agent access to message history.</p>
 <p><strong>Skip if:</strong> You need enterprise-grade security (no OAuth, bot tokens only). You need voice channel integration. You need per-user consent flows. You&rsquo;re waiting for Discord to ship an official server (reasonable strategy).</p>
@@ -183,7 +191,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"datePublished":"2026-03-14T17:20:00+09:00","description":"Discord has no official MCP server. Five community alternatives fill the gap — from 2-tool wrappers to 134-tool admin suites. Here's what works, what doesn't, and which one to pick.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Discord MCP Servers — Five Community Servers, No Official One, and a Fragmented Landscape"},"name":"Discord MCP Servers — Five Community Servers, No Official One, and a Fragmented Landscape","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/discord-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"datePublished":"2026-03-22T17:00:00+09:00","description":"Discord has no official MCP server. Five community alternatives fill the gap — from 2-tool wrappers to 134-tool admin suites. Here's what works, what doesn't, and which one to pick.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Discord MCP Servers — Five Community Servers, No Official One, and a Fragmented Landscape"},"name":"Discord MCP Servers — Five Community Servers, No Official One, and a Fragmented Landscape","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/discord-mcp-servers/"}
 </script>
 
 

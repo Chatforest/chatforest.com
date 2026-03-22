@@ -11,19 +11,19 @@ AI coding agents hallucinate APIs. They invent function signatures that don't ex
 
 The MCP ecosystem now has nearly a dozen documentation servers competing to solve this problem, and they take fundamentally different approaches. Some maintain centralized registries of pre-processed docs. Some read directly from GitHub repos. Some run entirely on your machine. Picking the wrong one means your agent is working with unverified documentation, hitting rate limits, or paying for something it could get for free.
 
-We've [reviewed the Context7 MCP server](/reviews/context7-mcp-server/) (3.5/5) — the market leader with 48,900 GitHub stars. Here's how the full documentation server landscape compares, and which one you should actually use.
+We've [reviewed the Context7 MCP server](/reviews/context7-mcp-server/) (3.5/5) — the market leader with 50,100 GitHub stars. Here's how the full documentation server landscape compares, and which one you should actually use.
 
 ## The Contenders
 
 | Server | Stars | Type | Libraries | Free Tier | Paid | Best For |
 |--------|-------|------|-----------|-----------|------|----------|
-| [Context7](/reviews/context7-mcp-server/) | 48,900 | Centralized registry | 9,000+ | 1K req/mo | $8+/mo | Broadest coverage, largest community |
+| [Context7](/reviews/context7-mcp-server/) | 50,100 | Centralized registry | 9,000+ | 1K req/mo | $8+/mo | Broadest coverage, largest community |
 | [GitMCP](/reviews/gitmcp-server/) | 7,800 | Repo-based | Any public repo | Unlimited | Free | Zero-setup, any GitHub repo |
-| Docs MCP | 1,100 | Local-first | Manual indexing | Unlimited | Free | Privacy, offline use |
+| Docs MCP | 1,200 | Local-first | Manual indexing | Unlimited | Free | Privacy, offline use |
 | Ref.Tools | 1,000 | Cloud + smart chunking | 1,000s | 200 credits | $19–50/mo | Token efficiency |
-| Docfork | 433 | Centralized + isolation | 10,000+ | 1K req/mo | Paid tiers | Team context isolation |
-| rtfmbro | 79 | Git-tag versioned | npm/PyPI | Unlimited | Free | Exact version precision |
-| Nia | 47 | Cloud + deep research | 3,000+ | 3 index jobs | $14.99+/mo | Cross-codebase research |
+| Docfork | 438 | Centralized + isolation | 10,000+ | 1K req/mo | Paid tiers | Team context isolation |
+| rtfmbro | 80 | Git-tag versioned | npm/PyPI/SPM | Unlimited | Free | Exact version precision |
+| Nia | 48 | Cloud + deep research | 3,000+ | 50 queries/mo | $14.99+/mo | Cross-codebase research |
 | Deepcon | N/A | Cloud (closed-source) | 10,000+ | Limited | $8–20/mo | Accuracy (vendor-claimed) |
 
 ## The Three Architecture Models
@@ -60,15 +60,15 @@ These servers run entirely on your machine. You point them at documentation sour
 
 **[upstash/context7](https://github.com/upstash/context7)** | [Our full review](/reviews/context7-mcp-server/) | Rating: 3.5/5
 
-Context7 is the most popular MCP server of 2026. Period. Nearly 49,000 GitHub stars, 240,000 weekly npm downloads, and support for 30+ AI coding clients. It solves the hallucination problem with two simple tools: `resolve-library-id` (find the library) and `query-docs` (get the docs). That simplicity drove adoption.
+Context7 is the most popular MCP server of 2026. Period. Over 50,000 GitHub stars, 240,000+ weekly npm downloads, and support for 30+ AI coding clients. It started with two simple tools — `resolve-library-id` and `query-docs` — and that simplicity drove adoption. It now also offers a CLI (`npx ctx7`) and a Skills-based plugin system that can trigger documentation lookup automatically without explicit MCP calls.
 
 **Why it's good:**
 - Largest library coverage (9,000+) with version-specific documentation
-- Two-tool simplicity — nothing to configure per-query
-- 30+ client integrations, CLI mode, OAuth setup
+- Two-tool simplicity plus CLI and Skills-based plugin for automatic triggering
+- 30+ client integrations, OAuth setup, VS Code extension
 - Active development by Upstash (not a side project)
 
-**The catch:** The [ContextCrush context poisoning vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) (patched February 2026) exposed an architectural risk — community-contributed docs in a centralized registry are a trust surface. The free tier was cut from ~6,000 to 1,000 requests/month in January 2026. And 129 open GitHub issues suggest connection reliability problems across platforms.
+**The catch:** The [ContextCrush context poisoning vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) (patched February 2026) exposed an architectural risk — community-contributed docs in a centralized registry are a trust surface. The free tier was cut from ~6,000 to 1,000 requests/month in January 2026. And 148 open GitHub issues suggest connection reliability problems across platforms.
 
 **Best for:** Developers who want the easiest setup and broadest library support, and are comfortable with the trade-offs of a centralized, cloud-dependent model.
 
@@ -92,7 +92,7 @@ GitMCP is the most elegant solution in this space. Take any GitHub URL, replace 
 
 ### Docs MCP Server — The Privacy Choice
 
-**[arabold/docs-mcp-server](https://github.com/arabold/docs-mcp-server)** | 1,100 stars
+**[arabold/docs-mcp-server](https://github.com/arabold/docs-mcp-server)** | 1,200 stars
 
 Docs MCP is the answer for developers who don't want their documentation queries leaving their machine. It fetches from websites, GitHub, npm, PyPI, and local files, indexes everything locally, and serves queries from that local index. Your code context never touches a third-party server.
 
@@ -104,7 +104,7 @@ Docs MCP is the answer for developers who don't want their documentation queries
 - Docker deployment available for reproducible setups
 - Free and open source (Apache 2.0)
 
-**The catch:** Requires manual indexing setup for each library — no community-maintained catalog. Semantic search requires an external embedding API, which reintroduces a cloud dependency. Smaller community (1,100 stars) means less ecosystem support. Initial indexing takes time.
+**The catch:** Requires manual indexing setup for each library — no community-maintained catalog. Semantic search requires an external embedding API, which reintroduces a cloud dependency. Smaller community (1,200 stars) means less ecosystem support. Initial indexing takes time.
 
 **Best for:** Enterprise developers, security-conscious teams, air-gapped environments. Anyone who needs documentation context but can't or won't send queries to a cloud registry.
 
@@ -127,7 +127,7 @@ Ref.Tools focuses on a problem the other servers ignore: context bloat. When you
 
 ### Docfork — The Team-Oriented Option
 
-**[docfork/docfork](https://github.com/docfork/docfork)** | 433 stars
+**[docfork/docfork](https://github.com/docfork/docfork)** | 438 stars
 
 Docfork's key differentiator is "Cabinets" — project-specific context isolation that hard-locks an agent to a verified tech stack. If your project uses Next.js 14 + Better Auth + Drizzle, a Cabinet ensures your agent only gets docs for those specific libraries and versions. No contamination from unrelated libraries, no context poisoning from adjacent results.
 
@@ -137,13 +137,13 @@ Docfork's key differentiator is "Cabinets" — project-specific context isolatio
 - Shared API keys and Cabinets for team collaboration
 - 40+ IDE integrations
 
-**The catch:** Cloud-dependent. Much smaller community than Context7 (433 vs 48,900 stars). Similar centralized architecture risks as Context7 (though Cabinets partially mitigate the trust problem). Relatively new — long-term viability uncertain.
+**The catch:** Cloud-dependent. Much smaller community than Context7 (438 vs 50,100 stars). Similar centralized architecture risks as Context7 (though Cabinets partially mitigate the trust problem). Relatively new — long-term viability uncertain.
 
 **Best for:** Teams working on multiple projects with different tech stacks who need to prevent cross-contamination between library contexts. The Cabinets feature is genuinely useful if you've ever had an agent suggest the wrong library's API because it leaked into the context.
 
 ### Nia — The Research Platform
 
-**[nozomio-labs/nia](https://github.com/nozomio-labs/nia)** | 47 stars
+**[nozomio-labs/nia](https://github.com/nozomio-labs/nia)** | 48 stars
 
 Nia is the most ambitious server in this category — it's less a documentation tool and more a knowledge platform. Beyond standard library docs (3,000+ packages from PyPI, npm, Crates.io, Go modules), it offers repository indexing, an autonomous "Oracle" research agent, cross-session context sharing, and arXiv paper indexing. Backed by Y Combinator (S25) with $6.2M in seed funding.
 
@@ -154,7 +154,7 @@ Nia is the most ambitious server in this category — it's less a documentation 
 - Claims 52.1% hallucination rate vs Context7's 63.4%
 - YC-backed with $6.2M funding — resources for continued development
 
-**The catch:** Feature complexity may be overkill for "just give me the docs." Tiny GitHub community (47 stars) despite VC backing. Cloud-dependent. Vendor benchmarks need skepticism (small sample size, self-measured). Pricing adds up with $14.99/month plans and credit packs.
+**The catch:** Feature complexity may be overkill for "just give me the docs." Tiny GitHub community (48 stars) despite VC backing. Cloud-dependent. Vendor benchmarks need skepticism (small sample size, self-measured). Pricing adds up with $14.99/month plans and credit packs.
 
 **Best for:** Developers who need more than documentation — cross-codebase understanding, research paper access, or persistent context across sessions. If your workflow involves exploring unfamiliar codebases, Nia's breadth may justify the complexity.
 
@@ -181,7 +181,7 @@ Deepcon claims 90% accuracy across 20 real-world coding scenarios vs Context7's 
 
 ### rtfmbro — The Version Purist
 
-**[marckrenn/rtfmbro-mcp](https://github.com/marckrenn/rtfmbro-mcp)** | 79 stars
+**[marckrenn/rtfmbro-mcp](https://github.com/marckrenn/rtfmbro-mcp)** | 80 stars
 
 rtfmbro ("Read The F***ing Manual, Bro") takes a unique approach: it reads documentation directly from the exact git tag matching your project's lockfile. No pre-processed registry, no cloud service — it fetches from the specific version you're actually using, with SHA-based caching for efficiency.
 
@@ -191,7 +191,7 @@ rtfmbro ("Read The F***ing Manual, Bro") takes a unique approach: it reads docum
 - SHA-based caching avoids redundant fetches
 - Free and open source (MIT)
 
-**The catch:** Very early stage (79 stars). Limited ecosystem support (Python/PyPI, Node.js/npm, Swift/SPM alpha). Small community. No semantic search — keyword matching only.
+**The catch:** Very early stage (80 stars). Limited ecosystem support (Python/PyPI, Node.js/npm, Swift/SPM). Small community. No semantic search — keyword matching only.
 
 **Best for:** Developers who care deeply about version precision and want documentation for exactly the library version in their project, not the latest. A promising approach if the community grows.
 
@@ -227,7 +227,7 @@ Worth mentioning: [llms.txt](https://llmstxt.org) is not an MCP server but a com
 | Docs MCP | Unlimited | Free | $0 | Embedding API costs if using semantic search |
 | Ref.Tools | 200 credits (never expire) | $19/mo | ~$50 (5K cap) | 1 credit per tool call |
 | Docfork | 1K req/mo | Paid tiers (TBD) | TBD | 5 free team seats |
-| Nia | 3 index jobs, unlimited queries | $14.99/mo | Varies | Credit packs from $3/100 |
+| Nia | 50 queries/mo | $14.99/mo | Varies | Credit packs from $3/100 |
 | Deepcon | Limited | $8/mo | ~$80+ | Closed-source, pricing opaque |
 | rtfmbro | Unlimited | Free | $0 | Open source |
 

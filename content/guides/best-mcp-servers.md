@@ -475,17 +475,17 @@ See our full [image generation MCP server comparison](/guides/best-image-generat
 
 ## Documentation & code context
 
-**Winner: [Context7](/reviews/context7-mcp-server/) (3.5/5)** — the most popular MCP server of 2026 with 48,900 GitHub stars.
+**Winner: [Context7](/reviews/context7-mcp-server/) (3.5/5)** — the most popular MCP server of 2026 with 50,100 GitHub stars.
 
-Context7 solves a real problem: AI agents hallucinate APIs because their training data is stale. Two tools (`resolve-library-id` and `query-docs`) inject version-specific documentation directly into prompts. 9,000+ libraries, 30+ client integrations, dead-simple setup.
+Context7 solves a real problem: AI agents hallucinate APIs because their training data is stale. Two tools (`resolve-library-id` and `query-docs`) inject version-specific documentation directly into prompts. Now also offers a CLI and Skills-based plugin system. 9,000+ libraries, 30+ client integrations, dead-simple setup.
 
 But popularity doesn't mean perfection. A [ContextCrush context poisoning vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) was patched in February 2026, the free tier was cut 83–92% in January 2026, and community-contributed docs are unverified against official sources.
 
 **Alternatives worth considering:**
 - **[GitMCP](/reviews/gitmcp-server/)** (4/5, 7,800 stars) — replace `github.com` with `gitmcp.io` in any URL. Zero setup, free, works with any public repo. Best for libraries Context7 hasn't indexed.
-- **Docs MCP Server** (1,100 stars) — fully local, code never leaves your machine. Best for privacy-sensitive work.
+- **Docs MCP Server** (1,200 stars) — fully local, code never leaves your machine. Best for privacy-sensitive work.
 - **Ref.Tools** (1,000 stars) — smart chunking extracts exactly the tokens needed. Best for large API docs where context bloat is a problem.
-- **Docfork** (433 stars) — "Cabinets" for project-specific context isolation. Best for teams with multiple tech stacks.
+- **Docfork** (438 stars) — "Cabinets" for project-specific context isolation. Best for teams with multiple tech stacks.
 
 See our full [documentation MCP server comparison](/guides/best-documentation-mcp-servers/) for a detailed breakdown of all eight contenders — including architecture models, pricing, and a decision flowchart.
 

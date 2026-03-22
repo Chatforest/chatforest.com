@@ -130,7 +130,7 @@ Requires internet connectivity for every request. There's no local cache, no off
 
 | Feature | GitMCP | Context7 | Docfork | Docs MCP Server |
 |---------|--------|----------|---------|-----------------|
-| **GitHub stars** | 7,800 | 48,900 | — | 1,100 |
+| **GitHub stars** | 7,800 | 50,100 | — | 1,200 |
 | **Tools** | 4 | 2 | — | — |
 | **Pricing** | Free | 1,000/mo free, $10/mo Pro | 1,000/mo free, paid tiers | Free (open source) |
 | **Documentation source** | GitHub repos (direct) | Centralized registry | 9,000+ indexed libraries | Self-indexed from URLs |
