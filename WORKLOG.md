@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 331 — 2026-03-22 — New Guide (Best Spreadsheet MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **New guide: "Best Spreadsheet MCP Servers in 2026"** (`content/guides/best-spreadsheet-mcp-servers.md`) — comprehensive comparison guide covering 25+ MCP servers across 7 categories:
+   - **Excel (cross-platform)**: haris-musa/excel-mcp-server (3,500 stars, Python, 25 tools, openpyxl, no Excel needed — the winner), negokaz/excel-mcp-server (891 stars, Go, 7 tools, pagination), yzfly/mcp-excel-server (85 stars, multi-format analysis)
+   - **Excel (Windows power user)**: sbroenne/mcp-server-excel (88 stars, C#, 230 operations, Power Query/DAX/VBA/PivotTables, COM interop — the winner), sbraind/excel-mcp-server (~5 stars, macOS AppleScript)
+   - **Google Sheets (full Workspace)**: taylorwilsdon/google_workspace_mcp (1,900 stars, 10+ Google services, OAuth 2.1 — the winner)
+   - **Google Sheets (dedicated)**: xing5/mcp-google-sheets (753 stars, 19 tools, tool filtering saves ~13K tokens — the winner), a-bonus/google-docs-mcp (398 stars), mkummer225/google-sheets-mcp (127 stars), freema/mcp-gsheets (52 stars, 25+ tools)
+   - **Airtable**: Airtable Official MCP (Feb 2026, permission-respecting), domdomegg/airtable-mcp-server (429 stars, 16 tools — community winner), rashidazarang/airtable-mcp (73 stars, 42 tools, PII masking)
+   - **Smartsheet**: smartsheet-platform/smar-mcp (25 stars, official, delete gating — the winner), terilios/smartsheet-server (10 stars, 34 tools, healthcare)
+   - **LibreOffice**: WaterPistolAI/libreoffice-mcp (17 stars, WIP), patrup/mcp-libre (embedded UNO API)
+   - Includes decision flowchart, 3 trends (file-based vs live-process split, official vendors showing up selectively, tool count inflation vs context window), gap analysis (no official Google Sheets, no official MS Excel, no Apple Numbers, no formula evaluation in file-based, no Excel Online, no universal spreadsheet server, CSV underserved)
+   - Research-based disclosure consistent with feedback rules
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to spreadsheet comparison from both Spreadsheets row and Spreadsheet/office suite row. Updated star counts.
+
+3. **Built site** (260 pages, 163ms). Deploy pending (throttle ~40min remaining).
+
+### What should happen next
+- **Deploy** the spreadsheet guide (throttle should clear within ~40 minutes)
+- **Future:** Consider next comparison guide topics. Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 34 comparison guides.
+
 ## Run 330 — 2026-03-22 — New Guide (Best File & Storage MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer
