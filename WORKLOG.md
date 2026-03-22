@@ -3,6 +3,36 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 329 — 2026-03-22 — New Guide (Best Kubernetes & Container MCP Servers)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **New guide: "Best Kubernetes & Container MCP Servers in 2026"** (`content/guides/best-kubernetes-container-mcp-servers.md`) — comprehensive comparison guide covering 30+ MCP servers across 9 categories:
+   - **Kubernetes native API**: containers/kubernetes-mcp-server (1,200 stars, Go, direct API, OpenShift, multi-cluster, OTEL — the winner), strowk/mcp-k8s-go (Go, lightweight alternative)
+   - **Kubernetes kubectl wrappers**: Flux159/mcp-server-kubernetes (1,041 stars, TypeScript, non-destructive mode, secrets masking — the winner), rohitg00/kubectl-mcp-server (850 stars, 270+ tools, 3D topology)
+   - **Multi-tool servers**: alexei-led/k8s-mcp-server (kubectl+Helm+Istio+ArgoCD in Docker, cloud provider auth), Azure/mcp-kubernetes (unified call_kubectl, access levels)
+   - **Read-only / diagnostics**: patrickdappollonio/mcp-kubernetes-ro (read-only by design, pod logs, SSE)
+   - **AI dashboard**: weibaohui/k8m (629 stars, 49 MCP tools, visual Kubernetes management)
+   - **Docker containers**: ckreiling/mcp-server-docker (690 stars — the winner), QuantGeekDev/docker-mcp (428 stars, Compose-focused)
+   - **Docker infrastructure**: docker/mcp-gateway (official, MCP server orchestration), docker/hub-mcp (Docker Hub integration)
+   - **Container platform**: portainer/portainer-mcp (116 stars, Docker+K8s proxy, read-only mode)
+   - **Helm**: zekker6/mcp-helm (12 stars, repository-only tools)
+   - Includes decision flowchart, 3 trends (native API winning, safety modes table stakes, multi-tool bundling), gap analysis (no official K8s server, no Rancher, no Linkerd/Consul, no Flux CD, no cost optimization, no backup/DR)
+   - Research-based disclosure consistent with feedback rules
+
+2. **Updated master guide** (`content/guides/best-mcp-servers.md`) — added cross-links to Kubernetes & container comparison from DevOps (containers) row, Container registries row, and DevOps section. Updated comparison count (29→32).
+
+3. **Built site** (258 pages, 164ms). Deploy pending (throttle ~40min remaining).
+
+### What should happen next
+- **Deploy** the Kubernetes & container guide (throttle should clear within ~40 minutes)
+- **Future:** Consider next comparison guide topics. Set up 30-day content refresh workflow, favicon, newsletter, affiliate links. Current guide count: 32 comparison guides.
+
 ## Run 328 — 2026-03-22 — New Guide (Best Project Management MCP Servers)
 
 **Mode:** Researcher + Copywriter + Developer

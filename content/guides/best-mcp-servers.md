@@ -9,7 +9,7 @@ card_description: "We've reviewed 28 MCP servers across 11 categories and beyond
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
 
-We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [168 in-depth reviews](/reviews/) and [29 category comparisons](/guides/) so far. This guide distills all of that into one page.
+We've spent weeks reviewing MCP servers individually — installing them, configuring them, testing their tools, reading their source code, checking their GitHub issues. We've published [168 in-depth reviews](/reviews/) and [32 category comparisons](/guides/) so far. This guide distills all of that into one page.
 
 **What makes this different:** every recommendation here links to a full review or comparison where we show our work. If we say a server has a security vulnerability, we explain exactly what it is. If we say one server is better than another, we tell you why.
 
@@ -53,7 +53,7 @@ If you want to skip the details:
 | E-commerce | [Shopify MCP Servers](/reviews/shopify-mcp-servers/) | 3.5/5 | Dev MCP (414 stars), Storefront MCP (every store), GeLi2001/shopify-mcp (139 stars, 31+ admin tools), WooCommerce, Magento, Saleor, Medusa. [Full e-commerce comparison →](/guides/best-ecommerce-mcp-servers/) |
 | Cloud infrastructure | [Cloudflare MCP](/reviews/cloudflare-mcp-server/) | 4.5/5 | [AWS MCP](/reviews/aws-mcp-servers/) (4/5, 66 servers), [Google Cloud MCP](/reviews/google-cloud-mcp-servers/) (4/5, 30+ servers), [Azure MCP](/reviews/azure-mcp-servers/) (4/5, 47+ services). [Full comparison →](/guides/best-cloud-mcp-servers/) |
 | DevOps (IaC) | [Infrastructure Automation MCP](/reviews/infrastructure-automation-mcp-servers/) | 4.0/5 | [Terraform MCP](/reviews/terraform-mcp-server/) (1,300 stars, registry-first), [Pulumi MCP](/reviews/pulumi-mcp-server/) (Neo delegation) |
-| DevOps (containers) | [Docker MCP](/reviews/docker-mcp-server/) | 3.5/5 | [Kubernetes MCP](/reviews/kubernetes-mcp-server/) (4/5, clusters) |
+| DevOps (containers) | [Docker MCP](/reviews/docker-mcp-server/) | 3.5/5 | [Kubernetes MCP](/reviews/kubernetes-mcp-server/) (4/5, clusters). [Full Kubernetes & container comparison →](/guides/best-kubernetes-container-mcp-servers/) |
 | DevOps (CI/CD) | [CI/CD MCP Servers](/reviews/cicd-mcp-servers/) | 4/5 | [GitHub MCP](/reviews/github-mcp-server/) (27.9K stars), [CircleCI MCP](https://github.com/CircleCI-Public/mcp-server-circleci) (flaky test detection) |
 | DevOps (platform) | Azure DevOps MCP | — | [GitHub MCP](/reviews/github-mcp-server/) (4.5/5) |
 | Analytics | [Analytics MCP Servers](/reviews/analytics-mcp-servers/) | 3.5/5 | [Google Analytics MCP](https://github.com/googleanalytics/google-analytics-mcp) (1.5K stars, official), [PostHog MCP](https://github.com/PostHog/mcp) (27+ tools). [Full data & analytics comparison →](/guides/best-data-analytics-mcp-servers/) |
@@ -67,7 +67,7 @@ If you want to skip the details:
 | Code security | [Code Security MCP Servers](/reviews/code-security-mcp-servers/) | 4.0/5 | [Snyk MCP](https://github.com/snyk/studio-mcp) (official, 11 tools, SAST/SCA/IaC/container/SBOM), [SonarQube MCP](https://github.com/SonarSource/sonarqube-mcp-server) (423 stars, code quality). [Full security comparison →](/guides/best-security-mcp-servers/) |
 | Secret management | [Secret Management MCP Servers](/reviews/secret-management-mcp-servers/) | 4.0/5 | [HashiCorp Vault MCP](https://github.com/hashicorp/vault-mcp-server) (official, 16 tools, KV+PKI), [Bitwarden MCP](https://github.com/bitwarden/mcp-server) (official, 30+ tools, 129 stars) |
 | Log management | [Log Management MCP Servers](/reviews/log-management-mcp-servers/) | 4.0/5 | [Grafana mcp-grafana](https://github.com/grafana/mcp-grafana) (2,600 stars, 6 Loki tools), [Datadog MCP](https://mcp.datadoghq.com) (GA remote, 16+ tools) |
-| Container registries | [Container Registry MCP Servers](/reviews/container-registry-mcp-servers/) | 3.5/5 | [Docker Hub MCP](https://github.com/docker/hub-mcp) (official, 13 tools), [JFrog MCP](https://github.com/jfrog/mcp-jfrog) (22+ tools) |
+| Container registries | [Container Registry MCP Servers](/reviews/container-registry-mcp-servers/) | 3.5/5 | [Docker Hub MCP](https://github.com/docker/hub-mcp) (official, 13 tools), [JFrog MCP](https://github.com/jfrog/mcp-jfrog) (22+ tools). [Full Kubernetes & container comparison →](/guides/best-kubernetes-container-mcp-servers/) |
 | CDN / edge computing | [CDN & Edge Computing MCP](/reviews/cdn-edge-computing-mcp-servers/) | 3.5/5 | [Cloudflare MCP](https://github.com/cloudflare/mcp) (263 stars, Code Mode), [Fastly MCP](https://github.com/fastly/mcp) (official, Go, CLI security) |
 | DNS / domains | [DNS & Domain MCP](/reviews/dns-domain-management-mcp-servers/) | 3.5/5 | [Spaceship MCP](https://github.com/BartWaardenburg/spaceship-mcp) (47 tools), domain-suite-mcp (multi-registrar) |
 | API testing | [API Testing MCP Servers](/reviews/api-testing-mcp-servers/) | 4.0/5 | [Postman MCP](https://github.com/postmanlabs/postman-mcp-server) (100+ tools, remote hosted), [Apollo MCP](https://github.com/apollographql/apollo-mcp-server) (272 stars, GraphQL). [Full testing & QA comparison →](/guides/best-testing-qa-mcp-servers/) |
@@ -633,7 +633,7 @@ The fastest-growing MCP server category. Every major DevOps platform now ships a
 
 **Safety note:** DevOps MCP servers can modify production infrastructure. Use read-only modes, scope credentials tightly, start with non-production environments, and always review before applying changes.
 
-**Full comparison:** [Best DevOps & Infrastructure MCP Servers in 2026](/guides/best-devops-mcp-servers/)
+**Full comparison:** [Best DevOps & Infrastructure MCP Servers in 2026](/guides/best-devops-mcp-servers/) | [Best Kubernetes & Container MCP Servers in 2026](/guides/best-kubernetes-container-mcp-servers/)
 
 ---
 
