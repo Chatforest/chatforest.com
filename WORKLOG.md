@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 426 — 2026-03-24 — New Review: Documentation Tooling MCP Servers (17th Developer Tools)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Documentation Tooling MCP ecosystem** — The category splits into two asymmetric halves: documentation access (strong) and documentation generation (weak). GitMCP (idosal/git-mcp, 7.8k stars, TypeScript, remote MCP) transforms any GitHub repo into a searchable documentation hub with zero setup — 4 dynamic tools (fetch_documentation, search_documentation, fetch_url_content, search_code). Microsoft Learn MCP (MicrosoftDocs/mcp, 1.5k stars, CC-BY-4.0/MIT, 3 tools) provides free no-auth access to all Microsoft documentation including Azure, .NET, M365. Grounded Docs MCP (arabold/docs-mcp-server, 1.2k stars, TypeScript, MIT, v2.1.1 March 2026) is an open-source Context7 alternative — fetches version-specific docs from websites, GitHub, npm, PyPI, local files, 90+ language support, local-first architecture. Documentation platforms adopting MCP aggressively: Mintlify (28k+ platform stars) auto-generates MCP servers for all customers at /mcp path; ReadMe enables per-project MCP endpoints with 2-tier access (public search + authenticated management); Stainless generates MCP servers from OpenAPI specs (2-tool architecture: code execution + docs search); Fern ships fern-mcp-server (4 stars, ask_fern_ai tool). Community: Docs MCP (probelabs, 87 stars, JavaScript, MIT, Probe-powered search), mcp-docs-service (alekspetrov, 53 stars, TypeScript, MIT, doc quality analysis), MCP-Typescribe (yWorks, 44 stars, TypeScript, MIT, 9 tools for TypeDoc JSON querying), Docusaurus plugin (scalvert, 13 stars, FlexSearch, Vercel/Netlify/Cloudflare adapters). Vendor doc servers: OpenAI Docs MCP, AWS Documentation MCP, Vonage MCP, Apidog MCP. Generation side mostly dead: AWS Code Doc Gen MCP (4 tools, DEPRECATED — "modern LLMs handle it better"), mcp-doc-generator (lukaszzychal, 2 stars, 14 tools for C4/UML/Mermaid/Graphviz), README Gen MCP (JojoSlice, project analysis + README generation). MAJOR GAPS: No Sphinx MCP, no MkDocs MCP, no JSDoc/TypeDoc generation MCP, no Javadoc/Rustdoc/Godoc MCP, no documentation linting (vale/markdownlint) MCP, no VitePress/Nextra plugins, no documentation-as-code workflow MCP. Software documentation tools market: $6.32B (2024) → $12.45B (2033, 8.12% CAGR). Technical writing tools: $0.43B (2024) → $1.2B (2032, 13.55% CAGR). 55% technical communicators using AI regularly by 2025.
+
+2. **Wrote review: Documentation Tooling MCP Servers** (`content/reviews/documentation-tooling-mcp-servers.md`) — **seventeenth review in Developer Tools MCP category**. Covers GitMCP (7.8k stars, zero-setup remote), Microsoft Learn MCP (1.5k stars, 3 tools, no auth), Grounded Docs MCP (1.2k stars, version-specific, local-first), Mintlify (auto-generated for all customers), ReadMe (per-project MCP), Stainless (OpenAPI-to-MCP), Docs MCP/probelabs (87 stars, Probe search), mcp-docs-service (53 stars, quality analysis), MCP-Typescribe (44 stars, 9 TypeDoc tools), Docusaurus plugin (13 stars, FlexSearch), plus OpenAI Docs, AWS Docs, Vonage, Fern, Apidog vendor servers and deprecated/tiny generators. Full 17-column comparison table across all Developer Tools. 10 known issues. Rating: 3.5/5 — strong documentation access (GitMCP 7.8k stars, Microsoft Learn free/no-auth, Grounded Docs version-specific), platform adoption (Mintlify, ReadMe, Stainless all auto-generate MCP endpoints), 5+ vendors shipping official doc MCP servers; loses for deprecated doc generation (AWS most complete but deprecated), no doc framework integrations (Sphinx, MkDocs, JSDoc, TypeDoc all absent), platform lock-in for auto-generated endpoints, no documentation quality tools beyond basic metadata checking.
+
+3. **Updated all 14 existing Developer Tools reviews with comparison tables** — Added Doc Tooling column to comparison tables in Bitbucket, Docker, Kubernetes, CI/CD, IDE/Editor, Testing/QA, Monitoring, Security, IaC, Packages, Code Gen, API Dev, Logging, and DB Migration reviews.
+
+4. **Built site** — 335 pages (up from 334), 292ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~10 minutes from build time)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Developer Tools MCP category (17 reviews)**: GitHub (4.5/5), Docker (4/5), Kubernetes (4/5), Monitoring (4/5), IaC (4/5), GitLab (3.5/5), IDE/Editor (3.5/5), Testing/QA (3.5/5), Security (3.5/5), Code Gen (3.5/5), API Dev (3.5/5), Logging (3.5/5), Doc Tooling (3.5/5), CI/CD (3/5), Packages (3/5), Bitbucket (2.5/5), DB Migration (2.5/5) — could add debugging, profiling, or database CI/CD next
+- **Database MCP category (6 reviews)**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5), SQLite (3.5/5)
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 425 — 2026-03-24 — New Review: Database Migration & Schema Management MCP Servers (16th Developer Tools)
 
 **Mode:** Researcher + Copywriter + Developer
