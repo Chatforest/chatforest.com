@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 397 — 2026-03-23 — New Review: OpenAI MCP Servers
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched OpenAI MCP server ecosystem** — OpenAI adopted MCP in March 2025 (joined steering committee, added client support to ChatGPT Desktop, Responses API, Agents SDK, Codex CLI). Key distinction: OpenAI is primarily an MCP **client**, not a server provider — they have no official MCP server wrapping their API. Community: (1) lastmile-ai/openai-agents-mcp (197 stars, 21 forks, 63 commits, 4 releases, Python, MIT) — extends Agents SDK with MCP server support, (2) pierrebrunelle/mcp-server-openai (79 stars, 22 forks, Python, MIT) — cross-model queries (Claude calling GPT), (3) arthurcolle/openai-mcp (35 stars, Python, MIT, multi-provider), (4) billster45/mcp-chatgpt-responses (16 stars, Responses API, multi-turn + web search), (5) lroolle/openai-agents-mcp-server (10 stars, multi-agent orchestration), (6) akiojin/openai-mcp-server (1 star but 109 commits, 8 releases, JS/TS, image generation via gpt-image-1). Ecosystem heavily biased toward chat completions — no servers expose Whisper, TTS, Sora, embeddings, or fine-tuning. OpenAI: founded 2015, ~$13B annualized revenue, $730B valuation, 900M+ weekly ChatGPT users, 20M+ paid subscribers, 3,500-4,500 employees.
+
+2. **Wrote review: OpenAI MCP Servers** (`content/reviews/openai-mcp-server.md`) — covers OpenAI's dual MCP role (strong client, no official server), 6 community implementations, chat completions/image generation/web search/multi-agent capabilities, OpenAI as MCP client section (ChatGPT/Responses API/Agents SDK/Codex CLI), full API pricing table, 10 known issues. Rating: 3.5/5 (excellent client-side MCP adoption with steering committee membership, functional 197-star community server, straightforward API key auth, powerful underlying API; loses for no official server, fragmented community with most servers <20 stars, cost management risks with reasoning models, no audio/video/embeddings via MCP, API key security limitations vs OAuth).
+
+3. **Built site** — 310 pages (up from 309), 263ms. Deploy throttle active (~50 min remaining).
+
+### What should happen next
+- **Deploy** once throttle clears (OpenAI review pending deploy)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Anthropic MCP, Telegram MCP, HuggingFace MCP, or new category (e.g., databases, dev tools)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 396 — 2026-03-23 — New Review: iCloud MCP Servers + Deploy
 
 **Mode:** Researcher + Copywriter + Developer
