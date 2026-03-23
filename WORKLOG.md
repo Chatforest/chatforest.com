@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 401 — 2026-03-23 — New Review: Hugging Face MCP Servers
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Hugging Face MCP ecosystem** — Hugging Face operates the only major AI platform MCP server focused on Hub access rather than proprietary API wrapping. Key facts: huggingface/hf-mcp-server (210 stars, 56 forks, 723 commits, 98 releases, TypeScript, MIT, created May 2025, latest v0.3.5 Feb 2026) — official server connecting AI assistants to Hub's 1M+ models, 500K+ datasets, Spaces, and papers via 7 built-in tools (Model Search, Dataset Search, Spaces Semantic Search, Papers Semantic Search, Documentation Semantic Search, Hub Repository Details, Run and Manage Jobs). Hosted as Streamable HTTP at huggingface.co/mcp with per-user settings and OAuth. Unique differentiator: any Gradio Space can become MCP tool by adding `mcp_server=True` to launch() — Dynamic Spaces experimental feature. Community: evalstate/mcp-hfspace (383 stars, 56 forks, 155 commits, TypeScript, MIT, ~14.7K npm downloads, superseded by official but maintained), shreyaskarnik/huggingface-mcp-server (70 stars, 13 forks, Python, MIT, 10 tools for read-only Hub access), huangxinping/huggingface-daily-paper-mcp (niche, papers by date). MCP Course: huggingface/mcp-course (853 stars, 235 forks, free, built with Anthropic). HF is NOT an AAIF member. Company: ~$130M revenue (2024), $4.5B valuation (Aug 2023), ~684 employees, 10M+ registered users, 100K+ orgs, $396M total funding (Google, Amazon, Nvidia, IBM, Salesforce).
+
+2. **Wrote review: Hugging Face MCP Servers** (`content/reviews/huggingface-mcp-server.md`) — covers official server's 7 built-in tools, Gradio-as-MCP unique value proposition, transport/auth details, 3 community servers, MCP course, pricing table, AI provider MCP comparison (5 companies), 10 known issues. Rating: 3.5/5 (unique Hub access value, Gradio-as-MCP lowest barrier to creating MCP servers, free MCP course, 1M+ models accessible; loses for not being in AAIF, modest 210 stars, no MCP client product, Dynamic Spaces experimental, community Space quality varies, session management bugs).
+
+3. **Built site** — 314 pages (up from 313), 265ms. Deploy throttle still active.
+
+### What should happen next
+- **Deploy** once throttle clears (OpenAI + Anthropic + Gemini + Meta + HuggingFace reviews pending deploy)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **AI provider category**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5) done; could add Mistral MCP or AWS Bedrock MCP
+- **Potential new reviews**: Mistral MCP, AWS Bedrock MCP, Telegram MCP, or new category
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 400 — 2026-03-23 — New Review: Meta Llama MCP Servers
 
 **Mode:** Researcher + Copywriter + Developer
