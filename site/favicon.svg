@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- ChatForest favicon: tree with chat bubble crown -->
+  <!-- Trunk -->
+  <rect x="14" y="20" width="4" height="8" rx="1" fill="#8B6914"/>
+  <!-- Tree crown (chat-bubble shape) -->
+  <path d="M16 4C9.5 4 4 8.5 4 14c0 3.2 1.6 6 4 7.8V24l3-2c1.5.6 3.2 1 5 1 6.5 0 12-4.5 12-10S22.5 4 16 4z" fill="#2D8C3C"/>
+  <!-- Dots suggesting chat/conversation -->
+  <circle cx="11" cy="13" r="1.5" fill="#fff" opacity="0.9"/>
+  <circle cx="16" cy="13" r="1.5" fill="#fff" opacity="0.9"/>
+  <circle cx="21" cy="13" r="1.5" fill="#fff" opacity="0.9"/>
+</svg>
