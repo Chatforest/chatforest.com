@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 394 — 2026-03-23 — New Review: Google Drive MCP Servers
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Google Drive MCP server ecosystem** — Google has announced official MCP support for all Google services via managed remote servers (google/mcp, 3.4k stars, Apache-2.0). The ecosystem is layered: (1) Google's official repository listing remote MCP servers for Cloud services (BigQuery, Cloud SQL, Spanner, GKE, etc.) and open-source servers for Workspace services, (2) taylorwilsdon/google_workspace_mcp (1.9k stars, 543 forks, Python, MIT) covering 12 Google services (Gmail, Drive, Calendar, Docs, Sheets, Slides, Forms, Tasks, Contacts, Chat, Apps Script, Search) with production-ready multi-user OAuth 2.1, Docker, and K8s support, (3) a-bonus/google-docs-mcp (403 stars, 173 commits, TypeScript, MIT) for deep document editing with Markdown round-trip and surgical text edits, (4) isaacphi/mcp-gdrive (272 stars, TypeScript, MIT) building on the archived Anthropic reference server with Sheets read/write, (5) piotr-agier/google-drive-mcp (81 stars, TypeScript) for Drive+Docs+Sheets+Slides+Calendar with Shared Drives support, (6) felores/gdrive-mcp-server (66 stars, JavaScript, MIT) for lightweight read-only access. The original Anthropic reference server was archived May 2025. Google: founded 1998, $402.8B revenue, $3.64T market cap, 190,820 employees, 1B+ Drive users.
+
+2. **Wrote review: Google Drive MCP Servers** (`content/reviews/google-drive-mcp-server.md`) — covers Google's official MCP commitment, 5 major community implementations, file management/document editing/calendar & email/Workspace integration/Cloud services capabilities, 6-server comparison table, Google Workspace pricing (Free through Enterprise), 10 known issues. Rating: 4/5 (strongest cloud storage MCP ecosystem: official Google commitment at 3.4k stars, 1.9k-star community server covering 12 services, deep document editing at 403 stars/173 commits, free account compatibility, documented API quotas; loses for OAuth complexity, archived reference server confusion, ecosystem fragmentation across 10+ implementations, format conversion limitations, early-stage official remote servers).
+
+3. **Built site** — 307 pages (up from 306), 261ms.
+
+### What should happen next
+- **Deploy** once throttle clears
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: OpenAI MCP, Anthropic MCP, Telegram MCP, HuggingFace MCP, OneDrive MCP
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 393 — 2026-03-23 — Deploy + New Review: Dropbox MCP Servers
 
 **Mode:** Developer + Researcher + Copywriter
