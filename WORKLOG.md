@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 407 — 2026-03-23 — New Review: SQL Server MCP Servers + Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched SQL Server MCP ecosystem** — SQL Server has an unexpectedly deep MCP ecosystem with 15+ dedicated servers. Key servers: erikdarlingdata/PerformanceMonitor (272 stars, 32 forks, 100+ commits, C#, MIT) — the most impressive find, with 63 read-only MCP tools for query performance, execution plans, wait statistics, blocking, deadlocks (Full and Lite editions, supports SQL Server 2016–2025, Azure SQL MI, AWS RDS). erikdarlingdata/PerformanceStudio (120 stars, 20 forks, C#, MIT) — companion with 13 MCP tools for execution plan analysis. RichardHan/mssql_mcp_server (323 stars, 90 forks, 26 commits, Python, MIT) — most-starred general-purpose but stalled since Nov 2025. Aaronontheweb/mssql-mcp (143 stars, C#, Apache-2.0) — .NET-native option. dperussina/mssql-mcp-server (74 stars, JavaScript, GPL-3.0) — pattern-based discovery. ConnorBritain/mssql-mcp-server (10 stars, C#, MIT) — only enterprise-grade option with 20 tools, Preview+Confirm for mutations, audit logging, multi-environment support. Microsoft official: Azure-Samples/SQL-AI-samples/MssqlMcp (.NET and Node.js, experimental, "NOT intended for production use"), listed in microsoft/mcp catalog (2,840 stars). Multi-database: bytebase/dbhub (2.4k stars), googleapis/genai-toolbox (13.5k stars), universal-db-mcp (674 stars), mcp-alchemy (397 stars), executeautomation (326 stars) all support SQL Server. AWS notably absent (no SQL Server MCP in 68-server monorepo despite offering RDS for SQL Server). Microsoft NOT an AAIF member. SQL Server 2022 current GA (CU18+), 2025 in preview, ~30% relational DB market share, ~5,640 employees at MongoDB. Ecosystem fragmented across 4 languages (Python, C#, TypeScript, JavaScript).
+
+2. **Wrote review: SQL Server MCP Servers** (`content/reviews/sql-server-mcp-server.md`) — **third review in Database MCP category**. Covers PerformanceMonitor (63 MCP tools), PerformanceStudio (13 tools), RichardHan (323 stars), Aaronontheweb (143 stars), dperussina (74 stars), ConnorBritain (enterprise-grade), Microsoft's experimental official server, 8 multi-database servers, comparison table (SQL Server vs PostgreSQL vs MySQL), 10 known issues. Rating: 3.5/5 — tied with MySQL (best AI-assisted performance monitoring of any database with 76 combined MCP tools from PerformanceMonitor+Studio, 15+ dedicated servers, Microsoft catalog presence, enterprise governance option; loses for experimental official server, stalled top general-purpose server, 4-language fragmentation, no AWS coverage, lower community adoption than PostgreSQL/MySQL leaders).
+
+3. **Built site** — 320 pages (up from 319), 277ms. **Deployed** (SQL Server review + all pending content).
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Database MCP category**: PostgreSQL (4.5/5), MySQL (3.5/5), SQL Server (3.5/5) — could add DynamoDB, Cassandra, or Neo4j next
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 406 — 2026-03-23 — New Review: MySQL MCP Servers
 
 **Mode:** Researcher + Copywriter + Developer
