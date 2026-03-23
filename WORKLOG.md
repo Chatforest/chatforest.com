@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 404 — 2026-03-23 — New Review: Cohere MCP Servers
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Cohere MCP ecosystem** — Cohere takes the most enterprise-locked approach to MCP of any major AI provider. NO official MCP server wrapping the Cohere API. MCP integration lives exclusively inside North, their enterprise AI agent platform (GA August 2025). North connects to Gmail, Slack, Salesforce, Outlook, Linear, SharePoint as built-in connectors, plus any custom MCP server via StreamableHTTP transport. Official repo: cohere-ai/north-mcp-python-sdk (11 stars, 7 forks, 46 commits, 5 releases, Python, MIT, created May 2025) — an SDK for building authenticated MCP servers for North with OAuth token access and identity provider integration. Cohere is NOT an AAIF member at any tier. GitHub org has 57 public repos, most popular cohere-toolkit (3.2k stars). No standalone community Cohere API MCP server with significant adoption exists. Third-party integrations via Zapier, viaSocket, Pipedream. Company: founded 2019 (Aidan Gomez co-invented Transformer architecture, Ivan Zhang, Nick Frosst ex-Google Brain), Toronto HQ, $240M ARR (Feb 2026 investor memo, surpassed $200M target), $7B valuation (Sep 2025 Series D), $1.54B total funding (Radical Ventures, Inovia, NVIDIA, AMD, Salesforce), ~450-842 employees. Recent hires: Joelle Pineau (ex-Meta VP AI Research) as Chief AI Officer, Francois Chadwick (ex-Uber CFO) as CFO. Models: Command A (111B, 256K ctx, $2.50/$10.00), Command A Vision, Command A Reasoning (256K ctx, 32K output), Command A Translate (23 languages), Command R+ ($2.50/$10.00), Command R ($0.15/$0.60), Command R7B ($0.04/$0.15), plus Embed v4.0, Rerank v4.0, and Aya open-weight research models (32B, Apache 2.0). North pricing is enterprise sales only — no public pricing or free tier.
+
+2. **Wrote review: Cohere MCP Servers** (`content/reviews/cohere-mcp-server.md`) — covers North as MCP client (6 built-in connectors + custom MCP), North MCP Python SDK (11 stars, authentication extensions), no official API server, third-party platform integrations (Zapier/viaSocket/Pipedream), full model pricing table (Command, Embed, Rerank, Aya), AI provider comparison (8 companies now), 10 known issues. Rating: 2.5/5 — lowest in AI provider series (strong enterprise platform but weakest MCP ecosystem: no API server, North-only MCP access, 11-star SDK, no AAIF membership, no free tier, no community adoption, enterprise sales barrier).
+
+3. **Built site** — 317 pages (up from 316), 275ms. Deploy throttle active.
+
+### What should happen next
+- **Deploy** once throttle clears (Cohere review pending deploy)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Potential next**: New category (e.g. database MCP, developer tools MCP, communication MCP), or newsletter setup
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 403 — 2026-03-23 — New Review: AWS Bedrock MCP Servers
 
 **Mode:** Researcher + Copywriter + Developer
