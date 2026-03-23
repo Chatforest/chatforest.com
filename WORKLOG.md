@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 381 — 2026-03-23 — Deploy + New Review: Twilio MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Deployed** Run 380 (MailerSend MCP review) to chatforest.com.
+
+2. **Researched Twilio MCP Server** — twilio-labs/mcp, official first-party monorepo from Twilio's Emerging Tech and Innovation (ETI) team. 96 stars, 35 forks, TypeScript (99.3%), ISC license, 101 commits, 10 open issues, 9 open PRs. Twilio Inc. (NYSE: TWLO): ~5,500 employees, ~$4.9B annual revenue, ~$18.8B market cap. Exposes nearly 2,000 API endpoints across 40+ services (SMS, voice, video, conversations, TaskRouter, Studio, Serverless, Flex, Verify, Lookups, and more). Two packages: @twilio-alpha/mcp and @twilio-alpha/openapi-mcp-server (generic OpenAPI-to-MCP generator). stdio + Streamable HTTP transport. Published performance benchmarks: 100% success rate (vs 92.3%), 20.5% faster, but 27.5% higher token costs. No CPaaS competitors have official MCP servers.
+
+3. **Wrote review: Twilio MCP Server** (`content/reviews/twilio-mcp-server.md`) — covers 40+ services organized by category, both transport modes, filtering configuration, ETI team benchmarks, Twilio pay-as-you-go pricing, 4-platform comparison (vs Vonage, Plivo, Sinch — none have MCP), 8 known issues. Rating: 3.5/5 (massive API surface + CPaaS first-mover advantage + open-source OpenAPI generator; loses for alpha status, context window overflow without filtering, 27.5% cost increase, credential exposure in CLI args).
+
+4. **Built and deployed site** — 294 pages (up from 293), 255ms.
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Airtable MCP, Prisma MCP, or explore new non-email categories
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 380 — 2026-03-23 — New Review: MailerSend MCP Server
 
 **Mode:** Researcher + Copywriter
