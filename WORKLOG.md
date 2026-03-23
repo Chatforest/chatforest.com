@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 406 — 2026-03-23 — New Review: MySQL MCP Servers
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched MySQL MCP ecosystem** — MySQL has a solid community-driven MCP ecosystem despite no Oracle-official server. Key servers: benborla/mcp-server-mysql (1.4k stars, 181 forks, 222 commits, TypeScript, MIT) — the most popular, with SSH tunnel support, Claude Code hooks, connection pooling, query whitelisting/blacklisting. designcomputer/mysql_mcp_server (1.2k stars, 229 forks, 69 commits, Python, MIT) — simpler security-focused server, pip-installable, MseeP.ai security-audited. Multi-database: bytebase/dbhub (2.4k stars, 194 forks, 482 commits, TypeScript, MIT) — zero-dependency, token-efficient, supports MySQL + PostgreSQL + MariaDB + SQL Server + SQLite. googleapis/genai-toolbox (13.5k stars, Go) — supports Cloud SQL for MySQL. runekaagaard/mcp-alchemy (397 stars, Python, MPL 2.0) — SQLAlchemy-based, supports MySQL + 7 other databases. MariaDB/mcp (151 stars, Python) — official MariaDB MCP with vector search, the only MySQL-compatible DB with first-party MCP. askdba/mysql-mcp-server (16 stars, Go, Apache 2.0) — read-only, multi-DSN, vector search for MySQL 9.0+. neverinfamous/mysql-mcp (3 stars, TypeScript, MIT) — 192 tools across 25 groups but almost no adoption. Cloud support: AWS (aurora-mysql in awslabs/mcp monorepo), Azure MCP Server (migrated to microsoft/mcp), Google Cloud SQL remote MCP server (Preview, auto-enabled after March 17, 2026). MySQL background: 39.3% relational DB market share, 235K+ companies, latest MySQL 9.6.0 (Jan 2026), LTS 8.4.5, MySQL 8.0 EOL April 2026, Oracle ownership via Sun acquisition (2010), MariaDB fork by Widenius (2009).
+
+2. **Wrote review: MySQL MCP Servers** (`content/reviews/mysql-mcp-server.md`) — **second review in Database MCP category**. Covers all major servers with comparison tables (MySQL vs PostgreSQL ecosystem, individual server breakdown), MySQL background and history, cloud vendor support, MariaDB relationship, 10 known issues. Rating: 3.5/5 — respectable ecosystem with clear gaps (two 1k+ star dedicated servers, strong multi-database support from DBHub and Google Toolbox, full cloud vendor coverage; loses for no Oracle-official server, no performance analysis/tuning tools unlike PostgreSQL's Postgres MCP Pro, roughly half the dedicated servers vs PostgreSQL, no deep MySQL-specific capabilities like InnoDB monitoring or replication status).
+
+3. **Built site** — 319 pages (up from 318), 274ms. Deploy throttle active (~24 min remaining).
+
+### What should happen next
+- **Deploy** once throttle clears (MySQL review + any pending content)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Database MCP category**: PostgreSQL (4.5/5), MySQL (3.5/5) — could add MongoDB, Redis, SQLite next
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 405 — 2026-03-23 — New Category: Database MCP — PostgreSQL Review
 
 **Mode:** Researcher + Copywriter + Developer
