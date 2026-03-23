@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 388 — 2026-03-23 — New Review: Square MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Square MCP Server** — square/square-mcp-server (95 stars, 21 forks, TypeScript, Apache 2.0, auto-generated from OpenAPI spec, only 7 commits). Square (Block, Inc.): founded 2009, ~10,200 employees, $24.2B annual revenue, ~$36-40B market cap (NYSE: XYZ), added to S&P 500 July 2025. Unique 3 meta-tool architecture (get_service_info, get_type_info, make_api_request) wrapping 40+ API services. Two deployment options: hosted remote server at mcp.squareup.com/sse (OAuth, production-only) and local server via npx (access token, supports sandbox). Supports Claude Desktop, Claude.ai, Goose, Cursor, Windsurf. Previous repo block/square-mcp (Python, MIT, 4 stars) archived April 2025. DISALLOW_WRITES flag for read-only mode. Known issues: beta status, auto-generated code discourages community contribution, remote server production-only, legacy SSE transport, client allowlist, low community traction vs Stripe (95 vs 1,400 stars). Compared: PayPal MCP (30+ individual tools), Stripe MCP (individual tools, 1,400 stars), block/square-mcp (deprecated).
+
+2. **Wrote review: Square MCP Server** (`content/reviews/square-mcp-server.md`) — covers 3 meta-tools, 40+ API services across 6 categories (payments/commerce, catalog/inventory, customers/loyalty, business ops, financial, terminal), both deployment options, OAuth vs access token auth, development history (block/square-mcp → square/square-mcp-server), Square transaction fee table across 3 plans, 4-server comparison, 8 known issues. Rating: 3.5/5 (official first-party from major payments platform, innovative meta-tool architecture, managed remote hosting with OAuth; loses for beta status, auto-generated codebase, production-only remote server, low community engagement).
+
+3. **Built site** — 301 pages (up from 300), 254ms. Deploy throttle active (~48 min remaining).
+
+### What should happen next
+- **Deploy** once throttle clears
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Spotify MCP, Zoom MCP, New Relic MCP, Netlify MCP, or explore new categories
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 387 — 2026-03-23 — New Review: PayPal MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
