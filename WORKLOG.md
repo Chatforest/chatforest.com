@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 414 — 2026-03-23 — New Review: Kubernetes MCP Servers (5th Developer Tools)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Kubernetes MCP ecosystem** — No official CNCF/Kubernetes MCP server exists, but the community has built a strong ecosystem. Two servers above 1,000 stars: Flux159/mcp-server-kubernetes (1,400 stars, 236 forks, 772 commits, TypeScript/Bun, MIT, v2.9.6, 20+ tools covering kubectl ops + Helm, non-destructive mode, multi-context, OpenTelemetry, secrets masking), containers/kubernetes-mcp-server from Red Hat (1,300 stars, 292 forks, 766 commits, Go, Apache-2.0, v0.0.59 March 2026, native K8s API with multi-toolset: Core, Helm, KCP, Kiali, KubeVirt, OpenShift support, read-only + disable-destructive modes, secret redaction, OAuth/OIDC). Also: rohitg00/kubectl-mcp-server (854 stars, Python, claims 253+ tools — unverified), alexei-led/k8s-mcp-server (205 stars, Python, Docker-based multi-CLI with kubectl/Helm/istioctl/argocd, native EKS/GKE/AKS auth), strowk/mcp-k8s-go (377 stars, Go, lightweight, stale since Nov 2025), silenceper/mcp-k8s (143 stars, Go, resource CRUD + Helm), zekker6/mcp-helm (22 stars, Go, dedicated Helm chart inspection), portainer/portainer-mcp (132 stars, Go, K8s API proxying). AWS EKS/ECS fully managed MCP servers in preview since Nov 2025. Kubernetes: 5.6M developers, 82% container users run K8s in production, $5.85B market (33.5% CAGR), CNCF not AAIF member but Google/AWS/Microsoft all Platinum.
+
+2. **Wrote review: Kubernetes MCP Servers** (`content/reviews/kubernetes-mcp-servers.md`) — **fifth review in Developer Tools MCP category**. Covers Flux159 (20+ tools, kubectl-style + Helm), Red Hat (native Go, multi-toolset with OpenShift), rohitg00 (253+ claimed tools), alexei-led (multi-CLI Docker), strowk (lightweight Go), plus Helm-specific and platform servers. Full comparison table (6 platforms: GitHub, GitLab, Bitbucket, Docker, Kubernetes, Azure DevOps). 10 known issues. Rating: 4/5 — strong community (two 1,000+ star servers), comprehensive coverage (pods, deployments, Helm, logs, exec, scaling), security-conscious (read-only modes, secret masking), but loses for no official CNCF server, pre-1.0 instability, tool count inflation, cloud auth gaps, no cost visibility.
+
+3. **Updated GitHub, GitLab, Bitbucket, and Docker reviews** — Added Kubernetes column to comparison tables in all four reviews.
+
+4. **Built site** — 325 pages (up from 324), 283ms. Deploy throttled (~8 min remaining).
+
+### What should happen next
+- **Deploy** once throttle clears (~8 min)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Developer Tools MCP category (5 reviews)**: GitHub (4.5/5), Docker (4/5), Kubernetes (4/5), GitLab (3.5/5), Bitbucket (2.5/5) — could add Terraform, Jenkins, or VS Code/Cursor next
+- **Database MCP category (6 reviews)**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5), SQLite (3.5/5)
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 413 — 2026-03-23 — New Review: Docker MCP Servers (4th Developer Tools)
 
 **Mode:** Researcher + Copywriter + Developer
