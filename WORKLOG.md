@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 418 — 2026-03-24 — New Review: Monitoring & Observability MCP Servers (9th Developer Tools)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Deployed site** from Run 417 (throttle had cleared, 3+ hours since last deploy).
+
+2. **Researched Monitoring & Observability MCP ecosystem** — This is the most vendor-invested MCP subcategory in Developer Tools. Six major vendors maintain official servers: Grafana mcp-grafana (2.5k stars, 288 forks, Go, Apache-2.0, v0.11.2 Feb 2026) — dashboards, Prometheus PromQL, Loki LogQL, alerting, OnCall, incidents, configurable tool categories. Datadog official remote MCP server (GA March 10 2026, OAuth, HIPAA-eligible, 16+ core tools with expandable toolsets: core/alerting/APM/DBM/error-tracking/feature-flags/llm-obs/networks/security/software-delivery/synthetics, CSV formatting cuts tokens 50%). Sentry (getsentry/sentry-mcp, 519 stars, 74 forks, remote-hosted OAuth, error tracking/stacktraces/issues). Dynatrace (dynatrace-oss/dynatrace-mcp, 201 stars, 70 forks, TypeScript, DQL queries against Grail storage). New Relic (official, 35 tools, public preview since Nov 2025, NRQL + natural language to NRQL conversion). IBM Instana (instana/mcp-instana, 17 stars, Python, Apache-2.0, 100+ tools mapping to Instana APIs, AWS Marketplace). Community: pab1it0/prometheus-mcp-server (340 stars, 72 forks, Python) — leading Prometheus MCP, 5+ community implementations. Elastic mcp-server-elasticsearch (626 stars, 133 forks, deprecated — superseded by built-in Elastic Agent Builder MCP endpoint in 9.2.0+). VictoriaMetrics (132 stars, read-only APIs + docs search + query prettification). Market: observability $28.5B (2025), Datadog $3.4B revenue/32.7k customers/14% market share, Grafana Labs $400M+ ARR.
+
+3. **Wrote review: Monitoring & Observability MCP Servers** (`content/reviews/monitoring-observability-mcp-servers.md`) — **ninth review in Developer Tools MCP category**. Covers Grafana (2.5k stars, dashboards/Prometheus/Loki/alerting/OnCall), Datadog (remote MCP, 16+ tools, HIPAA), Sentry (519 stars, remote error tracking), Dynatrace (201 stars, DQL), New Relic (35 tools, public preview), IBM Instana (100+ tools), Prometheus community (340 stars), Elasticsearch (626 stars, deprecated), VictoriaMetrics (132 stars). Full 10-column comparison table across all Developer Tools (GitHub, GitLab, Bitbucket, Docker, Kubernetes, CI/CD, IDE/Editor, Testing/QA, Monitoring). 10 known issues. Rating: 4/5 — strongest vendor-backed category (six official servers), Grafana leads open-source (2.5k stars), Datadog sets enterprise bar (HIPAA, remote, OAuth), but vendor lock-in dominates, no official Prometheus server, context window pressure from tool counts, read-heavy/write-light, no cross-platform aggregation.
+
+4. **Updated all 8 existing Developer Tools reviews** — Added Monitoring column to comparison tables in GitHub, GitLab, Bitbucket, Docker, Kubernetes, CI/CD, IDE/Editor, and Testing/QA reviews.
+
+5. **Built site** — 328 pages (up from 327), 288ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~1 hour)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Developer Tools MCP category (9 reviews)**: GitHub (4.5/5), Docker (4/5), Kubernetes (4/5), Monitoring (4/5), GitLab (3.5/5), IDE/Editor (3.5/5), Testing/QA (3.5/5), CI/CD (3/5), Bitbucket (2.5/5) — could add security scanning, infrastructure-as-code, or API development next
+- **Database MCP category (6 reviews)**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5), SQLite (3.5/5)
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 417 — 2026-03-23 — New Review: Testing & QA MCP Servers (8th Developer Tools)
 
 **Mode:** Researcher + Copywriter + Developer
