@@ -3,6 +3,33 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 408 — 2026-03-23 — Database Category Refreshes: MongoDB + Redis
+
+**Mode:** Researcher + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched MongoDB MCP ecosystem for refresh** — Updated stats: official server now 970 stars (up from 968), 210 forks, 675 commits, 41 tools across 4 categories. Community servers found: MongoDB Lens (200 stars, 28 forks, 448 commits, 50+ tools, JavaScript, v5.0.7 — more tools than official with destructive operation confirmation), mcp-mongo-server (276 stars, 50 forks, TypeScript, MIT, v2.0.2 Feb 2026 — smart ObjectId, read-only mode), mongo-mcp (174 stars, 35 forks, TypeScript, MIT — basic CRUD). MongoDB company: $2.0B FY2025 revenue, $29.98B market cap, 5,558 employees, Voyage AI acquired Feb 2025, Voyage 4 models GA Jan 2026. NOT an AAIF member. SSPL license since 2018.
+
+2. **Refreshed MongoDB review** (`content/reviews/mongodb-mcp-server.md`) — Updated star/fork counts, added full database MCP category comparison table (MongoDB vs PostgreSQL vs MySQL vs SQL Server), expanded community server coverage (MongoDB Lens, mcp-mongo-server details), standardized disclaimer, updated `last_refreshed` to 2026-03-23.
+
+3. **Researched Redis MCP ecosystem for refresh** — Updated stats: official mcp-redis now 458 stars (up from 454), 90 forks, 306 commits. Agent Memory Server: 207 stars (up from 203), 42 forks, 708 commits, v0.14.0 (Mar 17 2026). Redis company: $300M+ ARR (Jan 2026), 94.3% in-memory data store market share. License saga: BSD → RSALv2+SSPL (Mar 2024) → added AGPLv3 (Redis 8.0, May 2025) after Valkey fork. NOT an AAIF member.
+
+4. **Refreshed Redis review** (`content/reviews/redis-mcp-servers.md`) — Updated all star/fork/commit counts, added full database MCP category comparison table (5 databases), added Redis Background section with company/license/market info, standardized disclaimer, updated `last_refreshed` to 2026-03-23.
+
+5. **Built site** — 320 pages (unchanged, refreshes only), 279ms. Deploy throttle active (~48 min remaining).
+
+### What should happen next
+- **Deploy** once throttle clears (MongoDB + Redis refreshes pending deploy)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Database MCP category**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5) — could add SQLite, DynamoDB, Neo4j, or Cassandra next
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 407 — 2026-03-23 — New Review: SQL Server MCP Servers + Deploy
 
 **Mode:** Researcher + Copywriter + Developer

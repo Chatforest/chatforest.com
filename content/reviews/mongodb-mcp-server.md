@@ -2,15 +2,15 @@
 title: "The MongoDB MCP Server — The Most Comprehensive Database Server We've Reviewed"
 date: 2026-03-14T11:49:11+09:00
 description: "MongoDB's official MCP server packs 40+ tools spanning database operations, Atlas cluster management, stream processing, local deployments, performance advisory, and knowledge search. Here's the honest review."
-og_description: "MongoDB's official MCP server has 40+ tools covering queries, indexes, Atlas clusters, stream processing, local deployments, and performance advisors. 968 stars, rapid releases. Rating: 4/5."
+og_description: "MongoDB's official MCP server has 41+ tools covering queries, indexes, Atlas clusters, stream processing, local deployments, and performance advisors. 970 stars, rapid releases. Rating: 4/5."
 content_type: "Review"
 card_description: "The most comprehensive database MCP server we've reviewed — 40+ tools for queries, indexes, Atlas management, stream processing, local clusters, performance advisors, and knowledge search. All from MongoDB's official team."
-last_refreshed: 2026-03-14
+last_refreshed: 2026-03-23
 ---
 
 No other database MCP server comes close to this tool count.
 
-**At a glance:** 968 GitHub stars, 209 forks, 40+ tools across six categories (database ops, Atlas clusters, stream processing, local deployments, performance advisory, knowledge search), 8 open issues, v1.8.1 current (Mar 13 2026), 675 commits, shipping every 1-2 weeks.
+**At a glance:** 970 GitHub stars, 210 forks, 41+ tools across six categories (database ops, Atlas clusters, stream processing, local deployments, performance advisory, knowledge search), 8 open issues, 675 commits, shipping every 1-2 weeks.
 
 The MongoDB MCP server ships with 40+ tools across six categories: database operations, Atlas cluster management, Atlas Stream Processing, Atlas local deployments, performance advisory, and knowledge search. For context, [Neon](/reviews/neon-mcp-server/) has 20 tools (impressive for Postgres). [Supabase](/reviews/supabase-mcp-server/) has 20+ across multiple services. MongoDB has double — and covers everything from `find` queries to spinning up local clusters to building stream processing pipelines to getting index recommendations from the Atlas Performance Advisor.
 
@@ -177,7 +177,24 @@ The database MCP landscape splits into relational and document/NoSQL categories.
 
 **vs. [SQLite MCP](/reviews/sqlite-mcp-server/) (3/5):** SQLite's server is a minimal teaching tool. MongoDB's is a production operations interface. Different weight classes entirely.
 
-**vs. Community MongoDB servers:** Several community alternatives exist — [QuantGeekDev/mongo-mcp](https://github.com/QuantGeekDev/mongo-mcp), [kiliczsh/mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server), [1RB/mongo-mcp](https://github.com/1RB/mongo-mcp). None come close to the official server's tool count, Atlas integration, or maintenance. Use the official one.
+**vs. Community MongoDB servers:** Several community alternatives exist — [MongoDB Lens](https://github.com/furey/mongodb-lens) (200 stars, 50+ tools, JavaScript, safety confirmation for destructive ops), [kiliczsh/mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server) (276 stars, TypeScript, smart ObjectId handling, read-only mode, v2.0.2 Feb 2026), [QuantGeekDev/mongo-mcp](https://github.com/QuantGeekDev/mongo-mcp) (174 stars, TypeScript, basic CRUD). MongoDB Lens actually has *more* tools (50+ vs 41) with better safety features (destructive operation confirmation), but lacks Atlas integration, vector search, and Voyage AI embeddings. Use the official server for Atlas workflows; consider MongoDB Lens if safety guardrails matter more.
+
+### Database MCP Category Comparison
+
+With four database reviews now complete, here's how they compare:
+
+| Feature | MongoDB | [PostgreSQL](/reviews/postgresql-mcp-server/) | [MySQL](/reviews/mysql-mcp-server/) | [SQL Server](/reviews/sql-server-mcp-server/) |
+|---------|---------|-----------|-------|------------|
+| **Rating** | **4/5** | **4.5/5** | **3.5/5** | **3.5/5** |
+| Official server | Yes (970 stars, 41 tools) | No official | No (Oracle absent) | Experimental only |
+| Top community server | MongoDB Lens (200 stars, 50+ tools) | Postgres MCP Pro (2.4k stars) | benborla (1.4k stars) | PerformanceMonitor (272 stars, 63 tools) |
+| Multi-DB MCP support | No (absent from DBHub/Toolbox) | Yes (DBHub, Toolbox, etc.) | Yes (DBHub, Toolbox, etc.) | Yes (DBHub, Toolbox, etc.) |
+| Vendor backing | MongoDB Inc. (first-party) | Community-driven | Community-driven | Microsoft (experimental) |
+| Vector search MCP | Yes (unified index + auto embeddings) | Limited | No | No |
+| Performance tools | Performance Advisor (Atlas only) | Postgres MCP Pro (any PG) | None | PerformanceMonitor (76 tools, any SQL Server) |
+| Cloud management | Atlas (13 tools + Streams) | Supabase/Neon/Azure/AWS | AWS/Azure/Google | AWS/Azure |
+
+MongoDB has the strongest first-party server; PostgreSQL has the deepest community ecosystem. MySQL and SQL Server have more fragmented options with no dominant official server.
 
 ## The Bottom Line
 
@@ -194,12 +211,12 @@ If your stack includes MongoDB, this is an easy install. If you're choosing betw
 | **MCP Server** | MongoDB MCP Server |
 | **Publisher** | MongoDB, Inc. (official) |
 | **Repository** | [mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |
-| **Stars** | ~968 |
-| **Tools** | 40+ (21 database + 12 Atlas + 3 stream processing + 4 local + 2 knowledge) |
+| **Stars** | ~970 |
+| **Tools** | 41+ (21 database + 13 Atlas + 4 stream processing + 3 local + 2 knowledge) |
 | **Transport** | stdio, HTTP |
 | **Language** | TypeScript |
 | **License** | Apache 2.0 |
 | **Pricing** | Free (server). MongoDB Atlas has free tier; paid plans for production. |
 | **Our rating** | 4/5 |
 
-*This review reflects research conducted by ChatForest using publicly available sources including GitHub, PulseMCP, and MongoDB's official documentation. We have not personally installed or tested this MCP server. Last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
