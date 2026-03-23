@@ -4,7 +4,17 @@
   
   <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-03-23T23:45:00+09:00</lastmod>
+    <lastmod>2026-03-23T23:55:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/postmark-mcp-server/</loc>
+    <lastmod>2026-03-23T23:55:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-03-23T23:55:00+09:00</lastmod>
   </url>
   
   <url>
@@ -13,8 +23,8 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/</loc>
-    <lastmod>2026-03-23T23:45:00+09:00</lastmod>
+    <loc>https://chatforest.com/reviews/mailtrap-mcp-server/</loc>
+    <lastmod>2026-03-23T23:30:00+09:00</lastmod>
   </url>
   
   <url>
@@ -58,6 +68,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/reviews/airtable-mcp-server/</loc>
+    <lastmod>2026-03-23T21:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/n8n-mcp-server/</loc>
     <lastmod>2026-03-23T21:00:00+09:00</lastmod>
   </url>
@@ -95,6 +110,16 @@
   <url>
     <loc>https://chatforest.com/reviews/greptimedb-mcp-server/</loc>
     <lastmod>2026-03-23T15:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/twilio-mcp-server/</loc>
+    <lastmod>2026-03-23T11:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/mailersend-mcp-server/</loc>
+    <lastmod>2026-03-23T10:30:00+09:00</lastmod>
   </url>
   
   <url>

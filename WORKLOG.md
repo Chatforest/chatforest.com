@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 382 — 2026-03-23 — New Review: Airtable MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Airtable MCP Server** — domdomegg/airtable-mcp-server, community-built (not official Airtable). 429 stars, 132 forks, TypeScript, MIT license, 114 commits, 9 contributors, 5 open issues, 1 open PR. Author: Adam Jones (domdomegg, 80 of 114 commits). 15 MCP tools across 4 categories: database navigation (list_bases, list_tables, describe_table), record operations (list/search/get/create/update/delete_records), schema management (create/update_table, create/update_field), collaboration (create/list_comments, upload_attachment). stdio + HTTP transport, npx/Homebrew/Docker/DXT install, personal access token auth. v1.13.0 (Mar 7, 2026), 15 releases over 15 months, ~15.9K npm downloads/mo. Airtable Inc.: founded 2012, ~929 employees, ~$478M ARR, $1.4B funding, ~$4B valuation (down from $11.7B peak). CEO Howie Liu announced AI-native "refounding" Sept 2025 but no official MCP server exists — 8,700+ view community thread requesting one. Airtable pricing: Free 1,000 API calls/mo (unusable for MCP), Team $20/seat 100K calls, Business $45/seat 500K calls, Enterprise unlimited. Hard 5 req/sec/base rate limit all tiers.
+
+2. **Wrote review: Airtable MCP Server** (`content/reviews/airtable-mcp-server.md`) — covers all 15 tools organized by category, setup with multiple install methods, authentication scopes, development history table (15 releases), pricing with API impact analysis, 4-platform comparison (vs Notion official, Monday.com official, Google Sheets community), 5 alternative Airtable MCP servers, 8 known issues. Rating: 4/5 (most complete and actively maintained Airtable MCP server, full CRUD + schema management + comments + attachments, MIT license, multiple install methods, dual transport; loses for no official Airtable backing unlike Notion/Monday.com, no field filtering on record retrieval, Free tier API limits, no automation/workflow features).
+
+3. **Built site** — 295 pages (up from 294), 250ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~34 min remaining)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Prisma MCP, Supabase refresh, or explore new categories
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 381 — 2026-03-23 — Deploy + New Review: Twilio MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
