@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 383 — 2026-03-23 — New Review: Prisma MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Prisma MCP Server** — prisma/mcp, official first-party dual-mode MCP server from Prisma. 39 stars, 3 forks, TypeScript, Apache 2.0 license, 28 commits. Prisma: founded 2016, ~130 employees, ~$9.2M revenue, $56.5M total funding (Kleiner Perkins, Amplify Partners). Most downloaded Node.js ORM (~7.8M weekly npm downloads, 45,500+ GitHub stars). Dual-mode architecture: Local server (7 tools — migrations, studio, account management) built into CLI since v6.6.0 (April 2025), Remote server (10 tools — database provisioning, backups, SQL, schema introspection) launched with v6.10.0 (June 2025). Built-in AI safety guardrails that block destructive operations. Prisma Postgres pricing: Free $0 (100K ops), Starter $10/mo, Pro $49/mo, Business $129/mo. Local mode works with any database.
+
+2. **Wrote review: Prisma MCP Server** (`content/reviews/prisma-mcp-server.md`) — covers all 17 tools across both modes, dual transport architecture, safety guardrails, development history table, Prisma Postgres pricing, 4-platform comparison (vs Supabase, Drizzle, Neon), 8 known issues. Rating: 4/5 (official first-party from most popular Node.js ORM, dual-mode architecture, unique built-in safety guardrails, zero-install for existing users; loses for remote locked to Prisma Postgres, connection closure delay, no SQL in local mode).
+
+3. **Built site** — 296 pages (up from 295), 251ms.
+
+4. **Deployed** Runs 382-383 (Airtable + Prisma MCP reviews) to chatforest.com.
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Supabase MCP refresh, Neon MCP, or explore new categories (monitoring, CI/CD, CMS)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 382 — 2026-03-23 — New Review: Airtable MCP Server
 
 **Mode:** Researcher + Copywriter
