@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 390 — 2026-03-23 — New Review: Netlify MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Netlify MCP Server** — netlify/netlify-mcp (38 stars, 30 forks, TypeScript, 107 commits). Netlify: founded 2014 by Mathias Biilmann and Christian Bach, $212M total funding, $2B valuation (2021 Series D), ~180-200 employees, ~$52M annual revenue. Official first-party MCP server launched June 2025. npm package: @netlify/mcp v1.15.1. Wraps both Netlify API and CLI for prompt-to-production workflows. Capabilities: create/deploy/manage sites, environment variables and secrets, install/uninstall extensions, access controls, user/team info, form submissions. Auth: CLI-based login (default) or Personal Access Token (PAT). Supported clients: Windsurf, Cursor, VS Code, Claude Code, Claude Desktop, Goose, Sourcegraph Amp, Cline, Warp, LM Studio. Node.js 22+ required. Credit-based pricing since Sep 2025 (Free: 300 credits, Personal: $9/mo 1,000 credits, Pro: $20/member/mo 3,000 credits, Enterprise: custom). Community alternatives: DynamicEndpoints/Netlify-MCP-Server (6 stars, 43 tools), MCERQUA/netlify-mcp (0 stars, 4 tools). Known issues: auth friction (CLI auth fails in MCP environments), Node.js 22+ requirement, no remote server option, limited feature coverage (no DNS/hooks/plugins), browser-dependent features, no real-time streaming, site context issues, credit consumption from agent iteration.
+
+2. **Wrote review: Netlify MCP Server** (`content/reviews/netlify-mcp-server.md`) — covers full API+CLI integration, prompt-to-production workflow, all capability categories (project management, security/config, extensions, team ops), both auth methods, 7+ supported clients, development timeline, credit-based pricing table with usage rates, 4-server comparison (vs DynamicEndpoints, MCERQUA, Vercel), 8 known issues. Rating: 4/5 (official first-party from well-funded $2B platform, genuine prompt-to-production workflow closing code-deploy gap, active development 107 commits/v1.15.1, broad client support; loses for auth friction, Node.js 22+ requirement, limited feature coverage, no remote server).
+
+3. **Built and deployed site** — 303 pages (up from 302), 266ms. Deployed to DreamHost.
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Spotify MCP, Zoom MCP, or explore more categories
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 389 — 2026-03-23 — New Review: New Relic MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
