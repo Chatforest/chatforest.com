@@ -404,6 +404,7 @@
 <th>Azure DevOps MCP</th>
 <th>IDE/Editor MCP</th>
 <th>Testing/QA MCP</th>
+<th>Monitoring MCP</th>
 </tr>
 </thead>
 <tbody>
@@ -418,6 +419,7 @@
 <td>300+ (Tiberriver256)</td>
 <td>342 (vscode-mcp-server)</td>
 <td><a href="/reviews/testing-qa-mcp-servers/">9.8k (Playwright)</a></td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">2.5k (Grafana)</a></td>
 </tr>
 <tr>
 <td>Official</td>
@@ -430,6 +432,7 @@
 <td>No (community)</td>
 <td>Yes (JetBrains built-in, 24 tools)</td>
 <td><a href="/reviews/testing-qa-mcp-servers/">Yes (MS Playwright, 9.8k stars, 24 tools)</a></td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)</a></td>
 </tr>
 <tr>
 <td>Official tools</td>
@@ -442,6 +445,7 @@
 <td>N/A</td>
 <td>24 (JetBrains)</td>
 <td><a href="/reviews/testing-qa-mcp-servers/">24 (official)</a></td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">16+ (Datadog) to 100+ (Instana)</a></td>
 </tr>
 <tr>
 <td>Community tools</td>
@@ -454,6 +458,7 @@
 <td>Limited</td>
 <td>13-19 per server</td>
 <td><a href="/reviews/testing-qa-mcp-servers/">24 (official) + API testing</a></td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">pab1it0/prometheus (340 stars)</a></td>
 </tr>
 <tr>
 <td>Remote hosting</td>
@@ -466,6 +471,7 @@
 <td>No</td>
 <td>No (requires running IDE)</td>
 <td><a href="/reviews/testing-qa-mcp-servers/">No (local browser required)</a></td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">Yes (Datadog, Sentry — OAuth)</a></td>
 </tr>
 <tr>
 <td>Language</td>
@@ -478,6 +484,7 @@
 <td>TypeScript</td>
 <td>TypeScript</td>
 <td>TypeScript</td>
+<td>TypeScript / Go / Python</td>
 </tr>
 <tr>
 <td>CI/CD integration</td>
@@ -490,6 +497,7 @@
 <td>Azure Pipelines (basic)</td>
 <td>N/A</td>
 <td><a href="/reviews/testing-qa-mcp-servers/">Test execution</a></td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">Alerting management</a></td>
 </tr>
 <tr>
 <td>Code security</td>
@@ -502,6 +510,7 @@
 <td>No</td>
 <td>N/A</td>
 <td>N/A</td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">Log analysis (Loki, Datadog, Elastic)</a></td>
 </tr>
 <tr>
 <td>MCP infrastructure role</td>
@@ -509,6 +518,7 @@
 <td>None</td>
 <td>None</td>
 <td><a href="/reviews/docker-mcp-servers/">Gateway + Catalog (300+ servers)</a></td>
+<td>None</td>
 <td>None</td>
 <td>None</td>
 <td>None</td>
@@ -526,6 +536,7 @@
 <td>Growing</td>
 <td><a href="/reviews/ide-code-editor-mcp-servers/">Strong</a></td>
 <td><a href="/reviews/testing-qa-mcp-servers/">Growing</a></td>
+<td><a href="/reviews/monitoring-observability-mcp-servers/">Growing</a></td>
 </tr>
 </tbody>
 </table>
@@ -596,6 +607,13 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-03-24 15:00:00</span></div>
+  <h3><a href="/reviews/monitoring-observability-mcp-servers/">Monitoring &amp; Observability MCP Servers — From Grafana to Datadog, Vendor-Led Observability Meets MCP</a></h3>
+  <p>Monitoring and observability MCP servers stand out from most Developer Tools categories: the major vendors are building official MCP servers themselves. Grafana&#39;s mcp-grafana (2.5k stars, Go) covers dashboards, Prometheus, Loki, alerting, and OnCall. Datadog offers an official remote MCP server (16&#43; core tools, HIPAA-eligible) launched March 2026. Sentry (519 stars) provides remote-hosted error tracking via MCP. Dynatrace (201 stars), New Relic (35 tools, public preview), and IBM Instana (100&#43; tools) round out the enterprise offerings. Community Prometheus servers (340 stars) and the deprecated Elastic MCP (626 stars) fill gaps.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-23 23:55:00</span></div>
   <h3><a href="/reviews/bitbucket-mcp-server/">Bitbucket MCP Servers — The Missing Piece in Atlassian&#39;s AI Strategy</a></h3>
   <p>Atlassian&#39;s official MCP server covers Jira, Confluence, and Compass — but pointedly excludes Bitbucket. Community developers have stepped in with multiple servers for Cloud and Server/Data Center, but the ecosystem remains fragmented with no dominant player. This is the weakest MCP ecosystem among the Big 3 Git hosting platforms.</p>
@@ -613,13 +631,6 @@
   <div class="card-meta"><span>Review</span> <span>2026-03-23 23:45:00</span></div>
   <h3><a href="/reviews/gitlab-mcp-server/">GitLab MCP Servers — The Self-Hosted DevOps Platform&#39;s Growing AI Interface</a></h3>
   <p>GitLab&#39;s built-in MCP server connects AI agents to issues, merge requests, pipelines, and code search — but requires Premium or Ultimate. The community leader zereight/gitlab-mcp (1.2k stars, 100&#43; tools) covers far more ground. Multiple enterprise-grade alternatives round out a growing ecosystem.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-03-23 23:45:00</span></div>
-  <h3><a href="/reviews/openai-mcp-server/">OpenAI MCP Servers — AI Agents for GPT-4o, o3, DALL-E, and the OpenAI API Platform</a></h3>
-  <p>OpenAI embraced MCP in March 2025, joining the steering committee and adding MCP client support to ChatGPT Desktop, the Responses API, and Agents SDK. But OpenAI has no official MCP server exposing their API — community implementations provide chat completions, image generation, and web search access for other AI agents.</p>
 </div>
 
   

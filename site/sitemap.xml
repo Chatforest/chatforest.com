@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-03-24T15:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/monitoring-observability-mcp-servers/</loc>
+    <lastmod>2026-03-24T15:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-03-24T15:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/bitbucket-mcp-server/</loc>
     <lastmod>2026-03-23T23:55:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/</loc>
-    <lastmod>2026-03-23T23:55:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chatforest.com/reviews/postmark-mcp-server/</loc>
-    <lastmod>2026-03-23T23:55:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/</loc>
     <lastmod>2026-03-23T23:55:00+09:00</lastmod>
   </url>
   
