@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 385 — 2026-03-23 — New Review: Salesforce DX MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Salesforce DX MCP Server** — salesforcecli/mcp, official first-party from Salesforce. 323 stars, 81 forks, TypeScript, Apache 2.0, 684 commits, 26+ npm releases. Salesforce: founded 1999, ~76,400 employees, $41.5B annual revenue, ~$186B market cap (NYSE: CRM). 60+ MCP tools across 15 toolsets: core (get_username, resume_tool_operation), data (run_soql_query), metadata (deploy/retrieve/enrich), code-analysis (4 tools — run_code_analyzer, query/list/describe rules), lwc-experts (20+ tools — component creation from PRD, Jest tests, accessibility, security, Figma-to-LWC, GraphQL mutations, SLDS blueprints), aura-experts (4 tools — blueprint drafts, migration orchestration), devops (9 tools — merge conflicts, work items, PRs, commits, promotions), orgs, users, testing, scale-products, mobile, mobile-core. stdio transport, npx install, requires Salesforce CLI pre-authentication. Selective toolset loading via --toolsets flag, experimental --dynamic-tools for on-demand discovery. v0.26.9 latest, ~105K monthly npm downloads. Part of broader Salesforce MCP ecosystem: Heroku MCP (GA, 30+ tools, 75 stars), MuleSoft MCP (GA, integration tools). Agentforce adding native MCP client support (Pilot). Compared: SurajAdsul MCP (~15 tools, data CRUD focus), CodeFriar sf-mcp (CLI command exposure), Advanced Communities MCP (50+ tools). Known issues: beta/pilot status, requires CLI pre-auth, 60+ tools can overwhelm context, metadata deployment bugs (multiple open issues), Zed IDE compatibility issues, SOQL-only data access (no CRUD), telemetry default on, JWT auth issues.
+
+2. **Wrote review: Salesforce DX MCP Server** (`content/reviews/salesforce-dx-mcp-server.md`) — covers all 15 toolsets with representative tools, selective loading configuration, org access options, development history, Salesforce edition pricing, ecosystem overview (DX + Heroku + MuleSoft), 4-server comparison (vs SurajAdsul, CodeFriar, Advanced Communities), 8 known issues. Rating: 4/5 (official first-party from world's largest enterprise software company, unmatched 60+ tools with 20+ LWC-specific tools and 9 DevOps Center tools, selective toolset loading, ~105K monthly downloads; loses for beta status, SOQL-only data access, metadata deployment bugs, CLI pre-auth requirement).
+
+3. **Built site** — 298 pages (up from 297), 261ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~36 min remaining)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Zoom MCP, PayPal MCP, Spotify MCP, or explore new categories
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 384 — 2026-03-23 — New Review: Shopify Dev MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
