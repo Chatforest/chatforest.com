@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 386 — 2026-03-23 — New Review: Snowflake MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Snowflake MCP Server** — Snowflake-Labs/mcp, official first-party from Snowflake. 261 stars, 81 forks, Python, Apache 2.0, 16 open issues. Snowflake: founded 2012, ~8,240 employees, $4.68B annual revenue (29% YoY growth), ~$60B market cap (NYSE: SNOW). Two deployment options: open-source local server (Snowflake-Labs/mcp) and managed cloud endpoint (GA since November 2025). Six tool domains: Cortex Search (RAG over unstructured data), Cortex Analyst (natural language to SQL via semantic views), Cortex Agent (multi-source orchestration), Object Management (create/drop/alter/describe), SQL Execution (permission-gated with allowlist/blocklist), Semantic View Querying. Open-source server: stdio/SSE/HTTP transport, uvx/Docker install, 5 auth methods (password, key pair, OAuth, MFA, SSO), YAML service config. Managed endpoint: HTTPS with OAuth 2.0, CREATE MCP SERVER SQL syntax, RBAC per tool, 5 tool types (CORTEX_SEARCH, CORTEX_ANALYST, SYSTEM_EXECUTE_SQL, CORTEX_AGENT_RUN, GENERIC). Compared: isaacwasserman/mcp-snowflake-server (142 stars, SQL focus, GPL v3), dynamike server (read-only). Known issues: hostname underscore bug, semantic views only (not models) for managed, no streaming, government region exclusion, deprecated CLI args.
+
+2. **Wrote review: Snowflake MCP Server** (`content/reviews/snowflake-mcp-server.md`) — covers both deployment options (open-source + managed), all 6 tool domains, YAML service configuration, 5 auth methods, 3 transport options, managed endpoint SQL syntax, development timeline (Preview Oct 2025 → GA Nov 2025), consumption-based pricing across 4 editions, 3-server comparison (vs isaacwasserman, dynamike, managed endpoint), 8 known issues. Rating: 4/5 (official first-party from major data platform, deep Cortex AI integration no community server offers, thoughtful SQL permission system, dual deployment model; loses for managed endpoint limitations, setup complexity, ecosystem maturity at 261 stars).
+
+3. **Built site** — 299 pages (up from 298), 263ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~20 min remaining)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Zoom MCP (community only — no official), PayPal MCP, Spotify MCP, or explore new categories
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 385 — 2026-03-23 — New Review: Salesforce DX MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
