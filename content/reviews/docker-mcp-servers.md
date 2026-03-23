@@ -139,17 +139,17 @@ An **enterprise-grade platform** for running and managing MCP servers:
 
 ## Developer Tools MCP Comparison
 
-| Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD |
-|--------|--------|--------|-----------|--------|------------|-------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | Yes (Hub MCP, 132 stars, 12+ tools) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) |
-| **Remote hosting** | Yes (`api.githubcopilot.com/mcp/`) | No | No | No (Gateway is local) | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) |
-| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | ckreiling (691 stars, 25 tools) | [Flux159 (1.4k stars, 20+ tools)](/reviews/kubernetes-mcp-servers/) | [Argo CD (356 stars, 12 tools)](/reviews/ci-cd-mcp-servers/) |
-| **Infrastructure role** | None | None | None | MCP Gateway + Catalog (300+ servers) | None | [Build orchestration](/reviews/ci-cd-mcp-servers/) |
-| **Enterprise management** | N/A | N/A | N/A | ToolHive (1.7k stars) | [Read-only + secret redaction](/reviews/kubernetes-mcp-servers/) | [Limited safety controls](/reviews/ci-cd-mcp-servers/) |
-| **Authentication** | PAT / GitHub App | OAuth 2.0 / PAT | App Password / OAuth | Docker Desktop credentials | [kubeconfig / OAuth / OIDC](/reviews/kubernetes-mcp-servers/) | [API tokens per platform](/reviews/ci-cd-mcp-servers/) |
-| **AAIF membership** | No (but Microsoft is Platinum) | No | No | Gold member | [No (Google/AWS/MS are Platinum)](/reviews/kubernetes-mcp-servers/) | [No](/reviews/ci-cd-mcp-servers/) |
-| **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users | [5.6M developers](/reviews/kubernetes-mcp-servers/) | [Jenkins: 11.3M devs](/reviews/ci-cd-mcp-servers/) |
-| **Our rating** | [4.5/5](/reviews/github-mcp-server/) | [3.5/5](/reviews/gitlab-mcp-server/) | [2.5/5](/reviews/bitbucket-mcp-server/) | 4/5 | [4/5](/reviews/kubernetes-mcp-servers/) | [3/5](/reviews/ci-cd-mcp-servers/) |
+| Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor |
+|--------|--------|--------|-----------|--------|------------|-------|------------|
+| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | Yes (Hub MCP, 132 stars, 12+ tools) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | Yes (JetBrains built-in, 24 tools) |
+| **Remote hosting** | Yes (`api.githubcopilot.com/mcp/`) | No | No | No (Gateway is local) | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No (requires running IDE) |
+| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | ckreiling (691 stars, 25 tools) | [Flux159 (1.4k stars, 20+ tools)](/reviews/kubernetes-mcp-servers/) | [Argo CD (356 stars, 12 tools)](/reviews/ci-cd-mcp-servers/) | vscode-mcp-server (342 stars, 15 tools) |
+| **Infrastructure role** | None | None | None | MCP Gateway + Catalog (300+ servers) | None | [Build orchestration](/reviews/ci-cd-mcp-servers/) | None |
+| **Enterprise management** | N/A | N/A | N/A | ToolHive (1.7k stars) | [Read-only + secret redaction](/reviews/kubernetes-mcp-servers/) | [Limited safety controls](/reviews/ci-cd-mcp-servers/) | N/A |
+| **Authentication** | PAT / GitHub App | OAuth 2.0 / PAT | App Password / OAuth | Docker Desktop credentials | [kubeconfig / OAuth / OIDC](/reviews/kubernetes-mcp-servers/) | [API tokens per platform](/reviews/ci-cd-mcp-servers/) | Local connection (port/stdio) |
+| **AAIF membership** | No (but Microsoft is Platinum) | No | No | Gold member | [No (Google/AWS/MS are Platinum)](/reviews/kubernetes-mcp-servers/) | [No](/reviews/ci-cd-mcp-servers/) | No (but Microsoft is Platinum) |
+| **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users | [5.6M developers](/reviews/kubernetes-mcp-servers/) | [Jenkins: 11.3M devs](/reviews/ci-cd-mcp-servers/) | VS Code: 75.9% market share |
+| **Our rating** | [4.5/5](/reviews/github-mcp-server/) | [3.5/5](/reviews/gitlab-mcp-server/) | [2.5/5](/reviews/bitbucket-mcp-server/) | 4/5 | [4/5](/reviews/kubernetes-mcp-servers/) | [3/5](/reviews/ci-cd-mcp-servers/) | [3.5/5](/reviews/ide-code-editor-mcp-servers/) |
 
 ## Known Issues
 

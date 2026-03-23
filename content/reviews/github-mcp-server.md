@@ -150,18 +150,18 @@ Provides tools to read, search, and manipulate Git repositories. As a reference 
 
 ## GitHub MCP vs Other Developer Platform MCP Servers
 
-| Aspect | GitHub MCP | GitLab MCP | Bitbucket MCP | Docker MCP | Kubernetes MCP | CI/CD MCP | Azure DevOps MCP |
-|--------|-----------|-----------|--------------|-----------|---------------|----------|-----------------|
-| Stars | 28.2k | 1.2k (zereight/gitlab-mcp) | 132 (aashari) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) |
-| Official | Yes (standalone) | Yes (built-in, Premium+) | No — [Atlassian excludes Bitbucket](/reviews/bitbucket-mcp-server/) | [Hub MCP only (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | No (community) |
-| Official tools | 21 toolsets | 15 tools | N/A (Jira/Confluence only) | 12+ (Hub operations) | N/A | [15 (Jenkins), 15 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A |
-| Community tools | 28 (cyanheads) | 100+ (zereight) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | [21 (mcp-jenkins), 12 (Argo CD)](/reviews/ci-cd-mcp-servers/) | Limited |
-| Remote hosting | Yes (GitHub infrastructure) | No | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No |
-| Language | Go | TypeScript | TypeScript | Python | TypeScript / Go | Java / TypeScript / Go | TypeScript |
-| CI/CD integration | GitHub Actions | GitLab CI (full pipeline control) | Pipelines (mostly missing) | Container lifecycle | Helm + ArgoCD | [Core capability](/reviews/ci-cd-mcp-servers/) | Azure Pipelines (basic) |
-| Code security | Yes (Code Scanning, Dependabot, Secret Scanning) | Semantic code search | No | No | [Secret redaction, RBAC](/reviews/kubernetes-mcp-servers/) | [No log sanitization](/reviews/ci-cd-mcp-servers/) | No |
-| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+ servers)](/reviews/docker-mcp-servers/) | None | None | None |
-| Adoption | Dominant | Growing | [Minimal](/reviews/bitbucket-mcp-server/) | [Strong](/reviews/docker-mcp-servers/) | [Strong](/reviews/kubernetes-mcp-servers/) | [Early](/reviews/ci-cd-mcp-servers/) | Growing |
+| Aspect | GitHub MCP | GitLab MCP | Bitbucket MCP | Docker MCP | Kubernetes MCP | CI/CD MCP | Azure DevOps MCP | IDE/Editor MCP |
+|--------|-----------|-----------|--------------|-----------|---------------|----------|-----------------|---------------|
+| Stars | 28.2k | 1.2k (zereight/gitlab-mcp) | 132 (aashari) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) | 342 (vscode-mcp-server) |
+| Official | Yes (standalone) | Yes (built-in, Premium+) | No — [Atlassian excludes Bitbucket](/reviews/bitbucket-mcp-server/) | [Hub MCP only (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | No (community) | Yes (JetBrains built-in, 24 tools) |
+| Official tools | 21 toolsets | 15 tools | N/A (Jira/Confluence only) | 12+ (Hub operations) | N/A | [15 (Jenkins), 15 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A | 24 (JetBrains) |
+| Community tools | 28 (cyanheads) | 100+ (zereight) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | [21 (mcp-jenkins), 12 (Argo CD)](/reviews/ci-cd-mcp-servers/) | Limited | 13-19 per server |
+| Remote hosting | Yes (GitHub infrastructure) | No | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No | No (requires running IDE) |
+| Language | Go | TypeScript | TypeScript | Python | TypeScript / Go | Java / TypeScript / Go | TypeScript | TypeScript |
+| CI/CD integration | GitHub Actions | GitLab CI (full pipeline control) | Pipelines (mostly missing) | Container lifecycle | Helm + ArgoCD | [Core capability](/reviews/ci-cd-mcp-servers/) | Azure Pipelines (basic) | N/A |
+| Code security | Yes (Code Scanning, Dependabot, Secret Scanning) | Semantic code search | No | No | [Secret redaction, RBAC](/reviews/kubernetes-mcp-servers/) | [No log sanitization](/reviews/ci-cd-mcp-servers/) | No | N/A |
+| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+ servers)](/reviews/docker-mcp-servers/) | None | None | None | None |
+| Adoption | Dominant | Growing | [Minimal](/reviews/bitbucket-mcp-server/) | [Strong](/reviews/docker-mcp-servers/) | [Strong](/reviews/kubernetes-mcp-servers/) | [Early](/reviews/ci-cd-mcp-servers/) | Growing | [Strong](/reviews/ide-code-editor-mcp-servers/) |
 
 ## Known Issues
 

@@ -131,20 +131,20 @@ Basic GitLab API integration with project management and file operations. **Arch
 
 ## GitLab MCP vs GitHub MCP vs Other Developer Platforms
 
-| Aspect | GitLab MCP | GitHub MCP | Bitbucket MCP | Docker MCP | Kubernetes MCP | CI/CD MCP | Azure DevOps MCP |
-|--------|-----------|-----------|--------------|-----------|---------------|----------|-----------------|
-| Official server | Yes (built-in) | Yes (standalone) | [No — Jira/Confluence only](/reviews/bitbucket-mcp-server/) | [Hub MCP (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | No |
-| Official stars | N/A (built-in) | 28.2k | N/A | 132 | N/A | [71 (Jenkins), 80 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A |
-| Top community stars | 1.2k (zereight) | 7.8k (GitMCP) | [132 (aashari)](/reviews/bitbucket-mcp-server/) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) |
-| Official tools | 15 | 21 toolsets | N/A (excluded from Atlassian MCP) | 12+ (Hub operations) | N/A | [15 (Jenkins), 15 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A |
-| Community tools | 100+ (zereight) | 28 (cyanheads) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | [21 (mcp-jenkins), 12 (Argo CD)](/reviews/ci-cd-mcp-servers/) | Limited |
-| Remote hosting | No | Yes (GitHub infra) | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No |
-| Free tier | Community servers only | Yes | Community servers only | Yes | [Yes (all open source)](/reviews/kubernetes-mcp-servers/) | [Yes (all open source)](/reviews/ci-cd-mcp-servers/) | No |
-| CI/CD integration | Yes (full pipeline control) | Yes (Actions) | Mostly missing | Container lifecycle | [Helm + ArgoCD](/reviews/kubernetes-mcp-servers/) | [Core capability](/reviews/ci-cd-mcp-servers/) | Basic |
-| Code search | Yes (semantic) | Yes | No | No | No | No | No |
-| Self-hosted support | Yes (all servers) | Local Docker only | Yes (garc33, 21 tools) | Yes (all local) | [Yes (all local)](/reviews/kubernetes-mcp-servers/) | [Jenkins plugin (on-prem)](/reviews/ci-cd-mcp-servers/) | No |
-| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+)](/reviews/docker-mcp-servers/) | None | None | None |
-| AAIF member | No | No (active contributor) | No | [Gold](/reviews/docker-mcp-servers/) | [No (Google/AWS/MS are Platinum)](/reviews/kubernetes-mcp-servers/) | [No](/reviews/ci-cd-mcp-servers/) | No (Microsoft is Platinum) |
+| Aspect | GitLab MCP | GitHub MCP | Bitbucket MCP | Docker MCP | Kubernetes MCP | CI/CD MCP | Azure DevOps MCP | IDE/Editor MCP |
+|--------|-----------|-----------|--------------|-----------|---------------|----------|-----------------|---------------|
+| Official server | Yes (built-in) | Yes (standalone) | [No — Jira/Confluence only](/reviews/bitbucket-mcp-server/) | [Hub MCP (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | No | Yes (JetBrains built-in, 24 tools) |
+| Official stars | N/A (built-in) | 28.2k | N/A | 132 | N/A | [71 (Jenkins), 80 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A | N/A (built-in) |
+| Top community stars | 1.2k (zereight) | 7.8k (GitMCP) | [132 (aashari)](/reviews/bitbucket-mcp-server/) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) | 342 (vscode-mcp-server) |
+| Official tools | 15 | 21 toolsets | N/A (excluded from Atlassian MCP) | 12+ (Hub operations) | N/A | [15 (Jenkins), 15 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A | 24 (JetBrains) |
+| Community tools | 100+ (zereight) | 28 (cyanheads) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | [21 (mcp-jenkins), 12 (Argo CD)](/reviews/ci-cd-mcp-servers/) | Limited | 13-19 per server |
+| Remote hosting | No | Yes (GitHub infra) | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No | No (requires running IDE) |
+| Free tier | Community servers only | Yes | Community servers only | Yes | [Yes (all open source)](/reviews/kubernetes-mcp-servers/) | [Yes (all open source)](/reviews/ci-cd-mcp-servers/) | No | Yes (VS Code extensions) |
+| CI/CD integration | Yes (full pipeline control) | Yes (Actions) | Mostly missing | Container lifecycle | [Helm + ArgoCD](/reviews/kubernetes-mcp-servers/) | [Core capability](/reviews/ci-cd-mcp-servers/) | Basic | N/A |
+| Code search | Yes (semantic) | Yes | No | No | No | No | No | N/A |
+| Self-hosted support | Yes (all servers) | Local Docker only | Yes (garc33, 21 tools) | Yes (all local) | [Yes (all local)](/reviews/kubernetes-mcp-servers/) | [Jenkins plugin (on-prem)](/reviews/ci-cd-mcp-servers/) | No | Yes (all local) |
+| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+)](/reviews/docker-mcp-servers/) | None | None | None | None |
+| AAIF member | No | No (active contributor) | No | [Gold](/reviews/docker-mcp-servers/) | [No (Google/AWS/MS are Platinum)](/reviews/kubernetes-mcp-servers/) | [No](/reviews/ci-cd-mcp-servers/) | No (Microsoft is Platinum) | No (but Microsoft is Platinum) |
 
 ## Known Issues
 
