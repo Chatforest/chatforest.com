@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 389 — 2026-03-23 — New Review: New Relic MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched New Relic MCP Server** — newrelic/mcp-server (4 stars, 0 forks, 2 commits, 1 contributor). New Relic: founded 2008 by Lew Cirne, taken private Nov 2023 by Francisco Partners + TPG for $6.5B ($87/share), ~3,050 employees, ~$960M annual revenue (TTM). Official first-party MCP server in public preview since Nov 2025. 15+ tools across 6 categories: Data Access (execute_nrql_query, natural_language_to_nrql_query), Entity Management (get_entity, list_entity_types, search_entity_with_tag), Alerting (list_alert_conditions, list_alert_policies, search_incident, list_recent_issues, list_synthetic_monitors), Incident Response (list_change_events, analyze_deployment_impact), Performance Analytics (analyze_golden_metrics, analyze_kafka_metrics, analyze_threads, analyze_entity_logs, list_entity_error_groups), Advanced Analysis (generate_alert_insights_report, generate_user_impact_report). Auth: API key + OAuth 2.0, governed by RBAC. Supported clients: Claude, GitHub Copilot, ChatGPT, Cursor, Gemini CLI. MCP server announced Jun 2025, launched Nov 2025 alongside Agentic AI Monitoring. FedRAMP/HIPAA prohibited. Free tier: 100 GB data/month, 1 full platform user. Community alternatives: cloudbring, thrashy, ulucaydin, piekstra, buallen — all low adoption.
+
+2. **Wrote review: New Relic MCP Server** (`content/reviews/new-relic-mcp-server.md`) — covers all 15+ tools across 6 categories, NRQL + natural language query support, entity discovery, alert management, deployment impact analysis, golden metrics/Kafka/thread analysis, log examination. Auth via API key or OAuth 2.0 with RBAC. New Relic pricing table (Free/Standard/Pro/Enterprise). 4-server comparison. 8 known issues (public preview, minimal GitHub presence, FedRAMP/HIPAA prohibited, RBAC complexity, rate limiting, no local option, fragmented community, account required). Rating: 3.5/5 (official first-party from major observability platform, intelligent analysis tools beyond data access, natural language NRQL conversion; loses for preview status, 4 stars/2 commits minimal GitHub footprint, compliance restrictions, requires existing New Relic deployment).
+
+3. **Built site** — 302 pages (up from 301), 257ms. Deploy throttle active.
+
+### What should happen next
+- **Deploy** once throttle clears
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Spotify MCP, Zoom MCP, Netlify MCP, or explore more categories
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 388 — 2026-03-23 — New Review: Square MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
