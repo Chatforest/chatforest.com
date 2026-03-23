@@ -131,20 +131,20 @@ Basic GitLab API integration with project management and file operations. **Arch
 
 ## GitLab MCP vs GitHub MCP vs Other Developer Platforms
 
-| Aspect | GitLab MCP | GitHub MCP | Bitbucket MCP | Docker MCP | Azure DevOps MCP |
-|--------|-----------|-----------|--------------|-----------|-----------------|
-| Official server | Yes (built-in) | Yes (standalone) | [No — Jira/Confluence only](/reviews/bitbucket-mcp-server/) | [Hub MCP (132 stars)](/reviews/docker-mcp-servers/) | No |
-| Official stars | N/A (built-in) | 28.2k | N/A | 132 | N/A |
-| Top community stars | 1.2k (zereight) | 7.8k (GitMCP) | [132 (aashari)](/reviews/bitbucket-mcp-server/) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | 300+ (Tiberriver256) |
-| Official tools | 15 | 21 toolsets | N/A (excluded from Atlassian MCP) | 12+ (Hub operations) | N/A |
-| Community tools | 100+ (zereight) | 28 (cyanheads) | 25+ (MatanYemini) | 25 (ckreiling) | Limited |
-| Remote hosting | No | Yes (GitHub infra) | No | No | No |
-| Free tier | Community servers only | Yes | Community servers only | Yes | No |
-| CI/CD integration | Yes (full pipeline control) | Yes (Actions) | Mostly missing | Container lifecycle | Basic |
-| Code search | Yes (semantic) | Yes | No | No | No |
-| Self-hosted support | Yes (all servers) | Local Docker only | Yes (garc33, 21 tools) | Yes (all local) | No |
-| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+)](/reviews/docker-mcp-servers/) | None |
-| AAIF member | No | No (active contributor) | No | [Gold](/reviews/docker-mcp-servers/) | No (Microsoft is Platinum) |
+| Aspect | GitLab MCP | GitHub MCP | Bitbucket MCP | Docker MCP | Kubernetes MCP | Azure DevOps MCP |
+|--------|-----------|-----------|--------------|-----------|---------------|-----------------|
+| Official server | Yes (built-in) | Yes (standalone) | [No — Jira/Confluence only](/reviews/bitbucket-mcp-server/) | [Hub MCP (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | No |
+| Official stars | N/A (built-in) | 28.2k | N/A | 132 | N/A | N/A |
+| Top community stars | 1.2k (zereight) | 7.8k (GitMCP) | [132 (aashari)](/reviews/bitbucket-mcp-server/) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | 300+ (Tiberriver256) |
+| Official tools | 15 | 21 toolsets | N/A (excluded from Atlassian MCP) | 12+ (Hub operations) | N/A | N/A |
+| Community tools | 100+ (zereight) | 28 (cyanheads) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | Limited |
+| Remote hosting | No | Yes (GitHub infra) | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | No |
+| Free tier | Community servers only | Yes | Community servers only | Yes | [Yes (all open source)](/reviews/kubernetes-mcp-servers/) | No |
+| CI/CD integration | Yes (full pipeline control) | Yes (Actions) | Mostly missing | Container lifecycle | [Helm + ArgoCD](/reviews/kubernetes-mcp-servers/) | Basic |
+| Code search | Yes (semantic) | Yes | No | No | No | No |
+| Self-hosted support | Yes (all servers) | Local Docker only | Yes (garc33, 21 tools) | Yes (all local) | [Yes (all local)](/reviews/kubernetes-mcp-servers/) | No |
+| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+)](/reviews/docker-mcp-servers/) | None | None |
+| AAIF member | No | No (active contributor) | No | [Gold](/reviews/docker-mcp-servers/) | [No (Google/AWS/MS are Platinum)](/reviews/kubernetes-mcp-servers/) | No (Microsoft is Platinum) |
 
 ## Known Issues
 

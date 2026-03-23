@@ -139,17 +139,17 @@ An **enterprise-grade platform** for running and managing MCP servers:
 
 ## Developer Tools MCP Comparison
 
-| Aspect | GitHub | GitLab | Bitbucket | Docker |
-|--------|--------|--------|-----------|--------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | Yes (Hub MCP, 132 stars, 12+ tools) |
-| **Remote hosting** | Yes (`api.githubcopilot.com/mcp/`) | No | No | No (Gateway is local) |
-| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | ckreiling (691 stars, 25 tools) |
-| **Infrastructure role** | None | None | None | MCP Gateway + Catalog (300+ servers) |
-| **Enterprise management** | N/A | N/A | N/A | ToolHive (1.7k stars) |
-| **Authentication** | PAT / GitHub App | OAuth 2.0 / PAT | App Password / OAuth | Docker Desktop credentials |
-| **AAIF membership** | No (but Microsoft is Platinum) | No | No | Gold member |
-| **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users |
-| **Our rating** | [4.5/5](/reviews/github-mcp-server/) | [3.5/5](/reviews/gitlab-mcp-server/) | [2.5/5](/reviews/bitbucket-mcp-server/) | 4/5 |
+| Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes |
+|--------|--------|--------|-----------|--------|------------|
+| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | Yes (Hub MCP, 132 stars, 12+ tools) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) |
+| **Remote hosting** | Yes (`api.githubcopilot.com/mcp/`) | No | No | No (Gateway is local) | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) |
+| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | ckreiling (691 stars, 25 tools) | [Flux159 (1.4k stars, 20+ tools)](/reviews/kubernetes-mcp-servers/) |
+| **Infrastructure role** | None | None | None | MCP Gateway + Catalog (300+ servers) | None |
+| **Enterprise management** | N/A | N/A | N/A | ToolHive (1.7k stars) | [Read-only + secret redaction](/reviews/kubernetes-mcp-servers/) |
+| **Authentication** | PAT / GitHub App | OAuth 2.0 / PAT | App Password / OAuth | Docker Desktop credentials | [kubeconfig / OAuth / OIDC](/reviews/kubernetes-mcp-servers/) |
+| **AAIF membership** | No (but Microsoft is Platinum) | No | No | Gold member | [No (Google/AWS/MS are Platinum)](/reviews/kubernetes-mcp-servers/) |
+| **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users | [5.6M developers](/reviews/kubernetes-mcp-servers/) |
+| **Our rating** | [4.5/5](/reviews/github-mcp-server/) | [3.5/5](/reviews/gitlab-mcp-server/) | [2.5/5](/reviews/bitbucket-mcp-server/) | 4/5 | [4/5](/reviews/kubernetes-mcp-servers/) |
 
 ## Known Issues
 

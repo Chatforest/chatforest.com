@@ -150,18 +150,18 @@ Provides tools to read, search, and manipulate Git repositories. As a reference 
 
 ## GitHub MCP vs Other Developer Platform MCP Servers
 
-| Aspect | GitHub MCP | GitLab MCP | Bitbucket MCP | Docker MCP | Azure DevOps MCP |
-|--------|-----------|-----------|--------------|-----------|-----------------|
-| Stars | 28.2k | 1.2k (zereight/gitlab-mcp) | 132 (aashari) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | 300+ (Tiberriver256) |
-| Official | Yes (standalone) | Yes (built-in, Premium+) | No — [Atlassian excludes Bitbucket](/reviews/bitbucket-mcp-server/) | [Hub MCP only (132 stars)](/reviews/docker-mcp-servers/) | No (community) |
-| Official tools | 21 toolsets | 15 tools | N/A (Jira/Confluence only) | 12+ (Hub operations) | N/A |
-| Community tools | 28 (cyanheads) | 100+ (zereight) | 25+ (MatanYemini) | 25 (ckreiling) | Limited |
-| Remote hosting | Yes (GitHub infrastructure) | No | No | No | No |
-| Language | Go | TypeScript | TypeScript | Python | TypeScript |
-| CI/CD integration | GitHub Actions | GitLab CI (full pipeline control) | Pipelines (mostly missing) | Container lifecycle | Azure Pipelines (basic) |
-| Code security | Yes (Code Scanning, Dependabot, Secret Scanning) | Semantic code search | No | No | No |
-| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+ servers)](/reviews/docker-mcp-servers/) | None |
-| Adoption | Dominant | Growing | [Minimal](/reviews/bitbucket-mcp-server/) | [Strong](/reviews/docker-mcp-servers/) | Growing |
+| Aspect | GitHub MCP | GitLab MCP | Bitbucket MCP | Docker MCP | Kubernetes MCP | Azure DevOps MCP |
+|--------|-----------|-----------|--------------|-----------|---------------|-----------------|
+| Stars | 28.2k | 1.2k (zereight/gitlab-mcp) | 132 (aashari) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | 300+ (Tiberriver256) |
+| Official | Yes (standalone) | Yes (built-in, Premium+) | No — [Atlassian excludes Bitbucket](/reviews/bitbucket-mcp-server/) | [Hub MCP only (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | No (community) |
+| Official tools | 21 toolsets | 15 tools | N/A (Jira/Confluence only) | 12+ (Hub operations) | N/A | N/A |
+| Community tools | 28 (cyanheads) | 100+ (zereight) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | Limited |
+| Remote hosting | Yes (GitHub infrastructure) | No | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | No |
+| Language | Go | TypeScript | TypeScript | Python | TypeScript / Go | TypeScript |
+| CI/CD integration | GitHub Actions | GitLab CI (full pipeline control) | Pipelines (mostly missing) | Container lifecycle | Helm + ArgoCD | Azure Pipelines (basic) |
+| Code security | Yes (Code Scanning, Dependabot, Secret Scanning) | Semantic code search | No | No | [Secret redaction, RBAC](/reviews/kubernetes-mcp-servers/) | No |
+| MCP infrastructure role | None | None | None | [Gateway + Catalog (300+ servers)](/reviews/docker-mcp-servers/) | None | None |
+| Adoption | Dominant | Growing | [Minimal](/reviews/bitbucket-mcp-server/) | [Strong](/reviews/docker-mcp-servers/) | [Strong](/reviews/kubernetes-mcp-servers/) | Growing |
 
 ## Known Issues
 
