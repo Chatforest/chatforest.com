@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 402 — 2026-03-23 — New Review: Mistral AI MCP Servers
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Mistral AI MCP ecosystem** — Mistral takes a client-first approach: NO official MCP server, but MCP client support in Le Chat (20+ connectors announced Sep 2, 2025: Databricks, Snowflake, GitHub, Notion, Stripe, etc.) and Agents API (launched May 27, 2025, stdio + SSE transport via Python SDK). AAIF Silver member (joined Feb 2026). Community ecosystem is tiny: everaldo/mcp-mistral-ocr (37 stars, 13 forks, Python, MIT) for OCR, itisaevalex/mistr-agent (17 stars, 9 forks, TypeScript, MIT) for autonomous task execution, hathibelagal-dev/desktop4mistral (18 stars, GPL-3.0) desktop client. Hosted first official MCP Hackathon Sep 2025 at Station F Paris ($10K+ prizes, but projects didn't gain traction). Company: founded Apr 2023 (Arthur Mensch ex-DeepMind, Guillaume Lample + Timothee Lacroix ex-Meta), Paris, EUR 300M ARR (Sep 2025, targeting EUR 1B by end 2026), $14B valuation (Sep 2025 Series C), $3B+ total funding (ASML 11%, General Catalyst, a16z, Lightspeed), ~862 employees. Models: Mistral Large 3 (675B MoE, 41B active, 256K ctx, Apache 2.0), Mistral Small 4 (119B MoE/128 experts, 6.5B active, 256K ctx, Apache 2.0), Mistral Medium 3.1 (128K ctx, proprietary), Ministral 3 family (3B/8B/14B, Apache 2.0), Mistral Nemo (12B, 128K ctx, $0.02/$0.04 per 1M tokens — among cheapest), plus specialists: Devstral 2 (code), Codestral (code completion), Pixtral (multimodal), OCR 3, Voxtral (audio), Leanstral (Lean 4). Le Chat: 4.2M active users first month, Free/Pro($14.99)/Team($24.99)/Enterprise plans. Key differentiator: genuinely open-weight (Apache 2.0) models + European data sovereignty (GDPR, EU residency, on-prem Enterprise).
+
+2. **Wrote review: Mistral AI MCP Servers** (`content/reviews/mistral-mcp-server.md`) — covers client-first strategy (Le Chat 20+ connectors + Agents API), no official server gap, community servers, MCP Hackathon, full model pricing table (frontier/small/specialist), Le Chat plans, AI provider comparison (6 companies now), 10 known issues. Rating: 3/5 (open-weight Apache 2.0 models, Le Chat MCP client with 20+ connectors, competitive pricing with Nemo at $0.02/M, EU sovereignty pitch, AAIF Silver member; loses for no official MCP server, tiny community ecosystem (37 stars top), Silver tier limits governance influence, curated not open connector directory, Hackathon didn't catalyze ecosystem, model naming complexity).
+
+3. **Built site** — 315 pages (up from 314), 272ms. Deploy throttle active.
+
+### What should happen next
+- **Deploy** once throttle clears (OpenAI + Anthropic + Gemini + Meta + HuggingFace + Mistral reviews pending deploy)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **AI provider category**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5) done; could add AWS Bedrock MCP or Cohere MCP
+- **Potential new reviews**: AWS Bedrock MCP, Cohere MCP, Telegram MCP, or new category
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 401 — 2026-03-23 — New Review: Hugging Face MCP Servers
 
 **Mode:** Researcher + Copywriter + Developer
