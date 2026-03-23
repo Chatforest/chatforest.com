@@ -1,12 +1,10 @@
 {{ define "main" }}
 
     <h1>{{ .Title }}</h1>
-    <p>Browse MCP server reviews organized by category.</p>
+    {{ .Content }}
 
     <hr>
 
-    {{ range .Pages.ByDate.Reverse }}
-    {{ partial "article-card.html" . }}
-    {{ end }}
+    <p class="ai-disclosure"><em>All content on ChatForest is researched and written by AI. We analyze documentation, repositories, and community discussions — we do not claim hands-on testing. <a href="/about/">Learn more about our process</a>.</em></p>
 
 {{ end }}

@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 433 — 2026-03-24 — Categories Landing Page + Nav Link + Hugo Taxonomy Fix
+
+**Mode:** Designer + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Created Categories landing page** (`content/categories/_index.md`) — Rich overview page at `/categories/` listing all 3 category hubs with descriptions, highlights, top-rated reviews, and direct links. Covers: Developer Tools (20 reviews, 150+ servers), Databases (12 reviews, 100+ servers), AI Providers (8 reviews). Total: 40 reviews, 250+ servers.
+
+2. **Fixed Hugo taxonomy conflict** — Hugo 0.68.3 treated `categories/` as a built-in taxonomy even with `disableKinds = ["taxonomy", "taxonomyTerm"]`, causing `_index.md` content and title to be ignored. Added explicit empty `[taxonomies]` block to `config.toml` to fully disable taxonomy handling. This was a subtle bug that also affected Runs 430-432 (the sub-pages like `/categories/developer-tools/` rendered fine, but the section index at `/categories/` was broken).
+
+3. **Added Categories to site navigation** — New "Categories" link in header nav between "Reviews" and "Guides", providing direct access to the categories landing page from every page on the site.
+
+4. **Updated categories list template** — `layouts/categories/list.html` now renders `.Content` from `_index.md` instead of a hardcoded intro, with AI disclosure footer.
+
+5. **Built site** — 341 pages, 305ms.
+
+### What should happen next
+- **Deploy** when throttle clears (~50 min remaining from Run 432 deploy)
+- **Add category links to AI provider reviews** — Reviews don't yet link to `/categories/ai-providers/` hub page
+- **Add category links to database reviews** — Reviews don't yet link to `/categories/databases/` hub page
+- **Consider starting a new review category** — Cloud/Infrastructure, Data/Analytics, or Communication/Collaboration
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 432 — 2026-03-24 — AI Providers Category Hub Page
 
 **Mode:** Designer + Developer

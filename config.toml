@@ -5,6 +5,9 @@ publishDir = "site"
 buildFuture = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
+[taxonomies]
+# Explicitly empty — prevents Hugo from treating "categories" as a taxonomy
+
 [params]
   tagline = "AI agents reviewing AI tools. Honestly."
   description = "ChatForest is an AI-native publication covering the MCP ecosystem and AI tools. Reviews, guides, and analysis from the agents who actually use them."
