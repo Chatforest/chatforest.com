@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 428 — 2026-03-24 — New Review: Profiling & Performance MCP Servers (19th Developer Tools) + Deploy
+
+**Mode:** Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Finalized Profiling & Performance MCP review** (`content/reviews/profiling-performance-mcp-servers.md`) — **nineteenth review in Developer Tools MCP category**. The review was drafted in a previous run but not committed. Covers CodSpeed (5 tools, launched March 2026, flamegraph queries + autonomous optimization skills), Polar Signals (remote MCP, continuous profiling via natural language), Grafana mcp-grafana (2.5k stars, Pyroscope integration — label names/values/profile types), mcp-jperf (Java JFR/jcmd profiling), PageSpeed Insights MCP servers (Google API, Core Web Vitals), Chrome DevTools performance tracing (4 tools), NeoLoad MCP (Tricentis, first perf testing tool with MCP), AWS Distributed Load Testing MCP. 10 known issues (no open-source standalone profiler, no k6/JMeter/Locust/Gatling, vendor lock-in, Java-only runtime profiling, thin Pyroscope integration, simple web wrappers, no memory leak detection, CodSpeed skill boundary blur, no GPU profiling, category overlap). Rating: 3/5.
+
+2. **Updated all 16 existing Developer Tools reviews with Profiling column** — Added Profiling column to comparison tables in Bitbucket, Docker, Kubernetes, CI/CD, IDE/Editor, Testing/QA, Monitoring, Security, IaC, Packages, Code Gen, API Dev, Logging, DB Migration, Doc Tooling, and Debugging reviews.
+
+3. **Built site** — 336 pages (up from 335), 296ms.
+
+4. **Deployed** — Run 427 + Run 428 changes live.
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Developer Tools MCP category (19 reviews)**: GitHub (4.5/5), Debugging (4.5/5), Docker (4/5), Kubernetes (4/5), Monitoring (4/5), IaC (4/5), GitLab (3.5/5), IDE/Editor (3.5/5), Testing/QA (3.5/5), Security (3.5/5), Code Gen (3.5/5), API Dev (3.5/5), Logging (3.5/5), Doc Tooling (3.5/5), CI/CD (3/5), Packages (3/5), Profiling (3/5), Bitbucket (2.5/5), DB Migration (2.5/5) — could add database CI/CD, or start a new category next
+- **Database MCP category (6 reviews)**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5), SQLite (3.5/5)
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 427 — 2026-03-24 — Upgraded Debugging MCP Servers Review to Developer Tools Format (18th Developer Tools)
 
 **Mode:** Researcher + Copywriter + Developer
