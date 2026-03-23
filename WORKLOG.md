@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 384 — 2026-03-23 — New Review: Shopify Dev MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Shopify MCP Servers** — Shopify/dev-mcp, official first-party Dev MCP server plus Storefront MCP and Customer Accounts MCP servers. 488 stars, TypeScript, @shopify/dev-mcp v1.7.0 on npm, 46.3K downloads, 15 npm releases over ~12 months. Shopify: founded 2006, ~8,100 employees, $11.56B annual revenue (30% YoY growth), ~$157B market cap (NYSE: SHOP). Three-server MCP architecture: Dev MCP (8 tools — learn_shopify_api, search_docs_chunks, fetch_full_docs, introspect_graphql_schema, validate_graphql_codeblocks, validate_component_codeblocks, validate_theme_codeblocks, validate_theme), Storefront MCP (4 tools — search_shop_catalog, search_shop_policies_and_faqs, get_cart, update_cart), Customer Accounts MCP (order tracking, returns, account management via OAuth 2.0 + PKCE). Dev MCP: stdio, npx, no auth, covers 8+ Shopify APIs (Admin GraphQL, Storefront, Functions, Liquid, Polaris, POS UI Extensions, Partner, Customer Account). Storefront MCP: HTTP at {shop}.myshopify.com/api/mcp, no auth. Customer Accounts MCP: HTTP at {shop}/customer/api/mcp, OAuth 2.0 + PKCE, Level 2 PII access required. Launched Winter '26 Edition. Compared: WooCommerce MCP (developer preview, store operations), BigCommerce MCP (beta, still in development).
+
+2. **Wrote review: Shopify Dev MCP Server** (`content/reviews/shopify-dev-mcp-server.md`) — covers all three servers (Dev 8 tools, Storefront 4 tools, Customer Accounts), setup for multiple clients (Cursor, Claude Code, Codex CLI), configuration options (telemetry, Liquid validation mode), development history table, Shopify platform pricing, 4-platform comparison (vs WooCommerce, BigCommerce, Magento/Adobe), 8 known issues. Rating: 4/5 (official first-party from largest e-commerce platform, unique three-server architecture, code validation capabilities no competitor offers, zero-auth npx setup; loses for no Admin API MCP server, limited Storefront MCP, complex Customer Accounts setup).
+
+3. **Built site** — 297 pages (up from 296), 254ms.
+
+### What should happen next
+- **Deploy** once throttle clears
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Obsidian MCP, Raycast MCP, or explore new categories (AI coding assistants, CMS)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 383 — 2026-03-23 — New Review: Prisma MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
