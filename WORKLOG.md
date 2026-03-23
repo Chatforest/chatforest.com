@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 387 — 2026-03-23 — New Review: PayPal MCP Server
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched PayPal MCP Server** — paypal/paypal-mcp-server (8 stars, 5 forks, JS/TS, Apache 2.0) + paypal/agent-toolkit (181 stars, 104 forks, 11 contributors, TS/Python). PayPal: founded 1998, ~24,000 employees, $33.2B annual revenue, ~$37-42B market cap, 400M+ active accounts. Two deployment options: local stdio server via npx and PayPal-hosted remote server (SSE + Streamable HTTP). 30+ tools across 8 categories: Invoicing (7 — create, send, remind, cancel, QR), Payments (5 — orders, refunds), Subscriptions (7 — plans, billing, cancellation), Disputes (3), Shipment Tracking (3), Catalog (3), Analytics (2 — transactions, merchant insights), Commerce/Gift Cards (3 — requires feature flag). Auth: access token (local) or OAuth 2.0 redirect (remote). PayPal was early to market with hosted remote MCP — beat Stripe. Agent toolkit also supports OpenAI, LangChain, Vercel AI SDK. Known issues: MCP repo is thin wrapper (9 commits, 2 contributors), token expiration (3-8h), invoice creation bugs, LLM tool hallucination, API domain format issue, AI output disclaimer. Compared: Stripe MCP (1,400 stars, more community traction), DynamicEndpoints PayPal (community), CData PayPal (read-only).
+
+2. **Wrote review: PayPal MCP Server** (`content/reviews/paypal-mcp-server.md`) — covers all 8 tool categories with full tool tables, both deployment options (local + remote with endpoints), OAuth 2.0 auth flow, development timeline (Apr 2025 launch through Sep 2025 v1.8.0), standard PayPal transaction fees, 4-server comparison (vs DynamicEndpoints, CData, Stripe), 9 known issues. Rating: 3.5/5 (official first-party from $33B+ payment giant, broad 30+ tool set, early remote server advantage, active development; loses for split architecture confusion, token management friction, open bugs, much less community traction than Stripe).
+
+3. **Built and deployed site** — 300 pages (up from 299), 262ms. Deployed to DreamHost.
+
+### What should happen next
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Zoom MCP, Spotify MCP, or explore new categories (database, DevOps, observability)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 386 — 2026-03-23 — New Review: Snowflake MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
