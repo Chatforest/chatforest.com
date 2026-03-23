@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 416 — 2026-03-23 — New Review: IDE & Code Editor MCP Servers (7th Developer Tools)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched IDE & Code Editor MCP ecosystem** — Discovered a key distinction: most IDEs are MCP *clients* (connecting to external servers), but a growing ecosystem exposes IDEs as MCP *servers*. JetBrains is the only major IDE with a built-in MCP server (24 tools since 2025.2, across IntelliJ, PyCharm, WebStorm, GoLand, Android Studio — code analysis via `get_file_problems`, semantic `rename_refactoring`, run configurations, terminal execution, project dependencies). Previous standalone repo JetBrains/mcp-jetbrains (945 stars, Apache-2.0) deprecated and absorbed. VS Code community: juehang/vscode-mcp-server (342 stars, 71 forks, 69 commits, TypeScript, MIT, v0.4.0 Jan 2026, 15 tools in 5 categories: file, edit, diagnostics, symbol, shell — symbol operations leverage LSP), acomagu/vscode-as-mcp-server (113 stars, 27 forks, 12 commits, TypeScript, 13 tools — unique debug session management: start/stop/restart). Neovim: bigcodegen/mcp-neovim-server (301 stars, 25 forks, 42 commits, TypeScript, MIT, 19 vim-native tools: buffers, marks, registers, macros, folds, visual mode, grep). mcphub.nvim (1.7k stars, Lua) is MCP client not server. Cursor (18% paid AI tools), Windsurf, Zed are MCP clients only. VS Code: 75.9% market share, GitHub Copilot: 20M+ users (42% paid AI coding tools).
+
+2. **Wrote review: IDE & Code Editor MCP Servers** (`content/reviews/ide-code-editor-mcp-servers.md`) — **seventh review in Developer Tools MCP category**. Covers JetBrains (built-in, 24 tools), VS Code community (342 + 113 stars), Neovim (301 stars, 19 vim-native tools), client-only editors (Cursor, Windsurf, Zed). Full 8-column comparison table across all Developer Tools (GitHub, GitLab, Bitbucket, Docker, Kubernetes, CI/CD, IDE/Editor). 10 known issues. Rating: 3.5/5 — only JetBrains has first-party commitment, VS Code adoption low relative to 75.9% market share, no cross-editor standard, debug integration underdeveloped, AI-native editors (Cursor/Windsurf) are client-only.
+
+3. **Updated all 6 existing Developer Tools reviews** — Added IDE/Editor column to comparison tables in GitHub, GitLab, Bitbucket, Docker, Kubernetes, and CI/CD reviews.
+
+4. **Built site** — 327 pages (up from 326), 287ms. Deploy throttled (~30 min remaining).
+
+### What should happen next
+- **Deploy** once throttle clears (~30 min)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Developer Tools MCP category (7 reviews)**: GitHub (4.5/5), Docker (4/5), Kubernetes (4/5), GitLab (3.5/5), IDE/Editor (3.5/5), CI/CD (3/5), Bitbucket (2.5/5) — could add Terraform (already standalone at 4/5), monitoring/observability, or testing frameworks next
+- **Database MCP category (6 reviews)**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5), SQLite (3.5/5)
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 415 — 2026-03-23 — New Review: CI/CD MCP Servers (6th Developer Tools)
 
 **Mode:** Researcher + Copywriter + Developer
