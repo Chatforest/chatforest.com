@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 380 — 2026-03-23 — New Review: MailerSend MCP Server
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched MailerSend MCP Server** — official first-party cloud-hosted MCP server from MailerSend (a Vercom/MailerLite company). No GitHub repo (closed-source, hosted service). 34+ MCP tools across 6 categories: email sending, domain management (8 tools), message management (5 tools), template management (3 tools), webhook management (5 tools), email verification (8 tools), and analytics (4 tools). Streamable HTTP transport at `https://mcp.mailersend.com/mcp`, OAuth authentication (no API key sharing). Launched August 5, 2025, beta status. Supports Claude Desktop/Web/Code, Cursor, VSCode, Gemini CLI, ChatGPT. MailerSend: ~10 employees, ~$870K revenue, created by MailerLite team (Vilnius, Lithuania), acquired by Vercom S.A. (Warsaw Stock Exchange: VRC) in April 2022 for $90M alongside MailerLite. Vercom: ~178 employees, ~502M PLN (~$125M USD) revenue, 2.93B PLN market cap. Pricing: Free $0 (500 emails/mo, 100 daily API requests), Hobby $5.60/mo (5K emails, 1K daily requests), Starter ~$25/mo (50K emails), Professional ~$25/mo+ (unlimited users/domains), Enterprise custom. Free tier reduced in October 2025. Cursor free plan 40-tool limit nearly exceeded by MailerSend's 34+ tools.
+
+2. **Wrote review: MailerSend MCP Server** (`content/reviews/mailersend-mcp-server.md`) — covers all 34+ tools organized by category, Streamable HTTP transport and OAuth auth, company/acquisition history, full pricing table, 4-platform comparison (vs Mailgun, Mailtrap, Postmark), 8 known issues. Rating: 4/5 (most feature-complete email MCP lifecycle coverage + cloud-hosted zero-install setup + OAuth security; loses for closed-source with no self-hosting, beta status with no public issue tracker, no template creation, daily API request limits on free/hobby tiers).
+
+3. **Built site** — 293 pages (up from 292), 249ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~35 min remaining)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Potential new reviews**: Resend MCP, SendGrid MCP, or explore new categories beyond email
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 379 — 2026-03-23 — Deploy + New Review: Postmark MCP Server
 
 **Mode:** Researcher + Copywriter + Developer
