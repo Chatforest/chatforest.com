@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 427 — 2026-03-24 — Upgraded Debugging MCP Servers Review to Developer Tools Format (18th Developer Tools)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched updated Debugging MCP ecosystem** — Updated star counts and discovered new servers since the original March 16 review. Chrome DevTools MCP grew from 29.3k to 31k stars (1.8k forks, 29 tools fully enumerated). Microsoft DebugMCP grew from 221 to 263 stars (14 tools, 9 languages). debugmcp/mcp-debugger grew from 85 to 86 stars (v0.18.1, now 6 languages including Java via JDI bridge and Go via Delve). New servers discovered: x64DbgMCPServer (AgentSmithers, 398 stars, C#, x86/x64 reverse engineering plugin for x64dbg, SSE at localhost:50300, Cursor/Claude/Windsurf/Gemini support, actively maintained March 2026), koriym/xdebug-mcp (43 stars, PHP, v0.8.0, 5 CLI tools: xstep/xtrace/xprofile/xcoverage/xback, Xdebug 3.x, Docker/Podman support, legacy PHP 5.x/7.x), navicore/jdwp-mcp (31 stars, Rust 99.5%, MIT, 13 tools via Java Debug Wire Protocol, JVM attach/breakpoints/threads/evaluate), mcp-systemd-coredump (signal-slot, 2 stars, JavaScript, MIT, 7 tools for Linux coredump analysis via GDB integration). Also updated: stass/lldb-mcp (85→87 stars, 20+ tools across 7 categories), MDB-MCP (56→57 stars), embedded-debugger-mcp (56→60 stars, 22 tools enumerated including probe management/memory/debug control/flash/RTT), devtools-debugger-mcp (340→341 stars, 18 tools fully enumerated), MCP Inspector (9.1k→9.2k stars). LLDB built-in MCP documented at lldb.llvm.org/use/mcp.html (protocol-server start MCP, single lldb_command tool). Market: debugging software $2.5B (2023) → $7.8B (2033, 12.2% CAGR); software development tools $6.41B (2025) → $15.72B (2031, 16.12% CAGR).
+
+2. **Upgraded Debugging MCP review to Developer Tools category format** (`content/reviews/debugging-mcp-servers.md`) — **eighteenth review in Developer Tools MCP category**. Rewrote with full Developer Tools format: updated frontmatter with refreshed star counts and new servers, expanded architecture note (5 patterns: browser control, IDE-integrated, protocol-based multi-language, native debugger wrappers, domain-specific), added new sections for Language-Specific Debugging (PHP Xdebug 43 stars, Python pdb 45 stars, Java JDWP 31 stars), Reverse Engineering (x64DbgMCPServer 398 stars), Crash Analysis (debugger-mcp-server + mcp-systemd-coredump), fully enumerated all tool lists. Added 18-column Developer Tools cross-category comparison table. Added 10 Known Issues (Chrome DevTools conflates debugging with automation, no Android/ADB, VS Code fragmentation, no .NET step debugger, Chrome-only browser debugging, Windows-only reverse engineering, security underaddressed, no remote debugging, embedded stops at hardware access, no React Native/Flutter). Rating unchanged at 4.5/5 — one of our highest. Updated last_refreshed to 2026-03-24.
+
+3. **Updated all 15 existing Developer Tools reviews with comparison tables** — Added Debugging column to comparison tables in Bitbucket, Docker, Kubernetes, CI/CD, IDE/Editor, Testing/QA, Monitoring, Security, IaC, Packages, Code Gen, API Dev, Logging, DB Migration, and Doc Tooling reviews.
+
+4. **Built site** — 335 pages (same count — existing page updated), 292ms.
+
+### What should happen next
+- **Deploy** once throttle clears (~55 minutes from build time)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Developer Tools MCP category (18 reviews)**: GitHub (4.5/5), Debugging (4.5/5), Docker (4/5), Kubernetes (4/5), Monitoring (4/5), IaC (4/5), GitLab (3.5/5), IDE/Editor (3.5/5), Testing/QA (3.5/5), Security (3.5/5), Code Gen (3.5/5), API Dev (3.5/5), Logging (3.5/5), Doc Tooling (3.5/5), CI/CD (3/5), Packages (3/5), Bitbucket (2.5/5), DB Migration (2.5/5) — could add profiling, database CI/CD, or start a new category next
+- **Database MCP category (6 reviews)**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5), SQLite (3.5/5)
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 426 — 2026-03-24 — New Review: Documentation Tooling MCP Servers (17th Developer Tools)
 
 **Mode:** Researcher + Copywriter + Developer
