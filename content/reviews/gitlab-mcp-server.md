@@ -133,16 +133,16 @@ Basic GitLab API integration with project management and file operations. **Arch
 
 | Aspect | GitLab MCP | GitHub MCP | Bitbucket MCP | Azure DevOps MCP |
 |--------|-----------|-----------|--------------|-----------------|
-| Official server | Yes (built-in) | Yes (standalone) | No | No |
+| Official server | Yes (built-in) | Yes (standalone) | [No — Jira/Confluence only](/reviews/bitbucket-mcp-server/) | No |
 | Official stars | N/A (built-in) | 28.2k | N/A | N/A |
-| Top community stars | 1.2k (zereight) | 7.8k (GitMCP) | 74 (garc33) | 300+ (Tiberriver256) |
-| Official tools | 15 | 21 toolsets | N/A | N/A |
-| Community tools | 100+ (zereight) | 28 (cyanheads) | Limited | Limited |
+| Top community stars | 1.2k (zereight) | 7.8k (GitMCP) | [132 (aashari)](/reviews/bitbucket-mcp-server/) | 300+ (Tiberriver256) |
+| Official tools | 15 | 21 toolsets | N/A (excluded from Atlassian MCP) | N/A |
+| Community tools | 100+ (zereight) | 28 (cyanheads) | 25+ (MatanYemini) | Limited |
 | Remote hosting | No | Yes (GitHub infra) | No | No |
-| Free tier | Community servers only | Yes | No | No |
-| CI/CD integration | Yes (full pipeline control) | Yes (Actions) | Basic | Basic |
+| Free tier | Community servers only | Yes | Community servers only | No |
+| CI/CD integration | Yes (full pipeline control) | Yes (Actions) | Mostly missing | Basic |
 | Code search | Yes (semantic) | Yes | No | No |
-| Self-hosted support | Yes (all servers) | Local Docker only | No | No |
+| Self-hosted support | Yes (all servers) | Local Docker only | Yes (garc33, 21 tools) | No |
 | AAIF member | No | No (active contributor) | No | No (Microsoft is Platinum) |
 
 ## Known Issues

@@ -152,15 +152,15 @@ Provides tools to read, search, and manipulate Git repositories. As a reference 
 
 | Aspect | GitHub MCP | GitLab MCP | Bitbucket MCP | Azure DevOps MCP |
 |--------|-----------|-----------|--------------|-----------------|
-| Stars | 28.2k | 1.2k (zereight/gitlab-mcp) | 74 (garc33) | 300+ (Tiberriver256) |
-| Official | Yes (standalone) | Yes (built-in, Premium+) | No (community) | No (community) |
-| Official tools | 21 toolsets | 15 tools | N/A | N/A |
-| Community tools | 28 (cyanheads) | 100+ (zereight) | Limited | Limited |
+| Stars | 28.2k | 1.2k (zereight/gitlab-mcp) | 132 (aashari) | 300+ (Tiberriver256) |
+| Official | Yes (standalone) | Yes (built-in, Premium+) | No — [Atlassian excludes Bitbucket](/reviews/bitbucket-mcp-server/) | No (community) |
+| Official tools | 21 toolsets | 15 tools | N/A (Jira/Confluence only) | N/A |
+| Community tools | 28 (cyanheads) | 100+ (zereight) | 25+ (MatanYemini) | Limited |
 | Remote hosting | Yes (GitHub infrastructure) | No | No | No |
 | Language | Go | TypeScript | TypeScript | TypeScript |
-| CI/CD integration | GitHub Actions | GitLab CI (full pipeline control) | Pipelines (basic) | Azure Pipelines (basic) |
+| CI/CD integration | GitHub Actions | GitLab CI (full pipeline control) | Pipelines (mostly missing) | Azure Pipelines (basic) |
 | Code security | Yes (Code Scanning, Dependabot, Secret Scanning) | Semantic code search | No | No |
-| Adoption | Dominant | Growing | Minimal | Growing |
+| Adoption | Dominant | Growing | [Minimal](/reviews/bitbucket-mcp-server/) | Growing |
 
 ## Known Issues
 

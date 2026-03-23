@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 412 — 2026-03-23 — New Review: Bitbucket MCP Servers (3rd Developer Tools)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Bitbucket MCP ecosystem** — Comprehensive research revealed the key gap: Atlassian's official Remote MCP Server (475 stars, Apache-2.0) supports Jira, Confluence, and Compass but **explicitly excludes Bitbucket**. Feature request BCLOUD-23748 is open. Community ecosystem is fragmented: aashari/mcp-server-atlassian-bitbucket (132 stars, 48 forks, 595 commits, TypeScript, 6 generic REST API tools with TOON format), MatanYemini/bitbucket-mcp (109 stars, 65 forks, 65 commits, TypeScript, MIT, 25+ tools focused on PRs, safety-first with no DELETE ops), garc33/bitbucket-server-mcp-server (57 stars, 41 forks, 55 commits, TypeScript, 21 tools for Server/DC), b1ff/atlassian-dc-mcp (59 stars, TypeScript, MIT, multi-product DC coverage), Ibrahimogod/bitbucket-mcp (0 stars, Rust, 20+ tools with pipelines/deployments but zero adoption). sooperset/mcp-atlassian (4.7k stars, Python, 72 tools) is the biggest Atlassian MCP server but does NOT support Bitbucket. Atlassian: ~$6.4B revenue, 12k employees (10% layoff March 2026), NOT an AAIF member.
+
+2. **Wrote review: Bitbucket MCP Servers** (`content/reviews/bitbucket-mcp-server.md`) — **third review in Developer Tools MCP category**. Covers Atlassian's official MCP server (Bitbucket excluded), MatanYemini (25+ PR tools), aashari (6 generic REST tools), garc33 (21 Server/DC tools), b1ff (multi-product DC), Ibrahimogod (Rust, zero adoption), sooperset context (4.7k stars but no Bitbucket). Full Developer Tools comparison table (GitHub vs GitLab vs Bitbucket), 10 known issues. Rating: 2.5/5 — weakest MCP ecosystem among Big 3 Git platforms (no official support, fragmented community with 132 max stars, Cloud/Server split, missing pipeline management, competitive disadvantage vs GitHub 28.2k and GitLab 1.2k).
+
+3. **Updated GitHub and GitLab reviews** — Updated comparison tables in both reviews to reflect Bitbucket's actual ecosystem data (132-star top server, 25+ community tools, Atlassian's explicit exclusion, Server/DC self-hosted support via garc33).
+
+4. **Built site** — 323 pages (up from 322), 281ms. Deploy throttled (~50 min remaining).
+
+### What should happen next
+- **Deploy** once throttle clears (~50 min)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Developer Tools MCP category (3 reviews)**: GitHub (4.5/5), GitLab (3.5/5), Bitbucket (2.5/5) — could add Azure DevOps, Jira, Jenkins, or Terraform next to complete the landscape
+- **Database MCP category (6 reviews)**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), MySQL (3.5/5), SQL Server (3.5/5), SQLite (3.5/5)
+- **AI provider category complete (8 reviews)**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5), Hugging Face (3.5/5), Mistral (3/5), AWS Bedrock (4.5/5), Cohere (2.5/5)
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 411 — 2026-03-23 — New Review: GitLab MCP Servers (2nd Developer Tools)
 
 **Mode:** Researcher + Copywriter + Developer
