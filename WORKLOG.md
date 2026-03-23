@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 400 — 2026-03-23 — New Review: Meta Llama MCP Servers
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Researched Meta/Llama MCP ecosystem** — Meta is the ONLY major AI company not in the AAIF at any tier, has no official MCP server, and has made no public announcement about MCP. Their strategy: build own agent ecosystem (Meta AI 1B MAU, Manus $2B acquisition) rather than adopt MCP. However, Llama Stack (8,300 stars, v0.6.0) includes MCP tool support since v0.2.10 (inline, local, and remote MCP tools). Community Ollama bridges: patruff/ollama-mcp-bridge (972 stars, TypeScript, MIT) is the most popular, letting local LLMs consume MCP tools; jonigl/mcp-client-for-ollama (577 stars, Python, MIT) is a TUI client; rawveg/ollama-mcp (146 stars, TypeScript, AGPL-3.0) exposes full Ollama SDK as MCP server with 14 tools and 96%+ test coverage. Multi-provider: BeehiveInnovations/pal-mcp-server (11,300 stars) supports Ollama among many providers. Meta: $201B revenue, ~$1.56T market cap, 78,865 employees, 1.2B+ Llama downloads, 1B Meta AI MAU. Llama 4: Scout (17B active/109B total, 10M context), Maverick (17B active/400B total, 1M context), Behemoth (288B active/~2T total, in training). All free under Meta Llama Community License (not OSI-approved, restricts 700M+ MAU companies). Known issues: tool calling unreliable with smaller models, hardware barrier ($300+ GPU for 8B), Llama Stack MCP bugs (#1769, #2584).
+
+2. **Wrote review: Meta Llama MCP Servers** (`content/reviews/meta-llama-mcp-server.md`) — covers Meta's absence from AAIF, no official MCP server, Llama Stack MCP integration, Ollama bridge ecosystem, hardware requirements table, full Llama model pricing (all free), AI provider MCP comparison table (Anthropic vs Google vs OpenAI vs Meta), 10 known issues. Rating: 3/5 (1.2B+ downloads making it most downloaded LLM, fully free models, Llama Stack MCP integration, 972-star community bridge, unique privacy/zero-cost value proposition; loses for not being in AAIF, no official server, no MCP client in any Meta product, tool calling reliability issues, hardware barrier, licensing ambiguity).
+
+3. **Built site** — 313 pages (up from 312), 267ms. Deploy throttle clearing shortly.
+
+### What should happen next
+- **Deploy** once throttle clears (OpenAI + Anthropic + Gemini + Meta reviews pending deploy)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **AI provider category**: OpenAI (3.5/5), Anthropic (4.5/5), Google/Gemini (4/5), Meta/Llama (3/5) done; could add HuggingFace MCP or Mistral MCP
+- **Potential new reviews**: HuggingFace MCP, Mistral MCP, Telegram MCP, or new category
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 399 — 2026-03-23 — New Review: Google Gemini MCP Servers
 
 **Mode:** Researcher + Copywriter + Developer
