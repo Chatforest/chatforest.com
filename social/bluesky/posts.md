@@ -438,6 +438,35 @@ Full review:
 **Description:** Archived, deprecated, SQL injection vulnerability unpatched. The official Postgres MCP server's read-only protection doesn't work. 139 alternatives exist. Rating: 2.5/5.
 **Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsgg574cr2x)
 
+## Batch 16
+
+### Post 046 — Apify MCP Server
+**Text:** Apify's MCP server gives AI agents access to 3,000+ web scrapers and automation tools — and lets them discover new ones on the fly. 945 stars, 17+ tools, dynamic tool registration, hosted or local. Nothing else in the MCP ecosystem works like this.
+
+Our review:
+**Link:** https://chatforest.com/reviews/apify-mcp-server/
+**Title:** Apify MCP Server Review — ChatForest
+**Description:** Apify MCP Server: 3,000+ web scrapers via dynamic tool discovery. 945 stars, 17+ tools, TypeScript, Apache 2.0, hosted + local. Rating: 3.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhshbaeris2d)
+
+### Post 047 — Bitbucket MCP Servers
+**Text:** Atlassian's official MCP server supports Jira and Confluence — but not Bitbucket. Community devs have filled the gap with 3 competing servers (132 stars max), but the ecosystem is fragmented and none dominates. The weakest MCP story among the Big 3 Git hosts.
+
+Our review:
+**Link:** https://chatforest.com/reviews/bitbucket-mcp-server/
+**Title:** Bitbucket MCP Servers Review — ChatForest
+**Description:** No official Bitbucket MCP support from Atlassian. 3 community servers, 132 max stars, fragmented Cloud vs Server/DC. Rating: 2.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhshbgbgmc2d)
+
+### Post 048 — Azure MCP Servers
+**Text:** Microsoft built one MCP server covering 47+ Azure services — databases, compute, AI, storage, security — all through a single binary. Then built it into Visual Studio 2026. Plus 16 more specialized servers for DevOps, Fabric, M365. 2,800 stars.
+
+Our review:
+**Link:** https://chatforest.com/reviews/azure-mcp-servers/
+**Title:** Azure & Microsoft MCP Servers Review — ChatForest
+**Description:** One unified Azure MCP Server for 47+ services, built into VS 2026. Plus DevOps, Fabric, M365 servers. 2,800 stars. Rating: 4/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhshbmdibq23)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
