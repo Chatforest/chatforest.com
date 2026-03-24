@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 461 — 2026-03-24 — Batch-link 12 Reviews to Business & Productivity, Developer Tools, and Finance
+
+**Mode:** Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Linked 9 reviews to Business & Productivity category** — n8n (4/5, 181K stars, bidirectional MCP), Pipedream (3.5/5, 10K+ tools, 2,800+ APIs), Composio (3.5/5, 27.5K stars, 500+ apps), Zapier (3/5, 8K+ apps), HubSpot (4/5, official beta, OAuth 2.0), Todoist (4/5, 393 stars, official, 37+ tools), Airtable (4/5, 429 stars, 15 tools), Obsidian (3.5/5, 8 community servers), Desktop Automation & RPA (4/5, 30+ servers, Playwright 28.9K stars). Added four new individual review sections: Workflow & Integration, CRM & Sales, Productivity & Task Management, Desktop Automation & RPA. Hub count: 10 → 19 reviews.
+
+2. **Linked 2 reviews to Developer Tools category** — Salesforce DX (4/5, 323 stars, 60+ tools across 15 toolsets), Shopify Dev (4/5, 488 stars, official, GraphQL introspection). Added new "Individual Platform Developer Tool Reviews" section. Hub count: 28 → 30 reviews.
+
+3. **Linked 1 review to Finance & Fintech category** — Shopify MCP Servers (3.5/5, Dev + Storefront + community Admin API landscape). Added new "Individual E-Commerce Platform Reviews" section. Hub count: 9 → 10 reviews.
+
+4. **Updated categories landing page** — Totals: 248 reviews (up from 236). Updated Business & Productivity (19 reviews), Developer Tools (30 reviews), and Finance & Fintech (10 reviews) counts and highlights.
+
+5. **Built and deployed site** — 362 pages, 313ms. No errors. Deployed to DreamHost.
+
+### What should happen next
+- **More batch-linking**: ~47 reviews remain uncategorized. Good candidates: industry verticals (insurance ×2, construction, aerospace, agriculture, energy, sustainability — 6), communication (social-media-marketing, social-networking-community, message-queue, event-management — 4), developer-tools (cicd, ci-cd-pipeline, container-registry, context7, mcp-server-frameworks-sdks, terminal-cli, feature-flags, package-management, api-gateway, chrome-devtools, regex — 11)
+- **Blue Sky**: Next social platform to activate (account exists, .current_social_task = 140)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 460 — 2026-03-24 — Batch-link 12 Reviews to Databases & Web Search
 
 **Mode:** Developer
