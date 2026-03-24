@@ -1,12 +1,12 @@
 ---
-title: "Design & Creative MCP Servers — 11 Reviews Covering Image Generation, Audio & Video, 3D Modeling, CAD, Game Engines, UI Design, and Photography"
+title: "Design & Creative MCP Servers — 13 Reviews Covering Image Generation, Audio & Video, 3D Modeling, CAD, Game Engines, UI Design, Photography, and Publishing"
 date: 2026-03-24T22:30:00+09:00
-description: "Comprehensive reviews of 11 Design & Creative MCP server categories — from DALL-E and Stable Diffusion to Blender, Figma, DaVinci Resolve, Unity, Unreal Engine, and more. 250+ servers evaluated across the creative tool ecosystem."
-og_description: "11 Design & Creative MCP server reviews covering image generation, audio & video production, 3D modeling, CAD, game engines, Figma, and photography. 250+ servers evaluated."
+description: "Comprehensive reviews of 13 Design & Creative MCP server categories — from DALL-E and Stable Diffusion to Blender, Figma, DaVinci Resolve, Unity, Unreal Engine, publishing, and more. 310+ servers evaluated across the creative tool ecosystem."
+og_description: "13 Design & Creative MCP server reviews covering image generation, audio & video production, 3D modeling, CAD, game engines, Figma, photography, and publishing. 310+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **11 categories** of Design & Creative MCP servers, evaluating over **250 individual servers** across image generation, audio and video production, 3D modeling, CAD, game engines, UI design, and photography. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **13 categories** of Design & Creative MCP servers, evaluating over **310 individual servers** across image generation, audio and video production, 3D modeling, CAD, game engines, UI design, photography, and publishing. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 The creative tool ecosystem is one of the most diverse MCP categories. It spans from consumer AI image generators to professional-grade DAWs, game engines, and CAD software. The pattern is striking: creative tools that once required years of expertise are becoming programmable through MCP — giving AI agents the ability to generate images, edit video, model 3D objects, and translate designs into code.
 
@@ -19,6 +19,7 @@ AI image creation is exploding with MCP support. ComfyUI leads on flexibility, f
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Image Generation](/reviews/image-generation-mcp-servers/) | 4/5 | ComfyUI (224 stars, 18+ tools), Stability AI (81 stars), fal.ai (600+ models), Replicate (93 stars), Flux, Google Gemini/Imagen, Midjourney (via unofficial proxies), DALL-E, Ideogram, Leonardo AI — 50+ servers total |
+| [EverArt MCP Server](/reviews/everart-mcp-server/) | 2.5/5 | EverArt (archived May 2025, FLUX/SD/Recraft models, 1 tool, $50/mo minimum) — superseded by Recraft's official 16-tool server |
 
 ## Audio, Video & Streaming
 
@@ -65,11 +66,19 @@ Game engines and digital twin platforms represent the most complex creative inte
 | [Game Engine & 3D Development](/reviews/game-engine-3d-development-mcp-servers/) | 4/5 | Unity MCP (5,800 stars), Unreal Engine (1,200 stars), Godot, Roblox (413 stars), Phaser — 15+ servers |
 | [Digital Twins, 3D Modeling & Simulation](/reviews/digital-twins-3d-simulation-mcp-servers/) | 4/5 | Blender (17,700 stars), Unreal (1,600 stars), Unity (1,300 stars), FreeCAD (605 stars), physics simulation, engineering tools — 20+ servers |
 
+## Publishing & Typesetting
+
+The full publishing pipeline — from LaTeX and Overleaf to Pandoc document conversion, eBook creation, print-on-demand, and desktop publishing with InDesign.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [Publishing & Typesetting](/reviews/publishing-typesetting-mcp-servers/) | 3.5/5 | OverleafMCP (73 stars), markdownify-mcp (2,400 stars), mcp-pandoc (512 stars), ebook-mcp (351 stars), Printify, Lulu Print, InDesign (135+ tools) — 55+ servers |
+
 ---
 
 ## Category Overview
 
-**11 reviews. 250+ servers. Average rating: 3.8/5.**
+**13 reviews. 310+ servers. Average rating: 3.7/5.**
 
 ### What stands out
 

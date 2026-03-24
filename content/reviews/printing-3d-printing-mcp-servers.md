@@ -14,6 +14,10 @@ This review covers the **printing and 3D printing** vertical — 3D printer cont
 
 The headline finding: **this is one of the strongest niche verticals in the MCP landscape.** We found 23+ servers with genuine utility, multiple competing implementations for major platforms, and ambitious projects like Kiln that attempt to automate entire 3D printing workflows end-to-end.
 
+**Category:** [IoT & Hardware](/categories/iot-hardware/)
+
+---
+
 ## 3D Printer Control
 
 ### mcp-3D-printer-server

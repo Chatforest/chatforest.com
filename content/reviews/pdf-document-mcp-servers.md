@@ -12,6 +12,10 @@ Every AI workflow eventually hits the same wall: "I need to read this PDF." Docu
 
 The headline finding: **the category is split between universal document converters and PDF-specific tools**, and neither approach has won. Microsoft's MarkItDown handles 29+ formats but treats every document the same way — convert to Markdown. IBM's Docling preserves document structure with layout analysis but requires heavier infrastructure. And the fastest pure-PDF extraction comes from a 557-star TypeScript project, not either tech giant.
 
+**Category:** [Business & Productivity](/categories/business-productivity/)
+
+---
+
 ## The Landscape
 
 ### Universal Document Converters

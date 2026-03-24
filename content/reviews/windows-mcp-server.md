@@ -12,6 +12,10 @@ Browser automation has its Playwright MCP. macOS has its AppleScript-based serve
 
 Built by the CursorTouch team, Windows-MCP is a Python-based MCP server that bridges AI agents and the Windows operating system. It doesn't rely on computer vision or fine-tuned models — instead it uses the Windows Accessibility API to read UI element trees, giving any LLM (multimodal or not) a structured, text-based understanding of what's on screen. If you've seen how Playwright MCP revolutionized browser automation with accessibility tree snapshots, Windows-MCP applies the same principle to the entire Windows desktop.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
+---
+
 ## What It Does
 
 Windows-MCP exposes 17 tools organized around three capabilities: **seeing** the screen, **interacting** with elements, and **controlling** the system.

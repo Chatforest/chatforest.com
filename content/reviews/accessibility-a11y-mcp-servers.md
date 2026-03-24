@@ -14,6 +14,10 @@ The landscape spans five areas: **full-page auditing** (axe-core-powered scanner
 
 The headline findings: **Three competing axe-core scanners** dominate the category — ronantakizawa/a11ymcp (78 stars, 5,000+ downloads), JustasMonkev's mcp-accessibility-scanner (43 stars, 15+ tools), and priyankark/a11y-mcp (40 stars). All three use the same underlying engine (Deque's axe-core, also used by Google Lighthouse and Microsoft Accessibility Insights) but differ in scope and tool design. **The most capable scanner is JustasMonkev's**, with Playwright-based multi-page crawling, keyboard navigation testing, and matrix scanning across viewport variants. **BrowserStack is the only major vendor** with accessibility in its official MCP server (130 stars) — powered by Spectra with AI-generated code fixes, but requires a paid license. **Three dedicated color contrast servers** exist for precise WCAG ratio checking — solving the real problem that LLMs hallucinate contrast ratios when calculating them from training data alone. **The biggest gap is what's missing**: no mobile accessibility testing (VoiceOver, TalkBack), no PDF/document accessibility remediation, no screen reader emulation, and no accessibility management platform integrations.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
+---
+
 ## Full-Page Auditing
 
 ### a11ymcp (ronantakizawa)

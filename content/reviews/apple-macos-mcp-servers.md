@@ -14,6 +14,10 @@ This review covers the **Apple and macOS** ecosystem — comprehensive Apple int
 
 The headline findings: **supermemoryai/apple-mcp (3,000 stars) covers 8+ Apple apps** in one package. **macos-automator-mcp (709 stars) ships 200+ automation recipes**. **Siri Shortcuts provide a bridge to the entire Apple/iOS ecosystem**. **HomeKit has 3+ MCP implementations**. **Apple Music has 4+ independent servers**. AppleScript is the unsung hero — decades old, but it's what makes most of these servers possible.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
+---
+
 ## Comprehensive Apple Integration
 
 ### supermemoryai/apple-mcp (Most Popular)

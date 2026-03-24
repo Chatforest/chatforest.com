@@ -1,12 +1,12 @@
 ---
-title: "Government & Legal MCP Servers — 3 Reviews Covering Open Data, Legislation, Legal Research, E-Signatures, Contract Management, and Civic Technology"
+title: "Government & Legal MCP Servers — 4 Reviews Covering Open Data, Legislation, Legal Research, E-Signatures, Contract Management, Nonprofit, and Civic Technology"
 date: 2026-03-24T23:45:00+09:00
-description: "Comprehensive reviews of 3 Government & Legal MCP server categories — from open government data portals and legislative tracking to legal research, contract management, e-signatures, and civic technology. 100+ servers evaluated across public sector and legal operations."
-og_description: "3 Government & Legal MCP server reviews covering GovInfo, Census Bureau, Congress.gov, Data.gov, CourtListener, DocuSign, SignNow, legal research, e-signatures, and civic technology. 100+ servers evaluated."
+description: "Comprehensive reviews of 4 Government & Legal MCP server categories — from open government data portals and legislative tracking to legal research, contract management, e-signatures, nonprofit operations, and civic technology. 115+ servers evaluated across public sector, nonprofit, and legal operations."
+og_description: "4 Government & Legal MCP server reviews covering GovInfo, Census Bureau, Congress.gov, Data.gov, CourtListener, DocuSign, SignNow, nonprofit donor management, legal research, e-signatures, and civic technology. 115+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **3 categories** of Government & Legal MCP servers, evaluating over **100 individual servers** across open government data, legislative tracking, legal research, contract management, and digital signing. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **4 categories** of Government & Legal MCP servers, evaluating over **115 individual servers** across open government data, legislative tracking, legal research, contract management, digital signing, and nonprofit operations. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 Government and legal are where MCP meets the public interest. Five government agencies have released official MCP servers — GovInfo, Census Bureau, France's data.gouv.fr, India NSO, and GSA — making this one of the few domains where governments are ahead of many private-sector verticals. Legal technology spans 14+ country-specific jurisdictions, with CourtListener covering 3,352 U.S. courts. E-signatures bridge the gap with DocuSign, SignNow, and BoldSign all shipping official servers.
 
@@ -36,11 +36,19 @@ The document signing ecosystem — from enterprise platforms like DocuSign to op
 |--------|--------|-------------|
 | [E-Signature & Digital Signing](/reviews/e-signature-digital-signing-mcp-servers/) | 3.5/5 | DocuSign (official, beta, Claude Connectors Directory), SignNow sn-mcp-server (5 stars, 15 tools), eSignatures.com (35 stars, MIT), BoldSign (4 stars, official), DocuSign Navigator (agreement search), SignWell (12+ tools) — 8+ servers |
 
+## Nonprofit & Civic Sector
+
+Donor management, humanitarian data, charity verification, and volunteer impact tools that connect AI agents to the nonprofit ecosystem — from IRS EIN lookups to UN OCHA humanitarian data.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [Nonprofit & Charity](/reviews/nonprofit-charity-mcp-servers/) | 3/5 | HDX MCP (33 tools, UN OCHA data), Blackbaud donor management, Salesforce NPSP, IRS EIN lookup, Benevity, Goodera volunteer impact — 15+ servers |
+
 ---
 
 ## Category Overview
 
-**3 reviews. 100+ servers. Average rating: 3.7/5.**
+**4 reviews. 115+ servers. Average rating: 3.5/5.**
 
 ### What stands out
 

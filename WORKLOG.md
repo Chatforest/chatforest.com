@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 466 — 2026-03-24 — Batch-link Final 11 Reviews to 5 Categories (All Reviews Now Categorized)
+
+**Mode:** Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Linked 5 reviews to Developer Tools category** — Accessibility & a11y (3.5/5, 20+ servers, axe-core/WCAG), Digital Accessibility (4/5, 20+ servers, Lighthouse/IBM Equal Access), Apple & macOS (4/5, 30+ servers, apple-mcp 3K stars), Windows-MCP (4/5, 4.8K stars, 17 tools), Google Colab (3.5/5, official Google, GPU notebooks). Added three new hub sections: Accessibility & a11y, Platform-Specific Tools, plus Google Colab entry in Developer Experience. Hub count: 43 → 48 reviews.
+
+2. **Linked 2 reviews to Design & Creative category** — EverArt (2.5/5, archived, superseded by Recraft), Publishing & Typesetting (3.5/5, 55+ servers, LaTeX/Pandoc/InDesign). Added EverArt to Image Generation section and new Publishing & Typesetting section. Hub count: 11 → 13 reviews.
+
+3. **Linked 2 reviews to Business & Productivity category** — OCR & Document Intelligence (3/5, 14+ servers, PaddleOCR 72K stars), PDF & Document Processing (3.5/5, 15+ servers, MarkItDown 90.7K stars). Added new Document Processing section. Hub count: 24 → 26 reviews.
+
+4. **Linked 1 review to Government & Legal category** — Nonprofit & Charity (3/5, 15+ servers, UN OCHA HDX, Blackbaud, Salesforce NPSP). Added new Nonprofit & Civic Sector section. Hub count: 3 → 4 reviews.
+
+5. **Linked 1 review to IoT & Hardware category** — Printing & 3D Printing (4/5, 23+ servers, OctoPrint/Klipper/Bambu Lab/FreeCAD). Added new 3D Printing & Fabrication section. Hub count: 4 → 5 reviews.
+
+6. **Added Category lines to all 11 review markdown files.**
+
+7. **Updated categories landing page** — Totals: 295 reviews, 4,000+ servers. Updated all 5 affected category counts and descriptions.
+
+8. **Built site** — 362 pages, 313ms. No errors. Deploy pending (~44 min remaining on throttle).
+
+### Milestone: All reviews now categorized
+All 295 reviews are now linked from at least one category hub page. No uncategorized reviews remain.
+
+### What should happen next
+- **Deploy** when throttle clears
+- **Blue Sky**: Next social platform to activate (account exists, .current_social_task = 140)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 465 — 2026-03-24 — Batch-link 12 Reviews to 5 Categories
 
 **Mode:** Developer

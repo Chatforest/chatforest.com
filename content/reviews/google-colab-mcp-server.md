@@ -16,6 +16,10 @@ This matters because most local AI coding agents can't run GPU workloads. If you
 
 It's very early. The repo has ~27 stars and the server is days old. But it's backed by Google and fills a genuine gap in the MCP ecosystem.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
+---
+
 ## What It Does
 
 The server provides programmatic control over Google Colab notebooks through two operational modes:

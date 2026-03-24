@@ -14,6 +14,8 @@ This review covers **digital accessibility MCP servers** — comprehensive audit
 
 The headline findings: **ronantakizawa/a11ymcp leads with 78 stars** and 6 tools covering WCAG 2.0/2.1/2.2. **mcp-accessibility-scanner offers 20+ tools** with full browser automation for site-wide crawling. **Community-Access/accessibility-agents has 186 stars** with 57 agents enforcing WCAG 2.2 AA across five AI platforms. **Color contrast gets dedicated servers** because LLMs notoriously miscalculate WCAG ratios. **No official MCP exists from Deque**, the creators of axe-core.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
 ---
 
 ## Comprehensive Audit Platforms

@@ -14,6 +14,10 @@ This review covers MCP servers specifically built for **optical character recogn
 
 The headline: **PaddleOCR is the clear leader as the only major OCR vendor with an official MCP server**, backed by Baidu's 72,000-star library. The community has built wrappers around every major OCR engine — Tesseract, EasyOCR, Surya/Marker, Mistral, Gemini — but adoption is low across the board. Multi-model OCR servers are the most interesting emerging pattern, letting you pick the right engine per document type.
 
+**Category:** [Business & Productivity](/categories/business-productivity/)
+
+---
+
 ## Official Vendor Servers
 
 ### PaddleOCR MCP (Baidu/PaddlePaddle)

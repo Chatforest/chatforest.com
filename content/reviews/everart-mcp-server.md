@@ -17,6 +17,10 @@ It was built as part of Anthropic's reference MCP server collection at [modelcon
 
 This is our first review of an image generation MCP server. It opens a category we've been watching: creative tools for AI agents. The promise is compelling — agents that can generate visuals as part of their workflows, not just text. The execution here doesn't match the promise — and the gap has widened since our original review.
 
+**Category:** [Design & Creative](/categories/design-creative/)
+
+---
+
 ## What's New (March 2026 Update)
 
 Since our original review on March 14, the landscape around EverArt's MCP server has shifted significantly — all in ways that make this server harder to recommend.

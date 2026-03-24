@@ -1,12 +1,12 @@
 ---
-title: "Business & Productivity MCP Servers — 24 Reviews Covering CRM, ERP, HR, Marketing, Advertising, CMS, Office Suites, Knowledge Management, Scheduling, Workflow Automation, Events, and Desktop RPA"
+title: "Business & Productivity MCP Servers — 26 Reviews Covering CRM, ERP, HR, Marketing, Advertising, CMS, Office Suites, Knowledge Management, Scheduling, Workflow Automation, Events, Document Processing, and Desktop RPA"
 date: 2026-03-24T23:45:00+09:00
-description: "Comprehensive reviews of 24 Business & Productivity MCP server categories and individual servers — from CRM and customer support to ERP, HR, marketing automation, advertising, CMS, office suites, knowledge management, calendar scheduling, workflow orchestration, event management, and desktop automation. 400+ servers evaluated across the business tool ecosystem."
-og_description: "24 Business & Productivity MCP server reviews covering CRM, customer support, ERP, HR, marketing, advertising, CMS, office suites, spreadsheets, note-taking, calendar scheduling, workflow automation, event management, and desktop RPA. 400+ servers evaluated."
+description: "Comprehensive reviews of 26 Business & Productivity MCP server categories and individual servers — from CRM and customer support to ERP, HR, marketing automation, advertising, CMS, office suites, knowledge management, calendar scheduling, workflow orchestration, event management, document processing, and desktop automation. 430+ servers evaluated across the business tool ecosystem."
+og_description: "26 Business & Productivity MCP server reviews covering CRM, customer support, ERP, HR, marketing, advertising, CMS, office suites, spreadsheets, note-taking, calendar scheduling, workflow automation, event management, document processing, and desktop RPA. 430+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **24 categories and individual servers** in the Business & Productivity space, evaluating over **400 individual servers** across CRM, customer support, ERP, HR, marketing automation, advertising, CMS, office suites, knowledge management, scheduling, workflow orchestration, event management, and desktop automation. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **26 categories and individual servers** in the Business & Productivity space, evaluating over **430 individual servers** across CRM, customer support, ERP, HR, marketing automation, advertising, CMS, office suites, knowledge management, scheduling, workflow orchestration, event management, document processing, and desktop automation. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 Business & Productivity is the broadest MCP category — spanning every stage from lead generation to customer support, and every tool from spreadsheets to enterprise resource planning. The pattern is clear: vendors are racing to ship official MCP servers. Salesforce, Zapier, Make, Notion, Xero, and Kestra all have official integrations. Community servers fill the gaps where vendors haven't moved yet, particularly for platforms like Obsidian and Airtable.
 
@@ -112,3 +112,12 @@ Calendar, scheduling, and event platforms that connect AI agents to ticketing, e
 |--------|--------|-------------|
 | [Presentation & Slides](/reviews/presentation-slides-mcp-servers/) | 3.5/5 | presenton (4,300 stars), Office-PowerPoint-MCP (1,300 stars), google_workspace_mcp (1,400 stars), mcp-server-ppt (204 operations) — 20+ servers |
 | [Event Management & Ticketing](/reviews/event-management-ticketing-mcp-servers/) | 3.5/5 | google-calendar-mcp (1,100 stars), mcp-ical (278 stars), mcp-server-ticketmaster (23 stars), natural language macOS Calendar — 35+ servers |
+
+## Document Processing
+
+OCR, PDF extraction, and document intelligence tools that let AI agents read and convert scanned documents, PDFs, and multi-format files into structured text.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [OCR & Document Intelligence](/reviews/ocr-document-intelligence-mcp-servers/) | 3/5 | PaddleOCR (72K+ parent stars, 100+ languages), Markdownify MCP (2,400 stars), multi-model OCR (DeepSeek/Florence-2/PaddleOCR) — 14+ servers |
+| [PDF & Document Processing](/reviews/pdf-document-mcp-servers/) | 3.5/5 | Microsoft MarkItDown (90,700 stars, 29+ formats), IBM Docling (37K+ stars), PDF Reader MCP (557 stars) — 15+ servers |

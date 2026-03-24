@@ -16,6 +16,10 @@ The landscape spans seven areas: **LaTeX & Overleaf** (academic typesetting, Ove
 
 The headline findings: **Document conversion is the strongest subcategory** — markdownify-mcp (2,400 stars) is the single most popular server in this review. **LaTeX/Overleaf integration is fragmented** — 5+ competing Overleaf servers with overlapping functionality. **eBook management is surprisingly mature** — ebook-mcp (351 stars) enables AI-powered reading with quizzes. **Print-on-demand is an emerging niche** with both Printify and Lulu Print getting MCP servers. **Desktop publishing is ambitious but platform-limited** — InDesign servers require macOS + Adobe InDesign, restricting practical use.
 
+**Category:** [Design & Creative](/categories/design-creative/)
+
+---
+
 ## LaTeX & Overleaf
 
 ### OverleafMCP (Read-Only)

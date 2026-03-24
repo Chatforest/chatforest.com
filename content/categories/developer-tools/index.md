@@ -1,12 +1,12 @@
 ---
-title: "Developer Tools MCP Servers — 43 Reviews Covering the Full Development Lifecycle"
+title: "Developer Tools MCP Servers — 48 Reviews Covering the Full Development Lifecycle"
 date: 2026-03-24T20:00:00+09:00
-description: "Comprehensive reviews of 43 Developer Tools MCP server categories and individual servers — from source control to debugging, CI/CD to API gateways, message queues, frameworks & SDKs to component libraries, plus deep-dives on Context7, Chrome DevTools, Salesforce DX, and Shopify Dev. 375+ servers evaluated across the full software development lifecycle."
-og_description: "43 Developer Tools MCP server reviews covering source control, CI/CD, containers, registries, API gateways, message queues, feature flags, frameworks, terminal tools, security, monitoring, and more. 375+ servers evaluated."
+description: "Comprehensive reviews of 48 Developer Tools MCP server categories and individual servers — from source control to debugging, CI/CD to API gateways, message queues, accessibility, platform-specific tools, frameworks & SDKs to component libraries, plus deep-dives on Context7, Chrome DevTools, Salesforce DX, Shopify Dev, and Google Colab. 425+ servers evaluated across the full software development lifecycle."
+og_description: "48 Developer Tools MCP server reviews covering source control, CI/CD, containers, registries, API gateways, message queues, accessibility, platform tools, feature flags, frameworks, terminal tools, security, monitoring, and more. 425+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **43 categories and individual servers** in the Developer Tools space, evaluating over **375 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **48 categories and individual servers** in the Developer Tools space, evaluating over **425 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 Every review includes a **cross-category comparison table** so you can see how maturity varies across the Developer Tools landscape at a glance.
 
@@ -97,6 +97,25 @@ IDE integration, documentation, and workflow tooling.
 | [Terminal & CLI Tools](/reviews/terminal-cli-tools-mcp-servers/) | 3.5/5 | 25+ servers — shell execution (156 stars), tmux (233 stars), SSH manager (37 tools), CLI inspectors |
 | [Context7](/reviews/context7-mcp-server/) | 3.5/5 | 50.1K stars, 10.1M visitors — real-time library docs for AI agents, Skills plugin, patched context poisoning vuln |
 | [ReactBits](/reviews/reactbits-mcp-server/) | 3.5/5 | 135+ animated React components (CSS + Tailwind), 5 tools, ReactBits.dev library (24K+ stars) |
+| [Google Colab](/reviews/google-colab-mcp-server/) | 3.5/5 | Official Google MCP server (~27 stars), GPU-powered notebooks, session proxy + runtime modes, Python code execution |
+
+## Accessibility & a11y
+
+Web accessibility testing and WCAG compliance tools that let AI agents audit, analyze, and remediate accessibility issues across web properties.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [Accessibility & a11y](/reviews/accessibility-a11y-mcp-servers/) | 3.5/5 | ronantakizawa/a11ymcp (78 stars), axe-core-powered scanners, color contrast checking, WCAG remediation — 20+ servers |
+| [Digital Accessibility](/reviews/digital-accessibility-mcp-servers/) | 4/5 | Community-Access/accessibility-agents (186 stars, 57 agents), Lighthouse MCP (49 stars), dual-engine axe-core + IBM Equal Access — 20+ servers |
+
+## Platform-Specific Tools
+
+Native platform integration servers that give AI agents deep access to operating system capabilities — from macOS automation via AppleScript to Windows UI control via the Accessibility API.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [Apple & macOS](/reviews/apple-macos-mcp-servers/) | 4/5 | supermemoryai/apple-mcp (3,000 stars), macos-automator-mcp (709 stars), Siri Shortcuts, HomeKit, Apple Music, Notes, Reminders — 30+ servers |
+| [Windows-MCP](/reviews/windows-mcp-server/) | 4/5 | CursorTouch/Windows-MCP (4,800+ stars, 17 tools, MIT), Windows Accessibility API, screenshots, shell commands, registry access |
 
 ## Project Management & Collaboration
 
@@ -143,7 +162,7 @@ Deep-dives on MCP servers that bring AI-powered development to specific platform
 
 ## Category Overview
 
-Across all 43 reviews, key themes emerge:
+Across all 48 reviews, key themes emerge:
 
 **Vendor commitment is accelerating.** GitHub, Docker, Hashicorp, Playwright, Apollo, Datadog, Sentry, SonarQube, Postman, LaunchDarkly, GrowthBook, Kong, and Google all ship official MCP servers. This was not the case even six months ago.
 

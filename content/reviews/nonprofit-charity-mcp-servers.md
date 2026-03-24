@@ -14,6 +14,10 @@ This review covers the **nonprofit and charity** vertical — charity verificati
 
 The headline findings: **Anthropic's "Claude for Nonprofits" initiative drives this category** — Blackbaud, Benevity, and Candid all launched as official Claude Connectors in late 2025. **Open-source charity verification works** with two GitHub projects covering IRS and ProPublica data. **Humanitarian data has the strongest open-source entry** with HDX MCP's 33 tools covering UN OCHA data. **Donor management is entirely commercial.** **No grant management or volunteer scheduling servers exist yet.**
 
+**Category:** [Government & Legal](/categories/government-legal/)
+
+---
+
 ## Charity Verification & Data Lookup
 
 ### briancasteel/charity-mcp-server

@@ -1,12 +1,12 @@
 ---
-title: "IoT & Hardware MCP Servers — 4 Reviews Covering Robotics, Smart Home, IoT Platforms, Embedded Systems, and Industrial Automation"
+title: "IoT & Hardware MCP Servers — 5 Reviews Covering Robotics, Smart Home, IoT Platforms, Embedded Systems, 3D Printing, and Industrial Automation"
 date: 2026-03-25T01:00:00+09:00
-description: "Comprehensive reviews of 4 IoT & Hardware MCP server categories — from robotics and smart home automation to IoT platforms, embedded systems, industrial controllers, and 3D printing. 125+ servers evaluated across the physical computing ecosystem."
-og_description: "4 IoT & Hardware MCP server reviews covering robotics, smart home automation, IoT platforms, embedded systems, and industrial automation. 125+ servers evaluated."
+description: "Comprehensive reviews of 5 IoT & Hardware MCP server categories — from robotics and smart home automation to IoT platforms, embedded systems, 3D printing, industrial controllers, and manufacturing. 150+ servers evaluated across the physical computing ecosystem."
+og_description: "5 IoT & Hardware MCP server reviews covering robotics, smart home automation, IoT platforms, embedded systems, 3D printing, and industrial automation. 150+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **4 categories** of IoT & Hardware MCP servers, evaluating over **125 individual servers** across robotics, smart home automation, IoT platforms, embedded systems, industrial controllers, and 3D printing. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **5 categories** of IoT & Hardware MCP servers, evaluating over **150 individual servers** across robotics, smart home automation, IoT platforms, embedded systems, 3D printing, industrial controllers, and manufacturing. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 IoT & Hardware is where MCP meets the physical world. This is arguably the most exciting frontier in the MCP ecosystem — AI agents that can control robots, manage smart homes, program microcontrollers, and monitor industrial equipment. The breakout story is xiaozhi-esp32 (24,900 stars), an MCP-based voice AI platform running on ESP32 hardware. Home Assistant dominates smart home with 1,600 stars and 96 tools on its leading server. Robotics has matured fast — ROS/ROS2 integration crossed 1,100 stars and DimOS (1,700 stars) emerged as the first agentic robotics operating system.
 
@@ -36,3 +36,11 @@ The broadest hardware category — spanning smart home platforms, MQTT brokers, 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [IoT & Embedded](/reviews/iot-embedded-mcp-servers/) | 4/5 | robotmcp/ros-mcp-server (873 stars, ROS/ROS2), homeassistant-mcp (500 stars), thingsboard-mcp (120+ tools, official), horw/esp-mcp (135 stars, ESP-IDF), AWS IoT SiteWise MCP — 45+ servers |
+
+## 3D Printing & Fabrication
+
+3D printer control, CAD modeling, document printing, and print-on-demand services. One of the strongest niche verticals in the MCP landscape — covering OctoPrint, Klipper, Bambu Lab, FreeCAD, and CUPS.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [Printing & 3D Printing](/reviews/printing-3d-printing-mcp-servers/) | 4/5 | mcp-3D-printer-server (161 stars, OctoPrint/Klipper/Bambu Lab), FreeCAD MCP (605 stars), CUPS printing, Printify (AI design generation) — 23+ servers |

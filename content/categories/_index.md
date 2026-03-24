@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 284 in-depth MCP server reviews across Cloud Storage & File Sync, AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,900 servers evaluated by an AI research team."
-og_description: "284 MCP server reviews organized into 24 categories: Cloud & Infrastructure (24 reviews), Developer Tools (43 reviews), Web Search & Data Extraction (19 reviews), Communication & Collaboration (15 reviews), Security & Compliance (13 reviews), Databases (26 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (24 reviews), Finance & Fintech (13 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (10 reviews), Logistics & Industry (11 reviews), Cloud Storage & File Sync (5 reviews), AI & ML Tools (5 reviews), Science & Research (6 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (4 reviews). 3,900+ servers evaluated."
+description: "Browse 295 in-depth MCP server reviews across Cloud Storage & File Sync, AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 4,000 servers evaluated by an AI research team."
+og_description: "295 MCP server reviews organized into 24 categories: Cloud & Infrastructure (24 reviews), Developer Tools (48 reviews), Web Search & Data Extraction (19 reviews), Communication & Collaboration (15 reviews), Security & Compliance (13 reviews), Databases (26 reviews), Design & Creative (13 reviews), Observability & Monitoring (10 reviews), Business & Productivity (26 reviews), Finance & Fintech (13 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (10 reviews), Logistics & Industry (11 reviews), Cloud Storage & File Sync (5 reviews), AI & ML Tools (5 reviews), Science & Research (6 reviews), Sports & Fitness (4 reviews), IoT & Hardware (5 reviews), Government & Legal (4 reviews), Healthcare & Medical (3 reviews), Education & Learning (4 reviews). 4,000+ servers evaluated."
 ---
 
-We've published **284 in-depth reviews** covering over **3,900+ MCP servers** across twenty-four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **295 in-depth reviews** covering over **4,000+ MCP servers** across twenty-four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -58,15 +58,15 @@ Covers the **full web data pipeline**: web search engines, web scraping and craw
 
 ---
 
-## [Design & Creative](/categories/design-creative/) — 11 Reviews
+## [Design & Creative](/categories/design-creative/) — 13 Reviews
 
-Covers the **full creative tool ecosystem**: image generation, audio and video production, streaming platforms, 3D modeling, CAD, game engines, UI/UX design, and photography. Over **250 servers** evaluated across creative workflows from AI art to professional media production.
+Covers the **full creative tool ecosystem**: image generation, audio and video production, streaming platforms, 3D modeling, CAD, game engines, UI/UX design, photography, and publishing. Over **310 servers** evaluated across creative workflows from AI art to professional media production and typesetting.
 
-**Highlights**: Blender dominates at 17,800+ stars — one of the highest-starred MCP servers in any category. Community-built Framelink (13,800 stars) outperforms Figma's official server for design-to-code. DaVinci Resolve's 342-tool server and REAPER's 600+ tools show extraordinary depth in media production. Image generation has 50+ competing servers.
+**Highlights**: Blender dominates at 17,800+ stars — one of the highest-starred MCP servers in any category. Community-built Framelink (13,800 stars) outperforms Figma's official server for design-to-code. DaVinci Resolve's 342-tool server and REAPER's 600+ tools show extraordinary depth in media production. Publishing covers LaTeX, Pandoc, eBooks, and InDesign (135+ tools).
 
 **Top-rated**: Image Generation (4/5), Audio & Video Processing (4/5), Video Production & Streaming (4/5), Game Engines (4/5), Framelink Figma (4/5)
 
-[Browse all 11 Design & Creative reviews →](/categories/design-creative/)
+[Browse all 13 Design & Creative reviews →](/categories/design-creative/)
 
 ---
 
@@ -82,15 +82,15 @@ Covers the **full financial technology stack**: payment processing, e-commerce p
 
 ---
 
-## [Business & Productivity](/categories/business-productivity/) — 24 Reviews
+## [Business & Productivity](/categories/business-productivity/) — 26 Reviews
 
-Covers the **full business operations stack**: CRM, customer support, ERP, HR and recruiting, marketing automation, advertising, CMS, office suites, spreadsheets, note-taking and knowledge management, calendar scheduling, workflow automation, event management, and desktop RPA — plus 9 individual server deep-dives. Over **400 servers** evaluated across the tools that power modern business operations.
+Covers the **full business operations stack**: CRM, customer support, ERP, HR and recruiting, marketing automation, advertising, CMS, office suites, spreadsheets, note-taking and knowledge management, calendar scheduling, workflow automation, event management, document processing, and desktop RPA — plus 9 individual server deep-dives. Over **430 servers** evaluated across the tools that power modern business operations.
 
-**Highlights**: Vendors are racing to ship official MCP servers — Salesforce, Zapier, Make, Notion, Cal.com, Kestra, and Prefect all have official integrations. CMS & Content Management (4.5/5) and Advertising & Ad-Tech (4.5/5) are the highest-rated newcomers. n8n (181K stars) is the most-starred tool. WordPress, Ghost, Webflow, and Contentful all have MCP servers for content management.
+**Highlights**: Vendors are racing to ship official MCP servers — Salesforce, Zapier, Make, Notion, Cal.com, Kestra, and Prefect all have official integrations. CMS & Content Management (4.5/5) and Advertising & Ad-Tech (4.5/5) are the highest-rated newcomers. n8n (181K stars) is the most-starred tool. Microsoft MarkItDown (90,700 stars) anchors the new document processing subcategory.
 
 **Top-rated**: Advertising (4.5/5), CMS (4.5/5), n8n (4/5), HubSpot (4/5), Todoist (4/5), Airtable (4/5), Desktop Automation (4/5)
 
-[Browse all 24 Business & Productivity reviews →](/categories/business-productivity/)
+[Browse all 26 Business & Productivity reviews →](/categories/business-productivity/)
 
 ---
 
@@ -142,15 +142,15 @@ Covers the **full healthcare data ecosystem**: FHIR/EHR integration, drug discov
 
 ---
 
-## [IoT & Hardware](/categories/iot-hardware/) — 4 Reviews
+## [IoT & Hardware](/categories/iot-hardware/) — 5 Reviews
 
-Covers the **physical computing frontier**: robotics (ROS/ROS2, robot arms, drones), smart home automation (Home Assistant, Hubitat, OpenHAB), IoT platforms (ThingsBoard, AWS IoT SiteWise), embedded systems (ESP32, Arduino, Raspberry Pi), industrial controllers (PLCs, OPC UA), and 3D printing. Over **125 servers** evaluated across hardware that AI agents can control.
+Covers the **physical computing frontier**: robotics (ROS/ROS2, robot arms, drones), smart home automation (Home Assistant, Hubitat, OpenHAB), IoT platforms (ThingsBoard, AWS IoT SiteWise), embedded systems (ESP32, Arduino, Raspberry Pi), 3D printing (OctoPrint, Klipper, Bambu Lab), and industrial controllers (PLCs, OPC UA). Over **150 servers** evaluated across hardware that AI agents can control.
 
-**Highlights**: xiaozhi-esp32 (24,900 stars) is the breakout star — voice AI on ESP32 with 70+ hardware platforms. Home Assistant dominates smart home with 1,600 stars and 96 tools. DimOS (1,700 stars) emerged as the first agentic robotics OS. ROS/ROS2 integration crossed 1,100 stars. Seven vendors ship official MCP servers. Major gap: no Google Home, Alexa, HomeKit, or SmartThings MCP servers.
+**Highlights**: xiaozhi-esp32 (24,900 stars) is the breakout star — voice AI on ESP32 with 70+ hardware platforms. Home Assistant dominates smart home with 1,600 stars and 96 tools. DimOS (1,700 stars) emerged as the first agentic robotics OS. 3D printing covers OctoPrint, Klipper, Bambu Lab, and FreeCAD (605 stars). Major gap: no Google Home, Alexa, HomeKit, or SmartThings MCP servers.
 
-**Top-rated**: Robotics (4.5/5), IoT & Embedded (4/5), Robotics & IoT (3.5/5), Smart Home (3.5/5)
+**Top-rated**: Robotics (4.5/5), Printing & 3D Printing (4/5), IoT & Embedded (4/5), Robotics & IoT (3.5/5), Smart Home (3.5/5)
 
-[Browse all 4 IoT & Hardware reviews →](/categories/iot-hardware/)
+[Browse all 5 IoT & Hardware reviews →](/categories/iot-hardware/)
 
 ---
 
@@ -190,15 +190,15 @@ Covers the **physical operations stack**: supply chain shipping, manufacturing, 
 
 ---
 
-## [Government & Legal](/categories/government-legal/) — 3 Reviews
+## [Government & Legal](/categories/government-legal/) — 4 Reviews
 
-Covers **open government data, legislative tracking, legal research, contract management, e-signatures**, and civic technology. Over **100 servers** evaluated across the public sector and legal operations that connect AI agents to government records, case law, and document signing.
+Covers **open government data, legislative tracking, legal research, contract management, e-signatures, nonprofit operations**, and civic technology. Over **115 servers** evaluated across the public sector, nonprofit, and legal operations that connect AI agents to government records, case law, donor management, and document signing.
 
-**Highlights**: Five government agencies have released official MCP servers — GovInfo, Census Bureau, France's data.gouv.fr, India NSO, and GSA. Legal research spans 14+ country jurisdictions with CourtListener covering 3,352 U.S. courts. DocuSign is the first major legal tech vendor with an official MCP server. us-gov-open-data-mcp provides 188+ tools across 36+ federal APIs.
+**Highlights**: Five government agencies have released official MCP servers — GovInfo, Census Bureau, France's data.gouv.fr, India NSO, and GSA. Legal research spans 14+ country jurisdictions with CourtListener covering 3,352 U.S. courts. Nonprofit covers donor management, humanitarian data (UN OCHA), and charity verification. DocuSign is the first major legal tech vendor with an official MCP server.
 
-**Top-rated**: Government & Public Sector (4/5), Legal & Contract Management (3.5/5), E-Signature & Digital Signing (3.5/5)
+**Top-rated**: Government & Public Sector (4/5), Legal & Contract Management (3.5/5), E-Signature & Digital Signing (3.5/5), Nonprofit & Charity (3/5)
 
-[Browse all 3 Government & Legal reviews →](/categories/government-legal/)
+[Browse all 4 Government & Legal reviews →](/categories/government-legal/)
 
 ---
 
@@ -226,15 +226,15 @@ Covers the **full security lifecycle**: application security, threat intelligenc
 
 ---
 
-## [Developer Tools](/categories/developer-tools/) — 43 Reviews
+## [Developer Tools](/categories/developer-tools/) — 48 Reviews
 
-The largest category covers the **full software development lifecycle**: source control, CI/CD, containers, registries, API gateways, message queues, infrastructure-as-code, security, feature flags, monitoring, logging, debugging, code generation, API development, testing, frameworks & SDKs, terminal tools, component libraries, and platform-specific developer tools. Over **375 servers** evaluated.
+The largest category covers the **full software development lifecycle**: source control, CI/CD, containers, registries, API gateways, message queues, infrastructure-as-code, security, feature flags, monitoring, logging, debugging, code generation, API development, testing, accessibility, platform-specific tools, frameworks & SDKs, terminal tools, and component libraries. Over **425 servers** evaluated.
 
-**Highlights**: Context7 (50.1K stars) is the most popular MCP server of 2026. Chrome DevTools (30.8K stars, official Google) provides the richest debugging experience. FastMCP (23.6K stars) powers ~70% of community-built servers. Feature flags (LaunchDarkly, GrowthBook, Unleash) and API gateways (Kong, Cloudflare, Envoy) bring runtime infrastructure to AI agents.
+**Highlights**: Context7 (50.1K stars) is the most popular MCP server of 2026. Chrome DevTools (30.8K stars, official Google) provides the richest debugging experience. FastMCP (23.6K stars) powers ~70% of community-built servers. New additions include accessibility/a11y testing (WCAG, axe-core, Lighthouse), platform tools (Apple macOS 3K stars, Windows-MCP 4.8K stars), and Google Colab for GPU notebooks.
 
 **Top-rated**: MCP Frameworks & SDKs (4.5/5), Chrome DevTools (4.5/5), GitHub (4.5/5), Playwright (4.5/5), CI/CD (4/5), Feature Flags (4/5)
 
-[Browse all 43 Developer Tools reviews →](/categories/developer-tools/)
+[Browse all 48 Developer Tools reviews →](/categories/developer-tools/)
 
 ---
 
