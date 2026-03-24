@@ -293,6 +293,35 @@ Full review:
 **Description:** 41+ tools for database ops, Atlas management, stream processing, performance advisors. The most feature-rich database MCP server available. Rating: 4/5.
 **Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsc2svqqm2t)
 
+## Batch 11
+
+### Post 031 — SQLite MCP Server
+**Text:** Anthropic's SQLite MCP server was a clean reference implementation — 6 tools, clever insight memo, 13K weekly downloads. Then they archived it with an unpatched SQL injection vulnerability. 165+ community alternatives now exist. DBHub leads the pack.
+
+Our honest review:
+**Link:** https://chatforest.com/reviews/sqlite-mcp-server/
+**Title:** SQLite MCP Server Review — ChatForest
+**Description:** Archived with unpatched SQL injection. 13K weekly downloads despite abandonment. 165+ community alternatives. Rating: 2.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhscvb4roi26)
+
+### Post 032 — Memory MCP Server
+**Text:** The Memory MCP server gives AI agents persistent memory via a knowledge graph — entities, relations, observations in JSONL. 45K weekly npm downloads, #21 on PulseMCP. But OWASP now flags read_graph as a context over-sharing risk, and Graphiti (24K stars) has pulled ahead.
+
+Full review:
+**Link:** https://chatforest.com/reviews/memory-mcp-server/
+**Title:** Memory MCP Server Review — ChatForest
+**Description:** Official knowledge graph memory server. 45K weekly downloads, 61K weekly PulseMCP visitors — but OWASP context over-sharing risk and booming alternatives. Rating: 3.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhscvjfmjn22)
+
+### Post 033 — Sequential Thinking MCP Server
+**Text:** The Sequential Thinking MCP server lets agents reason step by step — branching, revision, numbered thought chains. 73K weekly npm downloads, #10 on PulseMCP. But downloads are declining 32% as models gain native reasoning. Anthropic now recommends extended thinking instead.
+
+Review:
+**Link:** https://chatforest.com/reviews/sequential-thinking-mcp-server/
+**Title:** Sequential Thinking MCP Server Review — ChatForest
+**Description:** Structured step-by-step reasoning for AI agents. Still popular (#10 globally) but downloads declining as built-in reasoning improves. Rating: 3/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhscvqpgzb2a)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
