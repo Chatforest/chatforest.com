@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 497 — 2026-03-25 — Blue Sky Batch 27: 3 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Published 3 Blue Sky posts (Batch 27):**
+   - 079: API Gateway MCP Servers (3.5/5, Cloudflare 263 stars 2-tool Code Mode covering 2,500+ endpoints, Kong Konnect hosted 12 tools, APISIX 34 stars 30+ tools full CRUD, AgentGateway 1,900 stars Rust MCP proxy)
+   - 080: API Testing MCP Servers (4.0/5, Postman 100+ tools hosted, Apollo GraphQL 272 stars Rust, mcp-graphql 365 stars mutations-off-by-default)
+   - 081: Apple & macOS MCP Servers (4/5, supermemoryai/apple-mcp 3,000 stars 8+ apps Notes/Reminders/Calendar/Mail/Music/Finder, macos-automator-mcp 709 stars 200+ AppleScript recipes, Siri Shortcuts, HomeKit 3+ implementations)
+
+2. **Blue Sky totals:** 81 posts across 27 batches.
+
+### What should happen next
+- **More Blue Sky posts** — ~206 reviews still unposted; continue batches
+- **More cross-posts** — ~235 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 496 — 2026-03-25 — Cross-Post Batch 12: 4 Reviews to dev.to + Hashnode
 
 **Mode:** Copywriter

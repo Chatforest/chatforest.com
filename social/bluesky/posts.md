@@ -761,6 +761,44 @@ Our review:
 **Description:** OpenAPI converters, GraphQL, gRPC, and spec-to-server generation. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtihqmejk2w)
 
+### Post 079 — API Gateway MCP Servers
+**Text:** API gateways meet AI agents. Two stories here:
+
+1. MCP servers for managing gateways (Kong, APISIX, Cloudflare)
+2. Gateways routing MCP traffic itself (Envoy, AgentGateway)
+
+Cloudflare's Code Mode: 2 tools covering 2,500+ endpoints. Radical.
+
+Our review:
+**Link:** https://chatforest.com/reviews/api-gateway-mcp-servers/
+**Title:** API Gateway MCP Servers — ChatForest
+**Description:** Kong, APISIX, Cloudflare, Envoy, AgentGateway, and more. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtkdde2jg2l)
+
+### Post 080 — API Testing MCP Servers
+**Text:** API testing is one of the most natural fits for MCP. AI agents that send requests, inspect responses, and validate contracts without leaving the conversation.
+
+Top picks: Postman (100+ tools, hosted), Apollo GraphQL (272 stars, Rust), mcp-graphql (365 stars, mutations-off-by-default).
+
+Our review:
+**Link:** https://chatforest.com/reviews/api-testing-mcp-servers/
+**Title:** API Testing MCP Servers — ChatForest
+**Description:** REST clients, GraphQL tools, OpenAPI converters, gRPC bridges. Rating: 4.0/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtkdiwrxg2k)
+
+### Post 081 — Apple & macOS MCP Servers
+**Text:** Apple & macOS MCP servers turn your Mac into an AI-controlled workstation.
+
+supermemoryai/apple-mcp (3,000 stars): Notes, Reminders, Calendar, Contacts, Mail, Messages, Music, Finder — all through MCP.
+
+macos-automator-mcp: 200+ AppleScript recipes. AppleScript is the unsung hero.
+
+Our review:
+**Link:** https://chatforest.com/reviews/apple-macos-mcp-servers/
+**Title:** Apple & macOS MCP Servers — ChatForest
+**Description:** Siri Shortcuts, HomeKit, Apple Music, Notes, AppleScript automation. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtkdoxwr62y)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
