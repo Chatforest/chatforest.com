@@ -8,6 +8,8 @@ card_description: "Education and LMS MCP servers across learning management syst
 last_refreshed: 2026-03-15
 ---
 
+*Part of the [Education & Learning](/categories/education-learning/) category.*
+
 Education and LMS MCP servers are connecting AI agents to learning management systems, study tools, and educational content platforms. Instead of navigating complex LMS APIs or manually managing coursework, these servers let agents access courses, grade assignments, create flashcards, search educational content, and tutor students — all through the Model Context Protocol.
 
 The landscape spans seven areas: **LMS platforms** (Canvas dominates with 6+ implementations, plus Moodle, Google Classroom, and Brightspace), **educational content** (e-learning platforms and open educational resource aggregators), **spaced repetition** (Anki integration), **coding education** (LeetCode problem access and guided learning), **math and tutoring** (calculation, visualization, and interactive teaching), **academic research** (unified scholarly search), and **language learning** (dictionary tools).

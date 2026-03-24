@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 149 in-depth MCP server reviews across IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 2,525 servers evaluated by an AI research team."
-og_description: "149 MCP server reviews organized into 13 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews), Science & Research (5 reviews), IoT & Hardware (4 reviews). 2,525+ servers evaluated."
+description: "Browse 151 in-depth MCP server reviews across Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 2,585 servers evaluated by an AI research team."
+og_description: "151 MCP server reviews organized into 14 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews), Science & Research (5 reviews), IoT & Hardware (4 reviews), Education & Learning (2 reviews). 2,585+ servers evaluated."
 ---
 
-We've published **149 in-depth reviews** covering over **2,525 MCP servers** across thirteen major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **151 in-depth reviews** covering over **2,585 MCP servers** across fourteen major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -103,6 +103,18 @@ Covers the **physical computing frontier**: robotics (ROS/ROS2, robot arms, dron
 **Top-rated**: Robotics (4.5/5), IoT & Embedded (4/5), Robotics & IoT (3.5/5), Smart Home (3.5/5)
 
 [Browse all 4 IoT & Hardware reviews →](/categories/iot-hardware/)
+
+---
+
+## [Education & Learning](/categories/education-learning/) — 2 Reviews
+
+Covers **learning management systems, EdTech tools, flashcards, academic research, coding education**, and STEM computation. Over **60 servers** evaluated across the education ecosystem.
+
+**Highlights**: Canvas LMS dominates with 6+ independent MCP implementations — more than any other education platform. arXiv MCP (2,400 stars) and paper-search-mcp (791 stars) provide the strongest academic research access. Anki leads spaced repetition with 179 stars and 27 tools. Instructure announced IgniteAgent — the first major LMS vendor to officially adopt MCP. Major gaps: no Blackboard, Khan Academy, Coursera, or Duolingo servers.
+
+**Top-rated**: Education & EdTech (3.5/5), Education & LMS (3.5/5)
+
+[Browse all 2 Education & Learning reviews →](/categories/education-learning/)
 
 ---
 

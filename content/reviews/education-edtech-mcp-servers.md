@@ -8,6 +8,8 @@ card_description: "Education and EdTech MCP servers for learning management syst
 last_refreshed: 2026-03-15
 ---
 
+*Part of the [Education & Learning](/categories/education-learning/) category.*
+
 Education MCP servers are connecting AI agents to learning management systems, flashcard applications, academic research databases, assessment platforms, and STEM computation tools. Instead of manually navigating LMS dashboards, searching academic databases, or creating flashcards one at a time, these servers let AI assistants manage coursework, track grades, search research papers, run spaced repetition sessions, generate quizzes, and solve mathematical problems — all through the Model Context Protocol.
 
 The landscape spans seven areas: **LMS integration** (Canvas, Moodle, Google Classroom, D2L Brightspace), **flashcards & spaced repetition** (Anki implementations), **academic research** (arXiv, Semantic Scholar, multi-platform aggregators), **enterprise learning** (Udemy Business), **assessment & tutoring** (EduBase, quiz generators), **STEM tools** (Wolfram Alpha computation), and **knowledge reference** (Wikipedia).
