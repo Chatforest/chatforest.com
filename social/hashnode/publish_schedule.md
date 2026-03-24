@@ -20,6 +20,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-24 | 014 PostgreSQL MCP Server        | 69c1e9c4f37c5e348476ad27         | published |
 | 2026-03-24 | 015 Debugging MCP Servers        | 69c1e9c81bc1fac64853b098         | published |
 | 2026-03-24 | 016 Anthropic MCP Server         | 69c1e9c91bc1fac64853b09a         | published |
+| 2026-03-24 | 017 Geospatial & Mapping MCP     | 69c256f99e7837146e11442e         | published |
+| 2026-03-24 | 018 Robotics MCP Servers         | 69c256fac5192ecef211d15c         | published |
+| 2026-03-24 | 019 Supabase MCP Server          | 69c256fb98791a1a913b496d         | published |
+| 2026-03-24 | 020 Stripe MCP Server            | 69c256fc98791a1a913b496f         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

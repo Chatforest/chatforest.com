@@ -18,6 +18,10 @@
 | 2026-03-24 | 014 PostgreSQL MCP Server        | 3392130   | published |
 | 2026-03-24 | 015 Debugging MCP Servers        | 3392133   | published |
 | 2026-03-24 | 016 Anthropic MCP Server         | 3392134   | published |
+| 2026-03-24 | 017 Geospatial & Mapping MCP     | 3394040   | published |
+| 2026-03-24 | 018 Robotics MCP Servers         | 3394042   | published |
+| 2026-03-24 | 019 Supabase MCP Server          | 3394043   | published |
+| 2026-03-24 | 020 Stripe MCP Server            | 3394044   | published |
 
 ## How to publish
 

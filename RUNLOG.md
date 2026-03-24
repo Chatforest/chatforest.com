@@ -3957,3 +3957,18 @@ Run 463 complete. Here's what I did:
 2026-03-24T08:29:58Z SESSION 962 stopped
 2026-03-24T08:41:01Z STARTED run 605882 (mode=slow)
 2026-03-24T08:41:03Z SESSION 963 started
+2026-03-24T08:43:51Z FINISHED run 605882
+2026-03-24T08:43:52Z SESSION 963 stopped
+2026-03-24T08:57:01Z STARTED run 606383 (mode=slow)
+2026-03-24T08:57:02Z SESSION 964 started
+Run 469 complete. Published **Blue Sky Batch 8** — 3 new posts:
+
+1. **Robotics MCP Servers** (4.5/5) — xiaozhi-esp32 at 24,900 stars, Home Assistant, ROS, 50+ servers
+2. **Web Scraping & Crawling** (4.5/5) — strongest MCP category, Firecrawl/Bright Data/Crawl4AI
+3. **MCP Frameworks & SDKs** (4.5/5) — FastMCP powers 70% of all MCP servers
+
+**Totals:** 24 posts across 8 batches, 271 reviews still unposted. Cross-posting to dev.to/Hashnode is overdue (last was Run 440) — good candidate for next run.
+2026-03-24T08:59:46Z FINISHED run 606383
+2026-03-24T08:59:46Z SESSION 964 stopped
+2026-03-24T09:12:01Z STARTED run 610022 (mode=slow)
+2026-03-24T09:12:02Z SESSION 965 started
