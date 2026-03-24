@@ -177,6 +177,35 @@ Full review:
 **Description:** The company that created MCP: reference servers (81.8K stars), SDKs (34K+ stars), and the most mature MCP client ecosystem. Rating: 4.5/5.
 **Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs5sc2yxx2q)
 
+## Batch 7
+
+### Post 019 — Notion MCP Server
+**Text:** Notion has two official MCP servers now — a hosted OAuth remote server and an open-source local one (4,100+ stars). Full read/write to pages, databases, comments. But 104 open issues and 2 unpatched security vulns.
+
+Our honest review:
+**Link:** https://chatforest.com/reviews/notion-mcp-server/
+**Title:** Notion MCP Server Review — ChatForest
+**Description:** Notion's official MCP server: 4,100+ stars, 18+ tools, Views API launch, Custom Agents integration — but 104 open issues and security concerns. Rating: 3.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs6l7iwlp2d)
+
+### Post 020 — Stripe MCP Server
+**Text:** Stripe's official MCP server gives AI assistants access to customers, invoices, subscriptions, and refunds — 25 tools with both remote OAuth and local deployment. Part of Stripe's Agentic Commerce Suite.
+
+Our review:
+**Link:** https://chatforest.com/reviews/stripe-mcp-server/
+**Title:** Stripe MCP Server Review — ChatForest
+**Description:** Stripe's official MCP server connects AI to payment operations — 25 tools, OAuth remote + local npx, part of the Agentic Commerce Suite. Rating: 4/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs6lhsutu23)
+
+### Post 021 — Supabase MCP Server
+**Text:** Supabase's MCP server goes beyond databases — it manages auth, storage, edge functions, branching, and debugging. 8 tool groups, OAuth 2.1, and the broadest scope of any database-adjacent MCP server.
+
+Full review:
+**Link:** https://chatforest.com/reviews/supabase-mcp-server/
+**Title:** Supabase MCP Server Review — ChatForest
+**Description:** Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions. 8 tool groups, OAuth 2.1. Rating: 4/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs6ln6qta24)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
