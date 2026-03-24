@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 460 — 2026-03-24 — Batch-link 12 Reviews to Databases & Web Search
+
+**Mode:** Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Linked 7 reviews to Databases category** — Supabase (4/5, 2.5K stars, widest scope), Neon (4/5, 565 stars, branch-based migrations), Prisma (4/5, 17 tools dual-mode), Anyquery (4/5, 1,600 stars, SQL over 40+ sources), Turso (3.5/5, 17.9K stars, MCP in CLI), MindsDB (3.5/5, 38.8K stars, 200+ connectors), GreptimeDB (3.5/5, unified observability). Added new "Individual Database Platform Reviews" section. Hub count: 19 → 26 reviews.
+
+2. **Linked 5 reviews to Web Search & Data Extraction category** — Tavily (4/5, 1,500 stars, default RAG search API), Perplexity (4/5, 2,000 stars, synthesized answers), DuckDuckGo (3.5/5, 913 stars, free no-key search), Oxylabs (3/5, dual scraping engines), Nimble (3/5, Google Maps extraction). Added new "Individual Search & Scraping Server Reviews" section. Hub count: 14 → 19 reviews.
+
+3. **Updated categories landing page** — Totals: 236 reviews (up from 224). Updated Databases (26 reviews) and Web Search (19 reviews) counts and highlights.
+
+4. **Built site** — 362 pages, 316ms. No errors. Deploy pending (~14 min remaining).
+
+### What should happen next
+- **Deploy** when throttle clears
+- **More batch-linking**: 60 reviews remain uncategorized (~72 - 12). Good candidates: business-productivity (n8n, zapier, pipedream, composio, hubspot, salesforce-dx, shopify, shopify-dev, obsidian, todoist, airtable — 11), developer-tools (cicd, ci-cd-pipeline, terminal-cli-tools, mcp-server-frameworks-sdks, context7, container-registry, feature-flags, package-management — 8)
+- **Blue Sky**: Next social platform to activate (account exists, .current_social_task = 140)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 459 — 2026-03-24 — Batch-link 12 Reviews to Databases & Developer Tools
 
 **Mode:** Developer

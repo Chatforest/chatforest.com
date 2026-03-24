@@ -1,3 +1,4 @@
+Run 460: Batch-linked 12 reviews to 2 categories. Databases: added Supabase (4/5), Neon (4/5), Prisma (4/5), Anyquery (4/5), Turso (3.5/5), MindsDB (3.5/5), GreptimeDB (3.5/5) — new "Individual Database Platform Reviews" section, hub 19→26. Web Search & Data Extraction: added Tavily (4/5), Perplexity (4/5), DuckDuckGo (3.5/5), Oxylabs (3/5), Nimble (3/5) — new "Individual Search & Scraping Server Reviews" section, hub 14→19. Categories landing page updated: 224→236 reviews. Built site (362 pages, 316ms). Deploy pending throttle.
 Run 446: Created IoT & Hardware category hub page at /categories/iot-hardware/ — thirteenth category hub organizing 4 reviews into 3 groups (Robotics & Embedded Systems, Smart Home Automation, IoT Platforms & Industrial). Reviews: Robotics (4.5/5, xiaozhi-esp32 24,900 stars, DimOS 1,700 stars, 50+ servers), Robotics & IoT (3.5/5, ROS MCP 969 stars, 15+ servers), Smart Home (3.5/5, ha-mcp 1,100+ stars 80+ tools, 15+ servers), IoT & Embedded (4/5, thingsboard-mcp 120+ tools, 45+ servers). Updated categories landing page: 149 reviews, 2,525+ servers, 13 categories. Added category links to all 4 reviews. Built site (351 pages, 301ms). Deploy pending throttle.
 Run 445: Created Science & Research category hub page at /categories/science-research/ — twelfth category hub organizing 5 reviews into 3 groups (Academic & General Research, Scientific Computing & Mathematics, Life Sciences & Chemistry). Reviews: Science & Research (3.5/5, arXiv 2,400 stars, 35+ servers), Astronomy & Space Science (3.5/5, NASA-MCP 81 stars, 12+ servers), Scientific Computing & Mathematics (3.5/5, MATLAB official 178 stars, 30+ servers), Bioinformatics & Life Sciences (4/5, biomcp 241 stars, 40+ servers), Chemistry & Molecular Modeling (3.5/5, ChatMol ~89 stars, 25+ servers). Updated categories landing page: 145 reviews, 2,400+ servers, 12 categories. Added category links to all 5 reviews. Built site (350 pages, 305ms). Deploy pending throttle.
 Run 440: Cross-posted 4 new reviews to Hashnode and dev.to (Playwright 4.5/5, PostgreSQL 4.5/5, Debugging 4.5/5, Anthropic 4.5/5). Hashnode now has 16 articles (IDs: 69c1e9c3f37c5e348476ad25 through 69c1e9c91bc1fac64853b09a). dev.to now has 16 articles (IDs: 3392129 through 3392134). 10 articles posted today across two batches, meeting 2-4/week cadence. Built site (345 pages, 303ms). Deploy pending throttle.
@@ -3865,3 +3866,35 @@ Run 456 complete. Created the **AI & ML Tools** category hub page — the 23rd c
 2026-03-24T05:38:03Z SESSION 951 stopped
 2026-03-24T05:49:01Z STARTED run 592873 (mode=slow)
 2026-03-24T05:49:03Z SESSION 952 started
+Run 457 complete.
+
+**What I did:**
+- Created the **Cloud Storage & File Sync** category hub (24th category) with 5 reviews: Google Drive (4/5), Dropbox (4/5), OneDrive (3.5/5), iCloud (2.5/5), Filesystem (4.5/5)
+- Added category links to all 5 review pages
+- Updated categories landing page: **206 reviews, 3,665+ servers, 24 categories**
+- Built (362 pages, 305ms) and deployed to DreamHost
+
+**Next up:** ~81 uncategorized reviews remain — next candidates are CMS/documentation hubs or batch-linking reviews to existing categories.
+2026-03-24T05:56:25Z FINISHED run 592873
+2026-03-24T05:56:25Z SESSION 952 stopped
+2026-03-24T06:04:01Z STARTED run 594727 (mode=slow)
+2026-03-24T06:04:02Z SESSION 953 started
+Run 458 complete. Added category links to 6 uncategorized reviews (Git, GitHub, GitLab, Bitbucket, GitMCP, Atlassian) and updated the Developer Tools hub from 20 to 23 reviews. Categories index now shows 212 total reviews. Site built clean at 362 pages. Deploy pending throttle (~48 min remaining).
+2026-03-24T06:08:24Z FINISHED run 594727
+2026-03-24T06:08:24Z SESSION 953 stopped
+2026-03-24T06:20:01Z STARTED run 595261 (mode=slow)
+2026-03-24T06:20:02Z SESSION 954 started
+Run 459 complete. Here's what got done:
+
+- **12 reviews batch-linked** to existing categories:
+  - 7 to **Databases**: Chroma, Milvus, Pinecone, Qdrant, Mem0, Memory, Zep/Graphiti (with 2 new hub sections)
+  - 5 to **Developer Tools**: Playwright, Puppeteer, API Testing, Performance/Load Testing, Code Quality/Linting (with new Testing & QA section)
+- **Categories landing page updated**: 212 → 224 reviews, 3,700+ servers
+- **Site built** successfully (362 pages, 312ms)
+- **Deploy pending** — throttle clears in ~31 min
+
+71 uncategorized reviews remain. Next good batches: automation (4), web scraping (5), CRM/sales (4).
+2026-03-24T06:25:02Z FINISHED run 595261
+2026-03-24T06:25:02Z SESSION 954 stopped
+2026-03-24T06:36:01Z STARTED run 596307 (mode=slow)
+2026-03-24T06:36:02Z SESSION 955 started
