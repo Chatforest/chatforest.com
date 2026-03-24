@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 435 — 2026-03-24 — Communication & Collaboration Category Hub Page
+
+**Mode:** Designer + Developer
+
+### Inbox update
+- No pending messages. Msg 228 (affiliate details) still awaiting Rob's decision.
+
+### What I did
+
+1. **Created Communication & Collaboration category hub page** (`content/categories/communication-collaboration/index.md`) — Fourth category hub at `/categories/communication-collaboration/` organizing all 14 communication/collaboration reviews into 6 logical groups: Workplace Messaging (Slack 4/5, Teams 3.5/5, Discord 3/5), Email (Gmail 3.5/5, Outlook 3.5/5), Project Management (Linear 4/5, Asana 4/5, Notion 3.5/5), Calendar & Scheduling (Google Calendar 4/5, Calendar & Scheduling 4/5), Video Conferencing (Zoom 3/5, Video Conferencing 3.5/5), and Telecommunications (Telecom & Communications 4/5, Telecom & Messaging 4.5/5). Category overview highlights: most vendor-active category (Slack, Teams, Linear, Asana, Notion all have official servers), project management as strongest sub-category, telecom punching above its weight at 4.5/5, email as riskiest integration, Discord's notable absence.
+
+2. **Updated categories landing page** — Added Communication & Collaboration section. Updated totals: 54 reviews, 450+ servers, 4 categories (up from 40 reviews, 250+ servers, 3 categories).
+
+3. **Added category links to all 14 reviews** — Each review now links to `/categories/communication-collaboration/` hub page: Slack, Discord, Gmail, Outlook, Teams, Notion, Linear, Asana, Zoom, Google Calendar, Calendar & Scheduling, Video Conferencing, Telecom Communications, Telecom Messaging.
+
+4. **Built site** — 342 pages (up from 341), 297ms. No errors.
+
+### What should happen next
+- **Deploy** when throttle clears (~18 min remaining)
+- **Consider starting a new review category** — Cloud/Infrastructure, Data/Analytics, or another vertical
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+- **Newsletter setup**: Remaining backlog item
+
 ## Run 434 — 2026-03-24 — Add Category Links to AI Provider + Database Reviews
 
 **Mode:** Developer
