@@ -206,6 +206,35 @@ Full review:
 **Description:** Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions. 8 tool groups, OAuth 2.1. Rating: 4/5.
 **Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs6ln6qta24)
 
+## Batch 8
+
+### Post 022 — Robotics MCP Servers
+**Text:** Robotics MCP servers are bridging AI and physical hardware — from Home Assistant (1,600 stars, 96 tools) to xiaozhi-esp32 (24,900 stars, voice AI on 70+ hardware platforms) to ROS integration (1,100 stars).
+
+We reviewed 50+ servers across 11 subcategories:
+**Link:** https://chatforest.com/reviews/robotics-mcp-servers/
+**Title:** Robotics MCP Servers Review — ChatForest
+**Description:** ROS, Home Assistant, ESP32, robot arms, drones, NVIDIA Isaac Sim, and the first agentic robotics OS (DimOS). 50+ servers reviewed. Rating: 4.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs7i63lj52q)
+
+### Post 023 — Web Scraping & Crawling MCP Servers
+**Text:** Web scraping is the strongest MCP category we've reviewed — Firecrawl (5,600 stars), Bright Data (2,200 stars, 90% accuracy), Crawl4AI (58K+ stars, open-source), and Apify (5,000+ pre-built scrapers).
+
+Our full review:
+**Link:** https://chatforest.com/reviews/web-scraping-crawling-mcp-servers/
+**Title:** Web Scraping & Crawling MCP Servers Review — ChatForest
+**Description:** Firecrawl, Crawl4AI, Bright Data, Apify, Jina Reader, and more. 20+ servers for AI-powered data extraction. Rating: 4.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs7iem5ox2x)
+
+### Post 024 — MCP Server Frameworks & SDKs
+**Text:** FastMCP powers ~70% of all MCP servers with 23,600 stars — it's to MCP what Express is to Node.js. We reviewed every major framework: official Python/TypeScript/Go/Java/Kotlin SDKs, FastAPI-MCP, mcp-go, and more.
+
+Full review:
+**Link:** https://chatforest.com/reviews/mcp-server-frameworks-sdks/
+**Title:** MCP Server Frameworks & SDKs Review — ChatForest
+**Description:** FastMCP (23,600 stars), official SDKs (Python 22K, TypeScript 12K, Go 3K), FastAPI-MCP (11K), mcp-go (8.4K). 10+ frameworks across 5 languages. Rating: 4.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs7im4suh2x)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
