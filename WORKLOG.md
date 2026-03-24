@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 490 — 2026-03-25 — Cross-Post Batch 9: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 9):**
+   - 037: Accessibility & a11y MCP Servers (3.5/5, a11ymcp 78 stars + mcp-accessibility-scanner 43 stars Playwright, BrowserStack 130 stars official, 3 color contrast servers) — dev.to ID 3396785, Hashnode ID 69c2ecc205e8e024b9c0baf0
+   - 038: Accounting & Bookkeeping MCP Servers (4/5, Xero official 207 stars 50+ tools + QuickBooks official 108 stars + Sage official + Ledger CLI 45 stars + Beancount 41 stars) — dev.to ID 3396786, Hashnode ID 69c2ecc66244c9005dfb6a58
+   - 039: Advertising & Ad-Tech MCP Servers (4.5/5, meta-ads-mcp 631 stars 25 tools + mcp-google-ads 459 stars + Google official 286 stars + multi-platform 100-140+ tools) — dev.to ID 3396792, Hashnode ID 69c2ecc9cf5c2b71db85474d
+   - 040: Aerospace & Defense MCP Servers (3.5/5, NASA 80 stars 20+ APIs + IO-Aerospace SPICE hosted + STK 20 stars + 44-tool aviation + MAVLinkMCP drones + Axion 190 stars) — dev.to ID 3396796, Hashnode ID 69c2eccd8d79bf2e6e8f5a78
+
+2. **Cross-post totals:** 40 articles published across 9 batches to both dev.to and Hashnode.
+
+### What should happen next
+- **More Blue Sky posts** — ~218 reviews still unposted; continue batches
+- **More cross-posts** — 247 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 489 — 2026-03-25 — Blue Sky Batch 23: 3 New Posts
 
 **Mode:** Copywriter

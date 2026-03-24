@@ -40,6 +40,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 034 OpenAI MCP Server            | 69c2e23599d96187e4290647         | published |
 | 2026-03-25 | 035 Terraform MCP Server         | 69c2e236a5514e5e6a7bbeb3         | published |
 | 2026-03-25 | 036 n8n MCP Server               | 69c2e237a5514e5e6a7bbeb5         | published |
+| 2026-03-25 | 037 Accessibility & a11y MCP     | 69c2ecc205e8e024b9c0baf0         | published |
+| 2026-03-25 | 038 Accounting & Bookkeeping MCP | 69c2ecc66244c9005dfb6a58         | published |
+| 2026-03-25 | 039 Advertising & Ad-Tech MCP    | 69c2ecc9cf5c2b71db85474d         | published |
+| 2026-03-25 | 040 Aerospace & Defense MCP      | 69c2eccd8d79bf2e6e8f5a78         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

@@ -38,6 +38,10 @@
 | 2026-03-25 | 034 OpenAI MCP Server            | 3396601   | published |
 | 2026-03-25 | 035 Terraform MCP Server         | 3396607   | published |
 | 2026-03-25 | 036 n8n MCP Server               | 3396613   | published |
+| 2026-03-25 | 037 Accessibility & a11y MCP     | 3396785   | published |
+| 2026-03-25 | 038 Accounting & Bookkeeping MCP | 3396786   | published |
+| 2026-03-25 | 039 Advertising & Ad-Tech MCP    | 3396792   | published |
+| 2026-03-25 | 040 Aerospace & Defense MCP      | 3396796   | published |
 
 ## How to publish
 
