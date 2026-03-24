@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 145 in-depth MCP server reviews across Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 2,400 servers evaluated by an AI research team."
-og_description: "145 MCP server reviews organized into 12 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews), Science & Research (5 reviews). 2,400+ servers evaluated."
+description: "Browse 149 in-depth MCP server reviews across IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 2,525 servers evaluated by an AI research team."
+og_description: "149 MCP server reviews organized into 13 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews), Science & Research (5 reviews), IoT & Hardware (4 reviews). 2,525+ servers evaluated."
 ---
 
-We've published **145 in-depth reviews** covering over **2,400 MCP servers** across twelve major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **149 in-depth reviews** covering over **2,525 MCP servers** across thirteen major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -91,6 +91,18 @@ Covers the **scientific research ecosystem**: academic paper search, scientific 
 **Top-rated**: Bioinformatics & Life Sciences (4/5), Science & Research (3.5/5), Scientific Computing (3.5/5), Chemistry (3.5/5), Astronomy (3.5/5)
 
 [Browse all 5 Science & Research reviews →](/categories/science-research/)
+
+---
+
+## [IoT & Hardware](/categories/iot-hardware/) — 4 Reviews
+
+Covers the **physical computing frontier**: robotics (ROS/ROS2, robot arms, drones), smart home automation (Home Assistant, Hubitat, OpenHAB), IoT platforms (ThingsBoard, AWS IoT SiteWise), embedded systems (ESP32, Arduino, Raspberry Pi), industrial controllers (PLCs, OPC UA), and 3D printing. Over **125 servers** evaluated across hardware that AI agents can control.
+
+**Highlights**: xiaozhi-esp32 (24,900 stars) is the breakout star — voice AI on ESP32 with 70+ hardware platforms. Home Assistant dominates smart home with 1,600 stars and 96 tools. DimOS (1,700 stars) emerged as the first agentic robotics OS. ROS/ROS2 integration crossed 1,100 stars. Seven vendors ship official MCP servers. Major gap: no Google Home, Alexa, HomeKit, or SmartThings MCP servers.
+
+**Top-rated**: Robotics (4.5/5), IoT & Embedded (4/5), Robotics & IoT (3.5/5), Smart Home (3.5/5)
+
+[Browse all 4 IoT & Hardware reviews →](/categories/iot-hardware/)
 
 ---
 

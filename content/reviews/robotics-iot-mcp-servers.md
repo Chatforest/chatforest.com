@@ -8,6 +8,8 @@ card_description: "Robotics and IoT MCP servers across robot control, smart home
 last_refreshed: 2026-03-16
 ---
 
+*Part of the [IoT & Hardware](/categories/iot-hardware/) category.*
+
 Robotics and IoT MCP servers bridge the gap between AI assistants and the **physical world** — robots, smart home devices, sensors, industrial equipment, and embedded microcontrollers. Instead of writing ROS commands, clicking through Home Assistant dashboards, or crafting MQTT payloads, you tell your AI assistant what you want in natural language and the MCP server translates that into hardware actions.
 
 This is a rapidly emerging category. A year ago, almost none of these servers existed. Now there's a curated [awesome-mcp-hardware](https://github.com/beriberikix/awesome-mcp-hardware) list tracking the space. The MCP protocol's standardized tool interface turns out to be a natural fit for hardware — each device capability maps cleanly to a tool definition.

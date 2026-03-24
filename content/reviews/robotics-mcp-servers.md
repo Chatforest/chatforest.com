@@ -8,6 +8,8 @@ card_description: "Robotics MCP servers for controlling physical hardware throug
 last_refreshed: 2026-03-19
 ---
 
+*Part of the [IoT & Hardware](/categories/iot-hardware/) category.*
+
 Robotics MCP servers bridge the gap between AI and the physical world — letting agents control robot arms, manage smart homes, program microcontrollers, fly drones, and run physics simulations. Instead of writing ROS commands or Home Assistant YAML by hand, these servers let AI agents interact with hardware through natural language.
 
 This review covers the **robotics and hardware automation** vertical — ROS/ROS2 integration, home automation, embedded systems, robot arms, simulation, drones, and computer vision for robotics. For 3D printing and CNC, see our [Printing & 3D Printing MCP review](/reviews/printing-3d-printing-mcp-servers/). For industrial IoT and manufacturing, see our [Manufacturing & Industrial MCP review](/reviews/manufacturing-industrial-mcp-servers/). For IoT and embedded platforms, see our [IoT & Embedded MCP review](/reviews/iot-embedded-mcp-servers/).

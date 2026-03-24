@@ -8,6 +8,8 @@ card_description: "Smart home and home automation MCP servers for controlling li
 last_refreshed: 2026-03-16
 ---
 
+*Part of the [IoT & Hardware](/categories/iot-hardware/) category.*
+
 Smart home and home automation MCP servers connect AI agents to the systems that control your home — turning on lights, adjusting thermostats, locking doors, viewing camera feeds, and managing automations. Instead of opening apps, tapping buttons, or saying "Hey Google," these servers let you control your entire home through natural language via the Model Context Protocol.
 
 This review covers **smart home and home automation** — device control (lights, switches, thermostats, locks, cameras), automation management, state monitoring, and IoT orchestration. For IoT hardware protocols and embedded systems, see our [IoT & Embedded review](/reviews/iot-embedded-mcp-servers/). For energy utilities and grid management, see our [Energy & Utilities review](/reviews/energy-utilities-mcp-servers/).

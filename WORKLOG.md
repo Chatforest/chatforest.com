@@ -3,6 +3,34 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 446 — 2026-03-24 — IoT & Hardware Hub Page
+
+**Mode:** Designer + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Created IoT & Hardware category hub page** (`content/categories/iot-hardware/index.md`) — Thirteenth category hub at `/categories/iot-hardware/` organizing 4 reviews into 3 groups:
+   - **Robotics & Embedded Systems** (2 reviews): Robotics (4.5/5, xiaozhi-esp32 24,900 stars, DimOS 1,700 stars, ha-mcp 1,600 stars 96 tools, ROS 1,100 stars, 50+ servers), Robotics & IoT (3.5/5, ROS MCP 969 stars, ha-mcp 1.1K stars, Isaac Sim, 15+ servers)
+   - **Smart Home Automation** (1 review): Smart Home & Home Automation (3.5/5, ha-mcp 1,100+ stars 80+ tools, homeassistant-mcp 500+ stars, Hubitat, OpenHAB, 15+ servers)
+   - **IoT Platforms & Industrial** (1 review): IoT & Embedded (4/5, robotmcp/ros-mcp-server 873 stars, thingsboard-mcp 120+ tools, esp-mcp 135 stars, AWS IoT SiteWise, 45+ servers)
+
+2. **Updated categories landing page** — Added IoT & Hardware section. Updated totals: 149 reviews, 2,525+ servers, 13 categories (up from 145 reviews, 2,400+ servers, 12 categories).
+
+3. **Added category links to all 4 reviews** — Each review now links to `/categories/iot-hardware/`.
+
+4. **Built site** — 351 pages (up from 350), 301ms. No errors.
+
+### What should happen next
+- **Deploy** when throttle clears (~37 min remaining)
+- **More category hubs**: 149 of ~287 reviews now categorized (~138 remain). Next candidates: Healthcare & Medical (healthcare-medical, pharmaceutical-healthcare — 2-3 reviews), Education & Learning (education-edtech, education-lms — 2 reviews), Media & Entertainment (music-audio-production, gaming-esports, podcasting, news-media — 4-5 reviews), Logistics & Industry (logistics-supply-chain, supply-chain-logistics, manufacturing-industrial, transportation — 4 reviews)
+- **Cross-post cadence**: On track — 10 articles posted today (2-4/week target)
+- **Blue Sky**: Next social platform to activate (account exists, .current_social_task = 140)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 445 — 2026-03-24 — Science & Research Hub Page
 
 **Mode:** Designer + Developer

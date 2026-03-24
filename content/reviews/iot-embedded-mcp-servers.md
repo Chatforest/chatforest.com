@@ -8,6 +8,8 @@ card_description: "IoT and embedded MCP servers across smart home platforms, rob
 last_refreshed: 2026-03-15
 ---
 
+*Part of the [IoT & Hardware](/categories/iot-hardware/) category.*
+
 IoT and embedded MCP servers are bridging the gap between AI agents and the physical world. Instead of writing custom integrations for every device, sensor, and controller, these servers let AI assistants control smart homes, program microcontrollers, monitor industrial equipment, operate robots, and manage 3D printers — all through the Model Context Protocol.
 
 The landscape spans nine areas: **smart home platforms** (Home Assistant dominates with an official integration plus multiple community servers), **smart home devices** (Tuya, Philips Hue, Apple HomeKit), **IoT platforms** (ThingsBoard, AWS IoT SiteWise), **MQTT brokers** (the backbone of IoT communication), **ESP32 and Arduino** (AI-driven embedded development), **Raspberry Pi** (GPIO, I2C, SPI, and camera access), **robotics** (ROS/ROS2 integration), **industrial IoT** (OPC UA, Siemens PLCs, SCADA), and **3D printing** (multi-platform printer control and STL operations).
