@@ -610,6 +610,35 @@ https://chatforest.com/reviews/perplexity-mcp-server/
 **Description:** Perplexity MCP: 4 tools returning synthesized answers instead of links. Search, ask, research, reason — powered by Sonar models. Rating: 4/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mht7topxlj2l)
 
+## Batch 22
+
+### Post 064 — CI/CD MCP Servers
+**Text:** CI/CD MCP servers — Jenkins, CircleCI, Buildkite, and Argo CD all have official or endorsed MCP integrations. AI agents can monitor builds, trigger pipelines, diagnose failures, and manage GitOps. Ecosystem is early but growing. 3/5.
+
+https://chatforest.com/reviews/ci-cd-mcp-servers/
+**Link:** https://chatforest.com/reviews/ci-cd-mcp-servers/
+**Title:** CI/CD MCP Servers Review — ChatForest
+**Description:** CI/CD MCP ecosystem: Jenkins plugin, CircleCI 15 tools, Buildkite remote MCP, Argo CD 356 stars. Rating: 3/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtcf25mvm2w)
+
+### Post 065 — Code Generation MCP Servers
+**Text:** Code generation MCP servers flip the pattern — AI coding tools consume MCP, not expose generation. The real action: Context7 (50K stars), magic-mcp (4.5K stars, UI components), shadcn-ui MCP (2.7K stars). Context is king. 3.5/5.
+
+https://chatforest.com/reviews/code-generation-mcp-servers/
+**Link:** https://chatforest.com/reviews/code-generation-mcp-servers/
+**Title:** Code Generation MCP Servers Review — ChatForest
+**Description:** Code generation MCP: Context7 (50K stars), magic-mcp (4.5K stars, UI components), shadcn-ui MCP (2.7K stars). Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtcfrojej2o)
+
+### Post 066 — Code Review & Pull Request MCP Servers
+**Text:** Code review MCP servers — SonarQube (442 stars, native in SonarQube Cloud), Codacy (SAST+coverage+PR tools), Graphite GT (AI-driven stacked PRs). AI can now scale review throughput without scaling headcount. 3.5/5.
+
+https://chatforest.com/reviews/code-review-pull-request-mcp-servers/
+**Link:** https://chatforest.com/reviews/code-review-pull-request-mcp-servers/
+**Title:** Code Review & PR MCP Servers Review — ChatForest
+**Description:** Code review MCP: SonarQube (442 stars, native Cloud), Codacy (SAST+coverage), Graphite GT (stacked PRs). 15+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtcfzcbmx2b)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
