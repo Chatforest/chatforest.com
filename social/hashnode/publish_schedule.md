@@ -32,6 +32,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 026 Context7 MCP Server          | 69c2d364839c0ecc3ba8cc51         | published |
 | 2026-03-25 | 027 Airtable MCP Server          | 69c2d368839c0ecc3ba8cc53         | published |
 | 2026-03-25 | 028 Atlassian MCP Server         | 69c2d36d839c0ecc3ba8cc55         | published |
+| 2026-03-25 | 029 GitLab MCP Server            | 69c2de7830e4e5b4b9882f61         | published |
+| 2026-03-25 | 030 Puppeteer MCP Server         | 69c2de7943ef75a098f2534c         | published |
+| 2026-03-25 | 031 Figma Dev Mode MCP Server    | 69c2de7e30e4e5b4b9882f63         | published |
+| 2026-03-25 | 032 Firecrawl MCP Server         | 69c2de7f30e4e5b4b9882f65         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

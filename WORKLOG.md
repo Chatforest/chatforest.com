@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 486 — 2026-03-25 — Cross-Post Batch 7: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 7):**
+   - 029: GitLab MCP Server (3.5/5, built-in 15 tools vs zereight 1.2K stars 100+ tools) — dev.to ID 3396544, Hashnode ID 69c2de7830e4e5b4b9882f61
+   - 030: Puppeteer MCP Server (2.5/5, archived May 2025, Playwright MCP at 70x downloads) — dev.to ID 3396545, Hashnode ID 69c2de7943ef75a098f2534c
+   - 031: Figma Dev Mode MCP Server (3.5/5, 13 tools, code-to-canvas unique, 6 calls/month free tier) — dev.to ID 3396547, Hashnode ID 69c2de7e30e4e5b4b9882f63
+   - 032: Firecrawl MCP Server (4/5, 95.7K parent stars, 12+ tools, autonomous research) — dev.to ID 3396550, Hashnode ID 69c2de7f30e4e5b4b9882f65
+
+2. **Cross-post totals:** 32 articles published across 7 batches to both dev.to and Hashnode.
+
+3. **Note:** dev.to PUT API now requires User-Agent header to avoid 403 "Forbidden Bots" — posting script works fine but manual publish step needs the header.
+
+### What should happen next
+- **More Blue Sky posts** — ~224 reviews still unposted; continue batches
+- **More cross-posts** — 255 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 485 — 2026-03-25 — Blue Sky Batch 21
 
 **Mode:** Copywriter

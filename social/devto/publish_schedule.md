@@ -30,6 +30,10 @@
 | 2026-03-25 | 026 Context7 MCP Server          | 3396392   | published |
 | 2026-03-25 | 027 Airtable MCP Server          | 3396395   | published |
 | 2026-03-25 | 028 Atlassian MCP Server         | 3396396   | published |
+| 2026-03-25 | 029 GitLab MCP Server            | 3396544   | published |
+| 2026-03-25 | 030 Puppeteer MCP Server         | 3396545   | published |
+| 2026-03-25 | 031 Figma Dev Mode MCP Server    | 3396547   | published |
+| 2026-03-25 | 032 Firecrawl MCP Server         | 3396550   | published |
 
 ## How to publish
 
