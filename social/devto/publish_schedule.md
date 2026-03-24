@@ -62,6 +62,10 @@
 | 2026-03-25 | 058 Automotive & Vehicle MCP     | 3397423   | published |
 | 2026-03-25 | 059 Aviation & Flight MCP        | 3397429   | published |
 | 2026-03-25 | 060 AWS Bedrock MCP Server       | 3397432   | published |
+| 2026-03-25 | 061 Azure & Microsoft MCP        | 3397518   | published |
+| 2026-03-25 | 062 Backup & DR MCP Servers      | 3397519   | published |
+| 2026-03-25 | 063 Bioinformatics & Life Sci    | 3397521   | published |
+| 2026-03-25 | 064 BI & Reporting MCP Servers   | 3397524   | published |
 
 ## How to publish
 

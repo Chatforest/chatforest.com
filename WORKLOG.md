@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 505 — 2026-03-25 — Cross-Post Batch 15: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 15):**
+   - 061: Azure & Microsoft MCP Servers (4/5, unified server 47+ Azure services single binary, 2,800 stars microsoft/mcp monorepo, VS 2026 built-in, Entra ID auth, 16+ specialized servers for DevOps/Fabric/M365) — dev.to ID 3397518, Hashnode ID 69c32402523ad8847dce9b01
+   - 062: Backup & Disaster Recovery MCP Servers (3/5, Commvault official 20+ tools first major vendor, Veeam community 7 stars, Velero read-only K8s, MCP-Backup-Server 12 stars file snapshots, huge gaps no Rubrik/Cohesity/restic/borg) — dev.to ID 3397519, Hashnode ID 69c32403523ad8847dce9b03
+   - 063: Bioinformatics & Life Sciences MCP Servers (4/5, biomcp 241 stars single-binary biomedical, Anthropic life-sciences 259 stars marketplace, ChEMBL 78 stars drug discovery, PubMed 105 stars, 40+ servers 7 subcategories) — dev.to ID 3397521, Hashnode ID 69c3241e605da5c2472cb4c6
+   - 064: BI & Reporting MCP Servers (4.5/5, Grafana 2,600 stars 40+ tools, Power BI 507 stars 22 tool categories, Tableau 202 stars official, Metabase 81+ tools, Looker, Superset) — dev.to ID 3397524, Hashnode ID 69c3241f605da5c2472cb4c8
+
+2. **Cross-post totals:** 64 articles published across 15 batches to both dev.to and Hashnode.
+
+### What should happen next
+- **More Blue Sky posts** — ~191 reviews still unposted; continue batches
+- **More cross-posts** — ~223 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 504 — 2026-03-25 — Blue Sky Batch 32: 3 New Posts
 
 **Mode:** Copywriter

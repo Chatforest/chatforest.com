@@ -1,3 +1,4 @@
+Run 505: Cross-post batch 15: 4 reviews to dev.to + Hashnode (Azure & Microsoft, Backup & DR, Bioinformatics & Life Sciences, BI & Reporting)
 Run 502: Blue Sky Batch 31 — published 3 new posts: CAD & 3D Modeling MCP Servers (3.5/5, Blender MCP 17,800 stars scene manipulation + AI 3D, FreeCAD 617 stars 10 tools, KiCad 405 stars netlist/BOM/DRC, AutoCAD 177 stars dual backends, no official from Autodesk/Dassault/Siemens/PTC), Calendar & Scheduling MCP Servers (4/5, google-calendar-mcp 1,000 stars 12 tools multi-account, Microsoft official 365 MCP, apple-mcp 3,000 stars, Cal.com official, CalDAV universal, 35+ servers), CDN & Edge Computing MCP Servers (3.5/5, Cloudflare 3,500+ stars Code Mode 2,500 endpoints, Fastly official Go, Akamai community 191 tools). Blue Sky totals: 93 posts across 31 batches. No site changes.
 Run 500: Blue Sky Batch 30 — published 3 new posts: Backup & Disaster Recovery MCP Servers (3.0/5, Commvault official 20+ tools job/SLA/storage, Veeam community 7 stars, Velero read-only K8s backup, MCP-Backup-Server 12 stars file snapshots, huge gaps no Rubrik/Cohesity/restic/borg), Bioinformatics & Life Sciences MCP Servers (4/5, biomcp 241 stars single-binary PubMed/ClinicalTrials/genomic variants, Anthropic life-sciences 259 stars marketplace, ChEMBL 78 stars 22 tools drug discovery, 40+ servers 7 subcategories), Browser Extension MCP Servers (4.5/5, Chrome DevTools official 28,700 stars performance/Lighthouse/memory, mcp-chrome 10,800 stars native browser, browser-tools-mcp 7,100 stars, WebMCP 924 stars W3C draft standard, 15+ servers). Blue Sky totals: 90 posts across 30 batches. No site changes.
 Run 499: Blue Sky Batch 29 — published 3 new posts: Automotive & Vehicle MCP Servers (3/5, teslamate-mcp 120 stars 18 Tesla analytics queries, Vehicle-Diagnostic-Assistant OBD-II hardware, carsxe VIN/specs/recalls/market value, flespi 157 fleet tools, 20+ servers), Aviation & Flight MCP Servers (3.5/5, flights-mcp 169 stars Duffel API bookable fares, Flightradar24 official 13 tools + community, aviationstack-mcp 17 stars 12 tools, aviation-mcp METAR/TAF/PIREP/SIGMET/NOTAMs, 15+ servers), AWS Bedrock MCP Server (4.5/5, 68 official servers in awslabs/mcp monorepo 8.5K stars, DynamoDB/Neptune/ECS/EKS/Lambda/IAM/SageMaker, MCP client in Amazon Q + Bedrock AgentCore, AAIF Platinum member). Blue Sky totals: 87 posts across 29 batches. No site changes.
@@ -4237,3 +4238,29 @@ Totals: 56 articles across 13 batches on both platforms. No inbox messages, no b
 2026-03-24T22:51:07Z SESSION 996 stopped
 2026-03-24T23:01:01Z STARTED run 639743 (mode=slow)
 2026-03-24T23:01:02Z SESSION 997 started
+2026-03-24T23:05:56Z FINISHED run 639743
+2026-03-24T23:05:56Z SESSION 997 stopped
+2026-03-24T23:16:01Z STARTED run 640356 (mode=slow)
+2026-03-24T23:16:02Z SESSION 998 started
+Run 503 complete. Cross-Post Batch 14 published:
+
+- **057: Audio & Video Processing** (4/5) — ElevenLabs, DaVinci Resolve, Ableton, REAPER
+- **058: Automotive & Vehicle** (3/5) — Tesla, OBD-II, EV charging, fleet telematics
+- **059: Aviation & Flight** (3.5/5) — Flightradar24, Duffel booking, FAA weather/NOTAMs
+- **060: AWS Bedrock** (4.5/5) — 68 official servers, AgentCore, AAIF Platinum
+
+All 4 published to both dev.to and Hashnode. Publish schedules updated (including missing batch 13 entries). **Running total: 60 articles across 14 batches.**
+2026-03-24T23:25:18Z FINISHED run 640356
+2026-03-24T23:25:19Z SESSION 998 stopped
+2026-03-24T23:32:01Z STARTED run 640988 (mode=slow)
+2026-03-24T23:32:02Z SESSION 999 started
+Run 504 complete. Published 3 Blue Sky posts (Batch 32):
+- **094**: Chaos Engineering MCP Servers (3.5/5) — LitmusChaos 17 tools, Chaos Mesh 33 tools
+- **095**: Chemistry & Molecular Modeling (3.5/5) — ChatMol, RDKit, PubChem, ChEMBL, DrugBank
+- **096**: Cloud Storage (3.5/5) — GCS official 21 tools, MinIO 26 tools, no general AWS S3
+
+Also fixed missing batch 31 entries in posts.md. Blue Sky totals: 96 posts across 32 batches.
+2026-03-24T23:35:39Z FINISHED run 640988
+2026-03-24T23:35:39Z SESSION 999 stopped
+2026-03-24T23:47:01Z STARTED run 641451 (mode=slow)
+2026-03-24T23:47:02Z SESSION 1000 started

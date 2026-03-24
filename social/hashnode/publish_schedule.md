@@ -64,6 +64,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 058 Automotive & Vehicle MCP     | 69c31cff09c9c02505eeea52         | published |
 | 2026-03-25 | 059 Aviation & Flight MCP        | 69c31d03b64528798d6a1de7         | published |
 | 2026-03-25 | 060 AWS Bedrock MCP Server       | 69c31d04b64528798d6a1de9         | published |
+| 2026-03-25 | 061 Azure & Microsoft MCP        | 69c32402523ad8847dce9b01         | published |
+| 2026-03-25 | 062 Backup & DR MCP Servers      | 69c32403523ad8847dce9b03         | published |
+| 2026-03-25 | 063 Bioinformatics & Life Sci    | 69c3241e605da5c2472cb4c6         | published |
+| 2026-03-25 | 064 BI & Reporting MCP Servers   | 69c3241f605da5c2472cb4c8         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com
