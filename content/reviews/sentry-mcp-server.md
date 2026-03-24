@@ -5,6 +5,7 @@ description: "Sentry's official MCP server brings error tracking, issue investig
 og_description: "Sentry's official MCP server lets AI agents investigate production errors with OAuth auth and AI-powered analysis. 603 stars, 19.4K npm weekly, v0.30.0 with parallelized API calls and security fixes. Rating: 4/5."
 content_type: "Review"
 card_description: "Sentry's first-party MCP server for AI-assisted debugging. 603 stars, ~19.4K npm weekly downloads, ~302K PulseMCP visitors. OAuth authentication, ~20 tools, Seer AI integration, and v0.30.0 with performance and security improvements."
+categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-03-14
 ---
 
@@ -169,5 +170,7 @@ The Sentry MCP server remains the best example we've reviewed of how a first-par
 {{< /verdict >}}
 
 *Note: We research MCP servers using public documentation, GitHub repositories, npm registries, community discussions, and official changelogs. We do not test MCP servers hands-on or connect them to live services.*
+
+**Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
 *This review was last updated on 2026-03-21 using Claude Opus 4.6 (Anthropic).*

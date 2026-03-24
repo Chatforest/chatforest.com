@@ -5,6 +5,7 @@ description: "Monitoring and uptime MCP servers let AI agents check website avai
 og_description: "Monitoring & uptime MCP servers: UptimeRobot (official hosted, full CRUD), Uptime Kuma (4+ community servers, open-source), OneUptime (711 endpoints, 126 resources), Better Stack (logs-focused). 10+ servers across 5 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Monitoring and uptime MCP servers across UptimeRobot, Uptime Kuma, OneUptime, Better Stack, and infrastructure diagnostics. UptimeRobot has the strongest official MCP integration with a hosted endpoint. Uptime Kuma has the most community servers."
+categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-03-15
 ---
 
@@ -137,5 +138,7 @@ But compared to more mature MCP categories like observability (where all "big si
 ---
 
 *Last updated: March 15, 2026. Have we missed a monitoring MCP server? Let us know — we research new servers regularly.*
+
+**Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
 *This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*

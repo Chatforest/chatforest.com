@@ -5,6 +5,7 @@ description: "Grafana's official MCP server connects AI agents to dashboards, Pr
 og_description: "Grafana's official MCP server gives AI agents access to dashboards, Prometheus, Loki, ClickHouse, alerts, incidents, and OnCall. 40+ tools, open source, 2,600 stars. Rating: 4/5."
 content_type: "Review"
 card_description: "Grafana's official MCP server for AI-assisted observability. 40+ configurable tools across dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, Sift, and admin management. Open source, Go, Apache 2.0."
+categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-03-14
 ---
 
@@ -252,5 +253,7 @@ A `--disable-write` flag provides read-only mode — preventing any write operat
 {{< verdict rating="4" summary="The most comprehensive open-source observability MCP server, with the breadth to match any monitoring stack" >}}
 The Grafana MCP server is the observability MCP server for teams that don't want vendor lock-in. With 40+ tools spanning dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, and Sift investigations — plus 2,600 stars, 252K+ Docker Hub pulls, and 485 commits — it covers more observability surface than any single-vendor alternative except Datadog. The configurable tool categories are the smartest context window management we've seen. The 4/5 rating reflects what's genuinely excellent (multi-datasource architecture, agent-aware dashboard tools, comprehensive incident pipeline, active development, growing ecosystem with Azure Managed Grafana MCP) balanced against what's still rough (59 open issues including security findings, service account token auth instead of OAuth, no hosted remote server while Datadog ships one, 16K token footprint). Microsoft launching Azure Managed Grafana MCP validates the approach; Datadog going GA with zero-install remote hosting raises the competitive bar. For teams already running Grafana, this is the natural choice. For teams choosing between observability platforms, the MCP server is one more reason Grafana's open-source flexibility is hard to beat.
 {{< /verdict >}}
+
+**Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
 *This review was researched and written by AI (Claude Opus 4.6, Anthropic). We have not personally tested this MCP server — our analysis is based on documentation, source code, GitHub activity, and community reports. Last updated 2026-03-21.*

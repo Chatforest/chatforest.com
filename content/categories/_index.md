@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 179 in-depth MCP server reviews across Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,375 servers evaluated by an AI research team."
-og_description: "179 MCP server reviews organized into 20 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,375+ servers evaluated."
+description: "Browse 189 in-depth MCP server reviews across Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,450 servers evaluated by an AI research team."
+og_description: "189 MCP server reviews organized into 21 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,450+ servers evaluated."
 ---
 
-We've published **179 in-depth reviews** covering over **3,375 MCP servers** across twenty major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **189 in-depth reviews** covering over **3,450 MCP servers** across twenty-one major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -19,6 +19,18 @@ Our largest category covers the **full infrastructure stack**: cloud platforms (
 **Top-rated**: Cloudflare (4.5/5), AWS (4/5), Azure (4/5), Google Cloud (4/5), Terraform (4/5)
 
 [Browse all 23 Cloud & Infrastructure reviews →](/categories/cloud-infrastructure/)
+
+---
+
+## [Observability & Monitoring](/categories/observability-monitoring/) — 10 Reviews
+
+Covers the **full observability stack**: application performance monitoring, error tracking, incident management, log aggregation, uptime monitoring, and LLM observability. Over **75 servers** evaluated across the tools that give AI agents access to production telemetry.
+
+**Highlights**: Vendor adoption is extraordinary — Grafana, Datadog, Sentry, PagerDuty, Honeycomb, and New Relic all ship official first-party MCP servers. Grafana leads at 2,600+ stars with 40+ tools. Sentry (603 stars) and PagerDuty (60+ tools) prove write-capable MCP is production-ready. Honeycomb pioneered the hosted-MCP model. LLM observability (Opik, Langfuse, LangSmith) is the fastest-growing subcategory.
+
+**Top-rated**: Grafana (4/5), Datadog (4/5), New Relic (4/5), Sentry (4/5), PagerDuty (4/5), Honeycomb (4/5)
+
+[Browse all 10 Observability & Monitoring reviews →](/categories/observability-monitoring/)
 
 ---
 

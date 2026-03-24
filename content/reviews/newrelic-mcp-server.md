@@ -5,6 +5,7 @@ description: "New Relic's official MCP server puts 35 tools across 6 categories 
 og_description: "New Relic's official MCP server gives AI agents 35 tools for NRQL queries, alerts, entities, deployments, logs, and golden metrics. Remote-hosted, Streamable HTTP, free tier. Rating: 4/5."
 content_type: "Review"
 card_description: "New Relic's official MCP server for AI-assisted observability. 35 tools across 6 categories covering NRQL queries, entity management, alerting, incident response, performance analytics, and log analysis. Remote-hosted, Streamable HTTP, generous free tier."
+categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-03-14
 ---
 
@@ -163,5 +164,7 @@ The server works with Claude, Cursor, VS Code (GitHub Copilot), ChatGPT, Google'
 {{< verdict rating="4" summary="The most accessible full-stack observability MCP server, with natural language querying and the best free tier in the category" >}}
 The New Relic MCP server is a strong entry in the observability category — 35+ tools across 6 categories with genuinely useful natural language to NRQL translation, golden metrics analysis, deployment impact assessment, and remote hosting at mcp.newrelic.com. The 100GB/month free tier makes it the most accessible full-stack observability MCP server, lowering the barrier from "talk to procurement" to "just start using it." The broader New Relic ecosystem is expanding fast — the Agentic Platform (February 2026) and Rovo Ops GA integration show serious investment in the agentic AI space. The 4/5 rating reflects real strengths (natural language querying, best free tier, tag-based tool filtering, RBAC-aware security, zero-install hosting, golden metrics, growing ecosystem integrations) balanced against real constraints (Public Preview status, no FedRAMP/HIPAA support, API key auth by default, minimal GitHub repo with unresolved bugs including a Gemini 2.5 compatibility blocker, 35+ tools trailing Datadog's 50+ and Grafana's 40+, read-only orientation with no write operations, and 8+ community alternatives signaling gaps in the official offering). For teams already on New Relic — or evaluating which observability platform to wire into their agents — this is the easiest on-ramp in the category.
 {{< /verdict >}}
+
+**Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
 *This review was researched and last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic). We have not tested this server hands-on — our analysis is based on official documentation, the GitHub repository, community feedback, and public data sources including PulseMCP.*

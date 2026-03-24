@@ -5,6 +5,7 @@ description: "Datadog's official MCP server puts 50+ tools across 14 modular too
 og_description: "Datadog's official MCP server: 50+ tools, 14 modular toolsets, GA since March 2026. 22 GitHub stars, ~10.8K weekly PulseMCP visitors. Azure SRE Agent + Codex integrations. Rating: 4/5."
 content_type: "Review"
 card_description: "Datadog's official MCP server for AI-assisted observability. 50+ tools across 14 modular toolsets covering logs, metrics, traces, APM, alerting, case management, workflows, database monitoring, error tracking, feature flags, LLM observability, and synthetics. Remote-first, Streamable HTTP, GA since March 9, 2026."
+categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-03-14
 ---
 
@@ -206,5 +207,7 @@ The Datadog MCP server is what happens when the largest commercial observability
 {{< /verdict >}}
 
 *Disclosure: We research MCP servers using publicly available documentation, GitHub repositories, changelogs, community discussions, and web sources. We do not test MCP servers hands-on or connect to live instances. All claims reflect what we can verify from public information.*
+
+**Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
 *This review was last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
