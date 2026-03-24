@@ -264,6 +264,35 @@ We reviewed 15+ servers:
 **Description:** Qdrant, Chroma, Milvus, Pinecone, Weaviate, LanceDB, pgvector. 15+ vector DB MCP servers for semantic search, RAG, and agent memory. Rating: 4/5.
 **Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsba5ltuu2x)
 
+## Batch 10
+
+### Post 028 — OpenAI MCP Servers
+**Text:** OpenAI joined the MCP steering committee, added MCP client support to ChatGPT and Agents SDK — but ships no official MCP server wrapping their API. Community servers fill the gap with chat completions, DALL-E, and web search.
+
+Our honest review:
+**Link:** https://chatforest.com/reviews/openai-mcp-server/
+**Title:** OpenAI MCP Servers Review — ChatForest
+**Description:** OpenAI: strong MCP client adoption but no official server. Community fills the gap. Rating: 3.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsc2ft4jn2b)
+
+### Post 029 — Google Gemini MCP Servers
+**Text:** Google runs the largest official MCP server catalog of any company — 24+ servers covering BigQuery, Maps, GKE, Workspace, Firebase, and more. Gemini CLI (98.7K stars) is a native MCP client too.
+
+We reviewed the full ecosystem:
+**Link:** https://chatforest.com/reviews/gemini-mcp-server/
+**Title:** Google Gemini MCP Servers Review — ChatForest
+**Description:** 24+ official servers, Gemini CLI (98.7K stars), google/mcp repo (3.4K stars). The largest MCP server catalog from any single vendor. Rating: 4/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsc2mx3xw24)
+
+### Post 030 — MongoDB MCP Server
+**Text:** MongoDB's official MCP server is the most comprehensive database server we've reviewed — 41 tools spanning queries, indexes, Atlas clusters, stream processing, local deployments, and performance advisors. 970 stars, shipping every 1-2 weeks.
+
+Full review:
+**Link:** https://chatforest.com/reviews/mongodb-mcp-server/
+**Title:** MongoDB MCP Server Review — ChatForest
+**Description:** 41+ tools for database ops, Atlas management, stream processing, performance advisors. The most feature-rich database MCP server available. Rating: 4/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsc2svqqm2t)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
