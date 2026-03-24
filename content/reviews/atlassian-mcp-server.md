@@ -14,6 +14,8 @@ Atlassian launched their official Rovo MCP Server in May 2025, hosted at `mcp.at
 
 **At a glance:** 467 GitHub stars, 47 forks, 46+ tools across 5 product areas, ~16.7K all-time PulseMCP visitors (#1,184 globally, ~697 weekly), GA since Feb 4 2026, SSE transport sunset June 30 2026
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
 ## The Official Server
 
 **Repository:** [atlassian/atlassian-mcp-server](https://github.com/atlassian/atlassian-mcp-server)

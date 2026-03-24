@@ -14,6 +14,8 @@ GitHub is the **world's largest software development platform** — with **180M+
 
 **Architecture note:** The GitHub MCP ecosystem has a clear hierarchy: GitHub's official server dominates for platform operations, while separate community servers handle local Git operations and documentation access. This is the **first review in our Developer Tools MCP category**.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
 ## What's Available
 
 ### GitHub MCP Server — github/github-mcp-server (Official)

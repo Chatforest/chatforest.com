@@ -16,6 +16,8 @@ That's the Git MCP server in a nutshell. Anthropic's official reference implemen
 
 With ~256,000 weekly PyPI downloads and over a million monthly, it's one of the most-installed MCP servers in the ecosystem. It lives in the same [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo as the [Filesystem](/reviews/filesystem-mcp-server/) and [Sequential Thinking](/reviews/sequential-thinking-mcp-server/) servers — the 81,700+ star reference implementation collection from Anthropic. And like those servers, it's deliberately minimal. The question is whether "minimal" crosses over into "incomplete."
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
 ## What It Does
 
 The Git MCP server connects AI agents to local git repositories through 12 tools:

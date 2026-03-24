@@ -1,12 +1,12 @@
 ---
-title: "Developer Tools MCP Servers — 20 Reviews Covering the Full Development Lifecycle"
-date: 2026-03-24T18:00:00+09:00
-description: "Comprehensive reviews of 20 Developer Tools MCP server categories — from source control to debugging, CI/CD to code review. 150+ servers evaluated across the full software development lifecycle."
-og_description: "20 Developer Tools MCP server reviews covering source control, CI/CD, containers, security, monitoring, code generation, and more. 150+ servers evaluated."
+title: "Developer Tools MCP Servers — 23 Reviews Covering the Full Development Lifecycle"
+date: 2026-03-24T20:00:00+09:00
+description: "Comprehensive reviews of 23 Developer Tools MCP server categories — from source control to debugging, CI/CD to code review, project management to documentation. 150+ servers evaluated across the full software development lifecycle."
+og_description: "23 Developer Tools MCP server reviews covering source control, CI/CD, containers, security, monitoring, code generation, project management, and more. 150+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **20 categories** of Developer Tools MCP servers, evaluating over **150 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **23 categories** of Developer Tools MCP servers, evaluating over **150 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 Every review includes a **cross-category comparison table** so you can see how maturity varies across the Developer Tools landscape at a glance.
 
@@ -21,6 +21,8 @@ The foundation of modern development. GitHub's official MCP server dominates the
 | [GitHub MCP Server](/reviews/github-mcp-server/) | 4.5/5 | github-mcp-server (28.2k stars), GitMCP (7.8k stars), git-mcp-server (200 stars) |
 | [GitLab MCP Server](/reviews/gitlab-mcp-server/) | 3.5/5 | gitlab-mcp-server (official, 576 stars), gitlab-mr-mcp (86 stars) |
 | [Bitbucket MCP Server](/reviews/bitbucket-mcp-server/) | 2.5/5 | atlassian-mcp-server (community, 39 stars) — no official server |
+| [Git MCP Server](/reviews/git-mcp-server/) | 3/5 | mcp-server-git (81.7K monorepo stars, ~256K weekly PyPI, 12 tools) — Anthropic reference, no push/pull/merge |
+| [GitMCP](/reviews/gitmcp-server/) | 4/5 | gitmcp.io (7.8K stars, 683 forks, 4 tools) — zero-setup documentation from any public GitHub repo |
 | [Code Review & Pull Request](/reviews/code-review-pull-request-mcp-servers/) | 3.5/5 | SonarQube MCP (442 stars), Codacy MCP (56 stars), Graphite GT MCP |
 
 ## Build, Test & Deploy
@@ -74,11 +76,19 @@ IDE integration, documentation, and workflow tooling.
 | [IDE & Code Editor](/reviews/ide-code-editor-mcp-servers/) | 3.5/5 | VS Code MCP (built-in), JetBrains MCP (official), Neovim (community) |
 | [Documentation Tooling](/reviews/documentation-tooling-mcp-servers/) | 3.5/5 | GitMCP (7.8k stars), Microsoft Learn MCP (1.5k stars), Mintlify (auto-generated) |
 
+## Project Management & Collaboration
+
+Atlassian's developer-facing tools — Jira, Confluence, Compass, and JSM — connected to AI agents.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [Atlassian MCP Server](/reviews/atlassian-mcp-server/) | 3.5/5 | atlassian-mcp-server (467 stars, official, 46+ tools across Jira/Confluence/Compass/JSM, OAuth 2.1, free for Cloud customers) |
+
 ---
 
 ## Category Overview
 
-Across all 20 reviews, key themes emerge:
+Across all 23 reviews, key themes emerge:
 
 **Vendor commitment is accelerating.** GitHub, Docker, Hashicorp, Playwright, Apollo, Datadog, Sentry, SonarQube, and Postman all ship official MCP servers. This was not the case even six months ago.
 
@@ -88,7 +98,7 @@ Across all 20 reviews, key themes emerge:
 
 **Community fills vendor gaps.** Categories like Package Management, Database Migration, and Logging are almost entirely community-built, with no vendor backing.
 
-**The comparison tables tell the real story.** Every review includes a cross-category table showing maturity across all 20 Developer Tools categories. The gaps are as informative as the coverage.
+**The comparison tables tell the real story.** Every review includes a cross-category table showing maturity across all 23 Developer Tools categories. The gaps are as informative as the coverage.
 
 ---
 

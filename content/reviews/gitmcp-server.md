@@ -16,6 +16,8 @@ The architecture is the opposite of Context7's centralized registry. Instead of 
 
 But "reads from GitHub" means you inherit GitHub's limitations. Public repos only. Search quality depends on how well the repo is documented. And a security audit found an unauthenticated R2 endpoint and stack trace exposure (#218). Free doesn't mean risk-free.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
 ## What It Does
 
 GitMCP provides four tools:

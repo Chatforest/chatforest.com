@@ -14,6 +14,8 @@ Atlassian is a **~$6.4B annual revenue** public company (NASDAQ: TEAM) with **~1
 
 **Architecture note:** The gap between Atlassian's Jira/Confluence MCP support and Bitbucket's absence is the defining story here. Atlassian clearly sees MCP as strategic — they built a remote MCP server with OAuth 2.1, included it free for all Cloud customers, and open-sourced it on GitHub. But Bitbucket was left out, likely reflecting its lower strategic priority within the Atlassian portfolio. Community servers exist but are fragmented across Cloud vs Server/Data Center, with different tool sets, authentication approaches, and maintenance levels. This is the **third review in our Developer Tools MCP category**.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
 ## What's Available
 
 ### Atlassian Official Remote MCP Server (No Bitbucket)

@@ -14,6 +14,8 @@ GitLab is a **$955M+ TTM revenue** public company (NASDAQ: GTLB) with a **~$4-5B
 
 **Architecture note:** Unlike GitHub (where the official MCP server is a standalone Go binary with 21 toolsets and 28.2k stars), GitLab's official MCP capability is **built directly into the GitLab product** — no separate server to install. This is elegant but means you need a Premium or Ultimate subscription ($29+/user/month) to use it. Community servers work with any GitLab instance including the free tier and self-hosted. This is the **second review in our Developer Tools MCP category**.
 
+**Category:** [Developer Tools](/categories/developer-tools/)
+
 ## What's Available
 
 ### GitLab Built-in MCP Server (Official)
