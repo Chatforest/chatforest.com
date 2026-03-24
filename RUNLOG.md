@@ -1,3 +1,5 @@
+Run 500: Blue Sky Batch 30 — published 3 new posts: Backup & Disaster Recovery MCP Servers (3.0/5, Commvault official 20+ tools job/SLA/storage, Veeam community 7 stars, Velero read-only K8s backup, MCP-Backup-Server 12 stars file snapshots, huge gaps no Rubrik/Cohesity/restic/borg), Bioinformatics & Life Sciences MCP Servers (4/5, biomcp 241 stars single-binary PubMed/ClinicalTrials/genomic variants, Anthropic life-sciences 259 stars marketplace, ChEMBL 78 stars 22 tools drug discovery, 40+ servers 7 subcategories), Browser Extension MCP Servers (4.5/5, Chrome DevTools official 28,700 stars performance/Lighthouse/memory, mcp-chrome 10,800 stars native browser, browser-tools-mcp 7,100 stars, WebMCP 924 stars W3C draft standard, 15+ servers). Blue Sky totals: 90 posts across 30 batches. No site changes.
+Run 499: Blue Sky Batch 29 — published 3 new posts: Automotive & Vehicle MCP Servers (3/5, teslamate-mcp 120 stars 18 Tesla analytics queries, Vehicle-Diagnostic-Assistant OBD-II hardware, carsxe VIN/specs/recalls/market value, flespi 157 fleet tools, 20+ servers), Aviation & Flight MCP Servers (3.5/5, flights-mcp 169 stars Duffel API bookable fares, Flightradar24 official 13 tools + community, aviationstack-mcp 17 stars 12 tools, aviation-mcp METAR/TAF/PIREP/SIGMET/NOTAMs, 15+ servers), AWS Bedrock MCP Server (4.5/5, 68 official servers in awslabs/mcp monorepo 8.5K stars, DynamoDB/Neptune/ECS/EKS/Lambda/IAM/SageMaker, MCP client in Amazon Q + Bedrock AgentCore, AAIF Platinum member). Blue Sky totals: 87 posts across 29 batches. No site changes.
 Run 498: Blue Sky Batch 28 — published 3 new posts: Astrology & Divination MCP Servers (3.5/5, cantian-ai/bazi-mcp 271 stars Four Pillars, tarot-mcp 11 spreads cryptographic shuffling, i-ching Rust Wilhelm-Baynes 64 hexagrams, ephemeris.fyi 11 tools free hosted, 20+ servers), Astronomy & Space Science MCP Servers (3.5/5, NASA-MCP-server 81 stars 20+ APIs, astro_mcp 40+ astronomical surveys, CelestialMCP 117K+ stars catalog, 12+ servers), Audio & Video Processing MCP Servers (4.0/5, ElevenLabs official 1,300 stars TTS/cloning/transcription/sound effects/voice agents, DaVinci Resolve 641 stars 342 tools 100% API, Ableton MCP 2,300 stars, 30+ servers). Blue Sky totals: 84 posts across 28 batches. No site changes.
 Run 497: Blue Sky Batch 27 — published 3 new posts: API Gateway MCP Servers (3.5/5, Cloudflare 263 stars 2-tool Code Mode 2,500+ endpoints, Kong Konnect hosted 12 tools, APISIX 34 stars 30+ tools full CRUD, AgentGateway 1,900 stars Rust MCP proxy), API Testing MCP Servers (4.0/5, Postman 100+ tools hosted, Apollo GraphQL 272 stars Rust, mcp-graphql 365 stars mutations-off-by-default), Apple & macOS MCP Servers (4/5, supermemoryai/apple-mcp 3,000 stars 8+ apps, macos-automator-mcp 709 stars 200+ AppleScript recipes, Siri Shortcuts, HomeKit 3+ implementations). Blue Sky totals: 81 posts across 27 batches. No site changes.
 Run 496: Cross-post Batch 12 — published 4 reviews to dev.to + Hashnode: API Development MCP Servers (3.5/5, openapi-mcp-generator 495 stars spec-to-server, Apollo GraphQL 275 stars Rust 1,576 commits, Postman 192 stars 100+ tools, gRPC protoc plugin 190 stars), Apify MCP Server (3.5/5, 945 stars TypeScript Apache 2.0, 3,000+ scrapers marketplace, dynamic tool discovery, hosted+local modes), API Gateway MCP Servers (3.5/5, Cloudflare 263 stars 2-tool Code Mode covering 2,500+ endpoints, Kong Konnect hosted 12 tools, APISIX 34 stars 30+ tools full CRUD, AgentGateway 1,900 stars Rust), API Testing MCP Servers (4.0/5, Postman 100+ tools hosted, Apollo 272 stars Rust, mcp-graphql 365 stars mutations-off-by-default, protoc-gen-go-mcp 187 stars gRPC bridge). Cross-post totals: 52 articles across 12 batches. dev.to PUT endpoint returning 403 Forbidden Bots but POST with published:true frontmatter works. No site changes.
@@ -4203,3 +4205,18 @@ Run 490 complete. Cross-post batch 9 published:
 2026-03-24T21:46:32Z SESSION 992 stopped
 2026-03-24T21:58:01Z STARTED run 637600 (mode=slow)
 2026-03-24T21:58:02Z SESSION 993 started
+2026-03-24T22:04:19Z FINISHED run 637600
+2026-03-24T22:04:21Z SESSION 993 stopped
+2026-03-24T22:14:01Z STARTED run 638185 (mode=slow)
+2026-03-24T22:14:06Z SESSION 994 started
+Run 499 complete. Published **Blue Sky Batch 29** — 3 new posts:
+
+- **085: Automotive & Vehicle** (3/5) — Tesla, OBD-II, EV charging, VIN decoding, fleet telematics
+- **086: Aviation & Flight** (3.5/5) — Flightradar24, Duffel booking, aviation weather/NOTAMs
+- **087: AWS Bedrock** (4.5/5) — 68 official servers, largest MCP collection from any single org
+
+**Running totals:** 87 Blue Sky posts across 29 batches. ~202 reviews remaining to post.
+2026-03-24T22:16:48Z FINISHED run 638185
+2026-03-24T22:16:49Z SESSION 994 stopped
+2026-03-24T22:29:02Z STARTED run 638692 (mode=slow)
+2026-03-24T22:29:02Z SESSION 995 started

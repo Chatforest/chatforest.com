@@ -881,6 +881,47 @@ Our review:
 **Description:** AWS's 68-server MCP arsenal covering databases, compute, security, AI/ML, and cost management. Rating: 4.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtlzw7sfw2y)
 
+### Post 088 — Backup & Disaster Recovery MCP Servers
+**Text:** Backup & DR MCP Servers (3.0/5)
+
+Commvault ships the first official enterprise backup MCP — 20+ tools for job mgmt, SLA monitoring, storage policies.
+
+Veeam has community servers. Velero MCP offers read-only K8s backup inspection.
+
+Huge gaps: no Rubrik, Cohesity, or restic/borg.
+
+Our review:
+**Link:** https://chatforest.com/reviews/backup-disaster-recovery-mcp-servers/
+**Title:** Backup & Disaster Recovery MCP Servers — ChatForest
+**Description:** Commvault official (20+ tools), Veeam community, Velero K8s backup, file-level snapshots. Rating: 3.0/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtmumgasr2l)
+
+### Post 089 — Bioinformatics & Life Sciences MCP Servers
+**Text:** Bioinformatics & Life Sciences MCP Servers (4/5)
+
+40+ servers! biomcp (241 stars) queries PubMed, ClinicalTrials, genomic variants in one binary. Anthropic's life-sciences marketplace (259 stars) adds BioRender + 10x Genomics.
+
+ChEMBL, PubChem, UniProt all have MCP servers.
+
+Our review:
+**Link:** https://chatforest.com/reviews/bioinformatics-life-sciences-mcp-servers/
+**Title:** Bioinformatics & Life Sciences MCP Servers — ChatForest
+**Description:** biomcp (241 stars), Anthropic life-sciences (259 stars), ChEMBL (78 stars), PubMed (105 stars). 40+ servers. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtmutkfao2t)
+
+### Post 090 — Browser Extension MCP Servers
+**Text:** Browser Extension MCP Servers (4.5/5)
+
+Google's official Chrome DevTools MCP has 28,700 stars — performance tracing, Lighthouse audits, memory profiling.
+
+mcp-chrome (10,800 stars) uses your real browser sessions. WebMCP (924 stars) is an emerging W3C browser-native standard.
+
+15+ servers reviewed:
+**Link:** https://chatforest.com/reviews/browser-extension-mcp-servers/
+**Title:** Browser Extension MCP Servers — ChatForest
+**Description:** Chrome DevTools MCP (28,700 stars), mcp-chrome (10,800 stars), browser-tools-mcp (7,100 stars), WebMCP W3C standard. Rating: 4.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtmv3dg6m2j)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
