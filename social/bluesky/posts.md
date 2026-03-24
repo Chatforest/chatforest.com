@@ -726,6 +726,41 @@ https://chatforest.com/reviews/advertising-ad-tech-mcp-servers/
 **Description:** Ad-tech MCP: meta-ads-mcp (631 stars, 25 tools), mcp-google-ads (459 stars), Google official (286 stars), multi-platform (100-140+ tools). Rating: 4.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtgy2qjyc2t)
 
+## Batch 26
+
+### Post 076 — Aerospace & Defense MCP Servers
+**Text:** Aerospace & defense MCP servers: NASA MCP (80 stars, 20+ APIs), IO-Aerospace (SPICE astrodynamics, hosted endpoint), STK bridge, MAVLink drone control, satellite tracking, and 44+ aviation tools.
+
+Defense side? Completely absent. But space & aviation coverage is strong.
+
+Our review:
+**Link:** https://chatforest.com/reviews/aerospace-defense-mcp-servers/
+**Title:** Aerospace & Defense MCP Servers — ChatForest
+**Description:** 35+ servers across NASA data, orbital mechanics, aviation, drones, satellite tracking, and earth observation. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtihddcn62k)
+
+### Post 077 — Anyquery MCP Server
+**Text:** Anyquery: one MCP server to query everything. 1,600 stars, 54 plugins — GitHub, Notion, Slack, Gmail, CSV, Parquet, and 13 databases. All via SQL.
+
+Cross-source joins are the killer feature. AGPL license is the catch.
+
+Our review:
+**Link:** https://chatforest.com/reviews/anyquery-mcp-server/
+**Title:** Anyquery MCP Server Review — ChatForest
+**Description:** SQL everything: query 40+ apps, files, and databases from your AI agent. Rating: 4.0/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtihjuze72j)
+
+### Post 078 — API Development MCP Servers
+**Text:** API development MCP servers are dominated by one pattern: spec-to-server. Give it an OpenAPI spec, get tools for every endpoint.
+
+Top picks: openapi-mcp-generator (495 stars), Apollo GraphQL (275 stars), Postman (192 stars, 100+ tools).
+
+Our review:
+**Link:** https://chatforest.com/reviews/api-development-mcp-servers/
+**Title:** API Development MCP Servers — ChatForest
+**Description:** OpenAPI converters, GraphQL, gRPC, and spec-to-server generation. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtihqmejk2w)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
