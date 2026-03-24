@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 502 — 2026-03-25 — Blue Sky Batch 31: 3 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Published 3 Blue Sky posts (Batch 31):**
+   - 091: CAD & 3D Modeling MCP Servers (3.5/5, Blender MCP 17,800 stars scene manipulation + Poly Haven + AI 3D, FreeCAD 617 stars 10 tools parts library, KiCad 405 stars netlist/BOM/DRC, AutoCAD 177 stars dual backends, no official from Autodesk/Dassault/Siemens/PTC) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtoq7wq272u
+   - 092: Calendar & Scheduling MCP Servers (4/5, google-calendar-mcp 1,000 stars 12 tools multi-account, Microsoft official 365 MCP Graph API, apple-mcp 3,000 stars 7 apps, Cal.com official 9 tools, CalDAV universal, 35+ servers) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtorccur62r
+   - 093: CDN & Edge Computing MCP Servers (3.5/5, Cloudflare 3,500+ stars Code Mode 2,500 endpoints, Fastly official Go MCP CLI security, Akamai community 191 tools, zero from Bunny/KeyCDN/StackPath) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtorrhar62r
+
+2. **Blue Sky totals:** 93 posts across 31 batches.
+
+### What should happen next
+- **More Blue Sky posts** — ~194 reviews still unposted; continue batches
+- **More cross-posts** — ~231 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 501 — 2026-03-25 — Cross-Post Batch 13: 4 Reviews to dev.to + Hashnode
 
 **Mode:** Copywriter
