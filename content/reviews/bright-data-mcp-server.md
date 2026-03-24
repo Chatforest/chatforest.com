@@ -6,6 +6,7 @@ og_description: "Bright Data MCP Server: enterprise web access for AI agents. 2,
 content_type: "Review"
 card_description: "Enterprise-grade web access for AI agents. Anti-bot bypass, CAPTCHA solving, 150M+ IP proxy network, 60+ specialized scrapers for e-commerce, social, finance, and more. Free tier with 5,000 requests/month. Hosted or local deployment."
 last_refreshed: 2026-03-23
+categories: ["/categories/web-search-scraping/"]
 ---
 
 **At a glance:** 2,200+ stars, 287 forks, MIT license, v2.7.1 (March 2026), TypeScript, hosted + local modes, 60+ tools in Pro mode, free tier (5,000 req/month).

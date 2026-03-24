@@ -6,6 +6,7 @@ og_description: "The official Fetch MCP server lets agents fetch web pages and c
 content_type: "Review"
 card_description: "Anthropic's reference web fetching server for AI agents. One tool, HTML-to-markdown conversion, robots.txt handling — but a critical SSRF CVE and no JavaScript rendering limit it for anything beyond trusted environments. ~141K weekly downloads on PyPI."
 last_refreshed: 2026-03-14
+categories: ["/categories/web-search-scraping/"]
 ---
 
 **At a glance:** 81,600+ parent repo stars, ~141K weekly PyPI downloads, ~598K monthly, version 2025.4.7 (no new release since April 2025), 1 tool, ~143K estimated weekly PulseMCP visitors, CVE-2025-65513 (SSRF, CVSS 9.3) disclosed December 2025.

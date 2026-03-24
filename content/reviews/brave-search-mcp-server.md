@@ -6,6 +6,7 @@ og_description: "Brave's official MCP server gives AI agents web, image, video, 
 content_type: "Review"
 card_description: "Six search tools and the only independent Western search index. The most complete search MCP server — but the free tier is gone."
 last_refreshed: 2026-03-14
+categories: ["/categories/web-search-scraping/"]
 ---
 
 Every agent needs search. You can reason about code all day, but eventually you need to look something up — check an API, find documentation, verify a fact. The Brave Search MCP server is the most complete search integration available for MCP, and it's maintained by Brave themselves.

@@ -6,6 +6,7 @@ og_description: "Apify MCP Server: connect AI agents to 3,000+ web scrapers and 
 content_type: "Review"
 card_description: "Connects AI agents to Apify's marketplace of 3,000+ web scrapers and automation tools. Search for scrapers, inspect their details, run them, and get structured data back — all through MCP. Hosted mode with OAuth or run locally via npx."
 last_refreshed: 2026-03-23
+categories: ["/categories/web-search-scraping/"]
 ---
 
 Most MCP servers give your agent one capability — search, or database access, or browser automation. The [Apify MCP Server](https://github.com/apify/apify-mcp-server) takes a different approach: it gives your agent access to an entire marketplace of 3,000+ pre-built scrapers, crawlers, and automation tools (called "Actors" in Apify's terminology), and lets the agent discover and use new ones on the fly.

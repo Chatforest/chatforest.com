@@ -6,6 +6,7 @@ og_description: "Ahrefs' official MCP server gives AI agents direct access to SE
 content_type: "Review"
 card_description: "Ahrefs' official MCP server for AI agents. Access backlink profiles, keyword data, domain ratings, and competitor insights through the Model Context Protocol. Remote server with OAuth — no local setup or API keys needed. Requires Ahrefs Lite plan ($129/mo) or higher."
 last_refreshed: 2026-03-22
+categories: ["/categories/web-search-scraping/"]
 ---
 
 **At a glance:** Official Ahrefs remote MCP server, OAuth authentication (no API keys), backlink analysis, keyword research, domain ratings, batch analysis, requires Lite plan or higher ($129/mo+), ~94 GitHub stars on the legacy local server

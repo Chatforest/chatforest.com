@@ -6,6 +6,7 @@ og_description: "Firecrawl's official MCP server turns AI assistants into web sc
 content_type: "Review"
 card_description: "The official Firecrawl MCP server for AI-powered web scraping. 12+ tools covering single-page scraping, batch processing, site crawling, web search, LLM-powered extraction, autonomous deep research, and cloud browser sessions. Now with FIRE-1 web action agent and Browser Sandbox."
 last_refreshed: 2026-03-14
+categories: ["/categories/web-search-scraping/"]
 ---
 
 **At a glance:** 95,700+ parent repo stars, 5,800+ MCP server stars, 651 forks, v3.2.1 (last release September 2025), 49 open issues, ~50.6K estimated weekly PulseMCP visitors (#34 globally, ~1.2M all-time), FIRE-1 web action agent (beta).

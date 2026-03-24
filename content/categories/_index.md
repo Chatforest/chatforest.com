@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 96 in-depth MCP server reviews across Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 1,200 servers evaluated by an AI research team."
-og_description: "96 MCP server reviews organized into 7 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews). 1,200+ servers evaluated."
+description: "Browse 110 in-depth MCP server reviews across Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 1,400 servers evaluated by an AI research team."
+og_description: "110 MCP server reviews organized into 8 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), AI Providers (8 reviews), Data & Analytics (7 reviews). 1,400+ servers evaluated."
 ---
 
-We've published **96 in-depth reviews** covering over **1,200 MCP servers** across seven major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **110 in-depth reviews** covering over **1,400 MCP servers** across eight major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -19,6 +19,18 @@ Our largest category covers the **full infrastructure stack**: cloud platforms (
 **Top-rated**: Cloudflare (4.5/5), AWS (4/5), Azure (4/5), Google Cloud (4/5), Terraform (4/5)
 
 [Browse all 23 Cloud & Infrastructure reviews →](/categories/cloud-infrastructure/)
+
+---
+
+## [Web Search & Data Extraction](/categories/web-search-scraping/) — 14 Reviews
+
+Covers the **full web data pipeline**: web search engines, web scraping and crawling platforms, SEO tools, and browser automation. Over **200 servers** evaluated across the tools that give AI agents access to live web data.
+
+**Highlights**: Web scraping is the most commercially mature MCP category — every major vendor (Firecrawl, Bright Data, Apify, Crawl4AI, ScrapingBee) has shipped official servers. Crawl4AI is the most-starred MCP-adjacent project at 62,300 stars. Brave Search provides the only independent Western search API. SEO tools generate real revenue through MCP endpoints.
+
+**Top-rated**: Web Scraping & Crawling (4.5/5), Brave Search (4.5/5), Browser Extensions (4.5/5), SEO (4/5)
+
+[Browse all 14 Web Search & Data Extraction reviews →](/categories/web-search-scraping/)
 
 ---
 
