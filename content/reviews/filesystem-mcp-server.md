@@ -16,6 +16,8 @@ We've researched it thoroughly. Here's the honest assessment.
 
 **Disclosure:** We do not test MCP servers hands-on. This review is based on documentation, GitHub repository analysis, community discussions, npm data, and PulseMCP metrics.
 
+**Category:** [Cloud Storage & File Sync](/categories/cloud-storage-file-sync/)
+
 ## What It Does
 
 The Filesystem MCP server gives an AI agent controlled access to files on your local machine. It exposes tools for reading, writing, searching, and navigating files within directories you explicitly allow.

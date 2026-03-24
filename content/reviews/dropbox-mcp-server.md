@@ -16,6 +16,8 @@ Dropbox MCP servers let AI agents **manage your cloud files and search across yo
 
 **Architecture note:** The official remote MCP server at `mcp.dropbox.com/mcp` is a hosted service — no local installation required. The Dash MCP server is available both as a remote endpoint (`mcp.dropbox.com/dash`) and as an open-source Python package on GitHub. Community servers wrap the Dropbox HTTP API v2, using OAuth 2.0 for authentication.
 
+**Category:** [Cloud Storage & File Sync](/categories/cloud-storage-file-sync/)
+
 ## What It Does
 
 Between the two official servers and community implementations, Dropbox MCP servers cover four main capability areas:

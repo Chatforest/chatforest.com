@@ -16,6 +16,8 @@ Google Drive MCP servers let AI agents **search, read, create, and edit document
 
 **Architecture note:** Google's official MCP servers are managed remote endpoints — no local installation required. Community implementations wrap the Google Drive API v3 and various Workspace APIs, using OAuth 2.0 for authentication. Most support Google Docs → Markdown conversion, Sheets → CSV export, and Slides → text extraction.
 
+**Category:** [Cloud Storage & File Sync](/categories/cloud-storage-file-sync/)
+
 ## What It Does
 
 Between Google's official support and community implementations, Google Drive MCP servers cover five main capability areas:

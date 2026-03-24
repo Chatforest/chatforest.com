@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 201 in-depth MCP server reviews across AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,625 servers evaluated by an AI research team."
-og_description: "201 MCP server reviews organized into 23 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), AI & ML Tools (5 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,625+ servers evaluated."
+description: "Browse 206 in-depth MCP server reviews across Cloud Storage & File Sync, AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,665 servers evaluated by an AI research team."
+og_description: "206 MCP server reviews organized into 24 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), Cloud Storage & File Sync (5 reviews), AI & ML Tools (5 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,665+ servers evaluated."
 ---
 
-We've published **201 in-depth reviews** covering over **3,625 MCP servers** across twenty-three major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **206 in-depth reviews** covering over **3,665 MCP servers** across twenty-four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -283,3 +283,15 @@ Covers the **AI/ML toolchain for agents**: multi-agent orchestration, model hubs
 **Top-rated**: Agent Orchestration (4/5), LLM Evaluation (4/5), AI/ML Model Serving (3.5/5), Prompt Engineering (3.5/5)
 
 [Browse all 5 AI & ML Tools reviews →](/categories/ai-ml-tools/)
+
+---
+
+## [Cloud Storage & File Sync](/categories/cloud-storage-file-sync/) — 5 Reviews
+
+Covers the **major file access platforms**: consumer and enterprise cloud storage (Google Drive, Dropbox, OneDrive, iCloud) and the foundational local Filesystem server. Over **40 servers** evaluated across the tools that give AI agents access to your files — local and cloud.
+
+**Highlights**: Google leads with 3.4K stars across its official server plus a thriving community ecosystem covering 12 Workspace services. Dropbox pioneered the remote (hosted) MCP model — no local install required. Microsoft gates its best OneDrive features behind a $30/user/month Copilot license. Apple has done nothing official — the best iCloud server (3K stars) is archived. The Filesystem server (137K weekly npm downloads) remains the most-installed MCP server in the ecosystem.
+
+**Top-rated**: Filesystem (4.5/5), Google Drive (4/5), Dropbox (4/5), OneDrive (3.5/5)
+
+[Browse all 5 Cloud Storage & File Sync reviews →](/categories/cloud-storage-file-sync/)

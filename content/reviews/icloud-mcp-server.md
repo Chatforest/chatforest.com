@@ -16,6 +16,8 @@ iCloud MCP servers let AI agents **manage Apple Calendar events, send and read i
 
 **Architecture note:** There is no official Apple MCP server. Community implementations use standard protocols — CalDAV for calendars, CardDAV for contacts, IMAP/SMTP for email — connecting to iCloud endpoints with app-specific passwords. Some implementations use AppleScript to control native macOS apps directly, which provides broader access (Notes, Messages, Reminders, Safari) but requires macOS and grants no cross-platform capability. iCloud Drive file access would require CloudKit, which no community MCP server has implemented.
 
+**Category:** [Cloud Storage & File Sync](/categories/cloud-storage-file-sync/)
+
 ## What It Does
 
 Between the archived apple-mcp project and active community implementations, iCloud MCP servers cover five capability areas — notably missing file storage:

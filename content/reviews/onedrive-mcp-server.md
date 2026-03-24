@@ -16,6 +16,8 @@ OneDrive MCP servers let AI agents **search, read, create, and manage files acro
 
 **Architecture note:** Microsoft's official MCP server is a managed remote endpoint hosted by Microsoft — no local installation required, but it requires a **Microsoft 365 Copilot license** ($30/user/month). Community implementations wrap the Microsoft Graph API, using Azure Entra ID (formerly Azure AD) for authentication. Most support device code flow, OAuth 2.0 authorization code flow, or certificate-based auth.
 
+**Category:** [Cloud Storage & File Sync](/categories/cloud-storage-file-sync/)
+
 ## What It Does
 
 Between Microsoft's official server and community implementations, OneDrive MCP servers cover five main capability areas:
