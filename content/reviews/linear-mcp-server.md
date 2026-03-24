@@ -15,7 +15,7 @@ The server provides 23+ tools covering the core project management lifecycle: cr
 
 Linear built this in partnership with Cloudflare and Anthropic, following the authenticated remote MCP specification (2025-03-26). It works natively with Claude, Cursor, VS Code, Windsurf, Zed, Codex, and other MCP-compatible clients.
 
-**At a glance:** Remote-first (mcp.linear.app), OAuth 2.1, Streamable HTTP, 23+ tools (consolidated), ~277K all-time PulseMCP visitors (#131 globally, ~12.9K weekly), May 2025 launch, Apache 2.0 (server), requires paid Linear subscription ($10/user/month Basic).
+**At a glance:** Remote-first (mcp.linear.app), OAuth 2.1, Streamable HTTP, 23+ tools (consolidated), ~277K all-time PulseMCP visitors (#131 globally, ~12.9K weekly), May 2025 launch, Apache 2.0 (server), requires paid Linear subscription ($10/user/month Basic). Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 The key question: is Linear's remote-first approach to MCP better than the community-built local servers that came before it?
 

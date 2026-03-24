@@ -11,7 +11,7 @@ last_refreshed: 2026-03-14
 
 Notion is the productivity tool that half the tech industry runs on. Wikis, project trackers, meeting notes, documentation — if your team uses Notion, the data sitting in those pages is some of the most valuable context an AI agent could access.
 
-**At a glance:** 4,100+ stars · 510+ forks · 86 commits · 104 open issues · npm v2.2.1 (March 2026) · API v2026-03-11
+**At a glance:** 4,100+ stars · 510+ forks · 86 commits · 104 open issues · npm v2.2.1 (March 2026) · API v2026-03-11. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 The [official Notion MCP server](https://github.com/makenotion/notion-mcp-server) gives agents that access. Read pages, create documents, query databases, add comments, search your workspace — all through MCP tools. With **4,100+ GitHub stars**, **510+ forks**, and broad client support (Claude Desktop, Cursor, VS Code Copilot, ChatGPT), it has real adoption. The latest npm release (v2.2.1, March 2026) brings the server to API version 2026-03-11.
 

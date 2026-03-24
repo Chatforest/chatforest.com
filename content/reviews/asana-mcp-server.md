@@ -8,7 +8,7 @@ card_description: "Asana's official MCP server for enterprise project management
 last_refreshed: 2026-03-21
 ---
 
-**At a glance:** Hosted at `mcp.asana.com/v2/mcp` — OAuth 2.0, Streamable HTTP, ~44 tools, 20 featured client integrations, ~186K all-time PulseMCP visitors (#184 globally, ~7.6K weekly), V1 shutdown May 11, 2026.
+**At a glance:** Hosted at `mcp.asana.com/v2/mcp` — OAuth 2.0, Streamable HTTP, ~44 tools, 20 featured client integrations, ~186K all-time PulseMCP visitors (#184 globally, ~7.6K weekly), V1 shutdown May 11, 2026. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 Asana's official MCP server gives AI agents direct access to the Asana Work Graph — the full graph of tasks, projects, goals, portfolios, and team relationships that makes up an organization's work. V2 launched in February 2026 with Streamable HTTP transport, replacing the deprecated V1 beta (SSE, shutdown May 11, 2026 — now less than two months away).
 

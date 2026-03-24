@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Email is the most sensitive data most people have. Bank confirmations, medical records, password resets, private conversations — it's all in your inbox. Giving an AI agent access to it deserves serious thought.
 
-That said, the use cases are compelling. An agent that can search your email for a specific receipt, draft a reply to a client, or triage your inbox by priority could save hours per week. The Gmail MCP ecosystem is trying to make this happen, with varying degrees of maturity and security.
+That said, the use cases are compelling. An agent that can search your email for a specific receipt, draft a reply to a client, or triage your inbox by priority could save hours per week. The Gmail MCP ecosystem is trying to make this happen, with varying degrees of maturity and security. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## The Landscape
 

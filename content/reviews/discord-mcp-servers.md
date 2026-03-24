@@ -10,7 +10,7 @@ last_refreshed: 2026-03-22
 
 Discord is where developer communities, gaming groups, and open-source projects live. Over 200 million monthly active users, 19 million active servers. And unlike Slack — which shipped an official MCP server hosted at `mcp.slack.com` with first-party OAuth — Discord has no official MCP integration.
 
-That gap has been filled by at least five community-built MCP servers, each taking a different approach. None has emerged as the clear standard. Here's what the landscape looks like.
+That gap has been filled by at least five community-built MCP servers, each taking a different approach. None has emerged as the clear standard. Here's what the landscape looks like. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## The Contenders
 

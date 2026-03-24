@@ -8,7 +8,7 @@ card_description: "Community-built MCP servers for Zoom enabling AI agents to cr
 last_refreshed: 2026-03-23
 ---
 
-**At a glance:** [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) (26 stars, most-starred implementation) — Python, MIT. Community-built. Zoom has integrated MCP into AI Studio but hasn't published a standalone MCP server.
+**At a glance:** [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) (26 stars, most-starred implementation) — Python, MIT. Community-built. Zoom has integrated MCP into AI Studio but hasn't published a standalone MCP server. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 Zoom MCP servers let AI agents **manage your meetings** — create and schedule meetings, retrieve transcripts and recordings, access AI Companion summaries, and search meeting history — all through natural language prompts. Zoom has not published an official standalone MCP server, but the company has **integrated MCP support into its AI Studio platform** for building custom agents within the Zoom ecosystem.
 

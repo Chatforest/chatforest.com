@@ -8,7 +8,7 @@ card_description: "Community-built MCP server for Google Calendar management. 13
 last_refreshed: 2026-03-14
 ---
 
-**At a glance:** 1,100+ GitHub stars, 297 forks, v2.6.1, ~191K all-time PulseMCP visitors (#182 globally, ~2.8K weekly), 13 tools, MIT license.
+**At a glance:** 1,100+ GitHub stars, 297 forks, v2.6.1, ~191K all-time PulseMCP visitors (#182 globally, ~2.8K weekly), 13 tools, MIT license. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 The Google Calendar MCP server by nspady is the leading community implementation for connecting AI assistants to Google Calendar. With 1,100+ GitHub stars and active development (v2.6.1 as of March 2026), it's become the de facto standard — there is no official Google Calendar MCP server, despite Google briefly shipping and then removing MCP support from their Workspace CLI in early March 2026.
 

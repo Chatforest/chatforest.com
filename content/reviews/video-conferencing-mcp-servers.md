@@ -12,7 +12,7 @@ Meetings are where decisions happen, context lives, and information gets trapped
 
 This review covers MCP servers for **video conferencing and meeting intelligence** — servers that let AI agents interact with meetings in some way, whether that's accessing transcripts, managing recordings, scheduling calls, or actively participating in real-time. For broader communication platform integrations (Slack, Discord, email), see our [Communication MCP Servers comparison](/guides/best-communication-mcp-servers/).
 
-The headline: **the meeting MCP ecosystem splits into three distinct tiers.** At the top, multi-platform intelligence services like tl;dv and Vexa provide rich transcript and recording access across Zoom, Meet, and Teams. In the middle, platform-specific servers wrap individual APIs (Zoom, Teams, Webex). At the frontier, projects like Joinly and Meeting BaaS are building something more ambitious: AI agents that actually join and participate in video calls.
+The headline: **the meeting MCP ecosystem splits into three distinct tiers.** At the top, multi-platform intelligence services like tl;dv and Vexa provide rich transcript and recording access across Zoom, Meet, and Teams. In the middle, platform-specific servers wrap individual APIs (Zoom, Teams, Webex). At the frontier, projects like Joinly and Meeting BaaS are building something more ambitious: AI agents that actually join and participate in video calls. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## Multi-Platform Meeting Intelligence
 

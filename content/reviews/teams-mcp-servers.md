@@ -12,7 +12,7 @@ Microsoft Teams has 320 million monthly active users. It's the default communica
 
 Unlike Discord (which still has [no official MCP server](/reviews/discord-mcp-servers/)), Microsoft shipped one. The official Work IQ Teams server, part of the [microsoft/mcp](https://github.com/microsoft/mcp) catalog (2,800 stars across all Microsoft MCP servers), provides 24 tools for full CRUD operations on chats, channels, teams, and messages. Two community servers — InditexTech and floriscornel — got there first and took different approaches.
 
-Here's how the landscape breaks down.
+Here's how the landscape breaks down. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## The Contenders
 

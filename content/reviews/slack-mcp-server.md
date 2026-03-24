@@ -10,7 +10,7 @@ last_refreshed: 2026-03-14
 
 Slack is where work conversations happen. The problem is that those conversations are locked inside Slack — an agent can't search your channels, read a thread, or post an update without some kind of integration. Slack's official MCP server changes that. Generally available since February 28, 2026, it gives AI agents direct, structured access to your workspace through the Model Context Protocol.
 
-**At a glance:** Hosted at `mcp.slack.com` · ~15 curated tools · 50+ partner companies building agents · 25x growth in tool invocations since limited release · Streamable HTTP transport · Confidential OAuth 2.0
+**At a glance:** Hosted at `mcp.slack.com` · ~15 curated tools · 50+ partner companies building agents · 25x growth in tool invocations since limited release · Streamable HTTP transport · Confidential OAuth 2.0. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 This isn't a community wrapper or a bot token hack. It's Slack's own server, hosted at `mcp.slack.com`, using their first-party OAuth. Here's what it's actually like to work with.
 

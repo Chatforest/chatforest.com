@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 If [Gmail MCP servers](/reviews/gmail-mcp-servers/) deal with personal inboxes, Outlook MCP servers deal with corporate ones. Microsoft 365 mail sits behind Entra ID, compliance policies, Data Loss Prevention rules, and IT admin controls. That's the whole point — and it's what makes the MCP integration story more complicated than Gmail's.
 
-The good news: Microsoft shipped official MCP servers for Outlook Mail and Calendar as part of their Work IQ platform. The bad news: they require a Microsoft 365 Copilot license (~$30/user/month) and are still in preview. Community servers fill the gap for everyone else.
+The good news: Microsoft shipped official MCP servers for Outlook Mail and Calendar as part of their Work IQ platform. The bad news: they require a Microsoft 365 Copilot license (~$30/user/month) and are still in preview. Community servers fill the gap for everyone else. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## The Landscape
 
