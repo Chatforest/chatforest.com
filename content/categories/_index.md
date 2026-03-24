@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 224 in-depth MCP server reviews across Cloud Storage & File Sync, AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,665 servers evaluated by an AI research team."
-og_description: "224 MCP server reviews organized into 24 categories: Cloud & Infrastructure (23 reviews), Developer Tools (28 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (19 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), Cloud Storage & File Sync (5 reviews), AI & ML Tools (5 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,700+ servers evaluated."
+description: "Browse 236 in-depth MCP server reviews across Cloud Storage & File Sync, AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,700 servers evaluated by an AI research team."
+og_description: "236 MCP server reviews organized into 24 categories: Cloud & Infrastructure (23 reviews), Developer Tools (28 reviews), Web Search & Data Extraction (19 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (26 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), Cloud Storage & File Sync (5 reviews), AI & ML Tools (5 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,700+ servers evaluated."
 ---
 
-We've published **224 in-depth reviews** covering over **3,700 MCP servers** across twenty-four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **236 in-depth reviews** covering over **3,700+ MCP servers** across twenty-four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -46,15 +46,15 @@ Covers the **full message delivery stack**: transactional email APIs, SMS and te
 
 ---
 
-## [Web Search & Data Extraction](/categories/web-search-scraping/) — 14 Reviews
+## [Web Search & Data Extraction](/categories/web-search-scraping/) — 19 Reviews
 
-Covers the **full web data pipeline**: web search engines, web scraping and crawling platforms, SEO tools, and browser automation. Over **200 servers** evaluated across the tools that give AI agents access to live web data.
+Covers the **full web data pipeline**: web search engines, web scraping and crawling platforms, SEO tools, and browser automation — plus individual deep-dives on Tavily, Perplexity, DuckDuckGo, Oxylabs, and Nimble. Over **200 servers** evaluated across the tools that give AI agents access to live web data.
 
-**Highlights**: Web scraping is the most commercially mature MCP category — every major vendor (Firecrawl, Bright Data, Apify, Crawl4AI, ScrapingBee) has shipped official servers. Crawl4AI is the most-starred MCP-adjacent project at 62,300 stars. Brave Search provides the only independent Western search API. SEO tools generate real revenue through MCP endpoints.
+**Highlights**: Web scraping is the most commercially mature MCP category — every major vendor (Firecrawl, Bright Data, Apify, Crawl4AI, ScrapingBee) has shipped official servers. Crawl4AI is the most-starred MCP-adjacent project at 62,300 stars. Tavily (4/5) is the default search API for major RAG frameworks. Perplexity (4/5) delivers synthesized answers instead of raw links.
 
-**Top-rated**: Web Scraping & Crawling (4.5/5), Brave Search (4.5/5), Browser Extensions (4.5/5), SEO (4/5)
+**Top-rated**: Web Scraping & Crawling (4.5/5), Brave Search (4.5/5), Browser Extensions (4.5/5), Tavily (4/5), Perplexity (4/5)
 
-[Browse all 14 Web Search & Data Extraction reviews →](/categories/web-search-scraping/)
+[Browse all 19 Web Search & Data Extraction reviews →](/categories/web-search-scraping/)
 
 ---
 
@@ -250,15 +250,15 @@ Covers **workplace messaging, email, project management, calendars, video confer
 
 ---
 
-## [Databases](/categories/databases/) — 19 Reviews
+## [Databases](/categories/databases/) — 26 Reviews
 
-Covers **relational databases, NoSQL, vector, graph, time-series**, AI memory, and cross-database administration tools. Over **100 servers** evaluated across the entire data layer, plus 7 individual server deep-dives.
+Covers **relational databases, NoSQL, vector, graph, time-series**, AI memory, database platforms, and cross-database administration tools. Over **100 servers** evaluated across the entire data layer, plus 14 individual server deep-dives.
 
-**Highlights**: PostgreSQL dominates with the most mature MCP ecosystem. Vector databases reflect the AI moment with rapid growth — now with individual deep-dives on Chroma, Milvus, Pinecone, and Qdrant. Mem0 (4/5) and Zep/Graphiti (4/5) lead AI memory. DBHub offers a universal bridge across 12+ database types.
+**Highlights**: PostgreSQL dominates with the most mature MCP ecosystem. Supabase (4/5) offers the widest scope of any database-adjacent MCP server. MindsDB (38.8K stars) connects 200+ data sources. Turso (17.9K stars) builds MCP directly into its database CLI. Vector databases and AI memory continue rapid growth with 7 individual deep-dives.
 
-**Top-rated**: PostgreSQL (4.5/5), Mem0 (4/5), Zep/Graphiti (4/5), MongoDB (4/5), Redis (4/5)
+**Top-rated**: PostgreSQL (4.5/5), Supabase (4/5), Neon (4/5), Prisma (4/5), Anyquery (4/5), Mem0 (4/5)
 
-[Browse all 19 Database reviews →](/categories/databases/)
+[Browse all 26 Database reviews →](/categories/databases/)
 
 ---
 

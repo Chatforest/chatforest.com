@@ -8,6 +8,8 @@ card_description: "Query anything with SQL from your AI agent. 1,600 GitHub star
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 1,600 GitHub stars · 109 forks · v0.4.4 (October 2, 2025) · Go · AGPLv3 license · 54 plugins + 13 database connectors + 23 SQLite extensions · stdio/SSE/HTTP transports
 
 Most MCP servers connect to one thing. The [Anyquery MCP server](https://github.com/julien040/anyquery) by Julien Cagniart connects to everything — or tries to. Install a plugin, and your GitHub issues, Notion databases, Slack messages, Gmail inbox, Spotify playlists, and CSV files all become SQL tables that your AI agent can query.

@@ -1,12 +1,12 @@
 ---
-title: "Web Search & Data Extraction MCP Servers — 14 Reviews Covering Search Engines, Web Scrapers, SEO Tools, and Browser Automation"
+title: "Web Search & Data Extraction MCP Servers — 19 Reviews Covering Search Engines, Web Scrapers, SEO Tools, and Browser Automation"
 date: 2026-03-24T10:50:00+09:00
-description: "Comprehensive reviews of 14 Web Search & Data Extraction MCP server categories — from Brave Search and Exa to Firecrawl, Crawl4AI, Bright Data, Apify, Ahrefs, and browser automation. 200+ servers evaluated across the web data pipeline."
-og_description: "14 Web Search & Data Extraction MCP server reviews covering web search, scraping, SEO, and browser automation. Brave Search, Firecrawl, Crawl4AI, Bright Data, Ahrefs, and more. 200+ servers evaluated."
+description: "Comprehensive reviews of 19 Web Search & Data Extraction MCP server categories — from Brave Search, Tavily, and Perplexity to Firecrawl, Crawl4AI, Bright Data, Apify, Ahrefs, and browser automation. 200+ servers evaluated across the web data pipeline."
+og_description: "19 Web Search & Data Extraction MCP server reviews covering web search, scraping, SEO, and browser automation. Brave Search, Tavily, Perplexity, DuckDuckGo, Firecrawl, and more. 200+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **14 categories** of Web Search & Data Extraction MCP servers, evaluating over **200 individual servers** across the full web data pipeline. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **19 categories** of Web Search & Data Extraction MCP servers, evaluating over **200 individual servers** across the full web data pipeline. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 Web data access is arguably the most important capability for AI agents. Whether it's searching the web, scraping pages, extracting structured data, or automating browsers — these servers are what give agents eyes on the live internet. This category includes some of the highest-starred MCP servers in the entire ecosystem.
 
@@ -54,11 +54,23 @@ Cloud browsers, browser extensions, and basic web fetching — the infrastructur
 | [Browserbase MCP Server](/reviews/browserbase-mcp-server/) | 3.5/5 | Official Browserbase MCP (8 tools) — cloud browser automation with Stagehand's natural language element targeting |
 | [Fetch MCP Server](/reviews/fetch-mcp-server/) | 3.5/5 | Anthropic's reference web fetching server (1 tool) — HTML-to-markdown conversion. Simple but has unpatched SSRF CVE |
 
+## Individual Search & Scraping Server Reviews
+
+Deep-dive reviews of standalone search engines and web data extraction platforms.
+
+| Review | Rating | Highlights |
+|--------|--------|------------|
+| [The Tavily MCP Server](/reviews/tavily-mcp-server/) | 4/5 | 1,500+ stars, 4 tools (search/extract/crawl/map), default search API for LangChain, LlamaIndex, CrewAI, free tier 1,000 credits/month |
+| [The Perplexity MCP Server](/reviews/perplexity-mcp-server/) | 4/5 | 2,000+ stars, 4 tools (search/ask/research/reason), synthesized answers with citations instead of raw links |
+| [The DuckDuckGo MCP Server](/reviews/duckduckgo-mcp-server/) | 3.5/5 | 913 stars, 2 tools, free web search with no API key required, MIT license, rate limits are the main trade-off |
+| [The Oxylabs MCP Server](/reviews/oxylabs-mcp-server/) | 3/5 | 86 stars, 8 tools across 2 engines (Web Scraper API + AI Studio), fastest stress test times (31.7s avg) |
+| [The Nimble MCP Server](/reviews/nimble-mcp-server/) | 3/5 | 7 tools, 93% search accuracy, hosted, only MCP server with Google Maps extraction suite, $47M Series B |
+
 ---
 
 ## Category Overview
 
-**14 reviews. 200+ servers. Average rating: 3.9/5.**
+**19 reviews. 200+ servers. Average rating: 3.7/5.**
 
 ### What stands out
 

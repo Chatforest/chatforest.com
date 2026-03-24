@@ -8,6 +8,8 @@ card_description: "Free web search for AI agents with no API key or account requ
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
+
 **At a glance:** 913 GitHub stars · 152 forks · v0.1.2 (March 8, 2026) · Python · MIT license · 2 tools · ~473K all-time PulseMCP visitors · #75 globally · stdio/SSE/Streamable HTTP transports
 
 Every agent needs web search, but not every project needs a paid API. The [DuckDuckGo MCP server](https://github.com/nickclyde/duckduckgo-mcp-server) by Nick Clyde is the most popular free search MCP server — no API key, no account, no credit card. Install it and search.

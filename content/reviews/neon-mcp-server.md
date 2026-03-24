@@ -8,6 +8,8 @@ card_description: "Neon's first-party MCP server for AI-assisted serverless Post
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 *At a glance: 565 GitHub stars, 103 forks, ~103 commits, 12 contributors, last commit Mar 16 2026, npm v0.6.5 (deprecated — remote server preferred), 20+ tools, MIT license, ~714 npm downloads/week, PulseMCP 104K all-time visitors (#297 globally, ~814 weekly). Neon platform: acquired by Databricks (May 2025), Postgres 14–18 support, storage pricing dropped 80% to $0.35/GB-month.*
 
 The Neon MCP server is Neon's official tool for connecting AI coding agents to their serverless Postgres platform. Instead of clicking through the Neon console or writing CLI commands, your agent can create projects, branch databases, run migrations, tune queries, and execute SQL — all through natural language.

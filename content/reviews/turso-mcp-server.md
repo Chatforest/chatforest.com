@@ -8,6 +8,8 @@ card_description: "SQLite-compatible database with built-in MCP server. 9 tools 
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 17,900+ stars, 803 forks, MIT license, beta status, Rust, 9 MCP tools built in, local + cloud deployment, free tier (5GB storage, 100 databases).
 
 [Turso](https://github.com/tursodatabase/turso) takes a different approach to database MCP integration: instead of building a separate MCP server that wraps database calls, the MCP server is built directly into the database itself. Run `tursodb your_database.db --mcp` and your SQLite-compatible database becomes an MCP tool that AI agents can query, modify, and inspect through natural language.

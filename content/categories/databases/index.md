@@ -1,12 +1,12 @@
 ---
-title: "Database MCP Servers — 19 Reviews Covering Relational, NoSQL, Vector, Graph, Time-Series, Memory, and More"
+title: "Database MCP Servers — 26 Reviews Covering Relational, NoSQL, Vector, Graph, Time-Series, Memory, and More"
 date: 2026-03-24T21:00:00+09:00
-description: "Comprehensive reviews of 19 Database MCP servers — 12 category reviews plus 7 individual server deep-dives covering vector databases and AI memory. 100+ servers evaluated across the full data layer."
-og_description: "19 Database MCP server reviews covering PostgreSQL, MongoDB, Redis, MySQL, SQLite, vector databases, AI memory, graph, time-series, and database administration. 100+ servers evaluated."
+description: "Comprehensive reviews of 26 Database MCP servers — 12 category reviews plus 14 individual server deep-dives covering vector databases, AI memory, and database platforms. 100+ servers evaluated across the full data layer."
+og_description: "26 Database MCP server reviews covering PostgreSQL, MongoDB, Redis, MySQL, SQLite, Supabase, Neon, Turso, Prisma, vector databases, AI memory, graph, time-series, and more. 100+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **19 Database MCP servers** — 12 category-level reviews plus 7 individual server deep-dives — evaluating over **100 individual servers** across the entire data layer. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **26 Database MCP servers** — 12 category-level reviews plus 14 individual server deep-dives — evaluating over **100 individual servers** across the entire data layer. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 The database category spans everything from traditional relational databases to specialized engines for vectors, graphs, and time-series data — plus cross-database administration tools.
 
@@ -71,6 +71,20 @@ Individual server reviews covering persistent memory and knowledge graph solutio
 | [The Mem0 MCP Server](/reviews/mem0-mcp-server/) | 4/5 | 9 tools, semantic search, automatic extraction, graph memory option, cloud + self-hosted (OpenMemory) |
 | [The Memory MCP Server](/reviews/memory-mcp-server/) | 3.5/5 | Anthropic's official knowledge graph memory, 9 tools, JSONL storage, zero dependencies |
 | [Zep's Graphiti MCP Server](/reviews/zep-graphiti-mcp-server/) | 4/5 | Temporal knowledge graphs, 9 tools, multi-database (FalkorDB/Neo4j/Kuzu/Neptune), 24.1K stars |
+
+## Individual Database Platform Reviews
+
+Deep-dive reviews of standalone database platforms and data access tools — each offering a unique approach to AI-native database management.
+
+| Review | Rating | Highlights |
+|--------|--------|------------|
+| [The Supabase MCP Server](/reviews/supabase-mcp-server/) | 4/5 | 2.5K stars, 8 tool groups (database, auth, storage, edge functions, branching), OAuth 2.1, widest scope of any database-adjacent MCP server |
+| [The Neon MCP Server](/reviews/neon-mcp-server/) | 4/5 | 565 stars, 20 tools, branch-based migrations, OAuth 2.0, first cloud-native database MCP server |
+| [The Prisma MCP Server](/reviews/prisma-mcp-server/) | 4/5 | 17 tools across dual modes (7 local + 10 remote), built into Prisma CLI since v6.6.0, Apache 2.0 |
+| [The Anyquery MCP Server](/reviews/anyquery-mcp-server/) | 4/5 | 1,600 stars, 54 plugins, 13 database connectors, SQL over 40+ apps/files/databases, AGPLv3 |
+| [The Turso MCP Server](/reviews/turso-mcp-server/) | 3.5/5 | 17,900 stars, 9 tools built into database CLI, one-flag setup (--mcp), SQLite-compatible with replication |
+| [The MindsDB MCP Server](/reviews/mindsdb-mcp-server/) | 3.5/5 | 38,800 stars, 200+ data source connectors, federated queries, knowledge bases for RAG |
+| [The GreptimeDB MCP Server](/reviews/greptimedb-mcp-server/) | 3.5/5 | 26 stars, 10 tools, unified observability (metrics/logs/traces), SQL + PromQL, read-only enforcement |
 
 ## Early Single-Server Reviews
 

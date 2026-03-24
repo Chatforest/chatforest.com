@@ -8,6 +8,8 @@ card_description: "GreptimeDB's MCP server gives AI agents structured access to 
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** Official GreptimeDB MCP server, 26 GitHub stars, 10 tools, SQL + TQL (PromQL-compatible) queries, pipeline management, read-only enforcement with data masking, 7 prompt templates, stdio/SSE/streamable-http transport, MIT license
 
 GreptimeDB has shipped an [MCP server](https://github.com/GreptimeTeam/greptimedb-mcp-server) that gives AI agents structured access to observability data — metrics, logs, and traces — through a single database. In a world where observability stacks typically involve separate tools for each signal type, GreptimeDB's unified approach means one MCP connection covers what would otherwise require three or more.

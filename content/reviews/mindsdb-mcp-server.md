@@ -8,6 +8,8 @@ card_description: "Federated query engine as MCP server. Connects AI agents to 2
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 38,800 stars, 6,200 forks, Elastic License 2.0 (integrations MIT), v26.0.1 (March 2026), Python, SSE transport, 6+ MCP tools, 200+ data source connectors, Docker deployment.
 
 MindsDB's pitch is ambitious: **one MCP server to replace dozens of individual data connectors**. Instead of wiring up separate MCP servers for your PostgreSQL database, your Slack workspace, your Gmail inbox, and your Snowflake warehouse, MindsDB federates them all behind a single query interface. Your AI agent connects to one MCP endpoint and gets access to everything.

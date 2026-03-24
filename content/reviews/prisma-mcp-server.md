@@ -8,6 +8,8 @@ card_description: "Official first-party dual-mode MCP server from Prisma. Local 
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** [GitHub](https://github.com/prisma/mcp) — 39 stars, TypeScript, Apache 2.0 license, 28 commits. Local: 7 tools, stdio transport, CLI-integrated. Remote: 10 tools, HTTP transport, OAuth auth. Official first-party from [Prisma](https://www.prisma.io/).
 
 The Prisma MCP server is the **official first-party MCP integration** for [Prisma](https://www.prisma.io/), the most downloaded ORM for Node.js and TypeScript with ~7.8 million weekly npm downloads. Unlike most MCP servers that ship as a single package, Prisma takes a **dual-mode approach**: a local server for development workflows and a remote server for cloud infrastructure management.

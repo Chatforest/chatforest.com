@@ -8,6 +8,8 @@ card_description: "Four tools covering search, extract, crawl, and map — plus 
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
+
 **At a glance:** 1,500+ stars · 201 forks · 199 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month
 
 Most search MCP servers do one thing: search. You send a query, you get links back. Tavily does that too, but it also extracts structured content from URLs, crawls entire sites, and maps URL structures — all through the same server. It's less "search tool" and more "web intelligence platform."

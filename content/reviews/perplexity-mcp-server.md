@@ -8,6 +8,8 @@ card_description: "Four tools that return synthesized answers instead of links �
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
+
 **At a glance:** 2,000+ stars · 280+ forks · 124 commits · v0.8.4 · 0 open issues · MIT license · TypeScript
 
 Every other search MCP server returns links. Perplexity returns answers.

@@ -8,6 +8,8 @@ card_description: "Enterprise web data platform for AI agents. 7 MCP tools cover
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
+
 **At a glance:** Closed-source (hosted only), no public GitHub repo, 7 tools, SSE transport, free trial (5,000 pages), pay-as-you-go from $1/1,000 pages, managed plans from $2,500/month. $47M Series B (February 2026).
 
 Nimble (formerly Nimbleway) is an enterprise web data platform that raised [$47 million in Series B funding](https://techcrunch.com/2026/02/24/nimble-way-raises-47m-to-give-ai-agents-better-cleaner-data/) in February 2026 to build AI agent infrastructure. Their MCP server connects to the same proxy and scraping backend used by enterprise customers, wrapping it in a standard MCP interface so agents can pull structured web data in real time.

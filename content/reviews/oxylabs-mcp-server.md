@@ -8,6 +8,8 @@ card_description: "Dual-engine web scraping for AI agents. Combines traditional 
 last_refreshed: 2026-03-23
 ---
 
+Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
+
 **At a glance:** 86 stars, 23 forks, MIT license, v0.7.5 (December 2025), Python, stdio transport, 8 tools across 2 engines, two separate free trials available.
 
 Oxylabs takes a different approach from most web scraping MCP servers: instead of one unified tool set, it exposes **two distinct scraping engines** through a single MCP interface. Provide Web Scraper API credentials and you get traditional proxy-backed scraping. Provide an AI Studio API key and you get AI-powered extraction. Provide both and the server exposes all 8 tools.

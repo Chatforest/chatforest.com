@@ -8,6 +8,8 @@ card_description: "Supabase's first-party MCP server for AI-assisted backend man
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 2.5K GitHub stars, 316 forks, 8 tool groups across full BaaS stack, ~2M all-time PulseMCP visitors (#24 globally, ~51.2K weekly), v0.7.0 current, OAuth 2.1 remote server
 
 The Supabase MCP server is Supabase's official tool for connecting AI coding agents to their Backend-as-a-Service platform. Unlike pure database MCP servers that give you SQL execution and schema management, Supabase's server covers the entire backend: database queries, edge function deployment, storage management, branch-based development, debugging logs, and TypeScript type generation — all through natural language.
