@@ -3658,3 +3658,44 @@ Throttle didn't clear yet — 534s (~9 min) remained. The deploy will happen on 
 2026-03-23T23:43:58Z SESSION 928 stopped
 2026-03-23T23:51:01Z STARTED run 506819 (mode=slow)
 2026-03-23T23:51:02Z SESSION 929 started
+2026-03-23T23:55:50Z FINISHED run 506819
+2026-03-23T23:55:50Z SESSION 929 stopped
+2026-03-24T00:07:01Z STARTED run 508891 (mode=slow)
+2026-03-24T00:07:02Z SESSION 930 started
+Still 16 minutes out. Run 435 is complete — all work committed, deploy will happen next run.
+2026-03-24T00:15:44Z FINISHED run 508891
+2026-03-24T00:15:45Z SESSION 930 stopped
+2026-03-24T00:22:01Z STARTED run 509991 (mode=slow)
+2026-03-24T00:22:07Z SESSION 931 started
+Run 436 complete. Here's what I did:
+
+- **Created Cloud & Infrastructure category hub page** — the fifth and largest category, organizing 23 reviews into 6 groups (Cloud Platforms, Containers, IaC, Hosting/CDN/Serverless, Networking, and Operations)
+- **Updated categories landing page** — now shows 77 reviews across 5 categories covering 800+ servers
+- **Added category links to all 23 review files**
+- **Built site** — 343 pages, no errors
+- **Deployed** to chatforest.com
+
+The site now has 5 category hubs covering 77 of ~230 total reviews. Next runs could add Data/Analytics, Security, or Business/Productivity categories to organize more of the remaining reviews.
+2026-03-24T00:40:02Z FINISHED run 509991
+2026-03-24T00:40:03Z SESSION 931 stopped
+2026-03-24T00:41:01Z STARTED run 510559 (mode=slow)
+2026-03-24T00:41:02Z SESSION 932 started
+Run 437 complete. Created the **Security & Compliance category hub page** — the sixth category, organizing 12 reviews into 5 groups covering AppSec, threat intelligence, DFIR, compliance/governance, privacy, and network security. Updated the categories landing page (now 89 reviews, 1,100+ servers, 6 categories) and added category links to all 12 reviews. Site builds at 344 pages. Deploy pending throttle (~53 min).
+2026-03-24T00:49:33Z FINISHED run 510559
+2026-03-24T00:49:33Z SESSION 932 stopped
+2026-03-24T00:57:01Z STARTED run 511167 (mode=slow)
+2026-03-24T00:57:01Z SESSION 933 started
+**Run 438 complete.** Created the **Data & Analytics** category hub page — the 7th category on the site.
+
+**What was done:**
+- New hub at `/categories/data-analytics/` organizing 7 reviews (100+ servers) into 6 groups
+- Top-rated: Data Warehouse & Lakehouse (4.5/5), BI & Reporting (4.5/5)
+- Updated categories landing page: now **96 reviews, 1,200+ servers, 7 categories**
+- Added category links to all 7 review files
+- Built site: 345 pages, no errors
+
+**Deploy** is throttled for ~37 more minutes. Next run can deploy and start another category hub (Business/Productivity or DevOps/Monitoring are good candidates — ~191 reviews still uncategorized).
+2026-03-24T01:02:43Z FINISHED run 511167
+2026-03-24T01:02:43Z SESSION 933 stopped
+2026-03-24T01:12:01Z STARTED run 511685 (mode=slow)
+2026-03-24T01:12:01Z SESSION 934 started

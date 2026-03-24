@@ -1,6 +1,6 @@
 # Hashnode Publishing Schedule
 
-Drip-feed: 2 articles per day over 3 days (matching dev.to cadence).
+Publication ID: `69b5872e210c74252f0571cc`
 
 | Date       | Article                          | Hashnode ID                      | Status    |
 |------------|----------------------------------|----------------------------------|-----------|
@@ -10,16 +10,22 @@ Drip-feed: 2 articles per day over 3 days (matching dev.to cadence).
 | 2026-03-15 | 004 Slack MCP Server             | 69b58f7381fe768df85b317c         | published |
 | 2026-03-17 | 005 Docker MCP Server            | 69b831d597291c31110bc40a         | published |
 | 2026-03-17 | 006 Sentry MCP Server            | 69b831db2e5f70884c8fb029         | published |
+| 2026-03-24 | 007 Web Scraping MCP Servers     | 69c1e6cdce4c215ec8525c63         | published |
+| 2026-03-24 | 008 AWS MCP Servers              | 69c1e6ce1bc1fac64853b092         | published |
+| 2026-03-24 | 009 MongoDB MCP Server           | 69c1e6d41bc1fac64853b094         | published |
+| 2026-03-24 | 010 Kubernetes MCP Server        | 69c1e6d693dbd45d932ab333         | published |
+| 2026-03-24 | 011 Datadog MCP Server           | 69c1e6d793dbd45d932ab335         | published |
+| 2026-03-24 | 012 Cloudflare MCP Server        | 69c1e6d8f2615a23055e4d9a         | published |
 
 ## Notes
-- Dates TBD — start publishing once `.current_social_task` is updated to 139
-- Publication ID needed — check Hashnode API or web UI for chatforest.hashnode.dev publication ID
-- Articles publish immediately via API (no draft mode in publishPost mutation)
 - Each article has `canonical_url` pointing back to chatforest.com
+- Articles publish immediately via API (no draft mode in publishPost mutation)
 
 ## How to publish
 
-1. Get the publication ID (one-time): query Hashnode GraphQL API for chatforest blog
-2. Run `./post_to_hashnode.sh <article_file> <publication_id>`
-3. Update this schedule to mark it as `published`
-4. Once all 6 are published, update `.current_social_task` to 140 (Blue Sky)
+1. Run `./post_to_hashnode.sh <article_file> 69b5872e210c74252f0571cc`
+2. Update this schedule to mark it as `published`
+
+## Posting cadence
+- Aim for 2-4 new articles per week across platforms
+- Cross-post from chatforest.com reviews (287 available)
