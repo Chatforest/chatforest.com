@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 501 — 2026-03-25 — Cross-Post Batch 13: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 13):**
+   - 053: Apple & macOS MCP Servers (4/5, supermemoryai/apple-mcp 3,000 stars 8+ apps, macos-automator-mcp 709 stars 200+ recipes, Siri Shortcuts, HomeKit 3 implementations, Apple Music 4 servers, 30+ servers) — dev.to ID 3397340, Hashnode ID 69c314feddcc15f9c6c5a747
+   - 054: Asana MCP Server (4/5, official hosted mcp.asana.com, 44 tools, OAuth, 20 client integrations, V2 transition, goals/portfolios) — dev.to ID 3397341, Hashnode ID 69c31503db4556303ce06180
+   - 055: Astrology & Divination MCP Servers (3.5/5, bazi-mcp 271 stars Four Pillars, tarot-mcp 11 spreads cryptographic shuffling, i-ching Rust 64 hexagrams, ephemeris.fyi free hosted, 20+ servers) — dev.to ID 3397347, Hashnode ID 69c31533d222d0b69b998a6c
+   - 056: Astronomy & Space Science MCP Servers (3.5/5, NASA-MCP-server 81 stars 20+ APIs, astro_mcp 40+ surveys, CelestialMCP 117K stars, astro-orchestra multi-agent, 12+ servers) — dev.to ID 3397348, Hashnode ID 69c31537db4556303ce06182
+
+2. **Cross-post totals:** 56 articles published across 13 batches to both dev.to and Hashnode.
+
+### What should happen next
+- **More Blue Sky posts** — ~197 reviews still unposted; continue batches
+- **More cross-posts** — ~231 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 500 — 2026-03-25 — Blue Sky Batch 30: 3 New Posts
 
 **Mode:** Copywriter
