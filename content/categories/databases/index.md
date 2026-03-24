@@ -1,12 +1,12 @@
 ---
-title: "Database MCP Servers — 12 Reviews Covering Relational, NoSQL, Vector, Graph, Time-Series, and More"
+title: "Database MCP Servers — 19 Reviews Covering Relational, NoSQL, Vector, Graph, Time-Series, Memory, and More"
 date: 2026-03-24T21:00:00+09:00
-description: "Comprehensive reviews of 12 Database MCP server categories — from PostgreSQL to vector databases, time-series to graph databases. 100+ servers evaluated across the full data layer."
-og_description: "12 Database MCP server reviews covering PostgreSQL, MongoDB, Redis, MySQL, SQLite, vector, graph, time-series, and database administration. 100+ servers evaluated."
+description: "Comprehensive reviews of 19 Database MCP servers — 12 category reviews plus 7 individual server deep-dives covering vector databases and AI memory. 100+ servers evaluated across the full data layer."
+og_description: "19 Database MCP server reviews covering PostgreSQL, MongoDB, Redis, MySQL, SQLite, vector databases, AI memory, graph, time-series, and database administration. 100+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **12 categories** of Database MCP servers, evaluating over **100 individual servers** across the entire data layer. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **19 Database MCP servers** — 12 category-level reviews plus 7 individual server deep-dives — evaluating over **100 individual servers** across the entire data layer. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 The database category spans everything from traditional relational databases to specialized engines for vectors, graphs, and time-series data — plus cross-database administration tools.
 
@@ -50,6 +50,27 @@ Cross-database administration and schema management.
 |--------|--------|-------------|
 | [Database Administration](/reviews/database-admin-mcp-servers/) | 4/5 | Postgres MCP Pro (2.3k stars), MongoDB official (959 stars), mcp-server-mysql (1.3k stars) |
 | [Database Migration](/reviews/database-migration-mcp-servers/) | 2.5/5 | Prisma MCP (official), Flyway (community), Liquibase (community) |
+
+## Individual Vector Database Server Reviews
+
+Deep-dive reviews of the major vector database MCP servers covered in our [Vector Database & Embedding](/reviews/vector-database-embedding-mcp-servers/) category review.
+
+| Review | Rating | Highlights |
+|--------|--------|------------|
+| [The Chroma MCP Server](/reviews/chroma-mcp-server/) | 3.5/5 | 13 tools, four deployment modes (ephemeral/persistent/HTTP/cloud), collection forking, six embedding providers |
+| [The Milvus MCP Server](/reviews/milvus-mcp-server/) | 3.5/5 | 12 tools, five search modes including native hybrid search, SSE transport, memory management controls |
+| [The Pinecone MCP Server](/reviews/pinecone-mcp-server/) | 3/5 | 9 tools, cascading cross-index search, built-in reranking, cloud-only |
+| [The Qdrant MCP Server](/reviews/qdrant-mcp-server/) | 3/5 | 2 tools (store/find), stdio + SSE + Streamable HTTP transport, 1,300 stars, extensible class architecture |
+
+## AI Memory & Knowledge Graph Server Reviews
+
+Individual server reviews covering persistent memory and knowledge graph solutions for AI agents.
+
+| Review | Rating | Highlights |
+|--------|--------|------------|
+| [The Mem0 MCP Server](/reviews/mem0-mcp-server/) | 4/5 | 9 tools, semantic search, automatic extraction, graph memory option, cloud + self-hosted (OpenMemory) |
+| [The Memory MCP Server](/reviews/memory-mcp-server/) | 3.5/5 | Anthropic's official knowledge graph memory, 9 tools, JSONL storage, zero dependencies |
+| [Zep's Graphiti MCP Server](/reviews/zep-graphiti-mcp-server/) | 4/5 | Temporal knowledge graphs, 9 tools, multi-database (FalkorDB/Neo4j/Kuzu/Neptune), 24.1K stars |
 
 ## Early Single-Server Reviews
 

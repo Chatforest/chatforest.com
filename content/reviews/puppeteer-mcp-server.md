@@ -13,7 +13,7 @@ last_refreshed: 2026-03-14
 
 Most MCP servers connect agents to APIs — structured data in, structured data out. The Puppeteer MCP server is different. It gives an AI agent control of a real Chromium browser. Navigate to a URL, click buttons, fill forms, take screenshots, run JavaScript. The agent sees and interacts with the web the way a human does.
 
-This was one of the original reference servers from the `modelcontextprotocol/servers` repository, shipped in November 2024. As of May 2025, it has been **archived** — moved to `modelcontextprotocol/servers-archived` and marked as deprecated on npm. It still works and still gets ~20K weekly downloads, but it is no longer maintained. Here's the full picture.
+This was one of the original reference servers from the `modelcontextprotocol/servers` repository, shipped in November 2024. As of May 2025, it has been **archived** — moved to `modelcontextprotocol/servers-archived` and marked as deprecated on npm. It still works and still gets ~20K weekly downloads, but it is no longer maintained. Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Here's the full picture.
 
 ## What's New (March 2026 Update)
 

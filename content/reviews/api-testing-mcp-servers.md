@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 API testing is one of the most natural fits for MCP — AI agents that can send requests, inspect responses, validate contracts, and explore API documentation without leaving the conversation. API testing MCP servers let agents send HTTP requests, execute GraphQL queries, import and explore OpenAPI/Swagger specifications, run load tests, and even bridge gRPC services into the MCP ecosystem.
 
-The headline finding: **this category has strong entries at every layer of the stack**. Postman's official MCP server brings its full platform (100+ tools, remote hosting, OAuth). Apollo MCP Server is the clear GraphQL leader (272 stars, Rust, operation-to-tool conversion). For lightweight REST testing without a platform dependency, cocaxcode/api-testing-mcp packs 20 tools — including load testing, mock data generation, and OpenAPI import — into a zero-cloud-dependency package. The OpenAPI-to-MCP converter space is crowded but useful, with awslabs leading on quality and Vizioz/Swagger-MCP on code generation.
+Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. The headline finding: **this category has strong entries at every layer of the stack**. Postman's official MCP server brings its full platform (100+ tools, remote hosting, OAuth). Apollo MCP Server is the clear GraphQL leader (272 stars, Rust, operation-to-tool conversion). For lightweight REST testing without a platform dependency, cocaxcode/api-testing-mcp packs 20 tools — including load testing, mock data generation, and OpenAPI import — into a zero-cloud-dependency package. The OpenAPI-to-MCP converter space is crowded but useful, with awslabs leading on quality and Vizioz/Swagger-MCP on code generation.
 
 ## REST API Testing
 

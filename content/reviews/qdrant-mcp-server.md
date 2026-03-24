@@ -8,6 +8,8 @@ card_description: "Qdrant's first-party MCP server for AI-assisted semantic memo
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 1,300 GitHub stars, 242 forks, 73 commits, v0.8.1, last release Dec 10, 2025, ~20.7K PyPI downloads/week, PulseMCP 326K all-time visitors (#104 globally, ~18.1K weekly, #90 this week). Apache-2.0.
 
 The Qdrant MCP server is the official tool for connecting AI coding agents to Qdrant, the open-source vector search engine built for production-scale similarity search. Instead of writing Python scripts to manage embeddings and run queries, your agent can store and retrieve information semantically — all through natural language.

@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Performance and load testing is a natural fit for MCP — AI agents that can write test scripts, execute load tests, analyze results, detect bottlenecks, and recommend optimizations without leaving the conversation. Performance MCP servers span three areas: **load testing frameworks** (k6, JMeter, Locust, Gatling, Artillery), **web performance auditing** (Lighthouse, PageSpeed Insights), and **MCP server benchmarking** (tools that load-test MCP servers themselves).
 
-The headline finding: **the major load testing frameworks all have MCP server implementations**, but maturity varies widely. Grafana's official mcp-k6 is the most polished with script validation, guided generation, and documentation browsing. JMeter MCP Server (61 stars) brings analysis and visualization. The web performance auditing space is well-served with multiple Lighthouse and PageSpeed Insights wrappers. The most interesting niche is MCP-server-testing-MCP-servers — Grafana's xk6-mcp extension lets k6 load-test MCP servers directly.
+Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. The headline finding: **the major load testing frameworks all have MCP server implementations**, but maturity varies widely. Grafana's official mcp-k6 is the most polished with script validation, guided generation, and documentation browsing. JMeter MCP Server (61 stars) brings analysis and visualization. The web performance auditing space is well-served with multiple Lighthouse and PageSpeed Insights wrappers. The most interesting niche is MCP-server-testing-MCP-servers — Grafana's xk6-mcp extension lets k6 load-test MCP servers directly.
 
 ## Load Testing Frameworks
 

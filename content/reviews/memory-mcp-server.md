@@ -8,6 +8,8 @@ card_description: "Anthropic's knowledge graph memory server for persistent agen
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 81,600+ GitHub stars (monorepo), ~45,000 weekly npm downloads, v2026.1.26 (last release January 2026), 9 tools, actively maintained, ~61.2K weekly PulseMCP visitors (#21 globally, ~2M all-time)
 
 The Memory MCP server (`@modelcontextprotocol/server-memory`) is Anthropic's official solution for giving AI agents persistent memory across conversations. It maintains a local knowledge graph — entities, relations, and observations stored as JSONL — that agents can read and update over time. The idea is simple: your agent remembers who you are, what you're working on, and what you've told it before.

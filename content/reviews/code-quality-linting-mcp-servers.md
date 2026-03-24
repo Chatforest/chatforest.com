@@ -12,7 +12,7 @@ Code quality tools are among the most-used developer utilities — ESLint, Prett
 
 This review covers **linters, formatters, and static analysis tools** available as MCP servers. For security-specific scanning, see our [Code Security review](/reviews/code-security-mcp-servers/). For testing frameworks, see [Testing & QA](/reviews/testing-qa-mcp-servers/).
 
-The headline finding: **the most practical code quality MCP server isn't a linter at all** — it's mcp-language-server (1,500 stars), which bridges the Language Server Protocol to MCP, giving AI agents access to diagnostics, definitions, and references from any language server. Meanwhile, ESLint has built-in MCP support, SonarQube ships an official server, but most other tools (Prettier, Biome, Stylelint) still lack official MCP integration.
+Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. The headline finding: **the most practical code quality MCP server isn't a linter at all** — it's mcp-language-server (1,500 stars), which bridges the Language Server Protocol to MCP, giving AI agents access to diagnostics, definitions, and references from any language server. Meanwhile, ESLint has built-in MCP support, SonarQube ships an official server, but most other tools (Prettier, Biome, Stylelint) still lack official MCP integration.
 
 ## Cross-Language
 

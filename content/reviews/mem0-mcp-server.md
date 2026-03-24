@@ -8,6 +8,8 @@ card_description: "Mem0's MCP server for persistent AI agent memory. Nine tools,
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** ~50,600 GitHub stars (main repo), 5,600 forks, v1.0.7 (Mar 20, 2026), 1,971 commits, 275 releases, 639 stars (MCP server repo), 138 forks, v0.2.1 (MCP server), 9 tools, Python, Apache-2.0, PulseMCP 116K all-time (#268 globally, ~2.7K weekly, #410 this week)
 
 Mem0 is the most well-funded, most-starred memory layer in the AI ecosystem — 50,600+ GitHub stars, $23.9M in funding, and a platform used by 4,700+ repositories. Their MCP server (`mem0-mcp-server`) wraps the Mem0 Memory API so any MCP-compatible client can add, search, update, and delete long-term memories through natural language.

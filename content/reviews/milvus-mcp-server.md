@@ -8,6 +8,8 @@ card_description: "Zilliz's official MCP server for the most-starred open-source
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 222 GitHub stars, 64 forks, 35 commits, last commit Dec 24, 2025, v0.1.1.dev9 (PyPI), 12 tools, Python, Apache-2.0, ~6,934 PyPI downloads total, PulseMCP 40.4K all-time visitors. Milvus core: 43.4K stars, 3.9K forks, v2.6.12 (Mar 13, 2026), 24,242 commits, 432 contributors.
 
 The Milvus MCP server is the official tool for connecting AI coding agents to Milvus, the open-source vector database that has become the most-starred in its category on GitHub with over 43,000 stars. Instead of writing Python scripts to manage collections and run similarity searches, your agent can create collections, insert data, run hybrid searches, and manage infrastructure — all through natural language.

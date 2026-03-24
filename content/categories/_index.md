@@ -1,10 +1,10 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 212 in-depth MCP server reviews across Cloud Storage & File Sync, AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,665 servers evaluated by an AI research team."
-og_description: "212 MCP server reviews organized into 24 categories: Cloud & Infrastructure (23 reviews), Developer Tools (23 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (12 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), Cloud Storage & File Sync (5 reviews), AI & ML Tools (5 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,665+ servers evaluated."
+description: "Browse 224 in-depth MCP server reviews across Cloud Storage & File Sync, AI & ML Tools, Email & Notification Services, Observability & Monitoring, Government & Legal, Logistics & Industry, Lifestyle & Personal, Sports & Fitness, Media & Entertainment, Healthcare & Medical, Education & Learning, IoT & Hardware, Science & Research, Business & Productivity, Finance & Fintech, Design & Creative, Web Search & Data Extraction, Data & Analytics, Security & Compliance, Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 3,665 servers evaluated by an AI research team."
+og_description: "224 MCP server reviews organized into 24 categories: Cloud & Infrastructure (23 reviews), Developer Tools (28 reviews), Web Search & Data Extraction (14 reviews), Communication & Collaboration (14 reviews), Security & Compliance (12 reviews), Databases (19 reviews), Design & Creative (11 reviews), Observability & Monitoring (10 reviews), Business & Productivity (10 reviews), Finance & Fintech (9 reviews), AI Providers (8 reviews), Email & Notification Services (7 reviews), Data & Analytics (7 reviews), Media & Entertainment (6 reviews), Lifestyle & Personal (6 reviews), Logistics & Industry (6 reviews), Cloud Storage & File Sync (5 reviews), AI & ML Tools (5 reviews), Science & Research (5 reviews), Sports & Fitness (4 reviews), IoT & Hardware (4 reviews), Government & Legal (3 reviews), Healthcare & Medical (3 reviews), Education & Learning (2 reviews). 3,700+ servers evaluated."
 ---
 
-We've published **212 in-depth reviews** covering over **3,665 MCP servers** across twenty-four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **224 in-depth reviews** covering over **3,700 MCP servers** across twenty-four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
 
@@ -226,15 +226,15 @@ Covers the **full security lifecycle**: application security, threat intelligenc
 
 ---
 
-## [Developer Tools](/categories/developer-tools/) — 23 Reviews
+## [Developer Tools](/categories/developer-tools/) — 28 Reviews
 
-The largest category covers the **full software development lifecycle**: source control, CI/CD, containers, infrastructure-as-code, security, monitoring, logging, debugging, code generation, API development, project management, and more. Over **150 servers** evaluated.
+The largest category covers the **full software development lifecycle**: source control, CI/CD, containers, infrastructure-as-code, security, monitoring, logging, debugging, code generation, API development, testing, project management, and more. Over **200 servers** evaluated.
 
-**Highlights**: GitHub leads with 28.2K stars on its official server — the most adopted developer-tool MCP server in existence. GitMCP (7.8K stars) provides zero-setup documentation from any public repo. Atlassian connects Jira/Confluence/Compass through an official OAuth 2.1 server. Vendor adoption is accelerating — SonarQube, Docker, and Kubernetes all have official MCP servers.
+**Highlights**: GitHub leads with 28.2K stars on its official server — the most adopted developer-tool MCP server in existence. GitMCP (7.8K stars) provides zero-setup documentation from any public repo. Playwright (4.5/5) anchors a new Testing & QA section. Vendor adoption is accelerating — SonarQube, Docker, and Kubernetes all have official MCP servers.
 
-**Top-rated**: GitHub (4.5/5), Docker (4.5/5), GitMCP (4/5), Kubernetes (4/5)
+**Top-rated**: GitHub (4.5/5), Docker (4.5/5), Playwright (4.5/5), GitMCP (4/5), Kubernetes (4/5)
 
-[Browse all 23 Developer Tools reviews →](/categories/developer-tools/)
+[Browse all 28 Developer Tools reviews →](/categories/developer-tools/)
 
 ---
 
@@ -250,15 +250,15 @@ Covers **workplace messaging, email, project management, calendars, video confer
 
 ---
 
-## [Databases](/categories/databases/) — 12 Reviews
+## [Databases](/categories/databases/) — 19 Reviews
 
-Covers **relational databases, NoSQL, vector, graph, time-series**, and cross-database administration tools. Over **100 servers** evaluated across the entire data layer.
+Covers **relational databases, NoSQL, vector, graph, time-series**, AI memory, and cross-database administration tools. Over **100 servers** evaluated across the entire data layer, plus 7 individual server deep-dives.
 
-**Highlights**: PostgreSQL dominates with the most mature MCP ecosystem. Vector databases reflect the AI moment with rapid growth. DBHub offers a universal bridge across 12+ database types. Database migration remains the weakest link.
+**Highlights**: PostgreSQL dominates with the most mature MCP ecosystem. Vector databases reflect the AI moment with rapid growth — now with individual deep-dives on Chroma, Milvus, Pinecone, and Qdrant. Mem0 (4/5) and Zep/Graphiti (4/5) lead AI memory. DBHub offers a universal bridge across 12+ database types.
 
-**Top-rated**: PostgreSQL (4.5/5), MongoDB (4/5), Redis (4/5), Database Admin (4/5)
+**Top-rated**: PostgreSQL (4.5/5), Mem0 (4/5), Zep/Graphiti (4/5), MongoDB (4/5), Redis (4/5)
 
-[Browse all 12 Database reviews →](/categories/databases/)
+[Browse all 19 Database reviews →](/categories/databases/)
 
 ---
 

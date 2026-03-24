@@ -8,6 +8,8 @@ card_description: "Pinecone's first-party Developer MCP server for AI-assisted v
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 59 GitHub stars, 21 forks, 106 commits, 7 contributors, v0.2.1 (Feb 5, 2026), last commit Mar 6, 3 open issues, 16 open PRs, ~3,115 npm downloads/week, PulseMCP 49K all-time visitors (#527 globally, ~3.9K weekly, #318 this week).
 
 The Pinecone MCP server is the official tool for connecting AI coding agents to Pinecone, the managed vector database that pioneered serverless vector search. Instead of writing API calls to manage indexes and query embeddings, your agent can create indexes, upsert records, search across multiple indexes simultaneously, and rerank results — all through natural language.

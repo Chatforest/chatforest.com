@@ -1,12 +1,12 @@
 ---
-title: "Developer Tools MCP Servers — 23 Reviews Covering the Full Development Lifecycle"
+title: "Developer Tools MCP Servers — 28 Reviews Covering the Full Development Lifecycle"
 date: 2026-03-24T20:00:00+09:00
-description: "Comprehensive reviews of 23 Developer Tools MCP server categories — from source control to debugging, CI/CD to code review, project management to documentation. 150+ servers evaluated across the full software development lifecycle."
-og_description: "23 Developer Tools MCP server reviews covering source control, CI/CD, containers, security, monitoring, code generation, project management, and more. 150+ servers evaluated."
+description: "Comprehensive reviews of 28 Developer Tools MCP server categories — from source control to debugging, CI/CD to code review, project management to documentation. 200+ servers evaluated across the full software development lifecycle."
+og_description: "28 Developer Tools MCP server reviews covering source control, CI/CD, containers, security, monitoring, code generation, project management, and more. 200+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **23 categories** of Developer Tools MCP servers, evaluating over **150 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **28 categories** of Developer Tools MCP servers, evaluating over **200 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 Every review includes a **cross-category comparison table** so you can see how maturity varies across the Developer Tools landscape at a glance.
 
@@ -55,6 +55,18 @@ Tools for writing better, safer code.
 | [Security Scanning](/reviews/security-scanning-mcp-servers/) | 3.5/5 | Snyk MCP (official), Semgrep MCP (community), Trivy (community) |
 | [Code Generation](/reviews/code-generation-mcp-servers/) | 3.5/5 | Cline (12.5k stars), aider (26k stars), Continue (24k stars) |
 | [API Development](/reviews/api-development-mcp-servers/) | 3.5/5 | openapi-mcp-generator (495 stars), Apollo GraphQL (275 stars), Postman (official) |
+| [Code Quality & Linting](/reviews/code-quality-linting-mcp-servers/) | 3.5/5 | mcp-language-server (1,500 stars, LSP bridge), SonarQube MCP (424 stars, official), Semgrep MCP (639 stars) |
+
+## Testing & QA
+
+Browser automation, API testing, performance testing, and quality assurance tooling.
+
+| Review | Rating | Key Servers |
+|--------|--------|-------------|
+| [Playwright MCP Server](/reviews/playwright-mcp-server/) | 4.5/5 | @playwright/mcp (29.3k stars, official, 25+ tools, accessibility tree targeting) |
+| [Puppeteer MCP Server](/reviews/puppeteer-mcp-server/) | 2.5/5 | @modelcontextprotocol/server-puppeteer (archived May 2025, 7 tools, deprecated) |
+| [API Testing](/reviews/api-testing-mcp-servers/) | 4.0/5 | Postman MCP (187 stars, 100+ tools), Apollo GraphQL (272 stars), blurrah/mcp-graphql (365 stars) |
+| [Performance & Load Testing](/reviews/performance-load-testing-mcp-servers/) | 3.5/5 | Grafana mcp-k6 (official), JMeter MCP (61 stars), Lighthouse MCP (13+ audit tools) |
 
 ## Observability & Performance
 
@@ -88,7 +100,7 @@ Atlassian's developer-facing tools — Jira, Confluence, Compass, and JSM — co
 
 ## Category Overview
 
-Across all 23 reviews, key themes emerge:
+Across all 28 reviews, key themes emerge:
 
 **Vendor commitment is accelerating.** GitHub, Docker, Hashicorp, Playwright, Apollo, Datadog, Sentry, SonarQube, and Postman all ship official MCP servers. This was not the case even six months ago.
 
@@ -98,7 +110,7 @@ Across all 23 reviews, key themes emerge:
 
 **Community fills vendor gaps.** Categories like Package Management, Database Migration, and Logging are almost entirely community-built, with no vendor backing.
 
-**The comparison tables tell the real story.** Every review includes a cross-category table showing maturity across all 23 Developer Tools categories. The gaps are as informative as the coverage.
+**The comparison tables tell the real story.** Every review includes a cross-category table showing maturity across all 28 Developer Tools categories. The gaps are as informative as the coverage.
 
 ---
 

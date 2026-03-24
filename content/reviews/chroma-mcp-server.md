@@ -8,6 +8,8 @@ card_description: "Chroma's first-party MCP server for AI-assisted vector databa
 last_refreshed: 2026-03-14
 ---
 
+Part of our **[Databases MCP category](/categories/databases/)**.
+
 **At a glance:** 515 GitHub stars · 102 forks · 13 tools · 11 open issues · v0.2.6 (last release Aug 2025, last commit Sep 2025) · ~32.4K weekly PyPI downloads · PulseMCP: 271K all-time visitors (#139 globally, ~25.4K weekly, #56 this week)
 
 The Chroma MCP server is the official tool for connecting AI coding agents to Chroma, the open-source vector database that powers RAG applications for millions of developers. Instead of writing Python scripts to manage embeddings and run similarity searches, your agent can create collections, add documents, query semantically, and manage embedding configurations — all through natural language.
