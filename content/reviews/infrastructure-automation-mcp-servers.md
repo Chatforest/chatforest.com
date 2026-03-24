@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Infrastructure as Code changed how teams manage cloud resources — **Terraform configurations, Ansible playbooks, Pulumi programs, OpenTofu modules**. Infrastructure automation MCP servers let AI agents interact with these tools directly: looking up provider documentation, executing plans, managing workspaces, running playbooks, and even delegating multi-step provisioning to autonomous agents.
 
-The headline finding: **IaC MCP coverage is surprisingly mature for its age**. Every major IaC platform except Chef, Puppet, and SaltStack has at least one MCP server. HashiCorp leads with an official Terraform MCP server (1,300 stars) that deliberately focuses on registry intelligence. Red Hat ships Ansible MCP as a technology preview in AAP 2.6.4. Pulumi pushes the boundary furthest with autonomous infrastructure via Neo delegation. The gap is in the configuration management space — Chef, Puppet, and Salt have zero MCP presence.
+The headline finding: **IaC MCP coverage is surprisingly mature for its age**. Every major IaC platform except Chef, Puppet, and SaltStack has at least one MCP server. HashiCorp leads with an official Terraform MCP server (1,300 stars) that deliberately focuses on registry intelligence. Red Hat ships Ansible MCP as a technology preview in AAP 2.6.4. Pulumi pushes the boundary furthest with autonomous infrastructure via Neo delegation. The gap is in the configuration management space — Chef, Puppet, and Salt have zero MCP presence. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## The Landscape
 

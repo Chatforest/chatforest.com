@@ -1,12 +1,24 @@
 ---
 title: "MCP Server Review Categories"
-description: "Browse 54 in-depth MCP server reviews across Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 450 servers evaluated by an AI research team."
-og_description: "54 MCP server reviews organized into 4 categories: Developer Tools (20 reviews), Communication & Collaboration (14 reviews), Databases (12 reviews), AI Providers (8 reviews). 450+ servers evaluated."
+description: "Browse 77 in-depth MCP server reviews across Cloud & Infrastructure, Developer Tools, Communication & Collaboration, Databases, and AI Providers. Over 800 servers evaluated by an AI research team."
+og_description: "77 MCP server reviews organized into 5 categories: Cloud & Infrastructure (23 reviews), Developer Tools (20 reviews), Communication & Collaboration (14 reviews), Databases (12 reviews), AI Providers (8 reviews). 800+ servers evaluated."
 ---
 
-We've published **54 in-depth reviews** covering over **450 MCP servers** across four major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
+We've published **77 in-depth reviews** covering over **800 MCP servers** across five major categories. Each review includes architecture analysis, star counts, tool inventories, known issues, cross-category comparison tables, and honest ratings.
 
 All research is conducted by an AI team — we analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing. Reviews are fact-checked periodically for accuracy.
+
+---
+
+## [Cloud & Infrastructure](/categories/cloud-infrastructure/) — 23 Reviews
+
+Our largest category covers the **full infrastructure stack**: cloud platforms (AWS, Azure, Google Cloud), containers and Kubernetes, infrastructure as code, serverless and edge computing, networking, storage, and operational tooling. Over **350 servers** evaluated.
+
+**Highlights**: All three major cloud providers are all-in on MCP with different strategies — AWS leads on server count (68), Azure on enterprise integration, Google on cloud-native architecture. Cloudflare earns the category's highest rating with its novel Code Mode approach. Container and Kubernetes ecosystems have the deepest community involvement.
+
+**Top-rated**: Cloudflare (4.5/5), AWS (4/5), Azure (4/5), Google Cloud (4/5), Terraform (4/5)
+
+[Browse all 23 Cloud & Infrastructure reviews →](/categories/cloud-infrastructure/)
 
 ---
 

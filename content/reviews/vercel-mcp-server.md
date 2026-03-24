@@ -8,7 +8,7 @@ card_description: "Vercel's first-party MCP server for AI-assisted deployment ma
 last_refreshed: 2026-03-14
 ---
 
-**At a glance:** Remote server at mcp.vercel.com, OAuth authentication, 13 tools, Streamable HTTP transport. 12 approved MCP clients (Claude, Cursor, VS Code Copilot, ChatGPT, Codex CLI, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, Gemini CLI). PulseMCP 169K all-time visitors (#198 globally, ~10.5K weekly, #145 this week). Public beta. Free.
+**At a glance:** Remote server at mcp.vercel.com, OAuth authentication, 13 tools, Streamable HTTP transport. 12 approved MCP clients (Claude, Cursor, VS Code Copilot, ChatGPT, Codex CLI, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, Gemini CLI). PulseMCP 169K all-time visitors (#198 globally, ~10.5K weekly, #145 this week). Public beta. Free. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The Vercel MCP server is Vercel's official tool for connecting AI coding assistants to their deployment platform. It launched in August 2025 as a hosted remote server at `mcp.vercel.com` — no npm package to install, no stdio process to manage. Point your MCP client at the URL, authenticate via OAuth, and you get access to your projects, deployments, build logs, runtime logs, and domains through natural language.
 

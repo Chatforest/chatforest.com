@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Secrets are the keys to everything — **API tokens, database passwords, TLS certificates, encryption keys**. MCP servers for secret management let AI agents store, retrieve, rotate, and audit credentials without developers copy-pasting sensitive values through chat windows or hardcoding them in config files.
 
-The headline finding: **this category is surprisingly mature**. HashiCorp has an official Vault MCP server with KV and PKI support. Bitwarden shipped an official MCP server with 30+ tools covering vault management and organization administration. Infisical and Doppler both have official servers. The major cloud providers cover their secret stores through broader platform MCP servers. And a new sub-category has emerged — **MCP credential security tools** that protect the secrets *used by* MCP servers themselves.
+The headline finding: **this category is surprisingly mature**. HashiCorp has an official Vault MCP server with KV and PKI support. Bitwarden shipped an official MCP server with 30+ tools covering vault management and organization administration. Infisical and Doppler both have official servers. The major cloud providers cover their secret stores through broader platform MCP servers. And a new sub-category has emerged — **MCP credential security tools** that protect the secrets *used by* MCP servers themselves. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## The Landscape
 

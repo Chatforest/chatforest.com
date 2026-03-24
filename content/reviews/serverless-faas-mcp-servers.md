@@ -12,7 +12,7 @@ Serverless and FaaS (Function-as-a-Service) MCP servers let AI assistants deploy
 
 This review covers the **serverless and FaaS** ecosystem — AWS Lambda tools, Cloudflare Workers integration, Azure Functions support, Google Cloud Run deployment, Vercel adapters, Firebase services, and serverless MCP frameworks. For related servers, see our [Cloud Platform review](/reviews/cloud-platform-mcp-servers/) and [Container/Docker/Kubernetes review](/reviews/container-docker-kubernetes-mcp-servers/).
 
-The headline findings: **AWS has the most comprehensive serverless MCP ecosystem** with 14+ official servers in its monorepo (8,500 stars). **Cloudflare leads in remote MCP hosting** with 16 specialized servers and a uniquely token-efficient API pattern covering 2,500+ endpoints through just two tools. **Every major cloud provider now has official MCP support** for their serverless platform.
+The headline findings: **AWS has the most comprehensive serverless MCP ecosystem** with 14+ official servers in its monorepo (8,500 stars). **Cloudflare leads in remote MCP hosting** with 16 specialized servers and a uniquely token-efficient API pattern covering 2,500+ endpoints through just two tools. **Every major cloud provider now has official MCP support** for their serverless platform. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## AWS Lambda & Serverless
 

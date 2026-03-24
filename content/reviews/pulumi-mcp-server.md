@@ -10,7 +10,7 @@ last_refreshed: 2026-03-14
 
 Where the [Terraform MCP server](/reviews/terraform-mcp-server/) deliberately stops at documentation, Pulumi's MCP server keeps going.
 
-**At a glance:** 188 GitHub stars (up from 66), 36 forks, v1.0.0, last push Mar 17 2026, ~4,100 npm downloads/week, PulseMCP 54.2K all-time visitors (#485 globally, ~3.8K weekly, #324 this week). Supported clients: Cursor, Claude Code, Claude Desktop, Windsurf, Kiro. Listed on AWS Marketplace (free).
+**At a glance:** 188 GitHub stars (up from 66), 36 forks, v1.0.0, last push Mar 17 2026, ~4,100 npm downloads/week, PulseMCP 54.2K all-time visitors (#485 globally, ~3.8K weekly, #324 this week). Supported clients: Cursor, Claude Code, Claude Desktop, Windsurf, Kiro. Listed on AWS Marketplace (free). Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The [Pulumi MCP server](https://github.com/pulumi/mcp-server) connects AI coding assistants to Pulumi's full ecosystem — the registry for resource schemas and code examples, the CLI for previewing and deploying infrastructure, Pulumi Cloud for searching deployed resources across stacks, and Pulumi Neo for delegating complex multi-step infrastructure tasks to an autonomous AI agent. It doesn't just tell you what an S3 bucket looks like — it can create one.
 

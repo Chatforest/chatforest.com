@@ -10,7 +10,7 @@ last_refreshed: 2026-03-14
 
 Most Kubernetes MCP servers shell out to kubectl. This one doesn't.
 
-**At a glance:** ~1,300 GitHub stars, 292 forks, v0.0.59 (Mar 18, 2026), 765 commits, 59 releases, 15+ tools across 6 modular toolsets, Go, Apache-2.0, ~2,330 weekly npm downloads, PulseMCP 236K all-time (#158 globally, ~6.8K weekly, #216 this week).
+**At a glance:** ~1,300 GitHub stars, 292 forks, v0.0.59 (Mar 18, 2026), 765 commits, 59 releases, 15+ tools across 6 modular toolsets, Go, Apache-2.0, ~2,330 weekly npm downloads, PulseMCP 236K all-time (#158 globally, ~6.8K weekly, #216 this week). Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The [Kubernetes MCP server](https://github.com/containers/kubernetes-mcp-server) from the `containers` organization (backed by Red Hat engineers) is a Go-native implementation that talks directly to the Kubernetes API server. No kubectl binary. No Helm CLI. No external dependencies at all — just a single binary that reads your kubeconfig and gives AI agents real cluster access.
 

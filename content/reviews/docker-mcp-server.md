@@ -10,7 +10,7 @@ last_refreshed: 2026-03-14
 
 Nineteen tools. One Docker socket. And suddenly your AI agent can spin up containers, build images, manage networks, and handle volumes — all through natural language.
 
-**At a glance:** ~690 stars, 97 forks, 53 commits, 10 open issues, 10 open PRs, PyPI v0.2.1 (June 2025), GPL-3.0
+**At a glance:** ~690 stars, 97 forks, 53 commits, 10 open issues, 10 open PRs, PyPI v0.2.1 (June 2025), GPL-3.0. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The [Docker MCP server](https://github.com/ckreiling/mcp-server-docker) by Christian Kreiling is the most comprehensive community-built MCP server for Docker operations. With 690 stars and 97 forks, it's become the go-to choice for developers who want their AI agents to manage Docker environments directly. It's not official from Docker, Inc. — but it's the one people actually use for container management.
 

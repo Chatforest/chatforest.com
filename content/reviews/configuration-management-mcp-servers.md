@@ -12,7 +12,7 @@ Configuration management MCP servers let AI assistants manage infrastructure con
 
 This review covers the **configuration management** ecosystem — Ansible automation, NixOS package and option queries, SaltStack minion management, Consul service discovery, and multi-tool infrastructure operators. For related servers, see our [Infrastructure Automation review](/reviews/infrastructure-automation-mcp-servers/) and [Container/Docker/Kubernetes review](/reviews/container-docker-kubernetes-mcp-servers/).
 
-The headline findings: **Ansible dominates with six dedicated servers** including an official Red Hat AAP implementation. **NixOS has the most polished single server** (mcp-nixos, 476 stars) with remarkable token efficiency. **Puppet and Chef have zero MCP presence** — a significant gap given their enterprise adoption.
+The headline findings: **Ansible dominates with six dedicated servers** including an official Red Hat AAP implementation. **NixOS has the most polished single server** (mcp-nixos, 476 stars) with remarkable token efficiency. **Puppet and Chef have zero MCP presence** — a significant gap given their enterprise adoption. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## Ansible
 

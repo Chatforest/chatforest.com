@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 DNS and domain management is one of those tasks that sounds simple — point a name at an IP address — until you're juggling DNS records across three registrars, debugging propagation delays, and trying to remember which provider holds which domain. DNS and domain management MCP servers let AI agents manage DNS records, register domains, perform WHOIS lookups, check availability, and run diagnostics across providers.
 
-The headline finding: **this is the most fragmented MCP category we've reviewed**. There's no single dominant server. Instead, you get 30+ servers scattered across registrars, cloud providers, and utility tools — most with single-digit GitHub stars. The standouts are Spaceship MCP (47 tools, 13 record types), joachimBrindeau's Dynadot MCP (106 API actions with claimed 100% test coverage), and the multi-registrar domain-suite-mcp that unifies four providers in one server. For DNS diagnostics, cenemil/dns-mcp-server and jsdelivr's Globalping MCP offer complementary local and global perspectives.
+The headline finding: **this is the most fragmented MCP category we've reviewed**. There's no single dominant server. Instead, you get 30+ servers scattered across registrars, cloud providers, and utility tools — most with single-digit GitHub stars. The standouts are Spaceship MCP (47 tools, 13 record types), joachimBrindeau's Dynadot MCP (106 API actions with claimed 100% test coverage), and the multi-registrar domain-suite-mcp that unifies four providers in one server. For DNS diagnostics, cenemil/dns-mcp-server and jsdelivr's Globalping MCP offer complementary local and global perspectives. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## The Landscape
 

@@ -10,7 +10,7 @@ last_refreshed: 2026-03-20
 
 Microsoft didn't build 66 separate MCP servers like AWS. They didn't build 18 managed endpoints like Google Cloud. They built *one server* — the Azure MCP Server — that covers 47+ Azure services through a single binary. Then they built it into Visual Studio 2026. Then they shipped a dozen more specialized servers for everything else: DevOps, Fabric, M365, Dataverse, and more.
 
-The [microsoft/mcp](https://github.com/microsoft/mcp) monorepo (2,800 stars, 429 forks) is the hub. But the strategy is unmistakably enterprise: Entra ID authentication, RBAC authorization, tool annotations for destructive operations, elicitation prompts for sensitive data. This is MCP designed for organizations, not hobbyists.
+The [microsoft/mcp](https://github.com/microsoft/mcp) monorepo (2,800 stars, 429 forks) is the hub. But the strategy is unmistakably enterprise: Entra ID authentication, RBAC authorization, tool annotations for destructive operations, elicitation prompts for sensitive data. This is MCP designed for organizations, not hobbyists. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## What It Is
 

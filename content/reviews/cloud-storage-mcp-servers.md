@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Cloud storage is table stakes for most AI workflows — agents need to read files, write results, manage data pipelines, and generate shareable links. Every major cloud provider now has some form of MCP server for their storage service, but the quality and completeness varies wildly.
 
-The surprise finding: AWS, the dominant cloud storage platform, doesn't have a general-purpose S3 MCP server. Their official server covers S3 Tables (Apache Iceberg structured data) but not standard S3 bucket/object operations. Meanwhile, MinIO — the self-hosted alternative — ships the most comprehensive storage MCP server in the entire category.
+The surprise finding: AWS, the dominant cloud storage platform, doesn't have a general-purpose S3 MCP server. Their official server covers S3 Tables (Apache Iceberg structured data) but not standard S3 bucket/object operations. Meanwhile, MinIO — the self-hosted alternative — ships the most comprehensive storage MCP server in the entire category. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## The Landscape
 

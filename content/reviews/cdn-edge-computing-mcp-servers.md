@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Content delivery networks are the invisible backbone of the modern web — **caching, routing, edge compute, security, and performance optimization**. CDN & edge computing MCP servers let AI agents manage these systems directly: purging caches, deploying edge workers, analyzing traffic patterns, configuring domains, and monitoring performance metrics.
 
-The headline finding: **CDN MCP coverage is vendor-driven and uneven**. Cloudflare dominates with multiple official servers totaling 3,500+ stars and a novel Code Mode architecture that maps 2,500 API endpoints into ~1,000 tokens. Fastly ships a polished official MCP server in Go with smart security design. Akamai has no official MCP server but community options reach impressive scale (191 tools). Smaller CDN providers (Bunny, KeyCDN, StackPath) have zero MCP presence. The pattern is clear: MCP adoption correlates directly with developer-platform ambitions.
+The headline finding: **CDN MCP coverage is vendor-driven and uneven**. Cloudflare dominates with multiple official servers totaling 3,500+ stars and a novel Code Mode architecture that maps 2,500 API endpoints into ~1,000 tokens. Fastly ships a polished official MCP server in Go with smart security design. Akamai has no official MCP server but community options reach impressive scale (191 tools). Smaller CDN providers (Bunny, KeyCDN, StackPath) have zero MCP presence. The pattern is clear: MCP adoption correlates directly with developer-platform ambitions. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## The Landscape
 

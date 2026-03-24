@@ -12,7 +12,7 @@ last_refreshed: 2026-03-23
 
 Docker is the **world's most popular containerization platform** — with **20M+ users**, **1M+ paid subscribers**, and ubiquitous adoption across development and production environments. The privately held company generates an estimated **$210M in annual revenue** with approximately **950 employees**. Docker is a **Gold member** of the [Agentic AI Foundation (AAIF)](https://aaif.io/), the Linux Foundation initiative that now governs the MCP specification. The company's MCP investment is strategic: by becoming the default runtime and distribution layer for MCP servers, Docker positions itself at the center of the agentic AI infrastructure stack.
 
-**Architecture note:** Docker's MCP story has two distinct dimensions: **(1) MCP for Docker** — servers that let AI agents manage containers and images, and **(2) Docker for MCP** — infrastructure that runs, secures, and distributes MCP servers. This is the **fourth review in our Developer Tools MCP category**.
+**Architecture note:** Docker's MCP story has two distinct dimensions: **(1) MCP for Docker** — servers that let AI agents manage containers and images, and **(2) Docker for MCP** — infrastructure that runs, secures, and distributes MCP servers. This is the **fourth review in our Developer Tools MCP category**. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## MCP for Docker — Container Management Servers
 

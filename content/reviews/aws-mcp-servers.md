@@ -12,7 +12,7 @@ Sixty-six MCP servers. One monorepo. And a managed remote endpoint in preview. A
 
 The [AWS MCP servers](https://github.com/awslabs/mcp) from awslabs represent the single largest investment in Model Context Protocol infrastructure by any cloud vendor. With 8,500 stars, 1,400 forks, 190+ releases, and servers spanning everything from S3 storage to genomics workflows, this is AWS betting that natural language will become a primary interface for cloud operations.
 
-No other MCP project comes close in scope. But scope and quality aren't the same thing.
+No other MCP project comes close in scope. But scope and quality aren't the same thing. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## What It Is
 

@@ -8,7 +8,7 @@ card_description: "Official first-party MCP server from Netlify for developers b
 last_refreshed: 2026-03-23
 ---
 
-**At a glance:** [GitHub](https://github.com/netlify/netlify-mcp) — 38 stars, 30 forks, 107 commits, TypeScript. Official first-party from [Netlify](https://www.netlify.com/). npm package: `@netlify/mcp` (v1.15.1). AI agents go from prompt to live site.
+**At a glance:** [GitHub](https://github.com/netlify/netlify-mcp) — 38 stars, 30 forks, 107 commits, TypeScript. Official first-party from [Netlify](https://www.netlify.com/). npm package: `@netlify/mcp` (v1.15.1). AI agents go from prompt to live site. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The Netlify MCP Server is the **official first-party MCP integration** for [Netlify's](https://www.netlify.com/) web development platform. It bridges AI coding agents directly to Netlify's API and CLI, enabling developers to create projects, deploy applications, manage infrastructure, and iterate — all through natural language prompts without leaving their editor.
 

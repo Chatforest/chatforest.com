@@ -12,7 +12,7 @@ Container, Docker, and Kubernetes MCP servers let AI assistants manage container
 
 This review covers the **container, Docker, and Kubernetes** ecosystem — Docker management tools, Kubernetes orchestrators, Docker's official MCP infrastructure, alternative runtimes, Portainer integration, and Helm chart tools. For related servers, see our [DevOps review](/reviews/devops-mcp-servers/) and [Cloud Platform review](/reviews/cloud-platform-mcp-servers/).
 
-The headline findings: **Three Kubernetes servers have 1,000+ stars** — containers/kubernetes-mcp-server, Flux159/mcp-server-kubernetes, and docker/mcp-gateway. **Docker is investing heavily in MCP** with three official projects (gateway, hub-mcp, registry). **ckreiling/mcp-server-docker (687 stars) leads Docker management** with a unique plan+apply compose workflow.
+The headline findings: **Three Kubernetes servers have 1,000+ stars** — containers/kubernetes-mcp-server, Flux159/mcp-server-kubernetes, and docker/mcp-gateway. **Docker is investing heavily in MCP** with three official projects (gateway, hub-mcp, registry). **ckreiling/mcp-server-docker (687 stars) leads Docker management** with a unique plan+apply compose workflow. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## Docker Management
 
