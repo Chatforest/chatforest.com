@@ -668,6 +668,35 @@ https://chatforest.com/reviews/blockchain-web3-mcp-servers/
 **Description:** Blockchain MCP: EVM MCP Server (362 stars, 60+ networks), GOAT (398 stars, 200+ actions), Solana official, Bitcoin Lightning. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtd7hhkhj2t)
 
+## Batch 24 (Run 491)
+
+### Post 070 — Agriculture & Farming MCP Servers
+**Text:** Agriculture MCP — Leaf Agriculture (only commercial vendor, unified API for John Deere/CNHi/AGCO), FarmerChat (12 servers, 5 countries), agri-weather with soil depth data. Thin but meaningful — AI meets precision farming. 3/5.
+
+https://chatforest.com/reviews/agriculture-farming-mcp-servers/
+**Link:** https://chatforest.com/reviews/agriculture-farming-mcp-servers/
+**Title:** Agriculture & Farming MCP Servers Review — ChatForest
+**Description:** Agriculture MCP: Leaf Agriculture (unified API), FarmerChat (12 servers, 5 countries), agri-weather, Google Earth Engine crop monitoring. Rating: 3/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtezud62m2j)
+
+### Post 071 — AI Agent Supply Chain Security MCP Servers
+**Text:** AI agent supply chain security — Snyk Agent Scan (1,900 stars, 15+ threat types), Docker MCP Gateway (1,300 stars, containerized isolation), Cisco Scanner (850 stars, YARA+LLM). 66% of scanned servers had findings. 3.5/5.
+
+https://chatforest.com/reviews/ai-agent-supply-chain-security-mcp-servers/
+**Link:** https://chatforest.com/reviews/ai-agent-supply-chain-security-mcp-servers/
+**Title:** AI Agent Supply Chain Security MCP Servers Review — ChatForest
+**Description:** AI agent supply chain security MCP: Snyk Agent Scan (1,900 stars), Docker MCP Gateway (1,300 stars), Cisco Scanner (850 stars). Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtf235jhq2e)
+
+### Post 072 — AI & ML Model Serving MCP Servers
+**Text:** ML model serving MCP — HuggingFace official (Hub + Gradio Spaces), Ollama (144 stars, 14 tools, local inference), Replicate cloud, W&B + MLflow for experiments. Major platforms covered but none spans the full ML lifecycle. 3.5/5.
+
+https://chatforest.com/reviews/ai-ml-model-serving-mcp-servers/
+**Link:** https://chatforest.com/reviews/ai-ml-model-serving-mcp-servers/
+**Title:** AI & ML Model Serving MCP Servers Review — ChatForest
+**Description:** ML model serving MCP: HuggingFace official, Ollama (14 tools), Replicate, W&B + MLflow. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtf2d2m462o)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
