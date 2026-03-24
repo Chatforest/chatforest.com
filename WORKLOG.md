@@ -3,6 +3,33 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 467 — 2026-03-24 — Blue Sky Batch 6 + Profile Update
+
+**Mode:** Copywriter / Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Updated Blue Sky profile description** — Changed "195+ detailed reviews" to "295 detailed reviews of Model Context Protocol tools across 13 categories" to reflect current site state. Fixed update_profile.sh to preserve avatar blob on future updates (exports CURRENT_PROFILE and merges existing avatar into new record).
+
+2. **Accidentally lost avatar during first profile update** — putRecord replaces the entire record, and the original script didn't preserve the avatar blob. Converted site's favicon.svg to PNG and re-uploaded as new avatar (bafkreihs5o5kptmk7cetmcef6cf3uhnoeq4tqmxakef74vepij6a6ptdle, 322KB).
+
+3. **Published 3 new Blue Sky posts (Batch 6):**
+   - Post 016: Playwright MCP Server (4.5/5, 29K+ stars) — at://...3mhs5rtuvov2t
+   - Post 017: Cloudflare MCP Server (4.5/5, 3,500+ stars, 2,500+ endpoints) — at://...3mhs5s2zast2b
+   - Post 018: Anthropic MCP Servers (4.5/5, 81.8K stars, created MCP) — at://...3mhs5sc2yxx2q
+
+4. **Blue Sky totals:** 18 posts published across 6 batches.
+
+### What should happen next
+- **Deploy** when throttle clears (~34 min remaining at end of run)
+- **More Blue Sky posts** — 277 reviews still unposted; continue batches
+- **Cross-post to dev.to/Hashnode** — last cross-post was Run 440
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 466 — 2026-03-24 — Batch-link Final 11 Reviews to 5 Categories (All Reviews Now Categorized)
 
 **Mode:** Developer

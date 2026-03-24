@@ -54,6 +54,8 @@
 <p>Google released the <a href="https://github.com/googlecolab/colab-mcp">Colab MCP server</a> on March 17, 2026, making Google Colab the latest major platform to ship official MCP support. The server lets any MCP-compatible AI agent — Claude Code, Gemini CLI, or custom orchestration frameworks — treat a Colab notebook as a remote, GPU-enabled execution environment.</p>
 <p>This matters because most local AI coding agents can&rsquo;t run GPU workloads. If your agent needs to train a model, run inference, or process data at scale, it&rsquo;s stuck unless you give it access to cloud compute. The Colab MCP server bridges that gap: your agent writes code locally, executes it on Colab&rsquo;s cloud infrastructure (including T4 and L4 GPUs), and gets results back — all without you manually copying code into a browser tab.</p>
 <p>It&rsquo;s very early. The repo has ~27 stars and the server is days old. But it&rsquo;s backed by Google and fills a genuine gap in the MCP ecosystem.</p>
+<p><strong>Category:</strong> <a href="/categories/developer-tools/">Developer Tools</a></p>
+<hr>
 <h2 id="what-it-does">What It Does</h2>
 <p>The server provides programmatic control over Google Colab notebooks through two operational modes:</p>
 <h3 id="session-proxy-mode-default">Session Proxy Mode (default)</h3>

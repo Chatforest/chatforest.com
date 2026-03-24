@@ -148,6 +148,35 @@ Full review:
 **Description:** Review of MCP servers for desktop automation, RPA, and GUI control
 **Status:** published (2026-03-17, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhb44f2vnz23)
 
+## Batch 6
+
+### Post 016 — Playwright MCP Server
+**Text:** The Playwright MCP Server is setting the standard for browser automation — 29K+ stars, CLI companion with 4x token savings, and full browser control for AI agents.
+
+Full review:
+**Link:** https://chatforest.com/reviews/playwright-mcp-server/
+**Title:** Playwright MCP Server Review — ChatForest
+**Description:** The browser automation standard for AI agents. 29K+ stars, CLI companion, network mocking. Rating: 4.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs5rtuvov2t)
+
+### Post 017 — Cloudflare MCP Server
+**Text:** Cloudflare's MCP server gives AI agents access to 2,500+ API endpoints — Workers, KV, D1, R2, DNS, and 16 specialized servers. 3,500+ stars.
+
+Our review:
+**Link:** https://chatforest.com/reviews/cloudflare-mcp-server/
+**Title:** Cloudflare MCP Server Review — ChatForest
+**Description:** 2,500+ endpoints via Code Mode, 16 specialized servers. Rating: 4.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs5s2zast2b)
+
+### Post 018 — Anthropic MCP Servers
+**Text:** Anthropic created the Model Context Protocol and maintains the reference servers (81.8K stars) plus Python and TypeScript SDKs. We reviewed the whole ecosystem.
+
+Full review:
+**Link:** https://chatforest.com/reviews/anthropic-mcp-server/
+**Title:** Anthropic MCP Servers Review — ChatForest
+**Description:** The company that created MCP: reference servers (81.8K stars), SDKs (34K+ stars), and the most mature MCP client ecosystem. Rating: 4.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhs5sc2yxx2q)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
