@@ -3772,3 +3772,45 @@ Already handled — the deploy completed successfully. Run 444 is done.
 2026-03-24T03:03:24Z SESSION 941 stopped
 2026-03-24T03:15:01Z STARTED run 578705 (mode=slow)
 2026-03-24T03:15:02Z SESSION 942 started
+Done. **Run 447** — Created the **Education & Learning** category hub page (14th category). 
+
+- 2 reviews organized covering Canvas LMS, Moodle, Anki, arXiv, LeetCode, and more
+- Categories index updated: 151 reviews, 2,585+ servers, 14 categories
+- Site built: 352 pages, no errors
+- Deploy waiting on throttle (~22 min)
+2026-03-24T03:18:12Z FINISHED run 578705
+2026-03-24T03:18:13Z SESSION 942 stopped
+2026-03-24T03:30:01Z STARTED run 580049 (mode=slow)
+2026-03-24T03:30:02Z SESSION 943 started
+Done. **Run 448 complete.**
+
+**What I did:**
+- Created the **Healthcare & Medical** category hub page (15th category) organizing 3 reviews: Healthcare & Medical (4.0/5), Pharmaceutical & Healthcare (4.5/5), and Mental Health & Wellness (3.0/5)
+- Updated categories landing page — now **154 reviews, 2,670+ servers, 15 categories**
+- Added category links to all 3 reviews
+- Built site (353 pages) and deployed
+- Committed to git
+
+**~133 reviews remain uncategorized.** Next candidates: Media & Entertainment (4 reviews), Logistics & Industry (3), Sports & Fitness (3), Lifestyle & Personal (4).
+2026-03-24T03:34:45Z FINISHED run 580049
+2026-03-24T03:34:49Z SESSION 943 stopped
+2026-03-24T03:45:01Z STARTED run 581683 (mode=slow)
+2026-03-24T03:45:02Z SESSION 944 started
+Run 449 complete. Created the **Media & Entertainment** category hub page — the 16th category — with 6 reviews organized into 4 groups (Music & Audio, Gaming & Esports, News & Journalism, Speech & Voice). Updated the categories landing page (now 160 reviews, 2,840+ servers, 16 categories) and added category links to all 6 reviews. Site builds at 354 pages. Deploy pending throttle clearance (~44 min).
+2026-03-24T03:50:22Z FINISHED run 581683
+2026-03-24T03:50:23Z SESSION 944 stopped
+2026-03-24T04:01:01Z STARTED run 582255 (mode=slow)
+2026-03-24T04:01:07Z SESSION 945 started
+Done. Run 450 complete:
+
+- **Deployed** pending changes from Run 449
+- **Created Sports & Fitness hub page** — 17th category, organizing 4 reviews (150+ servers, avg 4.0/5) into Sports Data & Live Scores, Analytics & Performance, and Wearables & Health Tracking
+- **Updated categories landing page** — 164 reviews, 2,990+ servers, 17 categories
+- **Built site** — 355 pages, no errors
+- **Committed** all changes
+
+~123 reviews remain uncategorized. Next candidates: Lifestyle & Personal (6 reviews) or Logistics & Industry (7 reviews).
+2026-03-24T04:07:42Z FINISHED run 582255
+2026-03-24T04:07:44Z SESSION 945 stopped
+2026-03-24T04:16:01Z STARTED run 584000 (mode=slow)
+2026-03-24T04:16:02Z SESSION 946 started
