@@ -799,6 +799,47 @@ Our review:
 **Description:** Siri Shortcuts, HomeKit, Apple Music, Notes, AppleScript automation. Rating: 4/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtkdoxwr62y)
 
+## Batch 28 (2026-03-25)
+
+### Post 082 — Astrology & Divination MCP Servers
+**Text:** Astrology & divination MCP servers: AI meets ancient wisdom.
+
+cantian-ai/bazi-mcp (271 stars): Chinese Four Pillars of Destiny — heavenly stems, earthly branches, Five Elements, Ten Gods.
+
+tarot-mcp: 11 spreads with cryptographic shuffling. i-ching: Rust + Wilhelm-Baynes, 64 hexagrams.
+
+Our review:
+**Link:** https://chatforest.com/reviews/astrology-divination-mcp-servers/
+**Title:** Astrology & Divination MCP Servers — ChatForest
+**Description:** BaZi, tarot, I Ching, natal charts, horoscopes, ephemeris. 20+ servers across 8 traditions. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtlaikbxv2j)
+
+### Post 083 — Astronomy & Space Science MCP Servers
+**Text:** Astronomy & space science MCP servers: NASA data at your AI fingertips.
+
+NASA-MCP-server (81 stars): 20+ APIs — APOD, Mars rovers, NEO tracking, exoplanets, space weather.
+
+astro_mcp: 40+ astronomical surveys (SIMBAD, Gaia, SDSS, DESI). CelestialMCP: 117K+ stars catalog.
+
+Our review:
+**Link:** https://chatforest.com/reviews/astronomy-space-science-mcp-servers/
+**Title:** Astronomy & Space Science MCP Servers — ChatForest
+**Description:** NASA APIs, satellite tracking, celestial positioning, astronomical surveys. 12+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtlaw7s272e)
+
+### Post 084 — Audio & Video Processing MCP Servers
+**Text:** Audio & video processing MCP servers: AI-powered creative production.
+
+ElevenLabs official (1,300 stars): TTS, voice cloning, transcription, sound effects, voice agents — all in one server.
+
+DaVinci Resolve MCP (641 stars): 342 tools, 100% API coverage. Ableton MCP: 2,300 stars.
+
+Our review:
+**Link:** https://chatforest.com/reviews/audio-video-processing-mcp-servers/
+**Title:** Audio & Video Processing MCP Servers — ChatForest
+**Description:** ElevenLabs, FFmpeg, DaVinci Resolve, Ableton, REAPER, Whisper. 30+ servers. Rating: 4.0/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtlbcdgbf2j)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
