@@ -523,6 +523,35 @@ https://chatforest.com/reviews/chrome-devtools-mcp-server/
 **Description:** Official Google Chrome DevTools MCP: performance traces, Lighthouse, heap snapshots, network inspection. 30.7K stars. Rating: 4.5/5.
 **Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsj2y3q6d2x)
 
+## Batch 19
+
+### Post 055 — Context7 MCP Server
+**Text:** Context7 — most popular MCP server of 2026. 50.1K stars, 10.1M visitors. Feeds version-specific library docs into your AI coding agent. Skills plugin, VS Code extension. Patched context poisoning vuln and 92% free tier cut raise questions. 3.5/5.
+
+https://chatforest.com/reviews/context7-mcp-server/
+**Link:** https://chatforest.com/reviews/context7-mcp-server/
+**Title:** Context7 MCP Server Review — ChatForest
+**Description:** Context7: real-time library docs for AI coding agents. 50.1K stars, Skills plugin. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mht55q5hed2j)
+
+### Post 056 — Figma Dev Mode MCP Server
+**Text:** Figma Dev Mode MCP — official server for AI design-to-code. 13 tools, OAuth, remote at mcp.figma.com. Code gen from frames, design tokens, Code Connect, and code-to-canvas capture no community server can match. 3.5/5.
+
+https://chatforest.com/reviews/figma-dev-mode-mcp-server/
+**Link:** https://chatforest.com/reviews/figma-dev-mode-mcp-server/
+**Title:** Figma Dev Mode MCP Server Review — ChatForest
+**Description:** Figma official MCP server: 13 tools for design-to-code, design tokens, Code Connect, and code-to-canvas capture. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mht56gmk6h2o)
+
+### Post 057 — Firecrawl MCP Server
+**Text:** Firecrawl MCP — full-stack web scraping for AI agents. 95.7K parent stars, 5.8K MCP stars. Scrape, crawl, search, extract structured data, deep research, cloud browser sessions. FIRE-1 web action agent in beta. Worth it over free Fetch MCP? 4/5.
+
+https://chatforest.com/reviews/firecrawl-mcp-server/
+**Link:** https://chatforest.com/reviews/firecrawl-mcp-server/
+**Title:** Firecrawl MCP Server Review — ChatForest
+**Description:** Firecrawl MCP: full-stack web scraping platform for AI agents. 95.7K parent stars, 12+ tools, FIRE-1 agent. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mht56xm7qs2h)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
