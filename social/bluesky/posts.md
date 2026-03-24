@@ -380,6 +380,35 @@ Review:
 **Description:** Linear's remote-first MCP server for AI project management. OAuth 2.1, Streamable HTTP, 23+ tools. Rating: 4/5.
 **Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsenxht4e2x)
 
+## Batch 14
+
+### Post 040 — Notion MCP Server
+**Text:** Notion's official MCP server gives AI agents full access to your workspace — pages, databases, comments, search. 4,100+ stars, 18 tools, two versions (hosted OAuth + local npm). But 104 open issues and 2 unpatched security vulns.
+
+Full review:
+**Link:** https://chatforest.com/reviews/notion-mcp-server/
+**Title:** Notion MCP Server Review — ChatForest
+**Description:** Notion's official MCP server: 4,100+ stars, 18 tools, npm v2.2.1. Hosted OAuth is the future, but 104 open issues and security concerns remain. Rating: 3.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsfhhopd724)
+
+### Post 041 — Cloudflare MCP Server
+**Text:** Cloudflare's MCP server is the most ambitious we've reviewed — 2,500+ API endpoints compressed into ~1,000 tokens via Code Mode. Workers, R2, D1, DNS, Zero Trust, and 16 specialized product servers. 3,500+ stars, 4.5/5.
+
+Our review:
+**Link:** https://chatforest.com/reviews/cloudflare-mcp-server/
+**Title:** Cloudflare MCP Server Review — ChatForest
+**Description:** Cloudflare's MCP ecosystem: Code Mode collapses 2,500+ endpoints into ~1,000 tokens. 16 specialized servers, remote-first OAuth. 3,500+ stars. Rating: 4.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsfhndz2s2q)
+
+### Post 042 — Browserbase MCP Server
+**Text:** Browserbase moves browser automation to the cloud — AI agents get managed browser sessions with Stagehand's natural language element targeting. No local Chrome, stealth mode built in, session recording for debugging. 3,200 stars.
+
+Review:
+**Link:** https://chatforest.com/reviews/browserbase-mcp-server/
+**Title:** Browserbase MCP Server Review — ChatForest
+**Description:** Browserbase's cloud browser MCP server: 8 tools via Stagehand, natural language targeting, stealth mode, session management. 3,200 stars. Rating: 3.5/5.
+**Status:** published (2026-03-24, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhsfhu75uc23)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
