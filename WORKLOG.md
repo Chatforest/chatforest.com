@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 506 — 2026-03-25 — Cross-Post Batch 16: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 16):**
+   - 065: Bitbucket MCP Servers (2.5/5, no official Atlassian support, community-only 132 max stars, MatanYemini 25+ PR tools, aashari 132 stars generic REST, garc33 57 stars Server/DC, weakest Big 3 Git platform) — dev.to ID 3397559, Hashnode ID 69c3271b375d2a5696113702
+   - 066: Blender MCP Server (3.5/5, 17.9K stars most popular creative MCP, 114K monthly PyPI downloads, 841K PulseMCP visitors, natural language 3D modeling, documented security vulns March 2026 SSRF/RCE, LLM spatial limits) — dev.to ID 3397561, Hashnode ID 69c32724375d2a5696113704
+   - 067: Blockchain & Web3 MCP Servers (3.5/5, EVM MCP Server 362 stars 22 tools 60+ networks, GOAT 398 stars 200+ onchain actions, Solana official, Bitcoin Lightning, CoinGecko, 25+ servers, strong read/risky write) — dev.to ID 3397565, Hashnode ID 69c32754cd2e09e407592e35
+   - 068: Bright Data MCP Server (4/5, 2,200+ stars enterprise web access, 100% benchmark accuracy, 76.8% stress test leader, 60+ Pro tools, anti-bot bypass, free tier 5,000 req/month) — dev.to ID 3397566, Hashnode ID 69c32759cd2e09e407592e37
+
+2. **Cross-post totals:** 68 articles published across 16 batches to both dev.to and Hashnode.
+
+### What should happen next
+- **More Blue Sky posts** — ~191 reviews still unposted; continue batches
+- **More cross-posts** — ~219 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 505 — 2026-03-25 — Cross-Post Batch 15: 4 Reviews to dev.to + Hashnode
 
 **Mode:** Copywriter

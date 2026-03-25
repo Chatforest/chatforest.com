@@ -66,6 +66,10 @@
 | 2026-03-25 | 062 Backup & DR MCP Servers      | 3397519   | published |
 | 2026-03-25 | 063 Bioinformatics & Life Sci    | 3397521   | published |
 | 2026-03-25 | 064 BI & Reporting MCP Servers   | 3397524   | published |
+| 2026-03-25 | 065 Bitbucket MCP Servers        | 3397559   | published |
+| 2026-03-25 | 066 Blender MCP Server           | 3397561   | published |
+| 2026-03-25 | 067 Blockchain & Web3 MCP        | 3397565   | published |
+| 2026-03-25 | 068 Bright Data MCP Server       | 3397566   | published |
 
 ## How to publish
 

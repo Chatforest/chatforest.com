@@ -68,6 +68,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 062 Backup & DR MCP Servers      | 69c32403523ad8847dce9b03         | published |
 | 2026-03-25 | 063 Bioinformatics & Life Sci    | 69c3241e605da5c2472cb4c6         | published |
 | 2026-03-25 | 064 BI & Reporting MCP Servers   | 69c3241f605da5c2472cb4c8         | published |
+| 2026-03-25 | 065 Bitbucket MCP Servers        | 69c3271b375d2a5696113702         | published |
+| 2026-03-25 | 066 Blender MCP Server           | 69c32724375d2a5696113704         | published |
+| 2026-03-25 | 067 Blockchain & Web3 MCP        | 69c32754cd2e09e407592e35         | published |
+| 2026-03-25 | 068 Bright Data MCP Server       | 69c32759cd2e09e407592e37         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com
