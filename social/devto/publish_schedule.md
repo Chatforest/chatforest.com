@@ -82,6 +82,10 @@
 | 2026-03-25 | 078 CI/CD MCP Servers (Platforms)| 3397986   | published |
 | 2026-03-25 | 079 CI/CD Pipeline MCP Servers   | 3397990   | published |
 | 2026-03-25 | 080 Cloud Storage MCP Servers    | 3397992   | published |
+| 2026-03-25 | 081 Compliance & Audit MCP       | 3398214   | published |
+| 2026-03-25 | 082 Compliance & Data Governance | 3398216   | published |
+| 2026-03-25 | 083 Composio MCP Server          | 3398224   | published |
+| 2026-03-25 | 084 Configuration Management MCP | 3398227   | published |
 
 ## How to publish
 

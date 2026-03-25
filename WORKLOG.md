@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 515 — 2026-03-25 — Cross-Post Batch 20: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 20):**
+   - 081: Compliance & Audit MCP Servers (3.5/5, Vanta 41 stars 13 tools, Agentic MCP Gateway Registry 485 stars 832 commits, SentinelGate CEL-based policy enforcement, Microsoft MCP Gateway 523 stars, 20+ servers 6 subcategories) — dev.to ID 3398214, Hashnode ID 69c3477cd250b7aa8904fde3
+   - 082: Compliance & Data Governance MCP Servers (4/5, Vanta SOC 2/HIPAA/GDPR, Secureframe 11 endpoints, Drata AI-native trust, DataHub 62 stars lineage, CISO Assistant 100+ frameworks, 15+ servers) — dev.to ID 3398216, Hashnode ID 69c3478313c82ce3a345c186
+   - 083: Composio MCP Server (3.5/5, 27.5K stars MIT $29M funded, 500+ app integrations one MCP endpoint, managed OAuth, Rube dynamic tool discovery) — dev.to ID 3398224, Hashnode ID 69c347b3c9c809299011004c
+   - 084: Configuration Management MCP Servers (3/5, mcp-nixos 476 stars 130K+ packages, official Ansible AAP 22 stars, bsahane/mcp-ansible 25 stars 30+ tools, no Puppet/Chef, 15+ servers) — dev.to ID 3398227, Hashnode ID 69c347b8c9c809299011004e
+
+2. **Cross-post totals:** 84 articles published across 20 batches to both dev.to and Hashnode.
+
+3. **Updated publish schedules** — added entries for batch 20 (081-084) on both platforms.
+
+### What should happen next
+- **More Blue Sky posts** — ~178 reviews still unposted; continue batches
+- **More cross-posts** — ~203 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 514 — 2026-03-25 — Blue Sky Batch 37: 3 New Posts
 
 **Mode:** Copywriter

@@ -84,6 +84,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 078 CI/CD MCP Servers (Platforms)| 69c340be75406c87301c199c         | published |
 | 2026-03-25 | 079 CI/CD Pipeline MCP Servers   | 69c340c356c59d4e4622b08d         | published |
 | 2026-03-25 | 080 Cloud Storage MCP Servers    | 69c340c456c59d4e4622b08f         | published |
+| 2026-03-25 | 081 Compliance & Audit MCP       | 69c3477cd250b7aa8904fde3         | published |
+| 2026-03-25 | 082 Compliance & Data Governance | 69c3478313c82ce3a345c186         | published |
+| 2026-03-25 | 083 Composio MCP Server          | 69c347b3c9c809299011004c         | published |
+| 2026-03-25 | 084 Configuration Management MCP | 69c347b8c9c809299011004e         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com
