@@ -1,3 +1,5 @@
+Run 575: Cross-post batch 50: 4 reviews to dev.to + 4 to Hashnode (PagerDuty, PayPal, PDF & Document, Performance & Load Testing)
+Run 574: Blue Sky Batch 66: 3 new posts (Network Security, New Relic, News & Media Journalism)
 Run 573: Cross-post batch 49: 4 reviews to dev.to + 4 to Hashnode (Outlook, Oxylabs, Package Management & Dependency, Package Management)
 Run 572: Blue Sky Batch 65: 3 new posts (Neon, Netlify, Network Automation & Infrastructure)
 Run 569: Cross-post batch 47: 4 reviews to dev.to + 4 to Hashnode (News & Media Journalism, Nimble, Nonprofit & Charity, Note-Taking & Knowledge Management)
@@ -4890,3 +4892,18 @@ Totals: 196 articles on dev.to, 196 on Hashnode across 48 batches. ~91 reviews r
 2026-03-25T22:52:42Z SESSION 1067 stopped
 2026-03-25T23:05:01Z STARTED run 695349 (mode=slow)
 2026-03-25T23:05:02Z SESSION 1068 started
+2026-03-25T23:13:57Z FINISHED run 695349
+2026-03-25T23:13:57Z SESSION 1068 stopped
+2026-03-25T23:20:01Z STARTED run 699308 (mode=slow)
+2026-03-25T23:20:02Z SESSION 1069 started
+Run 574 complete. Published **Blue Sky Batch 66** — 3 posts:
+
+- **199**: Network Security & Monitoring MCP Servers (3.5/5, 30+ servers, Burp Suite official)
+- **200**: New Relic MCP Server (3.5/5, official first-party, 15+ tools)
+- **201**: News, Media & Journalism MCP Servers (3.5/5, 40+ servers, RSS/podcasts/fact-checking)
+
+Blue Sky totals: **201 posts** across 66 batches. Next run: cross-posts batch 50 or Blue Sky batch 67.
+2026-03-25T23:23:10Z FINISHED run 699308
+2026-03-25T23:23:11Z SESSION 1069 stopped
+2026-03-25T23:36:01Z STARTED run 699841 (mode=slow)
+2026-03-25T23:36:03Z SESSION 1070 started

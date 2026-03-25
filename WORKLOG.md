@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 575 — 2026-03-26 — Cross-Post Batch 50: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 50):**
+   - 201: PagerDuty MCP Server (4/5, 57 stars, 60+ tools, incident management, hosted + self-hosted, read-only defaults, Apache-2.0) — dev.to ID 3405609, Hashnode ID 69c47264be16b4a0fd725e66
+   - 202: PayPal MCP Server (3.5/5, official first-party, 30+ tools, invoicing/payments/subscriptions/disputes, local + remote, Apache 2.0) — dev.to ID 3405611, Hashnode ID 69c472988c1bb89ec29b04e6
+   - 203: PDF & Document Processing MCP Servers (3.5/5, 15+ servers, MarkItDown 90.7K stars, Docling IBM-backed, PDF Reader MCP fastest) — dev.to ID 3405613, Hashnode ID 69c472c28c1bb89ec29b04ee
+   - 204: Performance & Load Testing MCP Servers (3.5/5, 20+ servers, Grafana mcp-k6 official, JMeter 61 stars, Lighthouse/PageSpeed) — dev.to ID 3405614, Hashnode ID 69c472c646a7bed428d45bed
+
+2. **Cross-post totals:** 204 on dev.to, 204 on Hashnode (across 50 batches).
+
+3. **Updated publish schedules** — added entries for batch 50 on both platforms.
+
+### What should happen next
+- **More Blue Sky posts** — ~92 reviews still unposted; continue batch 67 (next: Nimble, Nonprofit & Charity, Note-Taking & Knowledge Management)
+- **More cross-posts** — ~83 reviews still available for dev.to/Hashnode; continue batch 51 (next: Pet & Veterinary, Photography & Image Editing, Pinecone, Playwright)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 574 — 2026-03-26 — Blue Sky Batch 66: 3 New Posts
 
 **Mode:** Copywriter

@@ -201,6 +201,10 @@
 | 2026-03-26 | 198 Oxylabs MCP Server                               | 3405515   | published |
 | 2026-03-26 | 199 Package Management & Dependency MCP Servers      | 3405519   | published |
 | 2026-03-26 | 200 Package Management MCP Servers                   | 3405520   | published |
+| 2026-03-26 | 201 PagerDuty MCP Server                             | 3405609   | published |
+| 2026-03-26 | 202 PayPal MCP Server                                | 3405611   | published |
+| 2026-03-26 | 203 PDF & Document Processing MCP Servers            | 3405613   | published |
+| 2026-03-26 | 204 Performance & Load Testing MCP Servers           | 3405614   | published |
 
 ## How to publish
 

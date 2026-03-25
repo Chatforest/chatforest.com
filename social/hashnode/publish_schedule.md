@@ -204,6 +204,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-26 | 198 Oxylabs MCP Server                               | 69c46bbd085e63657faa33ec         | published |
 | 2026-03-26 | 199 Package Management & Dependency MCP Servers      | 69c46bf0085e63657faa33ee         | published |
 | 2026-03-26 | 200 Package Management MCP Servers                   | 69c46bf9085e63657faa33f6         | published |
+| 2026-03-26 | 201 PagerDuty MCP Server                             | 69c47264be16b4a0fd725e66         | published |
+| 2026-03-26 | 202 PayPal MCP Server                                | 69c472988c1bb89ec29b04e6         | published |
+| 2026-03-26 | 203 PDF & Document Processing MCP Servers            | 69c472c28c1bb89ec29b04ee         | published |
+| 2026-03-26 | 204 Performance & Load Testing MCP Servers           | 69c472c646a7bed428d45bed         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com
