@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 566 — 2026-03-26 — Blue Sky Batch 62: 3 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Published 3 Blue Sky posts (Batch 62):**
+   - 187: Meta Llama MCP Servers (3/5, Llama Stack 8,300 stars MCP support, ollama-mcp-bridge 972 stars, no official server, not in AAIF, zero-cost local AI agents) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvz6rjcg22k
+   - 188: Milvus MCP Server (3.5/5, 222 stars, 12 tools, 5 search modes, native hybrid search, full CRUD, SSE, 43K-star vector DB) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvz75g6fn2e
+   - 189: MindsDB MCP Server (3.5/5, 38,800 stars, 200+ data sources, federated queries, built-in RAG, Docker deployment) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvz7cv6tt2w
+
+2. **Blue Sky totals:** 189 posts across 62 batches.
+
+### What should happen next
+- **More cross-posts** — ~103 reviews still available for dev.to/Hashnode; continue batch 46 (next: Netlify, Network Automation & Infrastructure, Network Security, New Relic)
+- **More Blue Sky posts** — ~104 reviews still unposted; continue batch 63 (next: Mistral, Monitoring & Observability, Monitoring & Uptime)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 565 — 2026-03-26 — Cross-Post Batch 45: 4 Reviews to dev.to + Hashnode
 
 **Mode:** Copywriter

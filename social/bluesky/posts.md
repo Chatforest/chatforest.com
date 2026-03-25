@@ -1971,6 +1971,35 @@ https://chatforest.com/reviews/message-queue-mcp-servers/
 **Description:** 25+ servers: Confluent (37+ tools, official), Google Pub/Sub (official remote, OAuth), AWS SQS/SNS, RabbitMQ, NATS, Pulsar. Rating: 3.5/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvxi6sqru2e)
 
+## Batch 62 (Run 566, 2026-03-26)
+
+### Post 187 — Meta Llama MCP Servers
+**Text:** Meta has no official MCP server and isn't in AAIF, but the community fills the gap. Llama Stack (8,300 stars) has built-in MCP support. ollama-mcp-bridge (972 stars) lets local LLMs use MCP tools. Zero-cost AI agents if you have the GPU.
+
+https://chatforest.com/reviews/meta-llama-mcp-server/
+**Link:** https://chatforest.com/reviews/meta-llama-mcp-server/
+**Title:** Meta Llama MCP Servers Review — ChatForest
+**Description:** No official server, not in AAIF, but Llama Stack has MCP support and Ollama bridges enable local AI agents. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvz6rjcg22k)
+
+### Post 188 — Milvus MCP Server
+**Text:** Official Milvus MCP server from Zilliz: 12 tools, 5 search modes with native hybrid search (keyword + semantic). Full collection CRUD, delete support, SSE transport. 43K-star vector DB. No embedded mode — Docker or Zilliz Cloud required.
+
+https://chatforest.com/reviews/milvus-mcp-server/
+**Link:** https://chatforest.com/reviews/milvus-mcp-server/
+**Title:** Milvus MCP Server Review — ChatForest
+**Description:** 12 tools, 5 search types, hybrid search, full CRUD, SSE transport. The most popular vector DB gets an AI interface. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvz75g6fn2e)
+
+### Post 189 — MindsDB MCP Server
+**Text:** MindsDB: one MCP server, 200+ data sources. Federated queries across Postgres, MongoDB, Slack, Gmail, Snowflake — no ETL, no data copying. Built-in knowledge bases for RAG with hybrid search. 38,800 stars, Docker deployment.
+
+https://chatforest.com/reviews/mindsdb-mcp-server/
+**Link:** https://chatforest.com/reviews/mindsdb-mcp-server/
+**Title:** MindsDB MCP Server Review — ChatForest
+**Description:** Federated query engine as MCP server: 200+ data sources, built-in RAG, cross-source JOINs, Docker deployment. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvz7cv6tt2w)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
