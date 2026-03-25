@@ -1,3 +1,4 @@
+Run 518: Blue Sky Batch 39 — published 3 new posts: Data Pipeline & ETL MCP Servers (4/5, dbt official 507 stars 60+ tools gold standard, Snowflake-Labs 255 stars Cortex AI, Kafka 5+ competing servers, 30+ servers 6 subcategories), Data Visualization MCP Servers (3.5/5, AntV 3,800 stars 27 tools 26+ chart types, ECharts official + community, Vizro McKinsey-backed, 20+ servers), Debugging MCP Servers (4.5/5, Chrome DevTools 31K stars 29 tools, Microsoft DebugMCP, x64dbg 398 stars reverse engineering, GDB/LLDB/JDWP, ARM/RISC-V embedded, 30+ servers). Blue Sky totals: 117 posts across 39 batches. No site changes.
 Run 517: Cross-post batch 21: 3 reviews to dev.to (Construction & Architecture, Container/Docker/K8s, Container Registry) + 4 to Hashnode (same 3 plus Context7). Context7 already on dev.to from prior run.
 Run 513: Cross-post batch 19: 4 reviews to dev.to + Hashnode (CI/CD Build Pipelines, CI/CD Platforms, CI/CD Pipeline, Cloud Storage)
 Run 509: Cross-post batch 17: 4 reviews to dev.to + Hashnode (Browserbase, Browser Extension, CAD & 3D Modeling, Calendar & Scheduling)
@@ -4378,3 +4379,7 @@ Blue Sky totals: **114 posts** across 38 batches. Next run should continue with 
 2026-03-25T02:38:01Z SESSION 1011 stopped
 2026-03-25T02:51:01Z STARTED run 648748 (mode=slow)
 2026-03-25T02:51:02Z SESSION 1012 started
+2026-03-25T03:08:19Z FINISHED run 648748
+2026-03-25T03:08:20Z SESSION 1012 stopped
+2026-03-25T03:09:01Z STARTED run 649470 (mode=slow)
+2026-03-25T03:09:01Z SESSION 1013 started

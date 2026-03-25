@@ -1202,6 +1202,35 @@ Our review:
 **Description:** Review of Prisma, Liquibase, Atlas, Drizzle, and Google Toolbox migration MCP servers
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhu2mj54a22c)
 
+## Batch 39
+
+### Post 115 — Data Pipeline & ETL MCP Servers
+**Text:** Data Pipeline & ETL MCP Servers — dbt's official server (507 stars, 60+ tools) is the gold standard for MCP tooling in any category. Snowflake and Databricks have official AI-native servers. Kafka has 5+ competing options. 30+ servers reviewed. Rating: 4/5.
+
+Our review:
+**Link:** https://chatforest.com/reviews/data-pipeline-etl-mcp-servers/
+**Title:** Data Pipeline & ETL MCP Servers — ChatForest
+**Description:** Review of 30+ Airflow, dbt, Kafka, Snowflake, Databricks, and Airbyte MCP servers
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhu4ikteii2h)
+
+### Post 116 — Data Visualization MCP Servers
+**Text:** Data Visualization MCP Servers — AntV's mcp-server-chart (3,800 stars, 27 tools, 26+ chart types) dominates. ECharts has both official and community servers. Vizro brings McKinsey-backed dashboards. 20+ servers from charting to BI. Rating: 3.5/5.
+
+Our review:
+**Link:** https://chatforest.com/reviews/data-visualization-mcp-servers/
+**Title:** Data Visualization MCP Servers — ChatForest
+**Description:** Review of 20+ AntV, ECharts, Vega-Lite, Plotly, Matplotlib, and D3 MCP servers
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhu4iquwxz2t)
+
+### Post 117 — Debugging MCP Servers
+**Text:** Debugging MCP Servers — Chrome DevTools MCP (31K stars, 29 tools) is one of the most-starred MCP servers period. Microsoft's DebugMCP, x64dbg for reverse engineering, GDB/LLDB/JDWP wrappers, even ARM/RISC-V embedded debugging. 30+ servers. Rating: 4.5/5.
+
+Our review:
+**Link:** https://chatforest.com/reviews/debugging-mcp-servers/
+**Title:** Debugging MCP Servers — ChatForest
+**Description:** Review of 30+ Chrome DevTools, Microsoft DebugMCP, GDB, LLDB, x64dbg, and embedded MCP servers
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhu4iwjzu22h)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
