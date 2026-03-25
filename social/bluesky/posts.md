@@ -1380,6 +1380,38 @@ https://chatforest.com/reviews/erp-business-management-mcp-servers/
 **Description:** Odoo mcp-odoo (269 stars), Dynamics 365 Official MCP, Oracle NetSuite Native AI Connector, SAP via CData. 20+ servers reviewed. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhufnh527a2h)
 
+## Batch 44
+
+### Post 133 — E-Signature & Digital Signing MCP Servers
+**Text:** DocuSign, SignNow, and BoldSign all ship official MCP servers — rare vendor buy-in. SignNow leads open source with 15 tools including embedded signing. DocuSign is beta but enterprise-ready via Claude Connectors.
+
+Review:
+https://chatforest.com/reviews/e-signature-digital-signing-mcp-servers/
+**Link:** https://chatforest.com/reviews/e-signature-digital-signing-mcp-servers/
+**Title:** E-Signature & Digital Signing MCP Servers Review — ChatForest
+**Description:** DocuSign official (beta), SignNow (15 tools, embedded signing), eSignatures.com (35 stars), BoldSign official. 8+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuhcc5grt2y)
+
+### Post 134 — Event Management & Ticketing MCP Servers
+**Text:** Google Calendar has 10+ competing MCP servers — more than almost any other API. nspady/google-calendar-mcp leads at 1,100 stars. But event ticketing is early: no official Ticketmaster or Eventbrite servers exist.
+
+Review:
+https://chatforest.com/reviews/event-management-ticketing-mcp-servers/
+**Link:** https://chatforest.com/reviews/event-management-ticketing-mcp-servers/
+**Title:** Event Management & Ticketing MCP Servers Review — ChatForest
+**Description:** Google Calendar (1,100 stars, 12 tools), Ticketmaster (23 stars), mcp-ical (278 stars), Eventbrite (8 tools). 35+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuhcrumsl2e)
+
+### Post 135 — EverArt MCP Server
+**Text:** EverArt MCP is archived, downloads down 64%, and pricing tripled to $50/month — for one tool generating 1024x1024 images. Meanwhile Recraft launched an official 16-tool MCP server. Hard to recommend in 2026.
+
+Review:
+https://chatforest.com/reviews/everart-mcp-server/
+**Link:** https://chatforest.com/reviews/everart-mcp-server/
+**Title:** EverArt MCP Server Review — ChatForest
+**Description:** Archived image generation MCP server. 1 tool, 5 models (FLUX, SD3.5, Recraft), $50/month minimum, 83 weekly npm downloads (down 64%). Rating: 2.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuhczlnty2o)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
