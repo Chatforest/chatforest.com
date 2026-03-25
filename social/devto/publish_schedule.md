@@ -197,6 +197,10 @@
 | 2026-03-26 | 194 Obsidian MCP Servers                            | 3405429   | published |
 | 2026-03-26 | 195 OCR & Document Intelligence MCP Servers         | 3405433   | published |
 | 2026-03-26 | 196 OneDrive MCP Servers                            | 3405434   | published |
+| 2026-03-26 | 197 Outlook MCP Servers                              | 3405514   | published |
+| 2026-03-26 | 198 Oxylabs MCP Server                               | 3405515   | published |
+| 2026-03-26 | 199 Package Management & Dependency MCP Servers      | 3405519   | published |
+| 2026-03-26 | 200 Package Management MCP Servers                   | 3405520   | published |
 
 ## How to publish
 

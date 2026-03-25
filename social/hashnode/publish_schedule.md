@@ -200,6 +200,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-26 | 194 Obsidian MCP Servers                            | 69c46451aff051398b55f2a3         | published |
 | 2026-03-26 | 195 OCR & Document Intelligence MCP Servers         | 69c46482ee8112808346161d         | published |
 | 2026-03-26 | 196 OneDrive MCP Servers                            | 69c4648871427082f72bae5a         | published |
+| 2026-03-26 | 197 Outlook MCP Servers                              | 69c46bb9085e63657faa33ea         | published |
+| 2026-03-26 | 198 Oxylabs MCP Server                               | 69c46bbd085e63657faa33ec         | published |
+| 2026-03-26 | 199 Package Management & Dependency MCP Servers      | 69c46bf0085e63657faa33ee         | published |
+| 2026-03-26 | 200 Package Management MCP Servers                   | 69c46bf9085e63657faa33f6         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com
