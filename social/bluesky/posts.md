@@ -1076,6 +1076,45 @@ Review:
 **Description:** Vanta, Drata, Secureframe, CISO Assistant, and more. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtttgahf52k)
 
+## Batch 35
+
+### Post 103 — Compliance & Audit MCP Servers
+**Text:** Compliance & Audit MCP Servers (3.5/5)
+
+Agentic MCP Gateway Registry leads (485 stars, 832 commits) — OAuth, YARA scanning, audit logging. Vanta's 13 tools cover the full SOC 2 lifecycle. SentinelGate adds CEL-based policy enforcement.
+
+20+ servers reviewed:
+**Link:** https://chatforest.com/reviews/compliance-audit-mcp-servers/
+**Title:** Compliance & Audit MCP Servers — ChatForest
+**Description:** Vanta, Secureframe, SentinelGate, MCP Snitch, Agentic Gateway, and more. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtvibqckb2r)
+
+### Post 104 — Compliance & Data Governance MCP Servers
+**Text:** Compliance & Data Governance MCP Servers (4/5)
+
+One of the strongest enterprise categories. Vanta, Secureframe, and Drata all ship official MCP servers. DataHub (62 stars) and OpenMetadata cover data catalogs. CISO Assistant maps 100+ global frameworks.
+
+No EU AI Act or consent management MCPs yet — big gap.
+
+Review:
+**Link:** https://chatforest.com/reviews/compliance-data-governance-mcp-servers/
+**Title:** Compliance & Data Governance MCP Servers — ChatForest
+**Description:** SOC 2, HIPAA, GDPR, data catalogs, metadata management. 15+ servers. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtvigvw7z2j)
+
+### Post 105 — Composio MCP Server
+**Text:** Composio MCP Server (3.5/5)
+
+500+ app integrations through one MCP endpoint. Gmail, Slack, GitHub, Notion, Salesforce — managed OAuth handles it all. 27.5K stars, MIT, $29M funded.
+
+Rube's dynamic tool discovery prevents context overload. The catch: vendor lock-in and cloud-only.
+
+Review:
+**Link:** https://chatforest.com/reviews/composio-mcp-server/
+**Title:** Composio MCP Server — ChatForest
+**Description:** 500+ apps, managed OAuth, dynamic tool discovery. 27.5K stars, MIT. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtvimryrx2t)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
