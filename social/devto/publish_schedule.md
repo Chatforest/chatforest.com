@@ -157,6 +157,10 @@
 | 2026-03-25 | 154 Infrastructure as Code MCP Servers      | 3402080   | published |
 | 2026-03-25 | 155 Infrastructure Automation MCP Servers   | 3402084   | published |
 | 2026-03-25 | 156 Insurance & InsurTech MCP Servers       | 3402089   | published |
+| 2026-03-26 | 157 Interior Design & Architecture MCP      | 3404376   | published |
+| 2026-03-26 | 158 IoT & Embedded MCP Servers              | 3404377   | published |
+| 2026-03-26 | 159 Job Search & Career MCP Servers         | 3404379   | published |
+| 2026-03-26 | 160 Message Queue MCP Servers               | 3404385   | published |
 
 ## How to publish
 

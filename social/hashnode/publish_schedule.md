@@ -160,6 +160,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 154 Infrastructure as Code MCP Servers      | 69c3cce1efd0d98628b7cef8         | published |
 | 2026-03-25 | 155 Infrastructure Automation MCP Servers   | 69c3cd0f1bb0ea3c1a5d7588         | published |
 | 2026-03-25 | 156 Insurance & InsurTech MCP Servers       | 69c3cd39d31a5b5274cbdb9d         | published |
+| 2026-03-26 | 157 Interior Design & Architecture MCP      | 69c4220f2b1100ee5562cd4a         | published |
+| 2026-03-26 | 158 IoT & Embedded MCP Servers              | 69c422102b1100ee5562cd4c         | published |
+| 2026-03-26 | 159 Job Search & Career MCP Servers         | 69c42214ffb3aafaeebc1675         | published |
+| 2026-03-26 | 160 Message Queue MCP Servers               | 69c42216cd0e3821d3ff5935         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com
