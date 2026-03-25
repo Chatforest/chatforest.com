@@ -1318,6 +1318,38 @@ https://chatforest.com/reviews/dropbox-mcp-server/
 **Description:** Two official Dropbox MCP servers: core files (browse, read, upload, download) + Dash universal search across 30+ apps. Plus community servers for Paper and Sign. Rating: 4/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhubyavzlv2o)
 
+## Batch 43
+
+### Post 127 — DuckDuckGo MCP Server
+**Text:** The DuckDuckGo MCP server is the most popular free search option for AI agents — 913 stars, no API key, no signup. Two tools: search + content fetch. The catch? It's scraping-based, so no SLA.
+
+Our review:
+https://chatforest.com/reviews/duckduckgo-mcp-server/
+**Link:** https://chatforest.com/reviews/duckduckgo-mcp-server/
+**Title:** DuckDuckGo MCP Server Review — ChatForest
+**Description:** Free web search for AI agents, no API key needed. 913 stars, 2 tools, Python, MIT. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhudszlo7o2u)
+
+### Post 128 — E-Commerce & Shopping MCP Servers
+**Text:** Shopify is the first major commerce platform with native MCP — every store gets a free endpoint at /api/mcp. Stripe's toolkit (1,400 stars) handles payments with 25 tools. 35+ servers reviewed.
+
+Full breakdown:
+https://chatforest.com/reviews/ecommerce-shopping-mcp-servers/
+**Link:** https://chatforest.com/reviews/ecommerce-shopping-mcp-servers/
+**Title:** E-Commerce & Shopping MCP Servers Review — ChatForest
+**Description:** Shopify Storefront MCP (official, every store), Stripe agent-toolkit (1,400 stars, 25 tools), WooCommerce, Amazon, Etsy, Google UCP. 35+ servers. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhudtcianw2j)
+
+### Post 129 — Education & EdTech MCP Servers
+**Text:** The education MCP ecosystem is deeper than expected. arXiv MCP has 2,400 stars. Canvas LMS has 6+ competing servers. Anki gets 20+ tools. Udemy shipped an official MCP. But Blackboard? Zero implementations.
+
+Our review:
+https://chatforest.com/reviews/education-edtech-mcp-servers/
+**Link:** https://chatforest.com/reviews/education-edtech-mcp-servers/
+**Title:** Education & EdTech MCP Servers Review — ChatForest
+**Description:** Canvas LMS (89 stars, 54 tools), arXiv (2,400 stars), Anki (179 stars, 20+ tools), Moodle (31 stars), Udemy Business (official). 30+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhudtr7vel2c)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
