@@ -1738,6 +1738,37 @@ Review: https://chatforest.com/reviews/image-generation-mcp-servers/
 **Description:** Image generation MCP servers: ComfyUI 224 stars, Stability AI 81 stars, fal.ai 600+ models, DALL-E, Flux, Replicate, Midjourney proxies. 50+ servers. Rating: 4/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuyqrge4h2h)
 
+## Batch 55 (Run 552, 2026-03-25)
+
+### Post 166 — Infrastructure as Code MCP Servers
+**Text:** IaC vendors are going all-in on MCP. Terraform leads (1.3K stars) with registry intelligence. Pulumi offers remote MCP with Neo delegation. Spacelift Intent skips code entirely — natural language to cloud resources.
+
+Review: https://chatforest.com/reviews/infrastructure-as-code-mcp-servers/
+**Link:** https://chatforest.com/reviews/infrastructure-as-code-mcp-servers/
+**Title:** Infrastructure as Code MCP Servers Review — ChatForest
+**Description:** IaC MCP ecosystem: Terraform (1.3K stars), Pulumi (remote), AWS IaC (CloudFormation/CDK), OpenTofu (84 stars), Spacelift Intent (121 stars). Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvdojbz772b)
+
+### Post 167 — Infrastructure Automation MCP Servers
+**Text:** Every major IaC platform except Chef/Puppet/Salt has MCP support. Terraform (1,300 stars, 35+ tools), Ansible (Red Hat official tech preview in AAP 2.6.4), tfmcp (357 stars, Rust, full execution).
+
+Review: https://chatforest.com/reviews/infrastructure-automation-mcp-servers/
+**Link:** https://chatforest.com/reviews/infrastructure-automation-mcp-servers/
+**Title:** Infrastructure Automation MCP Servers Review — ChatForest
+**Description:** Infrastructure automation MCP servers: Terraform (1,300 stars), Ansible (official AAP tech preview), Pulumi (Neo delegation), tfmcp (357 stars, Rust). 20+ servers. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvdorlmu62w)
+
+### Post 168 — Insurance & InsurTech MCP Servers
+**Text:** Insurance MCP is surprisingly active. Root Platform ships official policy lifecycle MCP. Socotra claims most mature insurance MCP. Apify delivers multi-peril underwriting with climate modeling.
+
+No actuarial or reinsurance yet.
+
+https://chatforest.com/reviews/insurance-insurtech-mcp-servers/
+**Link:** https://chatforest.com/reviews/insurance-insurtech-mcp-servers/
+**Title:** Insurance & InsurTech MCP Servers Review — ChatForest
+**Description:** Insurance MCP servers: Root Platform (official), Socotra (most mature), Apify underwriting intelligence. 15+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvdph6dne2r)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
