@@ -1839,6 +1839,39 @@ https://chatforest.com/reviews/llm-evaluation-benchmarking-mcp-servers/
 **Description:** 15+ servers: promptfoo (10.8K stars, red-teaming), DeepEval (5K+ stars, unit testing), MCP-Bench (28 servers, 250 tools), MCP-Universe (GPT-5 at 43.72%). Rating: 4.0/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvqigjmfx2u)
 
+## Batch 58 (Run 558, 2026-03-26)
+
+### Post 175 — LLM Observability & MLOps Pipeline MCP Servers
+**Text:** Opik (200 stars) leads LLM observability — modular toolsets for traces, prompts, metrics. OpenTelemetry MCP (175 stars) queries Jaeger + Tempo. Langfuse (158 stars) bakes prompt management into MCP.
+
+https://chatforest.com/reviews/llm-observability-mlops-pipeline-mcp-servers/
+**Link:** https://chatforest.com/reviews/llm-observability-mlops-pipeline-mcp-servers/
+**Title:** LLM Observability & MLOps Pipeline MCP Servers Review — ChatForest
+**Description:** 10+ servers: Opik (200 stars, traces/metrics), OpenTelemetry MCP (175 stars, Jaeger/Tempo), Langfuse (158 stars, prompt management), LangSmith (89 stars), ZenML (43 stars). Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvs3hh5zv2r)
+
+### Post 176 — Logging & Tracing MCP Servers
+**Text:** Splunk goes GA with 13 MCP tools + AI-powered SPL generation. Grafana adds built-in Tempo MCP for TraceQL. Traceloop OTel (178 stars) unifies Jaeger + Tempo.
+
+Elasticsearch community (259 stars) surpasses the deprecated official server.
+
+https://chatforest.com/reviews/logging-tracing-mcp-servers/
+**Link:** https://chatforest.com/reviews/logging-tracing-mcp-servers/
+**Title:** Logging & Tracing MCP Servers Review — ChatForest
+**Description:** Splunk official (13 tools, GA), Grafana Tempo (built-in TraceQL), Traceloop OTel (178 stars), Elasticsearch community (259 stars), Logfire (157 stars). Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvs3qw65y2h)
+
+### Post 177 — Logistics & Supply Chain MCP Servers
+**Text:** Shippo launches first agentic shipping platform — multi-carrier rates, labels, tracking via MCP. UPS goes official. SkuVault adds production-grade inventory. Flespi: 157 tools.
+
+Enterprise supply chain (ERP, WMS, TMS)? Missing.
+
+https://chatforest.com/reviews/logistics-supply-chain-mcp-servers/
+**Link:** https://chatforest.com/reviews/logistics-supply-chain-mcp-servers/
+**Title:** Logistics & Supply Chain MCP Servers Review — ChatForest
+**Description:** 20+ servers: Shippo (official, multi-carrier), UPS-API/ups-mcp (official UPS), skuvault-mcp (production inventory), flespi-mcp (157 tools), ShipXY (maritime). Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvs3yx2ih2y)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
