@@ -1412,6 +1412,38 @@ https://chatforest.com/reviews/everart-mcp-server/
 **Description:** Archived image generation MCP server. 1 tool, 5 models (FLUX, SD3.5, Recraft), $50/month minimum, 83 weekly npm downloads (down 64%). Rating: 2.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuhczlnty2o)
 
+## Batch 45
+
+### Post 136 — Exa MCP Server
+**Text:** Exa's MCP server brings semantic search to AI agents — ask for "startups building LLM observability tools" and get conceptual matches, not keyword results. 4,100+ stars, 9 tools, free tier with 150 calls/day.
+
+Review:
+https://chatforest.com/reviews/exa-mcp-server/
+**Link:** https://chatforest.com/reviews/exa-mcp-server/
+**Title:** Exa MCP Server Review — ChatForest
+**Description:** Semantic web search MCP server with neural search, code search, company research, and deep research. 4,100+ stars, 9 tools, MIT license. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuizc7ujm2o)
+
+### Post 137 — Fashion, Beauty & Style MCP Servers
+**Text:** Fashion + AI is still early. We found ~10 MCP servers: virtual try-on (heybeauty-mcp), K-Beauty with AI skin analysis (7 tools), commercial styling (FindMine), and wardrobe management. Big gaps in size/fit and trends.
+
+Review:
+https://chatforest.com/reviews/fashion-beauty-style-mcp-servers/
+**Link:** https://chatforest.com/reviews/fashion-beauty-style-mcp-servers/
+**Title:** Fashion, Beauty & Style MCP Servers Review — ChatForest
+**Description:** Virtual try-on, wardrobe management, K-Beauty, and AI styling MCP servers. ~10 servers across 5 subcategories, early-stage but promising. Rating: 2.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuizpv5qt2l)
+
+### Post 138 — Feature Flags & Experimentation MCP Servers
+**Text:** Feature flags have incredible MCP coverage — nearly every major platform has an official server. LaunchDarkly, GrowthBook (14 tools), Unleash, Flagsmith, DevCycle, PostHog (27 tools), and more. 15+ servers reviewed.
+
+Review:
+https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/
+**Link:** https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/
+**Title:** Feature Flags & Experimentation MCP Servers Review — ChatForest
+**Description:** LaunchDarkly, GrowthBook, Unleash, Flagsmith, DevCycle, PostHog, and more. 15+ servers with exceptional vendor coverage. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuizz2u4i2j)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
