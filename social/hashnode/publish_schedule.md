@@ -80,6 +80,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 074 Chaos Engineering MCP        | 69c3398b0faf8887acdab9fb         | published |
 | 2026-03-25 | 075 Chemistry & Molecular MCP    | 69c339dd0faf8887acdab9fd         | published |
 | 2026-03-25 | 076 Chroma MCP Server            | 69c33a29354088da10bf8d7e         | published |
+| 2026-03-25 | 077 CI/CD MCP Servers (Build)    | 69c340bdef7b5cf3f5bb8a04         | published |
+| 2026-03-25 | 078 CI/CD MCP Servers (Platforms)| 69c340be75406c87301c199c         | published |
+| 2026-03-25 | 079 CI/CD Pipeline MCP Servers   | 69c340c356c59d4e4622b08d         | published |
+| 2026-03-25 | 080 Cloud Storage MCP Servers    | 69c340c456c59d4e4622b08f         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

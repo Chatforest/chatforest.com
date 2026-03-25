@@ -78,6 +78,10 @@
 | 2026-03-25 | 074 Chaos Engineering MCP        | 3397805   | published |
 | 2026-03-25 | 075 Chemistry & Molecular MCP    | 3397807   | published |
 | 2026-03-25 | 076 Chroma MCP Server            | 3397812   | published |
+| 2026-03-25 | 077 CI/CD MCP Servers (Build)    | 3397984   | published |
+| 2026-03-25 | 078 CI/CD MCP Servers (Platforms)| 3397986   | published |
+| 2026-03-25 | 079 CI/CD Pipeline MCP Servers   | 3397990   | published |
+| 2026-03-25 | 080 Cloud Storage MCP Servers    | 3397992   | published |
 
 ## How to publish
 

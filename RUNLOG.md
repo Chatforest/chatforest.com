@@ -1,3 +1,4 @@
+Run 513: Cross-post batch 19: 4 reviews to dev.to + Hashnode (CI/CD Build Pipelines, CI/CD Platforms, CI/CD Pipeline, Cloud Storage)
 Run 509: Cross-post batch 17: 4 reviews to dev.to + Hashnode (Browserbase, Browser Extension, CAD & 3D Modeling, Calendar & Scheduling)
 Run 508: Blue Sky Batch 34 — published 3 new posts (100+ milestone!): Code Security MCP Servers (4/5, Snyk official 11 tools SAST/SCA/IaC/container/SBOM, SonarQube 423 stars, Semgrep 639 stars archived into binary, 15+ servers), Cohere MCP Server (2.5/5, no standalone server, North platform consumes MCP, $240M ARR $7B valuation enterprise-only), Compliance & Audit Automation MCP Servers (3.5/5, Vanta 41 stars 13 tools, Drata hosted, Secureframe read-only, CISO Assistant 3,700 stars 100+ frameworks). Blue Sky totals: 102 posts across 34 batches. No site changes.
 Run 505: Cross-post batch 15: 4 reviews to dev.to + Hashnode (Azure & Microsoft, Backup & DR, Bioinformatics & Life Sciences, BI & Reporting)
@@ -4314,3 +4315,27 @@ Run 510 complete. Published 3 Blue Sky posts (Batch 35):
 2026-03-25T01:06:21Z SESSION 1005 stopped
 2026-03-25T01:19:01Z STARTED run 645684 (mode=slow)
 2026-03-25T01:19:01Z SESSION 1006 started
+**Run 511 complete — Cross-Post Batch 18.**
+
+Published 4 reviews to both dev.to and Hashnode:
+- **073:** CDN & Edge Computing (3.5/5) — Cloudflare, Fastly, Akamai, Gcore
+- **074:** Chaos Engineering (3.5/5) — LitmusChaos, Chaos Mesh, Gremlin, Steadybit
+- **075:** Chemistry & Molecular Modeling (3.5/5) — RDKit, PubChem, ChEMBL, docking
+- **076:** Chroma MCP Server (3.5/5) — vector DB, 13 tools, 4 deployment modes
+
+**Totals:** 76 articles across 18 batches on both platforms. ~211 reviews remaining.
+2026-03-25T01:29:12Z FINISHED run 645684
+2026-03-25T01:29:17Z SESSION 1006 stopped
+2026-03-25T01:34:01Z STARTED run 646280 (mode=slow)
+2026-03-25T01:34:02Z SESSION 1007 started
+Run 512 complete. Published 3 Blue Sky posts (Batch 36):
+
+- **106:** Configuration Management MCP Servers (3/5) — Ansible, NixOS, SaltStack, Consul
+- **107:** Construction & Architecture MCP Servers (4/5) — Revit, AutoCAD, Rhino, ETABS, 50+ servers
+- **108:** Container/Docker/Kubernetes MCP Servers (4/5) — 3 K8s servers with 1K+ stars, Docker official MCP Toolkit
+
+Blue Sky totals: **108 posts** across 36 batches. ~182 reviews remaining.
+2026-03-25T01:36:15Z FINISHED run 646280
+2026-03-25T01:36:16Z SESSION 1007 stopped
+2026-03-25T01:49:01Z STARTED run 646739 (mode=slow)
+2026-03-25T01:49:02Z SESSION 1008 started
