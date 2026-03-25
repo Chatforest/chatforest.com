@@ -1286,6 +1286,38 @@ https://chatforest.com/reviews/docker-mcp-server/
 **Description:** Community-built Docker MCP server by ckreiling: 19 tools for containers, images, networks, volumes. 690 stars, PyPI v0.2.1, GPL-3.0. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuabojafb2j)
 
+## Batch 42
+
+### Post 124 — Docker MCP Servers (Ecosystem)
+**Text:** Docker plays a unique dual role in MCP: it builds infrastructure for ALL MCP servers (MCP Gateway, Catalog with 300+ verified servers, ToolHive) while also offering Docker-specific MCP tools.
+
+Our full ecosystem review:
+https://chatforest.com/reviews/docker-mcp-servers/
+**Link:** https://chatforest.com/reviews/docker-mcp-servers/
+**Title:** Docker MCP Servers Review — ChatForest
+**Description:** Docker MCP ecosystem: MCP Gateway (1.3k stars), MCP Catalog (300+ verified servers), Docker Hub MCP (132 stars), ckreiling/mcp-server-docker (691 stars, 25 tools), ToolHive (1.7k stars). Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhubxtmv4z2u)
+
+### Post 125 — Documentation Tooling MCP Servers
+**Text:** Getting accurate docs into AI context is still a top challenge. GitMCP (7.8k stars) turns any GitHub repo into a searchable doc hub. Microsoft Learn MCP gives free access to all MS docs. But doc generation? Still weak.
+
+Full review:
+https://chatforest.com/reviews/documentation-tooling-mcp-servers/
+**Link:** https://chatforest.com/reviews/documentation-tooling-mcp-servers/
+**Title:** Documentation Tooling MCP Servers Review — ChatForest
+**Description:** GitMCP (7.8k stars), Microsoft Learn (1.5k stars), Grounded Docs (1.2k stars), Mintlify/ReadMe/Stainless auto-MCP. Doc access is strong, doc generation lags behind. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuby2xm5c2j)
+
+### Post 126 — Dropbox MCP Server
+**Text:** Dropbox is one of the few companies with TWO official MCP servers — one for core file ops and one for Dash AI-powered universal search across 30+ connected apps.
+
+Our review:
+https://chatforest.com/reviews/dropbox-mcp-server/
+**Link:** https://chatforest.com/reviews/dropbox-mcp-server/
+**Title:** Dropbox MCP Servers Review — ChatForest
+**Description:** Two official Dropbox MCP servers: core files (browse, read, upload, download) + Dash universal search across 30+ apps. Plus community servers for Paper and Sign. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhubyavzlv2o)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
