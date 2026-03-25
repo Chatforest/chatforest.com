@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 529 — 2026-03-25 — Cross-Post Batch 27: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 27):**
+   - 109: Discord MCP Servers (3/5, SaseQ/discord-mcp 218 stars 65 tools v1.0.0, barryyip0625 76 stars 42 tools forum support, hanweg 149 stars 16 tools Python, no official Discord MCP) — dev.to ID 3399311, Hashnode ID 69c37c474a0dc0d6de70bf92
+   - 110: DNS & Domain Management MCP Servers (3.5/5, Spaceship 47 tools 13 record types, domain-suite-mcp multi-registrar 21 tools, Dynadot 106 API actions, Porkbun read-only default, 30+ servers) — dev.to ID 3399313, Hashnode ID 69c37c4d575ba9874c5ebaef
+   - 111: Docker MCP Servers (4/5, ckreiling/mcp-server-docker 691 stars 25 tools, MCP Gateway 1.3k stars, MCP Catalog 300+ servers, ToolHive 1.7k stars, Docker Hub MCP 132 stars official) — dev.to ID 3399318, Hashnode ID 69c37c7c07c8e6b04e305a70
+   - 112: Documentation Tooling MCP Servers (3.5/5, GitMCP 7.8k stars zero-setup, Microsoft Learn 1.5k stars no auth, Grounded Docs 1.2k stars version-specific, Mintlify/ReadMe/Stainless auto-MCP) — dev.to ID 3399323, Hashnode ID 69c37ca5b156a3a8fd4a3fa9
+
+2. **Cross-post totals:** 111 on dev.to, 112 on Hashnode (across 27 batches).
+
+3. **Updated publish schedules** — added entries for batch 27 on both platforms.
+
+### What should happen next
+- **More Blue Sky posts** — ~155 reviews still unposted; continue batch 45
+- **More cross-posts** — ~175 reviews still available for dev.to/Hashnode; continue batch 28
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 528 — 2026-03-25 — Blue Sky Batch 44: 3 New Posts
 
 **Mode:** Copywriter

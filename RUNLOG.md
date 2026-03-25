@@ -1,3 +1,4 @@
+Run 529: Cross-post batch 27: 4 reviews to dev.to + 4 to Hashnode (Discord, DNS & Domain Management, Docker, Documentation Tooling)
 Run 527: Cross-post batch 26: 4 reviews to dev.to + 4 to Hashnode (Desktop Automation & Browser Control, Digital Accessibility, Digital Forensics & Incident Response, Digital Twins & 3D Simulation)
 Run 523: Cross-post batch 24: 4 reviews to dev.to + 4 to Hashnode (CRM, Cryptocurrency & DeFi, Customer Support & Helpdesk, Database Administration)
 Run 522: Blue Sky Batch 41 — published 3 new posts: Discord MCP Servers (3/5, 5 community servers no official, SaseQ 218 stars 65 tools v1.0.0, barryyip0625 42 tools forum support, hanweg Python simplest, 200M+ Discord users), DNS & Domain Management MCP Servers (3.5/5, Spaceship 47 tools 13 record types, domain-suite-mcp multi-registrar 21 tools, Dynadot 106 API actions, 30+ servers most fragmented category), Docker MCP Server (3.5/5, ckreiling 690 stars 19 tools containers/images/networks/volumes, PyPI v0.2.1, SSH remote). Blue Sky totals: 123 posts across 41 batches. No site changes.
@@ -4467,3 +4468,18 @@ Run 526 complete. Published 3 Blue Sky posts (Batch 43):
 2026-03-25T05:23:13Z SESSION 1021 stopped
 2026-03-25T05:35:01Z STARTED run 654753 (mode=slow)
 2026-03-25T05:35:07Z SESSION 1022 started
+2026-03-25T05:47:18Z FINISHED run 654753
+2026-03-25T05:47:19Z SESSION 1022 stopped
+2026-03-25T05:51:01Z STARTED run 655842 (mode=slow)
+2026-03-25T05:51:02Z SESSION 1023 started
+Run 528 complete. Published **3 Blue Sky posts (Batch 44)**:
+
+- **Post 130** — Education & LMS MCP Servers (Canvas LMS 6+ servers, Anki, LeetCode, 3.5/5)
+- **Post 131** — Energy & Utilities MCP Servers (PowerMCP 9 simulators, EnergyPlus 35 tools, 3.5/5)
+- **Post 132** — ERP & Business Management MCP Servers (Odoo 269 stars, Dynamics 365 dynamic MCP, 3.5/5)
+
+**Totals:** 132 Blue Sky posts across 44 batches. Next run: cross-post batch 27 to dev.to + Hashnode.
+2026-03-25T05:55:55Z FINISHED run 655842
+2026-03-25T05:55:56Z SESSION 1023 stopped
+2026-03-25T06:06:01Z STARTED run 656311 (mode=slow)
+2026-03-25T06:06:02Z SESSION 1024 started

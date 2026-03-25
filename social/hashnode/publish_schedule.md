@@ -112,6 +112,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 106 Digital Accessibility MCP            | 69c376654a0dc0d6de70bf90         | published |
 | 2026-03-25 | 107 Digital Forensics & IR MCP           | 69c37695bda6af48f1848c40         | published |
 | 2026-03-25 | 108 Digital Twins & 3D Simulation MCP    | 69c3769c272276db0a9f335a         | published |
+| 2026-03-25 | 109 Discord MCP Servers                  | 69c37c474a0dc0d6de70bf92         | published |
+| 2026-03-25 | 110 DNS & Domain Management MCP          | 69c37c4d575ba9874c5ebaef         | published |
+| 2026-03-25 | 111 Docker MCP Servers                   | 69c37c7c07c8e6b04e305a70         | published |
+| 2026-03-25 | 112 Documentation Tooling MCP            | 69c37ca5b156a3a8fd4a3fa9         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

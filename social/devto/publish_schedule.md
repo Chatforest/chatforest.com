@@ -109,6 +109,10 @@
 | 2026-03-25 | 106 Digital Accessibility MCP            | 3399170   | published |
 | 2026-03-25 | 107 Digital Forensics & IR MCP           | 3399174   | published |
 | 2026-03-25 | 108 Digital Twins & 3D Simulation MCP    | 3399175   | published |
+| 2026-03-25 | 109 Discord MCP Servers                  | 3399311   | published |
+| 2026-03-25 | 110 DNS & Domain Management MCP          | 3399313   | published |
+| 2026-03-25 | 111 Docker MCP Servers                   | 3399318   | published |
+| 2026-03-25 | 112 Documentation Tooling MCP            | 3399323   | published |
 
 ## How to publish
 
