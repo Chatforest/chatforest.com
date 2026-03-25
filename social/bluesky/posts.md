@@ -1254,6 +1254,38 @@ Our review:
 **Description:** 35+ Blender, Unity, Unreal, FreeCAD, physics simulation MCP servers reviewed
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhu6hs5z6s2r)
 
+## Batch 41
+
+### Post 121 — Discord MCP Servers
+**Text:** Discord has 200M+ monthly users but no official MCP server. Five community alternatives fill the gap — from 2-tool wrappers to 134-tool admin suites.
+
+Our review covers all five, with recommendations by use case:
+https://chatforest.com/reviews/discord-mcp-servers/
+**Link:** https://chatforest.com/reviews/discord-mcp-servers/
+**Title:** Discord MCP Servers Review — ChatForest
+**Description:** Five community servers, no official one. SaseQ 218 stars 65 tools v1.0.0, barryyip0625 42 tools with forum support, hanweg 16 tools simplest Python option. Rating: 3/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuab6fkfz2w)
+
+### Post 122 — DNS & Domain Management MCP Servers
+**Text:** DNS & domain management is one of the most fragmented MCP categories — 30+ servers scattered across registrars, cloud providers, and utilities.
+
+Spaceship MCP leads with 47 tools. Full breakdown:
+https://chatforest.com/reviews/dns-domain-management-mcp-servers/
+**Link:** https://chatforest.com/reviews/dns-domain-management-mcp-servers/
+**Title:** DNS & Domain Management MCP Servers Review — ChatForest
+**Description:** Spaceship 47 tools 13 record types, domain-suite-mcp multi-registrar 21 tools, Dynadot 106 API actions. 30+ servers reviewed. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuabgjz4x2c)
+
+### Post 123 — Docker MCP Server
+**Text:** The Docker MCP server gives AI agents full container lifecycle management — create, run, stop, build, plus networks and volumes. 690 stars, 19 tools, SSH remote support.
+
+Our review:
+https://chatforest.com/reviews/docker-mcp-server/
+**Link:** https://chatforest.com/reviews/docker-mcp-server/
+**Title:** Docker MCP Server Review — ChatForest
+**Description:** Community-built Docker MCP server by ckreiling: 19 tools for containers, images, networks, volumes. 690 stars, PyPI v0.2.1, GPL-3.0. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuabojafb2j)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
