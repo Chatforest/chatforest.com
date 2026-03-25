@@ -1144,6 +1144,35 @@ Our review:
 **Description:** Review of 20+ Docker, Kubernetes, Helm, Podman, and Portainer MCP servers
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtx6j43it2u)
 
+## Batch 37
+
+### Post 109 — Container Registry MCP Servers
+**Text:** Container Registry MCP Servers — Docker Hub's official server (130 stars, 13 tools) brings AI-powered image discovery across 100K+ public images. JFrog leads with 22+ tools. 12+ servers across 8 platforms reviewed.
+
+Our review:
+**Link:** https://chatforest.com/reviews/container-registry-mcp-servers/
+**Title:** Container Registry MCP Servers — ChatForest
+**Description:** Review of 12+ Docker Hub, ECR, ACR, JFrog, Harbor, and Nexus MCP servers
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtyvpmyua2k)
+
+### Post 110 — CRM MCP Servers
+**Text:** CRM MCP Servers — Salesforce dominates with 312 stars and 60+ tools (official). HubSpot's official repo is empty. Pipedrive's top server is read-only. Zoho has no production-ready server. 20+ servers across 8 platforms.
+
+Our review:
+**Link:** https://chatforest.com/reviews/crm-mcp-servers/
+**Title:** CRM MCP Servers — ChatForest
+**Description:** Review of 20+ Salesforce, HubSpot, Pipedrive, Attio, and Dynamics 365 MCP servers
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtyvvffgl2j)
+
+### Post 111 — Cryptocurrency & DeFi MCP Servers
+**Text:** Cryptocurrency & DeFi MCP Servers — goat-sdk (966 stars, 200+ onchain actions) and Coinbase agentkit (1,200 stars) lead the pack. Phantom, Trust Wallet, Bitget launching native MCP. 50+ servers reviewed.
+
+Our review:
+**Link:** https://chatforest.com/reviews/cryptocurrency-defi-mcp-servers/
+**Title:** Cryptocurrency & DeFi MCP Servers — ChatForest
+**Description:** Review of 50+ Ethereum, Solana, Bitcoin, wallet, DEX, and analytics MCP servers
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtyw2626j2t)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
