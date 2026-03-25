@@ -2116,6 +2116,35 @@ https://chatforest.com/reviews/news-media-journalism-mcp-servers/
 **Description:** mcp-rss-aggregator (24 stars), hacker-news-mcp (multi-transport), @newsmcp/server (free), Podsidian (podcast transcription), news-factchecker-mcp (AI). 40+ servers. Rating: 3.5/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwa6zjnmd2j)
 
+## Batch 67 (Run 576, 2026-03-26)
+
+### Post 202 — Nimble MCP Server
+**Text:** Nimble MCP: enterprise web data, 7 tools. Only MCP server with Google Maps extraction (business search, crowd levels, review sentiment). 93% accuracy but 51% under load. $47M Series B. Free trial 5K pages, $2,500/mo managed.
+
+https://chatforest.com/reviews/nimble-mcp-server/
+**Link:** https://chatforest.com/reviews/nimble-mcp-server/
+**Title:** Nimble MCP Server Review — ChatForest
+**Description:** Enterprise web data for AI agents. 7 tools, 93% search accuracy, Google Maps extraction, e-commerce templates. Free trial: 5,000 pages. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwbv7ydrf2u)
+
+### Post 203 — Nonprofit & Charity MCP Servers
+**Text:** Nonprofit & charity MCP: 15+ servers. charity-mcp-server (22 stars, IRS lookup). Blackbaud donor CRM official. hdx-mcp: 33 tools, UN humanitarian data. Benevity: 2.4M nonprofits. Driven by Anthropic's Claude for Nonprofits initiative.
+
+https://chatforest.com/reviews/nonprofit-charity-mcp-servers/
+**Link:** https://chatforest.com/reviews/nonprofit-charity-mcp-servers/
+**Title:** Nonprofit & Charity MCP Servers Review — ChatForest
+**Description:** charity-mcp-server (22 stars, IRS lookup), Blackbaud connector (donor CRM), Benevity (2.4M nonprofits), hdx-mcp (33 tools, humanitarian data). 15+ servers. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwbvpyt6n2u)
+
+### Post 204 — Note-Taking & Knowledge Management MCP Servers
+**Text:** Note-taking MCP: 40+ servers. Obsidian leads (8 community servers). Notion official, 20+ tools. Apple Notes gets RAG semantic search. Knowledge graphs: Memento (Neo4j), Engram (hybrid). Every major PKM platform covered.
+
+https://chatforest.com/reviews/note-taking-knowledge-management-mcp-servers/
+**Link:** https://chatforest.com/reviews/note-taking-knowledge-management-mcp-servers/
+**Title:** Note-Taking & Knowledge Management MCP Servers Review — ChatForest
+**Description:** 40+ servers across Obsidian (8 servers), Notion (official), Apple Notes (RAG search), Evernote, Joplin, Roam, Logseq, Tana, Capacities, and knowledge graph memory. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwbw7crvf2e)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
