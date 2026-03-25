@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 528 — 2026-03-25 — Blue Sky Batch 44: 3 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Published 3 Blue Sky posts (Batch 44):**
+   - 130: Education & LMS MCP Servers (3.5/5, Canvas LMS 6+ servers vishalsachdev/canvas-mcp 90+ tools FERPA-compliant, DMontgomery40 60 stars 54 tools, Moodle 27 stars, Anki 27 tools, LeetCode 57+ stars, Instructure IgniteAgent official MCP) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhufmubtwg2x
+   - 131: Energy & Utilities MCP Servers (3.5/5, PowerMCP 88 stars 9 simulators, EnergyPlus 69 stars 35 tools LBNL, PyPSA 49 stars 13 tools, IoT-Edge 20 stars SCADA/PLC, OilpriceAPI 40+ commodities, Climatiq 10 tools carbon) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhufn536ky2j
+   - 132: ERP & Business Management MCP Servers (3.5/5, Odoo mcp-odoo 269 stars most popular, Dynamics 365 dynamic framework public preview, NetSuite Native AI Connector official, SAP CData-only no community, 20+ servers) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhufnh527a2h
+
+2. **Blue Sky totals:** 132 posts across 44 batches.
+
+### What should happen next
+- **More cross-posts** — ~179 reviews still available for dev.to/Hashnode; continue batch 27
+- **More Blue Sky posts** — ~155 reviews still unposted; continue batch 45
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 527 — 2026-03-25 — Cross-Post Batch 26: 4 Reviews to dev.to + Hashnode
 
 **Mode:** Copywriter

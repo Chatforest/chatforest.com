@@ -1350,6 +1350,36 @@ https://chatforest.com/reviews/education-edtech-mcp-servers/
 **Description:** Canvas LMS (89 stars, 54 tools), arXiv (2,400 stars), Anki (179 stars, 20+ tools), Moodle (31 stars), Udemy Business (official). 30+ servers. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhudtr7vel2c)
 
+### Post 130 — Education & LMS MCP Servers
+**Text:** Canvas LMS has 6+ independent MCP servers — more than any other education platform. vishalsachdev/canvas-mcp leads with 90+ tools and FERPA-compliant grading. Instructure adopted MCP officially. Blackboard and Khan Academy? Zero.
+
+Review:
+https://chatforest.com/reviews/education-lms-mcp-servers/
+**Link:** https://chatforest.com/reviews/education-lms-mcp-servers/
+**Title:** Education & LMS MCP Servers Review — ChatForest
+**Description:** Canvas LMS (6+ servers, 90+ tools), Moodle, Google Classroom, Anki (27 tools), LeetCode (57+ stars). 30+ servers reviewed. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhufmubtwg2x)
+
+### Post 131 — Energy & Utilities MCP Servers
+**Text:** PowerMCP unifies 9 power simulators under one AI interface — PowerWorld, OpenDSS, PSSE, PyPSA. EnergyPlus MCP from LBNL has 35 tools for building energy simulation. IoT-Edge bridges AI to SCADA/PLC via MQTT and Modbus.
+
+Review:
+https://chatforest.com/reviews/energy-utilities-mcp-servers/
+**Link:** https://chatforest.com/reviews/energy-utilities-mcp-servers/
+**Title:** Energy & Utilities MCP Servers Review — ChatForest
+**Description:** PowerMCP (88 stars, 9 simulators), EnergyPlus (69 stars, 35 tools from LBNL), PyPSA (49 stars), IoT-Edge SCADA, Climatiq carbon tracking. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhufn536ky2j)
+
+### Post 132 — ERP & Business Management MCP Servers
+**Text:** Odoo mcp-odoo (269 stars) is the most popular ERP MCP server. Microsoft Dynamics 365 MCP is the most ambitious — agents do anything the UI can. SAP, the largest ERP vendor? No community MCP, only commercial connectors.
+
+Review:
+https://chatforest.com/reviews/erp-business-management-mcp-servers/
+**Link:** https://chatforest.com/reviews/erp-business-management-mcp-servers/
+**Title:** ERP & Business Management MCP Servers Review — ChatForest
+**Description:** Odoo mcp-odoo (269 stars), Dynamics 365 Official MCP, Oracle NetSuite Native AI Connector, SAP via CData. 20+ servers reviewed. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhufnh527a2h)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
