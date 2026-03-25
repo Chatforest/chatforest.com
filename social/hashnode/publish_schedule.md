@@ -184,6 +184,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-26 | 178 MindsDB MCP Server                         | 69c4474dc020b9b19ca8e5a9         | published |
 | 2026-03-26 | 179 Mistral MCP Server                         | 69c44781fcad42f51647b64a         | published |
 | 2026-03-26 | 180 Monitoring & Observability MCP Servers      | 69c44788c020b9b19ca8e5ad         | published |
+| 2026-03-26 | 181 Monitoring & Uptime MCP Servers              | 69c44e8d47df7a5ef6d77265         | published |
+| 2026-03-26 | 182 Music & Audio Production MCP Servers         | 69c44e9b0037acf9fcb4b832         | published |
+| 2026-03-26 | 183 MySQL MCP Servers                            | 69c44ece32d57f0e7eadbc8e         | published |
+| 2026-03-26 | 184 Neon MCP Server                              | 69c44ef747df7a5ef6d7726b         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

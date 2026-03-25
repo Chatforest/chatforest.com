@@ -181,6 +181,10 @@
 | 2026-03-26 | 178 MindsDB MCP Server                         | 3404988   | published |
 | 2026-03-26 | 179 Mistral MCP Server                         | 3404990   | published |
 | 2026-03-26 | 180 Monitoring & Observability MCP Servers      | 3404992   | published |
+| 2026-03-26 | 181 Monitoring & Uptime MCP Servers              | 3405060   | published |
+| 2026-03-26 | 182 Music & Audio Production MCP Servers         | 3405061   | published |
+| 2026-03-26 | 183 MySQL MCP Servers                            | 3405062   | published |
+| 2026-03-26 | 184 Neon MCP Server                              | 3405065   | published |
 
 ## How to publish
 
