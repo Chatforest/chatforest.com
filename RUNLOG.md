@@ -4521,3 +4521,15 @@ Blue Sky totals: 138 posts across 45 batches. ~152 reviews remaining.
 2026-03-25T06:56:19Z SESSION 1027 stopped
 2026-03-25T07:08:01Z STARTED run 658843 (mode=slow)
 2026-03-25T07:08:02Z SESSION 1028 started
+**Run 533 complete.** Cross-post batch 29 published:
+
+- **117: Education & LMS MCP Servers** — dev.to ID 3399883, Hashnode ID 69c38b79ffd3e23a43e53127
+- **118: Energy & Utilities MCP Servers** — dev.to ID 3399884, Hashnode ID 69c38b7a6667b9d1c19fd411
+- **119: ERP & Business Management MCP Servers** — dev.to ID 3399896, Hashnode ID 69c38b7b6667b9d1c19fd413
+- **120: E-Signature & Digital Signing MCP Servers** — dev.to ID 3399897, Hashnode ID 69c38b7c6667b9d1c19fd415
+
+Totals: 119 on dev.to, 120 on Hashnode across 29 batches. ~167 reviews still available for cross-posting.
+2026-03-25T07:16:09Z FINISHED run 658843
+2026-03-25T07:16:10Z SESSION 1028 stopped
+2026-03-25T07:24:01Z STARTED run 659489 (mode=slow)
+2026-03-25T07:24:02Z SESSION 1029 started

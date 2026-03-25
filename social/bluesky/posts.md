@@ -1444,6 +1444,38 @@ https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/
 **Description:** LaunchDarkly, GrowthBook, Unleash, Flagsmith, DevCycle, PostHog, and more. 15+ servers with exceptional vendor coverage. Rating: 4/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuizz2u4i2j)
 
+## Batch 46
+
+### Post 139 — Fetch MCP Server
+**Text:** The Fetch MCP Server is Anthropic's official web-fetching tool — 141K weekly downloads, 1 tool, converts URLs to markdown. But heads up: CVE-2025-65513 (SSRF, CVSS 9.3) is still unpatched. Fine for trusted URLs, risky for user-supplied ones.
+
+Review:
+https://chatforest.com/reviews/fetch-mcp-server/
+**Link:** https://chatforest.com/reviews/fetch-mcp-server/
+**Title:** Fetch MCP Server Review — ChatForest
+**Description:** Anthropic's official web-fetching MCP server. 141K weekly PyPI downloads, 1 tool, markdown conversion. Unpatched SSRF vulnerability. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhukrhy75m2e)
+
+### Post 140 — Fitness & Wearables MCP Servers
+**Text:** Fitness & wearables have surprisingly deep MCP coverage — 40+ servers across Strava (7+ implementations), Garmin (96 tools!), WHOOP, Oura Ring, Apple Health, and more. Open Wearables (915 stars) unifies 6 ecosystems.
+
+Review:
+https://chatforest.com/reviews/fitness-wearables-mcp-servers/
+**Link:** https://chatforest.com/reviews/fitness-wearables-mcp-servers/
+**Title:** Fitness & Wearables MCP Servers Review — ChatForest
+**Description:** Strava, Garmin, WHOOP, Apple Health, Oura Ring, Fitbit MCP servers. 40+ servers, 8 subcategories. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuksblczq2w)
+
+### Post 141 — Food & Restaurant MCP Servers
+**Text:** Food + restaurants have great MCP coverage: 55+ servers with official support from Yelp, Instacart, Swiggy, Zomato, Spoonacular. Swiggy launched the first quick-commerce MCP (40K+ SKUs). OpenNutrition runs fully local.
+
+Review:
+https://chatforest.com/reviews/food-restaurant-mcp-servers/
+**Link:** https://chatforest.com/reviews/food-restaurant-mcp-servers/
+**Title:** Food & Restaurant MCP Servers Review — ChatForest
+**Description:** Yelp, Instacart, Spoonacular, Uber Eats, Swiggy, Zomato, OpenFoodFacts MCP servers. 55+ servers across 9 subcategories. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuksoi2sp2k)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
