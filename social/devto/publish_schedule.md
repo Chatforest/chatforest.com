@@ -165,6 +165,10 @@
 | 2026-03-26 | 162 Library, Archive & Museum MCP Servers     | 3404530   | published |
 | 2026-03-26 | 163 LLM Evaluation & Benchmarking MCP Servers | 3404540   | published |
 | 2026-03-26 | 164 LLM Observability & MLOps Pipeline MCP    | 3404541   | published |
+| 2026-03-26 | 165 Logging & Tracing MCP Servers             | 3404641   | published |
+| 2026-03-26 | 166 Logistics & Supply Chain MCP Servers      | 3404642   | published |
+| 2026-03-26 | 167 Log Management MCP Servers                | 3404646   | published |
+| 2026-03-26 | 168 MailerSend MCP Server                     | 3404647   | published |
 
 ## How to publish
 
