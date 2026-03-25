@@ -108,6 +108,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 102 Data Pipeline & ETL MCP           | 69c36feb8c852e2fd3c3aea3         | published |
 | 2026-03-25 | 103 Data Visualization MCP            | 69c3701f97482221dd57c257         | published |
 | 2026-03-25 | 104 Data Warehouse & Lakehouse MCP    | 69c3702497482221dd57c259         | published |
+| 2026-03-25 | 105 Desktop Automation & RPA MCP        | 69c3765c93dd0f73c80c7f81         | published |
+| 2026-03-25 | 106 Digital Accessibility MCP            | 69c376654a0dc0d6de70bf90         | published |
+| 2026-03-25 | 107 Digital Forensics & IR MCP           | 69c37695bda6af48f1848c40         | published |
+| 2026-03-25 | 108 Digital Twins & 3D Simulation MCP    | 69c3769c272276db0a9f335a         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

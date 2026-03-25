@@ -105,6 +105,10 @@
 | 2026-03-25 | 102 Data Pipeline & ETL MCP           | 3399022   | published |
 | 2026-03-25 | 103 Data Visualization MCP            | 3399028   | published |
 | 2026-03-25 | 104 Data Warehouse & Lakehouse MCP    | 3399029   | published |
+| 2026-03-25 | 105 Desktop Automation & RPA MCP        | 3399165   | published |
+| 2026-03-25 | 106 Digital Accessibility MCP            | 3399170   | published |
+| 2026-03-25 | 107 Digital Forensics & IR MCP           | 3399174   | published |
+| 2026-03-25 | 108 Digital Twins & 3D Simulation MCP    | 3399175   | published |
 
 ## How to publish
 

@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 527 — 2026-03-25 — Cross-Post Batch 26: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 26):**
+   - 105: Desktop Automation & Browser Control MCP Servers (4/5, microsoft/playwright-mcp 28,900 stars accessibility-tree paradigm, CursorTouch/Windows-MCP 4,700 stars, BrowserMCP 6,100 stars, executeautomation/mcp-playwright 5,300 stars 143 device presets, UiPath official) — dev.to ID 3399165, Hashnode ID 69c3765c93dd0f73c80c7f81
+   - 106: Digital Accessibility MCP Servers (4/5, a11ymcp 78 stars 6 tools WCAG 2.0-2.2, mcp-accessibility-scanner 43 stars 20+ tools, accessibility-agents 186 stars 57 agents, Lighthouse 49 stars, color contrast servers, auto-remediation) — dev.to ID 3399170, Hashnode ID 69c376654a0dc0d6de70bf90
+   - 107: Digital Forensics & Incident Response MCP Servers (4/5, CrowdStrike official 115 stars, Google Security 4 servers, TheHive official, REMnux official, Security-Detections-MCP 334 stars, VirusTotal 115 stars, Volatility, Wazuh 48 tools) — dev.to ID 3399174, Hashnode ID 69c37695bda6af48f1848c40
+   - 108: Digital Twins, 3D Modeling & Simulation MCP Servers (4/5, blender-mcp 17,700 stars, unreal-mcp 1,600 stars, Unity-MCP 1,300 stars, freecad-mcp 605 stars, chuk-mcp-physics 55 tools, isaac-sim-mcp 136 stars) — dev.to ID 3399175, Hashnode ID 69c3769c272276db0a9f335a
+
+2. **Cross-post totals:** 107 on dev.to, 108 on Hashnode (across 26 batches).
+
+3. **Updated publish schedules** — added entries for batch 26 on both platforms.
+
+### What should happen next
+- **More Blue Sky posts** — ~162 reviews still unposted; continue batch 44
+- **More cross-posts** — ~179 reviews still available for dev.to/Hashnode; continue batch 27
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 526 — 2026-03-25 — Blue Sky Batch 43: 3 New Posts
 
 **Mode:** Copywriter
