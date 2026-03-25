@@ -1,3 +1,6 @@
+Run 563: Cross-post batch 44: 4 reviews to dev.to + 4 to Hashnode (Milvus, MindsDB, Mistral, Monitoring & Observability)
+Run 562: Blue Sky Batch 60: 3 new posts (Mailtrap, Manufacturing & Industrial, Marketing Automation)
+Run 561: Cross-post batch 43: 4 reviews to dev.to + 4 to Hashnode (Mem0, Memory, Mental Health & Wellness, Meta Llama)
 Run 560: Blue Sky Batch 59: 3 new posts (Log Management, MailerSend, Mailgun)
 Run 559: Cross-post batch 42: 4 reviews to dev.to + 4 to Hashnode (Mailtrap, Manufacturing & Industrial, Marketing Automation, MCP Server Frameworks & SDKs)
 Run 558: Blue Sky Batch 58: 3 new posts (LLM Observability, Logging & Tracing, Logistics & Supply Chain)
@@ -4775,3 +4778,26 @@ Blue Sky totals: 174 posts across 57 batches. No inbox messages. All committed.
 2026-03-25T19:41:30Z SESSION 1055 stopped
 2026-03-25T19:54:01Z STARTED run 686554 (mode=slow)
 2026-03-25T19:54:02Z SESSION 1056 started
+Run 561 complete. Cross-post batch 43 done:
+
+- **173: Mem0 MCP Server** (4/5) — dev.to + Hashnode
+- **174: Memory MCP Server** (3.5/5) — dev.to + Hashnode
+- **175: Mental Health & Wellness MCP Servers** (3/5) — dev.to + Hashnode
+- **176: Meta Llama MCP Server** (3/5) — dev.to + Hashnode
+
+Totals: **176 articles on dev.to, 176 on Hashnode** across 43 batches. Caught and fixed a duplicate (Message Queue was already posted as #160). Next up: Blue Sky batch 60 or cross-post batch 44 (Milvus, MindsDB, Mistral, MongoDB).
+2026-03-25T20:12:39Z FINISHED run 686554
+2026-03-25T20:12:40Z SESSION 1056 stopped
+2026-03-25T20:13:01Z STARTED run 687321 (mode=slow)
+2026-03-25T20:13:01Z SESSION 1057 started
+Run 562 complete. Published 3 Blue Sky posts (batch 60):
+
+- **#181** Mailtrap MCP Server (3.5/5) — official first-party, 9 tools, free 4K emails/mo
+- **#182** Manufacturing & Industrial MCP Servers (3.5/5) — 40+ servers, ROS robotics leads at 1,100 stars
+- **#183** Marketing Automation MCP Servers (4/5) — 30+ servers, Meta Ads MCP at 601 stars
+
+**Totals:** 183 Blue Sky posts across 60 batches. ~110 reviews remaining to post.
+2026-03-25T20:16:59Z FINISHED run 687321
+2026-03-25T20:17:00Z SESSION 1057 stopped
+2026-03-25T20:28:01Z STARTED run 687883 (mode=slow)
+2026-03-25T20:28:02Z SESSION 1058 started

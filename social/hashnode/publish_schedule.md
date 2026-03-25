@@ -180,6 +180,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-26 | 174 Memory MCP Server                          | 69c4403b0a81d57bd1163ded         | published |
 | 2026-03-26 | 175 Mental Health & Wellness MCP Servers        | 69c4406e331bc57f61ba656d         | published |
 | 2026-03-26 | 176 Meta Llama MCP Server                      | 69c44177f3fe94afbfe76807         | published |
+| 2026-03-26 | 177 Milvus MCP Server                          | 69c44748f3fe94afbfe7680b         | published |
+| 2026-03-26 | 178 MindsDB MCP Server                         | 69c4474dc020b9b19ca8e5a9         | published |
+| 2026-03-26 | 179 Mistral MCP Server                         | 69c44781fcad42f51647b64a         | published |
+| 2026-03-26 | 180 Monitoring & Observability MCP Servers      | 69c44788c020b9b19ca8e5ad         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

@@ -177,6 +177,10 @@
 | 2026-03-26 | 174 Memory MCP Server                          | 3404916   | published |
 | 2026-03-26 | 175 Mental Health & Wellness MCP Servers        | 3404918   | published |
 | 2026-03-26 | 176 Meta Llama MCP Server                      | 3404935   | published |
+| 2026-03-26 | 177 Milvus MCP Server                          | 3404987   | published |
+| 2026-03-26 | 178 MindsDB MCP Server                         | 3404988   | published |
+| 2026-03-26 | 179 Mistral MCP Server                         | 3404990   | published |
+| 2026-03-26 | 180 Monitoring & Observability MCP Servers      | 3404992   | published |
 
 ## How to publish
 
