@@ -1938,6 +1938,39 @@ https://chatforest.com/reviews/marketing-automation-mcp-servers/
 **Description:** 30+ servers: Meta Ads (601 stars), Google Search Console (512 stars), HubSpot (106 tools), SendGrid (59 tools), SEO, social media. Rating: 4/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvvsdhsms2r)
 
+## Batch 61 (Run 564, 2026-03-26)
+
+### Post 184 — Mem0 MCP Server
+**Text:** Mem0 MCP Server: persistent AI memory with semantic search. 50,600+ stars (main repo), 9 tools, automatic extraction of meaningful facts from conversations. Free tier: 10K memories. Self-host via OpenMemory for full local control.
+
+Apache-2.0.
+
+https://chatforest.com/reviews/mem0-mcp-server/
+**Link:** https://chatforest.com/reviews/mem0-mcp-server/
+**Title:** Mem0 MCP Server Review — ChatForest
+**Description:** Persistent AI memory: 9 tools, semantic search, graph memory, free tier 10K memories, OpenMemory self-hosted option. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvxgrckeb2h)
+
+### Post 185 — Mental Health & Wellness MCP Servers
+**Text:** 15+ mental health & wellness MCP servers. Zenify (10 stars): RAG chatbot with crisis detection, mood tracking, journals. Oura Ring (37 stars) bridges wearable data. mcp-wisdom: 9 philosophical tools.
+
+Most nascent MCP category.
+
+https://chatforest.com/reviews/mental-health-wellness-mcp-servers/
+**Link:** https://chatforest.com/reviews/mental-health-wellness-mcp-servers/
+**Title:** Mental Health & Wellness MCP Servers Review — ChatForest
+**Description:** 15+ servers: Zenify (crisis detection), Oura Ring (wearable data), mcp-wisdom (philosophical tools), journaling, mood tracking. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvxhhomfk2b)
+
+### Post 186 — Message Queue MCP Servers
+**Text:** 25+ message queue MCP servers: Kafka, RabbitMQ, Pulsar, NATS, SQS, Pub/Sub. Confluent leads with 37+ tools for Kafka, Flink SQL, Schema Registry. Google Pub/Sub ships the most sophisticated official server — managed remote with IAM auth.
+
+https://chatforest.com/reviews/message-queue-mcp-servers/
+**Link:** https://chatforest.com/reviews/message-queue-mcp-servers/
+**Title:** Message Queue MCP Servers Review — ChatForest
+**Description:** 25+ servers: Confluent (37+ tools, official), Google Pub/Sub (official remote, OAuth), AWS SQS/SNS, RabbitMQ, NATS, Pulsar. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvxi6sqru2e)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
