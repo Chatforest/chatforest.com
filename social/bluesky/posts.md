@@ -1041,6 +1041,41 @@ Review:
 **Description:** ESLint, SonarQube, Semgrep, Ruff, Biome, and more. 15+ servers reviewed. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtswvn2372u)
 
+## Batch 34
+
+### Post 100 — Code Security MCP Servers
+**Text:** Code Security MCP Servers (4/5)
+
+Snyk's official server is unmatched — 11 tools covering SAST, SCA, IaC, containers, and SBOM from one integration. SonarQube has 423 stars. Semgrep pioneered the category (639 stars, now in main binary).
+
+15+ servers across 10 platforms:
+**Link:** https://chatforest.com/reviews/code-security-mcp-servers/
+**Title:** Code Security MCP Servers — ChatForest
+**Description:** Snyk, SonarQube, Semgrep, Trivy, CodeQL, and more. 15+ servers reviewed. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhttt27n5q2c)
+
+### Post 101 — Cohere MCP Server
+**Text:** Cohere MCP Server (2.5/5)
+
+No standalone MCP server exists. Instead, Cohere's North AI agent platform consumes MCP servers as tools — Gmail, Slack, Salesforce connectors plus custom MCP. $240M ARR, $7B valuation, enterprise-only.
+
+Full analysis:
+**Link:** https://chatforest.com/reviews/cohere-mcp-server/
+**Title:** Cohere MCP Server — ChatForest
+**Description:** Cohere integrates MCP as a client in North with a Python SDK. Enterprise-focused. Rating: 2.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtttaldhu2j)
+
+### Post 102 — Compliance & Audit Automation MCP Servers
+**Text:** Compliance & Audit Automation MCP Servers (3.5/5)
+
+The Big 3 compliance vendors all ship MCP now: Vanta (41 stars, 13 tools, full GRC workflow), Drata (hosted, zero-setup), Secureframe (read-only, 11 endpoints). CISO Assistant adds 100+ open-source frameworks.
+
+Review:
+**Link:** https://chatforest.com/reviews/compliance-audit-automation-mcp-servers/
+**Title:** Compliance & Audit Automation MCP Servers — ChatForest
+**Description:** Vanta, Drata, Secureframe, CISO Assistant, and more. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhtttgahf52k)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
