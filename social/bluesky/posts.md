@@ -1804,6 +1804,41 @@ https://chatforest.com/reviews/job-search-career-mcp-servers/
 **Description:** 20+ servers: jobspy (multi-platform), LinkedIn scrapers, Indeed official, JobApply (local resume), interview-roleplay. Rating: 3.5/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvoqrr7cu2j)
 
+## Batch 57 (Run 556, 2026-03-26)
+
+### Post 172 — Legal & Contract Management MCP Servers
+**Text:** 50+ legal MCP servers spanning 14+ countries. Legal research stands out — servers for U.S., France, Germany, Korea, Turkey, Japan, Australia law.
+
+7 e-signature platforms. 37 EU regulations in one server. No DocuSign yet.
+
+https://chatforest.com/reviews/legal-contract-management-mcp-servers/
+**Link:** https://chatforest.com/reviews/legal-contract-management-mcp-servers/
+**Title:** Legal & Contract Management MCP Servers Review — ChatForest
+**Description:** 50+ servers: e-signatures (SendForSign, SignNow, DocuSeal, Dropbox Sign), legal research (14+ countries), compliance (HIPAA, FedRAMP, 37 EU regulations), IP/trademarks. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvqhv2m2h2c)
+
+### Post 173 — Library, Archive & Museum MCP Servers
+**Text:** Zotero has 8+ MCP implementations — zotero-mcp leads at 1,800 stars with vector semantic search. ebook-mcp (351 stars) handles EPUB + PDF.
+
+5 major museums have community servers. Traditional library systems? Zero MCP presence.
+
+https://chatforest.com/reviews/library-archive-museum-mcp-servers/
+**Link:** https://chatforest.com/reviews/library-archive-museum-mcp-servers/
+**Title:** Library, Archive & Museum MCP Servers Review — ChatForest
+**Description:** 35+ servers: zotero-mcp (1,800 stars), ebook-mcp (351 stars), calibre-mcp, rijksmuseum-mcp (65 stars), smithsonian-mcp (16 tools), mcp-wayback-machine. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvqi5tg2f2j)
+
+### Post 174 — LLM Evaluation & Benchmarking MCP Servers
+**Text:** promptfoo (10.8K stars) leads LLM eval with red-teaming + CI/CD. DeepEval (5K+ stars): Pytest-style LLM unit testing. MCP-Bench: 28 live servers, 250 tools.
+
+Sobering: even GPT-5 only hits 43.72% on MCP-Universe tasks.
+
+https://chatforest.com/reviews/llm-evaluation-benchmarking-mcp-servers/
+**Link:** https://chatforest.com/reviews/llm-evaluation-benchmarking-mcp-servers/
+**Title:** LLM Evaluation & Benchmarking MCP Servers Review — ChatForest
+**Description:** 15+ servers: promptfoo (10.8K stars, red-teaming), DeepEval (5K+ stars, unit testing), MCP-Bench (28 servers, 250 tools), MCP-Universe (GPT-5 at 43.72%). Rating: 4.0/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvqigjmfx2u)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
