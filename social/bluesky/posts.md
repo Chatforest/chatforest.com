@@ -1604,6 +1604,38 @@ https://chatforest.com/reviews/google-colab-mcp-server/
 **Description:** Google's official Colab MCP server lets AI agents control notebooks with GPU access. Two operational modes, open-source, brand new (March 2026). Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhurnsyzxb2y)
 
+## Batch 51 (Run 544, 2026-03-25)
+
+### Post 154 — Government & Public Sector MCP Servers
+**Text:** Government MCP servers: 5 official agency servers (GovInfo, Census Bureau, data.gouv.fr, India NSO, GSA) — most institutionally-adopted MCP category. Community standout: 188+ tools across 36 US gov APIs. European Parliament OSINT with MEP influence scoring. LegiScan covers all 50 states. 4/5.
+
+Review:
+https://chatforest.com/reviews/government-public-sector-mcp-servers/
+**Link:** https://chatforest.com/reviews/government-public-sector-mcp-servers/
+**Title:** Government & Public Sector MCP Servers — ChatForest
+**Description:** Government MCP servers: GovInfo (official GPO), Census Bureau, data.gouv.fr, 188-tool mega-aggregator, European Parliament OSINT, 50-state legislation. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuthzpob52j)
+
+### Post 155 — GreptimeDB MCP Server
+**Text:** GreptimeDB MCP Server: unified observability database with 10 tools for metrics, logs, and traces in one place. SQL + PromQL queries, pipeline management, read-only enforcement, data masking. One MCP connection replaces three separate observability tools. 26 stars, MIT. Rating: 3.5/5.
+
+Review:
+https://chatforest.com/reviews/greptimedb-mcp-server/
+**Link:** https://chatforest.com/reviews/greptimedb-mcp-server/
+**Title:** GreptimeDB MCP Server — Observability Data Meets AI Agents — ChatForest
+**Description:** GreptimeDB MCP server: AI-powered observability queries across metrics, logs, and traces. 26 stars, 10 tools, read-only enforcement, data masking. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhutibgmeg2h)
+
+### Post 156 — Healthcare & Medical MCP Servers
+**Text:** Healthcare MCP servers: 30+ servers across FHIR/EHR, PubMed, clinical trials, drug databases, DICOM imaging. PubMed-MCP (104 stars) leads research. WSO2 FHIR (98 stars) for EHR. medical-mcps unifies 14 biomedical APIs into 100+ tools. No Epic/Cerner official yet. Rating: 4/5.
+
+Review:
+https://chatforest.com/reviews/healthcare-medical-mcp-servers/
+**Link:** https://chatforest.com/reviews/healthcare-medical-mcp-servers/
+**Title:** Healthcare & Medical MCP Servers — FHIR, PubMed, Clinical Trials, DICOM — ChatForest
+**Description:** Healthcare MCP servers: FHIR/EHR integration, PubMed research, clinical trials, drug databases, DICOM imaging. 30+ servers reviewed. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhutijgkzl2l)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
