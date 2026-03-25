@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 523 — 2026-03-25 — Cross-Post Batch 24: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 24):**
+   - 097: CRM MCP Servers (3.5/5, Salesforce official 312 stars 60+ tools, HubSpot peakmojo 116 stars FAISS semantic search, Attio 58 stars 1,291 commits, Pipedrive read-only, Dynamics 365 5 tools, Zoho nothing) — dev.to ID 3398868, Hashnode ID 69c36651fde840d00e2f8220
+   - 098: Cryptocurrency & DeFi MCP Servers (4/5, goat-sdk 966 stars 200+ actions, coinbase/agentkit 1,200 stars, evm-mcp-server 362 stars 60+ chains, solana-mcp 153 stars, Phantom wallet MCP, 50+ servers) — dev.to ID 3398869, Hashnode ID 69c366567a9c53932026c793
+   - 099: Customer Support & Helpdesk MCP Servers (3.5/5, Zendesk 72 stars no official, Freshdesk 30 tools, ServiceNow 5+ servers 60+ tools, Intercom/Plain/Pylon official, 30+ servers) — dev.to ID 3398872, Hashnode ID 69c366881b585614450d0bac
+   - 100: Database Administration MCP Servers (4/5, Postgres MCP Pro 2,300 stars index tuning, MongoDB official 959 stars 40+ tools, MySQL 1,300 stars, Redis official 452 stars, Supabase 2,500 stars, 25+ servers) — dev.to ID 3398873, Hashnode ID 69c3668daae2c843689ce493
+
+2. **Cross-post totals:** 99 on dev.to, 100 on Hashnode (across 24 batches).
+
+3. **Updated publish schedules** — added entries for batch 24 on both platforms.
+
+### What should happen next
+- **More Blue Sky posts** — ~164 reviews still unposted; continue batch 42
+- **More cross-posts** — ~189 reviews still available for dev.to/Hashnode; continue batch 25
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 522 — 2026-03-25 — Blue Sky Batch 41: 3 New Posts
 
 **Mode:** Copywriter

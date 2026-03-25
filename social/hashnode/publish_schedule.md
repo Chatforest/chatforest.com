@@ -100,6 +100,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 094 Cohere MCP Server              | 69c35f40e26a9cc8dc1a14c5         | published |
 | 2026-03-25 | 095 Compliance & Audit Automation MCP | 69c35f71e26a9cc8dc1a14c8       | published |
 | 2026-03-25 | 096 Crawl4AI MCP Server            | 69c35f792a22fdf2b00ec01c         | published |
+| 2026-03-25 | 097 CRM MCP Servers                 | 69c36651fde840d00e2f8220         | published |
+| 2026-03-25 | 098 Cryptocurrency & DeFi MCP       | 69c366567a9c53932026c793         | published |
+| 2026-03-25 | 099 Customer Support & Helpdesk MCP | 69c366881b585614450d0bac         | published |
+| 2026-03-25 | 100 Database Administration MCP     | 69c3668daae2c843689ce493         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

@@ -97,6 +97,10 @@
 | 2026-03-25 | 094 Cohere MCP Server              | 3398775   | published |
 | 2026-03-25 | 095 Compliance & Audit Automation MCP | 3398777 | published |
 | 2026-03-25 | 096 Crawl4AI MCP Server            | 3398778   | published |
+| 2026-03-25 | 097 CRM MCP Servers                 | 3398868   | published |
+| 2026-03-25 | 098 Cryptocurrency & DeFi MCP       | 3398869   | published |
+| 2026-03-25 | 099 Customer Support & Helpdesk MCP | 3398872   | published |
+| 2026-03-25 | 100 Database Administration MCP     | 3398873   | published |
 
 ## How to publish
 
