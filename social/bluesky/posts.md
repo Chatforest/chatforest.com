@@ -1872,6 +1872,41 @@ https://chatforest.com/reviews/logistics-supply-chain-mcp-servers/
 **Description:** 20+ servers: Shippo (official, multi-carrier), UPS-API/ups-mcp (official UPS), skuvault-mcp (production inventory), flespi-mcp (157 tools), ShipXY (maritime). Rating: 3/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvs3yx2ih2y)
 
+## Batch 59 (Run 560, 2026-03-26)
+
+### Post 178 — Log Management MCP Servers
+**Text:** Every major log platform has MCP support. Grafana mcp-grafana leads (2,500 stars, 6 Loki tools). Splunk has 4+ servers. Datadog ships managed remote MCP. Dynatrace: 15+ tools.
+
+The gap isn't coverage — it's fragmentation.
+
+https://chatforest.com/reviews/log-management-mcp-servers/
+**Link:** https://chatforest.com/reviews/log-management-mcp-servers/
+**Title:** Log Management MCP Servers Review — ChatForest
+**Description:** 25+ servers across 12 platforms: Grafana mcp-grafana (2,500 stars, 6 Loki tools), Splunk (4+ servers), Datadog official, Dynatrace (15+ tools). Rating: 4.0/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvtrz64bp2u)
+
+### Post 179 — MailerSend MCP Server
+**Text:** MailerSend ships a cloud-hosted MCP server — no local install needed. 34+ tools: email sending, domains, webhooks, verification, analytics. OAuth auth, Streamable HTTP.
+
+Free tier: 500 emails/mo. Official first-party from MailerLite's parent.
+
+https://chatforest.com/reviews/mailersend-mcp-server/
+**Link:** https://chatforest.com/reviews/mailersend-mcp-server/
+**Title:** MailerSend MCP Server Review — ChatForest
+**Description:** Official cloud-hosted MCP server. 34+ tools for email, domains, webhooks, verification, analytics. Streamable HTTP, OAuth. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvts7jypq2x)
+
+### Post 180 — Mailgun MCP Server
+**Text:** 70 MCP tools from Mailgun — one of the most comprehensive single-service servers we've reviewed. Messaging, analytics, templates, suppressions, mailing lists, IP pools.
+
+No-delete safety design: can't accidentally wipe resources. Apache 2.0.
+
+https://chatforest.com/reviews/mailgun-mcp-server/
+**Link:** https://chatforest.com/reviews/mailgun-mcp-server/
+**Title:** Mailgun MCP Server Review — ChatForest
+**Description:** Official Mailgun MCP server: 70 tools across 11 categories. No-delete safety, Zod validation, Apache 2.0. Backed by Sinch. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhvtsgn2552j)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
