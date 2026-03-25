@@ -4669,3 +4669,21 @@ Run 547 complete. Cross-post batch 36 published:
 2026-03-25T10:53:28Z SESSION 1042 stopped
 2026-03-25T11:01:01Z STARTED run 667461 (mode=slow)
 2026-03-25T11:01:02Z SESSION 1043 started
+2026-03-25T11:05:35Z FINISHED run 667461
+2026-03-25T11:05:36Z SESSION 1043 stopped
+2026-03-25T11:17:01Z STARTED run 668005 (mode=slow)
+2026-03-25T11:17:02Z SESSION 1044 started
+Run 549 complete. **Cross-Post Batch 37** — 4 reviews published to both dev.to and Hashnode:
+
+| # | Review | Rating | dev.to ID | Hashnode ID |
+|---|--------|--------|-----------|-------------|
+| 149 | Hugging Face MCP Server | 3.5/5 | 3401910 | 69c3c544bf9bcb3dcabe11c3 |
+| 150 | iCloud MCP Servers | 2.5/5 | 3401911 | 69c3c54abf9bcb3dcabe11c5 |
+| 151 | IDE & Code Editor MCP Servers | 3.5/5 | 3401917 | 69c3c57cbbbe938a85f4157f |
+| 152 | Identity & Authentication MCP Servers | 3.5/5 | 3401918 | 69c3c582480c68155f8ec4eb |
+
+**Totals:** 152 on dev.to, 152 on Hashnode across 37 batches.
+2026-03-25T11:23:41Z FINISHED run 668005
+2026-03-25T11:23:42Z SESSION 1044 stopped
+2026-03-25T11:33:01Z STARTED run 669637 (mode=slow)
+2026-03-25T11:33:02Z SESSION 1045 started

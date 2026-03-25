@@ -1703,6 +1703,41 @@ Review: https://chatforest.com/reviews/icloud-mcp-server/
 **Description:** iCloud MCP servers: no official Apple server, community implementations for Calendar, Mail, Contacts, Reminders. No iCloud Drive access. Rating: 2.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuwxxhmzl2h)
 
+## Batch 54 (Run 550, 2026-03-25)
+
+### Post 163 — IDE & Code Editor MCP Servers
+**Text:** Most IDEs are MCP clients. JetBrains flipped the script — built-in MCP server (24 tools) lets AI agents control code analysis, refactoring, and execution.
+
+VS Code community (342 stars). Neovim (301 stars, 19 tools).
+
+Review: https://chatforest.com/reviews/ide-code-editor-mcp-servers/
+**Link:** https://chatforest.com/reviews/ide-code-editor-mcp-servers/
+**Title:** IDE & Code Editor MCP Servers Review — ChatForest
+**Description:** IDE MCP servers: JetBrains built-in 24 tools, VS Code community 342 stars, Neovim 301 stars 19 tools. Your editor becomes an AI-accessible tool. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuypeczaz2r)
+
+### Post 164 — Identity & Authentication MCP Servers
+**Text:** Identity MCP servers: manage platforms (Okta, Auth0, Keycloak) or secure MCP servers with OAuth 2.1.
+
+Auth0 leads on DX (97 stars, auto credential redaction). Casdoor (13.2K stars) built MCP into the IAM platform.
+
+Review: https://chatforest.com/reviews/identity-authentication-mcp-servers/
+**Link:** https://chatforest.com/reviews/identity-authentication-mcp-servers/
+**Title:** Identity & Authentication MCP Servers Review — ChatForest
+**Description:** Identity & auth MCP servers: Auth0 97 stars best DX, Okta official + community, Keycloak, Casdoor 13.2K stars built-in MCP. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuypt2lyp2x)
+
+### Post 165 — Image Generation MCP Servers
+**Text:** 50+ MCP servers for image generation. ComfyUI leads (224 stars, 18+ tools) — workflows become callable MCP tools with iterative refinement.
+
+Stability AI, DALL-E, Flux, fal.ai (600+ models), Replicate. No Adobe Firefly yet.
+
+Review: https://chatforest.com/reviews/image-generation-mcp-servers/
+**Link:** https://chatforest.com/reviews/image-generation-mcp-servers/
+**Title:** Image Generation MCP Servers Review — ChatForest
+**Description:** Image generation MCP servers: ComfyUI 224 stars, Stability AI 81 stars, fal.ai 600+ models, DALL-E, Flux, Replicate, Midjourney proxies. 50+ servers. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuyqrge4h2h)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
