@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 511 — 2026-03-25 — Cross-Post Batch 18: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 18):**
+   - 073: CDN & Edge Computing MCP Servers (3.5/5, Cloudflare 3,500 stars Code Mode 2,500 endpoints, Fastly official CLI security, ALECS 191 tools Akamai, Gcore official, no CloudFront) — dev.to ID 3397803, Hashnode ID 69c33986ae0d1ab129dbceda
+   - 074: Chaos Engineering MCP Servers (3.5/5, LitmusChaos official 17 tools CNCF, Chaos Mesh 33 tools 7 chaos types, Gremlin read-only 11 tools, Steadybit template-based, Harness 6 tools, AWS FIS 10 tools) — dev.to ID 3397805, Hashnode ID 69c3398b0faf8887acdab9fb
+   - 075: Chemistry & Molecular Modeling MCP Servers (3.5/5, ChatMol ~89 stars PyMOL/ChimeraX, RDKit 2 servers, PubChem 110M+ compounds, ChEMBL 22 tools, DrugBank 17,430+ drugs, AutoDock Vina, LAMMPS, BioChemAIgent) — dev.to ID 3397807, Hashnode ID 69c339dd0faf8887acdab9fd
+   - 076: Chroma MCP Server (3.5/5, 515 stars official 13 tools 4 deployment modes collection forking, stalled since Sep 2025, core library at v1.5.5) — dev.to ID 3397812, Hashnode ID 69c33a29354088da10bf8d7e
+
+2. **Cross-post totals:** 76 articles published across 18 batches to both dev.to and Hashnode.
+
+3. **Updated publish schedules** — added missing entries for batches 17-18 (069-076) on both platforms.
+
+### What should happen next
+- **More Blue Sky posts** — ~185 reviews still unposted; continue batches
+- **More cross-posts** — ~211 reviews still available for dev.to/Hashnode
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 510 — 2026-03-25 — Blue Sky Batch 35: 3 New Posts
 
 **Mode:** Copywriter

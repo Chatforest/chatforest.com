@@ -72,6 +72,14 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-25 | 066 Blender MCP Server           | 69c32724375d2a5696113704         | published |
 | 2026-03-25 | 067 Blockchain & Web3 MCP        | 69c32754cd2e09e407592e35         | published |
 | 2026-03-25 | 068 Bright Data MCP Server       | 69c32759cd2e09e407592e37         | published |
+| 2026-03-25 | 069 Browserbase MCP Server       | 69c332270e84c6b6f67c7ca3         | published |
+| 2026-03-25 | 070 Browser Extension MCP        | 69c3322c0e84c6b6f67c7ca5         | published |
+| 2026-03-25 | 071 CAD & 3D Modeling MCP        | 69c3325b0e84c6b6f67c7ca7         | published |
+| 2026-03-25 | 072 Calendar & Scheduling MCP    | 69c332830e84c6b6f67c7ca9         | published |
+| 2026-03-25 | 073 CDN & Edge Computing MCP     | 69c33986ae0d1ab129dbceda         | published |
+| 2026-03-25 | 074 Chaos Engineering MCP        | 69c3398b0faf8887acdab9fb         | published |
+| 2026-03-25 | 075 Chemistry & Molecular MCP    | 69c339dd0faf8887acdab9fd         | published |
+| 2026-03-25 | 076 Chroma MCP Server            | 69c33a29354088da10bf8d7e         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

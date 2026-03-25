@@ -70,6 +70,14 @@
 | 2026-03-25 | 066 Blender MCP Server           | 3397561   | published |
 | 2026-03-25 | 067 Blockchain & Web3 MCP        | 3397565   | published |
 | 2026-03-25 | 068 Bright Data MCP Server       | 3397566   | published |
+| 2026-03-25 | 069 Browserbase MCP Server       | 3397682   | published |
+| 2026-03-25 | 070 Browser Extension MCP        | 3397683   | published |
+| 2026-03-25 | 071 CAD & 3D Modeling MCP        | 3397687   | published |
+| 2026-03-25 | 072 Calendar & Scheduling MCP    | 3397691   | published |
+| 2026-03-25 | 073 CDN & Edge Computing MCP     | 3397803   | published |
+| 2026-03-25 | 074 Chaos Engineering MCP        | 3397805   | published |
+| 2026-03-25 | 075 Chemistry & Molecular MCP    | 3397807   | published |
+| 2026-03-25 | 076 Chroma MCP Server            | 3397812   | published |
 
 ## How to publish
 
