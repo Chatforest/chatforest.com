@@ -1508,6 +1508,38 @@ https://chatforest.com/reviews/gaming-esports-mcp-servers/
 **Description:** Minecraft, OP.GG, Chess, Steam, CS2, Twitch, IGDB MCP servers. 25+ servers across 7 subcategories. Rating: 3.5/5.
 **Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhumhchm2l2h)
 
+## Batch 48
+
+### Post 145 — Google Gemini MCP Servers
+**Text:** Google operates the largest official MCP ecosystem: 24+ servers (BigQuery, Maps, GKE, Firestore, Workspace), Gemini CLI (98.7K stars) as native MCP client, managed remote endpoints. No install needed for cloud servers.
+
+Review:
+https://chatforest.com/reviews/gemini-mcp-server/
+**Link:** https://chatforest.com/reviews/gemini-mcp-server/
+**Title:** Google Gemini MCP Servers Review — ChatForest
+**Description:** Google provides 24+ official MCP servers, Gemini CLI as MCP client, and managed remote endpoints. Rating: 4/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuo7dzlyd2e)
+
+### Post 146 — Genealogy & Family History MCP Servers
+**Text:** Genealogy MCP: 15+ servers for AI ancestor research. gramps-mcp (25 stars, 16 tools), ancestry-mcp (33 stars, GEDCOM files), FamilySearch + WikiTree community servers. No official Ancestry.com or MyHeritage MCPs yet.
+
+Review:
+https://chatforest.com/reviews/genealogy-family-history-mcp-servers/
+**Link:** https://chatforest.com/reviews/genealogy-family-history-mcp-servers/
+**Title:** Genealogy & Family History MCP Servers Review — ChatForest
+**Description:** 15+ servers: gramps-mcp (25 stars, 16 tools), ancestry-mcp (33 stars), FamilySearch, WikiTree. Rating: 3.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuo7un2lv2l)
+
+### Post 147 — Geospatial & Mapping MCP Servers
+**Text:** Geospatial is our highest-rated MCP category (4.5/5). Mapbox official (20 tools, hosted endpoint), NASA Earthdata, Google Earth Engine, QGIS (839 stars), gis-mcp (100+ tools). 30+ servers reviewed.
+
+Review:
+https://chatforest.com/reviews/geospatial-mapping-mcp-servers/
+**Link:** https://chatforest.com/reviews/geospatial-mapping-mcp-servers/
+**Title:** Geospatial & Mapping MCP Servers Review — ChatForest
+**Description:** Mapbox, NASA Earthdata, Google Earth Engine, QGIS, gis-mcp. 30+ servers, our highest-rated category. Rating: 4.5/5.
+**Status:** published (2026-03-25, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhuoa3hxq62w)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
