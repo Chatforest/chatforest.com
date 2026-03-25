@@ -2029,6 +2029,35 @@ https://chatforest.com/reviews/monitoring-uptime-mcp-servers/
 **Description:** UptimeRobot (official hosted), Uptime Kuma (4+ community servers), OneUptime (711 endpoints), Better Stack, ProbeOps diagnostics. Rating: 3.5/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhw2yjbxmj2y)
 
+## Batch 64 (Run 570, 2026-03-26)
+
+### Post 193 — Music & Audio Production MCP Servers
+**Text:** Music & audio MCP servers are surprisingly mature. Ableton Live has 4 implementations — ableton-mcp (2,300 stars) leads all creative MCP. ElevenLabs official (1,300 stars): TTS + voice cloning. Plus MIDI, Spotify, Suno AI.
+
+https://chatforest.com/reviews/music-audio-production-mcp-servers/
+**Link:** https://chatforest.com/reviews/music-audio-production-mcp-servers/
+**Title:** Music & Audio Production MCP Servers Review — ChatForest
+**Description:** Ableton Live (2,300 stars, 4 implementations), ElevenLabs (1,300 stars, official TTS), Spotify, REAPER, MIDI, Suno AI, SuperCollider. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhw4qrxbcc2r)
+
+### Post 194 — MySQL MCP Servers
+**Text:** MySQL MCP: no Oracle-official server, but community delivers. mcp-server-mysql (1.4k stars) has SSH tunneling + Claude Code hooks. mysql_mcp_server (1.2k stars) for simplicity. DBHub (2.4k stars) and Google Toolbox (13.5k stars) add multi-DB support.
+
+https://chatforest.com/reviews/mysql-mcp-server/
+**Link:** https://chatforest.com/reviews/mysql-mcp-server/
+**Title:** MySQL MCP Servers Review — ChatForest
+**Description:** mcp-server-mysql (1.4k stars), mysql_mcp_server (1.2k stars), DBHub (2.4k stars), Google Toolbox (13.5k stars). No Oracle-official server. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhw4rg64bf2h)
+
+### Post 195 — n8n MCP Server
+**Text:** n8n turned workflow automation into a bidirectional MCP hub. Expose any workflow as a tool for Claude/Cursor to call. Simultaneously consume external MCP servers. 181K GitHub stars, fair-code, self-hostable, 400+ integrations, $2.5B valuation.
+
+https://chatforest.com/reviews/n8n-mcp-server/
+**Link:** https://chatforest.com/reviews/n8n-mcp-server/
+**Title:** n8n MCP Server Review — ChatForest
+**Description:** Bidirectional MCP hub: expose workflows as tools + consume external MCP servers. 181K stars, fair-code, self-hosted or cloud, 400+ integrations. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhw4ry5aot2u)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
