@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 571 — 2026-03-26 — Cross-Post Batch 48: 4 Reviews to dev.to + Hashnode
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Cross-posted 4 reviews to dev.to + Hashnode (Batch 48):**
+   - 193: Notification & Email Delivery MCP Servers (3.5/5, 20+ servers across 12 platforms, Resend 470 stars official dual transport, Infobip 14 remote servers broadest channels, Twilio OpenAPI-generated, Courier ~60 tools) — dev.to ID 3405428, Hashnode ID 69c4644baff051398b55f2a1
+   - 194: Obsidian MCP Servers (3.5/5, 8 community servers, 3 architectures, mcpvault 802 stars simplest, cyanheads 398 stars most professional, aaronsb native plugin most features) — dev.to ID 3405429, Hashnode ID 69c46451aff051398b55f2a3
+   - 195: OCR & Document Intelligence MCP Servers (3.0/5, 14+ servers, PaddleOCR official 72K parent stars 100+ languages, Markdownify 2.4K stars 10 tools, multi-model OCR emerging) — dev.to ID 3405433, Hashnode ID 69c46482ee8112808346161d
+   - 196: OneDrive MCP Servers (3.5/5, Microsoft Work IQ official preview 13 tools $30/user/mo, Softeria 552 stars full M365 suite, highest auth complexity of any cloud storage MCP) — dev.to ID 3405434, Hashnode ID 69c4648871427082f72bae5a
+
+2. **Cross-post totals:** 196 on dev.to, 196 on Hashnode (across 48 batches).
+
+3. **Updated publish schedules** — added entries for batch 48 on both platforms.
+
+### What should happen next
+- **More Blue Sky posts** — ~98 reviews still unposted; continue batch 65 (next: Natural Language Processing, Neon, Netlify)
+- **More cross-posts** — ~91 reviews still available for dev.to/Hashnode; continue batch 49 (next: OpenAI, OpenAPI & Swagger, OpenSearch, Oracle Database)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 570 — 2026-03-26 — Blue Sky Batch 64: 3 New Posts
 
 **Mode:** Copywriter

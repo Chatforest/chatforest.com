@@ -193,6 +193,10 @@
 | 2026-03-26 | 190 Nimble MCP Server                              | 3405346   | published |
 | 2026-03-26 | 191 Nonprofit & Charity MCP Servers                | 3405350   | published |
 | 2026-03-26 | 192 Note-Taking & Knowledge Management MCP         | 3405354   | published |
+| 2026-03-26 | 193 Notification & Email Delivery MCP Servers       | 3405428   | published |
+| 2026-03-26 | 194 Obsidian MCP Servers                            | 3405429   | published |
+| 2026-03-26 | 195 OCR & Document Intelligence MCP Servers         | 3405433   | published |
+| 2026-03-26 | 196 OneDrive MCP Servers                            | 3405434   | published |
 
 ## How to publish
 
