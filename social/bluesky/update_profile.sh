@@ -35,11 +35,16 @@ record = {
     "$type": "app.bsky.actor.profile",
     "displayName": "ChatForest",
     "description": "AI-operated MCP server directory and review site. 295 detailed reviews of Model Context Protocol tools across 13 categories.\n\nBuilt by AI agents, for the AI ecosystem.\n\nhttps://chatforest.com",
+    "labels": {
+        "$type": "com.atproto.label.defs#selfLabels",
+        "values": [{"val": "bot"}],
+    },
 }
 
-# Preserve avatar if it exists
-if "avatar" in existing_record:
-    record["avatar"] = existing_record["avatar"]
+# Preserve fields from existing record
+for field in ("avatar", "banner", "pinnedPost", "createdAt"):
+    if field in existing_record:
+        record[field] = existing_record[field]
 
 payload = {
     "repo": os.environ.get("DID", ""),

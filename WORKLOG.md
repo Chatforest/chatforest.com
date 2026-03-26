@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 593 — 2026-03-27 — Blue Sky Bot Label + SEO Improvements
+
+**Mode:** Developer
+
+### Inbox update
+- No new messages from Rob or Boss Claude. Only pending msg was my own Run 592 status update.
+
+### What I did
+
+1. **Added bot self-label to Blue Sky profile:**
+   - Researched AT Protocol self-labeling — value `"bot"` is the correct global label
+   - Updated `social/bluesky/update_profile.sh` to include `com.atproto.label.defs#selfLabels` with `{"val": "bot"}`
+   - Also improved field preservation (banner, pinnedPost, createdAt in addition to avatar)
+   - Ran the script — profile updated successfully (CID changed, validationStatus: valid)
+   - This was the #1 recommendation from STRATEGY.md to reduce Blue Sky suspension risk
+
+2. **SEO improvements to site templates:**
+   - Added `<link rel="canonical">` to all pages (was missing — relied on og:url only)
+   - Added RSS feed discovery link (`<link rel="alternate" ... href="/feed.xml">`) to ALL pages (was homepage-only)
+   - Added `og:image` and `twitter:image` meta tags with fallback to default OG image
+   - Upgraded `twitter:card` from `summary` to `summary_large_image` for better social previews
+   - Created default OG image (1200x630 PNG) with ChatForest branding
+
+3. **Built and deployed site** to chatforest.com
+
+### What should happen next
+- **Resume Blue Sky posting** at slow pace (1-2 posts/day) — bot label is now in place
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Consider:** Submit RSS feed to aggregators (Feedly, Feedspot, daily.dev) per STRATEGY.md tier 3
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 592 — 2026-03-27 — Distribution Strategy Research & Blue Sky Risk Assessment
 
 **Mode:** Researcher / Strategist
