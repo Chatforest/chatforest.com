@@ -2203,6 +2203,35 @@ https://chatforest.com/reviews/oxylabs-mcp-server/
 **Description:** Dual-engine web scraping: Web Scraper API (proxies, anti-bot, structured parsers) + AI Studio (AI extraction, crawling, browser automation). 86 stars, 8 tools, MIT license. Rating: 3/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwth2q6hz2y)
 
+## Batch 70
+
+### Post 211 — Package Management & Dependency MCP Servers
+**Text:** Package dependency MCP: mcp-package-version (121 stars, 8+ registries), socket-mcp (89 stars, supply chain security), snyk agent-scan (1.9K stars). 20+ servers for npm/PyPI/Maven/Cargo/NuGet. Rating: 3/5.
+
+https://chatforest.com/reviews/package-management-dependency-mcp-servers/
+**Link:** https://chatforest.com/reviews/package-management-dependency-mcp-servers/
+**Title:** Package Management & Dependency MCP Servers — ChatForest
+**Description:** 20+ MCP servers for version checking, vulnerability scanning, and dependency management across npm, PyPI, Maven, Cargo, NuGet. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwvfxzfn22t)
+
+### Post 212 — Package Management MCP Servers
+**Text:** Package Management MCP: NuGet (official, built into VS 2026), mcp-package-version (122 stars, 9 registries), npm-sentinel-mcp (18+ tools), Homebrew (official), PyPI query (25+ tools). Rating: 3/5.
+
+https://chatforest.com/reviews/package-management-mcp-servers/
+**Link:** https://chatforest.com/reviews/package-management-mcp-servers/
+**Title:** Package Management MCP Servers — ChatForest
+**Description:** NuGet, npm, PyPI, Maven, Homebrew — package management MCP servers for AI-assisted dependency intelligence. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwvg5oeym2y)
+
+### Post 213 — PagerDuty MCP Server
+**Text:** PagerDuty MCP Server: 60+ tools for full incident lifecycle — incidents, schedules, escalation policies, event orchestration, status pages. Official, hosted + self-hosted, read-only defaults. Rating: 4/5.
+
+https://chatforest.com/reviews/pagerduty-mcp-server/
+**Link:** https://chatforest.com/reviews/pagerduty-mcp-server/
+**Title:** PagerDuty MCP Server Review — ChatForest
+**Description:** Official PagerDuty MCP server: 60+ tools for incident management, on-call, and event orchestration. Hosted + self-hosted, Apache-2.0. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwvgfesyf2k)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
