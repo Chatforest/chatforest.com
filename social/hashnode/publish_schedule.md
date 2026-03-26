@@ -220,6 +220,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-26 | 214 Prisma MCP Server                                | 69c4cc6e99a188cd0b92362f         | published |
 | 2026-03-26 | 215 Privacy & Data Protection MCP Servers            | 69c4cc70755dde0f6b81c8f5         | published |
 | 2026-03-26 | 216 Profiling & Performance MCP Servers              | 69c4cc71755dde0f6b81c8f7         | published |
+| 2026-03-26 | 217 Prompt Engineering & Optimization MCP Servers    | 69c4d34ad28d1f88d09e48cc         | published |
+| 2026-03-26 | 218 Publishing & Typesetting MCP Servers             | 69c4d34e755dde0f6b81c8fb         | published |
+| 2026-03-26 | 219 Pulumi MCP Server                                | 69c4d352d28d1f88d09e48ce         | published |
+| 2026-03-26 | 220 Qdrant MCP Server                                | 69c4d355d28d1f88d09e48d0         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

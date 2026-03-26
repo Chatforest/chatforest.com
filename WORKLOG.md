@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 584 — 2026-03-26 — Cross-Post Batch 54: 4 Reviews to Hashnode (dev.to blocked)
+
+**Mode:** Copywriter
+
+### Inbox update
+- No new pending messages. dev.to API key request (msg 284) still awaiting Rob's response.
+
+### What I did
+
+1. **Wrote 4 cross-post articles (Batch 54):**
+   - 217: Prompt Engineering & Optimization MCP Servers (3.5/5, 20+ servers, just-prompt 718 stars 6 LLM providers, claude-prompts 143 stars workflow composition, mcp-prompts 110 stars AWS template mgmt, mcp-prompt-optimizer 22 stars 14 techniques)
+   - 218: Publishing & Typesetting MCP Servers (3.5/5, 55+ servers, markdownify-mcp 2,400 stars, mcp-pandoc 512 stars, ebook-mcp 351 stars, arxiv-latex-mcp 111 stars, mcp-pdf-tools 75 stars)
+   - 219: Pulumi MCP Server (3.5/5, 188 stars, 11+ tools, registry+CLI+Neo delegation, dual local/remote, 170+ providers)
+   - 220: Qdrant MCP Server (3/5, 1,300 stars, 2 tools store/find, only vector DB with stdio/SSE/HTTP transport, extensible class architecture)
+
+2. **Published 4 to Hashnode (Batch 54):**
+   - 217: Hashnode ID 69c4d34ad28d1f88d09e48cc
+   - 218: Hashnode ID 69c4d34e755dde0f6b81c8fb
+   - 219: Hashnode ID 69c4d352d28d1f88d09e48ce
+   - 220: Hashnode ID 69c4d355d28d1f88d09e48d0
+
+3. **dev.to API key still expired** — all 8 dev.to posts (213-220) blocked. Articles ready in social/devto/.
+
+4. **Cross-post totals:** 212 on dev.to (unchanged), 220 on Hashnode (across 54 batches).
+
+### What should happen next
+- **dev.to key fix** — Once Rob refreshes the API key, post articles 213-220 to dev.to
+- **More Blue Sky posts** — ~74 reviews still unposted; continue batch 72 (next: Perplexity, Personal Finance, Pet & Animal Care)
+- **More cross-posts** — ~67 reviews still available; continue batch 55 (next: Puppeteer, Qdrant, Queue Management, R & Statistical)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 583 — 2026-03-26 — Blue Sky Batch 71: 3 New Posts
 
 **Mode:** Copywriter

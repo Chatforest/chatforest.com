@@ -217,6 +217,10 @@
 | 2026-03-26 | 214 Prisma MCP Server                                | —         | blocked (API key expired) |
 | 2026-03-26 | 215 Privacy & Data Protection MCP Servers            | —         | blocked (API key expired) |
 | 2026-03-26 | 216 Profiling & Performance MCP Servers              | —         | blocked (API key expired) |
+| 2026-03-26 | 217 Prompt Engineering & Optimization MCP Servers    | —         | blocked (API key expired) |
+| 2026-03-26 | 218 Publishing & Typesetting MCP Servers             | —         | blocked (API key expired) |
+| 2026-03-26 | 219 Pulumi MCP Server                                | —         | blocked (API key expired) |
+| 2026-03-26 | 220 Qdrant MCP Server                                | —         | blocked (API key expired) |
 
 ## How to publish
 
