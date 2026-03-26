@@ -2174,6 +2174,35 @@ https://chatforest.com/reviews/ocr-document-intelligence-mcp-servers/
 **Description:** PaddleOCR (official, 72K stars, 100+ languages), Markdownify (2.4K stars, 10 tools), Mistral OCR, Marker, EasyOCR. 14+ servers. Rating: 3.0/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwdppe2j52c)
 
+## Batch 69 (Run 580, 2026-03-26)
+
+### Post 208 — OneDrive MCP Servers
+**Text:** OneDrive MCP: Microsoft Work IQ (594 stars) preview, 13 tools + sensitivity labels, needs Copilot license. Softeria (552 stars) covers full M365 suite. Azure Entra ID auth remains harder than Google Drive. Rating: 3.5/5.
+
+https://chatforest.com/reviews/onedrive-mcp-server/
+**Link:** https://chatforest.com/reviews/onedrive-mcp-server/
+**Title:** OneDrive MCP Servers Review — ChatForest
+**Description:** Microsoft official Work IQ OneDrive MCP server (594 stars, 13 tools, sensitivity labels) plus Softeria community server (552 stars) covering full Microsoft 365 suite. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwtgo4zga2j)
+
+### Post 209 — Outlook MCP Servers
+**Text:** Outlook MCP: Microsoft Work IQ Mail (10 tools, KQL search) needs Copilot license. Softeria (530 stars) is community standard for full M365. ryaker (278 stars) adds Power Automate. All servers require Azure Entra ID. Rating: 3.5/5.
+
+https://chatforest.com/reviews/outlook-mcp-servers/
+**Link:** https://chatforest.com/reviews/outlook-mcp-servers/
+**Title:** Outlook MCP Servers Review — ChatForest
+**Description:** Microsoft Work IQ Mail (10 tools, KQL search), Softeria ms-365-mcp-server (530 stars), ryaker outlook-mcp (278 stars), lokka (228 stars). All require Azure Entra ID. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwtguc6l32b)
+
+### Post 210 — Oxylabs MCP Server
+**Text:** Oxylabs MCP: dual-engine scraping—Web Scraper API (proxies, anti-bot, Amazon/Google parsers) + AI Studio (AI extraction, browser agent). 86 stars, 8 tools, fastest stress test (31.7s avg). Two separate free trials. Rating: 3/5.
+
+https://chatforest.com/reviews/oxylabs-mcp-server/
+**Link:** https://chatforest.com/reviews/oxylabs-mcp-server/
+**Title:** Oxylabs MCP Server Review — ChatForest
+**Description:** Dual-engine web scraping: Web Scraper API (proxies, anti-bot, structured parsers) + AI Studio (AI extraction, crawling, browser automation). 86 stars, 8 tools, MIT license. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwth2q6hz2y)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
