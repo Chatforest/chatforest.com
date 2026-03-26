@@ -2232,6 +2232,35 @@ https://chatforest.com/reviews/pagerduty-mcp-server/
 **Description:** Official PagerDuty MCP server: 60+ tools for incident management, on-call, and event orchestration. Hosted + self-hosted, Apache-2.0. Rating: 4/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwvgfesyf2k)
 
+## Batch 71
+
+### Post 214 — PayPal MCP Server
+**Text:** PayPal MCP Server: 30+ tools for invoicing, orders, subscriptions, disputes, shipment tracking, and analytics. Official first-party from PayPal, built on agent-toolkit (181 stars). Local + remote server options, Apache 2.0. Rating: 3.5/5.
+
+https://chatforest.com/reviews/paypal-mcp-server/
+**Link:** https://chatforest.com/reviews/paypal-mcp-server/
+**Title:** PayPal MCP Server Review — ChatForest
+**Description:** PayPal MCP: 30+ tools for invoicing, payments, subscriptions, disputes, shipping, analytics. Official first-party, Apache 2.0. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwx5axtwy2t)
+
+### Post 215 — PDF & Document Processing MCP Servers
+**Text:** PDF & Document Processing MCP Servers: Microsoft MarkItDown (90,700 stars, 29+ formats), IBM Docling (enterprise layout analysis), PDF Reader MCP (5-10x parallel extraction). 15+ servers across 5 approaches. Rating: 3.5/5.
+
+https://chatforest.com/reviews/pdf-document-mcp-servers/
+**Link:** https://chatforest.com/reviews/pdf-document-mcp-servers/
+**Title:** PDF & Document Processing MCP Servers — ChatForest
+**Description:** PDF & document MCP servers: MarkItDown (90.7K stars, 29+ formats), Docling (IBM-backed, layout analysis), PDF Reader MCP (fastest extraction). 15+ servers reviewed. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwx5icsgu2x)
+
+### Post 216 — Performance & Load Testing MCP Servers
+**Text:** Performance & Load Testing MCP Servers: Grafana mcp-k6 (official), JMeter MCP (61 stars), Locust, Gatling, Artillery, Lighthouse (13+ audit tools). 20+ servers reviewed. Rating: 3.5/5.
+
+https://chatforest.com/reviews/performance-load-testing-mcp-servers/
+**Link:** https://chatforest.com/reviews/performance-load-testing-mcp-servers/
+**Title:** Performance & Load Testing MCP Servers — ChatForest
+**Description:** Performance & load testing MCP servers: k6, JMeter, Locust, Gatling, Artillery, Lighthouse, PageSpeed Insights. 20+ servers reviewed. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwx5uvm7y2r)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
