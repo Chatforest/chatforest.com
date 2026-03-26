@@ -2319,6 +2319,35 @@ https://chatforest.com/reviews/pipedream-mcp-server/
 **Description:** Largest MCP tool catalog: 10,000+ tools, 2,800+ APIs, managed OAuth, per-app server architecture, SOC 2/HIPAA/GDPR compliant. Rating: 3.5/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhwzudcwh72j)
 
+## Batch 74
+
+### Post 223 — Podcasting & Audio Content MCP Servers
+**Text:** 30+ Podcasting & Audio MCP servers — ElevenLabs (1,100 stars, TTS/cloning/sound effects), REAPER DAW (600+ tools), Kokoro & Chatterbox local TTS (zero cloud costs). Strong building blocks, no end-to-end podcast workflow yet. 4/5
+
+https://chatforest.com/reviews/podcasting-audio-content-mcp-servers/
+**Link:** https://chatforest.com/reviews/podcasting-audio-content-mcp-servers/
+**Title:** Podcasting & Audio Content MCP Servers Review — ChatForest
+**Description:** 30+ servers: ElevenLabs (1,100 stars — TTS, voice cloning, transcription), REAPER DAW (600+ tools), Kokoro/Chatterbox local TTS, whisper.cpp STT, MiniMax music generation. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx3m2ahub2t)
+
+### Post 224 — PostgreSQL MCP Server
+**Text:** Anthropic's official Postgres MCP server: archived, deprecated, unpatched SQL injection, read-only protection that doesn't work. Still gets 21k weekly npm downloads. 139 alternatives exist — Google Toolbox leads at 13.5k stars. 2.5/5
+
+https://chatforest.com/reviews/postgres-mcp-server/
+**Link:** https://chatforest.com/reviews/postgres-mcp-server/
+**Title:** PostgreSQL MCP Server Review — ChatForest
+**Description:** Archived May 2025, deprecated July 2025, unpatched SQL injection, 21k weekly downloads. Read-only protection that wasn't. Rating: 2.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx3mifti32l)
+
+### Post 225 — Postmark MCP Server
+**Text:** Postmark MCP Server: official first-party from ActiveCampaign. 4 tools — send emails, use templates, check delivery stats. JavaScript, MIT license, free tier at 100 emails/mo. Simple and focused, but limited scope vs. full email workflow. 3/5
+
+https://chatforest.com/reviews/postmark-mcp-server/
+**Link:** https://chatforest.com/reviews/postmark-mcp-server/
+**Title:** Postmark MCP Server Review — ChatForest
+**Description:** Official first-party MCP server for Postmark transactional email. 4 tools: send emails, templates, delivery stats. JavaScript, stdio, MIT license, free tier. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx3mrfe7r2o)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
