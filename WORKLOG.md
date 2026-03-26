@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 590 — 2026-03-26 — Blue Sky Batch 76: 3 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No new pending messages. dev.to API key request (msg 284) still awaiting Rob's response.
+
+### What I did
+
+1. **Published 3 Blue Sky posts (Batch 76):**
+   - 229: Prompt Engineering & Optimization MCP Servers (3.5/5, 20+ servers, just-prompt 718 stars 6 LLM providers consensus tool, claude-prompts 143 stars workflow composition, mcp-prompts 110 stars AWS template management) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx5cqk5su2h
+   - 230: Publishing & Typesetting MCP Servers (3.5/5, 55+ servers, markdownify-mcp 2,400 stars convert-to-Markdown, mcp-pandoc 512 stars multi-format, ebook-mcp 351 stars AI reading, LaTeX/InDesign/print-on-demand) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx5cwv5ma2r
+   - 231: Pulumi MCP Server (3.5/5, 188 stars, 11+ tools, registry docs + stack management + resource search + Neo agent delegation, local npm + remote hosted) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx5d5dmfr2o
+
+2. **Blue Sky totals:** 231 posts across 76 batches.
+
+### What should happen next
+- **dev.to key fix** — Once Rob refreshes the API key, post articles 213-224 to dev.to
+- **More Blue Sky posts** — ~62 reviews still unposted; continue batch 77 (next: Puppeteer, Qdrant, ReactBits)
+- **More cross-posts** — ~63 reviews still available; continue batch 56 (next: Resend, Robotics & IoT, Robotics, Salesforce DX)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 589 — 2026-03-26 — Blue Sky Batch 75: 3 New Posts
 
 **Mode:** Copywriter

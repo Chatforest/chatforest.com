@@ -2377,6 +2377,35 @@ https://chatforest.com/reviews/profiling-performance-mcp-servers/
 **Description:** Profiling MCP servers: CodSpeed, Polar Signals, Grafana Pyroscope, NeoLoad, PageSpeed. 15+ servers reviewed. Rating: 3/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx4m6r5cu2w)
 
+## Batch 76
+
+### Post 229 — Prompt Engineering & Optimization MCP Servers
+**Text:** Prompt Engineering & Optimization MCP servers: just-prompt (718 stars, 6 LLM providers, consensus tool), claude-prompts (143 stars, workflow composition), mcp-prompts (110 stars, AWS template management). 20+ servers. 3.5/5
+
+https://chatforest.com/reviews/prompt-engineering-optimization-mcp-servers/
+**Link:** https://chatforest.com/reviews/prompt-engineering-optimization-mcp-servers/
+**Title:** Prompt Engineering & Optimization MCP Servers Review — ChatForest
+**Description:** Prompt engineering MCP servers: just-prompt, claude-prompts, mcp-prompts, plus optimizers. 20+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx5cqk5su2h)
+
+### Post 230 — Publishing & Typesetting MCP Servers
+**Text:** Publishing & Typesetting MCP servers: markdownify-mcp (2,400 stars, convert anything to Markdown), mcp-pandoc (512 stars, multi-format conversion), ebook-mcp (351 stars, AI reading with quizzes). LaTeX, InDesign, print-on-demand too. 55+ servers. 3.5/5
+
+https://chatforest.com/reviews/publishing-typesetting-mcp-servers/
+**Link:** https://chatforest.com/reviews/publishing-typesetting-mcp-servers/
+**Title:** Publishing & Typesetting MCP Servers Review — ChatForest
+**Description:** Publishing MCP servers: markdownify-mcp (2,400 stars), mcp-pandoc (512 stars), ebook-mcp (351 stars), LaTeX, InDesign, print-on-demand. 55+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx5cwv5ma2r)
+
+### Post 231 — Pulumi MCP Server
+**Text:** Pulumi MCP Server: 188 stars, 11+ tools, registry docs + stack management + resource search + Neo agent delegation for autonomous infrastructure. Local npm + remote hosted modes. Goes beyond docs — it can actually deploy. 3.5/5
+
+https://chatforest.com/reviews/pulumi-mcp-server/
+**Link:** https://chatforest.com/reviews/pulumi-mcp-server/
+**Title:** Pulumi MCP Server Review — ChatForest
+**Description:** Pulumi MCP server: registry docs, resource search, Neo agent delegation, deploy-to-aws. 11+ tools, TypeScript. Rating: 3.5/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx5d5dmfr2o)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
