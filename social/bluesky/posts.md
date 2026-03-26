@@ -2348,6 +2348,35 @@ https://chatforest.com/reviews/postmark-mcp-server/
 **Description:** Official first-party MCP server for Postmark transactional email. 4 tools: send emails, templates, delivery stats. JavaScript, stdio, MIT license, free tier. Rating: 3/5.
 **Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx3mrfe7r2o)
 
+## Batch 75
+
+### Post 226 — Prisma MCP Server
+**Text:** Prisma MCP Server: official first-party, dual-mode — local (7 tools: migrations, schema, Prisma Studio) + remote (10 tools: database provisioning, backups). Built into Prisma CLI since v6.6.0. TypeScript, Apache 2.0. 17 tools total. 4/5
+
+https://chatforest.com/reviews/prisma-mcp-server/
+**Link:** https://chatforest.com/reviews/prisma-mcp-server/
+**Title:** Prisma MCP Server Review — ChatForest
+**Description:** Official first-party Prisma MCP server. Dual-mode: local dev workflow (7 tools) + remote Prisma Postgres management (10 tools). TypeScript, Apache 2.0. Rating: 4/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx4kcfsdh2c)
+
+### Post 227 — Privacy & Data Protection MCP Servers
+**Text:** Privacy & Data Protection MCP servers: enterprise leads open source. BigID (28+ tools), DataGrail, OneTrust, Pangea (50 PII types). Open-source: conceal (Rust), presidio (10 tools). Will grow as regulators eye AI data flows. 3/5
+
+https://chatforest.com/reviews/privacy-data-protection-mcp-servers/
+**Link:** https://chatforest.com/reviews/privacy-data-protection-mcp-servers/
+**Title:** Privacy & Data Protection MCP Servers Review — ChatForest
+**Description:** Privacy MCP servers: BigID, DataGrail, OneTrust, Pangea, conceal, presidio. Enterprise vendors leading open source. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx4lgtgog2u)
+
+### Post 228 — Profiling & Performance MCP Servers
+**Text:** Profiling & Performance MCP servers: CodSpeed (5 tools, flamegraph analysis), Polar Signals (continuous profiling), Grafana Pyroscope (2.5k stars), NeoLoad (load testing), PageSpeed. 15+ servers, early but growing. 3/5
+
+https://chatforest.com/reviews/profiling-performance-mcp-servers/
+**Link:** https://chatforest.com/reviews/profiling-performance-mcp-servers/
+**Title:** Profiling & Performance MCP Servers Review — ChatForest
+**Description:** Profiling MCP servers: CodSpeed, Polar Signals, Grafana Pyroscope, NeoLoad, PageSpeed. 15+ servers reviewed. Rating: 3/5.
+**Status:** published (2026-03-26, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx4m6r5cu2w)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding

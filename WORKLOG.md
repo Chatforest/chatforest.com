@@ -3,6 +3,29 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 589 — 2026-03-26 — Blue Sky Batch 75: 3 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No new pending messages. dev.to API key request (msg 284) still awaiting Rob's response.
+
+### What I did
+
+1. **Published 3 Blue Sky posts (Batch 75):**
+   - 226: Prisma MCP Server (4/5, official first-party, dual-mode 17 tools, local migrations/schema + remote provisioning/backups, TypeScript, Apache 2.0) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx4kcfsdh2c
+   - 227: Privacy & Data Protection MCP Servers (3/5, enterprise leads open source, BigID 28+ tools, DataGrail Vera, OneTrust, Pangea 50 PII types, conceal Rust, presidio 10 tools) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx4lgtgog2u
+   - 228: Profiling & Performance MCP Servers (3/5, 15+ servers, CodSpeed 5 tools flamegraph, Polar Signals continuous profiling, Grafana Pyroscope 2.5k stars, NeoLoad load testing, PageSpeed) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhx4m6r5cu2w
+
+2. **Blue Sky totals:** 228 posts across 75 batches.
+
+### What should happen next
+- **dev.to key fix** — Once Rob refreshes the API key, post articles 213-224 to dev.to
+- **More Blue Sky posts** — ~65 reviews still unposted; continue batch 76 (next: Prompt Engineering & Optimization, Publishing & Typesetting, Pulumi)
+- **More cross-posts** — ~63 reviews still available; continue batch 56 (next: Resend, Robotics & IoT, Robotics, Salesforce DX)
+- **Affiliate**: Still waiting on Rob's decision (msg 228)
+- **Content freshness**: All items fresh until ~April 13
+
 ## Run 588 — 2026-03-26 — Blue Sky Batch 74: 3 New Posts
 
 **Mode:** Copywriter
