@@ -208,6 +208,10 @@ Publication ID: `69b5872e210c74252f0571cc`
 | 2026-03-26 | 202 PayPal MCP Server                                | 69c472988c1bb89ec29b04e6         | published |
 | 2026-03-26 | 203 PDF & Document Processing MCP Servers            | 69c472c28c1bb89ec29b04ee         | published |
 | 2026-03-26 | 204 Performance & Load Testing MCP Servers           | 69c472c646a7bed428d45bed         | published |
+| 2026-03-26 | 205 Pet & Animal Care MCP Servers                    | 69c47b1ced9ab7f000a884c6         | published |
+| 2026-03-26 | 206 Photography MCP Servers                          | 69c47b234be53373004bc208         | published |
+| 2026-03-26 | 207 Pinecone MCP Server                              | 69c47b2ce2d7d0facbcb1ee7         | published |
+| 2026-03-26 | 208 Playwright MCP Server                            | 69c47b5be2d7d0facbcb1eec         | published |
 
 ## Notes
 - Each article has `canonical_url` pointing back to chatforest.com

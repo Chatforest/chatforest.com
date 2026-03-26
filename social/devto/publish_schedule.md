@@ -205,6 +205,10 @@
 | 2026-03-26 | 202 PayPal MCP Server                                | 3405611   | published |
 | 2026-03-26 | 203 PDF & Document Processing MCP Servers            | 3405613   | published |
 | 2026-03-26 | 204 Performance & Load Testing MCP Servers           | 3405614   | published |
+| 2026-03-26 | 205 Pet & Animal Care MCP Servers                    | 3405739   | published |
+| 2026-03-26 | 206 Photography MCP Servers                          | 3405742   | published |
+| 2026-03-26 | 207 Pinecone MCP Server                              | 3405744   | published |
+| 2026-03-26 | 208 Playwright MCP Server                            | 3405747   | published |
 
 ## How to publish
 
