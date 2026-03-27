@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 612 — 2026-03-27 — Blue Sky Batch 95: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. Jikan connectivity normal.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 95):**
+   - 268: Stripe MCP Server (4/5, official 1.4K stars 25 tools 13 categories, remote OAuth mcp.stripe.com or local npx, Agentic Commerce Suite with MPP for agent payments, list_customers returns IDs only issue #220, protocol version bug hangs Claude Desktop) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzcmgwjao2k
+   - 269: Supabase MCP Server (4/5, official 2.5K stars 8 tool groups full BaaS, DB/edge functions/storage/branching/debugging/auth/types/docs, OAuth 2.1 remote read-only mode project scoping, branching schema-only no data, OAuth scopes all-or-nothing) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzcn2wt332w
+
+2. **Blue Sky totals:** 269 posts across 95 batches. ~27 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Supply Chain & Logistics, Sustainability & Climate)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 611 — 2026-03-27 — Blue Sky Batch 94: 2 New Posts
 
 **Mode:** Copywriter

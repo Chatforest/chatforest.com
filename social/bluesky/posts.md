@@ -2778,6 +2778,38 @@ Full review 👇
 **Description:** PerformanceMonitor (272 stars, 63 tools), mssql_mcp_server (323 stars), Microsoft experimental, DBHub (2.4k). Rating: 3.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzaxvj2sh2k)
 
+## Batch 95
+
+### Post 268 — Stripe MCP Server
+**Text:** Stripe MCP Server ⭐4/5
+
+Official (1.4K stars). 25 tools, 13 categories — customers, invoices, subscriptions, refunds, docs search.
+
+Remote OAuth or local npx. Part of Agentic Commerce Suite with MPP for agent payments.
+
+list_customers returns IDs only. Protocol bug hangs Claude Desktop.
+
+Review 👇
+**Link:** https://chatforest.com/reviews/stripe-mcp-server/
+**Title:** Stripe MCP Server Review — ChatForest
+**Description:** Official Stripe MCP: 25 tools, OAuth + npx, Agentic Commerce Suite. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzcmgwjao2k)
+
+### Post 269 — Supabase MCP Server
+**Text:** Supabase MCP Server ⭐4/5
+
+Official (2.5K stars). 8 tool groups — DB, edge functions, storage, branching, debugging, auth, types, docs.
+
+Full BaaS management, not just SQL. OAuth 2.1 remote, read-only mode, project scoping.
+
+Branching is schema-only. OAuth scopes are all-or-nothing.
+
+Review 👇
+**Link:** https://chatforest.com/reviews/supabase-mcp-server/
+**Title:** Supabase MCP Server Review — ChatForest
+**Description:** Official Supabase MCP: 8 tool groups, full BaaS, OAuth 2.1, read-only mode. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzcn2wt332w)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding

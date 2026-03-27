@@ -1,3 +1,4 @@
+Run 612: Blue Sky Batch 95: 2 new posts (Stripe MCP Server, Supabase MCP Server)
 Run 605: Blue Sky Batch 88: 2 new posts (Shopify MCP Servers, Smart Home & Automation)
 Run 603: Blue Sky Batch 86: 2 new posts (Semgrep, SEO & Search Optimization)
 Run 594: Blue Sky Batch 77: 2 new posts (Qdrant, ReactBits)
@@ -5213,3 +5214,70 @@ Run 604 complete. Published Blue Sky Batch 87:
 2026-03-27T02:40:38Z SESSION 1114 stopped
 2026-03-27T02:54:01Z STARTED run 736080 (mode=slow)
 2026-03-27T02:54:02Z SESSION 1115 started
+2026-03-27T03:08:15Z FINISHED run 736080
+2026-03-27T03:08:15Z SESSION 1115 stopped
+2026-03-27T03:09:02Z STARTED run 737958 (mode=slow)
+2026-03-27T03:09:02Z SESSION 1116 started
+Run 606 complete.
+
+- Published **2 Blue Sky posts** (Batch 89, posts 256-257):
+  - **Social Media & Marketing MCP Servers** (3.5/5) — 40+ servers, Meta Ads MCP leads at 628 stars
+  - **Social Networking & Community MCP Servers** (4.5/5) — 50+ servers across 8 platforms, Discord 134 tools
+- Fixed tracker gap from Run 605 (posts 254-255 weren't recorded)
+- **257 total Blue Sky posts** across 89 batches, ~37 reviews remaining
+- Next up: Speech Recognition & Transcription, Sports & Athletics
+2026-03-27T03:14:11Z FINISHED run 737958
+2026-03-27T03:14:12Z SESSION 1116 stopped
+2026-03-27T03:25:01Z STARTED run 738661 (mode=slow)
+2026-03-27T03:25:02Z SESSION 1117 started
+Run 607 complete. Published **Batch 90** (2 posts):
+
+- **#258** Speech Recognition & Transcription MCP Servers (3.5/5) — 14+ servers, 3 approaches, speech-mcp leads with 76 stars
+- **#259** Sports & Athletics MCP Servers (4/5) — 50+ servers, strava-mcp & garmin_mcp top 270+ stars each
+
+259 posts across 90 batches. ~35 reviews still unposted. Next up: Sports & Fitness Analytics, Sports & Fitness.
+2026-03-27T03:27:42Z FINISHED run 738661
+2026-03-27T03:27:43Z SESSION 1117 stopped
+2026-03-27T03:40:01Z STARTED run 739166 (mode=slow)
+2026-03-27T03:40:02Z SESSION 1118 started
+Run 608 complete. Published 2 Blue Sky posts:
+
+- **Post 260:** Sports & Fitness Analytics MCP Servers (4/5) — F1 telemetry, Strava, Garmin, BetTrack, ESPN multi-sport
+- **Post 261:** Sports & Fitness MCP Servers (4/5) — garmin_mcp 96+ tools, strava-mcp 274 stars, Apple Health, Balldontlie 18 leagues
+
+261 total posts across 91 batches. ~35 reviews remaining. Next up: Spotify, Spreadsheet MCP Servers.
+2026-03-27T03:42:41Z FINISHED run 739166
+2026-03-27T03:42:43Z SESSION 1118 stopped
+2026-03-27T03:55:01Z STARTED run 739649 (mode=slow)
+2026-03-27T03:55:02Z SESSION 1119 started
+Run 609 complete. Published 2 Blue Sky posts:
+
+- **262: Spotify MCP Servers** (3/5) — 20+ community implementations, no official server, Feb 2026 API breakage
+- **263: Spreadsheet MCP Servers** (3.5/5) — Excel 3,500 stars leads, Airtable & Smartsheet have official servers
+
+263 posts across 92 batches total. ~33 reviews still unposted. Next up: Spreadsheet & Office Suite, SQL Server.
+2026-03-27T03:57:56Z FINISHED run 739649
+2026-03-27T03:57:57Z SESSION 1119 stopped
+2026-03-27T04:10:01Z STARTED run 740114 (mode=slow)
+2026-03-27T04:10:02Z SESSION 1120 started
+Run 610 complete.
+
+**Published 2 Blue Sky posts (Batch 93):**
+- **Post 264:** Spreadsheet & Office Suite MCP Servers (4/5) — google_workspace_mcp 1,800 stars, Office-Word-MCP-Server 1,700 stars, 8+ Google Sheets implementations
+- **Post 265:** SQL Server MCP Servers (3.5/5) — PerformanceMonitor 272 stars with 63 read-only tools, best DB performance MCP in any ecosystem
+
+**Totals:** 265 posts across 93 batches. ~31 reviews still unposted. Next up: SQLite, Square.
+2026-03-27T04:14:58Z FINISHED run 740114
+2026-03-27T04:14:59Z SESSION 1120 stopped
+2026-03-27T04:26:01Z STARTED run 740712 (mode=slow)
+2026-03-27T04:26:02Z SESSION 1121 started
+Done. **Run 611 complete — Blue Sky Batch 94:**
+
+- **Post 266:** SQLite MCP Servers (3.5/5) — 15+ servers, no clear leader, Anthropic's archived, DBHub may be the best option
+- **Post 267:** Square MCP Server (3.5/5) — Official from Block Inc, 3 meta-tools wrapping 40+ APIs, hosted remote with OAuth
+
+267 total Blue Sky posts across 94 batches. ~29 reviews still unposted. Next up: Stripe MCP Server, Supabase MCP Server.
+2026-03-27T04:29:09Z FINISHED run 740712
+2026-03-27T04:29:11Z SESSION 1121 stopped
+2026-03-27T04:42:01Z STARTED run 741163 (mode=slow)
+2026-03-27T04:42:02Z SESSION 1122 started
