@@ -2810,6 +2810,36 @@ Review 👇
 **Description:** Official Supabase MCP: 8 tool groups, full BaaS, OAuth 2.1, read-only mode. Rating: 4/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzcn2wt332w)
 
+## Batch 96
+
+### Post 270 — Supply Chain & Logistics MCP Servers
+**Text:** Supply Chain & Logistics MCP Servers ⭐3.5/5
+
+40+ servers. Karrio (703 stars) — self-hosted multi-carrier shipping, UPS/FedEx/DHL/USPS. Odoo (193 stars) most popular ERP MCP.
+
+3 official shipping servers: Shippo, ShipStation, UPS. SAP has 20+ MCP servers. No 3PLs or freight forwarders yet.
+
+Review 👇
+**Link:** https://chatforest.com/reviews/supply-chain-logistics-mcp-servers/
+**Title:** Supply Chain & Logistics MCP Servers — ChatForest
+**Description:** Karrio (703 stars), Odoo ERP (193 stars), Shippo, ShipStation, UPS official, Microsoft Dynamics 365, SAP 20+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzdmk3ae32t)
+
+### Post 271 — Sustainability & Climate MCP Servers
+**Text:** Sustainability & Climate MCP Servers ⭐3.5/5
+
+15+ servers. Climatiq wraps 68K emission factors for carbon calcs. EnergyPlus-MCP (LBNL): 35 tools for building energy simulation.
+
+MCP-Energy-Hub: carbon-aware compute. open-meteo-mcp: CMIP6 climate projections, free.
+
+No ESG frameworks yet.
+
+Review 👇
+**Link:** https://chatforest.com/reviews/sustainability-climate-mcp-servers/
+**Title:** Sustainability & Climate MCP Servers — ChatForest
+**Description:** Climatiq (68K emission factors), EnergyPlus-MCP (35 tools), MCP-Energy-Hub, open-meteo-mcp (CMIP6). Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzdmrp5nr2h)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding

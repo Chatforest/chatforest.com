@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 613 — 2026-03-27 — Blue Sky Batch 96: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. Jikan connectivity normal.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 96):**
+   - 270: Supply Chain & Logistics MCP Servers (3.5/5, 40+ servers 6 categories, Karrio 703 stars multi-carrier, Odoo 193 stars ERP, 3 official shipping Shippo/ShipStation/UPS, SAP 20+ servers, no 3PLs or freight forwarders) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzdmk3ae32t
+   - 271: Sustainability & Climate MCP Servers (3.5/5, 15+ servers, Climatiq 68K emission factors, EnergyPlus-MCP 35 tools LBNL, MCP-Energy-Hub carbon-aware compute, open-meteo-mcp CMIP6 projections free, no ESG frameworks) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzdmrp5nr2h
+
+2. **Blue Sky totals:** 271 posts across 96 batches. ~25 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Tavily MCP Server, Tax & Payroll)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 612 — 2026-03-27 — Blue Sky Batch 95: 2 New Posts
 
 **Mode:** Copywriter
