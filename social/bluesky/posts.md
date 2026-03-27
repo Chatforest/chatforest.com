@@ -3159,3 +3159,63 @@ No IDEXX, no Covetrus, no pet health records.
 **Title:** Veterinary & Pet Care MCP Servers — ChatForest
 **Description:** Veterinary MCP servers: NSIP (sheep genetics), MCPet (virtual pet), Fish MCP (35,700+ species). The ecosystem barely exists. Rating: 2.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzpooduw22h)
+
+## Batch 108
+
+### Post 294 — Video Conferencing MCP Servers
+**Text:** 📹 Video Conferencing MCP Servers — 3.5/5
+
+14+ servers turning meetings into data pipelines.
+
+Joinly (413 stars, real-time participation), Vexa (1,800 stars, open-source transcription), tl;dv (multi-platform intel), InditexTech Teams (353 stars).
+
+3 tiers of meeting AI emerging.
+
+👇
+**Link:** https://chatforest.com/reviews/video-conferencing-mcp-servers/
+**Title:** Video Conferencing MCP Servers — ChatForest
+**Description:** Video conferencing MCP servers: Joinly (413 stars), Vexa (1,800 stars), tl;dv, InditexTech Teams. 14+ servers across 3 tiers. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzqrcbn5f2l)
+
+### Post 295 — Video Production & Streaming MCP Servers
+**Text:** 🎬 Video Production & Streaming MCP Servers — 4/5
+
+60+ servers across 7 areas. YouTube alone has 40+ servers — the most-served MCP platform.
+
+OBS scene control, HeyGen AI avatars, Mux/Vimeo/Cloudflare hosting, Remotion programmatic video, Krea 20+ AI models.
+
+👇
+**Link:** https://chatforest.com/reviews/video-production-streaming-mcp-servers/
+**Title:** Video Production & Streaming MCP Servers — ChatForest
+**Description:** Video production MCP servers: 60+ servers, YouTube 40+ servers, OBS, HeyGen, Remotion, Krea. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzqsdo2hc2y)
+
+## Batch 109
+
+### Post 296 — Weather & Climate MCP Servers
+**Text:** 🌦️ Weather & Climate MCP Servers — 3.5/5
+
+Open-Meteo leads (36 stars, 19 tools, 7 weather models). weather-mcp offers 16 tools with zero API keys needed.
+
+AccuWeather (29 stars), Climatiq carbon tracking (10 tools), Stormglass surf (19 stars), AQICN air quality.
+
+👇
+**Link:** https://chatforest.com/reviews/weather-climate-mcp-servers/
+**Title:** Weather & Climate MCP Servers — ChatForest
+**Description:** Weather MCP servers: Open-Meteo (36 stars, 19 tools), weather-mcp (zero API keys), AccuWeather, Climatiq carbon. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzrtkktrc2e)
+
+### Post 297 — Windows MCP Server
+**Text:** 🪟 Windows MCP Server — 4/5
+
+4,800+ GitHub stars. 17 tools for Windows desktop automation via accessibility trees — not vision models.
+
+0.2-0.9s latency, MIT licensed, 2M+ Claude Desktop users. The Playwright of desktop automation.
+
+Closest competitor: 302 stars.
+
+👇
+**Link:** https://chatforest.com/reviews/windows-mcp-server/
+**Title:** Windows MCP Server Review — ChatForest
+**Description:** Windows-MCP: 4,800+ stars, 17 tools, accessibility-tree automation. The clear category leader. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzrts6tef2c)

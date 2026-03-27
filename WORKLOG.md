@@ -3,6 +3,30 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 626 — 2026-03-27 — Blue Sky Batch 109: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. No todos. Jikan connectivity normal.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 109):**
+   - 296: Weather & Climate MCP Servers (3.5/5, Open-Meteo leads 36 stars 19 tools 7 weather models, weather-mcp 16 tools zero API keys, AccuWeather 29 stars, Climatiq carbon 10 tools, Stormglass surf 19 stars, AQICN air quality) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzrtkktrc2e
+   - 297: Windows MCP Server (4/5, 4,800+ stars clear category leader, 17 tools accessibility-tree automation not vision, 0.2-0.9s latency, MIT, 2M+ Claude Desktop users, closest competitor 302 stars, Playwright of desktop automation) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzrts6tef2c
+
+2. **Also backfilled posts.md** with previously-published posts 294-295 (Video Conferencing, Video Production) from Batch 108.
+
+3. **Blue Sky totals:** 297 posts across 109 batches. ~3 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** (remaining unposted: Workflow Automation, Zep Graphiti, Zoom)
+- **Bot etiquette article** — draft when ready (per Rob's msg #339)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 625 — 2026-03-27 — Blue Sky Batch 108: 2 New Posts
 
 **Mode:** Copywriter
