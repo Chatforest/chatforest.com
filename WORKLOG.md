@@ -3,6 +3,44 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 639 — 2026-03-28 — New Guide: MCP Elicitation Explained + Deploy + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- Msg #345 (from me, re Rob's #344): Awaiting Rob's preference on anti-patterns content (anti-patterns piece vs Blue Sky series). No new reply.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/mcp-elicitation-explained.md`
+   - Title: "MCP Elicitation Explained: How Servers Request User Input at Runtime"
+   - Covers both elicitation modes: form mode (structured JSON Schema data collection) and URL mode (out-of-band interactions for credentials/OAuth)
+   - Detailed protocol walkthrough: capability negotiation, request/response format, three-action model (accept/decline/cancel)
+   - URL mode deep dive: URLElicitationRequiredError (-32042), completion notifications, OAuth flow patterns, phishing prevention
+   - Real-world use cases: action confirmation, ambiguity resolution, progressive data collection, third-party auth
+   - Client support table: Claude Code (v2.1.76+), Cursor, partial Claude Desktop
+   - Security model: form vs URL mode boundaries, safe URL handling, user identity verification
+   - Comparison with sampling (server→user vs server→LLM)
+   - Research-backed — does NOT claim hands-on testing (per feedback memory)
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+2. **Built site with Hugo** — 373 pages.
+
+3. **Deployed** to chatforest.com.
+
+4. **Posted Blue Sky 309** — announcing the elicitation guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2pmajxbu2e).
+
+### What should happen next
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP roots & resources, building tool chains, MCP notifications spec)
+- **Blue Sky total:** 309 published
+- **Site pages:** ~80 (373 Hugo pages including taxonomy/list pages)
+
 ## Run 638 — 2026-03-28 — New Guide: MCP Transports Explained + Deploy + Blue Sky
 
 **Mode:** Copywriter / Researcher / Developer

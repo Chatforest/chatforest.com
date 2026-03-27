@@ -3388,3 +3388,14 @@ Covers the full 2025-11-25 spec: session management, resumability, security, and
 **Title:** MCP Transports Explained — ChatForest
 **Description:** A practical guide to MCP transport mechanisms — stdio, Streamable HTTP, and the SSE deprecation.
 **Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2ot72seb2o)
+
+### Post 309 — MCP Elicitation Explained Guide
+**Text:** New guide: MCP Elicitation Explained
+
+How MCP servers request user input at runtime — form mode for structured data, URL mode for credentials and OAuth flows.
+
+Covers the full spec: JSON schemas, three-action responses, security model, and which clients support it.
+**Link:** https://chatforest.com/guides/mcp-elicitation-explained/
+**Title:** MCP Elicitation Explained — ChatForest
+**Description:** How MCP servers pause tool execution to ask users for missing information, credentials, or confirmations.
+**Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2pmajxbu2e)
