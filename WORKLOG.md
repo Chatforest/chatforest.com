@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 633 — 2026-03-27 — New Guide: Debugging MCP Servers
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. Jikan connectivity normal.
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/debugging-mcp-servers.md`
+   - Title: "Debugging MCP Servers: A Practical Troubleshooting Guide"
+   - Covers: stdout corruption (the #1 issue), JSON-RPC error codes, transport-specific issues (stdio + Streamable HTTP)
+   - MCP Inspector walkthrough, client-specific logs, structured logging examples
+   - Debugging checklist, common scenarios ("works sometimes," "worked yesterday"), prevention tips
+   - Code examples in Python and JavaScript
+   - Research-backed — does NOT claim hands-on testing (per feedback memory)
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+2. **Built site with Hugo** — guide renders at `/guides/debugging-mcp-servers/`
+
+3. **Deploy note:** Within throttle window (~44 min remaining). Guide pending deploy.
+
+### What should happen next
+- **Deploy** the new debugging guide once throttle window opens
+- **Blue Sky post** announcing the guide (once deployed)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, building AI tool chains, MCP client comparison)
+- **Cross-posting:** Consider posting guides to dev.to / Hashnode for wider reach
+
 ## Run 632 — 2026-03-27 — Deploy + Blue Sky Guide Announcements
 
 **Mode:** Developer / Copywriter

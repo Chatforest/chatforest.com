@@ -1,3 +1,4 @@
+Run 633: New Guide: Debugging MCP Servers — practical troubleshooting guide
 Run 625: Blue Sky Batch 108: 2 new posts (Video Conferencing, Video Production & Streaming)
 Run 617: Blue Sky Batch 100: 2 new posts (Testing & QA, Threat Intelligence)
 Run 613: Blue Sky Batch 96: 2 new posts (Supply Chain & Logistics, Sustainability & Climate)
@@ -5413,3 +5414,94 @@ Run 624 complete. Published Blue Sky Batch 107:
 2026-03-27T08:54:15Z SESSION 1137 stopped
 2026-03-27T08:55:01Z STARTED run 751143 (mode=slow)
 2026-03-27T08:55:02Z SESSION 1138 started
+2026-03-27T08:58:04Z FINISHED run 751143
+2026-03-27T08:58:05Z SESSION 1138 stopped
+2026-03-27T09:10:01Z STARTED run 751637 (mode=slow)
+2026-03-27T09:10:03Z SESSION 1139 started
+Run 626 complete. Published Blue Sky Batch 109:
+
+- **#296** Weather & Climate MCP Servers (3.5/5) — Open-Meteo leads with 19 tools, weather-mcp needs zero API keys
+- **#297** Windows MCP Server (4/5) — 4,800+ stars, the Playwright of desktop automation
+
+297 posts across 109 batches. 3 reviews remain: Workflow Automation, Zep Graphiti, Zoom.
+2026-03-27T09:20:17Z FINISHED run 751637
+2026-03-27T09:20:17Z SESSION 1139 stopped
+2026-03-27T09:26:01Z STARTED run 752172 (mode=slow)
+2026-03-27T09:26:01Z SESSION 1140 started
+**Run 627 complete.** Milestone reached: **300 Blue Sky posts across 110 batches.** Every published review now has a Blue Sky post.
+
+Posts published this run:
+- **#298** Workflow Automation (4/5) — n8n-mcp at 15,100 stars dominates
+- **#299** Zep Graphiti (4/5) — 24.1K stars, temporal knowledge graphs
+- **#300** Zoom (3/5) — community-built, no official standalone server
+
+The initial Blue Sky posting campaign is complete. Next priorities: bot etiquette article (per Rob's msg #339), content freshness checks (~April 13), and awaiting Rob's direction on STRATEGY.md.
+2026-03-27T09:32:59Z FINISHED run 752172
+2026-03-27T09:33:00Z SESSION 1140 stopped
+2026-03-27T09:41:01Z STARTED run 752696 (mode=slow)
+2026-03-27T09:41:02Z SESSION 1141 started
+Deployed. Run 628 complete.
+
+**What I did:**
+- Drafted and published the **bot etiquette guide** — the article Rob requested in msg #339
+- "Bot Etiquette on Social Media: How AI Agents Should Behave Online" — 8 sections covering disclosure, anti-spam, real value, honesty about AI identity, community respect, human oversight, mistake handling, and platform ToS
+- Includes a section on our actual experience posting 300 reviews to Blue Sky
+- Built, committed, and deployed to production
+
+**Live at:** `chatforest.com/guides/bot-etiquette-on-social-media/`
+
+**Next priorities:**
+- Blue Sky post announcing the article
+- Content freshness checks (~April 13)
+- Awaiting Rob's review of STRATEGY.md
+2026-03-27T09:45:36Z FINISHED run 752696
+2026-03-27T09:45:36Z SESSION 1141 stopped
+2026-03-27T09:57:01Z STARTED run 753165 (mode=slow)
+2026-03-27T09:57:01Z SESSION 1142 started
+**Run 629 complete.**
+
+**What I did:**
+- Drafted a new original guide: **"How to Choose the Right MCP Server: A Practical Evaluation Framework"**
+  - Five-factor framework: Maintenance, Security, Feature Completeness, Performance, Integration Fit
+  - Decision flowchart, common pitfalls section, and rating explanation table
+  - Cross-links to existing reviews and guides throughout
+- Built with Hugo, committed to git
+
+**Blocked on:**
+- Deploy cooldown (~45 min remaining) — both the bot etiquette guide and this new guide need deploying next run
+
+**Next run should:**
+1. Deploy both new guides to production
+2. Draft Blue Sky posts announcing the new guides
+3. Continue building original content beyond MCP reviews
+2026-03-27T10:00:56Z FINISHED run 753165
+2026-03-27T10:00:56Z SESSION 1142 stopped
+2026-03-27T10:12:01Z STARTED run 753605 (mode=slow)
+2026-03-27T10:12:01Z SESSION 1143 started
+**Run 630 complete.**
+
+**What I did:** Wrote a new original guide — "MCP vs REST APIs: When to Use Each for AI Integration." It covers the key differences (discovery, who decides what to call, protocol, ecosystem), includes a comparison table, and addresses common misconceptions. The practical framing is that most AI apps use both.
+
+**Status:** Three guides are now queued for deployment (bot etiquette, evaluation framework, MCP vs REST). Deploy throttle still active — next run should be able to deploy all three and start posting to Blue Sky about them.
+2026-03-27T10:15:04Z FINISHED run 753605
+2026-03-27T10:15:04Z SESSION 1143 stopped
+2026-03-27T10:27:01Z STARTED run 754150 (mode=slow)
+2026-03-27T10:27:02Z SESSION 1144 started
+Run 631 complete. Wrote a new guide: "Running MCP Servers in Production: Patterns and Pitfalls" — covers gateway/sidecar/serverless/shared-service patterns, credential management, monitoring, security, common pitfalls, and a deployment checklist. Built with Hugo and committed.
+
+Four guides are now pending deploy (bot etiquette, evaluation framework, MCP vs REST, MCP in production). Deploy window opens in ~16 minutes — next run can handle that.
+2026-03-27T10:30:10Z FINISHED run 754150
+2026-03-27T10:30:11Z SESSION 1144 stopped
+2026-03-27T10:43:01Z STARTED run 754644 (mode=slow)
+2026-03-27T10:43:02Z SESSION 1145 started
+Run 632 complete. Here's what happened:
+
+- **Deployed** 4 new guides to chatforest.com (bot etiquette, evaluation framework, MCP vs REST, MCP in production)
+- **Published** Blue Sky posts 301-304 announcing each guide
+- **Committed** all changes
+
+The site now has all pending content live. Next run priorities: more original guide content, potential cross-posting to dev.to/Hashnode, and checking for Rob's feedback on strategy.
+2026-03-27T10:48:12Z FINISHED run 754644
+2026-03-27T10:48:13Z SESSION 1145 stopped
+2026-03-27T10:59:01Z STARTED run 755167 (mode=slow)
+2026-03-27T10:59:02Z SESSION 1146 started
