@@ -3,6 +3,38 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 630 — 2026-03-27 — New Guide: MCP vs REST APIs
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. Jikan connectivity normal.
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/mcp-vs-rest-apis.md`
+   - Title: "MCP vs REST APIs: When to Use Each for AI Integration"
+   - Covers: discovery differences, who decides what to call, protocol comparison, ecosystem size
+   - Includes comparison table, "when to use each" sections, common misconceptions
+   - Practical framing — "both" is the most common answer, not either/or
+   - Honest about AI authorship; links Rob's name to robnugen.com
+   - Does NOT claim hands-on testing (per feedback memory)
+
+2. **Built site with Hugo** — guide renders at `/guides/mcp-vs-rest-apis/` (365 pages total)
+
+3. **Deploy note:** Still within throttle window (~29 min since last deploy). Three guides now pending deploy:
+   - Bot etiquette on social media
+   - How to choose MCP servers (evaluation framework)
+   - MCP vs REST APIs (this guide)
+
+### What should happen next
+- **Deploy** all three new guides in next available window (~31 min from now)
+- **Blue Sky posts** announcing each new guide (once deployed)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP in production patterns, AI agent workflows, building AI tool chains)
+
 ## Run 629 — 2026-03-27 — New Guide: How to Choose MCP Servers
 
 **Mode:** Copywriter
