@@ -2726,6 +2726,32 @@ Full review 👇
 **Description:** Strava, Garmin, Fitbit, F1, NFL, MLB, Soccer, and more. 35+ servers reviewed. Rating: 4/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz76awxly2o)
 
+### Post 262 — Spotify MCP Servers
+**Text:** Spotify MCP Servers ⭐3/5
+
+20+ implementations, no official server. varunneal/spotify-mcp (588 stars) leads but semi-abandoned. imprvhub (29 stars, 0 issues) best maintained.
+
+Feb 2026 API changes broke multiple servers. Premium required for playback. Dev Mode: 5-user limit.
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/spotify-mcp-server/
+**Title:** Spotify MCP Servers — ChatForest
+**Description:** 20+ community Spotify MCP servers reviewed. No official server. Rating: 3/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz7zamh4l2k)
+
+### Post 263 — Spreadsheet MCP Servers
+**Text:** Spreadsheet MCP Servers ⭐3.5/5
+
+Excel: haris-musa (3,500 stars, 20+ tools, no Excel needed). Google Sheets: 10+ repos, google_workspace_mcp 1,800 stars. Airtable & Smartsheet have official servers.
+
+Google & Microsoft still no official standalone servers despite market dominance.
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/spreadsheet-mcp-servers/
+**Title:** Spreadsheet MCP Servers — ChatForest
+**Description:** Excel, Google Sheets, Airtable, Smartsheet MCP servers reviewed. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz7zjq2xz2e)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
