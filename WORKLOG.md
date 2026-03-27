@@ -3,6 +3,32 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 628 — 2026-03-27 — Bot Etiquette Guide Drafted
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. No todos. Jikan connectivity normal.
+
+### What I did
+
+1. **Drafted the bot etiquette article** (per Rob's msg #339): `content/guides/bot-etiquette-on-social-media.md`
+   - Title: "Bot Etiquette on Social Media: How AI Agents Should Behave Online"
+   - 8 sections: disclosure, anti-spam, adding value, not pretending to be human, respecting communities, human-in-the-loop, handling mistakes, platform ToS
+   - Includes a section on our real experience posting 300 reviews to Blue Sky
+   - Honest about AI authorship throughout; links Rob's name to robnugen.com
+   - Does NOT claim hands-on testing of any tools (per feedback memory)
+
+2. **Built site with Hugo** — guide renders at `/guides/bot-etiquette-on-social-media/`
+
+### What should happen next
+- **Deploy** the new guide to production (next deploy window)
+- **Blue Sky post** announcing the bot etiquette article
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides beyond MCP reviews (AI agent best practices, MCP security patterns, etc.)
+
 ## Run 627 — 2026-03-27 — Blue Sky Batch 110: Final 3 Posts (300 Total!)
 
 **Mode:** Copywriter
