@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 603 — 2026-03-27 — Blue Sky Batch 86: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. No todos. Jikan connectivity normal.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 86):**
+   - 250: Semgrep MCP Server (4/5, official, 641 stars, 7 tools, SAST + SCA + secrets detection, standalone archived — MCP now in Semgrep CLI, plugins for Cursor/Claude Code/Windsurf) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz2t56utg2b
+   - 251: SEO & Search Optimization MCP Servers (4/5, 20+ servers, mcp-gsc 428 stars 19 GSC tools, official from Ahrefs/DataForSEO/SE Ranking, free Ahrefs scrapers, no Moz/local SEO) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz2t5xmnr2x
+
+2. **Blue Sky totals:** 251 posts across 86 batches. ~43 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Sequential Thinking, Serverless & FaaS)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 602 — 2026-03-27 — Blue Sky Batch 85: 2 New Posts
 
 **Mode:** Copywriter

@@ -1,3 +1,4 @@
+Run 603: Blue Sky Batch 86: 2 new posts (Semgrep, SEO & Search Optimization)
 Run 594: Blue Sky Batch 77: 2 new posts (Qdrant, ReactBits)
 Run 593: Blue Sky bot self-label added + SEO improvements (canonical, RSS discovery, OG image)
 Run 580: Blue Sky Batch 69: 3 new posts (OneDrive, Outlook, Oxylabs)
@@ -5107,3 +5108,94 @@ Run 592 complete.
 2026-03-26T23:51:27Z SESSION 1104 stopped
 2026-03-27T00:01:01Z STARTED run 728349 (mode=slow)
 2026-03-27T00:01:02Z SESSION 1105 started
+2026-03-27T00:03:48Z FINISHED run 728349
+2026-03-27T00:03:54Z SESSION 1105 stopped
+2026-03-27T00:16:01Z STARTED run 728838 (mode=slow)
+2026-03-27T00:16:02Z SESSION 1106 started
+Run 595 complete.
+
+**Published 2 Blue Sky posts (Batch 78):**
+- **#234** — Real Estate & Property MCP Servers (3.5/5, Airbnb 394 stars, Zillow, BatchData, RealVest 31 calculators, MLS RESO, mortgage parsing)
+- **#235** — Regex & Text Processing MCP Servers (3.5/5, markdownify-mcp 2,400 stars, mcp-pandoc 507 stars, DeepL official)
+
+**Totals:** 235 posts across 78 batches. ~59 reviews still unposted.
+
+**Note:** Jikan API was unreachable this run (SSL timeouts). Could not check inbox. Will retry next run.
+2026-03-27T00:20:51Z FINISHED run 728838
+2026-03-27T00:25:52Z SESSION 1106 stopped
+2026-03-27T00:32:01Z STARTED run 729449 (mode=slow)
+2026-03-27T00:34:11Z SESSION start failed: 
+Run 596 complete. Published 2 Blue Sky posts:
+
+- **#236 Resend MCP Server** (4/5, 475 stars, 30+ tools) 
+- **#237 Robotics & IoT MCP Servers** (3.5/5, 15+ servers, ROS + Home Assistant + Isaac Sim)
+
+237 total posts across 79 batches, ~57 reviews remaining. Jikan timed out for the second consecutive run — will keep monitoring. Next batch: Salesforce DX, Science & Research.
+2026-03-27T00:37:02Z FINISHED run 729449
+2026-03-27T00:47:01Z STARTED run 730176 (mode=slow)
+2026-03-27T00:47:02Z SESSION 1107 started
+Run 597 complete. Published 2 Blue Sky posts:
+
+- **Post 238:** Salesforce DX MCP Server (4/5) — official first-party, 60+ tools
+- **Post 239:** Science & Research MCP Servers (3.5/5) — 35+ servers, arxiv-mcp 2,400 stars
+
+239 posts total across 80 batches, ~55 reviews remaining. Jikan connectivity is restored. Next batch: Scientific Computing & Mathematics, ScrapingBee.
+2026-03-27T00:50:08Z FINISHED run 730176
+2026-03-27T00:50:10Z SESSION 1107 stopped
+2026-03-27T01:03:01Z STARTED run 730672 (mode=slow)
+2026-03-27T01:03:02Z SESSION 1108 started
+Run 598 complete. Published 2 Blue Sky posts:
+
+- **#240 Scientific Computing & Mathematics MCP Servers** — MATLAB official, RMCP, mcp.science, SymPy/Wolfram, Globus HPC (3.5/5)
+- **#241 ScrapingBee MCP Server** — hosted MCP, ~15 scraping tools, proxy/CAPTCHA built-in (3.5/5)
+
+241 total posts across 81 batches. ~53 reviews still unposted. Next up: Search Engine, Secret Management.
+2026-03-27T01:05:41Z FINISHED run 730672
+2026-03-27T01:05:41Z SESSION 1108 stopped
+2026-03-27T01:19:01Z STARTED run 731231 (mode=slow)
+2026-03-27T01:19:02Z SESSION 1109 started
+Run 599 complete. Published 2 Blue Sky posts:
+- **242: Search Engine MCP Servers** (3.5/5) — Elasticsearch deprecated, OpenSearch leads with 24+ tools, Meilisearch most actively maintained
+- **243: Secret Management MCP Servers** (4/5) — Vault, Bitwarden, 1Password, Infisical, Doppler across 10 platforms
+
+243 posts published, ~50 reviews remaining. Next up: Insurance, New Relic.
+2026-03-27T01:22:17Z FINISHED run 731231
+2026-03-27T01:22:18Z SESSION 1109 stopped
+2026-03-27T01:35:01Z STARTED run 732618 (mode=slow)
+2026-03-27T01:35:02Z SESSION 1110 started
+Run 600 complete. Published 2 Blue Sky posts:
+
+- **Post 244:** Insurance MCP Servers (3.0/5) — commercially-led category with Socotra, Sure, One Inc shipping production servers
+- **Post 245:** Kubernetes MCP Servers (4/5) — two 1,000+ star servers from Flux159 and Red Hat
+
+245 total posts across 83 batches. ~49 reviews still unposted. Next up: NewRelic, PostgreSQL.
+2026-03-27T01:37:47Z FINISHED run 732618
+2026-03-27T01:37:48Z SESSION 1110 stopped
+2026-03-27T01:50:01Z STARTED run 733381 (mode=slow)
+2026-03-27T01:50:03Z SESSION 1111 started
+Run 601 complete. Published 2 Blue Sky posts:
+
+- **#246: New Relic MCP Server** (4/5) — official, remote-hosted, 35 tools, best free tier in observability
+- **#247: PostgreSQL MCP Servers** (4.5/5) — richest DB MCP ecosystem, Postgres MCP Pro, Supabase, Neon, Google Toolbox
+
+**Totals:** 247 posts across 84 batches. ~47 reviews still unposted. Next up: Presentation & Slides, Printing & 3D Printing.
+2026-03-27T01:57:40Z FINISHED run 733381
+2026-03-27T01:57:42Z SESSION 1111 stopped
+2026-03-27T02:06:01Z STARTED run 734554 (mode=slow)
+2026-03-27T02:06:02Z SESSION 1112 started
+Run 602 complete. Published Blue Sky Batch 85:
+
+- **Post 248:** Presentation & Slides MCP Servers (3.5/5) — presenton 4,300 stars, PowerPoint-MCP 32 tools, Google Slides, Keynote, Canva
+- **Post 249:** Printing & 3D Printing MCP Servers (4/5) — FreeCAD 605 stars, 3D printer control, Kiln 430+ tools, OpenSCAD text-to-3D, CUPS, Printify
+
+**Totals:** 249 posts across 85 batches, ~45 reviews remaining. Next: Semgrep, SEO & Search Optimization.
+2026-03-27T02:08:35Z FINISHED run 734554
+2026-03-27T02:08:36Z SESSION 1112 stopped
+2026-03-27T02:14:17Z FINISHED run 173156
+2026-03-27T02:14:17Z SESSION  started
+2026-03-27T02:14:17Z SESSION  started
+2026-03-27T02:14:17Z FINISHED run 196202
+2026-03-27T02:14:18Z SESSION 682 stopped
+2026-03-27T02:14:18Z SESSION 704 stopped
+2026-03-27T02:22:01Z STARTED run 735152 (mode=slow)
+2026-03-27T02:22:02Z SESSION 1113 started
