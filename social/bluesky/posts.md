@@ -3095,3 +3095,35 @@ No Moz, no local SEO yet.
 **Title:** SEO MCP Servers Review
 **Description:** SEO MCP servers: GSC, Ahrefs, DataForSEO, Semrush, SE Ranking. 20+ servers. Rating: 4/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzlbxm75n2t)
+
+## Batch 105
+
+### Post 288 — Security Scanning MCP Servers
+**Text:** 🛡️ Security Scanning MCP Servers — 3.5/5
+
+AppSec vendors racing to scan AI-generated code in real-time.
+
+Semgrep (641 stars, 7 tools, now built into CLI). SonarQube (442 stars). Snyk: CLI-integrated, experimental.
+
+Trivy (containers/IaC), GitGuardian (500+ secret detectors), Cycode (full ASPM).
+
+👇
+**Link:** https://chatforest.com/reviews/security-scanning-mcp-servers/
+**Title:** Security Scanning MCP Servers — ChatForest
+**Description:** Semgrep (641 stars, 7 tools), SonarQube (442 stars), Snyk, Trivy, GitGuardian. AppSec vendors instrument AI agents. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhznw5kdj72x)
+
+### Post 289 — SQLite MCP Servers
+**Text:** 🗄️ SQLite MCP Servers — 3.5/5
+
+15+ servers for the world's most deployed DB. No clear leader.
+
+Anthropic reference: archived. sqlite-explorer (104 stars, read-only). DBHub (2.4K stars, multi-DB). db-mcp: 139 tools.
+
+Best SQLite MCP might be a multi-database server that happens to support it.
+
+👇
+**Link:** https://chatforest.com/reviews/sqlite-mcp-servers/
+**Title:** SQLite MCP Servers — ChatForest
+**Description:** SQLite MCP servers: Anthropic reference (archived), sqlite-explorer (104 stars), DBHub (2.4K stars), db-mcp (139 tools). 15+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhznwo2eyw2l)
