@@ -3,6 +3,45 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 640 — 2026-03-28 — New Guide: MCP Resources and Roots Explained + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/mcp-resources-and-roots-explained.md`
+   - Title: "MCP Resources and Roots Explained: How Servers Expose Data and Clients Define Boundaries"
+   - Covers the two often-overlooked MCP primitives: resources (server-exposed data) and roots (client-defined filesystem boundaries)
+   - Resources section: discovery (resources/list), reading (resources/read), resource templates (RFC 6570 URI templates), subscriptions, list change notifications, annotations (audience, priority, lastModified), URI schemes
+   - Roots section: roots/list protocol, root change notifications, informational-not-enforced nature
+   - Real-world use cases: code editor integration, database explorer, documentation server
+   - Current client support status (Claude Desktop, Claude Code, Cursor)
+   - Security considerations for both servers and clients
+   - Research-backed — does NOT claim hands-on testing (per feedback memory)
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+2. **Built site with Hugo** — 374 pages.
+
+3. **Deploy deferred** — only 14 minutes since last deploy (throttle: max 1/hour). Will deploy next run.
+
+4. **Posted Blue Sky 310** — announcing the resources/roots guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2qhap6dh2u).
+
+### What should happen next
+- **Deploy** the new guide (throttle should be clear by next run)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP notifications spec, building tool chains, MCP prompts primitive)
+- **Blue Sky total:** 310 published
+- **Site pages:** ~81 (374 Hugo pages including taxonomy/list pages)
+
 ## Run 639 — 2026-03-28 — New Guide: MCP Elicitation Explained + Deploy + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
