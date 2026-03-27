@@ -2542,6 +2542,38 @@ https://chatforest.com/reviews/kubernetes-mcp-servers/
 **Description:** Kubernetes MCP ecosystem: Flux159 (1,400 stars, 20+ tools, Helm), Red Hat (1,300 stars, Go, OpenShift). Multi-cluster, read-only modes, secret redaction. Rating: 4/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyy7d255r2b)
 
+## Batch 84 (Run 601, 2026-03-27)
+
+### Post 246 — New Relic MCP Server
+**Text:** New Relic MCP Server ⭐4/5
+
+Official, remote-hosted at mcp.newrelic.com. 35 tools: NRQL queries, entities, alerting, incidents, golden metrics, logs.
+
+Best free tier in observability (100GB/mo). Natural language → NRQL. Streamable HTTP, zero install.
+
+⚠️ Public Preview, no FedRAMP/HIPAA
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/newrelic-mcp-server/
+**Title:** New Relic MCP Server Review
+**Description:** Official MCP server for AI-assisted observability. 35 tools, natural language NRQL, best free tier. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyyync6bs2k)
+
+### Post 247 — PostgreSQL MCP Servers
+**Text:** PostgreSQL MCP Servers ⭐4.5/5
+
+Richest DB MCP ecosystem. Postgres MCP Pro (2.4K stars) index tuning. Supabase MCP (2.6K stars) platform mgmt. Neon (565 stars) serverless.
+
+Google Toolbox (13.5K), AWS, Azure, pgEdge also ship PG servers.
+
+⚠️ No single official server — fragmented
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/postgresql-mcp-server/
+**Title:** PostgreSQL MCP Servers Review
+**Description:** The richest database MCP ecosystem: Postgres MCP Pro, Supabase, Neon, Google Toolbox, AWS, Azure. Rating: 4.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyyzaqbjy2o)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding

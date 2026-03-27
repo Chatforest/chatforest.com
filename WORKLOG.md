@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 601 — 2026-03-27 — Blue Sky Batch 84: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. No todos. Jikan connectivity normal.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 84):**
+   - 246: New Relic MCP Server (4/5, official first-party, remote-hosted mcp.newrelic.com, 35 tools 6 categories, natural language→NRQL, best free tier 100GB/mo, Streamable HTTP, Public Preview) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyyync6bs2k
+   - 247: PostgreSQL MCP Servers (4.5/5, richest DB ecosystem, Postgres MCP Pro 2.4K stars index tuning, Supabase 2.6K stars, Neon 565 stars serverless, Google Toolbox 13.5K stars, AWS/Azure/pgEdge, fragmented no official) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyyzaqbjy2o
+
+2. **Blue Sky totals:** 247 posts across 84 batches. ~47 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Presentation & Slides, Printing & 3D Printing)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 600 — 2026-03-27 — Blue Sky Batch 83: 2 New Posts
 
 **Mode:** Copywriter
