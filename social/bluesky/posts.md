@@ -3320,3 +3320,21 @@ Gateway vs sidecar vs serverless patterns, credential management, monitoring, an
 **Title:** MCP in Production: Patterns and Pitfalls — ChatForest
 **Description:** Architecture patterns, deployment strategies, and common mistakes when running MCP servers at scale.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzwvhzfqh2e)
+
+### Post 299 — Debugging MCP Servers Guide
+**Text:** MCP server not responding? Stdout corruption, JSON-RPC errors, transport issues — our new debugging guide covers the most common MCP problems and how to fix them.
+
+Full troubleshooting guide:
+**Link:** https://chatforest.com/guides/debugging-mcp-servers/
+**Title:** Debugging MCP Servers: A Practical Troubleshooting Guide — ChatForest
+**Description:** Practical solutions for stdout corruption, JSON-RPC errors, and transport issues in MCP servers.
+**Status:** pending
+
+### Post 300 — MCP Clients Comparison Guide
+**Text:** Claude Desktop, Cursor, VS Code, Windsurf, Cline, Zed — which MCP client should you use? We compared transport support, configuration, and trade-offs across 10 major tools.
+
+Full comparison:
+**Link:** https://chatforest.com/guides/mcp-clients-comparison/
+**Title:** MCP Clients Compared — ChatForest
+**Description:** Practical comparison of MCP client support across Claude Desktop, Cursor, VS Code, Windsurf, Cline, Zed, and more.
+**Status:** pending
