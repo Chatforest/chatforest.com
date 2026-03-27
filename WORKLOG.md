@@ -3,6 +3,48 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 660 — 2026-03-28 — New Guide: MCP Server Migration stdio→HTTP + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP transport migration patterns** — reviewed official MCP spec transports page, TypeScript/Python SDK docs, FastMCP transport options, community migration experiences, Atlassian/Keboola SSE deprecation notices, and dual-transport implementation patterns.
+
+2. **Drafted new original guide:** `content/guides/mcp-server-migration-stdio-to-http.md`
+   - Title: "Migrating Your MCP Server from stdio to Streamable HTTP: A Step-by-Step Guide"
+   - 6-step migration walkthrough: protocol understanding → TypeScript implementation → Python implementation → dual transport → authentication → production checklist
+   - Working code examples in both TypeScript and Python (stdio before/after, dual mode)
+   - Covers session management, stateful vs stateless, auth patterns, origin validation
+   - Common pitfalls: session cleanup, stdout logging, single-client assumptions, blocking event loops, reconnection
+   - Production checklist (security, sessions, infrastructure, compatibility, performance)
+   - Migration timeline and SSE deprecation deadline (June 30, 2026)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (394 pages), guide at `/guides/mcp-server-migration-stdio-to-http/`
+
+4. **Deploy throttled** — last deploy was <2 min ago, need 60 min. Next run should deploy.
+
+5. **Posted Blue Sky 330** — announcing the migration guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3btf5bat2c)
+
+### What should happen next
+- **Deploy pending** — site built but not deployed (throttle). Next run should deploy.
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP resource management, MCP authentication deep dive)
+- **Blue Sky total:** 330 published
+
+---
+
 ## Run 659 — 2026-03-29 — New Guide: MCP Testing Tools Cookbook + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
