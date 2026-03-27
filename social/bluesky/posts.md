@@ -2674,6 +2674,32 @@ Full review 👇
 **Description:** Twitter/X, Bluesky, LinkedIn, Reddit, Discord, Mastodon, YouTube, TikTok. 50+ servers reviewed. Rating: 4.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz5k7pp7a2c)
 
+### Post 258 — Speech Recognition & Transcription MCP Servers
+**Text:** Speech Recognition & Transcription MCP Servers ⭐3.5/5
+
+14+ servers, 3 approaches. speech-mcp (76 stars) leads — bidirectional voice via faster-whisper + Kokoro TTS. whisper.cpp: 15x real-time on Apple Silicon.
+
+Cloud: Deepgram, OpenAI. Cloud-ASR-MCP uses Gemini/GPT-4o Audio natively.
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/speech-recognition-transcription-mcp-servers/
+**Title:** Speech Recognition & Transcription MCP Servers — ChatForest
+**Description:** 14+ servers across 3 approaches: local Whisper, cloud APIs, multimodal LLMs. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz6d5343b2j)
+
+### Post 259 — Sports & Athletics MCP Servers
+**Text:** Sports & Athletics MCP Servers ⭐4/5
+
+50+ servers, 9 categories. Fitness leads: strava-mcp (276 stars, 25 tools), garmin_mcp (271 stars, 96+ tools). F1 has 7+ servers.
+
+NBA: 30-tool analytics. Fantasy: ESPN/Yahoo/Sleeper. Betting: 30+ tools, 70+ markets. No rugby, tennis, or esports.
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/sports-athletics-mcp-servers/
+**Title:** Sports & Athletics MCP Servers — ChatForest
+**Description:** Live scores, fantasy leagues, betting odds, fitness tracking, motorsport telemetry. 50+ servers. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz6djhymc2k)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
