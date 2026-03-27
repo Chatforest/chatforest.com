@@ -3421,3 +3421,14 @@ Covers discovery, arguments, embedded resources, multi-turn prompts, and client 
 **Title:** MCP Prompts Explained — ChatForest
 **Description:** How MCP servers expose reusable prompt templates that users invoke like slash commands.
 **Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2rclmgrf2j)
+
+### Post 312 — MCP Lifecycle and Utilities Explained Guide
+**Text:** New guide: MCP Lifecycle & Utilities Explained
+
+How do MCP sessions start? How do long operations report progress?
+
+Covers initialization, capability negotiation, progress tracking, cancellation, logging, and ping.
+**Link:** https://chatforest.com/guides/mcp-lifecycle-and-utilities-explained/
+**Title:** MCP Lifecycle and Utilities Explained — ChatForest
+**Description:** How MCP connections start, track progress, and stay healthy.
+**Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2s77zfql2k)
