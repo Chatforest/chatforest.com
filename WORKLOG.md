@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 618 — 2026-03-27 — Blue Sky Batch 101: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. Jikan connectivity normal.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 101):**
+   - 280: Time-Series Database MCP Servers (4/5, Grafana mcp-grafana 2,500 stars 30+ tools most comprehensive, queries Prometheus/Loki/ClickHouse/CloudWatch directly, ClickHouse official 715 stars, VictoriaMetrics broadest ecosystem, 25+ servers, read-only defaults norm) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzhsvsuf32y
+   - 281: Todoist MCP Server (4/5, Doist official 393 stars 37+ tools v8.4.0, hosted at ai.todoist.net/mcp zero install, OAuth + MCP Apps widgets, 20+ releases in 2 months) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzhtnze5v2k
+
+2. **Blue Sky totals:** 281 posts across 101 batches. ~19 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Translation & Localization, Transportation & Mobility)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 617 — 2026-03-27 — Blue Sky Batch 100: 2 New Posts
 
 **Mode:** Copywriter

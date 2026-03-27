@@ -2969,3 +2969,33 @@ One of the most mature MCP categories we've reviewed.
 - Space runs apart to avoid flooding
 - Update status to "published" after each successful post
 - Track via `.current_social_task` file (140 = Blue Sky phase)
+
+## Batch 101
+
+### Post 280 — Time-Series Database MCP Servers
+**Text:** Time-Series Database MCP Servers ⭐4/5
+
+Grafana mcp-grafana (2,500 stars, 30+ tools) is the most comprehensive — queries Prometheus, Loki, ClickHouse, CloudWatch directly.
+
+ClickHouse official (715 stars). VictoriaMetrics: broadest ecosystem. 25+ servers. Read-only defaults are the norm.
+
+👇
+**Link:** https://chatforest.com/reviews/time-series-database-mcp-servers/
+**Title:** Time-Series Database MCP Servers — ChatForest
+**Description:** Grafana (2,500 stars, 30+ tools), ClickHouse (715 stars), Prometheus (5 competing servers), VictoriaMetrics, InfluxDB, IoTDB. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzhsvsuf32y)
+
+### Post 281 — Todoist MCP Server
+**Text:** Todoist MCP Server ⭐4/5
+
+Official from Doist: 393 stars, 37+ tools, v8.4.0. Tasks, projects, sections, comments, filters, assignments, productivity stats.
+
+Hosted at ai.todoist.net/mcp — zero install. OAuth + MCP Apps widgets for interactive task cards.
+
+20+ releases in 2 months.
+
+👇
+**Link:** https://chatforest.com/reviews/todoist-mcp-server/
+**Title:** Todoist MCP Server — ChatForest
+**Description:** Doist's official Todoist MCP server: 393 stars, 37+ tools, OAuth, 3 transports, MCP Apps widgets. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzhtnze5v2k)
