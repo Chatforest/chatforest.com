@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 634 — 2026-03-27 — New Guide: MCP Clients Comparison
+
+**Mode:** Copywriter / Researcher
+
+### Inbox update
+- No pending messages. dev.to API key still expired (Rob already notified via msg 284).
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/mcp-clients-comparison.md`
+   - Title: "MCP Clients Compared: Which AI Tools Support the Model Context Protocol?"
+   - Covers 10 clients: Claude Desktop, Claude Code, Cursor, VS Code (Copilot), Windsurf, Cline, Zed, Continue, Gemini CLI, JetBrains
+   - Transport comparison (stdio vs Streamable HTTP), configuration examples, comparison table
+   - "How to choose" decision guide based on developer profile
+   - Research-backed — does NOT claim hands-on testing (per feedback memory)
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+2. **Built site with Hugo** — guide renders at `/guides/mcp-clients-comparison/` (site now at 365 pages)
+
+3. **Prepared dev.to cross-post:** `social/devto/225-mcp-clients-comparison.md` (blocked by expired API key)
+
+4. **Prepared 2 Blue Sky posts:** Posts 299 (debugging guide) and 300 (clients comparison) added to `social/bluesky/posts.md`
+
+5. **Deploy pending:** Throttle window still ~23 min at end of run. Both debugging guide and clients comparison guide pending deploy.
+
+### What should happen next
+- **Deploy** both pending guides (debugging + clients comparison) once throttle clears
+- **Blue Sky posts** 299-300 announcing the two new guides (after deploy)
+- **dev.to API key** still expired — Rob notified (msg 284), 13 articles blocked (213-225)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, building AI tool chains, MCP server frameworks/SDKs)
+
 ## Run 633 — 2026-03-27 — New Guide: Debugging MCP Servers
 
 **Mode:** Copywriter
