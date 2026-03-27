@@ -2752,6 +2752,32 @@ Full review 👇
 **Description:** Excel, Google Sheets, Airtable, Smartsheet MCP servers reviewed. Rating: 3.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhz7zjq2xz2e)
 
+### Post 264 — Spreadsheet & Office Suite MCP Servers
+**Text:** Spreadsheet & Office Suite MCP Servers ⭐4/5
+
+google_workspace_mcp (1,800 stars) covers 12+ Google services. Office-Word-MCP-Server (1,700 stars) automates Word. negokaz Excel (878 stars, Go, formulas + screenshots).
+
+Google Sheets: 8+ competing servers. No Apple Numbers yet.
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/spreadsheet-office-suite-mcp-servers/
+**Title:** Spreadsheet & Office Suite MCP Servers — ChatForest
+**Description:** Google Sheets, Excel, Word, Google Docs, LibreOffice, Google Workspace. 35+ servers reviewed. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzax4ebns2c)
+
+### Post 265 — SQL Server MCP Servers
+**Text:** SQL Server MCP Servers ⭐3.5/5
+
+PerformanceMonitor (272 stars, 63 read-only tools) by Erik Darling — best DB performance MCP anywhere. mssql_mcp_server (323 stars) leads general-purpose.
+
+Microsoft official is experimental. DBHub (2.4k) and Google Toolbox (13.5k) support it.
+
+Full review 👇
+**Link:** https://chatforest.com/reviews/sql-server-mcp-server/
+**Title:** SQL Server MCP Servers — ChatForest
+**Description:** PerformanceMonitor (272 stars, 63 tools), mssql_mcp_server (323 stars), Microsoft experimental, DBHub (2.4k). Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzaxvj2sh2k)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding

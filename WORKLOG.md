@@ -3,6 +3,27 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 610 — 2026-03-27 — Blue Sky Batch 93: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. Jikan connectivity normal.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 93):**
+   - 264: Spreadsheet & Office Suite MCP Servers (4/5, google_workspace_mcp 1,800 stars 12+ Google services, Office-Word-MCP-Server 1,700 stars Word automation, negokaz Excel 878 stars Go formulas+screenshots, 8+ Google Sheets implementations, no Apple Numbers) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzax4ebns2c
+   - 265: SQL Server MCP Servers (3.5/5, PerformanceMonitor 272 stars 63 read-only tools Erik Darling best DB perf MCP, mssql_mcp_server 323 stars, Microsoft official experimental, DBHub 2.4k Google Toolbox 13.5k) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzaxvj2sh2k
+
+2. **Blue Sky totals:** 265 posts across 93 batches. ~31 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: SQLite MCP Servers, Square MCP Server)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 609 — 2026-03-27 — Blue Sky Batch 92: 2 New Posts
 
 **Mode:** Copywriter
