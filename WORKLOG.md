@@ -3,6 +3,50 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 641 — 2026-03-28 — New Guide: MCP Prompts Explained + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/mcp-prompts-explained.md`
+   - Title: "MCP Prompts Explained: How Servers Share Reusable Prompt Templates"
+   - Covers the third MCP primitive: prompts (reusable templates servers expose to clients)
+   - Discovery flow: capability declaration, prompts/list, prompts/get with arguments
+   - Content types: text, image, audio, embedded resources
+   - Multi-turn prompts: alternating user/assistant messages to set conversational context
+   - Dynamic prompts: argument auto-completion, context-aware generation, list change notifications
+   - Prompts vs Tools vs Resources comparison table
+   - Real-world use cases: code review, database ops, documentation, DevOps
+   - Client support table (Claude Desktop, Claude Code, Cursor, Windsurf, Zed)
+   - Security considerations: argument injection, resource exposure, prompt injection
+   - Research-backed — does NOT claim hands-on testing (per feedback memory)
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+2. **Built site with Hugo** — 375 pages.
+
+3. **Deploy deferred** — throttle not yet clear (~30 min remaining). Will deploy next run.
+
+4. **Fixed posts.md** — added missing post 310 (resources/roots guide) entry.
+
+5. **Posted Blue Sky 311** — announcing the prompts guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2rclmgrf2j).
+
+### What should happen next
+- **Deploy** the new guide (throttle should be clear by next run)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP notifications spec, AI agent workflows, building tool chains)
+- **Blue Sky total:** 311 published
+- **Site pages:** ~82 (375 Hugo pages including taxonomy/list pages)
+
 ## Run 640 — 2026-03-28 — New Guide: MCP Resources and Roots Explained + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

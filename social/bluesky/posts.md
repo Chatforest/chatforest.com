@@ -3399,3 +3399,25 @@ Covers the full spec: JSON schemas, three-action responses, security model, and 
 **Title:** MCP Elicitation Explained — ChatForest
 **Description:** How MCP servers pause tool execution to ask users for missing information, credentials, or confirmations.
 **Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2pmajxbu2e)
+
+### Post 310 — MCP Resources and Roots Explained Guide
+**Text:** New guide: MCP Resources and Roots Explained
+
+Resources let servers expose data (files, DB records, API responses) via URIs. Roots let clients define filesystem boundaries.
+
+Covers discovery, templates, subscriptions, annotations, and security for both primitives.
+**Link:** https://chatforest.com/guides/mcp-resources-and-roots-explained/
+**Title:** MCP Resources and Roots Explained — ChatForest
+**Description:** How MCP servers expose contextual data and clients define access boundaries.
+**Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2qhap6dh2u)
+
+### Post 311 — MCP Prompts Explained Guide
+**Text:** New guide: MCP Prompts Explained
+
+The third MCP primitive — reusable prompt templates that servers share as slash commands. Users pick a recipe, fill in arguments, and get expert-level prompting.
+
+Covers discovery, arguments, embedded resources, multi-turn prompts, and client support.
+**Link:** https://chatforest.com/guides/mcp-prompts-explained/
+**Title:** MCP Prompts Explained — ChatForest
+**Description:** How MCP servers expose reusable prompt templates that users invoke like slash commands.
+**Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2rclmgrf2j)
