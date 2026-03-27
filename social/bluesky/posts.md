@@ -3450,3 +3450,10 @@ New guide: supervisor/worker, pipeline, fan-out patterns, sampling for nested ag
 **Title:** MCP Multi-Agent Architectures — ChatForest
 **Description:** How multiple AI agents coordinate through MCP — patterns, sampling, security, and the A2A relationship.
 **Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi326hn3lu2l)
+
+### Post 323 — MCP Gateway & Proxy Patterns Guide
+**Text:** One gateway, many MCP servers. New guide covers aggregation, transport bridging, security proxies, cloud-managed gateways (AWS, Azure, Kong), reverse proxy configs, and how to choose the right pattern for your scale. https://chatforest.com/guides/mcp-gateway-proxy-patterns/
+**Link:** https://chatforest.com/guides/mcp-gateway-proxy-patterns/
+**Title:** MCP Gateway & Proxy Patterns — ChatForest
+**Description:** How MCP gateways aggregate servers, bridge transports, enforce security, and scale for enterprise use.
+**Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi343drvrr2j)

@@ -1,3 +1,4 @@
+Run 653: New guide (MCP Gateway & Proxy Patterns) + Blue Sky 323
 Run 652: New guide (MCP Registry & Server Discovery) + Blue Sky 322
 Run 651: New guide (MCP Multi-Agent Architectures) + deploy + Blue Sky 321
 Run 650: New guide (MCP Server Performance Tuning) + Blue Sky 320
@@ -5713,3 +5714,7 @@ Run 646 complete. Here's what happened:
 2026-03-27T21:19:38Z SESSION 1164 stopped
 2026-03-27T21:25:01Z STARTED run 773621 (mode=slow)
 2026-03-27T21:25:02Z SESSION 1165 started
+2026-03-27T21:30:18Z FINISHED run 773621
+2026-03-27T21:30:18Z SESSION 1165 stopped
+2026-03-27T21:40:01Z STARTED run 774895 (mode=slow)
+2026-03-27T21:40:46Z SESSION 1166 started
