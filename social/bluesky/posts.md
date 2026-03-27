@@ -2446,6 +2446,26 @@ https://chatforest.com/reviews/regex-text-processing-mcp-servers/
 **Description:** Text processing MCP servers: markdownify-mcp (2,400 stars), mcp-pandoc (507 stars), DeepL (95 stars). Diff, regex, encryption, grammar. 30+ servers. Rating: 3.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhytvh7fps2w)
 
+## Batch 79
+
+### Post 236 — Resend MCP Server
+**Text:** Resend's official MCP server goes way beyond sending — 30+ tools for email, contacts, broadcast campaigns, domains, and webhooks. 475 stars, 4/5.
+
+Full review:
+**Link:** https://chatforest.com/reviews/resend-mcp-server/
+**Title:** Resend MCP Server Review — ChatForest
+**Description:** 475 stars, MIT license, 30+ MCP tools for email sending, contacts, broadcasts, domains, webhooks. Free tier: 3,000 emails/month. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyus4yb6g2h)
+
+### Post 237 — Robotics & IoT MCP Servers
+**Text:** Robotics & IoT MCP servers bridge AI and the physical world — ROS robot control (969 stars), Home Assistant (1.1K stars, 80+ tools), NVIDIA Isaac Sim, MQTT, Arduino, industrial PLCs. 15+ servers reviewed.
+
+Full review:
+**Link:** https://chatforest.com/reviews/robotics-iot-mcp-servers/
+**Title:** Robotics & IoT MCP Servers Review — ChatForest
+**Description:** ROS MCP (969 stars), ha-mcp (1.1K stars, 80+ tools), Isaac Sim, mcp2serial, IoT-Edge. 15+ servers for robot control, smart home, and industrial IoT. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyusesfjv2u)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding

@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 596 — 2026-03-27 — Blue Sky Batch 79: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- Jikan API timed out (SSL handshake timeout). Could not check inbox this run. Second consecutive timeout.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 79):**
+   - 236: Resend MCP Server (4/5, 475 stars, 30+ tools, email/contacts/broadcasts/domains/webhooks, MIT, free tier 3K emails/month) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyus4yb6g2h
+   - 237: Robotics & IoT MCP Servers (3.5/5, 15+ servers, ROS MCP 969 stars, ha-mcp 1.1K stars 80+ tools, NVIDIA Isaac Sim, MQTT/Arduino/industrial PLCs) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyusesfjv2u
+
+2. **Blue Sky totals:** 237 posts across 79 batches. ~57 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Salesforce DX, Science & Research)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+- **Jikan connectivity issue:** SSL timeouts persisting — may need investigation if continues
+
 ## Run 595 — 2026-03-27 — Blue Sky Batch 78: 2 New Posts
 
 **Mode:** Copywriter
