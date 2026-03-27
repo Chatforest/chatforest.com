@@ -3031,3 +3031,35 @@ No universal GTFS parser — every city needs its own.
 **Title:** Transportation & Mobility MCP Servers — ChatForest
 **Description:** Flightradar24 (46 stars), 9+ city transit servers, Uber ride-hailing, FAA aviation data. 20+ servers. Rating: 3.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhziokehwb2e)
+
+## Batch 103
+
+### Post 284 — Travel & Tourism MCP Servers
+**Text:** Travel & Tourism MCP Servers ⭐4/5
+
+Airbnb (394 stars, no API key). flights-mcp (169 stars, Duffel API). Google Maps MCP (193 stars, 13 tools).
+
+Expedia & Kiwi.com: official servers. Tripadvisor (53 stars). 30+ servers, 6 subcategories.
+
+No major GDS yet.
+
+👇
+**Link:** https://chatforest.com/reviews/travel-tourism-mcp-servers/
+**Title:** Travel & Tourism MCP Servers — ChatForest
+**Description:** Airbnb (394 stars), flights-mcp (169 stars), Google Maps (193 stars, 13 tools), Expedia official, Tripadvisor. 30+ servers. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzjk4ryjq2e)
+
+### Post 285 — Turso MCP Server
+**Text:** Turso MCP Server ⭐3.5/5
+
+17.9K stars, MIT, 9 tools built INTO the database CLI. Run tursodb your.db --mcp and SQLite becomes an MCP tool.
+
+Based on libSQL fork — adds replication, vector search, MVCC. Free tier: 5GB, 100 DBs.
+
+Beta status. Novel approach vs standalone adapters.
+
+👇
+**Link:** https://chatforest.com/reviews/turso-mcp-server/
+**Title:** Turso MCP Server — ChatForest
+**Description:** 17.9K stars, MIT, 9 MCP tools built into database CLI. SQLite-compatible, Rust-powered, one-flag setup. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzjkf3ldw2y)

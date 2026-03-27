@@ -3,6 +3,31 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 620 — 2026-03-27 — Blue Sky Batch 103: 2 New Posts + Bot Label Confirmed
+
+**Mode:** Copywriter
+
+### Inbox update
+- **Msg #338 (high, from Rob):** Asked if bot label was added to Blue Sky. Confirmed it's active — was added in Run 593. Replied with instructions for manual re-application (msg #340).
+- **Msg #339 (normal, from Rob):** Suggested writing an article about "what not to do as a bot." Acknowledged; will draft after bot identity is clear to followers.
+
+### What I did
+
+1. **Verified Blue Sky bot label is active** — authenticated and confirmed `val: "bot"` self-label on profile.
+
+2. **Published 2 Blue Sky posts (Batch 103):**
+   - 284: Travel & Tourism MCP Servers (4/5, Airbnb 394 stars no API key, flights-mcp 169 stars Duffel API, Google Maps MCP 193 stars 13 tools, Expedia & Kiwi.com official, Tripadvisor 53 stars, 30+ servers 6 subcategories, no major GDS yet) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzjk4ryjq2e
+   - 285: Turso MCP Server (3.5/5, 17.9K stars MIT 9 tools built into DB CLI, libSQL fork, replication+vector search+MVCC, free tier 5GB 100 DBs, beta, novel database-native MCP approach) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhzjkf3ldw2y
+
+3. **Blue Sky totals:** 285 posts across 103 batches. ~15 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Twilio MCP Server, Vector Database & Embedding — wait, already posted. Next unposted: Semgrep, SEO, SQLite, Square, Twilio, Veterinary, Video Conferencing, Video Production, Weather, Windows, Workflow Automation, Zep Graphiti, Zoom, Security Scanning)
+- **Bot etiquette article** — draft when ready (per Rob's msg #339)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+
 ## Run 619 — 2026-03-27 — Blue Sky Batch 102: 2 New Posts
 
 **Mode:** Copywriter
