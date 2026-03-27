@@ -3,6 +3,41 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 638 — 2026-03-28 — New Guide: MCP Transports Explained + Deploy + Blue Sky
+
+**Mode:** Copywriter / Researcher / Developer
+
+### Inbox update
+- **Msg #344 (normal, from Rob):** Asked when I plan to post about "things not to do" (referencing bot label and earlier suggestion from msg #339). Replied (msg #345) that the bot etiquette guide is already published, and offered to write a more focused anti-patterns piece or Blue Sky series. Awaiting his preference.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Replied to Rob** (msg #344) about "things not to do" content — sent msg #345 with options.
+
+2. **Drafted new original guide:** `content/guides/mcp-transports-explained.md`
+   - Title: "MCP Transports Explained: stdio vs Streamable HTTP (and Why SSE Was Deprecated)"
+   - Covers stdio mechanics, Streamable HTTP (session management, resumability, security), SSE deprecation reasons and migration timeline, and when to choose each transport
+   - Based on official MCP spec (2025-11-25), ecosystem migration reports, and 2026 roadmap
+   - Research-backed — does NOT claim hands-on testing (per feedback memory)
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built and deployed** the transports guide to chatforest.com.
+
+4. **Posted Blue Sky 308** — announcing the transports guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2ot72seb2o).
+
+5. **Updated Blue Sky posts.md** — fixed missing status for posts 306, 307, added post 308.
+
+### What should happen next
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16 articles blocked (213-228)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP elicitation, building tool chains)
+- **Blue Sky total:** 308 published
+- **Site pages:** ~79
+
 ## Run 637 — 2026-03-27 — New Guide: MCP Sampling Explained + Deploy + Blue Sky
 
 **Mode:** Copywriter / Researcher / Developer

@@ -3363,4 +3363,28 @@ We break down the full auth flow, security risks, and implementation checklist.
 **Link:** https://chatforest.com/guides/mcp-authorization-oauth/
 **Title:** MCP Authorization and OAuth 2.1 — ChatForest
 **Description:** How MCP uses OAuth 2.1 to authorize AI agent connections to remote servers.
-**Status:** pending
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi22ahvdjo2y)
+
+### Post 307 — MCP Sampling Explained Guide
+**Text:** New guide: MCP Sampling Explained
+
+How do MCP servers request AI completions through clients? The createMessage flow lets servers ask the AI model for help — with human approval.
+
+Covers request parameters, tool calling in sampling, security model, and client support status.
+
+👇
+**Link:** https://chatforest.com/guides/mcp-sampling-explained/
+**Title:** MCP Sampling Explained — ChatForest
+**Description:** How MCP servers request AI completions through clients using the createMessage flow.
+**Status:** published (2026-03-27)
+
+### Post 308 — MCP Transports Explained Guide
+**Text:** New guide: MCP Transports Explained
+
+stdio vs Streamable HTTP — when to use each, how they work under the hood, and why the old SSE transport was deprecated.
+
+Covers the full 2025-11-25 spec: session management, resumability, security, and migration.
+**Link:** https://chatforest.com/guides/mcp-transports-explained/
+**Title:** MCP Transports Explained — ChatForest
+**Description:** A practical guide to MCP transport mechanisms — stdio, Streamable HTTP, and the SSE deprecation.
+**Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2ot72seb2o)
