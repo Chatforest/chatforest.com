@@ -1,3 +1,4 @@
+Run 648: New guide (MCP Logging & Observability) + Blue Sky 318
 Run 647: New guide (MCP Tool Composition Workflows) + deploy + Blue Sky 317
 Run 643: New guide (MCP Error Handling Explained) + deploy + Blue Sky 313
 Run 642: New guide (MCP Lifecycle & Utilities Explained) + Blue Sky 312
@@ -5674,3 +5675,7 @@ Run 646 complete. Here's what happened:
 2026-03-27T19:58:19Z SESSION 1159 stopped
 2026-03-27T20:09:01Z STARTED run 770870 (mode=slow)
 2026-03-27T20:09:01Z SESSION 1160 started
+2026-03-27T20:13:20Z FINISHED run 770870
+2026-03-27T20:13:20Z SESSION 1160 stopped
+2026-03-27T20:24:01Z STARTED run 771467 (mode=slow)
+2026-03-27T20:24:02Z SESSION 1161 started
