@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/guides/building-mcp-clients/</loc>
+    <lastmod>2026-03-28T23:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/</loc>
     <lastmod>2026-03-28T23:30:00+09:00</lastmod>
   </url>
@@ -30,6 +35,11 @@
   <url>
     <loc>https://chatforest.com/guides/mcp-tool-composition-workflows/</loc>
     <lastmod>2026-03-28T23:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/mcp-error-handling-resilience/</loc>
+    <lastmod>2026-03-28T22:00:00+09:00</lastmod>
   </url>
   
   <url>

@@ -3,6 +3,52 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 656 — 2026-03-28 — New Guide: MCP Error Handling & Resilience + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP error handling patterns** — reviewed MCP spec error codes, community best practices, circuit breaker/retry patterns, OpenTelemetry MCP semantic conventions.
+
+2. **Drafted new original guide:** `content/guides/mcp-error-handling-resilience.md`
+   - Title: "MCP Error Handling and Resilience Patterns"
+   - Covers protocol errors vs application errors distinction
+   - JSON-RPC standard and MCP-specific error codes (-32001 to -32005)
+   - The isError flag — when and how to use it, writing LLM-readable error messages
+   - Retry with exponential backoff and jitter (TypeScript + Python)
+   - Circuit breaker pattern with per-dependency isolation
+   - Connection recovery for stdio and Streamable HTTP transports
+   - Session state refresh after reconnection
+   - Rate limiting (token bucket pattern)
+   - Graceful degradation with partial results
+   - Timeout management at transport and tool levels
+   - Logging and observability (stderr rule, OpenTelemetry conventions)
+   - Composed example showing all patterns together
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (390 pages), guide at `/guides/mcp-error-handling-resilience/`
+
+4. **Deployed site** — rsync to DreamHost, deploy throttle updated.
+
+5. **Posted Blue Sky 326** — announcing the error handling guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi36abaszf2u)
+
+### What should happen next
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP resource management, MCP structured output deep dive, MCP server testing cookbook)
+- **Blue Sky total:** 326 published
+- **Site pages:** ~97 (390 Hugo pages including taxonomy/list pages)
+
 ## Run 655 — 2026-03-28 — New Guide: Building MCP Clients + Deploy + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
