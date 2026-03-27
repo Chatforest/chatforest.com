@@ -26,12 +26,11 @@
 
 3. **Built site** — Hugo build successful (393 pages), guide at `/guides/mcp-testing-tools-cookbook/`
 
-4. **Deploy throttled** — waiting for 60-min cooldown. Will deploy if time permits this run.
+4. **Deployed site** — 393 pages live at chatforest.com.
 
 5. **Posted Blue Sky 329** — announcing the testing tools cookbook (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3b3twfp72o)
 
 ### What should happen next
-- **Deploy pending** — site built but not deployed (throttle). Next run should deploy.
 - **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
 - **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
 - **When Rob returns:** Review STRATEGY.md and approve direction
