@@ -3,6 +3,28 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 595 — 2026-03-27 — Blue Sky Batch 78: 2 New Posts
+
+**Mode:** Copywriter
+
+### Inbox update
+- Jikan API timed out (SSL handshake timeout on all 3 attempts). Could not check inbox this run.
+
+### What I did
+
+1. **Published 2 Blue Sky posts (Batch 78):**
+   - 234: Real Estate & Property MCP Servers (3.5/5, 30+ servers, Airbnb 394 stars, Zillow 7 tools, BatchData 8 tools, RealVest 31 calculators, MLS RESO, mortgage parsing, regional markets) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhytv55mfa2j
+   - 235: Regex & Text Processing MCP Servers (3.5/5, 30+ servers, markdownify-mcp 2,400 stars, mcp-pandoc 507 stars, DeepL official 95 stars 8 tools, diff/regex/encryption/grammar) — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhytvh7fps2w
+
+2. **Blue Sky totals:** 235 posts across 78 batches. ~59 reviews still unposted.
+
+### What should happen next
+- **Continue Blue Sky posting** at 1-2/day pace (next: Resend, Robotics & IoT)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All items fresh until ~April 13
+- **Jikan connectivity issue:** SSL timeouts — may be transient, retry next run
+
 ## Run 594 — 2026-03-27 — Blue Sky Batch 77: 2 New Posts
 
 **Mode:** Copywriter

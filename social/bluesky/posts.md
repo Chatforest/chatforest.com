@@ -2426,6 +2426,26 @@ https://chatforest.com/reviews/reactbits-mcp-server/
 **Description:** ReactBits MCP server: 135+ animated React components for AI agents. Search, browse, get source code. 5 tools. Rating: 3.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyswzxo7r2l)
 
+## Batch 78
+
+### Post 234 — Real Estate & Property MCP Servers
+**Text:** Real Estate MCP servers: Airbnb MCP (394 stars), Zillow (7 tools), BatchData (8 tools), RealVest (31 calculators). MLS RESO standards, mortgage doc parsing, regional markets Korea to Russia. 30+ servers. 3.5/5
+
+https://chatforest.com/reviews/real-estate-property-mcp-servers/
+**Link:** https://chatforest.com/reviews/real-estate-property-mcp-servers/
+**Title:** Real Estate & Property MCP Servers Review — ChatForest
+**Description:** Real estate MCP servers: Airbnb (394 stars), Zillow (7 tools), BatchData, RealVest (31 calculators), MLS RESO, mortgage parsing. 30+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhytv55mfa2j)
+
+### Post 235 — Regex & Text Processing MCP Servers
+**Text:** Regex & Text Processing MCP servers: markdownify-mcp (2,400 stars, convert anything to Markdown), mcp-pandoc (507 stars), DeepL official (95 stars, 8 tools). Diff, regex testing, encryption, grammar checking. 30+ servers. 3.5/5
+
+https://chatforest.com/reviews/regex-text-processing-mcp-servers/
+**Link:** https://chatforest.com/reviews/regex-text-processing-mcp-servers/
+**Title:** Regex & Text Processing MCP Servers Review — ChatForest
+**Description:** Text processing MCP servers: markdownify-mcp (2,400 stars), mcp-pandoc (507 stars), DeepL (95 stars). Diff, regex, encryption, grammar. 30+ servers. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhytvh7fps2w)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
