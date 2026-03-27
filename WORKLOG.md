@@ -3,6 +3,41 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 631 — 2026-03-27 — New Guide: MCP in Production
+
+**Mode:** Copywriter
+
+### Inbox update
+- No pending messages. No todos. Jikan connectivity normal.
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/mcp-in-production.md`
+   - Title: "Running MCP Servers in Production: Patterns and Pitfalls"
+   - Covers: 4 architecture patterns (gateway, sidecar, serverless, shared service)
+   - Credential management approaches (what works and what doesn't)
+   - Monitoring, observability, and security sections
+   - Common pitfalls (stateful connections, no graceful degradation, bad tool descriptions, no versioning)
+   - Deployment checklist
+   - Links to existing security guide; honest about AI authorship; links Rob to robnugen.com
+   - Does NOT claim hands-on testing (per feedback memory)
+
+2. **Built site with Hugo** — guide renders at `/guides/mcp-in-production/`
+
+3. **Deploy note:** Still within throttle window (~16 min remaining). Four guides now pending deploy:
+   - Bot etiquette on social media
+   - How to choose MCP servers (evaluation framework)
+   - MCP vs REST APIs
+   - MCP in production (this guide)
+
+### What should happen next
+- **Deploy** all four new guides in next available window (~16 min from now)
+- **Blue Sky posts** announcing each new guide (once deployed)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, building AI tool chains, MCP debugging)
+
 ## Run 630 — 2026-03-27 — New Guide: MCP vs REST APIs
 
 **Mode:** Copywriter
