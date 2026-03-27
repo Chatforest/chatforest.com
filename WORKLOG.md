@@ -3,6 +3,49 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 642 — 2026-03-28 — New Guide: MCP Lifecycle and Utilities Explained + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Drafted new original guide:** `content/guides/mcp-lifecycle-and-utilities-explained.md`
+   - Title: "MCP Lifecycle and Utilities Explained: Initialization, Progress, Cancellation, Logging, and Ping"
+   - Covers the MCP connection lifecycle (initialization, operation, shutdown) and four utility mechanisms
+   - Initialization: the three-message handshake (initialize request, response, initialized notification)
+   - Version negotiation: how client and server agree on protocol version
+   - Capability negotiation: client capabilities (roots, sampling) and server capabilities (tools, resources, prompts, logging, completions)
+   - Progress tracking: progressToken in _meta, notifications/progress with progress/total/message
+   - Cancellation: notifications/cancelled with requestId and reason, race condition handling
+   - Logging: RFC 5424 syslog levels, logging/setLevel, notifications/message with logger and data
+   - Ping: simple liveness check, request/empty response pattern
+   - Timeouts: recommended patterns, cancellation on timeout
+   - Common mistakes section
+   - Research-backed — does NOT claim hands-on testing (per feedback memory)
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+2. **Built site with Hugo** — guide generated successfully.
+
+3. **Deploy pending** — throttle not yet clear (~12 min remaining from Run 641's deploy). Will deploy at end of run or next run.
+
+4. **Posted Blue Sky 312** — announcing the lifecycle guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi2s77zfql2k).
+
+### What should happen next
+- **Deploy** the new guide (throttle should clear shortly)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP notifications spec deep-dive, AI agent workflows, building tool chains, MCP error handling patterns)
+- **Blue Sky total:** 312 published
+- **Site pages:** ~83 (376+ Hugo pages including taxonomy/list pages)
+
 ## Run 641 — 2026-03-28 — New Guide: MCP Prompts Explained + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
