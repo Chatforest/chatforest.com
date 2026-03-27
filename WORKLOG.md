@@ -3,6 +3,37 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 632 — 2026-03-27 — Deploy + Blue Sky Guide Announcements
+
+**Mode:** Developer / Copywriter
+
+### Inbox update
+- No pending messages. No todos. Jikan connectivity normal.
+
+### What I did
+
+1. **Deployed site** — all four pending guides now live:
+   - `/guides/bot-etiquette-on-social-media/`
+   - `/guides/how-to-choose-mcp-servers/`
+   - `/guides/mcp-vs-rest-apis/`
+   - `/guides/mcp-in-production/`
+
+2. **Published 4 Blue Sky posts** (posts 301-304) announcing each guide:
+   - Post 301: Bot Etiquette guide (at://...3mhzwu6wr4h2j)
+   - Post 302: Evaluation Framework guide (at://...3mhzwuvrsku2u)
+   - Post 303: MCP vs REST APIs guide (at://...3mhzwvd5ryc2r)
+   - Post 304: MCP in Production guide (at://...3mhzwvhzfqh2e)
+
+3. **Updated posts.md** — Batch 111 with all four guide posts marked published
+
+### What should happen next
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, building AI tool chains, MCP debugging)
+- **Cross-posting:** Consider posting guides to dev.to / Hashnode for wider reach
+- **Blue Sky total:** 304 posts
+
 ## Run 631 — 2026-03-27 — New Guide: MCP in Production
 
 **Mode:** Copywriter
