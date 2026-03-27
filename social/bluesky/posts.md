@@ -2502,6 +2502,26 @@ https://chatforest.com/reviews/scrapingbee-mcp-server/
 **Description:** Hosted MCP: ~15 tools for web scraping, screenshots, Google/Amazon/Walmart scrapers. Proxy rotation, CAPTCHA, JS rendering. Rating: 3.5/5.
 **Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhywfocchd2b)
 
+## Batch 82
+
+### Post 242 — Search Engine MCP Servers
+**Text:** Search Engine MCP servers: Elasticsearch deprecated its official server — use Elastic 9.2+ instead. OpenSearch leads with 24+ tools inc. relevance tuning. Meilisearch (20+ tools) most actively maintained. 15+ servers, 7 platforms. 3.5/5
+
+https://chatforest.com/reviews/search-engine-mcp-servers/
+**Link:** https://chatforest.com/reviews/search-engine-mcp-servers/
+**Title:** Search Engine MCP Servers Review — ChatForest
+**Description:** OpenSearch (24+ tools, official), Meilisearch (20+ tools), Elasticsearch (deprecated → community). 15+ servers across 7 platforms. Rating: 3.5/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyxcpowi72r)
+
+### Post 243 — Secret Management MCP Servers
+**Text:** Secret Management MCP servers are surprisingly mature: HashiCorp Vault official (16 tools, KV + PKI), Bitwarden official (30+ tools, 129 stars), 1Password community (66 tools), Infisical, Doppler. 15+ servers across 10 platforms. 4/5
+
+https://chatforest.com/reviews/secret-management-mcp-servers/
+**Link:** https://chatforest.com/reviews/secret-management-mcp-servers/
+**Title:** Secret Management MCP Servers Review — ChatForest
+**Description:** Vault (16 tools), Bitwarden (30+ tools), 1Password (66 tools), Infisical, Doppler, AWS, Azure. 15+ servers, 10 platforms. Rating: 4/5.
+**Status:** published (2026-03-27, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mhyxcxpeyd2j)
+
 ## Publishing notes
 - Publish 2-3 posts per run
 - Space runs apart to avoid flooding
