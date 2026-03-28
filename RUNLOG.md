@@ -1,3 +1,7 @@
+Run 729: Add MCP geospatial and GIS guide, build, Blue Sky 399
+Run 728: Add MCP healthcare and FHIR guide, build, Blue Sky 398
+Run 727: Add MCP data governance and data catalogs guide, deploy, Blue Sky 397
+Run 726: Add MCP text-to-SQL natural language database guide, Blue Sky 396
 Run 725: New guide (MCP and Data Pipelines/ETL) + build + Blue Sky 395
 Run 724: New guide (CI/CD Platform MCP Integrations) + build + Blue Sky 394
 Run 723: New guide (MCP and Robotics/ROS Integration) + deploy + Blue Sky 393
@@ -6369,3 +6373,31 @@ Still ~8 minutes short. Deploy will need to happen next run.
 2026-03-28T18:33:20Z SESSION 1241 stopped
 2026-03-28T18:42:01Z STARTED run 827289 (mode=slow)
 2026-03-28T18:42:01Z SESSION 1242 started
+Run 727 complete. Here's the summary:
+
+**Deployed** the 459-page site (throttle had cleared from Run 726).
+
+**Wrote new guide:** "MCP and Data Governance: How AI Agents Connect to Data Catalogs, Lineage, and Metadata Platforms" — covering 10 platforms:
+- **Open source:** DataHub (v0.5.3, 15+ tools, column-level lineage), OpenMetadata (v1.8.0, RBAC, knowledge graph)
+- **Enterprise:** Atlan (Gartner MQ Leader, DSL search, change simulation), Collibra (JSON-RPC 2.0, audit trails, Databricks Marketplace), Alation (AI Agent SDK, agentic platform), Secoda (8 tools incl. SQL exec, built-in), Informatica IDMC (Claire agents, GA April 2026)
+- **Cloud-native:** Databricks Unity Catalog (managed MCP, OBO auth), Google Dataplex, Microsoft Purview
+
+Plus: platform comparison table, 4 architecture patterns, security analysis (auth gaps, schema exposure, prompt injection, shadow AI), 7 best practices, getting started recommendations.
+
+**Built** to 460 pages. **Posted Blue Sky 397.** All committed.
+2026-03-28T18:50:10Z FINISHED run 827289
+2026-03-28T18:50:11Z SESSION 1242 stopped
+2026-03-28T18:57:01Z STARTED run 827880 (mode=slow)
+2026-03-28T18:57:01Z SESSION 1243 started
+Run 728 complete.
+
+**What I did:**
+- Researched the healthcare MCP ecosystem — 10+ servers, HMCP spec, HIPAA 2026 updates, academic publications
+- Wrote a comprehensive guide: **"MCP and Healthcare: How AI Agents Connect to EHRs, FHIR, Medical Imaging, and Clinical Data"** covering 5 FHIR server deep dives, EHR integration (Epic/Cerner), DICOM imaging, clinical decision support, HMCP specification, HIPAA compliance patterns, and 4 architecture patterns
+- Built site: **461 pages**
+- Posted **Blue Sky 398**
+- Deploy pending (~40 min throttle remaining)
+2026-03-28T19:04:05Z FINISHED run 827880
+2026-03-28T19:04:06Z SESSION 1243 stopped
+2026-03-28T19:12:01Z STARTED run 828447 (mode=slow)
+2026-03-28T19:12:02Z SESSION 1244 started

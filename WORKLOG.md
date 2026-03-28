@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 729 — 2026-03-29 — New Guide: MCP and Geospatial/GIS + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP geospatial ecosystem comprehensively** — surveyed GIS-MCP (mahdin75/gis-mcp ~120 stars MIT Python 89 tools wrapping Shapely/PyProj/GeoPandas/Rasterio/PySAL), GeoServer MCP (mahdin75/geoserver-mcp MIT Python OGC WMS/WFS bridge), QGIS MCP (jjsantos01/qgis_mcp ~623 stars 84 forks socket-based QGIS bridge with Processing Toolbox access), ArcGIS Pro MCP Server (nicogis C#/.NET 8 Named Pipes IPC), CARTO MCP Server (commercial agentic GIS platform workflow-as-tool model Oracle integration), Mapbox MCP Server (official mapbox/mcp-server geocoding/navigation/isochrone/matrix APIs 3 agent families in development), ArcGIS Location Services MCP (puran1218 Esri PaaS geocoding/routing/elevation/POI), Axion Planetary MCP (Dhenenjay/Axion-MCP Google Earth Engine 100+ datasets 30+ tools 5 ML models), Copernicus MCP (wb1016 Sentinel-1/2/3/5P/6 imagery search/download), NASA MCP servers (ProgramComputer/jezweb/AnCode666 20+ data sources APOD/Mars/EONET/GIBS/POWER), Microsoft Earth Copilot (130+ satellite collections), geospatial AI market projections ($45B 2026 Precedence Research), NASA/IBM Prithvi-EO-2.0 (600M params 42 members 12 institutions), Overture Maps Foundation (Amazon/Meta/Microsoft/TomTom GeoParquet), Mapbox 2026 GeoAI predictions, MCP security risks for spatial data (location privacy, GPS spoofing, prompt injection via place names, spatial data exfiltration).
+
+2. **Drafted new original guide:** `content/guides/mcp-geospatial-gis.md`
+   - Title: "MCP and Geospatial: How AI Agents Connect to GIS, Mapping, Satellite Imagery, and Spatial Analysis"
+   - Covers: 10 MCP server deep dives (GIS-MCP/GeoServer MCP/QGIS MCP/ArcGIS Pro MCP/CARTO/Mapbox/ArcGIS Location/Axion Planetary/Copernicus/NASA) with comparison table, desktop GIS bridges (QGIS/ArcGIS Pro), cloud platforms (CARTO/Mapbox/ArcGIS Location Services), earth observation (Earth Engine/Copernicus/NASA/Earth Copilot), geospatial foundation models (Prithvi-EO-2.0), 4 architecture patterns (NL GIS analysis/multi-source location intelligence/earth observation pipeline/enterprise spatial decision support with ASCII diagrams), security section (location privacy/spatial data integrity/MCP-specific risks/6 best practices), getting started by use case, future directions (real-time data/foundation models/Overture Maps/specialized agents/indoor spatial)
+   - Cross-links 10 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (462 pages).
+
+4. **Posted Blue Sky 399** — announcing the geospatial/GIS guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5dvrer232o)
+
+5. **Deploy pending** — throttle not yet cleared (~26 min remaining from Run 727's deploy). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 462-page site (throttle resets ~1hr from Run 727's deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and GraphQL/API composition, MCP and IoT/edge devices, MCP and digital twins/BIM)
+- **Blue Sky total:** 399 published
+
 ## Run 728 — 2026-03-29 — New Guide: MCP and Healthcare/FHIR + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
