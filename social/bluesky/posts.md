@@ -3457,3 +3457,10 @@ New guide: supervisor/worker, pipeline, fan-out patterns, sampling for nested ag
 **Title:** MCP Gateway & Proxy Patterns — ChatForest
 **Description:** How MCP gateways aggregate servers, bridge transports, enforce security, and scale for enterprise use.
 **Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi343drvrr2j)
+
+### Post 343 — MCP Across AI Platforms Guide
+**Text:** MCP now works across ALL major AI platforms. Claude, ChatGPT, Gemini, Copilot, Cursor, and more -- build tools once, use them everywhere. 97M+ monthly SDK downloads and growing. Our new guide covers setup for each platform. https://chatforest.com/guides/mcp-across-ai-platforms/
+**Link:** https://chatforest.com/guides/mcp-across-ai-platforms/
+**Title:** Using MCP Across AI Platforms: Claude, ChatGPT, Gemini, Copilot, and More
+**Description:** How every major AI platform now supports MCP -- build once, connect everywhere.
+**Status:** published (2026-03-28, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3n6vy2562t)
