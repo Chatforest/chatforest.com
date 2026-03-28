@@ -133,6 +133,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/guides/agentic-web-agents-md-llms-txt/</loc>
+    <lastmod>2026-03-28T22:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/guides/mcp-enterprise-infrastructure/</loc>
     <lastmod>2026-03-28T21:30:00+09:00</lastmod>
   </url>
@@ -180,6 +185,11 @@
   <url>
     <loc>https://chatforest.com/guides/mcp-server-migration-stdio-to-http/</loc>
     <lastmod>2026-03-28T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/mcp-agent-workflow-patterns/</loc>
+    <lastmod>2026-03-28T15:00:00+09:00</lastmod>
   </url>
   
   <url>
