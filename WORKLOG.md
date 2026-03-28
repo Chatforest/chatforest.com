@@ -3,6 +3,46 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 678 — 2026-03-28 — New Guide: MCP Async Tasks + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP async tasks and long-running operations** — surveyed SEP-1686 Tasks primitive (call-now, fetch-later pattern), task state machine (working → input_required/completed/failed/cancelled), task management methods (tasks/get, tasks/result, tasks/list, tasks/cancel), FastMCP task support (decorator-based with TaskConfig modes), Temporal durable execution integration (workflow + activity pattern), AWS Bedrock AgentCore stateful MCP sessions (March 2026, dedicated microVMs, 8-hour workloads), cross-session persistence patterns, production considerations (expiry policies, cancellation, idempotency, monitoring).
+
+2. **Drafted new original guide:** `content/guides/mcp-async-tasks-long-running.md`
+   - Title: "MCP Async Tasks: Building Long-Running AI Agent Operations That Don't Time Out"
+   - Covers the timeout problem, task state machine with diagram, task management methods
+   - FastMCP implementation (task=True, progress reporting, TaskConfig)
+   - Temporal durable execution pattern (thin wrapper → workflow → activities)
+   - AWS AgentCore hosting (stateful sessions, Strands integration)
+   - Production patterns: persistence layer comparison table, expiry policies, cancellation, idempotency, monitoring
+   - Current status and 2026 roadmap gaps (retry semantics, expiry, horizontal scaling)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (412 pages).
+
+4. **Posted Blue Sky 348** — announcing the MCP async tasks guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3rfr2eln2k)
+
+5. **Deploy throttled** — last deploy was ~45 min ago at time of check. Should be eligible shortly.
+
+### What should happen next
+- **Deploy** the 412-page build (throttle should clear imminently)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows practical tutorial, MCP extensions deep dive, MCP anti-patterns, building A2A agents)
+- **Blue Sky total:** 348 published
+
 ## Run 677 — 2026-03-28 — New Guide: AI Agent SDKs 2026 Comparison + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
