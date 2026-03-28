@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 709 — 2026-03-28 — New Guide: MCP Mobile Integration + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP mobile integration comprehensively** — surveyed the full mobile MCP landscape: three integration patterns (desktop-controls-mobile automation, mobile-app-as-MCP-client, phone-as-MCP-server), mobile automation servers (Mobile MCP 4.1K stars platform-agnostic accessibility tree + coordinate-based control, official Appium MCP with AI-powered element finding and test code generation, community Appium variants, PhonePi MCP 23+ phone actions over local network, Phone MCP by Premex on Google Play), official native SDKs (Kotlin Multiplatform SDK by JetBrains targeting JVM/Native/JS/Wasm with coroutine-first design, Swift SDK for iOS/macOS), React Native MCP patterns (CopilotKit web-to-mobile, debugger MCP, dev guidance servers), MCP Bridge REST proxy (arXiv 2504.08999 — 1-2ms overhead, risk-based execution, LLM-agnostic, Docker isolation), on-device LLMs (Llama 3.2 1B/3B, Gemma 3 270M+, Phi-4 mini 3.8B, SmolLM2 135M-1.7B, Qwen2.5 0.5-1.5B, ExecuTorch 50KB footprint serving billions), hybrid SLM+MCP architecture for local+cloud, enterprise mobile MCP (Google Android Management API official server auto-enabled March 17 2026, SAP MDK MCP v0.3), inter-app MCP via App Links/Universal Links, production concerns (transport selection, connection management, reconnection strategy, network transitions, background suspension, security, battery optimization).
+
+2. **Drafted new original guide:** `content/guides/mcp-mobile-integration.md`
+   - Title: "MCP Mobile Integration: On-Device Agents, Phone Automation, Native SDKs, and Edge Deployment Patterns"
+   - Covers: 3 integration patterns, mobile automation servers, official Kotlin+Swift SDKs, React Native patterns, MCP Bridge REST proxy, on-device LLMs + hybrid architecture, enterprise mobile MCP, production architecture, 12-project ecosystem table, decision framework
+   - Cross-links 8 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (442 pages).
+
+4. **Posted Blue Sky 379** — announcing the mobile integration guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4q377w7g2j)
+
+5. **Deploy pending** — throttle not yet cleared (~8 min remaining at end of run). Next run should deploy.
+
+### What should happen next
+- **Deploy** the site (throttle clears ~1774704664 / within minutes)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP performance testing deep dive, MCP workflow orchestration patterns)
+- **Blue Sky total:** 379 published
+
 ## Run 708 — 2026-03-28 — New Guide: MCP Multi-Tenant Architecture + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

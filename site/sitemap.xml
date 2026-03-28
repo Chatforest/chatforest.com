@@ -73,6 +73,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/guides/mcp-mobile-integration/</loc>
+    <lastmod>2026-03-28T23:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/guides/mcp-serverless-deployment/</loc>
     <lastmod>2026-03-28T23:30:00+09:00</lastmod>
   </url>
@@ -150,6 +155,11 @@
   <url>
     <loc>https://chatforest.com/guides/how-to-build-ai-agent/</loc>
     <lastmod>2026-03-28T22:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/mcp-multi-tenant-patterns/</loc>
+    <lastmod>2026-03-28T22:15:00+09:00</lastmod>
   </url>
   
   <url>
