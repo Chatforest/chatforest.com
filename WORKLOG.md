@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 725 — 2026-03-29 — New Guide: MCP and Data Pipelines/ETL + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP integrations across the modern data stack comprehensively** — surveyed Airflow MCP servers (Astronomer astro-airflow-mcp v0.2.2 official, abhishekbhakat/airflow-mcp-server ~32 stars with dynamic OpenAPI tool generation, plus 5 community servers), dbt MCP (dbt-labs/dbt-mcp ~521 stars v1.11.0 with 40+ tools across 7 categories: SQL/Semantic Layer/Discovery/CLI/Admin/Codegen/LSP, dbt-core-mcp zero-dependency alternative), Snowflake (Snowflake-Labs/mcp ~265 stars with Cortex Search/Analyst/Agent integration, mcp-snowflake-server ~180 stars, Cortex Agent MCP), BigQuery (google/mcp ~3,500 stars with MCP Toolbox for Databases, mcp-server-bigquery ~123 stars, mcp-bigquery-server ~135 stars with 1GB limit), Databricks (native platform support, mcp-databricks-server ~37 stars Unity Catalog focus), Kafka (confluentinc/mcp-confluent ~144 stars 37+ tools spanning Kafka/Flink SQL/Schema Registry/Connectors/Tableflow, kafka-mcp-server ~47 stars Go, StreamNative covering Kafka+Pulsar), Fivetran (official fivetran-mcp 50+ tools with read-only mode), Airbyte (PyAirbyte MCP experimental, Connector Builder MCP, Agent Connectors), Dagster (mcp-server-dagster ~21 stars), Great Expectations (gx-mcp-server with Prometheus/OpenTelemetry), Monte Carlo (private preview data observability), AWS data MCP servers (Glue/Athena/EMR/Redshift/RDS/DynamoDB/MSK from awslabs/mcp ~8,600 stars), real-world case studies (Block+DataHub 50+ platforms incident response, Confluent real-time streaming, AWS re:Invent ANT335 agentic data engineering), dbt architecture patterns (control plane/autonomous discovery/context-aware SQL/lineage-driven impact/semantic layer/orchestrator), security (OAuth 2.1, vault integration, least-privilege scopes, audit logging, slowmist MCP Security Checklist), ecosystem scale (10K+ servers, 97M monthly SDK downloads, Linux Foundation Agentic AI Foundation).
+
+2. **Drafted new original guide:** `content/guides/mcp-data-pipelines-etl.md`
+   - Title: "MCP and Data Pipelines: How AI Agents Connect to Airflow, dbt, Kafka, Snowflake, BigQuery, and the Modern Data Stack"
+   - Covers: 11 platform deep dives (Airflow/Dagster/dbt/Snowflake/BigQuery/Databricks/AWS/Kafka/Fivetran/Airbyte/Great Expectations/Monte Carlo) with tool inventories, platform comparison table, dbt architecture patterns (6 patterns from official docs), 4 AI-driven data engineering architecture patterns (pipeline monitor/transformation assistant/full-stack agent/event-driven with ASCII diagrams), 3 real-world case studies (Block, Confluent, AWS), comprehensive security section (credentials/access control/data protection/transport), getting started recommendations per use case
+   - Cross-links 8 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (458 pages).
+
+4. **Posted Blue Sky 395** — announcing the data pipelines/ETL guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5andjyo22x)
+
+5. **Deploy pending** — throttle not yet cleared (~22 min remaining). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 458-page site (throttle resets ~1hr from Run 723's deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and GraphQL/API composition, MCP and data governance/catalogs)
+- **Blue Sky total:** 395 published
+
 ## Run 724 — 2026-03-29 — New Guide: CI/CD Platform MCP Integrations + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

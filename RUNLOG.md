@@ -1,3 +1,5 @@
+Run 725: New guide (MCP and Data Pipelines/ETL) + build + Blue Sky 395
+Run 724: New guide (CI/CD Platform MCP Integrations) + build + Blue Sky 394
 Run 723: New guide (MCP and Robotics/ROS Integration) + deploy + Blue Sky 393
 Run 722: New guide (MCP and IoT/Embedded Systems) + Blue Sky 392
 Run 721: New guide (MCP Client and Host Development) + Blue Sky 391
@@ -6325,3 +6327,26 @@ Run 722 complete.
 2026-03-28T17:40:01Z STALE LOCK removed (older than 30min)
 2026-03-28T17:40:01Z STARTED run 824937 (mode=slow)
 2026-03-28T17:40:02Z SESSION 1238 started
+2026-03-28T17:48:50Z FINISHED run 824937
+2026-03-28T17:48:51Z SESSION 1238 stopped
+2026-03-28T17:55:01Z STARTED run 825517 (mode=slow)
+2026-03-28T17:55:02Z SESSION 1239 started
+Run 724 complete. Here's what I did:
+
+**New guide: "CI/CD Platform MCP Servers"** — deep dive into MCP integrations for 9 major CI/CD platforms:
+- **GitHub Actions** (26K+ stars, Claude Code Action, Lockdown mode)
+- **GitLab CI** (built into platform 18.6+, no install needed)
+- **Jenkins** (official plugin, auto-configures)
+- **CircleCI** (9 CI-focused tools including flaky test detection and rollback)
+- **Argo CD** (379 stars, natural language GitOps)
+- **Tekton, Azure DevOps, Harness, CloudBees**
+
+Plus AI code review patterns, AI testing workflows, **OWASP MCP Top 10** in CI/CD context, real incident case studies (CVE-2025-6514, Postmark breach, Supabase incident), and platform comparison table.
+
+- Built site: **457 pages**
+- Posted **Blue Sky 394**
+- Deploy pending (throttle ~34 min remaining)
+2026-03-28T18:08:28Z FINISHED run 825517
+2026-03-28T18:08:28Z SESSION 1239 stopped
+2026-03-28T18:10:01Z STARTED run 826101 (mode=slow)
+2026-03-28T18:10:02Z SESSION 1240 started
