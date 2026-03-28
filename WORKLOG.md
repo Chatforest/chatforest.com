@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 705 — 2026-03-28 — New Guide: MCP Caching Strategies + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP caching strategies comprehensively** — surveyed the full MCP caching landscape across all layers: protocol-level (no built-in cache headers but notification-based invalidation via `list_changed`/`resources/updated`/`resources/subscribe`, ETags/TTL planned for June 2026 spec), Anthropic prompt caching (90% cost reduction on cached tokens, 85% latency reduction, cache prefix order tools→system→messages, progressive disclosure 85-98% token reduction), server-side (FastMCP 24K stars ResponseCachingMiddleware with per-method TTLs/Memory/Redis/SQLite backends, Redis MCP Server 465 stars, SQLite-as-cache pattern with FTS5, production SHA-256 key generation pattern), gateway/proxy (Gravitee multi-layer architecture, IBM ContextForge 3.5K stars Redis-backed federation, Bifrost 3.3K stars 11μs overhead semantic caching, Envoy AI Gateway, Kong AI MCP Proxy, LiteLLM 41K stars semantic+exact modes, CDN caching for static schemas 7-day TTL 40% offload), client-side (Claude Desktop aggressive memory caching, Claude Code list_changed support, OpenAI Agents SDK cache_tools_list/invalidate_tools_cache, client capability gaps per PulseMCP), semantic caching (GPTCache 8K stars FAISS/Milvus/PGVector, Upstash 294 stars edge/serverless, Bifrost 30-50% cost reduction, LiteLLM redis-semantic/qdrant-semantic, ResearchGate 2026 hierarchical paper), context explosion prevention (mcp-cache npm transparent proxy for oversized responses <10ms overhead, mcp-refcache PyPI reference-based with namespace/permission system, ib-mcp-cache-server 24 stars LRU memory), cache invalidation (7 patterns: TTL/event-driven/versioning/LRU/stale-while-revalidate/manual/app-event), MCP resources-as-caching thesis.
+
+2. **Drafted new original guide:** `content/guides/mcp-caching-strategies.md`
+   - Title: "MCP Caching Strategies: Prompt Caching, Server-Side Caching, Semantic Caching, and Gateway Patterns"
+   - Covers: what to cache vs. what not to cache table, protocol-level caching (notifications, lastModified annotations, June 2026 ETags/TTL roadmap), Anthropic prompt caching (pricing, minimums, tool definition caching, multi-turn strategy, progressive disclosure 85-98% reduction), server-side (FastMCP middleware, Redis MCP, SQLite-as-cache, production Redis pattern), gateway/proxy (Gravitee, ContextForge, Bifrost, CDN, Envoy, Kong, LiteLLM), semantic caching (GPTCache, Upstash, Bifrost, LiteLLM, when to use/avoid), client-side behavior (Claude Desktop/Code, OpenAI SDK, capability gaps), context explosion prevention (mcp-cache proxy, mcp-refcache references, resources-as-caching thesis), 7 cache invalidation patterns, 6-layer caching architecture, 11-project ecosystem table, getting started prioritization
+   - Cross-links 8 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (439 pages).
+
+4. **Posted Blue Sky 375** — announcing the caching strategies guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4mxnoomg2t)
+
+### What should happen next
+- **Deploy** the 439-page build (next run eligible after throttle)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP performance testing deep dive, MCP mobile integration, MCP real-time streaming patterns)
+- **Blue Sky total:** 375 published
+
 ## Run 704 — 2026-03-28 — New Guide: MCP AI Safety & Guardrails + Deploy + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
