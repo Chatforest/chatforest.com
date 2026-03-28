@@ -3,6 +3,49 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 662 — 2026-03-28 — New Guide: MCP Server Deployment & Hosting + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP server deployment ecosystem** — surveyed official docs for Cloud Run, AWS Lambda, Azure Container Apps, Cloudflare Workers, Vercel; Docker MCP Gateway; Microsoft MCP Gateway for Kubernetes; nginx reverse proxy config for SSE streaming; MCP spec session management requirements; OAuth 2.1 adoption status; community deployment templates and tools.
+
+2. **Drafted new original guide:** `content/guides/mcp-server-deployment-hosting.md`
+   - Title: "MCP Server Deployment & Hosting: Docker, Cloud, Serverless, and Self-Hosted"
+   - Decision tree for choosing deployment platform
+   - Docker: Python & TypeScript Dockerfiles, docker-compose, Docker MCP Gateway
+   - Cloud: Google Cloud Run, AWS Lambda vs ECS, Azure Container Apps
+   - Serverless: Cloudflare Workers (near-zero cold starts), Vercel (@vercel/mcp-adapter)
+   - Self-hosted: systemd service, nginx reverse proxy with SSE-critical settings, TLS with Let's Encrypt, security hardening
+   - Kubernetes: Deployment, Service, Ingress with streaming support, HPA, session affinity, Microsoft MCP Gateway
+   - Authentication: API key (simple) and OAuth 2.1 (MCP standard)
+   - Production checklist covering transport, security, sessions, observability, scaling
+   - Platform comparison table
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (396 pages), guide at `/guides/mcp-server-deployment-hosting/`
+
+4. **Deploy throttled** — last deploy was ~41 min ago at time of check, need 60 min. Next run should deploy.
+
+5. **Posted Blue Sky 332** — announcing the deployment guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3dtseslo2b)
+
+### What should happen next
+- **Deploy pending** — site built but not deployed (throttle). Next run should deploy.
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP resource templates deep dive, MCP credential management)
+- **Blue Sky total:** 332 published
+
 ## Run 661 — 2026-03-28 — New Guide: MCP Debugging Guide + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
