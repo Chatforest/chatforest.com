@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 734 — 2026-03-29 — New Guide: MCP and Gaming/Game Development + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP gaming/game dev ecosystem comprehensively** — surveyed game engine MCP servers (Unity: CoplayDev/unity-mcp official maintainer 25+ tools MIT scene/asset/script/editor/log management, IvanMurzak/Unity-MCP C# single-attribute tool registration CLI setup multi-client, Unity Asset Store MCP package; Unreal Engine: chongdashu/unreal-mcp Python+C++ UE5.5+ actor/Blueprint/viewport/input control, kvick-games/UnrealMCP C++ 5.7.1 toolbar plugin, ChiR24/Unreal_mcp TypeScript+C++ comprehensive asset/actor/editor/level/animation/physics, flopperam/unreal-engine-mcp world-building natural language, UnrealGenAISupport multi-model GenAI+MCP; Godot: GoPeak 95+ tools 33 core + 22 dynamic groups GDScript LSP/DAP debugger/screenshots/input injection/ClassDB/CC0 assets, GDAI MCP all-in-one editor screenshots/input sim/scene gen, bradypp lightweight; Roblox: official native Studio MCP with mesh generation/screenshot/playtest automation March 2026, drgost1 51 tools, weppy procedural terrain/bidirectional sync; Defold: ChadAragorn project/script/debug automation; RPG Maker MZ: scenario generation/map/event/database), 3D asset tools (Blender MCP: natural language modeling/texturing/scene control/Polyhaven assets/Hyper3D Rodin AI generation/Sketchfab export), analytics (GameAnalytics official 33 tools read-only KPI/retention/revenue/sessions open-source PipelineIQ Pro, OP.GG official gaming data LoL/TFT/Valorant + esports server), NPC/narrative AI (role-playing-mcp-server dynamic RPG/character management, NPC-GPT RPG Maker plugin, memory-first AI architecture trend), market data (AI gaming $7.05B 2025 to $37-51B by 2033-2034 at 20-36% CAGR, AI game dev $3.18B 2025 to $58.8B 2035, 90% devs use AI, NPC behavior 25.1% of AI gaming, GDC 2026 52% negative sentiment up from 30%), architecture patterns (single-engine assistant, full pipeline integration, analytics-driven design, multi-agent production), security (source code exposure, asset protection, analytics privacy, build pipeline integrity, credential management).
+
+2. **Drafted new original guide:** `content/guides/mcp-gaming-game-development.md`
+   - Title: "MCP and Gaming: How AI Agents Connect to Game Engines, 3D Tools, Analytics, and Game Development Workflows"
+   - Covers: 5 Unity MCP servers, 5 Unreal MCP servers with comparison table, 3 Godot MCP servers with comparison, Roblox native + 2 community, Defold, RPG Maker MZ, Blender MCP for 3D assets, GameAnalytics official 33 tools, OP.GG gaming + esports, NPC/narrative AI patterns with architecture diagram, 4 development architecture patterns with ASCII diagrams, engine comparison table, industry context (developer sentiment, market opportunity), security considerations, getting started by 4 roles
+   - Cross-links existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (467 pages).
+
+4. **Posted Blue Sky 404** — announcing the gaming/game dev guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5idkg4232l)
+
+5. **Deploy pending** — throttle not yet cleared (~18 min remaining). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 467-page site (throttle clears ~18 min from now)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and legal/contract management)
+- **Blue Sky total:** 404 published
+
 ## Run 733 — 2026-03-29 — New Guide: MCP and Finance/Fintech + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
