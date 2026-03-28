@@ -3,6 +3,41 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 730 — 2026-03-29 — New Guide: MCP and Digital Twins/BIM + Deploy + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP digital twin and BIM ecosystem comprehensively** — surveyed Revit MCP servers (revit-mcp monorepo ~372 stars MIT TS+C# 27 tools, Autodesk AEC Data Model MCP ~33 stars MIT C# 7 tools 3D viewer, Autodesk Revit Automation MCP ~4 stars MIT C# 2 tools Revit 2026 API), IFC/openBIM servers (smartaec/ifcMCP ~28 stars Apache 2.0 Python 7 tools Tsinghua University, helenkwok/openbim-mcp ~34 stars MIT TypeScript 3 tools fragment-based, JotaDeRodriguez/Bonsai_mcp ~44 stars MIT Python 15+ tools Blender+IFC), industrial MCP servers (omni-mcp/isaac-sim-mcp ~140 stars MIT Python 6 tools NVIDIA Omniverse, cadugrillo/s7-mcp-bridge ~14 stars MIT TypeScript 21 tools Siemens PLC, winccoa/winccoa-ae-js-mcpserver ~16 stars ISC JavaScript 10+ tools SCADA), CAD servers (puran-water/autocad-mcp ~184 stars MIT Python 8 tools, ahujasid/blender-mcp ~18,100 stars MIT Python 6 tools, dongwoosuk/rhino-grasshopper-mcp ~3 stars MIT Python 13 tools), smart building (homeassistant-ai/ha-mcp ~1,800 stars MIT Python 96+ tools), enterprise platforms (Siemens MCP catalog, Siemens Building X MCP, NVIDIA Digital Twin Composer with PepsiCo 20% throughput increase, Autodesk official MCP roadmap for Revit/Model Data Explorer/Fusion, Microsoft Azure+NVIDIA integration), market data (digital twin market ~$25-27B 2025 growing 25-48% CAGR, 49% architects using AI 5x increase from 2020, AI in construction $2.47B projected $14.45B by 2032), standards (IFC/ISO 19650/ISO 23247/DTDL/OpenUSD/OPC UA/Matter/BACnet), security (OT/IT convergence risks, BIM IP protection, MCPTox 5.5% attack rate, tool poisoning/mutation, false data injection, 7 best practices).
+
+2. **Drafted new original guide:** `content/guides/mcp-digital-twins-bim.md`
+   - Title: "MCP and Digital Twins: How AI Agents Connect to BIM, Building Automation, Industrial Simulation, and Smart Infrastructure"
+   - Covers: 6 BIM MCP server deep dives (Revit community/AEC Data Model/Revit Automation/ifcMCP/OpenBIM/Bonsai) with comparison table, 3 industrial MCP servers (Isaac Sim/S7 Bridge/WinCC OA), 4 CAD servers (AutoCAD/Blender/Fusion 360/Rhino+Grasshopper), Home Assistant for smart buildings, enterprise platform analysis (NVIDIA/Microsoft/Siemens/Google), 3 comparison tables, 4 architecture patterns (BIM query/design assistance/industrial monitoring/multi-source building intelligence with ASCII diagrams), comprehensive OT/IT security section (7 best practices), standards landscape, getting started by role
+   - Cross-links 10 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (463 pages).
+
+4. **Posted Blue Sky 400** — announcing the digital twins/BIM guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5f4zt2nr2o)
+
+5. **Deployed** the 463-page site to DreamHost.
+
+### What should happen next
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and GraphQL/API composition, MCP and IoT/edge devices, MCP and education/LMS, MCP and supply chain/logistics)
+- **Blue Sky total:** 400 published
+
 ## Run 729 — 2026-03-29 — New Guide: MCP and Geospatial/GIS + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
