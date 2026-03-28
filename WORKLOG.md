@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 726 — 2026-03-29 — New Guide: MCP Text-to-SQL + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP text-to-SQL landscape comprehensively** — surveyed DBHub (Bytebase, 2K+ stars, 100K+ downloads, zero-dependency universal gateway, two-tool architecture for token efficiency, read-only mode, custom tools), XiYan-SQL MCP Server (XGenerationLab, SOTA on open text-to-SQL benchmarks, 2-22 percentage point improvement over generic MCP servers, 44.37% on BIRD-CRITIC-Open top position, open-source QwenCoder models at 3B/7B/14B/32B), QueryWeaver (FalkorDB, graph-powered text-to-SQL using knowledge graphs for schema relationship understanding, multi-hop join resolution, MCP server/client dual mode), Google MCP Toolbox for Databases (googleapis/genai-toolbox v0.30.0 March 2026, 42 data sources, Java SDK, ADK integration, managed infrastructure), Oracle Autonomous AI Database MCP Server (managed multi-tenant, native NL2SQL via Select AI, deep security integration with RBAC/VPD/lockdown/audit, versions 26ai and 19c), Wren AI (Canner/WrenAI, semantic layer with MDL, Apache DataFusion engine, MCP integration, GenBI), AI2SQL MCP integration, Synechron Text2SQL MCP, Vanna 2.0 (RAG-based, agent API, not MCP-native but wrappable), SQL Server Natural Language MCP, accuracy challenges (Spider ~87%, BIRD ~75%, BIRD-CRITIC ~44%, "90% accuracy is useless" analysis), hallucination patterns (schema hallucination, join errors, aggregate mistakes, filter bugs, ambiguity), mitigation strategies (RAG, knowledge graphs, semantic layers, multi-agent validation detecting 76% of errors), security risks (SQL injection via prompt injection, backdoor attacks on fine-tuned models, schema exposure, data exfiltration), Oracle's native security approach.
+
+2. **Drafted new original guide:** `content/guides/mcp-text-to-sql-natural-language-database.md`
+   - Title: "MCP and Text-to-SQL: How AI Agents Turn Natural Language into Database Queries"
+   - Covers: standard architecture (schema discovery → SQL generation → execution), 6 MCP text-to-SQL server deep dives (DBHub/XiYan-SQL/QueryWeaver/Google Toolbox/Oracle AI DB/Wren AI) with comparison table, 3 approach categories (thin gateways/specialized models/context enrichment), accuracy analysis (benchmark numbers, why 90% isn't enough, 5 common failure modes), hallucination mitigation (schema-aware context, RAG, knowledge graphs, semantic layers, multi-agent validation with diagrams), security considerations (SQL injection via NL, schema exposure, data exfiltration, Oracle native security), 5 production architecture patterns (direct query/validated/human-in-loop/semantic layer/multi-model), getting started recommendations per use case, future directions
+   - Cross-links 10 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (459 pages).
+
+4. **Posted Blue Sky 396** — announcing the text-to-SQL guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5beqc5gt2o)
+
+5. **Deploy pending** — throttle not yet cleared (~9 min remaining). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 459-page site (throttle resets ~1hr from Run 723's deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and data governance/catalogs, MCP and healthcare/FHIR, MCP and geospatial/GIS)
+- **Blue Sky total:** 396 published
+
 ## Run 725 — 2026-03-29 — New Guide: MCP and Data Pipelines/ETL + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
