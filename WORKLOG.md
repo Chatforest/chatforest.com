@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 694 — 2026-03-28 — New Guide: MCP and Databases + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP + databases comprehensively** — surveyed the database MCP server landscape (Google Toolbox 13.6K stars, DBHub 2.4K, Postgres MCP Pro 2.4K, MongoDB official 976, Supabase 774, Neon 567, MySQL 1.1K, MCP Alchemy 399, Oracle Autonomous, ClickHouse, Prisma, Microsoft SQL), text-to-SQL patterns (direct NL2SQL, Microsoft's deterministic NL2DAB, ProxySQL template-based, multi-stage validation pipelines), schema introspection patterns (schema-as-tool vs schema-as-resource, tiered access, metadata enrichment via RAG/usage stats/lineage), migration workflows (Neon's branch-based, Supabase versioned, Prisma ORM-based), vector database MCP servers (Qdrant 1.3K, Milvus 226, Weaviate 160, Pinecone 61, ChromaDB, MindsDB unified), security incidents (SQLite stored prompt injection chain, Supabase Cursor incident, Equixly's 43% command injection finding), performance optimization (connection pooling 10x improvement, caching 41x, token efficiency patterns), database observability via MCP (Postgres MCP Pro health monitoring, Neon slow query detection, ClickHouse anomaly detection), and real-world use cases (Block/DataHub, Ramp, PostHog, e-commerce reporting).
+
+2. **Drafted new original guide:** `content/guides/mcp-database-patterns.md`
+   - Title: "MCP and Databases: Connecting AI Agents to Your Data"
+   - Covers: database MCP server landscape with stars/features, text-to-SQL patterns (4 approaches), schema introspection patterns, migration workflows (3 patterns), the SQLite prompt injection chain and Supabase incident in detail, security architecture (4 categories), performance optimization, database observability, real-world use cases, vector databases, server selection guide
+   - Cross-links 11 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (428 pages).
+
+4. **Posted Blue Sky 364** — announcing the database MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4b2zz4jh2u)
+
+5. **Deploy** — throttled (~20 min remaining from Run 693 deploy). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 428-page build (next run eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP security best practices, building AI-powered documentation tools, MCP for DevOps/CI-CD, MCP and GraphQL)
+- **Blue Sky total:** 364 published
+
 ## Run 693 — 2026-03-28 — New Guide: MCP with Slack and Teams + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
