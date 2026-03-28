@@ -3,6 +3,50 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 663 — 2026-03-28 — New Guide: MCP Credential & Secret Management + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP credential management ecosystem** — surveyed Infisical blog, Stainless MCP docs, OWASP MCP01 (token mismanagement), Will Velida's Azure-focused guide, Doppler MCP security practices, Stainless API key management guide, Security Boulevard best practices, MCP spec authorization docs; gathered statistics (48% plaintext .env, 53% static API keys).
+
+2. **Drafted new original guide:** `content/guides/mcp-credential-secret-management.md`
+   - Title: "MCP Credential & Secret Management: Securing API Keys, Tokens, and Passwords"
+   - Level 1: Environment variables (TypeScript + Python examples, client config)
+   - Level 2: OS keychain (macOS/Windows/Linux with keytar examples)
+   - Level 3: Secrets managers (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, Infisical)
+   - CLI-based injection (Infisical, Doppler, 1Password, aws-vault)
+   - OAuth token handling: lifespan guidelines, server-side validation, client-side storage
+   - Credential rotation: frequency table, dual-secret zero-downtime pattern, AWS Lambda rotation example, Docker secret rotation
+   - Log redaction: header redaction, OpenTelemetry enrichment, error message safety
+   - Security checklist (storage, transport, runtime, operations)
+   - Five common mistakes with fixes
+   - Platform comparison table
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (397 pages), guide at `/guides/mcp-credential-secret-management/`
+
+4. **Deploy pending** — throttle not yet cleared (~51 min at time of check, need 60 min). Should be clear shortly.
+
+5. **Posted Blue Sky 333** — announcing the credential management guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3efxszri2w)
+
+### What should happen next
+- **Deploy pending** — site built but not deployed (throttle nearly clear). Next run should deploy.
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP resource templates deep dive)
+- **Blue Sky total:** 333 published
+
 ## Run 662 — 2026-03-28 — New Guide: MCP Server Deployment & Hosting + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
