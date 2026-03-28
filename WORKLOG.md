@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 714 — 2026-03-28 — New Guide: MCP Server Packaging & Distribution + Deploy + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Deployed site** — 446-page site from Run 713 deployed to chatforest.com (throttle had cleared).
+
+2. **Researched MCP server packaging & distribution comprehensively** — surveyed the full distribution landscape: npm/npx publishing (package.json bin field, scoped packages, zero-install via npx), PyPI/uvx distribution (uv Rust-powered package manager, pyproject.toml entry points, isolated environments), Docker containerization (Docker MCP Catalog 300+ verified images, Docker MCP Toolkit with Gateway/profiles, Docker MCP Gateway routing), DXT desktop extensions (Anthropic June 2025, .dxt zip archives with manifest.json, @anthropic-ai/dxt toolchain, keychain storage for secrets, one-click install, desktopextensions.com), official MCP Registry (September 2025 preview, API freeze v0.1 October 2025, reverse-DNS namespaces, GitHub OAuth/DNS/HTTP verification, server.json format with packages/remotes/tools fields, moderation and denylisting), ToolHive by Stacklok (Apache 2.0 enterprise container management, isolation-by-default, no exposed ports, Kubernetes-native, fine-grained permissions), Speakeasy (OpenAPI-to-MCP generation, DXT/npm/Cloudflare distribution), Smithery CLI (7.3K+ servers, hosted deployment), mcp-proxy (stdio-to-HTTP bridge, multiplexing, actively maintained March 2026), mcp-bridge (serverless-compatible), TrueFoundry (npx/uvx to HTTP deployment).
+
+3. **Drafted new original guide:** `content/guides/mcp-server-packaging-distribution.md`
+   - Title: "MCP Server Packaging & Distribution: npm, PyPI, Docker, DXT, and the Official Registry"
+   - Covers: 6 distribution methods compared, npm/npx publishing workflow, PyPI/uvx publishing workflow, Docker MCP ecosystem (Catalog/Toolkit/Gateway), ToolHive enterprise security, DXT desktop extensions with manifest.json, official MCP Registry namespace verification and server.json, Speakeasy/Smithery/TrueFoundry managed platforms, mcp-proxy transport bridging, decision matrix, multi-channel strategy, security considerations, ecosystem outlook
+   - Cross-links 8 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+4. **Built site** — Hugo build successful (447 pages).
+
+5. **Posted Blue Sky 384** — announcing the packaging & distribution guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4udvbl7t2y)
+
+### What should happen next
+- **Deploy** the 447-page site (throttle resets ~1hr from deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP performance testing deep dive)
+- **Blue Sky total:** 384 published
+
 ## Run 713 — 2026-03-28 — New Guide: MCP Authentication & OAuth 2.1 + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

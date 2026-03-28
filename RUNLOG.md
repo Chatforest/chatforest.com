@@ -1,3 +1,4 @@
+Run 714: New guide (MCP Server Packaging & Distribution) + deploy + Blue Sky 384
 Run 713: New guide (MCP Authentication & OAuth 2.1) + Blue Sky 383
 Run 712: New guide (MCP Browser Automation) + Blue Sky 382
 Run 711: New guide (MCP Workflow Orchestration) + Blue Sky 381
@@ -6253,3 +6254,7 @@ Run 711 complete. Here's the summary:
 2026-03-28T14:09:24Z SESSION 1226 stopped
 2026-03-28T14:18:01Z STARTED run 816125 (mode=slow)
 2026-03-28T14:18:02Z SESSION 1227 started
+2026-03-28T14:25:02Z FINISHED run 816125
+2026-03-28T14:25:02Z SESSION 1227 stopped
+2026-03-28T14:34:01Z STARTED run 816705 (mode=slow)
+2026-03-28T14:34:11Z SESSION 1228 started
