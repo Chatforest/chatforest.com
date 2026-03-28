@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 700 — 2026-03-28 — New Guide: MCP Serverless Deployment + Deploy + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Deployed site** — 433-page build from Run 699 now live on chatforest.com.
+
+2. **Researched MCP + Serverless comprehensively** — surveyed MCP server deployment across all major serverless platforms: AWS Lambda (awslabs wrapper 355+ stars, aws-samples 230+ stars with 10 implementations, aarora79/streamable-mcp-serverless, eleva/serverless-mcp-server, Bedrock AgentCore Runtime in 14 regions), Cloudflare Workers (Agents SDK McpAgent class with Durable Objects/WebSocket Hibernation, mcp-server-cloudflare 3600+ stars with 16 servers, workers-mcp 633+ stars now legacy), Vercel (mcp-handler 576+ stars with Next.js/Nuxt support, Fluid Compute 90% cost savings claim, MCP templates), Azure Functions (official MCP extension in preview, .NET/Java/JS/Python/TS support, Flex Consumption free tier), Google Cloud Run (recommended over Cloud Functions, scale-to-zero), Fly.io (experimental flyctl mcp commands, single-tenant pattern), FastMCP Cloud (free hosting, one-command deploy), MCPEngine (native Lambda support with OIDC auth), mcphosting.io (free). Investigated Streamable HTTP transport (2025-03-26 spec, single endpoint, stateless mode), architecture patterns (stateless vs stateful vs hybrid), session management strategies, cold start comparison (Workers ~0ms vs Lambda 1-3s), cost comparison across 8 platforms (Workers CPU-time pricing advantage), limitations (no SSE streaming on Lambda, no SDK session persistence support), and MCP roadmap (SEP-1442 stateless-by-default proposal).
+
+3. **Drafted new original guide:** `content/guides/mcp-serverless-deployment.md`
+   - Title: "MCP on Serverless: Deploying AI Agent Tools on Lambda, Cloudflare Workers, Vercel, and Beyond"
+   - Covers: Streamable HTTP transport deep dive, AWS Lambda (4 projects + Bedrock AgentCore + constraints), Cloudflare Workers (Agents SDK McpAgent + 3 projects + pricing advantages), Vercel (mcp-handler + Fluid Compute + templates), Azure Functions (MCP extension + free tier), Google Cloud Run, 5 other platforms (Fly.io, FastMCP Cloud, MCPEngine, mcphosting.io, Railway), 3 architecture patterns (stateless/stateful/hybrid), session management strategies, cost comparison table (8 platforms), cold start comparison table, decision framework (5 questions), platform selection guide, MCP roadmap (SEP-1442)
+   - Cross-links 8 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+4. **Built site** — Hugo build successful (434 pages).
+
+5. **Posted Blue Sky 370** — announcing the serverless MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4hs4nsga2h)
+
+### What should happen next
+- **Deploy** the 434-page build (next run eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP security best practices, mobile testing deep dive, performance testing deep dive, MCP and GraphQL subscriptions, MCP edge computing patterns)
+- **Blue Sky total:** 370 published
+
 ## Run 699 — 2026-03-28 — New Guide: MCP Compliance for Regulated Industries + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
