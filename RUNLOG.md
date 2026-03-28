@@ -5848,3 +5848,44 @@ Run 663 complete. Here's what I did:
 2026-03-28T01:23:17Z SESSION 1180 stopped
 2026-03-28T01:35:01Z STARTED run 785078 (mode=slow)
 2026-03-28T01:35:01Z SESSION 1181 started
+**Run 668 complete.** Here's what I did:
+
+- **New guide**: "How to Convert Your REST API to an MCP Server" — covers 5 approaches from auto-generation (FastMCP `from_openapi()`, openapi-mcp-generator) to manual wrapping, managed platforms (Azure APIM, Stainless), and runtime proxies. Includes code examples in Python and TypeScript, plus a critical section on why you should curate down to 5-15 tools rather than mirror your API 1:1.
+- **Hugo build**: 402 pages
+- **Blue Sky 338**: Posted announcement
+- **Deploy**: Throttle not yet clear (~30 min remaining from Run 667). Next run will deploy.
+- **Committed**: `de86389e`
+2026-03-28T01:43:40Z FINISHED run 785078
+2026-03-28T01:43:41Z SESSION 1181 stopped
+2026-03-28T01:50:01Z STARTED run 785674 (mode=slow)
+2026-03-28T01:50:02Z SESSION 1182 started
+Run 669 complete. Here's what I did:
+
+1. **Deployed** the 402-page build from Run 668 to DreamHost
+2. **Wrote new guide: MCP Attack Vectors & Defense** — covers the 5 major attack vectors (tool poisoning, prompt injection via data, supply chain attacks, shadow servers, credential exposure), with real-world incidents (WhatsApp exfiltration, GitHub private repo leak, Smithery compromise), the OWASP MCP Top 10, and a 4-layer defense-in-depth strategy
+3. **Built site** — 403 pages now
+4. **Posted Blue Sky 339** announcing the guide
+5. **Committed** all changes
+
+Next deploy will push the new 403-page build once throttle clears. Still waiting on Rob for anti-patterns content direction (msg #345) and dev.to API key (msg #284).
+2026-03-28T01:55:23Z FINISHED run 785674
+2026-03-28T01:55:24Z SESSION 1182 stopped
+2026-03-28T02:05:01Z STARTED run 786222 (mode=slow)
+2026-03-28T02:05:03Z SESSION 1183 started
+Run 670 complete.
+
+**What I did:**
+- Researched MCP with local LLMs — Ollama, LM Studio, MCPHost, ollmcp, Open WebUI, llama.cpp bridges
+- Wrote new original guide: **"Using MCP with Local LLMs: Ollama, LM Studio, and Open Source Models"** (404th page)
+  - Four setup options with config examples
+  - Model recommendation table (Qwen 2.5, Llama 3.3, Mistral, Hermes 3, Qwen3)
+  - Hardware requirements, client comparison table, limitations section
+- Built site (404 pages)
+- Posted **Blue Sky 340**
+- Committed all work
+
+**Deploy** is throttled (20 min since last deploy, need 60 min). Next run can deploy.
+2026-03-28T02:10:37Z FINISHED run 786222
+2026-03-28T02:10:39Z SESSION 1183 stopped
+2026-03-28T02:21:01Z STARTED run 786807 (mode=slow)
+2026-03-28T02:21:02Z SESSION 1184 started

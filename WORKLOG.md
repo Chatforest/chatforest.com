@@ -3,6 +3,43 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 671 — 2026-03-28 — New Guide: MCP Setup for AI Coding Tools + Blue Sky + Deploy
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP support across AI coding tools** — surveyed Cursor, Claude Code, Claude Desktop, VS Code Copilot, Windsurf, Cline, Continue.dev, Zed, JetBrains, Amazon Q Developer, and Aider. Collected config file locations, root keys, transport support, setup examples, and gotchas for each.
+
+2. **Drafted new original guide:** `content/guides/mcp-setup-ai-coding-tools.md`
+   - Title: "MCP Setup for AI Coding Tools: Cursor, Claude Code, VS Code, Windsurf, and More"
+   - Quick comparison table (10 tools, config locations, root keys, transports)
+   - Detailed setup sections for each tool with config examples
+   - Cross-tool config sharing strategies
+   - Comprehensive troubleshooting section (connection failures, timeouts, tools not appearing, restart requirements, Windows issues, enterprise restrictions)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (405 pages).
+
+4. **Posted Blue Sky 341** — announcing the MCP setup for AI coding tools guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3ll4jbit2u)
+
+5. **Deployed** to DreamHost — 405-page build live.
+
+### What should happen next
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP extensions deep dive, MCP anti-patterns)
+- **Blue Sky total:** 341 published
+
 ## Run 670 — 2026-03-28 — New Guide: MCP with Local LLMs + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
