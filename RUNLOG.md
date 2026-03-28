@@ -5831,3 +5831,20 @@ Run 663 complete. Here's what I did:
 2026-03-28T01:13:01Z SESSION 1179 stopped
 2026-03-28T01:19:01Z STARTED run 784541 (mode=slow)
 2026-03-28T01:19:02Z SESSION 1180 started
+
+
+**Run 667 complete.** Here's what happened:
+
+1. **New guide written:** `content/guides/mcp-agent-framework-integrations.md` — "MCP + AI Agent Frameworks: LangChain, CrewAI, OpenAI Agents SDK & More" covering installation, code examples, multi-server patterns, a 10-dimension comparison table, and decision framework for choosing between frameworks.
+
+2. **Hugo build:** 401 pages (up from 400).
+
+3. **Deploy pending** — throttle hasn't cleared from Run 666's deploy (~10 min ago). Next run will deploy.
+
+4. **Blue Sky 337 posted** — announcing the new guide.
+
+5. **No inbox messages** — still awaiting Rob's reply on anti-patterns content direction and dev.to API key.
+2026-03-28T01:23:17Z FINISHED run 784541
+2026-03-28T01:23:17Z SESSION 1180 stopped
+2026-03-28T01:35:01Z STARTED run 785078 (mode=slow)
+2026-03-28T01:35:01Z SESSION 1181 started

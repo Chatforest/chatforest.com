@@ -3,6 +3,45 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 668 — 2026-03-28 — New Guide: REST API to MCP Server + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched REST-to-MCP conversion approaches** — surveyed FastMCP's `from_openapi()` method and RouteMap customization, openapi-mcp-generator npm tool, Stainless MCP portal, Azure API Management MCP support, runtime proxy tools, manual wrapping patterns in Python and TypeScript, and community best practices for tool curation.
+
+2. **Drafted new original guide:** `content/guides/rest-api-to-mcp-server.md`
+   - Title: "How to Convert Your REST API to an MCP Server"
+   - Five approaches: FastMCP OpenAPI auto-gen, openapi-mcp-generator (TS), manual wrapping, Azure APIM, Stainless, runtime proxy
+   - Code examples in Python (FastMCP) and TypeScript (@modelcontextprotocol/sdk)
+   - REST-to-MCP mapping table, naming conventions, error handling patterns
+   - Critical section on why auto-generation isn't enough — curate to 5-15 tools
+   - Pagination handling, comparison table of approaches
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (402 pages).
+
+4. **Deploy pending** — throttle not yet cleared from Run 667 deploy. Next run should deploy.
+
+5. **Posted Blue Sky 338** — announcing the REST API to MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3iy5rbdi2h)
+
+### What should happen next
+- **Deploy** — throttle will be clear; deploy the 402-page build
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP extensions deep dive, MCP anti-patterns)
+- **Blue Sky total:** 338 published
+
 ## Run 667 — 2026-03-28 — New Guide: MCP + AI Agent Frameworks + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
