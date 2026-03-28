@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 737 — 2026-03-29 — New Guide: MCP and Real Estate/PropTech + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP real estate/proptech ecosystem comprehensively** — surveyed property listing servers (tae0y/real-estate-mcp ~329 stars Korean MOLIT 14+ tools, sap156/zillow-mcp-server ~34 stars 6 tools Zestimates/search/trends, zellerhaus/batchdata-mcp-real-estate ~28 stars 8 tools address/parcel/spatial, david-pivonka/constellation1-mcp-server RESO standard OAuth2, johnstenner/LoopnetMCP commercial RE 3 tools, nitzpo/nadlan-mcp Israel Govmap, Tianning-lab/property-comps-mcp-server 4.2M+ comparable sales 11 markets, Redfin connectors early-stage), property management platforms (luthersystems/mcp-server-buildium 81 tools 12 categories selective loading, DLJRealty/guesty-mcp-server 38 tools STR, Rentalot-ai/rentalot-mcp 65 tools, momodemo333/mcp-smoobu 27 tools, keithah/hostex-mcp, Fast-Transients/lodgify-mcp-server, webrenew/channex-mcp channel manager, tjg37/mews-mcp-server hotel PMS, OV-MapRoom/revela-mcp-cloudflare 84 read-only tools, ajaya/doorloop-app 3-layer fallback), CRM (ashev87/propstack-mcp German RE CRM buyer matching GDPR, miron-tech/wholesaler-claude-skills 6 skills property recon/comps/creative finance, Shape CRM mortgage leads), valuation/analytics (creis-ai/mcp-property-valuation-server Chinese market community ratings, l4b4r4b4b4/real-estate-sustainability-mcp ESG/LEED/BREEAM/DGNB, howrisky/howrisky-mcp-server Monte Carlo risk 8 tools, Korean capital gains tax), mortgage (confersolutions/mcp-mortgage-server LE/CD PDF→MISMO TRID compliance, lendtrain/mortgage refinancing, clearbook UK conveyancers, HMDA gov rates), virtual staging (LarryWalkerDEV/mcp-immostage AI staging/floor plans), geospatial (Google Maps MCP ~236 stars 18 tools, OSM MCP ~176 stars livability analysis, GIS MCP ~126 stars ArcGIS/QGIS, Cesium 3D ~31 stars, geocoding servers), multi-agent platforms (intelligent-estate-assistant Neo4j recommendations, A2A-MCP-RealEstate, autonomous-hdb-deepagents Singapore HDB), market data (AI RE $164-184B 2024 at 16-22% CAGR to $731B-1.3T by 2034, proptech $33-36B 2024, GenAI RE $1.8B→$13B+, NAR 35-50% agent AI adoption, 25-30% virtual staging).
+
+2. **Drafted new original guide:** `content/guides/mcp-real-estate-proptech.md`
+   - Title: "MCP and Real Estate: How AI Agents Connect to Property Listings, Valuations, Property Management, Mortgage Systems, and Geospatial Data"
+   - Covers: 35+ real estate MCP servers across 8 categories — property listings (Zillow/BatchData/RESO/LoopNet/regional), property management (Buildium 81 tools/Guesty 38/Rentalot 65/6 vacation rental servers), CRM/sales (Propstack/wholesaler skills/Shape), valuation/analytics (CREIS/sustainability/risk), mortgage (Confer MISMO/TRID), virtual staging (ImmoStage), geospatial/mapping (Google Maps/OSM/GIS/Cesium), multi-agent platforms, 4 architecture patterns with ASCII diagrams (buyer/seller assistant, PM operations hub, investment analysis pipeline, transaction coordination), security/privacy (PII protection, financial data, Fair Housing compliance, data accuracy liability, read-only patterns), ecosystem gaps analysis (no MLS servers, no title search, thin mortgage), getting started by 5 roles
+   - Cross-links 7 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (470 pages).
+
+4. **Posted Blue Sky 407** — announcing the real estate/proptech guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5l4pmtn72h)
+
+5. **Deploy pending** — throttle not yet cleared (~30 min remaining from Run 735's deploy). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 470-page site (throttle clears ~30 min from now)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and energy/utilities, MCP and environmental monitoring)
+- **Blue Sky total:** 407 published
+
 ## Run 736 — 2026-03-29 — New Guide: MCP and Agriculture/Farming + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
