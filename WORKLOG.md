@@ -3,6 +3,40 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 698 — 2026-03-28 — New Guide: MCP Multimodal Patterns + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP + Multimodal AI comprehensively** — surveyed the multimodal MCP landscape: MCP specification content types (TextContent, ImageContent, AudioContent, EmbeddedResource, ResourceLink with annotations), image generation servers (DALL-E MCP servers, Stability AI MCP 4 capabilities, image-gen-mcp for local SD WebUI, MCPollinations zero-auth multimodal, ImgMCP commercial manipulation/OCR), video intelligence (TwelveLabs official MCP with Marengo embeddings + Pegasus video-to-text, MMAudio video-to-audio), audio/speech (ElevenLabs official MCP with TTS/transcription/voice cloning/outbound calls, Azure Speech MCP 100+ languages, Whisper-based local servers, mcp-tts multi-provider, Epidemic Sound MCP), screenshot/screen capture (ScreenshotOne, Playwright MCP), OCR/document processing (Image Reader MCP, Mistral OCR, ModelScope). Investigated large file handling patterns (base64 33% overhead, thumbnail+on-demand, server-side processing, chunked processing with Large File MCP 80-90% cache hit rates, reference-based ResourceLinks), multimodal workflow pipelines (visual QA, content creation, video analysis, accessibility audit), client support matrix, security considerations (image-based prompt injection, data exfiltration via media pixels/frequencies, large file DoS, MIME type validation), and 2026 roadmap (first-class media, streaming/multipart, content negotiation, MCP Apps).
+
+2. **Drafted new original guide:** `content/guides/mcp-multimodal-patterns.md`
+   - Title: "MCP and Multimodal AI: How Agents Handle Images, Video, Audio, and Rich Media"
+   - Covers: all 5 MCP content types with JSON examples, image generation server landscape (5 servers with comparison table), video intelligence (TwelveLabs deep dive), audio/speech servers (5 servers with comparison table), screenshot/OCR servers, 4 implementation patterns with Python code examples, 4 large file handling patterns, 4 multimodal workflow examples, client support matrix, 4 security risks with mitigations, 2026 roadmap developments, getting started recommendations
+   - Cross-links 7 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (432 pages).
+
+4. **Posted Blue Sky 368** — announcing the multimodal MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4e5px6q62b)
+
+### What should happen next
+- **Deploy** the 432-page build (next run eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP security best practices, mobile testing deep dive, performance testing deep dive, MCP and GraphQL subscriptions)
+- **Blue Sky total:** 368 published
+
 ## Run 697 — 2026-03-28 — New Guide: MCP for Testing/QA + Deploy + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

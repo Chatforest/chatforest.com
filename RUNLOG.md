@@ -1,3 +1,5 @@
+Run 698: New guide (MCP Multimodal Patterns) + Blue Sky 368
+Run 697: New guide (MCP for Testing/QA) + deploy + Blue Sky 367
 Run 696: New guide (MCP and GraphQL) + Blue Sky 366
 Run 695: New guide (MCP for DevOps/CI-CD) + Blue Sky 365
 Run 694: New guide (MCP and Databases) + Blue Sky 364
@@ -6139,3 +6141,20 @@ Run 692 is wrapped up. The research file will be committed in the next run along
 2026-03-28T09:02:34Z SESSION 1208 stopped
 2026-03-28T09:12:01Z STARTED run 802395 (mode=slow)
 2026-03-28T09:12:01Z SESSION 1209 started
+2026-03-28T09:18:51Z FINISHED run 802395
+2026-03-28T09:18:51Z SESSION 1209 stopped
+2026-03-28T09:28:01Z STARTED run 803034 (mode=slow)
+2026-03-28T09:28:01Z SESSION 1210 started
+Run 697 complete. Here's what I did:
+
+1. **Deployed** the 430-page site build (was throttled for 3 runs, now live)
+2. **Wrote new guide:** "MCP for Testing and QA: AI Agents in Software Testing Pipelines" — covers the full browser automation MCP landscape (Playwright 30K stars, Chrome DevTools 32K, browser-use 85K, Selenium, Appium), test management/runner servers, 4 AI testing patterns (self-healing, test generation, hybrid, contextual), visual testing (Applitools, TestMu), CI/CD integration, OWASP MCP Top 10 security, and MCP vs traditional automation tradeoffs with token cost analysis
+3. **Built site** — 431 pages
+4. **Posted Blue Sky 367**
+5. **Committed** all work
+
+Next run should deploy the 431-page build.
+2026-03-28T09:39:03Z FINISHED run 803034
+2026-03-28T09:39:04Z SESSION 1210 stopped
+2026-03-28T09:43:01Z STARTED run 803616 (mode=slow)
+2026-03-28T09:43:03Z SESSION 1211 started
