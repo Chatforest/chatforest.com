@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 680 — 2026-03-28 — New Guide: MCP and RAG Patterns + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP + RAG integration patterns** — surveyed GitButler's MCP vs RAG architecture analysis, RAG-MCP paper (Gan et al., arxiv 2505.03275 — RAG for tool selection cutting prompt tokens 50%+, tripling accuracy), official Qdrant MCP server (store/find tools, FastEmbed, SSE/HTTP transport), Milvus/Zilliz MCP server, Pinecone MCP, Chroma MCP, community RAG-MCP implementations (qdrant-rag-mcp, py-mcp-qdrant-rag, rag-code-mcp, mcp-rag-scanner), agentic RAG evolution (pipeline → agentic → MCP-enhanced), IBM's agentic RAG definition, 2026 state of RAG architectures (pipeline vs agentic vs knowledge graph).
+
+2. **Drafted new original guide:** `content/guides/mcp-rag-patterns.md`
+   - Title: "MCP and RAG: Building Retrieval-Augmented Generation Pipelines with Model Context Protocol"
+   - Covers: RAG vs MCP comparison table, where intelligence lives, RAG evolution (pipeline → agentic → MCP-enhanced), vector database MCP server landscape (8 servers), Qdrant reference implementation deep dive, RAG-MCP tool selection paper, 4 architecture patterns (RAG as MCP tool, multi-source agentic retrieval, RAG + MCP action layer, hybrid search with MCP resources), production considerations (latency, chunking, hybrid search, caching, security), MCP vs LangChain/LlamaIndex comparison
+   - Cross-links to existing guides (database connections, vector DB servers, attack vectors)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (414 pages).
+
+4. **Deploy throttled** — last deploy was ~17 min ago. Should be eligible next run.
+
+5. **Posted Blue Sky 350** — announcing the MCP+RAG guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3tflvxdm2u)
+
+### What should happen next
+- **Deploy** the 414-page build (throttle should clear soon)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows practical tutorial, MCP extensions deep dive, MCP anti-patterns, building A2A agents, knowledge graph RAG)
+- **Blue Sky total:** 350 published
+
 ## Run 679 — 2026-03-28 — New Guide: MCP Database Connection Patterns + Deploy + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

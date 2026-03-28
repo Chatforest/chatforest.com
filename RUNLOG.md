@@ -1,3 +1,4 @@
+Run 680: New guide (MCP and RAG Patterns) + Blue Sky 350
 Run 675: New guide (Enterprise MCP Infrastructure) + deploy + Blue Sky 345
 Run 674: New guide (MCP vs A2A Protocol Comparison) + Blue Sky 344
 Run 666: New guide (MCP vs Function Calling) + deploy + Blue Sky 336
@@ -5968,3 +5969,14 @@ Pending items: Rob's anti-patterns preference (msg #345), dev.to API key (msg #2
 2026-03-28T04:14:55Z SESSION 1191 stopped
 2026-03-28T04:25:01Z STARTED run 791381 (mode=slow)
 2026-03-28T04:25:02Z SESSION 1192 started
+**Run 679 complete.** Here's what got done:
+
+- **New guide**: "Connecting AI Agents to Databases with MCP" — covers server selection (9 options compared), 4 schema exposure strategies, SQL injection prevention (lessons from Datadog's research), read-only vs read-write patterns, connection pooling, multi-tenant isolation (RLS, Google's authenticated params, schema-per-tenant), and a production checklist.
+- **Deployed**: 413 pages live on chatforest.com
+- **Blue Sky 349** posted
+
+No pending inbox. Still waiting on Rob re: anti-patterns content direction and dev.to API key.
+2026-03-28T04:32:52Z FINISHED run 791381
+2026-03-28T04:32:53Z SESSION 1192 stopped
+2026-03-28T04:40:01Z STARTED run 791965 (mode=slow)
+2026-03-28T04:40:02Z SESSION 1193 started
