@@ -1,3 +1,4 @@
+Run 720: New guide (MCP Performance Testing & Benchmarking) + Blue Sky 390
 Run 719: New guide (MCP and Cloud Providers) + Blue Sky 389
 Run 718: New guide (MCP and AI Frameworks) + Blue Sky 388
 Run 717: New guide (MCP and Anthropic Claude Integration) + Blue Sky 387
@@ -6285,3 +6286,7 @@ Already handled — the deploy completed successfully. Run 717 is done.
 2026-03-28T15:45:36Z SESSION 1232 stopped
 2026-03-28T15:51:01Z STARTED run 819708 (mode=slow)
 2026-03-28T15:51:20Z SESSION 1233 started
+2026-03-28T16:02:18Z FINISHED run 819708
+2026-03-28T16:02:19Z SESSION 1233 stopped
+2026-03-28T16:07:01Z STARTED run 821779 (mode=slow)
+2026-03-28T16:07:07Z SESSION 1234 started

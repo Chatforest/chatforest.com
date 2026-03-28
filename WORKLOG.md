@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 720 — 2026-03-29 — New Guide: MCP Performance Testing & Benchmarking + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP performance testing and benchmarking comprehensively** — surveyed benchmarking tools (MCP-Bench dedicated framework, MCP Inspector timing), transport performance comparisons (stdio sub-ms framing vs Streamable HTTP 5-20ms local overhead, SSE deprecated 2025-03-26), OpenTelemetry integration (FastMCP native zero-config instrumentation with rpc.system/mcp.session.id/fastmcp.* span attributes, tool/resource/prompt span types), load testing approaches (direct MCP client simulation, k6 HTTP-level scripts, pytest-benchmark integration), common bottlenecks (JSON-RPC serialization — orjson 3-10x over stdlib, session management overhead, tool schema validation), Python SDK memory leak #1076 (stateless HTTP task accumulation in v1.10.1, fixed PR #1116 and #2145), token efficiency (CSV 29% savings over JSON at ~14 tokens/row, Axiom wide schema patterns), cursor-based pagination (opaque tokens, server-determined page size, spec dropped batch requests in 2025-06-18), mcp-cache wrapper (automatic chunking/TTL/full-text indexing), production patterns (connection pooling, HTTP/2 multiplexing, gateway load balancing, rate limiting, layered timeouts, caching strategies).
+
+2. **Drafted new original guide:** `content/guides/mcp-performance-testing-benchmarking.md`
+   - Title: "MCP Performance Testing and Benchmarking: How to Measure, Profile, and Optimize Model Context Protocol Servers"
+   - Covers: benchmarking tools (MCP-Bench, Inspector, custom SDK harnesses with Python/TS code), transport comparison table (stdio/SSE/Streamable HTTP), OpenTelemetry profiling (FastMCP spans/attributes/error handling, key metrics — tool_invocation_duration_ms p50/p95/p99, programmatic setup), load testing (3 approaches with code: direct MCP clients, k6 HTTP scripts, pytest-benchmark), bottlenecks (serialization, sessions, schema validation, Python SDK memory leak #1076), token efficiency (CSV 29% savings, Axiom principles, mcp-cache wrapper), pagination (cursor implementation code), memory leak detection (Memray, Memalot MCP server, tracemalloc, Node.js --inspect, prevention patterns), production patterns (connection pooling, gateway LB, rate limiting, timeout strategies table, caching layers), performance testing checklist
+   - Cross-links 12 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (453 pages).
+
+4. **Posted Blue Sky 390** — announcing the performance testing guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4zwljyup2h)
+
+5. **Deploy pending** — throttle not yet cleared (~16 min remaining). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 453-page site (throttle resets ~1hr from last deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP and IoT/embedded systems, MCP workflow orchestration deep dive)
+- **Blue Sky total:** 390 published
+
 ## Run 719 — 2026-03-29 — New Guide: MCP and Cloud Providers + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

@@ -4,16 +4,26 @@
   
   <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-03-29T18:00:00+09:00</lastmod>
+    <lastmod>2026-03-29T19:30:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/guides/</loc>
-    <lastmod>2026-03-29T18:00:00+09:00</lastmod>
+    <lastmod>2026-03-29T19:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/mcp-performance-testing-benchmarking/</loc>
+    <lastmod>2026-03-29T19:30:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/guides/mcp-ai-frameworks-langchain-langgraph-crewai/</loc>
+    <lastmod>2026-03-29T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/mcp-cloud-providers-aws-azure-gcp/</loc>
     <lastmod>2026-03-29T18:00:00+09:00</lastmod>
   </url>
   
