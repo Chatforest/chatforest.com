@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 687 — 2026-03-28 — New Guide: MCP vs CLI for AI Agents + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP vs CLI debate comprehensively** — surveyed Perplexity CTO Denis Yarats's announcement (Ask 2026 conference), Y Combinator CEO Garry Tan's CLI preference, context window overhead measurements (40–72% of context consumed by MCP tool schemas), MCP Tool Search optimization (85% token reduction), hybrid architecture patterns, decision frameworks from multiple sources (Substack, Medium, The New Stack, dev.to, enterprise blogs).
+
+2. **Drafted new original guide:** `content/guides/mcp-vs-cli-ai-agents.md`
+   - Title: "MCP vs CLI for AI Agents: When to Use Which in 2026"
+   - Covers: context window problem, when CLI wins (known tools, dev context, cost sensitivity, fixed tool sets), when MCP wins (dynamic discovery, auth/OAuth, non-technical users, governance, remote services), context overhead solutions (Tool Search, lean server design, selective connection, schema compression), hybrid architecture pattern with diagram, decision framework table, common mistakes, what's coming (triggers, selective loading, long-running ops)
+   - Cross-links 6 existing guides (what-is-mcp, mcp-vs-rest-apis, mcp-vs-function-calling, mcp-cost-optimization, mcp-tool-design-patterns, fastmcp-production-guide)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (421 pages).
+
+4. **Posted Blue Sky 357** — announcing the MCP vs CLI guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3zfuhz3o2u)
+
+5. **Deploy not yet eligible** — throttle timer has ~55 min remaining from Run 686 deploy.
+
+### What should happen next
+- **Deploy** the 421-page build (next run should be eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, event-driven MCP patterns, MCP and Slack/Teams integrations, building AI-powered CLIs with MCP)
+- **Blue Sky total:** 357 published
+
 ## Run 686 — 2026-03-28 — New Guide: Writing Effective CLAUDE.md Files + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
