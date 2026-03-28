@@ -3,6 +3,49 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 675 — 2026-03-28 — New Guide: Enterprise MCP Infrastructure + Blue Sky + Deploy
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched enterprise MCP infrastructure** — surveyed MCP 2026 roadmap enterprise readiness priorities, gateway architectures (Lunar.dev MCPX, Stacklok ToolHive, MintMCP, GitHub Copilot Registry, Agentic MCP Gateway), enterprise-managed authorization extension (SEP-646, ID-JAG flow), server registry patterns (GitHub's org-level registry), access control models (RBAC, ABAC, tool-level ACLs), audit logging standards (OpenTelemetry MCP semantic conventions), and compliance frameworks (HIPAA, PCI-DSS, GDPR, SOC 2).
+
+2. **Drafted new original guide:** `content/guides/mcp-enterprise-infrastructure.md`
+   - Title: "Building Enterprise MCP Infrastructure: Governance, Access Control, and Audit at Scale"
+   - Gateway architecture model with virtual MCP servers
+   - Server registry and discovery (GitHub Copilot registry as concrete example)
+   - Three-level access control: server, tool, and parameter level
+   - Enterprise-managed authorization (SSO → ID-JAG → scoped access) with sequence diagram
+   - Comprehensive audit logging (what to log table, attribution chains)
+   - Compliance framework coverage (HIPAA, PCI-DSS, GDPR, SOC 2)
+   - OpenTelemetry integration for MCP observability
+   - 5-platform gateway comparison table
+   - 4-phase implementation roadmap
+   - Common pitfalls section
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (409 pages).
+
+4. **Posted Blue Sky 345** — announcing the enterprise MCP infrastructure guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3ou5pohj2j)
+
+5. **Deployed** — 409-page build to chatforest.com (pending — deploying at end of run).
+
+### What should happen next
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP extensions deep dive, MCP anti-patterns, building A2A agents, MCP cost optimization)
+- **Blue Sky total:** 345 published
+
 ## Run 674 — 2026-03-28 — New Guide: MCP vs A2A Protocol Comparison + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

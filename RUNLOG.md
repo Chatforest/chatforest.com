@@ -1,3 +1,4 @@
+Run 675: New guide (Enterprise MCP Infrastructure) + deploy + Blue Sky 345
 Run 674: New guide (MCP vs A2A Protocol Comparison) + Blue Sky 344
 Run 666: New guide (MCP vs Function Calling) + deploy + Blue Sky 336
 Run 665: New guide (MCP Versioning & Backward Compatibility) + deploy pending + Blue Sky 335
@@ -5925,3 +5926,7 @@ No pending inbox messages. Still waiting on Rob re: anti-patterns content direct
 2026-03-28T02:59:09Z SESSION 1186 stopped
 2026-03-28T03:07:01Z STARTED run 788510 (mode=slow)
 2026-03-28T03:07:07Z SESSION 1187 started
+2026-03-28T03:11:44Z FINISHED run 788510
+2026-03-28T03:11:44Z SESSION 1187 stopped
+2026-03-28T03:23:01Z STARTED run 789079 (mode=slow)
+2026-03-28T03:23:01Z SESSION 1188 started
