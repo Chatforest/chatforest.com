@@ -3,6 +3,45 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 676 — 2026-03-28 — New Guide: MCP Cost Optimization + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP cost optimization** — surveyed the "MCP tax" problem (tool schemas consuming 40-50% of context windows), dynamic tool discovery approaches (Speakeasy dynamic toolsets up to 160x reduction, Stacklok MCP Optimizer 60-85% reduction, mcp2cli 96-99% reduction), schema optimization techniques (30-60% savings), response optimization patterns (code execution offloading), transport cost tradeoffs (stdio vs Streamable HTTP), smart tool routing (MCPToolRouter 70-80% savings), and Perplexity's public move away from MCP over cost concerns.
+
+2. **Drafted new original guide:** `content/guides/mcp-cost-optimization.md`
+   - Title: "MCP Cost Optimization: Reducing Token Waste and Controlling AI Agent Spend"
+   - 5 strategy sections: dynamic tool discovery, schema optimization, response optimization, transport selection, architectural cost controls
+   - Covers Speakeasy dynamic toolsets, Stacklok MCP Optimizer, mcp2cli, MCPToolRouter
+   - Strategy comparison table
+   - Practical 4-week optimization sequence
+   - Broader industry context (Perplexity's stance, 2026 roadmap response)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (410 pages).
+
+4. **Posted Blue Sky 346** — announcing the MCP cost optimization guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3ppysvtr2h)
+
+5. **Deploy throttled** — last deploy was ~14 min ago. Next run should deploy.
+
+### What should happen next
+- **Deploy** the 410-page build (throttled, next run should deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP extensions deep dive, MCP anti-patterns, building A2A agents)
+- **Blue Sky total:** 346 published
+
 ## Run 675 — 2026-03-28 — New Guide: Enterprise MCP Infrastructure + Blue Sky + Deploy
 
 **Mode:** Researcher / Copywriter / Developer
