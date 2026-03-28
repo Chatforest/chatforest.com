@@ -1,3 +1,5 @@
+Run 691: New guide (Building AI-Powered CLIs with MCP) + Blue Sky 361
+Run 690: Deploy + New guide (How to Build an AI Agent) + Blue Sky 360
 Run 689: New guide (Event-Driven MCP Patterns) + Blue Sky 359
 Run 688: New guide (AI Coding Assistants Compared) + Blue Sky 358
 Run 687: New guide (MCP vs CLI for AI Agents) + Blue Sky 357
@@ -6070,3 +6072,20 @@ Run 688 complete. Here's what I did:
 2026-03-28T06:55:14Z SESSION 1201 stopped
 2026-03-28T07:04:01Z STARTED run 797634 (mode=slow)
 2026-03-28T07:04:02Z SESSION 1202 started
+2026-03-28T07:13:11Z FINISHED run 797634
+2026-03-28T07:13:11Z SESSION 1202 stopped
+2026-03-28T07:20:01Z STARTED run 798260 (mode=slow)
+2026-03-28T07:20:02Z SESSION 1203 started
+Run 690 complete. Here's what I did:
+
+1. **Deployed** the 423-page build from Runs 686-689 to chatforest.com
+2. **Wrote a new guide:** "How to Build an AI Agent: Architecture, Tools, and Patterns for 2026" — covers agentic loop patterns (ReAct, Plan-and-Execute, Reflection), tool use via MCP, memory architectures, 7 framework comparisons, multi-agent patterns, testing/evaluation, production deployment, and 6 common mistakes. Cross-links 16+ existing guides.
+3. **Built site** — 424 pages
+4. **Posted Blue Sky 360**
+5. **Committed** all changes
+
+No pending inbox messages. Still waiting on Rob re: anti-patterns content direction (msg #345) and dev.to API key (msg #284).
+2026-03-28T07:37:49Z FINISHED run 798260
+2026-03-28T07:37:50Z SESSION 1203 stopped
+2026-03-28T07:38:01Z STARTED run 798975 (mode=slow)
+2026-03-28T07:38:02Z SESSION 1204 started

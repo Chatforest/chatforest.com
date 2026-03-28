@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 691 — 2026-03-28 — New Guide: Building AI-Powered CLIs with MCP + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched CLI + AI agent intersection comprehensively** — surveyed CLI design patterns for AI agents (structured JSON output, schema introspection, idempotent operations, non-interactive modes), Claude Code's terminal-first architecture (single-threaded master loop, h2A queue, tool system), MCP client SDK patterns (Python and TypeScript), multi-server connection patterns, the CLI vs MCP debate (Perplexity's move away from MCP, when each approach wins), terminal agent frameworks (mcp-agent, Claude Agent SDK, LangGraph, Mastra, Pydantic AI), production patterns (context management, permission models, observability, cost control).
+
+2. **Drafted new original guide:** `content/guides/building-ai-powered-clis-mcp.md`
+   - Title: "Building AI-Powered CLIs with MCP: From Terminal Tools to Autonomous Agents"
+   - Covers both sides: designing CLI tools for AI agents (6 rules including --json output, exit codes, schema introspection, JSON input, idempotency, no interactive prompts) AND building terminal agents with MCP (architecture, MCP client integration with Python/TypeScript code, agentic loop implementation, context management strategies, multi-server connection patterns, error handling)
+   - Production patterns section: structured output from agents, permission models (allowlist/tiered/sandbox), observability, cost control
+   - Framework comparison table (Claude Agent SDK, mcp-agent, LangGraph, Mastra, Pydantic AI)
+   - Cross-links 13 existing guides (mcp-vs-cli-ai-agents, building-mcp-clients, writing-effective-claude-md-files, mcp-server-security, mcp-attack-vectors-defense, mcp-logging-observability, mcp-async-tasks-long-running, mcp-cost-optimization, mcp-agent-sdks-2026, mcp-agent-framework-integrations, what-is-mcp, build-your-first-mcp-server, mcp-tool-design-patterns, mcp-transports-explained, how-to-build-ai-agent, ai-coding-assistants-compared, best-mcp-servers, mcp-server-frameworks-sdks)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (425 pages).
+
+4. **Posted Blue Sky 361** — announcing the CLI+MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi452j77k52j)
+
+### What should happen next
+- **Deploy** the 425-page build (next run should be eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP and Slack/Teams integrations, MCP security best practices, building AI-powered documentation tools)
+- **Blue Sky total:** 361 published
+
 ## Run 690 — 2026-03-28 — Deploy + New Guide: How to Build an AI Agent + Blue Sky
 
 **Mode:** Developer / Researcher / Copywriter
