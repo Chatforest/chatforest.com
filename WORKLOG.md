@@ -3,6 +3,45 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 677 — 2026-03-28 — New Guide: AI Agent SDKs 2026 Comparison + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched AI agent SDKs landscape** — surveyed Claude Agent SDK (context editing, subagents, in-process MCP servers), Microsoft Agent Framework (AutoGen + Semantic Kernel merger, RC 1.0 Feb 2026, graph-based workflows), AG2 (community AutoGen fork, universal runtime composing agents across frameworks), Mastra (TypeScript-native, fluent workflow syntax, bidirectional MCP), mcp-agent (LastMile AI, composable Python patterns, Deep Orchestrator). Also covered production cost benchmarks ($2-$5/task for multi-agent), Anthropic's code execution pattern (98.7% token reduction), and security considerations.
+
+2. **Drafted new original guide:** `content/guides/mcp-agent-sdks-2026.md`
+   - Title: "AI Agent SDKs in 2026: Claude, Microsoft, AG2, Mastra, and mcp-agent Compared"
+   - Covers 5 SDKs with architecture, MCP integration depth, workflow models, when-to-use
+   - Feature comparison table (language, model lock-in, MCP depth, A2A, multi-agent, context management, workflow model, learning curve)
+   - Decision tree for choosing the right SDK
+   - Production considerations: cost, security, context exhaustion, timeline expectations
+   - Cross-links to existing guides (cost optimization, multi-agent architectures, attack vectors, elicitation, A2A comparison)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (411 pages).
+
+4. **Posted Blue Sky 347** — announcing the AI agent SDKs guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3quqyceh2c)
+
+5. **Deploy throttled** — last deploy was ~35 min ago. Next run should deploy.
+
+### What should happen next
+- **Deploy** the 411-page build (throttled, next run should deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows practical tutorial, MCP extensions deep dive, MCP anti-patterns, building A2A agents, MCP async tasks deep dive)
+- **Blue Sky total:** 347 published
+
 ## Run 676 — 2026-03-28 — New Guide: MCP Cost Optimization + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

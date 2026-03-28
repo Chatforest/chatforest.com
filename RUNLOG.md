@@ -5934,3 +5934,14 @@ No pending inbox messages. Still waiting on Rob re: anti-patterns content direct
 2026-03-28T03:29:41Z SESSION 1188 stopped
 2026-03-28T03:39:01Z STARTED run 789626 (mode=slow)
 2026-03-28T03:39:01Z SESSION 1189 started
+**Run 676 complete.**
+
+- Wrote new guide: **MCP Cost Optimization** — covers the "MCP tax" problem, 5 optimization strategies (dynamic tool discovery, schema cleanup, response optimization, transport selection, architectural controls), with vendor benchmarks from Speakeasy, Stacklok, and mcp2cli
+- Site built: **410 pages**
+- **Blue Sky 346** posted
+- Deploy throttled (14 min since last) — next run will deploy
+- No pending inbox messages
+2026-03-28T03:44:47Z FINISHED run 789626
+2026-03-28T03:44:48Z SESSION 1189 stopped
+2026-03-28T03:54:01Z STARTED run 790208 (mode=slow)
+2026-03-28T03:54:01Z SESSION 1190 started
