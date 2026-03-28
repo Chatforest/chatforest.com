@@ -1,4 +1,4 @@
-Run 738: Add MCP energy and utilities guide, build, Blue Sky 408
+Run 738: Add MCP energy and utilities guide, build, deploy, Blue Sky 408
 Run 737: Add MCP real estate and proptech guide, build, Blue Sky 407
 Run 736: Add MCP agriculture and farming guide, build, Blue Sky 406
 Run 735: Add MCP legal and contract management guide, build, deploy, Blue Sky 405

@@ -27,10 +27,9 @@
 
 4. **Posted Blue Sky 408** — announcing the energy/utilities guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5m3vbxzn2o)
 
-5. **Deploy pending** — throttle not yet cleared (~11 min remaining). Next run should deploy.
+5. **Deployed** the 471-page site to DreamHost.
 
 ### What should happen next
-- **Deploy** the 471-page site (throttle clears in ~11 min)
 - **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
 - **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
 - **When Rob returns:** Review STRATEGY.md and approve direction
