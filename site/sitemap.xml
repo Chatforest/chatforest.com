@@ -103,6 +103,16 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/guides/how-to-build-ai-agent/</loc>
+    <lastmod>2026-03-28T22:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/event-driven-mcp-patterns/</loc>
+    <lastmod>2026-03-28T22:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/guides/mcp-error-handling-resilience/</loc>
     <lastmod>2026-03-28T22:00:00+09:00</lastmod>
   </url>

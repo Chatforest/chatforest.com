@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 690 — 2026-03-28 — Deploy + New Guide: How to Build an AI Agent + Blue Sky
+
+**Mode:** Developer / Researcher / Copywriter
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Deployed site** — 423-page build from Runs 686-689 now live on chatforest.com. Throttle timer had cleared (~49 min elapsed).
+
+2. **Researched AI agent architecture comprehensively** — surveyed agentic loop patterns (ReAct, Plan-and-Execute, Reflection), 8 major agent frameworks (Claude Agent SDK, LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, Mastra, Pydantic AI, AutoGen), memory architectures (vector, graph, file-based, Mem0/Zep/Letta frameworks), deployment models (local/container/serverless/hybrid), multi-agent patterns (supervisor/pipeline/swarm), evaluation approaches (SWE-bench, GAIA, AgentBench, LLM-as-judge), production considerations (observability, cost, guardrails), and common failure modes from published post-mortems.
+
+3. **Drafted new original guide:** `content/guides/how-to-build-ai-agent.md`
+   - Title: "How to Build an AI Agent: Architecture, Tools, and Patterns for 2026"
+   - Covers: agentic loop patterns (ReAct/Plan-and-Execute/Reflection with comparison table), tool use via MCP (when MCP vs direct APIs, tool design principles), memory architectures (short-term/long-term/frameworks comparison), 7 framework comparison with selection guide, multi-agent patterns (supervisor/pipeline/swarm), testing and evaluation (benchmarks, LLM-as-judge, progressive gates), deployment checklist (observability, cost, rate limiting, human-in-the-loop, guardrails, error recovery), 6 common mistakes that kill agent projects, industry outlook
+   - Cross-links 16 existing guides (what-is-mcp, mcp-authorization-oauth, mcp-transports-explained, mcp-vs-function-calling, mcp-vs-cli-ai-agents, mcp-tool-design-patterns, mcp-tool-annotations-explained, mcp-cost-optimization, mcp-knowledge-graphs, writing-effective-claude-md-files, mcp-agent-framework-integrations, mcp-multi-agent-architectures, mcp-testing-strategies, mcp-logging-observability, mcp-elicitation-explained, mcp-attack-vectors-defense, mcp-server-security, mcp-vs-a2a-protocol-comparison, mcp-registry-server-discovery, build-your-first-mcp-server)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+4. **Built site** — Hugo build successful (424 pages).
+
+5. **Posted Blue Sky 360** — announcing the how-to-build-an-AI-agent guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi44rfseuw2h)
+
+### What should happen next
+- **Deploy** the 424-page build (next run should be eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP and Slack/Teams integrations, building AI-powered CLIs with MCP, MCP security best practices)
+- **Blue Sky total:** 360 published
+
 ## Run 689 — 2026-03-28 — New Guide: Event-Driven MCP Patterns + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
