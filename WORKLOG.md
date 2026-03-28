@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 697 — 2026-03-28 — New Guide: MCP for Testing/QA + Deploy + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Deployed site** — 430-page build from Run 696 now live on chatforest.com (deployed 2026-03-28 18:28 JST).
+
+2. **Researched MCP + Testing/QA comprehensively** — surveyed the testing MCP server landscape: browser automation (Microsoft Playwright MCP 29.9K stars with accessibility tree snapshots and 26 tools, Google Chrome DevTools MCP 32K stars with Lighthouse/performance tracing, browser-use 84.8K stars, ExecuteAutomation Playwright 5.4K, Browserbase+Stagehand 3.2K, mcp-selenium 377 by Angie Jones, Appium MCP 269 official mobile), test management (Qase, TestRail, Testomat.io), test runners (Cypress MCP, Vitest MCP, Frontend Testing MCP, Cypress Test Generator, API Test Case Generator), enterprise platforms (TestSprite 2.0 with 6K+ teams, Tricentis with Tosca/NeoLoad/qTest/SeaLights MCP servers, Microsoft Power Platform Test Engine). Investigated AI testing patterns: two-prompt test generation (Azure DevOps case study), self-healing tests (Sogeti Robot Framework MCP + RoboCop), hybrid deterministic+AI, contextual generation. Visual testing via Applitools MCP (Forrester Strong Performer) and TestMu SmartUI MCP (multi-layered analysis). CI/CD integration patterns. OWASP MCP Top 10 security risks. Token cost comparison (0 for traditional vs ~114K for MCP mode vs ~27K for Playwright CLI). BrowserTools MCP discontinued.
+
+3. **Drafted new original guide:** `content/guides/mcp-testing-qa.md`
+   - Title: "MCP for Testing and QA: AI Agents in Software Testing Pipelines"
+   - Covers: browser automation servers (7 with comparison table), test management servers, test runner servers, Playwright MCP deep dive (accessibility tree, 26 tools, CLI mode 4x token reduction), 4 AI testing patterns (test generation, self-healing, hybrid, contextual), visual/accessibility testing (Applitools, TestMu), CI/CD integration (Azure DevOps pipeline, self-healing CI loop, PromptOps), OWASP MCP Top 10 security, testing-specific risks, MCP vs traditional automation tradeoffs with token cost table, getting started recommendations
+   - Cross-links 6 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+4. **Built site** — Hugo build successful (431 pages).
+
+5. **Posted Blue Sky 367** — announcing the testing/QA MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4djszmlj2l)
+
+### What should happen next
+- **Deploy** the 431-page build (next run eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP security best practices, MCP for testing/QA pipelines deep dives — mobile testing, performance testing, MCP and GraphQL subscriptions)
+- **Blue Sky total:** 367 published
+
 ## Run 696 — 2026-03-28 — New Guide: MCP and GraphQL + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
