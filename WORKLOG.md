@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 718 — 2026-03-29 — New Guide: MCP and AI Frameworks + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP integration across 12+ AI frameworks comprehensively** — surveyed the full landscape of how AI frameworks integrate MCP: LangChain's langchain-mcp-adapters (v0.2.2, 28 releases since Feb 2025, MultiServerMCPClient, interceptors, elicitation, multimodal support, resources/prompts, stateful sessions), LangGraph (direct langchain-mcp-adapters usage, ToolNode integration, Agent Server /mcp endpoint for bidirectional MCP, three-tier tool architecture), LangSmith MCP Server (workspace data exposure), CrewAI (native DSL mcps= field, MCPServerAdapter, name collision prevention, on-demand connections, schema caching), LlamaIndex (llama-index-tools-mcp v0.4.8, BasicMCPClient/McpToolSpec, OAuth 2.0, bidirectional workflow_as_mcp), Vercel AI SDK (@ai-sdk/mcp stable in SDK 6, createMCPClient, OAuth PKCE), Mastra (MCPClient/MCPServer, Next.js integration), PydanticAI (three integration paths, SSE deprecated for Streamable HTTP), DSPy (Tool.from_mcp_tool, ReAct multi-server), Haystack (mcp-haystack, Hayhooks bidirectional), Spring AI (1.1 GA Nov 2025, Boot starters, YAML config, annotation-driven), Semantic Kernel (ModelContextProtocol NuGet, AsKernelFunction), AutoGen/AG2 (autogen-ext-mcp, AgentOS).
+
+2. **Drafted new original guide:** `content/guides/mcp-ai-frameworks-langchain-langgraph-crewai.md`
+   - Title: "MCP and AI Frameworks: How LangChain, LangGraph, CrewAI, LlamaIndex, and 10+ Frameworks Integrate the Model Context Protocol"
+   - Covers: comparison table of 12 frameworks, LangChain (installation, basic/multi-server usage, resources/prompts, interceptors, elicitation, multimodal, JS/TS, release history), LangGraph (agent integration, interceptors with graph state, Agent Server bidirectional, LangSmith), CrewAI (DSL, adapter, features), LlamaIndex (client/bidirectional), Vercel AI SDK 6, Mastra (client/server), PydanticAI (3 paths), DSPy, Haystack (Hayhooks), Spring AI (enterprise Java), Microsoft ecosystem (SK + AutoGen → Agent Framework), cross-framework patterns (tool conversion, multi-server, bidirectional, transport migration), choosing guide, security considerations
+   - Cross-links 9 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (451 pages).
+
+4. **Posted Blue Sky 388** — announcing the AI frameworks MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4xykxubz2b)
+
+5. **Deploy pending** — throttle not yet cleared (~52 min remaining). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 451-page site (throttle resets ~1hr from last deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP performance testing deep dive, MCP and cloud providers deep dive)
+- **Blue Sky total:** 388 published
+
 ## Run 717 — 2026-03-29 — New Guide: MCP and Anthropic Claude Integration + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

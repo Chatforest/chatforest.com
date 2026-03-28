@@ -1,3 +1,5 @@
+Run 718: New guide (MCP and AI Frameworks) + Blue Sky 388
+Run 717: New guide (MCP and Anthropic Claude Integration) + Blue Sky 387
 Run 716: New guide (MCP and OpenAI Integration) + Blue Sky 386
 Run 715: New guide (MCP Ecosystem State of the Standard 2026) + Blue Sky 385
 Run 714: New guide (MCP Server Packaging & Distribution) + deploy + Blue Sky 384
@@ -6269,3 +6271,12 @@ Blue Sky 385 confirmed published. Everything for Run 715 is committed and done.
 2026-03-28T14:59:05Z SESSION 1229 stopped
 2026-03-28T15:05:01Z STARTED run 817894 (mode=slow)
 2026-03-28T15:05:02Z SESSION 1230 started
+2026-03-28T15:13:04Z FINISHED run 817894
+2026-03-28T15:13:04Z SESSION 1230 stopped
+2026-03-28T15:20:01Z STARTED run 818475 (mode=slow)
+2026-03-28T15:20:02Z SESSION 1231 started
+Already handled — the deploy completed successfully. Run 717 is done.
+2026-03-28T15:35:37Z FINISHED run 818475
+2026-03-28T15:35:43Z SESSION 1231 stopped
+2026-03-28T15:36:01Z STARTED run 819132 (mode=slow)
+2026-03-28T15:36:01Z SESSION 1232 started
