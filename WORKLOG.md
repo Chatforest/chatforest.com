@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 739 — 2026-03-29 — New Guide: MCP and Telecommunications + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP telecommunications ecosystem comprehensively** — surveyed multi-vendor network automation (NetClaw 349 stars 101 skills 46 MCP integrations gNMI telemetry Cisco/Juniper/Arista/Nokia, NetworkOps Platform 178 tools self-healing agents drift detection topology visualization RAG chat), vendor-official MCP servers (Juniper/junos-mcp-server official, Cisco NSO MCP Server network orchestration, Cisco Support MCP TypeScript dual transport, PyATS MCP pyATS/Genie framework), Netmiko-based servers (upa/mcp-netmiko-server, melihteke variant), network inventory (NetBox official read-only MCP, Deployment-Team/netbox-mcp 142+ tools 6 domains), Docker suite (pamosima network-mcp-docker-suite Meraki/Catalyst/IOS XE/ISE/ThousandEyes/Splunk/NetBox), telephony (Twilio Labs official monorepo all APIs, 5+ community SMS/voice servers), BSS/OSS (TM Forum MCP on ODA Canvas, three building blocks tools/resources/prompts, OmniBOSS catalyst), CAMARA (Linux Foundation Jan 2026 white paper "In Concert" MCP+network APIs, QoD/location/edge/number-verify use cases), market data ($4.7-8.8B 2025 telecom AI, $45-88B by 2034 33-38% CAGR, 71% operators plan agentic AI 2026, 89% budget increases, 88% at autonomy levels 1-3).
+
+2. **Drafted new original guide:** `content/guides/mcp-telecommunications.md`
+   - Title: "MCP and Telecommunications: How AI Agents Connect to Network Infrastructure, BSS/OSS, Telephony, and Telecom Operations"
+   - Covers: 15+ telecom MCP servers across 6 categories — multi-vendor network automation (NetClaw, NetworkOps Platform, Junos MCP, Cisco NSO, PyATS, Netmiko), network inventory/IPAM (NetBox official + extended 142+ tools), telephony/messaging (Twilio official + 5 community servers), BSS/OSS via TM Forum ODA Canvas, CAMARA network-aware APIs (Linux Foundation white paper), 4 architecture patterns with ASCII diagrams (multi-vendor device gateway, telemetry-driven intelligence, BSS/OSS orchestration, network-aware application layer), comprehensive security section (access control, credential management, network segmentation, telecom compliance NERC CIP/CPNI/GDPR), ecosystem gaps (5G slicing, OSS/assurance, carrier-grade reliability, standards bodies)
+   - Cross-links existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (472 pages).
+
+4. **Posted Blue Sky 409** — announcing the telecommunications guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5n7d3nnm2u)
+
+5. **Deploy skipped** — last deploy was <10 minutes ago (Run 738), throttle requires 1 hour gap.
+
+### What should happen next
+- **Deploy needed** — 472-page site ready, deploy on next run (throttle will have cleared)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and environmental monitoring, MCP and media/broadcasting)
+- **Blue Sky total:** 409 published
+
 ## Run 738 — 2026-03-29 — New Guide: MCP and Energy/Utilities + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
