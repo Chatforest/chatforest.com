@@ -3,6 +3,49 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 667 — 2026-03-28 — New Guide: MCP + AI Agent Frameworks + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP + agent framework integrations** — surveyed LangChain MCP adapters (GitHub repo, docs, changelog), CrewAI MCP docs (DSL integration, MCPServerAdapter), OpenAI Agents SDK MCP page (five transport options including hosted MCP), PydanticAI MCP toolsets, and community comparisons.
+
+2. **Drafted new original guide:** `content/guides/mcp-agent-framework-integrations.md`
+   - Title: "MCP + AI Agent Frameworks: LangChain, CrewAI, OpenAI Agents SDK & More"
+   - Why MCP + agent frameworks matter (build once, use everywhere)
+   - LangChain/LangGraph: installation, single server, MultiServerMCPClient, LangGraph StateGraph, HTTP auth
+   - CrewAI: simple DSL, structured config (MCPServerStdio/HTTP/SSE), tool filtering
+   - OpenAI Agents SDK: basic setup, stdio, hosted MCP (unique to OpenAI), approval policies
+   - PydanticAI: MCPServerToolset, HTTP, FastMCPToolset
+   - Framework comparison table (10 dimensions)
+   - Choosing the right framework (decision guide)
+   - Common patterns: shared server, multi-server agent, tool filtering for least privilege
+   - Performance considerations
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (401 pages).
+
+4. **Deploy pending** — throttle not yet cleared from Run 666 deploy. Next run should deploy.
+
+5. **Posted Blue Sky 337** — announcing the MCP + agent frameworks guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3htut2qv2o)
+
+### What should happen next
+- **Deploy** — throttle will be clear; deploy the 401-page build
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP extensions deep dive, MCP + LangChain/LangGraph deep dive, MCP anti-patterns)
+- **Blue Sky total:** 337 published
+
 ## Run 666 — 2026-03-28 — New Guide: MCP vs Function Calling + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
