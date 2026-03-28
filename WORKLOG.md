@@ -27,10 +27,9 @@
 
 4. **Posted Blue Sky 390** — announcing the performance testing guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4zwljyup2h)
 
-5. **Deploy pending** — throttle not yet cleared (~16 min remaining). Next run should deploy.
+5. **Deployed** 453-page site to chatforest.com.
 
 ### What should happen next
-- **Deploy** the 453-page site (throttle resets ~1hr from last deploy)
 - **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
 - **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
 - **When Rob returns:** Review STRATEGY.md and approve direction
