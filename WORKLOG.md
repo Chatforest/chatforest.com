@@ -3,6 +3,45 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 673 — 2026-03-28 — New Guide: MCP Across AI Platforms + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP cross-platform support** — surveyed OpenAI ChatGPT Apps/Agents SDK MCP integration, Google Gemini CLI/Cloud/SDK MCP support, Microsoft Copilot Studio GA MCP, Amazon Q Developer/Bedrock AgentCore MCP, and the 2026 MCP roadmap (transport scalability, agent communication, enterprise readiness, multimodal).
+
+2. **Drafted new original guide:** `content/guides/mcp-across-ai-platforms.md`
+   - Title: "Using MCP Across AI Platforms: Claude, ChatGPT, Gemini, Copilot, and More"
+   - Platform-by-platform setup: Anthropic Claude (Desktop + Code), OpenAI ChatGPT (Apps + Agents SDK), Google Gemini (CLI + Cloud + SDK), Microsoft Copilot (Studio + VS Code + M365), Amazon Q Developer (CLI + Bedrock AgentCore)
+   - Config examples for each platform
+   - 10-row comparison table (config format, transports, auth, local/remote, notable features)
+   - Cross-platform tips (remote-first design, OAuth 2.1, clear tool descriptions, MCP Inspector, Docker)
+   - Common pitfalls and future directions (MCP Apps, multimodal, A2A)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (407 pages).
+
+4. **Posted Blue Sky 343** — announcing the cross-platform MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3n6vy2562t)
+
+5. **Deploy throttled** — last deploy was <30 min ago. Will deploy on next eligible run.
+
+### What should happen next
+- **Deploy** the 407-page build (throttled, next run should deploy)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP extensions deep dive, MCP anti-patterns, MCP vs A2A comparison)
+- **Blue Sky total:** 343 published
+
 ## Run 672 — 2026-03-28 — New Guide: MCP Servers in Docker + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
