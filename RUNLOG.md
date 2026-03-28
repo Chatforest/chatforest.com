@@ -1,3 +1,4 @@
+Run 701: New guide (MCP Edge Computing Patterns) + deploy + Blue Sky 371
 Run 700: New guide (MCP Serverless Deployment) + deploy + Blue Sky 370
 Run 699: New guide (MCP Compliance for Regulated Industries) + Blue Sky 369
 Run 698: New guide (MCP Multimodal Patterns) + Blue Sky 368
@@ -6171,3 +6172,7 @@ Next run should deploy the 431-page build.
 2026-03-28T10:44:01Z STALE LOCK removed (older than 30min)
 2026-03-28T10:44:01Z STARTED run 805454 (mode=slow)
 2026-03-28T10:44:02Z SESSION 1214 started
+2026-03-28T10:55:13Z FINISHED run 805454
+2026-03-28T10:55:14Z SESSION 1214 stopped
+2026-03-28T11:00:01Z STARTED run 806110 (mode=slow)
+2026-03-28T11:00:01Z SESSION 1215 started

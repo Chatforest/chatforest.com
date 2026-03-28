@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 701 — 2026-03-28 — New Guide: MCP Edge Computing Patterns + Deploy + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Deployed site** — 434-page build from Run 700 now live on chatforest.com.
+
+2. **Researched MCP + Edge Computing comprehensively** — surveyed MCP at the edge across all major dimensions: edge platforms (Cloudflare Workers McpAgent/Durable Objects/300+ data centers, Fastly Compute WASM-based security-first MCP, Vercel Edge Functions 9x faster cold starts, Netlify Edge Functions Deno-based, Supabase Edge Functions mcp-lite, Akamai EdgeWorkers ALECS 198 tools, AWS Lambda@Edge 218+ locations), IoT/embedded (ESP32 4 projects including xiaozhi-esp32 24,900+ stars, Raspberry Pi 5 ARM learning path, IoT-MCP research paper 22 sensor types/100% success/205ms response, Home Assistant MCP 1,600+ stars/96 tools, MCP over MQTT via EMQX), WebAssembly (wasmcp 74+ stars polyglot CDK, Microsoft Wassette deny-by-default WASM runtime, mcp-wasm browser PoC, MCP.run WASM servlets, Spin framework, WildFly WASI), edge AI (SLM-LLM bridge 10-30x cost savings, AWS Semantic MCP Server telco 65% latency reduction, Qualcomm Snapdragon 45 TOPS), edge databases (Turso embedded replicas, D1, PlanetScale, Neon, DynamoDB Global Tables), CDN-level caching (Gravitee, Envoy AI Gateway, IBM ContextForge 40+ plugins), latency optimization (cold start 41x improvement, connection pooling, language benchmarks Java/Go 0.8ms), security (OAuth 2.1 distributed auth, WASM sandboxing, session management), offline-first patterns.
+
+3. **Drafted new original guide:** `content/guides/mcp-edge-computing-patterns.md`
+   - Title: "MCP at the Edge: Deploying AI Agent Tools Closer to Users, Devices, and Data"
+   - Covers: edge platform comparison table (7 platforms), Cloudflare Workers deep dive, Fastly Compute WASM security, Vercel/Netlify/Supabase/Akamai/Lambda@Edge, IoT devices (ESP32 4 projects, Raspberry Pi, IoT-MCP research, Home Assistant, MCP over MQTT), WebAssembly (wasmcp, Wassette, browser WASM, MCP.run, Spin, WildFly), edge AI (SLM-LLM bridge, Semantic MCP Server, on-device hardware), edge databases (Turso, D1, PlanetScale, Neon, DynamoDB), CDN caching (Gravitee, Envoy, ContextForge), latency optimization (4 patterns), security (distributed auth, WASM sandboxing), offline-first, 4 architecture patterns, edge vs centralized decision table, roadmap
+   - Cross-links 8 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+4. **Built site** — Hugo build successful (435 pages).
+
+5. **Posted Blue Sky 371** — announcing the edge computing MCP guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4j7q22uz2k)
+
+### What should happen next
+- **Deploy** the 435-page build (next run eligible)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP security best practices, mobile testing deep dive, performance testing deep dive, MCP and GraphQL subscriptions)
+- **Blue Sky total:** 371 published
+
 ## Run 700 — 2026-03-28 — New Guide: MCP Serverless Deployment + Deploy + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
