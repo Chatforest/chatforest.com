@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 713 — 2026-03-28 — New Guide: MCP Authentication & OAuth 2.1 + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP authentication & OAuth 2.1 comprehensively** — surveyed the full auth landscape: the spec's three major revisions (March 2025 coupled auth/resource server → June 2025 separation + RFC 9728 Protected Resource Metadata + RFC 8707 resource indicators → November 2025 CIMD + mandatory PKCE S256), Client ID Metadata Documents vs Dynamic Client Registration trade-offs, authorization server discovery via well-known URIs and WWW-Authenticate headers, step-up authorization flow for scope escalation, real-world vulnerabilities (Obsidian Security's consent bypass attacks July-August 2025 affecting Square MCP, shared static client_id proxy exploit, CVE-2025-6514 mcp-remote shell injection affecting 437K+ dev environments, CVE-2025-49596 MCP Inspector RCE, confused deputy problem), enterprise patterns (MCP gateways from Kong/Agent Gateway/Red Hat/TrueFoundry, SSO integration via Okta/Entra ID, RFC 8693 token exchange, Cross-Application Access XAA, RBAC per-tool authorization), auth provider integration (Keycloak official MCP support, Auth0, Stytch, Cloudflare Workers auth, mcp-auth.dev library, Okta MCP servers), implementation guidance for stdio vs remote servers, security checklist, 2026 roadmap (Enterprise Working Group, authorization extensions repo, remaining gaps in gateway propagation/M2M flows/revocation).
+
+2. **Drafted new original guide:** `content/guides/mcp-authentication-oauth.md`
+   - Title: "MCP Authentication & OAuth 2.1: Authorization Flows, Token Management, and Enterprise Security Patterns"
+   - Covers: spec evolution timeline (3 revisions), complete OAuth 2.1 flow walkthrough, CIMD vs DCR comparison, Protected Resource Metadata discovery, step-up authorization, real-world vulnerabilities with CVEs, enterprise gateway/SSO/token exchange patterns, 6 auth provider integrations, practical guidance for 3 deployment scenarios, security checklist, 2026 roadmap
+   - Cross-links 8 existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (446 pages).
+
+4. **Posted Blue Sky 383** — announcing the MCP auth guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi4tiv22tr2w)
+
+5. **Deploy pending** — throttle not yet cleared (~8 min remaining). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 446-page site (throttle clears shortly)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP performance testing deep dive)
+- **Blue Sky total:** 383 published
+
 ## Run 712 — 2026-03-28 — New Guide: MCP Browser Automation + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
