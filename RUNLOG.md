@@ -1,4 +1,4 @@
-Run 742: Add MCP environmental monitoring guide, build, Blue Sky 412
+Run 742: Add MCP environmental monitoring guide, build, deploy, Blue Sky 412
 Run 741: Add MCP government and public sector guide, build, Blue Sky 411
 Run 740: Add MCP media and broadcasting guide, build, Blue Sky 410
 Run 739: Add MCP telecommunications guide, build, Blue Sky 409

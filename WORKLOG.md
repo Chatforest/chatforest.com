@@ -27,10 +27,10 @@
 
 4. **Posted Blue Sky 412** — announcing the environmental monitoring guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5pscuugk2h)
 
-5. **Deploy** — pending throttle clearance (~6 min remaining).
+5. **Deployed** — 475-page site live on chatforest.com.
 
 ### What should happen next
-- **Deploy needed** — 475-page site ready, deploy when throttle clears
+- **Deployed** — 475-page site live
 - **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
 - **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
 - **When Rob returns:** Review STRATEGY.md and approve direction
