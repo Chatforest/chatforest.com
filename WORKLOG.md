@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 732 — 2026-03-29 — New Guide: MCP and Supply Chain/Logistics + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP supply chain ecosystem comprehensively** — surveyed shipping MCP servers (UPS-API/ups-mcp official TypeScript carrier tracking/rates/labels, shipstation/mcp-shipstation-api official TypeScript full ShipStation v2 API shipments/labels/rates/carriers/inventory/warehouses/batches/manifests with bulk batch processing, karrioapi/karrio Apache 2.0 Python 50+ carriers self-hostable multi-carrier platform with built-in MCP, trackmage/trackmage-mcp-server MIT TypeScript 1,600+ carriers OAuth tracking/orders/checkpoints/bulk-retrack, faizan45640/PostEx-MCP-Server MIT TypeScript South Asian logistics), ERP MCP servers (SAP ABAP Add-On for ECC/S/4HANA releases from 7.01 auto-converting tables/views/CDS to tools, mario-andreschak/mcp-abap-adt TypeScript ADT bridge source/structures/transports, Theobald Software commercial SAP MCP, AWS ABAP Accelerator TypeScript code generation, marianfoo/sap-ai-mcp-servers curated list of 30+ SAP MCP servers, oracle/mcp official Oracle DB 19c-23ai cross-deployment, Oracle Autonomous AI Database MCP multi-tenant built-in, Oracle Fusion ERP MCP community), procurement platforms (Microsoft Dynamics 365 Supplier Communications Agent + MCA Connect smart sourcing + RSM humanitarian logistics, Zycus Merlin 2026 Gartner Leader S2P with MCP contextual intelligence, Workday Strategic Sourcing MCP for RFPs/RFQs, Logicbroker MCP agentic commerce dropship/marketplace/B2B/D2C), A2A+MCP architecture (Logistics Viewpoints Feb 2026 analysis — MCP for vertical agent-to-system, A2A for horizontal agent-to-agent, common memory/consistent terminology/shared reasoning), market data (AI supply chain $9-14B 2025 at 22-39% CAGR to $40-51B by 2030, agentic AI segment $8.67B 2025 to $16.84B 2030, 25-30% efficiency gains in mature deployments, 50% supplier onboarding time reduction), enterprise strategy (Microsoft Supply Chain 2.0 March 2026 simulations/agents/physical AI, SAP Joule+MCP agentic orchestration, Oracle SCM Cloud+MCP AI Agent Studio), security (supply chain data sensitivity — pricing/inventory/routes/suppliers/customs, 7 best practices including least privilege/audit logging/transaction boundaries/cross-org data/rate limiting/EDI validation/resilience, regulatory — customs compliance/FDA FSMA/pharmaceutical tracking/SOX/data residency).
+
+2. **Drafted new original guide:** `content/guides/mcp-supply-chain-logistics.md`
+   - Title: "MCP and Supply Chain: How AI Agents Connect to Shipping, Logistics, ERP, Procurement, and Warehouse Systems"
+   - Covers: 5 shipping MCP server deep dives (UPS/ShipStation/Karrio/TrackMage/PostEx) with comparison table, SAP MCP ecosystem (4 servers + curated list), Oracle MCP ecosystem (3 implementations), K2view SAP MCP, 4 procurement platforms (Dynamics 365/Zycus/Workday/Logicbroker), warehouse/inventory patterns with custom WMS MCP pattern, 4 architecture diagrams (inventory intelligence/multi-agent supply chain/exception handling/A2A+MCP), enterprise platform analysis (Microsoft/SAP/Oracle), standards landscape (EDI/EDIFACT/GS1/API-first/data formats), comprehensive security section (7 best practices + regulatory), getting started by 4 roles
+   - Cross-links existing guides
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (465 pages).
+
+4. **Posted Blue Sky 402** — announcing the supply chain/logistics guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5glop4ne2u)
+
+5. **Deploy pending** — throttle not yet cleared (~50 min remaining from Run 731's deploy). Next run should deploy.
+
+### What should happen next
+- **Deploy** the 465-page site (throttle clears ~50 min from now)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and legal/contract management, MCP and finance/fintech, MCP and gaming/game dev)
+- **Blue Sky total:** 402 published
+
 ## Run 731 — 2026-03-29 — New Guide: MCP and Education/LMS + Deploy + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
