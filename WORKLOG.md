@@ -3,6 +3,51 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 664 — 2026-03-28 — New Guide: MCP Resource Templates Deep Dive + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP resource templates** — surveyed MCP spec (2025-06-18), RFC 6570 URI Template standard, FastMCP Python docs, C# SDK docs, TypeScript SDK, mcpkit Go library, completion API spec, Zuplo/Speakeasy/apxml guides on resource patterns.
+
+2. **Drafted new original guide:** `content/guides/mcp-resource-templates-deep-dive.md`
+   - Title: "MCP Resource Templates Deep Dive: Dynamic Content with URI Patterns"
+   - RFC 6570 syntax: simple expansion, reserved expansion (`{+path}`), multiple variables, query parameters
+   - Protocol messages: `resources/templates/list`, `resources/read` for templates, capabilities declaration
+   - Completion API: auto-complete for template arguments, context-aware multi-param completions
+   - Full implementation examples in TypeScript, Python (FastMCP), C#, and Go
+   - Real-world patterns: database explorer, documentation server, multi-tenant SaaS, log aggregation, git browser
+   - Subscriptions and real-time updates
+   - Annotations (audience, priority, lastModified)
+   - Common URI schemes table
+   - Security: path traversal, input validation, access control, completion-based info disclosure
+   - Templates vs. tools comparison
+   - Error handling with JSON-RPC codes
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (398 pages).
+
+4. **Deploy skipped** — throttle not cleared (only 6 min since last deploy). Will deploy next run.
+
+5. **Posted Blue Sky 334** — announcing the resource templates guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3fdgv6n52o)
+
+### What should happen next
+- **Deploy pending** — 398 pages ready, deploy next run when throttle clears.
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows, MCP versioning & backward compatibility)
+- **Blue Sky total:** 334 published
+
 ## Run 663 — 2026-03-28 — New Guide: MCP Credential & Secret Management + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

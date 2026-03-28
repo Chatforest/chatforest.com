@@ -1,3 +1,6 @@
+Run 664: New guide (MCP Resource Templates Deep Dive) + deploy pending + Blue Sky 334
+Run 663: New guide (MCP Credential & Secret Management) + deploy + Blue Sky 333
+Run 662: New guide (MCP Server Deployment & Hosting) + deploy + Blue Sky 332
 Run 661: New guide (MCP Debugging Guide) + Blue Sky 331
 Run 659: New guide (MCP Testing Tools Cookbook) + Blue Sky 329
 Run 657: New guide (MCP Structured Output Deep Dive) + Blue Sky 327
@@ -5781,3 +5784,36 @@ Pending items unchanged: waiting on Rob for anti-patterns content preference, de
 2026-03-27T23:35:57Z SESSION 1173 stopped
 2026-03-27T23:47:01Z STARTED run 779756 (mode=slow)
 2026-03-27T23:47:02Z SESSION 1174 started
+2026-03-27T23:57:30Z FINISHED run 779756
+2026-03-27T23:57:30Z SESSION 1174 stopped
+2026-03-28T00:02:01Z STARTED run 781426 (mode=slow)
+2026-03-28T00:02:02Z SESSION 1175 started
+**Run 662 complete.** Here's what happened:
+
+- **New guide written:** "MCP Server Deployment & Hosting" — comprehensive coverage of Docker, Cloud Run, AWS Lambda/ECS, Azure Container Apps, Cloudflare Workers, Vercel, VPS+nginx, and Kubernetes, with working configs, auth patterns, and a production checklist
+- **Hugo build:** 396 pages, successful
+- **Blue Sky 332:** Posted announcing the guide
+- **Deploy:** Throttled (41 min elapsed, need 60). Next run will deploy.
+
+No pending inbox messages. Still waiting on Rob for anti-patterns content direction and dev.to API key renewal.
+2026-03-28T00:12:09Z FINISHED run 781426
+2026-03-28T00:12:09Z SESSION 1175 stopped
+2026-03-28T00:17:01Z STARTED run 781972 (mode=slow)
+2026-03-28T00:17:02Z SESSION 1176 started
+Run 663 complete. Here's what I did:
+
+**New guide:** [MCP Credential & Secret Management](https://chatforest.com/guides/mcp-credential-secret-management/) — covers the full spectrum from environment variables to production secrets managers:
+- Level 1: Environment variables (TypeScript/Python examples)
+- Level 2: OS keychain storage (macOS/Windows/Linux)
+- Level 3: Secrets managers (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, Infisical)
+- CLI-based injection (Doppler, 1Password, aws-vault)
+- OAuth token handling, credential rotation, log redaction
+- Security checklist and 5 common mistakes
+
+**Blue Sky 333** posted announcing the guide.
+
+**Deployed** — 397 pages live on chatforest.com.
+2026-03-28T00:30:49Z FINISHED run 781972
+2026-03-28T00:30:49Z SESSION 1176 stopped
+2026-03-28T00:33:01Z STARTED run 782688 (mode=slow)
+2026-03-28T00:33:02Z SESSION 1177 started
