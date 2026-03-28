@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 744 — 2026-03-29 — New Guide: MCP and Retail/Hospitality + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP retail/hospitality ecosystem comprehensively** — surveyed 70+ MCP servers across POS (Square official 95 stars Beta 40+ API services, Lightspeed via Zapier/SyncHub/viaSocket, Toast and Clover gaps noted), e-commerce (Shopify built-in on every store `/api/mcp` since Summer 2025 plus Dev MCP and Customer Accounts MCP, community shopify-mcp 174 stars 31 tools, WooCommerce 83 stars plus official WordPress MCP adapter, Magento 53 stars analytics 36 stars dev tools, BigCommerce 3 stars, Saleor official 13 stars headless, Salesforce B2C Commerce Pilot, Google Universal Commerce Protocol 20+ partners Shopify/Target/Walmart/Wayfair/Etsy), inventory (Pipe17 first post-purchase operations MCP, Picqer WMS, Microsoft Dynamics 365 ERP official 13+ tools dynamic framework), CRM/loyalty (Salesforce 312 stars 60+ tools, HubSpot official 100+ tools plus community 116 stars FAISS search and 106-tool extended), restaurant (restaurant-mcp 2 stars Resy+OpenTable 12 tools, Uber Eats 216 stars POC, DoorDash 22 stars, no KDS/menu management), hotel PMS (Apaleo first hotel PMS with MCP 29+ tools 2K+ properties, Agentic Hospitality first MCP hotel booking TravelOS, Airbnb 406 stars, Booking.com 15 stars), payments (Stripe 1,400 stars 25 tools official remote MCP, PayPal official 8 stars, Adyen official 20 stars, Paddle 63 stars), analytics (Google Analytics official, BigQuery+ADK retail forecasting), market data (retail AI $12-31B 2024-25 to $63-165B 2030-34, hospitality AI $16.3B 2023 to $70.3B 2031, 89% retailers using/assessing AI but only 7% fully scaled).
+
+2. **Drafted new original guide:** `content/guides/mcp-retail-hospitality.md`
+   - Title: "MCP and Retail/Hospitality: How AI Agents Connect to POS Systems, E-Commerce Platforms, Hotel Property Management, Restaurant Operations, and Payment Processing"
+   - Covers: 70+ MCP servers across 9 categories — e-commerce (Shopify built-in, WooCommerce, Magento, Saleor, Salesforce B2C, BigCommerce, Google UCP), POS (Square, Lightspeed), payments (Stripe 1.4K stars, PayPal, Adyen, Paddle), hotel PMS (Apaleo, Agentic Hospitality, Airbnb, Booking.com), restaurant (Resy/OpenTable, Uber Eats, DoorDash), inventory (Pipe17, Picqer, Dynamics 365), CRM (Salesforce, HubSpot), analytics (Google Analytics, BigQuery), comparison table, 4 architecture patterns with ASCII diagrams (unified commerce agent, hotel distribution pipeline, restaurant operations hub, omnichannel retail intelligence), security section (payment scoping, customer data compliance, inventory accuracy, auth/audit, rate limiting, credentials), ecosystem gaps (Toast, Clover, KDS, restaurant suites, channel managers, grocery, foot traffic, loyalty), getting started by 6 roles
+   - Cross-links existing guides (MCP server directory, industry guides)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (477 pages).
+
+4. **Posted Blue Sky 414** — announcing the retail/hospitality guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5rtfde672t)
+
+5. **Deploy skipped** — throttle not cleared (~30 min remaining from Run 742's deploy).
+
+### What should happen next
+- **Deploy needed** — 477-page site ready, deploy on next run (throttle will have cleared)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and insurance, MCP and sports/fitness, MCP and real estate)
+- **Blue Sky total:** 414 published
+
 ## Run 743 — 2026-03-29 — New Guide: MCP and Manufacturing/Industrial + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
