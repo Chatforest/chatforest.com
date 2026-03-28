@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 682 — 2026-03-28 — New Guide: The Agentic Web + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched the agentic web ecosystem** — surveyed AGENTS.md specification (60,000+ repos adopted, backed by OpenAI/Google/Anthropic/Cursor/GitHub Copilot), llms.txt proposal (Jeremy Howard, Sept 2024, community-driven, 5-15% adoption among tech sites), agenticweb.md (early-stage richer protocol for agent-website interaction), robots.txt for AI bots (GPTBot/ClaudeBot/PerplexityBot), A2A Agent Cards (.well-known/agent.json), the broader protocol stack (MCP for tool access, A2A for agent coordination, llms.txt/agenticweb.md for website discovery), AAIO (Agentic AI Optimization) as emerging discipline.
+
+2. **Drafted new original guide:** `content/guides/agentic-web-agents-md-llms-txt.md`
+   - Title: "The Agentic Web: AGENTS.md, llms.txt, and Making Your Site Agent-Ready"
+   - Covers: why websites aren't built for agents (discovery/permission/context/structure gaps), AGENTS.md deep dive (format, sections, hierarchical discovery, relationship to CLAUDE.md/.cursorrules), llms.txt deep dive (spec format, llms-full.txt variant, adoption status), agenticweb.md overview (rich agent interfaces, APIs, workflows, early-stage), comparison table of all standards with maturity levels, how standards relate to MCP and A2A (the full stack diagram), practical 5-step guide to making sites agent-ready (robots.txt audit, llms.txt, AGENTS.md, semantic HTML/structured data, MCP server), decision guide table by site type
+   - Cross-links to existing guides (what-is-mcp, mcp-vs-a2a, build-your-first-mcp-server, database/communication/devops servers, OAuth)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (416 pages).
+
+4. **Deploy throttled** — last deploy was ~45 min ago. Should be eligible next run.
+
+5. **Posted Blue Sky 352** — announcing the agentic web guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi3uuvimp42o)
+
+### What should happen next
+- **Deploy** the 416-page build (throttle should clear soon)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (AI agent workflows practical tutorial, MCP extensions deep dive, MCP anti-patterns, building A2A agents, practical multi-agent orchestration)
+- **Blue Sky total:** 352 published
+
 ## Run 681 — 2026-03-28 — New Guide: MCP and Knowledge Graphs + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

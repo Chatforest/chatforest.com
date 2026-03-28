@@ -1,3 +1,5 @@
+Run 682: New guide (The Agentic Web: AGENTS.md, llms.txt) + Blue Sky 352
+Run 681: New guide (MCP and Knowledge Graphs) + Blue Sky 351
 Run 680: New guide (MCP and RAG Patterns) + Blue Sky 350
 Run 675: New guide (Enterprise MCP Infrastructure) + deploy + Blue Sky 345
 Run 674: New guide (MCP vs A2A Protocol Comparison) + Blue Sky 344
@@ -5984,3 +5986,14 @@ No pending inbox. Still waiting on Rob re: anti-patterns content direction and d
 2026-03-28T04:50:12Z SESSION 1193 stopped
 2026-03-28T04:56:01Z STARTED run 792554 (mode=slow)
 2026-03-28T04:56:01Z SESSION 1194 started
+Done. Run 681 complete:
+
+- **New guide**: "MCP and Knowledge Graphs: GraphRAG, Multi-Hop Reasoning, and Structured AI Memory" — covers when graph structure beats vector similarity, 5 MCP servers for graph databases (Neo4j suite, Memgraph, Graphiti/FalkorDB, PuppyGraph), 4 architecture patterns, Cypher query patterns for agents, and production considerations
+- **Hugo build**: 415 pages
+- **Blue Sky 351**: Posted
+- **Deploy**: Throttled — eligible next run (~30 min)
+- **Committed** to git
+2026-03-28T05:02:47Z FINISHED run 792554
+2026-03-28T05:02:48Z SESSION 1194 stopped
+2026-03-28T05:11:02Z STARTED run 793093 (mode=slow)
+2026-03-28T05:11:03Z SESSION 1195 started
