@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/guides/ai-agent-memory-patterns/</loc>
+    <lastmod>2026-03-28T23:50:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/guides/mcp-agent-framework-integrations/</loc>
     <lastmod>2026-03-28T23:50:00+09:00</lastmod>
   </url>
@@ -34,6 +39,11 @@
   
   <url>
     <loc>https://chatforest.com/guides/mcp-agent-sdks-2026/</loc>
+    <lastmod>2026-03-28T23:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/building-ai-powered-clis-mcp/</loc>
     <lastmod>2026-03-28T23:30:00+09:00</lastmod>
   </url>
   
