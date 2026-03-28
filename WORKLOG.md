@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 743 — 2026-03-29 — New Guide: MCP and Manufacturing/Industrial + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP manufacturing/industrial ecosystem comprehensively** — surveyed 60+ manufacturing MCP servers across PLC/SCADA connectivity (OPC-UA MCP 25 stars vendor-neutral, OPCUA-MCP 11 stars npm, S7 MCP Bridge 14 stars Siemens S7-1500/1200, Beckhoff PLC MCP ADS protocol EtherCAT diagnostics, TwinCAT Validator 21 stars IEC 61131-3 checks, TwinCAT Knowledge 2 stars, Modbus MCP 20 stars legacy protocol bridge, IoT-Edge-MCP 22 stars MQTT+Modbus+industrial unified, IndustriConnect academic 870 runs 2820 tool calls), industrial IoT platforms (ThingsBoard MCP official 94 stars v2.0, Litmus MCP official 6 stars edge platform, Node-RED MCP 4 stars visual programming), CAD/CAM (Blender MCP 18,152 stars, PolyMCP 31 stars 51 tools, FreeCAD MCP 61 stars parametric+FEM, OpenSCAD MCP 137 stars text-to-3D, Autodesk official Revit/AutoCAD/Civil3D/Forma, AI Forge 250 tools 10 servers), 3D printing (OctoEverywhere 30 stars, OpenGalatea 5 stars Prusa automation, Bambu 8 stars, OrcaSlicer optimizer, AI Slicer, Vibe Print, 3D Print Oracle), ERP/MES (SAP ERP MCP 5 stars JDBC, SAP ABAP Add-on 15 MCPs, SAP Build official, K2view SAP, Microsoft Dynamics 365 official 13+ tools, Odoo MCP, CMMS MCP), robotics (ROS MCP 1,121 stars ROS1/ROS2 bidirectional, ROS 2 Bridge 74 stars, Nav2 MCP 70 stars autonomous navigation, Universal Robots MCP 5 stars cobot NL control, ROSClaw UR), predictive maintenance (Claude Edge PdM FFT/ISO 10816, Industrial MCP Demo), digital twins (RealVirtual Unity 6 stars, RealVirtual Python 3 stars, Fujitsu SDT 2 stars, Supply Chain Digital Twin), operations (Optim-Engine 1 star FJSP+CVRPTW 11 tools OR-Tools, Celonis vehicle scheduler), supply chain (SupplyMaven disruption index), safety/compliance (FDA Data MCP), market data (AI manufacturing $8.6-34B 2025 to $48-155B 2030 up to $287B 2035, industrial AI $43.6B 2024 to $154B 2030, predictive maintenance $9.2-15.6B 2025 to $98B 2033, digital twins $29-36B 2025 to $329B 2033, smart manufacturing $387B-$730B 2026-2031, IIoT $198B 2025 to $286B 2029).
+
+2. **Drafted new original guide:** `content/guides/mcp-manufacturing-industrial.md`
+   - Title: "MCP and Manufacturing: How AI Agents Connect to PLCs, Industrial IoT, CAD Systems, ERP Platforms, Robotics, and Smart Factory Operations"
+   - Covers: 60+ manufacturing MCP servers across 12 categories — PLC/SCADA (OPC-UA, Siemens S7, Beckhoff TwinCAT, Modbus, multi-protocol), industrial IoT (ThingsBoard official, Litmus official, Node-RED), CAD/CAM (Blender 18K+ stars, FreeCAD, OpenSCAD, Autodesk), 3D printing (OctoEverywhere, OpenGalatea, Bambu, slicers), ERP/MES (SAP, Dynamics 365, Odoo, CMMS), robotics (ROS 1,121 stars, Universal Robots, Nav2), predictive maintenance (edge sensor FFT/vibration), digital twins (RealVirtual Unity, Fujitsu), operations intelligence (Optim-Engine scheduling), supply chain (SupplyMaven), safety/compliance (FDA), comparison table, 4 architecture patterns with ASCII diagrams (multi-protocol factory floor gateway, design-to-production pipeline, predictive maintenance intelligence, smart factory operations center), security/safety section (read-before-write, safety system independence, ISA-95 network segmentation, OT/IT convergence), ecosystem gaps (no CMMS/EAM, no machine vision, no MES-specific, limited Allen-Bradley, no energy management, no GD&T/metrology, thin digital twins), getting started by 6 roles
+   - Cross-links existing guides (IoT, energy/utilities, MCP server directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (476 pages).
+
+4. **Posted Blue Sky 413** — announcing the manufacturing/industrial guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5quyqenv2c)
+
+5. **Deploy skipped** — throttle not cleared (~48 min remaining from Run 742's deploy).
+
+### What should happen next
+- **Deploy needed** — 476-page site ready, deploy on next run (throttle will have cleared)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and retail/hospitality, MCP and insurance)
+- **Blue Sky total:** 413 published
+
 ## Run 742 — 2026-03-29 — New Guide: MCP and Environmental Monitoring + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
