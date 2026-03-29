@@ -69,19 +69,37 @@ Provides access to 300+ LLMs through OpenRouter's unified API, with native visio
 
 A multi-provider LLM gateway that supports OpenAI, Anthropic, Google, Cohere, and dozens of other providers through a unified interface. Features automatic model selection, semantic caching, and cost optimization — practical for production deployments where NLP tasks need to be distributed across providers based on cost, latency, or capability.
 
+### just-prompt
+
+**Repository:** disler/just-prompt (~720 stars) | **Type:** Community
+
+A unified interface to multiple LLM providers — OpenAI, Anthropic, Gemini, Groq, DeepSeek, and Ollama — through a single MCP server. Rather than configuring separate servers for each provider, just-prompt handles provider routing and model selection, making it practical for NLP workflows that need to compare outputs or route tasks to the cheapest capable model.
+
+### PAL MCP Server
+
+**Repository:** BeehiveInnovations/pal-mcp-server (~11,333 stars) | **Type:** Community
+
+One of the highest-starred MCP servers overall. Provides multi-model access to Gemini, OpenAI, OpenRouter, Azure, Grok, and Ollama through a single interface. The star count reflects genuine production adoption for workflows that need flexible model selection.
+
 ### Additional LLM Access Servers
 
 - **mcp-server-openai** (thadius83) — Direct OpenAI model access with o3-mini support
+- **Ollama MCP** (rawveg/ollama-mcp, ~30 stars) — Exposes the complete Ollama SDK as MCP tools for local LLM inference
 - **GemForge-MCP** (PV-Bhat, ~4 stars) — Google Gemini integration for codebase analysis, live search, and document processing
-- **claude-code-grok-mcp** (wynandw87, ~1 star) — xAI Grok access for text generation, brainstorming, and web search
 
 ## Speech Processing — Text-to-Speech and Speech-to-Text
 
 Speech processing MCP servers bridge the gap between text-based AI agents and audio, enabling voice interactions, transcription workflows, and audio content creation.
 
+### MiniMax Official MCP Server
+
+**Repository:** MiniMax-AI/MiniMax-MCP (~1,360 stars) | **Type:** Official
+
+MiniMax provides an official MCP server for text-to-speech, image generation, and video generation. The high star count and official backing make it a strong alternative to ElevenLabs for TTS workflows, particularly for teams already using MiniMax's AI platform.
+
 ### ElevenLabs Official MCP Server
 
-**Repository:** elevenlabs/elevenlabs-mcp | **Type:** Official
+**Repository:** elevenlabs/elevenlabs-mcp (~1,279 stars) | **Type:** Official
 
 The most comprehensive speech MCP server available. ElevenLabs provides production-grade text-to-speech, transcription, and voice cloning through a local, open-source MCP server.
 
@@ -129,6 +147,12 @@ Core capabilities:
 - **Formality control** — adjust translation tone
 
 DeepL published detailed documentation on building and using their MCP server, making it one of the best-documented official MCP integrations. The server is straightforward to install and configure with any MCP-compatible client.
+
+### Lara Translate Official MCP Server
+
+**Repository:** translated/lara-mcp (~79 stars) | **Type:** Official
+
+Lara Translate provides an official MCP server with context-aware translation and custom instruction support. Key differentiator: the server supports custom translation instructions, letting agents specify terminology, tone, and domain conventions that the translation engine should follow. Supports language detection and 30+ language pairs.
 
 ### i18n and Localization Servers
 
@@ -205,6 +229,22 @@ Dedicated sentiment analysis MCP servers provide focused emotion and opinion det
 
 **S&P Global ProntoNLP** has added MCP server support for its financial NLP platform. This represents the first major enterprise NLP platform with native MCP integration, providing specialized capabilities for financial text analysis — earnings call analysis, SEC filing extraction, news sentiment, and market-moving event detection. The financial NLP market is substantial, and S&P Global's adoption signals that MCP is gaining traction in enterprise NLP deployments.
 
+## Document Conversion
+
+Before NLP can happen, documents need to become text. These servers handle the conversion pipeline.
+
+### MarkItDown (Microsoft)
+
+**Repository:** microsoft/markitdown (~40,000 stars) | **Type:** Official (Microsoft)
+
+Microsoft's Python utility for converting files to Markdown, with an MCP server mode. Handles PDFs, Office documents, images, and more. At 40,000+ stars, it's the most popular document processing tool in the MCP ecosystem by far. The Markdown output is clean and structured, making it ideal as a preprocessing step for downstream NLP tasks.
+
+### Markdownify MCP
+
+**Repository:** zcaceres/markdownify-mcp (~2,507 stars) | **Type:** Community
+
+Converts PDFs, images, audio, web pages, and YouTube transcripts to Markdown. The YouTube transcript extraction is particularly useful for NLP workflows that need to analyze video content — extracting the text from a video is the first step toward sentiment analysis, topic extraction, or summarization.
+
 ## OCR and Document Parsing
 
 Optical character recognition and document parsing MCP servers extract text from images, scanned documents, and PDFs — turning unstructured visual content into text that AI agents can process.
@@ -233,11 +273,23 @@ Additional capabilities include WIA scanner control (direct hardware access), mu
 
 This category represents the infrastructure for turning unstructured text into queryable knowledge — arguably the most architecturally significant NLP application of MCP.
 
+### Graphiti
+
+**Repository:** getzep/graphiti (~24,329 stars) | **Type:** Community/Commercial
+
+The most popular knowledge graph MCP server by a wide margin. Graphiti builds real-time temporal knowledge graphs for AI agents, with fact tracking that includes provenance and timestamps. The temporal dimension is critical for NLP applications — knowing not just what was said, but when, and whether it's still current. Used in agent pipelines for persistent memory that maintains a structured, queryable view of extracted knowledge.
+
 ### Anthropic Knowledge Graph Memory Server
 
 **Repository:** modelcontextprotocol/servers (official reference implementation) | **Type:** Official
 
 Anthropic's own knowledge graph memory server, part of the official MCP reference implementations. Provides persistent entity and relation storage that AI agents can build up over conversations. This is foundational infrastructure for agents that need to accumulate and query structured knowledge.
+
+### MCP Memory Service
+
+**Repository:** doobidoo/mcp-memory-service (~1,572 stars) | **Type:** Community
+
+Persistent memory for agent pipelines (LangGraph, CrewAI, AutoGen) using knowledge graphs with autonomous consolidation. Designed for multi-agent architectures where multiple agents need to share and build on extracted knowledge.
 
 ### knowledge-mcp (LightRAG)
 
@@ -263,6 +315,12 @@ Neo4j provides GraphRAG retrievers exposed as MCP tools, including the VectorCyp
 
 Embedding servers generate vector representations of text for semantic search, similarity comparison, and clustering — core NLP operations that enable many downstream applications.
 
+### Qdrant Official MCP Server
+
+**Repository:** qdrant/mcp-server-qdrant (~1,307 stars) | **Type:** Official
+
+The official Qdrant vector database MCP server provides semantic memory and code search using sentence-transformers embeddings. This is production-grade infrastructure — Qdrant is a widely-deployed vector database, and the official MCP server means agents can build, query, and manage vector search indices directly. Essential for any RAG or semantic search pipeline.
+
 ### MegaMemory
 
 **Repository:** 0xK3vin/MegaMemory (~129 stars) | **Type:** Community
@@ -284,6 +342,28 @@ Vector embedding-based code semantic search with multi-model integration. While 
 - **qdrant-mcp-server** (mhalder, ~26 stars) — Qdrant vector database with OpenAI embeddings for semantic search.
 - **rust-local-rag** (ksaritek, ~29 stars) — High-performance local RAG in Rust with PDF document support. Privacy-focused (no data leaves the machine).
 - **mychatarchive** (1ch1n, ~25 stars) — Import and semantically search ChatGPT, Claude, and Grok conversation exports.
+
+## PII Detection and Text Anonymization
+
+A small but growing category addressing privacy requirements in NLP pipelines.
+
+### mcp-server-conceal
+
+**Repository:** gbrigandi/mcp-server-conceal (~12 stars) | **Type:** Community
+
+A PII pseudo-anonymization proxy that preserves semantic relationships while redacting sensitive information. Rather than simply removing PII, it replaces identifiers with consistent pseudonyms, maintaining the text's analytical value while protecting privacy. This is exactly what production NLP pipelines need for processing customer data under GDPR and CCPA.
+
+### Tonic Textual MCP
+
+**Type:** Commercial (tonic.ai)
+
+Enterprise PII detection and transformation across text, files, and audio in 50+ languages. Tonic is a well-established data privacy company, and their MCP server brings production-grade anonymization to agent workflows.
+
+### MCP PII Guard AU
+
+**Repository:** mattwagstaff/mcp-pii-guard-au | **Type:** Community
+
+Specialized Australian PII detection — Tax File Numbers (TFN), Medicare numbers, ABN — with checksum validation. An example of jurisdiction-specific PII detection that general-purpose tools often miss.
 
 ## Content Moderation
 
@@ -511,7 +591,7 @@ This pattern automates literature review. The PubMed MCP searches biomedical dat
 
 ## Ecosystem Gaps
 
-Despite 80+ servers, significant gaps remain in the NLP MCP ecosystem:
+Despite 100+ servers, significant gaps remain in the NLP MCP ecosystem:
 
 **No dedicated NLP library servers.** There are no MCP servers for spaCy, NLTK, Stanford CoreNLP, or Stanza — the foundational NLP libraries that most text processing pipelines depend on. A spaCy MCP server providing tokenization, NER, dependency parsing, and text classification through trained pipelines would be immediately valuable.
 
@@ -527,7 +607,7 @@ Despite 80+ servers, significant gaps remain in the NLP MCP ecosystem:
 
 **No dedicated question answering.** Extractive or retrieval-augmented question answering over specific document sets — a core NLP task — lacks a dedicated MCP server.
 
-**No text anonymization or PII detection.** Despite growing privacy regulations (GDPR, CCPA), there's no MCP server focused on detecting and redacting personally identifiable information in text.
+**Limited text anonymization and PII detection.** Despite growing privacy regulations (GDPR, CCPA), only a handful of PII-focused MCP servers exist (mcp-server-conceal, Tonic Textual, and one Australia-specific server). A comprehensive, open-source, multilingual PII detection server with configurable rules is still missing.
 
 **No Cohere Rerank or cross-encoder servers.** Reranking — re-scoring search results using cross-encoder models — is critical for production RAG systems. No dedicated MCP server exists for this.
 
