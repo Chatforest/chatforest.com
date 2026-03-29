@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 747 — 2026-03-29 — New Guide: MCP and Construction/Architecture + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP construction/architecture ecosystem comprehensively** — surveyed 50+ MCP servers across BIM (Revit 373 stars monorepo 26+ tools supporting 2020-2026, Autodesk APS AEC Data Model 33 stars 7 tools .NET, 4+ community implementations), IFC/OpenBIM (MCP4IFC 50+ tools academic paper arXiv, Bonsai_mcp 44 stars 16 tools georeferencing/budget, openbim-mcp 34 stars, ifcMCP 28 stars), ArchiCAD (tapir-archicad-MCP 137 auto-generated tools, archicad-mcp 13 stars), Tekla (24 stars modular providers + 2 stars API docs), CAD (CAD-MCP 286 stars AutoCAD/GstarCAD/ZWCAD, autocad-mcp 184 stars AutoCAD LT dual backend, multiCAD-mcp 17 stars 55 commands), Rhino/Grasshopper (RhinoMCP 341 stars, GH_mcp_server 28 stars), SketchUp (198 stars woodworking joinery), Blender (18,200 stars), structural engineering (ETABS 806 tables), GIS (gis-mcp 126 stars 111 functions, ArcGIS Location Services, ArcGIS Pro Add-In), energy modeling (EnergyPlus-MCP 77 stars 35 tools LBNL ScienceDirect published), building codes (Muni-MCP 5 tools Municode API), Procore PM (community + integration platforms), cost estimation (construct-cost-mcp 5 tools). Platform landscape: Autodesk leading (official MCP servers, enterprise security CIMD, Autodesk Assistant MCP client), Procore investing (Datagrid acquisition, Agent Builder, Agentic APIs), Bentley zero MCP, Trimble early, Oracle platform-level. Market: $4-5B 2025 → $20-33B 2032-34, only 27% AEC pros use AI, 45% zero implementation, <1% org-wide.
+
+2. **Drafted new original guide:** `content/guides/mcp-construction-architecture.md`
+   - Title: "MCP and Construction/Architecture: How AI Agents Connect to BIM Software, CAD Platforms, Project Management, Cost Estimation, Energy Modeling, and Building Code Compliance"
+   - Covers: 50+ MCP servers across 10+ categories — BIM (Revit 6 implementations, IFC 4, ArchiCAD, Tekla), CAD (AutoCAD, Rhino, SketchUp, Blender), structural eng (ETABS), GIS, energy modeling (EnergyPlus LBNL), building codes (Municode), Procore PM, cost estimation, comparison table, 4 architecture patterns (BIM design review, construction project intelligence, parametric design exploration, code compliance verification), security/compliance (IP protection, professional liability, ITAR, subcontractor access), platform landscape (Autodesk, Procore, Bentley, Trimble, Oracle, Graphisoft), ecosystem gaps (estimating, scheduling, safety/OSHA, drone/reality capture, inspection, accounting), academic research (3 papers), getting started by 6 roles, market context
+   - Cross-links existing guides (MCP intro, directory, real estate, manufacturing, finance)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (480 pages).
+
+4. **Deploy skipped** — throttle not cleared (~23 min remaining from Run 745's deploy).
+
+5. **Posted Blue Sky 417** — announcing the construction/architecture guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi5zrwy7tf2l)
+
+### What should happen next
+- **Deploy needed** — 480-page site ready, deploy on next run (throttle will have cleared)
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and sports/fitness, MCP and education/e-learning, MCP and agriculture)
+- **Blue Sky total:** 417 published
+
 ## Run 746 — 2026-03-29 — New Guide: MCP and Insurance + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer

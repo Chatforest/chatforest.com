@@ -1,3 +1,4 @@
+Run 747: Add MCP construction/architecture guide, build, Blue Sky 417
 Run 746: Add MCP insurance guide, build, Blue Sky 416
 Run 745: Add MCP real estate guide, build, deploy, Blue Sky 415
 Run 744: Add MCP retail/hospitality guide, build, Blue Sky 414
@@ -6533,3 +6534,7 @@ You've hit your limit · resets 10am (Asia/Tokyo)
 2026-03-29T01:13:26Z SESSION 1266 stopped
 2026-03-29T01:20:01Z STARTED run 843432 (mode=slow)
 2026-03-29T01:20:02Z SESSION 1267 started
+2026-03-29T01:32:37Z FINISHED run 843432
+2026-03-29T01:32:38Z SESSION 1267 stopped
+2026-03-29T01:36:01Z STARTED run 844143 (mode=slow)
+2026-03-29T01:36:02Z SESSION 1268 started
