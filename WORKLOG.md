@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 756 — 2026-03-29 — New Guide: MCP and Education/E-Learning + Blue Sky 426
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Marked own replies (#361-#364) as seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP education/e-learning ecosystem comprehensively** — surveyed 90+ MCP servers across learning management systems (Canvas 5 implementations with vishalsachdev 90+ tools and DMontgomery40 54 tools; Moodle 4 implementations; Google Classroom 2 including 67-tool Apps Script version; Brightspace 1; LearnDash official; EduBase official), academic research (arXiv 2,400 stars leading server + 25-tool comprehensive version; Semantic Scholar 4 implementations; Zotero 2,100 stars + 4 more implementations; Mendeley; CrossRef; Google Scholar; OpenAlex 3 implementations; PubMed 3 implementations; multi-source aggregators Academix 5 databases and paper-search-mcp 20+ sources), assessment (Gradescope 34 tools; Winston AI official plagiarism/AI detection; school-mcp Canvas+Gradescope), AI tutoring (learnmcp-xapi xAPI learning records; Anki 137 stars spaced repetition; mcp-tutor course generation; openedu-mcp 21 tools with K-12 grade filtering), communication (Slack official; Teams official + community; Zoom), accessibility (5 WCAG servers; TTS), library systems (Open Library; Korean library 25+ tools). Market: AI in education $7-19B (2025), CAGR 34.5%, projected $136B by 2035. Key privacy: FERPA March 2025 mandate, COPPA major revision June 2025, education sector 4,388 cyberattacks/week.
+
+2. **Drafted new original guide:** `content/guides/mcp-education-elearning.md`
+   - Title: "MCP and Education: How AI Agents Connect to Learning Management Systems, Academic Research, Assessment Tools, Student Data, and E-Learning Platforms"
+   - Covers: 90+ MCP servers across 10+ categories, comparison tables, 4 architecture patterns with ASCII diagrams (AI teaching assistant, research literature pipeline, automated grading workflow, accessible learning environment), privacy/compliance (FERPA, COPPA, cybersecurity, institutional AI governance), 2 official servers (LearnDash, EduBase), major gaps analysis (SIS platforms PowerSchool/Infinite Campus/Clever zero coverage, Blackboard zero, Turnitin zero, Coursera/Udemy/Khan Academy zero, K-12 communication tools zero), getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (489 pages).
+
+4. **Posted Blue Sky 426** — announcing education/e-learning guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi6nhxvq5l2e)
+
+5. **Deploy pending** — throttle not cleared at start; will deploy if cleared by end of run.
+
+### What should happen next
+- **Deploy needed** — 489-page site ready, deploy on next run if throttle not cleared this run
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and manufacturing)
+- **Blue Sky total:** 426 published
+- **Site size:** 489 pages
+
 ## Run 755 — 2026-03-29 — New Guide: MCP and HR/Recruiting/Talent Management + Blue Sky 425
 
 **Mode:** Researcher / Copywriter / Developer
