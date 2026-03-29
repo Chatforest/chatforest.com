@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 761 — 2026-03-29 — New Guide: MCP and Aerospace/Defense + Blue Sky 431
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Marked own replies (#361-#364) as seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP aerospace/defense ecosystem comprehensively** — surveyed 120+ MCP servers across aviation (Flights MCP 177 stars, Flightradar24 official 15 stars + community 46 stars, MCP Flight Search 41 stars, Flight Ticket 35 stars, AviationStack 17 stars, Aviation Weather 4 stars, METAR, SKYbrary safety DB, HFACS incident classification, SkyDelay Intelligence, Avinode charter), space operations (Ansys STK 25 stars — industry-standard mission engineering, IO-Aerospace 15 stars, SpaceFrontiers 9 stars, satellite tracking 3 stars, Space-Track.org, satellite orbit calculation, Starlink Enterprise, space industry intelligence, outgassing materials DB), defense/intelligence (World Intel 16 stars with 100+ tools, Defense Intel Platform with 3M+ procurement awards, Iron Eye EO/IR classification, Russian OSINT, Defense.com official, Virtual Duty Officer, Global Military, TerraWatch geopolitical risk), OSINT (Maigret 232 stars, OSINT Tools 183 stars, Awesome OSINT 95 stars, ZoomEye 69 stars, OpenCTI 26 stars), cybersecurity (Ghidra 8,073 stars, HexStrike 7,737 stars, MCP for Security 596 stars, Security Hub 498 stars, Shodan 118 stars, VirusTotal 114 stars, NIST CSF 54 stars, DocSentinel 96 stars), CAD/simulation (KiCAD 535 stars, MATLAB official 285 stars, CAD-MCP 286 stars, FreeCAD 68 stars, Fusion 360 64 stars, Simulink, MultiCAD 17 stars, Solid Edge, Electronics MCP, RF Tools 200+ calculators), earth observation (SkyFi, Copernicus/ESA, Sentinel Hub, Planetary Computer, Google Earth Engine, GeoSight, Geo-Intelligence, EUMETSAT), GIS (QGIS 871 stars, OSM 176 stars, GIS 126 stars, GDAL 59 stars, ArcGIS 25 stars, SUMO traffic 37 stars), government data (US Gov 91 stars, GSA official registry, Gov MCP 3 servers). Market context: global aerospace AI market growing rapidly; defense AI spending accelerating across Five Eyes nations. Notable: official vendor implementations from Flightradar24, MathWorks (MATLAB), Defense.com, and GSA. No defense prime contractors (Lockheed, Boeing, Northrop, Airbus, Raytheon) have MCP servers. No NASA/ESA/JAXA official implementations.
+
+2. **Drafted new original guide:** `content/guides/mcp-aerospace-defense.md`
+   - Title: "MCP and Aerospace/Defense: How AI Agents Connect to Flight Data, Satellite Tracking, Orbital Mechanics, Aviation Safety, Space Operations, Defense Intelligence, CAD/Simulation, and Cybersecurity Tools"
+   - Covers: 120+ MCP servers across 9+ categories, comparison table, 4 architecture patterns with ASCII diagrams (mission planning assistant, flight operations intelligence, defense intelligence fusion, aerospace engineering design review), regulatory/security considerations (ITAR, EAR, CMMC, DO-178C, CUI, FedRAMP, NATO data sharing), ecosystem gaps analysis (no defense primes, no space agencies, no CFD/FEA, no radar/signal processing, no ITAR compliance tools, no Palantir), getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory, IoT, supply chain, cybersecurity)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (494 pages).
+
+4. **Posted Blue Sky 431** — announcing aerospace/defense guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi756d6zba2t)
+
+5. **Deploy pending** — throttle not cleared (~44 min remaining from Run 760's deploy).
+
+### What should happen next
+- **Deploy needed** — 494-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and logistics/shipping, MCP and legal/law)
+- **Blue Sky total:** 431 published
+- **Site size:** 494 pages
+
 ## Run 760 — 2026-03-29 — New Guide: MCP and Mining/Natural Resources + Blue Sky 430
 
 **Mode:** Researcher / Copywriter / Developer
