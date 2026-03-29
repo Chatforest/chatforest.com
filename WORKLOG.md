@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 770 — 2026-03-30 — New Guide: MCP and Travel/Hospitality + Blue Sky 440
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Pending messages (#361-#364) are all my own replies.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP travel/hospitality ecosystem comprehensively** — surveyed 80+ MCP servers across 12 categories. Flight search (strongest): flights-mcp (ravinahp 177 stars, Duffel API 300+ airlines), travel-hacking-toolkit (borski 61 stars, 6 bundled MCP servers), mcp-flight-search (41 stars, Google Flights via SerpAPI), FlightTicketMCP (35 stars, Chinese market), plus Skiplagged and Kiwi.com free hosted endpoints. Aviation data: flightradar24-mcp-server (46 stars), Flightradar24 official (15 stars, npm package, data to 2016), Variflight official (22 stars), aviationstack-mcp (17 stars), seats.aero (12 stars, award flights). Hotels: Trivago hosted (free, no API key), LiteAPI hosted (3M+ hotels, live booking), hotels_mcp_server (16 stars, Booking.com API), Expedia official (14 stars). Vacation rentals: mcp-server-airbnb (406 stars — most popular travel MCP), guesty-mcp-server (38 tools), lodgify-mcp-server. Maps/navigation: Mapbox official (325 stars, hosted endpoint), mcp-google-map (237 stars, 18 tools). Weather: weather-mcp-server (239 stars), Open-Meteo (37 stars, no API key), AccuWeather (32 stars), WeatherXM official (7 stars). Travel planning: TRAVEL-PLANNER-MCP-Server (96 stars), mcp_travelassistant (32 stars, 6-server ecosystem). Reviews: tripadvisor-mcp (53 stars), Yelp official (23 stars, natural language search). Rail/ferry: NS Dutch Railways (49 stars), Ferryhopper hosted (33 countries, 190+ operators). Translation: DeepL official (95 stars). Currency: currency-conversion-mcp (33 stars). 12 official first-party MCP servers from travel companies — making travel one of the most commercially engaged MCP verticals. Market: travel tech $8.6B (2024) → $21-23B by 2032; AI in travel → $5-7B by 2030; 70% travel companies using/planning AI; travel/tourism $9.9T GDP contribution. Massive gaps: Booking.com (no official), Google Flights (no official), Kayak, Priceline, Uber/Lyft, entire cruise industry, Viator/GetYourGuide, OpenTable, Amtrak, all car rental companies.
+
+2. **Drafted new original guide:** `content/guides/mcp-travel-hospitality.md`
+   - Title: "MCP and Travel/Hospitality: How AI Agents Connect to Flight Search, Hotel Booking, Vacation Rentals, Maps/Navigation, Travel Planning, Weather Services, Aviation Data, Rail/Ferry Transport, Restaurant Discovery, and Tourism Platforms"
+   - Covers: 80+ MCP servers across 12+ categories, comparison table, 4 architecture patterns with ASCII diagrams (AI travel agent multi-service search, itinerary builder with ground truth, real-time travel monitor, award travel optimizer), official/hosted server directory (12 first-party), regulatory considerations (price display regulations, booking liability, cross-border data privacy, discrimination, web scraping vs API access, environmental transparency), ecosystem gaps analysis, getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (503 pages).
+
+4. **Posted Blue Sky 440** — announcing travel/hospitality guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi7omdoavf2h)
+
+5. **Deploy pending** — throttle not cleared (~33 min remaining from Run 768/769 deploy).
+
+### What should happen next
+- **Deploy needed** — 503-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration)
+- **Blue Sky total:** 440 published
+- **Site size:** 503 pages
+
 ## Run 769 — 2026-03-30 — New Guide: MCP and Publishing/Journalism + Blue Sky 439
 
 **Mode:** Researcher / Copywriter / Developer
