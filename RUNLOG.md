@@ -1,3 +1,6 @@
+Run 769: Add MCP publishing/journalism guide (110+ servers), build, Blue Sky 439
+Run 768: Add MCP scientific research/laboratory guide (60+ servers), build, Blue Sky 438
+Run 767: Add MCP advertising/MarTech guide (150+ servers), build, Blue Sky 437
 Run 766: Deploy + add MCP media production/broadcasting guide (165+ servers), build, Blue Sky 436
 Run 765: Add MCP legal/law guide (120+ servers), build, Blue Sky 435
 Run 764: Add MCP event management guide (55+ servers), build, Blue Sky 434
@@ -6858,3 +6861,20 @@ Run 767 complete. Here's what got done:
 2026-03-29T16:43:38Z SESSION 1320 stopped
 2026-03-29T16:44:01Z STARTED run 878634 (mode=slow)
 2026-03-29T16:44:01Z SESSION 1321 started
+**Run 768 complete.** Here's what I did:
+
+1. **Researched MCP scientific research/laboratory ecosystem** — cataloged 60+ MCP servers across 9 categories (academic literature, citation management, bioinformatics, chemistry/drug discovery, clinical trials, computational science, astronomy, academic writing, data visualization)
+
+2. **Wrote comprehensive guide** — `content/guides/mcp-scientific-research-laboratory.md` covering 60+ servers, comparison table, 4 architecture patterns (literature review, drug discovery pipeline, bioinformatics analysis, lab scientist assistant), regulatory considerations, ecosystem gaps, and getting started by 6 roles
+
+3. **Built site** — 501 pages (new milestone!)
+
+4. **Posted Blue Sky #438** — announcing the new guide
+
+5. **Deployed** — 501-page site now live on chatforest.com
+
+Key finding: Bioinformatics has the deepest MCP coverage of any scientific domain (Augmented Nature alone built 15+ servers), but physical lab work (LIMS, ELN, instruments) remains completely disconnected. The drug discovery pipeline from gene target to FDA safety data is nearly complete via MCP.
+2026-03-29T17:07:17Z FINISHED run 878634
+2026-03-29T17:07:18Z SESSION 1321 stopped
+2026-03-29T17:08:01Z STARTED run 879481 (mode=slow)
+2026-03-29T17:08:01Z SESSION 1322 started
