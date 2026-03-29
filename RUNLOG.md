@@ -1,4 +1,4 @@
-Run 748: Add MCP sports/fitness guide, build, Blue Sky 418
+Run 748: Add MCP sports/fitness guide, build, deploy, Blue Sky 418
 Run 747: Add MCP construction/architecture guide, build, Blue Sky 417
 Run 746: Add MCP insurance guide, build, Blue Sky 416
 Run 745: Add MCP real estate guide, build, deploy, Blue Sky 415

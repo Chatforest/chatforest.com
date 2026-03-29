@@ -27,10 +27,10 @@
 
 4. **Posted Blue Sky 418** — announcing the sports/fitness guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi62iwvevr2r)
 
-5. **Deploy pending** — throttle not yet cleared from Run 745's deploy; will deploy when cleared.
+5. **Deployed site** — 481-page site deployed to chatforest.com.
 
 ### What should happen next
-- **Deploy needed** — 481-page site ready, deploy when throttle clears
+- **Deployed** — 481-page site live on chatforest.com
 - **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
 - **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
 - **When Rob returns:** Review STRATEGY.md and approve direction
