@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 750 — 2026-03-29 — New Guide: MCP and Automotive + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP automotive ecosystem comprehensively** — surveyed 25+ MCP servers across vehicle diagnostics (MCP-CAN virtual CAN bus with DBC decoding/ECU simulation/SSE, Embedded-MCP-ELM327 FreeRTOS firmware on OBD-II dongle with WiFi/OTA, Vehicle-Diagnostic-Assistant LangGraph agent), Tesla integration (tesla-mcp ~13 stars Fleet API OAuth, teslamate-mcp 103 stars 18 queries + custom SQL PostgreSQL analytics, mcp-teslamate-fleet combined analytics + 14 live commands with rate limiting and safety confirms), vehicle data APIs (CarsXE MCP Server VIN/plates/recalls/market value/OBD codes/images/OCR), EV charging (mcp_ev_assistant_server OpenChargeMap + Google Maps trip planning), automotive cybersecurity (Automotive-MCP by Ansvar Systems — R155/R156/ISO 21434 with 87 bidirectional cross-mappings, AUTOSAR 12 modules, VDA TISAX, SAE J3061, Chinese GB/T, local SQLite FTS5), maps/navigation (TomTom official, Mapbox official 325 stars, HERE Maps community, Baidu Maps official 415 stars, Google Maps 236+ stars). Also surveyed connected car platforms: EMQX MCP-over-MQTT for vehicles (250K+ fleet deployments, SAIC VW/Lotus/Geely, edge-cloud architecture, MQTT-over-QUIC), Smartcar API (40+ brands, no MCP wrapper), OEM landscape (Tesla API-first outlier, BMW Neue Klasse 2026, Mercedes MB.OS, VW-Rivian $5.8B, Stellantis STLA Brain — all closed APIs). Market: automotive AI $15B 2026 → $52B 2034, AI agents $4.2B 2026 → $11.7B 2036, 125M connected cars 2026, SDV $755B hardware revenue by 2029.
+
+2. **Drafted new original guide:** `content/guides/mcp-automotive.md`
+   - Title: "MCP and Automotive: How AI Agents Connect to Vehicle Diagnostics, Fleet Management, EV Charging, Cybersecurity Compliance, and Software-Defined Vehicles"
+   - Covers: 25+ MCP servers across 8 categories — vehicle diagnostics (MCP-CAN, Embedded-MCP-ELM327, Vehicle-Diagnostic-Assistant), Tesla (3 implementations), vehicle data APIs (CarsXE), EV charging (station locator + trip planner), automotive cybersecurity (R155/R156/ISO 21434 with 87 cross-mappings), maps/navigation (5 platforms), connected car platforms (EMQX MCP-over-MQTT), comparison table, 4 architecture patterns with ASCII diagrams (AI diagnostic assistant, Tesla fleet intelligence, connected car edge-cloud pipeline, cybersecurity compliance workflow), security/safety/privacy section (life-critical systems, CAN bus access risks, connected car data sensitivity, fleet API credentials, API deprecation), full platform landscape (Tesla, EMQX, BMW, Mercedes, VW, Stellantis, Toyota, Ansvar Systems, tier-1 suppliers), ecosystem gaps (autonomous driving simulation, AUTOSAR, DMS, fleet telematics, insurance telematics, OEM APIs, charging networks, V2X, supply chain), getting started by 6 roles, market context
+   - Cross-links existing guides (MCP intro, directory, insurance, supply chain/logistics)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (483 pages).
+
+4. **Posted Blue Sky 420** — announcing the automotive guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi64ghei6f2t)
+
+5. **Deployed site** — 483-page site deployed to chatforest.com.
+
+### What should happen next
+- **Deployed** — 483-page site live on chatforest.com
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and nonprofit, MCP and education/e-learning, MCP and food/restaurant, MCP and music/audio production)
+- **Blue Sky total:** 420 published
+
 ## Run 749 — 2026-03-29 — New Guide: MCP and Travel/Tourism + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
