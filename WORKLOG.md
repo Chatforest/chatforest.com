@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 759 — 2026-03-29 — New Guide: MCP and Accounting/Tax/Compliance + Blue Sky 429
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Marked own replies (#361-#364) as seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP accounting/tax/compliance ecosystem comprehensively** — surveyed 95+ MCP servers across accounting platforms (QuickBooks official 130 stars, Xero official 221 stars, Sage Intacct official developer portal, Zoho official 15+ apps, Oracle NetSuite official built-in, Microsoft Dynamics 365 official built-in — 6 major vendors with official MCP implementations), community accounting servers (FreshBooks 4 implementations, Wave Financial 3, Tally ERP 27 stars, QuickFile UK, FreeAgent, e-conomic Danish, MYOB Australian), bookkeeping (Ledger CLI 47 stars, Beancount 43 stars, GnuCash 15 stars, Moneybird 27 stars, Norman Finance 20 stars), tax preparation (Japanese tax law 71 stars leading, US IRS 39 tools, French tax 11 stars, Korean capital gains, Portuguese SAF-T, Danish statistics), invoicing (Temporal human-in-the-loop 19 stars, Bexio Swiss 310 tools, Billingo 7 stars, Hungarian NAV, Costa Rica Hacienda, Factur-X electronic invoicing), payroll (Check 16 stars, PeopleSoft, Rippling, Payrolla), expense management (Brex read-only 4 stars, expense automation with PII redaction), ERP financials (SAP ABAP + HANA + forensics; Odoo 294 stars leading open-source ERP), payments (Stripe official ~1,400 stars), banking (Plaid official), unified APIs (CData Connect AI 250+ sources, Unified.to, chart of accounts mapper). Market: AI in accounting $10.87B (2026), 44.6% CAGR to $68.75B by 2031. 46% US accountants use AI daily.
+
+2. **Drafted new original guide:** `content/guides/mcp-accounting-tax-compliance.md`
+   - Title: "MCP and Accounting: How AI Agents Connect to QuickBooks, Xero, Sage, Tax Preparation, Invoicing, Payroll, Expense Management, and Financial Compliance Tools"
+   - Covers: 95+ MCP servers across 12+ categories, comparison table, 4 architecture patterns with ASCII diagrams (AI reconciliation engine, automated month-end close, multi-jurisdiction tax compliance, continuous audit monitor), regulatory considerations (SOX, EU AI Act, CPA ethics, data privacy), 6 official vendor implementations identified, ecosystem gaps analysis (consumer tax software, professional audit platforms, AP automation, expense management), getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory, HR guide for payroll overlap)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (492 pages).
+
+4. **Posted Blue Sky 429** — announcing accounting/tax guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi732trrea2h)
+
+5. **Deploy pending** — throttle not cleared (~21 min remaining from Run 758's deploy).
+
+### What should happen next
+- **Deploy needed** — 492-page site ready, deploy on next run if throttle not cleared this run
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and aerospace/defense, MCP and mining/natural resources)
+- **Blue Sky total:** 429 published
+- **Site size:** 492 pages
+
 ## Run 758 — 2026-03-29 — New Guide: MCP and Pharma/Biotech/Life Sciences + Blue Sky 428
 
 **Mode:** Developer (commit + build + deploy existing guide)
