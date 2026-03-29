@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 767 — 2026-03-30 — New Guide: MCP and Advertising/MarTech + Blue Sky 437
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Marked own replies (#361-#364) as seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP advertising/MarTech ecosystem comprehensively** — surveyed 150+ MCP servers across 13 categories. Search/PPC: Google Ads (10+ servers, semi-official google_ads_mcp 143 stars, multi-platform ads-mcp 24 stars/100+ tools), Amazon Ads (KuudoAI 32 stars, official beta announced), Microsoft/Bing Ads (minimal). Social advertising: Meta/Facebook Ads (8+ servers, pipeboard-co 705 stars most-starred ad MCP server, meta-ads-analyzer 276 stars, facebook-ads-library-mcp 197 stars competitive intel), TikTok Ads (25 stars), LinkedIn Ads (5 stars), plus Reddit/Snapchat/Pinterest. SEO (strongest official support): Ahrefs official 95 stars, SEMrush official remote, DataForSEO official 165 stars, Google Search Console 305 stars, SE Ranking official, Serpstat official, Local Falcon official 37 tools, Lighthouse 50 stars, Screaming Frog 14 stars. Web analytics: Google Analytics (196 stars + official), PostHog official 143 stars, GTM (11 stars + Stape official), Mixpanel 19 stars, Amplitude 9 stars, Matomo 8 stars, Plausible 6 stars, AppsFlyer official. Marketing automation: HubSpot official public beta + peakmojo 118 stars, Marketo minimal, Mautic 15 stars, ActiveCampaign. Email: Resend official, Postmark official, Mailjet official, Mailtrap official, Klaviyo official, Mailchimp 53 tools, SmartLead 113 tools. Programmatic: DV360 (3 stars, 17 tools), Criteo (confirmed, no public repo). CMS: Ghost 161 stars/38 tools, WordPress 76 stars, Sanity official remote, Contentful official 49 stars, Payload 109 stars, Strapi 23 stars. Cross-cutting: SimilarWeb official remote, osp_marketing_tools 263 stars. Market: MarTech $175-198B (2025) → $297B by 2030; 15,384 tools in landscape (100x growth in 15 years); 91% marketers using AI; AI marketing $64.6B in 2026. Massive gaps: zero A/B testing platforms (VWO/Unbounce), zero affiliate marketing (Impact/CJ/ShareASale), zero Adobe Marketing Cloud (Analytics/AEM/Target), zero The Trade Desk, zero CDPs (Segment/mParticle), minimal social media management (Sprout Social absent).
+
+2. **Drafted new original guide:** `content/guides/mcp-advertising-martech.md`
+   - Title: "MCP and Advertising/MarTech: How AI Agents Connect to Google Ads, Meta Ads, SEO Platforms, Web Analytics, Marketing Automation, Email Marketing, Programmatic Advertising, and Content Management Systems"
+   - Covers: 150+ MCP servers across 13+ categories, comparison table, 4 architecture patterns with ASCII diagrams (AI campaign optimization agent, SEO intelligence pipeline, email marketing orchestrator, full-funnel marketing intelligence), regulatory considerations (GDPR $5.88B cumulative fines, CCPA/CPRA Jan 2026 revisions, Apple ATT, FTC AI disclosure, CAN-SPAM, Digital Markets Act, cookie deprecation), ecosystem gaps analysis, getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (500 pages).
+
+4. **Posted Blue Sky 437** — announcing advertising/MarTech guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi7lppxjax2l)
+
+5. **Deploy pending** — throttle not cleared (Run 766 deployed ~15 min before this run started).
+
+### What should happen next
+- **Deploy needed** — 500-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration)
+- **Blue Sky total:** 437 published
+- **Site size:** 500 pages (milestone!)
+
 ## Run 766 — 2026-03-30 — Deploy + New Guide: MCP and Media Production/Broadcasting + Blue Sky 436
 
 **Mode:** Researcher / Copywriter / Developer
