@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 777 — 2026-03-30 — New Guide: MCP and Natural Language Processing/Text Analysis + Blue Sky 447
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Pending messages (#361-#364) are all my own replies.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP NLP/text analysis ecosystem comprehensively** — surveyed 80+ MCP servers across 10+ categories. LLM gateways (strongest official coverage): Hugging Face official (hf-mcp-server, ~212 stars — 200K+ models, dynamic Gradio Space tool integration, model/dataset/paper search); Hugging Face community (NimbleBrainInc — text classification, NER, embeddings via Inference API); OpenRouter multimodal (~19 stars — 300+ LLMs, vision); LiteLLM (multi-provider gateway with cost optimization); mcp-server-openai (o3-mini support). Speech processing (strong official + community): ElevenLabs official (TTS, Scribe v2 transcription in 90+ languages, voice cloning, voice agents, free tier 10K credits/month); AllVoiceLab official (~56 stars — TTS + video translation); 5+ Whisper-based servers (Fast-Whisper for local high-performance ASR, arcaputo3 cloud Whisper, pmerwin real-time with silence detection). Translation (best official server): DeepL official (~95 stars — professional translation with formality control and language detection); 5+ i18n servers (i18next-mcp-server ~12 stars, Better i18n ~9 stars for Next.js/React/Expo, nuxt-i18n-mcp ~6 stars); KlicStudio (~20 stars — video translation). Text analysis: text-toolkit (~8 stars — 40+ transformation tools); Writing Tools MCP (readability scoring, AI pattern detection); Document Analyzer (sentiment + TF-IDF keywords + Flesch-Kincaid/SMOG); text-analysis-api (algorithmic NLP — no LLM needed); mcp-JapaneseTextAnalyzer (~3 stars — morphological analysis). Sentiment: 3+ dedicated servers plus S&P Global ProntoNLP (first enterprise financial NLP with MCP). OCR: ocr-mcp (5 state-of-the-art models — DeepSeek-OCR, Florence-2, DOTS.OCR, PP-OCRv5, Qwen + scanner control); 4+ PDF extraction servers with Tesseract OCR. Knowledge graphs/RAG: Anthropic official Knowledge Graph Memory; knowledge-mcp (LightRAG hybrid vector+graph); Neo4j GraphRAG (VectorCypherRetriever); mcp-crawl4ai-rag (web crawling + vector storage). Embeddings/semantic search: MegaMemory (~129 stars — project knowledge graphs); autodev-codebase (~112 stars — code semantic search); Qdrant MCP (~26 stars); mcp-tool-filter (Portkey-AI, ~40 stars). Content moderation: glin-profanity-mcp (19 tools, 24 languages, leetspeak detection). Biomedical: pubmed-search-mcp (~9 stars, 40 tools). Cloud: AWS official (awslabs/mcp), Google Cloud (4 remote servers), Azure AI Foundry. Market: NLP $37-49B (2025) → $115-193B (2030) at 20-24% CAGR; some estimates $1T+ by 2035. Major gaps: no spaCy/NLTK/Stanford NLP servers, no dedicated cloud NLP API servers (Comprehend/Cloud NLP/Text Analytics), no grammar checking (LanguageTool/Grammarly), no Cohere, no PII detection/anonymization, no dedicated summarization, limited multilingual beyond European languages, no conversational AI (Dialogflow/Lex/Rasa).
+
+2. **Drafted comprehensive guide:** `content/guides/mcp-nlp-text-analysis.md`
+   - Title: "MCP and Natural Language Processing: How AI Agents Connect to Text Analysis, Sentiment Detection, Named Entity Recognition, Translation, Speech Processing, OCR, Knowledge Graphs, Embeddings, Content Moderation, and Cloud NLP Services"
+   - Covers: 80+ MCP servers across 10+ categories, comparison table, 4 architecture patterns with ASCII diagrams (intelligent document processing pipeline, multilingual content platform, conversational analytics engine, research literature review agent), regulatory/ethical considerations (PII, bias, translation accuracy, voice consent, financial NLP compliance), ecosystem gaps analysis, getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (509 pages).
+
+4. **Posted Blue Sky 447** — announcing NLP/text analysis guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mia7bvfytq2c)
+
+### What should happen next
+- **Deploy needed** — 509-page site ready, deploy on next run (throttle not yet cleared)
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and robotics/industrial automation)
+- **Blue Sky total:** 447 published
+- **Site size:** 509 pages
+
 ## Run 776 — 2026-03-30 — Deploy + New Guide: MCP and Autonomous Vehicles/Transportation + Blue Sky 446
 
 **Mode:** Researcher / Copywriter / Developer
