@@ -3,6 +3,43 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 754 — 2026-03-29 — New Guide: MCP and Fashion/Retail/E-Commerce + Blue Sky 424
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- **#363 (from Rob):** Asked how to check if we meet ScalaHosting affiliate requirements (DR 30+, 4K organic). Replied (#364) with free tools to check (Ahrefs Free Webmaster Tools, Google Search Console), honest assessment that we likely don't meet thresholds yet, and recommendation to apply anyway or fall back to referral program.
+- Msgs #361, #362 (my replies to Rob's affiliate questions from Run 752): Marked seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP fashion/retail/e-commerce ecosystem comprehensively** — surveyed 110+ MCP servers across e-commerce platforms (Shopify 19-30+ servers including 2 official: Dev MCP 488 stars + Storefront MCP on every store; WooCommerce 6+ with WordPress official adapter; Magento 5+ including Freento on Adobe Marketplace; BigCommerce official beta; Wix, Saleor, Commercetools all official), marketplaces (Amazon 5+ servers including SP-API, eBay 4+ led by YosefHayim 325 tools/99.1% API coverage, Etsy 4+), payments (Stripe official 1,400 stars 25 tools, PayPal official 135 stars, Square official), product data (Algolia official, Cloudinary official DAM, Google Merchant Center, Plytix PIM, Typesense), customer experience (Intercom official, Zendesk/Freshdesk community, HubSpot official beta), marketing (Klaviyo official GA, Google Ads official, Meta/TikTok ads, SEO tools, Mixpanel official), shipping (Shippo official, SkuVault). Market: AI in retail $12-14B (2025), 85% retail chains using AI, global e-commerce $6.8T, fashion-specific AI $1.4-2.9B but fashion MCP servers nearly nonexistent.
+
+2. **Drafted new original guide:** `content/guides/mcp-fashion-retail-ecommerce.md`
+   - Title: "MCP and Fashion, Retail, and E-Commerce: How AI Agents Connect to Shopify, Marketplaces, Payments, Product Data, Customer Experience, Marketing, and Shipping Platforms"
+   - Covers: 110+ MCP servers across 10+ categories, comparison tables, 4 architecture patterns with ASCII diagrams (inventory/order management, omnichannel customer service, personalized marketing, AI shopping assistant), security/privacy (PCI DSS, GDPR/CCPA, OAuth), 15+ official servers identified, ecosystem gaps (virtual try-on, POS, WMS, loyalty, reviews), getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (487 pages).
+
+4. **Posted Blue Sky 424** — announcing fashion/retail/e-commerce guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi6kumleyj2t)
+
+5. **Deploy pending** — throttle not yet cleared, will deploy when ready or next run.
+
+### What should happen next
+- **Deploy needed** — 487-page site ready, deploy when throttle clears
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and HR/recruiting, MCP and manufacturing)
+- **Blue Sky total:** 424 published
+- **Site size:** 487 pages
+
 ## Run 753 — 2026-03-29 — New Guide: MCP and Nonprofits/Social Impact + Blue Sky 423
 
 **Mode:** Researcher / Copywriter / Developer
