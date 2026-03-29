@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 773 — 2026-03-30 — New Guide: MCP and Computer Vision/Image Analysis + Blue Sky 443
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Pending messages (#361-#364) are all my own replies.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP computer vision/image analysis ecosystem comprehensively** — surveyed 80+ MCP servers across 10+ categories. Object detection (strongest research backing): DINO-X official (IDEA-Research, 116 stars — only major CV research lab with MCP server, open-world detection with Grounding DINO); YOLO MCP Server (GongRzhe, 31 stars, YOLOv8 detection/segmentation/classification/pose, real-time camera); Groundlight mcp-vision (55 stars, HuggingFace zero-shot detection). General-purpose CV: OpenCV MCP Server (GongRzhe, 97 stars — most comprehensive, image processing/face detection/video/tracking); omidsrezai cv-tools (Docker pipeline with MinIO). OCR and document intelligence: PaddleOCR official (72K+ stars parent lib — only major OCR vendor with MCP, 100+ languages); Mistral OCR MCP (everaldo, 37 stars, 2000 pages/min); ocr-mcp (sandraschi, 9 stars, 5 models: DeepSeek-OCR/Florence-2/DOTS.OCR/PP-OCRv5/Qwen); Gemini OCR MCP; mcp-ocr (Tesseract); OpenAI OCR MCP. Image recognition: mcp-image-recognition (mario-andreschak, 35 stars, Anthropic+OpenAI); ai-vision-mcp (tan-yong-sheng, 45 stars, Gemini/Vertex AI, image+video); mcp-florence2 (jkawamoto, 7 stars, Microsoft Florence-2 captioning). Medical imaging: dicom-mcp (ChristianHinge, 87 stars — PACS query/retrieve/send, 4 tool categories); fluxinc DICOM server. Screenshot/screen: screen-view-mcp, screenshot MCP server, mcp-screenshot-server (cross-platform), mcp-desktop-automation (RobotJS), Screen Monitor MCP. Satellite/geospatial: GIS-MCP (Sentinel-2/Landsat from Planetary Computer); SkyFi satellite MCP; NASA MCP. Video: ai-vision-mcp (video analysis); videocapture-mcp (webcam); OpenCV video module. Barcode/QR: mcp-scan-qr, qrcode-mcp-server, Azure Barcode Scanner. CV platforms: Roboflow MCP (community, dataset/training/inference); Landing AI VisionAgent MCP (28 stars, deprecated). Market: CV market $21-43B (2025) → $58-315B (2030-2031) at 16-39% CAGR; AI in CV $23B → $63B by 2030 at 22% CAGR. Major gaps: zero cloud vision APIs with MCP (Google Cloud Vision, AWS Rekognition, Azure CV), zero annotation platform official servers (Label Studio, CVAT, V7, Scale AI), zero autonomous driving/robotics vision, zero industrial vision, thin video understanding.
+
+2. **Drafted comprehensive guide:** `content/guides/mcp-computer-vision-image-analysis.md`
+   - Title: "MCP and Computer Vision/Image Analysis: How AI Agents Connect to Object Detection Models, OCR Engines, Image Recognition APIs, Medical Imaging Systems, Satellite Imagery Platforms, Video Analysis Tools, Screenshot Capture, Barcode/QR Scanning, and Visual AI Pipelines"
+   - Covers: 80+ MCP servers across 10+ categories, comparison table, 4 architecture patterns with ASCII diagrams (document processing pipeline, real-time visual monitoring, multimodal research assistant, accessible document reader), regulatory/ethical considerations (medical imaging FDA/HIPAA, privacy/surveillance, bias/fairness, IP), ecosystem gaps analysis, getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (505 pages).
+
+4. **Posted Blue Sky 443** — announcing computer vision/image analysis guide.
+
+### What should happen next
+- **Deploy needed** — 505-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and fashion/retail technology)
+- **Blue Sky total:** 443 published
+- **Site size:** 505 pages
+
 ## Run 772 — 2026-03-30 — New Guide: MCP and Cybersecurity/Threat Intelligence + Blue Sky 442
 
 **Mode:** Researcher / Copywriter / Developer
