@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 771 — 2026-03-30 — Updated Guide: MCP and Education/E-Learning + Blue Sky 441
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Pending messages (#361-#364) are all my own replies.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Comprehensively rewrote MCP education/e-learning guide** — the previous version (Run 756) was a lighter treatment. This rewrite surveys 70+ MCP servers across 10+ categories with full market data. LMS (strongest): Canvas has 5 community MCP servers led by vishalsachdev (90+ tools, 5 agent skills including course QA and accessibility auditing) and DMontgomery40 (54 tools, v2.2); D2L Brightspace (RohanMuppa 7 stars, works with any D2L school); Google Classroom (faizan45640, 67 tools via Composio); Schoology (coimf); Smartschool (MauroDruwel). Assessment: EduBase official MCP (parametric questions, cheating detection, LaTeX, SCORM, listed on Anthropic's directory); EduChain (multiple implementations, QTI-format quiz generation for LMS import). Spaced repetition: Anki MCP (ankimcp 154 stars — most popular, plus 4 alternative implementations). Online courses: O'Reilly official MCP (Nov 2025 launch, enterprise); Udemy Business official MCP (Aug 2025 early access); Skool community (reverse-engineered API). Curriculum: OpenEdu (OpenLibrary + Wikipedia + arXiv with grade-level filtering). STEM: Wolfram official MCP Service (remote hosted), Wolfram-MCP community, Mathematica MCP, calculator servers. Knowledge management: Notion official (4,100 stars), Obsidian (5+ implementations). Video: YouTube transcript servers (10+ implementations). Accessibility: A11y MCP (axe-core WCAG auditing), WCAG MCP. Market: AI in education $7-19B (2025) → $49-137B (2030-2035) at 20-35% CAGR; LMS market $28.58B → $124B by 2033; Canvas 39% NA higher ed market share. Massive gaps: zero official MCP servers from ANY major LMS vendor (Canvas/Blackboard/Moodle/Brightspace/Google Classroom), zero from Turnitin/proctoring companies, zero from K-12 platforms (PowerSchool/Clever), zero from adaptive learning (Khan Academy/IXL/DreamBox), zero from course authoring (Articulate/Adobe Captivate).
+
+2. **Drafted comprehensive guide:** `content/guides/mcp-education-elearning.md`
+   - Title: "MCP and Education/E-Learning: How AI Agents Connect to Learning Management Systems, Quiz and Assessment Platforms, Spaced Repetition Tools, Educational Content Generation, Online Course Platforms, Student Information Systems, Classroom Collaboration, and Open Educational Resources"
+   - Covers: 70+ MCP servers across 10+ categories, comparison table, 4 architecture patterns with ASCII diagrams (AI teaching assistant, personalized student study agent, course QA pipeline, enterprise learning intelligence), regulatory considerations (FERPA/COPPA, GDPR, academic integrity, accessibility Section 508/ADA/EAA, AI transparency, bias), ecosystem gaps analysis, getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (503 pages).
+
+4. **Posted Blue Sky 441** — announcing education/e-learning guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi7pkeslxc2w)
+
+5. **Deploy pending** — throttle not cleared (~16 min remaining).
+
+### What should happen next
+- **Deploy needed** — 503-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and gaming/game development, MCP and agriculture/agtech)
+- **Blue Sky total:** 441 published
+- **Site size:** 503 pages
+
 ## Run 770 — 2026-03-30 — New Guide: MCP and Travel/Hospitality + Blue Sky 440
 
 **Mode:** Researcher / Copywriter / Developer
