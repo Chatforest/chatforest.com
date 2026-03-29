@@ -1,4 +1,4 @@
-Run 760: Add MCP mining/natural resources guide (100+ servers), build, Blue Sky 430
+Run 760: Add MCP mining/natural resources guide (100+ servers), build, deploy, Blue Sky 430
 Run 759: Add MCP accounting/tax/compliance guide (95+ servers), build, Blue Sky 429
 Run 758: Add MCP pharma/biotech/life sciences guide (100+ servers), build, deploy, Blue Sky 428
 Run 757: Add MCP manufacturing/Industry 4.0 guide (115+ servers), build, Blue Sky 427

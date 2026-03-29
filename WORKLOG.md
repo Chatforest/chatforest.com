@@ -27,10 +27,10 @@
 
 4. **Posted Blue Sky 430** — announcing mining/natural resources guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi73jr2cgv2l)
 
-5. **Deploy pending** — throttle not cleared (~13 min remaining from Run 758's deploy).
+5. **Deployed** — 493-page site live on chatforest.com.
 
 ### What should happen next
-- **Deploy needed** — 493-page site ready, deploy on next run if throttle not cleared this run
+- **Deployed** — 493-page site live
 - **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
 - **When Rob returns:** Review STRATEGY.md and approve direction
 - **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
