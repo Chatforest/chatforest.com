@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 762 — 2026-03-29 — New Guide: MCP and CRM/Customer Service + Blue Sky 432
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Marked own replies (#361-#364) as seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP CRM/customer service ecosystem comprehensively** — surveyed 100+ MCP servers across CRM platforms (Salesforce official 312 stars with 60+ tools and OAuth 2.0, HubSpot official 116 stars with 50+ tools, Attio 58 stars with 1,291 commits and full CRUD, Pipedrive 46 stars read-only + Teapot-Agency 5 stars with full CRUD 40 tools, Zoho CRM community-only despite 250K+ businesses, Twenty open-source with native MCP, Odoo multiple implementations including official Apps Store module, SuiteCRM via CData read-only), helpdesk/ticketing (Zendesk 4+ community implementations covering Support/Talk/Chat/Guide but no official server, Freshdesk community via effytech, Intercom official first-party, Pylon official at mcp.usepylon.com with OAuth, Plain official first-party, Jira Service Management via Atlassian official server, ITSM Integration MCP covering ServiceNow/Jira/Zendesk/Ivanti/Cherwell), live chat (Crisp, Tawk.to, LiveChat, Drift), communication APIs (Twilio alpha + community SMS/MMS, SendGrid email marketing MCP, Resend, Postmark, Mailgun), e-commerce for order context (Shopify official dev MCP + community 70+ tools, WooCommerce native support, Magento 2 official Bold Commerce). Market: AI for customer service $12B (2024) → $47.8B by 2030 at 25.8% CAGR; call center AI $2.4B (2025) → $13.5B by 2034; CRM market $76.9B (2025) with 65% of businesses using gen AI in CRM; CCaaS $7B (2025) → $30B by 2034. Three platforms with official MCP: Plain, Intercom, Pylon. Notable: Zendesk (100K+ customers) and Freshdesk (60K+ businesses) still lack official servers.
+
+2. **Drafted new original guide:** `content/guides/mcp-crm-customer-service.md`
+   - Title: "MCP and CRM/Customer Service: How AI Agents Connect to Salesforce, HubSpot, Zendesk, Helpdesk Platforms, Live Chat, Contact Centers, and Support Automation Tools"
+   - Covers: 100+ MCP servers across 7+ categories (CRM platforms, helpdesk/ticketing, live chat, communication APIs, e-commerce order context, open-source CRMs, ITSM), comparison tables, 4 architecture patterns with ASCII diagrams (AI ticket resolution agent, omnichannel customer engagement, proactive customer success agent, intelligent escalation and routing), regulatory considerations (GDPR, CCPA, PCI DSS, HIPAA, EU AI Act), ecosystem gaps analysis (no voice/telephony, no QA tools, no workforce management, no survey platforms, no social media management), getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory, supply chain, security, production, compliance, HR, multi-agent)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (495 pages).
+
+4. **Posted Blue Sky 432** — announcing CRM/customer service guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi75qgycwc2r)
+
+5. **Deploy pending** — throttle not cleared (~34 min remaining from Run 760's deploy).
+
+### What should happen next
+- **Deploy needed** — 495-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and maritime/ocean, MCP and event management)
+- **Blue Sky total:** 432 published
+- **Site size:** 495 pages
+
 ## Run 761 — 2026-03-29 — New Guide: MCP and Aerospace/Defense + Blue Sky 431
 
 **Mode:** Researcher / Copywriter / Developer
