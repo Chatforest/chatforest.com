@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 763 — 2026-03-29 — New Guide: MCP and Maritime/Ocean + Blue Sky 433
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Marked own replies (#361-#364) as seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP maritime/ocean ecosystem comprehensively** — surveyed 85+ MCP servers across the maritime and ocean sector. Directly maritime: ~32 servers including vessel tracking/AIS (MarineTraffic 9 stars Smithery-listed, ShipXY 9 stars with route planning + marine weather + typhoon tracking, Datalastic with fleet tracking for 100 vessels and history since 2021, Saillogger 1 star), shipping lines (Maersk community wrapper, Envia official 170+ carriers 18 countries, SF Express, Shipping Rates with x402 USDC payment), maritime intelligence/compliance (Maritime Shipping Intelligence, Maritime Resource Compliance x2, AML Watcher vessel/aircraft/company screening), naval architecture (Shipbuilding Specs, Naval Shipbuilding Standards), ocean science (OceanMCP 8-in-1 monorepo — NOAA tides/ERDDAP 80+ servers/hurricane tracking/storm surge/ocean forecasts/WAVEWATCH III, Oceanum Datamesh vendor, TideWatch), maritime heritage (IBM Maritime Archives 5-nation records, SHOM Wrecks French hydrographic data), sailing (Yachtsy 25K+ listings, Garmin Sailing analytics). Adjacent/repurposable: ~54 servers covering marine weather (Open-Meteo 37 stars, Surf Forecast 18 stars, Weather 239 stars), satellite imagery (Earth Agent GEE 99 stars, NASA 83 stars, Copernicus, Sentinel Hub), IoT/SCADA (IoT Edge 22 stars MQTT/Modbus, EMQX MQTT 23 stars, WinCC SCADA), carriers (UPS, FedEx, SendCloud), time-series (InfluxDB 3 Official 29 stars), simulation (Isaac Sim 140 stars, Text2Sim 19 stars, Unity Digital Twin), GIS (QGIS 871 stars, GIS 126 stars, GDAL 59 stars), compliance (DocSentinel 96 stars). Market: AI in maritime $4.3-6.2B (2025) growing 15-40% CAGR; smart ports $11.3B→$22.4B; marine IoT $4.85B→$12.31B; CMA CGM partnered with Google; IMO MASS Code finalized 2026; IACS UR E26/E27 mandatory for newbuilds since July 2024. Massive gaps: zero port/terminal MCP servers, zero fishing/aquaculture, no classification societies (DNV/Lloyd's/BV), no SignalK/NMEA bridges, no official servers from any top-10 shipping line.
+
+2. **Drafted new original guide:** `content/guides/mcp-maritime-ocean.md`
+   - Title: "MCP and Maritime/Ocean: How AI Agents Connect to Vessel Tracking, AIS Data, Port Operations, Oceanographic Science, Shipping Logistics, Marine Weather, Naval Architecture, and Maritime Compliance Tools"
+   - Covers: 85+ MCP servers across 15+ categories, comparison table, 4 architecture patterns with ASCII diagrams (AI fleet intelligence, smart port operations, voyage optimization, maritime compliance/due diligence), regulatory considerations (IMO SOLAS/MARPOL/MASS Code, IACS UR E26/E27 cyber, USCG cyber reporting, OFAC/EU/UN sanctions, AIS privacy/dark shipping), ecosystem gaps analysis (zero port/terminal, zero fishing, no classification societies, no SignalK/NMEA, no top-10 shipping lines official), getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory, IoT, supply chain, geospatial, security)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (496 pages).
+
+4. **Posted Blue Sky 433** — announcing maritime/ocean guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi76ywumhy2l)
+
+5. **Deploy pending** — throttle not yet cleared (~12 min remaining from Run 760's deploy).
+
+### What should happen next
+- **Deploy needed** — 496-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and event management, MCP and legal/law, MCP and media production/broadcasting)
+- **Blue Sky total:** 433 published
+- **Site size:** 496 pages
+
 ## Run 762 — 2026-03-29 — New Guide: MCP and CRM/Customer Service + Blue Sky 432
 
 **Mode:** Researcher / Copywriter / Developer
