@@ -3,6 +3,42 @@
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
+## Run 748 — 2026-03-29 — New Guide: MCP and Sports/Fitness + Blue Sky
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No pending inbox messages.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP sports/fitness ecosystem comprehensively** — surveyed 100+ MCP servers across wearables (Garmin: Taxuspt 311 stars 96 tools, Nicolasvegam 77 stars 61 tools, matin/garth 59 stars 30 tools; Oura: MCP-oura 113 stars, tomekkorbak 37 stars, elizabethtrykin 31 stars; WHOOP: RomanEvstigneev 21 stars, ctvidic 18 stars; Fitbit: mcp-fitbit 26 stars 12 tools; Apple Health 143 stars DuckDB; Withings 14 stars; Ultrahuman 10 stars; COROS 13 stars; Wahoo 6 stars), multi-device platforms (Open Wearables 1,100 stars 158 forks 8 device ecosystems built-in MCP, VytalLink 6 stars), training platforms (Strava: r-huijts 305 stars 25 tools NPM, kw510 24 stars Cloudflare Workers, chathletique 12 stars hackathon winner weather-aware coaching; TrainingPeaks 27 stars 52 tools CTL/ATL/TSB; Intervals.icu 11 stars 48 tools; AI Endurance 5 stars 20 tools ML predictions), sports data (BALLDONTLIE 9 stars 250+ endpoints 18 leagues, ESPN 12 tools, SportsRadar NFL/MLB, FirstCycling 18 stars 20 tools), fantasy/betting (tokenbowl 4 stars 50+ tools 166 tests, BetTrack 30+ tools 70 markets, sportintel XGBoost/SHAP), nutrition (mcp-opennutrition 172 stars 300K+ foods, nutri-mcp 4M+ products, yazio 25 stars 8 tools), workout apps (wger, Hevy, musclesworked 856 exercises). Market: sports tech $34B 2025 → $69B 2030, AI in sports $11B 2025 → $50B 2033, wearables $94B 2025. Zero official MCP servers from any major platform.
+
+2. **Drafted new original guide:** `content/guides/mcp-sports-fitness.md`
+   - Title: "MCP and Sports/Fitness: How AI Agents Connect to Wearables, Training Platforms, Sports Data, Nutrition Tracking, and Athletic Performance Analytics"
+   - Covers: 100+ MCP servers across 10 categories — wearables (Garmin 3 major implementations, Oura 5+, WHOOP 4, Fitbit, Apple Health, Withings, Ultrahuman, COROS, Wahoo), multi-device (Open Wearables 1,100 stars, VytalLink), training (Strava 7+ implementations, TrainingPeaks 52 tools, Intervals.icu 48 tools, AI Endurance ML predictions), sports data (BALLDONTLIE 18 leagues, ESPN, SportsRadar, FirstCycling), fantasy/betting (Sleeper, Yahoo, BetTrack, SportIntel), nutrition (300K-4M+ food databases, Yazio, MyFitnessPal), workouts (wger, Hevy, muscle mapping), team management (Spond), comparison table, 4 architecture patterns with ASCII diagrams (AI endurance coach, race preparation pipeline, sports analytics dashboard, recovery/wellness monitor), security/privacy (health data sensitivity, OAuth patterns, data aggregation risk, location data, reverse-engineered APIs), platform landscape (no official MCP from Strava, Garmin, Peloton, Nike, Zwift, etc.), ecosystem gaps (indoor training, pro analytics, team management, coaching platforms, swimming, gym management, race registration, rehab, sports video), getting started by 6 roles, market context
+   - Cross-links existing guides (MCP intro, directory, healthcare, IoT, data science, OAuth)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (481 pages).
+
+4. **Posted Blue Sky 418** — announcing the sports/fitness guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi62iwvevr2r)
+
+5. **Deploy pending** — throttle not yet cleared from Run 745's deploy; will deploy when cleared.
+
+### What should happen next
+- **Deploy needed** — 481-page site ready, deploy when throttle clears
+- **Waiting on Rob:** "things not to do" content — anti-patterns piece vs Blue Sky series (msg #345)
+- **dev.to API key** still expired — Rob notified (msg 284), 16+ articles blocked
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and travel/tourism, MCP and automotive, MCP and nonprofit)
+- **Blue Sky total:** 418 published
+
 ## Run 747 — 2026-03-29 — New Guide: MCP and Construction/Architecture + Blue Sky
 
 **Mode:** Researcher / Copywriter / Developer
