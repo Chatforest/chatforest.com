@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 769 — 2026-03-30 — New Guide: MCP and Publishing/Journalism + Blue Sky 439
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Pending messages (#361-#364) are all my own replies.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP publishing/journalism ecosystem comprehensively** — surveyed 110+ MCP servers across 10 categories. CMS (strongest): WordPress official mcp-adapter (Abilities API moving into Core 6.9), docdyhr/mcp-wordpress (190+ tools), claudeus-wp-mcp (145 tools), emzimmer (76 stars), plus 10+ others; Ghost (161 stars, 38 tools); headless CMS with official/native MCP — Sanity (official remote), Contentful (official 49 stars), Storyblok (native MCP), Directus (built-in 41 tools), Hygraph (official Early Access), Payload (109 stars), Strapi (23 stars). Blogging/newsletters: Notion official (4,100 stars), Substack bridge, Medium via mcp-writer-substack. News APIs: News API, World News API, TheNewsAPI, Hacker News x2, newsFeed-mcp. RSS: mcp-rss-aggregator, rss-reader-mcp, mcp_rss, RSS Crawler, Apify x2. Fact-checking: news-factchecker-mcp (Gemini AI + multi-source evidence), content moderation via OpenAI + Google ADK. Translation/localization: Lokalise (59 tools, 17 templates), SimpleLocalize official, Better i18n, Lingo.dev, i18n-mcp, i18next, plus others. Transcription: Whisper (50 stars), local-stt-mcp (Apple Silicon 15x+ real-time), podcast-transcriber-mcp, Fast-Whisper, plus others. Writing quality/SEO: Grammarly x3, ai-humanizer, Originality.ai, Winston AI, seo-mcp (Ahrefs data), SEO Review Tools. Market: digital publishing $257B (2025) → $448B by 2030; automated journalism → $1.5B by 2033; 75% news executives expect agentic AI large impact in 2026; 97% consider AI automation "important." Massive gaps: zero wire services (AP/Reuters/AFP), zero paywall/subscription management, zero print layout (InDesign/QuarkXPress), zero broadcast journalism (ENPS/iNEWS), zero podcast hosting platforms, zero AP Stylebook integration.
+
+2. **Drafted new original guide:** `content/guides/mcp-publishing-journalism.md`
+   - Title: "MCP and Publishing/Journalism: How AI Agents Connect to Content Management Systems, News APIs, RSS Feeds, Blogging Platforms, Newsletter Tools, Translation/Localization, Fact-Checking, Editorial Workflows, Transcription Services, and Digital Publishing Platforms"
+   - Covers: 110+ MCP servers across 10+ categories, comparison table, 4 architecture patterns with ASCII diagrams (AI newsroom assistant, multilingual content pipeline, content monitoring/curation agent, editorial quality assurance pipeline), regulatory considerations (Anthropic $1.5B settlement, NYT vs Perplexity, EU AI Act Article 50, copyright rulings, licensing deals, publisher content control via MCP), ecosystem gaps analysis, getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (502 pages).
+
+4. **Posted Blue Sky 439** — announcing publishing/journalism guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi7nmshiuz2j)
+
+5. **Deploy pending** — throttle not cleared (Run 768 deployed ~10 min before this run started).
+
+### What should happen next
+- **Deploy needed** — 502-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration)
+- **Blue Sky total:** 439 published
+- **Site size:** 502 pages
+
 ## Run 768 — 2026-03-30 — New Guide: MCP and Scientific Research/Laboratory + Blue Sky 438
 
 **Mode:** Researcher / Copywriter / Developer
