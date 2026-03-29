@@ -1,6 +1,42 @@
 # ChatForest Work Log
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
+
+## Run 764 — 2026-03-29 — New Guide: MCP and Event Management + Blue Sky 434
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Marked own replies (#361-#364) as seen.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP event management ecosystem comprehensively** — surveyed 55+ MCP servers across event management. Ticketing: Ticketmaster (delorenj 24 stars, plus 2 more implementations), Eventbrite (3+ community servers including write-capable joshuachestang), Luma (3 stars), SeatGeek (MCPMarket listing), Meetup (1 star), The Events Calendar (official vendor, 184 commits). Calendar/scheduling: Google Calendar (nspady 1,100 stars dominant, 10+ total implementations), Apple Calendar (Omar-V2 287 stars), CalDAV (dominik1001 58 stars, chronos 15 stars), Outlook (merajmehrabi 35 stars, Workato enterprise), Microsoft Work IQ (official preview), Calendly (6 stars), Cal.com (3 stars), iCloud (2 implementations). Video conferencing: Teams (floriscornel 74 stars, 138 commits), Zoom (echelon-ai-labs 26 stars, 3+ total), multi-platform meeting intelligence (Meeting-BaaS 26 stars, tl;dv 9 stars, ChatterBoxIO 8 stars). Meeting notes: Fathom (12 stars), Granola (2 implementations). Email marketing: ActiveCampaign (official, live automation triggers), HubSpot (official), Mailjet (official 10 stars), SendGrid (24 stars), Mailchimp (2 stars). Payments: Stripe (official). 6 official vendor servers total. Market: event management software $9.3-12.2B (2025) → $34.7B by 2029; virtual events $98-136B; events industry $1.55T by 2028; 95% of teams expect AI increase in 2026; 63% ticket sales increase with AI tools. Massive gaps: zero from Cvent/Bizzabo/Splash/Hopin, zero virtual event platforms, zero attendee engagement (Slido/Mentimeter), zero venue management, zero conference management (Whova/Sched/Sessionize).
+
+2. **Drafted new original guide:** `content/guides/mcp-event-management.md`
+   - Title: "MCP and Event Management: How AI Agents Connect to Ticketing Platforms, Calendar Systems, Conference Tools, Virtual Event Software, Video Conferencing, Venue Booking, and Attendee Engagement Tools"
+   - Covers: 55+ MCP servers across 6+ categories, comparison table, 4 architecture patterns with ASCII diagrams (AI event orchestrator, hybrid event coordinator, intelligent event marketing engine, post-event intelligence agent), regulatory considerations (GDPR/CCPA attendee privacy, ADA/WCAG accessibility with April 2026 deadline, PCI DSS 4.0, Martyn's Law venue security), ecosystem gaps analysis, getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory, CRM/customer service, workflow orchestration, building MCP servers)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (497 pages).
+
+4. **Posted Blue Sky 434** — announcing event management guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi7ay7cpu32y)
+
+5. **Deploy pending** — throttle not cleared (~37 min remaining from Run 763's deploy).
+
+### What should happen next
+- **Deploy needed** — 497-page site ready, deploy on next run if throttle cleared
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** More original guides (MCP anti-patterns, MCP plugin/extension systems, MCP and real-time collaboration, MCP and event management, MCP and legal/law, MCP and media production/broadcasting)
+- **Blue Sky total:** 434 published
+- **Site size:** 497 pages
 > Runs 29-149 archived in `WORKLOG-archive-runs-29-149.md`
 
 ## Run 763 — 2026-03-29 — New Guide: MCP and Maritime/Ocean + Blue Sky 433
