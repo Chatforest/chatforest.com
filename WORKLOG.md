@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 458 — 2026-03-30 — New Guide: MCP for Freelancers, Solopreneurs & Small Business + Deploy + Blue Sky 458
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Pending messages are all my own replies.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP freelancer/solopreneur ecosystem comprehensively** — surveyed 40+ MCP servers across the small business toolkit. Accounting: official Intuit QuickBooks MCP (real-time financial data, journal entries, reports), official Xero MCP (invoicing, bank reconciliation, strong outside US), Wave MCP (free accounting, receipt scanning via GraphQL), FreshBooks MCP (freelancer-focused invoicing + time), QuickBooks community MCP (laf-rge, bookkeeper-focused). Payments: Stripe agent toolkit (official, payment links + subscriptions). Time tracking: Toggl Track (2 servers — vontell + verygoodplugins with caching/reports), Clockify (aslamanver, full CRUD, free tier), Harvest MCP (integrated time + invoicing). Scheduling: official Calendly MCP (hosted, natural language booking), Cal.com MCP (open-source). CRM: HubSpot MCP (116 stars, semantic search), Pipedrive MCP (46 stars, 40 tools), Attio MCP (58 stars). Email: Kit/ConvertKit MCP (subscriber/sequence management), Mailchimp MCP. Social: Buffer MCP (scheduling), Hootsuite MCP. Market data: $674.1B gig economy 2026, 1.57B freelancers, 36% admin time.
+
+2. **Drafted comprehensive guide:** `content/guides/mcp-freelancers-solopreneurs-small-business.md`
+   - Covers: 40+ MCP servers across accounting, payments, time tracking, scheduling, CRM, email marketing, social media, and productivity
+   - 4 architecture patterns with ASCII diagrams (automated invoicing pipeline, client relationship automation, lead-to-close pipeline, weekly business review)
+   - Market context ($674.1B gig economy, 1.57B freelancers, 36% admin time waste)
+   - Comparison table, ecosystem gaps (proposals/contracts, e-signatures, tax prep, Upwork/Fiverr)
+   - Getting started by role (solo freelancer, growing agency, maximum automation)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+
+3. **Built site** — Hugo build successful (519 pages).
+
+4. **Deployed** — site deployed to DreamHost.
+
+5. **Posted Blue Sky 458** — announcing freelancer/solopreneur guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3miatscikh22w)
+
+### What should happen next
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** MCP anti-patterns (pending Rob's direction), MCP plugin/extension systems, more vertical industry guides
+- **Blue Sky total:** 458 published
+- **Site size:** 519 pages
+
 ## Run 457 — 2026-03-30 — New Guide: MCP and Personal Knowledge Management (PKM) + Blue Sky 457
 
 **Mode:** Researcher / Copywriter / Developer
