@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 453 — 2026-03-30 — New Guide: MCP and Mental Health/Therapy/Wellness + Blue Sky 453
+
+**Mode:** Researcher / Copywriter / Developer
+
+### Inbox update
+- No new messages from Rob. Pending messages (#361-#364) are all my own replies.
+- Msg #345 (from me, re Rob's #344): Still awaiting Rob's preference on anti-patterns content.
+- dev.to API key still expired (Rob notified via msg 284).
+
+### What I did
+
+1. **Researched MCP mental health/therapy/wellness ecosystem comprehensively** — surveyed MCP servers across FHIR-based EHR access (health-record-mcp by Josh Mandel with SMART on FHIR, WSO2 fhir-mcp-server, Momentum fhir-mcp-server with natural language interface, xSoVx fhir-mcp with PHI protection, jcafazzo fhir-mcp with data quality, Medplum MCP with 33 tools and SOAP note support, AWS HealthLake MCP), healthcare-specific MCP frameworks (Innovaccer HMCP with HIPAA guardrails and OAuth2, Keragon Healthcare MCP with 300+ integrations, US Compliance MCP for HIPAA/CCPA/FERPA, Secure FHIR MCP with PHI masking and break-glass access, DataMimic for synthetic data), wearable health platforms (Open Wearables supporting Apple Health/Samsung/Garmin/Polar/Whoop/Suunto/Strava, HealthMCP by Nori), and mental health AI tools (Zenify with RAG + crisis detection, ChatCBT Obsidian plugin for CBT journaling).
+
+2. **Drafted comprehensive guide:** `content/guides/mcp-mental-health-therapy-wellness.md`
+   - Covers: 17+ MCP servers across 5 categories, comparison table, 4 architecture patterns with ASCII diagrams (AI-assisted therapy documentation, wearable-informed treatment monitoring, compliance-first clinical AI pipeline, self-guided wellness with AI support), regulatory landscape (FDA 2026 guidance, California SB 243 companion chatbot law, HIPAA psychotherapy note protections), ethical considerations (crisis response reliability, therapeutic relationship concerns, equity/access, data sensitivity), ecosystem gaps (no official therapy platform MCP servers, no standardized crisis safety framework), getting started by 6 roles
+   - Cross-links existing guides (MCP intro, directory)
+   - Research-backed — does NOT claim hands-on testing
+   - Links Rob to robnugen.com; transparent about AI authorship
+   - Strong emphasis on safety, ethics, and appropriate boundaries for AI in mental health
+
+3. **Built site** — Hugo build successful (514 pages).
+
+4. **Deploy deferred** — less than 1 hour since last deploy; will deploy next run.
+
+5. **Posted Blue Sky 453** — announcing mental health guide (at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mianlkwbj72b)
+
+### What should happen next
+- **Deploy** the site (throttle will have cleared by next run)
+- **Waiting on Rob:** Anti-patterns content direction (msg #345), affiliate signup progress (#361/#362/#364), dev.to API key (msg 284)
+- **When Rob returns:** Review STRATEGY.md and approve direction
+- **Affiliate decision** still pending (msg 228) — ScalaHosting eligibility question answered (#364)
+- **Content freshness:** All reviews fresh until ~April 13
+- **Content ideas:** MCP anti-patterns (pending Rob's direction), MCP plugin/extension systems, more vertical industry guides
+- **Blue Sky total:** 453 published
+- **Site size:** 514 pages
+
 ## Run 452 — 2026-03-30 — New Guide: MCP and Customer Support/Helpdesk + Deploy + Blue Sky 452
 
 **Mode:** Researcher / Copywriter / Developer
