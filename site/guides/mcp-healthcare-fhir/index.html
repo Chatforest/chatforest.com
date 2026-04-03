@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 29, 2026 · Updated Mar 29, 2026</span>
+        <span>Published Mar 29, 2026 · Updated Apr 3, 2026</span>
       </div>
 
       <h1 class="article-title">MCP and Healthcare: How AI Agents Connect to EHRs, FHIR, Medical Imaging, and Clinical Data</h1>
@@ -299,6 +299,17 @@
 <h3 id="medical-mcp-jamesanz">Medical MCP (JamesANZ)</h3>
 <p><strong>Repository:</strong> JamesANZ/medical-mcp</p>
 <p>This server queries multiple authoritative medical APIs including FDA, WHO, PubMed, Google Scholar, and RxNorm. It provides drug information, health statistics, medical literature, and clinical guidelines — useful for agents that need to cross-reference clinical data with evidence-based recommendations.</p>
+<h3 id="fdb-medproof-mcp-first-databank">FDB MedProof MCP (First Databank)</h3>
+<p><strong>Product:</strong> FDB MedProof MCP™ | <strong>Type:</strong> Commercial (enterprise) | <strong>GA:</strong> March 31, 2026</p>
+<p>The first MCP server built specifically for AI agent-driven medication decisions. First Databank — whose drug databases are already embedded in most major EHRs — launched MedProof MCP to bring that same medication intelligence to AI agents operating across clinical workflows.</p>
+<p>MedProof MCP connects AI agents to FDB&rsquo;s drug knowledge database across major EHR platforms including Epic, athenahealth, eClinicalWorks, MEDITECH, and Oracle Health (Cerner). This is significant because it means agents can perform drug interaction checks, dosage validation, and medication decision support in patient-specific context without requiring custom integrations per EHR.</p>
+<p>FDB also announced two complementary AI solutions:</p>
+<ul>
+<li><strong>FDB Script Agent™</strong> — a prescription automation agent for ambulatory settings where physicians dictate prescriptions that get structured and queued for review</li>
+<li><strong>FDB VerifyAssist™</strong> — an inpatient pharmacy verification assistant that runs drug checks at the point of need, reducing the chart-digging time that currently consumes pharmacist hours</li>
+</ul>
+<p>The platform is already in production at Artera — a patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually. This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.</p>
+<p>This is a notable shift: a major clinical data vendor building MCP-native products rather than retrofitting existing APIs. It signals that MCP is becoming the expected integration standard for healthcare AI, not just an option.</p>
 <h3 id="the-clinical-knowledge-pattern">The Clinical Knowledge Pattern</h3>
 <pre><code>Clinical Query
     ├──→ EHR MCP Server ──→ Patient-specific data
@@ -460,6 +471,13 @@ AI Agent ───────────┼──MCP──→ Lab System (FHIR
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Guide</span> <span>2026-04-03 12:00:00</span></div>
+  <h3><a href="/guides/mcp-dev-summit-2026-guide/">MCP Dev Summit 2026: Key Sessions, Themes, and What They Mean for the Ecosystem</a></h3>
+  <p>The first official MCP conference brought 95&#43; sessions across security, enterprise adoption, SDK evolution, and cross-platform interoperability. Here&#39;s what happened and what it means for the ecosystem.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:45:00</span></div>
   <h3><a href="/guides/mcp-customer-support-helpdesk/">MCP and Customer Support: How AI Agents Connect to Zendesk, Intercom, Freshdesk, ServiceNow, Salesforce, HubSpot, Help Scout, Plain, Pylon, Knowledge Bases, Ticketing Systems, Live Chat, and Helpdesk Automation</a></h3>
   <p>The AI customer support market reached $15.12 billion in 2026, projected to $47.82 billion by 2030 at 25.8% CAGR. Gartner predicts 80% of routine customer interactions will be fully handled by AI in 2026. This guide covers 60&#43; MCP servers across customer support — from Zendesk and Intercom ticketing to ServiceNow ITSM, Salesforce Service Cloud, Plain and Pylon modern support platforms, HubSpot Service Hub, Help Scout shared inboxes, Confluence and Notion knowledge bases, and live chat automation. Architecture patterns cover AI-augmented ticket triage, knowledge-powered response drafting, cross-platform escalation workflows, and proactive support intelligence pipelines.</p>
@@ -480,13 +498,6 @@ AI Agent ───────────┼──MCP──→ Lab System (FHIR
 </div>
 
   
-    <div class="article-card">
-  <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:30:00</span></div>
-  <h3><a href="/guides/mcp-real-time-collaboration/">MCP and Real-Time Collaboration: How AI Agents Connect to Slack, Microsoft Teams, Notion, Confluence, Miro, Figma, Video Conferencing, Discord, Project Management, Whiteboarding, Knowledge Bases, and Shared Workspaces</a></h3>
-  <p>The enterprise collaboration software market is valued at $64.9 billion in 2025, projected to reach $121.5 billion by 2030 at 13.4% CAGR. AI copilots are expected to automate 30-50% of routine collaboration workloads. This guide covers 70&#43; MCP servers across real-time collaboration — from Slack and Teams messaging to Notion and Confluence editing, Miro and Figma whiteboarding, video conferencing transcription, project management, and shared workspaces. The ecosystem features official first-party MCP servers from Slack, Notion, Atlassian, Miro, Figma, Airtable, Asana, and Linear, alongside community servers that often provide 3-5x more tools. Architecture patterns cover AI-augmented team communication, collaborative document workflows, meeting intelligence pipelines, and multi-agent project coordination.</p>
-</div>
-
-  
 </aside>
 
 
@@ -496,7 +507,7 @@ AI Agent ───────────┼──MCP──→ Lab System (FHIR
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-29T00:00:00+09:00","datePublished":"2026-03-29T22:00:00+09:00","description":"A comprehensive guide to MCP integrations for healthcare — covering FHIR servers, EHR connections (Epic, Cerner), DICOM imaging, clinical decision support, the HMCP specification","headline":"MCP and Healthcare: How AI Agents Connect to EHRs, FHIR, Medical Imaging, and Clinical Data","mainEntityOfPage":"https://chatforest.com/guides/mcp-healthcare-fhir/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-healthcare-fhir/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-03T00:00:00+09:00","datePublished":"2026-03-29T22:00:00+09:00","description":"A comprehensive guide to MCP integrations for healthcare — covering FHIR servers, EHR connections (Epic, Cerner), DICOM imaging, clinical decision support, the HMCP specification","headline":"MCP and Healthcare: How AI Agents Connect to EHRs, FHIR, Medical Imaging, and Clinical Data","mainEntityOfPage":"https://chatforest.com/guides/mcp-healthcare-fhir/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-healthcare-fhir/"}
 </script>
 
 

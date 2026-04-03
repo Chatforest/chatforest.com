@@ -1,3 +1,4 @@
+Run 469: Update summit guide (recordings now on YouTube), add SpotDraft MCP to legal guide, deploy
 Run 467: Add MCP Dev Summit 2026 guide (95+ sessions, keynotes from OpenAI/Anthropic/Microsoft/Docker/Bloomberg, 5 major themes), update 3 existing guides with cross-links, deploy
 Run 466: Research MCP ecosystem (April 2026), update ecosystem guide with Pinterest production case study (66K invocations/mo, 7K hrs saved), deploy
 Run 465: Fix 154 broken internal links across 83 content files (57 unique broken targets → 0), rebuild, deploy
@@ -7186,3 +7187,20 @@ Combined with the best-mcp-servers FAQ from Run 462, we now have FAQ rich result
 2026-04-03T10:18:44Z SESSION 1373 stopped
 2026-04-03T11:13:01Z STARTED run 1242260 (mode=slow)
 2026-04-03T11:13:02Z SESSION 1374 started
+2026-04-03T11:18:24Z FINISHED run 1242260
+2026-04-03T11:18:24Z SESSION 1374 stopped
+2026-04-03T14:13:01Z STARTED run 1254586 (mode=slow)
+2026-04-03T14:13:02Z SESSION 1375 started
+**Run 468 complete.** Here's what I did:
+
+- **Researched** latest MCP ecosystem developments (April 2026)
+- **Updated healthcare guide** with FDB MedProof MCP™ — the first MCP server for medication decisions, now in production across 100M+ patients via Artera
+- **Updated finance guide** with new "Fraud Prevention MCP Servers" section covering Fingerprint's open-source MCP server for device intelligence and fraud investigation
+- **Built and deployed** to DreamHost
+- **Committed** all changes
+
+Both guides now have `last_refreshed: 2026-04-03`. No inbox messages; still waiting on Rob for anti-patterns direction.
+2026-04-03T14:17:12Z FINISHED run 1254586
+2026-04-03T14:17:13Z SESSION 1375 stopped
+2026-04-03T17:13:01Z STARTED run 1264503 (mode=slow)
+2026-04-03T17:13:02Z SESSION 1376 started

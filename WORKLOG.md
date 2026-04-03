@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 469 — 2026-04-04 — Update Summit Guide + Add SpotDraft MCP to Legal Guide + Deploy
+
+**Mode:** Researcher + Developer (Content Freshness)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+- Still waiting on Rob for anti-patterns direction (msg #345).
+
+### What I did
+
+1. **Researched post-MCP Dev Summit developments:**
+   - All 95+ session recordings are now live on YouTube (confirmed via @mcpsummit)
+   - SpotDraft released alpha MCP server for contract lifecycle management (April 2026)
+   - Google Colab MCP already covered (Run ~440s), no update needed
+   - No major new protocol announcements beyond what was covered in Run 467-468
+
+2. **Updated MCP Dev Summit guide** (`mcp-dev-summit-2026-guide.md`):
+   - Added note that all session recordings are now available on YouTube
+   - Updated "What to Watch" section — recordings item now marked as available with link
+   - Updated intro to reference post-summit recordings rather than pre-summit commentary
+   - Updated `last_refreshed` to 2026-04-04
+
+3. **Updated legal guide** (`mcp-legal-contract-management.md`):
+   - Added SpotDraft MCP Server (Alpha) section under Contract and E-Signature servers
+   - Covers CLM integration, contract status queries, portfolio analysis, Qualcomm backing ($400M valuation)
+   - Updated comparison table to include SpotDraft
+   - Updated "What's Not Yet Available" section to note SpotDraft and Concord as CLM exceptions
+   - Updated `last_refreshed` to 2026-04-04
+
+4. **Built and deployed** — Hugo build successful, deployed to DreamHost.
+
+### What should happen next
+- **Monitor GSC** in ~2 weeks for CTR impact from runs 460-465 SEO work
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~9 days
+- **Waiting on Rob:** Anti-patterns content direction (msg #345)
+- **Consider:** Deep-dive into specific summit session recordings for new content angles (SDK V2 details, conformance testing specifics)
+- **Site size:** 520 pages
+
 ## Run 468 — 2026-04-03 — Update Healthcare + Finance Guides with New MCP Servers + Deploy
 
 **Mode:** Researcher + Developer (Content Freshness)

@@ -4,7 +4,7 @@ date: 2026-03-29T21:00:00+09:00
 description: "A comprehensive guide to MCP integrations for the legal industry — covering legal research servers, contract lifecycle management, e-signature platforms, regulatory compliance"
 content_type: "Guide"
 card_description: "The legal industry is rapidly adopting AI agents. This guide covers MCP servers for legal research across US, EU, and national jurisdictions, contract management with e-signature platforms, regulatory compliance checking, document management bridges for iManage and Clio, Harvey AI's MCP integration, and architecture patterns for AI-assisted legal work."
-last_refreshed: 2026-03-29
+last_refreshed: 2026-04-04
 ---
 
 Legal work runs on information — statutes, case law, regulations, contracts, client documents, compliance frameworks, and precedent. A single matter might require searching federal and state codes, reviewing dozens of contracts, checking regulatory requirements across jurisdictions, pulling documents from a firm's DMS, and producing analysis that meets professional responsibility standards. The challenge isn't just finding information — it's synthesizing it across systems while maintaining the confidentiality, accuracy, and audit trails the profession demands.
@@ -174,16 +174,31 @@ An official server from BoldSign (a Syncfusion product) with 15 tools organized 
 
 DocuSign has released an official MCP server in beta, available through their developer portal. The server enables AI agents to send documents for eSignature, track agreement status, manage templates, and automate workflows through natural language. Additionally, CData provides a read-only DocuSign MCP server (`CDataSoftware/docusign-mcp-server-by-cdata`) for querying DocuSign data.
 
+### SpotDraft MCP Server (Alpha)
+
+**SpotDraft/spotdraft-mcp** | **License:** Not specified | **Language:** Not specified | **Status:** Alpha
+
+[SpotDraft](https://www.spotdraft.com), a contract lifecycle management platform backed by Qualcomm (valuation approaching $400M), released an [alpha MCP server](https://github.com/SpotDraft/spotdraft-mcp) in April 2026. The server integrates SpotDraft's API into agentic workflows, enabling AI agents to:
+
+- Retrieve contract status and key metadata directly from SpotDraft
+- Pull contract data into external AI workflows
+- Query across contract portfolios for analysis
+
+This is notable as one of the first CLM-native MCP servers from a major platform. SpotDraft joins Concord as the second dedicated CLM vendor to ship MCP support. The alpha status means it is not yet production-ready and is not covered by SpotDraft's support SLA — but it signals the direction CLM platforms are heading.
+
+For organizations already using SpotDraft for contract management, this MCP server creates a direct bridge between their contract data and AI agent workflows without requiring custom API integration.
+
 ### SignNow MCP Server
 
 Listed on the Glama MCP directory with approximately 15 stars and MIT license. Features include template management, signing invitations, embedded signing and editing, status tracking, and document downloads.
 
-### E-Signature Server Comparison
+### E-Signature and CLM Server Comparison
 
 | Server | Stars | Tools | Official | Features |
 |--------|-------|-------|----------|----------|
 | eSignatures.com | ~35 | 13 | Yes | Full contract lifecycle, templates, collaborators |
 | DocuSign (Beta) | — | — | Yes | eSign, tracking, templates, workflow automation |
+| SpotDraft (Alpha) | — | — | Yes | CLM integration, contract status, portfolio queries |
 | BoldSign | ~4 | 15 | Yes | Documents, templates, contacts, teams |
 | SignNow | ~15 | — | — | Templates, embedded signing, downloads |
 
@@ -515,7 +530,7 @@ Several important legal technology categories do not yet have MCP servers:
 - **E-discovery platforms** — no Relativity MCP integration exists
 - **Major legal research platforms** — neither LexisNexis nor Westlaw have announced MCP support
 - **Case/matter management** — no production-ready matter management MCP server exists (legal-mcp is early-stage)
-- **Most CLM platforms** — Ironclad, Icertis, Agiloft, and ContractPodAi have not announced MCP integrations
+- **Most CLM platforms** — Ironclad, Icertis, Agiloft, and ContractPodAi have not announced MCP integrations (SpotDraft's alpha server and Concord's live server are the exceptions so far)
 - **NetDocuments** — no MCP integration despite being a major legal DMS
 
 These gaps represent both limitations of the current ecosystem and opportunities for development. The iManage and Harvey integrations suggest that larger legal tech platforms may follow.
@@ -553,4 +568,4 @@ Deploy the EU and US compliance MCP servers from Ansvar Systems for regulatory t
 
 ---
 
-*This guide was last updated on March 29, 2026. Legal technology platforms are actively developing MCP integrations — the ecosystem described here will likely expand significantly in the coming months. We recommend checking vendor documentation and GitHub repositories for the latest information. Our analysis is based on published documentation, open-source code, vendor announcements, and legal industry reporting — we research and analyze these tools rather than deploying or testing them ourselves.*
+*This guide was last updated on April 4, 2026. Legal technology platforms are actively developing MCP integrations — the ecosystem described here will likely expand significantly in the coming months. We recommend checking vendor documentation and GitHub repositories for the latest information. Our analysis is based on published documentation, open-source code, vendor announcements, and legal industry reporting — we research and analyze these tools rather than deploying or testing them ourselves.*

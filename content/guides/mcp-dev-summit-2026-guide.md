@@ -4,12 +4,14 @@ date: 2026-04-03T12:00:00+09:00
 description: "A comprehensive guide to MCP Dev Summit North America 2026 — the first official conference for the Model Context Protocol community, featuring 95+ sessions from Anthropic, OpenAI, Microsoft, Docker, Bloomberg, and more."
 content_type: "Guide"
 card_description: "The first official MCP conference brought 95+ sessions across security, enterprise adoption, SDK evolution, and cross-platform interoperability. Here's what happened and what it means for the ecosystem."
-last_refreshed: 2026-04-03
+last_refreshed: 2026-04-04
 ---
 
 The first MCP Dev Summit North America took place April 2–3, 2026 in New York City, organized by the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (AAIF) under the Linux Foundation. With over 95 sessions spanning four tracks — Protocol in Depth, Security and Operations, Apps and Agents, and MCP Best Practices — the event marked MCP's transition from a fast-growing open-source project to a formally governed industry standard with its own conference ecosystem.
 
-This guide covers the key themes, notable sessions, and implications for developers and organizations building with MCP. Our analysis draws on the published schedule, speaker announcements, and pre-summit commentary — we research and analyze rather than attending events hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+All sessions are now [available on demand on YouTube](https://x.com/mcpsummit/status/1930603227013140797), covering protocol deep dives, security research, and real-world deployment case studies.
+
+This guide covers the key themes, notable sessions, and implications for developers and organizations building with MCP. Our analysis draws on the published schedule, speaker announcements, and post-summit recordings — we research and analyze rather than attending events hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 For related context, see our guides on [The MCP Ecosystem in 2026](/guides/mcp-ecosystem-2026-state-of-the-standard/), [What Is MCP?](/guides/what-is-mcp/), [MCP 2026 Roadmap](/guides/mcp-2026-roadmap-whats-coming/), [MCP Server Security](/guides/mcp-server-security/), and [MCP Registry & Server Discovery](/guides/mcp-registry-server-discovery/).
 
@@ -131,7 +133,7 @@ Pinterest (66K monthly invocations, 844 users), Duolingo (180+ MCP tools), Nords
 
 1. **SDK V2 releases** — Watch for Python SDK updates following Max Isbey's V2 roadmap session. Breaking changes to `mcp.server.auth` are possible.
 2. **Authentication RFC** — With six dedicated auth sessions and the OAuth 2.1 spec author present, expect formal proposals for standardized MCP authentication.
-3. **Session recordings** — The Linux Foundation typically publishes recordings after their events. These will be valuable for the broader community.
+3. **Session recordings (now available)** — All 95+ sessions are [now live on the MCP Developers Summit YouTube channel](https://x.com/mcpsummit/status/1930603227013140797), available on demand. Every talk from protocol deep dives to real-world deployment case studies is accessible for free.
 4. **Docker MCP distribution** — Docker's control plane and OCI distribution sessions suggest official tooling for MCP server packaging and deployment.
 5. **OpenAI resource support** — Nick Cooper's "MCP x MCP" keynote may lead to announcements about expanded MCP support in ChatGPT and OpenAI's platform.
 
@@ -156,4 +158,4 @@ For organizations evaluating MCP adoption, the summit's enterprise track provide
 
 ---
 
-*This guide will be updated as session recordings and post-summit announcements become available. Last refreshed: April 3, 2026.*
+*Session recordings are now available on YouTube. This guide will continue to be updated as post-summit announcements and implementations emerge. Last refreshed: April 4, 2026.*

@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 29, 2026 · Updated Mar 29, 2026</span>
+        <span>Published Mar 29, 2026 · Updated Apr 4, 2026</span>
       </div>
 
       <h1 class="article-title">MCP and Legal: How AI Agents Connect to Legal Research, Contract Management, Compliance, and Document Systems</h1>
@@ -250,9 +250,19 @@
 </ul>
 <h3 id="docusign-mcp-server-beta">DocuSign MCP Server (Beta)</h3>
 <p>DocuSign has released an official MCP server in beta, available through their developer portal. The server enables AI agents to send documents for eSignature, track agreement status, manage templates, and automate workflows through natural language. Additionally, CData provides a read-only DocuSign MCP server (<code>CDataSoftware/docusign-mcp-server-by-cdata</code>) for querying DocuSign data.</p>
+<h3 id="spotdraft-mcp-server-alpha">SpotDraft MCP Server (Alpha)</h3>
+<p><strong>SpotDraft/spotdraft-mcp</strong> | <strong>License:</strong> Not specified | <strong>Language:</strong> Not specified | <strong>Status:</strong> Alpha</p>
+<p><a href="https://www.spotdraft.com">SpotDraft</a>, a contract lifecycle management platform backed by Qualcomm (valuation approaching $400M), released an <a href="https://github.com/SpotDraft/spotdraft-mcp">alpha MCP server</a> in April 2026. The server integrates SpotDraft&rsquo;s API into agentic workflows, enabling AI agents to:</p>
+<ul>
+<li>Retrieve contract status and key metadata directly from SpotDraft</li>
+<li>Pull contract data into external AI workflows</li>
+<li>Query across contract portfolios for analysis</li>
+</ul>
+<p>This is notable as one of the first CLM-native MCP servers from a major platform. SpotDraft joins Concord as the second dedicated CLM vendor to ship MCP support. The alpha status means it is not yet production-ready and is not covered by SpotDraft&rsquo;s support SLA — but it signals the direction CLM platforms are heading.</p>
+<p>For organizations already using SpotDraft for contract management, this MCP server creates a direct bridge between their contract data and AI agent workflows without requiring custom API integration.</p>
 <h3 id="signnow-mcp-server">SignNow MCP Server</h3>
 <p>Listed on the Glama MCP directory with approximately 15 stars and MIT license. Features include template management, signing invitations, embedded signing and editing, status tracking, and document downloads.</p>
-<h3 id="e-signature-server-comparison">E-Signature Server Comparison</h3>
+<h3 id="e-signature-and-clm-server-comparison">E-Signature and CLM Server Comparison</h3>
 <table>
 <thead>
 <tr>
@@ -277,6 +287,13 @@
 <td>—</td>
 <td>Yes</td>
 <td>eSign, tracking, templates, workflow automation</td>
+</tr>
+<tr>
+<td>SpotDraft (Alpha)</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>CLM integration, contract status, portfolio queries</td>
 </tr>
 <tr>
 <td>BoldSign</td>
@@ -577,7 +594,7 @@
 <li><strong>E-discovery platforms</strong> — no Relativity MCP integration exists</li>
 <li><strong>Major legal research platforms</strong> — neither LexisNexis nor Westlaw have announced MCP support</li>
 <li><strong>Case/matter management</strong> — no production-ready matter management MCP server exists (legal-mcp is early-stage)</li>
-<li><strong>Most CLM platforms</strong> — Ironclad, Icertis, Agiloft, and ContractPodAi have not announced MCP integrations</li>
+<li><strong>Most CLM platforms</strong> — Ironclad, Icertis, Agiloft, and ContractPodAi have not announced MCP integrations (SpotDraft&rsquo;s alpha server and Concord&rsquo;s live server are the exceptions so far)</li>
 <li><strong>NetDocuments</strong> — no MCP integration despite being a major legal DMS</li>
 </ul>
 <p>These gaps represent both limitations of the current ecosystem and opportunities for development. The iManage and Harvey integrations suggest that larger legal tech platforms may follow.</p>
@@ -602,7 +619,7 @@
 <li><a href="/guides/mcp-server-security/">MCP Security Best Practices</a> — comprehensive security guidance for MCP deployments</li>
 </ul>
 <hr>
-<p><em>This guide was last updated on March 29, 2026. Legal technology platforms are actively developing MCP integrations — the ecosystem described here will likely expand significantly in the coming months. We recommend checking vendor documentation and GitHub repositories for the latest information. Our analysis is based on published documentation, open-source code, vendor announcements, and legal industry reporting — we research and analyze these tools rather than deploying or testing them ourselves.</em></p>
+<p><em>This guide was last updated on April 4, 2026. Legal technology platforms are actively developing MCP integrations — the ecosystem described here will likely expand significantly in the coming months. We recommend checking vendor documentation and GitHub repositories for the latest information. Our analysis is based on published documentation, open-source code, vendor announcements, and legal industry reporting — we research and analyze these tools rather than deploying or testing them ourselves.</em></p>
 
       </div>
 
@@ -615,6 +632,13 @@
 
 <aside class="related-content">
   <h2 class="section-heading">More Guides</h2>
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Guide</span> <span>2026-04-03 12:00:00</span></div>
+  <h3><a href="/guides/mcp-dev-summit-2026-guide/">MCP Dev Summit 2026: Key Sessions, Themes, and What They Mean for the Ecosystem</a></h3>
+  <p>The first official MCP conference brought 95&#43; sessions across security, enterprise adoption, SDK evolution, and cross-platform interoperability. Here&#39;s what happened and what it means for the ecosystem.</p>
+</div>
+
   
     <div class="article-card">
   <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:45:00</span></div>
@@ -637,13 +661,6 @@
 </div>
 
   
-    <div class="article-card">
-  <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:30:00</span></div>
-  <h3><a href="/guides/mcp-real-time-collaboration/">MCP and Real-Time Collaboration: How AI Agents Connect to Slack, Microsoft Teams, Notion, Confluence, Miro, Figma, Video Conferencing, Discord, Project Management, Whiteboarding, Knowledge Bases, and Shared Workspaces</a></h3>
-  <p>The enterprise collaboration software market is valued at $64.9 billion in 2025, projected to reach $121.5 billion by 2030 at 13.4% CAGR. AI copilots are expected to automate 30-50% of routine collaboration workloads. This guide covers 70&#43; MCP servers across real-time collaboration — from Slack and Teams messaging to Notion and Confluence editing, Miro and Figma whiteboarding, video conferencing transcription, project management, and shared workspaces. The ecosystem features official first-party MCP servers from Slack, Notion, Atlassian, Miro, Figma, Airtable, Asana, and Linear, alongside community servers that often provide 3-5x more tools. Architecture patterns cover AI-augmented team communication, collaborative document workflows, meeting intelligence pipelines, and multi-agent project coordination.</p>
-</div>
-
-  
 </aside>
 
 
@@ -653,7 +670,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-29T00:00:00+09:00","datePublished":"2026-03-29T21:00:00+09:00","description":"A comprehensive guide to MCP integrations for the legal industry — covering legal research servers, contract lifecycle management, e-signature platforms, regulatory compliance","headline":"MCP and Legal: How AI Agents Connect to Legal Research, Contract Management, Compliance, and Document Systems","mainEntityOfPage":"https://chatforest.com/guides/mcp-legal-contract-management/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-legal-contract-management/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-04T00:00:00+09:00","datePublished":"2026-03-29T21:00:00+09:00","description":"A comprehensive guide to MCP integrations for the legal industry — covering legal research servers, contract lifecycle management, e-signature platforms, regulatory compliance","headline":"MCP and Legal: How AI Agents Connect to Legal Research, Contract Management, Compliance, and Document Systems","mainEntityOfPage":"https://chatforest.com/guides/mcp-legal-contract-management/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-legal-contract-management/"}
 </script>
 
 
