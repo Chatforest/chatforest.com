@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 29, 2026 · Updated Mar 29, 2026</span>
+        <span>Published Mar 29, 2026 · Updated Apr 4, 2026</span>
       </div>
 
       <h1 class="article-title">MCP and Cloud Providers: How AWS, Azure, Google Cloud, and Cloudflare Deploy and Host the Model Context Protocol</h1>
@@ -118,6 +118,14 @@
 <td>1 (Vercel platform)</td>
 <td>AI SDK 6</td>
 <td>OAuth</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>DigitalOcean</strong></td>
+<td>App Platform, Droplets</td>
+<td>9 services (remote MCP)</td>
+<td>N/A</td>
+<td>Bearer token, OAuth</td>
 <td>N/A</td>
 </tr>
 </tbody>
@@ -375,6 +383,16 @@
 <li><strong>AI SDK 6</strong> — full MCP support with agents, tool execution approval, DevTools, and reranking</li>
 <li><strong>OAuth authentication</strong> — HTTP + OAuth transport (upgraded from SSE)</li>
 </ul>
+<h2 id="digitalocean-developer-friendly-cloud-mcp">DigitalOcean: Developer-Friendly Cloud MCP</h2>
+<p>DigitalOcean launched its <a href="https://github.com/digitalocean/digitalocean-mcp">MCP Server</a> publicly in April 2026, covering 9 services with both local and remote MCP endpoints — making it the most comprehensive MCP integration from a mid-tier cloud provider.</p>
+<h3 id="supported-services">Supported Services</h3>
+<p>The DigitalOcean MCP Server covers: <strong>Accounts</strong>, <strong>App Platform</strong>, <strong>Databases</strong>, <strong>DOKS</strong> (managed Kubernetes), <strong>Droplets</strong>, <strong>Insights</strong>, <strong>Marketplace</strong>, <strong>Networking</strong>, and <strong>Spaces Storage</strong>. Each service is available as its own remote MCP endpoint at a dedicated HTTPS URL, so you can connect only the services you need.</p>
+<h3 id="remote-mcp-no-local-install">Remote MCP (No Local Install)</h3>
+<p>DigitalOcean offers remote MCP endpoints for all 9 services — connect your AI tools to DigitalOcean without installing any binaries locally. Each service runs as its own MCP server at a dedicated HTTPS endpoint, using OAuth for authentication.</p>
+<h3 id="local-mcp-server">Local MCP Server</h3>
+<p>The local option runs as a Go binary connecting to 9 services via bearer token authentication. Typical operations include deploying apps from GitHub repos, provisioning databases, managing Droplets, and querying Kubernetes clusters — all through natural language.</p>
+<h3 id="where-digitalocean-fits">Where DigitalOcean fits</h3>
+<p>DigitalOcean&rsquo;s MCP server targets developers and small-to-mid-sized teams who use DigitalOcean as their primary cloud. It lacks the enterprise governance features of AWS (IAM session isolation, CloudTrail), Azure (Entra ID, Conditional Access), or Cloudflare (Zero Trust), but offers a simpler setup path with less configuration overhead. The remote MCP option is particularly useful for quick integration without managing local infrastructure.</p>
 <h2 id="cloud-native-authentication-for-mcp">Cloud-Native Authentication for MCP</h2>
 <p>The <a href="/guides/mcp-authorization-oauth/">MCP authorization specification</a> finalized June 2025 is based on OAuth 2.1, with MCP servers classified as OAuth Resource Servers. Each cloud provider implements this differently:</p>
 <table>
@@ -557,7 +575,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-29T00:00:00+09:00","datePublished":"2026-03-29T18:00:00+09:00","description":"A comprehensive guide to MCP integration across major cloud providers — covering Amazon Bedrock AgentCore, AWS Lambda MCP hosting, 66+ AWS MCP servers, Amazon Q Developer, Google","headline":"MCP and Cloud Providers: How AWS, Azure, Google Cloud, and Cloudflare Deploy and Host the Model Context Protocol","mainEntityOfPage":"https://chatforest.com/guides/mcp-cloud-providers-aws-azure-gcp/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-cloud-providers-aws-azure-gcp/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-04T00:00:00+09:00","datePublished":"2026-03-29T18:00:00+09:00","description":"A comprehensive guide to MCP integration across major cloud providers — covering Amazon Bedrock AgentCore, AWS Lambda MCP hosting, 66+ AWS MCP servers, Amazon Q Developer, Google","headline":"MCP and Cloud Providers: How AWS, Azure, Google Cloud, and Cloudflare Deploy and Host the Model Context Protocol","mainEntityOfPage":"https://chatforest.com/guides/mcp-cloud-providers-aws-azure-gcp/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-cloud-providers-aws-azure-gcp/"}
 </script>
 
 

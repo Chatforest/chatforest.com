@@ -115,6 +115,12 @@
 <td>DexScreener MCP, Jupiter MCP</td>
 </tr>
 <tr>
+<td>Cross-chain execution</td>
+<td><a href="https://github.com/debridge-finance/debridge-mcp">deBridge MCP</a></td>
+<td>—</td>
+<td>VeChain AI Terminal (limited)</td>
+</tr>
+<tr>
 <td>NFT &amp; marketplace</td>
 <td><a href="https://github.com/thirdweb-dev/ai">thirdweb-dev/ai</a> (thirdweb-mcp)</td>
 <td>—</td>
@@ -221,6 +227,12 @@
 <li><strong>Uniswap trader servers</strong> — Various community implementations for Uniswap V2/V3 swaps on EVM chains. Fragmented — no single dominant implementation.</li>
 <li><strong>PancakeSwap Poolspy MCP</strong> — Tracks newly created liquidity pools on PancakeSwap for DeFi analysts and traders.</li>
 </ul>
+<h3 id="cross-chain-execution">Cross-chain execution</h3>
+<p><strong><a href="https://github.com/debridge-finance/debridge-mcp">deBridge MCP</a></strong> — The first dedicated MCP server for cross-chain DeFi execution. deBridge MCP gives AI agents non-custodial swap, bridge, and trading capabilities across 25+ EVM chains and Solana through a single interface.</p>
+<p><strong>Key tools:</strong> <code>get_supported_chains</code>, <code>search_tokens</code>, <code>create_tx</code>, <code>get_instructions</code>, <code>transaction_same_chain_swap</code> — covering the full lifecycle from token discovery to cross-chain execution.</p>
+<p><strong>Why it matters:</strong> deBridge&rsquo;s April 2026 update added composable skills and an agent discovery layer, enabling what they call &ldquo;Vibe Trading&rdquo; — describe the outcome you want (e.g., &ldquo;move 500 USDC from Ethereum to Arbitrum and swap for ARB&rdquo;), and the agent handles routing, bridging, chain switching, and execution. The hosted MCP endpoint at <code>agents.debridge.com</code> means no local infrastructure needed.</p>
+<p><strong>Architecture:</strong> MEV-aware routing optimized for reliability, deterministic execution with quotes designed to execute as intended, and full user custody throughout — the agent orchestrates but never holds funds. Supports Streamable HTTP transport.</p>
+<p><strong>The catch:</strong> Cross-chain operations carry inherent bridge risk. deBridge has processed significant volume but bridge exploits remain a real threat in DeFi. Agents executing cross-chain transfers should implement value limits and confirmation steps.</p>
 <h3 id="the-gap-1">The gap</h3>
 <p>No unified DeFi MCP server exists that combines analytics (like DefiLlama) with execution (like Jupiter) across multiple chains. You need to compose multiple servers. Also missing: automated yield farming strategies, impermanent loss monitoring, liquidation alerts, and portfolio rebalancing tools.</p>
 <h2 id="nft--marketplace">NFT &amp; marketplace</h2>
@@ -296,7 +308,7 @@
 <li><strong>Transaction simulation.</strong> No blockchain MCP server includes built-in transaction simulation (like Tenderly or Blowfish) before execution. This is a critical safety gap for autonomous agents handling real funds.</li>
 <li><strong>Multi-sig and governance.</strong> No MCP integration for Safe (Gnosis Safe) multi-sig wallets or DAO governance voting. Agents can&rsquo;t participate in protocol governance or manage shared treasuries.</li>
 <li><strong>Ordinals and BRC-20.</strong> Bitcoin&rsquo;s growing NFT and token ecosystem has no MCP coverage.</li>
-<li><strong>Cross-chain bridges.</strong> No dedicated MCP server for cross-chain asset transfers. You can swap within a chain but not bridge between them (except through VeChain&rsquo;s terminal).</li>
+<li><strong>Cross-chain bridges.</strong> deBridge MCP (see DeFi section above) is the first dedicated cross-chain bridge MCP server, covering 25+ EVM chains and Solana. But coverage gaps remain: no MCP servers for Wormhole, LayerZero, Stargate, or other major bridge protocols. VeChain&rsquo;s AI Terminal also offers limited cross-chain support.</li>
 <li><strong>Portfolio management.</strong> No unified server that tracks positions across chains, calculates P&amp;L, monitors liquidation risks, and suggests rebalancing.</li>
 <li><strong>MEV protection.</strong> No MCP server integrates with MEV protection services (Flashbots, MEV Blocker) to protect agent transactions from sandwich attacks.</li>
 </ul>

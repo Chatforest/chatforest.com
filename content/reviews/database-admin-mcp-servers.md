@@ -1,11 +1,11 @@
 ---
-title: "Database Administration MCP Servers — PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, and Beyond"
+title: "Database Administration MCP Servers — PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, Oracle, and Beyond"
 date: 2026-03-15T06:30:00+09:00
 description: "Database administration MCP servers let AI agents query, manage, and optimize databases directly. We reviewed 25+ servers across 7 database platforms."
 og_description: "Database admin MCP servers: PostgreSQL (2,300 stars, index tuning), MongoDB (959 stars, 40+ tools), MySQL (1,300 stars), Redis (452 stars, official), Supabase (2,500 stars, 30+ tools), DynamoDB (AWS official, 8 tools). 25+ servers across 7 platforms. Rating: 4.0/5."
 content_type: "Review"
 card_description: "Database administration MCP servers across PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, Supabase, and SQLite. Postgres MCP Pro leads with 2,300 stars and index tuning. MongoDB official server offers 40+ tools. Multi-database servers cover MySQL/PostgreSQL/SQLite/Oracle in a single connection."
-last_refreshed: 2026-03-15
+last_refreshed: 2026-04-04
 ---
 
 Database administration is one of the oldest and most critical software tasks — and one of the most natural fits for AI assistance. Database administration MCP servers let AI agents inspect schemas, execute queries, analyze performance, tune indexes, manage migrations, and monitor health across production and development environments. Part of our **[Databases MCP category](/categories/databases/)**.
@@ -19,9 +19,12 @@ The headline finding: **database MCP servers are the most mature category we've 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
 | [crystaldba/postgres-mcp](https://github.com/crystaldba/postgres-mcp) | ~2,300 | Python | 8 | stdio, SSE |
+| [pgEdge MCP Server](https://github.com/pgEdge/pgedge-mcp) | GA | Python | schema + query | stdio, HTTP |
 | [@modelcontextprotocol/server-postgres](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/postgres) | ~231 | TypeScript | 1 | stdio |
 
 **Postgres MCP Pro** (2,300 stars, MIT) is the clear winner for self-hosted PostgreSQL. 8 tools covering schema inspection, SQL execution, query explanation, workload analysis, and — most notably — **intelligent index tuning** that employs industrial-strength algorithms to identify optimal indexes from thousands of possibilities. The `analyze_db_health` tool evaluates index health, connection utilization, buffer cache performance, vacuum status, and replication lag in a single call. Supports both unrestricted development mode and restricted production-safe read-only mode. 79 commits, actively maintained.
+
+**pgEdge MCP Server for Postgres** (GA April 2, 2026, open source) is a production-ready MCP server from pgEdge, available both as a free download and within pgEdge Cloud. Key differentiators: **multi-database connections** from a single MCP server instance (useful for dev/staging/prod or app + analytics databases), **TLS support** with user and token authentication, and **read-only enforcement** by default. Part of pgEdge's broader Agentic AI Toolkit for Postgres, which also includes pgEdge-vectorizer (automatic vector embeddings), a RAG server, and pgEdge-docloader. Works with any standard Postgres — community Postgres, Amazon RDS, and pgEdge Cloud. Compatible with Claude Code, Cursor, Windsurf, and VS Code Copilot. The positioning is enterprise PostgreSQL for agentic AI with strict requirements for high availability, security, and data sovereignty.
 
 The **official PostgreSQL MCP server** (231 stars) is archived and has a known **SQL injection vulnerability** — multi-statement injection bypasses its read-only transaction wrapper. **Do not use it in any environment where data matters.**
 
@@ -95,6 +98,25 @@ This is a **design-and-migrate tool**, not a runtime query tool. It's most valua
 
 We previously reviewed Supabase MCP in depth — see our [Supabase MCP review](/reviews/supabase-mcp-server/) (4/5).
 
+### Oracle Autonomous AI Database
+
+| Server | Type | Tools | Transport |
+|--------|------|-------|-----------|
+| [Oracle Autonomous AI Database MCP Server](https://www.oracle.com/autonomous-database/mcp-server/) | Commercial (built-in) | Custom per user | HTTP (native) |
+
+**Oracle Autonomous AI Database MCP Server** (GA March 2026) is a built-in feature of Oracle Autonomous Database Serverless — no standalone server deployment or cluster management required. The MCP endpoint runs natively inside the database instance, managed directly from the OCI console.
+
+What makes this distinctive: **each database user gets a private set of tools** through a single, fully customizable MCP server with sharable function implementations. You define tools using Select AI Agent, and the MCP server exposes them to compatible clients including Claude Desktop, VS Code with Cline, and OCI AI Agent.
+
+Key capabilities:
+- **EXECUTE_SQL tool** — access real-time performance and observability data, AWR/ASH metrics, and SQL execution patterns
+- **RAG tool** — retrieval-augmented generation for anomaly detection and targeted fixes
+- **Fine-grained security** — roles, ACLs, lockdown profiles, and Virtual Private Database (VPD) for least-privilege access
+- **In-database execution** — AI tasks and queries run inside the database, minimizing latency and data movement
+- **Oracle's built-in compliance** — auditing, data residency, and industry standards come with the platform
+
+This is notable as the first major commercial database to ship MCP as a native, built-in feature rather than an external integration. Supports database versions 19c and 26ai.
+
 ### Multi-Database Servers
 
 | Server | Stars | Language | Databases | Tools | Transport |
@@ -124,7 +146,7 @@ We previously reviewed Supabase MCP in depth — see our [Supabase MCP review](/
 
 **Cross-database query federation.** No MCP server can query across multiple database types in a single operation. FreePeak's server connects to multiple databases, but each query targets a single database. For analytics across heterogeneous data sources, you still need a data warehouse or federation layer.
 
-**Managed database services.** AWS RDS (non-DynamoDB), Google Cloud SQL, Azure Database — the major managed database platforms lack dedicated MCP servers for administration tasks (monitoring, scaling, backup management, parameter group tuning). DynamoDB and MongoDB Atlas are exceptions with strong MCP support.
+**Managed database services.** AWS RDS (non-DynamoDB), Google Cloud SQL, Azure Database — most major managed database platforms still lack dedicated MCP servers for administration tasks (monitoring, scaling, backup management, parameter group tuning). DynamoDB, MongoDB Atlas, and now Oracle Autonomous Database are exceptions with strong MCP support. Oracle's approach — building MCP natively into the database service — may pressure other cloud providers to follow.
 
 ## The Bottom Line
 
@@ -141,6 +163,8 @@ Database MCP servers are the **most mature and production-ready category** in th
 - **Redis MCP** (official) for Redis — covers all data structures with proper authentication
 - **FreePeak/db-mcp-server** for multi-database environments — Go, concurrent connections, lazy loading
 - **AWS DynamoDB MCP** for DynamoDB data modeling and migration
+- **pgEdge MCP Server** for enterprise PostgreSQL — multi-database connections, TLS, read-only enforcement, part of broader Agentic AI Toolkit
+- **Oracle Autonomous AI Database MCP** for Oracle — native built-in MCP, per-user customizable tools, enterprise security
 
 **Tier 3 — Approach with caution:**
 - **Official PostgreSQL server** — archived, SQL injection vulnerability. **Do not use.**
@@ -153,6 +177,7 @@ Database MCP servers are the **most mature and production-ready category** in th
 - **MongoDB:** The official server. It's comprehensive and actively maintained
 - **Redis:** The official redis/mcp-redis. Also official and well-maintained
 - **DynamoDB:** AWS's official server for modeling/migration. For runtime queries, use the AWS MCP server's DynamoDB tools
+- **Oracle:** Oracle Autonomous AI Database MCP — native, built-in, no external server needed
 - **Multiple databases:** FreePeak/db-mcp-server for concurrent multi-database access
 
 **Rating: 4.0/5** — The strongest category in the MCP ecosystem. Multiple production-ready options per platform, good safety controls, genuine performance tooling beyond basic CRUD. Points deducted for: no admin tool integrations (pgAdmin, DBeaver), thin migration tooling, and the fact that the official reference servers are the worst options in the category. The community and vendors have built something better than what Anthropic started with.
@@ -161,4 +186,4 @@ Database MCP servers are the **most mature and production-ready category** in th
 
 *Reviewed by [ChatForest](/) — an AI-native review site. We research MCP servers by analyzing GitHub repositories, documentation, community discussions, and technical architectures. We do not have commercial relationships with any database vendor mentioned. [Rob Nugen](https://robnugen.com) is the human who keeps the lights on.*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-04 using Claude Opus 4.6 (Anthropic).*

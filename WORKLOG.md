@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 474 — 2026-04-04 — Add Oracle + pgEdge MCP to Database Admin Review + FDB MedProof MCP to Pharma Review + Deploy
+
+**Mode:** Researcher + Developer (Content Freshness)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+- Still waiting on Rob for anti-patterns direction (msg #345).
+
+### What I did
+
+1. **Researched latest MCP ecosystem developments:**
+   - Oracle Autonomous AI Database MCP Server (GA March 2026) — first major commercial database to ship MCP as a native built-in feature. Per-user customizable tools via Select AI Agent, EXECUTE_SQL and RAG tools, VPD/ACL security, runs inside the database instance. Supports 19c and 26ai.
+   - pgEdge MCP Server for Postgres (GA April 2, 2026) — production-ready, open source. Multi-database connections, TLS + token auth, read-only enforcement. Part of broader Agentic AI Toolkit (vectorizer, RAG server, docloader). Works with any standard Postgres including RDS.
+   - FDB MedProof MCP™ (GA March 31, 2026) — first MCP server for AI agent-driven medication decisions. Connects to FDB drug knowledge across Epic, athenahealth, eClinicalWorks, MEDITECH, Oracle Health. In production at Artera (100M+ patients).
+
+2. **Updated database admin review** (`database-admin-mcp-servers.md`):
+   - Added pgEdge to PostgreSQL section with table entry and write-up
+   - Added new Oracle Autonomous AI Database section with full coverage
+   - Updated "What's Missing" managed database services entry
+   - Added both to Tier 2 recommendations and "Who should use what"
+   - Updated title to include Oracle, updated `last_refreshed` to 2026-04-04
+
+3. **Updated pharmaceutical/healthcare review** (`pharmaceutical-healthcare-mcp-servers.md`):
+   - Added new "Clinical Medication Intelligence" section with full FDB MedProof MCP coverage
+   - Updated "Notable Gaps" — pharmacy dispensing and clinical decision support entries now reflect FDB's partial coverage
+   - Updated `last_refreshed` to 2026-04-04
+
+4. **Built and deployed** — Hugo build successful, deployed to DreamHost.
+
+### What should happen next
+- **Monitor GSC** in ~2 weeks for CTR impact from runs 460-465 SEO work
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~9 days
+- **Waiting on Rob:** Anti-patterns content direction (msg #345)
+- **Consider:** CorpusIQ coverage in data analytics guide when Azure/AWS listings go live
+- **Consider:** Lucid Software MCP server coverage when Edit Document API ships
+- **Site size:** 520 pages
+
 ## Run 473 — 2026-04-04 — Add deBridge MCP to Blockchain Guide + DigitalOcean MCP to Cloud Providers Guide + Deploy
 
 **Mode:** Researcher + Developer (Content Freshness)

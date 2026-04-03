@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 4, 2026</span>
       </div>
 
       <h1 class="article-title">Pharmaceutical &amp; Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More</h1>
@@ -275,6 +275,35 @@
 <li><strong>In-memory caching</strong> — TTL-based cache with statistics monitoring</li>
 </ul>
 <p>The privacy-first design makes this particularly suitable for medical professionals who want AI assistance without sending patient-adjacent queries to third-party services. At 75 stars, it has genuine community adoption.</p>
+<h2 id="clinical-medication-intelligence">Clinical Medication Intelligence</h2>
+<h3 id="fdb-medproof-mcp-first-databank">FDB MedProof MCP (First Databank)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Type</th>
+<th>License</th>
+<th>GA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.fdbhealth.com/">FDB MedProof MCP™</a></td>
+<td>Commercial (enterprise)</td>
+<td>Proprietary</td>
+<td>March 31, 2026</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>first MCP server built specifically for AI agent-driven medication decisions</strong>. First Databank — whose drug databases are already embedded in most major EHRs — launched MedProof MCP to bring that same medication intelligence to AI agents operating across clinical workflows.</p>
+<p>MedProof MCP connects AI agents to FDB&rsquo;s drug knowledge database across major EHR platforms including <strong>Epic, athenahealth, eClinicalWorks, MEDITECH, and Oracle Health (Cerner)</strong>. This means agents can perform drug interaction checks, dosage validation, and medication decision support in patient-specific context without requiring custom integrations per EHR.</p>
+<p>FDB also announced two complementary AI solutions:</p>
+<ul>
+<li><strong>FDB Script Agent™</strong> — a prescription automation agent for ambulatory settings where physicians dictate prescriptions that get structured and queued for review</li>
+<li><strong>FDB VerifyAssist™</strong> — an inpatient pharmacy verification assistant that runs drug checks at the point of need, reducing chart-digging time for pharmacists</li>
+</ul>
+<p>The platform is already in production at <strong>Artera</strong> — a patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually. This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.</p>
+<p>This is a notable shift: a major clinical data vendor building MCP-native products rather than retrofitting existing APIs. It signals that MCP is becoming the expected integration standard for healthcare AI, not just an option.</p>
 <h2 id="drug-discovery--pharmaceutical-data">Drug Discovery &amp; Pharmaceutical Data</h2>
 <h3 id="chembl-mcp-server">ChEMBL-MCP-Server</h3>
 <table>
@@ -578,8 +607,8 @@
 <h2 id="notable-gaps">Notable Gaps</h2>
 <p>Despite being the deepest vertical MCP category, some areas remain uncovered:</p>
 <ul>
-<li><strong>Pharmacy dispensing</strong> — no medication management or dispensing workflow servers</li>
-<li><strong>Clinical decision support</strong> — no rule-engine-based CDS (beyond what EHR systems provide internally)</li>
+<li><strong>Pharmacy dispensing</strong> — FDB MedProof MCP covers medication decision support and prescription automation (Script Agent), but pharmacy dispensing workflow integration (inventory, fill tracking, patient pickup) remains uncovered</li>
+<li><strong>Clinical decision support</strong> — FDB MedProof MCP addresses medication CDS specifically, but no general-purpose rule-engine-based CDS beyond what EHR systems provide internally</li>
 <li><strong>Insurance claims adjudication</strong> — no provider-side claims processing</li>
 <li><strong>Clinical documentation</strong> — no nursing notes, physician documentation, or medical transcription MCP servers</li>
 <li><strong>IoMT (Internet of Medical Things)</strong> — beyond DICOM, no medical device integration (vital signs monitors, infusion pumps, wearables)</li>
@@ -593,7 +622,7 @@
 <p>Pharmaceutical and healthcare represents the <strong>gold standard for vertical MCP development</strong>. The combination of genuine depth (40+ servers across 7 subcategories), production-grade security (HIPAA-compliant audit logging, PHI protection, SMART on FHIR authentication), protocol-level innovation (Innovaccer&rsquo;s HMCP), institutional backing (WSO2, Innovaccer, OpenPharma), and the largest coordinated server collection of any industry we have reviewed makes this category exceptional.</p>
 <p>The key enabler is FHIR — healthcare already had a standardized data interchange format, which meant MCP servers could focus on the AI integration layer rather than solving data normalization problems. Other verticals could learn from this: standardize your data format first, and the AI integration layer becomes dramatically easier to build.</p>
 <p><strong>Rating: 4.5/5</strong> — The highest-rated vertical MCP category. Depth, maturity, security consciousness, and institutional investment are all exceptional. The 0.5 deduction reflects the remaining gaps in clinical workflow integration (pharmacy, documentation, population health) and the fact that many individual servers are still early-stage despite the category&rsquo;s overall maturity.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was last edited on 2026-04-04 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -645,7 +674,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T23:30:00+09:00","description":"Pharmaceutical and healthcare MCP servers are enabling AI agents to query EHR systems, search biomedical literature, analyze drug interactions, process medical images, and access clinical trial data.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Pharmaceutical \u0026 Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More"},"name":"Pharmaceutical \u0026 Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/pharmaceutical-healthcare-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-04T00:00:00+09:00","datePublished":"2026-03-15T23:30:00+09:00","description":"Pharmaceutical and healthcare MCP servers are enabling AI agents to query EHR systems, search biomedical literature, analyze drug interactions, process medical images, and access clinical trial data.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Pharmaceutical \u0026 Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More"},"name":"Pharmaceutical \u0026 Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/pharmaceutical-healthcare-mcp-servers/"}
 </script>
 
 
