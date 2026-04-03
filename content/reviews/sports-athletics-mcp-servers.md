@@ -11,7 +11,7 @@ categories: ["/categories/sports-fitness/"]
 
 Sports and athletics MCP servers let AI assistants access live scores, player statistics, fantasy league data, betting odds, fitness metrics, and motorsport telemetry. Instead of manually checking scores, navigating fantasy platforms, or compiling training data, these servers let AI agents pull real-time game information, analyze player performance, manage fantasy rosters, track betting lines, and review workout history — all through the Model Context Protocol.
 
-This review covers the **sports and athletics** vertical — multi-sport data platforms, basketball, football/soccer, ice hockey, Formula 1, fantasy sports, betting odds, fitness/training, pro cycling, and cricket. For health and wellness wearables beyond sports, see our [Health & Wellness MCP review](/reviews/health-wellness-mcp-servers/).
+This review covers the **sports and athletics** vertical — multi-sport data platforms, basketball, football/soccer, ice hockey, Formula 1, fantasy sports, betting odds, fitness/training, pro cycling, and cricket. For health and wellness wearables beyond sports, see our [Health & Wellness MCP review](/reviews/healthcare-medical-mcp-servers/).
 
 The headline findings: **Fitness tracking leads the category** with strava-mcp (276 stars) and garmin_mcp (271 stars) being among the highest-starred servers in any MCP category. **Formula 1 has disproportionate coverage** with 7+ implementations for a single racing series. **Basketball (NBA) has the deepest analytics** with 30-tool servers covering shot charts and hustle stats. **Fantasy sports and betting odds are well-covered.** **Cricket and hockey have dedicated servers, but rugby, tennis, and esports are missing.**
 

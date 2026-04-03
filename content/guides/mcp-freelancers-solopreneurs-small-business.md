@@ -15,7 +15,7 @@ The Model Context Protocol is changing this equation. MCP provides a standard wa
 
 Early adopters report reclaiming 5-8 hours per week within the first week of MCP implementation — 20-32 hours monthly that can be redirected to strategy, client work, or business development.
 
-This guide is research-based. We survey what MCP servers exist across the freelancer and small business toolkit, analyze the workflows they enable, and identify gaps. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and community discussions. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the freelancer and small business toolkit, analyze the workflows they enable, and identify gaps. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and community discussions. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why Freelancers Need MCP
 

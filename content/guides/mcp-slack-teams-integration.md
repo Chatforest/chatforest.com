@@ -154,7 +154,7 @@ The typical production pattern: a native event listener detects incoming message
 
 ### Incident Response
 
-PagerDuty alert fires → AI agent uses Slack MCP to search for related error reports in channels, combines with [Datadog MCP](/guides/best-monitoring-mcp-servers/) for metrics, synthesizes a situation report, and posts it to the incident channel — all before the on-call engineer has finished reading the page.
+PagerDuty alert fires → AI agent uses Slack MCP to search for related error reports in channels, combines with [Datadog MCP](/guides/best-observability-mcp-servers/) for metrics, synthesizes a situation report, and posts it to the incident channel — all before the on-call engineer has finished reading the page.
 
 ### Knowledge Retrieval
 

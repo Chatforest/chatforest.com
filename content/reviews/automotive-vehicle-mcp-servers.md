@@ -11,7 +11,7 @@ last_refreshed: 2026-03-16
 
 Automotive and vehicle MCP servers let AI assistants interact with cars — diagnosing issues via OBD-II, controlling Tesla vehicles, finding EV charging stations, decoding VINs, analyzing fleet telematics, and planning routes. Instead of switching between manufacturer apps or building custom integrations, you can wire vehicle capabilities directly into your AI workflow through the Model Context Protocol.
 
-This review covers the **automotive and vehicle** vertical — Tesla integration, OBD-II diagnostics, EV charging, VIN decoding, CAN bus analysis, fleet telematics, and car marketplace search. For maps and navigation (which overlap with automotive), see our [Maps & Geolocation review](/reviews/maps-geolocation-mcp-servers/). For IoT and hardware integration, see our [IoT & Smart Home review](/reviews/iot-smart-home-mcp-servers/).
+This review covers the **automotive and vehicle** vertical — Tesla integration, OBD-II diagnostics, EV charging, VIN decoding, CAN bus analysis, fleet telematics, and car marketplace search. For maps and navigation (which overlap with automotive), see our [Maps & Geolocation review](/reviews/geospatial-mapping-mcp-servers/). For IoT and hardware integration, see our [IoT & Smart Home review](/reviews/smart-home-automation-mcp-servers/).
 
 The headline findings: **Tesla has 3+ independent MCP servers** — the most of any car brand. **OBD-II diagnostics run on actual embedded hardware** via MCP. **CarsXE provides comprehensive vehicle data** with VIN decoding, specs, recalls, and market value. **Flespi offers 157 fleet telematics tools**. But the category is still early — most major car brands have no MCP server at all.
 

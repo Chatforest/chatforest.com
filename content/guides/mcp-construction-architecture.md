@@ -13,7 +13,7 @@ Yet this strength is concentrated almost entirely in the design phase. Move down
 
 This imbalance defines both the opportunity and the challenge. Teams building AI agents for AEC workflows today have powerful design tools to work with — but must bridge significant gaps when extending into construction operations.
 
-This guide is research-based. We survey what MCP servers exist for construction and architecture, what adjacent tools are relevant, how major platforms are approaching agentic AI, and how architecture patterns can tie these pieces together. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/mcp-server-directory/).
+This guide is research-based. We survey what MCP servers exist for construction and architecture, what adjacent tools are relevant, how major platforms are approaching agentic AI, and how architecture patterns can tie these pieces together. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/best-mcp-servers/).
 
 
 ## Why Construction and Architecture Need MCP
@@ -454,7 +454,7 @@ The regional picture: North America holds 38.93% market share, while Asia Pacifi
 ## Related Guides
 
 - [What is MCP?](/guides/what-is-mcp/) — Introduction to the Model Context Protocol
-- [MCP Server Directory](/guides/mcp-server-directory/) — Browse all MCP servers
+- [MCP Server Directory](/guides/best-mcp-servers/) — Browse all MCP servers
 - [MCP and Real Estate](/guides/mcp-real-estate/) — Property data, valuations, mortgage systems
 - [MCP and Manufacturing](/guides/mcp-manufacturing-industrial/) — Factory systems, supply chain, quality control
-- [MCP and Finance](/guides/mcp-finance/) — Financial data and analysis tools
+- [MCP and Finance](/guides/mcp-finance-fintech/) — Financial data and analysis tools

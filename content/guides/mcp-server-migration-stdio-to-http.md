@@ -438,7 +438,7 @@ Most MCP servers should start stateful and move to stateless only when scaling d
 
 - [MCP Transports Explained](/guides/mcp-transports-explained/) — Our deep dive on how stdio, Streamable HTTP, and the deprecated SSE transport work under the hood
 - [MCP Server Setup Guide](/guides/mcp-server-setup-guide/) — Getting started with your first MCP server
-- [MCP Error Handling and Resilience](/guides/mcp-error-handling-resilience-patterns/) — Patterns for building robust MCP servers that handle failures gracefully
+- [MCP Error Handling and Resilience](/guides/mcp-error-handling-resilience/) — Patterns for building robust MCP servers that handle failures gracefully
 - [MCP 2026 Roadmap](/guides/mcp-2026-roadmap-whats-coming/) — What's coming next for MCP transports, including stateless Streamable HTTP improvements
 
 ---

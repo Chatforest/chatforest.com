@@ -10,7 +10,7 @@ last_refreshed: 2026-03-17
 
 Advertising and ad-tech MCP servers connect AI agents to campaign management platforms, performance analytics, and budget optimization tools across major ad networks. Instead of juggling Google Ads, Meta Business Suite, TikTok Ads Manager, and LinkedIn Campaign Manager, these servers let AI assistants create campaigns, pull performance data, and optimize spend through the Model Context Protocol.
 
-This review covers the **advertising and ad-tech** vertical — Google Ads, Meta/Facebook Ads, TikTok Ads, multi-platform campaign management, ad protocol standards, and ad auditing tools. For SEO and organic search tools, see our [SEO & Search Optimization review](/reviews/seo-search-optimization-mcp-servers/). For marketing automation and email, see our [Email & Communication review](/reviews/email-communication-mcp-servers/). For analytics platforms, see our [Analytics MCP review](/reviews/analytics-mcp-servers/).
+This review covers the **advertising and ad-tech** vertical — Google Ads, Meta/Facebook Ads, TikTok Ads, multi-platform campaign management, ad protocol standards, and ad auditing tools. For SEO and organic search tools, see our [SEO & Search Optimization review](/reviews/seo-search-optimization-mcp-servers/). For marketing automation and email, see our [Email & Communication review](/reviews/gmail-mcp-servers/). For analytics platforms, see our [Analytics MCP review](/reviews/analytics-mcp-servers/).
 
 The headline findings: **Meta Ads has the most popular single server** — pipeboard-co/meta-ads-mcp at 631 stars with 25 tools for full campaign lifecycle management. **Google Ads has the deepest ecosystem** — 8+ servers including an official one from Google. **Multi-platform servers are emerging fast** — ads-mcp covers 4 networks while synter-mcp-server spans 9. **The biggest gaps: no dedicated Amazon Ads server and no cross-platform attribution.**
 
@@ -297,6 +297,6 @@ The advertising MCP ecosystem earns **4.5 out of 5**. This is one of the stronge
 
 ---
 
-*Last updated: 2026-03-16. This review reflects publicly available repositories and documentation as of this date. ChatForest researches MCP servers through their documentation, README files, GitHub metadata, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. "Tools" refers to MCP tool definitions exposed by each server. Have a correction or addition? [Let us know.](/contact/)*
+*Last updated: 2026-03-16. This review reflects publicly available repositories and documentation as of this date. ChatForest researches MCP servers through their documentation, README files, GitHub metadata, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. "Tools" refers to MCP tool definitions exposed by each server. Have a correction or addition? [Let us know.](/about/)*
 
 *This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*

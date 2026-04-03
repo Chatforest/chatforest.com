@@ -591,11 +591,11 @@ Recommendations based on your role:
 
 ## Related Guides
 
-- [MCP and IoT](/guides/mcp-iot/) — broader IoT ecosystem including industrial sensors and smart devices
+- [MCP and IoT](/guides/best-iot-mcp-servers/) — broader IoT ecosystem including industrial sensors and smart devices
 - [MCP and Environmental Monitoring](/guides/mcp-environmental-monitoring/) — climate and environmental data
 - [MCP and Real Estate/PropTech](/guides/mcp-real-estate-proptech/) — property and building systems
 - [MCP and Agriculture](/guides/mcp-agriculture-farming/) — precision farming and weather data
 - [MCP and Finance](/guides/mcp-finance-fintech/) — financial markets and trading platforms
-- [Getting Started with MCP](/guides/getting-started-with-mcp/) — MCP fundamentals and setup
+- [Getting Started with MCP](/guides/what-is-mcp/) — MCP fundamentals and setup
 
 *Last updated: March 29, 2026*

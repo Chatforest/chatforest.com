@@ -10,7 +10,7 @@ last_refreshed: 2026-03-16
 
 Social networking and community MCP servers let AI assistants post content, read feeds, manage communities, analyze engagement, and interact with social platforms. Instead of switching between apps or building custom integrations, you can wire social media capabilities directly into your AI workflow through the Model Context Protocol.
 
-This review covers the **social networking and community** vertical — Twitter/X, Bluesky, LinkedIn, Reddit, Discord, Mastodon/Fediverse, YouTube, TikTok, and Hacker News. For communication platforms (Slack, Teams), see our [Communication MCP review](/reviews/slack-mcp-server/). For content creation tools, see our [Content & Copywriting review](/reviews/content-copywriting-mcp-servers/).
+This review covers the **social networking and community** vertical — Twitter/X, Bluesky, LinkedIn, Reddit, Discord, Mastodon/Fediverse, YouTube, TikTok, and Hacker News. For communication platforms (Slack, Teams), see our [Communication MCP review](/reviews/slack-mcp-server/). For content creation tools, see our [Content & Copywriting review](/reviews/cms-content-management-mcp-servers/).
 
 The headline findings: **Twitter/X has 8+ independent MCP servers** — the most of any social platform. **Bluesky is featured in the official MCP repo**. **Discord has 134+ admin tools** in a single server. **LinkedIn covers feeds and jobs** with 177 stars. **Reddit has 6+ implementations** including zero-config options. **The Fediverse gets proper ActivityPub support**. This is one of the deepest MCP categories we've reviewed.
 

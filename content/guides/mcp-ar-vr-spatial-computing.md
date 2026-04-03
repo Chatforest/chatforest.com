@@ -13,7 +13,7 @@ The Model Context Protocol is emerging as the standardized bridge between AI ass
 
 What makes the AR/VR MCP ecosystem remarkable is its sheer breadth. With 90+ MCP servers spanning game engines, digital content creation tools, CAD software, web 3D frameworks, and AI generation pipelines, this is one of the most active MCP verticals. The community has built bridges to nearly every major 3D tool, creating the foundation for AI-driven spatial computing workflows.
 
-This guide is research-based. We survey what MCP servers exist across the AR/VR and spatial computing landscape, analyze the workflows they enable, and identify gaps and opportunities. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, and vendor announcements. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the AR/VR and spatial computing landscape, analyze the workflows they enable, and identify gaps and opportunities. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, and vendor announcements. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why Spatial Computing Needs MCP
 
@@ -638,7 +638,7 @@ The intersection of MCP and spatial computing is rich with research opportunitie
 
 ## Further Reading
 
-- [What Is MCP?](/guides/what-is-model-context-protocol-mcp/) — foundational protocol concepts
+- [What Is MCP?](/guides/what-is-mcp/) — foundational protocol concepts
 - [MCP Server Directory](/reviews/) — browse all reviewed MCP servers
 - [MCP and Computer Vision/Image Analysis](/guides/mcp-computer-vision-image-analysis/) — vision systems for AR scene understanding
 - [MCP and Digital Twins/BIM](/guides/mcp-digital-twins-bim/) — digital twin platforms for industrial AR

@@ -10,7 +10,7 @@ last_refreshed: 2026-03-16
 
 Telecommunications and messaging MCP servers let AI assistants send SMS, make voice calls, manage WhatsApp conversations, interact with Telegram, and orchestrate multi-channel communications. Instead of integrating with each provider's API separately, these servers expose telephony and messaging capabilities through the Model Context Protocol.
 
-This review covers the **telecommunications and messaging** vertical — CPaaS providers, voice telephony, messaging platforms, unified communications, and telecom standards. For team communication tools like Slack, see our [Collaboration MCP review](/guides/collaboration-mcp-servers/). For email specifically, see our [Email MCP review](/reviews/email-mcp-servers/).
+This review covers the **telecommunications and messaging** vertical — CPaaS providers, voice telephony, messaging platforms, unified communications, and telecom standards. For team communication tools like Slack, see our [Collaboration MCP review](/guides/mcp-real-time-collaboration/). For email specifically, see our [Email MCP review](/reviews/gmail-mcp-servers/).
 
 The headline findings: **Eight major CPaaS providers have official MCP servers** — an unprecedented level of vendor adoption. **Twilio exposes all 1,400+ API endpoints** through MCP. **WhatsApp MCP has 5,300 stars** — the most popular messaging integration. **Voice AI agents are emerging** with Twilio + OpenAI Realtime combinations. **Traditional telecom infrastructure (PBX, BSS/OSS) is completely missing.** Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 

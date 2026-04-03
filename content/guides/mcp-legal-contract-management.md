@@ -544,12 +544,12 @@ Deploy the EU and US compliance MCP servers from Ansvar Systems for regulatory t
 
 ## Related Guides
 
-- [MCP and Enterprise Security](/guides/mcp-enterprise-security/) — security architecture patterns relevant to legal data protection
-- [MCP and Healthcare](/guides/mcp-healthcare/) — regulatory compliance patterns (HIPAA) applicable to health law
+- [MCP and Enterprise Security](/guides/mcp-enterprise-infrastructure/) — security architecture patterns relevant to legal data protection
+- [MCP and Healthcare](/guides/mcp-healthcare-fhir/) — regulatory compliance patterns (HIPAA) applicable to health law
 - [MCP and Finance](/guides/mcp-finance-fintech/) — financial regulatory compliance (SOX, GLBA) and audit patterns
 - [MCP and Supply Chain](/guides/mcp-supply-chain-logistics/) — enterprise system integration patterns with ERP platforms
-- [Getting Started with MCP](/guides/getting-started-with-mcp/) — foundational MCP concepts and setup
-- [MCP Security Best Practices](/guides/mcp-security-best-practices/) — comprehensive security guidance for MCP deployments
+- [Getting Started with MCP](/guides/what-is-mcp/) — foundational MCP concepts and setup
+- [MCP Security Best Practices](/guides/mcp-server-security/) — comprehensive security guidance for MCP deployments
 
 ---
 

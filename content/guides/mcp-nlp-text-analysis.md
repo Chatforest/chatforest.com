@@ -13,7 +13,7 @@ The NLP market is projected to grow from approximately $37-49 billion in 2025 to
 
 The convergence of MCP with NLP is accelerating. Autonomous language agents — AI systems that can plan, take actions, and complete multi-step NLP tasks with minimal supervision — surged in 2025 and are expected to define the NLP landscape in 2026. Knowledge graphs, efficient attention mechanisms, and world models are emerging trends that MCP servers are beginning to address.
 
-This guide is research-based. We survey what MCP servers exist across the NLP landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the NLP landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why NLP Needs MCP
 

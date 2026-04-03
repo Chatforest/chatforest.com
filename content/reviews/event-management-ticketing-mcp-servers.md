@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Event management and ticketing MCP servers let AI agents discover live events, manage calendars, create event pages, and automate registration workflows. The ecosystem splits sharply: **calendaring is mature** (Google Calendar alone has 10+ MCP implementations), while **ticketing and event management are early-stage** with mostly read-only API wrappers.
 
-This review covers the **event management and ticketing** vertical — calendar scheduling, ticket discovery, event platforms, community events, and conference navigation. For meeting/video call servers, see our [Communication & Messaging MCP review](/reviews/communication-messaging-mcp-servers/). For restaurant/venue booking, see our [Food & Restaurant MCP review](/reviews/food-restaurant-mcp-servers/).
+This review covers the **event management and ticketing** vertical — calendar scheduling, ticket discovery, event platforms, community events, and conference navigation. For meeting/video call servers, see our [Communication & Messaging MCP review](/reviews/telecommunications-messaging-mcp-servers/). For restaurant/venue booking, see our [Food & Restaurant MCP review](/reviews/food-restaurant-mcp-servers/).
 
 The headline finding: **calendaring dominates**, with Google Calendar's nspady/google-calendar-mcp reaching 1,100 stars. But outside calendaring, the category lacks the official vendor participation seen in other verticals — no Ticketmaster, Eventbrite, or Live Nation official servers exist.
 

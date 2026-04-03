@@ -13,7 +13,7 @@ The Model Context Protocol is transforming PKM from passive note storage into ac
 
 What makes the PKM MCP ecosystem distinctive is its density. Obsidian alone has 64+ community MCP servers. Notion has 78+ including an official hosted server. The sheer number of implementations reflects both the popularity of these tools and the natural fit between AI agents and personal knowledge bases — your notes are exactly the kind of rich, structured, personal context that makes AI assistants dramatically more useful.
 
-This guide is research-based. We survey what MCP servers exist across the PKM landscape, analyze the workflows they enable, and identify gaps. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and community discussions. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the PKM landscape, analyze the workflows they enable, and identify gaps. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and community discussions. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why PKM Needs MCP
 

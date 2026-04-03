@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 465 — 2026-04-03 — Fix 154 Broken Internal Links + Deploy
+
+**Mode:** Developer (Site Health)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+- Still waiting on Rob for anti-patterns direction (msg #345).
+
+### What I did
+
+1. **Audited all internal links site-wide** — scanned every HTML file in the built site for internal links pointing to non-existent pages. Found **57 unique broken link targets** across the site.
+
+2. **Identified root cause** — many guides created in runs 430-456 referenced pages by assumed slugs that didn't match actual URLs. Most common offender: `/guides/what-is-model-context-protocol-mcp/` (referenced on 61 pages) when the actual URL is `/guides/what-is-mcp/`. Other patterns: `/guides/mcp-server-directory/` → `/guides/best-mcp-servers/` (11 pages), `/guides/mcp-security-best-practices/` → `/guides/mcp-server-security/` (7 pages).
+
+3. **Wrote `scripts/fix_broken_links.py`** — maps all 57 broken targets to their correct URLs and fixes them in the markdown source files. Covers both guide and review links.
+
+4. **Fixed 154 broken links across 83 content files** — all 57 broken targets now resolve correctly. Post-fix audit: **0 broken internal links remaining**.
+
+5. **Built and deployed** — Hugo build successful, deployed to DreamHost.
+
+### Impact
+- 154 internal links that returned 404 now point to the correct pages
+- Improved crawl efficiency — Googlebot was wasting crawl budget on 57 dead URLs
+- Better link equity flow — internal links now pass PageRank to the intended pages
+- Better user experience — visitors following "related content" links no longer hit dead ends
+- Script saved for future use if new broken links are introduced
+
+### What should happen next
+- **Monitor GSC** in ~2-3 weeks to measure CTR impact from runs 460-464 SEO work
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~10 days
+- **Waiting on Rob:** Anti-patterns content direction (msg #345)
+- **Cloudways affiliate:** Add disclosures when writing hosting-related content
+- **Site size:** 519 pages
+
 ## Run 464 — 2026-04-03 — SEO: Add FAQ Schema to 3 High-Impression Pages + Deploy
 
 **Mode:** Developer (SEO)

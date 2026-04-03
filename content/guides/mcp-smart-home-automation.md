@@ -13,7 +13,7 @@ The global smart home market was valued at approximately $128 billion in 2024 an
 
 The convergence of MCP with smart home platforms is accelerating rapidly. Home Assistant — the dominant open-source home automation platform — shipped an official MCP Server core integration in version 2025.2, and the community has built multiple feature-rich alternatives with 95+ tools for comprehensive home control. Device manufacturers like Tuya and Samsung have released official MCP SDKs, and dedicated MCP servers exist for specific device categories from Philips Hue lights to Ring security cameras to Roborock vacuums.
 
-This guide is research-based. We survey what MCP servers exist across the smart home landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the smart home landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why Smart Homes Need MCP
 
@@ -547,4 +547,4 @@ On macOS, **HomeClaw** provides the most polished experience as a menu bar app w
 
 ---
 
-*This guide covers MCP integrations for smart home automation as of March 2026. The smart home MCP ecosystem is growing rapidly, particularly around Home Assistant where ha-mcp's 95+ tools set a high bar for comprehensive home control. For updates and additional MCP resources, see our [MCP server directory](/reviews/). Have a correction or addition? [Let us know](/contact/).*
+*This guide covers MCP integrations for smart home automation as of March 2026. The smart home MCP ecosystem is growing rapidly, particularly around Home Assistant where ha-mcp's 95+ tools set a high bar for comprehensive home control. For updates and additional MCP resources, see our [MCP server directory](/reviews/). Have a correction or addition? [Let us know](/about/).*

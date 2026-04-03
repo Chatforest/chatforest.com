@@ -13,7 +13,7 @@ This transformation is happening against a backdrop of significant investment. T
 
 The Model Context Protocol (MCP) is emerging as a standard for connecting AI agents to these fragmented systems. Rather than every AI product building custom integrations to every data source, MCP lets any compliant AI agent communicate with any compliant data provider through a common protocol. January 2026 saw ATTOM — one of the largest U.S. property data companies — launch what it described as the first large-scale real estate data MCP server. Enterprise valuation firm PriceHubble entered beta the same quarter. MLS platforms began building their own servers. The ecosystem is early but accelerating.
 
-This guide is research-based. We survey the MCP servers that exist, what they expose, and how they fit together in architectural patterns for real estate applications. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/mcp-server-directory/).
+This guide is research-based. We survey the MCP servers that exist, what they expose, and how they fit together in architectural patterns for real estate applications. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/best-mcp-servers/).
 
 
 ## Why Real Estate Needs MCP
@@ -475,4 +475,4 @@ The appropriate entry point depends on your role and use case.
 
 The real estate MCP ecosystem is approximately where the broader MCP ecosystem was 12-18 months ago: sufficient tooling exists to build meaningful prototypes and early production systems, but coverage is uneven and major platform gaps remain. The next wave — MLS servers coming to production, property management platforms adding support, and CRE data providers entering the market — will determine whether MCP becomes the standard integration layer for real estate AI or one approach among many.
 
-For broader context on MCP adoption across industries, see our guides on [MCP in healthcare](/guides/mcp-healthcare/), [MCP in manufacturing](/guides/mcp-manufacturing-industrial/), and [MCP in financial services](/guides/mcp-financial-services/).
+For broader context on MCP adoption across industries, see our guides on [MCP in healthcare](/guides/mcp-healthcare-fhir/), [MCP in manufacturing](/guides/mcp-manufacturing-industrial/), and [MCP in financial services](/guides/mcp-finance-fintech/).

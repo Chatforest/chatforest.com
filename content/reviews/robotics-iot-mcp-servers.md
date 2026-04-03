@@ -14,7 +14,7 @@ Robotics and IoT MCP servers bridge the gap between AI assistants and the **phys
 
 This is a rapidly emerging category. A year ago, almost none of these servers existed. Now there's a curated [awesome-mcp-hardware](https://github.com/beriberikix/awesome-mcp-hardware) list tracking the space. The MCP protocol's standardized tool interface turns out to be a natural fit for hardware — each device capability maps cleanly to a tool definition.
 
-For related categories: our [Workflow Automation review](/reviews/workflow-automation-mcp-servers/) covers general automation platforms, and our [Cloud Infrastructure review](/reviews/cloud-infrastructure-mcp-servers/) covers AWS/cloud IoT services at the platform level.
+For related categories: our [Workflow Automation review](/reviews/workflow-automation-mcp-servers/) covers general automation platforms, and our [Cloud Infrastructure review](/reviews/infrastructure-as-code-mcp-servers/) covers AWS/cloud IoT services at the platform level.
 
 ## Robot Control — ROS (4 servers)
 

@@ -475,9 +475,9 @@ Microsoft Dynamics 365's new dynamic MCP server is the path for organizations al
 If you're exploring MCP integrations for finance and fintech, these guides cover related domains:
 
 - [MCP and Supply Chain](/guides/mcp-supply-chain-logistics/) — ERP integrations (SAP, Oracle), procurement automation, and logistics AI
-- [How MCP Works](/guides/how-mcp-works/) — technical deep dive into the Model Context Protocol
-- [MCP Security Best Practices](/guides/mcp-security/) — comprehensive security guidance for MCP deployments
-- [MCP and APIs](/guides/mcp-and-apis/) — how MCP relates to REST APIs, GraphQL, and existing integrations
+- [How MCP Works](/guides/what-is-mcp/) — technical deep dive into the Model Context Protocol
+- [MCP Security Best Practices](/guides/mcp-server-security/) — comprehensive security guidance for MCP deployments
+- [MCP and APIs](/guides/mcp-vs-rest-apis/) — how MCP relates to REST APIs, GraphQL, and existing integrations
 - [The Stripe MCP Server](/reviews/stripe-mcp-server/) — detailed review of Stripe's official MCP server
 
 ---

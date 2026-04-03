@@ -10,7 +10,7 @@ last_refreshed: 2026-03-17
 
 Container, Docker, and Kubernetes MCP servers let AI assistants manage containers, orchestrate clusters, deploy applications, and interact with container registries through the Model Context Protocol. Instead of memorizing Docker commands or kubectl syntax, AI agents can manage infrastructure conversationally.
 
-This review covers the **container, Docker, and Kubernetes** ecosystem — Docker management tools, Kubernetes orchestrators, Docker's official MCP infrastructure, alternative runtimes, Portainer integration, and Helm chart tools. For related servers, see our [DevOps review](/reviews/devops-mcp-servers/) and [Cloud Platform review](/reviews/cloud-platform-mcp-servers/).
+This review covers the **container, Docker, and Kubernetes** ecosystem — Docker management tools, Kubernetes orchestrators, Docker's official MCP infrastructure, alternative runtimes, Portainer integration, and Helm chart tools. For related servers, see our [DevOps review](/reviews/ci-cd-pipeline-mcp-servers/) and [Cloud Platform review](/reviews/cloud-storage-mcp-servers/).
 
 The headline findings: **Three Kubernetes servers have 1,000+ stars** — containers/kubernetes-mcp-server, Flux159/mcp-server-kubernetes, and docker/mcp-gateway. **Docker is investing heavily in MCP** with three official projects (gateway, hub-mcp, registry). **ckreiling/mcp-server-docker (687 stars) leads Docker management** with a unique plan+apply compose workflow. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 

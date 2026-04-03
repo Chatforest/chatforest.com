@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Printing and 3D printing MCP servers let AI agents control 3D printers, design CAD models, manage document print queues, and automate print-on-demand storefronts. Unlike many niche verticals we've reviewed, this ecosystem is **surprisingly mature** — driven by the maker community and open-source hardware movement.
 
-This review covers the **printing and 3D printing** vertical — 3D printer control, CAD/3D modeling, document/CUPS printing, and print-on-demand. For design tools that produce printable output, see our [Design & UI MCP review](/reviews/design-ui-mcp-servers/). For the Blender MCP server (which overlaps with 3D printing workflows), we cover it briefly here but it's primarily a 3D modeling tool.
+This review covers the **printing and 3D printing** vertical — 3D printer control, CAD/3D modeling, document/CUPS printing, and print-on-demand. For design tools that produce printable output, see our [Design & UI MCP review](/guides/best-design-mcp-servers/). For the Blender MCP server (which overlaps with 3D printing workflows), we cover it briefly here but it's primarily a 3D modeling tool.
 
 The headline finding: **this is one of the strongest niche verticals in the MCP landscape.** We found 23+ servers with genuine utility, multiple competing implementations for major platforms, and ambitious projects like Kiln that attempt to automate entire 3D printing workflows end-to-end.
 

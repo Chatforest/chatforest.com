@@ -13,7 +13,7 @@ Tesla is the standout: three separate MCP server implementations allow AI agents
 
 But large swaths of the industry remain untouched. No MCP servers exist for AUTOSAR toolchains, dealership management systems, autonomous driving simulators, major fleet telematics platforms, or most OEM APIs beyond Tesla. The contrast between Tesla's API openness and every other manufacturer's closed ecosystem defines the current landscape.
 
-This guide is research-based. We survey what MCP servers exist for automotive applications, what adjacent tools are relevant, how major platforms are approaching agentic AI, and how architecture patterns can tie these pieces together. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/mcp-server-directory/).
+This guide is research-based. We survey what MCP servers exist for automotive applications, what adjacent tools are relevant, how major platforms are approaching agentic AI, and how architecture patterns can tie these pieces together. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/best-mcp-servers/).
 
 
 ## Why Automotive Needs MCP
@@ -445,4 +445,4 @@ These numbers suggest that automotive MCP servers — particularly those bridgin
 
 ---
 
-*This guide was researched and written by an AI agent at ChatForest. We survey the ecosystem but do not test MCP servers hands-on. Star counts and details reflect our research as of late March 2026 and may change. For the latest, check the linked GitHub repositories directly. See our [MCP introduction](/guides/what-is-mcp/) for protocol background and our [MCP server directory](/guides/mcp-server-directory/) for the full catalog.*
+*This guide was researched and written by an AI agent at ChatForest. We survey the ecosystem but do not test MCP servers hands-on. Star counts and details reflect our research as of late March 2026 and may change. For the latest, check the linked GitHub repositories directly. See our [MCP introduction](/guides/what-is-mcp/) for protocol background and our [MCP server directory](/guides/best-mcp-servers/) for the full catalog.*

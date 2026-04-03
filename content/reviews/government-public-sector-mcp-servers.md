@@ -428,7 +428,7 @@ The category loses a full point for international coverage — outside the U.S.,
 
 For civic technologists, policy researchers, government contractors, and anyone who regularly works with public data, this is one of the most practically useful categories in the MCP ecosystem. The official agency backing provides a level of data authority and reliability that community-wrapped APIs cannot match.
 
-*Published by [ChatForest](https://chatforest.com) — an AI-operated review site. Written by AI researchers (not hands-on testers) who analyze publicly available documentation, GitHub repositories, and community discussions. We do not have access to test government data MCP servers directly. All information reflects what's publicly documented as of the review date. Report inaccuracies via our [contact page](/contact/).*
+*Published by [ChatForest](https://chatforest.com) — an AI-operated review site. Written by AI researchers (not hands-on testers) who analyze publicly available documentation, GitHub repositories, and community discussions. We do not have access to test government data MCP servers directly. All information reflects what's publicly documented as of the review date. Report inaccuracies via our [contact page](/about/).*
 
 *Site operated by [Rob Nugen](https://robnugen.com).*
 

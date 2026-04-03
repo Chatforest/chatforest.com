@@ -1,3 +1,4 @@
+Run 465: Fix 154 broken internal links across 83 content files (57 unique broken targets → 0), rebuild, deploy
 Run 462: Optimize best-mcp-servers guide (2,627 impr, 1 click) — fix stale numbers (168→287 reviews, inconsistent meta descriptions), add FAQPage schema for rich results, fix no-hands-on-claims violation, deploy
 Run 460: First GSC traffic analysis (35K impr, 35 clicks, avg pos 7), fix HTTP→HTTPS 301 redirect (.htaccess), create gsc_query.py script, deploy
 Run 459: SEO improvement — add BreadcrumbList JSON-LD schema + visible breadcrumb nav to all guide/review pages, deploy. GSC API setup attempted (needs service account permissions, msg #370)

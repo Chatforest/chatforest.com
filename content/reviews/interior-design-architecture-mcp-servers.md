@@ -10,7 +10,7 @@ last_refreshed: 2026-03-17
 
 Interior design and architecture MCP servers connect AI agents to CAD software, BIM platforms, 3D modelers, and design tools. Instead of manually navigating complex CAD interfaces or switching between modeling applications, these servers let you create, modify, and analyze designs through natural language via the Model Context Protocol.
 
-This review covers **CAD control, BIM automation, 3D modeling, and architectural design tools** — AutoCAD, FreeCAD, Blender, SketchUp, Rhino/Grasshopper, Revit, Fusion 360, and OpenSCAD. For general-purpose 3D file processing, see our [3D Printing review](/reviews/3d-printing-mcp-servers/) if available.
+This review covers **CAD control, BIM automation, 3D modeling, and architectural design tools** — AutoCAD, FreeCAD, Blender, SketchUp, Rhino/Grasshopper, Revit, Fusion 360, and OpenSCAD. For general-purpose 3D file processing, see our [3D Printing review](/reviews/printing-3d-printing-mcp-servers/) if available.
 
 The headline findings: **Blender MCP is the star of the category with 17.6k GitHub stars** — one of the most popular MCP servers in existence. **Every major CAD platform now has MCP support**, from AutoCAD to Rhino to Revit. **Rhino/Grasshopper has the most implementations** with 5+ independent servers reflecting the computational design community's enthusiasm. **FreeCAD-MCP offers 57 tools** including Docker headless execution and AI-powered 3D generation. **The glaring gap is actual interior design** — room layout, furniture placement, and color palette tools don't exist yet.
 

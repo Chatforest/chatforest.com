@@ -10,7 +10,7 @@ last_refreshed: 2026-03-17
 
 Package management and dependency MCP servers let AI assistants check package versions, search registries, scan for vulnerabilities, and manage dependencies across the major package ecosystems. Instead of manually checking npm, PyPI, Maven Central, or crates.io, AI agents can query registries and assess dependency health through the Model Context Protocol.
 
-This review covers the **package management and dependency** ecosystem — multi-registry version checkers, npm-specific tools, PyPI tools, Maven/JVM tools, security scanners, and ecosystem-specific servers. For related servers, see our [DevOps review](/reviews/devops-mcp-servers/) and [Code Quality review](/reviews/code-quality-mcp-servers/).
+This review covers the **package management and dependency** ecosystem — multi-registry version checkers, npm-specific tools, PyPI tools, Maven/JVM tools, security scanners, and ecosystem-specific servers. For related servers, see our [DevOps review](/reviews/ci-cd-pipeline-mcp-servers/) and [Code Quality review](/reviews/code-quality-linting-mcp-servers/).
 
 The headline findings: **sammcj/mcp-package-version (121 stars) leads multi-registry version checking** across npm, PyPI, Maven, Go, Docker, and more. **SocketDev/socket-mcp (89 stars) provides supply chain security scoring** with zero setup. **snyk/agent-scan (1,900 stars) scans AI agents themselves** for security risks. **PyPI has the deepest single-ecosystem tooling** with 25 tools from pypi-query-mcp-server.
 

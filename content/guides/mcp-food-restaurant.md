@@ -11,7 +11,7 @@ Food is one of the most universal human needs, and the industry built around it 
 
 MCP is starting to bridge these silos, though unevenly. The consumer side is well-covered — recipe search, nutrition tracking, and restaurant discovery have dozens of MCP servers. The operational side (POS, kitchen ops, food safety) is almost empty. Three official MCP servers exist from food industry companies: Instacart (the landmark first grocery MCP integration with ChatGPT), Yelp (restaurant discovery and reviews), and Square (POS and payments). Major platforms like DoorDash, UberEats, Toast, and every restaurant chain remain absent.
 
-This guide is research-based. We survey what MCP servers exist for food and restaurants, how the industry is approaching AI, and where the gaps remain. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/mcp-server-directory/).
+This guide is research-based. We survey what MCP servers exist for food and restaurants, how the industry is approaching AI, and where the gaps remain. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/best-mcp-servers/).
 
 
 ## Why the Food Industry Needs MCP

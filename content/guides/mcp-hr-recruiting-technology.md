@@ -11,9 +11,9 @@ HR and recruiting sit at the intersection of data-heavy operations and deeply hu
 
 The AI in HR market is projected to grow from $8.16 billion in 2025 to $30.77 billion by 2034 at 15.94% CAGR. AI in recruitment specifically is a $707 million market growing at 7.2–7.4% CAGR, projected to reach $1.39 billion by 2035. Over 44% of HR executives already use AI for recruiting and hiring, and more than 73% of companies plan to invest in recruitment automation.
 
-MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to HR platforms, job boards, talent databases, and people operations tools. Rather than building custom integrations for each HR system, MCP-connected agents can search candidates, manage pipelines, query employee data, parse resumes, and analyze workforce metrics through defined tool interfaces. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/).
+MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to HR platforms, job boards, talent databases, and people operations tools. Rather than building custom integrations for each HR system, MCP-connected agents can search candidates, manage pipelines, query employee data, parse resumes, and analyze workforce metrics through defined tool interfaces. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
-This guide is research-based. We survey what MCP servers exist across the HR and recruiting technology landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the HR and recruiting technology landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why HR and Recruiting Need MCP
 
@@ -474,7 +474,7 @@ Zero MCP servers for workforce scheduling platforms like **Deputy**, **When I Wo
 Your entry point depends on your role and what you're trying to accomplish:
 
 **If you're an HR leader exploring AI integration:**
-Start with [What is MCP?](/guides/what-is-model-context-protocol-mcp/) to understand the protocol. Then evaluate whether a unified platform (Unified.to with 60+ ATS connectors) or point solutions (individual servers for your specific ATS and HRIS) better fits your stack. Consider Draup's talent intelligence MCP for strategic workforce planning use cases.
+Start with [What is MCP?](/guides/what-is-mcp/) to understand the protocol. Then evaluate whether a unified platform (Unified.to with 60+ ATS connectors) or point solutions (individual servers for your specific ATS and HRIS) better fits your stack. Consider Draup's talent intelligence MCP for strategic workforce planning use cases.
 
 **If you're a recruiter wanting AI assistance:**
 Look at Manatal (if you're an Enterprise Plus user) for native ATS integration, or the Greenhouse/Recruitee community servers if you use those platforms. JobSpy provides multi-platform job search for sourcing. Resume-mcp can automate initial candidate screening.

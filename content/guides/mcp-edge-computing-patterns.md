@@ -309,7 +309,7 @@ Azure's approach — [API Management with Entra ID](https://learn.microsoft.com/
 
 Fastly Compute and Microsoft's Wassette provide the strongest isolation model for edge MCP: each tool execution runs in a WASM sandbox with deny-by-default permissions. This is stronger than container-based isolation because the sandbox boundary is at the instruction level, not the process level.
 
-For more on MCP security patterns, see our [MCP Security Best Practices guide](/guides/mcp-security-best-practices/) and [MCP Compliance guide](/guides/mcp-compliance-regulated-industries/).
+For more on MCP security patterns, see our [MCP Security Best Practices guide](/guides/mcp-server-security/) and [MCP Compliance guide](/guides/mcp-compliance-regulated-industries/).
 
 ## Offline-First MCP Patterns
 
@@ -430,7 +430,7 @@ The edge MCP ecosystem is evolving rapidly:
 - [Best Database MCP Servers](/guides/best-database-mcp-servers/) — Database MCP servers including edge databases
 - [Best API Gateway MCP Servers](/guides/best-api-gateway-mcp-servers/) — Gateway and routing solutions
 - [Best Cloud MCP Servers](/guides/best-cloud-mcp-servers/) — Cloud platform MCP integrations
-- [MCP Security Best Practices](/guides/mcp-security-best-practices/) — Security patterns including distributed auth
+- [MCP Security Best Practices](/guides/mcp-server-security/) — Security patterns including distributed auth
 - [MCP Compliance for Regulated Industries](/guides/mcp-compliance-regulated-industries/) — Compliance in distributed deployments
 - [MCP Multimodal Patterns](/guides/mcp-multimodal-patterns/) — Large file handling relevant to edge bandwidth
 

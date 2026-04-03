@@ -10,7 +10,7 @@ last_refreshed: 2026-03-15
 
 Insurance and InsurTech MCP servers let AI assistants manage policies, process claims, assess underwriting risk, and navigate regulatory compliance. Instead of logging into separate policy administration systems, claims platforms, and compliance databases, these servers let AI agents handle insurance workflows through the Model Context Protocol.
 
-This review covers the **insurance and InsurTech** vertical — policy platforms, claims processing, underwriting intelligence, insurance connectors, compliance, and document processing. For healthcare-adjacent insurance servers, see our [Healthcare MCP review](/reviews/healthcare-medical-mcp-servers/). For financial services broadly, see our [Finance MCP review](/reviews/finance-mcp-servers/).
+This review covers the **insurance and InsurTech** vertical — policy platforms, claims processing, underwriting intelligence, insurance connectors, compliance, and document processing. For healthcare-adjacent insurance servers, see our [Healthcare MCP review](/reviews/healthcare-medical-mcp-servers/). For financial services broadly, see our [Finance MCP review](/reviews/personal-finance-mcp-servers/).
 
 The headline findings: **Root Platform and Socotra provide commercially-backed policy lifecycle MCP servers.** **Apify delivers multi-peril underwriting intelligence with climate trajectory modeling.** **Claims processing reaches AI-native quality** with document analysis and Kafka-based orchestration. **Compliance covers HIPAA, GLBA, and NYDFS 500.** **Actuarial modeling, reinsurance, and catastrophe modeling are completely missing.**
 

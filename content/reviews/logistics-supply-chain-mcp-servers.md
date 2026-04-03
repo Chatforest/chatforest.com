@@ -11,7 +11,7 @@ last_refreshed: 2026-03-15
 
 Logistics and supply chain MCP servers let AI assistants manage shipping operations, track fleets, control inventory, and monitor maritime vessel movements. Instead of logging into separate carrier portals, warehouse systems, and tracking platforms, these servers let AI agents handle logistics workflows through the Model Context Protocol.
 
-This review covers the **logistics and supply chain** vertical — shipping and parcel management, inventory and warehouse operations, fleet telematics, and maritime tracking. For e-commerce platforms that include some shipping features, see our [E-Commerce MCP review](/reviews/e-commerce-mcp-servers/). For general business operations, see our [Business & Productivity MCP review](/reviews/business-productivity-mcp-servers/).
+This review covers the **logistics and supply chain** vertical — shipping and parcel management, inventory and warehouse operations, fleet telematics, and maritime tracking. For e-commerce platforms that include some shipping features, see our [E-Commerce MCP review](/reviews/ecommerce-shopping-mcp-servers/). For general business operations, see our [Business & Productivity MCP review](/reviews/erp-business-management-mcp-servers/).
 
 The headline findings: **Shippo launches the first agentic shipping platform** with multi-carrier support. **UPS goes official** with its own MCP server. **SkuVault inventory reaches production quality** with enterprise-grade rate limiting and safety confirmations. **Flespi delivers 157 telematics tools** for fleet management. **Enterprise supply chain (ERP, WMS, TMS, procurement) is completely missing.**
 

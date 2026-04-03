@@ -12,7 +12,7 @@ last_refreshed: 2026-03-16
 
 Podcasting and audio content MCP servers let AI assistants produce speech, transcribe audio, generate music, control DAWs, clone voices, and create sound effects. Instead of manually juggling audio editors, transcription services, and TTS APIs, you can wire these capabilities directly into your AI workflow through the Model Context Protocol.
 
-This review covers the **podcasting and audio content** vertical — text-to-speech, speech-to-text transcription, music generation, DAW control, voice interaction, and podcast feed management. For video production, see our [Video & Streaming review](/reviews/video-streaming-mcp-servers/). For general content creation, see our [Content & Copywriting review](/reviews/content-copywriting-mcp-servers/).
+This review covers the **podcasting and audio content** vertical — text-to-speech, speech-to-text transcription, music generation, DAW control, voice interaction, and podcast feed management. For video production, see our [Video & Streaming review](/reviews/video-production-streaming-mcp-servers/). For general content creation, see our [Content & Copywriting review](/reviews/cms-content-management-mcp-servers/).
 
 The headline findings: **ElevenLabs has 1,100 stars** and is the most comprehensive audio MCP server — TTS, voice cloning, transcription, and sound effects in one package. **REAPER DAW has 600+ tools** available through total-reaper-mcp. **Local TTS and STT are genuinely viable** — Kokoro, Chatterbox, and whisper.cpp mean zero cloud costs. **Podcast-specific workflows are the gap** — individual audio tools are strong, but no server handles the full podcast lifecycle.
 

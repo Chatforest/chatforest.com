@@ -11,7 +11,7 @@ Sports and fitness is one of the most active community-driven corners of the MCP
 
 This activity reflects a fundamental problem in sports technology: data fragmentation. A serious recreational athlete might use a Garmin watch for GPS tracking, Strava for social features and route planning, TrainingPeaks for structured training, Whoop for recovery monitoring, a nutrition app for diet tracking, and a scale for body composition. Each platform holds a piece of the picture. None gives a complete view. MCP servers that expose each data source through a standard protocol allow AI agents to synthesize across all of them — creating the unified athletic intelligence layer that no single platform provides.
 
-This guide is research-based. We survey what MCP servers exist for sports and fitness, what capabilities they offer, and how they can be combined into useful architectures. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/mcp-server-directory/).
+This guide is research-based. We survey what MCP servers exist for sports and fitness, what capabilities they offer, and how they can be combined into useful architectures. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/best-mcp-servers/).
 
 
 ## Why Sports and Fitness Needs MCP
@@ -403,7 +403,7 @@ The community has filled the gap aggressively. The total GitHub stars across spo
 ## Related Guides
 
 - [What is MCP?](/guides/what-is-mcp/) — Introduction to the Model Context Protocol
-- [MCP Server Directory](/guides/mcp-server-directory/) — Browse all MCP servers by category
+- [MCP Server Directory](/guides/best-mcp-servers/) — Browse all MCP servers by category
 - [MCP and Healthcare/FHIR](/guides/mcp-healthcare-fhir/) — Health data standards and clinical integrations
 - [MCP and IoT/Embedded Systems](/guides/mcp-iot-embedded-systems/) — Device connectivity patterns
 - [MCP and Data Science Workflows](/guides/mcp-data-science-workflows/) — Analytics and ML pipeline patterns

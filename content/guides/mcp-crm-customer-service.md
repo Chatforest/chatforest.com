@@ -11,9 +11,9 @@ Customer service may be the domain where agentic AI delivers the most visible re
 
 The numbers are compelling. The AI for customer service market reached an estimated $12 billion in 2024 and is projected to reach $47.8 billion by 2030 at a 25.8% CAGR. The call center AI market alone is expected to grow from $2.4 billion in 2025 to $13.5 billion by 2034. Meanwhile, the global CRM market reached $76.9 billion in 2025, with 65% of businesses now integrating generative AI into their CRM workflows. The contact center as a service (CCaaS) market is projected to grow from $7 billion in 2025 to $30 billion by 2034.
 
-MCP — the Model Context Protocol — provides the standardization layer that makes multi-system customer service AI practical. Each platform exposes one MCP server with consistent tool discovery, authentication, and structured responses. The AI agent sees a unified interface; the integration complexity stays behind the server boundary. For background on MCP itself, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/).
+MCP — the Model Context Protocol — provides the standardization layer that makes multi-system customer service AI practical. Each platform exposes one MCP server with consistent tool discovery, authentication, and structured responses. The AI agent sees a unified interface; the integration complexity stays behind the server boundary. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
-This guide covers the CRM and customer service MCP ecosystem — CRM platforms, helpdesk and ticketing systems, live chat and messaging platforms, communication APIs, open-source alternatives, and the architecture patterns they enable. Our analysis draws on published documentation, open-source repositories, vendor announcements, and market research — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide covers the CRM and customer service MCP ecosystem — CRM platforms, helpdesk and ticketing systems, live chat and messaging platforms, communication APIs, open-source alternatives, and the architecture patterns they enable. Our analysis draws on published documentation, open-source repositories, vendor announcements, and market research — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why CRM and Customer Service Need MCP
 
@@ -571,7 +571,7 @@ The CRM/customer service MCP ecosystem is one of the most mature. Official serve
 
 ## Related Guides
 
-- [Introduction to MCP](/guides/what-is-model-context-protocol-mcp/) — foundational concepts and architecture
+- [Introduction to MCP](/guides/what-is-mcp/) — foundational concepts and architecture
 - [MCP Server Directory](/reviews/) — browse and compare MCP servers across categories
 - [MCP and Supply Chain/Logistics](/guides/mcp-supply-chain-logistics/) — shipping, warehousing, and ERP integrations
 - [MCP Server Security](/guides/mcp-server-security/) — authentication, authorization, and data protection

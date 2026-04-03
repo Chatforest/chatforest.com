@@ -444,17 +444,17 @@ The intersection of MCP and geospatial is moving fast. Several trends are shapin
 
 ---
 
-*This guide covers the MCP geospatial ecosystem as of March 2026. Server capabilities and star counts reflect published documentation and may have changed since research was conducted. ChatForest researches and analyzes these tools — we do not deploy or test them hands-on. Have a correction or suggestion? [Let us know.](/contact/)*
+*This guide covers the MCP geospatial ecosystem as of March 2026. Server capabilities and star counts reflect published documentation and may have changed since research was conducted. ChatForest researches and analyzes these tools — we do not deploy or test them hands-on. Have a correction or suggestion? [Let us know.](/about/)*
 
 ## Related Guides
 
 - [What Is MCP?](/guides/what-is-mcp/) — foundational overview of the Model Context Protocol
-- [MCP Security Best Practices](/guides/mcp-security/) — security patterns for MCP deployments
-- [MCP and Databases](/guides/mcp-database-servers/) — database integration patterns relevant to PostGIS
+- [MCP Security Best Practices](/guides/mcp-server-security/) — security patterns for MCP deployments
+- [MCP and Databases](/guides/best-database-mcp-servers/) — database integration patterns relevant to PostGIS
 - [MCP and Data Governance](/guides/mcp-data-governance-catalogs/) — governance frameworks for spatial data catalogs
-- [MCP and IoT](/guides/mcp-iot-edge/) — IoT patterns relevant to geospatial sensor networks
-- [MCP and Kubernetes](/guides/mcp-kubernetes/) — container orchestration for geospatial workloads
-- [MCP and CI/CD](/guides/mcp-ci-cd/) — deployment automation for spatial analysis pipelines
-- [Building MCP Servers](/guides/building-mcp-servers/) — how to build your own geospatial MCP server
-- [MCP and Python](/guides/mcp-python/) — Python patterns used by most geospatial MCP servers
+- [MCP and IoT](/guides/mcp-iot-embedded-systems/) — IoT patterns relevant to geospatial sensor networks
+- [MCP and Kubernetes](/guides/best-kubernetes-container-mcp-servers/) — container orchestration for geospatial workloads
+- [MCP and CI/CD](/guides/mcp-cicd-platform-integrations/) — deployment automation for spatial analysis pipelines
+- [Building MCP Servers](/guides/build-your-first-mcp-server/) — how to build your own geospatial MCP server
+- [MCP and Python](/guides/mcp-server-frameworks-sdks/) — Python patterns used by most geospatial MCP servers
 - [MCP and Healthcare](/guides/mcp-healthcare-fhir/) — healthcare applications with spatial dimensions

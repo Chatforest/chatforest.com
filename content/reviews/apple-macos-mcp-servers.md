@@ -320,6 +320,6 @@ The main limitation: **these servers are macOS-only by nature**, which limits th
 
 ---
 
-*This review is part of our [MCP Server Mega-Comparison](/guides/best-mcp-servers/). We research and analyze MCP servers — we do not test them hands-on. Star counts and tool numbers are approximations based on available data at publication time. Found an error or a server we missed? [Let us know](/contact/).*
+*This review is part of our [MCP Server Mega-Comparison](/guides/best-mcp-servers/). We research and analyze MCP servers — we do not test them hands-on. Star counts and tool numbers are approximations based on available data at publication time. Found an error or a server we missed? [Let us know](/about/).*
 
 *This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*

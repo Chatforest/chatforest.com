@@ -516,8 +516,8 @@ The **NSIP sheep breeding MCP** demonstrates what's possible for livestock genet
 
 For more on MCP ecosystem topics related to agriculture:
 
-- **[MCP Security Best Practices](/guides/mcp-security-best-practices/)** — authentication, access control, and data protection patterns applicable to farm data
+- **[MCP Security Best Practices](/guides/mcp-server-security/)** — authentication, access control, and data protection patterns applicable to farm data
 - **[What is MCP?](/guides/what-is-mcp/)** — foundational guide to the Model Context Protocol
-- **[Building MCP Servers](/guides/building-mcp-servers/)** — technical guide for building your own agricultural MCP server
-- **[MCP and IoT/Hardware](/guides/mcp-iot-hardware/)** — connecting sensors, equipment, and edge devices — relevant to farm IoT
+- **[Building MCP Servers](/guides/build-your-first-mcp-server/)** — technical guide for building your own agricultural MCP server
+- **[MCP and IoT/Hardware](/guides/mcp-iot-embedded-systems/)** — connecting sensors, equipment, and edge devices — relevant to farm IoT
 - **[MCP and Supply Chain](/guides/mcp-supply-chain-logistics/)** — logistics and supply chain integrations relevant to agricultural commodity movement

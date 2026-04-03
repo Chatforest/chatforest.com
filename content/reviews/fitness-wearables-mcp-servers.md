@@ -11,7 +11,7 @@ categories: ["/categories/sports-fitness/"]
 
 Fitness and wearables MCP servers connect AI assistants to workout tracking, health metrics, and biometric data from the devices people actually wear. Instead of manually exporting CSVs from Garmin Connect or screenshotting WHOOP recovery scores, these servers let AI agents pull your training data, sleep metrics, heart rate variability, and nutrition logs through the Model Context Protocol.
 
-This review covers the **fitness and wearables** vertical — Strava, Garmin, WHOOP, Apple Health, Oura Ring, Fitbit, training platforms, nutrition trackers, and multi-platform aggregators. For general health and medical data, see our [Healthcare & Medical review](/reviews/healthcare-medical-mcp-servers/). For productivity and personal tracking, see our [Productivity MCP review](/reviews/productivity-task-management-mcp-servers/).
+This review covers the **fitness and wearables** vertical — Strava, Garmin, WHOOP, Apple Health, Oura Ring, Fitbit, training platforms, nutrition trackers, and multi-platform aggregators. For general health and medical data, see our [Healthcare & Medical review](/reviews/healthcare-medical-mcp-servers/). For productivity and personal tracking, see our [Productivity MCP review](/reviews/note-taking-knowledge-management-mcp-servers/).
 
 The headline findings: **Open Wearables is the unifier** — the-momentum/apple-health-mcp-server (915 stars) evolved into a platform supporting 6 wearable ecosystems. **Strava has the most server diversity** — 7+ independent implementations. **Garmin has the deepest single-server coverage** — 96+ tools in one server. **The biggest gaps: no Peloton, no Zwift, and no standardized health data format across servers.**
 

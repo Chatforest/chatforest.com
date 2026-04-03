@@ -13,7 +13,7 @@ Yet when it comes to MCP — the Model Context Protocol that is becoming a stand
 
 This creates both a challenge and an opportunity. The challenge: teams building AI agents for insurance workflows today must assemble capabilities from scattered, early-stage tools rather than mature, purpose-built servers. The opportunity: the gap between massive industry AI investment and thin MCP tooling means that well-built insurance MCP servers will find demand quickly.
 
-This guide is research-based. We survey what MCP servers exist for insurance, what adjacent tools are relevant, how major platforms are approaching agentic AI, and how architecture patterns can tie these pieces together. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/mcp-server-directory/).
+This guide is research-based. We survey what MCP servers exist for insurance, what adjacent tools are relevant, how major platforms are approaching agentic AI, and how architecture patterns can tie these pieces together. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com), the operator of this site, has established ChatForest as a research and documentation resource for the AI ecosystem. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/best-mcp-servers/).
 
 
 ## Why Insurance Needs MCP

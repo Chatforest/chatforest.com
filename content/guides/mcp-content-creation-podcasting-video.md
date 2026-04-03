@@ -13,7 +13,7 @@ The Model Context Protocol is emerging as the connective tissue that unifies the
 
 What makes the content creation MCP ecosystem distinctive is its breadth. Unlike enterprise categories where a few major platforms dominate, content creation involves hundreds of specialized tools across video, audio, design, writing, publishing, and distribution. The MCP ecosystem mirrors this diversity — from official servers by Canva, ElevenLabs, Epidemic Sound, and WordPress to community-built integrations for FFmpeg, YouTube transcripts, and podcast generation.
 
-This guide is research-based. We survey what MCP servers exist across the content creation landscape, analyze the workflows they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the content creation landscape, analyze the workflows they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why Content Creators Need MCP
 
@@ -611,7 +611,7 @@ Despite the breadth of the content creation MCP ecosystem, several significant g
 
 ## Related Guides
 
-- [What Is MCP?](/guides/what-is-model-context-protocol-mcp/) — foundational overview of the Model Context Protocol
+- [What Is MCP?](/guides/what-is-mcp/) — foundational overview of the Model Context Protocol
 - [MCP Server Directory](/reviews/) — browse all MCP server reviews
 - [Best Social Media MCP Servers](/guides/best-social-media-mcp-servers/) — deep dive into social platform integrations
 - [Best CMS MCP Servers](/guides/best-cms-mcp-servers/) — comprehensive CMS integration coverage

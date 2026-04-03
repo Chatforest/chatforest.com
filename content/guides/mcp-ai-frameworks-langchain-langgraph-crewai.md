@@ -562,7 +562,7 @@ The choice depends less on MCP support — it's universal now — and more on yo
 
 ## Security Considerations
 
-MCP tool integration through frameworks inherits all the security considerations of [MCP itself](/guides/mcp-security-best-practices/), plus framework-specific concerns:
+MCP tool integration through frameworks inherits all the security considerations of [MCP itself](/guides/mcp-server-security/), plus framework-specific concerns:
 
 - **Tool trust boundaries**: When a framework loads tools from an MCP server, it trusts the server's tool descriptions. A malicious server could craft descriptions that manipulate LLM behavior (tool poisoning). Validate tool descriptions before exposing them to LLMs.
 - **Multi-server credential isolation**: When connecting to multiple MCP servers, ensure credentials for one server can't leak to another. Most frameworks handle this correctly, but verify that HTTP headers configured for one server aren't sent to others.
@@ -570,7 +570,7 @@ MCP tool integration through frameworks inherits all the security considerations
 - **Interceptor security**: LangChain's interceptors and similar middleware patterns can access sensitive context (API keys, user data, agent state). Audit interceptor code carefully.
 - **Bidirectional exposure**: When exposing your agent or workflow as an MCP server, you're creating an API surface. Apply the same security practices you would for any public API — authentication, rate limiting, input validation.
 
-For a deeper dive, see our [MCP Security Best Practices](/guides/mcp-security-best-practices/) and [MCP Authentication and OAuth 2.1](/guides/mcp-authentication-oauth/) guides.
+For a deeper dive, see our [MCP Security Best Practices](/guides/mcp-server-security/) and [MCP Authentication and OAuth 2.1](/guides/mcp-authentication-oauth/) guides.
 
 ## The Bigger Picture
 
@@ -584,7 +584,7 @@ The remaining friction is transport convergence (Streamable HTTP is winning) and
 
 - [MCP and Anthropic Claude Integration](/guides/mcp-anthropic-claude-integration/) — how Claude's products integrate MCP
 - [MCP and OpenAI Integration](/guides/mcp-openai-integration/) — how ChatGPT, Agents SDK, and Codex use MCP
-- [MCP Security Best Practices](/guides/mcp-security-best-practices/) — securing MCP deployments
+- [MCP Security Best Practices](/guides/mcp-server-security/) — securing MCP deployments
 - [MCP Authentication and OAuth 2.1](/guides/mcp-authentication-oauth/) — the auth layer for MCP servers
 - [MCP Server Packaging and Distribution](/guides/mcp-server-packaging-distribution/) — npm, PyPI, Docker, DXT, and the Registry
 - [MCP Ecosystem 2026: State of the Standard](/guides/mcp-ecosystem-2026-state-of-the-standard/) — the full landscape

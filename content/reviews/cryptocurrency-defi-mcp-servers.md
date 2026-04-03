@@ -10,7 +10,7 @@ last_refreshed: 2026-03-17
 
 Cryptocurrency and DeFi MCP servers let AI assistants interact directly with blockchain networks — checking balances, executing token swaps, managing wallets, querying DeFi protocol data, and tracking crypto markets. Instead of manually navigating block explorers and wallet interfaces, AI agents can handle on-chain operations through the Model Context Protocol.
 
-This review covers the **cryptocurrency and DeFi** ecosystem — multi-chain infrastructure, Solana-specific tools, wallet integrations, DeFi protocols, market data, blockchain analytics, payments, and NFTs. For general finance servers, see our [Finance review](/reviews/finance-mcp-servers/).
+This review covers the **cryptocurrency and DeFi** ecosystem — multi-chain infrastructure, Solana-specific tools, wallet integrations, DeFi protocols, market data, blockchain analytics, payments, and NFTs. For general finance servers, see our [Finance review](/reviews/personal-finance-mcp-servers/).
 
 The headline findings: **goat-sdk/goat (966 stars) provides 200+ onchain actions** as the largest agentic finance toolkit. **Coinbase/agentkit (1,200 stars) gives every AI agent a wallet** with enterprise backing. **Major wallets — Phantom, Trust Wallet, Bitget — are launching native MCP servers**. DeFi protocols like Aave and Uniswap have dedicated servers. Market data is well-covered from CoinGecko to whale tracking.
 

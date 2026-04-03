@@ -13,7 +13,7 @@ The biggest shift in 2026 is architectural — moving from scripted chatbots tha
 
 What makes the customer support MCP ecosystem notable is the mix of official first-party servers from major platforms (Intercom, Plain, Pylon, HubSpot, Salesforce, Microsoft Dynamics 365) alongside a rich community of open-source implementations for platforms that haven't shipped their own (Zendesk, Freshdesk, ServiceNow, Help Scout). This dual ecosystem means AI agents can already connect to virtually every major support platform.
 
-This guide is research-based. We survey what MCP servers exist across the customer support landscape, analyze the workflows they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the customer support landscape, analyze the workflows they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why Customer Support Needs MCP
 

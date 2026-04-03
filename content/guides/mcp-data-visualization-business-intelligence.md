@@ -13,7 +13,7 @@ The Model Context Protocol provides a standardized way for AI agents to connect 
 
 What makes the data visualization MCP ecosystem remarkable is the rapid adoption by platform vendors themselves. Unlike many MCP verticals where community servers lead, the BI space features official MCP servers from Tableau, Power BI, Grafana, Google Analytics, ThoughtSpot, Domo, Datadog, New Relic, Elasticsearch, and Apache Superset. This vendor commitment signals that MCP is becoming the standard interface between AI agents and analytics infrastructure.
 
-This guide is research-based. We survey what MCP servers exist across the data visualization and BI landscape, analyze the workflows they enable, and identify gaps and opportunities. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, and vendor announcements. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-model-context-protocol-mcp/) and the [MCP server directory](/reviews/).
+This guide is research-based. We survey what MCP servers exist across the data visualization and BI landscape, analyze the workflows they enable, and identify gaps and opportunities. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, and vendor announcements. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
 ## Why Data Visualization Needs MCP
 
@@ -573,7 +573,7 @@ Despite rapid growth, notable gaps remain:
 
 This guide connects to several other ChatForest guides:
 
-- [What is MCP?](/guides/what-is-model-context-protocol-mcp/) — introduction to the Model Context Protocol
+- [What is MCP?](/guides/what-is-mcp/) — introduction to the Model Context Protocol
 - [MCP Server Directory](/reviews/) — browse and compare MCP servers
 - [Best Database MCP Servers](/guides/best-database-mcp-servers/) — database connectivity for analytics queries
 - [Best Data Analytics MCP Servers](/guides/best-data-analytics-mcp-servers/) — broader analytics ecosystem
