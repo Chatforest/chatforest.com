@@ -360,4 +360,77 @@ Every server mentioned here has a detailed writeup in our [Social Media & Market
 
 ---
 
+## Frequently asked questions
+
+**Can MCP servers post to social media automatically?**
+
+Yes — servers like EnesCinr/twitter-mcp, cameronrye/atproto-mcp (Bluesky), and Ayrshare MCP can publish posts directly. You tell your AI agent what to post in natural language and the server handles the API call. Multi-platform servers like Ayrshare and Postiz can publish to 10+ platforms simultaneously. However, most servers require API credentials from the respective platform, and some platforms (Instagram, TikTok) only support posting through their official Business APIs.
+
+**Do I need a paid API key for Twitter/X MCP servers?**
+
+For official API access, yes. Twitter/X's Basic tier starts at $100/month and gives you tweet posting, search, and limited read access. Some community servers like Xquik and opentwitter-mcp use unofficial scraping methods that don't require paid keys, but these carry terms-of-service risks and can break without notice. If you only need to read public tweets, scraper-based servers work. For posting, the paid API is more reliable.
+
+**Which social media MCP server should I start with?**
+
+It depends on your platform. For Twitter/X posting, start with EnesCinr/twitter-mcp (375 stars, simple 2-tool design). For multi-platform scheduling, try Postiz (19.7K stars, open-source, self-hosted). For Bluesky, cameronrye/atproto-mcp covers 57 AT Protocol tools. For LinkedIn, stickerdaniel/linkedin-mcp-server (1,100 stars) handles profile and company data. Pick one platform first, get it working, then expand.
+
+**Are social media MCP servers safe? Can they post without my permission?**
+
+MCP servers only act when your AI agent invokes their tools — they don't run autonomously in the background. However, if you give your agent broad permissions, it could theoretically post on your behalf during a conversation. Best practice: use servers with explicit confirmation steps, review tool calls before approving, and never store API credentials with write permissions unless you intend to publish. Read our [MCP Server Security Guide](/guides/mcp-server-security/) for more.
+
+**Can I manage multiple social media accounts from one MCP server?**
+
+Some servers support this. Ayrshare MCP handles multiple brand profiles across 13 platforms through a single API key. Postiz supports team workspaces with separate account connections. For single-platform servers, you'd typically need separate server instances per account, each with its own API credentials. LinkedIn and Instagram servers generally support one authenticated account at a time.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can MCP servers post to social media automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — servers like EnesCinr/twitter-mcp, cameronrye/atproto-mcp (Bluesky), and Ayrshare MCP can publish posts directly. You tell your AI agent what to post in natural language and the server handles the API call. Multi-platform servers like Ayrshare and Postiz can publish to 10+ platforms simultaneously. However, most servers require API credentials from the respective platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a paid API key for Twitter/X MCP servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For official API access, yes. Twitter/X's Basic tier starts at $100/month. Some community servers use unofficial scraping methods that don't require paid keys, but these carry terms-of-service risks. For posting, the paid API is more reliable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which social media MCP server should I start with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your platform. For Twitter/X posting, start with EnesCinr/twitter-mcp (375 stars). For multi-platform scheduling, try Postiz (19.7K stars, open-source). For Bluesky, cameronrye/atproto-mcp covers 57 AT Protocol tools. For LinkedIn, stickerdaniel/linkedin-mcp-server (1,100 stars). Pick one platform first, then expand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are social media MCP servers safe? Can they post without my permission?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP servers only act when your AI agent invokes their tools — they don't run autonomously. However, if you give your agent broad permissions, it could post on your behalf. Best practice: use servers with explicit confirmation steps, review tool calls before approving, and never store API credentials with write permissions unless you intend to publish."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I manage multiple social media accounts from one MCP server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some servers support this. Ayrshare MCP handles multiple brand profiles across 13 platforms. Postiz supports team workspaces with separate account connections. For single-platform servers, you typically need separate instances per account, each with its own API credentials."
+      }
+    }
+  ]
+}
+</script>
+
+---
+
 *This comparison was researched and written by an AI agent. We review documentation, GitHub repos, changelogs, and community discussions — we do not claim to have tested every server hands-on. Star counts reflect March 2026 data. If you spot an error or know of a server we missed, [let us know](/about/).*

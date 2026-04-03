@@ -606,4 +606,79 @@ Critical gaps remain in EDR, vulnerability management, SOAR, case management, an
 
 For security teams evaluating MCP adoption, the recommendation is clear: start with read-only analytical use cases (alert enrichment, threat intelligence correlation, vulnerability prioritization), build confidence in AI-assisted analysis quality, and expand toward automated response only with appropriate human-in-the-loop controls. The combination of SOC alert fatigue, chronic staffing shortages, and increasingly sophisticated threats makes AI-augmented security operations not just valuable but necessary.
 
-*This guide was last updated on March 30, 2026. The cybersecurity MCP ecosystem is evolving rapidly. For the latest server listings and reviews, visit our [MCP server directory](/reviews/).*
+---
+
+## Frequently asked questions
+
+**Can AI agents perform penetration testing through MCP servers?**
+
+Yes, but with important caveats. FuzzingLabs' mcp-security-hub bundles 38 Docker-containerized MCP servers covering 300+ offensive security tools — from Nmap network scanning to Nuclei vulnerability detection to Metasploit exploitation. Scope enforcement and written authorization are essential. These servers enable AI-assisted pentesting, not fully autonomous attacks — a human operator should always review and approve exploitation actions.
+
+**Which cybersecurity MCP servers are officially supported by vendors?**
+
+Major vendors with official MCP servers include Google (Security Operations, 458 stars), PortSwigger (Burp Suite, 376 stars), Semgrep (code scanning, 189 stars), Snyk (vulnerability analysis), Check Point (threat intelligence), Elastic (SIEM/log analysis), Microsoft (Sentinel, preview), and Cloudflare (DNS/CDN security). Official servers generally have better authentication, documentation, and long-term support than community alternatives.
+
+**Are MCP servers themselves secure?**
+
+MCP infrastructure has its own attack surface. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers. Common issues include tool poisoning (malicious prompt injection through tool descriptions), excessive permissions, insecure credential storage, and lack of input validation. Use read-only configurations initially, audit server source code, and apply the principle of least privilege. Our [MCP Server Security Guide](/guides/mcp-server-security/) covers this in depth.
+
+**Can MCP servers connect to my SIEM platform?**
+
+Yes, for several major platforms. Google Security Operations has an official MCP server (458 stars) for alert investigation and event search. Elastic has an official MCP server with Kibana-based detection and ESQL queries. Microsoft Sentinel has a preview MCP server for incident management. Splunk has community implementations. However, CrowdStrike, SentinelOne, and Palo Alto XSOAR do not yet have MCP servers.
+
+**What's the best starting point for security teams evaluating MCP?**
+
+Start with read-only analytical use cases. Connect VirusTotal, Shodan, and AlienVault OTX MCP servers for multi-source IOC (Indicator of Compromise) analysis. Add Semgrep MCP for code security scanning in your development pipeline. These are low-risk, high-value integrations. Expand to automated response actions only after building confidence in AI-assisted analysis quality, and always maintain human-in-the-loop controls for any destructive or blocking actions.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can AI agents perform penetration testing through MCP servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but with caveats. FuzzingLabs' mcp-security-hub bundles 38 Docker-containerized MCP servers covering 300+ offensive security tools. Scope enforcement and written authorization are essential. These enable AI-assisted pentesting, not fully autonomous attacks — a human operator should always review and approve exploitation actions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which cybersecurity MCP servers are officially supported by vendors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Major vendors with official MCP servers include Google (Security Operations), PortSwigger (Burp Suite), Semgrep, Snyk, Check Point, Elastic, Microsoft (Sentinel preview), and Cloudflare. Official servers generally have better authentication, documentation, and long-term support than community alternatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are MCP servers themselves secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP infrastructure has its own attack surface. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers. Common issues include tool poisoning, excessive permissions, insecure credential storage, and lack of input validation. Use read-only configurations initially and audit server source code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MCP servers connect to my SIEM platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for several major platforms. Google Security Operations, Elastic, and Microsoft Sentinel have official or preview MCP servers. Splunk has community implementations. However, CrowdStrike, SentinelOne, and Palo Alto XSOAR do not yet have MCP servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best starting point for security teams evaluating MCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with read-only analytical use cases. Connect VirusTotal, Shodan, and AlienVault OTX MCP servers for multi-source IOC analysis. Add Semgrep MCP for code security scanning. These are low-risk, high-value integrations. Expand to automated response only after building confidence, with human-in-the-loop controls."
+      }
+    }
+  ]
+}
+</script>
+
+---
+
+*This guide was last updated on April 3, 2026. The cybersecurity MCP ecosystem is evolving rapidly. For the latest server listings and reviews, visit our [MCP server directory](/reviews/).*

@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 464 — 2026-04-03 — SEO: Add FAQ Schema to 3 High-Impression Pages + Deploy
+
+**Mode:** Developer (SEO)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+- Still waiting on Rob for anti-patterns direction (msg #345).
+
+### What I did
+
+1. **Ran GSC analysis** — confirmed same traffic patterns. Homepage 33K+ impressions (http/https still consolidating), music/audio review (378 impr, 6 clicks, 1.6% CTR), cybersecurity guide (40 impr, 2 clicks, 5% CTR), social media guide (446 impr, 0 clicks).
+
+2. **Researched MCP ecosystem trends** — Context7 is #1 trending MCP server (11K FastMCP views), Google released official managed MCP servers for BigQuery/Maps/GKE/Compute, MCP 2026 roadmap includes agent-to-agent coordination (Q3) and MCP Registry (Q4). We already cover all of these.
+
+3. **Added FAQ sections + FAQPage schema to 3 high-impression pages:**
+
+   - **Social media guide** (446 impr, 0 clicks): 5 FAQs covering auto-posting, Twitter API costs, which server to start with, safety/permissions, multi-account management
+   - **Music/audio review** (378 impr, 6 clicks): 5 FAQs covering DAW control, text-to-music, software costs, Spotify integration, MIDI composition. Updated last-edited date.
+   - **AI coding assistants guide** (142 impr, 0 clicks): 5 FAQs covering beginner picks, using multiple tools, pricing, MCP explained, best agent mode
+
+4. **Built and deployed** — Hugo build successful, deployed to DreamHost.
+
+### Impact
+- 3 more pages now have FAQPage structured data that can trigger FAQ rich results in Google
+- Combined with Run 462's FAQ on best-mcp-servers (2,627 impr), we now have FAQ schema on 4 of our highest-impression content pages
+- FAQ rich results typically increase SERP real estate by 2-3x and can double CTR
+- Expect to see results in 2-4 weeks as Google re-crawls
+
+### What should happen next
+- **Monitor GSC** in ~2-3 weeks to measure CTR impact across all optimized pages (runs 460-464)
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~10 days
+- **Waiting on Rob:** Anti-patterns content direction (msg #345)
+- **Cloudways affiliate:** Add disclosures when writing hosting-related content
+- **Site size:** 519 pages
+
 ## Run 463 — 2026-04-03 — SEO: Optimize 14 High-Impression Zero-Click Pages + Deploy
 
 **Mode:** Developer (SEO)

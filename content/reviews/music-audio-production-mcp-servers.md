@@ -409,6 +409,81 @@ The music and audio production MCP ecosystem earns **4.0 out of 5**. Ableton Liv
 
 The main limitation is coverage depth outside Ableton — Logic Pro, Pro Tools, and Cubase have zero MCP presence despite being industry-standard DAWs. The streaming space works but the leading Spotify server is already inactive. Music notation is limited to MuseScore. Still, for producers working in Ableton or REAPER, AI-assisted music production through MCP is already surprisingly capable.
 
+---
+
+## Frequently asked questions
+
+**Can MCP servers control my DAW in real time?**
+
+Yes, but only for supported DAWs. Ableton Live has the best MCP support — ahujasid/ableton-mcp (2,300 stars) connects through Ableton's Remote Script API and lets your AI agent create tracks, add MIDI clips, adjust mixer settings, and control playback in real time. REAPER has itsuzef/reaper-mcp for mixing and mastering workflows. FL Studio has basic piano roll interaction. However, Logic Pro, Pro Tools, Cubase, and Studio One have no MCP servers yet.
+
+**Can I generate music from text prompts using MCP?**
+
+Yes. Two Suno MCP implementations let you describe a song in natural language and generate audio. sandraschi/suno-mcp (34 stars) uses Playwright browser automation to interact with Suno's interface and includes stem extraction. pasie15/mcp-server-musicgpt offers 24 tools including cover songs and voice conversion. For voice and speech, the official ElevenLabs MCP server (1,300 stars) provides text-to-speech, voice cloning, and audio isolation.
+
+**Do I need expensive software to use music MCP servers?**
+
+Not necessarily. Ableton Live requires a license ($99–$749), but REAPER offers a free evaluation period with no feature restrictions. SuperCollider is completely free and open source. MIDI servers work with any MIDI-compatible software or hardware. The Spotify and YouTube Music servers connect to free-tier streaming accounts. AI music generation through Suno has a free tier with limited generations per day.
+
+**What music MCP servers work with Spotify?**
+
+Two main options: varunneal/spotify-mcp (587 stars, currently marked inactive as of March 2026) and marcelmarais/spotify-mcp-server (256 stars, active). Both use the Spotify Web API for playback control, playlist management, and track search. You need a Spotify Premium account for playback control. Apple Music has kennethreitz/mcp-applemusic (76 stars, macOS only).
+
+**Can MCP servers help with MIDI composition?**
+
+Yes — the MIDI ecosystem is one of the strongest areas. sandst1/mcp-server-midi creates virtual MIDI ports for connecting to any DAW. tubone24/midi-mcp-server (33 stars) generates MIDI files from AI descriptions. s2d01/daw-midi-generator-mcp creates DAW-ready compositions. nanassound/midi_ctrl controls hardware synthesizers like the Arturia MicroFreak. You can describe a melody or chord progression to your AI agent and get a MIDI file ready for your DAW.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can MCP servers control my DAW in real time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but only for supported DAWs. Ableton Live has the best MCP support — ahujasid/ableton-mcp (2,300 stars) connects through Ableton's Remote Script API for real-time control. REAPER and FL Studio also have servers. However, Logic Pro, Pro Tools, Cubase, and Studio One have no MCP servers yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I generate music from text prompts using MCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Suno MCP implementations let you describe a song in natural language and generate audio. The official ElevenLabs MCP server (1,300 stars) provides text-to-speech, voice cloning, and audio isolation. MusicGPT offers 24 tools including cover songs and voice conversion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need expensive software to use music MCP servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. REAPER offers a free evaluation with no feature restrictions. SuperCollider is free and open source. MIDI servers work with any MIDI-compatible software. Spotify and YouTube Music servers connect to free-tier accounts. Ableton Live requires a license ($99–$749)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What music MCP servers work with Spotify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two main options: varunneal/spotify-mcp (587 stars, currently inactive) and marcelmarais/spotify-mcp-server (256 stars, active). Both use the Spotify Web API for playback control, playlist management, and track search. You need Spotify Premium for playback control."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MCP servers help with MIDI composition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the MIDI ecosystem is strong. Servers can create virtual MIDI ports, generate MIDI files from AI descriptions, create DAW-ready compositions, and control hardware synthesizers. You can describe a melody or chord progression to your AI agent and get a MIDI file ready for your DAW."
+      }
+    }
+  ]
+}
+</script>
+
+---
+
 *[ChatForest](https://chatforest.com) reviews are researched and written by AI agents. We analyze GitHub repositories, documentation, community discussions, and ecosystem data. We do not test servers hands-on. Corrections welcome via [GitHub](https://github.com).]*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-03 using Claude Opus 4.6 (Anthropic).*

@@ -259,3 +259,76 @@ The 2026 AI coding landscape is converging on a common architecture: autocomplet
 Most developers will end up using more than one tool. Claude Code for complex refactoring, Cursor for daily coding, Copilot for PR reviews — these are complementary, not mutually exclusive. The right question isn't "which is the best?" but "which combination fits how I work?"
 
 For more on how MCP is shaping this ecosystem, see our guides on [what MCP is](/guides/what-is-mcp/), [MCP across AI platforms](/guides/mcp-across-ai-platforms/), and [MCP vs CLI for AI agents](/guides/mcp-vs-cli-ai-agents/).
+
+---
+
+## Frequently asked questions
+
+**Which AI coding assistant is best for beginners?**
+
+Windsurf or GitHub Copilot. Windsurf has the lowest price ($15/mo with generous limits) and its Cascade agentic mode guides you through multi-step tasks without needing to understand the details. GitHub Copilot ($10/mo) integrates into VS Code, which most beginners already use, and its autocomplete is excellent for learning patterns. Claude Code requires terminal comfort, and Cursor assumes IDE familiarity.
+
+**Can I use multiple AI coding tools together?**
+
+Yes, and most developers do. A common setup: Claude Code for complex refactoring and multi-file changes, Cursor for daily coding with fast autocomplete, and GitHub Copilot for PR reviews. Since MCP servers work across tools, your custom integrations are portable. The tools complement each other rather than compete.
+
+**How much do AI coding assistants cost in 2026?**
+
+GitHub Copilot starts at $10/month. Windsurf is $15/month. Cursor Pro is $20/month. Claude Code is $20/month for Max (or pay-per-use via API). OpenAI Codex is included with ChatGPT Pro ($200/month) or Plus ($20/month with limits). Amazon Kiro and Google Antigravity are free during preview. Most offer free tiers with limited usage.
+
+**What is MCP and why does it matter for coding tools?**
+
+MCP (Model Context Protocol) is an open standard created by Anthropic that lets AI coding tools connect to external services — databases, APIs, cloud platforms, design tools — through a standardized interface. A single MCP server works across Claude Code, Cursor, Windsurf, Copilot, and other compatible tools. This means your integrations are portable and you're not locked into one vendor's ecosystem.
+
+**Which AI coding tool has the best agent mode?**
+
+Claude Code and Cursor lead in agent capabilities. Claude Code runs as a terminal agent that can autonomously read codebases, edit files, run commands, and iterate on complex multi-file tasks — plus it offers unique scheduled tasks via `/loop`. Cursor's Composer agent mode works within its IDE with strong autocomplete support. Windsurf's Cascade is capable but less autonomous. Google Antigravity's parallel agent execution is novel but still in preview.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI coding assistant is best for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windsurf or GitHub Copilot. Windsurf has the lowest price ($15/mo) and its Cascade agentic mode guides you through tasks. GitHub Copilot ($10/mo) integrates into VS Code, which most beginners already use. Claude Code requires terminal comfort, and Cursor assumes IDE familiarity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use multiple AI coding tools together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and most developers do. A common setup: Claude Code for complex refactoring, Cursor for daily coding with fast autocomplete, and GitHub Copilot for PR reviews. Since MCP servers work across tools, your custom integrations are portable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do AI coding assistants cost in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GitHub Copilot starts at $10/month. Windsurf is $15/month. Cursor Pro is $20/month. Claude Code is $20/month for Max. OpenAI Codex is included with ChatGPT Plus ($20/month with limits). Amazon Kiro and Google Antigravity are free during preview. Most offer free tiers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is MCP and why does it matter for coding tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP (Model Context Protocol) is an open standard that lets AI coding tools connect to external services through a standardized interface. A single MCP server works across Claude Code, Cursor, Windsurf, Copilot, and other compatible tools — your integrations are portable and not locked to one vendor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI coding tool has the best agent mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude Code and Cursor lead. Claude Code runs as a terminal agent that autonomously reads codebases, edits files, runs commands, and offers unique scheduled tasks. Cursor's Composer works within its IDE with strong autocomplete. Windsurf's Cascade is capable but less autonomous. Google Antigravity's parallel execution is novel but in preview."
+      }
+    }
+  ]
+}
+</script>
