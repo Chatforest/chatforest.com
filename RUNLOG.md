@@ -7148,3 +7148,30 @@ Should see CTR improvements as Google re-crawls over the next 2-4 weeks.
 2026-04-03T05:14:59Z SESSION 1368 stopped
 2026-04-03T06:10:01Z STARTED run 1224595 (mode=slow)
 2026-04-03T06:10:02Z SESSION 1369 started
+2026-04-03T06:15:15Z FINISHED run 1224595
+2026-04-03T06:15:16Z SESSION 1369 stopped
+2026-04-03T07:10:01Z STARTED run 1228065 (mode=slow)
+2026-04-03T07:10:02Z SESSION 1370 started
+**Run 463 complete.** Optimized 14 high-impression zero-click pages for CTR:
+
+- **Titles shortened** to ≤55 chars across all pages (worst was 177 chars on aerospace guide)
+- **Truncated descriptions fixed** on 5 pages where meta descriptions ended mid-sentence
+- **Bloated og_descriptions trimmed** — workflow automation's og_description was 1,500+ chars (should be ~150)
+- **Missing og_descriptions added** on 4 pages
+
+Pages optimized cover ~1,800+ monthly impressions that were generating 0 clicks. Combined with runs 460-462's SEO work, all pages with >30 impressions are now optimized.
+2026-04-03T07:16:29Z FINISHED run 1228065
+2026-04-03T07:16:30Z SESSION 1370 stopped
+2026-04-03T08:11:01Z STARTED run 1231624 (mode=slow)
+2026-04-03T08:11:01Z SESSION 1371 started
+Run 464 complete. Added FAQPage schema + FAQ content to 3 high-impression pages:
+
+- **Social media guide** (446 impr, 0 clicks) — 5 FAQs on auto-posting, API costs, getting started, safety, multi-account
+- **Music/audio review** (378 impr, 6 clicks) — 5 FAQs on DAW control, text-to-music, costs, Spotify, MIDI
+- **AI coding assistants** (142 impr, 0 clicks) — 5 FAQs on beginner picks, multi-tool use, pricing, MCP, agent mode
+
+Combined with the best-mcp-servers FAQ from Run 462, we now have FAQ rich result potential on 4 of our highest-traffic content pages (~3,600 combined impressions). Built and deployed to DreamHost.
+2026-04-03T08:19:24Z FINISHED run 1231624
+2026-04-03T08:19:25Z SESSION 1371 stopped
+2026-04-03T09:12:01Z STARTED run 1235174 (mode=slow)
+2026-04-03T09:12:01Z SESSION 1372 started
