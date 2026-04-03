@@ -4,7 +4,7 @@ date: 2026-03-29T18:00:00+09:00
 description: "A comprehensive guide to MCP integration across major cloud providers — covering Amazon Bedrock AgentCore, AWS Lambda MCP hosting, 66+ AWS MCP servers, Amazon Q Developer, Google"
 content_type: "Guide"
 card_description: "Every major cloud provider now offers native MCP support — from managed server hosting to enterprise gateways. This guide covers AWS (Bedrock AgentCore, Lambda, Q Developer, 66+ servers), Google Cloud (managed MCP servers, Vertex AI, ADK), Azure (Foundry, Functions, Copilot, Semantic Kernel), and Cloudflare (Workers, MCP Portals), plus cross-cutting patterns for authentication, deployment, and multi-cloud architectures."
-last_refreshed: 2026-03-29
+last_refreshed: 2026-04-04
 ---
 
 When Anthropic open-sourced the Model Context Protocol in November 2024, cloud providers faced a choice: build proprietary alternatives or embrace the open standard. By early 2026, every major cloud provider chose the latter. AWS maintains 66+ official MCP servers. Google Cloud offers fully managed remote MCP servers for BigQuery, Spanner, and a dozen other services. Azure built MCP into Functions, Foundry, and Copilot. Cloudflare turned Workers into the fastest way to deploy MCP servers at the edge.
@@ -22,6 +22,7 @@ This guide covers every major cloud provider's MCP integration with architectura
 | **Microsoft Azure** | Azure Functions (GA) | Foundry MCP Server | Copilot, VS 2026 | Entra ID, RBAC | Platinum |
 | **Cloudflare** | Workers (edge) | 13 official | N/A | Zero Trust, OAuth | Platinum |
 | **Vercel** | Functions (Fluid Compute) | 1 (Vercel platform) | AI SDK 6 | OAuth | N/A |
+| **DigitalOcean** | App Platform, Droplets | 9 services (remote MCP) | N/A | Bearer token, OAuth | N/A |
 
 All four major providers are platinum members of the [Agentic AI Foundation](/guides/mcp-ecosystem-2026-state-of-the-standard/) (AAIF), formed December 2025 under the Linux Foundation to govern MCP's future.
 
@@ -281,6 +282,26 @@ Vercel offers MCP server hosting optimized for the JavaScript/TypeScript ecosyst
 - **Vercel MCP Server** — a public endpoint at `https://mcp.vercel.com` for connecting your Vercel account to AI clients (read-only data access)
 - **AI SDK 6** — full MCP support with agents, tool execution approval, DevTools, and reranking
 - **OAuth authentication** — HTTP + OAuth transport (upgraded from SSE)
+
+## DigitalOcean: Developer-Friendly Cloud MCP
+
+DigitalOcean launched its [MCP Server](https://github.com/digitalocean/digitalocean-mcp) publicly in April 2026, covering 9 services with both local and remote MCP endpoints — making it the most comprehensive MCP integration from a mid-tier cloud provider.
+
+### Supported Services
+
+The DigitalOcean MCP Server covers: **Accounts**, **App Platform**, **Databases**, **DOKS** (managed Kubernetes), **Droplets**, **Insights**, **Marketplace**, **Networking**, and **Spaces Storage**. Each service is available as its own remote MCP endpoint at a dedicated HTTPS URL, so you can connect only the services you need.
+
+### Remote MCP (No Local Install)
+
+DigitalOcean offers remote MCP endpoints for all 9 services — connect your AI tools to DigitalOcean without installing any binaries locally. Each service runs as its own MCP server at a dedicated HTTPS endpoint, using OAuth for authentication.
+
+### Local MCP Server
+
+The local option runs as a Go binary connecting to 9 services via bearer token authentication. Typical operations include deploying apps from GitHub repos, provisioning databases, managing Droplets, and querying Kubernetes clusters — all through natural language.
+
+### Where DigitalOcean fits
+
+DigitalOcean's MCP server targets developers and small-to-mid-sized teams who use DigitalOcean as their primary cloud. It lacks the enterprise governance features of AWS (IAM session isolation, CloudTrail), Azure (Entra ID, Conditional Access), or Cloudflare (Zero Trust), but offers a simpler setup path with less configuration overhead. The remote MCP option is particularly useful for quick integration without managing local infrastructure.
 
 ## Cloud-Native Authentication for MCP
 
