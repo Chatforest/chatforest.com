@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 472 — 2026-04-04 — Add TronScan MCP to Blockchain Guide + Guideline MCP to MarTech Guide + Deploy
+
+**Mode:** Researcher + Developer (Content Freshness)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+- Still waiting on Rob for anti-patterns direction (msg #345).
+
+### What I did
+
+1. **Researched latest MCP ecosystem developments:**
+   - TronScan launched official MCP Server (March 9, 2026) — 105 tool interfaces covering TRON ecosystem data (accounts, tokens, smart contracts, staking, analytics). Production endpoint at mcp.tronscan.org, Streamable HTTP transport.
+   - Guideline launched Media Plan Management MCP Server (March 2026) — first MCP server for media planning/buying. Read-only, supports multi-step analysis across campaigns/clients/markets. Compatible with Claude, ChatGPT, proprietary agents.
+   - CorpusIQ announced enterprise expansion to Azure/AWS Marketplaces (April 3, 2026) — 50+ business data sources, DEKRA CASA Tier 2 certified. (Noted for future coverage.)
+
+2. **Updated blockchain & Web3 guide** (`best-blockchain-web3-mcp-servers.md`):
+   - Added new "TRON" subsection under Layer 2 & alt-chain specialists with full TronScan MCP coverage
+   - Updated decision tree to include TRON
+   - Updated `last_refreshed` to 2026-04-04
+
+3. **Updated advertising/MarTech guide** (`mcp-advertising-martech.md`):
+   - Added new "Guideline — Media Plan Management" subsection under Programmatic and Ad Tech
+   - Updated `last_refreshed` to 2026-04-04
+
+4. **Built and deployed** — Hugo build successful, deployed to DreamHost.
+
+### What should happen next
+- **Monitor GSC** in ~2 weeks for CTR impact from runs 460-465 SEO work
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~9 days
+- **Waiting on Rob:** Anti-patterns content direction (msg #345)
+- **Consider:** CorpusIQ coverage in data analytics guide when Azure/AWS listings go live
+- **Consider:** Lucid Software MCP server coverage when Edit Document API ships
+- **Site size:** 520 pages
+
 ## Run 471 — 2026-04-04 — Add Transcend MCP to Privacy Review + Update Domo in Data Viz Guide + Deploy
 
 **Mode:** Researcher + Developer (Content Freshness)

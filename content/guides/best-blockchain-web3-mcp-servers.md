@@ -5,7 +5,7 @@ description: "GOAT, Coinbase AgentKit, EVM MCP Server, Solana MCP, Bitcoin MCP, 
 og_description: "40+ blockchain and Web3 MCP servers reviewed across multi-chain toolkits, EVM networks, Solana, Bitcoin, DeFi data, NFT/marketplace, Starknet/L2, and market analytics. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to blockchain and Web3 MCP servers in 2026. We've researched 40+ servers across multi-chain toolkits, EVM networks, Solana, Bitcoin, DeFi data, NFT marketplaces, L2/alt-chain specialists, and market analytics. Every recommendation links to a full review."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-04
 ---
 
 Blockchain MCP servers are where AI agents meet onchain. These servers let AI assistants query balances, send transactions, interact with smart contracts, execute DeFi operations, mint NFTs, and pull market data — all through natural language instead of writing raw API calls or navigating block explorer UIs.
@@ -212,6 +212,10 @@ Starknet is positioning itself as both an Ethereum zk-rollup and a Bitcoin execu
 - **VeChain MCP Server** — Access to VeChain ecosystem documentation and blockchain data.
 - **VeChain AI Terminal MCP** — Natural language interaction with VeChain: token transfers, DEX trading, cross-chain bridges, NFT management, and VeBetter DAO interactions.
 
+### TRON
+
+- **[TronScan MCP Server](https://mcpdoc.tronscan.org/en/mcp)** — Official MCP server from TronScan, the TRON blockchain explorer. Launched March 9, 2026 with 105 tool interfaces covering the TRON ecosystem: account data, TRX and TRC-20 token queries, smart contract interactions, transaction history, staking/voting information, and on-chain analytics. Production endpoint at mcp.tronscan.org via Streamable HTTP transport (MCP protocol version 2025-06-18). Rate limits apply by default; API key available for high-frequency use. This is notable as one of the most comprehensive official blockchain explorer MCP integrations, with far more tools than typical chain-specific servers.
+
 ### Other chains
 
 - **NEAR Protocol MCP** — LLM querying and transaction execution on NEAR.
@@ -239,7 +243,8 @@ What do you need?
 ├── DeFi analytics → DefiLlama MCP + DexScreener MCP
 ├── NFT minting + management → thirdweb-mcp or OpenSea MCP
 ├── Market data → CoinGecko MCP
-└── Starknet specifically → mcpdotdirect/starknet-mcp-server
+├── Starknet specifically → mcpdotdirect/starknet-mcp-server
+└── TRON specifically → TronScan MCP (105 tools, official)
 ```
 
 ## Three trends shaping blockchain MCP

@@ -4,7 +4,7 @@ date: 2026-03-30T18:00:00+09:00
 description: "A comprehensive guide to 150+ MCP integrations for advertising and marketing technology — covering search/PPC advertising (Google Ads 10+ servers, Amazon Ads 32 stars), social"
 content_type: "Guide"
 card_description: "The MarTech landscape has grown to 15,384 tools in 2025 — a 100x increase over 15 years — and 77% of new tools are AI-native. AI marketing spend reached $64.6 billion in 2026. Yet most marketing teams still copy-paste data between platforms. MCP changes this by letting AI agents directly connect to advertising platforms, analytics tools, SEO software, and marketing automation systems through a single protocol. This guide covers 150+ MCP servers across advertising and MarTech — from Google Ads campaign management and Meta Ads optimization to SEO analysis, web analytics, email marketing, and programmatic advertising — plus architecture patterns for AI-orchestrated marketing operations."
-last_refreshed: 2026-03-30
+last_refreshed: 2026-04-04
 ---
 
 Marketing technology has become one of the most fragmented software categories in existence. Scott Brinker's 2025 MarTech landscape cataloged 15,384 tools — a 100x increase over 15 years, with 2,489 new tools added in the past year alone and 77% of them AI-native. The global MarTech market reached approximately $175–198 billion in 2025 and is projected to hit $297 billion by 2030 according to MarketsandMarkets. AI adoption in marketing has reached 91% of marketers actively using AI tools according to Jasper's 2026 report, up from 63% the prior year. The global AI marketing market hit an estimated $64.6 billion in 2026, projected to reach $107.5 billion by 2028.
@@ -311,6 +311,14 @@ According to documentation, this server provides campaign management and analyti
 ### Criteo
 
 Criteo has confirmed building a public MCP server for campaign management via LLMs (reported on Criteo Tech Blog). Criteo was also the first ad tech partner in OpenAI's ChatGPT advertising pilot. No public GitHub repository has been identified yet.
+
+### Guideline — Media Plan Management
+
+**Guideline Media Plan Management MCP Server** | Official | Read-only
+
+Guideline launched its Media Plan Management MCP Server in March 2026 — the first MCP server built specifically for media planning and buying workflows. Advertising agencies, media buyers, and enterprise clients can connect any MCP-compatible AI agent (Claude, ChatGPT, or proprietary tools) directly to Guideline's platform with no custom API development required. The server supports multi-step analysis: agents can retrieve, consolidate, and analyze media plan data across campaigns, clients, and markets in a single conversation — covering campaign status, budget allocation, vendor performance, and plan-to-actual comparisons. Security is read-only by design, so agencies can integrate without risk of agents modifying live plans. Guideline describes this as the first in a series of MCP capabilities.
+
+**Why this matters:** Media planning involves complex cross-platform coordination that's historically locked inside specialized tools. An MCP server that exposes plan data conversationally lets agents answer questions like "How is Q2 spend tracking against plan across all clients?" without manual dashboard navigation. The read-only approach is a smart safety choice for a category where accidental modifications could affect live media buys.
 
 ### Cross-Platform Ad Tech
 
