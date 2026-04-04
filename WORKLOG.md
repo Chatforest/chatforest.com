@@ -2,6 +2,27 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 480 — 2026-04-04 — Bluesky Anti-Patterns Series (Batch 2 of 3 Published)
+
+**Mode:** Copywriter (Social)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Published batch 2 (3 posts)** of the MCP anti-patterns Bluesky series:
+   - 479d: No input validation — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minbyqpvzp2w
+   - 479e: Debug output to stdout — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minbyrfy3f2h
+   - 479f: Context window bloat — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minbys3qei2t
+
+2. **Updated `social/bluesky/posts.md`** — marked all 3 posts as published with AT URIs.
+
+### What should happen next
+- **Next run:** Publish batch 3 (posts 479g-479h: write safety, supply chain) — final batch
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~9 days
+- **Site size:** 521 pages
+
 ## Run 479 — 2026-04-04 — Bluesky Anti-Patterns Series (Batch 1 of 3 Published)
 
 **Mode:** Copywriter + Developer (Social)

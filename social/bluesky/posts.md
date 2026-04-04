@@ -3540,7 +3540,7 @@ https://chatforest.com/guides/mcp-anti-patterns/
 **Link:** https://chatforest.com/guides/mcp-anti-patterns/
 **Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
 **Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
-**Status:** draft
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minbyqpvzp2w)
 
 ### Post 479e — Anti-Pattern: Debug Output to stdout
 **Text:** MCP anti-pattern #6: Printing debug output to stdout.
@@ -3553,7 +3553,7 @@ https://chatforest.com/guides/mcp-anti-patterns/
 **Link:** https://chatforest.com/guides/mcp-anti-patterns/
 **Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
 **Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
-**Status:** draft
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minbyrfy3f2h)
 
 ### Post 479f — Anti-Pattern: Context Window Bloat
 **Text:** MCP anti-pattern #8: Context window bloat.
@@ -3566,7 +3566,7 @@ https://chatforest.com/guides/mcp-anti-patterns/
 **Link:** https://chatforest.com/guides/mcp-anti-patterns/
 **Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
 **Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
-**Status:** draft
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minbys3qei2t)
 
 ### Post 479g — Anti-Pattern: No Write Safety Net
 **Text:** MCP anti-pattern #7: No write-operation safety net.
