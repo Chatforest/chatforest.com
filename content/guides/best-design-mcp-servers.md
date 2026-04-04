@@ -1,11 +1,11 @@
 ---
 title: "Best Design MCP Servers in 2026"
 date: 2026-03-22T06:10:00+09:00
-description: "Figma, Penpot, Adobe Creative Suite, UI component libraries, and more — we've reviewed 30+ design MCP servers across 7 categories. Here's what works, what's emerging, and where the gaps are."
-og_description: "30+ design MCP servers reviewed across Figma, Penpot, Adobe Creative Suite, UI component libraries, design systems, and CAD/3D. The definitive comparison with honest ratings."
+description: "Figma, Penpot, Adobe Creative Suite, Lucid diagramming, UI component libraries, and more — we've reviewed 30+ design MCP servers across 8 categories. Here's what works, what's emerging, and where the gaps are."
+og_description: "30+ design MCP servers reviewed across Figma, Penpot, Adobe Creative Suite, Lucid diagramming, UI component libraries, design systems, and CAD/3D. The definitive comparison with honest ratings."
 content_type: "Comparison"
-card_description: "The definitive guide to design MCP servers in 2026. We've reviewed 30+ servers across Figma design-to-code, Figma manipulation, Penpot, Adobe Creative Suite, UI component libraries, design systems, and CAD/3D modeling. Every recommendation links to a full review."
-last_refreshed: 2026-03-22
+card_description: "The definitive guide to design MCP servers in 2026. We've reviewed 30+ servers across Figma design-to-code, Figma manipulation, Penpot, Adobe Creative Suite, Lucid diagramming, UI component libraries, design systems, and CAD/3D modeling. Every recommendation links to a full review."
+last_refreshed: 2026-04-04
 ---
 
 Design MCP servers let AI agents interact with design tools — reading Figma layouts, generating UI components, controlling Adobe Creative Suite, manipulating Penpot files, and accessing component libraries. Instead of switching between your IDE and your design tool, you describe what you want and the agent builds it using data from the source.
@@ -24,6 +24,7 @@ We've researched 30+ design MCP servers across the full landscape. This guide sy
 | Adobe Creative Suite | [VoidChecksum/adobe-mcp](https://github.com/VoidChecksum/adobe-mcp) | — | [alisaitteke/photoshop-mcp](https://github.com/alisaitteke/photoshop-mcp) (50+ Photoshop tools) |
 | UI component generation | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) | 5,700+ | [magicuidesign/mcp](https://github.com/magicuidesign/mcp) (Magic UI library) |
 | Design systems | [shadcn/ui MCP](https://shadcnstudio.com/mcp) | — | [Flowbite MCP](https://flowbite.com/) (Tailwind components) |
+| Diagramming | [Lucid Software MCP](https://lucid.co/) | — | — (first mover) |
 | CAD / 3D modeling | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | 17,800+ | [jingcheng-chen/rhinomcp](https://github.com/jingcheng-chen/rhinomcp) (274 stars) |
 
 ## Why design MCP servers matter
@@ -36,7 +37,7 @@ The value comes in three forms:
 2. **Design manipulation.** Instead of learning Figma's interface or Adobe's toolbars, tell your agent: "Create a card component with a 16px border radius and our brand blue." The agent creates the design element directly.
 3. **Component libraries on tap.** Servers like 21st.dev Magic and Magic UI give agents access to production-ready component catalogs. Ask for "a marquee of logos" and get back a polished, responsive React component — no manual browsing of component docs.
 
-The landscape splits into seven categories: **Figma design-to-code** (reading designs for code generation), **Figma manipulation** (creating and modifying designs), **Penpot** (open-source alternative), **Adobe Creative Suite** (Photoshop, Illustrator, Premiere, After Effects), **UI component generation** (AI-generated UI from prompts), **design systems** (shadcn, Tailwind, component libraries), and **CAD/3D modeling** (Blender, Rhino, AutoCAD).
+The landscape splits into eight categories: **Figma design-to-code** (reading designs for code generation), **Figma manipulation** (creating and modifying designs), **Penpot** (open-source alternative), **Adobe Creative Suite** (Photoshop, Illustrator, Premiere, After Effects), **UI component generation** (AI-generated UI from prompts), **design systems** (shadcn, Tailwind, component libraries), **diagramming & process design** (Lucid Software), and **CAD/3D modeling** (Blender, Rhino, AutoCAD).
 
 ---
 
@@ -258,6 +259,32 @@ Design system MCP servers are early but growing fast. The pattern is clear: expo
 
 ---
 
+## Diagramming & process design servers
+
+A newer category: MCP servers for creating flowcharts, sequence diagrams, process maps, and architecture diagrams through natural language. This bridges the gap between design tools and technical documentation.
+
+### Lucid Software MCP Server
+
+**Status:** GA (launched November 2025, updated March 2026) | **License:** Proprietary | **Tools:** Multiple
+
+[Lucid Software](https://lucid.co/) — makers of Lucidchart and Lucidspark — ships an MCP server that lets AI agents search existing diagrams, create new ones from natural language descriptions, and (as of April 2026) edit documents via a new Edit Document API.
+
+**Why it's notable:** Lucid is the first major diagramming platform to ship MCP support. The March 2026 update added a Process Agent that goes beyond simple generation — it asks clarifying questions about scope, risk, and compliance before creating diagrams. Support for swimlanes, color-coded workflows, nested containers, and sequence diagrams (complex login flows, API interactions) is built in.
+
+**Key features:**
+- **Search and fetch** — find and summarize existing diagrams across your Lucid workspace
+- **Diagram creation** — describe workflows in natural language, get fully editable diagrams
+- **Edit Document API** — request changes through natural language, Lucid AI executes modifications (launching April 2026)
+- **Process Agent** — initiates discovery conversations with clarifying questions, analyzes scope and risk before building
+- **Broad client support** — ChatGPT, Claude, Microsoft Copilot, GitHub Copilot, Cursor
+- **ChatGPT Apps SDK** — upcoming direct integration for generating Lucid diagrams from ChatGPT
+
+**The catch:** Proprietary and requires a Lucid subscription. The MCP server works within the Lucid ecosystem — you can't use it to generate standalone SVGs or Mermaid files. The Process Agent and Edit Document API are still rolling out (April 2026).
+
+**Best for:** Teams already using Lucidchart for process documentation, architecture diagrams, or workflow visualization. The MCP server turns "draw me a diagram of this flow" into an actual editable Lucid document, not a text description.
+
+---
+
 ## CAD / 3D modeling servers
 
 For comprehensive coverage of CAD and 3D modeling MCP servers — Blender, AutoCAD, FreeCAD, SketchUp, Rhino/Grasshopper, Revit, Fusion 360, and OpenSCAD — see our dedicated reviews:
@@ -283,6 +310,8 @@ For comprehensive coverage of CAD and 3D modeling MCP servers — Blender, AutoC
 
 **"I need my AI to know my design system"** → Look at **shadcn/ui MCP** or **Flowbite MCP** if you use those libraries. The broader pattern of exposing design systems via MCP is still early.
 
+**"I need to create flowcharts or process diagrams"** → Use **Lucid Software MCP** if you're a Lucid customer. No open-source MCP diagramming alternative exists yet.
+
 **"I need 3D modeling / CAD control"** → Start with **Blender MCP** (17,800+ stars). See our [interior design & architecture review](/reviews/interior-design-architecture-mcp-servers/) for the full landscape.
 
 ---
@@ -305,7 +334,7 @@ Reading designs for code generation is solved. The frontier is creating and modi
 
 ## What's missing
 
-Despite 30+ servers, significant gaps remain:
+Despite 30+ servers and growing, significant gaps remain:
 
 - **No Canva MCP for design** — Canva's MCP server is for app development assistance, not for creating or editing designs programmatically
 - **No Adobe Firefly MCP** — Adobe's AI image generation has no MCP integration
@@ -321,4 +350,4 @@ The design MCP ecosystem is still early compared to developer tool categories (d
 
 ---
 
-*Last updated: March 2026. Star counts and feature details may have changed since publication. See our individual reviews for the most detailed analysis: [Framelink MCP](/reviews/framelink-figma-mcp-server/) · [Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) · [Interior Design & Architecture MCP](/reviews/interior-design-architecture-mcp-servers/) · [Image Generation MCP](/reviews/image-generation-mcp-servers/)*
+*Last updated: April 2026. Star counts and feature details may have changed since publication. See our individual reviews for the most detailed analysis: [Framelink MCP](/reviews/framelink-figma-mcp-server/) · [Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) · [Interior Design & Architecture MCP](/reviews/interior-design-architecture-mcp-servers/) · [Image Generation MCP](/reviews/image-generation-mcp-servers/)*

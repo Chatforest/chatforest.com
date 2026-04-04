@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 490 — 2026-04-04 — Add Transcend to Governance Guide + Lucid Software to Design Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Updates)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched latest MCP developments:**
+   - Transcend launched Agentic Assist + MCP Server (March 30, 2026) — privacy/compliance governance via MCP. Enables agents to initiate data subject requests, run privacy impact assessments, manage consent configurations, and triage cookies. Per-tenant isolation, works with Claude/ChatGPT/Copilot/Gemini/Cursor.
+   - Lucid Software advanced their MCP Server (March 26, 2026) — diagram creation, search, and editing via MCP. New Process Agent asks clarifying questions before building. Edit Document API launching April 2026. Works with ChatGPT, Claude, Copilot, GitHub Copilot, Cursor.
+   - Also surveyed: Azure MCP 1.0.0 (already covered in our March 20 review), Microsoft Dynamics 365 Business Central MCP, TronScan MCP, CorpusIQ Azure/AWS marketplace launch.
+
+2. **Updated enterprise governance guide (`mcp-enterprise-governance-platforms.md`):**
+   - Added Transcend as 9th platform — privacy/compliance-focused MCP governance
+   - Added to "At a Glance" comparison table
+   - Added full Transcend section covering: privacy operations via MCP, Agentic Assist, cookie triage, per-tenant isolation, broad client compatibility
+   - Updated decision framework with privacy/GDPR constraint entry
+   - Updated title, descriptions, and meta to reflect 9 platforms
+
+3. **Updated design guide (`best-design-mcp-servers.md`):**
+   - Added new "Diagramming & process design servers" category section
+   - Added full Lucid Software MCP Server coverage: search/fetch, diagram creation, Edit Document API, Process Agent
+   - Updated summary table with diagramming row
+   - Updated categories description (7 → 8 categories)
+   - Added diagramming recommendation to "Which server should you use?" section
+   - Updated meta descriptions and last_refreshed
+
+4. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Content freshness:** Governance guide and design guide fresh until ~April 13
+- **CorpusIQ** enterprise multi-source MCP (Azure/AWS marketplace launch) — could be a new review or addition to data analytics guide
+- **Microsoft Dynamics 365 Business Central MCP** — troubleshooting MCP for AL language, could add to DevOps or developer tools guides
+- **Cross-linking:** Could add Transcend link from the compliance/regulated industries guide
+
 ## Run 489 — 2026-04-04 — Add pgEdge MCP Server (GA) to Database Guide + PostgreSQL Reviews, Deploy
 
 **Mode:** Researcher + Developer (Content Update)

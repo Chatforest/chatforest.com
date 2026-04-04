@@ -126,6 +126,12 @@
 <td>Self-hosted production Postgres</td>
 </tr>
 <tr>
+<td>pgEdge MCP</td>
+<td>PostgreSQL (any v14+)</td>
+<td>—</td>
+<td>Enterprise Postgres with hybrid search</td>
+</tr>
+<tr>
 <td>MotherDuck DuckDB MCP</td>
 <td>DuckDB</td>
 <td>—</td>
@@ -244,6 +250,33 @@
   }
 }
 </code></pre></div><p><strong>Why it wins:</strong> It&rsquo;s not just a query tool — it&rsquo;s a database advisor. The EXPLAIN analysis and index tuning tools mean your agent can diagnose slow queries, not just run them. The health check alone justifies switching from the official server.</p>
+<h3 id="for-any-postgresql-pgedge-mcp">For Any PostgreSQL: pgEdge MCP</h3>
+<p><strong><a href="https://github.com/pgEdge/pgedge-postgres-mcp">pgEdge MCP Server</a></strong> went GA on April 2, 2026, making it the most deployment-flexible PostgreSQL MCP server available. Unlike Neon (Neon-only) or Supabase (Supabase-only), pgEdge works with <em>any</em> standard Postgres v14+ — community Postgres, Amazon RDS, Azure Database, Google Cloud SQL, or self-hosted.</p>
+<p><strong>What it offers:</strong></p>
+<ul>
+<li>Schema introspection — primary keys, foreign keys, indexes, column types, constraints</li>
+<li>SQL query execution — read-only transactions by default, preventing accidental data modification</li>
+<li>Hybrid search — combines vector similarity with BM25 and MMR for advanced retrieval</li>
+<li>Embedding generation — generate vector embeddings from text using AI models</li>
+<li>Natural language agent CLI — query your database in plain English without writing SQL</li>
+<li>Web UI — React-based interface with AI-powered chat for database interaction</li>
+<li>Custom tools via YAML — define your own MCP tools backed by PL/pgSQL or PL/Python</li>
+<li>Docker support — complete containerized deployment</li>
+<li>TLS, token authentication, and connection pooling for production use</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+    <span style="color:#f92672">&#34;pgedge-postgres&#34;</span>: {
+      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;pgedge-postgres-mcp&#34;</span>,
+      <span style="color:#f92672">&#34;args&#34;</span>: [<span style="color:#e6db74">&#34;--config&#34;</span>, <span style="color:#e6db74">&#34;/path/to/config.yaml&#34;</span>]
+    }
+  }
+}
+</code></pre></div><p>pgEdge uses a YAML configuration file for database connections, authentication, and custom tool definitions. Docker deployment is also available via <code>docker compose up</code>.</p>
+<p><strong>Why it wins:</strong> Three things set pgEdge apart. First, it works with any Postgres — not just one vendor&rsquo;s managed service. If you&rsquo;re on RDS, self-hosted, or any other Postgres provider, pgEdge connects without requiring a specific platform. Second, the hybrid search (BM25 + MMR + vector similarity) is unique among database MCP servers — useful for RAG applications where you want both keyword and semantic matching. Third, custom YAML tool definitions let you expose stored procedures and complex queries as named MCP tools without writing Go or Python.</p>
+<p><strong>The catch:</strong> The GitHub repo had 91 stars at last count — far less community validation than Postgres MCP Pro (2,400 stars). The GA announcement came April 2, 2026, so production track record is minimal. The Go-based server requires building from source or using Docker (no simple <code>npx</code> or <code>pip install</code>). Enterprise features like distributed Postgres and multi-region failover require pgEdge Cloud.</p>
+<p><strong>Best for:</strong> Teams running PostgreSQL on any provider who want hybrid search, natural language querying, and custom tool definitions. Especially useful for organizations that need to connect to multiple Postgres databases across different environments (dev/staging/production).</p>
 <h3 id="for-analytics-motherduck-duckdb-mcp">For Analytics: MotherDuck DuckDB MCP</h3>
 <p><strong><a href="https://github.com/motherduckdb/mcp-server-motherduck">MotherDuck DuckDB MCP</a></strong> is the official DuckDB server, backed by MotherDuck. If your workload is analytical — aggregations, joins across large datasets, Parquet/CSV ingestion — DuckDB is purpose-built for it.</p>
 <p><strong>What it offers:</strong></p>
@@ -357,6 +390,7 @@
 <th>Feature</th>
 <th><a href="/reviews/mongodb-mcp-server/">MongoDB MCP</a></th>
 <th>Postgres MCP Pro</th>
+<th>pgEdge MCP</th>
 <th>Oracle ADB MCP</th>
 <th>MariaDB MCP</th>
 <th>DuckDB (MotherDuck)</th>
@@ -369,6 +403,7 @@
 <td>Actively maintained</td>
 <td>Yes (1-2 week releases)</td>
 <td>Yes</td>
+<td>Yes (GA April 2026)</td>
 <td>Yes (GA March 2026)</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -379,6 +414,7 @@
 <td>Read-only mode</td>
 <td>Yes (opt-in)</td>
 <td>Yes (works)</td>
+<td>Yes (default)</td>
 <td>Yes (policy-based)</td>
 <td>Yes</td>
 <td>Yes (default)</td>
@@ -387,6 +423,7 @@
 </tr>
 <tr>
 <td>Schema inspection</td>
+<td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -403,12 +440,14 @@
 <td>SQL</td>
 <td>SQL</td>
 <td>SQL</td>
+<td>SQL</td>
 <td>Structured CRUD</td>
 </tr>
 <tr>
 <td>Performance analysis</td>
 <td>Performance Advisor, explain</td>
 <td>EXPLAIN, index tuning</td>
+<td>No</td>
 <td>No</td>
 <td>EXPLAIN</td>
 <td>No</td>
@@ -424,11 +463,13 @@
 <td>No</td>
 <td>No</td>
 <td>No</td>
+<td>No</td>
 </tr>
 <tr>
 <td>Cloud management</td>
 <td>Atlas (full)</td>
 <td>No</td>
+<td>pgEdge Cloud</td>
 <td>OCI (built-in)</td>
 <td>No</td>
 <td>MotherDuck</td>
@@ -439,6 +480,7 @@
 <td>Multi-database</td>
 <td>No (MongoDB only)</td>
 <td>No</td>
+<td>Yes (YAML config)</td>
 <td>No</td>
 <td>No</td>
 <td>No</td>
@@ -446,9 +488,10 @@
 <td>No</td>
 </tr>
 <tr>
-<td>Vector search</td>
+<td>Vector/hybrid search</td>
 <td>Yes (with embeddings)</td>
 <td>No</td>
+<td>Yes (BM25+MMR+vector)</td>
 <td>No</td>
 <td>Yes (native)</td>
 <td>No</td>
@@ -459,6 +502,7 @@
 <td>Safety guardrails</td>
 <td>Read-only mode, maxTimeMS</td>
 <td>Yes</td>
+<td>Read-only default, TLS, token auth</td>
 <td>Database policies, audit</td>
 <td>Parameterized queries, timeouts</td>
 <td>Row/char limits</td>
@@ -469,6 +513,7 @@
 <td>Managed/hosted</td>
 <td>No (local)</td>
 <td>No (local)</td>
+<td>Optional (pgEdge Cloud)</td>
 <td>Yes (built-in to ADB)</td>
 <td>No (local)</td>
 <td>No (local)</td>
@@ -479,6 +524,7 @@
 <td>Tool count</td>
 <td>40+</td>
 <td>~10</td>
+<td>5+ custom YAML tools</td>
 <td>Custom (Select AI Agent)</td>
 <td>~8</td>
 <td>~3</td>
@@ -490,6 +536,8 @@
 <h2 id="our-recommendations">Our Recommendations</h2>
 <h3 id="you-have-a-postgresql-database--postgres-mcp-pro">You have a PostgreSQL database → Postgres MCP Pro</h3>
 <p>No contest. It&rsquo;s the most capable database MCP server available — query execution, EXPLAIN analysis, index tuning, health checks. The configurable access modes (restricted vs. unrestricted) give you actual safety controls. If you&rsquo;re doing anything with PostgreSQL, this is the one to install.</p>
+<h3 id="you-have-postgresql-on-any-provider--pgedge-mcp">You have PostgreSQL on any provider → pgEdge MCP</h3>
+<p>If your Postgres is on RDS, Azure, Google Cloud SQL, or self-hosted and you want more than just SQL queries — hybrid search, natural language querying, custom YAML-defined tools — pgEdge is the most feature-rich option that isn&rsquo;t tied to a specific platform. The April 2026 GA release makes it production-ready, though community adoption is still early.</p>
 <h3 id="youre-doing-data-analysis--duckdb-motherduck">You&rsquo;re doing data analysis → DuckDB (MotherDuck)</h3>
 <p>If your agent is analyzing data — running aggregations, processing CSVs or Parquet files, building reports — DuckDB is the right engine. It&rsquo;s an order of magnitude faster than SQLite or Postgres for analytical workloads, and the MCP server has sensible defaults (read-only, output limits) that prevent runaway queries.</p>
 <h3 id="you-work-across-multiple-databases--dbhub">You work across multiple databases → DBHub</h3>
@@ -508,7 +556,8 @@
 <li><strong>MongoDB</strong> → <a href="/reviews/mongodb-mcp-server/">MongoDB MCP</a> (4/5, 40+ tools)</li>
 <li><strong>PostgreSQL (Neon)</strong> → <a href="/reviews/neon-mcp-server/">Neon MCP</a></li>
 <li><strong>Supabase (full backend)</strong> → <a href="/reviews/supabase-mcp-server/">Supabase MCP</a></li>
-<li><strong>PostgreSQL (self-hosted/RDS/other)</strong> → Postgres MCP Pro</li>
+<li><strong>PostgreSQL (self-hosted/RDS/other, needs hybrid search/NLP)</strong> → pgEdge MCP</li>
+<li><strong>PostgreSQL (self-hosted/RDS/other, needs performance tuning)</strong> → Postgres MCP Pro</li>
 <li><strong>Oracle (Autonomous Database)</strong> → Oracle Autonomous AI Database MCP (managed, zero-deploy)</li>
 <li><strong>MariaDB</strong> → MariaDB MCP (official, with vector search)</li>
 <li><strong>SQLite</strong> → jparkerweb/mcp-sqlite</li>
@@ -530,7 +579,7 @@
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>The official database MCP servers served their purpose as reference implementations — they showed what was possible. But they&rsquo;re archived, one has a security vulnerability, and the community has built significantly better alternatives.</p>
-<p>For most developers in 2026, the answer depends on your database. <strong>MongoDB MCP</strong> (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. <strong>Neon MCP</strong> (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. <strong>Supabase MCP</strong> (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. <strong>Postgres MCP Pro</strong> is the pick for self-hosted or other cloud PostgreSQL. <strong>Oracle Autonomous AI Database MCP</strong> is the enterprise play — managed MCP built into the database instance with zero deployment. <strong>MariaDB MCP</strong> is notable for combining SQL and vector search in one official server. <strong>DuckDB</strong> for analytics. <strong>DBHub</strong> for multi-database support. The ecosystem has matured past reference implementations, and enterprise vendors (Oracle, MariaDB) are now shipping first-party MCP as a standard database feature — a sign that MCP is becoming table stakes for database platforms.</p>
+<p>For most developers in 2026, the answer depends on your database. <strong>MongoDB MCP</strong> (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. <strong>Neon MCP</strong> (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. <strong>Supabase MCP</strong> (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. <strong>Postgres MCP Pro</strong> is the pick for PostgreSQL performance tuning (EXPLAIN, index analysis, health checks). <strong>pgEdge MCP</strong> (GA April 2026) is the most deployment-flexible PostgreSQL option — works with any Postgres v14+, adds hybrid search (BM25+MMR+vector), natural language querying, and custom YAML tool definitions. <strong>Oracle Autonomous AI Database MCP</strong> is the enterprise play — managed MCP built into the database instance with zero deployment. <strong>MariaDB MCP</strong> is notable for combining SQL and vector search in one official server. <strong>DuckDB</strong> for analytics. <strong>DBHub</strong> for multi-database support. The ecosystem has matured past reference implementations, and enterprise vendors (Oracle, MariaDB, pgEdge) are now shipping first-party MCP as a standard database feature — a sign that MCP is becoming table stakes for database platforms.</p>
 <p>For the full details on the reviewed servers:</p>
 <ul>
 <li><a href="/reviews/mongodb-mcp-server/">MongoDB MCP Server Review</a> (4/5)</li>
@@ -568,8 +617,8 @@
   
     <div class="article-card">
   <div class="card-meta"><span>Comparison</span> <span>2026-04-04 15:00:00</span></div>
-  <h3><a href="/guides/mcp-enterprise-governance-platforms/">Best MCP Governance Platforms for Enterprise in 2026 — RunLayer vs MintMCP vs SurePath AI vs Kong vs Composio vs Strata</a></h3>
-  <p>RunLayer (VPC deploy, threat scanning, $11M funding) vs MintMCP (SOC 2 Type II, Virtual MCPs) vs SurePath AI (real-time policy, tool classification) vs Kong (REST-to-MCP, ACL) vs Composio (500&#43; integrations) vs Strata (identity gateway, sandbox) vs Bifrost (open source, Go) vs ContextForge (federation, 40&#43; plugins) — the enterprise governance layer for MCP.</p>
+  <h3><a href="/guides/mcp-enterprise-governance-platforms/">Best MCP Governance Platforms for Enterprise in 2026 — RunLayer vs MintMCP vs SurePath AI vs Kong vs Composio vs Strata vs Transcend</a></h3>
+  <p>RunLayer (VPC deploy, threat scanning, $11M funding) vs MintMCP (SOC 2 Type II, Virtual MCPs) vs SurePath AI (real-time policy) vs Kong (REST-to-MCP, ACL) vs Composio (500&#43; integrations) vs Strata (identity gateway) vs Bifrost (open source, Go) vs ContextForge (federation, 40&#43; plugins) vs Transcend (privacy/compliance MCP governance) — the enterprise governance layer for MCP.</p>
 </div>
 
   
