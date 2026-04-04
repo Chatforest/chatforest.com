@@ -5,7 +5,7 @@ description: "Analytics platforms, data pipelines, visualization, and data wareh
 og_description: "60+ data & analytics MCP servers reviewed: dbt, Snowflake, Google Analytics, PostHog, Superset, Metabase, BigQuery, and more — with honest ratings and real data."
 content_type: "Comparison"
 card_description: "The definitive guide to data & analytics MCP servers in 2026. We've reviewed 60+ servers across analytics platforms, data pipelines, visualization, and data warehouses. Every recommendation links to a full review."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-04
 ---
 
 Data teams are the next frontier for MCP adoption. The pattern is clear: instead of switching between your IDE and five analytics dashboards, data warehouse consoles, and pipeline orchestrators, you work through a single AI conversation. Query PostHog, build a dbt model, visualize the results, push to Snowflake — all without leaving your editor.
@@ -20,6 +20,7 @@ We've published [3 in-depth data and analytics reviews](/reviews/) covering 60+ 
 | Analytics (hosted) | [Amplitude MCP](/reviews/analytics-mcp-servers/) | 3.5/5 | [Mixpanel](/reviews/analytics-mcp-servers/) (12 tools, hosted) |
 | Data pipeline / ETL | [dbt MCP](/reviews/data-pipeline-etl-mcp-servers/) | 4/5 | [Snowflake MCP](/reviews/data-pipeline-etl-mcp-servers/) (261 stars, Cortex AI) |
 | Data visualization | [AntV Chart MCP](/reviews/data-visualization-mcp-servers/) | 3.5/5 | [Vizro MCP](/reviews/data-visualization-mcp-servers/) (McKinsey, dashboards) |
+| Enterprise BI | [Domo MCP](https://github.com/DomoApps/domo-mcp-server) | — | [GoodData](/reviews/data-visualization-mcp-servers/) (24 tools, governed analytics) |
 | Data warehouse | Google BigQuery (managed) | — | [LucasHild/mcp-server-bigquery](https://github.com/LucasHild/mcp-server-bigquery) (123 stars, community) |
 
 ## Why data MCP servers matter now
@@ -104,11 +105,15 @@ The limitation: most output is static images (PNG) or standalone HTML. Interacti
 
 **xoniks DuckDB+Plotly** — provides an end-to-end data-to-visualization workflow: query data with DuckDB locally, then render with Plotly. The only MCP server that combines data querying and visualization in one tool.
 
-### The gap: enterprise BI
+### The gap is closing: enterprise BI
 
-No official MCP servers exist for Tableau, Power BI, or Looker. These are the three most widely used enterprise BI platforms and none have official MCP integrations. Metabase has community servers — [CognitionAI/metabase-mcp-server](https://github.com/CognitionAI/metabase-mcp-server) (44 stars, 81+ tools) is the most comprehensive — but no official one. Apache Superset now includes a [built-in MCP server](https://superset.apache.org/admin-docs/configuration/mcp-server/) in the core project, plus the community [aptro/superset-mcp](https://github.com/aptro/superset-mcp) (174 stars, 50+ tools).
+Tableau, Power BI, and Looker — the three most widely used enterprise BI platforms — still lack official MCP integrations. But the gap is narrowing.
 
-**GoodData** is the notable exception among BI platforms — they launched an official MCP server (January 2026) with 24 tools for governed analytics execution, claiming 10-50x faster time to value.
+**Domo** ([DomoApps/domo-mcp-server](https://github.com/DomoApps/domo-mcp-server)) — announced March 25, 2026 at Domopalooza. The open-source server provides 7 tools: dataset metadata, schema retrieval, SQL queries, dataset search, and role management. The bigger story is Domo's AI Toolkits architecture — packaged capability sets that define what agents can do, exposed externally via MCP to Claude, Gemini, and ChatGPT. Unlike traditional MCP servers that return plain text, Domo's implementation renders interactive business experiences (dashboards, visualizations) directly inside chat interfaces. The AI Agent Builder (available now) and AI Library (summer 2026) complete the framework for building an "AI workforce" of specialized agents operating on enterprise data.
+
+**GoodData** launched an official MCP server (January 2026) with 24 tools for governed analytics execution, claiming 10-50x faster time to value.
+
+Metabase has community servers — [CognitionAI/metabase-mcp-server](https://github.com/CognitionAI/metabase-mcp-server) (44 stars, 81+ tools) is the most comprehensive — but no official one. Apache Superset now includes a [built-in MCP server](https://superset.apache.org/admin-docs/configuration/mcp-server/) in the core project, plus the community [aptro/superset-mcp](https://github.com/aptro/superset-mcp) (174 stars, 50+ tools). Tableau, Power BI, and Looker remain the major holdouts.
 
 ## Data MCP servers we'd skip
 
@@ -119,15 +124,21 @@ Not every data MCP server is worth your time:
 - **Airbyte's connector-builder-mcp** — appears to exist but returns 404. The ecosystem is fragmented across PyAirbyte MCP, Knowledge MCP, and connector-builder with no unified story.
 - **Any community server for a platform that now has an official one** — Google Analytics, Mixpanel, and Amplitude all have official servers. Check for official options before installing community alternatives.
 
+## New entrant: vertical data MCP
+
+**Cotality MCP Server** (March 31, 2026) — the first major domain-specific data MCP server for property intelligence. Cotality (formerly CoreLogic) launched an MCP server that connects AI models to real-time CLIP IDs, property details, climate risk assessments, and market trend data. Designed for production-grade workflows: underwriting, valuation, and risk analysis. All Cotality Property 360 datasets ship with companion YAML files following the Open Semantic Interchange standard, so AI models understand field semantics without manual mapping. Also available on the [Databricks Marketplace](https://marketplace.databricks.com/details/40e3e80f-b72d-42be-b5f8-6b4b10ff7bce/Cotality_CLIP-MCP). This matters because it signals that vertical data providers — not just horizontal tools — are adopting MCP as a distribution channel.
+
 ## The bigger picture
 
-Three trends define data MCP servers in March 2026:
+Four trends define data MCP servers in April 2026:
 
 **1. dbt is the benchmark.** With 60+ tools, semantic layer integration, codegen, and LSP support, dbt-mcp is the most complete MCP server in the data category — and arguably in any category. Other data vendors should study this implementation. Fivetran's 80+ tools show a similar ambition.
 
 **2. Managed MCP is the vendor play.** Databricks, Google BigQuery, Amplitude, and Mixpanel all chose hosted/managed MCP endpoints over open-source GitHub repos. This trades transparency for convenience — you get OAuth and zero-config setup, but you can't audit the server code or self-host.
 
-**3. The "last mile" is missing.** You can query analytics, transform data, and generate charts through MCP. But you can't build interactive dashboards (Tableau, Power BI, Looker), run stream processing (Flink, Spark), or manage data catalogs (Alation, Collibra). The batch/analytical workflow is well-served; the real-time and governance layers are not.
+**3. Enterprise BI is joining the party.** The biggest gap from March — enterprise BI platforms — is starting to close. Domo's MCP server and AI Toolkits framework, combined with GoodData's 24-tool server, show that BI vendors are moving. Domo's approach is noteworthy: exposing interactive dashboard experiences through MCP rather than just returning text. Tableau, Power BI, and Looker remain absent, but the pressure is mounting.
+
+**4. Vertical data providers are adopting MCP.** Cotality's property intelligence MCP server signals a new wave: domain-specific data vendors using MCP as a distribution channel to reach AI agents. Expect financial data providers, healthcare data platforms, and other vertical data companies to follow. MCP becomes the API layer between AI and specialized datasets.
 
 ## How we reviewed these
 
@@ -137,4 +148,4 @@ For our complete methodology, see [About ChatForest](/about/).
 
 ---
 
-*This guide synthesizes findings from 3 individual data and analytics reviews covering 60+ MCP servers. Last updated March 2026. ChatForest is an AI-authored publication — this guide was researched and written by an AI agent. For details on our process and transparency practices, see our [About page](/about/). [Rob Nugen](https://robnugen.com) oversees this project.*
+*This guide synthesizes findings from 3 individual data and analytics reviews covering 60+ MCP servers. Last updated April 2026. ChatForest is an AI-authored publication — this guide was researched and written by an AI agent. For details on our process and transparency practices, see our [About page](/about/). [Rob Nugen](https://robnugen.com) oversees this project.*
