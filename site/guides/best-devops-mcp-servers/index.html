@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 14, 2026 · Updated Mar 22, 2026</span>
+        <span>Published Mar 14, 2026 · Updated Apr 5, 2026</span>
       </div>
 
       <h1 class="article-title">Best DevOps &amp; Infrastructure MCP Servers in 2026</h1>
@@ -152,6 +152,16 @@
 <td>Yes (5 users)</td>
 <td>Azure DevOps workflows</td>
 </tr>
+<tr>
+<td>RHEL MCP</td>
+<td>OS troubleshooting</td>
+<td>Red Hat (official)</td>
+<td>stdio</td>
+<td>SSH keys</td>
+<td>Read-only</td>
+<td>Yes (RHEL)</td>
+<td>System diagnostics &amp; root cause analysis</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Also relevant:</strong> Our <a href="/reviews/github-mcp-server/">GitHub MCP server review</a> (4.5/5) covers Actions-based CI/CD, pull request automation, and repository management. GitHub&rsquo;s MCP server is the strongest CI/CD option in the ecosystem.</p>
@@ -218,6 +228,15 @@
 <p><strong>Strengths:</strong> GA status (most mature in this comparison), built into Visual Studio 2026, Remote MCP Server now in public preview, covers work items, PRs, builds, pipelines, tests, and wikis, OAuth authentication, pipeline artifact management, backed by Microsoft.</p>
 <p><strong>Weaknesses:</strong> Azure DevOps-specific (doesn&rsquo;t help GitHub/GitLab users), remote server still in preview, separate from Azure cloud resource management, enterprise-focused (less relevant for small teams or startups).</p>
 <p><strong>Best for:</strong> Teams using Azure DevOps for project management and CI/CD who want AI-assisted workflow management directly in their IDE.</p>
+<h3 id="red-hat-rhel-mcp--os-level-troubleshooting-via-ai-developer-preview">Red Hat RHEL MCP — OS-Level Troubleshooting via AI (Developer Preview)</h3>
+<p><strong><a href="https://www.redhat.com/en/blog/smarter-troubleshooting-new-mcp-server-red-hat-enterprise-linux-now-developer-preview">Red Hat RHEL MCP Server</a></strong> | Red Hat (official), Developer Preview</p>
+<p>A new layer in the DevOps MCP stack: operating system-level intelligence. Red Hat&rsquo;s RHEL MCP server (announced April 2026, now in developer preview) bridges RHEL directly to LLMs, enabling AI-driven root cause analysis and system troubleshooting.</p>
+<p>The server provides read-only access to system state: CPU count, load averages, memory information, per-process CPU/memory usage, and system logs. An LLM connected via MCP can analyze current system state, identify performance bottlenecks, detect anomalies in logs, and recommend corrective actions — all through natural language conversation.</p>
+<p><strong>Security model:</strong> Read-only by design in this developer preview. Uses standard SSH keys for authentication. The MCP server can inspect and recommend, but cannot modify system state.</p>
+<p><strong>Why it matters:</strong> This fills the gap below containers and orchestration. Docker MCP manages containers, Kubernetes MCP manages pods, but neither helps when the underlying host is the problem — a memory leak in a system service, a misconfigured kernel parameter, or a disk filling up. RHEL MCP gives agents visibility into the OS layer. Works with Claude Desktop, goose, and other MCP-compatible AI tools.</p>
+<p><strong>Strengths:</strong> Official Red Hat backing, read-only safety model, fills the OS-level gap no other DevOps MCP server covers, SSH-based auth.</p>
+<p><strong>Weaknesses:</strong> Developer preview only (not production-ready), RHEL-specific (no Ubuntu/Debian/other distros), read-only means it can&rsquo;t remediate — only diagnose and recommend.</p>
+<p><strong>Best for:</strong> RHEL shops that want AI-assisted system troubleshooting and performance analysis. Pair with Kubernetes MCP for full-stack visibility from OS to cluster.</p>
 <h2 id="feature-comparison">Feature Comparison</h2>
 <table>
 <thead>
@@ -350,6 +369,7 @@
 <p><strong>&ldquo;I manage Kubernetes clusters&rdquo;</strong> → <strong>Kubernetes MCP</strong> (Red Hat&rsquo;s <code>containers/kubernetes-mcp-server</code>). Start in read-only mode for safety. Add <code>k8s-mcp-server</code> if you need Helm and ArgoCD.</p>
 <p><strong>&ldquo;I&rsquo;m all-in on AWS&rdquo;</strong> → <strong>AWS MCP</strong> suite. Start with the Knowledge server (documentation) and Cloud Control API (resource management). Add specialized servers as needed.</p>
 <p><strong>&ldquo;I use Azure DevOps for project management&rdquo;</strong> → <strong>Azure DevOps MCP</strong>. GA, built into VS 2026, covers the full DevOps workflow. Add Azure MCP Server for cloud resource management.</p>
+<p><strong>&ldquo;I need OS-level troubleshooting on RHEL&rdquo;</strong> → <strong>RHEL MCP</strong> (Red Hat, developer preview). Read-only system diagnostics — CPU, memory, logs, process analysis. Pair with Kubernetes MCP for full-stack visibility.</p>
 <p><strong>&ldquo;I want to discover and manage MCP servers themselves&rdquo;</strong> → <strong>Docker MCP Toolkit</strong>. The catalog and Dynamic MCP features are unique — no other tool lets agents discover and install MCP servers on the fly.</p>
 <p><strong>&ldquo;I need CI/CD automation&rdquo;</strong> → <strong><a href="/reviews/github-mcp-server/">GitHub MCP Server</a></strong> (4.5/5). It&rsquo;s the strongest CI/CD option in the ecosystem, covering Actions workflows, build logs, and deployment management.</p>
 <h3 id="the-stack-wed-recommend">The Stack We&rsquo;d Recommend</h3>
@@ -423,7 +443,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-22T00:00:00+09:00","datePublished":"2026-03-14T08:32:19+09:00","description":"Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — which DevOps MCP servers should your AI agent use?","headline":"Best DevOps \u0026 Infrastructure MCP Servers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-devops-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-devops-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-05T00:00:00+09:00","datePublished":"2026-03-14T08:32:19+09:00","description":"Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — which DevOps MCP servers should your AI agent use?","headline":"Best DevOps \u0026 Infrastructure MCP Servers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-devops-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-devops-mcp-servers/"}
 </script>
 
 

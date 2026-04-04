@@ -4,7 +4,7 @@ date: 2026-03-14T08:39:58+09:00
 description: "How to evaluate and secure MCP servers. Real vulnerabilities, authentication best practices, and a security checklist based on our review of 19 MCP servers."
 content_type: "Guide"
 card_description: "How to evaluate and secure MCP servers. Real vulnerabilities, a security checklist, and lessons from reviewing 19 servers."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-05
 ---
 
 MCP servers connect your AI assistant to external tools and data. That connection is powerful — and risky. Every MCP server you install becomes a bridge between an AI model and your systems: your databases, your files, your cloud infrastructure.
@@ -210,6 +210,28 @@ Be cautious of MCP servers that:
 - Require full admin/root access to function
 - Store credentials in plaintext with no alternative
 - Are the only maintainer's side project with no community review
+
+## The Shadow IT Problem
+
+[Qualys warned in March 2026](https://blog.qualys.com/product-tech/2026/03/19/mcp-servers-shadow-it-ai-qualys-totalai-2026) that MCP servers are becoming a new form of shadow IT in enterprises. Servers bind to localhost on random ports, started as experiments, and quietly became production dependencies — without formal security review or ownership.
+
+The risks go beyond the servers themselves:
+
+- **Reconnaissance exposure.** Even a read-only MCP endpoint leaks internal system names, tool schemas, resource paths, and namespace structures. An attacker who discovers an MCP server gets a map of what it connects to.
+- **Execution surface.** If an agent can be prompt-injected, every tool the server exposes becomes an attack vector — opening tickets, triggering deployments, running queries, changing configurations.
+- **Static credentials at scale.** Qualys cites research showing 53% of servers rely on static secrets, creating systemic risk across downstream systems.
+- **No inventory.** Most organizations don't know how many MCP servers are running, who started them, or what they connect to.
+
+The [MCP Dev Summit 2026](/guides/mcp-dev-summit-2026-guide/) dedicated its largest track (23 sessions) to security and operations, reflecting how central this concern has become. Key sessions covered mix-up attacks, host-layer security, and real-world MCP server exploitation.
+
+### What Organizations Should Do
+
+Qualys recommends a four-step operational playbook:
+
+1. **Clarify ownership.** Distinguish production MCP deployments from experiments. Assign an owner to each.
+2. **Map exposure.** Understand network accessibility and segmentation gaps — which servers are reachable from where?
+3. **Enforce authentication.** Separate discovery privileges from invocation privileges. Don't let unauthenticated clients call tools.
+4. **Implement observability.** Log tool invocations, monitor for anomalous patterns, and alert on unexpected server launches.
 
 ## What's Next for MCP Security
 

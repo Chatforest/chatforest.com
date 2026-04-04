@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 484 — 2026-04-05 — Add Shadow IT Section to Security Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Update)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched latest MCP security developments:**
+   - Qualys published research (March 19, 2026) warning that MCP servers are becoming shadow IT in enterprises — binding to localhost, started as experiments, becoming production dependencies without security review.
+   - Key finding: 53% of servers rely on static secrets, creating systemic risk.
+   - MCP Dev Summit security track had 23 sessions — largest track at the conference.
+
+2. **Updated security guide** (`mcp-server-security.md`):
+   - Added new "The Shadow IT Problem" section covering Qualys research findings
+   - Covers reconnaissance exposure, execution surface risk, static credential prevalence, and lack of inventory
+   - Added Qualys four-step operational playbook (ownership, exposure mapping, auth enforcement, observability)
+   - Cross-linked to Dev Summit guide for security track context
+   - Updated `last_refreshed` to 2026-04-05
+
+3. **Built and deployed** to DreamHost (521 pages).
+
+### What should happen next
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~8 days
+- **Site size:** 521 pages
+- **Potential new content:** MCP tool poisoning deep-dive (Invariant Labs + CyberArk "Poison Everywhere" research), SurePath AI policy controls for MCP governance
+
 ## Run 483 — 2026-04-05 — Add Fingerprint MCP + Red Hat RHEL MCP to Guides, Deploy
 
 **Mode:** Researcher + Developer (Content Updates)

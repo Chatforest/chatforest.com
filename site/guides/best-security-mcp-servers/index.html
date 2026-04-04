@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 22, 2026 · Updated Apr 4, 2026</span>
+        <span>Published Mar 22, 2026 · Updated Apr 5, 2026</span>
       </div>
 
       <h1 class="article-title">Best Security MCP Servers in 2026</h1>
@@ -231,11 +231,16 @@
 <li><strong>Archived community servers</strong> — several early community security servers (sammcj/mcp-snyk, sapientpants/sonarqube-mcp-server) have been superseded by official vendor servers. Always check if an official option exists.</li>
 <li><strong>Servers with no maintainer response</strong> — if open issues and PRs sit for months, the server won&rsquo;t get security patches. Check GitHub activity before trusting a security tool.</li>
 </ul>
+<h2 id="notable-new-arrival-fingerprint-mcp-fraud-prevention">Notable New Arrival: Fingerprint MCP (Fraud Prevention)</h2>
+<p><strong><a href="https://github.com/fingerprintjs/fingerprint-mcp-server">Fingerprint MCP Server</a></strong> — the first open-source MCP server built specifically for fraud prevention. Launched March 2026, it connects AI agents to Fingerprint&rsquo;s device intelligence platform, turning fraud analysis into real-time, AI-powered insights.</p>
+<p>Fraud analysts can query device intelligence events, identify visitor patterns, and investigate anomalies using natural language — no code required. Beyond read-only data access, the server connects to Fingerprint&rsquo;s Management API for configuring fraud prevention workflows, enabling developers to build AI-native fraud detection pipelines directly on top of device fingerprinting data.</p>
+<p>Available as both open-source and managed service (invitation-only for enterprise). Supports any MCP-compatible AI assistant (Claude, Cursor, VS Code, ChatGPT). This matters because it signals MCP expanding beyond traditional security tooling (scanning, SIEM, pentesting) into specialized fraud and risk operations — a vertical where real-time AI decision-making adds clear value.</p>
 <h2 id="the-bigger-picture">The bigger picture</h2>
-<p>Three trends define security MCP servers in March 2026:</p>
+<p>Three trends define security MCP servers in early 2026:</p>
 <p><strong>1. Vendor investment is real.</strong> Snyk, CrowdStrike, Google, HashiCorp, PortSwigger, Vanta, Bitwarden, SonarQube — these aren&rsquo;t community hobby projects. Major security vendors are shipping official MCP servers because their customers are using AI agents.</p>
 <p><strong>2. The meta-security problem is unsolved.</strong> MCP servers themselves are an attack surface. Snyk Agent Scan found that 66% of scanned servers had security findings. Datadog published <a href="https://www.datadoghq.com/blog/mcp-detection-rules/">SIEM detection rules for MCP-specific attacks</a>. The tools securing MCP are mostly scanners that run outside the protocol — the AI agent can&rsquo;t self-assess its own tool supply chain in most cases.</p>
 <p><strong>3. Privacy is the gap.</strong> Code scanning, threat intel, and DFIR have strong official servers. Privacy and data protection is early-stage — single-digit stars on most open-source projects, and enterprise tools that aren&rsquo;t accessible to smaller teams. As regulators start scrutinizing AI agent data flows, this category will need to catch up fast.</p>
+<p><strong>4. Vertical expansion is happening.</strong> Fingerprint&rsquo;s fraud prevention MCP server (see above) is an early signal: security MCP servers are moving beyond generic categories (scanning, SIEM, compliance) into specialized verticals. Expect to see purpose-built MCP servers for anti-fraud, identity verification, payment security, and insurance risk assessment as the ecosystem matures.</p>
 <h2 id="how-we-reviewed-these">How we reviewed these</h2>
 <p>We research each server&rsquo;s GitHub repository, documentation, issue tracker, and community discussions. We analyze tool counts, architecture, security model, maintenance cadence, and real user feedback. We do not install or run these servers — our assessments are based on thorough research, not hands-on testing. Every recommendation links to a full review where we show our work.</p>
 <p>For our complete methodology, see <a href="/about/">About ChatForest</a>.</p>
@@ -291,7 +296,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-04T00:00:00+09:00","datePublished":"2026-03-22T10:00:00+09:00","description":"Code scanning, secret management, threat intelligence, network security, compliance, incident response, and supply chain protection — we've reviewed 100+ security MCP servers across 7 categories.","headline":"Best Security MCP Servers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-security-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-security-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-05T00:00:00+09:00","datePublished":"2026-03-22T10:00:00+09:00","description":"Code scanning, secret management, threat intelligence, network security, compliance, incident response, and supply chain protection — we've reviewed 100+ security MCP servers across 7 categories.","headline":"Best Security MCP Servers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-security-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-security-mcp-servers/"}
 </script>
 
 

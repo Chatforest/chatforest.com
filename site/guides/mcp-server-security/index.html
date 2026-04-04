@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 14, 2026 · Updated Mar 22, 2026</span>
+        <span>Published Mar 14, 2026 · Updated Apr 5, 2026</span>
       </div>
 
       <h1 class="article-title">MCP Server Security: A Practical Guide for 2026</h1>
@@ -237,6 +237,24 @@ http://10.0.0.1/                           (internal network)
 <li>Store credentials in plaintext with no alternative</li>
 <li>Are the only maintainer&rsquo;s side project with no community review</li>
 </ul>
+<h2 id="the-shadow-it-problem">The Shadow IT Problem</h2>
+<p><a href="https://blog.qualys.com/product-tech/2026/03/19/mcp-servers-shadow-it-ai-qualys-totalai-2026">Qualys warned in March 2026</a> that MCP servers are becoming a new form of shadow IT in enterprises. Servers bind to localhost on random ports, started as experiments, and quietly became production dependencies — without formal security review or ownership.</p>
+<p>The risks go beyond the servers themselves:</p>
+<ul>
+<li><strong>Reconnaissance exposure.</strong> Even a read-only MCP endpoint leaks internal system names, tool schemas, resource paths, and namespace structures. An attacker who discovers an MCP server gets a map of what it connects to.</li>
+<li><strong>Execution surface.</strong> If an agent can be prompt-injected, every tool the server exposes becomes an attack vector — opening tickets, triggering deployments, running queries, changing configurations.</li>
+<li><strong>Static credentials at scale.</strong> Qualys cites research showing 53% of servers rely on static secrets, creating systemic risk across downstream systems.</li>
+<li><strong>No inventory.</strong> Most organizations don&rsquo;t know how many MCP servers are running, who started them, or what they connect to.</li>
+</ul>
+<p>The <a href="/guides/mcp-dev-summit-2026-guide/">MCP Dev Summit 2026</a> dedicated its largest track (23 sessions) to security and operations, reflecting how central this concern has become. Key sessions covered mix-up attacks, host-layer security, and real-world MCP server exploitation.</p>
+<h3 id="what-organizations-should-do">What Organizations Should Do</h3>
+<p>Qualys recommends a four-step operational playbook:</p>
+<ol>
+<li><strong>Clarify ownership.</strong> Distinguish production MCP deployments from experiments. Assign an owner to each.</li>
+<li><strong>Map exposure.</strong> Understand network accessibility and segmentation gaps — which servers are reachable from where?</li>
+<li><strong>Enforce authentication.</strong> Separate discovery privileges from invocation privileges. Don&rsquo;t let unauthenticated clients call tools.</li>
+<li><strong>Implement observability.</strong> Log tool invocations, monitor for anomalous patterns, and alert on unexpected server launches.</li>
+</ol>
 <h2 id="whats-next-for-mcp-security">What&rsquo;s Next for MCP Security</h2>
 <p>The protocol is maturing rapidly. The November 2025 spec revision mandated PKCE for all clients and introduced Client ID Metadata Documents for standardized registration. OWASP&rsquo;s MCP Top 10 gives the ecosystem a shared vocabulary for risks.</p>
 <p>But gaps remain. There&rsquo;s no standard for:</p>
@@ -299,7 +317,7 @@ http://10.0.0.1/                           (internal network)
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-22T00:00:00+09:00","datePublished":"2026-03-14T08:39:58+09:00","description":"How to evaluate and secure MCP servers. Real vulnerabilities, authentication best practices, and a security checklist based on our review of 19 MCP servers.","headline":"MCP Server Security: A Practical Guide for 2026","mainEntityOfPage":"https://chatforest.com/guides/mcp-server-security/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-server-security/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-05T00:00:00+09:00","datePublished":"2026-03-14T08:39:58+09:00","description":"How to evaluate and secure MCP servers. Real vulnerabilities, authentication best practices, and a security checklist based on our review of 19 MCP servers.","headline":"MCP Server Security: A Practical Guide for 2026","mainEntityOfPage":"https://chatforest.com/guides/mcp-server-security/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-server-security/"}
 </script>
 
 
