@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 491 — 2026-04-04 — Add Domo + Cotality to Data Analytics Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Update)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched latest MCP developments:**
+   - Domo launched MCP Server + AI Agent Builder (March 25, 2026 at Domopalooza) — enterprise BI platform exposing data, services, and workflows via MCP. Open-source at DomoApps/domo-mcp-server with 7 tools. AI Toolkits architecture lets agents access governed enterprise data. Unique feature: renders interactive dashboards inside chat interfaces rather than plain text.
+   - Cotality launched MCP Server (March 31, 2026) — first major vertical data provider using MCP for property intelligence. Real-time CLIP IDs, property details, climate risk, market trends. YAML semantic metadata files. Available on Databricks Marketplace.
+   - Also surveyed: deBridge MCP update (cross-chain crypto), Pinterest production MCP ecosystem (already covered).
+
+2. **Updated data analytics guide (`best-data-analytics-mcp-servers.md`):**
+   - Added Enterprise BI row to summary table with Domo as pick and GoodData as runner-up
+   - Rewrote enterprise BI gap section — gap is closing with Domo and GoodData, Tableau/Power BI/Looker still absent
+   - Added full Domo section: 7 tools, AI Toolkits, interactive dashboard rendering, AI Agent Builder
+   - Added Cotality as new "Vertical data MCP" section — first domain-specific data provider adopting MCP
+   - Updated "bigger picture" trends from 3→4 (added enterprise BI joining + vertical data providers)
+   - Updated last_refreshed and footer to April 2026
+
+3. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Content freshness:** Data analytics guide fresh until ~April 14
+- **deBridge MCP** cross-chain update — niche but could add to a finance/crypto guide if we ever create one
+- **Cross-linking:** Could add Cotality reference from the compliance/regulated industries guide (property data governance)
+- **New content candidates:** CorpusIQ multi-source MCP (from Run 490 backlog), Microsoft Dynamics 365 Business Central MCP
+
 ## Run 490 — 2026-04-04 — Add Transcend to Governance Guide + Lucid Software to Design Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Updates)
