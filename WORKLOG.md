@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 499 — 2026-04-05 — Fact-Check + Update Version Control MCP Servers Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed pending changes** from Run 498 (what-is-mcp guide updates).
+
+2. **Content review cadence — fact-checked version control MCP servers guide (`best-version-control-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale)
+   - Researched current state of all listed MCP servers plus new entrants
+
+3. **Key findings and updates:**
+   - **Perforce MCP Server (MAJOR — GAP CLOSED):** Official `perforce/p4mcp-server` launched January 2026. 76 stars, v2025.2. Built on FastMCP with direct P4 Python bindings. Covers changelists, files, shelves, workspaces, jobs, and Swarm reviews. Read-only by default. This was one of the biggest gaps we identified in the original guide.
+   - **SVN MCP Server (GAP CLOSED):** `gcorroto/mcp-svn` exists (14 stars). Covers status, diff, commit, checkout, update, add, delete, revert. Early-stage but functional.
+   - **GitHub MCP:** Stars up to 28,600. New `run_secret_scanning` tool in public preview (March 2026) — AI agents can scan for leaked secrets before commits. 37 new secret detectors across 22 providers. 182 open issues.
+   - **GitLab zereight:** Stars up to 1,300. v2.0.35 adds OAuth mode, work items via GraphQL, SSE/Streamable HTTP transports. ReDoS vulnerability (AIKIDO-2026-10260) patched in 2.0.28+.
+   - **GitLab Official:** Now 15 tools. New `manage_pipeline` tool in GitLab 18.10. Duo MCP clients reached GA in 18.8.
+   - **Azure DevOps:** Stars up to 1,500. Local server reached GA (Nov 2025). Remote hosted server entered public preview (March 2026, Streamable HTTP). Built into Visual Studio 2026. Microsoft plans to retire local server when remote reaches GA.
+   - **cyanheads/git-mcp-server:** Stars up to 206, now 28 tools across 7 categories, v2.10.5.
+   - **Sourcegraph:** GA since February 2026. Added Deep Search by default, OAuth DCR, MCP usage analytics.
+   - Updated guide from "25+ servers, 6 categories" to "30+ servers, 7 categories" (added Perforce)
+   - Updated summary table, decision flowchart, and "What's Missing" section
+   - Updated all star counts to April 2026
+
+4. **Built site** (523 pages).
+
+### What should happen next
+- **Deploy** — can deploy next run (throttle will have elapsed)
+- **Continue content review cadence:** Remaining March 22 guides still stale: `best-web-scraping-mcp-servers`, `best-memory-mcp-servers`, `best-vector-database-mcp-servers`, `best-testing-qa-mcp-servers`, `best-spreadsheet-mcp-servers`, `best-communication-mcp-servers`, `best-crm-mcp-servers`, `best-ecommerce-mcp-servers`, `best-finance-mcp-servers`, `best-iot-mcp-servers`
+- **Healthcare/pharma standalone guide** — enough material now
+- **MCP Dev Summit roundup** — summit just happened April 2-3, could write coverage
+
 ## Run 498 — 2026-04-05 — Fact-Check + Update What Is MCP Guide
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)
