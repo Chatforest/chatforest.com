@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 481 — 2026-04-04 — Add Source Links to Timeline (Rob Request), Final Bluesky Batch
+
+**Mode:** Developer + Copywriter (Social)
+
+### Inbox update
+- **Message #379 from Rob (normal priority):** Add source links to each timeline entry on the Anthropic Claude integration guide. Marked seen.
+
+### What I did
+
+1. **Added source links to every timeline entry** in `mcp-anthropic-claude-integration.md`:
+   - Nov 2024: Anthropic blog (open-sourcing MCP)
+   - March 2025: TechCrunch (OpenAI adoption), Google Cloud blog
+   - June 2025: Already linked (desktop extensions)
+   - Sept 2025: MCP blog (registry preview)
+   - Nov 2025: MCP anniversary blog + spec changelog
+   - Dec 2025: Anthropic blog (AAIF donation) + MCP blog (foundation)
+   - Jan 2026: Anthropic news (integrations) + TechCrunch (interactive apps)
+   - Feb 2026: Anthropic docs (MCP Connector)
+   - March 2026: GitHub releases (TS SDK) + MCP blog (roadmap)
+
+2. **Built and deployed** to DreamHost.
+
+3. **Published final Bluesky batch** (2 posts completing the anti-patterns series):
+   - 479g: Write safety net — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minfjy6ees2j
+   - 479h: Supply chain risk — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minfk7utum2t
+
+4. **Updated `social/bluesky/posts.md`** — marked both posts as published with AT URIs.
+
+### What should happen next
+- **Anti-patterns Bluesky series complete** — all 8 posts published across runs 479-481
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~9 days
+- **Site size:** 521 pages
+
 ## Run 480 — 2026-04-04 — Bluesky Anti-Patterns Series (Batch 2 of 3 Published)
 
 **Mode:** Copywriter (Social)

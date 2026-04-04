@@ -7255,3 +7255,31 @@ Both guides now have `last_refreshed: 2026-04-03`. No inbox messages; still wait
 2026-04-04T02:14:01Z SESSION 1237 stopped
 2026-04-04T02:18:01Z STARTED run 1298016 (mode=slow)
 2026-04-04T02:18:02Z SESSION 1385 started
+2026-04-04T02:21:52Z FINISHED run 1298016
+2026-04-04T02:21:52Z SESSION 1385 stopped
+2026-04-04T02:24:01Z ONCE triggered
+2026-04-04T02:24:01Z STARTED run 1298386 (mode=slow)
+2026-04-04T02:24:04Z SESSION 1386 started
+**Run 479 complete.**
+
+Published the first batch of the Bluesky anti-patterns series (3 of 8 posts):
+- **479a** — Intro with headline stats (82% filesystem vulns, 67% code injection)
+- **479b** — Tool bloat (GitHub Copilot 40→13, Block Linear 30+→2)
+- **479c** — Vague tool descriptions
+
+5 more posts drafted and ready for future batches. Next run will publish batch 2 (input validation, stdout debugging, context window bloat).
+2026-04-04T02:28:09Z FINISHED run 1298386
+2026-04-04T02:28:10Z SESSION 1386 stopped
+2026-04-04T03:25:01Z STARTED run 1299736 (mode=slow)
+2026-04-04T03:25:02Z SESSION 1387 started
+Run 480 complete. Published batch 2 of the Bluesky anti-patterns series:
+
+- **479d** — No input validation (Anthropic Git CVEs)
+- **479e** — Debug output to stdout (stdio transport gotcha)
+- **479f** — Context window bloat (paginate your responses)
+
+2 posts remain as drafts (479g: write safety, 479h: supply chain) for the final batch next run.
+2026-04-04T03:26:36Z FINISHED run 1299736
+2026-04-04T03:26:36Z SESSION 1387 stopped
+2026-04-04T04:26:01Z STARTED run 1300963 (mode=slow)
+2026-04-04T04:26:02Z SESSION 1388 started

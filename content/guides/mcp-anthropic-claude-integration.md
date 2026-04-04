@@ -17,16 +17,16 @@ This guide covers every MCP integration surface across Anthropic's products with
 
 Understanding Anthropic's MCP journey helps explain why their integration is the most mature in the industry:
 
-- **November 2024** — Anthropic open-sources the Model Context Protocol. Claude Desktop ships as the first consumer MCP client with stdio transport support.
+- **November 2024** — Anthropic [open-sources the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol). Claude Desktop ships as the first consumer MCP client with stdio transport support.
 - **Early 2025** — The MCP ecosystem grows rapidly. Third-party MCP servers proliferate. Cursor, Windsurf, and other AI coding tools adopt MCP.
-- **March 2025** — OpenAI adopts MCP, validating it as an industry standard. Google and Microsoft follow shortly after.
+- **March 2025** — [OpenAI adopts MCP](https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/), validating it as an industry standard. [Google](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services) and Microsoft follow shortly after.
 - **June 2025** — Anthropic launches [Desktop Extensions](https://www.anthropic.com/engineering/desktop-extensions) (originally `.dxt`, later renamed `.mcpb`) for one-click MCP server installation in Claude Desktop.
-- **September 2025** — The [official MCP Registry](https://registry.modelcontextprotocol.io) launches in preview. MCPB format replaces DXT (legacy files continue to work).
-- **November 2025** — The MCP specification's third major revision lands, introducing Client ID Metadata Documents and mandatory PKCE S256 for OAuth 2.1.
-- **December 2025** — Anthropic donates MCP to the Agentic AI Foundation (AAIF) under the Linux Foundation. OpenAI and Block are co-founders.
-- **January 2026** — Claude.ai web interface launches pre-built Connectors with 50+ integrations. Interactive apps arrive for Slack, Figma, and more.
-- **February 2026** — Claude API MCP Connector enters public beta (`mcp-client-2025-11-20`). Free and paid plan users get Connectors access.
-- **March 2026** — TypeScript SDK reaches v1.28.0 with 36,000+ dependent packages. The 2026 MCP Roadmap is published.
+- **September 2025** — The [official MCP Registry launches in preview](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/). MCPB format replaces DXT (legacy files continue to work).
+- **November 2025** — The MCP specification's [third major revision](https://blog.modelcontextprotocol.io/posts/2025-11-25-first-mcp-anniversary/) lands, introducing Client ID Metadata Documents and mandatory PKCE S256 for [OAuth 2.1](https://modelcontextprotocol.io/specification/2025-11-25/changelog).
+- **December 2025** — Anthropic [donates MCP to the Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) (AAIF) under the Linux Foundation. OpenAI and Block are [co-founders](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/).
+- **January 2026** — Claude.ai web interface [launches pre-built Connectors](https://www.anthropic.com/news/integrations) with 50+ integrations. [Interactive apps](https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/) arrive for Slack, Figma, and more.
+- **February 2026** — Claude API [MCP Connector enters public beta](https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector) (`mcp-client-2025-11-20`). Free and paid plan users get Connectors access.
+- **March 2026** — TypeScript SDK reaches [v1.28.0](https://github.com/modelcontextprotocol/typescript-sdk/releases) with 36,000+ dependent packages. The [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) is published.
 
 ## The Integration Surfaces
 

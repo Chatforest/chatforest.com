@@ -3579,7 +3579,7 @@ https://chatforest.com/guides/mcp-anti-patterns/
 **Link:** https://chatforest.com/guides/mcp-anti-patterns/
 **Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
 **Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
-**Status:** draft
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minfjy6ees2j)
 
 ### Post 479h — Anti-Pattern: Supply Chain Risk
 **Text:** MCP anti-pattern #11: Ignoring the supply chain.
@@ -3592,4 +3592,4 @@ https://chatforest.com/guides/mcp-anti-patterns/
 **Link:** https://chatforest.com/guides/mcp-anti-patterns/
 **Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
 **Description:** The most common MCP server mistakes — from wrapping every API endpoint as a tool to ignoring the supply chain.
-**Status:** draft
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3minfk7utum2t)
