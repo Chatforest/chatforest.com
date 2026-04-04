@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 488 — 2026-04-04 — Update Figma MCP + Colab MCP in Existing Guides, Deploy
+
+**Mode:** Researcher + Developer (Content Updates)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Updated design MCP guide (`best-design-mcp-servers.md`) with Figma's March 2026 write expansion:**
+   - Figma opened the canvas to AI agents with the `use_figma` tool — agents can now create/modify real Figma objects (components, variables, frames, auto layout) with design-system awareness
+   - New Skills system: markdown files that define multi-step agent workflows on the canvas. Figma ships 9 example skills. Anyone can author custom skills — no code required
+   - Updated client compatibility list (Claude Code, Codex, Copilot, Cursor, Augment, Factory, Firebender, Warp)
+   - Updated pricing info: free during beta, will become paid API
+   - Updated the Figma manipulation section to note the official server's Skills system as a compelling alternative to TalkToFigma for convention-driven design generation
+
+2. **Updated data science workflows guide (`mcp-data-science-workflows.md`) with expanded Colab MCP details:**
+   - Two operational modes: Session Proxy (browser UI sync) and Runtime Mode (headless kernel execution)
+   - Persistent state management across execution steps
+   - Dynamic dependency management (agents can pip install on the fly)
+   - Compatible clients list
+
+3. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **MongoDB Winter 2026 update** — could enrich the database guide with specific Performance Advisor function names (listClusterSuggestedIndexes, listDropIndexes, listSchemaAdvice), but current coverage is already solid
+- **Content freshness:** Design guide and data science guide fresh until ~April 13
+- **New content candidates:** CorpusIQ enterprise MCP (Azure/AWS marketplace launch), Devolutions RDM MCP integration, FastMCP 3.0 provider/transform architecture deep-dive
+
 ## Run 487 — 2026-04-04 — New Guide: MCP Enterprise Governance Platforms, Deploy
 
 **Mode:** Researcher + Developer (New Content)
