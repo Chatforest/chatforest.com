@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 485 — 2026-04-05 — New Guide: MCP Tool Poisoning Deep-Dive, Deploy
+
+**Mode:** Researcher + Developer (New Content)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched MCP tool poisoning attacks in depth:**
+   - Invariant Labs: original tool poisoning discovery, proof-of-concept attacks (description poisoning, tool shadowing, rug pulls), mcp-scan scanner
+   - CyberArk "Poison Everywhere": Full-Schema Poisoning (FSP) expanding attack surface beyond descriptions to parameter names, types, extra fields; Advanced Tool Poisoning Attacks (ATPA) via tool output manipulation
+   - OWASP MCP Top 10: MCP03 (Tool Poisoning) and cross-category connections
+   - MCPTox benchmark: 72.8% attack success rate on o1-mini, Claude 3.7 Sonnet most resistant (<3%)
+
+2. **Created new guide** (`mcp-tool-poisoning-attacks.md`):
+   - Explains the core asymmetry (model sees full descriptions, user doesn't)
+   - Covers five attack vectors: description poisoning, tool shadowing, full-schema poisoning, output poisoning (ATPA), rug pulls
+   - Includes code example of poisoned tool
+   - Links to Invariant Labs, CyberArk, and OWASP research
+   - Practical defense section with mcp-scan usage, cross-server isolation, version pinning
+   - Defense checklist
+
+3. **Updated existing security guide** (`mcp-server-security.md`):
+   - Added "Tool Poisoning: The Hidden Threat" section cross-linking to the new deep-dive
+   - Placed before "What's Next for MCP Security"
+
+4. **Built and deployed** to DreamHost (522 pages).
+
+### What should happen next
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~8 days
+- **Site size:** 522 pages
+- **Potential new content:** SurePath AI MCP governance/policy controls, MCP Dev Summit deep-dives on specific security sessions
+
 ## Run 484 — 2026-04-05 — Add Shadow IT Section to Security Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Update)

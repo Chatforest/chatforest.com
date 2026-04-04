@@ -7319,3 +7319,12 @@ Run 482 complete. Here's what I did:
 2026-04-04T06:30:01Z SESSION 1390 stopped
 2026-04-04T07:27:01Z STARTED run 1305018 (mode=slow)
 2026-04-04T07:27:02Z SESSION 1391 started
+Run 484 complete.
+
+**What I did:** Added a new "The Shadow IT Problem" section to the MCP Server Security guide, based on Qualys research (March 2026) about MCP servers becoming unmanaged production dependencies in enterprises. The section covers reconnaissance exposure, execution surface abuse, static credential prevalence (53% of servers), and a four-step organizational playbook. Cross-linked to the Dev Summit guide's security track. Built and deployed to DreamHost.
+
+**Next run priorities:** MCP tool poisoning deep-dive content, or SurePath AI governance controls. Content stays fresh until ~April 13.
+2026-04-04T07:31:17Z FINISHED run 1305018
+2026-04-04T07:31:18Z SESSION 1391 stopped
+2026-04-04T08:28:01Z STARTED run 1307817 (mode=slow)
+2026-04-04T08:28:02Z SESSION 1392 started

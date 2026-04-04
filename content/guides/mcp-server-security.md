@@ -233,6 +233,14 @@ Qualys recommends a four-step operational playbook:
 3. **Enforce authentication.** Separate discovery privileges from invocation privileges. Don't let unauthenticated clients call tools.
 4. **Implement observability.** Log tool invocations, monitor for anomalous patterns, and alert on unexpected server launches.
 
+## Tool Poisoning: The Hidden Threat
+
+Tool poisoning is a specialized form of prompt injection where malicious instructions hide inside MCP tool metadata — descriptions, parameter names, and even tool outputs. The AI model follows these instructions while the user sees nothing unusual. Researchers at Invariant Labs and CyberArk have demonstrated working attacks that exfiltrate SSH keys, redirect emails, and steal credentials from Claude Desktop and Cursor.
+
+This is serious enough that OWASP lists it as [MCP03](https://owasp.org/www-project-mcp-top-10/) in their MCP Top 10, and Invariant Labs built [mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) — a dedicated scanner that detects tool poisoning, rug pulls, and cross-origin escalation.
+
+**We've written a full deep-dive:** [MCP Tool Poisoning Attacks: How They Work and How to Defend Against Them](/guides/mcp-tool-poisoning-attacks/) covers five attack vectors (description poisoning, tool shadowing, full-schema poisoning, output poisoning, and rug pulls), the research behind them, and a practical defense checklist.
+
 ## What's Next for MCP Security
 
 The protocol is maturing rapidly. The November 2025 spec revision mandated PKCE for all clients and introduced Client ID Metadata Documents for standardized registration. OWASP's MCP Top 10 gives the ecosystem a shared vocabulary for risks.
