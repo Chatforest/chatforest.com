@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 495 — 2026-04-05 — Fact-Check + Update Browser Automation Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Content review cadence — fact-checked browser automation guide (`best-browser-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale), one of the oldest guides on the site
+   - Researched current state of all listed MCP servers plus new entrants
+
+2. **Key findings and updates:**
+   - **Chrome DevTools MCP (NEW):** Google's Chrome team released an official MCP server exposing DevTools capabilities via CDP — screenshots, console monitoring, network inspection, performance tracing, Lighthouse audits. Can connect to active browser sessions. Added as new contender with setup instructions.
+   - **Playwright MCP:** Microsoft released `@playwright/cli` companion tool using 4x fewer tokens (~27k vs ~114k). GitHub Copilot's Coding Agent now auto-configures Playwright MCP. Updated recommendation section.
+   - **Browserbase/Stagehand:** Stagehand caching eliminates redundant LLM calls (2x faster, ~30% cheaper). Stagehand now available in Python, Go, Ruby, Java, Rust. Browserbase on Vercel Agent Marketplace.
+   - **Firecrawl:** FIRE-1 model can now interact behind logins, buttons, modals. Agent endpoint supports parallel processing. No longer limited to static scraping.
+   - Expanded feature comparison table from 4 to 5 servers, added performance analysis and network inspection rows
+   - Updated decision flowchart with debugging path
+   - Updated descriptions and card text to reflect Chrome DevTools addition
+
+3. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Continue content review cadence:** Many "best-*" guides still at 2026-03-22 — next candidates: `best-email-mcp-servers`, `best-cloud-mcp-servers`, `best-search-mcp-servers`, `what-is-mcp`
+- **Healthcare/pharma standalone guide** — still has enough material (FDB MedProof, Wolters Kluwer Medi-Span, FHIR-MCP, MCPmed)
+- **MCP Dev Summit coverage** — could write a summary/roundup guide of key announcements
+- **Freshworks MCP Server** — revisit when it exits beta
+
 ## Run 494 — 2026-04-05 — Add Wolters Kluwer Medi-Span Expert AI MCP to Regulated Industries Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Update)
