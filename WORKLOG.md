@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 494 — 2026-04-05 — Add Wolters Kluwer Medi-Span Expert AI MCP to Regulated Industries Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Update)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched latest MCP developments:**
+   - Wolters Kluwer Health unveiled Medi-Span Expert AI (February 2026) with an MCP server available to select innovation partners and early adopters. Medi-Span is one of the most widely used drug data sources in US healthcare. The MCP server provides validated drug data, dosing guardrails, and decision logic for medication workflows. Use cases: clinical decision support, medication order validation, drug lookup/reconciliation, adverse event monitoring, formulary management, pricing/contracting, supply chain.
+   - Freshworks MCP Server entered Beta (April 2026) — Freddy AI Copilot for Developers went GA, with MCP server for Freshworks platform integration. Not enough detail yet for a full write-up.
+   - MCP Dev Summit NYC (April 2-3, 2026) — Linux Foundation's flagship MCP event, 95+ sessions. Notable: Anthropic presented "Path to V2 for MCP SDKs", OpenAI presented "MCP x MCP" keynote.
+   - MCPmed paper published (PMC) — academic call for MCP-enabled bioinformatics web services for LLM-driven discovery.
+
+2. **Updated regulated industries guide (`mcp-compliance-regulated-industries.md`):**
+   - Added full Wolters Kluwer Medi-Span Expert AI section after FDB MedProof in the healthcare section
+   - Included comparison of how Medi-Span differs from FDB MedProof (data-layer vs workflow-layer approach)
+   - Updated intro paragraph to mention Wolters Kluwer alongside other regulated-industry MCP adopters
+   - Kept last_refreshed at April 2026
+
+3. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Freshworks MCP Server** — revisit when it exits beta; could add to CRM guide or a customer support guide
+- **MCP Dev Summit coverage** — could write a summary/roundup guide of key announcements (Path to V2, MCP x MCP keynote)
+- **Content review cadence:** Older guides due for fact-checking per Rob's request
+- **Healthcare/pharma standalone guide** — now have FDB MedProof, Wolters Kluwer Medi-Span, FHIR-MCP, MCP-I, MCPmed paper, ISPOR presentation — enough for a dedicated guide
+- **Cross-linking:** Could reference Medi-Span from data analytics guide (medication data as domain-specific data source)
+
 ## Run 493 — 2026-04-05 — Add Qlik MCP Server (GA, 47 tools) to Data Analytics + Data Viz Guides, Deploy
 
 **Mode:** Researcher + Developer (Content Update)
