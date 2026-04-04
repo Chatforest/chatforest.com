@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 4, 2026</span>
       </div>
 
       <h1 class="article-title">CMS &amp; Content Management MCP Servers — WordPress, Contentful, Sanity, Strapi, Directus, Ghost, and More</h1>
@@ -65,7 +65,7 @@
 
       <div class="article-body">
         <p>CMS and content management MCP servers represent one of the most practically useful applications of the Model Context Protocol — giving AI agents the ability to create, edit, publish, and manage content across the platforms that power millions of websites. Unlike more experimental MCP categories, these servers address immediate productivity needs: drafting blog posts, managing media libraries, updating product pages, and orchestrating content workflows through natural language.</p>
-<p>The landscape covers five areas: <strong>WordPress</strong> (the only major CMS with native core integration via the Abilities API), <strong>headless CMS platforms</strong> (Contentful, Sanity, Strapi, Directus — competing aggressively on developer experience), <strong>traditional CMS</strong> (Ghost, Drupal), <strong>website builders</strong> (Webflow, Shopify), and <strong>developer-focused CMS</strong> (Payload CMS, Storyblok).</p>
+<p>The landscape covers six areas: <strong>WordPress</strong> (the only major CMS with native core integration via the Abilities API), <strong>headless CMS platforms</strong> (Contentful, Sanity, Strapi, Directus — competing aggressively on developer experience), <strong>traditional CMS</strong> (Ghost, Drupal), <strong>website builders</strong> (Webflow, Shopify), <strong>developer-focused CMS</strong> (Payload CMS, Storyblok), and the emerging <strong>AI-native CMS</strong> category (Cloudflare&rsquo;s EmDash — built from scratch with MCP as a core feature).</p>
 <p>The headline findings: <strong>WordPress is pioneering CMS-level AI integration</strong> — the Abilities API shipping in WP 6.9 lets any plugin register capabilities that the MCP adapter automatically exposes as tools. <strong>Headless CMS platforms are leading in remote MCP deployment</strong> — Sanity and Contentful offer hosted servers requiring zero local setup. <strong>Ghost has the most comprehensive single-server implementation</strong> — 50+ tools covering posts, members, newsletters, tiers, offers, and webhooks. <strong>Official support is unusually strong in this category</strong> — WordPress, Contentful, Sanity, Directus, Webflow, and Storyblok all have official or official-adjacent MCP servers. <strong>WooCommerce extends the pattern to e-commerce</strong> with native MCP integration in WooCommerce 10.3+.</p>
 <p><strong>Category:</strong> <a href="/categories/business-productivity/">Business &amp; Productivity</a></p>
 <h2 id="wordpress">WordPress</h2>
@@ -474,6 +474,33 @@
 </table>
 <p><strong>hypescale/storyblok-mcp-server</strong> (6 stars, 5 commits) provides <strong>160 tools across 30 modules</strong> for the Storyblok Management API — the highest tool count of any CMS MCP server. Coverage includes stories, components, assets, workflows, releases, and 20+ additional modules. Typed schemas using Zod for safer tool calls.</p>
 <p>Multiple Storyblok implementations exist, including <strong>Kiran1689/storyblok-mcp-server</strong> (modular, extensible), <strong>zerdos/mcp-storyblok-server</strong> (comprehensive with releases), <strong>ArjunCodess/storyblok-mcp</strong> (natural language focus), and <strong>harlley/storyblok-mcp</strong> (component management through natural language descriptions).</p>
+<h2 id="ai-native-cms">AI-Native CMS</h2>
+<h3 id="emdash-cloudflare">EmDash (Cloudflare)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/emdash-cms/emdash">emdash-cms/emdash</a></td>
+<td>New</td>
+<td>TypeScript</td>
+<td>Built-in</td>
+<td>Remote MCP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EmDash</strong> (v0.1.0 preview, April 2026) is Cloudflare&rsquo;s &ldquo;spiritual successor to WordPress&rdquo; — and the first CMS designed from the ground up with AI agents as first-class users. Unlike every other CMS on this page where MCP is an integration layer, EmDash ships with a built-in remote MCP server in every instance.</p>
+<p>Every deployment includes: a <strong>remote MCP server</strong> (Claude, Cursor, or any MCP-compatible agent can create content types, manage entries, configure plugins, and deploy), a <strong>CLI</strong> for programmatic interaction, and <strong>Agent Skills files</strong> that teach AI models how to operate the system without step-by-step instruction.</p>
+<p>Architecture choices favor agents: content stored as <strong>portable text</strong> (structured JSON, not HTML) so agents can read and modify content without parsing markup. Custom content types get <strong>typed database tables</strong>, enabling agents to reason about schemas programmatically. Sandboxed plugins run on Cloudflare via <strong>Dynamic Worker Loaders</strong> with strict manifest-based capability controls — a plugin can only perform actions declared in its manifest.</p>
+<p><strong>Key features:</strong> definePlugin() API with lifecycle hooks, KV storage, settings, admin pages, dashboard widgets, custom block types, and API routes. Astro-powered theming. Native x402 payment support. Runs on Cloudflare (D1 + R2 + Workers) or any Node.js server with SQLite. MIT licensed, open source.</p>
+<p><strong>Limitations:</strong> v0.1.0 preview — very early. No migration tooling from WordPress or other platforms. Nascent plugin and theme ecosystem. Cloudflare-native deployment is the primary path. WordPress co-founder Matt Mullenweg has publicly questioned whether EmDash exists primarily to sell Cloudflare services.</p>
 <h2 id="whats-missing">What&rsquo;s Missing</h2>
 <p>The CMS MCP space is among the most mature in the MCP ecosystem, but gaps remain:</p>
 <ul>
@@ -494,8 +521,9 @@
 <p><strong>For Drupal users</strong>: The Drupal MCP module + Omedia/mcp-server-drupal companion provides the most native integration, with dynamic tool discovery from your Drupal site&rsquo;s capabilities.</p>
 <p><strong>For website builders</strong>: Webflow&rsquo;s official server with Live Designer sync leads the category. Shopify has community options but no official server yet.</p>
 <p><strong>For developers building CMS applications</strong>: Payload CMS&rsquo;s development assistance server and Storyblok&rsquo;s 160-tool server show how MCP can help build CMS-powered applications, not just manage content.</p>
+<p><strong>For greenfield AI-agent-first projects</strong>: Cloudflare&rsquo;s EmDash is the first CMS where MCP is built in rather than bolted on. Very early (v0.1.0 preview) but architecturally compelling if you want agents to be first-class citizens from day one.</p>
 <p><strong>Rating: 4.5/5</strong> — This is one of the strongest MCP categories overall. WordPress&rsquo;s Abilities API represents a genuinely novel approach to CMS-AI integration that other platforms will likely emulate. The breadth of official support is unmatched in the MCP ecosystem. Headless CMS platforms are pushing the frontier with remote hosted servers, OAuth authentication, and schema-aware operations. Ghost&rsquo;s comprehensive single-server coverage, Sanity&rsquo;s &ldquo;always-fresh&rdquo; agent rules, and Directus&rsquo;s dynamic prompts show real innovation. Deductions for fragmented WordPress ecosystem, missing major website builders (Squarespace, Wix), limited safety controls, and no cross-CMS content migration tooling.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was last edited on 2026-04-04 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -547,7 +575,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T09:30:00+09:00","description":"CMS and content management MCP servers let AI agents create, edit, publish, and manage content across WordPress, headless CMS platforms, and website builders through natural language.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"CMS \u0026 Content Management MCP Servers — WordPress, Contentful, Sanity, Strapi, Directus, Ghost, and More"},"name":"CMS \u0026 Content Management MCP Servers — WordPress, Contentful, Sanity, Strapi, Directus, Ghost, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/cms-content-management-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-04T00:00:00+09:00","datePublished":"2026-03-15T09:30:00+09:00","description":"CMS and content management MCP servers let AI agents create, edit, publish, and manage content across WordPress, headless CMS platforms, and website builders through natural language.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"CMS \u0026 Content Management MCP Servers — WordPress, Contentful, Sanity, Strapi, Directus, Ghost, and More"},"name":"CMS \u0026 Content Management MCP Servers — WordPress, Contentful, Sanity, Strapi, Directus, Ghost, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/cms-content-management-mcp-servers/"}
 </script>
 
 

@@ -5,7 +5,7 @@ description: "WordPress, Contentful, Sanity, Strapi, Directus, Ghost, Webflow, a
 og_description: "35+ CMS and content management MCP servers reviewed across WordPress, headless CMS platforms, traditional CMS, website builders, and developer-focused CMS. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to CMS MCP servers in 2026. We've reviewed 35+ servers across WordPress, headless CMS, traditional CMS, website builders, and developer-focused CMS. Every recommendation links to a full review."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-04
 ---
 
 CMS MCP servers solve one of the most practical problems in AI-assisted development: managing content at scale. Instead of switching between CMS dashboards, writing API calls, or navigating admin panels, these servers let AI agents create, edit, publish, and manage content across platforms through natural language.
@@ -23,6 +23,7 @@ We've published [in-depth reviews](/reviews/) covering 35+ CMS MCP servers acros
 | Traditional CMS | [MFYDev/ghost-mcp](/reviews/cms-content-management-mcp-servers/) | 156 | [Drupal MCP module](/reviews/cms-content-management-mcp-servers/) (dynamic tools) |
 | Website builders | [Webflow MCP](/reviews/cms-content-management-mcp-servers/) | 107 | Shopify community servers |
 | Developer-focused CMS | [hypescale/storyblok-mcp-server](/reviews/cms-content-management-mcp-servers/) | 6 | [disruption-hub/payloadcmsmcp](/reviews/cms-content-management-mcp-servers/) (108 stars, dev tools) |
+| AI-native CMS | [EmDash (Cloudflare)](/reviews/cms-content-management-mcp-servers/) | New | Built-in MCP, agent-first architecture |
 
 ## Why CMS MCP servers matter
 
@@ -32,7 +33,7 @@ Content management is one of the most time-consuming parts of running a website.
 2. **Cross-platform content awareness.** An agent with access to multiple CMS MCP servers can compare approaches — "migrate this content from WordPress to Sanity" — with actual knowledge of both platforms' schemas and APIs.
 3. **Programmatic editorial workflows.** "Find all draft posts older than 30 days and list them for review" becomes a natural language query. AI agents can manage content lifecycle, membership tiers, newsletters, and publishing schedules.
 
-The landscape splits into five categories: **WordPress** (the only major CMS with native core integration via the Abilities API), **headless CMS platforms** (Contentful, Sanity, Strapi, Directus — competing on developer experience and remote MCP), **traditional CMS** (Ghost, Drupal), **website builders** (Webflow, Shopify), and **developer-focused CMS** (Payload CMS, Storyblok).
+The landscape splits into six categories: **WordPress** (the only major CMS with native core integration via the Abilities API), **headless CMS platforms** (Contentful, Sanity, Strapi, Directus — competing on developer experience and remote MCP), **traditional CMS** (Ghost, Drupal), **website builders** (Webflow, Shopify), **developer-focused CMS** (Payload CMS, Storyblok), and the emerging **AI-native CMS** category (Cloudflare's EmDash — built from scratch with MCP as a core feature).
 
 ## WordPress
 
@@ -178,6 +179,22 @@ Tools include: `validate` (check collections, fields, globals, config files), `g
 
 **Best for:** Developers building new Payload CMS 3.0 applications who want AI-assisted scaffolding and code generation.
 
+## AI-Native CMS
+
+### EmDash (Cloudflare)
+
+[emdash-cms/emdash](https://github.com/emdash-cms/emdash) — MIT, TypeScript, v0.1.0 preview (April 2026). Cloudflare's "spiritual successor to WordPress," built from scratch with AI agents as first-class users.
+
+**Why it matters:** EmDash is the first CMS where the MCP server isn't an add-on — it's built into every instance. Every EmDash deployment ships with a remote MCP server, a CLI for programmatic interaction, and Agent Skills files that teach AI models how to operate the system. Claude, Cursor, or any MCP-compatible agent can create content types, manage entries, configure plugins, and deploy — all without navigating an admin dashboard.
+
+**Architecture designed for agents:** Content is stored as portable text (structured JSON, not HTML strings), so agents can read, modify, and generate content without parsing markup. Custom content types get their own database tables with typed fields, enabling agents to reason about schemas programmatically. Sandboxed plugins run on Cloudflare via Dynamic Worker Loaders with a strict manifest-based capability model.
+
+**Key features:** definePlugin() API with lifecycle hooks, KV storage, settings, admin pages, dashboard widgets, custom block types, and API routes. Astro-powered theming. Native x402 payment support. Runs on Cloudflare (D1 + R2 + Workers) or any Node.js server with SQLite.
+
+**The catch:** v0.1.0 preview — this is early. No migration tooling from WordPress or other CMS platforms yet. The ecosystem of plugins and themes is nascent. Cloudflare-native deployment is the primary path, which ties you to their stack (though Node.js/SQLite is an alternative). Matt Mullenweg has publicly questioned whether EmDash exists primarily to sell Cloudflare services.
+
+**Best for:** Developers starting greenfield projects who want an AI-agent-first CMS architecture. Teams already invested in the Cloudflare ecosystem. Anyone who wants MCP integration without bolting it onto a legacy CMS.
+
 ## Platform comparison
 
 | Platform | Stars | Tools | Transport | Auth | Remote hosted | Write protection |
@@ -193,6 +210,7 @@ Tools include: `validate` (check collections, fields, globals, config files), `g
 | Webflow | 107 | Expanding | Remote (OAuth) | OAuth | **Yes** | No |
 | Storyblok (hypescale) | 6 | 160 | STDIO | API token | No | No |
 | Payload CMS | 108 | 7 | STDIO | — | No | N/A (dev tools) |
+| EmDash (Cloudflare) | New | Built-in | Remote MCP | Per-instance | **Yes** | Via plugin manifests |
 
 ## Three ecosystem trends
 
@@ -201,6 +219,8 @@ Tools include: `validate` (check collections, fields, globals, config files), `g
 **2. WordPress's Abilities API sets the pattern for CMS-AI integration.** Instead of wrapping REST APIs in MCP tools, WordPress lets plugins declare capabilities that MCP discovers automatically. With WordPress 7.0 merging this into core (April 2026), every WordPress plugin and theme will have native AI capabilities. WooCommerce's adoption validates this beyond blogging. Other CMS platforms will likely adopt similar "abilities registration" patterns.
 
 **3. Official support is unusually strong in CMS.** WordPress, Contentful, Sanity, Directus, Webflow, and Storyblok all have official or official-adjacent MCP implementations. This contrasts with many MCP categories where community servers dominate. The CMS vendors clearly see MCP as a competitive differentiator — early adopters get AI-ready content platforms.
+
+**4. AI-native CMS is emerging as a category.** Cloudflare's EmDash (April 2026) is the first CMS built from scratch with AI agents as first-class users — MCP is built in, not bolted on. Content stored as structured JSON instead of HTML, agent skills baked into the architecture, sandboxed plugins. It's early (v0.1.0), but it signals where CMS design is heading: systems designed for agents from day one rather than adapted after the fact.
 
 ## What's missing
 
@@ -224,6 +244,8 @@ Tools include: `validate` (check collections, fields, globals, config files), `g
 **Building on Webflow?** The official MCP server with Live Designer sync is the only real option — and it's a good one.
 
 **Developer building CMS apps?** **Payload CMS** for scaffolding and code generation. **Storyblok** for the broadest management API coverage (160 tools).
+
+**Want an AI-agent-first architecture?** **EmDash** if you're starting a greenfield project and want MCP built into the CMS itself rather than added as an integration. Early but architecturally interesting.
 
 ---
 

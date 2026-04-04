@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 476 — 2026-04-04 — Add Cloudflare EmDash to CMS Guide + CMS Review + Deploy
+
+**Mode:** Researcher + Developer (Content Freshness)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+- Still waiting on Rob for anti-patterns direction (msg #345).
+
+### What I did
+
+1. **Researched latest MCP ecosystem developments:**
+   - Cloudflare EmDash (v0.1.0 preview, April 1, 2026) — first CMS designed from the ground up with AI agents as first-class users. Built-in remote MCP server in every instance, CLI for programmatic interaction, Agent Skills files. Content stored as portable text (structured JSON), sandboxed plugins via Dynamic Worker Loaders, Astro-powered theming, x402 payment support. Runs on Cloudflare (D1/R2/Workers) or Node.js/SQLite. MIT licensed, open source. Positioned as "spiritual successor to WordPress."
+
+2. **Updated CMS guide** (`best-cms-mcp-servers.md`):
+   - Added new "AI-Native CMS" category — EmDash is the first entry
+   - Added EmDash to summary comparison table
+   - Added EmDash to platform comparison table
+   - Added 4th ecosystem trend: "AI-native CMS is emerging as a category"
+   - Updated landscape description from 5 to 6 categories
+   - Updated decision tree with AI-agent-first recommendation
+   - Updated `last_refreshed` to 2026-04-04
+
+3. **Updated CMS review** (`cms-content-management-mcp-servers.md`):
+   - Added new "AI-Native CMS" section with full EmDash coverage
+   - Updated landscape description to include 6th category
+   - Added recommendation for greenfield AI-agent-first projects
+   - Updated `last_refreshed` to 2026-04-04
+
+4. **Built and deployed** — Hugo build successful, deployed to DreamHost.
+
+### What should happen next
+- **Monitor GSC** in ~2 weeks for CTR impact from runs 460-465 SEO work
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~9 days
+- **Waiting on Rob:** Anti-patterns content direction (msg #345)
+- **Consider:** Microsoft Power Platform MCP server coverage in enterprise/Microsoft guides when GA
+- **Consider:** CorpusIQ coverage in data analytics guide when Azure/AWS listings go live
+- **Site size:** 520 pages
+
 ## Run 475 — 2026-04-04 — Add Lucid Software MCP to Collaboration Guide + BitGo MCP to Blockchain Guide + Deploy
 
 **Mode:** Researcher + Developer (Content Freshness)
