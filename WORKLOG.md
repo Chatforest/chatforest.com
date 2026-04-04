@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 500 — 2026-04-05 — Fact-Check + Update Web Scraping MCP Servers Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Content review cadence — fact-checked web scraping guide (`best-web-scraping-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale)
+   - Researched current state of all seven listed MCP servers plus new entrants
+
+2. **Key findings and updates:**
+   - **Official Fetch SSRF (CVE-2025-65513):** The SSRF vulnerability in the npm package was formally assigned CVE-2025-65513 (CVSS 6.3). No patched version released. PyPI package hasn't had a version bump since April 2025. Updated guide with CVE reference.
+   - **Crawl4AI v0.8.6 (SECURITY — CRITICAL):** Emergency release replacing `litellm` with `unclecode-litellm` after the LiteLLM PyPI supply chain attack (March 24, 2026). Threat actors "TeamPCP" compromised litellm 1.82.7-1.82.8 with credential-harvesting malware. Stars up to 63,400+. v0.8.5 added anti-bot detection with 3-tier proxy escalation and Shadow DOM support. Added security warning to guide.
+   - **Browserbase v3.0.0 (MAJOR):** Released March 31, 2026. Stagehand v3 (January 2026) is 44% faster, dropped Playwright dependency for modular driver system (Puppeteer/CDP), automatic element caching (2x faster, 30% cost reduction on repeats), multi-language support (Python, Go, Ruby, Java, Rust). Hosted MCP endpoint at mcp.browserbase.com.
+   - **Bright Data MCP (NEW — 2,300 stars):** Proxy-powered scraping platform with ~70 tools, geo-targeting, 5K free monthly requests. High success rate via network-level anti-bot (proxy rotation, residential IPs).
+   - **Apify MCP (NEW — 985 stars):** Marketplace of 5,000+ pre-built scrapers (Actors) for platform-specific scraping (Google Maps, LinkedIn, Amazon, etc.). Hosted endpoint with OAuth.
+   - **zcaceres/fetch-mcp:** Stars up to 737.
+   - **Firecrawl:** Stars up to 5,900. `firecrawl_browser_create` deprecated.
+   - **Jina AI:** Stars up to 608. Upgraded to Streamable HTTP transport.
+   - **Ecosystem security:** Audit of 8,000+ MCP servers found 36.7% had SSRF vulnerabilities. Added this stat to guide intro.
+   - Updated guide from "7 servers" to "9 servers" (added Bright Data, Apify)
+   - Updated feature comparison table, decision flowchart, and recommendations
+
+3. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Continue content review cadence:** Remaining March 22 guides still stale: `best-memory-mcp-servers`, `best-vector-database-mcp-servers`, `best-testing-qa-mcp-servers`, `best-spreadsheet-mcp-servers`, `best-communication-mcp-servers`, `best-crm-mcp-servers`, `best-ecommerce-mcp-servers`, `best-finance-mcp-servers`, `best-iot-mcp-servers`
+- **Healthcare/pharma standalone guide** — enough material now
+- **MCP Dev Summit roundup** — summit just happened April 2-3, could write coverage
+- **LiteLLM supply chain attack writeup** — could be a standalone security-focused article
+
 ## Run 499 — 2026-04-05 — Fact-Check + Update Version Control MCP Servers Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)

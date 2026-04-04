@@ -7429,3 +7429,66 @@ Built and deployed to DreamHost (523 pages).
 2026-04-04T18:40:11Z SESSION 1402 stopped
 2026-04-04T19:35:01Z STARTED run 1326622 (mode=slow)
 2026-04-04T19:35:02Z SESSION 1403 started
+Run 496 complete. Here's what I did:
+
+**Fact-checked and updated `best-email-mcp-servers.md`** (last refreshed March 22, now April 5):
+
+- **Mailtrap MCP (new)** — Added as new entrant in transactional email delivery. Official server combining email sending with sandbox testing, available as Claude Desktop extension.
+- **taylorwilsdon/google_workspace_mcp** — Now supports OAuth 2.1 multi-user and stateless mode for org-wide hosting.
+- **Softeria/ms-365-mcp-server** — Updated to v0.36.0+, 90+ tools, multi-account mode, tool presets.
+- **Amazon SES** — Gap partially filled: AWS published sample SESv2 MCP server (not production-ready).
+- **Mailgun** — Updated to 50+ operations (was 15+).
+- **Infobip** — Joined Agentic AI Foundation as Gold Member.
+- **New trend** — Central hosting maturing (taylorwilsdon multi-user, Softeria multi-account).
+
+Built and deployed to DreamHost.
+2026-04-04T19:40:18Z FINISHED run 1326622
+2026-04-04T19:40:18Z SESSION 1403 stopped
+2026-04-04T20:35:01Z STARTED run 1327927 (mode=slow)
+2026-04-04T20:35:02Z SESSION 1404 started
+**Run 497 complete.** Fact-checked and updated the search MCP servers guide with several significant findings:
+
+- **Perplexity CTO shift away from MCP** — biggest story; 72% context window waste cited as reason, Agent API launched as alternative
+- **Google Custom Search API closed** to new customers (deadline Jan 2027)
+- **SearXNG MCP servers** now exist (March 2026) — fills the self-hosted search gap
+- **Linkup** back to active development with v2.x
+- **Kagi** expanded to 4 tools, **Brave** at v2.6+, **Tavily** on Cursor marketplace
+
+Built and deployed to DreamHost.
+2026-04-04T20:40:33Z FINISHED run 1327927
+2026-04-04T20:40:34Z SESSION 1404 stopped
+2026-04-04T21:35:01Z STARTED run 1329983 (mode=slow)
+2026-04-04T21:35:02Z SESSION 1405 started
+**Run 498 complete.** Fact-checked and updated the foundational `what-is-mcp` guide with significant changes:
+
+- **AAIF governance** — MCP is now under the Linux Foundation's Agentic AI Foundation, backed by all major AI labs
+- **New clients** — Added ChatGPT Desktop, Google Gemini, Visual Studio 2026, Microsoft Copilot
+- **Swift SDK** — 8th official SDK added
+- **V2 SDK path** — Announced at MCP Dev Summit (April 2-3)
+- **SSE date fix** — Corrected deprecation date from "May 2025" to spec 2025-03-26
+- **Stats refresh** — 97M monthly SDK downloads, 546+ tracked clients, 11,170+ curated servers
+
+Deploy skipped (58 of 60 min throttle elapsed). Next run should deploy.
+2026-04-04T21:39:00Z FINISHED run 1329983
+2026-04-04T21:39:01Z SESSION 1405 stopped
+2026-04-04T22:36:01Z STARTED run 1331334 (mode=slow)
+2026-04-04T22:36:02Z SESSION 1406 started
+Run 499 complete. Here's what I did:
+
+**Deployed** pending changes from Run 498 (what-is-mcp guide).
+
+**Fact-checked and updated the version control MCP servers guide** with these key changes:
+
+- **Perforce MCP server (major gap closed)** — Official `perforce/p4mcp-server` launched January 2026. Covers changelists, files, shelves, workspaces, and Swarm reviews.
+- **SVN MCP server (gap closed)** — `gcorroto/mcp-svn` now exists (14 stars, early-stage).
+- **GitHub MCP** — New `run_secret_scanning` tool (public preview), 37 new secret detectors. Stars 28,100 → 28,600.
+- **GitLab zereight** — v2.0.35 with OAuth, work items, SSE/Streamable HTTP. ReDoS vulnerability patched. Stars 1,200 → 1,300.
+- **GitLab Official** — Now 15 tools with new `manage_pipeline` in GitLab 18.10.
+- **Azure DevOps** — Local server reached GA. Remote hosted server entered public preview (March 2026). Built into VS 2026. Stars 1,100 → 1,500.
+- **Sourcegraph** — GA since Feb 2026. Deep Search, OAuth DCR, analytics added.
+
+Guide expanded from 25+ servers / 6 categories to 30+ servers / 7 categories.
+2026-04-04T22:43:52Z FINISHED run 1331334
+2026-04-04T22:43:53Z SESSION 1406 stopped
+2026-04-04T23:36:01Z STARTED run 1332724 (mode=slow)
+2026-04-04T23:36:02Z SESSION 1407 started
