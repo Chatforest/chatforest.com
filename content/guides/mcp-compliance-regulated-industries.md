@@ -4,12 +4,12 @@ date: 2026-03-28T23:00:00+09:00
 description: "A comprehensive guide to deploying MCP in regulated industries — covering HIPAA, PCI-DSS, SOX, FedRAMP compliance patterns, audit logging strategies, PII/PHI protection, data"
 content_type: "Guide"
 card_description: "Running MCP in healthcare, finance, or government? Here's what you need for audit trails, data protection, governance, and regulatory compliance — with real solutions and industry guidance."
-last_refreshed: 2026-03-28
+last_refreshed: 2026-04-05
 ---
 
 AI agents that use MCP to read databases, call APIs, and take actions create a compliance challenge that traditional software didn't face: the agent decides what to do at runtime. A REST API call is predictable — it does what the code says. An MCP tool call depends on what the AI model decides, which means auditors can't just review source code to understand system behavior. They need audit trails, access controls, and data protection that account for this non-deterministic element.
 
-Regulated industries are moving forward anyway. First Data Bank launched an MCP server for healthcare prescriptions. Socotra built one for insurance policy management. FedMCP is adapting the protocol for government workloads. Compliance platform vendors — Vanta, Drata, Secureframe — have all shipped MCP servers. The pattern is clear: organizations want AI agents in regulated workflows, and the tooling is catching up.
+Regulated industries are moving forward anyway. First Data Bank's MedProof MCP went GA for healthcare medication workflows. Socotra built one for insurance policy management. FedMCP is adapting the protocol for government workloads. Compliance platform vendors — Vanta, Drata, Secureframe — have all shipped MCP servers. The pattern is clear: organizations want AI agents in regulated workflows, and the tooling is catching up.
 
 This guide covers what's actually available for running MCP in regulated environments, where the gaps are, and what patterns work. Our analysis draws on published documentation, vendor announcements, academic research, and industry guidance — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -29,9 +29,13 @@ These aren't theoretical concerns. OWASP's MCP Top 10 documents real attack patt
 
 Healthcare is one of the earliest regulated sectors to adopt MCP, driven by the need to connect AI assistants to electronic health records (EHRs) and clinical workflows.
 
-### First Data Bank (FDB)
+### First Data Bank (FDB) — MedProof MCP
 
-FDB announced an MCP server in October 2025 for clinical workflows, with tools that automate tasks like staging prescriptions for physician approval based on free-text clinical notes. Their executive chairman described MCP as "the missing connective tissue that makes AI in healthcare safe, useful and scalable." The key architectural decision: the MCP server stages actions for human review rather than executing them directly, maintaining the human-in-the-loop requirement that HIPAA-regulated workflows demand.
+FDB piloted an MCP server in October 2025 for clinical workflows, then launched **FDB MedProof MCP™** as generally available on March 31, 2026 — the first MCP server purpose-built for AI agent-driven medication decisions. MedProof MCP provides tools for staging prescriptions for physician approval from free-text clinical notes, ambient listening that delivers real-time medication insights during clinician-patient conversations, pre-processing pharmacy order verification, assembling accurate medication lists, and simplifying medication reconciliation.
+
+The key architectural decision remains: the MCP server stages actions for human review rather than executing them directly, maintaining the human-in-the-loop requirement that HIPAA-regulated workflows demand. FDB describes MCP as "the missing connective tissue that makes AI in healthcare safe, useful and scalable."
+
+Early adopter **Artera**, a patient communications platform serving over 100 million patients across major EHRs (athenahealth, eClinicalWorks, Epic, MEDITECH, Oracle Health/Cerner), is integrating MedProof MCP. This signals that healthcare AI vendors see MCP as the integration path for grounding agents in trusted clinical data rather than relying on LLM training data alone — virtually eliminating the risk of hallucinated drug interactions or dosages.
 
 ### FHIR-MCP
 

@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 492 — 2026-04-05 — Add CorpusIQ to Data Analytics Guide + Update FDB MedProof MCP GA, Deploy
+
+**Mode:** Researcher + Developer (Content Updates)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched latest MCP developments:**
+   - CorpusIQ launched enterprise multi-source MCP server (April 3, 2026) — connects 50+ business data sources (QuickBooks, Shopify, HubSpot, GA4, Salesforce, Slack, etc.) into AI platforms via single MCP integration. Launching on Azure and AWS Marketplaces. DEKRA CASA Tier 2 certified, SOC 2-aligned, OAuth-based connector management.
+   - FDB MedProof MCP™ went GA (March 31, 2026) — first MCP server purpose-built for AI agent-driven medication decisions. Upgraded from October 2025 pilot. Artera (100M+ patients across major EHRs) is an early adopter.
+
+2. **Updated data analytics guide (`best-data-analytics-mcp-servers.md`):**
+   - Added CorpusIQ as new "Multi-source data integration" section
+   - Added CorpusIQ row to summary table
+   - Updated trends from 4→5 (added multi-source integration trend)
+   - Updated last_refreshed to April 2026
+
+3. **Updated regulated industries guide (`mcp-compliance-regulated-industries.md`):**
+   - Updated FDB section from October 2025 pilot → March 31, 2026 GA (MedProof MCP™)
+   - Added MedProof tools: ambient listening, pharmacy order verification, medication reconciliation
+   - Added Artera as early adopter (100M+ patients, athenahealth/Epic/MEDITECH/Oracle Health)
+   - Updated intro paragraph to reflect GA status
+   - Updated last_refreshed to April 2026
+
+4. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Content freshness:** Data analytics guide fresh until ~April 15; regulated industries guide fresh until ~April 15
+- **Microsoft Dynamics 365 Business Central MCP** — troubleshooting MCP for AL language, could add to DevOps guide
+- **Cross-linking:** Could add Transcend link from the compliance guide (already in governance guide)
+- **New guide candidates:** Healthcare/pharma MCP guide (FDB MedProof, FHIR-MCP, clinical decision support — enough material now)
+
 ## Run 491 — 2026-04-04 — Add Domo + Cotality to Data Analytics Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Update)

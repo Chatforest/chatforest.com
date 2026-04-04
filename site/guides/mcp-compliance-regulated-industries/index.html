@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 28, 2026 · Updated Mar 28, 2026</span>
+        <span>Published Mar 28, 2026 · Updated Apr 5, 2026</span>
       </div>
 
       <h1 class="article-title">MCP in Regulated Industries: Compliance, Audit Trails, and Data Protection for AI Agents</h1>
@@ -65,7 +65,7 @@
 
       <div class="article-body">
         <p>AI agents that use MCP to read databases, call APIs, and take actions create a compliance challenge that traditional software didn&rsquo;t face: the agent decides what to do at runtime. A REST API call is predictable — it does what the code says. An MCP tool call depends on what the AI model decides, which means auditors can&rsquo;t just review source code to understand system behavior. They need audit trails, access controls, and data protection that account for this non-deterministic element.</p>
-<p>Regulated industries are moving forward anyway. First Data Bank launched an MCP server for healthcare prescriptions. Socotra built one for insurance policy management. FedMCP is adapting the protocol for government workloads. Compliance platform vendors — Vanta, Drata, Secureframe — have all shipped MCP servers. The pattern is clear: organizations want AI agents in regulated workflows, and the tooling is catching up.</p>
+<p>Regulated industries are moving forward anyway. First Data Bank&rsquo;s MedProof MCP went GA for healthcare medication workflows. Socotra built one for insurance policy management. FedMCP is adapting the protocol for government workloads. Compliance platform vendors — Vanta, Drata, Secureframe — have all shipped MCP servers. The pattern is clear: organizations want AI agents in regulated workflows, and the tooling is catching up.</p>
 <p>This guide covers what&rsquo;s actually available for running MCP in regulated environments, where the gaps are, and what patterns work. Our analysis draws on published documentation, vendor announcements, academic research, and industry guidance — we research and analyze rather than deploying these systems ourselves. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
 <h2 id="why-mcp-creates-new-compliance-questions">Why MCP Creates New Compliance Questions</h2>
 <p>Traditional API integrations are deterministic. A function calls an endpoint with specific parameters, and auditors can trace every possible execution path. MCP changes this in three ways:</p>
@@ -75,8 +75,10 @@
 <p>These aren&rsquo;t theoretical concerns. OWASP&rsquo;s MCP Top 10 documents real attack patterns, and research shows tool poisoning attacks succeed at high rates when auto-approval is enabled. For regulated industries, the stakes are higher — a compliance violation isn&rsquo;t just a security incident, it&rsquo;s a legal and financial liability.</p>
 <h2 id="mcp-in-healthcare-hipaa">MCP in Healthcare (HIPAA)</h2>
 <p>Healthcare is one of the earliest regulated sectors to adopt MCP, driven by the need to connect AI assistants to electronic health records (EHRs) and clinical workflows.</p>
-<h3 id="first-data-bank-fdb">First Data Bank (FDB)</h3>
-<p>FDB announced an MCP server in October 2025 for clinical workflows, with tools that automate tasks like staging prescriptions for physician approval based on free-text clinical notes. Their executive chairman described MCP as &ldquo;the missing connective tissue that makes AI in healthcare safe, useful and scalable.&rdquo; The key architectural decision: the MCP server stages actions for human review rather than executing them directly, maintaining the human-in-the-loop requirement that HIPAA-regulated workflows demand.</p>
+<h3 id="first-data-bank-fdb--medproof-mcp">First Data Bank (FDB) — MedProof MCP</h3>
+<p>FDB piloted an MCP server in October 2025 for clinical workflows, then launched <strong>FDB MedProof MCP™</strong> as generally available on March 31, 2026 — the first MCP server purpose-built for AI agent-driven medication decisions. MedProof MCP provides tools for staging prescriptions for physician approval from free-text clinical notes, ambient listening that delivers real-time medication insights during clinician-patient conversations, pre-processing pharmacy order verification, assembling accurate medication lists, and simplifying medication reconciliation.</p>
+<p>The key architectural decision remains: the MCP server stages actions for human review rather than executing them directly, maintaining the human-in-the-loop requirement that HIPAA-regulated workflows demand. FDB describes MCP as &ldquo;the missing connective tissue that makes AI in healthcare safe, useful and scalable.&rdquo;</p>
+<p>Early adopter <strong>Artera</strong>, a patient communications platform serving over 100 million patients across major EHRs (athenahealth, eClinicalWorks, Epic, MEDITECH, Oracle Health/Cerner), is integrating MedProof MCP. This signals that healthcare AI vendors see MCP as the integration path for grounding agents in trusted clinical data rather than relying on LLM training data alone — virtually eliminating the risk of hallucinated drug interactions or dosages.</p>
 <h3 id="fhir-mcp">FHIR-MCP</h3>
 <p><a href="https://github.com/xSoVx/fhir-mcp">FHIR-MCP</a> is an open-source MCP server that connects LLMs to FHIR (Fast Healthcare Interoperability Resources) servers and HL7 terminology services. It includes built-in PHI protection, audit logging, and token-efficient operations. A separate academic framework (arXiv:2506.13800) presents an MCP-FHIR integration focused on clinical decision support and EHR insights.</p>
 <p>For healthcare organizations already using FHIR-compliant systems, this provides a standards-based path to AI agent integration without building custom connectors.</p>
@@ -494,7 +496,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-28T00:00:00+09:00","datePublished":"2026-03-28T23:00:00+09:00","description":"A comprehensive guide to deploying MCP in regulated industries — covering HIPAA, PCI-DSS, SOX, FedRAMP compliance patterns, audit logging strategies, PII/PHI protection, data","headline":"MCP in Regulated Industries: Compliance, Audit Trails, and Data Protection for AI Agents","mainEntityOfPage":"https://chatforest.com/guides/mcp-compliance-regulated-industries/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-compliance-regulated-industries/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-05T00:00:00+09:00","datePublished":"2026-03-28T23:00:00+09:00","description":"A comprehensive guide to deploying MCP in regulated industries — covering HIPAA, PCI-DSS, SOX, FedRAMP compliance patterns, audit logging strategies, PII/PHI protection, data","headline":"MCP in Regulated Industries: Compliance, Audit Trails, and Data Protection for AI Agents","mainEntityOfPage":"https://chatforest.com/guides/mcp-compliance-regulated-industries/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-compliance-regulated-industries/"}
 </script>
 
 

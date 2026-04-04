@@ -5,7 +5,7 @@ description: "Analytics platforms, data pipelines, visualization, and data wareh
 og_description: "60+ data & analytics MCP servers reviewed: dbt, Snowflake, Google Analytics, PostHog, Superset, Metabase, BigQuery, and more — with honest ratings and real data."
 content_type: "Comparison"
 card_description: "The definitive guide to data & analytics MCP servers in 2026. We've reviewed 60+ servers across analytics platforms, data pipelines, visualization, and data warehouses. Every recommendation links to a full review."
-last_refreshed: 2026-04-04
+last_refreshed: 2026-04-05
 ---
 
 Data teams are the next frontier for MCP adoption. The pattern is clear: instead of switching between your IDE and five analytics dashboards, data warehouse consoles, and pipeline orchestrators, you work through a single AI conversation. Query PostHog, build a dbt model, visualize the results, push to Snowflake — all without leaving your editor.
@@ -21,6 +21,7 @@ We've published [3 in-depth data and analytics reviews](/reviews/) covering 60+ 
 | Data pipeline / ETL | [dbt MCP](/reviews/data-pipeline-etl-mcp-servers/) | 4/5 | [Snowflake MCP](/reviews/data-pipeline-etl-mcp-servers/) (261 stars, Cortex AI) |
 | Data visualization | [AntV Chart MCP](/reviews/data-visualization-mcp-servers/) | 3.5/5 | [Vizro MCP](/reviews/data-visualization-mcp-servers/) (McKinsey, dashboards) |
 | Enterprise BI | [Domo MCP](https://github.com/DomoApps/domo-mcp-server) | — | [GoodData](/reviews/data-visualization-mcp-servers/) (24 tools, governed analytics) |
+| Multi-source integration | [CorpusIQ](https://www.issuewire.com/corpusiq-launches-enterprise-multi-source-mcp-server-on-azure-and-aws-marketplaces-1861382744355513) | — | — |
 | Data warehouse | Google BigQuery (managed) | — | [LucasHild/mcp-server-bigquery](https://github.com/LucasHild/mcp-server-bigquery) (123 stars, community) |
 
 ## Why data MCP servers matter now
@@ -124,13 +125,21 @@ Not every data MCP server is worth your time:
 - **Airbyte's connector-builder-mcp** — appears to exist but returns 404. The ecosystem is fragmented across PyAirbyte MCP, Knowledge MCP, and connector-builder with no unified story.
 - **Any community server for a platform that now has an official one** — Google Analytics, Mixpanel, and Amplitude all have official servers. Check for official options before installing community alternatives.
 
+## New entrant: multi-source data integration
+
+**CorpusIQ** (April 3, 2026) — an enterprise multi-source MCP server that connects 50+ business data sources — QuickBooks, Shopify, HubSpot, Google Analytics 4, Salesforce, Slack, and dozens more — into AI platforms like Claude and ChatGPT through a single MCP integration. Launching on both Azure Marketplace and AWS Marketplace within 60 days.
+
+The value proposition: instead of deploying and maintaining individual MCP servers for each data source, CorpusIQ provides unified, permissioned access across finance, marketing, sales, ecommerce, and communications data. Key enterprise features include OAuth-based connector management across all integrations, cross-source data correlation for financial reconciliation and operational auditing, role-based access controls, and SOC 2-aligned data handling. The platform holds DEKRA CASA Tier 2 security certification and Google Cloud OAuth verification.
+
+This is a different play from dbt or Fivetran — those transform and move data, while CorpusIQ is about giving AI agents read access across operational systems without building custom connectors for each one. Think of it as the "universal adapter" approach to data MCP.
+
 ## New entrant: vertical data MCP
 
 **Cotality MCP Server** (March 31, 2026) — the first major domain-specific data MCP server for property intelligence. Cotality (formerly CoreLogic) launched an MCP server that connects AI models to real-time CLIP IDs, property details, climate risk assessments, and market trend data. Designed for production-grade workflows: underwriting, valuation, and risk analysis. All Cotality Property 360 datasets ship with companion YAML files following the Open Semantic Interchange standard, so AI models understand field semantics without manual mapping. Also available on the [Databricks Marketplace](https://marketplace.databricks.com/details/40e3e80f-b72d-42be-b5f8-6b4b10ff7bce/Cotality_CLIP-MCP). This matters because it signals that vertical data providers — not just horizontal tools — are adopting MCP as a distribution channel.
 
 ## The bigger picture
 
-Four trends define data MCP servers in April 2026:
+Five trends define data MCP servers in April 2026:
 
 **1. dbt is the benchmark.** With 60+ tools, semantic layer integration, codegen, and LSP support, dbt-mcp is the most complete MCP server in the data category — and arguably in any category. Other data vendors should study this implementation. Fivetran's 80+ tools show a similar ambition.
 
@@ -138,7 +147,9 @@ Four trends define data MCP servers in April 2026:
 
 **3. Enterprise BI is joining the party.** The biggest gap from March — enterprise BI platforms — is starting to close. Domo's MCP server and AI Toolkits framework, combined with GoodData's 24-tool server, show that BI vendors are moving. Domo's approach is noteworthy: exposing interactive dashboard experiences through MCP rather than just returning text. Tableau, Power BI, and Looker remain absent, but the pressure is mounting.
 
-**4. Vertical data providers are adopting MCP.** Cotality's property intelligence MCP server signals a new wave: domain-specific data vendors using MCP as a distribution channel to reach AI agents. Expect financial data providers, healthcare data platforms, and other vertical data companies to follow. MCP becomes the API layer between AI and specialized datasets.
+**4. Multi-source integration is emerging.** CorpusIQ's 50+ connector MCP server represents a new category: universal data adapters that connect AI agents to dozens of operational systems through a single integration. Instead of deploying separate MCP servers for each SaaS tool, teams get unified access with enterprise-grade permissioning. As the number of available MCP servers grows, the "one server per tool" model gets unwieldy — aggregators like CorpusIQ solve this at the cost of depending on a third-party intermediary.
+
+**5. Vertical data providers are adopting MCP.** Cotality's property intelligence MCP server signals a new wave: domain-specific data vendors using MCP as a distribution channel to reach AI agents. Expect financial data providers, healthcare data platforms, and other vertical data companies to follow. MCP becomes the API layer between AI and specialized datasets.
 
 ## How we reviewed these
 
