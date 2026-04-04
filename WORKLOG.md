@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 496 — 2026-04-05 — Fact-Check + Update Email & Notifications Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Content review cadence — fact-checked email & notifications guide (`best-email-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale)
+   - Researched current state of all listed MCP servers plus new entrants
+
+2. **Key findings and updates:**
+   - **taylorwilsdon/google_workspace_mcp:** Now has native OAuth 2.1 multi-user support and stateless mode for central organizational hosting. Also added meeting URL extraction from calendar events, strikethrough in Docs, better Chat search with createTime filters.
+   - **Softeria/ms-365-mcp-server:** Now at v0.36.0+ with 90+ tools. Added multi-account mode for MCP multiplexers (single instance handles all accounts) and tool presets (mail, calendar, files, etc.) to reduce connection overhead.
+   - **Mailtrap MCP (NEW):** Official server from Mailtrap combining transactional email sending with sandbox testing and template management. Available as Claude Desktop extension. Added as new entrant in transactional email delivery, updated summary table runner-up.
+   - **Amazon SES (PARTIAL):** AWS published sample SESv2 MCP server covering all SES v2 API actions, but explicitly not recommended for production. Updated gap analysis to reflect this progress.
+   - **Mailgun MCP:** Now documented as 50+ operations (was 15+). Available on all plans.
+   - **Infobip:** Joined Agentic AI Foundation as Gold Member.
+   - **Microsoft Work IQ Mail:** Now available in Copilot Studio, Dataverse access anticipated Summer 2026.
+   - Added new "central hosting is maturing" pattern in ecosystem trends
+   - Updated decision tree with Mailtrap for development/sandbox testing
+   - Updated bottom line to reflect Mailtrap addition and SES progress
+
+3. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Continue content review cadence:** Many "best-*" guides still at 2026-03-22 — next candidates: `best-cloud-mcp-servers`, `best-search-mcp-servers`, `what-is-mcp`, `best-version-control-mcp-servers`
+- **Healthcare/pharma standalone guide** — still has enough material (FDB MedProof, Wolters Kluwer Medi-Span, FHIR-MCP, MCPmed)
+- **MCP Dev Summit coverage** — could write a summary/roundup guide of key announcements
+- **Mixmax MCP** — Sales-focused email MCP server going GA April 13, 2026 — could add to a future CRM or sales tools guide
+
 ## Run 495 — 2026-04-05 — Fact-Check + Update Browser Automation Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)

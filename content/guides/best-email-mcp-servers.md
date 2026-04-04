@@ -5,7 +5,7 @@ description: "Personal email, enterprise email, transactional delivery, SMS, and
 og_description: "50+ email and notification MCP servers reviewed across Gmail, Outlook, transactional delivery, SMS/multi-channel, and push notifications. taylorwilsdon, Resend, Infobip, and more — with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to email and notification MCP servers in 2026. We've reviewed 50+ servers across personal email, enterprise email, transactional delivery, SMS/multi-channel, and push notifications. Every recommendation links to a full review."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-05
 ---
 
 Email is the most sensitive data most people have. Bank confirmations, medical records, password resets, private conversations — it's all in your inbox. Notifications are the outbound side: transactional emails, SMS alerts, push notifications, WhatsApp messages. Giving an AI agent access to either side deserves serious thought.
@@ -18,7 +18,7 @@ We've published [3 in-depth reviews](/reviews/) covering 50+ email and notificat
 |----------|----------|--------|-----------|
 | Personal email (Gmail) | [taylorwilsdon/google_workspace_mcp](/reviews/gmail-mcp-servers/) | 3.5/5 | [Google Workspace MCP](/reviews/gmail-mcp-servers/) (official, hosted) |
 | Enterprise email (Outlook) | [Softeria/ms-365-mcp-server](/reviews/outlook-mcp-servers/) | 3.5/5 | [Microsoft Work IQ Mail](/reviews/outlook-mcp-servers/) (official, Copilot license required) |
-| Transactional email delivery | [Resend MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Mailgun MCP](/reviews/notification-services-mcp-servers/) (official, Apache 2.0) |
+| Transactional email delivery | [Resend MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Mailtrap MCP](https://github.com/mailtrap/mailtrap-mcp) (official, sandbox testing built-in) |
 | SMS & multi-channel | [Infobip MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Twilio MCP](/reviews/notification-services-mcp-servers/) (official, OpenAPI-generated) |
 | Push notifications | [ntfy MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Pushover MCP](/reviews/notification-services-mcp-servers/) (30 stars, one-time $5) |
 | Multi-provider email | [codefuturist/email-mcp](https://github.com/codefuturist/email-mcp) | — | [marlinjai/email-mcp](https://github.com/marlinjai/email-mcp) (24 tools, unified) |
@@ -44,7 +44,7 @@ Gmail has the most mature MCP ecosystem of any email provider. Multiple solid op
 
 [google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) — 1,700+ stars, Python, MIT. Covers 12 Google services including Gmail with 10+ email tools: search, read, send, reply, draft, label management. Three-tier permission system (Core/Extended/Full) lets you start read-only and expand.
 
-**Why it wins:** Largest community, most active development, tiered permissions are a real security advantage. If you're already using Google Workspace, this is the default.
+**Why it wins:** Largest community, most active development, tiered permissions are a real security advantage. Recent updates added **native OAuth 2.1 with multi-user support** and a **stateless mode** — making it the only Workspace MCP server you can host centrally for an entire organization. Other recent improvements include meeting URL extraction from calendar events, strikethrough support in Docs, and better Google Chat search with `createTime` filters. If you're already using Google Workspace, this is the default.
 
 **The catch:** Installing this server grants OAuth access to 12 Google services. If you only need Gmail, you're over-permissioning. The `gmail.modify` scope can delete emails, not just read them.
 
@@ -68,15 +68,15 @@ Outlook MCP servers deal with corporate inboxes behind Entra ID, compliance poli
 
 ### The winner: Softeria/ms-365-mcp-server
 
-[ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) — 530 stars, TypeScript, MIT, 243 commits. Covers 8+ Microsoft 365 services from a single install: email, calendar, OneDrive, Excel, OneNote, tasks, contacts, user profile. With `--org-mode`: Teams, SharePoint, online meetings, shared mailboxes.
+[ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) — 530+ stars, TypeScript, MIT. Now at **v0.36.0+** with **90+ tools** covering 8+ Microsoft 365 services from a single install: email, calendar, OneDrive, Excel, OneNote, tasks, contacts, user profile. With `--org-mode`: Teams, SharePoint, online meetings, shared mailboxes.
 
-**Why it wins:** No Copilot license required. Broadest M365 coverage from a single server. Three auth modes (Device Code, OAuth, Bring Your Own Token). TOON output format saves 30-60% on tokens. Read-only mode and tool filtering for safety.
+**Why it wins:** No Copilot license required. Broadest M365 coverage from a single server. Three auth modes (Device Code, OAuth, Bring Your Own Token). TOON output format saves 30-60% on tokens. Read-only mode and tool filtering for safety. Recent additions include **multi-account mode** for MCP multiplexers (Legate, Governor) — a single instance handles all accounts, reducing tool duplication from N×110 to 110. **Tool presets** (mail, calendar, files, etc.) reduce initial connection overhead when you don't need all 90+ tools.
 
-**The catch:** Loading 8+ services means tool sprawl if you only need email. The `--tools` flag mitigates this, but the default is everything. 13 open issues suggest active but imperfect development.
+**The catch:** Loading 8+ services means tool sprawl if you only need email. Tool presets help, but the default is everything.
 
 ### Strong alternatives
 
-**Microsoft Work IQ Mail** — Official, hosted, 10 tools with KQL search. Microsoft runs it — no local install, no third-party code. ETag concurrency control for enterprise-grade safety. **But:** requires a Microsoft 365 Copilot license (~$30/user/month) and is still in preview. No folder management, no attachment handling.
+**Microsoft Work IQ Mail** — Official, hosted, 10 tools with KQL search. Microsoft runs it — no local install, no third-party code. ETag concurrency control for enterprise-grade safety. Now available in Copilot Studio (search "mail" in MCP connectors). Microsoft anticipates broad Dataverse access via Work IQ across all M365 Copilot experiences by Summer 2026. **But:** still in preview, still requires a Microsoft 365 Copilot license (~$30/user/month). No folder management, no attachment handling.
 
 **[ryaker/outlook-mcp](https://github.com/ryaker/outlook-mcp)** — 278 stars. Unique Power Automate integration alongside email and calendar. An agent that reads emails and triggers automation flows opens workflow possibilities no other server matches. Complex setup (5 steps) and no license specified.
 
@@ -134,7 +134,9 @@ These servers send email programmatically — receipts, password resets, marketi
 
 ### Strong alternatives
 
-**[Mailgun MCP](https://github.com/mailgun/mailgun-mcp-server)** — 48 stars, official, Apache 2.0. 15+ tools covering the full Mailgun API: sending, domain administration, webhook configuration, mailing list management, analytics, bounce classification, suppression lists, and IP pools. Multi-region support (US/EU).
+**[Mailgun MCP](https://github.com/mailgun/mailgun-mcp-server)** — official, Apache 2.0. Now documented as **50+ operations** covering sending, domain administration, webhook configuration, mailing list management, analytics, bounce classification, suppression lists, IP pools, routes, templates, and stored message retrieval. Multi-region support (US/EU). Available on all Mailgun plans.
+
+**[Mailtrap MCP](https://github.com/mailtrap/mailtrap-mcp)** — official. A newer entrant combining **transactional email sending** with **sandbox testing** — send test emails, retrieve sandbox messages, and manage templates all from one server. Available as a Claude Desktop extension (search "Mailtrap" in Connectors). Especially useful during development when you want to test email workflows without hitting production inboxes.
 
 **[Postmark MCP](https://github.com/ActiveCampaign/postmark-mcp)** — 37 stars, official, MIT. Intentionally minimal: 4 tools (send, send with template, list templates, delivery stats). If you just need transactional email sending without the overhead, Postmark is the simplest option.
 
@@ -152,7 +154,7 @@ These servers send email programmatically — receipts, password resets, marketi
 
 [infobip/mcp](https://github.com/infobip/mcp) — **14 separate remote MCP servers**, cloud-hosted at `mcp.infobip.com`. Covers SMS, WhatsApp, Viber, RCS, Voice, Mobile App Messaging, WhatsApp Flows, 2FA, People (profiles/audiences), Account Management, and more. OAuth 2.1 support with scope discovery.
 
-**Why it wins:** No other vendor covers this many channels through MCP. The architecture — separate servers per channel, all cloud-hosted — is arguably the right design since SMS and WhatsApp have completely different tool shapes. The underlying [infobip-openapi-mcp](https://github.com/infobip/infobip-openapi-mcp) framework (Java, Spring Boot) lets any team with OpenAPI specs build their own MCP servers.
+**Why it wins:** No other vendor covers this many channels through MCP. The architecture — separate servers per channel, all cloud-hosted — is arguably the right design since SMS and WhatsApp have completely different tool shapes. Infobip joined the **Agentic AI Foundation as a Gold Member**, signaling long-term commitment to MCP as a standard. The underlying [infobip-openapi-mcp](https://github.com/infobip/infobip-openapi-mcp) framework (Java, Spring Boot) lets any team with OpenAPI specs build their own MCP servers.
 
 ### Strong alternatives
 
@@ -180,9 +182,11 @@ Both are simple — typically a single `send_notification` tool. That's appropri
 
 **Read-only defaults are becoming standard.** deyikong's SendGrid server defaults to `READ_ONLY=true`. Softeria supports `--read-only`. taylorwilsdon's tier system starts at read-only Core. For email, this is wise — an agent accidentally sending 10,000 messages is a real risk.
 
-**Hosted MCP is the trend for delivery services.** Infobip (14 cloud-hosted servers), Courier (`mcp.courier.com`), Novu (remote hosted), Google Workspace MCP, Microsoft Work IQ — all zero-install. Notification services are inherently cloud-based, so local MCP servers are extra overhead.
+**Hosted MCP is the trend for delivery services.** Infobip (14 cloud-hosted servers), Courier (`mcp.courier.com`), Novu (remote hosted), Google Workspace MCP, Microsoft Work IQ — all zero-install. Mailtrap is available as a Claude Desktop extension. Notification services are inherently cloud-based, so local MCP servers are extra overhead.
 
 **Multi-provider servers are emerging.** codefuturist (47 tools, IMAP/SMTP) and marlinjai (24 tools, hybrid APIs) offer single-server access to Gmail, Outlook, iCloud, and more. Early-stage but addressing real user pain — most people have email across multiple providers.
+
+**Central hosting is maturing.** taylorwilsdon's google_workspace_mcp now supports OAuth 2.1 multi-user with stateless mode, meaning organizations can host a single MCP server for all users. Softeria's multi-account mode achieves the same for Microsoft 365. This is a significant shift from the early "one server per user" model.
 
 **OAuth security remains the biggest challenge.** Every email MCP server needs OAuth credentials, and most store refresh tokens locally. Scope creep (requesting more permissions than needed), token theft (local file access), and credential management are unsolved problems across the category.
 
@@ -191,7 +195,7 @@ Both are simple — typically a single `send_notification` tool. That's appropri
 | What's missing | Impact |
 |----------------|--------|
 | Official SendGrid MCP server | Largest email platform by volume, community-only |
-| Amazon SES MCP server | AWS's email backbone, no MCP integration |
+| Amazon SES MCP server | AWS published a [sample SESv2 MCP server](https://github.com/aws-samples/sample-for-amazon-ses-mcp) covering all public SES v2 API actions — but explicitly **not recommended for production**. Progress, but still no official production-ready server. |
 | Official Klaviyo MCP server | Email marketing leader, community-only |
 | Apple Mail/iCloud official MCP | No Apple-backed solution (IMAP workarounds exist) |
 | MCP reference server for email | modelcontextprotocol/servers has no email reference |
@@ -210,6 +214,8 @@ Both are simple — typically a single `send_notification` tool. That's appropri
 
 **I need to send transactional email** → [Resend MCP](/reviews/notification-services-mcp-servers/). Best developer experience, dual transport, 470 stars.
 
+**I need to test email workflows in development** → [Mailtrap MCP](https://github.com/mailtrap/mailtrap-mcp). Sandbox testing + production sending in one server. Available as a Claude Desktop extension.
+
 **I need SMS, WhatsApp, or multi-channel** → [Infobip MCP](/reviews/notification-services-mcp-servers/). 14 hosted servers, broadest channel coverage.
 
 **I have email across multiple providers** → [codefuturist/email-mcp](https://github.com/codefuturist/email-mcp). 47 tools, IMAP/SMTP, provider auto-detection.
@@ -218,7 +224,7 @@ Both are simple — typically a single `send_notification` tool. That's appropri
 
 ## The bottom line
 
-The email and notification MCP ecosystem is **mature for inbox access** (Gmail and Outlook both have strong options) and **surprisingly active for delivery** (Resend, Infobip, Mailgun, and Postmark all have official servers). The weak spots are at the edges: no SendGrid or Amazon SES official servers, multi-provider email is early-stage, and the fundamental security challenge of giving AI agents email access remains unsolved.
+The email and notification MCP ecosystem is **mature for inbox access** (Gmail and Outlook both have strong options) and **surprisingly active for delivery** (Resend, Mailtrap, Infobip, Mailgun, and Postmark all have official servers). Central hosting is maturing — taylorwilsdon's OAuth 2.1 multi-user mode and Softeria's multi-account mode signal a shift from "one server per user" to organization-wide deployments. The weak spots are at the edges: no SendGrid official server, Amazon SES is sample-only, multi-provider email is early-stage, and the fundamental security challenge of giving AI agents email access remains unsolved.
 
 Start read-only. Expand permissions deliberately. Prefer official servers where they exist. And remember: your email is the skeleton key to your digital life. Treat MCP access to it with the same care you'd give to handing someone your phone unlocked.
 
@@ -226,4 +232,4 @@ Start read-only. Expand permissions deliberately. Prefer official servers where 
 
 *This comparison guide synthesizes our reviews of [Gmail MCP Servers](/reviews/gmail-mcp-servers/), [Outlook MCP Servers](/reviews/outlook-mcp-servers/), and [Notification & Email Delivery MCP Servers](/reviews/notification-services-mcp-servers/), covering 50+ servers across 12+ platforms. ChatForest researches MCP servers by reading source code, analyzing GitHub repositories and issues, studying documentation, and examining community signals. We do not install or run the servers ourselves. See our [methodology](/about/#our-review-methodology) for details.*
 
-*This guide was published on 2026-03-22 using Claude Opus 4.6 (Anthropic).*
+*This guide was published on 2026-03-22 and last updated on 2026-04-05 using Claude Opus 4.6 (Anthropic).*

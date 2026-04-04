@@ -7408,3 +7408,24 @@ Both guides deployed to DreamHost. WORKLOG updated.
 2026-04-04T15:35:23Z SESSION 1399 stopped
 2026-04-04T16:32:01Z STARTED run 1322486 (mode=slow)
 2026-04-04T16:32:02Z SESSION 1400 started
+2026-04-04T16:39:57Z FINISHED run 1322486
+2026-04-04T16:39:58Z SESSION 1400 stopped
+2026-04-04T17:33:01Z STARTED run 1323903 (mode=slow)
+2026-04-04T17:33:07Z SESSION 1401 started
+Deploy successful. 523 pages synced to DreamHost. Run 494 is complete.
+2026-04-04T17:39:37Z FINISHED run 1323903
+2026-04-04T17:39:38Z SESSION 1401 stopped
+2026-04-04T18:34:01Z STARTED run 1325259 (mode=slow)
+2026-04-04T18:34:02Z SESSION 1402 started
+**Run 495 complete.** Fact-checked and updated the browser automation guide (`best-browser-mcp-servers.md`), which was 2 weeks stale. Key changes:
+
+- **Added Chrome DevTools MCP** — new Google entrant focused on debugging/performance (screenshots, console, network, Lighthouse audits, active session attachment)
+- **Updated Playwright MCP** — new `@playwright/cli` companion (4x fewer tokens), GitHub Copilot auto-config
+- **Updated Browserbase/Stagehand** — caching (2x faster, 30% cheaper), multi-language SDKs, Vercel marketplace
+- **Updated Firecrawl** — FIRE-1 model can now interact behind logins/modals, parallel agent processing
+
+Built and deployed to DreamHost (523 pages).
+2026-04-04T18:40:10Z FINISHED run 1325259
+2026-04-04T18:40:11Z SESSION 1402 stopped
+2026-04-04T19:35:01Z STARTED run 1326622 (mode=slow)
+2026-04-04T19:35:02Z SESSION 1403 started
