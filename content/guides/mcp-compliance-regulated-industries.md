@@ -9,7 +9,7 @@ last_refreshed: 2026-04-05
 
 AI agents that use MCP to read databases, call APIs, and take actions create a compliance challenge that traditional software didn't face: the agent decides what to do at runtime. A REST API call is predictable — it does what the code says. An MCP tool call depends on what the AI model decides, which means auditors can't just review source code to understand system behavior. They need audit trails, access controls, and data protection that account for this non-deterministic element.
 
-Regulated industries are moving forward anyway. First Data Bank's MedProof MCP went GA for healthcare medication workflows. Socotra built one for insurance policy management. FedMCP is adapting the protocol for government workloads. Compliance platform vendors — Vanta, Drata, Secureframe — have all shipped MCP servers. The pattern is clear: organizations want AI agents in regulated workflows, and the tooling is catching up.
+Regulated industries are moving forward anyway. First Data Bank's MedProof MCP went GA for healthcare medication workflows. Wolters Kluwer is providing Medi-Span drug data through an MCP server for select developers. Socotra built one for insurance policy management. FedMCP is adapting the protocol for government workloads. Compliance platform vendors — Vanta, Drata, Secureframe — have all shipped MCP servers. The pattern is clear: organizations want AI agents in regulated workflows, and the tooling is catching up.
 
 This guide covers what's actually available for running MCP in regulated environments, where the gaps are, and what patterns work. Our analysis draws on published documentation, vendor announcements, academic research, and industry guidance — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -36,6 +36,16 @@ FDB piloted an MCP server in October 2025 for clinical workflows, then launched 
 The key architectural decision remains: the MCP server stages actions for human review rather than executing them directly, maintaining the human-in-the-loop requirement that HIPAA-regulated workflows demand. FDB describes MCP as "the missing connective tissue that makes AI in healthcare safe, useful and scalable."
 
 Early adopter **Artera**, a patient communications platform serving over 100 million patients across major EHRs (athenahealth, eClinicalWorks, Epic, MEDITECH, Oracle Health/Cerner), is integrating MedProof MCP. This signals that healthcare AI vendors see MCP as the integration path for grounding agents in trusted clinical data rather than relying on LLM training data alone — virtually eliminating the risk of hallucinated drug interactions or dosages.
+
+### Wolters Kluwer — Medi-Span Expert AI MCP Server
+
+[Wolters Kluwer Health](https://www.wolterskluwer.com/en/solutions/medi-span) unveiled **Medi-Span Expert AI** in February 2026, with an MCP server now available to select innovation partners and early adopters. Medi-Span is one of the most widely used drug data sources in US healthcare — used for drug interaction screening, dosing validation, and formulary management across hospitals, pharmacies, and health IT vendors.
+
+The MCP server connects third-party AI applications and agents to AI-ready Medi-Span content, providing validated drug data, dosing guardrails, and advanced decision logic. Intended use cases span the healthcare continuum: clinical decision support, medication order validation/verification, medication lookup and reconciliation, adverse event monitoring, formulary and benefit management, pricing and contracting, and inventory/supply chain optimization.
+
+**How it differs from FDB MedProof:** FDB focuses on agent-driven clinical workflows (prescription staging, ambient listening, pharmacy order verification) with a human-in-the-loop architecture. Medi-Span Expert AI emphasizes data-layer integration — giving agents access to deterministic drug content so medication intelligence is grounded in validated data rather than LLM training data. Both solve the same fundamental problem (hallucinated drug information is dangerous) but from different angles: FDB wraps the workflow, Wolters Kluwer provides the reference data.
+
+The select-access model reflects the cautious approach appropriate for healthcare: Wolters Kluwer is onboarding developers building medication management, clinical decision support, pharmacy automation, and patient engagement use cases before broader availability.
 
 ### FHIR-MCP
 
