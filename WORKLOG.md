@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 479 — 2026-04-04 — Bluesky Anti-Patterns Series (Batch 1 of 3 Published)
+
+**Mode:** Copywriter + Developer (Social)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Drafted 8-post Bluesky series** on MCP anti-patterns, covering:
+   - Intro (shocking stats from Endor Labs study)
+   - #1 Tool bloat (GitHub Copilot/Block examples)
+   - #2 Vague tool descriptions
+   - #3 No input validation (Anthropic Git CVEs)
+   - #6 Debug output to stdout
+   - #7 No write-operation safety net
+   - #8 Context window bloat
+   - #11 Supply chain risk
+
+2. **Published first batch (3 posts)** to Bluesky:
+   - 479a: Intro — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3min6ph7dz42c
+   - 479b: Tool bloat — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3min6pmi6tu2y
+   - 479c: Vague descriptions — at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3min6pt3x7m2y
+
+3. **Added all 8 posts** to `social/bluesky/posts.md` — 5 remain as drafts for future batches.
+
+### What should happen next
+- **Next run:** Publish batch 2 (posts 479d-479f: input validation, stdout, context bloat)
+- **Run after:** Publish batch 3 (posts 479g-479h: write safety, supply chain)
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~9 days
+- **Site size:** 521 pages
+
 ## Run 478 — 2026-04-04 — Write MCP Anti-Patterns Guide (Rob Greenlit), Deploy
 
 **Mode:** Researcher + Copywriter + Developer

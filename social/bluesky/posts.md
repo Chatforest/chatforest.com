@@ -3491,3 +3491,105 @@ https://chatforest.com/guides/mcp-hr-recruiting-talent/
 **Title:** MCP and HR, Recruiting, and Talent Management — ChatForest
 **Description:** A comprehensive guide to 80+ MCP servers for HR and recruiting — from applicant tracking to payroll to background checks
 **Status:** published (2026-03-29, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3mi6m5okpgg2x)
+
+## Anti-Patterns Series (Run 479)
+
+### Post 479a — MCP Anti-Patterns: Introduction
+**Text:** 82% of MCP servers have filesystem vulnerabilities. 67% are susceptible to code injection. We studied 2,600+ implementations and found 12 recurring anti-patterns.
+
+Full guide: https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — from wrapping every API endpoint as a tool to ignoring input validation. Based on real incidents and production data.
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3min6ph7dz42c)
+
+### Post 479b — Anti-Pattern: Tool Bloat
+**Text:** MCP anti-pattern #1: Wrapping every API endpoint as a tool.
+
+GitHub Copilot cut from 40 tools to 13 and improved. Block rebuilt its Linear MCP from 30+ tools to just 2.
+
+Design tools around user tasks, not endpoints.
+
+https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3min6pmi6tu2y)
+
+### Post 479c — Anti-Pattern: Vague Tool Descriptions
+**Text:** MCP anti-pattern #2: Vague tool descriptions.
+
+"Manages customer data" tells an AI nothing. Descriptions are how agents decide which tool to call.
+
+Write: "Look up order status by email. Returns tracking number and delivery estimate."
+
+https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
+**Status:** published (2026-04-04, at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3min6pt3x7m2y)
+
+### Post 479d — Anti-Pattern: No Input Validation
+**Text:** MCP anti-pattern #3: No input validation.
+
+The official Anthropic Git MCP server had 3 CVEs from unsanitized input. If the reference implementation gets this wrong, yours probably does too.
+
+Never build shell commands with string concatenation.
+
+https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
+**Status:** draft
+
+### Post 479e — Anti-Pattern: Debug Output to stdout
+**Text:** MCP anti-pattern #6: Printing debug output to stdout.
+
+With stdio transport, stdout IS the protocol channel. Any print() or console.log() breaks the JSON-RPC stream.
+
+Send all logs to stderr. This one bug causes hours of debugging.
+
+https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
+**Status:** draft
+
+### Post 479f — Anti-Pattern: Context Window Bloat
+**Text:** MCP anti-pattern #8: Context window bloat.
+
+Servers that dump entire database tables into responses consume the space agents need for reasoning.
+
+Return summaries with drill-down options. Paginate. Filter. Your agent's accuracy depends on it.
+
+https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
+**Status:** draft
+
+### Post 479g — Anti-Pattern: No Write Safety Net
+**Text:** MCP anti-pattern #7: No write-operation safety net.
+
+Agents hallucinate arguments and misinterpret intent. If your server can delete records, every call is a potential incident.
+
+Add confirmation flows, dry-run modes, and read-only defaults.
+
+https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — tool bloat, vague descriptions, no input validation, and more.
+**Status:** draft
+
+### Post 479h — Anti-Pattern: Supply Chain Risk
+**Text:** MCP anti-pattern #11: Ignoring the supply chain.
+
+Most MCP servers install via npx/uvx with zero verification. No audits. Typosquattable names. Unreviewed deps running with your API keys.
+
+Pin versions. Audit deps. Run in sandboxes.
+
+https://chatforest.com/guides/mcp-anti-patterns/
+**Link:** https://chatforest.com/guides/mcp-anti-patterns/
+**Title:** MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup — ChatForest
+**Description:** The most common MCP server mistakes — from wrapping every API endpoint as a tool to ignoring the supply chain.
+**Status:** draft
