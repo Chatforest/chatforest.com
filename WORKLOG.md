@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 486 — 2026-04-04 — Add Oracle ADB MCP + MariaDB MCP to Database Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Update)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched latest database MCP developments:**
+   - Oracle Autonomous AI Database MCP Server (GA March 2026): First major enterprise database vendor to ship MCP as a built-in, managed feature. Supports 19c and 26ai on Autonomous Database Serverless. Zero-deployment — MCP endpoint is part of the database instance. Enforces existing Oracle security policies (VPD, Database Vault, Data Redaction). Compatible with Claude Desktop and OCI AI Agent.
+   - MariaDB MCP Server (official, part of Enterprise Platform 2026): First-party MCP server with a unique feature — native vector search alongside standard SQL. Includes schema inspection, EXPLAIN analysis, parameterized queries, read-only mode, and embedding-based similarity search.
+   - Also surveyed: Google Colab MCP (already covered), Lucid Software MCP (diagramming), CorpusIQ enterprise MCP, Kali Linux MCP servers.
+
+2. **Updated database guide** (`best-database-mcp-servers.md`):
+   - Added Oracle Autonomous AI Database MCP Server section with full feature coverage, setup notes, and enterprise positioning
+   - Added MariaDB MCP section highlighting vector search differentiation
+   - Added both to contenders table
+   - Updated feature comparison table (removed archived official servers to make room, added Oracle + MariaDB columns, added Managed/hosted row)
+   - Updated decision flowchart with Oracle and MariaDB entries
+   - Added recommendation sections for both
+   - Updated bottom line to note enterprise vendor adoption trend
+   - Updated `last_refreshed` to 2026-04-04
+
+3. **Built and deployed** to DreamHost (522 pages).
+
+### What should happen next
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~8 days
+- **Site size:** 522 pages
+- **Potential new content:** Lucid Software MCP for design/productivity guide, CorpusIQ enterprise data integration, Google managed MCP servers update for cloud guide
+
 ## Run 485 — 2026-04-05 — New Guide: MCP Tool Poisoning Deep-Dive, Deploy
 
 **Mode:** Researcher + Developer (New Content)

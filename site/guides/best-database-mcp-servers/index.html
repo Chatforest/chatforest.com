@@ -57,7 +57,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 14, 2026 · Updated Mar 22, 2026</span>
+        <span>Published Mar 14, 2026 · Updated Apr 4, 2026</span>
       </div>
 
       <h1 class="article-title">Best Database MCP Servers in 2026</h1>
@@ -94,6 +94,18 @@
 <td>Neon Postgres</td>
 <td>4/5</td>
 <td>Cloud Postgres with AI workflows</td>
+</tr>
+<tr>
+<td>Oracle Autonomous AI Database MCP</td>
+<td>Oracle (19c, 26ai)</td>
+<td>—</td>
+<td>Enterprise Oracle with managed MCP</td>
+</tr>
+<tr>
+<td>MariaDB MCP</td>
+<td>MariaDB</td>
+<td>—</td>
+<td>MariaDB + vector search</td>
 </tr>
 <tr>
 <td><a href="/reviews/sqlite-mcp-server/">Official SQLite MCP</a></td>
@@ -285,6 +297,49 @@
 <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;local-sqlite&#34;</span>
 <span style="color:#a6e22e">dsn</span> = <span style="color:#e6db74">&#34;sqlite:///path/to/local.db&#34;</span>
 </code></pre></div><p><strong>Why it wins:</strong> If your agent needs to touch more than one database — cross-reference production and staging, migrate data between MySQL and Postgres, query a local SQLite cache alongside a remote Postgres instance — DBHub handles all of it without running five separate MCP servers.</p>
+<h3 id="for-enterprise-oracle-oracle-autonomous-ai-database-mcp">For Enterprise Oracle: Oracle Autonomous AI Database MCP</h3>
+<p><strong><a href="https://www.oracle.com/autonomous-database/mcp-server/">Oracle Autonomous AI Database MCP Server</a></strong> is the first enterprise database vendor to ship MCP as a built-in, managed feature of its cloud database. Announced March 2026, it supports Oracle Database 19c and 26ai on Autonomous Database Serverless — no separate MCP infrastructure to deploy or maintain.</p>
+<p><strong>What it offers:</strong></p>
+<ul>
+<li>Schema discovery — agents discover permitted schemas and objects through MCP endpoints</li>
+<li>SQL execution — run queries enforced by Oracle&rsquo;s existing database security policies (VPD, Database Vault, Data Redaction)</li>
+<li>Select AI Agent integration — define custom tools that the MCP server exposes to AI agents and clients</li>
+<li>Multi-tenant architecture — each database instance runs its own MCP endpoint</li>
+<li>Enterprise auditing — all MCP interactions are logged through Oracle&rsquo;s unified audit trail</li>
+<li>Compatible with Claude Desktop, OCI AI Agent, and other MCP clients</li>
+</ul>
+<p><strong>Why it matters:</strong> This is the first time a major enterprise database vendor has embedded MCP directly into the database engine. There&rsquo;s no separate server to deploy, no Docker container to manage, no npm package to keep updated. The MCP endpoint is part of the database instance itself. Oracle&rsquo;s security policies apply automatically — if a user can&rsquo;t see a column through SQL, they can&rsquo;t see it through MCP either.</p>
+<p><strong>The catch:</strong> Oracle-only. This requires Oracle Autonomous Database Serverless on OCI — it doesn&rsquo;t work with on-premises Oracle, Oracle on AWS/Azure RDS, or any other database. Oracle licensing costs are substantially higher than alternatives. Documentation is still early (GA announced March 2026).</p>
+<p><strong>Best for:</strong> Organizations already running Oracle Autonomous Database that want AI agent access governed by their existing security policies. The zero-deployment model is genuinely attractive for enterprises where spinning up additional infrastructure requires procurement cycles.</p>
+<h3 id="for-mariadb-mariadb-mcp-official">For MariaDB: MariaDB MCP (Official)</h3>
+<p><strong><a href="https://github.com/MariaDB/mcp">MariaDB MCP</a></strong> is MariaDB&rsquo;s official MCP server, shipped as part of the MariaDB Enterprise Platform 2026 release. It covers standard SQL operations and — unusually for a relational database MCP server — native vector search.</p>
+<p><strong>What it offers:</strong></p>
+<ul>
+<li>Database and table discovery with metadata</li>
+<li>Schema inspection (detailed column info, indexes, constraints)</li>
+<li>SQL query execution with parameterized queries</li>
+<li>EXPLAIN plan analysis for performance tuning</li>
+<li>Vector store management — create vector tables, batch insert embeddings, semantic similarity search</li>
+<li>Built-in security: SQL injection prevention, read-only mode, connection pooling, query timeouts, result size limits</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+    <span style="color:#f92672">&#34;mariadb&#34;</span>: {
+      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;npx&#34;</span>,
+      <span style="color:#f92672">&#34;args&#34;</span>: [<span style="color:#e6db74">&#34;-y&#34;</span>, <span style="color:#e6db74">&#34;@mariadb/mcp&#34;</span>],
+      <span style="color:#f92672">&#34;env&#34;</span>: {
+        <span style="color:#f92672">&#34;MARIADB_HOST&#34;</span>: <span style="color:#e6db74">&#34;localhost&#34;</span>,
+        <span style="color:#f92672">&#34;MARIADB_USER&#34;</span>: <span style="color:#e6db74">&#34;your_user&#34;</span>,
+        <span style="color:#f92672">&#34;MARIADB_PASSWORD&#34;</span>: <span style="color:#e6db74">&#34;your_password&#34;</span>,
+        <span style="color:#f92672">&#34;MARIADB_DATABASE&#34;</span>: <span style="color:#e6db74">&#34;your_database&#34;</span>
+      }
+    }
+  }
+}
+</code></pre></div><p><strong>Why it wins:</strong> The vector search integration is the standout. No other official relational database MCP server combines SQL operations with native embedding storage and similarity search in one server. If you&rsquo;re building RAG applications on MariaDB, this eliminates the need for a separate vector database MCP server. The security defaults (parameterized queries, timeouts, size limits) are sensible out of the box.</p>
+<p><strong>The catch:</strong> MariaDB-specific — won&rsquo;t work with MySQL despite protocol compatibility (the vector features depend on MariaDB&rsquo;s vector implementation). The GitHub repo is relatively new with limited community adoption compared to alternatives like DBHub or Postgres MCP Pro. Enterprise Platform licensing is required for production vector features.</p>
+<p><strong>Best for:</strong> Teams running MariaDB who want a first-party MCP server, especially those building AI applications that need both SQL queries and vector similarity search in the same database.</p>
 <h3 id="for-sqlite-specifically-jparkerwebmcp-sqlite">For SQLite Specifically: jparkerweb/mcp-sqlite</h3>
 <p><strong><a href="https://github.com/jparkerweb/mcp-sqlite">jparkerweb/mcp-sqlite</a></strong> is the community replacement for the official SQLite server. TypeScript, actively maintained, with structured CRUD operations instead of raw SQL.</p>
 <p><strong>What it offers:</strong></p>
@@ -302,11 +357,11 @@
 <th>Feature</th>
 <th><a href="/reviews/mongodb-mcp-server/">MongoDB MCP</a></th>
 <th>Postgres MCP Pro</th>
+<th>Oracle ADB MCP</th>
+<th>MariaDB MCP</th>
 <th>DuckDB (MotherDuck)</th>
 <th>DBHub</th>
 <th>jparkerweb/mcp-sqlite</th>
-<th>Official SQLite</th>
-<th>Official Postgres</th>
 </tr>
 </thead>
 <tbody>
@@ -314,21 +369,21 @@
 <td>Actively maintained</td>
 <td>Yes (1-2 week releases)</td>
 <td>Yes</td>
+<td>Yes (GA March 2026)</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>No (archived)</td>
-<td>No (archived)</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>Read-only mode</td>
 <td>Yes (opt-in)</td>
 <td>Yes (works)</td>
+<td>Yes (policy-based)</td>
+<td>Yes</td>
 <td>Yes (default)</td>
 <td>Yes</td>
 <td>N/A</td>
-<td>No</td>
-<td>Yes (broken)</td>
 </tr>
 <tr>
 <td>Schema inspection</td>
@@ -345,17 +400,17 @@
 <td>MongoDB queries</td>
 <td>SQL</td>
 <td>SQL</td>
+<td>SQL</td>
+<td>SQL</td>
+<td>SQL</td>
 <td>Structured CRUD</td>
-<td>Structured CRUD</td>
-<td>Raw SQL</td>
-<td>Raw SQL</td>
 </tr>
 <tr>
 <td>Performance analysis</td>
 <td>Performance Advisor, explain</td>
 <td>EXPLAIN, index tuning</td>
 <td>No</td>
-<td>No</td>
+<td>EXPLAIN</td>
 <td>No</td>
 <td>No</td>
 <td>No</td>
@@ -374,9 +429,9 @@
 <td>Cloud management</td>
 <td>Atlas (full)</td>
 <td>No</td>
+<td>OCI (built-in)</td>
+<td>No</td>
 <td>MotherDuck</td>
-<td>No</td>
-<td>No</td>
 <td>No</td>
 <td>No</td>
 </tr>
@@ -385,9 +440,9 @@
 <td>No (MongoDB only)</td>
 <td>No</td>
 <td>No</td>
+<td>No</td>
+<td>No</td>
 <td>Yes</td>
-<td>No</td>
-<td>No</td>
 <td>No</td>
 </tr>
 <tr>
@@ -395,7 +450,7 @@
 <td>Yes (with embeddings)</td>
 <td>No</td>
 <td>No</td>
-<td>No</td>
+<td>Yes (native)</td>
 <td>No</td>
 <td>No</td>
 <td>No</td>
@@ -404,31 +459,31 @@
 <td>Safety guardrails</td>
 <td>Read-only mode, maxTimeMS</td>
 <td>Yes</td>
+<td>Database policies, audit</td>
+<td>Parameterized queries, timeouts</td>
 <td>Row/char limits</td>
 <td>Yes</td>
 <td>Input validation</td>
-<td>None</td>
-<td>Broken</td>
 </tr>
 <tr>
-<td>Docker support</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
+<td>Managed/hosted</td>
+<td>No (local)</td>
+<td>No (local)</td>
+<td>Yes (built-in to ADB)</td>
+<td>No (local)</td>
+<td>No (local)</td>
+<td>No (local)</td>
+<td>No (local)</td>
 </tr>
 <tr>
 <td>Tool count</td>
 <td>40+</td>
 <td>~10</td>
+<td>Custom (Select AI Agent)</td>
+<td>~8</td>
 <td>~3</td>
 <td>2</td>
 <td>~5</td>
-<td>~6</td>
-<td>~3</td>
 </tr>
 </tbody>
 </table>
@@ -441,6 +496,10 @@
 <p>If your workflow spans databases — maybe you&rsquo;re comparing staging vs. production, or your data lives in both MySQL and Postgres — DBHub&rsquo;s single-server-multiple-connections approach saves you from managing five separate MCP configurations. The trade-off is fewer specialized features (no EXPLAIN, no health checks), but the convenience is real.</p>
 <h3 id="you-need-local-sqlite--jparkerwebmcp-sqlite">You need local SQLite → jparkerweb/mcp-sqlite</h3>
 <p>For quick local database work — prototyping, caching, small datasets — this is the SQLite MCP server to use. Input validation keeps agents from accidentally destroying data, and it&rsquo;s actively maintained.</p>
+<h3 id="you-use-oracle-autonomous-database--oracle-adb-mcp">You use Oracle Autonomous Database → Oracle ADB MCP</h3>
+<p>The zero-deployment model is the differentiator. MCP is built into the database instance — no servers to manage, no packages to update, and Oracle&rsquo;s security policies (VPD, Database Vault, Data Redaction) apply automatically to all MCP interactions. The trade-off is Oracle lock-in and licensing costs.</p>
+<h3 id="you-use-mariadb--mariadb-mcp">You use MariaDB → MariaDB MCP</h3>
+<p>The official first-party server with a unique feature: native vector search alongside standard SQL. If you&rsquo;re building RAG or similarity search on MariaDB, this consolidates what would otherwise require two separate MCP servers (one for SQL, one for vectors) into one.</p>
 <h3 id="youre-learning-mcp--official-sqlite-read-the-code-dont-run-it">You&rsquo;re learning MCP → Official SQLite (read the code, don&rsquo;t run it)</h3>
 <p>The official SQLite server is still worth reading as a learning resource. The insight memo pattern, the schema-first workflow, the clean Python code — it&rsquo;s a good example of MCP server architecture. Just don&rsquo;t use it for anything real.</p>
 <h2 id="decision-flowchart">Decision Flowchart</h2>
@@ -450,9 +509,11 @@
 <li><strong>PostgreSQL (Neon)</strong> → <a href="/reviews/neon-mcp-server/">Neon MCP</a></li>
 <li><strong>Supabase (full backend)</strong> → <a href="/reviews/supabase-mcp-server/">Supabase MCP</a></li>
 <li><strong>PostgreSQL (self-hosted/RDS/other)</strong> → Postgres MCP Pro</li>
+<li><strong>Oracle (Autonomous Database)</strong> → Oracle Autonomous AI Database MCP (managed, zero-deploy)</li>
+<li><strong>MariaDB</strong> → MariaDB MCP (official, with vector search)</li>
 <li><strong>SQLite</strong> → jparkerweb/mcp-sqlite</li>
 <li><strong>DuckDB</strong> → MotherDuck DuckDB MCP</li>
-<li><strong>MySQL / MariaDB / SQL Server</strong> → DBHub</li>
+<li><strong>MySQL / SQL Server</strong> → DBHub</li>
 <li><strong>Multiple databases</strong> → DBHub</li>
 </ul>
 <p><strong>What&rsquo;s your primary use case?</strong></p>
@@ -469,7 +530,7 @@
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>The official database MCP servers served their purpose as reference implementations — they showed what was possible. But they&rsquo;re archived, one has a security vulnerability, and the community has built significantly better alternatives.</p>
-<p>For most developers in 2026, the answer depends on your database. <strong>MongoDB MCP</strong> (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. <strong>Neon MCP</strong> (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. <strong>Supabase MCP</strong> (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. <strong>Postgres MCP Pro</strong> is the pick for self-hosted or other cloud PostgreSQL. <strong>DuckDB</strong> for analytics. <strong>DBHub</strong> for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.</p>
+<p>For most developers in 2026, the answer depends on your database. <strong>MongoDB MCP</strong> (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. <strong>Neon MCP</strong> (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. <strong>Supabase MCP</strong> (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. <strong>Postgres MCP Pro</strong> is the pick for self-hosted or other cloud PostgreSQL. <strong>Oracle Autonomous AI Database MCP</strong> is the enterprise play — managed MCP built into the database instance with zero deployment. <strong>MariaDB MCP</strong> is notable for combining SQL and vector search in one official server. <strong>DuckDB</strong> for analytics. <strong>DBHub</strong> for multi-database support. The ecosystem has matured past reference implementations, and enterprise vendors (Oracle, MariaDB) are now shipping first-party MCP as a standard database feature — a sign that MCP is becoming table stakes for database platforms.</p>
 <p>For the full details on the reviewed servers:</p>
 <ul>
 <li><a href="/reviews/mongodb-mcp-server/">MongoDB MCP Server Review</a> (4/5)</li>
@@ -492,6 +553,13 @@
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Guide</span> <span>2026-04-05 10:00:00</span></div>
+  <h3><a href="/guides/mcp-tool-poisoning-attacks/">MCP Tool Poisoning Attacks: How They Work and How to Defend Against Them</a></h3>
+  <p>How tool poisoning attacks exploit MCP servers to steal credentials and hijack AI agents — and what you can do about it.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Guide</span> <span>2026-04-04 20:00:00</span></div>
   <h3><a href="/guides/mcp-anti-patterns/">MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup</a></h3>
   <p>82% of MCP servers have filesystem vulnerabilities. Tool bloat tanks agent accuracy. These are the 12 anti-patterns we see most often — and how to fix each one.</p>
@@ -512,13 +580,6 @@
 </div>
 
   
-    <div class="article-card">
-  <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:45:00</span></div>
-  <h3><a href="/guides/mcp-hr-recruiting-technology/">MCP and HR/Recruiting Technology: How AI Agents Connect to Applicant Tracking Systems, HRIS Platforms, Payroll Systems, Talent Intelligence, Job Boards, Resume Parsing Tools, Interview Scheduling, Employee Onboarding, Workforce Analytics, and People Operations</a></h3>
-  <p>The AI in HR market is projected to reach $30.77 billion by 2034 at 15.94% CAGR, while AI in recruitment specifically is a $707 million market growing to $1.39 billion by 2035. Over 44% of HR executives already use AI for recruiting, and 73% of companies plan to invest in recruitment automation. This guide covers 90&#43; MCP servers across HR and recruiting technology — from applicant tracking systems and HRIS platforms to talent intelligence, job boards, resume parsing, interview scheduling, and workforce analytics — plus architecture patterns for building AI-powered HR workflows. The ecosystem features notable official participation from Manatal (first ATS with native MCP), Draup (talent intelligence tracking 850M&#43; professionals), Clockwork Recruiting, and Employment Hero, alongside strong community servers for BambooHR, Rippling, Greenhouse, and LinkedIn.</p>
-</div>
-
-  
 </aside>
 
 
@@ -528,7 +589,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-22T00:00:00+09:00","datePublished":"2026-03-14T01:24:23+09:00","description":"MongoDB vs PostgreSQL vs SQLite vs DuckDB — which database MCP server should you use? We compare official servers, community alternatives, and the new MongoDB MCP that changes the game.","headline":"Best Database MCP Servers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-database-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-database-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-04T00:00:00+09:00","datePublished":"2026-03-14T01:24:23+09:00","description":"MongoDB vs PostgreSQL vs SQLite vs DuckDB — which database MCP server should you use? We compare official servers, community alternatives, and the new MongoDB MCP that changes the game.","headline":"Best Database MCP Servers in 2026","mainEntityOfPage":"https://chatforest.com/guides/best-database-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-database-mcp-servers/"}
 </script>
 
 

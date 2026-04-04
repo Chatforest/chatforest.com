@@ -255,6 +255,10 @@ http://10.0.0.1/                           (internal network)
 <li><strong>Enforce authentication.</strong> Separate discovery privileges from invocation privileges. Don&rsquo;t let unauthenticated clients call tools.</li>
 <li><strong>Implement observability.</strong> Log tool invocations, monitor for anomalous patterns, and alert on unexpected server launches.</li>
 </ol>
+<h2 id="tool-poisoning-the-hidden-threat">Tool Poisoning: The Hidden Threat</h2>
+<p>Tool poisoning is a specialized form of prompt injection where malicious instructions hide inside MCP tool metadata — descriptions, parameter names, and even tool outputs. The AI model follows these instructions while the user sees nothing unusual. Researchers at Invariant Labs and CyberArk have demonstrated working attacks that exfiltrate SSH keys, redirect emails, and steal credentials from Claude Desktop and Cursor.</p>
+<p>This is serious enough that OWASP lists it as <a href="https://owasp.org/www-project-mcp-top-10/">MCP03</a> in their MCP Top 10, and Invariant Labs built <a href="https://github.com/invariantlabs-ai/mcp-scan">mcp-scan</a> — a dedicated scanner that detects tool poisoning, rug pulls, and cross-origin escalation.</p>
+<p><strong>We&rsquo;ve written a full deep-dive:</strong> <a href="/guides/mcp-tool-poisoning-attacks/">MCP Tool Poisoning Attacks: How They Work and How to Defend Against Them</a> covers five attack vectors (description poisoning, tool shadowing, full-schema poisoning, output poisoning, and rug pulls), the research behind them, and a practical defense checklist.</p>
 <h2 id="whats-next-for-mcp-security">What&rsquo;s Next for MCP Security</h2>
 <p>The protocol is maturing rapidly. The November 2025 spec revision mandated PKCE for all clients and introduced Client ID Metadata Documents for standardized registration. OWASP&rsquo;s MCP Top 10 gives the ecosystem a shared vocabulary for risks.</p>
 <p>But gaps remain. There&rsquo;s no standard for:</p>
@@ -281,6 +285,13 @@ http://10.0.0.1/                           (internal network)
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Guide</span> <span>2026-04-05 10:00:00</span></div>
+  <h3><a href="/guides/mcp-tool-poisoning-attacks/">MCP Tool Poisoning Attacks: How They Work and How to Defend Against Them</a></h3>
+  <p>How tool poisoning attacks exploit MCP servers to steal credentials and hijack AI agents — and what you can do about it.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Guide</span> <span>2026-04-04 20:00:00</span></div>
   <h3><a href="/guides/mcp-anti-patterns/">MCP Anti-Patterns: 12 Mistakes That Break Your AI Agent Setup</a></h3>
   <p>82% of MCP servers have filesystem vulnerabilities. Tool bloat tanks agent accuracy. These are the 12 anti-patterns we see most often — and how to fix each one.</p>
@@ -298,13 +309,6 @@ http://10.0.0.1/                           (internal network)
   <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:45:00</span></div>
   <h3><a href="/guides/mcp-customer-support-helpdesk/">MCP and Customer Support: How AI Agents Connect to Zendesk, Intercom, Freshdesk, ServiceNow, Salesforce, HubSpot, Help Scout, Plain, Pylon, Knowledge Bases, Ticketing Systems, Live Chat, and Helpdesk Automation</a></h3>
   <p>The AI customer support market reached $15.12 billion in 2026, projected to $47.82 billion by 2030 at 25.8% CAGR. Gartner predicts 80% of routine customer interactions will be fully handled by AI in 2026. This guide covers 60&#43; MCP servers across customer support — from Zendesk and Intercom ticketing to ServiceNow ITSM, Salesforce Service Cloud, Plain and Pylon modern support platforms, HubSpot Service Hub, Help Scout shared inboxes, Confluence and Notion knowledge bases, and live chat automation. Architecture patterns cover AI-augmented ticket triage, knowledge-powered response drafting, cross-platform escalation workflows, and proactive support intelligence pipelines.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:45:00</span></div>
-  <h3><a href="/guides/mcp-hr-recruiting-technology/">MCP and HR/Recruiting Technology: How AI Agents Connect to Applicant Tracking Systems, HRIS Platforms, Payroll Systems, Talent Intelligence, Job Boards, Resume Parsing Tools, Interview Scheduling, Employee Onboarding, Workforce Analytics, and People Operations</a></h3>
-  <p>The AI in HR market is projected to reach $30.77 billion by 2034 at 15.94% CAGR, while AI in recruitment specifically is a $707 million market growing to $1.39 billion by 2035. Over 44% of HR executives already use AI for recruiting, and 73% of companies plan to invest in recruitment automation. This guide covers 90&#43; MCP servers across HR and recruiting technology — from applicant tracking systems and HRIS platforms to talent intelligence, job boards, resume parsing, interview scheduling, and workforce analytics — plus architecture patterns for building AI-powered HR workflows. The ecosystem features notable official participation from Manatal (first ATS with native MCP), Draup (talent intelligence tracking 850M&#43; professionals), Clockwork Recruiting, and Employment Hero, alongside strong community servers for BambooHR, Rippling, Greenhouse, and LinkedIn.</p>
 </div>
 
   

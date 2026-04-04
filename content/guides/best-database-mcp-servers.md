@@ -5,7 +5,7 @@ description: "MongoDB vs PostgreSQL vs SQLite vs DuckDB — which database MCP s
 og_description: "MongoDB's 37-tool MCP server leads the pack. Plus Neon, Supabase, Postgres MCP Pro, DuckDB, DBHub, and more. A head-to-head comparison."
 content_type: "Comparison"
 card_description: "The official database MCP servers are archived. Here's what actually works: Postgres MCP Pro, DuckDB, DBHub, and the community alternatives worth using."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-04
 ---
 
 The official Anthropic database MCP servers — both SQLite and PostgreSQL — are archived. No security patches, no updates, and in Postgres's case, a [SQL injection vulnerability that bypasses read-only protection](/reviews/postgres-mcp-server/). If you're still using them, it's time to switch.
@@ -19,6 +19,8 @@ The good news: the community has built better alternatives. Here's how they comp
 | [MongoDB MCP](/reviews/mongodb-mcp-server/) | MongoDB | 4/5 | MongoDB + Atlas management |
 | [Supabase MCP](/reviews/supabase-mcp-server/) | Supabase (BaaS) | 4/5 | Full backend management |
 | [Neon MCP](/reviews/neon-mcp-server/) | Neon Postgres | 4/5 | Cloud Postgres with AI workflows |
+| Oracle Autonomous AI Database MCP | Oracle (19c, 26ai) | — | Enterprise Oracle with managed MCP |
+| MariaDB MCP | MariaDB | — | MariaDB + vector search |
 | [Official SQLite MCP](/reviews/sqlite-mcp-server/) | SQLite | 3/5 | Learning MCP only |
 | [Official Postgres MCP](/reviews/postgres-mcp-server/) | PostgreSQL | 2.5/5 | Nothing (vulnerable) |
 | Postgres MCP Pro (crystaldba) | PostgreSQL | — | Self-hosted production Postgres |
@@ -219,6 +221,60 @@ dsn = "sqlite:///path/to/local.db"
 
 **Why it wins:** If your agent needs to touch more than one database — cross-reference production and staging, migrate data between MySQL and Postgres, query a local SQLite cache alongside a remote Postgres instance — DBHub handles all of it without running five separate MCP servers.
 
+### For Enterprise Oracle: Oracle Autonomous AI Database MCP
+
+**[Oracle Autonomous AI Database MCP Server](https://www.oracle.com/autonomous-database/mcp-server/)** is the first enterprise database vendor to ship MCP as a built-in, managed feature of its cloud database. Announced March 2026, it supports Oracle Database 19c and 26ai on Autonomous Database Serverless — no separate MCP infrastructure to deploy or maintain.
+
+**What it offers:**
+- Schema discovery — agents discover permitted schemas and objects through MCP endpoints
+- SQL execution — run queries enforced by Oracle's existing database security policies (VPD, Database Vault, Data Redaction)
+- Select AI Agent integration — define custom tools that the MCP server exposes to AI agents and clients
+- Multi-tenant architecture — each database instance runs its own MCP endpoint
+- Enterprise auditing — all MCP interactions are logged through Oracle's unified audit trail
+- Compatible with Claude Desktop, OCI AI Agent, and other MCP clients
+
+**Why it matters:** This is the first time a major enterprise database vendor has embedded MCP directly into the database engine. There's no separate server to deploy, no Docker container to manage, no npm package to keep updated. The MCP endpoint is part of the database instance itself. Oracle's security policies apply automatically — if a user can't see a column through SQL, they can't see it through MCP either.
+
+**The catch:** Oracle-only. This requires Oracle Autonomous Database Serverless on OCI — it doesn't work with on-premises Oracle, Oracle on AWS/Azure RDS, or any other database. Oracle licensing costs are substantially higher than alternatives. Documentation is still early (GA announced March 2026).
+
+**Best for:** Organizations already running Oracle Autonomous Database that want AI agent access governed by their existing security policies. The zero-deployment model is genuinely attractive for enterprises where spinning up additional infrastructure requires procurement cycles.
+
+### For MariaDB: MariaDB MCP (Official)
+
+**[MariaDB MCP](https://github.com/MariaDB/mcp)** is MariaDB's official MCP server, shipped as part of the MariaDB Enterprise Platform 2026 release. It covers standard SQL operations and — unusually for a relational database MCP server — native vector search.
+
+**What it offers:**
+- Database and table discovery with metadata
+- Schema inspection (detailed column info, indexes, constraints)
+- SQL query execution with parameterized queries
+- EXPLAIN plan analysis for performance tuning
+- Vector store management — create vector tables, batch insert embeddings, semantic similarity search
+- Built-in security: SQL injection prevention, read-only mode, connection pooling, query timeouts, result size limits
+
+**Setup:**
+```json
+{
+  "mcpServers": {
+    "mariadb": {
+      "command": "npx",
+      "args": ["-y", "@mariadb/mcp"],
+      "env": {
+        "MARIADB_HOST": "localhost",
+        "MARIADB_USER": "your_user",
+        "MARIADB_PASSWORD": "your_password",
+        "MARIADB_DATABASE": "your_database"
+      }
+    }
+  }
+}
+```
+
+**Why it wins:** The vector search integration is the standout. No other official relational database MCP server combines SQL operations with native embedding storage and similarity search in one server. If you're building RAG applications on MariaDB, this eliminates the need for a separate vector database MCP server. The security defaults (parameterized queries, timeouts, size limits) are sensible out of the box.
+
+**The catch:** MariaDB-specific — won't work with MySQL despite protocol compatibility (the vector features depend on MariaDB's vector implementation). The GitHub repo is relatively new with limited community adoption compared to alternatives like DBHub or Postgres MCP Pro. Enterprise Platform licensing is required for production vector features.
+
+**Best for:** Teams running MariaDB who want a first-party MCP server, especially those building AI applications that need both SQL queries and vector similarity search in the same database.
+
 ### For SQLite Specifically: jparkerweb/mcp-sqlite
 
 **[jparkerweb/mcp-sqlite](https://github.com/jparkerweb/mcp-sqlite)** is the community replacement for the official SQLite server. TypeScript, actively maintained, with structured CRUD operations instead of raw SQL.
@@ -233,20 +289,20 @@ dsn = "sqlite:///path/to/local.db"
 
 ## Feature Comparison
 
-| Feature | [MongoDB MCP](/reviews/mongodb-mcp-server/) | Postgres MCP Pro | DuckDB (MotherDuck) | DBHub | jparkerweb/mcp-sqlite | Official SQLite | Official Postgres |
-|---------|------------|-----------------|---------------------|-------|----------------------|----------------|-------------------|
-| Actively maintained | Yes (1-2 week releases) | Yes | Yes | Yes | Yes | No (archived) | No (archived) |
-| Read-only mode | Yes (opt-in) | Yes (works) | Yes (default) | Yes | N/A | No | Yes (broken) |
+| Feature | [MongoDB MCP](/reviews/mongodb-mcp-server/) | Postgres MCP Pro | Oracle ADB MCP | MariaDB MCP | DuckDB (MotherDuck) | DBHub | jparkerweb/mcp-sqlite |
+|---------|------------|-----------------|----------------|-------------|---------------------|-------|----------------------|
+| Actively maintained | Yes (1-2 week releases) | Yes | Yes (GA March 2026) | Yes | Yes | Yes | Yes |
+| Read-only mode | Yes (opt-in) | Yes (works) | Yes (policy-based) | Yes | Yes (default) | Yes | N/A |
 | Schema inspection | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| Query execution | MongoDB queries | SQL | SQL | Structured CRUD | Structured CRUD | Raw SQL | Raw SQL |
-| Performance analysis | Performance Advisor, explain | EXPLAIN, index tuning | No | No | No | No | No |
+| Query execution | MongoDB queries | SQL | SQL | SQL | SQL | SQL | Structured CRUD |
+| Performance analysis | Performance Advisor, explain | EXPLAIN, index tuning | No | EXPLAIN | No | No | No |
 | Health checks | Atlas alerts | Yes | No | No | No | No | No |
-| Cloud management | Atlas (full) | No | MotherDuck | No | No | No | No |
-| Multi-database | No (MongoDB only) | No | No | Yes | No | No | No |
-| Vector search | Yes (with embeddings) | No | No | No | No | No | No |
-| Safety guardrails | Read-only mode, maxTimeMS | Yes | Row/char limits | Yes | Input validation | None | Broken |
-| Docker support | Yes | Yes | No | Yes | No | Yes | Yes |
-| Tool count | 40+ | ~10 | ~3 | 2 | ~5 | ~6 | ~3 |
+| Cloud management | Atlas (full) | No | OCI (built-in) | No | MotherDuck | No | No |
+| Multi-database | No (MongoDB only) | No | No | No | No | Yes | No |
+| Vector search | Yes (with embeddings) | No | No | Yes (native) | No | No | No |
+| Safety guardrails | Read-only mode, maxTimeMS | Yes | Database policies, audit | Parameterized queries, timeouts | Row/char limits | Yes | Input validation |
+| Managed/hosted | No (local) | No (local) | Yes (built-in to ADB) | No (local) | No (local) | No (local) | No (local) |
+| Tool count | 40+ | ~10 | Custom (Select AI Agent) | ~8 | ~3 | 2 | ~5 |
 
 ## Our Recommendations
 
@@ -266,6 +322,14 @@ If your workflow spans databases — maybe you're comparing staging vs. producti
 
 For quick local database work — prototyping, caching, small datasets — this is the SQLite MCP server to use. Input validation keeps agents from accidentally destroying data, and it's actively maintained.
 
+### You use Oracle Autonomous Database → Oracle ADB MCP
+
+The zero-deployment model is the differentiator. MCP is built into the database instance — no servers to manage, no packages to update, and Oracle's security policies (VPD, Database Vault, Data Redaction) apply automatically to all MCP interactions. The trade-off is Oracle lock-in and licensing costs.
+
+### You use MariaDB → MariaDB MCP
+
+The official first-party server with a unique feature: native vector search alongside standard SQL. If you're building RAG or similarity search on MariaDB, this consolidates what would otherwise require two separate MCP servers (one for SQL, one for vectors) into one.
+
 ### You're learning MCP → Official SQLite (read the code, don't run it)
 
 The official SQLite server is still worth reading as a learning resource. The insight memo pattern, the schema-first workflow, the clean Python code — it's a good example of MCP server architecture. Just don't use it for anything real.
@@ -278,9 +342,11 @@ The official SQLite server is still worth reading as a learning resource. The in
 - **PostgreSQL (Neon)** → [Neon MCP](/reviews/neon-mcp-server/)
 - **Supabase (full backend)** → [Supabase MCP](/reviews/supabase-mcp-server/)
 - **PostgreSQL (self-hosted/RDS/other)** → Postgres MCP Pro
+- **Oracle (Autonomous Database)** → Oracle Autonomous AI Database MCP (managed, zero-deploy)
+- **MariaDB** → MariaDB MCP (official, with vector search)
 - **SQLite** → jparkerweb/mcp-sqlite
 - **DuckDB** → MotherDuck DuckDB MCP
-- **MySQL / MariaDB / SQL Server** → DBHub
+- **MySQL / SQL Server** → DBHub
 - **Multiple databases** → DBHub
 
 **What's your primary use case?**
@@ -299,7 +365,7 @@ The official SQLite server is still worth reading as a learning resource. The in
 
 The official database MCP servers served their purpose as reference implementations — they showed what was possible. But they're archived, one has a security vulnerability, and the community has built significantly better alternatives.
 
-For most developers in 2026, the answer depends on your database. **MongoDB MCP** (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. **Neon MCP** (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. **Supabase MCP** (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured, and the replacements are genuinely better than what came before.
+For most developers in 2026, the answer depends on your database. **MongoDB MCP** (4/5) leads in raw capability with 40+ tools covering the full provisioning-to-optimization lifecycle — the most comprehensive database MCP server available. **Neon MCP** (4/5) is the best Postgres experience — branch-based migrations, OAuth, 20 tools. **Supabase MCP** (4/5) is the choice if you want one server for your entire backend — database, edge functions, storage, and debugging. **Postgres MCP Pro** is the pick for self-hosted or other cloud PostgreSQL. **Oracle Autonomous AI Database MCP** is the enterprise play — managed MCP built into the database instance with zero deployment. **MariaDB MCP** is notable for combining SQL and vector search in one official server. **DuckDB** for analytics. **DBHub** for multi-database support. The ecosystem has matured past reference implementations, and enterprise vendors (Oracle, MariaDB) are now shipping first-party MCP as a standard database feature — a sign that MCP is becoming table stakes for database platforms.
 
 For the full details on the reviewed servers:
 - [MongoDB MCP Server Review](/reviews/mongodb-mcp-server/) (4/5)
