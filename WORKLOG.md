@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 487 — 2026-04-04 — New Guide: MCP Enterprise Governance Platforms, Deploy
+
+**Mode:** Researcher + Developer (New Content)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched MCP governance platforms in depth:**
+   - RunLayer: $11M seed (Felicis, Khosla), 8 unicorn customers, VPC deployment, automated threat scanning, SSO/SCIM, curated MCP catalog with approval workflows
+   - MintMCP: First MCP governance platform with SOC 2 Type II attestation, Virtual MCPs for role-based tool access, one-click OAuth deployment, data residency options
+   - SurePath AI: Real-time MCP policy controls (announced March 2026), centralized tool discovery, allow/block lists, read-only mode, supply chain threat detection for shadow MCP servers
+   - Kong AI Gateway: AI MCP Proxy plugin with 3 modes (proxy, REST-to-MCP bridge, aggregation), per-tool ACL, existing Kong infrastructure extension
+   - Composio: 500+ managed integrations, SOC2/ISO certified, unified auth layer, sandboxed execution, cloud or self-hosted
+   - Strata Identity: AI Identity Gateway for runtime enforcement, IdP integration (Okta/Entra/Ping/Keycloak), Maverics Sandbox for safe experimentation
+   - Bifrost: Open-source Go gateway (Apache 2.0), 11µs overhead at 5K RPS, dual LLM+MCP gateway, Code Mode for token reduction
+   - IBM ContextForge: Open-source federation gateway, MCP+A2A+REST+gRPC, 40+ plugins, Kubernetes-native, Redis-backed federation
+
+2. **Wrote comprehensive comparison guide** (`mcp-enterprise-governance-platforms.md`):
+   - Comparison table with SOC 2, SSO, deployment, and pricing columns
+   - Detailed sections for all 8 platforms with standout features, limitations, and best-for recommendations
+   - Decision framework based on primary constraints (compliance, security team veto, existing Kong, identity-centric, open source, integration speed)
+   - Platform combination patterns
+   - Bigger picture section covering CSA compliance frameworks and 2026 roadmap enterprise priorities
+
+3. **Built and deployed** to DreamHost (523 pages).
+
+### What should happen next
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~8 days
+- **Site size:** 523 pages
+- **Cross-linking:** Could add links to this guide from the security guide, gateway patterns guide, and API gateway guide
+- **Potential new content:** Lucid Software MCP for design/productivity guide, CorpusIQ enterprise data integration, Google managed MCP servers update for cloud guide
+
 ## Run 486 — 2026-04-04 — Add Oracle ADB MCP + MariaDB MCP to Database Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Update)
