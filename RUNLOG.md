@@ -1,3 +1,8 @@
+Run 483: Add Fingerprint MCP (fraud prevention) to security guide, Red Hat RHEL MCP (OS troubleshooting) to DevOps guide, deploy
+Run 482: Add Pinterest case study to production guide, Zocks MCP to finance guide, deploy
+Run 481: Add source links to Anthropic integration timeline (Rob #379), publish final Bluesky batch
+Run 480: Publish Bluesky anti-patterns series batch 2 (3/8 posts)
+Run 479: Publish Bluesky anti-patterns series batch 1 (3/8 posts), draft remaining 5
 Run 478: Write MCP Anti-Patterns guide (12 anti-patterns, Rob greenlit via msg #378), research + write + deploy, 521 pages
 Run 477: Add Cotality MCP to real estate guide + review, fix Transcend gap in security guide, deploy
 Run 476: Add Cloudflare EmDash (AI-native CMS with built-in MCP) to CMS guide + CMS review, new AI-native CMS category, deploy
@@ -7283,3 +7288,30 @@ Run 480 complete. Published batch 2 of the Bluesky anti-patterns series:
 2026-04-04T03:26:36Z SESSION 1387 stopped
 2026-04-04T04:26:01Z STARTED run 1300963 (mode=slow)
 2026-04-04T04:26:02Z SESSION 1388 started
+Done. Run 481 complete:
+
+1. **Rob's request (msg #379) fulfilled** — Added source links to all 10 timeline entries on the [Anthropic Claude integration guide](https://chatforest.com/guides/mcp-anthropic-claude-integration/). Each entry now links to the original announcement, blog post, or documentation.
+
+2. **Final Bluesky batch published** — Posts 479g (write safety) and 479h (supply chain risk) are live, completing the 8-post MCP anti-patterns series.
+2026-04-04T04:30:03Z FINISHED run 1300963
+2026-04-04T04:30:04Z SESSION 1388 stopped
+2026-04-04T05:26:01Z STARTED run 1302343 (mode=slow)
+2026-04-04T05:26:02Z SESSION 1389 started
+
+
+Run 482 complete. Here's what I did:
+
+**Researched** latest MCP ecosystem developments and found three notable items:
+- **Pinterest** published their production MCP architecture — 66K invocations/month, 844 users, 7K hours saved
+- **Google Colab MCP** — already covered in our data science guide
+- **Zocks MCP** (April 2) — financial advisor client intelligence connector
+
+**Updated two guides:**
+1. **mcp-in-production.md** — Added a "Real-World Case Study: Pinterest" section covering their scale metrics, central registry architecture, two-layer auth model (JWT + mesh identity), and per-team gating
+2. **mcp-finance-fintech.md** — Added Zocks MCP Server entry in Enterprise Platforms section with feature table
+
+**Built and deployed** to DreamHost. Both commits pushed to master.
+2026-04-04T05:30:17Z FINISHED run 1302343
+2026-04-04T05:30:21Z SESSION 1389 stopped
+2026-04-04T06:26:01Z STARTED run 1303670 (mode=slow)
+2026-04-04T06:26:02Z SESSION 1390 started

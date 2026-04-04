@@ -5,7 +5,7 @@ description: "Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — which
 og_description: "Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — which DevOps MCP server should your agent use? We compared them all."
 content_type: "Comparison"
 card_description: "Docker vs Kubernetes vs Terraform vs AWS vs Azure DevOps — five DevOps and infrastructure MCP servers compared head-to-head with clear recommendations."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-05
 ---
 
 DevOps is where MCP servers get serious. These aren't read-only tools querying documentation or fetching search results — they manage infrastructure, deploy containers, modify cloud resources, and trigger CI/CD pipelines. One bad tool call can take down production.
@@ -25,6 +25,7 @@ The category has matured fast. Docker, HashiCorp, AWS, Microsoft, Cloudflare, an
 | [Pulumi MCP](/reviews/pulumi-mcp-server/) | IaC | Pulumi (official) | Both (stdio + HTTP) | OAuth / Pulumi token | 11+ | Yes (registry/CLI) | Infrastructure as code (execution) |
 | [AWS MCP](/reviews/aws-mcp-servers/) | Cloud infra | AWS Labs (official) | Local (stdio) + Remote (Knowledge, preview) | AWS credentials | 68 servers | Yes (free tier) | AWS resource management |
 | Azure DevOps MCP | DevOps platform | Microsoft (official) | Local + Remote (public preview) | OAuth / PAT | 30+ | Yes (5 users) | Azure DevOps workflows |
+| RHEL MCP | OS troubleshooting | Red Hat (official) | stdio | SSH keys | Read-only | Yes (RHEL) | System diagnostics & root cause analysis |
 
 **Also relevant:** Our [GitHub MCP server review](/reviews/github-mcp-server/) (4.5/5) covers Actions-based CI/CD, pull request automation, and repository management. GitHub's MCP server is the strongest CI/CD option in the ecosystem.
 
@@ -154,6 +155,24 @@ Microsoft also ships a separate **Azure MCP Server** for Azure cloud resources (
 
 **Best for:** Teams using Azure DevOps for project management and CI/CD who want AI-assisted workflow management directly in their IDE.
 
+### Red Hat RHEL MCP — OS-Level Troubleshooting via AI (Developer Preview)
+
+**[Red Hat RHEL MCP Server](https://www.redhat.com/en/blog/smarter-troubleshooting-new-mcp-server-red-hat-enterprise-linux-now-developer-preview)** | Red Hat (official), Developer Preview
+
+A new layer in the DevOps MCP stack: operating system-level intelligence. Red Hat's RHEL MCP server (announced April 2026, now in developer preview) bridges RHEL directly to LLMs, enabling AI-driven root cause analysis and system troubleshooting.
+
+The server provides read-only access to system state: CPU count, load averages, memory information, per-process CPU/memory usage, and system logs. An LLM connected via MCP can analyze current system state, identify performance bottlenecks, detect anomalies in logs, and recommend corrective actions — all through natural language conversation.
+
+**Security model:** Read-only by design in this developer preview. Uses standard SSH keys for authentication. The MCP server can inspect and recommend, but cannot modify system state.
+
+**Why it matters:** This fills the gap below containers and orchestration. Docker MCP manages containers, Kubernetes MCP manages pods, but neither helps when the underlying host is the problem — a memory leak in a system service, a misconfigured kernel parameter, or a disk filling up. RHEL MCP gives agents visibility into the OS layer. Works with Claude Desktop, goose, and other MCP-compatible AI tools.
+
+**Strengths:** Official Red Hat backing, read-only safety model, fills the OS-level gap no other DevOps MCP server covers, SSH-based auth.
+
+**Weaknesses:** Developer preview only (not production-ready), RHEL-specific (no Ubuntu/Debian/other distros), read-only means it can't remediate — only diagnose and recommend.
+
+**Best for:** RHEL shops that want AI-assisted system troubleshooting and performance analysis. Pair with Kubernetes MCP for full-stack visibility from OS to cluster.
+
 ## Feature Comparison
 
 | Feature | Docker MCP | Kubernetes MCP | Terraform MCP | Pulumi MCP | AWS MCP | Azure DevOps MCP |
@@ -186,6 +205,8 @@ Microsoft also ships a separate **Azure MCP Server** for Azure cloud resources (
 **"I'm all-in on AWS"** → **AWS MCP** suite. Start with the Knowledge server (documentation) and Cloud Control API (resource management). Add specialized servers as needed.
 
 **"I use Azure DevOps for project management"** → **Azure DevOps MCP**. GA, built into VS 2026, covers the full DevOps workflow. Add Azure MCP Server for cloud resource management.
+
+**"I need OS-level troubleshooting on RHEL"** → **RHEL MCP** (Red Hat, developer preview). Read-only system diagnostics — CPU, memory, logs, process analysis. Pair with Kubernetes MCP for full-stack visibility.
 
 **"I want to discover and manage MCP servers themselves"** → **Docker MCP Toolkit**. The catalog and Dynamic MCP features are unique — no other tool lets agents discover and install MCP servers on the fly.
 

@@ -5,7 +5,7 @@ description: "Code scanning, secret management, threat intelligence, network sec
 og_description: "100+ security MCP servers reviewed across code scanning, secrets, threat intel, network security, compliance, DFIR, and supply chain. Snyk, CrowdStrike, Google, Vault, Burp Suite, and more — with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to security MCP servers in 2026. We've reviewed 100+ servers across code scanning, secret management, threat intelligence, network security, compliance, DFIR, and supply chain protection. Every recommendation links to a full review."
-last_refreshed: 2026-04-04
+last_refreshed: 2026-04-05
 ---
 
 Security is where MCP servers have the highest stakes and the most vendor investment. Get it right and your AI agent catches vulnerabilities before they ship, enriches alerts with threat context, and manages secrets without copy-pasting tokens through chat. Get it wrong and you've given an LLM access to your pentest tools, your vault, or your SIEM with no guardrails.
@@ -212,15 +212,25 @@ Not every security MCP server is worth your time:
 - **Archived community servers** — several early community security servers (sammcj/mcp-snyk, sapientpants/sonarqube-mcp-server) have been superseded by official vendor servers. Always check if an official option exists.
 - **Servers with no maintainer response** — if open issues and PRs sit for months, the server won't get security patches. Check GitHub activity before trusting a security tool.
 
+## Notable New Arrival: Fingerprint MCP (Fraud Prevention)
+
+**[Fingerprint MCP Server](https://github.com/fingerprintjs/fingerprint-mcp-server)** — the first open-source MCP server built specifically for fraud prevention. Launched March 2026, it connects AI agents to Fingerprint's device intelligence platform, turning fraud analysis into real-time, AI-powered insights.
+
+Fraud analysts can query device intelligence events, identify visitor patterns, and investigate anomalies using natural language — no code required. Beyond read-only data access, the server connects to Fingerprint's Management API for configuring fraud prevention workflows, enabling developers to build AI-native fraud detection pipelines directly on top of device fingerprinting data.
+
+Available as both open-source and managed service (invitation-only for enterprise). Supports any MCP-compatible AI assistant (Claude, Cursor, VS Code, ChatGPT). This matters because it signals MCP expanding beyond traditional security tooling (scanning, SIEM, pentesting) into specialized fraud and risk operations — a vertical where real-time AI decision-making adds clear value.
+
 ## The bigger picture
 
-Three trends define security MCP servers in March 2026:
+Three trends define security MCP servers in early 2026:
 
 **1. Vendor investment is real.** Snyk, CrowdStrike, Google, HashiCorp, PortSwigger, Vanta, Bitwarden, SonarQube — these aren't community hobby projects. Major security vendors are shipping official MCP servers because their customers are using AI agents.
 
 **2. The meta-security problem is unsolved.** MCP servers themselves are an attack surface. Snyk Agent Scan found that 66% of scanned servers had security findings. Datadog published [SIEM detection rules for MCP-specific attacks](https://www.datadoghq.com/blog/mcp-detection-rules/). The tools securing MCP are mostly scanners that run outside the protocol — the AI agent can't self-assess its own tool supply chain in most cases.
 
 **3. Privacy is the gap.** Code scanning, threat intel, and DFIR have strong official servers. Privacy and data protection is early-stage — single-digit stars on most open-source projects, and enterprise tools that aren't accessible to smaller teams. As regulators start scrutinizing AI agent data flows, this category will need to catch up fast.
+
+**4. Vertical expansion is happening.** Fingerprint's fraud prevention MCP server (see above) is an early signal: security MCP servers are moving beyond generic categories (scanning, SIEM, compliance) into specialized verticals. Expect to see purpose-built MCP servers for anti-fraud, identity verification, payment security, and insurance risk assessment as the ecosystem matures.
 
 ## How we reviewed these
 

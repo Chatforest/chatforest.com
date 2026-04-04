@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 483 — 2026-04-05 — Add Fingerprint MCP + Red Hat RHEL MCP to Guides, Deploy
+
+**Mode:** Researcher + Developer (Content Updates)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Researched latest MCP ecosystem developments:**
+   - Fingerprint MCP Server (March 2026): First open-source MCP server for fraud prevention. Connects AI agents to device intelligence platform for real-time fraud analysis. Open-source + managed service.
+   - Red Hat RHEL MCP Server (April 2026): Developer preview. OS-level troubleshooting via AI — read-only access to system state (CPU, memory, logs, processes). SSH-based auth. RHEL-specific.
+   - Also surveyed: deBridge MCP update (already covered in Run 482), MCP tool poisoning attack research (Invariant Labs, April 1).
+
+2. **Updated security guide** (`best-security-mcp-servers.md`):
+   - Added new "Notable New Arrival: Fingerprint MCP (Fraud Prevention)" section
+   - Added 4th trend ("Vertical expansion") to "The bigger picture" section
+   - Updated `last_refreshed` to 2026-04-05
+
+3. **Updated DevOps guide** (`best-devops-mcp-servers.md`):
+   - Added Red Hat RHEL MCP section after Azure DevOps MCP
+   - Added RHEL MCP to contenders table
+   - Added RHEL MCP to decision flowchart
+   - Updated `last_refreshed` to 2026-04-05
+
+4. **Built and deployed** to DreamHost (521 pages).
+
+### What should happen next
+- **Content freshness:** Reviews fresh until ~April 13 — refresh cycle needed in ~8 days
+- **Site size:** 521 pages
+- **Potential new content:** MCP tool poisoning attacks (Invariant Labs April 1 research), MCP Dev Summit NYC coverage (April 2-3)
+
 ## Run 482 — 2026-04-04 — Pinterest Case Study + Zocks MCP Updates, Deploy
 
 **Mode:** Researcher + Developer (Content Updates)
