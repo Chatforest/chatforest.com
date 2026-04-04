@@ -70,21 +70,24 @@ This is the most mature and most competitive design MCP category. Two servers do
 
 [Figma Dev Mode MCP](https://mcp.figma.com/mcp) is Figma's official hosted server. Zero-install remote architecture with OAuth authentication. [Full review →](/reviews/figma-dev-mode-mcp-server/)
 
-**Why it's notable:** Exclusive write capabilities that no community server can match. `generate_figma_design` captures live web pages and converts them to editable Figma frames — closing the design-code-design loop. Code Connect mappings improve code generation accuracy over time. FigJam diagram generation from Mermaid syntax.
+**Why it's notable:** In March 2026, [Figma opened the canvas to AI agents](https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/) with expanded write capabilities. The `use_figma` tool lets agents create and modify real Figma objects — components, variables, frames, auto layout — using your existing design system. `generate_figma_design` captures live web pages and converts them to editable Figma frames. Code Connect mappings improve code generation accuracy over time. FigJam diagram generation from Mermaid syntax.
+
+**The big March 2026 update — Skills:** [Figma Skills](https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP) are markdown files that teach agents how to complete multi-step design workflows. No plugin development, no code — just a markdown file with `## When to use` and `## Instructions` sections. Figma ships 9 example skills covering component library creation, design generation, accessibility specs, and code-to-design-token coordination. Anyone can [author custom skills](https://developers.figma.com/docs/figma-mcp-server/create-skills/) with optional `references/` folders for naming guides, variable taxonomies, or component rules. Skills make agent behavior predictable by encoding your conventions as executable instructions.
 
 **Key features:**
-- **13 tools** (8 read, 5 write) including code-to-canvas capture
+- **`use_figma` tool** — execute Plugin API code to create/modify real Figma primitives (components, variables, frames, auto layout)
+- **Skills system** — reusable markdown workflows that guide agent behavior on the canvas
 - **Remote hosted** at `mcp.figma.com/mcp` — zero install
 - **OAuth authentication** — no API key management
 - **Code Connect** — map Figma components to code components
 - **Design system rules** — framework-specific translation context
-- **Expanded Q1 2026** — now works in VS Code/Copilot, Cursor, Warp, and more
+- **Broad client support** — Claude Code, Codex, Copilot (VS Code + CLI), Cursor, Augment, Factory, Firebender, Warp
 
-**The catch:** Free tier gives **6 tool calls per month**. Prescriptive output (React + Tailwind by default) can conflict with your codebase conventions. Nested components get flattened. PulseMCP ranking (#136 globally) trails Framelink (#27) significantly.
+**The catch:** Free during beta, but [will become a paid API](https://help.figma.com/hc/en-us/articles/39252411778583-Figma-MCP-server-FAQs). Prescriptive output (React + Tailwind by default) can conflict with your codebase conventions. Nested components get flattened. PulseMCP ranking (#136 globally) trails Framelink (#27) significantly.
 
-**Best for:** Teams with paid Figma plans who need code-to-canvas capture or Code Connect.
+**Best for:** Teams who want agents to both read and write Figma designs using their existing design system.
 
-**Recommendation:** Start with Framelink for design-to-code translation. Add the official server only if you need write operations (code-to-canvas, Code Connect, FigJam) and have a paid Figma plan.
+**Recommendation:** Start with Framelink for pure design-to-code reading. Add the official server if you need write operations — especially with the new Skills system, which makes agent-driven design creation far more reliable than raw tool calls.
 
 **Full reviews:** [Framelink MCP](/reviews/framelink-figma-mcp-server/) · [Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/)
 
@@ -114,7 +117,7 @@ These servers go beyond reading designs — they create and modify Figma element
 
 ### Also notable: Figma Dev Mode (write operations)
 
-Figma's official server is the only option for **code-to-canvas capture** (`generate_figma_design`) — converting live web UIs back into editable Figma frames. No community server can do this. See the design-to-code section above for details.
+Since March 2026, Figma's official server is a serious alternative for design manipulation. The `use_figma` tool executes Plugin API code directly — creating components, variables, frames, and auto layout with full design-system awareness. Combined with Skills (markdown workflow definitions), agents can now follow multi-step design conventions reliably. TalkToFigma still wins for interactive, back-and-forth design sessions through its WebSocket bridge, but for automated, convention-driven design generation, the official server's Skills system is increasingly compelling. See the design-to-code section above for details.
 
 ---
 

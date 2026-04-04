@@ -59,8 +59,13 @@ In March 2026, [Google released the Colab MCP Server](https://www.marktechpost.c
 - **GPU access** — Colab provides free GPU/TPU runtimes, so agents can run computationally intensive ML training
 - **Pre-configured environment** — Deep learning libraries (PyTorch, TensorFlow, JAX) are pre-installed
 - **Cloud execution** — Code runs on Google's infrastructure, not locally
+- **Two operational modes** — Session Proxy (syncs with the browser UI so you can watch the agent work) and Runtime Mode (direct Jupyter kernel execution for headless automation)
+- **Persistent state** — Variables persist across execution steps, enabling iterative reasoning and debugging within the same notebook
+- **Dynamic dependency management** — Agents can `pip install` packages on the fly to self-configure the environment
 
-**Current limitations (as of March 2026):**
+**Compatible clients:** Claude Code, Cline, Cursor, Codex, and any MCP-compatible agent.
+
+**Current limitations:**
 - Direct file upload through MCP is limited — use Google Drive integration or fetch data from URLs
 - JupyterHub and custom Colab deployments are still in development
 

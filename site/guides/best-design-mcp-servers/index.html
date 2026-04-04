@@ -152,19 +152,21 @@
 <h3 id="runner-up-figma-dev-mode-mcp-official">Runner-up: Figma Dev Mode MCP (Official)</h3>
 <p><strong>Stars:</strong> 443 (guide repo) | <strong>Language:</strong> — | <strong>License:</strong> Proprietary | <strong>Tools:</strong> 13</p>
 <p><a href="https://mcp.figma.com/mcp">Figma Dev Mode MCP</a> is Figma&rsquo;s official hosted server. Zero-install remote architecture with OAuth authentication. <a href="/reviews/figma-dev-mode-mcp-server/">Full review →</a></p>
-<p><strong>Why it&rsquo;s notable:</strong> Exclusive write capabilities that no community server can match. <code>generate_figma_design</code> captures live web pages and converts them to editable Figma frames — closing the design-code-design loop. Code Connect mappings improve code generation accuracy over time. FigJam diagram generation from Mermaid syntax.</p>
+<p><strong>Why it&rsquo;s notable:</strong> In March 2026, <a href="https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/">Figma opened the canvas to AI agents</a> with expanded write capabilities. The <code>use_figma</code> tool lets agents create and modify real Figma objects — components, variables, frames, auto layout — using your existing design system. <code>generate_figma_design</code> captures live web pages and converts them to editable Figma frames. Code Connect mappings improve code generation accuracy over time. FigJam diagram generation from Mermaid syntax.</p>
+<p><strong>The big March 2026 update — Skills:</strong> <a href="https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP">Figma Skills</a> are markdown files that teach agents how to complete multi-step design workflows. No plugin development, no code — just a markdown file with <code>## When to use</code> and <code>## Instructions</code> sections. Figma ships 9 example skills covering component library creation, design generation, accessibility specs, and code-to-design-token coordination. Anyone can <a href="https://developers.figma.com/docs/figma-mcp-server/create-skills/">author custom skills</a> with optional <code>references/</code> folders for naming guides, variable taxonomies, or component rules. Skills make agent behavior predictable by encoding your conventions as executable instructions.</p>
 <p><strong>Key features:</strong></p>
 <ul>
-<li><strong>13 tools</strong> (8 read, 5 write) including code-to-canvas capture</li>
+<li><strong><code>use_figma</code> tool</strong> — execute Plugin API code to create/modify real Figma primitives (components, variables, frames, auto layout)</li>
+<li><strong>Skills system</strong> — reusable markdown workflows that guide agent behavior on the canvas</li>
 <li><strong>Remote hosted</strong> at <code>mcp.figma.com/mcp</code> — zero install</li>
 <li><strong>OAuth authentication</strong> — no API key management</li>
 <li><strong>Code Connect</strong> — map Figma components to code components</li>
 <li><strong>Design system rules</strong> — framework-specific translation context</li>
-<li><strong>Expanded Q1 2026</strong> — now works in VS Code/Copilot, Cursor, Warp, and more</li>
+<li><strong>Broad client support</strong> — Claude Code, Codex, Copilot (VS Code + CLI), Cursor, Augment, Factory, Firebender, Warp</li>
 </ul>
-<p><strong>The catch:</strong> Free tier gives <strong>6 tool calls per month</strong>. Prescriptive output (React + Tailwind by default) can conflict with your codebase conventions. Nested components get flattened. PulseMCP ranking (#136 globally) trails Framelink (#27) significantly.</p>
-<p><strong>Best for:</strong> Teams with paid Figma plans who need code-to-canvas capture or Code Connect.</p>
-<p><strong>Recommendation:</strong> Start with Framelink for design-to-code translation. Add the official server only if you need write operations (code-to-canvas, Code Connect, FigJam) and have a paid Figma plan.</p>
+<p><strong>The catch:</strong> Free during beta, but <a href="https://help.figma.com/hc/en-us/articles/39252411778583-Figma-MCP-server-FAQs">will become a paid API</a>. Prescriptive output (React + Tailwind by default) can conflict with your codebase conventions. Nested components get flattened. PulseMCP ranking (#136 globally) trails Framelink (#27) significantly.</p>
+<p><strong>Best for:</strong> Teams who want agents to both read and write Figma designs using their existing design system.</p>
+<p><strong>Recommendation:</strong> Start with Framelink for pure design-to-code reading. Add the official server if you need write operations — especially with the new Skills system, which makes agent-driven design creation far more reliable than raw tool calls.</p>
 <p><strong>Full reviews:</strong> <a href="/reviews/framelink-figma-mcp-server/">Framelink MCP</a> · <a href="/reviews/figma-dev-mode-mcp-server/">Figma Dev Mode MCP</a></p>
 <hr>
 <h2 id="figma-manipulation-servers">Figma manipulation servers</h2>
@@ -183,7 +185,7 @@
 <p><strong>The catch:</strong> Requires running a WebSocket server locally plus installing the Figma plugin. More moving parts than Framelink. Not a read-optimized server — for pure design-to-code, Framelink produces better output.</p>
 <p><strong>Best for:</strong> Designers and developers who want to create or modify Figma designs from their IDE, not just read them.</p>
 <h3 id="also-notable-figma-dev-mode-write-operations">Also notable: Figma Dev Mode (write operations)</h3>
-<p>Figma&rsquo;s official server is the only option for <strong>code-to-canvas capture</strong> (<code>generate_figma_design</code>) — converting live web UIs back into editable Figma frames. No community server can do this. See the design-to-code section above for details.</p>
+<p>Since March 2026, Figma&rsquo;s official server is a serious alternative for design manipulation. The <code>use_figma</code> tool executes Plugin API code directly — creating components, variables, frames, and auto layout with full design-system awareness. Combined with Skills (markdown workflow definitions), agents can now follow multi-step design conventions reliably. TalkToFigma still wins for interactive, back-and-forth design sessions through its WebSocket bridge, but for automated, convention-driven design generation, the official server&rsquo;s Skills system is increasingly compelling. See the design-to-code section above for details.</p>
 <hr>
 <h2 id="penpot-servers-open-source-design">Penpot servers (open-source design)</h2>
 <p><a href="https://penpot.app/">Penpot</a> is the leading open-source design tool. Its &ldquo;design expressed as code&rdquo; philosophy makes it uniquely suited for MCP integration — designs are programmatically accessible at a granular level.</p>
@@ -355,16 +357,16 @@
 
   
     <div class="article-card">
-  <div class="card-meta"><span>Guide</span> <span>2026-04-03 12:00:00</span></div>
-  <h3><a href="/guides/mcp-dev-summit-2026-guide/">MCP Dev Summit 2026: Key Sessions, Themes, and What They Mean for the Ecosystem</a></h3>
-  <p>The first official MCP conference brought 95&#43; sessions across security, enterprise adoption, SDK evolution, and cross-platform interoperability. Here&#39;s what happened and what it means for the ecosystem.</p>
+  <div class="card-meta"><span>Comparison</span> <span>2026-04-04 15:00:00</span></div>
+  <h3><a href="/guides/mcp-enterprise-governance-platforms/">Best MCP Governance Platforms for Enterprise in 2026 — RunLayer vs MintMCP vs SurePath AI vs Kong vs Composio vs Strata</a></h3>
+  <p>RunLayer (VPC deploy, threat scanning, $11M funding) vs MintMCP (SOC 2 Type II, Virtual MCPs) vs SurePath AI (real-time policy, tool classification) vs Kong (REST-to-MCP, ACL) vs Composio (500&#43; integrations) vs Strata (identity gateway, sandbox) vs Bifrost (open source, Go) vs ContextForge (federation, 40&#43; plugins) — the enterprise governance layer for MCP.</p>
 </div>
 
   
     <div class="article-card">
-  <div class="card-meta"><span>Guide</span> <span>2026-03-30 23:45:00</span></div>
-  <h3><a href="/guides/mcp-customer-support-helpdesk/">MCP and Customer Support: How AI Agents Connect to Zendesk, Intercom, Freshdesk, ServiceNow, Salesforce, HubSpot, Help Scout, Plain, Pylon, Knowledge Bases, Ticketing Systems, Live Chat, and Helpdesk Automation</a></h3>
-  <p>The AI customer support market reached $15.12 billion in 2026, projected to $47.82 billion by 2030 at 25.8% CAGR. Gartner predicts 80% of routine customer interactions will be fully handled by AI in 2026. This guide covers 60&#43; MCP servers across customer support — from Zendesk and Intercom ticketing to ServiceNow ITSM, Salesforce Service Cloud, Plain and Pylon modern support platforms, HubSpot Service Hub, Help Scout shared inboxes, Confluence and Notion knowledge bases, and live chat automation. Architecture patterns cover AI-augmented ticket triage, knowledge-powered response drafting, cross-platform escalation workflows, and proactive support intelligence pipelines.</p>
+  <div class="card-meta"><span>Guide</span> <span>2026-04-03 12:00:00</span></div>
+  <h3><a href="/guides/mcp-dev-summit-2026-guide/">MCP Dev Summit 2026: Key Sessions, Themes, and What They Mean for the Ecosystem</a></h3>
+  <p>The first official MCP conference brought 95&#43; sessions across security, enterprise adoption, SDK evolution, and cross-platform interoperability. Here&#39;s what happened and what it means for the ecosystem.</p>
 </div>
 
   
