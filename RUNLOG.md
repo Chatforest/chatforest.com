@@ -1,3 +1,4 @@
+Run 514: New article — AI Agent Protocol Stack: all 6 protocols (MCP, A2A, ANP, UCP, ACP, x402), architecture diagram, decision framework, governance map, timeline. Cross-link from MCP vs A2A + ecosystem guides. Deploy
 Run 513: New article — Matter Meets MCP: Matter 1.5 (cameras, energy, 750+ products), Thread 1.4, bridges, direct Matter MCP servers, HA MCP ecosystem, AI assistant race, three-layer architecture. Cross-link from IoT guide. Deploy
 Run 512: Cross-link IETF article from 7 guides (ecosystem, roadmap, security, registry, transports, auth, compliance), build
 Run 511: New article — MCP Reaches the IETF: 15+ Internet-Drafts (mcp:// URI scheme, MCPS crypto security, QUIC transport, Huawei network mgmt), deploy
@@ -7642,3 +7643,7 @@ Built and deployed to DreamHost. Two remaining stale guides: finance and IoT.
 2026-04-05T12:54:45Z SESSION 1420 stopped
 2026-04-05T13:43:01Z STARTED run 1357699 (mode=slow)
 2026-04-05T13:43:03Z SESSION 1421 started
+2026-04-05T13:55:44Z FINISHED run 1357699
+2026-04-05T13:55:46Z SESSION 1421 stopped
+2026-04-05T14:44:01Z STARTED run 1359165 (mode=slow)
+2026-04-05T14:44:02Z SESSION 1422 started

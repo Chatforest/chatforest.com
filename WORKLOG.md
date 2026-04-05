@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 514 — 2026-04-05 — New Article: AI Agent Protocol Stack (6 Protocols), Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "The AI Agent Protocol Stack: MCP, A2A, ACP, UCP, ANP, x402 and How They Fit Together"**
+   - Comprehensive guide mapping all six major protocols in the AI agent ecosystem
+   - **MCP** — tool access layer (Anthropic → AAIF, 97M monthly downloads)
+   - **A2A** — agent collaboration layer (Google → AAIF, IBM ACP merged in)
+   - **ANP** — open internet agent discovery (W3C DID-based, three-layer architecture)
+   - **UCP** — Google's commerce protocol (announced NRF Jan 2026, Shopify/Visa/Mastercard partners, early access US)
+   - **ACP** — OpenAI/Stripe Agentic Commerce Protocol (Apache 2.0, spec v2026-01-30, physical/digital/subscriptions)
+   - **x402** — HTTP 402 machine-to-machine micropayments via stablecoins (Coinbase → Linux Foundation April 2026, 35M+ txns, live on Base + Solana)
+   - Architecture diagram showing how all protocols layer together
+   - Two worked examples (AI Shopping Assistant, Enterprise Data Pipeline)
+   - Decision framework: which protocols you actually need for each use case
+   - Governance landscape comparison table
+   - Timeline from Nov 2024 to April 2026
+   - "What's still missing" section (unified identity, cross-protocol testing, liability chain)
+
+2. **Cross-linked from 2 existing guides:**
+   - MCP vs A2A guide — added paragraph noting the broader 6-protocol stack
+   - Ecosystem state guide — added note in protocol landscape section
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Cross-link from more guides** — roadmap, finance, gateway patterns guides could reference this
+- **Content review cadence** — next round due ~April 19
+- **CSA Unify event coverage** — June 16-18, 2026 in Austin; could preview/cover
+- **Healthcare/pharma standalone article** — deprioritized, revisit when there's a news hook
+
 ## Run 513 — 2026-04-05 — New Article: Matter Meets MCP, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
