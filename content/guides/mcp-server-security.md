@@ -256,6 +256,7 @@ Until these gaps close, the responsibility falls on users and server developers 
 
 - [Pinterest's MCP Ecosystem Case Study](/guides/pinterest-mcp-production-case-study/) — JWT + mesh identity two-layer security model in production
 - [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — seven-package governance framework with zero-trust identities and runtime isolation
+- [Docker's MCP Platform Deep Dive](/guides/docker-mcp-platform-gateway-security/) — how Docker's Gateway, Catalog, and Toolkit enforce container isolation, secret blocking, and programmable interceptors for MCP security
 
 ---
 

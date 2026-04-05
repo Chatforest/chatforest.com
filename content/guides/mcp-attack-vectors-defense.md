@@ -249,6 +249,7 @@ The gap between current MCP capabilities and production security requirements is
 - [MCP Authorization and OAuth](/guides/mcp-authorization-oauth/) — Deep dive on MCP's OAuth 2.1 authentication model
 - [MCP Error Handling and Resilience](/guides/mcp-error-handling-resilience/) — Building robust error handling for production MCP deployments
 - [MCP Gateway and Proxy Patterns](/guides/mcp-gateway-proxy-patterns/) — Architecture patterns for centralized MCP management
+- [Docker's MCP Platform: Gateway, Catalog, and Toolkit](/guides/docker-mcp-platform-gateway-security/) — Docker's open-source Gateway with interceptors, secret blocking, and MCP Defender threat detection
 
 ---
 

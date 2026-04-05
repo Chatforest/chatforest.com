@@ -687,6 +687,7 @@ Docker is becoming the standard distribution mechanism for MCP servers — much 
 - [MCP transport protocols explained](/guides/mcp-transports-explained/) — deep dive on stdio, SSE, and Streamable HTTP
 - [MCP server security guide](/guides/mcp-server-security/) — comprehensive security practices
 - [MCP server deployment and hosting](/guides/mcp-server-deployment-hosting/) — deployment patterns beyond Docker
+- [Docker's MCP Platform: Gateway, Catalog, and Toolkit](/guides/docker-mcp-platform-gateway-security/) — deep dive on Docker's three-layer MCP security platform, including the open-source Gateway and programmable interceptors
 
 ---
 

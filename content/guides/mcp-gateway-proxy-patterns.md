@@ -199,6 +199,7 @@ The trend is clear: as MCP moves from developer experiments to production deploy
 - Our guide: [MCP in Production](/guides/mcp-in-production/) — scaling, monitoring, and operating MCP servers
 - Our guide: [MCP Security Best Practices](/guides/mcp-server-security/) — securing MCP deployments
 - Our guide: [The AI Agent Protocol Stack](/guides/ai-agent-protocol-stack-2026/) — how gateways fit when agents use A2A, ANP, and payment protocols alongside MCP
+- Our guide: [Docker's MCP Platform Deep Dive](/guides/docker-mcp-platform-gateway-security/) — how Docker's open-source Gateway uses interceptors, secret blocking, and container isolation to secure MCP at scale
 
 ---
 

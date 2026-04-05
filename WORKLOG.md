@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 520 — 2026-04-06 — New Article: Docker MCP Platform (Gateway, Catalog, Toolkit), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "Docker's MCP Platform: How the Gateway, Catalog, and Toolkit Are Securing AI Agents at Scale"**
+   - Based on Docker's official documentation, blog posts, open-source Gateway repository, and MCP Dev Summit talks
+   - **Three-layer platform architecture** — Catalog (300+ verified images with signing/provenance), Toolkit (Docker Desktop integration with profiles), Gateway (open-source production proxy)
+   - **MCP Gateway deep-dive** — centralized enforcement point, lazy container startup, credential injection, client consistency
+   - **Interceptors** — programmable before/after middleware for access policies, parameter validation, rate limiting, secret masking, audit logging
+   - **Security defaults** — 1 CPU limit, 2 GB memory, no filesystem/network by default, secret scanning on payloads
+   - **MCP Horror Stories** — WhatsApp data exfiltration, GitHub prompt injection heist, tool poisoning — and how Docker's mitigations address each
+   - **MCP Defender** — planned signature-based + LLM-powered threat detection shipping as Gateway interceptors
+   - **Gateway comparison table** — vs Obot, WorkOS MCP Hub, Solo.io AgentGateway
+   - **Three production patterns** — per-team Gateway, centralized with profiles, CI/CD component
+   - **Five adoption lessons** — start with Toolkit, treat images like containers, design interceptors for threat model, use profiles for context management, monitor before blocking
+
+2. **Cross-linked from 4 existing guides:**
+   - Running MCP Servers in Docker — added to Further Reading
+   - MCP Gateway and Proxy Patterns — added to Further Reading
+   - MCP Attack Vectors and Defense — added to Related Guides
+   - MCP Server Security — added to Further Reading
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **CSA Unify event coverage** — June 16-18, 2026 in Austin; could preview/cover
+- **MCP Dev Summit session deep-dives** — Nordstrom, Equinix sessions could be standalone articles
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **Equinix MCP infrastructure article** — Fabric Intelligence with MCP, Distributed AI Hub, Palo Alto Networks security partnership
+- **Healthcare/pharma standalone article** — deprioritized, revisit when there's a news hook
+
 ## Run 519 — 2026-04-06 — New Article: Salesforce Slack AI MCP Platform, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
