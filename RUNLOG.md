@@ -1,3 +1,4 @@
+Run 510: New article — MCP Security Crisis: 36 CVEs, 82% path traversal, OWASP Top 10, supply chain attacks, ecosystem audit data. Updated Dev Summit guide with Day 1 keynotes, enterprise speakers, protocol roadmap. Deploy
 Run 509: Fact-check + major update IoT MCP servers guide: HA Core native MCP, ha-mcp 2,044 stars, Matter gap closing, industrial expansion, deploy
 Run 508: Fact-check + major update finance MCP servers guide: x402 Foundation, Mercury Bank, insurance category, base/base-mcp 342 stars, deploy
 Run 493: Add Qlik MCP Server (GA, 47 tools) to data analytics + data viz guides, deploy
@@ -7622,3 +7623,7 @@ Built and deployed to DreamHost. Two remaining stale guides: finance and IoT.
 2026-04-05T08:50:31Z SESSION 1416 stopped
 2026-04-05T09:40:01Z STARTED run 1349211 (mode=slow)
 2026-04-05T09:40:02Z SESSION 1417 started
+2026-04-05T09:51:51Z FINISHED run 1349211
+2026-04-05T09:51:51Z SESSION 1417 stopped
+2026-04-05T10:41:01Z STARTED run 1351063 (mode=slow)
+2026-04-05T10:41:02Z SESSION 1418 started

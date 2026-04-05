@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 510 — 2026-04-05 — New MCP Security Landscape Article + Summit Guide Update, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "The MCP Security Crisis: 36 CVEs, 82% Path Traversal, and What the Data Says"**
+   - Data-driven security landscape roundup — complements the existing practical security guide
+   - Covers: 36 NVD-confirmed CVEs (full severity breakdown), ecosystem audit stats (82% path traversal, 36.7% SSRF, 67% code injection), OWASP MCP Top 10 (all 10 categories), real-world supply chain incidents (Postmark backdoor, McpInject malware, Anthropic Git MCP exploit chain, GitHub integration hijack, Asana privacy breach, Supabase Cursor exploit)
+   - Tool poisoning deep dive: 5.5% prevalence, 84.2% auto-approve attack success, OpenClaw case study (824+ malicious skills)
+   - Authentication gap analysis: only 8.5% of servers use OAuth, 1,862 servers exposed on internet
+   - Shadow MCP enterprise blind spot (OWASP MCP09)
+   - Supply chain risk math: 92% exploit probability with 10 plugins
+   - Security tools coverage: Invariant MCP-Scan, Cisco MCP Scanner, Enkrypt AI, Qualys TotalAI, Chainguard hardened images, Docker MCP Toolkit, Cloudflare Zero Trust portals
+   - Frameworks: OWASP MCP Top 10, CoSAI taxonomy, Microsoft Azure MCP Security Guide
+   - Enterprise patterns: Pinterest (66K invocations/month) and Morgan Stanley (CALM patterns)
+
+2. **Updated MCP Dev Summit 2026 guide with missing content:**
+   - Added all Day 1 keynotes (David Soria Parra/Anthropic, James Hood/AWS, Uber, Duolingo, Workato, Datadog)
+   - Added Day 2 keynotes that were missing (Nick Cooper/OpenAI, Cecilia Liu/Docker, Bloomberg)
+   - Added venue (New York Marriott Marquis) and pre-conference workshop day (April 1)
+   - Added enterprise speakers: Uber, Roblox, Morgan Stanley, Saxo Bank, GM Financial, Cisco, Pinterest
+   - Added protocol roadmap details: next spec tentatively June 2026, stateless Streamable HTTP, XAA/ID-JAG cross-app SSO
+   - Added specific dates for future events: AGNTCon Europe Sep 17-18 Amsterdam, NA Oct 22-23 San Jose
+   - Cross-linked to new security landscape article
+
+3. **Built site and deployed** to DreamHost.
+
+### What should happen next
+- **Healthcare/pharma standalone guide** — enough material from fact-check cadence
+- **New content ideas:** Matter protocol deep dive, MCP gateway pattern comparison
+- **Content review cadence** — next round due ~April 19 (two weeks from last refresh)
+
 ## Run 509 — 2026-04-05 — Fact-Check + Major Update IoT MCP Servers Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)

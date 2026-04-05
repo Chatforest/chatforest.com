@@ -4,7 +4,7 @@ date: 2026-04-03T12:00:00+09:00
 description: "A comprehensive guide to MCP Dev Summit North America 2026 — the first official conference for the Model Context Protocol community, featuring 95+ sessions from Anthropic, OpenAI, Microsoft, Docker, Bloomberg, and more."
 content_type: "Guide"
 card_description: "The first official MCP conference brought 95+ sessions across security, enterprise adoption, SDK evolution, and cross-platform interoperability. Here's what happened and what it means for the ecosystem."
-last_refreshed: 2026-04-04
+last_refreshed: 2026-04-05
 ---
 
 The first MCP Dev Summit North America took place April 2–3, 2026 in New York City, organized by the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (AAIF) under the Linux Foundation. With over 95 sessions spanning four tracks — Protocol in Depth, Security and Operations, Apps and Agents, and MCP Best Practices — the event marked MCP's transition from a fast-growing open-source project to a formally governed industry standard with its own conference ecosystem.
@@ -13,7 +13,7 @@ All sessions are now [available on demand on YouTube](https://x.com/mcpsummit/st
 
 This guide covers the key themes, notable sessions, and implications for developers and organizations building with MCP. Our analysis draws on the published schedule, speaker announcements, and post-summit recordings — we research and analyze rather than attending events hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
-For related context, see our guides on [The MCP Ecosystem in 2026](/guides/mcp-ecosystem-2026-state-of-the-standard/), [What Is MCP?](/guides/what-is-mcp/), [MCP 2026 Roadmap](/guides/mcp-2026-roadmap-whats-coming/), [MCP Server Security](/guides/mcp-server-security/), and [MCP Registry & Server Discovery](/guides/mcp-registry-server-discovery/).
+For related context, see our guides on [The MCP Ecosystem in 2026](/guides/mcp-ecosystem-2026-state-of-the-standard/), [What Is MCP?](/guides/what-is-mcp/), [MCP 2026 Roadmap](/guides/mcp-2026-roadmap-whats-coming/), [MCP Server Security](/guides/mcp-server-security/), [The MCP Security Crisis](/guides/mcp-security-landscape-2026/), and [MCP Registry & Server Discovery](/guides/mcp-registry-server-discovery/).
 
 ---
 
@@ -22,11 +22,12 @@ For related context, see our guides on [The MCP Ecosystem in 2026](/guides/mcp-e
 | Detail | Info |
 |--------|------|
 | **Dates** | April 2–3, 2026 |
-| **Location** | New York City |
+| **Location** | New York Marriott Marquis, New York City |
+| **Pre-conference workshops** | April 1 (4 workshops) |
 | **Organizer** | Agentic AI Foundation / Linux Foundation |
 | **Sessions** | 95+ across 4 tracks |
 | **Keynotes** | 8 keynote presentations |
-| **Notable speakers** | Anthropic, OpenAI, Microsoft, Docker, Bloomberg, AWS, Google, PagerDuty, Nordstrom, Duolingo, PwC, Block |
+| **Notable speakers** | Anthropic, OpenAI, Microsoft, Docker, Bloomberg, AWS, Google, Uber, Morgan Stanley, Roblox, Pinterest, PagerDuty, Nordstrom, Duolingo, PwC, Block |
 | **Diamond sponsors** | AWS, Docker, Obot, Workato, WorkOS |
 | **Platinum sponsors** | Google Cloud, Manufact, Prefect, Runlayer |
 
@@ -88,20 +89,35 @@ As MCP deployments grow, infrastructure patterns are emerging:
 
 ## 2. Notable Keynotes
 
-### "MCP Apps: Extending the Frontier"
-**Ido Salomon** (Creator, MCP-UI) and **Liad Yosef** (Co-creator, MCP Apps)
+### Day 1 — April 2
 
-Opened the summit by framing MCP beyond server-side tool integration — as a foundation for entirely new application paradigms where AI agents interact with rich user interfaces.
+**"MCP: The Integration Protocol"** — David Soria Parra (Anthropic). The protocol's lead framed MCP's evolution from developer tool to industry standard, now governed by the Agentic AI Foundation under the Linux Foundation.
 
-### "Context is More Than Tools"
-**Ryan Cooke** (Engineering Lead, WorkOS)
+**"MCP @ Amazon Scale"** — James Hood (AWS). AWS's perspective on running MCP infrastructure at enterprise scale, reflecting their Diamond sponsorship and AAIF Governing Board Chair role (David Nalley).
 
-Challenged the common perception that MCP is "just" a tool-calling protocol, arguing that the context primitives (resources, prompts, sampling) are equally important for building production-grade AI systems.
+**"Operating MCPs at Enterprise Scale: Uber's Journey"** — Meghana Somasundara & Rush Tehrani (Uber). The first public disclosure of Uber's MCP deployment — a significant enterprise case study from a company running complex, real-time systems.
 
-### "Using MCP for Skills Orchestration"
-**Jacob Wilson** (Principal, GenAI Transformation, PwC)
+**"Duolingo's AI Slackbot: An Enterprise Assistant With 180+ MCP Tools"** — Aaron Wang (Duolingo). How Duolingo built an internal AI assistant using 180+ MCP tools for employee support, alert triage, incident debugging, and internal system navigation.
 
-Brought a consulting/enterprise perspective on using MCP to orchestrate complex multi-step agent workflows — framing MCP tools as composable "skills" rather than isolated function calls.
+**"Enterprise MCP — The Data Plane for Autonomous Agents"** — Adam Seligman & Zayne Turner (Workato). Positioning MCP as the data layer for enterprise agent architectures.
+
+**"The First 100 Agents"** — Diamond Bishop (Datadog). Operational lessons from deploying the first wave of production AI agents.
+
+### Day 2 — April 3
+
+**"MCP Apps: Extending the Frontier"** — Ido Salomon & Liad Yosef. Framed MCP beyond server-side tool integration — as a foundation for entirely new application paradigms where AI agents interact with rich user interfaces.
+
+**"MCP x MCP"** — Nick Cooper (OpenAI). The most symbolically significant keynote of the summit — OpenAI presenting on cross-ecosystem MCP interoperability signals definitive protocol adoption.
+
+**"Building a Unified Control Plane for MCP"** — Cecilia Liu (Docker). Docker's vision for MCP server management, distribution, and security through a unified control plane.
+
+**"Context is More Than Tools"** — Ryan Cooke (WorkOS). Challenged the perception that MCP is "just" a tool-calling protocol, arguing that context primitives (resources, prompts, sampling) are equally important for production systems.
+
+**"One-To-Many: Enabling MCP at Nordstrom"** — Ola Hungerford & Sandeep Bhat (Nordstrom). Scaling MCP across a large retail organization.
+
+**"Using MCP for Skills Orchestration"** — Jacob Wilson (PwC). Enterprise perspective on using MCP to orchestrate multi-step agent workflows — framing tools as composable "skills."
+
+**"Interoperability Isn't Enough"** — Ania Musial (Bloomberg). Bloomberg's perspective on trustworthy AI infrastructure, framing MCP as the integration layer financial institutions need for multi-vendor AI deployments.
 
 ---
 
@@ -125,17 +141,19 @@ Docker, Kong, Stacklok, and Bloomberg all presented gateway/middleware patterns.
 
 ### Enterprise Case Studies Are Multiplying
 
-Pinterest (66K monthly invocations, 844 users), Duolingo (180+ MCP tools), Nordstrom, Bloomberg, WestJet, and PagerDuty all presented production MCP deployments. Six months ago, enterprise case studies were rare. The summit made clear that large organizations are moving from pilots to production.
+Pinterest (66K monthly invocations, 844 users), Duolingo (180+ MCP tools), Uber, Nordstrom, Bloomberg, Roblox, Morgan Stanley, WestJet, PagerDuty, Saxo Bank, GM Financial, and Cisco all presented production MCP deployments. Six months ago, enterprise case studies were rare. The summit made clear that large organizations are moving from pilots to production.
 
 ---
 
 ## 4. What to Watch After the Summit
 
-1. **SDK V2 releases** — Watch for Python SDK updates following Max Isbey's V2 roadmap session. Breaking changes to `mcp.server.auth` are possible.
-2. **Authentication RFC** — With six dedicated auth sessions and the OAuth 2.1 spec author present, expect formal proposals for standardized MCP authentication.
-3. **Session recordings (now available)** — All 95+ sessions are [now live on the MCP Developers Summit YouTube channel](https://x.com/mcpsummit/status/1930603227013140797), available on demand. Every talk from protocol deep dives to real-world deployment case studies is accessible for free.
-4. **Docker MCP distribution** — Docker's control plane and OCI distribution sessions suggest official tooling for MCP server packaging and deployment.
-5. **OpenAI resource support** — Nick Cooper's "MCP x MCP" keynote may lead to announcements about expanded MCP support in ChatGPT and OpenAI's platform.
+1. **Next spec release (tentatively June 2026)** — The current spec remains the November 2025 release. The roadmap has shifted from date-based milestones to priority-area Working Groups covering transport scalability, agent communication, governance, and enterprise readiness.
+2. **SDK V2 releases** — Watch for Python SDK updates following Max Isbey's V2 roadmap session. Breaking changes to `mcp.server.auth` are possible.
+3. **Authentication RFC** — With six dedicated auth sessions and the OAuth 2.1 spec author present, expect formal proposals for standardized MCP authentication.
+4. **Stateless Streamable HTTP** — Shaun Smith (Hugging Face) and Kurtis Van Gent (Google) presented on evolving Streamable HTTP to run statelessly across multiple server instances with scalable session handling. No new transport types are planned.
+5. **Session recordings (now available)** — All 95+ sessions are [now live on the MCP Developers Summit YouTube channel](https://x.com/mcpsummit/status/1930603227013140797), available on demand.
+6. **Docker MCP distribution** — Docker's control plane and OCI distribution sessions suggest official tooling for MCP server packaging and deployment.
+7. **Cross-App SSO for agents** — Paul Carleton (Anthropic) and Max Gerber (Twilio) presented the XAA/ID-JAG project for cross-agent single sign-on.
 
 ---
 
@@ -143,8 +161,8 @@ Pinterest (66K monthly invocations, 844 users), Duolingo (180+ MCP tools), Nords
 
 The AAIF has announced a broader 2026 events program:
 
-- **AGNTCon + MCPCon North America** — The next major event, scaling up from the Dev Summit format
-- **AGNTCon + MCPCon Europe** — Expanding the conference to European audiences
+- **AGNTCon + MCPCon Europe** — September 17–18, 2026, Amsterdam
+- **AGNTCon + MCPCon North America** — October 22–23, 2026, San Jose
 
 These events signal sustained institutional investment in the MCP community beyond a one-time gathering.
 
