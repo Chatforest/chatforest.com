@@ -103,6 +103,8 @@ These protocols are not competitors — they solve different layers of the agent
 
 For most developers building MCP servers today, MCP is the only protocol that matters. A2A becomes relevant when building multi-agent systems that need to coordinate across organizational boundaries. UCP matters only for commerce applications. The protocol landscape is complementary, not competitive.
 
+Since this guide was first published, the protocol ecosystem has expanded further — the Agentic Commerce Protocol (ACP, from OpenAI/Stripe), Agent Network Protocol (ANP, for open-web discovery), and x402 (machine-to-machine payments) have joined the stack. For a comprehensive map of all six protocols and how they layer together, see our [AI Agent Protocol Stack guide](/guides/ai-agent-protocol-stack-2026/).
+
 ---
 
 ## 4. The AAIF: Governance That Actually Matters
