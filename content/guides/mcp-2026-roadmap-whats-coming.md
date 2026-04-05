@@ -187,6 +187,7 @@ The June target is tentative. Complex proposals like stateless transport may tak
 - Our guide: [Running MCP Servers in Production](/guides/mcp-in-production/)
 - Our guide: [MCP Tool Annotations Explained](/guides/mcp-tool-annotations-explained/)
 - Our guide: [MCP Reaches the IETF](/guides/mcp-ietf-standardization/) — 15+ Internet-Drafts extending MCP into formal internet standards
+- Our guide: [The AI Agent Protocol Stack](/guides/ai-agent-protocol-stack-2026/) — how MCP fits alongside A2A, ANP, UCP, ACP, and x402 in the broader protocol landscape
 
 ---
 

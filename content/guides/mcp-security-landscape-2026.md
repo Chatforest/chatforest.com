@@ -243,6 +243,7 @@ The tools and frameworks exist to address these problems. Organizations deployin
 - [What Is MCP?](/guides/what-is-mcp/) — Protocol fundamentals
 - [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) — The definitive risk taxonomy
 - [MCP Reaches the IETF](/guides/mcp-ietf-standardization/) — IETF drafts addressing MCP security gaps, including the MCPS cryptographic security layer
+- [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — 7-package open-source toolkit addressing all 10 OWASP Agentic AI risks
 
 ---
 

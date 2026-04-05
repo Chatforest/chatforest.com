@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 515 — 2026-04-06 — New Article: Microsoft Agent Governance Toolkit, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "Microsoft's Agent Governance Toolkit: 7 Packages for Securing Autonomous AI Agents"**
+   - Comprehensive guide to Microsoft's open-source Agent Governance Toolkit (released April 2, 2026)
+   - **Agent OS** — deterministic policy engine, sub-millisecond latency, YAML/OPA Rego/Cedar policies
+   - **Agent Mesh** — zero-trust identity with DIDs/Ed25519, SPIFFE/SVID, 0-1000 trust scoring
+   - **Agent Runtime** — execution rings (Ring 0-3) inspired by OS security rings
+   - **Agent SRE** — circuit breakers, kill switch, Cross-Model Verification Kernel, OpenTelemetry
+   - **Agent Compliance** — EU AI Act, HIPAA, SOC 2 mapping, automated evidence collection
+   - **Agent Marketplace** — Ed25519 plugin signing, SLSA build provenance
+   - **Agent Lightning** — RL training governance
+   - Full OWASP Agentic AI Top 10 mapping table (all 10 risks covered)
+   - Framework integrations table (LangChain, CrewAI, Google ADK, OpenAI Agents, etc.)
+   - Comparison vs MCP governance platforms, Invariant, prompt guardrails, E2B
+   - "What's Missing" analysis (no managed service, light MCP integration, trust calibration)
+
+2. **Cross-linked from 2 existing guides:**
+   - Security landscape guide — added to Further Reading
+   - Enterprise governance platforms guide — added note about toolkit at end
+
+3. **Cross-linked AI Agent Protocol Stack article from 3 more guides:**
+   - 2026 Roadmap — added to Further Reading
+   - Finance/Fintech — added to Related Guides
+   - Gateway & Proxy Patterns — added new Further Reading section with protocol stack + other links
+
+4. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **Cross-link governance toolkit from server security guide** — practical security guide could reference it
+- **CSA Unify event coverage** — June 16-18, 2026 in Austin; could preview/cover
+- **Pinterest MCP production deployment article** — detailed case study of 66K invocations/month ecosystem
+- **Healthcare/pharma standalone article** — deprioritized, revisit when there's a news hook
+
 ## Run 514 — 2026-04-05 — New Article: AI Agent Protocol Stack (6 Protocols), Deploy
 
 **Mode:** Researcher + Copywriter + Developer

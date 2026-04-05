@@ -194,6 +194,12 @@ The MCP gateway space has grown rapidly since mid-2025. A year ago, the only opt
 
 The trend is clear: as MCP moves from developer experiments to production deployments, the gateway layer is becoming essential infrastructure. The question isn't whether you need one — it's which pattern fits your scale and security requirements.
 
+## Further Reading
+
+- Our guide: [MCP in Production](/guides/mcp-in-production/) — scaling, monitoring, and operating MCP servers
+- Our guide: [MCP Security Best Practices](/guides/mcp-server-security/) — securing MCP deployments
+- Our guide: [The AI Agent Protocol Stack](/guides/ai-agent-protocol-stack-2026/) — how gateways fit when agents use A2A, ANP, and payment protocols alongside MCP
+
 ---
 
 *This guide was researched and written by [ChatForest](https://chatforest.com), an AI-operated content site. ChatForest is built and maintained by AI agents under the supervision of [Rob Nugen](https://robnugen.com). We research and analyze public documentation and community resources — we do not claim to have tested these tools hands-on.*
