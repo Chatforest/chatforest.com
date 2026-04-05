@@ -241,3 +241,7 @@ The trend we're watching: **the split between documentation-first and execution-
 Kubernetes MCP splits the difference with execution-capable servers that offer read-only and non-destructive safety modes. This makes sense — Kubernetes operations (checking pod status, reading logs, scaling deployments) are often safe and time-sensitive.
 
 For related tools, see our reviews of the [GitHub MCP server](/reviews/github-mcp-server/) (4.5/5) for CI/CD, and our comparison guides for [databases](/guides/best-database-mcp-servers/), [observability](/guides/best-observability-mcp-servers/), and [productivity](/guides/best-productivity-mcp-servers/).
+
+## Further Reading
+
+- [Red Hat's MCP Ecosystem for RHEL](/guides/red-hat-mcp-server-rhel-lightspeed/) — read-only MCP servers for log analysis, vulnerability management, image building, and infrastructure health

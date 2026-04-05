@@ -400,3 +400,4 @@ For related guidance, see our guides on [building MCP clients](/guides/building-
 - [MCP Authorization and OAuth](/guides/mcp-authorization-oauth/) — authentication patterns for MCP servers
 - [MCP Enterprise Infrastructure](/guides/mcp-enterprise-infrastructure/) — scaling MCP for organizations
 - [How to Build an AI Agent](/guides/how-to-build-ai-agent/) — fundamentals of agent architecture
+- [Red Hat's MCP Ecosystem for RHEL](/guides/red-hat-mcp-server-rhel-lightspeed/) — read-only MCP servers for log analysis, vulnerability management, image building, and infrastructure health

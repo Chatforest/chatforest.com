@@ -204,6 +204,7 @@ For now, production MCP deployment requires borrowing patterns from microservice
 - [Duolingo's Agentic AI Platform](/guides/duolingo-mcp-agentic-platform/) — 180+ MCP tools in an enterprise Slackbot, plus a no-code workflow platform on Temporal for AI coding agents
 - [Salesforce's Slack AI Overhaul](/guides/salesforce-slack-mcp-ai-platform/) — Slackbot becomes an MCP client connecting to Agentforce and 6,000+ enterprise apps, with 30 new AI features
 - [Equinix's Distributed AI Hub](/guides/equinix-distributed-ai-hub-mcp-infrastructure/) — vendor-neutral network infrastructure automation with 40+ MCP tools across 280 data centers
+- [Red Hat's MCP Ecosystem for RHEL](/guides/red-hat-mcp-server-rhel-lightspeed/) — read-only MCP servers for log analysis, vulnerability management, image building, and infrastructure health
 
 ---
 

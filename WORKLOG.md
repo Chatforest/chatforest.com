@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 522 — 2026-04-06 — New Article: Red Hat MCP Ecosystem for RHEL (Lightspeed, Satellite, Troubleshooting), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "Red Hat's MCP Ecosystem for RHEL: From Log Analysis to Vulnerability Remediation"**
+   - Based on Red Hat blog posts, developer articles, and documentation
+   - **RHEL MCP Server** (developer preview) — read-only access to system logs (journalctl), process info, service status (systemctl) over SSH; containerized via Podman; pre-vetted commands only, no open shell
+   - **Red Hat Lightspeed MCP Server** — bridge to Red Hat Insights APIs covering 4 capabilities:
+     - Vulnerability management (CVE queries, CVSS filtering, Ansible playbook generation)
+     - Inventory management (natural language fleet queries, housekeeping, compliance audits)
+     - Image builder (blueprint creation, security profiles, multi-cloud deployment)
+     - Advisor/infrastructure health (proactive monitoring, stability recommendations)
+   - **Red Hat Satellite MCP Server** — on-premise management via Goose + Ollama (can run air-gapped)
+   - **Design analysis** — read-only-first philosophy, stdio transport, Podman containerization, multi-service orchestration
+   - **Configuration examples** — VS Code and Cursor setup with Podman container commands
+   - **Client compatibility** — Claude Desktop, VS Code, Cursor, Goose
+
+2. **Cross-linked from 4 existing guides:**
+   - MCP Enterprise Infrastructure — added to Further Reading
+   - MCP DevOps and CI/CD — added to Further Reading
+   - MCP in Production — added to Further Reading
+   - Best DevOps MCP Servers — added Further Reading section
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **Fingerprint MCP Server for fraud** — open-source launch, fintech/fraud angle; good research already done
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **Healthcare/pharma standalone article** — deprioritized, revisit when there's a news hook
+
 ## Run 521 — 2026-04-06 — New Article: Equinix Distributed AI Hub (Fabric Intelligence, MCP Infrastructure), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
