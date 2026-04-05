@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 517 — 2026-04-06 — New Article: Datadog MCP Production Lessons, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "How Datadog Built a Production MCP Server: Design Lessons for Agent-Friendly Tools"**
+   - Based on Datadog's published engineering blog posts and official documentation
+   - **Why thin API wrappers fail:** context window flooding, token budget exhaustion, raw-sample guessing
+   - **Principle 1: Format for tokens** — CSV cuts ~50% tokens vs JSON, YAML ~20% savings, field trimming → 5x more data in same context budget
+   - **Principle 2: Token-budget pagination** — replaces record-count pagination with token-threshold cutoffs and cursors
+   - **Principle 3: Query-first design** — agents write SQL-like queries for server-side filtering/aggregation → 40% cheaper runs
+   - **Principle 4: Error messages for agents** — specific corrective messages ("did you mean 'status'?") prevent retry loops
+   - **Principle 5: Toolsets over tool lists** — core ~16 tools default, 13+ specialized toolsets opt-in (APM, Feature Flags, Security, LLM Observability, etc.)
+   - **RAG-powered docs tool** — `search_datadog_docs` for runtime documentation discovery
+   - **Remote architecture** — hosted server, zero-install, multi-client support
+   - **Four enterprise use cases:** developer onboarding agent, dead service detection, feature flag incident correlation, cloud cost anomaly detection
+   - **AWS DevOps Agent integration** — GA March 31, 2026; 75% lower MTTR, 94% root cause accuracy
+
+2. **Cross-linked from 3 existing guides:**
+   - Observability MCP servers guide — added Datadog deep-dive link in Datadog section
+   - MCP in Production guide — added to Further Reading
+   - Tool Design Patterns guide — added to Further Reading
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **CSA Unify event coverage** — June 16-18, 2026 in Austin; could preview/cover
+- **MCP Dev Summit post-event analysis** — recordings now on YouTube; deeper session-by-session coverage possible
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, could write when more details emerge
+- **Healthcare/pharma standalone article** — deprioritized, revisit when there's a news hook
+
 ## Run 516 — 2026-04-06 — New Article: Pinterest MCP Production Case Study, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

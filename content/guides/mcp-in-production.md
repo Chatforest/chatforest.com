@@ -200,6 +200,7 @@ For now, production MCP deployment requires borrowing patterns from microservice
 ## Further Reading
 
 - [Pinterest's MCP Ecosystem: 66K Invocations/Month Case Study](/guides/pinterest-mcp-production-case-study/) — how Pinterest built domain-specific servers, a central registry, and human-in-the-loop governance
+- [Datadog MCP Production Lessons](/guides/datadog-mcp-server-production-lessons/) — how Datadog redesigned their MCP server after watching agents fail with thin API wrappers, with five transferable design principles
 
 ---
 

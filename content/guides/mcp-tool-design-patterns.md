@@ -372,6 +372,7 @@ Start with naming and descriptions — they have the highest impact for the lowe
 - [Agent-Aware MCP: 10 Patterns for Actionable Tool Responses](https://medium.com/@kumaran.isk/agent-aware-mcp-10-patterns-for-actionable-tool-responses-54029e337941) — detailed exploration of response patterns that embed agent-actionable intelligence
 - [MCP Tool Design Best Practices (Workato)](https://docs.workato.com/en/mcp/mcp-server-tool-design.html) — practical guidance on composable, agent-friendly tool interfaces
 - [SEP-1382: Documentation Best Practices for MCP Tools](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1382) — community discussion on standardizing tool documentation
+- [How Datadog Built a Production MCP Server](/guides/datadog-mcp-server-production-lessons/) — real-world lessons on token-budget pagination, format optimization (5x gains), and query-first tool design
 
 ---
 

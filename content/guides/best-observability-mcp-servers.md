@@ -57,7 +57,7 @@ The most feature-rich observability MCP server. Built around **toolsets** — mo
 - Community server ([winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog), 139 stars) covers gaps the official server doesn't (host muting, downtimes, RUM)
 - Closed-source — can't audit or self-host
 
-**Best for:** Enterprise teams already on Datadog who want the broadest operational context in their AI tools.
+**Best for:** Enterprise teams already on Datadog who want the broadest operational context in their AI tools. For a deep dive into how Datadog's engineering team designed these tools for agents (and why their first API-wrapper version failed), see our [Datadog MCP Production Lessons](/guides/datadog-mcp-server-production-lessons/) guide.
 
 ### New Relic MCP — Natural Language Observability
 
