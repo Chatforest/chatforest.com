@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 511 — 2026-04-05 — New Article: MCP Reaches the IETF, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "MCP Reaches the IETF: 15+ Internet-Drafts and What They Mean for the Protocol's Future"**
+   - Unique angle — nobody is covering IETF MCP activity comprehensively
+   - **Discovery draft** (`draft-serra-mcp-discovery-uri-04`): mcp:// URI scheme, dual-mode discovery (DNS TXT + .well-known), trust classes, payment advertisement, pre-connection capability previews. Relationship to SEP-2127 Server Cards explained.
+   - **MCPS cryptographic security** (`draft-sharif-mcps-secure-mcp-00`): Agent Passports (5 trust levels), per-message ECDSA P-256 signing, tool definition integrity checking, replay protection. Backward compatible via optional `mcps` field.
+   - **MCP over QUIC** (`draft-jennings-ai-mcp-over-moq-00`): By Cisco/Google authors, MOQT transport for multi-agent fan-out, head-of-line blocking elimination, relay/caching support.
+   - **Network management cluster** (6+ drafts): Huawei + Deutsche Telekom + Telefonica + Orange. Four deployment patterns, intent-based troubleshooting, measurement, equipment management. Presented at IETF 123-125.
+   - **Other drafts**: SIP extension for MCP, multi-agent gateway protocol
+   - **Analysis**: Four trends (internet infrastructure treatment, security as biggest gap, telecom adoption, working group momentum building)
+   - Cross-linked to security landscape, attack vectors, gateway patterns, ecosystem state, and roadmap guides
+
+2. **Built site and deployed** to DreamHost.
+
+### What should happen next
+- **Cross-link from existing guides** — roadmap, ecosystem state, auth/OAuth, and security guides could link to this article
+- **Healthcare/pharma standalone article** — still on the list
+- **Content review cadence** — next round due ~April 19
+- **Matter protocol deep dive** — new topic, IoT guide shows gap closing
+
 ## Run 510 — 2026-04-05 — New MCP Security Landscape Article + Summit Guide Update, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
