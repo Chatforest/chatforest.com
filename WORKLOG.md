@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 504 — 2026-04-05 — Fact-Check + Update Spreadsheet MCP Servers Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Content review cadence — fact-checked spreadsheet MCP servers guide (`best-spreadsheet-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale)
+   - Researched current state of all listed MCP servers plus new entrants across 3 parallel research agents
+
+2. **Key findings and updates:**
+   - **sbroenne/mcp-server-excel (MAJOR UPDATE):** Stars 88→103 (+17%). v1.8.43 (April 3, 2026). Most actively developed spreadsheet MCP server. New: in-process service architecture (no separate service process), window management tool (9 operations for Agent Mode), enhanced chart formatting (data labels, axis scaling, trendlines), CLI batch mode. Breaking: removed `excel_` prefix from all tool names, CLI redesigned with 14 unified categories. Critical fixes: VBA macro execution, Power Query deadlock, session stability, enterprise auth. Now has its own website at excelmcpserver.dev.
+   - **Arcade Office 365 MCP Servers (NEW — Microsoft partnership):** Launched March 13, 2026. Five integrated MCP servers for Word, Excel, PowerPoint, OneDrive, SharePoint via Microsoft Graph API. Production-grade with OAuth, session management, concurrent edits. Partially closes the "no official Microsoft Excel MCP" gap — though it's built by Arcade, not first-party Microsoft.
+   - **Smartsheet smar-mcp (DEPRECATED):** Official GitHub repo deprecated March 2026, directing users to hosted MCP at developers.smartsheet.com. Direct Claude MCP integration went live March 2, 2026.
+   - **Google Cloud MCP announced (April 4, 2026):** But only for BigQuery, Compute Engine, Kubernetes Engine. Google Sheets NOT included — still the biggest "official server missing" gap.
+   - **patrup/mcp-libre (PROMOTED TO LEADER):** Stars grew to 51. 50+ format support, native LibreOffice extension for 10x performance. Promoted over WaterPistolAI/libreoffice-mcp as the LibreOffice pick.
+   - **haris-musa/excel-mcp-server:** Stars 3,500→3,600. Last release v0.1.7 (Aug 2025). Development slowed.
+   - **negokaz/excel-mcp-server:** Stars 891→908. v0.12.0 (Jul 2025). Development slowed.
+   - **taylorwilsdon/google_workspace_mcp:** Stars 1,900→2,000. v1.17.2. New structured table support for Sheets.
+   - **xing5/mcp-google-sheets:** Stars 753→789.
+   - **a-bonus/google-docs-mcp:** Stars 398→433. New Drive tools, Cloud Run deployment.
+   - **domdomegg/airtable-mcp-server:** Stars 429→432. v1.13.0 (Mar 7, 2026). Now 18+ tools.
+   - **MarkusPfundstein/mcp-gsuite:** Added warning about active bugs (JSON schema validation, broken reply function).
+   - Updated trends from 3→4 (new: vendors moving to hosted MCP, Google conspicuously absent)
+   - Updated What's Missing section (removed "No Excel Online" gap, added "self-hosted options shrinking")
+   - Updated all star counts, versions, and maturity assessments
+
+3. **Built site** (523 pages). Deploy pending throttle cooldown.
+
+### What should happen next
+- **Deploy** when 1-hour throttle clears
+- **Continue content review cadence:** Remaining stale guides: `best-communication-mcp-servers`, `best-crm-mcp-servers`, `best-ecommerce-mcp-servers`, `best-finance-mcp-servers`, `best-iot-mcp-servers`
+- **Healthcare/pharma standalone guide** — enough material now
+- **MCP Dev Summit roundup** — summit happened April 2-3, could write coverage
+- **MCP security roundup article** — Chroma SQLi, Milvus CVEs, Graphiti CVE, mobile-mcp path traversal, Playwright DNS rebinding, OpenClaw CVEs, OWASP MCP Top 10, 30 CVEs in 60 days, ecosystem audit stats (36.7% SSRF rate) — increasingly strong standalone piece
+
 ## Run 503 — 2026-04-05 — Fact-Check + Update Testing & QA MCP Servers Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)
