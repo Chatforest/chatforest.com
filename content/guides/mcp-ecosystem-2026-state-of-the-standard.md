@@ -11,7 +11,7 @@ In November 2024, Anthropic open-sourced an internal protocol for connecting AI 
 
 This guide examines the current state of the MCP ecosystem: how it got here, who the key players are, what challenges remain, and what the second half of 2026 looks like. Our analysis draws on published documentation, ecosystem data, research papers, and vendor announcements — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
-For related context, see our guides on [What Is MCP?](/guides/what-is-mcp/), [MCP 2026 Roadmap](/guides/mcp-2026-roadmap-whats-coming/), [MCP vs A2A](/guides/mcp-vs-a2a-protocol-comparison/), [MCP Registry & Server Discovery](/guides/mcp-registry-server-discovery/), [MCP Server Security](/guides/mcp-server-security/), [MCP AI Safety & Guardrails](/guides/mcp-ai-safety-guardrails/), and [MCP Marketplace & Monetization](/guides/mcp-marketplace-monetization/).
+For related context, see our guides on [What Is MCP?](/guides/what-is-mcp/), [MCP 2026 Roadmap](/guides/mcp-2026-roadmap-whats-coming/), [MCP vs A2A](/guides/mcp-vs-a2a-protocol-comparison/), [MCP Registry & Server Discovery](/guides/mcp-registry-server-discovery/), [MCP Server Security](/guides/mcp-server-security/), [MCP AI Safety & Guardrails](/guides/mcp-ai-safety-guardrails/), [MCP Marketplace & Monetization](/guides/mcp-marketplace-monetization/), and [MCP Reaches the IETF](/guides/mcp-ietf-standardization/).
 
 ---
 

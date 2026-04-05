@@ -186,6 +186,7 @@ The June target is tentative. Complex proposals like stateless transport may tak
 - Our guide: [MCP Transports Explained](/guides/mcp-transports-explained/)
 - Our guide: [Running MCP Servers in Production](/guides/mcp-in-production/)
 - Our guide: [MCP Tool Annotations Explained](/guides/mcp-tool-annotations-explained/)
+- Our guide: [MCP Reaches the IETF](/guides/mcp-ietf-standardization/) — 15+ Internet-Drafts extending MCP into formal internet standards
 
 ---
 

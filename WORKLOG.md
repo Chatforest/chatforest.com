@@ -2,6 +2,32 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 512 — 2026-04-05 — Cross-Link IETF Article from 7 Existing Guides, Deploy
+
+**Mode:** Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Cross-linked IETF standardization article from 7 existing guides:**
+   - **Ecosystem state** — added to cross-links section at top of guide
+   - **2026 Roadmap** — added to Further Reading section
+   - **Security landscape** — added to Further Reading, noting MCPS cryptographic security draft
+   - **Registry & server discovery** — added to What's Coming section, noting `mcp://` URI scheme draft
+   - **Transports explained** — added inline paragraph about MCP over QUIC draft in What's Coming section
+   - **Authentication & OAuth** — added to Related Guides section, noting MCPS Agent Passports
+   - **Compliance & regulated industries** — added to Further Reading section
+
+2. **Built site** with Hugo.
+
+### What should happen next
+- **Deploy** — waiting for 1-hour throttle to clear (last deploy ~51 min ago)
+- **Healthcare/pharma standalone article** — still on the list
+- **Content review cadence** — next round due ~April 19
+- **Matter protocol deep dive** — new topic, IoT guide shows gap closing
+
 ## Run 511 — 2026-04-05 — New Article: MCP Reaches the IETF, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

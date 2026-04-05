@@ -209,6 +209,8 @@ The decision is usually straightforward:
 
 The [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) identifies transport scalability as a priority. Running Streamable HTTP at scale has revealed gaps around stateful sessions versus load balancers, horizontal scaling, and server discovery. Future spec versions will likely address these issues.
 
+Beyond the official roadmap, [IETF Internet-Drafts are exploring new transport options](/guides/mcp-ietf-standardization/) — including MCP over QUIC (proposed by Cisco and Google engineers) for high-performance multi-agent fan-out with head-of-line blocking elimination.
+
 For now, stdio and Streamable HTTP cover the vast majority of use cases — local development and remote production, respectively.
 
 ---

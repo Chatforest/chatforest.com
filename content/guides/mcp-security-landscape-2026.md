@@ -242,6 +242,7 @@ The tools and frameworks exist to address these problems. Organizations deployin
 - [MCP Dev Summit 2026 Roundup](/guides/mcp-dev-summit-2026-guide/) — 23 of 95+ summit sessions focused on security
 - [What Is MCP?](/guides/what-is-mcp/) — Protocol fundamentals
 - [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) — The definitive risk taxonomy
+- [MCP Reaches the IETF](/guides/mcp-ietf-standardization/) — IETF drafts addressing MCP security gaps, including the MCPS cryptographic security layer
 
 ---
 

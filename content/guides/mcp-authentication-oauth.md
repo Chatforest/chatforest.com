@@ -471,3 +471,4 @@ For broader MCP context, see our related guides:
 - [Debugging MCP Servers](/guides/mcp-server-security/) — troubleshooting connection and auth issues
 - [Building MCP Clients](/guides/building-mcp-clients/) — client-side implementation guidance
 - [MCP Server Deployment & Hosting](/guides/mcp-server-deployment-hosting/) — hosting options and deployment strategies
+- [MCP Reaches the IETF](/guides/mcp-ietf-standardization/) — IETF drafts proposing cryptographic security layers (MCPS Agent Passports) beyond OAuth

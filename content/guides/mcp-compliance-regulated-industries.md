@@ -396,3 +396,4 @@ The compliance tooling around MCP is maturing rapidly. Organizations that start 
 - [MCP Gateway and Proxy Patterns](/guides/mcp-gateway-proxy-patterns/) — gateway architectures
 - [MCP Enterprise Infrastructure](/guides/mcp-enterprise-infrastructure/) — enterprise deployment patterns
 - [MCP Logging and Observability](/guides/mcp-logging-observability/) — monitoring MCP systems
+- [MCP Reaches the IETF](/guides/mcp-ietf-standardization/) — formal internet standardization efforts that support compliance requirements

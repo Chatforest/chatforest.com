@@ -287,6 +287,7 @@ The registry is still in preview, and several developments are in progress:
 
 - **v0.2 API** — currently in development alongside the frozen v0.1
 - **Server Cards in the spec** — SEP-1649 and SEP-1960 are likely to merge, making `.well-known` discovery part of the core protocol
+- **IETF Discovery Draft** — An [IETF Internet-Draft proposes the `mcp://` URI scheme](/guides/mcp-ietf-standardization/) with DNS TXT record discovery and `.well-known` integration, potentially complementing the registry for internet-scale server discovery
 - **Richer metadata** — tool-level descriptions, capability matrices, and compatibility information
 - **Security scanning integration** — aggregators are starting to add automated vulnerability scanning for registered servers
 - **Usage analytics** — installation counts and popularity metrics to help with server selection
