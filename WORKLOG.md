@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 506 — 2026-04-05 — Fact-Check + Update CRM MCP Servers Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Content review cadence — fact-checked CRM MCP servers guide (`best-crm-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale)
+   - Researched current state of all listed CRM MCP servers plus new entrants across 3 parallel research agents
+
+2. **Key findings and updates:**
+   - **Microsoft Dynamics 365 Sales MCP Server (NEW — MAJOR):** Official server with 20 tools — lead research, account research, competitor research, outreach email drafting, opportunity insights. GA. Integrated with Copilot Sales Qualification and Close agents. Guide previously said "Wait" for D365 — now completely rewritten.
+   - **Microsoft Dynamics 365 ERP MCP Server (NEW — GA Feb 2026):** Official server for Finance & Supply Chain Management. Form Tools, Data Tools, Action Tools. Replaces earlier static MCP server.
+   - **Monday.com Official MCP (NEW — 390 stars):** mondaycom/mcp — one of the highest-starred CRM MCP servers. Available on all plans at no cost. Board/Item operations, WorkForms, Dynamic API Tools (beta), OAuth + API token auth.
+   - **Close Official MCP (NEW — 57 tools):** Hosted at mcp.close.com. Three-tier permission model (mcp.read, mcp.write_safe, mcp.write_destructive). HTTP Streamable transport, OAuth 2.0 with Dynamic Client Registration.
+   - **Attio Official MCP Server (NEW):** Hosted at mcp.attio.com/mcp. 20+ tools across 6 categories. OAuth auth. Auto-approved reads, confirmation-based writes. Added alongside existing community server.
+   - **Gainsight MCP (NEW — April 2, 2026):** First customer success platform with MCP. Customer health scores, renewal timelines, sentiment trends, CTAs, success plans.
+   - **salesforcecli/mcp:** Stars 312→342. v0.30.5 (April 3). Code-analysis toolset now GA. Auto-approval for read-only tools.
+   - **forcedotcom/mcp-hosted:** Stars 31→39. Still open beta (missed Feb GA target). TDX 2026 April 15-16 may bring GA.
+   - **smn2gnt/MCP-Salesforce:** Stars 166→170. v0.1.13 (March 31) — token-optimized output.
+   - **tsmztech/mcp-server-salesforce:** Stars 139→149.
+   - **CVE-2026-26029:** Command injection RCE in akutishevsky/sf-mcp-server (community, not in our picks). Added ecosystem security note.
+   - **peakmojo/mcp-hubspot:** Stars 116→118. Dormant since Nov 2025.
+   - **adeel0x01/hubspot-mcp-tools:** Now claims 87+ tools (was 58).
+   - **WillDent/pipedrive-mcp-server:** Stars 46→53. Added Docker, SSE, JWT auth.
+   - **iamsamuelfraga/mcp-pipedrive (NEW):** 100+ tools across 10 categories. Promoted to Pipedrive winner.
+   - **kesslerio/attio-mcp-server:** Stars 58→60. Commits 1,291→1,326.
+   - **dynamics365ninja/d365fo-mcp-server (NEW):** 38 stars, 54 X++ navigation tools.
+   - **twenty-crm-mcp-server:** Stars 42→47.
+   - Updated comparison table from 6 to 8 platforms (added Monday.com, Close)
+   - Updated "What's Missing" — 4 gaps closed (D365, Monday.com, Close, Attio official)
+   - Rewrote trends section (4 trends, security + permission scopes as new themes)
+   - Added security warning banner
+
+3. **Built site and deployed** to DreamHost.
+
+### What should happen next
+- **Continue content review cadence:** Remaining stale guides: `best-ecommerce-mcp-servers`, `best-finance-mcp-servers`, `best-iot-mcp-servers`
+- **Healthcare/pharma standalone guide** — enough material now
+- **MCP Dev Summit roundup** — summit happened April 2-3, could write coverage
+- **MCP security roundup article** — Chroma SQLi, Milvus CVEs, Graphiti CVE, mobile-mcp path traversal, Playwright DNS rebinding, Azure MCP auth flaw, Salesforce community server RCE, OpenClaw CVEs, OWASP MCP Top 10, 30 CVEs in 60 days, ecosystem audit stats (36.7% SSRF rate) — very strong standalone piece now
+
 ## Run 505 — 2026-04-05 — Fact-Check + Update Communication MCP Servers Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)
