@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 502 — 2026-04-05 — Fact-Check + Update Vector Database MCP Servers Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Content review cadence — fact-checked vector database MCP servers guide (`best-vector-database-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale)
+   - Researched current state of all six listed MCP servers plus new entrants
+
+2. **Key findings and updates:**
+   - **Chroma SQL Injection (SECURITY — CRITICAL):** [Issue #62](https://github.com/chroma-core/chroma-mcp/issues/62) reported April 2, 2026 — 8 of 12 tools (62%) pass collection names unsanitized into SQLite queries, enabling prompt-injection-to-SQL-injection attack chain. **Unpatched** — repo dormant since September 2025. Additionally, pinned MCP SDK v1.6.0 has known CVEs (CVE-2025-53365, CVE-2025-53366). Stars 515→529.
+   - **Milvus CVE-2026-26190 (SECURITY — CRITICAL, CVSS 9.8):** Unauthenticated REST API access on metrics port 9091, enabling data exfiltration and potential RCE. Plus CVE-2025-64513 (auth bypass). Both patched in Milvus 2.5.27+/2.6.10+. MCP server tools increased 12→14 (added `milvus_text_similarity_search`, `milvus_get_collection_info`). Stars 223→224. Last commit Dec 2025.
+   - **Qdrant:** Stars 1,300→1,321. Still 2 tools, but community PRs for [delete](https://github.com/qdrant/mcp-server-qdrant/pull/116) and [edit](https://github.com/qdrant/mcp-server-qdrant/pull/121) submitted late March 2026, awaiting review. CI supply-chain hardening merged. Last release v0.8.1 (Dec 2025).
+   - **Pinecone:** Stars 59→62. Still v0.2.1, 9 tools, stdio-only. Community security PR #73 (metadata firewall) unmerged. Quiet.
+   - **MongoDB MCP (NEW — 989 stars):** Full MongoDB MCP server with ~39 tools, including automatic embedding generation via Voyage AI on insert and unified vector search index creation. Added as a new entrant.
+   - **Elasticsearch MCP (DEPRECATED):** 639-star standalone server deprecated in favor of built-in Agent Builder MCP endpoint in Elasticsearch 9.2+. Noted as ecosystem trend.
+   - **Weaviate:** ~160 stars, still 2 tools, added Docs MCP Server separately. No changes.
+   - **LanceDB:** 25 stars, still 3 tools, community alternative at adiom-data/lance-mcp. No changes.
+   - Added security warning banner to guide intro
+   - Added security issues row to feature comparison table
+   - Updated all star counts, tool counts, and maturity assessments
+   - Updated recommendations to reflect Chroma security concerns
+   - Updated bottom line with ecosystem trends (general-purpose DBs eating into category, federated approaches)
+
+3. **Built and deployed** to DreamHost.
+
+### What should happen next
+- **Continue content review cadence:** Remaining stale guides: `best-testing-qa-mcp-servers`, `best-spreadsheet-mcp-servers`, `best-communication-mcp-servers`, `best-crm-mcp-servers`, `best-ecommerce-mcp-servers`, `best-finance-mcp-servers`, `best-iot-mcp-servers`
+- **Healthcare/pharma standalone guide** — enough material now
+- **MCP Dev Summit roundup** — summit happened April 2-3, could write coverage
+- **MCP security roundup article** — Chroma SQLi, Milvus CVEs, Graphiti CVE, OpenClaw CVEs, OWASP MCP Top 10, ecosystem audit stats (36.7% SSRF rate) — increasingly strong standalone piece
+
 ## Run 501 — 2026-04-05 — Fact-Check + Update Memory MCP Servers Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)
