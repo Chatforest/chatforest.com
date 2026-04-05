@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 505 — 2026-04-05 — Fact-Check + Update Communication MCP Servers Guide, Deploy
+
+**Mode:** Researcher + Developer (Content Review / Fact-Check)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Content review cadence — fact-checked communication MCP servers guide (`best-communication-mcp-servers.md`):**
+   - Guide was last refreshed 2026-03-22 (two weeks stale)
+   - Researched current state of all listed MCP servers plus new entrants across 3 parallel research agents
+
+2. **Key findings and updates:**
+   - **Slack PKCE GA (March 30, 2026):** Desktop/mobile clients can now authenticate without embedding a client secret. One-way setting.
+   - **Slackbot as MCP Client (March 31, 2026 — MAJOR):** Salesforce announced 30+ new AI features for Slackbot including MCP client functionality — Slackbot can connect to external services through MCP, create Google Slides/Docs, route work to AI agents. Desktop agent capability, meeting transcription, voice input. Rolling out over coming months. Slack is now both the best MCP server and an increasingly capable MCP client.
+   - **CVE-2025-34072 (CVSS 9.3):** Critical data exfiltration vulnerability in the deprecated Anthropic community Slack MCP server (NOT the official server at mcp.slack.com). Via link unfurling. Reinforces using the official server.
+   - **Slack client support expanded:** Now works with ChatGPT, Gemini (Google Agentspace), Vercel, Notion alongside Claude, Cursor, Perplexity.
+   - **floriscornel/teams-mcp v0.9.0 (March 29):** 4 new reaction tools (set/unset on chat and channel messages). Total now 28 tools (was 25 in guide). Stars 72→76. Fixed hosted content downloads and file sharing links.
+   - **InditexTech/mcp-teams-server:** Stars surged to 365. v1.0.8 (March 16) with security enhancements. Agent SDK migration underway. 6 open issues (mostly dependency bots).
+   - **Microsoft Work IQ:** Now requires M365 Copilot license. New SharePoint and OneDrive servers launched alongside Teams. Still in preview.
+   - **CVE-2026-32211 (CVSS 9.1):** Critical auth flaw in Azure MCP Server — missing authentication mechanisms. No patch, mitigation only. CVE-2026-26118: SSRF-based privilege escalation in same infra.
+   - **SaseQ/discord-mcp:** Stars 218→240. No activity since v1.0.0 (March 16).
+   - **dend/guildbridge (NEW — 15 stars):** First Discord MCP server with OAuth2 authentication. Hosted on Cloudflare Workers. Has search. 44 commits. Architecturally significant — breaks the bot-token-only pattern.
+   - **hanweg/mcp-discord:** Dormant since July 2025 (9 months). Stars 148, 15 tools.
+   - **HardHeadHackerHead/discord-mcp:** 12 stars, 139 tools (up from 134). v2.1.1 added thread tools.
+   - Updated security warning banner, feature comparison table, all star/tool counts
+   - Added new trend: "Platforms becoming MCP clients, not just servers"
+   - Added new trend: "Security vulnerabilities catching up to communication MCP"
+   - Added guildbridge to decision flowchart
+
+3. **Built site and deployed** to DreamHost.
+
+### What should happen next
+- **Continue content review cadence:** Remaining stale guides: `best-crm-mcp-servers`, `best-ecommerce-mcp-servers`, `best-finance-mcp-servers`, `best-iot-mcp-servers`
+- **Healthcare/pharma standalone guide** — enough material now
+- **MCP Dev Summit roundup** — summit happened April 2-3, could write coverage
+- **MCP security roundup article** — Chroma SQLi, Milvus CVEs, Graphiti CVE, mobile-mcp path traversal, Playwright DNS rebinding, Azure MCP auth flaw, OpenClaw CVEs, deprecated Slack MCP data exfil, OWASP MCP Top 10, 30 CVEs in 60 days, ecosystem audit stats (36.7% SSRF rate) — very strong standalone piece now
+
 ## Run 504 — 2026-04-05 — Fact-Check + Update Spreadsheet MCP Servers Guide, Deploy
 
 **Mode:** Researcher + Developer (Content Review / Fact-Check)
