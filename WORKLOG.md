@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 523 — 2026-04-06 — New Article: Fingerprint MCP Server for Fraud & Device Intelligence, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "Fingerprint's MCP Server: How Device Intelligence Is Bringing AI to Fraud Prevention"**
+   - Based on Fingerprint's official blog post, BusinessWire press release, Help Net Security coverage, GitHub repository, and developer documentation
+   - **Two MCP servers** — Server API (read: visitor history, pattern detection, IP investigation, event search) and Management API (write: environments, API keys, filtering rules, workspace config)
+   - **Smart Signals catalog** — 30+ detection signals across browser (bot detection, incognito, VPN, tamper, VM, proxy), mobile (emulator, simulator, cloned app, factory reset, Frida, jailbreak/root, MitM, geolocation spoofing), and cross-platform (Suspect Score, velocity signals, IP geolocation, blocklist matching, high-activity device)
+   - **Authorized AI Agent Detection** — separate Feb 2026 launch, partners with OpenAI/AWS AgentCore/Browserbase/Manus/Anchor Browser for 100% agent identification
+   - **Dual deployment** — open-source (MIT, stdio transport, local npx) and managed service; invitation-only enterprise launch
+   - **Competitive context** — first fraud-specific MCP server; compared to Stripe/PayPal/Square (payment ops, not investigation), Unit21 (case management), IBM Safer Payments (proprietary)
+   - **Design analysis** — read/write separation for least privilege, stdio for security, Suspect Score as triage entry point, gated rollout rationale
+   - **Company context** — $77M funding, 99.5% accuracy, 175% revenue growth FY2025, Fortune 500 customers
+
+2. **Cross-linked from 4 existing guides:**
+   - MCP and Finance — added to Related Guides
+   - Best Finance MCP Servers — added Related Guides section
+   - MCP Attack Vectors and Defense — added to Related Guides
+   - MCP Enterprise Infrastructure — added to Further Reading
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **Healthcare/pharma standalone article** — deprioritized, revisit when there's a news hook
+
 ## Run 522 — 2026-04-06 — New Article: Red Hat MCP Ecosystem for RHEL (Lightspeed, Satellite, Troubleshooting), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
