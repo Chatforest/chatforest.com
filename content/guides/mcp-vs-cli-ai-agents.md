@@ -174,6 +174,7 @@ The gap between CLI and MCP is narrowing. As MCP clients implement smarter tool 
 
 ## Further Reading
 
+- [MCP's Growing Pains: Context Bloat, Security Gaps, and the Companies Walking Away](/guides/mcp-growing-pains-2026/) — the full picture of why companies like Perplexity are leaving MCP and what alternatives are emerging
 - [What Is MCP?](/guides/what-is-mcp/) — foundational overview of the Model Context Protocol
 - [MCP vs REST APIs](/guides/mcp-vs-rest-apis/) — how MCP compares to traditional API integration
 - [MCP vs Function Calling](/guides/mcp-vs-function-calling/) — understanding the distinction between MCP tools and native function calling

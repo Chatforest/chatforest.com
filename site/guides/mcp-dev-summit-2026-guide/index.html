@@ -161,7 +161,7 @@
 <h3 id="day-1--april-2">Day 1 — April 2</h3>
 <p><strong>&ldquo;MCP: The Integration Protocol&rdquo;</strong> — David Soria Parra (Anthropic). The protocol&rsquo;s lead framed MCP&rsquo;s evolution from developer tool to industry standard, now governed by the Agentic AI Foundation under the Linux Foundation.</p>
 <p><strong>&ldquo;MCP @ Amazon Scale&rdquo;</strong> — James Hood (AWS). AWS&rsquo;s perspective on running MCP infrastructure at enterprise scale, reflecting their Diamond sponsorship and AAIF Governing Board Chair role (David Nalley).</p>
-<p><strong>&ldquo;Operating MCPs at Enterprise Scale: Uber&rsquo;s Journey&rdquo;</strong> — Meghana Somasundara &amp; Rush Tehrani (Uber). The first public disclosure of Uber&rsquo;s MCP deployment — a significant enterprise case study from a company running complex, real-time systems.</p>
+<p><strong>&ldquo;Operating MCPs at Enterprise Scale: Uber&rsquo;s Journey&rdquo;</strong> — Meghana Somasundara &amp; Rush Tehrani (Uber). The first public disclosure of Uber&rsquo;s MCP deployment — a significant enterprise case study from a company running complex, real-time systems. See our <a href="/guides/uber-mcp-gateway-agentic-engineering/">full Uber MCP case study</a> for the complete architecture breakdown.</p>
 <p><strong>&ldquo;Duolingo&rsquo;s AI Slackbot: An Enterprise Assistant With 180+ MCP Tools&rdquo;</strong> — Aaron Wang (Duolingo). How Duolingo built an internal AI assistant using 180+ MCP tools for employee support, alert triage, incident debugging, and internal system navigation.</p>
 <p><strong>&ldquo;Enterprise MCP — The Data Plane for Autonomous Agents&rdquo;</strong> — Adam Seligman &amp; Zayne Turner (Workato). Positioning MCP as the data layer for enterprise agent architectures.</p>
 <p><strong>&ldquo;The First 100 Agents&rdquo;</strong> — Diamond Bishop (Datadog). Operational lessons from deploying the first wave of production AI agents.</p>
@@ -231,6 +231,13 @@
 
   
     <div class="article-card">
+  <div class="card-meta"><span>Guide</span> <span>2026-04-07 10:00:00</span></div>
+  <h3><a href="/guides/uber-mcp-gateway-agentic-engineering/">Uber&#39;s MCP Gateway: How 84% of Engineers Went Agentic and What It Took to Get There</a></h3>
+  <p>Uber built a centralized MCP Gateway that proxies Thrift, Protobuf, and HTTP endpoints as MCP servers with a single config change. Combined with Agent Builder (no-code agent creation), AIFX CLI (standardized tool provisioning), and GenAI Gateway (PII redaction before external model calls), it powers 84% developer adoption, 65-72% AI-generated code, and 11% of PRs opened by agents. The uSpec system automates design-to-spec documentation across 7 platform stacks using the Figma Console MCP. AI costs are up 6x since 2024 — the tradeoff Uber considers worth it to eliminate engineering toil. This case study breaks down the architecture, governance, and what other enterprises can learn.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Guide</span> <span>2026-04-07 09:00:00</span></div>
   <h3><a href="/guides/cloudflare-emdash-mcp-server-wordpress-successor/">Cloudflare&#39;s EmDash: The AI-Native CMS That Puts an MCP Server in Every Website</a></h3>
   <p>EmDash is Cloudflare&#39;s open-source WordPress successor — a full-stack TypeScript CMS with a built-in remote MCP server, sandboxed plugins via Dynamic Workers, passkey authentication, Astro-powered themes, and native x402 payments. This guide covers the architecture, MCP integration, security model, and what it means for the CMS landscape.</p>
@@ -241,13 +248,6 @@
   <div class="card-meta"><span>Guide</span> <span>2026-04-06 23:00:00</span></div>
   <h3><a href="/guides/fingerprint-mcp-server-fraud-device-intelligence/">Fingerprint&#39;s MCP Server: How Device Intelligence Is Bringing AI to Fraud Prevention</a></h3>
   <p>Fingerprint&#39;s MCP Server connects AI assistants directly to its device intelligence platform, letting fraud analysts investigate suspicious activity through natural language instead of dashboards. This guide covers the architecture, tools exposed, Smart Signals integration, Authorized AI Agent Detection, and what the dual deployment model means for enterprise fraud teams.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Guide</span> <span>2026-04-06 23:00:00</span></div>
-  <h3><a href="/guides/red-hat-mcp-server-rhel-lightspeed/">Red Hat&#39;s MCP Ecosystem for RHEL: From Log Analysis to Vulnerability Remediation</a></h3>
-  <p>Red Hat built an MCP ecosystem spanning the full RHEL operations lifecycle: a read-only RHEL MCP Server for log and performance analysis, a Lightspeed MCP Server connecting to Insights services (vulnerabilities, inventory, image builder, advisor), and a Satellite MCP Server for on-premise management. This guide breaks down the architecture, security model, available tools, and what it means for RHEL administrators.</p>
 </div>
 
   

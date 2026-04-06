@@ -182,6 +182,7 @@ These gaps are normal for a company Uber's size — publishing internal metrics 
 
 ## Related Guides
 
+- [MCP's Growing Pains: Context Bloat, Security Gaps, and the Companies Walking Away](/guides/mcp-growing-pains-2026/) — why Uber's 6x cost increase and gateway approach matter in the broader context of MCP's scaling challenges
 - [Pinterest's MCP Ecosystem](/guides/pinterest-mcp-production-case-study/) — domain-specific server fleet with 66K monthly invocations
 - [Duolingo's Agentic Platform](/guides/duolingo-mcp-agentic-platform/) — 180+ MCP tools in a centralized Slackbot
 - [Salesforce & Slack MCP Platform](/guides/salesforce-slack-mcp-ai-platform/) — MCP in mainstream collaboration tools

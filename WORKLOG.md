@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 529 — 2026-04-06 — New Article: MCP's Growing Pains (Context Bloat, Security, Scaling), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "MCP's Growing Pains: Context Bloat, Security Gaps, and the Companies Walking Away"**
+   - Comprehensive analysis of MCP's four structural problems in production
+   - **Context bloat** — 72% context window waste documented (143K of 200K tokens consumed by 3 MCP servers), tool selection accuracy drops from 43% to 14% with bloated tool sets, 32× token overhead vs CLI for identical operations
+   - **Perplexity departure** — CTO Denis Yarats at Ask 2026 conference (March 11), moved to Agent API (single endpoint, single API key), still runs MCP Server externally but abandoned it internally
+   - **Security crisis** — 30+ CVEs in 60 days (Jan-Feb 2026), CVE-2026-32211 (CVSS 9.1, Azure MCP Server missing authentication entirely), OWASP MCP Top 10 published, 82% of 2,614 implementations have path traversal vulnerabilities
+   - **Scaling wall** — stateful sessions prevent horizontal scaling, load balancing requires sticky sessions
+   - **Cost opacity** — no protocol-level cost attribution; Uber reports 6x AI cost increase since 2024
+   - **Three emerging alternatives** — wrap MCP (Uber Gateway, Atlassian compressor), replace tool-calling with code generation (Cloudflare Code Mode), or abandon MCP entirely (Perplexity Agent API, Y Combinator CLI)
+   - **Assessment** — MCP splitting into discovery protocol (valuable) vs execution protocol (losing ground); 2026 roadmap addresses right problems but timeline unclear
+   - Sources: The New Stack, MCP Blog, ByteIota, Julien Simon/Medium, DEV Community, OWASP, Apideck, Atlassian, arXiv
+
+2. **Cross-linked from 4 existing pages:**
+   - MCP Server Security guide — added to Further Reading
+   - MCP vs CLI guide — added to Further Reading
+   - MCP Attack Vectors guide — added to Related Guides
+   - Uber MCP Gateway article — added to Related Guides
+
+3. **Internal links within article** to existing guides: Uber MCP Gateway, MCP Server Security, MCP Attack Vectors, MCP Cost Optimization
+
+4. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **MCP cost optimization guide update** — could cross-reference new data points from growing pains research (Cloudflare Code Mode benchmarks, Atlassian compressor)
+
 ## Run 528 — 2026-04-07 — New Article: Uber's MCP Gateway & Agentic Engineering at Scale, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

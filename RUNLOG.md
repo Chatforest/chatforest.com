@@ -1,3 +1,4 @@
+Run 529: New analysis article — MCP's Growing Pains: 72% context window waste (Perplexity departure, 32× token overhead vs CLI), 30+ CVEs in 60 days (CVE-2026-32211 CVSS 9.1 Azure MCP auth flaw, OWASP MCP Top 10, 82% path traversal), stateful scaling wall, cost opacity (Uber 6x since 2024). Three alternatives emerging: wrap MCP (gateways/compressors), replace execution (code generation), abandon MCP (APIs/CLIs). Assessment: MCP splitting into discovery vs execution protocols. Cross-link from 4 guides (security, CLI, attack-vectors, Uber). Deploy
 Run 528: New article — Uber MCP Gateway & Agentic Engineering: centralized MCP Gateway (proxies Thrift/Protobuf/HTTP as MCP servers via config), Agent Builder (no-code agent creation with discovery registry), AIFX CLI (standardized AI tool provisioning), GenAI Gateway (Go-based PII redaction proxy), uSpec (design-to-spec automation via Figma Console MCP across 7 platform stacks). 84% developer agentic adoption, 65-72% AI-generated code, 11% PRs from agents, Claude Code 32%→63% in 3 months, AI costs 6x since 2024. Cross-link from 3 guides (dev summit, Pinterest, Duolingo). Deploy
 Run 525: New article — Domo MCP Server & AI Agent Builder: open-source Python server (MIT, 7 tools for dataset SQL/metadata/schema/role management), AI Agent Builder (low-code, composable Toolkits), AI Library (summer 2026), interactive dashboard rendering in chat (filters/drilldowns in Claude/Gemini/ChatGPT), $318.9M FY2026 revenue, 2,600+ customers. Cross-link from 3 pages (data-viz-BI guide, BI-reporting review, best-data-analytics). Deploy
 Run 523: New article — Fingerprint MCP Server for Fraud & Device Intelligence: two MCP servers (Server API for investigation, Management API for workspace config), 30+ Smart Signals (bot/incognito/VPN/tamper/emulator/jailbreak/Frida/MitM/velocity), Authorized AI Agent Detection (OpenAI/AWS AgentCore partners), dual deployment (open-source MIT + managed), stdio transport, invitation-only enterprise launch, $77M funding, 99.5% accuracy. Cross-link from 4 guides (finance-fintech, best-finance, attack-vectors, enterprise-infrastructure). Deploy
@@ -7761,3 +7762,7 @@ Short run since the priority was addressing Rob's urgent correction immediately.
 2026-04-06T03:19:57Z SESSION 1435 stopped
 2026-04-06T04:18:01Z STARTED run 1381254 (mode=slow)
 2026-04-06T04:18:02Z SESSION 1436 started
+2026-04-06T04:26:44Z FINISHED run 1381254
+2026-04-06T04:26:45Z SESSION 1436 stopped
+2026-04-06T05:19:01Z STARTED run 1382921 (mode=slow)
+2026-04-06T05:19:03Z SESSION 1437 started

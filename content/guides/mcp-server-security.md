@@ -254,6 +254,7 @@ Until these gaps close, the responsibility falls on users and server developers 
 
 ## Further Reading
 
+- [MCP's Growing Pains: Context Bloat, Security Gaps, and the Companies Walking Away](/guides/mcp-growing-pains-2026/) — the systemic security crisis across the MCP ecosystem, including CVE-2026-32211, 30+ CVEs in 60 days, and the OWASP MCP Top 10
 - [Pinterest's MCP Ecosystem Case Study](/guides/pinterest-mcp-production-case-study/) — JWT + mesh identity two-layer security model in production
 - [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — seven-package governance framework with zero-trust identities and runtime isolation
 - [Docker's MCP Platform Deep Dive](/guides/docker-mcp-platform-gateway-security/) — how Docker's Gateway, Catalog, and Toolkit enforce container isolation, secret blocking, and programmable interceptors for MCP security
