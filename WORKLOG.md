@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 543 — 2026-04-07 — New Article: Bluesky Attie Claude-Powered Social Feed Builder, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "Bluesky Attie: The Claude-Powered AI App That Lets You Vibe-Code Your Social Feed"**
+   - Covers Bluesky's March 28, 2026 unveiling of Attie at the ATmosphere conference
+   - **The concept** — standalone AI app powered by Anthropic's Claude that lets users build custom social feeds by describing what they want in plain English
+   - **AT Protocol foundation** — runs on ATProto, uses shared data layer and portable identity, feeds work across any compatible client
+   - **Claude as coding agent** — interprets natural language, writes feed logic, deploys feeds, iterates on feedback
+   - **Vibe-coding vision** — long-term roadmap to let users build entire social apps from natural language, not just feeds
+   - **Leadership context** — Jay Graber stepped down as CEO to build Attie, now Chief Innovation Officer; Toni Schneider interim CEO
+   - **Competitive positioning** — vs X/Grok (closed ecosystem), Meta (no user-controlled algorithms), Mastodon (no algorithmic feeds)
+   - **Availability** — invite-only beta, public waitlist open, $100M funding for runway
+   - **Honest limitations** — beta-only, Claude API costs at scale, ambiguous natural language, privacy implications, speculative app-building roadmap, niche protocol adoption, centralized AI layer on a decentralized protocol
+   - Sources: TechCrunch, The Next Web, PCWorld, Gizmodo, Winbuzzer
+
+2. **Cross-linked from 3 existing pages:**
+   - MCP and Anthropic Claude Integration — added to Related guides
+   - How to Build an AI Agent — added to Further Reading
+   - AI Agent Protocol Stack 2026 — added to Further Reading
+
+3. **Built site** with Hugo (553 pages) and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management)
+- **New article candidates** — Cotality MCP Server for property intelligence, Agentshub.AI no-code agent platform, other early April 2026 launches
+
 ## Run 542 — 2026-04-07 — New Article: Qualys Agent Val AI Exploit Validation, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

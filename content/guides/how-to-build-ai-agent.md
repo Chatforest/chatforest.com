@@ -349,3 +349,6 @@ If you're building your first agent:
 5. **Monitor everything** — log tool calls, token usage, task outcomes, and errors from day one
 
 The technology is ready. The protocols are standardized. The hard part isn't building an agent that works once — it's building one that works reliably, safely, and affordably at scale.
+
+**Further Reading:**
+- [Bluesky Attie](/guides/bluesky-attie-ai-social-feed-builder/) — A real-world example of Claude functioning as an agentic coding assistant, building custom social feed algorithms from natural language
