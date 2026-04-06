@@ -208,3 +208,4 @@ For teams evaluating MCP today:
 
 - [MCP Apps: How Anthropic and OpenAI Brought Interactive UIs to AI Chat](/guides/mcp-apps-interactive-ui-extension/) — MCP's first official extension partially addresses context bloat by moving complex interactions into embedded UIs
 - [The Agentic AI Foundation: What Happens When Competitors Co-Govern an Open Standard](/guides/agentic-ai-foundation-mcp-governance/) — AAIF governance structure, 146 members, founding projects (MCP, AGENTS.md, goose)
+- [AI Agent Traps: Google DeepMind Maps Six Ways the Web Can Hijack Autonomous Agents](/guides/ai-agent-traps-deepmind-adversarial-threats/) — DeepMind's systematic taxonomy of adversarial attacks against autonomous agents, complementing MCP-specific security concerns with environment-level threats

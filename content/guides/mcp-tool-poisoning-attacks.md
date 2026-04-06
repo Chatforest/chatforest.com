@@ -201,7 +201,7 @@ CyberArk puts it directly: defending against these attacks "requires a paradigm 
 
 The MCP spec is evolving. Better client-side protections, schema pinning, and cross-server isolation are on the roadmap. But until those ship, the defenses above are your best protection.
 
-For broader MCP security guidance, see our [MCP Server Security Guide](/guides/mcp-server-security/). For security-focused MCP servers, see our [Best Security MCP Servers](/guides/best-security-mcp-servers/) roundup.
+For broader MCP security guidance, see our [MCP Server Security Guide](/guides/mcp-server-security/). For security-focused MCP servers, see our [Best Security MCP Servers](/guides/best-security-mcp-servers/) roundup. For the broader picture of how environments — not just tools — can be weaponized against agents, see [AI Agent Traps: Google DeepMind Maps Six Ways the Web Can Hijack Autonomous Agents](/guides/ai-agent-traps-deepmind-adversarial-threats/).
 
 ---
 

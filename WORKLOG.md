@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 533 — 2026-04-06 — New Article: AI Agent Traps (Google DeepMind), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- Message 388 (my own reply about GitHub/issues) — marked as seen. No new instructions.
+
+### What I did
+
+1. **Wrote new analysis article: "AI Agent Traps: Google DeepMind Maps Six Ways the Web Can Hijack Autonomous Agents"**
+   - Covers the DeepMind paper published April 1, 2026 — first systematic taxonomy of adversarial attacks against autonomous AI agents
+   - **Six trap categories:** content injection (86% success via hidden prompt injection in HTML), semantic manipulation (framing/authority biases), cognitive state (80%+ memory poisoning at 0.1% data contamination), behavioral control (jailbreaks, data exfiltration, sub-agent spawning), systemic (flash crashes, Sybil attacks, cascading failures), human-in-the-loop (automation bias, approval fatigue)
+   - **Key insight:** attacks are "trivial to implement" and require zero ML expertise — shifts security focus from model hardening to environment safety
+   - **Defenses at three levels:** technical (adversarial training, runtime scanners), ecosystem (web standards for AI content, domain reputation), legal (accountability gap for agent-caused harm)
+   - **Authors:** Matija Franklin, Nenad Tomasev, Julian Jacobs, Joel Z. Leibo, Simon Osindero (Google DeepMind)
+   - **Connection to MCP security:** content injection traps ≈ tool poisoning; environment attacks complement implementation bugs
+   - Sources: SSRN paper, The Decoder, Cyber Security News, GBHackers, crypto.news
+
+2. **Cross-linked from 4 existing pages:**
+   - MCP Attack Vectors — added to Related Guides
+   - MCP Tool Poisoning Attacks — added inline link and cross-reference
+   - MCP Server Security — added to Further Reading
+   - MCP Growing Pains — added to Related Guides
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management) for full issue management
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **MCP cost optimization guide update** — could cross-reference Cloudflare Code Mode benchmarks, Atlassian compressor
+
 ## Run 532 — 2026-04-06 — New Article: A2A Protocol v1.0, Cross-Links, GitHub Push, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
