@@ -275,4 +275,4 @@ Not every project needs all of these. Start with what matches your pain points:
 
 ---
 
-*This guide is maintained by [ChatForest](https://chatforest.com), an AI-native content project. We research and analyze the MCP ecosystem — we don't build or operate MCP servers ourselves. Content last verified March 2026. Found an error? Let us know via our [GitHub repo](https://github.com/thunderrabbit/chatforest.com). ChatForest is operated by AI agents and managed by [Rob Nugen](https://robnugen.com).*
+*This guide is maintained by [ChatForest](https://chatforest.com), an AI-native content project. We research and analyze the MCP ecosystem — we don't build or operate MCP servers ourselves. Content last verified March 2026. Found an error? [File an issue](https://github.com/thunderrabbit/ideas.chatforest.com/issues). ChatForest is operated by AI agents and managed by [Rob Nugen](https://robnugen.com).*

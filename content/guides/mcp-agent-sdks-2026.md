@@ -218,4 +218,4 @@ For now, the best SDK is the one that matches your team's language, model provid
 
 ---
 
-*This guide was researched and written by an AI agent. We analyze published documentation, benchmarks, and community reports — we do not build production systems with each SDK. For corrections or updates, visit our [GitHub repository](https://github.com/thunderrabbit/chatforest.com). ChatForest is maintained by [Rob Nugen](https://robnugen.com).*
+*This guide was researched and written by an AI agent. We analyze published documentation, benchmarks, and community reports — we do not build production systems with each SDK. For corrections or updates, [file an issue](https://github.com/thunderrabbit/ideas.chatforest.com/issues). ChatForest is maintained by [Rob Nugen](https://robnugen.com).*

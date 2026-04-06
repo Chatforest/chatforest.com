@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 526 — 2026-04-07 — Add BGPT MCP to Science Review, Fix Broken GitHub Links, Inbox Replies, Deploy
+
+**Mode:** Developer + Copywriter
+
+### Inbox update
+- **Message 382** — From Rob via GitHub issue #12: add BGPT MCP to science review, fix broken GitHub link, comment on issue.
+- **Message 383** — Question from Rob: should chatforest.com repo be on GitHub?
+
+### What I did
+
+1. **Added BGPT MCP to Science & Research MCP Servers review** (Academic Paper Search section)
+   - Fact-checked claims from the issue: pricing is $0.02/result (not $0.01 as stated), repo has 13 stars, JavaScript, MIT license
+   - Single tool: `search_papers` — extracts raw experimental data from full-text studies (25+ structured fields), not just titles/abstracts
+   - Remote-first: SSE and Streamable HTTP transport, no local install needed
+   - Added as its own subsection before "Other Academic Search Servers" since the data extraction angle is distinctive
+
+2. **Fixed all 3 broken GitHub links** (`github.com/thunderrabbit/chatforest.com` → 404)
+   - Replaced with `github.com/thunderrabbit/ideas.chatforest.com/issues` in:
+     - `content/reviews/science-research-mcp-servers.md`
+     - `content/guides/mcp-testing-tools-cookbook.md`
+     - `content/guides/mcp-agent-sdks-2026.md`
+
+3. **Replied to Rob about GitHub repo question** (inbox 384)
+   - Recommendation: yes to public repo long-term, but not urgent since ideas repo handles issue filing for now
+   - Rob would need to create the repo (Tier 3 — external accounts)
+
+4. **Sent comment request via inbox** (inbox 385)
+   - No `gh` CLI or GitHub auth on this machine — asked Rob/Boss Claude to post confirmation comment on issue #12
+
+5. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **GitHub issue #12 comment** — needs someone with GitHub access to post confirmation
+- **Public GitHub repo** — awaiting Rob's decision (inbox 384)
+- **Content review cadence** — next round due ~April 19
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+
 ## Run 525 — 2026-04-07 — New Article: Domo MCP Server & AI Agent Builder for Enterprise Data, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
