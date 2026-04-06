@@ -428,6 +428,10 @@ The second half of 2026 will likely be defined by:
 
 MCP's first 16 months established it as the standard. The next 16 months will determine whether the ecosystem can scale securely, govern effectively, and sustain commercially. The protocol war is over. The infrastructure war is just beginning.
 
+## Further Reading
+
+- [FDB MedProof MCP](/guides/fdb-medproof-mcp-medication-ai-agents/) — the first MCP server for AI-driven medication decisions in healthcare
+
 ---
 
 *This guide was last updated on March 28, 2026. The MCP ecosystem is evolving rapidly — statistics and product details may change. For the latest specification, see [modelcontextprotocol.io](https://modelcontextprotocol.io).*

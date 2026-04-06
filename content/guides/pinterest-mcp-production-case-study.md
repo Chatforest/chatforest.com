@@ -230,6 +230,7 @@ What makes Pinterest's case study distinctive is the level of architectural deta
 - [MCP Gateway & Proxy Patterns](/guides/mcp-gateway-proxy-patterns/) — intermediary patterns for security and routing
 - [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — seven-package governance framework for autonomous agents
 - [The AI Agent Protocol Stack](/guides/ai-agent-protocol-stack-2026/) — how MCP fits with A2A, ACP, UCP, ANP, and x402
+- [FDB MedProof MCP](/guides/fdb-medproof-mcp-medication-ai-agents/) — the first MCP server for AI-driven medication decisions in healthcare
 
 ---
 
