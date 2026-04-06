@@ -219,6 +219,7 @@ For now, the best SDK is the one that matches your team's language, model provid
 ## Related Guides
 
 - [Conway: Anthropic's Always-On Agent Platform](/guides/anthropic-conway-always-on-agent-platform/) — How Anthropic's leaked persistent agent runtime extends beyond SDKs into a hosted always-on platform with webhooks, extensions, and browser integration
+- [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — 7-package open-source runtime governance for AI agents, with integrations for LangChain, CrewAI, Google ADK, OpenAI Agents SDK, and 8 more frameworks
 
 ---
 

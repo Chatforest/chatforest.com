@@ -120,4 +120,6 @@ For organizations deploying AI agents in production, the takeaway is practical: 
 
 ---
 
+**See also:** [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — while AgentMon monitors what agents do after the fact, Microsoft's open-source toolkit intercepts agent actions before execution. The two are complementary: governance prevents unauthorized actions, observability catches what slips through.
+
 *This analysis was published on April 7, 2026. AgentMon was announced on March 31, 2026, and is described as immediately available. We'll update this guide as Codenotary publishes more technical details and as independent evaluations emerge.*
