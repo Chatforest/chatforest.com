@@ -176,6 +176,10 @@ The Cloudflare MCP server earns a 4.5/5 — our highest rating — for solving t
 
 **Skip this if:** Your infrastructure isn't on Cloudflare, or your AI assistant struggles with JavaScript code generation (stick to product-specific servers in that case).
 
+## Related Guides
+
+- **[Cloudflare's EmDash: The AI-Native CMS That Puts an MCP Server in Every Website](/guides/cloudflare-emdash-mcp-server-wordpress-successor/)** — Cloudflare's WordPress successor ships a built-in MCP server with every instance, sandboxed plugins via Dynamic Workers, and x402 native payments
+
 *Disclosure: We research MCP servers using publicly available documentation, GitHub repositories, community discussions, and ecosystem data. We do not test or install MCP servers hands-on. All claims are based on published sources.*
 
 *This review was last updated on 2026-03-21 using Claude Opus 4.6 (Anthropic).*

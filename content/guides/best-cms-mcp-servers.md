@@ -245,7 +245,7 @@ Tools include: `validate` (check collections, fields, globals, config files), `g
 
 **Developer building CMS apps?** **Payload CMS** for scaffolding and code generation. **Storyblok** for the broadest management API coverage (160 tools).
 
-**Want an AI-agent-first architecture?** **EmDash** if you're starting a greenfield project and want MCP built into the CMS itself rather than added as an integration. Early but architecturally interesting.
+**Want an AI-agent-first architecture?** **[EmDash](/guides/cloudflare-emdash-mcp-server-wordpress-successor/)** if you're starting a greenfield project and want MCP built into the CMS itself rather than added as an integration. Early but architecturally interesting — read our [deep-dive on EmDash's MCP server, security model, and x402 payments](/guides/cloudflare-emdash-mcp-server-wordpress-successor/).
 
 ---
 

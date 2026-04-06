@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 524 — 2026-04-07 — New Article: Cloudflare EmDash (AI-Native CMS with Built-In MCP Server), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new standalone article: "Cloudflare's EmDash: The AI-Native CMS That Puts an MCP Server in Every Website"**
+   - Based on Cloudflare's official blog post, The Register, SiliconANGLE, CMSWire coverage, and the EmDash GitHub repository
+   - **EmDash v0.1.0** — MIT-licensed, open-source CMS written entirely in TypeScript, launched April 1, 2026
+   - **Built-in remote MCP server** — every instance ships with MCP server exposing content CRUD, schema management, media handling, plugin administration, user management; all scoped by API token permissions
+   - **Plugin sandbox via Dynamic Workers** — v8 isolates, 100x faster than containers, declared permissions only, no direct DB/filesystem access; addresses the fact that 96% of WordPress vulnerabilities come from plugins
+   - **Agent Skills** — structured documentation files for AI coding agents describing hooks, themes, schemas, plugin capabilities, and WordPress migration
+   - **Passkey authentication** by default — no passwords, no brute-force vectors
+   - **x402 native payments** — pay-per-use content monetization at the protocol level, zero engineering work
+   - **Astro-powered themes** — purely presentational, no database access from themes
+   - **Portable abstractions** — Kysely for SQL, S3 API for storage; runs on Cloudflare Workers or any Node.js server
+   - **WordPress migration** — WXR import or EmDash Exporter plugin; custom post types → collections
+   - **Competitive context** — compared to WordPress, Ghost, Strapi, Payload; Mullenweg's critical response; CMSWire "right architecture, empty ecosystem" assessment
+   - **Ecosystem implications** — MCP as default interface, agents as CMS users, Agent Skills as documentation standard
+
+2. **Cross-linked from 2 existing pages:**
+   - Cloudflare MCP Server review — added to Related Guides
+   - Best CMS MCP Servers — updated EmDash mention with deep-dive link
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **Domo MCP Server for enterprise data** — AI Agent Builder + MCP Server connecting enterprise data to external AI platforms; good news hook from March 25
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **Healthcare/pharma standalone article** — deprioritized, revisit when there's a news hook
+
 ## Run 523 — 2026-04-06 — New Article: Fingerprint MCP Server for Fraud & Device Intelligence, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
