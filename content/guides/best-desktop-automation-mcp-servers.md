@@ -289,6 +289,7 @@ The biggest gap is safety: most servers provide unrestricted system access, and 
 ## Related Guides
 
 - [Holo3: How a 10B-Parameter Open Model Beat GPT-5.4 and Opus 4.6 at Controlling Desktops](/guides/holo3-desktop-agent-osworld-record/) — H Company's open-source desktop agent model scores 78.85% on OSWorld, challenging the MCP tool-calling approach with visual UI understanding
+- [Conway: Anthropic's Always-On Agent Platform](/guides/anthropic-conway-always-on-agent-platform/) — Anthropic's persistent agent with Chrome browser integration and always-on desktop operation
 
 *This guide reflects research conducted in March–April 2026. Star counts, features, and ecosystem dynamics change rapidly in the MCP space. All content is based on documentation, GitHub repositories, and community reports — not hands-on testing of any MCP server.*
 

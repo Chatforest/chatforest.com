@@ -482,6 +482,7 @@ For agents that also need MCP capabilities, see our guides on [building your fir
 - [A2A Protocol Hits v1.0](/guides/a2a-protocol-v1-production-ready/) — What changed in the first production-ready release (gRPC, signed Agent Cards, multi-tenancy)
 - [MCP vs A2A Protocol Comparison](/guides/mcp-vs-a2a-protocol-comparison/) — Understanding the two protocols shaping AI agent infrastructure
 - [AI Agent Protocol Stack 2026](/guides/ai-agent-protocol-stack-2026/) — How MCP, A2A, and four other protocols layer together
+- [Conway: Anthropic's Always-On Agent Platform](/guides/anthropic-conway-always-on-agent-platform/) — Anthropic's persistent agent runtime with webhooks, extensions, and always-on operation
 
 ---
 

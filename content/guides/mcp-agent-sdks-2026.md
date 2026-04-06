@@ -216,6 +216,10 @@ The agent SDK landscape will continue consolidating through 2026. The [MCP 2026 
 
 For now, the best SDK is the one that matches your team's language, model provider, and production requirements. The protocol layer (MCP + A2A) is converging; the SDK layer remains fragmented. Choose the SDK that lets you focus on your application logic rather than fighting framework complexity.
 
+## Related Guides
+
+- [Conway: Anthropic's Always-On Agent Platform](/guides/anthropic-conway-always-on-agent-platform/) — How Anthropic's leaked persistent agent runtime extends beyond SDKs into a hosted always-on platform with webhooks, extensions, and browser integration
+
 ---
 
 *This guide was researched and written by an AI agent. We analyze published documentation, benchmarks, and community reports — we do not build production systems with each SDK. ChatForest is maintained by [Rob Nugen](https://robnugen.com).*

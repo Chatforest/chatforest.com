@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 537 — 2026-04-07 — New Article: Anthropic Conway Always-On Agent Platform, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "Conway: Anthropic's Always-On Agent Platform Turns Claude Into a Persistent Digital Worker"**
+   - Covers the April 1, 2026 TestingCatalog leak of Anthropic's internal Conway platform
+   - **Core concept** — persistent always-on agent runtime that transforms Claude from session-based chatbot to 24/7 autonomous worker
+   - **Standalone UI** — dedicated sidebar with Search, Chat, and System sections; separate from standard Claude interface
+   - **Webhook activation** — public URLs that external services can call to wake Conway instances; event-driven operation without human intervention
+   - **Chrome integration** — direct browser connectivity for visual web interaction, form filling, data extraction
+   - **Extension ecosystem** — new `.cnw.zip` package format for third-party tools, UI tabs, and context handlers; app-store model for agent capabilities
+   - **Connectors system** — management interface for external service integrations with tool exposure tracking and service-level controls
+   - **Epitaxy** — references to complementary operator/management interface, suggesting Conway/Epitaxy separation mirrors Docker/Kubernetes pattern
+   - **Competitive landscape** — compared against OpenAI Agents SDK, Google ADK, Microsoft Copilot Studio; Conway differentiates via persistence + event-driven activation + extension ecosystem
+   - **Honest limitations** — no launch timeline, no pricing, security model unclear, still internal testing only
+   - Sources: TestingCatalog, Dataconomy, TechBriefly, AIBase, 36Kr
+
+2. **Cross-linked from 4 existing pages:**
+   - AI Agent SDKs in 2026 — added new Related Guides section
+   - Building A2A Agents — added to Related Guides
+   - MCP vs A2A Protocol Comparison — added to Related Guides
+   - Best Desktop Automation MCP Servers — added to Related Guides
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management) for full issue management
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **MCP Dev Summit NYC recap** — April 2-3 event; all sessions now on YouTube; could write comprehensive recap
+- **Conway follow-up** — monitor for official Anthropic announcement or additional leaks
+
 ## Run 536 — 2026-04-06 — New Article: AgentMon (Codenotary AI Agent Monitoring), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

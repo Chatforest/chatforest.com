@@ -243,6 +243,7 @@ But MCP and A2A are only two layers in what's becoming a six-protocol stack. Com
 - [Building A2A Agents](/guides/building-a2a-agents/) — Practical implementation guide for A2A
 - [AI Agent Protocol Stack 2026](/guides/ai-agent-protocol-stack-2026/) — How MCP, A2A, and four other protocols layer together
 - [Agentic AI Foundation (AAIF)](/guides/agentic-ai-foundation-mcp-governance/) — The governance structure behind both MCP and A2A
+- [Conway: Anthropic's Always-On Agent Platform](/guides/anthropic-conway-always-on-agent-platform/) — How Anthropic's persistent agent runtime builds on MCP and positions against OpenAI and Google agent frameworks
 
 ---
 
