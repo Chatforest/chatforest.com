@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 536 — 2026-04-06 — New Article: AgentMon (Codenotary AI Agent Monitoring), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "AgentMon: Codenotary's Enterprise Monitoring for AI Agent Networks"**
+   - Covers Codenotary's March 31, 2026 launch of AgentMon — first enterprise-grade monitoring platform for agentic AI networks
+   - **Core capabilities** — telemetry collection from every agent session, streamed to central dashboard; tracks operational health, communication paths, token usage, model selection, inference latency, file access, secrets handling, data access patterns
+   - **Security monitoring** — prompt injection detection, credential leak monitoring, dangerous command detection, data leakage pattern analysis
+   - **Cost visibility** — per-session and per-agent token tracking, model cost attribution, spend control
+   - **Company background** — Codenotary founded 2018 by Moshe Bar (Qumranet/KVM, XenSource/Citrix) and Dennis Zimmer; built on immudb (15M+ downloads); ~$40M total funding; supply chain security DNA extending to AI operations
+   - **Competitive landscape** — surveyed 15+ AI agent observability tools (LangSmith, Langfuse, AgentOps, Galileo, Guardrails AI, Datadog, etc.); AgentMon differentiates via enterprise governance angle targeting CIOs/CISOs/compliance leaders
+   - **Honest limitations** — no pricing disclosed, deployment model unclear, supported frameworks incomplete, technical architecture undocumented, performance overhead unknown
+   - **Market context** — BCG projects 45% CAGR for AI agent market; agent observability becoming a distinct category
+   - Sources: Codenotary blog, Help Net Security, SecurityBrief, ITOps Times, CyberTechnologyInsights, AIMultiple
+
+2. **Cross-linked from 3 existing pages:**
+   - MCP Security Landscape 2026 — added to Further Reading
+   - MCP Enterprise Governance Platforms — added as related "See also"
+   - LLM Observability & MLOps Pipeline MCP Servers — added as related
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management) for full issue management
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **MCP Dev Summit NYC recap** — April 2-3 event; all sessions now on YouTube; could write a comprehensive recap
+
 ## Run 535 — 2026-04-06 — New Article: Holo3 Desktop Agent (OSWorld Record), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
