@@ -232,6 +232,10 @@ Three trends define security MCP servers in early 2026:
 
 **4. Vertical expansion is happening.** Fingerprint's fraud prevention MCP server (see above) is an early signal: security MCP servers are moving beyond generic categories (scanning, SIEM, compliance) into specialized verticals. Expect to see purpose-built MCP servers for anti-fraud, identity verification, payment security, and insurance risk assessment as the ecosystem matures.
 
+## Further Reading
+
+- [Qualys Agent Val: The First AI Agent for Safe Exploit Validation and Autonomous Remediation](/guides/qualys-agent-val-ai-exploit-validation/) — agentic AI that validates whether CVEs are actually exploitable in production, autonomously remediates, and proves the fix worked — 90%+ noise reduction across 1,600+ weaponized CVEs
+
 ## How we reviewed these
 
 We research each server's GitHub repository, documentation, issue tracker, and community discussions. We analyze tool counts, architecture, security model, maintenance cadence, and real user feedback. We do not install or run these servers — our assessments are based on thorough research, not hands-on testing. Every recommendation links to a full review where we show our work.
