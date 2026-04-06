@@ -229,3 +229,4 @@ For enterprises evaluating MCP adoption, MCP Apps strengthens the case by addres
 ## Further Reading
 
 - [MCP's Growing Pains: Context Bloat, Security Gaps, and the Companies Walking Away](/guides/mcp-growing-pains-2026/) — the production challenges MCP Apps partially addresses
+- [The Agentic AI Foundation: What Happens When Competitors Co-Govern an Open Standard](/guides/agentic-ai-foundation-mcp-governance/) — AAIF governance structure, 146 members, founding projects (MCP, AGENTS.md, goose)

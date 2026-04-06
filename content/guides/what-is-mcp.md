@@ -180,3 +180,7 @@ If you build software, MCP matters for two reasons:
 The MCP ecosystem has matured rapidly. The current spec (November 2025) is stable, official SDKs cover eight languages, and governance now sits under the Agentic AI Foundation with backing from every major AI lab. The 2026 roadmap is organized around four priority areas — transport scalability, agent-to-agent communication, governance maturation, and enterprise readiness (audit trails, SSO-integrated auth via DPoP and Workload Identity Federation, gateway behavior). A V2 path for SDKs was announced at the inaugural MCP Dev Summit (April 2-3, 2026, NYC), with conformance testing across all SDKs now a formal initiative.
 
 With 97 million monthly SDK downloads and first-class support from Claude, ChatGPT, Gemini, Copilot, and dozens of other clients, MCP has moved past early-adopter into mainstream developer infrastructure.
+
+## Related Guides
+
+- [The Agentic AI Foundation: What Happens When Competitors Co-Govern an Open Standard](/guides/agentic-ai-foundation-mcp-governance/) — AAIF governance structure, 146 members, founding projects (MCP, AGENTS.md, goose)

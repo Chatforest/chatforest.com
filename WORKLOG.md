@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 531 — 2026-04-06 — New Article: Agentic AI Foundation (AAIF) Governance, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "The Agentic AI Foundation: What Happens When Competitors Co-Govern an Open Standard"**
+   - Comprehensive guide to the AAIF, formed December 9, 2025 under the Linux Foundation
+   - **Three founding projects** — MCP (Anthropic, connection layer), AGENTS.md (OpenAI, instruction layer, 60,000+ projects), goose (Block, agent layer, 27K+ GitHub stars)
+   - **Governance structure** — Governing board (strategy/budget) chaired by David Nalley (AWS), separate Technical Steering Committees per project (technical autonomy). No single vendor gets unilateral control
+   - **Platinum members** — AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, OpenAI
+   - **Membership growth** — 146 members including JPMorgan Chase, American Express, Hitachi, Red Hat, UiPath, ServiceNow, Autodesk, Huawei, Lenovo
+   - **Enterprise impact** — Reduced vendor lock-in risk, formal input channels via SEP process, compliance-friendly Linux Foundation structure
+   - **2026 events** — 7 events across 6 cities on 4 continents (NYC, Shanghai, Tokyo, Amsterdam, Toronto, San Jose, Nairobi)
+   - **Honest concerns** — Open washing risk (founders still employ most maintainers), protocol fragmentation not solved (A2A, ACP outside AAIF), security problems governance can't fix, timeline skepticism about agent market maturity
+   - Sources: Linux Foundation, Anthropic, OpenAI, Block, MCP Blog, GitHub Blog, The New Stack, TechCrunch, Techzine, Solo.io, IntuitionLabs
+
+2. **Cross-linked from 4 existing pages:**
+   - What Is MCP guide — added Related Guides section
+   - MCP Growing Pains article — added to Related Guides
+   - MCP Apps article — added to Further Reading
+   - MCP Dev Summit 2026 guide — added to Related Guides
+
+3. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **Nordstrom MCP retail article** — "One-To-Many" from Dev Summit; need more public details
+- **MCP SDK V2 migration guide** — pre-alpha announced at summit, write when more details emerge
+- **MCP cost optimization guide update** — could cross-reference Cloudflare Code Mode benchmarks, Atlassian compressor
+- **A2A protocol article** — Google's Agent-to-Agent Protocol deserves its own guide, especially given the AAIF fragmentation angle
+
 ## Run 530 — 2026-04-06 — New Article: MCP Apps Extension (Interactive UIs in AI Chat), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

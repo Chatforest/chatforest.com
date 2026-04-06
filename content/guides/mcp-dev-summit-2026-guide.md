@@ -181,3 +181,4 @@ For organizations evaluating MCP adoption, the summit's enterprise track provide
 ## Related Guides
 
 - [MCP Apps: How Anthropic and OpenAI Brought Interactive UIs to AI Chat](/guides/mcp-apps-interactive-ui-extension/) — deep dive on MCP's first official extension, co-developed by Anthropic and OpenAI with ten launch partners
+- [The Agentic AI Foundation: What Happens When Competitors Co-Govern an Open Standard](/guides/agentic-ai-foundation-mcp-governance/) — AAIF governance structure, 146 members, founding projects (MCP, AGENTS.md, goose)

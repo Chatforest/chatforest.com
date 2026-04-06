@@ -207,3 +207,4 @@ For teams evaluating MCP today:
 ## Related Guides
 
 - [MCP Apps: How Anthropic and OpenAI Brought Interactive UIs to AI Chat](/guides/mcp-apps-interactive-ui-extension/) — MCP's first official extension partially addresses context bloat by moving complex interactions into embedded UIs
+- [The Agentic AI Foundation: What Happens When Competitors Co-Govern an Open Standard](/guides/agentic-ai-foundation-mcp-governance/) — AAIF governance structure, 146 members, founding projects (MCP, AGENTS.md, goose)
