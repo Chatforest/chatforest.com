@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 541 — 2026-04-07 — New Article: Claw Code Open-Source Claude Code Clone, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "Claw Code: The Open-Source Clone That Became the Fastest-Growing Repo in GitHub History"**
+   - Covers the March 31, 2026 Claude Code source code leak and the Claw Code clean-room rewrite
+   - **The leak** — Anthropic shipped a 59.8 MB source map in npm v2.1.88, exposing 512,000 lines of TypeScript across 1,906 files (Bun bundler bug, missing .npmignore entry)
+   - **44 unreleased feature flags** — KAIROS always-on daemon (150+ references), Undercover Mode (strips AI attribution for Anthropic employees), terminal pets (18 species), multi-agent planning sessions
+   - **Claw Code** — clean-room Python/Rust rewrite by Sigrid Jin (UBC student, 25B+ Claude Code tokens consumed) and Yeachan Heo, using oh-my-codex orchestration
+   - **Star trajectory** — 50K in 2 hours, 72K in 24 hours, 100K+ in a week, 114K+ by April 7 — fastest-growing repo in GitHub history
+   - **Architecture** — reimplements query engine, tool system, multi-agent orchestration, context management, session persistence; works with any OpenAI-compatible API
+   - **Performance gap** — independent testing shows ~47s vs ~30s on simple tasks, ~8x slower on complex refactoring, multi-agent crashes on complex tasks
+   - **Legal** — Anthropic issued DMCA takedowns on direct mirrors; Claw Code (clean-room) not targeted as of April 2026
+   - **Honest limitations** — not production-ready, no rollback, primitive context management, unstable Windows support, legal uncertainty
+   - Sources: VentureBeat, The Register, The Hacker News, The New Stack, OpenAI Tools Hub, WaveSpeed AI, GitHub repo
+
+2. **Cross-linked from 3 existing pages:**
+   - AI Coding Assistants Compared — added new Further Reading section
+   - AI Agent Protocol Stack 2026 — added to Further Reading
+   - MCP Security Landscape 2026 — added to Further Reading
+
+3. **Built site** with Hugo (551 pages) and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **Qualys Agent Val article** — first AI agent for safe exploit validation and autonomous remediation (April 2 launch)
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management)
+- **MCP SDK V2 migration guide** — write when more details emerge from post-summit implementation
+
 ## Run 540 — 2026-04-07 — New Article: FDB MedProof MCP Healthcare Medication AI, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

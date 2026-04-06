@@ -332,3 +332,7 @@ Claude Code and Cursor lead in agent capabilities. Claude Code runs as a termina
   ]
 }
 </script>
+
+## Further Reading
+
+- [Claw Code: The Open-Source Clone That Became the Fastest-Growing Repo in GitHub History](/guides/claw-code-open-source-claude-code-clone/) — how the Claude Code source leak spawned a clean-room rewrite with 100K+ GitHub stars

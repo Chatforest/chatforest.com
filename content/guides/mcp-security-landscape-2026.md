@@ -246,6 +246,7 @@ The tools and frameworks exist to address these problems. Organizations deployin
 - [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — 7-package open-source toolkit addressing all 10 OWASP Agentic AI risks
 - [Claude Wrote a FreeBSD Kernel Exploit in Four Hours](/guides/claude-freebsd-exploit-ai-vulnerability-research/) — the offensive side: AI autonomously develops kernel exploits and finds 500+ vulnerabilities in open-source software
 - [AgentMon: Codenotary's Enterprise Monitoring for AI Agent Networks](/guides/agentmon-codenotary-ai-agent-monitoring/) — purpose-built agent observability with prompt injection detection, credential leak monitoring, and cost tracking
+- [Claw Code: The Open-Source Claude Code Clone](/guides/claw-code-open-source-claude-code-clone/) — the Claude Code source leak exposed the full agent harness architecture, spawning security questions about open-source agent tool access
 
 ---
 

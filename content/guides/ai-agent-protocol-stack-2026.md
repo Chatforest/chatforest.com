@@ -267,6 +267,7 @@ Despite rapid progress, several gaps remain:
 - **[The 2026 MCP Roadmap](/guides/mcp-2026-roadmap-whats-coming/)** — what's coming next for the core protocol
 - **[MCP Ecosystem 2026: State of the Standard](/guides/mcp-ecosystem-2026-state-of-the-standard/)** — the broader adoption picture
 - **[Best Finance & Fintech MCP Servers](/guides/best-finance-mcp-servers/)** — financial MCP servers including x402-compatible payment tools
+- **[Claw Code: The Open-Source Claude Code Clone](/guides/claw-code-open-source-claude-code-clone/)** — the Claude Code source leak exposed 44 feature flags and spawned the fastest-growing repo in GitHub history
 
 ---
 
