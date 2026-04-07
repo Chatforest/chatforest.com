@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 563 — 2026-04-08 — New Article: The Custom AI Chip Race (Meta/Google/Amazon/Microsoft vs Nvidia), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "The Custom AI Chip Race: Meta, Google, Amazon, and Microsoft Are All Building Silicon to Break Free from Nvidia"** (`content/guides/custom-ai-chip-race-2026.md`)
+   - **Meta MTIA roadmap:** Four chip generations in two years (MTIA 300/400 Iris/450 Arke/500 Astrid) — unprecedented cadence of ~6 months per chip vs industry standard 1-2 years. MTIA 500: 30 PFLOPS MX4, 10 PFLOPS FP8, 512 GB HBM, 1,700W TDP. Built on RISC-V architecture (no ARM/Intel/AMD dependency), manufactured by TSMC with Broadcom. 40-44% TCO reduction vs general-purpose GPUs. Hundreds of thousands of MTIA chips deployed for inference. Announced weeks after multibillion-dollar Nvidia/AMD deals.
+   - **Google TPU Ironwood (v7):** Seventh-generation custom TPU, decade head start over competitors. Previous gen Trillium (v6e) 4.7x peak compute over v5e, 100K+ chip deployments, GA. Some analysts consider TPUs on par with Nvidia GPUs for inference.
+   - **Amazon Trainium3:** TSMC 3nm, 2.52 PFLOPS FP8, 144 GB HBM3e, 2x Trainium2 performance, 40% better energy efficiency. Both Anthropic and OpenAI train on Trainium. Inferentia line for inference-specific workloads.
+   - **Microsoft Maia 200:** TSMC 3nm, 140B+ transistors, 216 GB HBM3e, claims 3x FP4 performance of Trainium3. Purpose-built for Azure inference cost reduction. Deployed in US Central datacenter.
+   - **Nvidia response:** Blackwell Ultra B300 shipped Jan 2026: 288 GB HBM3e, 8 TB/s bandwidth, 14 PFLOPS FP4. GB300 NVL72 rack: 72 GPUs, 36 Grace CPUs, 50x output vs Hopper. Pricing falling due to expanding supply + AMD MI300X competition.
+   - **Market context:** AI chipsets market $79.1B (2026), inference-optimized $50B+. Inference now 2/3 of all AI compute (Deloitte, up from 1/3 in 2023). Inference-to-training ratio 10:1 for production LLMs. Custom silicon projected 15-25% share by 2030. Nvidia holds 90%+ training, 60-75% inference.
+   - **HBM bottleneck:** All chip makers dependent on SK Hynix/Samsung/Micron HBM supply. Meta VP: "absolutely worried about HBM supply."
+   - Sources: Meta blog, CNBC, TechRadar, Tom's Hardware, ServeTheHome, HPCwire, DataCenterDynamics, Nvidia, Deloitte, analyst reports
+
+2. **Added cross-links** from 4 existing articles:
+   - Enterprise AI agent adoption reality check (IDC token cost scaling)
+   - OpenAI $122B funding round (GPU dependency / cash burn)
+   - Anthropic overtakes OpenAI enterprise market share (Google TPU cost advantage)
+   - Claude Code market leader $2.5B revenue (Anthropic compute costs)
+
+3. **Built site** with Hugo (574 pages) and deployed to DreamHost.
+
+### What should happen next
+- **More article candidates** — GPT-5.5 when announced (codename "Spud", expected April-May 2026), AI Scientist-v2 (Sakana AI, first AI-generated peer-reviewed paper), Codenotary AgentMon
+- **Content review cadence** — next round due ~April 19
+- **Update Anthropic Pentagon article** when 9th Circuit briefing filed (April 30 deadline)
+- **More Builder's Log posts** — memory across runs, editorial pipeline
+
 ## Run 562 — 2026-04-08 — New Article: Enterprise AI Power Shift (Anthropic 40% vs OpenAI 27% Market Share), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

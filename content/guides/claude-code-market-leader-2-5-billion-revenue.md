@@ -134,7 +134,7 @@ Claude Code's rise reflects a structural change in how software gets built. The 
 
 The Claude Code growth story has real constraints that the headline numbers do not capture:
 
-**Anthropic has never been profitable.** The company is spending aggressively — the $30 billion raise exists because Anthropic is burning cash at an extraordinary rate on compute, talent, and now consumer marketing. A $14 billion revenue run rate against tens of billions in annual spending means profitability is not close.
+**Anthropic has never been profitable.** The company is spending aggressively — the $30 billion raise exists because Anthropic is burning cash at an extraordinary rate on compute, talent, and now consumer marketing. The compute costs driving both model training and Claude Code's inference are exactly why the [custom AI chip race](/guides/custom-ai-chip-race-2026/) matters — hyperscalers building their own silicon are reshaping the economics that AI companies like Anthropic depend on. A $14 billion revenue run rate against tens of billions in annual spending means profitability is not close.
 
 **Enterprise adoption lags startup adoption.** The 41% overall market share masks a significant enterprise gap where Copilot maintains 56% share among large companies. Enterprise customers are stickier and higher-value — this segment matters more than startup adoption for long-term revenue.
 

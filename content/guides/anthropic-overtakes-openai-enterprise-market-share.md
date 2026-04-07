@@ -123,7 +123,7 @@ This is not a story of OpenAI collapsing. The company retains significant advant
 
 Google is the quiet third player worth watching. Its enterprise LLM market share grew from roughly 15% to 20% — not the dramatic swing that Anthropic achieved, but steady growth.
 
-Gemini 3.1 Flash-Lite launched at $0.25 per million input tokens — aggressive pricing designed to undercut both Anthropic and OpenAI on cost-sensitive enterprise workloads. Google's strategy appears to be winning on price and infrastructure integration (Vertex AI, BigQuery, Cloud Run) rather than competing at the frontier model tier.
+Gemini 3.1 Flash-Lite launched at $0.25 per million input tokens — aggressive pricing designed to undercut both Anthropic and OpenAI on cost-sensitive enterprise workloads. Google's strategy appears to be winning on price and infrastructure integration (Vertex AI, BigQuery, Cloud Run) rather than competing at the frontier model tier. Google's seventh-generation TPU gives it a structural cost advantage that neither Anthropic nor OpenAI can match with rented GPUs — part of the broader [custom AI chip race](/guides/custom-ai-chip-race-2026/) reshaping AI economics.
 
 The Agent-to-Agent (A2A) protocol with 50+ partners represents Google's bet that the protocol layer, not the model layer, is where value will accrue. It's a different competitive strategy than Anthropic's model-quality approach or OpenAI's platform breadth.
 

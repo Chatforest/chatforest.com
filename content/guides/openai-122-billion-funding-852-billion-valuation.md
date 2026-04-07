@@ -83,7 +83,7 @@ OpenAI's revenue trajectory is genuinely impressive:
 
 Monthly revenue has reached $2 billion. Business subscriptions and API usage drive the majority of revenue, with ChatGPT's consumer subscription (200 million+ weekly users) providing the consumer base.
 
-But revenue is not profit. OpenAI does not expect to reach breakeven until 2030 according to internal projections. Annual cash burn is projected to reach $57 billion by 2027. The company's compute costs — training and running frontier models on hundreds of thousands of GPUs — scale faster than revenue.
+But revenue is not profit. OpenAI does not expect to reach breakeven until 2030 according to internal projections. Annual cash burn is projected to reach $57 billion by 2027. The company's compute costs — training and running frontier models on hundreds of thousands of GPUs — scale faster than revenue. This GPU dependency is one reason every major hyperscaler is now [building custom AI chips](/guides/custom-ai-chip-race-2026/) to reduce inference costs.
 
 This creates a paradox: OpenAI needs to keep raising capital to stay operational, but each raise increases the valuation that must eventually be justified by actual earnings. At $852 billion, OpenAI would need to generate profits comparable to the world's most valuable companies — and it currently generates none.
 

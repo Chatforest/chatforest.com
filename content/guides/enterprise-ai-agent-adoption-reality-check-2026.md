@@ -62,7 +62,7 @@ Early adopters found that projects fail "not because agent technology lacks capa
 
 ### Cost escalation without clear ROI
 
-IDC predicts that by 2027, G2000 agent use will increase tenfold while token and API call loads rise a thousandfold. That cost trajectory forces hard conversations when the productivity gains aren't obvious. The enterprises that survive this are the ones that tied their agent deployments to measurable outcomes from day one — not the ones that deployed agents because the board heard "AI" at a conference.
+IDC predicts that by 2027, G2000 agent use will increase tenfold while token and API call loads rise a thousandfold. The infrastructure required to handle this scaling is driving a [custom AI chip race](/guides/custom-ai-chip-race-2026/) among hyperscalers, as specialized silicon becomes essential to keeping inference costs viable. That cost trajectory forces hard conversations when the productivity gains aren't obvious. The enterprises that survive this are the ones that tied their agent deployments to measurable outcomes from day one — not the ones that deployed agents because the board heard "AI" at a conference.
 
 ### Governance black holes
 
