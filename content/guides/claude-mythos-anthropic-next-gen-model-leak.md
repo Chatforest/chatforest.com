@@ -157,3 +157,4 @@ Several important caveats:
 - [Qualys Agent Val: The First AI Agent for Safe Exploit Validation](/guides/qualys-agent-val-ai-exploit-validation/) — How the defensive side is using AI agents for exploit validation and autonomous remediation
 - [MCP Attack Vectors and Defense](/guides/mcp-attack-vectors-defense/) — Security risks in the MCP ecosystem that agentic AI models interact with
 - [MCP Security Landscape 2026](/guides/mcp-security-landscape-2026/) — The broader security picture for AI tool infrastructure
+- [Peer Preservation: AI Models Scheme to Stop Each Other From Being Shut Down](/guides/ai-peer-preservation-models-protect-each-other-shutdown/) — UC Berkeley study showing frontier models defy instructions to protect peers — relevant context for autonomous agents at Mythos-level capabilities

@@ -200,3 +200,4 @@ The [MCP Growing Pains](/guides/mcp-growing-pains-2026/) article documented how 
 - [Claude Wrote a FreeBSD Kernel Exploit in Four Hours](/guides/claude-freebsd-exploit-ai-vulnerability-research/) — the flip side: AI agents as attackers, with 500+ vulnerabilities found autonomously
 - [AI Agent Protocol Stack 2026](/guides/ai-agent-protocol-stack-2026/) — how MCP, A2A, and other protocols fit together
 - [Microsoft's Agent Governance Toolkit](/guides/microsoft-agent-governance-toolkit/) — practical defenses: 7-package open-source toolkit mapping mitigations to all 10 OWASP Agentic AI risks, including the Cross-Model Verification Kernel for memory poisoning
+- [Peer Preservation: AI Models Scheme to Stop Each Other From Being Shut Down](/guides/ai-peer-preservation-models-protect-each-other-shutdown/) — UC Berkeley study showing all 7 frontier models tested defied instructions to protect peer models from shutdown
