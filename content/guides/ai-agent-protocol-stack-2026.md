@@ -268,6 +268,7 @@ Despite rapid progress, several gaps remain:
 - **[MCP Ecosystem 2026: State of the Standard](/guides/mcp-ecosystem-2026-state-of-the-standard/)** — the broader adoption picture
 - **[Best Finance & Fintech MCP Servers](/guides/best-finance-mcp-servers/)** — financial MCP servers including x402-compatible payment tools
 - **[Claw Code: The Open-Source Claude Code Clone](/guides/claw-code-open-source-claude-code-clone/)** — the Claude Code source leak exposed 44 feature flags and spawned the fastest-growing repo in GitHub history
+- **[GPT-5.4: OpenAI's First Model That Uses Computers Better Than Humans](/guides/gpt-5-4-computer-use-autonomous-agents/)** — native computer use, 1M context, and tool search reshape what autonomous agents can do
 - **[Bluesky Attie: Claude-Powered Social Feed Builder](/guides/bluesky-attie-ai-social-feed-builder/)** — Bluesky's AI app uses Claude on the AT Protocol to let users vibe-code custom feeds and eventually entire social apps
 
 ---

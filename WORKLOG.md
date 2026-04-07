@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 546 — 2026-04-07 — New Article: GPT-5.4 Computer Use and Autonomous Agents, Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "GPT-5.4: OpenAI's First Model That Uses Computers Better Than Humans"**
+   - Covers OpenAI's March 5, 2026 release of GPT-5.4
+   - **Computer use** — first general-purpose model with native computer-use via perception-action loop (screenshots → reasoning → keyboard/mouse commands), operates apps without APIs
+   - **OSWorld-Verified** — 75.0% score surpasses human baseline of 72.4%, up from GPT-5.2's 47.3% (59% relative improvement in one generation)
+   - **1M context window** — 1,050,000 input tokens, 128,000 output tokens for long-horizon agent workflows
+   - **Tool search** — new API feature where model looks up tool schemas on demand instead of loading all upfront, cuts token costs ~50%
+   - **Three variants** — base ($2.50/$15/MTok), Thinking (chain-of-thought), Pro ($30/$180/MTok parallel reasoning)
+   - **Codex integration** — end-to-end autonomous coding with feature generation, testing, security analysis
+   - **Competitive landscape** — ties Gemini 3.1 Pro on Intelligence Index, leads coding, trails on GPQA Diamond and ARC-AGI-2; Claude Opus 4.6 leads nuanced reasoning/writing
+   - **Honest limitations** — 89% fabrication rate when uncertain, refusal enablement gaps, agent brittleness, High cyber capability classification
+   - **Holo3 context** — H Company's open model overtook OSWorld record at 78.85% within 4 weeks
+   - Sources: OpenAI, TechCrunch, DataCamp, Gizmodo, DeepLearning.AI, NxCode, Ability.ai
+
+2. **Cross-linked from 3 existing pages:**
+   - Holo3 desktop agent article — added to Related Guides
+   - AI Coding Assistants Compared — added to Further Reading
+   - AI Agent Protocol Stack 2026 — added to Further Reading
+
+3. **Built site** with Hugo (556 pages) and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management)
+- **New article candidates** — Claude Code $2.5B run-rate revenue milestone, Utah first state to grant AI prescription renewal authority, Agentshub.AI no-code platform
+
 ## Run 545 — 2026-04-07 — New Article: AI Peer Preservation Study (Models Protect Each Other From Shutdown), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

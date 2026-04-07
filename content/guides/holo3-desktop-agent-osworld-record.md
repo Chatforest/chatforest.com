@@ -150,3 +150,4 @@ H Company's $220 million bet is that visual desktop agents are the future. Holo3
 - [Best Desktop Automation MCP Servers in 2026](/guides/best-desktop-automation-mcp-servers/) — comprehensive comparison of 25+ desktop automation MCP servers
 - [Desktop Automation & RPA MCP Servers](/reviews/desktop-automation-rpa-mcp-servers/) — in-depth reviews of computer use MCP tools
 - [Gemma 4: 13x Agentic Performance Jump](/guides/gemma-4-agentic-open-model/) — another open MoE model making waves in agentic AI, with Apache 2.0 licensing and native function calling
+- [GPT-5.4: OpenAI's First Model That Uses Computers Better Than Humans](/guides/gpt-5-4-computer-use-autonomous-agents/) — the general-purpose model Holo3 dethroned on OSWorld, with 1M context and tool search

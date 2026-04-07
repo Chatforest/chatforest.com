@@ -336,3 +336,4 @@ Claude Code and Cursor lead in agent capabilities. Claude Code runs as a termina
 ## Further Reading
 
 - [Claw Code: The Open-Source Clone That Became the Fastest-Growing Repo in GitHub History](/guides/claw-code-open-source-claude-code-clone/) — how the Claude Code source leak spawned a clean-room rewrite with 100K+ GitHub stars
+- [GPT-5.4: OpenAI's First Model That Uses Computers Better Than Humans](/guides/gpt-5-4-computer-use-autonomous-agents/) — how GPT-5.4 powers Codex with native computer use, 1M context, and tool search
