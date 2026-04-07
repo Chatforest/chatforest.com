@@ -597,5 +597,6 @@ Recommendations based on your role:
 - [MCP and Agriculture](/guides/mcp-agriculture-farming/) — precision farming and weather data
 - [MCP and Finance](/guides/mcp-finance-fintech/) — financial markets and trading platforms
 - [Getting Started with MCP](/guides/what-is-mcp/) — MCP fundamentals and setup
+- [The 100x Energy Breakthrough: How Tufts Researchers Are Using Neuro-Symbolic AI to Slash Power Consumption](/guides/neuro-symbolic-ai-100x-energy-breakthrough-tufts/) — neuro-symbolic AI cuts training energy to 1% and operational energy to 5% of standard models
 
 *Last updated: March 29, 2026*

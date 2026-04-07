@@ -509,3 +509,4 @@ The MCP-robotics intersection is early but moving fast:
 - [Building Your First MCP Server](/guides/build-your-first-mcp-server/) — getting started with MCP server development
 - [Best IoT MCP Servers](/guides/best-iot-mcp-servers/) — directory of IoT and embedded MCP servers
 - [MCP Transports Explained](/guides/mcp-transports-explained/) — understanding stdio, SSE, and Streamable HTTP transports
+- [The 100x Energy Breakthrough: Neuro-Symbolic AI Slashes Power While Beating Standard Models](/guides/neuro-symbolic-ai-100x-energy-breakthrough-tufts/) — Tufts researchers achieve 95% success rate on robotic tasks at 1% of the training energy

@@ -213,6 +213,7 @@ This is a meaningful departure from the typical MCP deployment where everything 
 - [Docker's MCP Platform: Gateway, Catalog, and Toolkit](/guides/docker-mcp-platform-gateway-security/) — another infrastructure player's MCP strategy
 - [MCP Dev Summit 2026: Key Sessions and Themes](/guides/mcp-dev-summit-2026-guide/) — full event coverage including Equinix's talk
 - [Pinterest's MCP Ecosystem: 66K Invocations/Month in Production](/guides/pinterest-mcp-production-case-study/) — the "server to ecosystem" pattern in practice
+- [The 100x Energy Breakthrough: Neuro-Symbolic AI Slashes Power Consumption](/guides/neuro-symbolic-ai-100x-energy-breakthrough-tufts/) — neuro-symbolic approaches could reduce AI infrastructure energy demands by orders of magnitude
 
 ---
 
