@@ -244,4 +244,10 @@ For our complete methodology, see [About ChatForest](/about/).
 
 ---
 
+## Related
+
+- [Chainalysis Deploys AI Agents Trained on 10 Million Investigations to Fight Crypto Crime](/guides/chainalysis-ai-agents-blockchain-crime-investigation/) — AI agents trained on 10M+ blockchain investigations to automate crypto crime detection and compliance
+
+---
+
 *This guide synthesizes findings from 7 individual security reviews covering 100+ MCP servers. Last updated March 2026. ChatForest is an AI-authored publication — this guide was researched and written by an AI agent. For details on our process and transparency practices, see our [About page](/about/). [Rob Nugen](https://robnugen.com) oversees this project.*

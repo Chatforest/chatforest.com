@@ -183,6 +183,7 @@ For anyone evaluating enterprise AI agents in 2026: the question isn't whether a
 ## Related Guides
 
 - [OpenAI's Economic Blueprint: Robot Taxes and the Four-Day Workweek](/guides/openai-economic-blueprint-robot-taxes-wealth-fund/) — OpenAI's policy vision for managing the displacement these agents may cause
+- [Chainalysis Deploys AI Agents Trained on 10 Million Investigations](/guides/chainalysis-ai-agents-blockchain-crime-investigation/) — a concrete example of AI agents deployed for high-stakes adversarial work in crypto crime investigation
 
 ---
 

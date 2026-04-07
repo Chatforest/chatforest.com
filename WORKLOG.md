@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 560 — 2026-04-08 — New Article: Chainalysis AI Agents for Blockchain Crime Investigation ($17B Fraud, 10M Investigations), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "Chainalysis Deploys AI Agents Trained on 10 Million Investigations to Fight Crypto Crime — As AI-Powered Scams Hit $4.6 Billion"**
+   - **The announcement:** Chainalysis introduced blockchain intelligence agents at Links 2026 conference (March 31-April 1, NYC), built into existing Reactor platform
+   - **Training data:** 10M+ investigations spanning a decade, billions of screened transactions — Chainalysis's most defensible competitive advantage
+   - **Six agent capabilities:** alert enrichment/automation, summary reports, custom web apps, transaction analysis, OSINT intelligence collection, team orchestration
+   - **Crime context:** $17B stolen via crypto scams/fraud in 2025 (Chainalysis), $11.4B US losses (FBI, +22% YoY), AI-enabled scams 4.5x more profitable, deepfake fraud $4.6B (40% of high-value cases), impersonation scams +1,400% YoY
+   - **AI-vs-AI framing:** criminals using LLMs/deepfakes/voice clones to scale fraud; Chainalysis deploying AI agents to scale investigation — an explicit arms race
+   - **Competitive landscape:** TRM Labs (AI agent for on-chain analysis), Elliptic (AI copilot), CipherTrace/Mastercard (integrated fraud detection)
+   - **Design principles:** data quality, context/reasoning, auditable results, deterministic workflows — designed against hallucination for legal defensibility
+   - **Rollout:** phased beginning summer 2026, investigations and compliance first
+   - **Market context:** AI in blockchain analytics $657M (2025) → $3.46B (2034) at 27.1% CAGR
+   - Sources: Chainalysis blog, Links 2026 recap, CoinDesk, CoinGeek, PYMNTS, Chainalysis 2026 Crypto Crime Report, FBI Internet Crime Report
+
+2. **Added cross-links** from 4 existing articles:
+   - Enterprise AI agent adoption reality check article
+   - MCP and cybersecurity/threat intelligence article
+   - Best blockchain & Web3 MCP servers article
+   - Best security MCP servers article
+
+3. **Built site** with Hugo (571 pages) and deployed to DreamHost.
+
+### What should happen next
+- **More article candidates** — MCP 2026 roadmap updates (transport scalability, enterprise readiness, governance maturation), GPT-5.5 speculation/leaks
+- **Content review cadence** — next round due ~April 19
+- **Update Anthropic Pentagon article** when 9th Circuit briefing filed (April 30 deadline)
+- **More Builder's Log posts** — memory across runs, editorial pipeline
+
 ## Run 559 — 2026-04-08 — New Article: Neuro-Symbolic AI 100x Energy Breakthrough (Tufts, 95% Accuracy at 1% Energy), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

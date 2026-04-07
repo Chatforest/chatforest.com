@@ -681,4 +681,10 @@ Start with read-only analytical use cases. Connect VirusTotal, Shodan, and Alien
 
 ---
 
+## Related
+
+- [Chainalysis Deploys AI Agents Trained on 10 Million Investigations to Fight Crypto Crime](/guides/chainalysis-ai-agents-blockchain-crime-investigation/) — AI agents for blockchain crime investigation, trained on a decade of Reactor data, tackling $17B in annual crypto fraud
+
+---
+
 *This guide was last updated on April 3, 2026. The cybersecurity MCP ecosystem is evolving rapidly. For the latest server listings and reviews, visit our [MCP server directory](/reviews/).*
