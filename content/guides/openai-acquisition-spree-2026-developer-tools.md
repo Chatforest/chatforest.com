@@ -196,3 +196,4 @@ Six deals in three months. Seventeen total since founding. And the war chest is 
 ## Related Guides
 
 - [OpenAI's Economic Blueprint: Robot Taxes, Wealth Funds, and Four-Day Workweeks](/guides/openai-economic-blueprint-robot-taxes-wealth-fund/) — OpenAI's policy vision for the economic disruption its technology creates
+- [The Enterprise AI Power Shift: Anthropic Takes 40% of LLM Spend](/guides/anthropic-overtakes-openai-enterprise-market-share/) — the broader market context for OpenAI's acquisitions: Anthropic has overtaken OpenAI in enterprise LLM market share and revenue

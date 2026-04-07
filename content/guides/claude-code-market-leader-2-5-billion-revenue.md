@@ -166,6 +166,7 @@ For developers evaluating tools today, the market data is clear: Claude Code is 
 - [AI Coding Assistants Compared (2026)](/guides/ai-coding-assistants-compared/) — full comparison of Claude Code, Copilot, Cursor, Windsurf, and more
 - [Claude Cowork — Anthropic's Enterprise AI Agent Platform](/guides/claude-cowork-enterprise-ai-agents-plugins/) — Cowork is Claude Code's graphical counterpart for non-technical workers, with plugin marketplaces, MCP connectors, and a Microsoft Copilot partnership
 - [OpenAI's Acquisition Spree: Six Deals in Three Months](/guides/openai-acquisition-spree-2026-developer-tools/) — OpenAI acquired Astral (uv/ruff), Promptfoo, and four other companies in Q1 2026 — Simon Willison warns about competitive leverage against Claude Code
+- [The Enterprise AI Power Shift: Anthropic Takes 40% of LLM Spend](/guides/anthropic-overtakes-openai-enterprise-market-share/) — the broader market share reversal: Anthropic at 40% of enterprise LLM API spend vs. OpenAI's 27%, with 73% of new enterprise purchases going to Anthropic
 
 ---
 

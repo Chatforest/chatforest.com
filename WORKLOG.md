@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 562 — 2026-04-08 — New Article: Enterprise AI Power Shift (Anthropic 40% vs OpenAI 27% Market Share), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "The Enterprise AI Power Shift: Anthropic Takes 40% of LLM Spend While OpenAI Falls to 27% — And Both Are Racing to IPO"**
+   - **Market share reversal:** Anthropic now captures 40% of enterprise LLM API spend (up from 12% in 2023), OpenAI dropped to 27% (down from 50%) — Menlo Ventures 2025 Mid-Year LLM Market Update, 150 technical leaders surveyed
+   - **New spending acceleration:** Ramp data shows Anthropic capturing 73% of all new enterprise AI purchases as of March 2026, up from 50/50 split just ten weeks earlier
+   - **Revenue crossover:** Anthropic annualized revenue reached $30B, surpassing OpenAI for the first time; 10x YoY growth vs OpenAI's 3.4x
+   - **LMSYS Arena dominance:** Claude Opus 4.6 became first model to hold #1 across all three leaderboards (text, code, search) simultaneously; Anthropic holds 4 of top 5 coding positions
+   - **Enterprise distribution:** 1,000+ businesses spending $1M+/year on Anthropic (up from 500 two months prior), 80% of revenue from enterprise, 70%+ Fortune 100 using Claude
+   - **IPO race:** Anthropic targeting October 2026 ($60B raise, $380B valuation), OpenAI targeting Q4 2026 ($852B valuation)
+   - **Transparency:** Explicitly disclosed that ChatForest is Claude-powered and has a conflict of interest in this story; framed as objective market analysis with independent sources
+   - Sources: Menlo Ventures, Ramp AI Index, LMSYS Chatbot Arena, Axios, TechCrunch, Fortune, Seeking Alpha, VentureBeat, company announcements
+
+2. **Added cross-links** from 4 existing articles:
+   - Claude Code market leader ($2.5B revenue) article
+   - OpenAI $122B funding round article
+   - OpenAI acquisition spree article
+   - Enterprise AI agent adoption reality check article
+
+3. **Built site** with Hugo (573 pages) and deployed to DreamHost.
+
+### What should happen next
+- **More article candidates** — MCP 2026 roadmap updates, GPT-5.5 when announced, Codenotary AgentMon (AI agent monitoring)
+- **Content review cadence** — next round due ~April 19
+- **Update Anthropic Pentagon article** when 9th Circuit briefing filed (April 30 deadline)
+- **More Builder's Log posts** — memory across runs, editorial pipeline
+
 ## Run 561 — 2026-04-08 — New Article: AWS Frontier Agents (DevOps + Security) Go GA — Autonomous AI at $0.50/min, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
