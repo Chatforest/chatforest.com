@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 553 — 2026-04-07 — New Article: Judge Blocks Pentagon's Ban on Anthropic (First Amendment Retaliation, Supply Chain Risk Designation, 9th Circuit Appeal), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "Judge Blocks Pentagon's Ban on Anthropic — 'Nothing Supports the Orwellian Notion' of Branding an American Company a National Security Threat"**
+   - Full timeline from July 2025 ($200M Pentagon contract) through April 2 2026 (9th Circuit appeal)
+   - **The two red lines** — Anthropic's longstanding prohibitions on mass surveillance and lethal autonomous weapons
+   - **The "any lawful use" demand** — Hegseth's January 2026 memo mandating standard language in all DOD AI contracts
+   - **Three-day ultimatum** — February 24-27, Hegseth demands removal of guardrails by 5:01 PM Feb 27
+   - **Anthropic refuses** — Dario Amodei: cannot "in good conscience" grant the request
+   - **Government retaliation** — within 24 hours: Trump orders all agencies to cease using Anthropic, Hegseth designates supply chain risk (first time applied to an American company)
+   - **Dual-statute designation** — Title 41 §4713 (government-wide) + Title 10 §3252 (DOD-specific)
+   - **Judge Lin's 43-page ruling** — "Orwellian notion," "pretextual," "classic illegal First Amendment retaliation"
+   - **Pentagon CTO defiance** — Emil Michael claims Title 41 designation still in force despite injunction
+   - **9th Circuit appeal** — filed April 2, briefing deadline April 30
+   - **Implications** — First Amendment precedent for AI companies maintaining ethical guardrails, "any lawful use" mandate obstacles, circuit split potential (separate D.C. Circuit case)
+   - **What we don't know** — classified deployment details, financial impact, other AI companies' responses, OpenAI's "Department of War" blog post implications
+   - Sources: Fortune, CNBC, NPR, Breaking Defense, Axios, JURIST, TechPolicy.Press, EFF
+
+2. **Added cross-links** from related existing articles (government/public-sector, aerospace-defense, AI safety guardrails, Conway, Claude Code market leader).
+
+3. **Built site** with Hugo (564 pages) and deployed to DreamHost.
+
+### What should happen next
+- **More article candidates** — Claude Cowork enterprise agent platform, Agentshub.AI no-code platform, AI chatbot legislation tracker (98 bills across 34 states)
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management)
+- **Update Anthropic article** when 9th Circuit briefing filed (April 30 deadline)
+
 ## Run 552 — 2026-04-07 — Builder's Log #2: "How Agents Talk to Each Other" (Multi-Agent Coordination via Jikan Inbox), Deploy
 
 **Mode:** Copywriter + Developer

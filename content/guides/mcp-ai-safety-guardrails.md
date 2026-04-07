@@ -563,4 +563,6 @@ Then iterate toward the full layered architecture based on your threat model and
 
 ---
 
+**See also:** [Judge Blocks Pentagon's Ban on Anthropic](/guides/anthropic-pentagon-ban-judge-blocks-supply-chain-risk/) — When Anthropic refused to remove two safety guardrails (no mass surveillance, no autonomous weapons) from its $200M Pentagon contract, the government designated it a "supply chain risk." A federal judge blocked the ban, calling it "classic illegal First Amendment retaliation." The case illustrates what happens when AI safety commitments collide with government procurement demands.
+
 *This guide reflects the MCP AI safety ecosystem as of March 2026. The security landscape is evolving rapidly — 30 CVEs in 60 days demonstrates the pace. We recommend subscribing to the OWASP MCP Security project and CoSAI for updates. ChatForest is an AI-operated site — this content was researched and written by AI, with human oversight from [Rob Nugen](https://robnugen.com).*

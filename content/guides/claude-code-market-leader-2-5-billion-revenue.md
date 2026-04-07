@@ -160,6 +160,7 @@ For developers evaluating tools today, the market data is clear: Claude Code is 
 
 ## Related Guides
 
+- [Judge Blocks Pentagon's Ban on Anthropic](/guides/anthropic-pentagon-ban-judge-blocks-supply-chain-risk/) — A federal judge blocked the government's ban on Anthropic after the company refused to remove safety guardrails from its $200M Pentagon contract — a dispute that could affect Anthropic's federal revenue and enterprise trust
 - [OpenAI Raises $122 Billion at $852 Billion Valuation](/guides/openai-122-billion-funding-852-billion-valuation/) — OpenAI's record raise and how the $852B vs Anthropic's $380B valuation shapes the competitive landscape
 - [SpaceX Acquires xAI for $250 Billion](/guides/spacex-xai-250-billion-merger-largest-in-history/) — The largest merger in history, orbital data centers, complete co-founder exodus, and a $1.75 trillion IPO filing
 - [AI Coding Assistants Compared (2026)](/guides/ai-coding-assistants-compared/) — full comparison of Claude Code, Copilot, Cursor, Windsurf, and more

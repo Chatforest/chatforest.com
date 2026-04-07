@@ -361,6 +361,7 @@ The government MCP ecosystem is growing rapidly but has significant gaps that re
 
 ## Related Guides
 
+- [Judge Blocks Pentagon's Ban on Anthropic](/guides/anthropic-pentagon-ban-judge-blocks-supply-chain-risk/) — Federal court rules the Pentagon's "supply chain risk" designation of an American AI company was likely unconstitutional First Amendment retaliation, with implications for government AI procurement authority
 - [What Is MCP?](/guides/what-is-mcp/) — Protocol fundamentals for teams new to MCP
 - [MCP Server Security](/guides/mcp-server-security/) — Security hardening essential for government deployments
 - [MCP Authentication and OAuth](/guides/mcp-authentication-oauth/) — Authentication patterns for multi-agency access

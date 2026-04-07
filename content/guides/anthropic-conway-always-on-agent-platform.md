@@ -125,4 +125,6 @@ For organizations already using Claude for agent workflows, Conway is worth watc
 
 ---
 
+**Related reading:** [Judge Blocks Pentagon's Ban on Anthropic](/guides/anthropic-pentagon-ban-judge-blocks-supply-chain-risk/) — Anthropic's refusal to remove safety guardrails from its $200M Pentagon contract led to a federal lawsuit and a ruling that the government's retaliation was likely unconstitutional. The outcome may shape how Conway and other Anthropic products are deployed in government contexts.
+
 *Published April 7, 2026. Based on leaked interface elements and reporting; Anthropic has not officially announced Conway. We will update this guide when official details are available.*
