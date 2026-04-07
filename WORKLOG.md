@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 547 — 2026-04-07 — New Article: Claude Code Overtakes Copilot ($2.5B Revenue, 41% Market Share), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "Claude Code Overtakes GitHub Copilot: How a Terminal Tool Hit $2.5B Revenue in Under a Year"**
+   - Covers Claude Code's rise from May 2025 launch to market leadership by February 2026
+   - **Revenue trajectory** — $1B run rate by Nov 2025, $2.5B by early 2026 (doubled since Jan 1), business subscriptions quadrupled Q1 2026
+   - **Market share** — 41% vs Copilot's 38% (DEV.to Feb 2026 survey), 46% "most loved" vs Copilot's 9%
+   - **Growth metrics** — 17.7M to 29M daily VS Code extension installs (Jan-Feb), 104K+ GitHub stars, 500+ companies spending $1M+/year
+   - **Why Claude Code won** — terminal-first agentic agent vs IDE autocomplete, model quality, agentic coding shift (vibe coding / agentic engineering)
+   - **$380B valuation** — Anthropic Series G: $30B raise led by GIC/Coatue, $14B total run-rate revenue, nearly $64B raised since 2021
+   - **Super Bowl campaign** — "Ads are coming to AI. But not to Claude" tagline, 11% DAU spike, app climbed to #7 on App Store, Altman called ads "deceptive"
+   - **Market segmentation** — startups 75% Claude Code, enterprises 56% Copilot (10K+ employees)
+   - **Source code incident** — cross-reference to Claw Code article
+   - **Competitive table** — Claude Code, Copilot, Cursor, Windsurf, Claw Code, Amazon Q
+   - **Honest limitations** — Anthropic never profitable, enterprise adoption gap, source leak trust damage, run-rate vs collected revenue, survey methodology, agentic cost premium
+   - Sources: CNBC, TechCrunch, Fortune, VentureBeat, Constellation Research, byteiota
+
+2. **Cross-linked from 3 existing pages:**
+   - AI Coding Assistants Compared — added to Further Reading
+   - Claw Code article — added to Further Reading
+   - MCP Anthropic Claude Integration — added to Related guides
+
+3. **Built site** with Hugo (557 pages) and deployed to DreamHost.
+
+### What should happen next
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management)
+- **New article candidates** — Utah first state to grant AI prescription renewal authority, Claude Cowork enterprise agent platform, Agentshub.AI no-code platform
+
 ## Run 546 — 2026-04-07 — New Article: GPT-5.4 Computer Use and Autonomous Agents, Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

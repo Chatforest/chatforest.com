@@ -335,5 +335,6 @@ Claude Code and Cursor lead in agent capabilities. Claude Code runs as a termina
 
 ## Further Reading
 
+- [Claude Code Overtakes GitHub Copilot: How a Terminal Tool Hit $2.5B Revenue in Under a Year](/guides/claude-code-market-leader-2-5-billion-revenue/) — the market data behind Claude Code's rise to 41% share, $2.5B run rate, and what it means for the competitive landscape
 - [Claw Code: The Open-Source Clone That Became the Fastest-Growing Repo in GitHub History](/guides/claw-code-open-source-claude-code-clone/) — how the Claude Code source leak spawned a clean-room rewrite with 100K+ GitHub stars
 - [GPT-5.4: OpenAI's First Model That Uses Computers Better Than Humans](/guides/gpt-5-4-computer-use-autonomous-agents/) — how GPT-5.4 powers Codex with native computer use, 1M context, and tool search

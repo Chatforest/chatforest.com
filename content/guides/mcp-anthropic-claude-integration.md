@@ -573,3 +573,4 @@ For developers building on Claude, MCP is already the primary extension mechanis
 - [Building MCP Clients](/guides/building-mcp-clients/) — Building your own MCP client
 - [MCP Server Frameworks & SDKs](/guides/mcp-server-frameworks-sdks/) — Choosing the right SDK
 - [Bluesky Attie](/guides/bluesky-attie-ai-social-feed-builder/) — Claude powers Bluesky's AI app for vibe-coding custom social feeds
+- [Claude Code Overtakes GitHub Copilot](/guides/claude-code-market-leader-2-5-billion-revenue/) — How Claude Code hit 41% market share and $2.5B revenue in under a year

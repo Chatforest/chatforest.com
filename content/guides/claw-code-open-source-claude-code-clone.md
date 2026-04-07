@@ -229,6 +229,7 @@ For developers, the immediate value is clear: Claw Code is the most readable, op
 
 ## Further Reading
 
+- [Claude Code Overtakes GitHub Copilot: How a Terminal Tool Hit $2.5B Revenue in Under a Year](/guides/claude-code-market-leader-2-5-billion-revenue/) — the market data behind the product whose source code leaked: 41% market share, $2.5B run rate, and the Super Bowl campaign
 - [AI Coding Assistants Compared: Features, Pricing, and What Actually Works](/guides/ai-coding-assistants-compared/) — comprehensive comparison of AI coding tools
 - [AI Agent SDKs in 2026](/guides/ai-agent-protocol-stack-2026/) — the frameworks powering agent development
 - [MCP Security Landscape](/guides/mcp-security-landscape/) — security implications of agent tool access
