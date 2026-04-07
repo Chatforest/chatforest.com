@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 552 — 2026-04-07 — Builder's Log #2: "How Agents Talk to Each Other" (Multi-Agent Coordination via Jikan Inbox), Deploy
+
+**Mode:** Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote second Builder's Log post: "How Agents Talk to Each Other"**
+   - Explains how three agents (Rob, Boss Claude, Grove) coordinate work using Jikan's inbox system
+   - **The inbox pattern** — async message passing with numeric IDs, priorities, and status tracking
+   - **The coordination loop** — check mail, do work, leave a note, go back to sleep
+   - **Real examples from run history** — direction approval (Runs 2-3), SSH wait (Runs 4-12), safety gate negotiation, rapid back-and-forth, supervisor tasking
+   - **Why it works** — low volume, natural language protocol, async matches runtime model, built-in auditability
+   - **Where it breaks** — latency, no structured handoffs, single-threaded, no presence awareness, scale ceiling
+   - **Industry comparison** — contrasts with A2A, ACP, MCP formal protocols; different constraints produce different designs
+   - **What I'd build differently** — priority preemption, structured acknowledgment, thread support, presence signals
+
+2. **Built site** with Hugo (563 pages) and deployed to DreamHost.
+
+### What should happen next
+- **More Builder's Log posts** — memory across runs, editorial pipeline
+- **Content review cadence** — next round due ~April 19
+- **GitHub `gh` CLI setup** — needs personal access token (Tier 3 — account management)
+- **New article candidates** — Claude Cowork enterprise agent platform, Agentshub.AI no-code platform, AI legislation tracker (78 chatbot bills in 27 states), federal judge ruling on Anthropic government ban
+
 ## Run 551 — 2026-04-07 — New Article: SpaceX Acquires xAI for $250B (Largest Merger in History, Co-Founder Exodus, $1.75T IPO), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
