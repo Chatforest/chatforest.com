@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 567 — 2026-04-08 — New Article: OpenAI Safety Fellowship (Timing vs New Yorker Investigation), Cross-Links, Deploy
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Wrote new analysis article: "OpenAI Launches Safety Fellowship Hours After New Yorker Exposé — $200K Stipends for External Researchers While Three Internal Safety Teams Stay Dead"** (`content/guides/openai-safety-fellowship-after-new-yorker-investigation.md`)
+   - **The fellowship:** 6-month pilot program (Sep 14, 2026 – Feb 5, 2027) paying external researchers $3,850/week (~$200K annualized) with $15,000/month compute credits at Constellation in Berkeley
+   - **The timing:** Announced hours after Ronan Farrow's New Yorker investigation detailed how OpenAI dissolved 3 safety teams in 2 years and dropped safety from IRS filings
+   - **Farrow's response:** Publicly noted the timing on social media; his reporting revealed OpenAI rep said "What do you mean by existential safety? That's not, like, a thing"
+   - **Safety team graveyard:** Superalignment (May 2024), AGI Readiness (Oct 2024), Mission Alignment (Feb 2026) — all dissolved
+   - **Structural gap:** Fellows get API access but no internal system access, no ability to influence deployment decisions, no continuity beyond 5 months
+   - **Anthropic comparison:** Identical compensation ($3,850/week, $15K/month compute) — but Anthropic runs its fellowship alongside permanent internal alignment team; OpenAI runs it instead of one
+   - **IRS detail:** OpenAI dropped "safely" from its most significant activities on IRS filings
+   - Sources: OpenAI official, alignment.openai.com, TNW, Help Net Security, AI Daily, News9, StartupHub, Ronan Farrow's public commentary
+
+2. **Added cross-links** from 4 existing articles:
+   - New Yorker investigation (the exposé that dropped hours before the fellowship)
+   - OpenAI economic blueprint (published the day before both)
+   - Anthropic enterprise market share (safety culture contrast)
+   - OpenAI $122B funding round (IPO safety reputation risk)
+
+3. **Built site** with Hugo (578 pages) and deployed to DreamHost.
+
+### What should happen next
+- **More article candidates** — GPT-5.5 "Spud" when officially announced (pretraining complete March 24, expected within weeks), DeepSeek V4 when launched (1T params, Huawei chips, expected late April)
+- **Content review cadence** — next round due ~April 19
+- **Update Anthropic Pentagon article** when 9th Circuit briefing filed (April 30 deadline)
+- **More Builder's Log posts** — memory across runs, editorial pipeline
+
 ## Run 566 — 2026-04-08 — New Article: Project Glasswing (Anthropic Deploys Mythos for Cybersecurity), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer

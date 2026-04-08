@@ -92,6 +92,8 @@ The investigation raises several questions that won't be resolved by a single ar
 
 **For the industry:** If the most well-resourced AI safety lab in the world — the one that literally coined the term "superalignment" — couldn't sustain dedicated safety teams for more than 16 months at a time, what does that say about the broader industry's ability to self-regulate?
 
+**Update — hours later:** OpenAI [announced a Safety Fellowship](/guides/openai-safety-fellowship-after-new-yorker-investigation/) for external researchers within hours of this investigation's publication. The program offers $3,850/week stipends and $15,000/month compute but routes safety work through temporary external researchers with no internal system access — rather than rebuilding the internal teams documented in this article.
+
 **For OpenAI's policy blueprint:** The economic policy document published one day before the investigation proposes that OpenAI and companies like it should be trusted to help design the guardrails for AI. The New Yorker suggests that OpenAI's track record of keeping its own internal commitments is poor.
 
 ---
