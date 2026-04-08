@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 573 — 2026-04-09 — High-Density Citation Retrofit: OpenAI Safety Fellowship Article, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of OpenAI Safety Fellowship article** (`content/guides/openai-safety-fellowship-after-new-yorker-investigation.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** 12 inline citations (from Run 570's initial retrofit)
+   - **New state:** ~65+ inline citations — nearly every factual sentence now sourced
+   - **New citations added this run (~55+ additional links):**
+     - Intro: linked official announcement (alignment.openai.com), New Yorker investigation, stipend ($3,850/week via Help Net Security), compute ($15K/month via News9live), dates (alignment.openai.com), no internal access (The Next Web)
+     - Farrow timing: added investigation thread link, 18-month reporting duration (Semafor), 100+ interviews (Techloy), undisclosed memos (CNN)
+     - Fellowship details: linked research areas, eligibility criteria, "research ability over credentials" quote, deliverables, mentorship, peer cohort — all to primary/secondary sources
+     - Superalignment: added TechCrunch (team creation goal), Jan Leike "sailing against the wind" (Fast Company), Washington Times for full quote, "never clear metrics" (Fortune), "joined Anthropic" (CNBC)
+     - AGI Readiness: added Brundage Substack farewell, "neither OpenAI nor any other frontier lab is ready" quote, "not controversial among leadership" (WebProNews)
+     - Mission Alignment: added 16-month tenure (WinBuzzer), 7 employees transferred (Platformer), Achiam bio (GitHub), "ensuring models follow human intent" (AI CERTs), undefined responsibilities (DataPhoenix)
+     - Existential safety quote: linked New Yorker investigation and Farrow tweet for sourcing
+     - IRS filings: added "last tax-exempt filing" (Medium), original mission language "safely benefits humanity" (The Conversation), nonprofit structure (Simon Willison), institutional deprioritization (Claims Journal)
+     - Anthropic comparison: linked mirror observation (AI Daily), internal alignment team (Anthropic), dissolved last team Feb 2026 (TechCrunch), broader research scope (AImpactful)
+     - Safety community: linked independence claim, research areas, Superalignment mandate, compute failure (Fortune)
+     - What Happens Next: all dates linked, "pilot" designation (StartupHub), three dissolved teams summary (Annielytics), final paragraph fully linked
+
+2. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Apply high-density citation standard to remaining articles** (Project Glasswing, AI Scientist-v2, etc.)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 572 — 2026-04-08 — High-Density Citation Retrofit: Meta AI Crisis Article, Deploy
 
 **Mode:** Developer (editorial quality)
