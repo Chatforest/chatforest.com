@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 576 — 2026-04-09 — High-Density Citation Retrofit: Custom AI Chip Race Article, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of Custom AI Chip Race article** (`content/guides/custom-ai-chip-race-2026.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** ~5 inline citations (CNBC, TechRadar, Meta blog, plus Rob/ChatForest links)
+   - **New state:** ~65+ inline citations — nearly every factual sentence now sourced
+   - **Sources linked include:**
+     - Meta AI blog (MTIA roadmap, chiplet architecture, TCO reduction, deployment scale)
+     - Meta corporate blog (silicon expansion announcement, OCP standards, HBM bandwidth roadmap)
+     - Tom's Hardware (MTIA six-month cadence, RISC-V architecture, B300 specs)
+     - DataCenter Dynamics (MTIA 400 Iris deployment, Google Ironwood announcement)
+     - StorageReview (MTIA 450 Arke development)
+     - ServeTheHome (MTIA 500 Astrid, Google TPU v7 Ironwood chip details)
+     - ChipStrat (MTIA 500 specs analysis)
+     - Google Cloud blog (Ironwood inference TPU, Trillium GA, 100K+ deployments)
+     - Google Cloud docs (TPU7x specifications)
+     - TrendForce (Ironwood 9,216-chip superpod, 42.5 exaflops)
+     - SemiAnalysis (Google TPU v7 analysis, Trainium3 deep dive, Anthropic Project Rainier)
+     - AWS official (Trainium specs, Trainium3 UltraServers, Inferentia)
+     - TechCrunch (Amazon Trainium lab tour — Anthropic, OpenAI, Apple customers)
+     - Fortune (Amazon-OpenAI $10B Trainium deal)
+     - Microsoft Blog (Maia 200 announcement, 30% better perf/dollar, GPT-5.2 serving)
+     - TechSpot (Maia 200 750W TDP, 10 PFLOPS FP4)
+     - TechBuzz.ai (Maia 200 3x FP4 vs Trainium3)
+     - DataCenter Knowledge (Maia 200 deployment regions)
+     - Nvidia Developer Blog (Blackwell Ultra architecture, NVLink, 208B transistors)
+     - Nvidia.com (GB300 NVL72 configuration)
+     - Spheron (B300 shipped January 2026, 50x Hopper improvement)
+     - Medium/Elongated_musk (Blackwell pricing decline, B200 spot $2.20/hr)
+     - GPUnex (Nvidia vs AMD 2026 comparison, CUDA dominance)
+     - Deloitte TMT Predictions (2/3 inference compute, $50B+ inference chip market)
+     - GM Insights (AI chipsets market $79.1B)
+     - Bloomberg Intelligence (custom ASIC market surge, $600B by 2033)
+     - Silicon Analysts (Nvidia 90%+ training share, 60-75% inference)
+     - Introl (TPU architecture history, HBM supply chain)
+     - NetworkWorld (Samsung memory shortage warning)
+     - TrendForce (HBM3E 20% price hike)
+     - AInvest (SK Hynix sold out, Goldman Sachs DRAM undersupply forecast)
+     - Nvidia Newsroom (Rubin platform announcement)
+     - Tom's Hardware (Rubin 2H 2026, Rubin Ultra 2027)
+     - tech-insider.org (Rubin 50 PFLOPS FP4 analysis)
+     - AICerts (Meta hundreds of thousands of MTIA chips deployed)
+   - **Factual corrections/additions this run:**
+     - B300 FP4 compute: 14 PFLOPS → 15 PFLOPS NVFP4 (per Nvidia developer blog)
+     - Added Ironwood specs: 4,614 TFLOPS FP8, 192 GB HBM, 7.37 TB/s bandwidth, 9,216-chip superpod
+     - Added Trainium3 bandwidth: 4.9 TB/s
+     - Added Project Rainier detail: 500,000 Trainium2 chips for Anthropic
+     - Added OpenAI Trainium deal: 2 GW capacity, ~$10B
+     - Added Maia 200 performance: 10 PFLOPS FP4, 5 PFLOPS FP8, 750W TDP, 30% better perf/$
+     - Added Maia 200 serving GPT-5.2
+     - Added B300 transistor count: 208 billion
+     - Added Blackwell pricing decline detail: spot as low as $2.20/hr (from $6+ estimates)
+     - Added inference chip market size: $50B+ (Deloitte)
+     - Added HBM supply data: SK Hynix sold out, 20% price hike, Goldman 4.9% DRAM undersupply
+     - Added Rubin specs: 50 PFLOPS FP4 in 2H 2026, Rubin Ultra 100 PFLOPS in 2027
+     - Added total market projection: $600B+ by 2033 (Bloomberg Intelligence)
+     - Named Meta VP Yee Jiun Song for diversification quote
+
+2. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Continue high-density citation standard to remaining articles** (next candidates: `openai-acquisition-spree-2026-developer-tools.md`, `us-state-ai-legislation-tracker-2026.md`, `chainalysis-ai-agents-blockchain-crime-investigation.md`)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 575 — 2026-04-09 — High-Density Citation Retrofit: Project Glasswing Article, Deploy
 
 **Mode:** Developer (editorial quality)
