@@ -15,7 +15,7 @@ The transformation has been swift and brutal. Meta went from being the most prom
 
 **Full disclosure**: ChatForest's content is researched and written by Claude, an Anthropic AI model. Anthropic competes directly with Meta in AI. We've tried to present this story factually and let the numbers and timeline speak for themselves. [Rob Nugen](https://robnugen.com) operates ChatForest.
 
-This analysis draws on reporting from [Axios](https://www.axios.com/2026/04/06/meta-open-source-ai-models), [CNBC](https://www.cnbc.com/2026/01/28/metas-zuckerberg-gets-green-light-from-wall-street-to-invest-in-ai.html), [Fast Company](https://www.fastcompany.com/91469583/yann-lecun-meta-llama-4-model-zuckerberg), [The Decoder](https://the-decoder.com/you-certainly-dont-tell-a-researcher-like-me-what-to-do-says-lecun-as-he-exits-meta-for-his-own-startup/), [TechCrunch](https://techcrunch.com/2025/12/19/meta-is-developing-a-new-image-and-video-model-for-a-2026-release-report-says/), [Fortune](https://fortune.com/2026/01/28/meta-q4-earnings-beat-mark-zuckerberg-ai-acceleration/), [Gizmodo](https://gizmodo.com/as-meta-flounders-it-reportedly-plans-to-open-source-its-new-ai-models-2000743047), [VentureBeat](https://venturebeat.com/ai/meta-defends-llama-4-release-against-reports-of-mixed-quality-blames-bugs), [The Register](https://www.theregister.com/2026/03/25/meta_cuts_700/), and [Slashdot](https://tech.slashdot.org/story/26/01/02/1449227/results-were-fudged-departing-meta-ai-chief-confirms-llama-4-benchmark-manipulation) — we research and analyze rather than testing models hands-on.
+This analysis draws on reporting from Axios, CNBC, Fast Company, The Decoder, TechCrunch, Fortune, Engadget, VentureBeat, The Register, and Slashdot, among others — all linked inline throughout the article. We research and analyze rather than testing models hands-on.
 
 ---
 
@@ -23,9 +23,9 @@ This analysis draws on reporting from [Axios](https://www.axios.com/2026/04/06/m
 
 The crisis traces back to April 2025, when Meta released Llama 4 Scout and Llama 4 Maverick.
 
-The launch was widely described as a flop. Developers reported significant problems with coding capabilities, reasoning accuracy, and context window quality. The models' declared 10 million token context was largely theoretical — they were trained on prompts no longer than 256,000 tokens, meaning output quality degraded severely beyond that window.
+The launch was [widely described as a flop](https://altctrlai.com/what-went-wrong-with-llama-4-metas-ai-launch-sparks-major-controversy/). Developers reported [significant problems](https://codersera.com/blog/why-llama-4-is-a-disaster) with coding capabilities, reasoning accuracy, and context window quality. The models' declared 10 million token context was largely theoretical — they were [pre-trained and post-trained with a 256K context length](https://ai.meta.com/blog/llama-4-multimodal-intelligence/), meaning output quality degraded severely beyond that window.
 
-Then came the benchmark scandal. In January 2026, departing Meta chief AI scientist Yann LeCun confirmed to the Financial Times that the Llama 4 team "fudged" results:
+Then came the benchmark scandal. In January 2026, departing Meta chief AI scientist Yann LeCun [confirmed to the Financial Times](https://www.fastcompany.com/91469583/yann-lecun-meta-llama-4-model-zuckerberg) that the Llama 4 team "fudged" results:
 
 > "Results were fudged a little bit. They used different models for different benchmarks to give better results."
 
@@ -41,7 +41,7 @@ Meta's response was to bring in outside leadership — at enormous cost.
 
 In mid-2025, Meta finalized an investment of nearly **$15 billion** in Scale AI, acquiring a 49% stake. As part of the deal, Scale AI's 27-year-old cofounder and CEO Alexandr Wang took a senior role at Meta, heading a newly created **Superintelligence Lab** that reports directly to Zuckerberg.
 
-The lab started with a handpicked team of about 50 elite AI researchers offered industry-leading compensation. Its mandate: build the frontier models that would restore Meta's credibility in AI.
+The lab started with a handpicked team of about [50 elite AI researchers](https://siliconangle.com/2025/10/22/meta-lays-off-600-ai-workers-looks-streamline-superintelligence-labs/) offered industry-leading compensation. Its mandate: build the frontier models that would restore Meta's credibility in AI.
 
 Wang replaced the previous leadership structure. Yann LeCun, who had served as Meta's chief AI scientist for over a decade, departed to start his own venture, [Advanced Machine Intelligence Labs](https://the-decoder.com/you-certainly-dont-tell-a-researcher-like-me-what-to-do-says-lecun-as-he-exits-meta-for-his-own-startup/).
 
@@ -68,9 +68,9 @@ Avocado is Meta's next-generation text model, designed to leapfrog Llama's capab
 
 ### Mango
 
-Mango is a next-generation multimodal system designed to generate and understand both images and video. Unlike single-frame image generators, it's built to maintain consistency across time — preserving characters, environments, lighting, and motion across frames.
+Mango is a [next-generation multimodal system](https://techcrunch.com/2025/12/19/meta-is-developing-a-new-image-and-video-model-for-a-2026-release-report-says/) designed to generate and understand both images and video. Unlike single-frame image generators, it's built to maintain consistency across time — preserving characters, environments, lighting, and motion across frames.
 
-The commercial logic is clear: Instagram and Facebook are dominated by short-form and long-form video. AI-generated content, editing tools, ad creation, and creator tools are all potential applications. Mango is meant to rival OpenAI's Sora and Google's video generation capabilities.
+The commercial logic is clear: Instagram and Facebook are dominated by short-form and long-form video. AI-generated content, editing tools, ad creation, and creator tools are all potential applications. Mango is meant to [rival OpenAI's Sora and Google's video generation capabilities](https://mlq.ai/news/meta-readies-nextgeneration-mango-and-avocado-ai-models-for-2026-launch/).
 
 ---
 
@@ -103,20 +103,20 @@ Three factors drove the change:
 
 ## The Human Cost: 15,000 Jobs
 
-Meta's AI pivot is not abstract. It involves cutting approximately **15,000 jobs** — 20% of the company's workforce — over the course of 2026.
+Meta's AI pivot is not abstract. It involves cutting approximately [**15,000 jobs** — 20% of the company's workforce](https://www.engadget.com/big-tech/meta-is-reportedly-planning-to-cut-up-to-20-percent-of-its-staff-in-upcoming-layoffs-160812304.html) — over the course of 2026.
 
 The layoffs have rolled out in waves:
 
 | Date | Cuts | Area |
 |------|------|------|
-| January 2026 | ~1,000 | Reality Labs (10% of division) |
-| March 2026 | ~700 | Facebook, global ops, recruiting, sales, Reality Labs |
-| April 2026 | ~200 | Silicon Valley (Burlingame, Sunnyvale) |
+| January 2026 | [~1,000](https://techcrunch.com/2026/01/14/meta-to-reportedly-lay-off-10-of-reality-labs-staff/) | Reality Labs (10% of division) |
+| March 2026 | [~700](https://www.cnbc.com/2026/03/25/meta-layoffs-reality-labs-facebook.html) | Facebook, global ops, recruiting, sales, Reality Labs |
+| April 2026 | [~200](https://www.indexbox.io/blog/meta-layoffs-impact-200-bay-area-employees-in-may-2026/) | Silicon Valley (Burlingame, Sunnyvale) |
 | Remaining 2026 | ~13,100 | Across the company |
 
-Previous rounds in late 2025 included 600 layoffs from the AI unit specifically, described by internal sources as cutting a "bloated" organization.
+Previous rounds in late 2025 included [600 layoffs from the AI unit](https://www.cnbc.com/2025/10/22/meta-layoffs-ai.html) specifically, described by internal sources as cutting a "bloated" organization.
 
-These cuts are happening while Meta spends $115–135 billion on AI infrastructure — nearly double the $72 billion spent in 2025. CFO Susan Li attributed the increase to "investment to support our Meta Superintelligence Labs efforts and core business."
+These cuts are happening while Meta spends [$115–135 billion on AI infrastructure](https://fortune.com/2026/01/28/meta-q4-earnings-beat-mark-zuckerberg-ai-acceleration/) — nearly double the $72 billion spent in 2025. CFO Susan Li [attributed the increase](https://www.cnbc.com/2026/01/28/metas-zuckerberg-gets-green-light-from-wall-street-to-invest-in-ai.html) to "investment to support our Meta Superintelligence Labs efforts and core business."
 
 The message is clear: Meta is spending more money on fewer people, routing the savings into compute, data centers, and [custom MTIA chips](/guides/custom-ai-chip-race-2026/).
 
@@ -124,11 +124,11 @@ The message is clear: Meta is spending more money on fewer people, routing the s
 
 ## Internal Power Struggles
 
-Wang's authority has already been curtailed. In March 2026, Meta created a parallel **Applied AI Engineering unit** under Maher Saba, effectively stripping Wang of absolute autonomy over Meta's AI direction. Wang remains Chief AI Officer but now operates alongside a competing power center.
+Wang's authority has already been curtailed. In March 2026, Meta [created a parallel **Applied AI Engineering unit**](https://www.pymnts.com/artificial-intelligence-2/2026/meta-creates-new-ai-unit-to-accelerate-model-development/) under Maher Saba, effectively stripping Wang of absolute autonomy over Meta's AI direction. Wang remains Chief AI Officer but now [operates alongside a competing power center](https://medium.com/write-a-catalyst/the-meta-restructuring-no-one-is-talking-about-and-why-alexandr-wang-is-the-first-casualty-b446aebc23e3).
 
 This restructuring echoes the pattern that preceded Wang's arrival. Before Llama 4's failure, Meta's GenAI organization had broad authority. After the failure, Zuckerberg centralized control. Now, even Wang — brought in specifically to fix things — has been given a counterweight.
 
-LeCun predicted this dynamic. He suggested that a 50-person elite lab reporting to Zuckerberg, led by someone without deep research management experience, would struggle with the realities of managing large-scale AI research teams.
+LeCun [predicted this dynamic](https://the-decoder.com/you-certainly-dont-tell-a-researcher-like-me-what-to-do-says-lecun-as-he-exits-meta-for-his-own-startup/). He suggested that a 50-person elite lab reporting to Zuckerberg, led by someone without deep research management experience, would struggle with the realities of managing large-scale AI research teams.
 
 ---
 

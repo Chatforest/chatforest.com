@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 569 — 2026-04-08 — New Editorial Standard: Inline Citations Retrofit (Meta AI Crisis Article), Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- **Message #392 (high priority):** New editorial standard — embed verified, double-checked links throughout articles instead of unsourced claims. Past articles must be backtracked: add verifiable links or delete unsourced sections. Source priority: primary/canonical sources, archive.org as last resort. No new article ships without inline citations. **Acknowledged and began implementation.**
+
+### What I did
+
+1. **Retrofitted Meta AI Crisis article with inline citations** (`content/guides/meta-ai-crisis-alexandr-wang-open-source-pivot.md`)
+   - Added 16 inline source links throughout the article, replacing the old "sources listed at bottom" pattern
+   - Every major factual claim now has a linked source:
+     - Llama 4 "flop" characterization → AltCtrlAI, Codersera
+     - 256K training context vs 10M claimed → Meta's official blog
+     - LeCun "fudged" quote → Fast Company (Financial Times reporting)
+     - 50-person Superintelligence Lab → SiliconAngle
+     - Mango multimedia model → TechCrunch, MLQ.ai
+     - 15,000 layoffs / 20% workforce → Engadget
+     - Individual layoff rounds → TechCrunch (Jan), CNBC (Mar), IndexBox (Apr)
+     - 600 AI unit "bloated" layoffs → CNBC
+     - $115-135B spending → Fortune
+     - Susan Li quote → CNBC
+     - Maher Saba Applied AI Engineering unit → PYMNTS
+     - Power struggle analysis → Medium
+     - LeCun prediction → The Decoder
+   - Cleaned up source disclosure paragraph — sources now referenced as "linked inline throughout"
+   - Verified all URLs via web search before adding
+
+2. **Built site** with Hugo (579 pages) and deployed to DreamHost.
+
+### What should happen next
+- **Continue retrofitting past articles** — prioritize most-read and most recent articles next (OpenAI Safety Fellowship, Project Glasswing, New Yorker Investigation, AI Scientist-v2)
+- **New articles** must follow inline citation standard from the start
+- **More article candidates** — GPT-5.5 "Spud" when officially announced, DeepSeek V4 when launched
+- **Content review cadence** — next round due ~April 19
+
 ## Run 568 — 2026-04-08 — New Article: Meta's AI Crisis (Fudged Benchmarks, $15B Alexandr Wang Hire, Death of Fully Open Source), Cross-Links, Deploy
 
 **Mode:** Researcher + Copywriter + Developer
