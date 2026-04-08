@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 575 — 2026-04-09 — High-Density Citation Retrofit: Project Glasswing Article, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of Project Glasswing / Claude Mythos cybersecurity article** (`content/guides/anthropic-mythos-project-glasswing-cybersecurity.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** ~11 source links (concentrated in a sources paragraph at top, almost no inline links in body)
+   - **New state:** ~65+ inline citations — nearly every factual sentence now sourced
+   - **Sources linked include:**
+     - Anthropic official Glasswing page (partner list, $100M credits, $4M donations breakdown, 40+ orgs, proliferation quote, pricing)
+     - Anthropic technical report at red.anthropic.com (CyberGym scores, vulnerability counts, capability emergence quotes, exploit chain details, Firefox 181 vs 2 stat, overnight exploit discovery)
+     - Axios (Logan Graham "extremely autonomous" quote, sandbox escape incident with "sandwich in a park" detail, government warnings)
+     - Fortune (CMS leak details, proliferation concerns, cybersecurity early access)
+     - CNN (government briefings on cyberattack risk)
+     - VentureBeat (model withheld decision)
+     - Help Net Security (OpenBSD SACK technical details — two chained flaws)
+     - PiunikaWeb (FFmpeg publicly thanked Anthropic)
+     - Simon Willison ("sounds necessary", "build buzz" caveat, "caution warranted")
+     - CrowdStrike blog (founding partner announcement)
+     - TipRanks (cybersecurity stock rally on Glasswing)
+     - Medium/CodeX (cybersecurity stock drop on March leak)
+     - PYMNTS, MarketScreener (Anthropic $30B revenue run rate, $9B→$30B, 1000+ enterprise customers)
+     - The Decoder (historical context: "too dangerous to release" lineage from GPT-2)
+     - blog.calif.io (FreeBSD CVE-2026-4747 detailed writeup)
+     - red.anthropic.com/exploit (CVE-2026-2796 exploit walkthrough)
+     - postquantum.com (exploit chain analysis)
+     - securitybrief.com.au (Microsoft CISO Igor Tsyganskiy CTI-REALM confirmation)
+     - llm-stats.com (CyberGym developed at UC Berkeley)
+     - igorslab.de (leak researchers Roy Paz and Alexandre Pauwels identified)
+     - Inc. (speed comparison: hours vs weeks/months)
+     - AI Business (marketing-as-safety skepticism)
+   - **New factual additions this run:**
+     - Sandbox escape incident: model broke out of testing sandbox, sent unexpected email to researcher
+     - Firefox exploitation: 181 successful exploits vs Opus 4.6's 2
+     - FreeBSD CVE-2026-4747: 17-year-old RCE allowing unauthenticated root via NFS
+     - Post-preview pricing: $25/$125 per million input/output tokens
+     - Revenue context: 1,000+ enterprise customers at $1M+ annually
+     - Google/Broadcom compute deal: 3.5GW TPU capacity beginning 2027
+     - Cybersecurity stock rally on Glasswing (after dropping on March leak)
+     - Willison's balanced take: acknowledged "buzz" concern but said caution warranted
+     - Leak researchers identified by name
+     - $4M donation breakdown: $2.5M to Alpha-Omega/OpenSSF, $1.5M to Apache
+     - Logan Graham identified as head of frontier red team
+     - Over 99% of discovered vulnerabilities remain unpatched
+     - Nearly a dozen vulnerability chaining examples in technical report
+
+2. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Continue high-density citation standard to remaining articles** (other guides without dense citations)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 574 — 2026-04-09 — High-Density Citation Retrofit: AI Scientist-v2 Article, Deploy
 
 **Mode:** Developer (editorial quality)
