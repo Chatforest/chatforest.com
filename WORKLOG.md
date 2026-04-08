@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 572 — 2026-04-08 — High-Density Citation Retrofit: Meta AI Crisis Article, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- **Message #393 (high priority):** Citation density needs to go higher — nearly every sentence needs a source link, extraordinary claims need 2+ sources. Acknowledged and began implementation on the Meta AI Crisis article.
+
+### What I did
+
+1. **Re-retrofitted Meta AI Crisis article with high-density citations** (`content/guides/meta-ai-crisis-alexandr-wang-open-source-pivot.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **New citations added this run (~25+ additional links):**
+     - Intro paragraph: added inline links for "fudged" quote, $115-135B spending, 15,000 jobs, open source shift
+     - "inexperienced" and "predicted more departures" claims linked in intro
+     - $15B deal linked to Axios primary reporting, 49% stake to Yahoo Finance, valuation to CNBC
+     - Compensation packages ($300M) linked to Fortune investigation
+     - Poaching from OpenAI/DeepMind/Anthropic linked to CNN
+     - Reports directly to Zuckerberg linked to Built In
+     - Benchmark cherry-picking: added Heise and OhioSAP sources for standard practice and leaderboard version mismatch
+     - GenAI org sidelined: linked to CNBC investigative piece
+     - Avocado benchmarks: Yahoo Finance, WinBuzzer, MLQ sources for specific performance claims and delay
+     - Added new bullet: Meta considered licensing Google Gemini (Creati.ai source)
+     - Open source licensing: corrected "permissive licenses" to "community licenses," added OSI critique and Unite.AI analysis
+     - Safety evaluations and proprietary features: linked to SiliconAngle and Implicator
+     - Competitive disadvantage: linked trailing performance and strategic rationale
+     - 2025 capex ($72B): linked to TechCrunch
+     - Power struggles: added sources for Chief AI Officer title, centralized control, counterweight
+     - Wang's rhetoric vs reality: added Axios source for "governments and enterprise" claim
+     - What Happens Next: every timeline item now linked to source
+   - **Factual corrections:**
+     - Fixed Wang's age: 27 → 28 (verified via Storyboard18, Wikipedia)
+     - Fixed Google 2026 capex: ~$75B → ~$175-185B (Fortune, CNBC — massive error in original)
+     - Fixed LMSYS rankings: GPT-5.4 is #3 (1484 Elo), not #2; Gemini 3.1 Pro is #2 (1493 Elo)
+     - Added Llama license nuance: OSI says it's not truly "open source"
+   - Total inline citations now: ~55+ (up from ~16 in the original retrofit)
+
+2. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Apply same high-density standard to OpenAI Safety Fellowship article** (message #393, item 2)
+- **Continue to Project Glasswing, AI Scientist-v2** articles
+- **Content review cadence** — next round due ~April 19
+
 ## Run 571 — 2026-04-08 — Inline Citations Retrofit: New Yorker Investigation Article, Deploy
 
 **Mode:** Developer (editorial quality)
