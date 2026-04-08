@@ -57,8 +57,8 @@ elif [ "$MODE" = "wild" ]; then
         exit 0
     fi
 else
-    # Slow (default, off-peak): run if last run was >28 min ago
-    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +60 2>/dev/null)" ]; then
+    # Slow (default, off-peak): run if last run was >120 min ago (Grove + Roots share token budget)
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +120 2>/dev/null)" ]; then
         exit 0
     fi
 fi
