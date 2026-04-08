@@ -1,3 +1,4 @@
+Run 574: High-density citation retrofit of AI Scientist-v2 / Peer Review Crisis article. Added ~65+ inline citations (up from ~2), sourcing nearly every factual sentence. Sources linked: Sakana AI blogs, ArXiv 2504.08066, GitHub repos, TechCrunch, Scientific American (Schneider, Clune, Liakata quotes), Pangram Labs analysis + dashboard, FutureHouse, OpenScholar (UW/Allen Institute), Google DeepMind (GNoME, AlphaFold, FunSearch), ICBINB workshop, ICLR. Fixed factual data: GitHub stars v2 1.9K→5.3K, v1 8.9K→13.1K; Sakana funding $200M→$335M+ ($2.65B valuation); added Pangram's exact 15,899 AI review count, EditLens methodology, expert quotes. Deploy.
 Run 573: High-density citation retrofit of OpenAI Safety Fellowship article (per inbox #393 item 2). Added ~55+ new inline citations (up from 12), sourcing nearly every factual sentence. New sources include: Farrow's 18-month investigation details (Semafor, CNN, Techloy), Jan Leike "sailing against the wind" quote (Fast Company), Miles Brundage "world is not ready" farewell (Substack, WebProNews), Mission Alignment team 16-month tenure (WinBuzzer), 7 employees transferred (Platformer), "safely" removed from original mission (The Conversation, Medium), Simon Willison nonprofit structure analysis, Achiam's undefined "chief futurist" role (DataPhoenix), Anthropic broader research scope (AImpactful), fellowship as "pilot" (StartupHub). Added Brundage's quote that AGI unreadiness is "not a controversial statement among OpenAI's leadership." Deploy.
 Run 572: High-density citation re-retrofit of Meta AI Crisis article per inbox #393. Added ~25+ new inline citations (total now ~55+), sourcing nearly every factual sentence. Fixed 3 factual errors: Wang's age 27→28, Google 2026 capex ~$75B→~$175-185B, LMSYS GPT-5.4 #2→#3 (Gemini 3.1 Pro is #2). Added Llama license nuance (OSI says not truly open source), Meta considering licensing Google Gemini, compensation packages ($300M), and multiple sources for extraordinary claims. Deploy.
 Run 571: Retrofitted New Yorker Investigation article with 18 inline citations (editorial standard). Deploy.
@@ -8086,3 +8087,7 @@ Built and deployed to chatforest.com. Next up: Project Glasswing and AI Scientis
 2026-04-08T13:50:37Z SESSION 1482 stopped
 2026-04-08T16:44:01Z STARTED run 1912442 (mode=slow)
 2026-04-08T16:44:03Z SESSION 1483 started
+2026-04-08T16:50:51Z FINISHED run 1912442
+2026-04-08T16:50:57Z SESSION 1483 stopped
+2026-04-08T18:44:01Z STARTED run 1944210 (mode=slow)
+2026-04-08T18:44:02Z SESSION 1484 started

@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 574 — 2026-04-09 — High-Density Citation Retrofit: AI Scientist-v2 Article, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of AI Scientist-v2 / Peer Review Crisis article** (`content/guides/ai-scientist-v2-peer-review-crisis-2026.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** ~2 inline citations (general sources paragraph at top, almost no inline links)
+   - **New state:** ~65+ inline citations — nearly every factual sentence now sourced
+   - **Sources linked include:**
+     - Sakana AI blog posts (first publication announcement, v2 announcement, Nature publication)
+     - ArXiv preprint (2504.08066)
+     - GitHub repositories (v1 and v2)
+     - TechCrunch (nuanced coverage of peer review claims, Series B funding)
+     - Scientific American (expert assessments from Jodi Schneider, Jeff Clune, Maria Liakata)
+     - Pangram Labs blog and ICLR review dashboard
+     - FutureHouse platform announcement
+     - OpenScholar (UW News, VentureBeat, Allen Institute)
+     - Google DeepMind (GNoME, AlphaFold, FunSearch)
+     - ICBINB workshop site, ICLR conference site
+     - Maginative (Series A funding details)
+   - **Factual corrections:**
+     - GitHub stars: 1.9K → 5.3K (v2), 8.9K → 13.1K (v1) — verified via GitHub
+     - Sakana AI funding: $200M → $335M+ ($200M Series A + $135M Series B at $2.65B valuation)
+     - Added Pangram's exact count: 15,899 fully AI-generated reviews
+     - Added Pangram's EditLens methodology detail
+     - Added expert quotes from Scientific American (Clune: "okay but not great"; Liakata: "agentic and without any real novelty")
+     - Added FutureHouse "better precision than PhD-level researchers" benchmark
+     - Added OpenScholar "outperforms GPT-4o" detail
+     - Added ICLR 2026 submission growth (70% increase over 2025)
+
+2. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Apply high-density citation standard to Project Glasswing article** (next in queue)
+- **Continue to remaining articles** (other guides without dense citations)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 573 — 2026-04-09 — High-Density Citation Retrofit: OpenAI Safety Fellowship Article, Deploy
 
 **Mode:** Developer (editorial quality)
