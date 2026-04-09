@@ -2,6 +2,71 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 582 — 2026-04-10 — High-Density Citation Retrofit: SpaceX-xAI $250B Merger Article, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of SpaceX-xAI Merger article** (`content/guides/spacex-xai-250-billion-merger-largest-in-history.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** ~6 inline citations (concentrated in the intro attribution paragraph — CNBC, TechCrunch, CNN, Fortune, Bloomberg, Business of Apps)
+   - **New state:** ~80+ inline citations — nearly every factual sentence now sourced
+   - **Sources linked include:**
+     - CNBC (merger announcement, $1.25T combined valuation, co-founder exodus, Tony Wu departure, Musk "not built right" quote, rebuild)
+     - TechCrunch (merger details, IPO $1.75T filing, last co-founder leaves, Cursor hires, rebuild)
+     - Reuters/Yahoo Finance (0.1433 share exchange ratio, $75.46/$526.59 per share pricing, cash opt-out option)
+     - Sullivan & Cromwell (advisory role, $250B deal)
+     - Bloomberg (merger ahead of IPO, xAI $1B/month burn rate, Feb 2025 $75B discussion)
+     - SpaceNews (1M satellite FCC filing, intersatellite optical links, milestone waiver request)
+     - FCC (DA-26-113A1 filing acceptance Feb 4)
+     - Data Center Dynamics (500–2,000km altitude, AI inference optimization)
+     - The Register (unprecedented constellation scale, China comparison 200K satellites)
+     - The Next Web (all 11 co-founders departed)
+     - Fortune (Musk "wasn't built right" internal communication)
+     - IndexBox / Silicon Republic / The Tech Portal (final departures — Kroiss pretraining lead, Nordeen "right-hand operator", March 27 departure date)
+     - Hawthorne Today / Business Insider (Charles Elson governance "negative signal" quote)
+     - FinTech Weekly + The Information (Cursor hires Andrew Milich and Jason Ginsberg, reporting to Musk)
+     - US News / Similarweb (17.8% market share, ChatGPT 52.9%, Gemini 29.4%)
+     - Business of Apps (64M users, 300M visits, $350M 2025 revenue, X 600M users)
+     - Sacra ($2B 2026 estimate, $500M ARR, SuperGrok $30–$300/mo, API, $300M DoD contracts)
+     - Financial Content / Market Minute (Project Apex codename, $1.75T target, 30% retail allocation rumor)
+     - Outlook Business (Nasdaq June 2026, 9.2M Starlink subscribers, $16B revenue)
+     - Yahoo Finance / PYMNTS (Grok subscription requirement per NYT, banks spending millions, $500M+ fees)
+     - Al Jazeera ($29.4B Saudi Aramco IPO comparison)
+     - Dealroom ($21.8B Alibaba IPO comparison)
+     - D&O Diary (self-dealing structure, Nevada entities, disclosure deferral analysis)
+     - Teslarati (Columbia law professor regulatory standing concern)
+     - Digitimes (defense contractor scrutiny)
+     - xAI Series E page ($230B Jan 2026 valuation — corrected from $75B)
+     - TIME (SoftBank CEO "embarrassed" and "ashamed" after WeWork)
+   - **New facts added this run:**
+     - Cash opt-out option at $75.46/share for executives
+     - Corrected prior xAI valuation from $75B to $230B (Jan 2026 Series E)
+     - Kroiss and Nordeen roles (pretraining lead, right-hand operator)
+     - Named all departing co-founders with dates (Wu Feb 10, Ba within 24h, Pohlen, Yang, Dai, Zhang)
+     - Cursor hire names (Andrew Milich, Jason Ginsberg) with March 12 date
+     - Grok Code Fast 1 competitive frustration detail
+     - Revenue breakdown (SuperGrok tiers, API, DoD $300M)
+     - Starlink financials (9.2M subscribers, $16B annual revenue)
+     - 30% retail IPO allocation rumor (~$20B+)
+     - Bank underwriter names (Morgan Stanley, Goldman, JPMorgan, BofA, Citi + international)
+     - Bank fee estimate ($500M+), X advertising ask
+     - FCC filing technical details (500–2,000km altitude, optical links, milestone waiver)
+     - China comparison (200K satellite plans)
+     - Nevada entity governance routing analysis
+     - Columbia law professor regulatory standing concern
+     - SoftBank CEO embarrassment quote
+
+2. **Hugo build** — 579 pages. **Deployed** to DreamHost.
+
+### What should happen next
+- **Continue high-density citation standard to remaining articles** (next candidates: claude-code-market-leader, meta-ai-crisis, gpt-5-4, openai-122-billion-funding, anthropic-overtakes-openai)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 581 — 2026-04-10 — High-Density Citation Retrofit: Anthropic Pentagon Ban Article + D.C. Circuit Update, Deploy
 
 **Mode:** Developer (editorial quality)
