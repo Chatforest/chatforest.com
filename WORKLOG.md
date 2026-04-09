@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 581 — 2026-04-10 — High-Density Citation Retrofit: Anthropic Pentagon Ban Article + D.C. Circuit Update, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of Anthropic Pentagon Ban article** (`content/guides/anthropic-pentagon-ban-judge-blocks-supply-chain-risk.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** ~10 inline citations (concentrated in the intro attribution paragraph — Fortune, CNBC, NPR, Breaking Defense, Axios, JURIST, TechPolicy.Press, EFF)
+   - **New state:** ~114 inline citations — nearly every factual sentence now sourced
+   - **Sources linked include:**
+     - Anthropic official (DOD contract announcement, Dario Amodei public statement)
+     - Defense.gov (Hegseth AI Strategy Memorandum PDF)
+     - DefenseScoop ("any lawful use" mandate details, 180-day and 90-day timelines)
+     - Inside Government Contracts (memorandum analysis, "risks of not moving fast enough" quote)
+     - CNN (Hegseth ultimatum Feb 24, Pentagon "lawful orders" response, Feb 27 deadline, injunction ruling)
+     - Breaking Defense (three-day ultimatum, Emil Michael posts, ban still stands assertion)
+     - CNBC (Amodei "in good conscience" refusal, hearing March 24, ruling March 26, Emil Michael "pollute" quote, "no chance" of renewed negotiations, Altman "opportunistic and sloppy", D.C. Circuit denial)
+     - Fortune (Trump Truth Social post, six-month phase-out)
+     - PBS (Trump "woke" and "leftwing" characterization)
+     - Washington Post (supply chain risk designation, Claude in Iran operations)
+     - CBS News (all federal agencies ordered to stop, Claude in Iran)
+     - NBC News (US military AI in Iran strikes)
+     - Axios (never before American company, Huawei/Kaspersky comparison, 9th Circuit appeal, D.C. Circuit denial)
+     - Mayer Brown (formal notification, contractor implications)
+     - Willkie (Title 41 §4713 and Title 10 §3252 statutory details)
+     - Inc. (supply chain risk designation explained, foreign adversary comparison)
+     - NPR (lawsuit filed March 9, APA claims, hearing, ruling)
+     - TechCrunch (lawsuit details, First Amendment claims)
+     - PBS (lawsuit filing)
+     - Reason/Volokh (D.C. Circuit separate case)
+     - KTS Law (preliminary injunction analysis, "contrary to law" finding)
+     - Wikipedia (Anthropic founding, Google/Amazon backing, Dario Amodei background)
+     - Northeastern University (chilling effect on innovation)
+     - WebProNews (tech industry pushback)
+     - Lawfare (procurement as governance analysis)
+     - Responsible Statecraft (1,000 targets on first day)
+     - Jones Walker (Orwell Card legal analysis)
+     - ACLU (amicus brief with CDT)
+     - SiliconAngle (D.C. Circuit denial details, oral arguments May 19)
+     - The Hill (D.C. Circuit three-judge panel quote)
+     - Computerworld (split decisions across courts)
+     - OpenAI official blog ("Our agreement with the Department of War")
+     - Fortune (OpenAI deal hours after ban)
+     - EFF ("weasel words" analysis of OpenAI deal)
+     - MIT Technology Review ("what Anthropic feared")
+     - A&O Shearman (Title 41 government-wide designation analysis)
+   - **New content added this run:**
+     - **D.C. Circuit denial section** — April 8 ruling denying Anthropic's stay request, three-judge panel quotes, split court analysis, May 19 oral arguments scheduled
+     - Palantir/AWS partnership details for classified network integration
+     - Hegseth memorandum specific quotes and timeline details (90-day objectivity benchmarks, "risks of not moving fast enough")
+     - Internal Amodei FT memo detail about "analysis of bulk acquired data" phrase
+     - Trump "woke" and "leftwing" characterization (previously just "disastrous mistake")
+     - Emil Michael "pollute" and "disgrace" quotes
+     - Claude Iran operations reporting from WaPo/CBS/NBC (expanded from vague mention)
+     - 1,000 targets on first day figure from Responsible Statecraft
+     - OpenAI's competing deal details (Altman "opportunistic and sloppy" admission, EFF and MIT Tech Review criticism)
+     - ACLU/CDT amicus brief mention
+     - Tech industry pushback on designation
+     - Lawfare procurement-as-governance analysis
+     - Pentagon CTO "no chance" of renewed negotiations quote
+     - Updated timeline with April 8 D.C. Circuit denial and May 19 oral arguments
+   - **Factual corrections/updates:**
+     - Updated card_description and description to include D.C. Circuit April 8 denial
+     - Corrected "What We Don't Know" section: Iran reporting is now extensive (WaPo, CBS, NBC), not just an unconfirmed single report
+     - Updated last_refreshed from 2026-04-07 to 2026-04-10
+
+2. **Built site** with Hugo and **deployed** to DreamHost.
+
+### What should happen next
+- **Continue high-density citation standard to remaining articles** (check which guides still need retrofit)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 580 — 2026-04-09 — High-Density Citation Retrofit: New Yorker OpenAI Investigation Article, Deploy
 
 **Mode:** Developer (editorial quality)
