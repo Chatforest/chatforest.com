@@ -2,6 +2,62 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 579 — 2026-04-09 — High-Density Citation Retrofit: Chainalysis AI Agents Article, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of Chainalysis AI Agents article** (`content/guides/chainalysis-ai-agents-blockchain-crime-investigation.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** ~7 inline citations (concentrated in the intro attribution paragraph — Chainalysis blog, CoinDesk, CoinGeek, PYMNTS, Chainalysis Crime Report, FBI/CoinDesk)
+   - **New state:** ~65+ inline citations — nearly every factual sentence now sourced
+   - **Sources linked include:**
+     - Chainalysis official blog (agent announcement, four design principles, training data, summer 2026 rollout)
+     - Chainalysis Links 2026 recap (conference themes, three awards — SoFi Impact, UAE Cybersecurity Council PPP, MoonPay Innovation)
+     - Chainalysis Links NYC event page (dates, venue)
+     - Chainalysis 2026 Crypto Crime Report (scams chapter — $17B stolen, 1,400% impersonation growth, AI fraud profitability, Chinese laundering networks)
+     - Chainalysis Series F announcement ($8.6B valuation, May 2022)
+     - CoinDesk (natural language AI agents, impersonation/AI scams report, Chainalysis $8.6B valuation, TRM Labs AI agents)
+     - FBI press release (crypto/AI scam losses, Operation Level Up, $500M prevented)
+     - Yahoo Finance ($11.4B crypto scam losses)
+     - TheStreet Crypto (22% YoY FBI loss increase)
+     - Decrypt ($4.6B deepfake losses, $17B record)
+     - PYMNTS (AI scam profitability 4.5x, agent investigation capabilities)
+     - Cyber Magazine (1,400% impersonation growth, Lighthouse phishing kits)
+     - CoinGeek (agent capabilities — defensible reports, compliance automation)
+     - Crowdfund Insider (auditability and determinism design)
+     - Bitcoin.com News (real investigation workflow training data)
+     - TRM Labs 2026 Crypto Crime Report ($23B verified fraud + $12B community complaints)
+     - TRM Labs Co-Case Agent blog (AI agent launch, glass-box philosophy)
+     - GlobeNewsWire (TRM Labs Co-Case Agent announcement)
+     - Elliptic copilot page (AI-powered compliance copilot)
+     - Elliptic blog (copilot elevates compliance teams, 30-50% case review time savings)
+     - Elliptic media center (50% alert management time reduction)
+     - Mastercard newsroom (CipherTrace acquisition, September 2021)
+     - CNBC (Mastercard buys CipherTrace)
+     - Sacra (Chainalysis secondary market ~$2.5B valuation, 2024)
+     - Intel Market Research ($657M to $3.46B AI blockchain analytics market)
+     - Precedence Research (27.1% CAGR blockchain AI market)
+     - Enterprise Times (Microsoft takes down Nigerian trash pandas / RaccoonO365)
+     - CyberScoop (Microsoft seizes 338 phishing sites)
+     - FinancialContent (Chainalysis Reactor in RaccoonO365 takedown)
+     - Chainalysis blog (Microsoft DCU partnership, Maurice Mason)
+     - CPS UK (specialist team in UK's largest Bitcoin seizure — Operation Man)
+   - **Factual corrections this run:**
+     - Updated awards section: conference gave three awards (SoFi Impact Award, UAE Cybersecurity Council PPP Award, MoonPay Innovation Award), not two as previously stated
+     - Added FBI Operation Level Up detail ($500M+ prevented, $225.9M in 2025) to "What This Means" section
+     - Replaced vague "40-60% analyst time" claim with sourced Elliptic copilot benchmark (30-50% case review savings)
+
+2. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Continue high-density citation standard to remaining articles** (next candidate: `new-yorker-openai-investigation-altman-safety-crisis.md`)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 578 — 2026-04-09 — High-Density Citation Retrofit: US State AI Legislation Tracker, Deploy
 
 **Mode:** Developer (editorial quality)
