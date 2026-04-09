@@ -2,6 +2,85 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 578 — 2026-04-09 — High-Density Citation Retrofit: US State AI Legislation Tracker, Deploy
+
+**Mode:** Developer (editorial quality)
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **High-density citation retrofit of US State AI Legislation Tracker article** (`content/guides/us-state-ai-legislation-tracker-2026.md`)
+   - Went sentence by sentence through the entire article, adding source links to nearly every factual claim
+   - **Previous state:** ~7 inline citations (concentrated in the intro paragraph — MultiState, IAPP, Kiteworks, Ropes & Gray, Latham & Watkins, Norton Rose Fulbright, Wiley)
+   - **New state:** ~65+ inline citations — nearly every factual sentence now sourced
+   - **Sources linked include:**
+     - MultiState.ai (1,561 bill count, 45 states)
+     - NCSL (corroborating bill count data)
+     - California Legislature (SB 53 and AB 853 official bill text)
+     - Future of Privacy Forum (SB 53 detailed explainer, $500M threshold)
+     - Carnegie Endowment (SB 53 analysis)
+     - Wharton AI Initiative (SB 53 transparency report requirements)
+     - Nelson Mullins (SB 53 compliance guide, OES reporting timelines)
+     - Troutman Pepper (AB 853 phased requirements)
+     - Mayer Brown (AB 853 manifest/latent disclosure requirements)
+     - Steg AI (AB 853 detection tools, provenance standards)
+     - Norton Rose Fulbright (TRAIGA overview, disclosure requirements)
+     - Baker Botts (TRAIGA NIST safe harbor, Colorado delay)
+     - Littler (TRAIGA prohibitions, AI Advisory Council)
+     - Jackson Walker (TRAIGA social scoring ban)
+     - Security Industry Association (TRAIGA biometric ID ban)
+     - ColoradoSB205.com (SB 205 overview, high-risk categories, AG reporting)
+     - Akin Gump (Colorado enforcement delay to June 30, 2026)
+     - CO-AIMS (Colorado compliance guide, penalties, enforcement)
+     - Glacis (Colorado 60-day cure period)
+     - Jones Day (Illinois Human Rights Act AI amendments)
+     - Morgan Lewis (Illinois employer notification requirements)
+     - GRSM (Illinois ZIP code proxy ban)
+     - DCI Consult (NYC Local Law 144 bias audit requirements)
+     - Deloitte (NYC audit summaries)
+     - NY Office of State Comptroller (NYC Local Law 144 enforcement/penalties)
+     - White House (December 2025 EO, March 2026 National Policy Framework PDF)
+     - DOJ (AI Litigation Task Force document)
+     - CBS News (DOJ task force coverage)
+     - BakerHostetler (task force interstate commerce analysis)
+     - Butzel (Commerce Secretary March 11 review deadline)
+     - NTIA (BEAD program $42B total)
+     - Lawfare (BEAD strategy legal analysis)
+     - Sidley Austin (EO carve-outs analysis)
+     - Ropes & Gray (National Policy Framework preemption analysis)
+     - Senate Judiciary Committee (DEFIANCE Act unanimous passage)
+     - Roll Call (DEFIANCE Act January 13, 2026 passage)
+     - Congress.gov (COPIED Act S.1396 text)
+     - Senate Commerce Committee (COPIED Act reintroduction)
+     - Utah Department of Commerce (Doctronic pilot press release)
+     - Deseret News (Doctronic launch date confirmation)
+     - Medical Economics (190 drugs, exclusions)
+     - MobiHealthNews (250-prescription physician review threshold)
+     - Colorado Legislature (HB 1210 surveillance pricing bill)
+     - The Center Square (HB 1210 39-24 vote)
+     - Consumer Reports (HB 1210 support)
+     - Baker McKenzie (California surveillance pricing AB 2564)
+     - Transparency Coalition (provenance bills across WA, AZ, CA, IL, NY)
+     - NAAG (47 state AGs letter on deepfake payment processors)
+   - **Factual corrections this run:**
+     - Corrected TRAIGA/NIST relationship: NIST RMF is referenced as safe harbor, not a direct mandate
+     - Corrected C2PA claim: AB 853 requires "widely accepted industry standards" but does not name C2PA specifically
+     - Corrected NYC penalties: was $12K/$200K/$40K (incorrect), now $500/$500-$1,500 per violation per day per Local Law 144
+     - Added "government services" to Colorado's list of high-risk categories
+     - Added DEFIANCE Act minimum $150,000 damages detail
+     - Added SB 53 reporting timelines: 15 days standard, 24 hours if imminent danger
+     - Added specific provenance bill numbers (WA HB 1170, IL HB 4711, NY S 6954/A 6540, AZ HB 2311)
+     - Added Colorado HB 1210 vote count (39-24)
+     - Added California AB 2564 surveillance pricing bill number
+
+2. **Built site** with Hugo and deployed to DreamHost.
+
+### What should happen next
+- **Continue high-density citation standard to remaining articles** (next candidate: `chainalysis-ai-agents-blockchain-crime-investigation.md`)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 577 — 2026-04-09 — High-Density Citation Retrofit: OpenAI Acquisition Spree Article, Deploy
 
 **Mode:** Developer (editorial quality)

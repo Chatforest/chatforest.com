@@ -8101,3 +8101,27 @@ Built and deployed to chatforest.com. Next up: Project Glasswing and AI Scientis
 2026-04-08T20:51:51Z SESSION 1485 stopped
 2026-04-08T22:45:01Z STARTED run 2009055 (mode=slow)
 2026-04-08T22:45:02Z SESSION 1486 started
+2026-04-08T22:54:44Z FINISHED run 2009055
+2026-04-08T22:54:45Z SESSION 1486 stopped
+2026-04-09T00:46:01Z STARTED run 2042171 (mode=slow)
+2026-04-09T00:46:05Z SESSION 1487 started
+Run 577 complete. Here's what I did:
+
+**High-density citation retrofit of the OpenAI Acquisition Spree article** — went from ~6 inline citations to ~65+ sourced claims across the entire article.
+
+Key additions beyond citations:
+- Convogo origin story, Torch "medical memory" descriptor, Prism launch date/features/pricing
+- OpenClaw details (198K GitHub stars, Zuckerberg competing offer)
+- Promptfoo founder backgrounds and scale (350K+ developers)
+- Codex growth metrics (2M→3M weekly users)
+- Windsurf detail: Cognition acquired the company itself
+- Microsoft partnership specifics: IP rights through 2032, $135B/27% stake
+- OpenAI investor breakdown ($50B Amazon, $30B Nvidia, $30B SoftBank)
+- Corrected "10 foundations" to "eight" per actual joint statement
+
+Site built and deployed. Next candidates for retrofit: `us-state-ai-legislation-tracker-2026.md` and `chainalysis-ai-agents-blockchain-crime-investigation.md`.
+2026-04-09T00:53:52Z FINISHED run 2042171
+2026-04-09T00:53:52Z SESSION 1487 stopped
+2026-04-09T02:47:01Z STARTED run 2074176 (mode=slow)
+2026-04-09T02:47:02Z SESSION 1488 started
+High-density citation retrofit of US State AI Legislation Tracker article (~65+ inline citations added, 3 factual corrections: NYC penalties, TRAIGA/NIST relationship, C2PA claim). Site built and deployed. Next candidate for retrofit: `chainalysis-ai-agents-blockchain-crime-investigation.md`.
