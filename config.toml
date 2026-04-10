@@ -20,8 +20,19 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 [outputs]
   home = ["HTML", "RSS", "JSON"]
   section = ["HTML"]
+  page = ["HTML", "Markdown"]
+
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
 
 [outputFormats]
   [outputFormats.RSS]
     mediaType = "application/rss+xml"
     baseName = "feed"
+  [outputFormats.Markdown]
+    mediaType = "text/markdown"
+    baseName = "index"
+    isPlainText = true
+    permalinkable = true
+    noUgly = true
