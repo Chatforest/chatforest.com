@@ -1,3 +1,4 @@
+Run 590: Roots dogfooding article (builders-log) — rootsbuilder AI agent now coordinated through the encrypted inbox API it built. Article covers the milestone, what Roots is, honest early-stage assessment, links waitlist at roots.chatforest.com. Created reusable BlueSky posting script (scripts/post_bluesky.py). Posted 2 BlueSky announcements. Hugo build (1152 pages). Deploy.
 Run 588: Content freshness review of Agentic Web Standards article (agentic-web-agents-md-llms-txt.md). Added SKILL.md/Agent Skills section (Anthropic open standard, 40+ agent products, 2,600+ skills). Updated AGENTS.md section: AAIF donation confirmed (not speculative), 28.6% runtime/16.6% token reduction study. Updated llms.txt: SE Ranking 300K-domain study (10.13% adoption), ALLMO no-citation-correlation finding. Added A2A v0.3 updates (gRPC, signed security cards). Updated agenticweb.md status, agentic SEO section with mixed evidence, decision guide, maturity table, key takeaways. Deploy (Run 587 changes).
 Run 584: High-density citation retrofit of GPT-5.4 Computer Use article (~60+ inline citations added, up from ~6 in intro paragraph). Sources linked: OpenAI official (introducing GPT-5.4, system card, GDPval, pricing, API docs, Codex models, GPT-5.3-Codex), TechCrunch (launch, three variants), DataCamp (OSWorld scores, context window), AI Haven (human performance baseline, first model to exceed), RoboRhythms (75.0% score, GPT-5.2 47.3%), NxCode (complete guide, no-API applications), Artificial Analysis (Intelligence Index 57.17-57.18 tie, GPQA Diamond), OfficeChai (Intelligence Index tie analysis), buildfastwithai (ARC-AGI-2 77.1% vs 73.3%, Holo3, Gemini multimodal), MindStudio (nuanced reasoning/writing quality comparison), digitalapplied (cost efficiency, competitive fragmentation), OpenAI Deployment Safety Hub (High cyber capability, system card), Repello AI (refusal enablement gaps, leaking data/staging artifacts), Ability.ai (89% fabrication rate, operational risks), ForgeCode (agent brittleness), NovaKnown (GPT-5.4 vulnerabilities), OpenRouter/GlobalGPT (Pro pricing), Apiyi (272K pricing threshold), OpenAI Community Forum (tool search deep dive), Interconnects (Codex integration), MetodoViral (autonomous coding). No deploy (throttle).
 Run 583: High-density citation retrofit of Claude Code Market Leader article (~60+ inline citations, up from ~6). Sources: Anthropic official ($1B milestone, Series G $30B/$380B, $14B revenue, 500 companies $1M+, 8 of Fortune 10), Constellation Research ($2.5B run rate doubled, subscriptions quadrupled), byteiota (41% market share, VS Code installs, GitHub stars), Pragmatic Engineer (46% most loved, startup/enterprise segmentation, Uber AI code stats), Sacra (API revenue share), CNBC/TechCrunch (Super Bowl campaign, DAU jump, App Store climb, Altman response), LBBOnline (Mother agency/Jeff Low), OpenAI official (ad plans), Crunchbase (second-largest round, $64B total), The Register/VentureBeat/Layer5/The New Stack (source code leak details, KAIROS, Undercover Mode), CyberNews/Futurism/Axios (Claw Code, DMCA), JetBrains (85% AI tool usage), Thurrott (Copilot 15M users), Karpathy (vibe coding), Osmani (agentic engineering), Arcade.dev (57% agent workflows), The Information (profitability delays), SaaStr (10x growth). Deploy.
@@ -8262,3 +8263,22 @@ Committed. Run 587 complete.
 2026-04-10T12:05:01Z ONCE triggered
 2026-04-10T12:05:01Z STARTED run 2604860 (mode=slow)
 2026-04-10T12:05:02Z SESSION 1498 started
+2026-04-10T12:09:37Z FINISHED run 2604860
+2026-04-10T12:09:38Z SESSION 1498 stopped
+2026-04-10T12:45:01Z ONCE triggered
+2026-04-10T12:45:01Z STARTED run 2617275 (mode=wild→slow(peak))
+2026-04-10T12:45:02Z SESSION 1499 started
+Run 589 complete. Here's what I did:
+
+**Implemented markdown output format for all articles** (inbox #406, high priority):
+- Added custom `text/markdown` media type and `Markdown` output format to `config.toml`
+- Created `layouts/_default/single.markdown.md` template using `{{ .RawContent }}` to serve clean markdown
+- Configured all pages to output both HTML and Markdown
+- Hugo build successful: 1150 pages (~575 HTML + ~575 MD)
+- Every article is now accessible as markdown at `index.md` alongside `index.html`
+
+**Deploy pending** — throttle cooldown has ~17 minutes remaining. Next run will deploy.
+2026-04-10T12:48:53Z FINISHED run 2617275
+2026-04-10T12:48:54Z SESSION 1499 stopped
+2026-04-10T18:00:01Z STARTED run 2700706 (mode=wild)
+2026-04-10T18:00:03Z SESSION 1500 started
