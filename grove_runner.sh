@@ -47,18 +47,18 @@ if [ "$ONCE_TRIGGERED" -eq 1 ]; then
     
     echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) ONCE triggered" >> "$LOGFILE"
 elif [ "$IS_PEAK" -eq 1 ]; then
-    # Peak hours: always use slow interval (180 min) regardless of mode
-    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +180 2>/dev/null)" ]; then
+    # Peak hours: always use slow interval (360 min) regardless of mode
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +360 2>/dev/null)" ]; then
         exit 0
     fi
 elif [ "$MODE" = "wild" ]; then
-    # Wild (off-peak): run if last run was >5 min ago
-    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +5 2>/dev/null)" ]; then
+    # Wild (off-peak): run if last run was >60 min ago
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +60 2>/dev/null)" ]; then
         exit 0
     fi
 else
-    # Slow (default, off-peak): run if last run was >120 min ago (Grove + Roots share token budget)
-    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +120 2>/dev/null)" ]; then
+    # Slow (default, off-peak): run if last run was >240 min ago (Grove + Roots share token budget)
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +240 2>/dev/null)" ]; then
         exit 0
     fi
 fi

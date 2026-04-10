@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 595 — 2026-04-11 — Markdown charset fix + Citation Retrofit: Exa MCP Server + Deploy
+
+**Mode:** Developer (bug fix) + Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- **Message #415 (HIGH):** Markdown output pages serve Content-Type without charset=utf-8, causing mojibake. Fixed by adding `AddCharset utf-8 .md` to `.htaccess`. Verified working: `Content-Type: text/markdown; charset=utf-8` confirmed via curl.
+- **Message #409 (HIGH):** Roots dogfooding article — already handled in Run 590. Marked seen.
+- **Message #408 (HIGH):** GSC data — already acknowledged in previous runs. Marked seen.
+- Messages #407, #410-414: Own status updates from previous runs. Marked seen.
+
+### What I did
+
+1. **Bug fix: Markdown charset** (inbox #415) — Added `AddCharset utf-8 .md` to `static/.htaccess`. Hugo copies this to `site/.htaccess` on build. Deployed and verified: DreamHost now serves `.md` files with `Content-Type: text/markdown; charset=utf-8`. Em-dashes and other Unicode characters render correctly.
+
+2. **Citation retrofit of `exa-mcp-server.md`** (137 GSC impressions, 4th highest non-homepage page).
+   - **Previous state:** GitHub repo link, internal review links, but most factual claims uncited
+   - **New state:** 15+ inline citations added across all sections
+   - **Citations added include:**
+     - [Exa pricing page](https://exa.ai/pricing) (consumption-based model)
+     - [Exa Deep blog post](https://exa.ai/blog/exa-deep) (March 2026 revamp)
+     - [Exa Instant blog post](https://exa.ai/blog/exa-instant) (sub-200ms latency)
+     - [MarkTechPost coverage](https://www.marktechpost.com/2026/02/13/exa-ai-introduces-exa-instant-a-sub-200ms-neural-search-engine-designed-to-eliminate-bottlenecks-for-real-time-agentic-workflows/) of Exa Instant
+     - [WebWalker/MKQA benchmarks](https://exa.ai/versus/tavily) (Exa 81% vs Tavily 71%)
+     - [People search launch changelog](https://exa.ai/docs/changelog/people-search-launch) (1B+ profiles)
+     - [Tavily/Nebius acquisition](https://nebius.com/newsroom/nebius-announces-agreement-to-acquire-tavily-to-add-agentic-search-to-its-ai-cloud-platform) ($275M, Feb 2026)
+     - [Linkup SimpleQA SOTA](https://www.linkup.so/blog/linkup-establishes-sota-performance-on-simpleqa) (91.0% F-Score)
+     - [Perplexity Sonar docs](https://docs.perplexity.ai/docs/sonar/quickstart)
+     - [mcp-remote GitHub repo](https://github.com/geelen/mcp-remote)
+     - [Brave Search API pricing](https://brave.com/search/api/)
+     - [Exa API docs](https://exa.ai/docs/reference/contents-api-guide), [changelog](https://exa.ai/docs/changelog/february-2026-api-updates)
+   - **Factual corrections:**
+     - Pricing updated: removed stale "Starter $49/mo, Pro $449/mo" tiers — Exa pricing is now consumption-based only
+     - Added Deep-Reasoning tier ($15/1K) to pricing
+     - Repo stats updated: 4,200+ stars (was 4,100+), 316+ forks (was 300+), 320 commits (was 267)
+   - Updated `last_refreshed` to 2026-04-11
+
+3. **Hugo build** — successful, page count unchanged.
+
+4. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages: mcp-with-local-llms (136 impressions), google-drive-mcp-server (131)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **Content review cadence** — next round due ~April 19
+
 ## Run 594 — 2026-04-11 — Citation Retrofit: AI Coding Assistants Compared + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)

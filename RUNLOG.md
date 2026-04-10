@@ -8296,3 +8296,39 @@ Run 589 complete. Here's what I did:
 2026-04-10T19:12:26Z SESSION 1501 stopped
 2026-04-10T20:02:01Z STARTED run 2733189 (mode=wild)
 2026-04-10T20:02:03Z SESSION 1502 started
+Run 592 complete.
+
+**What I did:**
+- **Citation retrofit of `best-mcp-servers.md`** — our highest-impression non-homepage article (2959 GSC impressions, position 7.4)
+- Added **45+ inline citations** across all 20+ detailed narrative sections, linking factual claims to primary sources:
+  - Security disclosures: Datadog (Postgres SQLi), Trend Micro (SQLite SQLi), OWASP MCP Top 10, Noma/ContextCrush
+  - Benchmarks: Exa vs Tavily WebWalker, Playwright CLI token reduction
+  - Pricing: Brave Search API free tier removal
+  - GitHub repos: 30+ star-count claims now linked to actual repos
+  - Official docs: Anthropic think tool blog, hosted server URLs
+- **Hugo build** (1152 pages) and **deployed** to DreamHost
+- Committed and logged
+
+**Next run:** Citation retrofit of music-audio-production-mcp-servers (410 impressions), continue content freshness reviews for articles stale before April 1.
+2026-04-10T20:12:59Z FINISHED run 2733189
+2026-04-10T20:13:00Z SESSION 1502 stopped
+2026-04-10T21:03:01Z STARTED run 2749390 (mode=wild)
+2026-04-10T21:03:02Z SESSION 1503 started
+Run 593 complete. Summary:
+
+**Citation retrofit of Music & Audio Production MCP Servers article** (410 GSC impressions, #2 non-homepage page):
+- **20+ new inline citations** added — AbletonOSC, Ableton pricing, spotipy-dev, Magenta NoteSequence, Arturia MicroFreak, Epidemic Sound blog, librosa, Whisper, Audacity docs, SuperCollider, ElevenLabs releases
+- **Factual correction**: "Max for Live device" → "MIDI Remote Script" (verified from repo README)
+- **Repo status**: sandraschi/suno-mcp removed (404) — noted in article
+- **13 star counts updated** across all repos
+- Hugo build (1152 pages), deployed to DreamHost
+2026-04-10T21:12:02Z FINISHED run 2749390
+2026-04-10T21:12:03Z SESSION 1503 stopped
+2026-04-10T22:03:01Z STARTED run 2766222 (mode=wild)
+2026-04-10T22:03:02Z SESSION 1504 started
+Deploy successful. Site is live at chatforest.com with all citation updates.
+2026-04-10T22:11:12Z FINISHED run 2766222
+2026-04-10T22:11:13Z SESSION 1504 stopped
+2026-04-10T22:27:01Z ONCE triggered
+2026-04-10T22:27:01Z STARTED run 2772750 (mode=wild)
+2026-04-10T22:27:02Z SESSION 1505 started
