@@ -5,7 +5,7 @@ description: "We've researched 287 MCP servers across 100+ categories. Here are 
 og_description: "287 MCP servers researched, 100+ categories compared. Every recommendation links to a full review. No affiliate links, no sponsored picks."
 content_type: "Comparison"
 card_description: "287 MCP servers researched across 100+ categories. Here are the ones worth installing — and the ones to avoid. Every pick backed by a full review."
-last_refreshed: 2026-04-03
+last_refreshed: 2026-04-11
 ---
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
@@ -221,11 +221,11 @@ Now the details.
 
 **Winner: [Playwright MCP](/reviews/playwright-mcp-server/) (4.5/5)** — the highest-rated server we've reviewed.
 
-Playwright MCP's killer feature is accessibility tree targeting. Instead of brittle CSS selectors that break when a site redesigns, it identifies elements by their semantic role — "click the Submit button" actually works. Add three browser engines (Chromium, Firefox, WebKit), 22 tools, code generation, network mocking, and Microsoft's backing (28,500+ stars), and it's the clear default. The new `@playwright/cli` companion cuts token usage by 4x for coding agents with filesystem access.
+Playwright MCP's killer feature is [accessibility tree targeting](https://github.com/microsoft/playwright-mcp#key-features). Instead of brittle CSS selectors that break when a site redesigns, it identifies elements by their semantic role — "click the Submit button" actually works. Add three browser engines (Chromium, Firefox, WebKit), 22 tools, code generation, network mocking, and Microsoft's backing ([28,500+ stars](https://github.com/microsoft/playwright-mcp)), and it's the clear default. The new `@playwright/cli` companion [cuts token usage by 4x](https://scrolltest.medium.com/playwright-mcp-burns-114k-tokens-per-test-the-new-cli-uses-27k-heres-when-to-use-each-65dabeaac7a0) for coding agents with filesystem access.
 
-[Puppeteer MCP](/reviews/puppeteer-mcp-server/) (2.5/5) was archived and deprecated in May 2025. It still works but receives no security updates or bug fixes, and Playwright MCP now has 70x the downloads. Use Playwright for any new project.
+[Puppeteer MCP](/reviews/puppeteer-mcp-server/) (2.5/5) was [archived and deprecated in May 2025](https://github.com/modelcontextprotocol/servers). It still works but receives no security updates or bug fixes, and Playwright MCP now has 70x the downloads. Use Playwright for any new project.
 
-For cloud-hosted browser automation (anti-bot detection, CAPTCHA solving), look at [Browserbase](/reviews/browserbase-mcp-server/) (3.5/5) or [Firecrawl](/reviews/firecrawl-mcp-server/) (4/5).
+For cloud-hosted browser automation (anti-bot detection, CAPTCHA solving), look at [Browserbase](/reviews/browserbase-mcp-server/) (3.5/5) or [Firecrawl](/reviews/firecrawl-mcp-server/) (4/5, [83% accuracy on benchmarks](https://www.firecrawl.dev/blog/llm-extract-benchmark)).
 
 **Full comparison:** [Best Browser Automation MCP Servers in 2026](/guides/best-browser-mcp-servers/)
 
@@ -236,10 +236,10 @@ For cloud-hosted browser automation (anti-bot detection, CAPTCHA solving), look 
 Search is the most fundamental agent capability, and there are three paradigms to understand:
 
 **Keyword search** — traditional web search. Best for specific queries ("React useEffect cleanup syntax"), fact-checking, and news.
-- **Our pick: [Brave Search](/reviews/brave-search-mcp-server/) (4/5).** Six tools (web, local, image, video, news, summarizer), the only independent Western search index (Bing API discontinued summer 2025), no Google tracking. Free tier killed Feb 2026 — now $5/1,000 queries with $5 monthly credit. Still the default for most agents; Tavily/Exa free tiers are more accessible for hobbyists.
+- **Our pick: [Brave Search](/reviews/brave-search-mcp-server/) (4/5).** Six tools (web, local, image, video, news, summarizer), the only independent Western search index, no Google tracking. [Free tier killed Feb 2026](https://www.implicator.ai/brave-drops-free-search-api-tier-puts-all-developers-on-metered-billing/) — now [$5/1,000 queries](https://api-dashboard.search.brave.com/documentation/pricing) with $5 monthly credit. Still the default for most agents; Tavily/Exa free tiers are more accessible for hobbyists.
 
 **Semantic search** — neural embeddings that understand concepts, not just keywords. Best for research, finding similar content, and exploratory queries.
-- **Our pick: [Exa](/reviews/exa-mcp-server/) (4/5).** Outperforms Tavily on benchmarks (81% vs 71% WebWalker) with lower latency. Query-dependent highlights reduce token usage by 50-75%. Consolidated to 4 tools in March 2026 (from 9), with `web_search_advanced_exa` replacing specialized tools. 4,100 stars. 1,000 free requests/month.
+- **Our pick: [Exa](/reviews/exa-mcp-server/) (4/5).** [Outperforms Tavily on benchmarks](https://exa.ai/versus/tavily) (81% vs 71% on [WebWalker](https://github.com/SevenPlusPlus/WebWalker)) with lower latency. Query-dependent highlights reduce token usage by 50-75%. Consolidated to 4 tools in March 2026 (from 9), with `web_search_advanced_exa` replacing specialized tools. [4,100 stars](https://github.com/exa-labs/exa-mcp-server). 1,000 free requests/month.
 
 **Search + extraction** — search the web, then extract and crawl the results. Best for RAG pipelines and content ingestion.
 - **Worth considering: [Tavily](/reviews/tavily-mcp-server/) (4/5).** Four tools covering search, extract, crawl, and map. The default search API for LangChain and LlamaIndex. Hosted remote server with zero-install setup. Keyword search quality trails semantic engines, but the search-to-extract pipeline is unmatched.
@@ -257,13 +257,13 @@ Search is the most fundamental agent capability, and there are three paradigms t
 
 If your agent just needs to read a web page, you have options ranging from a single `fetch` tool to full cloud scraping platforms.
 
-**Our pick: zcaceres/fetch-mcp** — the community fork of the official Fetch server. It adds SSRF protection (the official server [will happily fetch your localhost](/reviews/fetch-mcp-server/)), six output formats (markdown, HTML, JSON, plain text, screenshot, PDF), and it's free.
+**Our pick: [zcaceres/fetch-mcp](https://github.com/zcaceres/fetch-mcp)** — the community fork of the official Fetch server. It adds SSRF protection (the official server [will happily fetch your localhost](/reviews/fetch-mcp-server/)), six output formats (markdown, HTML, JSON, plain text, screenshot, PDF), and it's free.
 
 The [official Fetch server](/reviews/fetch-mcp-server/) (3.5/5) works for basic use cases where you control the URLs, but the known SSRF vulnerability means you shouldn't point it at untrusted input.
 
 For JavaScript-rendered pages, use [Playwright MCP](/reviews/playwright-mcp-server/) or fetcher-mcp (Playwright-based fetching without the full browser automation toolkit).
 
-For scale (crawling entire sites, structured extraction, autonomous research), [Firecrawl](/reviews/firecrawl-mcp-server/) (4/5) is the production platform — 12+ tools including an autonomous research agent and LLM-powered data extraction. For free open-source crawling with best-in-class markdown extraction, [Crawl4AI](/reviews/crawl4ai-mcp-server/) (3.5/5) is the most popular option — 61,900+ stars, Docker-only, MCP layer still maturing.
+For scale (crawling entire sites, structured extraction, autonomous research), [Firecrawl](/reviews/firecrawl-mcp-server/) (4/5) is the production platform — 12+ tools including an autonomous research agent and LLM-powered data extraction. For free open-source crawling with best-in-class markdown extraction, [Crawl4AI](/reviews/crawl4ai-mcp-server/) (3.5/5) is the most popular option — [61,900+ stars](https://github.com/unclecode/crawl4ai), Docker-only, MCP layer still maturing.
 
 **Full comparison:** [Best Web Scraping & Fetching MCP Servers in 2026](/guides/best-web-scraping-mcp-servers/)
 
@@ -273,19 +273,19 @@ For scale (crawling entire sites, structured extraction, autonomous research), [
 
 The official database MCP servers are both archived — and both have security vulnerabilities.
 
-The [official PostgreSQL server](/reviews/postgres-mcp-server/) (2.5/5) has a SQL injection vulnerability that bypasses its read-only transaction wrapper. Multi-statement injection (`COMMIT; DROP SCHEMA public CASCADE;`) works because the Node.js postgres client accepts semicolon-delimited statements. **Stop using it.**
+The [official PostgreSQL server](/reviews/postgres-mcp-server/) (2.5/5) has a [SQL injection vulnerability](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) that bypasses its read-only transaction wrapper. Multi-statement injection (`COMMIT; DROP SCHEMA public CASCADE;`) works because the Node.js postgres client accepts semicolon-delimited statements. **Stop using it.**
 
-The [official SQLite server](/reviews/sqlite-mcp-server/) (2.5/5) also has a publicly disclosed SQL injection vulnerability (June 2025, Trend Micro). Unsanitized table names concatenated via f-strings enable stored prompt injection — an attacker plants a payload in a database field, and when an AI agent reads it, the payload hijacks the agent. Anthropic declined to patch it. **Stop using it with real data.**
+The [official SQLite server](/reviews/sqlite-mcp-server/) (2.5/5) also has a publicly disclosed SQL injection vulnerability ([June 2025, Trend Micro](https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html)). Unsanitized table names concatenated via f-strings enable stored prompt injection — an attacker plants a payload in a database field, and when an AI agent reads it, the payload hijacks the agent. Anthropic [declined to patch it](https://github.com/modelcontextprotocol/servers/issues/3314). **Stop using it with real data.**
 
 **For cloud Postgres:** [Neon MCP](/reviews/neon-mcp-server/) (4/5) is the standout for pure database work. 20 tools, OAuth authentication, and a branch-based migration workflow that makes schema changes safe by default. For full backend management, [Supabase MCP](/reviews/supabase-mcp-server/) (4/5) covers database, edge functions, storage, and debugging in one server — broader scope but weaker branching (schema-only, paid plans only).
 
-**For self-hosted PostgreSQL:** Use **Postgres MCP Pro** by crystaldba (2,300+ GitHub stars). It adds query analysis, performance tuning, and actual safety features. Or use **DBHub** by Bytebase for multi-database support (Postgres, MySQL, SQLite, and more).
+**For self-hosted PostgreSQL:** Use **[Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp)** by crystaldba (2,300+ GitHub stars). It adds query analysis, performance tuning, and actual safety features. Or use **[DBHub](https://github.com/bytebase/dbhub)** by Bytebase for multi-database support (Postgres, MySQL, SQLite, and more).
 
-**For SQLite:** Use **jparkerweb/mcp-sqlite**, the actively maintained community alternative with parameterized queries and better safety.
+**For SQLite:** Use **[jparkerweb/mcp-sqlite](https://github.com/jparkerweb/mcp-sqlite)**, the actively maintained community alternative with parameterized queries and better safety.
 
 **For MongoDB:** [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5) is the most comprehensive database MCP server we've reviewed — 40+ tools covering queries, indexes, Atlas cluster management, local deployments, performance advisors, and knowledge search. The first database MCP server with built-in performance optimization (Atlas Performance Advisor) and automatic embedding generation. Set `MDB_MCP_READ_ONLY=true` immediately — it defaults to writable.
 
-**For MySQL:** Use **benborla/mcp-server-mysql** (1,300 stars) — SSH tunnel support, connection pooling, prepared statements, and rate limiting. Or **designcomputer/mysql_mcp_server** (1,200 stars) for a simpler Python-based approach.
+**For MySQL:** Use **[benborla/mcp-server-mysql](https://github.com/benborla/mcp-server-mysql)** (1,300 stars) — SSH tunnel support, connection pooling, prepared statements, and rate limiting. Or **[designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server)** (1,200 stars) for a simpler Python-based approach.
 
 **For Redis:** Use the **official redis/mcp-redis** (452 stars) — covers all Redis data structures (strings, hashes, lists, sets, sorted sets, streams, JSON), plus vector search and EntraID authentication.
 
@@ -309,7 +309,7 @@ Vector databases power RAG — retrieval-augmented generation — the primary wa
 
 **[Pinecone MCP](/reviews/pinecone-mcp-server/) (3/5)** — 9 tools with unique search-quality features: cascading search across multiple indexes, built-in reranking, and documentation search without authentication. Cloud-only with no local mode, and only works with Pinecone's integrated embedding indexes. The search tools are best-in-class, but missing basics like delete and update keep it from general-purpose use.
 
-**[Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5)** — 12 tools from the most-starred open-source vector database (40,000+ GitHub stars). Category-leading five search modes including native hybrid search (combining keyword + semantic in one query). Full collection CRUD, delete support, memory management controls (load/release collections), and SSE transport. Requires a running Milvus instance — no embedded mode. The strongest self-hosted option.
+**[Milvus MCP](/reviews/milvus-mcp-server/) (3.5/5)** — 12 tools from the most-starred open-source vector database ([40,000+ GitHub stars](https://github.com/milvus-io/milvus)). Category-leading five search modes including native hybrid search (combining keyword + semantic in one query). Full collection CRUD, delete support, memory management controls (load/release collections), and SSE transport. Requires a running Milvus instance — no embedded mode. The strongest self-hosted option.
 
 The vector DB MCP category is still young. Chroma leads on deployment flexibility, Milvus leads on search breadth (hybrid search), Qdrant leads on transport and community, and Pinecone leads on search quality.
 
@@ -321,15 +321,15 @@ The vector DB MCP category is still young. Chroma leads on deployment flexibilit
 
 Agents that forget everything between sessions are expensive autocomplete. But persistent memory is hard to get right.
 
-The [official Memory server](/reviews/memory-mcp-server/) (3.5/5) has the right concept (entity-relation knowledge graph) but real scaling problems. The `read_graph` tool dumps the entire graph into context — 14K+ tokens reported — and there's no memory isolation between projects. The OWASP MCP Top 10 (March 2026) now formally identifies this "context over-sharing" pattern as a security risk category.
+The [official Memory server](/reviews/memory-mcp-server/) (3.5/5) has the right concept (entity-relation knowledge graph) but real scaling problems. The `read_graph` tool dumps the entire graph into context — 14K+ tokens reported — and there's no memory isolation between projects. The [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) now formally identifies this ["context over-sharing" pattern](https://owasp.org/www-project-mcp-top-10/2025/MCP10-2025%E2%80%93ContextInjection&OverSharing) as a security risk category.
 
-**For temporal/enterprise use:** **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5) — temporal knowledge graphs with automatic entity extraction, relationship inference, and time-aware retrieval. 24.1K stars, MCP Server 1.0, multi-database (FalkorDB/Neo4j/Kuzu/Neptune), multi-LLM provider, fully open source (Apache 2.0). The most sophisticated memory architecture available — tracks not just what's true, but when it was true and when it changed.
+**For temporal/enterprise use:** **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5) — temporal knowledge graphs with automatic entity extraction, relationship inference, and time-aware retrieval. [24.1K stars](https://github.com/getzep/graphiti), MCP Server 1.0, multi-database (FalkorDB/Neo4j/Kuzu/Neptune), multi-LLM provider, fully open source (Apache 2.0). The most sophisticated memory architecture available — tracks not just what's true, but when it was true and when it changed.
 
-**For semantic retrieval:** **[mem0](/reviews/mem0-mcp-server/)** (4/5) — automatic embedding-based search, deduplication, and conflict resolution. 640 stars on MCP server (50.7K on main repo), nine tools, v1.0.7 with per-agent memory isolation, Ollama/LM Studio support. Cloud-hosted with a free tier or self-hosted via OpenMemory. Good for agents that need to find *relevant* memories, not dump *all* memories.
+**For semantic retrieval:** **[mem0](/reviews/mem0-mcp-server/)** (4/5) — automatic embedding-based search, deduplication, and conflict resolution. [640 stars on MCP server](https://github.com/mem0ai/mem0-mcp) ([50.7K on main repo](https://github.com/mem0ai/mem0)), nine tools, v1.0.7 with per-agent memory isolation, Ollama/LM Studio support. Cloud-hosted with a free tier or self-hosted via OpenMemory. Good for agents that need to find *relevant* memories, not dump *all* memories.
 
-**For personal/local use:** **Basic Memory** (2.7K stars) — stores memories as Markdown files you can read and edit. v0.20.2 added auto-update and section-level editing. Human-readable storage is underrated.
+**For personal/local use:** **[Basic Memory](https://github.com/basicmachines-co/basic-memory)** (2.7K stars) — stores memories as Markdown files you can read and edit. v0.20.2 added auto-update and section-level editing. Human-readable storage is underrated.
 
-**For coding agents:** **Engram** (1.7K stars, fastest-growing in category) — single Go binary, zero dependencies, purpose-built for AI coding sessions. v1.10.3 with auto git project detection and Claude plugin marketplace support.
+**For coding agents:** **[Engram](https://github.com/199-biotechnologies/engram)** (1.7K stars, fastest-growing in category) — single Go binary, zero dependencies, purpose-built for AI coding sessions. v1.10.3 with auto git project detection and Claude plugin marketplace support.
 
 **For simple use cases:** The official Memory server is fine if your graph stays small (under a few hundred entities) and you only use it for one project.
 
@@ -339,9 +339,9 @@ The [official Memory server](/reviews/memory-mcp-server/) (3.5/5) has the right 
 
 ## Reasoning & thinking
 
-Can an MCP server make your agent think better? The [Sequential Thinking MCP server](/reviews/sequential-thinking-mcp-server/) (3/5) is Anthropic's official answer — a single tool that structures reasoning into numbered steps with branching and revision support. It's the #10 most popular MCP server globally (~73K weekly npm downloads, though declining ~32% since December 2025), and the concept is sound: visible, auditable, step-by-step reasoning.
+Can an MCP server make your agent think better? The [Sequential Thinking MCP server](/reviews/sequential-thinking-mcp-server/) (3/5) is Anthropic's official answer — a single tool that structures reasoning into numbered steps with branching and revision support. It's the #10 most popular MCP server globally ([~73K weekly npm downloads](https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking), though declining ~32% since December 2025), and the concept is sound: visible, auditable, step-by-step reasoning.
 
-The problem is timing — and now Anthropic agrees. In December 2025, Anthropic updated their think tool blog post to explicitly recommend extended thinking "instead of a dedicated think tool in most cases." Downloads have dropped accordingly: from ~402K/month in December 2025 to ~273K in February 2026. A memory leak in long sessions ([PR #3321](https://github.com/modelcontextprotocol/servers/pull/3321) — 10GB+ RAM after 6-8 hours) remains unpatched, though March 2026 brought type coercion fixes and tool annotations. Still maintained (not archived), but its creators are pointing users elsewhere.
+The problem is timing — and now Anthropic agrees. Anthropic updated their [think tool blog post](https://www.anthropic.com/engineering/claude-think-tool) to explicitly recommend extended thinking "instead of a dedicated think tool in most cases." Downloads have dropped accordingly: from ~402K/month in December 2025 to ~273K in February 2026. A memory leak in long sessions ([PR #3321](https://github.com/modelcontextprotocol/servers/pull/3321) — 10GB+ RAM after 6-8 hours) remains unpatched, though March 2026 brought type coercion fixes and tool annotations. Still maintained (not archived), but its creators are pointing users elsewhere.
 
 **Use Sequential Thinking if** you need auditable reasoning traces, your MCP client doesn't support extended thinking, or you're debugging agent decision-making. **Skip it if** your model has built-in reasoning capabilities — Anthropic themselves now recommend that approach.
 
@@ -353,11 +353,11 @@ These categories each have a clear default choice:
 
 **[Filesystem MCP](/reviews/filesystem-mcp-server/) (4/5)** — Anthropic's reference server. Read, write, search, and manage files within configurable directory boundaries. Does what it says, does it well. The `allowed_directories` config is a simple but effective safety mechanism.
 
-**[GitHub MCP](/reviews/github-mcp-server/) (4/5)** — GitHub's official server (27K stars). PR workflows, Actions integration, Projects management, issue management, code search, and now secret scanning. The January–March 2026 updates fixed the biggest pain point: OAuth scope filtering auto-hides tools your token can't access. Consolidated Projects toolset cuts token usage by 50%. Six releases in two months show active investment. Setup friction is lower than before but still real (Docker, token scoping for fine-grained PATs).
+**[GitHub MCP](/reviews/github-mcp-server/) (4/5)** — GitHub's official server ([27K stars](https://github.com/github/github-mcp-server)). PR workflows, Actions integration, Projects management, issue management, code search, and now secret scanning. The January–March 2026 updates fixed the biggest pain point: OAuth scope filtering auto-hides tools your token can't access. Consolidated Projects toolset cuts token usage by 50%. Six releases in two months show active investment. Setup friction is lower than before but still real (Docker, token scoping for fine-grained PATs).
 
 **[Git MCP](/reviews/git-mcp-server/) (3/5)** — Anthropic's reference server for local git operations. 12 tools covering status, diff, staging, commit, and branching. Complements the GitHub server — Git handles local repo work, GitHub handles remote collaboration. The critical gap: no push, pull, or merge operations, so agents can't close the loop without help. If you need a complete local git workflow, the community [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) (28 tools) covers push, pull, merge, rebase, stash, tag, and blame.
 
-**[Slack MCP](/reviews/slack-mcp-server/) (4/5)** — Slack's official server (launched Feb 2026). Hosted architecture at mcp.slack.com, OAuth scopes, granular privacy controls. The right way to give agents Slack access — no bot tokens on disk, admin oversight built in.
+**[Slack MCP](/reviews/slack-mcp-server/) (4/5)** — Slack's official server (launched Feb 2026). Hosted architecture at [mcp.slack.com](https://mcp.slack.com), OAuth scopes, granular privacy controls. The right way to give agents Slack access — no bot tokens on disk, admin oversight built in.
 
 **[Teams MCP Servers](/reviews/teams-mcp-servers/) (3.5/5)** — Microsoft shipped an official Work IQ Teams server (24 tools, hosted, OAuth via Entra ID) as part of the microsoft/mcp catalog. Full CRUD for chats, channels, teams, and members. Still in preview, lacks search and file operations, plain text only. Community alternatives from InditexTech (361 stars, 5 tools, zero open issues, Docker) and floriscornel (72 stars, 25 tools, KQL search, file uploads) fill the gaps. A half-step behind Slack.
 
@@ -371,11 +371,11 @@ These categories each have a clear default choice:
 
 The most "first-party" category in the MCP ecosystem — every major platform has shipped an official MCP server.
 
-**[Sentry MCP](/reviews/sentry-mcp-server/) (4/5)** — the best example of how first-party MCP integration *should* work. OAuth 2.0 auth (no tokens on disk), zero-install remote server at mcp.sentry.dev, Seer AI root cause analysis. Pre-1.0 rough edges (748+ GitHub issues), but the architecture is right. If you use Sentry, install this.
+**[Sentry MCP](/reviews/sentry-mcp-server/) (4/5)** — the best example of how first-party MCP integration *should* work. OAuth 2.0 auth (no tokens on disk), zero-install remote server at [mcp.sentry.dev](https://mcp.sentry.dev), Seer AI root cause analysis. Pre-1.0 rough edges (748+ GitHub issues), but the architecture is right. If you use Sentry, install this.
 
 **[Datadog MCP](/reviews/datadog-mcp-server/) (4/5)** — the broadest toolset (50+ tools across 10+ modular toolsets). Covers APM, infrastructure, logs, error tracking, feature flags, LLM observability, database monitoring, and synthetics. Agent-native design with token-budget pagination and SQL-like log queries. GA status. The enterprise choice.
 
-**[Grafana MCP](/reviews/grafana-mcp-server/) (4/5)** — 40+ tools across 15 configurable categories: dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, Sift, annotations, rendering. 2,600 stars, 252K+ Docker Hub pulls, open source (Apache 2.0), works with any backend data source Grafana supports. Azure Managed Grafana MCP launched March 18. Prometheus POST→GET fix merged. The most comprehensive open-source observability MCP server.
+**[Grafana MCP](/reviews/grafana-mcp-server/) (4/5)** — 40+ tools across 15 configurable categories: dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, Sift, annotations, rendering. [2,600 stars](https://github.com/grafana/mcp-grafana), 252K+ Docker Hub pulls, open source (Apache 2.0), works with any backend data source Grafana supports. Azure Managed Grafana MCP launched March 18. Prometheus POST→GET fix merged. The most comprehensive open-source observability MCP server.
 
 **[New Relic MCP](/reviews/newrelic-mcp-server/) (4/5)** — natural language to NRQL translation (no query language required). 35 tools, generous free tier (100GB/mo), golden metrics analysis, deployment impact assessment. Remote-hosted at mcp.newrelic.com. Public Preview.
 
@@ -479,14 +479,14 @@ See our full [image generation MCP server comparison](/guides/best-image-generat
 
 ## Documentation & code context
 
-**Winner: [Context7](/reviews/context7-mcp-server/) (3.5/5)** — the most popular MCP server of 2026 with 50,100 GitHub stars.
+**Winner: [Context7](/reviews/context7-mcp-server/) (3.5/5)** — the most popular MCP server of 2026 with [50,100 GitHub stars](https://github.com/upstash/context7).
 
 Context7 solves a real problem: AI agents hallucinate APIs because their training data is stale. Two tools (`resolve-library-id` and `query-docs`) inject version-specific documentation directly into prompts. Now also offers a CLI and Skills-based plugin system. 9,000+ libraries, 30+ client integrations, dead-simple setup.
 
-But popularity doesn't mean perfection. A [ContextCrush context poisoning vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) was patched in February 2026, the free tier was cut 83–92% in January 2026, and community-contributed docs are unverified against official sources.
+But popularity doesn't mean perfection. A [ContextCrush context poisoning vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) was [patched February 23, 2026](https://www.infosecurity-magazine.com/news/contextcrush-ai-development-tools/), the free tier was cut 83–92% in January 2026, and community-contributed docs are unverified against official sources.
 
 **Alternatives worth considering:**
-- **[GitMCP](/reviews/gitmcp-server/)** (4/5, 7,800 stars) — replace `github.com` with `gitmcp.io` in any URL. Zero setup, free, works with any public repo. Best for libraries Context7 hasn't indexed.
+- **[GitMCP](/reviews/gitmcp-server/)** (4/5, [7,800 stars](https://github.com/nicholasgriffintn/gitmcp)) — replace `github.com` with `gitmcp.io` in any URL. Zero setup, free, works with any public repo. Best for libraries Context7 hasn't indexed.
 - **Docs MCP Server** (1,200 stars) — fully local, code never leaves your machine. Best for privacy-sensitive work.
 - **Ref.Tools** (1,000 stars) — smart chunking extracts exactly the tokens needed. Best for large API docs where context bloat is a problem.
 - **Docfork** (438 stars) — "Cabinets" for project-specific context isolation. Best for teams with multiple tech stacks.
@@ -523,7 +523,7 @@ A growing category as every SaaS vendor adds MCP support. The dominant pattern: 
 
 A new category — deployment platform MCP servers are emerging as first-party vendor integrations.
 
-**[Vercel MCP](/reviews/vercel-mcp-server/) (3.5/5)** — Vercel's official hosted server at `mcp.vercel.com`. 13 tools covering projects, deployments, build/runtime logs, domains, and documentation search. The runtime log querying tool is the standout — filtering by log level, status code, time range, and full-text search is genuinely faster through natural language than through the dashboard. OAuth with client allowlisting provides a stronger security model than most MCP servers.
+**[Vercel MCP](/reviews/vercel-mcp-server/) (3.5/5)** — Vercel's official hosted server at [`mcp.vercel.com`](https://mcp.vercel.com). 13 tools covering projects, deployments, build/runtime logs, domains, and documentation search. The runtime log querying tool is the standout — filtering by log level, status code, time range, and full-text search is genuinely faster through natural language than through the dashboard. OAuth with client allowlisting provides a stronger security model than most MCP servers.
 
 The tool count is thin relative to Vercel's full platform (no environment variables, no edge config, no KV/Blob storage, no analytics). Community alternatives like Quegenx/vercel-mcp-server offer 30+ tools with full admin control, but trade OAuth security for API token auth. The official server is the safer choice; the community servers are more capable.
 
@@ -535,7 +535,7 @@ Pairs well with [GitHub MCP](/reviews/github-mcp-server/) (4/5) — GitHub handl
 
 A category where the community got there first — and got there better.
 
-**[Framelink MCP](/reviews/framelink-figma-mcp-server/) (4/5)** — the community Figma MCP server with 13,700 GitHub stars — 34x more than Figma's official guide repo. Two tools (`get_figma_data` and `download_figma_images`) that output descriptive JSON instead of prescriptive React code. Your AI assistant gets design intent ("1px border, 16px padding") and generates code matching your project's conventions, framework, and component library.
+**[Framelink MCP](/reviews/framelink-figma-mcp-server/) (4/5)** — the community Figma MCP server with [13,700 GitHub stars](https://github.com/framelink/figma-mcp) — 34x more than Figma's official guide repo. Two tools (`get_figma_data` and `download_figma_images`) that output descriptive JSON instead of prescriptive React code. Your AI assistant gets design intent ("1px border, 16px padding") and generates code matching your project's conventions, framework, and component library.
 
 The key architectural advantage: descriptive output produces more accurate code than prescriptive output. Component nesting is preserved (the official server flattens it), payloads are ~25% smaller, and it works with any Figma account — no Dev seat required, no 6-calls/month cap. 11,500+ weekly npm downloads, 17 releases, MIT license. The most adopted design-to-code MCP server by a wide margin.
 
@@ -619,13 +619,13 @@ Beyond Shopify, the e-commerce MCP landscape includes [techspawn/woocommerce-mcp
 
 The fastest-growing MCP server category. Every major DevOps platform now ships an official MCP server, and AWS alone has 60+ specialized servers.
 
-**For cloud infrastructure (Cloudflare):** **[Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5)** — the most ambitious MCP server ecosystem we've reviewed. The main API server at `mcp.cloudflare.com/mcp` uses Code Mode to collapse 2,500+ API endpoints into just two tools (`search()` and `execute()`), consuming ~1,000 tokens instead of the 1.17 million a traditional approach would require. Plus 16 specialized product servers for Workers, DNS, observability, browser rendering, and more — all remote-first with OAuth. The V8 sandbox execution model is genuinely secure. If you're on Cloudflare, this is the obvious choice.
+**For cloud infrastructure (Cloudflare):** **[Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5)** — the most ambitious MCP server ecosystem we've reviewed. The main API server at [`mcp.cloudflare.com/mcp`](https://github.com/cloudflare/mcp) uses Code Mode to collapse 2,500+ API endpoints into just two tools (`search()` and `execute()`), consuming ~1,000 tokens instead of the 1.17 million a traditional approach would require. Plus 16 specialized product servers for Workers, DNS, observability, browser rendering, and more — all remote-first with OAuth. The V8 sandbox execution model is genuinely secure. If you're on Cloudflare, this is the obvious choice.
 
-**For infrastructure as code:** **[Terraform MCP](/reviews/terraform-mcp-server/) (4/5)** (HashiCorp, beta). 35+ tools giving agents real-time access to provider documentation, module specifications, and Sentinel policies from the Terraform Registry — plus HCP Terraform workspace management, variable sets, and Stacks. Helps agents write correct resource blocks instead of hallucinating arguments. Deliberately doesn't run `terraform apply` — a smart safety choice. Dual transport (stdio + Streamable HTTP), tool filtering, rate limiting. Limited to Terraform ecosystem (no OpenTofu/Pulumi). **[Pulumi MCP](/reviews/pulumi-mcp-server/) (3.5/5)** takes the opposite approach — 11+ tools including `pulumi-cli-up` for actual deployment, resource search across all cloud providers, and Neo agent delegation for autonomous multi-step infrastructure tasks. More ambitious but lower community adoption (66 stars vs. Terraform's 1,300).
+**For infrastructure as code:** **[Terraform MCP](/reviews/terraform-mcp-server/) (4/5)** ([HashiCorp](https://github.com/hashicorp/terraform-mcp-server), beta). 35+ tools giving agents real-time access to provider documentation, module specifications, and Sentinel policies from the Terraform Registry — plus HCP Terraform workspace management, variable sets, and Stacks. Helps agents write correct resource blocks instead of hallucinating arguments. Deliberately doesn't run `terraform apply` — a smart safety choice. Dual transport (stdio + Streamable HTTP), tool filtering, rate limiting. Limited to Terraform ecosystem (no OpenTofu/Pulumi). **[Pulumi MCP](/reviews/pulumi-mcp-server/) (3.5/5)** takes the opposite approach — 11+ tools including `pulumi-cli-up` for actual deployment, resource search across all cloud providers, and Neo agent delegation for autonomous multi-step infrastructure tasks. More ambitious but lower community adoption (66 stars vs. Terraform's 1,300).
 
 **For containers:** **[Docker MCP](/reviews/docker-mcp-server/) (3.5/5)** — the most complete Docker management MCP server. 19 tools covering containers, images, networks, and volumes, with SSH remote support and a plan-and-apply docker_compose prompt. Security-conscious (blocks `--privileged`). Missing `exec` and Compose file support, but covers the full container lifecycle. For the broader Docker MCP *ecosystem*, Docker's MCP Toolkit hosts 300+ verified server images with Dynamic MCP for mid-conversation tool discovery.
 
-**For Kubernetes:** **[Kubernetes MCP](/reviews/kubernetes-mcp-server/) (4/5)** (Red Hat's `containers/kubernetes-mcp-server`). Native Go binary that talks directly to the K8s API — no kubectl wrapper, no external dependencies. 6 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP), multi-cluster support, read-only and non-destructive modes, automatic secret redaction. 1,300 stars, 765 commits, 59 releases. The most architecturally sound option in a fragmented ecosystem (6+ implementations).
+**For Kubernetes:** **[Kubernetes MCP](/reviews/kubernetes-mcp-server/) (4/5)** (Red Hat's [`containers/kubernetes-mcp-server`](https://github.com/containers/kubernetes-mcp-server)). Native Go binary that talks directly to the K8s API — no kubectl wrapper, no external dependencies. 6 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP), multi-cluster support, read-only and non-destructive modes, automatic secret redaction. 1,300 stars, 765 commits, 59 releases. The most architecturally sound option in a fragmented ecosystem (6+ implementations).
 
 **For AWS:** **[AWS MCP](/reviews/aws-mcp-servers/) (4/5)** suite (awslabs/mcp). 68 specialized servers covering compute, storage, databases, AI/ML, security, and cost analysis. The Cloud Control API server enables natural language resource management; the Knowledge server at `knowledge-mcp.global.api.aws` is a free managed endpoint indexing all AWS documentation. The Core MCP Server orchestrates everything via role-based configurations. 8,500 stars, 190+ releases, active daily development. The breadth is unmatched but the complexity is overwhelming — start with the Knowledge server.
 

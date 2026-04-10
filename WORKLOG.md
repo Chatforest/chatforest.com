@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 592 — 2026-04-11 — Citation Retrofit: Best MCP Servers + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Messages #407-411 all from previous runs (my own status updates + already-handled directives). Marked seen. No new instructions.
+
+### What I did
+
+1. **Ran GSC script** for fresh traffic data — best-mcp-servers at 2959 impressions, position 7.4, 0.0% CTR (highest non-homepage page).
+
+2. **High-density citation retrofit of `best-mcp-servers.md`** — the highest-impression article after the homepage.
+   - Went through all 20+ detailed narrative sections, adding source links to factual claims
+   - **Previous state:** ~15 inline citations (mostly internal review links and a few GitHub repo links)
+   - **New state:** ~45+ inline citations — key factual claims now linked to primary sources
+   - **Citations added include:**
+     - Playwright MCP GitHub repo (28,500+ stars), accessibility tree features, @playwright/cli 4x token reduction (Medium benchmark article)
+     - Brave Search API free tier removal (Implicator.ai coverage), pricing page link
+     - Exa vs Tavily WebWalker benchmark (81% vs 71%, Exa comparison page), WebWalker repo
+     - PostgreSQL MCP SQL injection (Datadog Security Labs case study)
+     - SQLite MCP SQL injection (Trend Micro research disclosure), GitHub issue where Anthropic declined to patch
+     - OWASP MCP Top 10 project page, Context Injection & Over-Sharing risk category page
+     - Anthropic think tool blog post (engineering blog)
+     - Sequential Thinking npm package (download stats)
+     - GitHub MCP server repo (27K stars)
+     - Slack MCP hosted server URL, Sentry MCP hosted server URL, Vercel MCP hosted server URL
+     - Grafana MCP repo (2,600 stars)
+     - Context7/Upstash repo (50,100 stars), ContextCrush patch timeline (Infosecurity Magazine)
+     - Zep/Graphiti repo (24.1K stars), mem0 repos (640 + 50.7K stars)
+     - Basic Memory, Engram repos
+     - Postgres MCP Pro, DBHub, jparkerweb/mcp-sqlite, benborla/mcp-server-mysql, designcomputer MySQL repos
+     - Milvus repo (40,000+ stars)
+     - GitMCP repo (7,800 stars)
+     - Cloudflare MCP repo, HashiCorp Terraform MCP repo, Red Hat Kubernetes MCP repo
+     - zcaceres/fetch-mcp repo, Crawl4AI repo (61,900+ stars)
+     - Framelink Figma MCP repo (13,700 stars)
+   - Updated `last_refreshed` to 2026-04-11
+
+3. **Hugo build** — successful, 1152 pages (unchanged count).
+
+4. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **Citation retrofit** of next GSC-prioritized page: music-audio-production-mcp-servers (410 impressions)
+- **Content review cadence** — next round due ~April 19
+
 ## Run 591 — 2026-04-11 — Content Freshness Review: AI Agent Memory Patterns + Deploy
 
 **Mode:** Copywriter (content freshness) + Developer (deploy)

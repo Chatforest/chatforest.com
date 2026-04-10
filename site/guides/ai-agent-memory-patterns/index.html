@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Agent Memory Patterns: How to Build Agents That Actually Remember — ChatForest</title>
-  <meta name="description" content="A practical guide to AI agent memory in 2026 — memory types, framework comparison (Mem0, Zep, Letta, LangMem), and production architecture patterns that actually work.">
+  <meta name="description" content="A practical guide to AI agent memory in 2026 — memory types, framework comparison (Mem0, Zep, Letta, LangMem, Supermemory), and production architecture patterns that actually work.">
   <meta property="og:title" content="AI Agent Memory Patterns: How to Build Agents That Actually Remember — ChatForest">
   <meta property="og:description" content="How to build AI agents that actually remember. Covers episodic, semantic, and procedural memory types, plus Mem0, Zep, Letta, and LangMem frameworks compared.">
   <meta property="og:type" content="article">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 28, 2026 · Updated Mar 28, 2026</span>
+        <span>Published Mar 28, 2026 · Updated Apr 11, 2026</span>
       </div>
 
       <h1 class="article-title">AI Agent Memory Patterns: How to Build Agents That Actually Remember</h1>
@@ -69,7 +69,7 @@
 <p>Building real memory into agents is the hardest unsolved problem in agentic AI. The challenge isn&rsquo;t storing information — it&rsquo;s deciding <em>what</em> to remember, <em>when</em> to forget, and <em>how</em> to retrieve the right memories at the right time without blowing your latency budget.</p>
 <p>This guide covers the memory patterns, frameworks, and production architectures that actually work in 2026. Our analysis draws on published research, framework documentation, benchmark data, and production reports — we research and analyze rather than deploying these systems ourselves. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
 <h2 id="why-context-windows-are-not-memory">Why Context Windows Are Not Memory</h2>
-<p>Every LLM has a context window — the text it can see during a single request. Claude&rsquo;s is 200K tokens. GPT-4o&rsquo;s is 128K. Gemini&rsquo;s is up to 2M. Developers often treat this as memory: stuff everything into the context and let the model sort it out.</p>
+<p>Every LLM has a context window — the text it can see during a single request. As of April 2026, flagship models have converged on roughly 1M tokens: <a href="https://docs.anthropic.com/en/docs/about-claude/models">Claude Opus 4.6</a> offers 1M, <a href="https://openai.com/index/gpt-5-4/">GPT-5.4</a> supports up to 1M for Codex users (272K standard), and <a href="https://ai.google.dev/gemini-api/docs/models">Gemini 2.5 Pro</a> provides 1M with 2M still on the roadmap. Developers often treat this as memory: stuff everything into the context and let the model sort it out.</p>
 <p>This breaks in three ways:</p>
 <ol>
 <li><strong>Cost scales linearly.</strong> Sending 100K tokens of conversation history on every request gets expensive fast, especially at agent scale where a single task might require dozens of LLM calls.</li>
@@ -116,30 +116,37 @@
               LONG-TERM MEMORY
 </code></pre><p>The agent selectively loads relevant long-term memories into working memory each turn. The art is in the selection — retrieve too much and you waste tokens and confuse the model; retrieve too little and the agent misses important context.</p>
 <h2 id="memory-frameworks-compared">Memory Frameworks Compared</h2>
-<p>The memory framework landscape has matured significantly. Here&rsquo;s how the major options compare as of early 2026.</p>
+<p>The memory framework landscape has matured significantly. Here&rsquo;s how the major options compare as of April 2026.</p>
 <h3 id="mem0">Mem0</h3>
 <p><strong>Approach:</strong> Extracts &ldquo;memories&rdquo; from conversations using an LLM, storing them as compact natural language facts with vector embeddings for retrieval.</p>
 <p><strong>Key innovation:</strong> Instead of storing raw conversation chunks, Mem0 runs an extraction phase that identifies salient facts from every message pair and distills them into compact memories, choosing one of four operations — ADD, UPDATE, DELETE, or NOOP. If a user says they moved from Tokyo to Berlin, Mem0 deletes the old location and adds the new one.</p>
 <p><strong>Architecture:</strong> Combines vector-based semantic search with optional graph memory (via Neo4j) for entity relationships. Supports hierarchical scoping — user-level, session-level, and agent-level memories.</p>
-<p><strong>Performance:</strong> Self-reported 26% accuracy improvement over baseline LLM memory, 91% faster responses than full-context loading, and 90% lower token usage. However, independent evaluations suggest lower accuracy scores (~58% on LoCoMo benchmark vs. self-reported ~66%).</p>
+<p><strong>Performance:</strong> A <a href="https://arxiv.org/abs/2504.19413">new arXiv paper</a> (April 2026) reports 26% relative improvement over OpenAI Memory on LoCoMo, 91% lower p95 latency, and 90%+ token cost reduction. Independent evaluations have produced lower accuracy scores (~58% on LoCoMo vs. self-reported ~66%), so independent verification remains advisable.</p>
+<p><strong>Recent:</strong> <a href="https://github.com/mem0ai/mem0/releases">Mem0 v1.0.0</a> shipped in early April 2026 — a major milestone with async-by-default behavior, reranker support (Cohere, ZeroEntropy, HuggingFace), Azure MySQL and Azure AI Search support, and graph memory now considered production-ready (no longer experimental). Mem0 also raised a <a href="https://mem0.ai/blog/state-of-ai-agent-memory-2026">$24M Series A</a> and has reached ~48K GitHub stars.</p>
 <p><strong>Best for:</strong> Teams that want managed memory infrastructure with minimal setup. Strong API, good documentation, cloud-hosted option.</p>
 <h3 id="zep">Zep</h3>
 <p><strong>Approach:</strong> Temporal knowledge graph that tracks how facts change over time, combining graph-based memory with vector search.</p>
 <p><strong>Key innovation:</strong> Episodic and temporal memory — Zep structures interactions into meaningful sequences rather than flat logs, tracking when facts were established and how they&rsquo;ve changed. This mirrors how humans remember conversations, not as transcripts but as structured episodes.</p>
-<p><strong>Architecture:</strong> Graph RAG with temporal indexing. Integrates structured business data with conversational history. Self-hosted or cloud options.</p>
-<p><strong>Performance:</strong> Independent evaluation shows ~85% on LoCoMo benchmark. P95 search latency of 0.632 seconds with concurrent search configuration. Zep&rsquo;s team has publicly challenged Mem0&rsquo;s benchmark methodology, with corrected scores showing Zep outperforming by ~10%.</p>
+<p><strong>Architecture:</strong> Graph RAG with temporal indexing via <a href="https://github.com/getzep/graphiti">Graphiti</a>, Zep&rsquo;s temporal knowledge graph engine. Integrates structured business data with conversational history. <strong>Note:</strong> Zep Community Edition was <a href="https://github.com/getzep/zep">deprecated in early 2026</a> — only Zep Cloud remains actively supported.</p>
+<p><strong>Performance:</strong> Independent evaluation shows ~85% on LoCoMo benchmark. P95 search latency of 0.632 seconds with concurrent search configuration, though <a href="https://blog.supermemory.ai/supermemory-vs-zep/">recent third-party benchmarks</a> report recall latency closer to ~4 seconds. Zep&rsquo;s team has publicly challenged Mem0&rsquo;s benchmark methodology, with corrected scores showing Zep outperforming by ~10%.</p>
 <p><strong>Best for:</strong> Applications where <em>when</em> something was said matters as much as <em>what</em> was said. Enterprise use cases with compliance requirements around conversation history.</p>
 <h3 id="letta-formerly-memgpt">Letta (formerly MemGPT)</h3>
 <p><strong>Approach:</strong> Treats LLM context like virtual memory in an operating system. The agent itself manages memory tiers — deciding what to store, retrieve, and evict.</p>
 <p><strong>Key innovation:</strong> Memory is a first-class component of the agent&rsquo;s state, not an external add-on. The agent has editable memory blocks (core memory it can read and write), recall memory (searchable conversation history), and archival memory (long-term external storage). The LLM decides what goes where.</p>
 <p><strong>Architecture:</strong> A full agent runtime, not just a memory layer. Agents run <em>inside</em> Letta with persistent state, identity, and memory that evolves across sessions. Open source (Apache 2.0).</p>
 <p><strong>Performance:</strong> ~83.2% on LoCoMo benchmark. The OS-inspired approach means memory operations are tightly integrated with the agent loop rather than being external API calls.</p>
+<p><strong>Recent:</strong> <a href="https://github.com/letta-ai/letta/releases">Letta v0.16.7</a> (March 31, 2026) raised the default context window from 32K to 128K, overhauled compaction, and deprecated block limit validation. More notably, Letta launched <a href="https://www.letta.com/blog/letta-code">Letta Code</a> (April 6, 2026) — a memory-first coding agent that learns over time and works locally, directly competing with Claude Code&rsquo;s file-based memory approach but using MemGPT-style persistent memory.</p>
 <p><strong>Best for:</strong> Developers who want agents with persistent identity and self-managed memory. Strongest choice when the agent needs autonomy over what it remembers.</p>
 <h3 id="langmem-langchainlanggraph">LangMem (LangChain/LangGraph)</h3>
 <p><strong>Approach:</strong> Long-term memory within the LangGraph ecosystem. Stores memories as JSON documents in a structured store with retrieval via filters.</p>
 <p><strong>Key innovation:</strong> Supports both hot path (agent-initiated) and background (programmatic) memory extraction. Focuses on working memory by compressing long histories into actionable summaries.</p>
 <p><strong>Architecture:</strong> Integrates with LangGraph&rsquo;s state management. Memories are JSON documents with namespace-based organization. Uses LangGraph&rsquo;s built-in persistence layer.</p>
 <p><strong>Best for:</strong> Teams already using LangChain/LangGraph who want memory without adding another dependency. Good integration with the broader LangChain ecosystem.</p>
+<h3 id="supermemory">Supermemory</h3>
+<p><strong>Approach:</strong> All-in-one memory API combining graph database, extractors, connectors, and user profiles in a single service.</p>
+<p><strong>Key innovation:</strong> Focuses on recall speed and benchmark performance across multiple evaluation suites. Claims state-of-the-art results on <a href="https://supermemory.ai/">LongMemEval, LoCoMo, and ConvoMem</a> benchmarks simultaneously, with ~200ms recall latency — significantly faster than competitors.</p>
+<p><strong>Architecture:</strong> Integrated graph + vector + keyword retrieval. Provides extractors for converting conversations into structured memory, connectors for ingesting external data, and user profile management.</p>
+<p><strong>Best for:</strong> Teams prioritizing recall speed and willing to use a newer entrant. Worth evaluating if Zep&rsquo;s latency is a bottleneck or if you need a single-API alternative to assembling components.</p>
 <h3 id="comparison-table">Comparison Table</h3>
 <table>
 <thead>
@@ -167,9 +174,9 @@
 <td>Zep</td>
 <td>Temporal graph</td>
 <td>Graph + Vector</td>
-<td>Partial</td>
+<td>Cloud only</td>
 <td>~85%</td>
-<td>632ms search</td>
+<td>632ms-4s search</td>
 <td>Temporal/episodic memory</td>
 </tr>
 <tr>
@@ -191,7 +198,16 @@
 <td>LangGraph users</td>
 </tr>
 <tr>
-<td>SuperLocalMemory</td>
+<td>Supermemory</td>
+<td>Graph + Vector + Keyword</td>
+<td>Integrated</td>
+<td>Partial</td>
+<td>Claims SOTA</td>
+<td>~200ms recall</td>
+<td>Speed-critical applications</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04514">SuperLocalMemory</a></td>
 <td>4-channel fusion</td>
 <td>Local-only</td>
 <td>Yes (MIT)</td>
@@ -202,7 +218,7 @@
 </tbody>
 </table>
 <h3 id="the-benchmark-wars">The Benchmark Wars</h3>
-<p>A word of caution: memory framework benchmarks are actively contested. Mem0, Zep, and Letta have all publicly challenged each other&rsquo;s benchmark methodology. The LoCoMo benchmark (81 question-answer pairs across multi-session conversations) is the closest thing to a standard, but scores vary significantly depending on implementation details and evaluation methodology. Independent evaluation is recommended over vendor-reported numbers.</p>
+<p>A word of caution: memory framework benchmarks are actively contested. Mem0, Zep, and Letta have all publicly challenged each other&rsquo;s benchmark methodology. LoCoMo (81 question-answer pairs across multi-session conversations) remains the most common evaluation, but two major new benchmarks debuted at <a href="https://sites.google.com/view/memagent-iclr26/">ICLR 2026</a>: <strong><a href="https://arxiv.org/abs/2510.27246">BEAM</a></strong> (Beyond a Million Tokens) evaluates 10 memory abilities at 128K to 10M token scales, showing that even 1M-token models struggle as dialogues lengthen; <strong><a href="https://github.com/HUST-AI-HYZ/MemoryAgentBench">MemoryAgentBench</a></strong> specifically evaluates memory in multi-turn agent settings rather than single-model contexts. ICLR 2026 also hosted a dedicated <a href="https://sites.google.com/view/memagent-iclr26/">MemAgents Workshop</a>, signaling the field&rsquo;s growing maturity. Independent evaluation across multiple benchmarks is recommended over vendor-reported numbers.</p>
 <h2 id="hot-path-vs-background-when-to-write-memory">Hot Path vs. Background: When to Write Memory</h2>
 <p>One of the most consequential architecture decisions is <em>when</em> the agent processes memories. There are two approaches, and getting this wrong is a common production failure.</p>
 <h3 id="hot-path-synchronous">Hot Path (Synchronous)</h3>
@@ -277,14 +293,14 @@
 <h2 id="how-ai-platforms-handle-memory">How AI Platforms Handle Memory</h2>
 <p>The major AI platforms have shipped consumer-facing memory features that inform what developers can build with their APIs.</p>
 <h3 id="claude-anthropic">Claude (Anthropic)</h3>
-<p>Claude&rsquo;s built-in memory extracts and stores user preferences, project context, and working patterns across conversations. As of March 2026, memory is free for all users (previously limited to paid tiers). Claude supports importing memories from other platforms — users can migrate their accumulated context from ChatGPT or Gemini. Imported memories merge with existing Claude memories rather than overwriting them.</p>
+<p>Claude&rsquo;s built-in memory extracts and stores user preferences, project context, and working patterns across conversations. Memory is <a href="https://docs.anthropic.com/en/docs/about-claude/models">free for all tiers</a> (Free, Pro, Max) as of March 2026. Claude supports <a href="https://aicostboard.com/blog/posts/claude-memory-import-export-guide">importing memories</a> from ChatGPT, Gemini, and Grok — imported memories merge with existing ones rather than overwriting.</p>
 <p>For developers, Claude Code uses a file-based memory system (CLAUDE.md files and a ~/.claude/memory directory) that persists across coding sessions. This is procedural memory in practice — project conventions, user preferences, and feedback that shapes future behavior.</p>
 <h3 id="chatgpt-openai">ChatGPT (OpenAI)</h3>
 <p>ChatGPT&rsquo;s memory stores facts learned during conversations and applies them to future interactions. Users can view, edit, and delete individual memories. The memory system is opt-in and transparent — users can see exactly what ChatGPT remembers about them.</p>
 <h3 id="gemini-google">Gemini (Google)</h3>
-<p>Gemini added automatic memory with privacy controls in August 2025 and launched &ldquo;Personal Intelligence&rdquo; with Gemini 3 in January 2026. In March 2026, Google added import tools for migrating chat history and memories from ChatGPT and Claude, marking the beginning of a data portability race among AI assistants.</p>
+<p>Gemini added automatic memory with privacy controls in August 2025 and launched &ldquo;Personal Intelligence&rdquo; with Gemini 3 in January 2026. In March 2026, Google added <a href="https://blog.google/innovation-and-ai/products/gemini-app/switch-to-gemini-app/">import tools</a> for migrating chat history and memories from ChatGPT and Claude (up to 5GB via ZIP upload). In April 2026, Google launched <a href="https://gemini.google/release-notes/">Gemini Notebooks</a> — persistent project workspaces where the AI has read access to all files and chats within the workspace, functioning as a form of structured long-term context. Available for AI Ultra, Pro, and Plus subscribers.</p>
 <h3 id="the-portability-trend">The Portability Trend</h3>
-<p>The fact that all three major platforms now support memory import/export signals a strategic shift: when switching between assistants no longer means losing accumulated context, competition moves to model quality and ecosystem integration rather than user lock-in.</p>
+<p>The fact that all three major platforms now support memory import/export signals a strategic shift: when switching between assistants no longer means losing accumulated context, competition moves to model quality and ecosystem integration rather than user lock-in. <a href="https://www.nyreport.com/2026/04/07/users-push-for-ai-data-portability/">Industry observers</a> and standards groups are pushing for common formats for assistant memory to reduce friction further, and the EU AI Act&rsquo;s transparency requirements are accelerating this trend.</p>
 <h2 id="production-architecture-patterns">Production Architecture Patterns</h2>
 <h3 id="pattern-1-the-simple-stack">Pattern 1: The Simple Stack</h3>
 <p>For most applications, start here:</p>
@@ -325,8 +341,8 @@
 <tbody>
 <tr>
 <td><strong>pgvector</strong></td>
-<td>Teams already on PostgreSQL, need ACID guarantees</td>
-<td>Very high-dimensional embeddings, massive scale</td>
+<td>Teams already on PostgreSQL, need ACID guarantees (<a href="https://www.shakudo.io/blog/top-9-vector-databases">StreamingDiskANN</a> now makes it viable at 50M+ vectors with ~75% cost advantage over managed alternatives)</td>
+<td>Very high-dimensional embeddings</td>
 </tr>
 <tr>
 <td><strong>Chroma</strong></td>
@@ -335,7 +351,7 @@
 </tr>
 <tr>
 <td><strong>Qdrant</strong></td>
-<td>Production vector search, filtering + vector hybrid</td>
+<td>Production vector search, <a href="https://www.cloudmagazin.com/en/2026/04/02/vector-databases-rag-pinecone-weaviate-qdrant-pgvector-comparison/">named vectors for hybrid dense+sparse indexing</a>, ACORN filtered HNSW</td>
 <td>Simple use cases where pgvector suffices</td>
 </tr>
 <tr>
@@ -367,7 +383,7 @@
 <p>Beyond tool-based memory access, MCP&rsquo;s <a href="/guides/mcp-resources-and-roots-explained/">resource system</a> enables memory to be exposed as readable context. An MCP memory server can expose frequently-accessed memories as resources that clients subscribe to, receiving updates when memories change — useful for keeping an agent&rsquo;s context fresh without explicit retrieval calls on every turn.</p>
 <h2 id="common-mistakes">Common Mistakes</h2>
 <h3 id="1-treating-the-context-window-as-memory">1. Treating the Context Window as Memory</h3>
-<p>Stuffing the entire conversation history into every request works until it doesn&rsquo;t. At $15/M input tokens (Claude Opus) with 50K tokens of history per request, a busy agent burns through budget fast — and retrieval accuracy degrades well before you hit the token limit.</p>
+<p>Stuffing the entire conversation history into every request works until it doesn&rsquo;t. At <a href="https://docs.anthropic.com/en/docs/about-claude/models#model-comparison-table">$5/M input tokens</a> (Claude Opus 4.6, down from $15 for earlier Opus versions) with 50K tokens of history per request, a busy agent burns through budget fast — and retrieval accuracy degrades well before you hit the token limit.</p>
 <h3 id="2-remembering-everything">2. Remembering Everything</h3>
 <p>Without decay and consolidation, memory stores fill with contradictory, redundant, and irrelevant entries. An agent that remembers the user&rsquo;s coffee order from 2024 alongside their current project requirements retrieves noise that dilutes useful context.</p>
 <h3 id="3-ignoring-latency">3. Ignoring Latency</h3>
@@ -382,10 +398,11 @@
 <p>The memory landscape is evolving rapidly:</p>
 <ul>
 <li><strong>Memory portability</strong> is becoming standard — all major platforms now support import/export, pushing toward a world where your AI memory follows you between providers</li>
-<li><strong>EU AI Act compliance</strong> (August 2026) will force memory systems to support data residency, right-to-deletion, and transparent memory operations — local-first solutions like SuperLocalMemory are designed for this</li>
+<li><strong>EU AI Act compliance</strong> (August 2, 2026) will force memory systems to support data residency, right-to-deletion, and transparent memory operations — organizations have <a href="https://centurian.ai/blog/eu-ai-act-compliance-2026">~4 months</a> to implement automated logging and audit trails for high-risk AI systems. Local-first solutions like SuperLocalMemory are designed for this</li>
 <li><strong>Hybrid retrieval</strong> (vector + graph + keyword) is becoming the default architecture rather than vector-only, as benchmark data consistently shows multi-modal retrieval outperforms single-approach systems</li>
-<li><strong>Agent-managed memory</strong> (the Letta model) is gaining traction as models become more capable at self-directed memory operations</li>
-<li><strong>Memory benchmarks</strong> are maturing but still contested — expect a standardized evaluation framework to emerge as the field matures</li>
+<li><strong>Agent-managed memory</strong> (the Letta model) is gaining traction — Letta Code&rsquo;s April 2026 launch brings MemGPT-style persistent memory to a coding agent, directly challenging file-based approaches</li>
+<li><strong>Memory benchmarks</strong> are maturing rapidly — ICLR 2026 introduced BEAM (multi-scale evaluation up to 10M tokens) and MemoryAgentBench (agent-specific evaluation), alongside a dedicated MemAgents workshop. Standardized evaluation is emerging faster than expected</li>
+<li><strong>Recall speed</strong> is the new frontier — Supermemory&rsquo;s ~200ms recall vs. competitors&rsquo; multi-second latency highlights that memory retrieval speed, not just accuracy, is becoming a key differentiator</li>
 </ul>
 <h2 id="further-reading">Further Reading</h2>
 <ul>
@@ -447,7 +464,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-28T00:00:00+09:00","datePublished":"2026-03-28T23:50:00+09:00","description":"A practical guide to AI agent memory in 2026 — memory types, framework comparison (Mem0, Zep, Letta, LangMem), and production architecture patterns that actually work.","headline":"AI Agent Memory Patterns: How to Build Agents That Actually Remember","mainEntityOfPage":"https://chatforest.com/guides/ai-agent-memory-patterns/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/ai-agent-memory-patterns/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-11T00:00:00+09:00","datePublished":"2026-03-28T23:50:00+09:00","description":"A practical guide to AI agent memory in 2026 — memory types, framework comparison (Mem0, Zep, Letta, LangMem, Supermemory), and production architecture patterns that actually work.","headline":"AI Agent Memory Patterns: How to Build Agents That Actually Remember","mainEntityOfPage":"https://chatforest.com/guides/ai-agent-memory-patterns/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/ai-agent-memory-patterns/"}
 </script>
 
 
