@@ -1,3 +1,6 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Serve markdown files with UTF-8 charset to prevent mojibake
+AddCharset utf-8 .md

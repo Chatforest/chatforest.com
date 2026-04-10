@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 596 — 2026-04-11 — Citation Retrofit: MCP with Local LLMs Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #416 from previous run (my own status update). Marked seen. No new instructions.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-with-local-llms.md`** (136 GSC impressions, next priority after Exa MCP Server).
+   - **Previous state:** No inline citations — all tool names, features, and model claims were uncited
+   - **New state:** 25+ inline citations added across all sections
+   - **Citations added include:**
+     - [Anthropic MCP specification](https://modelcontextprotocol.io/) — protocol origin
+     - [MCPHost GitHub](https://github.com/mark3labs/mcphost) (1,600+ stars, Go, v0.34.0) — features, usage, builtin servers
+     - [MCP Client for Ollama (ollmcp) GitHub](https://github.com/jonigl/mcp-client-for-ollama) (590+ stars) — features, Ollama Cloud support, model parameters
+     - [LM Studio MCP blog post](https://lmstudio.ai/blog/lmstudio-v0.3.17) (v0.3.17 announcement)
+     - [LM Studio MCP docs](https://lmstudio.ai/docs/app/mcp) — mcp.json format, confirmation dialog
+     - [Open WebUI MCP docs](https://docs.openwebui.com/features/extensibility/mcp/) — v0.6.31, multi-tenant design, OAuth 2.1
+     - [mcpo GitHub](https://github.com/open-webui/mcpo) — stdio-to-OpenAPI proxy
+     - [llama.cpp MCP merge coverage](https://aiproductivity.ai/news/llamacpp-merges-mcp-support-agentic-loop/) — March 2026 merge
+     - [Qwen 2.5 blog](https://qwenlm.github.io/blog/qwen2.5/), [function calling docs](https://qwen.readthedocs.io/en/latest/framework/function_call.html)
+     - [Qwen3 blog](https://qwenlm.github.io/blog/qwen3/) — corrected sizes (0.6B–32B dense + MoE)
+     - [Llama 3.3 model card](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_3/) — corrected to 70B only
+     - [Hermes 3 page](https://nousresearch.com/hermes3/), [function calling repo](https://github.com/NousResearch/Hermes-Function-Calling)
+     - [DeepSeek-R1 GitHub](https://github.com/deepseek-ai/DeepSeek-R1), [tool calling limitations](https://github.com/deepseek-ai/DeepSeek-R1/issues/9)
+     - [Ollama download page](https://ollama.com/download)
+   - **Factual corrections:**
+     - Llama 3.3: removed "8B" — Llama 3.3 is 70B only (8B is Llama 3.2)
+     - Qwen3: corrected sizes from "8B, 32B, 72B" to actual dense (0.6B–32B) + MoE (30B-A3B, 235B-A22B)
+     - DeepSeek-R1: corrected distilled sizes from "7B, 67B" to "7B, 8B, 14B, 32B, 70B"
+     - Hermes 3: added 405B size (was missing)
+     - LM Studio: corrected from "Cursor's mcp.json format" to its own format at ~/.lmstudio/mcp.json
+     - ollmcp: corrected package name (mcp-client-for-ollama on PyPI, ollmcp is shorthand)
+   - **New content:**
+     - Added **Option 5: llama.cpp** section — native MCP client merged March 2026, agentic loop, no external runtime needed
+     - Updated comparison table to 5 columns (added llama.cpp)
+     - Added LM Studio confirmation dialog feature
+     - Added ollmcp Ollama Cloud support and Streamable HTTP transport
+     - Added MCPHost builtin servers, script mode, tool filtering features
+   - Updated `last_refreshed` to 2026-04-11
+
+2. **Hugo build** — successful, 1152 pages (unchanged).
+
+3. **Deploy** — pending (throttle, deploying shortly).
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page: google-drive-mcp-server (131 impressions)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **Content review cadence** — next round due ~April 19
+
 ## Run 595 — 2026-04-11 — Markdown charset fix + Citation Retrofit: Exa MCP Server + Deploy
 
 **Mode:** Developer (bug fix) + Copywriter (citation retrofit) + Developer (deploy)

@@ -4,10 +4,10 @@ date: 2026-03-28T02:30:00+09:00
 description: "A practical guide to running MCP (Model Context Protocol) with local LLMs via Ollama, LM Studio, MCPHost, and Open WebUI."
 content_type: "Guide"
 card_description: "Run MCP tools without cloud APIs. This guide covers how to connect Ollama, LM Studio, and other local model runtimes to MCP servers — with setup instructions, model recommendations, and practical configuration examples."
-last_refreshed: 2026-03-28
+last_refreshed: 2026-04-11
 ---
 
-MCP was designed by Anthropic for Claude, but the protocol is open and model-agnostic. You can run MCP servers with locally-hosted open source models — no API keys, no cloud dependencies, no data leaving your machine.
+MCP was [designed by Anthropic](https://modelcontextprotocol.io/) for Claude, but the protocol is open and model-agnostic. You can run MCP servers with locally-hosted open source models — no API keys, no cloud dependencies, no data leaving your machine.
 
 The trade-off is real: local models are less capable at tool calling than frontier models, and the setup requires more moving parts. But for privacy-sensitive workflows, offline environments, or experimentation, local MCP is a practical option today.
 
@@ -48,11 +48,11 @@ The key insight: MCP servers don't care what model is calling them. They speak t
 
 ## Option 1: MCPHost + Ollama
 
-MCPHost is a Go-based CLI that bridges Ollama (and other providers) to MCP servers. It's the most lightweight option — a single binary with no runtime dependencies.
+[MCPHost](https://github.com/mark3labs/mcphost) (1,600+ stars) is a Go-based CLI that bridges Ollama (and other providers) to MCP servers. It's the most lightweight option — a single binary with no runtime dependencies.
 
 ### Setup
 
-**Install Ollama and pull a model:**
+**[Install Ollama](https://ollama.com/download) and pull a model:**
 
 ```bash
 # Install Ollama (macOS/Linux)
@@ -109,18 +109,22 @@ MCPHost launches the MCP servers, connects to Ollama, and gives you an interacti
 
 - Supports Ollama, OpenAI-compatible APIs, Google Gemini, and Anthropic
 - Stdio and SSE transport for MCP servers
+- Interactive and [non-interactive conversation modes](https://github.com/mark3labs/mcphost#usage), plus script mode for YAML-based automation
+- Tool filtering with `allowedTools`/`excludedTools` for security control
+- [Builtin servers](https://github.com/mark3labs/mcphost#builtin-servers) (filesystem, bash, todo, http) — no external MCP server install needed for basics
 - Environment variable substitution in configs (`${env://API_KEY}`)
 - Hooks system for logging, security policies, and custom integrations
+- OAuth authentication support (Anthropic)
 
-## Option 2: ollmcp (MCP Client for Ollama)
+## Option 2: MCP Client for Ollama (ollmcp)
 
-ollmcp is a Python-based TUI (terminal user interface) client built specifically for Ollama + MCP. It's more feature-rich than MCPHost, with a polished interactive experience.
+[MCP Client for Ollama](https://github.com/jonigl/mcp-client-for-ollama) (590+ stars) is a Python-based TUI (terminal user interface) client built specifically for Ollama + MCP. It's more feature-rich than MCPHost, with a polished interactive experience.
 
 ### Setup
 
 ```bash
-# Install via pip
-pip install --upgrade ollmcp
+# Install via pip (available under both package names)
+pip install --upgrade mcp-client-for-ollama
 
 # Or one-step with uv
 uvx ollmcp
@@ -153,12 +157,13 @@ ollmcp -H http://192.168.1.100:11434 -j servers.json
 | Hot reload | Restart MCP servers during development without quitting |
 | Session export | Save/load conversation history as JSON |
 | Auto-discovery | Reads Claude Desktop's existing MCP configuration |
+| [Ollama Cloud](https://github.com/jonigl/mcp-client-for-ollama#ollama-cloud-support) | Access cloud-hosted models without a powerful local GPU |
 
-ollmcp defaults to `qwen2.5:7b` and exposes 15+ model parameters (temperature, context window, top-k, repeat penalty, etc.) through an interactive settings menu.
+ollmcp defaults to `qwen2.5:7b` and exposes [15+ model parameters](https://github.com/jonigl/mcp-client-for-ollama#model-parameters) (temperature, context window, top-k, repeat penalty, etc.) through an interactive settings menu. It supports three MCP transports: stdio, SSE, and Streamable HTTP.
 
 ## Option 3: LM Studio
 
-LM Studio provides a desktop application with built-in MCP support since version 0.3.17. It works as both an MCP client (connecting to external MCP servers) and an MCP server (exposing local models to other applications).
+LM Studio provides a desktop application with [built-in MCP support since version 0.3.17](https://lmstudio.ai/blog/lmstudio-v0.3.17). It works as both an MCP client (connecting to external MCP servers) and an MCP server (exposing local models to other applications).
 
 ### As MCP Client (Local Model → MCP Servers)
 
@@ -181,7 +186,7 @@ In LM Studio's right sidebar, switch to the "Program" tab, click "Install > Edit
 }
 ```
 
-LM Studio follows Cursor's `mcp.json` format. It supports both local stdio-based servers and remote HTTP/SSE servers.
+LM Studio uses its own [`mcp.json` format](https://lmstudio.ai/docs/app/mcp) (stored at `~/.lmstudio/mcp.json`). It supports both local stdio-based servers and remote HTTP/SSE servers. When a model attempts a tool call, LM Studio displays a [confirmation dialog](https://lmstudio.ai/docs/app/mcp) where you can inspect, approve, modify, or deny the action.
 
 ### As MCP Server (Other Apps → Local Model)
 
@@ -193,11 +198,11 @@ LM Studio's documentation emphasizes: never install MCP servers from untrusted s
 
 ## Option 4: Open WebUI + mcpo
 
-Open WebUI is a self-hosted web interface (similar to ChatGPT) that supports Ollama and has native MCP support since v0.6.31.
+Open WebUI is a self-hosted web interface (similar to ChatGPT) that supports Ollama and has [native MCP support since v0.6.31](https://docs.openwebui.com/features/extensibility/mcp/).
 
 ### Setup
 
-Open WebUI's native MCP uses Streamable HTTP transport only. For stdio-based MCP servers (the majority), you need **mcpo** — a proxy that converts stdio MCP servers into OpenAPI-compatible HTTP endpoints.
+Open WebUI's native MCP uses Streamable HTTP transport only (by design — it's a [web-based, multi-tenant environment](https://docs.openwebui.com/features/extensibility/mcp/)). For stdio-based MCP servers (the majority), you need **[mcpo](https://github.com/open-webui/mcpo)** — a proxy that converts stdio MCP servers into OpenAPI-compatible HTTP endpoints.
 
 ```bash
 # Install mcpo
@@ -217,7 +222,20 @@ Then in Open WebUI:
 
 Any model loaded in Open WebUI that supports tool calling can now use the connected MCP servers. The abstraction is model-agnostic — Ollama models, cloud APIs, or any OpenAI-compatible endpoint all work through the same interface.
 
-**Important:** Set the `WEBUI_SECRET_KEY` environment variable before configuring OAuth-based MCP servers, or authentication will break on container restarts.
+**Important:** Set the `WEBUI_SECRET_KEY` environment variable before configuring OAuth-based MCP servers, or authentication will break on container restarts. Open WebUI supports [OAuth 2.1 with dynamic client registration](https://docs.openwebui.com/features/extensibility/mcp/) for Streamable HTTP MCP servers.
+
+## Option 5: llama.cpp (Native MCP Client)
+
+As of March 2026, [llama.cpp merged full MCP client support](https://aiproductivity.ai/news/llamacpp-merges-mcp-support-agentic-loop/) into its built-in web UI — a major milestone for local MCP. The merge added MCP server management, tool calls with an agentic loop, MCP Prompts, and MCP Resources directly into `llama-server`.
+
+This means you can run MCP tools with any GGUF model through llama.cpp's web interface without any external bridge. The agentic loop lets the model call a tool, read the result, decide what to do next, and repeat — the same pattern used by Claude Code and Cursor's agent mode.
+
+```bash
+# Start llama-server with a model
+./llama-server -m qwen2.5-7b-instruct.gguf --port 8080
+```
+
+Then open the web UI at `http://localhost:8080` and configure MCP servers through the interface. This is the most direct path from "model file on disk" to "MCP tool usage" — no Ollama, no bridge, no proxy.
 
 ## Choosing the Right Local Model
 
@@ -232,12 +250,12 @@ Not all local models handle tool calling well. The model needs to reliably:
 
 | Model | Size | Tool Calling | Notes |
 |-------|------|--------------|-------|
-| **Qwen 2.5 Instruct** | 7B, 14B, 72B | Strong | Best balance of reliability and performance. Default in ollmcp |
-| **Llama 3.3 Instruct** | 8B, 70B | Good | Meta's latest with improved function calling |
+| **[Qwen 2.5 Instruct](https://qwenlm.github.io/blog/qwen2.5/)** | 7B, 14B, 32B, 72B | Strong | Best balance of reliability and performance. Default in ollmcp. [Native tool calling support](https://qwen.readthedocs.io/en/latest/framework/function_call.html) via Hermes-style template |
+| **[Llama 3.3 Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_3/)** | 70B | Good | Meta's latest with improved function calling. 128K context window. Performance comparable to Llama 3.1 405B |
 | **Mistral Instruct** | 7B, 22B | Good | Reliable for single-tool workflows |
-| **Hermes 3** | 8B, 70B | Good | Fine-tuned specifically for function calling |
-| **DeepSeek-R1** | 7B, 67B | Moderate | Better at reasoning, less reliable at strict tool schemas |
-| **Qwen3** | 8B, 32B, 72B | Strong | Supports thinking mode for complex tool chains |
+| **[Hermes 3](https://nousresearch.com/hermes3/)** | 8B, 70B, 405B | Good | [Fine-tuned specifically for function calling](https://github.com/NousResearch/Hermes-Function-Calling). Based on Llama 3.1 |
+| **[DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)** | 7B, 8B, 14B, 32B, 70B (distilled) | Moderate | Better at reasoning, [less reliable at strict tool schemas](https://github.com/deepseek-ai/DeepSeek-R1/issues/9). Community tool-calling variants available |
+| **[Qwen3](https://qwenlm.github.io/blog/qwen3/)** | 0.6B–32B (dense), 30B-A3B, 235B-A22B (MoE) | Strong | Supports thinking mode for complex tool chains. Leading open-source agentic performance |
 
 **Key guidelines:**
 
@@ -327,18 +345,18 @@ For SSE or HTTP-based MCP servers, specify a URL instead of a command:
 
 ## Comparison: Local MCP Clients
 
-| Feature | MCPHost | ollmcp | LM Studio | Open WebUI |
-|---------|---------|--------|-----------|------------|
-| **Type** | CLI | TUI | Desktop app | Web UI |
-| **Language** | Go | Python | Electron | Python |
-| **Setup complexity** | Low | Low | Very low | Medium |
-| **Model providers** | Ollama, OpenAI, Gemini, Anthropic | Ollama | Built-in (GGUF) | Ollama, OpenAI-compatible |
-| **MCP transports** | stdio, SSE | stdio, SSE, HTTP | stdio, HTTP | HTTP only (mcpo for stdio) |
-| **Multi-server** | Yes | Yes | Yes | Yes |
-| **Human-in-the-loop** | Via hooks | Built-in | No | No |
-| **Agent mode** | No | Yes (loop limits) | No | No |
-| **Session persistence** | No | JSON export/import | Chat history | Chat history |
-| **Best for** | Scripting, automation | Interactive development | Non-technical users | Teams, multi-user |
+| Feature | [MCPHost](https://github.com/mark3labs/mcphost) | [ollmcp](https://github.com/jonigl/mcp-client-for-ollama) | [LM Studio](https://lmstudio.ai/blog/lmstudio-v0.3.17) | [Open WebUI](https://docs.openwebui.com/features/extensibility/mcp/) | [llama.cpp](https://aiproductivity.ai/news/llamacpp-merges-mcp-support-agentic-loop/) |
+|---------|---------|--------|-----------|------------|-----------|
+| **Type** | CLI | TUI | Desktop app | Web UI | Web UI / CLI |
+| **Language** | Go | Python | Electron | Python | C/C++ |
+| **Setup complexity** | Low | Low | Very low | Medium | Medium |
+| **Model providers** | Ollama, OpenAI, Gemini, Anthropic | Ollama, Ollama Cloud | Built-in (GGUF) | Ollama, OpenAI-compatible | Built-in (GGUF) |
+| **MCP transports** | stdio, SSE | stdio, SSE, HTTP | stdio, HTTP | HTTP only ([mcpo](https://github.com/open-webui/mcpo) for stdio) | stdio |
+| **Multi-server** | Yes | Yes | Yes | Yes | Yes |
+| **Human-in-the-loop** | Via hooks | Built-in | Confirmation dialog | No | No |
+| **Agent mode** | Script mode | Yes (loop limits) | No | No | Yes (agentic loop) |
+| **Session persistence** | No | JSON export/import | Chat history | Chat history | Chat history |
+| **Best for** | Scripting, automation | Interactive development | Non-technical users | Teams, multi-user | Direct GGUF, no runtime |
 
 ## Limitations and Gotchas
 
@@ -355,7 +373,7 @@ For SSE or HTTP-based MCP servers, specify a URL instead of a command:
 ## Getting Started Checklist
 
 1. **Install Ollama** and pull `qwen2.5:7b` — the safest starting point for tool calling
-2. **Pick a bridge** — MCPHost for minimal setup, ollmcp for interactive use, LM Studio if you prefer a GUI
+2. **Pick a bridge** — MCPHost for minimal setup, ollmcp for interactive use, LM Studio if you prefer a GUI, or llama.cpp if you want native GGUF support with no runtime
 3. **Start with one MCP server** — the filesystem server is a good first test (`@modelcontextprotocol/server-filesystem`)
 4. **Test with simple prompts** — "List the files in /tmp" before attempting complex workflows
 5. **Scale up gradually** — add more servers, try larger models, attempt multi-step tool chains
@@ -376,4 +394,4 @@ Local MCP is practical today for focused, well-defined tool workflows. As open s
 
 ---
 
-*This guide is maintained by [ChatForest](https://chatforest.com), an AI-native content site. Written by AI, fact-checked against current documentation. Rob Nugen ([robnugen.com](https://robnugen.com)) operates the site. Last updated March 2026.*
+*This guide is maintained by [ChatForest](https://chatforest.com), an AI-native content site. Written by AI, fact-checked against current documentation. [Rob Nugen](https://robnugen.com) operates the site. Last updated April 2026.*
