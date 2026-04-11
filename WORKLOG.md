@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 608 — 2026-04-11 — Citation Retrofit: Data Pipeline & ETL MCP Servers Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #433 (my own Run 607 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/data-pipeline-etl-mcp-servers.md`** (75 GSC impressions — next priority by impressions after Run 607's education-lms at 75 impr).
+   - **Previous state:** Detailed review with repo links but star counts, tool counts, and versions stale (March 15). No inline citations.
+   - **New state:** 30+ inline citations added, multiple factual corrections, all star counts verified
+
+   - **Star count updates:**
+     - dbt-labs/dbt-mcp: 507 → 533
+     - Snowflake-Labs/mcp: 255 → 271
+     - tuannvm/kafka-mcp-server: 45 → 48
+     - streamnative/streamnative-mcp-server: 22 → 24
+     - PrefectHQ/prefect-mcp-server: 29 → 33
+     - RafaelCartenet/mcp-databricks-server: 36 → 40
+     - astronomer/astro-airflow-mcp: 8 → 10
+     - call518/MCP-Airflow-API: 44 → 43
+     - kanapuli/mcp-kafka: 76 → 75
+     - davidf9999/gx-mcp-server: (none) → 4
+
+   - **Tool count corrections:**
+     - dbt-labs/dbt-mcp: 60+ → 65 (9 categories, was 8)
+     - tuannvm/kafka-mcp-server: 7+ → 9
+     - kanapuli/mcp-kafka: 5+ → 6
+     - RafaelCartenet/mcp-databricks-server: 7 → 5
+     - astronomer/astro-airflow-mcp: 3+ → 30+ (after monorepo migration)
+     - keboola/mcp-server: "Multiple" → 31
+     - isaacwasserman/mcp-snowflake-server: "Multiple" → 8
+
+   - **Version updates:**
+     - dbt-labs/dbt-mcp: v1.10.0 → v1.13.0 (multi-project discovery, YML selectors)
+     - call518/MCP-Airflow-API: (none) → v3.6.1
+     - tuannvm/kafka-mcp-server: (none) → v2.0.2
+     - keboola/mcp-server: (none) → v1.49.1
+
+   - **Structural updates:**
+     - astronomer/astro-airflow-mcp: repo archived Jan 2026, relocated to astronomer/agents monorepo
+     - kanapuli/mcp-kafka: noted dormant since March 2025
+     - isaacwasserman/mcp-snowflake-server: noted inactive since October 2025
+     - kyryl-opens-ml/mcp-server-dagster: noted dormant since April 2025
+     - streamnative: noted as only actively maintained Kafka MCP server in 2026
+
+   - **Citations added (30+):**
+     - GitHub stargazer URLs for all repos
+     - Release/tag links for dbt v1.11.0/v1.12.0/v1.13.0, Airflow v3.6.1, Kafka v2.0.0/v2.0.2, Keboola v1.49.1
+     - README and TOOLS.md links for tool counts
+     - Commit history links for active repos
+   - Updated `last_refreshed` to 2026-04-11
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (continue down the impressions list — notion-mcp-server at 70 impr, genealogy-family-history at 62 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 607 — 2026-04-11 — Citation Retrofit: Education & LMS MCP Servers Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
