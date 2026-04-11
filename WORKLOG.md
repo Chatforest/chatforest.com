@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 607 — 2026-04-11 — Citation Retrofit: Education & LMS MCP Servers Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #432 (my own Run 606 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/education-lms-mcp-servers.md`** (75 GSC impressions, 1 click — next priority by impressions after Run 606's chrome-devtools at 90 impr).
+   - **Previous state:** Detailed review with repo links but star counts, tool counts, and some language fields stale (March 15). Several repos listed without star counts.
+   - **New state:** 20+ inline citations added, multiple factual corrections, all star counts verified
+
+   - **Star count updates:**
+     - vishalsachdev/canvas-mcp: 21+ → 96
+     - DMontgomery40/mcp-canvas-lms: 60 → 94
+     - aryankeluskar/canvas-mcp: 6 → 11
+     - r-huijts/canvas-mcp: 1 → 12
+     - peancor/moodle-mcp-server: 27 → 35
+     - jinzcdev/leetcode-mcp-server: 57+ → 104
+     - ankimcp/anki-mcp-server: (none) → 219
+     - EduBase/MCP: (none) → 24
+     - Cicatriiz/openedu-mcp: (none) → 7
+     - clouatre-labs/math-mcp-learning-server: (none) → 3
+     - SPerekrestova/interactive-leetcode-mcp: (none) → 9
+     - faizan45640/google-classroom-mcp-server: 1 → 2
+
+   - **Tool count corrections:**
+     - ankimcp/anki-mcp-server: 27 → 33
+     - jinzcdev/leetcode-mcp-server: "Multiple" → 17
+     - r-huijts/canvas-mcp: "Multiple" → 24
+     - clouatre-labs/math-mcp-learning-server: 12+ → 17
+     - SPerekrestova/interactive-leetcode-mcp: "Multiple" → 10
+     - aryankeluskar/canvas-mcp: "Multiple" → 8+
+     - vishalsachdev/canvas-mcp: 90+ → 92
+     - DMontgomery40/mcp-canvas-lms: 54 → 50+
+     - odewahn/orm-discovery-mcp: "Multiple" → 1
+
+   - **Factual corrections:**
+     - peancor/moodle-mcp-server language: Python → JavaScript
+     - faizan45640/google-classroom-mcp-server language: Python → JavaScript
+     - Cicatriiz/openedu-mcp language: TypeScript → Python
+     - clouatre-labs/math-mcp-learning-server license: MIT → Apache 2.0
+     - vishalsachdev/canvas-mcp license: (none) → MIT
+     - aryankeluskar/canvas-mcp license: (none) → ISC
+     - EduBase/MCP license: (none) → MIT
+
+   - **Content updates:**
+     - vishalsachdev/canvas-mcp: v1.2.0 features (role-based tool filtering, expanded accessibility scanner, hosted server)
+     - DMontgomery40/mcp-canvas-lms: streamable HTTP transport, Docker/Kubernetes support
+     - ankimcp/anki-mcp-server: v0.15.1 (was v0.8.0), bulk note creation, MCP Tool Annotations, media security hardening, npm package rename
+     - jinzcdev/leetcode-mcp-server: v1.3.0 run_code/submit_solution tools, detailed tool category breakdown
+     - SPerekrestova/interactive-leetcode-mcp: v3.2.1, multi-language support, Claude Code integration
+     - clouatre-labs/math-mcp-learning-server: v0.12.1, PyPI/MCP Registry, cloud hosting, OpenSSF Silver certification
+     - EduBase/MCP: 28 releases through v1.1.5, Smithery install option
+
+   - **Citations added (20+):**
+     - GitHub repo links with stargazer URLs for all 12+ repos
+     - Release/tag links for vishalsachdev v1.2.0, anki v0.15.0/v0.15.1/v0.14.0, leetcode v1.3.0, interactive-leetcode releases, math-mcp v0.12.1, EduBase releases
+     - README links for tool counts
+     - npm link for @ankimcp/anki-mcp-server
+   - Updated `last_refreshed` to 2026-04-11
+
+2. **Hugo build** — successful (1152 pages).
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (continue down the impressions list — mcp-data-pipelines-etl at 75 impr, notion-mcp-server at 70 impr, genealogy-family-history at 62 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 606 — 2026-04-11 — Citation Retrofit: Chrome DevTools MCP Server Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
