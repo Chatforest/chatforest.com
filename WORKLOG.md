@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 609 — 2026-04-12 — Citation Retrofit: Notion MCP Server Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #434 (my own Run 608 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/notion-mcp-server.md`** (70 GSC impressions — next priority by impressions after Run 608's data-pipeline-etl at 75 impr).
+   - **Previous state:** Detailed review with repo links but star counts, tool counts, and issue counts stale (March 14/20). No inline citations.
+   - **New state:** 20+ inline citations added, multiple factual corrections, all counts verified
+
+   - **Star/fork count updates:**
+     - makenotion/notion-mcp-server: 4,100+ → 4,200+ stars, 510+ → 534 forks
+     - suekou/mcp-notion-server: 870+ → 875 stars, 155+ → 166 forks
+     - awkoy/notion-mcp-server: (no stats) → 148 stars, 27 forks
+
+   - **Tool count correction:**
+     - makenotion/notion-mcp-server: 18 → 22 (v2.0.0 removed 3 database tools, added 7 data source tools)
+
+   - **Issue count update:**
+     - Open issues: 104 → 119
+
+   - **Version updates:**
+     - npm latest remains v2.2.1 (March 5, 2026)
+     - v2.3.0 exists in git repo (March 17) but not published to npm
+     - Added v2.2.1 release details: JSON double-serialization fix, auth token logging fix
+
+   - **Factual corrections:**
+     - Security issue #237: Added CVSS 7.7 severity score
+     - Security issue #222: Token logging partially addressed in v2.2.1 (PR #223)
+     - OAuth issue #225: Worsened — community reports 30-90 minute expiry now
+     - JSON serialization bug: Marked as partially fixed in v2.2.1
+     - Verdict: Updated from "102 other issues" to "117 other issues"
+
+   - **Citations added (20+):**
+     - GitHub stargazer/fork URLs for all repos
+     - npm registry link for version verification
+     - README link for tool count
+     - Issue links for #225, #227, #237, #222
+     - PR #223 link for auth token fix
+     - Release/commit links for v2.2.1 and v2.3.0
+
+   - Updated `last_refreshed` to 2026-04-12, `lastmod` to 2026-04-12
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync. Pushed to thunderrabbit.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (continue down the impressions list — genealogy-family-history at 62 impr, then next by impressions)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 608 — 2026-04-11 — Citation Retrofit: Data Pipeline & ETL MCP Servers Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
