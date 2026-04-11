@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 605 — 2026-04-11 — Citation Retrofit: Figma Dev Mode MCP Server Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #430 (my own Run 604 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/figma-dev-mode-mcp-server.md`** (92 GSC impressions, next priority per Run 604).
+   - **Previous state:** Detailed review with some repo links but most claims (star counts, pricing, rate limits, announcements, CVE) lacked source URLs
+   - **New state:** 15+ inline citations added, multiple factual corrections
+
+   - **Star count updates:**
+     - figma/mcp-server-guide: 443 → 1,069
+     - GLips/Figma-Context-MCP (Framelink): 13,800 → 14,273
+
+   - **Factual corrections:**
+     - OpenAI Codex partnership date: February 25 → February 26, 2026
+     - Framelink npm downloads: ~11,600/week → ~153K/week (13x increase!)
+     - Framelink latest version: v0.7.1 → v0.10.1
+     - Star ratio in comparison: "31x" → "13x" (after guide repo grew from 443 to 1,069)
+     - Rate limit precision: Pro 15/min vs Org 20/min (was lumped as "15-20/min")
+
+   - **Citations added:**
+     - [Figma developer docs](https://developers.figma.com/docs/figma-mcp-server/) — official MCP server documentation
+     - [GitHub blog](https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code/) — code-to-canvas VS Code expansion
+     - [OpenAI partnership](https://openai.com/index/figma-partnership/) — Codex integration
+     - [Figma pricing](https://www.figma.com/pricing/) — Dev/Full seat costs
+     - [Plans & permissions](https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/) — rate limit tiers
+     - [Tools & prompts docs](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/) — create_design_system_rules
+     - [Code Connect docs](https://developers.figma.com/docs/code-connect/) — multi-framework support
+     - [AI credits help](https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits) — pay-as-you-go pricing ($0.03/credit)
+     - [CVE-2025-15061 advisory](https://github.com/advisories/GHSA-8675-cg27-5c39) — Framelink RCE vulnerability
+     - [npm registry](https://www.npmjs.com/package/figma-developer-mcp) — Framelink download stats
+     - GitHub repo links for both guide repo and Framelink in comparison table
+   - Updated `last_refreshed` to 2026-04-11
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+4. **GitHub push** to thunderrabbit remote — successful.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page: chrome-devtools-mcp-server (90 impr, 2 clicks)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 604 — 2026-04-11 — Citation Retrofit: Digital Twins, 3D Modeling & Simulation Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
