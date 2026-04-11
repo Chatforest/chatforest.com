@@ -2,10 +2,10 @@
 title: "Education & LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More"
 date: 2026-03-15T10:26:00+09:00
 description: "Education and LMS MCP servers are connecting AI agents to learning management systems, study tools, and educational content via the Model Context Protocol."
-og_description: "Education & LMS MCP servers: Canvas dominates with 6+ implementations — vishalsachdev/canvas-mcp (90+ tools, FERPA-compliant bulk grading), DMontgomery40/mcp-canvas-lms (60 stars, 54 tools). Also Moodle (27 stars, read/write), Google Classroom, Brightspace, Anki (27 tools), LeetCode (57+ stars), EduBase, O'Reilly Learning, math tutoring, academic research. 30+ servers reviewed. Rating: 3.5/5."
+og_description: "Education & LMS MCP servers: Canvas dominates with 6+ implementations — vishalsachdev/canvas-mcp (96 stars, 92 tools, FERPA-compliant bulk grading), DMontgomery40/mcp-canvas-lms (94 stars, 50+ tools). Also Moodle (35 stars, read/write), Google Classroom, Brightspace, Anki (219 stars, 33 tools), LeetCode (104 stars, 17 tools), EduBase (24 stars), O'Reilly Learning, math tutoring, academic research. 30+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Education and LMS MCP servers across learning management systems, educational content platforms, spaced repetition tools, coding education, math tutoring, and academic research. Canvas LMS is the runaway leader — no other platform comes close to the depth of MCP integration. Six independent Canvas MCP servers have emerged, led by vishalsachdev/canvas-mcp with 90+ tools spanning course management, discussion boards, rubric-based bulk grading, assignment analytics, and code execution — all with FERPA-compliant data anonymization. DMontgomery40/mcp-canvas-lms (60 stars, MIT) provides 54 tools as the most starred Canvas server. The diversity of Canvas implementations (Python, TypeScript, some combining Gradescope or macOS Calendar integration) reflects genuine student and instructor demand. Moodle, the world's most widely deployed open-source LMS, has peancor/moodle-mcp-server (27 stars) with 8+ tools for student management, assignments, quizzes, and grading — importantly with read AND write access for providing feedback. Google Classroom has minimal coverage (3 tools), while D2L Brightspace has a creative web-scraping approach since students lack official API access. Educational content servers include EduBase/MCP (official, full e-learning platform with advanced quiz parametrization, SCORM support, and cheating detection), openedu-mcp (20+ tools aggregating OpenLibrary/Wikipedia/arXiv/Dictionary APIs with grade-level filtering), and O'Reilly's official discovery MCP (built by their CTO). Spaced repetition is well-served by ankimcp/anki-mcp-server with 27 tools covering deck sync, card review, note management with media files, and evidence-based flashcard creation prompts. Coding education features jinzcdev/leetcode-mcp-server (57+ stars) supporting both global and Chinese LeetCode with advanced search, plus interactive-leetcode-mcp enforcing pedagogical best practices with progressive 4-level hints before revealing solutions. Math tutoring gets a dedicated server with 12+ tools for calculation, statistics, plotting, and formula explanation. The category earns 3.5/5 — Canvas integration is genuinely impressive, spaced repetition and coding education are well-covered, but massive gaps remain. No Blackboard, Khan Academy, Coursera, edX, Duolingo, or PowerSchool MCP servers exist. The positive signal: Instructure (Canvas vendor) announced IgniteAgent at InstructureCon 2025 with MCP as its integration standard — the first major LMS vendor to officially adopt the protocol, expected in 2026."
-last_refreshed: 2026-03-15
+card_description: "Education and LMS MCP servers across learning management systems, educational content platforms, spaced repetition tools, coding education, math tutoring, and academic research. Canvas LMS is the runaway leader — no other platform comes close to the depth of MCP integration. Six independent Canvas MCP servers have emerged, led by vishalsachdev/canvas-mcp (96 stars) with 92 tools spanning course management, discussion boards, rubric-based bulk grading, assignment analytics, and code execution — all with FERPA-compliant data anonymization. DMontgomery40/mcp-canvas-lms (94 stars, MIT) provides 50+ tools as the most starred Canvas server. The diversity of Canvas implementations (Python, TypeScript, some combining Gradescope or macOS Calendar integration) reflects genuine student and instructor demand. Moodle, the world's most widely deployed open-source LMS, has peancor/moodle-mcp-server (35 stars) with 10 tools for student management, assignments, quizzes, and grading — importantly with read AND write access for providing feedback. Google Classroom has minimal coverage (3 tools), while D2L Brightspace has a creative web-scraping approach since students lack official API access. Educational content servers include EduBase/MCP (24 stars, official, full e-learning platform with advanced quiz parametrization, SCORM support, and cheating detection), openedu-mcp (21+ tools aggregating OpenLibrary/Wikipedia/arXiv/Dictionary APIs with grade-level filtering), and O'Reilly's official discovery MCP (built by their CTO). Spaced repetition is well-served by ankimcp/anki-mcp-server (219 stars) with 33 tools covering deck sync, card review, note management with media files, and evidence-based flashcard creation prompts. Coding education features jinzcdev/leetcode-mcp-server (104 stars) supporting both global and Chinese LeetCode with 17 tools including code execution and submission, plus interactive-leetcode-mcp enforcing pedagogical best practices with progressive 4-level hints before revealing solutions. Math tutoring gets a dedicated server with 17 tools for calculation, statistics, plotting, and formula explanation. The category earns 3.5/5 — Canvas integration is genuinely impressive, spaced repetition and coding education are well-covered, but massive gaps remain. No Blackboard, Khan Academy, Coursera, edX, Duolingo, or PowerSchool MCP servers exist. The positive signal: Instructure (Canvas vendor) announced IgniteAgent at InstructureCon 2025 with MCP as its integration standard — the first major LMS vendor to officially adopt the protocol, expected in 2026."
+last_refreshed: 2026-04-11
 ---
 
 *Part of the [Education & Learning](/categories/education-learning/) category.*
@@ -14,7 +14,7 @@ Education and LMS MCP servers are connecting AI agents to learning management sy
 
 The landscape spans seven areas: **LMS platforms** (Canvas dominates with 6+ implementations, plus Moodle, Google Classroom, and Brightspace), **educational content** (e-learning platforms and open educational resource aggregators), **spaced repetition** (Anki integration), **coding education** (LeetCode problem access and guided learning), **math and tutoring** (calculation, visualization, and interactive teaching), **academic research** (unified scholarly search), and **language learning** (dictionary tools).
 
-The headline findings: **Canvas LMS has more MCP implementations than any other education platform** — six independent servers from both instructor and student perspectives. **vishalsachdev/canvas-mcp leads with 90+ tools** including FERPA-compliant data anonymization and rubric-based bulk grading. **DMontgomery40/mcp-canvas-lms is the most starred** at 60 stars with 54 tools. **ankimcp/anki-mcp-server provides the deepest study tool integration** with 27 tools for full Anki deck and card management. **jinzcdev/leetcode-mcp-server supports both leetcode.com and leetcode.cn** with advanced search and filtering. **Instructure announced IgniteAgent** — the first major LMS vendor to officially adopt MCP as its agent integration standard. **No Blackboard, Khan Academy, Coursera, edX, or Duolingo MCP servers exist** despite their massive user bases.
+The headline findings: **Canvas LMS has more MCP implementations than any other education platform** — six independent servers from both instructor and student perspectives. **[vishalsachdev/canvas-mcp](https://github.com/vishalsachdev/canvas-mcp) leads with [92 tools and 8 agent skills](https://github.com/vishalsachdev/canvas-mcp/releases/tag/v1.2.0)** (96 stars) including FERPA-compliant data anonymization and rubric-based bulk grading. **[DMontgomery40/mcp-canvas-lms](https://github.com/DMontgomery40/mcp-canvas-lms) is the most starred** at 94 stars with 50+ tools. **[ankimcp/anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) provides the deepest study tool integration** with [33 tools](https://github.com/ankimcp/anki-mcp-server/releases/tag/v0.15.0) (219 stars) for full Anki deck and card management. **[jinzcdev/leetcode-mcp-server](https://github.com/jinzcdev/leetcode-mcp-server) supports both leetcode.com and leetcode.cn** (104 stars) with [17 tools including code execution and submission](https://github.com/jinzcdev/leetcode-mcp-server/releases/tag/v1.3.0). **Instructure announced IgniteAgent** — the first major LMS vendor to officially adopt MCP as its agent integration standard. **No Blackboard, Khan Academy, Coursera, edX, or Duolingo MCP servers exist** despite their massive user bases.
 
 ## LMS Platforms — Canvas
 
@@ -22,9 +22,9 @@ The headline findings: **Canvas LMS has more MCP implementations than any other 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [vishalsachdev/canvas-mcp](https://github.com/vishalsachdev/canvas-mcp) | 21+ | Python | — | 90+ |
+| [vishalsachdev/canvas-mcp](https://github.com/vishalsachdev/canvas-mcp) | [96](https://github.com/vishalsachdev/canvas-mcp/stargazers) | Python | MIT | [92](https://github.com/vishalsachdev/canvas-mcp/releases/tag/v1.2.0) |
 
-The most comprehensive Canvas MCP server by a wide margin. Provides **90+ tools and 8 agent skills** covering the full Canvas LMS workflow:
+The most comprehensive Canvas MCP server by a wide margin. Provides **[92 tools and 8 agent skills](https://github.com/vishalsachdev/canvas-mcp#readme)** covering the full Canvas LMS workflow:
 
 - **Course management** — list courses, access syllabi, modules, pages
 - **Discussion and announcement tools** — create and manage forum interactions
@@ -33,28 +33,28 @@ The most comprehensive Canvas MCP server by a wide margin. Provides **90+ tools 
 - **FERPA-compliant data anonymization** — student data privacy built into the server design
 - **Code execution environment** — run code against the Canvas API directly
 
-Ships with separate Student Guide and Educator Guide documentation. Compatible with Claude Desktop, Cursor, Codex, Windsurf, and 40+ other agents.
+Ships with separate Student Guide and Educator Guide documentation. Compatible with Claude Desktop, Cursor, Codex, Windsurf, and 40+ other agents. [v1.2.0](https://github.com/vishalsachdev/canvas-mcp/releases/tag/v1.2.0) (April 2026) added role-based tool filtering via `CANVAS_ROLE` environment variable, expanded accessibility scanner from 4 to 20 WCAG checks with automated remediation, and Windows compatibility improvements. Also available as a hosted server at mcp.illinihunt.org.
 
 ### DMontgomery40/mcp-canvas-lms (Most Starred)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [DMontgomery40/mcp-canvas-lms](https://github.com/DMontgomery40/mcp-canvas-lms) | 60 | TypeScript | MIT | 54 |
+| [DMontgomery40/mcp-canvas-lms](https://github.com/DMontgomery40/mcp-canvas-lms) | [94](https://github.com/DMontgomery40/mcp-canvas-lms/stargazers) | TypeScript | MIT | [50+](https://github.com/DMontgomery40/mcp-canvas-lms#readme) |
 
-The most starred Canvas MCP server with **54 tools** (v2.2) organized around core LMS operations:
+The most starred Canvas MCP server with **50+ tools** (Core Student: 33, Instructor: 13, Account Management: 7) organized around core LMS operations:
 
 - **Course management** — courses, modules, content pages
 - **Assignments and submissions** — create, manage, grade
 - **Enrollment management** — student and instructor role handling
 - **Grade management** — gradebook access and updates
 
-TypeScript implementation with clean API design. The MIT license and active maintenance make this the most accessible Canvas server for developers building integrations.
+TypeScript implementation with clean API design. Now supports [streamable HTTP transport](https://github.com/DMontgomery40/mcp-canvas-lms) for containerized deployments (Docker/Kubernetes). The MIT license and active maintenance make this the most accessible Canvas server for developers building integrations.
 
 ### aryankeluskar/canvas-mcp (Canvas + Gradescope)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [aryankeluskar/canvas-mcp](https://github.com/aryankeluskar/canvas-mcp) | 6 | TypeScript | — | Multiple |
+| [aryankeluskar/canvas-mcp](https://github.com/aryankeluskar/canvas-mcp) | [11](https://github.com/aryankeluskar/canvas-mcp/stargazers) | TypeScript | ISC | 8+ |
 
 Unique dual integration combining **Canvas LMS and Gradescope** in one server. Natural language queries for courses and assignments, submission status tracking across both platforms. Uses Gemini API for intelligent resource search across course materials.
 
@@ -70,7 +70,7 @@ A student-focused server combining **Canvas, Gradescope, and macOS Calendar/Remi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [r-huijts/canvas-mcp](https://github.com/r-huijts/canvas-mcp) | 1 | TypeScript | — | Multiple |
+| [r-huijts/canvas-mcp](https://github.com/r-huijts/canvas-mcp) | [12](https://github.com/r-huijts/canvas-mcp/stargazers) | TypeScript | — | [24](https://github.com/r-huijts/canvas-mcp#readme) |
 
 Available as a **Claude Desktop Extension** for one-click installation. Privacy-by-default design — student data anonymized automatically. API tokens stored in the OS keychain rather than config files. Covers courses, announcements, rubrics, assignments, modules, pages, and student data.
 
@@ -89,7 +89,7 @@ Instructure, the company behind Canvas LMS, announced **IgniteAgent** at Instruc
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [peancor/moodle-mcp-server](https://github.com/peancor/moodle-mcp-server) | 27 | Python | MIT | 8+ |
+| [peancor/moodle-mcp-server](https://github.com/peancor/moodle-mcp-server) | [35](https://github.com/peancor/moodle-mcp-server/stargazers) | JavaScript | MIT | [10](https://github.com/peancor/moodle-mcp-server#readme) |
 
 The most complete Moodle MCP server, and notably one of the few education servers with **full read AND write access**:
 
@@ -115,7 +115,7 @@ A lightweight Moodle server focused on **event retrieval** via FastMCP. Primaril
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [faizan45640/google-classroom-mcp-server](https://github.com/faizan45640/google-classroom-mcp-server) | 1 | Python | MIT | 3 |
+| [faizan45640/google-classroom-mcp-server](https://github.com/faizan45640/google-classroom-mcp-server) | [2](https://github.com/faizan45640/google-classroom-mcp-server/stargazers) | JavaScript | MIT | 3 |
 
 Basic Google Classroom integration with three tools: course listing, course details, and assignment access. Requires Google API credentials and OAuth setup. Given Google Classroom's massive deployment in K-12 education, the minimal MCP coverage here is a notable gap.
 
@@ -133,7 +133,7 @@ A creative solution for **D2L Brightspace** — since students lack official API
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [EduBase/MCP](https://github.com/EduBase/MCP) | — | Node.js/TypeScript | — | Many |
+| [EduBase/MCP](https://github.com/EduBase/MCP) | [24](https://github.com/EduBase/MCP/stargazers) | TypeScript | [MIT](https://github.com/EduBase/MCP/blob/main/LICENSE) | Many |
 
 Official MCP server from the **EduBase e-learning platform**, exposing the full platform API as MCP tools (each endpoint becomes a tool named `edubase_<method>_<endpoint>`). Key capabilities:
 
@@ -144,13 +144,13 @@ Official MCP server from the **EduBase e-learning platform**, exposing the full 
 - **GDPR compliance** — data protection built in
 - **Triple transport** — stdio, SSE, and streamable HTTP
 
-Supports Docker deployment for self-hosted instances.
+Supports Docker deployment for self-hosted instances. Very actively maintained with [28 releases](https://github.com/EduBase/MCP/releases) through v1.1.5 (April 2026). Also installable via [Smithery](https://github.com/EduBase/MCP#readme) or remote MCP server.
 
 ### Cicatriiz/openedu-mcp (Open Educational Resources)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Cicatriiz/openedu-mcp](https://github.com/Cicatriiz/openedu-mcp) | — | TypeScript | MIT | 20+ |
+| [Cicatriiz/openedu-mcp](https://github.com/Cicatriiz/openedu-mcp) | [7](https://github.com/Cicatriiz/openedu-mcp/stargazers) | Python | — | [21+](https://github.com/Cicatriiz/openedu-mcp#readme) |
 
 An educational resource discovery server aggregating **four free APIs** into a unified interface:
 
@@ -165,9 +165,9 @@ Includes **grade-level appropriateness filtering** for K-12 contexts and curricu
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [odewahn/orm-discovery-mcp](https://github.com/odewahn/orm-discovery-mcp) | 3 | — | — | Multiple |
+| [odewahn/orm-discovery-mcp](https://github.com/odewahn/orm-discovery-mcp) | 3 | Python | — | [1](https://github.com/odewahn/orm-discovery-mcp#readme) |
 
-Built by **O'Reilly CTO Andrew Odewahn**, this official server provides search access to O'Reilly's extensive technical book and article library. Returns structured metadata including titles, authors, ratings, and direct URLs. Launched November 2025. Requires an O'Reilly subscription for full content access.
+Built by **[O'Reilly CTO Andrew Odewahn](https://github.com/odewahn)**, this official server provides search access to O'Reilly's extensive technical book and article library via a single `search_content` tool. Returns structured metadata including titles, authors, ratings, and direct URLs. Launched November 2025. Requires an O'Reilly subscription for full content access.
 
 ### EduChain MCP Servers (AI Content Generation)
 
@@ -200,9 +200,9 @@ Covers schools, districts, colleges, and universities using data from CCD, IPEDS
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ankimcp/anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) | — | TypeScript | — | 27 |
+| [ankimcp/anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) | [219](https://github.com/ankimcp/anki-mcp-server/stargazers) | TypeScript | — | [33](https://github.com/ankimcp/anki-mcp-server/releases/tag/v0.15.0) |
 
-The most feature-rich study tool MCP server with **27 tools** for full Anki integration:
+The most feature-rich study tool MCP server with **[33 tools](https://github.com/ankimcp/anki-mcp-server/releases/tag/v0.15.0)** for full Anki integration:
 
 - **Deck management** — sync, create, list, organize decks
 - **Card review** — study cards through the MCP interface
@@ -210,7 +210,7 @@ The most feature-rich study tool MCP server with **27 tools** for full Anki inte
 - **Evidence-based creation** — includes a `twenty_rules` prompt implementing SuperMemo's 20 Rules of Formulating Knowledge for optimal flashcard design
 - **Dual modes** — STDIO for desktop clients, Web mode (with integrated ngrok tunneling) for Claude.ai and ChatGPT
 
-Currently at v0.8.0 (active beta). Requires Anki desktop running locally.
+Currently at [v0.15.1](https://github.com/ankimcp/anki-mcp-server/releases/tag/v0.15.1) (active beta, April 2026). Recent releases added [bulk note creation](https://github.com/ankimcp/anki-mcp-server/releases/tag/v0.14.0) (up to 100 notes per call), [MCP Tool Annotations](https://github.com/ankimcp/anki-mcp-server/releases/tag/v0.15.0) with structured metadata, and media security hardening (MIME allowlists, SSRF prevention, filename sanitization). Published on npm as [@ankimcp/anki-mcp-server](https://www.npmjs.com/package/@ankimcp/anki-mcp-server). Requires Anki desktop running locally.
 
 ### Other Anki Servers
 
@@ -226,23 +226,23 @@ The presence of 4+ Anki MCP servers reflects strong demand from the spaced repet
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [jinzcdev/leetcode-mcp-server](https://github.com/jinzcdev/leetcode-mcp-server) | 57+ | TypeScript | MIT | Multiple |
+| [jinzcdev/leetcode-mcp-server](https://github.com/jinzcdev/leetcode-mcp-server) | [104](https://github.com/jinzcdev/leetcode-mcp-server/stargazers) | TypeScript | MIT | [17](https://github.com/jinzcdev/leetcode-mcp-server/releases/tag/v1.3.0) |
 
-The most starred coding education MCP server, supporting both **leetcode.com (Global) and leetcode.cn (China)**:
+The most starred coding education MCP server, supporting both **leetcode.com (Global) and leetcode.cn (China)** with [17 tools](https://github.com/jinzcdev/leetcode-mcp-server#readme) across five categories:
 
-- **Problem data retrieval** — question details, constraints, examples
-- **Advanced search** — filter by tags, difficulty, topic
-- **Solution access** — community and official solutions
-- **User data** — submission history, solved problems (with optional authentication)
-- **Contest information** — competition details and standings
+- **Problems** (3 tools) — question details, constraints, examples, advanced search by tags/difficulty/topic
+- **Users** (7 tools) — profiles, submission history, solved problems (with optional authentication)
+- **Submissions** (2 tools) — submission retrieval and history
+- **Notes** (3 tools) — personal notes management
+- **Solutions** (2 tools) — community and official solutions
 
-Published on NPM for easy installation. The dual-region support makes this the only coding education server serving both English and Chinese-speaking developer communities.
+[v1.3.0](https://github.com/jinzcdev/leetcode-mcp-server/releases/tag/v1.3.0) (March 2025) added **run_code and submit_solution tools** — agents can now execute code against LeetCode test cases and submit solutions directly, not just read problems. Published on [NPM](https://www.npmjs.com/package/leetcode-mcp-server) for easy installation. The dual-region support makes this the only coding education server serving both English and Chinese-speaking developer communities.
 
 ### SPerekrestova/interactive-leetcode-mcp (Pedagogical)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [SPerekrestova/interactive-leetcode-mcp](https://github.com/SPerekrestova/interactive-leetcode-mcp) | — | TypeScript | — | Multiple |
+| [SPerekrestova/interactive-leetcode-mcp](https://github.com/SPerekrestova/interactive-leetcode-mcp) | [9](https://github.com/SPerekrestova/interactive-leetcode-mcp/stargazers) | TypeScript | MIT | [10](https://github.com/SPerekrestova/interactive-leetcode-mcp#readme) |
 
 Takes a deliberately **pedagogical approach** to coding education. Instead of just providing answers, it enforces progressive learning:
 
@@ -250,7 +250,7 @@ Takes a deliberately **pedagogical approach** to coding education. Instead of ju
 - **Pedagogical best practices** — encourages independent problem-solving
 - **Agent skill** — structured session flow for guided DSA (Data Structures & Algorithms) learning
 
-This design philosophy — making AI assist learning rather than bypass it — is a standout in the education MCP space.
+Now at [v3.2.1](https://github.com/SPerekrestova/interactive-leetcode-mcp/releases) with multi-language support (Java, Python, C++, JavaScript, TypeScript) and Claude Code/ClawHub integrations. This design philosophy — making AI assist learning rather than bypass it — is a standout in the education MCP space.
 
 ### doggybee/mcp-server-leetcode
 
@@ -266,9 +266,9 @@ LeetCode access via GraphQL with metadata filtering, user profiles, submission h
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [clouatre-labs/math-mcp-learning-server](https://github.com/clouatre-labs/math-mcp-learning-server) | — | Python | MIT | 12+ |
+| [clouatre-labs/math-mcp-learning-server](https://github.com/clouatre-labs/math-mcp-learning-server) | [3](https://github.com/clouatre-labs/math-mcp-learning-server/stargazers) | Python | Apache 2.0 | [17](https://github.com/clouatre-labs/math-mcp-learning-server/releases/tag/v0.12.1) |
 
-A dedicated math education server with a mix of **calculation, visualization, and tutoring tools**:
+A dedicated math education server with **[17 tools](https://github.com/clouatre-labs/math-mcp-learning-server#readme)** across workspace, math, matrix, and visualization categories:
 
 - **calculate** / **statistics** / **compound_interest** / **matrix_multiply** — math operations
 - **convert_units** — unit conversion
@@ -276,7 +276,7 @@ A dedicated math education server with a mix of **calculation, visualization, an
 - **math_tutor** — interactive math tutoring prompts
 - **formula_explainer** — break down mathematical formulas step by step
 
-Built with FastMCP 2.0, includes persistent workspace for ongoing calculations.
+Built with FastMCP 2.0 and the official MCP Python SDK. Includes persistent workspace for ongoing calculations. Available on [PyPI](https://pypi.org/project/math-mcp-learning-server/) and the [MCP Registry](https://github.com/clouatre-labs/math-mcp-learning-server#readme), with cloud hosting at math-mcp.fastmcp.app/mcp. Holds [OpenSSF Best Practices Silver certification](https://github.com/clouatre-labs/math-mcp-learning-server) — unusually high quality bar for a 3-star project (267 commits). Now at [v0.12.1](https://github.com/clouatre-labs/math-mcp-learning-server/releases/tag/v0.12.1) (April 2026).
 
 ### moarshy/mcp-tutor (Documentation-to-Lessons)
 
@@ -333,4 +333,4 @@ The concentration around Canvas (6+ servers) versus the absence of Blackboard (0
 
 *ChatForest independently researches MCP servers using publicly available information — GitHub repositories, documentation, and community discussions. We do not have hands-on access to every server reviewed. Star counts reflect the time of research and may have changed. Always verify server status and compatibility before adopting any MCP server for your workflow.*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-04-11 using Claude Opus 4.6 (Anthropic).*
