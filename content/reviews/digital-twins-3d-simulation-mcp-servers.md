@@ -2,17 +2,17 @@
 title: "Digital Twins, 3D Modeling & Simulation MCP Servers — CAD, Physics, Game Engines, and Engineering Simulation"
 date: 2026-03-16T22:00:00+09:00
 description: "Digital twins, 3D modeling, and simulation MCP servers let AI agents control CAD tools, run physics simulations, manipulate game engines, and interact with engineering models."
-og_description: "Digital twins & simulation MCP servers: ahujasid/blender-mcp (17.7k stars — 3D modeling), chongdashu/unreal-mcp (1.6k stars — Unreal Engine), IvanMurzak/Unity-MCP (1.3k stars — Unity editor + runtime), neka-nat/freecad-mcp (605 stars — FreeCAD CAD). 35+ servers reviewed. Rating: 4/5."
+og_description: "Digital twins & simulation MCP servers: ahujasid/blender-mcp (18.7k stars — 3D modeling), chongdashu/unreal-mcp (1.7k stars — Unreal Engine), IvanMurzak/Unity-MCP (2k stars — Unity editor + runtime), neka-nat/freecad-mcp (704 stars — FreeCAD CAD). 35+ servers reviewed. Rating: 4/5."
 content_type: "Review"
-card_description: "Digital twins, 3D modeling, and simulation MCP servers for AI-powered CAD design, physics simulation, game engine control, and engineering workflows. **Blender dominates the 3D modeling space** — ahujasid/blender-mcp (17.7k stars, Python) is one of the most popular MCP servers in the entire ecosystem, connecting Blender to Claude AI through a socket-based server. It provides object creation and manipulation, material control, scene inspection, Python code execution in Blender, Poly Haven integration for free HDRIs/textures/assets, and Hyper3D Rodin for AI-generated 3D models. poly-mcp/Blender-MCP-Server exposes 51 tools over HTTP endpoints, turning Blender into a fully orchestrable MCP server for agent pipelines. CommonSenseMachines/blender-mcp bridges Blender with CSM.ai for text-to-4D world generation. dhakalnirajan/blender-open-mcp runs with local Ollama models instead of cloud APIs. **CAD tools cover the major open-source platforms** — neka-nat/freecad-mcp (605 stars, Python, MIT) runs as a FreeCAD addon with an RPC server, providing 10 tools for document/object creation, editing, deletion, Python execution, screenshots, and parts library access. Multiple alternative FreeCAD MCPs exist: proximile/FreeCAD-MCP adds Docker containerization and Vision AI analysis, spkane/freecad-addon-robust-mcp-server provides 150+ tools, and bonninr/freecad_mcp focuses on prompt-assisted design. For OpenSCAD parametric modeling, jhacksman/OpenSCAD-MCP-Server offers AI image generation with multi-view reconstruction and export to CSG/AMF/3MF/SCAD formats. quellant/openscad-mcp and fboldo/openscad-mcp-server provide simpler render-and-export workflows. jabberjabberjabber/openscad-mcp focuses on rapid prototyping with LLM-driven OpenSCAD code generation. BuildCAD AI provides a free cloud-based MCP server for CAD design with multi-view PNG renders (front/right/top/isometric) — works with any MCP client, requires a free account. Svetlana-DAO-LLC/cad-agent packages build123d modeling with VTK rendering in a Docker container, supporting STL/STEP/3MF export and printability analysis. **Fusion 360 has multiple MCP integrations** — Joe-Spencer/fusion-mcp-server exposes Fusion 360's design hierarchy, parameters, and metadata as MCP resources. mycelia1/fusion360-mcp-server generates and executes scripts directly in Autodesk Fusion 360. AuraFriday/Fusion-360-MCP-Server and ArchimedesCrypto/fusion360-mcp-server provide additional Fusion 360 control. No SolidWorks MCP server exists, which is a notable gap given its market share. **Game engines have the strongest ecosystem after Blender** — Unity has two major MCPs: IvanMurzak/Unity-MCP (1.3k stars, C#, MIT) provides 50+ tools across Project & Assets (20), Scene & Hierarchy (24), and Scripting & Editor (12), with Roslyn-based C# compilation, and works in both editor and runtime modes. CoderGamester/mcp-unity (1.4k stars, TypeScript/C#, MIT) bridges Unity Editor to AI assistants via WebSocket with 35+ tools for scene manipulation, component management, and test execution. CoplayDev/unity-mcp offers similar functionality with emphasis on asset management. Unreal Engine is equally well-served: chongdashu/unreal-mcp (1.6k stars, C++/Python, MIT) provides a C++ plugin for TCP communication with Unreal Editor plus a Python MCP server for actor creation, blueprint development, and viewport control. flopperam/unreal-engine-mcp (592 stars, Python, MIT) specializes in world building — towns, castles, mansions, mazes — with 23+ blueprint node types and recursive maze generation. ayeletstudioindia/unreal-analyzer-mcp focuses on Unreal Engine 5 project analysis. kvick-games/UnrealMCP provides lightweight agent control. **Physics simulation ranges from educational to research-grade** — chrishayuk/chuk-mcp-physics (Python, Apache 2.0) provides 55 tools across 10 categories: basic mechanics, fluid dynamics, rotational dynamics, oscillations, circular motion, statics, kinematics, collisions, conservation laws, and unit conversions — backed by 515 tests at 98% coverage. andylbrummer/math-mcp offers GPU-accelerated simulations across four specialized servers: symbolic math (14 tools), quantum wave mechanics (12 tools), molecular dynamics (15 tools), and neural networks (16 tools) — achieving 60-120x GPU speedup. The Genesis physics engine (28.3k stars, Apache 2.0) simulates at 43 million FPS on an RTX 4090 with rigid body, MPM, SPH, FEM, PBD, and fluid solvers — dustland/genesis-mcp (4 stars) wraps it as an MCP server for stdio-based visualization. manasp21/PsiAnimator-MCP integrates QuTiP quantum physics with Manim animation for educational visualizations. **Engineering simulation covers robotics, circuits, and multi-physics** — omni-mcp/isaac-sim-mcp (136 stars, Python, MIT) enables natural language control of NVIDIA Isaac Sim for robotics simulation — create physics scenes, place robots (Franka, Jetbot, Carter, G1, Go1), execute scripts, and run obstacle navigation. Orthogonalpub/modelica_simulation_mcp_server (15 stars, MIT) transforms the Modelica ODE IDE into an AI agent, generating differential equations from natural language descriptions and running simulations with real-time plotting and 3D visualization. clanker-lover/spicebridge provides 18 tools for ngspice circuit simulation: template-based design, netlist creation, AC/transient/DC simulation, automated measurement, and schematic generation. pathintegral-institute/mcp.science offers DFT calculations and materials science data access for research. poly-mcp/IoT-Edge-MCP-Server unifies MQTT sensors, Modbus devices, and industrial equipment for IoT monitoring. **Gaps remain in enterprise engineering simulation** — no MCP server exists for ANSYS, COMSOL, Abaqus, or other commercial FEA/CFD tools. SolidWorks has no MCP integration despite its widespread use. No digital twin platform integration exists for Azure Digital Twins, AWS IoT TwinMaker, or similar cloud services. The Genesis MCP wrapper is minimal (4 stars) relative to the engine's popularity (28.3k stars). No dedicated CFD or structural analysis MCP server exists. The category would benefit from MCP integrations for major commercial simulation tools and cloud digital twin platforms."
-last_refreshed: 2026-03-16
+card_description: "Digital twins, 3D modeling, and simulation MCP servers for AI-powered CAD design, physics simulation, game engine control, and engineering workflows. **Blender dominates the 3D modeling space** — ahujasid/blender-mcp (18.7k stars, Python) is one of the most popular MCP servers in the entire ecosystem, connecting Blender to Claude AI through a socket-based server. It provides object creation and manipulation, material control, scene inspection, Python code execution in Blender, Poly Haven integration for free HDRIs/textures/assets, and Hyper3D Rodin for AI-generated 3D models. poly-mcp/Blender-MCP-Server exposes 51 tools over HTTP endpoints, turning Blender into a fully orchestrable MCP server for agent pipelines. CommonSenseMachines/blender-mcp bridges Blender with CSM.ai for text-to-4D world generation. dhakalnirajan/blender-open-mcp runs with local Ollama models instead of cloud APIs. **CAD tools cover the major open-source platforms** — neka-nat/freecad-mcp (704 stars, Python, MIT) runs as a FreeCAD addon with an RPC server, providing 10 tools for document/object creation, editing, deletion, Python execution, screenshots, and parts library access. Multiple alternative FreeCAD MCPs exist: proximile/FreeCAD-MCP adds Docker containerization and Vision AI analysis, spkane/freecad-addon-robust-mcp-server provides 150+ tools, and bonninr/freecad_mcp focuses on prompt-assisted design. For OpenSCAD parametric modeling, jhacksman/OpenSCAD-MCP-Server offers AI image generation with multi-view reconstruction and export to CSG/AMF/3MF/SCAD formats. quellant/openscad-mcp and fboldo/openscad-mcp-server provide simpler render-and-export workflows. jabberjabberjabber/openscad-mcp focuses on rapid prototyping with LLM-driven OpenSCAD code generation. BuildCAD AI provides a free cloud-based MCP server for CAD design with multi-view PNG renders (front/right/top/isometric) — works with any MCP client, requires a free account. Svetlana-DAO-LLC/cad-agent packages build123d modeling with VTK rendering in a Docker container, supporting STL/STEP/3MF export and printability analysis. **Fusion 360 has multiple MCP integrations** — Joe-Spencer/fusion-mcp-server exposes Fusion 360's design hierarchy, parameters, and metadata as MCP resources. mycelia1/fusion360-mcp-server generates and executes scripts directly in Autodesk Fusion 360. AuraFriday/Fusion-360-MCP-Server and ArchimedesCrypto/fusion360-mcp-server provide additional Fusion 360 control. No SolidWorks MCP server exists, which is a notable gap given its market share. **Game engines have the strongest ecosystem after Blender** — Unity has two major MCPs: IvanMurzak/Unity-MCP (2k stars, C#, MIT) provides [100+ built-in tools](https://github.com/IvanMurzak/Unity-MCP) across Project & Assets, Scene & Hierarchy, and Scripting & Editor categories, with Roslyn-based C# compilation, and works in both editor and runtime modes. CoderGamester/mcp-unity (1.6k stars, TypeScript/C#, MIT) bridges Unity Editor to AI assistants via WebSocket with [30+ tools](https://github.com/CoderGamester/mcp-unity) for scene manipulation, component management, and test execution. CoplayDev/unity-mcp offers similar functionality with emphasis on asset management. Unreal Engine is equally well-served: chongdashu/unreal-mcp (1.7k stars, C++/Python, MIT) provides a C++ plugin for TCP communication with Unreal Editor plus a Python MCP server for actor creation, blueprint development, and viewport control. flopperam/unreal-engine-mcp (792 stars, Python, MIT) specializes in world building — towns, castles, mansions, mazes — with 23+ blueprint node types and recursive maze generation. ayeletstudioindia/unreal-analyzer-mcp focuses on Unreal Engine 5 project analysis. kvick-games/UnrealMCP provides lightweight agent control. **Physics simulation ranges from educational to research-grade** — chrishayuk/chuk-mcp-physics (Python, Apache 2.0) provides 55 tools across 10 categories: basic mechanics, fluid dynamics, rotational dynamics, oscillations, circular motion, statics, kinematics, collisions, conservation laws, and unit conversions — backed by 515 tests at 98% coverage. andylbrummer/math-mcp offers GPU-accelerated simulations across four specialized servers: symbolic math (14 tools), quantum wave mechanics (12 tools), molecular dynamics (15 tools), and neural networks (16 tools) — achieving 60-120x GPU speedup. The Genesis physics engine (28.3k stars, Apache 2.0) simulates at 43 million FPS on an RTX 4090 with rigid body, MPM, SPH, FEM, PBD, and fluid solvers — dustland/genesis-mcp (4 stars) wraps it as an MCP server for stdio-based visualization. manasp21/PsiAnimator-MCP integrates QuTiP quantum physics with Manim animation for educational visualizations. **Engineering simulation covers robotics, circuits, and multi-physics** — omni-mcp/isaac-sim-mcp (136 stars, Python, MIT) enables natural language control of NVIDIA Isaac Sim for robotics simulation — create physics scenes, place robots (Franka, Jetbot, Carter, G1, Go1), execute scripts, and run obstacle navigation. Orthogonalpub/modelica_simulation_mcp_server (15 stars, MIT) transforms the Modelica ODE IDE into an AI agent, generating differential equations from natural language descriptions and running simulations with real-time plotting and 3D visualization. clanker-lover/spicebridge provides 18 tools for ngspice circuit simulation: template-based design, netlist creation, AC/transient/DC simulation, automated measurement, and schematic generation. pathintegral-institute/mcp.science offers DFT calculations and materials science data access for research. poly-mcp/IoT-Edge-MCP-Server unifies MQTT sensors, Modbus devices, and industrial equipment for IoT monitoring. **Gaps remain in enterprise engineering simulation** — no MCP server exists for ANSYS, COMSOL, Abaqus, or other commercial FEA/CFD tools. SolidWorks has no MCP integration despite its widespread use. No digital twin platform integration exists for Azure Digital Twins, AWS IoT TwinMaker, or similar cloud services. The Genesis MCP wrapper is minimal (4 stars) relative to the engine's popularity (28.3k stars). No dedicated CFD or structural analysis MCP server exists. The category would benefit from MCP integrations for major commercial simulation tools and cloud digital twin platforms."
+last_refreshed: 2026-04-11
 ---
 
 Digital twins, 3D modeling, and simulation MCP servers let AI agents control CAD tools, run physics simulations, manipulate game engines, and interact with engineering models. Instead of manually scripting 3D scenes or configuring simulation parameters, AI assistants can directly create models, run simulations, and analyze results through natural language.
 
 This review covers **digital twins, 3D modeling, and simulation MCP servers** — 3D creation suites, CAD platforms, game engines, physics simulators, and engineering tools. For related servers, see our [Robotics & Automation review](/reviews/robotics-mcp-servers/), [Data Science & Machine Learning review](/reviews/ai-ml-model-serving-mcp-servers/), and [Scientific Research review](/reviews/science-research-mcp-servers/).
 
-The headline findings: **Blender leads the entire MCP ecosystem** — ahujasid/blender-mcp has 17.7k stars, making it one of the most popular MCP servers period. **Game engines are well-served** with Unity and Unreal each having multiple high-quality MCPs (1.3k–1.6k stars). **CAD covers open-source tools** with FreeCAD (605 stars) and OpenSCAD well-represented. **Physics simulation ranges from educational to research-grade** with GPU-accelerated quantum and molecular dynamics. **Enterprise engineering tools are the gap** — no ANSYS, COMSOL, SolidWorks, or cloud digital twin MCPs exist yet.
+The headline findings: **Blender leads the entire MCP ecosystem** — [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) has 18.7k stars, making it one of the most popular MCP servers period. **Game engines are well-served** with Unity and Unreal each having multiple high-quality MCPs (1.6k–2k stars). **CAD covers open-source tools** with FreeCAD (704 stars) and OpenSCAD well-represented. **Physics simulation ranges from educational to research-grade** with GPU-accelerated quantum and molecular dynamics. **Enterprise engineering tools are the gap** — no ANSYS, COMSOL, SolidWorks, or cloud digital twin MCPs exist yet.
 
 ## 3D Modeling — Blender
 
@@ -20,7 +20,7 @@ The headline findings: **Blender leads the entire MCP ecosystem** — ahujasid/b
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [blender-mcp](https://github.com/ahujasid/blender-mcp) | 17,700 | Python | MIT | 15+ |
+| [blender-mcp](https://github.com/ahujasid/blender-mcp) | 18,700 | Python | MIT | 15+ |
 
 **One of the most popular MCP servers in the entire ecosystem** — connects Blender to Claude AI through a socket-based server for comprehensive 3D control:
 
@@ -29,8 +29,11 @@ The headline findings: **Blender leads the entire MCP ecosystem** — ahujasid/b
 - **Scene inspection** — retrieve detailed scene hierarchy and object information
 - **Python execution** — run arbitrary Python code inside Blender for anything the tools don't cover
 - **Poly Haven integration** — download free HDRIs, textures, and 3D assets directly
-- **Hyper3D Rodin** — generate AI 3D models from text descriptions
+- **Hyper3D Rodin** �� generate AI 3D models from text descriptions
+- **Hunyuan3D** — additional AI 3D model generation pipeline
+- **Sketchfab integration** — search and download 3D models from Sketchfab's library
 - **Remote host support** — connect to Blender running on a different machine
+- **Viewport screenshots** — capture scene views for AI analysis
 - **Anonymous telemetry** — usage tracking (can be disabled)
 
 The gold standard for AI-assisted 3D modeling. Works with Claude Desktop, Cursor, and any MCP client.
@@ -70,7 +73,7 @@ Better choice for agentic workflows where multiple AI agents need to coordinate 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [freecad-mcp](https://github.com/neka-nat/freecad-mcp) | 605 | Python | MIT | 10 |
+| [freecad-mcp](https://github.com/neka-nat/freecad-mcp) | 704 | Python | MIT | 10 |
 
 **FreeCAD control through Claude AI** — runs as a FreeCAD addon with an RPC server for conversational 3D design:
 
@@ -94,7 +97,7 @@ Solid choice for open-source CAD workflows. Design 3D parts through natural conv
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [OpenSCAD-MCP-Server](https://github.com/jhacksman/OpenSCAD-MCP-Server) | — | TypeScript | — | 5+ |
+| [OpenSCAD-MCP-Server](https://github.com/jhacksman/OpenSCAD-MCP-Server) | 138 | TypeScript | — | 5+ |
 
 **Text and image to parametric 3D models** — goes beyond simple OpenSCAD scripting with AI image generation and multi-view reconstruction:
 
@@ -140,16 +143,16 @@ Solid choice for open-source CAD workflows. Design 3D parts through natural conv
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 1,300 | C# | MIT | 50+ |
+| [Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 2,000 | C# | MIT | 100+ |
 
-**AI-powered bridge for both Unity Editor and compiled games** — the most comprehensive Unity MCP, with 50+ tools across three categories:
+**AI-powered bridge for both Unity Editor and compiled games** — the most comprehensive Unity MCP, with [100+ built-in tools](https://github.com/IvanMurzak/Unity-MCP) across three categories:
 
-- **Project & Assets** (20 tools) — manage assets, scripts, and project structure
-- **Scene & Hierarchy** (24 tools) — create, modify, reparent, transform GameObjects
-- **Scripting & Editor** (12 tools) — C# code compilation via Roslyn, editor automation
+- **Project & Assets** (~18 tools) — manage assets, scripts, and project structure
+- **Scene & Hierarchy** (~23 tools) — create, modify, reparent, transform GameObjects
+- **Scripting & Editor** (~11 tools) — C# code compilation via Roslyn, editor automation
 - **Runtime support** — works in compiled games, not just the editor — enables real-time AI debugging and player-AI interaction
 - **Extensible** — add custom MCP Tools, Resources, and Prompts
-- **Multi-deployment** — local stdio, remote HTTP, or Docker
+- **Multi-deployment** — local stdio, remote HTTP, Docker, or standalone binary
 - **Extensions** — Animation, ParticleSystem, and ProBuilder modules available
 
 The choice for production Unity workflows that need editor and runtime AI integration.
@@ -158,12 +161,12 @@ The choice for production Unity workflows that need editor and runtime AI integr
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-unity](https://github.com/CoderGamester/mcp-unity) | 1,400 | TypeScript/C# | MIT | 35+ |
+| [mcp-unity](https://github.com/CoderGamester/mcp-unity) | 1,600 | TypeScript/C# | MIT | 30+ |
 
 **WebSocket bridge between Unity Editor and AI assistants** — a Node.js server implementing MCP that connects to Unity's editor:
 
-- **35+ tools** — scene/GameObject manipulation, component management, material creation, package management, test execution
-- **6 MCP resources** — query menus, hierarchy, GameObjects, logs, packages, assets
+- **[30+ tools](https://github.com/CoderGamester/mcp-unity)** — scene/GameObject manipulation, component management, material creation, package management, test execution
+- **MCP resources** — query menus, hierarchy, GameObjects, logs, packages, assets
 - **IDE integration** — automatic workspace integration with Unity's PackedCache folder
 - **Multi-platform support** — Cursor, Windsurf, Claude Code, GitHub Copilot
 
@@ -180,7 +183,7 @@ Strong alternative with emphasis on IDE integration and workspace awareness.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [unreal-mcp](https://github.com/chongdashu/unreal-mcp) | 1,600 | C++/Python | MIT | 15+ |
+| [unreal-mcp](https://github.com/chongdashu/unreal-mcp) | 1,700 | C++/Python | MIT | 15+ |
 
 **Natural language control of Unreal Engine 5** — a C++ plugin for TCP communication with Unreal Editor subsystems plus a Python MCP server:
 
@@ -196,7 +199,7 @@ The most mature Unreal Engine MCP with the strongest community adoption.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [unreal-engine-mcp](https://github.com/flopperam/unreal-engine-mcp) | 592 | Python | MIT | 20+ |
+| [unreal-engine-mcp](https://github.com/flopperam/unreal-engine-mcp) | 792 | Python | MIT | 20+ |
 
 **Specialized for world building** — create entire towns, castles, mansions, and mazes with AI-powered commands:
 
@@ -257,10 +260,10 @@ Research-grade simulation capabilities. The quantum and molecular servers enable
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28,300 | Python | Apache 2.0 | — |
+| [Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28,500 | Python | Apache 2.0 | — |
 | [genesis-mcp](https://github.com/dustland/genesis-mcp) | 4 | Python | MIT | 2 |
 
-**Genesis is a next-generation physics engine** simulating at 43 million FPS on an RTX 4090 — the underlying engine is one of the most popular open-source physics projects:
+**Genesis is a next-generation physics engine** [simulating at 43 million FPS on an RTX 4090](https://github.com/Genesis-Embodied-AI/Genesis) — the underlying engine is one of the most popular open-source physics projects:
 
 - **Multiple solvers** — rigid body, MPM, SPH, FEM, PBD, and Stable Fluid
 - **Material diversity** — rigid bodies, liquids, gases, deformable and soft objects
@@ -281,7 +284,7 @@ The MCP wrapper (dustland/genesis-mcp) is minimal — only 2 tools for running s
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [isaac-sim-mcp](https://github.com/omni-mcp/isaac-sim-mcp) | 136 | Python | MIT | 5 |
+| [isaac-sim-mcp](https://github.com/omni-mcp/isaac-sim-mcp) | 146 | Python | MIT | 5 |
 
 **Natural language control of NVIDIA Isaac Sim** — bridge between conversational AI and precision robotics simulation:
 
@@ -297,7 +300,7 @@ Requires NVIDIA Isaac Sim 4.2.0+ and a compatible GPU. Purpose-built for robotic
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [modelica_simulation_mcp_server](https://github.com/Orthogonalpub/modelica_simulation_mcp_server) | 15 | Python | MIT | 2 |
+| [modelica_simulation_mcp_server](https://github.com/Orthogonalpub/modelica_simulation_mcp_server) | 16 | Python | MIT | 2 |
 
 **Transforms the Modelica ODE IDE into an AI engineering agent** — describe a physical system in natural language, get differential equations, simulation, and visualization:
 
@@ -337,7 +340,7 @@ The biggest gaps in this category:
 - **No commercial FEA/CFD tools** — ANSYS, COMSOL, Abaqus, and NASTRAN have no MCP servers. This is the most impactful gap for professional engineering.
 - **No SolidWorks MCP** — despite SolidWorks' dominant market share in mechanical engineering, no MCP integration exists.
 - **No cloud digital twin platforms** — Azure Digital Twins, AWS IoT TwinMaker, and similar services have no MCP servers.
-- **Genesis MCP wrapper is minimal** — the physics engine has 28.3k stars but the MCP wrapper only has 2 tools. Significant untapped potential.
+- **Genesis MCP wrapper is minimal** — the physics engine has 28.5k stars but the MCP wrapper only has 2 tools. Significant untapped potential.
 - **No dedicated CFD server** — computational fluid dynamics is entirely absent from the MCP ecosystem.
 - **No structural analysis** — no MCP server handles FEA for stress, strain, or fatigue analysis.
 - **Limited Autodesk coverage** — Fusion 360 has MCPs but AutoCAD, Revit, and Inventor are largely unserved (Autodesk recently announced official MCP servers but they're in early stages).
@@ -346,19 +349,19 @@ The biggest gaps in this category:
 
 | Subcategory | Top Server | Stars | Rating |
 |------------|-----------|-------|--------|
-| 3D Modeling (Blender) | ahujasid/blender-mcp | 17,700 | ★★★★★ |
-| CAD (FreeCAD/OpenSCAD) | neka-nat/freecad-mcp | 605 | ★★★★ |
-| Game Engines (Unity) | IvanMurzak/Unity-MCP | 1,300 | ★★★★★ |
-| Game Engines (Unreal) | chongdashu/unreal-mcp | 1,600 | ★★★★★ |
+| 3D Modeling (Blender) | ahujasid/blender-mcp | 18,700 | ★★★★★ |
+| CAD (FreeCAD/OpenSCAD) | neka-nat/freecad-mcp | 704 | ★★★★ |
+| Game Engines (Unity) | IvanMurzak/Unity-MCP | 2,000 | ★★★★★ |
+| Game Engines (Unreal) | chongdashu/unreal-mcp | 1,700 | ★★★★★ |
 | Physics Simulation | chrishayuk/chuk-mcp-physics | — | ★★★★ |
-| Engineering Simulation | omni-mcp/isaac-sim-mcp | 136 | ★★★ |
+| Engineering Simulation | omni-mcp/isaac-sim-mcp | 146 | ★★★ |
 
 **Overall rating: 4/5** — Blender and game engine MCPs are world-class. CAD and physics simulation are solid. Enterprise engineering simulation is the clear gap — when ANSYS, COMSOL, and SolidWorks get MCP integrations, this category will be transformative.
 
 ---
 
-*This review is AI-generated based on research of publicly available GitHub repositories and documentation. ChatForest does not test or run MCP servers hands-on. Star counts are approximate and may have changed since publication. Last updated: March 2026.*
+*This review is AI-generated based on research of publicly available GitHub repositories and documentation. ChatForest does not test or run MCP servers hands-on. Star counts are approximate and may have changed since publication. Last updated: April 2026.*
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-11 using Claude Opus 4.6 (Anthropic).*
