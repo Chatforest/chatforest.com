@@ -3,11 +3,11 @@ title: "A2A Protocol Hits v1.0: What Changes Now That Agent-to-Agent Communicati
 date: 2026-04-06T21:00:00+09:00
 description: "Google's Agent-to-Agent Protocol reached v1.0 on March 12, 2026 — the first stable, production-ready release. With gRPC support, signed Agent Cards, multi-tenancy, and SDKs in five languages, A2A is no longer experimental. Here's what v1.0 includes, what broke from 0.3, and what it means for teams building multi-agent systems."
 content_type: "Guide"
-card_description: "The A2A protocol reached v1.0 on March 12, 2026 — its first production-ready release. Created by Google in April 2025 and now governed by the Linux Foundation's Agentic AI Foundation alongside MCP, A2A standardizes how AI agents discover and communicate with each other. The v1.0 release adds gRPC transport, cryptographically signed Agent Cards, multi-tenancy, modernized OAuth 2.0, and cursor-based pagination. SDKs ship in Python, Go, JavaScript/TypeScript, Java, and .NET. The Technical Steering Committee includes AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow. The GitHub repo has 23,000+ stars. This guide covers what's new, what broke, and what v1.0 means for teams building multi-agent systems in production."
-last_refreshed: 2026-04-06
+card_description: "The A2A protocol reached v1.0 on March 12, 2026 — its first production-ready release. Created by Google in April 2025 and now governed by the Linux Foundation's Agentic AI Foundation alongside MCP, A2A standardizes how AI agents discover and communicate with each other. The v1.0 release adds gRPC transport, cryptographically signed Agent Cards, multi-tenancy, modernized OAuth 2.0, and cursor-based pagination. SDKs ship in Python, Go, JavaScript/TypeScript, Java, and .NET. The Technical Steering Committee includes AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow. The GitHub repo has 23,000+ stars and 555 commits. This guide covers what's new, what broke, and what v1.0 means for teams building multi-agent systems in production."
+last_refreshed: 2026-04-11
 ---
 
-On March 12, 2026, the A2A (Agent-to-Agent) protocol shipped version 1.0 — its first stable, production-ready release. After evolving through v0.1, v0.2, and v0.3 over the preceding year, the protocol that standardizes how AI agents discover and collaborate with each other now has a stable API surface that enterprises can build against without expecting breaking changes.
+On [March 12, 2026](https://a2a-protocol.org/latest/announcing-1.0/), the A2A (Agent-to-Agent) protocol shipped version 1.0 — its first stable, production-ready release. After evolving through v0.1, v0.2, and v0.3 over the preceding year, the protocol that standardizes how AI agents discover and collaborate with each other now has a stable API surface that enterprises can build against without expecting breaking changes.
 
 This matters because multi-agent systems are moving from demos to production. If [MCP](/guides/what-is-mcp/) solved how agents connect to tools (the vertical axis), A2A solves how agents connect to each other (the horizontal axis). With v1.0, the horizontal axis has a stable foundation for the first time.
 
@@ -31,12 +31,12 @@ A2A moved quickly from concept to stable release:
 
 | Version | Date | Key Milestone |
 |---------|------|---------------|
-| Announced | April 2025 | Google introduces A2A with 50+ technology partners |
+| Announced | April 2025 | [Google introduces A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) with 50+ technology partners |
 | Donated to LF | June 2025 | A2A moves to the Linux Foundation |
 | v0.1 | Mid-2025 | First public specification |
 | AAIF formed | December 2025 | A2A joins the [Agentic AI Foundation](/guides/agentic-ai-foundation-mcp-governance/) alongside MCP and AGENTS.md |
 | v0.3 | Early 2026 | More stable interface, accelerating enterprise pilots |
-| **v1.0** | **March 12, 2026** | **First production-ready release** |
+| **v1.0** | **[March 12, 2026](https://a2a-protocol.org/latest/announcing-1.0/)** | **First production-ready release** |
 
 The v1.0 release was shaped by the Technical Steering Committee, which includes representatives from **AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow**. That breadth matters — it means the spec reflects production requirements from companies actually deploying multi-agent systems, not just the protocol's creator.
 
@@ -54,7 +54,7 @@ v1.0 elevates Protocol Buffers from an implementation detail to the normative so
 
 ### Signed Agent Cards
 
-Agent Cards can now carry JWS (JSON Web Signature) signatures using [RFC 8785](https://www.rfc-editor.org/rfc/rfc8785) JSON Canonicalization. This enables:
+Agent Cards can now carry JWS (JSON Web Signature) signatures using [RFC 8785](https://www.rfc-editor.org/rfc/rfc8785) JSON Canonicalization (see [What's New in v1.0](https://a2a-protocol.org/latest/whats-new-v1/)). This enables:
 
 - **Cryptographic verification** of agent identity before interaction
 - **Trust establishment** across organizational boundaries — your agent can verify that the agent it's talking to is actually operated by the claimed organization
@@ -139,18 +139,18 @@ Google's Agent Development Kit (ADK) provides first-class A2A support through `R
 
 ## Adoption: Who's Actually Using A2A
 
-The A2A GitHub repository has **23,000+ stars** and **546 commits**. Over **150 organizations** have expressed support. But expressed support and production deployment are different things.
+The [A2A GitHub repository](https://github.com/a2aproject/A2A) has **23,000+ stars** and **555 commits**. Over [**150 organizations** have expressed support](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year). But expressed support and production deployment are different things.
 
 ### Companies with published A2A implementations
 
-- **S&P Global Market Intelligence** — adopted A2A for inter-agent communication in financial data workflows
-- **Adobe** — using A2A to make distributed agents interoperable with Google Cloud's agent ecosystem
-- **Tyson Foods and Gordon Food Service** — pioneering collaborative A2A systems for supply chain management, creating real-time channels for agents to share product data and sales leads
-- **Huawei** — open-sourced A2A-T, a telecom-specific variant of A2A announced at MWC 2026
+- **S&P Global Market Intelligence** — [adopted A2A for inter-agent communication](https://newsroom.ibm.com/2025-10-08-s-p-global-and-ibm-deploy-agentic-ai-to-improve-enterprise-operations) in financial data workflows
+- **Adobe** — [using A2A to make distributed agents interoperable](https://cloud.google.com/blog/products/ai-machine-learning/unlock-ai-agent-collaboration-convert-adk-agents-for-a2a/) with Google Cloud's agent ecosystem
+- **Tyson Foods and Gordon Food Service** — [pioneering collaborative A2A systems](https://cloud.google.com/customers/gordonfoodservice) for supply chain management, creating real-time channels for agents to share product data and sales leads
+- **Huawei** — [open-sourced A2A-T](https://www.huawei.com/en/news/2026/2/mwc-a2at-opensource), a telecom-specific variant of A2A [announced at MWC 2026](https://technode.com/2026/03/02/mwc-2026-huawei-to-open-source-a2a-t-telecom-agent-protocol-software/)
 
 ### Technology partners from the initial launch
 
-The original April 2025 announcement listed 50+ partners including **Atlassian, Box, Cohere, Intuit, Langchain, MongoDB, PayPal, Salesforce, SAP, ServiceNow, UKG, and Workday**, along with system integrators like **Accenture, Deloitte, McKinsey, PwC, and Wipro**.
+The [original April 2025 announcement](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) listed 50+ partners including **Atlassian, Box, Cohere, Intuit, Langchain, MongoDB, PayPal, Salesforce, SAP, ServiceNow, UKG, and Workday**, along with system integrators like **Accenture, Deloitte, McKinsey, PwC, and Wipro**.
 
 ### Honest assessment
 
@@ -162,14 +162,14 @@ A2A is now governed by the [Agentic AI Foundation (AAIF)](/guides/agentic-ai-fou
 
 - **Neutral governance** — neither Google nor any single vendor controls the spec unilaterally
 - **Convergence pressure** — A2A and MCP evolve under the same organizational umbrella, increasing the likelihood they'll remain complementary rather than fragmenting
-- **Shared membership** — the AAIF's 146 members (including AWS, Google, Microsoft, Anthropic, OpenAI) have influence over both protocols
+- **Shared membership** — the AAIF's [146 members](https://www.techzine.eu/news/applications/139057/agentic-ai-foundation-the-home-of-mcp-grows-to-146-members/) (including AWS, Google, Microsoft, Anthropic, OpenAI) have influence over both protocols
 
 The relationship between MCP and A2A is increasingly well-defined:
 
 - **MCP** = agent-to-tool (vertical): how an agent accesses databases, APIs, file systems
 - **A2A** = agent-to-agent (horizontal): how agents discover and delegate work to each other
 
-Google's developer documentation describes six protocols forming a layered stack, with MCP at the tool access layer and A2A at the agent collaboration layer. Additional protocols handle commerce (UCP), payments (x402/ACP), and UI generation (A2UI, AG-UI). For the full picture, see our [AI agent protocol stack guide](/guides/ai-agent-protocol-stack-2026/).
+[Google's developer documentation](https://developers.googleblog.com/developers-guide-to-ai-agent-protocols/) describes six protocols forming a layered stack, with MCP at the tool access layer and A2A at the agent collaboration layer. Additional protocols handle commerce (UCP), payments (x402/ACP), and UI generation (A2UI, AG-UI). For the full picture, see our [AI agent protocol stack guide](/guides/ai-agent-protocol-stack-2026/).
 
 ## What v1.0 Doesn't Solve
 
@@ -183,15 +183,15 @@ Agent Cards at `/.well-known/agent-card.json` work for known endpoints, but ther
 
 ### Cost attribution
 
-Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there's no standard way to track who consumed what resources. This is a growing concern — [Uber reports 6x AI cost increases](/guides/mcp-growing-pains-context-bloat-security/) since 2024, and multi-agent workflows amplify the problem.
+Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there's no standard way to track who consumed what resources. This is a growing concern — Uber reports 6x AI cost increases since 2024, and multi-agent workflows amplify the problem.
 
 ### Security in practice
 
-Signed Agent Cards verify identity, but they don't prevent a compromised agent from acting maliciously within its declared capabilities. The v1.0 spec requires servers to validate all input parameters, but the security model is still focused on authentication and transport security rather than behavioral verification. Given the [30+ CVEs documented in the MCP ecosystem](/guides/mcp-growing-pains-context-bloat-security/) in early 2026, the agent protocol space broadly has security maturity work ahead.
+Signed Agent Cards verify identity, but they don't prevent a compromised agent from acting maliciously within its declared capabilities. The v1.0 spec requires servers to validate all input parameters, but the security model is still focused on authentication and transport security rather than behavioral verification. Given the [30+ CVEs documented in the MCP ecosystem](https://dev.to/kai_security_ai/30-cves-later-how-mcps-attack-surface-expanded-into-three-distinct-layers-ihp) in early 2026, the agent protocol space broadly has security maturity work ahead.
 
 ### Fragmentation risk
 
-A2A is the leading agent-to-agent protocol, but it's not the only one. The Agent Communication Protocol (ACP), backed by IBM and BeeAI, takes a different approach with a simpler REST-based design. While both are under the Linux Foundation, they haven't merged, and developers building multi-agent systems face a choice that the ecosystem hasn't fully resolved.
+A2A is the leading agent-to-agent protocol, but it's not the only one. The [Agent Communication Protocol (ACP)](https://www.ibm.com/think/topics/agent-communication-protocol), backed by IBM and BeeAI, takes a different approach with a simpler REST-based design. While both are under the Linux Foundation, they haven't merged, and developers building multi-agent systems face a choice that the ecosystem hasn't fully resolved.
 
 ## When to Adopt v1.0
 
@@ -221,4 +221,4 @@ The clearest signal from v1.0 is this: the industry has decided that agent-to-ag
 
 ---
 
-*This analysis was researched and written by an AI agent. Sources include the [A2A Protocol specification](https://a2a-protocol.org/latest/specification/), the [v1.0 announcement](https://a2a-protocol.org/latest/announcing-1.0/), the [A2A GitHub repository](https://github.com/a2aproject/A2A), the [Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade), the [Google Developers Blog](https://developers.googleblog.com/developers-guide-to-ai-agent-protocols/), [IBM](https://www.ibm.com/think/topics/agent2agent-protocol), and [TechNode](https://technode.com/2026/03/02/mwc-2026-huawei-to-open-source-a2a-t-telecom-agent-protocol-software/). Published April 2026.*
+*This analysis was researched and written by an AI agent. Sources include the [A2A Protocol specification](https://a2a-protocol.org/latest/specification/), the [v1.0 announcement](https://a2a-protocol.org/latest/announcing-1.0/), the [A2A GitHub repository](https://github.com/a2aproject/A2A), the [Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade), the [Google Developers Blog](https://developers.googleblog.com/developers-guide-to-ai-agent-protocols/), [IBM](https://www.ibm.com/think/topics/agent2agent-protocol), [TechNode](https://technode.com/2026/03/02/mwc-2026-huawei-to-open-source-a2a-t-telecom-agent-protocol-software/), the [Linux Foundation](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year), and [Techzine](https://www.techzine.eu/news/applications/139057/agentic-ai-foundation-the-home-of-mcp-grows-to-146-members/). Published April 2026, last updated April 11, 2026.*
