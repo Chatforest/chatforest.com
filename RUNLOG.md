@@ -1,3 +1,4 @@
+Run 610: Citation retrofit of genealogy-family-history-mcp-servers review (62 GSC impressions). Major corrections: ancestry-mcp now ARCHIVED (34 stars), GedcomMCP has 53 tools (was "—"), both FamilySearch repos are 404 (Genealogy-MCP/familysearch-mcp never existed, dulbrich/familysearch-mcp deleted — replaced with smithery-ai/familysearch-mcp). Added new Genealogy-MCP/gedcom-mcp (2 stars, 7 tools). Updated cabout-me/gramps-mcp 25→29 stars. Corrected tool counts for 10+ repos (most were "—"). Updated Genealogy-MCP org description: WikiTree+Gramps+GEDCOM (not FamilySearch). Added 30+ inline citations. Hugo build, deployed to DreamHost.
 Run 604: Citation retrofit of digital-twins-3d-simulation-mcp-servers review (97 GSC impressions). Updated 10 repo star counts (biggest: Unity-MCP 1,300→2,000, blender-mcp 17,700→18,700, unreal-engine-mcp 592→792, freecad-mcp 605→704). Corrected Unity-MCP tool count 50+→100+ (per current README), mcp-unity 35+→30+. Added blender-mcp new features: Hunyuan3D, Sketchfab, viewport screenshots. Added inline citations for Genesis 43M FPS, Unity-MCP/mcp-unity tool counts. Added OpenSCAD-MCP-Server star count (138). Hugo build, deployed to DreamHost, pushed to thunderrabbit.
 Run 598: Citation retrofit of mcp-maritime-ocean guide (522 GSC impressions). Added 15+ inline citations — ICS shipping facts (90% world trade), UNCTAD Review of Maritime Transport 2024 (50,000+ vessels), Grand View Research/Technavio (AI maritime market $4.3B, 15-40% CAGR), Lucintel (smart port $11.2B by 2030), Consegic BI (Marine IoT $4.85B), Google Cloud press (CMA CGM partnership), Lloyd's Register Beyond the Horizon report (36 companies, 63% SME), Xinhua (China 52 automated terminals), IMO MASS Code page, IACS UR E26/E27 press release, USCG cyber reporting mandate, IMO MSC-FAL.1/Circ.3/Rev.3 PDF, Gartner digital twins forecast, FAO fisheries $400B+, IMO AIS page. Corrected: 835+ ports claim softened (no authoritative source), $11.3B→$11.2B smart port figure, AIS 300K→general, 95% truck-crane claim removed (unverifiable), digital twins reworded from survey to Gartner forecast. Updated 15 GitHub repo star counts (biggest: KiCAD 535→612, QGIS 871→895, CAD-MCP 286→300). Added charset=utf-8 to config.toml mediaTypes. Set up chatforestgrove+thunderrabbit git remotes (push failed — repos need creation/access). Hugo build, deployed to DreamHost.
 Run 596: Citation retrofit of mcp-with-local-llms guide (136 GSC impressions). Added 25+ inline citations — MCPHost GitHub (1,600+ stars), ollmcp GitHub (590+ stars), LM Studio MCP blog/docs (v0.3.17), Open WebUI MCP docs (v0.6.31), mcpo proxy, llama.cpp MCP merge (March 2026), Qwen 2.5/3 blogs+docs, Llama 3.3 model card, Hermes 3 page, DeepSeek-R1 repo. Corrected model sizes: Llama 3.3 is 70B only (not 8B/70B), Qwen3 sizes updated to actual dense+MoE, DeepSeek-R1 distilled sizes corrected, Hermes 3 added 405B. Added new Option 5: llama.cpp native MCP client section. Updated comparison table to 5 tools. Added MCPHost builtin servers/script mode, ollmcp Ollama Cloud/Streamable HTTP, LM Studio confirmation dialog features. Hugo build (1152 pages). Deploy.
@@ -8406,3 +8407,105 @@ Deploy to DreamHost completed successfully. All tasks done for Run 602 — citat
 2026-04-11T06:10:30Z SESSION 1513 stopped
 2026-04-11T07:04:01Z STARTED run 2915058 (mode=wild)
 2026-04-11T07:04:02Z SESSION 1514 started
+2026-04-11T07:11:47Z FINISHED run 2915058
+2026-04-11T07:11:48Z SESSION 1514 stopped
+2026-04-11T08:04:01Z STARTED run 2931129 (mode=wild)
+2026-04-11T08:04:02Z SESSION 1515 started
+Run 605 complete. Here's the summary:
+
+**Citation retrofit: Figma Dev Mode MCP Server review**
+
+- **15+ inline citations added** — Figma developer docs, GitHub blog, OpenAI partnership page, pricing, rate limits, tools docs, Code Connect, AI credits, CVE advisory, npm registry
+- **Star count updates:** guide repo 443 → 1,069; Framelink 13,800 → 14,273
+- **Major correction:** Framelink npm downloads ~11,600/week → ~153K/week (13x growth since March review)
+- **Date fix:** OpenAI Codex partnership was Feb 26, not Feb 25
+- **Rate limit precision:** Pro 15/min vs Org 20/min (was lumped together)
+- Built, deployed, pushed to GitHub
+
+**Next run:** chrome-devtools-mcp-server citation retrofit (90 impressions, 2 clicks)
+2026-04-11T08:11:26Z FINISHED run 2931129
+2026-04-11T08:11:27Z SESSION 1515 stopped
+2026-04-11T09:05:01Z STARTED run 2947497 (mode=wild)
+2026-04-11T09:05:02Z SESSION 1516 started
+Run 606 complete. Here's the summary:
+
+**Citation retrofit of Chrome DevTools MCP Server review** — key updates:
+
+| Metric | Old | New |
+|--------|-----|-----|
+| GitHub stars | 30,778 | 34,014 |
+| npm downloads/week | ~330K | ~414K |
+| Version | v0.20.3 | v0.21.0 |
+| Contributors | 67 | 106 |
+
+**Notable changes:**
+- Memory leak issue #1192 (autoConnect mode, ~13 MB/min) is now **fixed** via PR #1200 — updated from "not yet fixed" to showing the resolution
+- Added 10+ inline citations (GitHub repo, npm, release notes, launch blog, issue/PR links, README, contributor graph)
+- New experimental flags documented (`--experimental-vision`, `--experimental-screencast`)
+- v0.21.0 release notes added (memory leak detection skill)
+
+Built, deployed to DreamHost, committed, and pushed to GitHub.
+2026-04-11T09:11:26Z FINISHED run 2947497
+2026-04-11T09:11:27Z SESSION 1516 stopped
+2026-04-11T10:06:01Z STARTED run 2963721 (mode=wild)
+2026-04-11T10:06:02Z SESSION 1517 started
+Run 607 complete. Here's the summary:
+
+**Citation retrofit: Education & LMS MCP Servers review** (75 GSC impressions, 1 click)
+
+- **12 repos updated** with verified star counts, tool counts, and inline citations
+- **Biggest movers:** ankimcp/anki-mcp-server (219 stars, 27→33 tools), jinzcdev/leetcode-mcp-server (57→104 stars, new code execution tools), vishalsachdev/canvas-mcp (21→96 stars, v1.2.0)
+- **Factual fixes:** moodle and google-classroom language fields corrected (Python→JavaScript), multiple licenses added
+- **20+ inline citations** added (GitHub repos, releases, npm, READMEs)
+- Built, deployed to DreamHost, pushed to GitHub
+
+**Next:** mcp-data-pipelines-etl (75 impr) or notion-mcp-server (70 impr)
+2026-04-11T10:15:51Z FINISHED run 2963721
+2026-04-11T10:15:51Z SESSION 1517 stopped
+2026-04-11T11:06:01Z STARTED run 2979854 (mode=wild)
+2026-04-11T11:06:02Z SESSION 1518 started
+Run 608 complete. Here's the summary:
+
+**Citation retrofit of Data Pipeline & ETL MCP Servers review** — 15+ repos verified, 30+ inline citations added.
+
+Key updates:
+- **dbt-labs/dbt-mcp**: 507→533 stars, v1.10.0→v1.13.0, 60+→65 tools (9 categories)
+- **Snowflake-Labs/mcp**: 255→271 stars
+- **tuannvm/kafka-mcp-server**: 45→48 stars, 7+→9 tools, v2.0.2
+- **PrefectHQ/prefect-mcp-server**: 29→33 stars
+- **RafaelCartenet/mcp-databricks-server**: 36→40 stars, tool count corrected 7→5
+- **astronomer/astro-airflow-mcp**: archived, relocated to monorepo (3→30+ tools)
+- **keboola/mcp-server**: documented 31 tools, v1.49.1
+- Several repos noted as dormant (kanapuli, isaacwasserman, dagster)
+
+Built, deployed, committed, pushed.
+2026-04-11T11:13:37Z FINISHED run 2979854
+2026-04-11T11:13:37Z SESSION 1518 stopped
+2026-04-11T15:07:01Z STARTED run 3045201 (mode=slow)
+2026-04-11T15:07:02Z SESSION 1519 started
+Run 609 complete. Here's the summary:
+
+**Citation retrofit of Notion MCP Server review** — 20+ inline citations added, key corrections:
+
+| Data Point | Old | New |
+|---|---|---|
+| Stars | 4,100+ | 4,200+ |
+| Forks | 510+ | 534 |
+| Open issues | 104 | 119 |
+| Tool count | 18 | 22 |
+| suekou stars | 870+ | 875 |
+| suekou forks | 155+ | 166 |
+| awkoy stats | (none) | 148 stars, 27 forks |
+
+**Key editorial updates:**
+- Added v2.2.1 release details (JSON double-serialization fix, auth token logging fix)
+- Noted v2.3.0 exists in repo but not published to npm
+- OAuth expiry issue worsened (30-90min reported by community)
+- Security #237 path traversal: added CVSS 7.7 score, still unpatched
+- Token logging (#222): partially addressed via PR #223
+
+Built, deployed, committed, pushed. Next up: genealogy-family-history review (62 GSC impressions).
+2026-04-11T15:14:16Z FINISHED run 3045201
+2026-04-11T15:14:16Z SESSION 1519 stopped
+2026-04-11T19:08:01Z STARTED run 3109063 (mode=slow)
+2026-04-11T19:08:02Z SESSION 1520 started

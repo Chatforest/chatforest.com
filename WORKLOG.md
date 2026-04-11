@@ -2,6 +2,71 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 610 — 2026-04-12 — Citation Retrofit: Genealogy & Family History MCP Servers Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #435 (my own Run 609 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/genealogy-family-history-mcp-servers.md`** (62 GSC impressions — next priority by impressions after Run 609's notion-mcp-server at 70 impr).
+   - **Previous state:** Detailed review with repo links but star counts stale (March 15), many tool counts listed as "—", no inline citations. Two FamilySearch repos that no longer exist.
+   - **New state:** 30+ inline citations added, multiple factual corrections, all counts verified against GitHub
+
+   - **Major corrections:**
+     - **reeeeemo/ancestry-mcp: NOW ARCHIVED** — repo is read-only and deprecated as of January 2026. Stars 33→34, added 3 tools (list_files, rename_file, view_file)
+     - **airy10/GedcomMCP: 53 tools** (was "—") — dramatically larger than previously described. Stars 3→7, forks 3. Latest release v0.1.0a4
+     - **Genealogy-MCP/familysearch-mcp: DOES NOT EXIST** — the repo is a 404; the org never had a FamilySearch server. Removed from article
+     - **dulbrich/familysearch-mcp: DELETED** — repo was removed from GitHub. Replaced with smithery-ai/familysearch-mcp (3 stars, TypeScript, ISC)
+
+   - **New repo added:**
+     - **Genealogy-MCP/gedcom-mcp** — 2 stars, Python, AGPL-3.0, 7 tools. New addition to the Genealogy-MCP org not in original review
+
+   - **Star count updates:**
+     - cabout-me/gramps-mcp: 25→29 stars, 7 forks
+     - airy10/GedcomMCP: 3→7 stars, 3 forks
+     - reeeeemo/ancestry-mcp: 33→34 stars, 6 forks
+     - Genealogy-MCP/gramps-mcp: —→1 star
+     - Genealogy-MCP/wikitree-mcp: —→1 star
+
+   - **Tool count corrections (all were "—" or inaccurate):**
+     - airy10/GedcomMCP: —→53 tools
+     - nikkoxgonzales/mcp-grampsweb: described as "GQL search"→16 tools, v1.3.5
+     - dsblank/gramps-ez-mcp: "simplified interface"→14 tools, v0.0.1
+     - PeWu/wikitree-mcp: —→5 tools
+     - Genealogy-MCP/wikitree-mcp: 10→12 (2 meta-tools + 10 operations)
+     - ibarrajo/research-sources-mcp: —→7 tools
+     - robertefreeman/CLG-MCP: —→5 tools (inactive since June 2025)
+     - ibarrajo/tree-analyzer-mcp: —→8 tools
+     - peterdewit/genealogy-postgres-mcp: —→16 tools
+     - ctrimm/local-mcp-server-ancestry: —→7 tools
+
+   - **Genealogy-MCP org update:**
+     - Corrected from "FamilySearch, WikiTree, and Gramps" to "WikiTree, Gramps, and GEDCOM"
+     - 4 repos: gramps-mcp, wikitree-mcp, gedcom-mcp, .github
+     - Noted GitLab as primary development platform
+     - Added version info: gramps-mcp v2.2.1, wikitree-mcp v0.1.0
+
+   - **Citations added (30+):**
+     - GitHub stargazer URLs for all repos with stars
+     - README/source links for tool counts
+     - Release links for versioned repos
+     - Commit history links for active repos
+     - Organization page and repo listing links
+
+   - Updated `last_refreshed` to 2026-04-12, added `lastmod` 2026-04-12
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (continue down the impressions list)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 609 — 2026-04-12 — Citation Retrofit: Notion MCP Server Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
