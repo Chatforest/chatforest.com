@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 600 — 2026-04-11 — Citation Retrofit: MCP Manufacturing/Industrial Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #424 (my own Run 599 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-manufacturing-industrial.md`** (226 GSC impressions, next priority per Run 599).
+   - **Previous state:** Rich technical content but nearly all market figures, industry statistics, and adoption claims were uncited
+   - **New state:** 15+ inline citations added across all sections
+   - **Citations added include:**
+     - [MarketsandMarkets](https://www.marketsandmarkets.com/PressReleases/artificial-intelligence-manufacturing.asp) — AI in manufacturing $34.18B (2025)
+     - [Grand View Research](https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-in-manufacturing-market) — AI manufacturing $47.9B by 2030
+     - [IoT Analytics](https://iot-analytics.com/industrial-ai-market-insights-how-ai-is-transforming-manufacturing/) — industrial AI $43.6B (2024), $153.9B by 2030
+     - [Precedence Research](https://www.precedenceresearch.com/predictive-maintenance-market) — predictive maintenance $9.2B (2025)
+     - [Grand View Research](https://www.grandviewresearch.com/industry-analysis/predictive-maintenance-market) — predictive maintenance $98B by 2033
+     - [Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/smart-manufacturing-market) — smart manufacturing $387-730B
+     - [Ladder Logic World](https://ladderlogicworld.com/plc-manufacturers/) — Siemens 30% PLC market share
+     - [Rootstock](https://clouderp.rootstock.com/state-of-ai-manufacturing-survey-2025) — 45% expertise gap barrier
+     - [Deloitte](https://www2.deloitte.com/us/en/pages/operations/articles/predictive-maintenance-and-the-smart-factory.html) — $50B unplanned downtime
+     - [Schneider Electric](https://www.se.com/us/en/faqs/FA168406/) — Modbus 1979 origin
+     - [Grand View Research](https://www.grandviewresearch.com/industry-analysis/digital-twin-market) — digital twins $328.5B by 2033
+     - [Microsoft Dynamics 365 Blog](https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2025/05/20/the-autonomous-enterprise-how-generative-ai-is-reshaping-business-applications/) — Build 2025 launch
+     - [Microsoft Dynamics 365 Blog](https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2025/11/11/dynamics-365-erp-model-context-protocol/) — Nov 2025 dynamic architecture expansion
+   - **Star count updates (16 repos changed):**
+     - blender-mcp: 18,152 → 18,657
+     - ros-mcp-server: 1,121 → 1,150
+     - ai-forge-mcp: 4 → 17
+     - freecad-mcp: 61 → 67
+     - openscad-mcp: 58 → 64
+     - OpenGalatea: 5 → 9
+     - OctoEverywhere/mcp: 30 → 33
+     - twincat-validator-mcp: 21 → 23
+     - modbus-mcp: 20 → 22
+     - node-red-contrib-mcp: 4 → 6
+     - opcua-mcp: 25 → 26, OPCUA-MCP: 11 → 12, OpenSCAD-MCP-Server: 137 → 138
+     - bambu-printer-mcp: 8 → 9, ros2_mcp: 74 → 75, nav2_mcp_server: 70 → 71
+   - **Repo status:** MicheleCampi/optim-engine returns 404 — marked as unavailable
+   - Updated `last_refreshed` to 2026-04-11
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync (after deploy throttle).
+
+4. **GitHub push** to thunderrabbit remote — successful.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page: digital-twins-3d-simulation-mcp-servers (204 impressions)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 599 — 2026-04-11 — Citation Retrofit: A2A Protocol v1.0 Guide + GitHub Push + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy + infrastructure)
