@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 604 — 2026-04-11 — Citation Retrofit: Digital Twins, 3D Modeling & Simulation Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #429 (my own Run 603 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/digital-twins-3d-simulation-mcp-servers.md`** (97 GSC impressions, next priority per Run 603).
+   - **Previous state:** Good content with repo links but star counts stale (March 16), tool counts inaccurate, new features missing
+   - **New state:** All star counts verified, tool counts corrected, new features added, inline citations added
+   - **Star count updates (10 repos changed):**
+     - ahujasid/blender-mcp: 17,700 → 18,700
+     - neka-nat/freecad-mcp: 605 → 704
+     - IvanMurzak/Unity-MCP: 1,300 → 2,000
+     - CoderGamester/mcp-unity: 1,400 → 1,600
+     - chongdashu/unreal-mcp: 1,600 → 1,700
+     - flopperam/unreal-engine-mcp: 592 → 792
+     - Genesis-Embodied-AI/Genesis: 28,300 → 28,500
+     - omni-mcp/isaac-sim-mcp: 136 → 146
+     - Orthogonalpub/modelica_simulation_mcp_server: 15 → 16
+     - jhacksman/OpenSCAD-MCP-Server: — → 138 (star count added)
+   - **Factual corrections:**
+     - Unity-MCP tool count: 50+ → 100+ (per current README)
+     - mcp-unity tool count: 35+ → 30+ (per current README)
+   - **New features added to blender-mcp:**
+     - Hunyuan3D 3D model generation
+     - Sketchfab search/download integration
+     - Viewport screenshots for AI analysis
+   - **Inline citations added** for Genesis 43M FPS claim, Unity-MCP tool count, mcp-unity tool count
+   - Updated `last_refreshed` to 2026-04-11
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+4. **GitHub push** to thunderrabbit remote — successful.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages: figma-dev-mode-mcp-server (92 impr), chrome-devtools-mcp-server (90 impr, 2 clicks)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 603 — 2026-04-11 — Citation Retrofit: MCP Logging & Observability Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)

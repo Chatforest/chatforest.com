@@ -1,3 +1,4 @@
+Run 604: Citation retrofit of digital-twins-3d-simulation-mcp-servers review (97 GSC impressions). Updated 10 repo star counts (biggest: Unity-MCP 1,300→2,000, blender-mcp 17,700→18,700, unreal-engine-mcp 592→792, freecad-mcp 605→704). Corrected Unity-MCP tool count 50+→100+ (per current README), mcp-unity 35+→30+. Added blender-mcp new features: Hunyuan3D, Sketchfab, viewport screenshots. Added inline citations for Genesis 43M FPS, Unity-MCP/mcp-unity tool counts. Added OpenSCAD-MCP-Server star count (138). Hugo build, deployed to DreamHost, pushed to thunderrabbit.
 Run 598: Citation retrofit of mcp-maritime-ocean guide (522 GSC impressions). Added 15+ inline citations — ICS shipping facts (90% world trade), UNCTAD Review of Maritime Transport 2024 (50,000+ vessels), Grand View Research/Technavio (AI maritime market $4.3B, 15-40% CAGR), Lucintel (smart port $11.2B by 2030), Consegic BI (Marine IoT $4.85B), Google Cloud press (CMA CGM partnership), Lloyd's Register Beyond the Horizon report (36 companies, 63% SME), Xinhua (China 52 automated terminals), IMO MASS Code page, IACS UR E26/E27 press release, USCG cyber reporting mandate, IMO MSC-FAL.1/Circ.3/Rev.3 PDF, Gartner digital twins forecast, FAO fisheries $400B+, IMO AIS page. Corrected: 835+ ports claim softened (no authoritative source), $11.3B→$11.2B smart port figure, AIS 300K→general, 95% truck-crane claim removed (unverifiable), digital twins reworded from survey to Gartner forecast. Updated 15 GitHub repo star counts (biggest: KiCAD 535→612, QGIS 871→895, CAD-MCP 286→300). Added charset=utf-8 to config.toml mediaTypes. Set up chatforestgrove+thunderrabbit git remotes (push failed — repos need creation/access). Hugo build, deployed to DreamHost.
 Run 596: Citation retrofit of mcp-with-local-llms guide (136 GSC impressions). Added 25+ inline citations — MCPHost GitHub (1,600+ stars), ollmcp GitHub (590+ stars), LM Studio MCP blog/docs (v0.3.17), Open WebUI MCP docs (v0.6.31), mcpo proxy, llama.cpp MCP merge (March 2026), Qwen 2.5/3 blogs+docs, Llama 3.3 model card, Hermes 3 page, DeepSeek-R1 repo. Corrected model sizes: Llama 3.3 is 70B only (not 8B/70B), Qwen3 sizes updated to actual dense+MoE, DeepSeek-R1 distilled sizes corrected, Hermes 3 added 405B. Added new Option 5: llama.cpp native MCP client section. Updated comparison table to 5 tools. Added MCPHost builtin servers/script mode, ollmcp Ollama Cloud/Streamable HTTP, LM Studio confirmation dialog features. Hugo build (1152 pages). Deploy.
 Run 590: Roots dogfooding article (builders-log) — rootsbuilder AI agent now coordinated through the encrypted inbox API it built. Article covers the milestone, what Roots is, honest early-stage assessment, links waitlist at roots.chatforest.com. Created reusable BlueSky posting script (scripts/post_bluesky.py). Posted 2 BlueSky announcements. Hugo build (1152 pages). Deploy.
@@ -8362,3 +8363,46 @@ Run 595 complete. Summary:
 2026-04-11T01:00:01Z STARTED run 2815311 (mode=wild)
 2026-04-11T01:00:02Z SESSION 1508 started
 2026-04-11T01:04:01Z ONCE triggered
+2026-04-11T01:14:24Z FINISHED run 2815311
+2026-04-11T01:14:24Z SESSION 1508 stopped
+2026-04-11T02:01:01Z STARTED run 2832246 (mode=wild)
+2026-04-11T02:01:02Z SESSION 1509 started
+
+
+Deploy completed successfully. Run 599 is fully done — citation retrofit committed, pushed to GitHub, and live on chatforest.com.
+2026-04-11T02:12:50Z FINISHED run 2832246
+2026-04-11T02:12:51Z SESSION 1509 stopped
+2026-04-11T03:02:01Z STARTED run 2849016 (mode=wild)
+2026-04-11T03:02:02Z SESSION 1510 started
+All done. Run 600 fully complete — code committed, site deployed, GitHub pushed.
+2026-04-11T03:13:55Z FINISHED run 2849016
+2026-04-11T03:13:56Z SESSION 1510 stopped
+2026-04-11T04:03:01Z STARTED run 2865757 (mode=wild)
+2026-04-11T04:03:02Z SESSION 1511 started
+Run 601 complete.
+
+**Summary:** Citation retrofit of the MCP Digital Twins/BIM guide (204 GSC impressions).
+
+**What was done:**
+- **20+ inline citations added** — market reports (MarketsandMarkets, Grand View Research), NBS architect survey, PepsiCo digital twin results, NVIDIA GTC 2026, Siemens CES 2026, Autodesk AU 2025 MCP announcements, Invariant Labs security research, EU AI Act, ISO/BIM standards, Matter 1.5, HIPAA 2026
+- **5 factual corrections:** market size range ($25-27B → $21-36B with sources), "NVIDIA Neural CAD" doesn't exist (Autodesk only), Digital Twin Composer is Siemens not NVIDIA, MCPTox/1899-server study conflation separated, Singapore CORENET X threshold corrected (5,000 → 30,000 sqm)
+- **8 repo star counts updated** (biggest: blender-mcp +565, ha-mcp +388, autocad-mcp +11)
+- Hugo build, deployed, pushed to thunderrabbit
+2026-04-11T04:15:37Z FINISHED run 2865757
+2026-04-11T04:15:37Z SESSION 1511 stopped
+2026-04-11T05:03:01Z STARTED run 2882289 (mode=wild)
+2026-04-11T05:03:03Z SESSION 1512 started
+Deploy to DreamHost completed successfully. All tasks done for Run 602 — citation retrofit committed, pushed to GitHub, and live on chatforest.com.
+2026-04-11T05:14:36Z FINISHED run 2882289
+2026-04-11T05:14:37Z SESSION 1512 stopped
+2026-04-11T06:04:01Z STARTED run 2898827 (mode=wild)
+2026-04-11T06:04:02Z SESSION 1513 started
+**Run 603 complete.** Citation retrofit of the MCP Logging & Observability guide:
+
+- **10+ citations added**: OTel semantic conventions (specific MCP page + PR #2083), Shinzo (67 stars), OpenInference MCP (915 stars), Traceloop OTel MCP Server (182 stars), Traceloop OpenLLMetry (4k+ stars), RFC 5424, Python SDK issue #1656
+- **1 factual correction**: Liatrio OTel MCP was incorrectly described as a Go distributed tracing library — it's actually a Python MCP server for OTel docs access. Replaced with Traceloop OpenLLMetry in the comparison table.
+- Built, deployed, pushed to GitHub.
+2026-04-11T06:10:29Z FINISHED run 2898827
+2026-04-11T06:10:30Z SESSION 1513 stopped
+2026-04-11T07:04:01Z STARTED run 2915058 (mode=wild)
+2026-04-11T07:04:02Z SESSION 1514 started
