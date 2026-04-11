@@ -4,13 +4,13 @@ date: 2026-03-14T08:27:46+09:00
 description: "Figma's official MCP server gives AI assistants direct access to design files, variables, Code Connect mappings, and code-to-canvas capture."
 og_description: "Figma's official MCP server connects AI assistants to your design system — frames, variables, Code Connect, and code-to-canvas capture. 13 tools, OAuth, remote server at mcp.figma.com. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Figma's first-party MCP server for AI-assisted design-to-code workflows. OAuth authentication, 13 tools covering code generation, design tokens, Code Connect, and code-to-canvas capture — all from a remote server at mcp.figma.com."
-last_refreshed: 2026-03-14
+card_description: "Figma's first-party MCP server for AI-assisted design-to-code workflows. OAuth authentication, 13 tools covering code generation, design tokens, Code Connect, and code-to-canvas capture — all from a remote server at mcp.figma.com. 1,069 GitHub stars."
+last_refreshed: 2026-04-11
 ---
 
-**At a glance:** 443 GitHub stars (guide repo), 13 tools, OAuth, remote server at mcp.figma.com/mcp, code-to-canvas now in VS Code/Copilot + Cursor + Warp + more (expanded Q1 2026), PulseMCP 277K all-time visitors (#136 globally, ~17.3K weekly, #94 this week), Framelink competitor at 13.8K stars / 1.5M PulseMCP visitors (#27 globally)
+**At a glance:** [1,069 GitHub stars](https://github.com/figma/mcp-server-guide) (guide repo), 13 tools, OAuth, remote server at mcp.figma.com/mcp, code-to-canvas now in VS Code/Copilot + Cursor + Warp + more (expanded Q1 2026), PulseMCP 277K all-time visitors (#136 globally, ~17.3K weekly, #94 this week), [Framelink](https://github.com/GLips/Figma-Context-MCP) competitor at 14.3K stars / 1.5M PulseMCP visitors (#27 globally)
 
-The Figma Dev Mode MCP server is Figma's official tool for connecting AI coding assistants to design files. It's a hosted remote server at `mcp.figma.com/mcp` — no npm package to manage, no local process to run. Authenticate via OAuth, and your AI assistant can read Figma frames, extract design tokens, manage Code Connect mappings, and even capture live web pages back into Figma designs.
+The Figma Dev Mode MCP server is [Figma's official tool](https://developers.figma.com/docs/figma-mcp-server/) for connecting AI coding assistants to design files. It's a hosted remote server at `mcp.figma.com/mcp` — no npm package to manage, no local process to run. Authenticate via OAuth, and your AI assistant can read Figma frames, extract design tokens, manage Code Connect mappings, and even capture live web pages back into Figma designs.
 
 This is the design-to-code bridge that every frontend developer has been waiting for. Instead of manually inspecting Figma frames and translating visual properties into CSS, you paste a Figma URL and ask your AI assistant to build it. The server handles the translation layer.
 
@@ -75,7 +75,7 @@ First connection opens a browser for OAuth consent. You select your Figma team, 
 
 ## What's Good
 
-**Code-to-canvas is genuinely unique — and expanding fast.** The `generate_figma_design` tool captures live web UI and converts it to editable Figma frames. Originally a Claude Code exclusive, Figma expanded code-to-canvas to VS Code (via GitHub Copilot) on March 6, 2026, and now supports Cursor, Warp, Factory, Firebender, and Augment. OpenAI Codex integration launched February 25, 2026, with a bidirectional MCP server. No community server can match this — it's a capability only the platform owner can provide.
+**Code-to-canvas is genuinely unique — and expanding fast.** The `generate_figma_design` tool captures live web UI and converts it to editable Figma frames. Originally a Claude Code exclusive, Figma [expanded code-to-canvas to VS Code (via GitHub Copilot)](https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code/) on March 6, 2026, and now supports Cursor, Warp, Factory, Firebender, and Augment. [OpenAI Codex integration](https://openai.com/index/figma-partnership/) launched February 26, 2026, with a bidirectional MCP server. No community server can match this — it's a capability only the platform owner can provide.
 
 **Code Connect integration solves the "which component?" problem.** Instead of the AI guessing how to implement a Figma component, Code Connect maps it directly to your existing codebase component. `get_code_connect_suggestions` finds unmapped components, and `add_code_connect_map` creates the mapping. Over time, this makes code generation increasingly accurate to your actual design system.
 
@@ -89,13 +89,13 @@ First connection opens a browser for OAuth consent. You select your Figma team, 
 
 ## What's Not
 
-**Free tier rate limits are crippling.** Starter, View, and Collab seats get **6 tool calls per month**. Not per day — per month. That's barely enough to test the server, let alone use it for real work. Paid plans help, but the caps vary: Professional and Organization get 200 calls/day (15-20/min), Enterprise gets 600 calls/day. Dev seats start at $12/month (annual) and Full seats at $15/month on the Professional plan. Meaningful use requires a paid Figma plan with Dev or Full seats.
+**Free tier rate limits are crippling.** Starter, View, and Collab seats get [**6 tool calls per month**](https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/). Not per day — per month. That's barely enough to test the server, let alone use it for real work. Paid plans help, but the caps vary: Professional and Organization get 200 calls/day (15-20/min), Enterprise gets 600 calls/day. Dev seats [start at $12/month (annual) and Full seats at $15/month](https://www.figma.com/pricing/) on the Professional plan. Meaningful use requires a paid Figma plan with Dev or Full seats.
 
-**Prescriptive output can poison your context.** The `get_design_context` tool generates opinionated React + Tailwind code by default. If your codebase uses Vue, Svelte, or a different styling approach, the generated code introduces conventions that don't match your project. The community [Framelink](https://github.com/GLips/Figma-Context-MCP) server takes a different approach — it outputs descriptive JSON and lets your AI assistant generate code that matches your existing patterns.
+**Prescriptive output can poison your context.** The `get_design_context` tool generates opinionated React + Tailwind code by default. If your codebase uses Vue, Svelte, or a different styling approach, the generated code introduces conventions that don't match your project. The community [Framelink](https://github.com/GLips/Figma-Context-MCP) server (14.3K stars) takes a different approach — it outputs descriptive JSON and lets your AI assistant generate code that matches your existing patterns.
 
 **Nested components get flattened.** The server loses component hierarchy when translating designs. A card component containing a button component comes through as a flat structure rather than preserving the nesting. This can mislead the AI into generating monolithic components instead of composing from your existing component library.
 
-**No self-hosting option.** The server runs on Figma's infrastructure. You can't inspect the source code, self-host, or audit what data flows through it. The community Framelink server is MIT-licensed and fully inspectable.
+**No self-hosting option.** The server runs on Figma's infrastructure. You can't inspect the source code, self-host, or audit what data flows through it. The community [Framelink server](https://github.com/GLips/Figma-Context-MCP) is MIT-licensed and fully inspectable.
 
 **OAuth requires a browser.** Same limitation we've flagged in [Vercel](/reviews/vercel-mcp-server/), [Neon](/reviews/neon-mcp-server/), and [Supabase](/reviews/supabase-mcp-server/) — headless environments, CI/CD pipelines, and remote servers can't authenticate. No API key fallback.
 
@@ -108,12 +108,12 @@ The Figma design-to-code space is crowded — GitHub has 221+ Figma MCP repos. T
 | Feature | Figma Official MCP | Framelink (community) |
 |---------|-------------------|----------------------|
 | **Maintainer** | Figma | GLips (community) |
-| **GitHub stars** | 443 (guide repo) | 13,800 |
+| **GitHub stars** | [1,069](https://github.com/figma/mcp-server-guide) (guide repo) | [14,273](https://github.com/GLips/Figma-Context-MCP) |
 | **PulseMCP visitors** | 277K all-time (#136) | 1.5M all-time (#27) |
 | **Transport** | Remote HTTP (Streamable) | Stdio (npx) |
 | **Auth** | OAuth (browser) | API key (CLI arg) |
 | **Tools** | 13 | 6 |
-| **npm downloads** | N/A (remote server) | ~11,600/week |
+| **npm downloads** | N/A (remote server) | [~153K/week](https://www.npmjs.com/package/figma-developer-mcp) |
 | **Output format** | Prescriptive (React/Tailwind) | Descriptive JSON |
 | **Component nesting** | Flattened | Preserved |
 | **Response size** | Larger | ~25% smaller |
@@ -122,39 +122,39 @@ The Figma design-to-code space is crowded — GitHub has 221+ Figma MCP repos. T
 | **Design system rules** | Yes (Org/Enterprise) | No |
 | **Rate limits (free)** | 6/month | Figma API limits only |
 | **Self-hostable** | No | Yes (MIT) |
-| **Security track record** | Closed-source (Figma-hosted) | CVE-2025-15061 RCE (patched v0.6.3) |
+| **Security track record** | Closed-source (Figma-hosted) | [CVE-2025-15061](https://github.com/advisories/GHSA-8675-cg27-5c39) RCE (patched v0.6.3) |
 
-The community server has 31x the GitHub stars and 5.4x the PulseMCP traffic, and arguably produces better code output for pure design-to-code workflows. But the official server has exclusive capabilities: code-to-canvas capture across 7+ IDE clients, Code Connect management, design system rules, FigJam diagram generation, and OAuth without API key management.
+The community server has 13x the GitHub stars and 5.4x the PulseMCP traffic, and arguably produces better code output for pure design-to-code workflows. But the official server has exclusive capabilities: code-to-canvas capture across 7+ IDE clients, Code Connect management, design system rules, FigJam diagram generation, and OAuth without API key management.
 
 **Recommendation:** If you just need to translate designs to code, Framelink is the better tool — descriptive output, smaller payloads, accurate component nesting, and no seat-type rate limits. If you need the full design-code-design loop (especially code-to-canvas and Code Connect), the official server is the only option, and it requires a paid Figma plan. Note that Framelink had a critical RCE vulnerability (CVE-2025-15061) — now patched in v0.6.3 and later — which highlights the security tradeoff of self-hosted servers vs. Figma's managed infrastructure.
 
 ## What's New (March 2026 Update)
 
-**Code-to-canvas breaks out of Claude Code.** The `generate_figma_design` tool — originally a Claude Code exclusive — expanded to VS Code via GitHub Copilot (March 6, 2026), and now works in Cursor, Warp, Factory, Firebender, and Augment. OpenAI's Codex integration launched February 25, 2026, with a bidirectional MCP server. This is the fastest expansion of any MCP server's client support we've tracked.
+**Code-to-canvas breaks out of Claude Code.** The `generate_figma_design` tool — originally a Claude Code exclusive — [expanded to VS Code via GitHub Copilot](https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code/) (March 6, 2026), and now works in Cursor, Warp, Factory, Firebender, and Augment. [OpenAI's Codex integration](https://openai.com/index/figma-partnership/) launched February 26, 2026, with a bidirectional MCP server. This is the fastest expansion of any MCP server's client support we've tracked.
 
-**New tool: `create_design_system_rules`.** Teams on Organization and Enterprise plans can now create rule files with framework-specific instructions, so agents know how to translate designs for Vue, Svelte, or any other stack. This partially addresses the prescriptive React/Tailwind output criticism.
+**New tool: [`create_design_system_rules`](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/).** Teams on Organization and Enterprise plans can now create rule files with framework-specific instructions, so agents know how to translate designs for Vue, Svelte, or any other stack. This partially addresses the prescriptive React/Tailwind output criticism.
 
-**Code Connect gets multi-framework support.** You can now attach multiple code files to a single Figma component and see code previews across different frameworks (requires GitHub connection). This makes Code Connect useful for design systems that target multiple platforms.
+**[Code Connect](https://developers.figma.com/docs/code-connect/) gets multi-framework support.** You can now attach multiple code files to a single Figma component and see code previews across different frameworks (requires GitHub connection). This makes Code Connect useful for design systems that target multiple platforms.
 
-**Rate limits clarified.** Figma published explicit daily and per-minute caps: Professional and Organization get 200 calls/day (15-20 calls/min), Enterprise gets 600 calls/day. Free tier remains at 6/month. `generate_figma_design`, `add_code_connect_map`, and `whoami` are rate-limit exempt.
+**[Rate limits clarified](https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/).** Figma published explicit daily and per-minute caps: Professional gets 200 calls/day (15/min), Organization gets 200 calls/day (20/min), Enterprise gets 600 calls/day (20/min). Free tier remains at 6/month. `generate_figma_design`, `add_code_connect_map`, and `whoami` are rate-limit exempt.
 
-**Framelink keeps pace.** The community competitor shipped v0.7.1 (March 20, 2026) with 13.8K GitHub stars, ~11,600 weekly npm downloads, and 1.5M PulseMCP all-time visitors (#27 globally). A critical RCE vulnerability (CVE-2025-15061) was discovered and patched in v0.6.3 — a reminder that self-hosted servers carry security responsibility that managed services don't.
+**Framelink accelerates.** The community competitor reached [v0.10.1](https://github.com/GLips/Figma-Context-MCP/releases) (April 10, 2026) with [14.3K GitHub stars](https://github.com/GLips/Figma-Context-MCP), [~153K weekly npm downloads](https://www.npmjs.com/package/figma-developer-mcp), and 1.5M PulseMCP all-time visitors (#27 globally). A critical [RCE vulnerability (CVE-2025-15061)](https://github.com/advisories/GHSA-8675-cg27-5c39) was discovered and patched in v0.6.3 — a reminder that self-hosted servers carry security responsibility that managed services don't.
 
-**AI Credits pay-as-you-go.** Organization and Enterprise plans now have pay-as-you-go billing for AI credits, with Professional plans getting the option in May 2026.
+**[AI Credits pay-as-you-go](https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits).** Organization and Enterprise plans now have pay-as-you-go billing for AI credits ($0.03/credit), with Professional plans getting the option in May 2026.
 
 ## The Bigger Picture
 
-The Figma MCP server tells an interesting story about the official-vs-community dynamic in the MCP ecosystem. The community Framelink server launched first, accumulated 13,800 stars, and optimized for the most common use case: reading designs and generating code. Figma's official server launched later with fewer stars but unique write capabilities that only the platform owner can provide.
+The Figma MCP server tells an interesting story about the official-vs-community dynamic in the MCP ecosystem. The community Framelink server launched first, accumulated 14,300 stars, and optimized for the most common use case: reading designs and generating code. Figma's official server launched later with fewer stars but unique write capabilities that only the platform owner can provide.
 
 Q1 2026 shifted the balance. Figma's aggressive expansion of code-to-canvas support across 7+ IDE clients — and the OpenAI Codex partnership — shows the platform leveraging its unique position as the design system of record. Community servers can read from Figma, but only Figma can write back to the canvas. That moat is widening.
 
-Meanwhile, Framelink's RCE vulnerability (CVE-2025-15061) illustrates the security tradeoff in this space. Self-hosted MIT-licensed servers offer transparency and flexibility, but they also put the security burden on users. Figma's managed infrastructure handles that silently. For enterprise teams, this is an increasingly important consideration.
+Meanwhile, Framelink's [RCE vulnerability (CVE-2025-15061)](https://github.com/advisories/GHSA-8675-cg27-5c39) illustrates the security tradeoff in this space. Self-hosted MIT-licensed servers offer transparency and flexibility, but they also put the security burden on users. Figma's managed infrastructure handles that silently. For enterprise teams, this is an increasingly important consideration.
 
 The 6-calls-per-month free tier limit remains the most aggressive gating we've seen on any MCP server. Even [Neon](/reviews/neon-mcp-server/)'s free tier gives you 100 projects and meaningful API access. Figma is clearly positioning MCP as a paid feature, which may slow grassroots adoption — but the code-to-canvas expansion suggests Figma is betting on enterprise and team workflows rather than individual developers.
 
 ## Rating: 3.5/5
 
-The Figma Dev Mode MCP server earns a 3.5/5 for delivering unique write capabilities (code-to-canvas across 7+ IDE clients, Code Connect, design system rules, FigJam diagrams) that no community server can match, wrapped in a clean remote-first OAuth architecture. The Q1 2026 expansion — code-to-canvas in VS Code/Copilot, OpenAI Codex integration, and the new `create_design_system_rules` tool — shows genuine momentum. It still loses points for a crippling free tier (6 calls/month), prescriptive output defaults, flattened component hierarchies, no self-hosting option, and the fact that the community Framelink server with 13,800 stars and 5.4x the PulseMCP traffic produces better output for pure design-to-code workflows. A paid Figma plan ($12-15/month minimum for a Dev or Full seat) is effectively required for real use.
+The Figma Dev Mode MCP server earns a 3.5/5 for delivering unique write capabilities (code-to-canvas across 7+ IDE clients, Code Connect, design system rules, FigJam diagrams) that no community server can match, wrapped in a clean remote-first OAuth architecture. The Q1 2026 expansion — code-to-canvas in VS Code/Copilot, OpenAI Codex integration, and the new `create_design_system_rules` tool — shows genuine momentum. It still loses points for a crippling free tier (6 calls/month), prescriptive output defaults, flattened component hierarchies, no self-hosting option, and the fact that the community [Framelink server](https://github.com/GLips/Figma-Context-MCP) with 14,300 stars and 5.4x the PulseMCP traffic produces better output for pure design-to-code workflows. A paid Figma plan ($12-15/month minimum for a Dev or Full seat) is effectively required for real use.
 
 **Use this if:** You have a paid Figma plan and want the full design-code-design loop — especially Code Connect for mapping components, code-to-canvas for keeping designs in sync with implementations, and design system rules for multi-framework support.
 
@@ -162,4 +162,4 @@ The Figma Dev Mode MCP server earns a 3.5/5 for delivering unique write capabili
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review is maintained by an AI research process (Claude Opus 4.6, Anthropic). We research publicly available data — GitHub, npm, PulseMCP, official docs — but have not tested this server hands-on. The project is operated by [Rob Nugen](https://robnugen.com). Last updated: 2026-03-21.*
+*This review is maintained by an AI research process (Claude Opus 4.6, Anthropic). We research publicly available data — GitHub, npm, PulseMCP, official docs — but have not tested this server hands-on. The project is operated by [Rob Nugen](https://robnugen.com). Last updated: 2026-04-11.*
