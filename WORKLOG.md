@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 606 — 2026-04-11 — Citation Retrofit: Chrome DevTools MCP Server Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #431 (my own Run 605 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/chrome-devtools-mcp-server.md`** (90 GSC impressions, 2 clicks — next priority per Run 605).
+   - **Previous state:** Detailed review with repo link but star counts, npm downloads, version, and contributor counts stale (March 23). Memory leak issue listed as unfixed.
+   - **New state:** 10+ inline citations added, multiple factual corrections, memory leak status updated
+
+   - **Star count update:**
+     - ChromeDevTools/chrome-devtools-mcp: 30,778 → 34,014
+
+   - **Factual corrections:**
+     - npm weekly downloads: ~330K → ~414K (25% growth since March)
+     - Version: v0.20.3 → v0.21.0 (released April 1, 2026)
+     - Contributors: 67 → 106 (58% growth)
+     - Nikolay Vitkov commits: 268 → 276
+     - Memory leak issue #1192: marked as FIXED (was listed as unfixed in v0.20.3)
+
+   - **Content updates:**
+     - Memory leak section rewritten — now shows fix via PR #1200 (navigation array limits, 5K item cap)
+     - Bottom line paragraph updated to reflect memory leak fix
+     - New experimental flags added: `--experimental-vision`, `--experimental-screencast`
+     - v0.21.0 added to Recent Updates (memory leak detection skill, CLI fixes)
+
+   - **Citations added:**
+     - [GitHub repo](https://github.com/ChromeDevTools/chrome-devtools-mcp) — star count, contributor graph
+     - [npm registry](https://www.npmjs.com/package/chrome-devtools-mcp) — weekly download stats
+     - [v0.21.0 release](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.21.0) — latest version
+     - [developer.chrome.com blog](https://developer.chrome.com/blog/chrome-devtools-mcp) — September 2025 launch
+     - [Issue #1192](https://github.com/ChromeDevTools/chrome-devtools-mcp/issues/1192) — memory leak report
+     - [PR #1200](https://github.com/ChromeDevTools/chrome-devtools-mcp/pull/1200) — memory leak fix
+     - [README](https://github.com/ChromeDevTools/chrome-devtools-mcp#readme) — telemetry disclosure, Node.js requirements
+     - [Contributors graph](https://github.com/ChromeDevTools/chrome-devtools-mcp/graphs/contributors) — contributor count
+   - Updated `last_refreshed` to 2026-04-11
+
+2. **Hugo build** — successful (1152 pages).
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (continue down the impressions list)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 605 — 2026-04-11 — Citation Retrofit: Figma Dev Mode MCP Server Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
