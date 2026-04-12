@@ -4,10 +4,11 @@ date: 2026-03-28T23:00:00+09:00
 description: "A comprehensive guide to multimodal content in MCP — covering ImageContent, AudioContent, EmbeddedResource content types, image generation servers (DALL-E, Stable Diffusion"
 content_type: "Guide"
 card_description: "MCP now supports images, audio, and rich media natively. Here's how to build and use multimodal MCP servers — from content types to production patterns."
-last_refreshed: 2026-03-28
+last_refreshed: 2026-04-12
+lastmod: 2026-04-12
 ---
 
-AI agents are no longer text-only. The MCP specification now defines four content types — TextContent, ImageContent, AudioContent, and EmbeddedResource — enabling agents to receive screenshots, generate images, transcribe audio, analyze video, and work with binary files through standardized tool interfaces. This shift from text-only to multimodal is one of the most significant changes in the MCP ecosystem in 2026.
+AI agents are no longer text-only. The [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18/schema) now defines five content types — TextContent, ImageContent, AudioContent, EmbeddedResource, and ResourceLink — enabling agents to receive screenshots, generate images, transcribe audio, analyze video, and work with binary files through standardized tool interfaces. This shift from text-only to multimodal is one of the most significant changes in the MCP ecosystem in 2026.
 
 The practical impact is concrete. An agent debugging a UI issue can receive a screenshot through an MCP tool, analyze the layout, and suggest CSS fixes. A content creation agent can generate images with DALL-E, produce voiceovers with ElevenLabs, and analyze video footage with TwelveLabs — all through MCP tool calls. A data analysis agent can return charts as images alongside tabular results.
 
@@ -15,7 +16,7 @@ But multimodal MCP introduces challenges that text-based tools don't face: base6
 
 ## MCP Content Types: The Foundation
 
-The June 2025 MCP specification (2025-06-18) defines content types that tools can return in their `CallToolResult`. Understanding these types is essential for building and consuming multimodal MCP servers.
+The [June 2025 MCP specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/schema) defines content types that tools can return in their `CallToolResult`. All five content types below are members of the [`ContentBlock` union type](https://modelcontextprotocol.io/specification/2025-06-18/schema) in the schema. Understanding these types is essential for building and consuming multimodal MCP servers.
 
 ### TextContent
 
@@ -110,19 +111,19 @@ These servers enable AI agents to create images from text prompts, edit existing
 
 Multiple community servers wrap OpenAI's DALL-E API for MCP access. They typically expose tools like `generate_image` (text-to-image), `edit_image` (inpainting with masks), and `create_variation`. The returned ImageContent is base64-encoded PNG or JPEG.
 
-Key implementations include servers by sammyl720 and spartanz51 on GitHub, both providing text-to-image and image-to-image capabilities through MCP tool interfaces. These connect directly to the OpenAI API, requiring an API key configured in the server environment.
+Key implementations include [image-generator-mcp-server](https://github.com/sammyl720/image-generator-mcp-server) by sammyl720 (11 stars) and [imagegen-mcp](https://github.com/spartanz51/imagegen-mcp) by spartanz51 (33 stars), both providing text-to-image and image-to-image capabilities through MCP tool interfaces. These connect directly to the OpenAI API, requiring an API key configured in the server environment.
 
 #### Stable Diffusion / Flux MCP Servers
 
 For local or self-hosted image generation:
 
-- **image-gen-mcp** ([GitHub](https://github.com/Ichigo3766/image-gen-mcp)) — connects to Stable Diffusion WebUI (AUTOMATIC1111 or ForgeUI) running locally, exposing text-to-image generation through MCP
-- **Stability AI MCP Server** ([GitHub](https://github.com/tadasant/mcp-server-stability-ai)) — integrates with the Stability AI API for generation, editing, upscaling, and style transfer
+- **image-gen-mcp** ([GitHub](https://github.com/Ichigo3766/image-gen-mcp), 34 stars) — connects to Stable Diffusion WebUI (AUTOMATIC1111 or ForgeUI) running locally, exposing text-to-image generation through MCP
+- **Stability AI MCP Server** ([GitHub](https://github.com/tadasant/mcp-server-stability-ai), 83 stars) — integrates with the Stability AI API for generation, editing, upscaling, and style transfer
 - **Flux-based servers** — several implementations use Replicate's Flux models for high-quality generation without local GPU requirements
 
 #### MCPollinations
 
-[MCPollinations](https://github.com/pinkpixel-dev/MCPollinations) provides a unified multimodal server covering image generation (via Pollinations API), text generation, and audio generation — all without requiring API keys or authentication. This makes it one of the most accessible multimodal MCP servers for experimentation.
+[MCPollinations](https://github.com/pinkpixel-dev/MCPollinations) (40 stars) provides a unified multimodal server covering image generation (via Pollinations API), text generation, and audio generation — all without requiring API keys or authentication. This makes it one of the most accessible multimodal MCP servers for experimentation.
 
 #### ImgMCP
 
@@ -164,26 +165,30 @@ An AI-powered server for video-to-audio and text-to-audio generation. Given a vi
 | Capabilities | TTS, transcription, voice cloning, outbound calls |
 | License | Commercial (API key required) |
 
-The [official ElevenLabs MCP server](https://elevenlabs.io/blog/introducing-elevenlabs-mcp) is the most full-featured audio server in the ecosystem. It supports:
+The [official ElevenLabs MCP server](https://elevenlabs.io/blog/introducing-elevenlabs-mcp) ([GitHub](https://github.com/elevenlabs/elevenlabs-mcp)) is the most full-featured audio server in the ecosystem. It supports:
 
 - **Text-to-speech** — generate natural-sounding speech in multiple voices and languages
 - **Audio transcription** — convert speech to text with speaker identification
 - **Voice cloning** — create custom voices from audio samples
-- **Voice agents** — build and deploy outbound voice calling agents
+- **Sound effects** — generate sound effects from text descriptions
+- **Music composition** — compose music with customizable parameters
+- **Audio isolation** — separate vocals from background audio
+- **Speech-to-speech** — voice conversion between different voices
+- **Conversational AI agents** — create, manage, and deploy outbound voice calling agents via [Twilio/SIP integration](https://github.com/elevenlabs/elevenlabs-mcp)
 
-The server returns AudioContent blocks with generated speech and TextContent blocks with transcription results.
+The server exposes [24 tools](https://github.com/elevenlabs/elevenlabs-mcp) in total, returning AudioContent blocks with generated speech and TextContent blocks with transcription results.
 
 #### Azure Speech MCP Server
 
-Part of the [Azure MCP Server](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/tools/ai-services-speech) collection. Provides speech-to-text and text-to-speech through Azure AI Services, supporting 100+ languages and custom voice models.
+Part of the [Azure MCP Server](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/tools/ai-services-speech) collection (page last updated March 2026). Provides two core tools — Speech-to-Text (Recognize) and Text-to-Speech (Synthesize) — through Azure AI Services, supporting multiple audio formats (WAV, MP3, OPUS/OGG, FLAC) and custom voice models.
 
 #### Whisper-Based Servers
 
 Several community servers wrap OpenAI's Whisper model (or the open-source whisper.cpp) for local speech-to-text:
 
-- **Local Speech-to-Text** by SmartLittleApps — uses whisper.cpp for fully offline transcription
+- **[Local Speech-to-Text](https://github.com/SmartLittleApps/local-stt-mcp)** by SmartLittleApps (12 stars) — uses whisper.cpp for fully offline transcription, optimized for Apple Silicon, with speaker diarization and multiple output formats (txt, json, vtt, srt, csv)
 - **Speech Interface (Faster Whisper)** — optimized for speed with CTranslate2 backend
-- **Audio MCP Server** by GongRzhe — combines recording, transcription, and playback
+- **Audio MCP Server** by GongRzhe — combined recording, transcription, and playback (**note:** [archived March 2026](https://github.com/GongRzhe/Audio-MCP-Server), now read-only)
 
 These are particularly valuable for privacy-sensitive applications since audio never leaves the local machine.
 
@@ -200,8 +205,8 @@ Lightweight TTS servers include:
 Screenshot servers bridge the gap between visual interfaces and text-based agents:
 
 - **ScreenshotOne MCP** — captures website screenshots through the ScreenshotOne API, returning images as base64-encoded ImageContent
-- **Playwright MCP** — Microsoft's browser automation server captures page screenshots as part of its 26-tool suite (covered in detail in our [MCP for Testing/QA guide](/guides/mcp-testing-qa/))
-- **BrowserTools MCP** — captured browser screenshots and console logs (note: this project has been discontinued)
+- **Playwright MCP** ([GitHub](https://github.com/microsoft/playwright-mcp)) — Microsoft's browser automation server captures page screenshots as part of its tool suite (covered in detail in our [MCP for Testing/QA guide](/guides/mcp-testing-qa/))
+- **BrowserTools MCP** ([GitHub](https://github.com/AgentDeskAI/browser-tools-mcp), 7,186 stars) — captured browser screenshots and console logs (**discontinued:** the README states ["THIS PROJECT IS NO LONGER ACTIVE"](https://github.com/AgentDeskAI/browser-tools-mcp) as of March 2026; no code updates since March 2025)
 
 ### OCR and Document Processing
 
@@ -389,7 +394,7 @@ This pattern avoids sending image bytes through the MCP pipeline entirely. The t
 
 ### Pattern 3: Chunked Processing for Large Files
 
-The [Large File MCP server](https://github.com/willianpinho/large-file-mcp) demonstrates intelligent chunking for files that can't be loaded into memory at once:
+The [Large File MCP server](https://github.com/willianpinho/large-file-mcp) (10 stars, actively maintained) demonstrates intelligent chunking for files that can't be loaded into memory at once:
 
 - **Smart chunking** — automatically determines optimal chunk size based on file type
 - **Memory-efficient streaming** — processes files line-by-line without loading the entire file
@@ -508,7 +513,7 @@ Not all MCP clients support all content types equally. This is one of the bigges
 - **Document supported content types** — clearly state what content types your server returns so client developers know what to expect
 - **Test with multiple clients** — behavior varies significantly between Claude Desktop, IDE integrations, and custom clients
 
-Notably, the Gemini CLI opened [an issue](https://github.com/google-gemini/gemini-cli/issues/2136) tracking support for ImageContent in MCP tool results, indicating that even major clients are still catching up with the full multimodal specification.
+Notably, the Gemini CLI [opened an issue](https://github.com/google-gemini/gemini-cli/issues/2136) tracking support for ImageContent in MCP tool results — this has since been **resolved** via [PR #5529](https://github.com/google-gemini/gemini-cli/pull/5529), which implemented multimodal MCP tool response parsing. The pace of resolution illustrates how rapidly clients are catching up with the full multimodal specification.
 
 ## Security Considerations
 
@@ -546,27 +551,24 @@ For a comprehensive treatment of MCP security risks, see our [MCP Attack Vectors
 
 ## The 2026 Multimodal Roadmap
 
-The MCP specification is actively evolving to better support multimodal content. Key developments on the [2026 roadmap](https://modelcontextprotocol.io/development/roadmap):
+The MCP specification is actively evolving to better support multimodal content. The [2026 roadmap](https://modelcontextprotocol.io/development/roadmap) (last updated March 2026) identifies four priority areas: Transport Evolution and Scalability, Agent Communication, Governance Maturation, and Enterprise Readiness. Multimodal improvements appear under the "On the Horizon" section rather than as a top priority, but several items are relevant:
 
-### First-Class Media Support
+### Result Type Improvements
 
-The roadmap explicitly calls out video, audio, and other media types receiving "first-class support" in MCP. This means going beyond the current base64-in-JSON approach to more efficient transport mechanisms.
+Under "On the Horizon," the roadmap describes [result type improvements](https://modelcontextprotocol.io/development/roadmap) including:
 
-### Streaming for Large Content
+- **Streamed results** — clients could receive output incrementally for interactive scenarios (generated text, audio, video frames), rather than waiting for a complete base64 blob
+- **Reference-based results** — clients could decide when to pull large payloads into context, addressing the base64 size overhead problem
 
-Planned streaming capabilities include:
+These are not yet prioritized for implementation but signal the direction for handling large media content more efficiently.
 
-- **Multipart messages** — send large files in chunks rather than as single base64 blobs
-- **Bidirectional communication** — enable interactive experiences like real-time audio conversations
-- **Efficient large file transfers** — dedicated transport mechanisms for binary content
+### Extensions Ecosystem
 
-### Content Negotiation
+The roadmap mentions an extensions ecosystem where "ext-auth and ext-apps tracks are early proof that the extension mechanism works." The `ext-apps` track could potentially enable richer interactive experiences beyond request-response tool calls, though its full scope is still being defined.
 
-Future specification versions may include content negotiation, where clients declare which content types they support and servers adapt their responses accordingly. This would address the current fragmentation in client support.
+### What's Not (Yet) on the Roadmap
 
-### MCP Apps
-
-"MCP Apps" is a new concept being incorporated into the standard, potentially enabling richer interactive experiences that go beyond request-response tool calls. The full scope of this initiative is still being defined.
+Notably absent from the current roadmap: explicit content negotiation (where clients declare supported content types and servers adapt), and dedicated multipart message transport for binary content. These capabilities would address the client support fragmentation described above, but they haven't been formally proposed as roadmap items.
 
 ## When to Go Multimodal
 
@@ -599,7 +601,7 @@ Multimodal content is expensive in context window terms. A single high-resolutio
 
 If you want to add image support to an existing MCP server:
 
-1. Use the [FastMCP Python SDK](https://gofastmcp.com/servers/tools) — it handles base64 encoding automatically
+1. Use the [FastMCP Python SDK](https://gofastmcp.com/servers/tools) — it handles base64 encoding automatically via `Image`, `Audio`, and `File` [utility classes](https://gofastmcp.com/servers/tools)
 2. Return `Image(path="file.png")` or `Image(data=bytes_data, format="png")` from tools
 3. Include a text description alongside every image
 4. Test with Claude Desktop, which has the most complete ImageContent support

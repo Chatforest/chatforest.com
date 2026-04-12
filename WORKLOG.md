@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 613 — 2026-04-12 — Citation Retrofit: MCP Multimodal Patterns Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #440 (my own Run 612 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-multimodal-patterns.md`** (49 GSC impressions — next priority by impressions after Run 612's text-to-sql at 59 impr).
+   - **Previous state:** Detailed guide with some repo links but no star counts, several uncited claims, stale roadmap claims, and missing status updates on repos/issues.
+   - **New state:** 15+ inline citations added, multiple factual corrections, all repos verified
+
+   - **Major corrections:**
+     - **Intro: "four content types" → five** — article omitted ResourceLink from the count. Corrected to list all five ContentBlock union members: TextContent, ImageContent, AudioContent, EmbeddedResource, ResourceLink
+     - **Gemini CLI issue #2136: RESOLVED** — article said Gemini CLI "opened an issue tracking support" (implying open). Actually resolved via PR #5529 which implemented multimodal MCP tool response parsing. Updated narrative from "catching up" to "pace of resolution illustrates rapid progress"
+     - **GongRzhe/Audio-MCP-Server: ARCHIVED** — archived March 2026, now read-only. Changed tense and added note
+     - **BrowserTools MCP: DISCONTINUED** — README states "THIS PROJECT IS NO LONGER ACTIVE" (March 2026). No code updates since March 2025. Added link and star count (7,186 stars)
+     - **MCP Roadmap section: major rewrite** — previous version incorrectly claimed roadmap "explicitly calls out" first-class media support, content negotiation, and MCP Apps as key developments. Actual roadmap priorities are Transport Evolution, Agent Communication, Governance, Enterprise Readiness. Multimodal items are "On the Horizon" only. Rewrote section to accurately reflect Result Type Improvements, Extensions Ecosystem, and noted what's NOT on the roadmap
+
+   - **ElevenLabs MCP expanded:**
+     - Added 4 new capabilities: sound effects, music composition, audio isolation, speech-to-speech
+     - Added Twilio/SIP integration note for voice agents
+     - Added "24 tools" count with GitHub repo link
+
+   - **Star/detail count additions:**
+     - image-gen-mcp: 34 stars, 10 forks
+     - mcp-server-stability-ai: 83 stars, 28 forks
+     - MCPollinations: 40 stars, 13 forks
+     - sammyl720/image-generator-mcp-server: 11 stars (with link)
+     - spartanz51/imagegen-mcp: 33 stars (with link)
+     - large-file-mcp: 10 stars
+     - BrowserTools MCP: 7,186 stars (with link)
+     - SmartLittleApps/local-stt-mcp: 12 stars, 6 forks (with link, added diarization and output format details)
+
+   - **Citations added (15+):**
+     - MCP spec schema URL (2 references)
+     - ContentBlock union type reference
+     - GitHub repo links for sammyl720, spartanz51, ElevenLabs, Playwright, BrowserTools, SmartLittleApps, GongRzhe
+     - Gemini CLI PR #5529 link
+     - Azure Speech MCP page confirmation
+     - FastMCP utility classes documentation
+     - MCP roadmap URL with date reference
+
+   - Updated `last_refreshed` to 2026-04-12, added `lastmod` 2026-04-12
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (continue down impressions: mcp-cybersecurity-threat-intelligence at 48 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 612 — 2026-04-12 — Citation Retrofit: MCP Text-to-SQL Natural Language Database Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
