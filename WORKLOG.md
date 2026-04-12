@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 614 — 2026-04-12 — Citation Retrofit: MCP Cybersecurity/Threat Intelligence Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #441 (my own Run 613 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-cybersecurity-threat-intelligence.md`** (48 GSC impressions — next priority by impressions after Run 613's multimodal-patterns at 49 impr).
+   - **Previous state:** Detailed guide with repo names but most data claims uncited — market stats, star counts, workforce shortage figure, and MCP security survey data had no source URLs. Several factual errors.
+   - **New state:** 20+ inline citations added, multiple factual corrections, all repos verified
+
+   - **Major corrections:**
+     - **Workforce gap: 3.4M → 4.8M** — article used ISC2 2022 figure. Updated to ISC2 2024 Workforce Study showing 4.8 million unfilled positions (19% YoY increase). Added citation link
+     - **AI market upper bound: $86-105B → $86-94B at 22-24% CAGR** — the $105B and 27% CAGR upper bounds exceeded credible sources (Grand View Research, Mordor Intelligence). Tightened range
+     - **semgrep/mcp: ARCHIVED** — repository archived since late 2025, now read-only. Changed tense, added ARCHIVED tag, noted in intro paragraph
+     - **mcp-scan → snyk/agent-scan: MERGER** — invariantlabs-ai/mcp-scan permanently redirects to snyk/agent-scan following Snyk acquisition. Updated both mentions
+     - **Pentest-MCP-Server (chfle): 88 → 6 tools** — article claimed 88 industry tools, 600+ unit tests. Actual repo has 6 tools (Nmap, Nikto, SQLMap, WPScan, Dirb, SearchSploit) and 0 stars. Major correction
+     - **"8,000+ MCP servers scanned" claim: REPLACED** — could not verify the 8,000+ sample size. Replaced with verified data: 41% of 518 registry servers lack auth (TapAuth scan), 66% of 1,808 servers had security findings (AgentSeal). Both cited
+     - **IDA Pro MCP: 7,378 stars ADDED** — second most popular security MCP server after GhidraMCP. Was listed with no star count
+     - **Tencent AI-Infra-Guard: 3,437 stars, description updated** — now "full-stack AI Red Teaming platform" (was just "vulnerability assessment tool")
+
+   - **Star/fork count updates (15+ repos):**
+     - GhidraMCP: 8,100 → 8,333 stars, 797 forks
+     - Snyk Agent Scan: 1,700 → 2,107 stars, 200 forks
+     - BloodHound-MCP-AI: 271 → 349 stars, 54 forks
+     - awesome-osint-mcp-servers: 96 → 193 stars (doubled)
+     - mcp-security-hub: 500 → 520 stars, 71 forks
+     - Google mcp-security: 458 → 461 stars, 104 forks
+     - VirusTotal MCP: 109 → 117 stars
+     - Shodan MCP: 120 → 121 stars
+     - Semgrep MCP: 649 stars added (ARCHIVED)
+
+   - **Star counts added where previously missing:**
+     - Elastic MCP: 643 stars, 136 forks
+     - IDA Pro MCP: 7,378 stars, 899 forks
+     - Tencent AI-Infra-Guard: 3,437 stars, 343 forks
+     - Damn Vulnerable MCP Server: 1,277 stars, 145 forks
+     - SlowMist MCP Security Checklist: 825 stars
+     - Burp Suite MCP: 654 stars, 105 forks
+     - Cloudflare MCP: 3,603 stars, 364 forks
+     - MCP Gateway: 364 stars
+     - MCP Guardian: 196 stars
+     - Velociraptor MCP: 35 stars
+     - Check Point MCP: 32 stars
+
+   - **Citations added (20+):**
+     - MarketsandMarkets cybersecurity market report
+     - MarketsandMarkets GenAI cybersecurity report
+     - Mordor Intelligence AI cybersecurity report
+     - ISC2 2024 Cybersecurity Workforce Study
+     - dev.to "30 CVEs and counting" article
+     - Endor Labs MCP security survey (2,614 implementations)
+     - TapAuth scan of 518 MCP servers
+     - AgentSeal scan of 1,808 MCP servers
+     - GitHub repo links for 15+ repos (GhidraMCP, IDA Pro, Snyk, Semgrep, Elastic, FuzzingLabs, PortSwigger, Cloudflare, CheckPoint, Tencent, etc.)
+
+   - **Comparison table rebuilt** with corrected data, added MCP Security row, fixed "Most Popular" column
+
+   - Updated `last_refreshed` to 2026-04-12, added `lastmod` 2026-04-12
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (continue down impressions list)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 613 — 2026-04-12 — Citation Retrofit: MCP Multimodal Patterns Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
