@@ -1,15 +1,16 @@
 ---
 title: "MCP and Cybersecurity/Threat Intelligence: How AI Agents Connect to SIEM Platforms, Vulnerability Scanners, Threat Intelligence Feeds, Reverse Engineering Tools, Penetration Testing Frameworks, OSINT Sources, Endpoint Detection, Incident Response, and Security Operations"
 date: 2026-03-30T21:00:00+09:00
-description: "A comprehensive guide to 120+ MCP integrations for cybersecurity and threat intelligence — covering SIEM/SecOps (Google Security Operations official 458 stars with"
+description: "A comprehensive guide to 120+ MCP integrations for cybersecurity and threat intelligence — covering SIEM/SecOps (Google Security Operations official 461 stars with"
 content_type: "Guide"
-card_description: "The global cybersecurity market reached approximately $227.6 billion in 2025 and is projected to grow to $352 billion by 2030 at 9.1% CAGR. AI in cybersecurity is growing far faster — from $25-31 billion in 2024-2025 to $86-105 billion by 2030 at 22-27% CAGR. Yet a chronic shortage of qualified security personnel (estimated 3.4 million unfilled positions globally) makes AI-augmented security operations essential. This guide covers 120+ MCP servers across cybersecurity and threat intelligence — from SIEM platforms and vulnerability scanners to reverse engineering tools, penetration testing frameworks, OSINT sources, and incident response — plus architecture patterns for AI-powered SOC workflows. Notably, major security vendors including Google, PortSwigger, Semgrep, Snyk, Check Point, Elastic, and Microsoft have released official MCP servers, making cybersecurity one of the most commercially engaged MCP verticals."
-last_refreshed: 2026-03-30
+card_description: "The global cybersecurity market reached approximately $227.6 billion in 2025 and is projected to grow to $352 billion by 2030 at 9.1% CAGR. AI in cybersecurity is growing far faster — from $25-31 billion in 2024-2025 to $86-94 billion by 2030 at 22-24% CAGR. Yet a chronic shortage of qualified security personnel (estimated 4.8 million unfilled positions globally per ISC2 2024) makes AI-augmented security operations essential. This guide covers 120+ MCP servers across cybersecurity and threat intelligence — from SIEM platforms and vulnerability scanners to reverse engineering tools, penetration testing frameworks, OSINT sources, and incident response — plus architecture patterns for AI-powered SOC workflows. Notably, major security vendors including Google, PortSwigger, Snyk, Check Point, Elastic, and Microsoft have released official MCP servers, making cybersecurity one of the most commercially engaged MCP verticals."
+last_refreshed: 2026-04-12
+lastmod: 2026-04-12
 ---
 
-AI is transforming cybersecurity at every level of the security operations stack. The global cybersecurity market reached approximately $227.6 billion in 2025 and is projected to grow to $352 billion by 2030 at a 9.1% CAGR. AI specifically applied to cybersecurity is growing far faster — from approximately $25–31 billion in 2024–2025 to $86–105 billion by 2030 at a 22–27% CAGR. Generative AI in cybersecurity alone is projected to grow from $8.65 billion in 2025 to $35.5 billion by 2031 at a 26.5% CAGR. Behind these numbers is a chronic global shortage of approximately 3.4 million cybersecurity professionals, making AI-augmented security operations not just desirable but essential.
+AI is transforming cybersecurity at every level of the security operations stack. The global cybersecurity market reached approximately [$227.6 billion in 2025 and is projected to grow to $352 billion by 2030 at a 9.1% CAGR](https://www.marketsandmarkets.com/PressReleases/cyber-security.asp). AI specifically applied to cybersecurity is growing far faster — from approximately $25–31 billion in 2024–2025 to $86–94 billion by 2030 at a [22–24% CAGR](https://www.mordorintelligence.com/industry-reports/ai-cybersecurity-solutions-market). Generative AI in cybersecurity alone is projected to grow from [$8.65 billion in 2025 to $35.5 billion by 2031 at a 26.5% CAGR](https://www.marketsandmarkets.com/PressReleases/generative-ai-cybersecurity.asp). Behind these numbers is a chronic global shortage of approximately [4.8 million cybersecurity professionals](https://www.isc2.org/Insights/2024/10/ISC2-2024-Cybersecurity-Workforce-Study) (a 19% year-on-year increase per the ISC2 2024 Workforce Study), making AI-augmented security operations not just desirable but essential.
 
-The MCP ecosystem for cybersecurity is one of the most active verticals. Major vendors including Google (Security Operations), PortSwigger (Burp Suite), Semgrep, Snyk, Check Point, Elastic, and Microsoft (Sentinel) have released official MCP servers. The community side is even more prolific — FuzzingLabs' mcp-security-hub bundles 38 MCP servers covering 300+ offensive security tools, GhidraMCP leads with 8,100+ stars, and BurtTheCoder maintains a widely-used suite of OSINT and threat intelligence servers. Between January and February 2026 alone, security researchers filed over 30 CVEs targeting MCP infrastructure itself, underscoring both the ecosystem's rapid growth and the critical importance of securing it.
+The MCP ecosystem for cybersecurity is one of the most active verticals. Major vendors including Google (Security Operations), PortSwigger (Burp Suite), Snyk, Check Point, Elastic, and Microsoft (Sentinel) have released official MCP servers (Semgrep's MCP server was archived in late 2025 but remains available). The community side is even more prolific — [FuzzingLabs' mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) bundles 38 MCP servers covering 300+ offensive security tools (520+ stars), [GhidraMCP](https://github.com/LaurieWired/GhidraMCP) leads with 8,300+ stars, and BurtTheCoder maintains a widely-used suite of OSINT and threat intelligence servers. Between January and February 2026 alone, security researchers [filed over 30 CVEs targeting MCP infrastructure](https://dev.to/darbogach/30-cves-and-counting-the-mcp-security-crisis-nobodys-talking-about-28ml) itself, underscoring both the ecosystem's rapid growth and the critical importance of securing it.
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to security platforms, scanning tools, threat intelligence feeds, and forensic infrastructure. Rather than building custom integrations for each security API, MCP-connected agents can query SIEMs, scan for vulnerabilities, analyze malware, investigate incidents, and hunt for threats through defined tool interfaces. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
@@ -33,13 +34,13 @@ Security Information and Event Management (SIEM) platforms are the nerve center 
 
 ### Official SIEM MCP Servers
 
-**Google Security Operations (mcp-security)** (google) | ~458 stars | Python
+**[Google Security Operations (mcp-security)](https://github.com/google/mcp-security)** | ~461 stars, 104 forks | Python
 Google's official MCP repository containing 5 servers that integrate with Google's security product suite. The Chronicle SecOps server provides threat detection, investigation, and hunting capabilities. The SOAR server enables security orchestration, automation, and response. Google Threat Intelligence (GTI) provides access to Google/Mandiant's threat intelligence datasets. Security Command Center (SCC) covers cloud security posture and risk management. A fifth remote MCP server provides fully managed, enterprise-ready infrastructure. Supports Google's Application Default Credentials for authentication. Compatible with Claude Desktop, Cline, Google ADK Agents, and Gemini CLI.
 
 **Microsoft Sentinel MCP Server** | Official | Managed service
 Microsoft's Sentinel SIEM offers a built-in MCP server providing natural language access to security data across tabular and graph formats. Available through GitHub Copilot, Copilot Studio, Microsoft Foundry, and ChatGPT agent building experiences. Delivered as a fully managed service with enterprise-grade performance. Part of Microsoft's broader push to make Sentinel data accessible through open APIs and Delta Parquet format.
 
-**Elastic Security MCP Server** (elastic/mcp-server-elasticsearch) | Official
+**[Elastic Security MCP Server](https://github.com/elastic/mcp-server-elasticsearch)** | Official | ~643 stars, 136 forks
 Elastic's MCP server enables SIEM and threat hunting through natural language queries against Elasticsearch indices. Allows security teams to search logs, correlate events, and investigate incidents using conversational interfaces rather than complex query languages.
 
 ### Community SIEM/Log Analysis Servers
@@ -59,11 +60,11 @@ Vulnerability scanning has strong MCP coverage with both official vendor servers
 
 ### Official Vulnerability Scanning Servers
 
-**Snyk Agent Scan** (snyk/agent-scan) | ~1,700 stars
-Snyk's security scanner for AI agents, MCP servers, and agent skills. Auto-discovers agents and their capabilities, connects to MCP servers, retrieves tool descriptions, and validates components against known vulnerability patterns. Detects 15+ distinct security risk categories including prompt injections, tool poisoning, and toxic flows. Available as both a CLI scanner and an MCP server that other agents can invoke.
+**[Snyk Agent Scan](https://github.com/snyk/agent-scan)** | ~2,100 stars, 200 forks
+Snyk's security scanner for AI agents, MCP servers, and agent skills (formerly invariantlabs-ai/mcp-scan, acquired by Snyk). Auto-discovers agents and their capabilities, connects to MCP servers, retrieves tool descriptions, and validates components against known vulnerability patterns. Detects 15+ distinct security risk categories including prompt injections, tool poisoning, and toxic flows. Available as both a CLI scanner and an MCP server that other agents can invoke.
 
-**Semgrep MCP Server** (semgrep/mcp) | Official
-Semgrep's official MCP server wraps their static analysis engine with 5,000+ detection rules. Enables AI agents to scan code for security vulnerabilities, misconfigurations, and anti-patterns. Supports multiple languages and frameworks with customizable rule sets.
+**[Semgrep MCP Server](https://github.com/semgrep/mcp)** | ~649 stars, 57 forks | **ARCHIVED** (since late 2025)
+Semgrep's MCP server wrapped their static analysis engine with 5,000+ detection rules. Enabled AI agents to scan code for security vulnerabilities, misconfigurations, and anti-patterns. The repository is now archived and read-only, though the code remains available.
 
 **Snyk MCP Server** (sammcj/mcp-snyk) | Community
 Community-built MCP server for Snyk's broader vulnerability scanning capabilities beyond agent-scan. Provides access to Snyk's vulnerability database and scanning functionality through the MCP interface.
@@ -79,8 +80,8 @@ Wraps Aqua Security's Trivy scanner for container image, filesystem, and infrast
 **Prowler MCP** | 6 tools
 Cloud security auditing across AWS, Azure, and GCP. Wraps Prowler's 300+ cloud security checks in an MCP interface, enabling AI agents to audit cloud environments against CIS benchmarks, PCI-DSS, HIPAA, and other compliance frameworks.
 
-**AI-Infra-Guard** (Tencent/AI-Infra-Guard)
-Tencent's comprehensive vulnerability assessment tool for AI infrastructure. Provides intelligent analysis of MCP servers, AI frameworks, and model deployment configurations for security weaknesses.
+**[AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard)** | ~3,437 stars, 343 forks
+Tencent's full-stack AI Red Teaming platform. Provides vulnerability assessment for AI infrastructure including MCP servers, AI frameworks, and model deployment configurations. Covers OpenClaw, Agent Scan, and MCP scan capabilities.
 
 ## Threat Intelligence
 
@@ -88,7 +89,7 @@ Threat intelligence has excellent MCP coverage, with servers connecting to major
 
 ### Threat Intelligence Feed Servers
 
-**VirusTotal MCP** (BurtTheCoder/mcp-virustotal) | ~109 stars | JavaScript
+**[VirusTotal MCP](https://github.com/BurtTheCoder/mcp-virustotal)** | ~117 stars | JavaScript
 The most widely-used threat intelligence MCP server. Provides tools for analyzing URLs, files (by hash), IP addresses, and domains with comprehensive security reports. Includes relationship analysis to trace connections between malicious infrastructure, and pagination support for handling large result sets. Requires a VirusTotal API key.
 
 **AlienVault OTX MCP** (mrwadams/otx-mcp)
@@ -108,7 +109,7 @@ Specialized phishing detection and URL analysis service. Enables AI agents to an
 
 ### IP/Domain Intelligence Servers
 
-**Shodan MCP** (BurtTheCoder/mcp-shodan) | ~120 stars | JavaScript
+**[Shodan MCP](https://github.com/BurtTheCoder/mcp-shodan)** | ~121 stars | JavaScript
 Comprehensive access to Shodan's internet-wide device and service intelligence. Provides IP reconnaissance, DNS operations, vulnerability tracking, CVE/CPE intelligence, and device discovery. One of the most popular security MCP servers, useful for both offensive and defensive security teams.
 
 **ZoomEye MCP** (zoomeye-ai/mcp_zoomeye)
@@ -145,7 +146,7 @@ Unified interface for network reconnaissance with parallel execution of OSINT to
 **OSINT Tools MCP Server** (frishtik/osint-tools-mcp-server)
 Exposes multiple OSINT tools for AI assistants, enabling sophisticated reconnaissance and information gathering using industry-standard OSINT tools through a unified MCP interface.
 
-**awesome-osint-mcp-servers** (soxoj) | ~96 stars
+**[awesome-osint-mcp-servers](https://github.com/soxoj/awesome-osint-mcp-servers)** | ~193 stars
 Curated list tracking the OSINT MCP server ecosystem. Categories include SOCMINT (social media intelligence), network scanning, domain intelligence, and more.
 
 ## Reverse Engineering and Binary Analysis
@@ -154,14 +155,14 @@ Reverse engineering has attracted some of the most popular security MCP servers,
 
 ### Disassemblers and Decompilers
 
-**GhidraMCP** (LaurieWired/GhidraMCP) | ~8,100 stars | Java/Python
+**[GhidraMCP](https://github.com/LaurieWired/GhidraMCP)** | ~8,333 stars, 797 forks | Java/Python
 The most popular security MCP server by far, and one of the most popular MCP servers overall. Enables LLMs to autonomously reverse engineer applications by exposing Ghidra's core functionality — decompilation, disassembly, method listing, class enumeration, import/export analysis, and automated renaming. The Ghidra plugin communicates with the MCP bridge via HTTP, supporting remote analysis workflows. Licensed under Apache 2.0.
 
 **GhydraMCP** (starsong-consulting/GhydraMCP)
 Multi-instance Ghidra plugin with HATEOAS REST API and MCP bridge. Supports multiple simultaneous binary analysis sessions, useful for comparative analysis or team-based reverse engineering workflows.
 
-**IDA Pro MCP** (mrexodia/ida-pro-mcp)
-AI-powered reverse engineering assistant bridging IDA Pro with language models through MCP. Enables LLM-controlled analysis within IDA Pro, one of the most widely-used commercial disassemblers in professional reverse engineering.
+**[IDA Pro MCP](https://github.com/mrexodia/ida-pro-mcp)** | ~7,378 stars, 899 forks
+AI-powered reverse engineering assistant bridging IDA Pro with language models through MCP. The second most popular security MCP server after GhidraMCP. Enables LLM-controlled analysis within IDA Pro, one of the most widely-used commercial disassemblers in professional reverse engineering.
 
 **Binary Ninja MCP** (MCPPhalanx/binaryninja-mcp)
 Binary Ninja plugin for AI-driven reverse engineering workflows. Integrates Binary Ninja's intermediate language (IL) representations with MCP, enabling agents to reason about binary code at multiple abstraction levels.
@@ -202,11 +203,11 @@ Penetration testing has the largest collection of MCP servers in any single secu
 
 ### Comprehensive Penetration Testing Suites
 
-**mcp-security-hub** (FuzzingLabs) | ~500 stars | 38 servers, 300+ tools
+**[mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub)** | ~520 stars, 71 forks | 38 servers, 300+ tools
 The largest collection of security MCP servers in a single repository. Covers reconnaissance (nmap, Shodan, masscan, whatweb, ProjectDiscovery tools), web security (Nuclei, SQLMap, Nikto, ffuf, waybackurls, Burp), binary analysis (radare2, binwalk, YARA, capa, Ghidra, IDA), blockchain security (Medusa fuzzer, Solazy Solana analysis, DAML viewer), cloud security (Trivy, Prowler, RoadRecon), code security (Semgrep), secrets detection (Gitleaks), exploitation (SearchSploit), fuzzing (boofuzz, Dharma), OSINT (Maigret, DNStwist), threat intelligence (VirusTotal, OTX), Active Directory (BloodHound), and password cracking (hashcat). All servers run in Docker containers with security hardening — non-root execution, dropped capabilities, no privilege escalation, read-only mounts, and resource limits.
 
-**Pentest-MCP-Server** (chfle) | 88 tools
-Containerized penetration testing toolkit in a Kali Linux Docker container integrating 88 industry tools. Includes network scanning (Nmap, masscan, naabu), web testing (Nikto, SQLMap, WPScan, ffuf), DNS/subdomain enumeration (subfinder, Amass, dnsenum), vulnerability scanning (Nuclei, httpx, katana), Active Directory tools (NetExec, smbmap, enum4linux), password cracking (Hydra, John the Ripper, Medusa), and OSINT (theHarvester, SearchSploit). Features built-in scope enforcement with allowlist/blocklist system, 50+ bundled wordlists (SecLists, DirBuster, Rockyou), 11 workflow slash commands, and 600+ unit tests.
+**[Pentest-MCP-Server](https://github.com/chfle/Pentest-MCP-Server)** | 6 tools
+Containerized penetration testing toolkit in a Kali Linux Docker container integrating 6 essential tools: Nmap, Nikto, SQLMap, WPScan, Dirb, and SearchSploit. Provides AI-powered security testing for Claude through a secure Docker container. Designed for ethical security assessments through conversational interfaces.
 
 **PentestAgent** (0xSojalSec)
 All-in-one offensive security toolbox with AI agent and MCP architecture. Integrates Nmap, Metasploit, FFUF, SQLMap for penetration testing, bug bounty hunting, threat hunting, and reporting. Includes RAG-based responses with local knowledge base support.
@@ -216,7 +217,7 @@ Professional penetration testing MCP server with STDIO/HTTP/SSE transport suppor
 
 ### Web Application Security
 
-**Burp Suite MCP** (PortSwigger/mcp-server) | Official
+**[Burp Suite MCP](https://github.com/PortSwigger/mcp-server)** | Official | ~654 stars, 105 forks
 PortSwigger's official MCP server for Burp Suite, the industry-standard web application security testing tool. Provides access to passive crawling, issue enumeration, and proxy metadata through MCP. One of the most significant official vendor MCP servers in cybersecurity.
 
 **ZAP MCP** (dtkmn/mcp-zap-server)
@@ -251,7 +252,7 @@ Natural language-driven hash cracking. Enables security professionals to describ
 
 ### Active Directory
 
-**BloodHound-MCP-AI** (MorDavid/BloodHound-MCP-AI) | ~271 stars | 75+ tools
+**[BloodHound-MCP-AI](https://github.com/MorDavid/BloodHound-MCP-AI)** | ~349 stars, 54 forks | 75+ tools
 Connects BloodHound with AI through MCP, enabling security professionals to analyze Active Directory attack paths using natural language instead of complex Cypher queries. Transforms questions like "find the shortest path to Domain Admin" into BloodHound graph queries, making AD security analysis accessible to analysts who don't know Cypher.
 
 **BloodHound MCP** (stevenyu113228/bloodhound-mcp)
@@ -268,14 +269,14 @@ Multi-cloud security auditing covering AWS, Azure, and GCP. Runs 300+ security c
 **AWS Security MCP** (groovyBugify/aws-security-mcp)
 Cloud security access specifically for AWS environments. Provides AI agents with tools to assess AWS security configurations and identify potential weaknesses.
 
-**Check Point Quantum MCP Server** (CheckPointSW/mcp-servers) | Official
+**[Check Point Quantum MCP Server](https://github.com/CheckPointSW/mcp-servers)** | Official | ~32 stars
 Check Point's official MCP server providing AI-accessible firewall and threat management. Enables agents to query firewall rules, check threat prevention status, and manage security policies on Check Point infrastructure.
 
 ## Incident Response and Digital Forensics
 
 ### Incident Response Platforms
 
-**Velociraptor MCP Server** (socfortress/velociraptor-mcp-server)
+**[Velociraptor MCP Server](https://github.com/socfortress/velociraptor-mcp-server)** | ~35 stars
 Combines Velociraptor's comprehensive digital forensics and incident response (DFIR) capabilities with LLM reasoning. Enables natural language queries against forensic data, including endpoint artifact collection, live response, file carving, and timeline analysis. Features JWT token management and HTTP/2 support for secure communication with Velociraptor deployments.
 
 **Swimlane SOAR Integration** | Documentation available
@@ -294,16 +295,16 @@ While no major EDR vendor (CrowdStrike, SentinelOne, Microsoft Defender) has rel
 
 Given the rapid growth of MCP infrastructure, tools for securing MCP deployments themselves have become a sub-category.
 
-**Snyk Agent Scan** (snyk/agent-scan) | ~1,700 stars
-Security scanner for AI agents, MCP servers, and agent skills. Detects 15+ risk categories including prompt injections, tool poisoning, and toxic flows. The most popular MCP security scanning tool.
+**[Snyk Agent Scan](https://github.com/snyk/agent-scan)** | ~2,100 stars, 200 forks
+Security scanner for AI agents, MCP servers, and agent skills. Detects 15+ risk categories including prompt injections, tool poisoning, and toxic flows. The most popular MCP security scanning tool. Formerly invariantlabs-ai/mcp-scan before Snyk acquisition.
 
-**mcp-scan** (invariantlabs-ai/mcp-scan)
-MCP server vulnerability scanning tool. Scans MCP server configurations for common security weaknesses and misconfigurations.
+**mcp-scan** (formerly invariantlabs-ai/mcp-scan) — **Now merged into [Snyk Agent Scan](https://github.com/snyk/agent-scan)**
+MCP server vulnerability scanning tool. The repository now permanently redirects to snyk/agent-scan following Snyk's acquisition. See Snyk Agent Scan above for current capabilities.
 
-**MCP Guardian** (eqtylab/mcp-guardian)
+**[MCP Guardian](https://github.com/eqtylab/mcp-guardian)** | ~196 stars
 Manages LLM access to MCP servers, providing an access control layer between AI agents and security-sensitive MCP tools.
 
-**MCP Gateway** (lasso-security/mcp-gateway)
+**[MCP Gateway](https://github.com/lasso-security/mcp-gateway)** | ~364 stars
 Acts as intermediary between LLMs and MCP servers, providing behavior change detection, real-time DLP and secrets scanning, and SIEM/SOAR integration for monitoring MCP traffic.
 
 **MCP-Shield** (riseandignite/mcp-shield)
@@ -315,10 +316,10 @@ Blocks malicious MCP traffic in real-time, protecting against prompt injection a
 **Secure MCP** (makalin/SecureMCP)
 Vulnerability detection and misconfiguration scanning specifically for MCP deployments.
 
-**MCP Security Checklist** (slowmist/MCP-Security-Checklist)
+**[MCP Security Checklist](https://github.com/slowmist/MCP-Security-Checklist)** | ~825 stars
 Security guide for the AI tool ecosystem from SlowMist, a blockchain security firm. Provides comprehensive checklists for securing MCP server deployments.
 
-**Damn Vulnerable MCP Server** (harishsg993010/damn-vulnerable-MCP-server)
+**[Damn Vulnerable MCP Server](https://github.com/harishsg993010/damn-vulnerable-MCP-server)** | ~1,277 stars, 145 forks
 Training environment with intentional vulnerabilities for learning MCP security. Analogous to DVWA (Damn Vulnerable Web Application) for web security training.
 
 ## Secrets Detection and Code Security
@@ -326,8 +327,8 @@ Training environment with intentional vulnerabilities for learning MCP security.
 **Gitleaks MCP** | 5 tools
 Secrets and credentials detection in Git repositories. Scans commit history and current code for leaked API keys, passwords, tokens, and other sensitive data.
 
-**Semgrep MCP** (semgrep/mcp) | Official | 7 tools
-Static code analysis with 5,000+ rules covering security, correctness, and performance patterns across multiple languages. One of the most widely-used SAST tools in the industry.
+**[Semgrep MCP](https://github.com/semgrep/mcp)** | ~649 stars | 7 tools | **ARCHIVED**
+Static code analysis with 5,000+ rules covering security, correctness, and performance patterns across multiple languages. One of the most widely-used SAST tools in the industry. Note: the GitHub repository was archived in late 2025 but the code remains available.
 
 **Octocode MCP** (bgauryy/octocode-mcp)
 GitHub security pattern discovery through MCP. Helps identify security anti-patterns and vulnerabilities in GitHub repositories.
@@ -340,23 +341,24 @@ AI-driven workload management and traffic flow analysis via Illumio's micro-segm
 **Pomerium MCP** (pomerium/pomerium)
 Identity-aware proxy providing Zero Trust access. Integrates with MCP for policy-based access decisions and identity verification.
 
-**Cloudflare MCP Server** (cloudflare/mcp-server-cloudflare) | Official
+**[Cloudflare MCP Server](https://github.com/cloudflare/mcp-server-cloudflare)** | Official | ~3,603 stars, 364 forks
 Secure edge, API, and web application protection using Cloudflare's WAF, DDoS protection, and CDN. Official Cloudflare MCP server for managing security configurations.
 
 ## Comparison Table
 
 | Category | Official Servers | Community Servers | Most Popular | Key Gap |
 |---|---|---|---|---|
-| SIEM/SecOps | Google, Microsoft, Elastic | Wazuh, Splunk wrappers | Google SecOps (458 stars) | No Splunk official |
-| Vulnerability Scanning | Snyk, Semgrep | Nuclei, Trivy, Prowler | Snyk agent-scan (1,700 stars) | No Qualys/Tenable/Rapid7 |
-| Threat Intelligence | Google GTI | VirusTotal, OTX, AbuseIPDB | VirusTotal (109 stars) | No Recorded Future/Mandiant standalone |
-| Reverse Engineering | — | GhidraMCP, IDA Pro, Binary Ninja | GhidraMCP (8,100 stars) | No Cutter/Hopper |
-| Penetration Testing | Burp Suite | mcp-security-hub, Pentest-MCP | mcp-security-hub (500 stars) | No Cobalt Strike/commercial tools |
-| OSINT | — | Shodan, Maigret, DNStwist | Shodan (120 stars) | No Maltego/SpiderFoot official |
-| Active Directory | — | BloodHound-MCP-AI, RoadRecon | BloodHound (271 stars) | No PingCastle/Purple Knight |
-| EDR/Endpoint | Microsoft (Sentinel) | Velociraptor | Velociraptor MCP | No CrowdStrike/SentinelOne/Defender standalone |
-| Cloud Security | Check Point | Prowler, AWS Security, RoadRecon | Check Point (official) | No Prisma Cloud/Wiz/Orca |
-| Incident Response | — | Velociraptor MCP | Velociraptor MCP | No TheHive/Cortex/DFIR-IRIS |
+| SIEM/SecOps | Google, Microsoft, Elastic | Wazuh, Splunk wrappers | Elastic (643 stars) | No Splunk official |
+| Vulnerability Scanning | Snyk | Nuclei, Trivy, Prowler, Tencent AI-Infra-Guard | Tencent AI-Infra-Guard (3,437 stars) | No Qualys/Tenable/Rapid7 |
+| Threat Intelligence | Google GTI | VirusTotal, OTX, AbuseIPDB | VirusTotal (117 stars) | No Recorded Future/Mandiant standalone |
+| Reverse Engineering | — | GhidraMCP, IDA Pro, Binary Ninja | GhidraMCP (8,333 stars) | No Cutter/Hopper |
+| Penetration Testing | Burp Suite (654 stars) | mcp-security-hub, Pentest-MCP | mcp-security-hub (520 stars) | No Cobalt Strike/commercial tools |
+| OSINT | — | Shodan, Maigret, DNStwist | awesome-osint-mcp-servers (193 stars) | No Maltego/SpiderFoot official |
+| Active Directory | — | BloodHound-MCP-AI, RoadRecon | BloodHound (349 stars) | No PingCastle/Purple Knight |
+| EDR/Endpoint | Microsoft (Sentinel) | Velociraptor | Velociraptor MCP (35 stars) | No CrowdStrike/SentinelOne/Defender standalone |
+| Cloud Security | Check Point | Prowler, AWS Security, RoadRecon, Cloudflare | Cloudflare (3,603 stars) | No Prisma Cloud/Wiz/Orca |
+| Incident Response | — | Velociraptor MCP | Velociraptor MCP (35 stars) | No TheHive/Cortex/DFIR-IRIS |
+| MCP Security | Snyk Agent Scan | MCP Guardian, MCP Gateway, SlowMist | Snyk Agent Scan (2,107 stars) | — |
 
 ## Architecture Patterns
 
@@ -552,7 +554,7 @@ Vulnerability scanning MCP servers may discover previously unknown vulnerabiliti
 
 ### MCP Security Risks
 
-The MCP ecosystem itself has faced significant security challenges in 2026. Between January and February, over 30 CVEs were filed against MCP infrastructure. A survey of 2,614 MCP implementations found that 82% use file operations vulnerable to path traversal, two-thirds have code injection risk, and over a third are susceptible to command injection. A scan of 8,000+ MCP servers on the public internet found 38% completely lack authentication. Organizations deploying MCP servers for security operations should apply the same security rigor to their MCP infrastructure as they would to any other security tool.
+The MCP ecosystem itself has faced significant security challenges in 2026. Between January and February, [over 30 CVEs were filed against MCP infrastructure](https://dev.to/darbogach/30-cves-and-counting-the-mcp-security-crisis-nobodys-talking-about-28ml). A [survey of 2,614 MCP implementations](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) found that 82% use file operations vulnerable to path traversal, two-thirds have code injection risk, and over a third are susceptible to command injection. Independent scans of MCP servers on the public internet have found that [41% of 518 official registry servers lack authentication](https://tapauth.ai/blog/518-mcp-servers-scanned-41-percent-no-auth) and [66% of 1,808 servers had security findings](https://agentseal.org/blog/mcp-server-security-findings). Organizations deploying MCP servers for security operations should apply the same security rigor to their MCP infrastructure as they would to any other security tool.
 
 ### Ethical AI in Security
 
@@ -590,7 +592,7 @@ The FuzzingLabs mcp-security-hub provides the most comprehensive starting point 
 Connect VirusTotal, Shodan, and AlienVault OTX MCP servers for multi-source IOC analysis. Add DNStwist for phishing domain monitoring. The fastmcp-threatintel server aggregates multiple sources with automatic MITRE ATT&CK mapping, providing a starting framework for structured threat analysis.
 
 ### For Malware Analysts
-GhidraMCP (8,100 stars) is the essential starting point for binary analysis. Add YARA MCP for pattern matching, capa MCP for capability detection, and VirusTotal for community intelligence. This combination enables an AI-assisted malware analysis pipeline from initial triage through detailed decompilation.
+GhidraMCP (8,300+ stars) is the essential starting point for binary analysis. Add YARA MCP for pattern matching, capa MCP for capability detection, and VirusTotal for community intelligence. This combination enables an AI-assisted malware analysis pipeline from initial triage through detailed decompilation.
 
 ### For Security Engineers
 Start with Semgrep MCP for code security scanning and Gitleaks MCP for secrets detection in CI/CD pipelines. Add Trivy MCP for container security scanning. These tools integrate naturally into DevSecOps workflows and can be invoked by AI agents as part of automated code review.
