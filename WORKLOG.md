@@ -2,6 +2,81 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 616 — 2026-04-13 — Citation Retrofit: MCP Aerospace & Defense Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #443 (my own Run 615 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-aerospace-defense.md`** (41 GSC impressions — next priority by impressions after Run 615's accounting at 46 impr).
+   - **Previous state:** Detailed guide with repo names but no clickable GitHub links, several uncited claims, two fabricated entries, one wrong repo owner, and stale star counts.
+   - **New state:** 40+ GitHub links added, multiple factual corrections, all 60+ repos verified
+
+   - **Major corrections:**
+     - **CubeStar1/iron-eye (4 stars): WRONG OWNER** — CubeStar1 user exists but has no iron-eye repo. Actual repo is **cyb3r17/iron-eye** (2 stars). Corrected owner and star count
+     - **Arvind-55555/Geo-Intelligence-MCP-Server: REMOVED** — GitHub user and repository do not exist (404). Zero search results on GitHub. This entry was fabricated/hallucinated. Removed entirely
+     - **"over 10,000 active satellites as of 2025" → "over 15,000 active payloads"** — outdated figure. Updated to 15,000+ per Jonathan's Space Report (planet4589.org), with citation link
+     - **"$33 billion annually" flight delay cost: CITED** — traced to FAA/Nextor 2019 estimate. Added Airlines for America citation link
+
+   - **Star count updates (35+ repos):**
+     - LaurieWired/GhidraMCP: 8,073 → 8,300 stars
+     - 0x4m4/hexstrike-ai: 7,737 → 8,000 stars
+     - mixelpixx/KiCAD-MCP-Server: 535 → 622 stars
+     - jjsantos01/qgis_mcp: 871 → 897 stars
+     - cyproxio/mcp-for-security: 596 → 606 stars
+     - FuzzingLabs/mcp-security-hub: 498 → 521 stars
+     - matlab/matlab-mcp-core-server: 285 → 351 stars
+     - daobataotie/CAD-MCP: 286 → 302 stars
+     - BurtTheCoder/mcp-maigret: 232 → 235 stars
+     - soxoj/awesome-osint-mcp-servers: 95 → 193 stars (doubled)
+     - frishtik/osint-tools-mcp-server: 183 → 188 stars
+     - ravinahp/flights-mcp: 177 → 186 stars
+     - jagan-shanmugam/open-streetmap-mcp: 176 → 181 stars
+     - mahdin75/gis-mcp: 126 → 132 stars
+     - BurtTheCoder/mcp-shodan: 118 → 121 stars
+     - BurtTheCoder/mcp-virustotal: 114 → 117 stars
+     - lzinga/us-gov-open-data-mcp: 91 → 94 stars
+     - arthurpanhku/DocSentinel: 96 → 87 stars
+     - AuraFriday/Fusion-360-MCP-Server: 64 → 78 stars
+     - ATOI-Ming/FreeCAD-MCP: 68 → 72 stars
+     - JordanGunn/gdal-mcp: 59 → 63 stars
+     - arjunprabhulal/mcp-flight-search: 41 → 42 stars
+     - XRDS76354/SUMO-MCP-Server: 37 → 39 stars
+     - poly-mcp/Blender-MCP-Server: 31 → 38 stars
+     - CooperCyberCoffee/opencti_mcp_server: 26 → 27 stars
+     - marc-shade/world-intel-mcp: 16 → 21 stars
+     - AnCode666/multiCAD-mcp: 17 → 21 stars
+     - matlab/mcp-framework-matlab-production-server: 15 → 18 stars
+     - Pradumnasaraf/aviationstack-mcp: 17 → 18 stars
+     - badchars/osint-mcp-server: 6 → 14 stars (+133%)
+     - sohumsuthar/simulink-mcp: 1 → 5 stars
+     - xiaonieli7/FlightTicketMCP: 35 → 37 stars
+
+   - **GitHub links added:** All 60+ repos now have clickable `[owner/repo](https://github.com/...)` links
+
+   - **Citations added:**
+     - Airlines for America / FAA Nextor flight delay cost estimate ($33B)
+     - Jonathan's Space Report active payload tracking (15,000+)
+     - GitHub repo links for 60+ repos
+
+   - **Comparison table updated** with corrected star counts
+   - **Getting Started by Role updated** with corrected star counts
+   - Earth Observation server count corrected from 8+ to 7+ (after removing fabricated entry)
+
+   - Updated `last_refreshed` to 2026-04-13, added `lastmod` 2026-04-13
+
+2. **Hugo build** — successful (1,152 pages).
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (spotify-mcp-server at 40 impr, or continue down list)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 615 — 2026-04-13 — Citation Retrofit: MCP Accounting/Tax Compliance Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
