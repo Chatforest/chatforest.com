@@ -1,15 +1,16 @@
 ---
 title: "Claw Code: The Open-Source Clone That Became the Fastest-Growing Repo in GitHub History"
 date: 2026-04-07T23:00:00+09:00
-description: "On March 31, 2026, Anthropic accidentally shipped Claude Code's entire source — 512,000 lines of TypeScript — in an npm source map. Within hours, developer Sigrid Jin built Claw Code, a clean-room Python/Rust rewrite that hit 50,000 GitHub stars in 2 hours and 100,000+ in a week. It reimplements Claude Code's agent harness (tool system, multi-agent orchestration, context compaction, session persistence) using OpenAI Codex as the orchestration layer, under Apache 2.0. The leak also exposed 44 unreleased feature flags, an always-on daemon called KAIROS, and an 'Undercover Mode' for Anthropic employees."
+description: "On March 31, 2026, Anthropic accidentally shipped Claude Code's entire source — 512,000 lines of TypeScript — in an npm source map. Within hours, developer Sigrid Jin built Claw Code, a clean-room Python/Rust rewrite that hit 50,000 GitHub stars in 2 hours, 100,000+ in a week, and 183,000+ by mid-April 2026. It reimplements Claude Code's agent harness (tool system, multi-agent orchestration, context compaction, session persistence) using OpenAI Codex as the orchestration layer, under Apache 2.0. The leak also exposed 44 unreleased feature flags, an always-on daemon called KAIROS, and an 'Undercover Mode' for Anthropic employees."
 content_type: "Guide"
-card_description: "On March 31, 2026, Anthropic accidentally published Claude Code's complete source code to the npm public registry — a 59.8 MB source map file containing 512,000 lines of TypeScript across 1,906 files. Security researcher Chaofan Shou discovered the leak in version 2.1.88 of the @anthropic-ai/claude-code package, and within hours the code was mirrored across GitHub and analyzed by thousands of developers. The leak exposed Claude Code's entire agent harness architecture: 40+ tools, a deny-first permission system, multi-agent orchestration with subagent spawning, context compaction, and 44 unreleased feature flags — including an always-on autonomous daemon called KAIROS and an 'Undercover Mode' that strips AI attribution from Anthropic employee contributions. Developer Sigrid Jin, a 25-year-old UBC student and one of the world's most active Claude Code power users (25+ billion tokens consumed), responded by building Claw Code — a clean-room Python rewrite that reimplements the core architectural patterns without copying proprietary code. Built overnight using OpenAI's Codex orchestration layer (oh-my-codex), Claw Code hit 50,000 GitHub stars in 2 hours and crossed 100,000 within a week, making it the fastest-growing repository in GitHub history. A Rust port is underway. This guide covers the leak, what it revealed about Claude Code's internals, how Claw Code works, its current limitations, Anthropic's DMCA response, and what this means for the AI coding tool ecosystem."
-last_refreshed: 2026-04-07
+card_description: "On March 31, 2026, Anthropic accidentally published Claude Code's complete source code to the npm public registry — a 59.8 MB source map file containing 512,000 lines of TypeScript across 1,906 files. Security researcher Chaofan Shou discovered the leak in version 2.1.88 of the @anthropic-ai/claude-code package, and within hours the code was mirrored across GitHub and analyzed by thousands of developers. The leak exposed Claude Code's entire agent harness architecture: 40+ tools, a deny-first permission system, multi-agent orchestration with subagent spawning, context compaction, and 44 unreleased feature flags — including an always-on autonomous daemon called KAIROS and an 'Undercover Mode' that strips AI attribution from Anthropic employee contributions. Developer Sigrid Jin, a 25-year-old UBC student and one of the world's most active Claude Code power users (25+ billion tokens consumed), responded by building Claw Code — a clean-room Python rewrite that reimplements the core architectural patterns without copying proprietary code. Built overnight using OpenAI's Codex orchestration layer (oh-my-codex), Claw Code hit 50,000 GitHub stars in 2 hours, crossed 100,000 within a week, and surpassed 183,000 by mid-April 2026, making it the fastest-growing repository in GitHub history. A Rust port (Claurst, 8,900+ stars) is actively maintained. This guide covers the leak, what it revealed about Claude Code's internals, how Claw Code works, its current limitations, Anthropic's DMCA response, and what this means for the AI coding tool ecosystem."
+last_refreshed: 2026-04-13
+lastmod: 2026-04-13
 ---
 
 On March 31, 2026, someone at Anthropic forgot to add `*.map` to `.npmignore`. That oversight exposed Claude Code's entire source code — 512,000 lines of TypeScript — to the public internet. Within hours, a 25-year-old developer had built an open-source clone that became the fastest-growing repository in GitHub history.
 
-This is the story of the Claude Code leak and its most consequential offspring: Claw Code. Our analysis draws on coverage from [VentureBeat](https://venturebeat.com/technology/claude-codes-source-code-appears-to-have-leaked-heres-what-we-know/), [The Register](https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/), [The Hacker News](https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html), [The New Stack](https://thenewstack.io/claude-code-source-leak/), independent reviews from [OpenAI Tools Hub](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) and [WaveSpeed AI](https://wavespeed.ai/blog/posts/what-is-claw-code/), and the [Claw Code GitHub repository](https://github.com/instructkr/claw-code) — we research and analyze rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+This is the story of the Claude Code leak and its most consequential offspring: Claw Code. Our analysis draws on coverage from [VentureBeat](https://venturebeat.com/technology/claude-codes-source-code-appears-to-have-leaked-heres-what-we-know/), [The Register](https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/), [The Hacker News](https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html), [The New Stack](https://thenewstack.io/claude-code-source-leak/), independent reviews from [OpenAI Tools Hub](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) and [WaveSpeed AI](https://wavespeed.ai/blog/posts/what-is-claw-code/), security analysis from [SecurityWeek](https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/) and [Zscaler ThreatLabz](https://www.zscaler.com/blogs/security-research/anthropic-claude-code-leak), engineering deep-dives from [Engineer's Codex](https://read.engineerscodex.com/p/diving-into-claude-codes-source-code) and [Layer5](https://layer5.io/blog/engineering/the-claude-code-source-leak-512000-lines-a-missing-npmignore-and-the-fastest-growing-repo-in-github-history/), and the [Claw Code GitHub repository](https://github.com/ultraworkers/claw-code) (183,000+ stars) — we research and analyze rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ---
 
@@ -17,11 +18,11 @@ This is the story of the Claude Code leak and its most consequential offspring: 
 
 On March 31, 2026, security researcher Chaofan Shou discovered that version 2.1.88 of the `@anthropic-ai/claude-code` npm package contained a 59.8 MB JavaScript source map file. Source maps are debugging artifacts that translate minified production code back into readable source — they're never supposed to ship publicly.
 
-The issue traced to Bun's bundler generating source maps by default (an [open bug](https://github.com/oven-sh/bun/issues/28001)). Anthropic hadn't excluded `*.map` files from the published npm package.
+The issue traced to Bun's bundler generating source maps by default (an [open bug](https://github.com/oven-sh/bun/issues/28001 "Bun issue #28001: Source map incorrectly served when in production")). Anthropic hadn't excluded `*.map` files from the published npm package.
 
-The result: approximately 512,000 lines of TypeScript across 1,906 source files became publicly readable. Shou tweeted the discovery with a download link, and 16 million people viewed the thread.
+The result: approximately 512,000 lines of TypeScript across [1,906 source files](https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/) became publicly readable. Shou tweeted the discovery with a download link, and [16 million people viewed the thread](https://venturebeat.com/technology/claude-codes-source-code-appears-to-have-leaked-heres-what-we-know/).
 
-Anthropic confirmed the incident: "Earlier today, a Claude Code release included some internal source code. This was a release packaging issue caused by human error, not a security breach." Notably, this was the second such incident — a similar leak had occurred in February 2025.
+Anthropic [confirmed the incident](https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/): "Earlier today, a Claude Code release included some internal source code. This was a release packaging issue caused by human error, not a security breach." Notably, this was the second such incident — a [similar leak had occurred in February 2025](https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html).
 
 ### What Was Exposed
 
@@ -38,17 +39,17 @@ The leak revealed Claude Code's complete agent harness architecture:
 
 ## The 44 Feature Flags: KAIROS, Undercover Mode, and More
 
-The most surprising discovery wasn't the architecture — it was what Anthropic hadn't shipped yet. The source contained 44 feature flags representing fully-built but unreleased features, compiled to `false` in the external build.
+The most surprising discovery wasn't the architecture — it was what Anthropic hadn't shipped yet. The source contained [44 feature flags](https://thenewstack.io/claude-code-source-leak/) representing fully-built but unreleased features, compiled to `false` in the external build.
 
 ### KAIROS: The Always-On Daemon
 
-Referenced over 150 times in the source, KAIROS (named after the Greek concept of "the right moment") is an unshipped autonomous daemon mode. It's a background agent that persists across sessions, receives periodic tick prompts, and can independently decide to take actions — sending notifications, monitoring GitHub webhooks, and running scheduled tasks without human initiation.
+[Referenced over 150 times in the source](https://thenewstack.io/claude-code-source-leak/), KAIROS (named after the Greek concept of "the right moment") is an unshipped autonomous daemon mode. It's a background agent that persists across sessions, receives periodic tick prompts, and can independently decide to take actions — sending notifications, monitoring GitHub webhooks, and running scheduled tasks without human initiation.
 
 KAIROS represents a fundamental shift from Claude Code's current model. Today, Claude Code activates when you invoke it. KAIROS would make it an always-on presence that decides for itself when to act.
 
 ### Undercover Mode
 
-Perhaps the most controversial discovery: a feature that activates for Anthropic employees when they use Claude Code on non-internal repositories. Undercover Mode strips `Co-Authored-By` attribution from commits, forbids mentioning internal details, and prevents references to unreleased models. In other words, it was designed to hide the fact that Anthropic employees were using AI to contribute to external open-source projects.
+Perhaps the most controversial discovery: a feature that activates for Anthropic employees when they use Claude Code on non-internal repositories. [Undercover Mode](https://thenewstack.io/claude-code-source-leak/) strips `Co-Authored-By` attribution from commits, forbids mentioning internal details, and prevents references to unreleased models. In other words, it was designed to hide the fact that Anthropic employees were using AI to contribute to external open-source projects.
 
 ### Other Unreleased Features
 
@@ -58,19 +59,19 @@ The 44 flags ranged from mundane UI tweaks and telemetry toggles to a terminal p
 
 ## Claw Code: The Clean-Room Rewrite
 
-Within hours of the leak, developer Sigrid Jin began building what would become Claw Code — a clean-room reimplementation of Claude Code's agent harness architecture.
+Within hours of the leak, developer Sigrid Jin began building what would become [Claw Code](https://github.com/ultraworkers/claw-code) — a clean-room reimplementation of Claude Code's agent harness architecture.
 
 ### Who Built It
 
-Jin is a 25-year-old student at the University of British Columbia with a background in machine learning, DevRel, and blockchain infrastructure (previously at DSRV). The Wall Street Journal had profiled Jin as one of the world's most active Claude Code power users, having consumed over 25 billion Claude Code tokens in the past year. Jin had attended Claude Code's first birthday party in San Francisco.
+Jin is a 25-year-old student at the University of British Columbia with a background in machine learning, DevRel, and blockchain infrastructure (previously at DSRV). [The Wall Street Journal had profiled Jin](https://wavespeed.ai/blog/posts/what-is-claw-code/) as one of the world's most active Claude Code power users, having consumed over 25 billion Claude Code tokens in the past year. Jin had attended Claude Code's first birthday party in San Francisco.
 
 Working with Seoul-based developer Yeachan Heo, Jin used the leaked architecture as a reference to build Claw Code from scratch — using the patterns and design decisions as inspiration without copying proprietary code directly.
 
 ### How It Was Built
 
-The initial Python implementation was created overnight using oh-my-codex, an OpenAI Codex orchestration tool. Rather than manually writing thousands of lines, Jin used AI-assisted development with parallel code review and continuous verification.
+The initial Python implementation was created overnight using [oh-my-codex](https://wavespeed.ai/blog/posts/what-is-claw-code/), an OpenAI Codex orchestration tool. Rather than manually writing thousands of lines, Jin used AI-assisted development with parallel code review and continuous verification.
 
-The project includes a `parity_audit.py` file that explicitly tracks gaps between Claw Code and the original Claude Code implementation — a transparency mechanism that acknowledges what's missing rather than claiming feature parity.
+The project includes a [`parity_audit.py`](https://github.com/ultraworkers/claw-code) file that explicitly tracks gaps between Claw Code and the original Claude Code implementation — a transparency mechanism that acknowledges what's missing rather than claiming feature parity.
 
 ### The Star Explosion
 
@@ -78,12 +79,12 @@ Claw Code's GitHub trajectory was unprecedented:
 
 | Milestone | Time |
 |---|---|
-| 50,000 stars | ~2 hours |
+| [50,000 stars](https://wavespeed.ai/blog/posts/what-is-claw-code/) | ~2 hours |
 | 72,000 stars | ~24 hours |
-| 100,000 stars | ~1 week |
-| 114,000+ stars | ~April 7, 2026 |
+| [100,000 stars](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) | ~1 week |
+| 183,000+ stars | ~April 13, 2026 |
 
-No repository in GitHub's 18-year history has grown this fast.
+No repository in GitHub's 18-year history has grown this fast. The repo was [transferred from `instructkr/claw-code` to `ultraworkers/claw-code`](https://github.com/ultraworkers/claw-code) (the old URL redirects), and now has over 107,000 forks.
 
 ---
 
@@ -131,7 +132,7 @@ Unlike Claude Code, which is tightly integrated with Anthropic's models, Claw Co
 
 ## How It Compares: Claw Code vs. Claude Code
 
-Independent testing (OpenAI Tools Hub, M3 MacBook Pro, 36GB RAM) reveals the gap between a week-old rewrite and a production product:
+[Independent testing](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) (OpenAI Tools Hub, M3 MacBook Pro, 36GB RAM) reveals the gap between a week-old rewrite and a production product:
 
 | Aspect | Claude Code | Claw Code |
 |---|---|---|
@@ -168,15 +169,15 @@ Independent testing (OpenAI Tools Hub, M3 MacBook Pro, 36GB RAM) reveals the gap
 
 Anthropic began issuing DMCA takedown notices within hours of the leak. Direct mirrors of the source code were targeted first — the original uploader repurposed their repository to host a Python feature port instead, citing legal liability concerns.
 
-Claw Code has not been targeted by DMCA as of April 2026. Its clean-room reimplementation approach — using the architectural patterns as reference without copying source code — places it in a legally different category from direct copies. However, the legal boundaries of "clean-room" reimplementation when the reference material was obtained through an accidental leak remain untested in court.
+Claw Code has not been targeted by DMCA as of April 2026 — the repo remains [fully accessible on GitHub](https://github.com/ultraworkers/claw-code) (transferred from `instructkr` to the `ultraworkers` organization, with the old URL redirecting). Its clean-room reimplementation approach — using the architectural patterns as reference without copying source code — places it in a [legally different category from direct copies](https://wavespeed.ai/blog/posts/what-is-claw-code/). However, the legal boundaries of "clean-room" reimplementation when the reference material was obtained through an accidental leak remain untested in court.
 
 ### Other Projects Spawned by the Leak
 
 Claw Code was not the only project to emerge:
 
-- **Claurst** — a Rust reimplementation with detailed architectural analysis
-- **Clawd Code** — another Python rewrite positioned for educational purposes
-- **Numerous forks and mirrors** — most taken down via DMCA
+- **[Claurst](https://github.com/Kuberwastaken/claurst)** (8,974 stars) — a Rust reimplementation with detailed architectural analysis, actively maintained
+- **[Clawd Code](https://github.com/GPT-AGI/Clawd-Code)** (228 stars) — another Python rewrite positioned for educational purposes
+- **Numerous forks and mirrors** — most taken down via [DMCA](https://wavespeed.ai/blog/posts/what-is-claw-code/)
 
 The leak also spawned significant architectural analysis across the developer community, raising the baseline understanding of how production agent harnesses work.
 
@@ -204,7 +205,7 @@ The discovery of KAIROS raises a broader question: are always-on AI coding agent
 
 ## Honest Limitations of Claw Code
 
-Based on independent reviews and community feedback:
+Based on [independent reviews](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) and community feedback:
 
 - **Not production-ready** — less than a week old, incomplete feature parity, no formal support commitment
 - **Multi-agent orchestration crashes** on complex tasks
@@ -213,7 +214,7 @@ Based on independent reviews and community feedback:
 - **Primitive context management** — truncates rather than intelligently compressing, leading to lost context on long sessions
 - **MCP integration is minimal** — community adapters exist but lack the native support Claude Code provides
 - **Legal uncertainty** — clean-room status has not been legally tested
-- **Star count reflects curiosity, not production adoption** — 100K+ stars doesn't mean 100K+ daily users
+- **Star count reflects curiosity, not production adoption** — [183K+ stars](https://github.com/ultraworkers/claw-code/stargazers) doesn't mean 183K+ daily users
 
 ---
 
@@ -221,7 +222,7 @@ Based on independent reviews and community feedback:
 
 The Claude Code leak and Claw Code's emergence represent a inflection point for AI coding tools. A proprietary tool's complete architecture was accidentally exposed, a clean-room rewrite appeared within hours, and it became the fastest-growing repository in history — all in a single weekend.
 
-What remains to be seen is whether Claw Code evolves from a curiosity into a genuine alternative, or whether it serves primarily as an educational artifact that demonstrates how AI agent harnesses work. The 100,000+ stars suggest massive developer interest. The 8x performance gap on complex tasks suggests the journey from "architecturally equivalent" to "practically equivalent" is long.
+What remains to be seen is whether Claw Code evolves from a curiosity into a genuine alternative, or whether it serves primarily as an educational artifact that demonstrates how AI agent harnesses work. The [183,000+ stars](https://github.com/ultraworkers/claw-code) suggest massive developer interest. The [8x performance gap](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) on complex tasks suggests the journey from "architecturally equivalent" to "practically equivalent" is long. A post-leak [security vulnerability](https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/) discovered in Claude Code itself added further urgency to understanding the agent harness architecture.
 
 For developers, the immediate value is clear: Claw Code is the most readable, open implementation of a production-grade AI coding agent architecture available today. Whether you use it in production or study it to build something better, the patterns it implements are now public knowledge.
 
