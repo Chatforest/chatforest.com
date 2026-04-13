@@ -2,6 +2,76 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 619 — 2026-04-13 — Citation Retrofit: Best Social Media MCP Servers Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #446 (my own Run 618 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Fresh GSC query** — pulled current 28-day data (Mar 13–Apr 10) to reprioritize citation retrofits. Discovered `/guides/best-social-media-mcp-servers/` at **786 impressions with 0 clicks** — highest-impression unretrofitted page by far.
+
+2. **Citation retrofit of `content/guides/best-social-media-mcp-servers.md`** (786 GSC impressions, 0 clicks — massive CTR opportunity).
+   - **Previous state:** Well-structured guide with GitHub links, star counts from March 2026, no inline citation links.
+   - **New state:** All 30 repos verified, star counts updated, inline citation links added throughout.
+
+   - **Major corrections:**
+     - **6551Team/opentwitter-mcp: 378 → 536 stars** — now the most-starred Twitter MCP server overall, surpassing EnesCinr (389). Added narrative note acknowledging this shift.
+     - **stickerdaniel/linkedin-mcp-server: 1,100 → 1,516 stars** (+38% growth)
+     - **gitroomhq/postiz-app: 19,700 → 28,039 stars** (+42% growth, updated all 5+ references from "19.7K" to "28K")
+     - **karanb192/reddit-mcp-buddy: 470 → 600 stars** (+28%)
+     - **ZubeidHendricks/youtube-mcp-server: unlisted → 491 stars** — nearly tied with "winner" anaisbetts/mcp-youtube (514 stars). Updated narrative: no longer "less community traction." Promoted to runner-up in summary table (replacing eat-pray-ai/yutu at 437 stars).
+     - **adhikasp/mcp-reddit: unlisted → 389 stars** — major omission corrected. Now featured as Reddit runner-up in summary table (replacing GeLi2001/reddit-mcp at just 3 stars).
+     - **adhikasp/mcp-linkedin: unlisted → 199 stars** — star count added
+
+   - **Star count updates (30 repos verified):**
+     - EnesCinr/twitter-mcp: 375 → 389
+     - 6551Team/opentwitter-mcp: 378 → 536
+     - Infatoshi/x-mcp: 27 → 39
+     - cameronrye/atproto-mcp: ~6 → 7
+     - stickerdaniel/linkedin-mcp-server: 1,100 → 1,516
+     - jlbadano/ig-mcp: 88 → 113
+     - Seym0n/tiktok-mcp: 117 → 145
+     - anaisbetts/mcp-youtube: 503 → 514
+     - eat-pray-ai/yutu: 410 → 437
+     - karanb192/reddit-mcp-buddy: 470 → 600
+     - gitroomhq/postiz-app: 19,700 → 28,039
+
+   - **Star counts added (previously unlisted):**
+     - ZubeidHendricks/youtube-mcp-server: 491 stars
+     - adhikasp/mcp-reddit: 389 stars
+     - adhikasp/mcp-linkedin: 199 stars
+     - felipfr/linkedin-mcpserver: 55 stars
+     - duhlink/instagram-server-next-mcp: 48 stars
+     - Bob-lance/instagram-engagement-mcp: 44 stars
+     - jordanburke/reddit-mcp-server: 44 stars
+     - Rayyan9477/linkedin_mcp: 16 stars
+     - GeLi2001/reddit-mcp: 3 stars
+
+   - **Summary table overhauled** — updated all star counts, added citation links to stargazer pages, swapped runner-ups where data warranted (YouTube: ZubeidHendricks over eat-pray-ai; Reddit: adhikasp over GeLi2001; Instagram: duhlink over Bob-lance)
+   - **Decision tree updated** — all star counts refreshed, added YouTube management option (ZubeidHendricks), added Reddit analysis option (adhikasp)
+   - **FAQ text + JSON-LD schema updated** with current star counts
+   - **Reordered "Also notable" sections** by star count where applicable
+   - Updated `last_refreshed` to 2026-04-13, added `lastmod` 2026-04-13, updated footer to "April 2026"
+
+3. **Hugo build** — successful.
+
+4. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages — reprioritized list from fresh GSC query:
+  - mcp-maritime-ocean: 531 impr (already done Run 598)
+  - a2a-protocol-v1-production-ready: 480 impr (already done Run 598)
+  - mcp-with-local-llms: 393 impr (already done Run 596)
+  - mcp-music-audio-production (guide): 350 impr (may need retrofit if distinct from review)
+  - claw-code-open-source-claude-code-clone: 321 impr (NOT done)
+  - mcp-manufacturing-industrial: 250 impr (already done Run 599)
+  - Next unretrofitted targets: **claw-code** (321 impr), **anthropic-conway** (235 impr), **apple-macos-mcp-servers** (219 impr), **mcp-dev-summit-2026-guide** (218 impr), **pulumi-mcp-server** (212 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 618 — 2026-04-13 — Citation Retrofit: Message Queue MCP Servers Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
