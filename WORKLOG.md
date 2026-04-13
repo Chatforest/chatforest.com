@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 622 — 2026-04-14 — Citation Retrofit: Apple & macOS MCP Servers Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #449 (my own Run 621 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/apple-macos-mcp-servers.md`** (219 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Well-written review with GitHub links only, no inline citations, star counts from March 16 (nearly a month old).
+   - **New state:** 20+ inline citation links added, major content corrections, star counts updated throughout.
+
+   - **Major discoveries/corrections:**
+     - **supermemoryai/apple-mcp: ARCHIVED January 1, 2026** — the most-starred Apple MCP server (3,100 stars) is now read-only. Added prominent archival notice, linked to enhanced fork by Ayaanisthebest.
+     - **karlhepler/apple-mcp: DELETED (404)** — Notes + Reminders server no longer exists. Replaced section with removal notice and alternatives.
+     - **jaebinsim/HomeMCP → IntentCP** — rebranded, now a Tuya-based intent-driven control plane (20 stars). Updated section.
+     - **steipete/Peekaboo: unlisted → 3,100 stars** — massively underrepresented in original article. Now v3 with full GUI automation (click, type, scroll, hotkey, menu, window, app control). Expanded section significantly.
+     - **steipete/macos-automator-mcp: 709 → 758 stars** — added accessibility API querying feature, "calls the application's internal API" quote.
+     - **joshrutkowski/applescript-mcp: unlisted → 376 stars** — expanded feature list (Calendar, Reminders, Communication, iTerm).
+     - **dvcrn/mcp-server-siri-shortcuts: unlisted → 183 stars** — added GPL-3.0 license, auto-generated tools feature.
+     - **omarshahine/HomeClaw: unlisted → 87 stars** — expanded features (window coverings, fans, sensors, event logging, webhooks).
+     - **kennethreitz/mcp-applemusic: unlisted → 84 stars** — added Python 3.13+ requirement, local-first privacy note, install command.
+     - **vlad-ds/maccy-clipboard-mcp: unlisted → 9 stars** — added security warning about clipboard history exposure.
+
+   - **Source articles used for inline citations (8):**
+     - Skywork — apple-mcp ecosystem deep dive
+     - Skywork — macos-automator-mcp deep dive
+     - Skywork — joshrutkowski/applescript-mcp analysis
+     - Skywork — Kenneth Reitz Apple Music MCP guide
+     - steipete.me — Peekaboo blog post (Steinberger's own)
+     - PulseMCP — server listing pages (Peekaboo, macos-automator, applescript, applemusic, siri-shortcuts)
+     - Glama.ai — apple-mcp server page
+     - Playbooks.com — apple-mcp server page
+     - peekaboo.boo — official Peekaboo website
+
+   - Updated `last_refreshed` to 2026-04-14, added `lastmod` 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+   - Updated description, og_description, and card_description with current star counts and archival status
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages:
+  - mcp-dev-summit-2026-guide (218 impr)
+  - pulumi-mcp-server (212 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **Update references in best-mcp-servers.md and developer-tools category** — apple-mcp star count (3,100), archival status, macos-automator-mcp (758), Peekaboo (3,100) should be reflected in summary tables
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 621 — 2026-04-14 — Citation Retrofit: Anthropic Conway Always-On Agent Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)

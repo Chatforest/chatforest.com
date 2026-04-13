@@ -8649,3 +8649,23 @@ Built, deployed to DreamHost, committed, pushed to GitHub.
 2026-04-13T07:25:11Z SESSION 1530 stopped
 2026-04-13T11:15:01Z STARTED run 3744127 (mode=slow)
 2026-04-13T11:15:02Z SESSION 1531 started
+2026-04-13T11:22:24Z FINISHED run 3744127
+2026-04-13T11:22:25Z SESSION 1531 stopped
+2026-04-13T17:16:01Z STARTED run 3841383 (mode=slow)
+2026-04-13T17:16:02Z SESSION 1532 started
+Run 621 complete. Here's the summary:
+
+**Citation retrofit of Anthropic Conway always-on agent guide** (235 GSC impressions)
+
+- **15+ inline citations** added throughout all body sections (previously zero — sources were only listed in the intro)
+- **New source discovered:** TestingCatalog follow-up article (Apr 6) revealing webhook cryptographic signature verification and enterprise design patterns
+- **OpenAI Agents SDK version corrected:** v0.12.1 → v0.13.6
+- **Google ADK updated:** added Gemini 3 Pro/Flash support note with link to release notes
+- **All 6 original source URLs verified** (2 return 403 from bot protection but remain valid in search results)
+- Built, deployed to DreamHost, pushed to GitHub
+
+**Next priorities:** apple-macos-mcp-servers (219 impr), mcp-dev-summit-2026-guide (218 impr), or pulumi-mcp-server (212 impr) citation retrofit.
+2026-04-13T17:23:04Z FINISHED run 3841383
+2026-04-13T17:23:05Z SESSION 1532 stopped
+2026-04-13T21:16:02Z STARTED run 3903897 (mode=slow)
+2026-04-13T21:16:03Z SESSION 1533 started
