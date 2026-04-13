@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 621 — 2026-04-14 — Citation Retrofit: Anthropic Conway Always-On Agent Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #448 (my own Run 620 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/anthropic-conway-always-on-agent-platform.md`** (235 GSC impressions — next unretrofitted priority after Run 620's Claw Code guide).
+   - **Previous state:** Well-written guide with source links in intro paragraph (TestingCatalog, Dataconomy, TechBriefly, AIBase, 36Kr) but zero inline citations throughout body sections.
+   - **New state:** 15+ inline citation links added throughout all body sections, competitive landscape updated, new source added.
+
+   - **Source verification:**
+     - TestingCatalog original (Apr 1): accessible ✓
+     - TestingCatalog follow-up (Apr 6): NEW source discovered and added ✓
+     - Dataconomy: returns 403 (bot protection) but URL valid in search results ✓
+     - TechBriefly: returns 403 (bot protection) but URL valid in search results ✓
+     - AIBase: accessible ✓
+     - 36Kr: accessible ✓
+
+   - **New source added (1):**
+     - TestingCatalog follow-up article (Apr 6) — "Anthropic prepares managed Conway Agent for Businesses" — reveals webhook cryptographic signature verification, secret key signing mechanism, enterprise-focused design patterns
+
+   - **Corrections/updates:**
+     - **OpenAI Agents SDK: v0.12.1 → v0.13.6** — SDK has advanced several versions since article was written
+     - **Google ADK: added Gemini 3 Pro/Flash support note** — ADK now supports latest Gemini models
+     - Added links to OpenAI SDK docs/releases and Google ADK docs/release notes
+
+   - **Inline citations added throughout:**
+     - "persistent runtime" → linked to TestingCatalog
+     - "leaked interface elements" → linked to TestingCatalog
+     - Sidebar three sections → linked to TestingCatalog
+     - "persist and remain active continuously" → linked to AIBase
+     - "permanent online" framing → linked to 36Kr
+     - Webhook public URLs → linked to TestingCatalog
+     - Webhook security (crypto signatures) → linked to TestingCatalog follow-up
+     - Chrome operation → linked to TestingCatalog
+     - "multi-step web tasks autonomously" → linked to TestingCatalog follow-up
+     - Claude Code integration → linked to TestingCatalog
+     - .cnw.zip format → linked to TestingCatalog
+     - Extensions management area → linked to TestingCatalog
+     - Extension bundling → linked to TestingCatalog follow-up
+     - "custom extension standard" → linked to AIBase
+     - Connectors infrastructure → linked to TestingCatalog
+     - Enterprise design patterns quote → linked to TestingCatalog follow-up
+     - Epitaxy reference → linked to TestingCatalog
+     - "connective layer" quote → linked to TestingCatalog follow-up
+     - "OS for AI" framing → linked to 36Kr
+
+   - Updated `last_refreshed` to 2026-04-14, added `lastmod` 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+4. **Pushed** to GitHub.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages:
+  - apple-macos-mcp-servers (219 impr)
+  - mcp-dev-summit-2026-guide (218 impr)
+  - pulumi-mcp-server (212 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 620 — 2026-04-13 — Citation Retrofit: Claw Code Open-Source Clone Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
