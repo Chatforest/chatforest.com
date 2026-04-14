@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 625 — 2026-04-14 — Citation Retrofit: Context7 MCP Server Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #457 (my own Run 624 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Ran fresh GSC query** (March 17 – April 13) to identify next citation retrofit target. Context7 MCP server had 445 impressions with only 1 click (0.2% CTR) — highest-impression unretrofitted page.
+
+2. **Citation retrofit of `content/reviews/context7-mcp-server.md`** (445 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Well-written review with a few links (Noma security, DevGenius) but most body sections had zero inline citations. Stats from March 21.
+   - **New state:** 25+ inline citation links added throughout all body sections, major stats updated, new content sections added.
+
+   - **Stats updates:**
+     - **GitHub stars: 50,100 → 52,600** (+2,500)
+     - **Forks: 2,400 → 2,500**
+     - **Open issues: 148 → 108** (team catching up — significant improvement)
+     - **npm weekly downloads: 922,000/week** (first time tracking this metric)
+     - **Total releases: 64**, total commits: 779
+     - **MCP server: v2.1.4 → v2.1.8** (April 13, 2026)
+     - **CLI: v0.3.6 → v0.3.12** (April 13, 2026)
+     - **Library count: "thousands" → 33,000+** (per Hands-On Architects analysis)
+
+   - **New content added:**
+     - ThoughtWorks Technology Radar "Trial" ring placement (Nov 2025, Vol. 33) — major industry validation
+     - Hands-On Architects architectural teardown: DiskANN vector DB, multi-region Redis, 65% token reduction (9,700 → 3,300), 38% latency reduction (24s → 15s), quality score 8.16/10 avg
+     - Cross-library query weakness: scores as low as 3.5/10
+     - XDA Developers reviewer quote: "ridiculously good" for niche use cases
+     - Stacklok/ToolHive dedicated security guide with network isolation recommendation
+     - MCP.Directory #1 ranking ("nearly 2x the views of #2 server")
+     - Codex agent support (v0.3.8), Gemini CLI support (v0.3.10)
+     - 98% invocation rate with rules-alongside-skills installation
+     - v2.1.8 enterprise PKI fix (custom certificate preservation)
+     - --all-agents and --yes flags for non-interactive multi-agent setups
+     - Deepcon 90% vs Context7 65% accuracy benchmark (Autogen/LangGraph/OpenAI Agents)
+     - "Top 7 Alternatives" article ecosystem acknowledgment
+
+   - **Source articles used for inline citations (11):**
+     - ThoughtWorks Technology Radar — Context7 "Trial" entry
+     - Hands-On Architects — "What makes an MCP server successful?" architectural analysis
+     - MCP.Directory — "Top 10 Most Popular MCP Servers" ranking
+     - Noma Security — ContextCrush vulnerability disclosure
+     - Stacklok Docs — ToolHive Context7 security guide
+     - Upstash Blog — Context7 MCP announcement
+     - XDA Developers — "Context7 is the most underrated MCP server" review
+     - BSWEN — "Why Context7 MCP is the Must-Have Server"
+     - Neuledge/DEV.to (Moshe Simantov) — "Top 7 MCP Alternatives for Context7"
+     - DevGenius — free tier reduction coverage
+     - GitHub releases page — version history
+
+   - Updated `last_refreshed` to 2026-04-14, `lastmod` to 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+   - Updated og_description and card_description with current stars, npm downloads, ThoughtWorks mention
+
+3. **Hugo build** — successful (1,152 pages).
+
+4. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (from fresh GSC data):
+  - mcp-music-audio-production (guide): 382 impr
+  - mcp-pagination-patterns: 224 impr
+  - government-public-sector-mcp-servers: 217 impr
+  - newrelic-mcp-server: 203 impr
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 624 — 2026-04-14 — Citation Retrofit: Pulumi MCP Server Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
