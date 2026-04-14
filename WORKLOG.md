@@ -2,6 +2,83 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 631 — 2026-04-15 — Citation Retrofit: Pharma/Biotech Life Sciences MCP Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #470 (my own Run 630 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-pharma-biotech-life-sciences.md`** (129 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Comprehensive 600+ line guide with server names but almost no inline citations to authoritative sources. Market stats, database sizes, regulatory references, and academic claims all unsourced. GitHub repos listed by name only (no links).
+   - **New state:** 30+ inline citation links added throughout all sections.
+
+   - **New inline citations added:**
+     - Market stats: Precedence Research ($2.35B), Fortune Business Insights (20-30% CAGR) — linked
+     - Drug development cost: Nature Reviews Drug Discovery / Tufts CSDD DiMasi $2.6B study — linked
+     - Clinical trial success rate: Biostatistics Bioinformatics PMC study (~10%) — linked
+     - Biomedical knowledge doubling: Densen 2011 PMC article (73 days) — linked
+     - PubMed size: PubMed About page (40M+ citations, corrected from 37M+) — linked 2×
+     - PubChem: NAR 2025 update paper (119M compounds, corrected from 110M+) — linked
+     - ChEMBL: NAR 2023 paper (2.2M compounds) — linked
+     - AlphaFold: NAR 2024 paper (214M+ proteins, corrected from 200M+) — linked
+     - PDB: RCSB stats page (227,000+ entries, corrected from 220,000+) — linked
+     - UniProt: NAR 2025 paper (246M+ entries, corrected from 250M+) — linked
+     - FDA 21 CFR Part 11: eCFR official page — linked 2×
+     - FDA electronic signatures guidance: FDA.gov guidance doc — linked
+     - Clinical trial enrollment: PMC recruitment study (80% fail timelines) — linked
+     - Benchling: Help page (MCP docs), Benchling-Anthropic partnership press release, Benchling.com (1,300+ companies, corrected from 1,200+) — linked 3×
+     - MCPmed: Oxford Academic / Briefings in Bioinformatics + GitHub — linked 2×
+     - BioinfoMCP: arXiv paper + GitHub — linked 2×
+     - BioMCP: GitHub repo + biomcp.org — linked 2×
+     - Augmented-Nature: GitHub org page — linked
+     - openpharma-org: GitHub org page — linked 2×
+
+   - **GitHub repo links added for 25+ servers:**
+     - All Augmented-Nature servers (ChEMBL, PubChem, AlphaFold, PDB, UniProt, GTEx, KEGG, HPO, NCBI-Datasets, OpenFDA, SureChEMBL)
+     - All openpharma-org servers (DrugBank, EMA, PubMed, Patents, NLM-codes, UniProt, PDB, bioRxiv)
+     - BioMCP, paper-search-mcp, clinicaltrialsgov-mcp-server, pubmed-mcp-server
+     - ChatMol/molecule-mcp, PDBeurope/PDBe-MCP-Servers, patent_mcp_server
+     - TealFlowMCP, ChatSpatial, posebusters-mcp-server, molml_mcp
+     - BioinfoMCP, synapse-mcp, healthcare-mcp-public
+     - ClinicalTrials-MCP-Server, bioRxiv-MCP-Server, Scientific-Papers-MCP
+
+   - **External database/platform links added:**
+     - RDKit.org, ClinicalTrials.gov, RCSB PDB, UniProt, KEGG, HPO, GTEx Portal
+     - Open Targets, PDB Europe, NCBI Datasets, NCBI BLAST, openFDA API
+     - Sage Bionetworks, Synapse, USPTO
+
+   - **Stats corrections:**
+     - PubMed: 37M+ → **40M+** citations (per PubMed About page, March 2025)
+     - PubChem: 110M+ → **119M+** compounds (per NAR 2025 update)
+     - AlphaFold: 200M+ → **214M+** proteins (per NAR 2024 paper)
+     - PDB: 220,000+ → **227,000+** entries (per RCSB stats)
+     - UniProt: 250M+ → **246M+** entries (per NAR 2025 paper)
+     - Benchling customers: 1,200+ → **1,300+** (per benchling.com)
+     - BioMCP stars: ~384-466 → **490** (verified GitHub)
+     - paper-search-mcp stars: 914 → **1,100+** (verified GitHub)
+     - ChEMBL-MCP-Server stars: 82 → **83** (verified GitHub)
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- data-visualization-mcp-servers: 115 impr
+- ci-cd-pipeline-mcp-servers: 105 impr
+- claude-freebsd-exploit-ai-vulnerability-research: 102 impr
+- mcp-content-creation-podcasting-video: 98 impr
+- chemistry-molecular-modeling-mcp-servers: 97 impr
+- mcp-apps-interactive-ui-extension: 96 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (data-visualization-mcp-servers at 115 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 630 — 2026-04-15 — Citation Retrofit: Gemma 4 Agentic Open Model Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
