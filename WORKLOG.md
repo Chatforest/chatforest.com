@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 636 — 2026-04-15 — Citation Retrofit: Chemistry & Molecular Modeling MCP Servers + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #478 (my own Run 635 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/chemistry-molecular-modeling-mcp-servers.md`** (97 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Good structure with GitHub repo links in tables, but body text lacked inline citations to official project sites, databases, software tools, and organizations.
+   - **New state:** 60+ inline citation links added throughout all sections.
+
+   - **Official database/platform links added (15+):**
+     - [PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [DrugBank](https://go.drugbank.com/), [AlphaFold](https://alphafold.ebi.ac.uk/), [Protein Data Bank (RCSB)](https://www.rcsb.org/), [STRING-db](https://string-db.org/), [SureChEMBL](https://www.surechembl.org/), [UniProt](https://www.uniprot.org/), [Reactome](https://reactome.org/), [KEGG](https://www.genome.jp/kegg/), [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/), [Guide to PHARMACOLOGY](https://www.guidetopharmacology.org/), [openFDA](https://open.fda.gov/), [FDA](https://www.fda.gov/), [PubChem PUG REST API](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)
+
+   - **Scientific software/tool links added (20+):**
+     - Visualization: [PyMOL](https://pymol.org/), [UCSF ChimeraX](https://www.cgl.ucsf.edu/chimerax/), [Chimera](https://www.cgl.ucsf.edu/chimera/)
+     - Cheminformatics: [RDKit](https://www.rdkit.org/), [Open Babel](https://openbabel.org/), [SMILES (Wikipedia)](https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System), [InChI](https://www.inchi-trust.org/), [ChemDraw](https://revvitysignals.com/products/research/chemdraw)
+     - Docking: [AutoDock Vina](https://vina.scripps.edu/), [AutoDockTools](https://autodocksuite.scripps.edu/adt/), [DiffDock](https://github.com/gcorso/DiffDock), [Smina](https://sourceforge.net/projects/smina/), [Gnina](https://github.com/gnina/gnina)
+     - MD: [LAMMPS](https://www.lammps.org/), [GROMACS](https://www.gromacs.org/)
+     - QC/gaps: [Gaussian](https://gaussian.com/), [ORCA](https://www.faccts.de/orca/), [NWChem](https://nwchemgit.github.io/), [Psi4](https://psicode.org/), [AMBER](https://ambermd.org/), [NAMD](https://www.ks.uiuc.edu/Research/namd/), [Desmond](https://www.schrodinger.com/products/desmond), [Quantum ESPRESSO](https://www.quantum-espresso.org/), [VASP](https://www.vasp.at/), [Materials Studio](https://www.3ds.com/products/biovia/materials-studio)
+
+   - **Organization/company links added (10+):**
+     - [Augmented-Nature](https://github.com/Augmented-Nature), [TandemAI](https://github.com/tandemai-inc), [ChatMol](https://github.com/ChatMol), [BioMCP-Hub](https://github.com/BioMCP-Hub), [JackKuo666](https://github.com/JackKuo666)
+     - [Schrödinger](https://www.schrodinger.com/), [Chemical Computing Group](https://www.chemcomp.com/), [OpenEye](https://www.eyesopen.com/), [MathWorks](https://www.mathworks.com/), [DocuSign](https://www.docusign.com/)
+     - [ASKCOS](https://askcos.mit.edu/), [IBM RXN](https://rxn.res.ibm.com/)
+
+   - **Developer tool/framework links added:**
+     - [Model Context Protocol](https://modelcontextprotocol.io/), [FastMCP](https://github.com/jlowin/fastmcp), [FastAPI](https://fastapi.tiangolo.com/), [CrewAI](https://www.crewai.com/), [Claude](https://claude.ai/), [Claude Desktop](https://claude.ai/download), [SQLite](https://www.sqlite.org/), [Prometheus](https://prometheus.io/)
+
+   - **Research/ecosystem links added:**
+     - [AlphaFold 3 announcement](https://blog.google/technology/ai/google-deepmind-isomorphic-alphafold-3-ai-model/), [AlphaFold API docs](https://alphafold.ebi.ac.uk/api-docs), [ChEMBL REST API docs](https://www.ebi.ac.uk/chembl/api/data/docs)
+     - [Holy Bio MCP](https://github.com/longevity-genie/holy-bio-mcp), [OpenGenes](https://opengenes.org/), [MATLAB MCP](https://github.com/mathworks/matlab-mcp)
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- mcp-apps-interactive-ui-extension: 96 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (mcp-apps-interactive-ui-extension at 96 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 635 — 2026-04-15 — Citation Retrofit: MCP Content Creation / Podcasting / Video Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
