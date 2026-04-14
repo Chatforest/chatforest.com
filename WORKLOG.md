@@ -2,6 +2,87 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 634 — 2026-04-15 — Citation Retrofit: Claude FreeBSD Exploit / AI Vulnerability Research Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #476 (my own Run 633 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/claude-freebsd-exploit-ai-vulnerability-research.md`** (102 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Good source attribution in intro paragraph, but body lacked inline citations to official project sites, CVE databases, researcher pages, product announcements, and MAD Bugs disclosure posts.
+   - **New state:** 30+ inline citation links added throughout all sections.
+
+   - **Researcher/organization links added:**
+     - [Nicholas Carlini](https://nicholas.carlini.com/) — linked 3× (intro, exploit section, bottom line)
+     - [Anthropic](https://www.anthropic.com/) — linked 4× (intro, Frontier Red Team, disclosure window, bottom line)
+     - [Frontier Red Team](https://www.anthropic.com/news/strategic-warning-for-ai-risk-progress-and-insights-from-our-frontier-red-team) — linked 2× (intro, 500+ vulns section)
+     - [Calif](https://blog.calif.io/) — linked 1× (MAD Bugs section)
+     - [Google DeepMind](https://deepmind.google/) — linked 1× (agent security section)
+
+   - **Official project/product site links added:**
+     - [FreeBSD](https://www.freebsd.org/) — linked 2× (intro, vulnerability section)
+     - [Ghost CMS](https://ghost.org/) — linked 1× (notable discoveries)
+     - [Vim](https://www.vim.org/) — linked 1× (notable discoveries)
+     - [Emacs](https://www.gnu.org/software/emacs/) — linked 1× (notable discoveries)
+     - [Firefox](https://www.mozilla.org/firefox/) + [Mozilla](https://www.mozilla.org/) — linked 2× (notable discoveries, 500+ vulns)
+     - [Linux kernel](https://kernel.org/) — linked 2× (notable discoveries, 500+ vulns)
+     - [glibc](https://www.gnu.org/software/libc/) — linked 1× (500+ vulns)
+     - [Kerberos](https://web.mit.edu/kerberos/) — linked 1× (vulnerability section)
+     - [nginx](https://nginx.org/) — linked 1× (MAD Bugs section)
+
+   - **CVE/NVD links added:**
+     - [CVE-2026-4747](https://nvd.nist.gov/vuln/detail/CVE-2026-4747) — FreeBSD RPCSEC_GSS overflow
+     - [CVE-2026-26980](https://github.com/advisories/GHSA-w52v-v783-gw97) — Ghost CMS SQL injection
+     - [CVE-2026-34714](https://nvd.nist.gov/vuln/detail/CVE-2026-34714) — Vim RCE (CVSS 9.2)
+     - [CVE-2026-31402](https://nvd.nist.gov/vuln/detail/CVE-2026-31402) — Linux kernel 23-year-old bug
+
+   - **Product/initiative links added:**
+     - [Claude Code Security](https://www.anthropic.com/news/claude-code-security) — linked 2× (safeguards, defenders section)
+     - [Project Glasswing](https://www.anthropic.com/glasswing) — linked 2× (new safeguard bullet, defenders section)
+     - [red.anthropic.com exploit analysis](https://red.anthropic.com/2026/exploit/) — linked 1× (agent security section)
+
+   - **MAD Bugs disclosure links added:**
+     - [MAD Bugs index](https://blog.calif.io/p/mad-bugs-month-of-ai-discovered-bugs) — main index page
+     - [Vim vs Emacs](https://blog.calif.io/p/mad-bugs-vim-vs-emacs-vs-claude) — disclosure post
+     - [radare2 zero-day](https://blog.calif.io/p/mad-bugs-discovering-a-0-day-in-zero) — disclosure post
+
+   - **Additional source links added:**
+     - [Detailed write-up on GitHub](https://github.com/califio/publications/blob/main/MADBugs/CVE-2026-4747/write-up.md) — intro sources
+     - [mtlynch.io Linux kernel write-up](https://mtlynch.io/claude-code-found-linux-vulnerability/) — notable discoveries
+     - [Mozilla blog](https://blog.mozilla.org/en/firefox/hardening-firefox-anthropic-red-team/) — Firefox section
+     - [Anthropic/Mozilla partnership](https://www.anthropic.com/news/mozilla-firefox-security) — Firefox section
+     - [CSO Online Vim/Emacs coverage](https://www.csoonline.com/article/4153288/) — Emacs maintainer response
+     - [The Hacker News Claude Code Security](https://thehackernews.com/2026/02/anthropic-launches-claude-code-security.html) — safeguards
+
+   - **Content additions:**
+     - Added affected FreeBSD versions (13.5, 14.3, 14.4, 15.0 with patch levels)
+     - Added Ghost CMS patch versions (5.130.6, 6.11.0)
+     - Added Vim CVE CVSS score (9.2) and patch version (9.2.0272)
+     - Added note that Emacs maintainers declined to fix, attributing to Git
+     - Added Linux kernel CVE-2026-31402 specifics (NFSv4.0 LOCK replay cache, introduced March 2003)
+     - Added Firefox fix version (148.0) and Mozilla quote
+     - Added full list of affected projects in 500+ vulns section
+     - Added Project Glasswing as new safeguard bullet with partner list
+     - Added red.anthropic.com exploit analysis cross-reference
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- mcp-content-creation-podcasting-video: 98 impr
+- chemistry-molecular-modeling-mcp-servers: 97 impr
+- mcp-apps-interactive-ui-extension: 96 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (mcp-content-creation-podcasting-video at 98 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 633 — 2026-04-15 — Citation Retrofit: CI/CD Pipeline MCP Servers Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
