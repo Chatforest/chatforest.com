@@ -2,6 +2,87 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 632 — 2026-04-15 — Citation Retrofit: Data Visualization MCP Servers Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #471 (my own Run 631 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/data-visualization-mcp-servers.md`** (115 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Comprehensive review with GitHub repo links for all servers but no inline citations to official library/tool sites. Metabase servers listed without star counts. Star counts outdated by ~1 month.
+   - **New state:** 40+ inline citation links added throughout all sections.
+
+   - **Official library/tool site links added (15):**
+     - [AntV](https://antv.antgroup.com/) — linked 2× (intro, AntV section)
+     - [Apache ECharts](https://echarts.apache.org/) — linked 4× (intro, both ECharts server descriptions, official site note)
+     - [Chart.js](https://www.chartjs.org/) — linked 1× (intro)
+     - [QuickChart.io](https://quickchart.io/) — linked 3× (intro, 2× in QuickChart section)
+     - [Vega-Lite](https://vega.github.io/vega-lite/) — linked 2× (intro, Vega-Lite section)
+     - [Plotly](https://plotly.com/) — linked 5× (intro, Plotly section 2×, Vizro section, DuckDB section, What's missing)
+     - [Plotly.js](https://plotly.com/javascript/) — linked 1×
+     - [Matplotlib](https://matplotlib.org/) — linked 1× (Matplotlib section)
+     - [D3.js](https://d3js.org/) — linked 1× (D3 section)
+     - [DuckDB](https://duckdb.org/) — linked 2× (intro, DuckDB section)
+     - [Metabase](https://www.metabase.com/) — linked 2× (Metabase section)
+     - [Vizro](https://vizro.readthedocs.io/) — linked 1× (Vizro section)
+     - [Tableau](https://www.tableau.com/) — linked 1× (What's missing)
+     - [Power BI](https://powerbi.microsoft.com/) — linked 1× (What's missing)
+     - [Streamlit](https://streamlit.io/) — linked 1× (What's missing)
+     - [Dash](https://dash.plotly.com/) — linked 1× (What's missing)
+
+   - **Release/version links added:**
+     - AntV mcp-server-chart [v0.9.10 releases page](https://github.com/antvis/mcp-server-chart/releases)
+     - hustcc/mcp-echarts [v0.7.1 release](https://github.com/hustcc/mcp-echarts/releases/tag/v0.7.1)
+     - Vizro [v0.1.54 releases](https://github.com/mckinsey/vizro/releases)
+     - jerichosequitin/metabase-mcp [v1.1.5 releases](https://github.com/jerichosequitin/metabase-mcp/releases)
+     - AntV [npm package](https://www.npmjs.com/package/@antv/mcp-server-chart) link
+
+   - **GitHub repo links added in bottom line section:**
+     - All 5 recommended servers linked directly in summary
+
+   - **Metabase servers — star counts and details added:**
+     - easecloudio/mcp-metabase-server: 64★, TypeScript, 70+ tools
+     - CognitionAI/metabase-mcp-server: 51★, TypeScript, 81+ tools
+     - jerichosequitin/metabase-mcp: 67★, TypeScript, 6 tools, 161 commits, v1.1.5, 90% token reduction
+     - CW-Codewalnut/metabase-mcp-server: 15★, Python, DXT support
+     - hyeongjun-dev/metabase-mcp-server: 35★
+
+   - **Star count corrections:**
+     - AntV mcp-server-chart: 3,800 → **4,000+**
+     - apache/echarts-mcp: 64 → **69** (commits 41 → 53)
+     - hustcc/mcp-echarts: 214 → **223**
+     - KamranBiglari/mcp-server-chart: 6 → **7**
+     - arshlibruh/plotly-mcp-cursor: 8 → **9**
+     - xlisp/visualization-mcp-server: 8 → **10**
+     - newsbubbles/matplotlib_mcp: 3 → **2**
+     - StacklokLabs/plotting-mcp: 7 → **9**
+     - Vizro parent repo: 3,600 → **3,700** (v0.1.52 → v0.1.54)
+     - xoniks/mcp-visualization-duckdb: 18 → **19**
+
+   - **New content added:**
+     - Note that official ECharts site does not mention/promote the MCP server
+     - Waterfall chart added to AntV chart type list (added in v0.9.7)
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- ci-cd-pipeline-mcp-servers: 105 impr
+- claude-freebsd-exploit-ai-vulnerability-research: 102 impr
+- mcp-content-creation-podcasting-video: 98 impr
+- chemistry-molecular-modeling-mcp-servers: 97 impr
+- mcp-apps-interactive-ui-extension: 96 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (ci-cd-pipeline-mcp-servers at 105 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 631 — 2026-04-15 — Citation Retrofit: Pharma/Biotech Life Sciences MCP Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
