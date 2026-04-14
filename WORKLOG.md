@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 635 — 2026-04-15 — Citation Retrofit: MCP Content Creation / Podcasting / Video Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #477 (my own Run 634 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-content-creation-podcasting-video.md`** (98 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Comprehensive guide with good structure but no inline citations — product names, GitHub repos, platform names, and commercial services all unlinked.
+   - **New state:** 90+ inline citation links added throughout all sections.
+
+   - **GitHub repository links added (15):**
+     - [gyoridavid/short-video-maker](https://github.com/gyoridavid/short-video-maker) — video production
+     - [misbahsy/video-audio-mcp](https://github.com/misbahsy/video-audio-mcp) — FFmpeg editing
+     - [video-creator/ffmpeg-mcp](https://github.com/video-creator/ffmpeg-mcp) — FFmpeg conversational
+     - [jkawamoto/mcp-youtube-transcript](https://github.com/jkawamoto/mcp-youtube-transcript) — YouTube transcripts
+     - [kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) — YouTube transcripts
+     - [hancengiz/youtube-transcript-mcp](https://github.com/hancengiz/youtube-transcript-mcp) — YouTube transcripts
+     - [adamanz/podcast-generator-mcp](https://github.com/adamanz/podcast-generator-mcp) — podcasting
+     - [dingkwang/podcast-transcriber-mcp](https://github.com/dingkwang/podcast-transcriber-mcp) — podcast transcription
+     - [nmbrthirteen/podcli](https://github.com/nmbrthirteen/podcli) — podcast clips
+     - [elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) — voice/TTS
+     - [arcaputo3/mcp-server-whisper](https://github.com/arcaputo3/mcp-server-whisper) — Whisper transcription
+     - [Ichigo3766/audio-transcriber-mcp](https://github.com/Ichigo3766/audio-transcriber-mcp) — audio transcription
+     - [vanman2024/ayrshare-mcp](https://github.com/vanman2024/ayrshare-mcp) — social media
+     - [matrayu/adobe-mcp](https://github.com/matrayu/adobe-mcp) — Adobe Creative Suite
+     - [ccnn2509/seo-ai](https://github.com/ccnn2509/seo-ai), [cnych/seo-mcp](https://github.com/cnych/seo-mcp) — SEO tools
+
+   - **Official platform/product site links added (30+):**
+     - Video/streaming: [YouTube](https://www.youtube.com/), [TikTok](https://www.tiktok.com/), [Instagram](https://www.instagram.com/), [FFmpeg](https://ffmpeg.org/), [OBS Studio](https://obsproject.com/)
+     - Audio: [ElevenLabs](https://elevenlabs.io/), [Epidemic Sound](https://www.epidemicsound.com/), [OpenAI](https://openai.com/), [Whisper](https://openai.com/research/whisper)
+     - Design: [Canva](https://www.canva.com/), [Figma](https://www.figma.com/), [Adobe](https://www.adobe.com/) (Photoshop, Premiere Pro, Illustrator, InDesign), [DALL-E 3](https://openai.com/dall-e-3), [Midjourney](https://www.midjourney.com/), [Stable Diffusion](https://stability.ai/), [fal.ai](https://fal.ai/)
+     - Social: [Facebook](https://www.facebook.com/), [Twitter/X](https://x.com/), [LinkedIn](https://www.linkedin.com/), [Pinterest](https://www.pinterest.com/), [Reddit](https://www.reddit.com/), [Snapchat](https://www.snapchat.com/), [Telegram](https://telegram.org/), [Threads](https://www.threads.net/), [Bluesky](https://bsky.app/)
+     - CMS: [WordPress.com](https://wordpress.com/), [WordPress.org](https://wordpress.org/), [Automattic](https://automattic.com/), [Ghost](https://ghost.org/), [Notion](https://www.notion.so/)
+     - SEO: [SE Ranking](https://seranking.com/), [Ahrefs](https://ahrefs.com/), [Semrush](https://www.semrush.com/), [Google Analytics](https://analytics.google.com/), [Google Search Console](https://search.google.com/search-console/)
+
+   - **Commercial service links added (10+):**
+     - [Pod Engine](https://podengine.ai/), [Podigee](https://www.podigee.com/), [Barevalue](https://barevalue.com/), [Audioscrape](https://audioscrape.com/), [Transcribe](https://transcribe.com/)
+     - [Ayrshare](https://www.ayrshare.com/), [OpenTweet](https://opentweet.io/), [BrandGhost](https://brandghost.ai/), [Publora](https://publora.com/), [Coupler.io](https://www.coupler.io/), [ImaginePro](https://imaginepro.ai/)
+
+   - **Developer tool/platform links added:**
+     - [Claude Desktop](https://claude.ai/download), [Cursor](https://cursor.sh/), [Windsurf](https://codeium.com/windsurf)
+     - [PyPI](https://pypi.org/project/elevenlabs-mcp/), [Docker Hub](https://hub.docker.com/r/mcp/elevenlabs), [Google ADK](https://google.github.io/adk-docs/)
+     - [PulseMCP](https://www.pulsemcp.com/), [Playbooks.com](https://playbooks.com/), [mcpservers.org](https://mcpservers.org/), [Apify](https://apify.com/)
+
+   - **Ecosystem gaps section links added (15+):**
+     - [Streamlabs](https://streamlabs.com/), [Descript](https://www.descript.com/), [Substack](https://substack.com/), [Beehiiv](https://www.beehiiv.com/), [ConvertKit/Kit](https://kit.com/), [MailerLite](https://www.mailerlite.com/)
+     - [Spotify for Podcasters](https://podcasters.spotify.com/), [Apple Podcasts Connect](https://podcastsconnect.apple.com/), [Buzzsprout](https://www.buzzsprout.com/), [Transistor](https://transistor.fm/), [Podbean](https://www.podbean.com/)
+     - [Sora](https://openai.com/sora), [Runway](https://runwayml.com/), [Pika](https://pika.art/)
+     - [Patreon](https://www.patreon.com/), [Ko-fi](https://ko-fi.com/), [Gumroad](https://gumroad.com/), [Teachable](https://teachable.com/), [Amazon Associates](https://affiliate-program.amazon.com/)
+     - [Make WordPress AI](https://make.wordpress.org/ai/), [Google Ads Keyword Planner](https://ads.google.com/home/tools/keyword-planner/), [Google Business Profile](https://business.google.com/), [Flux/Black Forest Labs](https://blackforestlabs.ai/)
+
+   - **Star count updates:**
+     - Short Video Maker: ~799 → **~1,100**
+     - ElevenLabs MCP: added **~1,300** (was missing)
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful (1152 pages).
+3. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- chemistry-molecular-modeling-mcp-servers: 97 impr
+- mcp-apps-interactive-ui-extension: 96 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (chemistry-molecular-modeling-mcp-servers at 97 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 634 — 2026-04-15 — Citation Retrofit: Claude FreeBSD Exploit / AI Vulnerability Research Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
