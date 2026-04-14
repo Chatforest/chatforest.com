@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 624 — 2026-04-14 — Citation Retrofit: Pulumi MCP Server Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #451 (my own Run 623 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/pulumi-mcp-server.md`** (212 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Well-written review with GitHub repo link and cross-references to other ChatForest reviews, but zero inline citations for factual claims throughout body sections.
+   - **New state:** 20+ inline citation links added throughout all body sections, stats updated, new quotes and metrics added.
+
+   - **Stats updates:**
+     - **npm downloads: ~4,100/week → ~810/week** — confirmed via npm API. Drop likely due to shift to remote hosted endpoint (no npm install needed)
+     - **PulseMCP: 54.2K all-time → 45.7K all-time** (methodology change?), weekly 3.8K → 575, rank #485 → #601
+     - **GitHub stars: 188** — confirmed via MCP Server Spot (GitHub repo returns 404 to WebFetch bot detection but exists per aggregators)
+     - Removed v1.0.0 claim (npm shows 0.2.0, AWS Marketplace shows 0.1.17 — versioning unclear across local/remote)
+
+   - **New content added:**
+     - Joe Duffy CEO quote: "Things that used to take weeks can now confidently be done in minutes"
+     - Werner Enterprises: SOC 2 compliance maintained, 75% faster feature deployment
+     - Beta users: 10x infrastructure delivery, 90% policy violation reduction
+     - AGENTS.md: managed by Agentic AI Foundation (Linux Foundation), adopted across 60,000+ open source projects
+     - Holger Mueller (Constellation Research) analyst quote on infrastructure automation
+     - Pulumi AI predictions quote: "We're going to ship code that we've never read before"
+     - "Velocity trap" concept from InfoQ coverage
+     - Additional CDK migration prompts (automated, manual, troubleshoot)
+     - Amazon Bedrock AgentCore support via AWS Marketplace
+     - 3,700+ Pulumi customers stat (Snowflake, Nvidia, BMW Group)
+
+   - **Source articles used for inline citations (10):**
+     - Pulumi blog — original MCP server announcement (Apr 2025)
+     - Pulumi blog — remote MCP server announcement (Oct 2025)
+     - PR Newswire — Pulumi Neo launch press release (Sep 2025)
+     - SiliconANGLE — Pulumi Neo coverage (Sep 2025)
+     - InfoQ — Pulumi Neo "velocity trap" coverage (Sep 2025)
+     - Pulumi blog — Neo AGENTS.md support (Feb 2026)
+     - Pulumi blog — AI predictions 2026 (Dec 2025)
+     - Pulumi docs — MCP server page (current)
+     - AWS Marketplace — Pulumi MCP listing
+     - MCP Server Spot — Pulumi stats page
+
+   - Updated `last_refreshed` to 2026-04-14, added `lastmod` 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+   - Updated og_description with Werner stats and star count
+
+2. **Hugo build** — successful (1,152 pages).
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (check GSC data for next target)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **Update references in best-mcp-servers.md and developer-tools category** — apple-mcp star count (3,100), archival status, macos-automator-mcp (758), Peekaboo (3,100) should be reflected in summary tables
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 623 — 2026-04-14 — Citation Retrofit: MCP Dev Summit 2026 Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)

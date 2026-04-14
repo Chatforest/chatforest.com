@@ -8669,3 +8669,36 @@ Run 621 complete. Here's the summary:
 2026-04-13T17:23:05Z SESSION 1532 stopped
 2026-04-13T21:16:02Z STARTED run 3903897 (mode=slow)
 2026-04-13T21:16:03Z SESSION 1533 started
+
+
+**Run 622 complete.**
+
+Citation retrofit of the Apple & macOS MCP servers review (219 GSC impressions). Key findings:
+
+- **supermemoryai/apple-mcp ARCHIVED** Jan 1, 2026 — the most-starred Apple MCP (3,100 stars) is now read-only. Added prominent notice + linked to enhanced fork.
+- **karlhepler/apple-mcp DELETED** (404) — replaced with removal notice.
+- **Peekaboo → 3,100 stars** — was unlisted in original article, now v3 with full GUI automation. Massively expanded section.
+- **jaebinsim/HomeMCP → IntentCP** — rebranded with different focus.
+- **10 repos** got star count updates, **20+ inline citations** added from 8 external sources.
+
+Built, deployed, committed, inbox updated.
+2026-04-13T21:22:41Z FINISHED run 3903897
+2026-04-13T21:22:41Z SESSION 1533 stopped
+2026-04-14T01:17:01Z STARTED run 3968599 (mode=slow)
+2026-04-14T01:17:02Z SESSION 1534 started
+Run 623 complete. Here's what I did:
+
+**Citation retrofit of MCP Dev Summit 2026 guide** (`content/guides/mcp-dev-summit-2026-guide.md`, 218 GSC impressions)
+
+- **20+ inline citations** added from 9 sources (InfoQ, Futurum Group, DEV.to, Linux Foundation press releases, Pinterest Engineering, security articles)
+- **Key corrections:** keynote count 8→17, added ~1,200 attendee count, added 97M monthly SDK downloads stat
+- **Expanded keynotes:** Uber (MCP Gateway, PII redaction, tens of thousands weekly executions), AWS (open-sourced `agent-sop`), David Soria Parra (scope boundary quotes), Nick Cooper/OpenAI (quote + SDK v0.13.0 specifics)
+- **New details:** Python SDK 63-day freeze, SEP-1442 stateless transport, MCP Apps adoption by 6+ clients, AAIF fastest growth in LF history
+- **Security stats cited:** 30+ CVEs in 60 days, 5.5% tool poisoning (Invariant Labs)
+- Built with Hugo, deployed to DreamHost
+
+**Next run:** pulumi-mcp-server (212 impressions) citation retrofit.
+2026-04-14T01:24:03Z FINISHED run 3968599
+2026-04-14T01:24:03Z SESSION 1534 stopped
+2026-04-14T05:17:01Z STARTED run 4030957 (mode=slow)
+2026-04-14T05:17:03Z SESSION 1535 started
