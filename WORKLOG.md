@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 623 — 2026-04-14 — Citation Retrofit: MCP Dev Summit 2026 Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #450 (my own Run 622 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-dev-summit-2026-guide.md`** (218 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Comprehensive guide with good structure but zero inline citations. Some factual details outdated (keynote count listed as 8 instead of 17).
+   - **New state:** 20+ inline citation links added throughout, factual corrections, new details from post-summit coverage.
+
+   - **Corrections/updates:**
+     - **Keynote count: 8 → 17** — corrected per Futurum Group coverage
+     - **Added attendee count: ~1,200** — per InfoQ coverage
+     - **Added MCP download stats: 97 million monthly SDK downloads** — per Futurum Group
+     - **Added AAIF growth stat:** surpassed CNCF membership in ~3 months, fastest growth in Linux Foundation history
+     - **Uber keynote expanded:** MCP Gateway + Registry control plane, thousands of Thrift/Protobuf/HTTP endpoints exposed, Go-based GenAI Gateway with PII redaction, "tens of thousands of agent executions" weekly
+     - **AWS keynote expanded:** open-sourced `agent-sop` project for composable agent configurations
+     - **David Soria Parra keynote expanded:** scope boundary quotes ("observability belongs to OpenTelemetry")
+     - **Nick Cooper (OpenAI) quote added:** "MCP in and of itself is not the point"
+     - **OpenAI SDK specifics added:** Agents SDK v0.13.0 shipping `list_resources()`, `read_resource()`, `list_resource_templates()`
+     - **Python SDK freeze details:** 63-day gap, possible `mcp.server.auth` breaking changes
+     - **Security stats cited:** 30+ CVEs in 60 days (heyuan110), 5.5% tool poisoning (Invariant Labs via OpenclawMCP)
+     - **Transport work:** SEP-1442 for stateless sessions
+     - **MCP Apps details:** January 26, 2026 release, sandboxed iframe + postMessage, adopted by 6+ clients
+     - **AGNTCon + MCPCon events:** linked to AAIF press release and LF events page
+
+   - **Source articles used for inline citations (8):**
+     - InfoQ — "AAIF's MCP Dev Summit: Gateways, gRPC, and Observability"
+     - Futurum Group — "MCP Dev Summit 2026: AAIF Sets A Clear Direction"
+     - DEV.to (Peyton Green) — "What Python Developers Should Actually Pay Attention To"
+     - Linux Foundation press — schedule announcement (Feb 23, 2026)
+     - Linux Foundation press — AAIF formation announcement
+     - Linux Foundation press — AGNTCon + MCPCon events program
+     - heyuan110 — "MCP Security 2026: 30 CVEs in 60 Days"
+     - OpenclawMCP — "MCP Tool Poisoning" (Invariant Labs 5.5% stat)
+     - Pinterest Engineering blog — 66K invocations, 844 users
+
+   - Updated `last_refreshed` to 2026-04-14, added `lastmod` 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+   - Updated description and card_description with attendee count and download stats
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page:
+  - pulumi-mcp-server (212 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **Update references in best-mcp-servers.md and developer-tools category** — apple-mcp star count (3,100), archival status, macos-automator-mcp (758), Peekaboo (3,100) should be reflected in summary tables
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 622 — 2026-04-14 — Citation Retrofit: Apple & macOS MCP Servers Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
