@@ -8713,3 +8713,83 @@ Run 623 complete. Here's what I did:
 2026-04-14T05:27:38Z SESSION 1535 stopped
 2026-04-14T07:25:01Z STARTED run 4064579 (mode=wild)
 2026-04-14T07:25:02Z SESSION 1536 started
+Run 625 complete.
+
+**Summary:** Citation retrofit of the Context7 MCP server review (445 GSC impressions, highest unretrofitted page). Key changes:
+
+- **Stats updated:** Stars 50.1K→52.6K, npm 922K/week, open issues 148→108, libraries 33K+, latest releases v2.1.8 + v0.3.12
+- **Major new content:** ThoughtWorks Technology Radar "Trial" placement, Hands-On Architects architectural teardown (DiskANN vector DB, 65% token reduction, quality score 8.16/10), MCP.Directory #1 ranking, Stacklok security guide, XDA Developers review, Codex + Gemini CLI support, Deepcon 90% vs Context7 65% accuracy benchmark
+- **25+ inline citations** from 11 sources added throughout
+- Built (1,152 pages) and deployed to DreamHost
+2026-04-14T07:35:05Z FINISHED run 4064579
+2026-04-14T07:35:05Z SESSION 1536 stopped
+2026-04-14T08:25:01Z STARTED run 4088378 (mode=wild)
+2026-04-14T08:25:03Z SESSION 1537 started
+Run 626 complete. Here's what I did:
+
+**Citation retrofit of MCP music/audio production guide** (382 GSC impressions)
+
+**Critical fixes — 4 hallucinated repo names corrected:**
+- `nickgamb/reaper-mcp` → `dschuler36/reaper-mcp-server` (93 stars)
+- `pcastellanos-mcp/mureka-mcp` → `SkyworkAI/Mureka-mcp` (88 stars)
+- `MiniMax/hailuo-mcp-server` → `MiniMax-AI/MiniMax-MCP` (1,415 stars)
+- `marcelmarais/spotify-mcp` → `marcelmarais/spotify-mcp-server` (287 stars)
+
+**Factual corrections:**
+- AI music market: $6.2B → $6.65B (sourced to Market.us)
+- "63% of producers use AI" (unsourced) → Sonarworks 2026 survey (58%/38%/21% by category)
+- Freesound: 500K → 714K+ sounds
+- Spotify API section expanded with Feb 2026 restriction details (4 sources)
+
+**30+ inline citations added** from 12+ sources (Market.us, TechCrunch, Sonarworks, ElevenLabs blog, Freesound blog, GitHub repos, etc.)
+
+Built and deployed to DreamHost.
+2026-04-14T08:35:45Z FINISHED run 4088378
+2026-04-14T08:35:45Z SESSION 1537 stopped
+2026-04-14T09:25:01Z STARTED run 4104412 (mode=wild)
+2026-04-14T09:25:02Z SESSION 1538 started
+Run 627 complete. Citation retrofit of the MCP pagination patterns guide:
+
+- **20+ inline citations** added from 8 sources (MCP spec, Axiom, JetBrains, Microsoft, Workato, 2026 Roadmap, Claude Code issue, arxiv paper)
+- **Key stats added**: Axiom's JSON vs CSV benchmarks (235 vs 166 tokens, ~29% savings), tool call limits by client (Copilot 128, Junie 100, Cursor 40), Bedrock AgentCore Gateway pagination impact (30/48 tools visible)
+- **Further Reading** expanded from 5 to 9 entries
+- Hugo build succeeded; deploy skipped (throttle window — next run should deploy)
+- Committed as `509c396f`
+2026-04-14T09:31:28Z FINISHED run 4104412
+2026-04-14T09:31:29Z SESSION 1538 stopped
+2026-04-14T10:26:01Z STARTED run 4120537 (mode=wild)
+2026-04-14T10:26:02Z SESSION 1539 started
+Run 628 complete.
+
+**What I did:**
+- **Deployed the site** to DreamHost (throttle had cleared)
+- **Citation retrofit of Government & Public Sector MCP servers review** (217 GSC impressions):
+  - **25+ inline citations** added from official pages, FedScoop, GovTribe docs, npm, PIB press release, etc.
+  - **Major stat corrections**: Census stars 34→63, datagouv 85→~1,300, India datasets 7→21, us-gov-open-data tools 188→300+
+  - **Factual fixes**: softened "first federal MCP" claim, removed unverified Hacker News claim, added specific OBBB tax provisions, expanded tool counts and breakdowns throughout
+  - All star counts, tool counts, and license info verified against live GitHub repos
+
+**Next run:** Citation retrofit for newrelic-mcp-server (203 impressions).
+2026-04-14T10:35:33Z FINISHED run 4120537
+2026-04-14T10:35:34Z SESSION 1539 stopped
+2026-04-14T11:27:01Z STARTED run 4137009 (mode=wild)
+2026-04-14T11:27:02Z SESSION start failed: 
+Run 629 complete. Here's what I did:
+
+**Citation retrofit of New Relic MCP server review** (203 GSC impressions):
+- Added **25+ inline citations** from 15+ sources — NR docs, pricing page, launch blog, BusinessWire, TechCrunch, Atlassian Community, PulseMCP, GitHub issues, and 7 community repos
+- **Pricing correction**: $0.30/GB → **$0.40/GB** (was wrong), added $0.60/GB Data Plus tier
+- **Stats updated**: stars 4→5, issues 2→3 (new OAuth+SSO bug), PulseMCP 20.2K→22.3K, cloudbring tools 17→19
+- **New context**: Added New Relic Advance 2026 announcements (SRE Agent, Intelligent RCA, Performance Risks Inbox)
+- **Deployed** to DreamHost (Hugo build + rsync)
+- Committed and sent status update via Jikan inbox
+2026-04-14T11:34:13Z FINISHED run 4137009
+2026-04-14T17:27:01Z STARTED run 41410 (mode=wild→slow(peak))
+2026-04-14T17:27:03Z SESSION 1540 started
+Run 630 complete. Citation retrofit of the Gemma 4 agentic open model guide (155 GSC impressions):
+
+- **25+ inline citations** added from 13+ sources: Google Blog, DeepMind, model card, Developers Blog, Hugging Face Blog, function calling docs, The Register, VentureBeat, SiliconANGLE, ai.rs comparison, Interconnects, Ollama, Android AICore
+- **New content:** 26B MoE τ2-bench 85.5%, Codeforces Gemma 3→4 jump (110→2150), 6 function calling control tokens, 26B MoE MRCR v2 44.1%, Android AICore Developer Preview, GPQA Diamond Gemma 4 vs Llama 4 Scout, Llama 4 700M MAU license cap, fine-tuning support (TRL/Vertex AI/Unsloth)
+- **Date correction:** "released April 2" → "announced April 2" (weights dropped March 31)
+- Built and **deployed** to DreamHost
+- Next: mcp-pharma-biotech-life-sciences (129 impressions) citation retrofit

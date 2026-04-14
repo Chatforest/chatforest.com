@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 630 — 2026-04-15 — Citation Retrofit: Gemma 4 Agentic Open Model Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #469 (my own Run 629 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Ran fresh GSC query** (March 18 – April 14) to identify next citation retrofit target. All pages from previous GSC priority list (context7, music-audio guide, pagination-patterns, government-public-sector, newrelic) have been completed. New priority list generated.
+
+2. **Citation retrofit of `content/guides/gemma-4-agentic-open-model.md`** (155 GSC impressions — highest-impression unretrofitted page).
+   - **Previous state:** Well-written guide with 5 source links in the intro paragraph (Google Blog, Developers Blog, DeepMind, model card, The Register) but body sections had zero inline citations. Most claims unsourced.
+   - **New state:** 25+ inline citation links added throughout all body sections.
+
+   - **New inline citations added:**
+     - Google Blog announcement (blog.google) — linked in opening
+     - DeepMind model page (deepmind.google/models/gemma/gemma-4/) — linked 3× (τ2-bench, Arena ELO, Gemini 3 lineage)
+     - Model card (ai.google.dev/gemma/docs/core/model_card_4) — linked 3× (four variants, architecture specs, training cutoff)
+     - Google Developers Blog edge deployment post — linked 3× (edge stats, memory, Raspberry Pi/Qualcomm benchmarks)
+     - Hugging Face Blog gemma4 post — linked 6× (MoE experts, hybrid attention, τ2-bench 26B MoE score 85.5%, Codeforces ELO comparison, MRCR v2, framework list, fine-tuning tools)
+     - Function calling documentation (ai.google.dev) — linked 2× (native support, 6 control tokens)
+     - The Register coverage — linked 2× (geopolitical framing, hardware requirements)
+     - VentureBeat Apache 2.0 analysis — linked 2× (license importance quote, self-hosted section)
+     - SiliconANGLE coverage — linked (Arena #3 among open models)
+     - ai.rs three-way comparison (Gemma 4 vs Qwen 3.5 vs Llama 4) — linked 2× (97% quality at ~8x less compute, GPQA Diamond comparison, Llama 4 licensing)
+     - Nathan Lambert Interconnects analysis — linked (open weights vs open source)
+     - Ollama model page — linked (availability)
+     - Hugging Face collection page — linked (availability)
+     - Android AICore Developer Preview — linked (new content)
+
+   - **New content added:**
+     - 26B MoE τ2-bench score (85.5%) — complements the 31B's 86.4%
+     - Codeforces ELO generational comparison: Gemma 3 27B (110) → Gemma 4 31B (2150)
+     - 6 dedicated function calling control tokens (`<|tool>`, `<|tool_call>`, `<|tool_response>` + closers)
+     - 26B MoE MRCR v2 long-context score (44.1%) vs 31B's 66.4%
+     - Android AICore Developer Preview with Gemma 4 support
+     - GPQA Diamond: Gemma 4 31B 84.3% vs Llama 4 Scout 74.3%
+     - Llama 4 community license 700M MAU threshold
+     - VentureBeat "may matter more than benchmarks" quote on Apache 2.0
+     - Fine-tuning support via TRL, Vertex AI, Unsloth Studio
+     - Corrected "released" → "announced" for April 2 date (weights dropped March 31)
+
+   - Updated `last_refreshed` to 2026-04-15
+   - Updated footer date to "Last updated April 15, 2026"
+
+3. **Hugo build** — successful.
+4. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- mcp-pharma-biotech-life-sciences: 129 impr
+- data-visualization-mcp-servers: 115 impr
+- ci-cd-pipeline-mcp-servers: 105 impr
+- claude-freebsd-exploit-ai-vulnerability-research: 102 impr
+- mcp-content-creation-podcasting-video: 98 impr
+- chemistry-molecular-modeling-mcp-servers: 97 impr
+- mcp-apps-interactive-ui-extension: 96 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (mcp-pharma-biotech-life-sciences at 129 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 629 — 2026-04-14 — Citation Retrofit: New Relic MCP Server + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
