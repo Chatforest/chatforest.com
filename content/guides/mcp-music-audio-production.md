@@ -1,15 +1,15 @@
 ---
 title: "MCP and Music/Audio Production: How AI Agents Connect to DAWs, Streaming Platforms, MIDI, Audio Processing, Music Generation, Notation, Podcasting, and Sound Design"
 date: 2026-03-29T23:30:00+09:00
-description: "A comprehensive guide to MCP integrations for music and audio — covering Ableton Live MCP servers (2,300+ stars), Spotify integration (25+ implementations), Reaper (58 tools)"
+description: "A comprehensive guide to MCP integrations for music and audio — covering Ableton Live MCP servers (2,400+ stars), Spotify integration (25+ implementations), Reaper (93 stars)"
 content_type: "Guide"
-card_description: "Music production is embracing MCP fast. This guide covers 105+ MCP servers across DAWs (Ableton Live 2,300 stars with 200+ tools, Reaper 58 tools, Bitwig, SuperCollider, Sonic Pi), streaming platforms (Spotify 25+ implementations, Apple Music, Last.fm, SoundCloud, Discogs), MIDI control (33 stars, hardware synths, controllers), AI music generation (Mureka 84 stars, MusicGPT 24 tools, muapi-cli 974 stars wrapping Suno + 14 models, MiniMax official), music notation (MuseScore 18+ tools, music21 13 analysis tools, LilyPond), audio processing (FFmpeg-based, Rust audio analyzer), podcast/voice (ElevenLabs official 1,277 stars, Whisper transcription, Kokoro TTS), sound design (Freesound, hardware synth control), plus market data ($6.2B AI in music 2025 → $60B 2034), platform landscape, and ecosystem gaps in rights management, mastering, and live performance."
-last_refreshed: 2026-03-29
+card_description: "Music production is embracing MCP fast. This guide covers 105+ MCP servers across DAWs (Ableton Live 2,400+ stars with 200+ tools, Reaper 93 stars, Bitwig, SuperCollider, Sonic Pi), streaming platforms (Spotify 25+ implementations, Apple Music, Last.fm, SoundCloud, Discogs), MIDI control (35 stars, hardware synths, controllers), AI music generation (Mureka 88 stars, MusicGPT 24 tools, muapi-cli 978 stars wrapping Suno + 14 models, MiniMax official 1,400+ stars), music notation (MuseScore 37 stars 18+ tools, music21 20 stars 13 analysis tools, LilyPond), audio processing (FFmpeg-based, Rust audio analyzer), podcast/voice (ElevenLabs official 1,300+ stars, Whisper transcription, Kokoro TTS 76 stars), sound design (Freesound 714K+ sounds, hardware synth control), plus market data ($6.65B AI in music 2025 → $60B 2034), platform landscape, and ecosystem gaps in rights management, mastering, and live performance."
+last_refreshed: 2026-04-14
 ---
 
 Music production is one of the most tool-intensive creative disciplines. A single track might pass through a DAW for arrangement, a notation editor for scoring, MIDI controllers for performance, audio effects for mixing, a streaming platform for distribution, and analytics tools for tracking plays. Each tool has its own interface, its own data format, its own workflow. AI agents that can bridge these tools — generating MIDI patterns, adjusting mix parameters, analyzing audio, managing playlists — need structured access to the entire music production pipeline.
 
-The MCP ecosystem for music is surprisingly developed in some areas and entirely absent in others. Ableton Live has the standout implementation: ahujasid/ableton-mcp with 2,300+ stars is one of the most popular MCP servers in any domain, allowing AI agents to create tracks, add instruments, set tempos, and control sessions directly. Spotify has 25+ MCP implementations for playlist management and music data. ElevenLabs' official MCP server (1,277 stars) brings professional voice synthesis to any MCP client. But Logic Pro, Pro Tools, FL Studio, and Cubase — collectively used by the majority of professional producers — have zero MCP servers. Music rights management, professional mastering, and live performance tooling are complete gaps.
+The MCP ecosystem for music is surprisingly developed in some areas and entirely absent in others. Ableton Live has the standout implementation: [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) with 2,400+ stars is one of the most popular MCP servers in any domain, allowing AI agents to create tracks, add instruments, set tempos, and control sessions directly. Spotify has 25+ MCP implementations for playlist management and music data. [ElevenLabs' official MCP server](https://elevenlabs.io/blog/introducing-elevenlabs-mcp) (1,300+ stars) brings professional voice synthesis to any MCP client. But Logic Pro, Pro Tools, FL Studio, and Cubase — collectively used by the majority of professional producers — have zero MCP servers. Music rights management, professional mastering, and live performance tooling are complete gaps.
 
 This guide is research-based. We survey what MCP servers exist for music and audio production, how major platforms are approaching AI integration, and where the gaps remain. We do not claim to have tested or used any of these servers hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP itself, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/guides/best-mcp-servers/).
 
@@ -35,9 +35,9 @@ DAWs are the central hub of music production, and they represent both the strong
 
 ### Ableton Live: The MCP Leader
 
-**ahujasid/ableton-mcp** (~2,300 stars) | **Language:** JavaScript/Python | **License:** MIT
+**[ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp)** (~2,400 stars) | **Language:** JavaScript/Python | **License:** MIT
 
-This is one of the most popular MCP servers across all domains — not just music. It connects Claude (or any MCP client) to Ableton Live via a Python MIDI Remote Script that runs inside Ableton, communicating over a local socket to the MCP server.
+This is one of the most popular MCP servers across all domains — not just music. It connects Claude (or any MCP client) to Ableton Live via a Python MIDI Remote Script that runs inside Ableton, communicating over a local socket to the MCP server. [Early experiments](https://jhurliman.org/post/804323197731373056/experiments-with-ableton-mcp-dec-2025) showed the server handling 70+ automation calls in a single session, generating full synthwave tracks from just a few prompts.
 
 Key capabilities:
 - Create and manage tracks (audio, MIDI, return)
@@ -51,9 +51,9 @@ Key capabilities:
 
 The architecture is notable: rather than wrapping an HTTP API, it injects a script directly into Ableton's MIDI Remote Script system, giving it deep access to Live's object model. This means it can do things that Ableton's official API doesn't easily expose through external interfaces.
 
-**jpoindexter/ableton-mcp** (~50 stars) | **Language:** TypeScript/Python | **200+ tools**
+**[jpoindexter/ableton-mcp](https://github.com/jpoindexter/ableton-mcp)** (~10 stars) | **Language:** TypeScript/Python | **200+ tools**
 
-The most feature-rich Ableton MCP server, offering over 200 tools organized across session management, track control, clip operations, device parameters, mixing, and automation. This implementation goes deeper into Ableton's API than the more popular alternative, exposing fine-grained control over device chains, automation envelopes, and scene management.
+The most feature-rich Ableton MCP server, offering [over 200 tools](https://github.com/jpoindexter/ableton-mcp#readme) for "near-complete Ableton Live Object Model (LOM) coverage" — organized across session management, track control, clip operations, device parameters, mixing, and automation. This implementation goes deeper into Ableton's API than the more popular alternative, exposing fine-grained control over device chains, automation envelopes, and scene management. It also supports REST API and Max for Live interfaces alongside MCP.
 
 Additional Ableton implementations include:
 - **Simon-Chng/ableton-copilot** (~40 stars) — Ableton Copilot with AI-powered music production assistance
@@ -63,18 +63,17 @@ Additional Ableton implementations include:
 
 ### Reaper
 
-**nickgamb/reaper-mcp** (~15 stars) | **Language:** Python | **58 tools** | **License:** MIT
+**[dschuler36/reaper-mcp-server](https://github.com/dschuler36/reaper-mcp-server)** (~93 stars) | **Language:** Python | **License:** MIT
 
-Reaper is popular among audio engineers and podcast producers for its flexibility and low cost. This MCP server provides 58 tools covering:
+Reaper is popular among audio engineers and podcast producers for its flexibility and low cost. The leading Reaper MCP server provides tools covering:
 - Track creation and management
 - FX chain control (add, remove, configure effects)
 - MIDI editing
 - Transport control
 - Marker and region management
 - Render and export operations
-- ReaScript integration for custom operations
 
-Reaper's extensibility through ReaScript (supporting Python, Lua, and EEL) makes it particularly well-suited for MCP integration, as the MCP server can leverage existing ReaScript functionality.
+Additional Reaper implementations include [bonfire-audio/reaper-mcp](https://github.com/bonfire-audio/reaper-mcp) (~49 stars, focused on creating "fully mixed and mastered tracks"), [shiehn/total-reaper-mcp](https://github.com/shiehn/total-reaper-mcp) (~36 stars, claiming 100% ReaScript coverage), and [wegitor/reaper-reapy-mcp](https://github.com/wegitor/reaper-reapy-mcp) (~58 stars). Reaper's extensibility through ReaScript (supporting Python, Lua, and EEL) makes it particularly well-suited for MCP integration, as the MCP servers can leverage existing ReaScript functionality.
 
 ### Bitwig Studio
 
@@ -112,7 +111,7 @@ Spotify dominates the MCP streaming landscape with 25+ implementations, followed
 
 ### Spotify
 
-**marcelmarais/spotify-mcp** (~269 stars) | **Language:** TypeScript | **26 tools**
+**[marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server)** (~287 stars) | **Language:** TypeScript | **26 tools**
 
 The leading Spotify MCP server provides comprehensive access:
 - Search tracks, albums, artists, playlists
@@ -123,10 +122,10 @@ The leading Spotify MCP server provides comprehensive access:
 - Get audio features (danceability, energy, valence, tempo, key)
 - Browse new releases and featured playlists
 
-**Important note:** Spotify's February 2026 API migration guide significantly changed access requirements. Some endpoints now require extended quota mode approval, and the audio features endpoints that many music analysis workflows depend on may have restricted access.
+**Important note:** [Spotify's February 2026 API changes](https://developer.spotify.com/blog/2026-02-06-update-on-developer-access-and-platform-security) significantly restricted access. Dev Mode now [requires a Premium account](https://techcrunch.com/2026/02/06/spotify-changes-developer-mode-api-to-require-premium-accounts-limits-test-users/), is limited to 1 Client ID and 5 authorized users, and several endpoints were removed entirely (including Create Playlist, Get Artist's Top Tracks, and Get New Releases). Many fields like popularity, followers, and label were also [removed from responses](https://developer.spotify.com/documentation/web-api/references/changes/february-2026).
 
 Additional notable Spotify implementations:
-- **varunneal/spotify-mcp** (~130 stars) — Alternative with different tool organization
+- **[varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp)** (~594 stars) — Now the most-starred Spotify MCP implementation
 - **@modelcontextprotocol/server-spotify** — Listed in the official MCP servers catalog
 - **stophobia/spotify-mcp-server** (~50 stars) — Queue management focus
 - Multiple smaller implementations for specific use cases (playlist generation, listening analytics, DJ tools)
@@ -172,7 +171,7 @@ MIDI (Musical Instrument Digital Interface) has been the standard for electronic
 
 ### MIDI Control
 
-**midi-mcp-server** (~33 stars) | **Language:** Python | **License:** MIT
+**[midi-mcp-server](https://github.com/tubone24/midi-mcp-server)** (~35 stars) | **Language:** Python | **License:** MIT
 
 This server exposes MIDI capabilities to AI agents:
 - List available MIDI input and output ports
@@ -201,7 +200,7 @@ AI music generation is a fast-growing area where MCP servers connect LLM-based a
 
 ### Mureka
 
-**pcastellanos-mcp/mureka-mcp** (~84 stars) | **Language:** TypeScript | **4 tools**
+**[SkyworkAI/Mureka-mcp](https://github.com/SkyworkAI/Mureka-mcp)** (~88 stars) | **Language:** TypeScript | **4 tools**
 
 Mureka.ai is a music generation platform, and this semi-official MCP server provides:
 - Generate music from text descriptions
@@ -225,15 +224,15 @@ A more comprehensive music generation server supporting multiple generation appr
 
 ### muapi-cli: Multi-Platform Music Generation
 
-**muapi-cli** (~974 stars) | **Language:** Python
+**[muapi-cli](https://github.com/SamurAIGPT/muapi-cli)** (~978 stars) | **Language:** Python
 
 Not an MCP server itself, but a widely-used CLI/API wrapper for 14+ music AI models including Suno, Udio, and others. Its high star count and broad model support make it a likely candidate for MCP wrapping. It handles authentication, generation queuing, and download for multiple platforms.
 
 ### MiniMax (Official)
 
-**MiniMax/hailuo-mcp-server** | **Language:** TypeScript | **Official**
+**[MiniMax-AI/MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP)** (~1,415 stars) | **Language:** TypeScript | **[Official](https://www.minimax.io/news/minimax-mcp)**
 
-MiniMax (Hailuo) provides an official MCP server that includes their music-1.5 model alongside video and image generation. This is notable as one of the few official MCP servers from an AI generation company.
+MiniMax (Hailuo) provides an official MCP server that includes their music-1.5 model alongside video and image generation. With 1,400+ stars, it's one of the most popular official MCP servers from any AI generation company.
 
 ### Suno
 
@@ -244,7 +243,7 @@ No official MCP server from Suno exists, but multiple community wrappers access 
 
 ### MuseScore
 
-**mcp-musescore** (~28 stars) | **Language:** Python | **18+ tools**
+**[mcp-musescore](https://github.com/ghchen99/mcp-musescore)** (~37 stars) | **Language:** Python | **18+ tools**
 
 MuseScore is the leading open-source music notation software with millions of users. This MCP server provides:
 - Create and edit scores
@@ -256,7 +255,7 @@ MuseScore is the leading open-source music notation software with millions of us
 
 ### music21
 
-**music21-mcp-server** (~13 stars) | **Language:** Python | **13 analysis tools**
+**[music21-mcp-server](https://github.com/brightlikethelight/music21-mcp-server)** (~20 stars) | **Language:** Python | **13 analysis tools**
 
 music21 is MIT's computational musicology toolkit — a Python library for analyzing, searching, and transforming music in symbolic form. The MCP server exposes:
 - Key and scale analysis
@@ -315,9 +314,9 @@ No MCP servers exist for professional mixing tools (iZotope, FabFilter, Waves), 
 
 ### ElevenLabs (Official)
 
-**elevenlabs/elevenlabs-mcp** (~1,277 stars) | **Language:** TypeScript | **Official**
+**[elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp)** (~1,306 stars) | **Language:** TypeScript | **[Official](https://elevenlabs.io/blog/introducing-elevenlabs-mcp)**
 
-The standout in voice/audio MCP servers. ElevenLabs provides an official MCP server for their voice AI platform:
+The standout in voice/audio MCP servers. ElevenLabs provides an [official MCP server](https://elevenlabs.io/blog/introducing-elevenlabs-mcp) for their voice AI platform:
 - Text-to-speech with multiple voices and styles
 - Voice cloning capabilities
 - Sound effect generation
@@ -325,7 +324,7 @@ The standout in voice/audio MCP servers. ElevenLabs provides an official MCP ser
 - Pronunciation dictionary management
 - Conversational AI agent creation
 
-The 1,277 stars and official backing make this the most polished audio MCP server available. It supports both API key and OAuth authentication.
+The 1,300+ stars and official backing make this the most polished audio MCP server available. It supports both API key and OAuth authentication.
 
 ### Whisper / Speech-to-Text
 
@@ -338,7 +337,7 @@ These enable AI agents to transcribe audio files, creating workflows where an ag
 
 ### Kokoro TTS
 
-**kokoro-tts-mcp** (~20 stars) | **Language:** Python
+**[kokoro-tts-mcp](https://github.com/mberg/kokoro-tts-mcp)** (~76 stars) | **Language:** Python
 
 Kokoro is a lightweight, open-source TTS model. The MCP server enables local, offline text-to-speech without API costs — useful for development, testing, or scenarios where cloud TTS isn't appropriate.
 
@@ -353,7 +352,7 @@ No MCP servers exist for podcast hosting platforms (Spotify for Podcasters, Buzz
 
 **freesound-mcp** (~10 stars) | **Language:** Python
 
-Freesound.org hosts 500,000+ Creative Commons–licensed sounds. The MCP server enables:
+Freesound.org hosts [over 714,000 Creative Commons–licensed sounds](https://blog.freesound.org/?p=2347) (as of their 2025 year-end report, with 536 days of total audio content). The MCP server enables:
 - Search by text query, tags, or similar sounds
 - Filter by duration, sample rate, format, license type
 - Download sounds for use in projects
@@ -374,7 +373,7 @@ No MCP servers exist for Splice (the dominant sample marketplace), Native Instru
 
 ### AI Jam Sessions
 
-**ai-jam-sessions** (~15 stars) | **Language:** Python | **35 tools, 120 songs, 6 sound engines**
+**[ai-jam-sessions](https://github.com/mcp-tool-shop-org/ai-jam-sessions)** | **Language:** Python | **41 tools, 120 songs, 6 sound engines**
 
 The most substantial music education MCP server, designed for interactive music learning:
 - Play along with 120 built-in songs across genres
@@ -382,7 +381,7 @@ The most substantial music education MCP server, designed for interactive music 
 - Chord progression exploration
 - Scale and mode practice
 - Rhythm training
-- Real-time feedback on musical input
+- Browser cockpit and practice journal
 
 ### Gaps: Ear Training, Instrument Learning, Music Theory Platforms
 
@@ -393,24 +392,24 @@ No MCP servers exist for established music education platforms: **Yousician** (i
 
 | Category | Servers | Top Implementation | Stars | Tools | Official? |
 |---|---|---|---|---|---|
-| **Ableton Live** | 8+ | ahujasid/ableton-mcp | ~2,300 | Full session control | Community |
-| **Reaper** | 1 | nickgamb/reaper-mcp | ~15 | 58 tools | Community |
+| **Ableton Live** | 8+ | [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) | ~2,400 | Full session control | Community |
+| **Reaper** | 4+ | [dschuler36/reaper-mcp-server](https://github.com/dschuler36/reaper-mcp-server) | ~93 | Track/FX/transport | Community |
 | **Bitwig** | 3 | femfirefem/bitwig-mcp-server | ~8 | Controller API | Community |
 | **Live Coding** | 3+ | supercollider-mcp | ~10 | Algorithmic composition | Community |
-| **Spotify** | 25+ | marcelmarais/spotify-mcp | ~269 | 26 tools | Community |
+| **Spotify** | 25+ | [varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp) | ~594 | Playback + playlists | Community |
 | **Apple Music** | 3+ | igorTT/apple-music-mcp | ~15 | MusicKit API | Community |
 | **Last.fm** | 1 | stophobia/lastfm-mcp | ~10 | 22+ tools | Community |
-| **MIDI** | 5+ | midi-mcp-server | ~33 | MIDI I/O, sequencing | Community |
-| **Music Generation** | 10+ | muapi-cli (wrapper) | ~974 | 14+ AI models | Community |
-| **Mureka** | 1 | mureka-mcp | ~84 | 4 tools | Semi-official |
-| **MiniMax** | 1 | hailuo-mcp-server | — | Music + media gen | Official |
-| **MuseScore** | 1 | mcp-musescore | ~28 | 18+ tools | Community |
-| **music21** | 1 | music21-mcp-server | ~13 | 13 analysis tools | Community |
-| **ElevenLabs** | 1 | elevenlabs-mcp | ~1,277 | Voice AI suite | Official |
+| **MIDI** | 5+ | [midi-mcp-server](https://github.com/tubone24/midi-mcp-server) | ~35 | MIDI I/O, sequencing | Community |
+| **Music Generation** | 10+ | [muapi-cli](https://github.com/SamurAIGPT/muapi-cli) (wrapper) | ~978 | 14+ AI models | Community |
+| **Mureka** | 1 | [Mureka-mcp](https://github.com/SkyworkAI/Mureka-mcp) | ~88 | 4 tools | Semi-official |
+| **MiniMax** | 1 | [MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) | ~1,415 | Music + media gen | Official |
+| **MuseScore** | 1 | [mcp-musescore](https://github.com/ghchen99/mcp-musescore) | ~37 | 18+ tools | Community |
+| **music21** | 1 | [music21-mcp-server](https://github.com/brightlikethelight/music21-mcp-server) | ~20 | 13 analysis tools | Community |
+| **ElevenLabs** | 1 | [elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) | ~1,306 | Voice AI suite | Official |
 | **Whisper/STT** | 3+ | whisper-mcp-server | ~30 | Transcription | Community |
 | **Freesound** | 1 | freesound-mcp | ~10 | Sound search/download | Community |
 | **Audio Analysis** | 2+ | audio-analyzer-rs | ~15 | Spectral/tempo/key | Community |
-| **Music Education** | 1 | ai-jam-sessions | ~15 | 35 tools, 120 songs | Community |
+| **Music Education** | 1 | [ai-jam-sessions](https://github.com/mcp-tool-shop-org/ai-jam-sessions) | — | 41 tools, 120 songs | Community |
 
 
 ## Architecture Patterns
@@ -564,13 +563,13 @@ Professional studios present unique security considerations:
 
 Only two music-related companies have released official MCP servers:
 
-**ElevenLabs** — The voice AI company's official MCP server (1,277 stars) is one of the most polished MCP servers in any category. It covers their full product suite: TTS, voice cloning, sound effects, audio isolation, and conversational AI. This represents genuine investment in MCP as a distribution channel.
+**ElevenLabs** — The voice AI company's [official MCP server](https://elevenlabs.io/blog/introducing-elevenlabs-mcp) (1,300+ stars) is one of the most polished MCP servers in any category. It covers their full product suite: TTS, voice cloning, sound effects, audio isolation, and conversational AI. This represents genuine investment in MCP as a distribution channel.
 
-**MiniMax/Hailuo** — Their official MCP server includes the music-1.5 generation model alongside video and image generation. Less music-focused than ElevenLabs, but notable as an official offering.
+**MiniMax/Hailuo** — Their [official MCP server](https://www.minimax.io/news/minimax-mcp) (1,415 stars) includes the music-1.5 generation model alongside video and image generation. With over 1,400 stars, it's actually one of the most popular official MCP servers across any domain.
 
 ### Semi-Official Presence
 
-**Mureka.ai** — The music generation company has a semi-official MCP server maintained in close coordination with their API.
+**Mureka.ai** — The music generation company has a [semi-official MCP server](https://github.com/SkyworkAI/Mureka-mcp) maintained in close coordination with their API.
 
 **Deezer** — The streaming company has an internal Ableton MCP implementation, suggesting awareness of MCP's potential in music production workflows, though no public MCP server for their streaming platform.
 
@@ -578,7 +577,7 @@ Only two music-related companies have released official MCP servers:
 
 | Platform | API Status | MCP Potential |
 |---|---|---|
-| **Spotify** | Comprehensive REST API (with 2026 changes) | 25+ community servers exist |
+| **Spotify** | [Restricted Feb 2026](https://developer.spotify.com/blog/2026-02-06-update-on-developer-access-and-platform-security) | 25+ community servers exist |
 | **SoundCloud** | API available but limited | Minimal MCP coverage |
 | **Tidal** | Developer API available | Zero MCP servers |
 | **Deezer** | Public API available | Zero public MCP servers |
@@ -639,29 +638,29 @@ The pattern is clear: the music industry's largest companies have not adopted MC
 ## Getting Started
 
 ### For music producers using Ableton Live
-Start with **ahujasid/ableton-mcp** (2,300+ stars). Install the MIDI Remote Script in Ableton, connect Claude or another MCP client, and experiment with creating tracks, adding instruments, and generating MIDI patterns through natural language. Progress to **jpoindexter/ableton-mcp** (200+ tools) for deeper control.
+Start with **[ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp)** (2,400+ stars). Install the MIDI Remote Script in Ableton, connect Claude or another MCP client, and experiment with creating tracks, adding instruments, and generating MIDI patterns through natural language. Progress to **[jpoindexter/ableton-mcp](https://github.com/jpoindexter/ableton-mcp)** (200+ tools) for deeper control.
 
 ### For Spotify power users
-**marcelmarais/spotify-mcp** (269 stars, 26 tools) provides comprehensive playlist management and music discovery. Note the February 2026 API changes — verify which endpoints require extended quota approval for your use case.
+**[marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server)** (287 stars, 26 tools) or **[varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp)** (594 stars) provide comprehensive playlist management and music discovery. Note the [February 2026 API changes](https://developer.spotify.com/blog/2026-02-06-update-on-developer-access-and-platform-security) — Dev Mode now requires Premium and many endpoints were removed or restricted.
 
 ### For podcast producers
-Combine **whisper-mcp-server** for transcription with **elevenlabs-mcp** (1,277 stars, official) for narration and FFmpeg-based servers for audio processing. This gives you a complete pipeline from raw audio to polished episode.
+Combine **whisper-mcp-server** for transcription with **[elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp)** (1,300+ stars, official) for narration and FFmpeg-based servers for audio processing. This gives you a complete pipeline from raw audio to polished episode.
 
 ### For music theorists and educators
-**music21-mcp-server** (13 analysis tools) brings MIT's computational musicology toolkit to AI agents. Analyze scores for harmonic structure, melodic patterns, and form. Combine with **mcp-musescore** for notation output.
+**[music21-mcp-server](https://github.com/brightlikethelight/music21-mcp-server)** (13 analysis tools) brings MIT's computational musicology toolkit to AI agents. Analyze scores for harmonic structure, melodic patterns, and form. Combine with **[mcp-musescore](https://github.com/ghchen99/mcp-musescore)** for notation output.
 
 ### For AI music experimenters
-Start with **mureka-mcp** (84 stars) for text-to-music generation or explore **muapi-cli** (974 stars) as a gateway to multiple generation models. For voice, **elevenlabs-mcp** provides production-quality TTS and voice cloning.
+Start with **[Mureka-mcp](https://github.com/SkyworkAI/Mureka-mcp)** (88 stars) for text-to-music generation or explore **[muapi-cli](https://github.com/SamurAIGPT/muapi-cli)** (978 stars) as a gateway to multiple generation models. For voice, **[elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp)** provides production-quality TTS and voice cloning.
 
 ### For electronic musicians with hardware
-**midi-mcp-server** (33 stars) provides general MIDI control. If you own a Teenage Engineering EP-133 or Elektron Digitone 2, the dedicated MCP servers offer deeper integration. For any MIDI-capable hardware, the general MIDI server enables AI-driven sequencing and parameter control.
+**[midi-mcp-server](https://github.com/tubone24/midi-mcp-server)** (35 stars) provides general MIDI control. If you own a Teenage Engineering EP-133 or Elektron Digitone 2, the dedicated MCP servers offer deeper integration. For any MIDI-capable hardware, the general MIDI server enables AI-driven sequencing and parameter control.
 
 
 ## Market Context
 
-The AI in music market is estimated at $6.2 billion in 2025 and projected to grow to approximately $60 billion by 2034, a 27.8% CAGR. The music streaming market reached $50–56 billion in 2025. The music production software market is valued at approximately $33 billion in 2025.
+The AI in music market is estimated at [$6.65 billion in 2025 and projected to grow to approximately $60.4 billion by 2034](https://market.us/report/ai-in-music-market/), a [27.8% CAGR](https://www.sci-tech-today.com/news/ai-in-music-market/). The music streaming market [reached approximately $56 billion in 2025](https://www.researchnester.com/reports/music-streaming-market/4383). The broader music production market is [valued at approximately $33 billion in 2025](https://www.globalgrowthinsights.com/market-reports/music-production-market-121884).
 
-63% of music producers now integrate AI tools into their workflow. AI-generated music tracks on streaming platforms grew from negligible numbers in 2023 to millions of tracks by 2025, though this has generated significant controversy around rights, royalties, and artistic credit. Major labels have taken varied stances — some investing in AI tools, others pursuing legal action against AI music generation companies.
+A [2026 Sonarworks/Sound on Sound survey](https://www.sonarworks.com/blog/research/future-music-production-human-producer-survey-2026) of 1,194 music creators found 58% now use AI for audio restoration, 38% use AI mixing assistants, and about 21% use AI composition tools — suggesting rapid but uneven adoption across production tasks. AI-generated music tracks on streaming platforms grew from negligible numbers in 2023 to millions of tracks by 2025, though this has generated significant controversy around rights, royalties, and artistic credit. Major labels have taken varied stances — some investing in AI tools, others pursuing legal action against AI music generation companies.
 
 The professional audio industry ($10+ billion annually across DAWs, plugins, hardware, and services) has been notably slower to adopt AI than other creative industries. Pro Tools, Logic Pro, and Cubase — the workhorses of professional audio — have no AI integration comparable to what's happening in visual design (Adobe Firefly), video (Runway, Pika), or writing (integrated LLM tools in every text editor).
 
