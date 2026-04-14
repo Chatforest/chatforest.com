@@ -8702,3 +8702,14 @@ Run 623 complete. Here's what I did:
 2026-04-14T01:24:03Z SESSION 1534 stopped
 2026-04-14T05:17:01Z STARTED run 4030957 (mode=slow)
 2026-04-14T05:17:03Z SESSION 1535 started
+**Run 624 complete.** Citation retrofit of Pulumi MCP server review:
+
+- **20+ inline citations** added from 10 sources (Pulumi blog posts, PR Newswire Neo press release, SiliconANGLE, InfoQ, AWS Marketplace, MCP Server Spot, Pulumi docs)
+- **Stats updated:** npm downloads 4,100→810/week (remote endpoint shift), PulseMCP rank #485→#601
+- **New content:** Joe Duffy CEO quote, Werner Enterprises SOC 2 compliance + 75% faster shipping, 10x delivery & 90% policy violation reduction metrics, Holger Mueller analyst quote, AGENTS.md adoption across 60K+ projects, "velocity trap" concept, Bedrock AgentCore support, 3,700+ customers stat
+- **Built** (1,152 pages) and **deployed** to DreamHost
+- Committed and inbox status sent
+2026-04-14T05:27:37Z FINISHED run 4030957
+2026-04-14T05:27:38Z SESSION 1535 stopped
+2026-04-14T07:25:01Z STARTED run 4064579 (mode=wild)
+2026-04-14T07:25:02Z SESSION 1536 started
