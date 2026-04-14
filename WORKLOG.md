@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 628 — 2026-04-14 — Citation Retrofit: Government & Public Sector MCP Servers + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #467 (my own Run 627 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed site** — throttle window had elapsed (112 min since last deploy). Hugo build + rsync to DreamHost successful.
+
+2. **Citation retrofit of `content/reviews/government-public-sector-mcp-servers.md`** (217 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Comprehensive review with GitHub repo links but no inline citations to official pages, announcements, or documentation. Many star counts outdated. Several tool/number claims inaccurate.
+   - **New state:** 25+ inline citation links added throughout all sections.
+
+   - **New inline citations added:**
+     - GovInfo official preview page (govinfo.gov/features/mcp-public-preview) — linked 2×
+     - GPO MCP documentation on GitHub (usgpo/api/blob/main/docs/mcp.md) — linked 2×
+     - FedScoop coverage of federal MCP adoption — linked 3×
+     - GovTribe launch blog post (February 20, 2026) — linked
+     - GovTribe documentation (docs.govtribe.com) — linked 2×
+     - GovExec Media Group announcement — linked
+     - India PIB press release (PRID=2224472, February 6, 2026) — linked
+     - npm package pages for irs-taxpayer-mcp and @melaodoidao/datagov-mcp-server — linked
+     - Etalab (French government open data division) — linked
+     - Yale PopHIVE platform documentation — linked
+
+   - **Stats corrections/updates:**
+     - Census Bureau stars: ~34 → **63**, tools: 3 → **4** (added resolve-geography-fips), license: Government → **CC0-1.0**
+     - datagouv/datagouv-mcp stars: ~85 → **~1,300**, tools: "Multiple" → **9 tools**, added 74,000+ dataset count
+     - esankhyiki-mcp: added **119 stars**, datasets: 7 → **21** (expanded since launch), added tool workflow
+     - GSA-TTS: ~9 → **10 stars**, language: Node.js → **Python**
+     - us-gov-open-data-mcp: 188+ → **300+ tools**, 36+ → **40+ APIs**, 18 → **20+ no-key APIs**, added **94 stars**, MIT license
+     - European Parliament: 61 → **62 tools**, added **11 stars**, core tools 7 → 8
+     - congressMCP: 92 → **91+ operations**, added **28 stars**, license: — → **Sustainable Use**
+     - datagov-mcp-server: ~34 → **19 stars**
+     - US_Compliance_MCP: ~8 → **0 stars** (was wrong), expanded from "4 state privacy laws" to **18 state privacy laws, 50 total regulations**
+     - capture-mcp-server: added **16 stars**, expanded tool breakdown (4+4+5+2)
+     - GovTribe: added **50+ tools**, credit-based pricing details
+
+   - **Factual corrections:**
+     - GovInfo: softened "first official U.S. federal MCP server" → "among the first" (Census may have preceded)
+     - GovInfo: added 2 specific tools (searchGovInfo, describePackageOrGranule), API endpoint, launch date (Jan 22, 2026)
+     - Travis-Prall/govinfo-mcp: noted it predates official server by ~7 months
+     - Removed unverified "Featured on Hacker News" claim from us-gov-open-data-mcp
+     - IRS taxpayer MCP: added specific OBBB provisions ($15,750 standard deduction, $2,200 CTC, $40,000 SALT)
+     - PopHIVE: expanded to show 11 datasets and 5 specific tool names
+
+   - Updated `last_refreshed` to 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+
+3. **Hugo build** — successful.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages:
+  - newrelic-mcp-server: 203 impr
+  - Next in queue after that TBD
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 627 — 2026-04-14 — Citation Retrofit: MCP Pagination Patterns Guide
 
 **Mode:** Copywriter (citation retrofit)
