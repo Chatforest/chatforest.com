@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More — ChatForest</title>
-  <meta name="description" content="CI/CD pipeline MCP servers reviewed: Jenkins (official plugin, 68 stars, 15&#43; tools), CircleCI (80 stars, 14 tools), GitHub Actions (via github-mcp-server, 27.9k stars), Argo CD">
+  <meta name="description" content="CI/CD pipeline MCP servers reviewed: Jenkins (official plugin, 76 stars, 15&#43; tools), CircleCI (83 stars, 14 tools), GitHub Actions (via github-mcp-server, 28.9k stars), Argo CD">
   <meta property="og:title" content="CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More — ChatForest">
-  <meta property="og:description" content="CI/CD pipeline MCP servers: Jenkins (official plugin, 15&#43; tools), CircleCI (80 stars, 14 tools), GitHub Actions (27.9k stars), Argo CD (350 stars), Buildkite, Azure DevOps, GitLab. 15&#43; servers reviewed. Rating: 4/5.">
+  <meta property="og:description" content="CI/CD pipeline MCP servers: Jenkins (official plugin, 15&#43; tools), CircleCI (83 stars, 14 tools), GitHub Actions (28.9k stars), Argo CD (398 stars), Buildkite, Azure DevOps, GitLab. 15&#43; servers reviewed. Rating: 4/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/ci-cd-pipeline-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More — ChatForest">
-  <meta name="twitter:description" content="CI/CD pipeline MCP servers: Jenkins (official plugin, 15&#43; tools), CircleCI (80 stars, 14 tools), GitHub Actions (27.9k stars), Argo CD (350 stars), Buildkite, Azure DevOps, GitLab. 15&#43; servers reviewed. Rating: 4/5.">
+  <meta name="twitter:description" content="CI/CD pipeline MCP servers: Jenkins (official plugin, 15&#43; tools), CircleCI (83 stars, 14 tools), GitHub Actions (28.9k stars), Argo CD (398 stars), Buildkite, Azure DevOps, GitLab. 15&#43; servers reviewed. Rating: 4/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/ci-cd-pipeline-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 17, 2026 · Updated Mar 17, 2026</span>
+        <span>Published Mar 17, 2026 · Updated Apr 15, 2026</span>
       </div>
 
       <h1 class="article-title">CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More</h1>
@@ -66,7 +66,7 @@
 
       <div class="article-body">
         <p>CI/CD is one of the better-covered categories in the MCP ecosystem — and that makes sense. Developers spend enormous amounts of time context-switching between their editor and their CI dashboard to check build statuses, debug failures, and re-trigger pipelines. MCP servers that bring pipeline data into the AI assistant eliminate that context switch.</p>
-<p>The landscape breaks into three tiers: platform-native official servers (Jenkins, CircleCI, GitHub, GitLab, Buildkite, Azure DevOps), GitOps deployment servers (Argo CD), and community alternatives that fill gaps. Most of these are actively maintained and backed by the CI/CD vendors themselves.</p>
+<p>The landscape breaks into three tiers: platform-native official servers (<a href="https://www.jenkins.io/">Jenkins</a>, <a href="https://circleci.com/">CircleCI</a>, <a href="https://github.com/features/actions">GitHub</a>, <a href="https://about.gitlab.com/">GitLab</a>, <a href="https://buildkite.com/">Buildkite</a>, <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a>), GitOps deployment servers (<a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a>), and community alternatives that fill gaps. Most of these are actively maintained and backed by the CI/CD vendors themselves.</p>
 <p><strong>Category:</strong> <a href="/categories/developer-tools/">Developer Tools</a></p>
 <h2 id="jenkins--official-plugin">Jenkins — Official Plugin</h2>
 <table>
@@ -79,7 +79,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/jenkinsci/mcp-server-plugin">jenkinsci/mcp-server-plugin</a></td>
-<td>68 stars</td>
+<td>76 stars</td>
 </tr>
 <tr>
 <td>Language</td>
@@ -95,11 +95,15 @@
 </tr>
 <tr>
 <td>Requires</td>
-<td>Jenkins 2.533+</td>
+<td><a href="https://www.jenkins.io/changelog/2.533/">Jenkins 2.533+</a></td>
+</tr>
+<tr>
+<td>Plugin page</td>
+<td><a href="https://plugins.jenkins.io/mcp-server/">plugins.jenkins.io/mcp-server</a></td>
 </tr>
 </tbody>
 </table>
-<p>The official Jenkins MCP Server plugin runs inside Jenkins itself as a standard plugin. It exposes 15+ tools across four categories:</p>
+<p>The official <a href="https://www.jenkins.io/">Jenkins</a> MCP Server plugin runs inside Jenkins itself as a standard plugin. It exposes 15+ tools across four categories:</p>
 <p><strong>Job Management</strong> — List jobs, get job details, trigger builds. The basics of interacting with Jenkins from an AI assistant.</p>
 <p><strong>Build Information</strong> — Retrieve build details, console output, test results, and build artifacts. This is where the real value is — an agent can pull failure logs and analyze them without you opening a browser.</p>
 <p><strong>SCM Integration</strong> — Access source code management data linked to builds, including commit information and branch details.</p>
@@ -123,7 +127,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/lanbaoshen/mcp-jenkins">lanbaoshen/mcp-jenkins</a></td>
-<td>96 stars</td>
+<td>112 stars</td>
 </tr>
 <tr>
 <td>Language</td>
@@ -139,11 +143,11 @@
 </tr>
 <tr>
 <td>Latest</td>
-<td>v3.0.1 (March 2026)</td>
+<td><a href="https://github.com/lanbaoshen/mcp-jenkins/releases/tag/v3.1.3">v3.1.3</a> (April 2026)</td>
 </tr>
 </tbody>
 </table>
-<p>A standalone Python MCP server that connects to Jenkins via its REST API. More stars than the official plugin, which suggests many teams prefer the external approach — no plugin installation required, just an API token.</p>
+<p>A standalone Python MCP server that connects to <a href="https://www.jenkins.io/">Jenkins</a> via its <a href="https://www.jenkins.io/doc/book/using/remote-access-api/">REST API</a>. More stars than the official plugin, which suggests many teams prefer the external approach — no plugin installation required, just an API token.</p>
 <p>Tools cover item management (get, query, build), node operations, queue management, build retrieval with console output and test reports, and build control (stop running builds). It&rsquo;s less comprehensive than the official plugin but easier to deploy.</p>
 <p>If you can&rsquo;t install the official plugin on your Jenkins instance, this is the best alternative.</p>
 <h2 id="circleci--official-server">CircleCI — Official Server</h2>
@@ -157,7 +161,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/CircleCI-Public/mcp-server-circleci">CircleCI-Public/mcp-server-circleci</a></td>
-<td>80 stars</td>
+<td>83 stars</td>
 </tr>
 <tr>
 <td>Language</td>
@@ -171,9 +175,13 @@
 <td>License</td>
 <td>Apache 2.0</td>
 </tr>
+<tr>
+<td>npm</td>
+<td><a href="https://www.npmjs.com/package/@circleci/mcp-server-circleci">@circleci/mcp-server-circleci</a></td>
+</tr>
 </tbody>
 </table>
-<p>CircleCI&rsquo;s official MCP server provides 14 tools focused on build intelligence:</p>
+<p><a href="https://circleci.com/">CircleCI</a>&lsquo;s official MCP server provides 14 tools focused on build intelligence:</p>
 <ul>
 <li><code>get_build_failure_logs</code> — Retrieve structured logs from failed jobs</li>
 <li><code>find_flaky_tests</code> — Identify unreliable tests using CircleCI&rsquo;s flaky test detection</li>
@@ -186,7 +194,7 @@
 <h3 id="what-works-well-1">What Works Well</h3>
 <p><strong>Flaky test detection.</strong> The <code>find_flaky_tests</code> tool uses CircleCI&rsquo;s built-in flaky test analysis, which tracks test reliability over time. This isn&rsquo;t something you&rsquo;d get by just parsing logs — it&rsquo;s leveraging platform-specific intelligence that only CircleCI has.</p>
 <p><strong>Config validation.</strong> The <code>config_helper</code> tool lets an AI agent validate CircleCI configuration files, catching syntax errors and suggesting improvements before you push. This is genuinely useful for complex CircleCI configs.</p>
-<p><strong>Multiple deployment options.</strong> NPX, Docker, or self-managed remote server. CircleCI also provides an official cookbook repository with examples and integration guides.</p>
+<p><strong>Multiple deployment options.</strong> NPX, Docker, or self-managed remote server. <a href="https://circleci.com/">CircleCI</a> also provides an official cookbook repository with examples and integration guides.</p>
 <h3 id="what-doesnt-work-well-1">What Doesn&rsquo;t Work Well</h3>
 <p><strong>stdio only.</strong> No remote server option built-in (though Docker deployment partially addresses this).</p>
 <p><strong>CircleCI-specific.</strong> Obviously. If your team uses CircleCI, this is excellent. If you&rsquo;re multi-platform, you&rsquo;ll need additional servers.</p>
@@ -201,7 +209,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a></td>
-<td>27,900 stars</td>
+<td>28,900 stars</td>
 </tr>
 <tr>
 <td>Language</td>
@@ -217,7 +225,7 @@
 </tr>
 </tbody>
 </table>
-<p>GitHub Actions support is built into GitHub&rsquo;s main MCP server — not a separate server. The <code>actions</code> toolset provides:</p>
+<p><a href="https://github.com/features/actions">GitHub Actions</a> support is built into GitHub&rsquo;s main MCP server — not a separate server. The <code>actions</code> toolset provides:</p>
 <ul>
 <li>List and inspect workflow runs</li>
 <li>Get workflow run details and job information</li>
@@ -226,14 +234,14 @@
 <li>Cancel running workflows</li>
 <li>Get check run results for pull requests</li>
 </ul>
-<p>This is the most popular MCP server by stars (27.9k), though that&rsquo;s because it covers all of GitHub, not just Actions. The CI/CD toolset is one of several available toolsets (others include repos, issues, pull requests, code search).</p>
+<p>This is the most popular MCP server by stars (28.9k), though that&rsquo;s because it covers all of GitHub, not just Actions. The CI/CD toolset is one of several available toolsets (others include repos, issues, pull requests, code search).</p>
 <h3 id="what-works-well-2">What Works Well</h3>
 <p><strong>One server for everything GitHub.</strong> If you&rsquo;re already using the GitHub MCP server for repo management and PRs, Actions support comes free. No additional server to configure.</p>
 <p><strong>Toolset filtering.</strong> You can enable only the <code>actions</code> toolset via <code>--toolsets actions</code> to reduce tool count and context size. Or combine it with <code>pull_requests</code> for a focused CI/CD + code review workflow.</p>
 <p><strong>Remote server option.</strong> GitHub hosts a remote MCP server that requires no local installation — just authenticate and connect.</p>
 <h3 id="what-doesnt-work-well-2">What Doesn&rsquo;t Work Well</h3>
 <p><strong>Actions is a subset, not the focus.</strong> The GitHub MCP server covers Actions as one of many areas. Dedicated CI/CD servers like CircleCI&rsquo;s go deeper on build analysis, flaky test detection, and pipeline-specific tooling.</p>
-<p><strong>Archived community alternative.</strong> The <a href="https://github.com/ko1ynnky/github-actions-mcp-server">ko1ynnky/github-actions-mcp-server</a> (40 stars) was a dedicated GitHub Actions MCP server with 9 tools, but it&rsquo;s now archived because the official server absorbed its functionality.</p>
+<p><strong>Archived community alternative.</strong> The <a href="https://github.com/ko1ynnky/github-actions-mcp-server">ko1ynnky/github-actions-mcp-server</a> (41 stars, <a href="https://github.com/ko1ynnky/github-actions-mcp-server">archived July 2025</a>) was a dedicated GitHub Actions MCP server with 9 tools, but it&rsquo;s now archived because the official server absorbed its functionality.</p>
 <h2 id="argo-cd--gitops-deployment">Argo CD — GitOps Deployment</h2>
 <table>
 <thead>
@@ -245,7 +253,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/akuity/argocd-mcp">akuity/argocd-mcp</a></td>
-<td>350 stars</td>
+<td>398 stars</td>
 </tr>
 <tr>
 <td>Language</td>
@@ -261,11 +269,11 @@
 </tr>
 <tr>
 <td>Latest</td>
-<td>v0.5.0 (October 2025)</td>
+<td><a href="https://github.com/akuity/argocd-mcp/releases/tag/v0.6.0">v0.6.0</a> (March 2026)</td>
 </tr>
 </tbody>
 </table>
-<p>Argo CD is the dominant GitOps deployment tool for Kubernetes, and its MCP server brings deployment management into AI assistants. 12 tools cover:</p>
+<p><a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a> is the dominant GitOps deployment tool for <a href="https://kubernetes.io/">Kubernetes</a>, and its MCP server — maintained by <a href="https://akuity.io/">Akuity</a> — brings deployment management into AI assistants. 12 tools cover:</p>
 <p><strong>Application Management</strong> — <code>list_applications</code>, <code>get_application</code>, <code>create_application</code>, <code>update_application</code>, <code>delete_application</code>, <code>sync_application</code>. Full CRUD plus sync triggers.</p>
 <p><strong>Resource Management</strong> — <code>get_application_resource_tree</code>, <code>get_application_managed_resources</code>, <code>get_application_workload_logs</code>, <code>get_resource_events</code>, <code>get_resource_actions</code>, <code>run_resource_action</code>. Deep visibility into what&rsquo;s running in your cluster.</p>
 <p>This is the only MCP server in this review that focuses on the deployment side of CI/CD rather than the build side. If you&rsquo;re running Kubernetes with GitOps, this is the server that lets an agent check deployment status, trigger syncs, and inspect workload health.</p>
@@ -273,8 +281,8 @@
 <p><strong>Full deployment lifecycle.</strong> Create, sync, inspect, and manage Argo CD applications entirely through MCP. An agent can check if a deployment succeeded, inspect pod logs if it didn&rsquo;t, and trigger a re-sync.</p>
 <p><strong>Resource-level visibility.</strong> Getting the resource tree and workload logs means an agent can drill down from &ldquo;the deployment failed&rdquo; to &ldquo;this specific pod is crash-looping with this error&rdquo; — the kind of investigation that usually requires <code>kubectl</code> and a lot of context switching.</p>
 <h3 id="what-doesnt-work-well-3">What Doesn&rsquo;t Work Well</h3>
-<p><strong>Kubernetes-only.</strong> If you&rsquo;re not on Kubernetes with Argo CD, this server has no value. It&rsquo;s narrow by design.</p>
-<p><strong>Stale release cadence.</strong> v0.5.0 shipped October 2025. For a 350-star project backed by Akuity, the release frequency is slow.</p>
+<p><strong>Kubernetes-only.</strong> If you&rsquo;re not on <a href="https://kubernetes.io/">Kubernetes</a> with <a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a>, this server has no value. It&rsquo;s narrow by design.</p>
+<p><strong>Release cadence picking up.</strong> <a href="https://github.com/akuity/argocd-mcp/releases/tag/v0.6.0">v0.6.0</a> shipped March 2026, after a gap following v0.5.0 in October 2025. For a 398-star project backed by <a href="https://akuity.io/">Akuity</a>, the pace is improving.</p>
 <h2 id="buildkite--official-server">Buildkite — Official Server</h2>
 <table>
 <thead>
@@ -286,7 +294,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/buildkite/buildkite-mcp-server">buildkite/buildkite-mcp-server</a></td>
-<td>48 stars</td>
+<td>50 stars</td>
 </tr>
 <tr>
 <td>Language</td>
@@ -302,12 +310,12 @@
 </tr>
 <tr>
 <td>Latest</td>
-<td>v0.10.0 (February 2026)</td>
+<td><a href="https://github.com/buildkite/buildkite-mcp-server/releases/tag/v1.0.0">v1.0.0</a> (March 2026)</td>
 </tr>
 </tbody>
 </table>
-<p>Buildkite&rsquo;s official MCP server exposes pipeline data — builds, jobs, test results — to AI tools and editors. It covers both Buildkite Pipelines and Test Engine, meaning you get build status and test analytics in one server.</p>
-<p>Active development with a recent release (v0.10.0, February 2026) and a reasonable commit history. Smaller community than CircleCI&rsquo;s server but well-maintained by Buildkite&rsquo;s team.</p>
+<p><a href="https://buildkite.com/">Buildkite</a>&lsquo;s official MCP server exposes pipeline data — builds, jobs, test results — to AI tools and editors. It covers both <a href="https://buildkite.com/pipelines">Buildkite Pipelines</a> and <a href="https://buildkite.com/test-engine">Test Engine</a>, meaning you get build status and test analytics in one server.</p>
+<p>Active development — <a href="https://github.com/buildkite/buildkite-mcp-server/releases/tag/v1.0.0">v1.0.0</a> shipped March 2026, signaling production readiness. Smaller community than <a href="https://circleci.com/">CircleCI</a>&lsquo;s server but well-maintained by Buildkite&rsquo;s team.</p>
 <h2 id="azure-devops--community-server">Azure DevOps — Community Server</h2>
 <table>
 <thead>
@@ -319,7 +327,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/Tiberriver256/mcp-server-azure-devops">Tiberriver256/mcp-server-azure-devops</a></td>
-<td>347 stars</td>
+<td>358 stars</td>
 </tr>
 <tr>
 <td>Language</td>
@@ -335,9 +343,9 @@
 </tr>
 </tbody>
 </table>
-<p>The most popular Azure DevOps MCP server (347 stars, 229 commits) covers the full Azure DevOps surface: projects, work items, repositories, pipelines, pull requests, wiki, and code search.</p>
-<p>For CI/CD specifically, it provides pipeline execution and monitoring tools. But like the GitHub MCP server, pipelines are one part of a broader platform integration. Microsoft has also released an <a href="https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview">official Azure DevOps MCP Server</a> in public preview, which runs locally and provides access to builds, releases, and test plans.</p>
-<p>If your team is on Azure DevOps, you have two solid options — the mature community server or Microsoft&rsquo;s official offering.</p>
+<p>The most popular <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> MCP server (358 stars, 229 commits) covers the full Azure DevOps surface: projects, work items, repositories, pipelines, pull requests, wiki, and code search.</p>
+<p>For CI/CD specifically, it provides pipeline execution and monitoring tools. But like the GitHub MCP server, pipelines are one part of a broader platform integration. <a href="https://www.microsoft.com/">Microsoft</a> has also released an <a href="https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview">official Azure DevOps MCP Server</a> in public preview, which runs locally and provides access to builds, releases, and test plans.</p>
+<p>If your team is on <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a>, you have two solid options — the mature community server or Microsoft&rsquo;s official offering.</p>
 <h2 id="gitlab--built-in-mcp-server">GitLab — Built-in MCP Server</h2>
 <table>
 <thead>
@@ -349,7 +357,7 @@
 <tbody>
 <tr>
 <td><a href="https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/">GitLab MCP Server</a></td>
-<td>Built into GitLab</td>
+<td>Built into <a href="https://about.gitlab.com/">GitLab</a></td>
 </tr>
 <tr>
 <td>Language</td>
@@ -361,12 +369,12 @@
 </tr>
 </tbody>
 </table>
-<p>GitLab ships its MCP server as a platform feature — no separate repository to install. It provides access to projects, issues, merge requests, and CI/CD pipelines through the standardized MCP interface.</p>
+<p><a href="https://about.gitlab.com/">GitLab</a> ships its MCP server as a platform feature — no separate repository to install. It provides access to projects, issues, merge requests, and <a href="https://docs.gitlab.com/ci/">CI/CD pipelines</a> through the standardized MCP interface.</p>
 <p>For CI/CD, it can retrieve pipelines for merge requests and get job details for specific pipelines. Like the GitHub and Azure DevOps servers, pipeline support is part of a broader platform integration rather than a dedicated CI/CD focus.</p>
-<p>Community alternatives include <a href="https://github.com/zereight/gitlab-mcp">zereight/gitlab-mcp</a> for teams wanting more customization.</p>
+<p>Community alternatives include <a href="https://github.com/zereight/gitlab-mcp">zereight/gitlab-mcp</a> (1,400 stars) for teams wanting more customization.</p>
 <h2 id="other-notable-servers">Other Notable Servers</h2>
-<p><strong>Woodpecker CI</strong> — <a href="https://github.com/denysvitali/woodpecker-ci-mcp">denysvitali/woodpecker-ci-mcp</a> provides pipeline management, build status monitoring, and repository management for Woodpecker CI. There&rsquo;s also a specialized pipeline failure analysis server for Woodpecker with IDE integration.</p>
-<p><strong>Tekton</strong> — An <a href="https://www.pulsemcp.com/servers/openshift-pipelines-tekton">OpenShift Pipelines Tekton MCP server</a> enables natural language control of Tekton CI/CD pipelines in Kubernetes environments.</p>
+<p><strong><a href="https://woodpecker-ci.org/">Woodpecker CI</a></strong> — <a href="https://github.com/denysvitali/woodpecker-ci-mcp">denysvitali/woodpecker-ci-mcp</a> (4 stars) provides pipeline management, build status monitoring, and repository management for <a href="https://woodpecker-ci.org/">Woodpecker CI</a>. There&rsquo;s also a specialized pipeline failure analysis server for Woodpecker with IDE integration.</p>
+<p><strong><a href="https://tekton.dev/">Tekton</a></strong> — An <a href="https://www.pulsemcp.com/servers/openshift-pipelines-tekton">OpenShift Pipelines Tekton MCP server</a> enables natural language control of <a href="https://tekton.dev/">Tekton</a> CI/CD pipelines in <a href="https://kubernetes.io/">Kubernetes</a> environments.</p>
 <h2 id="the-landscape">The Landscape</h2>
 <table>
 <thead>
@@ -380,65 +388,65 @@
 </thead>
 <tbody>
 <tr>
-<td>Jenkins</td>
+<td><a href="https://www.jenkins.io/">Jenkins</a></td>
 <td><a href="https://github.com/jenkinsci/mcp-server-plugin">jenkinsci/mcp-server-plugin</a></td>
-<td>68</td>
+<td>76</td>
 <td>15+</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Jenkins</td>
+<td><a href="https://www.jenkins.io/">Jenkins</a></td>
 <td><a href="https://github.com/lanbaoshen/mcp-jenkins">lanbaoshen/mcp-jenkins</a></td>
-<td>96</td>
+<td>112</td>
 <td>10+</td>
 <td>No</td>
 </tr>
 <tr>
-<td>CircleCI</td>
+<td><a href="https://circleci.com/">CircleCI</a></td>
 <td><a href="https://github.com/CircleCI-Public/mcp-server-circleci">CircleCI-Public/mcp-server-circleci</a></td>
-<td>80</td>
+<td>83</td>
 <td>14</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>GitHub Actions</td>
+<td><a href="https://github.com/features/actions">GitHub Actions</a></td>
 <td><a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a></td>
-<td>27,900</td>
+<td>28,900</td>
 <td>6+ (Actions)</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Argo CD</td>
+<td><a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a></td>
 <td><a href="https://github.com/akuity/argocd-mcp">akuity/argocd-mcp</a></td>
-<td>350</td>
+<td>398</td>
 <td>12</td>
-<td>Yes (Akuity)</td>
+<td>Yes (<a href="https://akuity.io/">Akuity</a>)</td>
 </tr>
 <tr>
-<td>Buildkite</td>
+<td><a href="https://buildkite.com/">Buildkite</a></td>
 <td><a href="https://github.com/buildkite/buildkite-mcp-server">buildkite/buildkite-mcp-server</a></td>
-<td>48</td>
+<td>50</td>
 <td>—</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Azure DevOps</td>
+<td><a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a></td>
 <td><a href="https://github.com/Tiberriver256/mcp-server-azure-devops">Tiberriver256/mcp-server-azure-devops</a></td>
-<td>347</td>
+<td>358</td>
 <td>20+</td>
 <td>No</td>
 </tr>
 <tr>
-<td>GitLab</td>
+<td><a href="https://about.gitlab.com/">GitLab</a></td>
 <td><a href="https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/">Built-in</a></td>
 <td>—</td>
 <td>—</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Woodpecker</td>
+<td><a href="https://woodpecker-ci.org/">Woodpecker</a></td>
 <td><a href="https://github.com/denysvitali/woodpecker-ci-mcp">denysvitali/woodpecker-ci-mcp</a></td>
-<td>—</td>
+<td>4</td>
 <td>6+</td>
 <td>No</td>
 </tr>
@@ -446,10 +454,10 @@
 </table>
 <h2 id="who-should-use-what">Who Should Use What</h2>
 <p><strong>GitHub-centric teams:</strong> Use the <a href="/reviews/github-mcp-server/">GitHub MCP server</a> with the <code>actions</code> toolset enabled. One server covers repos, PRs, and CI/CD.</p>
-<p><strong>Jenkins shops:</strong> Start with the official plugin if you can install it. If plugin installation is blocked, use lanbaoshen/mcp-jenkins with an API token.</p>
-<p><strong>CircleCI users:</strong> The official server is excellent — flaky test detection and config validation are genuine differentiators over generic CI/CD tools.</p>
-<p><strong>Kubernetes / GitOps teams:</strong> Add Argo CD&rsquo;s MCP server alongside your CI server. Build-side and deploy-side are complementary, not competing.</p>
-<p><strong>Azure DevOps teams:</strong> The community server (347 stars) is mature and well-maintained. Microsoft&rsquo;s official offering is in public preview.</p>
+<p><strong><a href="https://www.jenkins.io/">Jenkins</a> shops:</strong> Start with the <a href="https://plugins.jenkins.io/mcp-server/">official plugin</a> if you can install it. If plugin installation is blocked, use <a href="https://github.com/lanbaoshen/mcp-jenkins">lanbaoshen/mcp-jenkins</a> with an API token.</p>
+<p><strong><a href="https://circleci.com/">CircleCI</a> users:</strong> The official server is excellent — flaky test detection and config validation are genuine differentiators over generic CI/CD tools.</p>
+<p><strong><a href="https://kubernetes.io/">Kubernetes</a> / GitOps teams:</strong> Add <a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a>&lsquo;s MCP server alongside your CI server. Build-side and deploy-side are complementary, not competing.</p>
+<p><strong><a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> teams:</strong> The community server (358 stars) is mature and well-maintained. <a href="https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview">Microsoft&rsquo;s official offering</a> is in public preview.</p>
 <p><strong>Multi-platform teams:</strong> You&rsquo;ll likely need 2-3 servers — one for your CI platform, one for your deployment tool, and possibly one for your code host.</p>
 <h2 id="rating-45">Rating: 4/5</h2>
 <p>The CI/CD MCP server ecosystem is strong. Every major CI/CD platform has at least one MCP server, most are officially maintained, and several offer genuinely useful platform-specific features (CircleCI&rsquo;s flaky test detection, Jenkins&rsquo;s multi-transport support, Argo CD&rsquo;s resource-level Kubernetes visibility).</p>
@@ -509,7 +517,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-17T00:00:00+09:00","datePublished":"2026-03-17T18:00:00+09:00","description":"CI/CD pipeline MCP servers reviewed: Jenkins (official plugin, 68 stars, 15+ tools), CircleCI (80 stars, 14 tools), GitHub Actions (via github-mcp-server, 27.9k stars), Argo CD","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More"},"name":"CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/ci-cd-pipeline-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-15T00:00:00+09:00","datePublished":"2026-03-17T18:00:00+09:00","description":"CI/CD pipeline MCP servers reviewed: Jenkins (official plugin, 76 stars, 15+ tools), CircleCI (83 stars, 14 tools), GitHub Actions (via github-mcp-server, 28.9k stars), Argo CD","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More"},"name":"CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/ci-cd-pipeline-mcp-servers/"}
 </script>
 
 

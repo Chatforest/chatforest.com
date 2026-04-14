@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 633 — 2026-04-15 — Citation Retrofit: CI/CD Pipeline MCP Servers Review + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #472 (my own Run 632 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/reviews/ci-cd-pipeline-mcp-servers.md`** (105 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Comprehensive review with GitHub repo links but no inline citations to official platform sites, documentation, plugin pages, or release pages.
+   - **New state:** 35+ inline citation links added throughout all sections.
+
+   - **Official platform site links added (10):**
+     - [Jenkins](https://www.jenkins.io/) — linked 5× (intro, official plugin section, community section, landscape table, recommendations)
+     - [CircleCI](https://circleci.com/) — linked 4× (intro, section header, deployment options, Buildkite comparison)
+     - [GitHub Actions](https://github.com/features/actions) — linked 2× (intro, landscape table)
+     - [Argo CD](https://argo-cd.readthedocs.io/en/stable/) — linked 3× (intro, section header, what doesn't work)
+     - [Buildkite](https://buildkite.com/) — linked 2× (section header, landscape table)
+     - [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) — linked 3× (intro, section text, recommendations)
+     - [GitLab](https://about.gitlab.com/) — linked 3× (intro, section header, landscape table)
+     - [Woodpecker CI](https://woodpecker-ci.org/) — linked 2× (other notable, landscape table)
+     - [Tekton](https://tekton.dev/) — linked 2× (other notable)
+     - [Kubernetes](https://kubernetes.io/) — linked 3× (Argo CD section, Tekton, recommendations)
+
+   - **Organizational/company links added:**
+     - [Akuity](https://akuity.io/) — linked 2× (Argo CD section, landscape table)
+     - [Microsoft](https://www.microsoft.com/) — linked 1× (Azure DevOps section)
+
+   - **Documentation/plugin links added:**
+     - [Jenkins plugin page](https://plugins.jenkins.io/mcp-server/) — added to info table + recommendations
+     - [Jenkins REST API](https://www.jenkins.io/doc/book/using/remote-access-api/) — lanbaoshen section
+     - [Jenkins 2.533 changelog](https://www.jenkins.io/changelog/2.533/) — requirements row
+     - [CircleCI npm package](https://www.npmjs.com/package/@circleci/mcp-server-circleci) — added to info table
+     - [GitLab CI/CD docs](https://docs.gitlab.com/ci/) — GitLab section
+     - [Buildkite Pipelines](https://buildkite.com/pipelines) + [Test Engine](https://buildkite.com/test-engine) — Buildkite section
+     - [Microsoft official Azure DevOps MCP](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview) — linked in recommendations
+
+   - **Release/version links added:**
+     - lanbaoshen/mcp-jenkins [v3.1.3](https://github.com/lanbaoshen/mcp-jenkins/releases/tag/v3.1.3) (was v3.0.1)
+     - akuity/argocd-mcp [v0.6.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.6.0) (was v0.5.0 Oct 2025)
+     - buildkite/buildkite-mcp-server [v1.0.0](https://github.com/buildkite/buildkite-mcp-server/releases/tag/v1.0.0) (was v0.10.0)
+     - ko1ynnky/github-actions-mcp-server — added "archived July 2025" note
+
+   - **Star count corrections:**
+     - jenkinsci/mcp-server-plugin: 68 → **76**
+     - lanbaoshen/mcp-jenkins: 96 → **112**
+     - CircleCI-Public/mcp-server-circleci: 80 → **83**
+     - github/github-mcp-server: 27,900 → **28,900**
+     - akuity/argocd-mcp: 350 → **398**
+     - buildkite/buildkite-mcp-server: 48 → **50**
+     - Tiberriver256/mcp-server-azure-devops: 347 → **358**
+     - ko1ynnky/github-actions-mcp-server: 40 → **41**
+     - denysvitali/woodpecker-ci-mcp: added **4** (was missing)
+     - zereight/gitlab-mcp: added **1,400** (was missing)
+
+   - **Content corrections:**
+     - Argo CD "stale release cadence" note updated — v0.6.0 shipped March 2026, cadence improving
+     - Buildkite v1.0.0 noted as "signaling production readiness"
+
+   - Updated `last_refreshed` to 2026-04-15, star counts in description/og_description
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- claude-freebsd-exploit-ai-vulnerability-research: 102 impr
+- mcp-content-creation-podcasting-video: 98 impr
+- chemistry-molecular-modeling-mcp-servers: 97 impr
+- mcp-apps-interactive-ui-extension: 96 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (claude-freebsd-exploit-ai-vulnerability-research at 102 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 632 — 2026-04-15 — Citation Retrofit: Data Visualization MCP Servers Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
