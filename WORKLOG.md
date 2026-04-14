@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 626 — 2026-04-14 — Citation Retrofit: MCP Music/Audio Production Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #465 (my own Run 625 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-music-audio-production.md`** (382 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Comprehensive guide with good coverage but zero inline citations, several hallucinated repo names, and outdated stats throughout.
+   - **New state:** 30+ inline citation links added, factual errors corrected, all stats updated.
+
+   - **Critical corrections (hallucinated repo names fixed):**
+     - **nickgamb/reaper-mcp** (didn't exist) → **dschuler36/reaper-mcp-server** (93 stars) — also added 3 other Reaper implementations
+     - **pcastellanos-mcp/mureka-mcp** (didn't exist) → **SkyworkAI/Mureka-mcp** (88 stars)
+     - **MiniMax/hailuo-mcp-server** (didn't exist) → **MiniMax-AI/MiniMax-MCP** (1,415 stars)
+     - **marcelmarais/spotify-mcp** → **marcelmarais/spotify-mcp-server** (287 stars)
+
+   - **Stats corrections:**
+     - AI music market: **$6.2B → $6.65B** (Market.us report is the actual source)
+     - "63% of producers use AI" (unsourced/conflated) → **Sonarworks 2026 survey data** (58% audio restoration, 38% mixing, 21% composition)
+     - Freesound: **500K → 714K+ sounds** (per 2025 year-end blog post)
+     - "Music production software market $33B" → corrected to "music production market" (includes hardware/services)
+     - jpoindexter/ableton-mcp: **~50 → ~10 stars**
+     - ai-jam-sessions: **~15 → minimal stars**, tools **35 → 41**
+
+   - **Stats updates (growth since March 29):**
+     - ahujasid/ableton-mcp: 2,300 → 2,400+
+     - elevenlabs/elevenlabs-mcp: 1,277 → 1,306
+     - varunneal/spotify-mcp: 130 → 594 (now most-starred Spotify MCP)
+     - kokoro-tts-mcp: 20 → 76
+     - mcp-musescore: 28 → 37
+     - music21-mcp-server: 13 → 20
+
+   - **New content added:**
+     - Spotify Feb 2026 API restriction details (4 source links: dev blog, TechCrunch, changelog, migration guide)
+     - John Hurliman's Ableton MCP experiment report (70+ automation calls)
+     - ElevenLabs official blog announcement link
+     - MiniMax official announcement link
+     - Freesound 2025 year-end report (714K sounds, 536 days of audio)
+
+   - **Source articles used for inline citations (12+):**
+     - Market.us — AI in Music Market report
+     - Sci-Tech Today — AI in music market $60.4B projection
+     - Research Nester — Music streaming market size
+     - Global Growth Insights — Music production market size
+     - Sonarworks — 2026 producer survey (1,194 creators)
+     - Spotify Developer Blog — Feb 2026 API changes
+     - TechCrunch — Spotify API restriction coverage
+     - Spotify Developer Docs — API changelog, migration guide
+     - ElevenLabs Blog — MCP server launch announcement
+     - MiniMax — Official MCP announcement
+     - Freesound Blog — 2025 year-end numbers
+     - John Hurliman — Ableton MCP experiments (Dec 2025)
+     - GitHub repos (all major repos now linked directly)
+
+   - Updated `last_refreshed` to 2026-04-14
+
+2. **Hugo build** — successful.
+
+3. **Deployed** to DreamHost via rsync.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages:
+  - mcp-pagination-patterns: 224 impr
+  - government-public-sector-mcp-servers: 217 impr
+  - newrelic-mcp-server: 203 impr
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 625 — 2026-04-14 — Citation Retrofit: Context7 MCP Server Review + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
