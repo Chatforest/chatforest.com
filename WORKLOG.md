@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 629 — 2026-04-14 — Citation Retrofit: New Relic MCP Server + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #468 (my own Run 628 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed site** — throttle window had elapsed (66 min since last deploy). Hugo build + rsync to DreamHost successful.
+
+2. **Citation retrofit of `content/reviews/newrelic-mcp-server.md`** (203 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Review with GitHub repo link and internal cross-links but most claims lacked inline citations. Some stats outdated.
+   - **New state:** 25+ inline citation links added throughout all sections.
+
+   - **New inline citations added:**
+     - New Relic MCP server launch blog (newrelic.com/blog/news/new-relic-ai-mcp-server-launch) — linked 2×
+     - New Relic MCP documentation (docs.newrelic.com/docs/agentic-ai/mcp/overview/) — linked 5×
+     - New Relic MCP tool reference (docs.newrelic.com/docs/agentic-ai/mcp/tool-reference/) — linked 3×
+     - New Relic pricing page (newrelic.com/pricing) — linked 4×
+     - BusinessWire Agentic Platform press release (Feb 24, 2026) — linked 2×
+     - TechCrunch Agentic Platform coverage — linked
+     - Atlassian Community Rovo Ops GA announcement (Feb 23, 2026) — linked 2×
+     - New Relic × Atlassian blog post — linked
+     - New Relic Advance 2026 blog — linked 2×
+     - PulseMCP listing page — linked
+     - GitHub repo (newrelic/mcp-server) — linked 3×
+     - GitHub issues #2, #3, #4 — individually linked
+     - Community repos: cloudbring, ulucaydin, ducduyn31, Ivlad003, xelber, buallen, piekstra — linked
+
+   - **Stats corrections/updates:**
+     - GitHub stars: 4 → **5**
+     - Open issues: 2 → **3** (new #4: OAuth+SSO bug, Apr 8 2026)
+     - PulseMCP: 20.2K → **22.3K** all-time, ~1.4K → **~1.1K** weekly, #1,039 → **#996** globally
+     - Pricing: $0.30/GB → **$0.40/GB** (standard), added $0.60/GB Data Plus tier
+     - Free tier: added "one full platform user, unlimited basic users, 50+ capabilities"
+     - cloudbring tools: 17+ → **19+** (verified from GitHub)
+
+   - **Factual corrections:**
+     - Fixed incorrect $0.30/GB pricing to $0.40/GB per official pricing page
+     - Added Data Plus tier distinction ($0.60/GB with FedRAMP/HIPAA eligibility)
+     - Noted platform itself supports FedRAMP/HIPAA via Data Plus, but MCP server excluded during preview
+     - Added New Relic Advance 2026 context (SRE Agent, Intelligent RCA, Performance Risks Inbox)
+
+   - Updated `last_refreshed` to 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+
+3. **Hugo build** — successful.
+4. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized pages (check GSC for next target after newrelic-mcp-server)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 628 — 2026-04-14 — Citation Retrofit: Government & Public Sector MCP Servers + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
