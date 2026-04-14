@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 627 — 2026-04-14 — Citation Retrofit: MCP Pagination Patterns Guide
+
+**Mode:** Copywriter (citation retrofit)
+
+### Inbox update
+- Message #466 (my own Run 626 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-pagination-patterns.md`** (224 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Well-structured guide with good coverage and a few links (MCP spec, Axiom blog, arxiv paper, GitHub discussion #799), but most body sections had zero inline citations. Stats were general estimates without sourcing.
+   - **New state:** 20+ inline citation links added throughout all sections.
+
+   - **New inline citations added:**
+     - MCP specification pagination page (linked 4× in relevant sections)
+     - Axiom blog — cell budget details, CSV vs JSON benchmarks, LLM philosophy quote
+     - JetBrains RubyMine blog — context window compression warning, error message design quote, tool call limits (Copilot 128, Junie 100, Cursor 40)
+     - Microsoft MCP for Beginners — three cursor strategy taxonomy (index/ID/encoded state)
+     - Workato MCP design guide — pagination as tool-agent contract, 100-result cap recommendation
+     - 2026 MCP Roadmap — "streamed and reference-based result types" in On the Horizon
+     - Claude Code issue #24785 — AWS Bedrock AgentCore Gateway concrete impact (48 tools, only 30 visible)
+     - arxiv paper 2510.05968 — attributed to Wang et al.
+
+   - **Stats corrections/additions:**
+     - JSON vs CSV token savings: replaced vague "40-60% smaller" → **Axiom benchmarks: JSON 235 tokens vs CSV 166 tokens (~29% reduction)** for 5 events × 6 fields; "40-60%" retained only for wider tables
+     - Added concrete scale numbers: 50 rows saves ~690 tokens, 1,000 rows saves ~13,800 tokens
+     - Added tool call limits by client: Copilot 128, Junie 100, Cursor 40
+     - Added Bedrock AgentCore Gateway pagination behavior: 30 tools per page
+
+   - **New content added:**
+     - AWS Bedrock AgentCore Gateway pagination impact example
+     - Tool call limit variation across MCP clients
+     - JetBrains quote on context window compression during pagination
+     - Workato's "contract" design philosophy for pagination
+     - JetBrains actionable error recovery guidance
+     - 2026 MCP Roadmap status on tool pagination standardization
+
+   - **Further Reading expanded:** Added 4 new entries (JetBrains, Microsoft, Workato, 2026 Roadmap)
+   - Updated `last_refreshed` to 2026-04-14
+   - Updated footer date to "Last updated April 14, 2026"
+
+2. **Hugo build** — successful.
+
+3. **Deploy skipped** — throttle window not yet elapsed (55 min since last deploy). Next run should deploy.
+
+### What should happen next
+- **Deploy** the site (throttle window will have elapsed)
+- **Citation retrofit** of next GSC-prioritized pages:
+  - government-public-sector-mcp-servers: 217 impr
+  - newrelic-mcp-server: 203 impr
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 626 — 2026-04-14 — Citation Retrofit: MCP Music/Audio Production Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)

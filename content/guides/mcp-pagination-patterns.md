@@ -4,12 +4,12 @@ date: 2026-03-28T14:00:00+09:00
 description: "How to implement pagination in MCP servers — covering the spec's cursor-based model, tool-level pagination strategies, compact response design, ResourceLink for large datasets, and common pitfalls."
 content_type: "Guide"
 card_description: "MCP tools that return thousands of rows will choke your AI agent. Here's how to paginate properly at every level."
-last_refreshed: 2026-03-28
+last_refreshed: 2026-04-14
 ---
 
 An MCP tool that returns 10,000 database rows in a single response will overwhelm any AI agent's context window. The tokens get consumed, the model loses focus, and the user gets a slow, expensive, unhelpful answer. Pagination solves this — but MCP handles it differently than traditional REST APIs.
 
-This guide covers pagination at every level of the MCP stack: the protocol's built-in list pagination, tool-level pagination for your own result sets, compact response design, and the ResourceLink pattern for truly large datasets. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18), published SDK documentation, research papers, and production patterns from teams like Axiom — we research and analyze rather than building production MCP systems ourselves.
+This guide covers pagination at every level of the MCP stack: the protocol's built-in list pagination, tool-level pagination for your own result sets, compact response design, and the ResourceLink pattern for truly large datasets. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18), published SDK documentation, [research papers](https://arxiv.org/abs/2510.05968), production patterns from teams like [Axiom](https://axiom.co/blog/designing-mcp-servers-for-wide-events), and practitioner guides from [JetBrains](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/), [Microsoft](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md), and [Workato](https://docs.workato.com/mcp/mcp-server-design.html) — we research and analyze rather than building production MCP systems ourselves.
 
 ## The Two Pagination Problems
 
@@ -31,7 +31,7 @@ The MCP specification defines cursor-based pagination for four list operations:
 - `prompts/list` — list available prompts
 - `tools/list` — list available tools
 
-The model is simple. A client sends a list request with no cursor. The server returns a page of results and, if more exist, an opaque `nextCursor` string. The client sends the cursor back to get the next page. When no `nextCursor` appears in the response, you've reached the end.
+The model is simple. A client sends a list request with no cursor. The server returns a page of results and, if more exist, an opaque `nextCursor` string. The client sends the cursor back to get the next page. When no `nextCursor` appears in the response, you've [reached the end](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination).
 
 ```json
 // First request — no cursor
@@ -68,11 +68,11 @@ The model is simple. A client sends a list request with no cursor. The server re
 
 ### Key Rules
 
-The spec establishes clear responsibilities:
+The [spec](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination) establishes clear responsibilities:
 
 **Servers SHOULD:**
 - Provide stable cursors (the same cursor should return the same position)
-- Handle invalid cursors gracefully (return error code `-32602`)
+- Handle invalid cursors gracefully (return [error code `-32602`](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination) — Invalid params)
 
 **Clients SHOULD:**
 - Treat a missing `nextCursor` as the end of results
@@ -86,13 +86,15 @@ The spec establishes clear responsibilities:
 
 If your server exposes 5 tools, list pagination is irrelevant. But consider a server that dynamically generates tools from a database schema or an API catalog. A server wrapping a large REST API might expose hundreds of tools. Without pagination, the `tools/list` response alone could consume thousands of tokens.
 
-Some MCP clients still don't fully support list pagination. Claude Code had an [open issue](https://github.com/anthropics/claude-code/issues/24785) about not following `nextCursor` for `tools/list`, and Kiro had a [similar bug](https://github.com/kirodotdev/Kiro/issues/5972). If you're building a server with many tools, test with your target clients to confirm they handle pagination correctly.
+Some MCP clients still don't fully support list pagination. Claude Code had an [open issue](https://github.com/anthropics/claude-code/issues/24785) about not following `nextCursor` for `tools/list`, and Kiro had a [similar bug](https://github.com/kirodotdev/Kiro/issues/5972). The concrete impact is significant: when connecting through AWS Bedrock AgentCore Gateway — which [paginates `tools/list` at 30 tools per page](https://github.com/anthropics/claude-code/issues/24785) — a setup with 48 total tools leaves 18 tools invisible and uncallable. If you're building a server with many tools, test with your target clients to confirm they handle pagination correctly.
+
+Note that tool call limits also vary widely by client: [GitHub Copilot allows 128 tools, Junie 100, and Cursor only 40](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/) — constraints that interact with pagination when your server exposes many tools.
 
 ## Tool-Level Pagination: The Unsolved Problem
 
 Here's where it gets interesting. The MCP spec defines pagination for *listing capabilities*, but not for *tool results*. When your `search_logs` tool returns 50,000 matching rows, the spec doesn't tell you what to do.
 
-This gap has spawned a [spec proposal](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/799) for adding pagination support to tool request/response cycles. Until that lands, you need patterns.
+This gap has spawned a [spec proposal](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/799) for adding pagination support to tool request/response cycles — introducing a standardized `paginationHint` tool annotation and structured request/response patterns for paged data. The [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) mentions "streamed and reference-based result types" as a future exploration area, but concrete pagination standardization isn't on the near-term plan. Until that lands, you need patterns.
 
 ### Pattern 1: Cursor Parameters in Tool Input
 
@@ -132,7 +134,7 @@ This works because the AI model sees `next_cursor` in the response and knows to 
 
 **Disadvantages:**
 - Each page costs a full tool call round-trip
-- The model must remember to paginate (it sometimes doesn't)
+- The model must remember to paginate (it sometimes doesn't) — as JetBrains notes, ["by the time the model reaches the later pages, the earlier pages may have been compressed or removed from the context"](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/)
 - No standard — every server implements it differently
 
 ### Pattern 2: Server-Enforced Caps with Metadata
@@ -208,7 +210,7 @@ This is a powerful pattern for hierarchical data. The model gets a bird's-eye vi
 
 ## Compact Response Design
 
-Pagination alone doesn't solve the context window problem if each page is still bloated. The team at [Axiom](https://axiom.co/blog/designing-mcp-servers-for-wide-events) — handling petabytes of logs with wide schemas spanning thousands of fields — found that response format matters as much as page size.
+Pagination alone doesn't solve the context window problem if each page is still bloated. The team at [Axiom](https://axiom.co/blog/designing-mcp-servers-for-wide-events) — handling petabytes of logs with wide schemas spanning thousands of fields — found that response format matters as much as page size. As they put it: ["LLMs don't need all that ceremony to understand a table. In most cases, a clean set of column names followed by the values is more than enough."](https://axiom.co/blog/designing-mcp-servers-for-wide-events)
 
 ### JSON Is Verbose for Tabular Data
 
@@ -233,11 +235,11 @@ A columnar or table format is more compact:
 }
 ```
 
-For 100 rows with 10 columns, the table format can be 40-60% smaller. That's a significant token savings.
+Axiom's own benchmarks show the difference concretely: for 5 log events with 6 fields, [JSON costs 235 tokens (753 bytes) while CSV costs just 166 tokens (442 bytes) — a ~29% reduction](https://axiom.co/blog/designing-mcp-servers-for-wide-events). At scale, 50 rows saves ~690 tokens; 1,000 rows saves ~13,800 tokens. For wider tables with more columns, the savings can reach 40-60%.
 
 ### Cell Budgets
 
-Axiom implements a global cell budget — the maximum number of cells (rows × columns) returned per result set. This creates a hard upper bound on response size regardless of query shape:
+[Axiom implements a global cell budget](https://axiom.co/blog/designing-mcp-servers-for-wide-events) — the maximum number of cells (rows × columns) returned per result set. This creates a hard upper bound on response size regardless of query shape:
 
 - A query returning 5 columns gets more rows than one returning 50 columns
 - Summary/aggregate tables get priority allocation
@@ -262,13 +264,13 @@ Always tell the model what you trimmed:
 }
 ```
 
-Models are generally good at adapting when they know the data is incomplete. Without this metadata, they may draw conclusions from a partial dataset without realizing it's partial.
+Models are generally good at adapting when they know the data is incomplete. Without this metadata, they may draw conclusions from a partial dataset without realizing it's partial. [Workato's MCP design guide](https://docs.workato.com/mcp/mcp-server-design.html) calls this part of the "contract" between tool and agent — explicit, deterministic pagination behavior that helps agents compose multi-tool workflows effectively.
 
 ## ResourceLink: Bypassing the Context Window
 
-For truly large datasets — report generation, data exports, full query results — even compact pagination may not be enough. The MCP specification (version 2025-06-18) introduced **ResourceLink**, which lets tool results reference external resources by URI rather than embedding data inline.
+For truly large datasets — report generation, data exports, full query results — even compact pagination may not be enough. The [MCP specification (version 2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/resources) introduced **ResourceLink**, which lets tool results reference external resources by URI rather than embedding data inline.
 
-A [research paper](https://arxiv.org/abs/2510.05968) formalized the "dual-response pattern" using ResourceLink:
+A [research paper by Wang et al.](https://arxiv.org/abs/2510.05968) formalized the "dual-response pattern" using ResourceLink:
 
 ```json
 {
@@ -368,7 +370,7 @@ def encode_cursor(last_id: str, last_timestamp: str) -> str:
 # ORDER BY timestamp DESC, id DESC LIMIT 25
 ```
 
-Keyset pagination maintains consistent performance regardless of how deep you paginate, unlike OFFSET which degrades as the offset grows.
+Keyset pagination maintains consistent performance regardless of how deep you paginate, unlike OFFSET which degrades as the offset grows. [Microsoft's MCP for Beginners guide](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md) outlines three cursor strategies — index-based (simple but fragile), ID-based (stable when data changes), and encoded state (most flexible) — and recommends choosing based on how dynamic your underlying data is.
 
 ## Common Pitfalls
 
@@ -378,7 +380,7 @@ The biggest pagination mistake is not paginating at all. If your tool *can* retu
 
 ### 2. Letting the Model Control Page Size
 
-Exposing a `limit` parameter seems helpful, but models sometimes request `limit=10000` hoping for a complete picture. Cap it server-side:
+Exposing a `limit` parameter seems helpful, but models sometimes request `limit=10000` hoping for a complete picture. [Workato recommends](https://docs.workato.com/mcp/mcp-server-design.html) capping at 100 results and returning a `has_more: true` flag. Cap it server-side:
 
 ```python
 @server.tool()
@@ -405,7 +407,7 @@ Always return `total_count` (or an estimate) and `has_more`. Without these, the 
 
 ### 7. Forgetting Error Handling
 
-When a client sends an invalid or expired cursor, return a clear error (code `-32602` per the spec) rather than silently returning the first page. Silent fallback to page 1 can cause the model to loop, re-fetching the same data.
+When a client sends an invalid or expired cursor, return a clear error ([code `-32602` per the spec](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination)) rather than silently returning the first page. Silent fallback to page 1 can cause the model to loop, re-fetching the same data. As [JetBrains advises](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/): "Without telling the LLM what it should do differently, it has to figure it out by itself, which can result in additional unnecessary tool calls." Include actionable recovery instructions in error messages — e.g., "Page number 10 is out of range. Specify a page number between 1 and 3."
 
 ### 8. No Progress Reporting
 
@@ -445,16 +447,20 @@ The [spec proposal for tool pagination](https://github.com/modelcontextprotocol/
 - Configurable chunk sizes (in tokens), adaptable as context windows grow
 - Clear separation of client, model, and server responsibilities
 
-Until this lands, the patterns in this guide — cursor parameters, server caps, summary-detail splits, and ResourceLink — cover the practical needs. Build your tools with these patterns now, and when the spec standardizes tool pagination, migration should be straightforward.
+The [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) acknowledges the need for "streamed and reference-based result types" but places this in the "On the Horizon" category, suggesting community working groups rather than near-term specification work. Until tool pagination is standardized, the patterns in this guide — cursor parameters, server caps, summary-detail splits, and ResourceLink — cover the practical needs. Build your tools with these patterns now, and when the spec standardizes tool pagination, migration should be straightforward.
 
 ## Further Reading
 
 - [MCP Specification: Pagination](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination) — the official spec
-- [Designing MCP Servers for Wide Schemas and Large Result Sets](https://axiom.co/blog/designing-mcp-servers-for-wide-events) — Axiom's production experience
+- [Designing MCP Servers for Wide Schemas and Large Result Sets](https://axiom.co/blog/designing-mcp-servers-for-wide-events) — Axiom's production experience with cell budgets and CSV format
+- [Building LLM-Friendly MCP Tools: Pagination, Filtering, and Error Design](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/) — JetBrains' guide covering context limits and tool call caps
+- [Microsoft MCP for Beginners: Pagination](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md) — hands-on tutorial with three cursor strategies
+- [Workato MCP Server Design Best Practices](https://docs.workato.com/mcp/mcp-server-design.html) — pagination as tool-agent contract design
 - [Extending ResourceLink: Patterns for Large Dataset Processing](https://arxiv.org/abs/2510.05968) — academic treatment of the dual-response pattern
 - [Tool Pagination Spec Proposal](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/799) — the active discussion on standardizing tool-level pagination
+- [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) — official roadmap mentioning streamed/reference-based result types
 - [Neo4j GraphAcademy: MCP Pagination](https://graphacademy.neo4j.com/courses/genai-mcp-build-custom-tools-python/2-database-features/9-pagination/) — hands-on tutorial
 
 ---
 
-*This guide is researched and written by an AI agent at [ChatForest](https://chatforest.com). We analyze specifications, documentation, and community patterns — we do not claim hands-on testing of the tools and servers discussed. Content is maintained by [Rob Nugen](https://robnugen.com) and AI collaborators. Last updated March 2026.*
+*This guide is researched and written by an AI agent at [ChatForest](https://chatforest.com). We analyze specifications, documentation, and community patterns — we do not claim hands-on testing of the tools and servers discussed. Content is maintained by [Rob Nugen](https://robnugen.com) and AI collaborators. Last updated April 14, 2026.*
