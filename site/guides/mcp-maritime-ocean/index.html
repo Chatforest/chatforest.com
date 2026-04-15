@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCP and Maritime/Ocean: How AI Agents Connect to Vessel Tracking, AIS Data, Port Operations, Oceanographic Science, Shipping Logistics, Marine Weather, Naval Architecture, and Maritime Compliance Tools — ChatForest</title>
-  <meta name="description" content="A comprehensive guide to 85&#43; MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 9 stars, Datalastic">
+  <meta name="description" content="A comprehensive guide to 85&#43; MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 10 stars, Datalastic, plus the first SignalK MCP servers bridging marine navigation standards), ocean science (OceanMCP 8-server suite), marine weather, shipping logistics, satellite imagery, naval architecture, and maritime compliance. DNV RuleAgent and IMO MASS Code adoption (May 2026) signal accelerating maritime AI adoption">
   <meta property="og:title" content="MCP and Maritime/Ocean: How AI Agents Connect to Vessel Tracking, AIS Data, Port Operations, Oceanographic Science, Shipping Logistics, Marine Weather, Naval Architecture, and Maritime Compliance Tools — ChatForest">
-  <meta property="og:description" content="A comprehensive guide to 85&#43; MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 9 stars, Datalastic">
+  <meta property="og:description" content="A comprehensive guide to 85&#43; MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 10 stars, Datalastic, plus the first SignalK MCP servers bridging marine navigation standards), ocean science (OceanMCP 8-server suite), marine weather, shipping logistics, satellite imagery, naval architecture, and maritime compliance. DNV RuleAgent and IMO MASS Code adoption (May 2026) signal accelerating maritime AI adoption">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/guides/mcp-maritime-ocean/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MCP and Maritime/Ocean: How AI Agents Connect to Vessel Tracking, AIS Data, Port Operations, Oceanographic Science, Shipping Logistics, Marine Weather, Naval Architecture, and Maritime Compliance Tools — ChatForest">
-  <meta name="twitter:description" content="A comprehensive guide to 85&#43; MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 9 stars, Datalastic">
+  <meta name="twitter:description" content="A comprehensive guide to 85&#43; MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 10 stars, Datalastic, plus the first SignalK MCP servers bridging marine navigation standards), ocean science (OceanMCP 8-server suite), marine weather, shipping logistics, satellite imagery, naval architecture, and maritime compliance. DNV RuleAgent and IMO MASS Code adoption (May 2026) signal accelerating maritime AI adoption">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/guides/mcp-maritime-ocean/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 29, 2026 · Updated Apr 11, 2026</span>
+        <span>Published Mar 29, 2026 · Updated Apr 16, 2026</span>
       </div>
 
       <h1 class="article-title">MCP and Maritime/Ocean: How AI Agents Connect to Vessel Tracking, AIS Data, Port Operations, Oceanographic Science, Shipping Logistics, Marine Weather, Naval Architecture, and Maritime Compliance Tools</h1>
@@ -68,7 +68,7 @@
         <p>The maritime industry is the backbone of global trade. <a href="https://ics-shipping.org/shipping-facts/shipping-and-world-trade">About 90% of world trade is carried by sea</a>, transported by <a href="https://unctad.org/publication/review-maritime-transport-2024">over 50,000 merchant ships trading internationally</a> across a network of hundreds of major ports worldwide. Yet this enormous industry runs on remarkably fragmented data systems. AIS vessel tracking feeds live in one platform, weather and sea state data in another, port schedules in a third, customs and compliance databases elsewhere, and cargo tracking systems scattered across dozens of shipping lines and freight forwarders. A single container shipment from Shanghai to Rotterdam might touch 30+ different information systems before delivery.</p>
 <p>The global AI-in-maritime market reached approximately <a href="https://www.grandviewresearch.com/industry-analysis/maritime-artificial-intelligence-market-report">$4.3 billion in 2024</a>, growing at <a href="https://www.technavio.com/report/maritime-ai-market-industry-analysis">15–40% CAGR depending on scope</a>. The smart port and automated terminal market is forecast to reach <a href="https://www.lucintel.com/smart-port-market.aspx">$11.2 billion by 2030</a>, heading toward $22.4 billion by 2035. <a href="https://www.consegicbusinessintelligence.com/marine-internet-of-things-market">Marine IoT is a $4.85 billion market growing to $12.31 billion by 2032</a>. CMA CGM, the world&rsquo;s third-largest container shipping line, <a href="https://www.googlecloudpresscorner.com/2024-07-18-CMA-CGM-Embarks-on-a-Strategic-Partnership-with-Google-to-Deploy-AI-across-all-Shipping,-Logistics,-and-Media-Activities">announced a strategic partnership with Google</a> to deploy AI across shipping, logistics, and media activities. <a href="https://www.lr.org/en/knowledge/press-room/press-listing/press-release/2024/lloyds-register-commissioned-research-reveals-the-rapid-rise-of-ai-in-maritime/">Lloyd&rsquo;s Register research</a> found 36 shipping companies actively implementing or planning AI adoption, with SMEs making up 63% of maritime AI technology suppliers.</p>
 <p>MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to the maritime industry&rsquo;s fragmented data landscape. Rather than building custom integrations for each vessel tracking platform, weather service, port system, or compliance database, MCP-connected agents can query vessel positions, analyze ocean conditions, track shipments, check sanctions lists, and monitor port operations through defined tool interfaces. The protocol transforms AI assistants from isolated chatbots into operational maritime intelligence tools that work across the entire shipping lifecycle — from route planning and vessel tracking through port operations, cargo management, and regulatory compliance. For an introduction to MCP itself, see our <a href="/guides/what-is-mcp/">introduction to MCP</a>.</p>
-<p>The maritime MCP ecosystem is still in its earliest stages. Unlike database or DevOps categories with 100+ mature servers, the maritime sector has fewer than 35 dedicated MCP servers, most with single-digit GitHub stars and created in 2025–2026. However, the adjacent tooling — weather, GIS, IoT, satellite imagery, shipping carriers, CAD, compliance — is substantially richer, and these components can be assembled into powerful maritime AI workflows.</p>
+<p>The maritime MCP ecosystem is still in its earliest stages. Unlike database or DevOps categories with 100+ mature servers, the maritime sector has fewer than 35 dedicated MCP servers, most with single-digit GitHub stars and created in 2025–2026. However, critical gaps are starting to close — <a href="#signalk-mcp-servers--marine-navigation-data">SignalK now has MCP servers</a> bridging the marine navigation data standard, <a href="#missing-classification-societies">DNV has launched RuleAgent</a> as the first classification society AI tool, and the <a href="#imo-regulatory-framework">IMO MASS Code adoption is imminent</a> (May 2026). The adjacent tooling — weather, GIS, IoT, satellite imagery, shipping carriers, CAD, compliance — is substantially richer, and these components can be assembled into powerful maritime AI workflows.</p>
 <p>This guide is research-based. We survey what MCP servers exist across the maritime and ocean landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI. For background on MCP, see our <a href="/guides/what-is-mcp/">introduction to MCP</a> and the <a href="/reviews/">MCP server directory</a>.</p>
 <h2 id="why-maritime-needs-mcp">Why Maritime Needs MCP</h2>
 <p>Maritime operations present integration challenges that MCP is architecturally well-suited to address.</p>
@@ -76,14 +76,14 @@
 <p><strong>Port operations are a coordination nightmare.</strong> A single large container port handles thousands of vessel calls per year, coordinating berth allocation, crane scheduling, truck gates, rail connections, customs clearance, and pilot services — each managed by different systems. <a href="https://english.news.cn/20250414/18723fb7c6b841489a6e1809bd757ca6/c.html">China already operates 52 automated port terminals</a> with AI-driven truck-crane coordination. MCP servers bridging port systems could let AI agents optimize the entire port call cycle rather than individual subsystems.</p>
 <p><strong>Regulatory compliance spans multiple jurisdictions and agencies.</strong> Maritime vessels must comply with IMO conventions (SOLAS, MARPOL, STCW, MLC), flag state regulations, port state control requirements, sanctions regimes (OFAC, EU, UN), and increasingly stringent cybersecurity rules (<a href="https://iacs.org.uk/news/iacs-ur-e26-and-e27-press-release">IACS UR E26/E27 mandatory for newbuilds contracted from July 2024</a>, <a href="https://www.news.uscg.mil/maritime-commons/Article/4343729/publication-of-cybersecurity-training-and-incident-reporting-guidance-and-polic/">US Coast Guard cyber incident reporting effective July 2025</a>). AI agents with MCP access to regulatory databases, sanctions lists, and compliance monitoring tools could transform how shipping companies manage their regulatory obligations.</p>
 <p><strong>Weather and ocean conditions drive every routing decision.</strong> Voyage optimization requires integrating weather forecasts, ocean currents, wave heights, sea ice data, and port weather windows into route planning. Current systems treat weather as a separate input rather than a continuous factor. MCP-connected AI agents that can query multiple weather sources, ocean models, and hurricane tracking systems could provide real-time route optimization that adapts to changing conditions.</p>
-<p><strong>Autonomous vessels are approaching regulatory reality.</strong> The <a href="https://www.imo.org/en/mediacentre/hottopics/pages/autonomous-shipping.aspx">IMO is adopting its non-mandatory MASS Code</a> (Maritime Autonomous Surface Ships) in 2026, with a mandatory framework expected by 2030. Companies like Rolls-Royce and Kongsberg are testing autonomous operations. MCP provides the integration layer these systems need to coordinate with traffic management, weather services, port systems, and regulatory authorities.</p>
+<p><strong>Autonomous vessels are approaching regulatory reality.</strong> The <a href="https://www.imo.org/en/mediacentre/hottopics/pages/autonomous-shipping.aspx">IMO is adopting its non-mandatory MASS Code</a> (Maritime Autonomous Surface Ships) at MSC 111 in May 2026, with a mandatory framework targeted for July 2030 (entry into force January 2032). Companies like Rolls-Royce and Kongsberg are testing autonomous operations. MCP provides the integration layer these systems need to coordinate with traffic management, weather services, port systems, and regulatory authorities.</p>
 <h2 id="vessel-tracking-and-ais-data">Vessel Tracking and AIS Data</h2>
 <p>Vessel tracking through AIS is the most fundamental maritime data source. Several MCP servers now provide access to AIS feeds and vessel intelligence.</p>
 <h3 id="marinetraffic-mcp-server--ais-vessel-tracking">MarineTraffic MCP Server — AIS Vessel Tracking</h3>
 <p><strong>Cyreslab-AI/marinetraffic-mcp-server</strong> | 9 stars | TypeScript | Smithery-listed</p>
 <p>According to repository documentation, this server connects to the MarineTraffic API to provide real-time vessel position tracking by MMSI or IMO number, vessel detail lookups, vessel search, and area-based vessel queries. MarineTraffic is one of the world&rsquo;s largest vessel tracking platforms, and this community-built MCP server makes its data accessible to AI agents. Listed on the Smithery MCP directory for easy discovery and installation.</p>
 <h3 id="shipxy-mcp-server--comprehensive-maritime-data">ShipXY MCP Server — Comprehensive Maritime Data</h3>
-<p><strong>garrettXu/mcp-shipxy-api</strong> | 10 stars | Python</p>
+<p><strong>garrettXu/mcp-shipxy-api</strong> | 10 stars | Python | <strong>Most comprehensive single-server maritime MCP</strong></p>
 <p>A feature-rich maritime MCP server that goes beyond basic vessel tracking. According to its documentation, it provides ship tracking, fleet queries, port search, berth and anchor status, ETA information, route planning assistance, marine weather data, typhoon tracking, and tide information — all through the ShipXY API. This breadth makes it one of the most comprehensive single-server maritime MCP implementations available, covering vessel operations, port intelligence, and marine weather in one package.</p>
 <h3 id="datalastic-marine-ais-mcp">Datalastic Marine AIS MCP</h3>
 <p><strong>robderstadt/datalastic-mcp</strong> | Python</p>
@@ -131,7 +131,7 @@
 <h2 id="oceanographic-science-and-marine-data">Oceanographic Science and Marine Data</h2>
 <p>Ocean science generates massive datasets from buoys, satellites, floats, and research vessels. The OceanMCP project stands out as the most comprehensive implementation in the entire maritime MCP ecosystem.</p>
 <h3 id="oceanmcp--eight-server-monorepo">OceanMCP — Eight-Server Monorepo</h3>
-<p><strong>mansurjisan/ocean-mcp</strong> | 2 stars | Python | All servers published to PyPI</p>
+<p><strong>mansurjisan/ocean-mcp</strong> | 3 stars | Python | All servers published to PyPI</p>
 <p>This is the most significant find in maritime MCP. According to documentation, OceanMCP provides eight independently installable oceanography MCP servers, each focused on a specific data domain:</p>
 <ol>
 <li><strong>coops-mcp</strong> — NOAA CO-OPS tidal data including water levels, currents, tide predictions, and meteorological observations from 200+ stations</li>
@@ -163,13 +163,13 @@
 <h2 id="marine-weather-and-forecasting">Marine Weather and Forecasting</h2>
 <p>Weather is the single most impactful variable in maritime operations. Several MCP servers provide marine-specific weather data.</p>
 <h3 id="open-meteo-marine-weather">Open-Meteo Marine Weather</h3>
-<p><strong>cmer81/open-meteo-mcp</strong> | 38 stars | Comprehensive Open-Meteo access</p>
+<p><strong>cmer81/open-meteo-mcp</strong> | 39 stars | Comprehensive Open-Meteo access</p>
 <p>The most popular weather MCP server with marine capabilities. Open-Meteo provides free weather APIs including marine-specific data — wave height, wave period, wave direction, swell components, and sea surface temperature. According to documentation, this server provides comprehensive access to Open-Meteo&rsquo;s full API suite including marine weather endpoints.</p>
 <h3 id="surf-and-marine-forecast-servers">Surf and Marine Forecast Servers</h3>
 <ul>
 <li><strong>lucasinocencio1/mcp-surf-forecast</strong> | 18 stars — Open-Meteo Marine API providing swell height, period, direction, wind conditions with global coverage</li>
 <li><strong>enricollen/surf-forecast-mcp</strong> | 3 stars — Marine forecast data from OpenMeteo</li>
-<li><strong>weather-mcp/weather-mcp</strong> | 4 stars — 12 tools including marine conditions, lightning, weather radar, river monitoring, and wildfire data — no API key required</li>
+<li><strong>weather-mcp/weather-mcp</strong> | 5 stars — 12 tools including marine conditions, lightning, weather radar, river monitoring, and wildfire data — no API key required</li>
 </ul>
 <h3 id="general-weather-servers-with-marine-data">General Weather Servers with Marine Data</h3>
 <p>Several broad weather MCP servers include marine condition endpoints:</p>
@@ -208,10 +208,10 @@
 <h3 id="cad-tools-for-marine-engineering">CAD Tools for Marine Engineering</h3>
 <p>While no MCP servers are specifically designed for marine CAD, the general CAD MCP ecosystem is directly applicable to ship design:</p>
 <ul>
-<li><strong>daobataotie/CAD-MCP</strong> | 300 stars — General CAD MCP server</li>
-<li><strong>ATOI-Ming/FreeCAD-MCP</strong> | 71 stars — FreeCAD automation for open-source 3D modeling</li>
-<li><strong>AuraFriday/Fusion-360-MCP-Server</strong> | 77 stars — Autodesk Fusion 360 control</li>
-<li><strong>mixelpixx/KiCAD-MCP-Server</strong> | 612 stars — PCB design relevant to marine electronics and bridge systems</li>
+<li><strong>daobataotie/CAD-MCP</strong> | 304 stars — General CAD MCP server</li>
+<li><strong>ATOI-Ming/FreeCAD-MCP</strong> | 73 stars — FreeCAD automation for open-source 3D modeling</li>
+<li><strong>AuraFriday/Fusion-360-MCP-Server</strong> | 78 stars — Autodesk Fusion 360 control</li>
+<li><strong>mixelpixx/KiCAD-MCP-Server</strong> | 643 stars — PCB design relevant to marine electronics and bridge systems</li>
 <li><strong>BLamy/onshape-mcp</strong> | 11 stars — Onshape cloud CAD</li>
 <li><strong>rishigundakaram/cadquery-mcp-server</strong> | 10 stars — Parametric CAD generation via CadQuery</li>
 <li><strong>tylerwagler/SolidEdge-MCP</strong> | 4 stars — Solid Edge AI-assisted CAD</li>
@@ -234,6 +234,9 @@
 <li><strong>ginkgo-tech/sentinelhub-mcp</strong> — Copernicus Sentinel Hub satellite image interaction with LLMs</li>
 </ul>
 <p>Copernicus Sentinel satellites provide free, open data particularly relevant to maritime: Sentinel-1 SAR imagery for vessel detection and oil spill monitoring, Sentinel-2 optical imagery for coastal monitoring, and Sentinel-3 for ocean color and sea surface temperature.</p>
+<h3 id="microsoft-planetary-computer-mcp">Microsoft Planetary Computer MCP</h3>
+<p><strong>isaaccorley/planetary-computer-mcp</strong> | 3 stars | Python | 2026</p>
+<p>Queries the <a href="https://planetarycomputer.microsoft.com/">Microsoft Planetary Computer</a> STAC API for satellite imagery access. The Planetary Computer hosts 130+ satellite and environmental datasets including Sentinel-1/2/3, Landsat, MODIS, and numerous ocean and climate datasets. For maritime applications, this provides a single MCP interface to multi-source satellite imagery for vessel detection, port monitoring, sea ice tracking, and coastal change analysis — complementing the dedicated Copernicus and NASA MCP servers above.</p>
 <h3 id="geophysical-intelligence">Geophysical Intelligence</h3>
 <p><strong>DeepMapAI/deepmap-mcp-server</strong> | 1 star | Python | Vendor</p>
 <p>Provides 25 tools including risk scoring, earthquake/volcano/tsunami prediction, weather assessment, insurance risk analysis, and climate data. For maritime operations, tsunami prediction and coastal hazard assessment are directly relevant to port operations and routing in seismically active regions.</p>
@@ -263,14 +266,21 @@
 <p>Digital twins — virtual replicas of physical assets — are gaining traction in maritime for port optimization, vessel performance modeling, and autonomous systems testing. <a href="https://www.gartner.com/en/documents/6771134">Gartner forecasts</a> that by 2026, 65% of supply chains will use hybrid twin systems for planning and operations.</p>
 <h3 id="simulation-mcp-servers">Simulation MCP Servers</h3>
 <ul>
-<li><strong>omni-mcp/isaac-sim-mcp</strong> | 145 stars — NVIDIA Isaac Simulation MCP, relevant for autonomous vessel simulation and testing</li>
+<li><strong>omni-mcp/isaac-sim-mcp</strong> | 148 stars — NVIDIA Isaac Simulation MCP, relevant for autonomous vessel simulation and testing</li>
 <li><strong>game4automation/io.realvirtual.mcp</strong> | 6 stars — Unity-based digital twin simulations, applicable to port operations modeling</li>
 <li><strong>IamCatoBot/text2sim-MCP-server</strong> | 19 stars — Natural language to simulation, supporting discrete event simulation (DES) and system dynamics models useful for port throughput and supply chain modeling</li>
 <li><strong>Wael-Rd/gns3-mcp-server</strong> | 19 stars — Network simulation relevant to ship and port communications infrastructure</li>
 <li><strong>alti3/stk-mcp</strong> | 25 stars — Ansys STK digital mission engineering, useful for satellite-based maritime surveillance and communication system planning</li>
 </ul>
 <h3 id="cfd-and-engineering-simulation">CFD and Engineering Simulation</h3>
-<p><strong>kimimgo/awesome-ai-cae</strong> | 12 stars — A curated list of 113 AI-ready CAE tools covering CFD, FEA, SPH, neural operators, and MCP servers. Computational fluid dynamics is essential for hull design optimization and hydrodynamic analysis in naval architecture.</p>
+<p><strong>kimimgo/awesome-ai-cae</strong> | 20 stars — A curated list of 113 AI-ready CAE tools covering CFD, FEA, SPH, neural operators, and MCP servers. Computational fluid dynamics is essential for hull design optimization and hydrodynamic analysis in naval architecture.</p>
+<h2 id="marine-navigation-standards">Marine Navigation Standards</h2>
+<p>A critical gap in the maritime MCP ecosystem began closing in late 2025 with the arrival of SignalK MCP servers.</p>
+<h3 id="signalk-mcp-servers--marine-navigation-data">SignalK MCP Servers — Marine Navigation Data</h3>
+<p><a href="https://signalk.org/">SignalK</a> is the open marine data standard that translates NMEA 0183/2000 data from vessel instruments into a web-friendly JSON format. It&rsquo;s the bridge between traditional marine electronics and modern software, used by thousands of vessels worldwide. Two MCP server implementations now exist:</p>
+<p><strong>signalk-mcp-server (Tony Bentley)</strong> — The first SignalK MCP server, <a href="https://signalk.org/2025/introducing-signalk-mcp-server-ai-powered-marine-data-access/">announced on the official SignalK blog in October 2025</a>. Provides read-only access to vessel navigation data (position, speed, heading, depth, wind), AIS target information from nearby vessels, active alarms and notifications, and live data streams. This makes vessel instrumentation data accessible to AI agents for the first time through a standardized protocol.</p>
+<p><strong>VesselSense/signalk-mcp-server</strong> — An alternative implementation using V8 isolates, claiming 90–96% token reduction for more efficient AI agent consumption of vessel data. Available on <a href="https://github.com/VesselSense/signalk-mcp-server">GitHub</a>.</p>
+<p>For maritime AI, SignalK MCP servers are transformative. They enable AI agents to access real-time bridge data — the same instrument readings that officers use to navigate — through MCP&rsquo;s standardized tool interface. Combined with weather MCP servers and vessel tracking, this creates the foundation for AI-assisted voyage management that works with live vessel data rather than delayed shore-side feeds.</p>
 <h2 id="sailing-and-recreational-marine">Sailing and Recreational Marine</h2>
 <p>A small but growing segment serves the sailing and recreational boating community.</p>
 <h3 id="yachtsy-mcp">Yachtsy MCP</h3>
@@ -282,7 +292,7 @@
 <h2 id="compliance-and-regulatory-tools">Compliance and Regulatory Tools</h2>
 <p>Beyond the maritime-specific compliance servers listed above, several general compliance MCP servers are relevant to shipping operations.</p>
 <h3 id="document-compliance">Document Compliance</h3>
-<p><strong>arthurpanhku/DocSentinel</strong> | 87 stars — Document assessment for compliance and cybersecurity with multi-format parsing, RAG, and risk detection. Applicable to ISM Code document management, safety management systems, and port state control preparation.</p>
+<p><strong>arthurpanhku/DocSentinel</strong> | 88 stars — Document assessment for compliance and cybersecurity with multi-format parsing, RAG, and risk detection. Applicable to ISM Code document management, safety management systems, and port state control preparation.</p>
 <h3 id="insurance-and-claims">Insurance and Claims</h3>
 <p><strong>chbhargavareddy/ClaimsProcessingAssistant-MCP</strong> | 5 stars — Claims processing via MCP, relevant to marine insurance (P&amp;I clubs, hull and machinery, cargo insurance) which handles billions in claims annually.</p>
 <h3 id="financial-services">Financial Services</h3>
@@ -291,9 +301,9 @@
 <p>Geospatial analysis underpins maritime operations from electronic chart production to port development planning.</p>
 <h3 id="key-gis-mcp-servers-for-maritime">Key GIS MCP Servers for Maritime</h3>
 <ul>
-<li><strong>jjsantos01/qgis_mcp</strong> | 895 stars — QGIS Desktop integration for charting, maritime boundary analysis, and coastal zone management</li>
-<li><strong>mahdin75/gis-mcp</strong> | 132 stars — Programmatic spatial operations including geometry calculations and coordinate transformations</li>
-<li><strong>JordanGunn/gdal-mcp</strong> | 59 stars — GDAL-style geospatial workflows for processing maritime spatial data</li>
+<li><strong>jjsantos01/qgis_mcp</strong> | 900 stars — QGIS Desktop integration for charting, maritime boundary analysis, and coastal zone management</li>
+<li><strong>mahdin75/gis-mcp</strong> | 134 stars — Programmatic spatial operations including geometry calculations and coordinate transformations</li>
+<li><strong>JordanGunn/gdal-mcp</strong> | 64 stars — GDAL-style geospatial workflows for processing maritime spatial data</li>
 <li><strong>nicogis/MCP-Server-ArcGIS-Pro-AddIn</strong> | 25 stars — ArcGIS Pro integration for enterprise maritime GIS</li>
 <li><strong>receptopalak/postgis-mcp</strong> | 12 stars — PostGIS spatial database queries for maritime data warehousing</li>
 <li><strong>Garblesnarff/google-maps-mcp</strong> | 10 stars — Google Maps with 14 tools including location services and environmental data</li>
@@ -412,7 +422,13 @@
 <td>Vessel Tracking &amp; AIS</td>
 <td align="center">7</td>
 <td align="center">1</td>
-<td>MarineTraffic 9★, ShipXY 9★, Datalastic, Saillogger</td>
+<td>MarineTraffic 9★, ShipXY 10★, Datalastic, Saillogger</td>
+</tr>
+<tr>
+<td>Marine Navigation Standards</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td>SignalK MCP (2 implementations) — <strong>NEW</strong></td>
 </tr>
 <tr>
 <td>Shipping Lines &amp; Carriers</td>
@@ -424,25 +440,25 @@
 <td>Maritime Intelligence &amp; Compliance</td>
 <td align="center">4</td>
 <td align="center">3</td>
-<td>Maritime Shipping Intel, AML Watcher, DocSentinel 87★</td>
+<td>Maritime Shipping Intel, AML Watcher, DocSentinel 88★</td>
 </tr>
 <tr>
 <td>Naval Architecture &amp; Shipbuilding</td>
 <td align="center">4</td>
 <td align="center">8</td>
-<td>Shipbuilding Specs, Naval Standards, CAD-MCP 300★</td>
+<td>Shipbuilding Specs, Naval Standards, CAD-MCP 304★</td>
 </tr>
 <tr>
 <td>Ocean Science &amp; Oceanography</td>
 <td align="center">5</td>
 <td align="center">4</td>
-<td>OceanMCP (8-in-1), Oceanum, IBM Archives 3★</td>
+<td>OceanMCP 3★ (8-in-1), Oceanum, IBM Archives 3★</td>
 </tr>
 <tr>
 <td>Marine Weather &amp; Surf</td>
 <td align="center">3</td>
 <td align="center">7</td>
-<td>Open-Meteo 38★, Surf Forecast 18★, Weather 241★</td>
+<td>Open-Meteo 39★, Surf Forecast 18★, Weather 241★</td>
 </tr>
 <tr>
 <td>Maritime Heritage &amp; Hydrography</td>
@@ -465,14 +481,14 @@
 <tr>
 <td>Satellite/Earth Observation</td>
 <td align="center">0</td>
-<td align="center">5</td>
-<td>Earth Agent 102★, NASA 83★, Copernicus</td>
+<td align="center">6</td>
+<td>Earth Agent 102★, NASA 83★, Planetary Computer 3★</td>
 </tr>
 <tr>
 <td>Simulation/Digital Twin</td>
 <td align="center">0</td>
 <td align="center">6</td>
-<td>Isaac Sim 145★, Text2Sim 19★, Unity DT</td>
+<td>Isaac Sim 148★, Text2Sim 19★, Unity DT</td>
 </tr>
 <tr>
 <td>Time-Series/Monitoring</td>
@@ -484,7 +500,7 @@
 <td>GIS/Geospatial</td>
 <td align="center">0</td>
 <td align="center">6</td>
-<td>QGIS 895★, GIS 132★, GDAL 59★</td>
+<td>QGIS 900★, GIS 134★, GDAL 64★</td>
 </tr>
 <tr>
 <td>Port &amp; Terminal Operations</td>
@@ -500,9 +516,9 @@
 </tr>
 <tr>
 <td><strong>Total</strong></td>
-<td align="center"><strong>~32</strong></td>
-<td align="center"><strong>~54</strong></td>
-<td><strong>~86 servers cataloged</strong></td>
+<td align="center"><strong>~34</strong></td>
+<td align="center"><strong>~55</strong></td>
+<td><strong>~89 servers cataloged</strong></td>
 </tr>
 </tbody>
 </table>
@@ -510,7 +526,7 @@
 <p>Maritime AI deployments must navigate a particularly complex regulatory landscape spanning international conventions, flag state laws, port state requirements, and emerging cyber regulations.</p>
 <h3 id="imo-regulatory-framework">IMO Regulatory Framework</h3>
 <p>The International Maritime Organization sets the baseline through conventions including SOLAS (Safety of Life at Sea), MARPOL (pollution prevention), STCW (seafarer training), and MLC (Maritime Labour Convention). AI agents accessing maritime data must respect these frameworks — for example, SOLAS Chapter V requires certain navigational data to be maintained in specific formats, and AI systems that interact with safety-critical navigation data need to operate within these requirements.</p>
-<p>The <a href="https://www.imo.org/en/mediacentre/hottopics/pages/autonomous-shipping.aspx">IMO adopted its non-mandatory MASS Code</a> (Maritime Autonomous Surface Ships) in 2026, establishing the first international regulatory framework for autonomous vessels. AI agents operating in this space will need to understand and comply with MASS Code requirements as they evolve toward mandatory status around 2030.</p>
+<p>The <a href="https://www.imo.org/en/mediacentre/hottopics/pages/autonomous-shipping.aspx">IMO is adopting its non-mandatory MASS Code</a> (Maritime Autonomous Surface Ships) at MSC 111 in <strong>May 2026</strong>, establishing the first international regulatory framework for autonomous vessels. MSC 110 (June 2025) finalized most chapters; Chapter 15 (Human element) was the last outstanding item. A mandatory framework is targeted for July 2030, entering into force January 2032. AI agents operating in this space will need to understand and comply with MASS Code requirements as they evolve toward mandatory status.</p>
 <h3 id="maritime-cybersecurity-regulations">Maritime Cybersecurity Regulations</h3>
 <p>Maritime cybersecurity regulation has accelerated significantly:</p>
 <ul>
@@ -519,7 +535,7 @@
 <li><strong><a href="https://www.news.uscg.mil/maritime-commons/Article/4343729/publication-of-cybersecurity-training-and-incident-reporting-guidance-and-polic/">US Coast Guard</a></strong> — Cyber incident reporting mandatory from July 2025; annual cybersecurity training required from January 2026</li>
 <li><strong>EU NIS2 Directive</strong> — Covers maritime transport as an essential service sector</li>
 </ul>
-<p>AI agents with MCP access to vessel systems (through IoT/SCADA servers) need to operate within these cybersecurity frameworks. The principle of least privilege — giving AI agents only the access they need — is particularly important when connecting to operational technology (OT) systems on vessels and in ports.</p>
+<p>The threat landscape is escalating rapidly. <a href="https://safety4sea.com/maritime-cyber-incidents-jumped-103-in-2025/">Maritime cyber incidents surged 103% in 2025</a>, and GPS spoofing now affects approximately 40,000 vessels per day. Iranian-backed groups have been observed using VShell RAT to target vessel control systems. AI agents with MCP access to vessel systems (through IoT/SCADA servers) need to operate within these cybersecurity frameworks. The principle of least privilege — giving AI agents only the access they need — is particularly important when connecting to operational technology (OT) systems on vessels and in ports.</p>
 <h3 id="sanctions-and-trade-compliance">Sanctions and Trade Compliance</h3>
 <p>Maritime sanctions compliance is governed by multiple regimes:</p>
 <ul>
@@ -543,10 +559,10 @@
 <p>VesselFinder, FleetMon, Kpler (which acquired MarineTraffic), Spire Global, and exactEarth — all major providers of vessel tracking and maritime intelligence — have not released official MCP servers. The community implementations for MarineTraffic exist, but official vendor support would significantly improve reliability and data quality.</p>
 <h3 id="missing-all-top-10-shipping-lines-official">Missing: All Top-10 Shipping Lines (Official)</h3>
 <p>Only a community-built Maersk wrapper exists. MSC (the world&rsquo;s largest container line), CMA CGM (partnered with Google for AI), COSCO, Hapag-Lloyd, Evergreen, ONE, Yang Ming, ZIM, and HMM have no MCP presence — official or community.</p>
-<h3 id="missing-classification-societies">Missing: Classification Societies</h3>
-<p>DNV, Lloyd&rsquo;s Register, Bureau Veritas, American Bureau of Shipping, and ClassNK — which collectively set the technical rules governing 95%+ of the world&rsquo;s merchant fleet — have no MCP servers for accessing their rules, class notations, vessel records, or technical standards.</p>
-<h3 id="missing-marine-navigation-standards">Missing: Marine Navigation Standards</h3>
-<p>No MCP bridges exist for SignalK (the open marine data standard), NMEA 2000/0183 (the universal marine electronics protocol), ECDIS (Electronic Chart Display and Information System), or S-57/S-100 electronic chart formats. These protocols are the nervous system of every modern vessel — connecting them to AI agents through MCP would unlock real-time bridge integration.</p>
+<h3 id="missing-classification-societies-but-dnv-leads-with-ai">Missing: Classification Societies (but DNV leads with AI)</h3>
+<p>DNV, Lloyd&rsquo;s Register, Bureau Veritas, American Bureau of Shipping, and ClassNK — which collectively set the technical rules governing 95%+ of the world&rsquo;s merchant fleet — have no MCP servers for accessing their rules, class notations, vessel records, or technical standards. However, <strong>DNV launched <a href="https://splash247.com/dnv-launches-ai-tool-to-cut-through-30000-pages-of-maritime-rules/">RuleAgent</a> in March 2026</strong> — a natural-language AI tool that covers 30,000+ pages of DNV rules (RU SHIP, RU OU, Class Guidelines), narrowing results by vessel type and class notation. While not MCP-native, RuleAgent demonstrates that classification societies are investing in AI access to their rule sets. An MCP wrapper for RuleAgent — or similar tools from other societies — would be a natural next step.</p>
+<h3 id="partially-filled-marine-navigation-standards">Partially Filled: Marine Navigation Standards</h3>
+<p>The biggest gap closure since we first published this guide: <a href="#signalk-mcp-servers--marine-navigation-data">SignalK now has MCP servers</a>. Tony Bentley released the first <code>signalk-mcp-server</code> in October 2025, providing read-only access to vessel navigation data, AIS targets, alarms, and live data streams. A second implementation by VesselSense offers an alternative using V8 isolates with 90–96% token reduction. However, NMEA 2000/0183 (the universal marine electronics protocol), ECDIS (Electronic Chart Display and Information System), and S-57/S-100 electronic chart formats still have no MCP bridges. SignalK is a major step — it&rsquo;s the open standard that translates NMEA data into a web-friendly format — but direct protocol-level bridges remain missing.</p>
 <h3 id="missing-ocean-science-platforms">Missing: Ocean Science Platforms</h3>
 <p>CMEMS (Copernicus Marine Environment Monitoring Service), the Argo float network (4,000+ ocean profiling floats), GEBCO (global ocean bathymetry), IOOS (Integrated Ocean Observing System), OBIS (Ocean Biodiversity Information System), and Global Fishing Watch all lack MCP integrations. The OceanMCP project covers NOAA data well, but European and global ocean science platforms remain unconnected.</p>
 <h3 id="missing-maritime-cfd-and-hydrodynamics">Missing: Maritime CFD and Hydrodynamics</h3>
@@ -610,7 +626,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-11T00:00:00+09:00","datePublished":"2026-03-29T23:00:00+09:00","description":"A comprehensive guide to 85+ MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 9 stars, Datalastic","headline":"MCP and Maritime/Ocean: How AI Agents Connect to Vessel Tracking, AIS Data, Port Operations, Oceanographic Science, Shipping Logistics, Marine Weather, Naval Architecture, and Maritime Compliance Tools","mainEntityOfPage":"https://chatforest.com/guides/mcp-maritime-ocean/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-maritime-ocean/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-16T00:00:00+09:00","datePublished":"2026-03-29T23:00:00+09:00","description":"A comprehensive guide to 85+ MCP integrations for the maritime and ocean sector — covering vessel tracking and AIS data (MarineTraffic 9 stars, ShipXY 10 stars, Datalastic, plus the first SignalK MCP servers bridging marine navigation standards), ocean science (OceanMCP 8-server suite), marine weather, shipping logistics, satellite imagery, naval architecture, and maritime compliance. DNV RuleAgent and IMO MASS Code adoption (May 2026) signal accelerating maritime AI adoption","headline":"MCP and Maritime/Ocean: How AI Agents Connect to Vessel Tracking, AIS Data, Port Operations, Oceanographic Science, Shipping Logistics, Marine Weather, Naval Architecture, and Maritime Compliance Tools","mainEntityOfPage":"https://chatforest.com/guides/mcp-maritime-ocean/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-maritime-ocean/"}
 </script>
 
 
