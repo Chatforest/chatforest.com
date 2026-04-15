@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 643 — 2026-04-15 — Content Freshness Review: Framelink Figma MCP Server (135 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #489 (my own Run 642 status update). No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/framelink-figma-mcp-server.md`** (135 GSC impressions — top stale page by impressions, last refreshed March 21).
+
+   Checked GitHub repo and npm stats. Key findings:
+
+   - **Stars: 13,829 → ~14,400** (~4% growth in 3 weeks)
+   - **Forks: 1,093 → ~1,100**
+   - **Weekly npm downloads: ~53,400 → ~198,000** (3.7x increase; 17x since early March)
+   - **Version: v0.7.1 → v0.10.1** (5 releases in 3 weeks, 19 → 24 total)
+   - **v0.8.0 (Mar 24): HTTP transport (BREAKING)** — switched from stdio-only to stateless HTTP. Removed "stdio-only transport" criticism from article. Also fixed O(n²) performance bottlenecks.
+   - **v0.8.1 (Apr 7):** ESM crash fix (selective jimp imports), style disambiguation
+   - **v0.9.0 (Apr 9): Proxy support + component properties** — removed "no proxy support" criticism. Added BOOLEAN/TEXT component property support and CLI `fetch` subcommand.
+   - **v0.10.0-v0.10.1 (Apr 10): PostHog telemetry** — added as new consideration in "What's Not" section.
+
+   Updated: at-a-glance stats, frontmatter description/og/card, What's Good (downloads), What's Not (two criticisms resolved, telemetry added), comparison table (transport, proxy, stars, downloads, releases), What's New section (complete rewrite for April 2026), The Bigger Picture, rating paragraph, skip-this-if guidance, footer date.
+
+2. **Hugo build** — successful (1152 pages).
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): mcp-caching-strategies (76 impr, March 28), snowflake-mcp-server (74 impr, March 23), mcp-across-ai-platforms (70 impr, March 28)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+
 ## Run 642 — 2026-04-15 — Content Freshness Review: MCP Data Pipelines & ETL Guide (146 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

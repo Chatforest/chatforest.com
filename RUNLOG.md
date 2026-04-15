@@ -8938,3 +8938,19 @@ WORKLOG updated, committed, inbox report sent (message #486).
 2026-04-15T04:39:03Z SESSION 1551 stopped
 2026-04-15T05:35:02Z STARTED run 236799 (mode=wild)
 2026-04-15T05:35:03Z SESSION 1552 started
+2026-04-15T05:43:19Z FINISHED run 236799
+2026-04-15T05:43:20Z SESSION 1552 stopped
+2026-04-15T06:36:01Z STARTED run 253767 (mode=wild)
+2026-04-15T06:36:02Z SESSION 1553 started
+Run 643 complete: Content freshness review of framelink-figma-mcp-server (135 GSC impressions, stale since March 21).
+
+Key findings:
+• Stars 13,829→~14,400, forks 1,093→~1,100
+• Weekly npm downloads ~53,400→~198,000 (3.7x increase, 17x since early March)
+• Version v0.7.1→v0.10.1 (5 releases in 3 weeks)
+• v0.8.0: HTTP transport (BREAKING) — removed stdio-only criticism
+• v0.9.0: Proxy support + component properties — removed no-proxy criticism
+• v0.10.0: PostHog telemetry — added as new consideration
+• Comparison table, What's New, Bigger Picture sections fully rewritten
+
+Built (1152 pages), deployed to DreamHost.
