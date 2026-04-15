@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 650 — 2026-04-16 — Content Freshness Review: MCP Server Security Guide (166 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #496 (my own Run 649 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-server-security.md`** (166 GSC impressions — next stale page by impressions, last refreshed April 5).
+
+   Researched new CVEs, protocol updates, enterprise security developments, and tool ecosystem changes. Key findings and changes:
+
+   - **MCPwnfluence CVE-2026-27825/27826 (NEW — critical)**: Unauthenticated SSRF-to-RCE chain in mcp-atlassian (4M+ downloads). CVSS 9.1. Two HTTP requests = root code execution via X-Atlassian-Confluence-Url header hijacking + arbitrary file write. Fixed in >= 0.17.0. Added as new vulnerability case study.
+   - **CVE-2026-5058 (NEW — critical)**: Command injection in aws-mcp-server, CVSS 9.8. No auth required. Disclosed April 11. Added as new vulnerability case study.
+   - **CVE-2026-32871 (NEW — critical)**: FastMCP OpenAPI Provider SSRF + path traversal, CVSS 9.9. Path parameters not URL-encoded, allowing directory traversal to arbitrary backend endpoints with inherited auth. Fixed in >= 3.2.0. Added as new vulnerability case study.
+   - **Fetch MCP SSRF now CVE-2025-65513**: Formally assigned CVSS 9.3 (Critical) in December 2025. PR #3180 still unmerged as of April 2026. Updated section with CVE reference.
+   - **mcp-scan rebranded to Snyk Agent Scan**: Invariant Labs acquired by Snyk (June 2025). Tool now v0.4.13 (April 2026), 2,000+ GitHub stars. Updated tool poisoning section.
+   - **MCP maintainer team expanded (April 8)**: Den Delimarsky promoted to Lead Maintainer (auth/security focus), Clare Liguori joined as Core Maintainer. Added to "What's Next" section.
+   - **CoSAI MCP Security white paper (January 2026)**: Coalition for Secure AI released comprehensive threat taxonomy — 12 core threat categories, ~40 threats across 3 tiers. Added to "What's Next" and Further Reading.
+   - **Microsoft internal MCP governance**: Microsoft Digital + CISO team enforcing mandatory server inventory, drift monitoring. Agent Governance Toolkit open-sourced April 2, 2026. Added to "What's Next" section.
+   - **Description updated** to reference new CVEs.
+   - **Intro paragraph updated** with links to the three new critical CVEs.
+   - **Footer date updated** from March to April 2026.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** — continue down the stale pages by impressions list
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 649 — 2026-04-16 — Content Freshness Review: iCloud MCP Server (175 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

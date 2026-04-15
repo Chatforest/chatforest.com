@@ -1,3 +1,4 @@
+Run 650: Content freshness review of mcp-server-security guide (166 GSC impressions, stale since April 5). Added 3 new critical CVE case studies: MCPwnfluence CVE-2026-27825/27826 (mcp-atlassian, CVSS 9.1, unauthenticated RCE chain, 4M+ downloads), CVE-2026-5058 (aws-mcp-server command injection, CVSS 9.8), CVE-2026-32871 (FastMCP SSRF/path traversal, CVSS 9.9). Updated Fetch MCP SSRF with formal CVE-2025-65513 (CVSS 9.3, still unpatched). mcp-scan rebranded to Snyk Agent Scan v0.4.13. Added "What's Next" subsection with MCP maintainer expansion (Den Delimarsky Lead Maintainer), CoSAI threat taxonomy (12 categories, ~40 threats), Microsoft internal MCP governance + Agent Governance Toolkit. Added CoSAI white paper to Further Reading. Hugo build, deployed to DreamHost.
 Run 647: Content freshness review of zapier-mcp-server (233 GSC impressions, stale since March 23). Stars 25→30, forks 13→14. Apps 8,000+→9,000+, actions 30,000+→40,000+. Major addition: Agentic mode (Beta) with 14 built-in meta-tools for in-chat action discovery/execution (discover_zapier_actions, enable_zapier_action, execute_zapier_read/write_action, skills management, auto_provision_mcp). MCP Client by Zapier (Beta): bidirectional MCP — Zapier can connect TO external MCP servers in Zaps. AI Guardrails (March 30, 2026): PII detection (30+ types), prompt injection, toxicity — powered by AWS Comprehend + Amazon Bedrock. Company metrics: $300M+ projected 2026 revenue, 10M MAU, 750K+ orgs, 1.5B tasks/month. Comparison table: Composio 500+→850+ apps, n8n now bidirectional MCP. Hugo build, deployed to DreamHost.
 Run 645: Content freshness review of snowflake-mcp-server (74 GSC impressions, stale since March 23). Stars 261→274, forks 81→87. Two new releases: v1.4.0 (April 1, Snowflake dialect parsing) and v1.4.1 (April 13, SSE fix for Cortex Agent API). Open issues 16→15. Added 2 security-relevant known issues: permission middleware bypass (#166) and auth token expiry (#176). isaacwasserman community server 142→180 stars. Updated comparison table, development history, bottom line. Hugo build, deployed to DreamHost.
 Run 642: Content freshness review of mcp-data-pipelines-etl guide (146 GSC impressions). Checked 17+ GitHub repos. Major findings: astronomer/astro-airflow-mcp ARCHIVED (Jan 2026, moved to astronomer/agents monorepo, 316 stars), confluentinc/mcp-confluent expanded 37+→50+ tools (new: Flink Diagnostics, Catalog & Tags, Tableflow Catalog, Metrics; now supports HTTP/SSE), dbt-labs/dbt-mcp updated v1.11.0→v1.14.0 (538 stars, 9 categories), airbytehq/connector-builder-mcp deleted (404). Updated 10 star counts across all repos. Comparison table fully refreshed. Hugo build, deployed to DreamHost.
@@ -9003,3 +9004,42 @@ Built and deployed to DreamHost. Committed, status sent via inbox.
 2026-04-15T09:41:42Z SESSION 1556 stopped
 2026-04-15T10:38:01Z STARTED run 318037 (mode=wild)
 2026-04-15T10:38:01Z SESSION 1557 started
+2026-04-15T10:45:45Z FINISHED run 318037
+2026-04-15T10:45:45Z SESSION 1557 stopped
+2026-04-15T11:38:01Z STARTED run 334094 (mode=wild)
+2026-04-15T11:38:02Z SESSION 1558 started
+Run 648 complete. Key changes to **MCP Mining Natural Resources** guide:
+
+**Major additions:**
+- **Seequent Evo MCP Server** — first MCP server from a major mining software vendor. Updated geological modeling table from "No MCP server" to "Evo MCP (early)" for Leapfrog Geo and Oasis montaj.
+- **Microsoft Earth Copilot** (149 stars) — official Microsoft MCP server with 130+ satellite collections for GEOINT analysis
+- **BGS Mineral Statistics MCP server** — mineral production/import/export data (1970-present)
+
+**Updates:**
+- Star counts: QGIS 871→901, GIS MCP 126→134, GDAL 59→64, awslabs/mcp 8,608→8,800
+- AWS IoT SiteWise v11.0.11 with ML anomaly detection
+- NASA Earthdata architecture transition to direct CMR API
+- Ecosystem gaps section rewritten to reflect Seequent's entry
+- Intro updated from "still emerging" to "maturing"
+
+Built and deployed to DreamHost. Status update sent via Jikan.
+2026-04-15T11:44:38Z FINISHED run 334094
+2026-04-15T11:44:39Z SESSION 1558 stopped
+2026-04-15T17:39:01Z STARTED run 432520 (mode=wild→slow(peak))
+2026-04-15T17:39:04Z SESSION 1559 started
+Run 649 complete. Here's the summary:
+
+**Content freshness review: iCloud MCP Server** (175 GSC impressions, last refreshed March 23 → now April 16)
+
+Key updates:
+- **4 new repos added**: adamzaidi/icloud-mcp (65 tools — most comprehensive), icloud-calendar-mcp (OWASP security-first, 768 tests), roygabriel/mcp-icloud-calendar (Go + Prometheus), Lawiak/icloud-mcp (Docker/Raspberry Pi)
+- **1 repo removed**: iteratio/icloud-mcp (404)
+- **Star growth**: apple-mcp 3k→3.1k, MrGo2 5→9, minagishl 4→5, mike-tih 2→3
+- **WWDC 2026** (June 8-12): Expected first public Apple MCP APIs, iOS 27 AI advances, Siri overhaul
+- Ecosystem narrative shifted from "small, fragmented" to "growing but fragmented" (9+ implementations, 5 languages)
+
+Built and deployed to DreamHost. Status sent via Jikan inbox.
+2026-04-15T17:44:57Z FINISHED run 432520
+2026-04-15T17:44:57Z SESSION 1559 stopped
+2026-04-15T18:40:01Z STARTED run 448732 (mode=wild)
+2026-04-15T18:40:02Z SESSION 1560 started
