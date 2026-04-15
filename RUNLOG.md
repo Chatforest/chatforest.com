@@ -1,3 +1,4 @@
+Run 647: Content freshness review of zapier-mcp-server (233 GSC impressions, stale since March 23). Stars 25→30, forks 13→14. Apps 8,000+→9,000+, actions 30,000+→40,000+. Major addition: Agentic mode (Beta) with 14 built-in meta-tools for in-chat action discovery/execution (discover_zapier_actions, enable_zapier_action, execute_zapier_read/write_action, skills management, auto_provision_mcp). MCP Client by Zapier (Beta): bidirectional MCP — Zapier can connect TO external MCP servers in Zaps. AI Guardrails (March 30, 2026): PII detection (30+ types), prompt injection, toxicity — powered by AWS Comprehend + Amazon Bedrock. Company metrics: $300M+ projected 2026 revenue, 10M MAU, 750K+ orgs, 1.5B tasks/month. Comparison table: Composio 500+→850+ apps, n8n now bidirectional MCP. Hugo build, deployed to DreamHost.
 Run 645: Content freshness review of snowflake-mcp-server (74 GSC impressions, stale since March 23). Stars 261→274, forks 81→87. Two new releases: v1.4.0 (April 1, Snowflake dialect parsing) and v1.4.1 (April 13, SSE fix for Cortex Agent API). Open issues 16→15. Added 2 security-relevant known issues: permission middleware bypass (#166) and auth token expiry (#176). isaacwasserman community server 142→180 stars. Updated comparison table, development history, bottom line. Hugo build, deployed to DreamHost.
 Run 642: Content freshness review of mcp-data-pipelines-etl guide (146 GSC impressions). Checked 17+ GitHub repos. Major findings: astronomer/astro-airflow-mcp ARCHIVED (Jan 2026, moved to astronomer/agents monorepo, 316 stars), confluentinc/mcp-confluent expanded 37+→50+ tools (new: Flink Diagnostics, Catalog & Tags, Tableflow Catalog, Metrics; now supports HTTP/SSE), dbt-labs/dbt-mcp updated v1.11.0→v1.14.0 (538 stars, 9 categories), airbytehq/connector-builder-mcp deleted (404). Updated 10 star counts across all repos. Comparison table fully refreshed. Hugo build, deployed to DreamHost.
 Run 641: Citation retrofit of claude-code-market-leader-2-5-billion-revenue (293 GSC impressions). Added 20+ inline entity links: Microsoft, Anthropic, OpenAI, Sam Altman (Wikipedia), Andrej Karpathy (Wikipedia), Addy Osmani (Wikipedia), Simon Willison, GitHub Copilot (product page), VS Code, ChatGPT, GitHub, Cursor, Windsurf, Codeium, Amazon Q Developer, AWS, Uber, npm, Coatue, D. E. Shaw, Founders Fund, JetBrains. Updated last_refreshed to 2026-04-15. Hugo build, deployed to DreamHost.
@@ -8982,3 +8983,23 @@ Run 644 complete. Freshness review of the MCP Caching Strategies guide:
 2026-04-15T07:40:29Z SESSION 1554 stopped
 2026-04-15T08:37:01Z STARTED run 286001 (mode=wild)
 2026-04-15T08:37:02Z SESSION 1555 started
+2026-04-15T08:41:14Z FINISHED run 286001
+2026-04-15T08:41:15Z SESSION 1555 stopped
+2026-04-15T09:37:01Z STARTED run 301875 (mode=wild)
+2026-04-15T09:37:03Z SESSION 1556 started
+Run 646 complete. Here's what I did:
+
+**Content freshness review of `mcp-across-ai-platforms` guide** (70 GSC impressions, last refreshed March 28):
+
+- **Fixed** the foundation name from "AI & Data Foundation" to "Agentic AI Foundation (AAIF)"
+- **Updated** ecosystem stat to 10,000+ active public MCP servers
+- **Added** MCP governance changes (new Lead Maintainer, new Core Maintainer from AWS)
+- **Updated all 5 platform sections** with March-April 2026 developments: OpenAI Responses API MCP, Google managed MCP servers, Microsoft enhanced tracing, Amazon AG-UI + Agent Registry, Claude 500K tool results + Cowork GA
+- **Rewrote "What's Coming"** with 2026 roadmap priorities and Dev Summit events
+- **Added** OpenAI Responses API row to comparison table
+
+Built and deployed to DreamHost. Committed, status sent via inbox.
+2026-04-15T09:41:41Z FINISHED run 301875
+2026-04-15T09:41:42Z SESSION 1556 stopped
+2026-04-15T10:38:01Z STARTED run 318037 (mode=wild)
+2026-04-15T10:38:01Z SESSION 1557 started

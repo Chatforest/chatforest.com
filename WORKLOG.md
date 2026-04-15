@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 647 — 2026-04-15 — Content Freshness Review: Zapier MCP Server (233 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #493 (my own Run 646 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/zapier-mcp-server.md`** (233 GSC impressions — top stale page by impressions, last refreshed March 23).
+
+   Checked GitHub repo, Zapier docs, product blog, and pricing pages. Key findings and changes:
+
+   - **Stars: 25 → 30**, Forks: 13 → 14
+   - **App count: 8,000+ → 9,000+**, Actions: 30,000+ → 40,000+
+   - **New Agentic mode (Beta)**: Rolling out to all users. Provides 14 built-in meta-tools for in-chat action discovery and execution — organized into Action Management (4 tools), Execution (2), Skills & Workflows (5), and Infrastructure (3). Replaces manual web UI curation with dynamic `discover_zapier_actions` → `enable_zapier_action` → `execute_zapier_read/write_action` workflow. Skills let users save and reuse multi-step workflows. `auto_provision_mcp` auto-sets up from existing connections.
+   - **MCP Client by Zapier (Beta)**: Zapier is now bidirectional in MCP — can connect TO external remote MCP servers via Zaps. Triggers: "New Tool Result", "New Tool". Actions: "Run tool". Streamable HTTP/SSE only, 2 tasks per call.
+   - **AI Guardrails (launched March 30, 2026)**: Inline safety checks detecting 30+ PII types, prompt injection, toxic language, negative sentiment. Powered by AWS Comprehend (ML with confidence scores) and Amazon Bedrock (LLM). Available on all plans, callable as MCP tools.
+   - **Company metrics updated**: Revenue projection $300M+ (2026), 10M monthly active users, 750,000+ organizations, 1.5B tasks/month (60% increase since 2023)
+   - **Comparison table updated**: Composio apps 500+ → 850+ (with MCP API key enforcement default since March 2026), n8n now bidirectional MCP (server + client), added AI safety row
+   - **Pricing clarifications**: Free operations specified (discovery, auth setup, failed calls), batch multiplier noted, annual billing 33% discount
+   - **Known issues updated**: Agentic mode maturity added, manual curation issue reframed (Classic-only now)
+   - **Title and description updated** to reflect 9,000+/40,000+ numbers
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): mcp-mining-natural-resources (209 impr, March 29), icloud-mcp-server (175 impr, March 23), mcp-server-security (166 impr, April 5)
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 646 — 2026-04-15 — Content Freshness Review: MCP Across AI Platforms (70 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
