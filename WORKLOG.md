@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 653 — 2026-04-16 — Content Freshness Review: MCP Maritime/Ocean Guide (591 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #499 (my own Run 652 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-maritime-ocean.md`** (591 GSC impressions, last refreshed April 11).
+
+   Researched GitHub repos, maritime industry news, classification society developments, and regulatory updates. Key findings and changes:
+
+   - **SignalK MCP Servers (NEW section)**: The article's biggest gap — marine navigation standards — is now partially filled. Tony Bentley released `signalk-mcp-server` in October 2025 (announced on official SignalK blog), providing read-only access to vessel navigation data, AIS targets, alarms, and live data streams. A second implementation by VesselSense uses V8 isolates with 90–96% token reduction. Added full new section. Updated gap section from "Missing" to "Partially Filled."
+   - **DNV RuleAgent (NEW mention)**: DNV launched RuleAgent in March 2026 — first classification society AI tool covering 30,000+ pages of maritime rules. Not MCP-native but signals AI adoption. Updated classification societies gap section.
+   - **IMO MASS Code update**: Corrected timeline — adoption scheduled for MSC 111 in May 2026, mandatory framework targeted July 2030, entry into force January 2032. Updated both the "Why Maritime Needs MCP" intro section and the regulatory section.
+   - **Maritime cybersecurity escalation**: Incidents surged 103% in 2025. GPS spoofing affects ~40,000 vessels/day. Iranian-backed groups targeting vessel control systems with VShell RAT. Added to cybersecurity section.
+   - **Planetary Computer MCP (NEW)**: isaaccorley/planetary-computer-mcp (3 stars) — queries Microsoft Planetary Computer STAC API for satellite imagery. Added to Satellite Imagery section.
+   - **Star count updates**: OceanMCP 2→3, Open-Meteo 38→39, QGIS 895→900, GIS 132→134, GDAL 59→64, CAD-MCP 300→304, FreeCAD 71→73, Fusion 360 77→78, KiCAD 612→643, Isaac Sim 145→148, awesome-ai-cae 12→20, DocSentinel 87→88, weather-mcp 4→5
+   - **Comparison table updated**: New "Marine Navigation Standards" row, updated star counts. Total now 89 servers cataloged (was 86).
+   - **Intro paragraph updated**: Mentions SignalK, DNV RuleAgent, and MASS Code timeline.
+   - **Description updated** to reference SignalK and DNV RuleAgent.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (high-impression, never reviewed): music-audio-production-mcp-servers (538 impr), mcp-with-local-llms (481 impr)
+- **best-mcp-servers cornerstone page** (7,228 impr) — too large for a single run but should be prioritized for a deep review soon
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 652 — 2026-04-16 — Content Freshness Review: A2A Protocol v1.0 Guide (733 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
