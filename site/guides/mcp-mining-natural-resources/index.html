@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil &amp; Gas, and Commodity Trading Tools — ChatForest</title>
-  <meta name="description" content="A comprehensive guide to 100&#43; MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 871 stars, ArcGIS, GDAL 59 stars), geological survey data">
+  <meta name="description" content="A comprehensive guide to 100&#43; MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 901 stars, ArcGIS, GDAL 64 stars), geological survey data">
   <meta property="og:title" content="MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil &amp; Gas, and Commodity Trading Tools — ChatForest">
-  <meta property="og:description" content="A comprehensive guide to 100&#43; MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 871 stars, ArcGIS, GDAL 59 stars), geological survey data">
+  <meta property="og:description" content="A comprehensive guide to 100&#43; MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 901 stars, ArcGIS, GDAL 64 stars), geological survey data">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/guides/mcp-mining-natural-resources/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil &amp; Gas, and Commodity Trading Tools — ChatForest">
-  <meta name="twitter:description" content="A comprehensive guide to 100&#43; MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 871 stars, ArcGIS, GDAL 59 stars), geological survey data">
+  <meta name="twitter:description" content="A comprehensive guide to 100&#43; MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 901 stars, ArcGIS, GDAL 64 stars), geological survey data">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/guides/mcp-mining-natural-resources/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 29, 2026 · Updated Mar 29, 2026</span>
+        <span>Published Mar 29, 2026 · Updated Apr 15, 2026</span>
       </div>
 
       <h1 class="article-title">MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil &amp; Gas, and Commodity Trading Tools</h1>
@@ -67,7 +67,7 @@
       <div class="article-body">
         <p>Mining is one of the most data-intensive industries on earth. A single mine generates terabytes of geological survey data, drill-hole logs, grade control models, fleet telemetry, environmental sensor readings, commodity price feeds, and regulatory compliance reports — each stored in specialized software that rarely talks to the others. The global AI-in-mining market reached approximately $35.47 billion in 2025, growing at 41.92% annually toward a projected $828.33 billion by 2034. Asia-Pacific leads with a 40% market share, driven by China&rsquo;s smart coal mine investments and Australia&rsquo;s autonomous extraction leadership, while North America is the fastest-growing region as critical mineral demand surges.</p>
 <p>MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to mining&rsquo;s fragmented data ecosystem. Rather than building custom integrations for each geological database, fleet management system, or environmental sensor network, MCP-connected agents can query spatial data, analyze drill-hole results, monitor equipment telemetry, track commodity prices, and generate compliance reports through defined tool interfaces. The protocol transforms AI assistants from isolated chatbots into operational mining intelligence tools that work across the entire mine lifecycle — from exploration and resource estimation through extraction, processing, and environmental remediation. For an introduction to MCP itself, see our <a href="/guides/what-is-mcp/">introduction to MCP</a>.</p>
-<p>The mining MCP ecosystem is still emerging. Unlike accounting or CRM where major vendors have shipped official MCP implementations, mining software vendors (Deswik, Maptek, Hexagon, Datamine, Seequent/Leapfrog) have not yet released dedicated MCP servers. However, the adjacent tooling — geospatial analysis, industrial IoT, environmental monitoring, commodity pricing, and scientific databases — is surprisingly rich, and these components can be assembled into powerful mining AI workflows.</p>
+<p>The mining MCP ecosystem is maturing. As of April 2026, Seequent — the company behind Leapfrog Geo and Oasis montaj — has released the first MCP server from a major mining software vendor (Evo MCP, early development). Other mining software vendors (Deswik, Maptek, Hexagon, Datamine) have not yet released dedicated MCP servers, but the adjacent tooling — geospatial analysis (including Microsoft&rsquo;s Earth Copilot with 130+ satellite collections), industrial IoT, environmental monitoring, commodity pricing, and scientific databases — is increasingly rich, and these components can be assembled into powerful mining AI workflows.</p>
 <p>This guide is research-based. We survey what MCP servers exist across the mining and natural resources landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI. For background on MCP, see our <a href="/guides/what-is-mcp/">introduction to MCP</a> and the <a href="/reviews/">MCP server directory</a>.</p>
 <h2 id="why-mining-needs-mcp">Why Mining Needs MCP</h2>
 <p>Mining workflows present integration challenges that MCP is architecturally well-suited to address.</p>
@@ -79,11 +79,11 @@
 <h2 id="geospatial-and-gis-mcp-servers">Geospatial and GIS MCP Servers</h2>
 <p>Geospatial analysis is the foundation of mining — from satellite-based exploration to pit design and environmental monitoring. The GIS MCP ecosystem is the most mature category relevant to mining.</p>
 <h3 id="qgis-mcp-server--leading-open-source-gis">QGIS MCP Server — Leading Open Source GIS</h3>
-<p><strong>jjsantos01/qgis_mcp</strong> | 871 stars | Connects Claude to QGIS Desktop</p>
+<p><strong>jjsantos01/qgis_mcp</strong> | 901 stars | Connects Claude to QGIS Desktop</p>
 <p>According to repository documentation, this server connects QGIS Desktop to AI through MCP, allowing agents to create and manage GIS projects, load and manipulate vector and raster layers, execute processing algorithms from the QGIS Processing Toolbox, and run arbitrary Python code within the QGIS environment. For mining applications, this means AI agents could automate geological mapping workflows, overlay drill-hole data on topographic surfaces, calculate volumes for pit design, and run spatial analysis on environmental monitoring data — all through natural language commands.</p>
 <h3 id="gis-mcp-server--programmatic-spatial-operations">GIS MCP Server — Programmatic Spatial Operations</h3>
-<p><strong>mahdin75/gis-mcp</strong> | 126 stars | GIS operations via Python libraries</p>
-<p>A server that exposes comprehensive geometry operations (intersection, union, buffer, difference), advanced coordinate transformations between reference systems, accurate distance/area/length measurements, and spatial analysis including validation, proximity checks, and spatial overlays. Mining applications include automated boundary calculations, lease area analysis, and spatial correlation of geological and environmental datasets.</p>
+<p><strong>mahdin75/gis-mcp</strong> | 134 stars | GIS operations via Python libraries</p>
+<p>Now at v0.14.0 Beta with support for PySAL spatial analytics alongside Shapely, PyProj, GeoPandas, and Rasterio. Exposes comprehensive geometry operations (intersection, union, buffer, difference), advanced coordinate transformations between reference systems, accurate distance/area/length measurements, and spatial analysis including validation, proximity checks, and spatial overlays. Supports both HTTP and stdio transport modes with Docker deployment. Mining applications include automated boundary calculations, lease area analysis, and spatial correlation of geological and environmental datasets.</p>
 <h3 id="arcgis-pro-mcp-integration">ArcGIS Pro MCP Integration</h3>
 <p><strong>nicogis/MCP-Server-ArcGIS-Pro-AddIn</strong> | 25 stars | ArcGIS Pro as MCP tools</p>
 <p>Integrates ArcGIS Pro functionality as MCP tools, allowing AI agents to interact with Esri&rsquo;s enterprise GIS environment. For mining companies that standardize on ArcGIS (common in large operations), this provides a bridge between AI workflows and their existing spatial data infrastructure — mine plans, environmental boundaries, tenement data, and geological maps stored in ArcGIS geodatabases.</p>
@@ -97,12 +97,14 @@
 <p><strong>matbel91765/GIS-MCP-Server</strong> | Community | Geocoding, routing, spatial analysis</p>
 <p>A geospatial tools server for AI agents providing geocoding, routing, spatial analysis, and file operations. Useful for logistics-heavy mining operations that need to optimize haul routes, plan infrastructure access, and analyze spatial relationships between mining tenements and environmental features.</p>
 <h3 id="gdal-mcp-server--geospatial-data-processing">GDAL MCP Server — Geospatial Data Processing</h3>
-<p><strong>JordanGunn/gdal-mcp</strong> | 59 stars | GDAL-style geospatial workflows</p>
-<p>Provides GDAL-style geospatial workflows via Rasterio, GeoPandas, and PyProj, including catalog discovery, raster and vector processing, and format conversion. For mining, this means AI agents can process elevation models (DEMs) for pit design, convert between coordinate systems used in different mining jurisdictions, and process satellite-derived raster data for geological interpretation — all through the industry-standard GDAL ecosystem.</p>
+<p><strong>JordanGunn/gdal-mcp</strong> | 64 stars | GDAL-style geospatial workflows</p>
+<p>Now at v1.1.3, this server provides GDAL-style geospatial workflows via Rasterio, GeoPandas, and PyProj, including catalog discovery, raster and vector processing, and format conversion. Features an &ldquo;epistemic reasoning&rdquo; reflection middleware that requires AI agents to justify their methodological choices before executing operations — a useful guardrail for mining applications where incorrect coordinate transformations or raster processing can propagate costly errors. For mining, AI agents can process elevation models (DEMs) for pit design, convert between coordinate systems used in different mining jurisdictions, and process satellite-derived raster data for geological interpretation.</p>
 <h3 id="google-earth-engine-mcp">Google Earth Engine MCP</h3>
 <p><strong>Dhenenjay/Axion-MCP</strong> | 4 stars | Google Earth Engine geospatial analysis</p>
 <p>Provides access to Google Earth Engine&rsquo;s planetary-scale geospatial analysis platform. For mining, GEE offers decades of satellite imagery for change detection, vegetation monitoring, and environmental baseline studies — capabilities particularly valuable for exploration-stage projects and environmental compliance monitoring across large tenement areas.</p>
 <h3 id="satellite-imagery-mcp-servers">Satellite Imagery MCP Servers</h3>
+<p><strong>microsoft/Earth-Copilot</strong> | 149 stars | <strong>Official by Microsoft</strong> | AI-powered geospatial analysis</p>
+<p>Microsoft&rsquo;s Earth Copilot exposes an MCP server for AI-powered satellite imagery search and GEOINT analysis. According to repository documentation, it provides access to 130+ satellite data collections through Microsoft Planetary Computer and NASA VEDA, with extensible analysis modules for terrain, timeseries comparison, building damage assessment, extreme weather, and mobility analysis. For mining, this is a significant capability — AI agents can search decades of satellite imagery for mineral exploration signatures, monitor pit progression, assess environmental baselines, and detect land-use changes across large tenement areas, all through natural language queries in Claude Desktop, VS Code, or other MCP-compatible tools.</p>
 <p><strong>PSkinnerTech/SkyFi-MCP-server</strong> | 3 stars | SkyFi satellite imagery platform</p>
 <p>Enables ordering satellite imagery, searching archives, and tasking new captures through the SkyFi platform. For mining, on-demand high-resolution imagery supports pit progression monitoring, tailings dam surveillance, and environmental impact assessment.</p>
 <p><strong>isaaccorley/planetary-computer-mcp</strong> | 2 stars | Microsoft Planetary Computer STAC API</p>
@@ -117,6 +119,11 @@
 <p>Query USGS earthquake data with natural language. Seismic data is directly relevant to mining — both for assessing geotechnical risk at mine sites and for monitoring induced seismicity from underground mining or hydraulic fracturing operations.</p>
 <p><strong>blake365/volcanoes-mcp</strong> | Community | Smithsonian Global Volcanism Program</p>
 <p>Access volcanic activity data from the Smithsonian&rsquo;s Global Volcanism Program. Relevant for mining operations near volcanic regions — common in Pacific Rim mineral provinces — where volcanic hazard assessment is part of mine planning.</p>
+<h3 id="seequent-evo-mcp-server--first-major-mining-vendor-mcp">Seequent Evo MCP Server — First Major Mining Vendor MCP</h3>
+<p><strong>SeequentEvo/evo-mcp</strong> | 5 stars | <strong>Official by Seequent</strong> | Geoscience data platform</p>
+<p>Seequent — the company behind Leapfrog Geo, Oasis montaj, and MX Deposit — has released an official MCP server for their Evo cloud-based geoscience data platform. This is the first MCP server from a major mining software vendor, marking a significant milestone for the mining MCP ecosystem.</p>
+<p>According to repository documentation, the Evo MCP server provides workspace management (create, summarize, snapshot, duplicate workspaces, copy objects between workspaces), geoscience object creation from CSV files with automated data validation and schema mapping (pointsets, line segments, downhole collections, and downhole intervals), and data import/download/query operations. Tools are organized into admin, data, filesystem, and general categories, with support for both STDIO and Streamable HTTP transport modes.</p>
+<p>The server is in early development with limited functionality, but it establishes a bridge between AI tools and Seequent&rsquo;s geoscience data infrastructure. For mining companies using Leapfrog Geo for geological modeling, this means AI agents can begin to interact with geological data stored in Evo — querying block models, managing workspace objects, and automating data preparation workflows. Seequent also announced partnerships with Orica Digital Solutions (connecting drilling data with Leapfrog workflows) and Deswik (improving data flow between geological models and mine planning), suggesting a broader push toward integrated AI-accessible mining data pipelines.</p>
 <h3 id="geological-survey-mcp-servers">Geological Survey MCP Servers</h3>
 <p>Several country-specific geological survey MCP servers have emerged:</p>
 <p><strong>pouliens/MCP&mdash;AGS-Boreholes-OGC-API</strong> | Community | British Geological Survey borehole data</p>
@@ -125,6 +132,8 @@
 <p>Access geological data from Sweden&rsquo;s Geological Survey — relevant for the Nordic mining sector, which includes major iron ore (LKAB), base metal, and rare earth element operations.</p>
 <p><strong>MackinHung/mcp-taiwan-geology</strong> | Community | Taiwan geological hazard data</p>
 <p>Geological hazard data for Taiwan, demonstrating the pattern of national geological surveys becoming accessible through MCP.</p>
+<p><strong>pouliens/mcp&mdash;bgs-mineral-stats</strong> | Community | BGS mineral production, import, and export data</p>
+<p>Provides access to global mineral production, import, and export statistics from the British Geological Survey spanning 1970 to present. Covers 18 minerals including copper, lithium, gold, nickel, and rare earth elements. Built on the BGS Open Government License data via OGC WFS 2.0.0 protocol. For mining, this server enables AI agents to analyze historical production trends, import/export flows, and supply chain patterns for critical minerals — useful for market analysis, feasibility studies, and strategic planning.</p>
 <h3 id="mining-specific-data-servers">Mining-Specific Data Servers</h3>
 <p><strong>Redliana/critical-minerals-data-tools</strong> | Community | Critical minerals data (CLAIMM + BGS)</p>
 <p>MCP servers and REST APIs specifically for critical minerals data, connecting to the CLAIMM database and British Geological Survey. Critical minerals (lithium, cobalt, rare earths, nickel) are at the center of the energy transition — this server addresses a specific and growing need for AI-powered analysis of critical mineral supply chains.</p>
@@ -133,8 +142,8 @@
 <p><strong>KatLabPuss/minemarket-mcp</strong> | Community | Search mining projects via Claude</p>
 <p>Search mining projects through Claude, providing market intelligence on active mining projects, development-stage properties, and exploration prospects.</p>
 <h3 id="nasa-earthdata-mcp-server--official">NASA Earthdata MCP Server — Official</h3>
-<p><strong>nasa/earthdata-mcp</strong> | <strong>Official by NASA</strong> | Semantic search over Earth science data</p>
-<p>NASA&rsquo;s official MCP server provides semantic search capabilities powered by embeddings over NASA&rsquo;s extensive Earth science data collections. For mining, this means AI agents could search for and access satellite-derived geological data — multispectral imagery for mineral mapping, InSAR data for ground subsidence monitoring, elevation models for site planning, and vegetation indices for environmental baseline studies. NASA&rsquo;s Earthdata archive contains petabytes of freely available data relevant to mineral exploration and environmental monitoring.</p>
+<p><strong>nasa/earthdata-mcp</strong> | 8 stars | <strong>Official by NASA</strong> | NASA Common Metadata Repository</p>
+<p>NASA&rsquo;s official MCP server for searching Earth science data collections through the Common Metadata Repository (CMR). The project is currently transitioning its architecture — deprecating its earlier ingestion and embedding pipelines in favor of direct, real-time CMR API integrations. For mining, this means AI agents can search NASA&rsquo;s extensive Earth science archive for satellite-derived geological data — multispectral imagery for mineral mapping, InSAR data for ground subsidence monitoring, elevation models for site planning, and vegetation indices for environmental baseline studies. NASA&rsquo;s Earthdata archive contains petabytes of freely available data relevant to mineral exploration and environmental monitoring.</p>
 <h3 id="nasa-open-apis-mcp-server">NASA Open APIs MCP Server</h3>
 <p><strong>jezweb/nasa-mcp-server</strong> | 8 stars | APOD, Mars rovers, asteroids, Earth imagery</p>
 <p>A comprehensive server accessing NASA&rsquo;s open APIs including Earth observation imagery. While primarily designed for general NASA data access, the Earth imagery endpoints provide satellite views useful for mine site monitoring, land-use change detection, and environmental impact assessment.</p>
@@ -159,8 +168,8 @@
 <p>A production-ready MCP server for industrial IoT, edge computing, and SCADA/PLC systems. According to repository documentation, it provides a unified tool interface over HTTP (FastAPI) integrating MQTT sensors and Modbus devices with InfluxDB time-series storage and Redis caching. Features include real-time monitoring, alarm management, time-series data storage, and actuator control.</p>
 <p>For mining, this server could bridge AI agents to: haul truck telemetry (engine temperature, fuel consumption, payload weight), conveyor belt sensors (speed, belt tension, material flow), crusher and mill instrumentation (throughput, power draw, vibration), tailings dam monitoring (piezometers, inclinometers, seepage sensors), ventilation systems in underground mines (gas detectors, airflow sensors), and water treatment plant instrumentation.</p>
 <h3 id="aws-iot-sitewise-mcp-server--official-by-aws">AWS IoT SiteWise MCP Server — Official by AWS</h3>
-<p><strong>awslabs/mcp</strong> (aws-iot-sitewise-mcp-server) | Part of 8,608-star AWS MCP collection | <strong>Official</strong></p>
-<p>AWS&rsquo;s official IoT SiteWise MCP server provides full functionality for industrial IoT asset management, data ingestion, monitoring, and analytics. AWS IoT SiteWise is widely used in mining for modeling industrial assets (processing plants, conveyor systems, fleet) and collecting operational data at scale. The MCP server lets AI agents interact with asset hierarchies, query time-series data, and monitor asset performance metrics.</p>
+<p><strong>awslabs/mcp</strong> (aws-iot-sitewise-mcp-server) | Part of 8,800-star AWS MCP collection | <strong>Official</strong></p>
+<p>AWS&rsquo;s official IoT SiteWise MCP server, now at v11.0.11, provides comprehensive industrial IoT asset management including asset creation/management, hierarchies, models, properties, data ingestion, historical retrieval with aggregations, bulk export, gateway management, and SQL-like queries. A standout feature is ML-powered anomaly detection — most IoT MCP servers only read data, but SiteWise actively identifies problems using machine learning. The server includes built-in industrial domain knowledge, automatically applying proper units, data types, and quality indicators. For mining, this means AI agents can model processing plants, conveyor systems, and fleet assets while receiving automated alerts when equipment behavior deviates from normal patterns.</p>
 <h3 id="litmus-mcp-server--official">Litmus MCP Server — Official</h3>
 <p><strong>Litmus Edge MCP Server</strong> | <strong>Official by Litmus</strong> | Industrial edge computing</p>
 <p>Litmus provides an official MCP server implementation that serves as a bridge between LLMs and industrial systems. Litmus Edge is used in manufacturing and mining for edge data collection from PLCs, SCADA systems, and industrial equipment. The MCP server enables AI agents to access real-time production data from industrial edge nodes.</p>
@@ -250,7 +259,7 @@
 <td>Leapfrog Geo</td>
 <td>Seequent</td>
 <td>AI-driven implicit modeling, 30% more accuracy</td>
-<td>No MCP server</td>
+<td><strong>Evo MCP (early)</strong></td>
 </tr>
 <tr>
 <td>GOCAD/SKUA</td>
@@ -268,7 +277,7 @@
 <td>Oasis montaj</td>
 <td>Seequent</td>
 <td>Geophysical data processing</td>
-<td>No MCP server</td>
+<td><strong>Evo MCP (early)</strong></td>
 </tr>
 </tbody>
 </table>
@@ -356,8 +365,8 @@
 ├─────────────────────────────────────────────────────┤
 │                                                       │
 │  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
-│  │ NASA     │  │ QGIS MCP │  │ PostGIS MCP      │   │
-│  │ Earthdata│  │ (871★)   │  │ (Drill-hole DB)  │   │
+│  │ NASA     │  │ QGIS MCP  │  │ PostGIS MCP      │   │
+│  │ Earthdata│  │ (901★)   │  │ (Drill-hole DB)  │   │
 │  │ MCP      │  │          │  │                   │   │
 │  └────┬─────┘  └────┬─────┘  └────┬──────────────┘   │
 │       │              │              │                  │
@@ -369,7 +378,7 @@
 │       └──────────────┼──────────────┘                  │
 │                      │                                 │
 │              ┌───────▼────────┐                        │
-│              │ GIS MCP (126★) │                        │
+│              │ GIS MCP (134★) │                        │
 │              │ Spatial overlay │                        │
 │              │ &amp; correlation   │                        │
 │              └───────┬────────┘                        │
@@ -434,7 +443,7 @@ Agent workflow:
 │                                                       │
 │  ┌──────────────┐  ┌──────────┐  ┌───────────────┐  │
 │  │ IoT-Edge MCP │  │ Weather  │  │ QGIS MCP      │  │
-│  │ Environmental│  │ MCP      │  │ (871★)        │  │
+│  │ Environmental│  │ MCP      │  │ (901★)        │  │
 │  │ sensors      │  │ Air qual │  │ Spatial report │  │
 │  └──────┬───────┘  └────┬─────┘  └──────┬────────┘  │
 │         │               │                │            │
@@ -512,19 +521,19 @@ Agent workflow:
 <p><strong>Data sovereignty and Indigenous rights.</strong> Mining often occurs on or near Indigenous lands. Cultural heritage data, sacred site locations, and traditional knowledge may be subject to data sovereignty requirements that restrict how information can be stored, processed, and shared. AI agents must be configured to respect these boundaries — some geological or cultural data should never leave specific jurisdictions or systems.</p>
 <p><strong>Autonomous equipment regulations.</strong> While autonomous haul trucks and trains are operational, most jurisdictions require safety management plans, risk assessments, and defined exclusion zones. AI agents coordinating with autonomous equipment must operate within these regulatory frameworks and maintain audit trails of all decisions that affect equipment movement or safety zones.</p>
 <h2 id="current-ecosystem-gaps">Current Ecosystem Gaps</h2>
-<p>The mining MCP ecosystem has significant gaps that represent opportunities for developers.</p>
-<p><strong>Mine planning software integration.</strong> No MCP servers exist for any major mine planning platform. Deswik, Hexagon MinePlan, Datamine, Maptek Vulcan, and Micromine all have APIs or scripting interfaces that could be exposed through MCP. This is the highest-value gap in the ecosystem — mine planning is where the most consequential decisions are made, and AI assistance could significantly improve scheduling optimization, grade control, and production forecasting.</p>
-<p><strong>Geological modeling tools.</strong> Seequent&rsquo;s Leapfrog Geo, which uses AI-driven implicit modeling, has no MCP server despite being the most widely used geological modeling platform. GemPy (open-source 3D geological modeling in Python) is the most MCP-ready geological tool — its Python API could be wrapped as an MCP server relatively easily.</p>
-<p><strong>Drill-hole database management.</strong> acQuire, Fusion (Seequent), and MX Deposit are the primary drill-hole data management systems in mining. None have MCP integrations. These databases are the foundation of mineral exploration and resource estimation — MCP access would enable AI agents to analyze assay results, correlate geological units, and identify exploration targets.</p>
+<p>The mining MCP ecosystem has significant gaps, though Seequent&rsquo;s Evo MCP server (see above) marks the first major vendor entry. Many opportunities remain for developers.</p>
+<p><strong>Mine planning software integration.</strong> No MCP servers exist for any major mine planning platform. Deswik, Hexagon MinePlan, Datamine, Maptek Vulcan, and Micromine all have APIs or scripting interfaces that could be exposed through MCP. This is the highest-value gap in the ecosystem — mine planning is where the most consequential decisions are made, and AI assistance could significantly improve scheduling optimization, grade control, and production forecasting. Seequent&rsquo;s announced partnership with Deswik for data flow between geological models and mine planning may eventually bring MCP connectivity to this space.</p>
+<p><strong>Geological modeling tools.</strong> Seequent&rsquo;s Evo MCP server provides early access to workspace and data management features, but does not yet expose Leapfrog Geo&rsquo;s core implicit modeling capabilities (surface generation, block modeling, grade estimation) through MCP. The gap has narrowed — AI agents can now interact with Seequent&rsquo;s geoscience data platform — but direct AI-driven geological modeling via MCP remains out of reach. GemPy (open-source 3D geological modeling in Python) remains the most MCP-ready option for actual modeling operations — its Python API could be wrapped as an MCP server relatively easily.</p>
+<p><strong>Drill-hole database management.</strong> acQuire and Fusion (Seequent) are the primary drill-hole data management systems in mining. Seequent&rsquo;s Evo MCP server provides some access to downhole collections and intervals, but purpose-built drill-hole database MCP servers with support for full assay querying, QAQC workflows, and compositing do not yet exist. These databases are the foundation of mineral exploration and resource estimation — deeper MCP access would enable AI agents to analyze assay results, correlate geological units, and identify exploration targets.</p>
 <p><strong>Fleet management systems.</strong> Caterpillar MineStar, Wenco FMS, Modular Mining DISPATCH, and Hexagon MineOperate all manage haul truck fleets but lack MCP servers. Fleet optimization is a high-value use case where AI agents could improve truck dispatch, reduce fuel consumption, and minimize equipment idle time.</p>
 <p><strong>Tailings dam monitoring.</strong> Given the catastrophic consequences of tailings dam failures (Brumadinho, Samarco, Mount Polley), real-time monitoring of tailings facilities is critical. While IoT MCP servers can bridge sensor data, no mining-specific tailings monitoring MCP server exists that understands piezometer readings, inclinometer data, seepage flow rates, and dam stability calculations.</p>
 <p><strong>Mineral processing and metallurgy.</strong> Concentrator plants, heap leach operations, and smelters generate extensive process data but have no MCP coverage. Digital twin platforms like Metso&rsquo;s Geminex (used at Newmont&rsquo;s Lihir mine) could benefit from MCP interfaces for AI-driven process optimization.</p>
 <p><strong>Mine closure and rehabilitation.</strong> Mine closure planning, progressive rehabilitation, and post-closure monitoring represent a growing regulatory focus but have no dedicated MCP tooling. AI agents could help track rehabilitation progress against closure plans, estimate closure liabilities, and monitor post-closure environmental performance.</p>
 <h2 id="getting-started-by-role">Getting Started by Role</h2>
 <h3 id="exploration-geologist">Exploration Geologist</h3>
-<p>Start with the <strong>QGIS MCP server</strong> (871 stars) and <strong>NASA Earthdata MCP</strong> for satellite-based mineral mapping. Use <strong>PostGIS MCP</strong> to query drill-hole databases spatially. Add <strong>GIS MCP</strong> for spatial correlation analysis between geological, geochemical, and geophysical datasets.</p>
+<p>Start with the <strong>QGIS MCP server</strong> (901 stars) and <strong>NASA Earthdata MCP</strong> for satellite-based mineral mapping. Use <strong>PostGIS MCP</strong> to query drill-hole databases spatially. Add <strong>GIS MCP</strong> for spatial correlation analysis between geological, geochemical, and geophysical datasets.</p>
 <h3 id="mine-engineer">Mine Engineer</h3>
-<p>Focus on <strong>IoT-Edge MCP Server</strong> (22 stars) for equipment telemetry and <strong>AWS IoT SiteWise MCP</strong> for asset monitoring. Use <strong>Weather MCP</strong> for operational weather planning. The gap you&rsquo;ll feel most is the lack of mine planning software MCP servers — for now, consider wrapping your planning tool&rsquo;s Python API as a custom MCP server.</p>
+<p>Focus on <strong>IoT-Edge MCP Server</strong> for equipment telemetry and <strong>AWS IoT SiteWise MCP</strong> for asset monitoring. Use <strong>Weather MCP</strong> for operational weather planning. The gap you&rsquo;ll feel most is the lack of mine planning software MCP servers — for now, consider wrapping your planning tool&rsquo;s Python API as a custom MCP server.</p>
 <h3 id="environmental-manager">Environmental Manager</h3>
 <p>Combine <strong>IoT-Edge MCP</strong> for environmental sensor data with <strong>Weather MCP</strong> for meteorological context and <strong>QGIS MCP</strong> for spatial compliance mapping. Use these to automate monitoring report generation and exceedance alerting. The ESG reporting gap is significant — you&rsquo;ll likely need custom tooling to map sensor data to IFRS S2 and GRI 14 disclosure formats.</p>
 <h3 id="commodity-analyst">Commodity Analyst</h3>
@@ -594,7 +603,7 @@ Agent workflow:
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-29T00:00:00+09:00","datePublished":"2026-03-29T21:00:00+09:00","description":"A comprehensive guide to 100+ MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 871 stars, ArcGIS, GDAL 59 stars), geological survey data","headline":"MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil \u0026 Gas, and Commodity Trading Tools","mainEntityOfPage":"https://chatforest.com/guides/mcp-mining-natural-resources/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-mining-natural-resources/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-15T00:00:00+09:00","datePublished":"2026-03-29T21:00:00+09:00","description":"A comprehensive guide to 100+ MCP integrations for mining and natural resources — covering geospatial/GIS tools (QGIS 901 stars, ArcGIS, GDAL 64 stars), geological survey data","headline":"MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil \u0026 Gas, and Commodity Trading Tools","mainEntityOfPage":"https://chatforest.com/guides/mcp-mining-natural-resources/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-mining-natural-resources/"}
 </script>
 
 

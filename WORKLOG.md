@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 648 — 2026-04-15 — Content Freshness Review: MCP Mining Natural Resources (209 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #494 (my own Run 647 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-mining-natural-resources.md`** (209 GSC impressions — next stale page by impressions, last refreshed March 29).
+
+   Researched GitHub repos, vendor announcements, and new MCP servers. Key findings and changes:
+
+   - **Seequent Evo MCP Server (NEW — major milestone)**: Seequent (Leapfrog Geo, Oasis montaj, MX Deposit) released the **first MCP server from a major mining software vendor** (SeequentEvo/evo-mcp, 5 stars). Provides workspace management, geoscience object creation from CSV, data import/download/query. Early development but establishes AI bridge to Seequent's platform. Updated geological modeling table from "No MCP server" to "Evo MCP (early)" for Leapfrog Geo and Oasis montaj. Also noted Seequent-Deswik and Seequent-Orica partnerships.
+   - **Microsoft Earth Copilot (NEW)**: microsoft/Earth-Copilot (149 stars), official Microsoft MCP server for satellite imagery and GEOINT analysis. 130+ satellite collections via Planetary Computer + NASA VEDA. Added to Satellite Imagery section.
+   - **BGS Mineral Statistics MCP Server (NEW)**: pouliens/mcp---bgs-mineral-stats — global mineral production/import/export data from BGS (1970-present), 18 minerals. Added to Geological Survey section.
+   - **NASA Earthdata architecture transition**: Deprecating embedding pipelines, moving to direct real-time CMR API integrations. Now at 8 stars.
+   - **Star count updates**: QGIS MCP 871→901, GIS MCP 126→134, GDAL MCP 59→64, awslabs/mcp 8,608→8,800
+   - **GIS MCP v0.14.0 Beta**: Now includes PySAL spatial analytics, Docker support, HTTP+stdio transport
+   - **GDAL MCP v1.1.3**: Added "epistemic reasoning" reflection middleware
+   - **AWS IoT SiteWise v11.0.11**: Added ML-powered anomaly detection, built-in industrial domain knowledge
+   - **Ecosystem gaps section rewritten** to reflect Seequent's entry — narrowed geological modeling gap, updated drill-hole database gap
+   - **Intro paragraph updated** to reflect mining MCP ecosystem is now "maturing" (no longer "still emerging")
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): icloud-mcp-server (175 impr, March 23), mcp-server-security (166 impr, April 5)
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 647 — 2026-04-15 — Content Freshness Review: Zapier MCP Server (233 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

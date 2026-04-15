@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 28, 2026 · Updated Mar 28, 2026</span>
+        <span>Published Mar 28, 2026 · Updated Apr 15, 2026</span>
       </div>
 
       <h1 class="article-title">MCP Caching Strategies: Prompt Caching, Server-Side Caching, Semantic Caching, and Gateway Patterns</h1>
@@ -145,7 +145,7 @@
 </table>
 <p><strong>The golden rule:</strong> Cache <code>list</code> and <code>read</code> operations freely. Cache <code>call</code> operations only at the server level, only for tools you&rsquo;ve verified are idempotent and side-effect-free.</p>
 <h2 id="protocol-level-caching-what-mcp-provides-today">Protocol-Level Caching: What MCP Provides Today</h2>
-<p>The MCP specification (2025-06-18 revision) does not define protocol-level caching primitives like HTTP <code>Cache-Control</code> headers or ETags. MCP operates over JSON-RPC, which is stateless at the message level. However, the protocol provides <strong>notification-based cache invalidation</strong> — a mechanism for servers to tell clients when cached data is stale.</p>
+<p>The MCP specification (2025-11-25 revision) does not define protocol-level caching primitives like HTTP <code>Cache-Control</code> headers or ETags. MCP operates over JSON-RPC, which is stateless at the message level. However, the protocol provides <strong>notification-based cache invalidation</strong> — a mechanism for servers to tell clients when cached data is stale.</p>
 <h3 id="notification-based-invalidation">Notification-Based Invalidation</h3>
 <p>MCP defines several notifications that function as cache invalidation signals:</p>
 <p><strong>Resource notifications:</strong></p>
@@ -286,6 +286,16 @@
 </tbody>
 </table>
 <p>You can set up to 4 explicit cache breakpoints per request, placing them at boundaries with different change frequencies — tools (rarely), system context (daily), conversation history (per turn).</p>
+<h3 id="automatic-caching-simplified-api">Automatic Caching (Simplified API)</h3>
+<p>Anthropic now supports a top-level <code>cache_control</code> field that automatically manages cache breakpoints for growing conversations — no manual breakpoint placement required:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
+    model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-opus-4-6&#34;</span>,
+    max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span>,
+    cache_control<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;ephemeral&#34;</span>},  <span style="color:#75715e"># Automatic breakpoint management</span>
+    system<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Your system prompt...&#34;</span>,
+    messages<span style="color:#f92672">=</span>[<span style="color:#f92672">...</span>],
+)
+</code></pre></div><p>This is the simplest way to enable prompt caching for multi-turn MCP conversations. The API handles breakpoint placement automatically, optimizing for cache hit rates without requiring explicit <code>cache_control</code> annotations on individual content blocks.</p>
 <h3 id="progressive-disclosure-85-98-token-reduction">Progressive Disclosure: 85-98% Token Reduction</h3>
 <p>Anthropic&rsquo;s advanced tool use feature (beta header <code>advanced-tool-use-2025-11-20</code>) introduced <strong>deferred tool loading</strong> — instead of loading all tool definitions upfront, a Tool Search Tool discovers tools on demand.</p>
 <p>Tools marked with <code>defer_loading: true</code> are excluded from the initial prompt. Claude only sees the Tool Search Tool plus critical tools (<code>defer_loading: false</code>). When the model needs a deferred tool, it searches for it, and the tool definition is loaded just in time.</p>
@@ -298,7 +308,7 @@
 <p>This directly enables better prompt cache hit rates — fewer tokens in the tools prefix means the prefix changes less often, which means more cache hits.</p>
 <h2 id="server-side-caching">Server-Side Caching</h2>
 <h3 id="fastmcp-responsecachingmiddleware">FastMCP ResponseCachingMiddleware</h3>
-<p>FastMCP (24,088 stars), the leading Python MCP framework, provides a built-in <code>ResponseCachingMiddleware</code> that caches responses for all MCP methods.</p>
+<p>FastMCP (~24,500 stars), the leading Python MCP framework, provides a built-in <code>ResponseCachingMiddleware</code> that caches responses for all MCP methods.</p>
 <p><strong>Default TTL values:</strong></p>
 <table>
 <thead>
@@ -358,7 +368,7 @@ mcp<span style="color:#f92672">.</span>add_middleware(ResponseCachingMiddleware(
 </ul>
 <p>Cache keys are derived from the method name plus arguments, and the cache is automatically invalidated when the server sends <code>list_changed</code> notifications.</p>
 <h3 id="redis-mcp-server">Redis MCP Server</h3>
-<p>The official Redis MCP Server (redis/mcp-redis, 465 stars) provides a natural language interface for AI agents to manage Redis data. While not a caching middleware itself, it enables MCP-native caching patterns — agents can directly store and retrieve cached results using Redis data structures (hashes, lists, sets, sorted sets, streams, JSON).</p>
+<p>The official Redis MCP Server (redis/mcp-redis, 479 stars) provides a natural language interface for AI agents to manage Redis data. While not a caching middleware itself, it enables MCP-native caching patterns — agents can directly store and retrieve cached results using Redis data structures (hashes, lists, sets, sorted sets, streams, JSON).</p>
 <h3 id="the-sqlite-as-cache-pattern">The SQLite-as-Cache Pattern</h3>
 <p>A recognized architecture pattern in MCP database servers uses SQLite as a disposable cache layer:</p>
 <pre><code>Domain files (ground truth: YAML, JSON, Markdown)
@@ -401,7 +411,7 @@ MCP server (tools + resources → AI assistant)
 <li>Client-side caching when applicable</li>
 </ol>
 <h3 id="ibm-contextforge">IBM ContextForge</h3>
-<p>ContextForge (IBM/mcp-context-forge, 3,489 stars) is an open-source registry and proxy that federates MCP servers, A2A servers, and REST/gRPC APIs into a unified endpoint.</p>
+<p>ContextForge (IBM/mcp-context-forge, ~3,600 stars) is an open-source registry and proxy that federates MCP servers, A2A servers, and REST/gRPC APIs into a unified endpoint.</p>
 <p><strong>Caching features:</strong></p>
 <ul>
 <li>Redis-backed caching for production deployments</li>
@@ -411,7 +421,7 @@ MCP server (tools + resources → AI assistant)
 </ul>
 <p>ContextForge also provides rate limiting, authentication, automatic retries, 40+ plugins, and OpenTelemetry tracing — making it a full-featured gateway for MCP infrastructure.</p>
 <h3 id="bifrost-ai-gateway">Bifrost AI Gateway</h3>
-<p>Bifrost (maximhq/bifrost, 3,293 stars) is a high-performance open-source AI gateway built in Go:</p>
+<p>Bifrost (maximhq/bifrost, ~3,800 stars) is a high-performance open-source AI gateway built in Go:</p>
 <ul>
 <li><strong>11 microsecond overhead</strong> at 5,000 requests/second</li>
 <li>Native MCP gateway support for agentic workflows</li>
@@ -428,7 +438,7 @@ MCP server (tools + resources → AI assistant)
 <ul>
 <li><strong>Envoy AI Gateway</strong> — First-class MCP support with lightweight proxy handling session management, stream multiplexing, and Envoy extension mechanisms</li>
 <li><strong>Kong AI MCP Proxy</strong> — Enterprise plugin that converts APIs into MCP tools and proxies MCP servers transparently</li>
-<li><strong>LiteLLM</strong> (BerriAI/litellm, 41,296 stars) — Open-source proxy for 100+ LLM providers with built-in caching (exact and semantic modes)</li>
+<li><strong>LiteLLM</strong> (BerriAI/litellm, ~43,300 stars) — Open-source proxy for 100+ LLM providers with built-in caching (exact and semantic modes)</li>
 </ul>
 <h2 id="semantic-caching">Semantic Caching</h2>
 <p>Traditional caching requires exact key matches. Semantic caching uses <strong>vector embeddings</strong> to match queries by meaning — &ldquo;What is the refund policy?&rdquo; and &ldquo;How do I get a refund?&rdquo; resolve to the same cached answer.</p>
@@ -441,7 +451,7 @@ MCP server (tools + resources → AI assistant)
 </ol>
 <p>Cache hits return in under 5 milliseconds compared to 2-5 seconds for full model calls.</p>
 <h3 id="gptcache">GPTCache</h3>
-<p>GPTCache (zilliztech/GPTCache, 7,971 stars) is a purpose-built semantic cache for LLM responses with a modular architecture:</p>
+<p>GPTCache (zilliztech/GPTCache, ~8,000 stars) is a purpose-built semantic cache for LLM responses with a modular architecture:</p>
 <ul>
 <li><strong>Embedding adapters:</strong> OpenAI, Hugging Face, Cohere, ONNX models</li>
 <li><strong>Vector stores:</strong> Milvus, FAISS, Hnswlib, PGVector, Chroma, Zilliz Cloud</li>
@@ -688,37 +698,37 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_lar
 <tr>
 <td><strong>FastMCP</strong></td>
 <td>Server framework</td>
-<td>24,088</td>
+<td>~24,500</td>
 <td>Built-in ResponseCachingMiddleware</td>
 </tr>
 <tr>
 <td><strong>LiteLLM</strong></td>
 <td>LLM proxy</td>
-<td>41,296</td>
+<td>~43,300</td>
 <td>Semantic + exact caching for 100+ providers</td>
 </tr>
 <tr>
 <td><strong>GPTCache</strong></td>
 <td>Semantic cache</td>
-<td>7,971</td>
+<td>~8,000</td>
 <td>Purpose-built LLM semantic cache (FAISS/Milvus)</td>
 </tr>
 <tr>
 <td><strong>ContextForge</strong></td>
 <td>MCP gateway</td>
-<td>3,489</td>
+<td>~3,600</td>
 <td>IBM gateway with Redis federation + caching</td>
 </tr>
 <tr>
 <td><strong>Bifrost</strong></td>
 <td>AI gateway</td>
-<td>3,293</td>
+<td>~3,800</td>
 <td>11μs overhead, semantic caching, native MCP</td>
 </tr>
 <tr>
 <td><strong>Redis MCP</strong></td>
 <td>Data server</td>
-<td>465</td>
+<td>479</td>
 <td>Official Redis MCP interface</td>
 </tr>
 <tr>
@@ -736,7 +746,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_lar
 <tr>
 <td><strong>mcp-cache</strong></td>
 <td>Response proxy</td>
-<td>5</td>
+<td>6</td>
 <td>Transparent proxy for oversized responses</td>
 </tr>
 <tr>
@@ -837,7 +847,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_lar
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-28T00:00:00+09:00","datePublished":"2026-03-28T22:00:00+09:00","description":"A comprehensive guide to caching in MCP systems — covering Anthropic prompt caching (90% cost reduction), FastMCP ResponseCachingMiddleware, server-side patterns (Redis","headline":"MCP Caching Strategies: Prompt Caching, Server-Side Caching, Semantic Caching, and Gateway Patterns","mainEntityOfPage":"https://chatforest.com/guides/mcp-caching-strategies/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-caching-strategies/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-15T00:00:00+09:00","datePublished":"2026-03-28T22:00:00+09:00","description":"A comprehensive guide to caching in MCP systems — covering Anthropic prompt caching (90% cost reduction), FastMCP ResponseCachingMiddleware, server-side patterns (Redis","headline":"MCP Caching Strategies: Prompt Caching, Server-Side Caching, Semantic Caching, and Gateway Patterns","mainEntityOfPage":"https://chatforest.com/guides/mcp-caching-strategies/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-caching-strategies/"}
 </script>
 
 
