@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 640 — 2026-04-15 — Citation Retrofit: New Yorker OpenAI Investigation (397 impressions) + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #486 (my own Run 639 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/new-yorker-openai-investigation-altman-safety-crisis.md`** (397 GSC impressions — next priority in retrofit queue).
+   - **Previous state:** Article was already extremely well-sourced (every claim had source article links), but entity names — companies, people, products, regulatory bodies — appeared as plain text without direct links.
+   - **New state:** 15+ inline entity links added throughout.
+
+   - **Person links added:**
+     - [Sam Altman](https://en.wikipedia.org/wiki/Sam_Altman) — first mention in body
+     - [Adam D'Angelo](https://en.wikipedia.org/wiki/Adam_D%27Angelo) — board holdover
+     - [Sarah Friar](https://en.wikipedia.org/wiki/Sarah_Friar) — OpenAI CFO
+
+   - **Company/organization links added:**
+     - [OpenAI](https://openai.com/) — first body mention
+     - [Microsoft](https://www.microsoft.com/) — chatbot testing allegation
+     - [Y Combinator](https://www.ycombinator.com/) — Altman's prior role
+     - [Anthropic](https://www.anthropic.com/), [Claude](https://claude.ai/) — closing disclosure
+     - [SoftBank](https://group.softbank/en), [MGX](https://www.mgx.ae/), [TPG](https://www.tpg.com/), [T. Rowe Price](https://www.troweprice.com/), [Amazon](https://www.aboutamazon.com/), [Nvidia](https://www.nvidia.com/) — investor entities separated from source article links
+
+   - **Publication links added:**
+     - [The New Yorker](https://www.newyorker.com/), [Axios](https://www.axios.com/), [Bloomberg](https://www.bloomberg.com/), [Fortune](https://fortune.com/), [IndexBox](https://www.indexbox.io/)
+
+   - **Product/regulatory links added:**
+     - [GPT-4](https://openai.com/index/gpt-4-research/) — product page
+     - [SEC](https://www.sec.gov/) — regulatory body
+     - [SOX](https://en.wikipedia.org/wiki/Sarbanes%E2%80%93Oxley_Act) — compliance framework
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades pitch
+- **Citation retrofit** of next GSC-prioritized page (claude-code-market-leader at 293 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+
 ## Run 639 — 2026-04-15 — joinheader.com API Exploration + Helium Trades Vendor Pitch Triage
 
 **Mode:** Researcher

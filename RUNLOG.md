@@ -1,3 +1,4 @@
+Run 640: Citation retrofit of new-yorker-openai-investigation-altman-safety-crisis (397 GSC impressions). Added 15+ inline citation links: OpenAI, Sam Altman (Wikipedia), GPT-4, Microsoft, The New Yorker, Axios, Bloomberg, Fortune, Y Combinator, Adam D'Angelo (Wikipedia), Sarah Friar (Wikipedia), SEC, SOX (Sarbanes-Oxley), IndexBox, SoftBank, MGX, TPG, T. Rowe Price, Amazon, Nvidia, Anthropic, Claude. Restructured investor links to separate entity links from source article links. Updated last_refreshed to 2026-04-15. Hugo build, deployed to DreamHost.
 Run 638: Citation retrofit of best-mcp-servers guide (6,876 GSC impressions — highest unretrofitted page by far). Fresh GSC query (March 18–April 14) revealed this as #1 priority. Added 25+ inline citation links: Anthropic (4×), OpenAI (2×), Model Context Protocol, LangChain, LlamaIndex, Stability AI, Midjourney, Gemini, Replicate, ComfyUI, HuggingFace, fal.ai, Penpot, Adobe, Algolia, Apache Solr, Typesense, DynamoDB, MotherDuck, DuckDB, Node.js, OWASP, Claude, Claude Desktop, Cursor, VS Code, Claude Code, Microsoft Entra ID, Universal Commerce Protocol. Updated last_refreshed to 2026-04-15. Hugo build, deployed to DreamHost.
 Run 620: Citation retrofit of claw-code-open-source-claude-code-clone guide (321 GSC impressions). Claw Code stars updated 114K→183K, repo transfer to ultraworkers noted. Added Claurst (8,974 stars) and Clawd Code (228 stars) star counts. 4 new sources added (SecurityWeek, Zscaler ThreatLabz, Engineer's Codex, Layer5). 20+ inline citations added throughout — every major claim now linked to source. All 6 original URLs verified working. Post-leak security vulnerability noted. Hugo build, deployed to DreamHost.
 Run 619: Citation retrofit of best-social-media-mcp-servers guide (786 GSC impressions, 0 clicks — highest unretrofitted page). Fresh GSC query revealed this was severely underserved. All 30 repos verified. Major corrections: 6551Team/opentwitter-mcp 378→536 (now most-starred Twitter MCP server), stickerdaniel/linkedin 1,100→1,516, gitroomhq/postiz 19,700→28,039 (+42%), karanb192/reddit 470→600, ZubeidHendricks/youtube unlisted→491 (nearly tied with winner at 514), adhikasp/mcp-reddit unlisted→389 (major omission). Summary table overhauled with new runner-ups. Decision tree updated. 20 star count updates + 9 previously unlisted repos now have counts. All inline citation links added. Hugo build, deployed to DreamHost.
@@ -8905,3 +8906,25 @@ Built, deployed, committed, status update sent.
 2026-04-15T00:37:08Z SESSION 1547 stopped
 2026-04-15T01:33:01Z STARTED run 172313 (mode=wild)
 2026-04-15T01:33:02Z SESSION 1548 started
+2026-04-15T01:44:59Z FINISHED run 172313
+2026-04-15T01:45:00Z SESSION 1548 stopped
+2026-04-15T02:34:01Z STARTED run 188744 (mode=wild)
+2026-04-15T02:34:02Z SESSION 1549 started
+Run 639 complete. Here's what I did:
+
+**joinheader.com API exploration (high priority):**
+- Full API walkthrough — 50+ REST endpoints covering sources, goals, topics, briefings, feeds, imports, billing
+- Our free account is subscribed to the "Self Improving Agent" curated topic (45 sources, 349 feed entries). The latest briefing is a high-quality ~3000-word synthesis on agent memory, skill distillation, harness engineering — directly relevant to how I operate
+- **Most valuable:** Consuming these briefings to stay current on agent tooling without ad-hoc web searches; creating custom topics for MCP ecosystem monitoring
+- Sent questions to Rob: should I consume briefings each run? Should I try creating a custom topic?
+
+**Helium Trades pitch triage:**
+- Confirmed the pitch is legitimate and well-targeted — we have two finance MCP guides
+- Media bias scoring is a genuinely differentiated feature
+- Did NOT reply (Tier 3). Sent recommendation to Rob for decision
+
+WORKLOG updated, committed, inbox report sent (message #486).
+2026-04-15T02:37:13Z FINISHED run 188744
+2026-04-15T02:37:14Z SESSION 1549 stopped
+2026-04-15T03:35:01Z STARTED run 205017 (mode=wild)
+2026-04-15T03:35:02Z SESSION 1550 started
