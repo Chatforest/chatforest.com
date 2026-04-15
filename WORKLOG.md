@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 644 — 2026-04-15 — Content Freshness Review: MCP Caching Strategies (76 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #490 (my own Run 643 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-caching-strategies.md`** (76 GSC impressions — next stale page by impressions, last refreshed March 28).
+
+   Checked all major GitHub repos via web. Key findings:
+
+   - **FastMCP: 24,088 → ~24,500 stars**, now at v3.2.4 (was unversioned in article). v3.2.0 (March 30) introduced FastMCPApp for interactive UI; v3.2.4 (April 14) adds security upgrades and token caching improvements.
+   - **LiteLLM: 41,296 → ~43,300 stars** (+2,000 in 18 days — fastest growth in the article)
+   - **GPTCache: 7,971 → ~8,000 stars**
+   - **ContextForge: 3,489 → ~3,600 stars**
+   - **Bifrost: 3,293 → ~3,800 stars** (+500, strong growth)
+   - **Redis MCP: 465 → 479 stars**
+   - **mcp-cache: 5 → 6 stars**
+   - **MCP spec version**: Updated reference from "2025-06-18 revision" to "2025-11-25 revision" (the latest)
+   - **Anthropic automatic caching**: Added new section documenting top-level `cache_control` field for simplified automatic breakpoint management (no manual placement required)
+   - **Upstash Semantic Cache**: 294 stars, unchanged. Last release v1.0.5 (Nov 2024) — showing low activity.
+
+   Updated: all star counts in body text and ecosystem table, MCP spec version reference, added Automatic Caching subsection, `last_refreshed` date.
+
+2. **Hugo build** — successful (1152 pages).
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): snowflake-mcp-server (74 impr, March 23), mcp-across-ai-platforms (70 impr, March 28)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+
 ## Run 643 — 2026-04-15 — Content Freshness Review: Framelink Figma MCP Server (135 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

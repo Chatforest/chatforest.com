@@ -4,7 +4,7 @@ date: 2026-03-28T22:00:00+09:00
 description: "A comprehensive guide to caching in MCP systems — covering Anthropic prompt caching (90% cost reduction), FastMCP ResponseCachingMiddleware, server-side patterns (Redis"
 content_type: "Guide"
 card_description: "A typical MCP setup with five servers burns 55,000+ tokens before the conversation starts. This guide covers every caching layer — from Anthropic prompt caching to semantic caching — that can cut costs by 90%, reduce latency by 85%, and keep your agents fast."
-last_refreshed: 2026-03-28
+last_refreshed: 2026-04-15
 ---
 
 A typical MCP deployment with five servers and 58 tools consumes over 55,000 tokens before the first user message. Add a few more integrations — Jira alone uses ~17,000 tokens — and you're burning 100,000+ tokens of context window on tool definitions alone. Every API call that could return cached data but doesn't is wasted latency and money. At Anthropic's Opus 4.6 pricing, an uncached 100K-token prompt costs $0.50 per request; with prompt caching, that drops to $0.05.
@@ -42,7 +42,7 @@ Before diving into specific tools, it helps to understand what can and should be
 
 ## Protocol-Level Caching: What MCP Provides Today
 
-The MCP specification (2025-06-18 revision) does not define protocol-level caching primitives like HTTP `Cache-Control` headers or ETags. MCP operates over JSON-RPC, which is stateless at the message level. However, the protocol provides **notification-based cache invalidation** — a mechanism for servers to tell clients when cached data is stale.
+The MCP specification (2025-11-25 revision) does not define protocol-level caching primitives like HTTP `Cache-Control` headers or ETags. MCP operates over JSON-RPC, which is stateless at the message level. However, the protocol provides **notification-based cache invalidation** — a mechanism for servers to tell clients when cached data is stale.
 
 ### Notification-Based Invalidation
 
@@ -148,6 +148,22 @@ Anthropic automatically extends cache breakpoints as conversations grow:
 
 You can set up to 4 explicit cache breakpoints per request, placing them at boundaries with different change frequencies — tools (rarely), system context (daily), conversation history (per turn).
 
+### Automatic Caching (Simplified API)
+
+Anthropic now supports a top-level `cache_control` field that automatically manages cache breakpoints for growing conversations — no manual breakpoint placement required:
+
+```python
+response = client.messages.create(
+    model="claude-opus-4-6",
+    max_tokens=1024,
+    cache_control={"type": "ephemeral"},  # Automatic breakpoint management
+    system="Your system prompt...",
+    messages=[...],
+)
+```
+
+This is the simplest way to enable prompt caching for multi-turn MCP conversations. The API handles breakpoint placement automatically, optimizing for cache hit rates without requiring explicit `cache_control` annotations on individual content blocks.
+
 ### Progressive Disclosure: 85-98% Token Reduction
 
 Anthropic's advanced tool use feature (beta header `advanced-tool-use-2025-11-20`) introduced **deferred tool loading** — instead of loading all tool definitions upfront, a Tool Search Tool discovers tools on demand.
@@ -165,7 +181,7 @@ This directly enables better prompt cache hit rates — fewer tokens in the tool
 
 ### FastMCP ResponseCachingMiddleware
 
-FastMCP (24,088 stars), the leading Python MCP framework, provides a built-in `ResponseCachingMiddleware` that caches responses for all MCP methods.
+FastMCP (~24,500 stars), the leading Python MCP framework, provides a built-in `ResponseCachingMiddleware` that caches responses for all MCP methods.
 
 **Default TTL values:**
 
@@ -207,7 +223,7 @@ Cache keys are derived from the method name plus arguments, and the cache is aut
 
 ### Redis MCP Server
 
-The official Redis MCP Server (redis/mcp-redis, 465 stars) provides a natural language interface for AI agents to manage Redis data. While not a caching middleware itself, it enables MCP-native caching patterns — agents can directly store and retrieve cached results using Redis data structures (hashes, lists, sets, sorted sets, streams, JSON).
+The official Redis MCP Server (redis/mcp-redis, 479 stars) provides a natural language interface for AI agents to manage Redis data. While not a caching middleware itself, it enables MCP-native caching patterns — agents can directly store and retrieve cached results using Redis data structures (hashes, lists, sets, sorted sets, streams, JSON).
 
 ### The SQLite-as-Cache Pattern
 
@@ -269,7 +285,7 @@ Keys incorporate the method name, URI/parameters, server version or timestamp, a
 
 ### IBM ContextForge
 
-ContextForge (IBM/mcp-context-forge, 3,489 stars) is an open-source registry and proxy that federates MCP servers, A2A servers, and REST/gRPC APIs into a unified endpoint.
+ContextForge (IBM/mcp-context-forge, ~3,600 stars) is an open-source registry and proxy that federates MCP servers, A2A servers, and REST/gRPC APIs into a unified endpoint.
 
 **Caching features:**
 - Redis-backed caching for production deployments
@@ -281,7 +297,7 @@ ContextForge also provides rate limiting, authentication, automatic retries, 40+
 
 ### Bifrost AI Gateway
 
-Bifrost (maximhq/bifrost, 3,293 stars) is a high-performance open-source AI gateway built in Go:
+Bifrost (maximhq/bifrost, ~3,800 stars) is a high-performance open-source AI gateway built in Go:
 - **11 microsecond overhead** at 5,000 requests/second
 - Native MCP gateway support for agentic workflows
 - **Semantic caching** as a first-class feature (covered in the next section)
@@ -304,7 +320,7 @@ This offloads approximately 40% of requests to CDN edges. For medium-traffic app
 
 - **Envoy AI Gateway** — First-class MCP support with lightweight proxy handling session management, stream multiplexing, and Envoy extension mechanisms
 - **Kong AI MCP Proxy** — Enterprise plugin that converts APIs into MCP tools and proxies MCP servers transparently
-- **LiteLLM** (BerriAI/litellm, 41,296 stars) — Open-source proxy for 100+ LLM providers with built-in caching (exact and semantic modes)
+- **LiteLLM** (BerriAI/litellm, ~43,300 stars) — Open-source proxy for 100+ LLM providers with built-in caching (exact and semantic modes)
 
 ## Semantic Caching
 
@@ -321,7 +337,7 @@ Cache hits return in under 5 milliseconds compared to 2-5 seconds for full model
 
 ### GPTCache
 
-GPTCache (zilliztech/GPTCache, 7,971 stars) is a purpose-built semantic cache for LLM responses with a modular architecture:
+GPTCache (zilliztech/GPTCache, ~8,000 stars) is a purpose-built semantic cache for LLM responses with a modular architecture:
 
 - **Embedding adapters:** OpenAI, Hugging Face, Cohere, ONNX models
 - **Vector stores:** Milvus, FAISS, Hnswlib, PGVector, Chroma, Zilliz Cloud
@@ -556,15 +572,15 @@ A comprehensive MCP caching strategy operates across six layers, each addressing
 
 | Project | Type | Stars | Key Feature |
 |---------|------|-------|-------------|
-| **FastMCP** | Server framework | 24,088 | Built-in ResponseCachingMiddleware |
-| **LiteLLM** | LLM proxy | 41,296 | Semantic + exact caching for 100+ providers |
-| **GPTCache** | Semantic cache | 7,971 | Purpose-built LLM semantic cache (FAISS/Milvus) |
-| **ContextForge** | MCP gateway | 3,489 | IBM gateway with Redis federation + caching |
-| **Bifrost** | AI gateway | 3,293 | 11μs overhead, semantic caching, native MCP |
-| **Redis MCP** | Data server | 465 | Official Redis MCP interface |
+| **FastMCP** | Server framework | ~24,500 | Built-in ResponseCachingMiddleware |
+| **LiteLLM** | LLM proxy | ~43,300 | Semantic + exact caching for 100+ providers |
+| **GPTCache** | Semantic cache | ~8,000 | Purpose-built LLM semantic cache (FAISS/Milvus) |
+| **ContextForge** | MCP gateway | ~3,600 | IBM gateway with Redis federation + caching |
+| **Bifrost** | AI gateway | ~3,800 | 11μs overhead, semantic caching, native MCP |
+| **Redis MCP** | Data server | 479 | Official Redis MCP interface |
 | **Upstash Semantic** | Semantic cache | 294 | Edge/serverless semantic caching |
 | **ib-mcp-cache-server** | Cache server | 24 | Automatic token reduction between LLM calls |
-| **mcp-cache** | Response proxy | 5 | Transparent proxy for oversized responses |
+| **mcp-cache** | Response proxy | 6 | Transparent proxy for oversized responses |
 | **mcp-refcache** | Reference cache | 1 | Context explosion prevention + permissions |
 | **prompt-caching-mcp** | Debug tool | — | Analyze/debug Anthropic prompt caching |
 
