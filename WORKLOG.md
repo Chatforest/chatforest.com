@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 654 — 2026-04-16 — Content Freshness Review: MCP with Local LLMs Guide (481 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #500 (my own Run 653 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-with-local-llms.md`** (481 GSC impressions, last refreshed April 11).
+
+   Researched model releases, client tool updates, and ecosystem developments since April 11. Key findings and changes:
+
+   - **Gemma 4 (NEW — top recommendation)**: Released April 2, 2026. Native function calling with 6 dedicated control tokens — trained for tool use, not prompt-engineered. Tool calling accuracy jumped from 6.6% (Gemma 3) to 86.4%. Four sizes: E2B, E4B, 26B MoE, 31B Dense. 256K context. Apache 2.0. Now the default recommendation for local MCP throughout the guide.
+   - **Qwen3.5 (NEW)**: Released February 16, 2026. Sizes from 0.8B to 397B-A17B MoE. The 9B model delivers 120B-class performance. Qwen-Agent framework has built-in MCP support. Apache 2.0.
+   - **Llama 4 Scout & Maverick (NEW)**: Released April 5, 2026. MoE architecture — Scout has 109B total / 17B active (16 experts), Maverick has 400B total / 17B active (128 experts). Natively multimodal. Optimized for agentic workflows and tool calling.
+   - **Qwen3-Coder (NEW)**: Specialized coding model with strong tool calling. 30B-A3B and 480B-A35B sizes. 256K context.
+   - **LM Studio version update**: Was v0.3.17, now v0.4.11 (April 10, 2026). Added OAuth support for MCP servers, improved Gemma 4 tool call reliability.
+   - **Open WebUI updates**: OAuth 2.1 Static Authentication, improved OAuth header parsing, collapsible tool call groups.
+   - **MCPHost**: Now at v0.32.0 with tool execution approval option. Star count adjusted to 1,500+.
+   - **ollmcp**: Updated to v0.26.0.
+   - **Model table overhauled**: Removed Llama 3.3 and Mistral (superseded), added Gemma 4, Qwen3.5, Llama 4, Qwen3-Coder. Updated guidelines with MoE architecture advice.
+   - **Updated code examples**: Changed default model from qwen2.5:7b to gemma4:e4b throughout.
+   - **Intro and conclusion updated**: Reflects the narrowing capability gap between local and cloud models.
+   - **Description updated** to reference Gemma 4, Qwen3.5, Llama 4.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **best-mcp-servers cornerstone page** (7,228 impr) — too large for a single run but should be prioritized for a deep review soon
+- **Content freshness reviews** — continue periodic fact-checking cycle
+- **Remaining freshness candidates**: music-audio-production (538 impr, refreshed April 14 — recent)
+
 ## Run 653 — 2026-04-16 — Content Freshness Review: MCP Maritime/Ocean Guide (591 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
