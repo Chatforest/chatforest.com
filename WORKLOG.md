@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 639 — 2026-04-15 — joinheader.com API Exploration + Helium Trades Vendor Pitch Triage
+
+**Mode:** Researcher
+
+### Inbox update
+- **Message #483 (HIGH priority):** Rob set up a free joinheader.com account with API key. Wants first-look exploration of the API — what's available, what's valuable, what isn't. Marked seen, executing this run.
+- **Message #485 (normal):** Vendor outreach from Helium Trades (Conner Lambden) wanting inclusion in our finance MCP servers guide. Boss Claude forwarded with triage questions. Marked seen.
+- **Message #481:** My own Run 638 status update. Marked seen.
+
+### What I did
+
+#### 1. joinheader.com API Exploration (HIGH priority task)
+
+**What joinheader.com is:** A "continuous intelligence platform" / "user-directed intelligence briefing system." It ingests content from RSS feeds, YouTube channels, newsletters, Substack, Reddit, and HN, then uses LLMs to synthesize goal-directed briefings. Think "personalized daily briefing as a service" — targeted at engineers, PMs, founders, and (explicitly) AI agents.
+
+**API explored (OpenAPI v2):** Full REST API with 50+ endpoints across these resource types:
+- **Sources** — individual content feeds (RSS, YouTube, etc.). CRUD + refresh/validate/preview/batch.
+- **Source Groups** — collections of sources, with nested group support. Clone, bulk add/remove members.
+- **Goals** — learning objectives that filter source content. LLM-powered goal quality evaluation via `/evaluate`.
+- **Topics** — high-level containers that combine goals + source groups. Public catalog, fork, subscribe model.
+- **Briefings** — the main output. Async generation, public/private sharing, transparency endpoint showing LLM processing details.
+- **Feed** — paginated preprocessed entries from sources (raw content before briefing synthesis).
+- **Imports** — OPML import, FreshRSS integration.
+- **Billing** — Polar-based checkout/subscription (free/paid tiers).
+- **Preferences** — briefing length (standard/long).
+
+**Account state:**
+- Free tier, no custom topics or goals created yet.
+- Subscribed to one public topic: "Self Improving Agent" (curated, designed for AI agents like us).
+- 349 feed entries available, 45 sources backing the subscribed topic.
+- The example briefing Rob shared (7f495358...) is the latest from this topic — a high-quality, ~3000-word synthesis with citations, actionable recommendations, and dissenting views.
+
+**What looks valuable to ChatForest:**
+1. **The "Self Improving Agent" briefing is directly useful to me (Grove).** It synthesizes agent ecosystem news (new tools, MCP servers, memory patterns, orchestration best practices) into actionable items. The April 13 briefing covered OpenClaw dreaming, skill distillation from session logs, harness engineering, AGENTS.md standards, and multi-agent orchestration — all relevant to how I operate.
+2. **Feed as a research input.** The `/feed` endpoint gives pre-filtered, relevant articles without me needing to do broad web searches. 349 entries from 45 curated sources on agent tooling.
+3. **Custom topics for ChatForest content research.** We could create a topic like "MCP ecosystem news" with curated sources, and get auto-synthesized briefings to inform our content freshness reviews and new article ideas.
+4. **The public catalog** has 6 curated topics (Agentic Coding, Market Signals, Aerospace, Claude Code, etc.) — subscribable for free.
+
+**What doesn't look valuable (or is limited):**
+1. **Source creation on free tier** — unclear if free accounts can create custom topics/goals or just subscribe to public ones. Would need testing.
+2. **The huge public source library** (hundreds of YouTube channels, RSS feeds) is mostly noise for our use case — sports, finance, misc. The "Agent Ecosystem Sources" group is the gem.
+3. **Billing/webhook/import endpoints** — not relevant to us right now.
+4. **Briefing generation** — async, likely rate-limited on free tier. Not tested (being reasonable with request volume per Rob's instruction).
+
+**Bottom line:** Header is a well-built intelligence briefing tool with an agent-friendly API. The "Self Improving Agent" topic is immediately useful — I could read its latest briefing each run to stay current on agent tooling without spending time on web searches. Custom topics would be even more valuable if the free tier allows creating them. Worth asking Rob if he wants me to start consuming these briefings regularly.
+
+#### 2. Helium Trades vendor pitch triage
+
+**Verification results:**
+- **Does the finance MCP servers guide exist?** YES — we have both `content/guides/best-finance-mcp-servers.md` and `content/guides/mcp-finance-fintech.md`. The pitch is well-researched and targeted, not a hallucinated cold-mail wave.
+- **Conner Lambden / heliumtrades.com** — not independently verified this run (would require additional web searches), but the pitch is specific and technical enough to be credible.
+- **The pitch itself** — Helium MCP offers real-time news search (3.2M+ articles), media bias scoring (15+ dimensions), ML options pricing, and zero-config setup. The media bias scoring angle is genuinely differentiated — no other finance MCP I've reviewed does this.
+
+**My recommendation:** This is worth evaluating for inclusion in the finance MCP guide. The media bias + balanced news synthesis features are unique among finance MCP servers. I'd want to verify the GitHub repo exists, test the no-auth 50-query claim, and check the MCP endpoint before writing it up. But I should NOT reply to Conner directly (Tier 3: creating external communications on Rob's behalf). Sending findings to Rob/Boss Claude for a decision.
+
+### What should happen next
+- **Rob decision needed:** Should I start consuming joinheader.com "Self Improving Agent" briefings each run? Should I try creating a custom "MCP Ecosystem" topic?
+- **Rob decision needed:** Should I evaluate Helium MCP for the finance guide? Should Rob reply to Conner?
+- **Continue citation retrofit queue** — next page is new-yorker-openai-investigation (397 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+
 ## Run 638 — 2026-04-15 — Citation Retrofit: Best MCP Servers Guide (6,876 impressions) + GSC Refresh + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
