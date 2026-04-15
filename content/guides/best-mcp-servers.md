@@ -5,7 +5,7 @@ description: "We've researched 287 MCP servers across 100+ categories. Here are 
 og_description: "287 MCP servers researched, 100+ categories compared. Every recommendation links to a full review. No affiliate links, no sponsored picks."
 content_type: "Comparison"
 card_description: "287 MCP servers researched across 100+ categories. Here are the ones worth installing — and the ones to avoid. Every pick backed by a full review."
-last_refreshed: 2026-04-11
+last_refreshed: 2026-04-15
 ---
 
 Most "best MCP servers" lists are SEO plays: 10-15 servers, one paragraph each, no testing. They tell you a server exists. They don't tell you if it's good.
@@ -242,7 +242,7 @@ Search is the most fundamental agent capability, and there are three paradigms t
 - **Our pick: [Exa](/reviews/exa-mcp-server/) (4/5).** [Outperforms Tavily on benchmarks](https://exa.ai/versus/tavily) (81% vs 71% on [WebWalker](https://github.com/SevenPlusPlus/WebWalker)) with lower latency. Query-dependent highlights reduce token usage by 50-75%. Consolidated to 4 tools in March 2026 (from 9), with `web_search_advanced_exa` replacing specialized tools. [4,100 stars](https://github.com/exa-labs/exa-mcp-server). 1,000 free requests/month.
 
 **Search + extraction** — search the web, then extract and crawl the results. Best for RAG pipelines and content ingestion.
-- **Worth considering: [Tavily](/reviews/tavily-mcp-server/) (4/5).** Four tools covering search, extract, crawl, and map. The default search API for LangChain and LlamaIndex. Hosted remote server with zero-install setup. Keyword search quality trails semantic engines, but the search-to-extract pipeline is unmatched.
+- **Worth considering: [Tavily](/reviews/tavily-mcp-server/) (4/5).** Four tools covering search, extract, crawl, and map. The default search API for [LangChain](https://www.langchain.com/) and [LlamaIndex](https://www.llamaindex.ai/). Hosted remote server with zero-install setup. Keyword search quality trails semantic engines, but the search-to-extract pipeline is unmatched.
 
 **Answer engines** — return synthesized answers with citations, not just links.
 - **Worth considering: [Perplexity](/reviews/perplexity-mcp-server/) (4/5).** Four tools covering search, conversational AI, deep research, and analytical reasoning — each backed by a purpose-built Sonar model. Returns answers instead of links, which is faster for factual queries. Deep research tool produces reports no other MCP server can match. No free tier.
@@ -273,7 +273,7 @@ For scale (crawling entire sites, structured extraction, autonomous research), [
 
 The official database MCP servers are both archived — and both have security vulnerabilities.
 
-The [official PostgreSQL server](/reviews/postgres-mcp-server/) (2.5/5) has a [SQL injection vulnerability](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) that bypasses its read-only transaction wrapper. Multi-statement injection (`COMMIT; DROP SCHEMA public CASCADE;`) works because the Node.js postgres client accepts semicolon-delimited statements. **Stop using it.**
+The [official PostgreSQL server](/reviews/postgres-mcp-server/) (2.5/5) has a [SQL injection vulnerability](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) that bypasses its read-only transaction wrapper. Multi-statement injection (`COMMIT; DROP SCHEMA public CASCADE;`) works because the [Node.js](https://nodejs.org/) postgres client accepts semicolon-delimited statements. **Stop using it.**
 
 The [official SQLite server](/reviews/sqlite-mcp-server/) (2.5/5) also has a publicly disclosed SQL injection vulnerability ([June 2025, Trend Micro](https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html)). Unsanitized table names concatenated via f-strings enable stored prompt injection — an attacker plants a payload in a database field, and when an AI agent reads it, the payload hijacks the agent. Anthropic [declined to patch it](https://github.com/modelcontextprotocol/servers/issues/3314). **Stop using it with real data.**
 
@@ -289,11 +289,11 @@ The [official SQLite server](/reviews/sqlite-mcp-server/) (2.5/5) also has a pub
 
 **For Redis:** Use the **official redis/mcp-redis** (452 stars) — covers all Redis data structures (strings, hashes, lists, sets, sorted sets, streams, JSON), plus vector search and EntraID authentication.
 
-**For DynamoDB:** AWS's official DynamoDB MCP server focuses on data modeling and migration — requirements gathering, model validation against DynamoDB Local, code generation, and cost analysis. A design tool, not a runtime query tool.
+**For [DynamoDB](https://aws.amazon.com/dynamodb/):** AWS's official DynamoDB MCP server focuses on data modeling and migration — requirements gathering, model validation against DynamoDB Local, code generation, and cost analysis. A design tool, not a runtime query tool.
 
 **For multi-database environments:** **FreePeak/db-mcp-server** (353 stars, Go) connects to MySQL, PostgreSQL, SQLite, and Oracle simultaneously with lazy loading for 10+ database setups.
 
-**For analytics:** Consider **MotherDuck DuckDB** — excellent for analytical queries and Parquet/CSV data without a running database.
+**For analytics:** Consider **[MotherDuck](https://motherduck.com/) [DuckDB](https://duckdb.org/)** — excellent for analytical queries and Parquet/CSV data without a running database.
 
 **Full comparison:** [Best Database MCP Servers in 2026](/guides/best-database-mcp-servers/) | [Database Administration MCP Servers](/reviews/database-admin-mcp-servers/) (4/5)
 
@@ -321,7 +321,7 @@ The vector DB MCP category is still young. Chroma leads on deployment flexibilit
 
 Agents that forget everything between sessions are expensive autocomplete. But persistent memory is hard to get right.
 
-The [official Memory server](/reviews/memory-mcp-server/) (3.5/5) has the right concept (entity-relation knowledge graph) but real scaling problems. The `read_graph` tool dumps the entire graph into context — 14K+ tokens reported — and there's no memory isolation between projects. The [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) now formally identifies this ["context over-sharing" pattern](https://owasp.org/www-project-mcp-top-10/2025/MCP10-2025%E2%80%93ContextInjection&OverSharing) as a security risk category.
+The [official Memory server](/reviews/memory-mcp-server/) (3.5/5) has the right concept (entity-relation knowledge graph) but real scaling problems. The `read_graph` tool dumps the entire graph into context — 14K+ tokens reported — and there's no memory isolation between projects. The [OWASP](https://owasp.org/) [MCP Top 10](https://owasp.org/www-project-mcp-top-10/) now formally identifies this ["context over-sharing" pattern](https://owasp.org/www-project-mcp-top-10/2025/MCP10-2025%E2%80%93ContextInjection&OverSharing) as a security risk category.
 
 **For temporal/enterprise use:** **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5) — temporal knowledge graphs with automatic entity extraction, relationship inference, and time-aware retrieval. [24.1K stars](https://github.com/getzep/graphiti), MCP Server 1.0, multi-database (FalkorDB/Neo4j/Kuzu/Neptune), multi-LLM provider, fully open source (Apache 2.0). The most sophisticated memory architecture available — tracks not just what's true, but when it was true and when it changed.
 
@@ -343,7 +343,7 @@ Can an MCP server make your agent think better? The [Sequential Thinking MCP ser
 
 The problem is timing — and now Anthropic agrees. Anthropic updated their [think tool blog post](https://www.anthropic.com/engineering/claude-think-tool) to explicitly recommend extended thinking "instead of a dedicated think tool in most cases." Downloads have dropped accordingly: from ~402K/month in December 2025 to ~273K in February 2026. A memory leak in long sessions ([PR #3321](https://github.com/modelcontextprotocol/servers/pull/3321) — 10GB+ RAM after 6-8 hours) remains unpatched, though March 2026 brought type coercion fixes and tool annotations. Still maintained (not archived), but its creators are pointing users elsewhere.
 
-**Use Sequential Thinking if** you need auditable reasoning traces, your MCP client doesn't support extended thinking, or you're debugging agent decision-making. **Skip it if** your model has built-in reasoning capabilities — Anthropic themselves now recommend that approach.
+**Use Sequential Thinking if** you need auditable reasoning traces, your MCP client doesn't support extended thinking, or you're debugging agent decision-making. **Skip it if** your model has built-in reasoning capabilities — [Anthropic](https://www.anthropic.com/) themselves now recommend that approach.
 
 ---
 
@@ -431,7 +431,7 @@ Search engine MCP servers let agents query indices, manage documents, and tune r
 
 **[cr7258/elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) (community, 256 stars)** — the practical choice for Elasticsearch users since the official server is deprecated. 17+ tools covering indices, documents, clusters, aliases, and data streams. Supports both Elasticsearch 7.x-9.x and OpenSearch 1.x-3.x.
 
-**Algolia** has two experimental servers (Go and Node) with explicit "not officially supported" disclaimers. **Apache Solr** has an official Apache project server but requires Java 25+ and has minimal adoption. **Typesense** has only community servers with limited features.
+**[Algolia](https://www.algolia.com/)** has two experimental servers (Go and Node) with explicit "not officially supported" disclaimers. **[Apache Solr](https://solr.apache.org/)** has an official Apache project server but requires Java 25+ and has minimal adoption. **[Typesense](https://typesense.org/)** has only community servers with limited features.
 
 **Our recommendation:** OpenSearch for comprehensive search operations and relevance tuning. Meilisearch for the smoothest official experience. cr7258's server for Elasticsearch.
 
@@ -461,15 +461,15 @@ Message queue MCP servers let agents produce and consume messages, manage topics
 
 ## Image generation
 
-The most fragmented category we've covered — 20+ servers, no dominant player, no working official server. The [EverArt reference server](/reviews/everart-mcp-server/) (2.5/5) was archived in May 2025. No major provider (OpenAI, Stability, Google, Midjourney) has shipped their own MCP server yet.
+The most fragmented category we've covered — 20+ servers, no dominant player, no working official server. The [EverArt reference server](/reviews/everart-mcp-server/) (2.5/5) was archived in May 2025. No major provider ([OpenAI](https://openai.com/), [Stability AI](https://stability.ai/), Google, [Midjourney](https://www.midjourney.com/)) has shipped their own MCP server yet.
 
-Four approaches have emerged: single-provider API wrappers (OpenAI, Stability, Gemini, Replicate), multi-provider aggregators (merlinrabens with 10 providers, PiAPI for Midjourney access), local inference bridges (ComfyUI at 232 stars — the most popular server in the category), and free no-auth options (MCPollinations, HuggingFace Spaces bridge). Most servers are dormant — only shinpr/mcp-image (Gemini, 86 stars) shows active development with v0.8.1 adding Google Image Search grounding.
+Four approaches have emerged: single-provider API wrappers (OpenAI, Stability, [Gemini](https://deepmind.google/technologies/gemini/), [Replicate](https://replicate.com/)), multi-provider aggregators (merlinrabens with 10 providers, PiAPI for Midjourney access), local inference bridges ([ComfyUI](https://www.comfy.org/) at 232 stars — the most popular server in the category), and free no-auth options (MCPollinations, [HuggingFace](https://huggingface.co/) Spaces bridge). Most servers are dormant — only shinpr/mcp-image (Gemini, 86 stars) shows active development with v0.8.1 adding Google Image Search grounding.
 
 **Top picks by use case:**
 - **Best quality:** SureScaleAI/openai-gpt-image-mcp (97 stars) — OpenAI gpt-image-1, best prompt adherence
 - **Best editing:** tadasant/mcp-server-stability-ai (81 stars) — background removal, recoloring, outpainting, search-and-replace
 - **Most actively developed:** shinpr/mcp-image (86 stars) — Gemini, prompt optimization, Google Image Search grounding
-- **Most models:** raveenb/fal-mcp-server (40 stars) — 600+ models on FAL.ai
+- **Most models:** raveenb/fal-mcp-server (40 stars) — 600+ models on [fal.ai](https://fal.ai/)
 - **Free, local:** joenorton/comfyui-mcp-server (232 stars) — any model, no API costs
 - **Zero friction:** pinkpixel-dev/MCPollinations (39 stars) — free, no auth, no signup
 
@@ -545,7 +545,7 @@ The official server's draw is the design-code-design loop — no community serve
 
 **Recommendation:** Start with Framelink for design-to-code translation. Add the official server only if you need code-to-canvas capture, Code Connect, or FigJam integration — and have a paid Figma plan.
 
-**Beyond Figma:** The design MCP ecosystem now includes Penpot (official MCP, open-source), Adobe Creative Suite (community servers for Photoshop, Illustrator, Premiere), TalkToFigma (6,300 stars, bidirectional Figma manipulation), and UI component libraries (21st-dev Magic, shadcn/ui, Magic UI).
+**Beyond Figma:** The design MCP ecosystem now includes [Penpot](https://penpot.app/) (official MCP, open-source), [Adobe](https://www.adobe.com/) Creative Suite (community servers for Photoshop, Illustrator, Premiere), TalkToFigma (6,300 stars, bidirectional Figma manipulation), and UI component libraries (21st-dev Magic, shadcn/ui, Magic UI).
 
 **Full reviews:** [Framelink MCP](/reviews/framelink-figma-mcp-server/) · [Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) · [Full design comparison →](/guides/best-design-mcp-servers/)
 
@@ -579,7 +579,7 @@ No official MCP reference server exists for Gmail. The main security concerns: m
 
 **[Outlook MCP Servers](/reviews/outlook-mcp-servers/) (3.5/5)** — The Microsoft 365 counterpart. **Microsoft's official Work IQ Mail** server offers 10 tools with KQL search, hosted architecture, and enterprise-grade Entra ID auth — but requires a Microsoft 365 Copilot license (~$30/user/month) and is in preview. **[Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server)** (530 stars) is the community standard — covers 8+ Microsoft services (email, calendar, OneDrive, Excel, OneNote, Tasks, Contacts) from a single `npx` install with no Copilot license required, three auth modes, and a token-optimized TOON output format. **[ryaker/outlook-mcp](https://github.com/ryaker/outlook-mcp)** (278 stars) uniquely adds Power Automate integration alongside email and calendar.
 
-The enterprise security infrastructure (Entra ID, compliance policies, DLP rules) is more mature than Gmail's, but the Copilot license paywall and preview status make the ecosystem less accessible. No official MCP reference server from modelcontextprotocol/servers exists for Outlook either.
+The enterprise security infrastructure ([Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id), compliance policies, DLP rules) is more mature than Gmail's, but the Copilot license paywall and preview status make the ecosystem less accessible. No official MCP reference server from modelcontextprotocol/servers exists for Outlook either.
 
 **Full review:** [Outlook MCP Servers](/reviews/outlook-mcp-servers/)
 
@@ -607,7 +607,7 @@ Shopify is the first major e-commerce platform to ship MCP servers — and they'
 
 **[Shopify MCP Servers](/reviews/shopify-mcp-servers/) (3.5/5)** — A multi-server ecosystem with distinct layers. The **Dev MCP** (414 stars, `@shopify/dev-mcp`) is a zero-config developer assistant: docs search, GraphQL schema introspection, theme validation, and code validation against Shopify's APIs. No API key needed. The **Storefront MCP** is a per-store endpoint for AI-powered shopping: semantic product search (vector embeddings), cart operations, policy Q&A, and interactive UI components — powering "Agentic Storefronts" across ChatGPT, Perplexity, and Copilot.
 
-The critical gap: **no official Admin API MCP server**. For store management (products, orders, inventory, fulfillment), you need community servers like [GeLi2001/shopify-mcp](https://github.com/GeLi2001/shopify-mcp) (139 stars, 31+ tools) or antoineschaller/shopify-mcp-server (22 tools). Adoption is growing but still community-driven. Shopify also co-developed the Universal Commerce Protocol (UCP) with Google — an open standard for AI-agent-to-commerce-backend communication.
+The critical gap: **no official Admin API MCP server**. For store management (products, orders, inventory, fulfillment), you need community servers like [GeLi2001/shopify-mcp](https://github.com/GeLi2001/shopify-mcp) (139 stars, 31+ tools) or antoineschaller/shopify-mcp-server (22 tools). Adoption is growing but still community-driven. Shopify also co-developed the [Universal Commerce Protocol (UCP)](https://www.universalcommerceprotocol.dev/) with Google — an open standard for AI-agent-to-commerce-backend communication.
 
 Beyond Shopify, the e-commerce MCP landscape includes [techspawn/woocommerce-mcp-server](https://github.com/techspawn/woocommerce-mcp-server) (26 stars, WP REST API), [boldcommerce/magento2-mcp](https://github.com/boldcommerce/magento2-mcp) (27+ stars, Magento 2 REST API), [saleor/saleor-mcp](https://github.com/saleor/saleor-mcp) (official, hosted at mcp.saleor.app), Medusa MCP implementations (14 admin tools), BigCommerce Storefront MCP (closed beta), and Amazon seller tools (Seller Labs MCP, community SP-API servers). [Full e-commerce comparison →](/guides/best-ecommerce-mcp-servers/)
 
@@ -655,7 +655,7 @@ We've reviewed every MCP server on our original list — and we're now expanding
 
 After reviewing 97 MCP servers, a clear pattern has emerged:
 
-**Anthropic's reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are both archived with SQL injection vulnerabilities (2.5/5 each), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
+**[Anthropic](https://www.anthropic.com/)'s reference implementations are starting points, not destinations.** The official Filesystem and GitHub servers are solid (4/5 each). But the official database servers are both archived with SQL injection vulnerabilities (2.5/5 each), the official Memory server doesn't scale (3.5/5), the official Fetch server has an SSRF gap (3.5/5), and the official EverArt server is minimal and archived (2.5/5).
 
 **First-party vendor servers are better.** Sentry, Slack, Brave Search, GitHub — when the company that owns the product builds the MCP server, the integration is tighter, the maintenance is reliable, and the security model is sound.
 
@@ -686,7 +686,7 @@ If you're setting up an AI agent from scratch and want a solid default configura
 
 That's four servers. Don't install 15 servers on day one — each server adds tools to your agent's context, and too many tools degrade decision-making. Start small, add as needed.
 
-**Need help installing these?** Our **[MCP Server Setup Guide](/guides/mcp-server-setup-guide/)** walks you through configuring servers in Claude Desktop, VS Code, Cursor, and Claude Code — with role-specific starter stacks for web developers, backend engineers, and researchers.
+**Need help installing these?** Our **[MCP Server Setup Guide](/guides/mcp-server-setup-guide/)** walks you through configuring servers in [Claude Desktop](https://claude.ai/download), [VS Code](https://code.visualstudio.com/), [Cursor](https://www.cursor.com/), and [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) — with role-specific starter stacks for web developers, backend engineers, and researchers.
 
 Before you install anything, read our **[MCP Server Security Guide](/guides/mcp-server-security/)** — it covers authentication best practices, real vulnerabilities we found during our reviews, and a checklist for evaluating any server's security posture.
 
@@ -696,7 +696,7 @@ Before you install anything, read our **[MCP Server Security Guide](/guides/mcp-
 
 **What is an MCP server?**
 
-An MCP (Model Context Protocol) server is a program that exposes tools, resources, or data to AI agents and LLMs through a standardized protocol created by Anthropic. Instead of building custom integrations for each AI tool, developers can write one MCP server and have it work across Claude, Cursor, VS Code, and other MCP-compatible clients. Think of it like a USB driver for AI — a standard way to plug capabilities into any AI system.
+An MCP ([Model Context Protocol](https://modelcontextprotocol.io/)) server is a program that exposes tools, resources, or data to AI agents and LLMs through a standardized protocol created by [Anthropic](https://www.anthropic.com/). Instead of building custom integrations for each AI tool, developers can write one MCP server and have it work across [Claude](https://claude.ai/), [Cursor](https://www.cursor.com/), [VS Code](https://code.visualstudio.com/), and other MCP-compatible clients. Think of it like a USB driver for AI — a standard way to plug capabilities into any AI system.
 
 **How many MCP servers should I install?**
 
@@ -708,7 +708,7 @@ It depends on the server. Official servers from companies like GitHub, Stripe, a
 
 **What's the difference between MCP and function calling?**
 
-Function calling is built into specific LLM APIs (like OpenAI's or Anthropic's) and requires you to define tools in each API call. MCP is a separate protocol that runs as a local or remote server, works across multiple AI clients, and can maintain state between calls. MCP servers can also expose resources (like database schemas) and prompts, not just tools.
+Function calling is built into specific LLM APIs (like [OpenAI](https://openai.com/)'s or [Anthropic](https://www.anthropic.com/)'s) and requires you to define tools in each API call. MCP is a separate protocol that runs as a local or remote server, works across multiple AI clients, and can maintain state between calls. MCP servers can also expose resources (like database schemas) and prompts, not just tools.
 
 **Do MCP servers cost money?**
 
