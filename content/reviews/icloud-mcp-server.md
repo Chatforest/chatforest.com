@@ -4,13 +4,13 @@ date: 2026-03-23T23:30:00+09:00
 description: "Apple has no official iCloud MCP server, but community projects let AI agents access Calendar, Mail, Contacts, and Reminders via CalDAV, CardDAV, and IMAP."
 og_description: "iCloud MCP servers: no official Apple server, community implementations for Calendar, Mail, Contacts, and Reminders. No iCloud Drive access. Rating: 2.5/5."
 content_type: "Review"
-card_description: "Apple has no official iCloud MCP server and is only beginning to explore MCP support in iOS/macOS 26.1 betas. Community implementations provide access to Calendar (CalDAV), Mail (IMAP/SMTP), Contacts (CardDAV), and Reminders, but no server offers iCloud Drive file access — the critical gap versus Google Drive, Dropbox, and OneDrive."
-last_refreshed: 2026-03-23
+card_description: "Apple has no official iCloud MCP server, with WWDC 2026 (June 8-12) expected to deliver the first public MCP APIs. The community ecosystem has grown to 9+ implementations covering Calendar (CalDAV), Mail (IMAP/SMTP), Contacts (CardDAV), and Reminders, but no server offers iCloud Drive file access — the critical gap versus Google Drive, Dropbox, and OneDrive."
+last_refreshed: 2026-04-16
 ---
 
-**At a glance:** [supermemoryai/apple-mcp](https://github.com/supermemoryai/apple-mcp) (3,000 stars, archived, MIT) + [MrGo2/icloud-mcp](https://github.com/MrGo2/icloud-mcp) (5 stars, active, MIT). Apple has 850+ million iCloud users and a $4+ trillion market cap, but **no official MCP server** and **no iCloud Drive file access** through any community implementation. The biggest cloud storage MCP gap.
+**At a glance:** [supermemoryai/apple-mcp](https://github.com/supermemoryai/apple-mcp) (3,100 stars, archived, MIT) + [adamzaidi/icloud-mcp](https://github.com/adamzaidi/icloud-mcp) (65 tools, active, MIT) + [icloud-calendar-mcp](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp) (6 stars, OWASP-compliant, Apache 2.0). Apple has 850+ million iCloud users and a $4+ trillion market cap, but **no official MCP server** and **no iCloud Drive file access** through any community implementation. WWDC 2026 (June 8-12) expected to deliver the first public MCP APIs. The biggest cloud storage MCP gap.
 
-iCloud MCP servers let AI agents **manage Apple Calendar events, send and read iCloud Mail, access Contacts, and handle Reminders** — all through natural language prompts. However, unlike Google Drive, Dropbox, and OneDrive MCP servers, **no implementation provides iCloud Drive file access** — the file storage feature that most users associate with iCloud. Apple is beginning to explore MCP support at the platform level in iOS/macOS 26.1 betas, but a working integration is not yet available.
+iCloud MCP servers let AI agents **manage Apple Calendar events, send and read iCloud Mail, access Contacts, and handle Reminders** — all through natural language prompts. The community ecosystem has grown significantly, with **9+ implementations** now available — including adamzaidi/icloud-mcp offering 65 tools and icloud-calendar-mcp bringing OWASP MCP Top 10 security compliance. However, unlike Google Drive, Dropbox, and OneDrive MCP servers, **no implementation provides iCloud Drive file access** — the file storage feature that most users associate with iCloud. Apple's WWDC 2026 (June 8-12) is expected to deliver the first public MCP APIs via App Intents, but a working cloud integration is not yet available.
 
 [Apple](https://www.apple.com/) was founded on April 1, 1976, by **Steve Jobs**, **Steve Wozniak**, and **Ronald Wayne**. The company went public in December 1980 (NASDAQ: AAPL). As of early 2026: **~$435.6 billion annual revenue** (twelve months ending December 2025, ~10% YoY growth), **~$4+ trillion market cap** — the world's most valuable public company. iCloud has over **850 million active users**. Apple's Services segment generated **$28.75 billion** in Q4 2025 alone, with iCloud+ subscriptions contributing significantly. The company employs approximately **164,000 full-time workers**.
 
@@ -82,7 +82,7 @@ Between the archived apple-mcp project and active community implementations, iCl
 
 ### supermemoryai/apple-mcp — Apple Native Tools (Archived)
 
-- **GitHub:** [supermemoryai/apple-mcp](https://github.com/supermemoryai/apple-mcp) — 3,000 stars, 268 forks, 87 commits, 11 contributors
+- **GitHub:** [supermemoryai/apple-mcp](https://github.com/supermemoryai/apple-mcp) — 3,100 stars, 272 forks, 87 commits, 11 contributors
 - **Language:** TypeScript
 - **License:** MIT
 - **Status:** **Archived January 2026** — read-only, no longer maintained
@@ -104,7 +104,7 @@ The most popular Apple MCP implementation by far, built by Dhravya Shah (Superme
 
 ### MrGo2/icloud-mcp — Dual-Mode (Local + Cloud)
 
-- **GitHub:** [MrGo2/icloud-mcp](https://github.com/MrGo2/icloud-mcp) — 5 stars, 1 fork, 4 commits
+- **GitHub:** [MrGo2/icloud-mcp](https://github.com/MrGo2/icloud-mcp) — 9 stars, 2 forks, 4 commits
 - **Language:** JavaScript
 - **License:** MIT
 - **Auth:** AppleScript permissions (local) or app-specific password (cloud)
@@ -118,7 +118,7 @@ The most versatile active implementation with two operational modes:
 
 ### minagishl/icloud-mail-mcp — Mail Specialist
 
-- **GitHub:** [minagishl/icloud-mail-mcp](https://github.com/minagishl/icloud-mail-mcp) — 4 stars, 2 forks, 37 commits
+- **GitHub:** [minagishl/icloud-mail-mcp](https://github.com/minagishl/icloud-mail-mcp) — 5 stars, 2 forks, 37 commits
 - **Language:** TypeScript
 - **Auth:** App-specific password via IMAP/SMTP
 
@@ -133,7 +133,7 @@ The most mature mail-focused implementation with 14 tools:
 
 ### mike-tih/icloud-mcp — Protocol-Based (CalDAV + CardDAV + IMAP)
 
-- **GitHub:** [mike-tih/icloud-mcp](https://github.com/mike-tih/icloud-mcp) — 2 stars, 2 forks, 32 commits
+- **GitHub:** [mike-tih/icloud-mcp](https://github.com/mike-tih/icloud-mcp) — 3 stars, 3 forks, 32 commits
 - **Language:** Python
 - **License:** MIT
 - **Auth:** App-specific password via request headers or environment variables
@@ -161,19 +161,80 @@ HTTP MCP server focused exclusively on iCloud Calendar via CalDAV:
 
 **Key limitation:** Calendar only. Advanced fields (attendees, alarms, recurrence exceptions) not preserved on update. UID matching within ±3-year window.
 
-### iteratio/icloud-mcp — macOS Keychain Auth
+### adamzaidi/icloud-mcp — Most Comprehensive (65 Tools)
 
-- **GitHub:** [iteratio/icloud-mcp](https://github.com/iteratio/icloud-mcp) — 0 stars, 0 forks, 3 commits
-- **Language:** Python
-- **Platform:** macOS only (credentials in Keychain)
+- **GitHub:** [adamzaidi/icloud-mcp](https://github.com/adamzaidi/icloud-mcp) — 0 stars, 1 fork, 45 commits
+- **Language:** JavaScript
+- **License:** MIT
+- **Auth:** App-specific password via IMAP/SMTP/CalDAV/CardDAV
 
-Local MCP server with credentials stored in macOS Keychain (never in files or environment variables):
+The **most feature-rich iCloud MCP server** with 65 tools — more than triple any other implementation:
 
-- **Calendar:** List, get, create events via CalDAV
-- **Mail:** List, read, send messages via IMAP/SMTP
-- **Reminders:** List, create, complete via EventKit
+- **Email:** Full CRUD plus reply, forward, drafts, bulk operations (move, delete, archive) with dry-run capability, thread detection via References/In-Reply-To headers, attachment downloading with byte-range fetching for large files
+- **Contacts:** Full CardDAV support — create, update, search
+- **Calendar:** CalDAV integration with date-range queries
+- **Advanced:** Storage analysis, unsubscribe link extraction, automated email routing rules, session logging for multi-step operations, safe move protocol using fingerprinting and verification
 
-**Key limitation:** 3 commits — very early stage. macOS 12+ required. Note: "pyicloud is now broken — Apple changed web auth to SRP-6a in 2024-2025."
+**Key advantage:** Cross-platform (Node.js v20+), runs entirely locally with no external data transmission. The depth of email tooling (bulk ops, thread detection, storage analysis) is unmatched.
+
+**Key limitation:** 0 stars — very new, unproven in the community. No Reminders, Notes, or macOS-native app access.
+
+### icloud-calendar-mcp — Security-First (OWASP Compliant)
+
+- **GitHub:** [icloud-calendar-mcp/icloud-calendar-mcp](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp) — 6 stars, 1 fork, 6 commits
+- **Language:** Kotlin/JVM
+- **License:** Apache 2.0
+- **Distribution:** npm, PyPI, MCP Registry
+
+The **most security-focused iCloud MCP server**, explicitly designed around the OWASP MCP Top 10 framework:
+
+- **5 Calendar tools:** List calendars, get events, create, update, delete
+- **282 dedicated security tests** covering input validation, rate limiting (60 reads/min, 20 writes/min), credential protection, error sanitization
+- **768 total tests** across 30 suites, including adversarial input handling, Unicode security, and ReDoS protection
+- RFC 5545 (iCalendar) format compliance
+
+**Key advantage:** The only iCloud MCP server with enterprise-grade security testing. Available across npm, PyPI, and MCP Registry.
+
+**Key limitation:** Calendar only — no mail, contacts, or other services.
+
+### roygabriel/mcp-icloud-calendar — Go with Observability
+
+- **GitHub:** [roygabriel/mcp-icloud-calendar](https://github.com/roygabriel/mcp-icloud-calendar) — 0 stars, 1 fork, 26 commits
+- **Language:** Go (1.21+)
+- **Auth:** App-specific password
+
+Production-oriented calendar MCP server with enterprise features:
+
+- **5 Calendar tools:** List calendars, search events (with pagination), create, update (partial), delete
+- Recurring event expansion into individual occurrences
+- Attendee management with role and status tracking
+- Prometheus metrics, audit logging, health check endpoints
+- Structured JSON logging, configurable timeouts (default 25s), automatic retry with exponential backoff, per-account rate limiting
+
+**Key limitation:** Calendar only. 0 stars — new and unproven.
+
+### Lawiak/icloud-mcp — Docker & Raspberry Pi
+
+- **GitHub:** [Lawiak/icloud-mcp](https://github.com/Lawiak/icloud-mcp) — 0 stars, 0 forks, 24 commits
+- **Language:** Python (96.4%)
+- **License:** MIT
+- **Auth:** App-specific password via IMAP/SMTP
+
+Email-focused implementation designed for headless and remote deployment:
+
+- Read emails from any folder while preserving unread status
+- Send with CC and attachments, folder management, search
+- **Docker containerized** with Dockerfile included
+- **Raspberry Pi support** via SSH + Docker for remote deployment
+- FastMCP framework, STDIO transport
+
+**Key advantage:** The only iCloud MCP server explicitly designed for headless/IoT deployment. Run on a Raspberry Pi as a persistent email agent.
+
+**Key limitation:** Email only — no calendar, contacts, or other services. 0 stars.
+
+### iteratio/icloud-mcp — Removed
+
+Previously listed here, iteratio/icloud-mcp (macOS Keychain-based, 0 stars, 3 commits) has been **removed from GitHub** as of April 2026. It covered Calendar, Mail, and Reminders with credentials stored in macOS Keychain.
 
 ## Authentication
 
@@ -194,12 +255,12 @@ All iCloud MCP servers use **app-specific passwords** — a significant improvem
 | Dimension | iCloud | Google Drive | Dropbox | OneDrive |
 |-----------|--------|-------------|---------|----------|
 | **Official MCP** | **None** | google/mcp (3.4k stars, GA) | 2 servers (remote + Dash) | Work IQ (preview, 13 tools) |
-| **Top Community** | apple-mcp (3k stars, **archived**) | taylorwilsdon (1.9k stars) | amgadabdelhafez (26 stars) | Softeria (552 stars) |
+| **Top Community** | apple-mcp (3.1k stars, **archived**) | taylorwilsdon (1.9k stars) | amgadabdelhafez (26 stars) | Softeria (552 stars) |
 | **File Storage Access** | **None — critical gap** | Full read/write/search | Full read/write/search | Full read/write (5MB limit) |
 | **Auth Complexity** | **Lowest** — app-specific password | Medium — Google OAuth 2.0 | Low-Medium — Dropbox OAuth | **Highest** — Azure Entra ID |
 | **Platform** | macOS-only (AppleScript) or limited cross-platform | Cross-platform | Cross-platform | Cross-platform |
 | **Services Covered** | Calendar, Mail, Contacts, Reminders, Notes | Drive, Docs, Sheets, Slides, Gmail, Calendar | Files, Dash search (30+ apps) | OneDrive, Outlook, Calendar, Teams, SharePoint |
-| **Apple's MCP Stance** | Exploring in iOS/macOS 26.1 betas | Official commitment | Official commitment | Official commitment |
+| **Apple's MCP Stance** | WWDC 2026 expected to deliver first public APIs | Official commitment | Official commitment | Official commitment |
 
 ## iCloud+ Pricing
 
@@ -218,21 +279,23 @@ All paid tiers include iCloud Private Relay, Hide My Email, Custom Email Domain,
 
 ## Apple's MCP Future
 
-Apple is not ignoring MCP entirely. In September 2025, the macOS Tahoe 26.1 and iOS 26.1 developer betas included early code references for **MCP support via App Intents** — Apple's framework for exposing app capabilities to Siri and Shortcuts. If completed, this would allow AI agents (ChatGPT, Claude, and others) to directly interact with apps on Mac, iPhone, and iPad.
+Apple is not ignoring MCP entirely, and the timeline is accelerating. In September 2025, the macOS Tahoe 26.1 and iOS 26.1 developer betas included early code references for **MCP support via App Intents** — Apple's framework for exposing app capabilities to Siri and Shortcuts. If completed, this would allow AI agents (ChatGPT, Claude, and others) to directly interact with apps on Mac, iPhone, and iPad.
 
-However, this is platform-level MCP support (apps exposing their capabilities to AI agents on-device), not a cloud API for iCloud services. There is no indication that Apple plans to offer a remote iCloud MCP server comparable to Google's, Dropbox's, or Microsoft's official offerings.
+**WWDC 2026** (June 8-12) is expected to be the inflection point. Apple has confirmed the conference will spotlight **iOS 27** alongside AI advancements across all platforms. Industry analysts expect the **first public MCP APIs** to arrive at WWDC 2026 via an expanded App Intents framework, though mass adoption is unlikely before iOS 27/macOS 28. A major **Siri overhaul** is also anticipated, with three core components: a planner, a search operator, and a summarizer — all designed to be more context-aware and capable of threading personal context through tasks.
+
+However, this remains platform-level MCP support (apps exposing their capabilities to AI agents on-device), not a cloud API for iCloud services. There is still no indication that Apple plans to offer a remote iCloud MCP server comparable to Google's, Dropbox's, or Microsoft's official offerings.
 
 ## Known Issues
 
 1. **No iCloud Drive access** — The most critical gap. No community MCP server accesses iCloud Drive file storage. CloudKit integration would require an Apple Developer account ($99/year) and Apple-specific authentication that no one has implemented. This makes iCloud MCP servers fundamentally different from Google Drive, Dropbox, and OneDrive MCP servers.
 
-2. **Best server is archived** — supermemoryai/apple-mcp (3,000 stars) was archived in January 2026 and receives no updates or bug fixes. The next most popular active server has only 5 stars.
+2. **Best server is archived** — supermemoryai/apple-mcp (3,100 stars) was archived in January 2026 and receives no updates or bug fixes. The most popular active server (MrGo2/icloud-mcp) has only 9 stars, though adamzaidi/icloud-mcp (65 tools, 45 commits) offers the most comprehensive active implementation.
 
 3. **macOS dependency** — The most capable implementations (apple-mcp, MrGo2 local mode) require macOS with AppleScript permissions. Linux and Windows users are limited to CalDAV/CardDAV/IMAP access only (calendar, contacts, email).
 
-4. **No official server** — Apple has not released an official MCP server for any iCloud service. Google, Dropbox, and Microsoft all have official MCP servers. Apple's MCP exploration is limited to platform-level App Intents in developer betas.
+4. **No official server** — Apple has not released an official MCP server for any iCloud service. Google, Dropbox, and Microsoft all have official MCP servers. Apple's first public MCP APIs are expected at WWDC 2026 (June 8-12), but these will be platform-level App Intents, not cloud APIs.
 
-5. **Small, fragmented community** — Outside the archived apple-mcp, no implementation exceeds 5 stars. Most have single-digit commits and single contributors, suggesting low maintenance likelihood.
+5. **Growing but fragmented community** — Outside the archived apple-mcp, the ecosystem has grown to 9+ implementations, but most have single-digit stars. The community is diversifying (Kotlin, Go, Python, JavaScript, TypeScript) but no single active project has emerged as a clear successor to apple-mcp.
 
 6. **pyicloud broken** — The popular Python library for iCloud access (pyicloud) stopped working after Apple changed web authentication to SRP-6a in 2024-2025. This broke several MCP servers and forced developers to use CalDAV/CardDAV/IMAP protocols instead.
 
@@ -250,7 +313,7 @@ However, this is platform-level MCP support (apps exposing their capabilities to
 
 iCloud MCP servers present a paradox: the world's most valuable company with 850+ million iCloud users has the **weakest MCP ecosystem** of any major cloud storage provider. The fundamental problem is straightforward — **no iCloud Drive file access**. While Google Drive, Dropbox, and OneDrive MCP servers let AI agents read, write, search, and organize files, iCloud MCP servers are limited to calendar events, email, and contacts.
 
-The community has done what it can with available protocols. **supermemoryai/apple-mcp** reached an impressive 3,000 stars by providing AppleScript-based access to 7 macOS apps, but it was archived in January 2026. The remaining active servers are small (0-5 stars) and narrowly focused. **MrGo2/icloud-mcp** offers the broadest active coverage with dual local/cloud modes, and **mike-tih/icloud-mcp** is the most mature cross-platform option with 32 commits covering CalDAV, CardDAV, and IMAP.
+The community has done what it can with available protocols. **supermemoryai/apple-mcp** reached an impressive 3,100 stars by providing AppleScript-based access to 7 macOS apps, but it was archived in January 2026. The active ecosystem has grown significantly since then: **adamzaidi/icloud-mcp** now offers 65 tools with deep email capabilities (thread detection, bulk operations, storage analysis), **icloud-calendar-mcp** brings enterprise-grade OWASP security compliance with 768 tests, and **MrGo2/icloud-mcp** (9 stars) offers the broadest service coverage with dual local/cloud modes.
 
 The one genuine advantage: **authentication is dead simple**. App-specific passwords are vastly easier than Google OAuth, Dropbox OAuth, or Azure Entra ID. But this simplicity is a consequence of limited API access, not thoughtful developer experience.
 
@@ -266,8 +329,8 @@ The one genuine advantage: **authentication is dead simple**. App-specific passw
 - **Cross-platform users** — full capability requires macOS; other platforms get calendar/mail/contacts only
 - **Teams and organizations** — the community is too small and fragmented for production reliability
 
-The 2.5/5 rating reflects the critical absence of iCloud Drive access, no official Apple server, and a community ecosystem where the best implementation is archived. Apple's exploration of MCP in iOS/macOS 26.1 betas offers future hope, but today, iCloud is the clear last-place finisher among major cloud storage MCP ecosystems.
+The 2.5/5 rating reflects the critical absence of iCloud Drive access, no official Apple server, and a community ecosystem where the best implementation is archived. WWDC 2026 (June 8-12) is expected to deliver Apple's first public MCP APIs, but these will be platform-level App Intents, not cloud iCloud APIs. Today, iCloud remains the clear last-place finisher among major cloud storage MCP ecosystems — though the growing community (9+ implementations) suggests momentum is building.
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Apple announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Apple announcements. Information is current as of April 2026. See our [About page](/about/) for details on our review process.*
