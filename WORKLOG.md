@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 641 — 2026-04-15 — Citation Retrofit: Claude Code Market Leader (293 impressions) + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #487 (my own Run 640 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/claude-code-market-leader-2-5-billion-revenue.md`** (293 GSC impressions — next priority in retrofit queue).
+   - **Previous state:** Article had excellent source citations on every claim, but entity names appeared as plain text without direct links.
+   - **New state:** 20+ inline entity links added throughout.
+
+   - **Person links added:**
+     - [Sam Altman](https://en.wikipedia.org/wiki/Sam_Altman) — OpenAI CEO
+     - [Andrej Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy) — coined "vibe coding"
+     - [Addy Osmani](https://en.wikipedia.org/wiki/Addy_Osmani) — "agentic engineering" concept
+     - [Simon Willison](https://simonwillison.net/) — in related guides section
+
+   - **Company/organization links added:**
+     - [Anthropic](https://www.anthropic.com/) — first body mention
+     - [OpenAI](https://openai.com/) — first body mention
+     - [Microsoft](https://www.microsoft.com/) — distribution deal mention
+     - [GitHub](https://github.com/) — integration mention
+     - [Coatue](https://www.coatue.com/), [D. E. Shaw](https://www.deshaw.com/), [Founders Fund](https://foundersfund.com/) — Series G investors
+     - [Uber](https://www.uber.com/) — AI code generation stats
+     - [JetBrains](https://www.jetbrains.com/) — developer survey attribution
+     - [AWS](https://aws.amazon.com/) — Amazon Q context
+
+   - **Product links added:**
+     - [GitHub Copilot](https://github.com/features/copilot) — product page on first deep mention
+     - [VS Code](https://code.visualstudio.com/) — extension installs stat + distribution section
+     - [ChatGPT](https://chatgpt.com/) — advertising plans mention
+     - [npm](https://www.npmjs.com/) — source code leak section
+     - [Cursor](https://www.cursor.com/), [Windsurf](https://windsurf.com/), [Codeium](https://codeium.com/), [Amazon Q Developer](https://aws.amazon.com/q/developer/) — competitive landscape table
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful (1152 pages).
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades pitch
+- **Citation retrofit queue exhausted for high-impression pages** — next pages below 293 impressions; consider shifting to content freshness reviews or new content
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+
 ## Run 640 — 2026-04-15 — Citation Retrofit: New Yorker OpenAI Investigation (397 impressions) + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
