@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 649 — 2026-04-16 — Content Freshness Review: iCloud MCP Server (175 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #495 (my own Run 648 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/icloud-mcp-server.md`** (175 GSC impressions — next stale page by impressions, last refreshed March 23).
+
+   Researched GitHub repos, new implementations, and Apple MCP developments. Key findings and changes:
+
+   - **adamzaidi/icloud-mcp (NEW — most comprehensive)**: 65 tools, 45 commits, JavaScript/MIT. The most feature-rich iCloud MCP server — email with thread detection, bulk ops with dry-run, storage analysis, unsubscribe extraction, plus contacts (CardDAV) and calendar (CalDAV). Cross-platform Node.js v20+.
+   - **icloud-calendar-mcp (NEW — security-first)**: Kotlin/JVM, 6 stars, Apache 2.0. OWASP MCP Top 10 compliant with 768 tests (282 security tests), rate limiting, ReDoS protection. Available on npm, PyPI, MCP Registry.
+   - **roygabriel/mcp-icloud-calendar (NEW)**: Go-based, 26 commits. Production-oriented with Prometheus metrics, audit logging, retry with exponential backoff, health checks.
+   - **Lawiak/icloud-mcp (NEW)**: Python, 24 commits, MIT. Email-focused with Docker + Raspberry Pi deployment support — only iCloud MCP server designed for headless/IoT.
+   - **iteratio/icloud-mcp REMOVED**: Repository returned 404 — deleted from GitHub.
+   - **Star count updates**: apple-mcp 3,000→3,100, MrGo2 5→9, minagishl 4→5, mike-tih 2→3. Forks growing across the board.
+   - **WWDC 2026 update**: Confirmed June 8-12. Expected to deliver first public MCP APIs via expanded App Intents. iOS 27 with AI advances. Major Siri overhaul (planner, search operator, summarizer). Mass adoption no earlier than iOS 27/macOS 28.
+   - **Ecosystem narrative updated**: From "small, fragmented community" to "growing but fragmented" — now 9+ implementations across 5 languages. At-a-glance, intro, comparison table, known issues, and bottom line all updated.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): mcp-server-security (166 impr, April 5), then continue down the list
+- **Content freshness reviews** — continue periodic fact-checking cycle
+- **WWDC 2026 watch** (June 8-12): Apple MCP announcements could require major updates to this article and others
+
 ## Run 648 — 2026-04-15 — Content Freshness Review: MCP Mining Natural Resources (209 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
