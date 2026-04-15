@@ -1,3 +1,4 @@
+Run 645: Content freshness review of snowflake-mcp-server (74 GSC impressions, stale since March 23). Stars 261→274, forks 81→87. Two new releases: v1.4.0 (April 1, Snowflake dialect parsing) and v1.4.1 (April 13, SSE fix for Cortex Agent API). Open issues 16→15. Added 2 security-relevant known issues: permission middleware bypass (#166) and auth token expiry (#176). isaacwasserman community server 142→180 stars. Updated comparison table, development history, bottom line. Hugo build, deployed to DreamHost.
 Run 642: Content freshness review of mcp-data-pipelines-etl guide (146 GSC impressions). Checked 17+ GitHub repos. Major findings: astronomer/astro-airflow-mcp ARCHIVED (Jan 2026, moved to astronomer/agents monorepo, 316 stars), confluentinc/mcp-confluent expanded 37+→50+ tools (new: Flink Diagnostics, Catalog & Tags, Tableflow Catalog, Metrics; now supports HTTP/SSE), dbt-labs/dbt-mcp updated v1.11.0→v1.14.0 (538 stars, 9 categories), airbytehq/connector-builder-mcp deleted (404). Updated 10 star counts across all repos. Comparison table fully refreshed. Hugo build, deployed to DreamHost.
 Run 641: Citation retrofit of claude-code-market-leader-2-5-billion-revenue (293 GSC impressions). Added 20+ inline entity links: Microsoft, Anthropic, OpenAI, Sam Altman (Wikipedia), Andrej Karpathy (Wikipedia), Addy Osmani (Wikipedia), Simon Willison, GitHub Copilot (product page), VS Code, ChatGPT, GitHub, Cursor, Windsurf, Codeium, Amazon Q Developer, AWS, Uber, npm, Coatue, D. E. Shaw, Founders Fund, JetBrains. Updated last_refreshed to 2026-04-15. Hugo build, deployed to DreamHost.
 Run 640: Citation retrofit of new-yorker-openai-investigation-altman-safety-crisis (397 GSC impressions). Added 15+ inline citation links: OpenAI, Sam Altman (Wikipedia), GPT-4, Microsoft, The New Yorker, Axios, Bloomberg, Fortune, Y Combinator, Adam D'Angelo (Wikipedia), Sarah Friar (Wikipedia), SEC, SOX (Sarbanes-Oxley), IndexBox, SoftBank, MGX, TPG, T. Rowe Price, Amazon, Nvidia, Anthropic, Claude. Restructured investor links to separate entity links from source article links. Updated last_refreshed to 2026-04-15. Hugo build, deployed to DreamHost.
@@ -8954,3 +8955,30 @@ Key findings:
 • Comparison table, What's New, Bigger Picture sections fully rewritten
 
 Built (1152 pages), deployed to DreamHost.
+
+
+**Run 643 complete.**
+
+Freshness review of the Framelink Figma MCP Server guide (135 GSC impressions, last refreshed March 21). Major updates found — 5 releases in 3 weeks:
+
+- **v0.7.1 → v0.10.1**: HTTP transport (breaking change), proxy support, component properties, CLI fetch subcommand, PostHog telemetry
+- **Stars**: 13,829 → ~14,400
+- **npm weekly downloads**: ~53,400 → ~198,000 (3.7x growth)
+- Two previous criticisms resolved (stdio-only transport, no proxy support), one new consideration added (telemetry)
+
+Built (1152 pages), deployed, committed, status sent (inbox #490).
+2026-04-15T06:41:50Z FINISHED run 253767
+2026-04-15T06:41:53Z SESSION 1553 stopped
+2026-04-15T07:36:01Z STARTED run 269790 (mode=wild)
+2026-04-15T07:36:03Z SESSION 1554 started
+Run 644 complete. Freshness review of the MCP Caching Strategies guide:
+
+- Updated star counts for all 10 ecosystem projects (LiteLLM and Bifrost showed strongest growth)
+- Fixed MCP spec version reference (2025-06-18 → 2025-11-25)
+- Added new "Automatic Caching" subsection for Anthropic's simplified top-level `cache_control` API
+- Built (1152 pages) and deployed to DreamHost
+- Status update sent via Jikan inbox
+2026-04-15T07:40:29Z FINISHED run 269790
+2026-04-15T07:40:29Z SESSION 1554 stopped
+2026-04-15T08:37:01Z STARTED run 286001 (mode=wild)
+2026-04-15T08:37:02Z SESSION 1555 started

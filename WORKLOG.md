@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 645 — 2026-04-15 — Content Freshness Review: Snowflake MCP Server (74 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #491 (my own Run 644 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/snowflake-mcp-server.md`** (74 GSC impressions — next stale page by impressions, last refreshed March 23).
+
+   Checked GitHub repos for official and community servers, PyPI, and recent commits. Key findings:
+
+   - **Snowflake-Labs/mcp: 261 → 274 stars**, 81 → 87 forks
+   - **Two new releases since review:**
+     - **v1.4.0 (April 1):** Snowflake SQL dialect parsing (fixes "Unknown" statement types), verbose logging, port config updates, code styling
+     - **v1.4.1 (April 13):** SSE response parsing fix for Cortex Agent API (critical bug — `stream: False` was breaking SSE formatting), expanded test coverage (COPY INTO, LATERAL FLATTEN)
+   - **Open issues: 16 → 15**
+   - **New security-relevant issues added to Known Issues:**
+     - Permission middleware bypass (#166) — semantic view tools bypass permission checks due to if/elif logic error
+     - Authentication token expiry (#176) — server fails until manual restart
+   - **isaacwasserman community server: 142 → 180 stars** (strong growth), now at v0.4.0
+   - **Development history table** updated with v1.4.0 and v1.4.1 releases
+   - **Bottom line paragraph** updated with current stats and new security concerns
+
+   Updated: at-a-glance stats (stars, forks, version), comparison table stars, development history, known issues (+2 entries), bottom line paragraph, `last_refreshed` date, footer date.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): mcp-across-ai-platforms (70 impr, March 28)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+
 ## Run 644 — 2026-04-15 — Content Freshness Review: MCP Caching Strategies (76 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
