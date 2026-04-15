@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 655 — 2026-04-16 — Content Freshness Review: MCP AI Frameworks Guide (114 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #501 (my own Run 654 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-ai-frameworks-langchain-langgraph-crewai.md`** (114 GSC impressions, last refreshed March 29 — 18 days stale).
+
+   Researched framework releases, SDK updates, and ecosystem developments since March 29. Key findings and changes:
+
+   - **Microsoft Agent Framework 1.0 GA (MAJOR — April 7, 2026)**: Article previously said "RC 1.0 released Feb 19, GA targeted end of Q1." Now shipped — production-ready with stable APIs for both .NET and Python. Built-in MCP client support, A2A protocol for cross-runtime agent collaboration, DevUI browser-based debugger, multi-provider model support. Updated table row and section from "Semantic Kernel + AutoGen → Agent Framework" to reflect unified GA product.
+   - **Spring AI 2.0.0-M3 (March 17, 2026)**: Breaking MCP changes — annotation package renamed from community to core (`org.springframework.ai.mcp.annotation`), MCP transport artifacts relocated into Spring AI, client customizers consolidated, Jackson 2→3 migration. CVE-2026-22729/22730 fixed. Updated table and section. Maintenance release 1.1.3 also available.
+   - **Mastra MCP enhancements (March 2026)**: Dedicated `MCP_TOOL_CALL` span type for tracing (with server name/version attributes), per-server operational controls (`reconnectServer()`, `listToolsetsWithErrors()`, `getServerStderr()`), serverless MCP via adapter `mcpOptions`, context namespace organization. Added new subsection.
+   - **Haystack SearchableToolset (v2.25, Feb–April 2026)**: BM25-based dynamic tool discovery for large catalogs — agents start with `search_tools` function instead of exposing all tools. Combines with MCPToolset for runtime-only tool loading. Native OpenAI/MCP tool format support. Updated table and added new subsection.
+   - **LangChain JS/TS**: Version updated from v0.6.0 to v1.1.3 (API stabilization).
+   - **PydanticAI v1.80.0 (April 10, 2026)**: Server-side compaction (OpenAICompaction, AnthropicCompaction), CapabilityOrdering for hook composition, MCP made optional for DBOS module.
+   - **AG2 (AutoGen)**: Ground-up rewrite (AG2 Beta / autogen.beta) with streaming, event-driven architecture, A2A + MCP support.
+   - Updated comparison table, cross-framework patterns, and description.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale, decent impressions): mcp-publishing-journalism (113 impr, March 30), mcp-event-management (104 impr, March 29), mcp-matter-smart-home-protocol (105 impr, April 5)
+- **best-mcp-servers cornerstone page** (7,228 impr) — refreshed April 15, current for now
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 654 — 2026-04-16 — Content Freshness Review: MCP with Local LLMs Guide (481 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
