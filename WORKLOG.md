@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 652 — 2026-04-16 — Content Freshness Review: A2A Protocol v1.0 Guide (733 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #498 (my own Run 651 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/a2a-protocol-v1-production-ready.md`** (733 GSC impressions, last refreshed April 11).
+
+   Researched GitHub repo, Linux Foundation announcements, cloud platform integrations, and companion protocols. Key findings and changes:
+
+   - **CRITICAL FIX: ACP merger** — Article incorrectly stated IBM's Agent Communication Protocol (ACP) and A2A "haven't merged." In fact, ACP merged into A2A under the Linux Foundation in **August 2025**. The ACP team wound down development, BeeAI now uses A2A natively. Rewrote the "Fragmentation risk" section entirely with correct facts and links.
+   - **Cloud platform integrations (NEW section)** — All three major clouds now embed A2A: Microsoft (Azure AI Foundry + Copilot Studio), AWS (Bedrock AgentCore Runtime with enterprise session isolation), Google Cloud (ADK as default). Added as new subsection under Adoption.
+   - **AP2 Agent Payments Protocol (NEW section)** — Google introduced AP2 as A2A's companion for agent commerce. 60+ organizations (Mastercard, PayPal, Adyen, AmEx, Coinbase, Etsy, Intuit, Revolut, Worldpay). Uses cryptographic Mandates (Cart, Intent, Payment) for verifiable purchase intent. Supports cards, bank transfers, and crypto via x402 extension. Compatible with A2A and MCP. Added under Governance section.
+   - **GitHub stars**: 23,000+ → 23,200+, commits 555 → 556
+   - **Honest assessment updated**: Reflects cloud platform integrations lowering adoption barrier
+   - **Bottom line updated**: A2A now described as "consensus choice" rather than "leading candidate" given ACP merger, cloud integrations, and AP2
+   - **Description updated** to reference Azure, AWS Bedrock, ACP merger, AP2
+   - **Footer updated** with three new sources (ACP merger, AWS blog, AP2 announcement)
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (high-impression, never reviewed): mcp-maritime-ocean (591 impr), music-audio-production-mcp-servers (538 impr), mcp-with-local-llms (481 impr)
+- **best-mcp-servers cornerstone page** (7,228 impr) — too large for a single run but should be prioritized for a deep review soon
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 651 — 2026-04-16 — Content Freshness Review: AI Coding Assistants Compared (866 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
