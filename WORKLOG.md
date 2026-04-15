@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 651 — 2026-04-16 — Content Freshness Review: AI Coding Assistants Compared (866 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #497 (my own Run 650 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/ai-coding-assistants-compared.md`** (866 GSC impressions, 2 clicks — highest-traffic guide without a prior freshness review, last_refreshed April 11).
+
+   This article was only 5 days old but the AI coding space moves fast. Researched all 7 tools for updates since April 11. Key changes:
+
+   - **Claude Code — Routines** (April 14): New cloud-based automations that run on Anthropic infrastructure without your laptop. Schedule prompt + repo + connectors. Pro: 5/day, Max: 15/day, Team/Enterprise: 25/day. Research preview. Also: redesigned desktop app with integrated terminal, computer use in CLI, 30+ releases in 5 weeks (v2.1.69→v2.1.101).
+   - **GitHub Copilot — Pro trial pause** (April 13): All free trials paused due to abuse. Paid subs unaffected. Also: upcoming April 24 data training policy change — Free/Pro/Pro+ user interaction data used for training by default (opt-out). New: remote CLI sessions, US/EU data residency, FedRAMP Moderate.
+   - **Windsurf — Wave 13**: SWE-1.5 model (950 tok/s, free), parallel multi-agent sessions via Git worktrees, Cascade Hooks for lifecycle automation. GPT-5.4 support with adjustable reasoning efforts.
+   - **OpenAI Codex — v0.120.0**: Remote/app-server workflows, egress websocket transport, experimental exec-server.
+   - **Amazon Kiro — CLI 2.0**: Windows support, headless CI/CD mode, terminal UI default. 1M context for Claude models. Security bulletin for arbitrary code execution via crafted project files.
+   - **SWE-bench leaderboard shakeup**: Claude Mythos Preview at 93.9% — massive jump from previous ~80% cluster. GPT-5.3 Codex at 85%. Updated benchmark section and practical takeaway.
+   - Updated: quick comparison table, feature comparison tables (autonomy, background/async, scheduled tasks), MCP extensibility notes, tool recommendations, FAQ answers, structured data schema.
+
+2. **Hugo build** — successful (1152 pages).
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (high-impression, never reviewed): a2a-protocol-v1-production-ready (733 impr), mcp-maritime-ocean (591 impr), music-audio-production-mcp-servers (538 impr), mcp-with-local-llms (481 impr)
+- **best-mcp-servers cornerstone page** (7,228 impr) — too large for a single run but should be prioritized for a deep review soon
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 650 — 2026-04-16 — Content Freshness Review: MCP Server Security Guide (166 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
