@@ -1,3 +1,4 @@
+Run 638: Citation retrofit of best-mcp-servers guide (6,876 GSC impressions — highest unretrofitted page by far). Fresh GSC query (March 18–April 14) revealed this as #1 priority. Added 25+ inline citation links: Anthropic (4×), OpenAI (2×), Model Context Protocol, LangChain, LlamaIndex, Stability AI, Midjourney, Gemini, Replicate, ComfyUI, HuggingFace, fal.ai, Penpot, Adobe, Algolia, Apache Solr, Typesense, DynamoDB, MotherDuck, DuckDB, Node.js, OWASP, Claude, Claude Desktop, Cursor, VS Code, Claude Code, Microsoft Entra ID, Universal Commerce Protocol. Updated last_refreshed to 2026-04-15. Hugo build, deployed to DreamHost.
 Run 620: Citation retrofit of claw-code-open-source-claude-code-clone guide (321 GSC impressions). Claw Code stars updated 114K→183K, repo transfer to ultraworkers noted. Added Claurst (8,974 stars) and Clawd Code (228 stars) star counts. 4 new sources added (SecurityWeek, Zscaler ThreatLabz, Engineer's Codex, Layer5). 20+ inline citations added throughout — every major claim now linked to source. All 6 original URLs verified working. Post-leak security vulnerability noted. Hugo build, deployed to DreamHost.
 Run 619: Citation retrofit of best-social-media-mcp-servers guide (786 GSC impressions, 0 clicks — highest unretrofitted page). Fresh GSC query revealed this was severely underserved. All 30 repos verified. Major corrections: 6551Team/opentwitter-mcp 378→536 (now most-starred Twitter MCP server), stickerdaniel/linkedin 1,100→1,516, gitroomhq/postiz 19,700→28,039 (+42%), karanb192/reddit 470→600, ZubeidHendricks/youtube unlisted→491 (nearly tied with winner at 514), adhikasp/mcp-reddit unlisted→389 (major omission). Summary table overhauled with new runner-ups. Decision tree updated. 20 star count updates + 9 previously unlisted repos now have counts. All inline citation links added. Hugo build, deployed to DreamHost.
 Run 618: Citation retrofit of message-queue-mcp-servers review (43 GSC impressions, 1 click). Corrections: Confluent tools 37+→50+ (major feature expansion per README), Azure/azure-mcp ARCHIVED Feb 2026 (moved to microsoft/mcp, 3K stars), kenliao94/mcp-server-rabbitmq re-homed to amazon-mq org. Star count updates: confluentinc/mcp-confluent 121→147, amazon-mq/mcp-server-rabbitmq 12→24 (doubled), streamnative 19→24. Added star counts for 14 repos previously listed as "—" (redis/mcp-redis 479 stars most notable). Reordered NATS table by stars (sinadarbouy 45 stars now first). Added Pulsar GitHub link, verified 71 tools with category breakdown. All 18+ repos verified — no fabricated entries. Hugo build, deployed to DreamHost.
@@ -8793,3 +8794,114 @@ Run 630 complete. Citation retrofit of the Gemma 4 agentic open model guide (155
 - **Date correction:** "released April 2" → "announced April 2" (weights dropped March 31)
 - Built and **deployed** to DreamHost
 - Next: mcp-pharma-biotech-life-sciences (129 impressions) citation retrofit
+Run 630 complete. Here's what I did:
+
+**Citation retrofit of Gemma 4 agentic open model guide** (155 GSC impressions):
+
+- **25+ inline citations** added from 13+ sources (Google official pages, Hugging Face Blog, The Register, VentureBeat, SiliconANGLE, ai.rs comparison, Interconnects, Ollama, Android AICore)
+- **New content**: 26B MoE τ2-bench 85.5%, Codeforces ELO generational leap (110→2150), 6 function calling control tokens, GPQA Diamond vs Llama 4 Scout comparison, Android AICore Developer Preview, fine-tuning support details
+- **Date correction**: "released" → "announced" April 2 (weights dropped March 31)
+- **Built and deployed** to DreamHost
+- **Fresh GSC query** run — next priority list compiled (pharma-biotech 129 impr → mcp-apps 96 impr)
+2026-04-14T17:40:18Z FINISHED run 41410
+2026-04-14T17:40:18Z SESSION 1540 stopped
+2026-04-14T18:28:01Z STARTED run 57673 (mode=wild)
+2026-04-14T18:28:03Z SESSION 1541 started
+Run 631 complete. Here's what I did:
+
+**Citation retrofit of `mcp-pharma-biotech-life-sciences.md`** (129 GSC impressions):
+- Added **30+ inline citations** from authoritative sources — Nature Reviews Drug Discovery, NAR database papers, PubMed, eCFR, FDA guidance, Benchling-Anthropic partnership press release, Oxford Academic, arXiv
+- Added **GitHub repo links for 25+ servers** (Augmented-Nature suite, openpharma-org suite, BioMCP, paper-search-mcp, and more)
+- Added **external database/platform links** (RDKit, ClinicalTrials.gov, PDB, UniProt, KEGG, Open Targets, etc.)
+- **Corrected 9 outdated stats**: PubMed 37M→40M+, PubChem 110M→119M+, AlphaFold 200M→214M+, PDB 220K→227K+, UniProt 250M→246M+, Benchling 1,200→1,300+ customers, BioMCP 384→490 stars, paper-search-mcp 914→1,100+ stars
+
+Built, deployed, committed, and logged.
+2026-04-14T18:37:36Z FINISHED run 57673
+2026-04-14T18:37:37Z SESSION 1541 stopped
+2026-04-14T19:29:01Z STARTED run 73910 (mode=wild)
+2026-04-14T19:29:04Z SESSION 1542 started
+Run 632 complete. Here's the summary:
+
+**Citation retrofit of Data Visualization MCP Servers review** — 40+ inline citations added:
+- **15 official library/tool sites** linked (AntV, ECharts, Chart.js, QuickChart.io, Vega-Lite, Plotly, Matplotlib, D3.js, DuckDB, Metabase, Vizro, Tableau, Power BI, Streamlit, Dash)
+- **5 release/version links** added (AntV v0.9.10, hustcc v0.7.1, Vizro v0.1.54, metabase-mcp v1.1.5, npm package)
+- **Metabase section expanded** with star counts and details for all 5 servers
+- **10 star counts corrected** (AntV 3,800→4,000+, ECharts servers, Vizro 3,600→3,700, etc.)
+- **New content**: waterfall chart in AntV list, note about ECharts site not promoting MCP server
+
+Built, deployed, committed, status sent. Next run: ci-cd-pipeline-mcp-servers (105 impr).
+2026-04-14T19:36:26Z FINISHED run 73910
+2026-04-14T19:36:27Z SESSION 1542 stopped
+2026-04-14T20:30:01Z STARTED run 90039 (mode=wild)
+2026-04-14T20:30:02Z SESSION 1543 started
+Run 633 complete. Here's what I did:
+
+**Citation retrofit of CI/CD Pipeline MCP Servers review** (105 GSC impressions):
+
+- **35+ inline citations added** — official platform sites (Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, Azure DevOps, GitLab, Woodpecker CI, Tekton, Kubernetes), plugin/docs links (Jenkins plugin marketplace, REST API, CircleCI npm, GitLab CI/CD docs, Buildkite Pipelines/Test Engine), and company links (Akuity, Microsoft)
+- **Release versions updated** — lanbaoshen/mcp-jenkins v3.0.1→v3.1.3, argocd-mcp v0.5.0→v0.6.0, buildkite v0.10.0→v1.0.0 (production ready!)
+- **Star counts corrected** across all 10 servers — notable jumps: lanbaoshen 96→112, GitHub MCP 27.9k→28.9k, Argo CD 350→398. Added missing counts for Woodpecker (4) and zereight/gitlab-mcp (1,400)
+- **Content fix** — Argo CD "stale release cadence" note updated to reflect v0.6.0 shipping March 2026
+
+Built with Hugo, deployed to DreamHost, committed, status sent via Jikan.
+
+**Next run:** Citation retrofit of claude-freebsd-exploit-ai-vulnerability-research (102 impressions).
+2026-04-14T20:36:48Z FINISHED run 90039
+2026-04-14T20:36:49Z SESSION 1543 stopped
+2026-04-14T21:31:01Z STARTED run 106977 (mode=wild)
+2026-04-14T21:31:03Z SESSION 1544 started
+Run 634 complete.
+
+**What I did:**
+- Citation retrofit of `claude-freebsd-exploit-ai-vulnerability-research.md` (102 GSC impressions)
+- Added **30+ inline citations**: Nicholas Carlini homepage, Anthropic, Frontier Red Team, CVE/NVD links (CVE-2026-4747, CVE-2026-26980, CVE-2026-34714, CVE-2026-31402), official project sites (FreeBSD, Ghost, Vim, Emacs, Firefox, Linux kernel, glibc, nginx), Claude Code Security, Project Glasswing, MAD Bugs disclosure posts, and source coverage links
+- Added factual details: affected FreeBSD versions, Ghost patch versions, Vim CVSS 9.2, Emacs maintainer response, Linux kernel NFSv4.0 specifics, Firefox 148.0 fix, Project Glasswing partner list
+- Built and deployed to DreamHost
+
+**Next run:** Citation retrofit of `mcp-content-creation-podcasting-video` (98 GSC impressions)
+2026-04-14T21:36:30Z FINISHED run 106977
+2026-04-14T21:36:30Z SESSION 1544 stopped
+2026-04-14T22:31:01Z STARTED run 122829 (mode=wild)
+2026-04-14T22:31:02Z SESSION 1545 started
+**Run 635 complete.** Citation retrofit of `mcp-content-creation-podcasting-video.md` (98 GSC impressions):
+
+- **90+ inline citation links added** across all sections
+- **15 GitHub repo links** — short-video-maker, video-audio-mcp, ffmpeg-mcp, 3 YouTube transcript servers, 3 podcast servers, elevenlabs-mcp, 2 Whisper servers, ayrshare-mcp, adobe-mcp, 2 SEO repos
+- **30+ official platform/product sites** — YouTube, TikTok, Instagram, FFmpeg, ElevenLabs, Epidemic Sound, Canva, Figma, Adobe suite (4 apps), DALL-E 3, Midjourney, Stable Diffusion, WordPress.com/org, Ghost, Notion, SE Ranking, Ahrefs, Semrush, Google Analytics/Search Console, social platforms (13)
+- **10+ commercial service links** — Pod Engine, Podigee, Barevalue, Audioscrape, Transcribe, Ayrshare, OpenTweet, BrandGhost, Publora, Coupler.io, ImaginePro
+- **15+ ecosystem gap links** — Streamlabs, Descript, Substack, Beehiiv, Kit, MailerLite, podcast hosts, Sora, Runway, Pika, monetization platforms
+- **Star count updates:** Short Video Maker 799 → 1,100; ElevenLabs MCP added at 1,300
+- Built, deployed, committed, status sent to inbox
+2026-04-14T22:38:16Z FINISHED run 122829
+2026-04-14T22:38:17Z SESSION 1545 stopped
+2026-04-14T23:32:01Z STARTED run 139068 (mode=wild)
+2026-04-14T23:32:02Z SESSION 1546 started
+Run 636 complete. Here's the summary:
+
+**Citation retrofit of Chemistry & Molecular Modeling MCP Servers review** (97 GSC impressions) — added **60+ inline citation links**:
+
+- **15+ database/platform links** — PubChem, ChEMBL, DrugBank, AlphaFold, PDB, STRING-db, SureChEMBL, UniProt, Reactome, KEGG, openFDA, Guide to PHARMACOLOGY
+- **20+ scientific software links** — PyMOL, ChimeraX, RDKit, AutoDock Vina, DiffDock, Smina, Gnina, LAMMPS, GROMACS, Open Babel, plus gap mentions (Gaussian, ORCA, AMBER, NAMD, etc.)
+- **10+ organization/company links** — Augmented-Nature, TandemAI, Schrödinger, MathWorks, etc.
+- **Developer tool links** — MCP protocol, FastMCP, FastAPI, CrewAI, Claude Desktop, SQLite, Prometheus
+
+Built, deployed, committed. Next run: `mcp-apps-interactive-ui-extension` (96 impressions).
+2026-04-14T23:38:15Z FINISHED run 139068
+2026-04-14T23:38:17Z SESSION 1546 stopped
+2026-04-15T00:33:01Z STARTED run 156372 (mode=wild)
+2026-04-15T00:33:02Z SESSION 1547 started
+
+
+**Run 637 complete.** Citation retrofit of the MCP Apps / Interactive UI Extension guide — added 50+ inline citation links across all sections:
+
+- **15+ company/org links**: Anthropic, OpenAI, Figma, Hex, Amplitude, Box, Canva, Asana, monday.com, Slack, Clay, Salesforce, Block, Linux Foundation, Agentic AI Foundation
+- **10+ product/client links**: Claude, ChatGPT, VS Code, GitHub Copilot, Goose, Postman, MCPJam, FigJam
+- **Technical spec links**: MCP, MCP Apps spec, SEP-1865, JSON-RPC, postMessage API, TypeScript
+- **Blog/announcement links**: Launch post, initial proposal, Goose blog post
+- **Developer tools**: Three.js
+
+Built, deployed, committed, status update sent.
+2026-04-15T00:37:08Z FINISHED run 156372
+2026-04-15T00:37:08Z SESSION 1547 stopped
+2026-04-15T01:33:01Z STARTED run 172313 (mode=wild)
+2026-04-15T01:33:02Z SESSION 1548 started

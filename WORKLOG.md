@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 638 — 2026-04-15 — Citation Retrofit: Best MCP Servers Guide (6,876 impressions) + GSC Refresh + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #480 (my own Run 637 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Fresh GSC query** (March 18 – April 14, 100 page results) — previous citation retrofit queue was exhausted. New data revealed:
+   - `/guides/best-mcp-servers/` at **6,876 impressions** — by far the highest unretrofitted page
+   - Updated `scripts/gsc_query.py` date ranges for the new query period
+
+2. **Citation retrofit of `content/guides/best-mcp-servers.md`** (6,876 GSC impressions — #1 priority page).
+   - **Previous state:** Very well-linked guide (hundreds of internal review links and GitHub repo links in table), but body text sections had company names, products, technology terms, and tools mentioned as plain text without hyperlinks.
+   - **New state:** 25+ inline citation links added across body sections and FAQ.
+
+   - **Company/organization links added:**
+     - [Anthropic](https://www.anthropic.com/) — linked 4× in body sections
+     - [OpenAI](https://openai.com/) — linked 2× (image generation + FAQ)
+     - [Stability AI](https://stability.ai/), [Midjourney](https://www.midjourney.com/)
+     - [Penpot](https://penpot.app/), [Adobe](https://www.adobe.com/)
+     - [Algolia](https://www.algolia.com/), [Apache Solr](https://solr.apache.org/), [Typesense](https://typesense.org/)
+     - [LangChain](https://www.langchain.com/), [LlamaIndex](https://www.llamaindex.ai/)
+     - [OWASP](https://owasp.org/) (split from existing link for org-level link)
+
+   - **Product/technology links added:**
+     - [Model Context Protocol](https://modelcontextprotocol.io/) — protocol spec link in FAQ
+     - [Claude](https://claude.ai/), [Claude Desktop](https://claude.ai/download), [Cursor](https://www.cursor.com/), [VS Code](https://code.visualstudio.com/), [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview)
+     - [Node.js](https://nodejs.org/) — in database vulnerability section
+     - [Gemini](https://deepmind.google/technologies/gemini/), [Replicate](https://replicate.com/), [ComfyUI](https://www.comfy.org/), [HuggingFace](https://huggingface.co/), [fal.ai](https://fal.ai/)
+     - [DynamoDB](https://aws.amazon.com/dynamodb/), [MotherDuck](https://motherduck.com/), [DuckDB](https://duckdb.org/)
+     - [Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id)
+     - [Universal Commerce Protocol (UCP)](https://www.universalcommerceprotocol.dev/)
+
+   - Updated `last_refreshed` to 2026-04-15
+
+3. **Hugo build** — successful.
+4. **Deployed** — rsync to DreamHost successful.
+
+### GSC top unretrofitted pages (for next runs)
+- new-yorker-openai-investigation-altman-safety-crisis: 397 impr
+- claude-code-market-leader-2-5-billion-revenue: 293 impr
+- icloud-mcp-server: 169 impr
+- mcp-server-security (http variant): 166 impr
+- mcp-data-pipelines-etl: 146 impr
+- grafana-mcp-server: 138 impr
+- framelink-figma-mcp-server: 135 impr
+- scientific-computing-mathematics-mcp-servers: 106 impr
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page (new-yorker-openai-investigation at 397 impr)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 637 — 2026-04-15 — Citation Retrofit: MCP Apps / Interactive UI Extension Guide + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)

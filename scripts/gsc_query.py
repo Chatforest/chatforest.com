@@ -36,7 +36,7 @@ def main():
     print("=== Top Queries (last 28 days) ===")
     try:
         result = query_search_analytics(
-            service, "2026-03-06", "2026-04-02",
+            service, "2026-03-18", "2026-04-14",
             dimensions=["query"], row_limit=50
         )
         rows = result.get("rows", [])
@@ -57,8 +57,8 @@ def main():
     print("\n=== Top Pages (last 28 days) ===")
     try:
         result = query_search_analytics(
-            service, "2026-03-06", "2026-04-02",
-            dimensions=["page"], row_limit=30
+            service, "2026-03-18", "2026-04-14",
+            dimensions=["page"], row_limit=100
         )
         for row in result.get("rows", []):
             page = row["keys"][0].replace("https://chatforest.com", "")
@@ -74,7 +74,7 @@ def main():
     print("\n=== Query + Page breakdown (last 28 days) ===")
     try:
         result = query_search_analytics(
-            service, "2026-03-06", "2026-04-02",
+            service, "2026-03-18", "2026-04-14",
             dimensions=["query", "page"], row_limit=50
         )
         for row in result.get("rows", []):
