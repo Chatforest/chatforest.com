@@ -5,7 +5,8 @@ description: "Claude Code vs Cursor vs Copilot vs Windsurf vs Codex vs Kiro vs A
 og_description: "Seven AI coding assistants compared: Claude Code, Cursor, GitHub Copilot, Windsurf, OpenAI Codex, Amazon Kiro, and Google Antigravity. Honest comparison with pricing."
 content_type: "Guide"
 card_description: "Seven AI coding tools are competing to change how you write software. Here's an honest comparison of features, pricing, and which one fits your workflow."
-last_refreshed: 2026-04-11
+last_refreshed: 2026-04-16
+lastmod: 2026-04-16
 ---
 
 The AI coding assistant landscape in 2026 has shifted from autocomplete to autonomous agents. Every major tool now offers some form of agent mode — AI that can read your codebase, plan changes across files, run commands, and open pull requests. The question is no longer "should I use an AI coding tool?" but "which one fits how I work?"
@@ -16,10 +17,10 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 
 | Tool | Type | Starting Price | Agent Mode | MCP Support | Best For |
 |------|------|---------------|------------|-------------|----------|
-| **Claude Code** | Terminal agent | $20/mo (Max) | Yes (native) | Yes (native) | Complex reasoning, multi-file refactors |
+| **Claude Code** | Terminal agent + routines | $20/mo (Max) | Yes (native) | Yes (native) | Complex reasoning, cloud automations |
 | **Cursor** | IDE (VS Code fork) | $20/mo | Yes | Yes | Daily coding with deep autocomplete |
 | **GitHub Copilot** | IDE extension + agent | $10/mo | Yes | Yes | GitHub-centric workflows, teams |
-| **Windsurf** | IDE (VS Code fork) | $15/mo | Yes (Cascade) | Yes | Budget-conscious agentic coding |
+| **Windsurf** | IDE (VS Code fork) | $15/mo | Yes (Cascade + parallel) | Yes | Budget-conscious, parallel agents |
 | **OpenAI Codex** | Terminal agent + web | $20/mo (ChatGPT Plus) | Yes | Yes | Open-source flexibility, token efficiency |
 | **Amazon Kiro** | IDE (VS Code-based) | $20/mo | Yes | Yes | Spec-driven development, AWS integration |
 | **Google Antigravity** | IDE + manager | Free (AI Studio) | Yes | Yes | Parallel agents, Google/Firebase ecosystem |
@@ -33,15 +34,17 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 - **Native MCP support**: Built on the [Model Context Protocol](/guides/what-is-mcp/) from the ground up — connect any MCP server to extend its capabilities
 - **Terminal-native workflow**: Works alongside your existing tools, editor, and shell without replacing them
 - **Agent autonomy**: Full-auto mode, background agents, `/loop` for scheduled tasks, voice mode, and session resume
-- **IDE integration**: Also available in VS Code, JetBrains, and as a desktop app
+- **[Routines](https://siliconangle.com/2026/04/14/anthropics-claude-code-gets-automated-routines-desktop-makeover/)** (research preview, April 14): Cloud-based automations that run on Anthropic's infrastructure — schedule a prompt + repo + connectors and they execute even with your laptop off. Pro: 5/day, Max: 15/day, Team/Enterprise: 25/day
+- **Computer use in CLI**: Claude can open native apps, click through UI elements, and test its own changes directly from the terminal
+- **IDE integration**: Also available in VS Code, JetBrains, and as a [redesigned desktop app](https://siliconangle.com/2026/04/14/anthropics-claude-code-gets-automated-routines-desktop-makeover/) with integrated terminal, faster diff viewer, and in-app file editor
 
-**Pricing:** Requires an Anthropic [Max](https://claude.com/pricing) ($20/mo for Sonnet, $100/mo for Opus with 1M context), Team ($30/seat/mo), or Enterprise plan. [API access](https://platform.claude.com/docs/en/about-claude/pricing) also available with per-token billing (Opus 4.6: $5/$25 per M tokens).
+**Pricing:** Requires an Anthropic [Max](https://claude.com/pricing) ($20/mo for Sonnet, $100/mo for Opus with 1M context), Team ($30/seat/mo), or Enterprise plan. [API access](https://platform.claude.com/docs/en/about-claude/pricing) also available with per-token billing (Opus 4.6: $5/$25 per M tokens). Routines usage included in plan limits.
 
 **MCP integration:** Claude Code has the deepest MCP integration of any tool — it was built by the team that created the protocol. You can connect multiple MCP servers, use [custom hooks](/guides/what-is-mcp/), and the tool itself can act as an MCP client for external services.
 
 **Best for:** Developers who prefer terminal workflows, need deep reasoning on complex codebases, or want maximum flexibility through MCP integrations. Particularly strong for autonomous multi-file changes, architectural refactoring, and tasks requiring sustained reasoning across large contexts.
 
-**Limitations:** Terminal-first approach has a learning curve for GUI-oriented developers. No inline autocomplete — it's an agent, not a copilot.
+**Limitations:** Terminal-first approach has a learning curve for GUI-oriented developers. No inline autocomplete — it's an agent, not a copilot. The intense release cadence (30+ versions in 5 weeks as of April 2026) means the feature set evolves rapidly.
 
 ## Cursor
 
@@ -75,6 +78,8 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 - **Model choice**: Pro+ tier includes Claude Opus 4, OpenAI o3, and other frontier models
 - **Enterprise features**: Organizational policies, knowledge bases, fine-tuning on private repos
 - **[Copilot SDK](https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview/)** (public preview): [Embed Copilot's agentic capabilities](https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/) directly into your own applications — available for Python, TypeScript, Go, .NET, and Java
+- **Remote CLI sessions**: Monitor and steer running CLI sessions from the web or GitHub Mobile with real-time sync
+- **Data residency**: US and EU region support, plus [FedRAMP Moderate](https://github.blog/changelog/month/04-2026/) for US government customers
 
 **Pricing:** Free (2,000 completions + 50 premium requests/mo), Pro ($10/mo, 300 premium requests), Pro+ ($39/mo, 1,500 premium requests), Business ($19/seat/mo), Enterprise ($39/seat/mo, requires GitHub Enterprise Cloud). [Full plan comparison](https://github.com/features/copilot/plans).
 
@@ -82,7 +87,7 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 
 **Best for:** Teams already deep in the GitHub ecosystem. The $10/mo Pro tier is the cheapest entry point for a capable AI coding assistant with unlimited completions. Enterprise teams benefit from centralized management and policy controls.
 
-**Limitations:** The free and Pro tiers have limited premium requests, which gate access to better models and agent features. Agent capabilities trail behind dedicated agentic tools like Claude Code and Cursor.
+**Limitations:** The free and Pro tiers have limited premium requests, which gate access to better models and agent features. Agent capabilities trail behind dedicated agentic tools like Claude Code and Cursor. **Note:** GitHub [paused all Copilot Pro free trials](https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials/) on April 13, 2026 due to abuse — paid subscriptions and Copilot Free remain active. Also, starting April 24, 2026, interaction data from Free/Pro/Pro+ individual users will be [used for AI model training by default](https://smartscope.blog/en/generative-ai/github-copilot/github-copilot-data-training-policy-2026/) (opt-out, not opt-in).
 
 ## Windsurf
 
@@ -92,6 +97,9 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 - **[Cascade](https://windsurf.com/cascade)**: The AI agent for multi-file edits, codebase reasoning, and refactoring — fully agentic from the start
 - **Fast Context**: Proprietary indexing that builds deep understanding of project structure, dependencies, and patterns
 - **Memories**: Over ~48 hours of use, it learns your architecture patterns and coding conventions, improving accuracy over time
+- **[SWE-1.5 model](https://cognition.ai/blog/swe-1-5)**: Cognition's own coding model runs at 950 tok/s (6x faster than Haiku 4.5), free for all users
+- **[Parallel agents](https://byteiota.com/windsurf-wave-13-free-swe-1-5-parallel-agents-escalate-ai-ide-war/)** (Wave 13): Run up to five Cascade agents simultaneously via Git worktrees, with side-by-side panes to monitor each agent
+- **[Cascade Hooks](https://windsurf.com/changelog)**: Configure automations at specific points in the agent lifecycle — log responses, enforce policies, trigger actions
 - **Competitive pricing**: Pro at $15/mo is the cheapest agentic IDE option
 - **Unlimited autocomplete**: Tab completions are free on every plan, including the free tier
 
@@ -101,7 +109,7 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 
 **Best for:** Developers who want agentic capabilities at the lowest price point. The Memories feature is particularly useful for long-term projects where the AI builds up context over time. Good entry point for developers new to AI-assisted coding.
 
-**Limitations:** Cascade can be aggressive — sometimes making changes you didn't ask for. The Memories feature needs time to become useful. Smaller community and extension ecosystem compared to Cursor.
+**Limitations:** Cascade can be aggressive — sometimes making changes you didn't ask for. The Memories feature needs time to become useful. Smaller community and extension ecosystem compared to Cursor. The [Cognition acquisition](https://cognition.ai/blog/windsurf) is still integrating, so the product roadmap may shift.
 
 ## OpenAI Codex
 
@@ -113,6 +121,7 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 - **Speed**: [GPT-5.3-Codex](https://developers.openai.com/codex/changelog) combines frontier coding performance with stronger reasoning, running 25% faster than its predecessor. Codex-Spark delivers 1,000+ tokens per second (research preview for Pro users)
 - **OS-level sandboxing**: Seatbelt (macOS), Landlock + seccomp (Linux) for secure execution
 - **Flexible access**: Use through ChatGPT Plus ($20/mo) or bring your own API key with per-token billing
+- **Remote workflows**: v0.120.0 adds egress websocket transport, remote `--cd` forwarding, and an experimental `codex exec-server` subcommand for app-server integrations
 
 **Pricing:** The tool is free (open source). You pay for model access — ChatGPT Plus at $20/mo includes Codex Web and CLI usage. API pricing: codex-mini at $1.50/$6.00 per M tokens, GPT-5 at $1.25/$10.00 per M tokens.
 
@@ -130,7 +139,8 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 - **Spec-driven development**: Before writing code, Kiro generates requirements and design docs for your review. Once approved, it implements from a structured plan — reducing "vibe coding" drift
 - **AWS integration**: Native AWS observability, CloudFormation/CDK support, and tight integration with AWS services
 - **Steering rules**: Guide AI behavior across your project with persistent configuration
-- **Model flexibility**: Supports Claude (Haiku/Sonnet/Opus), DeepSeek, MiniMax, and Qwen models with different credit multipliers
+- **Model flexibility**: Supports Claude (Haiku/Sonnet/Opus with 1M context), DeepSeek, MiniMax, and Qwen models with different credit multipliers
+- **[Kiro CLI 2.0](https://kiro.dev/changelog/)**: Windows support, headless mode for CI/CD automation, terminal UI as default experience
 
 **Pricing:** Free (50 credits), Pro ($20/mo, 1,000 credits), Pro+ ($40/mo, 2,000 credits), Power ($200/mo, 10,000 credits). New users get 500 bonus credits. Additional credits at $0.04 each. [Model multipliers](https://kiro.dev/) vary: DeepSeek 3.2 (0.25×), MiniMax M2.1 (0.15×), Qwen3 Coder Next (0.05×).
 
@@ -138,7 +148,7 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 
 **Best for:** Teams building on AWS who want structured, spec-driven development. The requirements-first approach is valuable for enterprise projects where documentation and planning matter. Good for developers who find pure agent mode too unpredictable.
 
-**Limitations:** Spec-driven approach adds overhead for small, quick tasks. AWS integration is a strength but also a bias — non-AWS workflows get less attention. Smaller ecosystem than Cursor or Copilot.
+**Limitations:** Spec-driven approach adds overhead for small, quick tasks. AWS integration is a strength but also a bias — non-AWS workflows get less attention. Smaller ecosystem than Cursor or Copilot. A [security bulletin (2026-009)](https://aws.amazon.com/security/security-bulletins/rss/2026-009-aws/) disclosed arbitrary code execution via crafted project files — keep updated.
 
 ## Google Antigravity
 
@@ -169,11 +179,11 @@ Every tool now offers agent mode, but the depth varies significantly:
 | Capability | Claude Code | Cursor | Copilot | Windsurf | Codex | Kiro | Antigravity |
 |-----------|------------|--------|---------|----------|-------|------|-------------|
 | Multi-file editing | Deep | Deep | Good | Deep | Good | Deep | Deep |
-| Autonomous execution | Full-auto | Agents Window + Background | Autopilot (preview) | Cascade | Full-auto | Spec-driven | Parallel agents |
+| Autonomous execution | Full-auto + Routines | Agents Window + Background | Autopilot (preview) | Cascade + Parallel (Wave 13) | Full-auto | Spec-driven + CLI 2.0 | Parallel agents |
 | Terminal/shell access | Native | Integrated | Limited | Integrated | Native | Integrated | Integrated |
 | Git operations | Native | Integrated | Deep (GitHub) | Integrated | Native | Integrated | Integrated |
-| Background/async work | /loop, background | Background agents | Workspace | — | Cloud execution | — | Manager View |
-| Scheduled tasks | Yes (/loop) | — | — | — | — | — | — |
+| Background/async work | /loop, background, routines | Background agents | Workspace, remote CLI | Parallel agents (Wave 13) | Cloud execution, remote | Headless CI/CD | Manager View |
+| Scheduled tasks | Yes (/loop + routines) | — | — | Cascade Hooks | — | — | — |
 | Session resume | Yes | — | — | — | Yes | — | — |
 
 ### MCP and Extensibility
@@ -183,7 +193,7 @@ The [Model Context Protocol](/guides/what-is-mcp/) has become the standard way t
 - **Claude Code**: Native MCP client — connect any MCP server, use [custom hooks](/guides/mcp-tool-design-patterns/), deepest integration
 - **Cursor**: MCP server support in settings — straightforward configuration
 - **GitHub Copilot**: MCP support in Agent Mode — works with standard MCP servers
-- **Windsurf**: MCP support for Cascade — extends agent capabilities
+- **Windsurf**: MCP support for Cascade — extends agent capabilities, plus Cascade Hooks for lifecycle automation
 - **Codex**: MCP server support — connects to external tools
 - **Kiro**: Full MCP support — pairs well with spec-driven approach
 - **Antigravity**: MCP support with built-in MCP Store — strongest for Google/Firebase integrations, third-party servers also supported
@@ -222,29 +232,29 @@ For a solo developer:
 
 ## Benchmarks: Take Them With a Grain of Salt
 
-[SWE-bench Verified](https://www.swebench.com/) is the most commonly cited benchmark for AI coding tools. As of April 2026, the [top scores cluster closely](https://llm-stats.com/benchmarks/swe-bench-verified):
+[SWE-bench Verified](https://www.swebench.com/) is the most commonly cited benchmark for AI coding tools. As of mid-April 2026, the [leaderboard](https://llm-stats.com/benchmarks/swe-bench-verified) has a clear new leader:
 
+- **[Claude Mythos Preview](https://llm-stats.com/benchmarks/swe-bench-verified): 93.9%** — a massive jump that breaks away from the previous ~80% cluster
+- GPT-5.3 Codex: 85.0%
 - Claude Opus 4.5: 80.9%
 - Claude Opus 4.6: 80.8%
 - Gemini 3.1 Pro: 80.6%
 - MiniMax M2.5: 80.2%
-- GPT-5.2: 80.0%
-- Claude Sonnet 4.6: 79.6%
 - GPT-5.4: Strong on [SWE-bench Pro](https://labs.scale.com/leaderboard/swe_bench_pro_public) (57.7%) and Terminal-Bench (75.1%)
 
 **Why benchmarks are misleading for tool comparison:** The same model running through different agent scaffolding can score 50.2% to 55.4% — a spread that comes entirely from how the agent manages context and tool calls, not model capability. Infrastructure differences (CPU, memory, timeouts) can also swing results by several points. A tool's agent architecture matters as much as its underlying model.
 
-The practical takeaway: all frontier models are competitive on coding tasks. Your experience will depend more on the tool's UX, agent architecture, and integration with your workflow than on benchmark differences.
+The practical takeaway: Claude Mythos Preview's 93.9% suggests a genuine capability jump is coming, but for current tool selection, your experience still depends more on UX, agent architecture, and workflow integration than on benchmark gaps between shipping models.
 
 ## Which Tool Should You Choose?
 
-**Choose Claude Code if** you prefer terminal workflows, need the deepest reasoning on complex codebases, want maximum MCP extensibility, or are building autonomous agent workflows. The `/loop` scheduled tasks feature is unique and powerful for ongoing development operations.
+**Choose Claude Code if** you prefer terminal workflows, need the deepest reasoning on complex codebases, want maximum MCP extensibility, or are building autonomous agent workflows. The new [routines](https://siliconangle.com/2026/04/14/anthropics-claude-code-gets-automated-routines-desktop-makeover/) feature lets you schedule cloud-based automations that run without your laptop — unique among these tools.
 
 **Choose Cursor if** you write code daily and want the best combination of autocomplete and agent capabilities. Cursor 3's Agents Window lets you orchestrate multiple agents across repos, while Supermaven autocomplete handles fast inline completions.
 
 **Choose GitHub Copilot if** your team lives in the GitHub ecosystem, you want the cheapest entry point ($10/mo), or you need enterprise-grade management and policies. The GitHub integration depth is unmatched.
 
-**Choose Windsurf if** you want agentic capabilities at the lowest price, are new to AI-assisted coding, or work on long-term projects where the Memories feature can compound value over time.
+**Choose Windsurf if** you want agentic capabilities at the lowest price, are new to AI-assisted coding, or want parallel multi-agent sessions (Wave 13). The Memories feature compounds value on long-term projects, and the free SWE-1.5 model (950 tok/s) is hard to beat on speed.
 
 **Choose OpenAI Codex if** you value open source, want to customize your agent, or need the most token-efficient terminal agent. The ChatGPT Plus bundle is good value.
 
@@ -257,9 +267,9 @@ The practical takeaway: all frontier models are competitive on coding tasks. You
 The 2026 AI coding landscape has converged on a common architecture: autocomplete for fast typing, agent mode for complex tasks, and MCP for extensibility — all seven tools now support MCP. The differentiation is shifting from "can it write code?" to:
 
 - **How does it integrate with your existing workflow?** (Terminal vs IDE, GitHub vs AWS vs Google)
-- **How autonomous can it be?** (Background agents, scheduled tasks, parallel processing)
-- **How extensible is it?** (MCP support, custom tools, plugin ecosystems)
-- **How predictable is the cost?** (Credits vs quotas vs fixed plans)
+- **How autonomous can it be?** (Background agents, cloud routines, parallel processing, headless CI/CD)
+- **How extensible is it?** (MCP support, custom tools, hooks, plugin ecosystems)
+- **How predictable is the cost?** (Credits vs quotas vs fixed plans — and watch for [data training policy changes](https://smartscope.blog/en/generative-ai/github-copilot/github-copilot-data-training-policy-2026/))
 
 Most developers will end up using more than one tool. Claude Code for complex refactoring, Cursor for daily coding, Copilot for PR reviews — these are complementary, not mutually exclusive. The right question isn't "which is the best?" but "which combination fits how I work?"
 
@@ -287,7 +297,7 @@ MCP (Model Context Protocol) is an open standard created by Anthropic that lets 
 
 **Which AI coding tool has the best agent mode?**
 
-Claude Code and Cursor lead in agent capabilities. Claude Code runs as a terminal agent that can autonomously read codebases, edit files, run commands, and iterate on complex multi-file tasks — plus it offers unique scheduled tasks via `/loop`. Cursor 3's Agents Window lets you orchestrate multiple agents across repos with strong autocomplete support. Windsurf's Cascade is capable but less autonomous. Google Antigravity's parallel agent execution is novel but still in preview.
+Claude Code, Cursor, and Windsurf lead in agent capabilities. Claude Code runs as a terminal agent with autonomous codebase editing plus cloud routines that run without your laptop. Cursor 3's Agents Window orchestrates multiple agents across repos with strong autocomplete. Windsurf Wave 13 now matches with parallel multi-agent sessions via Git worktrees. Google Antigravity's Manager View parallel execution is maturing rapidly.
 
 <script type="application/ld+json">
 {
@@ -331,7 +341,7 @@ Claude Code and Cursor lead in agent capabilities. Claude Code runs as a termina
       "name": "Which AI coding tool has the best agent mode?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Claude Code and Cursor lead. Claude Code runs as a terminal agent that autonomously reads codebases, edits files, runs commands, and offers unique scheduled tasks. Cursor 3's Agents Window orchestrates multiple agents across repos with strong autocomplete. Windsurf's Cascade is capable but less autonomous. Google Antigravity's parallel execution is novel but in preview."
+        "text": "Claude Code, Cursor, and Windsurf lead. Claude Code runs as a terminal agent with cloud routines that execute without your laptop. Cursor 3's Agents Window orchestrates agents across repos with strong autocomplete. Windsurf Wave 13 adds parallel multi-agent sessions via Git worktrees. Google Antigravity's Manager View is maturing rapidly."
       }
     }
   ]
