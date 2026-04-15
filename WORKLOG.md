@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 642 — 2026-04-15 — Content Freshness Review: MCP Data Pipelines & ETL Guide (146 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #488 (my own Run 641 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-data-pipelines-etl.md`** (146 GSC impressions — top stale page by impressions, last refreshed March 29).
+
+   Checked all 17+ GitHub repos via API. Key findings:
+
+   - **astronomer/astro-airflow-mcp: ARCHIVED** (January 2026). Relocated to astronomer/agents monorepo (~316 stars). Updated repo link, noted monorepo includes 25+ AI skills for data engineering workflows, added companion CLI tool (`af`) mention.
+
+   - **confluentinc/mcp-confluent: 37+ → 50+ tools** (major expansion). New categories: Flink Diagnostics (3), Catalog & Tags (7), Tableflow Catalog (5), Metrics (2). Now supports HTTP and SSE transports beyond stdio. Stars 144→149.
+
+   - **dbt-labs/dbt-mcp: v1.11.0 → v1.14.0**. Stars 521→538. Tool categories 7→9 (added Product Docs, MCP Server Metadata).
+
+   - **airbytehq/connector-builder-mcp: 404** (repo deleted). Removed dead link. Updated airbyte-agent-connectors with star count (~115).
+
+   - **Star count updates:** Snowflake-Labs/mcp 265→274, google/mcp 3,500→3,872, LucasHild/mcp-server-bigquery 123→125, ergut/mcp-bigquery-server 135→137, RafaelCartenet/mcp-databricks-server 37→40, awslabs/mcp 8,600→8,765, tuannvm/kafka-mcp-server 47→48, streamnative/streamnative-mcp-server 23→24.
+
+   - **Comparison table** fully updated with new star counts, tool counts, and transport modes.
+
+   - Updated `last_refreshed` to 2026-04-15.
+
+2. **Hugo build** — successful (1152 pages).
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): framelink-figma-mcp-server (135 impr, March 14), mcp-data-pipelines-etl done, mcp-caching-strategies (76 impr, March 28), snowflake-mcp-server (74 impr, March 23), mcp-across-ai-platforms (70 impr, March 28)
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+
 ## Run 641 — 2026-04-15 — Citation Retrofit: Claude Code Market Leader (293 impressions) + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)

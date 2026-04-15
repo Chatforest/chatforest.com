@@ -4,14 +4,14 @@ date: 2026-03-29T20:00:00+09:00
 description: "A comprehensive guide to MCP integrations across the modern data stack — covering Airflow, dbt, Kafka, Snowflake, BigQuery, Databricks, Fivetran, Airbyte, Dagster, data quality"
 content_type: "Guide"
 card_description: "Every major data platform now has an MCP server. This guide covers Airflow, dbt, Kafka, Snowflake, BigQuery, Databricks, Fivetran, Airbyte, and Dagster — with tool inventories, architecture patterns, real-world case studies, and security best practices."
-last_refreshed: 2026-03-29
+last_refreshed: 2026-04-15
 ---
 
 The modern data stack is getting an AI layer. Every major data platform — from orchestrators like Airflow and Dagster, to transformation tools like dbt, to warehouses like Snowflake and BigQuery, to streaming platforms like Kafka — now has at least one MCP server connecting it to AI agents.
 
 This means agents can now discover data models, trace lineage, trigger pipeline runs, diagnose failures, query warehouses, produce and consume streaming messages, manage ELT connectors, and validate data quality — all through standardized MCP tool calls instead of custom API integrations.
 
-The maturity varies significantly. dbt's official MCP server exposes 40+ tools with semantic layer integration. Confluent's Kafka server offers 37+ tools spanning Kafka, Flink SQL, and Schema Registry. Snowflake and Google both ship official MCP servers with deep platform integration. Others, like Dagster and Great Expectations, have community-built servers still finding their footing.
+The maturity varies significantly. dbt's official MCP server exposes 40+ tools with semantic layer integration. Confluent's Kafka server offers 50+ tools spanning Kafka, Flink SQL, Schema Registry, and Tableflow. Snowflake and Google both ship official MCP servers with deep platform integration. Others, like Dagster and Great Expectations, have community-built servers still finding their footing.
 
 This guide covers MCP integrations across the entire data pipeline — ingestion, orchestration, transformation, warehousing, streaming, and quality — with tool inventories, architecture patterns, real-world case studies, and security considerations. Our analysis draws on published documentation, open-source implementations, and vendor announcements — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -21,7 +21,7 @@ This guide covers MCP integrations across the entire data pipeline — ingestion
 
 Airflow is the most widely deployed pipeline orchestrator, and it has several MCP servers — including one from Astronomer, the company behind managed Airflow.
 
-**astro-airflow-mcp** ([astronomer/astro-airflow-mcp](https://github.com/astronomer/astro-airflow-mcp)) — the official Astronomer MCP server for Airflow. Apache 2.0 license. Version 0.2.2 (January 2026).
+**astro-airflow-mcp** ([astronomer/agents](https://github.com/astronomer/agents/tree/main/astro-airflow-mcp)) — the official [Astronomer](https://www.astronomer.io/) MCP server for Airflow. Apache 2.0 license. The standalone repo was archived in January 2026 and relocated to Astronomer's agents monorepo (~316 stars), which also includes 25+ AI skills for data engineering workflows.
 
 Key tools:
 - **DAG intelligence:** `explore_dag` (structure and dependencies), `diagnose_dag_run` (failure analysis), `get_system_health`
@@ -31,7 +31,7 @@ Key tools:
 - **Data lineage:** Asset/dataset management with lineage tracking
 - **System info:** Plugin and provider information
 
-Notable features: Supports both Airflow 2.x and 3.x with automatic version detection. Runs as a standalone server (`uvx astro-airflow-mcp --transport stdio`) or embedded as an Airflow plugin. Multiple auth methods — bearer tokens, OAuth 2.1, and basic auth.
+Notable features: Supports both Airflow 2.x and 3.x with automatic version detection. Runs as a standalone server (`uvx astro-airflow-mcp --transport stdio`) or embedded as an Airflow plugin. Multiple auth methods — bearer tokens, OAuth 2.1, and basic auth. A companion CLI tool (`af`) provides terminal-based Airflow interaction.
 
 **airflow-mcp-server** ([abhishekbhakat/airflow-mcp-server](https://github.com/abhishekbhakat/airflow-mcp-server)) — ~32 stars, MIT license, version 0.9.1. Takes a different approach: tools are dynamically generated from Airflow's OpenAPI spec, so it automatically covers any endpoint Airflow exposes. Offers both hierarchical and static tool discovery modes. Includes a safe mode (read-only) and unsafe mode (full operations). JWT auth. Requires Airflow 3.0+.
 
@@ -60,9 +60,9 @@ Dagster has announced that an official MCP server is upcoming, with Dagster Comp
 
 dbt Labs' official MCP server is the most feature-rich data engineering MCP integration available, with 40+ tools spanning SQL execution, semantic layer queries, project discovery, CLI operations, admin API, code generation, and LSP integration.
 
-**dbt-mcp** ([dbt-labs/dbt-mcp](https://github.com/dbt-labs/dbt-mcp)) — ~521 stars, Apache 2.0, version 1.11.0 (March 25, 2026).
+**dbt-mcp** ([dbt-labs/dbt-mcp](https://github.com/dbt-labs/dbt-mcp)) — ~538 stars, Apache 2.0, version 1.14.0 (April 2026).
 
-The tool inventory is organized into seven categories:
+The tool inventory is organized into nine categories:
 
 **SQL execution:**
 - `execute_sql` — run SQL against the warehouse
@@ -89,6 +89,12 @@ The tool inventory is organized into seven categories:
 
 **LSP (Language Server Protocol):**
 - `fusion.compile_sql`, `fusion.get_column_lineage` — IDE-level SQL compilation and column-level lineage
+
+**Product Docs:**
+- Documentation search and retrieval for dbt project context
+
+**MCP Server Metadata:**
+- Version and branch information for the MCP server itself
 
 Two deployment modes are available: local MCP server (using `uvx` for stdio transport) and remote MCP server (HTTP, hosted on the dbt platform).
 
@@ -118,7 +124,7 @@ Based on dbt Labs' own published documentation and blog posts, several architect
 
 Snowflake Labs ships an official MCP server with deep platform integration.
 
-**Snowflake-Labs/mcp** ([Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp)) — ~265 stars, Python.
+**Snowflake-Labs/mcp** ([Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp)) — ~274 stars, Python.
 
 Capabilities span six categories:
 - **Cortex Search** — RAG for unstructured data stored in Snowflake
@@ -140,11 +146,11 @@ A notable cross-platform integration: [dbt-labs/streamlit_mcp_cortex](https://gi
 
 Google provides official MCP support through their comprehensive MCP repository.
 
-**google/mcp** ([google/mcp](https://github.com/google/mcp)) — ~3,500 stars, Apache 2.0. Includes a remote BigQuery MCP server and the "MCP Toolbox for Databases" covering BigQuery, Cloud SQL, AlloyDB, Spanner, and Firestore. Documentation at [cloud.google.com/bigquery/docs/use-bigquery-mcp](https://cloud.google.com/bigquery/docs/use-bigquery-mcp).
+**google/mcp** ([google/mcp](https://github.com/google/mcp)) — ~3,872 stars, Apache 2.0. Includes a remote BigQuery MCP server and the "MCP Toolbox for Databases" covering BigQuery, Cloud SQL, AlloyDB, Spanner, and Firestore. Documentation at [cloud.google.com/bigquery/docs/use-bigquery-mcp](https://cloud.google.com/bigquery/docs/use-bigquery-mcp).
 
-**mcp-server-bigquery** ([LucasHild/mcp-server-bigquery](https://github.com/LucasHild/mcp-server-bigquery)) — ~123 stars, MIT license, version 0.3.2 (February 2026). Tools: `execute-query`, `list-tables`, `describe-table`.
+**mcp-server-bigquery** ([LucasHild/mcp-server-bigquery](https://github.com/LucasHild/mcp-server-bigquery)) — ~125 stars, MIT license, version 0.3.2 (February 2026). Tools: `execute-query`, `list-tables`, `describe-table`.
 
-**mcp-bigquery-server** ([ergut/mcp-bigquery-server](https://github.com/ergut/mcp-bigquery-server)) — ~135 stars, version 1.0.3. Read-only access with a 1GB processing limit as a safety guardrail. SQL query execution and schema exploration.
+**mcp-bigquery-server** ([ergut/mcp-bigquery-server](https://github.com/ergut/mcp-bigquery-server)) — ~137 stars, version 1.0.3. Read-only access with a 1GB processing limit as a safety guardrail. SQL query execution and schema exploration.
 
 Other BigQuery MCP servers include [aicayzer/bigquery-mcp](https://github.com/aicayzer/bigquery-mcp) for multi-project access with Docker support and [garethcull/google-bigquery-mcp](https://github.com/garethcull/google-bigquery-mcp) targeting marketing and data teams.
 
@@ -154,7 +160,7 @@ Databricks has native MCP support built into the platform.
 
 **Official Databricks MCP support** — pre-configured MCP servers are accessible through the Databricks workspace under Agents > MCP Servers. Genie Code can connect to MCP servers for natural language data interaction.
 
-**mcp-databricks-server** ([RafaelCartenet/mcp-databricks-server](https://github.com/RafaelCartenet/mcp-databricks-server)) — ~37 stars, MIT license. Tools: `list_uc_catalogs`, `describe_uc_catalog`, `describe_uc_schema`, `describe_uc_table` (with lineage), `execute_sql_query`. Focused on Unity Catalog metadata, data discovery, and lineage analysis.
+**mcp-databricks-server** ([RafaelCartenet/mcp-databricks-server](https://github.com/RafaelCartenet/mcp-databricks-server)) — ~40 stars, MIT license. Tools: `list_uc_catalogs`, `describe_uc_catalog`, `describe_uc_schema`, `describe_uc_table` (with lineage), `execute_sql_query`. Focused on Unity Catalog metadata, data discovery, and lineage analysis.
 
 Other community servers include [JustTryAI/databricks-mcp-server](https://github.com/JustTryAI/databricks-mcp-server) for clusters, jobs, and notebooks, [alexxx-db/databricks-genie-mcp](https://github.com/alexxx-db/databricks-genie-mcp) for the Genie API, and [PulkitXChadha/awesome-databricks-mcp](https://github.com/PulkitXChadha/awesome-databricks-mcp) as a template for hosting MCP tools on Databricks Apps.
 
@@ -162,7 +168,7 @@ Other community servers include [JustTryAI/databricks-mcp-server](https://github
 
 AWS provides the broadest single-repository coverage of data services through MCP.
 
-**awslabs/mcp** ([awslabs/mcp](https://github.com/awslabs/mcp)) — ~8,600 stars, Apache 2.0. The data-relevant MCP servers in this collection include:
+**awslabs/mcp** ([awslabs/mcp](https://github.com/awslabs/mcp)) — ~8,765 stars, Apache 2.0. The data-relevant MCP servers in this collection include:
 
 - **AWS Data Processing** — access to AWS Glue job statuses, Athena query results, EMR cluster metrics, and Glue Data Catalog metadata through a unified interface
 - **Amazon Redshift** — warehouse query and management
@@ -180,24 +186,28 @@ This was demonstrated at AWS re:Invent 2025 in the session "Agentic data enginee
 
 Kafka has the richest streaming MCP ecosystem, led by Confluent's official server.
 
-**mcp-confluent** ([confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent)) — ~144 stars, TypeScript/Node.js, MIT license.
+**mcp-confluent** ([confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent)) — ~149 stars, TypeScript/Node.js, MIT license.
 
-37+ tools organized across multiple categories:
+50+ tools organized across multiple categories:
 
-- **Kafka operations:** List, create, and delete topics; produce and consume messages; alter topic configuration
-- **Flink SQL:** Create, list, and delete SQL statements; health checks and diagnostics
-- **Flink Catalog:** List catalogs, databases, and tables; describe table schemas
-- **Connectors:** Full CRUD for Kafka Connect connectors
-- **Schema Registry:** List and manage schemas
-- **Tableflow:** Topic management and catalog integrations
-- **Environment management:** List and manage Confluent environments and clusters
-- **Billing:** List and track costs
+- **Kafka operations** (7 tools): List, create, and delete topics; produce and consume messages; alter topic configuration
+- **Flink SQL** (5 tools): Create, list, and delete SQL statements; health checks and diagnostics
+- **Flink Catalog** (5 tools): List catalogs, databases, and tables; describe table schemas
+- **Flink Diagnostics** (3 tools): Health checks and troubleshooting
+- **Connectors** (4 tools): Full CRUD for Kafka Connect connectors
+- **Schema Registry** (2 tools): List and manage schemas
+- **Catalog & Tags** (7 tools): Data catalog browsing and governance tagging
+- **Tableflow** (6 tools): Topic management and catalog integrations
+- **Tableflow Catalog** (5 tools): Tableflow-specific catalog operations
+- **Environment management** (3 tools): List and manage Confluent environments and clusters
+- **Metrics** (2 tools): Monitoring and performance data
+- **Billing** (1 tool): Cost tracking
 
-Supports selective tool enabling/blocking via CLI, so you can expose only the tools relevant to your use case.
+Supports selective tool enabling/blocking via CLI. Transports: stdio, HTTP, and SSE. Compatible with Claude Desktop, Claude Code, Cursor, VS Code, Goose, and Gemini CLI.
 
-**kafka-mcp-server** ([tuannvm/kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server)) — ~47 stars, Go, MIT license. Nine focused tools: `produce_message`, `consume_messages`, `list_brokers`, `describe_topic`, `list_consumer_groups`, `describe_consumer_group`, `describe_configs`, `cluster_overview`, `list_topics`. Supports SASL auth (PLAIN, SCRAM-SHA-256/512), TLS, and OAuth 2.1. Install via Homebrew, Docker, or from source.
+**kafka-mcp-server** ([tuannvm/kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server)) — ~48 stars, Go, MIT license. Nine focused tools: `produce_message`, `consume_messages`, `list_brokers`, `describe_topic`, `list_consumer_groups`, `describe_consumer_group`, `describe_configs`, `cluster_overview`, `list_topics`. Supports SASL auth (PLAIN, SCRAM-SHA-256/512), TLS, and OAuth 2.1. Install via Homebrew, Docker, or from source.
 
-**StreamNative MCP Server** ([streamnative/streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server)) — ~23 stars, Go. Unique in covering both Kafka and Apache Pulsar: Kafka admin tools (topics, partitions, consumer groups, Schema Registry, Kafka Connect), Kafka client tools (produce/consume), Pulsar admin (brokers, clusters, namespaces, topics, subscriptions, Functions/Sources/Sinks), Pulsar client tools, and StreamNative Cloud management. Dynamically exposes deployed Pulsar Functions as invokable MCP tools.
+**StreamNative MCP Server** ([streamnative/streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server)) — ~24 stars, Go. Unique in covering both Kafka and Apache Pulsar: Kafka admin tools (topics, partitions, consumer groups, Schema Registry, Kafka Connect), Kafka client tools (produce/consume), Pulsar admin (brokers, clusters, namespaces, topics, subscriptions, Functions/Sources/Sinks), Pulsar client tools, and StreamNative Cloud management. Dynamically exposes deployed Pulsar Functions as invokable MCP tools.
 
 ## Data Ingestion (ELT)
 
@@ -222,8 +232,7 @@ Airbyte takes a multi-server approach:
 
 - **PyAirbyte MCP** — built into the `airbyte` Python package (`airbyte.mcp`). Lists connectors, validates configs, runs sync operations. Marked as experimental.
 - **Airbyte Knowledge MCP** — a hosted server connecting AI agents to Airbyte's documentation, website, OpenAPI specs, YouTube content, and GitHub issues/discussions. Useful for agents that need to understand Airbyte's capabilities.
-- **Connector Builder MCP** ([airbytehq/connector-builder-mcp](https://github.com/airbytehq/connector-builder-mcp)) — AI agents build Airbyte connectors, managing the complete connector development lifecycle from manifest validation to testing and PR creation.
-- **Airbyte Agent Connectors** ([airbytehq/airbyte-agent-connectors](https://github.com/airbytehq/airbyte-agent-connectors)) — drop-in tools giving AI agents permission-aware access to external systems.
+- **Airbyte Agent Connectors** ([airbytehq/airbyte-agent-connectors](https://github.com/airbytehq/airbyte-agent-connectors)) — ~115 stars. Drop-in tools giving AI agents permission-aware access to external systems.
 
 ## Data Quality and Observability
 
@@ -254,17 +263,17 @@ The server translates these into Monte Carlo API calls and returns structured re
 
 | Platform | Top MCP Server | Stars | Official? | Tool Count | Transport |
 |----------|---------------|-------|-----------|------------|-----------|
-| Airflow | astro-airflow-mcp | ~10 | Yes (Astronomer) | 15+ | stdio/plugin |
+| Airflow | astro-airflow-mcp | ~316 (monorepo) | Yes (Astronomer) | 15+ | stdio/plugin |
 | Dagster | mcp-server-dagster | ~21 | Community | 9 | stdio |
-| dbt | dbt-labs/dbt-mcp | ~521 | Yes (dbt Labs) | 40+ | stdio/HTTP |
-| Snowflake | Snowflake-Labs/mcp | ~265 | Yes | 6 categories | stdio/Docker |
-| BigQuery | google/mcp | ~3,500 | Yes (Google) | Multiple | HTTP |
-| Databricks | Official + community | ~37 | Both | Multiple | stdio |
-| Kafka | mcp-confluent | ~144 | Yes (Confluent) | 37+ | stdio |
+| dbt | dbt-labs/dbt-mcp | ~538 | Yes (dbt Labs) | 40+ | stdio/HTTP |
+| Snowflake | Snowflake-Labs/mcp | ~274 | Yes | 6 categories | stdio/Docker |
+| BigQuery | google/mcp | ~3,872 | Yes (Google) | Multiple | HTTP |
+| Databricks | Official + community | ~40 | Both | Multiple | stdio |
+| Kafka | mcp-confluent | ~149 | Yes (Confluent) | 50+ | stdio/HTTP/SSE |
 | Fivetran | fivetran-mcp | ~9 | Yes | 50+ | stdio |
 | Airbyte | PyAirbyte MCP | N/A | Yes | Multiple | stdio |
 | Great Expectations | gx-mcp-server | ~4 | Community | 5 | stdio/HTTP |
-| AWS Data | awslabs/mcp | ~8,600 | Yes (AWS) | Multiple servers | stdio |
+| AWS Data | awslabs/mcp | ~8,765 | Yes (AWS) | Multiple servers | stdio |
 
 ## Real-World Case Studies
 
@@ -348,7 +357,7 @@ Kafka MCP sits at the center, with AI agents consuming events that trigger actio
                        │ MCP
                        ▼
                    Kafka MCP
-                  (37+ tools)
+                  (50+ tools)
                        │
           ┌────────────┼────────────┐
           ▼            ▼            ▼
@@ -394,7 +403,7 @@ For a comprehensive security checklist, see [slowmist/MCP-Security-Checklist](ht
 
 **If you're a data engineer** exploring MCP for the first time, start with dbt's MCP server — it's the most mature, best documented, and most immediately useful. Connect it to your IDE (Cursor, VS Code) and use it for model discovery, lineage exploration, and SQL generation.
 
-**If you run Airflow**, the Astronomer MCP server is the safest entry point. Start in read-only mode for pipeline monitoring and failure diagnosis before enabling write operations.
+**If you run Airflow**, the Astronomer MCP server (now part of the [astronomer/agents](https://github.com/astronomer/agents) monorepo) is the safest entry point. Start in read-only mode for pipeline monitoring and failure diagnosis before enabling write operations.
 
 **If you need real-time data access**, Confluent's Kafka MCP server provides the broadest tool coverage. The selective tool enabling/blocking feature lets you start narrow and expand access over time.
 
