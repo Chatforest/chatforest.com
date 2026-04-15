@@ -4,22 +4,22 @@ date: 2026-04-06T20:00:00+09:00
 description: "MCP's first official extension lets servers render interactive dashboards, forms, and visualizations inside AI conversations. Ten launch partners shipped on day one. Here's how it works, who's using it, and what it means for MCP's future."
 content_type: "Guide"
 card_description: "MCP Apps (SEP-1865) is the first official extension to the Model Context Protocol, released January 26, 2026. It allows MCP servers to return interactive HTML interfaces — dashboards, forms, 3D visualizations, multi-step workflows — that render directly inside AI conversations via sandboxed iframes. Anthropic and OpenAI co-developed the specification with MCP-UI community maintainers, preventing fragmentation between competing implementations. Ten launch partners shipped on day one: Figma, Amplitude, Asana, Box, Canva, Clay, Hex, monday.com, Slack, and Salesforce. Client support includes Claude, ChatGPT, VS Code GitHub Copilot, Goose, Postman, and MCPJam. The ext-apps repository (1.9K GitHub stars, SDK v1.1.2) provides the specification and TypeScript SDK. This guide explains the architecture, security model, enterprise use cases, and what MCP Apps means for the protocol's evolution from tool-calling standard to application platform."
-last_refreshed: 2026-04-06
+last_refreshed: 2026-04-15
 ---
 
-Until January 2026, every MCP interaction followed the same pattern: an AI agent calls a tool, gets back text or structured data, and renders it as chat messages. Need a chart? The agent describes it in words. Need a form? The agent asks questions one at a time. Need to approve an infrastructure change? You read a wall of JSON.
+Until January 2026, every [MCP](https://modelcontextprotocol.io/) interaction followed the same pattern: an AI agent calls a tool, gets back text or structured data, and renders it as chat messages. Need a chart? The agent describes it in words. Need a form? The agent asks questions one at a time. Need to approve an infrastructure change? You read a wall of JSON.
 
-MCP Apps changed that. On January 26, 2026, the Model Context Protocol project shipped its first official extension, allowing MCP servers to return interactive HTML interfaces that render directly inside AI conversations. Dashboards with drilldowns. Forms with validation. 3D visualizations. Multi-step approval workflows. All inside the chat window, all governed by the same security model.
+MCP Apps changed that. On [January 26, 2026](https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/), the Model Context Protocol project shipped its first official extension, allowing MCP servers to return interactive HTML interfaces that render directly inside AI conversations. Dashboards with drilldowns. Forms with validation. 3D visualizations. Multi-step approval workflows. All inside the chat window, all governed by the same security model.
 
-The more notable aspect: Anthropic and OpenAI built it together. Two companies in direct competition co-authored an open specification rather than fragmenting the ecosystem with proprietary approaches. Ten companies shipped MCP Apps integrations on launch day.
+The more notable aspect: [Anthropic](https://www.anthropic.com/) and [OpenAI](https://openai.com/) built it together. Two companies in direct competition co-authored an [open specification](https://modelcontextprotocol.io/extensions/apps/overview) rather than fragmenting the ecosystem with proprietary approaches. Ten companies shipped MCP Apps integrations on launch day.
 
-This guide explains how MCP Apps works, who's using it, and what it signals about where MCP is heading. Our analysis draws on the official specification, engineering blog posts, launch partner announcements, and trade press coverage — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+This guide explains how MCP Apps works, who's using it, and what it signals about where MCP is heading. Our analysis draws on the [official specification](https://modelcontextprotocol.io/extensions/apps/overview), [engineering blog posts](https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/), launch partner announcements, and trade press coverage — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ---
 
 ## The Problem MCP Apps Solves
 
-MCP's original design handles tool-calling well: agents discover tools, call them with structured parameters, and get results back. But production deployments kept hitting the same wall — many workflows need visual output or complex input that text can't handle efficiently.
+[MCP](https://modelcontextprotocol.io/)'s original design handles tool-calling well: agents discover tools, call them with structured parameters, and get results back. But production deployments kept hitting the same wall — many workflows need visual output or complex input that text can't handle efficiently.
 
 Consider these scenarios before MCP Apps:
 
@@ -46,7 +46,7 @@ When a tool's result includes a UI reference, the host application renders the i
 
 ### Communication via postMessage
 
-Rather than inventing a custom protocol, MCP Apps reuse the existing MCP JSON-RPC base protocol over the browser's `postMessage` API. The UI component runs in a sandboxed iframe and communicates with the host through structured messages. This means MCP Apps inherit the same request-response patterns that MCP servers and clients already understand.
+Rather than inventing a custom protocol, MCP Apps reuse the existing MCP [JSON-RPC](https://www.jsonrpc.org/) base protocol over the browser's [`postMessage` API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). The UI component runs in a sandboxed [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) and communicates with the host through structured messages. This means MCP Apps inherit the same request-response patterns that MCP servers and clients already understand.
 
 ### Pre-declared Templates
 
@@ -63,7 +63,7 @@ The flow looks like this:
 5. UI communicates changes back through postMessage
 6. Server processes interactions and updates state
 
-The key insight is that the UI is *served by the MCP server*, not generated by the AI model. The model orchestrates when to show a UI, but the server controls what the UI contains and how it behaves.
+The key insight is that the UI is *served by the MCP server*, not generated by the AI model. The model orchestrates when to show a UI, but the server controls what the UI contains and how it behaves. The concept was [first proposed in November 2025](https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/) and iterated through community feedback before the January 2026 launch.
 
 ---
 
@@ -94,18 +94,18 @@ Ten launch partners had MCP Apps integrations ready for the January 26 release:
 
 | Partner | What Their MCP App Does |
 |---|---|
-| **Figma** | Turns text descriptions into flow charts and Gantt diagrams in FigJam, rendered in-conversation |
-| **Hex** | Answers data questions with interactive charts and source citations |
-| **Amplitude** | Builds analytics dashboards with adjustable parameters directly in chat |
-| **Box** | Searches files, previews documents inline, enables Q&A about document content |
-| **Canva** | Design creation and editing within the conversation |
-| **Asana** | Project management interfaces with task visualization |
-| **monday.com** | Workflow and board interactions embedded in chat |
-| **Slack** | Message composition and channel interaction |
-| **Clay** | Contact and relationship data exploration |
-| **Salesforce** | CRM data visualization and record management |
+| **[Figma](https://www.figma.com/)** | Turns text descriptions into flow charts and Gantt diagrams in [FigJam](https://www.figma.com/figjam/), rendered in-conversation |
+| **[Hex](https://hex.tech/)** | Answers data questions with interactive charts and source citations |
+| **[Amplitude](https://amplitude.com/)** | Builds analytics dashboards with adjustable parameters directly in chat |
+| **[Box](https://www.box.com/)** | Searches files, previews documents inline, enables Q&A about document content |
+| **[Canva](https://www.canva.com/)** | Design creation and editing within the conversation |
+| **[Asana](https://asana.com/)** | Project management interfaces with task visualization |
+| **[monday.com](https://monday.com/)** | Workflow and board interactions embedded in chat |
+| **[Slack](https://slack.com/)** | Message composition and channel interaction |
+| **[Clay](https://www.clay.com/)** | Contact and relationship data exploration |
+| **[Salesforce](https://www.salesforce.com/)** | CRM data visualization and record management |
 
-These are not demo integrations. Figma's implementation renders editable diagrams. Hex returns charts you can hover over for data points. Amplitude lets you drag date ranges and toggle metrics. The interactions happen inside the conversation — no context-switching to separate applications.
+These are not demo integrations. [Figma](https://www.figma.com/)'s implementation renders editable diagrams. [Hex](https://hex.tech/) returns charts you can hover over for data points. [Amplitude](https://amplitude.com/) lets you drag date ranges and toggle metrics. The interactions happen inside the conversation — no context-switching to separate applications.
 
 ---
 
@@ -113,14 +113,14 @@ These are not demo integrations. Figma's implementation renders editable diagram
 
 As of April 2026, these clients support MCP Apps:
 
-- **Claude** (web and desktop) — Anthropic built support directly into the chat experience
-- **ChatGPT** — OpenAI rolled out support following the joint specification work
-- **VS Code GitHub Copilot** — available in Insiders builds
-- **Goose** (Block's open-source agent) — shipped support on January 6, 2026, before the official launch
-- **Postman** — integrated into their API development workflow
-- **MCPJam** — community MCP client
+- **[Claude](https://claude.ai/)** (web and [desktop](https://claude.ai/download)) — [Anthropic](https://www.anthropic.com/) built support directly into the chat experience
+- **[ChatGPT](https://chatgpt.com/)** — [OpenAI](https://openai.com/) rolled out support following the joint specification work
+- **[VS Code](https://code.visualstudio.com/) [GitHub Copilot](https://github.com/features/copilot)** — available in [Insiders builds](https://code.visualstudio.com/insiders/)
+- **[Goose](https://github.com/block/goose)** ([Block](https://block.xyz/)'s open-source agent) — [shipped support on January 6, 2026](https://block.github.io/goose/blog/2026/01/06/mcp-apps/), before the official launch
+- **[Postman](https://www.postman.com/)** — integrated into their API development workflow
+- **[MCPJam](https://mcpjam.com/)** — community MCP client
 
-The specification is open, so any chatbot or agent framework can adopt it. The cross-platform support was intentional — Anthropic and OpenAI co-developing the standard meant both ecosystems had buy-in from day one.
+The specification is open, so any chatbot or agent framework can adopt it. The cross-platform support was intentional — [Anthropic](https://www.anthropic.com/) and [OpenAI](https://openai.com/) co-developing the standard meant both ecosystems had buy-in from day one.
 
 ---
 
@@ -130,12 +130,12 @@ The official implementation lives at [modelcontextprotocol/ext-apps](https://git
 
 - **1.9K stars** as of April 2026
 - **SDK version**: v1.1.2
-- **Language**: TypeScript
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **License**: Open source
 
 The repository includes working examples that demonstrate the range of what's possible:
 
-- **threejs-server** — 3D visualization rendered in conversation
+- **threejs-server** — [Three.js](https://threejs.org/) 3D visualization rendered in conversation
 - **map-server** — interactive maps with location data
 - **pdf-server** — document viewing and annotation
 - **system-monitor-server** — real-time system dashboards
@@ -177,7 +177,7 @@ One of MCP's biggest production pain points is [context window waste](/guides/mc
 
 ### 2. It Makes the Anthropic-OpenAI Collaboration Concrete
 
-The joint specification work (SEP-1865) with OpenAI is more than a press release. Both companies' flagship products ship MCP Apps support. This is the strongest signal yet that MCP's governance model — now under the Linux Foundation's Agentic AI Foundation — actually produces cross-vendor collaboration.
+The joint specification work ([SEP-1865](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1865)) with [OpenAI](https://openai.com/) is more than a press release. Both companies' flagship products ship MCP Apps support. This is the strongest signal yet that MCP's governance model — now under the [Linux Foundation](https://www.linuxfoundation.org/)'s [Agentic AI Foundation](https://agenticaifoundation.org/) — actually produces cross-vendor collaboration.
 
 ### 3. It Creates a New Category of MCP Server
 
@@ -189,9 +189,9 @@ Before MCP Apps, building an MCP server meant writing tool handlers that return 
 
 MCP Apps is production-ready, but it's still early:
 
-- **HTML rendering variability** — different clients may render the same HTML slightly differently, since each implements its own iframe sandboxing. There's no pixel-perfect consistency guarantee across Claude, ChatGPT, and VS Code.
+- **HTML rendering variability** — different clients may render the same HTML slightly differently, since each implements its own iframe sandboxing. There's no pixel-perfect consistency guarantee across [Claude](https://claude.ai/), [ChatGPT](https://chatgpt.com/), and [VS Code](https://code.visualstudio.com/).
 - **Offline and mobile** — the current specification assumes a client capable of rendering sandboxed iframes. Mobile clients and CLI tools may have limited or no MCP Apps support.
-- **Complexity ceiling** — how complex can an in-conversation UI get before users prefer the dedicated application? Figma-in-chat is impressive, but will people actually design in it vs. switching to Figma?
+- **Complexity ceiling** — how complex can an in-conversation UI get before users prefer the dedicated application? [Figma](https://www.figma.com/)-in-chat is impressive, but will people actually design in it vs. switching to Figma?
 - **Accessibility** — the specification mentions sandboxing and security, but accessibility standards for embedded UIs in chat interfaces are not yet addressed in the spec.
 - **Server-side state** — interactive UIs often need persistent state. MCP's stateful session model is already a [scaling challenge](/guides/mcp-growing-pains-2026/); adding UI state to that may compound the problem.
 
@@ -203,7 +203,7 @@ If you're building MCP servers, MCP Apps changes the calculus:
 
 - **Existing servers** can add UI resources incrementally — you don't have to rebuild. A data query tool that currently returns JSON can add a chart UI as an enhancement.
 - **New servers** should consider UI-first design for workflows that involve exploration, approval, or complex input.
-- **The TypeScript SDK** at [modelcontextprotocol/ext-apps](https://github.com/modelcontextprotocol/ext-apps) provides the reference implementation and working examples to start from.
+- **The [TypeScript](https://www.typescriptlang.org/) SDK** at [modelcontextprotocol/ext-apps](https://github.com/modelcontextprotocol/ext-apps) provides the reference implementation and working examples to start from.
 
 For enterprises evaluating MCP adoption, MCP Apps strengthens the case by addressing one of the biggest user experience gaps — the text-only interaction model that makes sophisticated workflows feel like working through a command line.
 

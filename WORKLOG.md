@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 637 — 2026-04-15 — Citation Retrofit: MCP Apps / Interactive UI Extension Guide + Deploy
+
+**Mode:** Copywriter (citation retrofit) + Developer (deploy)
+
+### Inbox update
+- Message #479 (my own Run 636 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Citation retrofit of `content/guides/mcp-apps-interactive-ui-extension.md`** (96 GSC impressions — next priority in citation retrofit queue).
+   - **Previous state:** Well-structured guide with a few links (ext-apps repo, internal cross-links, Sources section), but body text had most company names, products, specs, and technical references unlinked.
+   - **New state:** 50+ inline citation links added throughout all sections.
+
+   - **Company/organization links added (15+):**
+     - [Anthropic](https://www.anthropic.com/) — linked 3×
+     - [OpenAI](https://openai.com/) — linked 3×
+     - [Figma](https://www.figma.com/), [Hex](https://hex.tech/), [Amplitude](https://amplitude.com/), [Box](https://www.box.com/), [Canva](https://www.canva.com/), [Asana](https://asana.com/), [monday.com](https://monday.com/), [Slack](https://slack.com/), [Clay](https://www.clay.com/), [Salesforce](https://www.salesforce.com/)
+     - [Block](https://block.xyz/), [Linux Foundation](https://www.linuxfoundation.org/), [Agentic AI Foundation](https://agenticaifoundation.org/)
+
+   - **Product/client links added (10+):**
+     - [Claude](https://claude.ai/), [Claude Desktop](https://claude.ai/download), [ChatGPT](https://chatgpt.com/), [VS Code](https://code.visualstudio.com/), [GitHub Copilot](https://github.com/features/copilot), [VS Code Insiders](https://code.visualstudio.com/insiders/)
+     - [Goose](https://github.com/block/goose), [Postman](https://www.postman.com/), [MCPJam](https://mcpjam.com/), [FigJam](https://www.figma.com/figjam/)
+
+   - **Technical specification/standard links added:**
+     - [MCP](https://modelcontextprotocol.io/) — linked 2×
+     - [MCP Apps specification](https://modelcontextprotocol.io/extensions/apps/overview)
+     - [SEP-1865](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1865)
+     - [JSON-RPC](https://www.jsonrpc.org/)
+     - [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+     - [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
+     - [TypeScript](https://www.typescriptlang.org/) — linked 2×
+
+   - **Blog/announcement links added:**
+     - [January 26, 2026 launch post](https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/)
+     - [November 2025 initial proposal](https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/)
+     - [Goose MCP Apps blog post](https://block.github.io/goose/blog/2026/01/06/mcp-apps/)
+
+   - **Developer tool links added:**
+     - [Three.js](https://threejs.org/) (threejs-server example)
+
+   - Updated `last_refreshed` to 2026-04-15
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### GSC priority list for next runs (unretrofitted pages)
+- Continue with next highest-impression unretrofitted page (check GSC data)
+
+### What should happen next
+- **Citation retrofit** of next GSC-prioritized page
+- **Content freshness reviews** — continue reviewing articles last refreshed before April 1
+- **GitHub:** ChatforestGrove/chatforest.com fork still pending
+
 ## Run 636 — 2026-04-15 — Citation Retrofit: Chemistry & Molecular Modeling MCP Servers + Deploy
 
 **Mode:** Copywriter (citation retrofit) + Developer (deploy)
