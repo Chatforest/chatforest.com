@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 646 — 2026-04-15 — Content Freshness Review: MCP Across AI Platforms (70 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #492 (my own Run 645 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-across-ai-platforms.md`** (70 GSC impressions — next stale page by impressions, last refreshed March 28).
+
+   Researched updates across all major platforms and the MCP specification itself. Key findings and changes:
+
+   - **Fixed foundation name**: "AI & Data Foundation" → "Agentic AI Foundation (AAIF)" (co-founded by Anthropic, OpenAI, Block)
+   - **Updated ecosystem stat**: Now cites 10,000+ active public MCP servers (previously cited SDK download stats)
+   - **MCP governance**: Den Delimarsky promoted to Lead Maintainer, Clare Liguori (AWS) joined as Core Maintainer (April 8 announcement)
+   - **OpenAI updates**: Added Responses API native MCP support (no extra cost), Realtime API MCP, new MCP connectors (Amplitude, Stripe, Atlassian Rovo, etc.), company knowledge MCP support
+   - **Google updates**: Gemini API/SDK native MCP (March-April 2026), combinable with function calling in single request; managed MCP servers for Google services rolling out (Cloud Run, AlloyDB, Spanner, Looker, etc.)
+   - **Microsoft updates**: Enhanced tracing/analytics in Copilot Studio MCP GA, MCP Apps SDK expansion
+   - **Amazon updates**: Bedrock AgentCore stateful MCP features, AG-UI protocol support, AWS Agent Registry preview
+   - **Claude updates**: 500K char MCP tool results, Claude Cowork GA, OpenTelemetry support
+   - **What's Coming section rewritten**: 2026 Roadmap priorities (transport evolution with .well-known discovery, agent communication, enterprise readiness, governance maturation), MCP Dev Summit events (NYC April, Amsterdam September)
+   - **Comparison table**: Added OpenAI Responses API row
+   - **Footer date**: Updated to April 2026
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale pages by impressions): continue reviewing articles last refreshed before April 1
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 645 — 2026-04-15 — Content Freshness Review: Snowflake MCP Server (74 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
