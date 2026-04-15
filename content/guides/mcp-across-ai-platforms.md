@@ -4,10 +4,10 @@ date: 2026-03-28T14:00:00+09:00
 description: "How to use MCP servers with every major AI platform — covers Claude Desktop and Code, ChatGPT Apps and Agents SDK, Google Gemini CLI and Cloud, Microsoft Copilot Studio, Amazon Q"
 content_type: "Guide"
 card_description: "Build an MCP server once, use it everywhere. This guide covers MCP configuration for Claude, ChatGPT, Gemini, Copilot, Amazon Q, and coding tools — with platform comparison, config examples, and cross-platform tips."
-last_refreshed: 2026-03-28
+last_refreshed: 2026-04-15
 ---
 
-When Anthropic open-sourced the Model Context Protocol in late 2024, MCP was a single-vendor affair. That changed fast. By early 2026, OpenAI, Google, Microsoft, and Amazon have all adopted MCP, and the protocol now lives under the Linux Foundation's AI & Data Foundation (AAIF) as a vendor-neutral standard. The official MCP SDKs report over 97 million monthly downloads according to published registry statistics — a clear signal that MCP has moved from experiment to infrastructure.
+When Anthropic open-sourced the Model Context Protocol in late 2024, MCP was a single-vendor affair. That changed fast. By early 2026, OpenAI, Google, Microsoft, and Amazon have all adopted MCP, and the protocol now lives under the Linux Foundation's Agentic AI Foundation (AAIF) — co-founded by Anthropic, OpenAI, and Block, with support from Google, Microsoft, AWS, Cloudflare, and Bloomberg — as a vendor-neutral standard. The ecosystem has grown to over 10,000 active public MCP servers according to published reports, spanning individual developer tools to Fortune 500 deployments — a clear signal that MCP has moved from experiment to infrastructure.
 
 The promise is straightforward: build an MCP server once, and any compliant AI platform can connect to it. This guide covers how that works in practice across every major platform, with configuration examples and cross-platform patterns. Our analysis draws on official documentation from each platform, published SDK guides, and community reports — we research and analyze rather than testing these configurations ourselves.
 
@@ -84,7 +84,7 @@ For project-level sharing, Claude Code uses a `.mcp.json` file in the project ro
 
 **Supported transports:** stdio, SSE, Streamable HTTP.
 
-**Notable features:** Claude supports MCP sampling (letting the server request LLM completions), resource subscriptions, and prompt templates — the broadest feature set of any platform based on published documentation.
+**Notable features:** Claude supports MCP sampling (letting the server request LLM completions), resource subscriptions, and prompt templates — the broadest feature set of any platform based on published documentation. As of April 2026, Claude Code supports up to 500,000 characters per MCP tool result, significantly expanding capacity for large data sources. Claude Cowork, Anthropic's collaborative agent workspace, is now generally available on macOS and Windows with expanded analytics and OpenTelemetry support.
 
 ### OpenAI ChatGPT
 
@@ -117,7 +117,11 @@ async with MCPServerStreamableHTTP(
 
 **Supported transports:** SSE, Streamable HTTP (recommended). stdio is not supported — ChatGPT cannot launch local processes.
 
-**Notable features:** Built-in OAuth 2.1 flow, meaning users authenticate with MCP servers through ChatGPT's UI rather than manually managing API keys. According to OpenAI's documentation, this makes ChatGPT's MCP support more accessible for non-technical users but limits it to remote servers only.
+**OpenAI Responses API** now includes native support for remote MCP servers, allowing developers to connect models to any MCP server with just a few lines of code. According to OpenAI's documentation, there is no additional cost for MCP tool calls — developers are billed only for output tokens from the API. The **Realtime API** also supports MCP by passing a remote server URL into the session configuration.
+
+**MCP Connectors** — OpenAI has rolled out a growing catalog of partner-built MCP connectors reviewed by OpenAI, including Amplitude, Fireflies, Vercel, Monday.com, Stripe, Hex, Atlassian Rovo (Jira, Confluence), and others. These are available to Enterprise, Edu, Business, Pro, and Plus customers.
+
+**Notable features:** Built-in OAuth 2.1 flow, meaning users authenticate with MCP servers through ChatGPT's UI rather than manually managing API keys. According to OpenAI's documentation, this makes ChatGPT's MCP support more accessible for non-technical users but limits it to remote servers only. Company knowledge now supports custom MCP connectors with search/fetch functionality.
 
 **Key limitation:** No stdio support means ChatGPT cannot connect to local MCP servers. If your server only speaks stdio, you will need to wrap it with an HTTP transport layer or use a gateway like `mcp-proxy` or `supergateway`.
 
@@ -171,6 +175,10 @@ tools = types.Tool(mcp_servers=[
 
 **Supported transports:** stdio (CLI only), SSE, Streamable HTTP.
 
+**Gemini API/SDK native MCP** — As of March-April 2026, MCP tool calls and built-in function calling can be combined in a single Gemini API request. According to Google's documentation, this allows grounding Gemini in internal data via MCP while keeping Google Search grounding active simultaneously, and the combined call is more token-efficient than two separate requests.
+
+**Managed MCP servers** — Google released fully managed remote MCP servers for its services, providing a unified MCP layer across Google and Google Cloud services. According to Google Cloud documentation, additional services are rolling out through 2026, including Cloud Run, Cloud Storage, AlloyDB, Cloud SQL, Spanner, Looker, and Pub/Sub.
+
 **Notable features:** According to published documentation, Gemini CLI supports environment variable interpolation in config files using `${VAR_NAME}` syntax, and the Cloud integration supports Google's existing IAM authentication alongside OAuth 2.0.
 
 ### Microsoft Copilot
@@ -206,7 +214,7 @@ Microsoft has integrated MCP across its Copilot product line. According to Micro
 
 **Supported transports:** stdio (VS Code only), SSE, Streamable HTTP.
 
-**Notable features:** Dynamic tool and resource discovery is emphasized across all Copilot products — when you connect an MCP server, Copilot automatically detects what tools are available and presents them contextually. Copilot Studio also supports connecting multiple MCP servers simultaneously, with the platform routing requests to the appropriate server based on tool descriptions.
+**Notable features:** Dynamic tool and resource discovery is emphasized across all Copilot products — when you connect an MCP server, Copilot automatically detects what tools are available and presents them contextually. Copilot Studio also supports connecting multiple MCP servers simultaneously, with the platform routing requests to the appropriate server based on tool descriptions. As of early 2026, Copilot Studio's MCP integration includes enhanced tracing and analytics tools that show which MCP server and specific tool was invoked at runtime, improving debugging and observability. Microsoft's MCP Apps SDK has also expanded how agents connect to external work applications across the broader ecosystem.
 
 ### Amazon Q Developer
 
@@ -243,6 +251,8 @@ Amazon integrated MCP into Q Developer across CLI and cloud environments. Accord
 
 **Notable features:** According to AWS's published documentation, Q Developer supports MCP elicitation (servers can request additional input from users mid-interaction), sampling (servers can request LLM completions), and progress notifications (servers can report task progress back to the client). The Bedrock AgentCore integration also means MCP servers can be deployed once and accessed by multiple agents and applications.
 
+**Recent additions (March-April 2026):** Bedrock AgentCore Runtime now supports stateful MCP server features, including elicitation, sampling, and progress notifications alongside existing resource, prompt, and tool support — available across 14 AWS regions. AgentCore also added AG-UI (Agent-User Interaction) protocol support for real-time agent experiences, complementing MCP and A2A. The new **AWS Agent Registry** (preview) provides a private, governed catalog for discovering agents, tools, skills, and MCP servers within an organization, accessible via console, CLI, SDK, or as an MCP server queryable from IDEs.
+
 ## Platform Comparison
 
 | Platform | Config Format | Transports | Auth | Local Servers | Remote Servers | Notable Feature |
@@ -250,6 +260,7 @@ Amazon integrated MCP into Q Developer across CLI and cloud environments. Accord
 | Claude Desktop | JSON config file | stdio, SSE, HTTP | Env vars, headers | Yes | Yes | Broadest MCP feature support |
 | Claude Code | CLI + .mcp.json | stdio, SSE, HTTP | Env vars, headers | Yes | Yes | Project-level sharing via .mcp.json |
 | ChatGPT | Platform registration | SSE, HTTP | OAuth 2.1 | No | Yes | Built-in user-facing OAuth flow |
+| OpenAI Responses API | API code | SSE, HTTP | OAuth, headers | No | Yes | Native MCP in API, no extra cost |
 | OpenAI Agents SDK | Python code | SSE, HTTP | Headers, OAuth | No | Yes | Programmatic agent composition |
 | Gemini CLI | settings.json | stdio, SSE, HTTP | Env vars, OAuth 2.0 | Yes | Yes | Env var interpolation in config |
 | Gemini Cloud | Cloud console | SSE, HTTP | Google IAM, OAuth | No | Yes | Enterprise data store integration |
@@ -288,15 +299,19 @@ If you are building MCP servers intended for broad compatibility, several patter
 
 ## What's Coming
 
-The MCP ecosystem continues to evolve. Based on published roadmaps and specification discussions:
+The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) identifies four strategic priority areas, and the maintainer team recently expanded — Den Delimarsky (Anthropic) was promoted to Lead Maintainer alongside David Soria Parra, and Clare Liguori (AWS) joined as Core Maintainer.
+
+**Transport evolution** — The roadmap prioritizes improving Streamable HTTP for horizontal scaling and stateless operation, rather than adding new transports. A standard metadata format via `.well-known` endpoints is planned for capability discovery without requiring live connections — addressing a key pain point for enterprises operating at scale.
+
+**Agent communication** — Building on the experimental Tasks feature (SEP-1686), the focus is production-readiness: retry semantics for transient failures and expiry policies for result retention. The AG-UI (Agent-to-Agent) protocol, already supported by AWS Bedrock AgentCore, complements MCP by standardizing how agents communicate with user interfaces and each other.
 
 **MCP Apps** — An emerging pattern where MCP servers can return UI components (not just data) for rendering in client applications. According to MCP specification discussions, this would allow servers to provide rich interactive interfaces alongside their tools.
 
 **Multimodal support** — The MCP specification is expanding to support image, audio, and video data in tool inputs and outputs. Several platforms have indicated support for multimodal MCP in their roadmaps.
 
-**A2A (Agent-to-Agent) protocol** — Google's Agent-to-Agent protocol complements MCP by enabling AI agents to discover and communicate with each other. According to published specifications, A2A handles agent-to-agent coordination while MCP handles agent-to-tool communication — the two protocols are designed to work together.
+**Enterprise readiness** — Audit trails, SSO-integrated auth, gateway behavior, and configuration portability are the main enterprise pain points identified in the roadmap. According to the MCP team, most solutions will ship as extensions rather than core protocol changes, to avoid burdening all users. Managed MCP hosting from Google Cloud and AWS Bedrock AgentCore is already addressing some of these needs.
 
-**Enterprise features** — Audit trails for MCP tool usage, SSO integration for server authentication, and centralized MCP server management are appearing across platform documentation as enterprise-focused additions.
+**Governance maturation** — A Contributor Ladder is being developed to define progression from community participant to lead maintainer, and Working Groups are being empowered to review domain-specific SEPs independently. The first MCP Dev Summit North America took place in New York City (April 2-3, 2026) with over 95 sessions, and MCP Dev Summit Europe is scheduled for Amsterdam (September 17-18, 2026).
 
 ## Conclusion
 
@@ -308,4 +323,4 @@ Start with one server, one transport (Streamable HTTP), and one platform. Once i
 
 ---
 
-*This guide is part of [ChatForest's MCP resource library](/guides/). ChatForest is an AI-native content site — our guides are researched and written by AI, reviewed for accuracy by [Rob Nugen](https://www.robnugen.com/). Last refreshed: March 2026.*
+*This guide is part of [ChatForest's MCP resource library](/guides/). ChatForest is an AI-native content site — our guides are researched and written by AI, reviewed for accuracy by [Rob Nugen](https://www.robnugen.com/). Last refreshed: April 2026.*
