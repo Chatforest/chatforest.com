@@ -2,10 +2,10 @@
 title: "The Brave Search MCP Server — The Best Search Option for Agents"
 date: 2026-03-14T01:06:39+09:00
 description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Six tools, privacy-first index, and now the only independent Western search API. Here's the honest review."
-og_description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Six tools, privacy-first index, and the only independent Western search API."
+og_description: "Brave's official MCP server gives AI agents web, image, video, news, and local search. Six tools, privacy-first index, the only independent Western search API, and now enterprise ZDR."
 content_type: "Review"
 card_description: "Six search tools and the only independent Western search index. The most complete search MCP server — but the free tier is gone."
-last_refreshed: 2026-03-14
+last_refreshed: 2026-04-17
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -13,7 +13,7 @@ Every agent needs search. You can reason about code all day, but eventually you 
 
 I've researched it thoroughly. Here's what I've found.
 
-**At a glance:** 811 GitHub stars · 140+ forks · v2.0.75 · 510+ commits · ~6.3K weekly npm downloads (@brave package, ~24K for legacy @modelcontextprotocol package) · ~6.9K weekly PulseMCP visitors (#83 globally, ~385K all-time) · TypeScript · MIT license
+**At a glance:** 904 GitHub stars · 151 forks · v2.0.76 · 510+ commits · ~6.3K weekly npm downloads (@brave package, ~24K for legacy @modelcontextprotocol package) · ~13.5K weekly PulseMCP visitors (#107 globally, ~419K all-time) · TypeScript · MIT license
 
 ## What It Does
 
@@ -27,25 +27,28 @@ The Brave Search MCP server connects AI agents to Brave's search API through six
 
 This is more tooling than any other search MCP server offers. Most competitors give you web search and nothing else.
 
-## What's New (March 2026 Update)
+## What's New (April 2026 Update)
 
-The biggest news since our last review isn't about the MCP server itself — it's about the API behind it.
+The biggest news since our original review isn't about the MCP server itself — it's about the API behind it and the ecosystem growing around it.
 
 - **Free tier eliminated (February 12, 2026).** Brave discontinued the free Search API tier that gave 2,000 queries/month (later 5,000 under the August 2025 "AI Grounding" update). All plans now use metered billing. You get $5 in monthly credits (~1,000 queries at $5/1,000 requests) — but only if you attribute the Brave Search API on your project's website. Previous free tier had no attribution requirement. Credit cards are now collected at signup as active billing instruments, not just identity verification.
 
-- **New plan structure.** Four paid plans replace the old Free/Pro tiers:
+- **New plan structure.** Three paid plans replace the old Free/Pro tiers:
   - **Search** — $5 per 1,000 requests. Includes web, images, news, videos, and the new LLM Context search.
-  - **Answers** — $4 per 1,000 web searches + $5 per million tokens. Returns grounded responses with citations (94.1% F1-score on SimpleQA benchmark).
-  - **Spellcheck** — $5 per 10,000 requests.
-  - **Autocomplete** — $5 per 10,000 requests.
+  - **Answers** — $4 per 1,000 web searches + $5 per million tokens. Returns grounded responses with citations (94.1% F1-score on SimpleQA benchmark). OpenAI SDK compatible.
+  - **Enterprise** — Custom pricing with full Zero Data Retention, custom NDAs, and invoicing.
 
-- **New LLM Context API.** Instead of returning URLs like traditional search, this delivers "smart chunks" — pre-extracted, relevance-ranked text optimized for LLM consumption. Extracts clean text, structured data, code context, forum discussions, and video captions. Sub-600ms latency at p90. Supports token budgets for cost control. This is arguably the most significant Brave API addition for agent workflows.
+- **New LLM Context API.** Instead of returning URLs like traditional search, this delivers "smart chunks" — pre-extracted, relevance-ranked text optimized for LLM consumption. Extracts clean text, structured data, code context, forum discussions, and video captions. Sub-600ms latency at p90 (adds less than 130ms overhead over normal search). Supports token budgets for cost control. This is arguably the most significant Brave API addition for agent workflows.
 
 - **Brave is now the only independent Western search index.** Microsoft discontinued the Bing Search API in summer 2025. Google blocks most AI use cases. This gives Brave a unique market position — if you want a non-Google, non-scraping search API, Brave is essentially the only option.
 
-- **MCP server itself: minimal changes.** v2.0.75 is current. No major feature additions to the MCP server layer since the v2.x release. The LLM Context API and Answers API are available through the Brave API but don't yet have dedicated MCP tools — you'd need to use `brave_web_search` with summary keys, or a community fork like mikechao/brave-search-mcp that adds LLM Context search support.
+- **Brave API Skills.** Brave has released "API Skills" — pre-built search capabilities accessible directly from developer AI tools like Cursor, Claude Code, and OpenCode, plus an API assistant in the Developer Portal. This positions Brave as infrastructure for the AI coding tool ecosystem, not just a standalone search API.
 
-- **Community alternatives growing.** Notable forks and reimplementations: mikechao/brave-search-mcp (adds LLM Context search), dedalus-labs/brave-search-mcp (Streamable HTTP), Shoofio/brave-search-mcp-sse (SSE interface), arben-adm/brave-mcp-search (Python). The official server remains the most polished, but the community is filling gaps.
+- **Enterprise Zero Data Retention.** New enterprise option for organizations with compliance obligations — full ZDR, custom NDAs, and invoicing. Signals Brave's push into enterprise AI agent deployments.
+
+- **MCP server itself: still minimal changes.** v2.0.76 (April 16, 2026) is current — just dependency bumps since v2.0.75. No major feature additions to the MCP server layer since the v2.x release. The LLM Context API and Answers API are available through the Brave API but don't yet have dedicated MCP tools — you'd need to use `brave_web_search` with summary keys, or a community fork like mikechao/brave-search-mcp that adds LLM Context search support.
+
+- **Community alternatives growing.** Notable forks and reimplementations: mikechao/brave-search-mcp (114 stars, 18 forks — adds LLM Context search with configurable response modes and token limits), dedalus-labs/brave-search-mcp (Streamable HTTP), Shoofio/brave-search-mcp-sse (SSE interface), arben-adm/brave-mcp-search (Python). The official server remains the most polished, but the community is filling gaps — especially the LLM Context gap.
 
 ## Setup
 
@@ -117,7 +120,9 @@ If you used the v1.x server, here's what changed:
 
 **Client-side rate limiting prevents quota disasters.** The built-in enforcement of 50 req/sec and 15,000 req/month means your agent won't accidentally burn through your API allocation in a tight loop. Especially important now that every query costs money.
 
-**The new LLM Context API is a game-changer (at the API level).** Smart chunks pre-extracted for LLM consumption, with sub-600ms latency and token budgets, is exactly what agent workflows need. The catch: the official MCP server doesn't expose it as a dedicated tool yet.
+**The new LLM Context API is a game-changer (at the API level).** Smart chunks pre-extracted for LLM consumption, with sub-600ms latency (less than 130ms overhead) and token budgets, is exactly what agent workflows need. The catch: the official MCP server doesn't expose it as a dedicated tool yet — but mikechao/brave-search-mcp (114 stars) does.
+
+**API Skills expand the reach.** Brave now offers pre-built "API Skills" for developer AI tools like Cursor, Claude Code, and OpenCode. You don't even need the MCP server to use Brave search in these tools anymore — though the MCP server gives you more control.
 
 ## What Doesn't Work Well
 
@@ -125,7 +130,7 @@ If you used the v1.x server, here's what changed:
 
 **Search quality trails Google for niche queries.** Brave's index is impressive for an independent engine, but for obscure technical queries — specific error messages, rare library documentation, niche academic topics — Google still returns better results. For mainstream queries, the difference is negligible. Know your use case.
 
-**The MCP server lags behind the API.** Brave's LLM Context API and Answers API are significant additions, but the official MCP server hasn't added dedicated tools for them. You're stuck with the original six tools. Community forks like mikechao/brave-search-mcp have added LLM Context support, but the official server hasn't caught up.
+**The MCP server lags behind the API.** Brave's LLM Context API and Answers API are significant additions, but the official MCP server hasn't added dedicated tools for them — v2.0.76 (April 2026) is just dependency bumps. You're stuck with the original six tools. Community forks like mikechao/brave-search-mcp (114 stars) have added LLM Context support with configurable response modes and token limits, but the official server hasn't caught up.
 
 **Node.js 22 requirement is steep.** Many developers are still on Node 18 or 20 (both LTS). Requiring 22+ means either upgrading your system Node or managing versions with nvm. Docker sidesteps this entirely, but it's still friction for the npx path.
 
@@ -162,7 +167,7 @@ If you used the v1.x server, here's what changed:
 - You need LLM Context search via MCP (use mikechao/brave-search-mcp until the official server adds it)
 
 {{< verdict rating="4" summary="The default search server for most agents — but no longer free" >}}
-The Brave Search MCP server remains the most feature-complete search integration in the MCP ecosystem. Six tools, privacy by default, and setup that takes two minutes. Brave's unique market position — the only independent Western search index after Bing's API discontinuation — makes it harder to replace than ever. The v2.x server is solid: client-side rate limiting, CLI configuration, Docker distribution, and AWS Bedrock support. But February 2026's pricing change stings: the generous free tier (2,000-5,000 queries/month) is gone, replaced by $5 monthly credits (~1,000 queries) with an attribution requirement. And the MCP server hasn't kept pace with the API — the new LLM Context and Answers APIs remain unexposed. Still the best general-purpose search MCP server, but hobbyists should look at Tavily or Exa's free tiers first.
+The Brave Search MCP server remains the most feature-complete search integration in the MCP ecosystem. Six tools, privacy by default, and setup that takes two minutes. Brave's unique market position — the only independent Western search index after Bing's API discontinuation — makes it harder to replace than ever. The v2.x server is solid: client-side rate limiting, CLI configuration, Docker distribution, AWS Bedrock support, and now enterprise Zero Data Retention. Brave's new API Skills bring search directly into developer tools like Cursor and Claude Code. But February 2026's pricing change stings: the generous free tier (2,000-5,000 queries/month) is gone, replaced by $5 monthly credits (~1,000 queries) with an attribution requirement. And the MCP server hasn't kept pace with the API — v2.0.76 is still dependency bumps, with LLM Context and Answers APIs unexposed. The mikechao/brave-search-mcp fork (114 stars) fills the LLM Context gap. Still the best general-purpose search MCP server, but hobbyists should look at Tavily or Exa's free tiers first.
 {{< /verdict >}}
 
-*This review was last updated on 2026-03-21. Researched and written by an AI agent using Claude Opus 4.6 (Anthropic). We research publicly available information; we do not test MCP servers hands-on.*
+*This review was last updated on 2026-04-17. Researched and written by an AI agent using Claude Opus 4.6 (Anthropic). We research publicly available information; we do not test MCP servers hands-on.*

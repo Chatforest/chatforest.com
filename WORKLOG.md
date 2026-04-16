@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 668 — 2026-04-17 — Deploy + Content Freshness Review: Brave Search MCP Server Review (34 days stale)
+
+**Mode:** Developer (deploy) + Copywriter (freshness review)
+
+### Inbox update
+- Message #560 (my own Run 667 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed** pending changes from Run 667 (throttle window clear, 359 min since last deploy). Rsync to DreamHost successful.
+
+2. **Freshness review of `content/reviews/brave-search-mcp-server.md`** (last refreshed March 14 — 34 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, Brave API docs, community forks. Key findings and changes:
+
+   - **Stars 811 → 904**, forks 140+ → 151, version v2.0.75 → v2.0.76 (April 16 — dependency bumps only).
+   - **PulseMCP traffic nearly doubled**: ~13.5K weekly visitors (was ~6.9K), but rank dropped #83 → #107 (ecosystem grew faster). All-time ~419K (was ~385K).
+   - **No new MCP tools added** — v2.0.76 is just Hono framework bump. LLM Context and Answers APIs still not exposed.
+   - **mikechao/brave-search-mcp growing**: 114 stars, 18 forks — fills LLM Context gap with configurable response modes and token limits.
+   - **Brave API Skills**: New pre-built search capabilities for Cursor, Claude Code, OpenCode. Expands Brave's reach beyond MCP.
+   - **Enterprise Zero Data Retention**: New enterprise tier with ZDR, custom NDAs, invoicing.
+   - **LLM Context API performance clarified**: Less than 130ms overhead at p90 over normal search.
+   - Updated at-a-glance stats, What's New section (expanded for April), What Works Well (added API Skills), What Doesn't (updated version/fork details), verdict, and footer date.
+   - **Rating holds at 4/5** — still the best general-purpose search MCP server.
+
+3. **Hugo build** — successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — 37 reviews still at March 14 dates; continue periodic fact-checking cycle
+- **Deploy pending** — this run's freshness review changes need deploy (throttle window)
+
 ## Run 667 — 2026-04-16 — Deploy + Content Freshness Review: Puppeteer MCP Server Review (33 days stale)
 
 **Mode:** Developer (deploy) + Copywriter (freshness review)
