@@ -1,40 +1,53 @@
 ---
 title: "Grafana MCP Server Review — 40+ Tools, Open Source"
 date: 2026-03-14T13:21:10+09:00
-description: "Grafana's official MCP server connects AI agents to dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerts, incidents, and OnCall — 40+ tools across 15 categories."
-og_description: "Grafana's official MCP server gives AI agents access to dashboards, Prometheus, Loki, ClickHouse, alerts, incidents, and OnCall. 40+ tools, open source, 2,600 stars. Rating: 4/5."
+lastmod: 2026-04-16T12:00:00+09:00
+description: "Grafana's official MCP server connects AI agents to dashboards, Prometheus, Loki, Pyroscope, ClickHouse, CloudWatch, Elasticsearch, alerts, incidents, and OnCall — 40+ tools across 16 categories."
+og_description: "Grafana's official MCP server: 2,800+ stars, 40+ tools, v0.11.6. April 2026: Pyroscope profiling, SSO header forwarding, on-behalf-of auth, GCP Cloud Monitoring. Grafana 13 released. Rating: 4/5."
 content_type: "Review"
-card_description: "Grafana's official MCP server for AI-assisted observability. 40+ configurable tools across dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, Sift, and admin management. Open source, Go, Apache 2.0."
+card_description: "Grafana's official MCP server for AI-assisted observability. 40+ configurable tools across dashboards, Prometheus, Loki, Pyroscope, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, Sift, and admin management. April 2026 brings Pyroscope profiling, SSO header forwarding, on-behalf-of authentication, and GCP Cloud Monitoring support. Open source, Go, Apache 2.0."
 categories: ["/categories/observability-monitoring/"]
-last_refreshed: 2026-03-14
+last_refreshed: 2026-04-16
 ---
 
-**At a glance:** 2,600+ GitHub stars, 303 forks, v0.11.3, 252K+ Docker Hub pulls, ~595K all-time PulseMCP visitors (#66 globally, ~20.8K weekly), 40+ tools across 15 categories, Apache 2.0.
+**At a glance:** 2,800+ GitHub stars, 328 forks, v0.11.6 (April 9, 2026), ~807K all-time PulseMCP visitors (#70 globally, ~18.8K weekly), 40+ tools across 16 categories, Apache 2.0.
 
-The Grafana MCP server gives AI agents direct access to your Grafana instance and the surrounding observability ecosystem — dashboards, Prometheus metrics, Loki logs, ClickHouse analytics, CloudWatch metrics, Elasticsearch searches, alerting rules, incident management, OnCall schedules, and Sift investigations. All from one server.
+The Grafana MCP server gives AI agents direct access to your Grafana instance and the surrounding observability ecosystem — dashboards, Prometheus metrics, Loki logs, Pyroscope profiling data, ClickHouse analytics, CloudWatch metrics, Elasticsearch searches, alerting rules, incident management, OnCall schedules, and Sift investigations. All from one server.
 
-It's official. Grafana Labs builds and maintains it at [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana). With 2,600 GitHub stars, 303 forks, 485 commits, and 15+ releases since December 2025, it's the most popular observability MCP server by community adoption — more than quadruple Sentry's 579 stars. Written in Go, licensed Apache 2.0.
+It's official. Grafana Labs builds and maintains it at [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana). With 2,800 GitHub stars, 328 forks, 536 commits, and 18+ releases since December 2025, it's the most popular observability MCP server by community adoption — nearly five times Sentry's star count. Written in Go, licensed Apache 2.0.
 
 This is the second observability MCP server we've reviewed after [Sentry](/reviews/sentry-mcp-server/) (4/5). Where Sentry is deep and narrow — laser-focused on error tracking with proprietary AI analysis — Grafana is wide and extensible. It connects to whatever data sources your Grafana instance already has, which could be dozens of backends. The trade-off: breadth over depth.
 
-## What's New (March 2026 Update)
+## What's New (April 2026 Update)
+
+**Three releases in two weeks (v0.11.4–v0.11.6).** After a quiet period post-v0.11.3 (March 12), Grafana shipped three releases in rapid succession:
+
+**v0.11.4 (April 2) — Pyroscope profiling and platform expansion:**
+- **Pyroscope profiling tools (NEW CATEGORY):** Series query and unified query tool for continuous profiling data exploration — fetch profiles showing which functions consume resources and metrics showing when consumption spiked. Adds profile type discovery across Pyroscope datasources. This brings the tool category count from 15 to 16.
+- Generic Kubernetes-style API client for Grafana app platform resources
+- `--session-idle-timeout-minutes` CLI flag for automatic idle session closure in SSE/streamable-http modes
+- Server-side filtering for alert rule operations
+- PromQL query support against **Google Cloud Monitoring** datasources — extending multi-cloud reach
+- **Memory leak fix** in streamable-http mode through proper resource cleanup
+- Endpoint fallback between `/resources` and `/proxy` for broader datasource compatibility
+
+**v0.11.5 (April 9) — SSO and enterprise auth:**
+- **Request header forwarding** (Cookie and Authorization) to Grafana in SSE and streamable-http modes — enables SSO and ALB session cookie support. This is a significant enterprise feature: teams using SAML, OAuth, or load balancer-based authentication can now pass those credentials through to Grafana without separate service account tokens.
+- Optional `projectName` parameter for Cloud Monitoring datasources targeting specific GCP projects
+- `BaseTransport` field in `GrafanaConfig` for custom HTTP transport composition
+- Elasticsearch query field extraction fix in alert rule summaries
+
+**v0.11.6 (April 9) — Delegated identity:**
+- **On-behalf-of authentication headers** in the Grafana client transport chain — facilitating delegated identity for API requests. Combined with v0.11.5's header forwarding, this positions the MCP server for proper enterprise identity chains.
+- Dashboard identity field preservation fix in patch mode — prevents unintended dashboard duplication
+
+**Grafana 13 released (April 14).** The [annual major Grafana release](https://grafana.com/docs/grafana/latest/whatsnew/) dropped just ahead of [GrafanaCON 2026 in Barcelona (April 20–22)](https://grafana.com/events/grafanacon/). Grafana 13 includes Grafana Advisor GA and deprecates numeric ID-based datasource APIs (disabled by default). The MCP server had a known TextConsumer parsing error with Grafana v12 ([#635](https://github.com/grafana/mcp-grafana/issues/635)) — teams upgrading to v13 should verify compatibility.
 
 **Azure Managed Grafana MCP launched (March 18).** Microsoft announced a [managed MCP endpoint for Azure Managed Grafana](https://techcommunity.microsoft.com/blog/azureobservabilityblog/introducing-azure-managed-grafana-mcp-the-managed-data-gateway-for-ai-agents/4503619) — enabled by default on Azure Managed Grafana instances. It queries Azure Monitor metrics/logs, Application Insights, and Kusto, using Azure RBAC and managed identities (no separate auth setup). This is a separate managed offering from the open-source `mcp-grafana`, but it validates the approach and expands the Grafana MCP ecosystem to Azure-native teams.
 
 **Datadog MCP server went GA (March 10).** Grafana's primary competitor launched as a [remote MCP server](https://www.helpnetsecurity.com/2026/03/10/datadog-mcp-server/) — no local install needed. Works with Claude Code, Cursor, OpenAI Codex CLI, GitHub Copilot, and Azure SRE Agent out of the box. This makes Datadog the easier-to-set-up option, widening the gap on Grafana's "no hosted remote server" weakness.
 
-**Bug fixes and improvements (March 17-20):**
-- Prometheus `POST` requests converted to `GET` for datasource compatibility — fixes the `httpMethod: GET` 500 error ([#632](https://github.com/grafana/mcp-grafana/issues/632))
-- `generate_deeplink` fixed for Explore resource type ([#644](https://github.com/grafana/mcp-grafana/issues/644))
-- Public URL fetched from Grafana frontend settings for deep links — links now work correctly when Grafana sits behind a reverse proxy
-- **Gemini CLI extension support** — new configuration schema for Google's Gemini CLI, expanding beyond Claude/Cursor/VS Code
-- Enhanced integer conversion in tool parameters
-
-**AI-assisted development.** Multiple recent commits are co-authored with Claude Opus 4.6 and Claude Sonnet 4.6 — Grafana Labs is using AI agents to build the MCP server that serves AI agents.
-
-**Grafana Labs on MCP observability.** Two March 20 blog posts cover [monitoring MCP servers with OpenLIT and Grafana Cloud](https://grafana.com/blog/) and end-to-end agent tracing — positioning Grafana not just as an MCP tool provider, but as the observability layer *for* MCP infrastructure.
-
-**No new release.** Version remains at v0.11.3 (March 12). The fixes above are merged but not yet tagged.
+**Grafana Labs on MCP observability.** Blog posts cover [monitoring MCP servers with OpenLIT and Grafana Cloud](https://grafana.com/blog/ai-observability-MCP-servers/) and [optimizing cloud costs with Grafana Assistant and MCP servers](https://grafana.com/blog/from-signals-to-savings-optimizing-cloud-costs-with-grafana-assistant-and-mcp-servers/) — positioning Grafana not just as an MCP tool provider, but as the observability layer *for* MCP infrastructure.
 
 ## What It Does
 
@@ -132,6 +145,10 @@ The server exposes 40+ tools across 15 configurable categories. Several categori
 - `list_user_roles` / `list_team_roles` — view role assignments
 - `get_resource_permissions` / `get_resource_description` — inspect resource-level permissions
 
+**Pyroscope Profiling** (disabled by default) — *new in v0.11.4*
+- `query_pyroscope` — unified query tool for fetching profiles (which functions consume resources) or metrics (when consumption spiked) from Pyroscope datasources
+- `list_pyroscope_profile_types` — discover available profile types in a Pyroscope datasource and time range
+
 **Query Examples** (disabled by default)
 - `get_query_examples` — retrieve example queries for datasource types
 
@@ -196,24 +213,24 @@ A `--disable-write` flag provides read-only mode — preventing any write operat
 
 **Real-time rendering.** The `get_panel_image` and `get_dashboard_image` tools render actual Grafana visualizations as PNGs that agents can analyze. This is uniquely powerful — instead of just getting metric numbers, your agent can see the same graphs a human would see in the dashboard.
 
-**Active development with weekly releases.** From v0.7.10 (December 2025) to v0.11.3 (March 2026) — 15+ releases in under 4 months, 485 total commits, adding ClickHouse, CloudWatch, Elasticsearch, panel query execution, alerting consolidation, and image rendering. The pace is fast and the changelog shows substantial features, not just patch fixes. 252K+ Docker Hub pulls confirm real-world adoption.
+**Active development with weekly releases.** From v0.7.10 (December 2025) to v0.11.6 (April 2026) — 18+ releases in under 5 months, 536 total commits, adding ClickHouse, CloudWatch, Elasticsearch, Pyroscope, panel query execution, alerting consolidation, SSO header forwarding, and image rendering. The pace is fast and the changelog shows substantial features, not just patch fixes. 807K+ all-time PulseMCP visitors confirm real-world interest.
 
 **Open source, Apache 2.0.** The entire codebase is readable, forkable, and extensible. If Grafana's server doesn't query your niche datasource, you can add it yourself. This matters more for observability than most categories — teams have strong opinions about their monitoring stacks.
 
 ## What's Not
 
-**59 open issues with real bugs.** Down from 61 at our last review, but still substantial. This isn't just feature requests:
-- ~~`query_prometheus` fails with 500 errors for datasources configured with `httpMethod: GET`~~ — **fixed** (March 20, POST-to-GET conversion merged)
-- TextConsumer parsing errors with Grafana v12 ([#635](https://github.com/grafana/mcp-grafana/issues/635))
+**61 open issues with real bugs.** The issue count has held steady, but the nature of the bugs is shifting toward operational concerns:
+- **Horizontal scaling failure** ([#749](https://github.com/grafana/mcp-grafana/issues/749)) — multiple replicas fail silently due to per-pod session state. Critical for teams running the MCP server in Kubernetes with multiple replicas.
+- **Write-disable flag over-blocks** ([#744](https://github.com/grafana/mcp-grafana/issues/744)) — read-only analysis tools are incorrectly blocked by `--disable-write`, preventing legitimate read operations. Undermines the safety feature.
+- **Alert rules lose query data** ([#732](https://github.com/grafana/mcp-grafana/issues/732)) — alerting rules retrieval drops critical query information for non-Prometheus datasources, breaking update cycles.
+- TextConsumer parsing errors with Grafana v12 ([#635](https://github.com/grafana/mcp-grafana/issues/635)) — may also affect Grafana 13
 - Tool parameters use camelCase JSON names, breaking MCP clients that send snake_case ([#641](https://github.com/grafana/mcp-grafana/issues/641))
 - `query_loki_logs` silently truncates results without indicating data was omitted ([#557](https://github.com/grafana/mcp-grafana/issues/557))
-- `get_dashboard_panel_queries` omits non-Prometheus panels ([#585](https://github.com/grafana/mcp-grafana/issues/585))
 - `get_trace` tool returns unbounded responses, needing filtering/truncation ([#603](https://github.com/grafana/mcp-grafana/issues/603))
-- 403 Forbidden errors on Prometheus/Loki query tools despite correct permissions ([#524](https://github.com/grafana/mcp-grafana/issues/524))
 
-**Security findings remain open.** Issue [#608](https://github.com/grafana/mcp-grafana/issues/608) reports an AgentAudit scan finding TLS bypass and credential exposure in panic stack traces. A security policy template has been requested ([#623](https://github.com/grafana/mcp-grafana/issues/623)) but doesn't exist yet. For a server that connects to your production monitoring infrastructure, this matters.
+**Security findings remain open — and a new one appeared.** Issue [#608](https://github.com/grafana/mcp-grafana/issues/608) reports TLS bypass and credential exposure in panic stack traces. [#738](https://github.com/grafana/mcp-grafana/issues/738) flags a security policy gap in alerting and incident management capabilities. Most concerning: [#680](https://github.com/grafana/mcp-grafana/issues/680) reports **prompt injection via dashboard data** — untrusted content in dashboards could compromise the AI agent's context. For a server that connects to your production monitoring infrastructure with full query access, this attack surface matters.
 
-**Service account token auth is less secure than OAuth.** Sentry's MCP server uses OAuth 2.0 — you authenticate in your browser, tokens are scoped and revocable, nothing sensitive sits on disk. Grafana requires a service account token in your MCP client config file, typically in plaintext JSON. This is the standard approach for most MCP servers, but it's a step behind Sentry and PagerDuty which offer OAuth flows.
+**Authentication is improving but still behind OAuth.** Sentry's MCP server uses OAuth 2.0 — you authenticate in your browser, tokens are scoped and revocable, nothing sensitive sits on disk. Grafana's default mode requires a service account token in your MCP client config file, typically in plaintext JSON. The v0.11.5/v0.11.6 releases added **request header forwarding** (SSO, ALB session cookies) and **on-behalf-of authentication** — meaningful steps toward enterprise auth parity. But these only work in SSE/streamable-http transport modes, not stdio, and still aren't as seamless as OAuth flows offered by Sentry and PagerDuty.
 
 **No hosted remote server.** Sentry has `mcp.sentry.dev`. Datadog went GA on March 10 with a hosted remote endpoint requiring zero local install. PagerDuty has `mcp.pagerduty.com`. Grafana requires you to run the MCP server yourself — locally via uvx/Docker, or as a service via SSE/Streamable HTTP. This adds setup complexity and means you need to keep the server process running. Azure Managed Grafana now has a managed MCP endpoint, but that's Azure-only — the open-source server still has no hosted option.
 
@@ -248,12 +265,16 @@ A `--disable-write` flag provides read-only mode — preventing any write operat
 - You want zero-install OAuth setup — Grafana requires running the server yourself
 - You're on Grafana versions below 9.0 — key tools will silently fail
 - You only need Sentry-style error tracking — Grafana is broader but shallower on specific debugging
-- You need a hardened production integration — 61 open issues including security findings suggest it's still maturing
+- You need a hardened production integration — 61 open issues including security findings (prompt injection via dashboard data, TLS bypass) suggest it's still maturing
 
-{{< verdict rating="4" summary="The most comprehensive open-source observability MCP server, with the breadth to match any monitoring stack" >}}
-The Grafana MCP server is the observability MCP server for teams that don't want vendor lock-in. With 40+ tools spanning dashboards, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, and Sift investigations — plus 2,600 stars, 252K+ Docker Hub pulls, and 485 commits — it covers more observability surface than any single-vendor alternative except Datadog. The configurable tool categories are the smartest context window management we've seen. The 4/5 rating reflects what's genuinely excellent (multi-datasource architecture, agent-aware dashboard tools, comprehensive incident pipeline, active development, growing ecosystem with Azure Managed Grafana MCP) balanced against what's still rough (59 open issues including security findings, service account token auth instead of OAuth, no hosted remote server while Datadog ships one, 16K token footprint). Microsoft launching Azure Managed Grafana MCP validates the approach; Datadog going GA with zero-install remote hosting raises the competitive bar. For teams already running Grafana, this is the natural choice. For teams choosing between observability platforms, the MCP server is one more reason Grafana's open-source flexibility is hard to beat.
+{{< verdict rating="4" summary="The most comprehensive open-source observability MCP server, now with profiling and enterprise auth — but prompt injection risk is concerning" >}}
+The Grafana MCP server is the observability MCP server for teams that don't want vendor lock-in. With 40+ tools spanning dashboards, Prometheus, Loki, Pyroscope, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, and Sift investigations — plus 2,800 stars, 536 commits, and 807K+ PulseMCP visitors — it covers more observability surface than any single-vendor alternative except Datadog. The configurable tool categories are the smartest context window management we've seen.
+
+April 2026 brought meaningful progress: Pyroscope profiling adds a 16th tool category for continuous profiling data exploration, SSO header forwarding and on-behalf-of authentication finally address enterprise identity concerns, GCP Cloud Monitoring support extends multi-cloud reach, and Grafana 13's release (with GrafanaCON 2026 in Barcelona) keeps the platform momentum going.
+
+The 4/5 rating holds because the improvements are real but the risks are evolving. The prompt injection vulnerability via dashboard data ([#680](https://github.com/grafana/mcp-grafana/issues/680)) is the most concerning new issue — it means untrusted dashboard content could manipulate your AI agent's behavior. Horizontal scaling silently fails with multiple replicas ([#749](https://github.com/grafana/mcp-grafana/issues/749)). The `--disable-write` flag over-blocks read operations ([#744](https://github.com/grafana/mcp-grafana/issues/744)). And there's still no hosted remote server while Datadog offers zero-install remote hosting. For teams already running Grafana, this remains the natural choice — and it's getting better fast. For teams choosing between observability platforms, the MCP server is one more reason Grafana's open-source flexibility is hard to beat.
 {{< /verdict >}}
 
 **Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
-*This review was researched and written by AI (Claude Opus 4.6, Anthropic). We have not personally tested this MCP server — our analysis is based on documentation, source code, GitHub activity, and community reports. Last updated 2026-03-21.*
+*This review was researched and written by AI (Claude Opus 4.6, Anthropic). We have not personally tested this MCP server — our analysis is based on documentation, source code, [GitHub data](https://github.com/grafana/mcp-grafana) (2,800+ stars, 328 forks as of April 2026), release changelogs (v0.11.4–v0.11.6), and community reports. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight. Last updated 2026-04-16.*
