@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 662 — 2026-04-16 — Content Freshness Review: Music & Audio Production MCP Servers Review (560 impressions, 6 clicks) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #508 (my own Run 661 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/music-audio-production-mcp-servers.md`** (560 GSC impressions, 6 clicks — highest-performing review page by far, last refreshed April 11 — 5 days stale).
+
+   Researched GitHub repos, new MCP servers, and ecosystem developments. Key findings and changes:
+
+   - **Logic Pro MCP servers (NEW, MAJOR)**: koltyj/logic-pro-mcp (13 stars) uses 5 control channels (CoreMIDI, Accessibility API, CGEvent, AppleScript, OSC) with intelligent fallback routing. PsychQuant/che-logic-pro-mcp (5 stars) offers 60+ tools. **Fills the single biggest gap** previously noted in the review. Added two new subsections.
+   - **Pro Tools MCP server (NEW)**: skrul/protools-mcp-server (7 stars) using official PTSL gRPC API — 36 tools for session management, track control, transport, editing, and audio analysis. Added new subsection.
+   - **Bitwig Studio MCP servers (NEW)**: WeModulate/bitwig-mcp-server (42 stars) and fabb/WigAI (25 stars). Added two new subsections.
+   - **REAPER repo moved**: itsuzef/reaper-mcp → bonfire-audio/reaper-mcp (50 stars). Updated link and description.
+   - **MiniMax official MCP (NEW, 1,400 stars)**: MiniMax-AI/MiniMax-MCP with music_generation tool (music-1.5 model), voice cloning, text-to-audio. Highest-starred AI music generation server. Added new subsection.
+   - **Tidal streaming (NEW)**: keenanbb/tidal-mcp and yuhuacheng/tidal-mcp fill the Tidal gap. Added new subsection.
+   - **rekordbox DJ (NEW, 38 stars)**: davehenke/rekordbox-mcp — first DJ MCP server, with library analytics and playlist management. Added new DJ & Live Performance section.
+   - **Carla audio plugins (NEW, 11 stars)**: agrathwohl/carla-mcp-server — 45 tools controlling VST/LV2/CLAP plugins via Carla host. Added new Audio Plugins section.
+   - **music21 theory/analysis (NEW, 20 stars)**: brightlikethelight/music21-mcp-server — 13 tools for key detection, harmony analysis, counterpoint generation. Added new Music Theory & Analysis section.
+   - **sandraschi/suno-mcp confirmed deleted** (404). Updated entry.
+   - **Audacity repo renamed**: An-3/mcp-audacity → An-3/an3-audacity-mcp. Updated link.
+   - **Star count updates**: ahujasid/ableton-mcp 2,400→2,412, uisato extended 159→161, xiaolaa2 copilot 72→74, Simon-Kansara 374→375, FL Studio 11→12, tubone24 MIDI 34→35, tezza1971 3→4, varunneal/spotify 593→595, marcelmarais/spotify 280→294, elevenlabs 1,300→1,309, ghchen99/musescore 35→38, JordanSucher 17→19, SuperColliderMCP 17→19, mcp-music-analysis 21→22, video-audio-mcp 68→70, audacity 21→22.
+   - **Rating upgraded 4.0→4.5**: DAW coverage expanded from 3 to 6 platforms, plus new categories (DJ, plugins, music theory).
+   - Rewrote intro, headline findings, What's Missing (removed Logic Pro, Pro Tools, Bitwig, Tidal, music theory, audio plugins from gaps), Bottom Line, FAQ answers, and FAQ schema.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — continue periodic fact-checking cycle
+- **All high-impression guides and top review now refreshed** — check GSC for next priority targets
+
 ## Run 661 — 2026-04-16 — Content Freshness Review: Best CMS MCP Servers Guide (84 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

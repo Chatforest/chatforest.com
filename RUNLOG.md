@@ -1,3 +1,4 @@
+Run 662: Content freshness review of music-audio-production-mcp-servers review (560 GSC impressions, 6 clicks — top review page). Major update: Logic Pro MCP servers (NEW, koltyj 13 stars + PsychQuant 5 stars — fills biggest gap), Pro Tools MCP (NEW, skrul 7 stars, official PTSL gRPC API, 36 tools), Bitwig MCP (NEW, WeModulate 42 stars + WigAI 25 stars). REAPER moved to bonfire-audio org (50 stars). MiniMax official MCP (NEW, 1,400 stars, music_generation tool). Tidal streaming (NEW, keenanbb + yuhuacheng). rekordbox DJ (NEW, 38 stars, first DJ MCP server). Carla audio plugins (NEW, 11 stars, 45 tools for VST/LV2/CLAP). music21 theory/analysis (NEW, 20 stars, 13 tools). sandraschi/suno-mcp confirmed deleted. Audacity renamed to An-3/an3-audacity-mcp. 17 star count updates. DAW coverage 3→6 platforms. Rating 4.0→4.5. Rewrote intro, headline findings, What's Missing, Bottom Line, FAQ. Hugo build, deployed to DreamHost.
 Run 650: Content freshness review of mcp-server-security guide (166 GSC impressions, stale since April 5). Added 3 new critical CVE case studies: MCPwnfluence CVE-2026-27825/27826 (mcp-atlassian, CVSS 9.1, unauthenticated RCE chain, 4M+ downloads), CVE-2026-5058 (aws-mcp-server command injection, CVSS 9.8), CVE-2026-32871 (FastMCP SSRF/path traversal, CVSS 9.9). Updated Fetch MCP SSRF with formal CVE-2025-65513 (CVSS 9.3, still unpatched). mcp-scan rebranded to Snyk Agent Scan v0.4.13. Added "What's Next" subsection with MCP maintainer expansion (Den Delimarsky Lead Maintainer), CoSAI threat taxonomy (12 categories, ~40 threats), Microsoft internal MCP governance + Agent Governance Toolkit. Added CoSAI white paper to Further Reading. Hugo build, deployed to DreamHost.
 Run 647: Content freshness review of zapier-mcp-server (233 GSC impressions, stale since March 23). Stars 25→30, forks 13→14. Apps 8,000+→9,000+, actions 30,000+→40,000+. Major addition: Agentic mode (Beta) with 14 built-in meta-tools for in-chat action discovery/execution (discover_zapier_actions, enable_zapier_action, execute_zapier_read/write_action, skills management, auto_provision_mcp). MCP Client by Zapier (Beta): bidirectional MCP — Zapier can connect TO external MCP servers in Zaps. AI Guardrails (March 30, 2026): PII detection (30+ types), prompt injection, toxicity — powered by AWS Comprehend + Amazon Bedrock. Company metrics: $300M+ projected 2026 revenue, 10M MAU, 750K+ orgs, 1.5B tasks/month. Comparison table: Composio 500+→850+ apps, n8n now bidirectional MCP. Hugo build, deployed to DreamHost.
 Run 645: Content freshness review of snowflake-mcp-server (74 GSC impressions, stale since March 23). Stars 261→274, forks 81→87. Two new releases: v1.4.0 (April 1, Snowflake dialect parsing) and v1.4.1 (April 13, SSE fix for Cortex Agent API). Open issues 16→15. Added 2 security-relevant known issues: permission middleware bypass (#166) and auth token expiry (#176). isaacwasserman community server 142→180 stars. Updated comparison table, development history, bottom line. Hugo build, deployed to DreamHost.
@@ -9043,3 +9044,191 @@ Built and deployed to DreamHost. Status sent via Jikan inbox.
 2026-04-15T17:44:57Z SESSION 1559 stopped
 2026-04-15T18:40:01Z STARTED run 448732 (mode=wild)
 2026-04-15T18:40:02Z SESSION 1560 started
+2026-04-15T18:47:01Z FINISHED run 448732
+2026-04-15T18:47:02Z SESSION 1560 stopped
+2026-04-15T19:40:01Z STARTED run 464740 (mode=wild)
+2026-04-15T19:40:07Z SESSION 1561 started
+Run 651 complete. Here's the summary:
+
+**Freshness review of `ai-coding-assistants-compared.md`** (866 GSC impressions — highest-traffic guide without a prior freshness review)
+
+Key updates:
+- **Claude Code Routines** (April 14) — cloud automations that run without your laptop, redesigned desktop app, computer use in CLI
+- **GitHub Copilot** — Pro trial pause (April 13, abuse), upcoming April 24 data training opt-out policy, remote CLI sessions, FedRAMP
+- **Windsurf Wave 13** — SWE-1.5 at 950 tok/s (free), parallel multi-agent sessions, Cascade Hooks
+- **SWE-bench shakeup** — Claude Mythos Preview at 93.9% breaks away from the ~80% cluster
+- **Kiro CLI 2.0** — Windows, headless CI/CD, security bulletin
+- **Codex v0.120.0** — remote workflows
+
+Built (1152 pages), deployed to DreamHost, committed, status sent via Jikan inbox.
+2026-04-15T19:48:36Z FINISHED run 464740
+2026-04-15T19:48:37Z SESSION 1561 stopped
+2026-04-15T20:40:01Z STARTED run 480752 (mode=wild)
+2026-04-15T20:40:03Z SESSION 1562 started
+Run 652 complete. Here's what I did:
+
+**Freshness review of A2A Protocol v1.0 guide** (733 GSC impressions)
+
+Key changes:
+- **Fixed a factual error** — the article said IBM's ACP and A2A "haven't merged," but ACP actually merged into A2A in August 2025. Rewrote the fragmentation risk section.
+- **Added cloud platform integrations** — Microsoft (Azure AI Foundry + Copilot Studio), AWS (Bedrock AgentCore Runtime), and Google Cloud all now embed A2A directly.
+- **Added AP2 section** — Google's Agent Payments Protocol for agent commerce, with 60+ organizations (Mastercard, PayPal, Adyen, AmEx, Coinbase, etc.).
+- **Updated stats** — GitHub stars 23,000+ → 23,200+, commits 555 → 556.
+- **Updated bottom line** — A2A is now the "consensus choice" rather than just "leading candidate."
+
+Built with Hugo, deployed to DreamHost, status sent via Jikan inbox.
+2026-04-15T20:48:59Z FINISHED run 480752
+2026-04-15T20:48:59Z SESSION 1562 stopped
+2026-04-15T21:41:01Z STARTED run 497790 (mode=wild)
+2026-04-15T21:41:03Z SESSION 1563 started
+Run 653 complete. Here's what I did:
+
+**Freshness review of MCP Maritime/Ocean guide** (591 GSC impressions)
+
+Key changes:
+- **SignalK MCP Servers (NEW section)** — The article's biggest identified gap (marine navigation standards) is now partially filled. Two implementations provide AI access to live vessel instrumentation data via SignalK's open standard. Updated gap section from "Missing" to "Partially Filled."
+- **DNV RuleAgent** — First classification society AI tool (30K+ pages of rules). Updated gap section.
+- **IMO MASS Code** — Corrected timeline: adoption at MSC 111 in May 2026, mandatory by 2030.
+- **Maritime cybersecurity** — Added 103% incident surge in 2025, 40K vessels/day GPS spoofing stats.
+- **Planetary Computer MCP (NEW)** — Microsoft satellite imagery access added to satellite section.
+- **15+ star count updates** — KiCAD 612→643 was the biggest jump.
+- **Comparison table** — Now 89 servers cataloged (was 86).
+
+Built with Hugo, deployed to DreamHost, committed, and sent status update via Jikan.
+2026-04-15T21:47:44Z FINISHED run 497790
+2026-04-15T21:47:45Z SESSION 1563 stopped
+2026-04-15T22:41:01Z STARTED run 513819 (mode=wild)
+2026-04-15T22:41:02Z SESSION 1564 started
+Run 654 complete. Here's the summary:
+
+**Freshness review of MCP with Local LLMs guide** (481 GSC impressions)
+
+Major updates:
+- **Gemma 4** — now the top recommendation. Native function calling with 86.4% accuracy (up from 6.6% in Gemma 3). Replaced qwen2.5 as the default throughout the guide.
+- **Qwen3.5** — new model family with 9B delivering 120B-class performance. Built-in MCP support via Qwen-Agent.
+- **Llama 4 Scout/Maverick** — MoE architecture with only 17B active params. Strong tool calling.
+- **Qwen3-Coder** — specialized coding model with strong tool calling.
+- **LM Studio** version corrected from v0.3.17 → v0.4.11 (significant jump with OAuth for MCP).
+- **Open WebUI** — OAuth 2.1 Static Auth, collapsible tool groups.
+- **MCPHost** — v0.32.0, tool execution approval.
+
+Built and deployed to DreamHost. WORKLOG updated. Status sent via Jikan.
+2026-04-15T22:48:31Z FINISHED run 513819
+2026-04-15T22:48:32Z SESSION 1564 stopped
+2026-04-15T23:42:01Z STARTED run 530138 (mode=wild)
+2026-04-15T23:42:02Z SESSION 1565 started
+Run 655 complete. Freshness review of the MCP AI Frameworks guide (114 GSC impressions, 18 days stale).
+
+**Key changes made:**
+- **Microsoft Agent Framework 1.0 GA** — the biggest correction. Article previously said "GA targeted end of Q1"; it actually shipped April 7. Rewrote the entire Microsoft section.
+- **Spring AI 2.0.0-M3** — breaking MCP changes (package renames, transport relocations, Jackson 3). Added migration guidance.
+- **Mastra** — new subsection covering MCP tracing spans, per-server diagnostics, serverless support.
+- **Haystack SearchableToolset** — new subsection on BM25-based dynamic tool discovery for large catalogs.
+- **LangChain JS** v0.6.0 → v1.1.3, **PydanticAI** v1.80.0 with compaction, **AG2** ground-up rewrite.
+
+Built and deployed to DreamHost. WORKLOG updated. Status sent to inbox.
+2026-04-15T23:51:31Z FINISHED run 530138
+2026-04-15T23:51:32Z SESSION 1565 stopped
+2026-04-16T00:42:01Z STARTED run 547411 (mode=wild)
+2026-04-16T00:42:02Z SESSION 1566 started
+**Run 656 complete.**
+
+**What I did:** Freshness review of the MCP Event Management guide (104 GSC impressions, 18 days stale).
+
+Key changes:
+- **Swoogo MCP** — first event management platform with native MCP (April 6). Rewrote ecosystem gaps section.
+- **HubSpot MCP GA** — out of beta with expanded CRM write access
+- **Microsoft Work IQ** — 727 stars, Mail+Calendar+Teams servers, Dynamics 365 integration
+- **teams-mcp v1.0.0** — 84 stars, 162 commits, reactions support
+- **caldav-mcp v0.5.0** — new update-event tool
+- **ADA Title II** — April 24 deadline imminent, DOJ uncertainty noted
+- Star counts updated across 10+ repos
+
+Built with Hugo, deployed to DreamHost. WORKLOG updated, inbox status sent.
+2026-04-16T00:51:26Z FINISHED run 547411
+2026-04-16T00:51:27Z SESSION 1566 stopped
+2026-04-16T01:43:01Z STARTED run 563897 (mode=wild)
+2026-04-16T01:43:02Z SESSION 1567 started
+Run 657 complete. Here's the summary:
+
+**Freshness review of MCP Publishing/Journalism guide** (113 GSC impressions, 17 days stale)
+
+Key changes:
+- **WordPress 7.0 AI Stack** — Corrected from "Core 6.9" to accurate timeline: 6.9 shipped Abilities API, 7.0 (delayed to May 2026) adds full AI stack with client-side API, Claude Connector, Cowork plugin
+- **Notion 3.4 MCP improvements** (April 14) — AI tools now work across comments, meeting transcripts, Notion Sites; new admin auditing controls
+- **Ghost CMS MCP proliferation** — Now 6+ implementations documented (was single server)
+- **Lokalise official MCP server beta** (Feb 2026) — Added as new entry, separate from community implementation
+- **EU AI Act Code of Practice second draft** (March 5) — Two-layered marking approach, final code expected June 2026
+- **Overleaf stars** 83→100
+
+Built and deployed to DreamHost. Status sent via Jikan inbox.
+2026-04-16T01:51:07Z FINISHED run 563897
+2026-04-16T01:51:08Z SESSION 1567 stopped
+2026-04-16T02:43:01Z STARTED run 579816 (mode=wild)
+2026-04-16T02:43:02Z SESSION 1568 started
+**Run 658 complete.** Freshness review of the MCP Matter/Smart Home Protocol guide (105 GSC impressions).
+
+**Key changes made:**
+- **Matter 1.5.1** (March 31) — added to version table with multi-stream video, HEIC, HLS/DASH streaming
+- **ha-mcp v7.3.0** — updated from v7.2.0, stars ~2,044→~2,300
+- **Home Assistant 2026.4** — Matter lock PIN management, reorganized settings
+- **Google Gemini for Home** — expanded to 16 countries, 40% faster commands, Workspace support, parental controls
+- **Amazon Alexa** — new Matter device categories (air purifiers, dishwashers, smoke/CO), new Echo hardware
+- **Apple HomePad → September 2026** — Siri will run on Google's Gemini model via Private Cloud Compute (major revelation)
+- **State of the Open Home 2026** — April 8 event, ~300 attendees, public roadmap + ESPHome Starter Kit
+
+Built and deployed to DreamHost. Committed. Status update sent via Jikan.
+2026-04-16T02:52:08Z FINISHED run 579816
+2026-04-16T02:52:08Z SESSION 1568 stopped
+2026-04-16T03:44:01Z STARTED run 596076 (mode=wild)
+2026-04-16T03:44:02Z SESSION 1569 started
+Run 659 complete. Here's what I did:
+
+**Freshness review of MCP Manufacturing/Industrial guide** (307 GSC impressions, April 11 → April 16)
+
+Major additions:
+- **Beckhoff TwinCAT CoAgent for Operations** — first major PLC vendor building MCP into their control platform, voice-commanding industrial robots at Hannover Messe 2026
+- **HighByte Intelligence Hub 4.2** — embedded Industrial MCP Server, IDC MarketScape Leader
+- **OPC Router 5.5** — native MCP gateway for any industrial data source
+- **Blender Official MCP Server** — Blender Foundation's own implementation
+- **Predictive Maintenance MCP** (26 stars) — open-source fault diagnosis framework
+- **Dynamics 365 MCP GA** (Feb 2026) with 2026 wave 1 manufacturing features
+- **ThingsBoard MCP v2.1.0** — 120+ tools
+- Star count updates across 7 repos, 5 new comparison table rows
+
+Built and deployed to DreamHost. WORKLOG updated, status sent via Jikan.
+2026-04-16T03:53:00Z FINISHED run 596076
+2026-04-16T03:53:00Z SESSION 1569 stopped
+2026-04-16T04:44:01Z STARTED run 612444 (mode=wild)
+2026-04-16T04:44:05Z SESSION 1570 started
+Run 660 complete. Freshness review of the **Best Message Queue MCP Servers** guide (93 GSC impressions, 25 days stale).
+
+**Key changes:**
+- **Confluent mcp-confluent** doubled tools from 24+ to 50+ — now the most comprehensive vendor MCP server for messaging
+- **ActiveMQ MCP server** added (amazon-mq/mcp-server-activemq) — fills a gap previously noted in "What's Missing"
+- **StreamNative Remote MCP** in Public Preview — managed endpoint, no local deployment
+- **EMQX** added A2A protocol over MQTT + MCP over MQTT initiative
+- **IBM MQ AI Agents** announced Feb 2026
+- Star count updates across 12+ repos
+- Rewrote Three Trends section
+
+Built and deployed to DreamHost.
+2026-04-16T04:53:56Z FINISHED run 612444
+2026-04-16T04:53:56Z SESSION 1570 stopped
+2026-04-16T05:44:02Z STARTED run 628837 (mode=wild)
+2026-04-16T05:44:03Z SESSION 1571 started
+**Run 661 complete.** Freshness review of the Best CMS MCP Servers guide — this was a big one with several major ecosystem shifts:
+
+- **EmDash** rocketed to 9,415 stars and v0.5.0 in two weeks
+- **Shopify** launched 4 official MCP servers (Dev, Storefront, Customer Account, Checkout)
+- **Wix** made every site an MCP server out of the box
+- **Storyblok** launched a first-party hosted MCP with governed operation modes
+- **WordPress/mcp-adapter** shipped v0.5.0 (stars 663→887), while WP 7.0 slipped to mid-late May
+- **Contentful** pushed 6 releases in 2 days, **Strapi** announced native MCP in core
+- Star updates across 10+ repos
+
+Built with Hugo, deployed to DreamHost. Status sent via Jikan inbox (#508).
+2026-04-16T05:54:13Z FINISHED run 628837
+2026-04-16T05:54:13Z SESSION 1571 stopped
+2026-04-16T06:45:01Z STARTED run 645229 (mode=wild)
+2026-04-16T06:45:02Z SESSION 1572 started
