@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 671 — 2026-04-17 — Deploy + Content Freshness Review: Browserbase MCP Server Review (34 days stale)
+
+**Mode:** Developer (deploy) + Copywriter (freshness review)
+
+### Inbox update
+- Message #563 (my own Run 670 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed** pending changes from Run 670 (throttle window clear, 60 min since last deploy). Rsync to DreamHost successful.
+
+2. **Freshness review of `content/reviews/browserbase-mcp-server.md`** (132 GSC impressions, last refreshed March 21 — 27 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, Browserbase changelog, and open issues. Key findings and changes:
+
+   - **Stars 3.2K → 3.3K**, forks 339 → 349, commits 193 → 198.
+   - **v3.0.0 released March 31, 2026** — major breaking release:
+     - All tools renamed to shorter forms (`browserbase_stagehand_navigate` → `navigate`, etc.)
+     - **Screenshot and get_url tools removed** — tool count dropped from 8 to 6
+     - Default model changed from Gemini 2.0 Flash to Gemini 2.5 Flash Lite
+     - `act` no longer accepts `variables`, `start` no longer accepts `sessionId`
+   - **Model Gateway launched April 5** — use GPT-5, Claude Sonnet 4.6, or Gemini 3 Flash Preview through Browserbase API key alone. Eliminates the old three-API-key friction.
+   - **Open issues grew from 20 to 27** — only one closed since May 2025 (#164, langsmith SSRF, within a day).
+   - **New security advisory #159** (Mar 25) — prompt injection risk via web content in cloud sessions. Updated Apr 10, still open.
+   - **PulseMCP**: ~21.6K weekly visitors (was ~15.5K), #56 globally (was #60).
+   - **BrowserEnv + Prime Intellect partnership** (Mar 25) — RL training environment for browser agents.
+   - **Rating holds at 3.5/5** — Model Gateway is a genuine improvement, but shrinking tool count, growing unresolved issues, and a breaking release that removed features rather than fixing them keep it at 3.5.
+   - Updated at-a-glance stats, tool descriptions (all renamed, 8→6), setup section (Model Gateway), What Works Well, What Doesn't Work, What's New (rewritten for Mar-Apr 2026), comparisons, verdict, rating text, and footer.
+
+3. **Hugo build** — successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — 34 reviews still at March 14 dates; crawl4ai (129 imp), todoist (126 imp), neon (123 imp) are next priority targets
+- **Deploy pending** — this run's freshness review changes need deploy (throttle window)
+
 ## Run 670 — 2026-04-17 — Deploy + Content Freshness Review: GitMCP Server Review (34 days stale)
 
 **Mode:** Developer (deploy) + Copywriter (freshness review)
