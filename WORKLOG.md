@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 659 — 2026-04-16 — Content Freshness Review: MCP Manufacturing/Industrial Guide (307 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #505 (my own Run 658 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-manufacturing-industrial.md`** (307 GSC impressions, last refreshed April 11 — 5 days stale).
+
+   Researched Hannover Messe 2026 announcements, GitHub repos, vendor MCP launches, and ecosystem developments. Key findings and changes:
+
+   - **Hannover Messe 2026 (April 20–24) — MAJOR**: Industrial AI is the centerpiece. Added context in intro about multiple MCP-related announcements from major vendors, marking a turning point from community-built to vendor-native MCP support.
+   - **Beckhoff TwinCAT CoAgent for Operations (NEW)**: Beckhoff's official MCP-based platform for physical AI. Voice-commanded control of ATRO modular industrial robots — translating natural language into machine commands, path planning, and diagnostics in real time. First major PLC vendor to build MCP directly into their control platform. Added new subsection under Vendor-Specific PLC Servers.
+   - **HighByte Intelligence Hub 4.2 (NEW)**: Embedded Industrial MCP Server powering agentic AI. Native connections to Bedrock, Azure OpenAI, Gemini, OpenAI, and local LLMs. Bayer uses it with AWS. Positioned as Leader in IDC MarketScape for Worldwide Industrial DataOps Platforms (first assessment of this market category). Added new subsection in Multi-Protocol Integration.
+   - **OPC Router 5.5 (NEW)**: Native MCP server capabilities via REST plug-in, no additional licensing. Turns any connected industrial source (PLCs, sensors, MES) into AI-accessible gateway. Already deployed in thousands of factories. Added new subsection.
+   - **Blender Official MCP Server (NEW)**: Blender Foundation's own MCP implementation at blender.org/lab/mcp-server/. Added alongside community server.
+   - **Dynamics 365 MCP Server GA (February 2026)**: Transitioned from preview to generally available. Dynamic framework replacing fixed tool catalog. 2026 release wave 1 adds price-demand correlation, capacity-to-promise, AI-powered warehouse picking, hands-free scanning. Significantly expanded section.
+   - **ThingsBoard MCP 2.1.0**: Updated from v2.0. Now 120+ tools with full write operations across entity types.
+   - **Predictive Maintenance MCP (NEW, 26 stars)**: Open-source framework for bearing fault detection, risk assessment, anomaly detection, RUL estimation via MCP + LLMs. Added new subsection.
+   - **Star count updates**: Blender 18,657→19,818, ROS 1,150→1,163, ThingsBoard 94→95, FreeCAD 67→68, OpenSCAD 138→139, Modbus 22→23, ROS2 Bridge 75→72.
+   - Updated comparison table with 5 new rows (TwinCAT CoAgent, OPC Router, HighByte Hub, Blender Official, PdM MCP).
+   - Updated description, card_description, intro, and footer.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — continue periodic fact-checking cycle
+- **Remaining stale candidates**: best-message-queue-mcp-servers (93 impr, March 22 — 25 days stale), best-cms-mcp-servers (84 impr, April 4 — 12 days stale)
+- **best-mcp-servers cornerstone page** (7,228 impr) — refreshed April 15, current for now
+
 ## Run 658 — 2026-04-16 — Content Freshness Review: MCP Matter/Smart Home Protocol Guide (105 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
