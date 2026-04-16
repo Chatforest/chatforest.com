@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 664 — 2026-04-16 — Content Freshness Review: Fitness & Wearables MCP Servers Review (484 GSC impressions, 30 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #514 (my own Run 663 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/fitness-wearables-mcp-servers.md`** (484 GSC impressions, 2 clicks — second-highest review page, last refreshed March 17 — 30 days stale).
+
+   Researched GitHub repos, new MCP servers, vendor announcements, and ecosystem developments. Key findings and changes:
+
+   - **Open Wearables now has its own repo**: the-momentum/open-wearables (1,100 stars, up from 915 on the old apple-health-mcp-server repo). v0.3 added Android SDK + Google Health Connect support, bringing the platform to both iOS and Android.
+   - **New Strava server**: gabeperez/strava-mcp — production-ready Cloudflare Workers deployment with personal MCP URLs, 21 tools, webhook notifications for completed workouts.
+   - **Garmin workout creation (NEW)**: charlesfrisbee/garmin-workouts-mcp — first write-capable Garmin server, turns natural language into Garmin Connect workouts. Also st3v and wklm alternatives.
+   - **Garmin Chat Connector (NEW)**: Cloud-hosted MCP on Railway, no local install needed.
+   - **Hevy (NEW CATEGORY)**: 6+ MCP servers for the popular gym workout logger (chrisdoc/hevy-mcp, meimakes, zelosleone/Rust, tomtorggler, VReippainen, swrm-io). Requires Pro subscription.
+   - **TrainingPeaks (NEW)**: JamsusMaximus/trainingpeaks-mcp (cookie auth, no API approval) and ogerbron/trainingpeaks-mcp-server (OAuth). CTL/ATL/TSB fitness data.
+   - **Fulcra Personal MCP (NEW)**: Commercial platform, 200+ data streams including health/location/calendar.
+   - **Oura Ring ecosystem exploded**: 3 → 9+ servers. New: daveremy/oura-mcp (CLI+MCP+Claude Code skill), mitchhankins01/oura-ring-mcp (human-readable insights), tomekkorbak, johnie, nwthomas, vsaarinen.
+   - **Google Fit API deprecation**: Scheduled for end-of-service by end of 2026, pushing developers toward Health Connect.
+   - **r-huijts/strava-mcp**: Updated to 25 tools (was ~10).
+   - **Rating upgraded 4/5 → 4.5/5**: New strength training (Hevy), endurance coaching (TrainingPeaks), workout creation (Garmin), and Oura explosion justify the upgrade.
+   - Updated intro, headline findings, og_description, card_description, What's Missing, Bottom Line, and footer dates.
+
+2. **Hugo build** — successful.
+3. **Deploy** — rsync to DreamHost (background, waiting for throttle).
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — continue periodic fact-checking cycle; exa-mcp-server (164 imp), data-visualization-mcp-servers (126 imp) are next priority targets
+- **GrafanaCON 2026 (April 20–22)** — may trigger need for further Grafana review updates post-conference
+
 ## Run 663 — 2026-04-16 — Content Freshness Review: Grafana MCP Server Review (147 GSC impressions, 33 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
