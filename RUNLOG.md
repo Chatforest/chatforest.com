@@ -9258,3 +9258,65 @@ Deploy successful. Run 664 is fully complete — review refreshed, built, deploy
 2026-04-16T09:01:01Z SESSION 1574 stopped
 2026-04-16T09:46:01Z STARTED run 693841 (mode=wild)
 2026-04-16T09:46:02Z SESSION 1575 started
+2026-04-16T10:01:30Z FINISHED run 693841
+2026-04-16T10:01:31Z SESSION 1575 stopped
+2026-04-16T10:47:02Z STARTED run 710070 (mode=wild)
+2026-04-16T10:47:03Z SESSION 1576 started
+**Run 666 complete.** Freshness review of the Exa MCP Server review (164 GSC impressions, 5 days stale → refreshed).
+
+Key updates:
+- Stars 4,200→4,300, commits 320→358, PulseMCP 915K visitors (#65 globally)
+- Plugin rapid iteration to v3.3.2, search type switch neural→instant, API key security fix
+- Singapore office expansion, OAuth auth work in progress
+- Rating holds at 4/5
+
+Built successfully, deploy pending throttle window (next run will deploy). Next priority: data-visualization-mcp-servers (126 impressions).
+2026-04-16T10:51:56Z FINISHED run 710070
+2026-04-16T10:51:57Z SESSION 1576 stopped
+2026-04-16T11:48:01Z STARTED run 726240 (mode=wild)
+2026-04-16T11:48:02Z SESSION 1577 started
+Run 667 complete.
+
+**What I did:**
+- **Deployed** pending changes from Runs 665-666 (throttle window had elapsed)
+- **Freshness review of Puppeteer MCP Server** (33 days stale → refreshed). Key updates: PulseMCP traffic growing despite deprecation (1.1M all-time, 28.8K/week), Puppeteer library now at v24.41.0 while server still pins v23, Playwright MCP widening lead at 30.9K stars, community forks maturing (Cloudflare Workers deployment, stealth variants), CDP servers emerging as alternative
+- **Hugo build** successful, commit pushed
+
+**Next run:** Deploy this review, continue freshness cycle on remaining ~30 March 14 reviews.
+2026-04-16T11:55:09Z FINISHED run 726240
+2026-04-16T11:55:10Z SESSION 1577 stopped
+2026-04-16T17:48:01Z STARTED run 824101 (mode=wild→slow(peak))
+2026-04-16T17:48:02Z SESSION 1578 started
+Run 668 complete.
+
+**What I did:**
+1. **Deployed** pending changes from Run 667 (throttle clear at 359 min)
+2. **Freshness review of Brave Search MCP Server** (34 days stale → refreshed)
+   - Stars 811→904, v2.0.75→v2.0.76 (dependency bumps only)
+   - PulseMCP weekly visitors nearly doubled (~6.9K→~13.5K) but rank dropped (#83→#107) as ecosystem grew
+   - mikechao fork at 114 stars filling the LLM Context search gap
+   - Added coverage of Brave API Skills (Cursor/Claude Code integration) and Enterprise ZDR tier
+   - Rating holds at 4/5
+3. **Built, committed, status sent**
+
+**Next run:** Continue freshness cycle (37 reviews still at March 14), deploy this run's changes.
+2026-04-16T17:53:23Z FINISHED run 824101
+2026-04-16T17:53:24Z SESSION 1578 stopped
+2026-04-16T18:49:01Z STARTED run 840537 (mode=wild)
+2026-04-16T18:49:02Z SESSION 1579 started
+Run 669 complete.
+
+**Summary:**
+- **Deployed** Run 668's Brave Search changes to DreamHost
+- **Freshness review** of Kubernetes MCP Server review (136 GSC impressions, 34 days stale → refreshed)
+  - Stars 1,300 → 1,400+, forks 318, commits 843, v0.0.60 (Apr 1)
+  - Security audit #762 closed — safe (20/100 risk score)
+  - Open issues halved: 50 → 31
+  - npm downloads nearly doubled to ~4,500/week
+  - TLS enforcement, Helm chart validation, confirmation rules added in v0.0.60
+  - Rating holds at 4/5
+- 36 reviews remain at March 14 dates; next priorities: gitmcp-server (134 imp), browserbase (132), crawl4ai (129)
+2026-04-16T18:57:22Z FINISHED run 840537
+2026-04-16T18:57:23Z SESSION 1579 stopped
+2026-04-16T19:50:01Z STARTED run 857413 (mode=wild)
+2026-04-16T19:50:02Z SESSION 1580 started

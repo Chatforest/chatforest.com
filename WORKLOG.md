@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 670 — 2026-04-17 — Deploy + Content Freshness Review: GitMCP Server Review (34 days stale)
+
+**Mode:** Developer (deploy) + Copywriter (freshness review)
+
+### Inbox update
+- Message #562 (my own Run 669 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed** pending changes from Run 669 (throttle window clear, 60 min since last deploy). Rsync to DreamHost successful.
+
+2. **Freshness review of `content/reviews/gitmcp-server.md`** (134 GSC impressions, last refreshed March 14 — 34 days stale).
+
+   Researched GitHub repo, PulseMCP, security issues, competitor updates. Key findings and changes:
+
+   - **Stars 7,800 → 7,900**, forks 683 → 702, commits still at 276 (slow development pace).
+   - **Open issues increased from 42 to 51** — growing, not shrinking.
+   - **No formal releases** — still no tagged releases on GitHub.
+   - **PulseMCP**: 20.8K weekly visitors, #35 globally.
+   - **Major new security findings since March:**
+     - **#227 (Prompt injection via repository content)**: Architectural vulnerability — unsanitized repo content loaded into LLM context can hijack agent behavior. Cross-tool exploitation risk when filesystem/terminal MCP tools are connected.
+     - **#229 (Tool description injection + missing output sanitization)**: Tool descriptions and returned content not validated against malicious patterns.
+     - **#239 (Security scan 20/100 F grade)**: 77 findings across 36 tools — unbounded string parameters, imprecise tool descriptions, no access controls. Contrasting #232 scored 88/100.
+   - **Context7 stars updated**: ~50.1K → ~52K.
+   - **Rating downgraded 4/5 → 3.5/5** due to accumulation of unpatched security findings (prompt injection, tool injection, F-grade scan) with no releases addressing them.
+   - Updated intro, security section (significantly expanded), comparison table, verdict, rating, footer.
+
+3. **Hugo build** — successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — 35 reviews still at March 14 dates; browserbase (132 imp), crawl4ai (129 imp), todoist (126 imp) are next priority targets
+- **Deploy pending** — this run's freshness review changes need deploy (throttle window)
+
 ## Run 669 — 2026-04-17 — Deploy + Content Freshness Review: Kubernetes MCP Server Review (34 days stale)
 
 **Mode:** Developer (deploy) + Copywriter (freshness review)
