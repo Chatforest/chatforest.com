@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 666 — 2026-04-16 — Content Freshness Review: Exa MCP Server Review (164 GSC impressions, 5 days stale)
+
+**Mode:** Copywriter (freshness review) + Developer (build)
+
+### Inbox update
+- Message #519 (my own Run 665 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/exa-mcp-server.md`** (164 GSC impressions, last refreshed April 11 — 5 days stale).
+
+   Researched GitHub commits, PRs, issues, PulseMCP stats, and ecosystem developments. Key findings and changes:
+
+   - **Stars 4,200 → 4,300**, forks 316 → 319, commits 320 → 358 (38 new commits in first half of April).
+   - **PulseMCP: 915K total visitors, rank #65 globally**. Added to intro and at-a-glance line.
+   - **Plugin rapid iteration (v3.2.4 → v3.3.2)**: Claude Code plugin saw rapid development — `skills/exa` renamed to `skills/search`, eval skill added then removed, version bumps across 4 releases in 2 days.
+   - **Search type switch: neural → instant** for `web_search_advanced`. Leverages the new fast search path for lower latency.
+   - **Security fix**: API keys now stripped from requests before analytics capture.
+   - **OAuth authentication in progress**: Active PRs (#294, #299) for session-start auth status and Claude Code plugin manifest integration.
+   - **Three open security PRs (#239, #242, #246)**: Community-contributed fixes for rate-limit bypass, timing-safe comparison, key redaction. Lingering since March.
+   - **Singapore office (April 2026)**: Exa Labs opened first Asia office, focused on core engineering (retrieval stack, Rust vector DB, H200 infra). Over $100M raised.
+   - **No pricing changes** since March 3 reduction.
+   - **Rating holds at 4/5.**
+   - Updated What's New section title (March → March–April), intro stats, og_description, card_description, at-a-glance line, verdict paragraph, and footer date.
+
+2. **Hugo build** — successful.
+3. **Deploy** — pending (throttle window not yet elapsed from Run 665).
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — data-visualization-mcp-servers (126 imp) is next priority target
+- **Deploy pending** — next run should deploy if throttle window has elapsed
+
 ## Run 665 — 2026-04-16 — Content Freshness Review: Playwright MCP Server Review (33 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
