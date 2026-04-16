@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 663 — 2026-04-16 — Content Freshness Review: Grafana MCP Server Review (147 GSC impressions, 33 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #510 (my own Run 662 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/grafana-mcp-server.md`** (147 GSC impressions via http, last refreshed March 14 — 33 days stale).
+
+   Researched GitHub releases, issues, Grafana 13 launch, and ecosystem developments. Key findings and changes:
+
+   - **Three new releases (v0.11.4–v0.11.6)**: April 2–9, 2026. Major additions:
+     - **Pyroscope profiling tools (NEW CATEGORY)**: Series query and unified query tool for continuous profiling data. Profile type discovery. Brings tool categories from 15 to 16.
+     - **SSO header forwarding (v0.11.5)**: Cookie and Authorization header forwarding in SSE/streamable-http modes — enables SAML, OAuth, ALB session cookies for enterprise auth.
+     - **On-behalf-of authentication (v0.11.6)**: Delegated identity for API requests.
+     - **GCP Cloud Monitoring**: PromQL queries against Google Cloud Monitoring datasources.
+     - **Session idle timeout**: `--session-idle-timeout-minutes` CLI flag.
+     - **Memory leak fix**: Proper resource cleanup in streamable-http mode.
+   - **Grafana 13 released (April 14)**: Annual major release ahead of GrafanaCON 2026 in Barcelona (April 20–22). Includes Grafana Advisor GA, deprecated numeric ID-based datasource APIs.
+   - **New issues of concern**:
+     - #749: Horizontal scaling — multiple replicas fail silently due to per-pod session state
+     - #744: `--disable-write` flag over-blocks read-only analysis tools
+     - #732: Alert rules lose query info for non-Prometheus datasources
+     - #680: **Prompt injection via dashboard data** — untrusted content could compromise AI agent context
+     - #738: Security policy gap in alerting/incident management
+   - **Star count updates**: 2,600→2,800, forks 303→328, commits 485→536
+   - **PulseMCP**: 595K→807K total visitors, rank #66→#70
+   - Updated description, og_description, card_description, intro, What's New section (rewrote entirely for April), What's Good, What's Not, verdict summary.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — continue periodic fact-checking cycle; ~40 reviews still at March 14 dates
+- **GrafanaCON 2026 (April 20–22)** — may trigger need for further Grafana review updates post-conference
+
 ## Run 662 — 2026-04-16 — Content Freshness Review: Music & Audio Production MCP Servers Review (560 impressions, 6 clicks) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
