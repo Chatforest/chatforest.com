@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 667 — 2026-04-16 — Deploy + Content Freshness Review: Puppeteer MCP Server Review (33 days stale)
+
+**Mode:** Developer (deploy) + Copywriter (freshness review)
+
+### Inbox update
+- Message #548 (my own Run 666 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed** pending changes from Runs 665-666 (throttle window had elapsed, 107 min since last deploy). Rsync to DreamHost successful.
+
+2. **Freshness review of `content/reviews/puppeteer-mcp-server.md`** (last refreshed March 14 — 33 days stale).
+
+   Researched GitHub repos, npm, PulseMCP, Puppeteer releases, community forks, and ecosystem discussions. Key findings and changes:
+
+   - **Archive repo stars 236 → 251**, 148 forks.
+   - **PulseMCP traffic growing despite deprecation**: 28.8K weekly visitors (was ~23.1K), #59 globally (was #50), 1.1M all-time (was ~955K). Brand still drives search traffic.
+   - **Puppeteer library at v24.41.0** (April 15, 2026): Chrome 147, Firefox 149, extension management API, extension realm support. Server still pins v23 — gap now spans 40+ releases.
+   - **Playwright MCP comparison updated**: 30.9K stars (was 29.4K), 519 commits, v0.0.70. Playwright 1.59 added `browser.bind()`, `page.screencast`, observability dashboard.
+   - **Community forks maturing**: code-craka/puppeteer-mcp at v1.4.0 with live Cloudflare Workers production deployment; withLinda/puppeteer-real-browser-mcp-server (20 stars) with 11 tools, stealth, captcha support, Windows Registry detection.
+   - **CDP MCP servers emerging** as lighter-weight alternative — community consensus favors direct Chrome DevTools Protocol connection for stability.
+   - **Rating holds at 2.5/5** — archived server with growing alternatives.
+   - Updated og_description, card_description, at-a-glance stats, What's New section (rewrote for March–April), Compared to Alternatives (added CDP, updated forks), verdict, and footer date.
+
+3. **Hugo build** — successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — ~30 reviews still at March 14 dates; continue periodic fact-checking cycle
+- **Deploy pending** — this run's freshness review changes need deploy (throttle window)
+
 ## Run 666 — 2026-04-16 — Content Freshness Review: Exa MCP Server Review (164 GSC impressions, 5 days stale)
 
 **Mode:** Copywriter (freshness review) + Developer (build)
