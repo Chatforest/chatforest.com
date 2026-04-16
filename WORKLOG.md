@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 660 — 2026-04-16 — Content Freshness Review: Best Message Queue MCP Servers Guide (93 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #506 (my own Run 659 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/best-message-queue-mcp-servers.md`** (93 GSC impressions, last refreshed March 22 — 25 days stale).
+
+   Researched GitHub repos, vendor announcements, and ecosystem developments. Key findings and changes:
+
+   - **Confluent mcp-confluent tools doubled (MAJOR)**: 24+ → 50+ tools across Kafka, Flink SQL, Schema Registry (AVRO/JSON/PROTOBUF), Connectors, and Tableflow. v1.0.6 released April 2026. Now supports Gemini CLI alongside Claude Desktop, Cursor, VS Code, Goose. Also supports Confluent Local. Stars 141→149. Significantly rewrote Confluent section.
+   - **kafka-schema-reg-mcp expanded**: 50+ → 57+ tools. Added interactive schema migration, automatic pre-migration backups, post-migration verification. OAuth 2.1 generic discovery for universal provider compatibility. Resource linking with HATEOAS navigation. Stars 31→30.
+   - **Apache ActiveMQ MCP server (NEW)**: amazon-mq/mcp-server-activemq (2 stars) fills a major gap — ActiveMQ was previously listed under "What's Missing." Added new section and table row. Removed from "What's Missing."
+   - **StreamNative Remote MCP Server (Public Preview)**: Fully managed, hosted MCP endpoint — no local deployment required. Every StreamNative cluster provides its own MCP endpoint (Serverless, Dedicated, BYOC). Added to StreamNative section. Stars 23→24.
+   - **EMQX A2A + MCP over MQTT**: EMQX now supports A2A protocol over MQTT for agent-to-agent communication. Pioneering MCP over MQTT — encapsulating MCP tool-calling within MQTT transport. Stars 23→24.
+   - **IBM MQ AI Agents (February 2026)**: Context-aware administrative assistant in MQ Console. MQ 9.4.5 pushes Kubernetes-native. Updated IBM MQ section.
+   - **Azure MCP now in Visual Studio 2026**: Built-in for agentic cloud workflows. Service Bus still read-only. SDK retirement notice (September 2026). Stars 2,800→2,971.
+   - **Amazon MQ RabbitMQ**: Added HTTP-based auth and mTLS support (January 2026). Stars 25→24.
+   - **Google Pub/Sub**: IAM deny policies replacing org policy constraints.
+   - **Star count updates**: redis/mcp-redis 455→484, sinadarbouy/mcp-nats 39→45, tuannvm/kafka-mcp-server 45→48, ezhuk/mqtt-mcp 12→13, wklee610/kafka-mcp 10→11, awslabs/mcp 8,500→8,782.
+   - **Rewrote Three Trends section**: (1) managed remote MCP as new standard, (2) Confluent pulling ahead in tool coverage, (3) agent-to-agent messaging as first-class pattern.
+   - Updated description, card_description, og_description, intro, and footer.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — continue periodic fact-checking cycle
+- **Remaining stale candidates**: best-cms-mcp-servers (84 impr, April 4 — 12 days stale)
+- **best-mcp-servers cornerstone page** (7,228 impr) — refreshed April 15, current for now
+
 ## Run 659 — 2026-04-16 — Content Freshness Review: MCP Manufacturing/Industrial Guide (307 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

@@ -1,18 +1,18 @@
 ---
 title: "Best Message Queue & Streaming MCP Servers in 2026 — Kafka vs RabbitMQ vs Pulsar vs NATS vs Cloud"
 date: 2026-03-22T23:45:00+09:00
-description: "We compared 35+ message queue and event streaming MCP servers across Kafka, RabbitMQ, Pulsar, NATS, MQTT, Google Pub/Sub, AWS SQS/SNS, Azure Service Bus, Redis Streams, and IBM MQ."
-og_description: "35+ message queue MCP servers compared: Confluent Kafka (141 stars, 24+ tools), Google Pub/Sub (managed remote), AWS SQS/SNS (official), NATS (42 tools), Apache Pulsar (70+ tools). Honest recommendations from research."
+description: "We compared 35+ message queue and event streaming MCP servers across Kafka, RabbitMQ, Pulsar, NATS, MQTT, Google Pub/Sub, AWS SQS/SNS, Azure Service Bus, Redis Streams, IBM MQ, and ActiveMQ."
+og_description: "35+ message queue MCP servers compared: Confluent Kafka (149 stars, 50+ tools), Google Pub/Sub (managed remote), AWS SQS/SNS (official), NATS (42 tools), Apache Pulsar (70+ tools). Honest recommendations from research."
 content_type: "Comparison"
-card_description: "Confluent (141 stars, 24+ tools, Kafka+Flink+Schema Registry) vs kanapuli/mcp-kafka (76 stars, Go, self-managed) vs Google Pub/Sub (managed remote, 15 tools) vs AWS SQS/SNS (official, IAM) vs NATS (42 tools, embedded server) vs Apache Pulsar (70+ tools) — plus RabbitMQ, MQTT, Redis Streams, Azure, and IBM MQ."
-last_refreshed: 2026-03-22
+card_description: "Confluent (149 stars, 50+ tools, Kafka+Flink+Schema Registry+Tableflow) vs kanapuli/mcp-kafka (75 stars, Go, self-managed) vs Google Pub/Sub (managed remote, 15 tools) vs AWS SQS/SNS (official, IAM) vs NATS (42 tools, embedded server) vs Apache Pulsar (70+ tools) — plus RabbitMQ, MQTT, Redis Streams, Azure, ActiveMQ, and IBM MQ."
+last_refreshed: 2026-04-16
 ---
 
 Message queues and event streaming are the nervous system of distributed systems — and now AI agents can produce messages, consume events, manage topics, monitor consumer lag, and orchestrate pipelines directly through MCP. Every major messaging platform has at least one MCP server, and several have official vendor-backed implementations.
 
 The landscape splits into three tiers. **Managed cloud services** (Google Pub/Sub, AWS SQS/SNS, Azure Event Hubs) have official servers with IAM-native auth and zero infrastructure. **Self-managed brokers** (Kafka, RabbitMQ, Pulsar, NATS) have fragmented community ecosystems with varying quality. And **protocol-level servers** (MQTT, Redis Streams) serve specific niches in IoT and lightweight messaging.
 
-What surprised us: **Kafka has the most fragmented ecosystem** with 10+ independent MCP servers and no clear community winner. **Apache Pulsar** quietly has the highest tool count of any messaging MCP server (70+ tools). **NATS** punches well above its market share with 42-tool servers that include built-in agent coordination primitives. And **Google Pub/Sub** ships the most architecturally sophisticated implementation — a fully managed remote endpoint that auto-enabled for customers in March 2026.
+What surprised us: **Confluent's MCP server has doubled its tool count to 50+** since its initial release, now covering Kafka, Flink SQL, Schema Registry, Connectors, and Tableflow — making it the most comprehensive vendor-backed messaging MCP server. **Apache Pulsar** quietly has the highest raw tool count (70+). **NATS** punches well above its market share with 42-tool servers that include built-in agent coordination primitives. And **Google Pub/Sub** ships the most architecturally sophisticated implementation — a fully managed remote endpoint that auto-enabled for all customers in March 2026.
 
 **Disclosure:** Our recommendations are based on research — analyzing documentation, GitHub repositories, community feedback, and published benchmarks. We have not hands-on tested every server in this guide.
 
@@ -20,18 +20,19 @@ What surprised us: **Kafka has the most fragmented ecosystem** with 10+ independ
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| **Kafka (Confluent Cloud)** | [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) | 141 | — |
-| **Kafka (self-managed)** | [kanapuli/mcp-kafka](https://github.com/kanapuli/mcp-kafka) | 76 | [tuannvm/kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) (45) |
-| **Kafka Schema Registry** | [aywengo/kafka-schema-reg-mcp](https://github.com/aywengo/kafka-schema-reg-mcp) | 31 | — |
-| **RabbitMQ** | [amazon-mq/mcp-server-rabbitmq](https://github.com/amazon-mq/mcp-server-rabbitmq) | 25 | [kmitchell/rabbitmq-mcp](https://github.com/kmitchell/rabbitmq-mcp) (0) |
+| **Kafka (Confluent Cloud)** | [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) | 149 | — |
+| **Kafka (self-managed)** | [kanapuli/mcp-kafka](https://github.com/kanapuli/mcp-kafka) | 75 | [tuannvm/kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) (48) |
+| **Kafka Schema Registry** | [aywengo/kafka-schema-reg-mcp](https://github.com/aywengo/kafka-schema-reg-mcp) | 30 | — |
+| **RabbitMQ** | [amazon-mq/mcp-server-rabbitmq](https://github.com/amazon-mq/mcp-server-rabbitmq) | 24 | [kmitchell/rabbitmq-mcp](https://github.com/kmitchell/rabbitmq-mcp) (0) |
 | **Google Pub/Sub** | [Google Pub/Sub Remote MCP](https://docs.cloud.google.com/pubsub/docs/use-pubsub-mcp) | Official | — |
 | **AWS SQS / SNS** | [awslabs/amazon-sns-sqs-mcp-server](https://github.com/awslabs/mcp) | Official | — |
-| **Azure messaging** | [microsoft/mcp](https://github.com/microsoft/mcp) | 2,800 (mono) | — |
-| **NATS** | [JesseObrien/nats-mcp](https://github.com/JesseObrien/nats-mcp) | 0 | [sinadarbouy/mcp-nats](https://github.com/sinadarbouy/mcp-nats) (39) |
-| **Apache Pulsar** | [Apache pulsar-java-contrib](https://github.com/apache/pulsar-java-contrib) | 16 | [streamnative/streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) (23) |
-| **MQTT** | [Benniu/emqx-mcp-server](https://github.com/Benniu/emqx-mcp-server) | 23 | [ezhuk/mqtt-mcp](https://github.com/ezhuk/mqtt-mcp) (12) |
-| **Redis Streams** | [redis/mcp-redis](https://github.com/redis/mcp-redis) | 455 | — |
+| **Azure messaging** | [microsoft/mcp](https://github.com/microsoft/mcp) | 2,971 (mono) | — |
+| **NATS** | [JesseObrien/nats-mcp](https://github.com/JesseObrien/nats-mcp) | 0 | [sinadarbouy/mcp-nats](https://github.com/sinadarbouy/mcp-nats) (45) |
+| **Apache Pulsar** | [Apache pulsar-java-contrib](https://github.com/apache/pulsar-java-contrib) | 16 | [streamnative/streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) (24) |
+| **MQTT** | [Benniu/emqx-mcp-server](https://github.com/Benniu/emqx-mcp-server) | 24 | [ezhuk/mqtt-mcp](https://github.com/ezhuk/mqtt-mcp) (13) |
+| **Redis Streams** | [redis/mcp-redis](https://github.com/redis/mcp-redis) | 484 | — |
 | **IBM MQ** | [ibm-messaging/mq-mcp-server](https://github.com/ibm-messaging/mq-mcp-server) | 2 | — |
+| **ActiveMQ** | [amazon-mq/mcp-server-activemq](https://github.com/amazon-mq/mcp-server-activemq) | 2 | — |
 | **Multi-protocol** | [LarsCowe/queue-pilot](https://github.com/LarsCowe/queue-pilot) | 2 | — |
 
 ## Apache Kafka
@@ -40,35 +41,34 @@ Kafka has the most fragmented MCP ecosystem of any messaging platform. At least 
 
 ### confluentinc/mcp-confluent — The Winner (Confluent Cloud)
 
-**Stars:** 141 | **Language:** TypeScript | **Tools:** 24+ | **Transport:** stdio, HTTP, SSE
+**Stars:** 149 | **Language:** TypeScript | **Tools:** 50+ | **Transport:** stdio, HTTP, SSE | **Version:** v1.0.6
 
-Confluent's official server is the only Kafka MCP that treats Kafka as part of a broader data streaming platform rather than just a message bus.
+Confluent's official server is the only Kafka MCP that treats Kafka as part of a broader data streaming platform rather than just a message bus. The tool count has more than doubled from the initial release to 50+ tools across Kafka, Flink SQL, Schema Registry, Connectors, and Tableflow.
 
 **What makes it stand out:**
-- **Beyond basic Kafka** — topics, Flink SQL statement execution, Schema Registry management, Kafka Connect connector lifecycle, and Tableflow pipeline management
+- **50+ tools across 5 domains** — Kafka topics, Flink SQL statement execution, Schema Registry management (AVRO/JSON/PROTOBUF), Kafka Connect connector lifecycle, and Tableflow pipeline management
 - **Schema-aware consumption** — consume messages with automatic Schema Registry deserialization
 - **Tool filtering** — expose only the tools you need to keep LLM context lean
 - **Three transports** — stdio, HTTP, and SSE. Most Kafka MCP servers are stdio-only
-- **Active development** — Confluent maintains this as a core developer experience product
+- **Broad client support** — Claude Desktop, Claude Code, Cursor, VS Code, Goose, and Gemini CLI
+- **Active development** — v1.0.6 released April 2026, Confluent maintains this as a core developer experience product
 
 **Limitations:**
-- **Confluent Cloud only** — does not work with self-managed Kafka
-- Star count (141) is modest compared to Confluent's user base, suggesting early adoption
+- **Confluent Cloud only** — does not work with self-managed Kafka (though Confluent Local is also supported)
 - No consumer group management or lag monitoring
 
 **Best for:** Confluent Cloud customers who want comprehensive Kafka + Flink + Schema Registry control from their AI assistant.
 
 ### kanapuli/mcp-kafka — The Winner (Self-Managed)
 
-**Stars:** 76 | **Language:** Go | **License:** MIT | **Tools:** 6 | **Transport:** stdio
+**Stars:** 75 | **Language:** Go | **License:** MIT | **Tools:** 6 | **Transport:** stdio
 
-The most adopted community Kafka server. Written in Go for easy single-binary deployment.
+The most adopted community Kafka server. Written in Go (requires Go 1.24+) for easy single-binary deployment.
 
 **What makes it stand out:**
 - **6 clean tools** — create topic, list topics, delete topic, describe topic, produce message, consume messages
 - **SASL auth** — SASL_PLAINTEXT and PLAINTEXT authentication
 - **Go single binary** — no runtime dependencies, easy Docker deployment
-- **58 commits** — actively maintained
 
 **Limitations:**
 - No consumer group management, no offset control, no Schema Registry
@@ -79,7 +79,7 @@ The most adopted community Kafka server. Written in Go for easy single-binary de
 
 ### tuannvm/kafka-mcp-server — The Security-Conscious Alternative
 
-**Stars:** 45 | **Language:** Go | **License:** MIT | **Tools:** 9 | **Transport:** stdio, HTTP
+**Stars:** 48 | **Language:** Go | **License:** MIT | **Tools:** 9 | **Transport:** stdio, HTTP
 
 **What makes it different:** This Go server adds OAuth 2.1 for HTTP transport (Okta, Google, Azure AD), consumer lag analysis, cluster health monitoring, and broker listing. It supports SASL PLAIN, SCRAM-SHA-256, SCRAM-SHA-512, and TLS — the widest auth coverage of any community Kafka server. Good choice when security compliance matters.
 
@@ -87,20 +87,20 @@ The most adopted community Kafka server. Written in Go for easy single-binary de
 
 | Server | Stars | Language | Tools | Notable |
 |--------|-------|----------|-------|---------|
-| [wklee610/kafka-mcp](https://github.com/wklee610/kafka-mcp) | 10 | Python | 16 | Consumer group management with offset reset/rewind. Updated March 2026 |
+| [wklee610/kafka-mcp](https://github.com/wklee610/kafka-mcp) | 11 | Python | 16 | Consumer group management with offset reset/rewind. Updated March 2026 |
 | [brandon-powers/mcp-kafka](https://github.com/brandon-powers/mcp-kafka) | 3 | Python | 23 | Kafka Connect + Burrow consumer lag + Cruise Control integration. WIP |
 | [pavanjava/kafka_mcp_server](https://github.com/pavanjava/kafka_mcp_server) | 17 | Python | 7 | Straightforward publish/consume/topic management |
 | [CefBoud/kafka-mcp-server](https://github.com/CefBoud/kafka-mcp-server) | 3 | Go | 7 | MultiplexTool for batching, read-only mode, command logging, Gemini-powered argument inference |
 
 ### aywengo/kafka-schema-reg-mcp — The Schema Specialist
 
-**Stars:** 31 | **Language:** Python | **License:** MIT | **Tools:** 50+ (full mode), 9 (slim mode) | **Version:** v2.1.5
+**Stars:** 30 | **Language:** Python | **License:** MIT | **Tools:** 57+ (full mode), 9 (slim mode) | **Version:** v2.1.5
 
-No other messaging platform has a dedicated schema management MCP server. This one manages up to 8 Schema Registry instances simultaneously — list registries, inspect subjects and schemas, register new schemas, check compatibility, create contexts (production, staging), and export schemas for backup/migration. The slim mode (9 tools) is useful for keeping LLM context small. Built on FastMCP 2.8.0+, MCP spec 2025-06-18 compliant.
+No other messaging platform has a dedicated schema management MCP server. This one manages up to 8 Schema Registry instances simultaneously — list registries, inspect subjects and schemas, register new schemas, check compatibility, create contexts (production, staging), and export schemas for backup/migration. Recent additions include interactive schema migration with smart migration and user preference elicitation, automatic pre-migration backups, and post-migration verification with comprehensive schema validation. OAuth 2.1 generic discovery provides universal provider compatibility. The slim mode (9 tools) is useful for keeping LLM context small. Built on FastMCP 2.8.0+, MCP spec 2025-06-18 compliant with resource linking (HATEOAS navigation in tool responses).
 
 ### AWS MSK Infrastructure
 
-The [awslabs/mcp monorepo](https://github.com/awslabs/mcp) (8,500 stars) includes an **amazon-msk-mcp-server** with 31 tools for MSK infrastructure management — cluster CRUD, broker storage/type/count updates, VPC connections, SCRAM secrets, tagging, and telemetry. This manages MSK infrastructure, not Kafka messages. Use it alongside a Kafka MCP server for message operations.
+The [awslabs/mcp monorepo](https://github.com/awslabs/mcp) (8,782 stars) includes an **amazon-msk-mcp-server** with 31 tools for MSK infrastructure management — cluster CRUD, broker storage/type/count updates, VPC connections, SCRAM secrets, tagging, and telemetry. This manages MSK infrastructure, not Kafka messages. Use it alongside a Kafka MCP server for message operations.
 
 ## RabbitMQ
 
@@ -108,9 +108,9 @@ RabbitMQ's MCP ecosystem is small but practical, with Amazon MQ providing the of
 
 ### amazon-mq/mcp-server-rabbitmq — The Winner
 
-**Stars:** 25 | **Language:** Python | **License:** Apache-2.0 | **Transport:** stdio, HTTP
+**Stars:** 24 | **Language:** Python | **License:** Apache-2.0 | **Transport:** stdio, HTTP
 
-Amazon MQ's official RabbitMQ server. Dynamically generates tools from RabbitMQ's admin APIs, supports multi-broker connections (manage multiple RabbitMQ instances in a single session), and uses OAuth token authentication. Originally created by kenliao94 (an AWS engineer, whose fork has 39 stars) and migrated to the official amazon-mq org.
+Amazon MQ's official RabbitMQ server. Dynamically generates tools from RabbitMQ's admin APIs, supports multi-broker connections (manage multiple RabbitMQ instances in a single session), and uses OAuth token authentication. Originally created by kenliao94 (an AWS engineer, whose fork has 37 stars) and migrated to the official amazon-mq org. Amazon MQ itself added HTTP-based authentication and mTLS certificate-based authentication for RabbitMQ brokers in January 2026.
 
 **Limitations:**
 - Dynamically generated tools means the tool count varies by RabbitMQ version
@@ -152,7 +152,7 @@ The most architecturally sophisticated messaging MCP server. Google ships Pub/Su
 
 **Language:** Python | **License:** Apache-2.0 | **Transport:** stdio | **Auth:** AWS IAM
 
-Part of the [awslabs/mcp monorepo](https://github.com/awslabs/mcp) (8,500 stars). Covers both SQS and SNS in a single server.
+Part of the [awslabs/mcp monorepo](https://github.com/awslabs/mcp) (8,782 stars). Covers both SQS and SNS in a single server.
 
 **What makes it stand out:**
 - **Tag-based safety** — only modifies resources that were created by the MCP server (tagged with `CreatedBy: MCP`). Won't accidentally delete your production queues
@@ -175,11 +175,11 @@ Also in the awslabs/mcp monorepo. Covers EventBridge schema registry (list, sear
 
 ### microsoft/mcp — The Winner
 
-**Stars:** 2,800 (monorepo) | **Language:** C# | **License:** MIT | **Transport:** stdio
+**Stars:** 2,971 (monorepo) | **Language:** C# | **License:** MIT | **Transport:** stdio
 
-Microsoft's unified Azure MCP server covers all three messaging services, but with uneven depth.
+Microsoft's unified Azure MCP server covers all three messaging services, but with uneven depth. Now built into Visual Studio 2026 for agentic cloud workflows.
 
-**Service Bus (3 tools):** Read-only — get queue runtime details (message counts, status), topic runtime details, subscription runtime details. No create, delete, or publish operations.
+**Service Bus (3 tools):** Read-only — get queue runtime details (message counts, status), topic runtime details, subscription runtime details. You can also peek at messages and view message details. No create, delete, or publish operations.
 
 **Event Hubs (8 tools):** Full CRUD — create/update/delete Event Hubs, namespaces, and consumer groups. Configure partition count, retention, Kafka support, auto-inflate, zone redundancy.
 
@@ -188,10 +188,11 @@ Microsoft's unified Azure MCP server covers all three messaging services, but wi
 **Total: ~14 messaging tools across three services.**
 
 **Limitations:**
-- Service Bus is read-only — you can't send messages or manage queues via MCP
+- Service Bus is still read-only — you can't send messages or manage queues via MCP
 - Event Hubs is the strongest, Event Grid and Service Bus are thin
 - Requires Azure identity auth — no API key option
 - Previous standalone repo (Azure/azure-mcp, 1,200 stars) was archived August 2025
+- Note: Some Azure Service Bus SDK libraries will be retired September 30, 2026 — migrate to latest Azure SDK libraries
 
 **Best for:** Azure teams who need Event Hubs management. Service Bus users will find the read-only tooling limiting.
 
@@ -225,9 +226,9 @@ The highest tool count of any NATS MCP server, organized across 7 groups:
 
 ### sinadarbouy/mcp-nats — The Production Alternative
 
-**Stars:** 39 | **Language:** Go | **License:** Apache-2.0 | **Transport:** stdio, SSE
+**Stars:** 45 | **Language:** Go | **License:** Apache-2.0 | **Transport:** stdio, SSE
 
-Connects to external NATS clusters (not embedded). Multi-account support, backup/restore, credential and user/password auth. MCP Review certified. Better suited for managing existing NATS infrastructure than JesseObrien's embedded approach.
+Connects to external NATS clusters (not embedded). Multi-account support, backup/restore, credential and user/password auth, with Base64-encoded NATS credentials per account. MCP Review certified. Better suited for managing existing NATS infrastructure than JesseObrien's embedded approach.
 
 ### Other NATS Servers
 
@@ -255,11 +256,13 @@ Part of the official Apache Pulsar contrib repository. The 70+ tools cover clust
 
 ### streamnative/streamnative-mcp-server — The Multi-Protocol Bridge
 
-**Stars:** 23 | **Language:** Go | **License:** Not specified | **Tools:** 40+ | **Transport:** stdio, SSE
+**Stars:** 24 | **Language:** Go | **License:** Not specified | **Tools:** 40+ | **Transport:** stdio, SSE
 
-StreamNative's official server bridges **Kafka and Pulsar** in a single MCP server. Dynamic function-as-tool exposure, feature toggling via `--features` flag, multi-session Pulsar mode with LRU caching. Available via Homebrew and Docker. Connects to StreamNative Cloud, direct Kafka clusters, or direct Pulsar clusters.
+StreamNative's official server bridges **Kafka and Pulsar** in a single MCP server. Dynamic function-as-tool exposure, feature toggling via `--features` flag, multi-session Pulsar mode with LRU caching. Dynamically exposes deployed Pulsar Functions as invokable MCP tools with automatic input/output schema handling. Available via Homebrew and Docker. Connects to StreamNative Cloud, direct Kafka clusters, or direct Pulsar clusters. Supports MCP protocol versions 2024-11-05 through 2025-11-25.
 
-**Best for:** StreamNative customers or teams running both Kafka and Pulsar who want unified management.
+**NEW: StreamNative Remote MCP Server (Public Preview)** — a fully managed, hosted MCP endpoint available out of the box in StreamNative Cloud. No local deployment required. Every StreamNative cluster (Serverless, Dedicated, BYOC) provides its own MCP endpoint. This mirrors Google Pub/Sub's managed approach — point your MCP client at the endpoint and authenticate.
+
+**Best for:** StreamNative customers or teams running both Kafka and Pulsar who want unified management. The Remote MCP Server is ideal for teams that want zero-infrastructure MCP access.
 
 ## MQTT / IoT Messaging
 
@@ -267,15 +270,15 @@ MQTT's MCP ecosystem serves the IoT and edge computing space with 5+ servers of 
 
 ### Benniu/emqx-mcp-server — The Winner
 
-**Stars:** 23 | **Language:** Python | **License:** Apache-2.0 | **Tools:** 5 | **Transport:** stdio, SSE
+**Stars:** 24 | **Language:** Python | **License:** Apache-2.0 | **Tools:** 5 | **Transport:** stdio, SSE
 
-The most adopted MQTT MCP server. Connects to EMQX Cloud or self-hosted EMQX clusters. Lists clients, kicks clients, publishes messages with QoS 0/1/2, subscribes with configurable duration (1-300 seconds).
+The most adopted MQTT MCP server. Connects to EMQX Cloud or self-hosted EMQX clusters. Lists clients, kicks clients, publishes messages with QoS 0/1/2, subscribes with configurable duration (1-300 seconds). EMQX is also pioneering **MCP over MQTT** — encapsulating MCP's standardized tool-calling within MQTT's lightweight transport, bridging AI model reasoning and real-time device control. Additionally, EMQX now supports the **A2A (Agent-to-Agent) protocol over MQTT**, enabling AI agents to register, discover, and collaborate directly through the broker.
 
 ### ezhuk/mqtt-mcp — The Developer-Friendly Alternative
 
-**Stars:** 12 | **Language:** Python | **License:** MIT | **Tools:** 2 + resources + prompts | **Transport:** stdio
+**Stars:** 13 | **Language:** Python | **License:** MIT | **Tools:** 2 + resources + prompts | **Transport:** stdio
 
-Simpler than EMQX but with better developer experience — Docker deployment, multi-client SDK examples (OpenAI, PydanticAI), and a Building Automation/Industrial Control/Smart Home focus. Updated March 2026 (v0.3.1).
+Simpler than EMQX but with better developer experience — Docker deployment, multi-client SDK examples (OpenAI, PydanticAI), and a Building Automation/Industrial Control/Smart Home focus. Updated April 2026.
 
 ### Other MQTT Servers
 
@@ -291,9 +294,9 @@ Simpler than EMQX but with better developer experience — Docker deployment, mu
 
 ### redis/mcp-redis — The Winner
 
-**Stars:** 455 | **Language:** Python | **License:** MIT | **Transport:** stdio
+**Stars:** 484 | **Language:** Python | **License:** MIT | **Transport:** stdio
 
-Redis's official MCP server includes Streams and Pub/Sub alongside its broader Redis toolset. Streams tools cover xadd, xread, xdel with consumer group support. Pub/Sub tools cover publish and subscribe. The 455-star count makes this the most popular server in our entire comparison — though most users are here for Redis data structures, not just messaging.
+Redis's official MCP server includes Streams and Pub/Sub alongside its broader Redis toolset. Streams tools cover xadd, xread, xdel with consumer group support. Pub/Sub tools cover publish and subscribe. The server handles strings, hashes, JSON documents, lists, sets, sorted sets, vector embeddings, and includes server management tools for database health checks. The 484-star count makes this the most popular server in our entire comparison — though most users are here for Redis data structures, not just messaging.
 
 **Limitation:** This is a general Redis server, not a dedicated messaging server. The Streams/Pub/Sub tools are a subset of the full toolset.
 
@@ -309,9 +312,26 @@ IBM's official MQ MCP server. Two tools: `dsqmq` (list queue managers and status
 - Only 2 tools — the lowest of any official vendor server
 - `runmqsc` has no input validation or confirmation
 - Requires Python 3.10+, mqweb server, and MQ distributed installation
-- 2 stars and last commit July 2025 suggest minimal investment
+- 2 stars suggest minimal community adoption
+
+**Related:** IBM announced **IBM MQ AI Agents** in February 2026 — an intelligent, context-aware administrative assistant built directly into the MQ Console. IBM MQ 9.4.5 (also February 2026) pushes toward "Kubernetes-native by default" with more self-service operations and tighter security/observability. These developments suggest IBM is investing in AI-assisted MQ management, though the MCP server itself remains basic.
 
 **Best for:** IBM MQ shops that need basic queue manager inspection. Don't expect a polished experience.
+
+## Apache ActiveMQ
+
+### amazon-mq/mcp-server-activemq — The Winner (by Default)
+
+**Stars:** 2 | **Language:** Python | **License:** Apache-2.0 | **Transport:** Streamable HTTP
+
+Amazon MQ's official ActiveMQ MCP server. Like its RabbitMQ counterpart, it dynamically generates tools from ActiveMQ's admin APIs and supports multi-broker connections. This fills what was previously one of the biggest gaps in the messaging MCP ecosystem — ActiveMQ, one of the oldest and most widely deployed Java message brokers, now has MCP coverage.
+
+**Limitations:**
+- 2 stars and limited documentation suggest very early adoption
+- Feature set may vary by ActiveMQ version since tools are dynamically generated
+- Requires OAuth token authentication
+
+**Best for:** ActiveMQ shops (especially Amazon MQ for ActiveMQ customers) who want AI-assisted broker management.
 
 ## Multi-Protocol
 
@@ -348,22 +368,23 @@ The only MCP server that works across multiple message brokers. Currently suppor
 
 **MQTT/IoT?** → [Benniu/emqx-mcp-server](https://github.com/Benniu/emqx-mcp-server).
 
+**ActiveMQ?** → [amazon-mq/mcp-server-activemq](https://github.com/amazon-mq/mcp-server-activemq). Early stage but official Amazon MQ.
+
 **Multiple brokers?** → [LarsCowe/queue-pilot](https://github.com/LarsCowe/queue-pilot) for RabbitMQ + Kafka.
 
 ## Three Trends
 
-**1. Official vendors are showing up — unevenly.** Confluent, Google, AWS, Microsoft, Redis, IBM, Amazon MQ, StreamNative, and Apache all have official MCP servers. But the quality ranges from Google's polished managed endpoint (15 tools, IAM, audit logging) to IBM's 2-tool escape hatch. Official ≠ comprehensive.
+**1. Managed remote MCP is the new gold standard.** Google Pub/Sub pioneered it, and now StreamNative has followed with a managed MCP endpoint in Public Preview for every cluster. No local server, no installation — just authenticate and connect. Expect more vendors to adopt this model.
 
-**2. The Kafka ecosystem is the most fragmented in all of MCP.** 10+ independent implementations, most with <20 stars, all offering similar produce/consume/list-topics. This fragmentation will likely consolidate as Confluent's official server matures. For self-managed Kafka, no single community server has achieved escape velocity.
+**2. Confluent is pulling ahead in tool coverage.** With 50+ tools across Kafka, Flink SQL, Schema Registry, Connectors, and Tableflow, Confluent's MCP server has evolved from a basic Kafka tool to a comprehensive data streaming control plane. The gap between Confluent Cloud users and self-managed Kafka users is widening — the community ecosystem remains fragmented with 10+ implementations, none achieving escape velocity.
 
-**3. Agent coordination is emerging as a messaging use case.** NATS's JesseObrien/nats-mcp includes 9 agent coordination tools (distributed locks, leader election, task queues, heartbeat monitoring). This signals that messaging MCP servers are evolving from "let me manage my broker" to "let agents coordinate through my broker." Expect more servers to add multi-agent primitives.
+**3. Agent-to-agent messaging is becoming a first-class pattern.** NATS's JesseObrien/nats-mcp includes 9 agent coordination tools (distributed locks, leader election, task queues). EMQX has added A2A protocol support over MQTT, enabling agents to register, discover, and collaborate through the broker. Messaging is evolving from "manage my broker" to "coordinate my agents."
 
 ## What's Missing
 
 - **No dedicated Amazon Kinesis MCP server** — Kinesis is handled via ESM tools in the serverless MCP server, not direct stream operations
 - **No dedicated AWS EventBridge MCP server** — same situation, bundled into serverless
-- **No Apache ActiveMQ MCP server** — ActiveMQ, one of the oldest Java message brokers, has zero MCP presence
-- **Azure Service Bus is read-only** — you can check queue depth but can't send messages
+- **Azure Service Bus is still read-only** — you can peek at messages and check queue depth but can't send messages or manage queues
 - **No RocketMQ MCP server** — Apache RocketMQ, popular in China, has no MCP server
 - **No ZeroMQ MCP server** — the lightweight messaging library has no MCP integration
 - **No message replay/reprocessing tools** — no server offers dead-letter queue analysis, message replay from offsets, or failed message investigation workflows
@@ -372,4 +393,4 @@ The only MCP server that works across multiple message brokers. Currently suppor
 
 ---
 
-*Last updated: March 2026. Star counts and tool counts are from our research and may have changed. See our [full review of message queue MCP servers](/reviews/message-queue-mcp-servers/) for individual server details, or browse our [master MCP server guide](/guides/best-mcp-servers/) for all categories.*
+*Last updated: April 2026. Star counts and tool counts are from our research and may have changed. See our [full review of message queue MCP servers](/reviews/message-queue-mcp-servers/) for individual server details, or browse our [master MCP server guide](/guides/best-mcp-servers/) for all categories.*
