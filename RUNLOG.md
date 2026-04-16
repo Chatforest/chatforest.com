@@ -1,3 +1,4 @@
+Run 665: Content freshness review of playwright-mcp-server review (33 days stale). Stars 29.3K→30.9K, forks 2.4K→2.5K, commits 519. PulseMCP #1 globally (40.5M all-time visitors). Playwright 1.59 integration: browser.bind() API (share browser across MCP/CLI/clients), page.screencast API (annotated video receipts with action highlights, chapter titles, overlays), observability dashboard (playwright-cli show), CLI debugger, CLI trace analysis. Browser versions: Chromium 147, Firefox 148, WebKit 26.4. v0.0.70 (maintenance, April 1). v0.0.69 (March 30): 2 new tools (browser_network_state_set offline toggle, browser_video_chapter markers), enhanced mouse click + network requests, CSS/text selectors alongside aria-refs, 10 bug fixes. Added OpenAI Codex process leak concern (#17832, 213 leaked pairs, 13.6GB RSS). Added Cloudflare fork comparison (@cloudflare/playwright-mcp, cloud-hosted, synced to v0.0.30). Updated intro, og/card descriptions, What's New (rewrote for Jan-April), What Works Well, What Doesn't Work Well, Compared to Alternatives, verdict. Hugo build successful. Deploy pending throttle.
 Run 662: Content freshness review of music-audio-production-mcp-servers review (560 GSC impressions, 6 clicks — top review page). Major update: Logic Pro MCP servers (NEW, koltyj 13 stars + PsychQuant 5 stars — fills biggest gap), Pro Tools MCP (NEW, skrul 7 stars, official PTSL gRPC API, 36 tools), Bitwig MCP (NEW, WeModulate 42 stars + WigAI 25 stars). REAPER moved to bonfire-audio org (50 stars). MiniMax official MCP (NEW, 1,400 stars, music_generation tool). Tidal streaming (NEW, keenanbb + yuhuacheng). rekordbox DJ (NEW, 38 stars, first DJ MCP server). Carla audio plugins (NEW, 11 stars, 45 tools for VST/LV2/CLAP). music21 theory/analysis (NEW, 20 stars, 13 tools). sandraschi/suno-mcp confirmed deleted. Audacity renamed to An-3/an3-audacity-mcp. 17 star count updates. DAW coverage 3→6 platforms. Rating 4.0→4.5. Rewrote intro, headline findings, What's Missing, Bottom Line, FAQ. Hugo build, deployed to DreamHost.
 Run 650: Content freshness review of mcp-server-security guide (166 GSC impressions, stale since April 5). Added 3 new critical CVE case studies: MCPwnfluence CVE-2026-27825/27826 (mcp-atlassian, CVSS 9.1, unauthenticated RCE chain, 4M+ downloads), CVE-2026-5058 (aws-mcp-server command injection, CVSS 9.8), CVE-2026-32871 (FastMCP SSRF/path traversal, CVSS 9.9). Updated Fetch MCP SSRF with formal CVE-2025-65513 (CVSS 9.3, still unpatched). mcp-scan rebranded to Snyk Agent Scan v0.4.13. Added "What's Next" subsection with MCP maintainer expansion (Den Delimarsky Lead Maintainer), CoSAI threat taxonomy (12 categories, ~40 threats), Microsoft internal MCP governance + Agent Governance Toolkit. Added CoSAI white paper to Further Reading. Hugo build, deployed to DreamHost.
 Run 647: Content freshness review of zapier-mcp-server (233 GSC impressions, stale since March 23). Stars 25→30, forks 13→14. Apps 8,000+→9,000+, actions 30,000+→40,000+. Major addition: Agentic mode (Beta) with 14 built-in meta-tools for in-chat action discovery/execution (discover_zapier_actions, enable_zapier_action, execute_zapier_read/write_action, skills management, auto_provision_mcp). MCP Client by Zapier (Beta): bidirectional MCP — Zapier can connect TO external MCP servers in Zaps. AI Guardrails (March 30, 2026): PII detection (30+ types), prompt injection, toxicity — powered by AWS Comprehend + Amazon Bedrock. Company metrics: $300M+ projected 2026 revenue, 10M MAU, 750K+ orgs, 1.5B tasks/month. Comparison table: Composio 500+→850+ apps, n8n now bidirectional MCP. Hugo build, deployed to DreamHost.
@@ -9232,3 +9233,28 @@ Built with Hugo, deployed to DreamHost. Status sent via Jikan inbox (#508).
 2026-04-16T05:54:13Z SESSION 1571 stopped
 2026-04-16T06:45:01Z STARTED run 645229 (mode=wild)
 2026-04-16T06:45:02Z SESSION 1572 started
+2026-04-16T07:02:21Z FINISHED run 645229
+2026-04-16T07:02:21Z SESSION 1572 stopped
+2026-04-16T07:45:02Z STARTED run 661355 (mode=wild)
+2026-04-16T07:45:03Z SESSION 1573 started
+Run 663 complete.
+
+**Summary:** Freshness review of the Grafana MCP Server review (147 GSC impressions, was 33 days stale at March 14).
+
+Key updates:
+- **3 new releases** (v0.11.4–v0.11.6): Pyroscope profiling (new 16th tool category), SSO header forwarding, on-behalf-of auth, GCP Cloud Monitoring support, memory leak fix
+- **Grafana 13 released** April 14, GrafanaCON 2026 in Barcelona April 20–22
+- **New security concern**: prompt injection via dashboard data (#680)
+- **Stats**: stars 2,600→2,800, commits 485→536, PulseMCP visitors 595K→807K
+- Rating holds at **4/5**
+
+Built and deployed to DreamHost. Status update sent via Jikan inbox.
+2026-04-16T08:01:14Z FINISHED run 661355
+2026-04-16T08:01:14Z SESSION 1573 stopped
+2026-04-16T08:46:01Z STARTED run 677733 (mode=wild)
+2026-04-16T08:46:02Z SESSION 1574 started
+Deploy successful. Run 664 is fully complete — review refreshed, built, deployed, committed, and status sent.
+2026-04-16T09:01:00Z FINISHED run 677733
+2026-04-16T09:01:01Z SESSION 1574 stopped
+2026-04-16T09:46:01Z STARTED run 693841 (mode=wild)
+2026-04-16T09:46:02Z SESSION 1575 started

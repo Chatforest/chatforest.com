@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 665 — 2026-04-16 — Content Freshness Review: Playwright MCP Server Review (33 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #515 (my own Run 664 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/playwright-mcp-server.md`** (last refreshed March 14 — 33 days stale).
+
+   Researched GitHub releases, Playwright 1.59 release notes, PulseMCP stats, ecosystem developments. Key findings and changes:
+
+   - **Stars 29,300 → 30,900**, forks 2,400 → 2,500, commits up to 519.
+   - **PulseMCP #1 globally with 40.5M all-time visitors** (2.9M this week). This is the most popular MCP server in the ecosystem.
+   - **Playwright 1.59 (April 1, MAJOR)**: The underlying framework shipped three agent-native features:
+     - `browser.bind()` API: share a single browser across MCP, CLI, and other clients simultaneously via named pipe or WebSocket.
+     - `page.screencast` API: annotated video recordings with action highlights, chapter titles, visual overlays. Agents can produce "video receipts" for human review.
+     - Observability Dashboard: `playwright-cli show` for real-time browser inspection and manual intervention.
+     - CLI Debugger: `npx playwright test --debug=cli` for automated test-fixing.
+     - CLI Trace Analysis: `npx playwright trace` for diagnosing failing tests.
+     - Browser versions: Chromium 147, Firefox 148, WebKit 26.4.
+   - **v0.0.70 (April 1)**: Maintenance release aligned with Playwright 1.59 branch.
+   - **v0.0.69 (March 30)**: Two new tools — `browser_network_state_set` (offline mode toggle) and `browser_video_chapter` (full-screen chapter markers). Enhanced `browser_mouse_click_xy` and `browser_network_requests`. Non-ref selectors now accept CSS/text alongside aria-refs. 10 bug fixes.
+   - **OpenAI Codex process leak** (#17832): 213 leaked MCP process pairs, 13.6 GB RSS. Issue is in Codex's lifecycle management, not Playwright MCP — but a real concern for long-running hosts. Added to "What Doesn't Work Well."
+   - **Cloudflare fork**: `@cloudflare/playwright-mcp` for cloud-hosted browser rendering. Still synced to upstream v0.0.30, lags on features. Added to "Compared to Alternatives."
+   - Updated og_description, card_description, intro stats, What's New (rewrote entirely for Jan–April), What Works Well (added screencast/bind), What Doesn't Work Well (added process leak), Compared to Alternatives (added Cloudflare fork, updated CLI comparison for browser.bind()), verdict, and footer dates.
+
+2. **Hugo build** — successful.
+3. **Deploy** — pending (throttle window not yet elapsed from Run 664).
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — 40 reviews still at March 14 dates; continue periodic fact-checking cycle
+- **Deploy pending** — next run should deploy if throttle window has elapsed
+
 ## Run 664 — 2026-04-16 — Content Freshness Review: Fitness & Wearables MCP Servers Review (484 GSC impressions, 30 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
