@@ -1,41 +1,41 @@
 ---
 title: "The Crawl4AI MCP Server — The Most Popular Crawler Goes LLM-Native"
 date: 2026-03-14T10:56:10+09:00
-description: "Crawl4AI's built-in MCP server exposes the most-starred open-source web crawler (62,300+ stars) to AI agents."
-og_description: "Crawl4AI's MCP server exposes the most-starred web crawler (62,300+ stars) to AI agents. v0.8.5 adds anti-bot detection and Shadow DOM. Seven tools for markdown, screenshots, PDFs, and crawling."
+description: "Crawl4AI's built-in MCP server exposes the most-starred open-source web crawler (64,100+ stars) to AI agents."
+og_description: "Crawl4AI's MCP server exposes the most-starred web crawler (64,100+ stars) to AI agents. v0.8.6 fixes MCP bugs and litellm supply chain issue. Cloud API in beta. Seven tools for markdown, screenshots, PDFs, and crawling."
 content_type: "Review"
-card_description: "Seven tools from the most-starred open-source web crawler — now with 3-tier anti-bot detection and Shadow DOM support. Markdown extraction, screenshots, PDFs, JS execution, and multi-URL crawling. Free, self-hosted, Docker required."
-last_refreshed: 2026-03-14
+card_description: "Seven tools from the most-starred open-source web crawler — MCP bugs fixed, Cloud API in beta, v0.8.6 security hotfix. Markdown extraction, screenshots, PDFs, JS execution, and multi-URL crawling. Free self-hosted, Cloud API coming."
+last_refreshed: 2026-04-17
 categories: ["/categories/web-search-scraping/"]
 ---
 
-**At a glance:** 62,300+ stars, 6,400+ forks, 18 open issues, v0.8.5 (March 18, 2026), PyPI package, ~31.7K estimated visitors on PulseMCP (community servers)
+**At a glance:** 64,100+ stars, 6,600+ forks, 17 open issues, v0.8.6 (March 24, 2026), PyPI package, ~425K estimated all-time visitors on PulseMCP (community RAG server by Cole Medin)
 
-Crawl4AI is the most popular open-source web crawler on GitHub — 62,300+ stars, more than Scrapy, more than Playwright. It was built from the ground up for LLM consumption: every page becomes clean markdown, not HTML soup. And since v0.8, it has a built-in MCP server that exposes its full capabilities directly to AI agents.
+Crawl4AI is the most popular open-source web crawler on GitHub — 64,100+ stars, more than Scrapy, more than Playwright. It was built from the ground up for LLM consumption: every page becomes clean markdown, not HTML soup. And since v0.8, it has a built-in MCP server that exposes its full capabilities directly to AI agents.
 
-The catch: there's no hosted option. You run Crawl4AI yourself via Docker, and the MCP integration is still maturing. But the underlying crawler is battle-tested, completely free, and handles things that commercial alternatives charge per-page for.
+The catch: the hosted Cloud API is still in closed beta, so most users still run Crawl4AI themselves via Docker. But the underlying crawler is battle-tested, completely free for self-hosted use, and handles things that commercial alternatives charge per-page for.
 
 We've been comparing it against Firecrawl, Tavily, and Playwright across web scraping tasks. Here's what we found.
 
-## What's New (March 2026 Update)
+## What's New (April 2026 Update)
 
-Since our original review, Crawl4AI has shipped two significant releases that address several of the weaknesses we flagged:
+**v0.8.6 (March 24, 2026) — Critical security hotfix.** This release replaced the `litellm` dependency with `unclecode-litellm` in response to a major PyPI supply chain compromise. On March 24, malicious versions of litellm (1.82.7 and 1.82.8) were published to PyPI containing a three-stage payload: a credential harvester targeting 50+ categories of secrets, a Kubernetes lateral movement toolkit, and a persistent backdoor. The compromised packages were live for about 40 minutes before PyPI quarantined them. Crawl4AI responded the same day with v0.8.6. If you're still on v0.8.5, upgrade immediately.
 
-**v0.8.5 (March 18, 2026) — Anti-bot detection, Shadow DOM, and 60+ bug fixes.** This is the biggest release since v0.8.0. The headline feature is automatic 3-tier anti-bot detection: Tier 1 retries direct requests with configurable rounds, Tier 2 escalates through a proxy list (datacenter first, then residential), and Tier 3 falls back to a custom async function (external scraping API, cache, or alternative source). The system detects Cloudflare, Akamai, and PerimeterX challenges automatically. Also new: Shadow DOM flattening that walks all shadow trees, resolves slot projections, and produces flat HTML — critical for scraping modern web components. Other additions include deep crawl cancellation, a config defaults API, automatic consent popup removal, and critical security patches.
+**Both major MCP bugs are now fixed.** Issue #1316 (SSE "Unexpected message" errors) was closed on March 22 via PRs #1519 and #1525, fixing the port configuration conflict that caused connection failures. Issue #1311 (missing `type` fields breaking Gemini CLI) was closed as a duplicate of #1652, with the fix merged into the develop branch. These were the two most prominent MCP layer issues we flagged in previous reviews — their resolution marks a meaningful improvement in MCP stability.
 
-**v0.8.0 (January 16, 2026) — Crash recovery and prefetch mode.** This release added `resume_state` and `on_state_change` callbacks for recovering long-running deep crawls, plus a `prefetch=True` mode for 5-10x faster URL discovery. It also patched two serious security vulnerabilities: a critical RCE in the Docker API deployment (attackers could import modules and execute arbitrary commands through malicious hooks parameters), and a high-severity file read vulnerability via `file://` URLs. Both are fixed in v0.8.0+.
+**Crawl4AI Cloud API launched in closed beta.** This is the biggest strategic development: Crawl4AI now has a hosted option. The Cloud API offers credit-based pricing ($10 for 10K credits up to $250 for 1M credits) with SDKs for Python, Node.js, and Go. Features include basic scraping (URL → markdown), LLM-based extraction, and structured CSS/XPath extraction. This directly addresses our long-standing criticism that Crawl4AI had no hosted alternative. The Cloud API is still in closed beta — applications are being accepted — so it's not yet a general-availability competitor to Firecrawl's cloud offering.
 
-**Community MCP ecosystem keeps growing.** The fragmentation we noted has intensified — there are now community Crawl4AI MCP servers by sadiuysal, BjornMelin, coleam00, vivmagarwal, stgmt, azure-architect, and others. Several of these offer stdio transport (which the built-in server still lacks), HTTP transport with Bearer token auth, and RAG integration with Supabase. PulseMCP lists multiple Crawl4AI-based servers, with the top community implementation at ~31.7K estimated all-time visitors.
+**v0.8.5 (March 18, 2026) — Anti-bot detection, Shadow DOM, and 60+ bug fixes.** The biggest release since v0.8.0. Automatic 3-tier anti-bot detection: Tier 1 retries direct requests, Tier 2 escalates through proxy lists (datacenter then residential), Tier 3 falls back to a custom async function. Detects Cloudflare, Akamai, and PerimeterX automatically. Also: Shadow DOM flattening, deep crawl cancellation, config defaults API, and consent popup removal.
 
-**MCP bugs remain open.** Issue #1316 (SSE "Unexpected message" errors) was reopened and remains unresolved as of our review. The workaround (changing port from 11234 to 11235) leads to secondary initialization timing errors. Issue #1311 (missing `type` fields breaking Gemini CLI) also persists. The underlying crawler is solid, but the built-in MCP layer still has rough edges.
+**Community MCP ecosystem keeps growing.** There are now well over a dozen community Crawl4AI MCP servers — sadiuysal, BjornMelin, coleam00, vivmagarwal, stgmt, azure-architect, and more. Cole Medin's Crawl4AI RAG server has reached ~425K estimated all-time visitors on PulseMCP (#102 globally) with 2.1K GitHub stars, making it one of the most popular community MCP servers in any category. Several community servers offer features the built-in server still lacks, including stdio transport and RAG integration.
 
-**Stars grew from 61,900 to 62,300** since our last review, with forks jumping to 6,400+. Open issues dropped from an untracked number to just 18, suggesting active triage.
+**Stars grew from 62,300 to 64,100** since our last review (+1,800 in under a month), with forks at 6,600+. Open issues remain low at 17.
 
 ## What It Does
 
 The Crawl4AI MCP server exposes seven tools through its Docker deployment:
 
-- **md** — Generate clean markdown from any URL. The core capability — Crawl4AI's markdown generation includes "Fit Markdown" (heuristic noise filtering), numbered citation references, and configurable content filters. This is what 62,000+ people starred the project for.
+- **md** — Generate clean markdown from any URL. The core capability — Crawl4AI's markdown generation includes "Fit Markdown" (heuristic noise filtering), numbered citation references, and configurable content filters. This is what 64,000+ people starred the project for.
 - **html** — Extract preprocessed HTML from a page. Useful when you need the DOM structure rather than markdown — form analysis, layout inspection, or feeding into CSS/XPath extraction strategies.
 - **screenshot** — Capture full-page screenshots of any URL. Returns the visual state of the page, useful for debugging JavaScript-heavy sites or verifying that dynamic content rendered correctly.
 - **pdf** — Generate PDF documents from web pages. Captures the page as a printable document, preserving layout and styling that markdown conversion strips out.
@@ -78,7 +78,7 @@ claude mcp add --transport sse c4ai-ws ws://localhost:11235/mcp/ws
 
 ## What Works Well
 
-**The markdown extraction is genuinely best-in-class.** Crawl4AI's "Fit Markdown" goes beyond simple HTML-to-markdown conversion. It uses heuristics to strip navigation, footers, sidebars, and boilerplate — the noise that wastes context window tokens. The result is clean, focused content that's immediately useful in a RAG pipeline. This is the feature that earned 62,300+ stars, and it's as good through MCP as it is through the Python API.
+**The markdown extraction is genuinely best-in-class.** Crawl4AI's "Fit Markdown" goes beyond simple HTML-to-markdown conversion. It uses heuristics to strip navigation, footers, sidebars, and boilerplate — the noise that wastes context window tokens. The result is clean, focused content that's immediately useful in a RAG pipeline. This is the feature that earned 64,100+ stars, and it's as good through MCP as it is through the Python API.
 
 **Completely free with no credit limits.** No API keys to manage, no monthly credit budgets, no per-page charges. Crawl a thousand pages or ten thousand — it costs you compute, not credits. Compare this to Firecrawl (non-renewable 500 free credits, then paid plans), Tavily (1,000 credits/month that expire), or Browserbase ($20+/month). For high-volume scraping, the cost difference is enormous.
 
@@ -98,19 +98,19 @@ claude mcp add --transport sse c4ai-ws ws://localhost:11235/mcp/ws
 
 **Docker is a hard requirement.** No Docker, no Crawl4AI MCP server. This rules out environments where Docker isn't available — many corporate laptops, some CI/CD environments, Codespaces with limited permissions. Every other scraping MCP server we've reviewed (Firecrawl, Playwright, Puppeteer, Browserbase) offers at least an `npx` or `pip` installation path.
 
-**The MCP integration is still maturing.** GitHub issue #1316 (SSE "Unexpected message" errors) was reopened and remains unresolved — the port-change workaround leads to secondary initialization timing errors. Issue #1311 (missing `type` fields breaking Gemini CLI) also persists. The v0.8.5 release included 60+ bug fixes for the crawler, but these specific MCP layer issues haven't been addressed. The underlying crawler is stable and improving rapidly, but the MCP layer lags behind.
+**The MCP integration has improved but still trails the crawler.** The two most prominent MCP bugs — #1316 (SSE connection errors) and #1311 (missing schema types breaking Gemini CLI) — were both fixed in March 2026. This is genuine progress. But the MCP layer remains thinner than competitors: seven tools compared to Firecrawl's 12+, and the powerful extraction strategies available in the Python API still aren't fully surfaced as MCP tools. The gap between what Crawl4AI can do and what it exposes through MCP is narrowing, but it's still there.
 
 **No stdio transport (built-in).** Crawl4AI's official MCP server supports SSE and WebSocket, but not stdio — the most widely supported MCP transport. Claude Desktop, most VS Code extensions, and many MCP clients default to stdio. Community MCP servers (sadiuysal, BjornMelin, stgmt, and others) do offer stdio transport as a workaround, but these are third-party implementations with their own quirks.
 
-**No hosted or remote option.** Firecrawl has a cloud API. Tavily has a remote MCP server you can connect to with a URL. Browserbase is cloud-native. Crawl4AI requires you to run and maintain your own Docker container. For teams that want to share a scraping service across multiple agents, you need to set up your own infrastructure.
+**Hosted option is still in closed beta.** Crawl4AI Cloud API launched in closed beta with credit-based pricing and SDKs for Python, Node.js, and Go — but it's not generally available yet. Until it launches publicly, most users still need to run and maintain their own Docker container. Firecrawl, Tavily, and Browserbase all have production cloud APIs today. For teams that need a hosted scraping service now, Crawl4AI Cloud isn't ready yet — but it's coming.
 
 **The MCP tools are thin wrappers.** Seven tools sounds reasonable, but they're lower-level than competitors. Firecrawl's MCP server includes an autonomous research agent, batch scraping with status polling, and LLM-powered extraction — all as distinct tools. Crawl4AI's MCP layer exposes "crawl a URL, get markdown" and leaves the sophistication to the agent. The powerful extraction strategies and chunking capabilities exist in the Python API but aren't fully surfaced as MCP tools.
 
-**Community fragmentation is getting worse.** Search "Crawl4AI MCP" on GitHub and you'll now find well over a dozen community implementations — sadiuysal, BjornMelin, coleam00, vivmagarwal, stgmt, azure-architect, and more. Each wraps Crawl4AI differently with different tool sets, different transports, and different levels of maturity. Some offer features the built-in server lacks (stdio transport, Bearer token auth, RAG integration). PulseMCP lists multiple separate Crawl4AI server entries. The built-in MCP server should be the canonical choice, but the gap between what it offers and what community servers provide makes the choice less obvious than it should be.
+**Community fragmentation remains significant.** There are now well over a dozen community Crawl4AI MCP server implementations on GitHub, each with different tool sets, transports, and maturity levels. Cole Medin's RAG server alone has 2.1K stars and ~425K all-time visitors on PulseMCP. Some community servers offer features the built-in server still lacks — stdio transport, Bearer token auth, RAG integration with Supabase. The built-in MCP server should be the canonical choice, but the gap between what it offers and what top community servers provide makes the choice less obvious than it should be.
 
 ## Compared to Alternatives
 
-**vs. Firecrawl:** Firecrawl remains the more polished MCP experience — 12+ tools, an autonomous research agent, LLM-powered extraction as a first-class tool, hosted cloud option, and both stdio and HTTP transports. But Firecrawl charges per page (500 non-renewable free credits, then $19+/month). Crawl4AI's new anti-bot detection narrows the gap on enterprise scraping capabilities, and the cost difference remains enormous for high-volume work. Firecrawl still lacks JavaScript execution and crash recovery.
+**vs. Firecrawl:** Firecrawl remains the more polished MCP experience — 12+ tools, an autonomous research agent, LLM-powered extraction as a first-class tool, hosted cloud option, and both stdio and HTTP transports. But Firecrawl charges per page (500 non-renewable free credits, then $19+/month). Crawl4AI's Cloud API (in closed beta) will eventually compete directly on hosted offering, and the self-hosted option remains free for high-volume work. Firecrawl still lacks JavaScript execution and crash recovery.
 
 **vs. Playwright:** Playwright's MCP server offers 25+ tools with precise, deterministic browser control — CSS selectors, accessibility tree snapshots, network interception. It's free and doesn't need Docker. But Playwright gives you raw browser automation, not web scraping. You get HTML, not clean markdown. Crawl4AI handles the HTML-to-useful-content conversion that Playwright leaves to you, and v0.8.5's Shadow DOM flattening handles modern web components that even Playwright can struggle with.
 
@@ -140,12 +140,12 @@ claude mcp add --transport sse c4ai-ws ws://localhost:11235/mcp/ws
 - You want a plug-and-play MCP experience with stdio transport (use Playwright or Puppeteer, or consider a community Crawl4AI MCP server)
 - You need search + scraping in one server (use Tavily)
 - You need the simplest possible setup (use Fetch)
-- MCP stability is critical — the built-in MCP layer still has known issues (#1316, #1311)
+- You need stdio transport from the built-in server (use a community Crawl4AI MCP server instead)
 
-{{< verdict rating="3.5" summary="The most powerful free web scraper, with an MCP layer that's still catching up" >}}
-Crawl4AI is the most popular open-source web crawler for a reason — its markdown extraction is best-in-class, it handles JavaScript-heavy sites through Playwright, and it costs nothing no matter how many pages you crawl. The v0.8.5 release (March 2026) adds genuinely impressive capabilities: 3-tier anti-bot detection with proxy escalation, Shadow DOM flattening, and 60+ bug fixes. The underlying engine is battle-tested across 62,300+ stargazers and improving rapidly. But the MCP integration remains the weak link: SSE connection bugs (#1316) persist, schema compatibility issues (#1311) aren't fixed, there's still no built-in stdio transport, and the growing ecosystem of community MCP servers — some offering features the official server lacks — creates confusion about which server to use. If you're comfortable with Docker and can work around the MCP rough edges (or use a community server for stdio), you get the best free web scraper in the ecosystem. If you need a polished, production-ready MCP experience out of the box, Firecrawl or Playwright are still safer choices.
+{{< verdict rating="4" summary="The most powerful free web scraper, now with a maturing MCP layer" >}}
+Crawl4AI is the most popular open-source web crawler for a reason — its markdown extraction is best-in-class, it handles JavaScript-heavy sites through Playwright, and it costs nothing no matter how many pages you crawl. The project has addressed our biggest criticisms: both major MCP bugs (#1316 SSE errors, #1311 Gemini schema compatibility) are now fixed, the Cloud API is in closed beta (eliminating the "Docker-only" barrier once it launches publicly), and v0.8.6 responded within hours to a serious litellm supply chain compromise. At 64,100+ stars and growing fast, the crawler engine is battle-tested and improving rapidly. The remaining gaps are narrower: no built-in stdio transport, seven tools vs. Firecrawl's 12+, and community fragmentation that makes choosing the right Crawl4AI MCP server less obvious than it should be. But the trajectory is clearly positive. If you're comfortable with Docker (or willing to wait for Cloud API GA), this is the best free web scraper in the MCP ecosystem — and it's closing the gap on the paid alternatives.
 {{< /verdict >}}
 
 *Disclosure: ChatForest researches MCP servers using public documentation, GitHub repositories, changelogs, community discussions, and ecosystem data. We do not test or run MCP servers hands-on. Our assessments are based on publicly available information.*
 
-*This review was last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-17 using Claude Opus 4.6 (Anthropic).*
