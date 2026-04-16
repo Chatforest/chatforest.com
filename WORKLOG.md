@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 661 — 2026-04-16 — Content Freshness Review: Best CMS MCP Servers Guide (84 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #507 (my own Run 660 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/best-cms-mcp-servers.md`** (84 GSC impressions, last refreshed April 4 — 12 days stale).
+
+   Researched GitHub repos, vendor announcements, and ecosystem developments. Key findings and changes:
+
+   - **WordPress/mcp-adapter v0.5.0 (April 15, MAJOR)**: Typed DTOs via `wordpress/php-mcp-schema`, protocol version negotiation (specs 2025-11-25, 2025-06-18, 2024-11-05), security hardening with fail-closed permissions, reduced SessionManager lock contention, better observability. Stars 663→887.
+   - **WordPress 7.0 delayed again**: Now mid-to-late May 2026. RC2 was reached but core team returned to beta-like testing — real-time collaboration data storage layer needs architectural fix. Revised schedule expected April 22.
+   - **EmDash EXPLODED (MAJOR)**: Stars from "New" to 9,415 in two weeks. Went from v0.1.0 to v0.5.0 in three days (April 12–14). Four releases with inline term creation, FTS5 fixes, language selector, French translations. Biggest adoption story in CMS MCP.
+   - **Shopify launched 4 official MCP servers (MAJOR, NEW)**: Dev, Storefront, Customer Account, and Checkout. Storefront activated for all US merchants March 24. Part of Winter '26 Edition. Supersedes community pashpashpash server. Added new section.
+   - **Wix official MCP server (MAJOR, NEW)**: Every Wix site is its own MCP server out of the box. Free, compatible with Claude Desktop, Cursor, Windsurf, n8n, Zapier. Added new section. Removed from "What's Missing."
+   - **Storyblok launched first-party MCP server (NEW)**: Hosted at mcp.labs.storyblok.com. Governed operation modes (read-only/mutating/destructive), semantic search, self-hostable. Replaced community hypescale server as the top pick.
+   - **Contentful very active**: 6 releases April 13–14 (v1.7.13–1.7.15). Added local file uploads via base64 data URIs. Stars 47→50.
+   - **Strapi native MCP announced**: March 31 community call — building MCP into Strapi core as HTTP route. Granular API token permissions, plugin-extensible tools. No release date yet. Stars 65→69.
+   - **WooCommerce MCP maturing**: Now at WooCommerce 10.7. April Office Hours on "AI and MCP in your Woo workflows." Community plugin iOSDevSK/mcp-for-woocommerce appeared.
+   - **Drupal MCP module updated April 14**: Now integrates official MCP PHP SDK (PHP Foundation + Symfony collaboration).
+   - **Star count updates**: docdyhr/mcp-wordpress 71→81, InstaWP/mcp-wp 73→77 (added local file uploads), Directus 75→76, Ghost 156→168, Webflow 107→123, Payload 108→112.
+   - **Hugo MCP server noted**: SunnyCloudYang/hugo-mcp (9 stars) — community server, not very active. Updated "What's Missing."
+   - **Rewrote Trends section**: (1) official MCP now table stakes, (2) remote hosted as gold standard, (3) EmDash rewrites adoption curve, (4) WordPress 7.0 delay creates competitive window.
+   - Updated summary table with Shopify, Wix, Storyblok official rows. Updated descriptions, intro, decision tree.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — continue periodic fact-checking cycle
+- **best-mcp-servers cornerstone page** (7,228 impr) — refreshed April 15, current for now
+- **All high-impression stale guides now refreshed** — check GSC for next priority targets
+
 ## Run 660 — 2026-04-16 — Content Freshness Review: Best Message Queue MCP Servers Guide (93 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
