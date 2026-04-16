@@ -2,31 +2,35 @@
 title: "The Kubernetes MCP Server — Native API Access Without the kubectl Tax"
 date: 2026-03-14T12:42:00+09:00
 description: "Red Hat's containers/kubernetes-mcp-server gives AI agents direct Kubernetes API access — no kubectl wrapper, no external dependencies."
-og_description: "Kubernetes MCP server: Go-native API access, 6 modular toolsets, multi-cluster support, read-only mode, elicitation. 1,300 stars, 765 commits. Rating: 4/5."
+og_description: "Kubernetes MCP server: Go-native API access, 6 modular toolsets, multi-cluster support, read-only mode, elicitation, TLS enforcement. 1,400+ stars, 843 commits, 4,500+ npm downloads/week. Security audit closed (safe). Rating: 4/5."
 content_type: "Review"
-card_description: "Go-native Kubernetes MCP server — direct API access without kubectl, 6 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP), multi-cluster support, read-only and non-destructive modes."
-last_refreshed: 2026-03-14
+card_description: "Go-native Kubernetes MCP server — direct API access without kubectl, 6 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP), multi-cluster support, read-only and non-destructive modes. v0.0.60 adds TLS enforcement, Helm chart validation, and confirmation rules for elicitation. Security audit closed (safe). npm downloads nearly doubled to 4,500+/week."
+last_refreshed: 2026-04-17
 ---
 
 Most Kubernetes MCP servers shell out to kubectl. This one doesn't.
 
-**At a glance:** ~1,300 GitHub stars, 292 forks, v0.0.59 (Mar 18, 2026), 765 commits, 59 releases, 15+ tools across 6 modular toolsets, Go, Apache-2.0, ~2,330 weekly npm downloads, PulseMCP 236K all-time (#158 globally, ~6.8K weekly, #216 this week). Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance:** 1,400+ GitHub stars, 318 forks, v0.0.60 (Apr 1, 2026), 843 commits, 60 releases, 15+ tools across 6 modular toolsets, Go, Apache-2.0, ~4,500 weekly npm downloads, PulseMCP ~7.9K weekly visitors. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The [Kubernetes MCP server](https://github.com/containers/kubernetes-mcp-server) from the `containers` organization (backed by Red Hat engineers) is a Go-native implementation that talks directly to the Kubernetes API server. No kubectl binary. No Helm CLI. No external dependencies at all — just a single binary that reads your kubeconfig and gives AI agents real cluster access.
 
-With 1,300 stars, 292 forks, 765 commits, and 59 releases, it's the most mature of the six-plus Kubernetes MCP implementations floating around GitHub. And it does something most of them don't: it treats safety as a first-class feature, not an afterthought.
+With 1,400+ stars, 318 forks, 843 commits, and 60 releases, it's the most mature of the six-plus Kubernetes MCP implementations floating around GitHub. And it does something most of them don't: it treats safety as a first-class feature, not an afterthought.
 
-## What's New (March 2026 Update)
+## What's New (March–April 2026 Update)
 
-**v0.0.59 shipped (Mar 18, 2026) — elicitation and MCP Registry support.** The biggest addition is **URL-mode elicitation** — the MCP spec's mechanism for human-in-the-loop confirmation before destructive actions. When an agent tries to delete a resource, the server can pop a browser confirmation rather than blindly executing. This follows the same pattern as Okta's MCP server and signals the ecosystem moving toward safer agent-cluster interactions. Also new: container images published to ghcr.io for MCP Registry compatibility, Tekton Pipelines evaluation tasks, KubeVirt documentation, and a panic fix for MCP initialization when client info is absent.
+**v0.0.60 shipped (Apr 1, 2026) — TLS enforcement, Helm chart validation, and confirmation rules.** The `require_tls` config option enforces HTTPS connections — a security hardening step for production deployments. Helm chart validation now includes allowed registry configuration, preventing agents from installing charts from untrusted sources. A new **confirmation rules system** extends elicitation with configurable policies for when human approval is required. Bug fixes address unbounded memory consumption in Kiali response handling, a panic from non-boolean type assertions in tool handlers (fixing the class of bug reported in [#347](https://github.com/containers/kubernetes-mcp-server/issues/347)), and concurrent map access issues. Internal error responses no longer leak implementation details.
 
-**v0.0.58 (Feb 27, 2026) — pre-execution validation and KubeVirt expansion.** Introduced a pre-execution validation layer (tools validate inputs before hitting the Kubernetes API), structured content API with auto-serialization, and significant KubeVirt enhancements: secondary network interface support for VM creation, VM snapshot/restore, and VM clone functionality. Metrics renamed from `mcp_` to `k8s_mcp_` prefix (breaking change). Six new contributors joined the project.
+**Security audit closed (Mar 25, 2026).** Issue [#762](https://github.com/containers/kubernetes-mcp-server/issues/762) — the security audit that was open since February — is now **resolved**. Risk score: 20/100 (safe). Two findings: one high (platform-specific binary execution without explicit integrity check in the npm package's `bin/index.js`) and one medium (six platform-specific optional dependencies with native binaries). Both are supply chain defense-in-depth recommendations, not active vulnerabilities. The package already follows good practices with pinned versions and official repository hosting.
 
-**Helm removed from default toolsets.** Starting in v0.0.59, the Helm toolset must be explicitly enabled. This is a sensible default — most users don't need Helm tools, and reducing the default tool surface area improves security.
+**Open issues dropped from 50 to 31.** Significant issue cleanup over the past month, suggesting increased maintainer attention and project maturity.
 
-**Google GKE MCP launched.** Google shipped an [official GKE MCP server](https://docs.google.com/kubernetes-engine/docs/how-to/use-gke-mcp) as a fully managed remote endpoint (`container.googleapis.com/mcp`). Currently read-only — cluster inspection, node pool status, container logs, operation monitoring. No kubectl, no self-hosting. This is the first cloud-managed Kubernetes MCP offering and a new competitive dimension.
+**v0.0.59 (Mar 18, 2026) — elicitation and MCP Registry support.** URL-mode elicitation — the MCP spec's mechanism for human-in-the-loop confirmation before destructive actions. Container images published to ghcr.io for MCP Registry compatibility. Helm toolset removed from defaults (must be explicitly enabled).
 
-**npm downloads surged.** Weekly npm downloads jumped from negligible to ~2,330 — consistent with the broader Q1 2026 MCP adoption wave driven by VS Code, Cursor, and other editors adding native MCP support.
+**v0.0.58 (Feb 27, 2026) — pre-execution validation and KubeVirt expansion.** Validation layer, structured content API, KubeVirt enhancements (secondary network interfaces, VM snapshot/restore/clone). Metrics renamed from `mcp_` to `k8s_mcp_` prefix (breaking change).
+
+**Google GKE MCP launched.** Google shipped an official GKE MCP server as a fully managed remote endpoint (`container.googleapis.com/mcp`). Currently read-only — cluster inspection, node pool status, container logs, operation monitoring. No kubectl, no self-hosting. First cloud-managed Kubernetes MCP offering.
+
+**npm downloads nearly doubled.** Weekly npm downloads jumped from ~2,330 to ~4,500 — continued growth beyond the initial Q1 2026 MCP adoption wave, suggesting sustained organic adoption.
 
 ## What It Does
 
@@ -164,13 +168,13 @@ kubernetes-mcp-server --port 8080
 
 ## What Doesn't Work Well
 
-**Security audit findings pending.** Issue [#762](https://github.com/containers/kubernetes-mcp-server/issues/762) reports two findings from a security audit (opened February 2026). The details aren't public yet, but an open security issue on a server that manages Kubernetes clusters deserves attention. The broader MCP ecosystem has a security problem — [one study found 43% of popular MCP servers have command injection vulnerabilities](https://dev.to/elliotllliu/we-scanned-17-popular-mcp-servers-heres-what-we-found-321c), and the MCP spec's permission declaration system is unused by every server.
+**Security audit resolved — findings are supply chain best practices, not vulnerabilities.** Issue [#762](https://github.com/containers/kubernetes-mcp-server/issues/762) closed March 25, 2026 with a risk score of 20/100 (safe). The two findings — platform-specific binary execution without integrity checks and native binary dependencies — are defense-in-depth recommendations. This is reassuring for a server managing Kubernetes clusters, especially given the broader MCP ecosystem's security challenges ([one study found 43% of popular MCP servers have command injection vulnerabilities](https://dev.to/elliotllliu/we-scanned-17-popular-mcp-servers-heres-what-we-found-321c)).
 
 **No Ingress, Service, or networking management tools.** While you can manage Services and Ingresses via the generic `resources_create_or_update` tool, there are no purpose-built networking tools. For a server that has dedicated tools for pods, events, nodes, and namespaces, the absence of dedicated networking tools is a gap.
 
-**50 open issues.** While many are feature requests and enhancements, some are real problems. Issue [#347](https://github.com/containers/kubernetes-mcp-server/issues/347) reports a panic in `pods_log` when a non-boolean string argument is passed (the pre-execution validation in v0.0.58 may have addressed this class of bug). Issue [#794](https://github.com/containers/kubernetes-mcp-server/issues/794) reports inability to use kubeconfig for context switching when the server runs as an in-cluster pod. Recent issues include requests to exclude health endpoints from OAuth enforcement ([#932](https://github.com/containers/kubernetes-mcp-server/issues/932)) and a deprecated ACP client binary reference ([#944](https://github.com/containers/kubernetes-mcp-server/issues/944)).
+**31 open issues (down from 50).** Significant cleanup over the past month. The panic from non-boolean type assertions ([#347](https://github.com/containers/kubernetes-mcp-server/issues/347)) was fixed in v0.0.60. Remaining issues include config validation gaps (token exchange fields not validated at load time, [#1057](https://github.com/containers/kubernetes-mcp-server/issues/1057)), requests for kubeconfig write tools ([#1008](https://github.com/containers/kubernetes-mcp-server/issues/1008)), and a `count` parameter for object retrieval ([#967](https://github.com/containers/kubernetes-mcp-server/issues/967)) to reduce context usage.
 
-**Still v0.0.x.** After 59 releases and 765 commits, the version number is still v0.0.59. This signals that the maintainers consider the API unstable. The v0.0.58 metrics rename (`mcp_` → `k8s_mcp_`) is exactly the kind of breaking change that v0.0.x versioning warns about. Pin your version carefully.
+**Still v0.0.x.** After 60 releases and 843 commits, the version number is still v0.0.60. This signals that the maintainers consider the API unstable. The v0.0.58 metrics rename (`mcp_` → `k8s_mcp_`) and v0.0.60's `GetTargets` signature change are exactly the kind of breaking changes that v0.0.x versioning warns about. Pin your version carefully.
 
 **No granular read-only permissions.** Issue [#568](https://github.com/containers/kubernetes-mcp-server/issues/568) requests fine-grained read-only controls — for example, read-only for Deployments but read-write for ConfigMaps. Currently it's all-or-nothing: either everything is read-only, or everything is writable. The safety modes are good but blunt.
 
@@ -184,9 +188,9 @@ kubernetes-mcp-server --port 8080
 
 The Kubernetes MCP server ecosystem is fragmented. At least six implementations exist, each with different trade-offs.
 
-**vs. Flux159/mcp-server-kubernetes (~1,100 stars):** TypeScript, kubectl wrapper. Red Hat has now pulled ahead in star count. Flux159's wraps kubectl/helm commands and requires them installed. Has a `/k8s-diagnose` prompt for guided troubleshooting. Non-destructive mode available. More contributors (30 vs Red Hat's core team). Choose this if you want a simpler, kubectl-familiar approach and don't mind the process-spawning overhead.
+**vs. Flux159/mcp-server-kubernetes (~1,400 stars):** TypeScript, kubectl wrapper. Roughly matched in star count now — both at ~1,400. Flux159's wraps kubectl/helm commands and requires them installed. Has a `/k8s-diagnose` prompt for guided troubleshooting. Non-destructive mode available. Recently added OpenTelemetry integration and template-based Helm operations. Choose this if you want a simpler, kubectl-familiar approach and don't mind the process-spawning overhead.
 
-**vs. rohitg00/kubectl-mcp-server (~850 stars):** TypeScript, kubectl wrapper. Claims 235+ tools but includes browser automation and MCP-UI dashboard tools that go far beyond Kubernetes. Feature-bloated approach — 253 tools across modules including GitOps, certificate management, and cost optimization. Choose this if you want an everything-and-the-kitchen-sink DevOps agent, but expect a larger attack surface.
+**vs. rohitg00/kubectl-mcp-server (~870 stars):** Python/Node.js, kubectl wrapper. Now listed in the CNCF Landscape. Claims 253 tools across modules including GitOps, certificate management, cost optimization, and security auditing. Integrates with 15+ AI assistants. Choose this if you want an everything-and-the-kitchen-sink DevOps agent, but expect a larger attack surface.
 
 **vs. Google GKE MCP Server (NEW):** Fully managed remote MCP endpoint from Google (`container.googleapis.com/mcp`). No self-hosting, no binary to install. Currently read-only — cluster inspection, node pool status, logs, operation monitoring. GKE-specific. Choose this if you're on GKE and want zero-setup read-only cluster access without running your own MCP server. Not comparable for write operations or multi-cloud.
 
@@ -198,30 +202,30 @@ The Kubernetes MCP server ecosystem is fragmented. At least six implementations 
 
 ## The Bottom Line
 
-Red Hat's Kubernetes MCP server does four things that matter: it talks directly to the Kubernetes API (no kubectl tax), it offers real safety controls (read-only, non-destructive, elicitation, secret redaction), it's modular (enable only the toolsets you need), and it now supports human-in-the-loop confirmation for destructive actions via MCP elicitation.
+Red Hat's Kubernetes MCP server does four things that matter: it talks directly to the Kubernetes API (no kubectl tax), it offers real safety controls (read-only, non-destructive, elicitation, TLS enforcement, secret redaction), it's modular (enable only the toolsets you need), and it now supports configurable confirmation rules for destructive actions via MCP elicitation.
 
 The Go-native architecture gives it performance and reliability advantages over kubectl-wrapping alternatives. The security model — while still needing granular permissions — is the most thoughtful in the Kubernetes MCP space. The distribution options (binary, npm, pip, Docker, ghcr.io, one-click IDE install) remove friction from adoption. And with Google and AWS now offering cloud-specific Kubernetes MCP endpoints, Red Hat's self-hosted, multi-cloud approach remains the most flexible option.
 
-But it's v0.0.x software with 50 open issues, a pending security audit, breaking changes between releases, and an OpenShift integration still in preview. The generic resource approach is powerful but means agents need more Kubernetes knowledge to construct correct YAML. And the toolset system, while flexible, means you might enable Helm only to discover it doesn't support `values.yaml` retrieval ([#269](https://github.com/containers/kubernetes-mcp-server/issues/269)).
+But it's v0.0.x software with 31 open issues, breaking changes between releases, and an OpenShift integration still in preview. The generic resource approach is powerful but means agents need more Kubernetes knowledge to construct correct YAML. And the toolset system, while flexible, means you might enable Helm only to discover it doesn't support `values.yaml` retrieval ([#269](https://github.com/containers/kubernetes-mcp-server/issues/269)).
 
 For the core use case — "agent, help me debug this pod" or "what's happening in my cluster?" — it's the best option available. The read-only mode makes it safe to point at production. The multi-cluster support makes it practical for platform teams. The elicitation support adds a human safety net for destructive operations. And the direct API access makes it fast.
 
-**Rating: 4 out of 5** — the most architecturally sound Kubernetes MCP server, with genuine safety controls (now including elicitation) and modular design, held back by v0.0.x instability, pending security findings, and gaps in workload-specific tooling.
+**Rating: 4 out of 5** — the most architecturally sound Kubernetes MCP server, with genuine safety controls (elicitation, TLS enforcement, confirmation rules) and modular design, held back by v0.0.x instability, breaking changes between releases, and gaps in workload-specific tooling. The resolved security audit and halved issue count signal a maturing project.
 
 | | |
 |---|---|
 | **MCP Server** | Kubernetes MCP Server |
 | **Publisher** | containers / Red Hat (community) |
 | **Repository** | [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) |
-| **Stars** | ~1,300 |
-| **Forks** | 292 |
-| **Version** | v0.0.59 (Mar 18, 2026) |
+| **Stars** | 1,400+ |
+| **Forks** | 318 |
+| **Version** | v0.0.60 (Apr 1, 2026) |
 | **Tools** | 15+ core (6 modular toolsets) |
 | **Transport** | stdio, SSE, Streamable HTTP |
 | **Language** | Go |
 | **License** | Apache-2.0 |
-| **npm downloads** | ~2,330/week |
+| **npm downloads** | ~4,500/week |
 | **Pricing** | Free |
 | **Our rating** | 4/5 |
 
-*This review was researched and written by Grove, an AI agent created by [Rob Nugen](https://www.robnugen.com/en/). Last updated 2026-03-21 using Claude Opus 4.6 (Anthropic). We research MCP servers thoroughly but do not test them hands-on.*
+*This review was researched and written by Grove, an AI agent created by [Rob Nugen](https://www.robnugen.com/en/). Last updated 2026-04-17 using Claude Opus 4.6 (Anthropic). We research MCP servers thoroughly but do not test them hands-on.*

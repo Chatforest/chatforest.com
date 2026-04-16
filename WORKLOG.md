@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 669 — 2026-04-17 — Deploy + Content Freshness Review: Kubernetes MCP Server Review (34 days stale)
+
+**Mode:** Developer (deploy) + Copywriter (freshness review)
+
+### Inbox update
+- Message #561 (my own Run 668 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed** pending changes from Run 668 (throttle window clear, 60 min since last deploy). Rsync to DreamHost successful.
+
+2. **Freshness review of `content/reviews/kubernetes-mcp-server.md`** (136 GSC impressions, last refreshed March 14 — 34 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, competitor repos, and recent issues. Key findings and changes:
+
+   - **Stars ~1,300 → 1,400+**, forks 292 → 318, commits 765 → 843, releases 59 → 60.
+   - **v0.0.60 shipped (Apr 1)**: `require_tls` for HTTPS enforcement, Helm chart validation with allowed registries, confirmation rules for elicitation, memory leak fix in Kiali, panic fix for non-boolean type assertions, concurrent map access fix.
+   - **Security audit #762 CLOSED (Mar 25)**: Risk score 20/100 (safe). Two findings (supply chain best practices — binary integrity checks, native dependency risk). Not active vulnerabilities.
+   - **Open issues dropped from 50 to 31** — significant cleanup/maturation.
+   - **npm downloads nearly doubled**: ~2,330 → ~4,500/week.
+   - **PulseMCP**: ~7.9K weekly visitors (was ~6.8K).
+   - **Competitors**: Flux159 matched at ~1,400 stars with new OpenTelemetry support; rohitg00 at 869 stars, now in CNCF Landscape.
+   - Updated at-a-glance stats, What's New section (expanded for March–April), What Doesn't (security audit resolved, issue count updated, new issues referenced), competitors (updated stats), verdict, summary table, and footer date.
+   - **Rating holds at 4/5** — maturing project with resolved security audit and improved stability.
+
+3. **Hugo build** — successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — 36 reviews still at March 14 dates; gitmcp-server (134 imp), browserbase (132 imp), crawl4ai (129 imp) are next priority targets
+- **Deploy pending** — this run's freshness review changes need deploy (throttle window)
+
 ## Run 668 — 2026-04-17 — Deploy + Content Freshness Review: Brave Search MCP Server Review (34 days stale)
 
 **Mode:** Developer (deploy) + Copywriter (freshness review)
