@@ -1,15 +1,15 @@
 ---
 title: "MCP and Publishing/Journalism: How AI Agents Connect to Content Management Systems, News APIs, RSS Feeds, Blogging Platforms, Newsletter Tools, Translation/Localization, Fact-Checking, Editorial Workflows, Transcription Services, and Digital Publishing Platforms"
 date: 2026-03-30T13:00:00+09:00
-description: "A comprehensive guide to 110+ MCP integrations for publishing and journalism — covering content management systems (WordPress mcp-adapter official moving into Core 6.9"
+description: "A comprehensive guide to 110+ MCP integrations for publishing and journalism — covering content management systems (WordPress Abilities API in Core 6.9, WordPress 7.0 AI stack delayed to May 2026), Notion MCP improvements (April 2026), Lokalise official MCP beta, EU AI Act Code of Practice second draft, headless CMS platforms, news APIs, RSS feeds, translation, transcription, fact-checking, and writing quality tools"
 content_type: "Guide"
 card_description: "The digital publishing market reached approximately $257 billion in 2025 and is projected to grow to $448 billion by 2030 at 11.7% CAGR. Automated journalism is forecast to hit $1.5 billion by 2033, and 75% of news executives expect agentic AI to have a large impact on newsroom operations in 2026. Yet zero newsroom-specific tools exist for editorial calendars, wire service integrations (AP, Reuters, AFP), paywall management, or broadcast journalism systems. This guide covers 110+ MCP servers across publishing and journalism — from CMS platforms and news APIs to RSS feeds, translation, transcription, fact-checking, and writing quality tools — plus architecture patterns for AI-orchestrated editorial pipelines."
-last_refreshed: 2026-03-30
+last_refreshed: 2026-04-16
 ---
 
 AI is transforming publishing and journalism at every level. The digital publishing market reached approximately $257 billion in 2025 and is projected to grow to $448 billion by 2030 at an 11.7% CAGR. The automated journalism market alone is forecast to reach $1.5 billion by 2033 at 15% CAGR. The CMS and digital publishing platform segment is expected to grow from $15.2 billion in 2024 to $32.8 billion by 2033 at a 9.2% CAGR. According to Reuters Institute research, 75% of news executives expect agentic AI to have a large impact on newsroom operations in 2026, and 97% of news organizations consider back-end AI automation "important." Publishers are preparing to be "squeezed" by AI and independent creators in 2026.
 
-The MCP ecosystem for publishing reflects this momentum unevenly. Content management systems — particularly WordPress and headless CMS platforms — have the strongest MCP coverage, with WordPress alone spawning 10+ MCP server implementations. Headless CMS platforms including Sanity, Contentful, Storyblok, Directus, and Hygraph have released official or native MCP integrations. Translation and localization tools have attracted multiple implementations. But newsroom-specific infrastructure — editorial calendars, wire service integrations, paywall management, print layout tools — has zero MCP presence.
+The MCP ecosystem for publishing reflects this momentum unevenly. Content management systems — particularly WordPress and headless CMS platforms — have the strongest MCP coverage, with WordPress alone spawning 10+ MCP server implementations. WordPress 6.9 shipped the Abilities API, and WordPress 7.0 (delayed to mid-to-late May 2026) completes the AI stack with client-side support, the official MCP Adapter, Claude Connector, and Cowork plugin. Notion expanded its MCP capabilities in April 2026 to cover comments, meeting transcripts, and Notion Sites with new admin auditing controls. Headless CMS platforms including Sanity, Contentful, Storyblok, Directus, and Hygraph have released official or native MCP integrations. Translation and localization tools have attracted multiple implementations, with Lokalise launching its own official MCP server beta in February 2026. But newsroom-specific infrastructure — editorial calendars, wire service integrations, paywall management, print layout tools — has zero MCP presence.
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to publishing platforms, news sources, content tools, and editorial infrastructure. Rather than building custom integrations for each CMS, news API, or translation service, MCP-connected agents can draft articles, manage editorial workflows, aggregate news feeds, translate content, and optimize for SEO through defined tool interfaces. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
@@ -37,9 +37,9 @@ Content management is the strongest category in the publishing MCP ecosystem, wi
 
 WordPress powers over 40% of the web, and its MCP ecosystem reflects that dominance with 10+ independent implementations.
 
-**WordPress/mcp-adapter** | **Official** | Moving into WordPress Core 6.9
+**WordPress/mcp-adapter** | **Official** | Abilities API in Core 6.9, Full AI Stack in WordPress 7.0
 
-The official WordPress MCP adapter, developed by the WordPress core team. According to project documentation, this uses the Abilities API and is being moved into WordPress Core 6.9, which would make MCP support a native WordPress feature. This represents a significant signal for the publishing industry — the platform powering the majority of the web is building MCP support directly into its core.
+The official WordPress MCP adapter, developed by the WordPress core team. WordPress 6.9 shipped the server-side Abilities API, making it possible to register standardized, discoverable, typed WordPress functionality. WordPress 7.0 — originally scheduled for April 9, 2026 but delayed to mid-to-late May 2026 due to real-time collaboration stability issues — adds the client-side Abilities API via two new packages (`@wordpress/abilities` for state management, `@wordpress/core-abilities` for the WordPress integration layer) and completes the AI Building Blocks stack: PHP AI Client, WP AI Client, MCP Adapter, Claude Connector, and Cowork plugin. When WordPress 7.0 ships, every WordPress plugin and theme will have native AI capabilities without bundling a separate SDK. This represents the most significant AI infrastructure commitment from any CMS platform — the system powering over 40% of the web is making MCP support a core feature.
 
 **Automattic/wordpress-mcp** | **Official (Deprecated)**
 
@@ -61,13 +61,13 @@ A well-starred community WordPress MCP server providing core content management 
 
 A basic WordPress MCP implementation covering foundational content operations.
 
-Additional WordPress MCP servers exist across the ecosystem. An InstaWP comparison identified 10+ distinct WordPress MCP server implementations, reflecting both the platform's ubiquity and the fragmentation typical of large open-source communities. The consolidation toward the official mcp-adapter suggests this fragmentation may resolve as WordPress Core 6.9 ships.
+Additional WordPress MCP servers exist across the ecosystem. An InstaWP comparison identified 10+ distinct WordPress MCP server implementations, reflecting both the platform's ubiquity and the fragmentation typical of large open-source communities. The consolidation toward the official mcp-adapter suggests this fragmentation may resolve as WordPress 7.0 ships with native Abilities API support.
 
 ### Ghost CMS
 
-**Ghost CMS MCP Server** | ~161 stars | 38 tools
+**Ghost CMS MCP Servers** | 6+ implementations | Up to 38 tools
 
-Ghost, the open-source publishing platform popular among independent journalists, bloggers, and newsletter operators, has attracted a well-featured MCP implementation. According to repository documentation, the 38 tools cover content creation, publishing, member management, newsletter distribution, and site configuration. Ghost's focus on professional publishing and its built-in newsletter functionality make this MCP server particularly relevant for journalism and independent media operations.
+Ghost, the open-source publishing platform popular among independent journalists, bloggers, and newsletter operators, has attracted a growing ecosystem of MCP implementations. The original workspace/ghost-mcp (~161 stars, 38 tools) covers content creation, publishing, member management, newsletter distribution, and site configuration. Since then, at least five additional Ghost MCP servers have appeared — including MFYDev/ghost-mcp (JWT authentication, member/tier/offer management), siva-sub/ghost-cms-mcp-server (full automation capabilities), salemaziel/ghost-cms-mcp-remote (remote MCP server), and implementations by hithereiamaliff, jgardner04, and mtane0412. This proliferation mirrors the WordPress MCP fragmentation pattern and reflects Ghost's growing importance as an independent publishing platform. Ghost's focus on professional publishing and its built-in newsletter functionality make these MCP servers particularly relevant for journalism and independent media operations.
 
 ### Headless CMS Platforms
 
@@ -107,9 +107,9 @@ Blogging and newsletter platforms have limited but notable MCP coverage, anchore
 
 ### Notion — Editorial Planning and Content Management
 
-**makenotion/notion-mcp-server** | 4,100 stars | **Official**
+**makenotion/notion-mcp-server** | 4,100+ stars | **Official** | Major improvements April 14, 2026
 
-Notion's official MCP server is the highest-starred implementation in the publishing ecosystem by a significant margin. According to documentation, it provides search, query, page creation, page management, and database operations. For publishers, Notion frequently serves as the editorial planning layer — managing story assignments, tracking publication status, maintaining style guides, and coordinating across editorial teams. The 4,100-star count reflects Notion's enormous user base and the quality of this official implementation.
+Notion's official MCP server is the highest-starred implementation in the publishing ecosystem by a significant margin. According to documentation, it provides search, query, page creation, page management, and database operations. **On April 14, 2026, Notion 3.4 Part 2 shipped significant MCP improvements**: AI tools can now operate reliably across comments, meeting transcripts, and Notion Sites (not just pages and databases). Response times are faster, and new admin controls add auditing for MCP usage and approved-tools lists — giving organizations oversight over which AI tools can interact with their Notion workspace. For publishers, Notion frequently serves as the editorial planning layer — managing story assignments, tracking publication status, maintaining style guides, and coordinating across editorial teams. The expanded MCP scope (especially meeting transcripts and comments) makes Notion more useful for editorial coordination where discussion context matters.
 
 **suekou/mcp-notion-server** | Community
 
@@ -209,9 +209,13 @@ No MCP servers exist for established fact-checking databases (Snopes, PolitiFact
 
 Translation and localization MCP servers address the multilingual publishing challenge, with multiple implementations spanning commercial platforms and open-source tools.
 
+**Lokalise Official MCP Server** | **Official (Beta)** | Launched February 4, 2026
+
+Lokalise launched its own official MCP server in closed beta on February 4, 2026, enabling teams to control Lokalise directly from AI tools like Claude or ChatGPT. Users can ask their AI to update translations, manage keys, or export content, and the server handles the Lokalise API complexity. This is separate from the community implementation below and signals Lokalise's commitment to AI-native localization workflows. The beta is open to teams already experimenting with AI-powered development.
+
 **AbdallahAHO/lokalise-mcp** | 59 tools | 17 automation templates
 
-The most comprehensive translation MCP server by tool count, covering 59 tools across 11 domains with 17 automation templates. Lokalise is a major translation management platform used by publishers and software companies for collaborative translation workflows.
+The most comprehensive community Lokalise MCP server by tool count, covering 59 tools across 11 domains with 17 automation templates. Lokalise is a major translation management platform used by publishers and software companies for collaborative translation workflows.
 
 **SimpleLocalize MCP Server** | **Official**
 
@@ -243,7 +247,7 @@ iOS/macOS-specific localization for publishers with native mobile applications.
 
 ### Translation Gaps
 
-No MCP servers exist for major enterprise translation platforms beyond Lokalise — Crowdin, Transifex, Phrase (formerly Memsource), SDL Trados, or memoQ are absent. Machine translation engines (DeepL, Google Translate) have general MCP integrations but lack publisher-specific features like translation memory, terminology management, and style guide enforcement. No MCP servers address the specific challenges of news translation — speed requirements, named entity handling, cultural adaptation of idioms and references.
+With Lokalise launching its own official MCP server beta in February 2026, it joins SimpleLocalize as the second translation platform with official MCP support. But Crowdin, Transifex, Phrase (formerly Memsource), SDL Trados, and memoQ remain absent. Machine translation engines (DeepL, Google Translate) have general MCP integrations but lack publisher-specific features like translation memory, terminology management, and style guide enforcement. No MCP servers address the specific challenges of news translation — speed requirements, named entity handling, cultural adaptation of idioms and references.
 
 ## Transcription and Audio-to-Text
 
@@ -319,7 +323,7 @@ Additional MCP servers support the broader infrastructure of digital publishing.
 
 ### Academic and Structured Publishing
 
-**Overleaf MCP Server** | ~83 stars | 6 tools
+**Overleaf MCP Server** | ~100 stars | 6 tools
 
 Overleaf integration for academic publishing and LaTeX document management. For academic publishers, scientific journals, and researchers, this connects AI agents to the dominant collaborative LaTeX platform.
 
@@ -468,7 +472,7 @@ The **U.S. Copyright Office** ruled in January 2025 that AI-generated work requi
 
 ### EU AI Act and Content Transparency
 
-**EU AI Act Article 50** transparency obligations become enforceable **August 2, 2026**. Among the requirements: AI systems must disclose AI interactions, label synthetic content, and provide training data summaries. For publishers operating in EU markets, MCP-connected AI agents generating or processing content will need to comply with these disclosure requirements. The training data summary requirement is particularly significant for publishers whose content may have been used in AI training — and who may now need to track and report on this usage.
+**EU AI Act Article 50** transparency obligations become enforceable **August 2, 2026**. Among the requirements: AI systems must disclose AI interactions, label synthetic content, and provide training data summaries. The **second draft of the Code of Practice** on marking and labelling AI-generated content was published on **March 5, 2026**, incorporating feedback from hundreds of industry, academic, and civil society participants. The revised code introduces a **two-layered marking approach**: secured metadata and watermarking as the primary layer, with optional fingerprinting and logging as a secondary layer, plus protocols for detection and verification. Design and placement requirements for icons, labels, and disclaimers ensure a minimum level of uniformity, and a task force has been proposed to develop a future uniform, interactive EU icon. The feedback period on the second draft closed March 30, 2026, with the **final Code of Practice expected in June 2026** — two months before enforcement begins. For publishers operating in EU markets, MCP-connected AI agents generating or processing content will need to comply with these disclosure and labelling requirements. The training data summary requirement is particularly significant for publishers whose content may have been used in AI training.
 
 ### Content Licensing and AI Access
 
@@ -557,11 +561,11 @@ The **Editorial Quality Assurance Pipeline** pattern combines grammar checking, 
 | News APIs & Aggregation | ~6 | N/A | 0 | AP, Reuters, AFP wire services |
 | RSS Feed Management | ~7 | N/A | 0 | Enterprise feed platforms |
 | Fact-Checking & Verification | ~2 | N/A | 0 | Snopes, PolitiFact, Full Fact |
-| Translation & Localization | ~8 | N/A | 1 (SimpleLocalize) | Crowdin, Transifex, DeepL publisher |
+| Translation & Localization | ~9 | N/A | 2 (Lokalise beta, SimpleLocalize) | Crowdin, Transifex, DeepL publisher |
 | Transcription & Audio-to-Text | ~7 | 50 (Whisper) | 0 | Rev, Otter.ai, Deepgram, AssemblyAI |
 | Writing Quality & SEO | ~8 | N/A | 0 | AP Stylebook, Chicago Manual |
 | Social Distribution | ~10 | varies | varies | Cross-ref social media guide |
-| Digital Publishing Infrastructure | ~5 | 83 (Overleaf) | 2 (Mux, Cloudflare Stream) | Vimeo, Wistia, Brightcove |
+| Digital Publishing Infrastructure | ~5 | 100 (Overleaf) | 2 (Mux, Cloudflare Stream) | Vimeo, Wistia, Brightcove |
 | **Total** | **~110+** | — | **~10+** | — |
 
-*Last updated: March 30, 2026. Server counts and star numbers change frequently. See our [MCP server directory](/reviews/) for individual server reviews.*
+*Last updated: April 16, 2026. Server counts and star numbers change frequently. See our [MCP server directory](/reviews/) for individual server reviews.*

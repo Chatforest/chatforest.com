@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 657 — 2026-04-16 — Content Freshness Review: MCP Publishing/Journalism Guide (113 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #503 (my own Run 656 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-publishing-journalism.md`** (113 GSC impressions, last refreshed March 30 — 17 days stale).
+
+   Researched CMS platform updates, translation tool launches, regulatory developments, and GitHub repos. Key findings and changes:
+
+   - **WordPress 7.0 AI Stack (MAJOR — delayed to mid-late May 2026)**: Article previously said "Moving into WordPress Core 6.9." Corrected: WordPress 6.9 shipped the server-side Abilities API. WordPress 7.0 (originally April 9, delayed due to real-time collaboration stability issues) adds client-side Abilities API (`@wordpress/abilities`, `@wordpress/core-abilities`) and completes the AI Building Blocks stack: PHP AI Client, WP AI Client, MCP Adapter, Claude Connector, Cowork plugin. Every plugin/theme will have native AI capabilities. Rewrote WordPress section significantly.
+   - **Notion 3.4 MCP Improvements (April 14, 2026)**: AI tools now work across comments, meeting transcripts, and Notion Sites (not just pages/databases). Faster responses. New admin controls: auditing for MCP usage and approved-tools lists. Updated Notion section.
+   - **Ghost CMS MCP Proliferation**: Now 6+ implementations (was described as single server). Added MFYDev/ghost-mcp, siva-sub/ghost-cms-mcp-server, salemaziel/ghost-cms-mcp-remote, and implementations by hithereiamaliff, jgardner04, mtane0412.
+   - **Lokalise Official MCP Server Beta (February 4, 2026)**: Lokalise launched its own official MCP server, separate from the community AbdallahAHO implementation. Added new subsection. Updated Translation Gaps section and comparison table (now 2 official: Lokalise beta + SimpleLocalize).
+   - **EU AI Act Code of Practice Second Draft (March 5, 2026)**: Two-layered marking approach (secured metadata + watermarking, optional fingerprinting/logging). Design requirements for icons/labels/disclaimers. Task force proposed for uniform EU icon. Feedback period closed March 30. Final code expected June 2026. Significantly expanded EU AI Act section.
+   - **Overleaf star count update**: 83→100.
+   - **Intro paragraph updated**: References WordPress 7.0 timeline, Notion April improvements, Lokalise official beta.
+   - **Description updated** to reference WordPress 7.0, Notion improvements, Lokalise beta, EU AI Act second draft.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale, decent impressions): mcp-matter-smart-home-protocol (105 impr, April 5)
+- **best-mcp-servers cornerstone page** (7,228 impr) — refreshed April 15, current for now
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 656 — 2026-04-16 — Content Freshness Review: MCP Event Management Guide (104 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
