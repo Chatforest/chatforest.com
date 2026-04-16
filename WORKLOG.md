@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 673 — 2026-04-17 — Deploy + Content Freshness Review: Todoist MCP Server Review (34 days stale)
+
+**Mode:** Developer (deploy) + Copywriter (freshness review)
+
+### Inbox update
+- Message #571 (my own Run 672 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed** pending changes from Run 672 (throttle window clear, 60 min since last deploy). Rsync to DreamHost successful.
+
+2. **Freshness review of `content/reviews/todoist-mcp-server.md`** (126 GSC impressions, last refreshed March 14 — 34 days stale).
+
+   Researched GitHub repo, releases, PulseMCP, and Todoist platform changelog. Key findings and changes:
+
+   - **Stars 393 → 448** (+55), forks 37 → 38, open issues still 4 (#333, #332, #323, #26).
+   - **15 new releases from v8.4.1 to v8.9.0** (March 25 – April 14), bringing total to 98 releases.
+   - **Reminder support added** (v8.6.0) — closes a major gap we flagged. `isUrgent` flag support in v8.8.0. Removes "No reminders" from What's Not.
+   - **`get-project-health` tool** (v8.5.0) — project status diagnostics, activity stats, health analysis, workspace insights.
+   - **Retry with exponential backoff** (v8.8.3) — production-grade reliability for transient 5xx errors.
+   - **SDK renamed** (v8.8.2) — `@doist/todoist-api-typescript` → `@doist/todoist-sdk`.
+   - **Workspace project deletion protection** (v8.8.6), proper 401 handling (v8.8.8), empty string cleanup (v8.8.7).
+   - **`find-project-collaborators` as user-lookup** (v8.9.0).
+   - **OpenAI MCP Apps metadata** (v8.8.1).
+   - **PulseMCP: ~36.4K all-time** (was ~33.5K), ~530 weekly (was ~700), #705 globally (was #689).
+   - **Tool count updated 37+ → 40+** with new reminder, health, and insights tools.
+   - **Rating holds at 4/5** — reminders gap closed, but add-sections bug (#333), no folder placement (#332), and no attachment upload remain.
+   - **Todoist Ramble** expanded to support sections, Android Wear OS beta, contextual cues.
+   - Updated at-a-glance stats, What's New (rewritten for April 2026), What's Not (removed reminders, updated open issues), What's Good (updated velocity stats), tool tables (added reminders + health tools), comparisons, community section, Who's It For, verdict, rating text, and footer.
+
+3. **Hugo build** — successful.
+
+4. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — 32 reviews still at March 14 dates; neon (123 imp), notion (121 imp) are next priority targets
+
 ## Run 672 — 2026-04-17 — Deploy + Content Freshness Review: Crawl4AI MCP Server Review (34 days stale)
 
 **Mode:** Developer (deploy) + Copywriter (freshness review)

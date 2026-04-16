@@ -1,3 +1,4 @@
+Run 673: Content freshness review of todoist-mcp-server review (126 GSC impressions, 34 days stale). Stars 393→448, forks 37→38, open issues 4. 15 new releases v8.4.1→v8.9.0 (98 total). Reminder support ADDED (v8.6.0) — removed "No reminders" from What's Not. get-project-health tool (v8.5.0), workspace insights, retry with exponential backoff (v8.8.3), SDK renamed to @doist/todoist-sdk (v8.8.2), workspace deletion protection (v8.8.6), proper 401 handling (v8.8.8), find-project-collaborators as user-lookup (v8.9.0), OpenAI MCP Apps metadata (v8.8.1). PulseMCP 33.5K→36.4K all-time, 530 weekly, #705. Tool count 37+→40+. Todoist Ramble expanded (sections, Wear OS). Rating holds 4/5. Deployed to DreamHost.
 Run 665: Content freshness review of playwright-mcp-server review (33 days stale). Stars 29.3K→30.9K, forks 2.4K→2.5K, commits 519. PulseMCP #1 globally (40.5M all-time visitors). Playwright 1.59 integration: browser.bind() API (share browser across MCP/CLI/clients), page.screencast API (annotated video receipts with action highlights, chapter titles, overlays), observability dashboard (playwright-cli show), CLI debugger, CLI trace analysis. Browser versions: Chromium 147, Firefox 148, WebKit 26.4. v0.0.70 (maintenance, April 1). v0.0.69 (March 30): 2 new tools (browser_network_state_set offline toggle, browser_video_chapter markers), enhanced mouse click + network requests, CSS/text selectors alongside aria-refs, 10 bug fixes. Added OpenAI Codex process leak concern (#17832, 213 leaked pairs, 13.6GB RSS). Added Cloudflare fork comparison (@cloudflare/playwright-mcp, cloud-hosted, synced to v0.0.30). Updated intro, og/card descriptions, What's New (rewrote for Jan-April), What Works Well, What Doesn't Work Well, Compared to Alternatives, verdict. Hugo build successful. Deploy pending throttle.
 Run 662: Content freshness review of music-audio-production-mcp-servers review (560 GSC impressions, 6 clicks — top review page). Major update: Logic Pro MCP servers (NEW, koltyj 13 stars + PsychQuant 5 stars — fills biggest gap), Pro Tools MCP (NEW, skrul 7 stars, official PTSL gRPC API, 36 tools), Bitwig MCP (NEW, WeModulate 42 stars + WigAI 25 stars). REAPER moved to bonfire-audio org (50 stars). MiniMax official MCP (NEW, 1,400 stars, music_generation tool). Tidal streaming (NEW, keenanbb + yuhuacheng). rekordbox DJ (NEW, 38 stars, first DJ MCP server). Carla audio plugins (NEW, 11 stars, 45 tools for VST/LV2/CLAP). music21 theory/analysis (NEW, 20 stars, 13 tools). sandraschi/suno-mcp confirmed deleted. Audacity renamed to An-3/an3-audacity-mcp. 17 star count updates. DAW coverage 3→6 platforms. Rating 4.0→4.5. Rewrote intro, headline findings, What's Missing, Bottom Line, FAQ. Hugo build, deployed to DreamHost.
 Run 650: Content freshness review of mcp-server-security guide (166 GSC impressions, stale since April 5). Added 3 new critical CVE case studies: MCPwnfluence CVE-2026-27825/27826 (mcp-atlassian, CVSS 9.1, unauthenticated RCE chain, 4M+ downloads), CVE-2026-5058 (aws-mcp-server command injection, CVSS 9.8), CVE-2026-32871 (FastMCP SSRF/path traversal, CVSS 9.9). Updated Fetch MCP SSRF with formal CVE-2025-65513 (CVSS 9.3, still unpatched). mcp-scan rebranded to Snyk Agent Scan v0.4.13. Added "What's Next" subsection with MCP maintainer expansion (Den Delimarsky Lead Maintainer), CoSAI threat taxonomy (12 categories, ~40 threats), Microsoft internal MCP governance + Agent Governance Toolkit. Added CoSAI white paper to Further Reading. Hugo build, deployed to DreamHost.
@@ -9334,3 +9335,36 @@ Run 670 complete.
 2026-04-16T19:54:59Z SESSION 1580 stopped
 2026-04-16T20:51:01Z STARTED run 873571 (mode=wild)
 2026-04-16T20:51:08Z SESSION 1581 started
+Run 671 complete. Here's what I did:
+
+**Deployed** Run 670's GitMCP Server changes to DreamHost.
+
+**Freshness review of Browserbase MCP Server** (132 GSC impressions, 34 days stale):
+
+- **v3.0.0 released March 31** — major breaking change. Tools renamed to shorter forms, screenshot and get_url tools removed (8 → 6 tools), default model changed to Gemini 2.5 Flash Lite.
+- **Model Gateway launched April 5** — use GPT-5/Claude/Gemini through a single Browserbase API key. Eliminates the old 3-API-key friction.
+- **Open issues grew 20 → 27**, new prompt injection security advisory (#159), only 1 issue closed since May 2025.
+- **PulseMCP traffic up**: ~21.6K weekly (was ~15.5K), #56 globally.
+- **Rating holds at 3.5/5** — Model Gateway is a real improvement, but shrinking tool count and growing unresolved issues keep it anchored.
+
+Hugo build successful, all committed. Status update sent via Jikan inbox.
+2026-04-16T20:56:29Z FINISHED run 873571
+2026-04-16T20:56:29Z SESSION 1581 stopped
+2026-04-16T21:51:01Z STARTED run 890375 (mode=wild)
+2026-04-16T21:51:02Z SESSION 1582 started
+Run 672 complete. Here's what I did:
+
+**Deployed** pending changes from Run 671, then performed a **freshness review of the Crawl4AI MCP Server review** (129 GSC impressions, 34 days stale).
+
+Key changes:
+- **Stars 62,300 → 64,100**, forks 6,400 → 6,600
+- **v0.8.6** (Mar 24) — security hotfix for litellm PyPI supply chain compromise
+- **Both major MCP bugs fixed** — #1316 (SSE errors) and #1311 (Gemini schema) are now closed
+- **Cloud API in closed beta** — credit-based pricing, multi-language SDKs. Addresses the "no hosted option" criticism
+- **Rating upgraded 3.5/5 → 4/5** — MCP layer meaningfully improved, rapid security response, Cloud API on the way
+
+Next priorities: Todoist (126 imp), Neon (123 imp), Notion (121 imp) freshness reviews. Still awaiting Rob's decisions from Run 639.
+2026-04-16T21:57:15Z FINISHED run 890375
+2026-04-16T21:57:16Z SESSION 1582 stopped
+2026-04-16T22:51:01Z STARTED run 907428 (mode=wild)
+2026-04-16T22:51:03Z SESSION 1583 started
