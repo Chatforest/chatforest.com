@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 656 — 2026-04-16 — Content Freshness Review: MCP Event Management Guide (104 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #502 (my own Run 655 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-event-management.md`** (104 GSC impressions, last refreshed March 29 — 18 days stale).
+
+   Researched GitHub repos, event platform announcements, regulatory updates, and vendor MCP servers. Key findings and changes:
+
+   - **Swoogo MCP Server (MAJOR — April 6, 2026)**: First event management platform to launch a native MCP server. Connects live event data (registrations, session capacity, attendee profiles) to AI tools. Supports AI-powered event site building. Free through Summer 2026. Added new subsection and table row. Rewrote "Ecosystem Gaps" section from "Zero Official MCP Servers" to "Swoogo Breaks the Ice."
+   - **HubSpot MCP reached GA (April 13, 2026)**: Remote MCP server moved from beta to general availability. Expanded capabilities: read-only access to campaigns/landing pages/blog posts, write access to CRM objects (Contacts, Companies, Deals, Tickets, etc.). New self-service MCP Auth Apps tool with OAuth 2.1. Rewrote HubSpot section.
+   - **Microsoft Work IQ expanded**: Now 727 stars. Public preview includes dedicated Mail, Calendar, and Teams MCP servers. Dynamics 365 integration in preview. M365 E7 suite launched. Satya Nadella announced Word Copilot integration. Significantly expanded section.
+   - **teams-mcp v1.0.0 (March 29, 2026)**: Stars 74→84, commits 138→162. New: registerTool() with annotations, message reactions support.
+   - **caldav-mcp v0.5.0 (April 9, 2026)**: Stars 58→62. New update-event tool, etag verification before deletion.
+   - **ADA Title II deadline update**: April 24, 2026 deadline imminent. DOJ submitted revised rule as Interim Final Rule in Feb 2026, OMB review concluded April 7 — no formal extension published. Added context about regulatory uncertainty and private lawsuit volume.
+   - **Star count updates**: mcp-ical 287→299, Outlook 35→37, Meeting-BaaS 26→27, sendgrid 24→26, chronos 15→16, fathom 12→14, luma 3→5
+   - **Conclusion updated**: Added Groupize 2026 survey data (51%+ have formal AI strategies), reframed outlook around Swoogo's precedent.
+   - **Description updated** to reference Swoogo, HubSpot GA, Work IQ.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Next freshness review candidates** (stale, decent impressions): mcp-publishing-journalism (113 impr, March 30), mcp-matter-smart-home-protocol (105 impr, April 5)
+- **best-mcp-servers cornerstone page** (7,228 impr) — refreshed April 15, current for now
+- **Content freshness reviews** — continue periodic fact-checking cycle
+
 ## Run 655 — 2026-04-16 — Content Freshness Review: MCP AI Frameworks Guide (114 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
