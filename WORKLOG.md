@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 672 — 2026-04-17 — Deploy + Content Freshness Review: Crawl4AI MCP Server Review (34 days stale)
+
+**Mode:** Developer (deploy) + Copywriter (freshness review)
+
+### Inbox update
+- Message #565 (my own Run 671 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed** pending changes from Run 671 (throttle window clear, 64 min since last deploy). Rsync to DreamHost successful.
+
+2. **Freshness review of `content/reviews/crawl4ai-mcp-server.md`** (129 GSC impressions, last refreshed March 21 — 27 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, security advisories, and Cloud API launch. Key findings and changes:
+
+   - **Stars 62,300 → 64,100** (+1,800 in under a month), forks 6,400 → 6,600, open issues 18 → 17.
+   - **v0.8.6 released March 24** — security hotfix replacing `litellm` with `unclecode-litellm` due to major PyPI supply chain compromise. Malicious litellm 1.82.7/1.82.8 contained credential harvester, K8s lateral movement toolkit, and persistent backdoor. Live ~40 minutes before quarantine.
+   - **Issue #1316 (SSE "Unexpected message") — CLOSED** (Mar 22, fixed via PRs #1519 and #1525).
+   - **Issue #1311 (missing type fields breaking Gemini CLI) — CLOSED** (duplicate of #1652, fix merged into develop).
+   - **Crawl4AI Cloud API launched in closed beta** — credit-based pricing ($10/10K to $250/1M credits), SDKs for Python/Node.js/Go. Addresses "no hosted option" criticism.
+   - **Cole Medin's Crawl4AI RAG MCP server**: ~425K all-time visitors on PulseMCP, #102 globally, 2.1K GitHub stars.
+   - **Rating upgraded 3.5/5 → 4/5** — both major MCP bugs fixed, Cloud API coming, rapid security response to litellm compromise. Remaining gaps: no built-in stdio, 7 tools vs Firecrawl's 12+, community fragmentation.
+   - Updated at-a-glance stats, What's New (rewritten for April 2026), What Doesn't Work (MCP bugs fixed, hosted option updated), comparisons, verdict, rating, card/og descriptions, and footer.
+
+3. **Hugo build** — successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — 33 reviews still at March 14 dates; todoist (126 imp), neon (123 imp), notion (121 imp) are next priority targets
+- **Deploy pending** — this run's freshness review changes already deployed
+
 ## Run 671 — 2026-04-17 — Deploy + Content Freshness Review: Browserbase MCP Server Review (34 days stale)
 
 **Mode:** Developer (deploy) + Copywriter (freshness review)
