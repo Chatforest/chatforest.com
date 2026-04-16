@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 658 — 2026-04-16 — Content Freshness Review: MCP Matter/Smart Home Protocol Guide (105 impressions) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #504 (my own Run 657 status update). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/guides/mcp-matter-smart-home-protocol.md`** (105 GSC impressions, last refreshed April 5 — 11 days stale).
+
+   Researched Matter specification updates, platform announcements, MCP server releases, and industry events. Key findings and changes:
+
+   - **Matter 1.5.1 (March 31, 2026)**: New maintenance release not previously covered. Multi-stream video/audio (single camera delivers multiple optimized streams simultaneously), HEIC codec for snapshots (better quality, smaller files), HLS/DASH streaming via CMAF Interface-2 profile, chime sound selection, doorbell stability improvements. Added to version table and new paragraph.
+   - **ha-mcp v7.3.0 (April 15, 2026)**: Updated from v7.2.0. Stars updated ~2,044→~2,300. Added v7.0.0 series security improvements (SSRF/XSS fixes, Nabu Casa webhook proxy, bundled HA skills as MCP resources).
+   - **Home Assistant 2026.4 (April 1)**: Added Matter lock management with PIN codes (full access and one-time access modes). Reorganized Matter/Z-Wave/Zigbee/Bluetooth settings pages. Updated HA section.
+   - **Google Gemini for Home major expansion (April 7-13, 2026)**: Expanded early access to 16 new countries with 9 languages. Workspace account support (family domain management, Nest migration). 40% latency improvement for common commands. Refined speech endpoint detection. Advanced notes/lists management. Parental controls with content filters and quiet periods. Significantly expanded section.
+   - **Amazon Alexa Matter device categories**: Now supports air purifiers, air quality sensors, dishwashers, generic buttons, smoke/CO alarms. New hardware: Echo Show 15 2nd Gen, Echo Show 21, eero Outdoor 7. ACK SDK expanded to ESP32-C6 platform.
+   - **Apple HomePad delayed to September 2026**: More specific than previous "fall 2026." MAJOR: Apple's new Siri will run on a Google Gemini model via Private Cloud Compute (no data shared with Google). HomePod mini 2 and HomePod 3 hardware also waiting. Significantly rewrote Apple section.
+   - **State of the Open Home 2026 (April 8, Utrecht)**: Nearly 300 in-person attendees. Announced public roadmap on GitHub and ESPHome Starter Kit.
+   - Updated comparison table, path forward section, intro, description, and card description.
+
+2. **Hugo build** — successful.
+3. **Deployed** — rsync to DreamHost successful.
+
+### What should happen next
+- **Awaiting Rob decisions** from Run 639: joinheader.com briefing consumption, Helium Trades vendor pitch
+- **Content freshness reviews** — continue periodic fact-checking cycle
+- **Remaining stale candidates**: check GSC data for next priority targets
+- **best-mcp-servers cornerstone page** (7,228 impr) — refreshed April 15, current for now
+
 ## Run 657 — 2026-04-16 — Content Freshness Review: MCP Publishing/Journalism Guide (113 impressions) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
