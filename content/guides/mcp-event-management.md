@@ -1,10 +1,10 @@
 ---
 title: "MCP and Event Management: How AI Agents Connect to Ticketing Platforms, Calendar Systems, Conference Tools, Virtual Event Software, Video Conferencing, Venue Booking, and Attendee Engagement Tools"
 date: 2026-03-29T23:30:00+09:00
-description: "A comprehensive guide to 55+ MCP integrations for the event management ecosystem — covering ticketing (Ticketmaster 24 stars, Eventbrite 3+ implementations, SeatGeek, Luma)"
+description: "A comprehensive guide to 55+ MCP integrations for the event management ecosystem — covering ticketing (Ticketmaster 24 stars, Eventbrite 3+ implementations, SeatGeek, Luma), Swoogo's native MCP (first event platform), HubSpot MCP GA, Microsoft Work IQ preview"
 content_type: "Guide"
-card_description: "The events industry is projected to reach $1.55 trillion by 2028, yet event professionals still juggle dozens of disconnected tools — ticketing in one system, calendars in another, email marketing in a third, video conferencing elsewhere, and attendee data scattered across platforms. This guide covers 55+ MCP servers relevant to the event management ecosystem, from ticketing platforms and calendar scheduling to video conferencing, meeting intelligence, email marketing, and payment processing — plus architecture patterns for AI-powered event orchestration, hybrid event coordination, and intelligent attendee engagement."
-last_refreshed: 2026-03-29
+card_description: "The events industry is projected to reach $1.55 trillion by 2028, yet event professionals still juggle dozens of disconnected tools — ticketing in one system, calendars in another, email marketing in a third, video conferencing elsewhere, and attendee data scattered across platforms. This guide covers 55+ MCP servers relevant to the event management ecosystem, from ticketing platforms and calendar scheduling to video conferencing, meeting intelligence, email marketing, and payment processing — plus architecture patterns for AI-powered event orchestration, hybrid event coordination, and intelligent attendee engagement. Updated April 2026 with Swoogo's native MCP launch (the first event management platform to offer MCP), HubSpot MCP reaching general availability, and Microsoft Work IQ's expanded public preview."
+last_refreshed: 2026-04-16
 ---
 
 The events industry is enormous and growing. Projected to reach $1.55 trillion globally by 2028, events are no longer side activities — they are core revenue drivers, brand experiences, and community hubs for organizations of every size. Event management software alone is a $9.3–12.2 billion market in 2025, heading toward $34.7 billion by 2029 at a 17.4% CAGR. Virtual events, which surged during the pandemic and then consolidated into hybrid models, represent a market of $98–136 billion. And 65% of corporate events now adopt hybrid formats as the default, not the exception.
@@ -13,7 +13,7 @@ Yet event professionals still juggle an astonishing number of disconnected tools
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to these fragmented event tools. Rather than building custom integrations for each ticketing platform, calendar service, video conferencing tool, or email marketing system, MCP-connected agents can manage registrations, schedule sessions, coordinate speakers, send targeted communications, and analyze attendee engagement through defined tool interfaces. The protocol transforms AI assistants from isolated chatbots into operational event management tools that work across the entire event lifecycle — from initial planning and promotion through day-of execution and post-event analysis. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
-The event management MCP ecosystem is uneven. Calendar and scheduling servers are remarkably mature, with Google Calendar alone having 10+ implementations led by a dominant 1,100-star server. Video conferencing and meeting intelligence are well-covered too. But core event platforms — Cvent, Bizzabo, Hopin, virtual event tools, venue management, attendee engagement — have almost zero MCP presence. The opportunity for integration is massive; the tooling is just beginning to emerge.
+The event management MCP ecosystem is uneven but evolving. Calendar and scheduling servers are remarkably mature, with Google Calendar alone having 10+ implementations led by a dominant 1,100-star server. Video conferencing and meeting intelligence are well-covered too. A significant milestone arrived in April 2026: Swoogo became the first event management platform to launch a native MCP server, connecting live event data — registrations, session capacity, attendee profiles — directly to AI tools. HubSpot's MCP server reached general availability the same month, and Microsoft's Work IQ expanded its public preview across M365 services. But most core event platforms — Cvent, Bizzabo, Hopin, virtual event tools, venue management, attendee engagement — still have no MCP presence. The opportunity for integration remains massive.
 
 This guide is research-based. We survey what MCP servers exist across the event management landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
@@ -49,7 +49,7 @@ Eventbrite has at least three community MCP servers. joshuachestang/eventbrite-m
 
 ### Luma Events MCP — Modern Event Creation
 
-**montaguegabe/luma-events-mcp** | 3 stars | Python
+**montaguegabe/luma-events-mcp** | 5 stars | Python
 
 According to documentation, this server creates, updates, and manages events and guests via the Luma API. Luma (lu.ma) has gained significant adoption for tech community events and product launches. Registration mode support is not yet implemented. An Apify-hosted scraper also provides MCP-compatible lu.ma event data extraction for discovery use cases.
 
@@ -58,6 +58,12 @@ According to documentation, this server creates, updates, and manages events and
 **the-events-calendar/mcp-server** | 1 star | TypeScript | **OFFICIAL VENDOR**
 
 Notable as one of the few official vendor MCP servers in the event space. Published on npm as `@the-events-calendar/mcp-server`, it provides unified CRUD operations for events, venues, organizers, and RSVP/tickets within WordPress. Requires The Events Calendar 6.15+ and Event Tickets 5.26+. With 184 commits, it shows active development and commitment from the vendor. This is significant for the large number of organizations running events through WordPress.
+
+### Swoogo MCP Server — First Event Platform with Native MCP
+
+**Swoogo** | Proprietary SaaS | **OFFICIAL VENDOR — NEW (April 6, 2026)**
+
+A landmark for the event MCP ecosystem: Swoogo became the first event management platform to launch a native MCP server. According to Swoogo's announcement, the server connects live event data to AI tools including Claude, ChatGPT, Gemini, and coding platforms like Cursor and Replit. Capabilities include conversational access to registrations, session capacity, and attendee profiles; AI-powered event site building (what Swoogo brands as "vibe coding" branded event sites); and cross-event intelligence across entire event portfolios. The server is free for all Swoogo customers through Summer 2026, after which it becomes a paid feature. A live demo is scheduled at Boldpush's AI for Events Demo Day on April 30, 2026. While Swoogo is not as large as Cvent or Bizzabo, this is the first time any event management platform has offered native MCP integration — a signal that the broader event industry is beginning to recognize MCP's potential.
 
 ### SeatGeek MCP Server — Secondary Market Events
 
@@ -81,27 +87,27 @@ The clear leader in the entire event MCP space. According to documentation, vers
 
 ### Apple Calendar MCP — macOS Native Integration
 
-**Omar-V2/mcp-ical** | 287 stars | Python
+**Omar-V2/mcp-ical** | 299 stars | Python
 
 A strong implementation for the macOS ecosystem. According to documentation, it provides natural language event creation, smart scheduling, multi-calendar support including Google Calendar integration, and recurring event management — all through PyObjC bridging to macOS Calendar. Additional implementations include somethingwithproof/calendar-mcp and a `calendar-app-mcp` PyPI package for Calendar.app events and reminders.
 
 ### CalDAV MCP Servers — Protocol-Level Calendar Access
 
-**dominik1001/caldav-mcp** | 58 stars | TypeScript
+**dominik1001/caldav-mcp** | 62 stars | TypeScript
 
-Works with any CalDAV-compatible server, making it platform-agnostic. According to documentation, version 0.4.0 (February 2026) provides create/list/delete events and list calendars. A more feature-rich alternative, democratize-technology/chronos-mcp (15 stars, Python), uses FastMCP 2.0 and provides multi-account CalDAV support, full CRUD, recurring events, attendees, alarms, VTODO, VJOURNAL, full-text search, bulk operations, and security features. CalDAV servers are particularly valuable for organizations using self-hosted calendar systems.
+Works with any CalDAV-compatible server, making it platform-agnostic. Version 0.5.0 (April 9, 2026) added an update-event tool, etag verification before deletion, and biome code formatting — a meaningful step toward full CRUD. A more feature-rich alternative, democratize-technology/chronos-mcp (15 stars, Python), uses FastMCP 2.0 and provides multi-account CalDAV support, full CRUD, recurring events, attendees, alarms, VTODO, VJOURNAL, full-text search, bulk operations, and security features. CalDAV servers are particularly valuable for organizations using self-hosted calendar systems.
 
 ### Microsoft Outlook Calendar MCP — Enterprise Scheduling
 
-**merajmehrabi/Outlook_Calendar_MCP** | 35 stars | JavaScript
+**merajmehrabi/Outlook_Calendar_MCP** | 37 stars | JavaScript
 
 According to documentation, it provides event viewing and management, free slot finding, optimal meeting time identification, and multiple calendar support on Windows. Workato offers an enterprise-grade alternative with production-level features including cross-attendee availability checking across time zones, Teams meeting link creation, recurring series management, and shared/delegate calendar access.
 
 ### Microsoft Work IQ — Official Microsoft MCP
 
-**microsoft/work-iq** | TypeScript | **OFFICIAL MICROSOFT (Preview)**
+**microsoft/work-iq** | 727 stars | TypeScript | **OFFICIAL MICROSOFT (Public Preview)**
 
-Microsoft's official MCP server for M365 integration, available as `@microsoft/workiq` on npm. According to documentation, calendar tools include create, list, update, and delete events, accept/decline invitations, and conflict resolution. Part of a broader M365 integration covering emails, meetings, Teams, and documents. Implements MCP spec 2025-12-11. This official backing from Microsoft signals enterprise readiness for MCP-based calendar integration.
+Microsoft's official MCP server for M365 integration, available as `@microsoft/workiq` on npm. The public preview now includes dedicated MCP servers for Mail, Calendar, and Teams, plus support for custom servers. Calendar tools include create, list, update, and delete events, accept/decline invitations, and conflict resolution. The broader M365 integration covers emails, meetings, Teams messages, and documents — all queryable via natural language with enterprise-grade security and scoped permissions. In April 2026, Satya Nadella announced Word Copilot integration using Work IQ for tracked changes and enterprise context. Dynamics 365 integration (with Dataverse) is also in public preview for Power Apps, Dynamics 365 Sales, and Customer Service. Microsoft's M365 E7 suite launched to integrate AI agents with Work IQ. This expanding scope signals that MCP-based enterprise calendar and event coordination is moving toward production readiness.
 
 ### Calendly and Cal.com MCP Servers — Scheduling Links
 
@@ -121,9 +127,9 @@ Video conferencing is essential infrastructure for virtual and hybrid events. Th
 
 ### Microsoft Teams MCP — Comprehensive Team Integration
 
-**floriscornel/teams-mcp** | 74 stars | TypeScript
+**floriscornel/teams-mcp** | 84 stars | TypeScript
 
-The most comprehensive Teams MCP implementation. According to documentation, it provides OAuth 2.0 authentication, user search, Teams/channel management, messaging (send/edit/delete), file upload, KQL search, rich markdown formatting, and a read-only mode for safe exploration. With 138 commits, it is actively maintained. InditexTech/mcp-teams-server adds message reading, creation, and member mentions. ITSpecialist111/MicrosoftGraph_Transcript_MCP focuses specifically on Teams meeting transcripts via Graph API with On-Behalf-Of authentication.
+The most comprehensive Teams MCP implementation. Version 1.0.0 (March 29, 2026) migrated to registerTool() with annotations and added message reactions support. According to documentation, it provides OAuth 2.0 authentication, user search, Teams/channel management, messaging (send/edit/delete/react), file upload, KQL search, rich markdown formatting, and a read-only mode for safe exploration. With 162 commits, it is actively maintained. InditexTech/mcp-teams-server adds message reading, creation, and member mentions. ITSpecialist111/MicrosoftGraph_Transcript_MCP focuses specifically on Teams meeting transcripts via Graph API with On-Behalf-Of authentication.
 
 ### Zoom MCP Servers — Video Meeting Management
 
@@ -133,7 +139,7 @@ According to documentation, it uses Server-to-Server OAuth 2.0 for user info, me
 
 ### Multi-Platform Meeting Intelligence
 
-**Meeting-BaaS/meeting-mcp** | 26 stars | TypeScript
+**Meeting-BaaS/meeting-mcp** | 27 stars | TypeScript
 
 A platform-agnostic meeting intelligence server. According to documentation, it provides meeting bot creation, transcript search, calendar integration, recording management, QR code bot avatars, key moment detection, and shareable links. With 56 commits, it is actively developed. tldv-public/tldv-mcp-server (9 stars, TypeScript) from the tl;dv company provides the first multi-platform meeting MCP covering Google Meet, Zoom, and Teams with platform-agnostic transcripts and AI-generated highlights. ChatterBoxIO/chatterboxio-mcp-server (8 stars) joins meetings across platforms to capture transcripts and generate summaries.
 
@@ -155,13 +161,13 @@ The first marketing automation platform to officially embrace MCP. Available as 
 
 ### HubSpot MCP — Official CRM and Marketing
 
-**HubSpot Official** | **OFFICIAL VENDOR**
+**HubSpot Official** | **OFFICIAL VENDOR — GA (April 13, 2026)**
 
-HubSpot provides an official MCP server for secure CRM data access, plus a Developer MCP server for the HubSpot Developer Platform. Available at developers.hubspot.com/mcp. Given HubSpot's widespread use for event marketing, lead capture, and attendee lifecycle management, official MCP support is significant.
+HubSpot's remote MCP server reached general availability on April 13, 2026 — no longer in beta. Expanded capabilities include read-only access to campaigns, landing pages, website pages, and blog posts, plus write access to CRM objects (Contacts, Companies, Deals, Tickets, Line Items, Products, Engagements). HubSpot also launched a self-service MCP Auth Apps tool in its Developer Platform for building custom AI connectors with OAuth 2.1, and a local Developer MCP server (also GA) that works with Claude Code and Cursor for building HubSpot apps via natural language. Available at developers.hubspot.com/mcp. Given HubSpot's widespread use for event marketing, lead capture, and attendee lifecycle management, this GA milestone with expanded write access is significant.
 
 ### SendGrid MCP — Transactional and Marketing Email
 
-**Garoth/sendgrid-mcp** | 24 stars | TypeScript
+**Garoth/sendgrid-mcp** | 26 stars | TypeScript
 
 According to documentation, it provides SendGrid v3 Marketing API access including contact lists, templates, single sends, and statistics. Useful for event confirmation emails, ticket delivery, and marketing campaigns.
 
@@ -354,34 +360,35 @@ Post-event analysis is where most organizations lose momentum. This pattern capt
 | Server | Stars | Category | Official? | Key Strength |
 |--------|-------|----------|-----------|-------------|
 | nspady/google-calendar-mcp | 1,100 | Calendar | Community | 12 tools, multi-account, dominant |
-| Omar-V2/mcp-ical | 287 | Calendar | Community | macOS native, natural language |
-| floriscornel/teams-mcp | 74 | Video/Messaging | Community | Full Teams API, 138 commits |
-| dominik1001/caldav-mcp | 58 | Calendar | Community | Platform-agnostic CalDAV |
-| merajmehrabi/Outlook_Calendar_MCP | 35 | Calendar | Community | Outlook native, free slot finding |
-| Meeting-BaaS/meeting-mcp | 26 | Meeting Intel | Community | Multi-platform bots, transcripts |
+| microsoft/work-iq | 727 | Calendar/M365 | **Official** | M365 Mail+Calendar+Teams MCP |
+| Omar-V2/mcp-ical | 299 | Calendar | Community | macOS native, natural language |
+| floriscornel/teams-mcp | 84 | Video/Messaging | Community | Full Teams API, v1.0.0, 162 commits |
+| dominik1001/caldav-mcp | 62 | Calendar | Community | Platform-agnostic CalDAV, v0.5.0 |
+| merajmehrabi/Outlook_Calendar_MCP | 37 | Calendar | Community | Outlook native, free slot finding |
+| Meeting-BaaS/meeting-mcp | 27 | Meeting Intel | Community | Multi-platform bots, transcripts |
 | echelon-ai-labs/zoom-mcp | 26 | Video | Community | S2S OAuth, recordings |
+| Garoth/sendgrid-mcp | 26 | Email | Community | Marketing API, templates |
 | delorenj/mcp-server-ticketmaster | 24 | Ticketing | Community | Event search, pricing, URLs |
-| Garoth/sendgrid-mcp | 24 | Email | Community | Marketing API, templates |
-| democratize-technology/chronos-mcp | 15 | Calendar | Community | CalDAV, VTODO, bulk ops |
-| Dot-Fun/fathom-mcp | 12 | Meeting Notes | Community | AI summaries, webhooks |
+| democratize-technology/chronos-mcp | 16 | Calendar | Community | CalDAV, VTODO, bulk ops |
+| Dot-Fun/fathom-mcp | 14 | Meeting Notes | Community | AI summaries, webhooks |
 | mailgun/mailjet-mcp-server | 10 | Email | **Official** | Mailjet/Mailgun vendor |
 | tldv-public/tldv-mcp-server | 9 | Meeting Intel | Semi-official | Meet+Zoom+Teams transcripts |
 | universal-mcp/calendly | 6 | Scheduling | Community | Calendly API integration |
-| montaguegabe/luma-events-mcp | 3 | Events | Community | Luma event management |
+| montaguegabe/luma-events-mcp | 5 | Events | Community | Luma event management |
 | joshuachestang/eventbrite-mcp-server | 2 | Ticketing | Community | Full CRUD + publish |
 | the-events-calendar/mcp-server | 1 | Events | **Official** | WordPress events, 184 commits |
-| microsoft/work-iq | — | Calendar/M365 | **Official** | Microsoft M365 integration |
+| Swoogo Official | — | Events | **Official** | First event platform with native MCP |
 | ActiveCampaign Official | — | Marketing | **Official** | Live automation triggers |
-| HubSpot Official | — | CRM/Marketing | **Official** | CRM + developer platform |
+| HubSpot Official | — | CRM/Marketing | **Official** | CRM + dev platform, GA Apr 2026 |
 | Stripe Official | — | Payments | **Official** | PCI-compliant payments |
 
 ## Ecosystem Gaps: What Is Missing
 
 The event management MCP ecosystem has massive gaps despite strong calendar and video coverage.
 
-### Event Planning Platforms — Zero Official MCP Servers
+### Event Planning Platforms — Swoogo Breaks the Ice
 
-No major event planning platform has released an official MCP server:
+For most of MCP's history, no event planning platform had released an official MCP server. That changed on April 6, 2026 when **Swoogo launched a native MCP server** — the first event management platform to do so. But Swoogo is a mid-market player. The largest platforms still have no MCP:
 
 - **Cvent** — market leader in enterprise events, no MCP
 - **Bizzabo** — Gartner Leader two consecutive years, no MCP
@@ -390,7 +397,7 @@ No major event planning platform has released an official MCP server:
 - **vFairs** — 3D virtual event environments, no MCP
 - **Airmeet** — virtual networking events, no MCP
 
-This is the single biggest gap. These platforms hold the core event data — registrations, agendas, speakers, sponsors, exhibitors — that AI agents need to orchestrate events effectively.
+Swoogo's move is a signal — one platform has demonstrated that native MCP for event data is viable and valuable. But the largest enterprise platforms still hold the core event data — registrations, agendas, speakers, sponsors, exhibitors — that AI agents need to orchestrate events at scale.
 
 ### Virtual Event Platforms — No Dedicated MCP Servers
 
@@ -460,7 +467,7 @@ Privacy regulations apply based on **where the attendee resides**, not where the
 
 A critical and evolving regulatory area:
 
-- **April 24, 2026 deadline**: Public entities in areas with 50,000+ population must comply with ADA Title II requiring WCAG 2.1 Level AA for web and video content, including live and recorded events.
+- **April 24, 2026 deadline**: Public entities in areas with 50,000+ population must comply with ADA Title II requiring WCAG 2.1 Level AA for web and video content, including live and recorded events. This deadline is imminent. The DOJ submitted a revised rule to OIRA as an Interim Final Rule in February 2026, and OMB concluded its review on April 7, 2026 — but no formal extension or delay has been published. Private ADA lawsuits (8,667 filed in 2025) continue regardless of federal enforcement posture.
 - **April 26, 2027**: Smaller entities must comply.
 - **European Accessibility Act**: Effective June 2025, requiring accessible digital services across EU member states aligned with WCAG 2.1 AA.
 - **Practical implications**: Real-time captioning, ASL interpretation, accessible registration forms, multiple participation modes, and accessible mobile apps. Auto-generated captions often fail to meet professional accuracy standards required by WCAG.
@@ -510,12 +517,12 @@ The event MCP space has enormous gaps to fill. High-impact server opportunities 
 
 ## What Comes Next
 
-The event management MCP ecosystem is at an early but promising stage. Calendar and scheduling integration is remarkably mature — the 1,100-star Google Calendar MCP server rivals the best in any MCP category. Video conferencing and meeting intelligence are well-served. Email marketing has multiple official vendor MCP servers.
+The event management MCP ecosystem is at an early but increasingly promising stage. Calendar and scheduling integration is remarkably mature — the 1,100-star Google Calendar MCP server rivals the best in any MCP category. Microsoft's Work IQ (727 stars) is expanding its M365 MCP coverage across Mail, Calendar, and Teams. Video conferencing and meeting intelligence are well-served. Email marketing has multiple official vendor MCP servers, with HubSpot reaching GA in April 2026.
 
-But the core of event management — the platforms where events are actually planned, ticketed, and experienced — remains almost entirely disconnected from MCP. No major event planning platform (Cvent, Bizzabo, Splash), no virtual event platform (Hopin, vFairs, ON24), no attendee engagement tool (Slido, Mentimeter), and no venue management system has an MCP server.
+The biggest development in April 2026: Swoogo became the first event management platform to launch a native MCP server, connecting live event data directly to AI tools. This is a milestone — it proves the concept of MCP-connected event platforms is viable. But the largest platforms (Cvent, Bizzabo, Splash), virtual event platforms (Hopin, vFairs, ON24), attendee engagement tools (Slido, Mentimeter), and venue management systems still have no MCP presence.
 
-The market dynamics suggest this will change. With 95% of surveyed event teams expecting AI usage to increase in 2026 (Bizzabo), and the event software market growing at 17.4% CAGR, the demand for AI-connected event tools is clear. When event platforms begin adopting MCP, AI agents will be able to orchestrate the complete event lifecycle — from initial concept through post-event analysis — through a single interface.
+The market dynamics suggest broader adoption is coming. A 2026 Groupize survey found 51%+ of enterprise executives now have formal company-wide AI strategies, with 63% identifying industry-specific AI solutions as critical accelerators. With the event software market growing at 17.4% CAGR and Swoogo demonstrating what native event MCP looks like, the question is no longer whether event platforms will adopt MCP, but when.
 
-For now, the practical approach is to compose the available tools: strong calendar integration as the scheduling backbone, video conferencing for session delivery, email marketing for attendee communication, and payment processing for revenue — building event AI workflows from the outside in while waiting for the core platforms to join the ecosystem.
+For now, the practical approach is to compose the available tools: strong calendar integration as the scheduling backbone, video conferencing for session delivery, email marketing for attendee communication, and payment processing for revenue — building event AI workflows from the outside in while Swoogo's example encourages other platforms to follow.
 
 For more on building MCP integrations, see our [guide to building MCP servers](/guides/build-your-first-mcp-server/), the [MCP server directory](/reviews/), and our guides on [MCP and CRM/customer service](/guides/mcp-crm-customer-service/) and [MCP workflow orchestration](/guides/mcp-workflow-orchestration-frameworks/).

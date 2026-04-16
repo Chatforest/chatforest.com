@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCP and AI Frameworks: How LangChain, LangGraph, CrewAI, LlamaIndex, and 10&#43; Frameworks Integrate the Model Context Protocol — ChatForest</title>
-  <meta name="description" content="A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain&#39;s langchain-mcp-adapters (v0.2.2), LangGraph Agent Server&#39;s bidirectional MCP">
+  <meta name="description" content="A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain&#39;s langchain-mcp-adapters (v0.2.2), Microsoft Agent Framework 1.0 GA, Spring AI 2.0, LangGraph Agent Server&#39;s bidirectional MCP">
   <meta property="og:title" content="MCP and AI Frameworks: How LangChain, LangGraph, CrewAI, LlamaIndex, and 10&#43; Frameworks Integrate the Model Context Protocol — ChatForest">
-  <meta property="og:description" content="A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain&#39;s langchain-mcp-adapters (v0.2.2), LangGraph Agent Server&#39;s bidirectional MCP">
+  <meta property="og:description" content="A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain&#39;s langchain-mcp-adapters (v0.2.2), Microsoft Agent Framework 1.0 GA, Spring AI 2.0, LangGraph Agent Server&#39;s bidirectional MCP">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/guides/mcp-ai-frameworks-langchain-langgraph-crewai/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MCP and AI Frameworks: How LangChain, LangGraph, CrewAI, LlamaIndex, and 10&#43; Frameworks Integrate the Model Context Protocol — ChatForest">
-  <meta name="twitter:description" content="A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain&#39;s langchain-mcp-adapters (v0.2.2), LangGraph Agent Server&#39;s bidirectional MCP">
+  <meta name="twitter:description" content="A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain&#39;s langchain-mcp-adapters (v0.2.2), Microsoft Agent Framework 1.0 GA, Spring AI 2.0, LangGraph Agent Server&#39;s bidirectional MCP">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/guides/mcp-ai-frameworks-langchain-langgraph-crewai/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 29, 2026 · Updated Mar 29, 2026</span>
+        <span>Published Mar 29, 2026 · Updated Apr 16, 2026</span>
       </div>
 
       <h1 class="article-title">MCP and AI Frameworks: How LangChain, LangGraph, CrewAI, LlamaIndex, and 10&#43; Frameworks Integrate the Model Context Protocol</h1>
@@ -149,7 +149,7 @@
 <tr>
 <td><strong>Haystack</strong></td>
 <td><code>mcp-haystack</code></td>
-<td>—</td>
+<td>v2.25+</td>
 <td>Streamable HTTP, stdio</td>
 <td>Yes</td>
 <td>Yes (Hayhooks)</td>
@@ -158,23 +158,23 @@
 <tr>
 <td><strong>Spring AI</strong></td>
 <td><code>spring-ai-starter-mcp-client</code></td>
-<td>1.1+</td>
+<td>2.0.0-M3</td>
 <td>stdio, SSE, Streamable HTTP</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Java</td>
 </tr>
 <tr>
-<td><strong>Semantic Kernel</strong></td>
-<td><code>ModelContextProtocol</code> NuGet</td>
-<td>—</td>
-<td>stdio</td>
+<td><strong>Microsoft Agent Framework</strong></td>
+<td>Built-in (formerly <code>ModelContextProtocol</code> NuGet)</td>
+<td>1.0 GA</td>
+<td>stdio, SSE, Streamable HTTP</td>
 <td>Yes</td>
-<td>Yes (Agent Framework)</td>
-<td>C# / .NET</td>
+<td>Yes (A2A + MCP)</td>
+<td>C# / .NET, Python</td>
 </tr>
 <tr>
-<td><strong>AutoGen / AG2</strong></td>
+<td><strong>AG2 (AutoGen)</strong></td>
 <td><code>autogen-ext-mcp</code></td>
 <td>—</td>
 <td>stdio, SSE</td>
@@ -264,7 +264,7 @@ tools <span style="color:#f92672">=</span> await load_mcp_tools(session, interce
     await session<span style="color:#f92672">.</span>call_tool(<span style="color:#e6db74">&#34;connect&#34;</span>, {<span style="color:#e6db74">&#34;database&#34;</span>: <span style="color:#e6db74">&#34;mydb&#34;</span>})
     result <span style="color:#f92672">=</span> await session<span style="color:#f92672">.</span>call_tool(<span style="color:#e6db74">&#34;query&#34;</span>, {<span style="color:#e6db74">&#34;sql&#34;</span>: <span style="color:#e6db74">&#34;SELECT * FROM users&#34;</span>})
 </code></pre></div><h3 id="javascript--typescript">JavaScript / TypeScript</h3>
-<p>The JavaScript counterpart lives in the LangChain.js monorepo as <a href="https://www.npmjs.com/package/@langchain/mcp-adapters"><code>@langchain/mcp-adapters</code></a> (v0.6.0). It provides the same multi-server client, stdio and SSE transport support, custom headers, and reconnection strategies, targeting Node.js and edge runtime environments.</p>
+<p>The JavaScript counterpart lives in the LangChain.js monorepo as <a href="https://www.npmjs.com/package/@langchain/mcp-adapters"><code>@langchain/mcp-adapters</code></a> (v1.1.3, February 2026). It provides the same multi-server client, stdio and SSE transport support, custom headers, and reconnection strategies, targeting Node.js and edge runtime environments. The jump from 0.x to 1.x reflects API stabilization.</p>
 <h3 id="release-history">Release History</h3>
 <table>
 <thead>
@@ -475,7 +475,15 @@ mcp_server<span style="color:#f92672">.</span>run()  <span style="color:#75715e"
   <span style="color:#a6e22e">agents</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">myAgent</span>],
   <span style="color:#a6e22e">workflows</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">myWorkflow</span>],
 });
-</code></pre></div><p>The deep Next.js and Vercel integration makes Mastra particularly well-suited for web applications that need to expose AI capabilities via MCP.</p>
+</code></pre></div><h3 id="recent-enhancements-march-2026">Recent Enhancements (March 2026)</h3>
+<p>Mastra&rsquo;s MCP support has matured significantly in early 2026:</p>
+<ul>
+<li><strong>MCP tracing</strong>: Tool calls now emit a dedicated <code>MCP_TOOL_CALL</code> span type (instead of generic <code>TOOL_CALL</code>) with server name, version, and tool description as span attributes — improving observability in production</li>
+<li><strong>Per-server diagnostics</strong>: <code>@mastra/mcp</code> now includes operational controls for multi-server toolchains — <code>reconnectServer()</code> to restart a single server without restarting everything, <code>listToolsetsWithErrors()</code> to surface per-server errors, and <code>getServerStderr()</code> to inspect captured stderr from stdio servers</li>
+<li><strong>Serverless MCP</strong>: Server adapters (Express, Fastify, Hono, Koa) accept <code>mcpOptions</code> including <code>serverless: true</code> for stateless MCP HTTP transport in environments like Cloudflare Workers and Vercel Edge</li>
+<li><strong>Namespace organization</strong>: Context properties organized into <code>context.agent</code>, <code>context.workflow</code>, and <code>context.mcp</code> namespaces</li>
+</ul>
+<p>The deep Next.js and Vercel integration makes Mastra particularly well-suited for web applications that need to expose AI capabilities via MCP.</p>
 <h2 id="pydanticai-three-integration-paths">PydanticAI: Three Integration Paths</h2>
 <p><a href="https://ai.pydantic.dev/">PydanticAI</a> offers three distinct approaches to MCP integration, reflecting different architectural preferences:</p>
 <ol>
@@ -489,6 +497,7 @@ server <span style="color:#f92672">=</span> MCPServer(<span style="color:#e6db74
 agent <span style="color:#f92672">=</span> Agent(<span style="color:#e6db74">&#34;openai:gpt-4o&#34;</span>, mcp_servers<span style="color:#f92672">=</span>[server])
 result <span style="color:#f92672">=</span> await agent<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#34;List available tools&#34;</span>)
 </code></pre></div><p><strong>Notable</strong>: PydanticAI has explicitly <strong>deprecated SSE transport</strong> in favor of Streamable HTTP, making it one of the first frameworks to fully commit to the newer transport. This signals the direction the broader ecosystem is heading.</p>
+<p><strong>v1.80.0 (April 10, 2026)</strong> added server-side compaction support via <code>OpenAICompaction</code> and <code>AnthropicCompaction</code> capabilities, CapabilityOrdering for hook composition (<code>innermost</code>, <code>outermost</code>, <code>wraps</code>, <code>wrapped_by</code>, <code>requires</code>), and made MCP optional for DBOS module import — improving modularity for deployments that don&rsquo;t need MCP.</p>
 <p>Supported transports: stdio and Streamable HTTP (SSE deprecated).</p>
 <h2 id="dspy-declarative-mcp-tools">DSPy: Declarative MCP Tools</h2>
 <p><a href="https://dspy.ai/">DSPy</a> integrates MCP tools into its declarative programming model:</p>
@@ -511,6 +520,9 @@ tool <span style="color:#f92672">=</span> MCPTool(server_info<span style="color:
 <span style="color:#75715e"># Use in Haystack pipeline</span>
 pipeline<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;search_tool&#34;</span>, tool)
 </code></pre></div><p>The bidirectional story comes through <strong>Hayhooks</strong> — a single command can expose any Haystack pipeline as an MCP server, making it accessible to Claude Desktop, Cursor, or any MCP client. This was announced in May 2025 and represents one of the earliest framework-to-MCP-server bridges.</p>
+<h3 id="searchabletoolset-haystack-225-februaryapril-2026">SearchableToolset (Haystack 2.25, February–April 2026)</h3>
+<p>For agents with large tool catalogs — common when connecting multiple MCP servers via <code>MCPToolset</code> — Haystack 2.25 introduced <strong>SearchableToolset</strong>. Instead of exposing all tools upfront (which wastes context and confuses tool selection), agents start with a single <code>search_tools</code> function and dynamically discover relevant tools using BM25-based keyword search. By combining <code>MCPToolset</code> with <code>SearchableToolset</code>, agents load only the tools they need at runtime.</p>
+<p>Haystack also now supports native OpenAI and MCP tool formats alongside its own <code>Tool</code> and <code>Toolset</code> objects, reducing conversion boilerplate. The latest release is v2.25.2 (April 1, 2026).</p>
 <h2 id="spring-ai-enterprise-java-mcp">Spring AI: Enterprise Java MCP</h2>
 <p><a href="https://spring.io/projects/spring-ai">Spring AI</a> was an early MCP adopter in the Java ecosystem, shipping full MCP support with <strong>Spring AI 1.1 GA</strong> in November 2025. Spring was also a contributor to the official MCP Java SDK.</p>
 <h3 id="configuration">Configuration</h3>
@@ -531,21 +543,39 @@ pipeline<span style="color:#f92672">.</span>add_component(<span style="color:#e6
 <li><strong>Boot starters</strong>: <code>spring-ai-starter-mcp-client</code> for stdio and Servlet-based transports, <code>spring-ai-starter-mcp-client-webflux</code> for reactive applications</li>
 <li><strong>Annotation-driven</strong>: Expose any Spring bean method as an MCP tool with a single annotation</li>
 <li><strong>YAML configuration</strong>: Consume external MCP servers via standard Spring configuration</li>
-<li><strong>Based on MCP Java SDK v0.14</strong>, protocol version 2025-06-18</li>
 <li><strong>Bidirectional</strong>: Server starters let Spring AI applications expose their own MCP endpoints</li>
 </ul>
+<h3 id="spring-ai-200-m3-march-17-2026--breaking-changes">Spring AI 2.0.0-M3 (March 17, 2026) — Breaking Changes</h3>
+<p>Spring AI 2.0.0-M3 includes significant MCP-related breaking changes that developers should plan for:</p>
+<ul>
+<li><strong>MCP annotation package rename</strong>: Annotations moved from the community package (<code>org.springaicommunity.mcp</code>) into Spring AI core (<code>org.springframework.ai.mcp.annotation</code>)</li>
+<li><strong>MCP transport artifact relocation</strong>: Spring-specific MCP transport implementations moved from the MCP Java SDK (<code>io.modelcontextprotocol.sdk</code>) into the Spring AI project (<code>org.springframework.ai.mcp</code>)</li>
+<li><strong>Client customizer consolidation</strong>: <code>McpAsyncClientCustomizer</code> and <code>McpSyncClientCustomizer</code> removed, replaced by a single generic <code>McpClientCustomizer&lt;B&gt;</code> interface</li>
+<li><strong>Jackson 2 → Jackson 3 migration</strong>: Affects all serialization, including MCP tool schemas</li>
+<li><strong>Security fixes</strong>: CVE-2026-22729 and CVE-2026-22730 patched</li>
+</ul>
+<p>These changes consolidate MCP deeper into the Spring AI project rather than relying on external dependencies. The 1.1.3 maintenance release is also available for teams not ready to migrate.</p>
 <p>Spring AI&rsquo;s MCP support targets enterprise Java teams who want to integrate AI tool use into existing Spring Boot applications without rewriting infrastructure.</p>
-<h2 id="microsoft-ecosystem-semantic-kernel--autogen--agent-framework">Microsoft Ecosystem: Semantic Kernel + AutoGen → Agent Framework</h2>
-<p>Microsoft&rsquo;s MCP story is in transition. <strong>Semantic Kernel</strong> and <strong>AutoGen</strong> both support MCP, but Microsoft is merging them into the unified <strong>Microsoft Agent Framework</strong> (RC 1.0 released February 19, 2026, GA targeted end of Q1 2026).</p>
-<h3 id="semantic-kernel-mcp">Semantic Kernel MCP</h3>
-<p>Uses the <code>ModelContextProtocol</code> NuGet package to convert MCP tools to Semantic Kernel functions:</p>
+<h2 id="microsoft-agent-framework-10-ga-april-7-2026">Microsoft Agent Framework 1.0 (GA April 7, 2026)</h2>
+<p>Microsoft shipped <strong>Agent Framework 1.0</strong> on April 7, 2026, unifying Semantic Kernel and AutoGen into a single production-ready SDK for both .NET and Python. This is the framework that replaces the separate Semantic Kernel and AutoGen MCP approaches.</p>
+<h3 id="built-in-mcp-support">Built-in MCP Support</h3>
+<p>Agent Framework 1.0 includes a built-in MCP client — agents can discover and invoke tools from any MCP-compliant server without additional packages. The same community MCP servers that work with Claude Code, Cursor, and other tools work here without modification.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> tools = <span style="color:#66d9ef">await</span> mcpClient.ListToolsAsync();
 kernel.Plugins.AddFromFunctions(<span style="color:#e6db74">&#34;GitHub&#34;</span>,
     tools.Select(t =&gt; t.AsKernelFunction()));
-</code></pre></div><p>The <code>AsKernelFunction()</code> extension method (available since Microsoft.SemanticKernel.Core 1.44.0) handles the conversion from MCP tool schemas to SK function definitions.</p>
+</code></pre></div><p>The <code>AsKernelFunction()</code> extension method (available since Microsoft.SemanticKernel.Core 1.44.0) handles the conversion from MCP tool schemas to Agent Framework function definitions.</p>
+<h3 id="a2a-protocol-support">A2A Protocol Support</h3>
+<p>Agent Framework 1.0 also supports the A2A (Agent-to-Agent) protocol for cross-runtime agent collaboration — agents can coordinate with agents running in other frameworks using structured, protocol-driven messaging. This makes it one of the few frameworks supporting both MCP (tool access) and A2A (agent coordination) natively.</p>
+<h3 id="key-features-1">Key Features</h3>
+<ul>
+<li><strong>Multi-agent orchestration</strong>: Graph-based workflows for explicit multi-agent execution paths</li>
+<li><strong>Multi-provider model support</strong>: OpenAI, Anthropic, Google, and others</li>
+<li><strong>DevUI</strong>: Browser-based local debugger for visualizing agent execution, message flows, tool calls, and orchestration decisions in real time</li>
+<li><strong>State management</strong>: Session-based state for long-running and human-in-the-loop scenarios</li>
+<li><strong>Stable APIs</strong>: Production-ready with a commitment to long-term support</li>
+</ul>
 <h3 id="autogen--ag2">AutoGen / AG2</h3>
-<p>The <code>autogen-ext-mcp</code> PyPI package (released January 2025) bridges AutoGen tool calls to MCP requests. The community fork AG2 extends this with AgentOS, supporting both A2A (agent-to-agent) and MCP protocols.</p>
-<p>As the Agent Framework reaches GA, expect a unified MCP integration surface that replaces the current Semantic Kernel and AutoGen approaches.</p>
+<p>The community fork <strong>AG2</strong> (formerly AutoGen) continues independently as &ldquo;The Open-Source AgentOS.&rdquo; AG2 completed a ground-up rewrite (AG2 Beta / <code>autogen.beta</code>) with streaming, event-driven architecture, and multi-provider LLM support. It supports both A2A and MCP protocols with enterprise security. The <code>autogen-ext-mcp</code> package bridges AG2 tool calls to MCP requests.</p>
 <h2 id="cross-framework-patterns">Cross-Framework Patterns</h2>
 <p>Several architectural patterns emerge across the framework ecosystem:</p>
 <h3 id="pattern-1-tool-conversion">Pattern 1: Tool Conversion</h3>
@@ -562,6 +592,7 @@ kernel.Plugins.AddFromFunctions(<span style="color:#e6db74">&#34;GitHub&#34;</sp
 <li><strong>Haystack</strong> → Hayhooks exposes pipelines as MCP servers</li>
 <li><strong>Mastra</strong> → <code>MCPServer</code> class exposes tools, agents, and workflows</li>
 <li><strong>Spring AI</strong> → server starters expose Spring beans as MCP tools</li>
+<li><strong>Microsoft Agent Framework</strong> → bidirectional via A2A + MCP</li>
 </ul>
 <p>This creates composable architectures where framework A&rsquo;s agent can consume framework B&rsquo;s pipeline via MCP, without either framework knowing about the other.</p>
 <h3 id="pattern-4-transport-migration">Pattern 4: Transport Migration</h3>
@@ -609,7 +640,7 @@ kernel.Plugins.AddFromFunctions(<span style="color:#e6db74">&#34;GitHub&#34;</sp
 <li><a href="/guides/best-cloud-mcp-servers/">Best Cloud MCP Servers</a> — MCP servers for cloud platforms</li>
 <li><a href="/guides/ai-coding-assistants-compared/">AI Coding Assistants Compared</a> — how coding tools use MCP</li>
 </ul>
-<p><em>Last updated: March 29, 2026</em></p>
+<p><em>Last updated: April 16, 2026</em></p>
 
       </div>
 
@@ -660,7 +691,7 @@ kernel.Plugins.AddFromFunctions(<span style="color:#e6db74">&#34;GitHub&#34;</sp
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-29T00:00:00+09:00","datePublished":"2026-03-29T18:00:00+09:00","description":"A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain's langchain-mcp-adapters (v0.2.2), LangGraph Agent Server's bidirectional MCP","headline":"MCP and AI Frameworks: How LangChain, LangGraph, CrewAI, LlamaIndex, and 10+ Frameworks Integrate the Model Context Protocol","mainEntityOfPage":"https://chatforest.com/guides/mcp-ai-frameworks-langchain-langgraph-crewai/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-ai-frameworks-langchain-langgraph-crewai/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-16T00:00:00+09:00","datePublished":"2026-03-29T18:00:00+09:00","description":"A comprehensive guide to MCP integration across the AI framework ecosystem — covering LangChain's langchain-mcp-adapters (v0.2.2), Microsoft Agent Framework 1.0 GA, Spring AI 2.0, LangGraph Agent Server's bidirectional MCP","headline":"MCP and AI Frameworks: How LangChain, LangGraph, CrewAI, LlamaIndex, and 10+ Frameworks Integrate the Model Context Protocol","mainEntityOfPage":"https://chatforest.com/guides/mcp-ai-frameworks-langchain-langgraph-crewai/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/mcp-ai-frameworks-langchain-langgraph-crewai/"}
 </script>
 
 
