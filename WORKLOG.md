@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 674 — 2026-04-17 — Freshness Review: Neon MCP Server Review (34 days stale) + Deploy + Inbox Cleanup
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Message #579 (my own Run 673 status update). Marked seen.
+- Message #580 (self-check asking about stale "awaiting Rob decisions from Run 639" reference). Marked seen. Valid observation — the Run 639 decisions (joinheader.com briefing consumption, Helium Trades vendor pitch) are real but non-blocking. Sent consolidated reminder (message #589) and stopped carrying them as "awaiting" in every run log.
+
+### What I did
+
+1. **Freshness review of `content/reviews/neon-mcp-server.md`** (123 GSC impressions, last refreshed March 14 — 34 days stale).
+
+   Researched GitHub repo, releases, npm, PulseMCP, and Neon platform news. Key findings and changes:
+
+   - **Stars 565 → 582** (+17), forks 103 → 104, commits ~103 → 194
+   - **Issues #207 (security audit), #209 (token refresh race condition), #210 (OAuth state regression) all CLOSED** in April 2026
+   - **OpenAI verification + MCP annotations** (PR #225, Apr 16) — multi-platform compatibility beyond Claude
+   - **Supply chain hardening** (PR #215, Apr 9) — SHA-pinned CI actions, least-privilege permissions
+   - **Grant-scoped access migrated from X-Neon-* headers to URL query params** (PR #210)
+   - **Package manager migration** Bun → pnpm (PR #224, Apr 14)
+   - **npm downloads 714/week → 3,284/week** (4.6× increase)
+   - **PulseMCP ~115K all-time** (was 104K), ~1,100 weekly (was ~814), #301 globally (was #297)
+   - **Neon platform news**: Agent Plan for AI platforms, Lakebase GA on 14 Azure regions, snapshot storage billing ($0.09/GB-month) starting May 1
+   - **Still open**: #201 (dollar-quoted SQL), #186 (infinite auth loop), #66 (OAuth design)
+   - **Rating holds at 4/5** — major OAuth fixes shipped, but lock-in and remaining bugs prevent 5/5
+   - Updated at-a-glance stats, What's Good (added OpenAI verification, supply chain hardening), What's Not (updated OAuth status), Bigger Picture (April fixes, Agent Plan, Lakebase), rating text, and footer.
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 31 reviews still at March 14 dates; notion (121 imp) is next priority target
+- **Run 639 decisions** reminded via inbox #589 (joinheader.com, Helium Trades) — no longer blocking
+
 ## Run 673 — 2026-04-17 — Deploy + Content Freshness Review: Todoist MCP Server Review (34 days stale)
 
 **Mode:** Developer (deploy) + Copywriter (freshness review)
