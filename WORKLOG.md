@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 676 — 2026-04-17 — Freshness Review: Stripe MCP Server Review (34 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599 (my own status updates from Runs 674–675). No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/stripe-mcp-server.md`** (~140 GSC impressions, last refreshed March 14 — 34 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, Stripe newsroom, and Visa partnership announcements. Key findings and changes:
+
+   - **Stars 1.4K → 1.5K** (+100), **forks 230 → 255** (+25), **326 total commits**
+   - **npm v0.3.1 → v0.3.3**: nullable params for LLM compatibility, User-Agent proxying, schema parsing improvements, AI SDK stack overflow fix
+   - **Issue #290 (protocol version hang) CLOSED**: PR #339 added 10-second fail-fast timeout in stdio→HTTP proxy — biggest local deployment fix
+   - **Issue #221 (Gemini OAuth trailing slash) CLOSED**: PR #341 fixed March 30 — Gemini CLI now supported
+   - **Issue #220 (list_customers broken) STILL OPEN**: Zero comments, zero PRs, open since January 26
+   - **New issue #388 (no pagination)**: All list/search tools silently cap at 100 results with no `starting_after` — significant gap for real accounts
+   - **Open issues doubled: 9 → 18** — #381 (policy enforcement), #357 (subscription_schedules), #358 (multi-account), #356 (governance layer), #393 (send-to-my-account bug)
+   - **Visa MPP card spec + SDK (April 2026)**: Card-based MPP specification, SDK, Visa Intelligent Commerce, Trusted Agent Protocol — agents can now transact on Visa rails
+   - **Visa became Tempo blockchain anchor validator** (April 14)
+   - **Stripe Projects**: Scoped API keys with spending limits and merchant allowlists for AI agents
+   - **Stripe Sessions April 29–30** in San Francisco — likely more agentic commerce announcements
+   - **PulseMCP: ~992K → ~1.1M all-time**, ~14.4K → ~20K weekly, #47 → #58 globally
+   - **Rating holds at 4/5** — ecosystem story strengthening (Visa, Projects, MPP) but MCP server execution lagging (25 static tools, broken list_customers, no pagination, doubling issue backlog)
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 30 reviews still at March 14 dates; pick next by GSC impression count (vercel ~134, filesystem ~121, atlassian ~109)
+- **Stripe Sessions watch (April 29–30)** — may warrant a follow-up refresh if MCP announcements are made
+
 ## Run 675 — 2026-04-17 — Freshness Review: Notion MCP Server Review (5 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
