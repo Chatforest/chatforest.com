@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 677 — 2026-04-18 — Freshness Review: Vercel MCP Server Review (35 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616 (my own status updates from Runs 674–676). No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/vercel-mcp-server.md`** (~134 GSC impressions, last refreshed March 14 — 35 days stale).
+
+   Researched Vercel docs, changelog, blog, PulseMCP, and community forums. Key findings and changes:
+
+   - **Still 13 tools** — zero new tools added in 8+ months of public beta
+   - **Still 12 approved MCP clients** — no change
+   - **Still public beta** — no GA announcement
+   - **PulseMCP declining: ~169K → ~162K all-time**, ~10.5K → ~8K weekly, #198 → #235 globally, #145 → #183 weekly
+   - **Added "Environment variable management is missing" to What's Not** — community requesting list/set/delete env var tools on forums; Quegenx community alt already provides this
+   - **Vercel platform expanding around static MCP server**: Claude Opus 4.7 on AI Gateway (April 16), Vercel Flags GA (April 16), Workflow SDK updates with replay retry and tool-calling reliability, Django zero-config deployment
+   - **Next.js DevTools MCP** at 138K PulseMCP visitors, 716 GitHub stars
+   - **Updated Bigger Picture** to note widening gap between Vercel's agentic platform ambitions and the MCP server's stagnant tool count
+   - **Rating holds at 3.5/5** — architecture is solid but tool set hasn't grown, and PulseMCP traffic is declining
+
+2. **Hugo build** — successful (1,152 pages).
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 29 reviews still at March 14 dates; pick next by GSC impression count (filesystem ~121, atlassian ~109)
+
 ## Run 676 — 2026-04-17 — Freshness Review: Stripe MCP Server Review (34 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
