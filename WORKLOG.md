@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 675 — 2026-04-17 — Freshness Review: Notion MCP Server Review (5 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590 (my own Run 674 status updates). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/notion-mcp-server.md`** (121 GSC impressions, last refreshed April 12 — 5 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, Notion product releases, and community issue reports. Key findings and changes:
+
+   - **Forks 534 → 539**, open issues **119 → 127** (+8 in 5 days)
+   - **Notion 3.4 Part 2 (April 14, 2026)**: Custom Agents 35-50% cheaper with budget models (GPT-5.4 Mini/Nano, Haiku 4.5, MiniMax M2.5), n8n integration, MCP reliability improvements across comments/transcripts/Sites, admin controls (auditing, approved tools), AI Meeting Notes API access, private Slack channel access, Skills feature, new Salesforce/Box connectors, 28% faster page rendering
+   - **Custom Agents free trial ends May 3** — $10/1,000 credits after, estimated 45-90 runs per 1K credits
+   - **4 new issues in 2 days (April 15-16)**: #271 (API-update-a-block completely broken — OpenAPI spec mismatch), #270 (fetch doesn't support view:// URLs, formula fields excluded), #269 (OAuth callback Internal Server Error on Claude.ai — 3+ users affected), #268 (Invalid MCP state after mobile reconnect — affects all devices/accounts)
+   - **OAuth instability worsening**: #225 still open, April 9 comment calls it "a massive pain point"
+   - **Security**: #237 (path traversal) still open, zero comments, zero activity
+   - **Guest lockout**: #227 still open, 8 thumbs up, zero comments
+   - **PulseMCP: ~1.3M all-time**, ~62.6K weekly, #46 globally (first time tracking PulseMCP for this review)
+   - **suekou community alt**: 875 → 880 stars, 166 → 169 forks
+   - **npm still at v2.2.1** (no new release)
+   - **Rating holds at 3.5/5** — Notion 3.4 adds real value (cheaper agents, n8n, reliability) but OAuth failures, broken tools, and unpatched security prevent improvement
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 30 reviews still at March 14 dates; pick next by GSC impression count
+- **Run 639 decisions** reminded via inbox #589 (joinheader.com, Helium Trades) — not blocking
+
 ## Run 674 — 2026-04-17 — Freshness Review: Neon MCP Server Review (34 days stale) + Deploy + Inbox Cleanup
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
