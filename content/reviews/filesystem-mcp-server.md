@@ -1,16 +1,16 @@
 ---
 title: "The Filesystem MCP Server — Simple, Useful, and Worth Understanding"
 date: 2026-03-14T01:06:39+09:00
-description: "Anthropic's Filesystem MCP server (81.6K parent repo stars, v2026.1.14, 14 tools) gives AI agents controlled file access with sandboxed directories, partial reads via head/tail"
-og_description: "Anthropic's Filesystem MCP server: 14 tools, v2026.1.14. Partial reads, media files, Roots protocol, Docker, tool annotations. #5 on PulseMCP. Rating: 4.5/5."
+description: "Anthropic's Filesystem MCP server (84K parent repo stars, v2026.1.14, 14 tools) gives AI agents controlled file access with sandboxed directories, partial reads via head/tail"
+og_description: "Anthropic's Filesystem MCP server: 14 tools, v2026.1.14. Partial reads, media files, Roots protocol, Docker, tool annotations. #4 on PulseMCP. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Anthropic's official Filesystem MCP server (81.6K parent repo stars, v2026.1.14) gives AI agents controlled file access within sandboxed directories. Now with 14 tools — partial reads via head/tail, media file support, dry-run edits, Docker deployment, VS Code integration, and dynamic directory control via MCP Roots protocol. The only official server with complete tool annotations. #5 on PulseMCP with ~281K estimated weekly visitors."
-last_refreshed: 2026-03-14
+card_description: "Anthropic's official Filesystem MCP server (84K parent repo stars, v2026.1.14) gives AI agents controlled file access within sandboxed directories. Now with 14 tools — partial reads via head/tail, media file support, dry-run edits, Docker deployment, VS Code integration, and dynamic directory control via MCP Roots protocol. The only official server with complete tool annotations. #4 on PulseMCP with ~530K estimated weekly visitors. New security concern: path traversal via prompt injection (issue #3752)."
+last_refreshed: 2026-04-18
 ---
 
 The Filesystem MCP server is one of the first MCP servers most people encounter. It's the "hello world" of the MCP ecosystem — simple enough to understand in five minutes, useful enough to actually keep installed. But it's grown well beyond "hello world" territory. With 14 tools, partial file reading, media support, Docker deployment, and the MCP Roots protocol, it's become a genuinely capable reference implementation.
 
-**At a glance:** 81,600+ stars (parent repo) · 137K+ npm weekly downloads · v2026.1.14 · 14 tools · ~281K estimated weekly visitors on PulseMCP (#5 globally)
+**At a glance:** 84,000+ stars (parent repo) · 173K+ npm weekly downloads · v2026.1.14 · 14 tools · ~530K estimated weekly visitors on PulseMCP (#4 globally) · ~8.2M all-time visitors
 
 We've researched it thoroughly. Here's the honest assessment.
 
@@ -39,9 +39,9 @@ The Filesystem MCP server gives an AI agent controlled access to files on your l
 - `create_directory` — Create directories with parent creation
 - `move_file` — Rename or relocate files and directories
 
-### What's New (March 2026 Update)
+### What's New (April 2026 Update)
 
-The server has evolved significantly since its early days. Here are the major changes:
+The server has evolved significantly since its early days — though the pace of change has slowed. Here are the major changes:
 
 **Partial file reading arrived.** The biggest criticism from our original review — "you read the entire file or nothing" — has been addressed. `read_text_file` now supports `head` and `tail` parameters, returning only the first or last N lines. This is a meaningful improvement for working with large log files, data files, or minified bundles without flooding the context window.
 
@@ -59,7 +59,17 @@ The server has evolved significantly since its early days. Here are the major ch
 
 **VS Code integration.** Quick-install buttons for both NPX and Docker variants are available. Workspace-specific configuration is supported through `.vscode/mcp.json` with environment variable expansion (e.g., `${workspaceFolder}`).
 
-**npm downloads at 137K+ weekly.** The package is one of the most-downloaded MCP servers in the ecosystem, reflecting its role as both a practical tool and a learning resource.
+**npm downloads at 173K+ weekly** (up from 137K at our last review). The package remains one of the most-downloaded MCP servers in the ecosystem, reflecting its role as both a practical tool and a learning resource.
+
+**No new release since January 14, 2026.** The server has been on v2026.1.14 for three months now. During that time, the parent repo has grown from 81.6K to 84K stars and accumulated 4,072 commits, but no filesystem-specific updates have shipped. Several open issues (see below) remain unresolved.
+
+**Security concern: path traversal via prompt injection (issue #3752).** Filed March 30, 2026, this issue highlights that all 11 path-accepting tools lack schema-level validation. While the server enforces runtime allowlist checks via `allowedDirectories`, the absence of JSON Schema constraints (like regex patterns on path parameters) means LLMs have no visibility into boundaries. Under prompt injection, an agent could attempt traversal sequences like `../../.ssh/id_rsa` — the server should block it at runtime, but the lack of schema-level guardrails is a defense-in-depth gap. Still open with no assignee.
+
+**Windows UNC path bug (issue #3756).** Also filed March 30. Network drive paths like `\\192.168.1.1\share` fail validation because `path.resolve(path.normalize())` strips a leading backslash, converting UNC paths to drive-relative paths. Three PRs submitted (#3791, #3921, #3920), none merged yet.
+
+**Startup failure with unavailable directories (issue #3232).** Open since January 19. The server uses `Promise.all()` to validate directories at startup — if any single directory is unavailable (unmounted network volume, disconnected drive), the entire server crashes. PR #3277 addresses this but hasn't merged.
+
+**MCP ecosystem milestone: AAIF and Dev Summit.** MCP governance moved to the Agentic AI Foundation (AAIF) under the Linux Foundation in December 2025, with Anthropic, OpenAI, Block, AWS, Google, and Microsoft as platinum members. The first MCP Dev Summit (April 2-3, NYC) drew 1,200 attendees across 95+ sessions. Key announcements included MCP Apps (interactive UIs for MCP servers, adopted by Claude, ChatGPT, and VS Code), the gateway-and-registry architecture pattern for enterprise MCP at scale, and Claude Code's progressive tool discovery achieving ~85% context window reduction. The filesystem server wasn't specifically highlighted — its role as a reference implementation means it benefits from protocol-level improvements rather than getting its own feature announcements.
 
 ## Setup
 
@@ -131,6 +141,12 @@ The paths define the allowed directories. The server will refuse to access anyth
 
 **No line-range reads.** While `head`/`tail` handle the first/last N lines, there's no way to read lines 500-600 of a file. For navigating through the middle of large files, you still read more than you need. Third-party alternatives like safurrier/mcp-filesystem and the Rust filesystem-mcp-rs address this with offset/limit parameters.
 
+**Path parameters lack schema-level constraints.** Issue #3752 (March 2026) revealed that all path-accepting tools use unbounded string parameters with no regex validation in their JSON Schema definitions. The runtime allowlist catches traversal attempts, but LLMs can't see the boundaries from the schema alone. This is a defense-in-depth concern, especially in multi-server compositions where prompt injection could chain filesystem reads into network exfiltration tools.
+
+**Windows network drive paths are broken.** UNC paths fail validation entirely due to a normalization bug (issue #3756). Three community PRs have been submitted but none merged after three weeks.
+
+**Server crashes if any directory is unavailable.** A `Promise.all()` in the startup path means one unmounted network volume or disconnected drive takes down the entire server (issue #3232, open since January).
+
 **Tool annotation gaps remain.** Despite being the best-annotated official server, read-only tools lack `idempotentHint` and no tools carry `openWorldHint: false` (issue #3402). These are minor gaps, but they matter for automated safety analysis in multi-server compositions.
 
 ## Alternatives Worth Knowing
@@ -161,8 +177,8 @@ The official server remains the best starting point — it's the reference imple
 - You need HTTP transport with authentication — use cyanheads/filesystem-mcp-server
 - You're in a production/server environment requiring Go/Rust performance — use mark3labs or filesystem-mcp-rs
 
-{{< verdict rating="4.5" summary="The reference implementation, now with real substance" >}}
-The Filesystem MCP server has matured from a useful proof-of-concept into a genuinely capable tool. The addition of partial reads, media file support, dry-run edits, Docker deployment, and the MCP Roots protocol addressed most of our original criticisms. Its tool annotations are the ecosystem gold standard. The remaining gaps — no line-range reads, no file watching, no depth-limited tree — are real but increasingly niche. If you're setting up MCP for the first time, this is still the server to install first. Rating upgraded from 4.0 to 4.5.
+{{< verdict rating="4.5" summary="Still the best starting point, but development has stalled" >}}
+The Filesystem MCP server remains the most-used MCP server in the ecosystem — 173K npm weekly downloads, #4 on PulseMCP, and the reference implementation that every alternative is measured against. Its tool annotations are still the gold standard. But there hasn't been a release in three months, and the open issue list is growing: a security-relevant schema validation gap (#3752), broken Windows network paths (#3756), and a startup crash with unavailable directories (#3232) all remain unresolved. The broader MCP ecosystem is accelerating — AAIF governance, MCP Apps, enterprise gateway patterns — while this server sits unchanged. For most users it's still the right first install. But the gap between "reference implementation" and "actively maintained production tool" is widening. Rating holds at 4.5 for now; another quarter without releases would warrant a downgrade.
 {{< /verdict >}}
 
 *This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and has not been manually verified. We do not test MCP servers hands-on. [Learn more about ChatForest](/about).*

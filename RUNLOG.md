@@ -9368,3 +9368,79 @@ Next priorities: Todoist (126 imp), Neon (123 imp), Notion (121 imp) freshness r
 2026-04-16T21:57:16Z SESSION 1582 stopped
 2026-04-16T22:51:01Z STARTED run 907428 (mode=wild)
 2026-04-16T22:51:03Z SESSION 1583 started
+2026-04-16T22:58:20Z FINISHED run 907428
+2026-04-16T22:58:20Z SESSION 1583 stopped
+2026-04-17T02:52:01Z STARTED run 972370 (mode=slow)
+2026-04-17T02:52:02Z SESSION 1584 started
+Run 674 complete. Here's what I did:
+
+**Freshness review of Neon MCP Server** (123 GSC impressions, 34 days stale → refreshed):
+- Stars 565→582, commits ~103→194, npm downloads 714→3,284/week
+- Three major issues **closed** in April 2026: security audit (#207), token refresh race condition (#209), OAuth state regression (#210)
+- New: OpenAI verification support, supply chain hardening, grant-scoped access migrated to URL params
+- Neon platform: Agent Plan for AI platforms, Lakebase GA on Azure
+- Rating holds at 4/5
+
+**Inbox cleanup**: Stopped carrying the stale "awaiting Rob decisions from Run 639" line in every run. Sent a consolidated reminder (inbox #589) about joinheader.com and Helium Trades decisions.
+
+**Deployed** to DreamHost. 31 reviews still at March 14 dates — Notion (121 imp) is next.
+2026-04-17T02:57:49Z FINISHED run 972370
+2026-04-17T02:57:49Z SESSION 1584 stopped
+2026-04-17T06:52:01Z STARTED run 1035462 (mode=slow)
+2026-04-17T06:52:02Z SESSION 1585 started
+Run 675 complete. Here's the summary:
+
+**Freshness review: Notion MCP Server** (121 GSC impressions, 5 days stale → refreshed)
+
+Key changes:
+- **Notion 3.4 Part 2** (April 14): Custom Agents 35-50% cheaper with budget models, n8n automation integration, MCP reliability improvements, admin controls (auditing, approved tools), AI Meeting Notes API access
+- **Custom Agents free trial ends May 3** — $10/1,000 credits after
+- **Open issues 119 → 127** (+8 in 5 days) — 4 new issues filed April 15-16 alone
+- **OAuth actively breaking**: callback failures on Claude.ai (#269), state corruption after mobile reconnect (#268), token expiry still a "massive pain point" (#225)
+- **Block update tool completely broken** (#271) due to OpenAPI spec mismatch
+- **PulseMCP**: ~1.3M all-time, 62.6K weekly, #46 globally (first time tracking)
+- **Security #237** (path traversal) still unpatched, zero comments
+- **Rating holds at 3.5/5**
+
+Built, deployed to DreamHost, committed, and sent status update via inbox.
+2026-04-17T06:58:31Z FINISHED run 1035462
+2026-04-17T06:58:31Z SESSION 1585 stopped
+2026-04-17T10:52:01Z STARTED run 1099516 (mode=slow)
+2026-04-17T10:52:03Z SESSION 1586 started
+Run 676 complete. Here's the summary:
+
+**Freshness review: Stripe MCP Server** (34 days stale → refreshed, deployed)
+
+Key changes:
+- **Protocol version hang fixed** (issue #290 closed) — biggest local deployment blocker resolved
+- **Gemini CLI now supported** (issue #221 closed)
+- **npm v0.3.1 → v0.3.3** with agent compatibility improvements
+- **Visa MPP card spec + SDK** launched — agents can now transact on Visa rails
+- **Stripe Projects** — scoped API keys with spending limits for agents
+- **New gap: no pagination** (#388) — all list tools cap at 100 results silently
+- **Open issues doubled** (9 → 18) while tool count stayed flat at 25
+- **list_customers still broken** — zero activity since January
+- **PulseMCP**: ~1.1M all-time, ~20K weekly, #58 globally
+- **Rating holds 4/5**
+
+30 reviews still at March 14 refresh dates. Next candidates: vercel (~134 imp), filesystem (~121), atlassian (~109).
+2026-04-17T11:00:17Z FINISHED run 1099516
+2026-04-17T11:00:18Z SESSION 1586 stopped
+2026-04-17T16:52:01Z STARTED run 1195307 (mode=slow)
+2026-04-17T16:52:02Z SESSION 1588 started
+Session wasn't started (permission denied earlier), so nothing to stop.
+
+**Run 677 complete.** Freshness review of the Vercel MCP Server review (~134 GSC impressions, 35 days stale → refreshed).
+
+Key changes:
+- **Zero new tools** in 8+ months of public beta — still 13 tools, still 12 clients
+- **PulseMCP declining** — all-time 169K→162K, weekly 10.5K→8K, rank #198→#235
+- **Added env variable gap** to What's Not — community is asking for it, Vercel hasn't delivered
+- **Platform expanding, MCP server static** — Opus 4.7 on AI Gateway, Flags GA, Workflow SDK updates, but the MCP server itself hasn't changed
+- **Rating holds at 3.5/5**
+
+Built, deployed, committed, WORKLOG updated, status sent (inbox #623).
+2026-04-17T16:57:28Z FINISHED run 1195307
+2026-04-17T16:57:28Z SESSION 1588 stopped
+2026-04-17T20:53:01Z STARTED run 1258728 (mode=slow)
+2026-04-17T20:53:02Z SESSION 1589 started

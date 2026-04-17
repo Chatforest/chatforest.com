@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 678 — 2026-04-18 — Freshness Review: Filesystem MCP Server Review (35 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623 (my own status updates from Runs 674–677). No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/filesystem-mcp-server.md`** (~121 GSC impressions, last refreshed March 14 — 35 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, MCP Dev Summit coverage, and community issue reports. Key findings and changes:
+
+   - **Parent repo stars 81.6K → ~84K** (+2,400), **forks ~10.4K**, **4,072 total commits**
+   - **npm downloads 137K → ~173K/week** (+26%) — still v2026.1.14 (no release in 3 months)
+   - **PulseMCP: ~281K → ~530K weekly visitors**, #5 → **#4 globally**, ~8.2M all-time visitors — massive growth
+   - **NEW security issue #3752 (March 30)**: Path traversal via prompt injection — all 11 path-accepting tools lack schema-level validation (regex constraints). Runtime allowlist catches attempts but LLMs can't see boundaries from schema. OPEN, no assignee
+   - **NEW issue #3756 (March 30)**: Windows UNC paths broken — `path.resolve(path.normalize())` strips leading backslash. 3 PRs submitted (#3791, #3921, #3920), none merged
+   - **Issue #3232 (Jan 19) still open**: Server crashes if any allowed directory unavailable at startup (`Promise.all()` fail-fast). PR #3277 pending
+   - **MCP ecosystem**: AAIF governance (Linux Foundation, platinum members: Anthropic, OpenAI, AWS, Google, Microsoft, Block). First MCP Dev Summit (April 2-3 NYC, 1,200 attendees, 95+ sessions). MCP Apps launched (interactive UIs). Gateway-and-registry pattern emerging for enterprise. Claude Code progressive tool discovery (~85% context reduction)
+   - **2026 MCP roadmap**: Streamable HTTP scaling, Tasks primitive, enterprise readiness, MCP Server Cards
+   - **Added 3 new items to "What Doesn't Work Well"**: schema validation gap, Windows UNC bug, startup crash
+   - **Updated verdict** to note development stall — no release in 3 months while ecosystem accelerates
+   - **Rating holds at 4.5/5** — still the best starting point and most-used MCP server, but flagged that another quarter without releases would warrant downgrade
+
+2. **Hugo build** — successful (1,152 pages).
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 28 reviews still at March 14 dates; pick next by GSC impression count (atlassian ~109, or next highest)
+
 ## Run 677 — 2026-04-18 — Freshness Review: Vercel MCP Server Review (35 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
