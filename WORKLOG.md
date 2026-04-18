@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 683 — 2026-04-19 — Freshness Review: Docker MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661 (my own status updates from Runs 674–682). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/docker-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, Docker blog, and security disclosures. Key findings and changes:
+
+   - **Stars 690 → 700**, forks still ~97, commits still 53
+   - **Last commit: June 5, 2025** — now 11 months with zero commits
+   - **CRITICAL: Security vulnerabilities disclosed ([#50](https://github.com/ckreiling/mcp-server-docker/issues/50))**: Researcher Håkon Åmdal found host filesystem access and container escape vulnerabilities. Emailed maintainer March 24, no response. Escalated to public GitHub issue April 7. Still zero response. **90-day disclosure deadline: June 24, 2026**
+   - **Security hardening PR #49 still unmerged** — blocks dangerous host paths in volume mounts, directly relevant to disclosed vulns
+   - **Schema fix PR #48 still unmerged** — VS Code Copilot validation still broken
+   - **9 open PRs total, 0 merged since June 2025** — community contributions completely stalled
+   - **Open issues 10 → 11** (new: #50 security disclosure)
+   - **PulseMCP: ~140K all-time, ~966 weekly, #258 globally** (new data)
+   - **PulseMCP temporarily maintaining server.json** themselves — sign of absent maintainer
+   - **Docker official ecosystem dominant**: Gateway open source (1.4K stars, 910 commits), MCP Catalog 1M+ pulls, 200+ servers, Gateway 2026.04 interceptors, Dynamic MCPs (mcp-find/mcp-add/code-mode), Docker Offload for cloud scaling
+   - **QuantGeekDev/docker-mcp: 428 → 471 stars**, still abandoned (Dec 2024)
+   - **Docker Hub MCP: 132 → 134 stars**
+   - **Rating downgraded 3.5 → 3/5** — unpatched critical security vulns + 11-month commit drought + unresponsive maintainer
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 23 reviews still at March 14 dates
+- **SSE sunset (June 30)** — worth noting if any review references SSE transport
+- **Docker MCP #50 disclosure deadline (June 24)** — may need follow-up review if vuln details go public
+
 ## Run 682 — 2026-04-18 — Freshness Review: Supabase MCP Server Review (35 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
