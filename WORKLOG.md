@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 680 — 2026-04-18 — Freshness Review: Cloudflare MCP Server Review (35 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658 (my own status updates from Runs 674–679). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/cloudflare-mcp-server.md`** (~33 GSC impressions, last refreshed March 14 — 35 days stale).
+
+   Researched GitHub repos (cloudflare/mcp, cloudflare/mcp-server-cloudflare, cloudflare/workers-mcp), PulseMCP, Cloudflare blog, npm, and open issues. Key findings and changes:
+
+   - **Product server stars 3,557 → ~3,600**, Code Mode stars **277 → 357** (+29%), forks **353 → 371**
+   - **npm downloads surged: ~11K → ~19K/month** (+73%)
+   - **PulseMCP: ~102K → ~122K all-time** (+20%)
+   - **Enterprise MCP reference architecture (April 14)**: Portal Code Mode collapses multi-server tools into 2 portal tools (94% context reduction), Shadow MCP Detection for unauthorized MCP usage
+   - **`?codemode=false` parameter (March 20)**: Fallback to ~2,500 individual tools when agents struggle with JavaScript
+   - **Exponential backoff on 429s (April 16)**: Proper retry logic for rate-limited API calls
+   - **OAuth provider v0.4.0 (March 31)**: 10 coordinated product server releases with refresh token TTL
+   - **Dynamic Workers blog post (March 24)**: 100x faster V8 sandbox startup details
+   - **GraphQL injection #320 still unpatched** — 34 days open despite two community fix PRs
+   - **New bug #352**: Audit log Zod schema validation fails on `actor.context = "api"`, blocks SOC 2 monitoring
+   - **New bug #95**: API Token mode broken with Claude Code — no workaround
+   - **High-severity dependency vulnerabilities fixed (#333)** on March 29
+   - **workers-mcp repo effectively dormant** — last commit April 2025, README warns to use newer approach
+   - **Rating holds at 4.5/5** — innovation and growth exceptional, but security response time (unpatched injection) needs improvement
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 26 reviews still at March 14 dates; most have very low GSC impressions (<33), so priority order is less critical
+- **SSE sunset (June 30)** — worth noting if any review references SSE transport
+
 ## Run 679 — 2026-04-18 — Freshness Review: Atlassian MCP Server Review (35 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
