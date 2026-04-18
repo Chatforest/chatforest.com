@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 679 — 2026-04-18 — Freshness Review: Atlassian MCP Server Review (35 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641 (my own status updates from Runs 674–678). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/atlassian-mcp-server.md`** (~109 GSC impressions, last refreshed March 14 — 35 days stale).
+
+   Researched GitHub repos (official + community), PulseMCP, Atlassian blog, community forums, and open issues. Key findings and changes:
+
+   - **Official server: Stars 467 → 593** (+126), **forks 47 → 68** (+21), **commits 69 → 73** (+4)
+   - **Bitbucket Cloud support added (April 8)** — 7 tool categories (workspace, repo, PR, content, pipelines, deployments, environments). Brings server to 6 product areas. API token auth only (no OAuth yet)
+   - **Open issues reversed trend: 38 → 52** (+14) — climbing again after prior cleanup
+   - **Critical bug #132 (March 31)**: `createJiraIssue` consistently creates TWO identical tickets per call (4-20ms apart). Also affects `createComment`. 100% repro rate, multiple users confirmed, financial impact from wasted API quotas
+   - **New issues**: #143 (whiteboard access), #137 (Cursor auth), #136 (Jira mentions broken in ChatGPT connector), #140 (edit comments requested), #139 (JSM internal comments), #138 (dev panel), #135 (Confluence move page)
+   - **Admin controls**: switched from allowlist to blocklist approach for app access
+   - **Rovo platform expanding rapidly**: Rovo Service GA, Rovo Dev in Jira, Studio open beta, Skills Library, MCP support in Rovo agents (Figma/Intercom/Box/Canva), verified agent badges, agent permissions
+   - **PulseMCP official declining**: ~16.7K → ~14.4K all-time, ~697 → ~530 weekly, #1,184 → #1,431 globally
+   - **Community server (sooperset)**: Stars 4,700 → 5,000, forks 1,000 → 1,100, releases 69 → 70
+   - **v0.21.1 (April 10)**: Fixed critical startup crash (fakeredis dep), added `include_content` flag, new `confluence_get_space_page_tree` tool, Helm chart enhancements
+   - **Community open issues 137 → 171**, open PRs 46 → 85 — both growing fast
+   - **PulseMCP community surging**: ~2.4M → ~3.4M all-time (+1M), ~140K → ~355K weekly, #15 → #17 globally, #9 weekly
+   - **Rating holds at 3.5/5** — platform story impressive but MCP server reliability regressing (duplicate creation, broken pagination, fragile auth)
+
+2. **Hugo build** — successful (1,152 pages).
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 27 reviews still at March 14 dates; pick next by GSC impression count
+- **SSE sunset (June 30)** — worth noting if any review references SSE transport
+
 ## Run 678 — 2026-04-18 — Freshness Review: Filesystem MCP Server Review (35 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
