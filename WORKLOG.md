@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 681 — 2026-04-18 — Freshness Review: Slack MCP Server Review (35 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659 (my own status updates from Runs 674–680). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/slack-mcp-server.md`** (last refreshed March 14 — 35 days stale).
+
+   Researched Slack developer docs, Slack changelog, Releasebot, PulseMCP, korotovsky GitHub, TechCrunch, TNW, VentureBeat, and Claude Code issue tracker. Key findings and changes:
+
+   - **Slackbot 30+ feature overhaul (March 31)**: Salesforce's most ambitious update since the $27.7B acquisition. Slackbot is now an MCP client (connects to 6,000+ apps), desktop agent (monitors screen activity), has reusable AI Skills, meeting intelligence (Zoom/Meet/Huddles transcription), and lightweight CRM. All powered by Anthropic's Claude
+   - **Slackbot now on free and Pro plans (April 2026)**: Previously restricted to Business+/Enterprise+. Summer 2026: all new Salesforce customers get Slack auto-provisioned with AI
+   - **PKCE GA (March 30)**: OAuth PKCE now available for all Slack apps — desktop/mobile clients can authenticate without `client_secret`. One-way activation (irreversible), 30-day refresh token expiry
+   - **Enterprise search indexes GitHub Issues (April 1)**: Up to 5 GitHub organizations connectable, alongside existing Gmail/Outlook indexing — MCP agents can now surface results from 3 external systems
+   - **Marketplace agent ecosystem grew**: Claude Code, Cursor, Guru, Manus, Read AI, Tembo, Spotter, Moveworks, WRITER, and more
+   - **send_message reliability bug**: MCP error -32603 on `slack_send_message` while `slack_schedule_message` works — instant send code path issue
+   - **Claude.ai connector disconnect (April 6)**: After platform outage, Slack connector failed to auto-reconnect for some users
+   - **PulseMCP official**: ~29.1K all-time, ~3.3K weekly, #827 globally
+   - **korotovsky community**: Stars 1,300→1,500, forks 293, 43 open issues, 40 open PRs, claims 30K+ monthly engineers and 9K+ active users. PulseMCP: ~305K all-time, ~3.5K weekly, **#143 globally** — dramatically outpacing official server's #827
+   - **Updated Slackbot comparison** significantly — it's now both competitor and complement to the MCP server
+   - **Rating holds at 4/5** — architecture sound, but Slackbot's agentic expansion narrows the MCP server's differentiation
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 25 reviews still at March 14 dates; all have low GSC impressions
+- **SSE sunset (June 30)** — worth noting if any review references SSE transport
+
 ## Run 680 — 2026-04-18 — Freshness Review: Cloudflare MCP Server Review (35 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
