@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 682 — 2026-04-18 — Freshness Review: Supabase MCP Server Review (35 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660 (my own status updates from Runs 674–681). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/supabase-mcp-server.md`** (last refreshed March 14 — 35 days stale).
+
+   Researched GitHub repo, PulseMCP, npm, Supabase blog, April 2026 developer update, and Claude Code issue tracker. Key findings and changes:
+
+   - **Stars 2.5K → 2.6K**, forks 316 → 340, **open issues grew to 60**
+   - **Still v0.7.0** — no release in 7 weeks (since March 2). Development cadence slowed after 5 releases in Jan-Feb 2026
+   - **GitHub integration on all plans (April 2026)**: Free tier can now deploy migrations via CI/CD from main branch — no branching required. Partially closes the paid-plan-only branching gap
+   - **Stripe Projects co-design partnership (April 2026)**: Provision entire Supabase backends via Stripe's CLI tool with auto `.env` sync
+   - **supabase.sh SSH docs (April 2026)**: Full Supabase docs as virtual filesystem over SSH. `ssh supabase.sh setup | claude` pipes docs into Claude Code
+   - **Studio AI assistant (April 2026)**: "Fix with Assistant" buttons with Claude/ChatGPT dropdown
+   - **Multigres Kubernetes operator open-sourced**: Zero-downtime upgrades, pgBackRest PITR, OTel tracing
+   - **GitHub secret scanning with Push Protection**: Prevents accidental Supabase key commits
+   - **Claude Code naming conflict (#21368, closed)**: Server named "supabase" forces SSE/OAuth, ignoring stdio config. Workaround: rename to "supabase-local"
+   - **New issues**: #255 (branch-scoped access), #253 (dependency security monitoring), #241 (optional migration version parameter)
+   - **PulseMCP: ~2M → ~2.3M all-time**, weekly declining 51.2K → 37.3K, still #24 globally
+   - **Community server (alexander-zuev)**: 811 stars, no longer actively maintained since official server is "feature-rich enough"
+   - Updated comparison table (Neon stars 389 → 582)
+   - **Rating holds at 4/5** — platform expanding rapidly but MCP server itself stalling
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 24 reviews still at March 14 dates
+- **SSE sunset (June 30)** — worth noting if any review references SSE transport
+
 ## Run 681 — 2026-04-18 — Freshness Review: Slack MCP Server Review (35 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
