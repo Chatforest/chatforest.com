@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 686 — 2026-04-19 — Freshness Review: Datadog MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668 (my own status updates from Runs 674–685). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/datadog-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, Datadog docs, PulseMCP, Datadog blog, and Code Security MCP launch. Key findings and changes:
+
+   - **Stars 22 → 32** (+45%), commits 13 → 21
+   - **NEW: Code Security MCP (April 7, 2026)**: Separate local MCP server for SAST, SCA, secrets detection, IaC scanning, SBOM generation. Preview status. 4 tools. Go-based. Homebrew install. 5 GitHub stars
+   - **Toolsets expanded from 14 to 16**: New DDSQL (Preview, SQL querying), Onboarding (guided setup), Reference Tables (CRUD)
+   - **Existing toolsets significantly expanded**: APM now 15 tools (latency analysis, recommendations, investigation methodology), Dashboards full CRUD, Alerting has monitor creation + SLO search, Feature Flags 8 tools, Security has secrets scan + findings analysis, Software Delivery has code coverage + flaky tests
+   - **Total tools now 80+** (was 50+)
+   - **Fair-use rate limits published**: 50 req/10s burst, 5K daily, 50K monthly
+   - **Audit trail**: All tool calls recorded with metadata
+   - **14 supported clients** (was ~8)
+   - **Bits AI next-gen**: SRE Agent deeper reasoning + 2x faster, Security Analyst GA, Dev Agent proposes code fixes
+   - **Datadog Experiments GA** (April 2): A/B testing embedded in observability
+   - **DASH 2026**: June 9-10, NYC
+   - **PulseMCP official**: ~127K all-time, ~530 weekly, #279 globally
+   - **PulseMCP community (winor30)**: ~319K all-time, ~13.5K weekly, #134 globally (141 stars, 70 forks)
+   - **Rating holds at 4/5** — massive tool expansion + Code Security MCP launch; rate limits and pricing remain barriers
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 20 reviews still at March 14 dates
+- **DASH 2026 (June 9-10)** — worth monitoring for MCP server announcements
+
 ## Run 685 — 2026-04-19 — Freshness Review: Sentry MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
