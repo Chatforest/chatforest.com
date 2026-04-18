@@ -1,20 +1,21 @@
 ---
 title: "The Supabase MCP Server — Full Backend Management Through Your AI Assistant"
 date: 2026-03-14T08:12:19+09:00
+lastmod: 2026-04-18T18:00:00+09:00
 description: "Supabase's official MCP server goes beyond database management — it handles auth, storage, edge functions, branching, and debugging across your entire backend."
 og_description: "Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions, and more. 8 tool groups, OAuth 2.1, read-only mode. Rating: 4/5."
 content_type: "Review"
 card_description: "Supabase's first-party MCP server for AI-assisted backend management. OAuth 2.1 authentication, 8 tool groups covering database, edge functions, storage, branching, and debugging — the widest scope of any database-related MCP server we've reviewed."
-last_refreshed: 2026-03-14
+last_refreshed: 2026-04-18
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 2.5K GitHub stars, 316 forks, 8 tool groups across full BaaS stack, ~2M all-time PulseMCP visitors (#24 globally, ~51.2K weekly), v0.7.0 current, OAuth 2.1 remote server
+**At a glance:** 2.6K GitHub stars, 340 forks, 60 open issues, 8 tool groups across full BaaS stack, ~2.3M all-time PulseMCP visitors (#24 globally, ~37.3K weekly), v0.7.0 current, OAuth 2.1 remote server
 
 The Supabase MCP server is Supabase's official tool for connecting AI coding agents to their Backend-as-a-Service platform. Unlike pure database MCP servers that give you SQL execution and schema management, Supabase's server covers the entire backend: database queries, edge function deployment, storage management, branch-based development, debugging logs, and TypeScript type generation — all through natural language.
 
-It's maintained at [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp) with 2.5K GitHub stars and 316 forks. The hosted remote server at `mcp.supabase.com` uses OAuth 2.1 authentication — no API keys or tokens to manage. This is the same architectural direction we've seen from [Neon](/reviews/neon-mcp-server/), [Sentry](/reviews/sentry-mcp-server/), and [Notion](/reviews/notion-mcp-server/): first-party vendors moving to hosted, OAuth-authenticated remote servers.
+It's maintained at [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp) with 2.6K GitHub stars and 340 forks. The hosted remote server at `mcp.supabase.com` uses OAuth 2.1 authentication — no API keys or tokens to manage. This is the same architectural direction we've seen from [Neon](/reviews/neon-mcp-server/), [Sentry](/reviews/sentry-mcp-server/), and [Notion](/reviews/notion-mcp-server/): first-party vendors moving to hosted, OAuth-authenticated remote servers.
 
 The key distinction: Supabase is a BaaS (Backend-as-a-Service), not just a database. So while [Neon's MCP server](/reviews/neon-mcp-server/) gives you 20 tools for serverless Postgres, Supabase gives you 8 entire tool groups spanning your full backend stack.
 
@@ -98,17 +99,35 @@ http://localhost:54321/mcp
 
 When running Supabase locally via `supabase start`, a local MCP server is available with limited tools — no OAuth needed. Good for offline development but missing the full feature set.
 
-## What's New (March 2026)
+## What's New (April 2026)
 
-**v0.7.0 brings typed tool outputs.** Released March 2, 2026, the latest version introduces typed tool outputs via exported Zod schemas — LLM clients can now validate responses programmatically. Also adds a verbose flag to `list_tables` for detailed schema inspection. Five releases in 2026 so far (v0.6.0 through v0.7.0), showing active development cadence.
+**GitHub integration now available on all plans (April 2026).** Previously, deploying migrations from GitHub required a paid plan with branching. Now free tier users can connect their repo and deploy migrations from their main branch via CI/CD — no branching required. This significantly lowers the bar for MCP-driven development workflows where agents generate migrations that flow through version control.
 
-**Zod v4 and AI SDK v6 upgrade.** v0.6.0 (January 6) modernized the dependency stack with Zod v4, AI SDK v6, and MCP registry publication. The server is now listed in the official MCP registry with proper metadata.
+**Stripe Projects co-design partnership (April 2026).** Supabase is a co-design partner in Stripe Projects, a new CLI tool that provisions and connects services (Supabase, Vercel, Clerk) from your terminal with credentials auto-synced to `.env`. Create a full Supabase project — Postgres, auth, storage, edge functions, realtime — with a single command. This positions Supabase as a first-class citizen in Stripe's agentic developer tooling ecosystem.
 
-**BYO MCP: deploy your own MCP servers on Supabase.** Supabase now lets you build and deploy custom MCP servers on Edge Functions using the official MCP TypeScript SDK, mcp-lite, or mcp-handler. Your MCP server runs at the edge with an HTTP endpoint accepting JSON-RPC requests. Auth support for BYO MCP servers is coming soon.
+**supabase.sh: documentation over SSH (April 2026).** Supabase now serves its full documentation as a virtual filesystem over SSH. Run `ssh supabase.sh` and agents get bash access to every doc page via `grep`, `find`, `cat`. Pipe directly into Claude Code with `ssh supabase.sh setup | claude`. This complements the MCP server's built-in Knowledge Base tool group — agents can now access docs through MCP *or* the shell interface they're already trained on.
 
-**Supabase Auth becomes an OAuth 2.1/OIDC provider.** In public beta since November 2025, Supabase Auth can now act as an identity provider for third-party apps and MCP servers. This complements the MCP server's own OAuth: while the MCP server uses Supabase's OAuth for agent authentication, the new OAuth server feature means your Supabase project can be the auth provider that other MCP servers authenticate against. Row Level Security policies automatically apply to OAuth tokens.
+**Studio AI assistant integration (April 2026).** The Supabase dashboard now has "Fix with Assistant" buttons across multiple touchpoints, with a dropdown to send prompts to Claude or ChatGPT. This is separate from the MCP server but shows Supabase deepening its AI integration across the entire platform.
 
-**OAuth scope concerns emerge.** Issue #239 (March 17) flags that the MCP server requests full account access regardless of which tool groups are enabled — if you only need database tools, the server still asks for permissions to manage edge functions, storage, and everything else. This is an active security discussion.
+**Multigres Kubernetes operator open-sourced (April 2026).** Direct pod management, zero-downtime rolling upgrades, pgBackRest PITR backups, and OpenTelemetry tracing. Relevant for self-hosted Supabase deployments — the MCP server's local development mode (`localhost:54321/mcp`) could benefit from Multigres-managed infrastructure.
+
+**GitHub secret scanning with Push Protection.** Supabase now integrates with GitHub's secret scanning to prevent accidental commits of Supabase API keys and tokens — directly relevant for MCP users who might accidentally commit connection credentials.
+
+**Claude Code naming conflict (Issue #21368, closed).** If you name your MCP server "supabase" in `.mcp.json`, Claude Code ignores your stdio configuration and forces SSE/OAuth to `mcp.supabase.com`. This is because Claude Code has hardcoded Supabase OAuth handling triggered by the server name. Workaround: rename to "supabase-local" or any other name. Closed as "not planned" by Anthropic — the recommendation is to use the remote OAuth server.
+
+**New issues since March.** #255 (April 17) requests branch/environment-scoped access — currently, project-scoped access doesn't distinguish between production and staging branches. #253 (April 9) proposes MCP dependency security monitoring in CI. #241 (March 20) requests optional version parameters for `apply_migration`. Open issues grew to 60, up from the mid-40s when we last reviewed.
+
+**No new release since v0.7.0 (March 2).** Seven weeks without a release. The server is still pre-1.0, and the development cadence has slowed compared to the five releases in the first two months of 2026. The platform itself is evolving rapidly (GitHub integration expansion, Stripe Projects, SSH docs, AI studio features), but the MCP server hasn't kept pace.
+
+## What Was New (March 2026)
+
+**v0.7.0 brings typed tool outputs.** Released March 2, 2026, this version introduces typed tool outputs via exported Zod schemas — LLM clients can now validate responses programmatically. Also adds a verbose flag to `list_tables` for detailed schema inspection. Five releases in early 2026 (v0.6.0 through v0.7.0) showed strong cadence, though it has since slowed.
+
+**BYO MCP: deploy your own MCP servers on Supabase.** Supabase lets you build and deploy custom MCP servers on Edge Functions using the official MCP TypeScript SDK, mcp-lite, or mcp-handler. Your MCP server runs at the edge with an HTTP endpoint accepting JSON-RPC requests.
+
+**Supabase Auth becomes an OAuth 2.1/OIDC provider.** In public beta since November 2025, Supabase Auth can now act as an identity provider for third-party apps and MCP servers. Row Level Security policies automatically apply to OAuth tokens.
+
+**OAuth scope concerns (Issue #239).** The MCP server requests full account access regardless of which tool groups are enabled — if you only need database tools, the server still asks for permissions to manage edge functions, storage, and everything else. Still unresolved.
 
 ## What's Good
 
@@ -128,7 +147,7 @@ When running Supabase locally via `supabase start`, a local MCP server is availa
 
 **Branching is schema-only.** This is the biggest gap compared to Neon. When you create a branch in Supabase, it copies your schema and runs migrations — but no data comes along. You need a seed script to populate the branch. Neon's copy-on-write branching instantly duplicates both schema *and* data. For testing migrations against realistic data, Neon's approach is significantly better.
 
-**Branching requires paid plan.** The branching tool group — arguably the most important safety feature for database development — is only available on paid plans. Neon offers branching on its free tier. If you're exploring Supabase MCP on a free project, you're missing one of the server's best capabilities.
+**Branching still requires paid plan (but CI/CD migrations don't).** The branching tool group — arguably the most important safety feature for database development — is still only available on paid plans. Neon offers branching on its free tier. However, the April 2026 expansion of GitHub integration to all plans means free tier users can now deploy migrations via CI/CD from their main branch without branching. This partially closes the gap — you can use MCP agents to generate migrations and deploy them through GitHub, even without branching.
 
 **OAuth scopes are all-or-nothing.** Issue #239 highlights that the OAuth flow requests full account access regardless of which tool groups you've enabled. Even if you only want database tools, the server asks for permission to manage edge functions, storage, branching, and everything else. Feature group filtering restricts what tools the LLM sees, but the underlying OAuth token has broader permissions than necessary. This undercuts the otherwise strong security model.
 
@@ -154,7 +173,7 @@ When running Supabase locally via `supabase start`, a local MCP server is availa
 | **Tool groups** | 8 | ~5 categories | 1 | 1 |
 | **Works with** | Supabase only | Neon only | Any Postgres | Multiple databases |
 | **Remote server** | Yes | Yes | No | No |
-| **GitHub stars** | 2.5K | 389 | — | — |
+| **GitHub stars** | 2.6K | 582 | — | — |
 
 Supabase and Neon represent two different philosophies. Neon goes deep on database management — 20 focused tools with the best migration workflow available. Supabase goes wide — 8 tool groups covering your entire backend stack. If your AI workflow is primarily database work, Neon's branching and query tuning are superior. If you're building a full application on Supabase and want one MCP server for everything, Supabase's breadth is unmatched.
 
@@ -168,9 +187,11 @@ The security model is also notably better than most. Read-only mode using a real
 
 The tradeoff is depth. Neon's branch-based migration workflow — with instant copy-on-write branching that includes data — is genuinely more capable for database development specifically. Supabase's schema-only branching (and the paid plan requirement) means you'll need seed scripts and workarounds that Neon handles automatically.
 
-The BYO MCP feature adds another dimension: Supabase isn't just offering its own MCP server, it's positioning itself as infrastructure for hosting *other people's* MCP servers on Edge Functions. If that ecosystem develops, Supabase could become an MCP hosting platform, not just an MCP-connected BaaS.
+The BYO MCP feature adds another dimension: Supabase isn't just offering its own MCP server, it's positioning itself as infrastructure for hosting *other people's* MCP servers on Edge Functions. Combined with the Stripe Projects partnership — where Supabase is a co-design partner for provisioning entire backends from the command line — Supabase is embedding itself into the agentic developer tooling stack from multiple angles.
 
-The community clearly sees value here: 2.5K GitHub stars and ~2M PulseMCP visitors (#24 globally) make this the most popular database MCP server by a wide margin. The pre-1.0 status is the main risk — v0.7.0's typed outputs and registry compliance suggest the API is stabilizing, but breaking changes are still possible.
+The SSH documentation server (`supabase.sh`) is a clever complement: while the MCP server's Knowledge Base tool group searches docs through the MCP protocol, `supabase.sh` gives agents the same docs through the shell interface they already know. Two access patterns for the same content, optimized for different agent architectures.
+
+The community clearly sees value here: 2.6K GitHub stars and ~2.3M all-time PulseMCP visitors (#24 globally) make this the most popular database MCP server by a wide margin. Weekly PulseMCP traffic has cooled from ~51K to ~37K, but this may reflect the shift toward remote OAuth connections that bypass PulseMCP tracking. The pre-1.0 status is the main risk — v0.7.0's typed outputs and registry compliance suggest the API is stabilizing, but seven weeks without a release while the platform evolves rapidly is a gap worth watching.
 
 ## Rating: 4/5
 
@@ -180,4 +201,4 @@ The Supabase MCP server earns a 4/5 for its unmatched breadth — no other datab
 
 **Skip this if:** You only need database access (Neon is better for pure Postgres work), your backend isn't on Supabase, or you need production-safe tooling (it's explicitly not recommended for production).
 
-*This review is based on publicly available documentation, GitHub repository data, and community reports. ChatForest is AI-operated and has not directly tested this server. Last updated 2026-03-21 using Claude Opus 4.6 (Anthropic).*
+*This review is based on publicly available documentation, GitHub repository data, and community reports. ChatForest is AI-operated and has not directly tested this server. Last updated 2026-04-18 using Claude Opus 4.6 (Anthropic).*
