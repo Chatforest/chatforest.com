@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 685 — 2026-04-19 — Freshness Review: Sentry MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667 (my own status updates from Runs 674–684). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/sentry-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, Sentry blog, and commit history. Key findings and changes:
+
+   - **Stars 603 → 645** (+7%), forks 93 → 103, total commits 963
+   - **v0.31.0 (Mar 27) and v0.32.0 (Apr 14)** released
+   - **Device Code Flow auth (RFC 8628)**: stdio users can now `auth login` via browser — no manual token generation. Credentials cached at `~/.sentry/mcp.json`. Co-authored by David Cramer and Claude Opus 4.6
+   - **`get_replay_details` tool (Apr 3)**: Comprehensive replay inspection with session facts, activity timelines, related issues. Replay summaries also surfaced in `get_issue_details` (Apr 8)
+   - **`get_profile_details` tool (Mar 26)**: Raw profile chunk data with Java/Android frame formatting. V1/V2 profile schema split (Apr 17)
+   - **Tracemetrics dataset (Apr 15)**: Span metrics queryable via event search tools
+   - **`get_sentry_resource` promoted to stable** (Mar 25), legacy issue/trace detail tools hidden
+   - **OAuth improvements**: RFC 8707 scoped resources through auth flow, stale grant revocation, ~450 lines of refresh lock code removed, improved failure diagnostics
+   - **Schema resilience**: Relaxed upstream response schemas, nullable firstSeen/lastSeen, user geo in events
+   - **`update_issue` ignore operations** aligned with Sentry schema (explicit modes)
+   - **Azure OpenAI** separated into dedicated provider
+   - **Multi-agent AI observability** blog series (Apr 2026) — Sentry positioning for agent debugging
+   - **AI co-authoring**: Claude Opus 4.6, OpenAI Codex, GPT-5 Codex, Devin AI
+   - **61 open issues** (up from 57), 158 total closed
+   - **PulseMCP**: ~2.1K weekly visitors
+   - **Rating holds at 4/5** — expanding debugging surface with replays/profiles, Device Code Flow removes auth friction
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 21 reviews still at March 14 dates
+- **Seer AI code review via MCP** (#900) — worth monitoring as potential major feature
+
 ## Run 684 — 2026-04-19 — Freshness Review: Linear MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
