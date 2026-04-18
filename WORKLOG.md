@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 687 — 2026-04-19 — Freshness Review: Firecrawl MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669 (my own status updates from Runs 674–686). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/firecrawl-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, Firecrawl changelog, PulseMCP, npm, docs, and open-source web-agent announcement. Key findings and changes:
+
+   - **Parent repo stars 95,700 → 111,000** (+16%), now 7.1K forks
+   - **MCP server stars 5,800 → 6,100**, forks 651 → 681, open issues 49 → 59
+   - **3 new MCP tools**: `firecrawl_interact` (browser automation via natural language), `firecrawl_interact_stop`, `firecrawl_agent_status` — total now 14 tools
+   - **Platform v2.9.0 (April 10)**: /interact endpoint, query format, audio output, onlyCleanContent, PDF parsing modes, Java & Elixir SDKs
+   - **Fire-PDF (April 14)**: Rust-based, 5x faster PDF-to-markdown, sub-400ms/page, neural layout detection
+   - **Open-source web-agent framework (April 16)**: `firecrawl/web-agent`, 173 stars, MIT license, Plan-Act mechanism, SKILL.md playbooks, model-agnostic, parallel subagents
+   - **SSRF vulnerability #210 (April 8)**: HIGH severity (CVSS 8.5) in firecrawl_crawl — z.string() vs z.string().url() inconsistency. Unpatched, unassigned, zero comments
+   - **Second SSRF report #194 (March 23)**: URL validation + JS execution risks in self-hosted mode
+   - **Still no tagged release** since v3.2.1 (September 2025) — now 19 months
+   - **PulseMCP declining**: ~1.4M all-time (was ~1.2M), but weekly dropped ~50.6K → ~29.6K (-42%), #34 → #41 globally
+   - **npm**: ~8,836 weekly downloads
+   - **Rating holds at 4/5** — new interact tools are welcome, but 19-month release drought and unpatched SSRF are concerns
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 19 reviews still at March 14 dates
+- **SSRF vulnerability** — worth monitoring whether #210 gets patched before next refresh
+
 ## Run 686 — 2026-04-19 — Freshness Review: Datadog MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
