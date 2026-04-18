@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 684 — 2026-04-19 — Freshness Review: Linear MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666 (my own status updates from Runs 674–683). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/linear-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched Linear changelog, Linear docs, PulseMCP, The Register, Claude Code issue tracker, and MCP ecosystem sources. Key findings and changes:
+
+   - **LINEAR AGENT launched (March 24)**: Built-in AI assistant in public beta across all plans. Skills (reusable workflows), Automations (triage triggers, Business/Enterprise), Code Intelligence (coming soon). CEO declared "issue tracking is dead" — 25% of new issues now agent-created (5× increase), coding agents in 75% of enterprise workspaces
+   - **MCP server updates since March 14**:
+     - `list_comments` now supports pagination (`cursor`, `limit`, `orderBy`)
+     - Initiatives accept multiple parent initiatives (not just single parent)
+     - Issues created without `stateId` now default to team's default state even with triage enabled
+     - OAuth disconnect bug fixed (connections dropping after ~1 day)
+     - Support for removing issue relationships added
+     - `trashed` field added to `list_projects` and `get_project` responses
+     - OAuth flow fix for non-Safari browsers
+     - ChatGPT app client ID updated
+   - **SSE endpoint fully removed** — `/sse` deprecated Feb 2026, now gone. Must use `/mcp`
+   - **Microsoft Teams integration (April 16)**: @Linear mentions create work items from conversations
+   - **Custom coding tool integrations**: Any tool via URL parameters or local commands, not just built-in list
+   - **Multi-level sub-teams (April 9)**: Up to 5 levels deep (Enterprise)
+   - **Web Forms for Linear Asks (April 2)**: External users submit requests without Linear accounts (Enterprise)
+   - **PulseMCP: ~277K → ~479K all-time** (+73%), weekly 12.9K → 21.4K (+66%), **#131 → #88 globally** — strong growth
+   - **Known Claude Code issues**: #47185 (OAuth "Invalid client"), #46254 (connection failures), #39511 (plugin conflicts)
+   - **Rating holds at 4/5** — MCP server continues improving; Linear Agent launch elevates the entire agent story
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 22 reviews still at March 14 dates
+- **Linear Agent follow-up** — worth monitoring as Code Intelligence ships and pricing settles post-beta
+
 ## Run 683 — 2026-04-19 — Freshness Review: Docker MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
