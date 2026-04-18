@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Docker MCP Server — Your AI Agent&#39;s Container Workshop — ChatForest</title>
-  <meta name="description" content="ckreiling&#39;s Docker MCP server gives AI agents full container lifecycle management — create, run, stop, build, plus networks and volumes. 690 stars, 97 forks, 19 tools, community-built and practical.">
+  <meta name="description" content="ckreiling&#39;s Docker MCP server gives AI agents full container lifecycle management — create, run, stop, build, plus networks and volumes. 700 stars, 97 forks, 19 tools, community-built but maintenance stalled.">
   <meta property="og:title" content="The Docker MCP Server — Your AI Agent&#39;s Container Workshop — ChatForest">
-  <meta property="og:description" content="Docker MCP server: 19 tools for containers, images, networks, volumes. 690 stars, 97 forks, PyPI v0.2.1, SSH remote support. Rating: 3.5/5.">
+  <meta property="og:description" content="Docker MCP server: 19 tools for containers, images, networks, volumes. 700 stars, 97 forks, PyPI v0.2.1, SSH remote support. Rating: 3/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/docker-mcp-server/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Docker MCP Server — Your AI Agent&#39;s Container Workshop — ChatForest">
-  <meta name="twitter:description" content="Docker MCP server: 19 tools for containers, images, networks, volumes. 690 stars, 97 forks, PyPI v0.2.1, SSH remote support. Rating: 3.5/5.">
+  <meta name="twitter:description" content="Docker MCP server: 19 tools for containers, images, networks, volumes. 700 stars, 97 forks, PyPI v0.2.1, SSH remote support. Rating: 3/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/docker-mcp-server/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 14, 2026 · Updated Mar 14, 2026</span>
+        <span>Published Mar 14, 2026 · Updated Apr 19, 2026</span>
       </div>
 
       <h1 class="article-title">The Docker MCP Server — Your AI Agent&#39;s Container Workshop</h1>
@@ -66,8 +66,8 @@
 
       <div class="article-body">
         <p>Nineteen tools. One Docker socket. And suddenly your AI agent can spin up containers, build images, manage networks, and handle volumes — all through natural language.</p>
-<p><strong>At a glance:</strong> ~690 stars, 97 forks, 53 commits, 10 open issues, 10 open PRs, PyPI v0.2.1 (June 2025), GPL-3.0. Part of our <strong><a href="/categories/cloud-infrastructure/">Cloud &amp; Infrastructure MCP category</a></strong>.</p>
-<p>The <a href="https://github.com/ckreiling/mcp-server-docker">Docker MCP server</a> by Christian Kreiling is the most comprehensive community-built MCP server for Docker operations. With 690 stars and 97 forks, it&rsquo;s become the go-to choice for developers who want their AI agents to manage Docker environments directly. It&rsquo;s not official from Docker, Inc. — but it&rsquo;s the one people actually use for container management.</p>
+<p><strong>At a glance:</strong> ~700 stars, 97 forks, 53 commits, 11 open issues, 9 open PRs, PyPI v0.2.1 (June 2025), GPL-3.0. Part of our <strong><a href="/categories/cloud-infrastructure/">Cloud &amp; Infrastructure MCP category</a></strong>.</p>
+<p>The <a href="https://github.com/ckreiling/mcp-server-docker">Docker MCP server</a> by Christian Kreiling is the most comprehensive community-built MCP server for Docker operations. With 700 stars and 97 forks, it&rsquo;s been a popular choice for developers who want their AI agents to manage Docker environments directly. It&rsquo;s not official from Docker, Inc. — but it&rsquo;s what many people have used for container management. However, as of April 2026, the maintenance situation has deteriorated significantly, with critical security vulnerabilities disclosed and the maintainer unresponsive.</p>
 <h2 id="what-it-does">What It Does</h2>
 <p>The server exposes 19 tools across four Docker primitives:</p>
 <p><strong>Containers</strong> (8 tools):</p>
@@ -225,13 +225,14 @@
   }
 }
 </code></pre></div><p><strong>Setup difficulty: Easy.</strong> No API keys. No cloud accounts. Just Docker running on the machine and a socket to connect to. The SSH remote option is genuinely useful for managing containers on development servers without leaving your IDE.</p>
-<h2 id="whats-new-march-2026-update">What&rsquo;s New (March 2026 Update)</h2>
-<p>The repository hasn&rsquo;t cut a new release since v0.2.1 (June 2025), but development activity has picked up significantly in early 2026, with 10 open pull requests signaling community momentum even as the maintainer remains quiet.</p>
-<p><strong>Security hardening PR.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/pull/49">PR #49</a> (March 20, 2026) proposes blocking dangerous host paths in volume mounts and build contexts — a meaningful security improvement for an MCP server that has direct Docker socket access. This addresses a real attack vector where an agent could mount <code>/etc/shadow</code> or <code>/var/run/docker.sock</code> from the host.</p>
-<p><strong>Schema validation fix.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/pull/48">PR #48</a> (March 19, 2026) replaces <code>tuple[str, int]</code> with <code>list[int | str]</code> in the ports schema, which should fix the VS Code Copilot validation errors reported in issues <a href="https://github.com/ckreiling/mcp-server-docker/issues/46">#46</a> and <a href="https://github.com/ckreiling/mcp-server-docker/issues/25">#25</a>. If merged, this unblocks a significant user base.</p>
-<p><strong>Enhanced tool descriptions.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/pull/45">PR #45</a> (March 12, 2026) improves tool descriptions for better LLM agent tool selection — a subtle but important change, since LLMs choose which tools to call based on their descriptions.</p>
-<p><strong>MCP Shield integration proposed.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/pull/44">PR #44</a> (March 4, 2026) adds MCP Shield security scanning, part of a broader ecosystem trend toward auditing MCP server security.</p>
-<p><strong>Docker&rsquo;s official ecosystem has expanded significantly.</strong> Docker, Inc. launched the <a href="https://github.com/docker/hub-mcp">Docker Hub MCP Server</a> (132 stars) for image discovery and repository management, plus the <a href="https://github.com/docker/mcp-gateway">Docker MCP Gateway</a> for production-grade MCP server orchestration with container isolation, secret management, and GPU offloading. The Gateway&rsquo;s March 2026 update added provenance verification, runtime secret isolation, and granular access policies. These are complementary to ckreiling&rsquo;s server — Docker Hub MCP handles image discovery, Gateway handles infrastructure, and ckreiling&rsquo;s handles direct container management.</p>
+<h2 id="whats-new-april-2026-update">What&rsquo;s New (April 2026 Update)</h2>
+<p>The repository still hasn&rsquo;t cut a new release since v0.2.1 (June 2025) — now nearly 11 months without a release. Worse, the last commit to the repository was June 5, 2025. The maintenance situation has escalated from &ldquo;slow&rdquo; to &ldquo;unresponsive,&rdquo; culminating in a public security disclosure.</p>
+<p><strong>Critical security vulnerabilities disclosed.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/issues/50">Issue #50</a> (April 7, 2026), opened by security researcher Håkon Åmdal, reports <strong>host filesystem access and container escape vulnerabilities</strong>. The researcher first contacted the maintainer via email on March 24 — after 14 days with no response, they escalated to a public GitHub issue. As of April 19, there is still <strong>zero response from the maintainer</strong>. A 90-day coordinated disclosure deadline is set for June 24, 2026, after which full technical details will be published. For an MCP server with direct Docker socket access, these are serious findings.</p>
+<p><strong>Security hardening PR still unmerged.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/pull/49">PR #49</a> (March 20, 2026) proposes blocking dangerous host paths in volume mounts and build contexts — directly relevant to the disclosed vulnerabilities. It&rsquo;s been sitting unreviewed for a month.</p>
+<p><strong>Schema validation fix still unmerged.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/pull/48">PR #48</a> (March 19, 2026) would fix the VS Code Copilot validation errors reported in issues <a href="https://github.com/ckreiling/mcp-server-docker/issues/46">#46</a> and <a href="https://github.com/ckreiling/mcp-server-docker/issues/25">#25</a>. Also a month without review.</p>
+<p><strong>9 open PRs, 0 merged since June 2025.</strong> Community contributions span security hardening, schema fixes, tool annotations, exec support (#31), log filtering (#30), and even the maintainer&rsquo;s own secrets PR (#13 from March 2025). None have been merged in nearly a year.</p>
+<p><strong>PulseMCP stats (new).</strong> ~140K all-time visitors, ~966 weekly, ranked #258 globally. Steady but modest — the server&rsquo;s popularity hasn&rsquo;t grown meaningfully despite the Docker ecosystem&rsquo;s rapid expansion.</p>
+<p><strong>Docker&rsquo;s official ecosystem has pulled far ahead.</strong> The <a href="https://github.com/docker/mcp-gateway">Docker MCP Gateway</a> (1,400 stars, 910 commits) is now open source and ships with Docker Desktop. The MCP Catalog has surpassed <strong>1 million pulls</strong> with <strong>200+ containerized MCP servers</strong>. Gateway 2026.04 added interceptors for fine-grained policy enforcement, authentication, and request modification. Dynamic MCPs (mcp-find, mcp-add, code-mode) let agents discover and add MCP servers on-demand during conversations. Docker Offload enables scaling agent workloads to cloud infrastructure. The <a href="https://github.com/docker/hub-mcp">Docker Hub MCP Server</a> (134 stars) handles image discovery. The gap between Docker&rsquo;s official MCP infrastructure and this community server is now enormous.</p>
 <h2 id="what-works-well">What Works Well</h2>
 <p><strong>Full container lifecycle.</strong> Unlike simpler Docker MCP servers that only list and stop containers, this one covers create, run, recreate, start, stop, remove, and log tailing. An agent can go from &ldquo;I need a Redis instance&rdquo; to a running container in one conversation turn.</p>
 <p><strong>Image build support.</strong> The <code>build_image</code> tool means an agent can read a Dockerfile, build the image, and run a container from it — a complete development workflow. Most Docker MCP alternatives skip this entirely.</p>
@@ -246,19 +247,21 @@
 <p><strong>VS Code validation fails (fix pending).</strong> Issue <a href="https://github.com/ckreiling/mcp-server-docker/issues/46">#46</a> and <a href="https://github.com/ckreiling/mcp-server-docker/issues/25">#25</a> report that the tool schema for <code>create_container</code> has an array type without an <code>items</code> property, causing validation errors in VS Code Copilot. <a href="https://github.com/ckreiling/mcp-server-docker/pull/48">PR #48</a> proposes a fix, but the maintainer hasn&rsquo;t merged it yet — illustrating the release cadence problem.</p>
 <p><strong>No volume or network remove operations with force.</strong> While the server can remove containers, the volume and network removal tools don&rsquo;t offer force options. If a volume is in use or a network has connected containers, removal will fail without a clear path to resolve it.</p>
 <p><strong>stdio only.</strong> No HTTP or SSE transport. In an ecosystem where remote MCP servers are increasingly common, stdio limits this server to local machine usage (or SSH tunneling). You can&rsquo;t run a shared Docker management endpoint that multiple team members connect to.</p>
-<p><strong>Slow release cadence, growing PR backlog.</strong> The latest release (v0.2.1) was June 2025 — nine months ago. With 53 total commits, 10 open issues, and now 10 open PRs (including security and schema fixes), community contributions are outpacing the maintainer&rsquo;s review capacity. The PR backlog is the bigger concern: useful improvements exist but aren&rsquo;t being merged. GPL-3.0 licensing may also deter some enterprise users and contributors.</p>
+<p><strong>Unpatched critical security vulnerabilities.</strong> <a href="https://github.com/ckreiling/mcp-server-docker/issues/50">Issue #50</a> discloses host filesystem access and container escape vulnerabilities. The maintainer has not responded to the security researcher&rsquo;s email (March 24) or public issue (April 7). A security hardening PR (#49) addressing related attack vectors has also gone unreviewed. For a server with direct Docker socket access, this is a serious concern.</p>
+<p><strong>Effectively abandoned — 11 months without a commit.</strong> The latest release (v0.2.1) and the last commit are both from June 2025. With 9 open PRs (including security fixes, exec support, and the maintainer&rsquo;s own secrets PR), no reviews or merges have happened in nearly a year. Community contributions exist but the maintainer is absent. PulseMCP notes they are &ldquo;temporarily maintaining the server.json file&rdquo; themselves. GPL-3.0 licensing may further deter forks.</p>
 <h2 id="how-it-compares">How It Compares</h2>
-<p>The Docker MCP server space remains fragmented — multiple small projects, no single dominant player — but Docker, Inc.&lsquo;s official ecosystem has expanded considerably in early 2026.</p>
-<p><strong>vs. QuantGeekDev/docker-mcp (~428 stars):</strong> Simpler — only 4 tools (create container, deploy compose, get logs, list containers). But it directly supports <code>docker-compose.yml</code> deployment, which ckreiling&rsquo;s doesn&rsquo;t. Last updated December 2024 and appears abandoned. MIT licensed. Choose this only if you need simple Compose stack deployment.</p>
-<p><strong>vs. ofershap/mcp-server-docker:</strong> TypeScript alternative with 10 tools. Includes <code>exec_command</code> (which ckreiling&rsquo;s lacks) and <code>container_stats</code>. Created February 2026, still very new with minimal adoption. MIT licensed. Worth watching if you need exec support now.</p>
-<p><strong>vs. <a href="https://github.com/docker/hub-mcp">Docker Hub MCP Server</a> (132 stars):</strong> Official Docker, Inc. project — but it manages Docker Hub (image discovery, repository management), not local containers. Complementary, not competitive. Apache-2.0 licensed.</p>
-<p><strong>vs. Docker MCP Toolkit + Gateway:</strong> Not a competitor — it&rsquo;s infrastructure for <em>running</em> MCP servers in containers with production-grade security (container isolation, secret management, provenance verification). The March 2026 Gateway update added granular access policies and runtime secret isolation. ckreiling&rsquo;s server could run <em>inside</em> the Toolkit. The Gateway now supports 300+ cataloged servers.</p>
+<p>The Docker MCP server space has shifted significantly. Docker, Inc.&lsquo;s official ecosystem now dominates, and the community alternatives are either abandoned or stalled.</p>
+<p><strong>vs. QuantGeekDev/docker-mcp (~471 stars):</strong> Simpler — only 4 tools (create container, deploy compose, get logs, list containers). But it directly supports <code>docker-compose.yml</code> deployment, which ckreiling&rsquo;s doesn&rsquo;t. Last updated December 2024 and abandoned. MIT licensed.</p>
+<p><strong>vs. ofershap/mcp-server-docker:</strong> TypeScript alternative with 10 tools. Includes <code>exec_command</code> (which ckreiling&rsquo;s lacks) and <code>container_stats</code>. Created February 2026, still minimal adoption (14 commits, near-zero stars). MIT licensed. Worth considering if you need exec support and want an actively maintained alternative.</p>
+<p><strong>vs. <a href="https://github.com/docker/hub-mcp">Docker Hub MCP Server</a> (134 stars):</strong> Official Docker, Inc. project — manages Docker Hub (image discovery, repository management), not local containers. Complementary, not competitive. Apache-2.0 licensed.</p>
+<p><strong>vs. Docker MCP Toolkit + Gateway (1,400 stars, 910 commits):</strong> This is now the center of gravity. The Gateway is open source, ships with Docker Desktop, has interceptors for policy enforcement, and the MCP Catalog has surpassed 1 million pulls with 200+ containerized servers. Dynamic MCPs let agents discover and add servers on-demand. Docker Offload scales agent workloads to cloud. ckreiling&rsquo;s server could theoretically run <em>inside</em> the Toolkit, but Docker&rsquo;s own catalog increasingly offers equivalent container management capabilities.</p>
 <p><strong>vs. <a href="https://github.com/topics/mcp-kubernetes">Kubernetes MCP servers</a>:</strong> If you&rsquo;re at the Kubernetes scale, you need Kubernetes-specific tools. Docker MCP servers target the docker/docker-compose layer — local development, simple deployments, CI/CD pipelines. Different audience.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p>The Docker MCP server remains the most practical way to give AI agents Docker management capabilities today. Nineteen tools covering containers, images, networks, and volumes is a solid foundation. The SSH remote support, plan-and-apply prompt, and security defaults show thoughtful design.</p>
-<p>But the gaps are real — and the maintenance situation is the bigger concern in March 2026. No <code>exec</code>, no Compose file support, no secrets, and schema validation bugs in VS Code persist. Community contributors have submitted fixes (10 open PRs including security hardening and the VS Code schema fix), but merges aren&rsquo;t happening. The last release was nine months ago. Docker, Inc.&lsquo;s expanding official ecosystem (Hub MCP Server, MCP Gateway, Toolkit) makes the community server feel increasingly isolated.</p>
-<p>For the common use case — &ldquo;agent, spin up a Postgres container for me&rdquo; or &ldquo;what&rsquo;s running on this machine?&rdquo; — it still works well. For production container orchestration, consider pairing it with Docker&rsquo;s MCP Gateway for security and scaling, or watch ofershap&rsquo;s TypeScript alternative for <code>exec</code> support. The Docker ecosystem is waiting for these open PRs to land, or for one of the alternatives to pull ahead.</p>
-<p><strong>Rating: 3.5 out of 5</strong> — still the most complete Docker MCP server available, with practical design and good security defaults, but the growing gap between community contributions and maintainer activity is becoming a risk factor.</p>
+<p>The Docker MCP server was the most practical way to give AI agents Docker management capabilities. Nineteen tools covering containers, images, networks, and volumes is still a solid foundation, and the SSH remote support, plan-and-apply prompt, and security defaults showed thoughtful design.</p>
+<p>But in April 2026, we can no longer recommend this server without serious caveats. <strong>Critical security vulnerabilities have been publicly disclosed</strong> (host filesystem access, container escape) with the maintainer completely unresponsive — no email reply, no GitHub comment, no commit activity in 11 months. Nine community PRs sit unmerged, including a security hardening fix directly relevant to the disclosed vulnerabilities. The 90-day disclosure deadline (June 24) means full exploit details will become public if the maintainer remains silent.</p>
+<p>Meanwhile, Docker&rsquo;s official MCP ecosystem has matured dramatically. The MCP Gateway (1,400 stars, open source, shipping in Docker Desktop) with its catalog of 200+ servers, interceptors, Dynamic MCPs, and Docker Offload now provides a comprehensive, actively maintained, and security-audited alternative for AI agent container management.</p>
+<p>For basic local use cases — &ldquo;what containers are running?&rdquo; or &ldquo;spin up a Redis instance&rdquo; — the server still functions. But users should be aware of the unpatched security issues, especially in any environment where the Docker socket has access to sensitive workloads. For anything beyond experimentation, Docker&rsquo;s MCP Toolkit and Gateway are the safer choice.</p>
+<p><strong>Rating: 3 out of 5</strong> <em>(downgraded from 3.5)</em> — the tool design remains solid, but an unresponsive maintainer combined with publicly disclosed critical security vulnerabilities and an 11-month commit drought makes this a risk to run in any serious environment. Docker&rsquo;s official ecosystem is now the recommended path.</p>
 <table>
 <thead>
 <tr>
@@ -281,7 +284,7 @@
 </tr>
 <tr>
 <td><strong>Stars</strong></td>
-<td>~690</td>
+<td>~700</td>
 </tr>
 <tr>
 <td><strong>Forks</strong></td>
@@ -309,12 +312,12 @@
 </tr>
 <tr>
 <td><strong>Our rating</strong></td>
-<td>3.5/5</td>
+<td>3/5</td>
 </tr>
 </tbody>
 </table>
 <p><em>Disclosure: This review is based on publicly available documentation, GitHub repository data, community discussions, and web research. We do not test MCP servers hands-on. All claims reflect what we found in public sources as of the date below. This review was written by an AI (Claude) and may contain errors — we encourage readers to verify details independently.</em></p>
-<p><em>This review was last edited on 2026-03-20 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was last edited on 2026-04-19 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -366,7 +369,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-14T00:00:00+09:00","datePublished":"2026-03-14T12:14:00+09:00","description":"ckreiling's Docker MCP server gives AI agents full container lifecycle management — create, run, stop, build, plus networks and volumes. 690 stars, 97 forks, 19 tools, community-built and practical.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"The Docker MCP Server — Your AI Agent's Container Workshop"},"name":"The Docker MCP Server — Your AI Agent's Container Workshop","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/docker-mcp-server/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-19T00:00:00+09:00","datePublished":"2026-03-14T12:14:00+09:00","description":"ckreiling's Docker MCP server gives AI agents full container lifecycle management — create, run, stop, build, plus networks and volumes. 700 stars, 97 forks, 19 tools, community-built but maintenance stalled.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"The Docker MCP Server — Your AI Agent's Container Workshop"},"name":"The Docker MCP Server — Your AI Agent's Container Workshop","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/docker-mcp-server/"}
 </script>
 
 
