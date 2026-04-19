@@ -5,12 +5,12 @@ description: "Tavily's official MCP server gives AI agents web search, content e
 og_description: "Tavily's official MCP server gives AI agents web search, content extraction, site crawling, and URL mapping. Four tools, a hosted remote server, and deep RAG framework integration."
 content_type: "Review"
 card_description: "Four tools covering search, extract, crawl, and map — plus a hosted remote server you can use without installing anything. The default search API for RAG pipelines, now reviewed."
-last_refreshed: 2026-03-14
+last_refreshed: 2026-04-19
 ---
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** 1,500+ stars · 201 forks · 199 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month
+**At a glance:** 1,800+ stars · 240 forks · 209 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month
 
 Most search MCP servers do one thing: search. You send a query, you get links back. Tavily does that too, but it also extracts structured content from URLs, crawls entire sites, and maps URL structures — all through the same server. It's less "search tool" and more "web intelligence platform."
 
@@ -70,19 +70,21 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 - `DEFAULT_PARAMETERS` — Set defaults for all tool calls via environment variable (local) or HTTP header (remote). Pass JSON like `{"search_depth": "advanced", "max_results": 10}` to avoid repeating common parameters.
 - Named API keys — If you run multiple agents, you can assign priority-ordered API keys (`mcp_auth_default` > `team` > `default`) so different agents use different quotas.
 
-## What's New (March 2026 Updates)
+## What's New (April 2026 Updates)
 
-**Nebius acquisition confirmed at $275 million.** Nebius (formerly Yandex) announced the deal on February 10, 2026, with the price potentially rising to $400 million if milestones are met. The Tavily team, including CEO Rotem Weiss, joins Nebius but the brand and product continue independently. Nebius says the API, data policies, and zero data retention policy remain unchanged. The strategic pitch: Nebius's global infrastructure means better latency, uptime, and support for large-scale deployments. Whether that materializes remains to be seen — the deal is expected to close in the coming weeks.
+**`exact_match` parameter added to tavily-search (April 15).** A new boolean parameter restricts search results to those containing exact quoted phrases. This fills a gap for precise lookups where keyword-based search returned too many loosely related results. The feature is in the GitHub repo but hasn't been released to npm yet — the latest npm version is still 0.2.18 from March 12.
 
-**Now on Cursor's MCP marketplace.** Tavily is available as a one-click install in Cursor, giving coding agents real-time web access for researching libraries, pulling live documentation, and grounding responses in current data. This joins the existing Claude Code and Smithery integrations.
+**Tavily CLI launched (`tvly`).** A command-line tool for search, extract, crawl, and sitemap discovery. Supports `--json` output and an interactive REPL. Installable via npx. This gives developers a way to test Tavily queries outside of an MCP client.
 
-**Generative UI Research Canvas launched.** A new integration with LangChain, Tako, and CopilotKit transforms text-based research outputs into interactive visual interfaces. This is a showcase for Tavily's framework ecosystem — the kind of integration that competitors don't have.
+**New integrations: OpenClaw, NVIDIA AI-Q Blueprint, JetBrains Junie.** Tavily is now a built-in web search option during OpenClaw onboarding (no extra configuration). NVIDIA featured Tavily as the retrieval layer in their AI-Q Blueprint at GTC 2026, with Jensen Huang highlighting the partnership at the Nebius booth. JetBrains published a case study showing their Junie coding agent using Tavily to fix hallucination via real-time web grounding.
 
-**Pay-as-you-go pricing added.** In addition to the tiered credit plans, Tavily now offers a pay-as-you-go option at $0.008 per credit with no monthly commitment. This addresses the "credits don't roll over" complaint — if your usage is unpredictable, you can pay per credit instead of committing to a monthly allotment.
+**Nebius acquisition: still pending formal closure.** The $275M deal (up to $400M with milestones) was announced February 10, 2026. Some sources use past-tense language, and the teams appear to be operating together already (Tavily appeared at the Nebius booth at GTC), but no official press release confirms closing. The API, data policies, and zero data retention policy remain unchanged.
 
-**Research API pricing revealed.** Tavily's Research API (separate from the MCP server's four tools) costs 4–250 credits per request depending on the model (mini vs. pro). This signals Tavily is moving toward deeper research capabilities beyond basic search.
+**Tool description quality flagged.** Issue #141 reports that an automated MCP quality scan scored Tavily a D grade (38/100). Three tools (extract, crawl, map) received F grades for near-zero descriptions and zero routing guidance between overlapping capabilities. This matters because AI agents rely on tool descriptions to decide when to use each tool.
 
-**Scale numbers:** Tavily now reports 3 million monthly SDK downloads and a developer community of over one million users — strong product-market fit heading into the Nebius era.
+**npm downloads growing.** Weekly downloads have risen from ~82K to ~93K (+14%). Stars grew from ~1,500 to ~1,800 (+20%), forks from 201 to 240.
+
+**Previous updates (February–March 2026):** Nebius acquisition announced at $275M. Cursor MCP marketplace integration. Generative UI Research Canvas with LangChain/Tako/CopilotKit. Pay-as-you-go pricing at $0.008/credit. Research API pricing (4–250 credits/request). 3M monthly SDK downloads, 1M+ developer community.
 
 ## What Works Well
 
@@ -108,7 +110,11 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 
 **API key in URL is a security concern.** The remote server's simplest authentication method puts your API key in the URL query string: `https://mcp.tavily.com/mcp/?tavilyApiKey=YOUR_KEY`. URL parameters appear in server logs, browser history, and proxy logs. OAuth support exists as an alternative, but the documentation leads with the URL approach. *(This is a common pattern in MCP, not unique to Tavily, but worth noting.)*
 
-**Nebius acquisition adds uncertainty.** Nebius (formerly Yandex) is acquiring Tavily for $275 million (up to $400M with milestones), announced February 10, 2026. The API and MCP server continue to work — Nebius explicitly states no changes to the API or data policies. But roadmap uncertainty is real. Pricing, free tier policy, and strategic direction could all shift under new ownership. The Tavily team and brand continue for now, which is a good sign, but "for now" is the operative phrase.
+**Tool descriptions are inadequate for agent routing.** An automated quality scan (issue #141) gave Tavily a D grade — three of four tools have near-zero descriptions with no guidance on when to use extract vs. crawl vs. map. AI agents pick tools based on descriptions, so minimal descriptions mean agents may choose the wrong tool or ignore available capabilities. This is a straightforward fix that hasn't been addressed.
+
+**No npm release in over five weeks.** The latest npm version is still 0.2.18 from March 12. New features like `exact_match` are in the GitHub repo but not released. No formal GitHub releases exist at all — the releases page is empty. For a server with 93K weekly npm downloads, this release hygiene gap is surprising.
+
+**Nebius acquisition still pending.** The $275M deal was announced February 10, 2026. Over two months later, no official closure announcement exists, though the teams appear to be working together (GTC booth). The API continues to work unchanged, but roadmap uncertainty persists. Pricing, free tier policy, and strategic direction could all shift under new ownership.
 
 ## Compared to Alternatives
 
@@ -137,7 +143,7 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 - Acquisition uncertainty is a dealbreaker for your production stack
 
 {{< verdict rating="4" summary="The best search-to-extract pipeline in one MCP server" >}}
-The Tavily MCP server earns its place as the default search API for AI frameworks — now backed by 3 million monthly SDK downloads and a million-plus developer community. Four tools that cover search, extraction, crawling, and site mapping — capabilities that would normally require two or three separate MCP servers. The remote hosted server is the easiest setup in the ecosystem, and the new Cursor marketplace integration makes it even more accessible. Keyword-based search quality trails semantic engines like Exa on conceptual queries, and credit stacking at scale can get expensive (though the new pay-as-you-go option helps). The Nebius acquisition at $275M signals that Tavily has serious backing — whether that translates to faster improvements or unwanted changes remains the open question. For the common workflow of "find it, read it, crawl for more" — Tavily still handles the whole pipeline better than anyone.
+Tavily remains the default search API for AI frameworks — 1,800+ stars, ~93K weekly npm downloads, and integrations with NVIDIA AI-Q, OpenClaw, and JetBrains Junie expanding its reach. Four tools covering search, extraction, crawling, and site mapping in one server is still unmatched. The new `exact_match` parameter improves search precision, and the Tavily CLI gives developers a useful testing path outside MCP clients. But tool description quality needs work — a D grade on automated scans means agents may not use the right tool for the job. No npm release in five weeks and no formal GitHub releases at all are minor but growing concerns. The Nebius acquisition remains pending after two months. For the common workflow of "find it, read it, crawl for more" — Tavily still handles the whole pipeline better than anyone.
 {{< /verdict >}}
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not test MCP servers hands-on; all findings are based on documentation, source code, community reports, and public benchmarks. Last updated 2026-03-20.*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not test MCP servers hands-on; all findings are based on documentation, source code, community reports, and public benchmarks. Last updated 2026-04-19.*
