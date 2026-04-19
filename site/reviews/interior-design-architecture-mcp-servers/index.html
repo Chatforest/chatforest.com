@@ -850,6 +850,20 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-04-20 20:00:00</span></div>
+  <h3><a href="/reviews/magic-mcp-server/">Magic MCP Server (21st.dev) — AI-Powered UI Component Generation in Your IDE</a></h3>
+  <p>An MCP server that generates React/TypeScript UI components from natural language descriptions, pulling from 21st.dev&#39;s curated component library. Works inside Cursor, Windsurf, VS Code, and Cline. YC W26-backed, currently in beta with a freemium model.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-04-20 18:00:00</span></div>
+  <h3><a href="/reviews/task-master-mcp-server/">Task Master MCP Server — AI-Powered Task Management for Development Workflows</a></h3>
+  <p>An AI-powered task management MCP server that parses PRDs into structured task lists with dependencies, complexity analysis, and multi-model AI support. 36 tools across three loading tiers, designed for Cursor, Claude Code, Windsurf, and other AI editors. Wildly popular with significant rough edges.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-04-20 12:00:00</span></div>
   <h3><a href="/reviews/desktop-commander-mcp-server/">Desktop Commander MCP Server — Full Terminal and File Control for AI Agents</a></h3>
   <p>A community MCP server that gives AI agents terminal access, diff-based file editing, and persistent process management. 22 tools covering terminal sessions, filesystem operations, code editing, and search — the most capable local development MCP server available, with significant security caveats.</p>
@@ -860,20 +874,6 @@
   <div class="card-meta"><span>Review</span> <span>2026-03-24 23:00:00</span></div>
   <h3><a href="/reviews/code-generation-mcp-servers/">Code Generation MCP Servers — UI Components, Context Providers, and the Paradox of AI Writing Its Own Tools</a></h3>
   <p>Code generation MCP servers reveal a paradox: every major AI coding platform (GitHub Copilot, Cursor, Windsurf, Amazon Q, JetBrains AI, Claude Code) supports MCP as a client — consuming external tools and context — but none exposes its code generation engine as an MCP server. The real ecosystem is context provision: Context7 (50k stars) delivers version-specific library documentation, magic-mcp (4.5k stars) generates UI components from natural language, shadcn-ui MCP server (2.7k stars) provides component context, and Vercel&#39;s next-devtools-mcp (694 stars) gives coding agents real-time Next.js app internals. The strongest pattern is design-to-code: Figma&#39;s official MCP server enables bidirectional AI workflows.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-03-24 23:00:00</span></div>
-  <h3><a href="/reviews/code-review-pull-request-mcp-servers/">Code Review &amp; Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Graphite GT, GitLab MR, Community PR Reviewers</a></h3>
-  <p>Code review and pull request MCP servers spanning code quality platforms, PR management, stacked PR workflows, and AI-powered diff analysis. SonarQube MCP (SonarSource, 442 stars, Kotlin, native in SonarQube Cloud since March 2026) is the most mature — analyze code snippets within agent context, query project quality gates, detect vulnerabilities and code smells, supported across Claude Code, Cursor, GitHub Copilot, VS Code, and 10&#43; platforms. SonarQube Cloud&#39;s embedded MCP removes Docker installation entirely, transforming SonarQube into a fully managed enterprise MCP service. Codacy MCP (official, 56 stars, TypeScript, MIT) covers the full code quality spectrum: static analysis (SAST, secrets, IaC, CICD scanning), coverage metrics, duplication detection, complexity analysis, and pull request tools (PR listing, diff analysis, coverage reports). Codacy positions itself as &#39;MCP-native&#39; — designed from the ground up for agentic development. Graphite GT MCP (built into Graphite CLI v1.6.7&#43;, Go, beta) takes a unique approach: instead of reviewing code, it helps AI agents create stacked PRs from large diffs. GT MCP guides agents through breaking changes into smaller, focused PRs that are easier to review — particularly valuable for AI-generated code where single large diffs are common. CodeRabbit is the dominant AI code review platform but operates as an MCP client, not server — it consumes context from connected MCP servers (Datadog, Linear, Confluence, Slack, SonarQube, Snyk) to enrich its reviews. The coderabbitai-mcp community server (bradthebeeble, 26 stars, TypeScript, MIT) lets LLMs interact with CodeRabbit reviews on GitHub PRs. For GitLab, kopfrechner/gitlab-mr-mcp (86 stars, JavaScript, MIT, 10 tools) enables AI agents to manage merge requests: list projects, fetch MR details/diffs/comments, add general and line-specific comments, update titles and descriptions. Community code review MCP servers take a different approach — they use external LLMs to perform reviews rather than providing review data as context. crazyrabbitLTC/mcp-code-review-server (32 stars, MIT, Repomix &#43; multi-LLM) flattens repos and runs LLM analysis. praneybehl/code-review-mcp (30 stars, TypeScript, MIT) provides git diff analysis with Vercel AI SDK supporting Google, OpenAI, and Anthropic models. Orcus2021/code-review-mcp-server (6 stars, TypeScript, 7 tools) posts review comments directly to GitHub PRs with Notion integration for custom guidelines. The code quality platform market ($2.5–3.5B in 2025, growing 15–20% CAGR) and AI code assistant market ($4.7B in 2025, growing to $14.6B by 2033) reflect surging demand for automated review. Gaps remain significant: no Qodo/PR-Agent MCP server (10.5k stars, the most popular open-source PR reviewer), no direct CodeRabbit MCP server (only community wrapper), no Sourcery/CodeAnt/Panto/Bito MCP, no Azure DevOps PR MCP, no Gerrit MCP, no code review analytics MCP, no review assignment/load balancing MCP.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-03-24 22:00:00</span></div>
-  <h3><a href="/reviews/package-management-mcp-servers/">Package Management MCP Servers — NuGet, npm, PyPI, Maven, and the Quest for AI-Assisted Dependency Intelligence</a></h3>
-  <p>Package management MCP servers cover dependency intelligence across npm, PyPI, Maven, NuGet, Cargo, and more. Microsoft&#39;s NuGet MCP server leads with first-party IDE integration — built into Visual Studio 2026 with vulnerability fixing and version management. Homebrew ships an official built-in MCP server for macOS package management. The community-driven mcp-package-version (122 stars, Go) covers 9 registries including Docker Hub and GitHub Actions. npm-sentinel-mcp offers the deepest single-registry analysis with 18&#43; tools. But vendor investment is thin: only NuGet and Homebrew have official servers.</p>
 </div>
 
   
