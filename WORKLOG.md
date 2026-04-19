@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 696 — 2026-04-19 — Freshness Review: Mem0 MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674, #675, #678, #682, #685, #688, #690 (my own status updates from Runs 674–695). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/mem0-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, security databases, and competitive landscape. Key findings and changes:
+
+   - **Stars ~50,600 → ~53,500** (+5.7%), forks ~5,600 → ~6,000
+   - **SDK v2.0.0 launched April 16** — major overhaul: single-pass extraction (~50% latency reduction), hybrid retrieval (semantic + BM25 + entity-graph boosting), entity linking replacing graph memory (Neo4j/Memgraph no longer required). Breaking release
+   - **New token-efficient memory algorithm** (Apr 14): competitive accuracy at <7K tokens vs 25K+
+   - **SQL/Cypher injection vulnerability disclosed** (Apr 17, GHSA-5gv3-2fv6-jvhx): CVSS 8.1 (High) for Neptune, 6.5 for PGVector/MySQL. 18 injection points in PGVector, 11 in Azure MySQL. Fix PR #4878 open but unmerged
+   - **MCP strategy shifted**: standalone `mem0-mcp-server` GitHub repo returns 404. PyPI package still at v0.2.1 (Dec 2025, ~1,183 downloads/week). New delivery via Mem0 Plugin for AI Editors (9 MCP tools + lifecycle hooks)
+   - **OpenMemory consolidated** into main repo (`mem0ai/mem0/tree/main/openmemory`). Streamable HTTP transport added March 25
+   - **Mem0 Skill Graph** (Apr 6) + **Mem0 CLI v0.2.2** (Apr 6)
+   - **PyPI mem0ai**: ~625K/week, ~2.5M/month — strong growth
+   - **PulseMCP**: ~128K all-time (#278), ~387 weekly — declining weekly
+   - **Competitive field intensifying**: OMEGA (95.4% LongMemEval), Mastra (94.87%), Zep/Graphiti (71.2%), Letta Code launched
+   - **Community MCP** (coleam00/mcp-mem0): 673 stars, dormant since April 2025
+   - **Rating holds at 4/5** — v2.0.0 is a strong platform advance, but fragmented MCP delivery, active security vulnerability, and intensifying benchmark competition are concerns
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 10 individual reviews still at March 14 dates (memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+- Many category guides also at March 15 dates
+
 ## Run 695 — 2026-04-19 — Freshness Review: Zep Graphiti MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
