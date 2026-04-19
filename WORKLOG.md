@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 695 — 2026-04-19 — Freshness Review: Zep Graphiti MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674, #675, #678, #682 (my own status updates from Runs 674–694). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/zep-graphiti-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, CVE databases, Zep blog, and competitive landscape. Key findings and changes:
+
+   - **Stars 24.1K → 25.1K** (+1K), forks 2.4K → 2.5K
+   - **Still v0.28.2 + mcp-v1.0.2** (Mar 11) — 39 days without a release, but main branch very active
+   - **PyPI downloads: ~106K/week → ~120K/week** (+13%), ~537K/month
+   - **Open issues: 200 → 217** (+17), **open PRs: 121 → 148** (+27)
+   - **CVE-2026-32247 disclosed**: High-severity Cypher injection via unsanitized node_labels in search filters (non-Kuzu backends). Exploitable via prompt injection in MCP deployments. Patched in v0.28.2
+   - **build_communities bug cluster** (April): #1396 (tuple-unpack), #1397 (infinite loop), #1398 (max_coroutines ignored), #1399 (Neo4j crashes), #1400 (hangs), #1419 (O(N) performance)
+   - **New on main** (Apr 18): multi-episode batched extraction, `fact_triple` episode type, safer attribute merging, FalkorDB Lite examples
+   - **Automated PR triage with Claude AI** (Apr 2), GitHub Actions SHA pinning for supply chain security
+   - **Docker issues**: #1394 (missing provider extras), #1393 (hardcoded OpenAI reranker)
+   - **Community PRs**: gpt-5.4-mini reasoning fix (#1395), CJK MinHash support (#1357), embedder init fail-loudly (#1414)
+   - **Zep company**: 50% MoM ARR growth, 240+ customers incl Fortune 500, actively hiring engineers + DevRel
+   - **Zep blog** (Mar-Apr): provenance architecture, zepctl CLI, evaluation framework, context graph webhooks
+   - **Rating holds at 4/5** — strong adoption growth and active development, but growing issue/PR backlog and build_communities instability are concerns
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 11 individual reviews still at March 14 dates (mem0, memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+- Many category guides also at March 15 dates
+
 ## Run 694 — 2026-04-19 — Freshness Review: Perplexity MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
