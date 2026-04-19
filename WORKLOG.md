@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 703 — 2026-04-20 — Freshness Review: Pinecone MCP Server Review (37 days stale)
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#707 (my own status updates from Runs 674–702). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/pinecone-mcp-server.md`** (last refreshed March 14 — 37 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, security databases, and competitive landscape. Key findings and changes:
+
+   - **Stars 59→64**, forks still 21, commits still ~106
+   - **Still v0.2.1** — now 10+ weeks without a release (Feb 5, 2026)
+   - **Development stalled since March 6** — no feature commits merged since then
+   - **10 unmerged dependabot PRs** accumulating (Mar 21–Apr 16), including MCP SDK 1.27.1→1.29.0 bump — none merged, suggesting reduced maintainer engagement
+   - **Issue #53 still open** (10+ weeks): `upsert-records` anyOf schema breaks Claude API, no maintainer response
+   - **PR #73 still open** (1 month): security metadata firewall, no review
+   - **PR #67 still open** (6+ weeks): careers tool, approved but not merged
+   - **npm downloads grew strongly**: ~8.7K (Jan) → ~15.6K (Feb) → ~22.6K (Mar), April tracking lower (~10.5K projected)
+   - **PulseMCP**: ~49K→~68.9K all-time (+41%), weekly dropped ~3.9K→~1.8K, #527→#444 overall, #318→#534 this week
+   - **Claude Code Plugin** (separate repo, 57 stars) also unchanged since March 6
+   - **sirmews/mcp-pinecone** still archived (149 stars), last push Jan 2025
+   - **Competitors**: Qdrant 1,359 stars (dominant), Chroma 535, Milvus 228
+   - **No Pinecone MCP-specific CVEs**
+   - **Rating holds at 3/5**
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 3 individual reviews still at March 14 dates (chroma, obsidian, blender at Mar 15)
+
 ## Run 702 — 2026-04-19 — Freshness Review: Honeycomb MCP Server Review (36 days stale)
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
