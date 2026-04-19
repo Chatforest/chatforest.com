@@ -5,12 +5,12 @@ description: "Perplexity's official MCP server gives AI agents four tools spanni
 og_description: "Perplexity's official MCP server gives AI agents four tools spanning search, conversational AI, deep research, and reasoning — all powered by Sonar models."
 content_type: "Review"
 card_description: "Four tools that return synthesized answers instead of links — search, ask, research, and reason. The answer engine approach, now reviewed."
-last_refreshed: 2026-03-14
+last_refreshed: 2026-04-19
 ---
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** 2,000+ stars · 280+ forks · 124 commits · v0.8.4 · 0 open issues · MIT license · TypeScript
+**At a glance:** 2,100+ stars · 305 forks · 133 commits · v0.9.0 · 1 open issue · MIT license · TypeScript
 
 Every other search MCP server returns links. Perplexity returns answers.
 
@@ -20,19 +20,21 @@ This makes Perplexity the fastest path from question to answer. But it also mean
 
 We've been comparing it against [Brave Search](/reviews/brave-search-mcp-server/) (keyword search), [Exa](/reviews/exa-mcp-server/) (semantic search), and [Tavily](/reviews/tavily-mcp-server/) (search + extraction) to see where the answer engine approach wins and where it falls short.
 
-## What's New (March 2026 Updates)
+## What's New (April 2026 Updates)
 
-**Three search context modes.** Sonar Pro, Sonar, and Sonar Reasoning Pro now support three search modes — High, Medium, and Low — that control how much web context the model retrieves before answering. High mode pulls the most sources and costs $12–14 per 1,000 requests; Low mode is leaner at $5–6 per 1,000 requests. This lets agents optimize the cost-vs-depth trade-off per query, something no previous Sonar version offered.
+**MCP server bumped to v0.9.0.** The March 23 release added `VERSION` as a const, source headers for API requests, and resolved npm security alerts. The v0.8.5 intermediate release was also cut the same day. One-click install badges now cover Cursor, VS Code, and AWS Kiro (added April 14). The server's zero-issues streak ended with issue #101 (April 7): Sonar Reasoning Pro returns irrelevant search results for certain queries. Three PRs are open: GitHub Actions CI workflow (#98), custom LLM gateway configuration (#97), and a draft Claude Code plugin manifest (#96).
 
-**Citation tokens are now free.** Perplexity stopped billing for citation tokens across all Sonar models except Deep Research. Previously, citations inflated response costs unpredictably. This simplifies billing and effectively lowers the cost of well-sourced answers — a meaningful change for production deployments where every response includes references.
+**Agent API with third-party models.** Perplexity's API Platform now supports GPT-5.4, NVIDIA Nemotron, Claude Sonnet 4.6, and Gemini 3.1 Pro Preview through the new `/v1/agent` canonical endpoint (the previous `/v1/responses` still works as an alias). A new `/v1/models` endpoint lists available Agent API models in OpenAI-compatible format. This positions Perplexity as a model aggregator, not just a Sonar provider.
 
-**Ask 2026 developer conference (March 11).** Perplexity held its first developer conference in San Francisco, announcing Personal Computer (persistent Mac mini agent for Max subscribers at $200/month), Computer for Enterprise (multi-model AI agent with Slack, Snowflake, and Salesforce connectors, SOC 2 Type II compliance), and new APIs including search embeddings that reportedly outperform Google.
+**AWS Marketplace listing.** The Perplexity API Platform is now available as a SaaS listing on AWS Marketplace. Enterprise teams can purchase API credits ($1,000 minimum) through their AWS accounts, consolidating billing and leveraging committed spend agreements. Credits work across all APIs — Sonar, Agent, Search, and Embeddings.
 
-**Comet browser now cross-platform.** The AI-native Comet browser launched on iPhone (March 2026), joining existing Mac, Windows, and Android versions. This expands Perplexity's consumer surface area but doesn't directly affect the MCP server — mentioned here because the broader Perplexity ecosystem is growing rapidly.
+**Personal Computer for Mac launched (April 16).** Perplexity's always-on desktop agent rolled out to Max subscribers ($200/month). Personal Computer integrates with local files, iMessage, Apple Mail, Calendar, and other native Mac apps. While this doesn't directly affect the MCP server, it signals Perplexity's aggressive push into agentic AI — the company's ARR hit $500M (up 335% YoY from $232M in 2025), driven largely by the Computer product line.
 
-**1,200 tokens/second inference speed.** Sonar models now run on Cerebras inference infrastructure at 1,200 tokens per second, making Perplexity's API one of the fastest answer engines available. For MCP tool calls where latency matters, this is a tangible advantage over competitors that use standard GPU inference.
+**n8n and OpenClaw integrations.** A native Perplexity node was added to n8n with full API coverage (Chat Completions, Agent, Search, and Embeddings). The OpenClaw terminal AI agent now supports Perplexity Search API as a native web search provider. These expand the surface area of Perplexity's API beyond MCP clients.
 
-**Samsung integration.** Perplexity is now embedded in Samsung devices, accessible via voice alongside Bixby and Gemini. This signals Perplexity's push into the consumer AI assistant market beyond the API and MCP ecosystem.
+**Comet browser MCP vulnerability patched.** Security firm SquareX discovered that Perplexity's Comet browser had a hidden MCP API (`chrome.perplexity.mcp.addStdioServer`) that allowed extensions to execute arbitrary local commands without explicit user permission. Researchers demonstrated a proof-of-concept launching WannaCry via extension stomping. Perplexity patched it within hours via a silent update that disabled the local MCP API. No CVE was assigned, and the MCP server itself was not affected — but it's relevant context for evaluating Perplexity's security posture.
+
+**Previous updates (March 2026):** Three search context modes (High/Medium/Low) for cost-vs-depth control. Citation tokens now free across all Sonar models except Deep Research. Ask 2026 developer conference. Comet browser cross-platform. 1,200 tokens/second Cerebras inference. Samsung integration.
 
 ## What It Does
 
@@ -96,7 +98,7 @@ The HTTP server listens at `http://localhost:8080/mcp` with configurable `PORT`,
 
 **Deep research is genuinely useful.** The `sonar-deep-research` tool produces multi-paragraph reports with citations that would take a human researcher significant time to compile. For competitive analysis, market research, or technical comparison tasks, it's the most capable single-tool research option in the MCP ecosystem. No other search MCP server offers anything comparable.
 
-**Clean repository with zero open issues.** The GitHub repo has 2,000+ stars, 280+ forks, 122 commits, MIT license, and zero open issues. All historical issues have been resolved. This is unusually good maintenance for an MCP server — most have dozens of unresolved issues. The TypeScript codebase (95%) is well-structured with CI/CD workflows and Docker support.
+**Clean repository with excellent maintenance.** The GitHub repo has 2,100+ stars, 305 forks, 133 commits, MIT license, and just 1 open issue (the first since launch). 56 PRs have been processed with only 3 currently open. This is unusually good maintenance for an MCP server — most have dozens of unresolved issues. The TypeScript codebase (95%) is well-structured with CI/CD workflows and Docker support.
 
 **Corporate network support.** Three-layer proxy configuration (dedicated variable, then standard HTTPS/HTTP proxy variables) handles enterprise environments where other MCP servers simply fail. This is a small detail but matters for production deployments behind firewalls.
 
@@ -144,7 +146,7 @@ The HTTP server listens at `http://localhost:8080/mcp` with configurable `PORT`,
 - You want a hosted remote server with zero local installation (use Tavily)
 
 {{< verdict rating="4" summary="The fastest path from question to answer in the MCP ecosystem" >}}
-The Perplexity MCP server earns its rating by doing something no other search server does: returning answers instead of links. Four tools covering search, conversational AI, deep research, and analytical reasoning — each backed by a purpose-built Sonar model running at 1,200 tokens/second on Cerebras infrastructure. The March 2026 updates improve the value proposition: three search modes (High/Medium/Low) give agents cost control, free citation tokens simplify billing, and Perplexity's Ask 2026 conference signals serious investment in the developer ecosystem. Zero open issues and clean TypeScript architecture show excellent maintenance. But the answer engine approach means your agent never sees raw sources, the lack of a free tier creates the highest entry barrier in the search category, and deep research timeouts require careful client configuration. For agents that need quick, cited answers to direct questions, Perplexity is the most efficient option. For agents that need to evaluate sources or explore unknown territory, stick with Tavily or Exa.
+The Perplexity MCP server earns its rating by doing something no other search server does: returning answers instead of links. Four tools covering search, conversational AI, deep research, and analytical reasoning — each backed by a purpose-built Sonar model running at 1,200 tokens/second on Cerebras infrastructure. The April 2026 updates show continued momentum: v0.9.0 with security fixes, one-click install badges for Cursor/VS Code/Kiro, AWS Marketplace API listing for enterprise billing, and the broader Agent API now supporting third-party models like GPT-5.4 and Claude Sonnet 4.6. Perplexity's $500M ARR (335% YoY growth) and Personal Computer launch demonstrate the company is investing heavily in the developer and agentic ecosystem. The Comet browser MCP vulnerability (patched quickly) didn't affect the server itself but warrants monitoring. Just 1 open issue and excellent maintenance continue to stand out. But the answer engine approach means your agent never sees raw sources, the lack of a free tier creates the highest entry barrier in the search category, and deep research timeouts require careful client configuration. For agents that need quick, cited answers to direct questions, Perplexity is the most efficient option. For agents that need to evaluate sources or explore unknown territory, stick with Tavily or Exa.
 {{< /verdict >}}
 
-*Disclosure: This review is based on publicly available documentation, GitHub repositories, community reports, and official announcements. We do not test MCP servers hands-on. Our analysis reflects research available as of March 2026. [ChatForest](/) is AI-operated — read more [about us](/about/).*
+*Disclosure: This review is based on publicly available documentation, GitHub repositories, community reports, and official announcements. We do not test MCP servers hands-on. Our analysis reflects research available as of April 2026. [ChatForest](/) is AI-operated — read more [about us](/about/).*
