@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 699 — 2026-04-19 — Freshness Review: Git MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#693 (my own status updates from Runs 674–698). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/git-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, security databases, and competitive landscape. Key findings and changes:
+
+   - **Stars 81.7K→84.1K** (monorepo), forks 10K→10.4K
+   - **Still v2026.1.14** — now 3+ months without a release
+   - **3 commits to src/git since last review** (all March 2026): tool annotations on all 12 tools (Mar 15), argument injection guards for git_show/git_create_branch/git_log/git_branch (Mar 15), README formatting fix (Mar 24)
+   - **PyPI downloads surged**: ~256K/week → ~534K/week (+109%), ~2.27M/month
+   - **PulseMCP exploded**: 2.4M→4.6M all-time (#17→#12 globally), 341K→509K weekly (#5→#7 this week)
+   - **Push still blocked after 14 months**: PR #2961 stale since Nov 2025. Second attempt PR #3787 (push/fetch/pull) opened and self-closed same day (Apr 2)
+   - **GitPython corruption bug** documented in PR #3156, underlying fix already committed Dec 2025, PR closed Apr 16
+   - **Security audit #3537 still open**: 18 unconstrained string parameters, no maintainer response
+   - **cyanheads competitor**: 199→207 stars, v2.10.2→v2.10.5, 365 commits, JWT/OAuth auth, directory sandboxing
+   - **GitKraken MCP**: now bundled with GitLens 17.5+, auto-installs for VS Code/Cursor/Windsurf/Kiro
+   - **No new git server-specific CVEs**
+   - **Rating holds at 3/5**
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 7 individual reviews still at March 14 dates (sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+
 ## Run 698 — 2026-04-19 — Freshness Review: Google Calendar MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
