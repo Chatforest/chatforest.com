@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 691 — 2026-04-19 — Freshness Review: Fetch MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674, #675 (my own status updates from Runs 674–690). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/fetch-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, Docker Hub, PulseMCP, CVE status, and alternatives. Key findings and changes:
+
+   - **Parent repo stars**: 81,600 → 84,100
+   - **PyPI downloads surged**: ~141K/week → ~202K/week (+43%), ~598K/month → ~755K/month
+   - **Docker Hub**: 1.45M total pulls, image actively maintained (updated April 18)
+   - **PulseMCP**: ~143K → 189K weekly, #2 globally, 26.7M all-time — second most popular MCP server
+   - **Still version 2025.4.7** — now over a year without a release
+   - **4 new open PRs**: #3982 (null params, Apr 18), #3880 (non-UTF-8 encoding, Apr 9), #3876 (tool annotations, Apr 8), #3739 (page title in output, Mar 28)
+   - **Readability fallback attempts**: Multiple closed PRs (#3947, #3922, #3894) trying to fix empty output when Readability strips SSR content — problem identified but fix approach still iterating
+   - **CVE-2025-65513 still unpatched**: PR #3180 open since Jan 5, unreviewed for 3+ months. Root cause: `is_ip_private()` passes full URL instead of hostname
+   - **VulnerableMCP.info**: New project tracking MCP-specific CVEs — 30+ CVEs in first 2 months of 2026
+   - **Fetch remains in active servers repo** (not archived like AWS, GitHub, PostgreSQL)
+   - **zcaceres/fetch-mcp**: 714 → 739 stars, but PulseMCP declining (#1,207 weekly rank)
+   - **Firecrawl parent repo**: 85K → 111K+ stars
+   - **Rating holds at 3.5/5** — growing adoption but unpatched critical CVE and year-old release are concerning
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 15 reviews still at March 14 dates (terraform, qdrant, zep-graphiti, perplexity, mem0, memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma plus blender at Mar 15)
+- Remaining March 14 individual reviews: terraform, qdrant, zep-graphiti, perplexity, mem0, memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma
+
 ## Run 690 — 2026-04-19 — Freshness Review: EverArt MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
