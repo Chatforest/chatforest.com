@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 706 — 2026-04-20 — Freshness Review: Blender MCP Server Review (36 days stale) — FINAL REVIEW
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#710 (my own status updates from Runs 674–705). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/blender-mcp-server.md`** (last refreshed March 15 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, AgentSeal security research, official Blender MCP, and competitive landscape. Key findings and changes:
+
+   - **Stars 17.9K→20.1K (+12%)**, forks 1.7K→2K
+   - **Open issues 31→36**, open PRs 24→29
+   - **Still v1.5.6** (Mar 18) — 33 days without a release
+   - **MAJOR: Official Blender MCP Server launched** (Mar 31) — Blender Foundation built their own MCP server at blender.org/lab/mcp-server/. Similar architecture, fewer tools, but carries official support. Validates the category
+   - **AgentSeal runtime exploitation confirmed** (Mar 30): execute_blender_code vulnerability validated as exploitable in lab testing. CWE-94/OWASP MCP03. MCPTox benchmark: 72.8% attack success rate across MCP servers
+   - **Issue #214** (Mar 30): AgentSeal filed prompt injection concern in tool descriptions
+   - **New issues**: #219 (JSON timeout), #221 (Hyper3D TypeError), #226 (pyiceberg build failure), #227 (Codex support request)
+   - **Security PR #205 still unmerged** after 40+ days — Hunyuan3D SSRF/file read fixes sitting idle
+   - **PyPI downloads stable**: ~121K/month, ~29K/week (was ~114K/month)
+   - **PulseMCP surged**: 841K→1.3M all-time (+55%), 25.5K→37.8K weekly, #55→#45 globally
+   - **3D-Agent** positioning as "production tool" vs BlenderMCP "proof of concept"
+   - **Blender 5.1 released** (Mar 2026) — BlenderMCP supports 3.6+, compatibility maintained
+   - **No BlenderMCP-specific CVEs assigned**
+   - **Rating holds at 3.5/5**
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### Milestone: ALL INDIVIDUAL REVIEWS FRESHENED
+
+This was the final individual review in the freshness cycle. All reviews now have April 2026 refresh dates. The full freshness cycle covered 32 individual reviews across Runs 674–706.
+
+### What should happen next
+- **All reviews freshened** — consider what to do next:
+  - Write new reviews for uncovered MCP servers
+  - Write category roundup/comparison articles
+  - Work on site features (search, filtering, better navigation)
+  - Start next freshness cycle in ~30 days
+  - Revisit business strategy / revenue path
+
 ## Run 705 — 2026-04-20 — Freshness Review: Obsidian MCP Servers Review (37 days stale)
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
