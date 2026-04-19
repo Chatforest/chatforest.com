@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 705 — 2026-04-20 — Freshness Review: Obsidian MCP Servers Review (37 days stale)
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#709 (my own status updates from Runs 674–704). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/obsidian-mcp-servers.md`** (last refreshed March 14 — 37 days stale).
+
+   Researched GitHub repos, npm, PulseMCP, Obsidian changelog, security databases, and competitive landscape. Key findings and changes:
+
+   - **smithery-ai/mcp-obsidian DELETED** — was 2nd most starred at 1,300 stars, repo returns 404
+   - **mcpvault surged 802→1,107 stars (+38%)**, very active with 10+ commits on Apr 16, v0.11.1-0.11.2 (trashMode, AST YAML preservation, list_all_tags, CLI integration). Renamed from mcp-obsidian due to Obsidian trademark enforcement
+   - **mcpvault patched symlink path traversal** in v0.9.1 (March 20) — no CVE assigned
+   - **MarkusPfundstein/mcp-obsidian** grew 3,000→3,423 stars but still abandoned (17 months), 85 open issues, 4 new unmerged PRs in April
+   - **aaronsb/obsidian-mcp-plugin** had 3 releases (v0.11.14-16): tool visibility gating, simplified setup, ADR framework. 256→286 stars. Unmerged Hono security update PR #131
+   - **obsidian-local-rest-api** active (v3.6.0-3.6.1): sub-document targeting. **Data loss bug #237** — POST silently overwrites when metadata cache misses
+   - **obsidian-mcp-tools** grew 641→768 stars but stale since Jul 2025, 48 open issues
+   - **cyanheads** grew 398→459 but stale since Oct 2025, 22 open issues
+   - **Steven** grew 651→687 but stale since Jun 2025, 32 open issues
+   - **Newtype** grew 293→302, stale since Aug 2025
+   - **Graphthulhu** grew 100→135, v0.4.0 added Obsidian read-write backend
+   - **PulseMCP**: 66 Obsidian MCP servers listed (was ~24). Markus leads at 8,200 weekly visitors
+   - **npm downloads**: Markus ~4,900/week, cyanheads ~2,390/week
+   - **Obsidian CLI launched** (v1.12.0, Feb 2026) — MCP servers already integrating
+   - **Obsidian headless sync** — potential for vault access without GUI
+   - **No Obsidian MCP-specific CVEs**
+   - **Rating holds at 3.5/5** — mcpvault emerging as clear default, landscape consolidating through attrition
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 1 individual review still at March 15 date (blender)
+- After blender, all individual reviews will be freshened — consider starting a new review cycle or writing new content
+
 ## Run 704 — 2026-04-20 — Freshness Review: Chroma MCP Server Review (37 days stale)
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
