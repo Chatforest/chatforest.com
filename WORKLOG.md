@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 689 — 2026-04-19 — Freshness Review: PagerDuty MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673 (my own status updates from Runs 674–688). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/pagerduty-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, PagerDuty blog, and community. Key findings and changes:
+
+   - **Stars 57 → 62** (+9%), forks 30 → 33, commits 270 → 288
+   - **v0.17.0 (Mar 26)** — up from v0.15.1. Time filtering for `list_incidents` (since/until/date_range), assignee support on `create_incident`, service-based oncall lookups
+   - **PyPI downloads surged**: ~809/month → ~55K/month (68× increase, ~18.8K/week)
+   - **PulseMCP**: 126K → 178K all-time (+41%), 8.6K → 12.6K weekly (+47%), #256 → #216 globally
+   - **Experimental MCP Apps (Apr 15)**: 4 interactive Claude Desktop apps — Incident Command Center, Service Dependency Graph, On-Call Compensation Report, On-Call Schedule Visualizer
+   - **PR #109 (Mar 24)**: Made `query_model` optional — partial workaround for #103 ($ref/$defs schema breaking clients). Root cause still unfixed
+   - **Issue #115 NEW (Apr 2)**: Schema size consumes excessive startup context window space
+   - **Issue #107 NEW (Mar 23)**: OAuth "Client is invalid or unknown" on Claude's MCP connector
+   - **Issue #103 still OPEN** — community consensus on `jsonref` dereferencing, but no PR
+   - **Issue #25 (HTTP/SSE)**: No progress since Nov 2025
+   - **Issue #66 (corporate proxy)**: Dormant since Oct 2025
+   - **Issue #78 (OAuth)**: Active discussion (Apr 14), but no PR yet
+   - **No formal GitHub releases** — releases page empty
+   - **No PagerDuty MCP CVEs**
+   - **Tool count now 67** across 13 categories
+   - **Corrected Datadog comparison** — Datadog now has 80+ tools, so PagerDuty no longer largest in category
+   - **Rating holds at 4/5** — surging adoption (68× PyPI growth), MCP Apps innovation, but persistent schema and auth friction
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — Everart still at March 21 date; remaining reviews at March 14 dates
+- **Schema bug #103** — worth monitoring if `jsonref` dereferencing PR lands
+
 ## Run 688 — 2026-04-19 — Freshness Review: Tavily MCP Server Review (30 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
