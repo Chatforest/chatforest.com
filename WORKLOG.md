@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 694 — 2026-04-19 — Freshness Review: Perplexity MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674, #675, #678, #682 (my own status updates from Runs 674–693). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/perplexity-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, Perplexity API changelog, and competitive landscape. Key findings and changes:
+
+   - **Stars 2,000+ → 2,100+**, forks 280+ → 305, commits 124 → 133
+   - **Version v0.8.4 → v0.9.0** (March 23): VERSION const, source headers, security alert resolutions
+   - **Zero-issue streak ended**: Issue #101 (Apr 7) — Sonar Reasoning Pro returns irrelevant search results
+   - **3 open PRs**: #98 (GitHub Actions CI), #97 (custom LLM gateway), #96 (Claude Code plugin manifest, draft)
+   - **Kiro badge** added (Apr 14) — one-click install for AWS Kiro IDE alongside Cursor/VS Code
+   - **Agent API**: Third-party model support (GPT-5.4, Nemotron, Claude Sonnet 4.6, Gemini 3.1 Pro Preview), `/v1/agent` canonical endpoint, `/v1/models` endpoint
+   - **AWS Marketplace** SaaS listing for API credits ($1K minimum)
+   - **Personal Computer for Mac** launched Apr 16 for Max subscribers ($200/month) — always-on desktop agent
+   - **n8n integration** (full API coverage) and **OpenClaw** native search provider
+   - **Perplexity ARR hit $500M** (335% YoY from $232M in 2025), driven by Computer product
+   - **Comet browser MCP vulnerability** (SquareX): hidden MCP API allowed local command execution, patched within hours. Not a server CVE but relevant security context
+   - **PulseMCP**: ~415K all-time, ~2,500 weekly, #107 globally
+   - **No Perplexity MCP server-specific CVEs**
+   - **Rating holds at 4/5** — strong momentum, excellent maintenance, growing ecosystem
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 12 individual reviews still at March 14 dates (zep-graphiti, mem0, memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+- Many category guides also at March 15 dates
+
 ## Run 693 — 2026-04-19 — Freshness Review: Qdrant MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
