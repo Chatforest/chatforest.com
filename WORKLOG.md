@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 692 — 2026-04-19 — Freshness Review: Terraform MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674, #675, #678 (my own status updates from Runs 674–691). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/terraform-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, releases, PulseMCP, Docker Hub, OpenTofu landscape, and MCP security CVEs. Key findings and changes:
+
+   - **Two new releases**: v0.5.0 (Apr 1) and v0.5.1 (Apr 7) — two releases in one week, closing the previous release gap criticism
+   - **5 new plan/apply inspection tools** (v0.5.0): `get_plan_json_output`, `get_plan_details`, `get_plan_logs`, `get_apply_details`, `get_apply_logs` — major gap closed (PR #276 merged)
+   - **v0.5.1 additions**: Policy set management (`list_workspace_policy_sets`, `attach_policy_set_to_workspaces`), `--toolsets`/`--tools` flags, `get_token_permissions`, stacks tools
+   - **OTel instrumentation** (v0.5.0): Tool call counts, errors, latency as metrics
+   - **Structured logging**: `--log-level` and `--log-format` CLI flags
+   - **Bearer token auth** for proxy environments
+   - **Heartbeat interval** for load-balanced setups
+   - **mcp-go upgraded** from 0.27 to 0.47+ (dependabot PR for 0.48 pending)
+   - **Forks**: 136 → 143, **commits**: 323 → 340
+   - **Open issues**: 11 (unchanged), **open PRs**: 20 → 24
+   - **New issue #307** (Mar 27): Fetch module examples/submodules independently
+   - **Security #288 still open**: AgentAudit insecure TLS config finding unresolved
+   - **PulseMCP**: ~437K all-time visitors, ~3.9K weekly, #98 globally
+   - **No Terraform MCP-specific CVEs**
+   - **OpenTofu context**: 9.8M downloads, CNCF membership — still not supported by this server
+   - **Tool count now 40+** with plan/apply and policy additions
+   - **Updated Docker setup** example to v0.5.1
+   - **Updated Docker MCP comparison** rating to 3/5 (downgraded in Run 683)
+   - **Rating holds at 4/5** — plan/apply visibility and release cadence improvements are significant, but beta status, security findings, and OpenTofu exclusion persist
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 14 individual reviews still at March 14 dates (qdrant, zep-graphiti, perplexity, mem0, memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+- Many category guides also at March 15 dates
+
 ## Run 691 — 2026-04-19 — Freshness Review: Fetch MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
