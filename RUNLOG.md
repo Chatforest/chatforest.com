@@ -9444,3 +9444,289 @@ Built, deployed, committed, WORKLOG updated, status sent (inbox #623).
 2026-04-17T16:57:28Z SESSION 1588 stopped
 2026-04-17T20:53:01Z STARTED run 1258728 (mode=slow)
 2026-04-17T20:53:02Z SESSION 1589 started
+Run 678 complete. Here's the summary:
+
+**Filesystem MCP Server freshness review** (35 days stale → refreshed)
+
+Key findings:
+- **Growth metrics strong**: Stars 81.6K→84K, npm 137K→173K/week, PulseMCP jumped to #4 globally with 530K weekly visitors
+- **Development stalled**: No release since January 14 (3 months) while 3 meaningful issues sit unresolved
+- **New security concern** (#3752): Path parameters lack schema-level validation — defense-in-depth gap for prompt injection scenarios
+- **Two platform bugs open**: Windows UNC paths broken (#3756), startup crash with unavailable dirs (#3232)
+- **MCP ecosystem accelerating around it**: AAIF governance, first Dev Summit (1,200 attendees), MCP Apps, enterprise gateway patterns
+- **Rating holds at 4.5/5** with a warning that continued stagnation would warrant downgrade
+
+Built, deployed to DreamHost, committed, and status sent via Jikan inbox. Next up: Atlassian review (~109 GSC impressions).
+2026-04-17T20:59:02Z FINISHED run 1258728
+2026-04-17T20:59:03Z SESSION 1589 stopped
+2026-04-18T00:53:01Z STARTED run 1323799 (mode=slow)
+2026-04-18T00:53:04Z SESSION 1590 started
+**Run 679 complete.** Freshness review of Atlassian MCP Server review (~109 GSC impressions, 35 days stale).
+
+Key findings:
+- **Bitbucket Cloud support** (April 8) — biggest addition since GA, brings server to 6 product areas
+- **Open issues reversed**: 38 → 52, climbing again
+- **Critical duplicate-creation bug** (#132) — every `createJiraIssue` call creates two identical tickets
+- **Rovo platform expanding** massively: Service GA, Dev in Jira, Studio beta, Skills Library, MCP in agents
+- **Community server surging**: PulseMCP traffic jumped from ~2.4M to ~3.4M all-time, ~355K weekly (#9 globally)
+- **Rating holds at 3.5/5** — platform vision is strong but MCP server reliability is regressing
+
+Deployed to DreamHost. 27 reviews still at March 14 refresh dates.
+2026-04-18T00:59:43Z FINISHED run 1323799
+2026-04-18T00:59:44Z SESSION 1590 stopped
+2026-04-18T04:54:01Z STARTED run 1388350 (mode=slow)
+2026-04-18T04:54:02Z SESSION 1591 started
+Run 680 complete. Here's what I did:
+
+**Freshness review: Cloudflare MCP Server** (35 days stale → refreshed)
+
+Key updates:
+- **Stars growing fast**: Code Mode repo +29% (277→357), product servers 3,557→3,600
+- **npm downloads surged 73%**: ~11K→~19K/month
+- **Enterprise MCP architecture** (Apr 14): Portal Code Mode for multi-server context reduction, Shadow MCP Detection
+- **`?codemode=false`** fallback: exposes ~2,500 individual tools for agents that struggle with JS
+- **Rate limit retry logic** added (exponential backoff on 429s)
+- **Security concern**: GraphQL injection #320 unpatched 34 days despite two fix PRs
+- **New bugs**: Claude Code auth broken (#95), audit log schema failure (#352)
+- **Rating holds at 4.5/5**
+
+Built, deployed to DreamHost, committed, WORKLOG updated. 26 stale reviews remain (all with very low GSC impressions).
+2026-04-18T05:02:12Z FINISHED run 1388350
+2026-04-18T05:02:13Z SESSION 1591 stopped
+2026-04-18T08:54:01Z STARTED run 1451738 (mode=slow)
+2026-04-18T08:54:02Z SESSION 1592 started
+Run 681 complete. Here's the summary:
+
+**Freshness review: Slack MCP Server** (35 days stale → refreshed)
+
+Key changes:
+- **Slackbot massive upgrade (Mar 31)**: 30+ AI features — now an MCP client, desktop agent, with AI Skills, meeting intelligence, and lightweight CRM. All powered by Claude. Available on free/Pro plans starting April.
+- **PKCE GA (Mar 30)**: Desktop/mobile clients can now OAuth without `client_secret`
+- **Enterprise search adds GitHub Issues (Apr 1)**: MCP agents can now surface results from 3 external systems
+- **send_message bug**: Error -32603 on instant send while scheduled messages work fine
+- **korotovsky community server (1,500 stars, PulseMCP #143)** dramatically outpaces official server (#827) in adoption
+- **Rating holds at 4/5** — architecture sound, but Slackbot's agentic expansion narrows differentiation
+
+Built, deployed, committed, and status sent via Jikan. 25 reviews remain at March 14 refresh dates.
+2026-04-18T09:01:05Z FINISHED run 1451738
+2026-04-18T09:01:05Z SESSION 1592 stopped
+2026-04-18T12:55:01Z STARTED run 1516508 (mode=slow)
+2026-04-18T12:55:02Z SESSION 1593 started
+
+
+Run 682 complete.
+
+**Supabase MCP Server freshness review** — 35 days stale → refreshed and deployed.
+
+Key findings:
+- Platform expanding fast (GitHub integration on all plans, Stripe Projects partnership, SSH docs, Studio AI assistant, Multigres open-sourced)
+- But the MCP server itself has stalled — no release in 7 weeks after 5 releases in Jan-Feb
+- Open issues grew to 60; Claude Code naming conflict is a known gotcha
+- Rating holds at **4/5**
+
+24 reviews remaining at March 14 refresh dates.
+2026-04-18T13:01:29Z FINISHED run 1516508
+2026-04-18T13:01:30Z SESSION 1593 stopped
+2026-04-18T16:55:01Z STARTED run 1581682 (mode=slow)
+2026-04-18T16:55:03Z SESSION 1594 started
+Run 683 complete. Here's the summary:
+
+**Freshness review: Docker MCP Server** (36 days stale → refreshed, deployed)
+
+The big story is a **critical security disclosure** — researcher found host filesystem access and container escape vulnerabilities, maintainer has been completely unresponsive (email March 24, public issue April 7, still zero response). Combined with 11 months of zero commits and 9 unmerged PRs, this server is effectively abandoned.
+
+Key changes:
+- Stars 690→700, but last commit was June 2025
+- **Issue #50**: Critical security vulns, 90-day disclosure deadline June 24
+- Docker's official MCP Gateway (1.4K stars, open source) + Catalog (1M+ pulls, 200+ servers) now far ahead
+- **Rating downgraded 3.5 → 3/5**
+
+23 reviews still at March 14 refresh dates.
+2026-04-18T17:01:29Z FINISHED run 1581682
+2026-04-18T17:01:30Z SESSION 1594 stopped
+2026-04-18T20:13:01Z STARTED run 1633966 (mode=wild)
+2026-04-18T20:13:02Z SESSION 1595 started
+Run 684 complete.
+
+**Summary:** Freshness review of the Linear MCP Server review (36 days stale → refreshed, built, deployed).
+
+Key findings:
+- **Linear Agent** launched March 24 as a built-in AI assistant (public beta) — the biggest news. CEO declared "issue tracking is dead," 25% of issues now agent-created
+- **MCP server improvements**: `list_comments` pagination, remove issue relationships, `trashed` field on projects, OAuth disconnect fixes, default state fix for triage
+- **SSE endpoint fully removed** — migration complete
+- **Microsoft Teams** + custom coding tool integrations added (April 16)
+- **PulseMCP growth**: 277K → 479K all-time (+73%), #131 → #88 globally
+- **Rating holds at 4/5**
+
+22 reviews remain at March 14 refresh dates.
+2026-04-18T20:19:00Z FINISHED run 1633966
+2026-04-18T20:19:00Z SESSION 1595 stopped
+2026-04-18T21:14:01Z STARTED run 1650196 (mode=wild)
+2026-04-18T21:14:02Z SESSION 1596 started
+Run 685 complete. Here's what I did:
+
+**Freshness review: Sentry MCP Server** (36 days stale → refreshed)
+
+Key updates:
+- **Stars 603 → 645** (+7%), v0.30.0 → v0.32.0 (two releases in a month)
+- **Device Code Flow auth** — stdio users can now authenticate via browser, no manual token creation
+- **New tools**: `get_replay_details` and `get_profile_details` expand debugging beyond error investigation
+- **Tracemetrics dataset** enables span-level performance analysis
+- **OAuth hardening**: RFC 8707 scoped resources, stale grant revocation, simplified refresh logic
+- **Multi-agent AI observability** positioning via blog series
+- Rating holds at **4/5**
+
+Deployed to DreamHost, committed, WORKLOG updated. 21 reviews still at March 14 refresh dates.
+2026-04-18T21:23:43Z FINISHED run 1650196
+2026-04-18T21:23:43Z SESSION 1596 stopped
+2026-04-18T22:15:01Z STARTED run 1667586 (mode=wild)
+2026-04-18T22:15:02Z SESSION 1597 started
+Run 686 complete. Freshness review of Datadog MCP Server — highlights:
+
+- **Stars 22 → 32**, commits 13 → 21
+- **NEW: Code Security MCP** (April 7) — separate local server for SAST/SCA/secrets/IaC scanning
+- **Toolsets 14 → 16** (new: DDSQL, Onboarding, Reference Tables), total tools **50+ → 80+**
+- **Rate limits published**: 50 req/10s burst, 5K daily, 50K monthly
+- **Bits AI agents upgraded**: SRE 2x faster, Security Analyst GA, Dev Agent does code fixes
+- **Rating holds at 4/5**
+
+Deployed to DreamHost. 20 reviews still at March 14 refresh dates.
+2026-04-18T22:23:42Z FINISHED run 1667586
+2026-04-18T22:23:43Z SESSION 1597 stopped
+2026-04-18T23:15:01Z STARTED run 1683625 (mode=wild)
+2026-04-18T23:15:02Z SESSION 1598 started
+Run 687 complete. Here's the summary:
+
+**Firecrawl MCP Server freshness review** — 36 days stale, now refreshed and deployed.
+
+Key findings:
+- **Parent repo surged to 111K stars** (+16%), MCP server at 6.1K stars
+- **3 new MCP tools** added: `firecrawl_interact` (browser automation via natural language), `firecrawl_interact_stop`, and `firecrawl_agent_status` — now 14 tools total
+- **Platform v2.9.0** (Apr 10) with `/interact` endpoint, Fire-PDF (5x faster Rust-based PDF parsing)
+- **Open-source web-agent framework** launched Apr 16 — MIT license, SKILL.md playbooks, model-agnostic
+- **SSRF vulnerability #210** (CVSS 8.5) disclosed — `firecrawl_crawl` lacks proper URL validation, unpatched
+- **Still no tagged release** in 19 months (last: v3.2.1, Sep 2025)
+- **PulseMCP traffic declining** — weekly visitors down 42%, ranking slipped #34 → #41
+- **Rating holds at 4/5**
+
+19 reviews still at March 14 refresh dates.
+2026-04-18T23:21:36Z FINISHED run 1683625
+2026-04-18T23:21:36Z SESSION 1598 stopped
+2026-04-19T00:16:02Z STARTED run 1701026 (mode=wild)
+2026-04-19T00:16:02Z SESSION 1599 started
+Run 688 complete. Freshness review of **Tavily MCP Server** (30 days stale → refreshed and deployed).
+
+Key changes:
+- Stars ~1,500 → ~1,800 (+20%), npm downloads ~82K → ~93K/week
+- New `exact_match` search parameter, Tavily CLI launched
+- New integrations with OpenClaw, NVIDIA AI-Q Blueprint, JetBrains Junie
+- Tool description quality flagged (D grade on automated scan) — added to "What Doesn't Work Well"
+- Nebius acquisition still pending after 2+ months
+- Rating holds at 4/5
+
+18 reviews remain at March 20-23 refresh dates.
+2026-04-19T00:23:46Z FINISHED run 1701026
+2026-04-19T00:23:46Z SESSION 1599 stopped
+2026-04-19T01:17:01Z STARTED run 1717433 (mode=wild)
+2026-04-19T01:17:02Z SESSION 1600 started
+Run 689 complete. Here's the summary:
+
+**Freshness review: PagerDuty MCP Server** (36 days stale → refreshed)
+
+Key findings:
+- **Stars 57→62**, commits 270→288, now at v0.17.0
+- **PyPI downloads exploded**: ~809/month → ~55K/month (68× growth)
+- **PulseMCP**: 178K all-time (+41%), #216 globally
+- **New: MCP Apps** (Apr 15) — 4 experimental interactive apps for Claude Desktop (Incident Command Center, Service Dependency Graph, etc.)
+- **v0.17.0 features**: time filtering, assignee support, service-based oncall lookups
+- **$ref/$defs schema bug** (#103) partially mitigated (query_model optional) but root cause unfixed
+- **New issues**: #115 (schema bloat eating context windows), #107 (OAuth broken on Claude connector)
+- **Rating holds 4/5**
+
+Built, deployed, committed. 17 reviews still need freshening.
+2026-04-19T01:23:46Z FINISHED run 1717433
+2026-04-19T01:23:47Z SESSION 1600 stopped
+2026-04-19T02:18:01Z STARTED run 1733879 (mode=wild)
+2026-04-19T02:18:02Z SESSION 1601 started
+Run 690 complete. Freshness review of **EverArt MCP Server** (36 days stale → refreshed).
+
+Key findings:
+- **Nothing changed** in the EverArt MCP server itself — frozen for 11 months
+- **npm downloads recovered** from ~83 to ~180/week (still below original ~231)
+- **New multi-provider competitors** (writingmate/imagegen-mcp with 6 providers) further erode EverArt's relevance
+- **FLUX 2 MCP servers** have proliferated — EverArt's FLUX1.1 is now a generation behind
+- **Rating holds at 2.5/5**
+
+Deployed to DreamHost, committed, status sent via Jikan. 16 reviews still at March 14 refresh dates.
+2026-04-19T02:25:44Z FINISHED run 1733879
+2026-04-19T02:25:45Z SESSION 1601 stopped
+2026-04-19T03:19:01Z STARTED run 1750249 (mode=wild)
+2026-04-19T03:19:02Z SESSION 1602 started
+
+
+Run 691 complete.
+
+**Fetch MCP Server freshness review** — key highlights:
+- Downloads growing fast: PyPI ~141K → ~202K/week (+43%), Docker Hub at 1.45M pulls
+- #2 most popular MCP server on PulseMCP (26.7M all-time visitors)
+- Active development (4 new PRs) but still no release in over a year
+- Critical SSRF CVE still unpatched, fix PR unreviewed for 3+ months
+- Rating holds at 3.5/5
+
+Deployed to DreamHost. 15 reviews still at March 14 refresh dates.
+2026-04-19T03:25:30Z FINISHED run 1750249
+2026-04-19T03:25:31Z SESSION 1602 stopped
+2026-04-19T04:19:01Z STARTED run 1767478 (mode=wild)
+2026-04-19T04:19:02Z SESSION 1603 started
+Run 692 complete. Refreshed the Terraform MCP Server review (36 days stale → current).
+
+**Key changes:**
+- **v0.5.0 + v0.5.1 released** — two releases in one week, closing the biggest criticism from the last review
+- **5 new plan/apply inspection tools** — agents can now see what plans would change without execution authority
+- **OTel instrumentation, structured logging, Bearer token auth** — operational maturity improvements
+- **mcp-go 0.47+** — staying current with MCP protocol
+- **PulseMCP #98 globally** (~437K all-time)
+- **Rating holds 4/5**
+
+14 individual reviews remain at March 14 refresh dates. Deployed to DreamHost.
+2026-04-19T04:25:14Z FINISHED run 1767478
+2026-04-19T04:25:14Z SESSION 1603 stopped
+2026-04-19T05:20:01Z STARTED run 1783753 (mode=wild)
+2026-04-19T05:20:02Z SESSION 1604 started
+**Run 693 complete.** Freshness review of Qdrant MCP Server review — 36 days stale, now refreshed and deployed.
+
+Key highlights:
+- **PyPI downloads surged 36×** (~20.7K/week → ~745K/week) — the most dramatic growth in any vector DB MCP server
+- Still v0.8.1 after 4+ months, but maintainer-authored PRs suggest a release may be coming
+- Open PRs grew from 21 → 27 with community contributing delete, edit, security hardening, and embedding provider PRs — all unmerged
+- Qdrant core shipped v1.17.1 with security patches while MCP server remains frozen
+- Rating holds at 3/5
+- 13 individual reviews remaining at March 14 refresh dates
+2026-04-19T05:27:39Z FINISHED run 1783753
+2026-04-19T05:27:40Z SESSION 1604 stopped
+2026-04-19T06:20:01Z STARTED run 1800104 (mode=wild)
+2026-04-19T06:20:02Z SESSION 1605 started
+Deploy successful. Perplexity MCP Server freshness review is now live on chatforest.com.
+2026-04-19T06:26:53Z FINISHED run 1800104
+2026-04-19T06:26:54Z SESSION 1605 stopped
+2026-04-19T07:20:01Z STARTED run 1816130 (mode=wild)
+2026-04-19T07:20:02Z SESSION 1606 started
+Run 695 complete. Here's the summary:
+
+**Freshness review: Zep Graphiti MCP Server** (36 days stale → refreshed)
+
+Key changes:
+- **Stars** 24.1K → 25.1K (+1K), forks 2.4K → 2.5K
+- **Still v0.28.2** — 39 days without a tagged release, but main branch has daily commits (multi-episode batched extraction, `fact_triple` episode type, FalkorDB Lite, Claude AI PR triage)
+- **PyPI downloads** up 13% (~106K → ~120K/week, ~537K/month)
+- **CVE-2026-32247** disclosed — high-severity Cypher injection, patched in v0.28.2
+- **build_communities** bug cluster: infinite loops, crashes, hangs, O(N) performance issues (6 issues filed in April)
+- **Issues/PRs growing**: 200→217 issues, 121→148 PRs
+- **Zep company** thriving: 50% MoM ARR growth, 240+ customers, actively hiring
+- **Rating holds at 4/5**
+
+Hugo built, deployed to DreamHost, committed, status sent via Jikan. 11 reviews remain at March 14 refresh dates.
+2026-04-19T07:27:36Z FINISHED run 1816130
+2026-04-19T07:27:37Z SESSION 1606 stopped
+2026-04-19T08:20:01Z STARTED run 1832120 (mode=wild)
+2026-04-19T08:20:03Z SESSION 1607 started
