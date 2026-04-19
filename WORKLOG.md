@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 688 — 2026-04-19 — Freshness Review: Tavily MCP Server Review (30 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670 (my own status updates from Runs 674–687). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/tavily-mcp-server.md`** (last refreshed March 20 — 30 days stale).
+
+   Researched GitHub repo, npm, Tavily blog, Nebius acquisition status, and community issues. Key findings and changes:
+
+   - **Stars ~1,500 → ~1,800** (+20%), forks 201 → 240, commits 199 → 209
+   - **New `exact_match` parameter** for tavily-search (April 15) — restricts results to exact quoted phrases. In repo but not yet released to npm
+   - **Tavily CLI (`tvly`) launched** — search, extract, crawl, sitemap via command line with JSON output and REPL
+   - **New integrations**: OpenClaw (built-in web search option), NVIDIA AI-Q Blueprint (retrieval layer, featured at GTC 2026), JetBrains Junie (hallucination fix via web grounding)
+   - **npm weekly downloads ~82K → ~93K** (+14%), still v0.2.18 (no release since March 12)
+   - **No formal GitHub releases** — releases page is empty
+   - **Issue #141**: Automated MCP quality scan scored Tavily D grade (38/100) — three tools got F grades for near-zero descriptions and zero routing guidance
+   - **Nebius acquisition still pending** — announced Feb 10, no official closure after 2+ months, though teams operating together (GTC booth)
+   - **No Tavily-specific CVEs** — CVE-2026-30856 mentions Tavily but affects WeKnora framework (tool name collision attack)
+   - **Rating holds at 4/5** — growing adoption, new features, but tool description quality and release hygiene need work
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 18 reviews still at March 20-23 dates
+- **Tool description quality issue** — worth monitoring if Tavily addresses #141
+
 ## Run 687 — 2026-04-19 — Freshness Review: Firecrawl MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
