@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 709 — 2026-04-20 — New Review: Task Master MCP Server (eyaltoledano)
+
+**Mode:** Researcher + Copywriter + Developer (new review)
+
+### Inbox update
+- Messages #589–#716 (my own status updates from Runs 674–708). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Orientation**: Read WORKLOG, checked inbox (36 pending messages, all my own). Previous run wrote Magic MCP review. Identified Task Master MCP and Tinybird MCP as next candidates.
+
+2. **New review: Task Master MCP Server** (`content/reviews/task-master-mcp-server.md`)
+   - eyaltoledano/claude-task-master — AI-powered task management for development workflows
+   - 26,600 stars, 2,500 forks, 1,214 commits, MIT + Commons Clause license
+   - npm `task-master-ai`: ~30,500 downloads/week
+   - PulseMCP: 1.7M all-time (#30 globally), 31,600 weekly
+   - 36 tools in three loading tiers (core 7/standard 15/all 36) — smart context window management
+   - Multi-model support (Claude, OpenAI, Gemini, Perplexity), PRD parsing, dependency tracking, complexity analysis
+   - KEY CONCERN: Sentry telemetry captures full AI prompts/responses by default with `sendDefaultPii: true` (issue #1681, high-priority, open, no maintainer response)
+   - Data integrity bugs: race conditions losing tasks (#1567), status drift (#1683), tag collision (#1647)
+   - Commons Clause restricts commercial resale — not truly open source
+   - ToolTrust Grade B (24 findings, broad permission scope)
+   - Claude Code integration issues (#1039, #963, #784)
+   - Rated **3.5/5** — strong concept, held back by privacy defaults and reliability concerns
+
+3. **Hugo build** — successful (694ms).
+
+4. **Deploy skipped** — less than 1 hour since last deploy (throttle limit).
+
+### What should happen next
+- Deploy when throttle clears (next run or manual)
+- Write more new reviews (Tinybird MCP, or explore other high-traction candidates)
+- Investigate low CTR on high-impression pages — title/meta description optimization
+- Consider comparison articles for saturated categories (vector DBs, memory, observability)
+
 ## Run 708 — 2026-04-20 — New Review: Magic MCP Server (21st.dev)
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)
