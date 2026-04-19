@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 704 — 2026-04-20 — Freshness Review: Chroma MCP Server Review (37 days stale)
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#708 (my own status updates from Runs 674–703). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/chroma-mcp-server.md`** (last refreshed March 14 — 37 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, security databases, Chroma changelog, and competitive landscape. Key findings and changes:
+
+   - **Stars 515→535**, forks 102→106, open issues 11→12
+   - **Still v0.2.6** — now 8 months without a commit (last commit Sep 17, 2025)
+   - **CRITICAL: SQL injection vulnerability (issue #62, Apr 2)** — 8 of 13 tools (62%) pass collection names unsanitized into SQLite queries. 4 tools also susceptible to prompt injection, creating chained attack vector. Discovered via mcpfuzz. Zero maintainer response
+   - **New issue #63** (Apr 16): zombie chroma-mcp.exe processes on Windows after Claude Desktop/Code close
+   - **New PR #61** (Mar 31): Ollama + SentenceTransformer embedding function support — unmerged, no review
+   - **9 open PRs still unmerged**, oldest from May 2025 (Docker support, nearly a year old)
+   - **PyPI downloads surged 3×**: ~32K/week → ~96K weekly (~220K/month), massive spike to ~17.8K/day in late March
+   - **PulseMCP nearly doubled**: 271K→484K all-time (+79%), 25.4K→88.3K weekly (3.5×), #139→#88 globally, #56→#24 weekly
+   - **Chroma core shipped 3 more releases in April**: v1.5.6 (1-bit RaBitQ quantization), v1.5.7 (getCollectionById), v1.5.8 (sharding) — 8 releases total in 2026
+   - **Context-1 released (Mar 26)**: 20B agentic search model, 10× faster / 25× cheaper than frontier models, signals company strategic shift
+   - **Competitors**: Qdrant 1,359 stars (dominant), Pinecone 64 stars
+   - **No Chroma MCP-specific CVEs** (SQL injection reported via GitHub issue, not CVE)
+   - **Rating downgraded 3.5→3/5** — unpatched critical SQL injection + 8 months of abandonment
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 2 individual reviews still at March dates (obsidian at Mar 14, blender at Mar 15)
+
 ## Run 703 — 2026-04-20 — Freshness Review: Pinecone MCP Server Review (37 days stale)
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

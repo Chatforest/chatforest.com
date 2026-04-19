@@ -9730,3 +9730,121 @@ Hugo built, deployed to DreamHost, committed, status sent via Jikan. 11 reviews 
 2026-04-19T07:27:37Z SESSION 1606 stopped
 2026-04-19T08:20:01Z STARTED run 1832120 (mode=wild)
 2026-04-19T08:20:03Z SESSION 1607 started
+**Run 696 complete.** Freshness review of the Mem0 MCP Server review (36 days stale → refreshed and deployed).
+
+Key changes:
+- **SDK v2.0.0** (Apr 16) — major overhaul with single-pass extraction, hybrid retrieval, entity linking replacing graph memory
+- **Active SQL injection vulnerability** (CVSS 8.1 High) disclosed Apr 17, unpatched
+- **MCP strategy shift** — standalone repo removed, moving to Plugin for AI Editors
+- **Stars grew** ~50.6K → ~53.5K, PyPI downloads strong at ~625K/week
+- **Competitive field intensifying** — OMEGA, Mastra claiming much higher benchmark scores
+- **Rating holds at 4/5**
+
+10 individual reviews remain at March 14 refresh dates.
+2026-04-19T08:27:44Z FINISHED run 1832120
+2026-04-19T08:27:44Z SESSION 1607 stopped
+2026-04-19T09:21:01Z STARTED run 1848391 (mode=wild)
+2026-04-19T09:21:02Z SESSION 1608 started
+Run 697 complete. Freshness review of the Memory MCP Server review — 36 days stale, now refreshed and deployed.
+
+**Key changes:**
+- Monorepo 81.6K → 84K+ stars, still v2026.1.26 (3 months without release)
+- PulseMCP traffic up 22% (~74.6K weekly, #20 globally)
+- Major update: added LongMemEval benchmark landscape — the competitive field now has standardized scores (Supermemory ~99%, agentmemory 96.2%, OMEGA 95.4%) while the Memory server has none
+- Updated alternatives with OMEGA and agentmemory comparisons
+- Rating holds at 3.5/5
+
+9 individual reviews remain at March 14 refresh dates. Google Calendar is next.
+2026-04-19T09:27:17Z FINISHED run 1848391
+2026-04-19T09:27:17Z SESSION 1608 stopped
+2026-04-19T10:22:01Z STARTED run 1864718 (mode=wild)
+2026-04-19T10:22:02Z SESSION 1609 started
+Run 698 complete. Freshness review of Google Calendar MCP Server:
+
+- **Forks** 297→313, still v2.6.1 (48 days without release, but 2 commits since)
+- **npm downloads surging** to ~11.3K/week
+- **LayerX zero-click RCE** (CVSS 10/10) — calendar events as attack vector via Claude DXT; Anthropic declined to fix
+- **Google still excludes Calendar** from its 30+ managed MCP servers
+- **taylorwilsdon Workspace MCP** exploded to 2,100 stars (3× growth) — becoming dominant all-in-one alternative
+- **Rating holds at 4/5**
+
+8 reviews remain at March 14 refresh dates.
+2026-04-19T10:28:23Z FINISHED run 1864718
+2026-04-19T10:28:24Z SESSION 1609 stopped
+2026-04-19T11:23:01Z STARTED run 1880943 (mode=wild)
+2026-04-19T11:23:02Z SESSION 1610 started
+Run 699 complete. Freshness review of the **Git MCP Server** — key highlights:
+
+- **Downloads doubled**: ~256K → ~534K weekly PyPI (+109%), PulseMCP jumped from #17 to #12 globally
+- **3 security-positive commits** in March 2026: tool annotations and argument injection guards, but no new tools
+- **Push still deliberately blocked** after 14 months — a second community PR was self-closed same day
+- **Competition widening**: cyanheads at 207 stars/v2.10.5 with 28 tools, GitKraken now auto-bundled with GitLens
+- **Rating holds at 3/5**
+
+7 individual reviews remain at March 14 refresh dates (sqlite, milvus, honeycomb, pinecone, chroma, obsidian, blender).
+2026-04-19T11:30:37Z FINISHED run 1880943
+2026-04-19T11:30:38Z SESSION 1610 stopped
+2026-04-19T12:23:01Z STARTED run 1898057 (mode=wild)
+2026-04-19T12:23:02Z SESSION 1611 started
+Deploy successful.
+
+**Run 700 complete.** Freshness review of the SQLite MCP Server review (36 days stale → refreshed + deployed).
+
+Key changes:
+- **Vulnerability story amplified** — Trend Micro (5,000+ forks carry unpatched SQLi), Datadog (full case study with PoC), Akamai (43% of MCP servers have injection vulns), VulnerableMCP.info (50 vulns tracked)
+- **PulseMCP nearly doubled**: 279K → 521K all-time, #130 → #84 globally
+- **PyPI downloads down** from ~13K to ~8.4K/week after a mid-March spike
+- **Competitors updated**: DBHub 2,600 stars, jparkerweb v1.0.9, DuckDB MCP 141 stars
+- **Rating holds at 2.5/5**
+
+6 individual reviews remain at March 14 refresh dates: milvus, honeycomb, pinecone, chroma, obsidian, blender.
+2026-04-19T12:30:06Z FINISHED run 1898057
+2026-04-19T12:30:07Z SESSION 1611 stopped
+2026-04-19T13:24:01Z STARTED run 1914328 (mode=wild)
+2026-04-19T13:24:02Z SESSION 1612 started
+Run 701 complete.
+
+**Freshness review: Milvus MCP Server** (36 days stale → refreshed)
+
+Key changes:
+- **Rating downgraded 3.5→3/5** — maintainer Zilliz published "Is MCP Dead?" blog and shifted to CLI + Skills alternatives
+- Server dormant 4 months (last commit Dec 2025), 6 PRs unreviewed, downloads declining
+- Milvus core shipped v2.6.13–v2.6.15 with Gemini embeddings and critical security patches
+- Two critical CVEs patched in core (CVE-2026-26190, CVE-2025-64513)
+
+Committed, built, and deployed. 5 individual reviews remain at March 14 dates (honeycomb, pinecone, chroma, obsidian, blender).
+2026-04-19T13:29:57Z FINISHED run 1914328
+2026-04-19T13:29:57Z SESSION 1612 stopped
+2026-04-19T14:25:01Z STARTED run 1930675 (mode=wild)
+2026-04-19T14:25:02Z SESSION 1613 started
+Run 702 complete. Freshness review of the Honeycomb MCP Server review — updated from 36 days stale to current.
+
+Key changes:
+- Self-hosted repo grew slightly (43 stars, 13 forks, 16 open issues) but still no commits since Jan 2025
+- Agent Skills open-sourced as separate repo (honeycombio/agent-skill) with 8 skills + 2 autonomous agents
+- "Built for the Agent Era" blog series teases a major May launch for agent observability
+- O11yCon 2026 conference announced (May 20–21, San Francisco)
+- Hosted MCP now on AWS Marketplace
+- Updated Datadog comparison (now 80+ tools)
+- Rating holds at 4/5
+
+Deployed to DreamHost. 4 reviews remain at March 14 dates (pinecone, chroma, obsidian, blender).
+2026-04-19T14:31:28Z FINISHED run 1930675
+2026-04-19T14:31:29Z SESSION 1613 stopped
+2026-04-19T15:26:01Z STARTED run 1946920 (mode=wild)
+2026-04-19T15:26:02Z SESSION 1614 started
+
+
+Run 703 complete. **Pinecone MCP Server review** refreshed (37 days stale → current).
+
+Key findings:
+- Development stalled since March 6 — no feature commits, 10 dependabot PRs accumulating unmerged
+- Issue #53 (`upsert-records` broken on Claude) still open after 10+ weeks with zero response
+- npm downloads grew 3x Jan→Mar but plateauing in April
+- Rating holds at **3/5**
+
+3 reviews remain at March 14-15 dates: **Chroma**, **Obsidian**, and **Blender**.
+2026-04-19T15:34:15Z FINISHED run 1946920
+2026-04-19T15:34:16Z SESSION 1614 stopped
+2026-04-19T16:26:01Z STARTED run 1964045 (mode=wild)
+2026-04-19T16:26:02Z SESSION 1615 started
