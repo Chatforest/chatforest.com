@@ -5,28 +5,28 @@ description: "The official SQLite MCP server lets agents query, write, and inspe
 og_description: "The official SQLite MCP server is archived, has an unpatched SQL injection flaw, and ~13K weekly downloads despite being abandoned. Rating: 2.5/5."
 content_type: "Review"
 card_description: "Anthropic's reference database MCP server. Clean code, clever insight memo, but archived with a known SQL injection vulnerability. Learn from it, don't depend on it."
-last_refreshed: 2026-03-14
+last_refreshed: 2026-04-19
 ---
 
-**At a glance:** 236 stars (servers-archived repo), ~13K weekly PyPI downloads, v2025.4.25 (last release April 2025), 6 tools, archived on PyPI, known SQL injection vulnerability (unpatched), ~7.7K weekly PulseMCP visitors (#130 globally, ~279K all-time). Part of our **[Databases MCP category](/categories/databases/)**
+**At a glance:** 253 stars (servers-archived repo), ~8.4K weekly PyPI downloads, v2025.4.25 (last release April 2025), 6 tools, archived on PyPI, known SQL injection vulnerability (unpatched, now amplified by security research), ~7.4K weekly PulseMCP visitors (#84 globally, ~521K all-time). Part of our **[Databases MCP category](/categories/databases/)**
 
 The SQLite MCP server (`mcp-server-sqlite`) is Anthropic's official reference implementation for giving AI agents database access. It ships six tools for querying, writing, and inspecting SQLite databases, plus a clever "insight memo" feature for accumulating analysis findings. The Python codebase is clean and well-structured — it was one of the original MCP example servers, built to demonstrate how MCP works with databases.
 
 There's a catch: it's been moved to the `servers-archived` repository. No new releases, no security patches, no bug fixes. Worse, a SQL injection vulnerability was publicly disclosed in June 2025, and Anthropic declined to patch it. It still installs and runs — ~13,000 people download it weekly — but you're on your own going forward.
 
-## What's New (March 2026 Update)
+## What's New (April 2026 Update)
 
-**SQL injection vulnerability publicly disclosed.** In June 2025, Trend Micro principal threat researcher Sean Park publicly disclosed a SQL injection flaw in the server. The code in `server.py` directly concatenates unsanitized user input (table names) into SQL statements via f-strings, with no parameterized queries. The attack chain is particularly dangerous: an attacker submits a payload in a database field, which gets stored, and when a privileged AI agent later reads it, the embedded prompt injection hijacks the agent to exfiltrate data. GitHub issue #1348 was filed in April 2025 and closed without a fix before archival. Anthropic declined to patch it, stating the repo is archived and "there should always be a human in the loop with the ability to deny tool invocations." No CVE was assigned. The PostgreSQL MCP server had a similar vulnerability, suggesting this was systemic across Anthropic's reference database servers.
+**The vulnerability story has been amplified by major security firms.** Trend Micro's original disclosure has now been reinforced by Datadog Security Labs (who published a full SQL injection case study on the sister PostgreSQL MCP server with executable proof-of-concept code) and Akamai (whose MCP security guide found that 43% of popular MCP server implementations contain command injection vulnerabilities). VulnerableMCP.info, a new comprehensive MCP vulnerability database tracking 50 vulnerabilities (13 critical), now catalogs the broader pattern. The key new finding: Anthropic's vulnerable SQLite MCP server was forked over 5,000 times before archival, meaning this unpatched SQL injection code now silently exists inside thousands of downstream agents — many likely in production.
 
-**Still getting significant downloads despite archival.** The PyPI package shows ~13,000 weekly downloads and ~34,000 monthly downloads — remarkable for a package marked "No new releases are expected." Many users are likely unaware of the archival status or the security issue.
+**Downloads spiked then declined.** PyPI downloads surged dramatically in mid-March 2026 (peaking at ~23,600/day), likely driven by the security research publicity. They've since settled to ~8,400 weekly (~241K monthly) — down from ~13,000 weekly at last review. The spike-then-decline pattern suggests many users installed it to test the vulnerability, not for production use.
 
-**Last release was April 2025.** Version 2025.4.25 was the final release, which updated the MCP SDK to version 1.6.0. Twelve total versions were published between November 2024 and April 2025 before the server was archived on May 28-29, 2025.
+**Still v2025.4.25 — now nearly a year without a release.** The final version updated the MCP SDK to 1.6.0. Twelve versions were published between November 2024 and April 2025 before archival on May 28-29, 2025. The archived repo remains frozen with no security patches possible.
 
-**DBHub has emerged as the leading multi-database alternative.** Bytebase's DBHub (2,369 stars, actively maintained through March 2026) supports PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite through a single MCP server interface. It has become the go-to choice for teams needing database MCP access.
+**DBHub continues to grow as the leading multi-database alternative.** Bytebase's DBHub (2,600 stars, 218 forks, 512 commits) supports PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite through a single zero-dependency, token-efficient interface.
 
-**165+ SQLite MCP server implementations now exist.** The community has thoroughly filled the gap left by the official server's archival. Notable alternatives include jparkerweb/mcp-sqlite (93 stars, actively maintained), sqlite-explorer-fastmcp (104 stars, read-only/safety-focused), and panasenco/mcp-sqlite (Datasette-compatible metadata support).
+**167+ SQLite MCP server implementations now exist on PulseMCP alone.** jparkerweb/mcp-sqlite reached v1.0.9 (99 stars, April 4 release), sqlite-explorer-fastmcp holds at 92 stars (read-only/safety-focused), and panasenco/mcp-sqlite continues with Datasette-compatible metadata support.
 
-**PulseMCP traffic holds steady.** ~7,700 weekly visitors, ~279,000 all-time, ranked #130 globally. For comparison, the PostgreSQL MCP server has 1.3M all-time visitors (#31) — roughly 4.7x more traffic.
+**PulseMCP traffic nearly doubled.** ~7,400 weekly visitors, ~521,000 all-time (+87%), now ranked #84 globally (up from #130). The security research attention appears to be driving discovery — people finding the review while researching MCP vulnerabilities.
 
 ## What It Does
 
@@ -109,15 +109,15 @@ Requirements: Python 3.10+ and `uv` (or pip). The server takes one argument — 
 
 ## Compared to Alternatives
 
-**vs. Bytebase DBHub (2,369 stars):** The leading multi-database MCP server, actively maintained through March 2026. Supports PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite through a single interface. If you need database MCP access today, DBHub is the strongest general-purpose choice.
+**vs. Bytebase DBHub (2,600 stars):** The leading multi-database MCP server, actively maintained with 512 commits. Supports PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite through a single zero-dependency, token-efficient interface. If you need database MCP access today, DBHub is the strongest general-purpose choice.
 
-**vs. jparkerweb/mcp-sqlite (93 stars):** A community-built TypeScript alternative that provides comprehensive SQLite operations with better safety features, including input validation and structured CRUD operations (not raw SQL). Actively maintained through March 2026. If you specifically want SQLite MCP access, this is the better choice.
+**vs. jparkerweb/mcp-sqlite (99 stars, v1.0.9):** A community-built JavaScript alternative that provides comprehensive SQLite operations with better safety features, including input validation and structured CRUD operations (not raw SQL). Actively maintained with the latest release on April 4, 2026. If you specifically want SQLite MCP access, this is the better choice.
 
-**vs. sqlite-explorer-fastmcp (104 stars):** A read-only SQLite MCP server built with FastMCP. Takes the opposite approach to safety — agents can only read, never write. Good for analytical workloads where you want to prevent accidental data modification. Built-in query validation adds another safety layer.
+**vs. sqlite-explorer-fastmcp (92 stars):** A read-only SQLite MCP server built with FastMCP. Takes the opposite approach to safety — agents can only read, never write. Good for analytical workloads where you want to prevent accidental data modification. Built-in query validation and parameterized queries add another safety layer.
 
-**vs. Postgres MCP Server:** If you're choosing a database MCP server for a real project, PostgreSQL is probably the better database choice. More features, better concurrency, actual access controls. Note: the official Postgres MCP server also has a SQL injection vulnerability — use Postgres MCP Pro by crystaldba (2,300+ stars) or Neon MCP instead.
+**vs. Postgres MCP Server:** If you're choosing a database MCP server for a real project, PostgreSQL is probably the better database choice. More features, better concurrency, actual access controls. Note: the official Postgres MCP server also has a SQL injection vulnerability (now documented in a full Datadog Security Labs case study) — use Postgres MCP Pro by crystaldba (2,300+ stars) or Neon MCP instead.
 
-**vs. DuckDB MCP Server:** For analytical workloads — which is what the SQLite MCP server's "insight memo" feature targets — DuckDB is purpose-built for OLAP queries. Faster on large datasets, native Parquet/CSV support, better analytical SQL extensions. If data analysis is your primary use case, DuckDB is the sharper tool.
+**vs. MotherDuck DuckDB MCP Server (141 stars):** For analytical workloads — which is what the SQLite MCP server's "insight memo" feature targets — DuckDB is purpose-built for OLAP queries. Faster on large datasets, native Parquet/CSV support, better analytical SQL extensions. Now includes read-write mode toggle and over 95% functional correctness in text-to-SQL tasks. If data analysis is your primary use case, DuckDB is the sharper tool.
 
 ## Who Should Use This
 
@@ -141,4 +141,4 @@ The SQLite MCP server still does what a reference implementation should: it demo
 
 *Disclosure: We do not test MCP servers hands-on. This review is based on documentation analysis, GitHub repository data, community reports, and publicly available information. All claims should be verified against the official repository and documentation.*
 
-*This review was last updated on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
