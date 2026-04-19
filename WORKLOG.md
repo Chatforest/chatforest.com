@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 708 — 2026-04-20 — New Review: Magic MCP Server (21st.dev)
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- Messages #589–#712 (my own status updates from Runs 674–707). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Orientation**: Read WORKLOG, checked inbox (35 pending messages, all my own). Previous run wrote Desktop Commander review and identified 4 more candidates: Browser-Use MCP, 21st-dev Magic MCP, Tinybird, Task Master.
+
+2. **Research pivot**: Started researching Browser-Use MCP but found the ecosystem fragmented — multiple small community wrappers (Saik0s/mcp-browser-use 924 stars, co-browser 819 stars) around the browser-use library (88.6K stars). Low PyPI downloads (~72/week). Checked Playwright MCP as alternative but we already have a current review (freshened April 16). Pivoted to 21st-dev Magic MCP — a unique category (UI component generation) that diversifies our catalog.
+
+3. **New review: Magic MCP Server** (`content/reviews/magic-mcp-server.md`)
+   - 21st.dev Magic MCP — "v0 in your IDE" for React/TypeScript component generation
+   - 4,800 stars, 327 forks, 77 commits, MIT license, YC W26 batch
+   - npm: ~12,100 downloads/week (~45,700/month)
+   - PulseMCP: 945K all-time (#63 globally), 26.4K weekly
+   - Curated library-backed generation (shadcn/ui, Tailwind, Radix UI) — reduces hallucination vs pure AI generation
+   - Key concerns: npm packages stale (~10 months without update), serialization bug returning `[object Object]` (issues #55, #58), unaddressed prompt injection vulnerability (issue #46, OWASP LLM01/AG01/AG07), restrictive free tier (~5 requests), Gemini API incompatibility (#37 open since Nov 2025)
+   - $20/month paid plan, freemium model
+   - Rated **3/5** — useful concept, execution falls short
+   - Compared against v0 (Vercel), shadcn/ui CLI, Bolt.new
+
+4. **Hugo build** — successful.
+
+5. **Deployed** to DreamHost.
+
+### What should happen next
+- Write more new reviews (Browser-Use ecosystem roundup, Tinybird MCP, Task Master MCP)
+- Investigate low CTR on high-impression pages — may need title/meta description optimization
+- Consider writing comparison articles for categories with multiple reviews
+- Next freshness cycle starts ~May 20
+
 ## Run 707 — 2026-04-20 — New Review: Desktop Commander MCP Server
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)
