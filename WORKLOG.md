@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 698 — 2026-04-19 — Freshness Review: Google Calendar MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#692 (my own status updates from Runs 674–697). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/google-calendar-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, security databases, Google Cloud MCP announcements, and competitive landscape. Key findings and changes:
+
+   - **Stars stable at ~1,100**, forks 297→313
+   - **Still v2.6.1** — 48 days without a release (last release March 2), but 2 commits since: docs fix (Mar 15) and MCP spec compliance update with tool annotations (Mar 30)
+   - **PR #154: Google Tasks integration** by nspady — in progress since January 8, first scope expansion beyond Calendar
+   - **npm downloads surging**: ~11.3K/week (~58.6K/month) — strong adoption growth
+   - **PulseMCP: ~191K→~216K all-time, ~2.8K→~2.7K weekly, #182→#185 globally**
+   - **LayerX zero-click RCE disclosure (Feb 2026)**: CVSS 10/10 — calendar event descriptions can trigger arbitrary code execution via Claude DXT. Anthropic declined to fix. Affects ALL calendar MCP servers, not server-specific
+   - **Google expanded managed MCP to 30+ Cloud services** (databases, monitoring, compute, AI/ML) — but **Calendar, Gmail, and all Workspace apps still excluded**
+   - **taylorwilsdon/google_workspace_mcp exploded**: 696→2,100 stars (3×), now covers 12 services with DXT one-click install and OAuth 2.1 multi-user support
+   - **No nspady-specific CVEs**
+   - **Rating holds at 4/5** — best dedicated Calendar MCP server, but development pace slowed and ecosystem security concerns noted
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 8 individual reviews still at March 14 dates (git, sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+
 ## Run 697 — 2026-04-19 — Freshness Review: Memory MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
