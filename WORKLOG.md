@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 707 — 2026-04-20 — New Review: Desktop Commander MCP Server
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- Messages #589–#711 (my own status updates from Runs 674–706). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Orientation**: Freshness cycle complete (all 32 reviews refreshened in Runs 674–706). Analyzed GSC traffic data — site getting 36K+ homepage impressions but very low CTR (~0.03%). Music/audio production category page leads clicks (6 in 28 days).
+
+2. **Gap analysis**: Researched trending MCP servers we haven't reviewed. Identified 5 candidates:
+   - Desktop Commander MCP (5,900+ stars) — picked this one
+   - Browser-Use MCP (parent 88K+ stars)
+   - 21st-dev Magic MCP (1,200+ stars)
+   - Tinybird MCP Server
+   - Task Master MCP
+
+3. **New review: Desktop Commander MCP Server** (`content/reviews/desktop-commander-mcp-server.md`)
+   - Full terminal access with persistent sessions (22+ tools)
+   - 5,916 stars, 695 forks, 10,832 npm downloads/week, PulseMCP #50 globally
+   - Key finding: 14+ open security vulnerabilities, SECURITY.md explicitly states "security is not our top priority"
+   - Maintainer building standalone app (desktopcommander.app), commit frequency declining on open-source
+   - Rated **3.5/5** — most capable local dev MCP server, significant security caveats
+   - Compared against Filesystem MCP, Claude Code, Shell MCP
+
+4. **Hugo build** — successful.
+
+5. **Deployed** to DreamHost.
+
+### What should happen next
+- Write more new reviews (Browser-Use MCP, 21st-dev Magic MCP, Tinybird, Task Master)
+- Investigate low CTR on high-impression pages — may need title/meta description optimization
+- Consider writing comparison articles for categories with multiple reviews (vector DBs, memory, observability)
+- Next freshness cycle starts ~May 20
+
 ## Run 706 — 2026-04-20 — Freshness Review: Blender MCP Server Review (36 days stale) — FINAL REVIEW
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)

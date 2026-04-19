@@ -548,6 +548,13 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-04-20 12:00:00</span></div>
+  <h3><a href="/reviews/desktop-commander-mcp-server/">Desktop Commander MCP Server — Full Terminal and File Control for AI Agents</a></h3>
+  <p>A community MCP server that gives AI agents terminal access, diff-based file editing, and persistent process management. 22 tools covering terminal sessions, filesystem operations, code editing, and search — the most capable local development MCP server available, with significant security caveats.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-24 23:00:00</span></div>
   <h3><a href="/reviews/code-generation-mcp-servers/">Code Generation MCP Servers — UI Components, Context Providers, and the Paradox of AI Writing Its Own Tools</a></h3>
   <p>Code generation MCP servers reveal a paradox: every major AI coding platform (GitHub Copilot, Cursor, Windsurf, Amazon Q, JetBrains AI, Claude Code) supports MCP as a client — consuming external tools and context — but none exposes its code generation engine as an MCP server. The real ecosystem is context provision: Context7 (50k stars) delivers version-specific library documentation, magic-mcp (4.5k stars) generates UI components from natural language, shadcn-ui MCP server (2.7k stars) provides component context, and Vercel&#39;s next-devtools-mcp (694 stars) gives coding agents real-time Next.js app internals. The strongest pattern is design-to-code: Figma&#39;s official MCP server enables bidirectional AI workflows.</p>
@@ -565,13 +572,6 @@
   <div class="card-meta"><span>Review</span> <span>2026-03-24 22:00:00</span></div>
   <h3><a href="/reviews/package-management-mcp-servers/">Package Management MCP Servers — NuGet, npm, PyPI, Maven, and the Quest for AI-Assisted Dependency Intelligence</a></h3>
   <p>Package management MCP servers cover dependency intelligence across npm, PyPI, Maven, NuGet, Cargo, and more. Microsoft&#39;s NuGet MCP server leads with first-party IDE integration — built into Visual Studio 2026 with vulnerability fixing and version management. Homebrew ships an official built-in MCP server for macOS package management. The community-driven mcp-package-version (122 stars, Go) covers 9 registries including Docker Hub and GitHub Actions. npm-sentinel-mcp offers the deepest single-registry analysis with 18&#43; tools. But vendor investment is thin: only NuGet and Homebrew have official servers.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-03-24 22:00:00</span></div>
-  <h3><a href="/reviews/profiling-performance-mcp-servers/">Profiling &amp; Performance MCP Servers — CodSpeed, Polar Signals, Grafana Pyroscope, Java JFR, PageSpeed, NeoLoad Load Testing</a></h3>
-  <p>Profiling and performance MCP servers across continuous profiling, benchmark analysis, web performance auditing, and load testing. CodSpeed (launched March 16, 2026) is the standout — its MCP server gives AI agents direct access to flamegraph queries, run comparisons, and benchmark results, plus agent skills that autonomously optimize hot paths. The codspeed-optimize skill loops through measuring, analyzing flamegraphs, making targeted changes, and comparing results. Polar Signals provides a remote MCP server for its continuous profiling platform — AI assistants query CPU performance, memory usage, and identify optimization opportunities in production systems through natural language. Grafana&#39;s official mcp-grafana (2.5k stars, Go, Apache-2.0) includes Pyroscope integration with tools like list_pyroscope_label_names, list_pyroscope_label_values, and list_pyroscope_profile_types — connecting AI agents to Grafana&#39;s continuous profiling database (Pyroscope: 11k&#43; stars). For Java profiling, theSharque/mcp-jperf wraps JDK tools (jcmd, jfr, jps) as an MCP server so AI assistants can profile Spring Boot applications without command-line interaction. Web performance gets multiple MCP servers: PageSpeed Insights MCP (ruslanlap, run audits against Google PageSpeed API), google-psi-mcp (ncosentino, Core Web Vitals with LCP/CLS/FCP/TTFB), and Apify&#39;s Website Speed Checker (bulk Lighthouse audits). Chrome DevTools MCP (31k stars) also includes performance tracing tools (performance_start_trace, performance_stop_trace, performance_analyze_insight, take_memory_snapshot). Load testing is emerging: NeoLoad MCP (Tricentis, first performance testing tool with MCP, infrastructure management &#43; scenario configuration &#43; test execution &#43; analysis), AWS Distributed Load Testing MCP (TypeScript, optional deployment with DLT solution). Digital-Defiance/mcp-debugger-server includes CPU profiling, memory profiling, heap snapshots, and performance timeline tracking for Node.js. Gaps are significant: no standalone flame graph generation MCP (brendangregg/FlameGraph has 17k&#43; stars but no MCP wrapper), no async-profiler MCP (Java, 9k&#43; stars), no perf/eBPF MCP for Linux kernel profiling, no Valgrind/Cachegrind MCP, no .NET profiling MCP (dotTrace, PerfView absent), no Go pprof MCP, no Ruby/Python standalone profiling MCP, no JMeter/k6/Locust/Gatling MCP, very few open-source options (most are vendor-locked). Rating: 3/5.</p>
 </div>
 
   
