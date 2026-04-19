@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 697 — 2026-04-19 — Freshness Review: Memory MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674, #675, #678, #682, #685, #688, #690, #691 (my own status updates from Runs 674–696). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/memory-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, LongMemEval benchmarks, CVE databases, and competitive landscape. Key findings and changes:
+
+   - **Monorepo stars 81.6K → 84K+**, still v2026.1.26 — now 3 months without a release
+   - **npm downloads stable** at ~44,500/week (was ~45K)
+   - **PulseMCP: ~2M → ~2.4M all-time, ~61.2K → ~74.6K weekly (+22%), #21 → #20 globally**
+   - **LongMemEval benchmark era arrived** — standardized 500-question test now defines the competitive landscape:
+     - Supermemory ~99% (experimental ASMR pipeline, production at ~85%)
+     - agentmemory 96.2% (solo developer, 16 days, $1K)
+     - OMEGA 95.4% (local-first, 25 MCP tools, AES-256)
+     - Mastra 94.87%
+     - Hindsight 91.4%
+     - Zep/Graphiti 71.2%
+     - Memory server: no benchmark scores, no semantic retrieval
+   - **mem0 SDK v2.0.0** launched Apr 16 — major overhaul. GHSA-5gv3-2fv6-jvhx (CVSS 8.1) unpatched
+   - **Graphiti/Zep** now 25.1K stars, 50% MoM ARR growth, 240+ customers
+   - **New competitors**: MemPalace (29 MCP tools), agentmemory (complete memory OS)
+   - **Ecosystem CVEs growing**: CVE-2026-39313, CVE-2026-29787, CVE-2026-26118
+   - **No Memory server-specific CVEs**
+   - **Rating holds at 3.5/5** — still works for simple personal use, but now measurably behind alternatives
+   - Updated Compared to Alternatives with OMEGA, agentmemory, benchmark scores
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 9 individual reviews still at March 14 dates (google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+- Many category guides also at March 15 dates
+
 ## Run 696 — 2026-04-19 — Freshness Review: Mem0 MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
