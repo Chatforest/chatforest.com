@@ -5,12 +5,12 @@ description: "Zilliz's official MCP server for Milvus brings 12 tools covering f
 og_description: "Milvus has 43,000+ GitHub stars and powers AI at NVIDIA, Salesforce, and eBay. Its MCP server has 12 tools with hybrid search, full CRUD, and SSE transport. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Zilliz's official MCP server for the most-starred open-source vector database. 12 tools covering five search modes, full collection CRUD, and data operations — the strongest self-hosted vector DB MCP experience."
-last_refreshed: 2026-03-14
+last_refreshed: 2026-04-19
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 222 GitHub stars, 64 forks, 35 commits, last commit Dec 24, 2025, v0.1.1.dev9 (PyPI), 12 tools, Python, Apache-2.0, ~6,934 PyPI downloads total, PulseMCP 40.4K all-time visitors. Milvus core: 43.4K stars, 3.9K forks, v2.6.12 (Mar 13, 2026), 24,242 commits, 432 contributors.
+**At a glance:** 228 GitHub stars, 64 forks, 35 commits, last commit Dec 24, 2025 (4 months ago), v0.1.1.dev9 (PyPI), 12 tools, Python, Apache-2.0, ~86 PyPI downloads/week, PulseMCP 40.4K all-time visitors. Milvus core: 43.4K+ stars, 3.9K forks, v2.6.15 (Apr 17, 2026), 24,000+ commits, 432 contributors.
 
 The Milvus MCP server is the official tool for connecting AI coding agents to Milvus, the open-source vector database that has become the most-starred in its category on GitHub with over 43,000 stars. Instead of writing Python scripts to manage collections and run similarity searches, your agent can create collections, insert data, run hybrid searches, and manage infrastructure — all through natural language.
 
@@ -117,9 +117,9 @@ The catch: you need a running Milvus instance. Unlike [Chroma](/reviews/chroma-m
 
 **No document update.** You can insert and delete, but you can't update existing entities in-place. To modify a record, you must delete and re-insert. [Chroma MCP](/reviews/chroma-mcp-server/) has `update_documents`. For iterative RAG pipeline development where your agent is refining document content or metadata, the delete-and-reinsert cycle is friction.
 
-**Pre-release maturity — and stagnating.** 35 commits. No versioned releases. The last commit was December 24, 2025 — three months ago. Six open issues with no assignees, including an OOM exception report (#44) and a bug where the service becomes unresponsive after errors (#51). Two open PRs — one for Streamable HTTP support (#57, Dec 26) and a bug fix for `create_collection` (#58, Feb 27) — sit unreviewed. Meanwhile, Milvus core has shipped v2.6.9 through v2.6.12 with security fixes, spatial data, JSON shredding, and INT8 vectors. The gap between the database's pace and the MCP server's pace is widening.
+**Pre-release maturity — and effectively abandoned.** 35 commits. No versioned releases. The last commit was December 24, 2025 — four months ago. Eight open issues (up from six) with no assignees, including an OOM exception report (#44) and a bug where the service becomes unresponsive after errors (#51). Six open PRs — including Streamable HTTP support (#57, Dec 26) and a bug fix for `create_collection` (#58, Feb 27) — all sit unreviewed for months. Meanwhile, Milvus core has shipped v2.6.13 through v2.6.15 (three releases in the last month alone) with Gemini embedding support, critical security patches, and over 20 bug fixes. The gap between the database's pace and the MCP server's pace is no longer widening — it has become a chasm.
 
-**No Streamable HTTP transport.** SSE is good but the MCP ecosystem is moving toward Streamable HTTP. Qdrant already supports it. Zilliz's own Cloud MCP server supports it. There's an open PR (#57) adding Streamable HTTP support to this server, but it's been sitting unreviewed since December 26, 2025. The feature request (#40) also remains open. For forward-looking deployments, this gap matters.
+**No Streamable HTTP transport.** SSE is good but the MCP ecosystem is moving toward Streamable HTTP. Qdrant already supports it. Zilliz's own Cloud MCP server supports it. There's an open PR (#57) adding Streamable HTTP support to this server, but it's been sitting unreviewed since December 26, 2025 — nearly four months. The feature request (#40) also remains open. For forward-looking deployments, this gap matters.
 
 **Python-only.** Requires Python 3.10+ and the `uv` package manager. No npm package, no Go binary. If your development stack is Node.js or Go, you'll need Python infrastructure for this server. [Pinecone MCP](/reviews/pinecone-mcp-server/) is TypeScript-based, which integrates more naturally into JavaScript workflows.
 
@@ -131,7 +131,7 @@ The catch: you need a running Milvus instance. Unlike [Chroma](/reviews/chroma-m
 
 | Feature | Milvus MCP | Chroma MCP | Qdrant MCP | Pinecone MCP |
 |---------|-----------|------------|------------|--------------|
-| **Stars** | 222 | 515 | 1,300 | 56 |
+| **Stars** | 228 | 515 | 1,357 | 56 |
 | **Tools** | 12 | 13 | 2 | 9 |
 | **Transport** | stdio, SSE | stdio only | stdio, SSE, Streamable HTTP | stdio |
 | **Search types** | 5 (text, vector, hybrid, similarity, filter) | 3 (semantic, full-text, regex) | 1 (semantic) | 2 (text, metadata) |
@@ -154,24 +154,26 @@ The Milvus MCP server's strongest argument is for teams already running Milvus i
 
 ## The Bigger Picture
 
-Milvus is the most-deployed open-source vector database, with 43,400+ GitHub stars and adoption at companies like NVIDIA, Salesforce, and eBay. The core database has been on a tear — v2.6.12 (March 13, 2026) brought replication topology inspection and TLS improvements, following v2.6.10's critical security fix (CVE-2026-26190) and v2.6.9's highlight scores for search results. Spatial data, timezone-aware timestamps, INT8 vectors, JSON shredding (100x metadata filtering speedup), and expanded embedding functions (OpenAI, VoyageAI, Cohere) are all now part of the 2.6.x series. The database is evolving fast.
+Milvus is the most-deployed open-source vector database, with 43,400+ GitHub stars and adoption at companies like NVIDIA, Salesforce, and eBay. The core database continues shipping rapidly — v2.6.15 (April 17, 2026) is the latest in a cadence of roughly biweekly releases. v2.6.14 (April 7) delivered faster MixCoord recovery and over 20 bug fixes. v2.6.13 (March 23) added Google Gemini embedding support. v2.6.10 patched CVE-2026-26190 (CVSS 9.8, authentication bypass on metrics port). The database is evolving fast.
 
-The MCP server is not. Zilliz also maintains a [separate Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) (32 stars, 16 tools) with cluster management and Streamable HTTP transport. The split makes architectural sense — database operations vs. infrastructure operations — but creates confusion when the Cloud server gets Streamable HTTP and the open-source one doesn't.
+The MCP server is not — and Zilliz itself may be moving on. In April 2026, Zilliz published ["Is MCP Dead? MCP vs CLI vs Agent Skills Compared"](https://milvus.io/blog/is-mcp-dead-cli-and-skills-for-ai-agents.md), citing three architectural limitations they discovered after a year operating MCP servers: **context window bloat** (a standard MCP setup consumes ~72% of available context before the agent acts), **passive tool design**, and **inability to reuse the agent's own LLM**. Their response: **Zilliz CLI** for terminal-based management, and **Milvus Skills / Zilliz Skills** for AI coding agents like Claude Code and Codex. This is the MCP server's own maintainer publicly pivoting away from the protocol. When the team behind the server questions whether MCP is the right approach, the server's future development is uncertain at best.
 
-A third-party alternative has also emerged: [TaiLabs mcp-milvus](https://github.com/tailabs/mcp-milvus) (1 star, v0.1.0), a Go implementation with 15 tools, session-aware connection management, and Ristretto cache-based connection pooling. It's too early to recommend, but the fact that community alternatives are appearing underscores demand for a more actively maintained MCP layer.
+Zilliz also maintains a [separate Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) (32 stars, 16 tools, only 3 commits) with cluster management and Streamable HTTP transport. The Cloud server is equally quiet.
 
-The gap between the database's maturity and the MCP server's maturity is the central tension here. Milvus core has 24,242 commits, 432 contributors, and ships monthly security patches. The MCP server has 35 commits, no versioned releases, and hasn't merged a PR since December 2025. PyPI downloads are growing (~6,934 total, with recent daily spikes to 174), suggesting adoption is outpacing maintenance.
+The [TaiLabs mcp-milvus](https://github.com/tailabs/mcp-milvus) third-party alternative (1 star, v0.1.0, Go implementation) has seen no updates since July 2025 and appears dormant.
 
-That said, what's here is solid. Five search modes with native hybrid search is genuinely category-leading. Full collection CRUD plus delete fills gaps that Qdrant and Pinecone leave open. SSE transport enables remote access. And the fact that it works identically with self-hosted Milvus and Zilliz Cloud means you're not locked into a deployment model.
+Separately, Milvus core disclosed CVE-2025-64513 — a critical authentication bypass in the Proxy component allowing unauthenticated attackers full admin access, patched in v2.4.24/v2.5.21/v2.6.5. While not MCP-server-specific, any Milvus MCP deployment running an unpatched instance is fully exposed.
 
-For the vector database MCP space — still young, still fragmented — the Milvus MCP server is one of the two most capable options alongside Chroma. If hybrid search matters to your RAG pipeline (and it should), this is the server to use. But watch the maintenance pace — if the Streamable HTTP PR (#57) and bug fix PR (#58) remain unmerged much longer, the server risks falling behind the ecosystem.
+The gap between the database's maturity and the MCP server's maturity is no longer the central tension — the central tension is now whether Zilliz considers the MCP server part of its future at all. PyPI downloads have dropped to ~86/week (down from ~174/day spikes in early March), and the server hasn't merged a PR in four months. The "Is MCP Dead?" blog doesn't kill the server outright, but it signals that Zilliz's engineering investment is flowing toward CLI and Skills, not MCP.
 
-## Rating: 3.5/5
+That said, what's here still works. Five search modes with native hybrid search remains category-leading. Full collection CRUD plus delete fills gaps that Qdrant and Pinecone leave open. SSE transport enables remote access. For teams already running Milvus who want a quick MCP integration, this server delivers — but don't expect it to evolve further.
 
-The Milvus MCP server earns a 3.5/5 for bringing the most popular open-source vector database's key capabilities to AI coding agents — 12 tools with category-leading search breadth (five modes including native hybrid search), full collection CRUD, delete support, memory management controls, and SSE transport. It loses points for requiring a running Milvus instance (no embedded/local mode), stagnating development (35 commits, no versioned releases, no merges since December 2025, two PRs sitting unreviewed), no document update capability, a known service hang bug (#51), and no Streamable HTTP transport. The database behind it is world-class and shipping monthly; the MCP layer is falling behind.
+## Rating: 3/5
 
-**Use this if:** You're running Milvus in production and want AI-assisted vector operations, especially hybrid search combining keyword and semantic retrieval.
+The Milvus MCP server drops to 3/5. The core functionality remains solid — 12 tools with category-leading search breadth (five modes including native hybrid search), full collection CRUD, delete support, memory management controls, and SSE transport. But the maintenance situation has deteriorated from stagnating to effectively abandoned: four months since the last commit, six PRs unreviewed, eight open issues ignored, and PyPI downloads declining. Most concerning, Zilliz itself has published a blog questioning MCP's viability and shifted engineering investment toward CLI and Skills alternatives. When the maintainer pivots away from the protocol, the server's long-term trajectory is clear. The database behind it remains world-class; the MCP layer is being left behind.
 
-**Skip this if:** You want zero-setup vector memory (use Qdrant's embedded mode), you need the most polished MCP experience (use Chroma), or your stack is JavaScript-based (use Pinecone's TypeScript server).
+**Use this if:** You're running Milvus in production and want a quick AI interface for vector operations today — especially hybrid search combining keyword and semantic retrieval. Accept that this is likely the final form of the server.
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and has not been independently verified through hands-on testing. All claims are based on publicly available documentation, GitHub repositories, and community sources. Last edited 2026-03-21.*
+**Skip this if:** You want zero-setup vector memory (use Qdrant's embedded mode), you need an actively maintained MCP experience (use Chroma), your stack is JavaScript-based (use Pinecone's TypeScript server), or you want Zilliz's latest AI integration approach (use Zilliz CLI or Milvus Skills instead).
+
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and has not been independently verified through hands-on testing. All claims are based on publicly available documentation, GitHub repositories, and community sources. Last edited 2026-04-19.*
