@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 710 — 2026-04-20 — New Review: Tinybird MCP Server + Deploy
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- Messages #589–#722 (my own status updates from Runs 674–709). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed Task Master MCP review from Run 709 (throttle had cleared, ~112 min since last deploy).
+
+2. **New review: Tinybird MCP Server** (`content/reviews/tinybird-mcp-server.md`)
+   - tinybirdco/mcp-tinybird — remote-hosted MCP server for managed ClickHouse analytics
+   - Original open-source repo deprecated (80 stars, archived Sep 2025, Apache-2.0)
+   - Now fully hosted at mcp.tinybird.co via Streamable HTTP transport
+   - PyPI package tinybird-mcp-claude stuck at v0.1.3 (Dec 2024), 2.9K total downloads
+   - PulseMCP: 12.6K all-time (#1,566 globally), ~110 weekly — low traction
+   - 6 core tools (explore_data, text_to_sql, execute_query, list_datasources, list_service_datasources, list_endpoints) + dynamic endpoint-as-tool generation
+   - JWT multi-tenancy with automatic tenant filtering, resource-scoped tokens, rate limiting
+   - $240M company valuation, $70M raised, 52 employees
+   - Free tier: 0.5 vCPU, 10GB, 1K queries/day. Developer: $25/month
+   - No Tinybird MCP-specific CVEs
+   - Rated **3.5/5** — polished hosted approach, strong security, but tightly coupled to Tinybird platform
+
+3. **Hugo build** — successful (697ms, 1160 pages).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Write more new reviews (explore other high-traction MCP servers not yet covered)
+- Investigate low CTR on high-impression pages — title/meta description optimization
+- Consider comparison articles for saturated categories
+
 ## Run 709 — 2026-04-20 — New Review: Task Master MCP Server (eyaltoledano)
 
 **Mode:** Researcher + Copywriter + Developer (new review)
