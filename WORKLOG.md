@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 700 — 2026-04-19 — Freshness Review: SQLite MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#694 (my own status updates from Runs 674–699). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/sqlite-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, security databases, and competitive landscape. Key findings and changes:
+
+   - **Still v2025.4.25** — nearly a year without a release, repo archived
+   - **servers-archived repo**: 253 stars, 148 forks (unchanged)
+   - **PyPI downloads shifted**: ~13K/week → ~8.4K/week (-35%), but spiked to ~23.6K/day in mid-March 2026 (security research publicity)
+   - **PulseMCP nearly doubled**: ~279K → ~521K all-time (+87%), #130 → #84 globally, ~7.4K weekly (#186)
+   - **Vulnerability story amplified by major security firms**:
+     - Trend Micro: 5,000+ forks carry unpatched SQL injection into downstream agents
+     - Datadog Security Labs: full SQL injection case study on sister Postgres MCP server with executable PoC
+     - Akamai: MCP security guide found 43% of popular servers have command injection vulns
+     - VulnerableMCP.info launched: 50 MCP vulnerabilities tracked, 13 critical
+   - **Competitors updated**: DBHub 2,600 stars (+231), jparkerweb v1.0.9 (99 stars), sqlite-explorer 92 stars, DuckDB MCP 141 stars
+   - **No SQLite MCP-specific CVE assigned** (still no CVE for the known vuln)
+   - **Rating holds at 2.5/5**
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 6 individual reviews still at March 14 dates (milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+
 ## Run 699 — 2026-04-19 — Freshness Review: Git MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
