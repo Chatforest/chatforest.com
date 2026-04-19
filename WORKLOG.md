@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 693 — 2026-04-19 — Freshness Review: Qdrant MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674, #675, #678, #682 (my own status updates from Runs 674–692). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/qdrant-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, Qdrant core releases, and competitive landscape. Key findings and changes:
+
+   - **Stars 1,300 → 1,357**, forks 242 → 265, commits 73 → 74
+   - **Still v0.8.1** — now over 4 months without a release (since Dec 10, 2025)
+   - **Only 1 PR merged** since March: #120 (CI security — pin GH Actions to commit SHAs)
+   - **PyPI downloads exploded**: ~20.7K/week → ~745K/week (**36× increase**), ~1.5M/month
+   - **Open PRs grew 21 → 27** — all 6 tracked community PRs (#116 delete, #114 Gemini, #111 OpenAI, #102 annotations, #98 vector names, #90 hybrid search) still unmerged
+   - **New PRs**: #121 (edit tool), #118 (OpenRouter embeddings), #117 (security hardening — DoS prevention, PII exfiltration firewall, data pollution guardrail), #127 (Gemini CLI extension by Qdrant team member)
+   - **Maintainer-authored PRs** hint at upcoming release: #125 (deps upgrade, closes #103), #119 (configurable vector names)
+   - **Qdrant core v1.17.1** (Mar 27): deferred point updates, non-blocking Gridstore flushes, improved filtered search, security patch (snapshot recovery), Qdrant Edge v0.6.0
+   - **Badge spam accumulating**: issues #109, #123, #124, #126, #129 all open, unclosed
+   - **Open issues**: 22 → 24
+   - **Competitors mostly dormant**: Chroma (no activity since Sep 2025), Milvus (since Dec 2025), Weaviate (since May 2025). Only Pinecone active (v0.2.1 Feb 2026, commits in March)
+   - **No Qdrant MCP-specific CVEs**
+   - **Rating holds at 3/5** — massive adoption growth but still only 2 tools, 4 months without release, 27 unmerged PRs
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 13 individual reviews still at March 14 dates (zep-graphiti, perplexity, mem0, memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+- Many category guides also at March 15 dates
+
 ## Run 692 — 2026-04-19 — Freshness Review: Terraform MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
