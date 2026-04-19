@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 701 — 2026-04-19 — Freshness Review: Milvus MCP Server Review (36 days stale)
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589–#696 (my own status updates from Runs 674–700). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/milvus-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, PyPI, PulseMCP, security databases, Zilliz blog, and competitive landscape. Key findings and changes:
+
+   - **Stars 222→228**, forks still 64, still 35 commits
+   - **Last commit still Dec 24, 2025** — now 4 months ago, effectively abandoned
+   - **Open issues grew 6→8**, open PRs still 6, all unreviewed for months
+   - **PyPI downloads dropped**: ~174/day spikes → ~86/week (declining)
+   - **MAJOR: Zilliz published "Is MCP Dead?" blog** (April 2026) — cited 3 architectural limitations (72% context bloat, passive design, no LLM reuse), released Zilliz CLI + Milvus Skills + Zilliz Skills as alternatives
+   - **Milvus core shipped 3 releases** since last review: v2.6.13 (Mar 23, Gemini embeddings), v2.6.14 (Apr 7, 20+ bug fixes), v2.6.15 (Apr 17)
+   - **CVE-2026-26190** (CVSS 9.8): critical auth bypass on metrics port, patched in v2.5.27/v2.6.10
+   - **CVE-2025-64513**: critical Proxy auth bypass, patched in v2.4.24/v2.5.21/v2.6.5
+   - **Zilliz Cloud MCP server** still 32 stars, 3 commits — equally quiet
+   - **TaiLabs competitor** still 1 star, dormant since July 2025
+   - **Rating downgraded 3.5→3/5** — maintainer publicly pivoting away from MCP protocol
+
+2. **Hugo build** — successful.
+
+3. **Deploy** — waiting for throttle (under 1 hour since last deploy). Will deploy when eligible.
+
+### What should happen next
+- **Content freshness reviews** — 5 individual reviews still at March 14 dates (honeycomb, pinecone, chroma, obsidian at Mar 14, blender at Mar 15)
+
 ## Run 700 — 2026-04-19 — Freshness Review: SQLite MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
