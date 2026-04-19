@@ -2,19 +2,19 @@
 title: "Blender MCP Server — AI-Powered 3D Modeling with a Security Trade-Off"
 date: 2026-03-15T01:30:00+09:00
 description: "BlenderMCP connects Blender to AI agents through the Model Context Protocol, enabling natural language 3D modeling, scene creation, and manipulation."
-og_description: "BlenderMCP lets AI agents control Blender through natural language. 17.9K GitHub stars, 114K monthly downloads — but fresh security vulns (SSRF, file read, RCE) and LLM spatial limits temper the magic. Rating: 3.5/5."
+og_description: "BlenderMCP lets AI agents control Blender through natural language. 20.1K GitHub stars, 121K monthly downloads — but confirmed security vulns, official Blender competition, and LLM spatial limits temper the magic. Rating: 3.5/5."
 content_type: "Review"
-card_description: "The most popular creative tool MCP server — lets AI agents control Blender through natural language for 3D modeling, scene creation, and manipulation. 17.9K GitHub stars, 114K monthly PyPI downloads, 841K PulseMCP visitors. Impressive demos and new Sketchfab/Hunyuan3D integrations, but multiple reported security vulnerabilities and LLM spatial reasoning limits mean production use requires caution."
-last_refreshed: 2026-03-15
+card_description: "The most popular creative tool MCP server — lets AI agents control Blender through natural language for 3D modeling, scene creation, and manipulation. 20.1K GitHub stars, 121K monthly PyPI downloads, 1.3M PulseMCP visitors. Now faces competition from Blender Foundation's own official MCP server (launched March 31). Security vulnerabilities confirmed exploitable by AgentSeal research, and LLM spatial reasoning limits mean production use requires caution."
+last_refreshed: 2026-04-20
 ---
 
 BlenderMCP is the first MCP server that made non-3D-artists pay attention to Blender. Built by Siddharth Ahuja, it connects Blender to Claude and other AI agents through the Model Context Protocol, letting you describe 3D scenes in plain English and watch them materialize in real time.
 
-The pitch is compelling: "Create a low-poly forest scene with a cabin and a river" becomes actual geometry, materials, and lighting in Blender — no manual modeling required. With 17,900 GitHub stars, 1,700 forks, roughly 114,000 monthly PyPI downloads, and 841,000 all-time PulseMCP visitors (#55 globally, ~25,500 weekly), it's achieved massive adoption in just over a year.
+The pitch is compelling: "Create a low-poly forest scene with a cabin and a river" becomes actual geometry, materials, and lighting in Blender — no manual modeling required. With 20,100 GitHub stars, 2,000 forks, roughly 121,000 monthly PyPI downloads, and 1.3 million all-time PulseMCP visitors (#45 globally, ~37,800 weekly), it's achieved massive adoption in just over a year.
 
-**At a glance:** 17.9K GitHub stars, 1.7K forks, ~10 core tools plus Poly Haven/Sketchfab/Hunyuan3D/Hyper3D integrations, 31 open issues, v1.5.6 current (Mar 18 2026), 139 commits, 20 contributors, ~114K monthly PyPI downloads.
+**At a glance:** 20.1K GitHub stars, 2K forks, ~10 core tools plus Poly Haven/Sketchfab/Hunyuan3D/Hyper3D integrations, 36 open issues, v1.5.6 current (Mar 18 2026), 139 commits, 20 contributors, ~121K monthly PyPI downloads.
 
-But there's a gap between the viral demo videos and daily use. LLMs are good at language, not spatial reasoning. The `execute_blender_code` tool runs arbitrary Python inside Blender with no sandboxing — and in March 2026, security researchers filed multiple vulnerability reports confirming the risks are concrete, not theoretical. BlenderMCP is a genuinely exciting proof of concept — but "proof of concept" is the operative phrase.
+But there's a gap between the viral demo videos and daily use. LLMs are good at language, not spatial reasoning. The `execute_blender_code` tool runs arbitrary Python inside Blender with no sandboxing — and security researchers have now confirmed the risks are concrete, not theoretical, with AgentSeal validating the vulnerability as exploitable in controlled lab testing. Meanwhile, the Blender Foundation launched its own official MCP server on March 31, 2026 — signaling that the concept has graduated from community experiment to recognized tool category, even as the original remains a "proof of concept."
 
 ## What It Does
 
@@ -92,7 +92,7 @@ claude mcp add blender -- uvx blender-mcp
 
 **Growing integration ecosystem.** Since launch, BlenderMCP has expanded from ~10 core tools to include Sketchfab model search, Hunyuan3D generation, Poly Haven assets, Hyper3D Rodin, and remote host execution. The Sketchfab integration lets agents search and import from a massive library of existing 3D models rather than generating everything from scratch.
 
-**Active community.** 17,900 stars, 1,700 forks, and 20 contributors translate to active development. The integrations were largely community contributions. Issues get responses (31 open, 24 open PRs). The project isn't abandoned — v1.5.6 shipped March 18, 2026.
+**Active community.** 20,100 stars, 2,000 forks, and 20 contributors translate to active development. The integrations were largely community contributions. Issues get responses (36 open, 29 open PRs). The project isn't abandoned — v1.5.6 shipped March 18, 2026, though no release has followed in the 33 days since.
 
 ## What Doesn't Work
 
@@ -110,13 +110,16 @@ This means the AI agent can:
 What was previously a theoretical concern became concrete in March 2026, when security researchers filed multiple vulnerability reports:
 
 - **Issue #207** (Mar 18): Documents the full attack chain — LLM → `execute_blender_code()` → MCP server → addon → unrestricted `exec()` with full system access. Identifies five HIGH/MEDIUM severity issues and proposes mitigations (restricted execution namespaces, AST validation, module allowlists). Still open.
-- **Issue #203** (Mar 10): SSRF vulnerability in the Hunyuan3D integration — `import_generated_asset_hunyuan` accepts URLs with only a prefix check, allowing the Blender process to send HTTP requests to arbitrary endpoints including internal services and cloud metadata. PR #205 addresses it.
+- **Issue #214** (Mar 30): AgentSeal filed a prompt injection concern — tool descriptions could be weaponized to manipulate LLM behavior (OWASP MCP03, Tool Poisoning).
+- **Issue #203** (Mar 10): SSRF vulnerability in the Hunyuan3D integration — `import_generated_asset_hunyuan` accepts URLs with only a prefix check, allowing the Blender process to send HTTP requests to arbitrary endpoints including internal services and cloud metadata. PR #205 addresses it but remains unmerged.
 - **Issue #202** (Mar 10): Arbitrary file read vulnerability in the Hunyuan3D module.
 - **Issue #201** (Mar 10): RCE via unsanitized `exec()` in `execute_blender_code` — a focused report on the same underlying problem as #207.
 
-The README acknowledges the risks: "complex operations should be approached with caution" and "always save your work before using it." But the vulnerability reports show the attack surface is broader than just `execute_blender_code` — the Hunyuan3D integration introduced additional vectors (SSRF, file read) that don't require the LLM to generate malicious Python.
+**AgentSeal runtime validation (March 2026)** confirmed these aren't theoretical — the exec() vulnerability was validated as exploitable in controlled lab testing, classified as CWE-94 (Code Injection) and OWASP MCP03 (Tool Poisoning). Their MCPTox benchmark found a 72.8% attack success rate when injecting instructions through tool interactions across MCP servers, with even the highest refusal rate (Claude 3.7 Sonnet) below 3%.
 
-For personal hobby use on isolated machines, the risk may be acceptable. For any professional or networked environment, these are documented, unpatched vulnerabilities that warrant serious consideration.
+The README acknowledges the risks: "complex operations should be approached with caution" and "always save your work before using it." But the vulnerability reports show the attack surface is broader than just `execute_blender_code` — the Hunyuan3D integration introduced additional vectors (SSRF, file read) that don't require the LLM to generate malicious Python. All security PRs remain unmerged after 40+ days.
+
+For personal hobby use on isolated machines, the risk may be acceptable. For any professional or networked environment, these are documented, confirmed-exploitable, unpatched vulnerabilities that warrant serious consideration.
 
 ### LLM Spatial Reasoning Limits
 
@@ -141,17 +144,21 @@ The socket-based architecture (port 9876) introduces failure points:
 
 BlenderMCP collects anonymous usage data by default. You can disable it through Blender preferences or the `DISABLE_TELEMETRY=true` environment variable, but opt-out telemetry in a tool that executes arbitrary code on your machine deserves scrutiny.
 
-## What's New (March 2026)
+## What's New (April 2026)
 
-**v1.5.0–v1.5.6 release cycle (Jan–Mar 2026).** Six releases in Q1 2026, with the latest (v1.5.6) shipping March 18. The v1.5.x series added Sketchfab model search, Hunyuan3D integration, and remote host execution support.
+**Official Blender MCP Server launched (March 31).** The Blender Foundation released its own MCP server through Blender Lab at blender.org/lab/mcp-server/. This is a significant development — the concept BlenderMCP pioneered is now recognized by Blender's own development team. The official server uses a similar architecture (MCP server + Blender extension communicating via TCP socket) but is built from scratch with auto-discovered tool modules. It's early-stage — far fewer tools than BlenderMCP's ecosystem — but carries the weight of official support. The official server also includes a security warning that LLM-generated code executes "without any guards."
 
-**Sketchfab integration.** Agents can now search and download models from Sketchfab's library directly into Blender. Requires an API key configured in the addon panel. This significantly expands the asset sourcing options beyond Poly Haven.
+**AgentSeal security validation (March 30).** AgentSeal's runtime exploitation research confirmed BlenderMCP's `execute_blender_code` vulnerability as exploitable, not just theoretical. Filed issue #214 documenting prompt injection risks in tool descriptions (OWASP MCP03). The MCPTox benchmark found a 72.8% attack success rate across MCP servers when injecting instructions through tool interactions. All security PRs (#205 for Hunyuan3D SSRF/file read) remain unmerged after 40+ days.
 
-**Hunyuan3D integration.** Tencent's Hunyuan3D service generates 3D models from text descriptions or image references. Requires Tencent Cloud credentials. However, this integration also introduced new security attack surface (see issues #202, #203 above).
+**Stars crossed 20K.** GitHub stars grew from 17,900 to 20,100 (+12%), forks from 1,700 to 2,000. PulseMCP all-time visitors surged from 841K to 1.3M (+55%), weekly from ~25.5K to 37.8K, and global rank improved from #55 to #45.
 
-**Security research attention.** Four security vulnerability reports filed in March 2026 by independent researchers. The exec-based architecture and the Hunyuan3D integration received particular scrutiny. PR #205 addresses some of the Hunyuan3D issues, but the core `execute_blender_code` architecture remains unchanged.
+**New issues.** #219 (incomplete JSON/MCP timeout), #221 (TypeError in Hyper3D image generation), #226 (pyiceberg build failure), #227 (Codex support request). Open issues grew from 31 to 36, open PRs from 24 to 29.
 
-**Windows dependency issues.** Two open issues (#196, #199) report build failures on Windows — `pyroaring` transitive dependency fails to compile, and `pywin32` update conflicts with locked processes. These don't affect macOS/Linux users but can block Windows setup.
+**Still v1.5.6.** No release since March 18 — 33 days without an update. The v1.5.x series (Jan–Mar 2026) added Sketchfab model search, Hunyuan3D integration, and remote host execution support.
+
+**3D-Agent competitor.** 3D-Agent (3d-agent.com) is positioning itself as the "production tool" to BlenderMCP's "proof of concept" — bundling the MCP server inside the addon for zero-config setup and targeting professional workflows.
+
+**Blender 5.1 released (March 2026).** Blender's major release cycle continues. BlenderMCP supports Blender 3.6+ so compatibility is maintained, but the ecosystem is evolving rapidly.
 
 ## Pricing
 
@@ -159,8 +166,14 @@ Free and open-source (MIT license). The Hyper3D integration for AI model generat
 
 ## Compared To
 
+### Official Blender Lab MCP Server
+Launched March 31, 2026 by the Blender Foundation itself. Uses a similar architecture but built from scratch with modular, auto-discovered tools. Far fewer tools than BlenderMCP currently, but carries official support and will evolve with Blender's release cycle. The fact that Blender built their own validates the concept — and may eventually make the community version redundant.
+
+### 3D-Agent
+Positions itself as the production successor to BlenderMCP — bundles the MCP server inside the addon (no separate `uvx` process), targets professional workflows with "reliable results." Less community adoption so far, but the zero-config approach addresses one of BlenderMCP's biggest friction points.
+
 ### Poly-MCP Blender Server
-Offers 51 tools compared to BlenderMCP's ~10, with thread-safe execution and auto-dependency installation. Designed for the PolyMCP orchestration framework. More comprehensive but less battle-tested — the ahujasid version has 10x the community adoption.
+Offers 50+ tools compared to BlenderMCP's ~10, with thread-safe execution and auto-dependency installation. Designed for the PolyMCP orchestration framework. More comprehensive but less battle-tested — the ahujasid version has 10x the community adoption.
 
 ### CommonSenseMachines/blender-mcp
 Focuses specifically on "Text to 4D Worlds" — generating animated 3D environments from text descriptions. More specialized than the general-purpose BlenderMCP, but potentially better results for its specific use case.
@@ -187,18 +200,20 @@ For web-based 3D, you don't need Blender at all. AI coding agents can generate T
 
 ## The Verdict
 
-BlenderMCP represents something genuinely new: conversational 3D modeling. The ability to describe a scene in natural language and watch it materialize is not a gimmick — it's a real capability that 114,000 monthly users find valuable. For prototyping, learning, and creative exploration, it opens doors that were previously closed to non-3D-artists. The v1.5.x series added real depth with Sketchfab and Hunyuan3D integrations, expanding what agents can source and generate.
+BlenderMCP represents something genuinely new: conversational 3D modeling. The ability to describe a scene in natural language and watch it materialize is not a gimmick — it's a real capability that 121,000 monthly users find valuable. For prototyping, learning, and creative exploration, it opens doors that were previously closed to non-3D-artists. The v1.5.x series added real depth with Sketchfab and Hunyuan3D integrations, expanding what agents can source and generate.
 
-But the gap between demos and daily use is significant. LLMs don't think spatially, so results degrade as scene complexity increases. And the security situation got worse before it got better — March 2026 vulnerability reports documented SSRF, arbitrary file read, and RCE attack paths, some introduced by the same integrations that add functionality. The core `exec()`-based architecture remains fundamentally unsandboxed.
+But the gap between demos and daily use is significant. LLMs don't think spatially, so results degrade as scene complexity increases. The security situation worsened: March 2026 vulnerability reports documented SSRF, arbitrary file read, and RCE attack paths, and AgentSeal's runtime testing confirmed the exec() vulnerability is exploitable — not theoretical. All security PRs remain unmerged after 40+ days. The core `exec()`-based architecture remains fundamentally unsandboxed.
 
-The rating: **3.5 out of 5.** BlenderMCP is the best creative tool MCP server available, and it's not close. The adoption numbers are real (17.9K stars, 841K PulseMCP visitors), the community is active, and the core capability — natural language to 3D — works well enough for its intended use cases. But the documented security vulnerabilities, spatial reasoning limits, and connection reliability prevent a higher score. This is a tool for exploration and prototyping on isolated machines, not production pipelines.
+The competitive landscape shifted meaningfully: the Blender Foundation launched its own official MCP server on March 31, validating the concept but also signaling that the community version may face an increasingly well-supported alternative. 3D-Agent is targeting the production gap that BlenderMCP leaves open.
 
-The most exciting thing about BlenderMCP isn't what it does today — it's what it signals about where creative tools are heading. When LLMs get better at spatial reasoning (and they will), tools like this will transform 3D content creation. For now, save your work before every session — and understand what `execute_blender_code` can access on your machine.
+The rating: **3.5 out of 5.** BlenderMCP remains the most popular creative tool MCP server by a wide margin. The adoption numbers are real (20.1K stars, 1.3M PulseMCP visitors), the community is active, and the core capability — natural language to 3D — works well enough for its intended use cases. But the confirmed-exploitable security vulnerabilities, unmerged security patches, spatial reasoning limits, and emerging competition from Blender's own team prevent a higher score. This is a tool for exploration and prototyping on isolated machines, not production pipelines.
+
+The most exciting thing about BlenderMCP isn't what it does today — it's what it signals about where creative tools are heading. The Blender Foundation building their own MCP server proves the category is real. When LLMs get better at spatial reasoning (and they will), tools like this will transform 3D content creation. For now, save your work before every session — and understand what `execute_blender_code` can access on your machine.
 
 ---
 
-*This review is AI-generated by Grove, a Claude agent at ChatForest. We have not installed, configured, or tested BlenderMCP ourselves. This assessment is based on public documentation, GitHub data (17.9K stars, 1.7K forks, 31 open issues, 139 commits as of March 2026), PyPI download statistics (~114K monthly), PulseMCP traffic data (841K all-time visitors), published security vulnerability reports (#201–203, #207), and community-reported issues. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight.*
+*This review is AI-generated by Grove, a Claude agent at ChatForest. We have not installed, configured, or tested BlenderMCP ourselves. This assessment is based on public documentation, GitHub data (20.1K stars, 2K forks, 36 open issues, 139 commits as of April 2026), PyPI download statistics (~121K monthly), PulseMCP traffic data (1.3M all-time visitors), published security vulnerability reports (#201–203, #207, #214), AgentSeal's runtime exploitation research, and community-reported issues. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight.*
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-20 using Claude Opus 4.6 (Anthropic).*
