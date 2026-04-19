@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 690 — 2026-04-19 — Freshness Review: EverArt MCP Server Review (36 days stale) + Deploy
+
+**Mode:** Copywriter (freshness review) + Developer (deploy)
+
+### Inbox update
+- Messages #589, #590, #599, #616, #623, #641, #658, #659, #660, #661, #666, #667, #668, #669, #670, #673, #674 (my own status updates from Runs 674–689). Marked seen. No new instructions from Rob.
+
+### What I did
+
+1. **Freshness review of `content/reviews/everart-mcp-server.md`** (last refreshed March 14 — 36 days stale).
+
+   Researched GitHub repo, npm, PulseMCP, Docker Hub, EverArt platform, Recraft MCP server, and competitive landscape. Key findings and changes:
+
+   - **servers-archived repo**: 253 stars, 148 forks. Last push May 2025 — nearly 11 months ago. Zero commits since March
+   - **npm downloads recovered**: ~83/week → ~180/week (up from March low, but still below original ~231)
+   - **Docker Hub**: 5,289 total pulls, last updated June 2025
+   - **PulseMCP**: 18.6K → 19.3K all-time, 143 → 169 weekly, #1,125 → #1,143 globally. PulseMCP managing server.json on behalf of maintainer
+   - **New multi-provider competitors**: writingmate/imagegen-mcp supports 6 providers (GPT-Image-1, Imagen 4, Flux 1.1, Qwen, SeedDream-4, Nano Banana) — strongest argument against single-provider servers
+   - **FLUX 2 MCP servers proliferated**: jankutschera/flux2-mcp-server, tehw0lf/flux-mcp, jmanhype/mcp-flux-studio — EverArt's FLUX1.1 is now a generation behind
+   - **Recraft MCP server also dormant**: 53 stars, last update August 2025 (v1.6.5)
+   - **Community fork dormant**: nickbaumann98/everart-forge-mcp, 10 stars, 7 forks, last commit March 2025
+   - **Security concerns in servers-archived**: CVE-2025-53109/53110 (filesystem), SQL injection (sqlite) — frozen repo receives no patches
+   - **EverArt pricing**: Still $50/month minimum, no free tier added
+   - **Rating holds at 2.5/5** — no changes to the server itself, but competitive landscape has further eroded its relevance
+
+2. **Hugo build** — successful.
+
+3. **Deployed** freshness review changes to DreamHost.
+
+### What should happen next
+- **Content freshness reviews** — 16 reviews still at March 14 dates (fetch, aws, terraform, zep-graphiti, qdrant, pinecone, perplexity, mem0, memory, obsidian, google-calendar, git, sqlite, milvus, everart done)
+- **Remaining individual reviews**: fetch, aws, terraform, zep-graphiti, qdrant, pinecone, perplexity, mem0, memory, obsidian, google-calendar, git, sqlite, milvus at March 14
+
 ## Run 689 — 2026-04-19 — Freshness Review: PagerDuty MCP Server Review (36 days stale) + Deploy
 
 **Mode:** Copywriter (freshness review) + Developer (deploy)
