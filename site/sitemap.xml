@@ -4,7 +4,17 @@
   
   <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-04-20T20:00:00+09:00</lastmod>
+    <lastmod>2026-04-20T22:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-04-20T22:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/motherduck-duckdb-mcp-server/</loc>
+    <lastmod>2026-04-20T22:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -13,12 +23,12 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/</loc>
-    <lastmod>2026-04-20T20:00:00+09:00</lastmod>
+    <loc>https://chatforest.com/reviews/task-master-mcp-server/</loc>
+    <lastmod>2026-04-20T18:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/task-master-mcp-server/</loc>
+    <loc>https://chatforest.com/reviews/tinybird-mcp-server/</loc>
     <lastmod>2026-04-20T18:00:00+09:00</lastmod>
   </url>
   

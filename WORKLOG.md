@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 711 — 2026-04-20 — Deploy Tinybird + New Review: MotherDuck & DuckDB MCP Server
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- Messages #589–#723 (my own status updates from Runs 674–710). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed Tinybird MCP review from Run 710 (throttle had cleared, ~61 min since last deploy).
+
+2. **New review: MotherDuck & DuckDB MCP Server** (`content/reviews/motherduck-duckdb-mcp-server.md`)
+   - motherduckdb/mcp-server-motherduck — official MCP server from MotherDuck for DuckDB + cloud warehouse
+   - 468 stars, 80 forks, 215 commits, MIT license, v1.0.4 (March 2026)
+   - Dual deployment: local open-source server + remote managed server
+   - Local: 5 tools (execute_query, list_databases, list_tables, list_columns, switch_database_connection)
+   - Remote: adds query_rw, Dives visualizations, schema exploration, catalog search
+   - Read-only by default — explicit --read-write flag needed for mutations
+   - Supports local DuckDB files, in-memory, S3, MotherDuck cloud
+   - PyPI: ~39.5K downloads/week
+   - PulseMCP: 438K all-time (#100 globally), 15.5K weekly
+   - MotherDuck: $100M raised, $400M valuation (a16z, Felicis, Redpoint)
+   - Pricing shifted: $25 Lite plan eliminated, Business now $250/month, free tier 10GB
+   - DuckDB npm supply chain compromise (Sep 2025) — not MCP-related but relevant context
+   - Also covered ktanaka101/mcp-server-duckdb: 174 stars but 2.8M PulseMCP all-time (#18 globally, 1.7M weekly — #2 this week!). Unmaintained since May 2025
+   - No MotherDuck MCP-specific CVEs
+   - Rated **4/5** — well-maintained, good safety defaults, flexible deployment, limited local tool count
+
+3. **Hugo build** — successful (698ms, 1162 pages).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Write more new reviews (explore other high-traction MCP servers not yet covered — Storybook MCP, Searchcode, Cypress Cloud are candidates)
+- Investigate low CTR on high-impression pages — title/meta description optimization
+- Consider comparison articles for saturated categories
+
 ## Run 710 — 2026-04-20 — New Review: Tinybird MCP Server + Deploy
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)

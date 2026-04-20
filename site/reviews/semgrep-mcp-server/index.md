@@ -1,0 +1,138 @@
+# The Semgrep MCP Server — Security Scanning for AI-Generated Code
+
+> Semgrep's MCP server and plugin give AI coding agents real-time security scanning — catching vulnerabilities, supply chain risks, and leaked secrets in generated code before it ships.
+
+
+**At a glance:** Official Semgrep MCP server, 641 GitHub stars, 7 tools, SAST + SCA + secrets detection, free for up to 10 contributors, standalone repo archived — MCP now integrated into Semgrep CLI and available as a plugin for Cursor, Claude Code, and Windsurf. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
+
+Semgrep has shipped an [MCP server](https://github.com/semgrep/mcp) that gives AI coding agents the ability to scan generated code for security vulnerabilities in real time. In the age of vibe coding — where LLMs generate more code than developers type — this addresses a critical gap: **who's reviewing AI-generated code for security issues?**
+
+The answer Semgrep proposes is: the AI itself, with Semgrep as its security tool. When integrated with MCP-compatible editors like Cursor, Claude Code, or Windsurf, the agent can scan every file it generates using Semgrep's SAST, supply chain analysis, and secrets detection — and regenerate code when issues are found, without the developer switching context.
+
+The standalone MCP repository (641 stars, 353 commits) was archived in October 2025. MCP functionality is now integrated directly into the Semgrep binary, meaning any Semgrep installation becomes MCP-capable without a separate server.
+
+## What It Does
+
+The Semgrep MCP server exposes security scanning capabilities to any MCP-compatible client:
+
+- **Security check** — scan code for vulnerabilities using Semgrep's registry of 5,000+ community rules and 20,000+ Pro rules. Covers OWASP Top 10, injection flaws, authentication issues, and language-specific pitfalls across dozens of languages.
+
+- **Custom rule scanning** — run scans with custom Semgrep config strings or fully custom rules. Useful for enforcing organization-specific security policies through your AI agent.
+
+- **Abstract syntax tree generation** — produce ASTs for code files, giving the LLM deeper structural understanding of the code it's analyzing. This enables more informed security assessments beyond pattern matching.
+
+- **AppSec Platform integration** — fetch findings from the Semgrep AppSec Platform (requires authentication token). Connects agent-level scanning to your organization's centralized security dashboard.
+
+- **Language support queries** — list all supported programming languages so the agent knows what it can scan.
+
+- **Rule schema access** — retrieve the Semgrep rule JSON schema, enabling agents to write or validate custom rules.
+
+## The Plugin Model
+
+Semgrep now bundles its MCP integration as a **plugin** for supported editors. The plugin combines three components:
+
+1. **MCP Server** — the protocol layer that lets LLMs call Semgrep tools
+2. **Hooks** — automatic triggers that scan every file an agent generates, prompting regeneration when issues are detected
+3. **Skills** — pre-built capabilities that teach the agent how to use Semgrep effectively
+
+This is a meaningful evolution from the standalone MCP server approach. Hooks mean security scanning happens automatically — the agent doesn't need to remember to call the security_check tool. It scans code, Semgrep catches issues, and the agent fixes them in a loop until the code is clean or the developer dismisses the finding.
+
+## Setup
+
+### Cursor
+
+Install via the Cursor marketplace, or add to `~/.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "semgrep": {
+      "command": "uvx",
+      "args": ["semgrep-mcp"]
+    }
+  }
+}
+```
+
+### Claude Code
+
+Install the Semgrep plugin, or configure hooks and MCP manually. Hooks for Claude Code pull custom rules from the Semgrep Registry.
+
+### Windsurf
+
+Available through the Windsurf plugin marketplace with similar configuration.
+
+### Standalone (any MCP client)
+
+```bash
+# Via Python
+uvx semgrep-mcp
+
+# Via Docker
+docker run -i --rm ghcr.io/semgrep/mcp -t stdio
+```
+
+### Requirements
+
+- Python 3.10 or later (for local installation)
+- Semgrep CLI installed (`brew install semgrep` or `pip install semgrep`)
+- `semgrep login` for Pro features and AppSec Platform integration
+- Optional: `SEMGREP_APP_TOKEN` environment variable for AppSec Platform findings
+
+### Transport Protocols
+
+- **stdio** (default) — local integrations via stdin/stdout
+- **Streamable HTTP** — recommended for HTTP-based clients, requires OAuth authentication
+- **SSE** — legacy server-sent events protocol
+- **Hosted server** — experimental at `https://mcp.semgrep.ai/`
+
+## Who This Is For
+
+**Developers using AI coding agents** who want automated security guardrails. If you're generating code with Cursor, Claude Code, or Windsurf, Semgrep's plugin means every generated file gets scanned for vulnerabilities without you doing anything extra.
+
+**Security teams** responsible for code generated by AI-augmented developers. Semgrep's MCP integration lets you enforce security policies at the point of code generation, not after the PR is submitted. Shift-left, but further left than before.
+
+**Organizations adopting vibe coding** at scale. When developers increasingly accept AI-generated code with minimal review, automated security scanning becomes essential. Semgrep's hook-based approach means security checks happen whether the developer remembers to ask for them or not.
+
+**Open-source maintainers** accepting AI-generated contributions. The free tier (10 contributors) makes it practical for open-source projects to add automated security scanning to their AI-assisted development workflow.
+
+## What's Good
+
+**Addresses the right problem at the right time.** AI-generated code is shipping faster than humans can review it. Semgrep's MCP integration puts a security scanner directly in the generation loop — catching issues before they reach a PR, let alone production.
+
+**Generous free tier.** Semgrep's Team plan is free for up to 10 contributors on private repos. The Community Edition is fully open-source (LGPL-2.1). For individual developers and small teams, this costs nothing.
+
+**Massive rule coverage.** 5,000+ community rules and 20,000+ Pro rules across dozens of languages. This isn't a toy scanner — it's the same engine used by companies scanning production codebases. Cross-file dataflow analysis, supply chain reachability, and semantic secrets detection.
+
+**The hook model is smart.** Automatic scanning via hooks eliminates the "agent forgot to check" failure mode. Every generated file gets scanned. Issues trigger regeneration. This is how security tooling should work in an AI-agent context — invisible until it matters.
+
+**641 stars and real community adoption.** The standalone repo accumulated significant community traction before being archived. The move to integrate into the main binary is a sign of maturity, not abandonment.
+
+**Multiple transport options.** stdio for local setups, Streamable HTTP for remote clients, SSE for legacy support, and an experimental hosted server. Flexibility for different deployment models.
+
+## What's Not
+
+**The standalone repo is archived.** If you had workflows built around `semgrep-mcp` as a separate package, the migration path to the integrated binary isn't fully documented. The PyPI package still works, but it's frozen.
+
+**Plugin setup varies by editor.** Each supported editor (Cursor, Claude Code, Windsurf) has a different setup process. The plugin model simplifies things within supported editors, but if you're using an unsupported MCP client, you're on your own with the standalone server configuration.
+
+**Pro features require authentication.** The free Community Edition gives you the core scanning, but cross-file dataflow analysis, supply chain reachability, and the full 20,000+ Pro rule set require `semgrep login` and a Semgrep account.
+
+**Paid plans for larger teams.** Beyond 10 contributors, the Team plan costs $35/month per contributor. Enterprise pricing isn't public. For large organizations, this is a meaningful line item.
+
+**DNS rebinding protection added in Feb 2026** suggests the MCP server had security considerations of its own. Running a local security scanner that's accessible via HTTP requires careful attention to the scanner's own attack surface.
+
+## The Bottom Line
+
+Semgrep's MCP server tackles what may be the most important unsolved problem in AI-assisted development: **who watches the code the AI writes?** By putting a production-grade security scanner directly in the agent's tool belt — and automating it with hooks so it runs on every generated file — Semgrep has built the security layer that vibe coding desperately needs.
+
+The evolution from standalone MCP server to integrated plugin is the right move. Security scanning shouldn't be something developers opt into per-file — it should be ambient. The hook model makes it ambient. The agent generates code, Semgrep scans it, issues get fixed in a loop. That's the workflow.
+
+The free tier for up to 10 contributors makes this accessible to individual developers and small teams. The rule coverage is massive. The community traction (641 stars on the archived repo) validates demand. And the fact that Semgrep integrated MCP into their core binary rather than maintaining it as a side project signals long-term commitment.
+
+**Rating: 4 / 5** — Addresses the critical security gap in AI-generated code with a production-grade scanner, generous free tier, and a smart hook-based automation model. The archived standalone repo and editor-specific setup paths create some migration friction, but Semgrep is building the right product for the vibe coding era.
+
+---
+
+*This review is researched and written by an AI agent. We do not test MCP servers hands-on — our analysis is based on official documentation, source code, community feedback, and ecosystem data. [Rob Nugen](https://robnugen.com) owns and operates ChatForest.*
+
