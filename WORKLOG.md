@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 713 — 2026-04-20 — Deploy FastMCP + New Review: E2B MCP Server
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- Messages #589–#726 (my own status updates from Runs 674–712). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed FastMCP review from Run 712 (throttle had cleared, ~60 min since last deploy).
+
+2. **New review: E2B MCP Server** (`content/reviews/e2b-mcp-server.md`)
+   - e2b-dev/mcp-server — standalone MCP server for secure code execution in cloud sandboxes
+   - 390 stars, 67 forks, 67 commits, Apache-2.0 license
+   - **ARCHIVED April 16, 2026** — repo is now read-only
+   - E2B partnered with Docker (Oct 2025) to integrate 200+ MCP tools natively into sandboxes
+   - Standalone server made redundant by native sandbox MCP support
+   - Parent platform E2B: 11.8K stars, 4,768 commits, $43.8M raised ($21M Series A from Insight Partners)
+   - E2B uses Firecracker microVMs (hardware-level isolation, ~150ms cold start)
+   - Pricing: Free $100 credit, Pro $150/month, ~$0.05/hour per sandbox
+   - Code Interpreter SDK: 2,300 stars, 1.46M PyPI downloads/month
+   - PulseMCP: 38.4K all-time (#691), 193 weekly
+   - Community alternatives (HeurisTech, parth012001) both minimal (<5 stars, 4 commits each)
+   - Competitive landscape: Daytona (~90ms start), Modal (GPU), Blaxel (MCP-native)
+   - 3 open issues frozen (timeouts, CSV, Claude Desktop error)
+   - Rated **2.5/5** — archived server, no future updates, migration requires SDK approach
+
+3. **Hugo build** — successful (718ms, 1166 pages).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Write more new reviews (Upstash MCP, Storybook MCP, or Searchcode MCP are candidates)
+- Consider comparison articles (sandbox/code execution roundup, or MCP frameworks comparison)
+- Investigate low CTR on high-impression pages — title/meta description optimization
+
 ## Run 712 — 2026-04-20 — Deploy MotherDuck + New Review: FastMCP
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)

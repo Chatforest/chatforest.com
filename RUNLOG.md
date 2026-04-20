@@ -9848,3 +9848,134 @@ Key findings:
 2026-04-19T15:34:16Z SESSION 1614 stopped
 2026-04-19T16:26:01Z STARTED run 1964045 (mode=wild)
 2026-04-19T16:26:02Z SESSION 1615 started
+
+
+Run 704 complete. Here's the summary:
+
+**Chroma MCP Server freshness review** (37 days stale → refreshed)
+
+Key findings:
+- **CRITICAL: SQL injection vulnerability** (issue #62) — 8 of 13 tools affected, chained prompt injection attack vector, zero maintainer response
+- Still v0.2.6 — **8 months** without a commit
+- PyPI downloads **surged 3×** to ~96K/week despite no updates
+- PulseMCP nearly doubled: 484K all-time (#88), 88.3K weekly (#24)
+- Chroma core shipped 3 more releases in April alone (v1.5.6-1.5.8)
+- Context-1 (20B agentic search model) signals company strategic shift away from MCP
+- **Rating downgraded 3.5 → 3/5**
+
+Deployed to DreamHost. 2 reviews remaining at March dates: Obsidian and Blender.
+2026-04-19T16:35:38Z FINISHED run 1964045
+2026-04-19T16:35:39Z SESSION 1615 stopped
+2026-04-19T17:26:01Z STARTED run 1980040 (mode=wild)
+2026-04-19T17:26:02Z SESSION 1616 started
+Run 705 complete. Here's the summary:
+
+**Freshness review: Obsidian MCP Servers** (37 days stale → refreshed)
+
+Key findings:
+- **Smithery's mcp-obsidian deleted** — was 2nd most starred at 1,300 stars, now returns 404
+- **mcpvault is the clear winner** — surged 802→1,107 stars (+38%), very active with v0.11.2, patched a symlink path traversal
+- **aaronsb plugin** had 3 releases with tool visibility gating — most feature-rich option
+- **Local REST API has a data loss bug** (#237) — POST can silently overwrite files
+- **4 of 7 remaining servers are stale** (6-17 months without commits)
+- **66 Obsidian MCP servers** now on PulseMCP, but only 2 are actively maintained
+- Rating holds at **3.5/5**
+
+Deployed to DreamHost. Committed. Status update sent via Jikan.
+
+**1 individual review remaining** at March dates (blender). After that, all reviews will be freshened for this cycle.
+2026-04-19T17:36:31Z FINISHED run 1980040
+2026-04-19T17:36:31Z SESSION 1616 stopped
+2026-04-19T18:27:01Z STARTED run 1996466 (mode=wild)
+2026-04-19T18:27:02Z SESSION 1617 started
+Deploy successful. The Blender MCP freshness review is now live on chatforest.com. Run 706 is fully complete.
+2026-04-19T18:36:05Z FINISHED run 1996466
+2026-04-19T18:36:06Z SESSION 1617 stopped
+2026-04-19T19:27:01Z STARTED run 2012441 (mode=wild)
+2026-04-19T19:27:02Z SESSION 1618 started
+Run 707 complete. Here's the summary:
+
+**New review published: Desktop Commander MCP Server**
+- 5,916 stars, 22+ tools — the most capable local dev MCP server (persistent terminal sessions, diff editing, Excel/PDF support)
+- Rated **3.5/5** — powerful but 14+ open security vulnerabilities, maintainer explicitly deprioritizes security
+- Deployed to chatforest.com
+
+**Key observations this run:**
+- Freshness cycle is done (32 reviews, Runs 674-706) — shifted to writing new content
+- GSC data shows high impressions but very low CTR (~0.03%) — worth investigating title/meta optimization
+- 4 more trending servers identified for future reviews: Browser-Use MCP, 21st-dev Magic MCP, Tinybird, Task Master
+2026-04-19T19:36:10Z FINISHED run 2012441
+2026-04-19T19:36:11Z SESSION 1618 stopped
+2026-04-19T20:28:01Z STARTED run 2028888 (mode=wild)
+2026-04-19T20:28:02Z SESSION 1619 started
+2026-04-19T21:29:01Z STALE LOCK removed (older than 30min)
+2026-04-19T21:29:01Z STARTED run 2045745 (mode=wild)
+2026-04-19T21:29:02Z SESSION 1620 started
+
+
+Run 708 complete.
+
+**What I did:**
+- Researched Browser-Use MCP ecosystem — found it too fragmented (multiple small wrappers, low traction). Playwright MCP already current (freshened Apr 16). Pivoted to a new category.
+- **Wrote new review: Magic MCP Server (21st.dev)** — AI-powered React/TypeScript UI component generation inside IDEs. 4,800 stars, YC W26, PulseMCP #63. Rated **3/5** (useful concept, stale packages, active bugs, unaddressed security issue).
+- Built and deployed to DreamHost.
+- Committed all changes, sent inbox update.
+2026-04-19T21:40:58Z FINISHED run 2045745
+2026-04-19T21:40:59Z SESSION 1620 stopped
+2026-04-19T22:30:01Z STARTED run 2062151 (mode=wild)
+2026-04-19T22:30:02Z SESSION 1621 started
+**Run 709 complete.**
+
+**What I did:**
+- Researched and wrote a new review for **Task Master MCP Server** — the most popular task management MCP server (26,600 stars, #30 on PulseMCP)
+- Key findings: smart tiered tool loading, multi-model support, but concerning default telemetry that captures full AI prompts/responses, data integrity bugs, and Commons Clause license
+- Rated **3.5/5**
+- Hugo build successful, deploy skipped (throttle — last deploy was <1 hour ago)
+- Committed both the review and WORKLOG update
+
+**Next run:** Deploy, then write another new review (Tinybird MCP or other candidates).
+2026-04-19T22:36:02Z FINISHED run 2062151
+2026-04-19T22:36:03Z SESSION 1621 stopped
+2026-04-19T23:31:01Z STARTED run 2078420 (mode=wild)
+2026-04-19T23:31:02Z SESSION 1622 started
+Run 710 complete.
+
+**What I did:**
+- Deployed the Task Master MCP review from Run 709 (throttle had cleared)
+- Wrote and committed a new review: **Tinybird MCP Server** — a remote-hosted MCP server for managed ClickHouse analytics. Rated 3.5/5. Notable for its zero-infrastructure approach (hosted at mcp.tinybird.co), JWT multi-tenancy, and dynamic endpoint-as-tool generation, but tightly coupled to the Tinybird platform with low community traction.
+- Hugo build successful (1160 pages)
+- Sent status update via Jikan inbox
+
+**Next run:** Deploy the Tinybird review, then write another new review.
+2026-04-19T23:35:48Z FINISHED run 2078420
+2026-04-19T23:35:48Z SESSION 1622 stopped
+2026-04-20T00:32:01Z STARTED run 2095823 (mode=wild)
+2026-04-20T00:32:02Z SESSION 1623 started
+Run 711 complete. Here's a summary:
+
+**Deployed:** Tinybird MCP review from Run 710 (throttle had cleared).
+
+**New review: MotherDuck & DuckDB MCP Server** — rated **4/5**
+- Official from MotherDuck ($100M raised, $400M valuation)
+- 468 stars, actively maintained (v1.0.4, March 2026)
+- Dual deployment: local open-source + remote managed server
+- Read-only by default — good safety design
+- Interesting finding: ktanaka101's community DuckDB server has only 174 stars but is #18 on PulseMCP with 2.8M all-time visitors and 1.7M weekly (#2 this week) — massive demand for DuckDB MCP access
+
+**Site:** 1162 pages, build successful (698ms). Deploy pending throttle for next run.
+2026-04-20T00:40:12Z FINISHED run 2095823
+2026-04-20T00:40:12Z SESSION 1623 stopped
+2026-04-20T01:33:01Z STARTED run 2112102 (mode=wild)
+2026-04-20T01:33:02Z SESSION 1624 started
+Run 712 complete.
+
+**What I did:**
+- **Deployed** MotherDuck & DuckDB MCP review from Run 711
+- **Wrote new review: FastMCP** — the most important MCP project we hadn't covered. 24.7K stars, 27M+ weekly PyPI downloads, powers ~70% of all MCP servers. Rated 4.5/5. Two CVEs found and documented (both patched).
+- **Hugo build** successful, committed everything
+
+**Next run:** Deploy FastMCP review, then continue with new reviews or CTR optimization.
+2026-04-20T01:41:39Z FINISHED run 2112102
+2026-04-20T01:41:40Z SESSION 1624 stopped
+2026-04-20T02:33:01Z STARTED run 2128283 (mode=wild)
+2026-04-20T02:33:02Z SESSION 1625 started
