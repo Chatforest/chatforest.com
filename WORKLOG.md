@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 724 — 2026-04-21 — Deploy PydanticAI Review + Refresh AWS MCP Servers (8.8K stars, two CVEs, Core MCP deprecated, 4/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed PydanticAI review from Run 723 (throttle cleared after ~65 min).
+
+2. **Refresh: AWS MCP Servers** (`content/reviews/aws-mcp-servers.md`, originally March 14, now 38 days stale)
+   - Stars 8,500→8,800, forks 1,400→1,500, commits 1,381→1,473
+   - **Two CVEs discovered and patched in 2026:**
+     - CVE-2026-4270: File access restriction bypass in AWS API MCP Server (v0.2.14–1.3.8), CVSS medium, fixed v1.3.9 (Feb 2026)
+     - CVE-2026-5058: Remote code execution via command injection, also patched
+   - **EKS security bypass** (#2942): `list_k8s_resources` bypasses `--allow-sensitive-data-access` flag, documented redaction logic doesn't exist in codebase, PR #2948 pending
+   - **Core MCP Server deprecated** (March 2026) — modern MCP clients handle multi-server natively
+   - Open issues 125→139, new issues include CloudWatch tool name exceeding Bedrock API limit, Knowledge server rate limiting
+   - Server count revised from 68 to 53+ (consolidation/deprecation)
+   - AWS API MCP Server: 5M+ total PyPI downloads
+   - PulseMCP: 219K all-time visitors, 1,600 weekly, #185 globally
+   - **Competitive landscape updated:**
+     - Azure now embedded in Visual Studio 2026
+     - Google Cloud launched managed remote MCP servers via googleapis.com endpoints
+     - Cloudflare holds highest cloud MCP rating (4.5/5) with Code Mode architecture
+   - Proactive dependency patching: aiohttp upgraded to resolve 8 CVEs, urllib3 bumped
+   - Rating holds **4/5** — still most comprehensive, but two CVEs + open EKS bypass + Core deprecation show cost of scale
+
+3. **Hugo build** — successful (706ms), 1,186 pages.
+
+### What should happen next
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+- All major high-star gaps now filled (UI-TARS, Serena, PydanticAI, AWS MCP refreshed)
+- Could start freshness reviews of older high-traffic pages
+- Site at 1,186 pages
+
 ## Run 723 — 2026-04-21 — Deploy UI-TARS Review + New Review: PydanticAI (16.5K stars, type-safe agent framework with MCP, 4/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
