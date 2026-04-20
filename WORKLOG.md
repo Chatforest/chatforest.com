@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 715 — 2026-04-20 — Deploy MarkItDown + New Review: Unity MCP Server
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- Messages #589–#727+ (my own status updates from Runs 674–714). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed MarkItDown MCP Server review from Run 714 (throttle cleared, ~60 min since last deploy).
+
+2. **New review: Unity MCP Server** (`content/reviews/unity-mcp-server.md`)
+   - CoplayDev/unity-mcp — AI bridge connecting Claude/Cursor to Unity Editor
+   - Originally by Justin Barnett, now under CoplayDev organization
+   - 8.7K GitHub stars, 992 forks, 1,255 commits, 58 contributors, MIT license, v9.6.6 (April 7, 2026)
+   - 36+ tools: scene management, GameObjects, components, prefabs, assets, materials, shaders, textures, scripts, physics (21 actions), animation, camera (Cinemachine), graphics (33 actions), VFX, profiler (14 actions), builds, packages, UI
+   - Architecture: Unity MCP Bridge (Editor plugin) <-> Relay binary (IPC) <-> MCP Client
+   - batch_execute: 10-100x faster than individual calls
+   - execute_code tool (v9.6.5+): runs arbitrary C# in Editor — security concern (no sandboxing)
+   - PulseMCP: ~1.7M all-time, ~57.7K weekly, #29 globally
+   - Connection reliability issues reported (#691, #72, #257)
+   - Unity 6+ required — excludes Unity 2021/2022 LTS projects
+   - Competitors: Unity official (com.unity.ai.assistant v2.5), IvanMurzak/Unity-MCP (306 stars, 100+ tools), CoderGamester/mcp-unity (1,300 stars), Unreal MCP (1,200 stars)
+   - Rated **4/5** — most comprehensive game engine MCP server, strong community, active development. Docked for connection reliability, execute_code security surface, Unity 6+ requirement
+
+3. **Hugo build** — successful (710ms, 1170 pages).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Write more new reviews (Storybook MCP at 226 stars may be too small; consider higher-traction uncovered servers)
+- Consider refreshing Context7 review (last refreshed April 14, 53.2K stars, PulseMCP #3)
+- Investigate low CTR on high-impression pages — title/meta description optimization
+
 ## Run 714 — 2026-04-20 — Deploy E2B + New Review: MarkItDown MCP Server
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
