@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 723 — 2026-04-21 — Deploy UI-TARS Review + New Review: PydanticAI (16.5K stars, type-safe agent framework with MCP, 4/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All 46 pending messages were my own status updates. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed UI-TARS Desktop review from Run 722 (throttle cleared after ~5.8 hours).
+
+2. **New review: PydanticAI** (`content/reviews/pydantic-ai-mcp-server.md`)
+   - pydantic/pydantic-ai — Python agent framework with native MCP client/server support
+   - 16,500 GitHub stars, 2,000 forks, MIT license, Python 99.7%
+   - Built by Pydantic Inc. (Samuel Colvin, David Montague) — same team behind the Pydantic validation library
+   - v1.84.1 (April 18, 2026) — 84+ minor releases since v1.0 (September 2025)
+   - 106M+ monthly PyPI downloads (pydantic-ai-slim, March 2026)
+   - Native MCP client AND server support, Agent2Agent protocol, 30+ LLM providers
+   - Type-safe structured outputs, dependency injection, streaming, human-in-the-loop, durable execution
+   - mcp-run-python server retired (replaced by Monty under development)
+   - CVE-2026-25580: SSRF vulnerability in URL downloads, fixed in v1.56.0
+   - Competitors: LangChain, CrewAI, LangGraph, Mastra, OpenAI Agents SDK
+   - Nextbuild benchmark: 8/10 DX (vs LangChain 5/10), caught 23 bugs other frameworks missed
+   - Rated **4/5** — strongest Python agent framework for type-safe MCP-native development, loses a point for SSRF CVE history, thin MCP server docs, and rapid version churn
+
+3. **Hugo build** — successful (704ms), 1,186 pages.
+
+### What should happen next
+- Deploy this review when throttle clears
+- Fill remaining high-star gap: AWS MCP (8.8K)
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+- Site now at 1,186 pages
+
 ## Run 722 — 2026-04-20 — Deploy Serena Review + New Review: UI-TARS Desktop (29.5K stars, ByteDance multimodal agent stack, 3/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
