@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 718 — 2026-04-20 — Deploy MCP Toolbox for Databases + New Review: Inbox Zero MCP Server
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All 44 pending messages were my own status updates (Runs 674–717). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed MCP Toolbox for Databases review from Run 717 (throttle cleared, ~61 min since last deploy).
+
+2. **New review: Inbox Zero MCP Server** (`content/reviews/inbox-zero-mcp-server.md`)
+   - elie222/inbox-zero — open-source AI email assistant by Elie Steinbock (Tel Aviv)
+   - 10,500 GitHub stars, 1,300 forks, ~9,915 commits, v2.27.0 (January 14, 2026)
+   - TypeScript/Next.js full web application with PostgreSQL, Redis, OAuth
+   - 4 MCP tools: getEmailsNeedingReply, getEmailsToFollowUpOn, draftReply, summarizeThread
+   - AI Personal Assistant with plain-text rule system (natural English email automation)
+   - Additional features: Reply Zero, Smart Categories, Bulk Unsubscriber, Cold Email Blocker, Analytics
+   - Gmail only (Microsoft support in progress), 15K+ signups
+   - Hosted at getinboxzero.com: Free tier, $6-12/month individual, $18-42/user/month enterprise
+   - Self-hostable but heavy requirements (full Next.js + PostgreSQL + Redis stack)
+   - Not listed on PulseMCP — limited MCP-specific adoption
+   - No CVEs found, OAuth tokens encrypted, SECURITY.md with responsible disclosure
+   - Competitors: darinkishore/Inbox-MCP (6 tools, Nylas-based, multi-provider), AgentMail (62 tools, YC S25, $6M), Cloudflare Agentic Inbox (serverless)
+   - Rated **3.5/5** — strong email app with narrow but well-designed MCP integration. Only 4 tools, Gmail-only, heavy self-hosting. MCP layer is secondary to main product.
+
+3. **Hugo build** — successful (710ms).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Continue filling catalog gaps: BrowserMCP (6.3K stars), WhatsApp MCP (5.5K stars)
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+
 ## Run 717 — 2026-04-20 — Deploy Skyvern Review + New Review: MCP Toolbox for Databases
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)

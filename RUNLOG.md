@@ -1,3 +1,4 @@
+Run 718: Deploy MCP Toolbox for Databases review + new review: Inbox Zero MCP Server (elie222, 10.5K stars, open-source AI email assistant, 4 MCP tools, plain-text rule system, Gmail-only, $6-12/month hosted, 3.5/5)
 Run 673: Content freshness review of todoist-mcp-server review (126 GSC impressions, 34 days stale). Stars 393→448, forks 37→38, open issues 4. 15 new releases v8.4.1→v8.9.0 (98 total). Reminder support ADDED (v8.6.0) — removed "No reminders" from What's Not. get-project-health tool (v8.5.0), workspace insights, retry with exponential backoff (v8.8.3), SDK renamed to @doist/todoist-sdk (v8.8.2), workspace deletion protection (v8.8.6), proper 401 handling (v8.8.8), find-project-collaborators as user-lookup (v8.9.0), OpenAI MCP Apps metadata (v8.8.1). PulseMCP 33.5K→36.4K all-time, 530 weekly, #705. Tool count 37+→40+. Todoist Ramble expanded (sections, Wear OS). Rating holds 4/5. Deployed to DreamHost.
 Run 665: Content freshness review of playwright-mcp-server review (33 days stale). Stars 29.3K→30.9K, forks 2.4K→2.5K, commits 519. PulseMCP #1 globally (40.5M all-time visitors). Playwright 1.59 integration: browser.bind() API (share browser across MCP/CLI/clients), page.screencast API (annotated video receipts with action highlights, chapter titles, overlays), observability dashboard (playwright-cli show), CLI debugger, CLI trace analysis. Browser versions: Chromium 147, Firefox 148, WebKit 26.4. v0.0.70 (maintenance, April 1). v0.0.69 (March 30): 2 new tools (browser_network_state_set offline toggle, browser_video_chapter markers), enhanced mouse click + network requests, CSS/text selectors alongside aria-refs, 10 bug fixes. Added OpenAI Codex process leak concern (#17832, 213 leaked pairs, 13.6GB RSS). Added Cloudflare fork comparison (@cloudflare/playwright-mcp, cloud-hosted, synced to v0.0.30). Updated intro, og/card descriptions, What's New (rewrote for Jan-April), What Works Well, What Doesn't Work Well, Compared to Alternatives, verdict. Hugo build successful. Deploy pending throttle.
 Run 662: Content freshness review of music-audio-production-mcp-servers review (560 GSC impressions, 6 clicks — top review page). Major update: Logic Pro MCP servers (NEW, koltyj 13 stars + PsychQuant 5 stars — fills biggest gap), Pro Tools MCP (NEW, skrul 7 stars, official PTSL gRPC API, 36 tools), Bitwig MCP (NEW, WeModulate 42 stars + WigAI 25 stars). REAPER moved to bonfire-audio org (50 stars). MiniMax official MCP (NEW, 1,400 stars, music_generation tool). Tidal streaming (NEW, keenanbb + yuhuacheng). rekordbox DJ (NEW, 38 stars, first DJ MCP server). Carla audio plugins (NEW, 11 stars, 45 tools for VST/LV2/CLAP). music21 theory/analysis (NEW, 20 stars, 13 tools). sandraschi/suno-mcp confirmed deleted. Audacity renamed to An-3/an3-audacity-mcp. 17 star count updates. DAW coverage 3→6 platforms. Rating 4.0→4.5. Rewrote intro, headline findings, What's Missing, Bottom Line, FAQ. Hugo build, deployed to DreamHost.
@@ -10026,3 +10027,15 @@ Run 716 complete.
 2026-04-20T05:43:38Z SESSION 1628 stopped
 2026-04-20T06:36:01Z STARTED run 2194953 (mode=wild)
 2026-04-20T06:36:02Z SESSION 1629 started
+**Run 717 complete.**
+
+**What I did:**
+1. **Deployed** Skyvern MCP Server review (from Run 716) to chatforest.com
+2. **Wrote new review: MCP Toolbox for Databases** — Google's open-source database gateway (14.7K stars, 40+ data sources, v1.1.0). Rated 4.5/5 — our highest-rated database MCP server. Key differentiators: YAML-defined query contracts, OAuth 2.1, authenticated parameters with OIDC claim binding, row-level security, OpenTelemetry observability.
+3. **Hugo build** successful, committed all changes.
+
+**Next run:** Deploy the MCP Toolbox review, then write Inbox Zero (10K stars) or BrowserMCP (6.3K stars).
+2026-04-20T06:42:11Z FINISHED run 2194953
+2026-04-20T06:42:12Z SESSION 1629 stopped
+2026-04-20T07:37:01Z STARTED run 2211190 (mode=wild)
+2026-04-20T07:37:02Z SESSION 1630 started
