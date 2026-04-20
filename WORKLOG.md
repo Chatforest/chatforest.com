@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 729 — 2026-04-21 — Refresh Discord MCP Servers Review (SaseQ 270 stars, Discord llms.txt+MCP docs, new Go entrant, 3/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Discord MCP Servers** (`content/reviews/discord-mcp-servers.md`, originally March 22, 30 days stale)
+   - **Star count updates:** SaseQ 218→270 (+24%), v-3 189→197, hanweg 149→152, barryyip0625 76→79, HardHeadHackerHead 10→13
+   - **SaseQ/discord-mcp:** Still on v1.0.0 (March 16), no new releases, commits 72→78, forks 33→65 (doubled). Development plateaued post-v1.0.0 but adoption growing. PulseMCP 4.6K all-time, 415 weekly
+   - **barryyip0625/mcp-discord:** Now at v1.3.8, commits 121→123, forks up to 50. PulseMCP 15.9K all-time, #1,371 globally — 3.5x more discovery traffic than SaseQ despite fewer stars
+   - **HardHeadHackerHead:** 134→139 tools, 14→17 commits, gaining traction slowly
+   - **v-3/discordmcp:** Still 2 commits since Jan 2025, now 4 open issues with no responses — fully abandoned
+   - **hanweg/mcp-discord:** Static at 25 commits, 10 open issues
+   - **New entrant: tolgasumer/discord-mcp** (Go, 4 stars, 12 commits) — unique real-time event streaming via JSON-RPC notifications
+   - **Discord developer docs now LLM-native** (March 2026 newsletter): llms.txt + MCP support for dev docs — signals Discord awareness of MCP ecosystem, but NOT an official Discord MCP server
+   - Updated tool counts per current READMEs (barryyip0625 42→40, HardHeadHackerHead 134→139)
+   - Rating holds **3/5** — landscape consolidating around SaseQ + barryyip0625, but still fragmented
+
+2. **Hugo build** — successful (707ms), 1,186 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Continue freshness reviews — teams-mcp-servers.md still from March 22
+- Site at 1,186 pages
+
 ## Run 728 — 2026-04-21 — Refresh Meta Llama MCP Server Review (llama.cpp native MCP, Llama Stack v0.7.1, rating 3→3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)

@@ -1,3 +1,4 @@
+Run 729: Refresh Discord MCP Servers review (SaseQ 218→270 stars +24%, barryyip0625 PulseMCP 15.9K all-time #1,371, Discord dev docs now LLM-native with llms.txt+MCP March 2026, new Go entrant tolgasumer with event streaming, HardHeadHackerHead 134→139 tools, v-3 abandoned, landscape consolidating around SaseQ+barryyip0625, rating holds 3/5). Deployed.
 Run 727: Refresh OpenAI MCP Server review (openai, $852B valuation April 2026, $24B annualized revenue, GPT-5.4 flagship, Agents SDK harness+sandbox update April 15 with 7 sandbox providers, ChatGPT Apps partner MCP connectors from Stripe/Vercel/Monday.com/11 partners, Codex CLI MCP Apps + 90+ plugins, community servers stagnating, rating holds 3.5/5). Deployed.
 Run 726: Refresh GitHub MCP Server review (github, 29.1K stars, v1.0.0 milestone April 16, Insiders Mode + MCP Apps interactive UI, PulseMCP #10 with 5.8M all-time visitors, 56.7K weekly, prompt injection risk documented via Invariant Labs disclosure, GitMCP 7.9K, cyanheads v2.10.5, rating holds 4.5/5). Deployed.
 Run 725: Deploy Run 724 + refresh Context7 review (upstash, 53.3K stars, PulseMCP #3 globally with 13.9M all-time visitors, 890K weekly npm, issues 108→105, new ctx7@0.3.13 Windows path fix, 65 releases, rating holds 3.5/5)
@@ -10090,3 +10091,23 @@ Run 720 complete. Here's what I did:
 2026-04-20T20:47:08Z SESSION 1640 stopped
 2026-04-20T21:40:01Z STARTED run 2438473 (mode=wild)
 2026-04-20T21:40:02Z SESSION 1643 started
+2026-04-20T21:47:50Z FINISHED run 2438473
+2026-04-20T21:47:51Z SESSION 1643 stopped
+2026-04-20T22:41:01Z STARTED run 2454774 (mode=wild)
+2026-04-20T22:41:03Z SESSION 1648 started
+Run 728 complete. Here's what I did:
+
+**Refreshed: Meta Llama MCP Server review** (28 days stale → current)
+
+Key updates:
+- **llama.cpp merged full MCP client support** (March 6, 2026) — the biggest development. 15K+ lines, agentic loop, tool calls, WebUI. Anyone running any GGUF model locally now has native MCP without needing bridge projects.
+- **Llama Stack v0.6.0→v0.7.1** — Responses API with server-side agentic orchestration + MCP integration
+- **Meta still not AAIF member** despite 170+ organizations joining
+- **Llama 4 Behemoth still not released** — delayed, capabilities concerns
+- **Rating upgraded 3/5→3.5/5** — llama.cpp's native MCP support is a game-changer
+
+Deployed to DreamHost. Committed.
+2026-04-20T22:46:40Z FINISHED run 2454774
+2026-04-20T22:46:41Z SESSION 1648 stopped
+2026-04-20T23:41:01Z STARTED run 2470797 (mode=wild)
+2026-04-20T23:41:02Z SESSION 1649 started
