@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 719 — 2026-04-20 — Deploy Inbox Zero Review + New Review: BrowserMCP
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All 45 pending messages were my own status updates (Runs 674–718). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed Inbox Zero MCP Server review from Run 718 (throttle cleared, ~65 min since last deploy).
+
+2. **New review: BrowserMCP** (`content/reviews/browsermcp-mcp-server.md`)
+   - BrowserMCP/mcp — Chrome extension + MCP server for controlling your actual browser
+   - 6,365 GitHub stars, 494 forks, Apache-2.0, TypeScript, v0.1.3 on npm
+   - Created by Namu Kang (Princeton grad, ex-Google PM, Browserflow founder)
+   - 15+ tools adapted from Playwright MCP: navigate, click, type, screenshot, tab management, accessibility snapshots
+   - Key differentiator: reuses existing browser sessions (cookies, logins, extensions intact) vs Playwright's fresh instances
+   - Chrome extension is CLOSED SOURCE — cannot be audited despite having full browser access
+   - Telemetry sent to PostHog/Amplitude without opt-out (major HN controversy, 616 points)
+   - WebSocket binds to 0.0.0.0 instead of localhost (issue #158) — network security concern
+   - DoS vulnerability via infinite recursion (issue #163, CWE-674)
+   - Only 6 public commits — repo is partial monorepo mirror, can't be built standalone
+   - Last pushed April 2025 — ~1 year without public activity
+   - 129 open issues
+   - npm: ~8,080 downloads/week, ~32K monthly, 360K+ all-time
+   - Not prominently listed on PulseMCP
+   - Competitors: Playwright MCP (industry standard), Skyvern (vision-based, 21.3K stars), browser-use, Browserbase, Chrome DevTools MCP (Google)
+   - Rated **3/5** — strong concept and real adoption, but closed-source extension with telemetry, unaddressed security issues, and dormant development
+
+3. **Hugo build** — successful (718ms).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Continue filling catalog gaps: WhatsApp MCP (5.5K stars), or other high-traction servers
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+
 ## Run 718 — 2026-04-20 — Deploy MCP Toolbox for Databases + New Review: Inbox Zero MCP Server
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
