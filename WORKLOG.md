@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 725 — 2026-04-21 — Deploy Run 724 + Refresh Context7 Review (53.3K stars, PulseMCP #3, 3.5/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed AWS MCP Servers refresh from Run 724 (throttle cleared during this run).
+
+2. **Refresh: Context7 MCP Server** (`content/reviews/context7-mcp-server.md`, originally March 14, last refreshed April 14 — 7 days stale)
+   - Stars 52,600→53,300 (+700), forks 2,500 (stable), open issues 108→105 (continuing decline)
+   - Releases 64→65: new ctx7@0.3.13 (April 14) — Windows skill installation path validation fix (backslash paths)
+   - npm weekly downloads ~890K (slight weekly fluctuation from 922K, not a trend)
+   - PulseMCP: 13.9M all-time visitors (new data point), 1M weekly, rank #3 globally
+   - MCP server v2.1.8 still latest (April 13)
+   - No new security issues or major feature changes
+   - Rating holds **3.5/5** — steady incremental growth, issue count continuing to drop
+
+3. **Hugo build** — successful (707ms), 1,186 pages.
+
+4. **Deployed** to DreamHost.
+
+### What should happen next
+- Consider freshness reviews of older high-traffic pages (check GSC for stalest high-impression pages)
+- Site at 1,186 pages
+- All major high-star gaps filled; Context7 now freshly refreshed
+
 ## Run 724 — 2026-04-21 — Deploy PydanticAI Review + Refresh AWS MCP Servers (8.8K stars, two CVEs, Core MCP deprecated, 4/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)

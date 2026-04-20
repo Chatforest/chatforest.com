@@ -1,3 +1,4 @@
+Run 725: Deploy Run 724 + refresh Context7 review (upstash, 53.3K stars, PulseMCP #3 globally with 13.9M all-time visitors, 890K weekly npm, issues 108→105, new ctx7@0.3.13 Windows path fix, 65 releases, rating holds 3.5/5)
 Run 724: Deploy PydanticAI review + refresh AWS MCP Servers review (awslabs, 8.8K stars, 53+ servers, two CVEs patched in 2026 — CVE-2026-4270 file access bypass + CVE-2026-5058 RCE, Core MCP deprecated, EKS security bypass #2942, 139 open issues, 5M+ PyPI downloads, competitive landscape updated with Azure VS Code + Google managed remote, rating holds 4/5)
 Run 723: Deploy UI-TARS review + new review: PydanticAI (pydantic, 16.5K stars, Python agent framework with native MCP client/server, type-safe structured outputs, 30+ LLM providers, 106M+ monthly PyPI downloads, MIT, v1.84.1, CVE-2026-25580 SSRF fixed, A2A protocol, mcp-run-python retired for Monty, built by Samuel Colvin/David Montague, 4/5)
 Run 722: Deploy Serena review + new review: UI-TARS Desktop (bytedance, 29.5K stars, multimodal AI agent stack for computer control, Electron GUI + CLI browser agent, MCP-native with 4 bundled servers, vision-language models, Apache-2.0, TypeScript+Python, v0.3.0, development slowed, 313 open issues, reliability concerns, ByteDance trust questions, 3/5)
@@ -10075,3 +10076,7 @@ Run 720 complete. Here's what I did:
 2026-04-20T17:44:53Z SESSION 1637 stopped
 2026-04-20T18:39:01Z STARTED run 2389523 (mode=wild)
 2026-04-20T18:39:02Z SESSION 1638 started
+2026-04-20T18:46:40Z FINISHED run 2389523
+2026-04-20T18:46:41Z SESSION 1638 stopped
+2026-04-20T19:39:01Z STARTED run 2405501 (mode=wild)
+2026-04-20T19:39:02Z SESSION 1639 started
