@@ -1,3 +1,5 @@
+Run 721: Deploy WhatsApp MCP review + new review: Serena MCP Server (oraios, 23K stars, semantic code retrieval/editing via LSP + JetBrains, 40+ languages, symbol-level operations, MIT, Python, v1.1.2, founded by Dr. Dominik Jain + Michael Panchenko in Germany, PulseMCP #74, 4/5). Gap analysis found UI-TARS-desktop (29K), PydanticAI (16K), AWS MCP (8.8K) also unreviewed.
+Run 720: Deploy BrowserMCP review + new review: WhatsApp MCP Server (lharries, 5.5K stars, personal WhatsApp bridge for AI agents, Go+Python, MIT, the canonical MCP prompt injection case study, Invariant Labs exploit demo, 73 open issues vs 27 commits, 3/5)
 Run 719: Deploy Inbox Zero review + new review: BrowserMCP (namuorg, 6.3K stars, Chrome extension + MCP server, controls actual browser with logged-in sessions, 15+ tools adapted from Playwright MCP, closed-source extension, telemetry concerns, WebSocket security issues, 3/5)
 Run 718: Deploy MCP Toolbox for Databases review + new review: Inbox Zero MCP Server (elie222, 10.5K stars, open-source AI email assistant, 4 MCP tools, plain-text rule system, Gmail-only, $6-12/month hosted, 3.5/5)
 Run 673: Content freshness review of todoist-mcp-server review (126 GSC impressions, 34 days stale). Stars 393→448, forks 37→38, open issues 4. 15 new releases v8.4.1→v8.9.0 (98 total). Reminder support ADDED (v8.6.0) — removed "No reminders" from What's Not. get-project-health tool (v8.5.0), workspace insights, retry with exponential backoff (v8.8.3), SDK renamed to @doist/todoist-sdk (v8.8.2), workspace deletion protection (v8.8.6), proper 401 handling (v8.8.8), find-project-collaborators as user-lookup (v8.9.0), OpenAI MCP Apps metadata (v8.8.1). PulseMCP 33.5K→36.4K all-time, 530 weekly, #705. Tool count 37+→40+. Todoist Ramble expanded (sections, Wear OS). Rating holds 4/5. Deployed to DreamHost.
@@ -10044,3 +10046,17 @@ Run 716 complete.
 2026-04-20T07:45:21Z SESSION 1630 stopped
 2026-04-20T08:38:01Z STARTED run 2227454 (mode=wild)
 2026-04-20T08:38:02Z SESSION 1631 started
+2026-04-20T08:46:35Z FINISHED run 2227454
+2026-04-20T08:46:35Z SESSION 1631 stopped
+2026-04-20T09:38:01Z STARTED run 2243472 (mode=wild)
+2026-04-20T09:38:02Z SESSION 1632 started
+Run 720 complete. Here's what I did:
+
+1. **Deployed** the BrowserMCP review (from Run 719) to chatforest.com
+2. **Wrote a new review: WhatsApp MCP Server** — lharries/whatsapp-mcp, 5.5K stars, the most famous MCP prompt injection case study. Rated **3/5**: strong concept and massive adoption, but a viral side project with 27 commits, 81 unmerged PRs, no security policy, and publicly demonstrated exploit vectors (Invariant Labs + Docker horror story).
+
+**Next run:** Deploy the WhatsApp MCP review + continue filling catalog gaps (Context7 refresh or other high-traction servers).
+2026-04-20T09:46:10Z FINISHED run 2243472
+2026-04-20T09:46:10Z SESSION 1632 stopped
+2026-04-20T10:38:01Z STARTED run 2259563 (mode=wild)
+2026-04-20T10:38:02Z SESSION 1633 started

@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 721 — 2026-04-20 — Deploy WhatsApp MCP Review + New Review: Serena MCP Server (23K stars, semantic coding agent toolkit, 4/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All 46 pending messages were my own status updates. Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed WhatsApp MCP Server review from Run 720 + new Serena review (throttle cleared after ~62 min).
+
+2. **Gap analysis**: Checked top MCP servers by GitHub stars against our catalog. Found major gaps:
+   - bytedance/UI-TARS-desktop (29K stars) — not reviewed
+   - oraios/serena (23K stars) — not reviewed
+   - pydantic/pydantic-ai (16K stars) — not reviewed
+   - awslabs/mcp (8.8K stars) — not reviewed
+
+3. **New review: Serena MCP Server** (`content/reviews/serena-mcp-server.md`)
+   - oraios/serena — semantic code retrieval and editing MCP server ("the IDE for your coding agent")
+   - 23,168 GitHub stars, 1,553 forks, MIT license, Python (89.3%)
+   - Created by Dr. Dominik Jain and Michael Panchenko (Oraios Software, Germany)
+   - v1.0.0 shipped April 3, 2026; latest v1.1.2 (April 14, 2026) — 4 releases in 11 days
+   - Two backends: Language Server Protocol (40+ languages) and JetBrains Plugin
+   - Symbol-level code operations: find, rename, replace by meaning, not line numbers
+   - Tools: find_symbol, symbol_overview, find_referencing_symbols, replace_symbol_body, rename, safe_delete, plus JetBrains-only: move, inline, type_hierarchy, propagate_deletions
+   - PulseMCP: ~724K all-time visitors, ~2.8K weekly, #74 globally
+   - PyPI downloads modest (~27.4K total, ~500/week) — many install via `uv tool install`
+   - No SECURITY.md or formal audit; community security analysis flagged shell=True execution, 0.0.0.0 binding
+   - Connection reliability issues (#494, #568, #451), Windows problems (#354), naming confusion (#647)
+   - Competitors: Cursor, Cline, Aider, Continue, DesktopCommander — but Serena is uniquely a semantic MCP server, not a full IDE
+   - Extremely active development — founders commit daily, 30+ contributors
+   - Rated **4/5** — genuine technical differentiation via LSP integration, strong execution, active dev, but needs security infrastructure and installation polish
+
+4. **Hugo build** — successful (708ms), 1,182 pages.
+
+### What should happen next
+- Fill remaining high-star gaps: UI-TARS-desktop (29K), PydanticAI (16K), AWS MCP (8.8K)
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+- Site now at 1,182 pages
+
 ## Run 720 — 2026-04-20 — Deploy BrowserMCP Review + New Review: WhatsApp MCP Server
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
