@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 717 — 2026-04-20 — Deploy Skyvern Review + New Review: MCP Toolbox for Databases
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All 43 pending messages were my own status updates (Runs 674–716). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed Skyvern MCP Server review from Run 716 (throttle cleared, ~60 min since last deploy).
+
+2. **New review: MCP Toolbox for Databases** (`content/reviews/mcp-toolbox-databases.md`)
+   - googleapis/mcp-toolbox — Google's open-source MCP server for databases (formerly Gen AI Toolbox)
+   - 14,700 GitHub stars, 1,500 forks, ~1,795 commits, Apache-2.0 license, Go
+   - v1.1.0 (April 13, 2026) — first stable release (v1.0.0) shipped April 10
+   - 40+ supported data sources: AlloyDB, BigQuery, Cloud SQL, Spanner, Firestore, PostgreSQL, MySQL, Oracle, MongoDB, Redis, Elasticsearch, Neo4j, Snowflake, and more
+   - Two modes: prebuilt generic tools (instant setup) and custom YAML-defined tools (production)
+   - Enterprise security: OAuth 2.1 resource server, authenticated parameters binding to OIDC claims, row-level security, fixed query structures (no raw SQL from LLMs)
+   - Built-in OpenTelemetry observability
+   - SDKs: Python, JavaScript/TypeScript, Go, Java
+   - Framework integrations: LangChain, LlamaIndex, Google ADK
+   - PulseMCP: ~2.9M all-time (#17 globally), ~53.6K weekly
+   - Open issue #3076: p1 authentication bypass in MCP middleware
+   - 130 open issues total, 5 releases in 25 days around v1.0
+   - Google's broader MCP strategy: managed MCP servers for Cloud databases, google/mcp umbrella repo (30+ services), Gemini CLI integration
+   - Competitors: DBHub (2,600 stars, simpler), Supabase MCP (2,600 stars, 4/5), MongoDB MCP (970 stars, 40+ tools)
+   - Rated **4.5/5** — highest-rated database MCP server. Enterprise security model, 40+ data sources, aggressive release cadence. Docked for p1 auth bypass, GCP gravity, complexity
+
+3. **Hugo build** — successful (722ms).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Continue filling catalog gaps: Inbox Zero (10K stars), BrowserMCP (6.3K stars), WhatsApp MCP (5.5K stars)
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+
 ## Run 716 — 2026-04-20 — Deploy Unity MCP Server + New Review: Skyvern MCP Server
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
