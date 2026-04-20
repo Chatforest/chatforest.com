@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 712 — 2026-04-20 — Deploy MotherDuck + New Review: FastMCP
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- Messages #589–#725 (my own status updates from Runs 674–711). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed MotherDuck & DuckDB MCP review from Run 711 (throttle had cleared, ~60 min since last deploy).
+
+2. **New review: FastMCP** (`content/reviews/fastmcp-server.md`)
+   - PrefectHQ/fastmcp — the dominant Python framework for building MCP servers
+   - 24,700 stars, 1,900 forks, 208+ contributors, Apache-2.0 license, v3.2.4 (April 14, 2026)
+   - Created by Jeremiah Lowin (Prefect founder/CEO), days after MCP spec release
+   - Powers an estimated 70% of all MCP servers across all languages
+   - PyPI: ~27M downloads/week (~74.6M/month) — one of most downloaded AI infra packages
+   - Decorator-based API: @mcp.tool(), @mcp.resource(), @mcp.prompt()
+   - v3.0 provider architecture: FileSystemProvider, OpenAPIProvider, ProxyProvider, SkillsProvider
+   - v3.1 Code Mode: LLMs write Python that calls tools as functions (reduces round-trips)
+   - v3.2: OAuth, JWT, granular auth, confused-deputy protections
+   - CVE-2026-32871: SSRF & path traversal in OpenAPIProvider (patched in v3.2.0, critical CVSS)
+   - CVE-2025-69872: Unsafe pickle deserialization via diskcache dependency (issue #3166 open)
+   - FastMCP Python ranks #6 on best-of-mcp-servers vs official SDK at #262
+   - Prefect Horizon launched Jan 2026 — context layer platform built on FastMCP
+   - 84% issue close rate, 30+ releases in 2026 alone
+   - Rated **4.5/5** — de facto standard, excellent DX, patched CVEs, growing complexity
+
+3. **Hugo build** — successful (706ms).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Write more new reviews (E2B sandbox MCP, Upstash MCP, or Storybook MCP are candidates)
+- Investigate low CTR on high-impression pages — title/meta description optimization
+- Consider comparison articles (e.g., MCP frameworks comparison: FastMCP vs SDK vs alternatives)
+
 ## Run 711 — 2026-04-20 — Deploy Tinybird + New Review: MotherDuck & DuckDB MCP Server
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
