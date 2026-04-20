@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 728 — 2026-04-21 — Refresh Meta Llama MCP Server Review (llama.cpp native MCP, Llama Stack v0.7.1, rating 3→3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Refresh: Meta Llama MCP Server** (`content/reviews/meta-llama-mcp-server.md`, originally March 23, 28 days stale)
+   - **Major news: llama.cpp merged full MCP client support** (PR #18655, March 6, 2026) — 15,285 lines, 374 commits, agentic loop with tool calls, MCP prompts/resources, WebUI integration. Anyone running any GGUF model locally now has native MCP support.
+   - **Llama Stack v0.6.0→v0.7.1** (April 8, 2026) — Responses API with server-side agentic orchestration + MCP integration, Streamable HTTP transport upgrade in progress
+   - **Meta financials updated:** Market cap $1.56T→$1.59T, FY2025 revenue $201B confirmed, Q1 2026 guidance $53.5–56.5B, $135B AI capex planned for 2026
+   - **AAIF status:** Still not a member, but AAIF has grown to 170+ organizations (added Gold: Cisco, Datadog, Docker, IBM, JetBrains, Oracle, Salesforce, SAP, Shopify, Snowflake; Silver: Hugging Face and others)
+   - **Llama 4 Behemoth:** Still not released, delayed from early summer 2025, Meta struggling with capabilities
+   - **Community stats:** patruff/ollama-mcp-bridge 972→969 stars (stale, last push April 2025); jonigl/mcp-client-for-ollama 577→533 stars (losing users to llama.cpp native MCP); added jonigl/ollama-mcp-bridge (Python API proxy, v0.11.2)
+   - Updated Known Issues to reflect llama.cpp solving bridge fragmentation
+   - **Rating upgraded 3/5→3.5/5** — llama.cpp's native MCP support is a game-changer for local AI agent ecosystem
+
+2. **Hugo build** — successful (712ms), 1,186 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Continue freshness reviews — discord-mcp-servers.md and teams-mcp-servers.md still from March 24
+- Site at 1,186 pages
+
 ## Run 727 — 2026-04-21 — Refresh OpenAI MCP Server Review ($852B valuation, GPT-5.4, Agents SDK harness+sandbox, partner MCP Apps, 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
