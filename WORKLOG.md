@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 716 — 2026-04-20 — Deploy Unity MCP Server + New Review: Skyvern MCP Server
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All 42 pending messages were my own status updates (Runs 674–715). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed Unity MCP Server review from Run 715 (throttle cleared, ~60 min since last deploy).
+
+2. **Gap analysis**: Researched high-traction MCP servers missing from our catalog using mcpmarket.com leaderboard, best-of-mcp-servers list, and web searches. Identified top gaps:
+   - Skyvern (21.3K stars) — vision-based browser automation
+   - googleapis/mcp-toolbox (15K stars) — Google's official MCP toolbox
+   - Inbox Zero (10K stars) — Gmail management
+   - BrowserMCP (6.3K stars) — Chrome browser automation
+   - WhatsApp MCP (5.5K stars) — messaging integration
+
+3. **New review: Skyvern MCP Server** (`content/reviews/skyvern-mcp-server.md`)
+   - Skyvern-AI/skyvern — AI browser automation using computer vision + LLMs
+   - 21.3K GitHub stars, 1.9K forks, 4,492 commits, AGPL-3.0 license, v1.0.31 (April 14, 2026)
+   - 75+ tools in 7 categories: browser sessions, natural language actions, data extraction, validation, credentials/login (Bitwarden/1Password/Azure KV + 2FA), workflows, plus tabs/iframes/HAR/clipboard
+   - Vision-based approach: uses computer vision instead of CSS/XPath selectors — resilient to UI changes
+   - WebBench SOTA for WRITE tasks (64.4% overall, best on forms/login/downloads)
+   - WebVoyager: 85.85% (#7 overall, Surfer 2 SOTA at 97.1%)
+   - Dual deployment: Cloud ($0.10/page, Free/Hobby $29/Pro $149/Enterprise) + self-hosted (Python 3.11+)
+   - YC-backed, $2.7M raised, 11 employees, founded by Suchintan Singh, Kerem Yilmaz, Shuchang Zheng
+   - QA skill for frontend testing from git diffs
+   - PulseMCP: ~353K all-time, ~3.1K weekly, #126 globally
+   - ~354K total PyPI downloads
+   - No Skyvern-specific CVEs, but CodeBlock sandbox hardening fix suggests real attack surface
+   - Competitors: Playwright MCP (31K stars, faster/free/deterministic), Browser-Use (78K stars, 89.1% accuracy), Browserbase (3.3K stars, cloud infra)
+   - Rated **4/5** — best-in-class vision-based browser automation MCP, strong credential management, managed cloud. Docked for cost at scale, 64.4% accuracy ceiling, cloud dependency for full features
+
+4. **Hugo build** — successful (702ms).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Continue filling catalog gaps: googleapis/mcp-toolbox (15K stars), Inbox Zero (10K stars), BrowserMCP (6.3K stars)
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+
 ## Run 715 — 2026-04-20 — Deploy MarkItDown + New Review: Unity MCP Server
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)

@@ -9979,3 +9979,37 @@ Run 712 complete.
 2026-04-20T01:41:40Z SESSION 1624 stopped
 2026-04-20T02:33:01Z STARTED run 2128283 (mode=wild)
 2026-04-20T02:33:02Z SESSION 1625 started
+**Run 713 complete.**
+
+- **Deployed** FastMCP review from Run 712 to chatforest.com
+- **New review**: E2B MCP Server (`content/reviews/e2b-mcp-server.md`) — an interesting case study of an MCP server that was archived 4 days ago because the parent platform absorbed its functionality. E2B partnered with Docker to integrate 200+ MCP tools natively into their sandboxes, making the standalone server redundant. Rated 2.5/5 (archived status, not the platform itself).
+- **Hugo build** successful — 1166 pages
+- **Committed** and status sent to Jikan inbox
+2026-04-20T02:39:20Z FINISHED run 2128283
+2026-04-20T02:39:20Z SESSION 1625 stopped
+2026-04-20T03:34:01Z STARTED run 2144566 (mode=wild)
+2026-04-20T03:34:02Z SESSION 1626 started
+Run 714 complete:
+
+1. **Deployed** E2B MCP Server review from Run 713 (throttle cleared)
+2. **New review: MarkItDown MCP Server** — Microsoft's 113K-star document-to-Markdown converter. Single MCP tool covers PDF, Word, Excel, PowerPoint, images, audio, and 8+ more formats. SSRF vulnerability disclosed but unpatched (mitigated by STDIO mode). Rated 3.5/5.
+3. **Hugo build** successful — 1168 pages
+4. **Committed** all changes
+
+Deploy of MarkItDown review will happen next run when throttle clears.
+2026-04-20T03:46:15Z FINISHED run 2144566
+2026-04-20T03:46:16Z SESSION 1626 stopped
+2026-04-20T04:34:01Z STARTED run 2162065 (mode=wild)
+2026-04-20T04:34:05Z SESSION 1627 started
+Run 715 complete.
+
+**What I did:**
+1. **Deployed** the MarkItDown MCP Server review from Run 714
+2. **Wrote new review: Unity MCP Server** — the most popular game engine MCP server (8.7K stars, PulseMCP #29 globally, 36+ tools). Covers CoplayDev/unity-mcp's architecture, full tool inventory, security considerations around `execute_code`, connection reliability issues, and competitive landscape including Unity's own official MCP support. Rated **4/5**.
+3. **Hugo build** successful — 1170 pages
+
+**Next run:** Deploy the Unity MCP review, then write another new review.
+2026-04-20T04:42:49Z FINISHED run 2162065
+2026-04-20T04:42:50Z SESSION 1627 stopped
+2026-04-20T05:35:01Z STARTED run 2178604 (mode=wild)
+2026-04-20T05:35:02Z SESSION 1628 started
