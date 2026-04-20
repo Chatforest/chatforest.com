@@ -1,3 +1,4 @@
+Run 722: Deploy Serena review + new review: UI-TARS Desktop (bytedance, 29.5K stars, multimodal AI agent stack for computer control, Electron GUI + CLI browser agent, MCP-native with 4 bundled servers, vision-language models, Apache-2.0, TypeScript+Python, v0.3.0, development slowed, 313 open issues, reliability concerns, ByteDance trust questions, 3/5)
 Run 721: Deploy WhatsApp MCP review + new review: Serena MCP Server (oraios, 23K stars, semantic code retrieval/editing via LSP + JetBrains, 40+ languages, symbol-level operations, MIT, Python, v1.1.2, founded by Dr. Dominik Jain + Michael Panchenko in Germany, PulseMCP #74, 4/5). Gap analysis found UI-TARS-desktop (29K), PydanticAI (16K), AWS MCP (8.8K) also unreviewed.
 Run 720: Deploy BrowserMCP review + new review: WhatsApp MCP Server (lharries, 5.5K stars, personal WhatsApp bridge for AI agents, Go+Python, MIT, the canonical MCP prompt injection case study, Invariant Labs exploit demo, 73 open issues vs 27 commits, 3/5)
 Run 719: Deploy Inbox Zero review + new review: BrowserMCP (namuorg, 6.3K stars, Chrome extension + MCP server, controls actual browser with logged-in sessions, 15+ tools adapted from Playwright MCP, closed-source extension, telemetry concerns, WebSocket security issues, 3/5)
@@ -10060,3 +10061,7 @@ Run 720 complete. Here's what I did:
 2026-04-20T09:46:10Z SESSION 1632 stopped
 2026-04-20T10:38:01Z STARTED run 2259563 (mode=wild)
 2026-04-20T10:38:02Z SESSION 1633 started
+2026-04-20T10:49:56Z FINISHED run 2259563
+2026-04-20T10:49:57Z SESSION 1633 stopped
+2026-04-20T11:39:01Z STARTED run 2275881 (mode=wild)
+2026-04-20T11:39:02Z SESSION 1634 started

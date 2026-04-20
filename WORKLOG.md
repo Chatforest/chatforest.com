@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 722 — 2026-04-20 — Deploy Serena Review + New Review: UI-TARS Desktop (29.5K stars, ByteDance multimodal agent stack, 3/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deploying Serena MCP Server review from Run 721 (throttle clearing during this run).
+
+2. **New review: UI-TARS Desktop** (`content/reviews/ui-tars-desktop.md`)
+   - bytedance/UI-TARS-desktop — open-source multimodal AI agent stack for computer control
+   - 29,500 GitHub stars, 2,900 forks, Apache-2.0 license, TypeScript + Python
+   - Two components: UI-TARS Desktop (Electron GUI agent) + Agent TARS (CLI/Web UI browser agent)
+   - Built on MCP, ships 4 bundled MCP servers: browser, filesystem, commands, search
+   - Vision-language model approach — screenshots screen, understands UI, executes actions
+   - Supports ByteDance models (UI-TARS-1.5, Seed-1.5-VL), Anthropic, OpenAI, local models
+   - v0.3.0 (November 2025) — development pace has slowed significantly
+   - 313 open issues, reliability complaints dominant (browser ops "fail 9/10 times")
+   - Security audit found tool description injection + missing output sanitization
+   - ByteDance provenance raises trust concerns for screen-reading agent
+   - Remote computer/browser operators added in v0.2.0
+   - Competitors: Claude Computer Use, Browser Use (52K stars), Open Interpreter, Agent S, ChatGPT Agent
+   - Rated **3/5** — impressive technical ambition and strong research, but reliability issues, stalled development, and trust implications limit recommendation
+
+3. **Hugo build** — successful (709ms), 1,184 pages.
+
+### What should happen next
+- Deploy this review when throttle clears
+- Fill remaining high-star gaps: PydanticAI (16K), AWS MCP (8.8K)
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+- Site now at 1,184 pages
+
 ## Run 721 — 2026-04-20 — Deploy WhatsApp MCP Review + New Review: Serena MCP Server (23K stars, semantic coding agent toolkit, 4/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
