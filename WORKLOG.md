@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 727 — 2026-04-21 — Refresh OpenAI MCP Server Review ($852B valuation, GPT-5.4, Agents SDK harness+sandbox, partner MCP Apps, 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Refresh: OpenAI MCP Server** (`content/reviews/openai-mcp-server.md`, originally March 23, 29 days stale)
+   - **Company stats updated:** Revenue $13B→$24B annualized ($2B/month), valuation $730B→$852B (April 2026 round, $122B raised, co-led by SoftBank), employees 3,500-4,500→4,500+ (planning 8,000 by EOY), 9M+ paid business users
+   - **Model lineup updated:** GPT-5.4 is now flagship ($2.50/$15.00 per 1M tokens), GPT-5.3-Codex for agentic coding, five GPT-5.x models shipped in <7 months
+   - Added GPT-5.4, GPT-5.4 Mini, GPT-5.4 Nano to pricing table
+   - **Agents SDK major update (April 15, 2026):** model-native harness with configurable memory, sandbox-aware orchestration, native sandbox execution (7 providers: Blaxel, Cloudflare, Daytona, E2B, Modal, Runloop, Vercel), durable execution via snapshotting/rehydration, security model assumes prompt injection
+   - **ChatGPT Apps (formerly "connectors"):** partner MCP Apps launched with Stripe, Vercel, Monday.com, Amplitude, Fireflies, Hex, Egnyte, Alpaca, BioRender, Semrush, Jam.dev; Stripe Agentic Commerce Protocol co-developed with OpenAI
+   - **Codex CLI/Desktop April 16 update:** MCP Apps tool calls, namespaced MCP registration, parallel-call opt-in, sandbox-state metadata, 90+ plugins in marketplace
+   - Community server stats: lastmile-ai 197 stars (unchanged, last commit March 2025), pierrebrunelle 79→80 stars, arthurcolle 35 stars, billster45 16 stars (18 commits), akiojin 1 star (109 commits)
+   - TTS MCP server now exists (nakamurau1/openai-tts-mcp on PulseMCP) — updated "What's Not" section
+   - Rating holds **3.5/5** — industry-leading client-side MCP adoption but stagnating community server ecosystem
+
+2. **Hugo build** — successful (711ms), 1,186 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Continue freshness reviews — 67 reviews still 37+ days stale from March 15
+- Site at 1,186 pages
+
 ## Run 726 — 2026-04-21 — Refresh GitHub MCP Server Review (29.1K stars, v1.0.0 milestone, PulseMCP #10, 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)

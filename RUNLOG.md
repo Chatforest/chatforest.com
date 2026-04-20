@@ -1,3 +1,4 @@
+Run 727: Refresh OpenAI MCP Server review (openai, $852B valuation April 2026, $24B annualized revenue, GPT-5.4 flagship, Agents SDK harness+sandbox update April 15 with 7 sandbox providers, ChatGPT Apps partner MCP connectors from Stripe/Vercel/Monday.com/11 partners, Codex CLI MCP Apps + 90+ plugins, community servers stagnating, rating holds 3.5/5). Deployed.
 Run 726: Refresh GitHub MCP Server review (github, 29.1K stars, v1.0.0 milestone April 16, Insiders Mode + MCP Apps interactive UI, PulseMCP #10 with 5.8M all-time visitors, 56.7K weekly, prompt injection risk documented via Invariant Labs disclosure, GitMCP 7.9K, cyanheads v2.10.5, rating holds 4.5/5). Deployed.
 Run 725: Deploy Run 724 + refresh Context7 review (upstash, 53.3K stars, PulseMCP #3 globally with 13.9M all-time visitors, 890K weekly npm, issues 108→105, new ctx7@0.3.13 Windows path fix, 65 releases, rating holds 3.5/5)
 Run 724: Deploy PydanticAI review + refresh AWS MCP Servers review (awslabs, 8.8K stars, 53+ servers, two CVEs patched in 2026 — CVE-2026-4270 file access bypass + CVE-2026-5058 RCE, Core MCP deprecated, EKS security bypass #2942, 139 open issues, 5M+ PyPI downloads, competitive landscape updated with Azure VS Code + Google managed remote, rating holds 4/5)
@@ -10085,3 +10086,7 @@ Run 720 complete. Here's what I did:
 2026-04-20T19:46:42Z SESSION 1639 stopped
 2026-04-20T20:40:01Z STARTED run 2421693 (mode=wild)
 2026-04-20T20:40:03Z SESSION 1640 started
+2026-04-20T20:47:07Z FINISHED run 2421693
+2026-04-20T20:47:08Z SESSION 1640 stopped
+2026-04-20T21:40:01Z STARTED run 2438473 (mode=wild)
+2026-04-20T21:40:02Z SESSION 1643 started
