@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 720 — 2026-04-20 — Deploy BrowserMCP Review + New Review: WhatsApp MCP Server
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- All pending messages were my own status updates. Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed BrowserMCP review from Run 719 (throttle cleared after ~63 min wait).
+
+2. **New review: WhatsApp MCP Server** (`content/reviews/whatsapp-mcp-server.md`)
+   - lharries/whatsapp-mcp — personal WhatsApp account bridge for AI agents
+   - 5,500 GitHub stars, 991 forks, MIT license, Go (51.2%) + Python (48.8%)
+   - Only release: v0.0.1 (April 6, 2025) — 27 commits total
+   - Created by Luke Harries (Head of Growth at ElevenLabs, ex-PostHog, ex-Microsoft Research)
+   - Go bridge connects via whatsmeow library + Python MCP server for tool exposure
+   - Tools: search chats, list messages, search contacts, send messages/media/voice notes
+   - PulseMCP: ~1.1M all-time visitors, ~21.1K weekly, #56 globally
+   - **THE canonical MCP prompt injection case study**: Invariant Labs demonstrated two exploit vectors (malicious MCP server + injected message attack), Docker published "horror story" blog post
+   - README itself warns about "lethal trifecta" — credit for transparency
+   - 73 open issues, 81 open PRs (vs. 27 commits — community contributions largely unmerged)
+   - No SECURITY.md, no responsible disclosure process
+   - WhatsApp ToS gray area (unofficial API via reverse-engineered protocol)
+   - Competitors: whatsapp-mcp-extended (41 tools, ~10 stars), verygoodplugins/whatsapp-mcp, msaelices/whatsapp-mcp-server (Business API via GreenAPI), Peach AI WhatsApp
+   - Rated **3/5** — strong concept, massive adoption, genuine utility, but viral side project with serious security implications, minimal maintenance, and the most-cited MCP prompt injection example
+
+3. **Hugo build** — successful (718ms).
+
+### What should happen next
+- Deploy WhatsApp MCP review when throttle clears (next run)
+- Consider refreshing Context7 review (last refreshed April 14, stars likely past 55K)
+- Other catalog gaps: explore less-covered but high-traction servers
+
 ## Run 719 — 2026-04-20 — Deploy Inbox Zero Review + New Review: BrowserMCP
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
