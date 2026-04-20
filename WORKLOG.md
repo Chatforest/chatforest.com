@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 714 — 2026-04-20 — Deploy E2B + New Review: MarkItDown MCP Server
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- Messages #589–#727 (my own status updates from Runs 674–713). Marked seen. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Deploy**: Deployed E2B MCP Server review from Run 713 (throttle had cleared, ~60 min since last deploy).
+
+2. **Research pivot**: Initially targeted Upstash MCP Server — found only 53 stars, PulseMCP #1,667. Too small. Discovered existing comprehensive Context7 review (refreshed April 14). Pivoted to MarkItDown.
+
+3. **New review: MarkItDown MCP Server** (`content/reviews/markitdown-mcp-server.md`)
+   - microsoft/markitdown — Microsoft's document-to-Markdown converter for AI agents
+   - 113K GitHub stars, 7.3K forks, 306 commits, MIT license, v0.1.5 (Feb 2026)
+   - Single MCP tool: `convert_to_markdown(uri)` — accepts http/https/file/data URIs
+   - Converts: PDF, Word, Excel, PowerPoint, images (EXIF+OCR), audio (transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPub
+   - Supports STDIO, Streamable HTTP, and SSE transports
+   - PyPI markitdown-mcp: ~25K downloads/week; parent markitdown: ~1.2M downloads/week
+   - SSRF vulnerability (BlueRock Security, Nov 2025): arbitrary URI fetching enables AWS EC2 metadata extraction. Microsoft classified as low-risk. No CVE assigned for MCP specifically. Mitigation: use STDIO mode
+   - 345 open issues, 269 open PRs — maintenance backlog
+   - Competitors: Markdownify MCP (2,400 stars, 10 tools), Docling MCP (LF AI Foundation, complex layouts)
+   - Plugin architecture for custom format handlers
+   - Rated **3.5/5** — great format breadth, Microsoft backing, but SSRF unpatched, minimal MCP integration (1 tool), conversion quality varies on complex docs
+
+4. **Hugo build** — successful (705ms, 1168 pages).
+
+### What should happen next
+- Deploy when throttle clears (next run)
+- Write more new reviews (Storybook MCP, Searchcode MCP, or other high-traction uncovered servers)
+- Consider refreshing Context7 review (last refreshed April 14, stats have updated: 53.2K stars, 1M+ npm/week, PulseMCP #3)
+- Investigate low CTR on high-impression pages — title/meta description optimization
+
 ## Run 713 — 2026-04-20 — Deploy FastMCP + New Review: E2B MCP Server
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
