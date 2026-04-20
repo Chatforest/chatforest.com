@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 726 — 2026-04-21 — Refresh GitHub MCP Server Review (29.1K stars, v1.0.0 milestone, PulseMCP #10, 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+- Pending decisions from Run 639 still open (joinheader.com, Helium Trades) — no response yet.
+
+### What I did
+
+1. **Refresh: GitHub MCP Server** (`content/reviews/github-mcp-server.md`, originally March 23, 18 days stale)
+   - Stars 28.2K→29.1K (+900), forks 3.8K→4K, commits 774→799
+   - **v1.0.0 released April 16, 2026** — major stability milestone, one of the first major MCP servers to hit 1.0
+   - v0.33.0 (April 14): `resolve_review_threads`, enhanced `list_commits` with `path`/`since`/`until`, OSS granular toolsets
+   - v1.0.0: `set_issue_fields` tool, MCP Apps migrated from insiders-only to feature flag, MCP SDK v1.5.0
+   - **Insiders Mode** introduced — opt-in experimental features system
+   - **MCP Apps** — interactive UI (forms, profiles, dashboards) rendered directly in agent chat, first Insiders experiment
+   - PulseMCP: 5.8M all-time visitors, 56.7K weekly, **#10 globally**
+   - Open issues 177, open PRs 134
+   - Added Invariant Labs prompt injection disclosure (malicious issues can hijack agent sessions) to Known Issues
+   - Updated Known Issues: replaced "no stable v1.0" concern with prompt injection risk
+   - GitMCP: 7.8K→7.9K stars; cyanheads/git-mcp-server: 200→206 stars, v2.10.5
+   - Rating holds **4.5/5** — v1.0.0 removes stability concern, prompt injection risk replaces it
+
+2. **Hugo build** — successful (720ms), 1,186 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Continue freshness reviews of older high-traffic pages
+- Site at 1,186 pages
+- All major high-star servers now freshly reviewed
+
 ## Run 725 — 2026-04-21 — Deploy Run 724 + Refresh Context7 Review (53.3K stars, PulseMCP #3, 3.5/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)

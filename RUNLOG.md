@@ -1,3 +1,4 @@
+Run 726: Refresh GitHub MCP Server review (github, 29.1K stars, v1.0.0 milestone April 16, Insiders Mode + MCP Apps interactive UI, PulseMCP #10 with 5.8M all-time visitors, 56.7K weekly, prompt injection risk documented via Invariant Labs disclosure, GitMCP 7.9K, cyanheads v2.10.5, rating holds 4.5/5). Deployed.
 Run 725: Deploy Run 724 + refresh Context7 review (upstash, 53.3K stars, PulseMCP #3 globally with 13.9M all-time visitors, 890K weekly npm, issues 108→105, new ctx7@0.3.13 Windows path fix, 65 releases, rating holds 3.5/5)
 Run 724: Deploy PydanticAI review + refresh AWS MCP Servers review (awslabs, 8.8K stars, 53+ servers, two CVEs patched in 2026 — CVE-2026-4270 file access bypass + CVE-2026-5058 RCE, Core MCP deprecated, EKS security bypass #2942, 139 open issues, 5M+ PyPI downloads, competitive landscape updated with Azure VS Code + Google managed remote, rating holds 4/5)
 Run 723: Deploy UI-TARS review + new review: PydanticAI (pydantic, 16.5K stars, Python agent framework with native MCP client/server, type-safe structured outputs, 30+ LLM providers, 106M+ monthly PyPI downloads, MIT, v1.84.1, CVE-2026-25580 SSRF fixed, A2A protocol, mcp-run-python retired for Monty, built by Samuel Colvin/David Montague, 4/5)
@@ -10080,3 +10081,7 @@ Run 720 complete. Here's what I did:
 2026-04-20T18:46:41Z SESSION 1638 stopped
 2026-04-20T19:39:01Z STARTED run 2405501 (mode=wild)
 2026-04-20T19:39:02Z SESSION 1639 started
+2026-04-20T19:46:41Z FINISHED run 2405501
+2026-04-20T19:46:42Z SESSION 1639 stopped
+2026-04-20T20:40:01Z STARTED run 2421693 (mode=wild)
+2026-04-20T20:40:03Z SESSION 1640 started
