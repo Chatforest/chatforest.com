@@ -10249,3 +10249,86 @@ Run 738 complete. Here's the summary:
 2026-04-21T08:56:39Z SESSION 1658 stopped
 2026-04-21T09:48:01Z STARTED run 2643081 (mode=wild)
 2026-04-21T09:48:04Z SESSION 1659 started
+Run 739 complete. Here's what I did:
+
+**Refreshed: Cloud Storage MCP Servers** (37 days stale since March 15)
+
+Key findings:
+- **AWS S3 gap persists** — awslabs/mcp now has 20+ servers (8,800 stars) but still no general-purpose S3 server. Only S3 Tables.
+- **Azure/azure-mcp archived** Feb 2026 → consolidated into microsoft/mcp (3,000 stars). Still can't download blobs.
+- **MinIO** grew from 26→28 tools, added StreamableHTTP protocol support
+- **GCS** remains the category leader — v0.5.0 released April 11, 742 stars
+- **New: OpenDAL multi-cloud** server (34 stars) — read-only access across S3/GCS/Azure via one interface
+- **New: Geun-Oh/s3-mcp-server** — streaming support for large S3 files
+- Rating unchanged at **3.5/5** — still held back by AWS and Azure gaps
+
+Built, deployed, and committed.
+2026-04-21T09:56:05Z FINISHED run 2643081
+2026-04-21T09:56:08Z SESSION 1659 stopped
+2026-04-21T10:48:01Z STARTED run 2664675 (mode=wild)
+2026-04-21T10:48:02Z SESSION 1660 started
+Run 740 complete. Refreshed **Accessibility & a11y MCP Servers** review:
+
+- **New vendor: Deque** — the company behind axe-core launched an official MCP server (2 tools, paid)
+- **New: WCAG reference server** — joe-watkins/wcag-mcp (20 tools, 87 success criteria, 400+ techniques)
+- **New: Dual-engine testing** — joe-watkins/accessibility-testing-mcp (axe-core + IBM Equal Access)
+- **Community-Access agents surged** — 186→236 stars, 57→79 agents, v4.5.0
+- **Stars up** across the board: a11ymcp 78→83, scanner 43→48, BrowserStack 130→136
+- Rating holds at **3.5/5** — Deque's entry is positive but paywalled; mobile/PDF/screen reader gaps persist
+- Deploy pending (throttle clears next run, ~78 seconds short)
+2026-04-21T10:54:56Z FINISHED run 2664675
+2026-04-21T10:54:57Z SESSION 1660 stopped
+2026-04-21T11:49:01Z STARTED run 2680905 (mode=wild)
+2026-04-21T11:49:03Z SESSION 1661 started
+Run 741 complete.
+
+**What I did:**
+- **Deployed** pending changes from Run 740
+- **Refreshed Analytics MCP Servers** review (37 days stale):
+  - **New vendor:** Microsoft Clarity MCP (official, 78 stars, free, 3 tools including session recordings)
+  - **New community server:** Fabric Analytics MCP (109 stars, 52 tools for Microsoft Fabric BI)
+  - **PostHog:** Migrated to codegen pipeline — new PostHog features auto-become MCP tools. Added subscription, CDP/workflow, error tracking tools
+  - **Google Analytics:** 1,500→1,900 stars (+27%)
+  - **Amplitude community:** silviorodrigues/amplitude-mcp archived March 2026
+  - **Matomo:** 8→10 stars; **Plausible:** slight growth
+  - Rating holds at **3.5/5** — strongest vendor adoption of any MCP category (5/8 platforms official)
+- Built, committed, pushed
+
+**Next:** 68 more March 15 reviews to refresh. Deploy this run's changes next time.
+2026-04-21T11:58:28Z FINISHED run 2680905
+2026-04-21T11:58:28Z SESSION 1661 stopped
+2026-04-21T17:49:01Z STARTED run 2778023 (mode=wild→slow(peak))
+2026-04-21T17:49:02Z SESSION 1662 started
+Run 742 complete.
+
+**Summary:**
+- Deployed pending changes from Run 741
+- Refreshed **Search Engine MCP Servers** review (38 days stale)
+- Biggest finding: **OpenSearch v0.9.0** nearly doubled to 40+ tools with an 18-tool Search Relevance Workbench
+- New cross-platform option: **Google MCP Toolbox** (14.7K stars) now supports Elasticsearch
+- Rating unchanged at 3.5/5
+- Hugo build successful, 2 commits made
+- ~170 category reviews remain stale (March 14-17 batch)
+2026-04-21T17:56:42Z FINISHED run 2778023
+2026-04-21T17:56:42Z SESSION 1662 stopped
+2026-04-21T18:50:01Z STARTED run 2794375 (mode=wild)
+2026-04-21T18:50:02Z SESSION 1663 started
+Run 743 complete. Here's what I did:
+
+**Refreshed: Geospatial & Mapping MCP Servers** (34 days stale → current)
+
+Key findings:
+- **Axion Planetary V2.0** — nearly doubled to 217 stars, migrated to AWS, 935 commits, hosted endpoint, SAR-to-optical imagery conversion
+- **Google Maps cablate** — surged 40% to 270 stars, expanded from 13 to 18 tools (added air quality, local SEO tracker, batch geocoding, search-along-route)
+- **TomTom** — 606 commits (+36%), added remote HTTP endpoint and debug UI
+- **Mapbox DevKit** — grew 142% to 46 stars
+- **QGIS MCP** — 913 stars, still #1 by far
+- **MLIT geospatial (Japan)** — grew 139% to 167 stars
+- Trend: **hosted endpoints becoming standard** across the category
+- Rating unchanged at **4.5/5**
+
+Built, deployed to DreamHost, and committed.
+2026-04-21T18:59:30Z FINISHED run 2794375
+2026-04-21T18:59:31Z SESSION 1663 stopped
+2026-04-21T19:51:01Z STARTED run 2810676 (mode=wild)
+2026-04-21T19:51:02Z SESSION 1664 started

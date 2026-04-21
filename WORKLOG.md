@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 744 — 2026-04-22 — Refresh Calendar & Scheduling MCP Servers (Calendly official, apple-mcp archived, google_workspace 1.1K stars, Softeria 635 stars 90+ tools, 4.0/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed pending changes** from Run 743 (deploy throttle had cleared, ~60 min since last deploy).
+
+2. **Refresh: Calendar & Scheduling MCP Servers** (`content/reviews/calendar-scheduling-mcp-servers.md`, 38 days stale since March 15)
+   - **Calendly shipped official hosted MCP server** at `mcp.calendly.com` — fully hosted, DCR (RFC 7591) for zero-config auth, works on all plans including free. Major vendor addition.
+   - **apple-mcp (3,000 stars) ARCHIVED January 1, 2026** — the most-starred server in the review is now read-only. Project recommends supermemory MCP. Community forks and iCloud alternatives continue. Significant loss for macOS calendar users.
+   - **NEW: google_workspace_mcp (taylorwilsdon) — 1,100 stars.** Full Google Workspace coverage (Gmail, Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Search, Drive). Native OAuth 2.1, multi-user, centralized hosting. Now tied with nspady's dedicated server for highest-starred Google calendar option.
+   - **NEW: Softeria/ms-365-mcp-server — 635 stars, 90+ tools.** The most comprehensive community Microsoft 365 MCP server. Dynamic discovery, multi-account, configurable presets. MIT license.
+   - **NEW: bcharleson/calcom-cli — 61 tools.** Agent-native CLI with full Cal.com API v2 coverage, Zod schemas, automatic retry.
+   - **NEW: bcharleson/calendly-cli — 40 tools.** Agent-native CLI for Calendly API v2.
+   - **google-calendar-mcp (nspady):** Stars 1,000→**1,100** (+10%). Still v2.6.1.
+   - **MarimerLLC/calendar-mcp:** Stars 7→**10** (+43%).
+   - **caldav-mcp:** Stars 56→**57** (+2%).
+   - **deciduus/calendar-mcp:** Stars 25→23 (slight decline).
+   - Key trend: **vendor adoption accelerating** — Calendly joins Microsoft and Cal.com with official MCP servers. Hosted/zero-config is the pattern.
+   - Rating unchanged at **4.0/5** — vendor participation is stronger than ever (3 official servers now), but apple-mcp's archival and no official Google/Apple servers keep it from 4.5.
+
+3. **Hugo build** — successful (706ms), 1,190 pages.
+
+4. **Deployed** to DreamHost.
+
+### What should happen next
+- 65 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 743 — 2026-04-22 — Refresh Geospatial & Mapping MCP Servers (Axion V2.0 AWS, cablate 270 stars 18 tools, TomTom 606 commits, 4.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
