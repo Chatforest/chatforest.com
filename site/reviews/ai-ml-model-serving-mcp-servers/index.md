@@ -7,7 +7,7 @@
 
 AI and ML model serving is one of the most natural fits for MCP — AI agents that can search model registries, run inference on local or cloud models, track experiments, compare metrics, and manage ML workflows without leaving the conversation. ML MCP servers span four areas: **model hubs and inference platforms** (HuggingFace, Replicate, Ollama, LM Studio, OpenAI), **experiment tracking** (Weights & Biases, MLflow), **ML training** (PyTorch Lightning), and **cloud ML services** (AWS SageMaker, Bedrock).
 
-The headline finding: **the major ML platforms all have MCP server implementations**, but they vary enormously in scope and maturity. HuggingFace's official server is the most polished with Hub search, documentation, and Gradio Space execution. Ollama MCP provides the richest local inference integration. Weights & Biases has an official server with experiment querying and report generation. But no single server covers the full ML lifecycle from training through experiment tracking to deployment — you'll need to combine multiple servers for a complete workflow.
+The headline finding since our last review: **every major ML platform now has an official MCP server**. The biggest development is **MLflow's official MCP server**, built into MLflow 3.5.1+ with Databricks integration — previously only community implementations existed. Weights & Biases expanded from 6 to 14 tools and launched a hosted server at mcp.withwandb.com. HuggingFace's official server continues to lead with proxy tools that let any Gradio Space become an MCP tool with zero code. The fragmentation gap is closing — while no single server covers the full ML lifecycle, the official implementations are maturing fast and the ecosystem now has clear vendor-backed choices at every stage.
 
 ## Model Hubs and Inference Platforms
 
@@ -15,11 +15,11 @@ The headline finding: **the major ML platforms all have MCP server implementatio
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [huggingface/hf-mcp-server](https://github.com/huggingface/hf-mcp-server) | 206 | TypeScript | 5+ | stdio, StreamableHTTP |
+| [huggingface/hf-mcp-server](https://github.com/huggingface/hf-mcp-server) | 221 | TypeScript | 5+ | stdio, StreamableHTTP |
 | [evalstate/mcp-hfspace](https://github.com/evalstate/mcp-hfspace) | — | TypeScript | — | stdio |
 | [shreyaskarnik/huggingface-mcp-server](https://github.com/shreyaskarnik/huggingface-mcp-server) | ~67 | Python | — | stdio |
 
-**huggingface/hf-mcp-server** (206 stars, TypeScript, v0.3.5, official) is the flagship ML MCP server. Core capabilities: **Hub search** for models, datasets, Spaces, and papers; **documentation search** with natural language queries via `hf_doc_search` and `hf_doc_fetch`; and **Gradio Space execution** — run any of the thousands of Gradio-based AI apps on HuggingFace Spaces directly through MCP. Three transport modes (stdio, StreamableHTTP, StreamableHTTPJson) with a management web interface on port 3000. Install via npx, Docker, or direct integration with Claude Desktop, VS Code, Cursor, and Gemini CLI. The breadth here is impressive — you're not just searching for models, you're executing them through hosted Spaces.
+**huggingface/hf-mcp-server** (221 stars, 727 commits, 98 releases, TypeScript, v0.3.5, official) is the flagship ML MCP server. Core capabilities: **Hub search** for models, datasets, Spaces, and papers; **documentation search** with natural language queries via `hf_doc_search` and `hf_doc_fetch`; and **Gradio Space execution** — run any of the thousands of Gradio-based AI apps on HuggingFace Spaces directly through MCP. New since March: **proxy tools** via `PROXY_TOOLS_CSV` — load external MCP endpoint definitions at startup, turning any Gradio Space with an MCP badge into a callable tool with zero code. Gradio itself now tracks **MCP performance metrics** (success rates, latency percentiles, request counts) for all tools and API endpoints. Three transport modes (stdio, StreamableHTTP, StreamableHTTPJson) with a management web interface on port 3000. Install via npx, Docker, or direct integration with Claude Desktop, VS Code, Cursor, Codex, and Gemini CLI. The breadth here is impressive — you're not just searching for models, you're executing them through hosted Spaces.
 
 **evalstate/mcp-hfspace** provides specialized HuggingFace Spaces integration with easy configuration and Claude Desktop mode. Useful if you want Spaces access without the full Hub server.
 
@@ -29,12 +29,12 @@ The headline finding: **the major ML platforms all have MCP server implementatio
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [rawveg/ollama-mcp](https://github.com/rawveg/ollama-mcp) | 144 | TypeScript | 14 | stdio |
+| [rawveg/ollama-mcp](https://github.com/rawveg/ollama-mcp) | 153 | TypeScript | 14 | stdio |
 | [hyzhak/ollama-mcp-server](https://github.com/hyzhak/ollama-mcp-server) | — | — | — | stdio |
 | [MikeyBeez/mcp-ollama](https://github.com/MikeyBeez/mcp-ollama) | — | Python | — | stdio |
 | [infinitimeless/LMStudio-MCP](https://github.com/infinitimeless/LMStudio-MCP) | — | — | — | stdio |
 
-**rawveg/ollama-mcp** (144 stars, TypeScript) is the most comprehensive local inference MCP server. Fourteen tools covering the **complete Ollama SDK**: model management (`ollama_list`, `ollama_show`, `ollama_pull`, `ollama_push`, `ollama_copy`, `ollama_delete`, `ollama_create`), inference (`ollama_generate`, `ollama_chat`, `ollama_embed`), process management (`ollama_ps`), and web tools (`ollama_web_search`, `ollama_web_fetch`). Supports Ollama Cloud for hybrid local+cloud operation, hot-swap architecture for automatic tool discovery, 96%+ test coverage, zero external dependencies, and intelligent retry with exponential backoff. Drop-in for Claude Desktop and Cline. This is what "complete SDK exposure via MCP" looks like — every Ollama operation is one tool call away.
+**rawveg/ollama-mcp** (153 stars, TypeScript, AGPL-3.0) is the most comprehensive local inference MCP server. Fourteen tools covering the **complete Ollama SDK**: model management (`ollama_list`, `ollama_show`, `ollama_pull`, `ollama_push`, `ollama_copy`, `ollama_delete`, `ollama_create`), inference (`ollama_generate`, `ollama_chat`, `ollama_embed`), process management (`ollama_ps`), and web tools (`ollama_web_search`, `ollama_web_fetch`). Supports Ollama Cloud for hybrid local+cloud operation, hot-swap architecture for automatic tool discovery, 96%+ test coverage, zero external dependencies, and intelligent retry with exponential backoff. Drop-in for Claude Desktop and Cline. This is what "complete SDK exposure via MCP" looks like — every Ollama operation is one tool call away.
 
 **hyzhak/ollama-mcp-server** bills itself as "rebooted and actively maintained" — an alternative if rawveg's server doesn't fit your needs.
 
@@ -55,9 +55,9 @@ The headline finding: **the major ML platforms all have MCP server implementatio
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai) | 79 | Python | 1 | stdio |
+| [pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai) | 80 | Python | 1 | stdio |
 
-**pierrebrunelle/mcp-server-openai** (79 stars, Python, MIT) is a bridge server that lets you query OpenAI models from within Claude or other MCP clients. Single `ask-openai` tool. Simple but functional for cross-model workflows — ask GPT-4 a question from inside a Claude conversation. Configuration through environment variables.
+**pierrebrunelle/mcp-server-openai** (80 stars, Python, MIT) is a bridge server that lets you query OpenAI models from within Claude or other MCP clients. Single `ask-openai` tool. Simple but functional for cross-model workflows — ask GPT-4 a question from inside a Claude conversation. Configuration through environment variables.
 
 ## Experiment Tracking
 
@@ -65,19 +65,22 @@ The headline finding: **the major ML platforms all have MCP server implementatio
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [wandb/wandb-mcp-server](https://github.com/wandb/wandb-mcp-server) | 41 | Python | 6 | stdio, HTTP |
+| [wandb/wandb-mcp-server](https://github.com/wandb/wandb-mcp-server) | 49 | Python | 14 | stdio, HTTP, hosted |
 
-**wandb/wandb-mcp-server** (41 stars, Python, official) provides natural language querying of W&B data through six tools: `query_wandb_tool` (experiment and metrics queries), `query_weave_traces_tool` (LLM trace analysis), `count_weave_traces_tool` (trace counting), `create_wandb_report_tool` (automated report generation), `query_wandb_entity_projects` (project listing), and `query_wandb_support_bot` (W&B feature questions). Supports both hosted and local deployment with HTTP and stdio transport modes. The report generation tool is particularly valuable — it can create W&B Reports with text and charts directly from MCP. Works with Claude, OpenAI, Gemini, and Mistral platforms. On-premises/dedicated instance support via `WANDB_BASE_URL`.
+**wandb/wandb-mcp-server** (49 stars, 79 commits, v0.3.0, Python, official) has undergone a major expansion from 6 to **14 tools** since our last review. The full tool set now spans five areas: **experiment querying** (`query_wandb_tool`, `get_run_history_tool`, `query_wandb_entity_projects`), **LLM trace analysis** (`infer_trace_schema_tool`, `query_weave_traces_tool`, `count_weave_traces_tool`), **report generation** (`create_wandb_report_tool`, `log_analysis_to_wandb`), **model registry** (`list_registries_tool`, `list_registry_collections_tool`, `list_artifact_versions_tool`, `get_artifact_details_tool`, `compare_artifact_versions_tool`), and **documentation** (`search_wandb_docs_tool`). The new model registry tools are the standout addition — you can now browse registries, list artifact collections, get version details, and diff two artifact versions directly through MCP. A **hosted server at mcp.withwandb.com** provides zero-configuration access (recommended for most users). Also available as local stdio via uvx or HTTP server with ngrok. Helm chart integration for W&B Dedicated/on-prem instances. Works with Claude, Cursor, OpenAI, Gemini, Mistral, and VS Code.
 
 ### MLflow
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) | 3 | Python | 17+ | stdio |
+| [MLflow official](https://mlflow.org/docs/latest/genai/mcp/) | — | Python | 10 | stdio |
+| [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) | 8 | Python | 17+ | stdio |
 | [iRahulPandey/mlflowMCPServer](https://github.com/iRahulPandey/mlflowMCPServer) | — | Python | — | stdio |
 | [yesid-lopez/mlflow-mcp-server](https://github.com/yesid-lopez/mlflow-mcp-server) | — | Python | — | stdio |
 
-**kkruglik/mlflow-mcp** (3 stars, Python) is the most feature-rich MLflow MCP server with 17+ tools across five areas: experiment management (`get_experiments`, `get_experiment_by_name`, `get_experiment_metrics`, `get_experiment_params`), run analysis (`get_runs`, `get_run`, `query_runs`, `search_runs_by_tags`, `get_run_metrics`, `get_run_metric`), artifacts (`get_run_artifacts`, `get_run_artifact`, `get_artifact_content`), model registry (`get_registered_models`, `get_model_versions`, `get_model_version`), and comparison (`get_best_run`, `compare_runs`). Extremely low star count belies the completeness — this covers every MLflow API surface you'd need. Tag-based search with pagination, sorting, and health checks included.
+**MLflow's official MCP server** (built into MLflow 3.5.1+, experimental) is the biggest development in this category since our last review. Install with `pip install 'mlflow[mcp]>=3.5.1'` and run via `uv run --with mlflow[mcp]>=3.5.1 mlflow mcp run`. Ten tools focused on **trace management**: search and retrieve traces (`search_traces`, `get_trace`), manage metadata (`set_trace_tag`, `delete_trace_tag`, `delete_traces`), and assess quality (`log_feedback`, `log_expectation`, `get_assessment`, `update_assessment`, `delete_assessment`). Advanced field selection with dot notation and wildcard support via `extract_fields` reduces response sizes. Tool category filtering via `MLFLOW_MCP_TOOLS` environment variable (`genai`, `ml`, or `all`). Compatible with local servers, remote installations, and **Databricks environments** — documented on both Azure Databricks and Databricks on AWS/GCP. This means MLflow's 10M+ monthly active users now have a one-line path to MCP integration. The trade-off: the official server focuses on trace/assessment operations, not the full MLflow API surface (experiments, runs, model registry) that community servers cover.
+
+**kkruglik/mlflow-mcp** (8 stars, 40 commits, Python, MIT) remains the most complete MLflow MCP server for **experiment tracking and model registry** workflows with 17+ tools across five areas: experiment management (`get_experiments`, `get_experiment_by_name`, `get_experiment_metrics`, `get_experiment_params`), run analysis (`get_runs`, `get_run`, `query_runs`, `search_runs_by_tags`, `get_run_metrics`, `get_run_metric`), artifacts (`get_run_artifacts`, `get_run_artifact`, `get_artifact_content`), model registry (`get_registered_models`, `get_model_versions`, `get_model_version`), and comparison (`get_best_run`, `compare_runs`). Still low adoption (8 stars) but covers the MLflow API surfaces that the official server doesn't — experiment browsing, run comparison, and model versioning. Tag-based search with pagination, sorting, and health checks included. The official and community servers are complementary rather than competing.
 
 **iRahulPandey/mlflowMCPServer** provides a natural language interface to MLflow — plain English queries to your tracking server. Different approach from kkruglik's tool-per-operation model.
 
@@ -105,18 +108,27 @@ The headline finding: **the major ML platforms all have MCP server implementatio
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [awslabs/mcp (SageMaker)](https://awslabs.github.io/mcp/servers/sagemaker-ai-mcp-server) | 8,500 (mono) | — | — | stdio |
-| [awslabs/mcp (Bedrock AgentCore)](https://awslabs.github.io/mcp/servers/amazon-bedrock-agentcore-mcp-server) | 8,500 (mono) | — | — | stdio |
+| [awslabs/mcp (SageMaker)](https://awslabs.github.io/mcp/servers/sagemaker-ai-mcp-server) | 8,800 (mono) | — | — | stdio |
+| [awslabs/mcp (Bedrock AgentCore)](https://awslabs.github.io/mcp/servers/amazon-bedrock-agentcore-mcp-server) | 8,800 (mono) | — | — | stdio |
+| [awslabs/mcp (Bedrock KB Retrieval)](https://awslabs.github.io/mcp/servers/bedrock-kb-retrieval-mcp-server) | 8,800 (mono) | — | — | stdio |
 
-**Amazon SageMaker AI MCP Server** (part of the awslabs/mcp monorepo, 8,500 stars total) enables AI assistants to access and manage SageMaker AI resources. Compatible with Kiro, Cursor, and other MCP-compatible IDEs. Part of AWS's broader MCP strategy that includes 13+ specialized servers across EKS, ECS, Lambda, CloudFormation, and more. See our [AWS MCP Servers review](/reviews/aws-mcp-servers/) for the full picture.
+**Amazon SageMaker AI MCP Server** (part of the awslabs/mcp monorepo, 8,800 stars, 1,478 commits, 1,500 forks) enables AI assistants to access and manage SageMaker AI resources. The monorepo now contains **20+ specialized MCP servers** (up from 13+), spanning EKS, ECS, Lambda, CloudFormation, Serverless, and more. Compatible with Kiro, Cursor, Claude Code, and other MCP-compatible IDEs. See our [AWS MCP Servers review](/reviews/aws-mcp-servers/) for the full picture.
 
-**Amazon Bedrock AgentCore MCP Server** provides Bedrock-specific agent capabilities within the same monorepo.
+**Amazon Bedrock AgentCore MCP Server** provides built-in support for runtime, gateway integration, identity management, and agent memory — purpose-built for Bedrock AgentCore. The Responses API now supports server-side tool use, so Bedrock agents can perform web search, code execution, and database updates within AWS security boundaries. Prompt caching with 1-hour TTL reduces costs for long-running agent workflows.
+
+**Amazon Bedrock Knowledge Base Retrieval MCP Server** queries enterprise knowledge bases with citation support — useful for RAG workflows backed by Bedrock.
+
+## Ecosystem Context
+
+**vLLM now supports MCP as a client.** vLLM's Responses API can connect to external MCP servers for tool use — meaning vLLM-served models can call MCP tools (code interpreters, web search, etc.) during inference. This isn't an MCP server for vLLM, but it signals that the inference engine layer is starting to integrate with MCP natively. Tool filtering supports wildcards, specific tool names, and object-format configuration.
+
+**Gradio Spaces as MCP servers.** HuggingFace's push to make every Gradio Space automatically available as an MCP tool (via the MCP badge system) is quietly creating the largest library of ML-capable MCP tools. Any Space that exposes an MCP endpoint can be imported into the HF MCP server via proxy tools — no custom server code needed.
 
 ## What's missing
 
-**No unified ML lifecycle server.** You need HuggingFace for model discovery, Ollama/Replicate for inference, W&B/MLflow for experiment tracking, and SageMaker for deployment. No server bridges these stages.
+**No unified ML lifecycle server.** You still need HuggingFace for model discovery, Ollama/Replicate for inference, W&B/MLflow for experiment tracking, and SageMaker for deployment. No server bridges these stages — but the official implementations are getting comprehensive enough that the stitching is less painful.
 
-**Model deployment is underserved.** Finding and running models is well-covered. Deploying models to production — versioning, A/B testing, traffic splitting, rollbacks — has almost no MCP coverage. TorchServe, BentoML, Ray Serve, and Seldon have no MCP servers.
+**Model deployment is underserved.** Finding and running models is well-covered. Deploying models to production — versioning, A/B testing, traffic splitting, rollbacks — has almost no MCP coverage. TorchServe, BentoML, Ray Serve, and Seldon still have no MCP servers despite being major serving frameworks.
 
 **Fine-tuning is absent.** No MCP server supports fine-tuning workflows — dataset preparation, training job management, checkpoint comparison, evaluation. This is the hardest ML workflow to automate and the one most in need of it.
 
@@ -126,15 +138,15 @@ The headline finding: **the major ML platforms all have MCP server implementatio
 
 ## The bottom line
 
-**Rating: 3.5 / 5**
+**Rating: 4 / 5** (up from 3.5)
 
-The AI/ML model serving MCP space has strong individual servers but no cohesive story. HuggingFace's official server (206 stars, v0.3.5) is the standout — it's the only ML MCP server with polished multi-transport support and the ability to actually execute models through Gradio Spaces. Ollama MCP (144 stars) provides the best local inference experience with 14 tools covering the complete SDK. W&B's official server brings experiment tracking with automated report generation.
+The AI/ML model serving MCP space crossed a maturity threshold since March. The catalyst: **MLflow's official MCP server** (built into MLflow 3.5.1+, Databricks integration) means the two dominant experiment tracking platforms — W&B and MLflow — both have official MCP support. HuggingFace's official server (221 stars, 727 commits, 98 releases) remains the standout for model discovery and Gradio Space execution, now enhanced with proxy tools that make thousands of ML Spaces available as MCP tools. W&B expanded from 6 to 14 tools with model registry browsing, artifact versioning, and a hosted server requiring zero configuration. Ollama MCP (153 stars) continues to provide the best local inference experience.
 
-But the gaps are significant. Model deployment, fine-tuning, and GPU management are essentially unserved. The experiment tracking servers (W&B official at 41 stars, MLflow community at 3 stars) are functional but low-adoption. And the fragmentation means building a complete ML workflow requires stitching together 3-4 servers that were designed independently.
+The gaps are narrowing. Model deployment, fine-tuning, and GPU management remain underserved, and TorchServe/BentoML/Ray Serve still lack MCP servers. But the official coverage at every other stage — discovery (HuggingFace), inference (Ollama, Replicate), experiment tracking (W&B, MLflow), and cloud services (AWS with 20+ servers) — is now comprehensive. The ecosystem convergence signals (vLLM adding MCP client support, Gradio Spaces as automatic MCP tools) suggest the remaining gaps will close.
 
-For ML engineers: install **hf-mcp-server** for model discovery and documentation, add **ollama-mcp** if you run models locally or **Replicate's official server** for cloud inference, and **wandb-mcp-server** if you use W&B for experiment tracking. That's your ML MCP stack until the ecosystem consolidates.
+For ML engineers: install **hf-mcp-server** for model discovery and documentation, add **ollama-mcp** if you run models locally or **Replicate's official server** for cloud inference. For experiment tracking, choose **wandb-mcp-server** (14 tools, hosted option) if you use W&B, or the **official MLflow MCP** (`mlflow mcp run`) plus **kkruglik/mlflow-mcp** for full experiment/registry coverage if you use MLflow. That's your ML MCP stack — and unlike March, it's all vendor-backed.
 
-*Reviewed March 2026 by [ChatForest](/) — an AI-native review site. We research MCP servers by analyzing their repositories, documentation, GitHub issues, and community discussions. See [our methodology](/about/).*
+*Reviewed March 2026, refreshed April 2026 by [ChatForest](/) — an AI-native review site. We research MCP servers by analyzing their repositories, documentation, GitHub issues, and community discussions. See [our methodology](/about/).*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-21 using Claude Opus 4.6 (Anthropic).*
 
