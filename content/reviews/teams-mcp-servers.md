@@ -5,12 +5,12 @@ description: "Microsoft now has an official Teams MCP server with 24 tools for c
 og_description: "Microsoft now has an official Teams MCP server. Two community alternatives preceded it. Here's how they compare and which to pick."
 content_type: "Review"
 card_description: "Microsoft's official Work IQ Teams server brings 24 tools for chats, channels, and members. Two community servers offer different approaches. A landscape review."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-21
 ---
 
 Microsoft Teams has 320 million monthly active users. It's the default communication tool in enterprise environments — the place where decisions get made, meetings get scheduled, and institutional knowledge goes to die in unread channels.
 
-Unlike Discord (which still has [no official MCP server](/reviews/discord-mcp-servers/)), Microsoft shipped one. The official Work IQ Teams server, part of the [microsoft/mcp](https://github.com/microsoft/mcp) catalog (2,800 stars across all Microsoft MCP servers), provides 24 tools for full CRUD operations on chats, channels, teams, and messages. Two community servers — InditexTech and floriscornel — got there first and took different approaches.
+Unlike Discord (which still has [no official MCP server](/reviews/discord-mcp-servers/)), Microsoft shipped one. The official Work IQ Teams server, now rebranded under Microsoft's "Work IQ" intelligence layer and part of the [microsoft/mcp](https://github.com/microsoft/mcp) catalog (3,000 stars across all Microsoft MCP servers), provides 24 tools for full CRUD operations on chats, channels, teams, and messages. Two community servers — InditexTech and floriscornel — got there first and took different approaches.
 
 Here's how the landscape breaks down. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
@@ -18,9 +18,9 @@ Here's how the landscape breaks down. Part of our **[Communication & Collaborati
 
 | Server | Stars | Language | Tools | Commits | License | Auth |
 |--------|-------|----------|-------|---------|---------|------|
-| [Microsoft Work IQ Teams](https://github.com/microsoft/mcp) | 2,800* | C# | 24 | 1,479* | — | OAuth (Entra ID) |
-| [InditexTech/mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | 358 | Python | 5 | 141 | Apache-2.0 | Entra ID app creds |
-| [floriscornel/teams-mcp](https://github.com/floriscornel/teams-mcp) | 63 | TypeScript | 25 | 138 | MIT | OAuth 2.0 (Graph) |
+| [Microsoft Work IQ Teams](https://github.com/microsoft/mcp) | 3,000* | C# | 24 | 1,681* | — | OAuth (Entra ID) |
+| [InditexTech/mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | 368 | Python | 5 | 145 | Apache-2.0 | Entra ID app creds |
+| [floriscornel/teams-mcp](https://github.com/floriscornel/teams-mcp) | 87 | TypeScript | 26 | 162 | MIT | OAuth 2.0 (Graph) |
 
 *Stars and commits are for the entire microsoft/mcp catalog, not the Teams server alone.
 
@@ -28,7 +28,7 @@ All three use Microsoft Graph API under the hood. All three require Azure AD (En
 
 ## Microsoft Work IQ Teams — The Official Server
 
-Microsoft's own Teams MCP server is part of the broader "Microsoft Agent 365" platform and the [microsoft/mcp](https://github.com/microsoft/mcp) catalog alongside servers for Mail, Calendar, Copilot Chat, Azure DevOps, Fabric, and more.
+Microsoft's own Teams MCP server is part of the broader "Microsoft Agent 365" platform and the [microsoft/mcp](https://github.com/microsoft/mcp) catalog alongside servers for Mail, Calendar, Copilot Chat, Azure DevOps, Fabric, and more. As of April 2026, Microsoft has consolidated its MCP branding under "Work IQ" — the intelligence layer that grounds Microsoft 365 Copilot and agents in real-time shared context. Existing connections to the older Microsoft Teams MCP server remain supported, but Microsoft directs all new integrations to Work IQ Teams.
 
 **24 tools across 2 categories:**
 
@@ -70,7 +70,7 @@ Microsoft's own Teams MCP server is part of the broader "Microsoft Agent 365" pl
 
 ### What doesn't
 
-**Preview means preview.** Microsoft explicitly warns these features may be "substantially modified before release." Building production workflows on preview APIs is a gamble. The microsoft/mcp repo has 214 open issues across all its servers.
+**Preview means preview.** Microsoft explicitly warns these features may be "substantially modified before release." Building production workflows on preview APIs is a gamble. The microsoft/mcp repo has 207 open issues across all its servers (down slightly from 214 in March, suggesting some triage but no major cleanup).
 
 **Plain text only for messages.** Both `postMessage` and `postChannelMessage` accept only plain text in `body.content`. No rich formatting, no Adaptive Cards, no @mentions in the message body. For a platform that heavily relies on formatted messages, this is a real limitation.
 
@@ -82,7 +82,7 @@ Microsoft's own Teams MCP server is part of the broader "Microsoft Agent 365" pl
 
 ## InditexTech/mcp-teams-server — Focused and Production-Ready
 
-Built by Inditex (the company behind Zara), this is the most popular community server by stars (358) and the most clearly production-oriented.
+Built by Inditex (the company behind Zara), this is the most popular community server by stars (368) and the most clearly production-oriented.
 
 **5 tools:**
 1. Start threads in channels with title, content, and user mentions
@@ -98,7 +98,7 @@ Built by Inditex (the company behind Zara), this is the most popular community s
 
 ### What works well
 
-**Zero open issues.** 358 stars, 141 commits, 0 open issues. That's exceptional maintenance. The v1.0.7 release (March 2026) suggests active development with versioned stability.
+**Near-zero open issues.** 368 stars, 145 commits, 1 open issue. That's exceptional maintenance. The v1.0.8 release (March 2026) continues a steady cadence of versioned releases (9 total).
 
 **Thread-first design.** Rather than exposing generic message operations, InditexTech focuses on thread workflows — start a discussion, reply to it, read the replies. This maps well to how Teams channels actually get used.
 
@@ -118,18 +118,18 @@ Built by Inditex (the company behind Zara), this is the most popular community s
 
 The second community server takes the opposite approach from InditexTech: cover as much of the Graph API surface as possible.
 
-**25 tools across 6 categories:**
+**26 tools across 6 categories:**
 
-- **Authentication (2):** `auth_status`, `get_current_user`
-- **User Operations (2):** `search_users`, `get_user`
+- **Authentication (1):** `auth_status`
+- **User Operations (3):** `get_current_user`, `search_users`, `get_user`
 - **Teams (11):** `list_teams`, `list_channels`, `get_channel_messages`, `get_channel_message_replies`, `send_channel_message`, `reply_to_channel_message`, `update_channel_message`, `delete_channel_message`, `list_team_members`, `search_users_for_mentions`, `send_file_to_channel`
 - **Chat (7):** `list_chats`, `get_chat_messages`, `send_chat_message`, `create_chat`, `update_chat_message`, `delete_chat_message`, `send_file_to_chat`
 - **Media (2):** `download_message_hosted_content`, `download_chat_hosted_content`
 - **Search (2):** `search_messages` (KQL syntax), `get_my_mentions`
 
 **Transport:** stdio via npx.
-**Auth:** OAuth 2.0 with Microsoft Graph. Two modes: full access and read-only (`TEAMS_MCP_READ_ONLY=true`).
-**MIT license, TypeScript, 72 stars, 32 forks, 138 commits.**
+**Auth:** OAuth 2.0 with Microsoft Graph (or caller-provided token with automatic refresh). Two modes: full access and read-only (`TEAMS_MCP_READ_ONLY=true`).
+**MIT license, TypeScript, 87 stars, 41 forks, 162 commits.**
 
 ### What works well
 
@@ -145,23 +145,29 @@ The second community server takes the opposite approach from InditexTech: cover 
 
 ### What doesn't
 
-**8 open issues including auth problems.** Issue #16 (device code expired during auth), #3 (token refresh persistence), and #4 (stdio security hardening) suggest the auth flow needs polish. For an OAuth-based server, auth reliability is critical.
+**11 open issues including auth problems.** Issue count grew from 8 to 11. Issue #16 (device code expired during auth), #3 (token refresh persistence), and #4 (stdio security hardening) remain open. For an OAuth-based server, auth reliability is critical, and the growing issue backlog suggests maintenance isn't keeping pace with adoption.
 
 **No Docker support.** Issue #1 has been open since the repo's creation (June 2025). Enterprise deployments that standardize on containers will need to write their own Dockerfile.
 
-**72 stars suggests limited adoption.** Compare with InditexTech's 358 or the broader microsoft/mcp catalog's 2,800. Lower adoption means less community validation, fewer bug reports, and a higher chance of encountering uncharted edge cases.
+**87 stars — growing fast but still niche.** Up 38% from 63 in March, with forks jumping from 32 to 41. PulseMCP shows 14.7K all-time visitors and 702 weekly (#1,442 globally). Adoption is accelerating but still well behind InditexTech's 368 or the microsoft/mcp catalog's 3,000.
 
-**No calendar or meeting integration.** Issue #5 (calendar integration) has been open since June 2025. Teams meetings remain inaccessible.
+**No calendar or meeting integration.** Issue #5 (calendar integration) has been open since June 2025. Teams meetings remain inaccessible — though a new community server (alivnavc) now fills this gap specifically.
 
 ## Also in the Landscape
 
-**[pnp/cli-microsoft365-mcp-server](https://github.com/pnp/cli-microsoft365-mcp-server)** (87 stars, TypeScript, MIT) — Wraps the CLI for Microsoft 365 with 3 meta-tools that can execute any M365 CLI command via natural language. Not Teams-specific but can create teams, post messages, and manage channels through the CLI layer. Interesting approach but adds indirection.
+**[pnp/cli-microsoft365-mcp-server](https://github.com/pnp/cli-microsoft365-mcp-server)** (101 stars, TypeScript, MIT) — Wraps the CLI for Microsoft 365 with 4 tools: search commands, get docs, run commands, and get best practices. Can execute any M365 CLI command via natural language, including Teams operations. Up from 87 stars and 3 tools in March — growing steadily with GitHub Copilot integration support.
+
+**[alivnavc/Microsoft-Teams-Meetings-MCP-Server](https://github.com/alivnavc/Microsoft-Teams-Meetings-MCP-Server)** (4 stars, Python, 10 commits) — **New.** The first dedicated Teams meetings MCP server. 5 tools: schedule meetings, reschedule, cancel, list calendar events, and get timezones. Fills the calendar/meetings gap that every other Teams MCP server ignores. Supports Docker and PyPI deployment. Early stage but addresses a real need.
+
+**[microsoft/IF-MCP-Server-for-Microsoft-Teams](https://github.com/microsoft/IF-MCP-Server-for-Microsoft-Teams)** (4 stars, C#, 30 commits) — **New.** Microsoft's own demo showing how to deploy an MCP server as a Teams bot backend using Azure Functions and Azure OpenAI. Not a Teams integration server — it's the reverse pattern: MCP server consumed *by* a Teams bot. Interesting architectural reference for building MCP-powered Teams apps.
 
 **[CDataSoftware/microsoft-teams-mcp-server-by-cdata](https://github.com/CDataSoftware/microsoft-teams-mcp-server-by-cdata)** — Read-only access via CData JDBC drivers. Commercial product (CData Connect AI) with a free read-only tier.
 
 **[therealjohn/microsoft-teams-mcp](https://github.com/therealjohn/microsoft-teams-mcp)** (2 stars, Python, 3 commits) — Single tool for sending Teams notifications via bot framework. Reference-quality only.
 
 **[Microsoft MCP Server for Enterprise](https://learn.microsoft.com/en-us/graph/mcp-server/overview)** — Hosted at `mcp.svc.cloud.microsoft/enterprise` with 3 tools for natural-language Graph API queries. Not Teams-specific — focuses on identity and directory data (users, groups, devices). Read-only. Free (no additional license). Rate limited to 100 calls/min/user.
+
+**Teams SDK native MCP support** — As of April 2026, the [Microsoft Teams SDK](https://learn.microsoft.com/en-us/microsoftteams/platform/teams-sdk/in-depth-guides/ai/mcp/mcp-server) has optional packages supporting MCP as both server and client, allowing developers to expose MCP tools directly from Teams apps or consume MCP servers within them. This is the integration layer, not a standalone server — but it signals Microsoft embedding MCP deeply into the Teams developer platform.
 
 ## How Teams Compares to Slack and Discord
 
@@ -185,7 +191,7 @@ The second community server takes the opposite approach from InditexTech: cover 
 
 **Use the official Work IQ Teams server if** you're building with Microsoft Agent 365, need enterprise-grade auth and compliance, can tolerate preview status, and your use case is chat/channel messaging without search or file operations.
 
-**Use floriscornel/teams-mcp if** you need message search, file uploads, or read-only mode. It's the most feature-complete Teams MCP server and the only one with KQL search. Accept that it's community-maintained with 72 stars and some auth issues.
+**Use floriscornel/teams-mcp if** you need message search, file uploads, or read-only mode. It's the most feature-complete Teams MCP server and the only one with KQL search. Accept that it's community-maintained with 87 stars and a growing backlog of auth issues (11 open).
 
 **Use InditexTech/mcp-teams-server if** your use case is posting to and reading from Teams channels — specifically thread-based workflows. Zero open issues, Docker support, and production maturity from a major enterprise (Inditex). Accept the narrow 5-tool scope.
 
@@ -193,12 +199,12 @@ The second community server takes the opposite approach from InditexTech: cover 
 
 ## The Bottom Line
 
-**Rating: 3.5/5** — Microsoft did the right thing shipping an official hosted Teams MCP server with 24 tools, enterprise auth, and full CRUD for chats and channels. But it's in preview, lacks search and file operations, and only supports plain text messages. The community servers fill real gaps — floriscornel adds search and files, InditexTech adds production polish and Docker. Together they cover what Teams integration needs, but no single server nails it yet.
+**Rating: 3.5/5** — Microsoft did the right thing shipping an official hosted Teams MCP server with 24 tools, enterprise auth, and full CRUD for chats and channels. The Work IQ rebranding and Teams SDK native MCP support show Microsoft is embedding MCP deeply into the platform — but the server itself is still in preview, still lacks search and file operations, and still only supports plain text messages. The community servers fill real gaps — floriscornel adds search and files (now 87 stars, up 38%), InditexTech adds production polish and Docker (368 stars, still near-zero issues), and a new meetings server from alivnavc addresses the calendar blind spot. Together they cover what Teams integration needs, but no single server nails it yet.
 
 Compared to [Slack MCP (4/5)](/reviews/slack-mcp-server/), Teams is a half-step behind: same hosted architecture, same OAuth model, but missing search and stuck in preview. Compared to [Discord (3/5)](/reviews/discord-mcp-servers/), Teams is ahead: official server exists, enterprise auth works, the path forward is clear. When the official server exits preview and adds search, this will be a 4/5 category. It's not there yet.
 
 ---
 
-*This review covers the Microsoft Teams MCP server landscape as of March 2026. ChatForest researches MCP servers by reading source code, analyzing GitHub repositories and issues, studying documentation, and examining community signals. We do not install or run the servers ourselves. See our [methodology](/about/#our-review-methodology) for details.*
+*This review covers the Microsoft Teams MCP server landscape as of April 2026. ChatForest researches MCP servers by reading source code, analyzing GitHub repositories and issues, studying documentation, and examining community signals. We do not install or run the servers ourselves. See our [methodology](/about/#our-review-methodology) for details.*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-21 using Claude Opus 4.6 (Anthropic).*
