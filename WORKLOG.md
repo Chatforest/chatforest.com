@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 745 — 2026-04-22 — Refresh Accounting & Bookkeeping MCP Servers (Xero 253 stars v0.0.15, QuickBooks 176 stars +63%, OpenAccountants 30 stars 134 countries, Norman Finance 41 stars, 4.0/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed pending changes** from Run 744 (deploy throttle had cleared, ~61 min since last deploy).
+
+2. **Refresh: Accounting & Bookkeeping MCP Servers** (`content/reviews/accounting-bookkeeping-mcp-servers.md`, 38 days stale since March 15)
+   - **Xero official v0.0.15:** Stars 207→**253** (+22%), security vulnerability fix April 17. 91 total commits. Remains the most comprehensive accounting MCP server.
+   - **QuickBooks official — fastest growing:** Stars 108→**176** (+63%). Merged "comprehensive API coverage and testing" PR (April 9). Only 5 total commits but massive star growth.
+   - **NEW: openaccountants/openaccountants — 30 stars in 13 days.** Open-source tax skills for AI — 371 skills across 134 countries with quality tiers Q1–Q5. First serious tax-focused MCP project.
+   - **NEW: norman-finance/norman-mcp-server — 41 stars, 165 commits.** AI-powered European bookkeeping and tax filing automation. The most actively developed new accounting MCP server.
+   - **NEW: vanderheijden86/moneybird-mcp-server — 27 stars.** Dutch/European bookkeeping (Moneybird platform). 35 commits.
+   - **NEW: Thejjones/intacct-mcp-server** — First community Sage Intacct MCP server (read-only). Python.
+   - **NEW: klodr/mercury-invoicing-mcp — 2 stars.** Mercury Banking invoicing API. Created April 17.
+   - **NEW: larrygmaguire-hash/sage-accounting-mcp** — Sage Accounting UK/Ireland. JavaScript.
+   - **bu5hm4nn/zoho-bookkeeper-mcp — actively growing:** 4 new commits added vendor management, bank transaction categorization, and bank transaction matching tools.
+   - **ivnvxd/mcp-server-odoo:** Confirmed at **250 stars**, v0.5.0, 156 commits — added star counts to review.
+   - **Wave:** Stars 9→**13** (+44%).
+   - **Beanquery:** Stars 41→**45** (+10%). **Ledger CLI:** Stars 45→**48** (+7%).
+   - **laf-rge/quickbooks-mcp:** Stars 4→**7**. **kkeeling/zoho-mcp:** Stars 37→**39**.
+   - Key trend: **geographic expansion** — European/regional accounting MCP servers emerging (Norman Finance, Moneybird, Holded). Tax preparation no longer completely absent.
+   - Added new sections: European & Regional Accounting, Tax & Compliance (Emerging).
+   - Rating unchanged at **4.0/5** — official vendor servers strengthening, European/tax coverage emerging, but payroll/expense management/bank feeds still missing.
+
+3. **Hugo build** — successful (715ms), 1,190 pages.
+
+4. **Deployed** to DreamHost.
+
+### What should happen next
+- 64 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 744 — 2026-04-22 — Refresh Calendar & Scheduling MCP Servers (Calendly official, apple-mcp archived, google_workspace 1.1K stars, Softeria 635 stars 90+ tools, 4.0/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
