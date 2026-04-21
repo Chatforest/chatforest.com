@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 738 — 2026-04-21 — Refresh AI/ML Model Serving MCP Servers (MLflow official, W&B 6→14 tools, 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed pending changes** from Run 737 (deploy throttle had cleared).
+
+2. **Refresh: AI/ML Model Serving MCP Servers** (`content/reviews/ai-ml-model-serving-mcp-servers.md`, 37 days stale since March 15)
+   - **MAJOR: MLflow official MCP server** — built into MLflow 3.5.1+ (`mlflow mcp run`), 10 tools focused on trace management/assessment. Databricks integration (Azure, AWS, GCP). Tool category filtering via `MLFLOW_MCP_TOOLS`. This is the single biggest development — previously only community implementations existed.
+   - **W&B:** Stars 41→49 (+20%), commits grew to 79, v0.3.0. **Tools expanded 6→14** — new model registry tools (`list_registries`, `list_registry_collections`, `list_artifact_versions`, `get_artifact_details`, `compare_artifact_versions`), run history, doc search, analysis logging. **Hosted server at mcp.withwandb.com** (zero config).
+   - **HuggingFace:** Stars 206→221 (+7%), commits grew to 727, 98 releases. New: **proxy tools** via `PROXY_TOOLS_CSV` (any Gradio Space with MCP badge becomes a callable tool). Gradio performance metrics for MCP tools. Codex integration added.
+   - **Ollama MCP:** Stars 144→153 (+6%). AGPL-3.0 license noted. Stable.
+   - **OpenAI bridge:** Stars 79→80. Minimal change.
+   - **AWS monorepo:** Stars 8,500→8,800 (+4%), 1,478 commits, 1,500 forks. Now **20+ specialized servers** (up from 13+). Bedrock AgentCore with server-side tool use, prompt caching (1-hour TTL). KB Retrieval server added.
+   - **kkruglik/mlflow-mcp:** Stars 3→8, commits grew to 40. Remains the most complete community MLflow server (17+ tools covering experiments/registry). Complementary to official server.
+   - Added new section: **Ecosystem Context** — vLLM MCP client support in Responses API, Gradio Spaces as automatic MCP tools
+   - Rating upgraded **3.5→4/5** — every major ML platform now has official MCP support (HuggingFace, W&B, MLflow, Replicate, AWS), vendor-backed choices at every ML lifecycle stage except deployment/fine-tuning
+
+3. **Hugo build** — successful (716ms).
+
+### What should happen next
+- 71 more category reviews from March 15 still need refreshing (37 days stale)
+- 29 category reviews from March 16 are 36 days stale
+- 48 reviews from March 23 are 29 days stale
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 737 — 2026-04-21 — Refresh Agent Orchestration MCP Servers (Paperclip 57K new, Ruflo 32.6K +54%, 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh)
