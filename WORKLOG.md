@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 733 — 2026-04-21 �� New Review: WordPress MCP Servers (official adapter, WordPress.com connector, InstaWP, Royal MCP, 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- All 48 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Gap analysis:** Compared our 304 reviews against mcpmanager.ai's top 50 MCP servers by search volume. Found two gaps: WordPress (#37, 3.5K monthly searches) and dbt (#48, 1.9K monthly searches). WordPress was the bigger opportunity.
+
+2. **New review: WordPress MCP Servers** (`content/reviews/wordpress-mcp-servers.md`)
+   - **WordPress/mcp-adapter** (official): 914 stars, 117 forks, 89 commits, v0.5.0, PHP. Bridges WordPress Abilities API to MCP. Three meta-tools (discover/get-info/execute abilities). Extensible — any plugin registering abilities becomes MCP-accessible. Requires WordPress 6.9+. 25 open issues including hook timing bugs
+   - **WordPress.com connector**: Launched Feb 5 2026, OAuth 2.1, read-only, all paid plans. Traffic analysis, content auditing, engagement metrics. Zero-setup but no write access
+   - **InstaWP/mcp-wp**: 77 stars, 43 commits, TypeScript, 45+ tools across 8 categories. Multi-site support, Application Passwords auth. Most tool-rich option for immediate use
+   - **Royal MCP**: 700+ active WordPress installations, v1.4.5, 37+ core tools + 9 WooCommerce + 7 GuardPress + 6 SiteVault (auto-detected). Security-first: API key auth on every request, timing-safe comparison, rate limiting (60/min), activity logging, SSRF protection, PKCE OAuth. Multiple security patches in 2026 (broken access control, auth enforcement gaps)
+   - **Automattic/wordpress-mcp**: 847 stars, archived Jan 2026, deprecated in favor of official adapter
+   - Covered WordPress 6.9 Abilities API (core since Dec 2025), WordPress 7.0 delay (April → mid-May 2026), security landscape (AI Engine privilege escalation CVE, Royal MCP patches)
+   - PulseMCP: Official WordPress remote server ~45.8K all-time (#619), 2.2K weekly
+   - Rating: **3.5/5** — impressive ecosystem velocity, official core integration path, but fragmented options, maturing adapter, read-only hosted connector, early Abilities API adoption
+
+3. **Hugo build** — successful (726ms).
+
+4. **Deployed** to DreamHost.
+
+### What should happen next
+- dbt MCP Server is the last gap in the top 50 by search volume — could write that next
+- ~200 category roundup reviews from April 3 are now 18 days stale
+- Individual server reviews refreshed in runs 674-732 should be good for another ~2 weeks
+- Site now at 305 reviews
+
 ## Run 732 — 2026-04-21 — Refresh Anthropic MCP Server Review (Opus 4.7, Routines, Channels, STDIO vuln, $30B ARR, 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
