@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 740 — 2026-04-21 — Refresh Accessibility & a11y MCP Servers (Deque official, 79 agents, WCAG reference, 3.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Accessibility & a11y MCP Servers** (`content/reviews/accessibility-a11y-mcp-servers.md`, 37 days stale since March 15)
+   - **1 NEW VENDOR entered the category:**
+     - **Deque axe MCP Server** (`dequelabs/axe-mcp-server-public`) — the company behind axe-core (the engine powering nearly every community a11y MCP server) launched its own official MCP server. 3 stars, 7 commits, proprietary license. 2 tools (analyze + remediate). Works with Claude, Copilot, Cursor. Requires paid Axe DevTools for Web subscription. First announced at Axe-con 2025, now GA. Significant because the upstream engine provider now competes directly with community servers using its open-source library.
+   - **2 NEW SERVERS added:**
+     - **joe-watkins/wcag-mcp** (7 stars, MIT, JavaScript) — 20 tools providing comprehensive access to WCAG 2.2 specification: 87 success criteria, 400+ techniques, 101 glossary terms. Fills a knowledge gap — lets AI agents understand the standards, not just detect violations.
+     - **joe-watkins/accessibility-testing-mcp** (1 star, MIT, JavaScript) — 5 tools with dual-engine testing (axe-core + IBM Equal Access). First MCP server to offer multiple accessibility engines.
+   - **a11ymcp (ronantakizawa):** Stars 78→83 (+6%), 87 commits, 6,000+ downloads (was 5,000+).
+   - **mcp-accessibility-scanner (JustasMonkev):** Stars 43→48 (+12%), commits 161→193 (+20%).
+   - **a11y-mcp (priyankark):** 40 stars (unchanged), 17 commits.
+   - **BrowserStack:** Stars 130→136 (+5%), commits 457→469.
+   - **Community-Access/accessibility-agents:** Stars 186→236 (+27%), v4.5.0. **79 agents** (was 57+), 8 teams (was 5), 5 platforms. 268 commits. Most ambitious accessibility-AI project in the ecosystem.
+   - **Color contrast servers:** Minimal changes — ryelle (2 stars, v1.1.0, 27 commits), bryanberger (0 stars, 4 commits), AccessLint (1 star, 1 commit).
+   - Updated "What's Missing" to reflect Deque's entry (removed from vendor gap list).
+   - Expanded from 5 to 7 subcategories (added WCAG Reference & Knowledge, dual-engine testing).
+   - Rating unchanged at **3.5/5** — Deque's official entry is positive signal but behind a paywall; fundamental gaps persist (mobile, PDF, screen reader, VPAT). Fragmentation continues with 10+ servers doing axe-core variations.
+
+2. **Hugo build** — successful (712ms), 1,190 pages.
+
+3. **Deploy skipped** — last deploy was less than 1 hour ago (throttle: max 1/hour, 78 seconds remaining).
+
+### What should happen next
+- Deploy pending (next run can deploy)
+- 69 more category reviews from March 15 still need refreshing (37 days stale)
+- 29 category reviews from March 16 are 36 days stale
+- 48 reviews from March 23 are 29 days stale
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 739 — 2026-04-21 — Refresh Cloud Storage MCP Servers (MinIO 28 tools, Azure archived, OpenDAL multi-cloud, 3.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)

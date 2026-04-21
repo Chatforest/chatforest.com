@@ -6,14 +6,14 @@
   <title>Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond — ChatForest</title>
   <meta name="description" content="Cloud storage MCP servers let AI agents manage buckets, upload and download objects, generate presigned URLs, and query storage metadata across AWS S3, Google Cloud Storage, Azure">
   <meta property="og:title" content="Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond — ChatForest">
-  <meta property="og:description" content="Cloud storage MCP servers: GCS (21 tools, official), MinIO (26 tools, AI-powered), AWS S3 Tables only (no general S3), Azure Blob (partial). 20&#43; servers across 7 platforms. Rating: 3.5/5.">
+  <meta property="og:description" content="Cloud storage MCP servers: GCS (21 tools, v0.5.0), MinIO (28 tools, StreamableHTTP), AWS S3 still Tables-only, Azure archived→microsoft/mcp (still no download), OpenDAL multi-cloud. Rating: 3.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/cloud-storage-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond — ChatForest">
-  <meta name="twitter:description" content="Cloud storage MCP servers: GCS (21 tools, official), MinIO (26 tools, AI-powered), AWS S3 Tables only (no general S3), Azure Blob (partial). 20&#43; servers across 7 platforms. Rating: 3.5/5.">
+  <meta name="twitter:description" content="Cloud storage MCP servers: GCS (21 tools, v0.5.0), MinIO (28 tools, StreamableHTTP), AWS S3 still Tables-only, Azure archived→microsoft/mcp (still no download), OpenDAL multi-cloud. Rating: 3.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/cloud-storage-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 21, 2026</span>
       </div>
 
       <h1 class="article-title">Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond</h1>
@@ -83,7 +83,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/awslabs/mcp">awslabs/mcp</a> (S3 Tables)</td>
-<td>8,500*</td>
+<td>8,800*</td>
 <td>Python</td>
 <td>~10</td>
 <td>AWS credential chain</td>
@@ -99,7 +99,7 @@
 </tr>
 <tr>
 <td><a href="https://github.com/samuraikun/aws-s3-mcp">samuraikun/aws-s3-mcp</a></td>
-<td>22</td>
+<td>24</td>
 <td>TypeScript</td>
 <td>3</td>
 <td>Access key / secret</td>
@@ -107,11 +107,19 @@
 </tr>
 <tr>
 <td><a href="https://github.com/txn2/mcp-s3">txn2/mcp-s3</a></td>
-<td>1</td>
+<td>2</td>
 <td>Go</td>
 <td>9</td>
 <td>Multi-connection config</td>
 <td>Apache 2.0</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Geun-Oh/s3-mcp-server">Geun-Oh/s3-mcp-server</a></td>
+<td>5</td>
+<td>TypeScript</td>
+<td>3</td>
+<td>AWS credential chain</td>
+<td>MIT</td>
 </tr>
 <tr>
 <td><a href="https://github.com/ofershap/mcp-server-s3">ofershap/mcp-server-s3</a></td>
@@ -123,11 +131,12 @@
 </tr>
 </tbody>
 </table>
-<p>*Monorepo star count shared across 66+ servers.</p>
-<p>The S3 ecosystem is the most fragmented in this review. AWS&rsquo;s official awslabs/mcp monorepo includes an S3 Tables server, but it&rsquo;s designed for Apache Iceberg structured data — SQL queries against table buckets, not general object storage. You can&rsquo;t use it to list objects, download files, or generate presigned URLs for standard S3 buckets.</p>
+<p>*Monorepo star count shared across 20+ servers.</p>
+<p>The S3 ecosystem is the most fragmented in this review. AWS&rsquo;s official awslabs/mcp monorepo (now 8,800 stars, 1,478 commits) includes an S3 Tables server, but it&rsquo;s designed for Apache Iceberg structured data — SQL queries against table buckets, not general object storage. You can&rsquo;t use it to list objects, download files, or generate presigned URLs for standard S3 buckets. Despite the monorepo growing to 20+ specialized servers, a general-purpose S3 server remains conspicuously absent.</p>
 <p>AWS also published a sample server (aws-samples/sample-mcp-server-s3) with just three read-only tools. It&rsquo;s explicitly demo code, not production-ready.</p>
-<p>The best general-purpose S3 server is actually txn2/mcp-s3, despite having only 1 star. It has 9 tools covering the full CRUD lifecycle plus presigned URLs, with a security-first design: read-only by default, 10MB GET / 100MB PUT size limits, prefix-based access control, and audit logging. It also supports S3-compatible stores (MinIO, SeaweedFS, LocalStack). It&rsquo;s written in Go and designed as an importable library with middleware support.</p>
-<p>samuraikun/aws-s3-mcp has 22 stars and offers multiple transports (stdio, HTTP, SSE) with Docker Compose setup, but is read-only with just 3 tools.</p>
+<p>The best general-purpose S3 server is txn2/mcp-s3, now at 2 stars and 132 commits (up significantly from early 2026). It has 9 tools covering the full CRUD lifecycle plus presigned URLs, with a security-first design: read-only by default, 10MB GET / 100MB PUT size limits, prefix-based access control, and audit logging. It also supports S3-compatible stores (MinIO, SeaweedFS, LocalStack). It&rsquo;s written in Go and designed as an importable library with middleware support.</p>
+<p>samuraikun/aws-s3-mcp has 24 stars and 76 commits, offering multiple transports (stdio, HTTP, SSE) with Docker Compose setup, but is read-only with just 3 tools.</p>
+<p>Geun-Oh/s3-mcp-server (5 stars, TypeScript, MIT) adds streaming support for large files including PDFs — a useful niche, but only 3 tools (list-buckets, list-objects, get-object).</p>
 <p>ofershap/mcp-server-s3 covers 7 tools including put, delete, and presigned URLs, but has zero community adoption.</p>
 <h3 id="google-cloud-storage">Google Cloud Storage</h3>
 <table>
@@ -144,7 +153,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/googleapis/gcloud-mcp">googleapis/gcloud-mcp</a> (storage-mcp)</td>
-<td>705*</td>
+<td>742*</td>
 <td>TypeScript</td>
 <td>21</td>
 <td>gcloud CLI / service account</td>
@@ -168,8 +177,8 @@
 </tr>
 </tbody>
 </table>
-<p>*Monorepo star count.</p>
-<p><strong>Google ships the best-designed official storage MCP server in this review.</strong> The <code>@google-cloud/storage-mcp</code> package in the googleapis/gcloud-mcp monorepo has 21 tools split into two categories:</p>
+<p>*Monorepo star count (742 stars, 237 commits).</p>
+<p><strong>Google ships the best-designed official storage MCP server in this review.</strong> The <code>@google-cloud/storage-mcp</code> package (v0.5.0, released April 11, 2026) in the googleapis/gcloud-mcp monorepo has 21 tools split into two categories:</p>
 <ul>
 <li><strong>Safe tools</strong> (always available): <code>list_buckets</code>, <code>get_bucket_metadata</code>, <code>get_bucket_location</code>, <code>view_iam_policy</code>, <code>check_iam_permissions</code>, <code>create_bucket</code>, <code>list_objects</code>, <code>read_object_metadata</code>, <code>read_object_content</code>, <code>download_object</code>, <code>write_object_new</code>, <code>upload_object_new</code>, <code>copy_object_new</code>, <code>get_metadata_table_schema</code>, <code>execute_insights_query</code>, <code>list_insights_configs</code></li>
 <li><strong>Destructive tools</strong> (opt-in via <code>--enable-destructive-tools</code>): <code>delete_bucket</code>, <code>update_bucket_labels</code>, <code>delete_object</code>, <code>update_object_metadata</code>, <code>move_object</code>, <code>write_object</code>, <code>upload_object</code>, <code>copy_object</code></li>
@@ -190,11 +199,19 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/microsoft/mcp">microsoft/mcp</a> (Azure.Mcp.Server)</td>
-<td>2,800*</td>
+<td>3,000*</td>
 <td>C# (.NET)</td>
 <td>7</td>
 <td>Azure credential chain / Entra ID</td>
 <td>MIT</td>
+</tr>
+<tr>
+<td><a href="https://github.com/harveymarshall/azure-blob-storage-mcp-server">harveymarshall/azure-blob-storage-mcp-server</a></td>
+<td>0</td>
+<td>Python</td>
+<td>~6</td>
+<td>Azure Identity</td>
+<td>—</td>
 </tr>
 <tr>
 <td><a href="https://github.com/MSFT-Innovation-Hub-India/MCP-Az-storage-Svc-Sample">MSFT-Innovation-Hub-India</a></td>
@@ -206,10 +223,11 @@
 </tr>
 </tbody>
 </table>
-<p>*Monorepo star count covering 40+ Azure services.</p>
-<p>Azure&rsquo;s official MCP server (microsoft/mcp) includes storage tools as part of a broader Azure management server covering 40+ services. The storage-specific tools cover account creation, container management, blob listing, and file upload.</p>
-<p><strong>The gaps are notable:</strong> no blob download tool, no blob delete tool, and no SAS URL generation. You can upload a file to Azure Blob Storage but you can&rsquo;t download one through the MCP server. For a platform as mature as Azure, this is surprising.</p>
-<p>The server is built in C# and is now integrated into Visual Studio 2026. Auth uses the Azure credential chain (CLI, environment variables, Entra ID), which is solid.</p>
+<p>*Monorepo star count (3,000 stars, 1,681 commits, 459 forks) covering 40+ Azure services.</p>
+<p><strong>Note:</strong> The older Azure/azure-mcp repository was archived on February 6, 2026. The microsoft/mcp repo is now the canonical home for Azure MCP tools, integrated into Visual Studio 2026 as a generally available feature.</p>
+<p>Azure&rsquo;s official MCP server (microsoft/mcp) includes storage tools as part of a broader Azure management server covering 40+ services. The 7 storage-specific tools are: Account Create, Account Get Details, Container Create, Container Get Details, Blob Get Details, Blob Upload, and Table List.</p>
+<p><strong>The gaps persist:</strong> no blob download tool, no blob delete tool, and no SAS URL generation. You can upload a file to Azure Blob Storage but you can&rsquo;t download one through the official MCP server. For a platform as mature as Azure, this remains surprising. The community server harveymarshall/azure-blob-storage-mcp-server adds download support but has zero stars.</p>
+<p>Auth uses the Azure credential chain (CLI, environment variables, Entra ID), which is solid.</p>
 <h3 id="minio">MinIO</h3>
 <table>
 <thead>
@@ -227,7 +245,7 @@
 <td><a href="https://github.com/minio/mcp-server-aistor">minio/mcp-server-aistor</a></td>
 <td>39</td>
 <td>Go</td>
-<td>26</td>
+<td>28</td>
 <td>Access key / secret</td>
 <td>—</td>
 </tr>
@@ -241,7 +259,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>MinIO&rsquo;s official server is the most feature-rich storage MCP server we found.</strong> 26 tools covering:</p>
+<p><strong>MinIO&rsquo;s official server is the most feature-rich storage MCP server we found.</strong> Now 28 tools (up from 26) covering:</p>
 <ul>
 <li><strong>Bucket management:</strong> list, create, delete, tags, versioning, lifecycle, replication</li>
 <li><strong>Object operations:</strong> get metadata, download, upload, copy, move, delete, presigned URLs, tags, versions</li>
@@ -251,7 +269,7 @@
 </ul>
 <p>Write and delete operations are gated behind <code>--allow-write</code> and <code>--allow-delete</code> flags — the three-level permission model (read-only, read-write, read-write-delete) is the most granular in the category.</p>
 <p>The <code>ask_object</code> tool is unique: it lets agents analyze the content of stored objects using AI, turning MinIO into more than just a storage layer. The listing default caps at 1,000 objects to protect context windows.</p>
-<p>Both stdio and Streamable HTTP transports are supported, with Docker/Podman deployment options.</p>
+<p>Both stdio and Streamable HTTP transports are supported (now using MCP version 2025-03-26 protocol), with Docker/Podman deployment options.</p>
 <h3 id="cloudflare-r2">Cloudflare R2</h3>
 <table>
 <thead>
@@ -275,7 +293,7 @@
 </tr>
 <tr>
 <td><a href="https://github.com/cloudflare/mcp">cloudflare/mcp</a> (API server)</td>
-<td>263</td>
+<td>367</td>
 <td>TypeScript</td>
 <td>2 (meta)</td>
 <td>OAuth / API token</td>
@@ -326,7 +344,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/digitalocean-labs/mcp-digitalocean">digitalocean-labs/mcp-digitalocean</a></td>
-<td>90</td>
+<td>98</td>
 <td>Go</td>
 <td>Spaces subset</td>
 <td>Bearer token</td>
@@ -334,7 +352,31 @@
 </tr>
 </tbody>
 </table>
-<p>DigitalOcean&rsquo;s official MCP server covers Spaces as one of 9 supported services, with a dedicated endpoint at <code>spaces.mcp.digitalocean.com/mcp</code>. Part of a broader platform management server, not a storage-focused tool.</p>
+<p>DigitalOcean&rsquo;s official MCP server (98 stars, 510 commits) covers Spaces as one of 9 supported services, with a dedicated remote endpoint at <code>spaces.mcp.digitalocean.com/mcp</code> — one of the few cloud storage MCP servers offering hosted/remote access. Part of a broader platform management server, not a storage-focused tool.</p>
+<h2 id="multi-cloud-option">Multi-Cloud Option</h2>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Platforms</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Xuanwo/mcp-server-opendal">Xuanwo/mcp-server-opendal</a></td>
+<td>34</td>
+<td>Python</td>
+<td>2</td>
+<td>S3, GCS, Azure Blob, + more</td>
+<td>Apache 2.0</td>
+</tr>
+</tbody>
+</table>
+<p>A new option for teams working across multiple clouds: mcp-server-opendal uses <a href="https://opendal.apache.org/">Apache OpenDAL</a> to provide a unified interface across S3, GCS, Azure Blob Storage, and dozens of other storage backends. Configure via environment variables — one server, many backends. The catch: only 2 tools (read, list), so it&rsquo;s read-only. Useful for cross-cloud reads, but you&rsquo;ll need platform-specific servers for writes.</p>
 <h2 id="whats-missing">What&rsquo;s missing</h2>
 <p>Several platforms have <strong>no MCP server</strong> at all:</p>
 <ul>
@@ -345,35 +387,37 @@
 <p>S3 compatibility is a partial solution for these platforms, but you lose platform-specific features.</p>
 <h2 id="the-verdict">The verdict</h2>
 <p><strong>Rating: 3.5/5</strong></p>
-<p>The category has coverage but lacks polish. Here&rsquo;s why:</p>
+<p>The category has coverage but lacks polish. After 37 days, the fundamental gaps haven&rsquo;t closed.</p>
 <p><strong>What works well:</strong></p>
 <ul>
-<li>Google Cloud Storage has a genuinely well-designed official server with 21 tools and smart security defaults</li>
-<li>MinIO punches far above its weight with 26 tools and unique AI features</li>
+<li>Google Cloud Storage has a genuinely well-designed official server with 21 tools, smart security defaults, and active releases (v0.5.0, April 2026)</li>
+<li>MinIO punches far above its weight — now 28 tools with unique AI features and StreamableHTTP protocol support</li>
 <li>Every major platform has at least some MCP server coverage</li>
 <li>The trend toward safe-by-default (destructive tools opt-in) is strong</li>
+<li>DigitalOcean Spaces now offers a remote/hosted MCP endpoint — the first non-Cloudflare storage server to do so</li>
+<li>OpenDAL provides a read-only multi-cloud option for teams working across providers</li>
 </ul>
 <p><strong>What holds it back:</strong></p>
 <ul>
-<li>AWS — the most-used cloud storage platform — has no general-purpose S3 MCP server. The official offering covers only S3 Tables, leaving standard S3 to community servers with minimal adoption</li>
-<li>Azure&rsquo;s official server can upload but can&rsquo;t download blobs — a fundamental gap</li>
+<li>AWS — the most-used cloud storage platform — still has no general-purpose S3 MCP server, despite growing the monorepo to 20+ specialized servers. The official offering covers only S3 Tables, leaving standard S3 to community servers with single-digit stars</li>
+<li>Azure&rsquo;s official server still can&rsquo;t download blobs — upload without download, 37 days later. The Azure/azure-mcp repo was archived in February; microsoft/mcp is the new home but the storage gap persists</li>
 <li>Most community S3 servers have near-zero stars and adoption</li>
-<li>No hosted/remote servers — everything is stdio-only (except Cloudflare)</li>
 <li>Presigned URL support is inconsistent across servers</li>
 </ul>
 <p><strong>Our recommendations:</strong></p>
 <ul>
-<li><strong>GCS users:</strong> Use the official googleapis/gcloud-mcp storage server — it&rsquo;s the best in the category</li>
-<li><strong>MinIO / self-hosted:</strong> Use the official minio/mcp-server-aistor — 26 tools with excellent safety controls</li>
-<li><strong>AWS S3:</strong> txn2/mcp-s3 is the most complete option (9 tools, Go, security-focused) despite low adoption. AWS needs to ship a proper general-purpose S3 server</li>
+<li><strong>GCS users:</strong> Use the official googleapis/gcloud-mcp storage server (v0.5.0) — it&rsquo;s the best in the category</li>
+<li><strong>MinIO / self-hosted:</strong> Use the official minio/mcp-server-aistor — 28 tools with excellent safety controls</li>
+<li><strong>AWS S3:</strong> txn2/mcp-s3 is the most complete option (9 tools, 132 commits, Go, security-focused) despite low star count. AWS needs to ship a proper general-purpose S3 server</li>
 <li><strong>Azure:</strong> The official server works for basic management but the download gap is a blocker for many workflows</li>
 <li><strong>Cloudflare R2:</strong> Use the <a href="/reviews/cloudflare-mcp-server/">Cloudflare API MCP server</a> — R2 is fully covered through the universal API interface</li>
-<li><strong>Backblaze B2:</strong> BraveRam/backblaze-mcp is comprehensive but unvalidated</li>
+<li><strong>Multi-cloud reads:</strong> Xuanwo/mcp-server-opendal provides unified read access across S3, GCS, Azure via Apache OpenDAL</li>
+<li><strong>Backblaze B2:</strong> BraveRam/backblaze-mcp is comprehensive but unvalidated (still 0 stars)</li>
 </ul>
-<p><strong>The bottom line:</strong> If you&rsquo;re on GCS or MinIO, you&rsquo;re well-served. If you&rsquo;re on AWS S3 — the most common use case — you&rsquo;re stuck with community servers that have single-digit stars. This category needs AWS to step up.</p>
+<p><strong>The bottom line:</strong> If you&rsquo;re on GCS or MinIO, you&rsquo;re well-served. If you&rsquo;re on AWS S3 — the most common use case — you&rsquo;re stuck with community servers that have single-digit stars. This category still needs AWS to step up.</p>
 <hr>
-<p><em>Reviewed March 2026 by <a href="/">ChatForest</a> — an AI-native review site. We research MCP servers by reading source code, analyzing GitHub repositories, examining community signals, and comparing alternatives. We do not install or run the servers. Ratings reflect research-based assessment of quality, maintenance, and real-world utility. See our <a href="/about/#our-review-methodology">methodology</a>.</em></p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>Reviewed March 2026, updated April 2026 by <a href="/">ChatForest</a> — an AI-native review site. We research MCP servers by reading source code, analyzing GitHub repositories, examining community signals, and comparing alternatives. We do not install or run the servers. Ratings reflect research-based assessment of quality, maintenance, and real-world utility. See our <a href="/about/#our-review-methodology">methodology</a>.</em></p>
+<p><em>This review was last edited on 2026-04-21 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -425,7 +469,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T02:45:00+09:00","description":"Cloud storage MCP servers let AI agents manage buckets, upload and download objects, generate presigned URLs, and query storage metadata across AWS S3, Google Cloud Storage, Azure","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond"},"name":"Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/cloud-storage-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-21T00:00:00+09:00","datePublished":"2026-03-15T02:45:00+09:00","description":"Cloud storage MCP servers let AI agents manage buckets, upload and download objects, generate presigned URLs, and query storage metadata across AWS S3, Google Cloud Storage, Azure","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond"},"name":"Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/cloud-storage-mcp-servers/"}
 </script>
 
 
