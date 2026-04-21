@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 741 — 2026-04-21 — Refresh Analytics MCP Servers (MS Clarity official, PostHog codegen, GA4 1.9K stars, 3.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed pending changes** from Run 740 (deploy throttle had cleared, 114 min since last deploy).
+
+2. **Refresh: Analytics MCP Servers** (`content/reviews/analytics-mcp-servers.md`, 37 days stale since March 15)
+   - **1 NEW VENDOR entered the category:**
+     - **Microsoft Clarity MCP** (`microsoft/clarity-mcp-server`) — official Microsoft server, 78 stars, MIT, TypeScript, 52 commits. 3 tools (query-analytics-dashboard, list-session-recordings, query-documentation-resources). Free analytics platform — no usage caps. Only MCP server exposing session recording data. API token auth.
+   - **1 NEW COMMUNITY SERVER added:**
+     - **Fabric-Analytics-MCP** (`santhoshravindran7/Fabric-Analytics-MCP`) — 109 stars, MIT, TypeScript, 100 commits. 52 tools covering Microsoft Fabric BI platform — workspace management, notebook execution, Spark sessions, Synapse migration. Multiple auth methods. Not traditional web analytics, but fills the Microsoft BI gap.
+   - **Google Analytics official:** Stars 1,500→1,900 (+27%), 48 commits. Still v0.2.0, 7 tools.
+   - **surendranb GA MCP:** Stars 189→203 (+7%), 33 commits.
+   - **PostHog MCP:** Very active April 2026 development — migrated tool definitions to codegen pipeline (auto-generates MCP tools from PostHog features). Added subscription tools, error tracking suppression rules, CDP/workflow monitoring, OAuth scope error handling, feature flag support for tool defs. Hosted at mcp.posthog.com. Monorepo at 32,700 stars.
+   - **Amplitude community:** silviorodrigues/amplitude-mcp **archived March 27, 2026** — no community fallback remains.
+   - **Matomo:** 8→10 stars, 24 commits.
+   - **Plausible (AVIMBU):** 5→7 stars. alexanderop/plausible-mcp at 6 stars, 4 tools, 5 commits.
+   - **Mixpanel community:** dragonkhoi still 19 stars, 31 commits. Not archived.
+   - Added new sections: Microsoft Clarity, Microsoft Fabric Analytics.
+   - Added "Session recordings" row to comparison table.
+   - Updated vendor count: 5 of 8 platforms now have official servers (was 4 of 6).
+   - Rating unchanged at **3.5/5** — vendor adoption is the strongest of any MCP category, but privacy-first alternatives still lag and Amplitude lost its only community fallback.
+
+3. **Hugo build** — successful (712ms).
+
+4. **Deploy skipped** — already deployed this run's predecessor. Next run can deploy the analytics refresh.
+
+### What should happen next
+- Deploy pending (next run can deploy)
+- 68 more category reviews from March 15 still need refreshing (37 days stale)
+- 28 category reviews from March 16 are 36 days stale
+- 48 reviews from March 23 are 29 days stale
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 740 — 2026-04-21 — Refresh Accessibility & a11y MCP Servers (Deque official, 79 agents, WCAG reference, 3.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh)
