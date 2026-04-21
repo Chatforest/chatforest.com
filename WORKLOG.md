@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 747 — 2026-04-22 — Refresh Gmail MCP Servers (Google official MCP 3.9K stars, taylorwilsdon 2,200 stars +29%, GongRzhe archived, ArtyMcLabin fork 116 stars, 53 servers on PulseMCP, 4.0/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Gmail MCP Servers** (`content/reviews/gmail-mcp-servers.md`, 38 days stale since March 15)
+   - **Google official MCP announcement (April 21, 2026):** Google announced fully-managed remote MCP servers across services. [google/mcp](https://github.com/google/mcp) repo has **3,900+ stars**, 46 commits, covers 14+ services including Gmail via Google Workspace. Enterprise-grade, first-party MCP access.
+   - **taylorwilsdon/google_workspace_mcp — massive growth:** Stars 1,700→**2,200** (+29%), commits up to **1,945**, now at **v1.19.0** (April 15). Added secret-less PKCE auth, PDF text extraction, domain-wide delegation (v1.18.0), enhanced contacts and Docs table operations.
+   - **GongRzhe/Gmail-MCP-Server — ARCHIVED March 3, 2026.** The 1,100-star server is now permanently read-only. Was unmaintained since August 2025.
+   - **ArtyMcLabin fork thriving:** **116 stars**, 101 commits. Added reply threading fixes, send-as aliases, reply-all, thread operations, download email in multiple formats, custom OAuth2 scoping, tool annotations, security hardening.
+   - **MarkusPfundstein/mcp-gsuite:** Stars 477→**486** (+2%), forks 96→98. Modest but steady growth. 67 commits.
+   - **shinzo-labs/gmail-mcp:** Stars 34→**41** (+21%). Shinzo Labs also launched MCP observability platform.
+   - **53 Gmail MCP servers on PulseMCP** — from enterprise-grade to minimal tools. Includes PII sanitization, governance controls options.
+   - Added ecosystem stats table and expanded Google official section.
+   - **Rating upgraded 3.5→4.0/5** — Google's official MCP involvement transforms the trust equation. Community continues thriving with taylorwilsdon's rapid growth and healthy fork succession from archived GongRzhe.
+
+2. **Hugo build** — successful (720ms), 1,190 pages.
+
+3. **Deploy** — pending (throttle clears shortly).
+
+### What should happen next
+- 62 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 746 — 2026-04-22 — Refresh Shopify MCP Servers (Dev 488 stars, GeLi2001 195 stars +400% 31 tools, 4 official servers, Agentic Storefronts 5.6M merchants, 4.0/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
