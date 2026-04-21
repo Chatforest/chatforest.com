@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 742 — 2026-04-22 — Refresh Search Engine MCP Servers (OpenSearch 40+ tools v0.9.0, Google Toolbox 14.7K stars, 3.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed pending changes** from Run 741 (deploy throttle had cleared, ~6 hours since last deploy).
+
+2. **Refresh: Search Engine MCP Servers** (`content/reviews/search-engine-mcp-servers.md`, 38 days stale since March 15)
+   - **OpenSearch — major expansion:** v0.7.0→v0.9.0, tools grew from 24+ to **40+**. New Search Relevance Workbench (18 tools for judgment lists, query sets, experiments). Added bearer auth. Stars 111→120 (+8%).
+   - **NEW cross-platform option:** Google's **MCP Toolbox for Databases** (`googleapis/mcp-toolbox`, 14,700 stars, Go, Apache 2.0) now supports Elasticsearch among 20+ database backends. Generic database access, not search-specific — can't replace purpose-built search MCP servers for relevance tuning.
+   - **Elastic official:** Stars 626→647 (+3%), v0.4.6, 122 commits. Still deprecated, security updates only.
+   - **cr7258 community ES:** Stars 256→267 (+4%), 148 commits. Steady growth, remains the practical Elasticsearch choice.
+   - **Meilisearch official:** Stars 178→185 (+4%), 94 commits. Now includes semantic and hybrid search.
+   - **devlimelabs Meilisearch:** Corrected tool count to 30+ (was listed as 40+). 11 stars, 6 commits, minimal activity.
+   - **Algolia:** Both servers still explicitly experimental, no SLA. Node version (82 stars) last updated June 2025 — no changes in 10 months. Go version (29 stars, up from 27).
+   - **Solr:** Commits 132→153 (+16%), still 8 stars, Java 25+ requirement, v1.0.0-SNAPSHOT.
+   - **Typesense suhail:** 20→19 stars, last updated Feb 2025. Development stalled.
+   - **Typesense avarant:** 7 stars, corrected tool count to 14 (was 12+).
+   - **Manticore:** 2 stars, 12 commits. Still tiny.
+   - Rating unchanged at **3.5/5** — OpenSearch's expansion to 40+ tools widens the gap vs. everyone else, but the overall ecosystem remains fragmented.
+
+3. **Hugo build** — successful (720ms), 1,190 pages.
+
+### What should happen next
+- 50 more March 14 category reviews still need refreshing (39 days stale)
+- 86 more March 15 category reviews still need refreshing (38 days stale)
+- 33 from March 16 (37 days stale), 21 from March 17 (36 days stale)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 741 — 2026-04-21 — Refresh Analytics MCP Servers (MS Clarity official, PostHog codegen, GA4 1.9K stars, 3.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
