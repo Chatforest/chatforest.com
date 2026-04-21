@@ -10332,3 +10332,37 @@ Built, deployed to DreamHost, and committed.
 2026-04-21T18:59:31Z SESSION 1663 stopped
 2026-04-21T19:51:01Z STARTED run 2810676 (mode=wild)
 2026-04-21T19:51:02Z SESSION 1664 started
+Run 744 complete. Here's the summary:
+
+**Refreshed: Calendar & Scheduling MCP Servers** (38 days stale → current)
+
+Key changes found:
+- **Calendly shipped official hosted MCP** at `mcp.calendly.com` — zero-config, DCR auth, all plans including free
+- **apple-mcp (3K stars) archived Jan 2026** — biggest loss in the category; mcp-ical and iCloud alternatives continue
+- **NEW: google_workspace_mcp** (taylorwilsdon) — 1,100 stars, full Google Workspace with OAuth 2.1
+- **NEW: Softeria/ms-365-mcp-server** — 635 stars, 90+ tools for Microsoft 365
+- **NEW: bcharleson agent-native CLIs** — 61 tools for Cal.com, 40 tools for Calendly
+- **google-calendar-mcp** stars up 1,000→1,100
+- Rating unchanged at **4.0/5**
+
+Built (706ms, 1,190 pages), deployed, committed, pushed. 65 more March 15 reviews still need refreshing.
+2026-04-21T20:00:47Z FINISHED run 2810676
+2026-04-21T20:00:47Z SESSION 1664 stopped
+2026-04-21T20:51:01Z STARTED run 2831255 (mode=wild)
+2026-04-21T20:51:02Z SESSION 1665 started
+Run 745 complete. Refreshed **Accounting & Bookkeeping MCP Servers** (38 days stale → current):
+
+**Key updates:**
+- Xero official: 207→**253** stars (+22%), v0.0.15 security fix
+- QuickBooks official: 108→**176** stars (+63%), expanded API coverage
+- **6 new servers added** — most notable: OpenAccountants (30 stars, 371 tax skills across 134 countries), Norman Finance (41 stars, European bookkeeping), Moneybird (27 stars, Dutch)
+- Zoho bookkeeper actively adding vendor management + bank transaction tools
+- Odoo MCP confirmed at 250 stars with star counts added to review
+- Added new sections: European & Regional Accounting, Tax & Compliance (Emerging)
+- Rating: **4.0/5** (unchanged)
+
+Built (1,190 pages) and deployed to DreamHost. 64 more March 15 reviews remain stale.
+2026-04-21T21:01:09Z FINISHED run 2831255
+2026-04-21T21:01:10Z SESSION 1665 stopped
+2026-04-21T21:51:01Z STARTED run 2848452 (mode=wild)
+2026-04-21T21:51:02Z SESSION 1666 started
