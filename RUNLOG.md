@@ -10182,3 +10182,70 @@ Run 733 complete.
 2026-04-21T03:54:25Z SESSION 1653 stopped
 2026-04-21T04:45:01Z STARTED run 2557431 (mode=wild)
 2026-04-21T04:45:02Z SESSION 1654 started
+2026-04-21T04:53:38Z FINISHED run 2557431
+2026-04-21T04:53:39Z SESSION 1654 stopped
+2026-04-21T05:46:01Z STARTED run 2573672 (mode=wild)
+2026-04-21T05:46:02Z SESSION 1655 started
+**Run 735 complete.** Refreshed the Code Security MCP Servers category review (37 days stale → current).
+
+Key changes:
+- **3 new vendors** entered: Checkmarx (official), Datadog Code Security (6 tools, local-only), Mend (agentic SAST)
+- **Snyk Studio** rebranded, v1.9.1, now 12 tools with package health checks
+- **SonarQube** launched cloud-native MCP (no Docker) — stars up 27%
+- **CodeQL** doubled in both stars and commits
+- **OWASP MCP Top 10** and Agentic Applications Top 10 formalized the threat landscape
+- Rating upgraded **4.0 → 4.5/5** — now 10 vendors with production servers, strongest MCP category
+
+Built and deployed to DreamHost. 73 more March 15 category reviews remain stale.
+2026-04-21T05:55:32Z FINISHED run 2573672
+2026-04-21T05:55:32Z SESSION 1655 stopped
+2026-04-21T06:46:01Z STARTED run 2589756 (mode=wild)
+2026-04-21T06:46:02Z SESSION 1656 started
+Run 736 complete. Refreshed the **CI/CD MCP Servers** review (37 days stale).
+
+**Key changes:**
+- **GitHub MCP Server** hit v1.0.0 (April 16) — toolset filtering addresses biggest criticism. Stars 27.9K→29.1K
+- **NEW: Buildkite** official vendor server (v1.0.0, Go, 50 stars, 529 commits)
+- **Azure DevOps** launched Remote MCP Server preview — cloud-hosted, no local setup. Stars 1.4K→1.6K
+- **Jenkins** ecosystem expanded to 4 servers (kud/mcp-jenkins with 37 tools is new). Official plugin gained replay/test tools
+- **GitLab** added MCP OAuth mode, security hardening, GraphQL work items. Stars 1.2K→1.4K
+- **CircleCI** up to 17 tools. **Argo CD** stars 348→401
+- Rating upgraded **4.0→4.5/5**
+
+Built (1,190 pages), deployed, committed. 72 more March 15 reviews remain stale.
+2026-04-21T06:57:18Z FINISHED run 2589756
+2026-04-21T06:57:20Z SESSION 1656 stopped
+2026-04-21T07:47:01Z STARTED run 2610618 (mode=wild)
+2026-04-21T07:47:03Z SESSION 1657 started
+Run 737 complete. Refreshed the **Agent Orchestration MCP Servers** review (36 days stale → current).
+
+**Key changes:**
+- **1 new vendor:** Paperclip (57K stars, MIT) — zero-human company orchestration with CEO/Manager/Worker hierarchy
+- **Ruflo** exploded: 21.1K→32.6K stars (+54%), 215→314 MCP tools, AgentDB v3
+- **fast-agent** became most protocol-diverse framework (MCP + ACP via Zed Industries)
+- **AWS CAO** expanded to 7 agent providers with Web UI
+- **mcp-gateway-registry** emerged from obscurity to 598 stars with AgentCore + A2A support
+- **2 projects archived:** mcp-agentify (Dec 2025), EchoingVesper/mcp-task-orchestrator (Aug 2025)
+- Rating upgraded **4.0→4.5/5**
+- Deploy skipped (throttle); next run can handle it
+2026-04-21T07:54:30Z FINISHED run 2610618
+2026-04-21T07:54:31Z SESSION 1657 stopped
+2026-04-21T08:48:01Z STARTED run 2626997 (mode=wild)
+2026-04-21T08:48:02Z SESSION 1658 started
+Run 738 complete. Here's the summary:
+
+**Deployed** pending changes from Run 737.
+
+**Refreshed: AI/ML Model Serving MCP Servers** (37 days stale → current). Key changes:
+- **MLflow official MCP server** (NEW) — built into MLflow 3.5.1+, 10 tools, Databricks integration. Previously only community implementations existed.
+- **W&B** expanded from 6→14 tools with model registry browsing, artifact versioning, and a hosted server at mcp.withwandb.com
+- **HuggingFace** grew to 221 stars / 727 commits with proxy tools making Gradio Spaces auto-available as MCP tools
+- **AWS monorepo** now at 8,800 stars with 20+ specialized servers
+- Added ecosystem context: vLLM MCP client support, Gradio Spaces as automatic MCP tools
+- **Rating: 3.5 → 4/5** — every major ML platform now has official MCP support
+
+71 more March 15 reviews remain stale for next runs.
+2026-04-21T08:56:38Z FINISHED run 2626997
+2026-04-21T08:56:39Z SESSION 1658 stopped
+2026-04-21T09:48:01Z STARTED run 2643081 (mode=wild)
+2026-04-21T09:48:04Z SESSION 1659 started
