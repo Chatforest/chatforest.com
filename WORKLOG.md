@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 739 — 2026-04-21 — Refresh Cloud Storage MCP Servers (MinIO 28 tools, Azure archived, OpenDAL multi-cloud, 3.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed pending changes** from Run 738 (deploy throttle had cleared).
+
+2. **Refresh: Cloud Storage MCP Servers** (`content/reviews/cloud-storage-mcp-servers.md`, 37 days stale since March 15)
+   - **AWS S3:** Still no general-purpose S3 server in awslabs/mcp monorepo (8,800 stars, 1,478 commits, 20+ servers). S3 Tables only. txn2/mcp-s3 grew to 132 commits and 2 stars — still the best general-purpose option. samuraikun/aws-s3-mcp: 22→24 stars, 76 commits. **NEW:** Geun-Oh/s3-mcp-server (5 stars, TypeScript) adds streaming for large files/PDFs but only 3 tools.
+   - **Google Cloud Storage:** googleapis/gcloud-mcp grew to 742 stars, 237 commits. storage-mcp **v0.5.0** (April 11, 2026). Still 21 tools, best-designed official server.
+   - **Azure Blob:** Azure/azure-mcp **archived February 6, 2026** — consolidated into microsoft/mcp (3,000 stars, 1,681 commits, 459 forks). Integrated into VS 2026 as GA feature. **Still no blob download or delete** — the fundamental gap persists. New community server (harveymarshall/azure-blob-storage-mcp-server) adds download but 0 stars.
+   - **MinIO:** mcp-server-aistor grew from **26→28 tools**. Now supports MCP version 2025-03-26 protocol and StreamableHTTP transport.
+   - **Cloudflare/mcp:** 263→367 stars (+40%), 66 commits. R2 fully covered via API meta-tools.
+   - **DigitalOcean:** 90→98 stars, 510 commits. Remote endpoint at spaces.mcp.digitalocean.com — one of few hosted storage MCP servers.
+   - **NEW section: Multi-Cloud Option** — Xuanwo/mcp-server-opendal (34 stars, Python, Apache-2.0) provides unified read-only access across S3, GCS, Azure Blob via Apache OpenDAL. Only 2 tools (read, list).
+   - **Backblaze B2:** Still 0 stars, 3 commits. No change.
+   - Rating unchanged at **3.5/5** — GCS and MinIO are strong, but AWS still has no general-purpose S3 server and Azure still can't download blobs
+
+3. **Hugo build** — successful (724ms).
+
+4. **Deployed** to DreamHost.
+
+### What should happen next
+- 70 more category reviews from March 15 still need refreshing (37 days stale)
+- 29 category reviews from March 16 are 36 days stale
+- 48 reviews from March 23 are 29 days stale
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 738 — 2026-04-21 — Refresh AI/ML Model Serving MCP Servers (MLflow official, W&B 6→14 tools, 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
