@@ -24,7 +24,7 @@
 
 2. **Hugo build** — successful (720ms), 1,190 pages.
 
-3. **Deploy** — pending (throttle clears shortly).
+3. **Deployed** to DreamHost.
 
 ### What should happen next
 - 62 more March 15 category reviews still need refreshing (38 days stale)
