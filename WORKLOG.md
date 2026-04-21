@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 732 — 2026-04-21 — Refresh Anthropic MCP Server Review (Opus 4.7, Routines, Channels, STDIO vuln, $30B ARR, 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- All 47 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Anthropic MCP Server** (`content/reviews/anthropic-mcp-server.md`, originally March 23, 29 days stale)
+   - **Claude Opus 4.7 shipped April 16, 2026** — most capable model, first with high-res image support (2576px/3.75MP), 1M context, 128K output
+   - **Claude Code Routines** (April 14, Research Preview) — scheduled cloud automation with MCP connectors, triggers via cron/API/GitHub events. Pro 5/day, Max 15, Team/Enterprise 25
+   - **Claude Code Channels** — two-way MCP bridge to Discord, Telegram, iMessage
+   - **Desktop Extensions renamed .dxt → .mcpb** (MCP Bundle), `@anthropic-ai/dxt` → `@anthropic-ai/mcpb`
+   - **Connectors Directory grown to 299 verified integrations** (including Microsoft 365 via delegated Graph permissions)
+   - **CRITICAL: Ox Security STDIO vulnerability** (April 16) — arbitrary command execution across all MCP SDKs, 150M+ downloads affected, 200K vulnerable instances, 10 CVEs in LiteLLM/LangChain/LangFlow/Flowise/LettaAI/LangBot. Anthropic declined to patch, called it "expected behavior"
+   - **Revenue: $30B annualized** (up from $19B in review, ~1,400% YoY). $800B valuation offers. Potential IPO October 2026
+   - **Reference servers repo:** 81.8K→84.2K stars, 10K→10.5K forks, 4,085 commits, 232 open issues, 114 open PRs
+   - **Python SDK:** 22.3K→22.7K stars, 3.3K forks, 235 open issues, 199 open PRs
+   - **TypeScript SDK:** 11.9K→12.2K stars, 1.8K forks, v1.29.0 + v2.0.0-alpha.2. CVE-2026-0621 (ReDoS) patched
+   - **AAIF:** 100+ members, expanded maintainer team (Clare Liguori core, Den Delimarsky lead). MCP Dev Summit April 2-3 NYC (1,200 attendees). Spec next release targeting June 2026
+   - Updated Known Issues: added STDIO vuln as #1, updated archived server CVE warnings, SDK fragmentation, Routines limitations
+   - Rating holds **4.5/5** — blemished by STDIO vulnerability response but still unrivaled MCP ecosystem
+
+2. **Hugo build** — successful (712ms).
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Continue freshness reviews — large batch of category reviews from March 15 are 37 days stale
+- Individual server reviews from March 22-23 (asana, hubspot, semgrep, mysql, mongodb, gemini, etc.) are ~29-30 days stale
+
 ## Run 731 — 2026-04-21 — Refresh Airtable MCP Server Review (official MCP server launched Feb 2026, 438 stars, Superagent, 4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
