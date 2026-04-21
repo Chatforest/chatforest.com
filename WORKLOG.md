@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 743 — 2026-04-22 — Refresh Geospatial & Mapping MCP Servers (Axion V2.0 AWS, cablate 270 stars 18 tools, TomTom 606 commits, 4.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Deployed pending changes** from Run 742 (deploy throttle had cleared, ~68 min since last deploy).
+
+2. **Refresh: Geospatial & Mapping MCP Servers** (`content/reviews/geospatial-mapping-mcp-servers.md`, 34 days stale since March 19)
+   - **Axion Planetary V2.0 — major release:** Stars nearly doubled 112→**217** (+94%), commits exploded to **935**. Migrated from Google Cloud to **AWS**. Now offers hosted endpoint on Render for zero-install access. Exclusive `axion_sar2optical` converts SAR radar to optical-like images for cloud-free, day/night observation. ~7,458 monthly npm downloads. Fastest-growing server in the category.
+   - **Google Maps cablate — significant expansion:** Stars 193→**270** (+40%), commits 77→**116** (+51%). Tools grew from 13 to **18** (14 atomic + 4 composite). New tools: air quality, static maps, batch geocoding, search-along-route, and local-rank-tracker (geographic grid-based SEO ranking — unique among mapping MCP servers).
+   - **TomTom — heavy development:** Commits 444→**606** (+36%). Now offers **remote HTTP endpoint** for zero-install access. Added debug UI for visual tool testing with interactive map widgets.
+   - **Mapbox main:** Stars 315→333 (+6%), commits 104→121 (+16%). Implements MCP Apps protocol for interactive maps in chat.
+   - **Mapbox DevKit:** Stars 19→**46** (+142%), commits grew to 193. Growing faster than main server.
+   - **QGIS MCP:** Stars 839→**913** (+9%). Still the most popular geospatial MCP server.
+   - **gis-mcp:** Stars 120→**137** (+14%). Added **HTTP/SSE transport** for network deployment and **Docker** containerization. LangChain/OpenAI integration.
+   - **GeoServer MCP:** Stars 63→70 (+11%).
+   - **OSM jagan-shanmugam:** Stars 172→185 (+8%).
+   - **OSM wiseman:** Stars 74→80 (+8%).
+   - **OSM NERVsystems:** Stars 15→20 (+33%).
+   - **NASA ProgramComputer:** Stars 72→83 (+15%), 31 commits.
+   - **MLIT official:** Stars 130→**152** (+17%).
+   - **MLIT geospatial:** Stars 70→**167** (+139%), commits 14→16. Largest percentage growth of any server in this category.
+   - **ArcGIS Pro:** Stars 22→26 (+18%).
+   - **HERE Maps:** Stars 8→6 (dropped).
+   - **Baidu Maps:** Stars 411→421 (+2%), 67 commits unchanged.
+   - **Earthdata datalayer:** Stars 23→25, commits 32.
+   - Key trend: **hosted endpoints becoming standard** — Mapbox, TomTom, and Axion Planetary all now offer zero-install remote access.
+   - Rating unchanged at **4.5/5** — still the richest MCP ecosystem. Hosted endpoints becoming standard, earth observation maturing via Axion V2.0, Google Maps community growing rapidly.
+
+3. **Hugo build** — successful (698ms), 1,190 pages.
+
+4. **Deployed** to DreamHost.
+
+### What should happen next
+- 2 more March 21 reviews still need refreshing (Puppeteer, Stripe — 32 days stale)
+- Then ~186 reviews from April 12-19 need refreshing (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 742 — 2026-04-22 — Refresh Search Engine MCP Servers (OpenSearch 40+ tools v0.9.0, Google Toolbox 14.7K stars, 3.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
