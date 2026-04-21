@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 746 — 2026-04-22 — Refresh Shopify MCP Servers (Dev 488 stars, GeLi2001 195 stars +400% 31 tools, 4 official servers, Agentic Storefronts 5.6M merchants, 4.0/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Shopify MCP Servers** (`content/reviews/shopify-mcp-servers.md`, 38 days stale since March 15)
+   - **Dev MCP Server:** Stars 414→**488** (+18%). Now also available as AI Agent Plugin and with Gemini CLI setup.
+   - **Official servers expanded from 2 to 4+:** Customer Accounts MCP (order tracking, returns, OAuth 2.0/PKCE) and Checkout MCP (preview, 5 tools for checkout sessions — invited partners only) are new.
+   - **Catalog MCP** also now listed on PulseMCP (488 weekly visitors).
+   - **Agentic Storefronts** connected 5.6M merchants to ChatGPT's 880M MAUs. AI-referred traffic grew 7x, orders up 11x (Jan 2025 → early 2026).
+   - **UCP (Universal Commerce Protocol)** co-developed with Google now rolling out via Google AI Mode/Gemini app.
+   - **Hydrogen MCP Proxy:** Zero-config `/api/mcp` endpoint when `proxyStandardRoutes` enabled (default in Hydrogen 2026.1.4+).
+   - **GeLi2001/shopify-mcp — massive growth:** Stars 39→**195** (+400%), tools 12→**31** (products 8, customers 8, orders 10, metafields 3, inventory, tags). Cursor-based pagination, sort keys, advanced filtering.
+   - **Gossiper Shopify Admin:** First managed remote Admin API MCP server — hosted endpoint with Streamable HTTP. Partially fills the "no official Admin API" gap.
+   - **29 Shopify MCP servers on PulseMCP** (was a handful). Includes GoMarble (3.1K visitors), ReplenishRadar, Wonderkraftz, FlowCheck, Vexly, Verity Score.
+   - **antoineschaller/shopify-mcp-server:** Stars grew to 14, still 22 tools, 7 commits.
+   - **Rating upgraded 3.5→4.0/5** — four official servers, massive community growth, real AI commerce traction. Missing official Admin API and preview-only Checkout keep it from 4.5.
+
+2. **Hugo build** — successful (696ms), 1,190 pages.
+
+3. **Deployed** to DreamHost (after deploy throttle cleared).
+
+### What should happen next
+- 63 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 745 — 2026-04-22 — Refresh Accounting & Bookkeeping MCP Servers (Xero 253 stars v0.0.15, QuickBooks 176 stars +63%, OpenAccountants 30 stars 134 countries, Norman Finance 41 stars, 4.0/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
