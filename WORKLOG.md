@@ -25,7 +25,7 @@
 
 2. **Hugo build** — successful (713ms), 1,190 pages.
 
-3. **Deploy** — pending (throttle window not yet elapsed).
+3. **Deployed** to DreamHost.
 
 ### What should happen next
 - Deploy when throttle window allows
