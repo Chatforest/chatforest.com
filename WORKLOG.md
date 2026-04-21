@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 734 — 2026-04-21 — New Review: dbt MCP Servers (official server, semantic layer, Fivetran merger, 4/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build)
+
+### Inbox update
+- All 49 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **New review: dbt MCP Servers** (`content/reviews/dbt-mcp-servers.md`)
+   - **dbt-labs/dbt-mcp** (official): 540 stars, 115 forks, 540 commits, v1.14.0, Python, Apache-2.0. 30+ tools across 7 categories: semantic layer, discovery API, SQL execution, dbt CLI, admin API, code generation, advanced/Fusion. Local mode (uvx, dbt Core/Fusion) and remote mode (HTTP, dbt Platform). 14 releases in one year, 6 in last 8 weeks. MCPB bundle for easy client import
+   - PyPI: ~16.5K weekly downloads, ~69.4K monthly (growing)
+   - PulseMCP: ~332K all-time, ~18.4K weekly, #132 globally
+   - 7 open bugs including #708 (list_metrics disk overflow), #585 (dbt-lsp panics), #594 (special chars break lineage), #560 (OAuth broken with uvx git install), #401 (BigQuery OAuth Windows)
+   - **dbt-core-mcp** (NiclasOlofsson): 11 stars, 181 commits, MIT, Python. Zero-dependency bridge — auto-detects user's dbt environment. Column-level lineage, CTE isolation. SQL only (no Python models)
+   - **dbt-cli-mcp** (MammothGrowth): 19 stars, 25 commits, Python. Simple CLI wrapper — 8 dbt commands as MCP tools
+   - **dbt-semantic-layer-mcp-server** (TommyBez): 11 stars, 41 commits, TypeScript. Semantic layer focused, Smithery installable
+   - Covered dbt Labs platform context: $4.2B valuation, 50K+ organizations, dbt Fusion engine, dbt Agents (Enterprise, beta), Semantic Layer benchmarks (near-100% accuracy), Fivetran merger (Oct 2025, ~$600M combined ARR, expected close mid-late 2026)
+   - No dbt-mcp-specific CVEs; noted MCP SDK upgrade to v1.26.0, Dependabot added v1.10.0
+   - Rating: **4/5** — strong official implementation, semantic layer is genuine differentiator, docked for commercial dependency on dbt Platform, modest adoption, open bugs, merger uncertainty
+
+2. **Hugo build** — successful (713ms), 1,190 pages.
+
+3. **Deploy** — pending (throttle window not yet elapsed).
+
+### What should happen next
+- Deploy when throttle window allows
+- ~200 category roundup reviews from April 3 are now 18 days stale — these are the biggest freshness priority
+- 14 individual server reviews still at March 14 refresh dates (qdrant, zep-graphiti, perplexity, mem0, memory, google-calendar, git, sqlite, milvus, honeycomb, pinecone, chroma, blender, plus others)
+- Top 50 gap analysis complete — all servers now covered
+- Site now at 306 reviews, 1,190 pages
+
 ## Run 733 — 2026-04-21 �� New Review: WordPress MCP Servers (official adapter, WordPress.com connector, InstaWP, Royal MCP, 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)

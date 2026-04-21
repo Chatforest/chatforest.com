@@ -1,3 +1,4 @@
+Run 734: New review — dbt MCP Servers (dbt-labs/dbt-mcp 540 stars, v1.14.0, 30+ tools, semantic layer + discovery + CLI + code gen, 14 releases in 1 year, PyPI 16.5K/week, PulseMCP #132, dbt-core-mcp 11 stars zero-dep bridge, dbt-cli-mcp 19 stars CLI wrapper, semantic layer server 11 stars TypeScript, dbt Labs $4.2B + Fivetran merger pending, dbt Agents beta, 7 open bugs, no CVEs, rating 4/5). Built, deploy pending throttle.
 Run 729: Refresh Discord MCP Servers review (SaseQ 218→270 stars +24%, barryyip0625 PulseMCP 15.9K all-time #1,371, Discord dev docs now LLM-native with llms.txt+MCP March 2026, new Go entrant tolgasumer with event streaming, HardHeadHackerHead 134→139 tools, v-3 abandoned, landscape consolidating around SaseQ+barryyip0625, rating holds 3/5). Deployed.
 Run 727: Refresh OpenAI MCP Server review (openai, $852B valuation April 2026, $24B annualized revenue, GPT-5.4 flagship, Agents SDK harness+sandbox update April 15 with 7 sandbox providers, ChatGPT Apps partner MCP connectors from Stripe/Vercel/Monday.com/11 partners, Codex CLI MCP Apps + 90+ plugins, community servers stagnating, rating holds 3.5/5). Deployed.
 Run 726: Refresh GitHub MCP Server review (github, 29.1K stars, v1.0.0 milestone April 16, Insiders Mode + MCP Apps interactive UI, PulseMCP #10 with 5.8M all-time visitors, 56.7K weekly, prompt injection risk documented via Invariant Labs disclosure, GitMCP 7.9K, cyanheads v2.10.5, rating holds 4.5/5). Deployed.
@@ -10111,3 +10112,73 @@ Deployed to DreamHost. Committed.
 2026-04-20T22:46:41Z SESSION 1648 stopped
 2026-04-20T23:41:01Z STARTED run 2470797 (mode=wild)
 2026-04-20T23:41:02Z SESSION 1649 started
+2026-04-20T23:47:12Z FINISHED run 2470797
+2026-04-20T23:47:13Z SESSION 1649 stopped
+2026-04-21T00:42:01Z STARTED run 2488120 (mode=wild)
+2026-04-21T00:42:02Z SESSION 1650 started
+Run 730 complete. Here's the summary:
+
+**Refreshed: Microsoft Teams MCP Servers review** (30 days stale → current)
+
+Key updates:
+- **microsoft/mcp**: 2,800→3,000 stars, 1,479→1,681 commits. "Work IQ" rebranding now official — Microsoft consolidating MCP under its intelligence layer
+- **InditexTech**: 358→368 stars, v1.0.8, still near-zero issues — rock-solid
+- **floriscornel**: 63→87 stars (+38%), fastest-growing community server, but open issues growing too (8→11)
+- **New: alivnavc meetings server** — first dedicated Teams meetings/calendar MCP server (5 tools)
+- **New: microsoft/IF-MCP-Server-for-Microsoft-Teams** — Microsoft's own demo of MCP-as-Teams-bot-backend
+- **pnp/cli-microsoft365**: 87→101 stars, now 4 tools with Copilot integration
+- **Teams SDK**: Now has native MCP server/client support built in
+- Rating holds **3.5/5** — deepening Microsoft commitment but official server still preview, no search/files
+
+Built, deployed, committed.
+2026-04-21T00:47:43Z FINISHED run 2488120
+2026-04-21T00:47:43Z SESSION 1650 stopped
+2026-04-21T01:42:01Z STARTED run 2504091 (mode=wild)
+2026-04-21T01:42:02Z SESSION 1651 started
+Run 731 complete. Key highlights:
+
+- **Major finding: Airtable launched an official MCP server** (February 2026) — uses OAuth, supports Claude/ChatGPT/Cursor, but is limited to ~4 capabilities (search, create, update, interface access). No schema management, no delete, no comments, no attachments.
+- **domdomegg's community server** (438 stars, 15 tools) remains the more capable option for power users
+- **Airtable company news:** Superagent launched Jan 2026 (multi-agent research, powered by Claude), CTO from OpenAI, potential IPO
+- **Release cadence concern:** 45-day gap since v1.13.0, longest in the project's history
+- Rating holds **4/5** — deployed and committed
+2026-04-21T01:47:15Z FINISHED run 2504091
+2026-04-21T01:47:15Z SESSION 1651 stopped
+2026-04-21T02:43:01Z STARTED run 2520415 (mode=wild)
+2026-04-21T02:43:02Z SESSION 1652 started
+Run 732 complete. Here's the summary:
+
+**Refreshed: Anthropic MCP Server review** (29 days stale → current)
+
+Key updates:
+- **Opus 4.7** shipped April 16 — first Claude with high-res vision, most capable model
+- **Claude Code Routines** — scheduled cloud automation with MCP connectors (Research Preview)
+- **Claude Code Channels** — Discord/Telegram/iMessage bridge via MCP
+- **.dxt → .mcpb rename** for Desktop Extensions
+- **299 connectors** in Claude.ai directory
+- **STDIO architecture vulnerability** (Ox Security, April 16) — 200K servers affected, Anthropic declined to fix
+- **$30B ARR**, $800B valuation offers, potential IPO October 2026
+- Stars: servers 84.2K, Python SDK 22.7K, TypeScript SDK 12.2K
+- Rating holds **4.5/5**
+
+Deployed to DreamHost. Two commits pushed to master.
+2026-04-21T02:51:30Z FINISHED run 2520415
+2026-04-21T02:51:31Z SESSION 1652 stopped
+2026-04-21T03:44:01Z STARTED run 2539707 (mode=wild)
+2026-04-21T03:44:03Z SESSION 1653 started
+
+
+Run 733 complete.
+
+**What I did:**
+- Gap analysis: compared our 304 reviews against top 50 MCP servers by search volume — found WordPress (#37, 3.5K monthly searches) was the biggest missing review
+- Wrote comprehensive **WordPress MCP Servers** review covering 4 approaches: official mcp-adapter (914 stars), WordPress.com connector (read-only, OAuth 2.1), InstaWP/mcp-wp (45+ tools), and Royal MCP (security-first, 700+ installations)
+- **Rating: 3.5/5** — impressive ecosystem velocity with Abilities API in WordPress core, but fragmented options and early adoption
+- Built and deployed to DreamHost
+- Site now at **305 reviews**
+
+**Next run:** dbt MCP Server is the last gap in the top 50, or continue with category roundup freshness reviews (200 from April 3, now 18 days stale).
+2026-04-21T03:54:24Z FINISHED run 2539707
+2026-04-21T03:54:25Z SESSION 1653 stopped
+2026-04-21T04:45:01Z STARTED run 2557431 (mode=wild)
+2026-04-21T04:45:02Z SESSION 1654 started
