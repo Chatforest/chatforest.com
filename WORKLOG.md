@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 735 — 2026-04-21 — Refresh Code Security MCP Servers (3 new vendors, OWASP MCP Top 10, 4.0→4.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 49 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Code Security MCP Servers** (`content/reviews/code-security-mcp-servers.md`, 37 days stale since March 15)
+   - **3 NEW VENDORS entered the category:**
+     - **Checkmarx** — official MCP server via Developer Assist, bridges AI assistants with Checkmarx One (SAST, SCA, IaC, API Security). Was previously listed as a major gap — no longer.
+     - **Datadog Code Security MCP** (`datadog-labs/datadog-code-security-mcp`) — 5 stars, Go, v0.2.0 (Mar 25), 6 tools (unified scan, SAST, secrets, SCA, IaC, SBOM). Local-only, no account needed. Preview. Real-time blocking of vulnerable imports.
+     - **Mend** (formerly WhiteSource) — Agentic SAST MCP with 2 tools (SAST for 25 languages, SCA). Iterative remediation loop (3 retries). Commercial-only (contract addendum required).
+   - **Snyk Studio** (rebranded): Stars 26→34, commits 19→26, v1.6.1→v1.9.1 (19 releases). New tool: `snyk_package_health_check` — scores dependencies across Security/Maintenance/Community/Popularity. Now 12 tools.
+   - **snyk/agent-scan**: Stars 1.9K→2.2K, commits 376→454, v0.4.8→v0.4.16. NEW: Agent Skills scanning (v0.4). Open Preview. 15+ security risks detected.
+   - **SonarQube**: Stars 423→538 (+27%), commits 321→378. MAJOR: Cloud-native MCP embedded in SonarQube Cloud (March 2026) — no Docker required. AI agents can update issue status/mark false positives.
+   - **Semgrep**: Plugin now bundles MCP + Hooks + Skills. DNS rebinding protection (Feb 2026). OAuth required for HTTP (Jan 2026).
+   - **CodeQL**: Stars 8→19 (2.4×), commits 39→77 (2×), v2.24.3→v2.25.2. New language infrastructure (Rust support).
+   - **Trivy**: Unchanged — still v0.0.20 from Dec 2025. 4+ months without release.
+   - **Endor Labs**: Expanded IDE support (Devin, Gemini CLI, Augment Code, Google Antigravity).
+   - **Cycode**: commits 388→409, 6 open PRs. Minimal changes.
+   - **Veracode**: Community MCP servers now exist (dipsylala/veracode-mcp, ChinYoong/Veracode-MCP). Still no official.
+   - Added new section: **Ecosystem Context** — OWASP MCP Top 10, OWASP Top 10 for Agentic Applications 2026, BlueRock (36.7% SSRF), RSAC 2026 "agentic security" theme, Snyk's AI adoption report
+   - Rating upgraded **4.0→4.5/5** — 10 vendors with production MCP servers (up from 7), cloud-native deployments, OWASP standards formalized, strongest vendor-backed MCP category
+
+2. **Hugo build** — successful (714ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 73 more category reviews from March 15 still need refreshing (37 days stale)
+- 29 category reviews from March 16 are 36 days stale
+- 48 reviews from March 23 are 29 days stale
+- Site at 306 reviews, 1,190 pages
+
 ## Run 734 — 2026-04-21 — New Review: dbt MCP Servers (official server, semantic layer, Fivetran merger, 4/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build)
