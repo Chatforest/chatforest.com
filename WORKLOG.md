@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 737 — 2026-04-21 — Refresh Agent Orchestration MCP Servers (Paperclip 57K new, Ruflo 32.6K +54%, 4.0→4.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Agent Orchestration MCP Servers** (`content/reviews/agent-orchestration-mcp-servers.md`, 36 days stale since March 16)
+   - **1 NEW VENDOR entered the category:**
+     - **Paperclip** (`paperclipai/paperclip`) — 57K stars, TypeScript, MIT, 2,283 commits. Zero-human company orchestration: CEO/Manager/Worker agent hierarchy with org charts, budgets, governance, and goal alignment. Launched March 4, 2026 — fastest-growing project in agent orchestration. Separate community MCP server exists (`wizarck/paperclip-mcp`).
+   - **Ruflo:** Stars 21.1K→32.6K (+54%), commits 5,800→6,067, v3.5.0→v3.5.80 (April 11). MCP tools 215→314, 16 agent roles + custom types, AgentDB v3 with 8 new controllers. 3-tier model routing (75% API cost savings). Codebase shifted to TypeScript (64.8%). 1,470 total releases.
+   - **mcp-agent:** Stars 8.1K→8.3K, 767 commits. New: cloud deployment beta via mcp-c managed runtime. MCP elicitation support added.
+   - **fast-agent:** Stars 3.7K→3.8K, commits grew significantly to 1,799. New: Agent Skills, MCP-UI, OpenAI Apps SDK (Skybridge), ACP support via Zed Industries — most protocol-diverse framework (MCP + ACP).
+   - **Agent-MCP:** 1.2K stars stable, 300 commits. License clarified as AGPL-3.0.
+   - **AWS CAO:** Stars now 487, 103 commits. Now supports 7 agent providers (Kiro CLI, Claude Code, Codex, Gemini CLI, Kimi CLI, GitHub Copilot CLI, Amazon Q). Added Web UI dashboard, scheduled flows, 3 orchestration patterns.
+   - **mcp-gateway-registry:** Grew from minimal visibility to 598 stars, 1,032 commits. Added AgentCore auto-registration (AWS Bedrock), A2A protocol support. Rebrand to "AI Gateway & Registry" planned. MCP OAuth 2.1 spec in progress.
+   - **task-orchestrator (jpicklyk):** 170→180 stars, 503 commits. Added YAML workflow schema definitions.
+   - **A2A-MCP-Server:** 145→147 stars, still archived.
+   - **ultimate_mcp_server:** 143→146 stars, 155 commits.
+   - **ARCHIVED projects noted:** mcp-agentify (Dec 2025), EchoingVesper/mcp-task-orchestrator (Aug 2025, v2.0.0)
+   - Added new section: **Multi-Agent Swarm & Company Orchestration** (was just "Swarm Orchestration")
+   - Noted Microsoft Agent Framework 1.0 as enterprise competitor with MCP support
+   - Rating upgraded **4.0→4.5/5** — two projects over 30K stars, three production-grade frameworks, enterprise gateway with AgentCore + A2A, 7-provider AWS orchestration, protocol convergence (MCP + A2A + ACP)
+
+2. **Hugo build** — successful (713ms), 1,190 pages.
+
+3. **Deploy skipped** — last deploy was less than 1 hour ago (throttle: max 1/hour).
+
+### What should happen next
+- Deploy pending (next run can deploy)
+- 32 more category reviews from March 16 still need refreshing (36 days stale)
+- 48 reviews from March 23 are 29 days stale
+- Site at 306 reviews, 1,190 pages
+
 ## Run 736 — 2026-04-21 — Refresh CI/CD MCP Servers (GitHub v1.0.0, Buildkite new vendor, Azure Remote MCP, 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
