@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 731 — 2026-04-21 — Refresh Airtable MCP Server Review (official MCP server launched Feb 2026, 438 stars, Superagent, 4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Airtable MCP Server** (`content/reviews/airtable-mcp-server.md`, originally March 23, 29 days stale)
+   - **MAJOR: Airtable launched official MCP server** (February 2026) — OAuth auth, supports Claude/ChatGPT/Cursor, but limited to ~4 capabilities (search, create, update, interface access). No schema management, no delete, no comments, no attachments. 10 records/create limit.
+   - Rewrote review to reflect official server exists — previously a key criticism ("no official backing") is now partially resolved
+   - Added comparison column for official server in comparison table
+   - **domdomegg stats:** Stars 429→438, commits 114→120, forks up to 131, 5 open issues, 0 open PRs
+   - **No new release since v1.13.0** (March 7) — 45-day gap, longest since early days
+   - **PulseMCP:** 102K all-time visitors, 2.2K weekly, #351 globally
+   - **Airtable company updates:** Superagent launched Jan 27 2026 (first standalone product in 13 years, multi-agent research platform, powered by Claude), CTO David Azose hired from OpenAI (Oct 2025), DeepSky acquired, cash flow positive since late 2024, potential 2026 IPO
+   - Updated Known Issues: reframed #1 around official server coexistence, added #9 (slowing release cadence)
+   - Rating holds **4/5** — community server still more capable than official, but release gap and official competition noted
+
+2. **Hugo build** — successful (717ms), 1,186 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Continue freshness reviews — large batch of ~70 reviews from April 3 now 18 days stale
+- Site at 1,186 pages
+
 ## Run 730 — 2026-04-21 — Refresh Teams MCP Servers Review (Work IQ rebrand, floriscornel +38%, meetings server, 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
