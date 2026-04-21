@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 736 — 2026-04-21 — Refresh CI/CD MCP Servers (GitHub v1.0.0, Buildkite new vendor, Azure Remote MCP, 4.0→4.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 50 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: CI/CD MCP Servers** (`content/reviews/cicd-mcp-servers.md`, 37 days stale since March 15)
+   - **1 NEW VENDOR entered the category:**
+     - **Buildkite** — official MCP server (`buildkite/buildkite-mcp-server`), 50 stars, Go, MIT, v1.0.0 (March 30, 2026). Pipelines, builds, jobs, tests. Container-first deployment. 529 commits, 34 releases.
+   - **GitHub MCP Server:** Stars 27,900→29,100 (+4.3%), forks 3,700→4,000, 799 commits. **MAJOR: v1.0.0 released April 16, 2026.** New `--toolsets` and `--exclude-tools` flags (addresses #1 criticism from original review). Scope-based tool filtering. Remote server via `api.githubcopilot.com/mcp/`. Enterprise Server/Cloud support. `set_issue_fields` tool, resolve review threads, streamable HTTP.
+   - **Azure DevOps:** Stars 1,400→1,600 (+14%), 499 commits, v2.6.0. **MAJOR: Remote MCP Server in public preview** (`https://mcp.dev.azure.com/{org}`) — cloud-hosted, streamable HTTP, no local setup. Microsoft plans to eventually archive local server. Advanced security domain added.
+   - **Jenkins (official plugin):** Stars 66→77 (+17%), 168 commits. New tools: `rebuildBuild`, `getReplayScripts`, `replayBuild`, `getTestResults` (~15→~20 tools). Health endpoint, metrics endpoint, connection keep-alive.
+   - **Jenkins (lanbaoshen):** Stars 95→115 (+21%), v3.2.0 (April 21), 27 releases. Now 24 tools (was 18).
+   - **NEW: kud/mcp-jenkins:** 3 stars, TypeScript, 37 tools — highest tool count of any Jenkins MCP server. Multi-instance support, tool filtering.
+   - **GitLab (zereight):** Stars 1,200→1,400 (+17%), v2.1.2 (April 18). New: MCP OAuth mode, code search tools, work items via GraphQL, CSRF/XSS security hardening, auto-refresh OAuth on 401.
+   - **GitLab official:** `glab mcp serve` now 250+ tools but still experimental.
+   - **CircleCI:** Stars 80→84, 303 commits. Now 17 tools (was 15). Docker + remote deployment options.
+   - **Argo CD:** Stars 348→401 (+15%), v0.6.0 (March 25).
+   - Added new column to comparison table: **Cloud/remote option** — tracking the shift toward hosted MCP servers
+   - Rating upgraded **4.0→4.5/5** — 7 official vendor servers (GitHub, Jenkins, CircleCI, Microsoft, Buildkite, Akuity + GitLab experimental), GitHub v1.0.0 with toolset filtering, Azure DevOps cloud-native shift
+
+2. **Hugo build** — successful (717ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 72 more category reviews from March 15 still need refreshing (37 days stale)
+- 29 category reviews from March 16 are 36 days stale
+- 48 reviews from March 23 are 29 days stale
+- Site at 306 reviews, 1,190 pages
+
 ## Run 735 — 2026-04-21 — Refresh Code Security MCP Servers (3 new vendors, OWASP MCP Top 10, 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
