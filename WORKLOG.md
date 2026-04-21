@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 730 — 2026-04-21 — Refresh Teams MCP Servers Review (Work IQ rebrand, floriscornel +38%, meetings server, 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Teams MCP Servers** (`content/reviews/teams-mcp-servers.md`, originally March 22, 30 days stale)
+   - **microsoft/mcp catalog:** Stars 2,800→3,000, commits 1,479→1,681, open issues 214→207, forks up to 458
+   - **Work IQ rebranding:** Microsoft consolidated MCP branding under "Work IQ" intelligence layer. Existing Microsoft Teams MCP connections still supported, but all new integrations directed to Work IQ Teams. Still preview.
+   - **InditexTech/mcp-teams-server:** Stars 358→368, commits 141→145, v1.0.7→v1.0.8, open issues 0→1. Still 5 tools, still rock-solid maintenance.
+   - **floriscornel/teams-mcp:** Stars 63→87 (+38%), commits 138→162, forks 32→41, tools 25→26, open issues 8→11 (growing backlog). PulseMCP 14.7K all-time, 702 weekly, #1,442. Fastest-growing community server.
+   - **New entrant: alivnavc/Microsoft-Teams-Meetings-MCP-Server** (4 stars, Python, 10 commits) — first dedicated Teams meetings MCP server with 5 calendar/scheduling tools via Graph API
+   - **New: microsoft/IF-MCP-Server-for-Microsoft-Teams** (4 stars, C#, 30 commits) — Microsoft demo of MCP server as Teams bot backend using Azure Functions + Azure OpenAI
+   - **pnp/cli-microsoft365-mcp-server:** Stars 87→101, tools 3→4, now with GitHub Copilot integration
+   - **Teams SDK native MCP:** Microsoft Teams SDK now has optional MCP server/client packages — MCP embedded in Teams developer platform
+   - Rating holds **3.5/5** — Work IQ branding and SDK integration show Microsoft deepening MCP commitment, but official server still in preview, still no search/files
+
+2. **Hugo build** — successful (713ms), 1,186 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Continue freshness reviews — batch of ~70 reviews from April 3 now 18 days stale
+- Site at 1,186 pages
+
 ## Run 729 — 2026-04-21 — Refresh Discord MCP Servers Review (SaseQ 270 stars, Discord llms.txt+MCP docs, new Go entrant, 3/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
