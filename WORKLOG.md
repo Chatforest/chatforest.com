@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 752 — 2026-04-22 — Refresh Customer Support & Helpdesk MCP Servers (ServiceNow native MCP Server Console in Zurich, Kustomer official MCP Enterprise/Ultimate, Zoho Desk via Zoho MCP platform, Zendesk Forethought acquired + AI plans unified + still no official server, mattcoatsworth 40+ tools, Help Scout v1.7.0 131 commits, Zammad 610 commits, 4.0/5 up from 3.5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 57 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Customer Support & Helpdesk MCP Servers** (`content/reviews/customer-support-helpdesk-mcp-servers.md`, 38 days stale since March 15)
+   - **ServiceNow native MCP — biggest enterprise shift:** Zurich release ships MCP Server Console. ServiceNow is now both MCP consumer and provider. OAuth 2.1 PKCE, automatic tool discovery, AI Control Tower governance, built-in observability, consumption metering, enterprise audit trail. One server per instance, every MCP client connects. Custom scripts/flows must wrap in Skills for now (direct support on roadmap).
+   - **Kustomer official MCP — NEW:** Launched October 2025, Enterprise/Ultimate plans. Read-only access to conversations, customers, companies. Sentiment analysis, CSAT trends, intelligent ticket discovery, automated summarization, quality monitoring. Write capabilities planned.
+   - **Zoho Desk via Zoho MCP — gap filled:** zoho.com/mcp covers 14 products including Desk. Ticket tracking, customer conversations, workflow automation, support insights. OAuth, model-agnostic. Previously listed as "major player with no MCP server."
+   - **Zendesk — still no official server:** Completed Forethought acquisition March 26, 2026. Unified AI agent plans (April 27 rollout, Essential/Advanced distinction removed). MCP client still Early Access. Basic auth deprecated March 31 for new connections. Community thriving: reminia 72→84 stars, NEW mattcoatsworth server with 40+ tools spanning Support/Talk/Chat/Guide.
+   - **HubSpot MCP went GA April 13, 2026:** Full read/write, OAuth 2.1 PKCE. Upgraded from public beta.
+   - **Freshdesk:** Stars 46→57 (+24%), 63 commits, 6 open issues.
+   - **ServiceNow community:** michaelbuckner 37→41 stars.
+   - **Help Scout:** Stars 32→37, commits up to 131, v1.7.0 (March 25) "Customer & Organization Intelligence." NEW BusyBee3333 server with 100+ tools. NEW Aaron Bockover server (March 26).
+   - **Zammad:** Stars 22→26, commits exploded to 610. Docker semantic versioning, HTTP transport for cloud, expanded attachment handling.
+   - **Intercom:** Clarified as 13 tools, read-only, US-only. Fin MCP connectors added. StackOne offers 123 actions. PulseMCP ~12.7K all-time.
+   - **Pylon:** JustinBeckwith v1.1.2 (April 2), 37 commits. NEW Pylon Replies server (bgrgndzz, March 18). Official server OAuth-only limitation noted.
+   - **Crisp:** 8→9 stars, 4 commits, stable.
+   - Platforms with official/native MCP servers grew from 3 to 6+ (Intercom, Plain, Pylon, ServiceNow native, Kustomer, Zoho Desk, HubSpot GA).
+   - **Rating upgraded 3.5→4.0/5** — ServiceNow native MCP is a watershed, Kustomer and Zoho Desk close the official server gap, community servers thriving. Zendesk gap and read-only limitations on official servers prevent higher rating.
+
+2. **Hugo build** — successful (723ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 57 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 751 — 2026-04-22 — Refresh Aerospace & Defense MCP Servers (NASA official earthdata-mcp 8 stars first official NASA MCP, Flightradar24 official 16 stars 15 tools, Axion V2.0 218 stars +15% AWS rebuild SAR-to-optical AI, SkyFi satellite imagery, STK 26 stars, MAVLinkMCP 16 stars academic paper, 3.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
