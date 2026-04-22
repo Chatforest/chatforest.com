@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 766 — 2026-04-23 — Refresh Best Documentation MCP Servers Guide (Context7 50.1K→53.5K stars v0.3.13 65% token reduction server-side reranking, Docfork 438→463 hybrid semantic+BM25 dgrep CLI, Nia 48→66 Document Agent Data Extraction Tracer, Docs MCP 1.2K→1.3K v2.2.1 Grounded Docs 90+ languages, MCP supply chain crisis OX Security RCE 200K servers Anthropic declined fix, llms.txt no measurable adoption)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best Documentation MCP Servers Guide** (`content/guides/best-documentation-mcp-servers.md`, 32 days stale since March 22)
+   - **Context7:** 50,100→53,500 stars, v0.3.13 (April 14), 65% token reduction (~9.7K→~3.3K avg) via server-side reranking models, 38% latency reduction, Skills plugin system, 65 releases total
+   - **GitMCP:** 7,800→8,000 stars, embedded chat interface for direct repo doc interaction
+   - **Docs MCP:** 1,200→1,300 stars, v2.2.1 (March 30), "Grounded Docs" branding, expanded to 90+ source code languages and Jupyter/EPUB/RTF/OpenDocument support, Ollama embeddings for fully local semantic search
+   - **Docfork:** 438→463 stars, dgrep v0.2.1 (April 19), new hybrid search combining semantic and BM25 with reciprocal rank fusion, `dgrep` CLI tool
+   - **Nia:** 48→66 stars, new Document Agent (autonomous AI in indexed PDFs), Data Extraction (structured data from PDFs), Tracer (cross-repo code search without indexing)
+   - **Ref.Tools:** 1,000→1,100 stars
+   - **rtfmbro:** 80→84 stars, active commits through April 22, Rust/Go/Java/Kotlin/C#/.NET/Ruby on roadmap
+   - **MCP Supply Chain Crisis documented:** OX Security disclosed systemic RCE flaw in MCP architecture — stdio transport enables arbitrary command execution, 200K servers vulnerable, 150M+ downloads affected, Anthropic declined to fix calling it "expected behavior." CVEs: CVE-2026-30615, CVE-2026-30623, CVE-2026-22252, CVE-2026-22688, CVE-2025-54136. Full security risk analysis added for each documentation server
+   - **llms.txt reality check:** Analysis of 94K+ URLs shows no measurable citation uplift, no major AI company uses it, standard remains a proposal not ratified spec
+   - **"What Changed" table added** showing March→April deltas
+   - **Feature comparison updated** — Context7 now "High" token efficiency (3.3K avg), Docfork now "Hybrid" semantic search
+   - **Decision flowchart rewritten** with MCP security path, updated capabilities
+   - **New "What's Missing" entry:** MCP supply chain security unresolved at protocol level
+
+2. **Hugo build** — successful (714ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 8 more stale guides from March 22 need refreshing (File Storage, Image Generation, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 765 — 2026-04-23 — Refresh Best Calendar & Scheduling MCP Servers Guide (Google Official Calendar MCP NEW 8 tools managed remote, Microsoft Work IQ Calendar NEW Preview hosted, nspady 12→13 tools bulk create, Softeria 547→614 stars v0.36.0, Cal.com 9→34 tools, Calendly DCR auth, FradSer 55→61 stars, Google gap FILLED, MCP security CVE-2026-26118 CVSS 8.8)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
