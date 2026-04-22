@@ -6,14 +6,14 @@
   <title>Outlook MCP Servers — Microsoft&#39;s Enterprise Email Meets the Agent Era — ChatForest</title>
   <meta name="description" content="Outlook MCP servers let AI agents read, search, send, and manage Microsoft 365 email.">
   <meta property="og:title" content="Outlook MCP Servers — Microsoft&#39;s Enterprise Email Meets the Agent Era — ChatForest">
-  <meta property="og:description" content="Outlook MCP servers: Microsoft&#39;s official Work IQ Mail, Softeria&#39;s ms-365-mcp-server (530 stars), and 5&#43; community options. Rating: 3.5/5.">
+  <meta property="og:description" content="Outlook MCP servers: Microsoft&#39;s official Work IQ Mail, Softeria&#39;s ms-365-mcp-server (639 stars, v0.85.0, 200&#43; tools), and 8&#43; community options. Rating: 3.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/outlook-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Outlook MCP Servers — Microsoft&#39;s Enterprise Email Meets the Agent Era — ChatForest">
-  <meta name="twitter:description" content="Outlook MCP servers: Microsoft&#39;s official Work IQ Mail, Softeria&#39;s ms-365-mcp-server (530 stars), and 5&#43; community options. Rating: 3.5/5.">
+  <meta name="twitter:description" content="Outlook MCP servers: Microsoft&#39;s official Work IQ Mail, Softeria&#39;s ms-365-mcp-server (639 stars, v0.85.0, 200&#43; tools), and 8&#43; community options. Rating: 3.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/outlook-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 22, 2026</span>
       </div>
 
       <h1 class="article-title">Outlook MCP Servers — Microsoft&#39;s Enterprise Email Meets the Agent Era</h1>
@@ -66,7 +66,7 @@
 
       <div class="article-body">
         <p>If <a href="/reviews/gmail-mcp-servers/">Gmail MCP servers</a> deal with personal inboxes, Outlook MCP servers deal with corporate ones. Microsoft 365 mail sits behind Entra ID, compliance policies, Data Loss Prevention rules, and IT admin controls. That&rsquo;s the whole point — and it&rsquo;s what makes the MCP integration story more complicated than Gmail&rsquo;s.</p>
-<p>The good news: Microsoft shipped official MCP servers for Outlook Mail and Calendar as part of their Work IQ platform. The bad news: they require a Microsoft 365 Copilot license (~$30/user/month) and are still in preview. Community servers fill the gap for everyone else. Part of our <strong><a href="/categories/communication-collaboration/">Communication &amp; Collaboration MCP category</a></strong>.</p>
+<p>The good news: Microsoft shipped official MCP servers for Outlook Mail and Calendar as part of their Work IQ platform. The bad news: they require a Microsoft 365 Copilot license (~$30/user/month) and are still in preview — and as of April 15, 2026, Microsoft pulled back Copilot Chat access from M365 apps for large enterprise users without the full Copilot license, making the paywall even more relevant. Community servers fill the gap for everyone else — and Softeria&rsquo;s ms-365-mcp-server has exploded to 200+ tools and v0.85.0. Part of our <strong><a href="/categories/communication-collaboration/">Communication &amp; Collaboration MCP category</a></strong>.</p>
 <h2 id="the-landscape">The Landscape</h2>
 <table>
 <thead>
@@ -82,7 +82,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/microsoft/mcp">Microsoft Work IQ Mail</a></td>
-<td>2,800*</td>
+<td>3,000*</td>
 <td>C#</td>
 <td>10</td>
 <td>OAuth (Entra ID)</td>
@@ -90,27 +90,43 @@
 </tr>
 <tr>
 <td><a href="https://github.com/Softeria/ms-365-mcp-server">Softeria/ms-365-mcp-server</a></td>
-<td>530</td>
+<td>639</td>
 <td>TypeScript</td>
-<td>6+</td>
-<td>OAuth / Device Code</td>
+<td>200+ (all M365)</td>
+<td>OAuth / Device Code / BYOT</td>
 <td>MIT</td>
 </tr>
 <tr>
 <td><a href="https://github.com/ryaker/outlook-mcp">ryaker/outlook-mcp</a></td>
-<td>278</td>
-<td>TypeScript</td>
-<td>6+</td>
+<td>345</td>
+<td>JavaScript</td>
+<td>27+</td>
 <td>OAuth (Graph)</td>
 <td>—</td>
 </tr>
 <tr>
 <td><a href="https://github.com/merill/lokka">merill/lokka</a></td>
-<td>228</td>
+<td>239</td>
 <td>TypeScript</td>
 <td>via Graph</td>
 <td>OAuth (multiple modes)</td>
 <td>MIT</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pnp/cli-microsoft365-mcp-server">pnp/cli-microsoft365-mcp-server</a></td>
+<td>52</td>
+<td>TypeScript</td>
+<td>via CLI</td>
+<td>M365 login</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><a href="https://github.com/XenoXilus/outlook-mcp">XenoXilus/outlook-mcp</a></td>
+<td>22</td>
+<td>JavaScript</td>
+<td>Email+Calendar+SharePoint</td>
+<td>OAuth (Graph)</td>
+<td>—</td>
 </tr>
 <tr>
 <td><a href="https://github.com/ampcome-mcps/outlook-mcp">ampcome-mcps/outlook-mcp</a></td>
@@ -133,7 +149,7 @@
 <p>*Stars for the entire microsoft/mcp catalog, not the Mail server alone.</p>
 <p>Every server in this ecosystem uses Microsoft Graph API — except one (Abhishek&rsquo;s, which uses local Outlook COM). That means every one requires Azure AD / Entra ID credentials. No shortcuts, no API keys, no personal access tokens. This is a feature for enterprise security teams and a hurdle for individual developers.</p>
 <h2 id="microsoft-work-iq-mail--the-official-server">Microsoft Work IQ Mail — The Official Server</h2>
-<p>Microsoft&rsquo;s own Mail MCP server is part of the broader <a href="https://github.com/microsoft/work-iq">Work IQ</a> platform and the <a href="https://github.com/microsoft/mcp">microsoft/mcp</a> catalog (2,800 stars across all Microsoft MCP servers). It ships alongside Work IQ servers for Calendar, Teams, Copilot Chat, SharePoint, and more.</p>
+<p>Microsoft&rsquo;s own Mail MCP server is part of the broader <a href="https://github.com/microsoft/work-iq">Work IQ</a> platform (751 stars, up from 564) and the <a href="https://github.com/microsoft/mcp">microsoft/mcp</a> catalog (3,000 stars across all Microsoft MCP servers, up from 2,800). It ships alongside Work IQ servers for Calendar, Teams, Copilot Chat, SharePoint, and more. In March 2026, Microsoft launched <strong>MCP Apps</strong> — agents can now bring rich HTML-based UI experiences directly into Microsoft 365 Copilot chat, grounded in Work IQ organizational context. A new <strong>workiq-productivity</strong> plugin adds read-only email triage and meeting cost analysis.</p>
 <p><strong>10 tools:</strong></p>
 <table>
 <thead>
@@ -194,42 +210,48 @@
 <p><strong>Hosted architecture.</strong> Like the <a href="/reviews/teams-mcp-servers/">Work IQ Teams server</a>, Microsoft hosts this. No npm packages to install, no Docker containers, no local token files. This eliminates deployment friction and means Microsoft handles updates.</p>
 <p><strong>ETag concurrency control.</strong> The <code>updateMessage</code> and <code>deleteMessage</code> tools support <code>If-Match</code> headers for optimistic concurrency. This prevents race conditions when multiple agents or users modify the same message — an enterprise-grade detail that community servers typically skip.</p>
 <h3 id="what-doesnt">What doesn&rsquo;t</h3>
-<p><strong>Copilot license required.</strong> You need a Microsoft 365 Copilot license to use Work IQ MCP servers. At ~$30/user/month, this immediately prices out individual developers, small teams, and anyone who just wants Outlook MCP access without the full Copilot suite. The community servers exist largely because of this paywall.</p>
+<p><strong>Copilot license required — and the paywall is tightening.</strong> You need a Microsoft 365 Copilot license to use Work IQ MCP servers. At ~$30/user/month, this immediately prices out individual developers, small teams, and anyone who just wants Outlook MCP access without the full Copilot suite. <strong>As of April 15, 2026, Microsoft pulled back Copilot Chat access from M365 apps (Word, Excel, PowerPoint, OneNote) for large enterprise users without the full Copilot license</strong> — reinforcing the premium boundary rather than relaxing it. The community servers exist largely because of this paywall.</p>
 <p><strong>Preview means preview.</strong> Just like the Teams server, Microsoft warns this may be &ldquo;substantially modified before release.&rdquo; Building production email workflows on preview APIs is risky.</p>
 <p><strong>No folder management.</strong> You can&rsquo;t list folders, create folders, or move messages between folders. For users who rely on folder-based email organization, this is a gap.</p>
 <p><strong>No attachment handling.</strong> The tools can send emails and search attachments, but there&rsquo;s no dedicated tool for downloading or uploading attachments. This limits agent use cases around file extraction from emails.</p>
 <p><strong>No contact integration.</strong> Reading or managing Outlook contacts requires a separate server. The Mail server is strictly mail.</p>
 <h2 id="softeriams-365-mcp-server--the-community-standard">Softeria/ms-365-mcp-server — The Community Standard</h2>
-<p><a href="https://github.com/Softeria/ms-365-mcp-server">ms-365-mcp-server</a> (530 stars, 243 commits, MIT license) is the most popular community Outlook MCP server by a wide margin. Unlike Microsoft&rsquo;s mail-only server, Softeria covers the full Microsoft 365 suite through a single server.</p>
+<p><a href="https://github.com/Softeria/ms-365-mcp-server">ms-365-mcp-server</a> (639 stars, up from 530; 370 commits, up from 243; MIT license) is the most popular community Outlook MCP server by a wide margin — and it&rsquo;s been on a tear. Since March 2026, Softeria has shipped <strong>49 releases</strong> (v0.36.0 → v0.85.0), expanding from a solid M365 wrapper into a comprehensive <strong>200+ tool</strong> platform covering virtually the entire Microsoft Graph API surface. PulseMCP: 203K all-time visitors, 23.7K weekly, #203 globally (#79 weekly).</p>
 <p><strong>Supported services:</strong></p>
 <ul>
-<li><strong>Email</strong> — list, send, delete, create drafts, move messages</li>
-<li><strong>Calendar</strong> — manage events and calendar views</li>
-<li><strong>OneDrive</strong> — file upload/download, folder operations</li>
+<li><strong>Email</strong> — list, send, delete, create drafts, reply, reply-all, move messages</li>
+<li><strong>Calendar</strong> — manage events, delta sync, calendar event actions (new in v0.82.0)</li>
+<li><strong>OneDrive</strong> — file upload/download, folder operations, search (v0.75.0)</li>
 <li><strong>Excel</strong> — worksheet and range operations</li>
-<li><strong>OneNote</strong> — notebook and page management</li>
+<li><strong>OneNote</strong> — notebook and page management, site-scoped notebooks</li>
 <li><strong>Tasks</strong> — To Do and Planner task management</li>
 <li><strong>Contacts</strong> — Outlook contact operations</li>
 <li><strong>User Profile &amp; Search</strong> — directory and user queries</li>
+<li><strong>Groups</strong> — create/update/delete, member/owner management (new in v0.84.0)</li>
+<li><strong>Places</strong> — rooms, room lists (new in v0.77.0)</li>
+<li><strong>Virtual Events</strong> — webinar endpoints (new in v0.73.0)</li>
+<li><strong>Trending Insights</strong> — trending documents (new in v0.81.0)</li>
 </ul>
 <p><strong>With <code>--org-mode</code> flag (organizational accounts):</strong></p>
 <ul>
-<li>Teams &amp; Chats, SharePoint, Online Meetings (transcripts/recordings), Shared Mailboxes, User Management</li>
+<li>Teams &amp; Chats (including create-chat in v0.85.0), SharePoint, Online Meetings (transcripts/recordings), Shared Mailboxes, User Management</li>
 </ul>
 <p><strong>Install:</strong> <code>npx @softeria/ms-365-mcp-server</code></p>
-<p><strong>Auth:</strong> Three modes — Device Code Flow (interactive, with token caching), OAuth Authorization Code (for HTTP transport), or Bring Your Own Token (for CI/CD or automated systems).</p>
+<p><strong>Auth:</strong> Three modes — Device Code Flow (interactive, with token caching), OAuth Authorization Code (for HTTP transport, now with OAuth 2.1 and dynamic client registration), or Bring Your Own Token (for CI/CD or automated systems).</p>
 <h3 id="what-works-well-1">What works well</h3>
-<p><strong>Breadth that no single Microsoft server matches.</strong> One NPX command gives you email, calendar, files, tasks, contacts, Excel, OneNote, and more. Microsoft&rsquo;s approach splits these across separate Work IQ servers, each requiring its own setup. Softeria unifies them.</p>
+<p><strong>Breadth that no single Microsoft server matches.</strong> One NPX command gives you email, calendar, files, tasks, contacts, Excel, OneNote, groups, places, virtual events, and more. Microsoft&rsquo;s approach splits these across separate Work IQ servers, each requiring its own setup. Softeria unifies them — now with 200+ tools.</p>
 <p><strong>TOON output format.</strong> The experimental &ldquo;Token-Oriented Object Notation&rdquo; reduces token usage by 30-60% compared to standard JSON. For LLM integrations where every token costs money, this is a meaningful optimization that no other Outlook MCP server offers.</p>
+<p><strong>BM25 tool discovery (v0.79.6).</strong> With 200+ tools, loading them all wastes context. Softeria added BM25 search-based discovery and <code>get-tool-schema</code> — agents find relevant tools by description instead of loading everything. Combined with preset categories (mail, calendar, files, personal, work, excel, contacts, tasks, onenote, search, users, all), this elegantly solves the context bloat problem that tool sprawl creates.</p>
 <p><strong>Multi-account support.</strong> A single server instance can manage multiple Microsoft 365 accounts simultaneously. Switch between personal and work accounts without reconfiguring.</p>
 <p><strong>Read-only mode.</strong> Start with <code>--read-only</code> to restrict all operations to safe reads. Useful for testing or building agents that should never modify data. Tool filtering adds another layer — you can expose only specific tools to specific agents.</p>
+<p><strong>Security hardening (April 2026).</strong> PKCE store size bounded to prevent memory exhaustion, default CORS restricted from wildcard to localhost, log directory moved to user home with secure permissions, pagination memory limits, and startup validation for <code>--enabled-tools</code> regex. This is the kind of production-grade security work most community servers skip.</p>
 <p><strong>No Copilot license required.</strong> Uses standard Microsoft Graph API permissions. Any Microsoft 365 account (including free personal accounts for some features) can authenticate.</p>
 <h3 id="what-doesnt-1">What doesn&rsquo;t</h3>
-<p><strong>13 open issues.</strong> Active development means active bugs. Some issues relate to authentication edge cases and token refresh — the same category of problems that plague most Graph API integrations.</p>
-<p><strong>Tool sprawl.</strong> Covering 8+ Microsoft services means dozens of tools. If you only need email, you&rsquo;re loading calendar, OneDrive, Excel, and OneNote tools into your agent&rsquo;s context. The <code>--tools</code> flag mitigates this, but the default is everything.</p>
+<p><strong>15 open issues, some significant.</strong> #400: <code>create-draft-email</code> broken in app-token (OAuth) mode — missing POST endpoint for <code>/users/:userId/messages</code>. #375: OAuth callback fails due to random ephemeral port not registered as redirect URI. #336: server-side 401 retry silently consumes refresh token without returning new one to client. Active development means active bugs, and authentication edge cases remain the dominant category.</p>
+<p><strong>Rapid release pace creates integration risk.</strong> 49 releases in 38 days means the API surface changes fast. If you pin a version, you miss security fixes; if you don&rsquo;t, you may get breaking changes. Enterprise teams that need stability may find this cadence uncomfortable.</p>
 <p><strong>Node.js 20+ recommended.</strong> Works with Node.js 14+ but with dependency warnings. The recommended version is higher than what many systems run.</p>
 <h2 id="ryakeroutlook-mcp--outlook--onedrive--power-automate">ryaker/outlook-mcp — Outlook + OneDrive + Power Automate</h2>
-<p><a href="https://github.com/ryaker/outlook-mcp">outlook-mcp</a> (278 stars, 74 commits) connects Outlook with OneDrive and Power Automate — a combination no other server offers.</p>
+<p><a href="https://github.com/ryaker/outlook-mcp">outlook-mcp</a> (345 stars, up from 278; 78 commits) connects Outlook with OneDrive and Power Automate — a combination few other servers offer. Recent work includes HTML email sanitization to prevent prompt injection attacks — a security concern that&rsquo;s increasingly relevant as agents interact with untrusted email content.</p>
 <p><strong>Covers three services:</strong></p>
 <ul>
 <li><strong>Outlook</strong> — email list/search/send/read, calendar events, folder management, mail rules</li>
@@ -247,12 +269,13 @@
 <p><strong>Complex setup.</strong> Azure Portal app registration → environment variables → auth server → browser auth → Claude Desktop config. Five steps before your first email read. Community servers for other platforms (like Slack) have gotten this down to two.</p>
 <p><strong>No license specified.</strong> The repository doesn&rsquo;t clearly state its license. For enterprise use, this is a blocker — legal teams won&rsquo;t approve unlicensed dependencies.</p>
 <h2 id="merilllokka--the-graph-api-swiss-army-knife">merill/lokka — The Graph API Swiss Army Knife</h2>
-<p><a href="https://github.com/merill/lokka">Lokka</a> (228 stars, MIT license) takes a different approach: instead of wrapping specific Microsoft services into dedicated tools, it exposes the Microsoft Graph API itself as an MCP tool.</p>
-<p><strong>3 tools:</strong></p>
+<p><a href="https://github.com/merill/lokka">Lokka</a> (239 stars, up from 228; 100 commits; MIT license) takes a different approach: instead of wrapping specific Microsoft services into dedicated tools, it exposes the Microsoft Graph API itself as an MCP tool.</p>
+<p><strong>4 tools:</strong></p>
 <ol>
 <li><code>lokka-microsoft</code> — Call any Microsoft Graph or Azure API endpoint</li>
 <li><code>set-access-token</code> — Manage authentication tokens dynamically</li>
 <li><code>get-auth-status</code> — Check authentication status</li>
+<li><code>add-graph-permission</code> — Request additional Graph API scopes interactively (new)</li>
 </ol>
 <p><strong>Why this matters:</strong> Rather than &ldquo;search emails&rdquo; as a tool, Lokka&rsquo;s approach is &ldquo;call any Graph API endpoint.&rdquo; Your agent constructs the Graph API query (<code>/me/messages?$search=&quot;subject:invoice&quot;</code>) and Lokka executes it. This means every Graph API capability is available, including ones that purpose-built servers haven&rsquo;t implemented yet.</p>
 <p><strong>Auth:</strong> Four modes — interactive auth (personal or custom app), app-only auth (certificate or client secret), client-provided tokens, and API version control (beta vs. v1.0).</p>
@@ -260,11 +283,14 @@
 <p>Lokka is best for users who already know the Microsoft Graph API and want maximum flexibility. It&rsquo;s the opposite of Softeria&rsquo;s approach — instead of many purpose-built tools, you get one tool that can do anything. The tradeoff is that your agent needs to know how to construct Graph API queries, which means more complex prompts and more room for errors.</p>
 <p>It&rsquo;s also strong for <strong>Azure management</strong> tasks — subscriptions, billing, resource management — that pure Outlook servers don&rsquo;t touch.</p>
 <h2 id="also-in-the-landscape">Also in the Landscape</h2>
+<p><strong><a href="https://github.com/pnp/cli-microsoft365-mcp-server">pnp/cli-microsoft365-mcp-server</a></strong> (52 stars, MIT) — Wraps the CLI for Microsoft 365 as an MCP server. If you already use <code>m365</code> CLI commands, this gives your agent the same capabilities. SharePoint, Teams, Planner, and more. Different philosophy from Softeria — this delegates to an established CLI rather than calling Graph API directly.</p>
+<p><strong><a href="https://github.com/XenoXilus/outlook-mcp">XenoXilus/outlook-mcp</a></strong> (22 stars, 31 commits) — Email, calendar, and SharePoint integration with Office document parsing (PDF, Word, PowerPoint, Excel). Automatic handling of large files exceeding MCP limits. v1.0.1 (January 2026). Lower adoption but the document parsing angle is unique.</p>
+<p><strong><a href="https://github.com/nsakki55/outlook-mcp">nsakki55/outlook-mcp</a></strong> — Auth Code + PKCE flow, no client secret needed. Connects directly to Microsoft Graph API. Useful for scenarios where you can&rsquo;t store a client secret.</p>
 <p><strong><a href="https://github.com/Abhishek-Aditya-bs/Outlook-MCP-Server">Abhishek-Aditya-bs/Outlook-MCP-Server</a></strong> — The only server that uses <strong>local Outlook COM</strong> instead of Graph API. Windows-only, requires Outlook desktop installed, uses pywin32 to access mailboxes directly. Two tools: check mailbox access and search email chains. Useful if you need to access local Outlook data without cloud connectivity, but the Windows-only + local Outlook requirement limits its audience severely.</p>
 <p><strong><a href="https://github.com/ampcome-mcps/outlook-mcp">ampcome-mcps/outlook-mcp</a></strong> (1 star, MIT) — 26 tools covering email, contacts, calendar, and folders through Graph API. Uses Nango for credential management (no direct token storage). Comprehensive tool count but minimal adoption and community validation.</p>
 <p><strong><a href="https://github.com/merajmehrabi/Outlook_Calendar_MCP">merajmehrabi/Outlook_Calendar_MCP</a></strong> — Windows-only calendar MCP server using local Outlook COM. Read and manage calendar events from the desktop app. Same limitations as the Abhishek server — Windows + local Outlook required.</p>
 <p><strong><a href="https://github.com/kacase/mcp-outlook">kacase/mcp-outlook</a></strong> — Another Graph API wrapper for Outlook. Calendar events, email reading, message sending. Lower adoption.</p>
-<p><strong><a href="https://github.com/microsoft/work-iq">microsoft/work-iq</a> CLI</strong> (564 stars) — Not an MCP server per se, but a CLI/plugin for GitHub Copilot that queries Microsoft 365 data using natural language. &ldquo;What&rsquo;s on my calendar tomorrow?&rdquo; style queries. Requires Entra ID admin consent. Interesting for Copilot users, but not a general-purpose MCP server.</p>
+<p><strong><a href="https://github.com/microsoft/work-iq">microsoft/work-iq</a> CLI</strong> (751 stars, up from 564) — Not an MCP server per se, but a CLI/plugin for GitHub Copilot that queries Microsoft 365 data using natural language. Now includes a <strong>workiq-productivity</strong> plugin with read-only email triage and meeting cost analysis. Requires Entra ID admin consent. Interesting for Copilot users, but not a general-purpose MCP server.</p>
 <h2 id="how-outlook-compares-to-gmail">How Outlook Compares to Gmail</h2>
 <table>
 <thead>
@@ -292,7 +318,7 @@
 <td>Auth model</td>
 <td>OAuth</td>
 <td>OAuth (Entra ID)</td>
-<td>OAuth / Device Code / BYOT</td>
+<td>OAuth 2.1 / Device Code / BYOT</td>
 </tr>
 <tr>
 <td>Message search</td>
@@ -316,7 +342,7 @@
 <td>Calendar bundled</td>
 <td>Separate server</td>
 <td>Separate Work IQ server</td>
-<td>Yes</td>
+<td>Yes (with delta sync)</td>
 </tr>
 <tr>
 <td>License cost</td>
@@ -328,13 +354,19 @@
 <td>Community standard</td>
 <td>taylorwilsdon (1,700 stars)</td>
 <td>N/A</td>
-<td>Softeria (530 stars)</td>
+<td>Softeria (639 stars)</td>
 </tr>
 <tr>
 <td>Services covered</td>
 <td>Gmail + 11 Google services</td>
 <td>Mail only</td>
-<td>8+ M365 services</td>
+<td>200+ tools across M365</td>
+</tr>
+<tr>
+<td>Tool discovery</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>BM25 search + presets</td>
 </tr>
 </tbody>
 </table>
@@ -343,16 +375,17 @@
 <p><strong>Both have the same fundamental risk.</strong> Email is sensitive data. Whether it&rsquo;s Gmail or Outlook, giving an agent send permissions deserves serious thought. Both ecosystems have the same gap: no official reference server from the MCP project (modelcontextprotocol/servers).</p>
 <h2 id="which-outlook-server-should-you-use">Which Outlook Server Should You Use?</h2>
 <p><strong>Use Work IQ Mail if</strong> your organization has Microsoft 365 Copilot licenses and you want official, hosted, Microsoft-supported email MCP access with KQL search. Accept preview status and the limited 10-tool scope.</p>
-<p><strong>Use Softeria/ms-365-mcp-server if</strong> you want the broadest Microsoft 365 coverage from a single server, don&rsquo;t have Copilot licenses, or need features like TOON token optimization, multi-account support, or read-only mode. This is the community standard for a reason — 530 stars, active maintenance, MIT license.</p>
+<p><strong>Use Softeria/ms-365-mcp-server if</strong> you want the broadest Microsoft 365 coverage from a single server, don&rsquo;t have Copilot licenses, or need features like BM25 tool discovery, TOON token optimization, multi-account support, or read-only mode. This is the community standard for a reason — 639 stars, 200+ tools, 49 releases in 38 days, MIT license.</p>
 <p><strong>Use ryaker/outlook-mcp if</strong> you need Power Automate integration alongside email and calendar. The workflow automation angle is unique. Accept the more complex setup and local token storage.</p>
 <p><strong>Use merill/lokka if</strong> you know the Microsoft Graph API and want maximum flexibility. One tool that can do anything the API supports. Not for beginners.</p>
 <p><strong>Wait if</strong> you need GA-quality stability from Microsoft. The official servers are in preview and will change. If your workflow can&rsquo;t tolerate API modifications, the community servers (especially Softeria) are more stable bets despite not having Microsoft&rsquo;s backing.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p><strong>Rating: 3.5/5</strong> — Microsoft did the right thing shipping official Work IQ MCP servers for Outlook Mail and Calendar, with hosted architecture, KQL search, and enterprise-grade auth. But the Copilot license requirement creates a paywall that pushes most users to community alternatives. Softeria&rsquo;s ms-365-mcp-server (530 stars) fills that gap admirably — covering 8+ Microsoft services from a single install with no Copilot license needed, three auth modes, and a token-optimized output format.</p>
-<p>The ecosystem is less mature than <a href="/reviews/gmail-mcp-servers/">Gmail&rsquo;s</a> (no 1,700-star dominant server, no free official endpoint) but more coherent than <a href="/reviews/teams-mcp-servers/">Teams&rsquo;</a> — you have a clear decision tree between official (if you have licenses) and community (if you don&rsquo;t). When Microsoft removes the Copilot license requirement or exits preview, this category moves to 4/5. The enterprise security infrastructure is already there; it&rsquo;s the accessibility that&rsquo;s holding it back.</p>
+<p><strong>Rating: 3.5/5</strong> — The official/community split remains the defining characteristic of this ecosystem. Microsoft&rsquo;s Work IQ Mail server has hosted architecture, KQL search, and enterprise-grade auth — but the Copilot license requirement (~$30/user/month) creates a paywall that&rsquo;s getting tighter, not looser. The April 15, 2026 rollback of Copilot Chat access for large enterprise users signals that Microsoft is reinforcing premium boundaries, not relaxing them.</p>
+<p>Softeria&rsquo;s ms-365-mcp-server (639 stars, 200+ tools, v0.85.0) has emerged as one of the most comprehensive community MCP servers in the entire ecosystem — not just for Outlook, but for M365 overall. The 49 releases since March 2026 added groups management, virtual events, places, trending insights, BM25 tool discovery, and significant security hardening. The rapid pace is both a strength (features ship fast) and a concern (integration stability). ryaker&rsquo;s Power Automate integration (345 stars) and lokka&rsquo;s raw Graph API access (239 stars) fill distinct niches.</p>
+<p>The ecosystem is less mature than <a href="/reviews/gmail-mcp-servers/">Gmail&rsquo;s</a> (no 1,700-star dominant server, no free official endpoint) but more coherent than <a href="/reviews/teams-mcp-servers/">Teams&rsquo;</a>. The gap between Softeria (639 stars, accelerating) and Gmail&rsquo;s taylorwilsdon (1,700 stars) is narrowing — if Softeria maintains this pace, it could challenge for parity by mid-2026. When Microsoft removes the Copilot license requirement or exits preview, this category moves to 4/5. The enterprise security infrastructure is already there; it&rsquo;s the accessibility that&rsquo;s holding it back.</p>
 <hr>
-<p><em>This review covers the Microsoft Outlook MCP server landscape as of March 2026. ChatForest researches MCP servers by reading source code, analyzing GitHub repositories and issues, studying documentation, and examining community signals. We do not install or run the servers ourselves. See our <a href="/about/#our-review-methodology">methodology</a> for details.</em></p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review covers the Microsoft Outlook MCP server landscape as of April 2026. ChatForest researches MCP servers by reading source code, analyzing GitHub repositories and issues, studying documentation, and examining community signals. We do not install or run the servers ourselves. See our <a href="/about/#our-review-methodology">methodology</a> for details.</em></p>
+<p><em>This review was last edited on 2026-04-22 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -404,7 +437,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T02:00:00+09:00","description":"Outlook MCP servers let AI agents read, search, send, and manage Microsoft 365 email.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era"},"name":"Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/outlook-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-22T00:00:00+09:00","datePublished":"2026-03-15T02:00:00+09:00","description":"Outlook MCP servers let AI agents read, search, send, and manage Microsoft 365 email.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era"},"name":"Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/outlook-mcp-servers/"}
 </script>
 
 

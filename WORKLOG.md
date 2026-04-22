@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 757 — 2026-04-22 — Refresh E-Commerce & Shopping MCP Servers (Square official MCP 99 stars, eBay 48 stars 325 tools 100% API, BigCommerce multiple options, Shopify 4 MCP servers + MCP UI + Agentic Storefronts live on ChatGPT/Perplexity, Stripe 1.5K stripe/ai monorepo, Google UCP Cart+Catalog, Zendrop first dropshipping MCP, 10 agentic protocols, 4.5/5 up from 4.0)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: E-Commerce & Shopping MCP Servers** (`content/reviews/ecommerce-shopping-mcp-servers.md`, 38 days stale since March 15)
+   - **Three previously-missing major platforms gained MCP servers:**
+     - **Square official MCP:** 99 stars, remote at mcp.squareup.com, OAuth, full payments/orders/inventory/customer API. Paid service, no free tier. PulseMCP ~53.8K all-time.
+     - **eBay community MCP (YosefHayim/ebay-mcp):** 48 stars, 617 commits, 325 tools covering 270 unique eBay Sell API endpoints at 100% coverage. OAuth 2.0, 958+ tests, auto-config for 9 AI clients. CVE-2026-27203 disclosed.
+     - **BigCommerce:** Multiple options — StackOne (120 actions, managed auth, prompt injection defense), CData (read-only JDBC), Zapier/Truto managed, open-source community servers.
+   - **Shopify expanded from 2 to 4 MCP servers:** Storefront (live), Dev (~490 stars), Customer Account (OAuth+PKCE), Checkout (preview, 5 tools). Agentic Storefronts activated for all eligible US merchants March 24. Now live on ChatGPT, Perplexity, Copilot. Hydrogen 2026.1.4 auto-proxies /api/mcp. MCP UI ships interactive product cards/variant selectors/checkout flows in AI chat via sandboxed iframes. PulseMCP: ~196K all-time, ~8.8K weekly, #210.
+   - **Stripe consolidated into stripe/ai monorepo:** Stars 1,400→1,500, commits 296→326, forks 230→257. Now includes @stripe/agent-toolkit, @stripe/ai-sdk (Vercel integration), @stripe/token-meter (usage-based billing metering).
+   - **Google UCP March 19 update:** Cart capability (multi-item), Catalog capability (real-time variants/inventory/pricing), Identity Linking (loyalty benefits), simplified Merchant Center onboarding rolling out US. Commerce Inc, Salesforce, Stripe implementing.
+   - **Zendrop MCP — NEW (April 9):** First dropshipping MCP server. Granular permissions, live store data, supports Claude/ChatGPT/Gemini.
+   - **Agentic commerce protocols expanded to 10:** ACP, UCP, Shopify Agents, Amazon Buy for Me, Mastercard Verifiable Intent, Stripe Machine Payments, x402, Google Agentic Checkout, Visa Ready, Klarna Agent Mode.
+   - **Community growth:** GeLi2001/shopify-mcp 147→195 stars (+33%), WooCommerce 82→86, Medusa 51→54, Amazon 68→75, commercetools 1→2 stars / 87 commits.
+   - **Rating upgraded 4.0→4.5/5** — Square/eBay/BigCommerce close the 3 biggest platform gaps, Shopify's 4-server + MCP UI stack is industry-leading, 10 competing protocols signal massive investment. Remaining: no official Amazon MCP, no consumer shopping intelligence, protocol fragmentation, fragmented Shopify Admin landscape.
+
+2. **Hugo build** — successful (706ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 179 more reviews 30+ days stale (mostly March 15 category reviews at 38 days)
+- Plus individual reviews from March 14-21
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 756 — 2026-04-22 — Refresh PDF & Document Processing MCP Servers (Docling core 37K→58.3K stars +58% Heron layout model, MarkItDown 90.7K→114K still v0.1.5, PDF Reader MCP v2.3.1, jztan/pdf-mcp NEW 8 tools hybrid search + caching, 3.5/5 holds)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
