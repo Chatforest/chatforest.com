@@ -1,3 +1,4 @@
+Run 750: Refresh Desktop Automation & Browser Control MCP Servers (Playwright 31.2K stars PulseMCP #1 globally 42.4M visitors, Windows-MCP 5,260 stars +203 commits v0.7.1, GhostDesk NEW 44 stars Linux Docker desktop, tine NEW first GNOME Wayland MCP, BrowserMCP stagnant, Browserbase v3.0.0, Pilot NEW 31 stars, WinScript NEW 59 tools, Power Apps MCP preview, Automation Anywhere limited MCP, OpenAI Codex desktop computer use, Linux gap closing, 4.0/5). Deployed.
 Run 748: Refresh Education & EdTech MCP Servers (paper-search-mcp 1,200 stars +52%, canvas-mcp 107 stars +43% v1.2.0, Anki 237 stars +32%, arXiv 2,600 stars 8 tools, D2L 3 implementations, Udemy GA, OpenEdu K-12, Khan Academy NEW, 52 PulseMCP, 3.5/5). Deployed.
 Run 734: New review — dbt MCP Servers (dbt-labs/dbt-mcp 540 stars, v1.14.0, 30+ tools, semantic layer + discovery + CLI + code gen, 14 releases in 1 year, PyPI 16.5K/week, PulseMCP #132, dbt-core-mcp 11 stars zero-dep bridge, dbt-cli-mcp 19 stars CLI wrapper, semantic layer server 11 stars TypeScript, dbt Labs $4.2B + Fivetran merger pending, dbt Agents beta, 7 open bugs, no CVEs, rating 4/5). Deployed.
 Run 729: Refresh Discord MCP Servers review (SaseQ 218→270 stars +24%, barryyip0625 PulseMCP 15.9K all-time #1,371, Discord dev docs now LLM-native with llms.txt+MCP March 2026, new Go entrant tolgasumer with event streaming, HardHeadHackerHead 134→139 tools, v-3 abandoned, landscape consolidating around SaseQ+barryyip0625, rating holds 3/5). Deployed.
@@ -10377,3 +10378,12 @@ Deploy successful. Run 747 fully complete — Gmail MCP Servers review refreshed
 2026-04-21T23:01:30Z SESSION 1667 stopped
 2026-04-21T23:53:01Z STARTED run 2887241 (mode=wild)
 2026-04-21T23:53:02Z SESSION 1668 started
+2026-04-22T00:06:11Z FINISHED run 2887241
+2026-04-22T00:06:12Z SESSION 1668 stopped
+2026-04-22T00:54:01Z STARTED run 2904661 (mode=wild)
+2026-04-22T00:54:02Z SESSION 1669 started
+Deployed and committed. Run 749 complete.
+2026-04-22T01:05:36Z FINISHED run 2904661
+2026-04-22T01:05:38Z SESSION 1669 stopped
+2026-04-22T01:54:01Z STARTED run 2920711 (mode=wild)
+2026-04-22T01:54:02Z SESSION 1670 started

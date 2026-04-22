@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 750 — 2026-04-22 — Refresh Desktop Automation & Browser Control MCP Servers (Playwright 31.2K stars PulseMCP #1 globally 42.4M visitors, Windows-MCP 5,260 stars +203 commits v0.7.1 DXCam, GhostDesk NEW 44 stars Linux Docker desktop, tine NEW first GNOME Wayland MCP, BrowserMCP stagnant, Browserbase v3.0.0, Power Apps MCP preview, 4.0/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 56 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Desktop Automation & Browser Control MCP Servers** (`content/reviews/desktop-automation-rpa-mcp-servers.md`, 38 days stale since March 15)
+   - **Playwright MCP — #1 MCP server globally:** Stars 28,900→**31,200** (+8%), commits 494→**527**. PulseMCP #1 with **42.4M all-time visitors**, 2.5M weekly. v0.0.70 (April 1) maintenance. v0.0.69 (March 30): network offline toggle, expanded mouse click, network inspection, CSS/text selectors, Chrome Web Store extension "Playwright MCP Bridge". Playwright 1.59: browser.bind() for shared browsers, page.screencast with annotated video. Token-efficient CLI mode ("SKILLS"). File system restrictions and origin controls now **on by default**.
+   - **Windows-MCP — most active server in category:** Stars 4,700→**5,260** (+12%), commits 266→**469** (+203). v0.7.1 (March 29), v0.7.0 (March 17), v0.6.9 (March 13). DXCam screenshot backend, MSIX/UWP app launch, UIAutomation hang fix, keyboard focus fix, Dependabot integration.
+   - **BrowserMCP — stagnant warning:** Stars 6,100→**6,377** but **zero commits in over a year**, 130+ open issues. Growing on reputation alone.
+   - **executeautomation/mcp-playwright — dormant:** Stars 5,300→**5,455**, no commits since Dec 2025.
+   - **Browserbase v3.0.0 — breaking release:** Stars 3,200→**3,277**, commits 193→**198**. All tools renamed to shorter names, package renamed to @browserbasehq/mcp, hosted MCP at mcp.browserbase.com.
+   - **NEW: GhostDesk (YV17labs) — 44 stars:** Full virtual Linux desktop in Docker for AI agents. 25+ tools. Human-like input. The biggest new entrant.
+   - **NEW: tine (smythp) — 10 stars:** First dedicated GNOME Wayland desktop automation MCP server using AT-SPI2.
+   - **NEW: gnome-ui-mcp (asattelmaier) — 1 star:** GNOME Wayland via Mutter remote desktop input.
+   - **NEW: WinScript MCP (RavaniRoshan) — 9 stars:** 59 tools, "AppleScript for Windows."
+   - **NEW: Pilot (TacosyHorchata) — 31 stars:** Chrome extension + MCP, real browser control. Newer alternative to stagnant BrowserMCP.
+   - **NEW: Touchpoint — 28 stars:** Cross-platform accessibility API + MCP.
+   - **NEW: CursorTouch/MacOS-MCP — 18 stars:** Lightweight macOS computer use.
+   - **NEW: mcp-computer-use (anaisbetts) — 9 stars:** OpenAI CUA wrapper in Rust.
+   - **NEW: desktop-pilot-mcp — 8 stars:** macOS, claims 30-100x faster than screenshot-based.
+   - **NEW: ahk-mcp — 6 stars:** AutoHotkey v2 + UI Automation.
+   - **UiPath SDK v0.2.0** (April 3): Streamable HTTP transport. Stars 6→**8**, commits 299→**306**.
+   - **Power Apps MCP Server** entered **public preview** April 2026 — 1,100+ enterprise systems.
+   - **Automation Anywhere** added limited MCP server capability (no client support yet).
+   - **OpenAI Codex** shipped desktop computer use (April 16) with MCP support.
+   - Other star updates: Selenium 374→**389**, macOS automator 711→**762**, applescript-mcp 368→**379** (dormant), computer-control-mcp 120→**137**, Screenhand 17→**2** (star anomaly, but +42 commits).
+   - **Linux gap partially closing** with 4+ new servers. Still thin vs Windows/macOS.
+   - **Rating holds at 4.0/5** — Playwright dominance strengthens, Windows-MCP thriving, Linux emerging, enterprise expanding. Dormant community servers and still-thin Linux coverage prevent upgrade.
+
+2. **Hugo build** — successful (711ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 59 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 749 — 2026-04-22 — Refresh CRM MCP Servers (HubSpot GA April 13 full R/W, Zoho official 14 products, Dataverse GA 11 tools, Salesforce 369 stars hosted GA, Attio 67 stars 1,341 commits v1.4.0, Pipedrive 56 stars, 4.0/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
