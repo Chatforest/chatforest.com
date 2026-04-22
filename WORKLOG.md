@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 758 — 2026-04-22 — Refresh Healthcare & Medical MCP Servers (WSO2 & healthcare-mcp-public tied at 110 stars, cyanheads/pubmed-mcp-server NEW 86 stars 9 tools, LangCare doubles to 31 stars adds Voice Agent + MCP Apps, ClinicalTrials.gov v2.3.4 OpenTelemetry, medical-mcp 75→86, dicom-mcp 86→91, Keragon SOC 2 Type II, still no Epic/Cerner official MCP, 4.0/5 holds)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Healthcare & Medical MCP Servers** (`content/reviews/healthcare-medical-mcp-servers.md`, 38 days stale since March 15)
+   - **New entrant: cyanheads/pubmed-mcp-server** — 86 stars, TypeScript, Apache-2.0, 9 tools. Much more sophisticated than JackKuo666's PubMed server with citation generation (APA/MLA/BibTeX/RIS), MeSH vocabulary exploration, spell checking, ID conversion, and full-text extraction. Public hosted instance at pubmed.caseyjhand.com/mcp.
+   - **Star count updates across the board:**
+     - WSO2 FHIR: 98→110 (+12%), now tied for most starred
+     - healthcare-mcp-public: 101→110 (+9%), tied for most starred
+     - PubMed-MCP-Server: 104→108 (+4%)
+     - dicom-mcp: 86→91 (+6%)
+     - cyanheads ClinicalTrials.gov: 58→65 (+12%), now v2.3.4
+     - medical-mcp (JamesANZ): 75→86 (+15%)
+     - the-momentum FHIR: 68→77 (+13%)
+     - LangCare: 15→31 (+107%)
+     - medical-mcps (pascalwhoop): 14→18 (+29%)
+     - Innovaccer HMCP: 28→28 (flat, last commit Feb 2025)
+   - **LangCare adds Healthcare Voice Agent** — real-time voice AI over FHIR data. Also ships LangCare CLI for non-MCP agent frameworks (LangChain, CrewAI, AutoGen).
+   - **cyanheads ClinicalTrials.gov v2.3.4** — OpenTelemetry integration, dual transport (STDIO + Streamable HTTP), public hosted instance, 247 commits.
+   - **Keragon MCP** — SOC 2 Type II certified, early clinical results (MA outpatient clinic reports double-digit admin time reduction). Still in beta.
+   - **Epic** expanded FHIR API support for USCDI v5 (advance directives, medication adherence, diagnostic image ordering) but still no official MCP server.
+   - **Rating holds at 4.0/5** — research subcategory now strongest (two competing PubMed servers, upgraded ClinicalTrials.gov), enterprise FHIR maturing (LangCare Voice + CLI + MCP Apps), but still no official EHR vendor MCP servers and imaging limited to DICOM metadata.
+
+2. **Hugo build** — successful (724ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 273 more reviews 30+ days stale (mostly March 14-15 individual and category reviews at 38-39 days)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 757 — 2026-04-22 — Refresh E-Commerce & Shopping MCP Servers (Square official MCP 99 stars, eBay 48 stars 325 tools 100% API, BigCommerce multiple options, Shopify 4 MCP servers + MCP UI + Agentic Storefronts live on ChatGPT/Perplexity, Stripe 1.5K stripe/ai monorepo, Google UCP Cart+Catalog, Zendrop first dropshipping MCP, 10 agentic protocols, 4.5/5 up from 4.0)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
