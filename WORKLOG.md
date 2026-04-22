@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 756 — 2026-04-22 — Refresh PDF & Document Processing MCP Servers (Docling core 37K→58.3K stars +58% Heron layout model, MarkItDown 90.7K→114K still v0.1.5, PDF Reader MCP v2.3.1, jztan/pdf-mcp NEW 8 tools hybrid search + caching, 3.5/5 holds)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: PDF & Document Processing MCP Servers** (`content/reviews/pdf-document-mcp-servers.md`, 38 days stale since March 15)
+   - **Docling core library surges 58%:** Stars 37,000→58,300, forks →4,000. v2.90.0 (April 17). New Heron layout model with 20.6-23.9% mAP improvement over previous baseline. 97.9% table extraction accuracy. New features: structured information extraction, chart understanding, WebVTT/LaTeX support, USPTO/JATS/XBRL schema support. Fastest-growing project in the category.
+   - **Docling MCP wrapper static:** Still v1.3.4 (Jan 2026). Stars 508→583, forks →110. MCP layer not keeping pace with core library's rapid iteration.
+   - **MarkItDown growth slowing:** Stars 90,700→114,000 (+26%), forks 5,400→7,400. Still v0.1.5 (Feb 2026) — no new release in 2 months. Open issues 304→348. v0.1.5 improved PDF table extraction with aligned Markdown.
+   - **PDF Reader MCP major version bump:** Stars 557→657 (+18%), now v2.3.1 (April 19). v2.x added absolute path support, configurable working directory, improved error handling. 10+ releases since last review.
+   - **jztan/pdf-mcp — NEW entrant:** 20 stars, 8 tools, v1.7.0 (April 5). Different design philosophy: intelligent SQLite caching, hybrid BM25+semantic search, context-efficient agent access. OCR support, SSRF protection, structured table extraction. 7,100+ PyPI downloads across 9 releases.
+   - **mcp-pandoc:** Stars 512→529. Still early development, PDF support still under development.
+   - **eBook-MCP appears dormant:** Stars 351→358. Last commit appears to date from early 2025.
+   - **Rating holds at 3.5/5** — Docling's surge and Heron model are impressive, PDF Reader MCP is iterating well, and jztan/pdf-mcp introduces a genuinely novel approach. But gaps persist: no PDF creation in free space, inconsistent OCR, no annotations/editing, ecosystem fragmentation.
+
+2. **Hugo build** — successful (734ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 180 more reviews 30+ days stale (mostly March 15 category reviews at 38 days)
+- Plus individual reviews from March 14-21
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 755 — 2026-04-22 — Refresh Outlook MCP Servers (Softeria 639 stars v0.85.0 200+ tools 49 releases in 38 days, Microsoft Copilot Chat licensing restricted Apr 15, MCP Apps launched, ryaker 345 stars prompt injection defense, Work IQ 751 stars, 3.5/5 holds)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
