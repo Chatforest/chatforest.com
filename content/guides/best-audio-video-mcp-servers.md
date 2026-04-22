@@ -1,31 +1,33 @@
 ---
 title: "Best Audio & Video MCP Servers in 2026"
 date: 2026-03-22T22:00:00+09:00
-description: "ElevenLabs, DaVinci Resolve, Ableton, REAPER, FFmpeg, Premiere Pro, and more — we've reviewed 40+ audio and video MCP servers across 9 categories."
-og_description: "40+ audio and video MCP servers reviewed across text-to-speech, transcription, video editing, music production, and creative applications. The definitive comparison with honest ratings."
+description: "ElevenLabs, MiniMax, DaVinci Resolve, Ableton, REAPER, FFmpeg, Premiere Pro, and more — we've reviewed 45+ audio and video MCP servers across 9 categories."
+og_description: "45+ audio and video MCP servers reviewed across text-to-speech, transcription, video editing, music production, and creative applications. The definitive comparison with honest ratings."
 content_type: "Comparison"
-card_description: "The definitive guide to audio and video MCP servers in 2026. We've reviewed 40+ servers across text-to-speech (ElevenLabs, Kokoro, multi-provider), transcription (Whisper, local STT, YouTube), FFmpeg video processing, professional NLEs (DaVinci Resolve, Premiere Pro, After Effects), music production (Ableton, REAPER, Logic Pro, SuperCollider), and streaming platforms (Mux). Every recommendation links to a full review."
-last_refreshed: 2026-03-22
+card_description: "The definitive guide to audio and video MCP servers in 2026. We've reviewed 45+ servers across text-to-speech (ElevenLabs, MiniMax, Kokoro, multi-provider), transcription (Whisper, Deepgram CLI, local STT, YouTube), FFmpeg video processing, professional NLEs (DaVinci Resolve, Premiere Pro, After Effects), music production (Ableton, REAPER, Logic Pro, SuperCollider), music licensing (Epidemic Sound), and streaming platforms (Mux). Every recommendation links to a full review."
+last_refreshed: 2026-04-23
 ---
 
 Audio and video is where MCP servers get creative. Instead of querying databases or managing infrastructure, these servers generate speech, transcribe meetings, edit video timelines, produce music, and control professional creative applications — all through natural language.
 
-We've researched 40+ audio and video MCP servers across the full landscape. This guide covers what's production-ready, what's experimental, and where significant gaps remain.
+We've researched 45+ audio and video MCP servers across the full landscape. This guide covers what's production-ready, what's experimental, and where significant gaps remain.
 
-*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in March 2026.*
+*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026.*
 
 ## The short version
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| Text-to-speech (cloud) | [elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) | 1,300 | [blacktop/mcp-tts](https://github.com/blacktop/mcp-tts) (50 stars, multi-provider) |
-| Text-to-speech (local) | [aparsoft/kokoro-mcp-server](https://github.com/aparsoft/kokoro-mcp-server) | 6 | [CodeCraftersLLC/local-voice-mcp](https://github.com/CodeCraftersLLC/local-voice-mcp) (Chatterbox + Kokoro) |
-| Transcription (cloud) | [arcaputo3/mcp-server-whisper](https://github.com/arcaputo3/mcp-server-whisper) | 48 | [cogell/assembly-ai-mcp](https://github.com/cogell/assembly-ai-mcp) (AssemblyAI) |
+| Text-to-speech (cloud) | [elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) | 1,100 | [MiniMax-AI/MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) (1,400 stars, TTS + video + image) |
+| Text-to-speech (local) | [mberg/kokoro-tts-mcp](https://github.com/mberg/kokoro-tts-mcp) | 51 | [aparsoft/kokoro-mcp-server](https://github.com/aparsoft/kokoro-mcp-server) (Kokoro-82M + audio enhancement) |
+| Multi-provider TTS | [blacktop/mcp-tts](https://github.com/blacktop/mcp-tts) | 49 | [CodeCraftersLLC/local-voice-mcp](https://github.com/CodeCraftersLLC/local-voice-mcp) (Chatterbox + Kokoro) |
+| Transcription (cloud) | [arcaputo3/mcp-server-whisper](https://github.com/arcaputo3/mcp-server-whisper) | 48 | Deepgram CLI (`dg mcp`, 25+ tools, dynamic loading) |
 | Transcription (local) | [SmartLittleApps/local-stt-mcp](https://github.com/SmartLittleApps/local-stt-mcp) | 11 | [shreyaskarnik/voice-mcp](https://github.com/shreyaskarnik/voice-mcp) (bidirectional) |
-| YouTube transcripts | [kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) | 494 | Multiple alternatives |
+| YouTube transcripts | [kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) | 494 | [jkawamoto/mcp-youtube-transcript](https://github.com/jkawamoto/mcp-youtube-transcript) (490 stars, pagination) |
 | FFmpeg / video processing | [video-creator/ffmpeg-mcp](https://github.com/video-creator/ffmpeg-mcp) | 124 | [misbahsy/video-audio-mcp](https://github.com/misbahsy/video-audio-mcp) (65 stars, 27 tools) |
-| Professional video editing | [samuelgursky/davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) | 641 | [mikechambers/adb-mcp](https://github.com/mikechambers/adb-mcp) (505 stars, Adobe multi-app) |
-| Music production (DAW) | [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) | 2,300 | [shiehn/total-reaper-mcp](https://github.com/shiehn/total-reaper-mcp) (29 stars, 600+ tools) |
+| Professional video editing | [samuelgursky/davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) | 700+ | [mikechambers/adb-mcp](https://github.com/mikechambers/adb-mcp) (355 stars, Adobe multi-app) |
+| Music production (DAW) | [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) | 2,100 | [jpoindexter/ableton-mcp](https://github.com/jpoindexter/ableton-mcp) (200+ tools, REST API) |
+| Music licensing | [Epidemic Sound MCP](https://www.epidemicsound.com/blog/mcp-server/) | — | — |
 | Video streaming | [Mux MCP](https://mcp.mux.com) | — | — |
 
 ## Why audio & video MCP servers matter
@@ -34,9 +36,24 @@ Creative work is repetitive in ways people don't discuss. A podcast editor trims
 
 The value comes in three forms:
 
-1. **Voice and speech.** Generate narration, clone voices for consistency, transcribe meetings with speaker identification — ElevenLabs' official MCP server turns a single API into a complete audio production pipeline.
+1. **Voice and speech.** Generate narration, clone voices for consistency, transcribe meetings with speaker identification — ElevenLabs' official MCP server turns a single API into a complete audio production pipeline. MiniMax MCP (1,400 stars) goes further, adding video and music generation to the same server.
 2. **Video production.** Trim, transcode, overlay, and concatenate video through FFmpeg — or control professional NLEs like DaVinci Resolve and Premiere Pro directly, with hundreds of tools mapping their full scripting APIs.
-3. **Music production.** Create tracks, load instruments, edit MIDI, and control DAW transport — Ableton MCP (2,300 stars) proved the demand, and REAPER's 600+ tool server shows the depth possible.
+3. **Music production.** Create tracks, load instruments, edit MIDI, and control DAW transport — Ableton MCP (2,100 stars) proved the demand, spawning five competing implementations. REAPER's 600+ tool server shows the depth possible.
+
+### What changed since March 2026
+
+| Server/Category | March 2026 | April 2026 | Change |
+|----------------|------------|------------|--------|
+| MiniMax MCP | Not listed | 1,400 stars, TTS+video+image+music | **NEW** — fastest-growing creative MCP server |
+| Epidemic Sound MCP | Not listed | Beta launch | **NEW** — first music licensing MCP server |
+| Deepgram CLI MCP | Community-only | Official CLI with 25+ tools | **NEW** — dynamic tool loading |
+| ElevenLabs MCP | 1,300 stars | 1,100 stars, v0.4.0 | Updated SDK, new tools |
+| DaVinci Resolve MCP | 641 stars, 26/342 tools | 700+ stars, Fusion node graph, universal installer | Significant feature expansion |
+| Ableton MCP (ahujasid) | 2,300 stars | 2,100 stars | Ecosystem fragmented into 5+ competitors |
+| jpoindexter/ableton-mcp | Not listed | 200+ tools, REST API | **NEW** — most comprehensive Ableton server |
+| Kokoro TTS ecosystem | 1 server (6 stars) | 3+ servers (mberg 51 stars, scottschram Apple Silicon) | Ecosystem expansion |
+| Spotify MCP servers | Not listed (gap) | Multiple community servers | Gap partially filled |
+| MCP Security | Not discussed | 30+ CVEs, 82% vulnerable | Crisis documented |
 
 The landscape splits into nine categories: **text-to-speech** (cloud and local), **transcription** (cloud, local, YouTube), **FFmpeg video processing**, **professional video editing** (DaVinci Resolve, Adobe), **dedicated Premiere Pro**, **dedicated After Effects**, **music production** (Ableton, REAPER, Logic Pro, SuperCollider), **media generation** (AI video/image creation), and **video streaming** (Mux).
 
@@ -48,11 +65,11 @@ Text-to-speech is the most mature audio MCP category, with cloud APIs, multi-pro
 
 ### The winner: elevenlabs/elevenlabs-mcp
 
-**Stars:** 1,300 | **Language:** Python | **License:** MIT | **Tools:** 10+
+**Stars:** 1,100 | **Language:** Python | **License:** MIT | **Tools:** 10+ | **Latest:** v0.4.0
 
-[elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) is the official ElevenLabs MCP server and the most feature-rich audio API server in the ecosystem. It covers the full ElevenLabs platform: **Text-to-Speech** with configurable voices, languages, and output formats. **Voice Cloning** from audio samples. **Voice Design** for creating new synthetic voices. **Transcription** with speaker identification. **Sound Effects** generation from text. **Audio Isolation** to separate speech from noise. **Conversational AI** for voice agents. **Outbound Calls** for voice agents that can make phone calls.
+[elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) is the official ElevenLabs MCP server and the most feature-rich audio-focused API server in the ecosystem. It covers the full ElevenLabs platform: **Text-to-Speech** with configurable voices, languages, and output formats. **Voice Cloning** from audio samples. **Voice Design** for creating new synthetic voices. **Transcription** with speaker identification. **Sound Effects** generation from text. **Audio Isolation** to separate speech from noise. **Conversational AI** for voice agents. **Outbound Calls** for voice agents that can make phone calls.
 
-Three output modes: `files` (save to disk), `resources` (return via MCP resources), or `both`. Enterprise data residency control via `ELEVENLABS_API_RESIDENCY`. Free tier provides 10,000 credits/month.
+Three output modes: `files` (save to disk), `resources` (return via MCP resources), or `both`. Enterprise data residency control via `ELEVENLABS_API_RESIDENCY`. Free tier provides 10,000 credits/month. The v0.4.0 release (May 2026) added new tools and updated the SDK.
 
 **Why it wins:** No other audio MCP server combines TTS, STT, cloning, isolation, sound effects, and voice agents in a single server. This is effectively a complete audio production API accessible through natural language.
 
@@ -60,9 +77,21 @@ Three output modes: `files` (save to disk), `resources` (return via MCP resource
 
 **Best for:** Anyone who wants the broadest audio capability from one server and is comfortable with a cloud API.
 
-### Runner-up: blacktop/mcp-tts (multi-provider)
+### Runner-up: MiniMax-AI/MiniMax-MCP (multi-modal)
 
-**Stars:** 50 | **Language:** Go | **License:** MIT | **Tools:** 4
+**Stars:** 1,400 | **Language:** Python | **License:** MIT | **Tools:** 9+
+
+[MiniMax-AI/MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) is the official MiniMax MCP server — and the broadest multi-modal creative server in the ecosystem, covering **Text-to-Speech** (30+ voices with speed, volume, and pitch controls plus subtitle timing), **Voice Cloning** from samples, **Voice Design** from descriptive text prompts, **Text-to-Image**, **Text-to-Video** (MiniMax-Hailuo-02, 6s/10s at 768P/1080P), **Image-to-Video**, and **Music Generation** (music-1.5/2.5 models with genre, mood, tempo, instrument, and key parameters plus AI watermark flag).
+
+The 1,400 stars accumulated in under a month since March 25 launch, making it the fastest-growing creative MCP server. MiniMax also released MMX-CLI (1,200 stars) — a companion CLI that exposes all seven modalities as shell commands without MCP, giving developers two integration paths.
+
+**Why it's significant:** No other single MCP server spans TTS, voice cloning, video generation, image generation, and music creation. Where ElevenLabs focuses deeply on audio, MiniMax covers the full creative media pipeline at the cost of less audio depth.
+
+**Best for:** Teams that need multi-modal generation (speech + video + image + music) from a single server.
+
+### Best multi-provider: blacktop/mcp-tts
+
+**Stars:** 49 | **Language:** Go | **License:** MIT | **Tools:** 4
 
 [blacktop/mcp-tts](https://github.com/blacktop/mcp-tts) takes a different approach — instead of one provider, it offers four TTS backends with automatic fallback: `say_tts` (macOS built-in, zero cost, offline), `elevenlabs_tts` (high-quality synthesis), `google_tts` (Google Gemini, 30 voices), and `openai_tts` (10 voices, speed control 0.25x–4.0x).
 
@@ -70,11 +99,13 @@ The standout feature is **sequential TTS enforcement** — system-wide file lock
 
 **Best for:** Multi-agent setups or teams that want provider flexibility without lock-in.
 
-### Best local option: aparsoft/kokoro-mcp-server
+### Best local option: mberg/kokoro-tts-mcp
 
-**Stars:** 6 | **Language:** Python | **License:** Apache 2.0 | **Tools:** 5+
+**Stars:** 51 | **Language:** Python | **License:** MIT
 
-[aparsoft/kokoro-mcp-server](https://github.com/aparsoft/kokoro-mcp-server) wraps the Kokoro-82M open-weight TTS model — 82 million parameters delivering good speech synthesis entirely locally, with no API keys or cloud dependencies. Twelve voices (American and British accents). Audio post-processing: normalization, noise reduction, silence trimming, fade effects. Batch and script processing. Multi-voice podcast generation. Docker deployment.
+[mberg/kokoro-tts-mcp](https://github.com/mberg/kokoro-tts-mcp) wraps Kokoro TTS for local speech synthesis, generating MP3 files with optional S3 upload. The 51 stars make it the most adopted Kokoro MCP server, ahead of aparsoft/kokoro-mcp-server (which adds audio enhancement, Docker, and a Streamlit Web UI) and scottschram/kokoro-tts-mcp (Apple Silicon optimized via MLX, lazy-loads the ~600MB model).
+
+The Kokoro ecosystem has expanded significantly — multiple implementations now cover different platforms and deployment models, all built on the Kokoro-82M open-weight model with zero cloud dependencies.
 
 **Best for:** Compliance, privacy, or air-gapped environments where no audio can leave the machine.
 
@@ -120,9 +151,11 @@ The 494 stars — higher than many full-featured MCP servers — reflects a comm
 
 ### Also notable
 
+**[Deepgram CLI (`dg mcp`)](https://developers.deepgram.com/cli/mcp-server)** — Deepgram released a CLI (April 15, 2026) with a **built-in MCP server** offering 25+ tools for transcription, TTS, text analysis, and account management. The standout feature is **dynamic tool loading** — the server fetches its tool list from Deepgram's API at runtime, so new capabilities appear without package upgrades. Real-time transcripts with interim results, word-level timing, speaker diarization. Uses stored credentials via `dg login`. This effectively replaces the older [deepgram-devs/deepgram-mcp](https://github.com/deepgram-devs/deepgram-mcp) as the official Deepgram MCP integration.
+
 **[cogell/assembly-ai-mcp](https://github.com/cogell/assembly-ai-mcp)** — AssemblyAI transcription services via MCP. Standard interface for AssemblyAI's API including the Slam-1 speech-language model.
 
-**[deepgram-devs/deepgram-mcp](https://github.com/deepgram-devs/deepgram-mcp)** — Official Deepgram MCP server wrapping text-to-speech. Deepgram also offers agentic developer tools with an MCP skills marketplace.
+**[BigUncle/Fast-Whisper-MCP-Server](https://github.com/BigUncle/Fast-Whisper-MCP-Server)** — High-performance speech recognition MCP server based on Faster Whisper, providing efficient local audio transcription.
 
 **[r-lz/video-digest](https://github.com/r-lz/video-digest)** — Extracts and transcribes audio from YouTube, Bilibili, TikTok, and Twitter. Multi-provider support: Deepgram, Gladia, Speechmatics, AssemblyAI.
 
@@ -174,11 +207,13 @@ The `remove_silence` tool is particularly useful for podcast/video editing. B-ro
 
 ### The winner: samuelgursky/davinci-resolve-mcp
 
-**Stars:** 641 | **Language:** Python | **License:** MIT | **Tools:** 26/342
+**Stars:** 700+ | **Language:** Python | **License:** MIT | **Tools:** 26/342
 
 [samuelgursky/davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) has the deepest API coverage of any creative application MCP server — **100% of the DaVinci Resolve Scripting API** (324/324 methods), with 98.5% live-tested.
 
 Two modes: **Compound Server** (default, 26 tools) groups related operations to keep context windows lean — project management, media pool, timeline editing, color grading, Fusion compositions, render pipeline. **Full Server** (342 tools) exposes one tool per API method for maximum precision. Auto-detects OS and Resolve installation. Supports 10+ MCP clients.
+
+**What's new (April 2026):** New `fusion_comp` tool provides a 20-action interface exposing the full Fusion composition node graph API — add/delete/find nodes, wire connections, set/get parameters, manage keyframes, control undo grouping, set render ranges, and trigger renders. Timeline item Fusion cache actions added (get/set cache on timeline items). Universal installer (`python install.py`) now supports macOS/Windows/Linux across 10 MCP clients. Dedicated timeline_item actions for retime/speed, transform, crop, composite, audio, and keyframes with validation.
 
 **Why it wins:** No other creative application MCP server maps 100% of its host application's API. The compound/granular dual-mode approach is an excellent pattern — practical defaults with full power available. The Fusion composition tool alone exposes the entire node graph API.
 
@@ -186,11 +221,11 @@ Two modes: **Compound Server** (default, 26 tools) groups related operations to 
 
 ### Runner-up: mikechambers/adb-mcp (Adobe multi-app)
 
-**Stars:** 505 | **Language:** JavaScript/Python | **License:** MIT | **Tools:** Multi-app
+**Stars:** 355 | **Language:** JavaScript/Python | **License:** MIT | **Tools:** Multi-app
 
 [mikechambers/adb-mcp](https://github.com/mikechambers/adb-mcp) enables AI control of multiple Adobe applications through a unified interface: **Photoshop** (layers, text, image generation, selections, filters), **Premiere Pro** (clips, transitions, effects, audio, timeline editing), **After Effects** (ExtendScript automation), **InDesign**, **Illustrator**.
 
-Architecture: AI → MCP Server → Node Proxy → Adobe Plugin → Application. Not endorsed by Adobe — proof-of-concept, but with significant adoption (505 stars, 212 commits).
+Architecture: AI → MCP Server → Node Proxy → Adobe Plugin → Application. Tested with Claude Desktop (Mac and Windows) and OpenAI Agent SDK. Not endorsed by Adobe — proof-of-concept, but with growing adoption.
 
 **Best for:** Teams already in the Adobe ecosystem who want one server for multiple Creative Cloud apps.
 
@@ -218,13 +253,13 @@ Music production is where MCP servers show the widest range in depth — from Ab
 
 ### The adoption leader: ahujasid/ableton-mcp
 
-**Stars:** 2,300 | **Language:** Python | **License:** MIT | **Tools:** 15+
+**Stars:** 2,100 | **Language:** Python | **License:** MIT | **Tools:** 15+
 
 [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) is the most popular music production MCP server and one of the highest-starred creative MCP servers overall. It pioneered the creative tools MCP movement, featured in a16z and Fireship coverage.
 
 Two-way socket-based communication: MIDI and audio track creation, instrument and effect loading from Ableton's library, MIDI clip creation and note editing, playback/session transport control, tempo adjustment and parameter management.
 
-**Why it leads:** The 2,300 stars reflect genuine demand for AI-assisted music production. The server proved the concept and inspired an entire wave of creative tool MCP servers.
+**Why it leads:** The 2,100 stars reflect genuine demand for AI-assisted music production. The server proved the concept and inspired an entire wave of creative tool MCP servers — including multiple Ableton-specific competitors (see below).
 
 **The catch:** Relatively modest tool count compared to specialized alternatives. Limited depth in areas like arrangement view, recording, and plugin parameter control.
 
@@ -244,7 +279,11 @@ The key innovation is **deployment profiles**: `dsl-production` (default, 53 too
 
 ### Also notable
 
+**[jpoindexter/ableton-mcp](https://github.com/jpoindexter/ableton-mcp)** (200+ tools) — The most comprehensive Ableton MCP server by tool count, with near-complete Ableton Live Object Model (LOM) coverage. Includes REST API and Max for Live device. Works with Claude, Ollama, OpenAI, and Groq. If ahujasid's server proved the concept, this one fills in the depth.
+
 **[xiaolaa2/ableton-copilot-mcp](https://github.com/xiaolaa2/ableton-copilot-mcp)** (71 stars, TypeScript, 78 commits) — Deeper Ableton functionality: Arrangement View, clip properties with piano roll, note management, audio recording, plugin loading, and operation history with rollback. Best for users who've outgrown the base Ableton MCP.
+
+**[uisato/ableton-mcp-extended](https://github.com/uisato/ableton-mcp-extended)** — Extended Ableton Live MCP server compatible with Claude Desktop, Cursor, and Gemini CLI.
 
 **[itsuzef/reaper-mcp](https://github.com/itsuzef/reaper-mcp)** (40 stars, Python) — Simpler REAPER interface: project creation, track management, MIDI notes, project info. Supports OSC and ReaScript dual modes. Best for REAPER beginners.
 
@@ -258,13 +297,23 @@ The key innovation is **deployment profiles**: `dsl-production` (default, 53 too
 
 ---
 
-## Media generation and streaming
+## Media generation, music licensing, and streaming
 
 ### AI media generation
 
 **yuvalsuede/agent-media** — CLI and MCP server with unified access to 7 AI models (Kling, Veo, Sora, Seedance, Flux, Grok Imagine) for video and image generation with 9 tools.
 
 **burningion/video-editing-mcp** — MCP interface for Video Jungle enabling AI-driven video editing, analysis, and search within a video collection. Add videos, build projects, generate edits from multiple sources, and search for relevant clips.
+
+### Music licensing: Epidemic Sound MCP (NEW)
+
+**[Epidemic Sound MCP Server](https://www.epidemicsound.com/blog/mcp-server/)** (Beta) — The first music licensing MCP server. Epidemic Sound's server connects AI creative tools directly to their catalog of royalty-free music, sound effects, and voiceovers. AI agents can search by text description, then filter by BPM range, duration, mood, featured instruments, musical key, artist, and vocal presence.
+
+Epidemic Sound owns 100% of the rights to its catalog (master, neighboring, and composition rights), which means clean licensing without the complexity of traditional music clearance. Monthly subscription pricing with no per-use fees.
+
+**Why it matters:** This is the first time a music licensing company has offered an MCP server. For video and podcast producers, the workflow of "find the right background music" is one of the most time-consuming creative tasks — having an AI agent search a licensed catalog by mood and tempo changes it fundamentally.
+
+**Best for:** Content creators, podcast producers, and video editors who need royalty-free music and want AI-assisted soundtrack selection.
 
 ### Video streaming
 
@@ -278,45 +327,49 @@ The key innovation is **deployment profiles**: `dsl-production` (default, 53 too
 
 Use this decision flowchart:
 
-**Need speech synthesis?** → Start with [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp) for the broadest capability. Need multi-provider flexibility? → [blacktop/mcp-tts](https://github.com/blacktop/mcp-tts). Need local/private TTS? → [kokoro-mcp-server](https://github.com/aparsoft/kokoro-mcp-server).
+**Need speech synthesis?** → Start with [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp) for the deepest audio capability. Need TTS + video + image + music from one server? → [MiniMax MCP](https://github.com/MiniMax-AI/MiniMax-MCP). Need multi-provider flexibility? → [blacktop/mcp-tts](https://github.com/blacktop/mcp-tts). Need local/private TTS? → [kokoro-tts-mcp](https://github.com/mberg/kokoro-tts-mcp).
 
-**Need transcription?** → [mcp-server-whisper](https://github.com/arcaputo3/mcp-server-whisper) for cloud quality with audio analysis. [local-stt-mcp](https://github.com/SmartLittleApps/local-stt-mcp) for local privacy. [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) for YouTube videos.
+**Need transcription?** → [mcp-server-whisper](https://github.com/arcaputo3/mcp-server-whisper) for cloud quality with audio analysis. [Deepgram CLI](https://developers.deepgram.com/cli/mcp-server) for 25+ tools with dynamic loading. [local-stt-mcp](https://github.com/SmartLittleApps/local-stt-mcp) for local privacy. [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) for YouTube videos.
 
 **Need video processing?** → [video-creator/ffmpeg-mcp](https://github.com/video-creator/ffmpeg-mcp) for common operations. [misbahsy/video-audio-mcp](https://github.com/misbahsy/video-audio-mcp) for podcast/editing workflows. [dubnium0/ffmpeg-mcp](https://github.com/dubnium0/ffmpeg-mcp) for advanced streaming/stabilization.
 
-**Need professional NLE control?** → [DaVinci Resolve MCP](https://github.com/samuelgursky/davinci-resolve-mcp) for the deepest API coverage. [adb-mcp](https://github.com/mikechambers/adb-mcp) for multi-app Adobe control. [leancoderkavy/premiere-pro-mcp](https://github.com/leancoderkavy/premiere-pro-mcp) for dedicated Premiere Pro with 269 tools.
+**Need professional NLE control?** → [DaVinci Resolve MCP](https://github.com/samuelgursky/davinci-resolve-mcp) for the deepest API coverage (now with full Fusion node graph tools). [adb-mcp](https://github.com/mikechambers/adb-mcp) for multi-app Adobe control. [leancoderkavy/premiere-pro-mcp](https://github.com/leancoderkavy/premiere-pro-mcp) for dedicated Premiere Pro with 269 tools.
 
-**Need music production?** → [Ableton MCP](https://github.com/ahujasid/ableton-mcp) for the safest, most supported entry point. [total-reaper-mcp](https://github.com/shiehn/total-reaper-mcp) for maximum depth. Logic Pro MCP servers for macOS-only workflows.
+**Need music production?** → [Ableton MCP](https://github.com/ahujasid/ableton-mcp) for the safest, most supported entry point. [jpoindexter/ableton-mcp](https://github.com/jpoindexter/ableton-mcp) for 200+ tools with REST API. [total-reaper-mcp](https://github.com/shiehn/total-reaper-mcp) for maximum depth. Logic Pro MCP servers for macOS-only workflows.
+
+**Need royalty-free music?** → [Epidemic Sound MCP](https://www.epidemicsound.com/blog/mcp-server/) for AI-assisted soundtrack selection from a licensed catalog.
 
 **Need video streaming infrastructure?** → [Mux MCP](https://mcp.mux.com) for upload, live streams, and analytics.
 
 ---
 
-## Three trends worth watching
+## Four trends worth watching
 
-**1. Official vendor servers are raising the bar.** ElevenLabs' official MCP server (1,300 stars) combines TTS, STT, voice cloning, sound effects, and voice agents in one package. Mux offers hosted remote MCP. When vendors invest in their own MCP servers, the quality and maintenance trajectory are fundamentally different from community projects.
+**1. Multi-modal servers are consolidating creative workflows.** MiniMax MCP (1,400 stars in under a month) combines TTS, voice cloning, video generation, image generation, and music creation in a single server. ElevenLabs (1,100 stars) owns audio depth. The pattern is clear: vendors are racing to become the single creative MCP server teams install, not just a point tool.
 
-**2. The creative tools MCP movement is real.** Ableton MCP (2,300 stars) didn't just create a music production server — it sparked an entire category. DaVinci Resolve, Premiere Pro, After Effects, Logic Pro, REAPER, SuperCollider, and more followed. Creative professionals are genuinely adopting AI assistants for production workflows, not just experimentation.
+**2. The Ableton ecosystem has fragmented — in a good way.** What started as one server (ahujasid/ableton-mcp, 2,100 stars) has spawned at least five serious competitors: jpoindexter (200+ tools), xiaolaa2 (copilot with arrangement view), uisato (extended), LofiFren (33 personalities), and nozomi-koborinai (OSC). Competition is producing genuine innovation: REST APIs, personality systems, rollback, and LOM coverage that the original never attempted.
 
-**3. Local/private alternatives exist for everything.** Kokoro-82M for TTS. whisper.cpp for STT. FFmpeg servers for video processing. You can build a complete audio/video pipeline with zero cloud dependencies. This matters for compliance, air-gapped environments, and teams that can't send content to external APIs.
+**3. Music licensing enters the MCP ecosystem.** Epidemic Sound's MCP server (Beta) is the first licensed music catalog accessible via MCP. This is a new category — not generating audio, but *finding and licensing existing audio*. Expect more content licensing platforms to follow.
+
+**4. Security is the elephant in the room.** The 2026 MCP security crisis (30+ CVEs in 60 days, 82% of file-operation servers vulnerable to path traversal) hits audio/video servers hard. Most FFmpeg servers pass user input to shell commands — the dominant attack vector (43% of all MCP vulnerabilities). Most creative tool servers allow arbitrary file operations without sandboxing. The convenience of "AI controls my video editor" has real security implications that the ecosystem hasn't addressed.
 
 ---
 
 ## What's missing
 
-The audio and video MCP ecosystem has significant gaps:
+The audio and video MCP ecosystem has narrowed some gaps but significant ones remain:
 
-- **No Spotify or Apple Music MCP server** — No playlist management, music metadata, or listening history integration.
+- **Spotify MCP servers exist but none dominate** — Multiple community implementations now offer playlist management, playback control, and search (marcelmarais, thebigredgeek, igorgarbuz, and others). However, none have significant adoption, and Spotify has not released an official MCP server. Apple Music still has zero MCP integration.
 - **No professional audio effects processing** — No VST/AU plugin hosting or mastering chain automation beyond what DAW servers provide.
 - **No real-time audio streaming** — All servers work with files. None handle live audio streams or real-time processing.
-- **No official Deepgram or AssemblyAI MCP servers** — Only community implementations exist. Given these are the two leading speech AI APIs, official servers would be impactful.
-- **FFmpeg servers remain fragmented** — Six or more implementations, none dominant. The ecosystem needs consolidation.
+- **Deepgram now has official MCP** (via CLI) — ~~No official Deepgram MCP~~ The Deepgram CLI (April 2026) includes a built-in MCP server with 25+ tools and dynamic tool loading. AssemblyAI still lacks an official MCP server.
+- **FFmpeg servers remain fragmented** — Six or more implementations, none dominant. The ecosystem needs consolidation, and the security implications of passing user input to FFmpeg shell commands are increasingly concerning.
 - **No end-to-end subtitle pipeline** — Transcription and subtitle burning exist separately but no single server handles "transcribe this video and burn in the captions."
 - **No GarageBand MCP server** — Apple's most accessible music tool has no MCP integration.
-- **Limited safety controls** — Most video/audio servers allow arbitrary file operations without sandboxing or confirmation prompts.
+- **Security is now a documented crisis** — 82% of MCP servers with file operations are vulnerable to path traversal. 43% of all MCP CVEs involve shell/exec injection — exactly the pattern FFmpeg and creative tool servers exhibit. Most audio/video servers lack sandboxing, confirmation prompts, or input validation.
 
-These gaps represent real opportunities. An official Deepgram MCP server, a unified FFmpeg standard, or a Spotify integration would immediately fill market needs.
+The Deepgram and Spotify gaps have partially closed since our last review. The security gap has widened into a documented crisis.
 
 ---
 
-*Last updated: March 2026. Have a correction or suggestion? [Open an issue on GitHub](https://github.com/grove/chatforest.com).*
+*Last updated: April 2026. Have a correction or suggestion? [Open an issue on GitHub](https://github.com/grove/chatforest.com).*

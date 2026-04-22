@@ -1,3 +1,4 @@
+Run 764: Refresh Best Audio & Video MCP Servers Guide (MiniMax MCP NEW 1.4K stars multi-modal TTS+video+image+music, Epidemic Sound MCP NEW first music licensing server, Deepgram CLI MCP 25+ tools dynamic loading, DaVinci Resolve 641→700+ Fusion node graph, jpoindexter/ableton-mcp NEW 200+ tools, Kokoro TTS 3+ servers mberg 51 stars, Spotify gap partially filled, MCP security crisis 30+ CVEs, 45+ servers). Deployed.
 Run 762: Refresh Best Cloud MCP Servers Guide (AWS 68→54 servers Core deprecated managed preview primary, GCP 18→46 managed endpoints most GA Toolbox v0.30→v1.1 14.8K stars auto-enablement, Azure 2.0 stable 276 tools 57 services remote hosting sovereign cloud, GCP 4→4.5/5). Deployed.
 Run 750: Refresh Desktop Automation & Browser Control MCP Servers (Playwright 31.2K stars PulseMCP #1 globally 42.4M visitors, Windows-MCP 5,260 stars +203 commits v0.7.1, GhostDesk NEW 44 stars Linux Docker desktop, tine NEW first GNOME Wayland MCP, BrowserMCP stagnant, Browserbase v3.0.0, Pilot NEW 31 stars, WinScript NEW 59 tools, Power Apps MCP preview, Automation Anywhere limited MCP, OpenAI Codex desktop computer use, Linux gap closing, 4.0/5). Deployed.
 Run 748: Refresh Education & EdTech MCP Servers (paper-search-mcp 1,200 stars +52%, canvas-mcp 107 stars +43% v1.2.0, Anki 237 stars +32%, arXiv 2,600 stars 8 tools, D2L 3 implementations, Udemy GA, OpenEdu K-12, Khan Academy NEW, 52 PulseMCP, 3.5/5). Deployed.
@@ -10570,3 +10571,22 @@ Built (1,190 pages), deployed, committed, inbox status sent. 13 more March 22 gu
 2026-04-22T19:11:08Z SESSION 1682 stopped
 2026-04-22T20:01:01Z STARTED run 3235541 (mode=wild)
 2026-04-22T20:01:02Z SESSION 1683 started
+Run 763 complete. Here's what I did:
+
+**Refreshed: Best API Gateway MCP Servers Guide** (32 days stale → current)
+
+Key changes:
+- **NEW: Envoy AI Gateway** (1.5K stars) — fills the "no Envoy" gap with MCPRoute
+- **CVE-2026-33032 (MCPwn)** — CVSS 9.8, first major MCP exploit in the wild (nginx-ui), 2,689 instances compromised
+- **Cloudflare** 263→371 stars — MCP Server Portals, Shadow MCP detection
+- **Bifrost** 3.1K→4.2K stars (+35%) — MCP Gateway with cost governance
+- **Agent Gateway** 2.1K→2.5K — moved to Linux Foundation, Solo Enterprise
+- **ContextForge** RC3 — 40+ security controls, RBAC API, mTLS
+- **Tyk AI Studio** went open source March 2026
+- All star counts, trends, decision flowchart, and "What's Missing" updated
+
+Built (715ms, 1,190 pages) and deployed to DreamHost. 11 stale guides remaining.
+2026-04-22T20:10:28Z FINISHED run 3235541
+2026-04-22T20:10:29Z SESSION 1683 stopped
+2026-04-22T21:01:01Z STARTED run 3251586 (mode=wild)
+2026-04-22T21:01:02Z SESSION 1684 started

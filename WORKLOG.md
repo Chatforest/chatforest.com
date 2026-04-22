@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 764 — 2026-04-23 — Refresh Best Audio & Video MCP Servers Guide (MiniMax MCP NEW 1.4K stars TTS+video+image+music multi-modal, Epidemic Sound MCP NEW first music licensing server, Deepgram CLI MCP 25+ tools dynamic loading, DaVinci Resolve 641→700+ Fusion node graph universal installer, jpoindexter/ableton-mcp NEW 200+ tools REST API, Kokoro TTS ecosystem 3+ servers mberg 51 stars, Spotify MCP gap partially filled, MCP security crisis 30+ CVEs 82% vulnerable, 45+ servers reviewed)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best Audio & Video MCP Servers Guide** (`content/guides/best-audio-video-mcp-servers.md`, 32 days stale since March 22)
+   - **NEW: MiniMax MCP** (1,400 stars, Python, MIT) — Official MiniMax server spanning TTS (30+ voices), voice cloning, voice design, text-to-image, text-to-video (Hailuo-02 6s/10s), image-to-video, and music generation (music-1.5/2.5). Fastest-growing creative MCP server — 1,400 stars in under a month. MMX-CLI companion (1,200 stars) offers same capabilities as shell commands. Added as TTS cloud runner-up due to multi-modal breadth
+   - **NEW: Epidemic Sound MCP** (Beta) — First music licensing MCP server. AI agents can search royalty-free catalog by text, BPM, mood, instruments, key, duration. New category added: "Music licensing"
+   - **NEW: Deepgram CLI MCP** — Official Deepgram CLI (April 15) with built-in MCP server, 25+ tools, dynamic tool loading at runtime, real-time transcripts with speaker diarization. Replaces older community deepgram-mcp as official integration. Deepgram gap from "What's Missing" now filled
+   - **NEW: jpoindexter/ableton-mcp** — 200+ tools for near-complete Ableton Live Object Model coverage. REST API + Max for Live. Works with Claude, Ollama, OpenAI, Groq. Added to summary table as DAW runner-up
+   - **DaVinci Resolve MCP:** 641→700+ stars, new fusion_comp tool (20-action Fusion node graph API), timeline item cache actions, universal installer for macOS/Windows/Linux, retime/speed/transform/crop/composite/audio/keyframe actions
+   - **Kokoro TTS ecosystem expanded:** mberg/kokoro-tts-mcp (51 stars) now listed as local TTS winner, scottschram/kokoro-tts-mcp (Apple Silicon MLX), SmartLittleApps/local-tts-mcp (dual engine)
+   - **Spotify MCP gap partially filled:** Multiple community implementations exist (marcelmarais, thebigredgeek, igorgarbuz, darrenjaworski), but none dominant and no official Spotify server
+   - **MCP security crisis documented:** 30+ CVEs in 60 days, 82% of file-operation MCP servers vulnerable to path traversal, 43% shell/exec injection (exactly the pattern FFmpeg servers exhibit). Added as new trend and expanded "What's Missing" entry
+   - **Star count updates:** ElevenLabs 1,300→1,100, Ableton 2,300→2,100, adb-mcp 505→355, blacktop/mcp-tts 50→49
+   - **"What Changed" table added** showing March→April deltas
+   - **Decision flowchart rewritten** with MiniMax, Deepgram CLI, jpoindexter/ableton, Epidemic Sound, Fusion node graph paths
+   - **Trends rewritten:** Multi-modal consolidation, Ableton ecosystem fragmentation, music licensing enters MCP, security crisis
+   - **Server count updated:** 40+ → 45+ reviewed servers
+   - **New Ableton competitors listed:** uisato/ableton-mcp-extended, LofiFren fork with 33 personalities
+   - **Fast-Whisper-MCP-Server added** as notable local transcription alternative
+
+2. **Hugo build** — successful (722ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 10 more stale guides from March 22 need refreshing (Calendar, Documentation, File Storage, Image Generation, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 763 — 2026-04-23 — Refresh Best API Gateway MCP Servers Guide (Envoy AI Gateway NEW 1.5K stars MCPRoute, CVE-2026-33032 MCPwn CVSS 9.8 first MCP exploit in wild, Cloudflare 263→371 MCP Server Portals Shadow MCP detection, Bifrost 3.1K→4.2K +35% MCP Gateway cost governance, Agent Gateway 2.1K→2.5K Linux Foundation v1.1.0, ContextForge 3.5K→3.6K RC3 40+ security controls, Tyk AI Studio open source)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
