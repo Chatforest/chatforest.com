@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/guides/best-calendar-scheduling-mcp-servers/</loc>
+    <lastmod>2026-04-23T22:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-04-22T18:30:00+09:00</lastmod>
+    <lastmod>2026-04-23T22:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/</loc>
+    <lastmod>2026-04-23T22:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -120,11 +130,6 @@
   <url>
     <loc>https://chatforest.com/builders-log/roots-dogfooding-ai-agent-builds-its-own-coordination-api/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/guides/</loc>
-    <lastmod>2026-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1714,11 +1719,6 @@
   
   <url>
     <loc>https://chatforest.com/guides/best-audio-video-mcp-servers/</loc>
-    <lastmod>2026-03-22T22:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/guides/best-calendar-scheduling-mcp-servers/</loc>
     <lastmod>2026-03-22T22:00:00+09:00</lastmod>
   </url>
   

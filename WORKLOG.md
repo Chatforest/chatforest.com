@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 765 — 2026-04-23 — Refresh Best Calendar & Scheduling MCP Servers Guide (Google Official Calendar MCP NEW 8 tools managed remote, Microsoft Work IQ Calendar NEW Preview hosted, nspady 12→13 tools bulk create, Softeria 547→614 stars v0.36.0, Cal.com 9→34 tools, Calendly DCR auth, FradSer 55→61 stars, Google gap FILLED, MCP security CVE-2026-26118 CVSS 8.8)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best Calendar & Scheduling MCP Servers Guide** (`content/guides/best-calendar-scheduling-mcp-servers.md`, 32 days stale since March 22)
+   - **NEW: Google Official Calendar MCP** — Google shipped managed remote MCP servers for Workspace including Calendar. 8 tools (create_event, delete_event, get_event, list_calendars, list_events, respond_to_event, suggest_time, update_event). suggest_time is unique to official server. Requires Google Cloud project + gcloud CLI. This fills the #1 gap we flagged in March
+   - **NEW: Microsoft Work IQ Calendar** — Replaces older microsoft/mcp catalog approach. Dedicated Calendar MCP (Preview) with create/list/update/delete events, accept/decline, meeting intelligence (suggest times, free/busy). Requires M365 Copilot license (~$30/user/month). microsoft/work-iq on GitHub
+   - **nspady/google-calendar-mcp:** 12→13 tools (bulk create-events added), still ~1,100 stars, v2.6.1. Now positioned as "community winner" alongside Google official
+   - **taylorwilsdon/google_workspace_mcp:** Stateless mode fix, meeting URL extraction from conferenceData/hangoutLink, re-auth improvements, macOS stdout fix
+   - **Softeria/ms-365-mcp-server:** 547→614 stars, v0.36.0, April 2026 fixes for delegated scopes and token cache desync
+   - **MarkusPfundstein/mcp-gsuite:** 477→428 stars
+   - **Cal.com:** 9→34 tools — massive expansion to cover all API endpoints
+   - **Calendly:** Added Dynamic Client Registration (DCR) for frictionless auth, no pre-registration needed
+   - **FradSer/mcp-server-apple-events:** 55→61 stars, split out separate apple-reminders repo (32 stars)
+   - **MarimerLLC/calendar-mcp:** Pre-built binaries, .NET 10, configurable routing backends
+   - **MCP security documented:** CVE-2026-26118 Azure MCP SSRF (CVSS 8.8), systemic SDK vulnerability affecting 7K+ servers
+   - **"What Changed" table added** showing March→April deltas
+   - **Decision flowchart rewritten** with Google Official, Work IQ, DCR auth paths
+   - **Trends rewritten:** Official vendors arrived (gap era over), hosted remote winning, tool count inflation
+   - **What's Missing updated:** Google gap marked FILLED, security concerns added
+
+2. **Hugo build** — successful (710ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 9 more stale guides from March 22 need refreshing (Documentation, File Storage, Image Generation, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 764 — 2026-04-23 — Refresh Best Audio & Video MCP Servers Guide (MiniMax MCP NEW 1.4K stars TTS+video+image+music multi-modal, Epidemic Sound MCP NEW first music licensing server, Deepgram CLI MCP 25+ tools dynamic loading, DaVinci Resolve 641→700+ Fusion node graph universal installer, jpoindexter/ableton-mcp NEW 200+ tools REST API, Kokoro TTS ecosystem 3+ servers mberg 51 stars, Spotify MCP gap partially filled, MCP security crisis 30+ CVEs 82% vulnerable, 45+ servers reviewed)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
