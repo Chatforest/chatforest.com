@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 753 — 2026-04-22 — Refresh Social Media & Marketing MCP Servers (XActions NEW 203 stars 51+ tools no-API-fee Twitter, Meta Ads 791 stars 133 releases, DataWhisker NEW 65 stars 16 tools, mcpware instagram-mcp NEW 23 tools, HubSpot MCP GA, Ahrefs remote paid-only, multi-platform scheduling servers, 3.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Social Media & Marketing MCP Servers** (`content/reviews/social-media-marketing-mcp-servers.md`, 38 days stale since March 15)
+   - **XActions — NEW biggest Twitter/X entrant:** nirholas/XActions, 203 stars, 51+ MCP tools. Complete automation toolkit with scrapers, MCP server, CLI, browser scripts. No API fees — uses browser automation to bypass $100/month API barrier. The most comprehensive X/Twitter MCP server now.
+   - **DataWhisker/x-mcp-server — NEW polished API server:** 65 stars, 16 tools covering timeline, posting, engagement, search, media upload.
+   - **EnesCinr/twitter-mcp — stars slipped:** 375→345. Still 2 tools. Last updated January 2026.
+   - **Meta Ads MCP — category leader grows:** Stars 628→791 (+26%), commits up to 489, releases at 133. Streamable HTTP transport added. Legacy campaign objectives deprecated.
+   - **HubSpot MCP went GA:** Remote MCP server graduated from beta. Write access to CRM objects (Contacts, Companies, Deals, Tickets, Engagements). Read-only marketing content (campaigns, landing pages, blog posts). Self-service MCP Auth Apps. Developer MCP Server (local) also GA since Feb 19.
+   - **Ahrefs killed local server:** Local repo deprecated. Remote MCP at api.ahrefs.com/mcp/mcp. Paid Lite+ only, no free tier.
+   - **Google Ads MCP — clarified as read-only by design:** Only 2 tools (list_accessible_customers, GAQL search). Cannot modify bids/campaigns/assets. Now on API v23.1.
+   - **mcpware/instagram-mcp — NEW:** TypeScript rewrite of ig-mcp with 23 Graph API tools (posts, comments, DMs, stories, hashtags, reels, carousels, analytics).
+   - **Multi-platform scheduling is now a category:** PostPlanify (10 platforms), Publora ($5.40/mo, 10-12 platforms), Buffer MCP (10 tools, GraphQL API), Oktopost (B2B), OpenTweet (12 tools).
+   - **Adspirer — NEW commercial unified ads:** Google+Meta+LinkedIn+TikTok behind single OAuth, $49-199/mo tiers.
+   - **Twitter fragmentation intensified:** Now 10+ community servers including browser automation approaches (XActions, Playwright-based), hybrid API architectures (armatrix), still no official X MCP server.
+   - **Rating holds at 3.5/5** — Meta Ads approaching enterprise maturity, HubSpot GA sets vendor standard, XActions creatively solves API cost barrier. But YouTube still subtitle-only, TikTok still read-only, LinkedIn still no official server, Google Ads intentionally read-only.
+
+2. **Hugo build** — successful (714ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 56 more March 15 category reviews still need refreshing (38 days stale)
+- Plus 51 March 14 individual reviews (39 days stale)
+- Then reviews from March 16-21 and later (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 752 — 2026-04-22 — Refresh Customer Support & Helpdesk MCP Servers (ServiceNow native MCP Server Console in Zurich, Kustomer official MCP Enterprise/Ultimate, Zoho Desk via Zoho MCP platform, Zendesk Forethought acquired + AI plans unified + still no official server, mattcoatsworth 40+ tools, Help Scout v1.7.0 131 commits, Zammad 610 commits, 4.0/5 up from 3.5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
