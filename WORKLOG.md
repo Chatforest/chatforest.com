@@ -2,6 +2,30 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 760 — 2026-04-23 — Refresh Best AI & ML MCP Servers Guide (Paperclip NEW 57K stars company-centric orchestration, Ruflo 21.1K→32.6K +54%, promptfoo acquired by OpenAI March 9, DeepEval 5K→13K+ stars, MLflow official MCP in 3.5.1+, W&B 6→14 tools + hosted server, fast-agent ACP support + 1.8K commits, model serving 3.5→4/5, agent orchestration 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best AI & ML MCP Servers Guide** (`content/guides/best-ai-ml-mcp-servers.md`, 32 days stale since March 22)
+   - **Agent orchestration section overhauled:** Paperclip (57K stars, TypeScript, MIT) added as new winner — company-centric orchestration with CEO/Manager/Worker agent hierarchy, launched March 4 and fastest-growing project in agent orchestration. Ruflo updated from 21.1K→32.6K stars (+54%), 215→314 MCP tools, AgentDB v3, 3-tier model routing. mcp-agent updated to 8.3K stars with cloud deployment beta. fast-agent updated to 3.8K stars, 1,799 commits, ACP support, Agent Skills, MCP-UI. Added mcp-gateway-registry (598 stars) as enterprise infrastructure. Rating upgraded 4→4.5/5.
+   - **Model serving section updated:** HuggingFace 206→221 stars with proxy tools feature. Ollama 144→153 stars. W&B 41→49 stars, expanded from 6→14 tools with model registry and hosted server. MLflow official MCP now built into 3.5.1+ with Databricks integration. Rating upgraded 3.5→4/5.
+   - **Evaluation section updated:** promptfoo acquired by OpenAI (March 9, 2026) — remains open source, 350K+ developers, 130K monthly active. DeepEval surged from 5K→13K+ stars. MCP-Universe added W&D research agents and MCPMark support. MCP-Bench accepted to NeurIPS 2025 Workshop.
+   - **Summary table updated** with new winners, ratings, and star counts.
+   - **Trends section rewritten** to reflect April 2026 landscape: agent orchestration explosion, eval tooling validation via acquisition, ML lifecycle convergence.
+
+2. **Hugo build** — successful (704ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 14 more stale guides from March 22 need refreshing (API Gateway, Audio/Video, Calendar, Cloud, Documentation, File Storage, Image Generation, Kubernetes, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 759 — 2026-04-22 — Refresh Identity & Authentication MCP Servers (Okta for AI Agents GA April 30 Agent Gateway + MCP Registry, Auth0 Auth for MCP Early Access OAuth 2.1 for MCP ecosystem, FusionAuth NEW 300+ tools every API endpoint, Authentik NEW 245 tools 4 server variants, Keycloak 26.6.0 CIMD for MCP authz, Microsoft MCP Server for Enterprise public preview, AthenZ mcp-oauth-proxy NEW multi-provider + RBAC, CVE-2026-32211 Azure MCP CVSS 9.1, Obsidian Security MCP OAuth account takeover disclosure, 38% of MCP servers lack auth, 4/5 up from 3.5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
