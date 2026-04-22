@@ -7,7 +7,7 @@ Healthcare and medical MCP servers are connecting AI agents to the full spectrum
 
 The landscape spans six areas: **FHIR/EHR integration** (multiple competing implementations for accessing electronic health records), **medical research** (PubMed and ClinicalTrials.gov access), **multi-source healthcare hubs** (servers bundling FDA, PubMed, ICD-10, and more), **drug and pharmacology databases** (DrugBank, RxNorm, NLM codes), **medical imaging** (DICOM/PACS interaction), and **healthcare standards** (HIPAA-compliant protocol extensions and public health data).
 
-The headline findings: **PubMed-MCP-Server is the most starred research server** at 104 stars with deep paper analysis and PDF downloads. **Healthcare-mcp-public is the most starred healthcare hub** at 101 stars, bundling 9 tools across FDA, PubMed, clinical trials, ICD-10, and DICOM. **WSO2's FHIR server leads EHR integration** at 98 stars with SMART-on-FHIR auth. **DICOM-mcp is the sole serious imaging server** at 86 stars with 11 tools for PACS interaction. **Medical-mcps unifies 14 biomedical APIs** into 100+ tools through a single endpoint. **No major EHR vendor (Epic, Cerner) has released an official MCP server** despite strong community demand. **Innovaccer's HMCP proposes a healthcare-specific MCP extension** for HIPAA compliance and multi-agent clinical workflows.
+The headline findings: **WSO2's FHIR server and healthcare-mcp-public are now tied for most starred** at 110 stars each — WSO2 leads EHR integration with SMART-on-FHIR auth, while healthcare-mcp-public bundles 9 tools across FDA, PubMed, clinical trials, ICD-10, and DICOM. **PubMed-MCP-Server holds at 108 stars** with deep paper analysis and PDF downloads, but **cyanheads/pubmed-mcp-server is a strong new competitor** at 86 stars with 9 tools including citation generation, MeSH lookup, and a public hosted instance. **DICOM-mcp reaches 91 stars** as the leading imaging server with 11 tools for PACS interaction. **LangCare doubles its stars to 31** and adds MCP Apps (embedded React UIs) and a healthcare Voice Agent. **Medical-mcps unifies 14 biomedical APIs** into 100+ tools through a single endpoint. **Still no official Epic or Cerner MCP servers** despite both expanding their FHIR API support. **Keragon MCP remains in beta** with 300+ healthcare integrations and SOC 2 Type II certification.
 
 ## FHIR / EHR Integration
 
@@ -15,9 +15,9 @@ The headline findings: **PubMed-MCP-Server is the most starred research server**
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) | 98 | Python | Apache-2.0 | 7 |
+| [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) | 110 | Python | Apache-2.0 | 7 |
 
-WSO2's open-source FHIR MCP server is the most starred FHIR-specific implementation. Its key value proposition: **expose any FHIR server or API as an MCP server** without custom coding. Provides full CRUD operations on FHIR resources:
+WSO2's open-source FHIR MCP server is now tied for the most starred server in the category. Its key value proposition: **expose any FHIR server or API as an MCP server** without custom coding. Provides full CRUD operations on FHIR resources:
 
 - **get_capabilities** — retrieve metadata about available FHIR resource types
 - **search** — execute FHIR search interactions with full parameter support
@@ -45,7 +45,7 @@ Uses SMART on FHIR standards for secure EHR connection via the SMART App Launch 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [the-momentum/fhir-mcp-server](https://github.com/the-momentum/fhir-mcp-server) | 68 | Python | MIT | 11 |
+| [the-momentum/fhir-mcp-server](https://github.com/the-momentum/fhir-mcp-server) | 77 | Python | MIT | 11 |
 
 The Momentum's FHIR server combines traditional FHIR resource access with **AI-powered document search**. Beyond the 8 FHIR resource tools (patient, observation, condition, medication, immunization, encounter, allergy, generic), it adds:
 
@@ -75,7 +75,7 @@ Built with AWS SigV4 authentication, 235 tests with 96% coverage. The read-only 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [langcare/langcare-mcp-fhir](https://github.com/langcare/langcare-mcp-fhir) | 15 | Go | — | 4 |
+| [langcare/langcare-mcp-fhir](https://github.com/langcare/langcare-mcp-fhir) | 31 | Go | — | 4 |
 
 An enterprise-grade MCP server designed as a **stateless proxy to any FHIR R4 EMR** — Epic, Cerner, or GCP Healthcare API. Written entirely in Go for performance, with security features unusual in the MCP ecosystem:
 
@@ -85,6 +85,8 @@ An enterprise-grade MCP server designed as a **stateless proxy to any FHIR R4 EM
 - **OAuth2 support** — works with Epic, Cerner, and GCP authentication flows
 
 Ships with a **40+ Clinical Skills Library** — agent-agnostic workflow guides covering medication management, lab interpretation, clinical decision support, documentation, and population health. Also includes embedded React-based MCP Apps (FHIR Explorer, Patient Chart Review) that render directly in compatible clients.
+
+**New since March 2026:** LangCare has added a **Healthcare Voice Agent** — real-time voice AI that lets patients ask about their health records and get spoken answers over FHIR data. Also ships a **LangCare CLI** — a Python wrapper that exposes FHIR tools (search, read, create, update) over HTTP for AI agent frameworks that don't speak MCP natively (LangChain, smolagents, CrewAI, AutoGen). Stars have doubled from 15→31, signaling growing enterprise interest.
 
 ### rkirkendall/medplum-mcp (Most Tools)
 
@@ -100,7 +102,7 @@ The most tool-rich FHIR server with **33 dedicated tools** covering 8 FHIR resou
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [JackKuo666/PubMed-MCP-Server](https://github.com/JackKuo666/PubMed-MCP-Server) | 104 | Python | MIT | 5 |
+| [JackKuo666/PubMed-MCP-Server](https://github.com/JackKuo666/PubMed-MCP-Server) | 108 | Python | MIT | 5 |
 
 The most starred medical research MCP server and a critical tool for biomedical literature access. Bridges AI assistants with PubMed's database of 30+ million citations:
 
@@ -112,29 +114,49 @@ The most starred medical research MCP server and a critical tool for biomedical 
 
 The PDF download and deep analysis tools set this apart from basic PubMed search — agents can retrieve full papers and extract structured insights, not just titles and abstracts.
 
+### cyanheads/pubmed-mcp-server (NEW — Most Sophisticated PubMed Access)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [cyanheads/pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) | 86 | TypeScript | Apache-2.0 | 9 |
+
+A new competitor to JackKuo666's PubMed server, offering **9 tools with significantly broader capabilities**:
+
+- **pubmed_search_articles** — query with boolean syntax, filters, and date ranges
+- **pubmed_fetch_articles** — batch metadata retrieval (up to 200 PMIDs)
+- **pubmed_fetch_fulltext** — PMC full-text extraction with section filtering
+- **pubmed_format_citations** — generate APA 7th, MLA 9th, BibTeX, and RIS citations
+- **pubmed_find_related** — discover similar, citing, and referenced articles via ELink
+- **pubmed_spell_check** — NCBI ESpell biomedical query correction
+- **pubmed_lookup_mesh** — MeSH vocabulary exploration with tree numbers
+- **pubmed_lookup_citation** — ECitMatch partial reference resolution
+- **pubmed_convert_ids** — DOI/PMID/PMCID conversion
+
+Built on the `@cyanheads/mcp-ts-core` framework with Bun runtime, supporting both STDIO and Streamable HTTP transport. A **publicly hosted instance** is available at `https://pubmed.caseyjhand.com/mcp` — unusual for a research server. The citation generation, MeSH exploration, and ID conversion tools fill gaps that JackKuo666's server doesn't address, making this the more capable option for systematic reviews and reference management workflows.
+
 ### cyanheads/clinicaltrialsgov-mcp-server (Best Clinical Trials Access)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cyanheads/clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) | 58 | TypeScript | Apache-2.0 | 7 |
+| [cyanheads/clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) | 65 | TypeScript | Apache-2.0 | 7 |
 
-The most sophisticated ClinicalTrials.gov MCP server, going well beyond basic search with analytical capabilities:
+The most sophisticated ClinicalTrials.gov MCP server, now at **v2.3.4** with significant architectural improvements. Goes well beyond basic search with analytical capabilities:
 
 - **clinicaltrials_search_studies** — full-text and filtered search with geographic proximity
-- **clinicaltrials_get_study** — batch retrieval of up to 5 studies by NCT ID
+- **clinicaltrials_get_study_record** — comprehensive study information by NCT ID
 - **clinicaltrials_get_study_results** — outcomes and adverse events for completed trials
-- **clinicaltrials_analyze_trends** — statistical aggregation across up to 5,000 studies
-- **clinicaltrials_compare_studies** — side-by-side analysis of 2-5 trials
-- **clinicaltrials_find_eligible_studies** — patient-to-trial matching with location-based sorting
+- **clinicaltrials_get_study_count** — study count queries
+- **clinicaltrials_find_eligible** — patient-to-trial matching with location-based sorting
 - **clinicaltrials_get_field_values** — enum value discovery with study count frequency
+- **clinicaltrials_get_field_definitions** — field schema discovery
 
-The patient-to-trial matching tool is particularly valuable for clinical research coordinators — it can find eligible trials for a patient based on their conditions and location. 92% test coverage and Cloudflare Workers deployment show production-quality engineering.
+The patient-to-trial matching tool is particularly valuable for clinical research coordinators — it can find eligible trials for a patient based on their conditions and location. The v2.x rewrite brings OpenTelemetry integration, dual transport (STDIO + Streamable HTTP), optional authentication, and a publicly hosted instance at `https://clinicaltrials.caseyjhand.com/mcp`. 247 commits and 21 forks show strong community engagement.
 
 ### pascalwhoop/medical-mcps (Most Comprehensive Biomedical)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pascalwhoop/medical-mcps](https://github.com/pascalwhoop/medical-mcps) | 14 | Python | MIT | 100+ |
+| [pascalwhoop/medical-mcps](https://github.com/pascalwhoop/medical-mcps) | 18 | Python | MIT | 100+ |
 
 The most ambitious medical MCP server, unifying **14 biomedical APIs into 100+ tools** through a single endpoint:
 
@@ -163,9 +185,9 @@ A Python-focused ClinicalTrials.gov server with **CSV export capabilities** — 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Cicatriiz/healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | 101 | JavaScript | MIT | 9 |
+| [Cicatriiz/healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | 110 | JavaScript | MIT | 9 |
 
-The most starred healthcare-specific MCP server, providing a **single entry point to multiple medical data sources**:
+Now tied with WSO2 as the most starred healthcare MCP server, providing a **single entry point to multiple medical data sources**:
 
 - **FDA Drug Information** — search and retrieve drug data with multiple search types (general, label, adverse events)
 - **PubMed Research** — medical literature search with date range filtering
@@ -183,7 +205,7 @@ The breadth makes this ideal as a general-purpose medical assistant backend. Fea
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [JamesANZ/medical-mcp](https://github.com/JamesANZ/medical-mcp) | 75 | TypeScript | MIT | 15 |
+| [JamesANZ/medical-mcp](https://github.com/JamesANZ/medical-mcp) | 86 | TypeScript | MIT | 15 |
 
 Differentiates with **zero API key requirements** — every data source is freely accessible, making setup trivial. Provides 15 tools across multiple medical domains:
 
@@ -232,7 +254,7 @@ A focused MCP server for medical calculations — BMI, GFR, dosage calculations,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ChristianHinge/dicom-mcp](https://github.com/ChristianHinge/dicom-mcp) | 86 | Python | MIT | 11 |
+| [ChristianHinge/dicom-mcp](https://github.com/ChristianHinge/dicom-mcp) | 91 | Python | MIT | 11 |
 
 The leading medical imaging MCP server, enabling AI agents to interact with **DICOM servers (PACS, VNA, etc.)**. Provides 11 tools across four categories:
 
@@ -287,9 +309,9 @@ Keragon offers a **commercial healthcare MCP platform** purpose-built for regula
 - **300+ healthcare integrations** — EHRs, billing platforms, CRMs, scheduling systems
 - **Least-privilege access control** — define exactly what data each AI agent can access, down to specific fields
 - **End-to-end audit logging** — every tool call and payload logged for compliance
-- **HIPAA-compliant by design** — built for regulated healthcare from the ground up
+- **HIPAA-compliant by design** — SOC 2 Type II certified, built for regulated healthcare from the ground up
 
-Currently in beta with 100 free tool calls per day. Unlike open-source alternatives, Keragon handles the compliance infrastructure so developers can focus on clinical workflows rather than security architecture.
+Still in beta with 100 free tool calls per day. Early beta results are encouraging — a multi-site outpatient clinic in Massachusetts reported double-digit decreases in administrative time using MCP-powered no-show reduction workflows. Software vendors building AI agents for healthcare can integrate Keragon MCP for free, instantly accessing all 300+ healthcare integrations without custom development. Unlike open-source alternatives, Keragon handles the compliance infrastructure so developers can focus on clinical workflows rather than security architecture.
 
 ### Cicatriiz/pophive-mcp-server (Public Health Surveillance)
 
@@ -314,11 +336,11 @@ The healthcare MCP ecosystem has impressive breadth but notable gaps:
 
 **Rating: 4.0 / 5**
 
-Healthcare MCP servers earn a strong rating thanks to impressive breadth — every major healthcare data domain has at least one MCP server, from EHR access to drug databases to medical imaging to public health surveillance. The FHIR subcategory has genuine competition (6+ implementations) driving quality and innovation. Medical research servers are polished and practical — PubMed-MCP-Server and the ClinicalTrials.gov server are production-ready tools that genuinely accelerate biomedical research workflows.
+Healthcare MCP servers hold their strong rating thanks to impressive breadth — every major healthcare data domain has at least one MCP server, from EHR access to drug databases to medical imaging to public health surveillance. The FHIR subcategory has genuine competition (7+ implementations including the new xSoVx/fhir-mcp) driving quality and innovation. Medical research is now the strongest subcategory: two competing PubMed servers (JackKuo666 at 108 stars, cyanheads at 86 stars with 9 tools and a public hosted instance), plus the ClinicalTrials.gov server at v2.3.4 with OpenTelemetry and dual transport.
 
-What elevates this category: vendor participation is strong (AWS, WSO2, Innovaccer, LangCare, Keragon) and the HMCP specification signals that healthcare-specific standards are being developed rather than ignored. Multi-source hubs like healthcare-mcp-public (101 stars) and medical-mcp (75 stars) lower the barrier to entry by bundling multiple APIs into single servers.
+What elevates this category: vendor participation is strong and growing (AWS, WSO2, Innovaccer, LangCare, Keragon). LangCare's addition of MCP Apps, a Voice Agent, and a CLI for non-MCP frameworks shows the enterprise FHIR segment maturing. Keragon's SOC 2 Type II certification and early clinical results validate the commercial compliance path. Multi-source hubs like healthcare-mcp-public (110 stars) and medical-mcp (86 stars) continue lowering the barrier to entry.
 
-What holds it back from 4.5: the absence of official EHR vendor servers creates reliance on community bridges, medical imaging stops at DICOM metadata without actual image analysis, compliance documentation is spotty across most projects, and specialized clinical domains (mental health, genomics, pharmacy workflows) are underserved. The technology is there — the regulatory and vendor ecosystem is still catching up.
+What holds it back from 4.5: still no official EHR vendor servers — Epic expanded FHIR API support for USCDI v5 but hasn't released an MCP server. Medical imaging stops at DICOM metadata without actual image analysis. Compliance documentation is spotty across most open-source projects. Specialized clinical domains (mental health, genomics, pharmacy workflows) remain underserved. The technology is there — the regulatory and vendor ecosystem is still catching up.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-22 using Claude Opus 4.6 (Anthropic).*
 

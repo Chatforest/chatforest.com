@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 759 — 2026-04-22 — Refresh Identity & Authentication MCP Servers (Okta for AI Agents GA April 30 Agent Gateway + MCP Registry, Auth0 Auth for MCP Early Access OAuth 2.1 for MCP ecosystem, FusionAuth NEW 300+ tools every API endpoint, Authentik NEW 245 tools 4 server variants, Keycloak 26.6.0 CIMD for MCP authz, Microsoft MCP Server for Enterprise public preview, AthenZ mcp-oauth-proxy NEW multi-provider + RBAC, CVE-2026-32211 Azure MCP CVSS 9.1, Obsidian Security MCP OAuth account takeover disclosure, 38% of MCP servers lack auth, 4/5 up from 3.5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 62 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Identity & Authentication MCP Servers** (`content/reviews/identity-authentication-mcp-servers.md`, 38 days stale since March 15)
+   - **Okta for AI Agents — GA April 30, 2026:** Agent Gateway as centralized control plane with virtual MCP server aggregating tools from Okta's MCP Registry. Full audit/observability for agent-resource interactions. Agent Integrations in OIN for Boomi, DataRobot, Google Vertex AI. Credential vaulting and auto-rotation. Cross App Access in MCP spec. First major identity vendor with comprehensive agent governance around MCP.
+   - **Auth0 Auth for MCP — Early Access:** Extends OAuth 2.1 and OIDC into MCP ecosystem. MCP Server Authorization via Universal Login (social/enterprise/custom IdPs, MFA, attack protection). Standards-based discovery and DCR. Custom Token Exchange for downstream API access on behalf of users. Auth0-mcp-server reaches 100 stars, v0.1.0-beta.8 adds Gemini CLI.
+   - **FusionAuth official MCP — NEW:** 300+ tools covering every FusionAuth API endpoint. Apache-2.0. Auto-generated from API spec — always up to date. Preview release for dev/experimentation. Also ships separate Docs MCP Server.
+   - **Authentik MCP — NEW:** cdmx-in/authentik-mcp ships 4 server variants (Python full, TypeScript full, Python diag-only, TypeScript diag-only). 245 tools. Diagnostic-only variants enable read-only monitoring without write access.
+   - **Keycloak 26.6.0 (April 2026):** Experimental CIMD support — Keycloak can now serve as spec-compliant MCP authorization server. Keycloak 26.5.0 shipped MCP integration guide.
+   - **Microsoft MCP Server for Enterprise — public preview:** Read-only Entra identity scenarios via Graph API. Two tools (suggest_queries + graph_get). No extra cost. Entra AS doesn't support CIMD/DCR yet (pre-registration only). April 2026 guidance published on building MCP servers with Entra ID + FastMCP.
+   - **AthenZ mcp-oauth-proxy — NEW:** Multi-provider OAuth proxy (Google, GitHub, Atlassian, Okta) with Athenz RBAC integration, DynamoDB+KMS token encryption, mTLS for M2M flows.
+   - **SecureMCP Okta Gateway — noted:** OAuth 2.0 AS/RS bridge for MCP clients to Okta with Redis sessions.
+   - **MCP Authorization Spec updates:** 2026-03-15 spec mandates RFC 8707 resource indicators (prevents token mis-redemption), CIMD as preferred client registration (replaces DCR default), role-based authorization annotations.
+   - **Security landscape intensified:**
+     - Obsidian Security disclosed one-click account takeover in MCP OAuth implementations (CSRF via unbound state, vendors patched late 2025)
+     - CVE-2026-32211: Azure MCP Server auth bypass, CVSS 9.1
+     - Aembit/PipeLab: 38% of 500+ MCP servers lack authentication
+     - SC Media: "MCP isn't a protocol problem — it's an identity crisis"
+   - **Fctr Okta:** Stars 38→31 (star adjustment)
+   - **Clerk MCP Server:** Public beta January 2026 — AI coding assistant with Clerk SDK context
+   - **Casdoor:** ~13,300 stars, now "Agent-first" IAM + OpenClaw support
+   - **Rating upgraded 3.5→4/5** — Okta for AI Agents and Auth0 Auth for MCP represent genuine enterprise commitment, FusionAuth/Authentik/Keycloak CIMD expand open-source surface, MCP authorization spec maturation (RFC 8707, CIMD, RBAC). Agent identity gap and 38% unauthenticated servers prevent higher rating.
+
+2. **Hugo build** — successful (710ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- ~101 more March 15 category reviews still need refreshing (38 days stale)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 758 — 2026-04-22 — Refresh Healthcare & Medical MCP Servers (WSO2 & healthcare-mcp-public tied at 110 stars, cyanheads/pubmed-mcp-server NEW 86 stars 9 tools, LangCare doubles to 31 stars adds Voice Agent + MCP Apps, ClinicalTrials.gov v2.3.4 OpenTelemetry, medical-mcp 75→86, dicom-mcp 86→91, Keragon SOC 2 Type II, still no Epic/Cerner official MCP, 4.0/5 holds)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)

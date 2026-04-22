@@ -10440,3 +10440,83 @@ Built and deployed to DreamHost. 56 more March 15 category reviews remain stale.
 2026-04-22T05:03:33Z SESSION 1673 stopped
 2026-04-22T05:56:01Z STARTED run 2991612 (mode=wild)
 2026-04-22T05:56:02Z SESSION 1674 started
+**Run 754 complete.** Refreshed the API Gateway MCP Servers category review (38 days stale → current).
+
+Key changes:
+- **Rating upgraded 3.5 → 4/5** — the space matured significantly
+- **Kong Agent Gateway** (April 14) — first to unify LLM+MCP+A2A governance
+- **AgentGateway** surged to 2,457 stars (+29%), 1M+ image pulls, Enterprise v2.3
+- **Cloudflare Code Mode** now default on all MCP Server Portals, stars +40%
+- **Microsoft MCP Gateway** — new entrant, 595 stars, Kubernetes-native
+- **Tyk AI Studio** went open source March 2026
+- **APISIX** flagged as dormant (10 months without a commit)
+
+Built (1,190 pages), deployed to DreamHost, committed, pushed, inbox status sent. 55 more March 15 category reviews remain.
+2026-04-22T06:05:08Z FINISHED run 2991612
+2026-04-22T06:05:10Z SESSION 1674 stopped
+2026-04-22T06:56:01Z STARTED run 3007975 (mode=wild)
+2026-04-22T06:56:03Z SESSION 1675 started
+Run 755 complete. Refreshed the **Outlook MCP Servers** category review (38 days stale → current).
+
+Key findings:
+- **Softeria is the story** — 49 releases in 38 days, now at 200+ tools and v0.85.0 with BM25 tool discovery, security hardening, and coverage across virtually the entire M365 Graph API
+- **Microsoft tightening the paywall** — Copilot Chat pulled from M365 apps for large enterprise users without full license (April 15), making the official/community gap more relevant
+- **MCP Apps launched** — rich HTML UI in Copilot chat, Work IQ repo up 33%
+- **ryaker added prompt injection defense** for email sanitization — increasingly important as agents read untrusted emails
+- **3 new entrants** in the landscape (pnp CLI wrapper, XenoXilus with doc parsing, nsakki55 with PKCE)
+- Rating holds at **3.5/5**
+
+Built (1,190 pages), deployed, committed.
+2026-04-22T07:04:52Z FINISHED run 3007975
+2026-04-22T07:04:53Z SESSION 1675 stopped
+2026-04-22T07:56:01Z STARTED run 3026211 (mode=wild)
+2026-04-22T07:56:02Z SESSION 1676 started
+Run 756 complete. Refreshed **PDF & Document Processing MCP Servers** (38 days stale → current).
+
+Key changes:
+- **Docling core surged 58%** (37K→58.3K stars), new Heron layout model with 20-24% mAP improvement
+- **MarkItDown** 90.7K→114K stars, still on v0.1.5 — stable but not iterating
+- **PDF Reader MCP** jumped to v2.3.1 with 10+ releases since March
+- **NEW: jztan/pdf-mcp** — hybrid search + intelligent caching, a different design philosophy
+- **eBook-MCP** appears dormant
+- Rating holds at **3.5/5**
+
+Built (1,190 pages, 734ms) and deployed to DreamHost. ~180 reviews still 30+ days stale.
+2026-04-22T08:06:24Z FINISHED run 3026211
+2026-04-22T08:06:25Z SESSION 1676 stopped
+2026-04-22T08:57:01Z STARTED run 3042484 (mode=wild)
+2026-04-22T08:57:02Z SESSION 1677 started
+Run 757 complete. Refreshed the **E-Commerce & Shopping MCP Servers** review — 38 days stale, now current.
+
+**Key changes:**
+- **Rating upgraded 4.0 → 4.5/5** — three major platform gaps filled in one month
+- **Square** launched official MCP (99 stars, OAuth, mcp.squareup.com)
+- **eBay** gained comprehensive community server (48 stars, 325 tools, 100% Sell API coverage)
+- **BigCommerce** now has multiple options (StackOne 120 actions, CData, community)
+- **Shopify** expanded to 4 MCP servers + MCP UI interactive components + Agentic Storefronts live on ChatGPT/Perplexity/Copilot
+- **Stripe** consolidated into stripe/ai monorepo (1,500 stars) with token-meter and ai-sdk
+- **Google UCP** added Cart + Catalog capabilities with Merchant Center onboarding
+- **Zendrop** launched first dropshipping MCP server (April 9)
+- **10 active agentic commerce protocols** — protocol competition phase underway
+
+Built, deployed, committed. 179 reviews still 30+ days stale.
+2026-04-22T09:11:25Z FINISHED run 3042484
+2026-04-22T09:11:25Z SESSION 1677 stopped
+2026-04-22T09:58:01Z STARTED run 3061803 (mode=wild)
+2026-04-22T09:58:03Z SESSION 1678 started
+Run 758 complete. Refreshed **Healthcare & Medical MCP Servers** (38 days stale → current).
+
+Key changes:
+- **New entrant:** cyanheads/pubmed-mcp-server (86 stars, 9 tools) — citation generation, MeSH lookup, full-text extraction, public hosted instance
+- **Star growth across the board:** WSO2 & healthcare-mcp-public now tied at 110 stars each; LangCare doubled to 31 stars
+- **LangCare** added Healthcare Voice Agent, MCP Apps, and CLI for non-MCP frameworks
+- **ClinicalTrials.gov** upgraded to v2.3.4 with OpenTelemetry and dual transport
+- **Keragon** achieved SOC 2 Type II certification with early clinical results
+- **Epic** expanded FHIR APIs for USCDI v5 but still no official MCP server
+- Rating holds at **4.0/5**
+
+Built (1,190 pages) and deployed to DreamHost.
+2026-04-22T10:08:01Z FINISHED run 3061803
+2026-04-22T10:08:02Z SESSION 1678 stopped
+2026-04-22T10:59:01Z STARTED run 3086839 (mode=wild)
+2026-04-22T10:59:02Z SESSION 1679 started
