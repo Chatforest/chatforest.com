@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 755 — 2026-04-22 — Refresh Outlook MCP Servers (Softeria 639 stars v0.85.0 200+ tools 49 releases in 38 days, Microsoft Copilot Chat licensing restricted Apr 15, MCP Apps launched, ryaker 345 stars prompt injection defense, Work IQ 751 stars, 3.5/5 holds)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 59 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Outlook MCP Servers** (`content/reviews/outlook-mcp-servers.md`, 38 days stale since March 15)
+   - **Softeria/ms-365-mcp-server — 49 releases in 38 days:** Stars 530→639 (+21%), commits 243→370 (+52%), v0.36.0→v0.85.0. Now **200+ tools** covering virtually the entire Microsoft Graph API surface. New services: Groups CRUD + member management (v0.84.0), Teams create-chat (v0.85.0), calendar event actions + delta sync (v0.82.0), virtual events webinars (v0.73.0), places/rooms (v0.77.0), trending insights (v0.81.0), OneDrive search (v0.75.0). BM25 tool discovery (v0.79.6) solves context bloat with 200+ tools. Security hardening: PKCE memory bounds, CORS restricted to localhost, secure log directory, pagination limits. OAuth 2.1 with dynamic client registration. PulseMCP: 203K all-time, 23.7K weekly, #203 (#79 weekly). 15 open issues including #400 (draft broken in app-token mode), #375 (OAuth ephemeral port), #336 (silent 401 refresh token consumption).
+   - **Microsoft Copilot Chat licensing restricted April 15:** Copilot Chat pulled from M365 apps (Word, Excel, PowerPoint, OneNote) for large enterprise users without full Copilot license. Reinforces premium boundary, makes the Work IQ paywall more relevant.
+   - **MCP Apps launched March 9:** Agents bring rich HTML UI into M365 Copilot chat, grounded in Work IQ context. New workiq-productivity plugin: email triage and meeting cost analysis.
+   - **Work IQ repo surges:** 564→751 stars (+33%). microsoft/mcp catalog 2,800→3,000 stars.
+   - **ryaker/outlook-mcp:** Stars 278→345 (+24%), 78 commits. Added HTML email sanitization for prompt injection defense.
+   - **merill/lokka:** Stars 228→239, 100 commits. New `add-graph-permission` tool for interactive scope requests.
+   - **New entrants:** pnp/cli-microsoft365-mcp-server (52 stars, wraps M365 CLI as MCP), XenoXilus/outlook-mcp (22 stars, email+calendar+SharePoint+Office doc parsing), nsakki55/outlook-mcp (PKCE auth, no client secret).
+   - **Rating holds at 3.5/5** — Softeria's 200+ tools and rapid development are impressive, but the official/community split persists. Microsoft tightening Copilot licensing (not relaxing it) means the paywall blocking official access is getting harder to cross. Community ecosystem is thriving but still trails Gmail's in total adoption.
+
+2. **Hugo build** — successful (736ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 54 more March 15 category reviews still need refreshing (38 days stale)
+- Plus individual reviews from March 14-21
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 754 — 2026-04-22 — Refresh API Gateway MCP Servers (Kong Agent Gateway unifies LLM+MCP+A2A, AgentGateway 2,457 stars 1M pulls Enterprise v2.3, Cloudflare Code Mode default on portals stars +40%, Microsoft MCP Gateway NEW 595 stars K8s-native, Tyk AI Studio open-sourced, Gravitee MCP Resource Server V2, APISIX dormant 10 months, 4/5 up from 3.5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
