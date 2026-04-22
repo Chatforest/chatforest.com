@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 748 — 2026-04-22 — Refresh Education & EdTech MCP Servers (paper-search-mcp 1,200 stars +52%, canvas-mcp 107 stars +43% v1.2.0, Anki 237 stars +32%, arXiv 2,600 stars 8 tools, D2L 3 implementations, Udemy GA, OpenEdu K-12, Khan Academy NEW, 52 PulseMCP, 3.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 54 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Education & EdTech MCP Servers** (`content/reviews/education-edtech-mcp-servers.md`, 38 days stale since March 15)
+   - **paper-search-mcp — fastest growth:** Stars 791→**1,200** (+52%). Now aggregates **20+ academic sources** (was 7). OA-first fallback chain, Claude Code skills integration added.
+   - **vishalsachdev/canvas-mcp overtakes DMontgomery40:** Stars 75→**107** (+43%), now the most-starred Canvas server. **v1.2.0** (April 2026): role-based tool filtering, accessibility scanner expanded 4→**20 checks**, security hardening, Windows compat. 88 tools + 8 agent skills.
+   - **DMontgomery40/mcp-canvas-lms:** Stars 89→**96** (+8%). No recent commits (last Dec 2024). Falling behind vishalsachdev.
+   - **ankimcp/anki-mcp-server:** Stars 179→**237** (+32%). 21+ tools across 5 categories. Package renamed to @ankimcp/anki-mcp-server.
+   - **blazickjp/arxiv-mcp-server:** Stars 2,400→**2,600** (+8%). **v0.4.11** (April 3). Tools doubled from 4 to **8** — added semantic search, citation graph, watch topic, check alerts. **License corrected: MIT** (was listed as Apache-2.0).
+   - **peancor/moodle-mcp-server:** Stars 31→**36** (+16%). Tool count corrected to 9.
+   - **Udemy Business MCP — went GA March 31, 2026.** MCP spec 2025-11-25, OAuth + static credentials. First publicly-traded EdTech company shipping production MCP.
+   - **D2L Brightspace — expanded from 1 to 3+ implementations.** RohanMuppa/brightspace-mcp-server (14 stars, Feb 2026, AES-256-GCM), joshuasoup/d2l-mcp (12 tools), bencered (original). Also on Pipedream.
+   - **NEW: OpenEdu MCP (Cicatriiz/openedu-mcp)** — 7 stars, 21+ tools, grade-level filtering K-2 through College, Common Core/NGSS curriculum alignment, SQLite caching. First K-12 curriculum-aligned MCP server.
+   - **NEW: Khan Academy MCP (aicoder2009/khanacademyMCP)** — 1 star, MIT, 12 tools. First Khan Academy MCP server.
+   - **NEW on PulseMCP:** Smartschool MCP (Belgian), OpenEMIS MCP, Duolingo Game Status MCP.
+   - **r-huijts/canvas-mcp:** Stars 1→**12**. Privacy-first, PulseMCP listing. Added CMU-specific Canvas implementation.
+   - **52 education servers on PulseMCP.**
+   - **AI-in-education policy:** 134 bills across 31 US states, Ohio mandates formal AI policies by July 2026, Maryland requires AI coordinators/literacy. 50-84% of K-12 students using AI, only 13% of schools have formal policies.
+   - **Rating holds at 3.5/5** — strong growth across all subcategories, Udemy GA is a commercial milestone, new K-12 entrants are promising. But Blackboard still absent, no SIS/library integrations, academic integrity tools missing.
+
+2. **Hugo build** — successful (723ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 61 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 747 — 2026-04-22 — Refresh Gmail MCP Servers (Google official MCP 3.9K stars, taylorwilsdon 2,200 stars +29%, GongRzhe archived, ArtyMcLabin fork 116 stars, 53 servers on PulseMCP, 4.0/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
