@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 754 — 2026-04-22 — Refresh API Gateway MCP Servers (Kong Agent Gateway unifies LLM+MCP+A2A, AgentGateway 2,457 stars 1M pulls Enterprise v2.3, Cloudflare Code Mode default on portals stars +40%, Microsoft MCP Gateway NEW 595 stars K8s-native, Tyk AI Studio open-sourced, Gravitee MCP Resource Server V2, APISIX dormant 10 months, 4/5 up from 3.5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 58 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: API Gateway MCP Servers** (`content/reviews/api-gateway-mcp-servers.md`, 38 days stale since March 15)
+   - **Kong Agent Gateway — biggest milestone:** AI Gateway 3.14 (April 14, 2026) launched Agent Gateway, first platform to unify LLM, MCP, and A2A governance in a single control plane. Also: Kong MCP Registry in tech preview (Feb 2026), enterprise directory for discovering/governing MCP servers. MCP Composer and MCP Runner announced for early access.
+   - **AgentGateway surges:** Stars 1,900→2,457 (+29%), forks 315→409, 1M+ image pulls. Solo Enterprise v2.3: AWS Bedrock AgentCore integration (inline OpenAPI → MCP tools without live server), intelligent failover, OBO token exchange with claim forwarding, OTel env var support. Linux Foundation governance.
+   - **Cloudflare Code Mode goes default:** Code Mode now the default on all MCP Server Portals (March 26). Stars 263→369 (+40%). `?codemode=search_and_execute` URL param. mcp-server-cloudflare: stars 3,500→3,650.
+   - **Microsoft MCP Gateway — NEW:** microsoft/mcp-gateway, 595 stars, 63 forks. Kubernetes-native reverse proxy + management layer. Session-aware stateful routing (StatefulSets + headless services), Azure Entra ID OAuth 2.0, tool registration with dynamic routing. Natural fit for Azure/K8s shops.
+   - **Envoy AI Gateway:** Stars 1,400→1,542 (+10%), forks 186→224. Still v0.5.0 (Jan 2026). CEL-based MCP authorization. Tetrate published MCP performance benchmarks. Active but no new release in 3 months.
+   - **Tyk AI Studio — open-sourced March 2026:** MCP tool generation from OpenAPI specs, scoped tool access, audit trails, PII redaction, guardrails. Now the most accessible self-hosted AI governance option.
+   - **Gravitee:** Open-source MCP server dormant (last push Sep 2025, still 2 stars). But Agent Mesh shipped in APIM 4.8, MCP Resource Server V2 adds full Client Credentials, AuthZen Bearer tokens, production-grade secret management. REST→MCP conversion at the gateway.
+   - **Traefik Hub Triple Gate extended:** March 2026 added parallel safety pipelines, multi-provider failover, token-level cost controls, IBM Granite Guardian, Regex Guard. TBAC continues.
+   - **Apigee:** Fully-managed remote MCP servers. API Hub treats MCP as first-class API style. Hybrid v1.16.1 (April 20).
+   - **APISIX dormant:** Stars 34→36, last push June 2025 — 10 months without a commit. 30+ tools still available but compatibility with newer APISIX versions uncertain.
+   - **Rating upgraded 3.5→4/5** — Kong unifying LLM+MCP+A2A is a genuine milestone, Microsoft's entry validates the category, AgentGateway at 2,457 stars shows real adoption, Tyk open-sourcing expands accessibility, Cloudflare Code Mode default proves the pattern. APISIX dormancy and read-only limitations on most gateway management servers prevent higher rating.
+
+2. **Hugo build** — successful (719ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 55 more March 15 category reviews still need refreshing (38 days stale)
+- Plus individual reviews from March 14-21
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 753 — 2026-04-22 — Refresh Social Media & Marketing MCP Servers (XActions NEW 203 stars 51+ tools no-API-fee Twitter, Meta Ads 791 stars 133 releases, DataWhisker NEW 65 stars 16 tools, mcpware instagram-mcp NEW 23 tools, HubSpot MCP GA, Ahrefs remote paid-only, multi-platform scheduling servers, 3.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)

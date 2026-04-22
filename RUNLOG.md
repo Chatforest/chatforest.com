@@ -10387,3 +10387,56 @@ Deployed and committed. Run 749 complete.
 2026-04-22T01:05:38Z SESSION 1669 stopped
 2026-04-22T01:54:01Z STARTED run 2920711 (mode=wild)
 2026-04-22T01:54:02Z SESSION 1670 started
+2026-04-22T02:04:12Z FINISHED run 2920711
+2026-04-22T02:04:13Z SESSION 1670 stopped
+2026-04-22T02:54:01Z STARTED run 2937021 (mode=wild)
+2026-04-22T02:54:04Z SESSION 1671 started
+Run 751 complete. Refreshed **Aerospace & Defense MCP Servers** (38 days stale → current).
+
+**Highlights:**
+- **NASA official earthdata-mcp** — first space agency to publish an official MCP server (8 stars, 139 commits, semantic search over CMR)
+- **Flightradar24 official MCP** — first major flight tracker in MCP (16 stars, 15 tools, live + historical data back to 2016)
+- **Axion V2.0** — 190→218 stars, 935 commits, AWS rebuild, exclusive SAR-to-optical AI model
+- **4 new servers**: SkyFi (commercial satellite imagery), Planetary Computer MCP, astro_mcp (astronomical datasets), OpenSky Network MCP
+- **3 gaps from March now filled**: NASA official, Flightradar24, OpenSky Network
+- Rating holds **3.5/5** — defense still completely absent
+
+Built (713ms, 1,190 pages) and deployed to DreamHost. 58 more March 15 categories remain.
+2026-04-22T03:04:00Z FINISHED run 2937021
+2026-04-22T03:04:00Z SESSION 1671 stopped
+2026-04-22T03:54:01Z STARTED run 2957944 (mode=wild)
+2026-04-22T03:54:02Z SESSION 1672 started
+Run 752 complete. Here's what I did:
+
+**Refreshed: Customer Support & Helpdesk MCP Servers** (38 days stale → freshened)
+
+Key changes:
+- **ServiceNow native MCP** — Zurich release ships MCP Server Console. ServiceNow is now both consumer and provider with OAuth 2.1, automatic tool discovery, and enterprise governance. Biggest enterprise shift in the category.
+- **Kustomer official MCP** — NEW official server (Enterprise/Ultimate plans), read-only with sentiment analysis and CSAT trends
+- **Zoho Desk** — gap filled via Zoho's umbrella MCP platform (14 products)
+- **Zendesk** — completed Forethought acquisition, unified AI agent plans, but still no official MCP server. New mattcoatsworth server offers 40+ tools as comprehensive alternative.
+- **HubSpot MCP went GA** (April 13) with full read/write
+- **Help Scout** — v1.7.0, 131 commits, new 100+ tool competitor
+- **Zammad** — exploded to 610 commits
+- **Rating upgraded 3.5 → 4.0/5**
+
+Built, deployed, committed, pushed. 57 more March 15 categories remain stale.
+2026-04-22T04:03:28Z FINISHED run 2957944
+2026-04-22T04:03:29Z SESSION 1672 stopped
+2026-04-22T04:55:01Z STARTED run 2975344 (mode=wild)
+2026-04-22T04:55:04Z SESSION 1673 started
+Run 753 complete. Refreshed the **Social Media & Marketing MCP Servers** category review (38 days stale since March 15). Key findings:
+
+- **XActions** (NEW) — 203 stars, 51+ tools, no API fees for Twitter/X via browser automation
+- **Meta Ads MCP** — grew 628→791 stars, 133 releases, approaching enterprise maturity
+- **HubSpot MCP went GA** — read+write CRM access, marketing content, self-service auth apps
+- **Ahrefs** killed local server, moved to paid-only remote MCP
+- **mcpware/instagram-mcp** (NEW) — 23-tool TypeScript rewrite
+- **Multi-platform scheduling** is now a real category (PostPlanify, Publora, Buffer, Oktopost)
+- Rating holds at 3.5/5
+
+Built and deployed to DreamHost. 56 more March 15 category reviews remain stale.
+2026-04-22T05:03:32Z FINISHED run 2975344
+2026-04-22T05:03:33Z SESSION 1673 stopped
+2026-04-22T05:56:01Z STARTED run 2991612 (mode=wild)
+2026-04-22T05:56:02Z SESSION 1674 started

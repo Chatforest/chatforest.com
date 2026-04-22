@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 22, 2026</span>
       </div>
 
       <h1 class="article-title">API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond</h1>
@@ -67,7 +67,7 @@
       <div class="article-body">
         <p>API gateways sit at the intersection of every API call in production infrastructure. Making them accessible to AI agents unlocks powerful capabilities: <strong>natural language route configuration, automated traffic analysis, real-time debugging, and intelligent plugin management</strong>. But this category splits into two distinct stories.</p>
 <p><strong>Story one: MCP servers for managing API gateways</strong> — tools that let AI agents configure routes, analyze traffic, and troubleshoot services on platforms like Kong, APISIX, and Traefik. <strong>Story two: API gateways acting as MCP infrastructure</strong> — platforms like Envoy AI Gateway, AgentGateway, Traefik Hub, and Cloudflare that route, secure, and govern MCP traffic itself. Both matter. This review covers the full picture.</p>
-<p>The headline: <strong>Cloudflare&rsquo;s Code Mode is the most architecturally innovative approach</strong> — 2 tools covering 2,500+ API endpoints in ~1,000 tokens, versus the 244K+ tokens a traditional MCP implementation would require. <strong>Kong Konnect offers the most polished official gateway management experience</strong> with a hosted 12-tool server. And <strong>APISIX provides the deepest gateway CRUD</strong> with 30+ tools for routes, services, upstreams, plugins, consumers, SSL, and secrets.</p>
+<p>The headline: <strong>Kong Agent Gateway (April 14, 2026) is the first platform to unify LLM, MCP, and A2A governance in a single control plane.</strong> <strong>Cloudflare&rsquo;s Code Mode is now the default on all MCP Server Portals</strong> — 2 tools covering 2,500+ API endpoints in ~1,000 tokens, versus the 244K+ tokens a traditional MCP implementation would require. <strong>AgentGateway has surged to 2,457 stars with 1M+ image pulls</strong>, solidifying its position as the open-source MCP gateway leader. And <strong>Microsoft has entered the space</strong> with a Kubernetes-native MCP Gateway already at 595 stars.</p>
 <p><strong>Category:</strong> <a href="/categories/developer-tools/">Developer Tools</a></p>
 <h2 id="part-1-mcp-servers-for-managing-api-gateways">Part 1: MCP Servers for Managing API Gateways</h2>
 <h3 id="kong-konnect-official-hosted">Kong Konnect (Official, Hosted)</h3>
@@ -96,6 +96,7 @@
 <p><strong>Kong&rsquo;s official hosted MCP server is the most polished API gateway management experience available.</strong> Zero-install remote hosting — connect directly from Claude, Cursor, VS Code, or any MCP client. Active development with new tools being added regularly.</p>
 <p>12 tools across four areas: <strong>Gateway configuration</strong> (GetService, GetRoute, GetPlugin, GetConsumer, GetConsumerGroup, GetVault — full read access to your gateway topology), <strong>Control plane management</strong> (GetControlPlane, GetControlPlaneGroup — multi-cluster visibility), <strong>Analytics</strong> (GetAnalytics — traffic patterns, status codes, consumer activity), and <strong>Debugging</strong> (CreateDebugSession, ActiveTracingSession — real-time performance tracing). Plus <strong>KnowledgeBaseSearch</strong> for querying Kong documentation and best practices.</p>
 <p>The debug session capability is noteworthy — you can ask an AI agent to trace a specific request path and it will create a targeted tracing session collecting real-time performance data. This is exactly the kind of workflow that benefits from conversational AI: &ldquo;Why are requests to /api/v2/orders slow?&rdquo; → agent creates debug session → analyzes trace data → identifies bottleneck.</p>
+<p><strong>New in 2026: Kong MCP Registry</strong> — launched in tech preview (February 2026), this is an enterprise directory within the Kong Konnect Catalog for registering, discovering, and governing MCP servers and AI-native tools. AAIF-compliant. Automated server generation turns existing API catalogs into AI-ready toolsets. MCP Composer and MCP Runner tools announced for early 2026 early access.</p>
 <p><strong>Deprecated predecessor: <a href="https://github.com/Kong/mcp-konnect">Kong/mcp-konnect</a></strong> — 38 stars, TypeScript, Apache 2.0, 10 tools, 9 commits. No longer maintained. Had analytics and configuration read tools but was self-hosted only. The hosted replacement is a significant upgrade in both capability and developer experience.</p>
 <h3 id="apache-apisix-official">Apache APISIX (Official)</h3>
 <table>
@@ -112,7 +113,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/api7/apisix-mcp">api7/apisix-mcp</a></td>
-<td>~34</td>
+<td>~36</td>
 <td>TypeScript</td>
 <td>30+</td>
 <td>Admin API key</td>
@@ -120,10 +121,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>APISIX&rsquo;s MCP server provides the deepest API gateway management capabilities of any server in this review.</strong> 34 stars, 13 forks, 37 commits, Apache 2.0, npm package <code>apisix-mcp</code> v0.0.7.</p>
+<p><strong>APISIX&rsquo;s MCP server provides the deepest API gateway management capabilities of any server in this review — but development has stalled.</strong> 36 stars, 14 forks, Apache 2.0, npm package <code>apisix-mcp</code> v0.0.7. Last push June 2025 — nearly 10 months without a commit.</p>
 <p>30+ tools covering full CRUD on every APISIX resource type: <strong>Routes</strong> (create_route, update_route, delete_route), <strong>Services</strong> (create_service, update_service, delete_service), <strong>Upstreams</strong> (create_upstream, update_upstream, delete_upstream), <strong>SSL certificates</strong> (create_ssl, update_ssl, delete_ssl), <strong>Consumers and credentials</strong> (create_or_update_consumer, delete_consumer, get_credential, create_or_update_credential, delete_credential), <strong>Consumer groups</strong> (create_consumer_group, delete_consumer_group), <strong>Plugins</strong> (get_all_plugin_names, get_plugin_info, get_plugins_by_type, get_plugin_schema, create_plugin_config, update_plugin_config), <strong>Global rules</strong> (create_global_rule, update_global_rule), <strong>Plugin metadata</strong> (get_plugin_metadata, create_or_update_plugin_metadata, delete_plugin_metadata), <strong>Secrets</strong> (get_secret_by_id, create_secret, update_secret), <strong>Proto definitions</strong> (create_or_update_proto), <strong>Stream routes</strong> (create_or_update_stream_route), plus <strong>get_resource</strong> (generic retrieval) and <strong>send_request_to_gateway</strong> (test requests).</p>
 <p>This is essentially the entire APISIX Admin API exposed as MCP tools. For teams running APISIX, this means AI agents can handle the complete gateway lifecycle: &ldquo;Create a new route for /api/v3/users pointing to upstream-cluster-2 with rate limiting and JWT auth&rdquo; → agent creates the route, configures plugins, tests the endpoint.</p>
-<p>The trade-off is complexity — 30+ tools means more for the AI model to navigate. But APISIX&rsquo;s plugin ecosystem (200+ plugins in the main project, which has 14,000+ stars) makes this breadth valuable.</p>
+<p>The trade-off is complexity — 30+ tools means more for the AI model to navigate. But APISIX&rsquo;s plugin ecosystem (200+ plugins in the main project, which has 14,000+ stars) makes this breadth valuable. <strong>Concern: with no commits in 10 months, compatibility with newer APISIX versions is uncertain.</strong></p>
 <h3 id="cloudflare-api-official">Cloudflare API (Official)</h3>
 <table>
 <thead>
@@ -139,7 +140,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/cloudflare/mcp">cloudflare/mcp</a></td>
-<td>~263</td>
+<td>~369</td>
 <td>TypeScript</td>
 <td>2</td>
 <td>OAuth 2.1 / API token</td>
@@ -147,11 +148,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Cloudflare&rsquo;s MCP server uses the most architecturally innovative approach we&rsquo;ve seen in any MCP server category.</strong> 263 stars, 19 forks, 50 commits, Apache 2.0. Rather than exposing 2,594 endpoints as individual tools (which would consume ~244,000 tokens of context), it uses &ldquo;Code Mode&rdquo; with just 2 tools in ~1,069 tokens — a <strong>99.5% reduction</strong> in context footprint.</p>
+<p><strong>Cloudflare&rsquo;s MCP server uses the most architecturally innovative approach we&rsquo;ve seen in any MCP server category — and Code Mode is now the default on all MCP Server Portals.</strong> 369 stars (up 40% from 263), 30 forks, Apache 2.0, actively pushed April 21, 2026. Rather than exposing 2,594 endpoints as individual tools (which would consume ~244,000 tokens of context), it uses &ldquo;Code Mode&rdquo; with just 2 tools in ~1,069 tokens — a <strong>99.5% reduction</strong> in context footprint.</p>
 <p>The two tools: <strong>search</strong> (agent writes JavaScript to query <code>spec.paths</code> and find endpoints by iterating the API specification server-side) and <strong>execute</strong> (agent writes JavaScript to call <code>cloudflare.request()</code> with discovered endpoints). The specification lives on the server — only execution results return to the agent.</p>
+<p><strong>March 26, 2026 milestone: Code Mode became the default on all MCP Server Portals.</strong> This means any portal created in Cloudflare Access automatically uses the 2-tool pattern. Append <code>?codemode=search_and_execute</code> to the portal URL, or disable via the Access dashboard. The generated code runs in an isolated Dynamic Worker environment, keeping credentials and environment variables out of the model context.</p>
 <p>This covers the <em>entire</em> Cloudflare API: DNS, Workers, R2 storage, Zero Trust, AI Gateway, D1, KV, Queues, Pages, and every other Cloudflare product. When Cloudflare adds new products, the same search/execute pattern discovers them — no new tool definitions needed.</p>
 <p><strong>Authentication:</strong> OAuth 2.1 (recommended, uses Workers OAuth Provider to downscope tokens) or API tokens with automatic account ID detection for account-scoped tokens.</p>
-<p><strong>Also notable: <a href="https://github.com/cloudflare/mcp-server-cloudflare">cloudflare/mcp-server-cloudflare</a></strong> — 3,500 stars, TypeScript, Apache 2.0, 349 commits. The older, traditional approach with 15 separate per-product MCP servers (Documentation, Workers Bindings, Workers Builds, Observability, Radar, Container, Browser Rendering, Logpush, AI Gateway, AutoRAG, Audit Logs, DNS Analytics, Digital Experience Monitoring, CASB, GraphQL). Still active and useful for specific product integrations, but the Code Mode server represents where Cloudflare is heading.</p>
+<p><strong>Also notable: <a href="https://github.com/cloudflare/mcp-server-cloudflare">cloudflare/mcp-server-cloudflare</a></strong> — 3,650 stars (up from 3,500), 371 forks, TypeScript, Apache 2.0, 349+ commits. The older, traditional approach with 15 separate per-product MCP servers (Documentation, Workers Bindings, Workers Builds, Observability, Radar, Container, Browser Rendering, Logpush, AI Gateway, AutoRAG, Audit Logs, DNS Analytics, Digital Experience Monitoring, CASB, GraphQL). Still active and useful for specific product integrations, but Code Mode represents where Cloudflare is heading.</p>
 <h3 id="traefik-community">Traefik (Community)</h3>
 <table>
 <thead>
@@ -193,7 +195,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/gravitee-io/gravitee-apim-mcp-server">gravitee-io/gravitee-apim-mcp-server</a></td>
-<td>~1</td>
+<td>~2</td>
 <td>TypeScript</td>
 <td>Dynamic</td>
 <td>Bearer token</td>
@@ -201,9 +203,9 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Gravitee&rsquo;s official MCP server is auto-generated from the Management API v2 OpenAPI specification.</strong> 1 star, 2 forks, 3 commits, MIT. Very early stage.</p>
+<p><strong>Gravitee&rsquo;s official MCP server is auto-generated from the Management API v2 OpenAPI specification.</strong> 2 stars, 2 forks, MIT. Last pushed September 2025 — the open-source MCP server itself is dormant.</p>
 <p>Tools are dynamically generated — covering API listing/retrieval, health monitoring, API creation/configuration, plan management, API lifecycle (start/stop), and environment operations. The auto-generation approach means it tracks the Management API automatically, but also means the tooling is generic rather than purpose-built for AI agent workflows.</p>
-<p>Gravitee&rsquo;s broader AI story is more interesting: <strong>Gravitee Agent Mesh</strong> (commercial) enables MCP-enabling any API as a tool for autonomous agents, with agent discovery and A2A protocol support. The APIM MCP server is the open-source entry point; the Agent Mesh is where the enterprise investment is going.</p>
+<p><strong>Where Gravitee is investing: Agent Mesh and MCP Resource Server V2.</strong> Gravitee 4.8 shipped Agent Mesh — a suite of features including Agent Gateway, Agent Catalog, and Agent Tool Server. The MCP Resource Server V2 (2026) adds full Client Credentials flows, AuthZen Bearer tokens, and production-grade secret management. Convert any HTTP proxy API into an MCP-compatible server directly at the gateway level using your OpenAPI spec as input. The open-source MCP server is the entry point; Agent Mesh is the enterprise product.</p>
 <h3 id="nginx-proxy-manager-community">Nginx Proxy Manager (Community)</h3>
 <table>
 <thead>
@@ -230,8 +232,8 @@
 <p><strong>A community server for Nginx Proxy Manager</strong>, enabling AI agents to manage reverse proxy configurations. Provides CRUD operations on proxy hosts, SSL certificates, and access lists through the NPM API. Useful for homelab and small-scale deployments where Nginx Proxy Manager is already the management layer.</p>
 <p>Not to be confused with Nginx itself (which has no MCP server) — this specifically targets the Nginx Proxy Manager web interface API.</p>
 <h2 id="part-2-mcp-gateways-api-gateways-for-mcp-traffic">Part 2: MCP Gateways (API Gateways for MCP Traffic)</h2>
-<p>A rapidly growing subcategory: platforms that don&rsquo;t just expose their <em>own</em> API via MCP, but act as <strong>infrastructure for routing, securing, and governing MCP traffic</strong> between agents and tools.</p>
-<h3 id="agentgateway-soloio">AgentGateway (Solo.io)</h3>
+<p>A rapidly maturing subcategory: platforms that don&rsquo;t just expose their <em>own</em> API via MCP, but act as <strong>infrastructure for routing, securing, and governing MCP traffic</strong> between agents and tools. This space consolidated significantly in Q1 2026.</p>
+<h3 id="agentgateway-soloio--linux-foundation">AgentGateway (Solo.io / Linux Foundation)</h3>
 <table>
 <thead>
 <tr>
@@ -245,16 +247,16 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/agentgateway/agentgateway">agentgateway/agentgateway</a></td>
-<td>~1,900</td>
+<td>~2,457</td>
 <td>Rust/Go/TS</td>
 <td>Apache 2.0</td>
-<td>v1.0.0-rc.2 (Mar 2026)</td>
+<td>Enterprise v2.3 (Apr 2026)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>The largest open-source MCP gateway project.</strong> 1,900 stars, 315 forks, 1,402 commits, 115 contributors. Backed by Solo.io (Gloo Gateway makers). Built in Rust for high performance.</p>
+<p><strong>The largest open-source MCP gateway project, now with 2,457 stars (+29% from 1,900) and 1M+ image pulls.</strong> 409 forks, 203 open issues, actively pushed April 21. Donated to the Linux Foundation in August 2025. Built in Rust for high performance.</p>
 <p>Positions itself as &ldquo;the first complete connectivity solution for Agentic AI&rdquo; — a data plane for agent-to-agent (A2A) and agent-to-tool (MCP) communication. Key capabilities: MCP/A2A-focused RBAC, multi-tenant isolation, xDS-based dynamic configuration (Envoy-style), OpenAPI-to-MCP transformation (legacy API integration), and a built-in Kubernetes controller via Gateway API.</p>
-<p>The Solo.io backing means enterprise support is available. Solo Enterprise for agentgateway adds high availability, scaling, and governance features. This is the closest thing to &ldquo;Envoy for AI agents&rdquo; — the same company that built Gloo and contributed to Istio is now building the agent connectivity layer.</p>
+<p><strong>Solo Enterprise for AgentGateway v2.3 (April 2026):</strong> AWS Bedrock AgentCore integration (inline OpenAPI schemas make REST APIs available as MCP tools without a live MCP server), intelligent failover routing, deeper MCP authentication and token exchange (On-Behalf-Of flows with claim forwarding), and OTel environment variable support for drop-in observability. The Solo.io backing means enterprise support is available — the same company that built Gloo and contributed to Istio.</p>
 <h3 id="envoy-ai-gateway">Envoy AI Gateway</h3>
 <table>
 <thead>
@@ -269,41 +271,73 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/envoyproxy/ai-gateway">envoyproxy/ai-gateway</a></td>
-<td>~1,400</td>
+<td>~1,542</td>
 <td>Go</td>
 <td>Apache 2.0</td>
 <td>v0.5.0 (Jan 2026)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Envoy&rsquo;s official AI gateway now includes first-class MCP support.</strong> 1,400 stars, 186 forks, 1,264 commits. Leverages Envoy&rsquo;s battle-tested networking stack for connection handling.</p>
-<p>The MCP Gateway is implemented as a lightweight proxy within the Envoy AI Gateway sidecar: session management, stream multiplexing, and bridging between MCP&rsquo;s stateful JSON-RPC protocol and Envoy&rsquo;s extension mechanisms. Features include MCP session-aware load balancing, full OAuth authentication, server multiplexing, and fine-grained MCP authorization (v0.5.0).</p>
-<p>Can run in standalone mode with your existing MCP servers config file — meaning you can put Envoy in front of servers you&rsquo;re already using with Claude Code or Cursor without reconfiguration.</p>
-<h3 id="kong-ai-gateway">Kong AI Gateway</h3>
-<p>Kong Gateway 3.12+ (October 2025) includes three MCP-specific plugins: <strong>AI MCP Proxy</strong> (routes MCP traffic), <strong>AI MCP OAuth2</strong> (MCP-scoped authentication), and <strong>Prometheus MCP metrics</strong> (observability). The gateway can convert RESTful APIs defined as Kong Gateway Services into MCP tools automatically — acting as a protocol bridge between MCP and HTTP.</p>
-<p>Kong&rsquo;s enterprise MCP Gateway addresses server sprawl, security gaps, and cost management for organizations running many MCP servers. This is the &ldquo;API-to-MCP&rdquo; conversion approach: bring your existing Kong-managed APIs and expose them as tools to AI agents without writing MCP server code.</p>
-<h3 id="traefik-hub-mcp-gateway">Traefik Hub MCP Gateway</h3>
+<p><strong>Envoy&rsquo;s official AI gateway includes first-class MCP support, leveraging Envoy&rsquo;s battle-tested networking stack.</strong> 1,542 stars (up 10% from 1,400), 224 forks, actively pushed April 20.</p>
+<p>The MCP Gateway is implemented as a lightweight proxy within the Envoy AI Gateway sidecar: session management, stream multiplexing, and bridging between MCP&rsquo;s stateful JSON-RPC protocol and Envoy&rsquo;s extension mechanisms. Features include MCP session-aware load balancing, full OAuth authentication, server multiplexing, and fine-grained CEL-based MCP authorization (v0.5.0).</p>
+<p>Can run in standalone mode with your existing MCP servers config file — meaning you can put Envoy in front of servers you&rsquo;re already using with Claude Code or Cursor without reconfiguration. Streamable HTTP transport aligned with the MCP standard. Tetrate published MCP performance benchmarks showing proxy overhead is primarily in session encryption, not MCP traffic handling.</p>
+<p>Still on v0.5.0 since January 2026 — 3 months without a release, though commits continue.</p>
+<h3 id="kong-ai-gateway--agent-gateway">Kong AI Gateway + Agent Gateway</h3>
+<p>Kong Gateway 3.14 (April 14, 2026) launched <strong>Kong Agent Gateway</strong> — the <strong>first platform to unify LLM, MCP, and A2A governance in a single control plane</strong>. This extends the existing MCP plugins (AI MCP Proxy, AI MCP OAuth2, Prometheus MCP metrics) from Gateway 3.12+ with full Agent-to-Agent protocol support.</p>
+<p>Kong&rsquo;s enterprise MCP Gateway addresses server sprawl, security gaps, and cost management for organizations running many MCP servers. The gateway converts RESTful APIs defined as Kong Gateway Services into MCP tools automatically — acting as a protocol bridge between MCP and HTTP. With Agent Gateway, organizations can enforce consistent policies across all AI traffic types from a single control point.</p>
+<h3 id="traefik-hub-mcp-gateway-triple-gate">Traefik Hub MCP Gateway (Triple Gate)</h3>
 <p>Traefik Hub&rsquo;s MCP Gateway (commercial) adds OAuth-compliant proxying with <strong>Task-Based Access Control (TBAC)</strong> — a novel approach where access policies are defined per-tool rather than per-user or per-role. Centralized access control, resource metadata discovery, and fine-grained policy enforcement for MCP tools and resources.</p>
+<p><strong>March 2026 update: Triple Gate architecture extended</strong> with parallel safety pipelines (multi-vendor guard execution), multi-provider failover routing, token-level cost controls, graceful error handling for agent-aware enforcement, IBM Granite Guardian integration, and a new Regex Guard for custom content filtering. The &ldquo;Triple Gate&rdquo; (API Gateway + AI Gateway + MCP Gateway) positions Traefik Hub as a unified infrastructure-layer governance solution from public cloud to air-gapped environments.</p>
 <h3 id="cloudflare-mcp-server-portals">Cloudflare MCP Server Portals</h3>
-<p>Announced March 2026. Compose multiple MCP servers behind a single gateway with unified auth and access control. Instead of distributing dozens of individual server endpoints, register servers with Cloudflare and provide users a single Portal endpoint. Zero Trust security model applied to MCP infrastructure.</p>
+<p>Announced March 2026. Compose multiple MCP servers behind a single gateway with unified auth and access control. Instead of distributing dozens of individual server endpoints, register servers with Cloudflare and provide users a single Portal endpoint. Zero Trust security model applied to MCP infrastructure. <strong>Code Mode is now the default on all portals</strong> — context usage stays fixed regardless of how many tools are available.</p>
 <h3 id="google-apigee">Google Apigee</h3>
 <p>Apigee provides <strong>native, zero-code MCP support</strong> — it dynamically discovers existing Apigee-managed API Products and their OpenAPI specifications, then exposes them as MCP tools. No code changes to existing APIs, no new servers to deploy or manage. Apigee handles infrastructure, transcoding, identity, authorization, and analytics for MCP endpoints.</p>
-<p>This is arguably the most enterprise-ready approach: existing API governance (rate limits, quotas, analytics, security policies) automatically applies to MCP tool invocations.</p>
+<p><strong>2026 updates:</strong> Fully-managed remote MCP servers now available — just deploy an MCP proxy and Apigee manages the rest. API Hub now treats MCP as a first-class API style, with automatic registration of deployed MCP proxies. Apigee hybrid v1.16.1 released April 20. This is arguably the most enterprise-ready approach: existing API governance (rate limits, quotas, analytics, security policies) automatically applies to MCP tool invocations.</p>
 <h3 id="tyk-ai-studio">Tyk AI Studio</h3>
-<p>Tyk&rsquo;s API-to-MCP bridge converts REST, GraphQL, and RPC endpoints into standardized MCP tools. Developers specify which endpoints to expose and configure access control. Relatively new (circa 2025) with documentation still catching up to the core platform.</p>
+<p>Tyk&rsquo;s API-to-MCP bridge converts REST, GraphQL, and RPC endpoints into standardized MCP tools. <strong>Major March 2026 development: Tyk AI Studio went open source.</strong> This makes it the most accessible self-hosted AI governance option, with MCP tool generation from OpenAPI specs, scoped tool access policies with guardrails, complete audit trails for prompts/responses/tool calls, PII redaction and content filtering at the gateway, and enterprise SSO/RBAC. Previously commercial-only, the open-source release significantly lowers the barrier to entry.</p>
+<h3 id="microsoft-mcp-gateway-new">Microsoft MCP Gateway (NEW)</h3>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Latest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/mcp-gateway">microsoft/mcp-gateway</a></td>
+<td>~595</td>
+<td>Go</td>
+<td>MIT</td>
+<td>Apr 2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Microsoft&rsquo;s entry into the MCP gateway space is Kubernetes-native from the ground up.</strong> 595 stars, 63 forks, created May 2025, actively pushed April 16. A reverse proxy and management layer for MCP servers with:</p>
+<ul>
+<li><strong>Session-aware stateful routing</strong> — all requests with a given session_id consistently route to the same MCP server instance via StatefulSets and headless services</li>
+<li><strong>Control plane</strong> for MCP server lifecycle management (deploy, update, delete)</li>
+<li><strong>Tool registration with dynamic routing</strong> — scalable architecture for managing and executing MCP tools</li>
+<li><strong>Azure Entra ID (AAD)</strong> OAuth 2.0 authentication</li>
+<li><strong>Enterprise-ready</strong> telemetry, access control, and observability integration points</li>
+</ul>
+<p>For organizations already running Kubernetes on Azure, this is the natural fit. The Kubernetes-native approach (StatefulSets for session affinity, headless services for direct pod routing) is architecturally sound for MCP&rsquo;s stateful protocol requirements.</p>
 <h2 id="gaps-and-limitations">Gaps and Limitations</h2>
 <p><strong>No Nginx MCP server</strong> — the world&rsquo;s most-used reverse proxy has no MCP integration for managing its own configurations (only Nginx Proxy Manager has one). <strong>No HAProxy MCP server.</strong> No <strong>Istio</strong> or <strong>Linkerd</strong> service mesh MCP servers for managing mesh configurations.</p>
-<p><strong>APISIX is write-capable; most others are read-only.</strong> Kong Konnect&rsquo;s hosted server is read-heavy with only debug sessions as write operations. The community Traefik server is entirely read-only. This asymmetry makes sense for safety but limits what agents can do autonomously.</p>
-<p><strong>The MCP gateway space is fragmented.</strong> AgentGateway, Envoy AI Gateway, Kong AI Gateway, Traefik Hub, and Cloudflare Portals are all competing approaches with different architectures. No clear standard has emerged for how MCP traffic should be governed at scale.</p>
-<p><strong>Cloudflare&rsquo;s Code Mode is brilliant but unproven at scale</strong> in the broader ecosystem. The 2-tool pattern requires models that can reliably write JavaScript to query API specs — not all models or use cases can handle this. Traditional per-tool MCP servers are more predictable for simpler models.</p>
+<p><strong>APISIX is write-capable but dormant; most others are read-only.</strong> Kong Konnect&rsquo;s hosted server is read-heavy with only debug sessions as write operations. The community Traefik server is entirely read-only. APISIX hasn&rsquo;t been updated in 10 months. This asymmetry makes sense for safety but limits what agents can do autonomously.</p>
+<p><strong>The MCP gateway space is consolidating but still fragmented.</strong> AgentGateway, Envoy AI Gateway, Kong Agent Gateway, Traefik Hub, Microsoft MCP Gateway, and Cloudflare Portals are all competing approaches with different architectures. Kong&rsquo;s unification of LLM+MCP+A2A and AgentGateway&rsquo;s Linux Foundation governance suggest the leaders are emerging, but no single standard has won.</p>
+<p><strong>Cloudflare&rsquo;s Code Mode is proven and now default</strong> — a validation of the 2-tool pattern. But it still requires models that can reliably write JavaScript to query API specs, which limits compatibility with simpler models.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p><strong>For managing Kong Gateway:</strong> Use the official Kong Konnect hosted MCP server. Zero setup, 12 tools, active development.</p>
-<p><strong>For managing APISIX:</strong> Use api7/apisix-mcp. 30+ tools covering the full Admin API. The most complete gateway management MCP server available.</p>
-<p><strong>For managing Cloudflare:</strong> Use cloudflare/mcp (Code Mode). 2 tools covering 2,500+ endpoints is remarkable efficiency. Fall back to cloudflare/mcp-server-cloudflare for specific product integrations.</p>
-<p><strong>For MCP traffic governance:</strong> AgentGateway (1,900 stars, Rust, Solo.io-backed) is the current open-source leader. Envoy AI Gateway (1,400 stars) is the choice if you&rsquo;re already in the Envoy ecosystem. Kong and Traefik Hub offer commercial options integrated with their existing gateway products.</p>
-<p><strong>For converting existing APIs to MCP:</strong> Google Apigee (zero-code, enterprise governance) and Kong AI Gateway (plugin-based API-to-MCP conversion) are the most mature approaches.</p>
-<p><strong>Rating: 3.5/5</strong> — The gateway management MCP servers (Kong, APISIX, Cloudflare) are genuinely useful. But the ecosystem is immature: most servers are read-only, star counts are low (except Cloudflare), and the MCP gateway infrastructure space is too fragmented to recommend confidently. Cloudflare&rsquo;s Code Mode innovation deserves attention, but the category needs another 6-12 months to consolidate.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><strong>For managing Kong Gateway:</strong> Use the official Kong Konnect hosted MCP server. Zero setup, 12 tools, active development. The MCP Registry tech preview adds discovery and governance.</p>
+<p><strong>For managing APISIX:</strong> Use api7/apisix-mcp — 30+ tools covering the full Admin API. But be aware the server hasn&rsquo;t been updated since June 2025; test against your APISIX version.</p>
+<p><strong>For managing Cloudflare:</strong> Use cloudflare/mcp (Code Mode). 2 tools covering 2,500+ endpoints. Now the default on all MCP Server Portals. Fall back to cloudflare/mcp-server-cloudflare for specific product integrations.</p>
+<p><strong>For MCP traffic governance:</strong> AgentGateway (2,457 stars, Rust, Linux Foundation, Solo.io-backed) is the open-source leader. Envoy AI Gateway (1,542 stars) is the choice if you&rsquo;re already in the Envoy ecosystem. Kong Agent Gateway (3.14) is the first to unify LLM+MCP+A2A governance. Microsoft MCP Gateway (595 stars) is the Kubernetes-native option for Azure shops.</p>
+<p><strong>For converting existing APIs to MCP:</strong> Google Apigee (zero-code, enterprise governance, fully-managed MCP servers) and Kong AI Gateway (plugin-based API-to-MCP conversion) are the most mature. Tyk AI Studio (now open source) is the best self-hosted option.</p>
+<p><strong>Rating: 4/5</strong> — Upgraded from 3.5. The space has matured significantly since March: Kong unifying LLM+MCP+A2A governance is a genuine milestone, Microsoft&rsquo;s entry validates the category, AgentGateway hitting 2,457 stars and 1M image pulls shows real adoption, Tyk going open source expands accessibility, and Cloudflare&rsquo;s Code Mode becoming the default proves the pattern works. Gateway management servers (Kong, Cloudflare) are production-ready. The remaining gap is gateway management tool breadth — APISIX has it but is dormant, and most alternatives are read-only.</p>
+<p><em>This review was last edited on 2026-04-22 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -355,7 +389,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T03:56:00+09:00","description":"API gateway MCP servers let AI agents manage routes, services, plugins, and traffic across Kong, APISIX, Cloudflare, Traefik, Gravitee, and more.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond"},"name":"API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/api-gateway-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-22T00:00:00+09:00","datePublished":"2026-03-15T03:56:00+09:00","description":"API gateway MCP servers let AI agents manage routes, services, plugins, and traffic across Kong, APISIX, Cloudflare, Traefik, Gravitee, and more.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond"},"name":"API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/api-gateway-mcp-servers/"}
 </script>
 
 
