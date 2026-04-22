@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 751 — 2026-04-22 — Refresh Aerospace & Defense MCP Servers (NASA official earthdata-mcp 8 stars first official NASA MCP, Flightradar24 official 16 stars 15 tools, Axion V2.0 218 stars +15% AWS rebuild SAR-to-optical AI, SkyFi satellite imagery, STK 26 stars, MAVLinkMCP 16 stars academic paper, 3.5/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Aerospace & Defense MCP Servers** (`content/reviews/aerospace-defense-mcp-servers.md`, 38 days stale since March 15)
+   - **NASA official earthdata-mcp — first official NASA MCP server:** nasa/earthdata-mcp, 8 stars, 139 commits. Semantic search over the Common Metadata Repository. AWS Lambda + Terraform. Created November 2025. Milestone: first space agency to publish an official MCP server.
+   - **datalayer/earthdata-mcp-server:** 23 stars, community alternative for NASA Earthdata.
+   - **Flightradar24 official MCP — first major flight tracker in MCP:** Flightradar24/fr24api-mcp, 16 stars, 16 commits, 15 tools. Live positions, historical data back to May 2016, airline/airport reference. Previously flagged as a missing gap.
+   - **sunsetcoder/flightradar24-mcp-server:** 46 stars, community Claude Desktop integration.
+   - **Axion V2.0 — biggest leap in earth observation:** Stars 190→**218** (+15%), commits up to **935**. Complete rebuild on AWS. Exclusive SAR-to-optical foundation model for cloud-free Earth observation. 7,458 npm downloads/month.
+   - **NEW: SkyFi MCP** — commercial satellite imagery ordering via 150+ satellites from 12+ providers. PulseMCP 488 visitors.
+   - **NEW: Planetary Computer MCP** (isaaccorley) — 3 stars, 27 commits, Microsoft STAC data access.
+   - **NEW: astro_mcp** (SandyYuan) — 60 commits, DESI + 40+ astroquery services (SIMBAD, VizieR, SDSS, Gaia).
+   - **NEW: OpenSky Network MCP** — open ADS-B aircraft tracking.
+   - **NASA MCP (community):** Stars 80→**83**, npm v1.0.11, 31 commits. PulseMCP 4,700 all-time, #3,250.
+   - **STK MCP:** Stars 20→**26** (+30%), 16 commits.
+   - **IO-Aerospace:** 16 stars, 31 commits. Production hosted endpoint continues.
+   - **MAVLinkMCP:** 16 stars, 5 commits. January 2026 academic paper (arXiv) demonstrated real UAV flight control via LLM-MCP.
+   - **cheesejaguar/aerospace-mcp:** 62 commits, 44+ tools. Low stars (3) but active development.
+   - Three March 2026 gaps now filled: NASA official, Flightradar24, OpenSky Network.
+   - **Rating holds at 3.5/5** — NASA and Flightradar24 going official are significant milestones. Earth observation thriving with Axion V2.0 and commercial imagery. But defense still completely absent, drone ecosystem still thin, missing ESA/JAXA official, FlightAware, ATC, propulsion, materials science.
+
+2. **Hugo build** — successful (713ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 58 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 750 — 2026-04-22 — Refresh Desktop Automation & Browser Control MCP Servers (Playwright 31.2K stars PulseMCP #1 globally 42.4M visitors, Windows-MCP 5,260 stars +203 commits v0.7.1 DXCam, GhostDesk NEW 44 stars Linux Docker desktop, tine NEW first GNOME Wayland MCP, BrowserMCP stagnant, Browserbase v3.0.0, Power Apps MCP preview, 4.0/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
