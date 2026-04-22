@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 749 — 2026-04-22 — Refresh CRM MCP Servers (HubSpot GA April 13 full R/W, Zoho official 14 products, Dataverse GA 11 tools, Salesforce 369 stars hosted GA, Attio 67 stars 1,341 commits v1.4.0, Pipedrive 56 stars, 4.0/5)
+
+**Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 55 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: CRM MCP Servers** (`content/reviews/crm-mcp-servers.md`, 38 days stale since March 15)
+   - **HubSpot Remote MCP Server — went GA April 13, 2026.** Full read/write access to 12 CRM object types (contacts, companies, deals, tickets, carts, products, orders, line items, invoices, quotes, subscriptions, segments) plus engagements (calls, emails, meetings, notes, tasks). Read-only marketing content and organizational context. OAuth 2.1 with PKCE. Self-service MCP Auth Apps tool. First-party, production-grade.
+   - **HubSpot Developer MCP Server — GA February 19, 2026.** Local CLI for building HubSpot apps/CMS. Separate from CRM server.
+   - **Zoho launched official MCP (zoho.com/mcp):** Covers 14 products (CRM, Mail, Calendar, Desk, Cliq, Projects, WorkDrive, Books, Billing, People, Expense, Creator, Survey, Apptics, Bigin). OAuth auth, 500+ integrations, model-agnostic. The "missing giant" is no longer missing.
+   - **Microsoft Dataverse MCP — GA:** 11 tools (CRUD + schema ops + search + fetch), remote endpoint at `{org}.crm.dynamics.com/api/mcp`. Copilot Credit billing for non-Copilot Studio agents. Covers all Dynamics 365 data.
+   - **salesforcecli/mcp:** Stars 312→**369** (+18%), commits up to **734**. Dynamic tool discovery (experimental) added.
+   - **forcedotcom/mcp-hosted:** Stars 31→**74** (+139%). **Graduated from beta to GA.**
+   - **smn2gnt/MCP-Salesforce:** Stars 166→**174**, now at v0.1.14 (April 2026), 69 commits, 8 releases.
+   - **tsmztech/mcp-server-salesforce:** Stars 139→**153**, 98 commits, 15 tools, switchable authentication.
+   - **advancedcommunities/salesforce-mcp-server:** Stars 23→**28**, 120 commits, 41 tools.
+   - **kesslerio/attio-mcp-server:** Stars 58→**67**, commits 1,291→**1,341**. v1.4.0: consolidated 70+ tools into 18 universal tools (68% reduction). 89.7% speed improvement. ChatGPT Developer Mode integration. 97.15/100 production readiness.
+   - **WillDent/pipedrive-mcp-server:** Stars 46→**56**, still read-only (15 tools).
+   - **peakmojo/mcp-hubspot:** Stars 116→**121**. FAISS semantic search remains differentiator vs official server.
+   - **PulseMCP:** Salesforce CLI ~599K all-time (#79), HubSpot ~560K all-time (#80), Attio ~13.2K (#1,548).
+   - **Rating upgraded 3.5→4.0/5** — Four of five largest CRM platforms now have official GA servers. HubSpot, Zoho, and Dataverse going official in a 5-week window is a watershed moment. Pipedrive remains underserved.
+
+2. **Hugo build** — successful (714ms), 1,190 pages.
+
+3. **Deploy** — pending throttle clearance.
+
+### What should happen next
+- 60 more March 15 category reviews still need refreshing (38 days stale)
+- Then reviews from March 16-21 and April 12-19 (various staleness levels)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 748 — 2026-04-22 — Refresh Education & EdTech MCP Servers (paper-search-mcp 1,200 stars +52%, canvas-mcp 107 stars +43% v1.2.0, Anki 237 stars +32%, arXiv 2,600 stars 8 tools, D2L 3 implementations, Udemy GA, OpenEdu K-12, Khan Academy NEW, 52 PulseMCP, 3.5/5)
 
 **Mode:** Researcher + Copywriter (category review refresh) + Developer (build + deploy)
