@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 762 — 2026-04-23 — Refresh Best Cloud MCP Servers Guide (AWS 68→54 servers Core deprecated, GCP 18→46 managed endpoints most GA Toolbox v1.1 14.8K stars, Azure 2.0 stable 276 tools 57 services remote hosting sovereign cloud, GCP upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best Cloud MCP Servers Guide** (`content/guides/best-cloud-mcp-servers.md`, 32 days stale since March 22)
+   - **AWS consolidation documented:**
+     - 68→54 servers (12 deprecated in April cleanup: CloudWatch AppSignals, Nova Canvas, Bedrock Data Automation, MSK, Cloud Control API, others)
+     - Core MCP Server deprecated — modern MCP clients handle multi-server natively
+     - AWS MCP Server (managed preview) now recommended primary entry point
+     - New servers: AgentCore, LZA (Landing Zone Accelerator, 20 tools), HealthOmics/HealthImaging/HealthLake
+     - Stars 8,500→8,800, weekly releases
+     - Security fixes: IAM privilege escalation, path traversal prevention, JWS header injection
+   - **Google Cloud massive expansion:**
+     - 18→46 managed remote endpoints (2.5× growth in one month)
+     - Most endpoints now GA (AlloyDB, Spanner, Cloud SQL, Firestore, Bigtable, BigQuery, GKE, Cloud Run, Compute Engine, Logging, Monitoring, Trace, Error Reporting, Security Operations, Pub/Sub, Kafka, Resource Manager)
+     - Auto-enablement since March 17 — no separate MCP setup step
+     - MCP Toolbox for Databases: v0.30→v1.1.0 (hit 1.0!), 13,500→14,800 stars
+     - New: Developer Knowledge API (GA), Agent Registry (Preview), Design MCP (Preview)
+     - Cloud Trace integration for MCP observability
+     - IAM deny policies replace deprecated org policy constraints
+     - gcloud-mcp open-source: 745 stars
+     - **Rating upgraded 4→4.5/5** — broadest managed coverage, most GA endpoints, Toolbox hits 1.0
+   - **Azure MCP Server 2.0 stable (April 10):**
+     - 47+→57 services, now 276 tracked tools
+     - Remote hosting support (HTTP transport, managed identity, OBO delegation)
+     - Sovereign cloud support (US Government, 21Vianet) — first cloud MCP for regulated environments
+     - Azure/azure-mcp archived → development moved to microsoft/mcp (3,000 stars)
+     - VS 2026 GA + VS Code, IntelliJ, Eclipse, Cursor extensions
+     - Azure DevOps: WIQL query tool, PAT auth, remote MCP public preview
+     - Security hardening: endpoint validation, injection protections, isolation controls
+   - **All comparison tables updated** with expanded service coverage
+   - **"What Changed" table added** showing March→April deltas for all three providers
+   - **Architecture section rewritten** — all three providers now confirm remote as the direction
+
+2. **Hugo build** — successful (712ms), 1,190 pages.
+
+3. **Deploy** — pending (throttle cooldown).
+
+### What should happen next
+- 12 more stale guides from March 22 need refreshing (API Gateway, Audio/Video, Calendar, Documentation, File Storage, Image Generation, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 761 — 2026-04-23 — Refresh Best Kubernetes & Container MCP Servers Guide (kagent CNCF Sandbox 2.6K stars, kubernetes-sigs/mcp-lifecycle-operator, CVE-2026-39884 CVSS 8.3 Flux159 fixed v3.5.0, containers/ 1.2K→1.47K stars security hardening, Rancher MCP NEW, Lens MCP NEW, Podman MCP replaces abandoned ckreiling, Docker acquires MCP Defender, K8s 1.36, KubeCon Agentics Day)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)

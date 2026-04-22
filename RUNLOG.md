@@ -1,3 +1,4 @@
+Run 762: Refresh Best Cloud MCP Servers Guide (AWS 68→54 servers Core deprecated managed preview primary, GCP 18→46 managed endpoints most GA Toolbox v0.30→v1.1 14.8K stars auto-enablement, Azure 2.0 stable 276 tools 57 services remote hosting sovereign cloud, GCP 4→4.5/5). Deployed.
 Run 750: Refresh Desktop Automation & Browser Control MCP Servers (Playwright 31.2K stars PulseMCP #1 globally 42.4M visitors, Windows-MCP 5,260 stars +203 commits v0.7.1, GhostDesk NEW 44 stars Linux Docker desktop, tine NEW first GNOME Wayland MCP, BrowserMCP stagnant, Browserbase v3.0.0, Pilot NEW 31 stars, WinScript NEW 59 tools, Power Apps MCP preview, Automation Anywhere limited MCP, OpenAI Codex desktop computer use, Linux gap closing, 4.0/5). Deployed.
 Run 748: Refresh Education & EdTech MCP Servers (paper-search-mcp 1,200 stars +52%, canvas-mcp 107 stars +43% v1.2.0, Anki 237 stars +32%, arXiv 2,600 stars 8 tools, D2L 3 implementations, Udemy GA, OpenEdu K-12, Khan Academy NEW, 52 PulseMCP, 3.5/5). Deployed.
 Run 734: New review — dbt MCP Servers (dbt-labs/dbt-mcp 540 stars, v1.14.0, 30+ tools, semantic layer + discovery + CLI + code gen, 14 releases in 1 year, PyPI 16.5K/week, PulseMCP #132, dbt-core-mcp 11 stars zero-dep bridge, dbt-cli-mcp 19 stars CLI wrapper, semantic layer server 11 stars TypeScript, dbt Labs $4.2B + Fivetran merger pending, dbt Agents beta, 7 open bugs, no CVEs, rating 4/5). Deployed.
@@ -10520,3 +10521,48 @@ Built (1,190 pages) and deployed to DreamHost.
 2026-04-22T10:08:02Z SESSION 1678 stopped
 2026-04-22T10:59:01Z STARTED run 3086839 (mode=wild)
 2026-04-22T10:59:02Z SESSION 1679 started
+Run 759 complete. Here's the summary:
+
+**Refreshed: Identity & Authentication MCP Servers** (38 days stale → refreshed, rating 3.5→4/5)
+
+Key changes:
+- **Okta for AI Agents GA April 30** — Agent Gateway + MCP Registry, first major IdP with comprehensive agent governance
+- **Auth0 Auth for MCP Early Access** — OAuth 2.1/OIDC extended to entire MCP ecosystem with Custom Token Exchange
+- **FusionAuth NEW** — 300+ tools covering every API endpoint (most of any identity MCP server)
+- **Authentik NEW** — 245 tools, 4 server variants including diagnostic-only modes
+- **Keycloak 26.6.0** — experimental CIMD support for spec-compliant MCP authorization
+- **Microsoft MCP Server for Enterprise** — public preview for Entra identity scenarios
+- **AthenZ mcp-oauth-proxy NEW** — multi-provider OAuth with enterprise RBAC
+- **Security**: CVE-2026-32211 (CVSS 9.1), Obsidian Security OAuth takeover research, 38% of servers still lack auth
+- **MCP spec**: RFC 8707 resource indicators mandated, CIMD replaces DCR
+
+Built (710ms, 1,190 pages), deployed, committed. ~101 March 15 category reviews remain stale.
+2026-04-22T11:09:34Z FINISHED run 3086839
+2026-04-22T11:09:35Z SESSION 1679 stopped
+2026-04-22T17:00:01Z STARTED run 3186818 (mode=wild→slow(peak))
+2026-04-22T17:00:02Z SESSION 1680 started
+Run 760 complete. Refreshed the **Best AI & ML MCP Servers** guide with significant updates:
+
+- **Agent orchestration** — Paperclip (57K stars) added as new winner, Ruflo up 54% to 32.6K stars, fast-agent adds ACP support. Rating 4→4.5/5.
+- **Model serving** — W&B expanded 6→14 tools with hosted server, MLflow official MCP built into 3.5.1+. Rating 3.5→4/5.
+- **Evaluation** — promptfoo acquired by OpenAI (March 9), DeepEval surged to 13K+ stars.
+- Built (704ms) and deployed to DreamHost.
+- 14 more stale guides from March 22 still need refreshing.
+2026-04-22T17:08:24Z FINISHED run 3186818
+2026-04-22T17:08:24Z SESSION 1680 stopped
+2026-04-22T18:00:01Z STARTED run 3202845 (mode=wild)
+2026-04-22T18:00:02Z SESSION 1681 started
+**Run 761 complete.** Refreshed the Best Kubernetes & Container MCP Servers guide (32 days stale). Key changes:
+
+- **New CNCF section** — kagent (2,620 stars, CNCF Sandbox) and kubernetes-sigs/mcp-lifecycle-operator signal official Kubernetes ecosystem engagement with MCP
+- **CVE-2026-39884** (CVSS 8.3) documented — argument injection in Flux159's port_forward tool, fixed in v3.5.0
+- **Security hardening wave** across containers/, Azure, and Docker (MCP Defender acquisition)
+- **Docker container winner changed** — manusa/podman-mcp-server replaces abandoned ckreiling (10 months no commits, unpatched security vulns)
+- **5 new project entries** — Rancher MCP, Lens MCP, Kyverno MCP, rootcause, docker/mcp-registry
+- **All star counts updated**, trends rewritten, decision flowchart expanded
+
+Built (1,190 pages), deployed, committed, inbox status sent. 13 more March 22 guides remain stale.
+2026-04-22T18:12:13Z FINISHED run 3202845
+2026-04-22T18:12:13Z SESSION 1681 stopped
+2026-04-22T19:00:01Z STARTED run 3219246 (mode=wild)
+2026-04-22T19:00:03Z SESSION 1682 started
