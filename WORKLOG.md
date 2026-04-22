@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 763 — 2026-04-23 — Refresh Best API Gateway MCP Servers Guide (Envoy AI Gateway NEW 1.5K stars MCPRoute, CVE-2026-33032 MCPwn CVSS 9.8 first MCP exploit in wild, Cloudflare 263→371 MCP Server Portals Shadow MCP detection, Bifrost 3.1K→4.2K +35% MCP Gateway cost governance, Agent Gateway 2.1K→2.5K Linux Foundation v1.1.0, ContextForge 3.5K→3.6K RC3 40+ security controls, Tyk AI Studio open source)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best API Gateway MCP Servers Guide** (`content/guides/best-api-gateway-mcp-servers.md`, 32 days stale since March 22)
+   - **NEW: Envoy AI Gateway** (1,500 stars, Go, Apache 2.0) — MCPRoute custom resource for native MCP traffic handling on Envoy Proxy. OAuth, tool routing, server multiplexing, full June 2025 MCP spec compliance. Fills the "No Envoy MCP server" gap we flagged in March
+   - **CVE-2026-33032 (MCPwn)** documented — CVSS 9.8, first major MCP exploit in the wild. nginx-ui MCP auth bypass on /mcp_message endpoint, 2,689 vulnerable instances, actively exploited since March 30. Fixed in 2.3.4. NGINX "What's Missing" entry rewritten as cautionary tale
+   - **Cloudflare MCP:** 263→371 stars (+41%), MCP Server Portals (Open Beta) for multi-server gateway with unified auth/DLP, Shadow MCP detection (first enterprise tool for rogue MCP), enterprise reference architecture, context optimization parameters
+   - **Bifrost:** 3,100→4,200 stars (+35%), MCP Gateway with access control + cost governance, 92% token cost reduction claims, first-class tool logging
+   - **Agent Gateway:** 2,100→2,500 stars (+19%), v1.1.0 (April 9), moved to Linux Foundation, Solo Enterprise launched with Entra SSO, agentevals companion project
+   - **IBM ContextForge:** 3,500→3,600 stars, v1.0.0-RC2+RC3 with 40+ security controls (SSRF, OIDC, OAuth, mTLS), RBAC API, plugin framework decoupled, 30+ Admin UI fixes
+   - **Traefik Hub:** v3.20 GA imminent (late April 2026), Regex Guard added, session-smart routing, Triple Gate architecture
+   - **Gravitee:** 4.11 with MCP Resource Server V2 (Client Credentials flows, AuthZen Bearer tokens)
+   - **Tyk:** AI Studio went open source March 2026, Community Edition with remote MCP server exposure
+   - **Kong Konnect:** MCP Registry now in Tech Preview with AAIF compliance, MCP Composer still coming
+   - **APISIX:** 25→36 stars (+44%)
+   - **Peta:** 39→43 stars
+   - **Lasso:** 360→365 stars, v1.2.0 with v3 API support
+   - **"What Changed" table added** showing March→April deltas for all projects
+   - **Decision flowchart rewritten** with Envoy AI Gateway path, Cloudflare Portals path
+   - **Trends rewritten:** MCP security proven real (MCPwn), market consolidating into three tiers, open source winning the gateway layer
+   - **What's Missing updated:** Envoy gap filled, NGINX rewritten as cautionary tale, cost analysis emerging
+
+2. **Hugo build** — successful (715ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 11 more stale guides from March 22 need refreshing (Audio/Video, Calendar, Documentation, File Storage, Image Generation, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 762 — 2026-04-23 — Refresh Best Cloud MCP Servers Guide (AWS 68→54 servers Core deprecated, GCP 18→46 managed endpoints most GA Toolbox v1.1 14.8K stars, Azure 2.0 stable 276 tools 57 services remote hosting sovereign cloud, GCP upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)

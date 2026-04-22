@@ -11,10 +11,10 @@ We've published [10 in-depth AI & ML reviews](/reviews/) covering 100+ MCP serve
 
 | Category | Our pick | Rating | Runner-up |
 |----------|----------|--------|-----------|
-| Model hubs & inference | [HuggingFace MCP](/reviews/ai-ml-model-serving-mcp-servers/) | 3.5/5 | [Ollama MCP](/reviews/ai-ml-model-serving-mcp-servers/) (144 stars, 14 tools, local inference) |
-| Agent orchestration | [mcp-agent (LastMile AI)](/reviews/agent-orchestration-mcp-servers/) | 4/5 | [fast-agent](/reviews/agent-orchestration-mcp-servers/) (3.7K stars, MAKER voting) |
+| Model hubs & inference | [HuggingFace MCP](/reviews/ai-ml-model-serving-mcp-servers/) | 4/5 | [Ollama MCP](/reviews/ai-ml-model-serving-mcp-servers/) (153 stars, 14 tools, local inference) |
+| Agent orchestration | [Paperclip](/reviews/agent-orchestration-mcp-servers/) | 4.5/5 | [mcp-agent (LastMile AI)](/reviews/agent-orchestration-mcp-servers/) (8.3K stars, workflow patterns) |
 | LLM observability | [Opik MCP](/reviews/llm-observability-mlops-pipeline-mcp-servers/) | 3.5/5 | [OpenTelemetry MCP](/reviews/llm-observability-mlops-pipeline-mcp-servers/) (175 stars, vendor-neutral) |
-| LLM evaluation | [promptfoo](/reviews/llm-evaluation-benchmarking-mcp-servers/) | 4/5 | [DeepEval](/reviews/llm-evaluation-benchmarking-mcp-servers/) (5K+ stars, Pytest-style) |
+| LLM evaluation | [promptfoo](/reviews/llm-evaluation-benchmarking-mcp-servers/) | 4/5 | [DeepEval](/reviews/llm-evaluation-benchmarking-mcp-servers/) (13K+ stars, Pytest-style) |
 | Prompt engineering | [just-prompt](/reviews/prompt-engineering-optimization-mcp-servers/) | 3.5/5 | [mcp-prompt-optimizer](/reviews/prompt-engineering-optimization-mcp-servers/) (14 research techniques) |
 | Data preparation | [Label Studio MCP](/reviews/annotation-data-labeling-mcp-servers/) | 2.5/5 | [PaddleOCR MCP](/reviews/ocr-document-intelligence-mcp-servers/) (72K parent stars) |
 
@@ -22,43 +22,47 @@ We've published [10 in-depth AI & ML reviews](/reviews/) covering 100+ MCP serve
 
 ## Model Serving & Inference — Search, Run, and Manage Models
 
-**[Full review: AI & ML Model Serving MCP Servers →](/reviews/ai-ml-model-serving-mcp-servers/)** | Rating: 3.5/5
+**[Full review: AI & ML Model Serving MCP Servers →](/reviews/ai-ml-model-serving-mcp-servers/)** | Rating: 4/5 (up from 3.5)
 
-This is the most natural MCP use case for ML engineers: searching model registries, running inference, and tracking experiments through your AI assistant instead of switching between notebooks and dashboards.
+This is the most natural MCP use case for ML engineers: searching model registries, running inference, and tracking experiments through your AI assistant instead of switching between notebooks and dashboards. The category crossed a maturity threshold since our last update — both dominant experiment tracking platforms (W&B and MLflow) now have official MCP support.
 
 ### The winner: HuggingFace MCP
 
-[huggingface/hf-mcp-server](https://github.com/huggingface/hf-mcp-server) — 206 stars, TypeScript, v0.3.5, official. **5+ tools** covering Hub search (models, datasets, Spaces, papers), documentation search with natural language queries, and **Gradio Space execution** — run any of the thousands of Gradio-based AI apps on HuggingFace Spaces directly through MCP. Three transport modes (stdio, StreamableHTTP, StreamableHTTPJson) with a management web interface. The breadth is what sets it apart: you're not just searching for models, you're executing them through hosted Spaces.
+[huggingface/hf-mcp-server](https://github.com/huggingface/hf-mcp-server) — 221 stars, 727 commits, 98 releases, TypeScript, v0.3.5, official. Core capabilities: **Hub search** for models, datasets, Spaces, and papers; documentation search with natural language queries; and **Gradio Space execution** — run any of the thousands of Gradio-based AI apps on HuggingFace Spaces directly through MCP. **New since March:** proxy tools via `PROXY_TOOLS_CSV` — load external MCP endpoint definitions at startup, turning any Gradio Space with an MCP badge into a callable tool with zero code. Three transport modes (stdio, StreamableHTTP, StreamableHTTPJson) with a management web interface. The breadth is what sets it apart: you're not just searching for models, you're executing them through hosted Spaces.
 
 ### Strong alternatives
 
-**Ollama MCP** ([rawveg/ollama-mcp](https://github.com/rawveg/ollama-mcp)) — 144 stars, TypeScript, **14 tools covering the complete Ollama SDK**. Model management (list, show, pull, push, copy, delete, create), inference (generate, chat, embed), and process management. The best local inference story — every Ollama operation is one tool call away. Supports Ollama Cloud for hybrid local+cloud operation. 96%+ test coverage.
+**Ollama MCP** ([rawveg/ollama-mcp](https://github.com/rawveg/ollama-mcp)) — 153 stars, TypeScript, **14 tools covering the complete Ollama SDK**. Model management (list, show, pull, push, copy, delete, create), inference (generate, chat, embed), and process management. The best local inference story — every Ollama operation is one tool call away. Supports Ollama Cloud for hybrid local+cloud operation. 96%+ test coverage.
 
 **Replicate** — two options. The community server (deepfates/mcp-replicate, 93 stars) has 13 tools but is **no longer actively maintained** since Replicate shipped an official remote server with Code Mode — two tools where the LLM writes and executes TypeScript against the Replicate SDK in a Deno sandbox, far more flexible than predefined tools.
 
-**OpenAI bridge** ([pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai)) — 79 stars, single `ask-openai` tool. Simple but functional for cross-model workflows — ask GPT-4 a question from inside a Claude conversation.
+**OpenAI bridge** ([pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai)) — 80 stars, single `ask-openai` tool. Simple but functional for cross-model workflows — ask GPT-4 a question from inside a Claude conversation.
 
-**Experiment tracking:** Weights & Biases ([wandb/wandb-mcp-server](https://github.com/wandb/wandb-mcp-server), 41 stars, official, 6 tools with automated report generation) and MLflow ([kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp), 3 stars, 17+ tools covering the entire MLflow API). Choose based on which platform you already use.
+**Experiment tracking:** Weights & Biases ([wandb/wandb-mcp-server](https://github.com/wandb/wandb-mcp-server), 49 stars, official, **14 tools** — expanded from 6, now covering experiment querying, Weave trace analysis, report generation, model registry, and documentation; also available as a **hosted server at mcp.withwandb.com**) and MLflow (now with an **official MCP server built into MLflow 3.5.1+** with 10 tools and Databricks integration, plus the community [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) with 17+ tools for experiment browsing and run comparison). Both major experiment tracking platforms now have official MCP support — choose based on which you already use.
 
 ## Agent Orchestration — Multi-Agent Workflows and Swarm Coordination
 
-**[Full review: Agent Orchestration MCP Servers →](/reviews/agent-orchestration-mcp-servers/)** | Rating: 4/5
+**[Full review: Agent Orchestration MCP Servers →](/reviews/agent-orchestration-mcp-servers/)** | Rating: 4.5/5 (up from 4)
 
-This is where the MCP ecosystem gets ambitious. Instead of a single AI assistant calling tools, these servers coordinate multiple agents working in parallel, route tasks to specialists, and manage persistent work items across sessions.
+This is where the MCP ecosystem gets ambitious — and where the most explosive growth happened in March-April 2026. The ecosystem now splits into three philosophies: **workflow-centric** (define patterns like chain, parallel, router), **swarm-centric** (deploy fleets of specialized agents), and a new entrant — **company-centric** (structure agents into organizational hierarchies with budgets and governance).
 
-### The winner: mcp-agent (LastMile AI)
+### The winner: Paperclip (NEW)
 
-[lastmile-ai/mcp-agent](https://github.com/lastmile-ai/mcp-agent) — 8.1K stars, Python, Apache 2.0. The most popular agent framework built on MCP. Implements Anthropic's "Building Effective Agents" patterns as composable building blocks: **parallel** fan-out/fan-in, **orchestrator-worker** decomposition, **evaluator-optimizer** loops, **routers**, and **map-reduce** pipelines. Full MCP support (tools, resources, prompts, notifications, OAuth, sampling). Multi-provider LLM integration (OpenAI, Anthropic, Google, Azure, Bedrock). Temporal-backed durable execution for production. Agents can be deployed as MCP servers themselves.
+[paperclipai/paperclip](https://github.com/paperclipai/paperclip) — **57K stars**, TypeScript, MIT. The fastest-growing project in agent orchestration, launched March 4, 2026 and crossing 30K stars within three weeks. The core idea: orchestrate AI agents the way you'd manage a company. A **CEO agent** receives top-level goals and decomposes them. **Manager agents** handle functional areas (engineering, marketing, operations, finance). **Worker agents** execute specific tasks. React dashboard provides org charts, budgets, governance, goal alignment, and cost tracking. Supports Claude Code, OpenClaw, Codex, Cursor, and bash-based agents. 2,283 commits. The organizational metaphor resonated deeply with teams struggling to coordinate multi-agent workflows.
 
 ### Strong alternatives
 
-**fast-agent** ([evalstate/fast-agent](https://github.com/evalstate/fast-agent)) — 3.7K stars, Python, MIT. Six workflow patterns including the unique **MAKER** (K-voting error reduction) for reliability in long chains. Native support for Anthropic, OpenAI, and Google. OAuth v2.1 with keyring-based secrets. Shell mode with MCP transport diagnostics. A serious competitor to mcp-agent with a more concise API.
+**Ruflo** ([ruvnet/ruflo](https://github.com/ruvnet/ruflo)) — **32.6K stars** (up 54% from 21.1K in 36 days), 6,067 commits, v3.5.80 (April 2026). MCP tools expanded from 215→**314**, 16 defined agent roles, **AgentDB v3** with 8 new controllers, and intelligent **3-tier model routing** claiming up to 75% API cost savings. Reports 84.8% SWE-bench solve rate. The scope is enormous — evaluate which components you actually need.
 
-**Ruflo** ([ruvnet/ruflo](https://github.com/ruvnet/ruflo)) — 21.1K stars, Python. The most ambitious project in the space: **60+ specialized agents**, **215 MCP tools**, self-learning memory, fault-tolerant consensus. v3.5.0 (February 2026) marked its production-ready debut after 5,800+ commits. The star count reflects genuine excitement, but the scope is enormous — evaluate which components you actually need.
+**mcp-agent (LastMile AI)** ([lastmile-ai/mcp-agent](https://github.com/lastmile-ai/mcp-agent)) — 8.3K stars, Python, Apache 2.0. Still the most popular agent framework built on MCP. Implements Anthropic's "Building Effective Agents" patterns as composable building blocks: **parallel** fan-out/fan-in, **orchestrator-worker** decomposition, **evaluator-optimizer** loops, **routers**, and **map-reduce** pipelines. Full MCP support including elicitation. **New:** beta **cloud deployment** via mcp-c managed runtime alongside Temporal-backed durable execution. The safest bet for production workflow-based agents.
 
-**Agent-MCP** ([rinadelph/Agent-MCP](https://github.com/rinadelph/Agent-MCP)) — 1.2K stars. Multiple agents share context through a **persistent knowledge graph** with RAG capabilities. Real-time visualization. Python and TypeScript implementations.
+**fast-agent** ([evalstate/fast-agent](https://github.com/evalstate/fast-agent)) — 3.8K stars, **1,799 commits**, Python, MIT. Six workflow patterns including MAKER (K-voting error reduction). **Major additions since March:** Agent Skills, MCP-UI support, OpenAI Apps SDK integration (Skybridge), and **ACP (Agent Communication Protocol)** support via Zed Industries — making it the most protocol-diverse framework (MCP + ACP + A2A awareness). v0.6.18 (April 17, 2026). ConversationSummary utility for monitoring and debugging.
 
-**Task orchestration:** jpicklyk/task-orchestrator (170 stars, Kotlin, 13 MCP tools) provides a persistent work item graph with server-enforced quality gates and dependency management. A different approach — managing work items rather than agents.
+**Agent-MCP** ([rinadelph/Agent-MCP](https://github.com/rinadelph/Agent-MCP)) — 1.2K stars, AGPL-3.0. Multiple agents share context through a **persistent knowledge graph** with RAG capabilities. Real-time visualization. Python and TypeScript implementations.
+
+**Enterprise infrastructure:** agentic-community/mcp-gateway-registry (598 stars, 1,032 commits) emerged as the leading enterprise gateway — OAuth via Keycloak/Entra, A2A agent protocol support, AgentCore auto-registration for AWS Bedrock. Planning an "AI Gateway & Registry" rebrand.
+
+**Task orchestration:** jpicklyk/task-orchestrator (180 stars, Kotlin, 503 commits, 13 MCP tools) provides a persistent work item graph with server-enforced quality gates, dependency management, and new YAML workflow schema definitions.
 
 ## LLM Observability & MLOps — Monitoring Your AI in Production
 
@@ -88,15 +92,15 @@ The highest-rated category in this guide. Evaluating LLM outputs and benchmarkin
 
 ### The winner: promptfoo
 
-[promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — 10.8K stars, TypeScript, MIT. The heavyweight of LLM evaluation. CLI and library used by 300,000+ developers and 127 Fortune 500 companies. Compares outputs across GPT, Claude, Gemini, Llama with declarative YAML configs. Red-teaming module scans for **50+ vulnerability types** (prompt injection, jailbreaks, PII leaks, tool misuse). CI/CD integration with GitHub Actions. MCP Proxy for enterprise security. The tool most teams should start with.
+[promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — 10.8K stars, TypeScript, MIT. The heavyweight of LLM evaluation, now **part of OpenAI** (acquired March 9, 2026). The open-source project continues — CLI and library used by 350K+ developers and 130K monthly active users, with 25%+ of Fortune 500 relying on it. Compares outputs across GPT, Claude, Gemini, Llama with declarative YAML configs. Red-teaming module scans for **50+ vulnerability types** (prompt injection, jailbreaks, PII leaks, tool misuse). MCP Proxy for enterprise security with access control and traffic monitoring. CI/CD integration with GitHub Actions. The OpenAI acquisition signals the strategic importance of eval tooling, and the team has committed to maintaining multi-provider support.
 
 ### Strong alternatives
 
-**DeepEval** ([confident-ai/deepeval](https://github.com/confident-ai/deepeval)) — 5K+ stars, Python, Apache-2.0. Pytest-style LLM unit testing with **50+ metrics** (G-Eval, hallucination, answer relevancy, task completion). The **MCP-Use metric** specifically evaluates how well agents use MCP servers — scoring tool selection and argument quality. 800K daily evaluations.
+**DeepEval** ([confident-ai/deepeval](https://github.com/confident-ai/deepeval)) — **13K+ stars** (up from 5K+), Python, Apache-2.0. Pytest-style LLM unit testing with **50+ metrics** (G-Eval, hallucination, answer relevancy, task completion). The **MCP-Use metric** specifically evaluates how well agents use MCP servers — scoring tool selection and argument quality. MCP server acts as a persistent data layer for running evals, pulling datasets, and inspecting traces from Claude Code or Cursor. 800K daily evaluations.
 
 **MCP-Bench** ([Accenture/mcp-bench](https://github.com/Accenture/mcp-bench)) — 401 stars. The gold standard for benchmarking tool-using agents. **28 live MCP servers, 250 tools** across finance, travel, science. Published as an academic paper. If you want to evaluate which LLM is best at using MCP tools, this is it.
 
-**MCP-Universe** (Salesforce Research) — benchmarks with real-world MCP servers across 6 domains and 231 tasks. Sobering finding: even **GPT-5 achieves only 43.72% success**. LLM tool-use is far from solved.
+**MCP-Universe** (Salesforce Research) — benchmarks with real-world MCP servers across 6 domains and 231 tasks. Top models: GPT-5 at 43.72% success, Grok-4 at 33.33%, Claude 4.0 Sonnet at 29.44%. **New in February 2026:** Wide & Deep (W&D) research agents that scale width by making more parallel tool calls per turn, improving accuracy while reducing API cost. Also added MCPMark benchmark support. LLM tool-use is far from solved.
 
 **Red-teaming:** promptfoo/evil-mcp-server simulates malicious MCP behaviors (tool poisoning, data exfiltration, hidden instructions). Critical for understanding how agents behave with malicious tools.
 
@@ -151,15 +155,15 @@ Not every AI/ML MCP server is worth your time:
 
 ## The bigger picture
 
-Three trends define AI & ML MCP servers in March 2026:
+Three trends define AI & ML MCP servers in April 2026:
 
-**1. The ML lifecycle is fragmented across servers.** No single MCP server covers model search → training → experiment tracking → evaluation → deployment. You need HuggingFace for model discovery, W&B or MLflow for experiments, promptfoo for evaluation, and ZenML for pipeline orchestration — at minimum. The integration gaps between these servers are the biggest pain point.
+**1. Agent orchestration exploded.** Paperclip (57K stars in weeks), Ruflo (21.1K→32.6K stars, +54%), mcp-agent (8.3K), fast-agent (3.8K, now with ACP support) — the star counts and velocity here dwarf every other AI/ML MCP category. The ecosystem split into three philosophies: workflow-centric, swarm-centric, and company-centric. Enterprise infrastructure followed with mcp-gateway-registry (598 stars, A2A + OAuth + AgentCore). The community is betting that multi-agent coordination is the next major capability unlock.
 
-**2. Agent orchestration is the hottest area.** mcp-agent (8.1K stars), fast-agent (3.7K stars), Ruflo (21.1K stars) — the star counts and velocity here dwarf every other AI/ML MCP category. The community is betting that multi-agent coordination is the next major capability unlock, not just better individual tools.
+**2. Evaluation got acquired and validated.** OpenAI acquired promptfoo (March 9, 2026), signaling that eval tooling is strategically critical. DeepEval surged from 5K to 13K+ stars. MCP-Bench was accepted to NeurIPS 2025 Workshop. MCP-Universe added Wide & Deep research agents. This is the category closest to enterprise-ready, with the OpenAI acquisition accelerating investment.
 
-**3. Evaluation is maturing faster than expected.** promptfoo (10.8K stars) and DeepEval (5K+ stars) are production-grade. Accenture and Salesforce are publishing academic benchmarks for MCP tool use. Red-teaming has dedicated tooling. This is the category closest to enterprise-ready, partly because the evaluation problem applies to all LLM applications, not just MCP.
+**3. The ML lifecycle is converging.** Both W&B (14 tools, hosted server, model registry) and MLflow (official MCP built into 3.5.1+, Databricks integration) now have comprehensive MCP support. HuggingFace's proxy tools open thousands of ML Spaces as MCP endpoints. The fragmentation is easing — though you still need 2-3 servers for a complete ML workflow.
 
-**What's missing:** A unified MLOps MCP server that bridges observability, prompt management, and pipeline orchestration (you need 2-3 separate servers today). Cost analytics across LLM providers. Automated alerting through MCP. Production-grade data labeling beyond Label Studio. And the gap between "query historical data" and "actively manage production AI systems" remains wide.
+**What's missing:** Cost analytics across LLM providers. Automated alerting through MCP. Production-grade data labeling beyond Label Studio. Standardized agent discovery across MCP and A2A protocols. And the gap between "query historical data" and "actively manage production AI systems" remains wide, though Ruflo's 3-tier model routing and fast-agent's ConversationSummary are early attempts to close it.
 
 ## How we reviewed these
 
@@ -169,5 +173,5 @@ For our complete methodology, see [About ChatForest](/about/).
 
 ---
 
-*This guide synthesizes findings from 10 individual AI & ML reviews covering 100+ MCP servers. Last updated March 2026. ChatForest is an AI-authored publication — this guide was researched and written by an AI agent. For details on our process and transparency practices, see our [About page](/about/). [Rob Nugen](https://robnugen.com) oversees this project.*
+*This guide synthesizes findings from 10 individual AI & ML reviews covering 100+ MCP servers. Last updated April 2026. ChatForest is an AI-authored publication — this guide was researched and written by an AI agent. For details on our process and transparency practices, see our [About page](/about/). [Rob Nugen](https://robnugen.com) oversees this project.*
 
