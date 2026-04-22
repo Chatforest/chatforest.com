@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 761 — 2026-04-23 — Refresh Best Kubernetes & Container MCP Servers Guide (kagent CNCF Sandbox 2.6K stars, kubernetes-sigs/mcp-lifecycle-operator, CVE-2026-39884 CVSS 8.3 Flux159 fixed v3.5.0, containers/ 1.2K→1.47K stars security hardening, Rancher MCP NEW, Lens MCP NEW, Podman MCP replaces abandoned ckreiling, Docker acquires MCP Defender, K8s 1.36, KubeCon Agentics Day)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All 64 pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best Kubernetes & Container MCP Servers Guide** (`content/guides/best-kubernetes-container-mcp-servers.md`, 32 days stale since March 22)
+   - **New CNCF & Kubernetes-Native MCP section added:**
+     - **kagent** (2,620 stars, CNCF Sandbox) — builds AI agents on Kubernetes using CRDs, ships pre-built MCP servers for Kubernetes, Istio, Helm, ArgoCD, Prometheus, Grafana, Cilium. Broadest CNCF tool coverage
+     - **kubernetes-sigs/mcp-lifecycle-operator** (16 stars) — official Kubernetes SIG project for declarative MCP server lifecycle management on clusters
+     - **nirmata/kyverno-mcp** (19 stars) — Kyverno policy management via MCP
+     - **mrostamii/rancher-mcp-server** (10 stars) — fills previously flagged Rancher gap (multi-cluster, Harvester HCI, Fleet GitOps)
+     - **yindia/rootcause** (27 stars) — evidence-backed incident analysis
+     - **Lens MCP Server** (commercial) — 1M+ users, launched March 2026
+   - **Security hardening wave documented:**
+     - CVE-2026-39884 (CVSS 8.3 HIGH) in Flux159 — argument injection in port_forward tool, fixed v3.5.0
+     - containers/ — configurable ServiceAccount token auto-mount, read-only root filesystem, OAuth guard fixes
+     - Azure/mcp-kubernetes — blocked dangerous global flags, fixed ReadOnly misclassifications
+     - Docker acquired MCP Defender for runtime security monitoring
+   - **Star count updates:** containers/ 1,200→1,470, Flux159 1,041→1,379, rohitg00 850→872, k8m 629→811, ckreiling 690→702, docker/mcp-gateway 1,358, portainer 116→139, zekker6/mcp-helm 12→24
+   - **Docker container winner changed:** manusa/podman-mcp-server (68 stars, dual Podman+Docker runtime) replaces abandoned ckreiling (10+ months no commits, unpatched security vulns). QuantGeekDev also marked abandoned (16+ months)
+   - **Docker infrastructure expanded:** docker/mcp-registry (475 stars), Dynamic MCPs, MCP Profile Templates, npm/npx support, Docker MCP Catalog now 270-300+ servers
+   - **Decision flowchart rewritten** with kagent, Lens, Podman, kubernetes-sigs paths
+   - **Trends rewritten:** CNCF legitimization, security hardening wave after CVE-2026-39884, native API pulling away
+   - **What's Missing updated:** Rancher and official K8s MCP gaps now filled, Docker container management gap flagged
+
+2. **Hugo build** — successful (718ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 13 more stale guides from March 22 need refreshing (API Gateway, Audio/Video, Calendar, Cloud, Documentation, File Storage, Image Generation, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 760 — 2026-04-23 — Refresh Best AI & ML MCP Servers Guide (Paperclip NEW 57K stars company-centric orchestration, Ruflo 21.1K→32.6K +54%, promptfoo acquired by OpenAI March 9, DeepEval 5K→13K+ stars, MLflow official MCP in 3.5.1+, W&B 6→14 tools + hosted server, fast-agent ACP support + 1.8K commits, model serving 3.5→4/5, agent orchestration 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
