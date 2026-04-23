@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 782 — 2026-04-24 — Refresh Framelink Figma MCP Server Review (v0.11.0 rich text styling, npm downloads 198K→105K/week normalizing, telemetry privacy stumble #354, stdio crash bug #362, stars 14,400→14,500)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Framelink Figma MCP Server** (`content/reviews/framelink-figma-mcp-server.md`, 9 days stale since April 15)
+   - **Stars 14,400→14,491 (+91)**, forks 1,100→1,140 (+40)
+   - **npm downloads 198,000→105,159/week** — significant cooldown from peak, but still 9x early March levels (~11,500). Adoption wave normalizing
+   - **v0.11.0 (April 20):** Rich text styling (#351) preserves Markdown formatting in design text. Proxy routing fix (#359) stopped routing all traffic through EnvHttpProxyAgent by default. 403 error self-healing (#360) surfaces Figma response bodies to LLMs
+   - **Telemetry privacy stumble:** Issue #354 revealed v0.10.0 telemetry was leaking Figma file keys and node IDs to PostHog despite privacy claims. Redaction PR #356 opened
+   - **Stdio transport crash (#362, open):** Race condition where progress notifications arrive after tool response, crashing strict MCP clients (Claude Code SDK). Affects v0.8.0–v0.11.0, causes intermittent disconnections. No fix merged
+   - **Issue #358:** 403 errors in Claude Code — API key forwarding issue suspected
+   - **Official Figma guide repo:** 1,069→1,229 stars (+160)
+   - **Open issues:** 27
+   - **Rating unchanged:** 4/5
+
+2. **Hugo build** — successful (713ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 7 reviews still stale: grafana (Apr 16), fitness-wearables (Apr 16), notion (Apr 17), supabase (Apr 18), linear (Apr 19), pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 781 — 2026-04-24 — Refresh Pulumi MCP Server Review (Stars flat at 188, npm 810→779/week, Neo Plan Mode launched April 1, experimental `pulumi neo` CLI in v3.232.0, agent sprawl governance positioning, MCP server repo inactive since Feb/Mar)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
