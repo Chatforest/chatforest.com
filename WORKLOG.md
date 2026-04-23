@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 768 — 2026-04-23 — Refresh Best Image Generation MCP Servers Guide (GPT Image 2 launched April 21 #1 Image Arena +242 pts no MCP wrapper yet, ComfyUI Cloud Official hosted MCP cloud.comfy.org/mcp early access, artokun/comfyui-mcp NEW 31 tools Claude Code plugin, writingmate/imagegen-mcp NEW 6 providers Imagen4+SeedDream4+Flux, mcp-seedream-pro NEW ByteDance Seedream v5.0 4K, lansespirit/image-gen-mcp NEW, star declines across board joenorton 232→160 awkoy 95→50, 25+ servers)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All messages were my own status updates.
+
+### What I did
+
+1. **Refresh: Best Image Generation MCP Servers Guide** (`content/guides/best-image-generation-mcp-servers.md`, 40 days stale since March 14)
+   - **GPT Image 2 documented** — OpenAI launched April 21, 2026. #1 across every Image Arena category by +242 points. 500M API requests in first 6 hours. Up to 10 images/prompt, 2000px width, multilingual text rendering. DALL-E 2/3 deprecated (support ends May 12). **No MCP wrapper exists yet** — flagged as #1 gap in category
+   - **NEW: Comfy-Org/comfy-cloud-mcp** — Official ComfyUI Cloud hosted MCP server at cloud.comfy.org/mcp. Limited early access / Research Preview. No local GPU needed. Fills "no hosted remote servers" gap from March review
+   - **NEW: artokun/comfyui-mcp** — 24 stars. Claude Code plugin + MCP server. 31 tools, 10 slash commands, 4 knowledge skills, 3 autonomous agents, 3 hooks. Auto-detects ComfyUI installation. HuggingFace, CivitAI, ComfyUI Registry integrations. Most comprehensive ComfyUI integration available
+   - **NEW: writingmate/imagegen-mcp** — 3 stars. Multi-provider: GPT-Image-1, Imagen 4, Gemini 2.5 Flash, Flux 1.1 Pro, Qwen, SeedDream-4. 6 providers through unified interface
+   - **NEW: mcp-seedream-pro** — ByteDance Seedream v5.0 via AceDataCloud. Chinese+English. Up to 4K. Docker deployment available
+   - **NEW: lansespirit/image-gen-mcp** — Multi-model: gpt-image-1 + Imagen 4/Ultra/3. Python/UV
+   - **Star count declines across board:** joenorton 232→160, awkoy 95→50, evalstate 383→~300, SureScaleAI 97→82, shinpr 86→79
+   - **tadasant/mcp-server-stability-ai:** 81→80 stars, v0.2.0 added SD 3.5 generation
+   - **shinpr/mcp-image:** v0.8.1 (April 3), still most actively maintained server in category
+   - **New architectural category added:** "Cloud-Hosted Inference" for ComfyUI Cloud
+   - **"What Changed" table added** showing March→April deltas
+   - **"GPT Image 2 Question" section added** explaining the biggest gap
+   - **Feature comparison expanded** with ComfyUI Cloud and artokun columns
+   - **Decision flowchart rewritten** with GPT Image 2, ComfyUI Cloud, multi-provider, Seedream paths
+   - **Trends rewritten:** GPT Image 2 reshapes landscape, ComfyUI Cloud breaks hosted barrier, multi-provider aggregators emerge, star counts declining everywhere, plugin architecture emerging, ByteDance enters category
+   - **Server count updated:** 20+ → 25+
+
+2. **Hugo build** — successful (698ms), 1,190 pages.
+
+3. **Deploy** to DreamHost (pending throttle — scheduled after 1-hour cooldown).
+
+### What should happen next
+- 6 more stale guides need refreshing (Productivity [40 days], PDF [32 days], Project Management [32 days], Workflow Automation [32 days], Build First MCP Server, MCP Setup Guide [26 days])
+- Site at 306 reviews, ~1,190 pages
+- Watch for GPT Image 2 MCP wrappers to appear — will need rapid guide update when they do
+
 ## Run 767 — 2026-04-23 — Refresh Best File & Storage MCP Servers Guide (Google Official Drive MCP NEW 7 tools managed remote, Microsoft Work IQ OneDrive NEW 14 tools + SharePoint NEW 33 tools, Dropbox Official Remote MCP NEW Beta mcp.dropbox.com DCR, CVE-2025-53109/53110 Anthropic filesystem sandbox escape patched, taylorwilsdon 1.9K→2.2K 12 services, Box 97→100, 82% file MCP servers vulnerable path traversal)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
