@@ -1,36 +1,83 @@
-# Best PDF & Document Processing MCP Servers in 2026 — MarkItDown vs Docling vs Pandoc vs Dedicated PDF Tools
+# Best PDF & Document Processing MCP Servers in 2026 — MarkItDown vs Docling vs Kreuzberg vs Official MCP PDF Server
 
-> We compared 25+ PDF and document processing MCP servers across multi-format converters, dedicated PDF readers, PDF manipulation tools, Word document servers, and cloud APIs.
+> We compared 30+ PDF and document processing MCP servers across multi-format converters, the official MCP PDF server, dedicated PDF readers, manipulation tools, Word servers, and cloud APIs.
 
 
 Document processing is one of the most immediately useful MCP capabilities. Converting PDFs to text, extracting tables, transforming between formats — these are tasks that come up constantly when working with AI assistants. The ecosystem has responded with servers ranging from simple PDF readers to comprehensive multi-format conversion suites.
 
-The landscape splits six ways. **Multi-format converters** like MarkItDown and Docling handle dozens of input formats and output clean Markdown. **Dedicated PDF readers** focus on fast, accurate text extraction with features like caching and parallel processing. **Format converters** use Pandoc or custom pipelines for bidirectional document transformation. **PDF manipulation tools** handle merging, splitting, watermarking, and OCR. **Word document servers** provide full DOCX creation and editing. And **cloud API wrappers** connect to services like Unstructured and PDF.co for heavy processing.
+The landscape splits seven ways. **The official MCP PDF server** now ships in the reference implementation with 779K npm downloads/month. **Multi-format converters** like MarkItDown, kreuzberg, and Docling handle dozens of input formats and output clean Markdown. **Dedicated PDF readers** focus on fast, accurate text extraction with features like caching and parallel processing. **Format converters** use Pandoc or custom pipelines for bidirectional document transformation. **PDF manipulation tools** handle merging, splitting, watermarking, and OCR. **Word document servers** provide full DOCX creation and editing. And **cloud API wrappers** connect to services like Unstructured and PDF.co for heavy processing.
 
-What surprised us: **Microsoft's MarkItDown** (91.4K stars) and IBM's **Docling** (56.2K stars) dwarf everything else in the space — their parent libraries are among the most popular open-source projects on GitHub. Meanwhile, the dedicated PDF MCP servers are fragmented with dozens of small projects, none breaking 1K stars. And **Word document manipulation** is an underserved niche with only one serious contender.
+What surprised us: The biggest shift since March is how fast the landscape is consolidating. The **official @modelcontextprotocol/server-pdf** went from launch (January 2026) to 779K npm downloads/month — making it the most-downloaded PDF MCP server by far. **kreuzberg** exploded to 7,628 stars with its Rust-core, 97+ format document intelligence framework. Meanwhile, **MarkItDown** surged from 91K to 115K stars and remains the most-starred project in the space. Several previously-active servers have gone stale — mcp-pandoc hasn't been updated since September 2025, and Office-Word-MCP-Server since December 2025.
 
 **Disclosure:** Our recommendations are based on research — analyzing documentation, GitHub repositories, community feedback, and published benchmarks. We have not hands-on tested every server in this guide.
 
+## What Changed (March → April 2026)
+
+| Server | What changed |
+|--------|-------------|
+| **@modelcontextprotocol/server-pdf** | **NEW in guide.** Official MCP PDF server, v1.7.0, 779K npm downloads/month, chunked pagination + interactive viewer |
+| **kreuzberg** | **NEW in guide.** 7,628 stars, Rust-core, 97+ formats, v4.9.4, 135K PyPI downloads/month, MCP serve mode |
+| **kordoc** | **NEW in guide.** 819 stars in <1 month, Korean document specialist (HWP/HWPX/PDF), formula OCR |
+| **PSPDFKit/nutrient-dws-mcp** | **NEW in guide.** Enterprise PDF processing via Nutrient API, 63 stars |
+| **NameetP/pdfmux** | **NEW in guide.** Self-verifying PDF extraction, #2 reading order accuracy, 57 stars |
+| **microsoft/markitdown-mcp** | Stars 91,400→115,160 (+26%). Still v0.1.5 |
+| **docling-mcp** | Stars 522→585, library 56,200→58,399. Still v1.3.4 (no release since Jan 2026) |
+| **zcaceres/markdownify-mcp** | Stars 2,500→2,600, **v1.0.4** (3 new releases since March) |
+| **SylphxAI/pdf-reader-mcp** | Stars 571→657 (+15%), **v2.3.1** (dependency vulnerability fix), 9.8K npm downloads/month |
+| **vivekVells/mcp-pandoc** | Stars 517→529. **Stale** — no pushes since Sep 2025 (7 months) |
+| **GongRzhe/Office-Word-MCP-Server** | Stars 1,800→1,880. **Stale** — no pushes since Dec 2025 (4 months) |
+| **jztan/pdf-mcp** | Stars 9→21 (+133%). Steady growth |
+| **Tele-AI/doc-ops-mcp** | 138 stars (unchanged). Last pushed Mar 30 |
+| **Unstructured-IO/UNS-MCP** | Stars 42→43. Last pushed Apr 12 |
+| **awslabs/mcp (document-loader)** | Monorepo 8,843 stars. Active (pushed Apr 23) |
+
 ## At a Glance: Top Picks
 
-| Category | Our pick | Stars | Runner-up |
-|----------|----------|-------|-----------|
-| **Multi-format (to Markdown)** | [microsoft/markitdown-mcp](https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp) | 91.4K (mono) | [zcaceres/markdownify-mcp](https://github.com/zcaceres/markdownify-mcp) (2,500) |
-| **Multi-format (AI-powered)** | [docling-project/docling-mcp](https://github.com/docling-project/docling-mcp) | 522 | — |
-| **Format conversion (Pandoc)** | [vivekVells/mcp-pandoc](https://github.com/vivekVells/mcp-pandoc) | 517 | [Tele-AI/doc-ops-mcp](https://github.com/Tele-AI/doc-ops-mcp) (138) |
-| **Dedicated PDF reader** | [SylphxAI/pdf-reader-mcp](https://github.com/SylphxAI/pdf-reader-mcp) | 571 | [jztan/pdf-mcp](https://github.com/jztan/pdf-mcp) (9) |
+| Category | Our pick | Stars / Downloads | Runner-up |
+|----------|----------|-------------------|-----------|
+| **Official MCP PDF** | [@modelcontextprotocol/server-pdf](https://www.npmjs.com/package/@modelcontextprotocol/server-pdf) | 779K npm/month | — |
+| **Multi-format (to Markdown)** | [microsoft/markitdown-mcp](https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp) | 115K (mono) | [zcaceres/markdownify-mcp](https://github.com/zcaceres/markdownify-mcp) (2,600) |
+| **Document intelligence** | [kreuzberg-dev/kreuzberg](https://github.com/kreuzberg-dev/kreuzberg) | 7,628 | [docling-project/docling-mcp](https://github.com/docling-project/docling-mcp) (585) |
+| **Multi-format (AI-powered)** | [docling-project/docling-mcp](https://github.com/docling-project/docling-mcp) | 585 | — |
+| **Format conversion (Pandoc)** | [vivekVells/mcp-pandoc](https://github.com/vivekVells/mcp-pandoc) | 529 ⚠️ stale | [Tele-AI/doc-ops-mcp](https://github.com/Tele-AI/doc-ops-mcp) (138) |
+| **Dedicated PDF reader** | [SylphxAI/pdf-reader-mcp](https://github.com/SylphxAI/pdf-reader-mcp) | 657 | [jztan/pdf-mcp](https://github.com/jztan/pdf-mcp) (21) |
 | **PDF manipulation** | [gufao/mcp-server-stirling-pdf](https://github.com/gufao/mcp-server-stirling-pdf) | 1 | [Tele-AI/doc-ops-mcp](https://github.com/Tele-AI/doc-ops-mcp) (138, watermark/QR) |
-| **Word documents** | [GongRzhe/Office-Word-MCP-Server](https://github.com/GongRzhe/Office-Word-MCP-Server) | 1,800 | — |
-| **Cloud API (enterprise)** | [Unstructured-IO/UNS-MCP](https://github.com/Unstructured-IO/UNS-MCP) | 42 | [pdfdotco/pdfco-mcp](https://github.com/pdfdotco/pdfco-mcp) (9) |
+| **Word documents** | [GongRzhe/Office-Word-MCP-Server](https://github.com/GongRzhe/Office-Word-MCP-Server) | 1,880 ⚠️ stale | — |
+| **Cloud API (enterprise)** | [Unstructured-IO/UNS-MCP](https://github.com/Unstructured-IO/UNS-MCP) | 43 | [pdfdotco/pdfco-mcp](https://github.com/pdfdotco/pdfco-mcp) (9) |
 | **AWS ecosystem** | [awslabs/document-loader-mcp-server](https://github.com/awslabs/mcp/tree/main/src/document-loader-mcp-server) | Official | — |
+| **Korean documents** | [chrisryugj/kordoc](https://github.com/chrisryugj/kordoc) | 819 | — |
+
+## Official MCP PDF Server
+
+### @modelcontextprotocol/server-pdf — The Reference Implementation
+
+**Downloads:** 779,217 npm/month (340K/week) | **Language:** TypeScript | **License:** MIT | **Version:** v1.7.0 (April 21, 2026)
+
+The official PDF server from the Model Context Protocol team. Part of the [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo (84,330 stars). Launched January 15, 2026 and already the most-downloaded PDF MCP server by a wide margin.
+
+**What makes it stand out:**
+- **Official reference implementation** — maintained by the MCP team alongside the protocol itself
+- **Chunked pagination** — reads PDFs in manageable chunks rather than loading entire documents, critical for large files
+- **Interactive viewer** — built-in PDF viewing capability
+- **7 releases in 3 months** — v1.0 to v1.7.0, active and rapid development
+- **Part of the reference monorepo** — benefits from shared infrastructure, testing, and MCP protocol updates
+- **779K npm downloads/month** — dwarfs every other PDF MCP server combined
+
+**Limitations:**
+- Text extraction only — no layout analysis, no table detection, no OCR
+- No image extraction from PDFs
+- No caching between reads
+- Part of a monorepo — can't easily star or track the PDF server independently
+
+**Best for:** The default starting point for PDF text extraction in MCP. If you're setting up MCP for the first time and need PDF support, start here. For complex layouts or advanced features, pair with or switch to MarkItDown, kreuzberg, or Docling.
 
 ## Multi-Format Converters
 
 The heavyweights of document processing. These servers handle many input formats and convert everything to Markdown — the format LLMs understand best.
 
-### microsoft/markitdown-mcp — The Winner
+### microsoft/markitdown-mcp — The Most-Starred
 
-**Stars:** 91,400 (monorepo) | **Language:** Python | **License:** MIT
+**Stars:** 115,160 (monorepo, +26% since March) | **Language:** Python | **License:** MIT
 
 Microsoft's MarkItDown is the dominant document-to-Markdown conversion tool. The MCP server wraps it in a single, clean tool.
 
@@ -41,7 +88,7 @@ Microsoft's MarkItDown is the dominant document-to-Markdown conversion tool. The
 - **Docker-first deployment** — recommended approach for Claude Desktop integration, with volume mounting for local file access
 - **Structure preservation** — headings, lists, tables, and links are maintained in the Markdown output
 - **Plugin system** — OCR via LLM vision, Azure Document Intelligence integration
-- **v0.1.5** — released February 2026. Active development by Microsoft's AutoGen team
+- **v0.1.5** — released February 2026, still current. Active development by Microsoft's AutoGen team
 
 **Limitations:**
 - Single tool means no search, no caching, no page-level control — you convert the whole document
@@ -49,13 +96,13 @@ Microsoft's MarkItDown is the dominant document-to-Markdown conversion tool. The
 - Docker recommended means slightly heavier setup than pip-based servers
 - Output quality varies by format — PDFs with complex layouts can lose structure
 
-**Best for:** Most developers who need to feed documents into LLMs. The 91K-star ecosystem, Microsoft backing, and format breadth make this the default starting point.
+**Best for:** Developers who need multi-format document-to-Markdown conversion. The 115K-star ecosystem, Microsoft backing, and format breadth make this the strongest multi-format option. For PDF-only needs, consider the official MCP PDF server first.
 
 ### zcaceres/markdownify-mcp — The Multi-Tool Alternative
 
-**Stars:** 2,500 | **Language:** TypeScript | **License:** MIT
+**Stars:** 2,600 | **Language:** TypeScript | **License:** MIT | **Version:** v1.0.4 (April 17, 2026)
 
-Where MarkItDown has one tool, markdownify-mcp has ten — each specialized for a different input type.
+Where MarkItDown has one tool, markdownify-mcp has ten — each specialized for a different input type. Three new releases since March keep it actively maintained.
 
 **What makes it stand out:**
 - **10 dedicated tools** — pdf-to-markdown, docx-to-markdown, xlsx-to-markdown, pptx-to-markdown, image-to-markdown, audio-to-markdown, youtube-to-markdown, webpage-to-markdown, bing-search-to-markdown, get-markdown-file
@@ -70,20 +117,44 @@ Where MarkItDown has one tool, markdownify-mcp has ten — each specialized for 
 
 **Best for:** Developers who want explicit control over which conversion path is used, or who need YouTube/web content conversion alongside document processing.
 
+### kreuzberg-dev/kreuzberg — Rust-Core Document Intelligence
+
+**Stars:** 7,628 | **Language:** Rust (Python/Ruby/Java/Go/PHP/Elixir/C#/R/C/TypeScript bindings) | **License:** Elastic-2.0 | **Version:** v4.9.4 (April 22, 2026)
+
+The fastest-growing document processing framework in the MCP ecosystem. Kreuzberg launched as a polyglot document intelligence platform with a Rust core and built-in MCP server mode. 10+ releases in April alone.
+
+**What makes it stand out:**
+- **97+ input formats** — PDFs, Office docs, images, and more. Broader format coverage than MarkItDown
+- **Rust core** — native performance with bindings for 11 programming languages
+- **Built-in MCP server** — `kreuzberg serve` starts an MCP server directly, no wrapper needed
+- **GPU-accelerated OCR** — PaddleOCR support for scanned document processing
+- **Text, metadata, images, and structured data extraction** — goes beyond simple text extraction
+- **CLI + REST API + MCP** — three access modes from one tool
+- **135K PyPI downloads/month** — strong adoption outside MCP as well
+- **Extremely active** — v4.8.1 through v4.9.4 in April alone
+
+**Limitations:**
+- **Elastic-2.0 license** — NOT traditional open source. Restricts competing SaaS offerings. Fine for internal use and most commercial use, but check the license if you're building a document processing service
+- Newer project — less battle-tested than MarkItDown or Docling
+- Rust core means build complexity for contributors
+- MCP server mode is relatively new
+
+**Best for:** Teams that need high-performance document intelligence across many formats and languages. The Rust core makes it the fastest option for large-scale processing. Check the Elastic-2.0 license before adopting.
+
 ### docling-project/docling-mcp — AI-Powered Layout Understanding
 
-**Stars:** 522 (MCP server) / 56,200 (Docling library) | **Language:** Python | **License:** MIT
+**Stars:** 585 (MCP server) / 58,399 (Docling library) | **Language:** Python | **License:** MIT
 
 Docling is IBM's document processing library, now in the Linux Foundation. The MCP server brings its advanced PDF understanding to AI agents.
 
 **What makes it stand out:**
 - **Advanced PDF layout analysis** — page layout detection, reading order analysis, and table structure recognition using AI models. This is the key differentiator from MarkItDown
-- **Docling library** (56.2K stars) — one of the most popular document processing libraries globally, backed by IBM Research
+- **Docling library** (58.4K stars) — one of the most popular document processing libraries globally, backed by IBM Research
 - **Broad format support** — PDF, DOCX, PPTX, XLSX, HTML, images, audio (WAV/MP3), LaTeX, plain text, even USPTO patents and XBRL financial reports
 - **RAG integration** — built-in Milvus upload and retrieval for retrieval-augmented generation workflows
 - **DoclingDocument format** — structured JSON output that preserves document semantics, not just text
 - **Visual Language Model support** — GraniteDocling for vision-based document understanding
-- **v1.3.4** — released January 2026. Actively developed
+- **v1.3.4** — released January 2026, still current. No new MCP server release in 3 months, though the library remains active
 
 **Limitations:**
 - Heavier dependencies than MarkItDown — requires AI models for layout analysis
@@ -97,9 +168,11 @@ Docling is IBM's document processing library, now in the Linux Foundation. The M
 
 These servers focus on bidirectional format conversion — not just extracting content, but creating documents in various formats.
 
-### vivekVells/mcp-pandoc — The Winner
+### vivekVells/mcp-pandoc — The Winner (⚠️ Stale)
 
-**Stars:** 517 | **Language:** Python | **License:** MIT
+**Stars:** 529 | **Language:** Python | **License:** MIT
+
+⚠️ **Maintenance warning:** No pushes since September 2025 (7 months). Still functional but not actively maintained.
 
 A Pandoc wrapper for MCP. Pandoc is the Swiss Army knife of document conversion, and this server makes it available to AI agents.
 
@@ -146,9 +219,9 @@ Servers focused purely on reading and extracting content from PDFs. Simpler than
 
 ### SylphxAI/pdf-reader-mcp — The Winner
 
-**Stars:** 571 | **Language:** TypeScript | **License:** MIT
+**Stars:** 657 (+15%) | **Language:** TypeScript | **License:** MIT | **Version:** v2.3.1 (April 19, 2026)
 
-The most popular dedicated PDF reading MCP server. Built for speed with parallel processing.
+The most popular dedicated PDF reading MCP server. Built for speed with parallel processing. v2.3.1 fixed vulnerable transitive dependency packages. 9,840 npm downloads/month.
 
 **What makes it stand out:**
 - **5-10x faster** — parallel page processing leverages multiple cores for large documents
@@ -170,9 +243,9 @@ The most popular dedicated PDF reading MCP server. Built for speed with parallel
 
 ### jztan/pdf-mcp — The Smart Reader
 
-**Stars:** 9 | **Language:** Python | **License:** MIT
+**Stars:** 21 (+133%) | **Language:** Python | **License:** MIT
 
-Low stars but high quality — this server has features the more popular alternatives lack.
+Still small but growing fast — this server has features the more popular alternatives lack.
 
 **What makes it stand out:**
 - **7 specialized tools** — pdf_info, pdf_read_pages, pdf_read_all, pdf_search, pdf_get_toc, pdf_cache_stats, pdf_cache_clear
@@ -236,9 +309,11 @@ Tiny community, but wraps one of the most capable PDF processing platforms on th
 
 ## Word Document Servers
 
-### GongRzhe/Office-Word-MCP-Server — The Only Serious Option
+### GongRzhe/Office-Word-MCP-Server — The Only Serious Option (⚠️ Stale)
 
-**Stars:** 1,800 | **Language:** Python | **License:** Not specified
+**Stars:** 1,880 | **Language:** Python | **License:** Not specified
+
+⚠️ **Maintenance warning:** No pushes since December 2025 (4 months). Still functional but not actively maintained.
 
 The dominant Word document MCP server by a wide margin. If you need to create or edit DOCX files, this is it.
 
@@ -266,7 +341,7 @@ Servers that connect to cloud-based document processing services. More powerful 
 
 ### Unstructured-IO/UNS-MCP — Enterprise Document Pipeline
 
-**Stars:** 42 | **Language:** Python | **License:** Not specified
+**Stars:** 43 | **Language:** Python | **License:** Not specified
 
 Wraps the Unstructured API — a serious enterprise document processing platform used for ETL and RAG pipelines.
 
@@ -329,33 +404,52 @@ AWS's official document loader for MCP, designed for the AWS ecosystem.
 
 ## Which Approach Should You Choose?
 
-**Start with MarkItDown** if you need general document-to-Markdown conversion. It handles 29+ formats, has 91K stars of community validation, and the single `convert_to_markdown` tool is dead simple.
+**Start with the official @modelcontextprotocol/server-pdf** if you just need PDF text extraction. It's the reference implementation, has the most downloads (779K/month), and requires zero configuration beyond `npm install`.
+
+**Use MarkItDown** if you need multi-format document-to-Markdown conversion beyond just PDFs. It handles 29+ formats, has 115K stars of community validation, and the single `convert_to_markdown` tool is dead simple.
+
+**Use kreuzberg** if you need high-performance document intelligence across 97+ formats with a Rust core. Best for large-scale processing or when you need GPU-accelerated OCR. Check the Elastic-2.0 license first.
 
 **Switch to Docling** if MarkItDown's output is garbled — complex layouts, multi-column PDFs, scientific papers, or financial reports. Docling's AI-powered layout analysis handles these better, at the cost of speed.
 
 **Add a dedicated PDF reader** (pdf-reader-mcp or pdf-mcp) if you work with PDFs frequently and need caching, search, or page-level control that the multi-format converters don't offer.
 
-**Add mcp-pandoc** if you need to create documents — generating PDFs, DOCX, or EPUB from Markdown. MarkItDown and Docling are input-focused; Pandoc handles output.
+**Add mcp-pandoc** if you need to create documents — generating PDFs, DOCX, or EPUB from Markdown. Note: this server hasn't been updated since September 2025.
 
-**Use Office-Word-MCP-Server** if you need to create or edit Word documents with full formatting control.
+**Use Office-Word-MCP-Server** if you need to create or edit Word documents with full formatting control. Note: this server hasn't been updated since December 2025.
 
-**Consider cloud APIs** (Unstructured, PDF.co) only if you need enterprise-scale pipelines or comprehensive PDF manipulation beyond what local tools provide.
+**Use kordoc** if you work with Korean documents (HWP/HWPX formats) or need formula OCR in PDFs.
 
-## Three Trends Worth Watching
+**Consider cloud APIs** (Unstructured, PDF.co, PSPDFKit/Nutrient) only if you need enterprise-scale pipelines or comprehensive PDF manipulation beyond what local tools provide.
 
-**1. The library giants dominate.** MarkItDown (91.4K stars) and Docling (56.2K stars) aren't MCP-native projects — they're massive document processing libraries that added MCP servers as a feature. This means the MCP servers inherit years of development and testing, but also that MCP-specific features (caching, search, pagination) are afterthoughts. Dedicated PDF MCP servers fill these gaps.
+## Four Trends Worth Watching
 
-**2. Read vs. write remains split.** No single server handles both document reading and document creation well. MarkItDown and Docling extract content; Pandoc and doc-ops-mcp create documents. The Word server is the exception — it both reads and writes — but only for DOCX. Expect this gap to close as servers mature.
+**1. The official server changes the default.** The @modelcontextprotocol/server-pdf went from zero to 779K npm downloads/month in three months. It's now the most natural starting point for PDF extraction, pushing MarkItDown and others into "multi-format" or "advanced features" positioning. This is the MCP ecosystem maturing — official reference implementations establish baselines.
 
-**3. PDF manipulation is underserved.** Despite PDF being the most common document format, MCP servers for merging, splitting, compressing, and annotating PDFs barely exist. Stirling PDF (the underlying tool) has 56K stars, but the MCP wrapper has 1 star. This is a clear gap waiting to be filled.
+**2. Rust-core challengers arrive.** kreuzberg (7,628 stars, Rust core, 97+ formats) represents a new breed of document intelligence tool that prioritizes performance and polyglot access over Python-ecosystem convenience. Its Elastic-2.0 license signals a different business model than the MIT-licensed incumbents.
+
+**3. Staleness is spreading.** Several established servers haven't been updated in months: mcp-pandoc (7 months), Office-Word-MCP-Server (4 months), docling-mcp (3 months since last release). Meanwhile MarkItDown, pdf-reader-mcp, and kreuzberg remain actively maintained. The gap between maintained and unmaintained servers is widening.
+
+**4. Read vs. write remains split.** No single server handles both document reading and document creation well. MarkItDown and Docling extract content; Pandoc and doc-ops-mcp create documents. The Word server is the exception — it both reads and writes — but only for DOCX. PDF manipulation (merging, splitting, compressing) remains underserved.
+
+## Notable New Entrants (April 2026)
+
+These servers are too new or niche for a full review, but worth watching:
+
+- **[chrisryugj/kordoc](https://github.com/chrisryugj/kordoc)** (819 stars) — Korean document specialist. HWP, HWPX, PDF, XLSX, DOCX to Markdown. Formula OCR via Pix2Text. v2.6.2. Created March 28, 2026 — 819 stars in under a month is remarkable growth.
+- **[PSPDFKit/nutrient-dws-mcp-server](https://github.com/PSPDFKit/nutrient-dws-mcp-server)** (63 stars) — Enterprise PDF processing via the Nutrient (formerly PSPDFKit) Document Web Service API. v0.0.5. Commercial API backend.
+- **[NameetP/pdfmux](https://github.com/NameetP/pdfmux)** (57 stars) — Novel self-verifying PDF extraction. Claims #2 reading order accuracy with zero AI, zero GPU, zero cost. Last pushed April 16.
+- **[I-CAN-hack/pdf-mcp](https://github.com/I-CAN-hack/pdf-mcp)** (29 stars) — PDF with image rendering support. Created March 2026.
+- **[onebirdrocks/ebook-mcp](https://github.com/onebirdrocks/ebook-mcp)** (358 stars) — eBook specialist supporting EPUB, PDF, and other formats. Apache-2.0.
 
 ## What's Missing
 
 - **No official Adobe MCP server** — Adobe Acrobat has the most comprehensive PDF API in the world, but no MCP integration
 - **No official Microsoft Office MCP server for documents** — Word, PowerPoint reading/writing through Microsoft's own MCP catalog is absent (Excel has some coverage via Copilot)
 - **No Apple iWork support** — no Pages, Keynote, or Numbers MCP servers
-- **No PDF form filling** — most servers extract form data but can't fill forms (PDF.co is the exception)
+- **No PDF form filling** — most servers extract form data but can't fill forms (PDF.co and AryanBV/pdf-toolkit-mcp are the exceptions, though the latter is very small at 4 stars)
 - **Limited table extraction** — most servers struggle with complex tables. Docling is best here but still imperfect
 - **No PDF comparison/diff** — comparing two versions of a document is a common need with no MCP solution
 - **No digital signature support** — signing PDFs or verifying signatures isn't available in any server
+- **Staleness risk** — mcp-pandoc (7 months without updates) and Office-Word-MCP-Server (4 months) may need community forks or replacements
 

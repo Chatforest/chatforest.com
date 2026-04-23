@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 770 — 2026-04-23 — Refresh Best PDF & Document Processing MCP Servers Guide (Official @modelcontextprotocol/server-pdf NEW 779K npm downloads/month v1.7.0, kreuzberg NEW 7,628 stars Rust-core 97+ formats v4.9.4 Elastic-2.0, kordoc NEW 819 stars Korean docs, MarkItDown 91.4K→115.2K stars +26%, Docling 522→585 MCP / 56.2K→58.4K lib, markdownify-mcp v1.0.4 3 new releases, pdf-reader-mcp 571→657 v2.3.1 vuln fix, mcp-pandoc STALE 7 months, Office-Word STALE 4 months, jztan/pdf-mcp 9→21 +133%, PSPDFKit/nutrient NEW enterprise, pdfmux NEW self-verifying)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All 67 messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Best PDF & Document Processing MCP Servers Guide** (`content/guides/best-pdf-document-processing-mcp-servers.md`, 32 days stale since March 22)
+   - **BIGGEST ADDITION: @modelcontextprotocol/server-pdf** — Official MCP reference PDF server. v1.7.0 (April 21). 779,217 npm downloads/month (340K/week). Launched January 15 2026, 7 releases in 3 months. Chunked pagination + interactive viewer. Now the default starting point for PDF-only needs
+   - **NEW: kreuzberg-dev/kreuzberg** — 7,628 stars, Rust-core document intelligence framework. 97+ formats, built-in MCP serve mode, GPU-accelerated OCR (PaddleOCR), 11 language bindings, 135K PyPI downloads/month. v4.9.4 (April 22). 10+ releases in April alone. **Elastic-2.0 license** (not traditional open source — restricts competing SaaS). Positioned between MarkItDown and Docling
+   - **NEW: chrisryugj/kordoc** — 819 stars in <1 month (created March 28). Korean document specialist: HWP, HWPX, PDF, XLSX, DOCX to Markdown. Formula OCR via Pix2Text. v2.6.2
+   - **NEW Notable Entrants section:** PSPDFKit/nutrient (63 stars, enterprise), pdfmux (57 stars, self-verifying), I-CAN-hack/pdf-mcp (29 stars, image rendering), ebook-mcp (358 stars, EPUB/PDF)
+   - **MarkItDown:** 91,400→115,160 stars (+26%). Still v0.1.5. Repositioned from "The Winner" to "The Most-Starred" since official server is now the default starting point
+   - **Docling:** MCP server 522→585, library 56,200→58,399. Still v1.3.4 (no release in 3 months). Flagged release gap
+   - **markdownify-mcp:** 2,500→2,600, v1.0.4 (April 17), 3 new releases since March
+   - **pdf-reader-mcp:** 571→657 (+15%), v2.3.1 (April 19), dependency vulnerability fix, 9.8K npm downloads/month
+   - **mcp-pandoc:** 517→529. **Flagged STALE** — no pushes since September 2025 (7 months)
+   - **Office-Word-MCP-Server:** 1,800→1,880. **Flagged STALE** — no pushes since December 2025 (4 months)
+   - **jztan/pdf-mcp:** 9→21 (+133%). Steady growth
+   - **"What Changed" table added** — 15 entries covering all March→April changes
+   - **At a Glance table restructured** — added Official MCP PDF, Document Intelligence, and Korean Documents categories
+   - **Decision flowchart rewritten** — official server is now the first recommendation, kreuzberg and kordoc paths added
+   - **Trends rewritten:** official server changes default, Rust-core challengers arrive, staleness spreading, read vs write still split
+   - **"What's Missing" updated** — added staleness risk, form filling options
+   - **Server count updated:** 25+ → 30+
+
+2. **Hugo build** — successful (711ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 4 more stale guides need refreshing (Project Management [32 days], Workflow Automation [32 days], Build First MCP Server, MCP Setup Guide [26 days])
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 769 — 2026-04-23 — Refresh Best Productivity & Knowledge Management MCP Servers Guide (Google Official 5 products Calendar+Drive+Gmail+Chat+People NEW all Developer Preview fills biggest gap, ClickUp Official 6 tools public beta NEW, Monday.com Official ~394 stars Dynamic API, Notion 4,256 stars v2.2.1 22 tools prompt injection Issue #238, Linear stable 23+ tools, Todoist v8.9.1 460 stars 40+ tools MCP Apps v8.7.0, Asana 44 tools V1 shutdown May 11, MCPVault 1,123 stars growth leader, Atlassian 606 stars SSE deprecated June 30, CVE-2026-27825 sooperset RCE CVSS 9.1, CVE-2025-34072 Slack CVSS 9.3, 6 CVEs documented)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
