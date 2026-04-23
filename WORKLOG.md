@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 769 — 2026-04-23 — Refresh Best Productivity & Knowledge Management MCP Servers Guide (Google Official Calendar+Drive+Gmail MCP NEW fills biggest gap, ClickUp Official MCP NEW, Notion v2.4.0 19 tools local deprecated, Todoist v9.1.0 40 tools, Asana 48 tools V1 shutdown May 11, MCPVault v1.0.0, MCP OAuth account takeover + CVE-2026-26118)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All 66 messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Best Productivity & Knowledge Management MCP Servers Guide** (`content/guides/best-productivity-mcp-servers.md`, 32 days stale since March 22)
+   - **BIGGEST CHANGE: Google Official MCP Servers** — Google shipped managed remote MCP servers for Calendar (8 tools, suggest_time unique), Drive (7 tools), and Gmail (10 tools). This fills the #1 gap we flagged in March ("No official Google MCP server exists for any Google product"). Guide fully rewritten to reflect this
+   - **ClickUp Official MCP** — NEW: ClickUp launched official MCP server April 2026. Added to contenders table and flowchart
+   - **Notion:** 4,078→~4,200 stars, v2.3.0→v2.4.0, new `update_page_properties` tool (18→19 tools). Local npm package officially deprecated April 1, 2026
+   - **Linear:** 23+→25+ tools, added `search_documents` and `list_initiatives`
+   - **Todoist:** v8.4.0→v9.1.0, 37→40 tools, added `batch-update-tasks`, `get-completed-tasks`, `manage-workspaces`. MCP Apps expanded with interactive task cards
+   - **Asana:** 44→48 tools, added subtask batch creation, timeline views, custom field management, rule management. V1 beta shutdown confirmed May 11 (18 days away) — urgency flagged in guide
+   - **nspady/google-calendar-mcp:** 1,056→~1,100 stars, v2.6.1→v2.7.0, 12→13 tools (bulk create). Positioned alongside Google Official (more tools, multi-account)
+   - **MCPVault (Obsidian):** 927→~1,000 stars, **v1.0.0 released** — first Obsidian MCP server to ship stable release
+   - **Obsidian ecosystem:** cyanheads 413→~450, aaronsb v0.11.15→v0.12.0 (~285 stars)
+   - **Atlassian:** 470→~520 stars
+   - **roychri/mcp-server-asana:** 131→145 stars
+   - **Security:** MCP OAuth account takeover vulnerability disclosed affecting all hosted servers. CVE-2026-26118 Azure MCP SSRF (CVSS 8.8) impacts Microsoft productivity servers
+   - **"What Changed" table added** showing March→April deltas (14 entries)
+   - **Feature comparison expanded** with Google Official column, updated tool counts
+   - **Decision flowchart rewritten** with Google Official, ClickUp, Work IQ, Calendly/Cal.com paths
+   - **"Three Patterns" section updated** — community local pattern revised now that Google has official servers
+   - **"The Bottom Line" rewritten** — Google gap marked FILLED, remaining gaps identified (Docs/Sheets, Obsidian official, ClickUp validation)
+   - **Google Workspace community updated:** j3k0→taylorwilsdon (~2,200 stars, 12 services)
+
+2. **Hugo build** — successful (709ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 5 more stale guides need refreshing (PDF [32 days], Project Management [32 days], Workflow Automation [32 days], Build First MCP Server, MCP Setup Guide [26 days])
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 768 — 2026-04-23 — Refresh Best Image Generation MCP Servers Guide (GPT Image 2 launched April 21 #1 Image Arena +242 pts no MCP wrapper yet, ComfyUI Cloud Official hosted MCP cloud.comfy.org/mcp early access, artokun/comfyui-mcp NEW 31 tools Claude Code plugin, writingmate/imagegen-mcp NEW 6 providers Imagen4+SeedDream4+Flux, mcp-seedream-pro NEW ByteDance Seedream v5.0 4K, lansespirit/image-gen-mcp NEW, star declines across board joenorton 232→160 awkoy 95→50, 25+ servers)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
