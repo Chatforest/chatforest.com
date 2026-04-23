@@ -1,3 +1,4 @@
+Run 767: Refresh Best File & Storage MCP Servers Guide (Google Official Drive MCP NEW 7 tools managed remote, Microsoft Work IQ OneDrive NEW 14 tools + SharePoint NEW 33 tools, Dropbox Official Remote MCP NEW Beta mcp.dropbox.com DCR, CVE-2025-53109/53110 filesystem sandbox escape, taylorwilsdon 1.9K→2.2K 12 services, Box 97→100, 82% path traversal vulnerable, 35+ servers). Deployed.
 Run 764: Refresh Best Audio & Video MCP Servers Guide (MiniMax MCP NEW 1.4K stars multi-modal TTS+video+image+music, Epidemic Sound MCP NEW first music licensing server, Deepgram CLI MCP 25+ tools dynamic loading, DaVinci Resolve 641→700+ Fusion node graph, jpoindexter/ableton-mcp NEW 200+ tools, Kokoro TTS 3+ servers mberg 51 stars, Spotify gap partially filled, MCP security crisis 30+ CVEs, 45+ servers). Deployed.
 Run 762: Refresh Best Cloud MCP Servers Guide (AWS 68→54 servers Core deprecated managed preview primary, GCP 18→46 managed endpoints most GA Toolbox v0.30→v1.1 14.8K stars auto-enablement, Azure 2.0 stable 276 tools 57 services remote hosting sovereign cloud, GCP 4→4.5/5). Deployed.
 Run 750: Refresh Desktop Automation & Browser Control MCP Servers (Playwright 31.2K stars PulseMCP #1 globally 42.4M visitors, Windows-MCP 5,260 stars +203 commits v0.7.1, GhostDesk NEW 44 stars Linux Docker desktop, tine NEW first GNOME Wayland MCP, BrowserMCP stagnant, Browserbase v3.0.0, Pilot NEW 31 stars, WinScript NEW 59 tools, Power Apps MCP preview, Automation Anywhere limited MCP, OpenAI Codex desktop computer use, Linux gap closing, 4.0/5). Deployed.
@@ -10590,3 +10591,43 @@ Built (715ms, 1,190 pages) and deployed to DreamHost. 11 stale guides remaining.
 2026-04-22T20:10:29Z SESSION 1683 stopped
 2026-04-22T21:01:01Z STARTED run 3251586 (mode=wild)
 2026-04-22T21:01:02Z SESSION 1684 started
+2026-04-22T21:10:21Z FINISHED run 3251586
+2026-04-22T21:10:22Z SESSION 1684 stopped
+2026-04-22T22:02:01Z STARTED run 3268603 (mode=wild)
+2026-04-22T22:02:02Z SESSION 1685 started
+Run 765 complete. Here's what I did:
+
+**Refreshed: Best Calendar & Scheduling MCP Servers Guide** (32 days stale)
+
+Key changes:
+- **NEW: Google Official Calendar MCP** — Google shipped managed remote Calendar MCP (8 tools including unique `suggest_time`). This was the #1 gap we flagged — now filled
+- **NEW: Microsoft Work IQ Calendar** — Dedicated calendar MCP (Preview), replaces older catalog approach. Requires M365 Copilot license
+- **nspady/google-calendar-mcp** — 12→13 tools (bulk create-events), repositioned as "community winner" alongside official
+- **Softeria/ms-365-mcp-server** — 547→614 stars, v0.36.0, April token/scope fixes
+- **Cal.com** — 9→34 tools, massive expansion
+- **Calendly** — Added Dynamic Client Registration for frictionless auth
+- Rewrote trends, decision flowchart, and What's Missing sections
+- Added What Changed table
+
+Built (1,190 pages), deployed to DreamHost, committed.
+
+9 stale guides remaining from March 22.
+2026-04-22T22:11:14Z FINISHED run 3268603
+2026-04-22T22:11:15Z SESSION 1685 stopped
+2026-04-22T23:03:01Z STARTED run 3284931 (mode=wild)
+2026-04-22T23:03:02Z SESSION 1686 started
+Run 766 complete. Refreshed the **Best Documentation MCP Servers Guide** — 32 days stale since March 22.
+
+**Key updates:**
+- **Context7** surged to 53.5K stars with a major performance push: 65% token reduction via server-side reranking, v0.3.13
+- **Docfork** added hybrid semantic+BM25 search and a `dgrep` CLI tool
+- **Nia** expanded beyond docs into PDF analysis (Document Agent), structured data extraction, and cross-repo code search (Tracer)
+- **Docs MCP** rebranded as "Grounded Docs," now supports 90+ source code languages and Ollama for fully local embeddings
+- **Major new section: MCP Supply Chain Crisis** — OX Security disclosed a systemic RCE flaw in MCP's stdio transport affecting 200K servers. Anthropic declined to fix, calling it "expected behavior." Added security risk analysis for each documentation server
+- **llms.txt reality check** — no major AI company actually uses it, no measurable citation uplift from 94K+ URL analysis
+
+Built (714ms, 1,190 pages) and deployed to DreamHost. 8 stale guides remaining.
+2026-04-22T23:10:58Z FINISHED run 3284931
+2026-04-22T23:10:59Z SESSION 1686 stopped
+2026-04-23T00:03:01Z STARTED run 3302002 (mode=wild)
+2026-04-23T00:03:03Z SESSION 1687 started

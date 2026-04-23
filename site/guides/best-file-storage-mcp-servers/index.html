@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Best File &amp; Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms — ChatForest</title>
-  <meta name="description" content="We compared 30&#43; file and storage MCP servers across local filesystem, Google Drive, AWS S3, Dropbox, OneDrive, Box, MinIO, and multi-cloud options.">
+  <meta name="description" content="We compared 35&#43; file and storage MCP servers across local filesystem, Google Drive, AWS S3, Dropbox, OneDrive, Box, MinIO, and multi-cloud options. Updated April 2026 with official Google Drive, Microsoft Work IQ, and Dropbox remote servers.">
   <meta property="og:title" content="Best File &amp; Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms — ChatForest">
-  <meta property="og:description" content="30&#43; file &amp; storage MCP servers compared: local filesystem, Google Drive, S3, Dropbox, OneDrive, Box, MinIO. Honest recommendations from research.">
+  <meta property="og:description" content="35&#43; file &amp; storage MCP servers compared: local filesystem, Google Drive, S3, Dropbox, OneDrive, Box, MinIO. Now with official vendor servers. April 2026.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/guides/best-file-storage-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Best File &amp; Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms — ChatForest">
-  <meta name="twitter:description" content="30&#43; file &amp; storage MCP servers compared: local filesystem, Google Drive, S3, Dropbox, OneDrive, Box, MinIO. Honest recommendations from research.">
+  <meta name="twitter:description" content="35&#43; file &amp; storage MCP servers compared: local filesystem, Google Drive, S3, Dropbox, OneDrive, Box, MinIO. Now with official vendor servers. April 2026.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/guides/best-file-storage-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Developer Guide</span>
-        <span>Published Mar 22, 2026 · Updated Mar 22, 2026</span>
+        <span>Published Mar 22, 2026 · Updated Apr 23, 2026</span>
       </div>
 
       <h1 class="article-title">Best File &amp; Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms</h1>
@@ -67,7 +67,74 @@
       <div class="article-body">
         <p>File and storage MCP servers let AI assistants read, write, search, and manage files — whether on your local machine, in cloud storage, or across enterprise platforms. This is one of the most fundamental MCP categories: almost every AI workflow touches files somewhere.</p>
 <p>The ecosystem splits into two worlds. <strong>Local filesystem servers</strong> give AI agents controlled access to files on your machine — sandboxed by directory allowlists. <strong>Cloud storage servers</strong> connect to Google Drive, S3, Dropbox, OneDrive, Box, and other platforms via their APIs. The security models are completely different, and picking the wrong one can expose sensitive data.</p>
-<p>What surprised us: several major providers (AWS, Box, MinIO) now ship official MCP servers, while others (Google, Microsoft) have either archived or deprecated theirs. The community has filled most gaps, but quality varies widely.</p>
+<p>What surprised us: the landscape flipped in a single month. Google, Microsoft, and Dropbox all shipped official MCP servers in March–April 2026, joining AWS, Box, and MinIO. The era of &ldquo;community fills the gaps&rdquo; is ending — but the security story got worse, with Anthropic&rsquo;s own filesystem server hit by sandbox escape CVEs.</p>
+<h2 id="what-changed-march--april-2026">What Changed (March → April 2026)</h2>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>March 2026</th>
+<th>April 2026</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Official Filesystem</strong></td>
+<td>81,700 stars</td>
+<td>84,300 stars</td>
+<td>CVE-2025-53109/53110 sandbox escape discovered + patched</td>
+</tr>
+<tr>
+<td><strong>Google Drive</strong></td>
+<td>No official server</td>
+<td><strong>Google Official Drive MCP (NEW)</strong></td>
+<td>7 tools, managed remote, Developer Preview</td>
+</tr>
+<tr>
+<td><strong>taylorwilsdon/google_workspace_mcp</strong></td>
+<td>1,900 stars, 10 services</td>
+<td>2,200 stars, 12 services</td>
+<td>+Apps Script, Search; stateless mode fix</td>
+</tr>
+<tr>
+<td><strong>Microsoft OneDrive/SharePoint</strong></td>
+<td>Deprecated official</td>
+<td><strong>Work IQ OneDrive + SharePoint (NEW)</strong></td>
+<td>14 + 33 tools, separate servers</td>
+</tr>
+<tr>
+<td><strong>Dropbox</strong></td>
+<td>No official file server</td>
+<td><strong>Dropbox Remote MCP (NEW)</strong></td>
+<td>Beta at mcp.dropbox.com, DCR auth</td>
+</tr>
+<tr>
+<td><strong>Box</strong></td>
+<td>97 stars</td>
+<td>100 stars</td>
+<td>Multi-transport (STDIO + HTTP + SSE)</td>
+</tr>
+<tr>
+<td><strong>awslabs/mcp</strong></td>
+<td>8,500 stars</td>
+<td>8,800 stars</td>
+<td>Removed SSE, Streamable HTTP only</td>
+</tr>
+<tr>
+<td><strong>mark3labs/mcp-filesystem-server</strong></td>
+<td>619 stars</td>
+<td>633 stars</td>
+<td>Steady growth</td>
+</tr>
+<tr>
+<td><strong>ftaricano/mcp-onedrive-sharepoint</strong></td>
+<td>—</td>
+<td>5 stars</td>
+<td>Graph helpers, working auth flow</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Disclosure:</strong> Our recommendations are based on research — analyzing documentation, GitHub repositories, community feedback, and published benchmarks. We have not hands-on tested every server in this guide.</p>
 <h2 id="at-a-glance-top-picks">At a Glance: Top Picks</h2>
 <table>
@@ -83,37 +150,37 @@
 <tr>
 <td><strong>Local filesystem</strong></td>
 <td><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem">Official Filesystem</a></td>
-<td>81,700 (monorepo)</td>
-<td><a href="https://github.com/mark3labs/mcp-filesystem-server">mark3labs/mcp-filesystem-server</a> (619, Go)</td>
+<td>84,300 (monorepo)</td>
+<td><a href="https://github.com/mark3labs/mcp-filesystem-server">mark3labs/mcp-filesystem-server</a> (633, Go)</td>
 </tr>
 <tr>
 <td><strong>Google Drive / Workspace</strong></td>
 <td><a href="https://github.com/taylorwilsdon/google_workspace_mcp">taylorwilsdon/google_workspace_mcp</a></td>
-<td>1,900</td>
-<td><a href="https://github.com/felores/gdrive-mcp-server">felores/gdrive-mcp-server</a> (66, read-only)</td>
+<td>2,200</td>
+<td><a href="https://developers.google.com/workspace/guides/configure-mcp-servers">Google Official Drive MCP</a> (managed remote, NEW)</td>
 </tr>
 <tr>
 <td><strong>AWS S3</strong></td>
 <td><a href="https://github.com/aws-samples/sample-mcp-server-s3">aws-samples/sample-mcp-server-s3</a></td>
-<td>77</td>
+<td>80</td>
 <td><a href="https://github.com/txn2/mcp-s3">txn2/mcp-s3</a> (Go, multi-account)</td>
 </tr>
 <tr>
 <td><strong>Dropbox</strong></td>
-<td><a href="https://github.com/amgadabdelhafez/dbx-mcp-server">amgadabdelhafez/dbx-mcp-server</a></td>
-<td>26</td>
-<td><a href="https://github.com/ngs/dropbox-mcp-server">ngs/dropbox-mcp-server</a> (Go, chunked uploads)</td>
+<td><a href="https://help.dropbox.com/integrations/connect-dropbox-mcp-server">Dropbox Official Remote MCP</a></td>
+<td>Beta (NEW)</td>
+<td><a href="https://github.com/amgadabdelhafez/dbx-mcp-server">amgadabdelhafez/dbx-mcp-server</a> (27, self-hosted)</td>
 </tr>
 <tr>
 <td><strong>OneDrive / SharePoint</strong></td>
-<td><a href="https://github.com/ftaricano/mcp-onedrive-sharepoint">ftaricano/mcp-onedrive-sharepoint</a></td>
-<td>—</td>
-<td><a href="https://github.com/SAIB-Inc/Helix">SAIB-Inc/Helix</a> (.NET, broad M365)</td>
+<td><a href="https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview">Work IQ OneDrive + SharePoint</a></td>
+<td>Official (NEW)</td>
+<td><a href="https://github.com/ftaricano/mcp-onedrive-sharepoint">ftaricano/mcp-onedrive-sharepoint</a> (5, self-hosted)</td>
 </tr>
 <tr>
 <td><strong>Box</strong></td>
 <td><a href="https://github.com/box-community/mcp-server-box">box-community/mcp-server-box</a></td>
-<td>97</td>
+<td>100</td>
 <td><a href="https://github.com/box/mcp-server-box-remote">box/mcp-server-box-remote</a> (hosted)</td>
 </tr>
 <tr>
@@ -139,24 +206,31 @@
 <h2 id="local-filesystem-servers">Local Filesystem Servers</h2>
 <p>These give AI agents controlled access to files on your machine. They&rsquo;re the foundation of most MCP setups — reading code, editing configs, managing project files.</p>
 <h3 id="official-filesystem--the-winner">Official Filesystem — The Winner</h3>
-<p><strong>Stars:</strong> 81,700 (monorepo) | <strong>Language:</strong> TypeScript | <strong>License:</strong> MIT</p>
+<p><strong>Stars:</strong> 84,300 (monorepo) | <strong>Language:</strong> TypeScript | <strong>License:</strong> MIT</p>
 <p>The reference implementation from Anthropic, included in the <a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a> monorepo. It&rsquo;s the default filesystem server recommended by most MCP clients and the one most developers start with.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
 <li><strong>14 tools</strong> — read_text_file, write_file, edit_file, create_directory, list_directory, search_files, directory_tree, get_file_info, move_file, list_allowed_directories</li>
-<li><strong>Directory allowlisting</strong> — only directories you explicitly pass via CLI args (or via MCP Roots protocol) are accessible. The AI agent can&rsquo;t escape the sandbox</li>
+<li><strong>Directory allowlisting</strong> — only directories you explicitly pass via CLI args (or via MCP Roots protocol) are accessible</li>
 <li><strong>Dynamic access control</strong> — supports the MCP Roots protocol for runtime directory access changes without restarting</li>
 <li><strong>Battle-tested</strong> — used by Claude Desktop, VS Code, and most MCP clients out of the box</li>
+</ul>
+<p><strong>⚠️ Security alert (patched):</strong> In mid-2025, Cymulate Research Labs disclosed two critical sandbox escape vulnerabilities:</p>
+<ul>
+<li><strong>CVE-2025-53110</strong> (directory containment bypass) — the server used naive <code>path.startsWith()</code> validation, allowing access via directories with similar name prefixes (e.g., <code>/tmp/allowed_dir_evil</code> bypasses <code>/tmp/allowed_dir</code>)</li>
+<li><strong>CVE-2025-53109</strong> (symlink bypass to code execution) — crafted symlinks bypass the access enforcement mechanism entirely, granting full read/write to the entire filesystem
+Both were patched in version 2025.7.1. <strong>If you&rsquo;re running an older version, update immediately.</strong> These CVEs demonstrate that even the reference implementation from the protocol&rsquo;s creators can have fundamental security flaws.</li>
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
 <li>Read-only for files outside allowed directories, but full read/write within them — no granular per-tool permissions</li>
 <li>No binary file support (images, PDFs, etc.)</li>
 <li>TypeScript/Node.js dependency</li>
+<li>Historical sandbox escape CVEs — always run the latest version</li>
 </ul>
-<p><strong>Best for:</strong> Most developers. Start here unless you have a specific reason not to.</p>
+<p><strong>Best for:</strong> Most developers. Start here unless you have a specific reason not to. Verify you&rsquo;re on version 2025.7.1 or later.</p>
 <h3 id="mark3labsmcp-filesystem-server--go-alternative">mark3labs/mcp-filesystem-server — Go Alternative</h3>
-<p><strong>Stars:</strong> 619 | <strong>Language:</strong> Go | <strong>License:</strong> MIT</p>
+<p><strong>Stars:</strong> 633 | <strong>Language:</strong> Go | <strong>License:</strong> MIT</p>
 <p>A Go reimplementation of the official filesystem server. Single binary, no Node.js dependency. Docker image available.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
@@ -176,17 +250,37 @@
 <p>Adds HTTP transport with JWT authentication on top of standard filesystem operations. Supports both STDIO and HTTP modes.</p>
 <p><strong>Best for:</strong> Teams that need remote filesystem access with authentication — useful for shared development servers.</p>
 <h2 id="google-drive--workspace">Google Drive / Workspace</h2>
-<p>Google hasn&rsquo;t shipped a maintained official MCP server. Anthropic&rsquo;s reference implementation was archived. The community has filled the gap with a standout option.</p>
-<h3 id="taylorwilsdongoogle_workspace_mcp--the-winner">taylorwilsdon/google_workspace_mcp — The Winner</h3>
-<p><strong>Stars:</strong> 1,900 | <strong>Language:</strong> Python | <strong>License:</strong> MIT</p>
-<p>The most comprehensive Google Workspace MCP server. Covers not just Drive but Gmail, Calendar, Docs, Sheets, Slides, Forms, Tasks, Contacts, and Chat — the full suite.</p>
+<p>The Google Drive MCP story transformed in March–April 2026. Google shipped official managed remote MCP servers for Workspace, filling the #1 gap we flagged in our original guide. Meanwhile, taylorwilsdon&rsquo;s community server continues to lead on features and flexibility.</p>
+<h3 id="google-official-drive-mcp--new">Google Official Drive MCP — NEW</h3>
+<p><strong>Type:</strong> Managed remote | <strong>Auth:</strong> OAuth 2.0 | <strong>Status:</strong> Developer Preview</p>
+<p>Google now ships fully-managed, remote MCP servers for Workspace as part of the <a href="https://developers.google.com/workspace/guides/configure-mcp-servers">Google Workspace Developer Preview Program</a>. No self-hosting needed — Google runs the infrastructure.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
-<li><strong>Full Workspace coverage</strong> — 10+ Google services in one server. If you need Drive access, you probably also need Calendar and Gmail</li>
+<li><strong>7 tools</strong> — create_file, download_file_content, get_file_metadata, get_file_permissions, list_recent_files, read_file_content, search_files</li>
+<li><strong>Managed remote</strong> — Google hosts it, no server to run or maintain</li>
+<li><strong>Part of a suite</strong> — alongside Gmail (10 tools), Calendar (8 tools), Chat (2 tools), and People API (3 tools)</li>
+<li><strong>Enterprise-ready</strong> — built on Google&rsquo;s existing API infrastructure with global endpoints</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Developer Preview — not yet GA, may change</li>
+<li>Fewer tools than taylorwilsdon&rsquo;s community server (7 vs 12+ services)</li>
+<li>Requires Google Cloud project with OAuth 2.0 credentials</li>
+<li>No Docs/Sheets/Slides editing — just Drive file operations</li>
+</ul>
+<p><strong>Best for:</strong> Teams that want official Google backing and managed infrastructure. If you only need Drive file operations (read, write, search), this is now the safest choice.</p>
+<h3 id="taylorwilsdongoogle_workspace_mcp--the-community-winner">taylorwilsdon/google_workspace_mcp — The Community Winner</h3>
+<p><strong>Stars:</strong> 2,200 | <strong>Language:</strong> Python | <strong>License:</strong> MIT</p>
+<p>Still the most comprehensive Google Workspace MCP server, now covering <strong>12 services</strong>: Gmail, Drive, Calendar, Docs, Sheets, Slides, Forms, Chat, Apps Script, Tasks, Contacts, and Search.</p>
+<p><strong>What makes it stand out:</strong></p>
+<ul>
+<li><strong>12 services</strong> — the full Workspace suite in one server, including Apps Script and Search (new since March)</li>
 <li><strong>OAuth 2.1</strong> — modern authentication with multi-user bearer token support for organizations</li>
-<li><strong>Stateless mode</strong> — can run without local state, useful for serverless deployments</li>
-<li><strong>1,654 commits</strong> — heavily maintained with active development</li>
-<li><strong>.dxt package</strong> — installable as a desktop extension</li>
+<li><strong>Streamable HTTP mode</strong> — recommended modern transport for MCP clients</li>
+<li><strong>Stateless mode</strong> — fixed in recent updates to properly reach FastMCP&rsquo;s stateless_http runtime flag. Before this fix, the app advertised stateless behavior while FastMCP still kept in-memory sessions</li>
+<li><strong>1,954 commits</strong> — heavily maintained with active development</li>
+<li><strong>Tiered access levels</strong> — core, extended, and complete tool sets plus granular permissions and read-only mode</li>
+<li><strong>Re-auth improvements</strong> — now uses <code>select_account</code> when user already has required scopes instead of forcing consent; preserves existing refresh token when Google omits it on reauth</li>
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
@@ -194,15 +288,15 @@
 <li>Large surface area means more potential attack surface</li>
 <li>Python dependency</li>
 </ul>
-<p><strong>Best for:</strong> Anyone who needs Google Drive access. The full Workspace coverage means you won&rsquo;t need separate servers for Gmail or Calendar.</p>
+<p><strong>Best for:</strong> Anyone who needs more than just Drive — Gmail, Calendar, Docs editing, Sheets, etc. The breadth of 12 services in one server means you won&rsquo;t need separate servers. Choose this over the official server when you need the full Workspace suite.</p>
 <h3 id="feloresgdrive-mcp-server--lightweight-read-only">felores/gdrive-mcp-server — Lightweight Read-Only</h3>
-<p><strong>Stars:</strong> 66 | <strong>Language:</strong> JavaScript | <strong>License:</strong> MIT</p>
+<p><strong>Stars:</strong> 67 | <strong>Language:</strong> JavaScript | <strong>License:</strong> MIT</p>
 <p>A minimal Google Drive server with just two tools: <code>gdrive_search</code> and <code>gdrive_read_file</code>. Enforces read-only scopes — the AI can search and read but never modify or delete files.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
 <li><strong>Read-only by design</strong> — uses <code>drive.readonly</code> scope. Cannot modify files even if the AI tries</li>
 <li><strong>Auto-conversion</strong> — Google Docs to Markdown, Sheets to CSV, Slides to plain text</li>
-<li><strong>Simple setup</strong> — fewer moving parts than the full Workspace server</li>
+<li><strong>Simple setup</strong> �� fewer moving parts than the full Workspace server</li>
 </ul>
 <p><strong>Best for:</strong> Teams that want AI assistants to reference Google Drive documents without any write risk.</p>
 <h3 id="other-google-drive-options">Other Google Drive Options</h3>
@@ -213,7 +307,7 @@
 <h2 id="aws-s3">AWS S3</h2>
 <p>AWS has official MCP presence, but the S3 story is fragmented across multiple repos.</p>
 <h3 id="aws-samplessample-mcp-server-s3--the-winner">aws-samples/sample-mcp-server-s3 — The Winner</h3>
-<p><strong>Stars:</strong> 77 | <strong>Language:</strong> Python | <strong>License:</strong> MIT-0</p>
+<p><strong>Stars:</strong> 80 | <strong>Language:</strong> Python | <strong>License:</strong> MIT-0</p>
 <p>An official AWS sample demonstrating S3 access via MCP. Three tools: ListBuckets, ListObjectsV2, and GetObject. Supports PDF document retrieval.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
@@ -244,12 +338,29 @@
 <p>Supports STDIO, HTTP, and streamable HTTP transports. Handles both text and binary file retrieval with prefix filtering. MinIO compatible.</p>
 <p><strong>Best for:</strong> Teams that need HTTP/SSE transport for remote S3 access.</p>
 <h3 id="aws-official-s3-tables">AWS Official S3 Tables</h3>
-<p>The <a href="https://github.com/awslabs/mcp">awslabs/mcp</a> monorepo (8,500 stars) includes an S3 Tables MCP server for table-formatted S3 data. It&rsquo;s specialized for structured data queries, not general file management.</p>
+<p>The <a href="https://github.com/awslabs/mcp">awslabs/mcp</a> monorepo (8,800 stars) includes an S3 Tables MCP server for table-formatted S3 data. It&rsquo;s specialized for structured data queries, not general file management. Note: as of May 2025, AWS removed SSE transport support from all their MCP servers, moving to Streamable HTTP only.</p>
 <h2 id="dropbox">Dropbox</h2>
-<p>Dropbox&rsquo;s official MCP server focuses on Dash (enterprise search), not file management. Community servers fill the gap.</p>
-<h3 id="amgadabdelhafezdbx-mcp-server--the-winner">amgadabdelhafez/dbx-mcp-server — The Winner</h3>
-<p><strong>Stars:</strong> 26 | <strong>Language:</strong> TypeScript | <strong>License:</strong> MIT</p>
-<p>The most complete Dropbox file management server, with full CRUD operations and sharing.</p>
+<p>Dropbox transformed its MCP story in April 2026 by shipping an official remote MCP server with full file management capabilities. This fills the gap we flagged in March.</p>
+<h3 id="dropbox-official-remote-mcp--the-winner-new">Dropbox Official Remote MCP — The Winner (NEW)</h3>
+<p><strong>Type:</strong> Managed remote (Beta) | <strong>Endpoint:</strong> mcp.dropbox.com | <strong>Auth:</strong> OAuth + Dynamic Client Registration</p>
+<p>Dropbox now hosts an official remote MCP server at <code>mcp.dropbox.com</code> with file management built in — no self-hosting required.</p>
+<p><strong>What makes it stand out:</strong></p>
+<ul>
+<li><strong>Full file operations</strong> — upload, download, list, delete, search, sharing links, account info</li>
+<li><strong>Dynamic Client Registration (DCR)</strong> — frictionless auth for supported MCP clients, no pre-registration needed</li>
+<li><strong>Zero infrastructure</strong> — Dropbox runs it for you, just point your MCP client at the endpoint</li>
+<li><strong>Works with major clients</strong> — Claude, Cursor, ChatGPT, and any MCP-compatible app</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Beta — may have restricted functionality and additional terms</li>
+<li>DCR only supports a &ldquo;trusted set&rdquo; of MCP clients currently, with more being added</li>
+<li>No chunked uploads for very large files (community servers still win here)</li>
+</ul>
+<p><strong>Best for:</strong> Most teams that need Dropbox access from AI agents. Start here unless you need large file support or self-hosted control.</p>
+<h3 id="amgadabdelhafezdbx-mcp-server--self-hosted-alternative">amgadabdelhafez/dbx-mcp-server — Self-Hosted Alternative</h3>
+<p><strong>Stars:</strong> 27 | <strong>Language:</strong> TypeScript | <strong>License:</strong> MIT</p>
+<p>The most complete community Dropbox file management server, with full CRUD operations and sharing. Still relevant for teams that need self-hosted control.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
 <li><strong>Full file operations</strong> — list, upload, download, delete, copy, move, create folders</li>
@@ -257,15 +368,10 @@
 <li><strong>Search and metadata</strong> — search files and retrieve detailed metadata</li>
 <li><strong>OAuth 2.0 with PKCE</strong> — modern, secure authentication flow</li>
 </ul>
-<p><strong>Limitations:</strong></p>
-<ul>
-<li>No chunked uploads for very large files</li>
-<li>Community-maintained — no official Dropbox backing for file operations</li>
-</ul>
-<p><strong>Best for:</strong> Teams that need full Dropbox file management from AI agents.</p>
+<p><strong>Best for:</strong> Teams that want self-hosted Dropbox access or need features not yet in the official beta.</p>
 <h3 id="ngsdropbox-mcp-server--large-files--version-history">ngs/dropbox-mcp-server — Large Files + Version History</h3>
 <p><strong>Stars:</strong> 3 | <strong>Language:</strong> Go | <strong>License:</strong> MIT</p>
-<p>A Go implementation with 17+ tools, including features the TypeScript server lacks.</p>
+<p>A Go implementation with 17+ tools, including features neither the official nor TypeScript server offers.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
 <li><strong>Chunked uploads</strong> — handles files over 150MB that would fail with standard upload</li>
@@ -273,38 +379,74 @@
 <li><strong>Shared link management</strong> — create, list, and revoke shared links</li>
 </ul>
 <p><strong>Best for:</strong> Teams working with large files or needing version control within Dropbox.</p>
-<h3 id="dropboxmcp-server-dash--official-search-only">dropbox/mcp-server-dash — Official (Search Only)</h3>
-<p><strong>Stars:</strong> 9 | <strong>Language:</strong> Python | <strong>License:</strong> Apache 2.0</p>
-<p>The official Dropbox MCP server, but it&rsquo;s Dash-focused — enterprise search across connected services, not direct file management. Tools: <code>dash_company_search</code> and <code>dash_get_file_details</code>.</p>
-<p><strong>Best for:</strong> Enterprise teams using Dropbox Dash for cross-platform content search.</p>
+<h3 id="dropbox-dash-mcp--enterprise-search">Dropbox Dash MCP — Enterprise Search</h3>
+<p>Dropbox also offers a separate <strong>Dash remote MCP server</strong> (updated April 14, 2026) and a <strong>local Dash MCP server</strong> for AI-powered search across connected services. The original <code>dropbox/mcp-server-dash</code> (9 stars, Python) provides <code>dash_company_search</code> and <code>dash_get_file_details</code>. These focus on search and context, not file management — use the main Dropbox remote MCP for file operations.</p>
 <h2 id="onedrive--sharepoint">OneDrive / SharePoint</h2>
-<p>Microsoft&rsquo;s OneDrive/SharePoint MCP story is currently the weakest among major cloud storage providers. The official server was deprecated, and community options are nascent.</p>
-<h3 id="ftaricanomcp-onedrive-sharepoint--the-winner">ftaricano/mcp-onedrive-sharepoint — The Winner</h3>
-<p><strong>Language:</strong> TypeScript | <strong>License:</strong> —</p>
-<p>The most comprehensive community option, covering OneDrive, SharePoint, and Excel in one server.</p>
+<p>Microsoft completely revamped its MCP story in March 2026. The old combined OneDrive/SharePoint server was deprecated on March 13, replaced by separate <strong>Work IQ</strong> servers with dramatically more capabilities. This fills the #2 gap we flagged in our original guide.</p>
+<h3 id="work-iq-onedrive--the-winner-new">Work IQ OneDrive — The Winner (NEW)</h3>
+<p><strong>Type:</strong> Managed remote (Preview) | <strong>Server ID:</strong> mcp_OneDriveRemoteServer | <strong>Requires:</strong> M365 Copilot license</p>
+<p>Microsoft&rsquo;s official OneDrive MCP server with 14 tools for personal OneDrive file management.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
-<li><strong>35+ tools</strong> — file management (upload/download/move/rename/delete/search), SharePoint list CRUD, and 12 Excel-specific tools with formula support</li>
-<li><strong>Device Code Flow</strong> — user-friendly authentication with auto-refresh and secure keychain storage</li>
-<li><strong>Excel integration</strong> — read/write cells, create charts, manage worksheets. Unique among storage servers</li>
+<li><strong>14 tools</strong> — getOnedrive, getFolderChildrenInMyOnedrive, findFileOrFolderInMyDrive, getFileOrFolderMetadata (by ID or URL), readSmallTextFile, createSmallTextFile, createFolder, renameFileOrFolder, deleteFileOrFolder, moveSmallFile, shareFileOrFolder, setSensitivityLabelOnFile</li>
+<li><strong>Concurrency control</strong> — eTags on delete/rename/move operations prevent conflicts in concurrent editing</li>
+<li><strong>Sensitivity labels</strong> — apply/remove Microsoft Information Protection labels with audit justification</li>
+<li><strong>Sharing</strong> — role-based invitations (read, write) with email notifications</li>
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
-<li>Very new, minimal star count</li>
-<li>Single maintainer</li>
+<li><strong>Requires M365 Copilot license</strong> (~$30/user/month) — not free</li>
+<li>File operations limited to ≤5MB — no large file support</li>
+<li>Preview — tool names and parameters may change</li>
+<li>Folder listing capped at 20 items per call</li>
 </ul>
-<p><strong>Best for:</strong> Microsoft 365 teams that need unified OneDrive + SharePoint + Excel access.</p>
+<p><strong>Best for:</strong> Enterprise Microsoft 365 teams with Copilot licenses who need official, managed OneDrive access.</p>
+<h3 id="work-iq-sharepoint--new">Work IQ SharePoint — NEW</h3>
+<p><strong>Type:</strong> Managed remote (Preview) | <strong>Server ID:</strong> mcp_SharePointRemoteServer | <strong>Requires:</strong> M365 Copilot license</p>
+<p>Microsoft&rsquo;s official SharePoint MCP server with a massive 33 tools covering files, folders, lists, columns, and sharing.</p>
+<p><strong>What makes it stand out:</strong></p>
+<ul>
+<li><strong>33 tools</strong> — site discovery (findSite, getSiteByPath, listSubsites), document libraries (list, get default), file operations (create/read/delete/rename/move/copy text and binary files), folder management, async operations (copyFileOrFolder + checkOperationStatus), list operations (CRUD for lists, items, columns), sharing with roles, sensitivity labels</li>
+<li><strong>Binary file support</strong> — read and create binary files via base64 encoding (unique among the Work IQ file servers)</li>
+<li><strong>Cross-library copy</strong> — async file/folder copy across different document libraries</li>
+<li><strong>Full list management</strong> — create lists from templates, manage columns with 20+ types, CRUD list items</li>
+<li><strong>Upload from URL</strong> — copy files directly from SharePoint/OneDrive URLs</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li><strong>Requires M365 Copilot license</strong> (~$30/user/month)</li>
+<li>File operations limited to ≤5MB</li>
+<li>Move operations only within the same document library</li>
+<li>Preview — may change</li>
+</ul>
+<p><strong>Best for:</strong> SharePoint-heavy organizations that need AI agents to manage sites, document libraries, lists, and files.</p>
+<h3 id="ftaricanomcp-onedrive-sharepoint--self-hosted-alternative">ftaricano/mcp-onedrive-sharepoint — Self-Hosted Alternative</h3>
+<p><strong>Stars:</strong> 5 | <strong>Language:</strong> TypeScript | <strong>License:</strong> —</p>
+<p>The community option covering OneDrive, SharePoint, and Excel in one self-hosted server. Recent updates include working ESLint config, executable tests, reusable Graph helpers, and fixed <code>npm run setup-auth</code>.</p>
+<p><strong>What makes it stand out:</strong></p>
+<ul>
+<li><strong>32 tools</strong> — file management, SharePoint list CRUD, and Excel-specific tools with formula support</li>
+<li><strong>Device Code Flow</strong> — user-friendly authentication with auto-refresh</li>
+<li><strong>Excel integration</strong> — read/write cells, create charts, manage worksheets. Unique among storage servers</li>
+<li><strong>No Copilot license required</strong> — works with standard M365 licenses via Microsoft Graph API</li>
+<li><strong>CLI tool</strong> — also usable as a standalone <code>ods</code> CLI for shell scripting</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Small community (5 stars, single maintainer)</li>
+<li>Self-hosted — you manage the server</li>
+</ul>
+<p><strong>Best for:</strong> Teams that can&rsquo;t justify the Copilot license cost, need Excel integration, or want self-hosted control.</p>
 <h3 id="other-microsoft-options">Other Microsoft Options</h3>
 <ul>
 <li><strong><a href="https://github.com/SAIB-Inc/Helix">SAIB-Inc/Helix</a></strong> — .NET 10 implementation covering email, calendar, SharePoint sites/lists/documents. Good for .NET shops</li>
 <li><strong><a href="https://github.com/godwin3737/mcp-server-microsoft365-filesearch">godwin3737/mcp-server-microsoft365-filesearch</a></strong> (11 stars) — Python, search-focused with local file caching. Uses Microsoft Graph API</li>
 <li><strong><a href="https://github.com/pnp/cli-microsoft365-mcp-server">pnp/cli-microsoft365-mcp-server</a></strong> — Wraps the entire CLI for Microsoft 365. Natural language execution of any M365 CLI command</li>
-<li><strong><a href="https://github.com/microsoft/mcp">microsoft/mcp</a></strong> (2,800 stars) — Official Microsoft MCP catalog includes Mail, Calendar, and Copilot Chat servers, but OneDrive/SharePoint support is deprecated</li>
 </ul>
 <h2 id="box">Box</h2>
 <p>Box stands out as the enterprise storage provider with the best MCP support — both self-hosted and cloud-hosted official servers.</p>
 <h3 id="box-communitymcp-server-box--the-winner">box-community/mcp-server-box — The Winner</h3>
-<p><strong>Stars:</strong> 97 | <strong>Language:</strong> Python | <strong>License:</strong> MIT</p>
+<p><strong>Stars:</strong> 100 | <strong>Language:</strong> Python | <strong>License:</strong> MIT</p>
 <p>The official self-hosted Box MCP server with enterprise-grade features.</p>
 <p><strong>What makes it stand out:</strong></p>
 <ul>
@@ -376,11 +518,12 @@
 <p><strong>Best for:</strong> Teams working across multiple storage providers who want a single MCP server instead of configuring one per service.</p>
 <h2 id="decision-flowchart">Decision Flowchart</h2>
 <p><strong>Do you need local file access?</strong></p>
-<p>→ <strong>Standard setup</strong> → Official Filesystem (modelcontextprotocol/servers)</p>
+<p>→ <strong>Standard setup</strong> → Official Filesystem (modelcontextprotocol/servers) — verify v2025.7.1+ for security patches</p>
 <p>→ <strong>Go binary / Docker</strong> → mark3labs/mcp-filesystem-server</p>
 <p>→ <strong>Remote with auth</strong> → cyanheads/filesystem-mcp-server (HTTP + JWT)</p>
 <p><strong>Do you need Google Drive?</strong></p>
-<p>→ <strong>Full Workspace (Drive + Gmail + Calendar)</strong> → taylorwilsdon/google_workspace_mcp</p>
+<p>→ <strong>Just Drive files (read/write/search)</strong> → Google Official Drive MCP (managed remote, NEW)</p>
+<p>→ <strong>Full Workspace (Drive + Gmail + Calendar + 9 more)</strong> → taylorwilsdon/google_workspace_mcp</p>
 <p>→ <strong>Read-only Drive access</strong> → felores/gdrive-mcp-server</p>
 <p>→ <strong>Google Docs editing with formatting</strong> → a-bonus/google-docs-mcp</p>
 <p><strong>Do you need AWS S3?</strong></p>
@@ -388,31 +531,35 @@
 <p>→ <strong>Full CRUD + multi-account</strong> → txn2/mcp-s3</p>
 <p>→ <strong>S3-compatible (MinIO, SeaweedFS)</strong> → txn2/mcp-s3 or minio/mcp-server-aistor</p>
 <p><strong>Do you need Dropbox?</strong></p>
-<p>→ <strong>Full file management</strong> → amgadabdelhafez/dbx-mcp-server</p>
+<p>→ <strong>Standard file management</strong> → Dropbox Official Remote MCP (mcp.dropbox.com, NEW)</p>
+<p>→ <strong>Self-hosted control</strong> → amgadabdelhafez/dbx-mcp-server</p>
 <p>→ <strong>Large files + version history</strong> → ngs/dropbox-mcp-server</p>
 <p><strong>Do you need OneDrive / SharePoint?</strong></p>
-<p>→ <strong>Full OneDrive + SharePoint + Excel</strong> → ftaricano/mcp-onedrive-sharepoint</p>
-<p>→ <strong>Broad M365 coverage</strong> → SAIB-Inc/Helix</p>
+<p>→ <strong>Have M365 Copilot license?</strong> → Work IQ OneDrive + Work IQ SharePoint (official, NEW)</p>
+<p>→ <strong>No Copilot license / need Excel</strong> → ftaricano/mcp-onedrive-sharepoint (self-hosted)</p>
+<p>→ <strong>Broad M365 coverage (.NET)</strong> → SAIB-Inc/Helix</p>
 <p><strong>Do you need Box?</strong></p>
 <p>→ <strong>Self-hosted with AI queries</strong> → box-community/mcp-server-box (official)</p>
 <p>→ <strong>Zero infrastructure</strong> → box/mcp-server-box-remote (official hosted)</p>
 <p><strong>Do you need multiple cloud providers?</strong></p>
 <p>→ Xuanwo/mcp-server-opendal (40+ backends, one server)</p>
 <h2 id="three-trends-shaping-this-space">Three Trends Shaping This Space</h2>
-<h3 id="1-official-servers-are-appearing--then-disappearing">1. Official servers are appearing — then disappearing</h3>
-<p>The MCP file storage landscape is unstable at the provider level. Anthropic&rsquo;s reference Google Drive server was archived. Microsoft deprecated their OneDrive/SharePoint server. Meanwhile, Box ships both self-hosted and remote servers, MinIO has a 30-tool official server, and AWS has multiple S3 options. There&rsquo;s no consistency in how major providers approach MCP support, which means community servers remain critical.</p>
-<h3 id="2-safety-defaults-are-diverging">2. Safety defaults are diverging</h3>
-<p>MinIO&rsquo;s server is read-only by default — you must pass explicit flags to enable writes and deletes. The official Filesystem server allows full read/write within allowed directories. Box&rsquo;s remote server requires OAuth consent flows. There&rsquo;s no standard approach to safety in file MCP servers, and the risk profiles are very different. Local filesystem access (sandboxed by directory) and cloud storage access (sandboxed by OAuth scopes) require different mental models.</p>
-<h3 id="3-workspace-servers-are-replacing-single-service-servers">3. Workspace servers are replacing single-service servers</h3>
-<p>taylorwilsdon&rsquo;s Google Workspace MCP covers 10 services in one server. ftaricano&rsquo;s OneDrive server bundles SharePoint and Excel. The trend is toward consolidated servers that cover an entire productivity suite rather than individual file storage. This makes sense — if you need Drive access, you almost certainly need Calendar and Gmail too.</p>
+<h3 id="1-the-official-vendor-wave-arrived--and-its-real">1. The official vendor wave arrived — and it&rsquo;s real</h3>
+<p>In a single month (March–April 2026), Google, Microsoft, and Dropbox all shipped official MCP servers for their storage platforms. This is a dramatic reversal from our March assessment where we flagged Google Drive and OneDrive/SharePoint as the two biggest gaps. Now every major cloud storage provider except Apple has at least one official MCP server. The era of relying entirely on community implementations for major platforms is ending — though community servers remain superior for feature breadth (taylorwilsdon&rsquo;s 12-service Workspace server vs. Google&rsquo;s 5-server suite).</p>
+<h3 id="2-file-mcp-security-is-proven-broken">2. File MCP security is proven broken</h3>
+<p>Anthropic&rsquo;s own filesystem server — the reference implementation used by most MCP setups — had critical sandbox escape vulnerabilities (CVE-2025-53109, CVE-2025-53110). A naive <code>startsWith()</code> path check and missing symlink validation let attackers escape the directory sandbox entirely. Across the broader ecosystem, 82% of file-operation MCP servers are vulnerable to path traversal. This isn&rsquo;t theoretical — these are the specific patterns that file storage servers exhibit. Run the latest versions, use containers, and verify your path validation.</p>
+<h3 id="3-managed-remote-is-becoming-the-default">3. Managed remote is becoming the default</h3>
+<p>Google, Microsoft, and Dropbox all chose managed remote hosting for their official servers — you point your MCP client at an endpoint, no server to run. This matches the broader MCP trend away from local STDIO toward Streamable HTTP. The trade-off: you gain zero-maintenance deployment but lose self-hosted control and often face licensing costs (Microsoft requires M365 Copilot at ~$30/user/month). For enterprises, this is the right model. For individual developers, community self-hosted servers remain more flexible and free.</p>
 <h2 id="whats-missing">What&rsquo;s Missing</h2>
 <ul>
-<li><strong>No maintained official Google Drive MCP server</strong> — Anthropic&rsquo;s was archived, Google hasn&rsquo;t shipped one. The community server is excellent but Google&rsquo;s API changes could break it anytime</li>
-<li><strong>No official OneDrive/SharePoint MCP server</strong> — Microsoft deprecated theirs. The gap is filled by small community projects with minimal stars</li>
-<li><strong>No iCloud MCP server</strong> — Apple&rsquo;s ecosystem is completely absent from the MCP world</li>
+<li><del>No maintained official Google Drive MCP server</del> — <strong>FILLED (April 2026).</strong> Google shipped managed remote MCP servers for Workspace including Drive (7 tools). Developer Preview, not yet GA</li>
+<li><del>No official OneDrive/SharePoint MCP server</del> — <strong>FILLED (March 2026).</strong> Microsoft shipped Work IQ OneDrive (14 tools) and Work IQ SharePoint (33 tools). Requires M365 Copilot license</li>
+<li><del>No official Dropbox file management server</del> — <strong>FILLED (April 2026).</strong> Dropbox shipped remote MCP server (Beta) at mcp.dropbox.com with full file operations</li>
+<li><strong>No iCloud MCP server</strong> — Apple&rsquo;s ecosystem is completely absent from the MCP world. No official or community implementation exists</li>
 <li><strong>No Backblaze B2 MCP server</strong> — popular S3-compatible storage with no dedicated MCP support (OpenDAL covers it generically)</li>
 <li><strong>No file sync/conflict resolution</strong> — no MCP server handles bidirectional file sync between local and cloud storage</li>
-<li><strong>Limited write safety</strong> — most cloud storage servers either allow full writes or no writes. Few offer granular per-operation permissions (MinIO is the exception)</li>
+<li><strong>File MCP security is fundamentally weak</strong> — 82% of file-operation MCP servers vulnerable to path traversal, reference implementation had sandbox escape CVEs, no standard approach to path validation across the ecosystem</li>
+<li><strong>5MB file limits on official servers</strong> — Microsoft Work IQ limits all file operations to ≤5MB. Community servers handle larger files but lack official backing</li>
 <li><strong>No file preview/transformation</strong> — no server generates thumbnails, converts formats, or previews documents. AI agents get raw content or nothing</li>
 </ul>
 
@@ -465,7 +612,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-22T00:00:00+09:00","datePublished":"2026-03-22T14:00:00+09:00","description":"We compared 30+ file and storage MCP servers across local filesystem, Google Drive, AWS S3, Dropbox, OneDrive, Box, MinIO, and multi-cloud options.","headline":"Best File \u0026 Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms","mainEntityOfPage":"https://chatforest.com/guides/best-file-storage-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-file-storage-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-23T00:00:00+09:00","datePublished":"2026-03-22T14:00:00+09:00","description":"We compared 35+ file and storage MCP servers across local filesystem, Google Drive, AWS S3, Dropbox, OneDrive, Box, MinIO, and multi-cloud options. Updated April 2026 with official Google Drive, Microsoft Work IQ, and Dropbox remote servers.","headline":"Best File \u0026 Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms","mainEntityOfPage":"https://chatforest.com/guides/best-file-storage-mcp-servers/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/guides/best-file-storage-mcp-servers/"}
 </script>
 
 

@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 767 — 2026-04-23 — Refresh Best File & Storage MCP Servers Guide (Google Official Drive MCP NEW 7 tools managed remote, Microsoft Work IQ OneDrive NEW 14 tools + SharePoint NEW 33 tools, Dropbox Official Remote MCP NEW Beta mcp.dropbox.com DCR, CVE-2025-53109/53110 Anthropic filesystem sandbox escape patched, taylorwilsdon 1.9K→2.2K 12 services, Box 97→100, 82% file MCP servers vulnerable path traversal)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- All pending messages were my own status updates. No new instructions from Rob.
+
+### What I did
+
+1. **Refresh: Best File & Storage MCP Servers Guide** (`content/guides/best-file-storage-mcp-servers.md`, 32 days stale since March 22)
+   - **NEW: Google Official Drive MCP** — Google shipped managed remote MCP servers for Workspace including Drive. 7 tools (create_file, download_file_content, get_file_metadata, get_file_permissions, list_recent_files, read_file_content, search_files). Part of suite with Gmail (10 tools), Calendar (8), Chat (2), People API (3). Developer Preview. Fills the #1 gap we flagged in March
+   - **NEW: Microsoft Work IQ OneDrive** — 14 tools for personal OneDrive management. Concurrency control with eTags, sensitivity labels, sharing with roles. File ops limited to ≤5MB. Requires M365 Copilot license (~$30/user/month). Replaces deprecated combined OneDrive/SharePoint server (March 13, 2026)
+   - **NEW: Microsoft Work IQ SharePoint** — 33 tools covering sites, document libraries, file ops (text + binary), async cross-library copy, full list management (CRUD for lists/items/columns with 20+ column types), sharing, sensitivity labels. Also requires M365 Copilot license
+   - **NEW: Dropbox Official Remote MCP** — Beta at mcp.dropbox.com. Full file operations (upload, download, list, delete, search, sharing). Dynamic Client Registration (DCR) for frictionless auth. Works with Claude, Cursor, ChatGPT
+   - **CVE-2025-53109 & CVE-2025-53110 (EscapeRoute) documented** — Cymulate Research Labs found sandbox escape in Anthropic's own filesystem MCP server. CVE-2025-53110: naive path.startsWith() allows prefix bypass. CVE-2025-53109: symlink bypass to full filesystem read/write and code execution. Patched in v2025.7.1. Security risk analysis added
+   - **taylorwilsdon/google_workspace_mcp:** 1,900→2,200 stars, 1,654→1,954 commits, now 12 services (added Apps Script, Search). Stateless mode fix for FastMCP, re-auth improvements, streamable HTTP mode, tiered access levels
+   - **mark3labs/mcp-filesystem-server:** 619→633 stars
+   - **box-community/mcp-server-box:** 97→100 stars, multi-transport support
+   - **aws-samples/sample-mcp-server-s3:** 77→80 stars. awslabs/mcp monorepo 8,500→8,800 stars, removed SSE transport
+   - **amgadabdelhafez/dbx-mcp-server:** 26→27 stars
+   - **ftaricano/mcp-onedrive-sharepoint:** Now 5 stars, Graph helpers, fixed auth flow, executable tests
+   - **felores/gdrive-mcp-server:** 66→67 stars
+   - **82% file-operation MCP servers vulnerable to path traversal** documented as trend
+   - **"What Changed" table added** showing March→April deltas
+   - **Decision flowchart rewritten** with Google Official, Work IQ, Dropbox Remote paths
+   - **Trends rewritten:** Official vendor wave arrived, file MCP security proven broken, managed remote becoming default
+   - **What's Missing updated:** Google Drive gap FILLED, OneDrive/SharePoint gap FILLED, Dropbox gap FILLED, security + 5MB limits added
+   - **Server count updated:** 30+ → 35+ reviewed servers
+
+2. **Hugo build** — successful (710ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 7 more stale guides from March 22 need refreshing (Image Generation, PDF, Productivity, Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide)
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 766 — 2026-04-23 — Refresh Best Documentation MCP Servers Guide (Context7 50.1K→53.5K stars v0.3.13 65% token reduction server-side reranking, Docfork 438→463 hybrid semantic+BM25 dgrep CLI, Nia 48→66 Document Agent Data Extraction Tracer, Docs MCP 1.2K→1.3K v2.2.1 Grounded Docs 90+ languages, MCP supply chain crisis OX Security RCE 200K servers Anthropic declined fix, llms.txt no measurable adoption)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
