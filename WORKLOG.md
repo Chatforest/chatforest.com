@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 771 — 2026-04-23 — Refresh Best Project Management MCP Servers Guide (Asana Official V2 GA mcp.asana.com/v2/mcp Streamable HTTP V1 dies May 11, ClickUp Official 6→~49 tools 14 categories still beta, Shortcut Official NEW 98 stars v0.24.0, Plane Official NEW 201 stars 55+ tools, Smartsheet Official NEW hosted, Wrike Official NEW hosted mcp.wrike.com, GitHub Projects NEW in github-mcp-server 29.2K stars, sooperset 5K stars Jira Cloud search broken #1295 FastMCP CVEs, Atlassian 608 stars Bitbucket Cloud added, Linear OAuth fixes /sse→/mcp, Notion 4,257 stars 153 issues #238 unpatched, Monday v1.6.0 hosted MCP, Todoist v8.9.1 44 tools 99 releases, Trello stalled, 13 platforms now have official servers up from 5)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All 68 messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Best Project Management MCP Servers Guide** (`content/guides/best-project-management-mcp-servers.md`, 32 days stale since March 22)
+   - **BIGGEST CHANGE: 8 new official MCP servers** — Asana V2 (GA, Streamable HTTP, V1 dies May 11), ClickUp (6→~49 tools, 14 categories), Shortcut (98 stars, v0.24.0), Plane (201 stars, 55+ tools), Smartsheet (hosted, Business+ required), Wrike (hosted at mcp.wrike.com), GitHub Projects (part of 29.2K-star github-mcp-server), GitLab Issues (expanded in 18.5/18.8). Official server count went from 5→13 platforms
+   - **sooperset/mcp-atlassian:** 4,600→5,000 stars, v0.21.1 (April 10). Critical: Jira Cloud search broken (#1295 — GET /search deprecated). FastMCP 2.x has 3 unpatched CVEs (#1234). CVE-2026-27825/27826 patched in v0.17.0. PulseMCP #16 globally, 3.6M visitors
+   - **Atlassian official:** ~470→608 stars. Bitbucket Cloud added April 8 (PR lifecycle, pipelines, deployments). SSE /v1/sse dies June 30. #132 duplicate tickets still open. 56 open issues
+   - **Linear Official:** OAuth disconnect fixed (April 16), /sse deprecated → /mcp. trashed field added. jerhadf 329→344 stars (deprecated). tacticlaunch stale since Feb 2025
+   - **Notion:** 3,700→4,257 stars, v2.2.1, 153 open issues. Prompt injection #238 still unpatched since March 25. suekou 778→880 stars. Custom Agents pricing starts May 4 ($10/1K credits). API: comment CRUD GA, multi-value filters, 10K pagination cap
+   - **Asana V2 MCP:** GA at mcp.asana.com/v2/mcp. Streamable HTTP. V1 Beta dies May 11. roychri stable at 137 stars, v1.8.0
+   - **ClickUp Official:** 6→~49 tools across 14 categories (Search, Tasks, Bulk Ops, Attachments, Comments, Tags, Relationships, Time Tracking, etc). Still public beta. hauptsacheNet 42 stars
+   - **Monday.com:** 383→396 stars, v1.6.0. Hosted MCP at mcp.monday.com/mcp. Dynamic API Tools in beta (full GraphQL access)
+   - **Todoist:** 460 stars, v8.9.1 (April 20), 44 tools, 99 total releases. Most actively developed MCP server in category
+   - **Trello:** delorenj 313 stars, stalled since Feb 2026. m0xai 53 stars, stalled since Aug 2025. New: GabrielRamirez/trello-mcp (73 tools)
+   - **Redmine:** runekaagaard 172 stars, no activity since Jan 2026. jztan/redmine-mcp-server rising (23 stars, 51 tools, 437 commits)
+   - **New sections added:** Shortcut, Plane, GitHub Projects, "More platforms" (Smartsheet, Wrike, GitLab, OpenProject, Taiga)
+   - **Security section added:** sooperset CVEs, Notion prompt injection, MCP STDIO supply chain crisis (OX Security, 200K+ vulnerable instances)
+   - **"What Changed" table:** 18 entries covering all March→April changes
+   - **Decision flowchart expanded:** 12 platforms (was 8)
+   - **Trends rewritten:** official server flood (5→13), hosted MCP default, SSE dying/Streamable HTTP replacing
+   - **Gaps updated:** Asana and Shortcut gaps FILLED, Trello stalling flagged, Height shut down noted
+   - **Server count:** 40+ → 50+
+
+2. **Hugo build** — successful (707ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 3 more stale guides need refreshing (Workflow Automation [32 days], Build First MCP Server, MCP Setup Guide [26 days])
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 770 — 2026-04-23 — Refresh Best PDF & Document Processing MCP Servers Guide (Official @modelcontextprotocol/server-pdf NEW 779K npm downloads/month v1.7.0, kreuzberg NEW 7,628 stars Rust-core 97+ formats v4.9.4 Elastic-2.0, kordoc NEW 819 stars Korean docs, MarkItDown 91.4K→115.2K stars +26%, Docling 522→585 MCP / 56.2K→58.4K lib, markdownify-mcp v1.0.4 3 new releases, pdf-reader-mcp 571→657 v2.3.1 vuln fix, mcp-pandoc STALE 7 months, Office-Word STALE 4 months, jztan/pdf-mcp 9→21 +133%, PSPDFKit/nutrient NEW enterprise, pdfmux NEW self-verifying)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
