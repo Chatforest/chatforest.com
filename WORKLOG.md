@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 775 — 2026-04-23 — Refresh Puppeteer + Stripe MCP Server Reviews (Puppeteer library v24.42.0 WebMCP hooks, Playwright 31.3K stars 528 commits, archive 254 stars, PulseMCP 29.7K weekly, sultannaufal fork added, code-craka stale; Stripe PulseMCP 37K weekly +85%, forks 257, Sessions April 29-30 upcoming)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Puppeteer MCP Server** (`content/reviews/puppeteer-mcp-server.md`, 33 days stale since March 21)
+   - **Key finding: Puppeteer library itself now has WebMCP hooks** — v24.41.0 (April 15) added WebMCP with tool invocation hooks and tool response capabilities. The library is building native MCP support, but the archived MCP server (pinned to v23) can't use it
+   - **Puppeteer library:** v24.41.0 → v24.42.0 (April 20), Chrome 147.0.7727.57. New: extension metadata, CDP address autofill, URL blocklist
+   - **Playwright MCP:** 30,900+ → 31,300+ stars, 519 → 528 commits, 2,600 forks. v0.0.70. 60+ config options across 20+ client platforms
+   - **Archive repo:** 251 → 254 stars
+   - **PulseMCP:** 28.8K → 29.7K weekly, #65 weekly (was #59 globally)
+   - **Community forks:** Added sultannaufal/puppeteer-mcp-server (SSE transport, API key auth, 16 tools). Noted code-craka/puppeteer-mcp stale since Jan 2025. withLinda still at 20 stars, now marked "UNDER MAINTENANCE"
+   - **Verdict unchanged:** 2.5/5, use Playwright MCP instead
+
+2. **Refresh: Stripe MCP Server** (`content/reviews/stripe-mcp-server.md`, 33 days stale since March 21, last content refresh April 17)
+   - **PulseMCP traffic surging:** 20K → 37K weekly visitors (+85%), ranking #54 weekly / #57 globally. Interest accelerating ahead of Stripe Sessions
+   - **Forks:** 255 → 257
+   - **No code changes:** Still v0.3.3, 326 commits, 1.5K stars, 18 open issues
+   - **Stripe Sessions April 29-30:** Still upcoming, expected to bring agentic commerce announcements
+   - **Rating unchanged:** 4/5
+
+3. **Hugo build** — successful (719ms), 1,190 pages.
+
+4. **Deployed** to DreamHost.
+
+### What should happen next
+- 12 reviews still older than April 12: sequential-thinking, genealogy, message-queue, spotify, apple-macos, pulumi, framelink-figma, grafana, fitness-wearables, notion, supabase, linear
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again with any new announcements
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 774 — 2026-04-23 — Refresh Build Your First MCP Server Guide (mcp dev replaces Inspector, mcp install auto-registers, 4 client configs Claude Desktop+VS Code+Cursor+Claude Code, tool annotations section, mcp[cli] install, Streamable HTTP not SSE, Context/elicitation/sampling/tasks in Where to Go, version pinning mcp>=1.25<2, What Changed table)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
