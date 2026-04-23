@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 773 — 2026-04-23 — Refresh MCP Server Setup Guide (7 clients now: +Windsurf +ChatGPT +JetBrains, Claude Desktop Extensions .dxt, VS Code Copilot built-in MCP sandbox enterprise governance, Cursor Marketplace -47% tokens, Claude Code MCP Tool Search -85% tokens org controls, Google Official 5 MCP servers Calendar/Drive/Gmail/Chat/People, 15+ remote vendor servers, SSE dying Atlassian June 30 Asana May 11, 30+ CVEs OAuth 2.1 PKCE mandatory, Docker MCP Profile Templates 300+ catalog, What Changed table)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All 70 pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: MCP Server Setup Guide** (`content/guides/mcp-server-setup-guide.md`, 32 days stale since March 22)
+   - **BIGGEST CHANGE: 3 new client sections** — Windsurf (native MCP, marketplace, 100-tool limit), ChatGPT (beta, remote-only, read-only on Plus/Pro), JetBrains IDEs (2026.1, auto-detect external configs)
+   - **Claude Desktop:** Added Desktop Extensions (.dxt) section — one-click packaged servers, no JSON editing, no restart needed. Added Custom Connectors path for remote servers
+   - **VS Code:** Copilot now built in (1.116), MCP sandbox for local servers (macOS/Linux), enterprise governance with org-level allowlists, cross-tool MCP sharing
+   - **Cursor:** MCP Marketplace for one-click installs, dynamic context management (-47% token overhead, 5-6 servers practical)
+   - **Claude Code:** MCP Tool Search (lazy loading, -85% token overhead), organization controls (managed-mcp.json, allowlist/denylist), `/mcp` in-session status, `claude mcp get` command
+   - **Transport section updated:** SSE shutdown deadlines arriving (Atlassian June 30, Asana V1 May 11). Added 7 remote server examples (Stripe, Asana, ClickUp, Google Workspace). Remote now called "the default"
+   - **New Google Workspace Stack** — Gmail (10 tools), Drive (7 tools), Calendar (8 tools), Chat (2 tools), People (3 tools) at dedicated googleapis.com URLs. Setup requires Google Cloud project + OAuth
+   - **Context window section rewritten** — MCP Tool Search, Cursor dynamic context, toolset filtering (Supabase, Datadog, GitHub OAuth scope filtering)
+   - **Security section expanded** — 30+ CVEs in early 2026, OAuth 2.1 + PKCE mandatory, VS Code sandbox, auto-tool-hiding by OAuth scope
+   - **Docker MCP Gateway section added** — 300+ verified catalog images, Profile Templates, Gateway v2
+   - **Starter stacks updated** — Context7 added (50K stars, 240K weekly npm), official PDF server noted (779K downloads/month), GitHub tool count (51 tools)
+   - **"What Changed" table added** — 11 entries covering all March→April changes
+   - **Review count updated:** 19 → 300+
+   - **Client count:** 4 → 7
+   - **bunx alternative noted** for faster cold starts
+
+2. **Hugo build** — successful (711ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 1 more stale guide: Build Your First MCP Server (32 days stale since March 22)
+- 14 individual reviews still at March 14 refresh dates
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 772 — 2026-04-23 — Refresh Best Workflow Automation MCP Servers Guide (czlonkowski/n8n-mcp 15.4K→18.6K stars +21% v2.47.14, Zapier Agentic Beta 14 meta-tools dynamic tool discovery prompt injection protection, Make repo LEGACY→hosted developers.make.com/mcp-server, ActivePieces 280+→~400 MCP pieces rebrand, Pipedream parent 11.3K, call518/MCP-Airflow-API v3.6.3 full Airflow 3.0 API v2 support 45 tools, yangkyeongmo 159 stars still API v1, Dagster MCP dormant 1 year, fabdendev/dagster-mcp NEW 4 stars, Prefect 37 stars Claude Code plugin, Kestra 25 active, GethosTheWalrus/temporal-mcp 21 stars v1.1.1 now clear community pick, Airflow 3.2.0 shipped)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
