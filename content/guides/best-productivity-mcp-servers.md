@@ -20,16 +20,18 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 
 | Server | Change |
 |--------|--------|
-| **Google Official Calendar MCP** | **NEW** — 8 tools, managed remote, no local setup needed |
-| **Google Official Drive MCP** | **NEW** — 7 tools, managed remote |
-| **Google Official Gmail MCP** | **NEW** — 10 tools, managed remote |
+| **Google Official Calendar MCP** | **NEW** — 8 tools, managed remote, Developer Preview |
+| **Google Official Drive MCP** | **NEW** — 7 tools, managed remote, Developer Preview |
+| **Google Official Gmail MCP** | **NEW** — 10 tools, managed remote, Developer Preview |
+| **Google Official Chat MCP** | **NEW** — 2 tools, managed remote, Developer Preview |
+| **Google Official People MCP** | **NEW** — 3 tools, managed remote, Developer Preview |
 | **ClickUp MCP** | **NEW** — Official MCP server launched April 2026 |
 | Notion | 4,078→4,256 stars, v2.2.1, 22 tools (was 18 in v1.x → 22 in v2.x), local package soft-deprecated (README warning, not npm flag), prompt injection vuln open (Issue #238) |
 | Linear | No changes since March 22 — stable at 23+ tools |
 | Todoist | v8.4.0→v8.9.1, 397→460 stars, 37→40+ tools, added `get-project-health`, reminders, MCP Apps (v8.7.0), SDK renamed |
 | Asana | 44 tools unchanged. **V1 shutdown May 11** (18 days). roychri community: v1.8.0 with 12+ new tools |
-| nspady/google-calendar-mcp | 1,056→~1,100 stars, 12→13 tools (bulk create) |
-| MCPVault (Obsidian) | 927→~1,000 stars, **v1.0.0 released** |
+| nspady/google-calendar-mcp | 1,056→1,102 stars, v2.6.1, 12→13 tools (bulk create-events) |
+| MCPVault (Obsidian) | 927→1,123 stars, actively maintained (trashMode, patch_note fixes) |
 | Atlassian | 470→~520 stars |
 | roychri/mcp-server-asana | 131→137 stars, v1.8.0 (12+ new tools) |
 | **MCP OAuth vulnerability** | Account takeover disclosed — affects all OAuth-based hosted MCP servers |
@@ -44,8 +46,8 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 | [Todoist](/reviews/todoist-mcp-server/) | Doist (official) | Task management | 460 | 40+ | OAuth | Hosted + local | Yes (with Todoist plan) |
 | [Asana](/reviews/asana-mcp-server/) | Asana (official) | Project management | N/A | 44 | OAuth | Hosted | Yes (with Asana plan) |
 | Google Calendar | Google (official) | Calendar management | Official | 8 | OAuth | Hosted (managed) | Yes |
-| [Google Calendar](/reviews/google-calendar-mcp-server/) | nspady (community) | Calendar management | ~1,100 | 13 | OAuth | Local | Yes |
-| Obsidian | cyanheads (community) | Knowledge base (local) | ~450 | 15+ | None (local) | Local | Yes |
+| [Google Calendar](/reviews/google-calendar-mcp-server/) | nspady (community) | Calendar management | 1,102 | 13 | OAuth | Local | Yes |
+| Obsidian | cyanheads (community) | Knowledge base (local) | 462 | 15+ | None (local) | Local | Yes |
 | [Atlassian](/reviews/atlassian-mcp-server/) | Atlassian (official) | Project mgmt + knowledge base | ~520 | Undocumented | OAuth 2.1 | Hosted | Yes (with Atlassian plan) |
 | [Slack](/reviews/slack-mcp-server/) | Slack (official) | Communication | N/A | 8 | OAuth | Hosted | Yes (with Slack plan) |
 | ClickUp | ClickUp (official) | Project management | N/A | — | OAuth | Hosted | Yes (with ClickUp plan) |
@@ -131,7 +133,7 @@ Asana's official V2 MCP server at `mcp.asana.com/v2/mcp` is the most tool-rich p
 
 ### Google Calendar MCP — The Gap Is Filled
 
-**The biggest change since March:** Google shipped official managed remote MCP servers for Workspace, including Calendar, Drive, and Gmail. The gap we flagged — "No official Google MCP server exists for any Google product" — is now filled.
+**The biggest change since March:** Google shipped official managed remote MCP servers for Workspace — Calendar (8 tools), Drive (7 tools), Gmail (10 tools), Chat (2 tools), and People (3 tools). Five products total, all in Developer Preview. The gap we flagged — "No official Google MCP server exists for any Google product" — is decisively filled. As of March 17, MCP endpoints are available by default when you enable the product in your Google Cloud project.
 
 #### Google Official Calendar MCP (NEW)
 
@@ -143,7 +145,7 @@ Google's managed remote MCP server for Calendar provides **8 tools:** create_eve
 
 #### [nspady/google-calendar-mcp](/reviews/google-calendar-mcp-server/) (Community)
 
-Still the most feature-rich calendar MCP server at **13 tools** (~1,100 stars, v2.7.0). Added bulk `create-events` since March. Multi-account support, cross-account conflict detection, intelligent event import from images/PDFs/web links, recurring event handling with per-instance granularity, and tool filtering (`--enable-tools`) for read-only security.
+Still the most feature-rich calendar MCP server at **13 tools** (1,102 stars, v2.6.1). Added bulk `create-events` in v2.5.0. Multi-account support, cross-account conflict detection, intelligent event import from images/PDFs/web links, recurring event handling with per-instance granularity, and tool filtering (`--enable-tools`) for read-only security.
 
 **Why it still matters alongside the official server:** More tools (13 vs 8), multi-account support, local-first privacy, and proven stability across 25+ releases.
 
@@ -156,16 +158,21 @@ Still the most feature-rich calendar MCP server at **13 tools** (~1,100 stars, v
 Eight community MCP servers compete to connect AI agents to Obsidian vaults, taking three fundamentally different architectural approaches. No official Obsidian MCP server exists.
 
 **Three architectures:**
-- **Local REST API plugin:** mcp-obsidian (Markus, ~3,100 stars — stale since Nov 2024), obsidian-mcp-server (cyanheads, ~450 stars — most professional), obsidian-mcp-tools (jacksteamdev, ~670 stars — seeking maintainers). Requires Obsidian running with the Local REST API plugin.
-- **Direct filesystem access:** MCPVault (bitbonsai, ~1,000 stars — hit **v1.0.0**, actively maintained, token-optimized), obsidian-mcp (Steven, ~660 stars — multi-vault support). No Obsidian plugin needed, works offline.
-- **Native Obsidian plugin:** obsidian-mcp-plugin (aaronsb, ~285 stars, v0.12.0). Runs inside Obsidian with full API access — graph traversal, Dataview queries, Bases support. Beta-only via BRAT.
+- **Local REST API plugin:** mcp-obsidian (Markus, 3,462 stars — stale since mid-2025), obsidian-mcp-server (cyanheads, 462 stars — most professional, stale ~6 months), obsidian-mcp-tools (jacksteamdev, 782 stars — stale ~9 months). Requires Obsidian running with the Local REST API plugin.
+- **Direct filesystem access:** MCPVault (bitbonsai, 1,123 stars — actively maintained, token-optimized, recent trashMode and patch_note features), obsidian-mcp (Steven, 689 stars — multi-vault support, stale ~10 months). No Obsidian plugin needed, works offline.
+- **Native Obsidian plugin:** obsidian-mcp-plugin (aaronsb, 287 stars). Runs inside Obsidian with full API access — graph traversal, Dataview queries, Bases support, HTTP transport, semantic operations. Actively maintained. Beta-only via BRAT.
+
+**New entrants since March:**
+- **newtype-01/obsidian-mcp** (300 stars) — alternative Obsidian MCP server
+- **hkcanan/katmer-code** (352 stars) — "Claude Code inside Obsidian" with academic research skills, inline diff editing, MCP integration
+- **swarmclawai/swarmvault** (259 stars) — local-first RAG knowledge base compiler with MCP, inspired by Karpathy's LLM Wiki
 
 **Top picks:**
-- **Simplest setup:** [MCPVault](https://github.com/bitbonsai/mcpvault) — hit v1.0.0 (stable release), one-line install, BM25 search with relevance reranking, 40-60% token reduction, no plugins needed. Now ~1,000 stars.
+- **Simplest setup:** [MCPVault](https://github.com/bitbonsai/mcpvault) — one-line install, BM25 search with relevance reranking, 40-60% token reduction, no plugins needed. Now 1,123 stars and the clear growth leader (+196 since March).
 - **Most configurable:** [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) (cyanheads) — dual transport (stdio + HTTP), JWT/OAuth auth, regex search, structured logging, Docker support.
-- **Most features:** [obsidian-mcp-plugin](https://github.com/aaronsb/obsidian-mcp-plugin) — graph traversal, Dataview, Bases. Highest ceiling but beta-only. v0.12.0.
+- **Most features:** [obsidian-mcp-plugin](https://github.com/aaronsb/obsidian-mcp-plugin) — graph traversal, Dataview, Bases. Highest ceiling but beta-only. Actively maintained.
 
-**The catch:** Fragmentation means no single "right answer." Data safety is a concern — obsidian-mcp-tools has a known silent corruption bug, and no server offers granular folder-level permissions. The most starred option (mcp-obsidian, ~3,100 stars) is abandonware. MCPVault reaching v1.0.0 is a maturity signal — it's the first Obsidian MCP server to ship a stable release.
+**The catch:** Fragmentation means no single "right answer." Data safety is a concern — obsidian-mcp-tools has a known silent corruption bug, and no server offers granular folder-level permissions. The most starred option (mcp-obsidian, 3,462 stars) is stale since mid-2025. MCPVault is pulling ahead as the actively-maintained community winner.
 
 **Best for:** Developers who keep their notes, documentation, and knowledge base in Obsidian. If your second brain is a vault of Markdown files, connecting it to your agent via MCP is the obvious next step. [Full review →](/reviews/obsidian-mcp-servers/)
 
@@ -228,15 +235,15 @@ For enterprises that need air-gapped or self-hosted deployments, this trend is c
 
 The productivity MCP space is dominated by first-party hosted servers — and that's mostly a good thing. Notion, Linear, Todoist, Asana, Google, ClickUp, and Slack all ship official MCP servers with OAuth, zero-install setup, and active maintenance.
 
-**The Google gap is filled.** Since March, Google shipped official managed remote MCP servers for Calendar (8 tools), Drive (7 tools), and Gmail (10 tools). This was the biggest gap in the productivity MCP landscape, and it's gone. The community alternatives (nspady for Calendar, taylorwilsdon for full Workspace) remain competitive on features — nspady has 13 tools vs Google's 8, and multi-account support the official server lacks.
+**The Google gap is filled.** Since March, Google shipped official managed remote MCP servers for Calendar (8 tools), Drive (7 tools), Gmail (10 tools), Chat (2 tools), and People (3 tools) — all in Developer Preview. This was the biggest gap in the productivity MCP landscape, and it's gone. The community alternatives (nspady for Calendar, taylorwilsdon for full Workspace) remain competitive on features — nspady has 13 tools vs Google's 8, and multi-account support the official server lacks.
 
 **The remaining gaps:**
-- Google Docs and Sheets still lack official MCP servers
+- Google Docs, Sheets, and Slides still lack official MCP servers (Drive can read files but not edit documents)
 - No official Obsidian MCP server exists (but MCPVault hit v1.0.0 — the ecosystem is maturing)
 - ClickUp's MCP server is new and needs community validation
 
 **Our recommended stack:**
-- **Knowledge base:** [Notion](/reviews/notion-mcp-server/) (3.5/5) or Obsidian ([MCPVault](https://github.com/bitbonsai/mcpvault) v1.0.0 for local-first)
+- **Knowledge base:** [Notion](/reviews/notion-mcp-server/) (3.5/5) or Obsidian ([MCPVault](https://github.com/bitbonsai/mcpvault) 1,123 stars for local-first)
 - **Issue tracking:** Linear (for engineering, 23+ tools) or [Asana](/reviews/asana-mcp-server/) (4/5, 44 tools for cross-functional teams — **migrate to V2 before May 11**)
 - **Task management:** [Todoist](/reviews/todoist-mcp-server/) (4/5, 40+ tools, MCP Apps)
 - **Calendar:** Google Official Calendar MCP (zero-setup) or [nspady/google-calendar-mcp](/reviews/google-calendar-mcp-server/) (4/5, more features). See our [full calendar guide](/guides/best-calendar-scheduling-mcp-servers/)
