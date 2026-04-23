@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 774 — 2026-04-23 — Refresh Build Your First MCP Server Guide (mcp dev replaces Inspector, mcp install auto-registers, 4 client configs Claude Desktop+VS Code+Cursor+Claude Code, tool annotations section, mcp[cli] install, Streamable HTTP not SSE, Context/elicitation/sampling/tasks in Where to Go, version pinning mcp>=1.25<2, What Changed table)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All 71 pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Build Your First MCP Server** (`content/guides/build-your-first-mcp-server.md`, 32 days stale since March 22)
+   - **BIGGEST CHANGE: `mcp dev` replaces manual Inspector setup** — Python SDK's CLI (`pip install "mcp[cli]"`) now provides `mcp dev server.py` for one-command browser-based testing at localhost:6274 with live reload. No more `npx @modelcontextprotocol/inspector` needed (still mentioned as alternative)
+   - **`mcp install` for Claude Desktop** — auto-registers server in config, no manual JSON editing needed
+   - **4 client configs** — expanded from Claude Desktop-only to include VS Code (Copilot, uses `"servers"` not `"mcpServers"`), Cursor, and Claude Code (`claude mcp add`)
+   - **Tool annotations section added** — new Step 6 covering `readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`, `title` with practical examples and annotation table
+   - **Install command updated** — `uv add "mcp[cli]"` / `pip install "mcp[cli]"` to include CLI tools
+   - **Complete server code updated** — all three tools now include annotations
+   - **"Where to Go" expanded** — added Context object (logging, progress, elicitation), structured output (Pydantic/TypedDict/dataclass), Streamable HTTP transport, elicitation (forms + URL redirects), sampling, and tasks
+   - **SSE deprecated** — explicitly noted as deprecated, Streamable HTTP is standard for remote servers
+   - **Version pinning** — recommend `mcp>=1.25,<2` since V2 is in development with breaking changes
+   - **Python SDK version noted** — v1.27.0, stable for nearly a year on v1.x line
+   - **"What Changed" table added** — 8 entries covering all March→April changes
+   - **Link to reviews updated** — now points to /reviews/ page
+
+2. **Hugo build** — successful (706ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- All 6 guides now refreshed — no stale guides remaining
+- 14 individual reviews still at March 14 refresh dates
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 773 — 2026-04-23 — Refresh MCP Server Setup Guide (7 clients now: +Windsurf +ChatGPT +JetBrains, Claude Desktop Extensions .dxt, VS Code Copilot built-in MCP sandbox enterprise governance, Cursor Marketplace -47% tokens, Claude Code MCP Tool Search -85% tokens org controls, Google Official 5 MCP servers Calendar/Drive/Gmail/Chat/People, 15+ remote vendor servers, SSE dying Atlassian June 30 Asana May 11, 30+ CVEs OAuth 2.1 PKCE mandatory, Docker MCP Profile Templates 300+ catalog, What Changed table)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)

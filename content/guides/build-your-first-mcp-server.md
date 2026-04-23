@@ -4,19 +4,20 @@ date: 2026-03-14T01:06:39+09:00
 description: "A step-by-step tutorial for building an MCP server in Python. From zero to a working server with tools, resources, and Claude Desktop integration."
 content_type: "Guide"
 card_description: "A step-by-step Python tutorial. From zero to a working MCP server with tools, resources, and Claude Desktop integration."
-last_refreshed: 2026-03-22
+last_refreshed: 2026-04-23
 ---
 
-You've read about [what MCP is](/guides/what-is-mcp/). Now let's build something. By the end of this guide, you'll have a working MCP server that exposes custom tools to Claude Desktop. We'll use Python because the SDK is clean and the code is readable — but the concepts apply to TypeScript too.
+You've read about [what MCP is](/guides/what-is-mcp/). Now let's build something. By the end of this guide, you'll have a working MCP server that exposes custom tools to Claude Desktop, VS Code, Cursor, or Claude Code. We'll use Python because the SDK is clean and the code is readable — but the concepts apply to TypeScript too.
 
 ## What You'll Build
 
 A weather lookup server. It won't call a real weather API (that would require API keys and distract from the MCP concepts), but it will demonstrate everything you need:
 
 - **Tools** — functions Claude can call
+- **Tool annotations** — metadata hints that help clients handle your tools intelligently
 - **Input validation** — typed parameters with descriptions
 - **Error handling** — what happens when things go wrong
-- **Claude Desktop integration** — connecting your server to a real client
+- **Client integration** — connecting your server to Claude Desktop, VS Code, Cursor, or Claude Code
 
 The server is intentionally simple. The point isn't the weather data — it's understanding the pattern so you can wrap *your* API, database, or service.
 
@@ -24,16 +25,16 @@ The server is intentionally simple. The point isn't the weather data — it's un
 
 - Python 3.10 or newer
 - `uv` (recommended) or `pip` for package management
-- Claude Desktop (to test your server)
+- A client to test with — Claude Desktop, VS Code (Copilot), Cursor, or Claude Code
 
 ## Step 1: Set Up the Project
 
-Create a new directory and install the MCP Python SDK:
+Create a new directory and install the MCP Python SDK with CLI tools:
 
 ```bash
 mkdir weather-mcp && cd weather-mcp
 uv init
-uv add mcp
+uv add "mcp[cli]"
 ```
 
 If you're using pip instead of uv:
@@ -42,8 +43,10 @@ If you're using pip instead of uv:
 mkdir weather-mcp && cd weather-mcp
 python -m venv .venv
 source .venv/bin/activate
-pip install mcp
+pip install "mcp[cli]"
 ```
+
+The `[cli]` extra gives you the `mcp` command-line tool — you'll use it to test, inspect, and install your server.
 
 ## Step 2: Write the Server
 
@@ -108,7 +111,15 @@ That's the whole server. Let's break down what's happening:
 
 ## Step 3: Test It Locally
 
-Before connecting to Claude Desktop, verify the server runs without errors:
+The `mcp` CLI (included when you installed `mcp[cli]`) makes testing easy. Run your server in dev mode:
+
+```bash
+mcp dev server.py
+```
+
+This launches the MCP Inspector — a browser-based UI at `localhost:6274` where you can see your tools, call them with test inputs, and inspect the JSON-RPC messages. It's invaluable during development. The dev server watches for file changes and reloads automatically.
+
+You can also verify the server runs standalone:
 
 ```bash
 # With uv:
@@ -120,17 +131,27 @@ python server.py
 
 The server will start and wait for JSON-RPC messages on stdin. It won't print anything visible — that's normal. Press `Ctrl+C` to stop it.
 
-For a better testing experience, use the MCP Inspector — a web-based tool that lets you interact with your server visually:
+**Alternative:** If you prefer the Inspector directly (or are building a TypeScript server), you can still use:
 
 ```bash
 npx @modelcontextprotocol/inspector uv run python server.py
 ```
 
-This opens a browser UI where you can see your tools, call them with test inputs, and inspect the JSON-RPC messages. It's invaluable during development.
+## Step 4: Connect to a Client
 
-## Step 4: Connect to Claude Desktop
+You've built and tested your server. Now connect it to a real AI client. Pick whichever you use.
 
-Open your Claude Desktop config file:
+### Option A: Claude Desktop (quickest)
+
+The `mcp` CLI can register your server automatically:
+
+```bash
+mcp install server.py --name "weather"
+```
+
+This writes the config entry for you. Restart Claude Desktop — you should see the hammer icon in the chat input. Click it to verify your `get_weather` and `list_cities` tools appear.
+
+**Manual setup:** If you prefer to edit the config file yourself, open:
 
 - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
@@ -161,9 +182,53 @@ If using a venv with pip:
 }
 ```
 
-Restart Claude Desktop. You should see the hammer icon in the chat input. Click it to verify your `get_weather` and `list_cities` tools appear.
+Restart Claude Desktop and look for the hammer icon.
 
-Now try: "What's the weather like in Tokyo?" Claude will call your tool and incorporate the result.
+### Option B: VS Code (Copilot)
+
+VS Code has built-in MCP support since version 1.116. Create `.vscode/mcp.json` in your project:
+
+```json
+{
+  "servers": {
+    "weather": {
+      "command": "uv",
+      "args": ["run", "--directory", "/full/path/to/weather-mcp", "python", "server.py"]
+    }
+  }
+}
+```
+
+**Important:** VS Code uses `"servers"` as the top-level key, not `"mcpServers"` — this is the most common copy-paste mistake.
+
+### Option C: Cursor
+
+Cursor uses the same format as Claude Desktop. Add to your Cursor MCP config:
+
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "command": "uv",
+      "args": ["run", "--directory", "/full/path/to/weather-mcp", "python", "server.py"]
+    }
+  }
+}
+```
+
+### Option D: Claude Code
+
+In your terminal:
+
+```bash
+claude mcp add weather -- uv run --directory /full/path/to/weather-mcp python server.py
+```
+
+Use `--scope project` to share the config with your team (writes to `.mcp.json`), or `--scope user` for all your projects.
+
+### Try it
+
+Whichever client you chose, try asking: "What's the weather like in Tokyo?" The AI will call your tool and incorporate the result.
 
 ## Step 5: Add a Resource
 
@@ -181,12 +246,48 @@ def weather_summary() -> str:
 
 Add this to your `server.py` before the `if __name__` block. Resources are identified by URIs (here, `weather://summary`). Clients can read them without the model needing to make a tool call — useful for context that should be available upfront.
 
-## Step 6: Handle Errors Gracefully
+## Step 6: Add Tool Annotations
+
+Tool annotations are metadata hints that tell clients how your tools behave. They help clients make UX decisions — like auto-approving read-only tools or requiring confirmation for destructive ones.
+
+```python
+@mcp.tool(
+    annotations={
+        "title": "Get Weather",
+        "readOnlyHint": True,
+        "openWorldHint": False,
+    }
+)
+def get_weather(city: str) -> str:
+    ...
+```
+
+The available annotations:
+
+| Annotation | Default | Meaning |
+|---|---|---|
+| `title` | — | Human-readable display name |
+| `readOnlyHint` | `False` | Tool doesn't modify anything |
+| `destructiveHint` | `True` | Tool may perform destructive updates |
+| `idempotentHint` | `False` | Repeated calls with same args have no additional effect |
+| `openWorldHint` | `True` | Tool interacts with external entities |
+
+Our weather tools are read-only and don't touch external systems, so `readOnlyHint=True` and `openWorldHint=False` are appropriate. A tool that deletes records would leave `destructiveHint=True` (the default).
+
+Annotations are hints, not security guarantees — clients decide how to use them.
+
+## Step 7: Handle Errors Gracefully
 
 When wrapping real APIs, things fail. Here's the pattern:
 
 ```python
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "title": "Get Forecast",
+        "readOnlyHint": True,
+        "openWorldHint": False,
+    }
+)
 def get_forecast(city: str, days: int = 3) -> str:
     """Get a weather forecast for a city.
 
@@ -227,7 +328,13 @@ WEATHER_DATA = {
 }
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "title": "Get Weather",
+        "readOnlyHint": True,
+        "openWorldHint": False,
+    }
+)
 def get_weather(city: str) -> str:
     """Get the current weather for a city.
 
@@ -249,7 +356,13 @@ def get_weather(city: str) -> str:
     )
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "title": "List Cities",
+        "readOnlyHint": True,
+        "openWorldHint": False,
+    }
+)
 def list_cities() -> str:
     """List all cities with available weather data."""
     return "Available cities: " + ", ".join(
@@ -257,7 +370,13 @@ def list_cities() -> str:
     )
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "title": "Get Forecast",
+        "readOnlyHint": True,
+        "openWorldHint": False,
+    }
+)
 def get_forecast(city: str, days: int = 3) -> str:
     """Get a weather forecast for a city.
 
@@ -305,8 +424,33 @@ What changes is what's inside the functions. Some ideas for your next server:
 - **File processor** — parse CSVs, transform data, generate reports
 - **Notification server** — send Slack messages, create Jira tickets, trigger webhooks
 
-The MCP Python SDK has more features we didn't cover — prompts, streaming, context management, and HTTP transport for remote servers. The [official MCP docs](https://modelcontextprotocol.io) are the best reference once you've got the basics down.
+### Features We Didn't Cover
 
-Build something, publish it to GitHub, and let us know — we might review it.
+The MCP Python SDK (v1.27.0 as of April 2026, pin to `mcp>=1.25,<2` — V2 is coming) has more capabilities for when you're ready:
 
-**Already built a server?** Read our [MCP Server Setup Guide](/guides/mcp-server-setup-guide/) for how to configure it across Claude Desktop, VS Code, Cursor, and Claude Code.
+- **Prompts** (`@mcp.prompt()`) — reusable prompt templates that clients can discover and use
+- **Context object** — accept a `Context` parameter in your tools for logging (`ctx.info()`, `ctx.debug()`), progress reporting (`ctx.report_progress()`), and requesting user input via elicitation (`ctx.elicit()`)
+- **Structured output** — return Pydantic models, TypedDicts, or dataclasses from tools and the SDK auto-generates an output schema. Clients get validated JSON instead of free-form text
+- **Streamable HTTP transport** — call `mcp.run(transport="streamable-http")` to serve your MCP server over HTTP instead of stdio. This is the standard for remote/production deployments (SSE transport is deprecated — don't use it for new projects)
+- **Elicitation** — your tools can request information from the user through the client, in two modes: structured forms (for non-sensitive data) and URL redirects (for auth flows and payments)
+- **Sampling** — your server can ask the client's LLM to generate text, enabling agentic loops within a single tool call
+- **Tasks** — for long-running operations, return a task handle immediately and let the client poll for results
+
+The [official MCP docs](https://modelcontextprotocol.io) are the best reference once you've got the basics down.
+
+Build something, publish it to GitHub, and let us know — we might [review it](/reviews/).
+
+**Already built a server?** Read our [MCP Server Setup Guide](/guides/mcp-server-setup-guide/) for detailed configuration across Claude Desktop, VS Code, Cursor, Claude Code, Windsurf, ChatGPT, and JetBrains IDEs.
+
+## What Changed (April 2026)
+
+| Change | Details |
+|---|---|
+| `mcp dev` replaces manual Inspector | Python SDK now includes `mcp dev server.py` for one-command testing with browser UI |
+| `mcp install` for Claude Desktop | Auto-registers your server — no manual JSON editing needed |
+| 7 clients covered | Added VS Code (Copilot), Cursor, and Claude Code setup instructions |
+| Tool annotations | New section — `readOnlyHint`, `destructiveHint`, etc. help clients handle tools intelligently |
+| Install command updated | Now `mcp[cli]` to include CLI tools (`mcp dev`, `mcp install`, `mcp run`) |
+| "Where to Go" expanded | Added Context object, structured output, Streamable HTTP, elicitation, sampling, tasks |
+| SSE deprecated | Streamable HTTP is now the standard for remote servers; SSE should not be used for new projects |
+| Version pinning advice | Pin to `mcp>=1.25,<2` — V2 is in development with breaking API changes |

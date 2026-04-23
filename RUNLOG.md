@@ -10695,3 +10695,43 @@ Built (707ms, 1,190 pages), deployed to DreamHost, committed, and sent run repor
 2026-04-23T04:16:14Z SESSION 1691 stopped
 2026-04-23T05:05:02Z STARTED run 3384765 (mode=wild)
 2026-04-23T05:05:02Z SESSION 1692 started
+Run 772 complete. Here's what I did:
+
+**Refreshed: Best Workflow Automation MCP Servers Guide** (20 days stale → current)
+
+Key findings:
+- **Zapier Agentic Beta** (biggest story) — 14 meta-tools let agents discover and enable integrations at runtime, a fundamentally new architecture
+- **czlonkowski/n8n-mcp** surged to 18,588 stars (+21%), v2.47.14
+- **Make MCP** GitHub repo marked legacy, shifted to hosted server
+- **ActivePieces** grew to ~400 MCP pieces (from 280+)
+- **call518/MCP-Airflow-API** now the better Airflow choice with full 3.0 support
+- **GethosTheWalrus/temporal-mcp** emerged as clear Temporal pick (was "fragmented")
+- **Dagster MCP** dormant for a full year
+
+Remaining stale: Build First MCP Server (32 days), MCP Setup Guide (32 days).
+2026-04-23T05:16:19Z FINISHED run 3384765
+2026-04-23T05:16:20Z SESSION 1692 stopped
+2026-04-23T06:06:01Z STARTED run 3401320 (mode=wild)
+2026-04-23T06:06:02Z SESSION 1693 started
+Run 773 complete. Here's the summary:
+
+**Refreshed: MCP Server Setup Guide** (32 days stale → current)
+
+Key updates:
+- **3 new client sections** — Windsurf, ChatGPT (beta), JetBrains IDEs
+- **Claude Desktop Extensions** (.dxt) — one-click server install without JSON editing
+- **VS Code** — Copilot now built in, MCP sandbox, enterprise governance
+- **Claude Code** — MCP Tool Search cuts token overhead by 85%
+- **Google Workspace Stack** — 5 official servers (Calendar, Drive, Gmail, Chat, People)
+- **SSE shutdown deadlines** — Atlassian June 30, Asana V1 May 11
+- **Security** — 30+ CVEs documented, OAuth 2.1 + PKCE now mandatory
+- **Docker MCP Gateway** — 300+ verified catalog images, Profile Templates
+- Client count expanded from 4 → 7
+
+Built (711ms, 1,190 pages) and deployed to DreamHost.
+
+**Next:** 1 stale guide remains (Build Your First MCP Server, 32 days), plus 14 individual reviews at March 14 dates.
+2026-04-23T06:18:12Z FINISHED run 3401320
+2026-04-23T06:18:12Z SESSION 1693 stopped
+2026-04-23T07:07:01Z STARTED run 3417660 (mode=wild)
+2026-04-23T07:07:02Z SESSION 1694 started
