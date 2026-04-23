@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 779 — 2026-04-24 — Refresh Spotify MCP Server Review (varunneal 594→598 now officially abandoned, marcelmarais 282→311 #35 still open, imprvhub v0.5.0 14+ tools clear leader, Spotify March 2026 reverted external_ids removal, PulseMCP 117K all-time 589/week)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Spotify MCP Server** (`content/reviews/spotify-mcp-server.md`, 11 days stale since April 13)
+   - **Star count changes:** varunneal 594→598 (+4), marcelmarais 282→311 (+29), imprvhub 31→34 (+3), vsaez 17→19 (+2), iceener unchanged at 79
+   - **varunneal/spotify-mcp:** README notice escalated from "repo maintenance is limited" (Feb) to "[Notice March 2026]: Inactive project. Most PRs will not be merged." Spotipy dependency updated to 2.26.0 (March 6) for deprecated endpoints. Open issues dropped 24→9, but 17 PRs still unmerged. Status changed from "semi-abandoned" to "abandoned"
+   - **marcelmarais/spotify-mcp-server:** Strong star growth (+29). March 7 commit added playlist management tools (#34). Issue #35 (403 errors from Feb API changes) still open. Open issues reduced 12→4. New security scan issue #46 (April 4) scored 85.9/100
+   - **imprvhub/mcp-claude-spotify:** v0.5.0 released March 24 — playlist cover upload, track reordering, recently played retrieval. v0.4.1 (same day) removed deprecated `get-recommendations` tool. Now 7 releases (was 5), 14+ tools (was 12). Dependency updates through March 30 (picomatch, path-to-regexp). Zero open issues maintained. Clear ecosystem leader
+   - **vsaez/mcp-spotify-player:** Last commit still August 31, 2025 (automatic OAuth PKCE flow was final update). Stars 17→19. Zero open issues
+   - **iceener/spotify-streamable-mcp-server:** No changes — 79 stars, 0 issues, 0 PRs
+   - **Spotify API March 2026 changelog:** Reverted planned removal of `external_ids` fields for albums and tracks — these will continue to be available
+   - **PulseMCP:** varunneal has 117K all-time visitors, 589/week, ranked #322 all-time, #1,341 weekly
+   - **Rating unchanged:** 3/5
+
+2. **Hugo build** — successful (699ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 8 reviews still older than April 14: apple-macos, pulumi, framelink-figma, grafana, fitness-wearables, notion, supabase, linear
+- pagerduty and everart also stale (April 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 778 — 2026-04-23 — Refresh Message Queue MCP Servers Review (Confluent v1.2.2 billing+metrics, ActiveMQ now covered via Amazon MQ, RocketMQ NEW, mcp-amqp-transport NEW 20 stars, Redis 479→490 EntraID+hybrid search, Schema Reg SLIM_MODE+OAuth 2.1, jesseobrien/nats-mcp 42 tools)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
