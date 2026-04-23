@@ -24,7 +24,7 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 | **Google Official Drive MCP** | **NEW** — 7 tools, managed remote |
 | **Google Official Gmail MCP** | **NEW** — 10 tools, managed remote |
 | **ClickUp MCP** | **NEW** — Official MCP server launched April 2026 |
-| Notion | 4,078→~4,200 stars, v2.4.0, new `update_page_properties` tool (19 tools), local npm package deprecated April 1 |
+| Notion | 4,078→4,256 stars, v2.2.1, 22 tools (was 18 in v1.x → 22 in v2.x), local package soft-deprecated (README warning, not npm flag), prompt injection vuln open (Issue #238) |
 | Linear | 23+→25+ tools, added `search_documents` and `list_initiatives` |
 | Todoist | v8.4.0→v9.1.0, 37→40 tools, added `batch-update-tasks`, `get-completed-tasks`, `manage-workspaces` |
 | Asana | 44→48 tools, added subtask batch creation, timeline views, custom field + rule management. **V1 shutdown May 11** |
@@ -39,7 +39,7 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 
 | Server | Maintainer | Type | Stars | Tools | Auth | Hosting | Free? |
 |--------|-----------|------|-------|-------|------|---------|-------|
-| [Notion](/reviews/notion-mcp-server/) | Notion (official) | Knowledge base + project mgmt | ~4,200 | 19 | OAuth (hosted) | Hosted | Yes |
+| [Notion](/reviews/notion-mcp-server/) | Notion (official) | Knowledge base + project mgmt | 4,256 | 22 | OAuth (hosted) | Hosted + local (soft-deprecated) | Yes |
 | [Linear](/reviews/linear-mcp-server/) | Linear (official) | Issue tracking + project mgmt | N/A | 25+ | OAuth | Hosted | Yes (with Linear plan) |
 | [Todoist](/reviews/todoist-mcp-server/) | Doist (official) | Task management | 397 | 40 | OAuth | Hosted + local | Yes (with Todoist plan) |
 | [Asana](/reviews/asana-mcp-server/) | Asana (official) | Project management | N/A | 48 | OAuth | Hosted | Yes (with Asana plan) |
@@ -85,11 +85,11 @@ A special case: the "productivity tool" is a local folder of files. There's no A
 
 **[Our review: 3.5/5](/reviews/notion-mcp-server/)**
 
-Notion's official MCP server is hosted at `mcp.notion.com` (OAuth, zero-install). The local npm package (`@notionhq/notion-mcp-server`) was officially deprecated on April 1, 2026 — hosted-only going forward.
+Notion's official MCP server is hosted at `mcp.notion.com` (OAuth, zero-install). The local npm package (`@notionhq/notion-mcp-server`, v2.2.1) still works but the README warns: "We may sunset this local MCP server repository in the future" and "Issues and pull requests here are not actively monitored." No commits since March 18.
 
-**19 tools** across pages, databases (now called "data sources"), search, comments, workspace info, and the new `update_page_properties` tool added in v2.4.0 (April 2026). The standout feature is Notion-flavored Markdown — the server converts Notion's block format into a token-efficient Markdown representation that reduces context consumption significantly.
+**22 tools** across pages, databases (now called "data sources"), search, comments, and workspace info. v2.0.0 was a breaking migration to Notion API 2025-09-03 — 7 tools added, 3 removed, "databases" renamed to "data sources." The standout feature is Notion-flavored Markdown — the server converts Notion's block format into a token-efficient Markdown representation that reduces context consumption significantly.
 
-**The catch:** Notion shipped a v2.0.0 that renamed core concepts (databases → data sources) and broke every existing workflow. The server is now at v2.4.0 with security patches and improved token refresh. OAuth tokens expire multiple times per week. Two premium tools (`AI search` and `smart_search_pages`) require a paid Notion AI subscription. The local server is now deprecated — if you need self-hosted deployment, your only option is the community.
+**The catch:** The v2.0.0 breaking changes broke every existing workflow. OAuth tokens expire multiple times per week. Two premium tools (`AI search` and `smart_search_pages`) require a paid Notion AI subscription. **Security concern:** Issue #238 (opened March 25, 2026) reports a prompt injection vulnerability — attacker-controlled text in shared Notion pages can hijack the AI to exfiltrate workspace data. No maintainer response as of April 23. The local server is effectively in maintenance mode — the hosted version at mcp.notion.com is where Notion is investing.
 
 **Best for:** Teams that live in Notion and want their agent to query, create, and update pages and databases. The connected search (Slack, Drive, Jira integration) is genuinely useful for cross-tool queries.
 
@@ -176,14 +176,14 @@ Eight community MCP servers compete to connect AI agents to Obsidian vaults, tak
 | Official/first-party | Yes | Yes | Yes | Yes | Yes | No (community) | No (community) |
 | Hosted (zero-install) | Yes | Yes | Yes | Yes | Yes (managed) | No | No |
 | OAuth authentication | Yes | Yes | Yes | Yes | Yes | Yes (manual) | N/A |
-| Tool count | 19 | 25+ | 40 | 48 | 8 | 13 | 15+ |
+| Tool count | 22 | 25+ | 40 | 48 | 8 | 13 | 15+ |
 | Task creation | Yes | Yes (issues) | Yes | Yes | Yes (events) | Yes (events) | Yes (notes) |
 | Search | Yes | Yes | Yes (filters) | Yes | No | Yes | Varies |
 | Suggest available times | No | No | No | No | Yes (unique) | No | No |
 | Multi-account | N/A | N/A | N/A | N/A | No | Yes | Yes (multi-vault) |
 | Rich content | Markdown | Markdown | Text | Text + custom fields | Event metadata | Event metadata | Full Markdown |
 | Offline capable | No | No | No | No | No | No | Yes |
-| Self-hosted option | Deprecated | No | No | No | No | Yes (local) | Yes (local) |
+| Self-hosted option | Soft-deprecated | No | No | No | No | Yes (local) | Yes (local) |
 | Breaking changes risk | Medium | Medium | Medium | High (V1 shutdown May 11) | Low (Preview) | Low (stable API) | Low |
 | MCP Apps support | No | No | Yes | No | No | No | No |
 
@@ -199,7 +199,7 @@ Eight community MCP servers compete to connect AI agents to Obsidian vaults, tak
 - Not committed to a platform? → **Todoist** for personal, **Linear** for teams
 
 **"Knowledge base and documentation"**
-- Using Notion? → **[Notion MCP](/reviews/notion-mcp-server/)** (19 tools, connected search, token-efficient Markdown)
+- Using Notion? → **[Notion MCP](/reviews/notion-mcp-server/)** (22 tools, connected search, token-efficient Markdown)
 - Using Obsidian? → **[MCPVault](https://github.com/bitbonsai/mcpvault)** (v1.0.0, simplest) or **[cyanheads](https://github.com/cyanheads/obsidian-mcp-server)** (most configurable). [Full landscape review →](/reviews/obsidian-mcp-servers/)
 - Plain Markdown files? → Consider our [Filesystem MCP review](/reviews/filesystem-mcp-server/) instead
 
