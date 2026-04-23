@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 778 — 2026-04-23 — Refresh Message Queue MCP Servers Review (Confluent v1.2.2 billing+metrics, ActiveMQ now covered via Amazon MQ, RocketMQ NEW, mcp-amqp-transport NEW 20 stars, Redis 479→490 EntraID+hybrid search, Schema Reg SLIM_MODE+OAuth 2.1, jesseobrien/nats-mcp 42 tools)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Message Queue MCP Servers** (`content/reviews/message-queue-mcp-servers.md`, 10 days stale since April 13)
+   - **Star count changes:** Confluent 147→151 (+4), Redis 479→490 (+11), kanapuli/mcp-kafka 75→76 (+1), aywengo/kafka-schema-reg-mcp 30→31 (+1)
+   - **Confluent v1.2.0-v1.2.2 (April 2-14):** Added billing costs tool, Flink catalog tools (5), Flink diagnostics (3), metrics tools (2), schema deletion. HTTP/SSE transports with API key auth and DNS rebinding protection
+   - **aywengo/kafka-schema-reg-mcp:** SLIM_MODE (50+ → ~9 essential tools for LLM performance), Claude Code Skills (5 automation skills), FastMCP 2.8.0+ compliance, OAuth 2.1, VIEWONLY safety mode. Now at 300 commits
+   - **ActiveMQ now covered** — Amazon MQ MCP server in awslabs/mcp explicitly supports both RabbitMQ and ActiveMQ broker management. Previously flagged as missing
+   - **NEW: amazon-mq/mcp-amqp-transport** (20 stars) — SDK for running any MCP server over AMQP 0.9.1/1.0 message brokers. First MCP-over-messaging-infrastructure transport. npm @aws/mcp-amqp-transport v1.0.2
+   - **NEW: francisoliverlee/rocketmq-mcp** (4 stars, Java/Python, v0.0.1) — First RocketMQ MCP server, 12 admin endpoint categories
+   - **Redis:** EntraID Authentication for Azure Managed Redis, hybrid_search tool, vector search/indexing. redis-mcp-java (2 stars) Java library with Spring Boot
+   - **JesseObrien/nats-mcp:** Now documented as 42 tools across 7 groups (was listed as 10+). Homebrew/Nix/deb/rpm install options
+   - **sinadarbouy/mcp-nats:** Now supports Helm charts, Docker, streamable-HTTP transport
+   - **Amazon MQ RabbitMQ:** v2.2.4, FastMCP BearerAuthProvider, mutative tools disabled by default
+   - **microsoft/mcp:** 3,000 stars, 465 forks. Azure Service Bus section updated to reference consolidated repo
+   - **Amazon Kinesis flagged as missing** — no dedicated MCP server despite being AWS's core streaming service
+   - **Rating unchanged:** 3.5/5
+   - **Platform count:** 10→11 (added RocketMQ)
+
+2. **Hugo build** — successful (714ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 9 reviews still older than April 14: spotify, apple-macos, pulumi, framelink-figma, grafana, fitness-wearables, notion, supabase, linear
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 777 — 2026-04-23 — Refresh Genealogy & Family History MCP Servers Review (GedcomMCP 7→9 stars, gramps-mcp 29→30 stars, Genealogy-MCP org migrated to shared CI + mcp-codemode library + pytest CVE fix, PulseMCP GedcomMCP 196 weekly visitors)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

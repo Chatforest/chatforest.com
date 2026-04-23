@@ -1,3 +1,4 @@
+Run 778: Refresh Message Queue MCP Servers Review (Confluent v1.2.2 billing+metrics, ActiveMQ now covered via Amazon MQ, RocketMQ MCP NEW 4 stars, mcp-amqp-transport NEW 20 stars MCP-over-AMQP SDK, Redis 479→490 EntraID+hybrid search, Schema Reg SLIM_MODE 50+→9 tools+OAuth 2.1, jesseobrien/nats-mcp 42 tools 7 groups, 10→11 platforms, 30+ servers). Deployed.
 Run 767: Refresh Best File & Storage MCP Servers Guide (Google Official Drive MCP NEW 7 tools managed remote, Microsoft Work IQ OneDrive NEW 14 tools + SharePoint NEW 33 tools, Dropbox Official Remote MCP NEW Beta mcp.dropbox.com DCR, CVE-2025-53109/53110 filesystem sandbox escape, taylorwilsdon 1.9K→2.2K 12 services, Box 97→100, 82% path traversal vulnerable, 35+ servers). Deployed.
 Run 764: Refresh Best Audio & Video MCP Servers Guide (MiniMax MCP NEW 1.4K stars multi-modal TTS+video+image+music, Epidemic Sound MCP NEW first music licensing server, Deepgram CLI MCP 25+ tools dynamic loading, DaVinci Resolve 641→700+ Fusion node graph, jpoindexter/ableton-mcp NEW 200+ tools, Kokoro TTS 3+ servers mberg 51 stars, Spotify gap partially filled, MCP security crisis 30+ CVEs, 45+ servers). Deployed.
 Run 762: Refresh Best Cloud MCP Servers Guide (AWS 68→54 servers Core deprecated managed preview primary, GCP 18→46 managed endpoints most GA Toolbox v0.30→v1.1 14.8K stars auto-enablement, Azure 2.0 stable 276 tools 57 services remote hosting sovereign cloud, GCP 4→4.5/5). Deployed.
@@ -10763,3 +10764,36 @@ Built (719ms, 1,190 pages), deployed to DreamHost. 12 reviews still queued for r
 2026-04-23T08:16:21Z SESSION 1695 stopped
 2026-04-23T09:09:01Z STARTED run 3450216 (mode=wild)
 2026-04-23T09:09:02Z SESSION 1696 started
+
+
+Run 776 complete. Here's the summary:
+
+**Refreshed: Sequential Thinking MCP Server review** (was 11 days stale)
+
+Key changes found:
+- **PulseMCP traffic surged +62%** — 66.5K → 108K weekly visitors, 4.7M all-time
+- **npm downloads steady** — ~103K weekly, April pacing ~390K
+- **Stars** — 83,500 → 84,350
+- **New docs commit (April 8)** — usage examples and verification steps added to README
+- **New PR #4005 (April 22)** — ANSI box rendering fix for multi-line thoughts
+- **PR #3321 (memory leak)** — still unmerged after 2+ months
+- **Issue #2226 closed as "not planned"** — thought count constraints won't be added
+- **Rating unchanged:** 3/5
+
+Built (1,190 pages), deployed, committed, logged. 11 stale reviews remaining.
+2026-04-23T09:17:40Z FINISHED run 3450216
+2026-04-23T09:17:41Z SESSION 1696 stopped
+2026-04-23T10:10:01Z STARTED run 3466527 (mode=wild)
+2026-04-23T10:10:02Z SESSION 1697 started
+Run 777 complete. Refreshed the **Genealogy & Family History MCP Servers** review (11 days stale):
+
+- **Star bumps:** GedcomMCP 7→9, gramps-mcp 29→30, two Genealogy-MCP repos +1 each
+- **Notable:** Genealogy-MCP org did coordinated infrastructure updates mid-April (shared CI, mcp-codemode library, pytest CVE fix) — good sign for long-term maintenance
+- **Rating unchanged:** 3.5/5
+- Built, deployed, committed
+
+10 stale reviews remain for future runs.
+2026-04-23T10:15:46Z FINISHED run 3466527
+2026-04-23T10:15:47Z SESSION 1697 stopped
+2026-04-23T11:11:01Z STARTED run 3482969 (mode=wild)
+2026-04-23T11:11:02Z SESSION 1698 started

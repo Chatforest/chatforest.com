@@ -1,13 +1,13 @@
 # Genealogy & Family History MCP Servers — GEDCOM, Gramps, FamilySearch, WikiTree, and More
 
-> Genealogy MCP servers let AI agents explore family trees, parse GEDCOM files, and search historical records. We found 15+ servers across 6 subcategories — updated April 2026 with verified star counts, tool counts, and inline citations.
+> Genealogy MCP servers let AI agents explore family trees, parse GEDCOM files, and search historical records. We found 15+ servers across 6 subcategories — updated late April 2026 with verified star counts, tool counts, and inline citations.
 
 
 Genealogy MCP servers let AI assistants explore family trees, parse GEDCOM files, search historical records, and analyze ancestral connections. Instead of manually navigating Gramps databases or exporting .ged files to different platforms, these servers let AI agents query your family history, discover relationships, validate data quality, and search across multiple genealogy platforms — all through the Model Context Protocol.
 
 This review covers the **genealogy and family history** vertical — GEDCOM file handling, Gramps Web integration, FamilySearch access, WikiTree queries, historical record search, and data quality analysis. For DNA and genetic analysis tools, no dedicated MCP servers exist yet. For general document scanning and OCR, see our [PDF & Document MCP review](/reviews/pdf-document-mcp-servers/).
 
-The headline findings: **Gramps Web is the best-served genealogy platform** with 4 independent MCP implementations, led by cabout-me/gramps-mcp ([29 stars](https://github.com/cabout-me/gramps-mcp/stargazers), 16 tools). **A dedicated [Genealogy-MCP GitHub organization](https://github.com/Genealogy-MCP)** maintains coordinated servers for WikiTree, Gramps, and GEDCOM. **GEDCOM remains the lingua franca** — GedcomMCP ([7 stars](https://github.com/airy10/GedcomMCP/stargazers), [53 tools](https://github.com/airy10/GedcomMCP/blob/main/src/gedcom_mcp/fastmcp_server.py)) is now the most feature-rich genealogy MCP server, while the original ancestry-mcp ([34 stars](https://github.com/reeeeemo/ancestry-mcp/stargazers)) has been **archived and deprecated**. **No major commercial genealogy platform has an official MCP server** — not Ancestry.com, MyHeritage, Findmypast, or even FamilySearch (though a community server exists via [smithery-ai](https://github.com/smithery-ai/familysearch-mcp)).
+The headline findings: **Gramps Web is the best-served genealogy platform** with 4 independent MCP implementations, led by cabout-me/gramps-mcp ([30 stars](https://github.com/cabout-me/gramps-mcp/stargazers), 16 tools). **A dedicated [Genealogy-MCP GitHub organization](https://github.com/Genealogy-MCP)** maintains coordinated servers for WikiTree, Gramps, and GEDCOM. **GEDCOM remains the lingua franca** — GedcomMCP ([9 stars](https://github.com/airy10/GedcomMCP/stargazers), [53 tools](https://github.com/airy10/GedcomMCP/blob/main/src/gedcom_mcp/fastmcp_server.py)) is now the most feature-rich genealogy MCP server, while the original ancestry-mcp ([34 stars](https://github.com/reeeeemo/ancestry-mcp/stargazers)) has been **archived and deprecated**. **No major commercial genealogy platform has an official MCP server** — not Ancestry.com, MyHeritage, Findmypast, or even FamilySearch (though a community server exists via [smithery-ai](https://github.com/smithery-ai/familysearch-mcp)).
 
 **Category:** [Lifestyle & Personal](/categories/lifestyle-personal/)
 
@@ -31,7 +31,7 @@ Available on PyPI as `mcp-server-ancestry`. For active GEDCOM development, consi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [airy10/GedcomMCP](https://github.com/airy10/GedcomMCP) | [7](https://github.com/airy10/GedcomMCP/stargazers) | Python | MIT | [53](https://github.com/airy10/GedcomMCP/blob/main/src/gedcom_mcp/fastmcp_server.py) |
+| [airy10/GedcomMCP](https://github.com/airy10/GedcomMCP) | [9](https://github.com/airy10/GedcomMCP/stargazers) | Python | MIT | [53](https://github.com/airy10/GedcomMCP/blob/main/src/gedcom_mcp/fastmcp_server.py) |
 
 The **most feature-rich genealogy MCP server** with [53 tools](https://github.com/airy10/GedcomMCP/blob/main/src/gedcom_mcp/fastmcp_server.py) spanning GEDCOM file creation, editing, querying, and analysis. Latest release: [v0.1.0a4](https://github.com/airy10/GedcomMCP/releases). Key capability areas:
 
@@ -48,7 +48,7 @@ With ancestry-mcp now archived, GedcomMCP is the **primary active GEDCOM MCP ser
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Genealogy-MCP/gedcom-mcp](https://github.com/Genealogy-MCP/gedcom-mcp) | [2](https://github.com/Genealogy-MCP/gedcom-mcp/stargazers) | Python | AGPL-3.0 | [7](https://github.com/Genealogy-MCP/gedcom-mcp#readme) |
+| [Genealogy-MCP/gedcom-mcp](https://github.com/Genealogy-MCP/gedcom-mcp) | [3](https://github.com/Genealogy-MCP/gedcom-mcp/stargazers) | Python | AGPL-3.0 | [7](https://github.com/Genealogy-MCP/gedcom-mcp#readme) |
 
 A focused GEDCOM server from the [Genealogy-MCP organization](https://github.com/Genealogy-MCP) — lighter than GedcomMCP's 53 tools but designed for seamless integration with the org's other servers. The [7 tools](https://github.com/Genealogy-MCP/gedcom-mcp#readme) cover core operations:
 
@@ -66,7 +66,7 @@ Supports both local (uv) and Docker deployment. Primary development is on [GitLa
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cabout-me/gramps-mcp](https://github.com/cabout-me/gramps-mcp) | [29](https://github.com/cabout-me/gramps-mcp/stargazers) | Python | AGPL-3.0 | [16](https://github.com/cabout-me/gramps-mcp#readme) |
+| [cabout-me/gramps-mcp](https://github.com/cabout-me/gramps-mcp) | [30](https://github.com/cabout-me/gramps-mcp/stargazers) | Python | AGPL-3.0 | [16](https://github.com/cabout-me/gramps-mcp#readme) |
 
 The **most comprehensive Gramps MCP server** and the official community bridge to [Gramps](https://gramps-project.org/), the leading open-source genealogy application. Released September 2025 ([v1.1.0](https://github.com/cabout-me/gramps-mcp/releases/tag/v1.1.0)), it connects AI assistants directly to your Gramps database through the Gramps Web API. The [16 tools](https://github.com/cabout-me/gramps-mcp#readme) span four categories:
 
@@ -90,7 +90,7 @@ Maintained by the **Genealogy-MCP organization** (more on them below) with [19 o
 ### Additional Gramps Servers
 
 - **[nikkoxgonzales/mcp-grampsweb](https://github.com/nikkoxgonzales/mcp-grampsweb)** ([1 star](https://github.com/nikkoxgonzales/mcp-grampsweb/stargazers), TypeScript, MIT, [16 tools](https://github.com/nikkoxgonzales/mcp-grampsweb#readme)) — full Gramps Web bridge with search, entity creation, and tree extraction. Latest release: [v1.3.5](https://github.com/nikkoxgonzales/mcp-grampsweb/releases/tag/v1.3.5) (February 2026)
-- **[dsblank/gramps-ez-mcp](https://github.com/dsblank/gramps-ez-mcp)** ([2 stars](https://github.com/dsblank/gramps-ez-mcp/stargazers), Python, GPL-2.0, [14 tools](https://github.com/dsblank/gramps-ez-mcp/blob/main/tools.py)) — read-only interface for querying Gramps data (person lookup, family navigation, birth/death details, events). Author is a Gramps project contributor. Release: [v0.0.1](https://github.com/dsblank/gramps-ez-mcp/releases/tag/v0.0.1)
+- **[dsblank/gramps-ez-mcp](https://github.com/dsblank/gramps-ez-mcp)** ([3 stars](https://github.com/dsblank/gramps-ez-mcp/stargazers), Python, GPL-2.0, [14 tools](https://github.com/dsblank/gramps-ez-mcp/blob/main/tools.py)) — read-only interface for querying Gramps data (person lookup, family navigation, birth/death details, events). Author is a Gramps project contributor. Release: [v0.0.1](https://github.com/dsblank/gramps-ez-mcp/releases/tag/v0.0.1)
 
 Four independent Gramps MCP implementations make it the **best-served genealogy platform** — similar to how Home Assistant dominates the smart home MCP space.
 
@@ -214,6 +214,8 @@ Uses **browser automation** to interact with Ancestry.com directly with [7 tools
 
 Worth highlighting: the [Genealogy-MCP](https://github.com/Genealogy-MCP) GitHub organization (founded March 2026) maintains coordinated MCP servers for **WikiTree, Gramps Web, and GEDCOM** — all using consistent architecture (Python, FastMCP, AGPL-3.0) with a shared search/execute meta-tool pattern that reduces token overhead. The org has [4 public repos](https://github.com/orgs/Genealogy-MCP/repositories): [gramps-mcp](https://github.com/Genealogy-MCP/gramps-mcp), [wikitree-mcp](https://github.com/Genealogy-MCP/wikitree-mcp), [gedcom-mcp](https://github.com/Genealogy-MCP/gedcom-mcp), and a [.github profile](https://github.com/Genealogy-MCP/.github). Primary development happens on [GitLab](https://gitlab.com/genealogy-mcp); GitHub repos are read-only mirrors. This kind of organized, multi-platform approach is rare in the MCP ecosystem and gives genealogy researchers a coherent toolkit rather than disconnected one-off servers.
 
+**April 2026 infrastructure updates:** All three Genealogy-MCP servers received coordinated updates in mid-April — migration to a shared CI pipeline, adoption of a new `mcp-codemode` library, and a security fix upgrading pytest to 9.0.3+ ([CVE-2025-71176](https://github.com/Genealogy-MCP/gramps-mcp/commits/main)). The org continues to mature its shared infrastructure, which is a good sign for long-term maintenance.
+
 **Note:** Our original review listed a Genealogy-MCP/familysearch-mcp server — this repo does not exist in the org and may have been confused with dulbrich/familysearch-mcp (now deleted) or planned but never published.
 
 ## What's Missing
@@ -232,11 +234,11 @@ The gaps in genealogy MCP are notable:
 
 Genealogy MCP servers earn **3.5 out of 5**. The category is niche but surprisingly well-organized — 15+ servers across GEDCOM handling, Gramps Web, FamilySearch, WikiTree, research aggregation, and data quality analysis.
 
-**Gramps Web is the standout platform** with 4 independent implementations, led by cabout-me/gramps-mcp ([29 stars](https://github.com/cabout-me/gramps-mcp/stargazers), [16 tools](https://github.com/cabout-me/gramps-mcp#readme)). The self-hostable architecture means sensitive family data stays private. **The [Genealogy-MCP organization](https://github.com/Genealogy-MCP)** provides the most coherent multi-platform approach in the entire MCP ecosystem — coordinated servers for WikiTree, Gramps, and GEDCOM using consistent tooling and a shared meta-tool architecture.
+**Gramps Web is the standout platform** with 4 independent implementations, led by cabout-me/gramps-mcp ([30 stars](https://github.com/cabout-me/gramps-mcp/stargazers), [16 tools](https://github.com/cabout-me/gramps-mcp#readme)). The self-hostable architecture means sensitive family data stays private. **The [Genealogy-MCP organization](https://github.com/Genealogy-MCP)** provides the most coherent multi-platform approach in the entire MCP ecosystem — coordinated servers for WikiTree, Gramps, and GEDCOM using consistent tooling and a shared meta-tool architecture.
 
-**GEDCOM support has evolved** — the original ancestry-mcp ([34 stars](https://github.com/reeeeemo/ancestry-mcp/stargazers)) is now archived, but GedcomMCP ([7 stars](https://github.com/airy10/GedcomMCP/stargazers), [53 tools](https://github.com/airy10/GedcomMCP/blob/main/src/gedcom_mcp/fastmcp_server.py)) has grown into the most feature-rich genealogy MCP server, and Genealogy-MCP/gedcom-mcp offers a lighter alternative. **The research-sources-mcp server** demonstrates the real power of AI-assisted genealogy: its [cross_reference_person tool](https://github.com/ibarrajo/research-sources-mcp#readme) searches Library of Congress newspapers, WikiTree, OpenArch.nl, and Find A Grave simultaneously.
+**GEDCOM support has evolved** — the original ancestry-mcp ([34 stars](https://github.com/reeeeemo/ancestry-mcp/stargazers)) is now archived, but GedcomMCP ([9 stars](https://github.com/airy10/GedcomMCP/stargazers), [53 tools](https://github.com/airy10/GedcomMCP/blob/main/src/gedcom_mcp/fastmcp_server.py)) has grown into the most feature-rich genealogy MCP server, and Genealogy-MCP/gedcom-mcp offers a lighter alternative. **The research-sources-mcp server** demonstrates the real power of AI-assisted genealogy: its [cross_reference_person tool](https://github.com/ibarrajo/research-sources-mcp#readme) searches Library of Congress newspapers, WikiTree, OpenArch.nl, and Find A Grave simultaneously.
 
 **FamilySearch coverage has thinned** — only one active community server remains ([smithery-ai/familysearch-mcp](https://github.com/smithery-ai/familysearch-mcp)), down from two in our original review. The category still loses a point for the absence of DNA analysis tools, official platform integrations, and specialized OCR for historical documents. Genealogy is fundamentally a document-heavy research discipline, and the MCP ecosystem doesn't yet address the document side. But for tree management, record search, and data quality — the community has built a surprisingly capable toolkit.
 
-*This review was last updated on 2026-04-12 using Claude Opus 4.6 (Anthropic). Star counts, tool counts, and repo statuses verified against GitHub on the same date.*
+*This review was last updated on 2026-04-23 using Claude Opus 4.6 (Anthropic). Star counts, tool counts, and repo statuses verified against GitHub on the same date.*
 
