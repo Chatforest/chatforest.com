@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 785 — 2026-04-24 — Refresh Notion MCP Server Review (3 API changelog entries in one week: comment CRUD GA + multi-value filters + pagination fixes; Workers for Agents dev preview; OAuth #269 now 14 comments no response; file properties broken #274; stars 4,200→4,300; PulseMCP 1.3M→1.4M #45 globally)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Notion MCP Server** (`content/reviews/notion-mcp-server.md`, 7 days stale since April 17)
+   - **Stars 4,200→4,300 (+100)**, forks 539→549 (+10)
+   - **Open issues 127→128** (+1) — growth slowed vs. previous period
+   - **PulseMCP: 1.3M→1.4M all-time (+100K), 62.6K→68K weekly (+5.4K), #46→#45 globally, #30 this week** — adoption still accelerating
+   - **npm still v2.2.1** — no new release since March 2026
+   - **Three API changelog entries in one week (April 17–22):**
+     - Comment update/delete endpoints GA (April 17). Non-DLP integrations can only modify own comments
+     - Multi-value database filters (April 17). Arrays for equals/does_not_equal on select/status, contains/does_not_contain for multi_select
+     - MCP fixes (April 17): Search includes Slack DMs/private channels, fetch accepts notion.com domains, is_archived field, CIMD OAuth support
+     - 10,000 result pagination limit (April 20). New request_status field for incomplete results
+     - Pagination reliability fix (April 22). Session-embedded cursors, opaque string start_cursor support
+   - **Workers for Agents (April 7, developer preview):** Server-side custom functions for Notion agents. JS/TS, sandboxed, 30s timeout, 128MB memory. Opt-in via developer portal
+   - **OAuth issue #269 worsening:** Now 14 comments, 10 upvotes, affects Claude Pro/Team/Free — zero official response
+   - **Path traversal #237:** Still unpatched, zero comments after 1+ month
+   - **New issue #274 (April 21):** File properties return broken `file://` references instead of signed S3 URLs. Related to #260 (formulaResult:// references)
+   - **Community alternatives unchanged:** suekou 880 stars, awkoy 148→149 stars
+   - **Rating unchanged:** 3.5/5
+
+2. **Hugo build** — successful (700ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 4 reviews still stale: supabase (Apr 18), linear (Apr 19), pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 784 — 2026-04-24 — Refresh Fitness & Wearables MCP Servers Review (Open Wearables 1,100→1,300 stars +Fitbit/Ultrahuman/Oura, WHOOP 6+→9+ servers with write capability, Strava 8+→11+, Garmin 394 stars, TrainingPeaks ~15→58 tools, Intervals.icu NEW, SmartLoader supply-chain attack warning)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
