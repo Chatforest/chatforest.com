@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 784 — 2026-04-24 — Refresh Fitness & Wearables MCP Servers Review (Open Wearables 1,100→1,300 stars +Fitbit/Ultrahuman/Oura, WHOOP 6+→9+ servers with write capability, Strava 8+→11+, Garmin 394 stars, TrainingPeaks ~15→58 tools, Intervals.icu NEW, SmartLoader supply-chain attack warning)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Fitness & Wearables MCP Servers** (`content/reviews/fitness-wearables-mcp-servers.md`, 8 days stale since April 16)
+   - **Open Wearables 1,100→1,300 stars (+200)**, 209 forks. v0.4.1 (April 7) added **Fitbit, Ultrahuman, and Oura Ring** — now supports 10 providers. v0.4.3 (April 14) added health scores and outgoing webhooks. React Native SDK added.
+   - **WHOOP grew from 6+ to 9+ servers.** shashankswe2020-ux/whoop-mcp listed on official MCP Registry with 9K estimated weekly visitors (highest-traffic fitness MCP). jd1207/whoop-mcp is the **only server with write capability**. AshwanthramKL (April 21) added.
+   - **Strava grew from 8+ to 11+ servers.** r-huijts/strava-mcp at 352 stars. New 2026 entries: guhcostan "Strava Training" (Mar 28), hriteshmaikap (Apr 4).
+   - **Garmin:** Taxuspt/garmin_mcp at 394 stars, 108 forks. 11 servers on PulseMCP (4.9K weekly visitors). New: bmccarn (34 tools, Apr 10), nrvim/garmin-givemydata (SQLite export).
+   - **TrainingPeaks quadrupled:** JamsusMaximus/trainingpeaks-mcp grew from ~15 to **58 tools** across 8 categories. 49 stars, 25 forks, 128 commits.
+   - **Intervals.icu (NEW section):** eddmann/intervals-icu-mcp with 48 tools across 9 categories. Free training analytics alternative to TrainingPeaks.
+   - **New entrants added:** Marholoubek/health_mcp (WHOOP+Strava aggregator), Renpho smart scales, ExerciseAPI MCP (2,198+ exercises), BearTrail MCP.
+   - **Fulcra launched "Context" app** (March 30, 2026) — commercial personal data platform maturing.
+   - **⚠️ Security alert added:** February 2026 SmartLoader supply-chain attack used trojanized Oura MCP clones to deploy StealC infostealer malware. 5+ fake GitHub accounts with manufactured forks. Warning added to Oura section and What's Missing section.
+   - **PulseMCP:** 35 fitness servers total across the platform.
+   - **Server count updated:** 55+ → 65+ servers reviewed.
+   - **Rating unchanged:** 4.5/5
+
+2. **Hugo build** — successful (711ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 5 reviews still stale: notion (Apr 17), supabase (Apr 18), linear (Apr 19), pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 783 — 2026-04-24 — Refresh Grafana MCP Server Review (GrafanaCON 2026: hosted remote MCP at mcp.grafana.com, gcx CLI, o11y-bench; v0.12.0 InfluxDB+Graphite, horizontal scaling fix, token reduction; stars 2,800→2,900, issues 61→57)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
