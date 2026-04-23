@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 780 — 2026-04-24 — Refresh Apple & macOS MCP Servers Review (NEW iMCP 1,400 stars added, Peekaboo 3,100→3,200 now #1, HomeClaw 87→96 v1.0.0 automation triggers, macos-automator-mcp 758→767, macOS Tahoe 26.1 beta hints native MCP via App Intents)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Apple & macOS MCP Servers** (`content/reviews/apple-macos-mcp-servers.md`, 10 days stale since April 14)
+   - **NEW: mattt/iMCP (1,400 stars)** — Native macOS app providing MCP access to Messages, Contacts, Calendar, Reminders, Maps, Weather, and Location via native frameworks (EventKit, Contacts.framework, MapKit). Created by Mattt Thompson (AFNetworking/Alamofire creator). v1.4.0 (Jan 2026). Third-most-starred Apple MCP server. Fills the gap left by supermemoryai/apple-mcp archival
+   - **Peekaboo 3,100→3,200 stars (+100):** Now the most-starred Apple MCP server. March 28 commits: updated MCP runtime for swift-sdk 0.12, ScreenCaptureKit improvements for macOS 15. Still on v3.0.0-beta4, 17 open issues. PulseMCP: 11,300 all-time, 106/week
+   - **HomeClaw 87→96 stars (+9):** Reached v1.0.0 (March 2026) — first stable release. Build 136 (April 14): characteristic-based automation triggers for motion sensors, contact sensors, occupancy detectors, temperature thresholds. Fixed TCC crash on macOS 26.4. April 16-18: CI version consistency enforcement, OpenClaw compatibility metadata, TestFlight automation script. 0 open issues
+   - **macos-automator-mcp 758→767 stars (+9):** No code changes since Dec 2025. 4 open issues
+   - **applescript-mcp 376→379 stars (+3):** 4 open issues
+   - **siri-shortcuts 183→184 stars (+1):** 2 open issues
+   - **supermemoryai/apple-mcp:** Still 3,100 stars, archived Jan 2026. No changes
+   - **kennethreitz/mcp-applemusic:** Still 84 stars, 1 open issue
+   - **macOS Tahoe 26.1 beta:** Developer beta revealed early signs of native MCP integration through App Intents framework. Possible first public APIs by WWDC 2026. If Apple ships native MCP support, basic app access servers become redundant but specialized automation tools retain value
+   - **Rating unchanged:** 4/5
+
+2. **Hugo build** — successful (710ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 9 reviews still stale: pulumi (Apr 14), framelink-figma (Apr 15), grafana (Apr 16), fitness-wearables (Apr 16), notion (Apr 17), supabase (Apr 18), linear (Apr 19), pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 779 — 2026-04-24 — Refresh Spotify MCP Server Review (varunneal 594→598 now officially abandoned, marcelmarais 282→311 #35 still open, imprvhub v0.5.0 14+ tools clear leader, Spotify March 2026 reverted external_ids removal, PulseMCP 117K all-time 589/week)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
