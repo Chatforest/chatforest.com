@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 781 — 2026-04-24 — Refresh Pulumi MCP Server Review (Stars flat at 188, npm 810→779/week, Neo Plan Mode launched April 1, experimental `pulumi neo` CLI in v3.232.0, agent sprawl governance positioning, MCP server repo inactive since Feb/Mar)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Pulumi MCP Server** (`content/reviews/pulumi-mcp-server.md`, 10 days stale since April 14)
+   - **Stars unchanged at 188**, forks still 36. MCP server repo has had no commits since approximately Feb/Mar 2026
+   - **npm downloads 810→779/week** (continuing decline from ~4,100, usage shifting to remote endpoint)
+   - **PulseMCP: 45.7K→46.8K all-time (+1.1K), 575→506 weekly (down), #601→#629 globally (slipping)**
+   - **Neo Plan Mode (April 1):** New four-phase collaborative planning workflow — Discovery, Synthesis, Refinement, Approval. Makes upfront deliberation first-class before execution begins. Available for all Pulumi Cloud organizations
+   - **Experimental `pulumi neo` CLI (v3.232.0, April 23):** Terminal-based Neo agent with bubbletea TUI, local filesystem tool execution matching mcp-claude-code schema, user approval for sensitive actions. Behind PULUMI_EXPERIMENTAL flag
+   - **Pulumi CLI v3.230.0-v3.232.0:** Three releases in April — AI agent detection/metadata, ESC for policy packs, `pulumi policy analyze` command for offline stack evaluation, Bun runtime support
+   - **Agent sprawl positioning (April 22):** Pulumi positioning IaC platform as governance answer to enterprise AI agent proliferation — EU AI Act high-risk obligations August 2, 2026; Salesforce estimates average enterprise has 12 agents today, projected 67% growth
+   - **Policy enhancements:** Policy Packs can now reference ESC environments; new `pulumi policy analyze` command evaluates existing stacks without executing programs
+   - **Key observation:** Pulumi investing heavily in Neo and CLI but MCP server repo itself is dormant. Energy is in CLI-native Neo experience rather than MCP integration layer
+   - **Rating unchanged:** 3.5/5
+
+2. **Hugo build** — successful (706ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 8 reviews still stale: framelink-figma (Apr 15), grafana (Apr 16), fitness-wearables (Apr 16), notion (Apr 17), supabase (Apr 18), linear (Apr 19), pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 780 — 2026-04-24 — Refresh Apple & macOS MCP Servers Review (NEW iMCP 1,400 stars added, Peekaboo 3,100→3,200 now #1, HomeClaw 87→96 v1.0.0 automation triggers, macos-automator-mcp 758→767, macOS Tahoe 26.1 beta hints native MCP via App Intents)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
