@@ -25,13 +25,13 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 | **Google Official Gmail MCP** | **NEW** — 10 tools, managed remote |
 | **ClickUp MCP** | **NEW** — Official MCP server launched April 2026 |
 | Notion | 4,078→4,256 stars, v2.2.1, 22 tools (was 18 in v1.x → 22 in v2.x), local package soft-deprecated (README warning, not npm flag), prompt injection vuln open (Issue #238) |
-| Linear | 23+→25+ tools, added `search_documents` and `list_initiatives` |
-| Todoist | v8.4.0→v9.1.0, 37→40 tools, added `batch-update-tasks`, `get-completed-tasks`, `manage-workspaces` |
-| Asana | 44→48 tools, added subtask batch creation, timeline views, custom field + rule management. **V1 shutdown May 11** |
-| nspady/google-calendar-mcp | 1,056→~1,100 stars, v2.7.0, 12→13 tools (bulk create) |
+| Linear | No changes since March 22 — stable at 23+ tools |
+| Todoist | v8.4.0→v8.9.1, 397→460 stars, 37→40+ tools, added `get-project-health`, reminders, MCP Apps (v8.7.0), SDK renamed |
+| Asana | 44 tools unchanged. **V1 shutdown May 11** (18 days). roychri community: v1.8.0 with 12+ new tools |
+| nspady/google-calendar-mcp | 1,056→~1,100 stars, 12→13 tools (bulk create) |
 | MCPVault (Obsidian) | 927→~1,000 stars, **v1.0.0 released** |
 | Atlassian | 470→~520 stars |
-| roychri/mcp-server-asana | 131→145 stars |
+| roychri/mcp-server-asana | 131→137 stars, v1.8.0 (12+ new tools) |
 | **MCP OAuth vulnerability** | Account takeover disclosed — affects all OAuth-based hosted MCP servers |
 | **CVE-2026-26118** | Azure MCP SSRF (CVSS 8.8) — affects Microsoft productivity servers |
 
@@ -40,9 +40,9 @@ We've reviewed [Notion MCP](/reviews/notion-mcp-server/) (3.5/5), [Slack MCP](/r
 | Server | Maintainer | Type | Stars | Tools | Auth | Hosting | Free? |
 |--------|-----------|------|-------|-------|------|---------|-------|
 | [Notion](/reviews/notion-mcp-server/) | Notion (official) | Knowledge base + project mgmt | 4,256 | 22 | OAuth (hosted) | Hosted + local (soft-deprecated) | Yes |
-| [Linear](/reviews/linear-mcp-server/) | Linear (official) | Issue tracking + project mgmt | N/A | 25+ | OAuth | Hosted | Yes (with Linear plan) |
-| [Todoist](/reviews/todoist-mcp-server/) | Doist (official) | Task management | 397 | 40 | OAuth | Hosted + local | Yes (with Todoist plan) |
-| [Asana](/reviews/asana-mcp-server/) | Asana (official) | Project management | N/A | 48 | OAuth | Hosted | Yes (with Asana plan) |
+| [Linear](/reviews/linear-mcp-server/) | Linear (official) | Issue tracking + project mgmt | N/A | 23+ | OAuth | Hosted | Yes (with Linear plan) |
+| [Todoist](/reviews/todoist-mcp-server/) | Doist (official) | Task management | 460 | 40+ | OAuth | Hosted + local | Yes (with Todoist plan) |
+| [Asana](/reviews/asana-mcp-server/) | Asana (official) | Project management | N/A | 44 | OAuth | Hosted | Yes (with Asana plan) |
 | Google Calendar | Google (official) | Calendar management | Official | 8 | OAuth | Hosted (managed) | Yes |
 | [Google Calendar](/reviews/google-calendar-mcp-server/) | nspady (community) | Calendar management | ~1,100 | 13 | OAuth | Local | Yes |
 | Obsidian | cyanheads (community) | Knowledge base (local) | ~450 | 15+ | None (local) | Local | Yes |
@@ -99,35 +99,35 @@ Notion's official MCP server is hosted at `mcp.notion.com` (OAuth, zero-install)
 
 Linear's official hosted MCP server at `mcp.linear.app` follows the authenticated remote MCP spec with OAuth. It launched in May 2025 and expanded significantly in February 2026 with support for initiatives, milestones, and project updates.
 
-**25+ tools** covering issues (create, update, search, comment), projects (create, update, milestones), initiatives (list, manage), teams, labels, and documentation search including the new `search_documents` and `list_initiatives` tools added in April 2026. The Feb 2026 update added product management tools: initiative management, project milestone tracking, and progress updates — making it viable for PMs, not just engineers. The tool design is among the best we've reviewed — flat parameter schemas and embedded enum values reduce agent errors significantly.
+**23+ tools** covering issues (create, update, search, comment), projects (create, update, milestones), initiatives, teams, labels, and documentation search. The Feb 2026 update added product management tools: initiative management, project milestone tracking, and progress updates — making it viable for PMs, not just engineers. No changes since March 22. The tool design is among the best we've reviewed — flat parameter schemas and embedded enum values reduce agent errors significantly.
 
-**The catch:** Linear itself requires a paid plan ($8/user/month). The MCP server is hosted-only — no self-hosted option. The tool definitions cost 17.3k tokens of context, and responses are verbose with unnecessary fields. Multiple community alternatives exist (dvcrn/mcp-server-linear ~180 stars, tacticlaunch/mcp-linear) for local deployment or multi-workspace support.
+**The catch:** Linear itself requires a paid plan ($8/user/month). The MCP server is hosted-only — no self-hosted option. SSE transport deprecated starting with protocol version 2024-11-05. The tool definitions cost 17.3k tokens of context, and responses are verbose with unnecessary fields. Community alternative tacticlaunch/mcp-linear (133 stars, v1.0.12) hasn't been updated since September 2025.
 
 **Best for:** Engineering teams already on Linear. The issue → project → initiative hierarchy maps cleanly to how engineering work is organized. If you're using Linear for sprint planning, the MCP server lets your agent create issues from code comments, update status from CI results, and track progress across projects.
 
 ### [Todoist](/reviews/todoist-mcp-server/) (4/5) — The Best for Personal Task Management
 
-Doist's official server (migrated from `Doist/todoist-mcp` to `Doist/todoist-ai`) is available as a hosted streamable HTTP service at `ai.todoist.net/mcp`. It's the most feature-complete task management MCP server available, with an SDK-first architecture — the same tools work across MCP, Vercel AI SDK, and custom pipelines. Development pace remains extraordinary — now at v9.1.0, up from v8.4.0 in March.
+Doist's official server (migrated from `Doist/todoist-mcp` to `Doist/todoist-ai`, 460 stars) is available as a hosted streamable HTTP service at `ai.todoist.net/mcp`. It's the most feature-complete task management MCP server available, with an SDK-first architecture — the same tools work across MCP, Vercel AI SDK, and custom pipelines. Development pace remains extraordinary — 16 releases since March 22, now at v8.9.1.
 
-**40 tools** covering tasks (create, update, find, complete, uncomplete, delete, reschedule, batch-update), projects, sections, comments, labels, assignments, filters, workspaces (new `manage-workspaces`), activity tracking, productivity stats, completed task history (`get-completed-tasks`), and attachments. The `get-overview` tool gives agents a dashboard-style snapshot without multiple calls. Full CRUD including delete — something Linear's MCP still lacks. New since March: `batch-update-tasks` (bulk operations), `get-completed-tasks` (completed task history), `manage-workspaces` (workspace management).
+**40+ tools** covering tasks (create, update, find, complete, uncomplete, delete, reschedule), projects (including new `get-project-health` for health analysis), sections, comments, labels, assignments, filters, workspaces (workspace insights), activity tracking, productivity stats, reminders (new in v8.6.0), and attachments. The `get-overview` tool gives agents a dashboard-style snapshot without multiple calls. Full CRUD including delete — something Linear's MCP still lacks. New since March: `get-project-health` and activity stats (v8.5.0), reminder support (v8.6.0), MCP Apps interactive UI widgets (v8.7.0).
 
-**What sets it apart:** Three transport protocols (Streamable HTTP, SSE, stdio) — rare for any MCP server. MCP Apps render interactive UI widgets inline in chat interfaces, expanded with interactive task cards. The SDK-first design means tools are tested across multiple surfaces, not just MCP.
+**What sets it apart:** Three transport protocols (Streamable HTTP, SSE, stdio) — rare for any MCP server. **MCP Apps** (introduced v8.7.0) render interactive UI widgets inline in chat interfaces — Todoist is the first task management server with this capability. The SDK-first design means tools are tested across multiple surfaces, not just MCP. SDK renamed from `@doist/todoist-api-typescript` to `@doist/todoist-sdk` (v8.8.2).
 
-**The catch:** Project hierarchy management is still incomplete (no workspace/folder placement). The project self-describes as "early stages" despite rapid iteration and 40 tools.
+**The catch:** Project hierarchy management is still incomplete (no workspace/folder placement). Retry logic with exponential backoff added for 5xx errors (v8.8.3), suggesting backend reliability issues. The project self-describes as "early stages" despite rapid iteration and 40+ tools.
 
 **Best for:** Individual developers and small teams who use Todoist as their daily task manager. The transport flexibility and MCP Apps make it the most architecturally advanced task management MCP server. [Full review →](/reviews/todoist-mcp-server/)
 
 ### [Asana](/reviews/asana-mcp-server/) (4/5) — The Enterprise Option
 
-Asana's official V2 MCP server at `mcp.asana.com/v2/mcp` is the most tool-rich productivity MCP server we've reviewed, with 48 tools across tasks, projects, goals, portfolios, and teams. V2 launched February 2026 with Streamable HTTP. **The deprecated V1 beta (SSE) shuts down May 11, 2026 — 18 days away.** If you're still on V1, migration is urgent.
+Asana's official V2 MCP server at `mcp.asana.com/v2/mcp` is the most tool-rich productivity MCP server we've reviewed, with 44 tools across tasks, projects, goals, portfolios, and teams. V2 launched February 2026 with Streamable HTTP. **The deprecated V1 beta (SSE) shuts down May 11, 2026 — 18 days away.** If you're still on V1, migration is urgent.
 
-**48 tools** covering seven functional areas: task management (create, update, delete, search, dependencies, followers, subtask batch creation), projects and portfolios (create projects, sections, status updates, portfolio browsing, timeline views), goals and time management (OKR tracking, goal metrics, time periods), team and user management (workspaces, teams, allocations), collaboration (comments, activity history, attachments), custom fields (new: field management), and rules (new: automation rule management). The goal and portfolio tools remain unique — no other productivity MCP server offers OKR tracking through MCP.
+**44 tools** covering six functional areas: task management (create, update, delete, search, dependencies, followers), projects and portfolios (create projects, sections, status updates, portfolio browsing), goals and time management (OKR tracking, goal metrics, time periods), team and user management (workspaces, teams, allocations), and collaboration (comments, activity history, attachments). The goal and portfolio tools remain unique — no other productivity MCP server offers OKR tracking through MCP.
 
 **What sets it apart:** 20+ verified client integrations (Claude, ChatGPT, Cursor, VS Code, Perplexity, Microsoft Teams, Zoom, and more) — the broadest client compatibility of any productivity MCP server. MCP-scoped OAuth tokens limit blast radius if compromised. Permission inheritance ensures agents can only access what the authenticated user can.
 
-**The catch:** The V1→V2 transition was rocky — V2 initially launched with only ~15 tools, dropping subtask creation, comments, section placement, and dependencies. Most have been restored and expanded to 48 tools. No self-hosted option. No dynamic client registration — developers must pre-register in the Asana developer console. Asana pricing is the real barrier: free tier caps at 10 users, Starter is $10.99/user/month, Advanced (portfolios, workload) is $24.99/user/month. Goal tracking requires Business tier or higher. **V1 shuts down May 11 — update your config now if you haven't.**
+**The catch:** The V1→V2 transition was rocky — V2 initially launched with only ~15 tools, dropping subtask creation, comments, section placement, and dependencies. Most have been restored. No self-hosted option. No dynamic client registration — developers must pre-register in the Asana developer console. Asana pricing is the real barrier: free tier caps at 10 users, Starter is $10.99/user/month, Advanced (portfolios, workload) is $24.99/user/month. Goal tracking requires Business tier or higher. **V1 shuts down May 11 — update your config now if you haven't.**
 
-**Best for:** Cross-functional teams already deep in Asana. The 48 tools cover the full Asana Work Graph — workspaces, teams, projects, goals, portfolios, allocations, custom fields, and automation rules. If your organization manages quarterly OKRs and multi-project portfolios in Asana, this is the most complete AI integration available. Community alternative roychri/mcp-server-asana (145 stars, 50+ tools, MIT) offers self-hosted deployment with Personal Access Token auth and is actively maintained. [Full review →](/reviews/asana-mcp-server/)
+**Best for:** Cross-functional teams already deep in Asana. The 44 tools cover the full Asana Work Graph — workspaces, teams, projects, goals, portfolios, allocations. If your organization manages quarterly OKRs and multi-project portfolios in Asana, this is the most complete AI integration available. Community alternative roychri/mcp-server-asana (137 stars, 50+ tools, MIT, v1.8.0 with 12+ new tools in March) offers self-hosted deployment with Personal Access Token auth and is actively maintained. [Full review →](/reviews/asana-mcp-server/)
 
 ### Google Calendar MCP — The Gap Is Filled
 
@@ -176,7 +176,7 @@ Eight community MCP servers compete to connect AI agents to Obsidian vaults, tak
 | Official/first-party | Yes | Yes | Yes | Yes | Yes | No (community) | No (community) |
 | Hosted (zero-install) | Yes | Yes | Yes | Yes | Yes (managed) | No | No |
 | OAuth authentication | Yes | Yes | Yes | Yes | Yes | Yes (manual) | N/A |
-| Tool count | 22 | 25+ | 40 | 48 | 8 | 13 | 15+ |
+| Tool count | 22 | 23+ | 40+ | 44 | 8 | 13 | 15+ |
 | Task creation | Yes | Yes (issues) | Yes | Yes | Yes (events) | Yes (events) | Yes (notes) |
 | Search | Yes | Yes | Yes (filters) | Yes | No | Yes | Varies |
 | Suggest available times | No | No | No | No | Yes (unique) | No | No |
@@ -184,7 +184,7 @@ Eight community MCP servers compete to connect AI agents to Obsidian vaults, tak
 | Rich content | Markdown | Markdown | Text | Text + custom fields | Event metadata | Event metadata | Full Markdown |
 | Offline capable | No | No | No | No | No | No | Yes |
 | Self-hosted option | Soft-deprecated | No | No | No | No | Yes (local) | Yes (local) |
-| Breaking changes risk | Medium | Medium | Medium | High (V1 shutdown May 11) | Low (Preview) | Low (stable API) | Low |
+| Breaking changes risk | Medium | Low (stable) | Medium (SDK rename) | High (V1 shutdown May 11) | Low (Preview) | Low (stable API) | Low |
 | MCP Apps support | No | No | Yes | No | No | No | No |
 
 ## Decision Flowchart
@@ -192,9 +192,9 @@ Eight community MCP servers compete to connect AI agents to Obsidian vaults, tak
 **Start here:** What kind of work does your agent need to access?
 
 **"Task and project management"**
-- Using Linear? → **Linear MCP** (best engineering-team integration, 25+ tools)
-- Using Asana? → **[Asana MCP](/reviews/asana-mcp-server/)** (48 tools, enterprise-ready — **migrate to V2 before May 11**)
-- Using Todoist? → **Todoist MCP** (best personal task management, 40 tools, MCP Apps)
+- Using Linear? → **Linear MCP** (best engineering-team integration, 23+ tools)
+- Using Asana? → **[Asana MCP](/reviews/asana-mcp-server/)** (44 tools, enterprise-ready — **migrate to V2 before May 11**)
+- Using Todoist? → **Todoist MCP** (best personal task management, 40+ tools, MCP Apps)
 - Using ClickUp? → **ClickUp MCP** (official, new April 2026)
 - Not committed to a platform? → **Todoist** for personal, **Linear** for teams
 
@@ -237,8 +237,8 @@ The productivity MCP space is dominated by first-party hosted servers — and th
 
 **Our recommended stack:**
 - **Knowledge base:** [Notion](/reviews/notion-mcp-server/) (3.5/5) or Obsidian ([MCPVault](https://github.com/bitbonsai/mcpvault) v1.0.0 for local-first)
-- **Issue tracking:** Linear (for engineering, 25+ tools) or [Asana](/reviews/asana-mcp-server/) (4/5, 48 tools for cross-functional teams — **migrate to V2 before May 11**)
-- **Task management:** [Todoist](/reviews/todoist-mcp-server/) (4/5, 40 tools, MCP Apps)
+- **Issue tracking:** Linear (for engineering, 23+ tools) or [Asana](/reviews/asana-mcp-server/) (4/5, 44 tools for cross-functional teams — **migrate to V2 before May 11**)
+- **Task management:** [Todoist](/reviews/todoist-mcp-server/) (4/5, 40+ tools, MCP Apps)
 - **Calendar:** Google Official Calendar MCP (zero-setup) or [nspady/google-calendar-mcp](/reviews/google-calendar-mcp-server/) (4/5, more features). See our [full calendar guide](/guides/best-calendar-scheduling-mcp-servers/)
 - **Communication:** [Slack](/reviews/slack-mcp-server/) (4/5)
 
