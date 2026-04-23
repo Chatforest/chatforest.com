@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 772 — 2026-04-23 — Refresh Best Workflow Automation MCP Servers Guide (czlonkowski/n8n-mcp 15.4K→18.6K stars +21% v2.47.14, Zapier Agentic Beta 14 meta-tools dynamic tool discovery prompt injection protection, Make repo LEGACY→hosted developers.make.com/mcp-server, ActivePieces 280+→~400 MCP pieces rebrand, Pipedream parent 11.3K, call518/MCP-Airflow-API v3.6.3 full Airflow 3.0 API v2 support 45 tools, yangkyeongmo 159 stars still API v1, Dagster MCP dormant 1 year, fabdendev/dagster-mcp NEW 4 stars, Prefect 37 stars Claude Code plugin, Kestra 25 active, GethosTheWalrus/temporal-mcp 21 stars v1.1.1 now clear community pick, Airflow 3.2.0 shipped)
+
+**Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All 50 pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Best Workflow Automation MCP Servers Guide** (`content/guides/best-workflow-automation-mcp-servers.md`, 20 days stale since April 3)
+   - **BIGGEST CHANGE: Zapier Agentic Beta** — Launched April 7, 2026. 14 static meta-tools that let AI agents dynamically discover, enable, and disable actions within a conversation. Agents self-serve from 8,000+ app catalog at runtime. Prompt injection protection added April 16. This is the first workflow MCP server with agentic integration discovery
+   - **czlonkowski/n8n-mcp:** 15,400→18,588 stars (+21%), v2.33.5→v2.47.14 (April 21). n8n parent: 179K→185.2K. Still no official n8n MCP server. makafeli repo 404'd. Competitor ecosystem reshuffled: leonardsellem 1,603 stars (stale July 2025), salacoste renamed to mcp-n8n-workflow-builder (221 stars, active), spences10 renamed to mcp-n8n-builder (82 stars)
+   - **Make MCP:** GitHub repo (154 stars) now marked **legacy** — fully shifted to hosted at developers.make.com/mcp-server
+   - **ActivePieces:** 21,200→21,820 stars, 280+→~400 MCP pieces. Rebranded as "AI Agents & MCPs & AI Workflow Automation." v0.81.4
+   - **Pipedream:** Parent project 9.8K→11.3K stars. mcp-chat companion repo at 182 stars. Steady maintenance
+   - **call518/MCP-Airflow-API:** v3.6.3 (April 21), full Airflow 3.0 API v2 support with asset management tools. 45 tools. Promoted in guide — now the better choice for Airflow 3.x users
+   - **yangkyeongmo/mcp-server-apache-airflow:** 147→159 stars, still v0.2.10, no Airflow 3.0 updates. Flagged API v1 limitation
+   - **Apache Airflow:** Now at 3.2.0 (April 7, 2026) — asset partitioning, multi-team deployments
+   - **Dagster MCP:** Dormant for a full year (last activity April 2025). New alternative: fabdendev/dagster-mcp (4 stars, GraphQL wrapper, active)
+   - **Prefect MCP:** 29→37 stars, v0.0.1-beta.10. Now available as Claude Code plugin. Still experimental
+   - **Kestra MCP:** 24→25 stars, active (push April 17)
+   - **Temporal:** GethosTheWalrus/temporal-mcp emerged as clear community pick (21 stars, v1.1.1). Listed on Temporal Code Exchange. brief-hq still archived at 60 stars. No official Temporal MCP server
+   - **Windmill:** Still no MCP server (rothnic/windmill-mcp at 0 stars, stale since November 2025)
+   - **"What Changed" table added** — 12 entries covering all March→April changes
+   - **Decision tree expanded** — separate Airflow 2.x vs 3.x recommendations, Zapier Agentic Beta path, Temporal now has a concrete pick
+   - **Trends rewritten:** agentic mode arriving (Zapier), hosted MCP default, Airflow 3.0 splitting ecosystem, code-first still underserved
+
+2. **Hugo build** — successful (710ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 2 more stale guides need refreshing (Build First MCP Server [32 days], MCP Setup Guide [32 days])
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 771 — 2026-04-23 — Refresh Best Project Management MCP Servers Guide (Asana Official V2 GA mcp.asana.com/v2/mcp Streamable HTTP V1 dies May 11, ClickUp Official 6→~49 tools 14 categories still beta, Shortcut Official NEW 98 stars v0.24.0, Plane Official NEW 201 stars 55+ tools, Smartsheet Official NEW hosted, Wrike Official NEW hosted mcp.wrike.com, GitHub Projects NEW in github-mcp-server 29.2K stars, sooperset 5K stars Jira Cloud search broken #1295 FastMCP CVEs, Atlassian 608 stars Bitbucket Cloud added, Linear OAuth fixes /sse→/mcp, Notion 4,257 stars 153 issues #238 unpatched, Monday v1.6.0 hosted MCP, Todoist v8.9.1 44 tools 99 releases, Trello stalled, 13 platforms now have official servers up from 5)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)

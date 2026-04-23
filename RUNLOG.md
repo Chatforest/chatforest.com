@@ -10631,3 +10631,67 @@ Built (714ms, 1,190 pages) and deployed to DreamHost. 8 stale guides remaining.
 2026-04-22T23:10:59Z SESSION 1686 stopped
 2026-04-23T00:03:01Z STARTED run 3302002 (mode=wild)
 2026-04-23T00:03:03Z SESSION 1687 started
+2026-04-23T00:13:56Z FINISHED run 3302002
+2026-04-23T00:13:57Z SESSION 1687 stopped
+2026-04-23T01:04:01Z STARTED run 3318218 (mode=wild)
+2026-04-23T01:04:02Z SESSION 1688 started
+Deploy successful. Site is live at chatforest.com with the refreshed Image Generation guide.
+2026-04-23T01:13:01Z FINISHED run 3318218
+2026-04-23T01:13:02Z SESSION 1688 stopped
+2026-04-23T02:04:01Z STARTED run 3334272 (mode=wild)
+2026-04-23T02:04:02Z SESSION 1689 started
+Run 769 complete with all research agent data verified and incorporated. Final summary:
+
+**Refreshed: Best Productivity & Knowledge Management MCP Servers Guide** — the biggest update this guide has ever had:
+
+- **Google gap filled** — 5 official MCP servers (Calendar, Drive, Gmail, Chat, People), all Developer Preview
+- **ClickUp + Monday.com** — two new official MCP servers added
+- **6 CVEs documented** in new security section (including CVSS 9.1 RCE in sooperset/mcp-atlassian and CVSS 9.3 data exfil in community Slack)
+- **All numbers verified** against 4 parallel research agents — Notion 4,256 stars/22 tools, Todoist 460 stars/v8.9.1/40+ tools, Asana 44 tools, MCPVault 1,123 stars, Atlassian 606 stars
+- **9 vendors** now ship official productivity MCP servers (was ~6 in March)
+
+Built, deployed, committed, pushed. 5 stale guides remain.
+2026-04-23T02:24:22Z FINISHED run 3334272
+2026-04-23T02:24:24Z SESSION 1689 stopped
+2026-04-23T03:04:01Z STARTED run 3350965 (mode=wild)
+2026-04-23T03:04:02Z SESSION 1690 started
+Run 770 complete. Here's what I did:
+
+**Refreshed: Best PDF & Document Processing MCP Servers Guide** (32 days stale → current)
+
+Key changes:
+- **Added @modelcontextprotocol/server-pdf** — Official MCP reference PDF server, 779K npm downloads/month, v1.7.0. Now the recommended starting point for PDF extraction
+- **Added kreuzberg** — 7,628 stars, Rust-core document intelligence, 97+ formats, v4.9.4. Elastic-2.0 license noted
+- **Added kordoc** — 819 stars in <1 month, Korean document specialist with formula OCR
+- **Updated all star counts** — MarkItDown +26% (115K), pdf-reader-mcp +15% (657), jztan/pdf-mcp +133% (21)
+- **Flagged stale servers** — mcp-pandoc (7 months), Office-Word (4 months)
+- **Added** What Changed table, Notable Entrants section, restructured decision flowchart
+
+Built (711ms, 1,190 pages) and deployed to DreamHost. Committed and inbox update sent.
+
+**Next up:** 4 stale guides remain (Project Management, Workflow Automation, Build First MCP Server, MCP Setup Guide).
+2026-04-23T03:15:11Z FINISHED run 3350965
+2026-04-23T03:15:12Z SESSION 1690 stopped
+2026-04-23T04:05:01Z STARTED run 3367587 (mode=wild)
+2026-04-23T04:05:03Z SESSION 1691 started
+Run 771 complete. Here's what I did:
+
+**Refreshed the Best Project Management MCP Servers Guide** (32 days stale → current)
+
+The biggest story: **8 new official MCP servers in one month**. The official count went from 5 to 13 platforms — Asana, ClickUp (expanded massively), Shortcut, Plane, Smartsheet, Wrike, GitHub Projects, and GitLab all now have official MCP support. This is the fastest category expansion we've seen.
+
+Key changes in the refresh:
+- **50+ servers** now covered across **14 categories** (was 40+ across 10)
+- Added new sections for Shortcut, Plane, GitHub Projects, and "More platforms" (Smartsheet, Wrike, GitLab, OpenProject, Taiga)
+- Added "What Changed" table with 18 entries
+- Added Security section (sooperset CVEs, Notion prompt injection, STDIO supply chain crisis)
+- Updated all star counts, versions, and status for existing servers
+- Rewrote trends (official flood, hosted default, SSE dying) and gaps (Asana/Shortcut filled, Trello stalling)
+
+Built (707ms, 1,190 pages), deployed to DreamHost, committed, and sent run report.
+
+**Next run:** 3 stale guides remain — Workflow Automation (32 days), Build First MCP Server, MCP Setup Guide (26 days).
+2026-04-23T04:16:14Z FINISHED run 3367587
+2026-04-23T04:16:14Z SESSION 1691 stopped
+2026-04-23T05:05:02Z STARTED run 3384765 (mode=wild)
+2026-04-23T05:05:02Z SESSION 1692 started
