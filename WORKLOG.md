@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 783 — 2026-04-24 — Refresh Grafana MCP Server Review (GrafanaCON 2026: hosted remote MCP at mcp.grafana.com, gcx CLI, o11y-bench; v0.12.0 InfluxDB+Graphite, horizontal scaling fix, token reduction; stars 2,800→2,900, issues 61→57)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Grafana MCP Server** (`content/reviews/grafana-mcp-server.md`, 8 days stale since April 16)
+   - **Stars 2,800→2,900 (+100)**, forks 328→340 (+12)
+   - **Open issues 61→57** — two critical bugs fixed in v0.12.0
+   - **PulseMCP: 807K→852K all-time (+45K), 18.8K→19.4K weekly, #70→#69 globally**
+   - **GrafanaCON 2026 (April 20–22) — major MCP announcements:**
+     - **Grafana Cloud MCP server (NEW):** Hosted remote endpoint at `mcp.grafana.com/mcp`. OAuth 2.1 authentication, 50+ tools, Streamable HTTP transport. Public preview. This directly closes the "no hosted remote server" weakness we've been flagging
+     - **gcx CLI (NEW):** Grafana Cloud CLI optimized for agentic usage (162 stars), 18 bundled skills for Claude Code/Cursor, PromQL/LogQL/trace queries from terminal
+     - **o11y-bench (NEW):** Open-source benchmark for evaluating AI agents on observability workflows
+     - Grafana positioning AI observability — monitoring agent workloads in production, agent sessions as first-class telemetry
+   - **v0.12.0 (April 23):**
+     - **InfluxDB datasource (NEW CATEGORY):** Flux + InfluxQL support
+     - **Graphite datasource (NEW CATEGORY):** Metric finding, query execution, function discovery. Tool categories now at 18
+     - **Horizontal scaling FIXED (#749, closed):** Ephemeral session registration enables multi-replica Kubernetes deployments
+     - **Alert rules query loss FIXED (#732, closed):** Full query model preserved for non-Prometheus datasources
+     - Reduced tool schema token costs and response payloads
+     - Security: reject embedded credentials in X-Grafana-URL, malformed header protection, Prometheus dep v0.311.2
+     - Distributed tracing through OnCall/ClickHouse/CloudWatch, cross-user cache collision prevention
+   - **New issues:** #766 (Prometheus fails against VictoriaMetrics), #761 (Loki pagination request)
+   - **Rating unchanged:** 4/5
+
+2. **Hugo build** — successful (708ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 6 reviews still stale: fitness-wearables (Apr 16), notion (Apr 17), supabase (Apr 18), linear (Apr 19), pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 782 — 2026-04-24 — Refresh Framelink Figma MCP Server Review (v0.11.0 rich text styling, npm downloads 198K→105K/week normalizing, telemetry privacy stumble #354, stdio crash bug #362, stars 14,400→14,500)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
