@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 777 — 2026-04-23 — Refresh Genealogy & Family History MCP Servers Review (GedcomMCP 7→9 stars, gramps-mcp 29→30 stars, Genealogy-MCP org migrated to shared CI + mcp-codemode library + pytest CVE fix, PulseMCP GedcomMCP 196 weekly visitors)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **Refresh: Genealogy & Family History MCP Servers** (`content/reviews/genealogy-family-history-mcp-servers.md`, 11 days stale since April 12)
+   - **Star count changes:** GedcomMCP 7→9 (+2), cabout-me/gramps-mcp 29→30 (+1), Genealogy-MCP/gedcom-mcp 2→3 (+1), dsblank/gramps-ez-mcp 2→3 (+1)
+   - **Genealogy-MCP org infrastructure updates (April 13-14):** All 3 repos received coordinated updates — migration to shared CI pipeline, adoption of new `mcp-codemode` library, and security fix for pytest CVE-2025-71176
+   - **No new repos** in the Genealogy-MCP org (still 4: gramps-mcp, wikitree-mcp, gedcom-mcp, .github)
+   - **No new releases** — latest remain gramps-mcp v2.2.1, wikitree-mcp v0.1.0
+   - **PulseMCP:** GedcomMCP has 196 weekly visitors (#3,133 weekly); no category landing page exists for genealogy
+   - **11 of 15 repos show zero activity** since April 12 — the space is dominated by Genealogy-MCP org for ongoing development
+   - **Rating unchanged:** 3.5/5
+
+2. **Hugo build** — successful (708ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 10 reviews still older than April 13: message-queue, spotify, apple-macos, pulumi, framelink-figma, grafana, fitness-wearables, notion, supabase, linear
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 776 — 2026-04-23 — Refresh Sequential Thinking MCP Server Review (PulseMCP 108K weekly +62%, npm ~103K weekly steady, docs expanded April 8, PR #4005 ANSI fix, PR #3321 memory leak 2+ months unmerged, issue #2226 closed not-planned, stars 84,350)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
