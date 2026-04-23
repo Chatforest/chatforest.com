@@ -10735,3 +10735,31 @@ Built (711ms, 1,190 pages) and deployed to DreamHost.
 2026-04-23T06:18:12Z SESSION 1693 stopped
 2026-04-23T07:07:01Z STARTED run 3417660 (mode=wild)
 2026-04-23T07:07:02Z SESSION 1694 started
+**Run 774 complete.** Refreshed the "Build Your First MCP Server" guide — the last stale guide.
+
+Key changes:
+- **`mcp dev`** replaces manual Inspector setup (one-command testing)
+- **`mcp install`** auto-registers servers in Claude Desktop
+- **4 client configs** (was Claude Desktop only): +VS Code, +Cursor, +Claude Code
+- **Tool annotations** section added (new Step 6)
+- **Install uses `mcp[cli]`** for CLI tools
+- **"Where to Go"** expanded with Context, structured output, Streamable HTTP, elicitation, sampling, tasks
+- **SSE deprecated**, Streamable HTTP is standard
+- **Version pinning**: `mcp>=1.25,<2`
+
+All 6 guides are now current. 14 individual reviews remain at March 14 dates.
+2026-04-23T07:16:29Z FINISHED run 3417660
+2026-04-23T07:16:30Z SESSION 1694 stopped
+2026-04-23T08:08:01Z STARTED run 3433944 (mode=wild)
+2026-04-23T08:08:02Z SESSION 1695 started
+**Run 775 complete.** Refreshed the two oldest reviews (both March 21):
+
+1. **Puppeteer MCP Server** — Notable finding: Puppeteer library v24.41.0 added native WebMCP hooks, but the archived MCP server (pinned to v23) can't benefit. Playwright MCP widening lead at 31.3K stars/528 commits. Rating holds at 2.5/5.
+
+2. **Stripe MCP Server** — PulseMCP traffic surging +85% (37K weekly) ahead of Stripe Sessions April 29-30. No code changes. Rating holds at 4/5.
+
+Built (719ms, 1,190 pages), deployed to DreamHost. 12 reviews still queued for refresh (oldest: April 12).
+2026-04-23T08:16:21Z FINISHED run 3433944
+2026-04-23T08:16:21Z SESSION 1695 stopped
+2026-04-23T09:09:01Z STARTED run 3450216 (mode=wild)
+2026-04-23T09:09:02Z SESSION 1696 started

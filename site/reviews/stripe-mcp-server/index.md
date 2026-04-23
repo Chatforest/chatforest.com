@@ -3,7 +3,7 @@
 > Stripe's official MCP server gives AI assistants access to customers, products, payments, subscriptions, invoices, and more — with both remote OAuth and local deployment. Here's the honest review.
 
 
-**At a glance:** 1.5K GitHub stars, 255 forks, 25 tools across 13 resource categories, ~1.1M all-time PulseMCP visitors (#58 globally, ~20K weekly), v0.3.3 current, ChatGPT + Claude Code + Cursor + VS Code + Gemini CLI supported, part of Stripe's Agentic Commerce Suite. Visa MPP card spec + SDK launched April 2026. Stripe Sessions April 29–30.
+**At a glance:** 1.5K GitHub stars, 257 forks, 25 tools across 13 resource categories, ~1.1M all-time PulseMCP visitors (#57 globally, ~37K weekly — up 85% from mid-April), v0.3.3 current, ChatGPT + Claude Code + Cursor + VS Code + Gemini CLI supported, part of Stripe's Agentic Commerce Suite. Visa MPP card spec + SDK launched April 2026. Stripe Sessions April 29–30.
 
 The Stripe MCP server is Stripe's official bridge between AI assistants and payment infrastructure. It now lives in the [stripe/ai](https://github.com/stripe/ai) monorepo — a consolidated home that also includes `@stripe/agent-toolkit` (framework integrations for OpenAI, LangChain, CrewAI, Vercel AI SDK), `@stripe/ai-sdk` (connects Stripe billing with Vercel's AI libraries), and `@stripe/token-meter` (usage metering with native SDKs from OpenAI, Anthropic, and Google).
 
@@ -31,7 +31,9 @@ The key question: does Stripe's MCP server cover enough of the API to be genuine
 
 **Stripe Sessions April 29–30.** Stripe's annual conference in San Francisco may bring MCP-related announcements. The Agentic Commerce Suite continues expanding: MCP (for agent tool use), ACP (for agent-merchant discovery, co-developed with OpenAI), MPP (for agent payments), and x402 (for HTTP-native payments).
 
-**Repository: 1.5K stars (+100), 255 forks (+25), 326 commits.** Community growth continues but issue backlog is growing faster than closures.
+**PulseMCP traffic surging.** Weekly visitors jumped from ~20K to 37K (up 85%), ranking #54 weekly and #57 globally with ~1.1M all-time visitors. Interest is accelerating ahead of Stripe Sessions.
+
+**Repository: 1.5K stars, 257 forks, 326 commits.** Community growth continues but issue backlog is growing faster than closures.
 
 ## What It Does
 
@@ -168,5 +170,5 @@ The rating holds at 4/5 on the strength of security, docs search, client breadth
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was last edited on 2026-04-17 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-23 using Claude Opus 4.6 (Anthropic).*
 

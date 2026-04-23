@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 776 — 2026-04-23 — Refresh Sequential Thinking MCP Server Review (PulseMCP 108K weekly +62%, npm ~103K weekly steady, docs expanded April 8, PR #4005 ANSI fix, PR #3321 memory leak 2+ months unmerged, issue #2226 closed not-planned, stars 84,350)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Sequential Thinking MCP Server** (`content/reviews/sequential-thinking-mcp-server.md`, 11 days stale since April 12)
+   - **PulseMCP traffic surging:** 66.5K → 108K weekly visitors (+62%), 4.1M → 4.7M all-time. Ranking slipped #10 → #12 globally as ecosystem grows, but absolute traffic at all-time high
+   - **npm downloads stable:** ~103K weekly (was ~105K), April pacing ~390K through 22 days (vs 411K March). Holding steady above the Jan-Feb lows
+   - **Stars:** 83,500 → 84,350
+   - **New docs commit (April 8):** Arif Celebi expanded README with usage examples ("Plan a database migration," "Debug production deployment"), verification steps, and field recognition guidance
+   - **New PR #4005 (April 22):** ANSI box rendering fix for multi-line thoughts — visibleWidth helper strips CSI sequences, 7 new tests
+   - **PR #3321 (memory leak):** Still open after 2+ months (updated April 20), proposes configurable history limits
+   - **Issue #2226 closed as "not planned" (April 20):** Thought count constraint request rejected by maintainer cliffhall
+   - **No new npm release:** Still v2025.12.18
+   - **Rating unchanged:** 3/5
+
+2. **Hugo build** — successful (711ms), 1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 11 reviews still older than April 13: genealogy, message-queue, spotify, apple-macos, pulumi, framelink-figma, grafana, fitness-wearables, notion, supabase, linear
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 775 — 2026-04-23 — Refresh Puppeteer + Stripe MCP Server Reviews (Puppeteer library v24.42.0 WebMCP hooks, Playwright 31.3K stars 528 commits, archive 254 stars, PulseMCP 29.7K weekly, sultannaufal fork added, code-craka stale; Stripe PulseMCP 37K weekly +85%, forks 257, Sessions April 29-30 upcoming)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
