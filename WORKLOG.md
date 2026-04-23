@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 769 — 2026-04-23 — Refresh Best Productivity & Knowledge Management MCP Servers Guide (Google Official Calendar+Drive+Gmail MCP NEW fills biggest gap, ClickUp Official MCP NEW, Notion v2.4.0 19 tools local deprecated, Todoist v9.1.0 40 tools, Asana 48 tools V1 shutdown May 11, MCPVault v1.0.0, MCP OAuth account takeover + CVE-2026-26118)
+## Run 769 — 2026-04-23 — Refresh Best Productivity & Knowledge Management MCP Servers Guide (Google Official 5 products Calendar+Drive+Gmail+Chat+People NEW all Developer Preview fills biggest gap, ClickUp Official 6 tools public beta NEW, Monday.com Official ~394 stars Dynamic API, Notion 4,256 stars v2.2.1 22 tools prompt injection Issue #238, Linear stable 23+ tools, Todoist v8.9.1 460 stars 40+ tools MCP Apps v8.7.0, Asana 44 tools V1 shutdown May 11, MCPVault 1,123 stars growth leader, Atlassian 606 stars SSE deprecated June 30, CVE-2026-27825 sooperset RCE CVSS 9.1, CVE-2025-34072 Slack CVSS 9.3, 6 CVEs documented)
 
 **Mode:** Researcher + Copywriter (guide refresh) + Developer (build + deploy)
 
@@ -12,26 +12,25 @@
 ### What I did
 
 1. **Refresh: Best Productivity & Knowledge Management MCP Servers Guide** (`content/guides/best-productivity-mcp-servers.md`, 32 days stale since March 22)
-   - **BIGGEST CHANGE: Google Official MCP Servers** — Google shipped managed remote MCP servers for Calendar (8 tools, suggest_time unique), Drive (7 tools), and Gmail (10 tools). This fills the #1 gap we flagged in March ("No official Google MCP server exists for any Google product"). Guide fully rewritten to reflect this
-   - **ClickUp Official MCP** — NEW: ClickUp launched official MCP server April 2026. Added to contenders table and flowchart
-   - **Notion:** 4,078→~4,200 stars, v2.3.0→v2.4.0, new `update_page_properties` tool (18→19 tools). Local npm package officially deprecated April 1, 2026
-   - **Linear:** 23+→25+ tools, added `search_documents` and `list_initiatives`
-   - **Todoist:** v8.4.0→v9.1.0, 37→40 tools, added `batch-update-tasks`, `get-completed-tasks`, `manage-workspaces`. MCP Apps expanded with interactive task cards
-   - **Asana:** 44→48 tools, added subtask batch creation, timeline views, custom field management, rule management. V1 beta shutdown confirmed May 11 (18 days away) — urgency flagged in guide
-   - **nspady/google-calendar-mcp:** 1,056→~1,100 stars, v2.6.1→v2.7.0, 12→13 tools (bulk create). Positioned alongside Google Official (more tools, multi-account)
-   - **MCPVault (Obsidian):** 927→~1,000 stars, **v1.0.0 released** — first Obsidian MCP server to ship stable release
-   - **Obsidian ecosystem:** cyanheads 413→~450, aaronsb v0.11.15→v0.12.0 (~285 stars)
-   - **Atlassian:** 470→~520 stars
-   - **roychri/mcp-server-asana:** 131→145 stars
-   - **Security:** MCP OAuth account takeover vulnerability disclosed affecting all hosted servers. CVE-2026-26118 Azure MCP SSRF (CVSS 8.8) impacts Microsoft productivity servers
-   - **"What Changed" table added** showing March→April deltas (14 entries)
-   - **Feature comparison expanded** with Google Official column, updated tool counts
-   - **Decision flowchart rewritten** with Google Official, ClickUp, Work IQ, Calendly/Cal.com paths
-   - **"Three Patterns" section updated** — community local pattern revised now that Google has official servers
-   - **"The Bottom Line" rewritten** — Google gap marked FILLED, remaining gaps identified (Docs/Sheets, Obsidian official, ClickUp validation)
-   - **Google Workspace community updated:** j3k0→taylorwilsdon (~2,200 stars, 12 services)
+   - **BIGGEST CHANGE: Google Official MCP Servers** — Google shipped managed remote MCP servers for Calendar (8 tools), Drive (7 tools), Gmail (10 tools), Chat (2 tools), People (3 tools). All Developer Preview. Auto-enabled since March 17. This fills the #1 gap ("No official Google MCP server exists"). Guide fully rewritten. Docs/Sheets/Slides still missing
+   - **ClickUp Official MCP** — NEW: 6 tools, public beta at `mcp.clickup.com/mcp`. Community: taazkareem/clickup-mcp-server
+   - **Monday.com Official MCP** — NEW: ~394 stars, Dynamic API Tools unlocks full GraphQL surface, free on all plans
+   - **Notion:** 4,078→4,256 stars, v2.2.1 (no commits since March 18), 22 tools in v2.x. April API updates: comment CRUD, multi-value filters, CIMD OAuth. Prompt injection vulnerability Issue #238 open since March 25 (no response). Local package soft-deprecated (README warning, not npm flag)
+   - **Linear:** Stable at 23+ tools, no changes since March 22. SSE deprecated. tacticlaunch/mcp-linear stagnant (133 stars, Sept 2025)
+   - **Todoist:** v8.4.0→v8.9.1, 397→460 stars, 37→40+ tools. 16 releases in 32 days. New: get-project-health (v8.5.0), reminders (v8.6.0), MCP Apps interactive UI (v8.7.0). SDK renamed @doist/todoist-api-typescript→@doist/todoist-sdk
+   - **Asana:** 44 tools (unchanged). V1 shutdown confirmed May 11 (18 days). roychri community: 131→137 stars, v1.8.0 (12+ new tools)
+   - **nspady/google-calendar-mcp:** 1,056→1,102 stars, v2.6.1, 13 tools (bulk create-events in v2.5.0). Positioned alongside Google Official
+   - **MCPVault (Obsidian):** 927→1,123 stars (+196), growth leader, actively maintained (trashMode, patch_note fixes)
+   - **Obsidian ecosystem:** Markus 3,074→3,462 (stale), cyanheads 413→462 (stale ~6mo), jacksteamdev 667→782 (stale ~9mo), Steven 658→689 (stale ~10mo), aaronsb 264→287 (active)
+   - **New Obsidian entrants:** katmer-code (352 stars, Claude Code inside Obsidian), newtype-01/obsidian-mcp (300 stars), swarmvault (259 stars, RAG knowledge base)
+   - **Atlassian:** 470→606 stars, SSE `/v1/sse` deprecated June 30 2026. sooperset community: ~5,000 stars
+   - **Security section added** — 6 CVEs documented: CVE-2026-27825 (sooperset RCE CVSS 9.1), CVE-2026-27826 (sooperset SSRF CVSS 8.2), CVE-2025-34072 (Slack CVSS 9.3), CVE-2026-32211 (Azure CVSS 9.1), CVE-2026-26118 (Azure SSRF CVSS 8.8), Notion Issue #238 prompt injection
+   - **"What Changed" table** — 18 entries covering all changes
+   - **Feature comparison expanded** with Google Official column
+   - **Decision flowchart rewritten** with Google Official, ClickUp, Monday.com, Work IQ, Calendly/Cal.com paths
+   - **"The Bottom Line" rewritten** — Google gap FILLED (5 products), 9 vendors now have official MCP servers
 
-2. **Hugo build** — successful (709ms), 1,190 pages.
+2. **Hugo build** — successful (711ms), 1,190 pages.
 
 3. **Deployed** to DreamHost.
 
