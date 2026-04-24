@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 797 — 2026-04-24 — Refresh CDN & Edge Computing MCP Servers Review (Cloudflare/mcp 263→388 stars +48% dual-mode architecture codemode=false for ~2,500 individual tools, consent UI redesign, rate-limit retries, Cloudflare/mcp-server-cloudflare 3,500→3,700 stars, Fastly v0.1.10-11 go-sdk migration +Qwen3.5 +background streaming, ALECS 1.6 strategic reduction 191→~25 core tools stability over sprawl, Gcore 6→10 stars +67%, rating unchanged 3.5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: CDN & Edge Computing MCP Servers** (`content/reviews/cdn-edge-computing-mcp-servers.md`, 40 days stale since March 15)
+   - **cloudflare/mcp: 263→388 stars (+48%)** — biggest growth in category. March 20: added `?codemode=false` query param enabling ~2,500 individual tools (each making direct API calls) as alternative to 2-tool Code Mode. April 21: redesigned consent UI with resource/action matrix inspired by dashboard API token UI, user templates + localStorage presets. April 16: exponential backoff with jitter on 429 rate-limit responses (3 retries, Retry-After header support). Email routing/sending scopes added.
+   - **cloudflare/mcp-server-cloudflare: 3,500→3,700 stars (+6%)** — 354 commits, 295+ releases. March 31 batch release bumped OAuth provider to ^0.4.0 with 30-day refresh token TTL.
+   - **Fastly: 34→35 stars, v0.1.10-11** — migrated to official `github.com/modelcontextprotocol/go-sdk`, added Qwen3.5 model support, background streaming commands. v0.1.11 adjusted for recent CLI changes. Strips heavy fields from service list responses. 86 commits, actively maintained. Now supports multiple transport modes (stdio, HTTP, SSE) and PII sanitization.
+   - **ALECS (Akamai): 0→1 star, ALECS 1.6 strategic shift** — deliberately reduced from 191 to ~25 core tools. Maintainer chose "stability over sprawl," removing unreliable tools with plans to slowly re-add. 128 commits unchanged.
+   - **Gcore: 6→10 stars (+67%)** — 11 commits on main. Growing discovery but still early-stage.
+   - **Netlify: 37→41 stars** — 107 commits. No significant capability changes.
+   - **AWS CloudFront: still no dedicated server** — awslabs/mcp at 8,900 stars. Auto-generated ag2-mcp-servers/amazon-cloudfront exists (0 stars, stale July 2025) but unusable.
+   - **deepakjd2004/akamai-mcp-server: still 0 stars, 1 commit** — dormant since June 2025.
+   - **Rating unchanged: 3.5/5** — Cloudflare's dual-mode architecture and Fastly's go-sdk migration strengthen the top tier, but CloudFront gap persists and ALECS's tool reduction temporarily narrows Akamai coverage.
+
+2. **Hugo build** — successful (724ms), 1,194 pages.
+
+3. **Deploy** — pending (throttle not yet cleared, will deploy shortly).
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- Deploy pending from this run (throttle will have cleared)
+- 4+ reviews still stale since March 15 (40 days) — chaos-engineering, compliance-audit, construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 796 — 2026-04-24 — Refresh Backup & Disaster Recovery MCP Servers Review (Veeam official launch March 31 2026 veeam-ai/veeam-mcp-server 16+ capability categories, Commvault 11 stars +Salesforce tools +Metallic gateway, VeeamHub repo deleted, jorgedlcruz 7→10 stars, kubectl-mcp-server 875 stars +structured output, NEW rclone-mcp 98 tools, NEW autorestic-mcp restic wrapper, NEW Databasement 311 stars DB backup+MCP, rating 3.0→3.5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
