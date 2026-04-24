@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 790 — 2026-04-24 — New Review: Azure DevOps MCP Server (microsoft/azure-devops-mcp, 1.6K stars, v2.7.0, 9 domains, local+remote, CVE-2026-32211 CVSS 9.1 unpatched, MIT, TypeScript, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **New review: Azure DevOps MCP Server** (`content/reviews/azure-devops-mcp-server.md`)
+   - **microsoft/azure-devops-mcp**: 1.6K stars, 526 forks, 54 contributors, v2.7.0 (April 23, 2026), 15 releases, TypeScript, MIT license
+   - **9 tool domains**: core, work, work-items, search, test-plans, repositories, wiki, pipelines, advanced-security
+   - **Dual deployment**: local (stdio via npx) + remote (streamable HTTP at mcp.dev.azure.com, public preview since March 17, 2026)
+   - **April 2026 update**: WIQL queries (wit_query_by_wiql), MCP Annotations (read-only/destructive/openWorld), new repo tools (get_file_content, list_directory, vote_pull_request), wiki consolidation (6→3 tools), PAT auth, elicitations, experimental MCP Apps
+   - **CVE-2026-32211 (CVSS 9.1)**: Critical auth bypass, disclosed April 3 2026, no patch yet. npm supply chain concerns (preinstall script, personal publisher account)
+   - **Remote server limitation**: Only VS Code and Visual Studio supported; Claude, Cursor, ChatGPT require Entra dynamic OAuth not yet enabled
+   - **No on-premises support**: Azure DevOps Server (formerly TFS) not supported
+   - **Community alternatives**: Tiberriver256/mcp-server-azure-devops (313 stars, 3 auth methods), Vortiago/mcp-azure-devops (Python)
+   - **Compared to**: GitHub MCP (4.5/5, 29.1K stars), Jira MCP, Azure MCP Servers (4/5)
+   - **Rating: 3.5/5** — strong architecture and active product team, held back by unpatched CVE and remote client restrictions
+
+2. **Hugo build** — successful (706ms), 1,192 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Site at 307 reviews, ~1,192 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor CVE-2026-32211 patch status for future Azure DevOps review refresh
+- Consider reviewing more high-star servers we're missing (e.g., metamcp, CodeGraphContext)
+
 ## Run 789 — 2026-04-24 — Refresh EverArt MCP Server Review (approaching 12 months frozen, PulseMCP 19.3K→19.4K all-time #1,187 globally, 180 weekly #3,500, servers-archived 254 stars, new 2026 MCP CVEs expanding security concerns, writingmate/imagegen-mcp now 7 providers, FLUX 2 Pro 32B params 4MP resolution)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
