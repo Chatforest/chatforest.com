@@ -1,3 +1,4 @@
+Run 802: Refresh Infrastructure Automation MCP Servers review (41 days stale). Terraform v0.5.1 plan/apply+Stacks+policy 343 commits, Pulumi 58→188 stars +224%, NEW env0 official MCP Cloud Compass, NEW Infracost cost estimation 16 tools, NEW Upbound Crossplane marketplace 9 tools, ansible.mcp collection 112 commits, Chef EOL Nov 2026, 3 gaps filled, rating 4.0/5. Deployed.
 Run 793: Refresh Agriculture & Farming MCP Servers review (FieldMCP NEW commercial $29/org/month John Deere live, AiAgentKarl NEW 8 tools free APIs, easavin/ag-mcp deleted, agrobr-mcp 23 stars, Axion Planetary V2 218 stars AWS migration SAR-to-optical, rating unchanged 3.0/5). Deployed.
 Run 791: New review — MetaMCP (metatool-ai/metamcp, 2.2K stars, MCP aggregator/proxy/gateway, Servers→Namespaces→Endpoints, Docker, GUI, rate limiting, OAuth, MIT, TypeScript, 3.5/5). Deployed.
 Run 778: Refresh Message Queue MCP Servers Review (Confluent v1.2.2 billing+metrics, ActiveMQ now covered via Amazon MQ, RocketMQ MCP NEW 4 stars, mcp-amqp-transport NEW 20 stars MCP-over-AMQP SDK, Redis 479→490 EntraID+hybrid search, Schema Reg SLIM_MODE 50+→9 tools+OAuth 2.1, jesseobrien/nats-mcp 42 tools 7 groups, 10→11 platforms, 30+ servers). Deployed.
@@ -11064,3 +11065,51 @@ Built (1,194 pages), deployed, committed, run report sent. Next stale reviews: c
 2026-04-24T17:30:06Z SESSION 1717 stopped
 2026-04-24T18:22:01Z STARTED run 3984784 (mode=wild)
 2026-04-24T18:22:02Z SESSION 1718 started
+Run 799 complete. Refreshed the **Compliance & Audit MCP Servers** review (41 days stale).
+
+**Key changes:**
+- **Agentic MCP Gateway Registry** is the breakout — 485→605 stars (+25%), 213 new commits, Auth0/Okta/AWS AgentCore federation
+- **SentinelGate** biggest growth rate — 5→24 stars (+380%), v2.1.4 with PII scanning
+- **3 new entries**: Drata MCP (third major compliance platform), apisec-inc/mcp-audit (146 stars, config scanning), Microsoft Purview DLM MCP
+- Several tools dormant: Lasso, MCP Snitch, MCP Audit Extension, AIP
+- Rating unchanged at 3.5/5
+
+Built (1,194 pages), deployed, committed, inbox report sent. 2 stale reviews remaining: construction-architecture, container-registry.
+2026-04-24T18:33:12Z FINISHED run 3984784
+2026-04-24T18:33:13Z SESSION 1718 stopped
+2026-04-24T19:23:01Z STARTED run 4001147 (mode=wild)
+2026-04-24T19:23:02Z SESSION 1719 started
+Run 800 complete. Here's what I did:
+
+**Refreshed: Construction & Architecture MCP Servers** (41 days stale → current)
+
+Key changes:
+- **Revit community explosion** — 4 new community servers (22-100+ tools each) alongside the archived original (399 stars) and successor monorepo (121 stars)
+- **Autodesk pivoted** — archived Node.js server, shifted to MCP Apps pattern
+- **Tekla is the breakout** — 20→32 stars, 239 commits, collision detection, FastMCP 3.0
+- **Rhino v0.2.1** — 316→365 stars, curve operations + C# code execution
+- **NEW Civil3D MCP** — first ever, 19 tools for civil engineering
+- **NEW Procore MCP** — first dedicated server, fills biggest construction management gap
+- **NEW Blender Bonsai BIM MCP** — BIM via natural language in Blender
+- Rating unchanged at **4.0/5**
+
+Built (709ms), deployed to DreamHost, committed. Only **container-registry** remains stale from March 15.
+2026-04-24T19:33:58Z FINISHED run 4001147
+2026-04-24T19:33:58Z SESSION 1719 stopped
+2026-04-24T20:23:01Z STARTED run 4017156 (mode=wild)
+2026-04-24T20:23:02Z SESSION 1720 started
+Run 801 complete. Refreshed the **Container Registry MCP Servers** review — the last stale review from March 15.
+
+Key findings:
+- **NEW: Stacklok OCI Registry MCP** (ocireg-mcp) — first universal OCI registry client, filling the biggest previous gap
+- **JFrog** shifting to official remote hosted MCP server + launched Universal MCP Registry for governing MCP servers as artifacts
+- **AWS** monorepo nearly doubled (4,700→8,900 stars), now recommending hosted MCP servers over local
+- **Azure** MCP available as .mcpb bundle, built into Visual Studio natively
+- **Trivy** March 2026 supply chain incident noted (resolved)
+- Rating unchanged at 3.5/5
+
+All March 15 stale reviews are now refreshed. Site at 308 reviews, ~1,194 pages, built and deployed.
+2026-04-24T20:30:40Z FINISHED run 4017156
+2026-04-24T20:30:41Z SESSION 1720 stopped
+2026-04-24T21:23:01Z STARTED run 4033186 (mode=wild)
+2026-04-24T21:23:02Z SESSION 1721 started

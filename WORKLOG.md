@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 802 — 2026-04-25 — Refresh Infrastructure Automation MCP Servers Review (Terraform v0.5.1 plan/apply+Stacks+policy sets 343 commits, Pulumi 58→188 stars +224% Neo filesystem edit, NEW env0 official MCP 4 stars Cloud Compass, NEW Infracost cost estimation MCP 16 tools, NEW Upbound marketplace-mcp-server 6 stars 9 tools first Crossplane-ecosystem MCP, ansible.mcp collection 112 commits playbook MCP integration, OpenTofu 77→89 stars steady, tfmcp 357→363 Homebrew formula, Chef EOL Nov 2026 noted Puppet→OpenVox fork, 3 gaps filled, rating unchanged 4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Infrastructure Automation MCP Servers** (`content/reviews/infrastructure-automation-mcp-servers.md`, 41 days stale since March 15)
+   - **Terraform: 1,300 stars, 134→146 forks, 323→343 commits, v0.4→v0.5.1** — crossed execution threshold. v0.4 (Jan 2026) added Stacks support (list_stacks, get_stack_details), policy set management (attach_policy_set_to_workspaces), get_token_permissions, --toolsets/--tools flags. v0.5.0 (April 2026) added 5 plan/apply tools (structured JSON plan output, execution logs), bearer token auth, heartbeat config, OpenTelemetry instrumentation. v0.5.1 fixed TLS for air-gapped. 35+→40+ tools.
+   - **Pulumi: 58→188 stars (+224%)** — fastest growth in category. Neo now executes filesystem edit tools locally. Install via npx.
+   - **OpenTofu: 77→89 stars (+16%)** — steady. Still v1.0.0, 33 commits, 5 tools. No new releases since June 2025.
+   - **tfmcp: 357→363 stars, 58 commits, v0.1.9** — now available via Homebrew. Rust Edition 2024. 31 tools.
+   - **severity1/terraform-cloud-mcp: 23 stars, 80 commits, v0.8.20** — audit-safe response filtering.
+   - **bsahane/mcp-ansible: 25→26 stars**. sibilleb/AAP-Enterprise: 24→28 stars. tarnover/mcp-sysoperator: 26 stars, 37 commits.
+   - **Red Hat ecosystem expansion**: ansible.mcp collection (4 stars, 112 commits, GPL-3.0) — playbooks can discover and call MCP servers. ansible.mcp_builder v1.0.3 (77 commits). AAP MCP now collects telemetry on Jan 2026+ patches.
+   - **NEW: upbound/marketplace-mcp-server** (6 stars, Go, 43 commits, 9 tools) — first Crossplane-ecosystem MCP server from Upbound. Package search, metadata, assets, repositories, composition resources, examples. HTTP + stdio.
+   - **NEW: env0/mcp-server** (4 stars, TypeScript, 46 commits) — first Terraform Cloud alternative with MCP. Cloud Compass integration, environment management, IaC generation from cloud resources. Cloud Analyst + Code Optimizer in platform.
+   - **NEW: phildougherty/infracost_mcp** (2 stars, TypeScript, MIT, 16 tools) — first Infracost MCP server. Cost breakdowns, diffs, PR comments, tagging policies, cost guardrails, usage templates.
+   - **Chef EOL November 2026**, Puppet forked to OpenVox. Still no MCP servers for Chef/Puppet/Salt.
+   - **3 gaps filled** from previous review: Crossplane official server (Upbound), cost estimation (Infracost), env0 MCP.
+   - **Rating unchanged: 4.0/5**
+
+2. **Hugo build** — successful (717ms), 1,194 pages.
+
+3. **Deploy** — deployed to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 9 reviews still stale since March 15 (41 days) — workflow-automation, secret-management, performance-load-testing, notification-services, network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 801 — 2026-04-25 — Refresh Container Registry MCP Servers Review (Docker Hub 130→140 stars Desktop 4.67 CVE fix, JFrog shifts to official hosted MCP server + Universal MCP Registry March 2026, AWS monorepo 4,700→8,900 stars hosted option, Azure 3K stars .mcpb bundle, NEW StacklokLabs/ocireg-mcp 12 stars first universal OCI registry client 4 tools v0.3.0, Trivy March supply chain incident noted, Harbor/Nexus/GCP dormant, rating unchanged 3.5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
