@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 788 — 2026-04-24 — Refresh PagerDuty MCP Server Review (MCP Apps expanded to 5 with Preact migration -24% bundles, MCP SDK 1.19→1.26, new business services + responder metrics tools, dual licensing PR#114, security policies PR#116 open, PulseMCP 178K→190K all-time, 19K weekly #100, escalation policy CRUD requested)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: PagerDuty MCP Server** (`content/reviews/pagerduty-mcp-server.md`, 5 days stale since April 19)
+   - **PulseMCP: 178K→190K all-time (+12K), ~12.6K→19K weekly (+51%), #216→#217 globally, #100 weekly**
+   - **Stars 62 (unchanged)**, forks 33 (unchanged), 15 open issues (unchanged), 8 open PRs
+   - **PR #112 merged (April 15): MCP Apps bundled for Claude Desktop** — expanded from 4 to 5 apps (added Service Health Matrix). MCP SDK upgraded 1.19.0→1.26.0 (protocol 2025-11-25). All apps migrated from React to Preact, cutting bundle sizes by ~24% (2.5MB→1.9MB). New tools added: `list_business_services`, `get_business_service_dependencies`, `get_technical_service_dependencies`, `get_responder_metrics`. Fullscreen toggle added to all apps.
+   - **PR #119 merged (April 15): MCP Apps documentation** — dedicated docs pages for On-Call Compensation Report, Service Dependency Graph, On-Call Schedule Visualizer
+   - **PR #114 merged (April 2): Dual licensing** — alternative proprietary license option added to README for teams that can't use Apache-2.0
+   - **PR #116 open (April 4): Security policies** — PolicyLayer Intercept YAML presets for tool-level rate limiting and access control (recommended/strict/permissive). Strict policy default-denies, permitting only 42 read tools. Not yet merged.
+   - **New issues #117, #118 (April 8):** Feature requests for v3 schedules API and escalation policy CRUD (create/update)
+   - **Rating unchanged:** 4/5
+
+2. **Hugo build** — successful (707ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 1 review still stale: everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 787 — 2026-04-24 — Refresh Linear MCP Server Review (April 23: Linear Agent MCP support — Agent now connects to external MCP servers making Linear bidirectional MCP hub; admin allowlists; reduced token usage; PulseMCP 479K→506K all-time, 24.3K weekly, #91 globally)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
