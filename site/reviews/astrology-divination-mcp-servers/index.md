@@ -7,7 +7,7 @@ Astrology and divination MCP servers let AI assistants cast natal charts, draw t
 
 This review covers the **astrology and divination** vertical — Western astrology (natal charts, transits, synastry), Chinese astrology (BaZi, lunar calendar), tarot, I Ching, horoscopes, ephemeris data, Human Design, and commercial platforms. For astronomy and space data, see our [Aerospace & Defense MCP review](/reviews/aerospace-defense-mcp-servers/).
 
-The headline findings: **BaZi dominates by stars** with cantian-ai/bazi-mcp (271 stars) far ahead of everything else. **Western astrology has multiple calculation engines** built on Swiss Ephemeris. **Tarot has three solid implementations** with professional spreads and proper randomization. **I Ching has the most culturally faithful implementation** in Rust with Wilhelm-Baynes translations. **Two commercial platforms** (Astrology-API.io, RoxyAPI) offer the broadest feature coverage. **No standalone numerology, rune, or feng shui servers exist yet.**
+The headline findings: **BaZi dominates by stars** with cantian-ai/bazi-mcp (364 stars, up 34% since March) far ahead of everything else. **Western astrology has multiple calculation engines** built on Swiss Ephemeris. **Tarot has three solid implementations** with professional spreads and proper randomization. **I Ching hit v1.0** on crates.io with Claude Code plugin support. **Vedic astrology is emerging** — panchanga_api and vedaksha are new standalone options. **Two commercial platforms** (Astrology-API.io, RoxyAPI) offer the broadest feature coverage. RoxyAPI now has official TypeScript and Python SDKs. **No standalone numerology, rune, or feng shui servers exist yet.**
 
 **Category:** [Lifestyle & Personal](/categories/lifestyle-personal/)
 
@@ -17,9 +17,9 @@ The headline findings: **BaZi dominates by stars** with cantian-ai/bazi-mcp (271
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cantian-ai/bazi-mcp](https://github.com/cantian-ai/bazi-mcp) | 271 | TypeScript | Not specified | 1 |
+| [cantian-ai/bazi-mcp](https://github.com/cantian-ai/bazi-mcp) | 364 | TypeScript | Not specified | 1 |
 
-The **highest-starred server in this entire category by a wide margin**. Billed as "the first AI-powered Bazi calculator," it computes the Four Pillars of Destiny (八字) from birth datetime:
+The **highest-starred server in this entire category by a wide margin** — up from 271 to 364 stars (+34%) since March 2026. Billed as "the first AI-powered Bazi calculator," it computes the Four Pillars of Destiny (八字) from birth datetime:
 
 - **Eight Characters** — heavenly stems and earthly branches for year, month, day, and hour pillars
 - **Five Elements** — element distribution and balance analysis
@@ -28,7 +28,7 @@ The **highest-starred server in this entire category by a wide margin**. Billed 
 - **Major life phases** — decade-by-decade fortune periods
 - **Compatibility** — element-based relationship analysis
 
-Supports both solar and lunar datetime input. Despite having just one tool (`getBaziDetail`), the output is comprehensive. Derived from a popular GPT Store app and integrated with the cantian.ai commercial platform. The 271 stars and 96 forks show genuine demand for Chinese metaphysical calculations in AI workflows.
+Supports both solar and lunar datetime input. Despite having just one tool (`getBaziDetail`), the output is comprehensive. Derived from a popular GPT Store app and integrated with the cantian.ai commercial platform. Added streamable HTTP transport and migrated from JavaScript to TypeScript. The 364 stars show genuine and growing demand for Chinese metaphysical calculations in AI workflows.
 
 ### AngusHsu/lunar-mcp-server
 
@@ -76,7 +76,7 @@ Docker support with HTTP transport. This is the server to pick if you want raw a
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [intellecat/astrology-mcp](https://github.com/intellecat/astrology-mcp) | 0 | TypeScript | AGPL-3.0 | 2 |
+| [intellecat/astrology-mcp](https://github.com/intellecat/astrology-mcp) | 1 | TypeScript | AGPL-3.0 | 2 |
 
 Natal chart calculations using the @swisseph/node bindings. Supports **six house systems** (Placidus, Koch, Equal, Whole Sign, Campanus, Regiomontanus) — more than most other servers. Outputs planets, houses, aspects, retrograde status, and chart angles. The AGPL-3.0 license is worth noting for anyone planning commercial use.
 
@@ -90,9 +90,9 @@ Natal chart calculations using the @swisseph/node bindings. Supports **six house
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rokoss21/astrovisor-mcp](https://github.com/rokoss21/astrovisor-mcp) | 1 | TypeScript/JavaScript | MIT | 50+ (dynamic) |
+| [rokoss21/astrovisor-mcp](https://github.com/rokoss21/astrovisor-mcp) | 2 | TypeScript/JavaScript | MIT | 50+ (dynamic) |
 
-The **most feature-dense single server** in this category, but it's a thin client for a commercial API. Dynamically generates tools from AstroVisor's OpenAPI spec, exposing 50+ endpoints across: Natal, BaZi, Transits, Horary, Electional, Numerology, Human Design, Jyotish (Vedic), and Astrocartography. Features Russian keyword mapping, token budget controls, and in-memory result caching. Requires an AstroVisor API key.
+The **most feature-dense single server** in this category, but it's a thin client for a commercial API. Dynamically generates tools from AstroVisor's OpenAPI spec, exposing 50+ endpoints across: Natal, BaZi, Transits, Horary, Electional, Numerology, Human Design, Jyotish (Vedic), and Astrocartography. Now at v4.2.5/4.2.6 with cross-LLM interoperability (universal LLM prompt), token-budgeted result shaping, and >1MB result prevention for Claude. Features Russian keyword mapping and in-memory result caching. Requires an AstroVisor API key.
 
 ## Ephemeris / Astronomical Data
 
@@ -100,7 +100,7 @@ The **most feature-dense single server** in this category, but it's a thin clien
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ascorbic/ephemeris](https://github.com/ascorbic/ephemeris) | 8 | TypeScript | GPL-3.0 | 11 |
+| [ascorbic/ephemeris](https://github.com/ascorbic/ephemeris) | 9 | TypeScript | GPL-3.0 | 11 |
 
 The **most accessible server in this space** — no installation required. Free remote MCP server deployed on Netlify Edge Functions at ephemeris.fyi. Powered by the Moshier Ephemeris JavaScript implementation. Eleven tools:
 
@@ -121,7 +121,7 @@ Supports 11 celestial bodies including Chiron. The remote MCP model (connect via
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [fzlzjerry/tarot-mcp](https://github.com/fzlzjerry/tarot-mcp) | 7 | TypeScript | Not specified | 8 |
+| [fzlzjerry/tarot-mcp](https://github.com/fzlzjerry/tarot-mcp) | 11 | TypeScript | MIT | 8 |
 
 The **most feature-rich tarot server**. Full Rider-Waite 78-card deck with 11 professional spreads plus custom spread creation (1-15 positions). Key features:
 
@@ -156,7 +156,7 @@ A **Swift-native implementation** — the only non-TypeScript tarot server. Thre
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [threemachines/i-ching](https://github.com/threemachines/i-ching) | 10 | Rust | MIT | 2+ |
+| [threemachines/i-ching](https://github.com/threemachines/i-ching) | 11 | Rust | MIT | 2+ |
 
 The **highest-starred divination server** and the most culturally faithful I Ching implementation. Uses the authoritative **Wilhelm-Baynes translation** — the standard English reference. Three-coins casting method with all 64 hexagrams including:
 
@@ -164,7 +164,7 @@ The **highest-starred divination server** and the most culturally faithful I Chi
 - Line-by-line interpretations
 - Multiple input formats (hexagram numbers, Unicode characters, line notation)
 
-Works with Goose, Claude Code, and other MCP clients. Written in Rust for reliability. The choice to use Wilhelm-Baynes rather than a simplified modern paraphrase shows respect for the tradition.
+**Hit v1.0** (September 2025) and published to crates.io. Updated to Rust edition 2024 and added Claude Code plugin support (January 2026). Works with Goose, Claude Code, and other MCP clients. The choice to use Wilhelm-Baynes rather than a simplified modern paraphrase shows respect for the tradition.
 
 ### NortonHuang-SUFE/MCP-Liuyao
 
@@ -199,6 +199,21 @@ Daily, weekly, and monthly horoscope readings for all 12 zodiac signs. Returns o
 
 Calculates Human Design charts from birth data. Determines Type (Manifestor/Generator/Manifesting Generator/Projector/Reflector), Strategy, Authority, Profile, active gates and lines, defined centers, and Incarnation Cross. Uses Swiss Ephemeris under the hood. Compatible with n8n and Claude Desktop. The only Human Design MCP server we found — a niche within a niche.
 
+## Vedic Astrology (New)
+
+### degen0root/panchanga_api
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [degen0root/panchanga_api](https://github.com/degen0root/panchanga_api) | 2 | N/A | Other | 24 |
+
+The **most notable newcomer** in this refresh. A Vedic astrology MCP server with 24 tools and 5 prompts covering jyotish, kundali, and panchanga calculations. Uses Swiss Ephemeris for precision. Notable for its **monetization model** — free tier plus x402 USDC crypto payments and Telegram Stars, making it one of the few MCP servers experimenting with micropayments. Created March 2026.
+
+### Additional Vedic Astrology
+
+- **vedaksha** (1 star, Rust, April 2026) — astronomical ephemeris and Vedic astrology platform with clean-room Rust implementation and sub-arcsecond precision. Actively developed through April 2026.
+- **adarshj322/rishi-ai-mcp** (0 stars, Python, MIT, March 2026) — chart casting, planetary transits, and compatibility analysis
+
 ## Commercial / Hosted MCP Services
 
 ### Astrology-API.io
@@ -223,28 +238,28 @@ The **broadest commercial mystical API** with native MCP support. Covers 8 domai
 - Crystals & Healing Stones (12 endpoints)
 - Angel Numbers (4 endpoints)
 
-Uses NASA JPL ephemerides. Pricing from $39-$699/month with one key covering all domains. Native MCP support for OpenAI, Gemini, and Claude agents. If you want maximum breadth across mystical traditions from a single API key, this is the only option.
+Uses NASA JPL ephemerides. Pricing from $39-$699/month with one key covering all domains. Native MCP support for OpenAI, Gemini, and Claude agents. Now has **official TypeScript and Python SDKs** (released March-April 2026) for easier integration. If you want maximum breadth across mystical traditions from a single API key, this is the only option.
 
 ## What's Missing
 
-The astrology and divination MCP space has notable gaps:
+The astrology and divination MCP space has notable gaps, though some are narrowing:
 
-- **Numerology** — no standalone open-source server (only available via commercial APIs)
-- **Rune divination** — zero implementations (Norse runes, ogham, etc.)
-- **Feng shui** — no calculator or analysis server
+- **Numerology** — no standalone open-source server (only available via commercial APIs, though nitishautomates/mcp-horoscope-numerology appeared in March 2026 as a DivineAPI wrapper)
+- **Rune divination** — zero standalone implementations (Norse runes, ogham, etc.), though Naitellos/pandorium-mcp lists rune tools as part of a multi-system server
+- **Feng shui** — no standalone calculator or analysis server (doggychip/guanxing-mcp lists feng shui but is a single-commit project)
 - **Palmistry / face reading** — no computer vision-based implementations
 - **Western horary astrology** — only available via commercial AstroVisor
-- **Vedic astrology (standalone)** — no fully open-source Jyotish server with Dasha calculations
+- **Vedic astrology (standalone)** — ~~no fully open-source Jyotish server~~ **gap narrowing**: panchanga_api (24 tools), vedaksha (Rust, sub-arcsecond), and rishi-ai-mcp all appeared in March-April 2026, though none yet have significant community traction
 
 ## Rating: 3.5/5
 
-**What works:** BaZi has a genuinely popular implementation (271 stars). Swiss Ephemeris provides astronomical rigor. Tarot servers have proper randomization and professional spreads. The I Ching server respects the Wilhelm-Baynes tradition. ephemeris.fyi offers zero-setup remote access. Two commercial platforms provide comprehensive coverage.
+**What works:** BaZi has a genuinely popular implementation (364 stars, up 34% in 40 days). Swiss Ephemeris provides astronomical rigor. Tarot servers have proper randomization and professional spreads — fzlzjerry/tarot-mcp grew to 11 stars. The I Ching server hit v1.0 on crates.io with Claude Code plugin support. ephemeris.fyi offers zero-setup remote access. Vedic astrology is emerging with three new standalone servers. Two commercial platforms provide comprehensive coverage, with RoxyAPI adding official SDKs.
 
-**What doesn't:** Most servers are low-star individual projects (under 15 stars). No numerology, runes, or feng shui. Vedic astrology depends entirely on commercial APIs. The gap between the commercial offerings (100+ endpoints) and open-source (1-11 tools) is the widest we've seen in any vertical. Human Design has a single zero-star server.
+**What doesn't:** Most servers are still low-star individual projects (under 15 stars). No standalone numerology, runes, or feng shui. The gap between the commercial offerings (100+ endpoints) and open-source (1-11 tools) remains the widest we've seen in any vertical. Human Design has a single zero-star server. Many repos are stagnant — simpolism/AstroMCP, dm0lz/swiss-ephemeris, and junebash/swift-tarot-mcp all have no commits since mid-2025.
 
 **Who should care:** Developers building AI assistants with spiritual or wellness features, astrology app developers looking for MCP-powered backends, Chinese metaphysics practitioners wanting AI-assisted chart analysis, and anyone curious about connecting ancient divination systems to modern AI agents.
 
-**Bottom line:** This category reveals genuine cultural diversity in the MCP ecosystem — Chinese, Western, and cross-traditional systems all have representation. The BaZi server's 271 stars prove there's real demand. But the open-source implementations are thin individually, and anyone wanting production-grade coverage will likely need a commercial API. The free ephemeris.fyi remote server is the easy on-ramp for experimentation.
+**Bottom line:** This category reveals genuine cultural diversity in the MCP ecosystem — Chinese, Western, Vedic, and cross-traditional systems all have representation. The BaZi server's surge to 364 stars proves real and growing demand. The Vedic astrology wave (panchanga_api, vedaksha, rishi-ai-mcp) is the biggest structural change since our last review — a previously commercial-only gap is getting open-source attention. But most open-source implementations remain thin individually, and anyone wanting production-grade coverage will still likely need a commercial API. The free ephemeris.fyi remote server is the easy on-ramp for experimentation.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-24 using Claude Opus 4.6 (Anthropic).*
 
