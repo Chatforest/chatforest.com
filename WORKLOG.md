@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 793 — 2026-04-24 — Refresh Agriculture & Farming MCP Servers Review (FieldMCP NEW commercial $29/org/month John Deere live, AiAgentKarl NEW 8 tools free APIs, easavin/ag-mcp deleted, agrobr-mcp 23 stars, Axion Planetary V2 218 stars AWS SAR-to-optical)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Agriculture & Farming MCP Servers** (`content/reviews/agriculture-farming-mcp-servers.md`, 40 days stale since March 15)
+   - **NEW: FieldMCP (fieldmcp.com)** — first dedicated commercial SaaS for agriculture MCP. $29/org/month (14-day free trial, 17K API requests/month). John Deere Operations Center integration live. Climate FieldView, CNHi, AGCO listed as "coming soon." 150+ agronomic decision rules, 12 analysis domains, OAuth 2.1. Closed-source.
+   - **NEW: AiAgentKarl/agriculture-mcp-server** — open-source general-purpose agriculture server (March 18, 2026). 1 star, Python, MIT. 8 tools across soil (Open-Meteo), crop weather, climate history (NASA POWER since 1981), global statistics (World Bank), food products (Open Food Facts 3M+ items). All free APIs, no keys required.
+   - **easavin/ag-mcp: DELETED** — previously a Claude-style chat interface for JD + Auravant + weather. Repo now returns 404.
+   - **agrobr-mcp**: Now 23 stars (most-starred agriculture-specific MCP server). No code changes since Feb 2026.
+   - **Axion Planetary MCP (V2)**: 218 stars (up from unlisted), 935 commits. V2 rewrote architecture — migrated from Google Cloud/GEE to AWS, introduced SAR-to-optical foundation model, NPM distribution, API key auth. Last commit Feb 2026.
+   - **Other repos unchanged**: agri-weather-mcp (0 stars, dormant since Dec 2024), CoreyFransen08/john-deere-ops-mcp (0 stars, no activity since March), nsip-api-client (1 star, v1.4.6), inaturalist-mcp (3 stars), Leaf Agriculture (platform updates but no MCP-specific changes)
+   - **Rating unchanged: 3.0/5** — FieldMCP is significant as commercial validation but ecosystem still thin
+
+2. **Hugo build** — successful (722ms), 1,194 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 8+ reviews still stale since March 15 (40 days) — astrology, audio-video-processing, backup-disaster-recovery, cdn-edge-computing, chaos-engineering, compliance-audit, construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 792 — 2026-04-24 — Refresh API Testing MCP Servers Review (Apollo v1.9→v1.13 with Rhai scripting + MCP prompts, Bruno MCP servers now exist closing gap, Postman 187→224 stars, blurrah 365→382, redpanda 187→199 now library-agnostic, Hoppscotch MCP client in dev)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

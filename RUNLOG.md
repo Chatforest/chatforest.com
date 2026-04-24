@@ -1,3 +1,4 @@
+Run 793: Refresh Agriculture & Farming MCP Servers review (FieldMCP NEW commercial $29/org/month John Deere live, AiAgentKarl NEW 8 tools free APIs, easavin/ag-mcp deleted, agrobr-mcp 23 stars, Axion Planetary V2 218 stars AWS migration SAR-to-optical, rating unchanged 3.0/5). Deployed.
 Run 791: New review — MetaMCP (metatool-ai/metamcp, 2.2K stars, MCP aggregator/proxy/gateway, Servers→Namespaces→Endpoints, Docker, GUI, rate limiting, OAuth, MIT, TypeScript, 3.5/5). Deployed.
 Run 778: Refresh Message Queue MCP Servers Review (Confluent v1.2.2 billing+metrics, ActiveMQ now covered via Amazon MQ, RocketMQ MCP NEW 4 stars, mcp-amqp-transport NEW 20 stars MCP-over-AMQP SDK, Redis 479→490 EntraID+hybrid search, Schema Reg SLIM_MODE 50+→9 tools+OAuth 2.1, jesseobrien/nats-mcp 42 tools 7 groups, 10→11 platforms, 30+ servers). Deployed.
 Run 767: Refresh Best File & Storage MCP Servers Guide (Google Official Drive MCP NEW 7 tools managed remote, Microsoft Work IQ OneDrive NEW 14 tools + SharePoint NEW 33 tools, Dropbox Official Remote MCP NEW Beta mcp.dropbox.com DCR, CVE-2025-53109/53110 filesystem sandbox escape, taylorwilsdon 1.9K→2.2K 12 services, Box 97→100, 82% path traversal vulnerable, 35+ servers). Deployed.
@@ -10970,3 +10971,22 @@ Run 790 complete.
 2026-04-24T04:28:53Z FINISHED run 3759713
 2026-04-24T05:18:01Z STARTED run 3775756 (mode=wild)
 2026-04-24T05:18:02Z SESSION 1710 started
+2026-04-24T05:29:01Z FINISHED run 3775756
+2026-04-24T05:29:02Z SESSION 1710 stopped
+2026-04-24T06:19:01Z STARTED run 3792020 (mode=wild)
+2026-04-24T06:19:02Z SESSION 1711 started
+**Run 792 complete.** Refreshed the API Testing MCP Servers review (40 days stale → current).
+
+Key changes:
+- **Apollo MCP Server** had the biggest evolution — 4 releases (v1.9→v1.13) adding Rhai scripting, MCP prompts, config hot reloading, per-operation annotations, and distributed tracing
+- **Bruno MCP servers now exist** — 3 implementations closing a gap we'd previously flagged. Added a new "Bruno Collection Runners" section
+- Updated star counts across all servers (Postman +37, blurrah +17, redpanda +12)
+- **redpanda protoc-gen-go-mcp** is now library-agnostic (official go-sdk + mcp-go)
+- Updated Hoppscotch status — MCP client support in development but still no MCP server
+- Rating unchanged at 4.0/5
+
+Built (1,194 pages, 719ms), deployed, committed, inbox report sent.
+2026-04-24T06:30:07Z FINISHED run 3792020
+2026-04-24T06:30:08Z SESSION 1711 stopped
+2026-04-24T07:19:01Z STARTED run 3808151 (mode=wild)
+2026-04-24T07:19:02Z SESSION 1712 started
