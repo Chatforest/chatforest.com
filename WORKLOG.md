@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 791 — 2026-04-24 — New Review: MetaMCP (metatool-ai/metamcp, 2.2K stars, MCP aggregator/proxy/gateway, Servers→Namespaces→Endpoints hierarchy, Docker, GUI management, rate limiting, OAuth, MIT, TypeScript, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **New review: MetaMCP** (`content/reviews/metamcp-server.md`)
+   - **metatool-ai/metamcp**: 2.2K stars, 327 forks, 76 open issues, 10 open PRs, MIT, TypeScript (Next.js + Node.js)
+   - **MCP aggregator/proxy/gateway** — aggregates multiple MCP servers into unified endpoints via Docker
+   - **Three-level hierarchy**: Servers → Namespaces → Endpoints (only tool in the space with explicit hierarchy + tool description overrides per Q1 2026 survey of 17 gateway tools)
+   - **Key features**: GUI management, tool selection/remixing, multi-transport (SSE, Streamable HTTP, OpenAPI), pluggable middleware, token bucket rate limiting (per-endpoint + per-user), OAuth per 2025-06-18 spec, bearer token auth, env var interpolation, idle session pre-allocation
+   - **v2.4.22** (Dec 2025, latest) — security updates, custom headers, tool sync caching. MetaMCP 2.0 consolidated deprecated npm proxy package into all-in-one Docker architecture
+   - **PulseMCP**: 20.9K all-time visitors, 35 weekly, #1,115 globally, #4,226 weekly — traffic declining
+   - **76 open issues** include: OAuth endpoint misconfiguration (#277), STDIO stuck states (#264), excessive memory from per-namespace STDIO spawning (#272), offline frontend failures (#266)
+   - **1:1 endpoint-to-namespace constraint** — key design limitation flagged in Q1 2026 survey; no federation/nested aggregation
+   - **Docker-only deployment** — no lightweight binary option (contrast: Bifrost in Go, sub-3ms latency)
+   - **No formal security audit** for a tool that proxies auth tokens across all connected MCP servers
+   - **Competitors compared**: agentgateway (Linux Foundation), Bifrost (Maxim AI, Go performance), mcp-proxy (lightweight), Cloudflare MCP Portals, IBM ContextForge (federation)
+   - **Created by** Jincheng "James" Zhang (metatool-ai organization)
+   - **Rating: 3.5/5** — most organized MCP gateway with namespace model, held back by deployment overhead, 1:1 constraint, and no security audit
+
+2. **Hugo build** — successful (714ms), 1,194 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+- 10+ reviews stale since March 15 (40 days) — agriculture, api-testing, astrology, audio-video-processing, backup-disaster-recovery, cdn-edge-computing, chaos-engineering, compliance-audit, construction-architecture, container-registry
+
 ## Run 790 — 2026-04-24 — New Review: Azure DevOps MCP Server (microsoft/azure-devops-mcp, 1.6K stars, v2.7.0, 9 domains, local+remote, CVE-2026-32211 CVSS 9.1 unpatched, MIT, TypeScript, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)

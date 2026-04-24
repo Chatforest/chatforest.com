@@ -1,3 +1,4 @@
+Run 791: New review — MetaMCP (metatool-ai/metamcp, 2.2K stars, MCP aggregator/proxy/gateway, Servers→Namespaces→Endpoints, Docker, GUI, rate limiting, OAuth, MIT, TypeScript, 3.5/5). Deployed.
 Run 778: Refresh Message Queue MCP Servers Review (Confluent v1.2.2 billing+metrics, ActiveMQ now covered via Amazon MQ, RocketMQ MCP NEW 4 stars, mcp-amqp-transport NEW 20 stars MCP-over-AMQP SDK, Redis 479→490 EntraID+hybrid search, Schema Reg SLIM_MODE 50+→9 tools+OAuth 2.1, jesseobrien/nats-mcp 42 tools 7 groups, 10→11 platforms, 30+ servers). Deployed.
 Run 767: Refresh Best File & Storage MCP Servers Guide (Google Official Drive MCP NEW 7 tools managed remote, Microsoft Work IQ OneDrive NEW 14 tools + SharePoint NEW 33 tools, Dropbox Official Remote MCP NEW Beta mcp.dropbox.com DCR, CVE-2025-53109/53110 filesystem sandbox escape, taylorwilsdon 1.9K→2.2K 12 services, Box 97→100, 82% path traversal vulnerable, 35+ servers). Deployed.
 Run 764: Refresh Best Audio & Video MCP Servers Guide (MiniMax MCP NEW 1.4K stars multi-modal TTS+video+image+music, Epidemic Sound MCP NEW first music licensing server, Deepgram CLI MCP 25+ tools dynamic loading, DaVinci Resolve 641→700+ Fusion node graph, jpoindexter/ableton-mcp NEW 200+ tools, Kokoro TTS 3+ servers mberg 51 stars, Spotify gap partially filled, MCP security crisis 30+ CVEs, 45+ servers). Deployed.
@@ -10797,3 +10798,175 @@ Run 777 complete. Refreshed the **Genealogy & Family History MCP Servers** revie
 2026-04-23T10:15:47Z SESSION 1697 stopped
 2026-04-23T11:11:01Z STARTED run 3482969 (mode=wild)
 2026-04-23T11:11:02Z SESSION 1698 started
+2026-04-23T11:19:52Z FINISHED run 3482969
+2026-04-23T11:19:52Z SESSION 1698 stopped
+2026-04-23T17:11:01Z STARTED run 3578713 (mode=wild→slow(peak))
+2026-04-23T17:11:03Z SESSION 1699 started
+Run 779 complete. Refreshed the Spotify MCP Server review — the most stale review at 11 days old. Key findings:
+
+- **varunneal/spotify-mcp** (598 stars) is now officially abandoned per March 2026 README notice
+- **marcelmarais/spotify-mcp-server** saw strong star growth (+29 to 311) but the 403 bug from February API changes is still unfixed
+- **imprvhub/mcp-claude-spotify** has emerged as the clear ecosystem leader with v0.5.0 (14+ tools, 7 releases, zero open issues)
+- Spotify's March 2026 changelog reverted the planned removal of `external_ids` fields
+- Rating unchanged at 3/5
+
+Built, deployed, committed. 8 reviews still older than April 14 for next runs.
+2026-04-23T17:17:10Z FINISHED run 3578713
+2026-04-23T17:17:11Z SESSION 1699 stopped
+2026-04-23T18:11:01Z STARTED run 3594737 (mode=wild)
+2026-04-23T18:11:03Z SESSION 1700 started
+Run 780 complete. Refreshed the Apple & macOS MCP Servers review:
+
+- **Added mattt/iMCP** (1,400 stars) — a significant server we'd been missing. Native macOS app covering 7 Apple services via native frameworks
+- **Peekaboo** 3,100→3,200 stars — now the most-starred Apple MCP server
+- **HomeClaw** 87→96 stars — reached v1.0.0 with automation triggers for motion/contact/occupancy/temperature sensors
+- **macos-automator-mcp** 758→767, **applescript-mcp** 376→379
+- **Added macOS Tahoe 26.1 context** — Apple beta code hints at native MCP integration via App Intents framework, possible WWDC 2026 announcement
+
+Built (1,190 pages, 710ms), deployed to DreamHost, committed, and sent run report. 9 stale reviews remaining.
+2026-04-23T18:18:22Z FINISHED run 3594737
+2026-04-23T18:18:23Z SESSION 1700 stopped
+2026-04-23T19:12:01Z STARTED run 3611085 (mode=wild)
+2026-04-23T19:12:02Z SESSION 1701 started
+
+
+Run 781 complete. Refreshed the **Pulumi MCP Server** review (10 days stale since April 14).
+
+**Key changes:**
+- Stars flat at 188, npm downloads down to 779/week, PulseMCP slipping (#629 globally)
+- **Neo Plan Mode** (April 1) — new 4-phase collaborative planning workflow before execution
+- **Experimental `pulumi neo` CLI** (v3.232.0) — terminal-based Neo agent with TUI
+- Three Pulumi CLI releases in April, but **MCP server repo itself dormant** since Feb/Mar
+- Agent sprawl governance positioning ahead of EU AI Act (August 2, 2026)
+- Rating unchanged at 3.5/5
+
+Built, deployed, committed, and reported via inbox. 8 stale reviews remaining.
+2026-04-23T19:18:34Z FINISHED run 3611085
+2026-04-23T19:18:35Z SESSION 1701 stopped
+2026-04-23T20:13:01Z STARTED run 3627322 (mode=wild)
+2026-04-23T20:13:03Z SESSION 1702 started
+Run 782 complete. Refreshed the Framelink Figma MCP Server review:
+
+- **v0.11.0** (April 20) — rich text styling, proxy routing fix, 403 self-healing
+- **npm downloads cooling** from ~198K to ~105K/week (normalizing after adoption spike)
+- **Telemetry privacy issue** (#354) — file keys leaking to PostHog, fix in progress
+- **Stdio crash bug** (#362) — affects Claude Code users, no fix yet
+- **Stars** 14,400→14,500, official Figma guide 1,069→1,229
+- Rating unchanged at 4/5
+
+Built, deployed, committed. 7 stale reviews remaining.
+2026-04-23T20:18:58Z FINISHED run 3627322
+2026-04-23T20:18:58Z SESSION 1702 stopped
+2026-04-23T21:14:01Z STARTED run 3643546 (mode=wild)
+2026-04-23T21:14:02Z SESSION 1703 started
+Run 783 complete. Refreshed the **Grafana MCP Server** review with significant updates:
+
+- **GrafanaCON 2026 launched a hosted remote MCP server** at `mcp.grafana.com/mcp` — OAuth 2.1, 50+ tools, public preview. This was the biggest weakness we'd been flagging.
+- **v0.12.0** added InfluxDB + Graphite datasources (18 categories now), fixed horizontal scaling and alert rule query loss, reduced token costs
+- **gcx CLI** and **o11y-bench** benchmark announced
+- Stars 2,800→2,900, issues 61→57, PulseMCP 852K all-time
+- Rating holds at 4/5
+
+Built, deployed, committed, WORKLOG updated. 6 stale reviews remaining.
+2026-04-23T21:22:14Z FINISHED run 3643546
+2026-04-23T21:22:14Z SESSION 1703 stopped
+2026-04-23T22:15:01Z STARTED run 3660600 (mode=wild)
+2026-04-23T22:15:03Z SESSION 1704 started
+Run 784 complete. Refreshed the Fitness & Wearables MCP Servers review — significant updates across the board:
+
+- **Open Wearables**: 1,100→1,300 stars, added 3 new providers (Fitbit, Ultrahuman, Oura Ring) for 10 total
+- **WHOOP**: 6+→9+ servers, write capability added, 9K weekly visitors on MCP Registry
+- **Strava**: 8+→11+ servers
+- **Garmin**: 394 stars, 11 servers on PulseMCP
+- **TrainingPeaks**: ~15→58 tools (quadrupled)
+- **Intervals.icu**: New section with 48 tools
+- **Security alert**: SmartLoader supply-chain attack via trojanized Oura MCP clones
+- **New entrants**: health_mcp aggregator, Renpho, ExerciseAPI, BearTrail
+
+Built and deployed. 5 stale reviews remaining: notion, supabase, linear, pagerduty, everart.
+2026-04-23T22:30:22Z FINISHED run 3660600
+2026-04-23T22:30:22Z SESSION 1704 stopped
+2026-04-23T23:15:01Z STARTED run 3676723 (mode=wild)
+2026-04-23T23:15:02Z SESSION 1705 started
+**Run 785 complete.** Refreshed the Notion MCP Server review (7 days stale → current).
+
+Key findings:
+- **API velocity high:** 3 changelog entries in one week — comment CRUD GA, multi-value filters, pagination fixes
+- **Workers for Agents:** New developer preview for server-side custom functions
+- **PulseMCP surging:** 1.4M all-time, 68K weekly, #45 globally (#30 this week)
+- **OAuth still broken:** #269 at 14 comments, no official response
+- **Security still unpatched:** Path traversal #237, zero comments
+
+Built, deployed, committed, reported. 4 stale reviews remaining: supabase, linear, pagerduty, everart.
+2026-04-23T23:21:34Z FINISHED run 3676723
+2026-04-23T23:21:34Z SESSION 1705 stopped
+2026-04-24T00:16:01Z STARTED run 3694098 (mode=wild)
+2026-04-24T00:16:02Z SESSION 1706 started
+Run 786 complete. Refreshed the Supabase MCP Server review with:
+
+- **RLS advisory** (PR #251) — server now actively warns about disabled Row Level Security
+- **Server instructions** (PR #258) — LLMs get protocol-level guidance on Supabase usage
+- **ISO 27001:2022** — platform-wide security certification
+- **Stripe Sync Engine transfer** — deeper Stripe partnership
+- **New issue #257** — local OAuth confusion documented
+- Still no release since v0.7.0 but active `main` development
+
+Rating unchanged at 4/5. Built (1,190 pages, 705ms) and deployed. 3 stale reviews remain: linear, pagerduty, everart.
+2026-04-24T00:21:20Z FINISHED run 3694098
+2026-04-24T00:21:21Z SESSION 1706 stopped
+2026-04-24T01:17:01Z STARTED run 3710315 (mode=wild)
+2026-04-24T01:17:02Z SESSION 1707 started
+Run 787 complete. Here's the summary:
+
+**Refreshed: Linear MCP Server review** (5 days stale)
+
+Key finding: **April 23 — Linear Agent MCP support**. Linear Agent can now connect to external MCP servers (Granola, Glean, Notion, PostHog), making Linear both an MCP server *and* an MCP client. Admin allowlists and workspace-level permissions provide enterprise governance. This is a significant architectural expansion — Linear is positioning itself as a bidirectional hub in the MCP ecosystem.
+
+Other updates:
+- Improved tool documentation and reduced token usage
+- PulseMCP: 479K → 506K all-time, 24.3K weekly, #91 globally
+- Rating unchanged: 4/5
+
+Built, deployed, committed. 2 stale reviews remaining: PagerDuty and Everart (both Apr 19).
+2026-04-24T01:21:26Z FINISHED run 3710315
+2026-04-24T01:21:26Z SESSION 1707 stopped
+2026-04-24T02:17:01Z STARTED run 3726250 (mode=wild)
+2026-04-24T02:17:02Z SESSION 1708 started
+Run 788 complete. Refreshed the **PagerDuty MCP Server** review with:
+
+- **MCP Apps expanded to 5** with Preact migration (-24% bundle size), MCP SDK upgrade to 1.26.0, and new business services + responder metrics tools
+- **Dual licensing** option added (PR #114)
+- **Security policies PR** for tool-level enforcement (PR #116, open)
+- **New feature requests** for escalation policy CRUD and v3 schedules API
+- **PulseMCP weekly traffic up 51%** (12.6K→19K)
+- Rating unchanged at 4/5
+
+Built (1,190 pages), deployed, committed. 1 stale review remaining: **Everart** (Apr 19).
+2026-04-24T02:22:22Z FINISHED run 3726250
+2026-04-24T02:22:22Z SESSION 1708 stopped
+2026-04-24T03:17:01Z STARTED run 3742279 (mode=wild)
+2026-04-24T03:17:02Z SESSION 1709 started
+**Run 789 complete.** Refreshed EverArt MCP Server review — the last stale review in the queue.
+
+Key changes:
+- Approaching 12 months frozen (updated from "nearly 11 months")
+- PulseMCP stats: 19.4K all-time, rank slipping (#1,187 globally)
+- Expanded MCP security section with new 2026 CVEs
+- Updated competitor landscape (writingmate/imagegen-mcp now 7 providers, FLUX 2 Pro details)
+- Rating unchanged: 2.5/5
+
+Built, deployed, committed. All 306 reviews are now current — no stale reviews remaining. Next notable event: Stripe Sessions (April 29-30) will trigger a Stripe review refresh.
+2026-04-24T03:22:36Z FINISHED run 3742279
+2026-04-24T03:22:38Z SESSION 1709 stopped
+2026-04-24T04:18:01Z STARTED run 3759713 (mode=wild)
+2026-04-24T04:18:21Z SESSION start failed: 
+Run 790 complete.
+
+**Summary:** Wrote a new review for the **Azure DevOps MCP Server** (`microsoft/azure-devops-mcp`) — Microsoft's official MCP server for Azure DevOps with 1.6K stars, 9 tool domains, local + remote deployment. Rated **3.5/5**: strong architecture and active product team, but held back by an unpatched critical CVE (CVSS 9.1), remote server client restrictions (VS Code/Visual Studio only), and no on-premises support.
+
+- Site: 307 reviews, ~1,192 pages
+- Built and deployed to DreamHost
+- Committed as `fe0d7ee3`
+2026-04-24T04:28:53Z FINISHED run 3759713
+2026-04-24T05:18:01Z STARTED run 3775756 (mode=wild)
+2026-04-24T05:18:02Z SESSION 1710 started
