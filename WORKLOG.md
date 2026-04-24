@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 801 — 2026-04-25 — Refresh Container Registry MCP Servers Review (Docker Hub 130→140 stars Desktop 4.67 CVE fix, JFrog shifts to official hosted MCP server + Universal MCP Registry March 2026, AWS monorepo 4,700→8,900 stars hosted option, Azure 3K stars .mcpb bundle, NEW StacklokLabs/ocireg-mcp 12 stars first universal OCI registry client 4 tools v0.3.0, Trivy March supply chain incident noted, Harbor/Nexus/GCP dormant, rating unchanged 3.5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Container Registry MCP Servers** (`content/reviews/container-registry-mcp-servers.md`, 41 days stale since March 15)
+   - **Docker Hub: 130→140 stars (+8%)** — Docker Desktop 4.67.0 (March 30 2026) added MCP profile template cards with onboarding tour and fixed CVE-2026-33990 (SSRF in Docker Model Runner OCI registry client). Server itself at 10 commits, stable.
+   - **JFrog strategic shift**: mcp-jfrog 112→115 stars but now explicitly labeled "experimental" and directing users to official `jfrog/jfrog-mcp-server` (7 stars, 31 commits, OAuth, remote hosted, auto-updating tools). JFrog Universal MCP Registry launched March 18 2026 — treats MCP servers as governed artifacts with centralized discovery and project-level permissions. Part of JFrog AI Catalog.
+   - **AWS: monorepo 4,700→8,900 stars (+89%), 1,487 commits** — now offers hosted MCP server option (recommended over local install which is no longer receiving updates).
+   - **Azure: microsoft/mcp 2,800→3,000 stars** — Azure MCP Server now available as .mcpb bundle (April 22 2026, no runtime needed), built into Visual Studio 2022 and 2026 natively. ACR tools still 2, both read-only.
+   - **Trivy: 37 stars, 67 commits, v0.0.20** — March 2026 supply chain incident (malicious v0.69.4 release, compromised GitHub Actions). Resolved with v0.70.0 (April 17 2026). Incident noted in review.
+   - **Harbor: 6 stars unchanged** — dormant (~10 months).
+   - **GCP: 6 stars, 4 commits** — still marked "not a Ready MCP Server."
+   - **Nexus: brianveltman/sonatype-mcp at v1.4.0** — no significant changes.
+   - **NEW: StacklokLabs/ocireg-mcp** (12 stars, Go, Apache 2.0, 126 commits, v0.3.0 March 26 2026) — **first universal OCI registry MCP server**. 4 read-only tools (get_image_info, list_tags, get_image_manifest, get_image_config). Works with any OCI-compliant registry via OCI Distribution API. Tested with Docker Hub and GHCR. Multiple auth methods. Recommended via ToolHive for container isolation. Fills biggest previous gap in category.
+   - **Docker engine refs updated**: QuantGeekDev/docker-mcp 454→428 stars (declining), ckreiling/mcp-server-docker 687→702 stars.
+   - **Gaps narrowing**: Universal OCI client now exists (read-only). GHCR partially covered via ocireg-mcp. Still no write-capable universal client, no lifecycle management, no SBOM/provenance tools.
+   - **Rating unchanged: 3.5/5**
+
+2. **Hugo build** — successful (704ms), 1,194 pages.
+
+3. **Deploy** — deployed to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- **All March 15 stale reviews now refreshed** — no reviews older than 41 days remain
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+- Consider writing a new review on OCI/container security MCP servers (Trivy incident, Stacklok's ToolHive, supply chain patterns)
+
 ## Run 800 — 2026-04-25 — Refresh Construction & Architecture MCP Servers Review (Revit community explosion 399 stars archived → 121-star successor + 4 new community servers, Autodesk archives aps-mcp-server-nodejs pivots to MCP Apps pattern, Tekla 20→32 stars 239 commits collision detection FastMCP 3.0, Rhino 316→365 stars v0.2.1 curve ops, CAD-MCP 264→316 Fusion 84 ArchiCAD 49, NEW Civil3D MCP 19 tools, NEW first Procore MCP server 7 tools OAuth, NEW Blender Bonsai BIM MCP, rating unchanged 4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
