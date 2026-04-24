@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 794 — 2026-04-24 — Refresh Astrology & Divination MCP Servers Review (bazi-mcp 271→364 stars +34%, tarot-mcp 7→11, i-ching v1.0 crates.io, NEW Vedic wave: panchanga_api 24 tools x402 payments, vedaksha Rust, rishi-ai-mcp, RoxyAPI SDKs)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Astrology & Divination MCP Servers** (`content/reviews/astrology-divination-mcp-servers.md`, 40 days stale since March 15)
+   - **cantian-ai/bazi-mcp: 271→364 stars (+34%)** — biggest growth in category. Added streamable HTTP transport, migrated JS→TS. Still the clear category leader.
+   - **fzlzjerry/tarot-mcp: 7→11 stars (+57%)** — added ModelScope MCP service config, NPM publishing, now MIT licensed.
+   - **threemachines/i-ching: 10→11 stars, v1.0 release** — published to crates.io, Rust edition 2024, Claude Code plugin support (Jan 2026).
+   - **rokoss21/astrovisor-mcp: 1→2 stars, v4.2.5/4.2.6** — cross-LLM interoperability, universal LLM prompt, token-budgeted result shaping.
+   - **intellecat/astrology-mcp: 0→1 star** — updated @swisseph/node, fixed geolocation URL.
+   - **ascorbic/ephemeris: 8→9 stars** — repo dormant since July 2025.
+   - **NEW: Vedic astrology wave (3 servers)**:
+     - degen0root/panchanga_api (2 stars, 24 tools, x402 USDC crypto payments + Telegram Stars)
+     - vedaksha (1 star, Rust, sub-arcsecond precision, active through April 2026)
+     - adarshj322/rishi-ai-mcp (0 stars, Python, MIT)
+   - **RoxyAPI**: released official TypeScript and Python SDKs (March-April 2026)
+   - **Stagnant repos noted**: simpolism/AstroMCP, dm0lz/swiss-ephemeris, junebash/swift-tarot-mcp (no commits since mid-2025)
+   - **Updated What's Missing**: Vedic astrology gap narrowing, noted emerging numerology/rune/feng shui attempts (all single-commit)
+   - **Rating unchanged: 3.5/5** — bazi-mcp growth impressive but most repos still low-star
+
+2. **Hugo build** — successful (717ms), 1,194 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 7+ reviews still stale since March 15 (40 days) — audio-video-processing, backup-disaster-recovery, cdn-edge-computing, chaos-engineering, compliance-audit, construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 793 — 2026-04-24 — Refresh Agriculture & Farming MCP Servers Review (FieldMCP NEW commercial $29/org/month John Deere live, AiAgentKarl NEW 8 tools free APIs, easavin/ag-mcp deleted, agrobr-mcp 23 stars, Axion Planetary V2 218 stars AWS SAR-to-optical)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
