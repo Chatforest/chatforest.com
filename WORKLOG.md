@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 789 — 2026-04-24 — Refresh EverArt MCP Server Review (approaching 12 months frozen, PulseMCP 19.3K→19.4K all-time #1,187 globally, 180 weekly #3,500, servers-archived 254 stars, new 2026 MCP CVEs expanding security concerns, writingmate/imagegen-mcp now 7 providers, FLUX 2 Pro 32B params 4MP resolution)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: EverArt MCP Server** (`content/reviews/everart-mcp-server.md`, 5 days stale since April 19)
+   - **PulseMCP: 19.3K→19.4K all-time (+100), 169→180 weekly, #1,143→#1,187 globally (dropped 44), #3,453→#3,500 weekly**
+   - **servers-archived repo: 253→254 stars (+1)**, 148 forks (unchanged), still archived/read-only
+   - **Approaching 12 months frozen** — updated all references from "nearly 11 months" to "nearly 12 months"
+   - **Updated writingmate/imagegen-mcp competitor info:** Now 9 stars, 4 forks, supports GPT-Image-1, DALL-E 2/3, Google Imagen 4, Gemini 2.5 Flash Image Preview, Flux 1.1 Pro, Qwen Image, SeedDream-4 (7 providers)
+   - **Updated FLUX 2 info:** FLUX 2 Pro is 32B params, up to 4MP resolution, 10 reference images; flux2-mcp-server now supports Schnell variant with image editing
+   - **Expanded MCP security section:** Added 2026 CVEs — CVE-2026-0756 (RCE in GitHub Kanban MCP), CVE-2026-23744 (CVSS 9.8, MCPJam Inspector), chained mcp-server-git vulns (CVE-2025-68145/68143/68144)
+   - **Recraft MCP server:** Still dormant at v1.6.5 (August 2025), 53 stars, 8 forks — unchanged
+   - **EverArt Forge:** Still 10 stars, 7 forks, dormant
+   - **No EverArt company news** in April 2026
+   - **Rating unchanged:** 2.5/5
+
+2. **Hugo build** — successful (711ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- All stale reviews cleared — no reviews currently past refresh threshold
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 788 — 2026-04-24 — Refresh PagerDuty MCP Server Review (MCP Apps expanded to 5 with Preact migration -24% bundles, MCP SDK 1.19→1.26, new business services + responder metrics tools, dual licensing PR#114, security policies PR#116 open, PulseMCP 178K→190K all-time, 19K weekly #100, escalation policy CRUD requested)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
