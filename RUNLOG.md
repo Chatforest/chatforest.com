@@ -10994,3 +10994,73 @@ Built (1,194 pages, 719ms), deployed, committed, inbox report sent.
 2026-04-24T07:32:16Z SESSION 1712 stopped
 2026-04-24T08:19:01Z STARTED run 3824114 (mode=wild)
 2026-04-24T08:19:03Z SESSION 1713 started
+**Run 794 complete.** Refreshed the Astrology & Divination MCP Servers review (40 days stale).
+
+Key updates:
+- **bazi-mcp** surged 34% to 364 stars — clear category leader
+- **tarot-mcp** grew 57% to 11 stars, now MIT licensed
+- **i-ching** hit v1.0 on crates.io with Claude Code plugin support
+- **Vedic astrology wave** — 3 new standalone servers (panchanga_api, vedaksha, rishi-ai-mcp) filling a previously commercial-only gap
+- **RoxyAPI** added official TypeScript/Python SDKs
+- Rating unchanged at 3.5/5
+
+Site built (1,194 pages), deployed to DreamHost, committed, and run report sent. 7 reviews still stale from March 15.
+2026-04-24T08:32:01Z FINISHED run 3824114
+2026-04-24T08:32:02Z SESSION 1713 stopped
+2026-04-24T09:20:01Z STARTED run 3840314 (mode=wild)
+2026-04-24T09:20:02Z SESSION 1714 started
+Run 795 complete. Here's the summary:
+
+**Refreshed: Audio & Video Processing MCP Servers** (40 days stale → current)
+
+Key findings:
+- **DaVinci Resolve** had the biggest growth: 641→866 stars (+35%), 6 new releases including Fusion node graph control
+- **ElevenLabs** tool count corrected from "10+" to 24 (was significantly undercounted)
+- **itsuzef/reaper-mcp** underwent a major rewrite: OSC→python-reapy, 5→58 tools, now on PyPI
+- **Spotify MCP** (312 stars) fills a gap we'd explicitly called out as missing
+- **yt-dlp-mcp** (233 stars) emerged as a significant video download/transcript server
+- New open-weight TTS options: Chatterbox and Qwen3-TTS
+- All FFmpeg servers are dormant (no commits since May 2025)
+- Rating unchanged at 4.0/5
+
+Built (1,194 pages), deployed, committed, and run report sent. Next stale reviews: backup-disaster-recovery, cdn-edge-computing, chaos-engineering, compliance-audit, construction-architecture, container-registry.
+2026-04-24T09:31:46Z FINISHED run 3840314
+2026-04-24T09:31:47Z SESSION 1714 stopped
+2026-04-24T10:20:01Z STARTED run 3856269 (mode=wild)
+2026-04-24T10:20:02Z SESSION 1715 started
+Run 796 complete. Here's the summary:
+
+**Refreshed: Backup & Disaster Recovery MCP Servers** (40 days stale → current)
+
+Key changes:
+- **Veeam launched an official MCP server** (March 31, 2026) — 16+ capability categories across VBR, Veeam ONE, and VSPC. Second major enterprise vendor with official MCP support.
+- **VeeamHub repo deleted** (404) — likely replaced by the official server
+- **Commvault expanded** — 11 stars, added Salesforce backup tools, Metallic gateway routing, filter queries
+- **3 new servers**: rclone-mcp (98 tools), autorestic-mcp (restic wrapper), Databasement (311 stars, DB backup)
+- **kubectl-mcp-server hit 875 stars** with structured output
+- **Rating: 3.0 → 3.5** — two of top three enterprise vendors now have official MCP servers
+
+Built (714ms) and deployed to DreamHost.
+2026-04-24T10:30:47Z FINISHED run 3856269
+2026-04-24T10:30:47Z SESSION 1715 stopped
+2026-04-24T11:21:01Z STARTED run 3872654 (mode=wild)
+2026-04-24T11:21:02Z SESSION 1716 started
+Background timer task completed (was already handled — deploy went through successfully).
+2026-04-24T11:31:43Z FINISHED run 3872654
+2026-04-24T11:31:44Z SESSION 1716 stopped
+2026-04-24T17:22:01Z STARTED run 3968758 (mode=wild→slow(peak))
+2026-04-24T17:22:02Z SESSION 1717 started
+**Run 798 complete.** Refreshed the Chaos Engineering MCP Servers review (41 days stale). Key findings:
+
+- **Harness** is the breakout — 30→50 stars (+67%), 461 commits, new registry-based architecture
+- **Gremlin** made the most interesting move — expanding beyond read-only with reliability test execution
+- **Steadybit** keeps shipping quietly (71 commits, 22 releases, 0 stars)
+- **LitmusChaos** still the best dedicated server but dormant since Nov 2025
+- **NEW: mcp-chaos-rig** — MCP protocol fault injection testing tool (10 stars)
+- Rating unchanged at 3.5/5
+
+Built (1,194 pages), deployed, committed, run report sent. Next stale reviews: compliance-audit, construction-architecture, container-registry.
+2026-04-24T17:30:05Z FINISHED run 3968758
+2026-04-24T17:30:06Z SESSION 1717 stopped
+2026-04-24T18:22:01Z STARTED run 3984784 (mode=wild)
+2026-04-24T18:22:02Z SESSION 1718 started
