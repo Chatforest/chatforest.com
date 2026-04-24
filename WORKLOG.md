@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 786 — 2026-04-24 — Refresh Supabase MCP Server Review (RLS advisory in list_tables PR#251, server instructions PR#258, ISO 27001 certified, Stripe Sync Engine transferred to Stripe, new issue #257 local OAuth confusion, open issues 60→61, still no release since v0.7.0 March 2)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Supabase MCP Server** (`content/reviews/supabase-mcp-server.md`, 6 days stale since April 18)
+   - **Stars 2.6K (unchanged)**, forks 340→341
+   - **Open issues 60→61** (+1)
+   - **PulseMCP: ~36.8K weekly** (down from ~37.3K)
+   - **PR #251 merged (April 20): RLS advisory in `list_tables`** — critical security alerts when Row Level Security is disabled on any table, with per-table remediation SQL and documentation links. Smart filtering excludes system schemas. Makes the MCP server actively security-aware.
+   - **PR #258 merged (April 21): Server instructions support** — MCP spec `instructions` field now populated, giving LLMs protocol-level context about how to interact with Supabase. Follows the April 9 "AI Agents Know About Supabase" blog post releasing open-source agent instructions.
+   - **ISO 27001:2022 certified (April 22)** — covers entire platform: database, auth, storage, realtime, edge functions, data API. Joins SOC 2 and HIPAA compliance.
+   - **Stripe Sync Engine transferred to Stripe (April 14)** — deepening partnership beyond Stripe Projects co-design.
+   - **New issue #257 (April 20):** Local CLI endpoint fails OAuth — Kong has no `.well-known/oauth-*` routes. Clarified that local server doesn't require auth.
+   - **OAuth scope issue #239:** Still open, PR #240 proposed but not merged.
+   - **Still no release since v0.7.0 (March 2)** — nearly 8 weeks, but active development continues on `main`.
+   - **Rating unchanged:** 4/5
+
+2. **Hugo build** — successful (705ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 3 reviews still stale: linear (Apr 19), pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 785 — 2026-04-24 — Refresh Notion MCP Server Review (3 API changelog entries in one week: comment CRUD GA + multi-value filters + pagination fixes; Workers for Agents dev preview; OAuth #269 now 14 comments no response; file properties broken #274; stars 4,200→4,300; PulseMCP 1.3M→1.4M #45 globally)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
