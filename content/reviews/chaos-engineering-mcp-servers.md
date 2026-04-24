@@ -2,15 +2,15 @@
 title: "Chaos Engineering MCP Servers — LitmusChaos, Chaos Mesh, Gremlin, Steadybit, Harness, and More"
 date: 2026-03-15T09:00:00+09:00
 description: "Chaos engineering MCP servers let AI agents manage fault injection experiments, monitor resilience, and track chaos results through natural language."
-og_description: "Chaos engineering MCP servers: LitmusChaos MCP (12 stars, Go, official, 17 tools, CNCF, experiment management + infrastructure + ChaosHub), Chaos Mesh MCP (1 star, Python, MIT, 33 tools, 7 chaos types — network/stress/pod/IO/HTTP/DNS/physical machine), Gremlin MCP (5 stars, TypeScript, Apache 2.0, 11 tools, reliability intelligence, read-only by default), Steadybit MCP (0 stars, Java, MIT, 11 tools, experiment templates + schedules), Harness MCP (30 stars, Go, 6 chaos tools within 21+ toolsets), AWS FIS MCP (3 stars, Python, MIT, 10 tools). 15+ servers reviewed. Rating: 3.5/5."
+og_description: "Chaos engineering MCP servers: LitmusChaos MCP (15 stars, Go, official, 17 tools, CNCF, experiment management + infrastructure + ChaosHub), Chaos Mesh MCP (2 stars, Python, MIT, 33 tools, 7 chaos types — network/stress/pod/IO/HTTP/DNS/physical machine), Gremlin MCP (6 stars, TypeScript, Apache 2.0, 11+ tools, reliability intelligence + test execution), Steadybit MCP (0 stars, Java, MIT, 11 tools, 71 commits active), Harness MCP (50 stars, Go, 10 consolidated tools + 139 resource types across 30 toolsets), AWS FIS MCP (3 stars, Python, MIT, 10 tools). NEW: mcp-chaos-rig (10 stars, MCP client fault injection testing). 15+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Chaos engineering MCP servers across CNCF platforms, commercial reliability tools, and cloud-native fault injection services. LitmusChaos offers the most comprehensive official MCP server with 17 tools covering the full chaos experiment lifecycle — from ChaosHub fault discovery through execution tracking with resiliency scoring. Chaos Mesh MCP provides the deepest fault injection coverage with 33 tools spanning 7 chaos categories. Commercial platforms (Gremlin, Steadybit, Harness) focus on read-only observability and reporting rather than direct fault injection. The category is young but growing — no ChaosBlade, Toxiproxy, or PowerfulSeal MCP servers exist yet."
-last_refreshed: 2026-03-15
+card_description: "Chaos engineering MCP servers across CNCF platforms, commercial reliability tools, and cloud-native fault injection services. LitmusChaos offers the most comprehensive official MCP server with 17 tools covering the full chaos experiment lifecycle — from ChaosHub fault discovery through execution tracking with resiliency scoring. Chaos Mesh MCP provides the deepest fault injection coverage with 33 tools spanning 7 chaos categories. Harness is the breakout performer with 50 stars and 461 commits, now using a registry-based architecture dispatching 10 consolidated tools to 139 resource types. Gremlin has expanded beyond read-only with reliability test execution. The category is young but growing — no ChaosBlade, Toxiproxy, or PowerfulSeal MCP servers exist yet."
+last_refreshed: 2026-04-25
 ---
 
 Chaos engineering — the practice of deliberately injecting faults to find weaknesses before they become outages — is a natural fit for MCP integration. AI agents that can discover, execute, and analyze chaos experiments through natural language lower the barrier to entry for teams that know they should be testing resilience but find the YAML-heavy workflows intimidating. The category spans three areas: **CNCF platforms** (LitmusChaos, Chaos Mesh), **commercial reliability platforms** (Gremlin, Steadybit, Harness), and **cloud-native fault injection** (AWS FIS).
 
-The headline finding: **LitmusChaos has the strongest official MCP server** with 17 tools covering experiment management, infrastructure monitoring, environment organization, resilience probes, ChaosHub integration, and analytics — the full chaos experiment lifecycle in one server. **Chaos Mesh MCP has the deepest fault injection coverage** with 33 tools across 7 chaos types (network, stress, pod, IO, HTTP, DNS, physical machine), but it's a community project with minimal adoption. Commercial platforms (Gremlin, Steadybit) focus on **read-only observability** — querying experiment results and generating reports rather than directly injecting faults through MCP. The main gap is in **direct fault execution** — most servers either manage experiments or report on results, but few give the AI agent a "break this now" button with proper safety controls.
+The headline finding: **LitmusChaos has the strongest official MCP server** with 17 tools covering experiment management, infrastructure monitoring, environment organization, resilience probes, ChaosHub integration, and analytics — the full chaos experiment lifecycle in one server, though development has stalled since November 2025. **Chaos Mesh MCP has the deepest fault injection coverage** with 33 tools across 7 chaos types (network, stress, pod, IO, HTTP, DNS, physical machine), but it's a community project with minimal adoption. **Harness is the breakout performer** — growing from 30 to 50 stars with 461 commits, now using a registry-based architecture that dispatches 10 consolidated tools to 139 resource types across 30 toolsets. **Gremlin has expanded beyond read-only** with reliability test execution capabilities added in early 2026. The main gap is still in **direct fault execution** — most servers either manage experiments or report on results, but few give the AI agent a "break this now" button with proper safety controls.
 
 **Category:** [Cloud & Infrastructure](/categories/cloud-infrastructure/)
 
@@ -20,9 +20,9 @@ The headline finding: **LitmusChaos has the strongest official MCP server** with
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [litmuschaos/litmus-mcp-server](https://github.com/litmuschaos/litmus-mcp-server) | 12 | Go | 17 | stdio |
+| [litmuschaos/litmus-mcp-server](https://github.com/litmuschaos/litmus-mcp-server) | 15 | Go | 17 | stdio |
 
-**litmuschaos/litmus-mcp-server** (12 stars, Go, 30 commits) is the official MCP server for LitmusChaos 3.x, the CNCF-incubating chaos engineering platform (main repo: 8,700+ stars). Seventeen tools organized into seven categories:
+**litmuschaos/litmus-mcp-server** (15 stars, Go, 30 commits) is the official MCP server for LitmusChaos 3.x, the CNCF-incubating chaos engineering platform. Seventeen tools organized into seven categories:
 
 **Experiment management** (4 tools) — `list_chaos_experiments`, `get_chaos_experiment`, `run_chaos_experiment`, `stop_chaos_experiment`. Full lifecycle control: discover available experiments, inspect details, execute on-demand or via cron-like schedules, and stop running experiments with granular control.
 
@@ -38,15 +38,15 @@ The headline finding: **LitmusChaos has the strongest official MCP server** with
 
 **Analytics** (2 tools) — `get_experiment_statistics`, plus project-wide experiment and infrastructure statistics, resiliency score distributions, and run status breakdowns.
 
-Installation via `go install`, `make build`, or Docker container. Requires Go 1.21+, access to a LitmusChaos 3.x Chaos Center, and valid project credentials with access token. The official documentation at docs.litmuschaos.io includes a dedicated MCP server section. This is the most complete chaos engineering MCP server — it covers the full experiment lifecycle from fault discovery through execution tracking and resilience scoring, all backed by a CNCF project with 8,700+ stars on the main repo.
+Installation via `go install`, `make build`, or Docker container. Requires Go 1.21+, access to a LitmusChaos 3.x Chaos Center, and valid project credentials with access token. The official documentation at docs.litmuschaos.io includes a dedicated MCP server section. This remains the most complete dedicated chaos engineering MCP server — it covers the full experiment lifecycle from fault discovery through execution tracking and resilience scoring. However, the repository has been dormant since November 2025 with no new commits, which is a concern for long-term maintenance.
 
 ### Chaos Mesh
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [ernestolee13/chaos-mesh-mcp](https://github.com/ernestolee13/chaos-mesh-mcp) | 1 | Python | 33 | stdio |
+| [ernestolee13/chaos-mesh-mcp](https://github.com/ernestolee13/chaos-mesh-mcp) | 2 | Python | 33 | stdio |
 
-**ernestolee13/chaos-mesh-mcp** (1 star, Python, MIT, 10 commits, December 2025) is a community MCP server for Chaos Mesh, the CNCF-incubating chaos engineering platform. Thirty-three tools organized across 7 chaos types plus management:
+**ernestolee13/chaos-mesh-mcp** (2 stars, Python, MIT, 10 commits, December 2025) is a community MCP server for Chaos Mesh, the CNCF-incubating chaos engineering platform. Thirty-three tools organized across 7 chaos types plus management:
 
 **NetworkChaos** (4 tools) — delay, packet loss, network partition, corruption. Simulate degraded network conditions between services or pods.
 
@@ -64,7 +64,7 @@ Installation via `go install`, `make build`, or Docker container. Requires Go 1.
 
 **Management & validation** (8 tools) — environment validation (3 tools), plus experiment status, listing, deletion, pause, resume, and event tracking (5 tools).
 
-Requirements: Kubernetes v1.15+ (tested with v1.27.6), Chaos Mesh v2.6+ (tested with v2.8.0), Python 3.10-3.12, kubectl configured. Install via pip from GitHub. Despite the 1-star count, this is the most comprehensive fault injection MCP server available — 33 tools covering every Chaos Mesh chaos type including the less common PhysicalMachineChaos and DNSChaos. The lack of adoption is the main concern. No official Chaos Mesh MCP server exists yet.
+Requirements: Kubernetes v1.15+ (tested with v1.27.6), Chaos Mesh v2.6+ (tested with v2.8.0), Python 3.10-3.12, kubectl configured. Install via pip from GitHub. Despite the 2-star count, this is the most comprehensive fault injection MCP server available — 33 tools covering every Chaos Mesh chaos type including the less common PhysicalMachineChaos and DNSChaos. The lack of adoption and zero commits since December 2025 are the main concerns. No official Chaos Mesh MCP server exists yet.
 
 ## Commercial Platforms
 
@@ -72,13 +72,15 @@ Requirements: Kubernetes v1.15+ (tested with v1.27.6), Chaos Mesh v2.6+ (tested 
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [gremlin/mcp](https://github.com/gremlin/mcp) | 5 | TypeScript | 11 | stdio |
+| [gremlin/mcp](https://github.com/gremlin/mcp) | 6 | TypeScript | 11+ | stdio |
 
-**gremlin/mcp** (5 stars, TypeScript, Apache 2.0, 4 commits) is the official MCP server for Gremlin's Reliability Intelligence platform. Eleven tools focused on **read-only observability and reporting**: `list_services`, `get_service_dependencies`, `get_reliability_report`, `get_pricing_report`, `get_client_summary`, `get_attack_summary`, and testing-related functions. Designed "out of the box to carry out non-destructive operations" — you can safely query reliability data without affecting systems or Gremlin configuration.
+**gremlin/mcp** (6 stars, TypeScript, Apache 2.0, 7 commits) is the official MCP server for Gremlin's Reliability Intelligence platform. The core tool set includes `list_services`, `get_service_dependencies`, `get_reliability_report`, `get_pricing_report`, `get_client_summary`, `get_attack_summary`, `get_recent_reliability_tests`, and `get_current_test_suite`.
 
-Key use cases: identify services that need testing, discover uncovered critical dependencies, detect gaps in test coverage, and generate reliability reports for stakeholders. RBAC scoping via API keys adds access control. Containerized isolation for security.
+**New in early 2026:** Gremlin has expanded beyond purely read-only operations. A February 2026 update added `run_reliability_test` and `get_pending_test_runs` — the first write capabilities, allowing AI agents to trigger reliability test execution. A March 31, 2026 update introduced dynamic API tools with Search and Execute capabilities, using OpenAPI spec tokenization to route queries across endpoints. The same update improved client compatibility with an elicitation handler for clients that don't support the elicitation protocol.
 
-Requires Node.js 22+, npm, and a Gremlin account with REST API key. Part of Gremlin's broader Reliability Intelligence launch, which combines automated fault injection experiments, continuous resilience analysis, and MCP-based LLM integration. The read-only design is a deliberate safety choice — Gremlin runs actual fault injection experiments, and allowing an AI agent to trigger those without human review would be risky. The 4-commit count suggests this is still early.
+Key use cases: identify services that need testing, discover uncovered critical dependencies, detect gaps in test coverage, generate reliability reports, and now trigger reliability tests. RBAC scoping via API keys adds access control. Containerized isolation for security.
+
+Requires Node.js 22+, npm, and a Gremlin account with REST API key. Part of Gremlin's broader Reliability Intelligence launch. The evolution from read-only to including test execution marks a significant shift — Gremlin is cautiously enabling AI-driven chaos while maintaining safety through its platform's existing guardrails.
 
 ### Steadybit
 
@@ -86,7 +88,7 @@ Requires Node.js 22+, npm, and a Gremlin account with REST API key. Part of Grem
 |--------|-------|----------|-------|-----------|
 | [steadybit/mcp](https://github.com/steadybit/mcp) | 0 | Java | 11 | stdio |
 
-**steadybit/mcp** (0 stars, Java, MIT, 60 commits, May 2025) is the official MCP server for Steadybit's chaos engineering platform. Eleven tools:
+**steadybit/mcp** (0 stars, Java, MIT, 71 commits, 22 releases) is the official MCP server for Steadybit's chaos engineering platform. Eleven tools:
 
 - `list-experiment-designs` / `get_experiment_design` — browse and inspect experiment definitions
 - `list_experiment_executions` / `get_experiment_execution` — review execution history and results
@@ -96,24 +98,19 @@ Requires Node.js 22+, npm, and a Gremlin account with REST API key. Part of Grem
 - `list_experiment_templates` / `get_experiment_template` — browse reusable templates
 - `create_experiment_from_template` — the only write operation, creating experiments from existing templates
 
-Docker deployment: `docker run -i --rm -e API_TOKEN ghcr.io/steadybit/mcp:latest`. Requires API_TOKEN environment variable and optional API_URL configuration. Steadybit positioned this as "the first MCP server for chaos engineering" when they launched it, though LitmusChaos and others were close behind. The template-based experiment creation is a smart safety pattern — the AI agent can create experiments but only from pre-approved templates, not arbitrary fault configurations. Sixty commits suggests more active development than most in this category.
+Docker deployment: `docker run -i --rm -e API_TOKEN ghcr.io/steadybit/mcp:latest`. Also supports native image compilation via GraalVM for lower resource usage. Requires API_TOKEN environment variable and optional API_URL configuration. Steadybit positioned this as "the first MCP server for chaos engineering" when they launched it, though LitmusChaos and others were close behind. The template-based experiment creation is a smart safety pattern — the AI agent can create experiments but only from pre-approved templates, not arbitrary fault configurations. With 71 commits and 22 releases, Steadybit has the most consistent release cadence in this category — despite 0 stars, suggesting enterprise-focused adoption that doesn't register on GitHub's social metrics.
 
 ### Harness
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [harness/mcp-server](https://github.com/harness/mcp-server) | 30 | Go | 6 (chaos) | stdio |
+| [harness/mcp-server](https://github.com/harness/mcp-server) | 50 | Go | 10 (consolidated) | stdio, HTTP |
 
-**harness/mcp-server** (30 stars, Go, 262 commits) is Harness's unified MCP server covering 21+ platform toolsets — chaos engineering is one module alongside pipelines, secrets, security, cost management, and more. Six chaos-specific tools:
+**harness/mcp-server** (50 stars, Go, 461 commits) is Harness's unified MCP server, now significantly expanded with a **registry-based architecture** that dispatches 10 consolidated tools to 139 resource types across 30 toolsets — chaos engineering is one module alongside pipelines, secrets, security, cost management, and more.
 
-- `chaos_experiments_list` — discover available experiments in a project
-- `chaos_experiment_describe` — retrieve experiment details including purpose, infrastructure targets, and success criteria
-- `chaos_experiment_run` — execute experiments with intelligent parameter detection
-- `chaos_experiment_run_result` — obtain results with resilience scores and performance impact analysis
-- `chaos_probes_list` — discover monitoring probes that validate system health during experiments
-- `chaos_probe_describe` — get probe configuration and validation criteria details
+The server has evolved from individual per-resource tools to a dispatch model where tools like `harness_list`, `harness_get`, and `harness_create` route to any resource type. For chaos engineering, this means experiment discovery, execution, result retrieval, and probe management are all available through the consolidated tool interface. The server also includes 27 prompt templates for common workflows and supports multi-project discovery without hardcoded configuration.
 
-Requires Harness Platform access with Chaos Engineering enabled, API key, Organization ID, and Project ID. Go 1.23+ for building from source. The 262-commit count reflects the full platform MCP server, not just chaos. The value proposition is strongest for teams already using Harness — you get chaos engineering MCP alongside 20+ other platform integrations in one server. For chaos-only use cases, LitmusChaos's dedicated server is more comprehensive.
+Requires Harness Platform access with Chaos Engineering enabled, API key, Organization ID, and Project ID. Go 1.23+ for building from source. Now supports both stdio and HTTP transport, with Docker and Kubernetes deployment options. The 461 commits and +67% star growth (30→50) since March 2026 make Harness the most actively developed chaos-capable MCP server. The value proposition is strongest for teams already using Harness — you get chaos engineering alongside 29 other platform toolsets in one server. For chaos-only use cases, LitmusChaos's dedicated server offers more focused tooling.
 
 ## Cloud-Native Fault Injection
 
@@ -131,11 +128,13 @@ Requires Harness Platform access with Chaos Engineering enabled, API key, Organi
 
 Read-only mode by default is the right safety choice for a fault injection service. Region support with configurable defaults. Structured error messaging for blocked operations. Requires Python 3.10+, boto3, and AWS credentials with FIS permissions. Community project — no official AWS MCP server for FIS exists, though the awslabs/mcp monorepo (4,700+ stars) covers many AWS services. This fills the FIS gap for teams running chaos experiments on AWS.
 
-## AI Agent Resilience Testing
+## MCP Client & Agent Resilience Testing
 
-While not MCP servers themselves, two related projects are worth noting:
+Three related projects focus on testing the resilience of AI agents and MCP clients themselves:
 
-**deepankarm/agent-chaos** (19 stars, Python, Apache 2.0, 57 commits, v0.1.3 January 2026) is a chaos engineering framework for testing AI agent resilience. Instead of breaking infrastructure, it breaks the AI stack itself — injecting LLM failures (rate limits, server errors, timeouts, stream interruptions), tool failures (errors, timeouts, data corruption), and prompt injection attacks. Integrates with DeepEval and Pydantic Evals for semantic evaluation. Randomized chaos combinations via fuzzing. Not an MCP server, but directly relevant to teams building MCP-based agent systems who want to test how their agents handle degraded conditions.
+**Typewise/mcp-chaos-rig** (10 stars, TypeScript, MIT, 21 commits, v1.5.0 April 2026) is a local MCP server that breaks on demand for testing MCP client implementations. It provides a web UI (localhost:4100/ui) where developers can simulate: **authentication failures** (OAuth 2.1 flow breakdowns, bearer token rejection, token expiry, refresh token issues), **tool instability** (enable/disable tools, schema version switching, `tools/changed` notifications), and **reliability degradation** (random latency injection, configurable failure rates 0–100%). Live request logging with JSON-RPC inspection and SSE response monitoring. This is not traditional chaos engineering — it's fault injection for MCP protocol compliance testing. Created February 2026, actively maintained.
+
+**deepankarm/agent-chaos** (21 stars, Python, Apache 2.0, 57 commits, v0.1.3 January 2026) is a chaos engineering framework for testing AI agent resilience. Instead of breaking infrastructure, it breaks the AI stack itself — injecting LLM failures (rate limits, server errors, timeouts, stream interruptions), tool failures (errors, timeouts, data corruption), and prompt injection attacks. Integrates with DeepEval and Pydantic Evals for semantic evaluation. Randomized chaos combinations via fuzzing. No new commits since January 2026, but still the most complete agent-level chaos framework available.
 
 **Alexey Tyurin's MCP Reliability Playbook** (Google Cloud Community, March 2026) documents chaos testing patterns for MCP-based systems — a reference project demonstrating 9 reliability patterns with automated chaos tests that inject faults and verify graceful degradation. The chaos testing framework is generic enough to work with any MCP-based system, with efforts to extract it into a standalone open-source project.
 
@@ -148,15 +147,15 @@ The chaos engineering MCP landscape has significant gaps:
 - **No PowerfulSeal MCP server** — though the project appears dormant since 2021
 - **No Netflix Chaos Monkey MCP server** — the tool that started it all has no MCP integration
 - **No Chaos Toolkit MCP server** — the open API standard for chaos engineering lacks MCP connectivity
-- **No Azure Chaos Studio MCP server** — no GCP equivalent either
+- **No Azure Chaos Studio MCP server** — Microsoft's `azure-mcp` repo was archived August 2025, redirecting to `microsoft/mcp` which covers 40+ Azure services but no Chaos Studio. No GCP equivalent either
 - **Limited safety controls** — most servers that allow fault injection don't implement approval workflows, blast radius limits, or automatic rollback through MCP
 - **No cross-platform abstraction** — each server is tightly coupled to its platform; no unified chaos engineering MCP interface exists
 - **No GameDay orchestration** — no MCP server coordinates multi-team chaos experiments or manages the full GameDay workflow
 
 ## The Bottom Line
 
-Chaos engineering MCP servers are in their early days but the foundation is solid. **LitmusChaos** is the clear recommendation for teams wanting the most complete MCP integration — 17 tools covering the full experiment lifecycle, backed by a CNCF-incubating project with official documentation. **Chaos Mesh MCP** offers the deepest fault injection coverage (33 tools across 7 chaos types) but needs community adoption. **Gremlin and Steadybit** are the right choices for teams already on those platforms who want AI-powered reporting and analysis. **AWS FIS MCP** fills the gap for AWS-native chaos experiments. The biggest opportunity is in **safety-controlled direct fault injection** — most servers either fully expose fault triggers or keep everything read-only. The sweet spot — AI-guided chaos with human approval gates and automatic blast radius limits — doesn't exist yet.
+Chaos engineering MCP servers are maturing unevenly. **LitmusChaos** remains the recommendation for teams wanting the most focused chaos MCP integration — 17 tools covering the full experiment lifecycle — but its dormancy since November 2025 is a concern. **Harness** is the breakout story, growing 67% in stars with 199 new commits and a sophisticated registry-based architecture that makes chaos engineering one of 30 integrated toolsets. **Gremlin** has made the most interesting philosophical shift, expanding beyond read-only with reliability test execution — cautiously enabling AI-driven chaos through its platform's existing safety controls. **Steadybit** keeps shipping (71 commits, 22 releases) despite zero community visibility on GitHub. **Chaos Mesh MCP** still offers the deepest fault injection coverage (33 tools across 7 chaos types) but needs community adoption. **AWS FIS MCP** fills the AWS gap but appears stalled. A new sub-category is emerging around **MCP protocol resilience testing** — mcp-chaos-rig and agent-chaos focus on breaking the AI tooling stack itself rather than infrastructure.
 
-Rating: **3.5 out of 5** — Good platform coverage from CNCF projects and commercial tools, meaningful tool depth in LitmusChaos and Chaos Mesh, but early adoption across the board, no cross-platform abstraction, and significant gaps (ChaosBlade, Toxiproxy, Chaos Monkey, cloud providers). The category will improve as chaos engineering platforms recognize MCP as a standard integration point.
+Rating: **3.5 out of 5** — Good platform coverage from CNCF projects and commercial tools, meaningful tool depth in LitmusChaos and Chaos Mesh, and Harness's rapid growth shows commercial momentum. But adoption remains early across the board, dedicated CNCF servers are stalling, and significant gaps persist (ChaosBlade, Toxiproxy, Chaos Monkey, cloud providers). Gremlin's move toward AI-triggered test execution is the most promising directional signal.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not have hands-on access to these tools — our analysis is based on public repositories, documentation, and changelogs. Last refreshed 2026-04-25.*

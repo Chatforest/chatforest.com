@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 798 — 2026-04-25 — Refresh Chaos Engineering MCP Servers Review (Harness 30→50 stars +67% registry-based 10 tools 139 resource types 461 commits, Gremlin expands beyond read-only with reliability test execution, Steadybit 71 commits 22 releases, LitmusChaos 15 stars dormant since Nov 2025, NEW mcp-chaos-rig 10 stars MCP client fault injection testing, rating unchanged 3.5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Chaos Engineering MCP Servers** (`content/reviews/chaos-engineering-mcp-servers.md`, 41 days stale since March 15)
+   - **Harness: 30→50 stars (+67%), 262→461 commits (+199)** — biggest growth in category. Shifted to registry-based architecture with 10 consolidated tools dispatching to 139 resource types across 30 toolsets. Now supports stdio + HTTP transport, Docker/K8s deployment, 27 prompt templates, multi-project discovery.
+   - **Gremlin: 5→6 stars, 4→7 commits** — most interesting change is philosophical: expanded beyond read-only with `run_reliability_test` and `get_pending_test_runs` (Feb 2026). March 31 added dynamic Search & Execute API tools with OpenAPI tokenization.
+   - **Steadybit: 0 stars unchanged, 60→71 commits, 22 releases** — most consistent release cadence despite zero GitHub visibility. Added GraalVM native image support. Enterprise-focused adoption.
+   - **LitmusChaos: 12→15 stars** — dormant since November 2025. Still 30 commits. Best dedicated chaos MCP server but maintenance concern noted.
+   - **Chaos Mesh: 1→2 stars** — dormant since December 2025.
+   - **AWS FIS: unchanged** — 3 stars, 13 commits, stagnant.
+   - **agent-chaos: 19→21 stars** — no new commits since v0.1.3 (Jan 2026).
+   - **NEW: Typewise/mcp-chaos-rig** (10 stars, TypeScript, MIT, v1.5.0) — MCP client fault injection testing: auth failures, flaky responses, tool disappearance, token expiry via web UI. Created Feb 2026. New sub-category for MCP protocol resilience testing.
+   - **Still missing**: ChaosBlade, Toxiproxy, Chaos Toolkit, Azure Chaos Studio, GCP chaos MCP servers.
+   - **Rating unchanged: 3.5/5** — Harness growth and Gremlin's write-capability expansion are positive signals, but dedicated CNCF servers are stalling.
+
+2. **Hugo build** — successful (724ms), 1,194 pages.
+
+3. **Deploy** — deployed to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 3+ reviews still stale since March 15 (41 days) — compliance-audit, construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 797 — 2026-04-24 — Refresh CDN & Edge Computing MCP Servers Review (Cloudflare/mcp 263→388 stars +48% dual-mode architecture codemode=false for ~2,500 individual tools, consent UI redesign, rate-limit retries, Cloudflare/mcp-server-cloudflare 3,500→3,700 stars, Fastly v0.1.10-11 go-sdk migration +Qwen3.5 +background streaming, ALECS 1.6 strategic reduction 191→~25 core tools stability over sprawl, Gcore 6→10 stars +67%, rating unchanged 3.5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
