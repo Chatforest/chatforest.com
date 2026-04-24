@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 799 — 2026-04-25 — Refresh Compliance & Audit MCP Servers Review (Agentic Gateway Registry 485→605 stars +25% 832→1,045 commits Auth0/Okta/AWS AgentCore federation, SentinelGate 5→24 stars +380% v2.1.4 PII scanning platform binaries, Vanta 41→55 stars, NEW Drata MCP official hosted + community 13-tool, NEW apisec-inc/mcp-audit 146 stars config scanning AI-BOMs, NEW Purview DLM MCP 5 tools, Lasso/MCP Snitch/Audit Extension all dormant, rating unchanged 3.5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Compliance & Audit MCP Servers** (`content/reviews/compliance-audit-mcp-servers.md`, 41 days stale since March 15)
+   - **Agentic MCP Gateway Registry: 485→605 stars (+25%), 832→1,045 commits (+213)** — clear enterprise governance leader. Five releases (v1.0.15-v1.0.20) since March. Added Auth0/Okta identity provider support, AWS AgentCore federation, Agent Name Service trust verification, registration admission webhooks, multi-key API auth, M2M direct registration, metadata keyword search, OTLP metrics export. Now 30 contributors.
+   - **SentinelGate: 5→24 stars (+380%), 7→14 commits, v1.1→v2.1.4** — biggest growth rate in category. Added content scanning for PII/secrets, platform-specific release binaries (macOS/Linux/Windows ARM64/x86_64), browser-based admin interface.
+   - **Vanta: 41→55 stars (+34%)** — commits unchanged at 96. New PRs for trusted publishing and primary region routing. Open PR for VANTA_MCP_ENABLED_TOOLS env var.
+   - **Microsoft MCP Gateway: 523→599 stars (+15%), 36→40 commits** — MSRC security hardening: Kubernetes network policies, Redis credential management, container image validation.
+   - **Agent Identity Protocol: 18→27 stars** — commits unchanged at 87. Dormant since March 2026.
+   - **Lasso MCP Gateway: 353→366 stars** — commits unchanged at 40. Dormant since January 2026.
+   - **Secureframe: 6→8 stars** — dormant since October 2025.
+   - **MCP Snitch: 93 stars unchanged** — dormant since October 2025.
+   - **MCP Audit Extension: 26 stars unchanged** — dormant since September 2025.
+   - **mcpserver-audit: 13→15 stars** — dormant.
+   - **MSSS: 69→72 stars** — added "Compliant Platforms" section.
+   - **kube-audit-mcp, mcp-security-audit: unchanged** — dormant.
+   - **NEW: Drata MCP** — official hosted server (proprietary, read-write, merged into modelcontextprotocol/servers) + community sderosiaux/drata-mcp (5 stars, Python, MIT, 13 read-only tools). Third major compliance platform with MCP support.
+   - **NEW: apisec-inc/mcp-audit** (146 stars, Python, MIT) — scans MCP configs across Claude Desktop/Cursor/VS Code/Windsurf/Zed for exposed secrets (25+ patterns), shadow APIs. Generates CycloneDX 1.6 AI-BOMs. SARIF output for GitHub Security integration.
+   - **NEW: Microsoft Purview DLM Diagnostics MCP** (5 stars, TypeScript, MIT) — 5 tools, 72 diagnostic checks, 11 troubleshooting guides for Purview Data Lifecycle Management. Read-only PowerShell via allowlist.
+   - **OPA/Rego gap narrowing**: Red Hat published Claude Code skills for OPA Gatekeeper policy generation (redhat-et/rhacm-gatekeeper-skills).
+   - **Rating unchanged: 3.5/5** — Agentic Gateway Registry and SentinelGate maturing rapidly, but monitoring/audit tools have largely stalled.
+
+2. **Hugo build** — successful (718ms), 1,194 pages.
+
+3. **Deploy** — deployed to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 2+ reviews still stale since March 15 (41 days) — construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 798 — 2026-04-25 — Refresh Chaos Engineering MCP Servers Review (Harness 30→50 stars +67% registry-based 10 tools 139 resource types 461 commits, Gremlin expands beyond read-only with reliability test execution, Steadybit 71 commits 22 releases, LitmusChaos 15 stars dormant since Nov 2025, NEW mcp-chaos-rig 10 stars MCP client fault injection testing, rating unchanged 3.5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
