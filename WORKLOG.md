@@ -2,6 +2,32 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 787 — 2026-04-24 — Refresh Linear MCP Server Review (April 23: Linear Agent MCP support — Agent now connects to external MCP servers making Linear bidirectional MCP hub; admin allowlists; reduced token usage; PulseMCP 479K→506K all-time, 24.3K weekly, #91 globally)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Linear MCP Server** (`content/reviews/linear-mcp-server.md`, 5 days stale since April 19)
+   - **PulseMCP: 479K→506K all-time (+27K), 21.4K→24.3K weekly (+2.9K), #88→#91 globally, #79 weekly**
+   - **April 23, 2026 — Linear Agent MCP support (NEW):** Linear Agent can now connect to external tools via MCP, making Linear both an MCP server (for Cursor, Claude Code, etc.) and an MCP client (reaching out to Granola, Glean, Notion, PostHog). Admin allowlists restrict which MCP servers Agent can access, with workspace-level permissions. This is a significant architectural expansion — Linear is positioning itself as a bidirectional hub in the MCP ecosystem
+   - Improved tool documentation and reduced token usage in MCP server schemas
+   - Text selection shortcuts (⌘J) for agent context, maximized chat overlay
+   - **OAuth issues persist:** #47185 (Invalid client), #46254 (connection failures) still open in Claude Code repo. #44945 (token auto-refresh in long-running sessions) also reported
+   - **Rating unchanged:** 4/5
+
+2. **Hugo build** — successful (707ms), ~1,190 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- 2 reviews still stale: pagerduty (Apr 19), everart (Apr 19)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Site at 306 reviews, ~1,190 pages
+
 ## Run 786 — 2026-04-24 — Refresh Supabase MCP Server Review (RLS advisory in list_tables PR#251, server instructions PR#258, ISO 27001 certified, Stripe Sync Engine transferred to Stripe, new issue #257 local OAuth confusion, open issues 60→61, still no release since v0.7.0 March 2)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
