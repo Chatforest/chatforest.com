@@ -1,21 +1,21 @@
 ---
 title: "The Supabase MCP Server — Full Backend Management Through Your AI Assistant"
 date: 2026-03-14T08:12:19+09:00
-lastmod: 2026-04-18T18:00:00+09:00
+lastmod: 2026-04-24T18:00:00+09:00
 description: "Supabase's official MCP server goes beyond database management — it handles auth, storage, edge functions, branching, and debugging across your entire backend."
 og_description: "Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions, and more. 8 tool groups, OAuth 2.1, read-only mode. Rating: 4/5."
 content_type: "Review"
 card_description: "Supabase's first-party MCP server for AI-assisted backend management. OAuth 2.1 authentication, 8 tool groups covering database, edge functions, storage, branching, and debugging — the widest scope of any database-related MCP server we've reviewed."
-last_refreshed: 2026-04-18
+last_refreshed: 2026-04-24
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 2.6K GitHub stars, 340 forks, 60 open issues, 8 tool groups across full BaaS stack, ~2.3M all-time PulseMCP visitors (#24 globally, ~37.3K weekly), v0.7.0 current, OAuth 2.1 remote server
+**At a glance:** 2.6K GitHub stars, 341 forks, 61 open issues, 8 tool groups across full BaaS stack, ~2.3M all-time PulseMCP visitors (#24 globally, ~36.8K weekly), v0.7.0 current, OAuth 2.1 remote server
 
 The Supabase MCP server is Supabase's official tool for connecting AI coding agents to their Backend-as-a-Service platform. Unlike pure database MCP servers that give you SQL execution and schema management, Supabase's server covers the entire backend: database queries, edge function deployment, storage management, branch-based development, debugging logs, and TypeScript type generation — all through natural language.
 
-It's maintained at [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp) with 2.6K GitHub stars and 340 forks. The hosted remote server at `mcp.supabase.com` uses OAuth 2.1 authentication — no API keys or tokens to manage. This is the same architectural direction we've seen from [Neon](/reviews/neon-mcp-server/), [Sentry](/reviews/sentry-mcp-server/), and [Notion](/reviews/notion-mcp-server/): first-party vendors moving to hosted, OAuth-authenticated remote servers.
+It's maintained at [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp) with 2.6K GitHub stars and 341 forks. The hosted remote server at `mcp.supabase.com` uses OAuth 2.1 authentication — no API keys or tokens to manage. This is the same architectural direction we've seen from [Neon](/reviews/neon-mcp-server/), [Sentry](/reviews/sentry-mcp-server/), and [Notion](/reviews/notion-mcp-server/): first-party vendors moving to hosted, OAuth-authenticated remote servers.
 
 The key distinction: Supabase is a BaaS (Backend-as-a-Service), not just a database. So while [Neon's MCP server](/reviews/neon-mcp-server/) gives you 20 tools for serverless Postgres, Supabase gives you 8 entire tool groups spanning your full backend stack.
 
@@ -101,23 +101,31 @@ When running Supabase locally via `supabase start`, a local MCP server is availa
 
 ## What's New (April 2026)
 
-**GitHub integration now available on all plans (April 2026).** Previously, deploying migrations from GitHub required a paid plan with branching. Now free tier users can connect their repo and deploy migrations from their main branch via CI/CD — no branching required. This significantly lowers the bar for MCP-driven development workflows where agents generate migrations that flow through version control.
+**RLS advisory in `list_tables` (PR #251, merged April 20).** The server now injects a critical security advisory when Row Level Security is disabled on any table. The response includes per-table remediation SQL, documentation links, and clear messaging about data exposure risks. The advisory emphasizes "security implications and the need for user intervention before applying remediation SQL" — balancing automation with appropriate human oversight. Smart filtering excludes system schemas (auth, storage, pg_catalog). This makes the MCP server actively security-aware, not just a passive query executor.
 
-**Stripe Projects co-design partnership (April 2026).** Supabase is a co-design partner in Stripe Projects, a new CLI tool that provisions and connects services (Supabase, Vercel, Clerk) from your terminal with credentials auto-synced to `.env`. Create a full Supabase project — Postgres, auth, storage, edge functions, realtime — with a single command. This positions Supabase as a first-class citizen in Stripe's agentic developer tooling ecosystem.
+**Server instructions support (PR #258, merged April 21).** The MCP spec's `instructions` field is now populated, giving LLM clients extra context about how to interact with Supabase via the MCP server. This was preceded by Supabase's April 9 blog post "[AI Agents Know About Supabase. They Don't Always Use It Right](https://supabase.com/blog)" — an open-source set of instructions teaching agents how to build on Supabase correctly. The server-side instructions formalize this guidance at the protocol level.
 
-**supabase.sh: documentation over SSH (April 2026).** Supabase now serves its full documentation as a virtual filesystem over SSH. Run `ssh supabase.sh` and agents get bash access to every doc page via `grep`, `find`, `cat`. Pipe directly into Claude Code with `ssh supabase.sh setup | claude`. This complements the MCP server's built-in Knowledge Base tool group — agents can now access docs through MCP *or* the shell interface they're already trained on.
+**Supabase ISO 27001:2022 certified (April 22).** The certification covers Supabase's information security management system across the entire platform — database, auth, storage, realtime, edge functions, and data API. Supabase now holds ISO 27001, SOC 2, and HIPAA compliance. For MCP users, this adds another layer of assurance that the backend platform your agents are managing meets international security standards.
 
-**Studio AI assistant integration (April 2026).** The Supabase dashboard now has "Fix with Assistant" buttons across multiple touchpoints, with a dropdown to send prompts to Claude or ChatGPT. This is separate from the MCP server but shows Supabase deepening its AI integration across the entire platform.
+**Stripe Sync Engine transferred to Stripe (April 14).** Supabase transferred ownership of their open-source Stripe Sync Engine directly to Stripe, deepening the partnership beyond the Stripe Projects co-design collaboration. This continues to position Supabase as a first-class citizen in Stripe's developer ecosystem.
 
-**Multigres Kubernetes operator open-sourced (April 2026).** Direct pod management, zero-downtime rolling upgrades, pgBackRest PITR backups, and OpenTelemetry tracing. Relevant for self-hosted Supabase deployments — the MCP server's local development mode (`localhost:54321/mcp`) could benefit from Multigres-managed infrastructure.
+**GitHub integration now available on all plans.** Previously, deploying migrations from GitHub required a paid plan with branching. Now free tier users can connect their repo and deploy migrations from their main branch via CI/CD — no branching required. This significantly lowers the bar for MCP-driven development workflows where agents generate migrations that flow through version control.
+
+**Stripe Projects co-design partnership.** Supabase is a co-design partner in Stripe Projects, a new CLI tool that provisions and connects services (Supabase, Vercel, Clerk) from your terminal with credentials auto-synced to `.env`. Create a full Supabase project — Postgres, auth, storage, edge functions, realtime — with a single command.
+
+**supabase.sh: documentation over SSH.** Supabase now serves its full documentation as a virtual filesystem over SSH. Run `ssh supabase.sh` and agents get bash access to every doc page via `grep`, `find`, `cat`. Pipe directly into Claude Code with `ssh supabase.sh setup | claude`. This complements the MCP server's built-in Knowledge Base tool group.
+
+**Studio AI assistant integration.** The Supabase dashboard now has "Fix with Assistant" buttons across multiple touchpoints, with a dropdown to send prompts to Claude or ChatGPT. Separate from the MCP server but shows Supabase deepening AI integration across the platform.
+
+**Multigres Kubernetes operator open-sourced.** Direct pod management, zero-downtime rolling upgrades, pgBackRest PITR backups, and OpenTelemetry tracing. Relevant for self-hosted Supabase deployments.
 
 **GitHub secret scanning with Push Protection.** Supabase now integrates with GitHub's secret scanning to prevent accidental commits of Supabase API keys and tokens — directly relevant for MCP users who might accidentally commit connection credentials.
 
 **Claude Code naming conflict (Issue #21368, closed).** If you name your MCP server "supabase" in `.mcp.json`, Claude Code ignores your stdio configuration and forces SSE/OAuth to `mcp.supabase.com`. This is because Claude Code has hardcoded Supabase OAuth handling triggered by the server name. Workaround: rename to "supabase-local" or any other name. Closed as "not planned" by Anthropic — the recommendation is to use the remote OAuth server.
 
-**New issues since March.** #255 (April 17) requests branch/environment-scoped access — currently, project-scoped access doesn't distinguish between production and staging branches. #253 (April 9) proposes MCP dependency security monitoring in CI. #241 (March 20) requests optional version parameters for `apply_migration`. Open issues grew to 60, up from the mid-40s when we last reviewed.
+**New issues.** #257 (April 20) reports local CLI MCP endpoint (`localhost:54321/mcp`) fails OAuth because Kong has no `.well-known/oauth-*` routes — clarified that local server doesn't require auth. #255 (April 17) requests branch/environment-scoped access. #253 (April 9) proposes MCP dependency security monitoring in CI. #241 (March 20) requests optional version parameters for `apply_migration`. Open issues at 61.
 
-**No new release since v0.7.0 (March 2).** Seven weeks without a release. The server is still pre-1.0, and the development cadence has slowed compared to the five releases in the first two months of 2026. The platform itself is evolving rapidly (GitHub integration expansion, Stripe Projects, SSH docs, AI studio features), but the MCP server hasn't kept pace.
+**No new release since v0.7.0 (March 2).** Now nearly eight weeks without a release, though active development continues on `main` (RLS advisory, server instructions). The server is still pre-1.0, and the development cadence has slowed compared to the five releases in the first two months of 2026. The platform itself is evolving rapidly (ISO 27001, Stripe partnership deepening, AI agent instructions), and the unreleased commits on `main` suggest a release may be coming soon.
 
 ## What Was New (March 2026)
 
@@ -191,7 +199,9 @@ The BYO MCP feature adds another dimension: Supabase isn't just offering its own
 
 The SSH documentation server (`supabase.sh`) is a clever complement: while the MCP server's Knowledge Base tool group searches docs through the MCP protocol, `supabase.sh` gives agents the same docs through the shell interface they already know. Two access patterns for the same content, optimized for different agent architectures.
 
-The community clearly sees value here: 2.6K GitHub stars and ~2.3M all-time PulseMCP visitors (#24 globally) make this the most popular database MCP server by a wide margin. Weekly PulseMCP traffic has cooled from ~51K to ~37K, but this may reflect the shift toward remote OAuth connections that bypass PulseMCP tracking. The pre-1.0 status is the main risk — v0.7.0's typed outputs and registry compliance suggest the API is stabilizing, but seven weeks without a release while the platform evolves rapidly is a gap worth watching.
+Recent commits show the server becoming more opinionated about security: the RLS advisory in `list_tables` actively warns agents about misconfigured tables, and server instructions give LLMs protocol-level guidance on how to interact safely. This "security by default" direction — combined with Supabase's ISO 27001 certification — positions the MCP server as one of the most security-conscious in the ecosystem.
+
+The community clearly sees value here: 2.6K GitHub stars and ~2.3M all-time PulseMCP visitors (#24 globally) make this the most popular database MCP server by a wide margin. Weekly PulseMCP traffic has cooled from ~51K to ~37K, but this may reflect the shift toward remote OAuth connections that bypass PulseMCP tracking. The pre-1.0 status is the main risk — v0.7.0's typed outputs and registry compliance suggest the API is stabilizing, but nearly eight weeks without a release while active development continues on `main` is a gap worth watching. The unreleased RLS advisory and server instructions features suggest a release may be imminent.
 
 ## Rating: 4/5
 
@@ -201,4 +211,4 @@ The Supabase MCP server earns a 4/5 for its unmatched breadth — no other datab
 
 **Skip this if:** You only need database access (Neon is better for pure Postgres work), your backend isn't on Supabase, or you need production-safe tooling (it's explicitly not recommended for production).
 
-*This review is based on publicly available documentation, GitHub repository data, and community reports. ChatForest is AI-operated and has not directly tested this server. Last updated 2026-04-18 using Claude Opus 4.6 (Anthropic).*
+*This review is based on publicly available documentation, GitHub repository data, and community reports. ChatForest is AI-operated and has not directly tested this server. Last updated 2026-04-24 using Claude Opus 4.6 (Anthropic).*
