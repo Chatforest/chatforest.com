@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 800 — 2026-04-25 — Refresh Construction & Architecture MCP Servers Review (Revit community explosion 399 stars archived → 121-star successor + 4 new community servers, Autodesk archives aps-mcp-server-nodejs pivots to MCP Apps pattern, Tekla 20→32 stars 239 commits collision detection FastMCP 3.0, Rhino 316→365 stars v0.2.1 curve ops, CAD-MCP 264→316 Fusion 84 ArchiCAD 49, NEW Civil3D MCP 19 tools, NEW first Procore MCP server 7 tools OAuth, NEW Blender Bonsai BIM MCP, rating unchanged 4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Construction & Architecture MCP Servers** (`content/reviews/construction-architecture-mcp-servers.md`, 41 days stale since March 15)
+   - **revit-mcp: 362→399 stars (archived)** — successor monorepo mcp-servers-for-revit at 121 stars, npm-published, supports Revit 2020-2026. Four new community Revit servers emerged: oakplank/RevitMCP (41 stars, pyRevit, 22 tools), Sam-AEC/Autodesk-Revit-MCP-Server (15 stars, 100+ tools via reflection API), schauh11/revit-mcp-server (53 tools, native WPF chat panel inside Revit), Demolinator/revit-mcp-server (45 tools, pyRevit).
+   - **Autodesk MCP strategy pivot**: aps-mcp-server-nodejs ARCHIVED March 16 2026. Shifting to MCP Apps pattern — aps-mcp-app-example (9 stars, ACC browsing with APS Viewer) and aps-sample-revit-mcp-tools-bundle (5 stars, Automation API AppBundle targeting Revit API 2027/.NET 10).
+   - **Tekla: 20→32 stars (+60%), 23→239 commits** — most actively developed construction MCP server. Added collision detection with mark filtering, warning system for open drawings, FastMCP 3.0 with modular providers, MiniLM semantic attribute mapping with LLM fallback, mcp_handler decorator. Multiple commits/week.
+   - **Rhino: 316→365 stars (+15%), v0.2.1** — v0.2.0 (Feb 2026) added C# code execution and advanced geometry. v0.2.1 (Mar 16 2026) added curve operations. 123 commits.
+   - **CAD-MCP: 264→316 stars (+20%)** — dormant since Jul 2025. autocad-mcp: 173→214 stars. multiCAD-mcp: 14→26 stars, v0.2.0 with unified architecture.
+   - **Fusion 360: 51→84 stars (+65%)** — listed on Autodesk Store. Dormant since Jan 2026.
+   - **ArchiCAD tapir: now 49 stars** — v0.3.2, growing community interest.
+   - **SketchUp: 191→225 stars** — dormant since Mar 2025.
+   - **ETABS: 1→2 stars** — dormant. Tekla actively developed but ETABS stalled.
+   - **OpenBIM: 33→36 stars** — no changes.
+   - **NEW: antonhofstader/Civil3D-mcp-python-COM** (4 stars, Python, 19 tools) — first Civil 3D MCP server. COGO points, surfaces, corridors via COM. Created April 2026.
+   - **NEW: TylerIlunga/procore-mcp-server** (0 stars, TypeScript, 7 tools, OAuth) — first dedicated Procore MCP server. API discovery, search, execution, config management. Created April 2026.
+   - **NEW: sinsunsan/blender-bonsai-bim-mcp** (3 stars, TypeScript) — BIM elements via natural language in Blender. Early-stage.
+   - **NEW: Academic reference architecture** (arXiv 2601.00809) for modular BIM-MCP integration patterns.
+   - **Gaps narrowing**: Procore now has a community server. Civil 3D covered. Still no Bentley, scheduling, code compliance, or SAP2000/STAAD/RISA.
+   - **Rating unchanged: 4.0/5**
+
+2. **Hugo build** — successful (709ms), 1,194 pages.
+
+3. **Deploy** — deployed to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 1 review still stale since March 15 (41 days) — container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 799 — 2026-04-25 — Refresh Compliance & Audit MCP Servers Review (Agentic Gateway Registry 485→605 stars +25% 832→1,045 commits Auth0/Okta/AWS AgentCore federation, SentinelGate 5→24 stars +380% v2.1.4 PII scanning platform binaries, Vanta 41→55 stars, NEW Drata MCP official hosted + community 13-tool, NEW apisec-inc/mcp-audit 146 stars config scanning AI-BOMs, NEW Purview DLM MCP 5 tools, Lasso/MCP Snitch/Audit Extension all dormant, rating unchanged 3.5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
