@@ -1,18 +1,18 @@
 ---
-title: "Agriculture & Farming MCP Servers — Leaf, John Deere, FarmerChat, Garmin Weather, Satellite Imagery, and More"
+title: "Agriculture & Farming MCP Servers — Leaf, John Deere, FieldMCP, FarmerChat, Weather, Satellite Imagery, and More"
 date: 2026-03-15T15:00:00+09:00
-description: "Agriculture and farming MCP servers are bringing AI to precision agriculture, crop planning, and farm data management. We reviewed 20+ servers across 6 subcategories."
-og_description: "Agriculture & farming MCP servers: Leaf Agriculture (official vendor, unified farm API), John Deere Operations Center (2 implementations), agri-weather (Open-Meteo, soil/ET data), Brazilian ag data (19 sources), FarmerChat (12 MCP servers, multi-country), sheep breeding genetics (15 tools), Google Earth Engine for crop monitoring (30+ datasets). Rating: 3.0/5."
+description: "Agriculture and farming MCP servers are bringing AI to precision agriculture, crop planning, and farm data management. We reviewed 20+ servers across 7 subcategories."
+og_description: "Agriculture & farming MCP servers: Leaf Agriculture (official vendor, unified farm API), FieldMCP (commercial SaaS, $29/org/month, John Deere live), John Deere Operations Center, agri-weather (Open-Meteo, soil/ET data), Brazilian ag data (23 stars), FarmerChat (12 MCP servers, multi-country), sheep breeding genetics (15 tools), Axion Planetary MCP (218 stars, AWS, SAR-to-optical). Rating: 3.0/5."
 content_type: "Review"
-card_description: "Agriculture and farming MCP servers for precision agriculture, crop planning, livestock management, and farm data integration. This is an early-stage but genuinely interesting category. Leaf Agriculture stands out as the only commercial vendor with an official MCP server — their unified API connects to major ag platforms (John Deere, Climate FieldView, CNHi, AGCO) through a single integration point. John Deere's Operations Center has two independent MCP implementations, with CoreyFransen08's Cloudflare Workers deployment using a clever double OAuth proxy pattern. Agricultural weather gets specialized treatment with etudelab's agri-weather-mcp offering soil temperature/moisture at multiple depths and evapotranspiration metrics — data points that generic weather MCP servers don't provide. The most ambitious project is Digital Green's FarmerChat-MCP, which runs 12 MCP servers to synthesize soil analysis, weather, elevation, and satellite data for smallholder farmers across India, Ethiopia, Kenya, Nigeria, and Brazil. For livestock, the NSIP sheep breeding MCP server provides 15 tools for genetic evaluation including EBV comparison and mating plans. Satellite imagery gets strong coverage through Axion-MCP's Google Earth Engine integration with 30+ datasets and vegetation indices like NDVI. Major gaps: no official servers from John Deere, Case IH, AGCO, or any equipment manufacturer; no dedicated crop disease/pest identification servers; no irrigation management systems; no commodity trading platforms with grain futures. The category earns 3.0/5 — thin but meaningful, with Leaf's official server and FarmerChat showing that agriculture-specific MCP tools can deliver real value."
-last_refreshed: 2026-03-15
+card_description: "Agriculture and farming MCP servers for precision agriculture, crop planning, livestock management, and farm data integration. This is an early-stage but genuinely interesting category. Two commercial vendors now offer MCP servers — Leaf Agriculture's unified API connects to major ag platforms through a single integration point, and the new FieldMCP ($29/org/month) provides John Deere integration with 150+ agronomic decision rules. John Deere's Operations Center has one active community MCP implementation (CoreyFransen08's Cloudflare Workers with double OAuth proxy). Agricultural weather gets specialized treatment with agri-weather-mcp offering soil temperature/moisture at multiple depths and evapotranspiration metrics. A new general-purpose agriculture MCP server (AiAgentKarl) provides 8 tools across soil, weather, climate history, and global statistics using free APIs. The most ambitious project remains Digital Green's FarmerChat-MCP with 12 servers across five countries. Axion Planetary MCP has grown to 218 stars with a V2 rewrite migrating to AWS and introducing a SAR-to-optical foundation model. Major gaps persist: no official equipment manufacturer servers, no crop disease identification, no irrigation management. The category earns 3.0/5 — thin but meaningful, with commercial entrants signaling that agricultural MCP is becoming a real market."
+last_refreshed: 2026-04-24
 ---
 
 Agriculture and farming MCP servers are bringing AI assistants into precision agriculture, crop planning, livestock management, and farm data analysis. Instead of navigating multiple dashboards for field data, weather forecasts, soil conditions, and market prices, these servers let AI agents pull farm-specific intelligence and generate actionable recommendations — all through the Model Context Protocol.
 
-The landscape spans six areas: **unified farm data platforms** (Leaf Agriculture, John Deere Operations Center), **agricultural weather intelligence** (soil conditions, evapotranspiration, crop-specific alerts), **market data** (commodity prices, crop estimates), **smallholder farmer AI** (multi-source agricultural advisory), **livestock and breeding** (genetic evaluation, breeding decisions), and **satellite earth observation** (NDVI, crop health monitoring, land use analysis).
+The landscape spans seven areas: **unified farm data platforms** (Leaf Agriculture, FieldMCP, John Deere Operations Center), **general-purpose agriculture tools** (soil, weather, climate history, global statistics), **agricultural weather intelligence** (soil conditions, evapotranspiration, crop-specific alerts), **market data** (commodity prices, crop estimates), **smallholder farmer AI** (multi-source agricultural advisory), **livestock and breeding** (genetic evaluation, breeding decisions), and **satellite earth observation** (NDVI, crop health monitoring, land use analysis).
 
-The headline findings: **Leaf Agriculture is the only commercial vendor with an official MCP server** — their unified API aggregates data from John Deere, Climate FieldView, CNHi, AGCO, and other platforms through a single integration point. **Digital Green's FarmerChat-MCP is the most ambitious agricultural AI project using MCP** — 12 interconnected servers synthesizing soil, weather, elevation, and satellite data for smallholder farmers across five countries. **Agricultural weather MCP servers provide data that generic weather servers don't** — soil temperature at multiple depths, evapotranspiration metrics, and crop growth stage alerts. **No major equipment manufacturer has an official MCP server** — everything for John Deere, Case IH, and AGCO is community-built.
+The headline findings: **Two commercial vendors now offer agriculture MCP servers** — Leaf Agriculture's unified API aggregates data from major platforms through a single integration point, and the new FieldMCP ($29/org/month) provides John Deere integration with 150+ agronomic decision rules and OAuth 2.1 authentication. **Digital Green's FarmerChat-MCP remains the most ambitious agricultural AI project using MCP** — 12 interconnected servers synthesizing soil, weather, elevation, and satellite data for smallholder farmers across five countries. **Agricultural weather MCP servers provide data that generic weather servers don't** — soil temperature at multiple depths, evapotranspiration metrics, and crop growth stage alerts. **No major equipment manufacturer has an official MCP server** — everything for John Deere, Case IH, and AGCO is community-built or third-party.
 
 **Category:** [Logistics & Industry](/categories/logistics-industry/)
 
@@ -36,20 +36,52 @@ Their MCP server wraps this unified API for AI agent access. Developers can conn
 
 All tool calls use your Leaf API key and hit existing API endpoints, so security is handled through standard API authentication. This is a commercial product with paid tiers, but it's the closest thing to a "universal farm data MCP" that exists.
 
-### John Deere Operations Center
+### FieldMCP (Commercial SaaS)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [CoreyFransen08/john-deere-ops-mcp](https://glama.ai/mcp/servers/@CoreyFransen08/john-deere-ops-mcp) | — | TypeScript | — | — |
-| [easavin/ag-mcp](https://github.com/easavin/ag-mcp) | — | TypeScript | — | — |
+| [FieldMCP](https://www.fieldmcp.com) | — | — | Commercial | 150+ rules |
 
-Two independent implementations connect AI agents to John Deere's Operations Center API.
+A **new commercial SaaS platform** that provides MCP servers for agricultural APIs. FieldMCP connects AI assistants to farm data through standard MCP protocol with OAuth 2.1 authentication — your AI can access field boundaries, equipment data, harvest records, and agronomic recommendations through natural language.
 
-**CoreyFransen08/john-deere-ops-mcp** runs as a remote MCP server on Cloudflare Workers with a Durable Object providing stateful sessions. The clever part is its **double OAuth proxy pattern** — the Worker acts as an OAuth server to MCP clients downstream, and as an OAuth client to John Deere upstream. This means any MCP-compatible client can authenticate without needing to implement John Deere's OAuth flow directly. Capabilities include browsing organizations, fields, and field operations data.
+Key capabilities:
 
-**easavin/ag-mcp** takes a different approach — it's a Claude-style chat interface that connects to John Deere Operations Center, Auravant (an Argentine precision agriculture platform), and weather data via MCP. Think of it as a farmer-facing AI assistant where you can ask questions about your fields and equipment in natural language, upload prescription shapefiles, and get multi-source data combined from multiple platforms. The interface is responsive for desktop, tablet, and mobile.
+- **John Deere Operations Center integration** — live and production-ready
+- **150+ agronomic decision rules** across 12 analysis domains
+- **Climate FieldView, CNHi, AGCO** — listed as "coming soon"
+- **Two-step setup** — sign up, connect your John Deere account, MCP clients discover and connect natively
+- **Transparency focus** — every recommendation traces to documented rules
 
-Neither is an official John Deere product — both are community-built integrations using John Deere's developer API.
+**Pricing: $29/org/month** with a 14-day free trial and 17K API requests/month included. This is the first dedicated commercial MCP platform targeting agriculture (Leaf is a broader ag-data platform that also offers MCP access).
+
+### John Deere Operations Center (Community)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [CoreyFransen08/john-deere-ops-mcp](https://glama.ai/mcp/servers/@CoreyFransen08/john-deere-ops-mcp) | 0 | TypeScript | — | — |
+
+**CoreyFransen08/john-deere-ops-mcp** runs as a remote MCP server on Cloudflare Workers with a Durable Object providing stateful sessions. The clever part is its **double OAuth proxy pattern** — the Worker acts as an OAuth server to MCP clients downstream, and as an OAuth client to John Deere upstream. This means any MCP-compatible client can authenticate without needing to implement John Deere's OAuth flow directly. Capabilities include browsing organizations, fields, and field operations data. Targets the JD sandbox environment (max 5 orgs, 150K API calls/month, 18-month sandbox duration). No activity since its initial commit in March 2026.
+
+A second implementation (easavin/ag-mcp) that previously provided a Claude-style chat interface combining John Deere, Auravant, and weather data appears to have been removed — the repository now returns 404.
+
+Neither existing implementation is an official John Deere product — both are community-built integrations using John Deere's developer API.
+
+## General-Purpose Agriculture Tools
+
+### Agriculture MCP Server (AiAgentKarl)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [AiAgentKarl/agriculture-mcp-server](https://github.com/AiAgentKarl/agriculture-mcp-server) | 1 | Python | MIT | 8 |
+
+A **new open-source general-purpose agriculture MCP server** (March 2026) that bundles 8 tools across 4 categories using entirely free APIs — no authentication keys required:
+
+- **Soil conditions** — soil temperature, moisture, evapotranspiration forecasts via Open-Meteo
+- **Crop weather** — agricultural weather metrics, historical climate data since 1981 (NASA POWER), long-term monthly climate patterns
+- **Global statistics** — country-specific agriculture profiles and cross-country comparisons via World Bank (20+ indicators)
+- **Food products** — barcode-based product lookups and searches across 3M+ products via Open Food Facts
+
+The breadth is appealing — a single server that covers soil, weather, climate history, and global agriculture statistics. The trade-off is depth: each tool wraps a public API without much agricultural domain logic on top. Still, for quick agricultural data access with zero setup cost, this fills a gap between the specialized servers above and generic weather/data tools.
 
 ## Agricultural Weather Intelligence
 
@@ -89,7 +121,7 @@ Requires Node.js >= 18.0.0 and a GAP API Token from TomorrowNow. Coverage is lim
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | — | Python | — | 4+ |
+| [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 23 | Python | MIT | 4+ |
 
 Connects LLMs to **19 public Brazilian agricultural data sources** — the most comprehensive agricultural market data MCP server we've found in any country. Data sources include:
 
@@ -146,13 +178,14 @@ This is a niche tool, but it automates complex genetic calculations that would o
 
 ## Satellite & Earth Observation for Agriculture
 
-### Axion MCP (Google Earth Engine)
+### Axion Planetary MCP (V2)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Dhenenjay/Axion-MCP](https://github.com/Dhenenjay/Axion-MCP) | — | Python | — | 30+ datasets |
+| [Dhenenjay/axion-planetary-mcp](https://github.com/Dhenenjay/axion-planetary-mcp) | 218 | Python | — | 30+ datasets |
+| [Dhenenjay/Axion-MCP](https://github.com/Dhenenjay/Axion-MCP) | 4 | Python | — | 30+ datasets |
 
-An **enterprise-grade geospatial analysis platform** that connects AI agents to Google Earth Engine's massive satellite data catalog. While not agriculture-specific, this is the most powerful tool available for farm-level satellite analysis via MCP.
+The **most-starred agriculture-adjacent MCP server** (218 stars). Axion Planetary MCP is the V2 rewrite of the original Axion-MCP, with a major architectural shift: **migrated from Google Cloud/GEE to AWS**, introduced a proprietary "Axion Foundation Model" for SAR-to-optical image conversion, NPM package distribution, and API key authentication instead of GCP credentials. 935 commits demonstrate active development, though the last commit was February 2026.
 
 Agricultural capabilities include:
 
@@ -161,17 +194,17 @@ Agricultural capabilities include:
 - **Cloud-free composites** — automated cloud masking for clean imagery
 - **Time series analysis** — track crop growth, stress, and yield trends across seasons
 - **Deforestation tracking** — monitor land use change
+- **SAR-to-optical conversion** — the new foundation model generates optical-like imagery from radar data, useful when cloud cover blocks optical satellites
 
-A farmer or agronomist could ask "show me NDVI trends for my field over the last growing season" and get satellite-derived vegetation health data without touching GIS software. This is the kind of analysis that precision agriculture consultants charge hundreds of dollars per field for.
+The original Axion-MCP (4 stars) connected directly to Google Earth Engine and remains functional for users with GCP credentials, but development has shifted to the V2 platform.
 
-#### Related Earth Observation Projects
+#### Related Earth Observation Project
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Dhenenjay/axion-planetary-mcp](https://github.com/Dhenenjay/axion-planetary-mcp) | — | Python | — | — |
 | [Dhenenjay/earth-engine-mcp-new](https://github.com/Dhenenjay/earth-engine-mcp-new) | — | Python | — | — |
 
-Dhenenjay maintains multiple Earth Engine MCP implementations at different complexity levels — from basic Sentinel-2 imagery and NDVI calculation to the full Axion platform with 30+ datasets.
+A simpler Earth Engine MCP implementation for basic Sentinel-2 imagery and NDVI calculation.
 
 ## Adjacent: Biodiversity & Species Identification
 
@@ -203,14 +236,18 @@ Despite interesting depth in a few areas, the agriculture MCP ecosystem has sign
 
 **Rating: 3.0 / 5**
 
-Agriculture & farming is an early-stage MCP category with a small server count but genuine substance. Leaf Agriculture's official unified farm data server is commercially significant — it's one of the few official vendor MCP servers in any industry vertical that connects to real production data. Digital Green's FarmerChat-MCP demonstrates that MCP can power complex multi-source agricultural advisory at scale across five countries. The agricultural weather servers (agri-weather-mcp, GAP agriculture) provide farming-specific data that generic weather servers don't — soil depth measurements and evapotranspiration are not nice-to-haves in agriculture, they're essential for irrigation decisions.
+Agriculture & farming remains an early-stage MCP category with a small server count but genuine substance. The arrival of **FieldMCP as a dedicated commercial SaaS platform** ($29/org/month) is the most significant development since our initial review — it signals that agricultural MCP is transitioning from hobbyist projects to a real market. Combined with Leaf Agriculture's unified API, there are now two commercial vendors competing in this space.
 
-The ecosystem is thin overall — roughly 20 servers where categories like database tooling or cloud infrastructure have hundreds. But agriculture is a $3 trillion global industry where better information directly translates to higher yields and lower waste. The servers that exist are solving real problems for real farmers, not just wrapping APIs for developer convenience.
+Digital Green's FarmerChat-MCP continues to demonstrate that MCP can power complex multi-source agricultural advisory at scale across five countries. The agricultural weather servers provide farming-specific data that generic weather servers don't — soil depth measurements and evapotranspiration remain essential for irrigation decisions. Axion Planetary MCP's growth to 218 stars and its V2 rewrite with SAR-to-optical conversion shows the satellite/earth observation side of agricultural MCP gaining traction.
+
+The ecosystem is still thin — roughly 20-25 servers where categories like database tooling or cloud infrastructure have hundreds. But agriculture is a $3 trillion global industry where better information directly translates to higher yields and lower waste. The servers that exist are solving real problems for real farmers, not just wrapping APIs for developer convenience.
 
 **Best for farm data integration:** Leaf Agriculture MCP (unified API across platforms)
+**Best commercial platform:** FieldMCP ($29/org/month, John Deere live, 150+ decision rules)
 **Best for agricultural weather:** etudelab/agri-weather-mcp (soil depth, ET₀, crop alerts)
 **Best for smallholder farmers:** Digital Green FarmerChat-MCP (12 servers, 5 countries)
-**Best for satellite crop analysis:** Dhenenjay/Axion-MCP (Google Earth Engine, NDVI, 30+ datasets)
+**Best for satellite crop analysis:** Dhenenjay/axion-planetary-mcp (218 stars, AWS, 30+ datasets)
 **Best niche pick:** epicpast/nsip-api-client (sheep breeding genetics, 15 tools)
+**Best zero-setup option:** AiAgentKarl/agriculture-mcp-server (8 tools, all free APIs)
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-24 using Claude Opus 4.6 (Anthropic).*

@@ -51,6 +51,20 @@
 
     
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-04-24 16:00:00</span></div>
+  <h3><a href="/reviews/metamcp-server/">MetaMCP — The MCP Aggregator That Turns Dozens of Servers Into One Unified Endpoint</a></h3>
+  <p>MetaMCP (2.2K stars, MIT, TypeScript) aggregates multiple MCP servers into one unified endpoint. Three-level hierarchy (Servers → Namespaces → Endpoints), pluggable middleware, rate limiting, OAuth support, multi-transport (SSE, Streamable HTTP, OpenAPI). Docker-based deployment with GUI management.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-04-24 14:00:00</span></div>
+  <h3><a href="/reviews/azure-devops-mcp-server/">Azure DevOps MCP Server — Microsoft&#39;s Official AI Bridge to Work Items, Repos, Pipelines, and Test Plans</a></h3>
+  <p>Microsoft&#39;s official MCP server for Azure DevOps (1.6K stars, v2.7.0, MIT). 9 tool domains covering work items, repos, pipelines, wikis, test plans, and advanced security. Both local (stdio) and remote (streamable HTTP, public preview). Microsoft Entra &#43; PAT authentication. April 2026 update adds WIQL queries, MCP Annotations, and experimental MCP Apps.</p>
+</div>
+
+    
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-04-22 12:00:00</span></div>
   <h3><a href="/reviews/gmail-mcp-servers/">Gmail MCP Servers — Your Inbox Is Now an Agent Tool (Proceed with Caution)</a></h3>
   <p>Gmail MCP servers — from Google&#39;s official MCP endpoint to community servers. Let agents read, search, and send email. The security implications are significant.</p>
@@ -1445,8 +1459,8 @@
     
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-15 15:00:00</span></div>
-  <h3><a href="/reviews/agriculture-farming-mcp-servers/">Agriculture &amp; Farming MCP Servers — Leaf, John Deere, FarmerChat, Garmin Weather, Satellite Imagery, and More</a></h3>
-  <p>Agriculture and farming MCP servers for precision agriculture, crop planning, livestock management, and farm data integration. This is an early-stage but genuinely interesting category. Leaf Agriculture stands out as the only commercial vendor with an official MCP server — their unified API connects to major ag platforms (John Deere, Climate FieldView, CNHi, AGCO) through a single integration point. John Deere&#39;s Operations Center has two independent MCP implementations, with CoreyFransen08&#39;s Cloudflare Workers deployment using a clever double OAuth proxy pattern. Agricultural weather gets specialized treatment with etudelab&#39;s agri-weather-mcp offering soil temperature/moisture at multiple depths and evapotranspiration metrics — data points that generic weather MCP servers don&#39;t provide. The most ambitious project is Digital Green&#39;s FarmerChat-MCP, which runs 12 MCP servers to synthesize soil analysis, weather, elevation, and satellite data for smallholder farmers across India, Ethiopia, Kenya, Nigeria, and Brazil. For livestock, the NSIP sheep breeding MCP server provides 15 tools for genetic evaluation including EBV comparison and mating plans. Satellite imagery gets strong coverage through Axion-MCP&#39;s Google Earth Engine integration with 30&#43; datasets and vegetation indices like NDVI. Major gaps: no official servers from John Deere, Case IH, AGCO, or any equipment manufacturer; no dedicated crop disease/pest identification servers; no irrigation management systems; no commodity trading platforms with grain futures. The category earns 3.0/5 — thin but meaningful, with Leaf&#39;s official server and FarmerChat showing that agriculture-specific MCP tools can deliver real value.</p>
+  <h3><a href="/reviews/agriculture-farming-mcp-servers/">Agriculture &amp; Farming MCP Servers — Leaf, John Deere, FieldMCP, FarmerChat, Weather, Satellite Imagery, and More</a></h3>
+  <p>Agriculture and farming MCP servers for precision agriculture, crop planning, livestock management, and farm data integration. This is an early-stage but genuinely interesting category. Two commercial vendors now offer MCP servers — Leaf Agriculture&#39;s unified API connects to major ag platforms through a single integration point, and the new FieldMCP ($29/org/month) provides John Deere integration with 150&#43; agronomic decision rules. John Deere&#39;s Operations Center has one active community MCP implementation (CoreyFransen08&#39;s Cloudflare Workers with double OAuth proxy). Agricultural weather gets specialized treatment with agri-weather-mcp offering soil temperature/moisture at multiple depths and evapotranspiration metrics. A new general-purpose agriculture MCP server (AiAgentKarl) provides 8 tools across soil, weather, climate history, and global statistics using free APIs. The most ambitious project remains Digital Green&#39;s FarmerChat-MCP with 12 servers across five countries. Axion Planetary MCP has grown to 218 stars with a V2 rewrite migrating to AWS and introducing a SAR-to-optical foundation model. Major gaps persist: no official equipment manufacturer servers, no crop disease identification, no irrigation management. The category earns 3.0/5 — thin but meaningful, with commercial entrants signaling that agricultural MCP is becoming a real market.</p>
 </div>
 
     
@@ -1677,7 +1691,7 @@
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-15 06:47:00</span></div>
   <h3><a href="/reviews/api-testing-mcp-servers/">API Testing MCP Servers — REST Clients, GraphQL Tools, OpenAPI Converters, and gRPC Bridges</a></h3>
-  <p>API testing MCP servers across REST clients, GraphQL tools, OpenAPI converters, and gRPC bridges. Postman&#39;s official MCP server leads with 100&#43; tools and remote hosting. Apollo MCP Server converts GraphQL operations to MCP tools with Rust performance. blurrah/mcp-graphql provides generic GraphQL introspection and query execution. For OpenAPI, awslabs dynamically generates tools from specs. Redpanda&#39;s protoc-gen-go-mcp bridges gRPC services to MCP with zero boilerplate.</p>
+  <p>API testing MCP servers across REST clients, GraphQL tools, OpenAPI converters, gRPC bridges, and Bruno collection runners. Postman&#39;s official MCP server leads with 100&#43; tools and remote hosting. Apollo MCP Server (v1.13, Rhai scripting, MCP prompts) converts GraphQL operations to MCP tools with Rust performance. Bruno MCP servers now bridge the formerly missing Bruno ecosystem. blurrah/mcp-graphql provides generic GraphQL introspection and query execution. Redpanda&#39;s protoc-gen-go-mcp bridges gRPC services to MCP with zero boilerplate.</p>
 </div>
 
     
