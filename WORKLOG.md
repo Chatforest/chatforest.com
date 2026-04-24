@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 795 — 2026-04-24 — Refresh Audio & Video Processing MCP Servers Review (DaVinci Resolve 641→866 stars +35% with Fusion node graph v2.1.0, ElevenLabs 24 tools corrected from "10+", itsuzef/reaper-mcp major rewrite 5→58 tools PyPI, NEW Spotify MCP 312 stars fills gap, yt-dlp-mcp 233 stars, Chatterbox+Qwen3-TTS open-weight options, Adobe 505→576 stars, all FFmpeg servers stale)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Audio & Video Processing MCP Servers** (`content/reviews/audio-video-processing-mcp-servers.md`, 40 days stale since March 15)
+   - **DaVinci Resolve: 641→866 stars (+35%)** — biggest growth in category. Six releases (v2.0.5–v2.1.0): path traversal security fix, grab_and_export atomic action, cross-platform sandbox paths, **new Fusion composition node graph tool** (27th compound tool, 20 actions). Compound server now 27 tools.
+   - **ElevenLabs: tool count corrected from "10+" to 24** — includes compose_music, speech_to_speech, voice library search, phone numbers, agent knowledge bases. Stars stable at ~1,300. Only 1 new commit (EU/IN residency aliases).
+   - **itsuzef/reaper-mcp: 40→55 stars, MAJOR REWRITE** — replaced OSC architecture with python-reapy, expanded from 5 to 58 tools, published on PyPI as `reaper-mcp-server`, now under bonfire-audio org.
+   - **NEW: Spotify MCP servers** — marcelmarais/spotify-mcp-server (312 stars, TypeScript). Fills a gap explicitly noted in previous review. Also iceener/spotify-streamable-mcp-server (78 stars).
+   - **NEW: kevinwatt/yt-dlp-mcp** (233 stars, TypeScript, 83 commits) — bridges yt-dlp with MCP for video search, download, transcript extraction. More actively maintained than existing transcript servers.
+   - **NEW open-weight TTS options**: digitarald/chatterbox-mcp (10 stars, Chatterbox model), neosun100/qwen3-tts (12 stars, 10-language Docker deployment)
+   - **Adobe adb-mcp: 505→576 stars (+14%)** — no new commits but steady growth
+   - **Ableton MCP: 2,300→2,400 stars** — stable, no new commits since Jan 2026
+   - **total-reaper-mcp: 29→41 stars (+41%)** — no new commits but strong discovery growth
+   - **blacktop/mcp-tts: 50→56 stars** — only actively maintained TTS server (2 commits in April 2026)
+   - **All FFmpeg servers stale** — video-creator 124→132, misbahsy 65→71, dubnium0 15→16, none with commits since May 2025
+   - **YouTube transcript: 494→529 stars** — still popular despite no new commits
+   - **What's Missing updated**: Spotify gap filled, noted AssemblyAI barely-launched community MCP, added open-weight voice model gap (Sesame/CSM, Dia, F5-TTS, Parler, Fish Speech)
+   - **Rating unchanged: 4.0/5** — DaVinci Resolve growth and Spotify arrival strengthen the category
+
+2. **Hugo build** — successful (722ms), 1,194 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 6+ reviews still stale since March 15 (40 days) — backup-disaster-recovery, cdn-edge-computing, chaos-engineering, compliance-audit, construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 794 — 2026-04-24 — Refresh Astrology & Divination MCP Servers Review (bazi-mcp 271→364 stars +34%, tarot-mcp 7→11, i-ching v1.0 crates.io, NEW Vedic wave: panchanga_api 24 tools x402 payments, vedaksha Rust, rishi-ai-mcp, RoxyAPI SDKs)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
