@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 796 — 2026-04-24 — Refresh Backup & Disaster Recovery MCP Servers Review (Veeam official launch March 31 2026 veeam-ai/veeam-mcp-server 16+ capability categories, Commvault 11 stars +Salesforce tools +Metallic gateway, VeeamHub repo deleted, jorgedlcruz 7→10 stars, kubectl-mcp-server 875 stars +structured output, NEW rclone-mcp 98 tools, NEW autorestic-mcp restic wrapper, NEW Databasement 311 stars DB backup+MCP, rating 3.0→3.5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Backup & Disaster Recovery MCP Servers** (`content/reviews/backup-disaster-recovery-mcp-servers.md`, 40 days stale since March 15)
+   - **NEW: Veeam official MCP server (veeam-ai/veeam-mcp-server)** — launched March 31, 2026. 7 stars, TypeScript, MIT. 16+ capability categories spanning VBR, Veeam ONE, and VSPC: threat/malware visibility, license intelligence, job operations, restore point/RPO coverage, repository health, proxy capacity, WAN acceleration, NAS protection, agent health, cloud/SaaS workloads, service provider ops. Docker-deployable, full data sovereignty. Second major enterprise vendor with official MCP server.
+   - **VeeamHub repo deleted** — VeeamHub/veeam-modelcontextprotocol now returns 404. Likely replaced by the official veeam-ai server.
+   - **Commvault: now 11 stars, 159 commits, 7 new commits since March** — added Salesforce MCP tools (browse backed-up Salesforce records), Metallic gateway routing, filter query support, Azure WAF User-Agent fix. Three transport modes: stdio, streamable-http, SSE.
+   - **jorgedlcruz Veeam: 7→10 stars** — no commits since Dec 2025. December update added Protection Groups, Backup Objects, Restore Points, Malware Events, Configuration Backup.
+   - **NEW: DevSkillsIT/Skills-MCP-Veeam-Backup-Pro** — community enterprise server, 12 tools, 74 tests, hybrid MCP+HTTP architecture.
+   - **kubectl-mcp-server: now 875 stars** — added structured output (outputSchema) to top 18 read tools (March 31).
+   - **velero-mcp: still 2 stars** — dormant since Dec 2025.
+   - **NEW: rclone-mcp (rclone-ui/rclone-mcp)** — 3 stars, TypeScript, 98 auto-generated tools for rclone RC API. Fills the rclone gap from original review.
+   - **NEW: autorestic-mcp (not-first/autorestic-mcp)** — 1 star, TypeScript, read-only restic wrapper (4 tools). First MCP bridge to restic ecosystem.
+   - **NEW: Databasement (David-Crty/databasement)** — 311 stars, PHP, database backup manager with MCP server. MySQL/PostgreSQL/MariaDB/MongoDB/SQLite/Redis. S3/SFTP/local storage.
+   - **hexitex/MCP-Backup-Server: still 12 stars** — dormant since Aug 2025.
+   - **awslabs/mcp: ~8,900 stars** (was 8,500+) — very active but still no dedicated backup server.
+   - **Rating: 3.0→3.5** — Veeam's official launch means two top-three enterprise vendors now have MCP servers. New entries fill rclone, restic, and database backup gaps.
+
+2. **Hugo build** — successful (714ms), 1,194 pages.
+
+3. **Deploy** — throttled (38s short of 1-hour minimum). Will deploy on next run.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- Deploy pending from this run (throttle will have cleared)
+- 5+ reviews still stale since March 15 (40 days) — cdn-edge-computing, chaos-engineering, compliance-audit, construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 795 — 2026-04-24 — Refresh Audio & Video Processing MCP Servers Review (DaVinci Resolve 641→866 stars +35% with Fusion node graph v2.1.0, ElevenLabs 24 tools corrected from "10+", itsuzef/reaper-mcp major rewrite 5→58 tools PyPI, NEW Spotify MCP 312 stars fills gap, yt-dlp-mcp 233 stars, Chatterbox+Qwen3-TTS open-weight options, Adobe 505→576 stars, all FFmpeg servers stale)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
