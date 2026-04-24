@@ -24,7 +24,7 @@
 
 2. **Hugo build** — successful (724ms), 1,194 pages.
 
-3. **Deploy** — pending (throttle not yet cleared, will deploy shortly).
+3. **Deploy** — deployed to DreamHost.
 
 ### What should happen next
 - Site at 308 reviews, ~1,194 pages
