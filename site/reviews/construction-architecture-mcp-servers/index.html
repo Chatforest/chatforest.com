@@ -6,14 +6,14 @@
   <title>Construction &amp; Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More — ChatForest</title>
   <meta name="description" content="Construction and architecture MCP servers are connecting AI agents to BIM software, CAD platforms, 3D modeling tools, structural analysis programs, and construction management systems.">
   <meta property="og:title" content="Construction &amp; Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More — ChatForest">
-  <meta property="og:description" content="Construction &amp; architecture MCP servers: Revit (362 stars, 27 tools), AutoCAD (264 stars, multi-CAD), SketchUp (191 stars), Rhino (316 stars), ArchiCAD (137 auto-tools), Tekla (20 stars, 23 tools), ETABS (30&#43; structural tools), OpenBIM/IFC (33 stars), Autodesk official AEC servers, Fusion 360 (51 stars). Rating: 4.0/5.">
+  <meta property="og:description" content="Construction &amp; architecture MCP servers: Revit (399 stars archived → 121-star successor monorepo &#43; community explosion), AutoCAD (316 stars, multi-CAD), SketchUp (225 stars), Rhino (365 stars, v0.2.1 curve ops), ArchiCAD (49 stars, 137 auto-tools), Tekla (32 stars, 239 commits, collision detection, FastMCP 3.0), ETABS (30&#43; structural tools), OpenBIM/IFC (36 stars), Fusion 360 (84 stars), NEW Civil3D MCP (19 tools), first Procore MCP server (7 tools, OAuth). Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/construction-architecture-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Construction &amp; Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More — ChatForest">
-  <meta name="twitter:description" content="Construction &amp; architecture MCP servers: Revit (362 stars, 27 tools), AutoCAD (264 stars, multi-CAD), SketchUp (191 stars), Rhino (316 stars), ArchiCAD (137 auto-tools), Tekla (20 stars, 23 tools), ETABS (30&#43; structural tools), OpenBIM/IFC (33 stars), Autodesk official AEC servers, Fusion 360 (51 stars). Rating: 4.0/5.">
+  <meta name="twitter:description" content="Construction &amp; architecture MCP servers: Revit (399 stars archived → 121-star successor monorepo &#43; community explosion), AutoCAD (316 stars, multi-CAD), SketchUp (225 stars), Rhino (365 stars, v0.2.1 curve ops), ArchiCAD (49 stars, 137 auto-tools), Tekla (32 stars, 239 commits, collision detection, FastMCP 3.0), ETABS (30&#43; structural tools), OpenBIM/IFC (36 stars), Fusion 360 (84 stars), NEW Civil3D MCP (19 tools), first Procore MCP server (7 tools, OAuth). Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/construction-architecture-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 25, 2026</span>
       </div>
 
       <h1 class="article-title">Construction &amp; Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More</h1>
@@ -67,10 +67,10 @@
       <div class="article-body">
         <p>Construction and architecture MCP servers are connecting AI agents to BIM software, CAD platforms, 3D modeling tools, structural analysis programs, and construction management systems. Instead of manually navigating complex 3D modeling interfaces, creating construction drawings by hand, or running structural analyses through multi-step GUI workflows, these servers let AI assistants create building elements, query BIM data, execute CAD commands, generate parametric designs, run structural calculations, and manage construction data — all through the Model Context Protocol.</p>
 <p>The landscape spans seven areas: <strong>BIM &amp; Revit</strong> (Autodesk&rsquo;s flagship and the largest MCP ecosystem in construction), <strong>CAD platforms</strong> (AutoCAD, GstarCAD, ZWCAD, BricsCAD), <strong>3D modeling</strong> (SketchUp, Rhino, Grasshopper, Fusion 360), <strong>architecture BIM</strong> (ArchiCAD), <strong>structural engineering</strong> (ETABS, Tekla Structures), <strong>OpenBIM/IFC</strong> (open standards for BIM data exchange), and <strong>construction management</strong> (cost estimation, project management).</p>
-<p>The headline findings: <strong>Autodesk has made MCP a core part of its platform strategy</strong> — with four official servers and a public roadmap for production-grade MCP connectors across Revit, AutoCAD, Civil 3D, and Construction Cloud. <strong>Revit has the most mature MCP integration in construction</strong> — revit-mcp (362 stars) offers 27 tools for full BIM automation. <strong>AutoCAD has six independent implementations</strong> — more than any other CAD platform. <strong>Rhino is the second most-starred construction MCP server</strong> — jingcheng-chen/rhinomcp (316 stars) plus Grasshopper parametric design integration. <strong>Structural engineering has a surprisingly strong start</strong> — the ETABS server provides 30+ tools with access to all 806 analysis tables and AISC steel code compliance. <strong>The design phase is well-covered; the construction phase is not</strong> — there&rsquo;s a sharp drop-off from modeling to actual project management, scheduling, and site operations.</p>
+<p>The headline findings: <strong>Autodesk is pivoting its MCP strategy</strong> — archiving the Node.js Platform Services server and shifting toward the MCP Apps pattern (aps-mcp-app-example) and cloud Automation API bundles. <strong>The Revit community has exploded</strong> — the original revit-mcp (399 stars, archived) spawned a successor monorepo plus four new community servers with 22-100+ tools each. <strong>Tekla is now the most actively developed construction MCP server</strong> — teknovizier/tekla_mcp_server has jumped to 239 commits with collision detection, FastMCP 3.0, and semantic attribute mapping. <strong>Rhino remains the second most-starred</strong> — rhinomcp (365 stars) shipped v0.2.1 with curve operations and C# code execution. <strong>AutoCAD has seven implementations</strong> — and Civil 3D now has its first MCP server. <strong>The construction management gap is narrowing</strong> — the first dedicated Procore MCP server has appeared with 7 tools and OAuth support. <strong>The design phase remains far stronger than construction operations</strong> — but the gap is slowly closing.</p>
 <p><strong>Category:</strong> <a href="/categories/logistics-industry/">Logistics &amp; Industry</a></p>
 <h2 id="bim--revit">BIM &amp; Revit</h2>
-<h3 id="revit-mcprevit-mcp">revit-mcp/revit-mcp</h3>
+<h3 id="revit-mcprevit-mcp-archived">revit-mcp/revit-mcp (Archived)</h3>
 <table>
 <thead>
 <tr>
@@ -84,14 +84,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/revit-mcp/revit-mcp">revit-mcp/revit-mcp</a></td>
-<td>~362</td>
+<td>~399</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>27</td>
 </tr>
 </tbody>
 </table>
-<p>The most popular construction MCP server. Enables AI systems to query Revit project data and drive modeling operations through 27 tools:</p>
+<p>The most popular construction MCP server by star count. Enables AI systems to query Revit project data and drive modeling operations through 27 tools:</p>
 <ul>
 <li><strong>Data retrieval</strong> — view info, element queries, family type inspection</li>
 <li><strong>Creation</strong> — points, lines, surfaces, grids, levels, rooms, building elements</li>
@@ -99,7 +99,37 @@
 <li><strong>Code execution</strong> — arbitrary C# execution within Revit for extensibility</li>
 <li><strong>Storage</strong> — operation history and state management</li>
 </ul>
-<p>The project was archived in February 2026 with a deprecation notice recommending migration to the monorepo at mcp-servers-for-revit/mcp-servers-for-revit for simpler installation and CI workflows.</p>
+<p>The project was archived in February 2026 with a deprecation notice recommending migration to the successor monorepo.</p>
+<h3 id="mcp-servers-for-revitmcp-servers-for-revit-successor">mcp-servers-for-revit/mcp-servers-for-revit (Successor)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mcp-servers-for-revit/mcp-servers-for-revit">mcp-servers-for-revit</a></td>
+<td>~121</td>
+<td>TypeScript/C#</td>
+<td>MIT</td>
+<td>27+</td>
+</tr>
+</tbody>
+</table>
+<p>The official successor monorepo combining the TypeScript MCP server, C# Revit plugin, and command set. Published to npm as <code>mcp-server-for-revit</code>. Supports Revit 2020-2026 with installable releases. Development has slowed since February 2026 but the package is stable.</p>
+<h3 id="community-revit-servers">Community Revit Servers</h3>
+<p>The Revit MCP ecosystem has exploded with multiple independent implementations:</p>
+<ul>
+<li><strong>oakplank/RevitMCP</strong> (41 stars, Python, MIT) — pyRevit extension with 22 tools, web UI and MCP dual modes. The most mature community alternative.</li>
+<li><strong>Sam-AEC/Autodesk-Revit-MCP-Server</strong> (15 stars, Python/C#) — 100+ Revit API tools via reflection API for unlimited access, enterprise security options, Claude Desktop and Copilot integration.</li>
+<li><strong>schauh11/revit-mcp-server</strong> — native WPF chat panel docked inside Revit, 53 tools, WebSocket communication. Unique embedded UI approach.</li>
+<li><strong>Demolinator/revit-mcp-server</strong> (2 stars, 69 commits) — pyRevit-based, 45 tools, supports Revit 2024-2026.</li>
+</ul>
 <h3 id="autodesk-official--aps-sample-mcp-server-revit-automation">Autodesk Official — aps-sample-mcp-server-revit-automation</h3>
 <table>
 <thead>
@@ -114,7 +144,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/autodesk-platform-services/aps-sample-mcp-server-revit-automation">aps-sample-mcp-server-revit-automation</a></td>
-<td>~2</td>
+<td>~6</td>
 <td>C#</td>
 <td>MIT</td>
 <td>2</td>
@@ -128,8 +158,8 @@
 <li><strong>SSA authentication</strong> — JWT bearer tokens with RSA signing for service-to-service auth</li>
 <li><strong>Fluent API</strong> — type-safe model configuration with compile-time validation</li>
 </ul>
-<p>Designed as extensible — developers add custom tools following a consistent pattern. Currently limited to 2 tools but represents Autodesk&rsquo;s official direction for cloud-native BIM automation.</p>
-<h3 id="autodesk-platform-services--aps-mcp-server-nodejs">Autodesk Platform Services — aps-mcp-server-nodejs</h3>
+<p>Has a companion repo (aps-sample-revit-mcp-tools-bundle, 5 stars) for the Automation API AppBundle, targeting Revit API 2027 on .NET 10. Both actively updated through April 2026.</p>
+<h3 id="autodesk-mcp-apps--aps-mcp-app-example">Autodesk MCP Apps — aps-mcp-app-example</h3>
 <table>
 <thead>
 <tr>
@@ -142,15 +172,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/autodesk-platform-services/aps-mcp-server-nodejs">aps-mcp-server-nodejs</a></td>
-<td>~17</td>
+<td><a href="https://github.com/autodesk-platform-services/aps-mcp-app-example">aps-mcp-app-example</a></td>
+<td>~9</td>
 <td>JavaScript</td>
 <td>MIT</td>
 <td>Multiple</td>
 </tr>
 </tbody>
 </table>
-<p>Official Node.js MCP server providing access to the Autodesk Platform Services API with fine-grained access control using Secure Service Accounts. Works with Claude Desktop, VS Code + GitHub Copilot, Cursor, and MCP Inspector. Covers ACC (Autodesk Construction Cloud) integration.</p>
+<p>The new direction for Autodesk&rsquo;s MCP strategy, replacing the archived aps-mcp-server-nodejs. Example MCP server with &ldquo;MCP Apps&rdquo; support for browsing ACC projects and designs with the APS Viewer. Uses Secure Service Accounts. Actively updated through April 2026.</p>
 <h3 id="autodesk-aec-data-model--aps-aecdm-mcp-dotnet">Autodesk AEC Data Model — aps-aecdm-mcp-dotnet</h3>
 <table>
 <thead>
@@ -165,7 +195,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/autodesk-platform-services/aps-aecdm-mcp-dotnet">aps-aecdm-mcp-dotnet</a></td>
-<td>~33</td>
+<td>~34</td>
 <td>C#</td>
 <td>MIT</td>
 <td>7</td>
@@ -182,7 +212,7 @@
 </ul>
 <p>Enables conversational queries like &ldquo;show me all the walls on level 2&rdquo; against federated BIM models.</p>
 <h3 id="autodesk-mcp-platform-strategy">Autodesk MCP Platform Strategy</h3>
-<p>Beyond individual servers, Autodesk has announced a broader MCP initiative: production-grade, managed MCP connectors purpose-built for Design and Make agent workflows. The roadmap includes public servers for Revit, Model Data Explorer, and Fusion Data, with a vision for a Design and Make marketplace of trusted third-party MCP servers. Autodesk Assistant will run on MCP infrastructure, meaning users in Revit, AutoCAD, Civil 3D, and Autodesk Construction Cloud will get a consistent AI-powered experience across tools.</p>
+<p>Autodesk&rsquo;s MCP strategy has evolved since early 2026. The Node.js Platform Services server (aps-mcp-server-nodejs, 18 stars) was <strong>archived in March 2026</strong>, signaling a shift away from monolithic API servers. The new direction centers on the <strong>MCP Apps pattern</strong> — modular, task-specific servers that integrate with the APS Viewer and Secure Service Accounts. The broader roadmap still includes production-grade managed MCP connectors for Design and Make agent workflows, with public servers planned for Revit, Model Data Explorer, and Fusion Data. The Automation API bundle (aps-sample-revit-mcp-tools-bundle) represents the cloud-native path for headless Revit operations.</p>
 <h2 id="cad-platforms">CAD Platforms</h2>
 <h3 id="daobataotiecad-mcp">daobataotie/CAD-MCP</h3>
 <table>
@@ -198,7 +228,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/daobataotie/CAD-MCP">daobataotie/CAD-MCP</a></td>
-<td>~264</td>
+<td>~316</td>
 <td>Python</td>
 <td>MIT</td>
 <td>Multiple</td>
@@ -213,7 +243,7 @@
 <li><strong>Natural language parsing</strong> — color recognition, shape/action keyword mapping</li>
 <li><strong>COM interface</strong> — Windows-native via pywin32</li>
 </ul>
-<p>Works with Claude Desktop, Windsurf, and Cursor.</p>
+<p>Works with Claude Desktop, Windsurf, and Cursor. Dormant since July 2025 but continues gaining stars.</p>
 <h3 id="puran-waterautocad-mcp">puran-water/autocad-mcp</h3>
 <table>
 <thead>
@@ -228,7 +258,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/puran-water/autocad-mcp">puran-water/autocad-mcp</a></td>
-<td>~173</td>
+<td>~214</td>
 <td>Python</td>
 <td>MIT</td>
 <td>8</td>
@@ -244,7 +274,7 @@
 <li><strong>Undo/redo</strong> support</li>
 <li><strong>P&amp;ID symbol library</strong> — CTO-compatible process and instrumentation diagrams</li>
 </ul>
-<p>Requires Windows 10/11 and AutoCAD LT 2024+ for the live backend.</p>
+<p>v3.0 and v3.1 shipped February 2026 with File IPC replacing keyboard simulation, focus-free dispatch via Win32 PostMessageW, and robust error handling. Requires Windows 10/11 and AutoCAD LT 2024+ for the live backend.</p>
 <h3 id="ancode666multicad-mcp">AnCode666/multiCAD-mcp</h3>
 <table>
 <thead>
@@ -259,24 +289,53 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/AnCode666/multiCAD-mcp">AnCode666/multiCAD-mcp</a></td>
-<td>~14</td>
+<td>~26</td>
 <td>Python</td>
 <td>Apache-2.0</td>
 <td>7 (55 commands)</td>
 </tr>
 </tbody>
 </table>
-<p>The broadest CAD platform coverage: AutoCAD, ZWCAD, GstarCAD, and BricsCAD from a single MCP server. Seven unified tools provide access to 55 CAD commands covering:</p>
+<p>The broadest CAD platform coverage: AutoCAD, ZWCAD, GstarCAD, and BricsCAD from a single MCP server. v0.2.0 shipped March 2026 with unified tool architecture, block attribute management, and comprehensive documentation. Seven unified tools provide access to 55 CAD commands covering:</p>
 <ul>
 <li>Block attribute management</li>
 <li>Layer and entity manipulation</li>
 <li>Data export capabilities</li>
 <li>COM-based architecture for real-time control</li>
 </ul>
+<h3 id="civil-3d">Civil 3D</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/antonhofstader/Civil3D-mcp-python-COM">antonhofstader/Civil3D-mcp-python-COM</a></td>
+<td>~4</td>
+<td>Python</td>
+<td>—</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+<p>The first Civil 3D MCP server. Uses COM automation to control Autodesk Civil 3D for civil engineering workflows:</p>
+<ul>
+<li><strong>COGO points</strong> — creation and management</li>
+<li><strong>Surfaces</strong> — terrain surface operations</li>
+<li><strong>Corridors</strong> — road/highway corridor design</li>
+<li><strong>19 tools</strong> covering core civil engineering tasks</li>
+</ul>
+<p>Created April 2026. Fills an important gap for infrastructure and site engineering.</p>
 <h3 id="additional-autocad-implementations">Additional AutoCAD Implementations</h3>
 <ul>
+<li><strong>thepiruthvirajan/autocad-mcp-server</strong> (34 stars) — Python COM automation for walls, doors, windows, and building structures with intelligent layer management. Notable star growth.</li>
 <li><strong>ahmetcemkaraca/AutoCAD_MCP</strong> — AutoCAD 2025 with 7 working tools for 2D and 3D DWG production</li>
-<li><strong>thepiruthvirajan/autocad-mcp-server</strong> — Python COM automation for walls, doors, windows, and building structures with intelligent layer management</li>
 <li><strong>chichicaste/mcp-autocad-server</strong> — learning reference implementation for natural language AutoCAD interaction</li>
 </ul>
 <h2 id="3d-modeling">3D Modeling</h2>
@@ -294,7 +353,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/mhyrr/sketchup-mcp">mhyrr/sketchup-mcp</a></td>
-<td>~191</td>
+<td>~225</td>
 <td>Ruby</td>
 <td>MIT</td>
 <td>8</td>
@@ -310,7 +369,7 @@
 <li><strong>export_scene</strong> — scene export</li>
 <li><strong>eval_ruby</strong> — direct Ruby code execution within SketchUp for extensibility</li>
 </ul>
-<p>Two-way TCP socket communication between Claude and SketchUp.</p>
+<p>Two-way TCP socket communication between Claude and SketchUp. Dormant since March 2025 but continues gaining stars passively.</p>
 <h3 id="jingcheng-chenrhinomcp">jingcheng-chen/rhinomcp</h3>
 <table>
 <thead>
@@ -325,10 +384,10 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/jingcheng-chen/rhinomcp">jingcheng-chen/rhinomcp</a></td>
-<td>~316</td>
+<td>~365</td>
 <td>Python</td>
 <td>Apache-2.0</td>
-<td>7</td>
+<td>7+</td>
 </tr>
 </tbody>
 </table>
@@ -338,18 +397,19 @@
 <li><strong>3D object creation</strong> — points, lines, circles, spheres, and other primitives</li>
 <li><strong>Object manipulation</strong> — transformation, modification, deletion</li>
 <li><strong>Document inspection</strong> and analysis tools</li>
-<li><strong>Python script execution</strong> within Rhino</li>
+<li><strong>C# code execution</strong> within Rhino (added v0.2.0, February 2026)</li>
+<li><strong>Curve operations</strong> — new in v0.2.1 (March 16, 2026)</li>
 <li><strong>Layer management</strong> — create, set, delete operations</li>
 <li><strong>Object selection</strong> with filtering logic</li>
 </ul>
-<p>Supports Claude Desktop and Cursor AI environments.</p>
+<p>v0.2.0 (February 2026) added C# code execution and advanced geometry operations. v0.2.1 (March 2026) added curve operations. Actively maintained with 123 commits. Supports Claude Desktop and Cursor AI environments.</p>
 <h3 id="grasshopper-parametric-design">Grasshopper Parametric Design</h3>
 <p>Multiple MCP servers target Grasshopper, the visual programming environment for Rhino:</p>
 <ul>
-<li><strong>veoery/GH_mcp_server</strong> (27 stars, Python, MIT) — interact with Rhino and Grasshopper directly via LLMs, analyze .3dm files, auto-generate GHPython code based on user guidance. Still under active development.</li>
+<li><strong>veoery/GH_mcp_server</strong> (31 stars, Python, MIT) — interact with Rhino and Grasshopper directly via LLMs, analyze .3dm files, auto-generate GHPython code based on user guidance. Dormant since April 2025, still marked &ldquo;under construction.&rdquo;</li>
 <li><strong>Xiaohu1009/AI-architecture</strong> — unified Rhino + Grasshopper MCP server providing AI agents with comprehensive 3D modeling and parametric design capabilities.</li>
 <li><strong>alfredatnycu/grasshopper-mcp</strong> — bridging server with component knowledge base for high-level intent recognition.</li>
-<li><strong>dongwoosuk/rhino-grasshopper-mcp</strong> — ML-based automatic layout optimization not found in other publicly available tools.</li>
+<li><strong>dongwoosuk/rhino-grasshopper-mcp</strong> (8 stars) — ML-based automatic layout optimization (DBSCAN, K-means, K-NN). Single-commit beta, dormant since December 2025.</li>
 </ul>
 <h3 id="fusion-360">Fusion 360</h3>
 <table>
@@ -365,7 +425,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/AuraFriday/Fusion-360-MCP-Server">AuraFriday/Fusion-360-MCP-Server</a></td>
-<td>~51</td>
+<td>~84</td>
 <td>Python</td>
 <td>—</td>
 <td>10</td>
@@ -379,8 +439,9 @@
 <li><strong>Thread-safe architecture</strong> — main-thread execution prevents crashes</li>
 <li><strong>Cross-operation context</strong> via stored objects</li>
 <li><strong>Automatic signature-verified updates</strong></li>
+<li><strong>Listed on the Autodesk Store</strong> (January 2026)</li>
 </ul>
-<p>Additional Fusion 360 implementations include Joe-Spencer/fusion-mcp-server (add-in exposing Fusion functionality), ArchimedesCrypto/fusion360-mcp-server (toolbar-level command mapping), Misterbra/fusion360-claude-ultimate (French-localized), and sockcymbal/autodesk-fusion-mcp-python.</p>
+<p>v1.2.75 (January 2026) added enhanced Python integration and single-main-thread architecture. Significant star growth (+33) but dormant since January 2026. Additional Fusion 360 implementations include Joe-Spencer/fusion-mcp-server, ArchimedesCrypto/fusion360-mcp-server, Misterbra/fusion360-claude-ultimate, and sockcymbal/autodesk-fusion-mcp-python.</p>
 <h2 id="architecture-bim--archicad">Architecture BIM — ArchiCAD</h2>
 <h3 id="szamosimatetapir-archicad-mcp">SzamosiMate/tapir-archicad-MCP</h3>
 <table>
@@ -396,7 +457,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/SzamosiMate/tapir-archicad-MCP">SzamosiMate/tapir-archicad-MCP</a></td>
-<td>—</td>
+<td>~49</td>
 <td>Python</td>
 <td>—</td>
 <td>137 (auto-generated)</td>
@@ -408,7 +469,9 @@
 <li><strong>discover_tools</strong> — semantic search to find relevant Archicad commands from natural language queries</li>
 <li><strong>137 auto-generated tools</strong> — covering the full breadth of Archicad&rsquo;s capabilities</li>
 <li><strong>Dual API merging</strong> — community Tapir + official JSON API in a single server</li>
+<li><strong>PyPI/uvx installation</strong> — simplified setup (added September 2025)</li>
 </ul>
+<p>v0.3.2 (February 2026) pinned multiconn_archicad dependency. November 2025 added 7 new Tapir tools (updated to Tapir 1.2.4). Growing community interest at 49 stars.</p>
 <h3 id="lgradisararchicad-mcp">lgradisar/archicad-mcp</h3>
 <table>
 <thead>
@@ -423,14 +486,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/lgradisar/archicad-mcp">lgradisar/archicad-mcp</a></td>
-<td>~13</td>
+<td>~16</td>
 <td>JavaScript</td>
 <td>MIT</td>
 <td>Multiple</td>
 </tr>
 </tbody>
 </table>
-<p>The foundational ArchiCAD MCP implementation by Luka Gradišar. Requires the Tapir Archicad Add-On and supports custom tools alongside official JSON commands. A third implementation, tiagoengdigital/archicad-mcp-claude, provides additional Claude Desktop integration.</p>
+<p>The foundational ArchiCAD MCP implementation by Luka Gradišar. Requires the Tapir Archicad Add-On and supports custom tools alongside official JSON commands. Dormant since August 2025. A third implementation, tiagoengdigital/archicad-mcp-claude, provides additional Claude Desktop integration.</p>
 <h2 id="structural-engineering">Structural Engineering</h2>
 <h3 id="huvelascostructural-mcp-servers">HuVelasco/structural-mcp-servers</h3>
 <table>
@@ -446,7 +509,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/HuVelasco/structural-mcp-servers">HuVelasco/structural-mcp-servers</a></td>
-<td>~1</td>
+<td>~2</td>
 <td>Python</td>
 <td>—</td>
 <td>30+</td>
@@ -478,22 +541,27 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/teknovizier/tekla_mcp_server">teknovizier/tekla_mcp_server</a></td>
-<td>~20</td>
+<td>~32</td>
 <td>Python</td>
 <td>GPL-3.0</td>
-<td>23</td>
+<td>23+</td>
 </tr>
 </tbody>
 </table>
-<p>MCP server for Tekla Structures enabling AI-powered steel detailing and modeling:</p>
+<p>The most actively developed construction MCP server — 239 commits and growing rapidly. MCP server for Tekla Structures enabling AI-powered steel detailing and modeling:</p>
 <ul>
 <li><strong>Component insertion</strong> with semantic attribute mapping</li>
 <li><strong>Element selection and filtering</strong> by multiple criteria</li>
 <li><strong>Model visualization</strong> — zooming, coloring, hiding elements</li>
 <li><strong>Boolean cut operations</strong> and part conversion</li>
 <li><strong>Custom attribute management</strong> and element comparison</li>
-<li><strong>Fine-tuned embedding models</strong> for attribute recognition — uses ML to understand natural language descriptions of structural components</li>
+<li><strong>Collision detection</strong> with mark filtering via GetAllObjects API (April 2026)</li>
+<li><strong>Warning system</strong> for open drawings during collision detection</li>
+<li><strong>FastMCP 3.0</strong> with modular providers and plugin system</li>
+<li><strong>MiniLM semantic attribute mapping</strong> with LLM fallback — uses ML to understand natural language descriptions of structural components</li>
+<li><strong>mcp_handler decorator</strong> for refactored error handling</li>
 </ul>
+<p>Active development continues with multiple commits per week as of April 2026.</p>
 <h2 id="openbim--ifc">OpenBIM &amp; IFC</h2>
 <h3 id="helenkwokopenbim-mcp">helenkwok/openbim-mcp</h3>
 <table>
@@ -509,7 +577,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/helenkwok/openbim-mcp">helenkwok/openbim-mcp</a></td>
-<td>~33</td>
+<td>~36</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>3</td>
@@ -522,8 +590,33 @@
 <li><strong>load-frag</strong> — loads fragment files for analysis</li>
 <li><strong>fetch-elements-of-category</strong> — retrieves BIM elements by IFC category (walls, doors, windows) with configurable attributes and relationships</li>
 </ul>
+<p>No changes since last review. Modest star growth.</p>
 <h3 id="mcp4ifc">MCP4IFC</h3>
 <p>An academic framework enabling LLMs to directly manipulate Industry Foundation Classes (IFC) data through MCP. The server manages communication between AI clients and a Blender add-on, exposing structured BIM tools as high-level wrappers while actual operations execute inside Blender. Published as a research paper (arxiv.org/html/2511.05533v1).</p>
+<h3 id="blender-bonsai-bim-mcp">Blender Bonsai BIM MCP</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/sinsunsan/blender-bonsai-bim-mcp">sinsunsan/blender-bonsai-bim-mcp</a></td>
+<td>~3</td>
+<td>TypeScript</td>
+<td>—</td>
+<td>Multiple</td>
+</tr>
+</tbody>
+</table>
+<p>Creates BIM elements via natural language in Blender using the Bonsai BIM add-on. Early-stage (2 commits) but represents a novel approach combining open-source BIM tooling with MCP.</p>
+<h3 id="academic-reference-architecture">Academic Reference Architecture</h3>
+<p>An arXiv paper (2601.00809) proposes a modular reference architecture for MCP servers enabling agentic BIM interaction, covering Bonsai, WebIFC/Fragments, IfcOpenShell, Revit, and Archicad. Provides a conceptual framework for standardizing BIM-MCP integration patterns.</p>
 <h2 id="construction-management">Construction Management</h2>
 <h3 id="abhigit-trimbleconstruct-cost-mcp">AbhiGit-Trimble/construct-cost-mcp</h3>
 <table>
@@ -554,19 +647,48 @@
 <li>Formula: Item Cost = (Material Cost × Quantity) + (Labor Hours × Quantity × Labor Rate)</li>
 </ul>
 <p>From Trimble, a major construction technology company, but currently a minimal proof-of-concept.</p>
+<h3 id="tylerilungaprocore-mcp-server">TylerIlunga/procore-mcp-server</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/TylerIlunga/procore-mcp-server">TylerIlunga/procore-mcp-server</a></td>
+<td>~0</td>
+<td>TypeScript</td>
+<td>—</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>The first dedicated Procore MCP server. Provides 7 tools for interacting with the Procore construction management API:</p>
+<ul>
+<li><strong>API category/endpoint discovery</strong> — browse available Procore API capabilities</li>
+<li><strong>Search and detail retrieval</strong> — find and inspect API endpoints</li>
+<li><strong>API call execution</strong> — make authenticated Procore API requests</li>
+<li><strong>Config management</strong> — OAuth with auto-refresh token support</li>
+</ul>
+<p>Created April 2026. While still at 0 stars, this fills the most significant gap in the construction MCP ecosystem — Procore is the dominant project management platform in the industry.</p>
 <h3 id="procore-via-third-party-mcp-gateways">Procore (via Third-Party MCP Gateways)</h3>
-<p>Procore, the dominant construction project management platform, is accessible through third-party MCP gateways:</p>
+<p>Procore is also accessible through third-party MCP gateways:</p>
 <ul>
 <li><strong>Zapier MCP</strong> — Procore actions as MCP tools</li>
 <li><strong>viaSocket MCP</strong> — Connect Procore with ChatGPT, Claude, and Cursor</li>
 <li><strong>Pipedream MCP</strong> — Procore API integration</li>
 </ul>
-<p>No official dedicated Procore MCP server exists yet, though Procore&rsquo;s API is well-documented and the third-party integrations provide basic project management functionality.</p>
+<p>No official Procore MCP server exists yet, but the dedicated community server above provides direct API access without gateway intermediaries.</p>
 <h2 id="whats-missing">What&rsquo;s missing</h2>
-<p>The construction MCP ecosystem has significant gaps, particularly in the construction operations phase:</p>
+<p>The construction MCP ecosystem still has significant gaps, particularly in the construction operations phase, though some are narrowing:</p>
 <ul>
-<li><strong>No Bentley Systems servers</strong> — MicroStation, OpenBuildings, OpenBridge, OpenRoads all absent</li>
-<li><strong>No official Procore or PlanGrid MCP</strong> — the two leading construction management platforms</li>
+<li><strong>No Bentley Systems servers</strong> — MicroStation, OpenBuildings, OpenBridge, OpenRoads all absent (Bentley released MicroStation 2026 with AI features but no MCP server)</li>
+<li><strong>No official Procore MCP</strong> — a community server now exists (see above) but Procore hasn&rsquo;t shipped an official one</li>
 <li><strong>No building code compliance</strong> — no automated code checking or plan review</li>
 <li><strong>No permit management</strong> — PermitFlow and other permit platforms have no MCP servers</li>
 <li><strong>No construction scheduling</strong> — Primavera P6, Microsoft Project, Asta Powerproject all absent</li>
@@ -577,14 +699,14 @@
 <li><strong>No structural analysis beyond ETABS</strong> — SAP2000, STAAD.Pro, RISA, Robot Structural Analysis all absent</li>
 <li><strong>No MEP-specific tools</strong> — mechanical, electrical, plumbing design has no dedicated MCP servers</li>
 <li><strong>No energy modeling integration</strong> — EnergyPlus has MCP servers (see our <a href="/reviews/energy-utilities-mcp-servers/">Energy &amp; Utilities review</a>) but they&rsquo;re not construction-workflow integrated</li>
-<li><strong>No Archicad official server</strong> — community-only, Graphisoft hasn&rsquo;t shipped one</li>
+<li><strong>No Archicad official server</strong> — community-only (though tapir-archicad-MCP at 49 stars shows strong demand), Graphisoft hasn&rsquo;t shipped one</li>
 </ul>
 <h2 id="the-bottom-line">The bottom line</h2>
-<p><strong>Rating: 4.0/5</strong> — The construction and architecture MCP ecosystem is one of the most active verticals for a traditionally offline, desktop-heavy industry. Autodesk&rsquo;s explicit commitment to MCP as their platform strategy is a major signal — four official servers plus a public roadmap for managed connectors. Revit, AutoCAD, Rhino, SketchUp, ArchiCAD, and Tekla Structures all have functional community servers. The ETABS structural engineering server accessing all 806 analysis tables is impressively complete. The ArchiCAD auto-generated 137 tools from API schemas is the most innovative tooling approach we&rsquo;ve seen in any vertical.</p>
-<p>The main weakness is the sharp divide between design and construction. The design phase — BIM modeling, CAD drafting, 3D visualization, structural analysis — is well-covered. The construction phase — project management, scheduling, estimating, safety, inspections, permitting — has almost no MCP representation. Procore, the industry&rsquo;s dominant project management platform, only works through third-party API gateways. For a $2 trillion global industry, the construction operations side is remarkably underserved.</p>
-<p><strong>Install if:</strong> you work with Revit, AutoCAD, Rhino, SketchUp, ArchiCAD, or Tekla Structures and want AI-assisted modeling, design automation, or BIM data queries.</p>
-<p><strong>Skip if:</strong> you need construction project management, scheduling, estimating, or site operations — the MCP ecosystem hasn&rsquo;t reached those workflows yet.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><strong>Rating: 4.0/5</strong> — The construction and architecture MCP ecosystem continues to be one of the most active verticals for a traditionally offline, desktop-heavy industry. The Revit community has exploded — four new community servers complement the official successor monorepo, giving users choices from pyRevit extensions to embedded WPF chat panels. Autodesk is pivoting from monolithic API servers (archiving aps-mcp-server-nodejs) to the modular MCP Apps pattern. Tekla has emerged as the most actively developed construction MCP server (239 commits) with collision detection and FastMCP 3.0. Rhino shipped v0.2.1 with curve operations and C# code execution. Civil 3D got its first MCP server. The ArchiCAD auto-generated 137 tools approach continues to gain traction at 49 stars.</p>
+<p>The design-versus-construction divide is slowly narrowing. The first dedicated Procore MCP server has appeared (April 2026), providing direct API access to the industry&rsquo;s dominant project management platform. But construction scheduling, estimating, safety, inspections, and permitting still have no MCP representation. For a $2 trillion global industry, the construction operations side remains underserved — though the trajectory is positive.</p>
+<p><strong>Install if:</strong> you work with Revit, AutoCAD, Rhino, SketchUp, ArchiCAD, Tekla Structures, or Civil 3D and want AI-assisted modeling, design automation, or BIM data queries.</p>
+<p><strong>Skip if:</strong> you need construction project management, scheduling, estimating, or site operations — the MCP ecosystem is just starting to reach those workflows.</p>
+<p><em>This review was last edited on 2026-04-25 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -636,7 +758,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T17:00:00+09:00","description":"Construction and architecture MCP servers are connecting AI agents to BIM software, CAD platforms, 3D modeling tools, structural analysis programs, and construction management systems.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Construction \u0026 Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More"},"name":"Construction \u0026 Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/construction-architecture-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-25T00:00:00+09:00","datePublished":"2026-03-15T17:00:00+09:00","description":"Construction and architecture MCP servers are connecting AI agents to BIM software, CAD platforms, 3D modeling tools, structural analysis programs, and construction management systems.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Construction \u0026 Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More"},"name":"Construction \u0026 Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/construction-architecture-mcp-servers/"}
 </script>
 
 

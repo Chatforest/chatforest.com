@@ -2,15 +2,15 @@
 title: "Container Registry MCP Servers — Docker Hub, ECR, ACR, JFrog, Harbor, and Beyond"
 date: 2026-03-15T04:06:00+09:00
 description: "Container registry MCP servers let AI agents search images, manage repositories, push to registries, scan for vulnerabilities, and track artifacts across Docker Hub, AWS ECR"
-og_description: "Container registry MCP servers: Docker Hub (official, 13 tools, 130 stars), JFrog (official, 22+ tools, 112 stars), AWS ECR (via ECS+Finch, 10+ tools), Azure ACR (via microsoft/mcp, 2 tools), Harbor (11 tools), Nexus (16 tools), Trivy (image scanning). 12+ servers across 8 platforms. Rating: 3.5/5."
+og_description: "Container registry MCP servers: Docker Hub (official, 13 tools, 140 stars), JFrog (official remote + experimental 115 stars), AWS ECR (via ECS+Finch, 8.9K monorepo), Azure ACR (via microsoft/mcp, 2 tools), Harbor (11 tools), Nexus (16 tools), NEW Stacklok OCI Registry (universal, 4 tools, 12 stars), Trivy (image scanning). 13+ servers across 8 platforms. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Container registry MCP servers across Docker Hub, JFrog, AWS ECR, Azure ACR, Harbor, and Nexus. Docker Hub's official server has AI-powered image discovery across 100k+ images. JFrog covers the full artifact lifecycle with 22+ tools. AWS provides ECR integration through both ECS and Finch MCP servers."
-last_refreshed: 2026-03-15
+last_refreshed: 2026-04-25
 ---
 
 Container registries are the storage backbone of modern deployment — **every container that runs in production was pulled from one**. MCP servers for registries let AI agents search for images, manage repository metadata, push builds, and scan for vulnerabilities without the developer juggling CLI tools and web consoles.
 
-The headline finding: **official vendor investment is strong but narrowly scoped**. Docker Hub has an official 13-tool MCP server. JFrog has the most comprehensive offering at 22+ tools. AWS provides ECR access through two dedicated MCP servers (ECS and Finch). Azure and Google have registry tools buried inside broader cloud platform MCP servers. But **no universal container registry MCP server exists** — each vendor covers only their own platform.
+The headline finding: **official vendor investment is strong and expanding**. Docker Hub has an official 13-tool MCP server. JFrog now offers both an experimental open-source server and an official remote hosted MCP server, plus a Universal MCP Registry for governing MCP servers as artifacts. AWS provides ECR access through ECS and Finch MCP servers (now with a hosted option). Azure and Google have registry tools buried inside broader cloud platform MCP servers. And **the biggest gap is finally closing**: Stacklok's OCI Registry MCP server provides the first universal container registry client that works with any OCI-compliant registry.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -20,9 +20,9 @@ The headline finding: **official vendor investment is strong but narrowly scoped
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [docker/hub-mcp](https://github.com/docker/hub-mcp) | ~130 | TypeScript | 13 | Optional PAT | stdio |
+| [docker/hub-mcp](https://github.com/docker/hub-mcp) | ~140 | TypeScript | 13 | Optional PAT | stdio |
 
-**Docker Hub's official MCP server brings AI-powered image discovery across 100,000+ public images.** 130 stars, Apache 2.0, backed by Docker, Inc. Requires Node.js 22+. Also available through Docker MCP Toolkit in Docker Desktop for one-click setup.
+**Docker Hub's official MCP server brings AI-powered image discovery across 100,000+ public images.** 140 stars (+8%), Apache 2.0, backed by Docker, Inc. Requires Node.js 22+. Also available through Docker MCP Toolkit in Docker Desktop for one-click setup. Docker Desktop 4.67.0 (March 30, 2026) added MCP profile template cards with an onboarding tour and fixed CVE-2026-33990 (SSRF vulnerability in Docker Model Runner's OCI registry client).
 
 13 tools across three domains:
 
@@ -56,15 +56,20 @@ The **AI-powered search** is the standout feature — it understands natural lan
 
 The Docker MCP Toolkit integration means Claude Desktop, Cursor, and VS Code users can enable this with a single click — no manual JSON configuration. That's the lowest setup friction of any server in this review.
 
-**Also notable: [QuantGeekDev/docker-mcp](https://github.com/QuantGeekDev/docker-mcp)** — 454 stars, Python, MIT, 4 tools for Docker *engine* management (create-container, deploy-compose, get-logs, list-containers). This manages running containers, not the registry itself. See our [Docker MCP Server review](/reviews/docker-mcp-server/) for container runtime management, and [ckreiling/mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) (687 stars, 19 tools) for the most comprehensive Docker engine MCP server.
+**Also notable: [QuantGeekDev/docker-mcp](https://github.com/QuantGeekDev/docker-mcp)** — 428 stars, Python, MIT, 4 tools for Docker *engine* management (create-container, deploy-compose, get-logs, list-containers). This manages running containers, not the registry itself. See our [Docker MCP Server review](/reviews/docker-mcp-server/) for container runtime management, and [ckreiling/mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) (702 stars, 19 tools) for the most comprehensive Docker engine MCP server.
 
 ### JFrog Artifactory (Official)
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [jfrog/mcp-jfrog](https://github.com/jfrog/mcp-jfrog) | ~112 | TypeScript | 22+ | JFrog token | stdio, SSE |
+| [jfrog/mcp-jfrog](https://github.com/jfrog/mcp-jfrog) | ~115 | TypeScript | 22+ | JFrog token | stdio, SSE |
+| [jfrog/jfrog-mcp-server](https://github.com/jfrog/jfrog-mcp-server) | ~7 | TypeScript | 4 categories | OAuth | Remote hosted |
 
-**JFrog's official MCP server is the most comprehensive artifact management integration available.** 112 stars, Node.js 18+. Supports Smithery one-click install, Docker, or npm. JFrog Artifactory supports Docker, Maven, npm, PyPI, and dozens of other package formats — making this useful far beyond just container images.
+**JFrog now offers two MCP server options.** The experimental `mcp-jfrog` (115 stars, 17 commits) remains available for local use, but JFrog now explicitly directs users to the **official remote hosted MCP server** (`jfrog-mcp-server`, 7 stars, 31 commits) — a cloud-hosted server maintained by JFrog with OAuth authentication and automatic tool updates. The hosted server covers Resource Management, Artifact Search, Catalog/Curation, and Security Monitoring.
+
+**Also new: JFrog Universal MCP Registry** (launched March 18, 2026) — treats every MCP server as a governed artifact with centralized discovery, configuration, and project-level permissions. This is a meta-registry for managing MCP servers themselves, not container images, but it's relevant because it brings supply chain governance patterns to the MCP ecosystem. Available as part of JFrog AI Catalog.
+
+JFrog Artifactory supports Docker, Maven, npm, PyPI, and dozens of other package formats — making this useful far beyond just container images.
 
 22+ tools across six categories:
 
@@ -84,15 +89,15 @@ The **runtime monitoring + vulnerability scanning + artifact management** combin
 
 ### AWS ECR (via ECS + Finch MCP Servers)
 
-AWS doesn't have a dedicated ECR MCP server. Instead, ECR functionality is distributed across two servers in the [awslabs/mcp](https://github.com/awslabs/mcp) monorepo (~4,700 stars, Apache 2.0):
+AWS doesn't have a dedicated ECR MCP server. Instead, ECR functionality is distributed across two servers in the [awslabs/mcp](https://github.com/awslabs/mcp) monorepo (~8,900 stars, up from ~4,700, Apache 2.0, 1,487 commits):
 
 #### ECS MCP Server
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [awslabs/mcp — ecs-mcp-server](https://github.com/awslabs/mcp/tree/main/src/ecs-mcp-server) | ~4,700* | Python | 7+ | AWS credentials | stdio |
+| [awslabs/mcp — ecs-mcp-server](https://github.com/awslabs/mcp/tree/main/src/ecs-mcp-server) | ~8,900* | Python | 7+ | AWS credentials | stdio, hosted |
 
-**The ECS MCP server includes ECR repository creation and image push as part of ECS deployment workflows.** Python 3.10+. Available via pip (`awslabs.ecs-mcp-server`) or as an AWS-managed hosted service.
+**The ECS MCP server includes ECR repository creation and image push as part of ECS deployment workflows.** Python 3.10+. Available via pip (`awslabs.ecs-mcp-server`) or as an **AWS-managed hosted MCP server** — the hosted option is now recommended, with the legacy local installation no longer receiving updates.
 
 ECR-relevant tools: `containerize_app` (generate Dockerfiles), `build_and_push_image_to_ecr` (automated ECR repo creation via CloudFormation + Docker build + push), `ecs_resource_management` (manage ECS resources including ECR image references). The server handles IAM roles with push/pull permissions, returns full image URIs, and integrates with load balancers and auto-scaling.
 
@@ -102,7 +107,7 @@ The ECR integration is tightly coupled to ECS deployment — you can't use it fo
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [awslabs/mcp — finch-mcp-server](https://github.com/awslabs/mcp/tree/main/src/finch-mcp-server) | ~4,700* | Python | 3 | AWS credentials | stdio |
+| [awslabs/mcp — finch-mcp-server](https://github.com/awslabs/mcp/tree/main/src/finch-mcp-server) | ~8,900* | Python | 3 | AWS credentials | stdio |
 
 **Finch (AWS's open-source container tool) gets a dedicated MCP server for building and pushing images.** 3 focused tools:
 
@@ -120,9 +125,9 @@ The **immutable tags** enforcement is a security best practice — preventing ta
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [microsoft/mcp](https://github.com/microsoft/mcp) | ~2,800 | C# | 2 ACR tools | Azure credentials | stdio |
+| [microsoft/mcp](https://github.com/microsoft/mcp) | ~3,000 | C# | 2 ACR tools | Azure credentials | stdio, .mcpb |
 
-**Azure Container Registry gets two read-only tools inside Microsoft's broader Azure MCP server.** 2,800 stars, MIT, covers 40+ Azure services. An earlier [Azure/azure-mcp](https://github.com/Azure/azure-mcp) repository (~1,200 stars) was archived in August 2025 in favor of this one.
+**Azure Container Registry gets two read-only tools inside Microsoft's broader Azure MCP server.** 3,000 stars (up from 2,800), MIT, now covers 45+ Azure services with 230+ tools total. The Azure MCP Server is now also available as an **MCP Bundle (.mcpb)** (April 22, 2026) — install into Claude Desktop and other MCP-compatible clients with no runtime required. Azure MCP tools are also built into Visual Studio 2022 and 2026 natively.
 
 ACR-specific tools:
 
@@ -131,9 +136,9 @@ ACR-specific tools:
 | `azmcp-acr-registry-list` | List ACR registries in a subscription, optionally filtered by resource group |
 | `azmcp-acr-registry-repository-list` | List repositories within an ACR registry |
 
-That's it — **two tools, both read-only**. No image pushing, no tag management, no vulnerability scanning. This is enough for discovery ("What registries and images do we have?") but not for any registry management workflow. Given that the broader Azure MCP server covers 40+ services, ACR coverage is minimal compared to other Azure integrations.
+Still **two tools, both read-only**. No image pushing, no tag management, no vulnerability scanning. This is enough for discovery ("What registries and images do we have?") but not for any registry management workflow. The .mcpb bundle format does lower setup friction significantly.
 
-Available via NuGet, npm, or Docker. All tools are designed to be non-destructive and idempotent — consistent with the overall Microsoft MCP server philosophy.
+Available via NuGet, npm, Docker, or .mcpb bundle. All tools are designed to be non-destructive and idempotent — consistent with the overall Microsoft MCP server philosophy.
 
 ### Harbor (Community)
 
@@ -201,11 +206,34 @@ Available via pip or Docker. Includes AI-guided configuration helpers.
 |--------|-------|----------|-------|------|-----------|
 | [aquasecurity/trivy-mcp](https://github.com/aquasecurity/trivy-mcp) | ~37 | Go | Multiple | Optional | stdio, HTTP, SSE |
 
-**Trivy's MCP plugin scans container images for vulnerabilities through natural language queries.** 37 stars, MIT, official Aqua Security project. Installs as a Trivy plugin (`trivy plugin install mcp`, then `trivy mcp`).
+**Trivy's MCP plugin scans container images for vulnerabilities through natural language queries.** 37 stars, MIT, official Aqua Security project, 67 commits, v0.0.20 (December 2025). Installs as a Trivy plugin (`trivy plugin install mcp`, then `trivy mcp`). Supports VS Code, Cursor, JetBrains IDEs, and Claude Desktop. Optional Aqua Platform integration for enhanced scanning and policy compliance. Note: Trivy experienced a security incident in March 2026 (malicious v0.69.4 release, compromised GitHub Actions) — the main Trivy project is now at v0.70.0 with incident resolved.
 
 While covered in our [Code Security MCP Servers review](/reviews/code-security-mcp-servers/), Trivy is relevant here because **container image scanning is a core registry workflow**. Ask "Are there any critical CVEs in nginx:1.25?" and Trivy scans the image layers. This complements registry management servers — one manages the images, the other tells you if they're safe.
 
 Trivy is the most widely-used open source container security scanner (23k+ stars on the main repo), so having an MCP plugin matters for registry workflows that include security gates.
+
+### OCI Registry (Universal — NEW)
+
+| Server | Stars | Language | Tools | Auth | Transport |
+|--------|-------|----------|-------|------|-----------|
+| [StacklokLabs/ocireg-mcp](https://github.com/StacklokLabs/ocireg-mcp) | ~12 | Go | 4 | Multiple | SSE |
+
+**The first universal container registry MCP server — works with any OCI-compliant registry.** 12 stars, Apache 2.0, 126 commits, v0.3.0 (March 26, 2026). This fills what was previously the biggest gap in this category.
+
+4 tools:
+
+| Tool | What it does |
+|------|-------------|
+| `get_image_info` | Retrieve image details: digest, size, architecture, OS, creation date, layer count |
+| `list_tags` | Enumerate available tags for a repository |
+| `get_image_manifest` | Fetch the OCI manifest for a container image |
+| `get_image_config` | Obtain configuration data for a container image |
+
+Supports **multiple authentication methods**: HTTP bearer tokens, environment variables, and Docker config file (`~/.docker/config.json`). Tested with Docker Hub and GitHub Container Registry (GHCR). Since it speaks the OCI Distribution API, it should work with any compliant registry — ECR, ACR, GCR, Harbor, Quay, and private registries.
+
+Recommended deployment via [ToolHive](https://github.com/stacklok/toolhive) for container isolation, encrypted secret management, and network policies. This is a read-only tool — no image pushing or tag management, but it covers the most common "what images do we have and are they safe?" workflow across any registry.
+
+**This is a significant development** — rather than building vendor-specific servers for each registry, one universal client that speaks OCI covers the common ground. Vendor-specific servers (Docker Hub, JFrog, etc.) still provide richer features like AI-powered search, vulnerability scanning, and lifecycle management.
 
 ### GHCR and Other Registries
 
@@ -219,34 +247,36 @@ Trivy is the most widely-used open source container security scanner (23k+ stars
 
 ## What's Missing
 
-The container registry MCP ecosystem has clear gaps:
+The container registry MCP ecosystem has narrowed its gaps since March, but several remain:
 
-1. **No universal registry client** — every server is vendor-specific. A server that speaks the OCI Distribution API could manage any compliant registry (Docker Hub, GHCR, ACR, ECR, GCR, Harbor, Quay) through one interface.
+1. **Universal registry client exists but is read-only** — Stacklok's OCI Registry MCP server (ocireg-mcp) fills the biggest previous gap by working with any OCI-compliant registry. But it only supports read operations (4 tools). No universal client yet handles image pushing, tag management, or lifecycle operations.
 
 2. **Image lifecycle management** — no server helps with tag retention policies, garbage collection, or automated cleanup of old images. This is one of the most common registry maintenance tasks.
 
 3. **Multi-registry synchronization** — no server helps mirror or replicate images across registries. Organizations running hybrid cloud need this.
 
-4. **SBOM and provenance** — with supply chain security becoming critical, no registry MCP server exposes SBOM data or image provenance (Sigstore/cosign signatures). JFrog's Xray integration is the closest.
+4. **SBOM and provenance** — with supply chain security becoming critical (see Trivy's March 2026 incident), no registry MCP server exposes SBOM data or image provenance (Sigstore/cosign signatures). JFrog's Xray integration is the closest.
 
-5. **GHCR is completely uncovered** — surprising given GitHub's dominance in the developer ecosystem and GitHub's own investment in MCP.
+5. **GHCR still uncovered** — Stacklok's OCI server works with GHCR for read operations, but there's no dedicated GHCR management server. GitHub's official MCP server still doesn't expose GHCR-specific tools.
 
 ## The Bottom Line
 
-**Rating: 3.5 / 5** — Solid vendor coverage from Docker Hub and JFrog with comprehensive official servers. AWS provides good ECR integration through ECS and Finch servers. But the ecosystem is fragmented (no cross-registry server), Azure and GCP coverage is minimal, GHCR is uncovered, and community projects for Harbor and Nexus have very low adoption. The lack of a universal OCI registry MCP server is the biggest gap.
+**Rating: 3.5 / 5** — The arrival of Stacklok's universal OCI registry server closes the biggest previous gap, and JFrog's shift to a hosted MCP server plus Universal MCP Registry signals enterprise maturation. AWS's monorepo nearly doubled in stars (4,700→8,900) and now offers hosted MCP server options. But Azure and GCP coverage remains minimal (2 read-only ACR tools, 6-star community GCP project), Harbor and Nexus community servers are dormant, and advanced workflows — lifecycle management, cross-registry sync, supply chain verification — still require manual tooling.
 
 **Best for image discovery**: Docker Hub MCP (docker/hub-mcp) — AI-powered search across 100k+ images, one-click Docker Desktop setup.
 
-**Best for artifact lifecycle**: JFrog MCP (jfrog/mcp-jfrog) — 22+ tools covering repositories, builds, runtime monitoring, and vulnerability scanning.
+**Best for artifact lifecycle**: JFrog MCP — the official hosted server (`jfrog-mcp-server`) for production, or the experimental `mcp-jfrog` (115 stars) for local development. 22+ tools covering repositories, builds, runtime monitoring, and vulnerability scanning.
 
-**Best for AWS workflows**: ECS + Finch MCP servers — tight ECR integration with secure defaults (immutable tags, IAM role management).
+**Best for AWS workflows**: ECS + Finch MCP servers — tight ECR integration with secure defaults (immutable tags, IAM role management). Hosted MCP server option now recommended.
+
+**Best for cross-registry queries**: Stacklok OCI Registry MCP (ocireg-mcp) — 4 read-only tools that work with any OCI-compliant registry. The universal client this category needed.
 
 **Best for self-hosted registries**: Harbor MCP (nomagicln/mcp-harbor) — 11 tools for projects, repositories, tags, and Helm charts. Or Sonatype MCP (brianveltman/sonatype-mcp) for Nexus.
 
-The container registry MCP space is functional but not yet mature. Official vendor servers cover the basics, but advanced registry workflows — lifecycle management, cross-registry sync, supply chain verification — still require manual tooling. As container security and supply chain concerns grow, expect this category to deepen significantly.
+The container registry MCP space continues maturing. The shift toward hosted/remote MCP servers (JFrog, AWS) and universal protocols (Stacklok's OCI client) points toward a more connected future, but advanced registry workflows still require manual tooling. The Trivy supply chain incident in March 2026 underscores why registry security tooling matters.
 
 ---
 
 *ChatForest reviews MCP servers through research, documentation analysis, and community feedback. We do not run or test servers hands-on. Ratings reflect capability, maturity, and ecosystem fit based on available evidence. [About our methodology](/about/)*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-25 using Claude Opus 4.6 (Anthropic).*
