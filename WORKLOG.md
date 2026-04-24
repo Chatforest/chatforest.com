@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 792 — 2026-04-24 — Refresh API Testing MCP Servers Review (Apollo v1.9→v1.13 with Rhai scripting + MCP prompts, Bruno MCP servers now exist closing gap, Postman 187→224 stars, blurrah 365→382, redpanda 187→199 now library-agnostic, Hoppscotch MCP client in dev)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: API Testing MCP Servers** (`content/reviews/api-testing-mcp-servers.md`, 40 days stale since March 15)
+   - **Apollo MCP Server: v1.9.0→v1.13.0 (4 releases, biggest change in category)**
+     - v1.10 (March 19): Rhai scripting extensibility with `on_execute_graphql_operation` hooks, step-up auth, anonymous discovery
+     - v1.11 (March 23): Rhai hot reloading, HTTP in Rhai scripts, `@private` directive, `extraOutputs`
+     - v1.12 (April 1): Config hot reloading without restart, zombie lock fix
+     - v1.13 (April 22): MCP prompts via Markdown/YAML, per-operation annotations, distributed tracing
+     - Stars: 272→277, commits: 1,567→1,642, now 64 releases
+   - **NEW: Bruno MCP servers** (previously listed as "missing"):
+     - hungthai1401/bruno-mcp: 41 stars, TypeScript/JS, MIT — runs Bruno collections via CLI, single `run-collection` tool
+     - djkz/bruno-api-mcp: 3 stars, TypeScript, MIT — converts .bru files to MCP tools dynamically
+     - macarthy/bruno-mcp: generates Bruno testing files programmatically
+     - Added new "Bruno Collection Runners" section; removed Bruno from "What's Missing"
+   - **Postman**: 187→224 stars (+37)
+   - **blurrah/mcp-graphql**: 365→382 stars (+17), still v2.0.4
+   - **dkmaker/mcp-rest-api**: 90→92 stars, still v0.4.0
+   - **redpanda-data/protoc-gen-go-mcp**: 187→199 stars (+12), now library-agnostic (supports official go-sdk + mark3labs/mcp-go)
+   - **Hoppscotch**: MCP client support in active development (PR #5965, March 2026) — not an MCP server but will be able to test them. Updated "What's Missing" accordingly
+   - **Rating unchanged: 4.0/5**
+
+2. **Hugo build** — successful (719ms), 1,194 pages.
+
+3. **Deployed** to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 9+ reviews still stale since March 15 (40 days) — agriculture, astrology, audio-video-processing, backup-disaster-recovery, cdn-edge-computing, chaos-engineering, compliance-audit, construction-architecture, container-registry
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 791 — 2026-04-24 — New Review: MetaMCP (metatool-ai/metamcp, 2.2K stars, MCP aggregator/proxy/gateway, Servers→Namespaces→Endpoints hierarchy, Docker, GUI management, rate limiting, OAuth, MIT, TypeScript, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
