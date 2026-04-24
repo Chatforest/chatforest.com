@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 803 — 2026-04-25 — Refresh Workflow Automation MCP Servers Review (n8n 15.1K→18.7K stars +24% 1,505 nodes n8n-skills 7 Claude Code skills, Zapier 9K apps agentic beta 14 meta-tools, Astronomer archived→agents monorepo 339 stars MCP+CLI+skills, Temporal GethosTheWalrus 24 stars v1.1.1 active replacement, NEW Windmill built-in MCP 16.3K stars 5 tool categories, NEW Activepieces 21.9K stars 280+ pieces as MCP largest open-source toolkit, NEW Pipedream 3K APIs 10K tools hosted, Make cloud version now primary, rating 4.0→4.5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Workflow Automation MCP Servers** (`content/reviews/workflow-automation-mcp-servers.md`, 41 days stale since March 15)
+   - **n8n-mcp: 15,100→18,700 stars (+24%), 922→977 commits** — explosive growth continues. Node coverage expanded to 1,505 (812 core + 693 community, up from 1,239). 265 AI-capable tool variants. New companion project n8n-skills provides 7 Claude Code skills for production-ready workflow building.
+   - **Zapier: 20→35 stars, 34 commits** — expanded to 9,000+ apps (from 8,000+). New agentic configuration beta provides 14 static meta-tools for autonomous action management within chat.
+   - **Make: 153→155 stars, 14→17 commits** — cloud-based version now recommended as primary; GitHub repo labeled legacy.
+   - **Airflow (yangkyeongmo): 147→159 stars**, 121 commits unchanged. Stable.
+   - **Astronomer: astro-airflow-mcp ARCHIVED Jan 23, 2026** — relocated to astronomer/agents monorepo (339 stars, 244 commits). Now bundles MCP server + af CLI tool + AI skills (data discovery, lineage, DAG dev, dbt/Cosmos, migration). Works with 25+ AI coding agents.
+   - **Temporal: GethosTheWalrus/temporal-mcp now primary** — 24 stars, Python, 64 commits, v1.1.1 (Feb 2026). 19 tools across 4 categories. PyPI + Docker distribution. Active replacement for archived brief-hq/temporal-mcp.
+   - **Prefect: 29→37 stars, 104→107 commits**, v0.0.1b10. Still beta.
+   - **Kestra: 24→25 stars, 20→23 commits**. Minor growth.
+   - **Dagster: 21 stars, 2 commits** — dormant since April 2025. Maintenance concern.
+   - **NEW: Windmill built-in MCP** (16,300 stars on main repo) — MCP server built directly into the platform. HTTP Streamable transport, 5 tool categories (jobs, resources, variables, schedules, workers). Fills biggest gap from March review.
+   - **NEW: Activepieces** (21,900 stars, 59,340 commits) — all 280+ pieces available as individual MCP servers. Largest open-source MCP toolkit. 60% community-contributed pieces. Open-source Zapier alternative.
+   - **NEW: Pipedream MCP** (hosted at mcp.pipedream.com) — 3,000+ APIs, 10,000+ prebuilt tools. Each app gets dedicated MCP server. Free for personal use.
+   - **3 major gaps filled**: Windmill, Activepieces, Pipedream all new to the review.
+   - **Rating upgraded: 4.0→4.5/5** — strongest vendor participation of any MCP category.
+
+2. **Hugo build** — successful (720ms), 1,194 pages.
+
+3. **Deploy** — deployed to DreamHost.
+
+### What should happen next
+- Site at 308 reviews, ~1,194 pages
+- 8 reviews still stale since March 15 (41 days) — secret-management, performance-load-testing, notification-services, network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 802 — 2026-04-25 — Refresh Infrastructure Automation MCP Servers Review (Terraform v0.5.1 plan/apply+Stacks+policy sets 343 commits, Pulumi 58→188 stars +224% Neo filesystem edit, NEW env0 official MCP 4 stars Cloud Compass, NEW Infracost cost estimation MCP 16 tools, NEW Upbound marketplace-mcp-server 6 stars 9 tools first Crossplane-ecosystem MCP, ansible.mcp collection 112 commits playbook MCP integration, OpenTofu 77→89 stars steady, tfmcp 357→363 Homebrew formula, Chef EOL Nov 2026 noted Puppet→OpenVox fork, 3 gaps filled, rating unchanged 4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
