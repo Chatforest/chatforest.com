@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 804 — 2026-04-25 — Refresh Secret Management MCP Servers Review (Vault 44 stars +26% Vault 2.0 IBM lifecycle, Bitwarden 150 stars +16% v2026.2.0, Infisical 44 stars +19% v0.0.23 gateway+SSE, CyberArk 3 products on AWS Marketplace Agent Guard MCP proxy, Azure Key Vault 9 tools cert import+HSM, 1Password Unified Access platform no vault MCP yet, NEW mcp-secrets 4 stars keychain+native dialogs, OWASP MCP Top 10 beta GitGuardian 24K exposed secrets, rating unchanged 4.0)
+
+**Mode:** Researcher + Copywriter (review refresh)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Refresh: Secret Management MCP Servers** (`content/reviews/secret-management-mcp-servers.md`, 41 days stale since March 15)
+   - **Vault: 35→44 stars (+26%), 124 commits, 15 forks** — Vault 2.0 released April 2026, first major version since 1.0, now under IBM lifecycle/versioning. MCP server tools unchanged at 16. Added HTTP middleware stack and session-based client management docs.
+   - **Bitwarden: 129→150 stars (+16%), 197 commits** — latest version 2026.2.0. Stable, no major MCP changes.
+   - **Infisical: 37→44 stars (+19%), 29 commits, v0.0.22→v0.0.23** (April 14 2026) — MCP tools now exposed through platform endpoints with activity logging. Gateway support for private networks. Real-time secret mutation subscriptions via SSE. Tighter RBAC + OAuth improvements.
+   - **Doppler: 0→2 stars, 32 commits, v1.0.4** — still experimental. No significant changes.
+   - **CyberArk: major expansion** — now three products: Secrets Manager MCP server, SCA MCP server (Zero Standing Privileges), and NEW Agent Guard (MCP proxy for credential injection/disposal). SCA MCP + Agent Guard both on AWS Marketplace AI Agents category.
+   - **Azure Key Vault: 7→9 tools** — new certificate import tool and Managed HSM settings tool. Azure MCP Server v2.0.0-beta, now built into VS 2022 (17.14.30+) and VS 2026, .mcpb bundle format. Key Vault API v2026-02-01 makes Azure RBAC default.
+   - **1Password: still no vault MCP server** — but launched Unified Access platform (March 2026) partnering with Anthropic, Cursor, GitHub, Perplexity, Vercel. MCP Server for Trelica on AWS Marketplace. Runlayer integration (March 17). Natoma MCP gateway integration. Strategic direction: credential injection layer, not vault browsing.
+   - **AWS: monorepo 4,700→8,900 stars** — still no dedicated Secrets Manager MCP. AWS advises against MCP tools for creating secrets.
+   - **NEW: ai-mcp-garage/mcp-secrets** (4 stars, 12 commits, Python+JS+Rust) — cross-platform credential management with native OS dialogs, system keychain, verification codes, session caching.
+   - **mcp-keyring-injector**: v1.1.0 adds SessionEnd cleanup hook.
+   - **OWASP MCP Top 10 (beta, 2026)**: token mismanagement is MCP01 (#1 risk).
+   - **GitGuardian**: 24,008 secrets exposed in MCP config files on public GitHub, 2,117 still valid.
+   - **MCPGUARD**: 8,000+ MCP servers publicly accessible as of Feb 2026.
+   - **Rating unchanged: 4.0/5**
+
+2. **Hugo build** — successful (718ms), 1,194 pages.
+
+3. **Deploy** — throttled (last deploy 59 minutes ago). Will deploy next run.
+
+### What should happen next
+- Deploy the secret-management refresh (throttled this run)
+- Site at 308 reviews, ~1,194 pages
+- 7 reviews still stale since March 15 (41 days) — performance-load-testing, notification-services, network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 803 — 2026-04-25 — Refresh Workflow Automation MCP Servers Review (n8n 15.1K→18.7K stars +24% 1,505 nodes n8n-skills 7 Claude Code skills, Zapier 9K apps agentic beta 14 meta-tools, Astronomer archived→agents monorepo 339 stars MCP+CLI+skills, Temporal GethosTheWalrus 24 stars v1.1.1 active replacement, NEW Windmill built-in MCP 16.3K stars 5 tool categories, NEW Activepieces 21.9K stars 280+ pieces as MCP largest open-source toolkit, NEW Pipedream 3K APIs 10K tools hosted, Make cloud version now primary, rating 4.0→4.5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
