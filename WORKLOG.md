@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 810 — 2026-04-25 — Refresh HR & Recruiting MCP Servers Review (NEW Indeed Official MCP beta 3 tools, NEW Lever 2 implementations 59+16 tools, NEW Paylocity 2 servers, Ashby dewierwan ~30 tools v1.7.0, Check Payroll 17 stars, Deel DELETED 404, Recruitin DELETED 404, SAP SF 5 stars, PeopleSoft 5 stars 43 tools, rating 3.5→4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All 50 pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed log-management refresh from Run 809 (was pending/throttled).
+
+2. **Refresh: HR & Recruiting MCP Servers** (`content/reviews/hr-recruiting-mcp-servers.md`, 41 days stale since March 15)
+   - **BIGGEST NEWS: Indeed launched an official MCP server** at `mcp.indeed.com/claude/mcp` (beta). 3 tools: Job Search, Job Detail, Get Company Data. First major job board with official MCP. This was the single biggest gap in the previous review.
+   - **NEW: Lever now has 2 MCP implementations** — stefanoamorelli/lever-mcp (1 star, Go, AGPL-3.0, 59 tools across 17 categories, Streamable HTTP) and the-sid-dani/lever-mcp-server (4 stars, TypeScript, 16 tools, Cloudflare Workers). Lever was previously listed as a gap.
+   - **NEW: Paylocity gains first coverage** — CData JDBC gateway + mz462/mcpPaylocity (Python, 6 tools, OAuth2, MIT).
+   - **NEW: PlenishAI/mcp-ashby** — 4th Ashby implementation.
+   - **dewierwan/ashby-mcp: ~20→~30 tools, v1.7.0** — most active HR MCP server. Added escape-hatch tools (ashby_call_api, ashby_get_api_docs), DOCX resume support, server-side job status filtering.
+   - **check-technologies/mcp-server-check: 14→17 stars** — new `check init` CLI, user-agent fix, architecture refactor. Active development.
+   - **acalder-techpm/bamboohr-mcp: 3→5 stars** — no code changes since March.
+   - **aiadiguru2025/sf-mcp: 1→5 stars** — no code changes since March 3. Star surge despite quiet development.
+   - **CDataSoftware/workday-mcp-server-by-cdata: 8→10 stars** — dormant since Oct 2025.
+   - **t4dhg/mcp-factorial: 2→4 stars** — dormant since Jan 24.
+   - **rgrz/peoplesoft-mcp: 2→5 stars, 41→43 tools** — added component/field tools, PeopleTools subagent.
+   - **bifrost-mcp/rippling-mcp: 0→1 star** — Smithery marketplace listing added.
+   - **DELETED: JonasDNielsen/deel-mcp-server (404)** — only Deel server, now gone. Loss for ecosystem.
+   - **DELETED: WouterArtsRecruitin/recruitin-mcp-servers (404)** — 43+ server commercial suite, now gone.
+   - **Rating upgraded: 3.5→4.0** — Indeed official and Lever coverage justify the bump despite Deel/Recruitin losses.
+
+3. **Hugo build** — successful (720ms).
+
+4. **Deploy** — pending (throttled, deployed earlier this run).
+
+### What should happen next
+- Deploy the hr-recruiting refresh next run
+- Site at ~308 reviews, ~1,194 pages
+- 1 review still stale since March 15 (41+ days) — dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 809 — 2026-04-25 — Refresh Log Management MCP Servers Review (Grafana 2,907 stars v0.12.0 InfluxDB+Graphite, awslabs/mcp 8,864 stars CloudWatch 11 tools, Dynatrace 111 stars v1.8.3 21 tools, Datadog official 33 stars +230%, NEW Axiom official mcp.axiom.co, NEW Fluent Bit MCP via OpAMP, Sumo Logic official beta, Graylog mcp-graylog removed, Logstash prototype found, rating 4.0 maintained)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
