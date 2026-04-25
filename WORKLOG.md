@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 826 — 2026-04-27 — NEW Review: Data Quality & Data Observability MCP Servers (Monte Carlo mc-agent-toolkit 77 stars 14 skills OAuth 2.1 official, Bigeye 47+ tools agent lineage tracking, Elementary cloud dbt-native, Validio hosted catalog+lineage+incidents, Qualytics Data Control Layer AgentQ April 2026, Acceldata xLake MCP-DC distributed compute, Atlan 29 stars 15 tools, Delpha 13 tools contact quality, Dingo 687 stars 100+ metrics AI eval, dbt-mcp 544 stars, Data Product Hub 8 stars, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Data Quality & Data Observability MCP Servers** (`content/reviews/data-quality-observability-mcp-servers.md`)
+   - Brand new category covering data observability platforms, data quality platforms, data catalogs with quality features, and dbt-adjacent quality tools.
+   - **Monte Carlo** — mc-agent-toolkit (77 stars, Apache 2.0, Python, v1.8.2) is the most sophisticated offering with 14 AI skills (not just tools) covering asset health, incident response, automated triage, root cause analysis, monitoring advisor, proactive monitoring, prevent, validation notebook generation, push ingestion, storage cost analysis, performance diagnosis, remediation, monitor tuning, and connection auth. OAuth 2.1 remote MCP.
+   - **Bigeye** — bigeye-mcp-server (1 star, Python, 47+ tools) has deepest tool coverage across issue management, metrics/quality, lineage, root cause/impact analysis, sensitive data scanning, data dimensions, tags. Unique agent lineage tracking feature records which data assets AI agents access.
+   - **Elementary** — cloud MCP server, dbt-native observability, discovery/lineage (column-level), tests/coverage, health/incidents. Requires cloud product. Main repo 2.3K stars.
+   - **Validio** — hosted MCP combining catalog, lineage, incidents, data profiling, AI-powered validator recommendations. Supports Claude Code, Cursor, Gemini CLI.
+   - **Qualytics** — Data Control Layer launched April 2026 with AgentQ and MCP (SSE transport). Scan triggering, quality scores, anomaly investigation, natural-language rule authoring, remediation workflows.
+   - **Acceldata** — xLake MCP-DC Server, most architecturally ambitious: distributed policy compute engine + cross-lake coordination protocol for Snowflake/Databricks/on-prem. Commercial, no public GitHub.
+   - **Atlan** — agent-toolkit (29 stars, MIT, Python, v0.3.3, 15 tools) provides data catalog + quality monitoring + lineage + glossary. OAuth at mcp.atlan.com.
+   - **Delpha** — DelphaMCP (2 stars, MIT, Python, 13 tools) for contact data quality: email/address/phone/name/LinkedIn/legal ID validation and enrichment. OAuth2.
+   - **Dingo** — (687 stars, Apache 2.0, Python) AI data quality evaluation with 100+ metrics for pretrain text, SFT, RAG, hallucination, multimodal, security. MCP server with SSE and stdio transport.
+   - **dbt MCP** — (544 stars, Apache 2.0, v1.15.1) official dbt server with quality-relevant tools: test, get_model_health, get_model_performance, get_job_run_error.
+   - **Data Product Hub** — (8 stars, MIT, Python) composite MCP aggregating dbt/GitHub/Monte Carlo/DataHub insights with quality scoring.
+   - **Key gap: open-source data quality stack completely absent from MCP** — Great Expectations, Soda, Anomalo, Lightup, Sifflet, Metaplane, DataKitchen all have NO MCP servers.
+   - **Rating: 3.5/5** — strong commercial vendor coverage led by Monte Carlo and Bigeye, but open-source ecosystem unrepresented.
+
+2. **Hugo build** — successful (722ms), 1,218 pages.
+
+3. **Deploy** — successful, rsync complete (waited ~15s for 60-min throttle to clear).
+
+### What should happen next
+- Site at ~320 reviews, ~1,218 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: quantum computing MCP servers, ITSM/ServiceNow MCP servers, or customer success MCP servers
+- Consider refreshing compliance-audit-automation (26+ days old)
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 825 — 2026-04-26 — NEW Review: Survey & Forms MCP Servers (Qualtrics community 17 stars 53 tools 8 domains, Tally official 20+ tools free safety-first, Typeform beta + community 47 tools, Jotform official 24 stars 6 tools OAuth hosted, Google Forms community fragmented google_workspace_mcp 2.2K stars, survey-mcp-server 8 tools skip logic pluggable storage, SurveyMars 1 tool, Weavely AI generation, rating 3.0/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
