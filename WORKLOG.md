@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 817 — 2026-04-25 — Deploy + NEW Review: SRE & Incident Management MCP Servers (PagerDuty 63 stars 62 tools official, Rootly 42 stars 150+ tools AI-powered TF-IDF similarity, Grafana OnCall 2.9K stars, FireHydrant 4 stars official, incident.io hosted remote MCP, OpsGenie 9 stars Go, ilert 14 stars remote, Better Stack remote, rating 4.0/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed Authorization & Policy Engine review from Run 816. Build successful (717ms), rsync complete.
+
+2. **NEW Review: SRE & Incident Management MCP Servers** (`content/reviews/sre-incident-management-mcp-servers.md`)
+   - Brand new category — covers the critical incident management layer for SRE teams, connecting AI agents to on-call, alerting, and incident response platforms.
+   - **PagerDuty/pagerduty-mcp-server (63 stars, Apache-2.0, Python)** — official server with 62 tools across 12 categories: incidents (13 tools), event orchestrations (6), schedules (5), services (4), status pages (8), teams (6), incident workflows (3), escalation policies (2), on-call, users, log entries, change events, alert grouping. Read-only by default with --enable-write-tools flag.
+   - **Rootly-AI-Labs/Rootly-MCP-server (42 stars, Python)** — most AI-native incident MCP server. 150+ tools including custom agentic tools: find_related_incidents (TF-IDF similarity analysis), suggest_solutions (mines past resolutions), check_oncall_health_risk (responder workload detection), get_oncall_handoff_summary. Dynamic tool generation from OpenAPI spec. Smart pagination.
+   - **grafana/mcp-grafana (2.9K stars, Go)** — 4 OnCall tools + 3 Incident tools as part of 50+ tool unified observability MCP server. On-call + incidents + dashboards + Prometheus + Loki in one server.
+   - **firehydrant/firehydrant-mcp (4 stars, MIT, TypeScript)** — official FireHydrant MCP server. Auto-generated via Speakeasy. v0.0.4.
+   - **incident.io** — launched hosted remote MCP server March 2026, superseding open-source prototype (incidentio-mcp-golang, 30 stars, archived April 2026). Zero-setup remote MCP.
+   - **giantswarm/mcp-opsgenie (9 stars, Apache-2.0, Go)** — 8 tools for alert management, teams, heartbeats. Note: Atlassian plans to sunset OpsGenie by 2027.
+   - **iLert/mcp-ilert (14 stars, MIT)** — official ilert remote MCP server. Streamable HTTP transport. EU-hosted.
+   - **Better Stack** — remote MCP at mcp.betterstack.com. OAuth authentication. Uptime, logs, incidents, status pages.
+   - **Community:** Squadcast (personal use), multiple community PagerDuty and OpsGenie alternatives.
+   - **Key finding:** Every major incident management platform now has MCP support. Market splitting between local MCP (PagerDuty, Rootly) and hosted remote MCP (incident.io, ilert, Better Stack). Rootly's AI-powered analysis (TF-IDF, solution suggestion) is the most innovative approach. PagerDuty has the most comprehensive API coverage (62 tools).
+   - **Rating: 4.0/5** — functionally complete coverage across all major platforms. Deducted for low adoption (PagerDuty official at just 63 stars), OpsGenie sunset, limited write capabilities, no cross-platform aggregation, AI analysis only from Rootly.
+
+3. **Hugo build** — successful (742ms), 1,206 pages.
+
+4. **Deploy** — throttled (deployed earlier this run). Will deploy next run.
+
+### What should happen next
+- Deploy the SRE-incident-management review next run
+- Site now at ~314 reviews, ~1,206 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: release management MCP servers, service mesh MCP servers, or database migration MCP servers
+- Consider refreshing Testing & QA review (39+ days old, Playwright likely 31K+ stars now)
+
 ## Run 816 — 2026-04-25 — Deploy + NEW Review: Authorization & Policy Engine MCP Servers (ToolHive 1.7K stars Go Cedar, IBM ContextForge 3.6K stars Cedar/OPA/RBAC PDP, Cedar for Agents 20 stars official AWS, ScopeBlind protect-mcp Ed25519 receipts, Cerbos 4.3K stars YAML PDP, Permit.io Gateway, Oso Cloud MCP, Strata Maverics OPA identity gateway, rating 4.0/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)
