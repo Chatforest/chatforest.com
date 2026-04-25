@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 808 — 2026-04-25 — Refresh Monitoring & Uptime MCP Servers Review (Better Stack NOW OFFICIAL at mcp.betterstack.com, DavidFuchs/mcp-uptime-kuma 9→25+ tools v0.7.0, Uptime Kuma 85.9K stars, NEW 84emllc/uptimerobot-mcp 16 tools Python, rating 3.5→4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed network-security refresh from Run 807 (was pending/throttled).
+
+2. **Refresh: Monitoring & Uptime MCP Servers** (`content/reviews/monitoring-uptime-mcp-servers.md`, 41 days stale since March 15)
+   - **BIGGEST CHANGE: Better Stack now has an official MCP server** at `mcp.betterstack.com` — launched September 2025 (we missed it in March review). Covers uptime management (monitors, heartbeats, incidents, on-call, escalation, status pages), telemetry (logs, traces, metrics, ClickHouse queries, chart rendering), and error tracking (exceptions, session replay). OAuth + API token auth. Tool access control via allowlist/blocklist headers.
+   - **DavidFuchs/mcp-uptime-kuma: 16→17 stars, v0.6.4→v0.7.0, 9→25+ tools** — massive expansion. Added write-side tools (create/update/delete monitors), 4 notification tools, 3 tag tools, 2 maintenance tools, 2 status pages tools. Now full CRUD, not just read. Authentication improvements for Uptime Kuma v2.
+   - **Uptime Kuma itself: 66K→85.9K stars** — updated reference count.
+   - **NEW: 84emllc/uptimerobot-mcp** — Python community UptimeRobot server, 16 tools covering full API v2 (monitor CRUD, alert contacts, maintenance windows, account dashboard). Python 3.12+, MIT, created Feb 2026. More complete than thichcode's server.
+   - **mcp-status-observer: 6→7 stars**, last commit Sept 2025 (dormant).
+   - **Camusama/uptime-kuma-mcp-server**: unchanged, last commit April 2025 (dormant).
+   - **DrDroidLab/betterstack-logs-mcp**: now redundant — Better Stack official server supersedes it.
+   - **Pingdom, StatusCake, Site24x7: still no MCP servers** — confirmed still missing.
+   - **Rating upgraded: 3.5→4.0** — Better Stack filling the biggest gap + DavidFuchs maturation justifies the bump.
+
+3. **Hugo build** — successful (712ms).
+
+4. **Deploy** — pending (throttled, deployed earlier this run).
+
+### What should happen next
+- Deploy the monitoring-uptime refresh next run
+- Site at ~308 reviews, ~1,194 pages
+- 3 reviews still stale since March 15 (41+ days) — log-management, hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 807 — 2026-04-25 — Refresh Network Security & Monitoring MCP Servers Review (Burp Suite 706 stars +32%, FuzzingLabs mcp-security-hub 530 stars Go fuzzing, WireMCP 443 stars dormant, NEW cve-mcp-server 266 stars 27 tools 21 APIs fastest-growing, NEW bx33661 Wireshark-MCP 107 stars active alternative, pentest-mcp 135 stars MCP spec compliance, Globalping 54 stars PKCE, NEW pentest-ai 59 stars, NEW BurpMCP-Ultra 16 stars 137 tools, hexstrike-ai 8K stars suspicious inflation, Shodan axios security fix, rating 3.5→4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
