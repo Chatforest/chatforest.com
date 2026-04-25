@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Workflow Automation MCP Servers — n8n, Zapier, Make &amp; More — ChatForest</title>
-  <meta name="description" content="20&#43; workflow automation MCP servers compared — n8n (15K stars), Zapier, Make, Airflow, Prefect, Kestra, and Dagster. Which ones let AI agents actually automate workflows?">
+  <meta name="description" content="25&#43; workflow automation MCP servers compared — n8n (18.7K stars), Zapier, Make, Windmill, Activepieces, Airflow, Prefect, Kestra, Pipedream, and more. Which ones let AI agents actually automate workflows?">
   <meta property="og:title" content="Workflow Automation MCP Servers — n8n, Zapier, Make &amp; More — ChatForest">
-  <meta property="og:description" content="20&#43; workflow automation MCP servers reviewed — n8n, Zapier, Make, Airflow, Prefect, Kestra, Dagster, and more. Honest ratings and recommendations.">
+  <meta property="og:description" content="25&#43; workflow automation MCP servers reviewed — n8n, Zapier, Make, Windmill, Activepieces, Airflow, Prefect, Kestra, Pipedream, and more. Honest ratings and recommendations.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/workflow-automation-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Workflow Automation MCP Servers — n8n, Zapier, Make &amp; More — ChatForest">
-  <meta name="twitter:description" content="20&#43; workflow automation MCP servers reviewed — n8n, Zapier, Make, Airflow, Prefect, Kestra, Dagster, and more. Honest ratings and recommendations.">
+  <meta name="twitter:description" content="25&#43; workflow automation MCP servers reviewed — n8n, Zapier, Make, Windmill, Activepieces, Airflow, Prefect, Kestra, Pipedream, and more. Honest ratings and recommendations.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/workflow-automation-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 25, 2026</span>
       </div>
 
       <h1 class="article-title">Workflow Automation MCP Servers — n8n, Zapier, Make &amp; More</h1>
@@ -66,8 +66,8 @@
 
       <div class="article-body">
         <p>Workflow automation and orchestration is where MCP gets genuinely useful for operations teams. Instead of manually navigating UIs to build workflows, check pipeline statuses, or debug failed runs, these servers let AI agents do it through natural language. Part of our <strong><a href="/categories/business-productivity/">Business &amp; Productivity MCP category</a></strong>.</p>
-<p>The landscape splits into four categories: <strong>low-code automation platforms</strong> (n8n, Zapier, Make — visual workflow builders that connect apps), <strong>data pipeline orchestrators</strong> (Airflow, Dagster — scheduled DAG-based data processing), <strong>code-first orchestration engines</strong> (Temporal, Prefect — durable execution for distributed systems), and <strong>event-driven orchestrators</strong> (Kestra — declarative YAML-based workflows).</p>
-<p>The headline findings: <strong>n8n dominates adoption with 15,100 stars on its primary MCP server</strong> — the largest MCP server in any automation category. <strong>Zapier offers the broadest integration surface</strong> at 8,000+ apps, but with a remote-only architecture. <strong>Airflow has the deepest tool coverage</strong> at 70+ operations across the full REST API. <strong>Official vendor participation is strong</strong> — Zapier, Make, Prefect, Kestra, and Astronomer all ship their own MCP servers. <strong>Temporal was promising but archived</strong> in January 2026. <strong>The low-code/no-code side is crowded</strong> while code-first orchestrators are underserved.</p>
+<p>The landscape splits into five categories: <strong>low-code automation platforms</strong> (n8n, Zapier, Make, Activepieces — visual workflow builders that connect apps), <strong>multi-API aggregators</strong> (Pipedream — hosted MCP servers for 3,000+ APIs), <strong>data pipeline orchestrators</strong> (Airflow, Dagster — scheduled DAG-based data processing), <strong>code-first orchestration engines</strong> (Temporal, Prefect, Windmill — durable execution for distributed systems), and <strong>event-driven orchestrators</strong> (Kestra — declarative YAML-based workflows).</p>
+<p>The headline findings: <strong>n8n dominates adoption with 18,700 stars on its primary MCP server</strong> — the largest MCP server in any automation category, up 24% since March 2026. <strong>Zapier has expanded to 9,000+ apps</strong> with a new agentic configuration beta. <strong>Three major gaps from March are now filled</strong>: Windmill has a built-in MCP server, Activepieces exposes 280+ pieces as MCP servers (the largest open-source MCP toolkit), and Pipedream offers 10,000+ prebuilt tools across 3,000+ APIs. <strong>Astronomer consolidated into an agents monorepo</strong> (339 stars) with MCP server, CLI, and AI skills. <strong>Temporal now has a proper replacement</strong> — GethosTheWalrus/temporal-mcp at 24 stars with 19 tools and active development.</p>
 <h2 id="low-code-automation-platforms">Low-Code Automation Platforms</h2>
 <h3 id="n8n-community-leader">n8n (Community Leader)</h3>
 <table>
@@ -83,18 +83,19 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/czlonkowski/n8n-mcp">czlonkowski/n8n-mcp</a></td>
-<td>15,100</td>
+<td>18,700</td>
 <td>TypeScript</td>
 <td>20+</td>
 <td>stdio</td>
 </tr>
 </tbody>
 </table>
-<p><strong>czlonkowski/n8n-mcp</strong> (15,100 stars, TypeScript, MIT, 922 commits) is the primary MCP server for n8n and one of the most starred MCP servers in any category.</p>
-<p>The scope is remarkable. It provides structured access to <strong>1,239 n8n nodes</strong> — 537 core nodes and 547 community nodes (301 verified) — with 99% coverage of node properties and detailed schemas. Documentation coverage sits at 87% from official n8n docs. Beyond node documentation, it includes <strong>2,709 searchable workflow templates</strong> with full metadata.</p>
+<p><strong>czlonkowski/n8n-mcp</strong> (18,700 stars, TypeScript, MIT, 977 commits) is the primary MCP server for n8n and one of the most starred MCP servers in any category. Stars grew 24% since March 2026 (15,100→18,700).</p>
+<p>The scope is remarkable. It provides structured access to <strong>1,505 n8n nodes</strong> — 812 core nodes and 693 community nodes — with 99% coverage of node properties and detailed schemas. Documentation coverage sits at 87% from official n8n docs. Beyond node documentation, it includes <strong>2,709 searchable workflow templates</strong> with full metadata and <strong>265 AI-capable tool variants</strong> with enriched documentation context.</p>
 <p>Core capabilities: <strong>Workflow management</strong> — create, read, update, delete, list, validate, and autofix workflows through the n8n API. <strong>Execution management</strong> — trigger workflows, retrieve results, list execution history, delete executions. <strong>Node documentation</strong> — search and browse node schemas, properties, and operations. <strong>Template library</strong> — search workflow templates by keyword with full metadata.</p>
-<p>Multiple deployment options: hosted service, Docker, npx, local installation, and Railway cloud deployment. AI-capable tool variants include enriched documentation context for better LLM comprehension.</p>
-<p>This is effectively a complete n8n SDK accessible through MCP. The 15,100-star count reflects genuine adoption — n8n itself has 179,000 stars, and this server is the primary bridge for AI-assisted workflow building.</p>
+<p>Multiple deployment options: hosted service, Docker, npx, local installation, and Railway cloud deployment. The project now emphasizes safety with clear warnings: &ldquo;NEVER edit your production workflows directly with AI&rdquo; — recommending copies, backups, and dev-first testing.</p>
+<p>A companion project, <strong>czlonkowski/n8n-skills</strong>, provides <strong>7 Claude Code skills</strong> for building production-ready n8n workflows — covering expression syntax, MCP tool usage, workflow patterns, validation, node configuration, and JavaScript/Python code generation. This skills layer sits on top of the MCP server and helps AI agents master the 1,505-node ecosystem.</p>
+<p>This is effectively a complete n8n SDK accessible through MCP. The 18,700-star count reflects genuine adoption — n8n itself has 179,000+ stars, and this server is the primary bridge for AI-assisted workflow building.</p>
 <h3 id="n8n-alternative-implementations">n8n (Alternative Implementations)</h3>
 <p>The n8n MCP ecosystem is unusually crowded, with 5+ competing implementations:</p>
 <table>
@@ -155,18 +156,18 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/zapier/zapier-mcp">zapier/zapier-mcp</a></td>
-<td>20</td>
+<td>35</td>
 <td>TypeScript</td>
 <td>Dynamic</td>
 <td>Remote (SSE)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>zapier/zapier-mcp</strong> (20 stars, TypeScript, MIT) is the official Zapier MCP server — a remote-first server that gives AI agents access to <strong>8,000+ apps and 40,000+ actions</strong> without local installation.</p>
-<p>The architecture is different from most MCP servers. Instead of exposing a fixed set of tools, you configure actions in Zapier&rsquo;s dashboard, and each action becomes a callable MCP tool. One built-in meta-tool (<code>get_configuration_url</code>) helps set up new actions. Authentication is handled via API key (personal use) or OAuth (for apps where end users connect their own Zapier accounts).</p>
+<p><strong>zapier/zapier-mcp</strong> (35 stars, TypeScript, MIT, 34 commits) is the official Zapier MCP server — a remote-first server that gives AI agents access to <strong>9,000+ apps and 40,000+ actions</strong> without local installation. App count expanded from 8,000+ to 9,000+ since March 2026.</p>
+<p>The architecture is different from most MCP servers. Instead of exposing a fixed set of tools, you configure actions in Zapier&rsquo;s dashboard, and each action becomes a callable MCP tool. A new <strong>Agentic configuration</strong> (currently in beta) provides <strong>14 static meta-tools</strong> for managing and executing actions entirely within the chat experience — a significant step toward fully autonomous agent workflows without dashboard configuration.</p>
 <p>The breadth is unmatched — no other MCP server connects to as many services. But the tradeoff is indirection: you&rsquo;re calling Zapier&rsquo;s API, which calls the target app&rsquo;s API. Latency is higher, debugging is harder, and you depend on Zapier&rsquo;s uptime and pricing.</p>
 <p>Two auth modes: <strong>API Key</strong> for personal/development use, <strong>OAuth</strong> for building products where users bring their own Zapier accounts. The remote architecture means zero local setup — point your MCP client at <code>mcp.zapier.com</code> and authenticate.</p>
-<p>The 20-star count on GitHub is misleading — most Zapier users configure it through the Zapier UI, not by cloning the repo.</p>
+<p>The 35-star count on GitHub is misleading — most Zapier users configure it through the Zapier UI, not by cloning the repo.</p>
 <h3 id="make-official">Make (Official)</h3>
 <table>
 <thead>
@@ -181,17 +182,65 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/integromat/make-mcp-server">integromat/make-mcp-server</a></td>
-<td>153</td>
+<td>155</td>
 <td>TypeScript</td>
 <td>Dynamic</td>
 <td>SSE / Streamable HTTP</td>
 </tr>
 </tbody>
 </table>
-<p><strong>integromat/make-mcp-server</strong> (153 stars, TypeScript, MIT, 14 commits) is Make&rsquo;s official MCP server. Like Zapier, it takes a dynamic approach — but centered on <strong>scenarios</strong> rather than individual actions.</p>
+<p><strong>integromat/make-mcp-server</strong> (155 stars, TypeScript, MIT, 17 commits) is Make&rsquo;s official MCP server. Like Zapier, it takes a dynamic approach — but centered on <strong>scenarios</strong> rather than individual actions.</p>
 <p>The server connects to your Make account, identifies all scenarios configured with &ldquo;On-Demand&rdquo; scheduling, and exposes each as a callable MCP tool. It parses input parameters and resolves meaningful descriptions automatically. Responses come back as structured JSON.</p>
-<p>A cloud-hosted version is also available, which Make recommends for most use cases. The self-hosted version gives you more control but requires Docker or local Node.js.</p>
+<p>A <strong>modern, cloud-based version</strong> is now available and recommended by Make for most use cases — the self-hosted GitHub version is now labeled as the legacy option. The self-hosted version gives you more control but requires Docker or local Node.js.</p>
 <p>The scenario-first model is Make&rsquo;s differentiator. Instead of configuring individual API actions (Zapier&rsquo;s approach), you build complete multi-step scenarios in Make&rsquo;s visual builder, then expose the whole scenario as a single MCP tool. This is more powerful for complex workflows — one tool call can trigger a 20-step automation — but requires pre-building scenarios in Make&rsquo;s UI.</p>
+<h3 id="activepieces-open-source-zapier-alternative">Activepieces (Open Source Zapier Alternative)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/activepieces/activepieces">activepieces/activepieces</a></td>
+<td>21,900</td>
+<td>TypeScript</td>
+<td>280+ pieces as MCP</td>
+<td>stdio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>activepieces/activepieces</strong> (21,900 stars, TypeScript, MIT, 59,340 commits) is an open-source automation platform that exposes <strong>all 280+ pieces as individual MCP servers</strong> — the largest open-source MCP toolkit available. When anyone contributes a new piece to Activepieces, it automatically becomes available as an MCP server for Claude Desktop, Cursor, or Windsurf.</p>
+<p>The MCP integration is built into the platform rather than being a separate server. Each piece (Google Sheets, OpenAI, Discord, RSS, and 200+ more) gets its own MCP server with API-specific tools. 60% of pieces are community-contributed, giving Activepieces the broadest open-source integration surface.</p>
+<p>For teams who want Zapier-like breadth without vendor lock-in, Activepieces is the strongest alternative. The platform supports visual workflow building plus MCP-based AI agent access to every integration.</p>
+<h3 id="pipedream-multi-api-aggregator">Pipedream (Multi-API Aggregator)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://mcp.pipedream.com/">Pipedream MCP</a></td>
+<td>—</td>
+<td>Hosted</td>
+<td>10,000+</td>
+<td>Remote (HTTP)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pipedream MCP</strong> provides access to <strong>3,000+ APIs with 10,000+ prebuilt tools</strong> via hosted MCP servers at <code>mcp.pipedream.com</code>. Each app gets its own dedicated MCP server with API-specific tools — Slack for messaging, GitHub for issues, and thousands more.</p>
+<p>The approach is different from Zapier and Make: rather than building visual workflows, Pipedream exposes raw API operations as MCP tools. This is more flexible for AI agents that want direct API access rather than pre-built automation sequences.</p>
+<p>Free for personal use. The platform handles authentication, rate limiting, and API versioning. Setup is straightforward: point your MCP client at the app-specific URL and authenticate.</p>
 <h2 id="data-pipeline-orchestrators">Data Pipeline Orchestrators</h2>
 <h3 id="apache-airflow">Apache Airflow</h3>
 <table>
@@ -207,14 +256,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/yangkyeongmo/mcp-server-apache-airflow">yangkyeongmo/mcp-server-apache-airflow</a></td>
-<td>147</td>
+<td>159</td>
 <td>Python</td>
-<td>70+</td>
+<td>60+</td>
 <td>stdio</td>
 </tr>
 <tr>
-<td><a href="https://github.com/astronomer/astro-airflow-mcp">astronomer/astro-airflow-mcp</a></td>
-<td>8</td>
+<td><a href="https://github.com/astronomer/agents">astronomer/agents</a></td>
+<td>339</td>
 <td>Python</td>
 <td>24+</td>
 <td>stdio</td>
@@ -228,12 +277,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>yangkyeongmo/mcp-server-apache-airflow</strong> (147 stars, Python, MIT, 121 commits) wraps the full Apache Airflow REST API v1. With 70+ operations across DAGs, runs, tasks, variables, connections, pools, datasets, and monitoring, it&rsquo;s the most comprehensive Airflow MCP server.</p>
+<p><strong>yangkyeongmo/mcp-server-apache-airflow</strong> (159 stars, Python, MIT, 121 commits) wraps the full Apache Airflow REST API v1. With 60+ operations across DAGs, runs, tasks, variables, connections, pools, datasets, and monitoring, it&rsquo;s the most comprehensive Airflow MCP server.</p>
 <p>Key safety feature: <strong>read-only mode</strong> for non-destructive operations — critical when connecting AI agents to production Airflow clusters. Selective API group configuration lets you expose only the operations you need. Supports Basic Auth and JWT tokens.</p>
-<p><strong>astronomer/astro-airflow-mcp</strong> (8 stars, Python, Apache 2.0, official from Astronomer) takes a different approach with <strong>consolidated tools</strong> rather than raw API wrapping. Tools like <code>explore_dag</code>, <code>diagnose_dag_run</code>, and <code>get_system_health</code> combine multiple API calls into higher-level operations that are more natural for AI agents.</p>
-<p>Supports both Airflow 2.x and 3.x with automatic version detection. Can run as a standalone server or as an integrated Airflow 3.x plugin. Flexible authentication (bearer tokens, OAuth2, basic auth). Includes MCP Resources for static Airflow info and MCP Prompts for guided workflows.</p>
+<p><strong>astronomer/agents</strong> (339 stars, Python, Apache 2.0, 244 commits) is Astronomer&rsquo;s consolidated AI agent monorepo, which now houses the <strong>astro-airflow-mcp</strong> server (the original standalone repo was <strong>archived January 23, 2026</strong>). The monorepo bundles three components: the MCP server for Airflow REST API integration, an <strong>af CLI tool</strong> for terminal-based Airflow interaction, and <strong>AI skills</strong> for data discovery, lineage analysis, DAG development, dbt integration (via Cosmos), and migration utilities.</p>
+<p>The MCP server provides consolidated tools like <code>explore_dag</code>, <code>diagnose_dag_run</code>, and <code>get_system_health</code> that combine multiple API calls into higher-level operations. Works with 25+ AI coding agents including Claude Code, Cursor, and VS Code. Supports both Airflow 2.x and 3.x. The skills layer adds data warehouse querying via background Jupyter kernel — making this far more than just an API wrapper.</p>
 <p><strong>MCP-Airflow-API</strong> (call518, 45 tools) provides comprehensive cluster management including service operations, configuration management, status monitoring, and request tracking. It specifically supports Airflow 2.x and 3.0+ with automatic version detection.</p>
-<p>The community vs. official split is interesting here. The community server (yangkyeongmo) has far more stars and raw API coverage. The official Astronomer server has fewer tools but better-designed ones for AI agent workflows. <strong>For monitoring and debugging, use Astronomer. For full API access, use yangkyeongmo.</strong></p>
+<p>The Astronomer consolidation is a positive signal — moving from a standalone MCP server to a full agent toolkit reflects the market&rsquo;s shift toward comprehensive AI-assisted data engineering. <strong>For raw API access, use yangkyeongmo. For an integrated AI workflow (MCP + CLI + skills), use astronomer/agents.</strong></p>
 <h3 id="dagster">Dagster</h3>
 <table>
 <thead>
@@ -272,18 +321,25 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="https://github.com/GethosTheWalrus/temporal-mcp">GethosTheWalrus/temporal-mcp</a></td>
+<td>24</td>
+<td>Python</td>
+<td>19</td>
+<td>stdio</td>
+</tr>
+<tr>
 <td><a href="https://github.com/brief-hq/temporal-mcp">brief-hq/temporal-mcp</a></td>
 <td>59</td>
 <td>Go</td>
 <td>19</td>
-<td>stdio</td>
+<td>stdio (archived)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>brief-hq/temporal-mcp</strong> (59 stars, Go, MIT, 26 commits) bridged AI assistants to Temporal&rsquo;s workflow orchestration — enabling natural language control of complex distributed workflows.</p>
-<p>Capabilities spanned the full Temporal surface area: individual workflow lifecycle management (start, cancel, terminate, signal, query), real-time status checking, batch operations across many workflows simultaneously, and complete schedule management via cron expressions. <strong>Automatic workflow discovery</strong> and smart caching for performance optimization were standout features.</p>
-<p><strong>However, this repository was archived on January 29, 2026</strong> and is now read-only. The archival is notable because Temporal itself remains actively developed. A separate implementation exists at <strong>GethosTheWalrus/temporal-mcp</strong> (focusing on lifecycle management and scheduling), and Temporal&rsquo;s official code exchange lists a <a href="https://temporal.io/code-exchange/temporal-mcp-server">Temporal MCP Server</a> entry. The space is actively evolving despite this specific project&rsquo;s archival.</p>
-<p>For teams using Temporal, the MCP integration story is currently fragmented — there&rsquo;s no single dominant, actively maintained server.</p>
+<p><strong>GethosTheWalrus/temporal-mcp</strong> (24 stars, Python, Apache 2.0, 64 commits, v1.1.1) is now the actively maintained Temporal MCP server, providing 19 tools across four categories: <strong>Workflow Execution</strong> (5 tools — start, get results, describe, list, get history), <strong>Workflow Control</strong> (5 tools — signal, query, cancel, terminate, update), <strong>Batch Operations</strong> (3 tools), and <strong>Schedule Management</strong> (6 tools — create, list, describe, update, delete, trigger).</p>
+<p>Supports both local and remote Temporal instances. Available via PyPI and Docker (mcp/temporal). The v1.1.1 release (February 2026) is stable and actively maintained.</p>
+<p><strong>brief-hq/temporal-mcp</strong> (59 stars, Go, MIT) was <strong>archived January 29, 2026</strong> and is now read-only. It had the same 19-tool count and strong features (automatic workflow discovery, smart caching), but the archival means GethosTheWalrus is now the practical choice. Temporal&rsquo;s official code exchange also lists the <a href="https://temporal.io/code-exchange/temporal-mcp-server">Temporal MCP Server</a> entry.</p>
+<p>The Temporal MCP story has improved since March 2026 — there&rsquo;s now an actively maintained server with proper releases, Docker distribution, and the same tool coverage as the archived original.</p>
 <h3 id="prefect-official">Prefect (Official)</h3>
 <table>
 <thead>
@@ -298,17 +354,42 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/PrefectHQ/prefect-mcp-server">PrefectHQ/prefect-mcp-server</a></td>
-<td>29</td>
+<td>37</td>
 <td>Python</td>
 <td>10+</td>
 <td>stdio</td>
 </tr>
 </tbody>
 </table>
-<p><strong>PrefectHQ/prefect-mcp-server</strong> (29 stars, Python, Apache 2.0, 104 commits) is the official Prefect MCP server, still in beta with APIs subject to change.</p>
+<p><strong>PrefectHQ/prefect-mcp-server</strong> (37 stars, Python, Apache 2.0, 107 commits, v0.0.1b10) is the official Prefect MCP server, still in beta with APIs subject to change.</p>
 <p>Capabilities include monitoring and inspection of deployments, flow runs, and task runs. Execution log retrieval and event tracking. CLI skill support for mutations like triggering deployments. <strong>Intelligent debugging assistance</strong> for troubleshooting failures — this is where Prefect&rsquo;s MCP server differentiates from raw API wrappers.</p>
 <p>Multi-tenant HTTP header authentication supports centralized deployments where multiple users share one MCP server instance. Can be deployed to FastMCP Cloud for remote access.</p>
 <p>The beta status means expect breaking changes, but official vendor backing makes this a safer bet than community alternatives for Prefect users.</p>
+<h3 id="windmill-built-in-mcp">Windmill (Built-in MCP)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/windmill-labs/windmill">windmill-labs/windmill</a></td>
+<td>16,300</td>
+<td>Rust/TS</td>
+<td>5 categories</td>
+<td>HTTP Streamable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Windmill</strong> (16,300 stars, Rust/TypeScript, AGPLv3) now has a <strong>built-in MCP server</strong> — no separate installation needed. This fills the biggest gap identified in our March 2026 review.</p>
+<p>The MCP server uses HTTP Streamable transport and provides tools across 5 categories: <strong>Jobs</strong> (monitor and manage executions, retrieve logs, view results), <strong>Resources</strong> (CRUD for third-party connections like databases and APIs), <strong>Variables</strong> (workspace variables and secrets management), <strong>Schedules</strong> (CRON-based automation for scripts and flows), and <strong>Workers</strong> (monitor worker status, groups, and resource allocation).</p>
+<p>Windmill positions itself as &ldquo;13x faster than Airflow&rdquo; and an &ldquo;open-source alternative to Retool and Temporal.&rdquo; The MCP integration lets AI agents trigger scripts and flows written in TypeScript, Python, Go, or Bash through natural language. Authentication via MCP tokens with configurable scope.</p>
+<p>For code-first teams who want workflow automation with MCP access, Windmill is now a strong contender alongside Prefect — particularly appealing if you also need the UI builder and app capabilities.</p>
 <h2 id="event-driven-orchestrators">Event-Driven Orchestrators</h2>
 <h3 id="kestra-official">Kestra (Official)</h3>
 <table>
@@ -324,14 +405,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/kestra-io/mcp-server-python">kestra-io/mcp-server-python</a></td>
-<td>24</td>
+<td>25</td>
 <td>Python</td>
 <td>11</td>
 <td>stdio</td>
 </tr>
 </tbody>
 </table>
-<p><strong>kestra-io/mcp-server-python</strong> (24 stars, Python, Apache 2.0, 20 commits) is the official Kestra MCP server covering 11 tools across the platform: Backfill, Execution, Files, Flow, Key-Value store, Logs, Namespace, Replay, Restart, Resume, and Enterprise Edition tools.</p>
+<p><strong>kestra-io/mcp-server-python</strong> (25 stars, Python, Apache 2.0, 23 commits) is the official Kestra MCP server covering 11 tools across the platform: Backfill, Execution, Files, Flow, Key-Value store, Logs, Namespace, Replay, Restart, Resume, and Enterprise Edition tools.</p>
 <p>Kestra itself is an event-driven orchestration platform (16,800 stars on the main repo) designed for both scheduled and event-driven workflows. The MCP server provides a natural language interface to this platform — manage flows, trigger executions, inspect logs, handle backfills, and work with the key-value store.</p>
 <p>Docker deployment available. Supports both OSS and Enterprise Edition installations. Configurable tool disabling via environment variables — useful for restricting what AI agents can do. Flexible logging levels.</p>
 <p>The 11-tool count is modest but well-chosen. Each tool maps to a core Kestra concept rather than a raw API endpoint, making the server more AI-friendly.</p>
@@ -350,49 +431,65 @@
 </thead>
 <tbody>
 <tr>
+<td>Activepieces</td>
+<td>activepieces/activepieces</td>
+<td>21,900</td>
+<td>Yes</td>
+<td>280+ pieces</td>
+<td>Largest open-source MCP toolkit</td>
+</tr>
+<tr>
 <td>n8n</td>
 <td>czlonkowski/n8n-mcp</td>
-<td>15,100</td>
+<td>18,700</td>
 <td>Community</td>
 <td>20+</td>
-<td>Node coverage (1,239), templates</td>
+<td>Node coverage (1,505), templates</td>
+</tr>
+<tr>
+<td>Windmill</td>
+<td>windmill-labs/windmill</td>
+<td>16,300</td>
+<td>Yes (built-in)</td>
+<td>5 categories</td>
+<td>Code-first, 13x Airflow speed</td>
+</tr>
+<tr>
+<td>Pipedream</td>
+<td>mcp.pipedream.com</td>
+<td>—</td>
+<td>Yes (hosted)</td>
+<td>10,000+</td>
+<td>3,000+ API coverage</td>
+</tr>
+<tr>
+<td>Airflow</td>
+<td>yangkyeongmo + astronomer/agents</td>
+<td>159 / 339</td>
+<td>Mixed</td>
+<td>60+ / 24+</td>
+<td>Deepest tool coverage + AI skills</td>
 </tr>
 <tr>
 <td>Zapier</td>
 <td>zapier/zapier-mcp</td>
-<td>20</td>
+<td>35</td>
 <td>Yes</td>
 <td>Dynamic</td>
-<td>App breadth (8,000+)</td>
+<td>App breadth (9,000+), agentic beta</td>
 </tr>
 <tr>
 <td>Make</td>
 <td>integromat/make-mcp-server</td>
-<td>153</td>
+<td>155</td>
 <td>Yes</td>
 <td>Dynamic</td>
 <td>Scenario-as-tool model</td>
 </tr>
 <tr>
-<td>Airflow</td>
-<td>yangkyeongmo + astronomer</td>
-<td>147 / 8</td>
-<td>Mixed</td>
-<td>70+ / 24+</td>
-<td>Deepest tool coverage</td>
-</tr>
-<tr>
-<td>Temporal</td>
-<td>brief-hq/temporal-mcp</td>
-<td>59</td>
-<td>Community</td>
-<td>19</td>
-<td>Archived Jan 2026</td>
-</tr>
-<tr>
 <td>Prefect</td>
 <td>PrefectHQ/prefect-mcp-server</td>
-<td>29</td>
+<td>37</td>
 <td>Yes</td>
 <td>10+</td>
 <td>Intelligent debugging</td>
@@ -400,10 +497,18 @@
 <tr>
 <td>Kestra</td>
 <td>kestra-io/mcp-server-python</td>
-<td>24</td>
+<td>25</td>
 <td>Yes</td>
 <td>11</td>
 <td>Event-driven, tool disabling</td>
+</tr>
+<tr>
+<td>Temporal</td>
+<td>GethosTheWalrus/temporal-mcp</td>
+<td>24</td>
+<td>Community</td>
+<td>19</td>
+<td>Active replacement, v1.1.1</td>
 </tr>
 <tr>
 <td>Dagster</td>
@@ -411,26 +516,27 @@
 <td>21</td>
 <td>Community</td>
 <td>9</td>
-<td>Asset materialization</td>
+<td>Asset materialization (dormant)</td>
 </tr>
 </tbody>
 </table>
 <h3 id="whats-working">What&rsquo;s working</h3>
-<p><strong>The low-code side is well-served.</strong> n8n&rsquo;s MCP ecosystem is mature with multiple competing implementations. Zapier and Make both ship official servers with fundamentally different approaches (action-first vs. scenario-first). If you&rsquo;re building workflows in a visual builder, the MCP integration story is solid.</p>
-<p><strong>Official vendor participation is strong.</strong> Five of the eight platforms listed have official or vendor-backed MCP servers. This is above average for MCP categories — many categories still rely entirely on community implementations.</p>
-<p><strong>Safety controls exist where they matter.</strong> Airflow&rsquo;s read-only mode, Kestra&rsquo;s tool disabling, and Prefect&rsquo;s multi-tenant auth reflect the reality that connecting AI agents to production orchestrators requires guardrails.</p>
+<p><strong>The low-code side is exceptionally well-served.</strong> n8n&rsquo;s MCP ecosystem continues its remarkable growth (18,700 stars, +24% in 41 days). Zapier expanded to 9,000+ apps with a new agentic configuration beta. Make, Activepieces, and Pipedream all provide different approaches to the same problem. The competition is healthy and driving innovation.</p>
+<p><strong>Official vendor participation is the strongest in any MCP category.</strong> Eight of the eleven platforms listed have official or vendor-backed MCP servers. Windmill built MCP directly into its platform. Astronomer consolidated into a full agent toolkit. This is exceptional.</p>
+<p><strong>The ecosystem is maturing beyond simple API wrappers.</strong> Astronomer&rsquo;s agents monorepo bundles MCP + CLI + AI skills. czlonkowski&rsquo;s n8n-skills adds 7 Claude Code skills on top of the MCP server. Zapier&rsquo;s agentic configuration provides meta-tools for autonomous action management. The pattern is moving from &ldquo;expose APIs&rdquo; to &ldquo;enable autonomous workflows.&rdquo;</p>
+<p><strong>Safety controls exist where they matter.</strong> Airflow&rsquo;s read-only mode, Kestra&rsquo;s tool disabling, Prefect&rsquo;s multi-tenant auth, Windmill&rsquo;s scoped MCP tokens, and n8n-mcp&rsquo;s production safety warnings reflect mature thinking about AI-agent access to production systems.</p>
 <h3 id="whats-missing">What&rsquo;s missing</h3>
-<p><strong>No unified cross-platform server.</strong> You can&rsquo;t manage n8n workflows and Airflow DAGs from the same MCP server. Each platform requires its own server, its own configuration, and its own mental model.</p>
-<p><strong>Temporal is underserved.</strong> The most promising Temporal MCP server was archived. For a platform used in mission-critical distributed systems, the MCP story is fragmented.</p>
-<p><strong>No Windmill MCP server.</strong> Windmill — an increasingly popular open-source workflow engine — has no MCP server despite being developer-focused and MCP-friendly in philosophy.</p>
-<p><strong>Monitoring over creation.</strong> Most of these servers are stronger at monitoring workflows (checking status, reading logs, inspecting runs) than creating them. The n8n servers are the exception — they can build workflows from scratch.</p>
+<p><strong>No unified cross-platform server.</strong> You can&rsquo;t manage n8n workflows and Airflow DAGs from the same MCP server. Each platform requires its own server, its own configuration, and its own mental model. Pipedream comes closest with 3,000+ APIs but doesn&rsquo;t orchestrate across platforms.</p>
+<p><strong>Dagster is stagnant.</strong> The only Dagster MCP server has 2 commits and hasn&rsquo;t been updated since April 2025. No official Dagster MCP server exists yet.</p>
+<p><strong>Monitoring still dominates over creation.</strong> Most servers are stronger at monitoring workflows (checking status, reading logs, inspecting runs) than creating them. n8n and Windmill are exceptions — they can build workflows from scratch.</p>
 <h2 id="the-bottom-line">The bottom line</h2>
-<p><strong>For low-code automation:</strong> Start with <strong>czlonkowski/n8n-mcp</strong> if you use n8n — it&rsquo;s the most complete automation MCP server by far. Use <strong>Zapier MCP</strong> if you need breadth across 8,000+ apps. Use <strong>Make MCP</strong> if you&rsquo;ve already built complex multi-step scenarios.</p>
-<p><strong>For data pipelines:</strong> Use <strong>yangkyeongmo/mcp-server-apache-airflow</strong> for full Airflow API access, or <strong>astronomer/astro-airflow-mcp</strong> for AI-friendly consolidated tools. For Dagster, the community server covers the basics.</p>
-<p><strong>For code-first orchestration:</strong> <strong>Prefect&rsquo;s official server</strong> is the safest choice despite beta status. Temporal users should evaluate the remaining community options.</p>
+<p><strong>For low-code automation:</strong> Start with <strong>czlonkowski/n8n-mcp</strong> if you use n8n — it&rsquo;s the most complete automation MCP server by far (18,700 stars, 1,505 nodes). Use <strong>Zapier MCP</strong> if you need breadth across 9,000+ apps. Use <strong>Activepieces</strong> if you want open-source Zapier-like breadth with 280+ MCP-enabled pieces. Use <strong>Make MCP</strong> if you&rsquo;ve already built complex multi-step scenarios.</p>
+<p><strong>For multi-API access:</strong> Use <strong>Pipedream MCP</strong> for direct API operations across 3,000+ services with 10,000+ prebuilt tools — best for agents that need raw API flexibility rather than pre-built workflows.</p>
+<p><strong>For data pipelines:</strong> Use <strong>yangkyeongmo/mcp-server-apache-airflow</strong> for full Airflow API access, or <strong>astronomer/agents</strong> for the integrated AI toolkit (MCP + CLI + skills). For Dagster, the community server covers the basics but is dormant.</p>
+<p><strong>For code-first orchestration:</strong> <strong>Windmill</strong> is the new standout with built-in MCP, multi-language support, and strong performance. <strong>Prefect&rsquo;s official server</strong> remains a solid choice despite beta status. <strong>GethosTheWalrus/temporal-mcp</strong> is now the recommended Temporal server with active development and proper releases.</p>
 <p><strong>For event-driven workflows:</strong> <strong>Kestra&rsquo;s official server</strong> provides clean coverage of the core platform with sensible safety controls.</p>
-<p><strong>Rating: 4.0/5</strong> — The workflow automation MCP category benefits from strong official vendor participation, the n8n ecosystem&rsquo;s remarkable adoption (15,100 stars), and genuinely useful operational tooling across the data orchestration space. The Temporal gap and lack of cross-platform tooling prevent a higher rating, but the fundamentals are solid. If you&rsquo;re managing workflows through AI agents, the tools are ready.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><strong>Rating: 4.5/5</strong> — The workflow automation MCP category has improved significantly since March 2026. Three major gaps are now filled (Windmill, Activepieces, Pipedream), n8n continues its explosive growth (+24% in 41 days), Astronomer consolidated into a comprehensive agent toolkit, and Temporal has an actively maintained replacement. Official vendor participation is the strongest in any MCP category. The only notable gaps are Dagster stagnation and the lack of cross-platform orchestration. This is one of the most mature and well-served MCP categories.</p>
+<p><em>This review was refreshed on 2026-04-25 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -482,7 +588,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T09:30:00+09:00","description":"20+ workflow automation MCP servers compared — n8n (15K stars), Zapier, Make, Airflow, Prefect, Kestra, and Dagster. Which ones let AI agents actually automate workflows?","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Workflow Automation MCP Servers — n8n, Zapier, Make \u0026 More"},"name":"Workflow Automation MCP Servers — n8n, Zapier, Make \u0026 More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/workflow-automation-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-25T00:00:00+09:00","datePublished":"2026-03-15T09:30:00+09:00","description":"25+ workflow automation MCP servers compared — n8n (18.7K stars), Zapier, Make, Windmill, Activepieces, Airflow, Prefect, Kestra, Pipedream, and more. Which ones let AI agents actually automate workflows?","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Workflow Automation MCP Servers — n8n, Zapier, Make \u0026 More"},"name":"Workflow Automation MCP Servers — n8n, Zapier, Make \u0026 More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/workflow-automation-mcp-servers/"}
 </script>
 
 
