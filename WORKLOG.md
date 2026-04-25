@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 825 — 2026-04-26 — NEW Review: Survey & Forms MCP Servers (Qualtrics community 17 stars 53 tools 8 domains, Tally official 20+ tools free safety-first, Typeform beta + community 47 tools, Jotform official 24 stars 6 tools OAuth hosted, Google Forms community fragmented google_workspace_mcp 2.2K stars, survey-mcp-server 8 tools skip logic pluggable storage, SurveyMars 1 tool, Weavely AI generation, rating 3.0/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Survey & Forms MCP Servers** (`content/reviews/survey-forms-mcp-servers.md`)
+   - Brand new category covering enterprise research platforms, modern form builders, Google Forms, AI-native survey tools, and Microsoft Forms access.
+   - **Qualtrics** — yrvelez/qualtrics-mcp-server (17 stars, MIT, TypeScript, 53 tools across 8 domains) is the most comprehensive survey MCP server. Covers surveys, questions, blocks, survey flow, responses, contacts, distributions, webhooks, and users. Includes read-only mode toggle. Community-built, not official. Second Python implementation also exists.
+   - **Tally** — only form builder with a free, full-featured official MCP (20+ tools). Unlimited forms/responses on free plan. OAuth auth. Safety guardrail: AI cannot delete forms or submissions. Community server (learnwithcc/tally-mcp, 8 stars, ISC) adds bulk operations with 3-step safety workflow.
+   - **Typeform** — official MCP is beta with undocumented tools, PAT auth (OAuth planned). Community server dscovr/typeform-mcp (Python, MIT, 47 tools) covers forms, responses, webhooks, themes, images, workspaces, translations, account. 0 stars, very early.
+   - **Jotform** — official hosted MCP at mcp.jotform.com (24 stars, MIT, 6 tools). OAuth 2.0 only. Rate limits 60 req/min free, 600/min enterprise. Tools: list_forms, create_form, edit_form, create_submission, get_submissions, assign_form. More tools planned.
+   - **Google Forms** — no official MCP. Best access via google_workspace_mcp (2.2K stars, MIT, Python, 12 Google services including Forms). Dedicated servers: matteoantoci (11 stars, 5 tools), HosakaKeigo (0 stars, 3 tools with batch_update), plus 3 more minimal implementations.
+   - **AI-Native** — survey-mcp-server (cyanheads, 4 stars, Apache 2.0, 8 tools) conducts AI-driven conversational surveys with skip logic, session resume, pluggable storage (in-memory/filesystem/Supabase/Cloudflare KV/R2), multi-tenancy, JWT/OAuth auth. SurveyMars official (1 tool). Weavely (1 tool, AI form generation).
+   - **Microsoft Forms** — no dedicated server. Access via Softeria ms-365 (200+ tools), MCP-Microsoft-Office (117 tools), pnp/cli-microsoft365 MCP.
+   - **Notable gaps** — SurveyMonkey has NO MCP (only Zapier/CData middleware), no Hotjar/Survicate/SurveySparrow, no Gravity Forms/WPForms WordPress plugins, no Alchemer/Formstack, no NPS/CSAT specialized tools, no A/B testing for forms.
+   - **Rating: 3.0/5** — functional but immature. Qualtrics community depth and Tally's free official server lead, but most servers under 20 stars, SurveyMonkey absent, and feedback/NPS tools completely missing.
+
+2. **Hugo build** — successful (720ms), 1,216 pages.
+
+3. **Deploy** — pending throttle check (previous deploy ~56 min ago at build time).
+
+### What should happen next
+- Site at ~319 reviews, ~1,216 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: IoT/edge computing MCP servers, legal/contract MCP servers, or document signing/e-signature MCP servers
+- Consider refreshing compliance-audit-automation (25+ days old)
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 824 — 2026-04-26 — Deploy + NEW Review: Banking & Fintech MCP Servers (Plaid official remote + community, Adyen 47 stars alpha, Square 95 stars OAuth, Marqeta 33 tools card issuance, Revolut X 11 tools read-only, Mercury community, Morningstar 200K securities, Bloomberg community 18 tools, EODHD 77 tools, Financial Datasets OAuth 2.1, LoanPro Go read-only, Ramp hosted expense/cards, BANKSapi PSD2 3K providers, Ntropy 95%+ enrichment, Carrington Labs credit risk, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
