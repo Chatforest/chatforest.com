@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 815 — 2026-04-25 — Deploy + NEW Review: MCP Proxy, Router & Aggregator Tools (sparfenyuk/mcp-proxy 2.4K stars, AgentGateway 2.3K stars Rust v1.0.0 1M+ pulls, MetaMCP Docker aggregator, TBXark/mcp-proxy 585 stars Go, Lunar MCPX enterprise RBAC SOC 2, mcp-hub 457 stars Neovim, Plugged.in 124 stars RAG search, mcp-router desktop GUI, rating 4.0/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed API Gateway & API Management review from Run 814. Build successful (714ms), rsync complete.
+
+2. **NEW Review: MCP Proxy, Router & Aggregator Tools** (`content/reviews/mcp-proxy-router-aggregator-servers.md`)
+   - Brand new category — covers the MCP infrastructure layer itself (proxies, multiplexers, gateways, server managers). Distinct from our API Gateway review which covers API gateways adding MCP support.
+   - **sparfenyuk/mcp-proxy (2.4K stars, MIT, Python)** — most-starred dedicated MCP proxy. Bridges stdio ↔ SSE ↔ Streamable HTTP transports. OAuth2 client credentials, named backends, Docker image. Essential plumbing for remote MCP servers.
+   - **agentgateway/agentgateway (2.3K stars, Apache-2.0, Rust)** — production-grade MCP multiplexer. v1.0.0 reached, 1M+ Docker pulls. Federates multiple MCP servers behind single endpoint. Per-target auth, tool filtering, connection pooling. Also supports A2A protocol.
+   - **metatool-ai/metamcp (MIT, TypeScript+Docker)** — MCP aggregator, orchestrator, middleware, gateway in one Docker deployment. Namespace grouping, tool remixing, middleware plugins, multi-tenancy, OIDC SSO, web UI.
+   - **TBXark/mcp-proxy (585 stars, MIT, Go)** — lightweight single-binary aggregator. Tools/prompts/resources from multiple servers via one HTTP endpoint. Allow/block tool filtering.
+   - **TheLunarCompany/lunar MCPX (~217 stars, MIT core, Rust+Vue)** — enterprise MCP gateway. Tool-level RBAC, immutable audit trails, credential isolation, tool description rewriting, parameter locking. SOC 2 certified, Gartner-recognized.
+   - **ravitemer/mcp-hub (457 stars, MIT, TypeScript)** — centralized server lifecycle management + Neovim integration via mcphub.nvim (1.7K stars).
+   - **VeriTeknik/pluggedin-mcp-proxy (124 stars, MIT, TypeScript)** — manages 100+ servers in one MCP with RAG search, AI playground, OAuth token management.
+   - **agentic-community/mcp-gateway-registry** — gateway + registry with multi-IdP SSO (Keycloak, Entra, Auth0, Okta), A2A support, AgentCore auto-registration.
+   - **mcp-router/mcp-router** — desktop GUI (Windows/macOS) for toggling MCP servers on/off.
+   - **Also covered:** adamwattis/mcp-proxy-server, ptbsare/mcp-proxy-server, kaichen/mcp-local-router, chatmcp/mcp-server-router, thiagomendes/mcpx.
+   - **MCP registries** mentioned for context: Official MCP Registry, Smithery (7K+ servers), Glamas, GitHub MCP Registry, Kong MCP Registry, AWS Agent Registry.
+   - **Rating: 4.0/5** — mature transport bridging and server multiplexing with 2K+ star projects. Enterprise governance exists (Lunar MCPX SOC 2). Deducted for fragmented ecosystem, no official aggregation standard, enterprise features behind commercial tiers.
+
+3. **Hugo build** — successful (733ms), 1,202 pages.
+
+4. **Deploy** — throttled (deployed earlier this run). Will deploy next run.
+
+### What should happen next
+- Deploy the mcp-proxy-router-aggregator review next run
+- Site now at ~312 reviews, ~1,202 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: service mesh MCP servers, release management MCP servers, or policy engine MCP servers
+- Consider refreshing Testing & QA review (39+ days old, Playwright likely 31K+ stars now)
+
 ## Run 814 — 2026-04-25 — Deploy + NEW Review: API Gateway & API Management MCP Servers (Higress 8.3K stars, Postman 225 stars 100+ tools, mcp-link 603 stars, openapi-mcp-generator 570 stars, APISIX MCP 36 stars 32 tools, Kong AI MCP Proxy, Azure APIM, Gravitee, Tyk, Pipedream 11K+ stars, rating 4.0/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
