@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond — ChatForest</title>
-  <meta name="description" content="Log management MCP servers let AI agents search, analyze, and correlate logs across Splunk, Elasticsearch, Grafana Loki, Graylog, AWS CloudWatch, Datadog, Dynatrace, New Relic, and Sumo Logic.">
+  <meta name="description" content="Log management MCP servers let AI agents search, analyze, and correlate logs across Splunk, Elasticsearch, Grafana Loki, Graylog, AWS CloudWatch, Datadog, Dynatrace, New Relic, Axiom, and Sumo Logic.">
   <meta property="og:title" content="Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond — ChatForest">
-  <meta property="og:description" content="Log management MCP servers: Grafana mcp-grafana (2,500 stars, 6 Loki tools), Elasticsearch (626 stars, deprecated, 5 tools), Splunk official &#43; community (94 stars, 13 tools), Datadog official (16&#43; tools), CloudWatch (awslabs monorepo), Dynatrace (92 stars, 15&#43; tools), Graylog (11 tools), New Relic official, OpenTrace (75&#43; tools). 25&#43; servers across 12 platforms. Rating: 4.0/5.">
+  <meta property="og:description" content="Log management MCP servers: Grafana mcp-grafana (2,907 stars, v0.12.0, 60&#43; tools), Elasticsearch (648 stars, deprecated), Splunk official &#43; community (98 stars, 14 tools), Datadog official (33 stars, managed remote), CloudWatch (awslabs monorepo 8,864 stars, 11 tools), Dynatrace (111 stars, 21 tools, v1.8.3), NEW Axiom official mcp.axiom.co, NEW Fluent Bit MCP via OpAMP, Sumo Logic official beta. 30&#43; servers across 13 platforms. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/log-management-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond — ChatForest">
-  <meta name="twitter:description" content="Log management MCP servers: Grafana mcp-grafana (2,500 stars, 6 Loki tools), Elasticsearch (626 stars, deprecated, 5 tools), Splunk official &#43; community (94 stars, 13 tools), Datadog official (16&#43; tools), CloudWatch (awslabs monorepo), Dynatrace (92 stars, 15&#43; tools), Graylog (11 tools), New Relic official, OpenTrace (75&#43; tools). 25&#43; servers across 12 platforms. Rating: 4.0/5.">
+  <meta name="twitter:description" content="Log management MCP servers: Grafana mcp-grafana (2,907 stars, v0.12.0, 60&#43; tools), Elasticsearch (648 stars, deprecated), Splunk official &#43; community (98 stars, 14 tools), Datadog official (33 stars, managed remote), CloudWatch (awslabs monorepo 8,864 stars, 11 tools), Dynatrace (111 stars, 21 tools, v1.8.3), NEW Axiom official mcp.axiom.co, NEW Fluent Bit MCP via OpAMP, Sumo Logic official beta. 30&#43; servers across 13 platforms. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/log-management-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 25, 2026</span>
       </div>
 
       <h1 class="article-title">Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond</h1>
@@ -66,7 +66,8 @@
 
       <div class="article-body">
         <p>Logs are the ground truth of every production system — <strong>error traces, access records, audit trails, performance data</strong>. Log management MCP servers let AI agents search, correlate, and analyze logs across enterprise platforms without developers manually copy-pasting stack traces into chat windows or writing ad hoc queries.</p>
-<p>The headline finding: <strong>this is one of the strongest MCP categories</strong>. Nearly every major log management platform has at least one MCP server — many have official ones. Grafana&rsquo;s mcp-grafana dominates at 2,500 stars with Loki, Elasticsearch, and CloudWatch log querying built in. Splunk has both an official Splunkbase app and active community servers. Datadog ships a managed remote MCP endpoint. The gap isn&rsquo;t coverage — it&rsquo;s fragmentation, with some platforms having 5+ competing community servers.</p>
+<p>The headline finding: <strong>this is one of the strongest MCP categories</strong>. Nearly every major log management platform has at least one MCP server — many have official ones. Grafana&rsquo;s mcp-grafana dominates at 2,907 stars with Loki, Elasticsearch, and CloudWatch log querying built in. Splunk has both an official Splunkbase app and active community servers. Datadog ships a managed remote MCP endpoint. The gap isn&rsquo;t coverage — it&rsquo;s fragmentation, with some platforms having 5+ competing community servers.</p>
+<p><strong>April 2026 update:</strong> Several important developments since our initial review. AWS&rsquo;s MCP monorepo nearly doubled to 8,864 stars with CloudWatch expanding to 11 tools. Dynatrace hit v1.8.3 with 21 tools and rapid release cadence. Axiom launched an official hosted MCP server at mcp.axiom.co. The first Fluent Bit/Fluentd MCP server appeared via OpAMP integration. Sumo Logic entered limited beta with their official MCP as part of the Dojo AI platform. Meanwhile, the AI-enthusiasts/mcp-graylog server appears to have been removed.</p>
 <h2 id="the-landscape">The Landscape</h2>
 <h3 id="grafana--loki">Grafana + Loki</h3>
 <table>
@@ -82,22 +83,22 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/grafana/mcp-grafana">grafana/mcp-grafana</a></td>
-<td>~2,500</td>
+<td>~2,907</td>
 <td>Go</td>
-<td>50+ (6 Loki)</td>
+<td>60+ (5 Loki)</td>
 <td>stdio</td>
 </tr>
 <tr>
 <td><a href="https://github.com/grafana/loki-mcp">grafana/loki-mcp</a></td>
-<td>~98</td>
+<td>~128</td>
 <td>Go</td>
 <td>1</td>
 <td>stdio, SSE</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Grafana&rsquo;s official mcp-grafana is the most comprehensive observability MCP server available.</strong> 2,500 stars, 61 open issues, 41 open PRs — heavily active development. Covers dashboards, datasources, Prometheus, Loki, ClickHouse, CloudWatch, Elasticsearch, incidents, alerting, OnCall, annotations, and rendering.</p>
-<p>The 6 Loki-specific tools:</p>
+<p><strong>Grafana&rsquo;s official mcp-grafana is the most comprehensive observability MCP server available.</strong> 2,907 stars, 343 forks, 76 open issues/PRs — heavily active development with multiple daily commits. v0.12.0 (April 23, 2026) added InfluxDB datasource support (Flux + InfluxQL), Graphite datasource support, legacy <code>d-solo</code> render mode, security fixes (reject embedded credentials, reject malformed headers), and schema token cost reduction. Covers dashboards, datasources, Prometheus, Loki, InfluxDB, Graphite, ClickHouse, CloudWatch, Elasticsearch, incidents, alerting, OnCall, annotations, and rendering.</p>
+<p>The 5 Loki-specific tools:</p>
 <table>
 <thead>
 <tr>
@@ -126,14 +127,10 @@
 <td><code>query_loki_patterns</code></td>
 <td>Identify detected log patterns and anomalies</td>
 </tr>
-<tr>
-<td><code>search_logs</code></td>
-<td>High-level log search across ClickHouse (OTel) and Loki datasources</td>
-</tr>
 </tbody>
 </table>
 <p>Install: <code>uvx mcp-grafana</code> with <code>GRAFANA_URL</code> and <code>GRAFANA_SERVICE_ACCOUNT_TOKEN</code> environment variables.</p>
-<p>The dedicated <strong>grafana/loki-mcp</strong> (98 stars, MIT, Go) provides a single <code>loki_query</code> tool for querying Loki directly. Supports multi-tenant org IDs, SSE transport, and Docker deployment. Simpler if you only need Loki without the full Grafana stack. 31 commits, 8 issues, 16 PRs.</p>
+<p>The dedicated <strong>grafana/loki-mcp</strong> (128 stars, MIT, Go) provides a single <code>loki_query</code> tool for querying Loki directly. Supports multi-tenant org IDs, SSE transport, and Docker deployment. Simpler if you only need Loki without the full Grafana stack. However, <strong>this repo has been dormant since July 2025</strong> (10 months) — given that mcp-grafana already includes 5 Loki tools with richer functionality, the standalone server may be effectively superseded.</p>
 <p>Community alternatives include <a href="https://github.com/tumf/grafana-loki-mcp">tumf/grafana-loki-mcp</a> (FastMCP/Python), <a href="https://github.com/mo-silent/loki-mcp-server">mo-silent/loki-mcp-server</a>, and <a href="https://github.com/lexfrei/mcp-loki">lexfrei/mcp-loki</a> — all provide basic LogQL querying.</p>
 <h3 id="elasticsearch--elk-stack">Elasticsearch / ELK Stack</h3>
 <table>
@@ -149,7 +146,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/elastic/mcp-server-elasticsearch">elastic/mcp-server-elasticsearch</a></td>
-<td>~626</td>
+<td>~648</td>
 <td>Rust</td>
 <td>5</td>
 <td>Deprecated</td>
@@ -170,7 +167,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Elastic&rsquo;s official MCP server is deprecated</strong> — superseded by the Elastic Agent Builder MCP endpoint available in Elastic 9.2.0+ and Elasticsearch Serverless. The existing server (626 stars, Rust, Apache-2.0, v0.4.6) still works via Docker (<code>docker.elastic.co/mcp/elasticsearch</code>) with stdio and streamable-HTTP protocols.</p>
+<p><strong>Elastic&rsquo;s official MCP server is deprecated</strong> — superseded by the Elastic Agent Builder MCP endpoint available in Elastic 9.2.0+ and Elasticsearch Serverless. The existing server (648 stars, Rust, Apache-2.0, v0.4.6) still works via Docker (<code>docker.elastic.co/mcp/elasticsearch</code>) with stdio and streamable-HTTP protocols. Last commit was October 2025; the repo will only receive critical security updates going forward.</p>
 <p>5 tools before deprecation:</p>
 <table>
 <thead>
@@ -218,28 +215,28 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/CiscoDevNet/Splunk-MCP-Server-official">CiscoDevNet/Splunk-MCP-Server-official</a></td>
-<td>~2</td>
+<td>~3</td>
 <td>—</td>
 <td>7+</td>
 <td>Splunk mgmt port</td>
 </tr>
 <tr>
 <td><a href="https://github.com/livehybrid/splunk-mcp">livehybrid/splunk-mcp</a></td>
-<td>~94</td>
+<td>~98</td>
 <td>Python</td>
-<td>13</td>
+<td>14</td>
 <td>API token</td>
 </tr>
 <tr>
 <td><a href="https://github.com/splunk/splunk-mcp-server2">splunk/splunk-mcp-server2</a></td>
-<td>~29</td>
+<td>~31</td>
 <td>Python/TS</td>
 <td>7</td>
 <td>API token</td>
 </tr>
 <tr>
 <td><a href="https://github.com/deslicer/mcp-for-splunk">deslicer/mcp-for-splunk</a></td>
-<td>~20</td>
+<td>~22</td>
 <td>Python</td>
 <td>20+</td>
 <td>API token</td>
@@ -247,10 +244,10 @@
 </tbody>
 </table>
 <p><strong>Splunk has the most fragmented MCP ecosystem — four+ servers, each with a different approach.</strong></p>
-<p>The <strong>official Splunkbase app</strong> (CiscoDevNet, v1.0.1, Feb 2026, beta) runs inside your Splunk instance on the management port (8089). Tools include <code>generate_spl</code> (natural language to SPL), <code>run_splunk_query</code>, <code>get_splunk_info</code>, <code>get_indexes</code>, <code>get_index_info</code>, and <code>get_saved_searches</code>. Minimal GitHub presence (2 stars) since it&rsquo;s distributed via Splunkbase.</p>
-<p>The <strong>community leader</strong> is livehybrid/splunk-mcp (94 stars, Python, Apache-2.0). 13 tools across search, index management, KV store operations, health checks, and user management. Supports SSE transport and Docker deployment. 6 issues, 9 PRs, actively maintained.</p>
-<p>splunk/splunk-mcp-server2 (29 stars, MIT) adds SPL risk scoring (0-100 scale), automatic sensitive data masking, and multiple output formats (JSON, CSV, Markdown). 7 tools with a security-first approach.</p>
-<p>deslicer/mcp-for-splunk (20 stars, Apache-2.0) offers 20+ tools with 16 resources, AI workflow builders, and natural language to SPL conversion.</p>
+<p>The <strong>official Splunkbase app</strong> (CiscoDevNet, v1.0.1, Feb 2026, beta) runs inside your Splunk instance on the management port (8089). Tools include <code>generate_spl</code> (natural language to SPL), <code>run_splunk_query</code>, <code>get_splunk_info</code>, <code>get_indexes</code>, <code>get_index_info</code>, and <code>get_saved_searches</code>. 5,029+ Splunkbase downloads with a 5-star rating. Supports Splunk 8.0-10.2. Minimal GitHub presence (3 stars) since it&rsquo;s distributed via Splunkbase.</p>
+<p>The <strong>community leader</strong> is livehybrid/splunk-mcp (98 stars, Python, Apache-2.0). 14 tools across search, index management, KV store operations (including KVStore collections), health checks, and user management. Supports SSE transport and Docker deployment.</p>
+<p>splunk/splunk-mcp-server2 (31 stars, MIT) adds SPL risk scoring (0-100 scale), automatic sensitive data masking, and multiple output formats (JSON, CSV, Markdown). 7 tools with a security-first approach. Low activity — single contributor, no releases published.</p>
+<p>deslicer/mcp-for-splunk (22 stars, Apache-2.0, 374 commits) is the most actively developed Splunk MCP server. 20+ tools with 16 resources including CIM data models, 174 passing tests, AI-powered troubleshooting workflows, and natural language to SPL conversion.</p>
 <h3 id="datadog">Datadog</h3>
 <table>
 <thead>
@@ -265,14 +262,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/datadog-labs/mcp-server">datadog-labs/mcp-server</a></td>
-<td>~10</td>
+<td>~33</td>
 <td>—</td>
 <td>16+</td>
 <td>Remote HTTP</td>
 </tr>
 <tr>
 <td><a href="https://github.com/winor30/mcp-server-datadog">winor30/mcp-server-datadog</a></td>
-<td>~139</td>
+<td>~142</td>
 <td>TypeScript</td>
 <td>20</td>
 <td>stdio</td>
@@ -280,9 +277,9 @@
 </tbody>
 </table>
 <p><strong>Datadog offers both an official managed remote MCP server and a popular community server.</strong></p>
-<p>The <strong>official server</strong> (datadog-labs, MIT, Preview) is a managed remote endpoint at <code>mcp.datadoghq.com</code> — no self-hosting needed. Core toolset covers logs, metrics, traces, dashboards, monitors, incidents, hosts, services, events, and notebooks. Additional opt-in toolsets for alerting, APM, Database Monitoring, Error Tracking, feature flags, LLM Observability, networking, security, software delivery, and Synthetic tests. Paginates by token budget with cursor-based continuation.</p>
+<p>The <strong>official server</strong> (datadog-labs, MIT, Preview, 33 stars — up from 10, +230%) is a managed remote endpoint at <code>mcp.datadoghq.com</code> — no self-hosting needed. Regional endpoint guidance added in April 2026. Core toolset covers logs, metrics, traces, dashboards, monitors, incidents, hosts, services, events, and notebooks. Additional opt-in toolsets for alerting, APM, Database Monitoring, Error Tracking, feature flags, LLM Observability, networking, security, software delivery, and Synthetic tests. Paginates by token budget with cursor-based continuation.</p>
 <p>Install for Claude Code: <code>claude mcp add --transport http datadog https://mcp.datadoghq.com/api/unstable/mcp-server/mcp</code></p>
-<p>The <strong>community leader</strong> winor30/mcp-server-datadog (139 stars, TypeScript, Apache-2.0) provides 20 named tools:</p>
+<p>The <strong>community leader</strong> winor30/mcp-server-datadog (142 stars, TypeScript, Apache-2.0) provides 20 named tools. Development has slowed in 2026 — last feature release was v1.7.0 (October 2025), with mostly dependency bumps since then:</p>
 <table>
 <thead>
 <tr>
@@ -348,14 +345,14 @@
 <tbody>
 <tr>
 <td>CloudWatch MCP Server (awslabs/mcp)</td>
-<td>—</td>
+<td>~8,864</td>
 <td>Python</td>
-<td>4+</td>
+<td>11</td>
 <td>Official monorepo</td>
 </tr>
 <tr>
 <td><a href="https://github.com/awslabs/Log-Analyzer-with-MCP">awslabs/Log-Analyzer-with-MCP</a></td>
-<td>~153</td>
+<td>~157</td>
 <td>Python</td>
 <td>5</td>
 <td>Official standalone</td>
@@ -363,8 +360,14 @@
 </tbody>
 </table>
 <p><strong>AWS provides two official CloudWatch log analysis servers.</strong></p>
-<p>The <strong>CloudWatch MCP Server</strong> inside the awslabs/mcp monorepo (4,700+ stars total) offers alarm troubleshooting, metric analysis, and log analysis tools including <code>get_metric_data</code>, <code>get_metric_metadata</code>, and <code>get_recommended_metric_alarms</code>. PyPI: <code>awslabs.cloudwatch-mcp-server</code>. Note: the older <code>cloudwatch-logs-mcp-server</code> package is deprecated in favor of the unified CloudWatch server.</p>
-<p>The standalone <strong>Log-Analyzer-with-MCP</strong> (153 stars, Python, Apache-2.0, 11 contributors) focuses specifically on CloudWatch Logs analysis — log group discovery, CloudWatch Logs Insights query execution, log summaries, error pattern identification, and multi-service log correlation. A solid demo project that shows MCP log analysis patterns.</p>
+<p>The <strong>CloudWatch MCP Server</strong> inside the awslabs/mcp monorepo (8,864 stars — nearly doubled from 4,700 in March) now provides <strong>11 tools</strong> across three categories:</p>
+<ul>
+<li><strong>Metrics</strong> (4 tools): <code>get_metric_data</code>, <code>get_metric_metadata</code>, <code>get_recommended_metric_alarms</code>, <code>analyze_metric</code></li>
+<li><strong>Alarms</strong> (2 tools): <code>get_active_alarms</code>, <code>get_alarm_history</code></li>
+<li><strong>Logs</strong> (5 tools): <code>describe_log_groups</code>, <code>analyze_log_group</code>, <code>execute_log_insights_query</code>, <code>get_logs_insight_query_results</code>, <code>cancel_logs_insight_query</code></li>
+</ul>
+<p>Multi-profile support added for all tools in 2026. A separate <code>cloudwatch-appsignals-mcp-server</code> also exists in the monorepo. An RFC is in progress to add Performance Insights (Database Insights) tools. PyPI: <code>awslabs.cloudwatch-mcp-server</code>. Note: the older <code>cloudwatch-logs-mcp-server</code> package is deprecated in favor of the unified CloudWatch server.</p>
+<p>The standalone <strong>Log-Analyzer-with-MCP</strong> (157 stars, Python, Apache-2.0) focuses specifically on CloudWatch Logs analysis — log group discovery, CloudWatch Logs Insights query execution, log summaries, error pattern identification, and multi-service log correlation. Now in maintenance-only mode with only dependency bumps in 2026.</p>
 <h3 id="dynatrace">Dynatrace</h3>
 <table>
 <thead>
@@ -379,16 +382,16 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/dynatrace-oss/dynatrace-mcp">dynatrace-oss/dynatrace-mcp</a></td>
-<td>~92</td>
+<td>~111</td>
 <td>TypeScript</td>
-<td>15+</td>
+<td>21</td>
 <td>stdio, HTTP</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Dynatrace&rsquo;s official open-source MCP server bridges AI assistants to the Dynatrace observability platform.</strong> 92 stars, MIT license, 7 issues, 11 PRs.</p>
+<p><strong>Dynatrace&rsquo;s official open-source MCP server bridges AI assistants to the Dynatrace observability platform.</strong> 111 stars (up from 92), MIT license, 18 open issues. <strong>Rapid release cadence</strong> — v1.8.3 (April 24, 2026), with v1.8.2 (April 21) and v1.8.1 (April 15). Requires Node.js v22.10+.</p>
 <p>Install: <code>npx -y @dynatrace-oss/dynatrace-mcp-server</code> (stdio) or <code>--http</code> for server mode.</p>
-<p>Key tools:</p>
+<p>Key tools (~21):</p>
 <table>
 <thead>
 <tr>
@@ -398,24 +401,48 @@
 </thead>
 <tbody>
 <tr>
-<td><code>execute_dql</code></td>
-<td>Run Dynatrace Query Language statements</td>
+<td><code>execute_dql</code> / <code>verify_dql</code></td>
+<td>Run and validate Dynatrace Query Language statements</td>
 </tr>
 <tr>
-<td><code>list_problems</code> / <code>get_problem_details</code></td>
+<td><code>generate_dql_from_natural_language</code> / <code>explain_dql_in_natural_language</code></td>
+<td>Natural language ↔ DQL conversion</td>
+</tr>
+<tr>
+<td><code>list_problems</code></td>
 <td>Problem investigation</td>
 </tr>
 <tr>
-<td><code>list_vulnerabilities</code> / <code>get_vulnerability_details</code></td>
+<td><code>list_vulnerabilities</code></td>
 <td>Security vulnerability data</td>
 </tr>
 <tr>
-<td><code>get_entity_details</code> / <code>get_entity_ownership</code></td>
-<td>Entity monitoring</td>
+<td><code>list_exceptions</code></td>
+<td>Exception tracking</td>
+</tr>
+<tr>
+<td><code>get_kubernetes_events</code></td>
+<td>Kubernetes event monitoring</td>
+</tr>
+<tr>
+<td><code>find_entity_by_name</code></td>
+<td>Entity discovery</td>
+</tr>
+<tr>
+<td><code>chat_with_davis_copilot</code></td>
+<td>Davis CoPilot AI interaction</td>
+</tr>
+<tr>
+<td><code>list_davis_analyzers</code> / <code>execute_davis_analyzer</code></td>
+<td>Davis AI analysis</td>
 </tr>
 <tr>
 <td><code>list_documents</code> / <code>read_document</code> / <code>create_document</code></td>
 <td>Notebooks and dashboards</td>
+</tr>
+<tr>
+<td><code>create_dynatrace_notebook</code></td>
+<td>Notebook creation</td>
 </tr>
 <tr>
 <td><code>send_event</code></td>
@@ -426,12 +453,11 @@
 <td>Notification integration</td>
 </tr>
 <tr>
-<td><code>setup_notification_workflow</code></td>
-<td>Configure automation</td>
+<td><code>create_workflow_for_notification</code></td>
+<td>Configure automation workflows</td>
 </tr>
 </tbody>
 </table>
-<p>Also includes <strong>Davis CoPilot</strong> tools for natural language to DQL conversion.</p>
 <h3 id="new-relic">New Relic</h3>
 <table>
 <thead>
@@ -446,15 +472,15 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/newrelic/mcp-server">newrelic/mcp-server</a></td>
-<td>~3</td>
+<td>~5</td>
 <td>—</td>
 <td>—</td>
 <td>Public Preview</td>
 </tr>
 </tbody>
 </table>
-<p><strong>New Relic&rsquo;s official MCP server launched in November 2025 as a Public Preview.</strong> Connects AI agents to New Relic&rsquo;s observability data for natural language querying of telemetry data, alert investigation, and performance analysis.</p>
-<p>Tool categories include entity/account management, alerting/monitoring, incident response, performance analytics (golden metrics, logs, thread analysis), NRQL queries, and deployment impact assessment. Low GitHub presence (3 stars, 1 contributor, no releases published) suggests the real product lives behind the New Relic platform.</p>
+<p><strong>New Relic&rsquo;s official MCP server launched in November 2025 as a Public Preview.</strong> Still no GA announcement as of April 2026. Connects AI agents to New Relic&rsquo;s observability data for natural language querying of telemetry data, alert investigation, and performance analysis.</p>
+<p>Tool categories include entity/account management, alerting/monitoring, incident response, performance analytics (golden metrics, logs, thread analysis), NRQL queries, and deployment impact assessment. Very low GitHub presence (5 stars, 1 contributor, 2 commits on main, no releases published) — the real product lives behind the New Relic platform.</p>
 <p>Community alternatives: <a href="https://github.com/cloudbring/newrelic-mcp">cloudbring/newrelic-mcp</a> (NerdGraph API integration), <a href="https://github.com/ulucaydin/mcp-server-newrelic">ulucaydin/mcp-server-newrelic</a> (unofficial NerdGraph MCP).</p>
 <h3 id="graylog">Graylog</h3>
 <table>
@@ -469,70 +495,30 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/AI-enthusiasts/mcp-graylog">AI-enthusiasts/mcp-graylog</a></td>
-<td>~1</td>
-<td>Python</td>
-<td>11</td>
-<td>stdio</td>
-</tr>
-<tr>
 <td><a href="https://github.com/lcaliani/graylog-mcp">lcaliani/graylog-mcp</a></td>
 <td>—</td>
 <td>JavaScript</td>
 <td>1</td>
 <td>stdio</td>
 </tr>
+<tr>
+<td><a href="https://github.com/mothlike/mcp_graylog">mothlike/mcp_graylog</a></td>
+<td>—</td>
+<td>Python</td>
+<td>—</td>
+<td>stdio</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Pranavj17/mcp-server-graylog">Pranavj17/mcp-server-graylog</a></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>stdio</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Graylog has built-in MCP support</strong> — the platform itself can act as an MCP endpoint with API token authentication. But the standalone community servers provide different integration approaches.</p>
-<p>AI-enthusiasts/mcp-graylog (Python, MIT) is the most complete with 11 tools:</p>
-<table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>search_logs</code></td>
-<td>Query logs using Elasticsearch syntax</td>
-</tr>
-<tr>
-<td><code>search_stream_logs</code></td>
-<td>Target-specific stream searching</td>
-</tr>
-<tr>
-<td><code>get_last_event_from_stream</code></td>
-<td>Retrieve most recent stream events</td>
-</tr>
-<tr>
-<td><code>list_streams</code> / <code>search_streams_by_name</code> / <code>get_stream_info</code></td>
-<td>Stream management</td>
-</tr>
-<tr>
-<td><code>get_log_statistics</code></td>
-<td>Generate aggregations and pattern analysis</td>
-</tr>
-<tr>
-<td><code>get_error_logs</code></td>
-<td>Extract error messages by timeframe</td>
-</tr>
-<tr>
-<td><code>get_log_count_by_level</code></td>
-<td>Aggregate logs by severity level</td>
-</tr>
-<tr>
-<td><code>get_system_info</code></td>
-<td>Graylog infrastructure status</td>
-</tr>
-<tr>
-<td><code>test_connection</code></td>
-<td>Validate server connectivity</td>
-</tr>
-</tbody>
-</table>
-<p>Docker deployment recommended. Other community servers: <a href="https://github.com/mothlike/mcp_graylog">mothlike/mcp_graylog</a> (Elasticsearch query syntax, statistics), <a href="https://github.com/Pranavj17/mcp-server-graylog">Pranavj17/mcp-server-graylog</a> (focused on production debugging).</p>
+<p><strong>Note:</strong> The previously most-complete standalone server, AI-enthusiasts/mcp-graylog (11 tools), appears to have been removed (404 as of April 2026). The remaining community servers are more limited: <a href="https://github.com/lcaliani/graylog-mcp">lcaliani/graylog-mcp</a> (JavaScript, single tool), <a href="https://github.com/mothlike/mcp_graylog">mothlike/mcp_graylog</a> (Elasticsearch query syntax, statistics), and <a href="https://github.com/Pranavj17/mcp-server-graylog">Pranavj17/mcp-server-graylog</a> (focused on production debugging). Graylog&rsquo;s built-in MCP support is now the recommended path.</p>
 <h3 id="sumo-logic">Sumo Logic</h3>
 <table>
 <thead>
@@ -546,19 +532,26 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/samwang0723/mcp-sumologic">samwang0723/mcp-sumologic</a></td>
-<td>—</td>
+<td>~10</td>
 <td>TypeScript</td>
-<td>—</td>
+<td>1</td>
 </tr>
 <tr>
 <td><a href="https://github.com/vinit-devops/sumologic_mcp">vinit-devops/sumologic_mcp</a></td>
-<td>—</td>
+<td>~4</td>
 <td>Python</td>
 <td>37</td>
 </tr>
+<tr>
+<td>Sumo Logic Official (Dojo AI)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
 </tbody>
 </table>
-<p><strong>Sumo Logic has community-only MCP coverage — no official server yet.</strong> vinit-devops/sumologic_mcp stands out with 37 tools. samwang0723/mcp-sumologic (TypeScript) and greyaperez/mcp-sumologic (natural language to Sumo queries) provide lighter alternatives. Sumo Logic itself has published MCP documentation suggesting an official server may be in development.</p>
+<p><strong>Sumo Logic now has an official MCP server in limited beta</strong>, part of the &ldquo;Dojo AI&rdquo; platform expansion announced in early 2026. It extends Dojo AI into the agentic ecosystem, connecting customer-owned copilots, proprietary models, and third-party AI systems. Includes SOC Analyst Agent, Knowledge Agent, and Query Agent capabilities. GA planned for 2026 but no confirmed date yet.</p>
+<p>For community options, vinit-devops/sumologic_mcp (4 stars, Python, PyPI: <code>sumologic-mcp-python</code>) stands out with 37 tools across six categories (Search &amp; Analytics, Dashboard Management, Metrics &amp; Monitoring, Collector &amp; Source Management, Monitor Management, utilities). samwang0723/mcp-sumologic (10 stars, TypeScript) provides a single search tool but has been stale since February 2025.</p>
 <h3 id="opentrace-self-hosted">OpenTrace (Self-Hosted)</h3>
 <table>
 <thead>
@@ -573,16 +566,83 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/adham90/opentrace">adham90/opentrace</a></td>
-<td>~13</td>
+<td>~15</td>
 <td>Go</td>
-<td>75+</td>
+<td>13 tools (90+ actions)</td>
 <td>SQLite</td>
 </tr>
 </tbody>
 </table>
-<p><strong>OpenTrace is the only self-hosted, vendor-neutral observability MCP server.</strong> 13 stars, MIT, Go 1.25+, 308 commits — substantial codebase despite low adoption.</p>
-<p>75+ tools across 8 categories: overview/triage, log intelligence (full-text search, distributed traces, performance analysis, period comparisons), database introspection (Postgres read-only — query stats, table metrics, lock analysis, index optimization), errors (grouping, investigation, user impact), analytics/journeys, uptime/watches, agent memory (persistent notes across sessions), and settings/admin.</p>
+<p><strong>OpenTrace is the only self-hosted, vendor-neutral observability MCP server.</strong> 15 stars, MIT, Go 1.25+, 407 commits (up from 308) — substantial and growing codebase despite low adoption.</p>
+<p>13 tools with 90+ actions across 8 categories: overview/triage, log intelligence (full-text search, distributed traces, performance analysis, period comparisons), database introspection (Postgres read-only — query stats, table metrics, lock analysis, index optimization), errors (grouping, investigation, user impact), analytics/journeys, uptime/watches, agent memory (persistent notes across sessions), and settings/admin. New features include PII scrubbing, SQL validation for read-only Postgres access, automatic deploy detection via git commit hashing, and per-user auth tokens. Targets 200-500K entries/sec write throughput with ~260KB runtime memory.</p>
 <p>Single binary deployment with SQLite storage. Docker: <code>docker run ghcr.io/adham90/opentrace:latest</code>. One-click deploy on DigitalOcean, Railway, and Render. Includes a web UI with live log streaming. Designed for small-to-medium teams that want observability without vendor lock-in.</p>
+<h3 id="axiom">Axiom</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/axiomhq/mcp">axiomhq/mcp</a></td>
+<td>~11</td>
+<td>TypeScript</td>
+<td>multiple</td>
+<td>Remote HTTP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Axiom now has an official hosted MCP server at mcp.axiom.co</strong>, replacing the deprecated <a href="https://github.com/axiomhq/mcp-server-axiom">axiomhq/mcp-server-axiom</a> (61 stars, archived March 2, 2026). The new server runs on Cloudflare Workers with 151 commits and active development (9 forks, 9 open PRs). Features CSV formatting, auto time-series binning, and smart field prioritization.</p>
+<p>The deprecated server had 6 tools (<code>queryApl</code>, <code>listDatasets</code>, <code>getDatasetSchema</code>, <code>getSavedQueries</code>, <code>getMonitors</code>, <code>getMonitorsHistory</code>) in Go. The replacement is fully hosted — no self-hosting needed.</p>
+<h3 id="fluent-bit--fluentd">Fluent Bit / Fluentd</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mp3monster/fluent-opamp">mp3monster/fluent-opamp</a></td>
+<td>~1</td>
+<td>Python</td>
+<td>MCP+OpAMP</td>
+<td>stdio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The first MCP server for Fluent Bit and Fluentd</strong> — arrived via OpAMP (OpenTelemetry Agent Management Protocol) integration rather than direct log access. Implements the OpAMP specification for managing and monitoring Fluent Bit/Fluentd agents, with an MCP server layer exposing the OpAMP control plane to AI assistants. Release 0.4 (April 11, 2026). Minimal adoption so far but fills a previously complete gap.</p>
+<h3 id="logstash">Logstash</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mashhurs/logstash-mcp-server">mashhurs/logstash-mcp-server</a></td>
+<td>~1</td>
+<td>Python</td>
+<td>12</td>
+<td>Prototype</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The first Logstash-specific MCP server</strong> — covers connectivity verification, node stats, pipeline performance, hot thread analysis, health assessments, and JVM diagnostics. 12 tools total. However, the author explicitly describes it as &ldquo;vibe coded, AI generated and not tested properly&rdquo; — treat as prototype quality only. Last commit June 2025.</p>
 <h3 id="standalone-log-analyzers">Standalone Log Analyzers</h3>
 <p>Several MCP servers focus on local log file analysis rather than connecting to a platform:</p>
 <table>
@@ -621,23 +681,24 @@
 <p><a href="https://github.com/vovka/papertrail-mcp-server">vovka/papertrail-mcp-server</a> provides basic log search capabilities for Papertrail with rate limiting and Docker support. Community-only, minimal adoption.</p>
 <h2 id="whats-missing">What&rsquo;s Missing</h2>
 <ul>
-<li><strong>No Logstash pipeline management MCP</strong> — the ELK stack&rsquo;s ingest layer has no dedicated MCP server for pipeline CRUD</li>
-<li><strong>No Fluentd/Fluent Bit MCP servers</strong> — the CNCF log collectors have zero MCP presence</li>
-<li><strong>No official Sumo Logic MCP</strong> — despite publishing MCP documentation</li>
+<li><strong>Logstash pipeline management is prototype-only</strong> — mashhurs/logstash-mcp-server exists but is self-described as untested; no production-quality Logstash CRUD MCP server yet</li>
+<li><strong>Fluent Bit/Fluentd MCP is indirect</strong> — mp3monster/fluent-opamp manages agents via OpAMP but doesn&rsquo;t provide direct log access tools</li>
+<li><strong>Sumo Logic official MCP still in limited beta</strong> — no GA date confirmed</li>
 <li><strong>Elasticsearch deprecation</strong> — Elastic is pushing toward Agent Builder, leaving a gap for self-hosted Elasticsearch users</li>
 <li><strong>No cross-platform log correlation</strong> — no MCP server queries multiple log backends simultaneously (OpenTrace comes closest but requires log ingestion)</li>
 <li><strong>No log alerting via MCP</strong> — you can query logs but can&rsquo;t create log-based alerts through most servers</li>
-<li><strong>No Papertrail/Logtail/Axiom official servers</strong></li>
+<li><strong>Graylog community coverage weakened</strong> — AI-enthusiasts/mcp-graylog (the most complete standalone server) was removed; Graylog&rsquo;s built-in MCP is the main path now</li>
+<li><strong>No Papertrail/Logtail official servers</strong> — Papertrail has a minimal community server (1 tool, dormant); no Logtail standalone MCP exists (use Better Stack official instead)</li>
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p><strong>Rating: 4.0 / 5</strong> — Strong official support from major vendors (Grafana, Splunk, Datadog, Dynatrace, AWS, Elastic, New Relic). Grafana&rsquo;s mcp-grafana is the clear ecosystem leader with 2,500 stars and multi-backend log querying. The category loses points for fragmentation (Splunk has 4+ competing servers), Elasticsearch&rsquo;s deprecation creating uncertainty, and the absence of log pipeline management (Fluentd/Logstash) and cross-platform correlation tools.</p>
+<p><strong>Rating: 4.0 / 5</strong> — Strong official support from major vendors (Grafana, Splunk, Datadog, Dynatrace, AWS, Elastic, New Relic, Axiom). Grafana&rsquo;s mcp-grafana is the clear ecosystem leader at 2,907 stars with v0.12.0 adding InfluxDB and Graphite support. AWS CloudWatch nearly doubled its monorepo presence (8,864 stars) and expanded to 11 tools. Dynatrace&rsquo;s rapid release cadence (v1.8.3) shows strong investment. Axiom launching an official hosted MCP fills a previous gap. The category still loses points for fragmentation (Splunk has 4+ competing servers), Elasticsearch&rsquo;s deprecation creating uncertainty, and log pipeline management tools remaining at prototype quality.</p>
 <p><strong>Best for enterprise teams:</strong> Grafana mcp-grafana (if you use Grafana) or Datadog&rsquo;s managed endpoint (if you use Datadog) — both provide the smoothest experience with official backing.</p>
-<p><strong>Best for self-hosted/vendor-neutral:</strong> OpenTrace offers a unique single-binary approach with 75+ tools and SQLite storage, though it requires log ingestion rather than querying existing platforms.</p>
-<p><strong>Best for Splunk shops:</strong> livehybrid/splunk-mcp (94 stars, 13 tools) or the official Splunkbase app depending on your deployment model.</p>
+<p><strong>Best for self-hosted/vendor-neutral:</strong> OpenTrace offers a unique single-binary approach with 13 tools (90+ actions) and SQLite storage, though it requires log ingestion rather than querying existing platforms.</p>
+<p><strong>Best for Splunk shops:</strong> livehybrid/splunk-mcp (98 stars, 14 tools) or the official Splunkbase app (5,029+ downloads) depending on your deployment model.</p>
 <hr>
 <p><em>This review covers publicly available information as of March 2026. ChatForest researches MCP servers thoroughly through documentation, GitHub repositories, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. Always check the linked repositories for the latest status.</em></p>
 <p><strong>Category</strong>: <a href="/categories/observability-monitoring/">Observability &amp; Monitoring</a></p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was last edited on 2026-04-25 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -689,7 +750,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T06:05:00+09:00","description":"Log management MCP servers let AI agents search, analyze, and correlate logs across Splunk, Elasticsearch, Grafana Loki, Graylog, AWS CloudWatch, Datadog, Dynatrace, New Relic, and Sumo Logic.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond"},"name":"Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/log-management-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-25T00:00:00+09:00","datePublished":"2026-03-15T06:05:00+09:00","description":"Log management MCP servers let AI agents search, analyze, and correlate logs across Splunk, Elasticsearch, Grafana Loki, Graylog, AWS CloudWatch, Datadog, Dynatrace, New Relic, Axiom, and Sumo Logic.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond"},"name":"Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/log-management-mcp-servers/"}
 </script>
 
 
