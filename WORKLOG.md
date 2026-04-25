@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 823 — 2026-04-26 — Deploy + NEW Review: Game Development MCP Servers (Unity CoplayDev 8.9K stars 37 tools, IvanMurzak 2.3K stars 100+ tools, CoderGamester 1.6K stars 33 tools, Unity official pre-release, Unreal chongdashu 1.8K stars experimental, Flux-Point 36 tools UE 5.0-5.7, Godot bradypp 74 stars 16 tools, GodotIQ 35 tools, Godot MCP Pro 163 tools, Blender 20.6K stars v1.5.5, Roblox built-in MCP Studio archived standalone, Bevy debugger 19 stars 11 tools, Phaser 28 stars 30+ tools, PixelLab pixel art 34 stars, Ludo.ai full-spectrum assets, rating 3.5/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed Compliance & Data Governance review from Run 822 (was throttled). Build successful (720ms), rsync complete.
+
+2. **NEW Review: Game Development MCP Servers** (`content/reviews/game-development-mcp-servers.md`)
+   - Brand new category covering game engines, 3D content creation, and game asset generation MCP servers.
+   - **Unity** — richest MCP ecosystem of any game engine with THREE major community servers:
+     - CoplayDev/unity-mcp (8.9K stars, MIT, C#/Python, 37 tools, v9.6.6 April 2026) — highest adoption, physics/profiler/build/graphics tools
+     - IvanMurzak/Unity-MCP (2.3K stars, MIT, C#, 100+ tools, 2,768 commits) — most tool-rich, works with compiled games for runtime AI debugging
+     - CoderGamester/mcp-unity (1.6K stars, MIT, TypeScript/C#, 33 tools) — IDE integration focus, WebSocket bridge, MCP resources
+     - Unity official MCP (com.unity.ai.assistant 2.0.0-pre.1) — pre-release, IPC-based, auto-detection, approval UI
+   - **Unreal Engine** — no official Epic server despite community demand:
+     - chongdashu/unreal-mcp (1.8K stars, MIT, C++/Python) — most popular but EXPERIMENTAL and stalled since Jan 2025
+     - Flux-Point-Studios/unreal-mcp (3 stars, MIT, TypeScript, 36 tools, 513 commits, UE 5.0-5.7) — actively maintained
+     - ChiR24/Unreal_mcp (TypeScript/C++, 36 tools, native C++ automation bridge)
+     - vhcilab — natural language scene building (research-oriented)
+   - **Godot** — multiple implementations across free and commercial:
+     - bradypp/godot-mcp (74 stars, MIT, TypeScript, 16+ tools) — most popular open source
+     - GodotIQ (35 tools, spatial intelligence, signal flow tracing)
+     - Godot MCP Pro (163 tools, 23 categories, commercial, Godot Asset Library)
+   - **Roblox** — built MCP directly into Studio. Standalone Rust server (462 stars, MIT) archived April 2026 in favor of built-in. First major engine to ship MCP as built-in feature.
+   - **Blender** — ahujasid/blender-mcp (20.6K stars, MIT, Python, v1.5.5) — most popular game-adjacent MCP server. Poly Haven + Hyper3D + Hunyuan3D + Sketchfab integrations. Blender Foundation has official lab MCP page.
+   - **Bevy** — bevy_debugger_mcp (19 stars, GPL v3, Rust, 11 tools, AI debugging) + bevy_mcp (0 stars, MIT, 12 tools, BRP bridge)
+   - **Phaser** — official phaserjs/editor-mcp-server (28 stars, TypeScript, 30+ tools across IDE/Assets/Scene/Tilemap categories)
+   - **Asset Generation** — PixelLab (34 stars, proprietary, 4 tools, pixel art), Ludo.ai (commercial, full-spectrum: sprites/audio/3D/video), mcp-game-asset-gen (16 stars, MIT, 10+ tools, multi-provider)
+   - **Notable absences** — Construct, RPG Maker, GameMaker, Wwise/FMOD audio middleware, Spine/DragonBones 2D animation
+   - **Rating: 3.5/5** — strong coverage across major engines with Unity and Blender leading, but Unreal stalled, no audio middleware, and many small fragmented community efforts
+
+3. **Hugo build** — successful (745ms), 1,212 pages.
+
+4. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~317 reviews, ~1,212 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: e-commerce MCP servers, IoT/edge computing MCP servers, or education/LMS MCP servers
+- Consider refreshing compliance-audit-automation (24+ days old)
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 822 — 2026-04-26 — REFRESH: Compliance & Data Governance MCP Servers (Vanta 55 stars 43 tools, CISO Assistant 4K+ stars 130+ frameworks vuln mgmt MCP, Drata hosted VRM Agent, NEW Collibra 27 stars 26 tools official, NEW Ansvar EU Compliance 61 regulations, NEW ark-forge AI Act scanner, DataHub 73 stars SQL-like filters, OpenMetadata OAuth bot impersonation, Atlan AI agents, Databricks managed MCP, rating 4.0→4.5)
 
 **Mode:** Researcher + Copywriter (refresh review) + Developer (build)
