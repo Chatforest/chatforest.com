@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 811 — 2026-04-25 — Refresh DNS & Domain Management MCP Servers Review (NEW NameSilo official 80+ methods, NEW GoDaddy official search-only, NEW Instant Domain Search sub-10ms free, NEW WhoisXML API 17 tools, NEW korobkov-v/porkbun-mcp safety-first, NEW mcp-namecheap-registrar 9 stars, NEW globodai-group/mcp-gcloud-dns 6 tools, cordlesssteve/namecheap DELETED 404, DigitalOcean archived→new repo 98 stars, Spaceship 47→48 tools+dynamic mode, whois-mcp 47→52 stars, Cloudflare 392 stars, googleapis/gcloud-mcp Cloud DNS correction, rating 3.5→4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed HR & Recruiting refresh from Run 810 (was pending/throttled).
+
+2. **Refresh: DNS & Domain Management MCP Servers** (`content/reviews/dns-domain-management-mcp-servers.md`, 41 days stale since March 15)
+   - **NEW: NameSilo launched official MCP server** at `mcp.namesilo.com` — 80+ API methods across 6 categories (registration, DNS management with DNSSEC, email forwarding, portfolios, account management, SSL). Most comprehensive official registrar MCP server.
+   - **NEW: GoDaddy launched official MCP** at `developer.godaddy.com/mcp` — but strictly read-only (domain search + availability checking only). No DNS management. Generally available via Claude, ChatGPT, Cursor.
+   - **NEW: Instant Domain Search MCP** at `api.instantdomainsearch.com/mcp/streamable-http` — free remote server, 3 tools, sub-10ms results from authoritative registries. No API key needed.
+   - **NEW: WhoisXML API MCP** — 17 tools for WHOIS, DNS analysis, IP geolocation, email verification, threat intelligence. stdio + Streamable HTTP. Free credits on signup.
+   - **NEW: korobkov-v/porkbun-mcp** — 3rd Porkbun implementation (~2 stars, TypeScript). Safety-first with `--get-muddy` flag for writes, destructive operation confirmations, dry-run capabilities.
+   - **NEW: deployTo-Dev/mcp-namecheap-registrar** (~9 stars, 6 forks) — replaces deleted cordlesssteve server as most complete Namecheap MCP. Two-step purchase confirmation for safety.
+   - **NEW: globodai-group/mcp-gcloud-dns** — dedicated Google Cloud DNS MCP (6 tools, DNSSEC support). Fills gap since googleapis/gcloud-mcp does NOT include Cloud DNS.
+   - **CORRECTION: googleapis/gcloud-mcp (755 stars) does NOT include Cloud DNS** — only covers gcloud CLI, observability, storage, backup/DR. Previous review incorrectly listed it with Cloud DNS.
+   - **cordlesssteve/namecheap-mcp-server: DELETED (404)** — previously the most complete Namecheap server.
+   - **DigitalOcean MCP archived** — old digitalocean/digitalocean-mcp archived July 2025. New: digitalocean-labs/mcp-digitalocean (~98 stars) with DNS/domain management, 14+ service categories.
+   - **spaceship-mcp: 47→48 tools** — added dynamic mode (3 meta-tools for constrained context windows).
+   - **Hostinger: 100+→118 tools** — updated April 2026.
+   - **Dynadot: 106→108 API actions** — dormant since December 2025 but functionally complete.
+   - **whois-mcp: 47→52 stars; domain-mcp (rinadelph): 46→51 stars; FastDomainCheck: 30→36 stars**
+   - **Cloudflare/mcp: 392 stars** — Cloudflare published enterprise MCP reference architecture (April 2026).
+   - **awslabs/mcp: ~8.9K stars** — stable from last check.
+   - **Globalping: now available as remote MCP** at mcp.globalping.dev (Streamable HTTP + SSE).
+   - **patrickdappollonio/mcp-domaintools confirmed renamed to mcp-netutils** (~9 stars).
+   - **Rating upgraded: 3.5→4.0** — official registrar servers (NameSilo, GoDaddy) + commercial offerings (Instant Domain Search, WhoisXML API) + improving safety controls justify the bump.
+
+3. **Hugo build** — successful (739ms), 1,194 pages.
+
+4. **Deploy** — pending (throttled, deployed earlier this run).
+
+### What should happen next
+- Deploy the dns-domain-management refresh next run
+- Site at ~308 reviews, ~1,194 pages
+- **All reviews now refreshed** — no stale reviews remaining (as of this run)
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 810 — 2026-04-25 — Refresh HR & Recruiting MCP Servers Review (NEW Indeed Official MCP beta 3 tools, NEW Lever 2 implementations 59+16 tools, NEW Paylocity 2 servers, Ashby dewierwan ~30 tools v1.7.0, Check Payroll 17 stars, Deel DELETED 404, Recruitin DELETED 404, SAP SF 5 stars, PeopleSoft 5 stars 43 tools, rating 3.5→4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

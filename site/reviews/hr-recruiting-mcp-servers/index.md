@@ -7,7 +7,7 @@ HR and recruiting MCP servers are giving AI assistants direct access to employee
 
 The landscape spans six areas: **HRIS platforms** (BambooHR, Workday, SAP SuccessFactors, Rippling, and more), **applicant tracking systems** (Greenhouse, Ashby, CATS ATS), **payroll and benefits** (Check, Deel, ADP), **workforce management** (Passgage), **recruiting intelligence** (CareerProof, Recruitin), and **HR agent tools** (bias reduction, voice interviewing, onboarding kits).
 
-The headline findings: **Check Payroll is the highest-starred HR MCP server** at 14 stars with 263 tools across 17 toolsets — a proper enterprise payroll API surface. **BambooHR has the most implementations** of any HR platform with 8 competing servers, led by acalder-techpm's 74-tool implementation. **CATS ATS has 228 tools** — the most tool-dense ATS server and one of the most tool-rich MCP servers in any category. **SAP SuccessFactors** has production-grade coverage with 43 tools, 21 data center support, and enterprise security hardening. **Passgage is one of the few official vendor servers** with 130+ tools. **The major platforms are absent**: no LinkedIn Recruiter, no Indeed, no Lever, no iCIMS, no Workable (beyond a skeleton), no Lattice, no Culture Amp, and no employee engagement tools whatsoever. **Star counts are uniformly low** — the highest is just 14 — indicating this ecosystem is very early-stage despite broad platform coverage.
+The headline findings: **Indeed launched an official MCP server** (beta) at `mcp.indeed.com` with job search, job detail, and company data tools — the first major job board with official MCP support. **Lever now has two MCP implementations** — a comprehensive 59-tool Go server and a 16-tool TypeScript/Cloudflare server — filling another major gap. **Check Payroll remains the highest-starred HR MCP server** at 17 stars with 263 tools across 17 toolsets. **BambooHR has the most implementations** of any HR platform with 8 competing servers, led by acalder-techpm's 74-tool implementation (now 5 stars). **CATS ATS has 228 tools** — the most tool-dense ATS server. **SAP SuccessFactors** surged to 5 stars with production-grade coverage (43 tools, 21 data centers). **Ashby's ecosystem grew** to 4 implementations with dewierwan's server reaching ~30 tools and v1.7.0. **Paylocity gained its first MCP coverage** with two new servers. On the downside, the **Deel and Recruitin servers were deleted** (repos now 404). **The remaining gaps**: no LinkedIn Recruiter, no iCIMS, no Lattice, no Culture Amp, and no employee engagement platforms.
 
 ## HRIS Platforms
 
@@ -15,7 +15,7 @@ The headline findings: **Check Payroll is the highest-starred HR MCP server** at
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [acalder-techpm/bamboohr-mcp](https://github.com/acalder-techpm/bamboohr-mcp) | 3 | TypeScript | MIT | 74 |
+| [acalder-techpm/bamboohr-mcp](https://github.com/acalder-techpm/bamboohr-mcp) | 5 | TypeScript | MIT | 74 |
 
 The most comprehensive BambooHR MCP server and one of the most feature-rich HRIS servers in the review. The 74 tools span **11 modules**: employees, time off, time tracking, ATS (yes, BambooHR's built-in recruiting), benefits, reports, training, goals, webhooks, files, and account management.
 
@@ -53,7 +53,7 @@ The volume of BambooHR servers reflects the platform's popularity in mid-market 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [aiadiguru2025/sf-mcp](https://github.com/aiadiguru2025/sf-mcp) | 1 | Python | MIT | 43 |
+| [aiadiguru2025/sf-mcp](https://github.com/aiadiguru2025/sf-mcp) | 5 | Python | MIT | 43 |
 
 The most production-ready enterprise HR MCP server in the review. 43 tools across **13 categories** including employee central, recruitment, performance, learning, compensation, succession planning, and more. Supports **21 SAP data centers** with automatic endpoint resolution.
 
@@ -71,7 +71,7 @@ CData's read-only gateway — 3 generic tools (get_tables, get_columns, run_quer
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [CDataSoftware/workday-mcp-server-by-cdata](https://github.com/CDataSoftware/workday-mcp-server-by-cdata) | 8 | Java | MIT | 3 |
+| [CDataSoftware/workday-mcp-server-by-cdata](https://github.com/CDataSoftware/workday-mcp-server-by-cdata) | 10 | Java | MIT | 3 |
 
 The **most-starred HRIS MCP server** (in terms of platform brand recognition — Workday dominates enterprise HR). Read-only with 3 generic tools via JDBC. OAuth support. CData offers a separate commercial version with write capabilities.
 
@@ -81,7 +81,7 @@ Workday has 3 additional community servers (xiejiashan, joelee17, VijayKatkuri),
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [t4dhg/mcp-factorial](https://github.com/t4dhg/mcp-factorial) | 2 | TypeScript | MIT | 14 (117 operations) |
+| [t4dhg/mcp-factorial](https://github.com/t4dhg/mcp-factorial) | 4 | TypeScript | MIT | 14 (117 operations) |
 
 A clever approach: **14 hierarchical tools** that expand to **117 total operations**. Tools like `employee_management` contain sub-operations for CRUD, search, and reporting. This "88% less context" design reduces the token cost of tool descriptions while maintaining full coverage.
 
@@ -91,15 +91,15 @@ Includes 5 MCP resources, 4 MCP prompts, and covers employees, teams, locations,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rgrz/peoplesoft-mcp](https://github.com/rgrz/peoplesoft-mcp) | 2 | Python | MIT | 41 |
+| [rgrz/peoplesoft-mcp](https://github.com/rgrz/peoplesoft-mcp) | 5 | Python | MIT | 43 |
 
-A rare MCP server for Oracle PeopleSoft — still widely used in higher education and government. 41 semantic tools across **6 modules**: Schema, HR, Payroll, Benefits, Performance, and PeopleTools. Connects directly to Oracle databases rather than through REST APIs. Notable for **effective dating support** — PeopleSoft's data model tracks historical state, and this server exposes that for historical workforce queries.
+A rare MCP server for Oracle PeopleSoft — still widely used in higher education and government. 43 semantic tools across **6 modules**: Schema, HR, Payroll, Benefits, Performance, and PeopleTools. Connects directly to Oracle databases rather than through REST APIs. Notable for **effective dating support** — PeopleSoft's data model tracks historical state, and this server exposes that for historical workforce queries. *Updated April 2026: grew from 2 to 5 stars. Added `get_component_pages` and `get_page_field_bindings` tools, plus a PeopleTools expert subagent and Claude Code skills.*
 
 ### Rippling (bifrost-mcp)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [bifrost-mcp/rippling-mcp](https://github.com/bifrost-mcp/rippling-mcp) | 0 | TypeScript | MIT | 18 |
+| [bifrost-mcp/rippling-mcp](https://github.com/bifrost-mcp/rippling-mcp) | 1 | TypeScript | MIT | 18 |
 
 The most complete Rippling server. 18 tools across **6 domains**: Company, Employees, Organization, Leave Management, Groups, and Activity. Bearer token auth, rate limiting, and structured error handling. A second implementation (rocketsciencegg, 5 tools) takes a read-only analytics approach with headcount snapshots and compensation summaries.
 
@@ -127,11 +127,11 @@ Includes AI-powered resume parsing, webhook management, full candidate lifecycle
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [dewierwan/ashby-mcp](https://github.com/dewierwan/ashby-mcp) | 0 | TypeScript | — | 20+ |
+| [dewierwan/ashby-mcp](https://github.com/dewierwan/ashby-mcp) | 0 | TypeScript | — | ~30 |
 
-The most comprehensive Ashby implementation. Features **resume extraction**, **pipeline visibility**, **bulk operations** (archive 25 candidates at once), **interview scheduling**, and **evaluation notes**. Dual-format output (summary + JSON). Supports Claude Code, Docker, and npx deployment.
+The most comprehensive and actively developed Ashby implementation. *Updated April 2026: grew from ~20 to ~30 tools, now at v1.7.0.* New additions include **escape-hatch tools** (`ashby_call_api` and `ashby_get_api_docs`) for accessing any Ashby API endpoint, **DOCX resume support** alongside PDF, and server-side status filtering for job listings. Features **resume extraction**, **pipeline visibility**, **bulk operations** (archive 25 candidates at once), **interview scheduling**, and **evaluation notes**. Dual-format output (summary + JSON). Supports Claude Code, Docker, and npx deployment. The most actively maintained HR MCP server in this review.
 
-Two other Ashby servers exist: **thibmaek/ashby-mcp** (Go, 5 read-only tools with pre-built binaries) and **antonber/ashby-mcp** (JavaScript, MIT, 8 tools with candidate search and interview feedback ratings). Three implementations for a single ATS platform shows strong developer demand for AI-assisted recruiting.
+Three other Ashby servers exist: **thibmaek/ashby-mcp** (Go, 5 read-only tools with pre-built binaries), **antonber/ashby-mcp** (JavaScript, MIT, 8 tools with candidate search and interview feedback ratings), and **PlenishAI/mcp-ashby** (community, browse jobs and manage candidates). Four implementations for a single ATS platform shows strong developer demand for AI-assisted recruiting.
 
 ### Greenhouse
 
@@ -142,6 +142,15 @@ Two other Ashby servers exist: **thibmaek/ashby-mcp** (Go, 5 read-only tools wit
 Greenhouse — one of the most popular ATS platforms — has limited MCP representation. CData offers their standard read-only JDBC gateway (3 tools). **Null-Phnix/jobhound-mcp** (1 star, Python, MIT, 5 tools) is more interesting as a multi-ATS tool covering Ashby, Greenhouse, and Lever with scan, score, apply, dashboard, and export functions plus a Textual TUI interface.
 
 No community server provides deep Greenhouse API coverage yet — a notable gap given the platform's popularity and developer-friendly API.
+
+### Lever (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [stefanoamorelli/lever-mcp](https://github.com/stefanoamorelli/lever-mcp) | 1 | Go | AGPL-3.0 | 59 |
+| [the-sid-dani/lever-mcp-server](https://github.com/the-sid-dani/lever-mcp-server) | 4 | TypeScript | — | 16 |
+
+**Previously a major gap, Lever now has two MCP implementations.** The Go server by stefanoamorelli is the most comprehensive with **59 tools across 17 categories** including opportunities, feedback, interviews, users, postings, and webhooks. Runs over Streamable HTTP with environment-variable-based tool filtering. The TypeScript server by the-sid-dani deploys on Cloudflare Workers with SSE endpoints and rate limiting, offering **16 recruiting functions** including advanced candidate search, company-based candidate discovery, note-taking, and candidate archival. Both are community-built and not affiliated with Lever/Employ, Inc. The Go server is the more complete option; the TypeScript server is easier to deploy serverlessly.
 
 ### Crelate ATS/CRM
 
@@ -165,19 +174,28 @@ Regional ATS coverage for Brazil's market-leading platform. 40+ tools across 5 A
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [check-technologies/mcp-server-check](https://github.com/check-technologies/mcp-server-check) | 14 | Python | — | 263 |
+| [check-technologies/mcp-server-check](https://github.com/check-technologies/mcp-server-check) | 17 | Python | — | 263 |
 
 The **highest-starred HR MCP server** and the most comprehensive payroll implementation. Check is an embedded payroll infrastructure provider (powers payroll for platforms like Gusto, Justworks, and others), and their official MCP server exposes **263 tools across 17 toolsets**: companies, employees, contractors, payrolls, tax configuration, embedded components, and more.
 
-Key features: **sandbox environment** for safe testing, **fine-grained tool filtering** (load only the toolsets you need), **read-only mode**, and **multiple transports** (stdio, SSE, streamable-http). Currently in Early Access Beta. The depth here matches what you'd expect from a payroll API — detailed tax configuration, contractor management, and payment processing capabilities.
+Key features: **sandbox environment** for safe testing, **fine-grained tool filtering** (load only the toolsets you need), **read-only mode**, and **multiple transports** (stdio, SSE, streamable-http). Currently in Early Access Beta. *Updated April 2026: grew from 14 to 17 stars. New `check init` CLI command to generate CLAUDE.md, consistent user-agent fix for all API calls, and architecture refactor with `build_body`/`build_params` helpers. Active development continues.*
 
 ### Deel
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [JonasDNielsen/deel-mcp-server](https://github.com/JonasDNielsen/deel-mcp-server) | 0 | TypeScript | MIT | 25 |
+| ~~JonasDNielsen/deel-mcp-server~~ | — | TypeScript | MIT | 25 |
 
-Global payroll and HR coverage through Deel's API. **25 read-only tools** covering organization data, people profiles, contracts, payroll reports, gross-to-net calculations, payslips, invoices, payments, time-off, org structure, EOR benefits, and document metadata. The read-only design is appropriate for a payroll system — you probably don't want AI agents modifying salary data without human review.
+**UPDATE April 2026: This repository has been deleted (404).** Previously offered 25 read-only tools covering organization data, people profiles, contracts, payroll reports, gross-to-net calculations, payslips, invoices, payments, time-off, and more through Deel's API. No replacement Deel MCP server has appeared. This is a loss for the ecosystem — Deel is a major global payroll platform with no current MCP coverage.
+
+### Paylocity (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [CDataSoftware/paylocity-mcp-server-by-cdata](https://github.com/CDataSoftware/paylocity-mcp-server-by-cdata) | — | Java | MIT | 3 |
+| [mz462/mcpPaylocity](https://github.com/mz462/mcpPaylocity) | 0 | Python | MIT | 6 |
+
+**Paylocity gains its first MCP coverage with two implementations.** CData offers their standard read-only JDBC gateway (3 tools). The community server by mz462 is more interesting — **6 tools** covering employees, earnings, company codes, local taxes, and pay statements via direct Paylocity API integration with OAuth2 authentication. Token caching is built in. Paylocity serves 36,000+ clients, making this a meaningful addition to the payroll ecosystem.
 
 ### ADP (CData)
 
@@ -195,15 +213,25 @@ CData's standard read-only JDBC pattern for ADP. Given ADP's market dominance (9
 
 Region-specific payroll calculations for Turkey. 5 tools covering single/bulk payroll, budget simulation, and scenario comparison. Implements Turkish-specific tax rules, social security calculations, and deductions. A good example of the localization challenge in HR — payroll rules vary dramatically by jurisdiction.
 
+## Job Boards
+
+### Indeed (Official — NEW)
+
+| Server | Platform | Tools |
+|--------|----------|-------|
+| [Indeed MCP](https://docs.indeed.com/mcp) | Remote (mcp.indeed.com) | 3 |
+
+**The most significant new development in HR MCP.** Indeed — the world's largest job site — launched an official MCP server in beta. The remote server at `mcp.indeed.com/claude/mcp` provides **3 tools**: **Job Search** (search by title, keywords, location, employment type), **Job Detail** (full job descriptions, requirements, qualifications, benefits by job ID), and **Get Company Data** (employer research with satisfaction, compensation, culture, and review data). Compatible with Claude Desktop, Cursor, and other MCP clients. Subject to Indeed's Terms of Service. This was previously the single biggest gap in the HR MCP ecosystem — a major job board with official MCP support is a milestone for the category.
+
 ## Recruiting Intelligence & Tools
 
 ### Recruitin
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [WouterArtsRecruitin/recruitin-mcp-servers](https://github.com/WouterArtsRecruitin/recruitin-mcp-servers) | 0 | JS/TS | Proprietary | 43+ servers |
+| ~~WouterArtsRecruitin/recruitin-mcp-servers~~ | — | JS/TS | Proprietary | 43+ servers |
 
-A commercial recruitment automation suite. **43+ individual MCP servers** covering CV parsing, CV-to-vacancy matching, email composition, Notion integration, Pipedrive CRM, labour market intelligence, and HuggingFace ML models. 151 commits indicate active development. Proprietary license (S&PS BV).
+**UPDATE April 2026: This repository has been deleted (404).** Previously a commercial recruitment automation suite with 43+ individual MCP servers covering CV parsing, CV-to-vacancy matching, email composition, Notion integration, Pipedrive CRM, labour market intelligence, and HuggingFace ML models. The developer (WouterArts) still has other MCP repos on GitHub but removed the Recruitin suite. No replacement has appeared.
 
 ### Candidate Evaluation (Bias Reduction)
 
@@ -241,37 +269,42 @@ An AI-native recruiting platform with **17 candidate tools** and **6 employer to
 
 CData Software has published MCP servers for major enterprise HR platforms using a consistent 3-tool read-only JDBC pattern:
 
-- **Workday** (8 stars) — `get_tables`, `get_columns`, `run_query`
+- **Workday** (10 stars) — `get_tables`, `get_columns`, `run_query`
 - **SAP SuccessFactors** (4 stars) — same 3 tools
 - **ADP** (2 stars) — same 3 tools
 - **Greenhouse** (0 stars) — same 3 tools
 - **Bullhorn CRM** — same 3 tools
-- **Paylocity** — same 3 tools
+- **Paylocity** — same 3 tools (now also has a community Python server)
 
 CData has 229 MCP servers total across all categories. Their HR servers provide a quick path to querying enterprise HR data through natural language, but the 3-tool read-only pattern means no write operations, no platform-specific features, and no workflow automation. Commercial CRUD versions are available separately.
 
 ## What's Missing
 
-The HR MCP ecosystem has substantial gaps:
+The HR MCP ecosystem has narrowed its gaps since March but still has notable absences:
 
 - **No LinkedIn Recruiter MCP server** — the most-used recruiting tool globally has no MCP presence, likely due to LinkedIn's restrictive API access
-- **No Indeed, Lever, iCIMS, Jobvite, or SmartRecruiters** — major ATS platforms with no dedicated MCP servers
+- **No iCIMS, Jobvite, or SmartRecruiters** — major ATS platforms with no dedicated MCP servers
+- ~~No Indeed~~ — **FILLED**: Indeed launched an official MCP server (beta)
+- ~~No Lever~~ — **FILLED**: two community implementations (59-tool Go + 16-tool TypeScript)
 - **No employee engagement platforms** — Lattice, Culture Amp, 15Five, Officevibe have zero MCP representation
 - **No performance management** — beyond what's embedded in HRIS servers, no dedicated performance review or OKR servers
 - **No HiBob, Zenefits, or Namely** — popular mid-market HRIS platforms are absent
-- **No Paychex or Paycom** — major payroll providers beyond ADP have no coverage
+- ~~No Paylocity~~ — **FILLED**: CData + community Python server
+- **No Paycom** — major payroll provider with no coverage
+- **Deel coverage lost** — the only Deel MCP server was deleted
+- **Recruitin commercial suite lost** — 43+ MCP servers deleted from GitHub
 - **No learning management** — Workday Learning, Cornerstone, and other LMS platforms don't have HR-specific MCP servers (though education LMS servers exist)
 - **No benefits administration** — no dedicated servers for health insurance, 401(k), or benefits enrollment
 - **Limited write operations** — many servers are read-only, reflecting appropriate caution but limiting workflow automation
-- **Very low star counts** — the highest is 14 stars, indicating this is an early-stage ecosystem with limited community adoption
+- **Still low star counts** — the highest is 17 stars (Check Payroll), but adoption is slowly growing
 
 ## Bottom Line
 
-**Rating: 3.5 / 5** — The HR and recruiting MCP ecosystem is broader than expected but shallower than it needs to be. Over 50 servers exist across HRIS platforms, ATS systems, payroll, and recruiting tools — but the overall adoption signals are weak, with the highest-starred server at just 14 stars.
+**Rating: 4.0 / 5** — The HR and recruiting MCP ecosystem took a meaningful step forward since March 2026. The Indeed official MCP server (beta) fills the single biggest gap that held the previous rating back — a major job board with vendor-supported MCP is a category milestone. Lever gained two community implementations (up to 59 tools), and Paylocity got its first coverage.
 
-The bright spots are **Check Payroll** (263 tools, official, production-grade with sandbox environment), **BambooHR** (8 implementations showing strong developer demand), **SAP SuccessFactors** (enterprise-grade with proper security hardening), **CATS ATS** (228 tools of comprehensive coverage), and **Passgage** (official vendor with 130+ tools). The **bias-reduction candidate evaluation** server stands out as an ethically important innovation.
+The bright spots are **Indeed Official MCP** (3 tools, beta, the first major job board with official MCP), **Check Payroll** (17 stars, 263 tools, actively maintained), **Lever** (2 implementations filling a major ATS gap), **BambooHR** (8 implementations), **SAP SuccessFactors** (5 stars, enterprise-grade), **Ashby** (4 implementations, dewierwan's server growing rapidly to ~30 tools), **CATS ATS** (228 tools), and **Passgage** (official vendor with 130+ tools).
 
-The 3.5 rating reflects the breadth of platform coverage (BambooHR, Workday, SAP, Greenhouse, Ashby, Rippling, Deel, and more) balanced against the glaring absences (LinkedIn Recruiter, Indeed, Lever, employee engagement tools), low adoption metrics, and the ecosystem's heavy skew toward data access over intelligent HR workflows. The Check Payroll server demonstrates what a well-built HR MCP server looks like — official, comprehensive, secure, with sandbox testing — but it's the exception rather than the rule. This space will likely grow significantly as AI agents become more common in HR operations.
+The upgrade to 4.0 reflects the Indeed and Lever gaps being filled, steady star growth across multiple servers, and Ashby's maturation. The rating is held back by the **loss of the Deel and Recruitin servers** (both deleted), continued absence of **LinkedIn Recruiter, iCIMS, Lattice, and Culture Amp**, and still-low overall star counts. The ecosystem is broadening and deepening, but enterprise HR adoption of MCP remains early-stage.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-25 using Claude Opus 4.6 (Anthropic).*
 
