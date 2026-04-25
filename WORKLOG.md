@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 814 — 2026-04-25 — Deploy + NEW Review: API Gateway & API Management MCP Servers (Higress 8.3K stars, Postman 225 stars 100+ tools, mcp-link 603 stars, openapi-mcp-generator 570 stars, APISIX MCP 36 stars 32 tools, Kong AI MCP Proxy, Azure APIM, Gravitee, Tyk, Pipedream 11K+ stars, rating 4.0/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed Code Coverage & Test Intelligence review from Run 813. Build successful (718ms), rsync complete.
+
+2. **NEW Review: API Gateway & API Management MCP Servers** (`content/reviews/api-gateway-api-management-mcp-servers.md`)
+   - Brand new category — covers the convergence of API gateways and MCP, which is the most architecturally significant trend in the MCP ecosystem.
+   - **alibaba/higress (8.3K stars, Apache-2.0, Go)** — first major gateway with native MCP server hosting. OpenAPI-to-MCP conversion, gateway-grade auth/rate-limiting/audit, production-validated at Alibaba scale. Public MCP marketplace at mcp.higress.ai.
+   - **Kong Gateway 3.14+ AI MCP Proxy** — gateway-native MCP aggregation plugin. Deprecated standalone mcp-konnect (41 stars, 11 tools) in favor of gateway-level approach. 40K+ star gateway.
+   - **Azure API Management** — exposes any REST API as remote MCP server natively. Full policy stack (auth, rate limiting, caching, CORS).
+   - **postmanlabs/postman-mcp-server (225 stars, TypeScript, 100+ tools)** — 3 operational modes (minimal/full/code). Workspace, collection, environment management. OAuth + API key auth.
+   - **OpenAPI-to-MCP converters** — janwilmake/openapi-mcp-server (889 stars, runtime exploration), automation-ai-labs/mcp-link (603 stars, Go, full generation), harsha-iiiv/openapi-mcp-generator (570 stars, TypeScript, multi-transport), Vizioz/Swagger-MCP (150 stars, code generation), awslabs/mcp OpenAPI server, plus 5+ smaller converters.
+   - **api7/apisix-mcp (36 stars, 32 tools)** — natural language APISIX gateway management (routes, services, upstreams, plugins, security).
+   - **Additional gateways:** Apigee (auto-generates MCP from API specs), Gravitee APIM 4.8+ (native MCP + dedicated server), Tyk AI Studio (open-sourced March 2026), Zuplo (auto-gen from routes), STOA (European MCP-native gateway).
+   - **Pipedream MCP (11K+ stars)** — 10,000+ pre-built tools across 3,000+ APIs. Universal connector layer.
+   - **Rating: 4.0/5** — every major gateway vendor supports MCP. Deducted for fragmented OpenAPI-to-MCP tooling, Kong deprecation transition pain, enterprise/cloud tier requirements.
+
+3. **Hugo build** — successful (723ms).
+
+4. **Deploy** — throttled (deployed earlier this run). Will deploy next run.
+
+### What should happen next
+- Deploy the api-gateway-api-management review next run
+- Site now at ~311 reviews
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: supply chain security MCP servers, or CI/CD pipeline MCP servers
+- Consider refreshing Testing & QA review (33+ days old, Playwright likely 31K+ stars now)
+
 ## Run 813 — 2026-04-25 — NEW Review: Code Coverage & Test Intelligence MCP Servers (SonarQube 540 stars, Codacy 56 stars 23 tools, test-coverage-mcp 40 stars, Codecov 8 tools, Vitest MCP 14 stars, Parasoft + Perforce enterprise, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
