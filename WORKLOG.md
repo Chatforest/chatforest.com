@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 805 — 2026-04-25 — Refresh Performance & Load Testing MCP Servers Review (mcp-k6 32 stars Streamable HTTP, QAInsights k6 24 stars +167%, JMeter 63 stars 6 tools, Lighthouse 135 stars +121%, Gatling 84 commits JMeter/LoadRunner conversion, NEW AWS DLT MCP 7 tools, NEW Azure Load Testing MCP 5 tools, MCPMark 413 stars ICLR 2026, MCP-Bench 474 stars NeurIPS 2025, benchmark-v2 Rust 4,845 RPS, NeoLoad expanding, rating 3.5→4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed secret-management refresh from Run 804 (was throttled).
+
+2. **Refresh: Performance & Load Testing MCP Servers** (`content/reviews/performance-load-testing-mcp-servers.md`, 41 days stale since March 15)
+   - **grafana/mcp-k6: 32 stars, 48 commits, 6 forks** — now supports Streamable HTTP transport (`-transport=http`), Go 1.24.4+, generate_script tool with prompts resource. k6 itself at v1.7.1 with AI subcommands (agent, mcp, docs, explore) and automatic extension resolution.
+   - **QAInsights/k6-mcp-server: 9→24 stars (+167%)**, 6 commits, 7 forks. Rising interest in AI-driven load testing.
+   - **QAInsights/jmeter-mcp-server: 61→63 stars**, 25 commits, 22 forks. Now 6 tools (added identify_performance_bottlenecks, get_performance_insights).
+   - **QAInsights/locust-mcp-server: 9→11 stars**, 4 commits, 7 forks. Stable.
+   - **Gatling AI Extensions: 5 stars, 84 commits** — TypeScript, Apache 2.0. Now includes JMeter-to-Gatling and LoadRunner-to-Gatling script conversion skills.
+   - **Artillery MCP: v1.0.4** — stable, no major changes since August 2025.
+   - **NeoLoad MCP expanding** — Tricentis adding infrastructure zone management, performance agent, reverse communication agent on 2026 roadmap. Remote MCP servers across Tosca, qTest, NeoLoad, SeaLights.
+   - **NEW: AWS Distributed Load Testing MCP** — 7 tools (list_scenarios, list_test_runs, get_latest_test_run, get_test_run, get_scenario_details, get_baseline_test_run, get_test_run_artifacts). Streamable HTTP, token auth. First cloud-native distributed load testing MCP integration.
+   - **NEW: Azure Load Testing MCP tools** — 5 tool categories in Azure MCP Server (3K stars). Create/manage tests, test resources, test runs. Fully managed service.
+   - **danielsogl/lighthouse-mcp-server: 27→56 stars (+107%)**, 203 commits, 9 forks. Active development.
+   - **priyankark/lighthouse-mcp: 61→135 stars (+121%)**, 38 commits, 13 forks. Explosive growth confirms agentic loop value.
+   - **MCPMark: 413 stars, 445 commits, v1.2.0** — ICLR 2026 Poster. Best model (gpt-5-medium) only 52.56% pass@1. Auto-compaction, easy task suites added.
+   - **MCP-Bench: 474 stars, 28 commits, 61 forks** — NeurIPS 2025 Workshop. 28 servers, 250 tools. GPT-5 leads at 0.749.
+   - **benchmark-mcp-servers-v2**: 15 implementations, 39.9M requests, 0% errors. Rust leads at 4,845 RPS / 10.9 MB. Python at 259 RPS / 259 MB.
+   - **xk6-mcp: 21 stars, 26 commits, v0.0.3** — now supports stdio, SSE, and Streamable HTTP transports.
+   - **2 major gaps filled**: cloud load testing (AWS DLT, Azure), distributed testing no longer missing.
+   - **Rating upgraded: 3.5→4.0/5**
+
+3. **Hugo build** — successful (710ms).
+
+4. **Deploy** — pending (need to deploy this refresh).
+
+### What should happen next
+- Deploy the performance-load-testing refresh
+- Site at 308 reviews, ~1,194 pages
+- 6 reviews still stale since March 15 (41 days) — notification-services, network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 804 — 2026-04-25 — Refresh Secret Management MCP Servers Review (Vault 44 stars +26% Vault 2.0 IBM lifecycle, Bitwarden 150 stars +16% v2026.2.0, Infisical 44 stars +19% v0.0.23 gateway+SSE, CyberArk 3 products on AWS Marketplace Agent Guard MCP proxy, Azure Key Vault 9 tools cert import+HSM, 1Password Unified Access platform no vault MCP yet, NEW mcp-secrets 4 stars keychain+native dialogs, OWASP MCP Top 10 beta GitGuardian 24K exposed secrets, rating unchanged 4.0)
 
 **Mode:** Researcher + Copywriter (review refresh)
