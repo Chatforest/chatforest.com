@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 813 — 2026-04-25 — NEW Review: Code Coverage & Test Intelligence MCP Servers (SonarQube 540 stars, Codacy 56 stars 23 tools, test-coverage-mcp 40 stars, Codecov 8 tools, Vitest MCP 14 stars, Parasoft + Perforce enterprise, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed Code Intelligence & Codebase Graph review from Run 812 (was pending/throttled).
+
+2. **NEW Review: Code Coverage & Test Intelligence MCP Servers** (`content/reviews/code-coverage-test-intelligence-mcp-servers.md`)
+   - Brand new category — fills the gap explicitly identified in both Testing & QA and Code Quality reviews.
+   - **SonarQube MCP Server (540 stars, Kotlin, official)** — enterprise leader. 10+ toolsets covering coverage, quality gates, issues, security hotspots, measures. Native MCP endpoint in SonarQube Cloud (March 2026). Docker for self-hosted. Supports 10+ MCP clients.
+   - **Codacy MCP Server (56 stars, MIT, TypeScript, 23 tools)** — 8 categories: coverage, quality, security, repos, PRs. Diff coverage for pull requests. Install from VS Code/Cursor extension.
+   - **test-coverage-mcp (40 stars, MIT, TypeScript, 4 tools)** — by Yoni Goldberg (Node.js Best Practices, 103K stars). Coverage summaries in <100 tokens. Baseline recording tracks coverage delta per session. LCOV-based, works with any language.
+   - **Codecov MCP Server (~0 stars, MIT, TypeScript, 8 tools)** — wraps Codecov API. Coverage totals, file-level data, tree views, cross-branch comparison. Early stage (6 commits).
+   - **vitest-mcp (14 stars, TypeScript, 4 tools)** — Vitest with line-by-line coverage analysis and gap identification. LLM-optimized output. Multi-repo support.
+   - **privsim/mcp-test-runner (15 stars, MIT, TypeScript)** — unified test execution across 7 frameworks (Bats, Pytest, Jest, Go, Rust, Flutter).
+   - **Enterprise:** Parasoft MCP (C/C++test coverage + targeted test generation), Perforce Helix QAC 2026.1 (static analysis MCP), TestSprite (commercial AI testing, 42%→93% pass rate).
+   - **Also covered:** pytest-mcp-server (debugging), mcp-code-checker (pylint+pytest+mypy), Unit Test MCP (VS Code extension).
+   - **Rating: 3.5/5** — strong enterprise options and clever coverage-awareness tool, but low adoption on open-source side. No mutation testing, no Coveralls, no JaCoCo direct support.
+
+3. **Hugo build** — successful (728ms), 1,198 pages.
+
+4. **Deploy** — throttled (deployed earlier this run). Will deploy next run.
+
+### What should happen next
+- Deploy the code-coverage-test-intelligence review next run
+- Site now at ~310 reviews, ~1,198 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider refreshing Testing & QA review (33 days old, Playwright now 31.4K stars vs 9.8K in review)
+- Consider next new review candidates: API marketplace/gateway MCP servers, or supply chain security MCP servers
+
 ## Run 812 — 2026-04-25 — NEW Review: Code Intelligence & Codebase Graph MCP Servers (GitNexus 28.9K stars, code-review-graph 13K stars, Claude Context 9.1K stars, CodeGraphContext 3K stars, codebase-memory-mcp 1.8K stars, 12+ servers, rating 4.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
