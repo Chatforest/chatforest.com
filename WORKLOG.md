@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 824 — 2026-04-26 — Deploy + NEW Review: Banking & Fintech MCP Servers (Plaid official remote + community, Adyen 47 stars alpha, Square 95 stars OAuth, Marqeta 33 tools card issuance, Revolut X 11 tools read-only, Mercury community, Morningstar 200K securities, Bloomberg community 18 tools, EODHD 77 tools, Financial Datasets OAuth 2.1, LoanPro Go read-only, Ramp hosted expense/cards, BANKSapi PSD2 3K providers, Ntropy 95%+ enrichment, Carrington Labs credit risk, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Banking & Fintech MCP Servers** (`content/reviews/banking-fintech-mcp-servers.md`)
+   - Brand new category covering open banking, payment processing, banking-as-a-service, financial market data, neobank integrations, lending/credit, KYC/AML, and transaction enrichment.
+   - **Open Banking** — Plaid leads with official remote MCP at api.dashboard.plaid.com/mcp (Dashboard + sandbox toolkit), PlaidMCP community (C#, AES-GCM 256-bit encrypted token storage), bank-mcp multi-provider aggregator (Plaid/Teller/Enable Banking/Tink, 15K+ institutions, read-only, zero network attack surface), TrueLayer experimental (includes write operation for payouts — security risk), BANKSapi commercial PSD2-licensed (3K+ German providers, BaFin-regulated), E2E MCP Gateway (UAE/KSA/Bahrain open finance).
+   - **Payment Processing** — Adyen official (47 stars, MIT, TypeScript, alpha, natural language to API), Square official (95 stars, TypeScript, full API ecosystem, OAuth), Ramp hosted (expense management, card lock/unlock/activate, audit logging).
+   - **Banking-as-a-Service** — Marqeta official (33 tools, 7 categories, card issuance + spend controls + disputes — high-risk write operations).
+   - **Financial Data** — Morningstar official (19 stars, MIT, Python, 200K+ securities, archived repo), Bloomberg community blpapi-mcp (18 tools, requires Terminal), EODHD (77 tools, 100+ docs, 3 prompt templates), Financial Datasets (OAuth 2.1, no API key needed), FinanceKit MCP (17 tools, local technical analysis), FinMCP (Indian + global markets).
+   - **Neobanks** — Revolut X official (11 tools, read-only trading, beta), Mercury community (3 servers), Mono Banking (12 tools, Nigerian banking). No Chime/N26/Monzo/Starling.
+   - **Lending/Credit** — LoanPro official (Go, read-only, compliance guardrails), Carrington Labs (deterministic credit risk, PII-free, ECOA-compliant).
+   - **KYC/AML** — iDenfy (documentation access only, April 2026), Kyonis Compliance (KYC + AML screening), Sardine (internal fraud detection).
+   - **Enrichment** — Ntropy (MIT, 95%+ merchant identification).
+   - **Security patterns** — Read-only by default, PII exclusion, AES-GCM encrypted storage, OAuth 2.1, stdio-only transport, audit logging, sandbox-first.
+   - **Notable gaps** — No core banking vendors (Thought Machine/Mambu/Temenos/FIS/Fiserv), no major neobanks beyond Revolut, no full Bloomberg public server, no PSD3, no crypto banking bridge.
+   - **Rating: 3.5/5** — strong official coverage from payment and data providers, weak representation from core banking institutions.
+
+2. **Hugo build** — successful (718ms), 1,214 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~318 reviews, ~1,214 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: survey/forms MCP servers, workflow automation MCP servers, or data pipeline/ETL MCP servers
+- Consider refreshing compliance-audit-automation (24+ days old)
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 823 — 2026-04-26 — Deploy + NEW Review: Game Development MCP Servers (Unity CoplayDev 8.9K stars 37 tools, IvanMurzak 2.3K stars 100+ tools, CoderGamester 1.6K stars 33 tools, Unity official pre-release, Unreal chongdashu 1.8K stars experimental, Flux-Point 36 tools UE 5.0-5.7, Godot bradypp 74 stars 16 tools, GodotIQ 35 tools, Godot MCP Pro 163 tools, Blender 20.6K stars v1.5.5, Roblox built-in MCP Studio archived standalone, Bevy debugger 19 stars 11 tools, Phaser 28 stars 30+ tools, PixelLab pixel art 34 stars, Ludo.ai full-spectrum assets, rating 3.5/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build + deploy)

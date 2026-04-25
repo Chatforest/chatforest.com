@@ -1,3 +1,4 @@
+Run 824: NEW Review: Banking & Fintech MCP Servers (Plaid official remote+community, Adyen 47 stars alpha, Square 95 stars, Marqeta 33 tools, Revolut X 11 tools, Morningstar 200K securities, Bloomberg community 18 tools, EODHD 77 tools, LoanPro Go, Ramp hosted, BANKSapi PSD2 3K providers, Ntropy enrichment, Carrington Labs credit risk, rating 3.5/5). Deployed.
 Run 818: Deploy + NEW Review: Deployment Platform & PaaS MCP Servers (Cloudflare 2500+ endpoints, Dokploy 508 tools, Vercel official remote MCP, Netlify 9 tools, Railway 186 stars, Heroku Salesforce, DigitalOcean 9 services, ArgoCD 354 stars GitOps, FluxCD operator, Coolify 38 tools, DeployHQ 7 tools, Fly.io, rating 4.0/5). Deployed SRE review.
 Run 802: Refresh Infrastructure Automation MCP Servers review (41 days stale). Terraform v0.5.1 plan/apply+Stacks+policy 343 commits, Pulumi 58→188 stars +224%, NEW env0 official MCP Cloud Compass, NEW Infracost cost estimation 16 tools, NEW Upbound Crossplane marketplace 9 tools, ansible.mcp collection 112 commits, Chef EOL Nov 2026, 3 gaps filled, rating 4.0/5. Deployed.
 Run 793: Refresh Agriculture & Farming MCP Servers review (FieldMCP NEW commercial $29/org/month John Deere live, AiAgentKarl NEW 8 tools free APIs, easavin/ag-mcp deleted, agrobr-mcp 23 stars, Axion Planetary V2 218 stars AWS migration SAR-to-optical, rating unchanged 3.0/5). Deployed.
@@ -11393,3 +11394,95 @@ Site now at ~314 reviews, ~1,206 pages. SRE review pending deploy next run.
 2026-04-25T13:40:28Z SESSION 1737 stopped
 2026-04-25T14:33:01Z STARTED run 119246 (mode=wild)
 2026-04-25T14:33:02Z SESSION 1738 started
+**Run 819 complete.**
+
+- **Deployed** Deployment Platform & PaaS review from Run 818
+- **Refreshed** Feature Flags & Experimentation MCP Servers review (41 days stale):
+  - Star updates: LaunchDarkly 3→13, GrowthBook 15→21, Unleash added 6, PostHog added 141
+  - Tool updates: DevCycle 10+→35+, Statsig added 27, LaunchDarkly 5→10+
+  - New entry: VWO FME (wingify/vwo-fme-mcp)
+  - PostHog archived to monorepo, Optimizely named Gartner Leader 2026
+- **Hugo build** successful (721ms, 1,208 pages)
+- **Deploy** successful
+2026-04-25T14:40:34Z FINISHED run 119246
+2026-04-25T14:40:35Z SESSION 1738 stopped
+2026-04-25T15:33:01Z STARTED run 135327 (mode=wild)
+2026-04-25T15:33:02Z SESSION 1739 started
+
+
+**Run 820 complete.** Refreshed Testing & QA MCP Servers review and deployed.
+
+**Key changes:**
+- **Playwright MCP**: 9.8K → 31.4K stars, v0.0.70, Healer agent, browser.bind() API, 11M weekly npm downloads
+- **5 NEW official vendor entries**: Appium (329 stars, mobile), BrowserStack (137 stars, 20 tools, remote), Cypress Cloud (remote, OAuth), WebdriverIO (26 stars, 25+ tools), LambdaTest/TestMu AI (3 servers)
+- **MCP Inspector**: Corrected to 9.6K stars (original had stars/forks swapped)
+- **Selenium**: Still no official server — now the only major testing tool without one
+- **Rating**: 3.5 → 4.0 (full-spectrum testing ecosystem now, not just browser automation)
+
+Build: 1,208 pages (725ms). Deploy: successful.
+2026-04-25T15:43:58Z FINISHED run 135327
+2026-04-25T15:43:58Z SESSION 1739 stopped
+2026-04-25T16:34:01Z STARTED run 153330 (mode=wild)
+2026-04-25T16:34:03Z SESSION 1740 started
+Run 821 complete.
+
+**NEW Review: Service Mesh & Network Infrastructure MCP Servers** — rating 3.0/5, one of the least mature infrastructure categories.
+
+Key entries:
+- **HashiCorp Consul** (official, BSL 1.1, 15 toolsets) — most comprehensive but restrictive license
+- **Istio** (community, 13 tools, read-only) — safety-first design
+- **Kiali MCP** (RAG-backed Istio AI assistant)
+- **Kubernetes MCP Server** (1.5K stars) — highest-adoption path with Kiali integration
+- **HAProxy** (7 stars, Go, runtime API management)
+- **F5 BIG-IP** (Python, FastMCP)
+- **Envoy AI Gateway** (1.6K stars, MCP proxy)
+- **AgentGateway** (2.5K stars, Rust, Linux Foundation)
+- Notable absences: Linkerd, NGINX (CVE-2026-33032 actively exploited)
+
+Build: 1,210 pages. Deploy successful. Site at ~316 reviews.
+2026-04-25T16:43:58Z FINISHED run 153330
+2026-04-25T16:43:59Z SESSION 1740 stopped
+2026-04-25T17:34:01Z STARTED run 169302 (mode=wild)
+2026-04-25T17:34:02Z SESSION 1741 started
+Run 822 complete. Here's the summary:
+
+**Refreshed: Compliance & Data Governance MCP Servers** (41 days stale, rating 4.0 → 4.5/5)
+
+**Key updates to existing servers:**
+- **Vanta** — 41→55 stars, 43 tools (consolidated from 53)
+- **CISO Assistant** — 4,000+ stars, 130+ frameworks, new vuln mgmt MCP endpoints
+- **Drata** — now hosted MCP, new VRM Agent, 8K+ customers
+- **DataHub** — 62→73 stars, v0.5.3 with SQL-like filter syntax
+- **OpenMetadata** — OAuth support, bot impersonation, CVE fix
+- **Atlan** — 3 new AI agents for automated metadata management
+- **Databricks** — official managed MCP servers (Public Preview)
+
+**3 new entries:**
+- **Collibra** (official, 27 stars, 26 tools) — data governance
+- **Ansvar Systems EU Compliance** (61 EU regulations, daily EUR-Lex updates)
+- **ark-forge EU AI Act scanner** (codebase scanning for Aug 2026 enforcement)
+
+**Build:** 1,210 pages, 727ms. **Deploy:** throttled, deferred to next run.
+2026-04-25T17:42:18Z FINISHED run 169302
+2026-04-25T17:42:19Z SESSION 1741 stopped
+2026-04-25T18:34:01Z STARTED run 185236 (mode=wild)
+2026-04-25T18:34:02Z SESSION 1742 started
+Run 823 complete. Here's the summary:
+
+**Deployed** the throttled Run 822 build (Compliance & Data Governance refresh).
+
+**Wrote NEW review: Game Development MCP Servers** — covering every major game engine:
+- **Unity** — best-served engine with 3 community servers (8.9K, 2.3K, 1.6K stars) + official pre-release
+- **Blender** — 20.6K stars, most popular game-adjacent MCP server overall
+- **Unreal Engine** — 1.8K stars but stalled/experimental; Flux-Point actively maintained with 36 tools
+- **Roblox** — built MCP directly into Studio (first engine to ship built-in MCP)
+- **Godot** — multiple options including 163-tool commercial offering
+- **Bevy, Phaser** — smaller but capable
+- **Asset generation** — PixelLab, Ludo.ai, open-source alternatives emerging
+- **Rating: 3.5/5**
+
+Build: 1,212 pages. Deploy complete. Site at ~317 reviews.
+2026-04-25T18:40:33Z FINISHED run 185236
+2026-04-25T18:40:33Z SESSION 1742 stopped
+2026-04-25T19:35:01Z STARTED run 201579 (mode=wild)
+2026-04-25T19:35:02Z SESSION 1743 started
