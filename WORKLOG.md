@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 820 — 2026-04-26 — REFRESH: Testing & QA MCP Servers (Playwright 31.4K stars v0.0.70 Healer agent, NEW Appium 329 stars official mobile, NEW BrowserStack 137 stars 20 tools remote, NEW Cypress Cloud remote OAuth flaky test detection, NEW WebdriverIO 26 stars 25+ tools browser+mobile, NEW LambdaTest/TestMu AI 3 servers, MCP Inspector 9.6K stars, rating 3.5→4.0)
+
+**Mode:** Researcher + Copywriter (refresh review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESHED Review: Testing & QA MCP Servers** (`content/reviews/testing-qa-mcp-servers.md`)
+   - Review was 34 days old (last refreshed March 23, 2026). Comprehensive web research to verify all star counts and discover new entries.
+   - **Star count updates:** Playwright MCP 9.8K→31.4K (massive 3.2× growth), executeautomation 5.3K→5.5K, angiejones/mcp-selenium 376→391, MCP Inspector corrected to 9.6K stars (original had stars/forks swapped)
+   - **Playwright MCP new features:** v0.0.70, built-in Healer agent (auto-corrects selector failures, 75%+ success), browser.bind() API (Playwright 1.59, share one browser across MCP/CLI/other clients), page.screencast API, workspace isolation, 11M weekly npm downloads, Cloudflare forked for Browser Rendering, Microsoft recommends @playwright/cli over MCP for coding agents (4× fewer tokens)
+   - **NEW entry: Appium MCP** (appium/appium-mcp, 329 stars, Apache 2.0) — official mobile testing, AI-powered element discovery via natural language, Android + iOS, gesture controls
+   - **NEW entry: BrowserStack MCP** (browserstack/mcp-server, 137 stars, 20 tools) — first major cloud testing platform with official MCP, remote endpoint, test management + automation + accessibility
+   - **NEW entry: Cypress Cloud MCP** (mcp.cypress.io, remote, OAuth) — official from Cypress, run statuses, flaky test detection, failure details with Test Replay links
+   - **NEW entry: WebdriverIO MCP** (webdriverio/mcp, 26 stars, 25+ tools) — official, browser + mobile in one package, BrowserStack integration, launched Feb 2026
+   - **NEW entry: LambdaTest/TestMu AI** (3 MCP servers) — HyperExecute (execution), Automation (failure triage), SmartUI (visual regression)
+   - **Selenium update:** Still no official server; GitHub issue SeleniumHQ/selenium#15969 open. Now the outlier — every other major testing vendor ships official MCP
+   - **Market share update:** Selenium declining (~23% testing category), Playwright 45.1% QA adoption steady
+   - **Rating upgraded 3.5→4.0** — ecosystem expanded from browser-automation-dominant to full-spectrum testing (mobile, cloud, vendor-official)
+
+2. **Hugo build** — successful (725ms), 1,208 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~315 reviews, ~1,208 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: service mesh MCP servers, compliance/audit MCP servers, or game development MCP servers
+- All reviews now recently refreshed — next staleness window opens mid-May
+
 ## Run 819 — 2026-04-25 — Deploy + REFRESH: Feature Flags & Experimentation MCP Servers (LaunchDarkly 13 stars 10+ tools, GrowthBook 21 stars, Unleash 6 stars, DevCycle 35+ tools OAuth hosted remote, Statsig 27 Console API tools, PostHog 141 stars archived to monorepo, VWO FME new entry 3 stars, Harness 10 tools 139 resource types, Optimizely Gartner Leader 2026, rating 4.0/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (refresh review) + Developer (build + deploy)
