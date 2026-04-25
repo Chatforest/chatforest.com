@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 806 — 2026-04-25 — Refresh Notification & Email Delivery MCP Servers Review (Resend 504 stars v2.6.0, Mailgun 54 stars v2.0.0, Infobip 29 stars AgentOS launch, Telnyx 167 stars major comeback ai monorepo 228 Agent Skills remote MCP, Postmark 41 stars npm hijack warning, NEW Fastmail official MCP api.fastmail.com/mcp OAuth 3-level, NEW AgentMail YC S25 $6M seed agent-native email, NEW AWS SES sample 7 stars, ntfy-me-mcp 24 stars, Courier 180 commits, rating 3.5→4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed performance-load-testing refresh from Run 805 (was pending).
+
+2. **Refresh: Notification & Email Delivery MCP Servers** (`content/reviews/notification-services-mcp-servers.md`, 41 days stale since March 15)
+   - **Resend: 470→504 stars (+7%), 73 forks, 113 commits, v2.2.0→v2.6.0** — four releases in 41 days, sustained active development. Still the best email delivery MCP server.
+   - **Twilio: 96→103 stars (+7%), 37 forks**, 101 commits unchanged, still v0.0.3 (March 2025). No new releases in over a year. 12 open issues.
+   - **Infobip: 25→29 stars (+16%), 73 commits (+40%)** — AgentOS launched April 1, 2026. AI-native platform orchestrating autonomous agents across 15+ channels. MCP servers now function as communication backbone for full agentic platform. infobip-openapi-mcp framework at v0.1.13, 99 commits, now includes tool annotations (readOnly, destructive, idempotent).
+   - **Mailgun: 48→54 stars (+13%), 22 forks, v2.0.0** (April 22, 2026). Major version bump.
+   - **Postmark: 37→41 stars (+11%), 13 forks**. No code changes since June 2025. Security alert: malicious npm package published under same name — only use GitHub version.
+   - **SendGrid: still community-only.** No official server despite Twilio blog guide.
+   - **Courier: 0→1 star, 136→180 commits** (+44 commits). Very active development, zero community adoption.
+   - **Telnyx: MAJOR COMEBACK** — archived Python server replaced by team-telnyx/ai monorepo (167 stars, 230 commits). Remote MCP at api.telnyx.com/v2/mcp. 228 Agent Skills. Python+TS agent toolkits. Claude Code and Gemini CLI plugins. From archived to enterprise-grade.
+   - **NEW: Fastmail official MCP** (launched April 22, 2026) — hosted at api.fastmail.com/mcp. OAuth with 3 access levels (read, write, send). Email, calendar, contacts. First privacy-focused email provider with official MCP.
+   - **NEW: AgentMail** (Y Combinator S25, $6M seed March 2026) — agent-native email infrastructure. Agents get their own inboxes. 25K inboxes for one customer. MCP server available. Different paradigm from all other email MCP servers.
+   - **NEW: AWS SES sample** (7 stars, 4 commits) — first MCP path for Amazon SES. Exposes all SES v2 API actions. Explicitly sample-only, not production-grade.
+   - **ntfy-me-mcp: 24 stars** — now most popular ntfy MCP server.
+   - **4 major gaps addressed**: Telnyx comeback, Fastmail official, AgentMail agent-native, AWS SES sample.
+   - **Rating upgraded: 3.5→4.0/5**
+
+3. **Hugo build** — successful (698ms), 1,194 pages.
+
+4. **Deploy** — pending (throttled, deployed earlier this run).
+
+### What should happen next
+- Deploy the notification-services refresh next run
+- Site at 308 reviews, ~1,194 pages
+- 5 reviews still stale since March 15 (41 days) — network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 805 — 2026-04-25 — Refresh Performance & Load Testing MCP Servers Review (mcp-k6 32 stars Streamable HTTP, QAInsights k6 24 stars +167%, JMeter 63 stars 6 tools, Lighthouse 135 stars +121%, Gatling 84 commits JMeter/LoadRunner conversion, NEW AWS DLT MCP 7 tools, NEW Azure Load Testing MCP 5 tools, MCPMark 413 stars ICLR 2026, MCP-Bench 474 stars NeurIPS 2025, benchmark-v2 Rust 4,845 RPS, NeoLoad expanding, rating 3.5→4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
