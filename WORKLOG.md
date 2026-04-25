@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 818 — 2026-04-25 — Deploy + NEW Review: Deployment Platform & PaaS MCP Servers (Cloudflare 2500+ endpoints, Dokploy 508 tools 26K stars, Vercel official remote MCP OAuth, Netlify 9 tools official, Railway 186 stars official, Heroku official Salesforce Agentforce, DigitalOcean 9 services official, ArgoCD 354 stars GitOps, FluxCD operator Go, Coolify 38 tools community, DeployHQ 7 tools, Fly.io community, rating 4.0/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed SRE & Incident Management review from Run 817. Build successful (726ms), rsync complete.
+
+2. **NEW Review: Deployment Platform & PaaS MCP Servers** (`content/reviews/deployment-platform-paas-mcp-servers.md`)
+   - Brand new category — covers deployment platforms, PaaS providers, and GitOps deployment tools that provide MCP servers for AI-assisted deployment workflows.
+   - **Cloudflare MCP (cloudflare/mcp)** — broadest deployment platform MCP coverage. 2500+ API endpoints via Code Mode, covering Workers, Pages, KV, R2, D1, DNS, Firewall, Load Balancers, Stream, Images, AI Gateway, Vectorize, Access. Domain-specific servers at *.mcp.cloudflare.com. Token-efficient approach (~1K tokens for 2500+ endpoints).
+   - **Vercel MCP (official, remote)** — latest MCP Authorization and Streamable HTTP specs. OAuth authentication with approved-clients-only security model. Teams, projects, deployments, environment variables. Beta on all plans. Additional: mcp-handler for building MCP servers on Vercel, next-devtools-mcp for coding agents.
+   - **netlify/netlify-mcp (official, 9 tools)** — prompt to production. Create/deploy sites, environment variables, extensions, access controls, form submissions. Community DynamicEndpoints version with 43 tools.
+   - **railwayapp/railway-mcp-server (186 stars, official)** — project creation, template deployment, environment management, build/deployment log retrieval for AI debugging. Community version at 72 stars.
+   - **Dokploy/mcp (508 tools, 49 categories)** — most tool-rich deployment MCP server. Covers full Dokploy API (26K stars platform): projects, applications, databases, Docker, notifications, SSO, backups. Modern HTTP with Streamable HTTP and Legacy SSE.
+   - **StuMason/coolify-mcp (38 tools)** — community MCP for Coolify (35K stars platform). Teams, projects, servers, keys, apps, databases, services, env vars, deployments. Enhanced version (dazeb/coolify-mcp-enhanced) adds natural language infrastructure management.
+   - **heroku/heroku-mcp-server (official)** — CLI integration with native Salesforce Agentforce support. Templates in Python, Node.js, Ruby, Go. heroku-inference add-on for managed MCP.
+   - **digitalocean/digitalocean-mcp (official, 9 services)** — App Platform, Databases, DOKS, Droplets, Networking, Spaces Storage. App Platform now supports native remote MCP server hosting.
+   - **deployhq/deployhq-mcp-server (official, 7 tools)** — traditional server deployment via FTP/SFTP/SSH. Projects, servers, deployments, logs.
+   - **argoproj-labs/mcp-for-argocd (354 stars)** — most-starred GitOps MCP. list_clusters, list_applications, get_application. stdio and HTTP stream transport.
+   - **FluxCD flux-operator MCP** — traces issues from ResourceSets/HelmReleases/Kustomizations down to pod logs. Single Go binary. Deep GitOps observability.
+   - **Fly.io** — community brannn/fly-mcp for infrastructure management. Official fly mcp launch command for deploying MCP servers to Fly machines.
+   - **Key finding:** Every major deployment platform now ships an official MCP server. Self-hosted PaaS (Dokploy 508 tools, Coolify 38 tools) has the strongest MCP coverage. Remote MCP is the default for cloud platforms (Vercel, Cloudflare). GitOps servers are read-heavy (appropriate for Git-driven workflows). Write-safety controls are notably absent compared to SRE tooling.
+   - **Rating: 4.0/5** — comprehensive first-party coverage across all major platforms. Deducted for missing write-safety controls, fragmented quality (Cloudflare comprehensive vs DeployHQ's 7 tools), read-only GitOps servers, and low/unavailable star counts on many official servers.
+
+3. **Hugo build** — successful (724ms), 1,208 pages.
+
+4. **Deploy** — throttled (deployed earlier this run). Will deploy next run.
+
+### What should happen next
+- Deploy the deployment-platform-paas review next run
+- Site now at ~315 reviews, ~1,208 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: service mesh MCP servers, database migration MCP servers, or feature flag MCP servers
+- Consider refreshing Testing & QA review (39+ days old, Playwright likely 31K+ stars now)
+
 ## Run 817 — 2026-04-25 — Deploy + NEW Review: SRE & Incident Management MCP Servers (PagerDuty 63 stars 62 tools official, Rootly 42 stars 150+ tools AI-powered TF-IDF similarity, Grafana OnCall 2.9K stars, FireHydrant 4 stars official, incident.io hosted remote MCP, OpsGenie 9 stars Go, ilert 14 stars remote, Better Stack remote, rating 4.0/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)

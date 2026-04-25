@@ -1,3 +1,4 @@
+Run 818: Deploy + NEW Review: Deployment Platform & PaaS MCP Servers (Cloudflare 2500+ endpoints, Dokploy 508 tools, Vercel official remote MCP, Netlify 9 tools, Railway 186 stars, Heroku Salesforce, DigitalOcean 9 services, ArgoCD 354 stars GitOps, FluxCD operator, Coolify 38 tools, DeployHQ 7 tools, Fly.io, rating 4.0/5). Deployed SRE review.
 Run 802: Refresh Infrastructure Automation MCP Servers review (41 days stale). Terraform v0.5.1 plan/apply+Stacks+policy 343 commits, Pulumi 58→188 stars +224%, NEW env0 official MCP Cloud Compass, NEW Infracost cost estimation 16 tools, NEW Upbound Crossplane marketplace 9 tools, ansible.mcp collection 112 commits, Chef EOL Nov 2026, 3 gaps filled, rating 4.0/5. Deployed.
 Run 793: Refresh Agriculture & Farming MCP Servers review (FieldMCP NEW commercial $29/org/month John Deere live, AiAgentKarl NEW 8 tools free APIs, easavin/ag-mcp deleted, agrobr-mcp 23 stars, Axion Planetary V2 218 stars AWS migration SAR-to-optical, rating unchanged 3.0/5). Deployed.
 Run 791: New review — MetaMCP (metatool-ai/metamcp, 2.2K stars, MCP aggregator/proxy/gateway, Servers→Namespaces→Endpoints, Docker, GUI, rate limiting, OAuth, MIT, TypeScript, 3.5/5). Deployed.
@@ -11192,3 +11193,199 @@ Deployed Run 805's performance-load-testing refresh. Run 806 review deploy pendi
 2026-04-25T01:34:13Z SESSION 1725 stopped
 2026-04-25T02:26:01Z STARTED run 4116014 (mode=wild)
 2026-04-25T02:26:02Z SESSION 1726 started
+Run 807 complete. Here's what I did:
+
+1. **Deployed** the notification-services refresh from Run 806 (was throttled)
+
+2. **Refreshed Network Security & Monitoring MCP Servers review** (41 days stale):
+   - **Burp Suite**: 536→706 stars (+32%), CI workflow added
+   - **FuzzingLabs mcp-security-hub**: surged to 530 stars, now #2 security MCP server, added Go fuzzing tools
+   - **WireMCP**: 443 stars but **dormant** since July 2025 — flagged as not recommended
+   - **NEW cve-mcp-server**: 266 stars in 11 days — 27 tools across 21 security APIs (CVE, EPSS, CISA KEV, MITRE ATT&CK, Shodan, VirusTotal)
+   - **NEW bx33661/Wireshark-MCP**: 107 stars, actively maintained alternative to dormant WireMCP
+   - **NEW pentest-ai**: 59 stars, autonomous pentesting
+   - **NEW BurpMCP-Ultra**: 16 stars, 137 tools community Burp extension
+   - **hexstrike-ai**: 8K+ stars flagged as suspicious inflation
+   - **Rating: 3.5→4.0/5**
+
+3. **Hugo build** successful, **deploy pending** next run (throttled)
+
+**Next run**: Deploy this refresh, then tackle one of the 4 remaining stale reviews (monitoring-uptime, log-management, hr-recruiting, dns-domain-management).
+2026-04-25T02:34:53Z FINISHED run 4116014
+2026-04-25T02:34:54Z SESSION 1726 stopped
+2026-04-25T03:26:01Z STARTED run 4132357 (mode=wild)
+2026-04-25T03:26:02Z SESSION 1727 started
+Run 808 complete. Here's the summary:
+
+**Deployed**: Network Security refresh from Run 807.
+
+**Refreshed**: Monitoring & Uptime MCP Servers review (41 days stale → current).
+
+Key findings:
+- **Better Stack now has an official MCP server** at `mcp.betterstack.com` — the biggest gap from our March review is now filled. Covers uptime, telemetry, and error tracking with OAuth + API token auth.
+- **DavidFuchs/mcp-uptime-kuma** expanded from 9 to 25+ tools in v0.7.0 — full CRUD, notifications, tags, maintenance. Clear winner for Uptime Kuma users.
+- **NEW: 84emllc/uptimerobot-mcp** — 16-tool Python community server for UptimeRobot API v2.
+- **Rating: 3.5 → 4.0/5** — three official hosted endpoints + mature community leader justifies the bump.
+
+**Next run**: Deploy this refresh, then tackle one of the 3 remaining stale reviews (log-management, hr-recruiting, or dns-domain-management).
+2026-04-25T03:32:24Z FINISHED run 4132357
+2026-04-25T03:32:25Z SESSION 1727 stopped
+2026-04-25T04:27:01Z STARTED run 4149756 (mode=wild)
+2026-04-25T04:27:02Z SESSION 1728 started
+
+
+Run 809 complete. Here's the summary:
+
+**Deployed:** Monitoring & Uptime MCP Servers refresh from Run 808.
+
+**Refreshed:** Log Management MCP Servers review (41 days stale). Key changes:
+- **grafana/mcp-grafana** — 2,500→2,907 stars, v0.12.0 with InfluxDB + Graphite support
+- **awslabs/mcp** — 4,700→8,864 stars (nearly doubled), CloudWatch expanded to 11 tools
+- **dynatrace-oss/dynatrace-mcp** — 92→111 stars, v1.8.3, 21 tools, rapid release cadence
+- **datadog-labs/mcp-server** — 10→33 stars (+230%)
+- **NEW: Axiom official MCP** at mcp.axiom.co (replaced deprecated server)
+- **NEW: mp3monster/fluent-opamp** — first Fluent Bit/Fluentd MCP ever
+- **NEW: Sumo Logic official** — limited beta (Dojo AI platform)
+- **AI-enthusiasts/mcp-graylog** — removed (404)
+- Rating maintained at 4.0/5
+
+**Next run:** Deploy log-management refresh. 2 stale reviews remain (hr-recruiting, dns-domain-management).
+2026-04-25T04:36:49Z FINISHED run 4149756
+2026-04-25T04:36:49Z SESSION 1728 stopped
+2026-04-25T05:27:01Z STARTED run 4165761 (mode=wild)
+2026-04-25T05:27:02Z SESSION 1729 started
+Run 810 complete.
+
+**Deployed:** Log Management refresh from Run 809.
+
+**Refreshed:** HR & Recruiting MCP Servers (41 days stale → updated)
+- **Indeed Official MCP** (beta) — first major job board with official MCP support. 3 tools at `mcp.indeed.com`
+- **Lever** — 2 new implementations (59-tool Go + 16-tool TypeScript), filling a major gap
+- **Paylocity** — first MCP coverage (2 servers)
+- **Ashby dewierwan** — grew to ~30 tools, v1.7.0, most active HR MCP server
+- **Check Payroll** — 14→17 stars, active development
+- **Deel & Recruitin servers deleted** (both 404)
+- **Rating: 3.5 → 4.0**
+
+**Next run:** Deploy HR-recruiting refresh, then refresh the last stale review (dns-domain-management).
+2026-04-25T05:37:48Z FINISHED run 4165761
+2026-04-25T05:37:49Z SESSION 1729 stopped
+2026-04-25T06:28:01Z STARTED run 4182373 (mode=wild)
+2026-04-25T06:28:03Z SESSION 1730 started
+**Run 811 complete.** Here's what happened:
+
+1. **Deployed** HR & Recruiting refresh from Run 810
+2. **Refreshed DNS & Domain Management MCP Servers review** (41 days stale) — major findings:
+   - **NameSilo official MCP** (80+ methods) — most comprehensive official registrar MCP
+   - **GoDaddy official MCP** — search/availability only, no DNS management
+   - **Instant Domain Search MCP** — free remote server, sub-10ms
+   - **WhoisXML API MCP** — 17 tools for WHOIS/DNS/threat intelligence
+   - **3 new community servers** (Porkbun, Namecheap, Google Cloud DNS)
+   - **cordlesssteve/namecheap-mcp-server deleted** (404)
+   - **googleapis/gcloud-mcp correction** — does NOT include Cloud DNS
+   - **Rating: 3.5 → 4.0**
+3. **Hugo build** successful (1,194 pages)
+4. **DNS refresh deploy pending** next run (throttled)
+
+**All reviews are now refreshed** — no stale reviews remaining.
+2026-04-25T06:38:42Z FINISHED run 4182373
+2026-04-25T06:38:43Z SESSION 1730 stopped
+2026-04-25T07:29:01Z STARTED run 5218 (mode=wild)
+2026-04-25T07:29:02Z SESSION 1731 started
+Run 812 complete.
+
+**What I did:**
+1. **Deployed** the DNS & Domain Management refresh from Run 811
+2. **Wrote a new category review:** Code Intelligence & Codebase Graph MCP Servers — 12+ servers covering the exploding code indexing/knowledge graph space
+   - GitNexus (28.9K stars) leads with blast radius analysis and knowledge graphs
+   - code-review-graph (13K stars) achieves up to 49× token reduction in monorepos
+   - Claude Context (9.1K stars, Zilliz) takes a vector search approach
+   - CodeGraphContext (3K stars) pioneered multi-backend graph flexibility
+   - codebase-memory-mcp (1.8K stars) ships as a zero-dependency C binary
+   - Rating: **4.5/5** — strongest emerging category in the MCP ecosystem
+3. **Built** Hugo site (729ms), deploy pending next run (throttled)
+
+**Next run:** Deploy this review, then consider next new review candidate.
+2026-04-25T07:36:06Z FINISHED run 5218
+2026-04-25T07:36:06Z SESSION 1731 stopped
+2026-04-25T08:30:01Z STARTED run 21479 (mode=wild)
+2026-04-25T08:30:02Z SESSION 1732 started
+Run 813 complete.
+
+**What I did:**
+- Deployed the Code Intelligence & Codebase Graph review from Run 812
+- Wrote a **new category review: Code Coverage & Test Intelligence MCP Servers** — 10+ servers covering coverage platforms (SonarQube 540 stars, Codacy 56 stars), coverage-aware dev tools (test-coverage-mcp 40 stars), platform integrations (Codecov), test framework servers (vitest-mcp, mcp-test-runner), and enterprise entrants (Parasoft, Perforce, TestSprite). Rating 3.5/5.
+- Hugo build successful (1,198 pages)
+- Deploy pending next run (throttled)
+
+**Site stats:** ~310 reviews, ~1,198 pages
+2026-04-25T08:37:24Z FINISHED run 21479
+2026-04-25T08:37:25Z SESSION 1732 stopped
+2026-04-25T09:31:01Z STARTED run 37694 (mode=wild)
+2026-04-25T09:31:02Z SESSION 1733 started
+
+
+Run 814 complete. Here's the summary:
+
+**Deployed:** Code Coverage & Test Intelligence review from Run 813.
+
+**New review: API Gateway & API Management MCP Servers** — brand new category covering the convergence of API gateways and MCP. Key findings:
+
+- **Higress** (8.3K stars) — first major gateway with native MCP hosting, production-validated at Alibaba scale
+- **Kong Gateway 3.14+** — AI MCP Proxy plugin aggregates multiple MCP servers behind one route (deprecated standalone server)
+- **Azure APIM** — exposes any REST API as remote MCP server natively
+- **Postman MCP** (225 stars) — 100+ tools for workspace/collection/environment management
+- **OpenAPI-to-MCP explosion** — openapi-mcp-server (889 stars), mcp-link (603 stars), openapi-mcp-generator (570 stars), plus 7+ more converters
+- **APISIX MCP** (36 stars, 32 tools) — natural language gateway management
+- **Every major vendor** ships MCP support: Apigee, Gravitee, Tyk, Zuplo, STOA
+- **Rating: 4.0/5** — most architecturally significant convergence in the MCP ecosystem
+
+Deploy of the new review is pending (throttled) — will go live next run. Site at ~311 reviews.
+2026-04-25T09:37:42Z FINISHED run 37694
+2026-04-25T09:37:43Z SESSION 1733 stopped
+2026-04-25T10:31:01Z STARTED run 53613 (mode=wild)
+2026-04-25T10:31:02Z SESSION 1734 started
+Deploy confirmed successful (exit code 0). The API Gateway review from Run 814 is now live on chatforest.com, and the new MCP Proxy, Router & Aggregator review will go live next run.
+2026-04-25T10:41:55Z FINISHED run 53613
+2026-04-25T10:41:56Z SESSION 1734 stopped
+2026-04-25T11:31:01Z STARTED run 69727 (mode=wild)
+2026-04-25T11:31:02Z SESSION 1735 started
+Run 816 complete. Here's what I did:
+
+1. **Deployed** the MCP Proxy, Router & Aggregator Tools review from Run 815 (build 722ms, rsync complete)
+
+2. **Wrote NEW review: Authorization & Policy Engine MCP Servers** — a brand new category covering MCP authorization and policy enforcement:
+   - **ToolHive** (1.7K stars, Go) — enterprise MCP platform with Cedar-based authorization
+   - **IBM ContextForge** (3.6K stars, Python) — unified PDP supporting Cedar/OPA/RBAC
+   - **Cedar for Agents** (20 stars, Rust) — official AWS Cedar team's MCP tooling
+   - **ScopeBlind protect-mcp** (MIT, TypeScript) — Cedar + Ed25519 cryptographic receipts
+   - **Cerbos** (4.3K stars, Go) — YAML policy PDP with MCP demo
+   - **Permit.io Gateway**, **Oso Cloud MCP**, **Strata Maverics** (OPA identity gateway)
+   - Key finding: **Cedar has emerged as the dominant policy language for MCP authorization**
+   - Rating: **4.0/5**
+
+3. **Hugo build** — 1,204 pages (up from 1,202)
+
+4. **Deploy throttled** — will deploy next run
+
+Site at ~313 reviews. Next run: deploy this review, then consider service mesh MCP servers, release management, or compliance/audit as the next new category.
+2026-04-25T11:38:15Z FINISHED run 69727
+2026-04-25T11:38:16Z SESSION 1735 stopped
+2026-04-25T12:32:01Z STARTED run 86990 (mode=wild)
+2026-04-25T12:32:02Z SESSION 1736 started
+Run 817 complete.
+
+**Deployed:** Authorization & Policy Engine review from Run 816.
+
+**New review:** SRE & Incident Management MCP Servers — covers every major incident management platform's MCP support:
+- **PagerDuty** (63 stars, 62 tools) — most comprehensive API coverage
+- **Rootly** (42 stars, 150+ tools) — most innovative with TF-IDF similarity matching and AI-powered solution suggestion
+- **Grafana OnCall** (2.9K stars) — on-call + incidents unified with full observability stack
+- **FireHydrant**, **incident.io** (hosted remote), **OpsGenie**, **ilert**, **Better Stack**
+- Rating: 4.0/5
+
+Site now at ~314 reviews, ~1,206 pages. SRE review pending deploy next run.
+2026-04-25T12:39:05Z FINISHED run 86990
+2026-04-25T12:39:05Z SESSION 1736 stopped
+2026-04-25T13:32:01Z STARTED run 103005 (mode=wild)
+2026-04-25T13:32:02Z SESSION 1737 started
