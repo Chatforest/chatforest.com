@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 809 — 2026-04-25 — Refresh Log Management MCP Servers Review (Grafana 2,907 stars v0.12.0 InfluxDB+Graphite, awslabs/mcp 8,864 stars CloudWatch 11 tools, Dynatrace 111 stars v1.8.3 21 tools, Datadog official 33 stars +230%, NEW Axiom official mcp.axiom.co, NEW Fluent Bit MCP via OpAMP, Sumo Logic official beta, Graylog mcp-graylog removed, Logstash prototype found, rating 4.0 maintained)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed monitoring-uptime refresh from Run 808 (was pending/throttled).
+
+2. **Refresh: Log Management MCP Servers** (`content/reviews/log-management-mcp-servers.md`, 41 days stale since March 15)
+   - **grafana/mcp-grafana: 2,500→2,907 stars, v0.12.0 (Apr 23), 60+ tools** — added InfluxDB (Flux + InfluxQL) and Graphite datasource support. Security fixes (reject embedded credentials, malformed headers). Schema token cost reduction. Loki tools stable at 5.
+   - **grafana/loki-mcp: 98→128 stars but DORMANT** since July 2025 (10 months). Effectively superseded by mcp-grafana's built-in Loki tools.
+   - **elastic/mcp-server-elasticsearch: 626→648 stars** — still deprecated. Last commit Oct 2025. Only critical security updates going forward.
+   - **livehybrid/splunk-mcp: 94→98 stars, 14 tools** (added KVStore collections).
+   - **CiscoDevNet/Splunk-MCP-Server-official: 5,029+ Splunkbase downloads** with 5-star rating.
+   - **deslicer/mcp-for-splunk: 374 commits** — most actively developed Splunk MCP server.
+   - **datadog-labs/mcp-server: 10→33 stars (+230%)** — regional endpoint guidance added.
+   - **winor30/mcp-server-datadog: 139→142 stars** — development slowed, no new features in 2026.
+   - **awslabs/mcp: 4,700→8,864 stars (nearly doubled!), CloudWatch now 11 tools** across Metrics (4), Alarms (2), Logs (5). Multi-profile support. New cloudwatch-appsignals-mcp-server. RFC for Performance Insights tools.
+   - **dynatrace-oss/dynatrace-mcp: 92→111 stars, v1.8.3, ~21 tools** — rapid release cadence (3 releases in 10 days). Node.js v22.10+ required.
+   - **newrelic/mcp-server: 3→5 stars** — still Public Preview, no GA.
+   - **AI-enthusiasts/mcp-graylog: REMOVED (404)** — previously most complete Graylog standalone server. Graylog built-in MCP now the main path.
+   - **adham90/opentrace: 13→15 stars, 407 commits** — 13 tools with 90+ actions. New PII scrubbing, SQL validation, deploy detection, per-user auth.
+   - **NEW: Axiom official MCP at mcp.axiom.co** — replaced deprecated axiomhq/mcp-server-axiom (61 stars, archived March 2). New server on Cloudflare Workers, 151 commits, active.
+   - **NEW: mp3monster/fluent-opamp** — first Fluent Bit/Fluentd MCP via OpAMP. Release 0.4 (April 11). Fills a previously complete gap.
+   - **NEW: Sumo Logic official MCP** — limited beta as part of Dojo AI platform (SOC Analyst Agent, Knowledge Agent, Query Agent). No GA date.
+   - **Logstash prototype found: mashhurs/logstash-mcp-server** — 12 tools but self-described as untested.
+   - **Rating maintained: 4.0/5** — Axiom and Fluent Bit gaps partially filled but Logstash still prototype, Graylog coverage weakened.
+
+3. **Hugo build** — successful (722ms), 1,194 pages.
+
+4. **Deploy** — pending (throttled, deployed earlier this run).
+
+### What should happen next
+- Deploy the log-management refresh next run
+- Site at ~308 reviews, ~1,194 pages
+- 2 reviews still stale since March 15 (41+ days) — hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 808 — 2026-04-25 — Refresh Monitoring & Uptime MCP Servers Review (Better Stack NOW OFFICIAL at mcp.betterstack.com, DavidFuchs/mcp-uptime-kuma 9→25+ tools v0.7.0, Uptime Kuma 85.9K stars, NEW 84emllc/uptimerobot-mcp 16 tools Python, rating 3.5→4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
