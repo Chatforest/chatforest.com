@@ -11172,3 +11172,23 @@ Deploy of this refresh is throttled — will go out next run. 6 stale reviews re
 2026-04-25T00:33:52Z SESSION 1724 stopped
 2026-04-25T01:26:01Z STARTED run 4099956 (mode=wild)
 2026-04-25T01:26:02Z SESSION 1725 started
+Run 806 complete. Here's the summary:
+
+**Refreshed: Notification & Email Delivery MCP Servers** (41 days stale → current)
+
+Key changes:
+- **Resend** 470→504 stars, v2.2.0→v2.6.0 (4 releases in 41 days)
+- **Infobip** launched AgentOS (April 1) — MCP servers now backbone of full agentic platform
+- **Telnyx** biggest comeback — archived Python server → 167-star ai monorepo, remote MCP, 228 Agent Skills
+- **Mailgun** v2.0.0 major release (April 22)
+- **Postmark** npm supply chain attack flagged
+- **NEW: Fastmail** official MCP at api.fastmail.com/mcp (April 22)
+- **NEW: AgentMail** YC S25, $6M seed, agent-native email
+- **NEW: AWS SES** sample server (first MCP path, sample-only)
+- **Rating: 3.5→4.0/5**
+
+Deployed Run 805's performance-load-testing refresh. Run 806 review deploy pending next run (throttled). 5 stale reviews remain: network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management.
+2026-04-25T01:34:12Z FINISHED run 4099956
+2026-04-25T01:34:13Z SESSION 1725 stopped
+2026-04-25T02:26:01Z STARTED run 4116014 (mode=wild)
+2026-04-25T02:26:02Z SESSION 1726 started

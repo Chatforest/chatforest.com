@@ -6,14 +6,14 @@
   <title>Notification &amp; Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond — ChatForest</title>
   <meta name="description" content="Notification and email delivery MCP servers let AI agents send emails, SMS, push notifications, and multi-channel messages through platforms like Twilio, Resend, SendGrid">
   <meta property="og:title" content="Notification &amp; Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond — ChatForest">
-  <meta property="og:description" content="Notification &amp; email delivery MCP servers: Resend (470 stars, official, dual transport), Twilio (96 stars, OpenAPI-generated), SendGrid (community, up to 59 tools), Mailgun (official, 48 stars), Postmark (official, 4 tools), Infobip (14 remote servers, broadest channels), Courier (~60 tools, hosted). 20&#43; servers across 12 platforms. Rating: 3.5/5.">
+  <meta property="og:description" content="Notification &amp; email delivery MCP servers: Resend (504 stars, official, v2.6.0), Twilio (103 stars, OpenAPI-generated), SendGrid (community, up to 59 tools), Mailgun (official, 54 stars, v2.0.0), Postmark (official, 4 tools), Infobip (14&#43; remote servers &#43; AgentOS launch), Courier (~60 tools, hosted), NEW Fastmail official MCP, NEW Telnyx ai repo 167 stars remote MCP, NEW AWS SES sample, NEW AgentMail agent-native email. 25&#43; servers across 14&#43; platforms. Rating: 3.5→4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/notification-services-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Notification &amp; Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond — ChatForest">
-  <meta name="twitter:description" content="Notification &amp; email delivery MCP servers: Resend (470 stars, official, dual transport), Twilio (96 stars, OpenAPI-generated), SendGrid (community, up to 59 tools), Mailgun (official, 48 stars), Postmark (official, 4 tools), Infobip (14 remote servers, broadest channels), Courier (~60 tools, hosted). 20&#43; servers across 12 platforms. Rating: 3.5/5.">
+  <meta name="twitter:description" content="Notification &amp; email delivery MCP servers: Resend (504 stars, official, v2.6.0), Twilio (103 stars, OpenAPI-generated), SendGrid (community, up to 59 tools), Mailgun (official, 54 stars, v2.0.0), Postmark (official, 4 tools), Infobip (14&#43; remote servers &#43; AgentOS launch), Courier (~60 tools, hosted), NEW Fastmail official MCP, NEW Telnyx ai repo 167 stars remote MCP, NEW AWS SES sample, NEW AgentMail agent-native email. 25&#43; servers across 14&#43; platforms. Rating: 3.5→4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/notification-services-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 25, 2026</span>
       </div>
 
       <h1 class="article-title">Notification &amp; Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond</h1>
@@ -66,7 +66,7 @@
 
       <div class="article-body">
         <p>The notification and email delivery MCP category spans four distinct use cases: <strong>transactional email</strong> (Resend, Mailgun, Postmark, SendGrid), <strong>SMS and telephony</strong> (Twilio, Infobip, Telnyx, Vonage), <strong>multi-channel notification orchestration</strong> (Courier, Novu, Infobip), and <strong>push notifications</strong> (Pushover, ntfy). The ecosystem is surprisingly active — nearly every major platform has shipped or inspired an MCP server.</p>
-<p>The headline finding: <strong>Resend ships the best-designed email delivery MCP server</strong> — 470 stars, official, dual stdio+HTTP transport, comprehensive email operations plus contact management and broadcast campaigns. For multi-channel, <strong>Infobip takes the architectural crown</strong> with 14 remote MCP servers covering SMS, WhatsApp, Viber, RCS, Voice, 2FA, and more — all cloud-hosted with OAuth 2.1 support. And <strong>Twilio&rsquo;s official server</strong> takes a unique OpenAPI-generated approach that exposes the entire Twilio API surface, though with usability trade-offs.</p>
+<p>The headline finding: <strong>Resend ships the best-designed email delivery MCP server</strong> — 504 stars, official, dual stdio+HTTP transport, now at v2.6.0 with comprehensive email operations plus contact management and broadcast campaigns. For multi-channel, <strong>Infobip takes the architectural crown</strong> with 14+ remote MCP servers covering SMS, WhatsApp, Viber, RCS, Email, Voice, 2FA, and more — all cloud-hosted with OAuth 2.1 support, now backed by the AgentOS platform launched April 2026. <strong>Telnyx has made a major comeback</strong> — the archived Python server has been replaced by a comprehensive TypeScript MCP in the team-telnyx/ai monorepo (167 stars), with a remote server at <code>api.telnyx.com/v2/mcp</code> and 228 Agent Skills. And two entirely new entrants — <strong>Fastmail&rsquo;s official MCP server</strong> (launched April 22, 2026) and <strong>AgentMail</strong> (Y Combinator S25, $6M seed) — represent opposite ends of the email MCP spectrum: privacy-focused personal email vs. agent-native autonomous inboxes.</p>
 <h2 id="the-landscape">The Landscape</h2>
 <h3 id="resend-official">Resend (Official)</h3>
 <table>
@@ -83,7 +83,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/resend/resend-mcp">resend/resend-mcp</a></td>
-<td>~470</td>
+<td>~504</td>
 <td>TypeScript</td>
 <td>20+</td>
 <td>API key</td>
@@ -91,10 +91,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Resend&rsquo;s official MCP server is the best transactional email MCP integration.</strong> 470 stars, 66 forks, 86 commits, 18 contributors, MIT license, v2.2.0 (March 2026). The highest-starred email delivery MCP server by a wide margin.</p>
+<p><strong>Resend&rsquo;s official MCP server is the best transactional email MCP integration.</strong> 504 stars (+7%), 73 forks, 113 commits, MIT license, v2.6.0 (April 2026). The highest-starred email delivery MCP server by a wide margin. Four releases since our last review (v2.2.0→v2.6.0) show sustained active development.</p>
 <p>The tool set is comprehensive: <strong>email operations</strong> (send, list, get, cancel, update, batch send with HTML/plain text/attachments/CC/BCC/reply-to/scheduling/tags), <strong>received email management</strong> with attachment downloads, <strong>contact management</strong> with custom properties and segment handling, <strong>broadcast campaign</strong> creation and scheduling, <strong>domain verification</strong> and configuration, <strong>subscription topic and segment management</strong>, and <strong>API key and webhook administration</strong>.</p>
 <p>Dual transport is the standout. Stdio mode (<code>npx -y resend-mcp</code>) for local development, HTTP mode with Bearer token auth for remote/shared deployments. This flexibility is rare — most email MCP servers are stdio-only.</p>
-<p>6 open issues. Active development with 18 contributors. The server supports Claude Desktop, Claude Code, Cursor, and any MCP-compatible client.</p>
+<p>8 open issues. Active development. The server supports Claude Desktop, Claude Code, Cursor, and any MCP-compatible client.</p>
 <p>Community alternatives exist (PSU3D0/resend-mcp, gui-wf/resend-mcp-server, Hawstein/resend-mcp, pontusab/resend-mcp) but the official server is clearly the one to use — it has 100x the stars and direct Resend team maintenance.</p>
 <h3 id="twilio-official">Twilio (Official)</h3>
 <table>
@@ -111,7 +111,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/twilio-labs/mcp">twilio-labs/mcp</a></td>
-<td>~96</td>
+<td>~103</td>
 <td>TypeScript</td>
 <td>OpenAPI-generated</td>
 <td>API Key + Secret</td>
@@ -121,8 +121,8 @@
 </table>
 <p><strong>Twilio&rsquo;s official MCP server takes a radically different approach from every other server in this review.</strong> Instead of hand-crafting tools, it uses an OpenAPI-to-MCP generator that dynamically exposes Twilio&rsquo;s vast API surface as MCP tools. The monorepo contains two packages: the MCP server itself and a generic <code>openapi-mcp-server</code> that converts any OpenAPI spec into MCP tools.</p>
 <p>The catch: because Twilio&rsquo;s API surface is enormous, you must filter which services to load via <code>--services</code> or <code>--tags</code> parameters. Without filtering, you&rsquo;d overwhelm any LLM&rsquo;s context window. This makes the server powerful for developers who know which Twilio APIs they need, but less discoverable for newcomers.</p>
-<p>96 stars, 35 forks, 101 commits, 3 contributors, MIT license. Install via <code>npx -y @twilio-alpha/mcp</code>. Auth requires Account SID, API Key, and API Secret.</p>
-<p>10 open issues. The Twilio ETI team specifically warns against running community MCP servers alongside the official one — a notable security stance suggesting they take the threat of tool-poisoning seriously.</p>
+<p>103 stars (+7%), 37 forks, 101 commits, MIT license. Install via <code>npx -y @twilio-alpha/mcp</code>. Auth requires Account SID, API Key, and API Secret. Still on v0.0.3 (March 2025) — no new releases in over a year, though the repo remains active.</p>
+<p>12 open issues. The Twilio ETI team specifically warns against running community MCP servers alongside the official one — a notable security stance suggesting they take the threat of tool-poisoning seriously.</p>
 <p>Community SMS-focused alternatives: YiyangLi/sms-mcp-server (simple SMS via Twilio), deshartman/twilio-messaging-mcp-server (messaging-focused), deshartman/twilio-agent-payments-mcp-server (PCI-compliant payment flows — unique in the ecosystem).</p>
 <h3 id="sendgrid-community">SendGrid (Community)</h3>
 <table>
@@ -190,18 +190,18 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/mailgun/mailgun-mcp-server">mailgun/mailgun-mcp-server</a></td>
-<td>~48</td>
-<td>JavaScript</td>
+<td>~54</td>
+<td>TypeScript</td>
 <td>15+</td>
 <td>API key</td>
 <td>stdio</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Mailgun ships an official MCP server with solid coverage.</strong> 48 stars, 19 forks, 11 commits, Apache 2.0. Install via <code>npx -y @mailgun/mcp-server</code>.</p>
+<p><strong>Mailgun ships an official MCP server with solid coverage.</strong> 54 stars (+13%), 22 forks, 12 commits, Apache 2.0, <strong>v2.0.0</strong> (April 22, 2026). Install via <code>npx -y @mailgun/mcp-server</code>. The v2.0.0 release marks a major version bump.</p>
 <p>Tools cover the full Mailgun API: email sending, stored message retrieval, domain administration and DNS verification, webhook configuration, mailing list management, email template versioning, analytics querying, delivery metrics, bounce classification, suppression list management, and IP pool configuration.</p>
 <p>Multi-region support (US/EU via <code>MAILGUN_API_REGION</code>). API keys are isolated from AI models — the server enforces HTTPS/TLS for all Mailgun communications and validates parameters against OpenAPI specs.</p>
-<p>2 open issues, 3 active PRs. The server also has a sibling: <a href="https://github.com/mailgun/mailjet-mcp-server">mailgun/mailjet-mcp-server</a> for Mailjet&rsquo;s API (same parent company, Sinch).</p>
+<p>3 open issues. The server also has a sibling: <a href="https://github.com/mailgun/mailjet-mcp-server">mailgun/mailjet-mcp-server</a> for Mailjet&rsquo;s API (same parent company, Sinch).</p>
 <h3 id="postmark-official">Postmark (Official)</h3>
 <table>
 <thead>
@@ -217,7 +217,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/ActiveCampaign/postmark-mcp">ActiveCampaign/postmark-mcp</a></td>
-<td>~37</td>
+<td>~41</td>
 <td>JavaScript</td>
 <td>4</td>
 <td>Server token</td>
@@ -225,7 +225,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Postmark&rsquo;s official MCP server is intentionally minimal.</strong> 37 stars, 11 forks, 22 commits, 3 contributors, MIT. Built by Postmark Labs (ActiveCampaign).</p>
+<p><strong>Postmark&rsquo;s official MCP server is intentionally minimal.</strong> 41 stars (+11%), 13 forks, 22 commits, MIT. Built by Postmark Labs (ActiveCampaign). <strong>Security note:</strong> a malicious copycat was uploaded to npm under the same package name — only use the official version from GitHub, not npm.</p>
 <p>Just 4 tools: <code>sendEmail</code>, <code>sendEmailWithTemplate</code>, <code>listTemplates</code>, <code>getDeliveryStats</code>. That&rsquo;s it. No contact management, no domain configuration, no webhook setup. The philosophy is clear — Postmark positions itself as the transactional email specialist, and the MCP server reflects that focus.</p>
 <p>Automatic open and link tracking. Environment variable configuration (server token, default sender, message stream). 0 open issues, 2 pending PRs. The self-described &ldquo;experimental&rdquo; status is honest.</p>
 <p>For teams that just need to send transactional emails from an AI agent and check delivery stats, Postmark&rsquo;s server is the simplest option in this review.</p>
@@ -244,25 +244,26 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/infobip/mcp">infobip/mcp</a></td>
-<td>~25</td>
+<td>~29</td>
 <td>Documentation</td>
-<td>14 remote servers</td>
+<td>14+ remote servers</td>
 <td>API key, OAuth 2.1</td>
 <td>HTTPS, SSE</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Infobip takes the most ambitious architectural approach in this category.</strong> Instead of one MCP server, they ship <strong>14 separate remote MCP servers</strong>, each covering a different communication channel or capability:</p>
+<p><strong>Infobip takes the most ambitious architectural approach in this category.</strong> Instead of one MCP server, they ship <strong>14+ separate remote MCP servers</strong>, each covering a different communication channel or capability:</p>
 <ul>
-<li><strong>Messaging:</strong> SMS, WhatsApp, Viber, RCS, Voice, Mobile App Messaging</li>
+<li><strong>Messaging:</strong> SMS, WhatsApp, Viber, RCS, Email, Voice, Mobile App Messaging</li>
 <li><strong>Advanced:</strong> WhatsApp Flows, 2FA (SMS/Email/Voice delivery)</li>
 <li><strong>Customer data:</strong> People (profiles, companies, audiences), Account Management</li>
 <li><strong>Platform:</strong> CPaaSX Applications/Entities, CAMARA verification</li>
 <li><strong>Meta:</strong> Documentation Search, Deep Research</li>
 </ul>
 <p>All servers are cloud-hosted at <code>mcp.infobip.com/{service}</code> — no local installation required. Authentication supports both API key (<code>App ${INFOBIP_API_KEY}</code> header) and OAuth 2.1 with scope discovery via <code>.well-known/oauth-authorization-server</code>. Transport options include HTTPS (direct), SSE (<code>/sse</code> suffix), and stdio bridge via <code>mcp-remote</code>.</p>
-<p>The open-source framework powering these servers is <a href="https://github.com/infobip/infobip-openapi-mcp">infobip/infobip-openapi-mcp</a> (24 stars, Java, Spring AI/Spring Boot) — a generic OpenAPI-to-MCP converter with auto schema transformation, mock mode, live reload, OAuth with auto scope discovery, and automatic JSON error correction. Any team with OpenAPI specs can use this to build their own MCP servers.</p>
-<p>25 stars on the documentation repo, 52 commits. The breadth is unmatched — no other vendor in this review covers SMS, WhatsApp, Viber, RCS, Voice, and 2FA through MCP.</p>
+<p><strong>Major development: Infobip launched AgentOS on April 1, 2026</strong> — a fully managed AI-native platform that orchestrates autonomous, goal-driven customer journeys across 15+ channels. AgentOS integrates MCP servers as the communication layer for AI agents, enabling businesses to move from campaigns and workflows to autonomous interactions. This positions Infobip&rsquo;s MCP servers not just as standalone tools, but as the communication backbone for a complete agentic platform. Human-in-the-loop design ensures AI handles scale while specialists handle complex cases.</p>
+<p>The open-source framework powering these servers is <a href="https://github.com/infobip/infobip-openapi-mcp">infobip/infobip-openapi-mcp</a> (28 stars, Java, Spring AI/Spring Boot 3.5.x, Java 21+, v0.1.13) — a generic OpenAPI-to-MCP converter with auto schema transformation, mock mode, live reload, OAuth with auto scope discovery, automatic JSON error correction, and tool annotations (readOnly, destructive, idempotent). 99 commits. Any team with OpenAPI specs can use this to build their own MCP servers.</p>
+<p>29 stars (+16%) on the documentation repo, 73 commits (+40%). The breadth is unmatched — no other vendor in this review covers SMS, WhatsApp, Email, Viber, RCS, Voice, and 2FA through MCP.</p>
 <h3 id="courier-official">Courier (Official)</h3>
 <table>
 <thead>
@@ -278,7 +279,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/trycourier/courier-mcp">trycourier/courier-mcp</a></td>
-<td>~0</td>
+<td>~1</td>
 <td>TypeScript</td>
 <td>~60</td>
 <td>API key</td>
@@ -286,7 +287,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Courier&rsquo;s MCP server has the most tools in this review — roughly 60</strong> — but zero GitHub stars despite 136 commits from 2 contributors. This disconnect suggests either very recent release or limited community awareness.</p>
+<p><strong>Courier&rsquo;s MCP server has the most tools in this review — roughly 60</strong> — but only 1 GitHub star despite 180 commits. This disconnect suggests limited community awareness despite very active internal development (44 new commits since March).</p>
 <p>Tools cover: message sending (direct, templated, list-based), message management (list, retrieve, inspect content, history, cancel), profile administration (create, merge, replace, delete, subscription management), list and audience operations, brand configuration, JWT generation, push token management, automation invocation, bulk operations, audit logging, and tenant administration.</p>
 <p>Both hosted (<code>mcp.courier.com</code> — zero setup) and self-hosted (clone + <code>dev.sh</code>). v1.3.0 (March 2026), 0 open issues.</p>
 <p>Courier&rsquo;s value proposition is multi-channel orchestration — email, SMS, push, Slack, Teams through a single API. The MCP server inherits this, making it the most channel-flexible option for teams already using Courier.</p>
@@ -315,7 +316,7 @@
 </table>
 <p><strong>Novu&rsquo;s MCP server covers the notification infrastructure basics.</strong> Novu itself is a popular open-source notification platform (37K+ stars on the main repo). The MCP server provides 13 tools: subscriber management (create, get, update, delete), notification operations (list, stats, cancel), workflow management (list, trigger, create), plus environment listing and API key status checks.</p>
 <p>Remote hosted server available. The tool set is narrower than Courier&rsquo;s (~60 tools) but covers the core notification workflow. Low GitHub stars on the MCP server specifically, despite Novu&rsquo;s strong main repo.</p>
-<h3 id="telnyx-official--archived">Telnyx (Official — Archived)</h3>
+<h3 id="telnyx-official--major-upgrade">Telnyx (Official — Major Upgrade)</h3>
 <table>
 <thead>
 <tr>
@@ -329,18 +330,26 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="https://github.com/team-telnyx/ai">team-telnyx/ai</a></td>
+<td>~167</td>
+<td>TypeScript</td>
+<td>228 Agent Skills</td>
+<td>API key</td>
+<td>stdio, Remote HTTP</td>
+</tr>
+<tr>
 <td><a href="https://github.com/team-telnyx/telnyx-mcp-server">team-telnyx/telnyx-mcp-server</a></td>
 <td>~24</td>
 <td>Python</td>
 <td>20+</td>
 <td>API key</td>
-<td>stdio</td>
+<td>stdio (archived)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Telnyx shipped an official MCP server, then archived it.</strong> 24 stars, 5 forks, 6 commits. The repository was archived September 29, 2025 — read-only, no longer maintained. Users are directed to migrate to an official TypeScript version in the telnyx-node repository.</p>
-<p>When active, the server covered: AI assistant management (create, list, update, delete), call control (outbound calls, hangup, transfer, audio playback, DTMF, TTS), SMS/MMS messaging, phone number management (list, purchase, configure), voice connections, cloud storage, and webhook support via ngrok.</p>
-<p>The archival is notable — Telnyx invested in MCP, built a working server, then deprecated it. The migration to TypeScript suggests a strategic shift rather than abandonment of MCP.</p>
+<p><strong>Telnyx has made a major comeback.</strong> The archived Python server (24 stars, September 2025) has been fully replaced by the <strong>team-telnyx/ai monorepo</strong> — 167 stars, 230 commits, 7 forks. This is now the &ldquo;official one-stop shop for AI Agents and developers building with Telnyx.&rdquo;</p>
+<p>The new setup includes: a <strong>remote MCP server</strong> at <code>api.telnyx.com/v2/mcp</code> (zero local installation), a local <code>@telnyx/mcp</code> package via npx, <strong>228 Agent Skills</strong> covering telephony, messaging, AI assistants, and more. The monorepo also ships Python and TypeScript agent toolkits integrating with OpenAI Agent SDK, LangChain, CrewAI, and Vercel AI SDK, plus plugins for Claude Code and Gemini CLI.</p>
+<p>This is one of the most comprehensive transformations in the review — from an archived 6-commit Python script to a 230-commit enterprise-grade AI platform with remote MCP, agent toolkits, and deep framework integrations.</p>
 <h3 id="vonage-community">Vonage (Community)</h3>
 <table>
 <thead>
@@ -374,6 +383,85 @@
 </table>
 <p><strong>Vonage&rsquo;s MCP presence is minimal.</strong> The telephony MCP server has 1 star, 3 commits, and covers only voice calls, SMS, speech-to-text, and speech recognition. A separate API bindings server exists with WhatsApp messaging and SMS failover. Neither has significant adoption.</p>
 <p>Vonage also has a <a href="https://github.com/Vonage/vonage-mcp-server-documentation">documentation MCP server</a> for bridging developer docs to LLMs — useful for developers building on Vonage, but not for sending messages.</p>
+<h3 id="fastmail-official--new">Fastmail (Official — NEW)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Auth</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.fastmail.com/blog/an-mcp-server-for-fastmail/">Fastmail MCP</a></td>
+<td>—</td>
+<td>Hosted</td>
+<td>6+</td>
+<td>OAuth (3 levels)</td>
+<td>Remote HTTP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fastmail launched an official MCP server on April 22, 2026 (National Email Day).</strong> Available at <code>api.fastmail.com/mcp</code>, this is the first privacy-focused email provider with an official MCP integration. No local installation needed — any MCP-compatible client (Claude, ChatGPT, Cursor) connects directly.</p>
+<p>Tools include: <strong>email operations</strong> (get recent emails, get specific email, send email, search emails), <strong>contacts</strong> (list contacts), and <strong>calendar</strong> (create events with participants, locations, and ISO 8601 times). OAuth consent screen offers three access levels: read-only, write (update emails, save drafts, edit contacts/events), and send (send emails).</p>
+<p>This is a fundamentally different use case from Resend or SendGrid — Fastmail&rsquo;s MCP connects agents to a user&rsquo;s personal email, calendar, and contacts rather than providing transactional email delivery infrastructure. Think &ldquo;email client for AI&rdquo; rather than &ldquo;email API for AI.&rdquo;</p>
+<p>Community alternatives exist (MadLlama25/fastmail-mcp, gr3enarr0w/fastmail-mcp-server, others) but the official hosted server at api.fastmail.com/mcp is clearly the one to use.</p>
+<h3 id="agentmail-official--new">AgentMail (Official — NEW)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Auth</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.agentmail.to/integrations/mcp">AgentMail MCP</a></td>
+<td>—</td>
+<td>Hosted</td>
+<td>Multiple</td>
+<td>API key</td>
+<td>MCP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AgentMail represents a new paradigm: email infrastructure designed for AI agents, not humans.</strong> Y Combinator Summer 2025 batch, $6M seed round (March 2026) led by General Catalyst with investors including Paul Graham, Dharmesh Shah (HubSpot CTO), Paul Copplestone (Supabase CEO), and Karim Atiyeh (Ramp CTO).</p>
+<p>Instead of connecting AI agents to existing human email accounts (like Fastmail&rsquo;s MCP or Gmail integrations), AgentMail gives agents their own email inboxes. Agents can create, send, receive, and manage email threads entirely via API. One customer provisions 25,000 inboxes and processes millions of emails through AgentMail.</p>
+<p>The MCP server allows MCP-compatible clients to interact with AgentMail&rsquo;s API. Integrations with LangChain, LlamaIndex, CrewAI, LiveKit, and Google ADK. This is the first agent-native email infrastructure with MCP support in this review.</p>
+<h3 id="aws-ses-sample--new">AWS SES (Sample — NEW)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Tools</th>
+<th>Auth</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/aws-samples/sample-for-amazon-ses-mcp">aws-samples/sample-for-amazon-ses-mcp</a></td>
+<td>~7</td>
+<td>Java (Smithy)</td>
+<td>All SES v2 API</td>
+<td>AWS credentials</td>
+<td>stdio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AWS has published a sample MCP server for Amazon SES</strong>, filling one of the biggest gaps from our March review. 7 stars, 3 forks, 4 commits, MIT-0 license. The server exposes all public SES v2 API actions — email sending (single/batch, template-based), contact list management, suppression lists, dedicated IP pools, deliverability metrics, and verified senders.</p>
+<p><strong>Important caveat:</strong> this is explicitly a sample, not an official production-grade server. The README states it&rsquo;s &ldquo;not intended to be used in a production environment&rdquo; and lives under <code>aws-samples</code> rather than <code>awslabs</code>. Built on the Smithy Java project (still in development). For production SES needs, developers should evaluate this sample as a starting point, not a finished product.</p>
+<p>Still, its existence is significant — Amazon SES backs a massive share of the internet&rsquo;s transactional email, and having any MCP path, even a sample, is a step forward.</p>
 <h3 id="push-notification-servers">Push Notification Servers</h3>
 <table>
 <thead>
@@ -415,33 +503,35 @@
 </table>
 <p><strong>Push notification MCP servers solve a specific problem: alerting you when your AI agent finishes a task.</strong> These aren&rsquo;t full notification platforms — they&rsquo;re agent-to-human notification bridges.</p>
 <p><strong>Pushover</strong> has the most implementations (5+ community servers). AshikNesin/pushover-mcp (30 stars) is the most popular. Pushover itself costs a one-time $5 per platform.</p>
-<p><strong>ntfy</strong> is the open-source alternative. cyanheads/ntfy-mcp-server offers extensive customization (priority, tags, actions, attachments). gitmotion/ntfy-me-mcp supports both self-hosted and ntfy.sh public instances. ntfy is completely free for self-hosted.</p>
+<p><strong>ntfy</strong> is the open-source alternative. cyanheads/ntfy-mcp-server (8 stars) offers extensive customization (priority, tags, actions, attachments). gitmotion/ntfy-me-mcp (24 stars) supports both self-hosted and ntfy.sh public instances and is now the most popular ntfy MCP implementation. ntfy is completely free for self-hosted.</p>
 <p>Both Pushover and ntfy servers are simple — typically a single <code>send_notification</code> tool. That&rsquo;s appropriate. These aren&rsquo;t email platforms; they&rsquo;re push buttons.</p>
 <h2 id="key-patterns">Key Patterns</h2>
-<p><strong>Email delivery is the most mature subcategory.</strong> Resend, Mailgun, and Postmark all have official servers. SendGrid is the notable gap — community-only despite being owned by Twilio. The clear trend: developer-focused email platforms (Resend, Postmark) ship MCP servers faster than enterprise platforms.</p>
-<p><strong>Infobip&rsquo;s multi-server architecture is unique.</strong> Every other vendor in this review ships one MCP server. Infobip ships 14 separate servers, one per channel. This is arguably the right design — SMS and WhatsApp have completely different tool shapes — but it means clients need multiple server configurations.</p>
-<p><strong>Read-only defaults are becoming standard.</strong> deyikong&rsquo;s SendGrid server defaults to <code>READ_ONLY=true</code>. Postmark&rsquo;s server is read-focused (4 tools, mostly querying). This is wise for notification services — an AI agent accidentally sending 10,000 emails is a real risk.</p>
-<p><strong>The OpenAPI-to-MCP pattern is spreading.</strong> Both Twilio and Infobip use auto-generation from OpenAPI specs rather than hand-crafting tools. This scales better (Twilio&rsquo;s entire API surface, Infobip&rsquo;s 14 servers) but produces tools that are less LLM-friendly than hand-designed ones.</p>
-<p><strong>Hosted MCP is the future for notification services.</strong> Infobip (cloud-hosted, 14 servers), Courier (hosted at mcp.courier.com), and Novu (remote hosted) all offer zero-install deployments. This makes sense — notification services are inherently cloud-based, so why run a local MCP server?</p>
+<p><strong>Email delivery is the most mature subcategory.</strong> Resend, Mailgun, and Postmark all have official servers. SendGrid remains the notable gap — still community-only despite being owned by Twilio. The clear trend: developer-focused email platforms (Resend, Postmark) ship MCP servers faster than enterprise platforms.</p>
+<p><strong>The email MCP spectrum is widening.</strong> This category now spans four distinct use cases: transactional delivery (Resend, Mailgun, SendGrid), personal email access (Fastmail), agent-native email (AgentMail), and cloud email infrastructure (AWS SES). Fastmail and AgentMail represent opposite poles — human-centric vs. agent-centric — and both launched in April 2026.</p>
+<p><strong>Infobip&rsquo;s multi-server architecture is unique — and now part of a platform.</strong> Every other vendor ships one MCP server. Infobip ships 14+ separate servers, one per channel, and with AgentOS (April 2026) they&rsquo;ve wrapped these in a fully managed AI agent platform. MCP as infrastructure layer, not standalone tools.</p>
+<p><strong>Read-only defaults and security awareness are growing.</strong> deyikong&rsquo;s SendGrid server defaults to <code>READ_ONLY=true</code>. Postmark&rsquo;s npm package name was hijacked by a malicious copycat — a concrete example of the MCP supply chain risks that the OWASP MCP Top 10 warns about. Infobip&rsquo;s framework now includes tool annotations (readOnly, destructive, idempotent) for safety.</p>
+<p><strong>The OpenAPI-to-MCP pattern is spreading.</strong> Both Twilio and Infobip use auto-generation from OpenAPI specs rather than hand-crafting tools. This scales better (Twilio&rsquo;s entire API surface, Infobip&rsquo;s 14+ servers) but produces tools that are less LLM-friendly than hand-designed ones.</p>
+<p><strong>Hosted/remote MCP is becoming dominant.</strong> Infobip (cloud-hosted, 14+ servers), Courier (mcp.courier.com), Novu (remote), Fastmail (api.fastmail.com/mcp), Telnyx (api.telnyx.com/v2/mcp), and AgentMail all offer zero-install remote deployments. The trend is clear — notification services are inherently cloud-based, and their MCP servers are following suit.</p>
+<p><strong>Telnyx&rsquo;s transformation is the biggest comeback story.</strong> From an archived 6-commit Python server to a 167-star, 230-commit AI monorepo with remote MCP, agent toolkits, Claude Code plugins, and 228 Agent Skills. This is what commitment to the agentic ecosystem looks like.</p>
 <h2 id="whats-missing">What&rsquo;s Missing</h2>
 <ul>
-<li><strong>No official SendGrid MCP server.</strong> The largest email delivery platform by volume has only community implementations.</li>
-<li><strong>No Amazon SES MCP server.</strong> AWS&rsquo;s email service — the backbone of much of the internet&rsquo;s transactional email — has no MCP integration (awslabs/mcp doesn&rsquo;t include SES).</li>
+<li><strong>No official SendGrid MCP server.</strong> The largest email delivery platform by volume still has only community implementations, despite Twilio publishing a blog guide on building one.</li>
+<li><strong>Amazon SES has only a sample server.</strong> AWS published aws-samples/sample-for-amazon-ses-mcp (7 stars), but it&rsquo;s explicitly not production-grade and isn&rsquo;t part of the official awslabs/mcp collection. The backbone of much of the internet&rsquo;s transactional email still lacks a proper official MCP server.</li>
 <li><strong>No official Vonage MCP server</strong> with significant adoption. The community server has 1 star.</li>
-<li><strong>No Klaviyo MCP server</strong> with official backing — only community implementations (mattcoatsworth/Klaviyo-MCP-Server) for the email marketing giant.</li>
+<li><strong>No Klaviyo MCP server</strong> with official backing — only community implementations for the email marketing giant.</li>
 <li><strong>No Plivo MCP server</strong> with meaningful adoption.</li>
-<li><strong>Telnyx archived their server</strong> — migration path to TypeScript version unclear.</li>
+<li><strong>No Gmail/Google Workspace MCP server</strong> for transactional sending (Google&rsquo;s MCP efforts focus on Vertex AI and GCP services, not Gmail as a sending platform).</li>
 </ul>
 <h2 id="the-verdict">The Verdict</h2>
-<p>The notification &amp; email delivery MCP category is <strong>active and broadening fast</strong>, with 20+ servers across 12 platforms covering email, SMS, multi-channel notifications, and push alerts. The ecosystem splits into clear tiers:</p>
-<p><strong>Top tier:</strong> Resend (best developer experience, dual transport, 470 stars), Infobip (broadest channel coverage, 14 hosted servers, OAuth 2.1), Mailgun (official, solid coverage, Apache 2.0).</p>
-<p><strong>Mid tier:</strong> Twilio (powerful but requires API filtering knowledge), Courier (~60 tools, hosted, but zero community adoption), SendGrid (community-only, deyikong&rsquo;s 59-tool server with read-only defaults is impressive), Postmark (intentionally minimal, good for simple transactional email).</p>
-<p><strong>Early/niche:</strong> Novu (13 tools, notification-focused), Telnyx (archived), Vonage (minimal), push notification servers (Pushover, ntfy — simple and effective for their use case).</p>
-<p>The gap compared to more mature MCP categories is the absence of SendGrid and Amazon SES official servers. When those arrive, this category will be significantly stronger.</p>
-<p><strong>Rating: 3.5/5</strong> — Resend&rsquo;s official server is excellent, Infobip&rsquo;s multi-channel hosted architecture is innovative, and Mailgun/Postmark provide solid official options. But the lack of official SendGrid and Amazon SES servers, Telnyx&rsquo;s archival, and Vonage&rsquo;s minimal presence leave notable holes in the landscape.</p>
+<p>The notification &amp; email delivery MCP category has <strong>matured significantly since March</strong>, with 25+ servers across 14+ platforms covering transactional email, personal email access, agent-native email, SMS, multi-channel notifications, and push alerts. The ecosystem splits into clear tiers:</p>
+<p><strong>Top tier:</strong> Resend (best developer experience, dual transport, 504 stars, v2.6.0), Infobip (broadest channel coverage, 14+ hosted servers, AgentOS platform, OAuth 2.1), Telnyx (biggest comeback — 167-star ai monorepo, remote MCP, 228 Agent Skills), Mailgun (official, v2.0.0, solid coverage).</p>
+<p><strong>Mid tier:</strong> Twilio (powerful but stale — still v0.0.3 from March 2025), Fastmail (official, privacy-focused personal email MCP, launched April 2026), Courier (~60 tools, hosted, but still only 1 star), SendGrid (community-only, deyikong&rsquo;s 59-tool server with read-only defaults is impressive), Postmark (intentionally minimal, npm supply chain attack noted).</p>
+<p><strong>Early/niche:</strong> AgentMail (Y Combinator, $6M seed, agent-native email — early but well-funded), Novu (13 tools, notification-focused), AWS SES (sample only, not production), Vonage (minimal), push notification servers (Pushover, ntfy — simple and effective).</p>
+<p>The biggest changes since March: Telnyx&rsquo;s transformation from archived to enterprise-grade, Infobip&rsquo;s AgentOS launch wrapping MCP in a full agentic platform, Fastmail and AgentMail entering from opposite ends of the email spectrum, and AWS SES finally getting a (sample) MCP path.</p>
+<p><strong>Rating: 4.0/5</strong> (up from 3.5) — Telnyx&rsquo;s comeback, Infobip&rsquo;s AgentOS platform, Fastmail&rsquo;s official launch, and AgentMail&rsquo;s agent-native approach have collectively filled the gaps that held this category back. SendGrid&rsquo;s continued absence of an official server and AWS SES&rsquo;s sample-only status remain weaknesses, but the category is now significantly stronger across transactional, personal, agent-native, and multi-channel use cases.</p>
 <hr>
-<p><em>Last updated: March 15, 2026. Have we missed a notification MCP server? Let us know — we research new servers regularly.</em></p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>Last updated: April 25, 2026. Have we missed a notification MCP server? Let us know — we research new servers regularly.</em></p>
+<p><em>This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not test servers hands-on — our analysis is based on documentation, GitHub repositories, changelogs, and community activity.</em></p>
 
       </div>
 
@@ -493,7 +583,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T03:28:00+09:00","description":"Notification and email delivery MCP servers let AI agents send emails, SMS, push notifications, and multi-channel messages through platforms like Twilio, Resend, SendGrid","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Notification \u0026 Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond"},"name":"Notification \u0026 Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/notification-services-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-25T00:00:00+09:00","datePublished":"2026-03-15T03:28:00+09:00","description":"Notification and email delivery MCP servers let AI agents send emails, SMS, push notifications, and multi-channel messages through platforms like Twilio, Resend, SendGrid","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Notification \u0026 Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond"},"name":"Notification \u0026 Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/notification-services-mcp-servers/"}
 </script>
 
 

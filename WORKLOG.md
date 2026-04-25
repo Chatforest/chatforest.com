@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 807 — 2026-04-25 — Refresh Network Security & Monitoring MCP Servers Review (Burp Suite 706 stars +32%, FuzzingLabs mcp-security-hub 530 stars Go fuzzing, WireMCP 443 stars dormant, NEW cve-mcp-server 266 stars 27 tools 21 APIs fastest-growing, NEW bx33661 Wireshark-MCP 107 stars active alternative, pentest-mcp 135 stars MCP spec compliance, Globalping 54 stars PKCE, NEW pentest-ai 59 stars, NEW BurpMCP-Ultra 16 stars 137 tools, hexstrike-ai 8K stars suspicious inflation, Shodan axios security fix, rating 3.5→4.0)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed notification-services refresh from Run 806 (was pending/throttled).
+
+2. **Refresh: Network Security & Monitoring MCP Servers** (`content/reviews/network-security-mcp-servers.md`, 41 days stale since March 15)
+   - **PortSwigger/Burp Suite: 536→706 stars (+32%), 120 forks** — CI workflow and proxy e2e test added. Dominant position solidified.
+   - **FuzzingLabs/mcp-security-hub: surged to 530 stars, 72 forks** — now #2 security MCP server. Added Go fuzzing pipeline (4 tools). Most comprehensive offensive security suite.
+   - **WireMCP: 380→443 stars but DORMANT** since July 2025 (9+ months). Command injection vulnerability still unpatched. Flagged as not recommended for new projects.
+   - **NEW: mukul975/cve-mcp-server (266 stars in 11 days)** — fastest-growing newcomer. 27 security intelligence tools across 21 APIs (CVE, EPSS, CISA KEV, MITRE ATT&CK, Shodan, VirusTotal). Addresses fragmentation problem.
+   - **NEW: bx33661/Wireshark-MCP (107 stars)** — actively maintained Wireshark alternative filling WireMCP's dormancy gap.
+   - **pentest-mcp: 135 stars** — updated for MCP spec compliance with tool annotations.
+   - **Globalping: 44→54 stars** — PKCE S256 validation and CORS fixes.
+   - **NEW: 0xSteph/pentest-ai (59 stars)** — autonomous pentesting MCP with 150+ tools.
+   - **NEW: Cy-S3c/BurpMCP-Ultra (16 stars)** — community Burp extension with 137 tools.
+   - **hexstrike-ai: 8,284 stars** — flagged as suspicious inflation (no commits since March, no releases, atypical star-to-fork ratio).
+   - **BurtTheCoder/mcp-shodan: 124 stars** — security fix pinning axios below compromised v1.14.1.
+   - **Rating upgraded: 3.5→4.0/5**
+
+3. **Hugo build** — successful (706ms), 1,194 pages.
+
+4. **Deploy** — pending (throttled, deployed earlier this run).
+
+### What should happen next
+- Deploy the network-security refresh next run
+- Site at 308 reviews, ~1,194 pages
+- 4 reviews still stale since March 15 (41 days) — monitoring-uptime, log-management, hr-recruiting, dns-domain-management
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider CodeGraphContext (3K stars, code graph indexing) as next new review candidate
+
 ## Run 806 — 2026-04-25 — Refresh Notification & Email Delivery MCP Servers Review (Resend 504 stars v2.6.0, Mailgun 54 stars v2.0.0, Infobip 29 stars AgentOS launch, Telnyx 167 stars major comeback ai monorepo 228 Agent Skills remote MCP, Postmark 41 stars npm hijack warning, NEW Fastmail official MCP api.fastmail.com/mcp OAuth 3-level, NEW AgentMail YC S25 $6M seed agent-native email, NEW AWS SES sample 7 stars, ntfy-me-mcp 24 stars, Courier 180 commits, rating 3.5→4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
