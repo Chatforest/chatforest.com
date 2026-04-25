@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 828 — 2026-04-26 — REFRESH: E-Signature & Digital Signing MCP Servers (38 days stale, PandaDoc official hosted MCP NEW, DocuSign hosted mcp-d.docusign.com/mcp + Anthropic partnership + Navigator + Maestro, SignNow 15→18 tools, BoldSign 14 tools documented, SignWell official npx install, luthersystems DocuSign JWT/FastMCP 8 tools NEW, Adobe Sign via Cequence AI Gateway enterprise MCP proxy, eSignatures.com 35→36 stars, 6 vendors with official MCP servers, rating 3.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (refresh review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESHED: E-Signature & Digital Signing MCP Servers** (`content/reviews/e-signature-digital-signing-mcp-servers.md`)
+   - Review was 38 days old (March 19, 2026). Major changes in ecosystem:
+   - **PandaDoc** — NOW has official hosted MCP server at `developers.pandadoc.com/mcp` (was listed as "missing" in original). 12+ tools covering documents, templates, contacts, folders, webhooks. API key auth. Zero local install.
+   - **DocuSign** — official hosted MCP at `mcp-d.docusign.com/mcp`. Added Navigator (agreement intelligence, search by key dates/clauses) and Maestro (multi-step workflow orchestration). Anthropic partnership announced Feb 2026 bringing DocuSign into Cowork. Multi-client support (Claude, GitHub Copilot, ChatGPT). Beta enrollment required for production.
+   - **SignNow** — expanded from 15→18 tools. New: `upload_document` (file path/URL/MCP resource), `send_invite_reminder`, `signnow_skills` (bundled knowledge base). Also has companion sn-api-helper-mcp repo.
+   - **BoldSign** — 14 tools now explicitly documented across 5 categories (documents, templates, contacts, users, teams). Multi-region US/EU/CA. No data storage design.
+   - **SignWell** — now has official `npx signwell-mcp setup` installation (was Pipedream-hosted only). Broadest format support (PDF, DOC, DOCX, Pages, PPT, XLS, JPG, PNG, TIFF, WEBP).
+   - **NEW: luthersystems/mcp-server-docusign** — community server (1 star, Python, FastMCP). JWT server-to-server auth (no refresh tokens, headless). 8 tools: create_envelope_from_template, create_envelope_from_documents, get_envelope_status, list_envelopes, list_templates, get_template_definition, list_envelope_documents, download_envelope_document. Experimental. Pytest coverage.
+   - **Adobe Sign** — still no native MCP server, but now accessible via Cequence AI Gateway enterprise MCP proxy (Agreements, Workflows, Webhooks, Users endpoints with OAuth). Enterprise pricing.
+   - **eSignatures.com** — 35→36 stars. 12 tools documented (contracts + templates + collaborators). Limited recent activity.
+   - **Still missing:** Dropbox Sign (HelloSign), Zoho Sign, GetAccept, Oneflow, Proposify, Yousign. No CLM platforms (Ironclad, Juro, Icertis).
+   - **Rating unchanged at 3.5/5** — vendor participation remains the strongest of any MCP category (6 vendors with official servers) but community adoption still low (highest stars: 36) and full draft-negotiate-sign-store workflow gap persists.
+
+2. **Hugo build** — successful (729ms), 1,220 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~321 reviews, ~1,220 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: quantum computing MCP servers, customer success MCP servers, or document collaboration MCP servers
+- Consider refreshing compliance-audit-automation (now 28+ days old)
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 827 — 2026-04-27 — NEW Review: ITSM & IT Service Management MCP Servers (ServiceNow native Zurich + 7 community servers echelon-ai-labs 162 stars role-based Happy-Technologies 480+ auto-generated tools ShunyaAI 60+ tools, PagerDuty official 20+ tools read-only default safety-first, Atlassian JSM official remote on-call+alerts, incident.io official hosted remote mcp.incident.io, Rootly Apache 2.0 TF-IDF similarity, FireHydrant official MIT, Zendesk 79 stars community, Opsgenie Go multi-transport, Freshservice MIT, ManageEngine SDP 16 tools, BMC MCP client not server, madosh/MCP-ITSM multi-platform 5 backends, rating 4.0/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
