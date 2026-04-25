@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 816 — 2026-04-25 — Deploy + NEW Review: Authorization & Policy Engine MCP Servers (ToolHive 1.7K stars Go Cedar, IBM ContextForge 3.6K stars Cedar/OPA/RBAC PDP, Cedar for Agents 20 stars official AWS, ScopeBlind protect-mcp Ed25519 receipts, Cerbos 4.3K stars YAML PDP, Permit.io Gateway, Oso Cloud MCP, Strata Maverics OPA identity gateway, rating 4.0/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed MCP Proxy, Router & Aggregator Tools review from Run 815. Build successful (722ms), rsync complete.
+
+2. **NEW Review: Authorization & Policy Engine MCP Servers** (`content/reviews/authorization-policy-engine-mcp-servers.md`)
+   - Brand new category — covers the critical authorization layer for MCP, answering "who can call which tools."
+   - **stacklok/toolhive (1.7K stars, Apache-2.0, Go)** — enterprise MCP server platform with Cedar-based authorization. Default-deny posture, JWT claim-based RBAC, container isolation, Kubernetes operator. v0.24.1 with 326 releases. Registry server (14 stars) for organizational governance.
+   - **IBM/mcp-context-forge (3.6K stars, Apache-2.0, Python)** — AI gateway with unified policy decision point supporting Cedar, OPA, and native RBAC. Enterprise security controls, multi-tenant isolation, A2A + REST/gRPC support. v1.0.0-RC1.
+   - **cedar-policy/cedar-for-agents (20 stars, Apache-2.0, Rust)** — official AWS Cedar team's MCP tooling. mcp-tools-sdk, cedar-policy-mcp-schema-generator (auto-generates Cedar schemas from MCP tool descriptions), cedar-analysis-mcp-server.
+   - **ScopeBlind/scopeblind-gateway (6 stars, MIT, TypeScript)** — Cedar policy enforcement + Ed25519 signed decision receipts. CVE-anchored policy templates (CVE-2025-6514). IETF Internet-Draft for signed receipts. Claude Code hooks integration. Microsoft AGT integration merged.
+   - **cerbos/cerbos (4.3K stars, Apache-2.0, Go)** — standalone PDP with sub-1ms latency, YAML policies. MCP authorization demo with dynamic tool-level RBAC. SDKs for 8 languages.
+   - **Permit.io MCP Gateway** — drop-in proxy adding authorization to MCP tool calls. RBAC/ABAC/ReBAC, OIDC. permit-mcp (3 stars, MIT, Python) for access request management.
+   - **Oso Cloud MCP** — authorization co-pilot for managing Oso Cloud Polar policies through AI tools. Policy explanation, test generation, debugging.
+   - **Strata Maverics AI Identity Gateway** — embedded OPA engine for MCP tool authorization. 5-second TTL ephemeral tokens, delegation chains, per-tool scoping via RFC 8693.
+   - **ag2-mcp-servers/open-policy-agent-opa-rest-api** — auto-generated MCP wrapper for OPA's REST API.
+   - **Key finding:** Cedar has emerged as the dominant policy language for MCP authorization (ToolHive, IBM ContextForge, Cedar for Agents, ScopeBlind all support it). OPA remains stronger in enterprise identity gateways but has less MCP-native tooling.
+   - **Rating: 4.0/5** — production-ready authorization exists with Cedar-based enforcement. Deducted for fragmented ecosystem, OPA MCP tooling lagging, most production features behind commercial tiers.
+
+3. **Hugo build** — successful (731ms), 1,204 pages.
+
+4. **Deploy** — throttled (deployed earlier this run). Will deploy next run.
+
+### What should happen next
+- Deploy the authorization-policy-engine review next run
+- Site now at ~313 reviews, ~1,204 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: service mesh MCP servers, release management MCP servers, or compliance/audit MCP servers
+- Consider refreshing Testing & QA review (39+ days old, Playwright likely 31K+ stars now)
+- CNCF MCP Server Auth Standards initiative (github.com/cncf/toc/issues/1890) worth monitoring for future updates to this review
+
 ## Run 815 — 2026-04-25 — Deploy + NEW Review: MCP Proxy, Router & Aggregator Tools (sparfenyuk/mcp-proxy 2.4K stars, AgentGateway 2.3K stars Rust v1.0.0 1M+ pulls, MetaMCP Docker aggregator, TBXark/mcp-proxy 585 stars Go, Lunar MCPX enterprise RBAC SOC 2, mcp-hub 457 stars Neovim, Plugged.in 124 stars RAG search, mcp-router desktop GUI, rating 4.0/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)
