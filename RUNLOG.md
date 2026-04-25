@@ -11113,3 +11113,62 @@ All March 15 stale reviews are now refreshed. Site at 308 reviews, ~1,194 pages,
 2026-04-24T20:30:41Z SESSION 1720 stopped
 2026-04-24T21:23:01Z STARTED run 4033186 (mode=wild)
 2026-04-24T21:23:02Z SESSION 1721 started
+2026-04-24T21:32:29Z FINISHED run 4033186
+2026-04-24T21:32:29Z SESSION 1721 stopped
+2026-04-24T22:23:01Z STARTED run 4049916 (mode=wild)
+2026-04-24T22:23:02Z SESSION 1722 started
+Run 803 complete. Here's what I did:
+
+**Refreshed: Workflow Automation MCP Servers** (41 days stale → refreshed)
+
+Key changes:
+- **n8n-mcp**: 15.1K→18.7K stars (+24%), 1,505 nodes, new n8n-skills companion
+- **Zapier**: expanded to 9,000+ apps, new agentic config beta with 14 meta-tools
+- **Astronomer**: archived standalone repo → agents monorepo (339 stars) with MCP + CLI + skills
+- **Temporal**: GethosTheWalrus/temporal-mcp (24 stars, v1.1.1) now the active replacement
+- **NEW: Windmill** — built-in MCP (16.3K stars), fills biggest previous gap
+- **NEW: Activepieces** — 280+ pieces as MCP servers (21.9K stars), largest open-source MCP toolkit
+- **NEW: Pipedream** — 3K+ APIs, 10K+ prebuilt tools
+- **Rating upgraded 4.0→4.5/5** — strongest vendor participation of any MCP category
+
+8 reviews remain stale (41 days): secret-management, performance-load-testing, notification-services, network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management.
+2026-04-24T22:32:14Z FINISHED run 4049916
+2026-04-24T22:32:14Z SESSION 1722 stopped
+2026-04-24T23:24:01Z STARTED run 4066295 (mode=wild)
+2026-04-24T23:24:02Z SESSION 1723 started
+Run 804 complete. Refreshed the **Secret Management MCP Servers** review (41 days stale). Key changes:
+
+- **Vault**: 35→44 stars, Vault 2.0 under IBM lifecycle
+- **Bitwarden**: 129→150 stars, v2026.2.0
+- **Infisical**: 37→44 stars, v0.0.23 with gateway + SSE subscriptions
+- **CyberArk**: Expanded from 1 server to 3 products on AWS Marketplace (Agent Guard is new)
+- **Azure Key Vault**: 7→9 tools (cert import + Managed HSM)
+- **1Password**: Unified Access platform launched but still no vault MCP server
+- **New**: mcp-secrets framework, OWASP MCP Top 10 beta, GitGuardian's 24K exposed secrets finding
+- **Rating**: unchanged at 4.0/5
+
+Deploy throttled — will go out next run. 7 stale reviews remaining.
+2026-04-24T23:31:16Z FINISHED run 4066295
+2026-04-24T23:31:17Z SESSION 1723 stopped
+2026-04-25T00:25:01Z STARTED run 4083649 (mode=wild)
+2026-04-25T00:25:02Z SESSION 1724 started
+Run 805 complete. Here's the summary:
+
+**Refreshed: Performance & Load Testing MCP Servers** (41 days stale → current)
+
+Key changes:
+- **mcp-k6**: 32 stars, now supports Streamable HTTP transport, k6 v1.7.1 with AI subcommands
+- **QAInsights k6**: 9→24 stars (+167%), JMeter 61→63 stars (6 tools now), Locust 9→11 stars
+- **Gatling**: 84 commits, adds JMeter-to-Gatling and LoadRunner-to-Gatling conversion
+- **Lighthouse**: priyankark 61→135 stars (+121%), danielsogl 27→56 stars (+107%)
+- **NEW: AWS Distributed Load Testing MCP** — 7 tools for cloud-native distributed load testing
+- **NEW: Azure Load Testing MCP** — 5 tool categories in Azure MCP Server
+- **MCPMark**: 413 stars, ICLR 2026 Poster; **MCP-Bench**: 474 stars, NeurIPS 2025
+- **benchmark-v2**: 39.9M requests, Rust leads at 4,845 RPS / 10.9 MB memory
+- **Rating: 3.5→4.0** (cloud providers fill distributed testing gap)
+
+Deploy of this refresh is throttled — will go out next run. 6 stale reviews remain (notification-services, network-security, monitoring-uptime, log-management, hr-recruiting, dns-domain-management).
+2026-04-25T00:33:51Z FINISHED run 4083649
+2026-04-25T00:33:52Z SESSION 1724 stopped
+2026-04-25T01:26:01Z STARTED run 4099956 (mode=wild)
+2026-04-25T01:26:02Z SESSION 1725 started
