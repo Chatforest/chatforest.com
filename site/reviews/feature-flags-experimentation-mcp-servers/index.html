@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Feature Flags &amp; Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More — ChatForest</title>
-  <meta name="description" content="Feature flag and experimentation MCP servers are giving AI coding assistants direct access to flag management, A/B testing, and progressive rollouts.">
+  <meta name="description" content="Feature flag and experimentation MCP servers reviewed: LaunchDarkly (13 stars, hosted, 3 MCP endpoints), GrowthBook (21 stars, 14 tools, open-source), Unleash (6 stars, best-practice workflows), Flagsmith (role-based tooling, Gemini/Codex CLI support), DevCycle (35&#43; tools, OAuth-backed, hosted remote), Statsig (27 Console API tools, metrics), ConfigCat (full management API), Flipt (git-native), VWO FME (3 stars, new entry), Optimizely (closed beta, Gartner Leader 2026), PostHog (141 stars, 27 tools, archived to monorepo), Harness FME (10 tools, 139 resource types, incl. Split.io), Amplitude (experimentation agent). Rating: 4.0/5.">
   <meta property="og:title" content="Feature Flags &amp; Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More — ChatForest">
-  <meta property="og:description" content="Feature Flags &amp; Experimentation MCP servers: 15&#43; servers from LaunchDarkly (official hosted), GrowthBook (14 tools, open-source), Unleash (best-practice workflows), Flagsmith (role-based tooling), DevCycle (OAuth-backed), Statsig (3-API hybrid), ConfigCat (full management API), Flipt (git-native), Optimizely (closed beta), PostHog (27 tools), Harness FME (incl. Split.io), Amplitude (experimentation agent). Rating: 4.0/5.">
+  <meta property="og:description" content="Feature Flags &amp; Experimentation MCP servers: 15&#43; servers from LaunchDarkly (13 stars, hosted), GrowthBook (21 stars, 14 tools), Unleash (6 stars, workflows), Flagsmith (role-based), DevCycle (35&#43; tools, OAuth), Statsig (27 tools), ConfigCat, Flipt, VWO FME (new), Optimizely (beta), PostHog (141 stars, 27 tools), Harness FME (Split.io), Amplitude. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Feature Flags &amp; Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More — ChatForest">
-  <meta name="twitter:description" content="Feature Flags &amp; Experimentation MCP servers: 15&#43; servers from LaunchDarkly (official hosted), GrowthBook (14 tools, open-source), Unleash (best-practice workflows), Flagsmith (role-based tooling), DevCycle (OAuth-backed), Statsig (3-API hybrid), ConfigCat (full management API), Flipt (git-native), Optimizely (closed beta), PostHog (27 tools), Harness FME (incl. Split.io), Amplitude (experimentation agent). Rating: 4.0/5.">
+  <meta name="twitter:description" content="Feature Flags &amp; Experimentation MCP servers: 15&#43; servers from LaunchDarkly (13 stars, hosted), GrowthBook (21 stars, 14 tools), Unleash (6 stars, workflows), Flagsmith (role-based), DevCycle (35&#43; tools, OAuth), Statsig (27 tools), ConfigCat, Flipt, VWO FME (new), Optimizely (beta), PostHog (141 stars, 27 tools), Harness FME (Split.io), Amplitude. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Apr 25, 2026 · Updated Apr 25, 2026</span>
       </div>
 
       <h1 class="article-title">Feature Flags &amp; Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More</h1>
@@ -84,16 +84,16 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/launchdarkly/mcp-server">launchdarkly/mcp-server</a></td>
-<td>3</td>
+<td>13</td>
 <td>TypeScript</td>
-<td>—</td>
-<td>5+</td>
+<td>MIT</td>
+<td>10+</td>
 </tr>
 </tbody>
 </table>
-<p>Official MCP server from LaunchDarkly, the category leader in feature management. Provides three hosted MCP servers, each focused on a different product area: <strong>feature management</strong> (create, get, list, toggle, and update flags), <strong>AI Configs</strong> (manage AI configurations and variations), and <strong>observability</strong> (query logs, traces, errors, and dashboards). The hosted endpoint architecture means zero local installation — just point your MCP client and authenticate.</p>
-<p>Key tools include <code>create-flag</code> (defaults to boolean temporary flag, OFF in all environments), <code>get-flag</code> (detailed configuration for a single flag), <code>list-flags</code> (search and browse), <code>toggle-flag</code> (targeting on/off per environment), and <code>update-flag-settings</code> (name, description, tags, temporary/permanent status, maintainer). The separation into product-specific servers is a thoughtful design — agents get only the tools relevant to their task rather than a monolithic tool list.</p>
-<p>LaunchDarkly is the market leader in enterprise feature management, and their MCP server reflects that maturity with hosted infrastructure and structured tool organization. The low GitHub star count (3 stars) reflects that most users configure it via the hosted endpoint rather than cloning the repo.</p>
+<p>Official MCP server from LaunchDarkly, the category leader in feature management. Provides three hosted MCP servers, each focused on a different product area: <strong>feature management</strong> (create, get, list, toggle, and update flags, targeting rules, rollouts, individual targets), <strong>AI Configs</strong> (manage AI configurations and variations), and <strong>observability</strong> (query logs, traces, errors, and dashboards). The hosted endpoint architecture means zero local installation — just point your MCP client and authenticate.</p>
+<p>Key tools include <code>create-flag</code> (defaults to boolean temporary flag, OFF in all environments), <code>get-flag</code> (detailed configuration scoped to a specific environment), <code>list-flags</code> (search and browse), <code>toggle-flag</code> (targeting on/off per environment), <code>update-flag-settings</code> (name, description, tags, temporary/permanent status, maintainer), <code>update-targeting-rules</code>, <code>update-rollout</code>, <code>update-individual-targets</code>, <code>query-flag-evaluations</code> (query evaluations for a session), and <code>query-timeline-events</code> (query timeline indicator events). The separation into product-specific servers is a thoughtful design — agents get only the tools relevant to their task rather than a monolithic tool list.</p>
+<p>LaunchDarkly is the market leader in enterprise feature management, and their MCP server reflects that maturity with hosted infrastructure and structured tool organization. Works with any MCP-compatible AI client including Cursor, Claude, Windsurf, and Raycast.</p>
 <h3 id="growthbook-mcp-server">GrowthBook MCP Server</h3>
 <table>
 <thead>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/growthbook/growthbook-mcp">growthbook/growthbook-mcp</a></td>
-<td>15</td>
+<td>21</td>
 <td>TypeScript</td>
 <td>—</td>
 <td>14</td>
@@ -132,7 +132,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/Unleash/unleash-mcp">Unleash/unleash-mcp</a></td>
-<td>—</td>
+<td>6</td>
 <td>TypeScript</td>
 <td>—</td>
 <td>4+</td>
@@ -166,7 +166,31 @@
 <p>Official MCP server from Flagsmith, the open-source feature flag and remote configuration service. What sets Flagsmith apart is their <strong>role-based tool exposure</strong> approach — rather than dumping all 500+ API endpoints on an AI agent, they surface only the tools relevant to a given role.</p>
 <p>For <strong>developers</strong>: create and configure flags directly from the IDE, with AI updating code automatically. For <strong>release managers</strong>: run canary releases, schedule staged deployments, manage change requests. For <strong>flag hygiene</strong>: identify stale flags, compare flag status across environments, create multi-flag change requests from the CLI.</p>
 <p>Core capabilities cover Organizations &amp; Projects (list and navigate workspaces), Feature Flags (create, update, manage across environments), and Segments (build and modify user segments for targeting). The server also supports organizational conventions — naming standards and best practices enforced at the org level, reducing cognitive burden on developers.</p>
-<p>Compatible with MCP-enabled IDE extensions (Cursor), CLI tools (Claude Code), and custom AI agents in CI/CD pipelines.</p>
+<p>Compatible with Cursor, Claude Code, Claude Desktop, Windsurf, Gemini CLI, Codex CLI, and any other MCP-compatible client. This is one of the broadest client compatibility lists in the feature flag MCP space.</p>
+<h3 id="vwo-fme-mcp-server">VWO FME MCP Server</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/wingify/vwo-fme-mcp">wingify/vwo-fme-mcp</a></td>
+<td>3</td>
+<td>TypeScript</td>
+<td>—</td>
+<td>5+</td>
+</tr>
+</tbody>
+</table>
+<p>Official MCP server from VWO (Visual Website Optimizer) for Feature Management &amp; Experimentation. Provides comprehensive feature flag management within AI coding environments — create, view, list, update, and delete feature flags with environment-specific controls.</p>
+<p>Distinctive features include <strong>Cursor Rule Setup</strong> bootstrapping that simplifies configuration of Cursor rules for contextual results and SDK integration, and the ability to create flags with full defaults (variables, variations, associated metrics, rules, and automatic enablement). The server handles the complete flag lifecycle from creation with mandatory requirements through safe removal.</p>
+<p>Compatible with Cursor, VS Code, and Claude. VWO is an established A/B testing and experimentation platform, and their MCP server brings their feature management capabilities directly into AI-assisted development workflows.</p>
 <h3 id="devcycle-mcp-server">DevCycle MCP Server</h3>
 <table>
 <thead>
@@ -184,14 +208,14 @@
 <td>—</td>
 <td>TypeScript</td>
 <td>—</td>
-<td>10+</td>
+<td>35+</td>
 </tr>
 </tbody>
 </table>
-<p>Official MCP server from DevCycle, built into their CLI and exposed as a secure, <strong>OAuth-backed</strong> MCP endpoint. This is one of the few feature flag MCP servers with proper OAuth authentication — the server negotiates streaming (SSE) or HTTP transport, and respects the authenticated user&rsquo;s permission level.</p>
-<p>Tools cover feature and variation CRUD, targeting rules, variables, environments, SDK keys, project introspection, self-targeting overrides, and usage/evaluation analytics. The evaluation analytics capability is notable — agents can query how flags are actually being evaluated in production, not just how they&rsquo;re configured.</p>
+<p>Official MCP server from DevCycle, built into their CLI and now available as a <strong>hosted remote MCP</strong> — no local server setup needed. One of the few feature flag MCP servers with proper <strong>OAuth-backed authentication</strong>, negotiating Streamable HTTP or SSE transport and respecting the authenticated user&rsquo;s permission level.</p>
+<p>The 35+ tools cover the full DevCycle surface: feature and variation CRUD, targeting rules, variables, environments, SDK keys, project introspection, self-targeting overrides, usage/evaluation analytics, and audit history. The evaluation analytics capability is notable — agents can query how flags are actually being evaluated in production, not just how they&rsquo;re configured.</p>
 <p>Safety features are well-thought-out: tools that can change production are clearly marked, and destructive actions require explicit confirmation. The OAuth model means the MCP server inherits the same access controls as the DevCycle dashboard — no separate API key management.</p>
-<p>Born from a hackathon and shipped to production — DevCycle has written about the journey from prototype to production-ready MCP server.</p>
+<p>Born from a hackathon and shipped to production — DevCycle has written about the journey from prototype to production-ready MCP server. Compatible with Claude Desktop, Cursor, VS Code, Windsurf, and other MCP clients.</p>
 <h3 id="statsig-mcp-server">Statsig MCP Server</h3>
 <table>
 <thead>
@@ -209,13 +233,13 @@
 <td>—</td>
 <td>TypeScript</td>
 <td>—</td>
-<td>—</td>
+<td>27</td>
 </tr>
 </tbody>
 </table>
-<p>MCP server for Statsig, the enterprise-grade experimentation platform built by engineers from Facebook&rsquo;s experimentation team (handles 1 trillion+ events daily). Uses a <strong>hybrid three-API architecture</strong>: Console API for project management (team users, event types), HTTP API for real-time feature checks (gates, configs, experiments, layers), and Events API for direct event logging.</p>
-<p>Provides access to feature gates, dynamic configs, experiments, metrics and analytics, user segments, and tags/organization. The real-time feature check capability via the HTTP API is distinctive — most flag MCP servers only support management operations, but Statsig&rsquo;s can actually evaluate flags in real-time.</p>
-<p>Use cases include putting features behind gates, instrumenting apps to log user interaction events, and removing unused gates from codebases with direct context from the Statsig project. Statsig offers unlimited free feature flags at any scale, making the barrier to entry low.</p>
+<p>MCP server for Statsig, the enterprise-grade experimentation platform built by engineers from Facebook&rsquo;s experimentation team (handles 1 trillion+ events daily). Provides <strong>27 Console API tools</strong> organized by resource type, using a <strong>hybrid three-API architecture</strong>: Console API for project management (team users, event types), HTTP API for real-time feature checks (gates, configs, experiments, layers), and Events API for direct event logging.</p>
+<p>Tools cover feature gate management (CRUD), dynamic configuration management (full CRUD), experiment management, user segment creation and management, metrics access and analysis, and audit logs. The real-time feature check capability via the HTTP API is distinctive — most flag MCP servers only support management operations, but Statsig&rsquo;s can actually evaluate flags in real-time. The recently added metrics and metric source tools let agents read and analyze Statsig metrics metadata from within their workflows.</p>
+<p>Statsig&rsquo;s Knowledge Graph (2026) connects codebase, feature gates, experiments, users, and metrics for richer context. Use cases include putting features behind gates, instrumenting apps to log user interaction events, and removing unused gates from codebases. Statsig offers unlimited free feature flags at any scale, making the barrier to entry low.</p>
 <h3 id="configcat-mcp-server">ConfigCat MCP Server</h3>
 <table>
 <thead>
@@ -285,7 +309,7 @@
 </tbody>
 </table>
 <p>Official MCP server from Optimizely for managing the feature flag and experiment lifecycle from within IDEs. Currently in <strong>closed beta</strong> — not publicly available. Runs locally for instant performance, offers comprehensive tool coverage, intelligently abstracts complex operations, and emphasizes security.</p>
-<p>Optimizely is one of the oldest and largest experimentation platforms, so their entry into MCP — even in beta — signals that feature flag MCP servers are becoming table stakes for the category.</p>
+<p>Optimizely is one of the oldest and largest experimentation platforms — named a <strong>Leader in the 2026 Gartner Magic Quadrant for Personalization Engines</strong> (2nd year running). Their entry into MCP — even in beta — signals that feature flag MCP servers are becoming table stakes for the category. An npm package (@simonecoelhosfo/optimizely-mcp-server) is available for developers who want to experiment before the official release.</p>
 <h3 id="harness-fme-mcp-server">Harness FME MCP Server</h3>
 <table>
 <thead>
@@ -308,7 +332,7 @@
 </tbody>
 </table>
 <p>Official MCP server from Harness covering their Feature Management &amp; Experimentation (FME) platform, which includes <strong>Split.io</strong> resources after Harness acquired Split in 2024. The server exposes structured, secure tool sets across pipelines, repositories, logs, and artifact registries.</p>
-<p>FME-specific tools use both the Split.io internal API (scoped by workspace ID for <code>fme_workspace</code>, <code>fme_environment</code>, <code>fme_feature_flag</code>) and the Harness CF admin API (environment-specific definitions with create, delete, and toggle support). The dual-API approach reflects the ongoing integration of Split.io into the Harness platform.</p>
+<p>The server provides <strong>10 consolidated tools and 139 resource types</strong>. FME-specific tools use both the Split.io internal API (scoped by workspace ID for <code>fme_workspace</code>, <code>fme_environment</code>, <code>fme_feature_flag</code>) and the Harness CF admin API (environment-specific definitions with create, delete, and toggle support). The <code>fme_feature_flag</code> resource supports full lifecycle management: create (requires traffic_type_id), list, get, update metadata, delete, and kill/restore/archive/unarchive execute actions. The dual-API approach reflects the ongoing integration of Split.io into the Harness platform.</p>
 <p>Compatible with Claude Code, Windsurf, Cursor, and VS Code. The server goes beyond just feature flags — it&rsquo;s part of Harness&rsquo;s broader platform that covers the full software delivery lifecycle.</p>
 <h2 id="analytics-platforms-with-experimentation">Analytics Platforms with Experimentation</h2>
 <h3 id="posthog-mcp-server">PostHog MCP Server</h3>
@@ -325,16 +349,16 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/PostHog/mcp">PostHog/mcp</a></td>
-<td>—</td>
+<td>141</td>
 <td>Python</td>
 <td>—</td>
 <td>27</td>
 </tr>
 </tbody>
 </table>
-<p>Official MCP server from PostHog, the open-source product analytics platform. With <strong>27 tools across 7 categories</strong> — workspace management, error tracking, dashboards, insights, experiments, flags, and LLM analytics — this is the broadest feature flag MCP server by scope.</p>
-<p>Flag-specific capabilities include creating feature flags (e.g., &ldquo;create a flag called &lsquo;new-checkout-flow&rsquo; enabled for 20% of users&rdquo;), querying flags (find all flags rolled out to less than 50% of users), and creating multivariate flags with multiple variants. But the real power is the analytics context — agents can check experiment results, track errors, view dashboards, and manage flags all in one server.</p>
-<p>The PostHog MCP server has been moved into the PostHog monorepo, with a European fork (cduguet/posthog-eu-mcp) available for EU data residency requirements. Documentation at posthog.com/docs/model-context-protocol.</p>
+<p>Official MCP server from PostHog, the open-source product analytics platform. With <strong>27 tools across 7 categories</strong> — workspace management, error tracking, dashboards, insights, experiments, flags, and LLM analytics — this is the broadest feature flag MCP server by scope and the most-starred dedicated feature flag MCP server at 141 stars.</p>
+<p>Flag-specific capabilities include creating feature flags (e.g., &ldquo;create a flag called &lsquo;new-checkout-flow&rsquo; enabled for 20% of users&rdquo;), querying flags (find all flags rolled out to less than 50% of users), creating multivariate flags, and scheduling future flag changes. But the real power is the analytics context — agents can check experiment results, track errors, view dashboards, and manage flags all in one server.</p>
+<p><strong>Note:</strong> The standalone PostHog/mcp repository was <strong>archived in January 2026</strong> and moved into the PostHog monorepo. PostHog also offers an <a href="https://github.com/PostHog/ai-plugin">ai-plugin</a> for Claude Code, Cursor, Gemini, Codex, and other AI coding tools. The recommended installation path is now via PostHog&rsquo;s AI wizard at mcp.posthog.com. A European fork (cduguet/posthog-eu-mcp) is available for EU data residency requirements.</p>
 <h3 id="amplitude-mcp-server">Amplitude MCP Server</h3>
 <table>
 <thead>
@@ -420,7 +444,7 @@
 <p><strong>Best for developer experience</strong>: Flagsmith MCP — role-based tool exposure prevents tool overload.</p>
 <p><strong>Best for full-stack product teams</strong>: PostHog MCP — 27 tools spanning flags, experiments, analytics, errors, and session replay.</p>
 <p><strong>Best for security-conscious teams</strong>: DevCycle MCP — OAuth authentication with permission-level enforcement.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was refreshed on 2026-04-25 using Claude Opus 4.6 (Anthropic). Star counts, tool counts, and platform details verified via web research. VWO FME added as new entry.</em></p>
 
       </div>
 
@@ -449,16 +473,16 @@
 
   
     <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-04-25 21:00:00</span></div>
-  <h3><a href="/reviews/api-gateway-api-management-mcp-servers/">API Gateway &amp; API Management MCP Servers — Kong, Higress, APISIX, Postman, Gravitee, and More</a></h3>
-  <p>API gateway and API management MCP servers that connect AI agents to API infrastructure — from converting OpenAPI specs into MCP tools automatically, to governing agent traffic through gateway policies, to managing API collections and workspaces. **AI-native API gateway** — alibaba/higress (8.3K stars, Apache-2.0, Go) is the first major gateway with native MCP server hosting. Converts any OpenAPI spec to remote MCP server via openapi-to-mcpserver tool. Built-in auth, rate limiting, audit logs, and observability for all MCP tool calls. Production-validated at Alibaba handling hundreds of thousands of requests per second. Public MCP marketplace at mcp.higress.ai. **API development platform** — postmanlabs/postman-mcp-server (225 stars, TypeScript) connects AI agents to Postman workspaces with 100&#43; tools in full mode. Manage collections, environments, API specs, and generate client code. OAuth and API key auth. Minimal/full/code modes for different context budgets. **OpenAPI-to-MCP conversion** — automation-ai-labs/mcp-link (603 stars, MIT, Go) converts any OpenAPI V3 spec to a complete MCP server with zero code modification. 10 pre-configured API integrations (Stripe, GitHub, Slack, etc.). harsha-iiiv/openapi-mcp-generator (570 stars, MIT, TypeScript) generates typed MCP servers with stdio, SSE, and Streamable HTTP transports, plus Zod validation and OAuth2 support. janwilmake/openapi-mcp-server (889 stars, MIT, TypeScript) provides runtime OpenAPI exploration through oapis.org without code generation. **Gateway management** — api7/apisix-mcp (36 stars, Apache-2.0, TypeScript, 32 tools) bridges LLMs with APISIX Admin API for natural language gateway management — routes, services, upstreams, plugins, SSL, consumers, and secrets. Kong/mcp-konnect (41 stars, Apache-2.0, TypeScript, 11 tools) managed Konnect analytics and configuration — now deprecated, but Kong Gateway 3.14&#43; includes native AI MCP Proxy plugin for aggregating multiple upstream MCP servers behind a single route. gravitee-io/gravitee-apim-mcp-server (2 stars, MIT, TypeScript) enables natural language interaction with Gravitee API Management. Gravitee APIM 4.8&#43; also converts any HTTP proxy API into an MCP server natively. **API gateway MCP features** — Kong Gateway 3.14 AI MCP Proxy aggregates multiple MCP servers behind one endpoint with full gateway policies. Azure API Management exposes any REST API as remote MCP server with auth, rate limiting, and monitoring built in. Apigee auto-generates MCP servers from API specs. Zuplo auto-generates MCP servers from existing routes with git-synced policies. Tyk AI Studio (open-sourced March 2026) generates MCP tools from OpenAPI specs. **OpenAPI bridge tools** — Vizioz/Swagger-MCP (150 stars, MIT, TypeScript, 5 tools) generates TypeScript MCP tool definitions from Swagger specs. awslabs/mcp includes OpenAPI MCP Server supporting Basic, Bearer, API Key, and Cognito auth. Multiple smaller converters exist for Java, Python, and C#. **Emerging gateway** — STOA (Apache-2.0, Rust&#43;Python) is the first gateway built natively for MCP with European compliance focus (DORA, NIS2, GDPR). Early stage but architecturally interesting. **Platform connectors** — Pipedream MCP (11K&#43; stars) provides 10,000&#43; pre-built tools across 3,000&#43; APIs — effectively a universal API connector layer rather than traditional gateway. Rating: 4.0/5 — the convergence of API gateways and MCP is the most architecturally significant trend in the MCP ecosystem. Every major gateway vendor now supports MCP in some form. Deducted 1.0 for fragmented OpenAPI-to-MCP tooling (too many converters, no standard), Kong deprecating its dedicated MCP server in favor of gateway-native approach (transition pain), and most gateway MCP features requiring enterprise/cloud tiers.</p>
+  <div class="card-meta"><span>Review</span> <span>2026-04-25 22:30:00</span></div>
+  <h3><a href="/reviews/deployment-platform-paas-mcp-servers/">Deployment Platform &amp; PaaS MCP Servers — Vercel, Cloudflare, Netlify, Railway, Dokploy, Coolify, ArgoCD, FluxCD, and More</a></h3>
+  <p>Deployment platform and PaaS MCP servers for AI-assisted application deployment, hosting management, and GitOps workflows — enabling AI agents to deploy code, manage environments, check deployment status, and roll back releases without leaving the IDE. **Cloud edge platform** — Cloudflare offers the most comprehensive deployment platform MCP server, covering 2500&#43; API endpoints across Workers, Pages, KV, R2, D1, DNS, Firewall, Load Balancers, Stream, Images, AI Gateway, Vectorize, Access, and more via cloudflare/mcp. Domain-specific servers at *.mcp.cloudflare.com provide curated, typed tools per product area. cloudflare/workers-mcp bridges Claude Desktop to Cloudflare Workers. Remote MCP with OAuth. **Frontend hosting** — Vercel&#39;s official MCP server implements the latest MCP Authorization and Streamable HTTP specifications. Tools for teams, projects, deployments, deployment events, environment management. OAuth-based authentication with approved AI clients only. Beta on all plans. vercel/mcp-handler helps build MCP servers on Next.js, Nuxt, Svelte. vercel/next-devtools-mcp provides Next.js development tools for coding agents. **Jamstack deployment** — netlify/netlify-mcp (official) provides 9 tools for creating and deploying sites, managing environment variables and secrets, installing extensions, configuring access controls, fetching user/team info, and managing form submissions. From prompt to production in a single conversation. Community version DynamicEndpoints/Netlify-MCP-Server offers 43 tools with full CLI coverage. **Developer PaaS** — railwayapp/railway-mcp-server (186 stars, official) enables creating projects, deploying templates, managing environments, pulling environment variables, and retrieving build/deployment logs for debugging. Works with Claude Desktop and Cursor. Community version jason-tan-swe/railway-mcp (72 stars) provides additional features. **Self-hosted PaaS** — Dokploy (26K stars platform) has an official MCP server (Dokploy/mcp) with 508 tools across 49 categories covering projects, applications, databases, notifications, SSO, Docker, backups, and more. Modern HTTP mode with Streamable HTTP and Legacy SSE. The most tool-rich deployment MCP server reviewed. StuMason/coolify-mcp provides 38 tools for managing the Coolify self-hosted PaaS (35K stars platform) — teams, projects, servers, private keys, applications, databases, services, environment variables, and deployments. dazeb/coolify-mcp-enhanced adds AI-powered natural language infrastructure management. **Enterprise deployment** — heroku/heroku-mcp-server (official) manages Heroku applications via CLI with native Salesforce Agentforce integration. Official templates in Python, Node.js, Ruby, and Go. heroku-inference add-on handles tool routing, authentication, and scaling. **Cloud infrastructure** — digitalocean/digitalocean-mcp (official) covers 9 services including App Platform, Databases, DOKS, Droplets, Networking, and Spaces Storage. From prompt to deployed app. App Platform now supports native remote MCP server hosting with HTTP response streaming. **Deployment automation** — deployhq/deployhq-mcp-server (official) provides 7 tools: list projects, get project details, list servers, list deployments, get deployment details, get deployment log, and create deployment. TypeScript with Zod validation. npx installation. **GitOps platforms** — argoproj-labs/mcp-for-argocd (354 stars) enables AI-assisted Kubernetes GitOps with list_clusters, list_applications, get_application. Supports stdio and HTTP stream transport. severity1/argocd-mcp (community) adds natural language ArgoCD management. controlplaneio-fluxcd/flux-operator includes an MCP server component for AI-assisted Flux GitOps — traces issues from ResourceSets/HelmReleases/Kustomizations down to pod logs. Single Go binary. **Cloud deployment** — brannn/fly-mcp provides tools for managing Fly.io infrastructure: list apps, get app info, check status, restart applications. NakulRajan/mcp-fly-deployer generates Docker configurations for deploying MCP servers to Fly.io. Fly.io&#39;s official fly mcp launch command deploys stdio MCP servers to Fly machines. **Community** — Quegenx/vercel-mcp-server, nganiet/mcp-vercel (community Vercel alternatives), MCERQUA/netlify-mcp (community Netlify), GoCoder7/coolify-mcp-server (4-tool Coolify), Magnazee/railwaymcp (simple Railway deployer). Rating: 4.0/5 — every major deployment platform now has an official MCP server. Cloudflare leads in API breadth (2500&#43; endpoints), Dokploy leads in tool count (508 tools), and ArgoCD leads community adoption for GitOps (354 stars). The self-hosted PaaS space (Dokploy, Coolify) has particularly strong MCP coverage. Deducted 1.0 for fragmented quality across platforms (some official servers are very thin), missing write-safety controls (unlike PagerDuty&#39;s read-only default, most deployment servers allow destructive operations without guardrails), and limited cross-platform deployment orchestration.</p>
 </div>
 
   
     <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-04-25 17:00:00</span></div>
-  <h3><a href="/reviews/code-coverage-test-intelligence-mcp-servers/">Code Coverage &amp; Test Intelligence MCP Servers — SonarQube, Codacy, Test-Coverage-MCP, Codecov, and More</a></h3>
-  <p>Code coverage and test intelligence MCP servers that make AI agents aware of test gaps, quality gates, and coverage trends — turning coverage-blind code generation into coverage-aware development. **Official enterprise coverage** — SonarSource/sonarqube-mcp-server (540 stars, Kotlin, official) connects AI agents to SonarQube Server or Cloud for coverage metrics, quality gates, issue tracking, and security hotspots. Native MCP endpoint in SonarQube Cloud (March 2026) — zero installation. Supports Claude Code, VS Code, Cursor, Gemini CLI, and 10&#43; other clients. Docker-based for self-hosted instances. **Multi-platform quality** — codacy/codacy-mcp-server (56 stars, MIT, TypeScript, 23 tools across 8 categories) integrates coverage metrics with code quality, security findings, duplication analysis, and pull request diff coverage. Install from VS Code/Cursor extension. Works with any CI-generated coverage report. **Coverage awareness for agents** — goldbergyoni/test-coverage-mcp (40 stars, MIT, TypeScript, 4 tools) solves coverage blindness during coding sessions. LCOV-based parsing delivers coverage summaries in under 100 tokens instead of thousands. Baseline tracking shows coverage impact of each change. Works with any language that produces LCOV output. By Yoni Goldberg (Node.js best practices, 103K GitHub stars). **Codecov integration** — turquoisedragon2926/codecov-mcp-server (MIT, TypeScript, 8 tools) wraps Codecov&#39;s API for coverage totals, file-level line-by-line data, hierarchical coverage trees, and cross-branch/PR comparisons. Early-stage (6 commits) but functionally complete. **Vitest coverage** — djankies/vitest-mcp (14 stars, TypeScript, 4 tools) provides line-by-line coverage analysis with gap identification for Vitest projects. LLM-optimized output reduces token waste. Multi-repo context switching. Safety guards prevent full-project runs. **Multi-framework test runner** — privsim/mcp-test-runner (15 stars, MIT, TypeScript) unifies test execution across Bats, Pytest, Jest, Go, Rust, and Flutter through a single MCP interface. Parsed results with pass/fail summaries. **Enterprise entrants** — Parasoft MCP server connects AI agents to C/C&#43;&#43;test coverage data, generating targeted tests for uncovered paths. Perforce Helix QAC 2026.1 added MCP for static analysis context. TestSprite MCP provides AI-first autonomous testing with 42%→93% pass rate improvement. **The gap this fills** — both our Testing &amp; QA and Code Quality reviews identified coverage reporting as a missing capability. This category is now emerging with SonarQube&#39;s official backing, purpose-built tools like test-coverage-mcp, and platform integrations from Codacy and Codecov. Rating: 3.5/5 — strong enterprise options and a clever coverage-awareness tool, but most open-source servers have minimal adoption, no unified standard for coverage data exchange exists, and mutation testing is nearly absent.</p>
+  <div class="card-meta"><span>Review</span> <span>2026-04-25 21:30:00</span></div>
+  <h3><a href="/reviews/sre-incident-management-mcp-servers/">SRE &amp; Incident Management MCP Servers — PagerDuty, Rootly, FireHydrant, Grafana OnCall, incident.io, and More</a></h3>
+  <p>SRE and incident management tools for AI-assisted on-call, alerting, and incident response through MCP servers — enabling AI agents to triage incidents, check who&#39;s on-call, find related past incidents, and coordinate response without leaving the IDE. **Most tools** — PagerDuty/pagerduty-mcp-server (63 stars, Apache-2.0, Python) is the official PagerDuty MCP server with 62 tools across incidents, alerts, escalation policies, on-call schedules, services, teams, status pages, event orchestrations, and incident workflows. Read-only by default with explicit --enable-write-tools flag for safety. Docker and local deployment. EU/US region support. **AI-powered analysis** — Rootly-AI-Labs/Rootly-MCP-server (42 stars, Python) provides 150&#43; tools including custom agentic tools: find_related_incidents uses TF-IDF similarity analysis on historical data, suggest_solutions mines past resolutions, check_oncall_health_risk detects responder workload problems, get_oncall_handoff_summary provides shift transition context. Dynamic tool generation from OpenAPI spec. Smart pagination prevents context overflow. Hosted and local deployment options. **Observability platform** — grafana/mcp-grafana (2.9K stars, Go) includes 4 OnCall tools (list_schedules, get_shift_details, get_current_oncall_users, list_alert_groups) and 3 Incident tools (list_incidents, create_incident, add_activity_to_incident) as part of its 50&#43; tool observability MCP server. OnCall &#43; Incident &#43; alerting &#43; dashboards &#43; Prometheus &#43; Loki in one server. **Reliability platform** — firehydrant/firehydrant-mcp (4 stars, MIT, TypeScript) is the official FireHydrant MCP server. Incident management, alert tracking, retrospective generation. Auto-generated via Speakeasy. v0.0.4. NPM package with multi-IDE support. **Hosted remote MCP** — incident.io launched an officially supported hosted MCP server in March 2026, superseding the open-source prototype (incidentio-mcp-golang, 30 stars, archived April 2026). Remote MCP connection with no local server needed. Full incident lifecycle management. **Alert management** — giantswarm/mcp-opsgenie (9 stars, Apache-2.0, Go) provides 8 tools for OpsGenie alert management: list/get/acknowledge/unacknowledge alerts, team management, heartbeat monitoring. Multi-transport (stdio, SSE, HTTP). Self-update capability. Note: Atlassian plans to sunset OpsGenie by 2027, migrating to Jira Service Management. **Alerting platform** — iLert/mcp-ilert (14 stars, MIT) is the official ilert MCP server using remote Streamable HTTP transport. Alerting and incident management. API key authentication. **Observability stack** — Better Stack offers a remote MCP server at mcp.betterstack.com with OAuth authentication. Uptime monitoring, log analysis, incident management, status pages. ClickHouse SQL queries against telemetry data. **Community** — DEEJ4Y/squadcast-mcp-server (0 stars, TypeScript) provides basic Squadcast integration: on-call lookup, incident management, status page updates, schedule creation. Personal use. Also: wpfleger96/pagerduty-mcp-server (community PagerDuty alternative), burakdirin/mcp-opsgenie (comprehensive OpsGenie with tools/resources/prompts), daviddykeuk/opsgenie-mcp (alerts-focused), naveen09/mcp_pagerduty (community). Rating: 4.0/5 — every major incident management platform now has MCP support, with PagerDuty&#39;s 62-tool official server and Rootly&#39;s AI-powered analysis standing out. Grafana&#39;s unified observability MCP covers OnCall alongside dashboards and alerting. incident.io&#39;s shift to hosted remote MCP shows the direction the market is heading. Deducted 1.0 for low adoption on most servers (PagerDuty at just 63 stars despite being official), OpsGenie&#39;s uncertain future with Atlassian sunset, and limited write capabilities in several implementations.</p>
 </div>
 
   
@@ -472,7 +496,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T12:00:00+09:00","description":"Feature flag and experimentation MCP servers are giving AI coding assistants direct access to flag management, A/B testing, and progressive rollouts.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Feature Flags \u0026 Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More"},"name":"Feature Flags \u0026 Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-25T00:00:00+09:00","datePublished":"2026-04-25T23:30:00+09:00","description":"Feature flag and experimentation MCP servers reviewed: LaunchDarkly (13 stars, hosted, 3 MCP endpoints), GrowthBook (21 stars, 14 tools, open-source), Unleash (6 stars, best-practice workflows), Flagsmith (role-based tooling, Gemini/Codex CLI support), DevCycle (35+ tools, OAuth-backed, hosted remote), Statsig (27 Console API tools, metrics), ConfigCat (full management API), Flipt (git-native), VWO FME (3 stars, new entry), Optimizely (closed beta, Gartner Leader 2026), PostHog (141 stars, 27 tools, archived to monorepo), Harness FME (10 tools, 139 resource types, incl. Split.io), Amplitude (experimentation agent). Rating: 4.0/5.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Feature Flags \u0026 Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More"},"name":"Feature Flags \u0026 Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/"}
 </script>
 
 

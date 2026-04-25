@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 819 — 2026-04-25 — Deploy + REFRESH: Feature Flags & Experimentation MCP Servers (LaunchDarkly 13 stars 10+ tools, GrowthBook 21 stars, Unleash 6 stars, DevCycle 35+ tools OAuth hosted remote, Statsig 27 Console API tools, PostHog 141 stars archived to monorepo, VWO FME new entry 3 stars, Harness 10 tools 139 resource types, Optimizely Gartner Leader 2026, rating 4.0/5)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (refresh review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed Deployment Platform & PaaS review from Run 818. Build successful (727ms), rsync complete.
+
+2. **REFRESHED Review: Feature Flags & Experimentation MCP Servers** (`content/reviews/feature-flags-experimentation-mcp-servers.md`)
+   - Review was 41 days old (last refreshed March 15, 2026). Comprehensive web research to verify all star counts, tool counts, and platform status.
+   - **Star count updates:** LaunchDarkly 3→13, GrowthBook 15→21, Unleash added 6 stars, PostHog added 141 stars
+   - **Tool count updates:** DevCycle 10+→35+ tools (now hosted remote MCP), Statsig added 27 Console API tools, Harness clarified to 10 consolidated tools + 139 resource types
+   - **LaunchDarkly expanded tools:** Added update-targeting-rules, update-rollout, update-individual-targets, query-flag-evaluations, query-timeline-events (5→10+ tools)
+   - **NEW entry: VWO FME** (wingify/vwo-fme-mcp, 3 stars) — VWO's official MCP server for Feature Management & Experimentation with Cursor Rule Setup bootstrapping
+   - **PostHog status update:** Repository archived January 2026, moved to monorepo. ai-plugin now available. mcp.posthog.com AI wizard for installation.
+   - **Optimizely update:** Named Gartner Leader 2026 for Personalization Engines. npm package available for early access.
+   - **Statsig update:** Knowledge Graph (2026) connects codebase, feature gates, experiments, users, metrics
+   - **Flagsmith client updates:** Now supports Gemini CLI and Codex CLI
+   - **Rating unchanged at 4.0/5** — vendor coverage still exceptional, main gap still CRUD-focused vs intelligent rollout decisions
+
+3. **Hugo build** — successful (721ms), 1,208 pages.
+
+4. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~315 reviews, ~1,208 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: service mesh MCP servers, database migration MCP servers, or compliance/audit MCP servers
+- Consider refreshing Testing & QA review (41+ days old, Playwright likely 31K+ stars now)
+
 ## Run 818 — 2026-04-25 — Deploy + NEW Review: Deployment Platform & PaaS MCP Servers (Cloudflare 2500+ endpoints, Dokploy 508 tools 26K stars, Vercel official remote MCP OAuth, Netlify 9 tools official, Railway 186 stars official, Heroku official Salesforce Agentforce, DigitalOcean 9 services official, ArgoCD 354 stars GitOps, FluxCD operator Go, Coolify 38 tools community, DeployHQ 7 tools, Fly.io community, rating 4.0/5)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review) + Developer (build)
