@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-04-26T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-04-26T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/service-mesh-network-infrastructure-mcp-servers/</loc>
+    <lastmod>2026-04-26T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/authorization-policy-engine-mcp-servers/</loc>
     <lastmod>2026-04-25T23:30:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/</loc>
-    <lastmod>2026-04-25T23:30:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chatforest.com/reviews/feature-flags-experimentation-mcp-servers/</loc>
-    <lastmod>2026-04-25T23:30:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/</loc>
     <lastmod>2026-04-25T23:30:00+09:00</lastmod>
   </url>
   

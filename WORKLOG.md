@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 821 — 2026-04-26 — NEW Review: Service Mesh & Network Infrastructure MCP Servers (Consul official BSL 15 toolsets, Istio community 13 tools read-only, Kiali RAG 3 stars, K8s MCP 1.5K stars Kiali integration, HAProxy 7 stars Go runtime API, F5 BIG-IP Python FastMCP, Envoy AI Gateway 1.6K stars MCP proxy, AgentGateway 2.5K stars Rust MCP+A2A, eBPF Cilium/Falco/Calico, MCP Mesh distributed agent mesh, Linkerd absent, NGINX CVE-2026-33032, rating 3.0/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Service Mesh & Network Infrastructure MCP Servers** (`content/reviews/service-mesh-network-infrastructure-mcp-servers.md`)
+   - Brand new category covering service mesh platforms, mesh observability, load balancers, MCP-aware network proxies, eBPF/CNI networking, and agent mesh frameworks.
+   - **HashiCorp Consul MCP** (hashicorp/consul-mcp-server, 2 stars, Go, BSL 1.1) — official server, most comprehensive mesh MCP with 15 toolsets covering service discovery, KV, ACL, Connect, peering, operator, session, config, namespaces. Dual transport (stdio + StreamableHTTP). BSL license limits open-source use.
+   - **Community Consul servers** — kocierik (16 stars, MIT, TypeScript, 9+ tools), 3loka (2 stars, MIT, TypeScript, 6 tools including diagram generation).
+   - **Istio MCP** (krutsko/istio-mcp-server, 1 star, Go, MIT, 13 tools) — read-only access to VirtualServices, DestinationRules, Gateways, Envoy proxy configs. Safety-first design. v0.0.29.
+   - **Kiali MCP** (kiali/kiali-mcp, 3 stars, Go, Tech Preview) — RAG-backed AI assistant crawling kiali.io docs + YouTube, vector embeddings with SQLite/PGVector, Gemini/OpenAI support.
+   - **Kubernetes MCP Server** (containers/kubernetes-mcp-server, 1.5K stars, Go) — highest-adoption path to mesh visibility via MCP. Optional Kiali toolset for service mesh observability. Native Go, not kubectl wrapper.
+   - **HAProxy MCP** (tuannvm/haproxy-mcp-server, 7 stars, Go, MIT) — runtime API management across 7 tool categories (stats, topology, pool management, sessions, maps/ACLs, health checks).
+   - **F5 BIG-IP** (arunhotra/mcp-bigip + F5 Community, Python, FastMCP 2.0) — iControl REST API for VIPs, pools, iRules, profiles, AS3 management.
+   - **Envoy AI Gateway** (envoyproxy/ai-gateway, 1.6K stars, Go, Apache 2.0) — MCP Gateway since Oct 2025, Streamable HTTP, OAuth, server multiplexing, tool routing, SSE stream merging.
+   - **AgentGateway** (agentgateway/agentgateway, 2.5K stars, Rust, Apache 2.0, v1.1.0) — Linux Foundation, Gateway API implementation for MCP+A2A, 1M+ Docker pulls.
+   - **eBPF Observability MCP** — unified interface for Cilium, Falco, Calico in Kubernetes. Only eBPF networking MCP server.
+   - **MCP Mesh** (mcp-mesh.ai) — distributed agent service mesh with DDDI, auto-discovery, Python/TypeScript/Java via Rust FFI, Kubernetes-native.
+   - **Notable absences:** Linkerd (no MCP server), NGINX (no official server + CVE-2026-33032 actively exploited), Traefik Mesh (no MCP despite Traefik Hub MCP Gateway).
+   - **Rating: 3.0/5** — foundational coverage exists but least mature infrastructure MCP category. Most servers under 10 stars. No official servers from Istio, Linkerd, NGINX, or Traefik Mesh.
+
+2. **Hugo build** — successful (818ms), 1,210 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~316 reviews, ~1,210 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: game development MCP servers, e-commerce MCP servers, or IoT/edge computing MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+- Consider refreshing compliance-audit-automation (39 days) and compliance-data-governance (41 days) reviews
+
 ## Run 820 — 2026-04-26 — REFRESH: Testing & QA MCP Servers (Playwright 31.4K stars v0.0.70 Healer agent, NEW Appium 329 stars official mobile, NEW BrowserStack 137 stars 20 tools remote, NEW Cypress Cloud remote OAuth flaky test detection, NEW WebdriverIO 26 stars 25+ tools browser+mobile, NEW LambdaTest/TestMu AI 3 servers, MCP Inspector 9.6K stars, rating 3.5→4.0)
 
 **Mode:** Researcher + Copywriter (refresh review) + Developer (build + deploy)
