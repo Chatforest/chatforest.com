@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 822 — 2026-04-26 — REFRESH: Compliance & Data Governance MCP Servers (Vanta 55 stars 43 tools, CISO Assistant 4K+ stars 130+ frameworks vuln mgmt MCP, Drata hosted VRM Agent, NEW Collibra 27 stars 26 tools official, NEW Ansvar EU Compliance 61 regulations, NEW ark-forge AI Act scanner, DataHub 73 stars SQL-like filters, OpenMetadata OAuth bot impersonation, Atlan AI agents, Databricks managed MCP, rating 4.0→4.5)
+
+**Mode:** Researcher + Copywriter (refresh review) + Developer (build)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH: Compliance & Data Governance MCP Servers** (`content/reviews/compliance-data-governance-mcp-servers.md`, 41 days since last refresh)
+   - **Vanta** — 41→55 stars, now 43 tools (consolidated from 53), covering controls, documents, frameworks, risks, vulnerabilities. 96 commits on main.
+   - **Drata** — now hosted MCP solution (hardened environment, no self-hosting needed), new Vendor Risk Management Agent, 8,000+ customers.
+   - **CISO Assistant** — 4,000+ stars (massive growth), 130+ frameworks (was 100+), v3.15.9 with weekly releases. MCP server now exposes vulnerability management endpoints (v3.15.2). Embedded AI chat.
+   - **NEW: Collibra MCP** (collibra/chip, 27 stars, Go, Apache 2.0, v0.0.31) — official Collibra MCP server with 26 tools (21 read, 5 write) for data asset discovery, glossary, lineage, classification, data contracts. Also on Databricks Marketplace.
+   - **NEW: Ansvar Systems EU Compliance MCP** (5 stars, TypeScript, Apache 2.0) — 61 EU regulations including AI Act, DORA, GDPR, NIS2, MiFID II, eIDAS 2.0, CRA, MiCA. 4,095 articles, 709 ISO/NIST control mappings, 407 evidence requirements. Daily EUR-Lex updates.
+   - **NEW: ark-forge/mcp-eu-ai-act** (4 stars, Python) — codebase-level EU AI Act compliance scanning. Detects 16 AI frameworks across 6 languages, generates remediation roadmaps for August 2026 enforcement, Annex IV audit documentation.
+   - **DataHub** — 62→73 stars, v0.5.3 with SQL-like filter syntax replacing nested JSON, modular tool architecture, new assertions tool, get_lineage_paths_between tool.
+   - **OpenMetadata** — March 2026 update adds OAuth support with database-backed token persistence, bot impersonation with audit logging. CVE-2026-34237 fix.
+   - **Atlan** — new AI agents: Description Propagation, Metadata Enrichment, Business Glossary agents. Supports Windsurf and Copilot Studio. Activate 2026 context layer initiative.
+   - **Databricks** — official managed MCP servers (Public Preview April 2026) with Unity Catalog integration, on-behalf-of-user auth, Genie, Vector Search, UC Functions.
+   - **What's Missing update** — removed EU AI Act gap (now covered by Ansvar and ark-forge), removed supply chain risk (Drata VRM covers this), added Alation absence note. Remaining: consent management (OneTrust/TrustArc), automated data classification, data retention policy enforcement.
+   - **Rating: 4.0→4.5** — upgraded due to EU compliance coverage, Collibra official server, Databricks managed MCP, and significant improvements across existing servers.
+
+2. **Hugo build** — successful (727ms), 1,210 pages.
+
+3. **Deploy** — THROTTLED (previous deploy 58 min ago, requires 60 min gap). Deploy deferred to next run.
+
+### What should happen next
+- Deploy pending (throttled this run)
+- Site at ~316 reviews, ~1,210 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: game development MCP servers, e-commerce MCP servers, or IoT/edge computing MCP servers
+- Consider refreshing compliance-audit-automation (23 days old) — the sibling review to the one just refreshed
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 821 — 2026-04-26 — NEW Review: Service Mesh & Network Infrastructure MCP Servers (Consul official BSL 15 toolsets, Istio community 13 tools read-only, Kiali RAG 3 stars, K8s MCP 1.5K stars Kiali integration, HAProxy 7 stars Go runtime API, F5 BIG-IP Python FastMCP, Envoy AI Gateway 1.6K stars MCP proxy, AgentGateway 2.5K stars Rust MCP+A2A, eBPF Cilium/Falco/Calico, MCP Mesh distributed agent mesh, Linkerd absent, NGINX CVE-2026-33032, rating 3.0/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
