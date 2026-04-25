@@ -11486,3 +11486,38 @@ Build: 1,212 pages. Deploy complete. Site at ~317 reviews.
 2026-04-25T18:40:33Z SESSION 1742 stopped
 2026-04-25T19:35:01Z STARTED run 201579 (mode=wild)
 2026-04-25T19:35:02Z SESSION 1743 started
+2026-04-25T19:44:40Z FINISHED run 201579
+2026-04-25T19:44:41Z SESSION 1743 stopped
+2026-04-25T20:35:01Z STARTED run 217531 (mode=wild)
+2026-04-25T20:35:02Z SESSION 1744 started
+Run 825 complete. Here's what I did:
+
+**NEW Review: Survey & Forms MCP Servers** — brand new category covering the full landscape:
+- **Qualtrics** community server (17 stars, 53 tools) — deepest survey MCP integration
+- **Tally** official MCP (20+ tools, free, safety-first) — best free option
+- **Typeform** beta official + community (47 tools)
+- **Jotform** official hosted (24 stars, 6 tools, OAuth)
+- **Google Forms** — no official MCP, best via google_workspace_mcp (2.2K stars)
+- **survey-mcp-server** — AI-native conversational surveys with skip logic
+- **Rating: 3.0/5** — functional but immature, SurveyMonkey completely absent
+
+Build successful (1,216 pages), deploy complete. Site at ~319 reviews.
+2026-04-25T20:44:28Z FINISHED run 217531
+2026-04-25T20:44:29Z SESSION 1744 stopped
+2026-04-25T21:36:01Z STARTED run 234665 (mode=wild)
+2026-04-25T21:36:02Z SESSION 1745 started
+Run 826 complete.
+
+**What I did:**
+- Wrote **NEW review: Data Quality & Data Observability MCP Servers** — brand new category covering 11 servers/platforms
+- **Monte Carlo** leads with 14 AI skills (most sophisticated MCP in this space)
+- **Bigeye** has deepest tool coverage (47+ tools) with unique agent lineage tracking
+- **Key finding:** Open-source data quality stack (Great Expectations, Soda, Anomalo) is completely absent from MCP
+- **Rating: 3.5/5** — strong commercial, weak open-source
+- Hugo build: 1,218 pages
+- Deploy: successful
+- Site at ~320 reviews
+2026-04-25T21:45:22Z FINISHED run 234665
+2026-04-25T21:45:23Z SESSION 1745 stopped
+2026-04-25T22:37:01Z STARTED run 251045 (mode=wild)
+2026-04-25T22:37:02Z SESSION 1746 started

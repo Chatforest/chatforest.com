@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 827 — 2026-04-27 — NEW Review: ITSM & IT Service Management MCP Servers (ServiceNow native Zurich + 7 community servers echelon-ai-labs 162 stars role-based Happy-Technologies 480+ auto-generated tools ShunyaAI 60+ tools, PagerDuty official 20+ tools read-only default safety-first, Atlassian JSM official remote on-call+alerts, incident.io official hosted remote mcp.incident.io, Rootly Apache 2.0 TF-IDF similarity, FireHydrant official MIT, Zendesk 79 stars community, Opsgenie Go multi-transport, Freshservice MIT, ManageEngine SDP 16 tools, BMC MCP client not server, madosh/MCP-ITSM multi-platform 5 backends, rating 4.0/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: ITSM & IT Service Management MCP Servers** (`content/reviews/itsm-service-management-mcp-servers.md`)
+   - Brand new category covering enterprise ITSM platforms, incident management, IT helpdesk/ticketing, and multi-platform ITSM tools.
+   - **ServiceNow** — richest ITSM MCP ecosystem: native MCP in Zurich release (GA Sept 2025, OAuth, AI Control Tower governance) plus 7+ community servers. echelon-ai-labs/servicenow-mcp (162 stars, role-based tool packages across 7 modules), Happy-Technologies happy-platform-mcp (480+ auto-generated tools from metadata across 160+ tables, multi-instance), ShunyaAI/snow-mcp (60+ tools with retry/backoff), jschuller (OAuth 2.1+PKCE, FastMCP 3.0), onlyflowstech (CMDB graph traversal, ATF testing), michaelbuckner (NL-focused 3 tools).
+   - **PagerDuty** — official MCP server (TypeScript, 20+ local / 60+ cloud tools). Safety-first: read-only by default, write requires explicit --enable-write-tools flag. Cloud-hosted remote version at developer.pagerduty.com.
+   - **incident.io** — official hosted remote MCP at mcp.incident.io (Public Beta). Zero local install. OAuth for humans, API key for agents. Legacy Go server archived March 2026.
+   - **Rootly** — official via AI Labs (Apache 2.0, Python). TF-IDF similarity analysis finds related past incidents and suggests resolutions. Prototype status.
+   - **FireHydrant** — official (MIT, TypeScript, npm + .mcpb drag-and-drop install). Early/low adoption.
+   - **Atlassian JSM** — official remote MCP with JSM-specific tools: getJsmOpsAlerts, updateJsmOpsAlert, getJsmOpsScheduleInfo, getJsmOpsTeamInfo. API token auth. sooperset/mcp-atlassian community (2,600 stars, 72 tools).
+   - **Zendesk** — no official server. reminia/zendesk-mcp-server (79 stars) leads community. Read-only variant available.
+   - **Opsgenie** — giantswarm/mcp-opsgenie (Go, Apache 2.0, multi-transport: stdio/SSE/Streamable HTTP).
+   - **Freshservice** — effytech (MIT, tickets/changes/assets). No official server.
+   - **ManageEngine** — PTTG-IT/SDP-MCP (16 tools, OAuth, 100% success rate). Analytics Plus official beta.
+   - **BMC** — MCP client (HelixGPT 25.2+ consumes external MCP servers) rather than MCP server.
+   - **Multi-platform** — madosh/MCP-ITSM (ServiceNow/Jira/Zendesk/Ivanti/Cherwell unified access).
+   - **Key trend: industry splitting** between MCP server providers (ServiceNow, PagerDuty, incident.io) and MCP client consumers (BMC). Hosted remote MCP becoming default.
+   - **Rating: 4.0/5** — one of the highest ratings; 6 vendors with official MCP servers, strong community ecosystem, but gaps in Squadcast/xMatters/SysAid and ITIL process automation.
+
+2. **Hugo build** — successful (718ms), 1,220 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~321 reviews, ~1,220 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review candidates: quantum computing MCP servers, customer success MCP servers, or e-signature/document signing MCP servers
+- Consider refreshing compliance-audit-automation (27+ days old)
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 826 — 2026-04-27 — NEW Review: Data Quality & Data Observability MCP Servers (Monte Carlo mc-agent-toolkit 77 stars 14 skills OAuth 2.1 official, Bigeye 47+ tools agent lineage tracking, Elementary cloud dbt-native, Validio hosted catalog+lineage+incidents, Qualytics Data Control Layer AgentQ April 2026, Acceldata xLake MCP-DC distributed compute, Atlan 29 stars 15 tools, Delpha 13 tools contact quality, Dingo 687 stars 100+ metrics AI eval, dbt-mcp 544 stars, Data Product Hub 8 stars, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
