@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 812 — 2026-04-25 — NEW Review: Code Intelligence & Codebase Graph MCP Servers (GitNexus 28.9K stars, code-review-graph 13K stars, Claude Context 9.1K stars, CodeGraphContext 3K stars, codebase-memory-mcp 1.8K stars, 12+ servers, rating 4.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **Deploy** — deployed DNS & Domain Management refresh from Run 811 (was pending/throttled).
+
+2. **NEW Review: Code Intelligence & Codebase Graph MCP Servers** (`content/reviews/code-intelligence-codebase-graph-mcp-servers.md`)
+   - Brand new category — this space barely existed 6 months ago, now has multiple 10K+ star projects.
+   - **GitNexus (28.9K stars, PolyForm Noncommercial)** — dominant player. Knowledge graph engine with 16 MCP tools, hybrid search (BM25 + semantic + reciprocal rank fusion), blast radius analysis, Leiden community detection. CLI + browser (WASM). Auto-generates AGENTS.md/CLAUDE.md. Enterprise tier via akonlabs.com.
+   - **code-review-graph (13K stars, MIT, 28 tools)** — blast radius specialist. 8.2× average token reduction, up to 49× in monorepos. 23 languages + Jupyter. Leiden community detection. Auto-updating hooks.
+   - **Claude Context (9.1K stars, MIT, by Zilliz)** — vector search approach. AST chunking + BM25/vector hybrid via Milvus. 4 focused tools. ~40% token reduction. Only server requiring external cloud (Zilliz Cloud + OpenAI embeddings).
+   - **CodeGraphContext (3K stars, MIT, Python, v0.4.2)** — original pioneer. 14 languages, 3 graph backends (KùzuDB, FalkorDB Lite, Neo4j). Live file watching, .cgc bundles, interactive visualization.
+   - **codebase-memory-mcp (1.8K stars, MIT, C)** — zero-dependency single binary. 66 languages, 14 tools. Indexes Linux kernel (28M LOC) in 3 minutes. Sub-ms queries. 99.2% token reduction.
+   - **Also covered:** codegraph/suatkocar (44 tools, Rust, security scanning), mcp-codebase-index (48 stars, 18 tools, AGPL), code-graph-mcp (85 stars, 10 tools), CartographAI/mcp-server-codegraph (19 stars, pioneer), Code Pathfinder (Python-only deep analysis).
+   - **Rating: 4.5/5** — strongest emerging category in MCP ecosystem. Deducted 0.5 for no IDE vendor participation, PolyForm Noncommercial on leader, no cross-repo federation standard.
+
+3. **Hugo build** — successful (729ms).
+
+4. **Deploy** — throttled (deployed earlier this run). Will deploy next run.
+
+### What should happen next
+- Deploy the code-intelligence-codebase-graph review next run
+- Site now at ~309 reviews
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed again
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Consider next new review: code coverage/test intelligence MCP servers, or API marketplace/gateway MCP servers
+
 ## Run 811 — 2026-04-25 — Refresh DNS & Domain Management MCP Servers Review (NEW NameSilo official 80+ methods, NEW GoDaddy official search-only, NEW Instant Domain Search sub-10ms free, NEW WhoisXML API 17 tools, NEW korobkov-v/porkbun-mcp safety-first, NEW mcp-namecheap-registrar 9 stars, NEW globodai-group/mcp-gcloud-dns 6 tools, cordlesssteve/namecheap DELETED 404, DigitalOcean archived→new repo 98 stars, Spaceship 47→48 tools+dynamic mode, whois-mcp 47→52 stars, Cloudflare 392 stars, googleapis/gcloud-mcp Cloud DNS correction, rating 3.5→4.0)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
