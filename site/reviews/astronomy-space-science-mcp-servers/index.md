@@ -1,13 +1,13 @@
-# Astronomy & Space Science MCP Servers — NASA APIs, Celestial Positioning, Satellite Tracking, Astronomical Surveys, and Research Tools
+# Astronomy & Space Science MCP Servers — NASA APIs, Telescope Control, Satellite Tracking, SpaceX, Astronomical Surveys, and Research Tools
 
-> Astronomy and space science MCP servers let AI agents access NASA data, track satellites, query astronomical surveys, and compute celestial positions through the Model Context Protocol.
+> Astronomy and space science MCP servers let AI agents access NASA data, control telescopes, track satellites, query astronomical surveys, and compute celestial positions through the Model Context Protocol.
 
 
-Astronomy and space science MCP servers connect AI agents to NASA data, astronomical survey databases, satellite tracking systems, and celestial positioning tools. Instead of manually querying APIs or learning specialized astronomy software, these servers let you explore space data through natural language via the Model Context Protocol. Part of our **[Science & Research MCP category](/categories/science-research/)**.
+Astronomy and space science MCP servers connect AI agents to NASA data, telescope hardware, astronomical survey databases, satellite tracking systems, launch schedules, and celestial positioning tools. Instead of manually querying APIs, learning specialized astronomy software, or writing telescope control scripts, these servers let you explore space data and control observatory equipment through natural language via the Model Context Protocol. Part of our **[Science & Research MCP category](/categories/science-research/)**.
 
-This review covers **NASA APIs, astronomical data and research tools, celestial positioning, and satellite tracking** — APOD, Mars rovers, near-Earth objects, space weather, exoplanets, DESI, SIMBAD, Gaia, and more. For weather and climate data on Earth, see our [Weather & Climate review](/reviews/weather-climate-mcp-servers/).
+This review covers **NASA APIs, telescope control, astronomical data and research tools, celestial positioning, satellite tracking, and rocket launch data** — APOD, Mars rovers, near-Earth objects, space weather, exoplanets, DESI, SIMBAD, Gaia, ASCOM telescope automation, SpaceX launches, and more. For weather and climate data on Earth, see our [Weather & Climate review](/reviews/weather-climate-mcp-servers/).
 
-The headline findings: **NASA API servers are the strongest segment** — NASA-MCP-server (81 stars) gives access to 20+ data sources from api.nasa.gov and JPL. **Astronomical research tools are genuinely innovative** — astro_mcp connects to 40+ survey services through astroquery, while astro-orchestra orchestrates multi-agent research workflows. **CelestialMCP provides observational data** for 117,000+ stars and 14,000 deep-sky objects. **The biggest gap: no amateur telescope control, no launch schedule APIs, and no aurora alerting.**
+The headline findings: **NASA has gone official** — nasa/earthdata-mcp is NASA's own MCP server for Earthdata semantic search, joining the comprehensive community NASA-MCP-server (83 stars, 20+ APIs). **Telescope control has arrived** — ASCOM MCP server and AiBridge now let AI agents point telescopes, control cameras, and manage observatory equipment via natural language. **SpaceX data is accessible** — launches, rockets, crew, and Starlink tracking with no API key needed. **Astronomical research tools are genuinely innovative** — astro_mcp connects to 40+ survey services through astroquery. **CelestialMCP provides observational data** for 117,000+ stars and 14,000 deep-sky objects. **Remaining gaps: no Stellarium integration, no JWST dedicated pipeline, no ESA/JAXA official servers.**
 
 ---
 
@@ -17,7 +17,7 @@ The headline findings: **NASA API servers are the strongest segment** — NASA-M
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [NASA-MCP-server](https://github.com/ProgramComputer/NASA-MCP-server) | 81 | TypeScript | ISC | 20+ |
+| [NASA-MCP-server](https://github.com/ProgramComputer/NASA-MCP-server) | 83 | TypeScript | ISC | 17+ |
 
 **The most comprehensive NASA data server with 20+ API integrations:**
 
@@ -40,7 +40,21 @@ The headline findings: **NASA API servers are the strongest segment** — NASA-M
 - **CMR** — Common Metadata Repository for Earth science data
 - **FIRMS** — Fire Information for Resource Management System
 
-The standout NASA MCP server. At 81 stars and 20+ API integrations spanning both api.nasa.gov and JPL Solar System Dynamics, this is the most complete gateway to NASA's public data. TypeScript with automatic parameter validation, rate limiting, and standardized output formats optimized for AI consumption. Works with Claude Desktop, Cursor, and SSE via SuperGateway.
+The standout NASA MCP server. At 83 stars and 17+ API integrations spanning both api.nasa.gov and JPL Solar System Dynamics, this is the most complete gateway to NASA's public data. TypeScript with automatic parameter validation, rate limiting, and standardized output formats optimized for AI consumption. Works with Claude Desktop, Cursor, and SSE via SuperGateway.
+
+### nasa/earthdata-mcp — Official NASA Earthdata MCP Server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [earthdata-mcp](https://github.com/nasa/earthdata-mcp) | — | Python | Government | Semantic search |
+
+**NASA's official MCP server for Earthdata** — under the [nasa GitHub org](https://github.com/nasa). This is significant: it's an official NASA-maintained MCP server, joining GovInfo and Census Bureau as U.S. federal agencies directly supporting the protocol.
+
+The server uses **semantic search powered by embeddings** to help AI agents discover and access NASA's Earth science data holdings. The architecture includes MCP tool implementations, centralized data models, AWS Lambda handlers for processing and enrichment, and infrastructure-as-code via Terraform.
+
+While primarily focused on Earth observation data rather than deep-space astronomy, this is the authoritative pipeline for NASA's satellite-based Earth science datasets — climate, weather, land use, ocean, and atmospheric data. The official status means guaranteed API stability and long-term support that community servers can't promise.
+
+A community alternative, [datalayer/earthdata-mcp-server](https://github.com/datalayer/earthdata-mcp-server), provides similar Earthdata access with a different approach.
 
 ### jezweb/nasa-mcp-server — NASA Open APIs with Smart Caching
 
@@ -121,7 +135,7 @@ An early but fascinating project that goes beyond simple data access. Instead of
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [nasa-ads-mcp](https://github.com/prtc/nasa-ads-mcp) | 2 | Python | MIT | 10 |
+| [nasa-ads-mcp](https://github.com/prtc/nasa-ads-mcp) | 3 | Python | MIT | 10 |
 
 **Direct access to NASA's Astrophysics Data System:**
 
@@ -135,6 +149,8 @@ An early but fascinating project that goes beyond simple data access. Instead of
 - **create_library / add_to_library** — manage reference collections
 
 A focused tool for astronomers and astrophysicists who live in NASA ADS. Having paper search, citation metrics, and BibTeX export directly in your AI assistant is genuinely useful for literature reviews and writing papers. Requires a NASA ADS API key.
+
+**Alternative implementation:** [ivan-katkov/nasa-ads-mcp](https://github.com/ivan-katkov/nasa-ads-mcp) (0 stars, Python) provides 5 tools (search, get_record, get_bibtex, get_citations, get_references) with full Solr query syntax support and multiple output formats (short, detailed, bibtex). A lighter alternative if you don't need library management features.
 
 ---
 
@@ -165,7 +181,7 @@ The observational astronomy server. The star-hopping pathfinding tool is a stand
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [satellitetracking-mcp-server](https://github.com/Cyreslab-AI/satellitetracking-mcp-server) | 3 | TypeScript | MIT | 6 |
+| [satellitetracking-mcp-server](https://github.com/Cyreslab-AI/satellitetracking-mcp-server) | 4 | TypeScript | MIT | 6 |
 
 **Real-time satellite tracking via N2YO API:**
 
@@ -181,20 +197,78 @@ The go-to server for satellite tracking. Covers ISS, Starlink, GPS, weather sate
 
 ---
 
+## Telescope Control & Observatory Automation
+
+### stellarpunk/mcp-server-ascom — ASCOM Alpaca Telescope Control
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mcp-server-ascom](https://github.com/stellarpunk/mcp-server-ascom) | — | Python | — | Multi-device |
+
+**MCP 2025-06-18 compliant server for controlling astronomy equipment** via the ASCOM Alpaca protocol. This fills one of the biggest gaps identified in our original review — amateur telescope control through AI agents.
+
+- **Natural language commands** — "Point at M31" just works, with automatic coordinate resolution
+- **Auto-discovery** — finds ASCOM Alpaca devices on the network with no manual configuration
+- **Multi-device support** — telescopes, cameras, focusers, filter wheels, domes
+- **Async operations** — non-blocking I/O so long exposures don't stall your AI session
+
+ASCOM Alpaca is the network-based successor to the Windows-only ASCOM COM driver standard. By bridging MCP to Alpaca, this server lets any MCP-compatible AI assistant control a modern observatory setup. Install via pip, point it at your Alpaca devices, and your AI agent becomes a telescope operator.
+
+### OnStepNinja/AiBridge — ESP32 AI-to-Telescope Bridge
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [AiBridge](https://github.com/OnStepNinja/AiBridge) | 6 | C++ | MIT | Hardware control |
+
+**An MCP server running on a $5 ESP32 microcontroller** that bridges AI agents directly to OnStep telescope mounts and ASCOM Alpaca devices. This is a remarkable piece of engineering — a full Model Context Protocol implementation running on embedded hardware.
+
+- **GOTO commands** — slew to celestial coordinates
+- **Park/unpark** — automated telescope storage and deployment
+- **Tracking control** — sidereal, lunar, solar tracking modes
+- **Relay control** — toggle observatory power, dew heaters, flat panel lights
+- **Environmental sensing** — temperature, humidity, sky quality (with appropriate sensors)
+- **SSE transport** — communicates with Claude and other AI agents over Server-Sent Events
+
+The AiBridge approach is different from the ASCOM MCP server above — instead of running on a PC, it runs directly on the microcontroller that controls the telescope hardware. This means you can have AI-driven observatory automation without a full computer in the loop. Active development (last commit February 2026).
+
+---
+
+## Rocket Launch & SpaceX Data
+
+### pipeworx-io/mcp-spacex — SpaceX Launch Intelligence
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mcp-spacex](https://github.com/pipeworx-io/mcp-spacex) | — | — | — | Multi-tool |
+
+**SpaceX launch, rocket, crew, and Starlink data** via the community-maintained SpaceX API v4. No API key required — completely free access.
+
+- **Launch data** — historical and upcoming launches, mission details, success/failure outcomes
+- **Rocket specifications** — Falcon 9, Falcon Heavy, Starship technical details
+- **Crew information** — astronaut profiles, crew assignments, mission roles
+- **Starlink tracking** — satellite constellation status and deployment data
+- **Company information** — SpaceX corporate data and milestones
+
+This fills another gap from our original review — rocket launch tracking. The SpaceX API v4 is community-maintained (the [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API) project) and is the de facto standard for SpaceX data access. Compatible with Claude Desktop, ChatGPT, and other MCP clients.
+
+**Also available:** SpaceX Launch Intelligence on [Apify](https://apify.com/benthepythondev/spacex-launch-intelligence/api/mcp) provides a hosted MCP endpoint with similar capabilities.
+
+---
+
 ## What's Missing
 
-The astronomy and space science MCP ecosystem has notable gaps:
+The astronomy and space science MCP ecosystem has narrowed its gaps since our March 2026 review — telescope control and SpaceX data have arrived — but notable holes remain:
 
-- **No telescope control** — no ASCOM or INDI protocol servers for controlling amateur telescopes, mounts, or cameras remotely
 - **No Stellarium integration** — the most popular open-source planetarium has no MCP bridge
 - **No James Webb Space Telescope** — no dedicated JWST data pipeline server (some data is accessible through MAST via astro_mcp)
-- **No SpaceX or launch schedule APIs** — no rocket launch tracking, countdown, or mission data
+- **No ESA, JAXA, or ISRO official MCP servers** — NASA leads with earthdata-mcp, but no other space agency has followed
 - **No aurora/space weather alerting** — DONKI raw data exists in NASA servers, but no dedicated aurora prediction or geomagnetic storm alert server
 - **No radio astronomy** — no servers for accessing radio telescope data, pulsar catalogs, or SETI datasets
 - **No gravitational wave data** — no LIGO/Virgo event catalog access
 - **No light pollution mapping** — no Bortle scale or sky quality data
-- **No astrophotography tools** — no image stacking, plate solving, or camera control
-- **No planetary simulation** — no Kerbal-style orbital mechanics or mission planning
+- **No astrophotography workflows** — camera control exists via ASCOM MCP, but no image stacking, plate solving, or processing pipeline
+- **No INDI protocol support** — only ASCOM Alpaca; Linux-native INDI users have no MCP option
+- **No non-SpaceX launch data** — no aggregated launch schedule covering all providers (ULA, Rocket Lab, Arianespace, etc.)
 
 ---
 
@@ -202,22 +276,26 @@ The astronomy and space science MCP ecosystem has notable gaps:
 
 The astronomy and space science MCP ecosystem earns a **3.5 out of 5**.
 
-**What works:** NASA API coverage is solid — ProgramComputer's server gives you 20+ data sources in one package. The astronomical research tools from SandyYuan are genuinely innovative, turning complex multi-survey data access into natural language. NASA ADS integration is a practical win for researchers. CelestialMCP's star-hopping feature is a clever niche tool for amateur astronomers.
+**What works:** NASA API coverage is now the strongest it's been — ProgramComputer's server gives you 17+ data sources, and NASA's own earthdata-mcp adds official federal backing. Telescope control has arrived via ASCOM MCP and the AiBridge ESP32 project, turning AI agents into observatory operators. SpaceX data fills the launch tracking gap. The astronomical research tools from SandyYuan remain genuinely innovative. NASA ADS integration is a practical win for researchers.
 
-**What doesn't:** The category is heavily skewed toward professional/research use. Consumer-facing space experiences — launch tracking, aurora alerts, "what's in the sky tonight" — are largely absent or buried in raw API outputs. Satellite tracking exists but is limited to one server wrapping one API. The total server count is modest compared to more established categories.
+**What's improved since March 2026:** Two of the biggest gaps — telescope control and rocket launch data — have been filled. NASA has joined the handful of federal agencies with official MCP servers. A second NASA ADS implementation adds choice for literature access. Star counts are growing modestly across the ecosystem.
 
-**Who benefits most:** Astronomy researchers and data scientists who want natural language access to survey databases. Science communicators who need quick access to NASA imagery and data. Amateur astronomers who want celestial positioning data. Students exploring astronomy data without learning complex APIs.
+**What doesn't:** The category still lacks international space agency participation — no ESA, JAXA, or ISRO servers. No dedicated JWST data pipeline. Aurora/space weather alerting remains raw DONKI data without user-friendly predictions. INDI protocol users (Linux-native telescope control) have no MCP option. Launch data is SpaceX-only — no aggregated multi-provider schedule.
 
-**Who should wait:** Anyone wanting telescope automation, launch tracking, or polished consumer space experiences. The tools for casual space enthusiasts are still thin — you'll get more from dedicated apps than from MCP servers right now.
+**Who benefits most:** Astronomy researchers wanting natural language access to survey databases. Amateur astronomers with ASCOM-compatible equipment who want AI-driven observation sessions. Science communicators who need quick NASA imagery and data. Students exploring astronomy without learning complex APIs. Space enthusiasts tracking SpaceX launches.
+
+**Who should wait:** Anyone wanting polished aurora alerts, JWST data analysis, or non-SpaceX launch schedules. INDI users without ASCOM Alpaca compatibility. Anyone needing radio astronomy, gravitational wave, or SETI data access.
 
 | Subcategory | Server Count | Top Server | Rating |
 |-------------|-------------|------------|--------|
-| NASA APIs | 3 | ProgramComputer/NASA-MCP-server (81 stars) | ★★★★ |
+| NASA APIs | 4 | ProgramComputer/NASA-MCP-server (83 stars) | ★★★★ |
 | Astronomical research | 3 | SandyYuan/astro_mcp (40+ services) | ★★★★ |
+| Telescope control | 2 | stellarpunk/mcp-server-ascom (ASCOM Alpaca) | ★★★½ |
+| Rocket launches | 1 | pipeworx-io/mcp-spacex (SpaceX API v4) | ★★★ |
 | Celestial positioning | 1 | Rkm1999/CelestialMCP (117k stars, 14k DSOs) | ★★★ |
 | Satellite tracking | 1 | Cyreslab-AI/satellitetracking-mcp-server (6 tools) | ★★★ |
 
-**Overall: 3.5/5** — Strong scientific data access and innovative research tools, but thin on consumer-facing space experiences and missing major data sources like JWST, launch schedules, and telescope control.
+**Overall: 3.5/5** — Significantly improved since our March 2026 review. NASA official participation, telescope control, and SpaceX data fill major gaps. The research tooling remains innovative. But international space agency participation, JWST, aurora alerting, and multi-provider launch schedules keep this from a higher rating.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was refreshed on 2026-04-26 using Claude Opus 4.6 (Anthropic). Originally published 2026-03-17.*
 
