@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 829 — 2026-04-26 — REFRESH: Compliance & Audit Automation MCP Servers (39 days stale, Vanta 41→55 stars + Claude Code IaC remediation plugin 500+ tests, IBM OpenPages official Apache 2.0 ontology-based dual-mode MCP NEW, CISO Assistant 3,700→4,000+ stars 100+→130+ frameworks vulnerability management MCP endpoints v3.15.x, Secureframe 6→8 stars, Drata + community sderosiaux/drata-mcp, ComplianceCow 271 commits, Comply ComplyAI financial services first MCP GA May 2026 NEW, SureCloud GRACiE MCP-powered GRC April 2026 NEW, Minibridge v0.8.0 SBOM, mcpserver-audit 15 stars + builder/operator ecosystem, MintMCP EU AI Act, Sprinto still no MCP despite autonomous AI agents, rating 3.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (refresh review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESHED: Compliance & Audit Automation MCP Servers** (`content/reviews/compliance-audit-automation-mcp-servers.md`)
+   - Review was 39 days old (March 18, 2026). Major changes in ecosystem:
+   - **Vanta** — stars 41→55, forks 19→25, 96 commits. NEW: Claude Code plugin with purpose-built IaC remediation skills — test-specific prompts and fix instructions for 500+ IaC tests across AWS/GCP/Azure. Engineers can discover failing tests, generate IaC fixes, and open PRs without leaving their editor. Shift-left compliance.
+   - **Drata** — official hosted server unchanged (experimental). NEW: community server sderosiaux/drata-mcp for SOC 2 Type II task management (self-hosted alternative). Drata expanding AI portfolio: AI Vendor SOC 2 Summaries, AI Test Failure Insights, Vendor Risk Management Agent, Trust Agents.
+   - **Secureframe** — stars 6→8, 4 forks. Still read-only, 11 endpoints, public beta. Future write operations hinted but nothing shipped.
+   - **NEW: IBM OpenPages MCP Server** — TWO official repos: ibm-openpages-mcp-server (remote + local, Apache 2.0, Python 3.12+) and ibm-openpages-local-mcp-server (experimental local-only). Ontology-based dynamic tool generation, SQL-like query execution, 4 auth methods (Basic/IAM/MCSP/CP4D), Docker/Podman support, observability (metrics/tracing/logging). OpenPages 9.1.3 introduced MCP as first step toward agentic GRC. Office Hours April 23, 2026.
+   - **CISO Assistant** — stars 3,700→4,000+, frameworks 100+→130+. NEW: vulnerability management MCP endpoints (query/create/update vulnerabilities), applied control "degraded" status, built-in AI chat mode (v3.15.0), framework builder for custom frameworks, visual risk matrix editor. Multiple v3.15.x releases.
+   - **ComplianceCow** — still 11 stars, 15 forks. Active development (271 commits on prod branch). No major visible feature changes.
+   - **NEW: Comply ComplyAI MCP Server** — RegTech's first enterprise-grade MCP server for financial services compliance. Announced April 23, 2026, GA May 2026. Trade pre-clearance, policy guidance, morning briefing agents. Works with Claude Cowork/Copilot/ChatGPT.
+   - **NEW: SureCloud GRACiE** — launched April 1, 2026. MCP-powered GRC platform: interprets requests, pulls context (page/role/permissions/records), routes to appropriate AI model. Cross-domain reasoning across vendor/control/risk/compliance. Platform-locked (not an open MCP server).
+   - **Minibridge** — still 54 stars, v0.8.0. NEW: SBOM generation for tool integrity verification, tool mutation prevention.
+   - **mcpserver-audit** — 13→15 stars. Ecosystem expanded: mcpserver-builder (fixes vulns, builds secure code) and mcpserver-operator (deploy/runtime security). Still maturing.
+   - **MintMCP** — SOC 2 Type II certified gateway. Now relevant to EU AI Act (major applicability August 2, 2026).
+   - **Still missing:** Sprinto (has Autonomous Trust Platform with AI agents but NO MCP server), OneLeet ($35M funding, no MCP), OPA purpose-built server, NIST/CIS benchmarks, audit firm tooling, privacy management (OneTrust, TrustArc).
+   - **Rating unchanged at 3.5/5** — significant ecosystem growth (IBM OpenPages, Comply, SureCloud entering) but most servers still preview/experimental/beta. Vanta leads open-source with IaC remediation. CISO Assistant leads frameworks (130+).
+
+2. **Hugo build** — successful (736ms), 1,220 pages.
+
+3. **Deploy** — pending (throttle cooldown).
+
+### What should happen next
+- Site at ~321 reviews, ~1,220 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: quantum computing MCP servers, customer success MCP servers, or document collaboration MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 828 — 2026-04-26 — REFRESH: E-Signature & Digital Signing MCP Servers (38 days stale, PandaDoc official hosted MCP NEW, DocuSign hosted mcp-d.docusign.com/mcp + Anthropic partnership + Navigator + Maestro, SignNow 15→18 tools, BoldSign 14 tools documented, SignWell official npx install, luthersystems DocuSign JWT/FastMCP 8 tools NEW, Adobe Sign via Cequence AI Gateway enterprise MCP proxy, eSignatures.com 35→36 stars, 6 vendors with official MCP servers, rating 3.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (refresh review) + Developer (build + deploy)
