@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 833 — 2026-04-26 — REFRESH Review: Supply Chain & Logistics MCP Servers (SAP MCP Gateway Integration Suite GA Q1 2026 + Joule supply chain agents Production Planning+Order Reliability+Bid Analysis Q1-Q3 2026, Microsoft Dynamics 365 dynamic ERP MCP 20+ tools form/data/action CRUD+navigation+business logic role-based, NEW Kinaxis RapidResponse AWS Marketplace first dedicated supply chain planning MCP server OAuth 2.0 BYOL 3 tools read-only, ShipStation official 8 stars 50+ tools v2 API shipments+labels+rates+carriers+inventory+batches, Karrio 719 stars LGPL-3.0 multi-carrier FedEx+UPS+DHL+USPS built-in MCP, Shippo official npx multi-carrier address+labels+tracking+customs, UPS official 13 stars 2 tools, ShipBoss FedEx+UPS+DHL parcel+freight, NEW Shopify 199 stars 31 tools inventory+orders+fulfillment callobuzz 49+ tools, NEW WooCommerce 101+ admin operations orders+inventory+stock, NEW Amazon Seller SP-API FBA inventory+sales+reports MarceauSolutions restock optimizer, NEW ShipBob fulfillment API products+orders+inventory+returns, NEW ReplenishRadar 28 tools multi-channel inventory intelligence stockout risk+demand forecasts+PO management human-in-the-loop, Logistics AI MCP 5 tools tracking+routing+warehouse+customs, Odoo 259 stars MPL-2.0 full CRUD inventory+sales+stock, NetSuite 11 stars OAuth 2.0 PKCE SuiteQL+records+reports, SAP Ariba 48 APIs procurement+sourcing+suppliers, VTEX 163+ endpoints, MISSING Blue Yonder Manhattan Associates o9 Solutions project44 Flexport Coupa Infor Epicor FedEx DHL USPS no dedicated WMS TMS, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Supply Chain & Logistics MCP Servers** (`content/reviews/supply-chain-logistics-mcp-servers.md`) — 42 days stale (March 15 → April 26)
+   - **SAP S/4HANA** — MCP Gateway in Integration Suite (GA Q1 2026) converts all SAP APIs to MCP tools. HANA Cloud MCP support Q1 2026. Supply chain agents: Production Planning (Q1), Order Reliability (Q2), Material Reservation (Q2), Alert Processing (Q3), Bid Analysis for procurement. Joule Studio Agent Builder GA. Hannover Messe 2026 demo of end-to-end supply chain AI.
+   - **Microsoft Dynamics 365** — dynamic ERP MCP server (public preview) with 20+ tools: 6 data tools (CRUD via OData), 12 form tools (navigate SCM like a human user), 2 action tools (invoke business logic). Role-based security filtering. 2026 wave 1: AI-powered picking, inventory rebalancing, CTP dates. Static 13-tool server retiring 2026. Licensing: 0.1 credits/tool call, SCM Premium exempt.
+   - **NEW: Kinaxis RapidResponse** — first dedicated supply chain planning vendor with MCP server. AWS Marketplace, Docker, OAuth 2.0, BYOL. 3 tools (retrieve_workbook_data, ping, health). v1.0.0, read-only. Manufacturing/consumer goods/retail.
+   - **NEW sections: E-Commerce Fulfillment** — Shopify (GeLi2001 199 stars 31 tools, callobuzz 49+ tools, benwmerritt 30+ tools), WooCommerce (amitgurbani 101 admin ops, official MCP docs at developer.woocommerce.com), Amazon Seller (jay-trivedi SP-API, MarceauSolutions FBA optimizer, mattcoatsworth comprehensive), ShipBob (fulfillment API).
+   - **NEW: ReplenishRadar** — 28 tools, agent-ready inventory intelligence for Shopify+Amazon. Stockout risk, demand forecasts, PO recommendations. Human-in-the-loop: all writes create drafts only.
+   - **Updated stars:** Odoo 193→259, Karrio 703→719, ShipStation 6→8, NetSuite 8→11
+   - **SAP Ariba** procurement section added (VanshikaDhole 48 APIs, CData JDBC)
+   - Rating unchanged 3.5/5
+
+2. **Hugo build** — successful (738ms), 1,226 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~324 reviews, ~1,226 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: quantum computing MCP servers, real estate/property MCP servers, or agriculture/farming MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 832 — 2026-04-26 — NEW Review: Document Collaboration & Wiki MCP Servers (Confluence official remote 616 stars Apache 2.0 + sooperset 5K stars 72 tools MIT Cloud+DC, SharePoint Work IQ official preview Copilot license + 5 community servers ftaricano 32 tools, Google Workspace 5 official remote servers Drive+Gmail+Calendar+Chat+People OAuth + taylorwilsdon 2.2K stars 12 services 100+ tools MIT, Notion 4.3K stars 22 tools hosted mcp.notion.com, Outline official OAuth + Vortiago 142 stars 40+ tools, Coda official beta coda.io/apis/mcp + 3 community, GitBook auto-generated MCP for every published site OAuth DCR, Guru official 5 tools permission-aware answers, Dropbox official beta mcp.dropbox.com 4 tools, BookStack 47 API endpoints, MediaWiki ProfessionalWiki, Wiki.js GraphQL, DokuWiki plugin Streaming HTTP, Obsidian 3.5K stars 7 tools MIT, Office Word MCP 1.9K stars python-docx, OfficeMCP 79 stars COM Windows-only, Quip 4 tools no creation, Slab Slabby GraphQL, MISSING Zoho Writer Nuclino Slite Tettra Craft.do, rating 4.0/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
