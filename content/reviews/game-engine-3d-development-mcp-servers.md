@@ -86,13 +86,13 @@ Ships with a UE 5.5 starter project (`MCPGameProject`) with the plugin pre-confi
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [flopperam/unreal-engine-mcp](https://github.com/flopperam/unreal-engine-mcp) | — | Python/C++ | 20+ | stdio |
+| [flopperam/unreal-engine-mcp](https://github.com/flopperam/unreal-engine-mcp) | 852 | Python/C++ | 20+ | stdio |
 
-**flopperam/unreal-engine-mcp** pushes beyond standard MCP into autonomous agent territory. The **Flop Agent** runs inside Unreal Editor and can autonomously build 3D worlds, edit Blueprints, and create structures from natural language descriptions.
+**flopperam/unreal-engine-mcp** (852 stars, 166 forks) pushes beyond standard MCP into autonomous agent territory. The **Flop Agent** runs inside Unreal Editor and can autonomously build 3D worlds, edit Blueprints, and create structures from natural language descriptions.
 
 Architecture: AI Client (Cursor/Claude/Windsurf) connects via MCP Protocol to a Python Server, which communicates via TCP Socket to a C++ Plugin providing native Unreal API access. Tools cover world building, physics simulation, Blueprint system, actor management, component system, and material system.
 
-The marketing emphasizes ambitious scene building — "entire towns, medieval castles, modern mansions, challenging mazes" — through AI-powered commands. The Flop Agent goes beyond analysis to directly build and edit Blueprint logic from natural language, making it more autonomous than most MCP servers. Supports UE 5.5+.
+Now also offers a **hosted version** at flopperam.com/mcp. The Flop Agent goes beyond analysis to directly build and edit Blueprint logic from natural language, making it more autonomous than most MCP servers. Supports UE 5.5+. Actively maintained (last pushed April 2026).
 
 ### ChiR24/Unreal_mcp (Native Automation)
 
@@ -106,13 +106,18 @@ Built with TypeScript (MCP server) and C++ (Unreal plugin). Now supports dual tr
 
 ### Other Unreal Implementations
 
-| Server | Focus |
-|--------|-------|
-| [ayeletstudioindia/unreal-analyzer-mcp](https://github.com/ayeletstudioindia/unreal-analyzer-mcp) | Source code analysis for Unreal codebases |
-| [gingerol/vhcilab-unreal-engine-mcp](https://github.com/gingerol/vhcilab-unreal-engine-mcp) | Natural language scene building |
-| [kvick-games/UnrealMCP](https://github.com/kvick-games/UnrealMCP) | AI agent control |
+| Server | Stars | Focus |
+|--------|-------|-------|
+| [kvick-games/UnrealMCP](https://github.com/kvick-games/UnrealMCP) | 566 | AI agent control |
+| [prajwalshettydev/UnrealGenAISupport](https://github.com/prajwalshettydev/UnrealGenAISupport) | 559 | Multi-LLM UE5 plugin (GPT-5, Claude, Gemini 3, Grok 4) — NPC AI, chat, 3D gen, TTS, multimodal |
+| [HurtzDonutStudios/ai-forge-mcp](https://github.com/HurtzDonutStudios/ai-forge-mcp) | 52 | **NEW** (March 2026) — 565 tools across 16 MCP servers for AAA asset production (Blender, Substance, Maya, Houdini, UE5) |
+| [ayeletstudioindia/unreal-analyzer-mcp](https://github.com/ayeletstudioindia/unreal-analyzer-mcp) | — | Source code analysis for Unreal codebases |
+| [Natfii/ue5-mcp-bridge](https://github.com/Natfii/ue5-mcp-bridge) | 40 | UE5 MCP bridge |
+| [mirno-ehf/ue5-mcp](https://github.com/mirno-ehf/ue5-mcp) | 31 | UE5 MCP integration |
 
-**unreal-analyzer-mcp** is different from the others — it analyzes Unreal Engine source code rather than controlling the editor. Useful for understanding engine internals and navigating large Unreal codebases.
+**HurtzDonutStudios/ai-forge-mcp** is the most ambitious new entrant — 565 AI-callable tools across 16 MCP servers targeting AAA game asset production pipelines. Controls Blender, Substance Suite, Maya, Houdini, and UE5 with 50 specialized AI agents. Created March 25, 2026.
+
+**prajwalshettydev/UnrealGenAISupport** (559 stars) is notable for its breadth — it's a multi-LLM UE5 plugin supporting GPT-5, Claude, Gemini 3, Grok 4, and more, covering NPC AI, chat, 3D generation, TTS, multimodal, and image generation alongside MCP.
 
 ### StraySpark (First Commercial Unreal MCP)
 
@@ -126,7 +131,9 @@ Key differentiators: **5 Tool Presets** — Full (207 tools), Scene Building (15
 
 The emergence of a commercial product signals market maturation — game studios are willing to pay for polished, supported MCP tooling rather than relying on experimental open-source servers.
 
-The Unreal MCP space is growing fast and now spans three tiers: **StraySpark for commercial/studio use** (207 tools, supported), **chongdashu/unreal-mcp for the largest community** (1,800 stars), and **ChiR24/Unreal_mcp for native automation** (552 stars, HTTP/SSE, UE 5.0-5.7). Epic Games still has no official MCP server, though developers have requested one on the Epic Developer Community forums.
+The Unreal MCP space is growing fast and now spans three tiers: **StraySpark for commercial/studio use** (207 tools, supported), **chongdashu/unreal-mcp for the largest community** (1,800 stars, though development appears dormant since April 2025), and **ChiR24/Unreal_mcp for native automation** (552 stars, HTTP/SSE, UE 5.0-5.7, most actively releasing with v0.5.21 in April 2026). **flopperam/unreal-engine-mcp** (852 stars) is the most actively maintained open-source option with autonomous scene building capabilities.
+
+Epic Games still has no official MCP server, but per Epic staff member Shaun Comly on the developer forums, Epic is "actively investigating MCP and very interested in it" — and hinted that **Unreal Engine 5.8 (expected summer 2026) "could be of interest"** to those seeking MCP functionality. Nothing confirmed, but signals are positive.
 
 ## Godot
 
@@ -319,7 +326,7 @@ Transparent background support is critical for game sprites — most general-pur
 
 The game engine MCP space has grown rapidly and closed several gaps, but some remain:
 
-- **No official Unity or Unreal MCP servers** — all implementations are community-driven or commercial third-party, unlike Roblox's first-party support. Unity 6.2 is adding AI features directly to the engine but not via MCP. Epic has acknowledged developer requests but no announcement yet.
+- **No official Unity or Unreal MCP servers** — all implementations are community-driven or commercial third-party, unlike Roblox's first-party support. Unity 6.2 is adding AI features directly to the engine but not via MCP. Epic is "actively investigating MCP" and hinted UE 5.8 (summer 2026) may address this — but nothing confirmed.
 - **No Fyrox MCP server** — the Bevy gap is now filled, but Fyrox (the other major Rust engine) still lacks MCP integration
 - **No dedicated Pygame/Love2D/Raylib MCP servers** — simpler game frameworks remain unserved
 - **Limited cross-engine tools** — FryMyCalamari/gamedev-mcp-hub aggregates 165+ tools across Unity/Godot/Blender/GitHub/Discord, but no server truly abstracts common operations across engines
