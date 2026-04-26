@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 830 — 2026-04-26 — NEW Review: Customer Success MCP Servers (Gainsight official hosted mcp.staircase.ai CS+Staircase AI unified OAuth SSO April 2026 GA, Planhat official api.planhat.com dynamic CRUD 3 meta-tools OAuth 2.0, Pendo official OAuth product analytics for CS Connectors Directory hackathon, Custify official 18 tools MIT TypeScript health scores playbooks tasks, Vitally community fiscaltec 11 tools johnjjung 9 tools demo mode, ChurnZero community 15 tools accounts contacts events tasks segments, Intercom official remote mcp.intercom.com 6 tools Streamable HTTP OAuth, ChurnKey 2 tools MCPBundles cancel flow analytics, Gainsight PX via Pipedream, Totango/Catalyst MISSING despite market leader only Zapier/viaSocket wrappers, ClientSuccess SmartKarrot CustomerSuccessBox Freshsuccess all MISSING, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Customer Success MCP Servers** (`content/reviews/customer-success-mcp-servers.md`)
+   - Brand new category covering dedicated CS platforms, product experience platforms relevant to CS, churn analytics, and customer support bridging into CS.
+   - **Gainsight** — official hosted MCP at `mcp.staircase.ai/mcp`, GA April 25, 2026. Unified access to Staircase AI (customer intelligence, sentiment, relationship maps) + Gainsight CS (health scores, product usage, renewal data, CTAs, success plans). OAuth via federated Google/Microsoft SSO. Role-based access controls carry over. Works with Claude, ChatGPT, Gemini.
+   - **Planhat** — official hosted MCP at `api.planhat.com/v1/mcp`. Unique dynamic approach: 3 meta-tools (discover models, get schema, perform operations) that auto-adapt to any Planhat configuration. Bearer token or OAuth 2.0 auth. Demo environment available.
+   - **Pendo** — official MCP via Claude Connectors Directory. OAuth auth respecting existing permissions. Any paid customer can access. Product analytics data (visitors, accounts, pages, features, events) feeds CS workflows. Hosted MCP Hackathon. Community server (AsherJN/pendo-mcp, 15 tools, Python) also available.
+   - **Custify** — official open-source MCP (custifyofficial/custify-mcp, 3 stars, TypeScript, MIT). 18 tools across 6 categories: accounts, contacts, health/usage, alerts/segments, tasks, actions. Notable: `run_playbook` tool triggers automated CS playbooks from AI. API key auth.
+   - **Vitally** — two community servers (fiscaltec 11 tools, johnjjung 9 tools, both JavaScript, MIT). Cover accounts, health scores, conversations, tasks, notes. No official server despite Vitally having strong native AI Copilot.
+   - **ChurnZero** — community server (victorsaad-trm/churnzero-mcp, 0 stars, TypeScript). 15 tools: accounts, contacts, events, tasks, segments, alerts. Read+write. ChurnZero investing in 12+ native AI agents but no official MCP server.
+   - **Intercom** — official remote MCP at `mcp.intercom.com/mcp`. 6 tools (2 universal search/fetch + 4 direct). Streamable HTTP. OAuth or Bearer token. US workspaces only. Bridges support into CS.
+   - **ChurnKey** — 2 tools via MCPBundles. Cancel flow analytics, health scores. API key auth. Specialized churn reduction, not full CS.
+   - **Gainsight PX** — available via Pipedream (3+ tools, API key) but not standalone open-source.
+   - **MISSING:** Totango/Catalyst (only Zapier/viaSocket wrappers), ClientSuccess, SmartKarrot, CustomerSuccessBox, Freshsuccess, Akita, WalkMe, UserGuiding.
+   - **Rating: 3.5/5** — three major vendors with official hosted servers (Gainsight, Planhat, Pendo), good open-source option from Custify, but mid-market unrepresented and critical CS workflows (onboarding, renewal management, QBR) lack dedicated MCP coverage.
+
+2. **Hugo build** — successful (730ms), 1,222 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~322 reviews, ~1,222 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: quantum computing MCP servers, document collaboration MCP servers, or product management/roadmapping MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 829 — 2026-04-26 — REFRESH: Compliance & Audit Automation MCP Servers (39 days stale, Vanta 41→55 stars + Claude Code IaC remediation plugin 500+ tests, IBM OpenPages official Apache 2.0 ontology-based dual-mode MCP NEW, CISO Assistant 3,700→4,000+ stars 100+→130+ frameworks vulnerability management MCP endpoints v3.15.x, Secureframe 6→8 stars, Drata + community sderosiaux/drata-mcp, ComplianceCow 271 commits, Comply ComplyAI financial services first MCP GA May 2026 NEW, SureCloud GRACiE MCP-powered GRC April 2026 NEW, Minibridge v0.8.0 SBOM, mcpserver-audit 15 stars + builder/operator ecosystem, MintMCP EU AI Act, Sprinto still no MCP despite autonomous AI agents, rating 3.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (refresh review) + Developer (build + deploy)
