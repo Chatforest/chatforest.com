@@ -12,7 +12,7 @@ Game engine MCP servers represent one of the most ambitious applications of the 
 
 The landscape covers eight areas: **Unity** (the largest MCP ecosystem with 6+ implementations and 12,000+ combined stars), **Unreal Engine** (deepest editor integration via C++ plugins, now with the first commercial MCP product), **Godot** (comprehensive single-server tooling with 110+ tools), **Roblox** (the only engine with native built-in MCP and third-party LLM support), **Cocos Creator** (NEW — 831-star server with 50 core tools), **Bevy/Rust** (NEW — fills the Rust game engine gap), **web game engines** (Phaser, Three.js), and **game asset generation** (AI-powered sprite, texture, and 3D model creation).
 
-The headline findings: **Unity's MCP ecosystem exploded** — CoplayDev/unity-mcp hit 8,900 stars (+53%) with 40+ tools now covering profiling, physics, and build pipelines, while IvanMurzak/Unity-MCP grew 650% to 2,300 stars. **Unreal Engine got its first commercial MCP product** — StraySpark offers 207 tools across 34 categories on Fab.com, joining community leaders at 1,800 and 552 stars. **Godot's GoPeak server expanded to 110+ tools** with tiered profiles for token optimization, joined by GDAI MCP as the first commercial Godot MCP ($19). **Roblox archived its open-source repo and went all-in on built-in MCP** — Studio now supports external LLMs (Claude, OpenAI, Gemini), playtest automation with virtual mouse/keyboard input, and multi-instance management. **Two major gaps filled** — Cocos Creator (831 stars) and Bevy/Rust both gained MCP servers for the first time. **The first commercial game engine MCP products appeared** — StraySpark (Unreal) and GDAI (Godot) signal market maturation.
+The headline findings: **Unity Technologies launched official MCP support** — the `com.unity.ai.assistant` package (pre-release v2.5.0-pre.2) includes a built-in MCP bridge, putting Unity alongside Roblox as engines with first-party support. Community servers continue to lead with CoplayDev/unity-mcp at 8,900 stars (+53%) and IvanMurzak/Unity-MCP at 2,300 stars (+650%). **Unreal Engine got its first commercial MCP product** — StraySpark offers 207 tools across 34 categories on Fab.com, and Epic hints UE 5.8 may address MCP natively. **Godot's GoPeak server expanded to 110+ tools** with tiered profiles for token optimization, joined by GDAI MCP as the first commercial Godot MCP ($19). **Roblox archived its open-source repo and went all-in on built-in MCP** — Studio now supports external LLMs (Claude, OpenAI, Gemini), playtest automation with virtual mouse/keyboard input, and multi-instance management. **Two major gaps filled** — Cocos Creator (831 stars) and Bevy/Rust both gained MCP servers for the first time. **The first commercial game engine MCP products appeared** — StraySpark (Unreal) and GDAI (Godot) signal market maturation.
 
 ## Unity
 
@@ -56,17 +56,32 @@ The runtime agent capability is genuinely novel. Most game engine MCP servers fo
 
 Docker support is available for headless operation. 2,768 commits show extremely active development — the most actively maintained Unity MCP server by commit volume.
 
+### Unity Technologies Official MCP (Pre-Release)
+
+| Server | Status | Transport |
+|--------|--------|-----------|
+| [com.unity.ai.assistant](https://docs.unity3d.com/Packages/com.unity.ai.assistant@2.5/manual/integration/unity-mcp-get-started.html) | **Pre-release (v2.5.0-pre.2)** | Built-in |
+
+**Unity Technologies now has an official MCP integration** — part of the "Unity AI Beta 2026" launch. The `com.unity.ai.assistant` package includes a built-in MCP bridge that launches automatically when the Unity Editor loads.
+
+Key capabilities: scene management, asset operations, script editing, console access, and multi-client connections (multiple AI clients to one Unity instance). Connects Claude Code, Cursor, and other MCP-compatible clients directly to the editor.
+
+This is the most significant development in the Unity MCP space — it validates the entire category and puts Unity on par with Roblox as engines with first-party MCP support. Still in pre-release (all versions are `-pre.X`), so the community servers remain the production choice for now.
+
 ### Other Unity Implementations
 
 | Server | Stars | Focus |
 |--------|-------|-------|
-| [nurture-tech/unity-mcp-server](https://github.com/nurture-tech/unity-mcp-server) | 25 | Union — multimodal vision (scene viewing, camera inspection, asset thumbnails) |
+| [AnkleBreaker-Studio/unity-mcp-server](https://github.com/AnkleBreaker-Studio/unity-mcp-server) | 129 | **NEW** (Feb 2026) — 268 tools: scene, GameObjects, builds, profiling, Shader Graph, Amplify, terrain, physics, NavMesh, animation, MPPM multiplayer |
+| [Glade-tool/glade-mcp-unity](https://github.com/Glade-tool/glade-mcp-unity) | 57 | **NEW** (April 2026) — 222+ granular tools, game design document context, script semantic search, skill calibration |
+| [youichi-uda/unity-mcp-pro-plugin](https://github.com/youichi-uda/unity-mcp-pro-plugin) | 51 | **NEW** (March 2026) — 147 AI tools |
+| [Codeturion/unity-api-mcp](https://github.com/Codeturion/unity-api-mcp) | 54 | Unity API lookups for agents (reduces hallucinations, saves tokens) |
+| [nurture-tech/unity-mcp-server](https://github.com/nurture-tech/unity-mcp-server) | 33 | Union — multimodal vision (scene viewing, camera inspection, asset thumbnails) |
 | [notargs/UnityNaturalMCP](https://github.com/notargs/UnityNaturalMCP) | — | "Natural" UX-focused implementation |
-| [MiAO-AI-Lab/MiAO-MCP-for-Unity](https://github.com/MiAO-AI-Lab/MiAO-MCP-for-Unity) | — | MCP plugin for Unity Editor and games |
 
-**nurture-tech/unity-mcp-server** (Union) is notable for its multimodal vision capabilities — your AI agent can see the Unity scene, look through any camera, watch play mode, and inspect asset thumbnails. This visual context significantly improves the quality of AI-generated scene modifications.
+**AnkleBreaker-Studio/unity-mcp-server** (129 stars) is the most notable new entrant — 268 tools covering an impressive breadth including Shader Graph, Amplify shader editor, NavMesh, and MPPM multiplayer. **Glade-tool/glade-mcp-unity** (57 stars in under 3 weeks) stands out for game design document integration and script semantic search. Unity MCP servers on the **Unity Asset Store** are also now appearing.
 
-The Unity MCP ecosystem is the largest in game development — 6+ implementations totaling 12,000+ stars. **CoplayDev/unity-mcp is the adoption leader** for general-purpose scene manipulation (8,900 stars, 40+ tools). **IvanMurzak/Unity-MCP is the breakout story** — 650% star growth to 2,300 stars, with the deepest integration including runtime agents and reflection. **CoderGamester/mcp-unity is best for IDE-centric workflows** (1,600 stars, 30+ tools). Unity Technologies still has no official MCP server, though Unity 6.2 is integrating AI features directly into the engine.
+The Unity MCP ecosystem is the largest in game development — GitHub search returns 217+ repos matching "unity mcp" created since February 2026 alone. Combined stars across top implementations exceed 13,000. **CoplayDev/unity-mcp is the adoption leader** (8,900 stars, 40+ tools). **IvanMurzak/Unity-MCP is the breakout story** — 650% star growth to 2,300 stars, with the deepest integration including runtime agents and reflection. **Unity's official MCP (pre-release)** validates the entire space and signals that first-party support is coming.
 
 ## Unreal Engine
 
@@ -326,7 +341,7 @@ Transparent background support is critical for game sprites — most general-pur
 
 The game engine MCP space has grown rapidly and closed several gaps, but some remain:
 
-- **No official Unity or Unreal MCP servers** — all implementations are community-driven or commercial third-party, unlike Roblox's first-party support. Unity 6.2 is adding AI features directly to the engine but not via MCP. Epic is "actively investigating MCP" and hinted UE 5.8 (summer 2026) may address this — but nothing confirmed.
+- **Unity's official MCP is pre-release only** — the `com.unity.ai.assistant` package (v2.5.0-pre.2) validates the category but isn't production-ready. Community servers remain the practical choice. **No official Unreal MCP** — Epic is "actively investigating MCP" and hinted UE 5.8 (summer 2026) may address this, but nothing confirmed.
 - **No Fyrox MCP server** — the Bevy gap is now filled, but Fyrox (the other major Rust engine) still lacks MCP integration
 - **No dedicated Pygame/Love2D/Raylib MCP servers** — simpler game frameworks remain unserved
 - **Limited cross-engine tools** — FryMyCalamari/gamedev-mcp-hub aggregates 165+ tools across Unity/Godot/Blender/GitHub/Discord, but no server truly abstracts common operations across engines
@@ -354,7 +369,7 @@ The game engine MCP ecosystem is maturing rapidly with explosive growth across a
 
 **For web game developers**: phaserjs/editor-mcp-server for Phaser, though the ecosystem is still early.
 
-**Rating: 4.5/5** — Upgraded from 4.0. Every major game engine has MCP integration, adoption growth is explosive (Unity servers grew 53-650% in 6 weeks), Roblox's built-in MCP with third-party LLM support is industry-leading, the first commercial products signal market maturation, and two major engine gaps (Cocos Creator, Bevy) were filled. Deductions for no official support from Unity Technologies or Epic Games, limited safety controls in most servers, and missing coverage for simpler game frameworks (Pygame, Love2D, Raylib).
+**Rating: 4.5/5** — Upgraded from 4.0. Unity Technologies launched official MCP support (pre-release), Roblox's built-in MCP with third-party LLM support is industry-leading, adoption growth is explosive (Unity servers grew 53-650% in 6 weeks, 217+ repos created since Feb 2026), the first commercial products signal market maturation, and two major engine gaps (Cocos Creator, Bevy) were filled. Deductions for Unity's official MCP still being pre-release, no official support from Epic Games (though UE 5.8 may change this), limited safety controls in most servers, and missing coverage for simpler game frameworks (Pygame, Love2D, Raylib).
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
