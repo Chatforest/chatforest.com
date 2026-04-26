@@ -1,13 +1,13 @@
-# Library, Archive & Museum MCP Servers — Zotero, Calibre, Wayback Machine, and Museum Collections
+# Library, Archive & Museum MCP Servers — Zotero, Calibre, IIIF, Wayback Machine, and Museum Collections
 
 > Library, archive, and museum MCP servers let AI agents manage research libraries, search ebook collections, access archived websites, and explore museum art.
 
 
 Library, archive, and museum MCP servers let AI assistants manage research citations, search ebook collections, retrieve archived web pages, and explore museum art. Instead of manually exporting Zotero bibliographies, navigating Calibre's interface, or browsing museum websites one artwork at a time, these servers let AI agents query your research library, extract ebook chapters, access historical snapshots of websites, and discover artworks across major museum collections — all through the Model Context Protocol.
 
-This review covers the **library, archive, and museum** vertical — reference management (Zotero), ebook management (Calibre, EPUB/PDF), book discovery (Open Library, Google Books), web archiving (Wayback Machine), and museum collections (Rijksmuseum, Met, Smithsonian, Art Institute of Chicago, Harvard Art Museums). For academic paper search (arXiv, Semantic Scholar, PubMed), see our [Education & EdTech MCP review](/reviews/education-edtech-mcp-servers/). For government document access (Congress.gov, GovInfo), see our [Government & Public Sector MCP review](/reviews/government-public-sector-mcp-servers/).
+This review covers the **library, archive, and museum** vertical — reference management (Zotero), ebook management (Calibre, EPUB/PDF), book discovery (Open Library, Google Books), web archiving (Wayback Machine), digital archive standards (IIIF), and museum collections (Rijksmuseum, Met, Smithsonian, Art Institute of Chicago, Harvard Art Museums, Cooper Hewitt). For academic paper search (arXiv, Semantic Scholar, PubMed), see our [Education & EdTech MCP review](/reviews/education-edtech-mcp-servers/). For government document access (Congress.gov, GovInfo), see our [Government & Public Sector MCP review](/reviews/government-public-sector-mcp-servers/).
 
-The headline findings: **Zotero is the most MCP-served application in this category** with 8+ implementations led by 54yyyu/zotero-mcp (1,800 stars, 13+ tools with vector semantic search). **eBook management has two paths** — direct EPUB/PDF handling via ebook-mcp (351 stars) or Calibre library bridging via 5+ implementations. **Five major museums have community MCP servers** but no museum has built an official one. **Traditional library systems (ILS, OPAC, MARC) have zero MCP presence** — a significant gap given how many libraries exist worldwide.
+The headline findings: **Zotero's growth is accelerating** — 54yyyu/zotero-mcp jumped from 1,800 to 2,700 stars in six weeks, with 10+ implementations now available. **NEW: ZotLink (134 stars) adds production-ready preprint saving** from arXiv, bioRxiv, medRxiv, chemRxiv, and CVF. **NEW: IIIF MCP server provides 20+ tools** for the International Image Interoperability Framework — the universal standard used by thousands of cultural heritage institutions. **Six major museums now have community MCP servers** (up from five) with the addition of Cooper Hewitt. **Traditional library systems (ILS, OPAC, MARC) still have zero MCP presence** — a significant gap given how many libraries exist worldwide.
 
 **Category:** [Education & Learning](/categories/education-learning/)
 
@@ -17,7 +17,7 @@ The headline findings: **Zotero is the most MCP-served application in this categ
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp) | 1,800 | Python | MIT | 13+ |
+| [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp) | 2,700 | Python | MIT | 13+ |
 
 The **most popular library MCP server by far** and one of the highest-starred MCP servers in any niche vertical. Connects your Zotero research library with AI assistants via the Zotero local API. Key capabilities:
 
@@ -33,7 +33,7 @@ The semantic search is the killer feature — instead of keyword matching, you c
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cookjohn/zotero-mcp](https://github.com/cookjohn/zotero-mcp) | 476 | TypeScript | MIT | 20 |
+| [cookjohn/zotero-mcp](https://github.com/cookjohn/zotero-mcp) | 684 | TypeScript | MIT | 20 |
 
 Takes a fundamentally different architecture — runs as a **native Zotero plugin** rather than an external server. The plugin embeds an MCP server using Streamable HTTP protocol, so AI clients connect directly to Zotero. The 20 tools span four categories:
 
@@ -44,18 +44,32 @@ Takes a fundamentally different architecture — runs as a **native Zotero plugi
 
 The **write capability** is the key differentiator — 54yyyu's server is read-only, while cookjohn's can create notes, tag items, and update metadata directly in your Zotero library. The annotation system supports color and tag filtering. Includes a built-in client configuration generator.
 
+### TonybotNi/ZotLink — Preprint Saving to Zotero
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [TonybotNi/ZotLink](https://github.com/TonybotNi/ZotLink) | 134 | Python | MIT | 5 |
+
+A **production-ready MCP server for saving open preprints** to Zotero with rich metadata and smart PDF attachments. Covers arXiv, CVF OpenAccess, bioRxiv, medRxiv, and chemRxiv — with publisher databases (Nature, Science, IEEE Xplore, Springer) planned. The 5 tools:
+
+- **check_zotero_status** — verify Zotero connection
+- **get_zotero_collections** — browse library structure
+- **save_paper_to_zotero** — save with full metadata extraction
+- **extract_arxiv_metadata** — pull metadata from arXiv papers
+
+At 134 stars, ZotLink is the third most popular Zotero MCP server. Its focus on preprint ingestion complements the broader library access of 54yyyu and cookjohn's implementations — where those servers help you *read* your library, ZotLink helps you *build* it.
+
 ### Additional Zotero Implementations
 
-Six more Zotero MCP servers exist, each with a slightly different focus:
+More Zotero MCP servers exist, each with a slightly different focus:
 
-- **[swairshah/zotero-mcp-server](https://github.com/swairshah/zotero-mcp-server)** — exposes your local Zotero repository to MCP clients
-- **[kujenga/zotero-mcp](https://github.com/kujenga/zotero-mcp)** — Python implementation using the Zotero API
+- **[kujenga/zotero-mcp](https://github.com/kujenga/zotero-mcp)** (138 stars) — streamlined Python implementation using the Zotero API
+- **[swairshah/zotero-mcp-server](https://github.com/swairshah/zotero-mcp-server)** — exposes your local Zotero repository with dual modes (Web API or direct SQLite)
 - **[kaliaboi/mcp-zotero](https://github.com/kaliaboi/mcp-zotero)** — connector for Zotero Cloud collections and sources
-- **[gyger/mcp-pyzotero](https://github.com/gyger/mcp-pyzotero)** — built on the pyzotero library for local Zotero integration
 - **[masaki39/zotero-mcp](https://github.com/masaki39/zotero-mcp)** — integrates with Zotero's local API
 - **[stephenstubbs/zotero-mcp](https://github.com/stephenstubbs/zotero-mcp)** — another Zotero integration
 
-With 8 independent implementations, Zotero is one of the most MCP-served single applications in the entire ecosystem — rivaling even Slack and GitHub for community attention. The pattern is clear: researchers want their AI assistants to have direct access to their citation libraries.
+With 10+ independent implementations, Zotero is one of the most MCP-served single applications in the entire ecosystem — rivaling even Slack and GitHub for community attention. The 54yyyu server's jump from 1,800 to 2,700 stars in six weeks shows research-AI integration demand is accelerating.
 
 ## eBook Management
 
@@ -63,7 +77,7 @@ With 8 independent implementations, Zotero is one of the most MCP-served single 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [onebirdrocks/ebook-mcp](https://github.com/onebirdrocks/ebook-mcp) | 351 | Python | Apache 2.0 | 10 |
+| [onebirdrocks/ebook-mcp](https://github.com/onebirdrocks/ebook-mcp) | 361 | Python | Apache 2.0 | 10 |
 
 The **most popular ebook MCP server** — works directly with EPUB and PDF files without requiring any library management software. The 10 tools split across two format categories:
 
@@ -105,6 +119,7 @@ Provides both Calibre deep links (`calibre://`) and file URLs (`file://`) for re
 - **[ispyridis/calibre-mcp-nodejs](https://github.com/ispyridis/calibre-mcp-nodejs)** (Node.js) — supports EPUB, PDF, MOBI, AZW/AZW3, TXT, HTML and more formats
 - **[THeK3nger/calibre-mcp](https://github.com/THeK3nger/calibre-mcp)** — queries Calibre via the Content Server, with full-text search and metadata retrieval
 - **[pshap/mcp-neolibrarian](https://github.com/pshap/mcp-neolibrarian)** (Python, MIT, 14 tools) — read-only server with unified search, batch operations, content analysis, and FTS statistics
+- **[benoute/calibre-mcp](https://github.com/benoute/calibre-mcp)** (Python) — access to a local Calibre library with search and retrieval
 
 ## Book Discovery
 
@@ -112,7 +127,7 @@ Provides both Calibre deep links (`calibre://`) and file URLs (`file://`) for re
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [8enSmith/mcp-open-library](https://github.com/8enSmith/mcp-open-library) | 62 | TypeScript | MIT | 6 |
+| [8enSmith/mcp-open-library](https://github.com/8enSmith/mcp-open-library) | 70 | TypeScript | MIT | 6 |
 
 Connects to the **Internet Archive's Open Library API** — the largest open book database with records for over 20 million editions. The 6 tools cover:
 
@@ -137,7 +152,7 @@ No API key required — Open Library's API is free and open. A solid choice for 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Mearman/mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine) | 17 | TypeScript | CC BY-NC-SA 4.0 | 4 |
+| [Mearman/mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine) | 21 | TypeScript | CC BY-NC-SA 4.0 | 4 |
 
 An MCP server **and** CLI tool for the Wayback Machine — no API keys required. The 4 tools:
 
@@ -156,13 +171,38 @@ Built-in rate limiting at 15 requests per minute protects against API abuse. Wor
 
 A simpler alternative with MIT licensing. Uses the CDX API for snapshot retrieval and adds **archive.org item search** beyond just the Wayback Machine. Provides a `wayback://{url}/{timestamp}` resource protocol for direct access to archived content.
 
+## Digital Archive Standards (IIIF)
+
+### code4history/IIIF_MCP — Universal Cultural Heritage Access
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [code4history/IIIF_MCP](https://github.com/code4history/IIIF_MCP) | 1 | JavaScript | — | 20+ |
+
+The **first MCP bridge to the IIIF ecosystem** — and potentially the most impactful server in this entire category. IIIF (International Image Interoperability Framework) is the universal standard used by thousands of cultural institutions worldwide — the Library of Congress, British Library, Bibliothèque nationale de France, Harvard, Stanford, the Vatican Library, and thousands more publish their digitized collections through IIIF APIs. This single MCP server can access them all.
+
+The 20+ tools span the full IIIF specification:
+
+- **Content Search** — full-text search within IIIF documents (manuscripts, books, newspapers)
+- **Metadata Retrieval** — structured metadata from IIIF manifests and collections
+- **Image Operations** — region, size, rotation, and quality parameters per the IIIF Image API
+- **Collection Navigation** — browse hierarchical collection structures
+- **Annotation Management** — read and manage annotations on digitized content
+- **Activity Streams** — track changes and updates across collections
+- **Authentication** — handle IIIF Auth flows for restricted content
+- **Audio/Video** — support for time-based media resources (IIIF Presentation API 3.0)
+
+The standout capability is **universality** — rather than building a separate MCP server for each museum or library (as the museum servers below do), IIIF_MCP works with any IIIF-compliant institution. The v1.1.0 release added image data fetching and canvas operations. Available as a single-file bundle for easy deployment.
+
+The star count is low (1 star) but this is a genuinely important bridge — IIIF covers more cultural heritage content than all the museum-specific MCP servers combined.
+
 ## Museum & Cultural Heritage Collections
 
 ### r-huijts/rijksmuseum-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [r-huijts/rijksmuseum-mcp](https://github.com/r-huijts/rijksmuseum-mcp) | 65 | JavaScript/TypeScript | MIT | 7 |
+| [r-huijts/rijksmuseum-mcp](https://github.com/r-huijts/rijksmuseum-mcp) | 67 | JavaScript/TypeScript | MIT | 7 |
 
 The **most popular museum MCP server**. Provides access to the Rijksmuseum's collection through 7 tools:
 
@@ -180,7 +220,7 @@ The **artist timeline** and **tile-based image loading** are unique features not
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mikechao/metmuseum-mcp](https://github.com/mikechao/metmuseum-mcp) | 24 | TypeScript | MIT | 4 |
+| [mikechao/metmuseum-mcp](https://github.com/mikechao/metmuseum-mcp) | 26 | TypeScript | MIT | 4 |
 
 Access to The Metropolitan Museum of Art's collection with an **interactive MCP App** — a browsable art explorer that runs directly within MCP-compatible clients. The 4 tools:
 
@@ -207,27 +247,28 @@ The `get_objects_on_view` tool is unique — it can tell you what's currently ex
 
 ### Additional Museum Servers
 
-- **[mikechao/artic-mcp](https://github.com/mikechao/artic-mcp)** (TypeScript, MIT, 6 tools) — Art Institute of Chicago collection with full-text search, artist browsing, and an **art gallery prompt** that generates interactive HTML galleries
+- **[mikechao/artic-mcp](https://github.com/mikechao/artic-mcp)** (TypeScript, MIT, 7 tools) — Art Institute of Chicago collection with full-text search, artist browsing, medium search, and an **art gallery prompt** that generates interactive HTML galleries
 - **[AlexLin1234/harvard-art-museums-mcp-server](https://github.com/AlexLin1234/harvard-art-museums-mcp-server)** (Python, MIT, 5 tools) — access to 224,000+ artworks, artists, and museum objects with random artwork discovery
+- **[behole/cooper-hewitt-mcp](https://github.com/behole/cooper-hewitt-mcp)** (TypeScript, MIT, 2 tools) — **NEW.** Cooper Hewitt, Smithsonian Design Museum collection access with object search and detailed retrieval. The first design-focused museum MCP server — Cooper Hewitt's collection emphasizes design objects, textiles, wallcoverings, drawings, and product design rather than fine art
 
-Five world-class museums now have community-built MCP servers. None has built an official one, but the community coverage is solid — these are all free public APIs wrapped in clean MCP interfaces.
+Six world-class museums now have community-built MCP servers — up from five. None has built an official one, but the community coverage is solid — these are all free public APIs wrapped in clean MCP interfaces. Combined with the IIIF MCP server above, AI agents can now access both museum-specific collections and the broader universe of IIIF-compliant digital archives.
 
 ## What's missing
 
-The gaps in this category are significant:
+The gaps in this category are still significant, though narrowing:
 
-- **No Library of Congress digital collections MCP** — congress.gov API covers legislative data only, not the LC's vast digital collections (prints, photographs, maps, manuscripts, recordings)
-- **No Europeana or DPLA servers** — the two largest digital cultural heritage aggregators (60+ million items combined) have public APIs but no MCP servers
+- **No Library of Congress digital collections MCP** — congress.gov API covers legislative data only, not the LC's vast digital collections (prints, photographs, maps, manuscripts, recordings). The IIIF MCP server can theoretically access LC's IIIF endpoints, but no dedicated server exists
+- **No Europeana or DPLA servers** — the two largest digital cultural heritage aggregators (60+ million items combined) have public APIs but no dedicated MCP servers. Again, IIIF_MCP can access Europeana's IIIF resources, but aggregator-level search is missing
 - **No MARC, Dublin Core, or Z39.50 servers** — zero MCP presence for bibliographic cataloging standards
 - **No ILS integrations** — Koha, FOLIO, Alma, Sierra, and other library management systems have no MCP servers
 - **No digital preservation servers** — no integration with preservation platforms like Archivematica, DSpace, or Fedora
 - **No public library catalog access** — no way for an AI agent to search a local public library's collection via MCP
 
-The absence of institutional library infrastructure MCP servers is the category's biggest gap. Libraries serve hundreds of millions of people worldwide, but the MCP ecosystem has focused entirely on personal tools (Zotero for researchers, Calibre for readers) rather than institutional systems.
+The IIIF MCP server is a significant step toward bridging the institutional gap — it provides a universal protocol layer that works with thousands of institutions. But it's a low-level tool (you need to know IIIF manifest URLs) rather than a discovery layer. The absence of institutional library infrastructure MCP servers remains the category's biggest gap.
 
 ## Bottom line
 
-The library, archive, and museum MCP category earns **3.5/5**. It's deep where individuals need it — Zotero's 8 implementations and 1,800-star lead server rival the best-served applications in the entire MCP ecosystem, and Calibre's 5+ servers cover ebook management thoroughly. Museum collections have surprisingly good coverage across 5 major institutions. But the category completely lacks institutional library infrastructure — no ILS, no cataloging standards, no public library access, no major digital heritage aggregators. If you're a researcher with a Zotero library or a reader with a Calibre collection, you're well-served. If you work in library science or cultural heritage at an institutional level, MCP hasn't arrived yet.
+The library, archive, and museum MCP category earns **3.5/5**. It's deep where individuals need it — Zotero's 10+ implementations and 2,700-star lead server (up 50% in six weeks) rival the best-served applications in the entire MCP ecosystem, and Calibre's 6+ servers cover ebook management thoroughly. Museum collections now span 6 major institutions with the addition of Cooper Hewitt. The IIIF MCP server is a significant new addition — providing universal access to thousands of cultural institutions through a single protocol. But the category still lacks institutional library infrastructure — no ILS, no cataloging standards, no public library access, no dedicated digital heritage aggregator servers. If you're a researcher with a Zotero library or a reader with a Calibre collection, you're well-served. If you work in library science or cultural heritage at an institutional level, IIIF_MCP is a promising start but MCP hasn't fully arrived yet.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-26 using Claude Opus 4.6 (Anthropic).*
 
