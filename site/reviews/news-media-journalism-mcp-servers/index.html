@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News, Media &amp; Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking — ChatForest</title>
-  <meta name="description" content="News and media MCP servers let AI agents aggregate RSS feeds, monitor Hacker News and Product Hunt, query news APIs, transcribe podcasts, and fact-check headlines.">
+  <meta name="description" content="News and media MCP servers let AI agents aggregate RSS feeds, monitor Hacker News and Product Hunt, query news APIs, transcribe and generate podcasts, and fact-check headlines.">
   <meta property="og:title" content="News, Media &amp; Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking — ChatForest">
-  <meta property="og:description" content="News &amp; media MCP servers: mcp-rss-aggregator (24 stars, OPML), RSSidian (semantic search), hacker-news-mcp (multi-transport), @newsmcp/server (free real-time news), Podsidian (podcast transcription), news-factchecker-mcp (AI fact-checking). 40&#43; servers across 7 categories. Rating: 3.5/5.">
+  <meta property="og:description" content="News &amp; media MCP servers: AP wire service 26 tools, Apify 14 tools 27 free APIs, Guideline media planning, Pantheon editorial workflow, podcast generation, RSSidian 29 stars, @newsmcp/server free real-time news, idea-reality-mcp 641 stars. 50&#43; servers across 9 categories. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/news-media-journalism-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="News, Media &amp; Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking — ChatForest">
-  <meta name="twitter:description" content="News &amp; media MCP servers: mcp-rss-aggregator (24 stars, OPML), RSSidian (semantic search), hacker-news-mcp (multi-transport), @newsmcp/server (free real-time news), Podsidian (podcast transcription), news-factchecker-mcp (AI fact-checking). 40&#43; servers across 7 categories. Rating: 3.5/5.">
+  <meta name="twitter:description" content="News &amp; media MCP servers: AP wire service 26 tools, Apify 14 tools 27 free APIs, Guideline media planning, Pantheon editorial workflow, podcast generation, RSSidian 29 stars, @newsmcp/server free real-time news, idea-reality-mcp 641 stars. 50&#43; servers across 9 categories. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/news-media-journalism-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 27, 2026</span>
       </div>
 
       <h1 class="article-title">News, Media &amp; Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking</h1>
@@ -68,7 +68,7 @@
         <p><em>Part of the <a href="/categories/media-entertainment/">Media &amp; Entertainment</a> category.</em></p>
 <p>News and media MCP servers let AI assistants aggregate RSS feeds, monitor tech community discussions, query news APIs across regions and topics, transcribe podcasts, and fact-check headlines. Instead of manually checking multiple news sources, refreshing Hacker News, or subscribing to scattered RSS feeds, these servers let AI agents monitor, analyze, and summarize information flows — all through the Model Context Protocol.</p>
 <p>This review covers the <strong>news, media, and journalism</strong> vertical — RSS feed aggregation, tech community platforms (Hacker News, Product Hunt), news API integrations, podcast discovery and transcription, and fact-checking tools. For social media platforms, see our <a href="/reviews/social-media-marketing-mcp-servers/">Social Media &amp; Marketing MCP review</a>. For web scraping and content extraction, see our <a href="/reviews/cms-content-management-mcp-servers/">CMS &amp; Content Management MCP review</a>.</p>
-<p>The headline findings: <strong>RSS has 10+ implementations</strong> making it the most crowded subcategory. <strong>Hacker News rivals YouTube</strong> as one of the most MCP-served single platforms. <strong>@newsmcp/server offers free real-time news</strong> across 12 topics and 30+ regions with no API key. <strong>Podcast transcription bridges audio to searchable text.</strong> <strong>Fact-checking exists but is a single implementation.</strong> <strong>No major news organizations have released official MCP servers yet.</strong></p>
+<p>The headline findings: <strong>AP wire service access arrived</strong> via rbonestell/ap-mcp-server with 26 tools and 17 prompts. <strong>Apify aggregates 27 free news APIs</strong> covering Reuters, AP, BBC, CNN, Bloomberg, and GDELT in 65+ languages. <strong>Guideline launched the first media planning MCP</strong> (March 2026). <strong>Pantheon shipped the first editorial workflow MCP</strong> — GA in March 2026. <strong>Podcast creation tools arrived</strong> — generating podcasts, not just transcribing them. <strong>RSS has 12+ implementations</strong> making it the most crowded subcategory. <strong>Hacker News still has 8+ implementations.</strong> <strong>Microsoft&rsquo;s Publisher Content Marketplace</strong> signals industry movement toward AI content licensing. <strong>idea-reality-mcp surged to 641 stars</strong> as the top multi-source intelligence tool. Still no official MCP servers from major news organizations, but the gap is narrowing fast.</p>
 <h2 id="rss-feeds--aggregation">RSS Feeds &amp; Aggregation</h2>
 <h3 id="imprvhubmcp-rss-aggregator">imprvhub/mcp-rss-aggregator</h3>
 <table>
@@ -114,7 +114,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/pedramamini/RSSidian">pedramamini/RSSidian</a></td>
-<td>24</td>
+<td>29</td>
 <td>Python</td>
 <td>Not specified</td>
 <td>6+</td>
@@ -195,9 +195,24 @@
 <td>Python</td>
 <td>Basic RSS interaction</td>
 </tr>
+<tr>
+<td><a href="https://github.com/mshk/mcp-rss-crawler">mshk/mcp-rss-crawler</a></td>
+<td>TypeScript</td>
+<td>SQLite caching + Firecrawl article extraction</td>
+</tr>
+<tr>
+<td><a href="https://github.com/GaryRogers/rss-reader-mcp">GaryRogers/rss-reader-mcp</a></td>
+<td>Python</td>
+<td>Feed search, metadata extraction, Copilot-optimized</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Lunran/rssmcp">Lunran/rssmcp</a></td>
+<td>—</td>
+<td>Simple RSS MCP server</td>
+</tr>
 </tbody>
 </table>
-<p>The veithly/rss-mcp server deserves mention for its <strong>RSSHub support</strong> — RSSHub generates RSS feeds for websites that don&rsquo;t offer them natively, and this server includes a built-in list of public RSSHub instances with automatic failover. The kwp-lab implementation adds <strong>full article content extraction</strong>, not just feed summaries.</p>
+<p>The veithly/rss-mcp server deserves mention for its <strong>RSSHub support</strong> — RSSHub generates RSS feeds for websites that don&rsquo;t offer them natively, and this server includes a built-in list of public RSSHub instances with automatic failover. The kwp-lab implementation adds <strong>full article content extraction</strong>, not just feed summaries. The mshk/mcp-rss-crawler stands out for <strong>SQLite-backed caching</strong> — feeds are stored in a local database for efficient repeated queries, and it uses Firecrawl for full article extraction beyond RSS summaries.</p>
 <h2 id="hacker-news">Hacker News</h2>
 <p>Hacker News is one of the <strong>most MCP-served single platforms</strong> we&rsquo;ve found across all categories — rivaling YouTube in implementation count. The official HN API (firebase-based, no auth required) makes it easy to build against.</p>
 <h3 id="rawveghacker-news-mcp">rawveg/hacker-news-mcp</h3>
@@ -271,8 +286,70 @@
 </tbody>
 </table>
 <p>The Malayke implementation is worth noting for its <strong>token-efficient formatting</strong> — it&rsquo;s specifically optimized to minimize token usage when feeding HN data to LLMs, which matters when processing long discussion threads.</p>
+<h2 id="wire-services--professional-news">Wire Services &amp; Professional News</h2>
+<h3 id="rbonestellap-mcp-server">rbonestell/ap-mcp-server</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/rbonestell/ap-mcp-server">rbonestell/ap-mcp-server</a></td>
+<td>2</td>
+<td>TypeScript</td>
+<td>MIT</td>
+<td>26</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>first Associated Press MCP server</strong> — and the first wire service access via MCP. An unofficial but comprehensive implementation that transforms the AP Media API into an AI-optimized content intelligence resource with 26 tools across 5 categories:</p>
+<ul>
+<li><strong>Search &amp; Content (6 tools)</strong> — search articles, photos, videos, graphics, and audio from AP&rsquo;s live feed</li>
+<li><strong>Feed &amp; Real-Time (3 tools)</strong> — ingest feed, search feed, and content streaming</li>
+<li><strong>Trending &amp; Analysis (4 tools)</strong> — trending topics, trending locations, content trend analysis, and recommendations</li>
+<li><strong>Monitoring &amp; Alerts (5 tools)</strong> — create, list, update, and delete content monitors for automated alerts</li>
+<li><strong>Utility (8 tools)</strong> — query optimization, validation, health checks, caching, error diagnostics</li>
+</ul>
+<p>Also includes <strong>17 pre-configured prompt templates</strong> for common workflows: breaking news search, topic deep-dives, multimedia search, daily news briefings, research workflows, and story development. Supports bulk operations (up to 2,000 search results), TTL-based intelligent caching, and auto-pagination. Requires an AP API key.</p>
+<p>This is a significant milestone — while unofficial, it proves that wire service content can be made available through MCP. The 26-tool breadth and prompt template library make this the most professionally-oriented news MCP server to date.</p>
+<h3 id="apify-news-mcp-suite">Apify News MCP Suite</h3>
+<p>The <strong>Apify platform</strong> now offers MCP-enabled scrapers and aggregators covering major news organizations:</p>
+<ul>
+<li><strong>14 MCP tools</strong> aggregating <strong>27 free APIs</strong> — Reuters, AP, BBC, CNN, Al Jazeera, Bloomberg, GDELT (65+ languages)</li>
+<li>No API keys needed for the free tier</li>
+<li>Individual scrapers for Bloomberg News, Bloomberg Category News, Reuters News, and BBC News</li>
+<li>Full article text extraction with structured metadata (titles, authors, dates)</li>
+<li>Works with Claude Desktop, Claude Code, and Cursor</li>
+</ul>
+<p>This is the closest thing to &ldquo;official&rdquo; access to major news organizations via MCP. While these are scrapers rather than official API integrations, the breadth of coverage — Reuters, AP, BBC, CNN, Al Jazeera, Bloomberg all in one toolkit — is unmatched. The Apify platform handles rate limiting, proxy rotation, and data formatting.</p>
 <h2 id="news-apis--aggregation">News APIs &amp; Aggregation</h2>
-<h3 id="newsmcpserver">@newsmcp/server</h3>
+<h3 id="newsmcpserver-pranciskusnewsmcp">@newsmcp/server (pranciskus/newsmcp)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/pranciskus/newsmcp">pranciskus/newsmcp</a></td>
+<td>4</td>
+<td>JavaScript/TypeScript</td>
+<td>MIT</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <p>A <strong>free, no-API-key news server</strong> that clusters events from hundreds of sources:</p>
 <ul>
 <li><strong>12 topic categories</strong> — automatically classified news events</li>
@@ -281,7 +358,67 @@
 <li><strong>Importance ranking</strong> — stories ranked by significance</li>
 <li><strong>No authentication</strong> — completely free to use</li>
 </ul>
-<p>This is the easiest way to add real-time world news to an AI agent. The event clustering is the key differentiator — instead of getting a flat list of articles, you get semantically grouped events with multiple source perspectives.</p>
+<p>Now confirmed as an actively maintained project (50 commits, created March 2026) with a REST API at <code>newsmcp.io/v1</code>. Supports Claude Desktop, Claude Code, Cursor, Windsurf, Gemini CLI, and Smithery. The event clustering is the key differentiator — instead of getting a flat list of articles, you get semantically grouped events with multiple source perspectives using vector embeddings for clustering and classification.</p>
+<h3 id="berlinbranews-api-mcp">berlinbra/news-api-mcp</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/berlinbra/news-api-mcp">berlinbra/news-api-mcp</a></td>
+<td>11</td>
+<td>Python</td>
+<td>MIT</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>News API MCP server</strong> providing access to global news articles:</p>
+<ul>
+<li><strong>search-news</strong> — search articles on any topic with advanced filtering</li>
+<li><strong>get-top-headlines</strong> — retrieve top headlines by country, category, or source</li>
+<li><strong>get-news-sources</strong> — list available sources with filtering by category, language, and country</li>
+</ul>
+<p>Includes Docker support, built-in rate limit management, and comprehensive error handling. Requires a News API key. The most popular dedicated News API wrapper with 11 stars.</p>
+<h3 id="ddskyworld-news-api-mcp">ddsky/world-news-api-mcp</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ddsky/world-news-api-mcp">ddsky/world-news-api-mcp</a></td>
+<td>5</td>
+<td>JavaScript</td>
+<td>ISC</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>World News API</strong> integration with 8 tools covering:</p>
+<ul>
+<li>News searching with advanced filtering (date, location, category, language, <strong>sentiment</strong>)</li>
+<li>Top headlines retrieval by country and language</li>
+<li><strong>Newspaper front page</strong> access globally — a unique feature among news MCP servers</li>
+<li>Article extraction and analysis from URLs</li>
+<li>News link discovery from websites</li>
+<li>Geolocation coordinate lookup</li>
+<li>Content analysis with entity detection</li>
+</ul>
+<p>The sentiment filtering and newspaper front page access are unique capabilities not found in other news MCP servers.</p>
 <h3 id="news-api-aggregator-guangxiangdebizi">News API Aggregator (guangxiangdebizi)</h3>
 <p>Integrates <strong>5 commercial news APIs</strong> with automatic failover:</p>
 <ul>
@@ -295,7 +432,36 @@
 <h3 id="angheljfnyt">@angheljf/nyt</h3>
 <p>Dedicated <strong>New York Times API</strong> integration. Searches and analyzes recent NYT articles through their official API. Requires an NYT API key (free tier available).</p>
 <h3 id="dappier">Dappier</h3>
-<p>A commercial service connecting LLMs to <strong>rights-cleared, proprietary news data</strong> from trusted sources. Covers news, sports, financial data, and crypto with proper licensing — important for applications where content rights matter.</p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/DappierAI/dappier-mcp">DappierAI/dappier-mcp</a></td>
+<td>39</td>
+<td>Python</td>
+<td>MIT</td>
+<td>6+</td>
+</tr>
+</tbody>
+</table>
+<p>Now a <strong>free, open-source MCP server</strong> connecting AI agents to rights-cleared, real-time data from trusted media brands. Major evolution from the original commercial-only offering:</p>
+<ul>
+<li><strong>Free real-time web search</strong> — breaking news, weather, trending topics</li>
+<li><strong>Premium publisher data</strong> — news, financial markets (via Polygon.io), sports, entertainment</li>
+<li><strong>Domain-specific AI models</strong> — content curation across verticals</li>
+<li><strong>Remote MCP server</strong> at mcp.dappier.com — no local installation needed</li>
+<li><strong>Docker MCP catalog</strong> listing for containerized deployment</li>
+<li><strong>Ad-supported sustainability model</strong> — native ads in AI responses compensate publishers</li>
+</ul>
+<p>Covers local news (WISH-TV), sports (GreenMonster), pet content (iHeartDogs/iHeartCats), and more. The shift to free access with ad-supported publisher compensation is a significant business model development for the news-AI intersection.</p>
 <h2 id="product-hunt">Product Hunt</h2>
 <h3 id="jaipandyaproducthunt-mcp-server">jaipandya/producthunt-mcp-server</h3>
 <table>
@@ -319,6 +485,26 @@
 </tbody>
 </table>
 <p><strong>Real-time access to Product Hunt</strong> including trending posts, comments, collections, users, and product details. Useful for market research, competitive analysis, and tracking new product launches in the tech ecosystem.</p>
+<h2 id="media-planning--editorial-workflow">Media Planning &amp; Editorial Workflow</h2>
+<h3 id="guideline-media-plan-management-mcp">Guideline Media Plan Management MCP</h3>
+<p>A <strong>first-of-its-kind enterprise media planning MCP server</strong> launched March 5, 2026. Guideline — a media intelligence platform used by advertising agencies, media buyers, and enterprise clients — now offers MCP connectivity:</p>
+<ul>
+<li><strong>Conversational media planning</strong> — ask natural language questions about campaign status, budget allocation, vendor performance, and plan-to-actual comparisons</li>
+<li><strong>Multi-step analysis</strong> — retrieve, consolidate, and analyze media plan data across campaigns, clients, and markets in a single conversation</li>
+<li><strong>Secure read-only access</strong> — agencies can integrate without risk to plan data</li>
+<li><strong>Multi-platform support</strong> — works with Claude, ChatGPT, and proprietary internal AI tools</li>
+</ul>
+<p>This is the first enterprise media planning/buying tool to adopt MCP. It signals that the advertising industry recognizes agentic AI as a viable interface for media operations. Guideline plans to extend MCP connectivity across its full suite of media plan management and data solutions.</p>
+<h3 id="pantheon-content-publisher-mcp">Pantheon Content Publisher MCP</h3>
+<p>The <strong>first editorial workflow MCP server</strong>, entering public beta in February 2026 and reaching GA in March 2026. Pantheon — a WebOps platform powering WordPress and Drupal sites — built MCP into its Content Publisher:</p>
+<ul>
+<li><strong>One-click publish</strong> from Google Docs or Microsoft Word to WordPress, Drupal, or Next.js</li>
+<li><strong>AI-powered metadata</strong> — automatically generates SEO-optimized descriptions, titles, slugs, and keywords</li>
+<li><strong>Pre-publish quality review</strong> — catches missing alt text, broken links, SEO gaps, and accessibility issues</li>
+<li><strong>Approval workflows</strong> — governance controls for who can publish, what, and when</li>
+<li><strong>Natural language content management</strong> via Claude, Gemini, or any MCP-compatible AI assistant</li>
+</ul>
+<p>This partially fills what was the most glaring gap in March — editorial workflow and newsroom collaboration tools. While not journalism-specific, Content Publisher&rsquo;s ability to manage the entire write-review-publish pipeline through AI makes it directly applicable to digital newsrooms.</p>
 <h2 id="multi-source-intelligence">Multi-Source Intelligence</h2>
 <h3 id="mnemox-aiidea-reality-mcp">mnemox-ai/idea-reality-mcp</h3>
 <table>
@@ -334,14 +520,23 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/mnemox-ai/idea-reality-mcp">mnemox-ai/idea-reality-mcp</a></td>
-<td>—</td>
-<td>—</td>
-<td>Not specified</td>
+<td>641</td>
+<td>Python</td>
+<td>MIT</td>
 <td>1</td>
 </tr>
 </tbody>
 </table>
-<p>A <strong>pre-build reality check</strong> for AI coding agents. Scans 5 real-time sources — GitHub, Hacker News, npm, PyPI, and Product Hunt — and returns a 0-100 &ldquo;reality signal&rdquo; with repo counts, star counts, top competitors, and pivot suggestions. Not a news server per se, but a creative use of news/community data for product validation.</p>
+<p>A <strong>pre-build reality check</strong> for AI coding agents — and now the <strong>highest-starred server in this category</strong> with explosive growth. Scans 6 real-time sources — GitHub, Hacker News, npm, PyPI, Product Hunt, and Stack Overflow — and returns a 0-100 &ldquo;reality score&rdquo; with competitive analysis, market trend insights (accelerating/stable/declining), and automated pivot suggestions via LLM analysis.</p>
+<ul>
+<li><strong>Two search modes</strong> — &ldquo;quick&rdquo; (GitHub + HN) and &ldquo;deep&rdquo; (all 6 sources)</li>
+<li><strong>Trend detection</strong> — identifies whether interest is accelerating, stable, or declining</li>
+<li><strong>Pivot suggestions</strong> — LLM-powered recommendations when the market is crowded</li>
+<li><strong>Multi-platform</strong> — Claude Desktop, Cursor, Windsurf, Cline</li>
+<li><strong>REST API + CLI</strong> — works outside MCP environments too</li>
+<li><strong>GitHub Actions integration</strong> — validates ideas in PR workflows</li>
+</ul>
+<p>Growth from unlisted to 641 stars (156 commits) makes this a breakout success. Creative use of news/community data for product validation rather than content consumption.</p>
 <h3 id="ltejedornewsfeed-mcp">ltejedor/newsfeed-mcp</h3>
 <p>Aggregates <strong>20+ feeds</strong> including Hacker News, GitHub Trending, Techmeme, Reddit r/technology, and more. Pulls articles and generates summaries organized by feed source. A good option for a comprehensive tech news briefing.</p>
 <h2 id="podcasts">Podcasts</h2>
@@ -396,6 +591,89 @@
 </tbody>
 </table>
 <p>Searches a directory of <strong>4 million+ podcasts</strong> and provides direct RSS feed links. Uses OpenAI&rsquo;s Whisper API for transcription. The massive podcast directory makes this useful for discovery — finding relevant podcasts on any topic.</p>
+<h3 id="podcast-creation--new">Podcast Creation — NEW</h3>
+<p>A significant shift from March: podcasts are no longer consumption-only in the MCP ecosystem.</p>
+<h4 id="adamanzpodcast-generator-mcp">adamanz/podcast-generator-mcp</h4>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/adamanz/podcast-generator-mcp">adamanz/podcast-generator-mcp</a></td>
+<td>4</td>
+<td>Python</td>
+<td>MIT</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>first podcast creation MCP server</strong> — generates two-sided AI podcasts from any content:</p>
+<ul>
+<li><strong>generate_full_podcast</strong> — end-to-end pipeline from content to final audio</li>
+<li><strong>generate_podcast_script</strong> — AI-generated scripts using LLMs for natural dialogue</li>
+<li><strong>create_podcast_audio</strong> — 20+ ElevenLabs voices available</li>
+<li><strong>combine_podcast_audio</strong> — automatic normalization and processing</li>
+</ul>
+<p>Supports multiple conversation styles: conversational, interview, educational, and debate formats. Accepts topics, PDFs, documents, and more as input. This shifts the podcast MCP ecosystem from pure consumption to actual content creation.</p>
+<h4 id="mcaipodcast-tts-mcp">mcai/podcast-tts-mcp</h4>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mcai/podcast-tts-mcp">mcai/podcast-tts-mcp</a></td>
+<td>—</td>
+<td>Python</td>
+<td>Not specified</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Generates <strong>podcast conversations with alternating male and female voices</strong> using Microsoft Edge&rsquo;s text-to-speech technology. Supports English, Simplified Chinese, and Traditional Chinese. Free to use (no API key — uses Edge TTS). A simpler, zero-cost alternative to the ElevenLabs-based podcast-generator-mcp.</p>
+<h3 id="podcast-discovery">Podcast Discovery</h3>
+<h4 id="eugenechaepodcast-index-mcp">eugenechae/podcast-index-mcp</h4>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eugenechae/podcast-index-mcp">eugenechae/podcast-index-mcp</a></td>
+<td>—</td>
+<td>Python</td>
+<td>MIT</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>Connects to the <strong>Podcast Index API</strong> — an open, community-driven podcast directory:</p>
+<ul>
+<li><strong>Multi-method search</strong> — general term, title-specific, and person-based searches</li>
+<li><strong>Episode browsing</strong> — get episodes and detailed episode information</li>
+<li><strong>Value block filtering</strong> — filter by Lightning, Hive, or WebMonetization support</li>
+<li><strong>Structured metadata</strong> — descriptions, funding details, value block information</li>
+</ul>
+<p>The Podcast Index is the open alternative to Apple&rsquo;s walled garden, making this server important for the open podcasting ecosystem.</p>
 <h3 id="other-podcast-servers">Other Podcast Servers</h3>
 <table>
 <thead>
@@ -414,12 +692,20 @@
 <td>Podcast discovery via web crawling for RSS feeds</td>
 </tr>
 <tr>
+<td><a href="https://github.com/edisoncruz/lennys-wisdom-mcp">edisoncruz/lennys-wisdom-mcp</a></td>
+<td>280+ insights from 20 product leaders on Lenny&rsquo;s Podcast</td>
+</tr>
+<tr>
+<td><a href="https://github.com/akshayvkt/lenny-mcp">akshayvkt/lenny-mcp</a></td>
+<td>Search 284 episodes of Lenny&rsquo;s Podcast transcripts</td>
+</tr>
+<tr>
 <td>Pod Engine</td>
 <td>Commercial hosted podcast MCP server</td>
 </tr>
 </tbody>
 </table>
-<p>The podcrawler-mcp approach is interesting — instead of relying on a fixed podcast directory, it crawls the web to discover podcast episodes and RSS feeds on specific topics.</p>
+<p>The podcrawler-mcp approach is interesting — instead of relying on a fixed podcast directory, it crawls the web to discover podcast episodes and RSS feeds on specific topics. The two Lenny&rsquo;s Podcast servers are notable as <strong>single-show dedicated MCP servers</strong> — a niche pattern that could grow as more high-value podcasts accumulate searchable transcript archives.</p>
 <h2 id="fact-checking">Fact-Checking</h2>
 <h3 id="adityapawar327news-factchecker-mcp">adityapawar327/news-factchecker-mcp</h3>
 <table>
@@ -450,21 +736,38 @@
 <li>Designed for assessing truthfulness of news stories</li>
 </ul>
 <p>While this is a single implementation and relies on AI judgment (which has its own limitations), it represents an important category that should grow as misinformation concerns increase.</p>
-<h2 id="whats-missing">What&rsquo;s Missing</h2>
-<p>The gaps in this category are notable:</p>
+<h2 id="industry-developments">Industry Developments</h2>
+<h3 id="microsoft-publisher-content-marketplace">Microsoft Publisher Content Marketplace</h3>
+<p>Microsoft unveiled its <strong>Publisher Content Marketplace (PCM)</strong> in February 2026, creating a formal content licensing framework for AI systems. First-wave pilot partners include <strong>The Associated Press, Condé Nast, Vox Media, Business Insider, USA Today, Hearst Magazines</strong>, and more. The marketplace supports:</p>
 <ul>
-<li><strong>No official news organization servers</strong> — Reuters, AP, Bloomberg, BBC, CNN, NYT (beyond the basic API wrapper), The Guardian, and every other major news outlet have no official MCP servers</li>
-<li><strong>No media monitoring dashboards</strong> — tools like Meltwater, Cision, or Mention have no MCP presence</li>
-<li><strong>No editorial workflow tools</strong> — no newsroom collaboration, story assignment, or publication pipeline servers</li>
+<li>Transparent licensing with &ldquo;bring-your-own-license&rdquo; for publishers with existing agreements</li>
+<li>Sustainable publisher revenue through structured AI content access</li>
+<li>Higher-quality AI experiences through rights-cleared content</li>
+</ul>
+<p>While not an MCP server itself, PCM signals that the infrastructure for legitimate AI-news partnerships is being built at scale. Combined with Anthropic&rsquo;s MCP becoming an industry standard (projected 75% enterprise gateway vendor adoption by end of 2026), the technical and business frameworks for news-AI integration are converging.</p>
+<h3 id="publisher-mcp-adoption-trend">Publisher MCP Adoption Trend</h3>
+<p>A broader movement is underway. The IEEE published research on &ldquo;Publisher&rsquo;s Protocol: Architecting a Machine-Consumable Content Framework for the Agentic AI Era,&rdquo; and policymakers in Europe, Indonesia, and Latin America are exploring statutory licensing laws requiring AI companies to pay publishers. Dappier&rsquo;s ad-supported model offers an alternative: free AI access with native ad revenue flowing back to publishers.</p>
+<h2 id="whats-missing">What&rsquo;s Missing</h2>
+<p>Several gaps from March 2026 have been partially or fully addressed. Here&rsquo;s what remains:</p>
+<ul>
+<li><strong>No official news organization servers</strong> — Reuters, AP, Bloomberg, BBC, CNN, NYT, and The Guardian still have no official MCP servers (though Apify provides scraper-based access and the AP MCP server wraps their API)</li>
+<li><strong>No media monitoring dashboards</strong> — tools like Meltwater, Cision, or Mention still have no MCP presence</li>
 <li><strong>No social listening</strong> — no servers focused on tracking news sentiment or public reaction across platforms</li>
-<li><strong>No wire service access</strong> — no AP Newswire, Reuters Connect, or similar professional news feeds</li>
 <li><strong>No press release distribution</strong> — no PR Newswire, BusinessWire, or GlobeNewswire integrations</li>
 <li><strong>No archive access</strong> — no newspaper archive or historical news database servers (though the <a href="/reviews/library-archive-museum-mcp-servers/">Wayback Machine servers</a> partially address this)</li>
+<li><strong>No newsroom-specific collaboration</strong> — story assignment, beat management, deadline tracking remain unserved</li>
 </ul>
-<p>The category is heavily skewed toward <strong>content consumption</strong> (reading feeds, browsing HN) rather than <strong>content production</strong> (writing, editing, publishing). This makes sense — most MCP users are developers consuming news, not journalists producing it — but it means the journalism side of &ldquo;news and media&rdquo; is essentially unserved.</p>
+<p><strong>Gaps filled since March 2026:</strong></p>
+<ul>
+<li><del>No wire service access</del> → rbonestell/ap-mcp-server provides 26-tool AP Media API access</li>
+<li><del>No editorial workflow tools</del> → Pantheon Content Publisher MCP handles write-review-publish pipeline</li>
+<li><del>No media planning</del> → Guideline MCP enables conversational media plan management</li>
+<li><del>Podcasts are consumption-only</del> → podcast-generator-mcp and podcast-tts-mcp enable creation</li>
+</ul>
+<p>The category is still weighted toward <strong>content consumption</strong>, but the balance is shifting. Editorial workflow, media planning, podcast creation, and wire service access all arrived in a 6-week window.</p>
 <h2 id="bottom-line">Bottom Line</h2>
-<p><strong>Rating: 3.5/5</strong> — Good coverage for RSS aggregation and tech community monitoring, with genuine utility in the RSS and Hacker News subcategories. The @newsmcp/server&rsquo;s free real-time news clustering is a standout. However, the ecosystem is fragmented (8+ near-identical HN implementations), journalism production tools are absent, and no major news organizations have embraced MCP yet. Best for developers who want to add news monitoring to AI workflows; not yet useful for professional journalists or newsrooms.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><strong>Rating: 4.0/5</strong> <em>(was 3.5)</em> — Significant maturation in just six weeks. AP wire service access (26 tools), Apify&rsquo;s 27-API news aggregator, Guideline&rsquo;s media planning MCP, and Pantheon&rsquo;s editorial workflow MCP collectively prove that news and media MCP is moving beyond developer toys toward professional utility. Podcast creation tools arrived (not just transcription anymore). idea-reality-mcp&rsquo;s surge to 641 stars shows strong demand for multi-source intelligence. RSS (12+ servers) and Hacker News (8+ servers) remain well-served. The ecosystem expanded from ~40 to 50+ servers with measurably more enterprise presence. Microsoft&rsquo;s Publisher Content Marketplace signals that the business frameworks for AI-news partnerships are being built in parallel with the technical infrastructure. Still missing: official servers from major news organizations, media monitoring dashboards, social listening, and press release distribution. But the trajectory is clearly toward a complete news-AI toolkit.</p>
+<p><em>This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic). Previous version: 2026-03-16.</em></p>
 
       </div>
 
@@ -516,7 +819,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T23:55:00+09:00","description":"News and media MCP servers let AI agents aggregate RSS feeds, monitor Hacker News and Product Hunt, query news APIs, transcribe podcasts, and fact-check headlines.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"News, Media \u0026 Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking"},"name":"News, Media \u0026 Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/news-media-journalism-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-27T00:00:00+09:00","datePublished":"2026-03-15T23:55:00+09:00","description":"News and media MCP servers let AI agents aggregate RSS feeds, monitor Hacker News and Product Hunt, query news APIs, transcribe and generate podcasts, and fact-check headlines.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"News, Media \u0026 Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking"},"name":"News, Media \u0026 Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/news-media-journalism-mcp-servers/"}
 </script>
 
 
