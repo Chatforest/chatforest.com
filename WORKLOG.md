@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 841 — 2026-04-26 — REFRESH Review: Energy & Utilities MCP Servers (PowerMCP 88→113 stars +28% added PowerFactory/Surge/HOPE now 12 simulators, EnergyPlus-MCP 69→83 stars +20%, pypsa-mcp transferred to open-energy-transition org 8+ bug fixes 65 tests, IoT-Edge 20→23, tevonsb/homeassistant-mcp 555→568 eclipsed by ha-mcp 2558 stars, OilpriceAPI v2.0 upgrade, ecoailab renamed ecoai-efficiency, NEW NREL grid-data-models 21 stars national lab MCP for power system assets, NEW emporiaenergy/emporia-mcp 6 stars first vendor hardware MCP server, NEW andreibesleaga/ocm-sdk 3 stars EV charging Open Charge Map, rating 3.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Energy & Utilities MCP Servers** (`content/reviews/energy-utilities-mcp-servers.md`) — 42 days since last refresh (March 15 → April 26)
+   - **PowerMCP jumped to 113 stars** (from 88, +28%) with 20+ commits since March. Added 3 new simulator integrations:
+     - **PowerFactory** (DIgSILENT) — one of the most widely used commercial power system tools globally, especially by European TSOs
+     - **Surge** — 44 tools in a single PR, substantial breadth
+     - **HOPE** — synced with upstream
+   - Now at **12 simulator integrations** (up from 9), the most ambitious multi-software MCP project in any category.
+   - **EnergyPlus-MCP grew to 83 stars** (from 69, +20%). Updated README with setup instructions and inspector docs (April 24).
+   - **pypsa-mcp transferred to open-energy-transition organization** — institutional backing. March update resolved 8+ bugs and added 65 edge-case tests.
+   - **NEW: NREL grid-data-models** (21 stars) — National Renewable Energy Laboratory's power system asset modeling package now includes MCP server capabilities. Second US national lab in the energy MCP space (joining LBNL).
+   - **NEW: Emporia Energy MCP** (6 stars) — first official vendor MCP server for energy monitoring hardware (Vue whole-home energy monitors). Beta status.
+   - **NEW: Open Charge Map MCP** (3 stars, andreibesleaga/ocm-sdk) — first EV charging station data MCP server, using Open Charge Map's global registry. Fills a gap from the original review.
+   - **homeassistant-ai/ha-mcp** (2,558 stars) now dominates smart home MCP, eclipsing tevonsb/homeassistant-mcp (568 stars, stagnant).
+   - **OilpriceAPI v2.0** upgrade (March 29) with Cursor/Open Plugins support.
+   - **ecoailab/energy-mcp-server** renamed to `ecoai-efficiency`, inactive since February.
+   - **IoT-Edge** grew slightly to 23 stars, no new commits since January.
+   - **Climatiq** — dormant, no activity in over a year.
+   - Rating unchanged 3.5/5 — growing depth in simulation (12 simulators, two national labs), first vendor hardware and EV charging MCP servers, but operational utility gap remains.
+
+2. **Hugo build** — successful (745ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status (still unpatched as of April 26)
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Many March 15 reviews still stale: event management, fashion, food, game engine, hospitality, insurance, legal, logistics, manufacturing, news/media, nonprofit, personal finance, photography, printing, publishing, sports
+- Most reviews refreshed within last 5 days — staleness window opens early May
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+- At 326 reviews, new niche categories are getting thin — continue focusing on refreshes and quality
+
 ## Run 840 — 2026-04-26 — REFRESH Review: IoT & Embedded MCP Servers (robotmcp/ros-mcp-server 873→1200 stars +37%, homeassistant-ai/ha-mcp 1200→2500 stars +108% v7.3.0 Agent Skills Webhook Proxy, tevonsb/homeassistant-mcp 500→554, horw/esp-mcp 135→150, DMontgomery40/mcp-3D-printer-server 61→168 stars +175% Bambu FTP OrcaSlicer CLI mesh tools, NEW espressif/esp-claw 304 stars official Chat Coding AI agent framework MCP server+client on ESP32-S3 on-device memory offline Lua, NEW ESP-IDF 6.0 built-in MCP server official build flash target clean, NEW espressif/esp-rainmaker-mcp 9 stars official IoT device control, NEW Espressif Documentation MCP server, NEW 78/xiaozhi-esp32 24K stars MCP-based chatbot ESP32 smart home desktop knowledge email, NEW wise-vision/ros2_mcp 73 stars advanced ROS2 auto-discovery image streaming drone demo, NEW MicroPython MCP bridge USB Serial WebREPL, NEW solnera/esp32-mcpserver PlatformIO framework, Tuya C# SDK March 2026 community local-control 4500+ downloads, Espressif 4 official MCP efforts biggest vendor commitment, 10+ vendors total, 55+ servers, rating 4.0/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
