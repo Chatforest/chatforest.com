@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 847 — 2026-04-27 — REFRESH Review: Fashion, Beauty & Style MCP Servers (NEW secondhand-mcp 9 stars 3 tools searches Depop/Poshmark/eBay/FB Marketplace v0.4.0 30 commits, NEW mcp-sephora 6 tools browser automation Playwright search/basket/checkout/rewards, NEW skincare-mcp 2 tools NLP TF-IDF 1884 Sephora products ingredient matching red-flag detection, NEW mcp-vybe alternative virtual try-on via Replicate API, NEW klydo-mcp Indian Gen-Z fashion discovery 3 tools MIT, heybeauty-mcp 18→19 stars, K-Beauty-MCP 5→6 stars, color-scheme-mcp 7→8 stars, rating 2.5→3.0/5 secondhand/resale gap filled biggest-addition)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Fashion, Beauty & Style MCP Servers** (`content/reviews/fashion-beauty-style-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **secondhand-mcp** — NEW. 9 stars, TypeScript, MIT, 3 tools. Searches Facebook Marketplace, eBay, Depop, and Poshmark with price/condition/size/color filters. v0.4.0, 30 commits. Fills the biggest gap from original review — the $200B+ secondhand fashion market. Most mature new server in the category.
+   - **mcp-sephora** — NEW. TypeScript, 6 tools. Browser automation via Playwright for Sephora: product search, details, basket management, checkout, Beauty Insider rewards. Created March 2026.
+   - **skincare-mcp** — NEW. Python, 2 tools. NLP-based skincare ingredient analysis using TF-IDF on 1,884 Sephora products. Finds similar products by ingredient composition, flags irritants for sensitive skin. Most technically sophisticated server in the category.
+   - **mcp-vybe** — NEW. Python, 3 tools. Alternative virtual try-on using Replicate API. More flexible image format support than HeyBeauty but zero stars.
+   - **klydo-mcp** — NEW. Python, MIT, 3 tools. Indian Gen-Z fashion discovery via Klydo platform (Bangalore). Search, product details, trending.
+   - **Star updates**: heybeauty-mcp 18→19, K-Beauty-MCP 5→6, color-scheme-mcp 7→8. No existing servers had significant code changes.
+   - **Gaps narrowing**: Secondhand/resale filled. Sephora beauty retail filled. Skincare ingredient analysis filled. Still missing: size/fit recommendation, trend forecasting, sustainable fashion, luxury brands, jewelry/accessories.
+   - **Rating upgraded 2.5→3.0/5** — category moved from pure proof-of-concept to early practical utility. 10→15+ servers, consumer-facing use cases arriving first.
+
+2. **Hugo build** — successful (739ms), 1,230 pages.
+
+3. **Deploy** — pending throttle window.
+
+### What should happen next
+- Stale March 15 reviews remaining: hospitality, insurance, manufacturing, news/media, nonprofit, photography, printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 846 — 2026-04-27 — REFRESH Review: Game Engine & 3D Development MCP Servers (UNITY OFFICIAL MCP com.unity.ai.assistant v2.5.0-pre.2 built-in MCP bridge Unity AI Beta 2026, CoplayDev/unity-mcp 5800→8900 stars +53% v9.6.6 40+ tools profiler+physics+build+multi-scene, IvanMurzak/Unity-MCP 306→2300 stars +650% breakout, NEW AnkleBreaker-Studio 268 tools 129 stars NEW Glade-tool 222+ tools 57 stars, 217+ Unity MCP repos since Feb 2026, chongdashu/unreal-mcp 1200→1800 dormant, flopperam/unreal-engine-mcp 852 stars hosted version, ChiR24/Unreal_mcp 353→552 HTTP/SSE UE5.0-5.7, NEW StraySpark COMMERCIAL 207 tools Fab.com, NEW ai-forge-mcp 565 tools 16 MCP servers AAA pipelines, NEW UnrealGenAISupport 559 stars multi-LLM, Epic hints UE 5.8 MCP, GoPeak 147 stars 110+ tools tiered profiles, NEW GDAI MCP COMMERCIAL $19, Roblox ARCHIVED built-in MCP external LLM playtest automation, NEW Cocos Creator 831 stars, NEW Bevy/Rust 12 tools BRP bridge, rating 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
