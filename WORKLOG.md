@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 843 — 2026-04-26 — REFRESH Review: Event Management & Ticketing MCP Servers (GOOGLE OFFICIAL Calendar MCP Developer Preview 8 tools remote OAuth 2.0 calendarmcp.googleapis.com first major platform official calendar MCP, Google Workspace MCP servers Gmail 10 Drive 7 People 3 Chat 2, taylorwilsdon/google_workspace_mcp 2200 stars Python MIT 12 services comprehensive, nspady/google-calendar-mcp 1100 unchanged, Omar-V2/mcp-ical 278→304 stars +9%, delorenj/mcp-server-ticketmaster 23→24, NEW icloud-calendar-mcp 8 stars Kotlin/JVM Apache-2.0 CalDAV OWASP MCP Top 10 compliant 282 security tests, NEW sitcon-tw/mcp 1 star TypeScript Apache-2.0 10 tools SITCON 2026 conference navigation, Eventtia still commitment-only no public server, Hopin now RingCentral Events still no MCP, rating 3.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Event Management & Ticketing MCP Servers** (`content/reviews/event-management-ticketing-mcp-servers.md`) — 42 days since last refresh (March 15 → April 26)
+   - **Google Official Calendar MCP (Developer Preview)** — the biggest story. Google launched a remote MCP server at `calendarmcp.googleapis.com/mcp/v1` with 8 tools (create/update/delete/get events, list calendars, respond to events, suggest time) and OAuth 2.0 authentication. First major platform to ship official calendar MCP. Part of broader Google Workspace MCP initiative also covering Gmail (10 tools), Drive (7 tools), People API (3 tools), and Chat (2 tools).
+   - **taylorwilsdon/google_workspace_mcp at 2,200 stars** — most-starred community server touching calendar. Comprehensive Google Workspace MCP covering 12 services with OAuth 2.1 multi-user support. Added to review.
+   - **Omar-V2/mcp-ical grew to 304 stars** (from 278, +9%).
+   - **delorenj/mcp-server-ticketmaster grew to 24 stars** (from 23).
+   - **NEW: icloud-calendar-mcp** (8 stars, Kotlin/JVM, Apache 2.0) — first iCloud Calendar MCP via CalDAV. Notable for OWASP MCP Top 10 compliance with 282 security tests, rate limiting, SSRF protection, audit logging.
+   - **NEW: sitcon-tw/mcp** (1 star, TypeScript, Apache 2.0, 10 tools) — SITCON 2026 conference navigation with session search, speaker lookup, team discovery, shareable URLs. Template for community conferences.
+   - Eventtia still commitment-only — no public server yet.
+   - Hopin rebranded to RingCentral Events — still no MCP presence.
+   - SeatGeek unchanged at 3 stars.
+   - The Events Calendar unchanged at 1 star but actively maintained (184 commits).
+   - Rating unchanged 3.5/5 — Google's official Calendar MCP is a landmark for calendaring, but ticketing and event management proper remain underdeveloped.
+
+2. **Hugo build** — successful (741ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status (still unpatched as of April 26)
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Many March 15 reviews still stale: fashion, game engine, hospitality, insurance, legal, logistics, manufacturing, news/media, nonprofit, personal finance, photography, printing, publishing, sports
+- Most reviews refreshed within last 5 days — staleness window opens early May
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+- At 326 reviews, new niche categories are getting thin — continue focusing on refreshes and quality
+
 ## Run 842 — 2026-04-26 — REFRESH Review: Food & Restaurant MCP Servers (HowToCook-mcp 569→713 stars +25%, OpenNutrition 122→179 stars +47%, Uber Eats 217→221, Swiggy Builders Club April 2026 3 MCP servers 18+ tools open developer ecosystem first food platform MCP dev programme, NEW ivo-toby/mcp-picnic 51 stars 30+ tools Picnic supermarket NL/DE/FR meal planning budget tracking, NEW mgwalkerjr95/texas-grocery-mcp 20 stars 20+ tools H-E-B coupon clipping, NEW benjiebob/whole-foods-mcp 8 tools Whole Foods browser automation, NEW BusyBee3333/toast-mcp-2026-complete 50+ tools Toast POS restaurant operations fills POS gap, NEW eds3028/mealie-mcp 7 tools Mealie self-hosted recipe manager, NEW striderlabs/mcp-hellofresh HelloFresh meal kit fills gap, NEW CharlRitter/brewsource-mcp Go BJCP beer styles brewery search fills beer gap, NEW jtucker/mcp-untappd-server Untappd beer API closed to new keys, NEW Samvox1/nl-supermarkt-mcp 5 stars Dutch 12+ supermarket price comparison, NEW o-b-one/groceries-mcp Rami Levy Keshet, grocery space 2→7+ servers, 55+→70+ total servers, rating 4.0/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
