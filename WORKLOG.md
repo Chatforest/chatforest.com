@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 836 — 2026-04-26 — REFRESH Review: Real Estate & Property MCP Servers (Airbnb 394→437 stars v0.2.0, Zillow 31→37 stars, Repliers 14→16 stars, NEW Portal ChatGPT MCP apps Zillow Oct 2025 + Redfin Feb 2026 + Realtor.com Mar 2026 via OpenAI Apps SDK, NEW PriceHubble MCP Suite 4 MCPs Listings+Transactions+Market Trends+Valuation 11 countries ISO 27001 GDPR enterprise beta Q1 2026, NEW nkbud/mcp-server-attom 2 stars MIT Python 55+ ATTOM API endpoints open-source, NEW CryptoCultCurt/appfolio-mcp-server 6 stars ISC TypeScript property management reporting API, NEW DanielJandric/realestatemcp 7 MCP tools semantic search 31K+ document chunks property intelligence, jmclaughlin724/attom-mcp-server TypeScript alternative, UPDATED What's Missing portal access ChatGPT-only not open MCP + AppFolio partially fills rental management gap + PriceHubble partially fills CRE gap, STILL MISSING CoStar LoopNet CREXi title/escrow construction/development appraisal tools, rating 3.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Real Estate & Property MCP Servers** (`content/reviews/real-estate-property-mcp-servers.md`) — 22 days since last refresh (April 4 → April 26)
+   - **NEW: Portal ChatGPT MCP Apps section** — all three major U.S. consumer portals now have ChatGPT apps built on OpenAI's Apps SDK (which uses MCP): Zillow (October 2025), Redfin (February 2026), Realtor.com (March 2026). Important caveat: these are ChatGPT-exclusive, not open MCP servers.
+   - **NEW: PriceHubble MCP Suite** — first proptech platform with multi-country enterprise MCP support. 4 MCPs: Listings, Transactions (11 countries), Market Trends, Valuation. ISO 27001/GDPR/NIST compliance. Enterprise beta Q1 2026. CRE-adjacent valuation data.
+   - **NEW: nkbud/mcp-server-attom** (2 stars, MIT, Python) — first open-source community implementation of ATTOM Data API as MCP tools. 55+ endpoints across 10 categories (property, assessment, sale, valuation, geographic, schools, community).
+   - **NEW: CryptoCultCurt/appfolio-mcp-server** (6 stars, ISC, TypeScript) — first MCP server for property management software. Connects to AppFolio Reporting API. Available via Smithery and npm.
+   - **NEW: DanielJandric/realestatemcp** — property intelligence platform with 7 MCP tools, semantic search over 31K+ document chunks, 653+ documents, Supabase/pgvector.
+   - **Updated stars:** Airbnb 394→437, Zillow 31→37, Repliers 14→16
+   - **Airbnb version update:** 0.1.3 → 0.2.0 (April 10, 2026)
+   - **Updated What's Missing** — portal access is now ChatGPT-only (not open), AppFolio partially fills rental management gap, PriceHubble partially fills CRE gap. Still missing: CoStar/LoopNet/CREXi, title & escrow, construction/development, appraisal tools.
+   - Rating unchanged 3.5/5 — significant momentum but portal MCP apps being ChatGPT-exclusive limits the category's openness.
+
+2. **Hugo build** — successful (745ms), 1,228 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~325 reviews, ~1,228 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: archaeology/paleontology MCP servers, sports/fitness MCP servers, or podcasting/audio MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 835 — 2026-04-26 — REFRESH Review: Astronomy & Space Science MCP Servers (NASA-MCP-server 81→83 stars 17+ tools ISC, NEW nasa/earthdata-mcp official NASA semantic search AWS Lambda, NEW stellarpunk/mcp-server-ascom ASCOM Alpaca telescope control MCP 2025-06-18 compliant natural language GOTO auto-discovery, NEW OnStepNinja/AiBridge 6 stars MIT ESP32 MCP server telescope automation OnStep+Alpaca SSE, NEW pipeworx-io/mcp-spacex SpaceX API v4 launches+rockets+crew+Starlink no API key, NEW ivan-katkov/nasa-ads-mcp Solr syntax 5 tools, satellitetracking 3→4 stars, nasa-ads-mcp 2→3 stars, FILLED GAPS telescope control + SpaceX launches, STILL MISSING Stellarium JWST ESA JAXA ISRO aurora radio astronomy LIGO INDI, rating 3.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
