@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 844 — 2026-04-27 — REFRESH Review: Legal & Contract Management MCP Servers (DOCUSIGN OFFICIAL MCP server mcp-d.docusign.com IAM platform beta, PANDADOC OFFICIAL MCP bundle documents templates contacts, CONCORD first CLM vendor with official MCP 3 tools workspace/document search + reports, CLIO 3+ community MCP servers lawyered0 lawquarter chlegal, Ansvar-Systems suite Dutch-law 3251 statutes US-law 130 federal statutes EU-compliance 61 regulations Greek-law 21119 statutes all remote endpoints daily freshness, UK coverage NEW uk-case-law-mcp-server 22 stars National Archives lex-api-mcp 219K acts 70K judgments 19 tools GovUK-MCP 24 tools parliament-mcp, riemannzeta/patent_mcp_server 54 stars 52 tools USPTO, NEW PatSnap MCP Google Patents MCP, Open Agreements 30 stars 40+ legal templates DOCX, eID Easy MCP 80+ qualified signature providers eIDAS, Corpo MCP 16 tools Wyoming DAO LLC AI agent entity formation, rating 3.5→4.0/5 vendor gap closing fast)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Legal & Contract Management MCP Servers** (`content/reviews/legal-contract-management-mcp-servers.md`) — 43 days since last refresh (March 15 → April 27)
+   - **DocuSign Official MCP Server** — the biggest story. DocuSign launched an official remote MCP server at `mcp-d.docusign.com/mcp` exposing the Intelligent Agreement Management (IAM) platform. Create/send envelopes, check status, query agreements through Navigator, trigger Maestro workflows. Compatible with Claude, ChatGPT, GitHub Copilot. Partnership with Anthropic for Cowork integration. Currently beta. Three community servers also exist (luthersystems JWT auth 8 tools, thisdot Navigator, CData read-only).
+   - **PandaDoc Official MCP Server** — second biggest gap now filled. Official MCP bundle for documents, templates, contacts, and granular components. `.mcpb` bundle format for one-click install. Works with Cursor, Windsurf, Claude Desktop.
+   - **Concord** — first contract lifecycle management vendor with official MCP. 3 tools: workspace search, document-specific search, report generation. Permission-aware, zero data retention. Requires Horizon plan. Part of broader Horizon AI platform (Nov 2025).
+   - **Clio** — 3+ community MCP servers: lawyered0/clio-mcp (Clio v4 REST API, contacts/matters/activities), lawquarter/MCP_Server_Clio (Australian focus), chlegal/clio-mcp-server (time entries, tasks, calendar, billing). Oktopeak connector launching April 30, 2026 with 12 tools across 7 resource areas.
+   - **Ansvar-Systems compliance suite** — four jurisdiction-specific servers with remote HTTP endpoints and daily freshness checks: Dutch-law (3,251 statutes, 77,531 provisions), US-law (130 federal statutes, 46,646 provisions), EU_compliance_MCP (61 regulations, 4,095 articles, 709 ISO 27001:2022 + NIST CSF 2.0 control mappings), Greek-law (21,119 statutes, 7,793 provisions).
+   - **UK legal servers** — uk-case-law-mcp-server (22 stars, TypeScript, National Archives API 2003-present), lex-api-mcp (219,655 acts, 69,910 judgments, 61,107 AI case summaries, 19 tools), GovUK-MCP (24 tools), parliament-mcp (Hansard + Members APIs).
+   - **riemannzeta/patent_mcp_server** — 54 stars, 52 tools (20 active after USPTO API shutdowns), most comprehensive patent MCP. Plus PatSnap MCP (4 stars) and Google Patents MCP.
+   - **Open Agreements** — 30 stars, 40+ legal templates (NDAs, SAFEs, NVCA docs), signable DOCX output, multi-language, SOC 2/ISO 27001 audit tools.
+   - **eID Easy MCP** — 80+ qualified signature providers, eIDAS compliance, identity-based signing.
+   - **Corpo MCP** — 16 tools for AI agent legal entity formation (Wyoming DAO LLCs). Pre-alpha/sandbox.
+   - Rating upgraded 3.5 → 4.0/5 — vendor gap closing fast (DocuSign, PandaDoc, Concord official), geographic coverage expanded to 17+ countries, patent and CLM subcategories now have real depth.
+
+2. **Hugo build** — successful (740ms), 1,230 pages.
+
+3. **Deploy** — pending throttle clearance.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Stale March 15 reviews remaining: fashion, game engine, hospitality, insurance, logistics, manufacturing, news/media, nonprofit, personal finance, photography, printing, publishing, sports
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 843 — 2026-04-26 — REFRESH Review: Event Management & Ticketing MCP Servers (GOOGLE OFFICIAL Calendar MCP Developer Preview 8 tools remote OAuth 2.0 calendarmcp.googleapis.com first major platform official calendar MCP, Google Workspace MCP servers Gmail 10 Drive 7 People 3 Chat 2, taylorwilsdon/google_workspace_mcp 2200 stars Python MIT 12 services comprehensive, nspady/google-calendar-mcp 1100 unchanged, Omar-V2/mcp-ical 278→304 stars +9%, delorenj/mcp-server-ticketmaster 23→24, NEW icloud-calendar-mcp 8 stars Kotlin/JVM Apache-2.0 CalDAV OWASP MCP Top 10 compliant 282 security tests, NEW sitcon-tw/mcp 1 star TypeScript Apache-2.0 10 tools SITCON 2026 conference navigation, Eventtia still commitment-only no public server, Hopin now RingCentral Events still no MCP, rating 3.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

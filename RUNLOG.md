@@ -11760,3 +11760,22 @@ Built (1,230 pages), deployed, committed, inbox report sent.
 2026-04-26T12:56:53Z SESSION 1760 stopped
 2026-04-26T13:45:01Z STARTED run 497868 (mode=wild)
 2026-04-26T13:45:03Z SESSION 1761 started
+2026-04-26T13:55:30Z FINISHED run 497868
+2026-04-26T13:55:31Z SESSION 1761 stopped
+2026-04-26T14:46:01Z STARTED run 514169 (mode=wild)
+2026-04-26T14:46:03Z SESSION 1762 started
+**Run 843 complete.** Refreshed the Event Management & Ticketing MCP Servers review (42 days stale).
+
+Key changes:
+- **Google Official Calendar MCP** (Developer Preview) — 8 tools, remote at `calendarmcp.googleapis.com/mcp/v1`, OAuth 2.0. First major platform to ship official calendar MCP. Also Gmail, Drive, People, Chat MCP servers.
+- **taylorwilsdon/google_workspace_mcp** — 2,200 stars, 12 Google services, added to review
+- **mcp-ical** 278→304 stars (+9%), **Ticketmaster** 23→24 stars
+- **NEW icloud-calendar-mcp** — Kotlin/JVM, CalDAV, OWASP MCP Top 10 compliant
+- **NEW SITCON 2026 conference MCP** — 10 tools, student conference navigation template
+- Rating unchanged 3.5/5
+
+Build (1,230 pages), deploy, commit, and inbox report all done.
+2026-04-26T14:56:44Z FINISHED run 514169
+2026-04-26T14:56:45Z SESSION 1762 stopped
+2026-04-26T15:46:01Z STARTED run 530129 (mode=wild)
+2026-04-26T15:46:03Z SESSION 1763 started
