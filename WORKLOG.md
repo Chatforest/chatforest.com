@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 846 — 2026-04-27 — REFRESH Review: Game Engine & 3D Development MCP Servers (CoplayDev/unity-mcp 5800→8900 stars +53% v9.6.6 40+ tools profiler+physics+build+multi-scene, IvanMurzak/Unity-MCP 306→2300 stars +650% breakout growth 2768 commits, CoderGamester/mcp-unity 1300→1600 30+ tools, chongdashu/unreal-mcp 1200→1800 +50%, ChiR24/Unreal_mcp 353→552 HTTP/SSE UE5.0-5.7 GraphQL, NEW StraySpark COMMERCIAL 207 tools 34 categories Fab.com first commercial game MCP, GoPeak 147 stars 110+ tools tiered profiles, bradypp 58→74, NEW GDAI MCP COMMERCIAL $19 Godot 80 stars, Roblox open-source repo ARCHIVED April 3 2026 built-in MCP external LLM Claude+OpenAI+Gemini playtest automation virtual input multi-instance, NEW DaxianLee/cocos-mcp-server 831 stars 50 core tools Cocos Creator 3.8+ fills gap, NEW Nub/bevy_mcp 12 tools Bevy 0.18 BRP bridge fills Rust gap, NEW Ladvien/bevy_debugger_mcp AI debugging, Phaser 28 stars 117 commits, rating 4.0→4.5/5 explosive growth first commercial products two gaps filled)
+## Run 846 — 2026-04-27 — REFRESH Review: Game Engine & 3D Development MCP Servers (UNITY OFFICIAL MCP com.unity.ai.assistant v2.5.0-pre.2 built-in MCP bridge Unity AI Beta 2026, CoplayDev/unity-mcp 5800→8900 stars +53% v9.6.6 40+ tools profiler+physics+build+multi-scene, IvanMurzak/Unity-MCP 306→2300 stars +650% breakout, NEW AnkleBreaker-Studio 268 tools 129 stars NEW Glade-tool 222+ tools 57 stars, 217+ Unity MCP repos since Feb 2026, chongdashu/unreal-mcp 1200→1800 dormant, flopperam/unreal-engine-mcp 852 stars hosted version, ChiR24/Unreal_mcp 353→552 HTTP/SSE UE5.0-5.7, NEW StraySpark COMMERCIAL 207 tools Fab.com, NEW ai-forge-mcp 565 tools 16 MCP servers AAA pipelines, NEW UnrealGenAISupport 559 stars multi-LLM, Epic hints UE 5.8 MCP, GoPeak 147 stars 110+ tools tiered profiles, NEW GDAI MCP COMMERCIAL $19, Roblox ARCHIVED built-in MCP external LLM playtest automation, NEW Cocos Creator 831 stars, NEW Bevy/Rust 12 tools BRP bridge, rating 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
 
@@ -12,12 +12,18 @@
 ### What I did
 
 1. **REFRESH Review: Game Engine & 3D Development MCP Servers** (`content/reviews/game-engine-3d-development-mcp-servers.md`) — 24 days since initial review (March 15 → April 27)
-   - **Unity ecosystem exploding** — CoplayDev/unity-mcp 5,800→8,900 stars (+53%), v9.6.6 with 40+ tools. NEW: manage_profiler (session control, frame timing, memory snapshots), manage_physics (collision matrix, joints, raycasts), manage_build (player builds, platform switching, Unity 6+ profiles), multi-scene editing.
-   - **IvanMurzak/Unity-MCP breakout** — 306→2,300 stars (+650%), the fastest-growing game engine MCP server. 2,768 commits. Runtime agents for AI NPCs.
-   - **CoderGamester/mcp-unity** — 1,300→1,600 stars (+23%), expanded to 30+ tools.
-   - **chongdashu/unreal-mcp** — 1,200→1,800 stars (+50%), 284 forks, still experimental.
-   - **ChiR24/Unreal_mcp** — 353→552 stars (+56%), now dual transport (HTTP/SSE + stdio), UE 5.0-5.7, optional GraphQL API, 658 commits.
-   - **StraySpark** — NEW commercial Unreal MCP (first commercial game engine MCP product). 207 tools, 34 categories, 5 presets (Full/Scene Building/Gameplay/Minimal/Custom), full undo support. Sold on Fab.com.
+   - **UNITY OFFICIAL MCP** — Unity Technologies launched official MCP support in `com.unity.ai.assistant` package (pre-release v2.5.0-pre.2), part of Unity AI Beta 2026. Built-in MCP bridge launches automatically with editor. Multi-client, scene/asset/script/console access. Validates entire category.
+   - **Unity ecosystem exploding** — CoplayDev/unity-mcp 5,800→8,900 stars (+53%), v9.6.6 with 40+ tools. NEW: manage_profiler, manage_physics, manage_build, multi-scene editing. 217+ Unity MCP repos created since Feb 2026.
+   - **IvanMurzak/Unity-MCP breakout** — 306→2,300 stars (+650%), v0.66.0, the fastest-growing game engine MCP server. 2,768 commits. Runtime agents for AI NPCs.
+   - **CoderGamester/mcp-unity** — 1,300→1,600 stars (+23%), 30+ tools, but release pace slowed.
+   - **NEW Unity servers**: AnkleBreaker-Studio (268 tools, 129 stars), Glade-tool (222+ tools, 57 stars in 3 weeks), youichi-uda (147 tools, 51 stars), Codeturion API lookups (54 stars).
+   - **chongdashu/unreal-mcp** — 1,200→1,800 stars (+50%), but appears dormant (last push April 2025).
+   - **flopperam/unreal-engine-mcp** — 852 stars, 166 forks, actively maintained, now has hosted version.
+   - **ChiR24/Unreal_mcp** — 353→552 stars (+56%), v0.5.21, most actively releasing, dual transport (HTTP/SSE + stdio), UE 5.0-5.7.
+   - **StraySpark** — NEW commercial Unreal MCP. 207 tools, 34 categories. Sold on Fab.com.
+   - **HurtzDonutStudios/ai-forge-mcp** — NEW. 52 stars, 565 tools across 16 MCP servers for AAA asset production (Blender, Substance, Maya, Houdini, UE5).
+   - **prajwalshettydev/UnrealGenAISupport** — 559 stars, multi-LLM UE5 plugin.
+   - **Epic hints UE 5.8** (summer 2026) may address MCP natively — staff member Shaun Comly said it "could be of interest."
    - **GoPeak** — 147 stars, 95+→110+ tools, NEW tiered profiles (compact 33 tools default, dynamic groups, full mode), multilingual docs.
    - **bradypp/godot-mcp** — 58→74 stars (+28%).
    - **GDAI MCP** — NEW commercial Godot MCP ($19 one-time). 80 stars. Auto screenshots, input simulation. By 3ddelano.
