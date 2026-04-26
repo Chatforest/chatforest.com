@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 838 — 2026-04-26 — REFRESH Review: Library, Archive & Museum MCP Servers (zotero-mcp 1800→2700 stars +50% in 6 weeks, cookjohn/zotero-mcp 476→684 stars, NEW TonybotNi/ZotLink 134 stars MIT Python 5 tools preprint saving arXiv+bioRxiv+medRxiv+chemRxiv+CVF, NEW code4history/IIIF_MCP 20+ tools IIIF standard universal cultural heritage access search+metadata+images+collections+annotations+auth, NEW behole/cooper-hewitt-mcp 2 stars MIT TypeScript design museum 2 tools, NEW benoute/calibre-mcp Python, kujenga/zotero-mcp 138 stars, gyger/mcp-pyzotero RETIRED, ebook-mcp 351→361 stars, mcp-open-library 62→70 stars, rijksmuseum-mcp 65→67 stars, metmuseum-mcp 24→26 stars, mcp-wayback-machine 17→21 stars, museums 5→6 institutions, Zotero implementations 8→10+, rating 3.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Library, Archive & Museum MCP Servers** (`content/reviews/library-archive-museum-mcp-servers.md`) — 42 days since last refresh (March 15 → April 26)
+   - **Zotero growth accelerating** — 54yyyu/zotero-mcp jumped from 1,800 to 2,700 stars in six weeks (50% growth). cookjohn/zotero-mcp 476→684 stars. Zotero implementations now 10+ (up from 8).
+   - **NEW: TonybotNi/ZotLink** (134 stars, MIT, Python, 5 tools) — production-ready MCP server for saving open preprints to Zotero. Covers arXiv, CVF OpenAccess, bioRxiv, medRxiv, chemRxiv with rich metadata extraction and smart PDF attachment. Third most popular Zotero MCP.
+   - **NEW: code4history/IIIF_MCP** (1 star, JavaScript, 20+ tools) — first MCP bridge to the IIIF ecosystem, the universal standard used by thousands of cultural heritage institutions (Library of Congress, British Library, BnF, Harvard, Vatican Library, etc.). Tools span content search, metadata, image operations, collection navigation, annotations, activity streams, authentication, and audio/video. Potentially the most impactful new addition — one server that can access content across thousands of institutions.
+   - **NEW: behole/cooper-hewitt-mcp** (2 stars, MIT, TypeScript, 2 tools) — Cooper Hewitt, Smithsonian Design Museum. First design-focused museum MCP server. Museum count now 6 (up from 5).
+   - **NEW: benoute/calibre-mcp** — another Calibre implementation added to the list (now 6+ Calibre servers).
+   - **Updated stars:** ebook-mcp 351→361, mcp-open-library 62→70, rijksmuseum-mcp 65→67, metmuseum-mcp 24→26, mcp-wayback-machine 17→21.
+   - **Noted:** gyger/mcp-pyzotero is now retired. kujenga/zotero-mcp at 138 stars.
+   - **Updated What's Missing** — noted IIIF_MCP partially bridges the institutional gap (can access LC's IIIF endpoints, Europeana's IIIF resources) but is low-level (requires knowing manifest URLs).
+   - Rating unchanged 3.5/5 — Zotero growth is impressive, IIIF is a significant addition, but institutional library infrastructure gap persists.
+
+2. **Hugo build** — successful (758ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status (still unpatched as of April 26)
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- zMaticoo MCP launch (April 21) — could refresh advertising/ad-tech review
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Most reviews refreshed within last 5 days — staleness window opens early May
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+- At 326 reviews, new niche categories are getting thin — consider focusing on refreshes and quality over new categories
+
 ## Run 837 — 2026-04-26 — NEW Review: Linux System Administration MCP Servers (Red Hat RHEL Lightspeed 211 stars Apache 2.0 26 read-only diagnostic tools 7 modules system_info+services+processes+logs+network+storage+run_script multi-host SSH v1.4.1 developer preview, Red Hat Insights MCP 18 stars 6 toolsets Advisor+Vulnerability+Inventory+Hosted Image Builder+Planning+Remediations RBAC, openSUSE systemd-mcp 7 stars MIT Go direct C API 6 tools list_units+change_state+check_restart+logs+files+man, ssh-mcp 411 stars MIT TypeScript 2 tools exec+sudo-exec, mcp-ssh-manager 168 stars MIT 37 tools 6 groups Core+Sessions+Monitoring+Backup+Database+Advanced bastion ProxyJump, mixelpixx/SSH-MCP 32 stars 30 tools USB-to-serial+network switch+Ubuntu-specific, mcp-shell-server 173 stars MIT Python whitelist approach, cli-mcp-server 169 stars MIT Python multi-layer security, mcp-shell 74 stars GPL-3.0 Go secure mode no shell interpretation audit logging, mcp-bash 30 stars MIT Python simple, Ansible AAP official ansible/aap-mcp-server + sibilleb/AAP-Enterprise 29 stars 50+ tools 4 sub-servers + bsahane/mcp-ansible 27 stars 50+ tools, Zabbix MCP 202 stars MIT 40+ tools, mcp-prometheus 18 tools, homelab-mcp 25 stars MIT 39 tools Docker+Ollama+Pi-hole+Unifi+Ansible, MISSING Canonical/Ubuntu SUSE Debian Nagios Puppet Chef SaltStack official Prometheus, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
