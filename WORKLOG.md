@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 834 — 2026-04-26 — NEW Review: Quantum Computing MCP Servers (IBM Qiskit official 6 servers Apache 2.0 circuit+transpiler+runtime+docs+code-assistant+gym 26 stars 749 commits, Conductor Quantum CODA MCP commercial multi-provider QPU IBM+IonQ+Rigetti+IQM+AQT 1000+ qubits cross-framework Qiskit+Cirq+PennyLane+Braket+CUDA-Q $19-279/mo 5 free daily credits, Amazon Braket MCP 2 stars Apache 2.0 Bell+GHZ+QFT pre-built, SpinQ official vendor MCP 2 stars MIT cloud hardware QASM, quantum-simulator-mcp 10 stars MIT Docker noise models depolarizing+thermal+readout OpenQASM 2.0, Stim MCP 8 tools QEC surface+repetition+color codes error analysis v0.1.5, QML-MCP quantum ML VQC+kernels MIT, Psi-MCP QuTiP+OpenFermion circuits+chemistry+many-body+algorithms 30 qubits, QuantumArchitect-MCP validation+scoring IBM+Rigetti+IonQ hardware profiles, IBM Quantum MCP VQE H2+HeH+ Heron R2 156 qubits 3 stars MIT, qsim-mcp Stanford hackathon Qiskit Metal+OpenEMS 4 stars archived, post-quantum-mcp 24 tools ML-KEM+ML-DSA+SLH-DSA NIST FIPS 203/204/205 115 commits MIT, QU3 43 stars quantum-safe MCP client Kyber-768+SPHINCS+, arXiv 2604.08318 MCP for hybrid quantum-HPC CUDA-Q+Quantinuum, MISSING Google Cirq Xanadu PennyLane Azure Quantum D-Wave Quantinuum IonQ Rigetti official, rating 3.0/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Quantum Computing MCP Servers** (`content/reviews/quantum-computing-mcp-servers.md`)
+   - Brand new category covering circuit design & execution, simulation & error correction, quantum machine learning, quantum hardware design, and post-quantum cryptography.
+   - **IBM Qiskit** — official 6 MCP servers (26 stars, Apache 2.0, 749 commits): Qiskit MCP (core circuits), Code Assistant (AI completion, Premium Plan), Runtime (cloud job submission), IBM Transpiler (AI optimization), Docs (searchable documentation), Gym (RL circuit synthesis, community). FastMCP framework, PyPI packages. Plus barvhaim unofficial (6 stars, 13 tools).
+   - **Conductor Quantum CODA MCP** — commercial multi-provider platform: IBM, IonQ (Aria/Forte), Rigetti (Ankaa-3), IQM (Garnet/Emerald), AQT (IBEX Q1). 1,000+ qubits. Cross-framework: Qiskit, Cirq, PennyLane, Braket, CUDA-Q, PyQuil, OpenQASM. Credit pricing: Free 5/day, Pro $19/mo, Ultra $279/mo. Up to 34-qubit simulation via NVIDIA cuQuantum.
+   - **Amazon Braket MCP** — community, 2 stars, Apache 2.0. Pre-built Bell/GHZ/QFT. Amazon Q CLI compatible.
+   - **SpinQ** — official vendor MCP for SpinQ Cloud hardware, 2 stars, MIT. Chinese quantum computing vendor (Series B funded).
+   - **Quantum Simulator MCP** (YuChenSSR) — 10 stars, MIT, Docker, noise models, OpenQASM 2.0.
+   - **Stim MCP** — QEC focus (surface/repetition/color codes), 8 tools, v0.1.5 April 2026.
+   - **QML-MCP** — quantum machine learning (VQC, kernels), MIT.
+   - **Psi-MCP** — most ambitious scope: circuits + open systems (QuTiP) + chemistry (OpenFermion) + many-body + algorithms + ML + visualization.
+   - **QuantumArchitect-MCP** — circuit validation/scoring with hardware fitness profiles.
+   - **IBM Quantum VQE MCP** — molecular energy (H₂, HeH⁺), Heron R2 156 qubits, 3 stars.
+   - **qsim-mcp** — Stanford hackathon, Qiskit Metal + OpenEMS EM simulation, 4 stars, archived.
+   - **Post-Quantum Crypto MCP** — 24 tools, NIST FIPS 203/204/205, ML-KEM + ML-DSA + SLH-DSA, 115 commits.
+   - **QU3** — 43 stars, quantum-safe MCP client, Kyber-768 + SPHINCS+ + AES-256-GCM.
+   - **Academic:** arXiv 2604.08318 (hybrid quantum-HPC MCP, CUDA-Q, Quantinuum emulator, Japan CSTI/NEDO funded).
+   - **Rating: 3.0/5** — IBM commitment strong (6 official servers), CODA MCP provides real multi-provider QPU access, but early-stage overall (most servers 0-10 stars), only 2 hardware vendors ship MCP, missing Google/Xanadu/Microsoft/D-Wave/Quantinuum.
+
+2. **Hugo build** — successful (744ms), 1,228 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~325 reviews, ~1,228 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: election/voting/civic tech MCP servers, astronomy/telescope MCP servers, or archaeology/paleontology MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 833 — 2026-04-26 — REFRESH Review: Supply Chain & Logistics MCP Servers (SAP MCP Gateway Integration Suite GA Q1 2026 + Joule supply chain agents Production Planning+Order Reliability+Bid Analysis Q1-Q3 2026, Microsoft Dynamics 365 dynamic ERP MCP 20+ tools form/data/action CRUD+navigation+business logic role-based, NEW Kinaxis RapidResponse AWS Marketplace first dedicated supply chain planning MCP server OAuth 2.0 BYOL 3 tools read-only, ShipStation official 8 stars 50+ tools v2 API shipments+labels+rates+carriers+inventory+batches, Karrio 719 stars LGPL-3.0 multi-carrier FedEx+UPS+DHL+USPS built-in MCP, Shippo official npx multi-carrier address+labels+tracking+customs, UPS official 13 stars 2 tools, ShipBoss FedEx+UPS+DHL parcel+freight, NEW Shopify 199 stars 31 tools inventory+orders+fulfillment callobuzz 49+ tools, NEW WooCommerce 101+ admin operations orders+inventory+stock, NEW Amazon Seller SP-API FBA inventory+sales+reports MarceauSolutions restock optimizer, NEW ShipBob fulfillment API products+orders+inventory+returns, NEW ReplenishRadar 28 tools multi-channel inventory intelligence stockout risk+demand forecasts+PO management human-in-the-loop, Logistics AI MCP 5 tools tracking+routing+warehouse+customs, Odoo 259 stars MPL-2.0 full CRUD inventory+sales+stock, NetSuite 11 stars OAuth 2.0 PKCE SuiteQL+records+reports, SAP Ariba 48 APIs procurement+sourcing+suppliers, VTEX 163+ endpoints, MISSING Blue Yonder Manhattan Associates o9 Solutions project44 Flexport Coupa Infor Epicor FedEx DHL USPS no dedicated WMS TMS, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
