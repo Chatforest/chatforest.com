@@ -1,18 +1,18 @@
 ---
-title: "Game Engine & 3D Development MCP Servers — Unity, Unreal Engine, Godot, Roblox, Phaser, and More"
+title: "Game Engine & 3D Development MCP Servers — Unity, Unreal Engine, Godot, Roblox, Cocos Creator, Bevy, and More"
 date: 2026-03-15T09:30:00+09:00
 description: "Game engine and 3D development MCP servers let AI agents create scenes, manage assets, control editors, and automate game development workflows through natural language."
-og_description: "Game Engine & 3D Development MCP servers: CoplayDev/unity-mcp (5,800 stars, TypeScript/C#, 25+ tools for scene/asset/material/script management with batch execution), CoderGamester/mcp-unity (1,300 stars, TypeScript/C#, WebSocket bridge with prefab creation and test runner), IvanMurzak/Unity-MCP (306 stars, C#, 100+ native tools with runtime agents for in-game NPCs), chongdashu/unreal-mcp (1,200 stars, Python/C++, actor control/Blueprint creation/graph editing/viewport control), flopperam/unreal-engine-mcp (Python/C++, Flop Agent autonomous world building with Blueprint editing), ChiR24/Unreal_mcp (353 stars, TypeScript/C++, 36 tools via native Automation Bridge), HaD0Yun/godot-mcp GoPeak (95+ tools with GDScript LSP/DAP debugger/screenshot capture/input injection/ClassDB introspection/CC0 asset library), bradypp/godot-mcp (58 stars, TypeScript, read-only safety mode/Godot 4.4+ UID management/cross-platform), Roblox/studio-rust-mcp-server (413 stars, Rust, official reference implementation now superseded by built-in Studio MCP), boshyxd/robloxstudio-mcp (21 read-only tools with file tree/script grepping/playtest control), phaserjs/editor-mcp-server (26 stars, TypeScript, official Phaser Editor scene/asset/tilemap management), Flux159/mcp-game-asset-gen (multi-provider asset generation with DALL-E/Gemini/Fal.ai for sprites/textures/3D models). 30+ servers reviewed. Rating: 4.0/5."
+og_description: "Game Engine & 3D Development MCP servers: CoplayDev/unity-mcp (8,900 stars, TypeScript/C#, 40+ tools including profiler/physics/build/multi-scene management), IvanMurzak/Unity-MCP (2,300 stars, C#, 100+ native tools with runtime agents for in-game NPCs, 650% star growth), CoderGamester/mcp-unity (1,600 stars, TypeScript/C#, WebSocket bridge 30+ tools), chongdashu/unreal-mcp (1,800 stars, Python/C++, actor/Blueprint/graph/viewport control), ChiR24/Unreal_mcp (552 stars, TypeScript/C++, 36 tools UE 5.0-5.7 native HTTP/SSE+GraphQL), StraySpark (COMMERCIAL 207 tools 34 categories UE 5.7 on Fab.com), HaD0Yun/godot-mcp GoPeak (147 stars, 110+ tools tiered profiles GDScript LSP/DAP/screenshot/input), GDAI MCP (80 stars, COMMERCIAL $19 Godot 4.2+), Roblox built-in MCP (open-source repo ARCHIVED April 2026, Studio ships MCP with external LLM support Claude/OpenAI/Gemini + playtest automation + multi-instance), DaxianLee/cocos-mcp-server (831 stars, 50 core tools Cocos 3.8+ NEW engine coverage), Nub/bevy_mcp (12 tools Bevy 0.18 BRP bridge fills Rust gap), phaserjs/editor-mcp-server (28 stars). 40+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Game engine and 3D development MCP servers across Unity, Unreal Engine, Godot, Roblox, web game engines, and asset generation. Unity has the largest MCP ecosystem — CoplayDev/unity-mcp (5,800 stars, 25+ tools) leads adoption with comprehensive scene, asset, material, and script management including batch execution for complex operations, while IvanMurzak/Unity-MCP (306 stars) offers the deepest integration with 100+ native tools and runtime agents that can be embedded into built games for AI-controlled NPCs. Unreal Engine has the most sophisticated editor integration — chongdashu/unreal-mcp (1,200 stars) provides actor control, Blueprint creation, graph node editing, and viewport manipulation through a C++ plugin, while flopperam/unreal-engine-mcp pushes the boundary with the Flop Agent for fully autonomous world building. Godot has the most comprehensive single-server tooling — HaD0Yun/godot-mcp GoPeak packs 95+ tools including GDScript LSP, DAP debugger, screenshot capture, input injection, ClassDB introspection, and a CC0 asset library into one server. Roblox is the industry pioneer — the only major engine with native built-in MCP support, where Studio itself operates as an MCP server. Phaser provides official MCP support for web game development with scene and asset management. The category earns 4.0/5 — every major game engine now has MCP integration, Unity and Unreal ecosystems show healthy competition between multiple implementations, Godot punches above its weight with comprehensive tooling, and Roblox's native integration sets the standard for what engine-level MCP support should look like."
-last_refreshed: 2026-03-15
+card_description: "Game engine and 3D development MCP servers across Unity, Unreal Engine, Godot, Roblox, Cocos Creator, Bevy, web game engines, and asset generation. Unity has the largest MCP ecosystem — CoplayDev/unity-mcp (8,900 stars, 40+ tools) leads adoption with profiler, physics, build pipeline, and multi-scene management, while IvanMurzak/Unity-MCP (2,300 stars, up 650%) offers the deepest integration with 100+ native tools and runtime agents for AI-controlled NPCs. Unreal Engine now has a commercial option — StraySpark (207 tools, 34 categories) joins community leaders chongdashu/unreal-mcp (1,800 stars) and ChiR24/Unreal_mcp (552 stars, UE 5.0-5.7 with native HTTP/SSE). Godot has the most comprehensive single-server tooling — GoPeak now packs 110+ tools with tiered profiles, joined by GDAI MCP ($19 commercial). Roblox leads the industry — archived its open-source repo in April 2026 and went all-in on the built-in Studio MCP server with external LLM support (Claude, OpenAI, Gemini), playtest automation with virtual input, and multi-instance management. NEW engine coverage: Cocos Creator (DaxianLee/cocos-mcp-server, 831 stars, 50 core tools) and Bevy/Rust (Nub/bevy_mcp, 12 tools via BRP bridge) fill major gaps. The category earns 4.5/5 — explosive growth across all engines, first commercial MCP products, Roblox's built-in MCP with third-party LLM support is industry-leading, and the Rust game engine gap is finally closed."
+last_refreshed: 2026-04-27
 ---
 
 Game engine MCP servers represent one of the most ambitious applications of the Model Context Protocol — giving AI agents direct control over 3D editors, scene graphs, physics systems, and creative workflows. Unlike simpler MCP integrations that wrap REST APIs, these servers bridge the gap between language models and real-time interactive environments.
 
-The landscape covers six areas: **Unity** (the largest MCP ecosystem with 3+ major implementations), **Unreal Engine** (deepest editor integration via C++ plugins), **Godot** (comprehensive single-server tooling), **Roblox** (the only engine with native built-in MCP), **web game engines** (Phaser, Three.js), and **game asset generation** (AI-powered sprite, texture, and 3D model creation).
+The landscape covers eight areas: **Unity** (the largest MCP ecosystem with 6+ implementations and 12,000+ combined stars), **Unreal Engine** (deepest editor integration via C++ plugins, now with the first commercial MCP product), **Godot** (comprehensive single-server tooling with 110+ tools), **Roblox** (the only engine with native built-in MCP and third-party LLM support), **Cocos Creator** (NEW — 831-star server with 50 core tools), **Bevy/Rust** (NEW — fills the Rust game engine gap), **web game engines** (Phaser, Three.js), and **game asset generation** (AI-powered sprite, texture, and 3D model creation).
 
-The headline findings: **Unity has the most MCP servers and highest total adoption** — CoplayDev/unity-mcp alone has 5,800 stars. **Unreal Engine's C++ plugin architecture enables the deepest editor control** — Blueprint creation, graph editing, and viewport manipulation. **Godot's GoPeak server packs 95+ tools into a single implementation** — the most feature-dense game engine MCP server. **Roblox is the industry leader in native MCP integration** — Studio ships with a built-in MCP server, no plugins needed. **Game asset generation via MCP is emerging** — AI-powered sprite sheets, textures, and 3D models from text descriptions. **Every major game engine now has at least one MCP server**, though maturity varies significantly.
+The headline findings: **Unity's MCP ecosystem exploded** — CoplayDev/unity-mcp hit 8,900 stars (+53%) with 40+ tools now covering profiling, physics, and build pipelines, while IvanMurzak/Unity-MCP grew 650% to 2,300 stars. **Unreal Engine got its first commercial MCP product** — StraySpark offers 207 tools across 34 categories on Fab.com, joining community leaders at 1,800 and 552 stars. **Godot's GoPeak server expanded to 110+ tools** with tiered profiles for token optimization, joined by GDAI MCP as the first commercial Godot MCP ($19). **Roblox archived its open-source repo and went all-in on built-in MCP** — Studio now supports external LLMs (Claude, OpenAI, Gemini), playtest automation with virtual mouse/keyboard input, and multi-instance management. **Two major gaps filled** — Cocos Creator (831 stars) and Bevy/Rust both gained MCP servers for the first time. **The first commercial game engine MCP products appeared** — StraySpark (Unreal) and GDAI (Godot) signal market maturation.
 
 ## Unity
 
@@ -20,43 +20,41 @@ The headline findings: **Unity has the most MCP servers and highest total adopti
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [CoplayDev/unity-mcp](https://github.com/CoplayDev/unity-mcp) | 5,800 | TypeScript/C# | 25+ | stdio |
+| [CoplayDev/unity-mcp](https://github.com/CoplayDev/unity-mcp) | 8,900 | TypeScript/C# | 40+ | stdio |
 
-**CoplayDev/unity-mcp** (5,800 stars, 700+ forks) is the most popular Unity MCP server and one of the most starred MCP servers in any game development category.
+**CoplayDev/unity-mcp** (8,900 stars, 1,000+ forks, up 53% since March) is the most popular Unity MCP server and one of the most starred MCP servers in any game development category.
 
-The server provides natural language control over Unity Editor operations: **Scene management** — create, modify, and inspect scenes and GameObjects. **Asset management** — import, organize, and manipulate project assets. **Material and shader control** — create and configure materials with property manipulation. **Script management** — create, edit, and organize C# scripts. **Graphics** — manage_graphics tool with 33 actions for volume/post-processing, light baking, rendering stats, and pipeline settings. **Package management** — install, remove, search, and manage Unity packages and scoped registries. **Batch execution** — combine multiple operations for complex workflows.
+The server provides natural language control over Unity Editor operations: **Scene management** — create, modify, and inspect scenes and GameObjects, with multi-scene editing (additive load, close, set active, move GameObjects between scenes) plus scene templates and validation with auto-repair. **Asset management** — import, organize, and manipulate project assets. **Material and shader control** — create and configure materials with property manipulation. **Script management** — create, edit, and organize C# scripts. **Graphics** — manage_graphics tool with 33 actions for volume/post-processing, light baking, rendering stats, and pipeline settings. **Package management** — install, remove, search, and manage Unity packages and scoped registries. **Batch execution** — combine multiple operations for complex workflows.
 
-The `batch_execute` tool is particularly valuable — it lets you chain multiple Unity operations in a single MCP call, reducing round trips for complex scene setup tasks.
-
-Recent versions (v9.5+) added graphics management and package management tools, showing active development. Works with Claude, Claude Code, Cursor, and VS Code.
+Recent v9.6.x releases (March–April 2026) added substantial new capabilities: **manage_profiler** (v9.6.3) — profiler session control (start/stop/status), frame timing and counter reads, object memory queries, memory snapshots. **manage_physics** (v9.6.2) — physics settings, layer collision matrix, physics materials, joints (5 3D + 9 2D types), queries (raycast, raycast_all, linecast, shapecast, overlap). **manage_build** (v9.6.1) — trigger player builds, switch platforms, configure player settings, manage build scenes and profiles (Unity 6+), batch builds. Latest is v9.6.6 (April 7, 2026). Works with Claude, Claude Code, Cursor, and VS Code.
 
 ### CoderGamester/mcp-unity (IDE-Focused)
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [CoderGamester/mcp-unity](https://github.com/CoderGamester/mcp-unity) | 1,300 | TypeScript/C# | 10+ | stdio |
+| [CoderGamester/mcp-unity](https://github.com/CoderGamester/mcp-unity) | 1,600 | TypeScript/C# | 30+ | stdio |
 
-**CoderGamester/mcp-unity** (1,300 stars) takes a different architectural approach — it runs a WebSocket server inside Unity Editor and a Node.js server that implements MCP, creating a bridge between AI assistants and the running editor.
+**CoderGamester/mcp-unity** (1,600 stars, 205 forks, up 23% since March) takes a different architectural approach — it runs a WebSocket server inside Unity Editor and a Node.js server that implements MCP, creating a bridge between AI assistants and the running editor.
 
-Core tools: `execute_menu_item` for triggering Unity menu commands, `select_gameobject` and `update_gameobject` for scene hierarchy manipulation, `update_component` for modifying component properties with error surfacing, `CreatePrefabTool` for creating prefabs from scene objects, and `run_tests` with pass/fail reporting and optional log output.
+Core tools span 30+ operations: `execute_menu_item` for triggering Unity menu commands, `select_gameobject` and `update_gameobject` for scene hierarchy manipulation, `update_component` for modifying component properties with error surfacing, `CreatePrefabTool` for creating prefabs from scene objects, `run_tests` with pass/fail reporting and optional log output, plus batch operations and material management.
 
 The WebSocket architecture means the server communicates with a live Unity instance — changes appear in real time. Remote host configuration support enables connecting to Unity running on a different machine.
 
-Designed specifically for IDE workflows with Cursor, Claude Code, Codex, Windsurf, and other coding tools. The focus is on development assistance rather than autonomous scene building.
+Designed specifically for IDE workflows with Cursor, Claude Code, Codex, Windsurf, and other coding tools. The focus is on development assistance rather than autonomous scene building. 264 commits show sustained development.
 
-### IvanMurzak/Unity-MCP (Deepest Integration)
+### IvanMurzak/Unity-MCP (Deepest Integration — Breakout Growth)
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 306 | C# | 100+ | stdio |
+| [IvanMurzak/Unity-MCP](https://github.com/IvanMurzak/Unity-MCP) | 2,300 | C# | 100+ | stdio |
 
-**IvanMurzak/Unity-MCP** (306 stars, v0.51.4) has the deepest Unity integration — 52 exposed tools, 48 prompts, and 1 resource, with 100+ native tools built in for all major Unity systems.
+**IvanMurzak/Unity-MCP** (2,300 stars, 208 forks — up 650% since March, the fastest-growing game engine MCP server) has the deepest Unity integration — 100+ native tools organized across Project & Assets (18 tools), Scene & Hierarchy (24 tools), and Scripting & Editor (11 tools), plus prompts and resources.
 
-What sets this apart: **Runtime agents** — AI agents can be embedded into built games, enabling NPC behavior controlled by language models at runtime. This is the only Unity MCP server designed for both editor-time development and runtime gameplay. **Reflection capabilities** — AI can discover and execute any C# method in the project, not just predefined tools. **Custom tool creation** — developers add new MCP tools with a single C# attribute. **Package manager integration** — install and manage Unity packages through natural language.
+What sets this apart: **Runtime agents** — AI agents can be embedded into built games, enabling NPC behavior controlled by language models at runtime. This is the only Unity MCP server designed for both editor-time development and runtime gameplay. **Reflection capabilities** — AI can discover and execute any C# method in the project, not just predefined tools. **Custom tool creation** — developers add new MCP tools with a single C# attribute. **Package manager integration** — install and manage Unity packages through natural language. **No vendor lock-in** — works across Windows, macOS, and Linux with Claude, Cursor, and other MCP clients.
 
 The runtime agent capability is genuinely novel. Most game engine MCP servers focus on editor control during development. This one lets you ship an MCP-connected agent inside the game itself — imagine NPCs that understand and respond to the game world through an LLM.
 
-Docker support is available for headless operation. Active development with frequent releases.
+Docker support is available for headless operation. 2,768 commits show extremely active development — the most actively maintained Unity MCP server by commit volume.
 
 ### Other Unity Implementations
 
@@ -68,7 +66,7 @@ Docker support is available for headless operation. Active development with freq
 
 **nurture-tech/unity-mcp-server** (Union) is notable for its multimodal vision capabilities — your AI agent can see the Unity scene, look through any camera, watch play mode, and inspect asset thumbnails. This visual context significantly improves the quality of AI-generated scene modifications.
 
-The Unity MCP ecosystem is unusually crowded — 6+ implementations competing for different niches. **CoplayDev/unity-mcp is the adoption leader** for general-purpose scene manipulation. **CoderGamester/mcp-unity is best for IDE-centric workflows**. **IvanMurzak/Unity-MCP offers the deepest integration** with runtime agents and reflection.
+The Unity MCP ecosystem is the largest in game development — 6+ implementations totaling 12,000+ stars. **CoplayDev/unity-mcp is the adoption leader** for general-purpose scene manipulation (8,900 stars, 40+ tools). **IvanMurzak/Unity-MCP is the breakout story** — 650% star growth to 2,300 stars, with the deepest integration including runtime agents and reflection. **CoderGamester/mcp-unity is best for IDE-centric workflows** (1,600 stars, 30+ tools). Unity Technologies still has no official MCP server, though Unity 6.2 is integrating AI features directly into the engine.
 
 ## Unreal Engine
 
@@ -76,9 +74,9 @@ The Unity MCP ecosystem is unusually crowded — 6+ implementations competing fo
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [chongdashu/unreal-mcp](https://github.com/chongdashu/unreal-mcp) | 1,200 | Python/C++ | 20+ | stdio |
+| [chongdashu/unreal-mcp](https://github.com/chongdashu/unreal-mcp) | 1,800 | Python/C++ | 20+ | stdio |
 
-**chongdashu/unreal-mcp** (1,200 stars) enables AI assistants to control Unreal Engine through natural language via a C++ plugin and Python MCP server.
+**chongdashu/unreal-mcp** (1,800 stars, 284 forks, up 50% since March) enables AI assistants to control Unreal Engine through natural language via a C++ plugin and Python MCP server.
 
 The tool coverage spans several systems: **Actor control** — create and delete actors (cubes, spheres, lights, cameras), set transforms (position, rotation, scale), query properties, find actors by name, list all actors in the current level. **Blueprint tools** — create new Blueprint classes with custom components, add and configure components (mesh, camera, light), set component properties and physics settings, compile Blueprints and spawn Blueprint actors, create input mappings for player controls. **Graph/node editing** — add event nodes (BeginPlay, Tick), create function call nodes and connect them, add variables with custom types and default values, create component and self references, manage nodes in the graph. **Viewport control** — focus on specific actors or locations, control camera orientation and distance.
 
@@ -100,11 +98,11 @@ The marketing emphasizes ambitious scene building — "entire towns, medieval ca
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [ChiR24/Unreal_mcp](https://github.com/ChiR24/Unreal_mcp) | 353 | TypeScript/C++ | 36 | stdio |
+| [ChiR24/Unreal_mcp](https://github.com/ChiR24/Unreal_mcp) | 552 | TypeScript/C++ | 36 | stdio + HTTP/SSE |
 
-**ChiR24/Unreal_mcp** (353 stars, 57 forks) uses a native C++ Automation Bridge plugin for comprehensive Unreal Engine automation. The 36 MCP tools use action-based dispatch — one tool definition can handle multiple related operations through parameters.
+**ChiR24/Unreal_mcp** (552 stars, 95 forks, up 56% since March) uses a native C++ Automation Bridge plugin for comprehensive Unreal Engine automation. The 36 MCP tools use action-based dispatch — one tool definition can handle multiple related operations through parameters.
 
-Built with TypeScript (MCP server) and C++ (Unreal plugin). Latest release v0.5.18 focused on fixing installation issues and first-time setup guidance.
+Built with TypeScript (MCP server) and C++ (Unreal plugin). Now supports dual transport modes — native HTTP/SSE directly from the Unreal plugin or TypeScript bridge via Node.js. Backward compatible with UE 5.0–5.7. Optional GraphQL API support for advanced integrations. Security includes loopback-only defaults, capability token authentication, and pattern-based console command validation. 658 commits show very active development.
 
 ### Other Unreal Implementations
 
@@ -116,7 +114,19 @@ Built with TypeScript (MCP server) and C++ (Unreal plugin). Latest release v0.5.
 
 **unreal-analyzer-mcp** is different from the others — it analyzes Unreal Engine source code rather than controlling the editor. Useful for understanding engine internals and navigating large Unreal codebases.
 
-The Unreal MCP space is less crowded than Unity but more technically ambitious. The C++ plugin requirement makes these servers harder to build and maintain, but enables deeper editor integration than web-based approaches.
+### StraySpark (First Commercial Unreal MCP)
+
+| Server | Tools | Transport | Pricing |
+|--------|-------|-----------|---------|
+| [StraySpark Unreal MCP Server](https://www.strayspark.studio/products/unreal-mcp-server) | 207 | HTTP (JSON-RPC 2.0) | Commercial (Fab.com) |
+
+**StraySpark** is the first commercial MCP product for any game engine — 207 editor tools across 34 categories, 12 context resources, and 10 workflow prompts. Available on Fab.com for UE 5.7.
+
+Key differentiators: **5 Tool Presets** — Full (207 tools), Scene Building (152), Gameplay (122), Minimal (25), or Custom — letting developers control context size. **Full undo support** for all editor mutations. Coverage spans material editing, Blueprint scripting, landscape tools, Niagara VFX, sequencer automation, physics simulation, procedural generation, and gameplay systems. **33 dedicated Blueprint creation and modification tools** alone.
+
+The emergence of a commercial product signals market maturation — game studios are willing to pay for polished, supported MCP tooling rather than relying on experimental open-source servers.
+
+The Unreal MCP space is growing fast and now spans three tiers: **StraySpark for commercial/studio use** (207 tools, supported), **chongdashu/unreal-mcp for the largest community** (1,800 stars), and **ChiR24/Unreal_mcp for native automation** (552 stars, HTTP/SSE, UE 5.0-5.7). Epic Games still has no official MCP server, though developers have requested one on the Epic Developer Community forums.
 
 ## Godot
 
@@ -124,21 +134,23 @@ The Unreal MCP space is less crowded than Unity but more technically ambitious. 
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [HaD0Yun/godot-mcp](https://github.com/HaD0Yun/godot-mcp) | — | TypeScript | 95+ | stdio |
+| [HaD0Yun/godot-mcp](https://github.com/HaD0Yun/godot-mcp) | 147 | TypeScript | 110+ | stdio |
 
-**GoPeak** bills itself as "the most comprehensive MCP server for Godot Engine" — and with 95+ tools, it has a strong claim. The tool count exceeds most game engine MCP servers across all engines.
+**GoPeak** (147 stars, 13 forks) bills itself as "the most comprehensive MCP server for Godot Engine" — and with 110+ tools (up from 95+), it has an even stronger claim.
+
+Now features **tiered tool profiles** for token optimization: **Compact mode** (default) — 33 core tools for efficient context usage. **Dynamic groups** — 22 additional tool groups (78 extra tools) that activate on demand. **Full mode** — all 110+ tools exposed at once. **Legacy mode** — backward compatibility.
 
 Capabilities span: **Scene management** — create, modify, inspect, and navigate Godot scenes. **GDScript LSP** — language server protocol integration for code intelligence. **DAP debugger** — Debug Adapter Protocol integration for breakpoints and stepping. **Screenshot capture** — grab editor and game viewport screenshots for visual context. **Input injection** — simulate input events for testing and automation. **ClassDB introspection** — inspect Godot's class hierarchy, methods, and properties programmatically. **CC0 asset library** — access to Creative Commons Zero licensed assets for prototyping.
 
-The combination of LSP + DAP + screenshot capture + input injection makes this uniquely powerful for automated testing and debugging workflows. Install via `npx gopeak`.
+The tiered profile system is a smart innovation — most MCP servers expose all tools regardless of task, wasting tokens. GoPeak lets the AI load tool groups as needed. Multilingual documentation now available in Korean, Japanese, German, Portuguese, and Chinese. Install via `npx gopeak`.
 
 ### bradypp/godot-mcp (Safety-Focused)
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [bradypp/godot-mcp](https://github.com/bradypp/godot-mcp) | 58 | TypeScript | 15+ | stdio |
+| [bradypp/godot-mcp](https://github.com/bradypp/godot-mcp) | 74 | TypeScript | 16+ | stdio |
 
-**bradypp/godot-mcp** (58 stars) takes a safety-first approach with an optional **read-only mode** — important when giving AI assistants access to your game project. Godot 4.4+ UID management ensures stable references to nodes and resources across sessions.
+**bradypp/godot-mcp** (74 stars, 13 forks, up 28% since March) takes a safety-first approach with an optional **read-only mode** — important when giving AI assistants access to your game project. Godot 4.4+ UID management ensures stable references to nodes and resources across sessions.
 
 Core capabilities: launch Godot Editor, run projects, capture debug output, create scenes, add nodes, discover projects automatically. Cross-platform on Windows, macOS, and Linux with zero-configuration automatic Godot detection.
 
@@ -156,23 +168,47 @@ The read-only mode is a genuine differentiator. Most game engine MCP servers ass
 
 **Dokujaa/Godot-MCP** integrates with the Meshy API for AI-generated 3D models imported directly into Godot — a creative use case that combines procedural content generation with engine integration.
 
-Godot's MCP ecosystem is fragmented across many small implementations. **GoPeak is the clear leader** for comprehensive tooling. **bradypp/godot-mcp is best for safety-conscious workflows**. The open-source nature of Godot (vs. Unity/Unreal's proprietary engines) makes it easier for community developers to build deep integrations.
+### GDAI MCP (First Commercial Godot MCP)
+
+| Server | Stars | Language | Tools | Transport | Pricing |
+|--------|-------|----------|-------|-----------|---------|
+| [3ddelano/gdai-mcp-plugin-godot](https://github.com/3ddelano/gdai-mcp-plugin-godot) | 80 | — | 8+ categories | stdio | $19 one-time |
+
+**GDAI MCP** (80 stars, $19 one-time) is the first commercial MCP product for Godot, created by the developer behind Epic Online Services Godot (290 stars) and discord.gd (142 stars).
+
+Capabilities: scene and node creation/manipulation, GDScript file editing, debugger integration (logs, errors, output), project file and asset searching, property and resource updates, project context understanding, custom Godot-tailored prompts, **auto screenshot** (automatic editor/game screenshots), and **simulate input** (keyboard input automation). Supports Godot 4.2+ on Windows, macOS, and Linux.
+
+Compatible with Claude Desktop, Cursor, Windsurf, VS Code Copilot, Zed, and Continue. The $19 price point is accessible for indie developers who want a supported, maintained solution.
+
+Godot's MCP ecosystem now spans three tiers: **GoPeak for maximum tooling** (110+ tools, free), **GDAI for a supported commercial experience** ($19), and **bradypp/godot-mcp for safety-conscious workflows** (read-only mode). The open-source nature of Godot (vs. Unity/Unreal's proprietary engines) makes it easier for community developers to build deep integrations.
 
 ## Roblox
 
-### Roblox/studio-rust-mcp-server (Official)
+### Roblox Built-in Studio MCP (Industry Leader)
 
-| Server | Stars | Language | Tools | Transport |
-|--------|-------|----------|-------|-----------|
-| [Roblox/studio-rust-mcp-server](https://github.com/Roblox/studio-rust-mcp-server) | 413 | Rust | 4 | stdio |
+| Server | Stars | Status | Tools | Transport |
+|--------|-------|--------|-------|-----------|
+| [Roblox/studio-rust-mcp-server](https://github.com/Roblox/studio-rust-mcp-server) | 463 | **ARCHIVED April 3, 2026** | — | — |
+| Roblox Studio Built-in MCP | — | **Active (ships with Studio)** | 10+ | stdio |
 
-**Roblox/studio-rust-mcp-server** (413 stars) is the official Roblox Studio MCP server — a reference implementation in Rust with tools for `run_code`, `insert_model`, `get_console_output`, and `start_stop_play`.
+**Roblox archived its open-source MCP server on April 3, 2026** and went all-in on the built-in MCP server that ships directly with Roblox Studio. The archived repo (463 stars) states: "We've shifted ongoing engineering investment to the built-in MCP Server included with Roblox Studio."
 
-**Important: this repository is no longer actively updated.** Roblox has shifted to a **built-in MCP server that ships directly with Roblox Studio**, making it the first major game engine with native MCP support — no plugins, no external servers, just built-in functionality.
+The built-in MCP server received two major updates in early 2026:
 
-Roblox's approach is industry-leading. Studio operates as an MCP server while Roblox Assistant is an MCP client. This enables cross-application workflows: lay out a UI in Figma, create a skybox in Blockade Labs, and have Assistant automatically import it into your experience. As of February 2026, Roblox announced updates to support external LLM connections through MCP.
+**February 21, 2026 — External LLM Support + New Tools:**
+- **External LLM integration** — Roblox Assistant now supports Anthropic (Claude), OpenAI, and Google Gemini via API keys entered directly in Studio's secure settings menu
+- New tools: `get_console_output` (playtest logs), `start_stop_play` (play mode control), `run_script_in_play_mode` (execute scripts during play with structured results), `get_studio_mode` (current Studio state)
+- Enables AI agents to "iteratively plan, write, test, and modify code" with reduced creator intervention
+- Bug fix v0.2.365 resolved agent desynchronization and loop issues
 
-The open-source repository remains available as a reference implementation for understanding the protocol integration.
+**March 5, 2026 — Built-in MCP Server + Playtest Automation:**
+- **MCP Server integrated directly into Studio** — automatic synchronization with Assistant, always up-to-date, no manual setup
+- **Multi-instance management** — `list_roblox_studios` identifies connected instances, `set_active_studio` designates which receives commands
+- **Playtest automation with virtual input** — 5 new tools: `start_stop_play`, `get_console_output`, `user_mouse_input` (mouse simulation), `user_keyboard_input` (keyboard simulation), `character_navigation` (pathfinding-based movement)
+- **Per-session/per-prompt script edit auto-approval** — Assistant can apply changes, run verification loops, and iterate on implementations autonomously
+- Full tool parity between external MCP clients and built-in Assistant
+
+This is the most ambitious native MCP integration in any game engine. External IDEs (Claude Code, VS Code, Cursor) can connect to the built-in server. Roblox plans to add third-party MCP server integration, potentially enabling Blender and Figma workflows directly from Studio.
 
 ### boshyxd/robloxstudio-mcp (Community Enhanced)
 
@@ -184,17 +220,64 @@ The open-source repository remains available as a reference implementation for u
 
 The `grep_scripts` tool is particularly useful — search across all scripts in a Roblox place for patterns, similar to how developers grep codebases. The read-only focus reduces risk when giving AI assistants access to production places.
 
+## Cocos Creator (NEW)
+
+### DaxianLee/cocos-mcp-server
+
+| Server | Stars | Language | Tools | Transport |
+|--------|-------|----------|-------|-----------|
+| [DaxianLee/cocos-mcp-server](https://github.com/DaxianLee/cocos-mcp-server) | 831 | TypeScript | 50 core (158 total) | stdio |
+
+**DaxianLee/cocos-mcp-server** (831 stars, 227 forks) is a comprehensive MCP server plugin for Cocos Creator 3.8+, and the largest new engine entry since the original review.
+
+The server condenses 158 tools into **50 high-reusability core tools** implementing 99% of editor control — organized into 13 categories including scene management, node operations, component handling, prefab management, project control, asset management, debugging utilities, and preferences configuration. This token-conscious design reduced context consumption by approximately 50% compared to exposing all tools individually.
+
+Latest v1.4.0 focused on major prefab functionality fixes — correct reference handling, component/node/resource type reference repair, and proper internal/external reference formatting. One-click installation, one-click start.
+
+### Other Cocos Creator Implementations
+
+| Server | Focus |
+|--------|-------|
+| [RomaRogov/cocos-mcp](https://github.com/RomaRogov/cocos-mcp) | Streamable HTTP transport, runs inside Cocos Creator — no external tools or bridges |
+| [RomaRogov/cocos-code-mode](https://github.com/RomaRogov/cocos-code-mode) | Code Mode — turns editor into AI-controllable tool with HTTP server for scene/asset/property operations |
+| [czh2774/cocosMCP](https://github.com/czh2774/cocosMCP) | Cursor AI integration |
+| [tidys/cocos-mcp](https://github.com/tidys/cocos-mcp) | Alternative implementation |
+
+Cocos Creator (widely used in China and mobile game development) now has a surprisingly robust MCP ecosystem. **DaxianLee/cocos-mcp-server** (831 stars) is already larger than many established game engine MCP servers. **RomaRogov/cocos-mcp** is notable for running the MCP server inside the editor itself via Streamable HTTP — no external processes needed.
+
+## Bevy/Rust (NEW — Gap Filled)
+
+### Nub/bevy_mcp
+
+| Server | Stars | Language | Tools | Transport |
+|--------|-------|----------|-------|-----------|
+| [Nub/bevy_mcp](https://github.com/Nub/bevy_mcp) | — | Rust | 12 | stdio |
+
+**Nub/bevy_mcp** bridges MCP clients to running Bevy game engine instances via the **Bevy Remote Protocol (BRP)**. The 12 tools cover world querying, entity manipulation (spawn, despawn, insert/remove components), resource inspection and modification, entity reparenting, type registry access, and target management for multiple Bevy instances.
+
+Requires Rust 1.85+ and Bevy 0.18 with remote plugins enabled. Early stage (2 commits) but functional — fills the Rust game engine MCP gap identified in the original review.
+
+### Ladvien/bevy_debugger_mcp
+
+| Server | Language | Focus |
+|--------|----------|-------|
+| [Ladvien/bevy_debugger_mcp](https://github.com/Ladvien/bevy_debugger_mcp) | Rust | AI-assisted debugging via Claude Code |
+
+**bevy_debugger_mcp** enables AI-assisted debugging of Bevy games through Claude Code — debug game state, analyze performance, and test hypotheses with natural language commands. Available on crates.io (`bevy_debugger_mcp`).
+
+The emergence of Bevy MCP servers aligns with Bevy's growing ecosystem (39,000+ GitHub stars as of 2026). The BRP-based architecture is elegant — it leverages Bevy's existing remote protocol rather than requiring custom plugins.
+
 ## Web Game Engines
 
 ### Phaser Editor (Official)
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [phaserjs/editor-mcp-server](https://github.com/phaserjs/editor-mcp-server) | 26 | TypeScript | 15+ | stdio |
+| [phaserjs/editor-mcp-server](https://github.com/phaserjs/editor-mcp-server) | 28 | TypeScript | 15+ | stdio |
 
-**phaserjs/editor-mcp-server** (26 stars) is the official MCP server for Phaser Editor 5, the IDE for the popular HTML5 game framework (Phaser has 37,000+ GitHub stars).
+**phaserjs/editor-mcp-server** (28 stars, 117 commits) is the official MCP server for Phaser Editor 5, the IDE for the popular HTML5 game framework (Phaser has 37,000+ GitHub stars).
 
-Tools cover: **Scene management** — list all scenes, get focused scene, manipulate scene contents. **Asset handling** — textures, bitmap fonts, spritesheets, animations, Spine skeletons and atlases, tilemaps. **Visual tools** — inspect texture images and generate scene screenshots for AI visual context.
+Tools cover four categories: **IDE Tools** — scene management (list, open, create, save scenes). **Assets Tools** — textures, bitmap fonts, spritesheets, animations, Spine skeletons and atlases, tilemaps. **Scene Tools** — object manipulation, screenshots, and scene data retrieval. **Editable Tilemap Tools** — tilemap creation and tile data editing.
 
 As of 2026, the MCP server is built directly into the Phaser Editor installation with a one-click configuration dialog for Claude Desktop, Cursor, or VS Code. The integration lets agents combine scene changes and code modifications — implementing new gameplay features or performing code refactorings that span both visual and code layers.
 
@@ -234,34 +317,38 @@ Transparent background support is critical for game sprites — most general-pur
 
 ## What's Missing
 
-The game engine MCP space has grown rapidly but still has notable gaps:
+The game engine MCP space has grown rapidly and closed several gaps, but some remain:
 
-- **No official Unity or Unreal MCP servers** — all implementations are community-driven, unlike Roblox's first-party support
-- **No Bevy (Rust) or Fyrox MCP server** — the Rust game engine ecosystem lacks MCP integration
-- **No dedicated Pygame/Love2D/Raylib MCP servers** — simpler game frameworks are unserved
-- **Limited cross-engine tools** — no server abstracts common operations (create object, set position, add physics) across multiple engines
-- **No game testing frameworks** — automated gameplay testing through MCP is unexplored
+- **No official Unity or Unreal MCP servers** — all implementations are community-driven or commercial third-party, unlike Roblox's first-party support. Unity 6.2 is adding AI features directly to the engine but not via MCP. Epic has acknowledged developer requests but no announcement yet.
+- **No Fyrox MCP server** — the Bevy gap is now filled, but Fyrox (the other major Rust engine) still lacks MCP integration
+- **No dedicated Pygame/Love2D/Raylib MCP servers** — simpler game frameworks remain unserved
+- **Limited cross-engine tools** — FryMyCalamari/gamedev-mcp-hub aggregates 165+ tools across Unity/Godot/Blender/GitHub/Discord, but no server truly abstracts common operations across engines
+- **Roblox playtest automation is pioneering but others lag** — Roblox's virtual input tools (mouse, keyboard, character navigation) are unique; no other engine MCP server offers automated gameplay testing at this level
 - **No dedicated level design servers** — procedural generation and level layout tools are absent
 - **No multiplayer/networking MCP** — game networking setup and management through MCP doesn't exist
-- **Safety controls are inconsistent** — only bradypp/godot-mcp offers a read-only mode; most servers assume full write access to your project
-- **No audio middleware integration** — Wwise, FMOD, and other game audio tools lack MCP servers
+- **Safety controls improving but still inconsistent** — bradypp/godot-mcp offers read-only mode, ChiR24/Unreal_mcp added capability tokens and loopback-only defaults, but most servers still assume full write access
+- **No audio middleware integration** — Wwise, FMOD, and other game audio tools still lack MCP servers
 
 ## The Bottom Line
 
-The game engine MCP ecosystem is maturing rapidly. Every major engine now has at least one MCP server, and Unity alone has 6+ competing implementations. The quality varies significantly — from basic "run a script" wrappers to sophisticated integrations that expose entire editor APIs.
+The game engine MCP ecosystem is maturing rapidly with explosive growth across all major engines. Unity alone has 6+ implementations totaling 12,000+ combined stars. The first commercial MCP products (StraySpark for Unreal, GDAI for Godot) signal that this space is moving beyond hobbyist experimentation. Two major gaps — Cocos Creator and Bevy/Rust — were filled since March 2026.
 
-**For Unity developers**: CoplayDev/unity-mcp (5,800 stars) for general-purpose scene manipulation, IvanMurzak/Unity-MCP for the deepest integration and runtime agents.
+**For Unity developers**: CoplayDev/unity-mcp (8,900 stars) for general-purpose scene manipulation with 40+ tools including profiler and physics. IvanMurzak/Unity-MCP (2,300 stars) for the deepest integration, runtime agents, and the most active development (2,768 commits).
 
-**For Unreal developers**: chongdashu/unreal-mcp (1,200 stars) for comprehensive Blueprint and actor control with an established community.
+**For Unreal developers**: StraySpark (207 tools, commercial) for studio-grade automation. chongdashu/unreal-mcp (1,800 stars) for the largest open-source community. ChiR24/Unreal_mcp (552 stars) for native HTTP/SSE transport and UE 5.0-5.7 support.
 
-**For Godot developers**: HaD0Yun/godot-mcp GoPeak for the most comprehensive toolset (95+ tools), bradypp/godot-mcp for safety-first workflows.
+**For Godot developers**: HaD0Yun/godot-mcp GoPeak for the most comprehensive toolset (110+ tools with tiered profiles). GDAI MCP ($19) for a supported commercial option. bradypp/godot-mcp for safety-first workflows.
 
-**For Roblox developers**: Use the built-in Studio MCP server — Roblox is leading the industry in native MCP support.
+**For Roblox developers**: Use the built-in Studio MCP server — it's now the most capable native MCP integration in any game engine, with external LLM support, playtest automation, and multi-instance management.
+
+**For Cocos Creator developers**: DaxianLee/cocos-mcp-server (831 stars) for comprehensive editor control with 50 core tools covering 99% of functionality.
+
+**For Bevy/Rust developers**: Nub/bevy_mcp for BRP-based entity inspection and manipulation, Ladvien/bevy_debugger_mcp for AI-assisted debugging.
 
 **For web game developers**: phaserjs/editor-mcp-server for Phaser, though the ecosystem is still early.
 
-**Rating: 4.0/5** — Every major game engine has MCP integration, adoption is strong (Unity servers alone total 7,000+ stars), Roblox's native support sets a high bar, and the combination of editor control, asset generation, and (in Unity-MCP's case) runtime agents shows the creative potential of MCP. Deductions for inconsistent safety controls, no official support from Unity or Epic, fragmentation across too many small implementations, and missing coverage for simpler game frameworks.
+**Rating: 4.5/5** — Upgraded from 4.0. Every major game engine has MCP integration, adoption growth is explosive (Unity servers grew 53-650% in 6 weeks), Roblox's built-in MCP with third-party LLM support is industry-leading, the first commercial products signal market maturation, and two major engine gaps (Cocos Creator, Bevy) were filled. Deductions for no official support from Unity Technologies or Epic Games, limited safety controls in most servers, and missing coverage for simpler game frameworks (Pygame, Love2D, Raylib).
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic).*
