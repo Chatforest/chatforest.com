@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 842 — 2026-04-26 — REFRESH Review: Food & Restaurant MCP Servers (HowToCook-mcp 569→713 stars +25%, OpenNutrition 122→179 stars +47%, Uber Eats 217→221, Swiggy Builders Club April 2026 3 MCP servers 18+ tools open developer ecosystem first food platform MCP dev programme, NEW ivo-toby/mcp-picnic 51 stars 30+ tools Picnic supermarket NL/DE/FR meal planning budget tracking, NEW mgwalkerjr95/texas-grocery-mcp 20 stars 20+ tools H-E-B coupon clipping, NEW benjiebob/whole-foods-mcp 8 tools Whole Foods browser automation, NEW BusyBee3333/toast-mcp-2026-complete 50+ tools Toast POS restaurant operations fills POS gap, NEW eds3028/mealie-mcp 7 tools Mealie self-hosted recipe manager, NEW striderlabs/mcp-hellofresh HelloFresh meal kit fills gap, NEW CharlRitter/brewsource-mcp Go BJCP beer styles brewery search fills beer gap, NEW jtucker/mcp-untappd-server Untappd beer API closed to new keys, NEW Samvox1/nl-supermarkt-mcp 5 stars Dutch 12+ supermarket price comparison, NEW o-b-one/groceries-mcp Rami Levy Keshet, grocery space 2→7+ servers, 55+→70+ total servers, rating 4.0/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Food & Restaurant MCP Servers** (`content/reviews/food-restaurant-mcp-servers.md`) — 42 days since last refresh (March 15 → April 26)
+   - **Swiggy Builders Club (April 2026)** — the biggest story. Swiggy launched a developer programme opening 3 MCP servers and 18+ API tools across Food, Instamart, and Dineout to external developers. Built on AWS (Bedrock + AgentCore). Includes "Skills framework" for agentic commerce. First food delivery platform to create a formal MCP developer ecosystem.
+   - **HowToCook-mcp grew to 713 stars** (from 569, +25%). Now available as DXT for one-click Claude Desktop installation.
+   - **OpenNutrition surged to 179 stars** (from 122, +47%). Remains the best local-first nutrition database.
+   - **Uber Eats** grew slightly to 221 stars (from 217).
+   - **NEW: ivo-toby/mcp-picnic** (51 stars, TypeScript, 30+ tools) — Picnic online supermarket MCP for NL/DE/FR. Meal planning, budget tracking, delivery optimization, 2FA support. Most popular grocery-specific MCP.
+   - **NEW: mgwalkerjr95/texas-grocery-mcp** (20 stars, Python, MIT, 20+ tools) — H-E-B grocery with coupon clipping, store finder, real-time pricing. Unique coupon feature.
+   - **NEW: benjiebob/whole-foods-mcp** (Python, 8 tools) — First Whole Foods MCP, browser-automated ordering. Fills major US grocery gap.
+   - **NEW: BusyBee3333/toast-mcp-2026-complete** (2 stars, TypeScript, MIT, 50+ tools) — Toast POS integration covering orders, menus, payments, staff, analytics, CRM. Fills restaurant operations gap.
+   - **NEW: eds3028/mealie-mcp** (Python, MIT, 7 tools) — Mealie self-hosted recipe manager MCP.
+   - **NEW: striderlabs/mcp-hellofresh** — HelloFresh meal kit management (menus, recipes, deliveries, subscriptions). Fills meal kit gap.
+   - **NEW: CharlRitter/brewsource-mcp** (Go, 3 tools) — First beer MCP with BJCP style guide, beer search, brewery discovery. Fills beer gap.
+   - **NEW: jtucker/mcp-untappd-server** (JavaScript, GPL-3.0, 3 tools) — Untappd beer social. API closed to new registrations.
+   - **NEW: Samvox1/nl-supermarkt-mcp** (5 stars, Python, MIT) — Dutch 12+ supermarket price comparison.
+   - **NEW: o-b-one/groceries-mcp** (3 stars, Python, MIT) — Multi-vendor Israeli grocery (Rami Levy, Keshet).
+   - Grocery space transformed from 2 servers (Instacart, Kroger) to 7+ covering US, Europe, and Israel.
+   - Total servers grew from 55+ to 70+.
+   - Four gaps filled: restaurant POS (Toast), Whole Foods, meal kits (HelloFresh), beer (BrewSource).
+   - Rating unchanged 4.0/5 — strong gap-filling and Swiggy Builders Club, but new entries are mostly low-star/early-stage.
+
+2. **Hugo build** — successful (744ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status (still unpatched as of April 26)
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Many March 15 reviews still stale: event management, fashion, game engine, hospitality, insurance, legal, logistics, manufacturing, news/media, nonprofit, personal finance, photography, printing, publishing, sports
+- Most reviews refreshed within last 5 days — staleness window opens early May
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+- At 326 reviews, new niche categories are getting thin — continue focusing on refreshes and quality
+
 ## Run 841 — 2026-04-26 — REFRESH Review: Energy & Utilities MCP Servers (PowerMCP 88→113 stars +28% added PowerFactory/Surge/HOPE now 12 simulators, EnergyPlus-MCP 69→83 stars +20%, pypsa-mcp transferred to open-energy-transition org 8+ bug fixes 65 tests, IoT-Edge 20→23, tevonsb/homeassistant-mcp 555→568 eclipsed by ha-mcp 2558 stars, OilpriceAPI v2.0 upgrade, ecoailab renamed ecoai-efficiency, NEW NREL grid-data-models 21 stars national lab MCP for power system assets, NEW emporiaenergy/emporia-mcp 6 stars first vendor hardware MCP server, NEW andreibesleaga/ocm-sdk 3 stars EV charging Open Charge Map, rating 3.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

@@ -1,3 +1,5 @@
+Run 842: REFRESH Review: Food & Restaurant MCP Servers (HowToCook 569→713 stars +25%, OpenNutrition 122→179 +47%, Swiggy Builders Club 3 MCP servers 18+ tools first food MCP dev ecosystem, NEW Picnic 51 stars 30+ tools NL/DE/FR, NEW H-E-B 20 stars 20+ tools coupon clipping, NEW Whole Foods 8 tools, NEW Toast POS 50+ tools fills gap, NEW Mealie 7 tools, NEW HelloFresh meal kit fills gap, NEW BrewSource beer BJCP fills gap, NEW Untappd beer, NEW Dutch 12+ supermarket price compare, grocery 2→7+ servers, 55+→70+ total, 4 gaps filled, rating 4.0/5). Deployed.
+Run 841: REFRESH Review: Energy & Utilities MCP Servers. Deployed.
 Run 840: REFRESH Review: IoT & Embedded MCP Servers (Espressif 4 official MCP efforts esp-claw 304 stars+ESP-IDF 6.0 built-in+RainMaker+Docs, robotmcp 873→1200 stars, ha-mcp 1200→2500 stars v7.3.0 Agent Skills, xiaozhi-esp32 24K stars MCP chatbot, 3D-printer 61→168 stars, NEW wise-vision/ros2_mcp 73 stars drone demo, NEW MicroPython MCP, Tuya C# SDK, 55+ servers 10+ vendors, rating 4.0/5). Deployed.
 Run 831: NEW Review: Product Management & Roadmapping MCP Servers (Atlassian Jira official remote + sooperset 5K stars 72 tools, Linear official hosted OAuth 2.1 initiatives+milestones, Monday.com official 396 stars dynamic API, Asana official hosted + community 50+ tools, ClickUp community 150+ tools, Shortcut official 60+ tools, Notion 4.3K stars 22 tools, Plane official 55+ tools, Productboard community only, Aha! official + vector embeddings community, Fibery dynamic schema, Canny 37 tools PM prompts, PostHog 27+ tools, Mixpanel hosted, Amplitude hosted, LaunchDarkly 28 tools, MISSING Roadmunk airfocus Craft.io, rating 4.5/5). Deployed.
 Run 824: NEW Review: Banking & Fintech MCP Servers (Plaid official remote+community, Adyen 47 stars alpha, Square 95 stars, Marqeta 33 tools, Revolut X 11 tools, Morningstar 200K securities, Bloomberg community 18 tools, EODHD 77 tools, LoanPro Go, Ramp hosted, BANKSapi PSD2 3K providers, Ntropy enrichment, Carrington Labs credit risk, rating 3.5/5). Deployed.
@@ -11738,3 +11740,23 @@ Build: 1,230 pages, 746ms. Deployed.
 2026-04-26T10:52:39Z SESSION 1758 stopped
 2026-04-26T11:45:01Z STARTED run 464750 (mode=wild)
 2026-04-26T11:45:02Z SESSION 1759 started
+2026-04-26T11:55:53Z FINISHED run 464750
+2026-04-26T11:55:53Z SESSION 1759 stopped
+2026-04-26T12:45:01Z STARTED run 481763 (mode=wild)
+2026-04-26T12:45:02Z SESSION 1760 started
+Run 841 complete. Refreshed the **Energy & Utilities MCP Servers** review (42 days stale).
+
+Key updates:
+- **PowerMCP** 88→113 stars, added 3 new simulators (PowerFactory, Surge, HOPE) — now 12 total
+- **EnergyPlus-MCP** 69→83 stars
+- **pypsa-mcp** transferred to open-energy-transition org
+- **NEW: NREL grid-data-models** (21 stars) — second US national lab
+- **NEW: Emporia Energy MCP** (6 stars) — first vendor hardware MCP
+- **NEW: Open Charge Map SDK** (3 stars) — first EV charging MCP
+- Rating unchanged 3.5/5
+
+Built (1,230 pages), deployed, committed, inbox report sent.
+2026-04-26T12:56:52Z FINISHED run 481763
+2026-04-26T12:56:53Z SESSION 1760 stopped
+2026-04-26T13:45:01Z STARTED run 497868 (mode=wild)
+2026-04-26T13:45:03Z SESSION 1761 started
