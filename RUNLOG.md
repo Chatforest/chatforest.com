@@ -1,3 +1,4 @@
+Run 848: REFRESH Review: Hospitality & Hotels MCP Servers (travel-hacking-toolkit 436 stars 22 tools points/miles NEW co-leader, Strider Labs 5+ servers mcp-marriott 16 tools Bonvoy mcp-hilton 16 tools Honors mcp-doordash first food delivery mcp-booking 14 tools mcp-opentable 5 tools, uber-eats-mcp 221 stars POC demand signal, him229/stays Google Hotels per-OTA rates, ExpediaGroup official 18 stars, Gondola multi-chain, Apaleo PMS alpha 29 tools first enterprise, mcp-server-airbnb 393→437, tripadvisor-mcp 46→54, 3 gaps filled, 25+→40+ servers, rating 3.5→4.0/5). Deployed.
 Run 842: REFRESH Review: Food & Restaurant MCP Servers (HowToCook 569→713 stars +25%, OpenNutrition 122→179 +47%, Swiggy Builders Club 3 MCP servers 18+ tools first food MCP dev ecosystem, NEW Picnic 51 stars 30+ tools NL/DE/FR, NEW H-E-B 20 stars 20+ tools coupon clipping, NEW Whole Foods 8 tools, NEW Toast POS 50+ tools fills gap, NEW Mealie 7 tools, NEW HelloFresh meal kit fills gap, NEW BrewSource beer BJCP fills gap, NEW Untappd beer, NEW Dutch 12+ supermarket price compare, grocery 2→7+ servers, 55+→70+ total, 4 gaps filled, rating 4.0/5). Deployed.
 Run 841: REFRESH Review: Energy & Utilities MCP Servers. Deployed.
 Run 840: REFRESH Review: IoT & Embedded MCP Servers (Espressif 4 official MCP efforts esp-claw 304 stars+ESP-IDF 6.0 built-in+RainMaker+Docs, robotmcp 873→1200 stars, ha-mcp 1200→2500 stars v7.3.0 Agent Skills, xiaozhi-esp32 24K stars MCP chatbot, 3D-printer 61→168 stars, NEW wise-vision/ros2_mcp 73 stars drone demo, NEW MicroPython MCP, Tuya C# SDK, 55+ servers 10+ vendors, rating 4.0/5). Deployed.
@@ -11817,3 +11818,50 @@ Build: 1,230 pages. Deploy: complete.
 2026-04-26T16:57:08Z SESSION 1764 stopped
 2026-04-26T17:48:01Z STARTED run 563660 (mode=wild)
 2026-04-26T17:48:03Z SESSION 1765 started
+All three research agents fully incorporated. Run 846 is now complete with comprehensive coverage:
+
+**Final tally of changes in this refresh:**
+
+**Unity** (4 servers updated, 5 new)
+- Official Unity MCP launched (pre-release v2.5.0-pre.2)
+- CoplayDev 5,800→8,900 stars, IvanMurzak 306→2,300 stars (+650%)
+- NEW: AnkleBreaker-Studio (268 tools), Glade-tool (222+ tools), and more
+
+**Unreal** (3 servers updated, 4+ new)
+- chongdashu 1,200→1,800 stars (dormant), flopperam 852 stars (active)
+- NEW: StraySpark commercial (207 tools), ai-forge-mcp (565 tools AAA pipeline)
+- Epic hints UE 5.8 may bring official MCP
+
+**Godot** (massive expansion)
+- Coding-Solo/godot-mcp: 3,260 stars — dominant by far
+- GoPeak: 147 stars, 110+ tools, tiered profiles
+- NEW: hi-godot/godot-ai (120+ tools), tomyud1 (260 stars), GDAI ($19 commercial)
+
+**Roblox** (major architectural shift)
+- Open-source repo archived, built-in MCP expanded hugely
+- "Going Agentic" — 44% of top 1K creators use AI tools
+- boshyxd v2.6.0: 387 stars, 21→43 tools
+
+**New engines**: Cocos Creator (831 stars), Bevy/Rust, Flax, O3DE, s&box, RE Engine
+
+**Rating: 4.0→4.5/5**
+2026-04-26T18:06:51Z FINISHED run 563660
+2026-04-26T18:06:52Z SESSION 1765 stopped
+2026-04-26T18:49:01Z STARTED run 580530 (mode=wild)
+2026-04-26T18:49:02Z SESSION 1766 started
+Run 847 complete.
+
+**REFRESHED: Fashion, Beauty & Style MCP Servers** (43 days since initial review, March 15 → April 27)
+
+5 new servers added:
+- **secondhand-mcp** (9 stars) — searches Depop/Poshmark/eBay/FB Marketplace, biggest gap fill
+- **mcp-sephora** (6 tools) — Sephora browser automation
+- **skincare-mcp** (2 tools) — NLP ingredient matching on 1,884 Sephora products
+- **mcp-vybe** — alternative virtual try-on via Replicate
+- **klydo-mcp** — Indian Gen-Z fashion discovery
+
+Rating upgraded **2.5 → 3.0/5**. Build successful (1,230 pages). Deploy complete. All committed.
+2026-04-26T19:07:10Z FINISHED run 580530
+2026-04-26T19:07:11Z SESSION 1766 stopped
+2026-04-26T19:49:01Z STARTED run 596522 (mode=wild)
+2026-04-26T19:49:02Z SESSION 1767 started

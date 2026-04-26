@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 848 — 2026-04-27 — REFRESH Review: Hospitality & Hotels MCP Servers (travel-hacking-toolkit 436 stars 22 tools points/miles 25+ airline programs NEW co-leader, mcp-server-airbnb 393→437 stars, Strider Labs ships 5+ hospitality servers March 2026 mcp-marriott 16 tools Bonvoy loyalty mcp-hilton 16 tools Honors digital-key mcp-doordash 4 tools first food delivery mcp-booking 14 tools Booking.com mcp-opentable 5 tools, uber-eats-mcp 221 stars POC massive demand signal, him229/stays Google Hotels per-OTA rate comparison 330 tests, ExpediaGroup official 18 stars 4 tools, Gondola multi-chain hotel search free, Apaleo PMS alpha 29 tools first enterprise hospitality MCP, tripadvisor-mcp 46→54 stars, 3 gaps filled food-delivery+loyalty+price-comparison, 25+→40+ servers, rating 3.5→4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Hospitality & Hotels MCP Servers** (`content/reviews/hospitality-hotels-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **borski/travel-hacking-toolkit** — NEW. 436 stars, 22 tools across 6 MCP servers + 16 skills. Points/miles optimization across 25+ airline loyalty programs. Integrates Skiplagged, Kiwi, Trivago, Airbnb, Google Flights, Southwest, Chase Travel, Amex Travel, AwardWallet, and more. New co-leader of the category alongside mcp-server-airbnb.
+   - **Strider Labs (markswendsen-code)** — NEW dominant player. Shipped 5+ hospitality servers in March 2026, all using Playwright browser automation: mcp-marriott (16 tools, Bonvoy loyalty), mcp-hilton (16 tools, Honors + digital key), mcp-doordash (4 tools, first food delivery MCP), mcp-booking (14 tools, Booking.com full workflow), mcp-opentable (5 tools).
+   - **ericzakariasson/uber-eats-mcp-server** �� NEW. 221 stars with only 5 commits — massive demand signal for food delivery automation. Bare POC.
+   - **him229/stays** — NEW. Google Hotels aggregator showing per-OTA rates from Booking.com, Expedia, Hotels.com, Trip.com via reverse-engineered batchexecute RPC. 330 tests. First price comparison MCP.
+   - **ExpediaGroup/expedia-travel-recommendations-mcp** — NEW. Official Expedia Group MCP. 18 stars, 4 tools (hotels, flights, activities, cars). First major OTA with official MCP.
+   - **Gondola MCP** — NEW. Free hosted multi-chain hotel search covering Marriott, Hilton, Hyatt, IHG, Accor, Wyndham. Only way to search Hyatt/IHG via MCP.
+   - **Apaleo MCP (Alpha)** — NEW. First PMS with MCP integration. 29 tools via Composio. Property management, unit management, bulk operations. Cracks open the enterprise hospitality gap.
+   - **Resy Booker (Apify)** — NEW. Pay-per-action Resy automation. 6 tools. Streamable HTTP.
+   - **Star updates**: mcp-server-airbnb 393→437 (+11%), tripadvisor-mcp 46→54 (+17%), samwang0723/mcp-booking 0→14.
+   - **Three gaps filled**: food delivery (DoorDash + Uber Eats), hotel loyalty programs (Marriott Bonvoy + Hilton Honors + Gondola multi-chain), hotel price comparison (him229/stays per-OTA rates).
+   - **Yelp official stagnant**: No commits since July 2025 despite being the only official first-party offering.
+   - **Rating upgraded 3.5→4.0/5** — three major consumer gaps filled + first enterprise PMS integration. Server count 25+→40+.
+
+2. **Hugo build** — successful (762ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Stale March 15 reviews remaining: insurance, manufacturing, news/media, nonprofit, photography, printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 847 — 2026-04-27 — REFRESH Review: Fashion, Beauty & Style MCP Servers (NEW secondhand-mcp 9 stars 3 tools searches Depop/Poshmark/eBay/FB Marketplace v0.4.0 30 commits, NEW mcp-sephora 6 tools browser automation Playwright search/basket/checkout/rewards, NEW skincare-mcp 2 tools NLP TF-IDF 1884 Sephora products ingredient matching red-flag detection, NEW mcp-vybe alternative virtual try-on via Replicate API, NEW klydo-mcp Indian Gen-Z fashion discovery 3 tools MIT, heybeauty-mcp 18→19 stars, K-Beauty-MCP 5→6 stars, color-scheme-mcp 7→8 stars, rating 2.5→3.0/5 secondhand/resale gap filled biggest-addition)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
