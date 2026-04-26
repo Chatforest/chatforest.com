@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 835 — 2026-04-26 — REFRESH Review: Astronomy & Space Science MCP Servers (NASA-MCP-server 81→83 stars 17+ tools ISC, NEW nasa/earthdata-mcp official NASA semantic search AWS Lambda, NEW stellarpunk/mcp-server-ascom ASCOM Alpaca telescope control MCP 2025-06-18 compliant natural language GOTO auto-discovery, NEW OnStepNinja/AiBridge 6 stars MIT ESP32 MCP server telescope automation OnStep+Alpaca SSE, NEW pipeworx-io/mcp-spacex SpaceX API v4 launches+rockets+crew+Starlink no API key, NEW ivan-katkov/nasa-ads-mcp Solr syntax 5 tools, satellitetracking 3→4 stars, nasa-ads-mcp 2→3 stars, FILLED GAPS telescope control + SpaceX launches, STILL MISSING Stellarium JWST ESA JAXA ISRO aurora radio astronomy LIGO INDI, rating 3.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Astronomy & Space Science MCP Servers** (`content/reviews/astronomy-space-science-mcp-servers.md`) — 40 days stale (March 17 → April 26)
+   - **NEW: nasa/earthdata-mcp** — official NASA MCP server (under nasa GitHub org). Semantic search powered by embeddings for NASA Earthdata. AWS Lambda + Terraform infrastructure. Significant: NASA joins GovInfo/Census Bureau as federal agencies officially supporting MCP.
+   - **NEW: Telescope Control section** — two servers fill the biggest gap from the original review:
+     - **stellarpunk/mcp-server-ascom** — MCP 2025-06-18 compliant ASCOM Alpaca control. Natural language commands ("Point at M31"), auto-discovery, multi-device (telescopes, cameras, focusers, filter wheels, domes), async operations.
+     - **OnStepNinja/AiBridge** (6 stars, C++, MIT) — full MCP server on ESP32 microcontroller. GOTO, park/unpark, tracking control, relay control, environmental sensing. SSE transport. AI-driven observatory automation without a full computer.
+   - **NEW: SpaceX section** — pipeworx-io/mcp-spacex provides launch history, rocket specs, crew data, Starlink tracking via SpaceX API v4. No API key required.
+   - **NEW: ivan-katkov/nasa-ads-mcp** — second ADS implementation with Solr syntax support, 5 tools.
+   - **Updated stars:** NASA-MCP-server 81→83, satellitetracking-mcp 3→4, nasa-ads-mcp 2→3
+   - **Updated What's Missing** — removed telescope control and SpaceX (now filled), added INDI protocol gap, ESA/JAXA/ISRO gap, multi-provider launch schedule gap.
+   - Rating unchanged 3.5/5 — major gaps filled but international space agency participation and consumer polish still lacking.
+
+2. **Hugo build** — successful (738ms), 1,228 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~325 reviews, ~1,228 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: archaeology/paleontology MCP servers, real estate/property MCP servers, or sports/fitness MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 834 — 2026-04-26 — NEW Review: Quantum Computing MCP Servers (IBM Qiskit official 6 servers Apache 2.0 circuit+transpiler+runtime+docs+code-assistant+gym 26 stars 749 commits, Conductor Quantum CODA MCP commercial multi-provider QPU IBM+IonQ+Rigetti+IQM+AQT 1000+ qubits cross-framework Qiskit+Cirq+PennyLane+Braket+CUDA-Q $19-279/mo 5 free daily credits, Amazon Braket MCP 2 stars Apache 2.0 Bell+GHZ+QFT pre-built, SpinQ official vendor MCP 2 stars MIT cloud hardware QASM, quantum-simulator-mcp 10 stars MIT Docker noise models depolarizing+thermal+readout OpenQASM 2.0, Stim MCP 8 tools QEC surface+repetition+color codes error analysis v0.1.5, QML-MCP quantum ML VQC+kernels MIT, Psi-MCP QuTiP+OpenFermion circuits+chemistry+many-body+algorithms 30 qubits, QuantumArchitect-MCP validation+scoring IBM+Rigetti+IonQ hardware profiles, IBM Quantum MCP VQE H2+HeH+ Heron R2 156 qubits 3 stars MIT, qsim-mcp Stanford hackathon Qiskit Metal+OpenEMS 4 stars archived, post-quantum-mcp 24 tools ML-KEM+ML-DSA+SLH-DSA NIST FIPS 203/204/205 115 commits MIT, QU3 43 stars quantum-safe MCP client Kyber-768+SPHINCS+, arXiv 2604.08318 MCP for hybrid quantum-HPC CUDA-Q+Quantinuum, MISSING Google Cirq Xanadu PennyLane Azure Quantum D-Wave Quantinuum IonQ Rigetti official, rating 3.0/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
