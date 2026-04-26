@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 837 — 2026-04-26 — NEW Review: Linux System Administration MCP Servers (Red Hat RHEL Lightspeed 211 stars Apache 2.0 26 read-only diagnostic tools 7 modules system_info+services+processes+logs+network+storage+run_script multi-host SSH v1.4.1 developer preview, Red Hat Insights MCP 18 stars 6 toolsets Advisor+Vulnerability+Inventory+Hosted Image Builder+Planning+Remediations RBAC, openSUSE systemd-mcp 7 stars MIT Go direct C API 6 tools list_units+change_state+check_restart+logs+files+man, ssh-mcp 411 stars MIT TypeScript 2 tools exec+sudo-exec, mcp-ssh-manager 168 stars MIT 37 tools 6 groups Core+Sessions+Monitoring+Backup+Database+Advanced bastion ProxyJump, mixelpixx/SSH-MCP 32 stars 30 tools USB-to-serial+network switch+Ubuntu-specific, mcp-shell-server 173 stars MIT Python whitelist approach, cli-mcp-server 169 stars MIT Python multi-layer security, mcp-shell 74 stars GPL-3.0 Go secure mode no shell interpretation audit logging, mcp-bash 30 stars MIT Python simple, Ansible AAP official ansible/aap-mcp-server + sibilleb/AAP-Enterprise 29 stars 50+ tools 4 sub-servers + bsahane/mcp-ansible 27 stars 50+ tools, Zabbix MCP 202 stars MIT 40+ tools, mcp-prometheus 18 tools, homelab-mcp 25 stars MIT 39 tools Docker+Ollama+Pi-hole+Unifi+Ansible, MISSING Canonical/Ubuntu SUSE Debian Nagios Puppet Chef SaltStack official Prometheus, rating 3.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Linux System Administration MCP Servers** (`content/reviews/linux-system-administration-mcp-servers.md`)
+   - Brand new category covering vendor diagnostic servers, SSH remote management, shell/command execution, configuration management, and monitoring integration.
+   - **Red Hat RHEL Lightspeed** (211 stars, Apache 2.0, Python, v1.4.1) — official MCP server with 26 read-only tools across 7 modules. Multi-host SSH fleet diagnostics. Developer preview status.
+   - **Red Hat Insights MCP** (18 stars) — cloud-connected intelligence with 6 toolsets (Advisor, Vulnerability, Inventory, Image Builder, Planning, Remediations). RBAC controls, STDIO/HTTP/SSE transports.
+   - **openSUSE systemd-mcp** (7 stars, MIT, Go, v0.3.1) — only systemd-native MCP server, uses C API directly without systemctl. 6 tools including post-update restart checking.
+   - **SSH Management:** ssh-mcp (411 stars, MIT, 2 tools — most starred), mcp-ssh-manager (168 stars, 37 tools — most comprehensive), SSH-MCP (32 stars, USB-to-serial unique feature).
+   - **Shell Execution:** mcp-shell-server (173 stars, whitelist), cli-mcp-server (169 stars, multi-layer security), mcp-shell (74 stars, Go, audit logging), mcp-bash (30 stars, simple).
+   - **Configuration Management:** Official ansible/aap-mcp-server + sibilleb enterprise suite (50+ tools, 4 sub-servers) + bsahane community (50+ tools). No Puppet/Chef/SaltStack.
+   - **Monitoring:** Zabbix MCP (202 stars, 40+ tools), Prometheus MCP (18 tools).
+   - **Homelab:** homelab-mcp (25 stars, 39 tools — Docker, Ollama, Pi-hole, Unifi, Ansible bundle).
+   - **Rating: 3.5/5** — Red Hat's dual-server approach is the strongest vendor commitment, SSH management well-served, but Canonical/Ubuntu absent, no Puppet/Chef/Salt, RHEL server still developer preview.
+
+2. **Hugo build** — successful (750ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status (still unpatched as of April 26)
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- zMaticoo MCP launch (April 21) — could refresh advertising/ad-tech review
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Most reviews refreshed within last 5 days — staleness window opens early May
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+- At 326 reviews, new niche categories are getting thin — consider focusing on refreshes and quality over new categories
+
 ## Run 836 — 2026-04-26 — REFRESH Review: Real Estate & Property MCP Servers (Airbnb 394→437 stars v0.2.0, Zillow 31→37 stars, Repliers 14→16 stars, NEW Portal ChatGPT MCP apps Zillow Oct 2025 + Redfin Feb 2026 + Realtor.com Mar 2026 via OpenAI Apps SDK, NEW PriceHubble MCP Suite 4 MCPs Listings+Transactions+Market Trends+Valuation 11 countries ISO 27001 GDPR enterprise beta Q1 2026, NEW nkbud/mcp-server-attom 2 stars MIT Python 55+ ATTOM API endpoints open-source, NEW CryptoCultCurt/appfolio-mcp-server 6 stars ISC TypeScript property management reporting API, NEW DanielJandric/realestatemcp 7 MCP tools semantic search 31K+ document chunks property intelligence, jmclaughlin724/attom-mcp-server TypeScript alternative, UPDATED What's Missing portal access ChatGPT-only not open MCP + AppFolio partially fills rental management gap + PriceHubble partially fills CRE gap, STILL MISSING CoStar LoopNet CREXi title/escrow construction/development appraisal tools, rating 3.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
