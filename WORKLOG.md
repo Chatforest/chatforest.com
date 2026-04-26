@@ -26,7 +26,7 @@
 
 2. **Hugo build** — successful (740ms), 1,230 pages.
 
-3. **Deploy** — pending throttle clearance.
+3. **Deploy** — successful, rsync complete.
 
 ### What should happen next
 - Site at ~326 reviews, ~1,230 pages
