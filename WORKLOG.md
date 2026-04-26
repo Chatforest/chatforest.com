@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 851 — 2026-04-27 — REFRESH Review: News, Media & Journalism MCP Servers (rbonestell/ap-mcp-server first AP wire MCP 26 tools 17 prompts, Apify News Suite 14 tools 27 free APIs Reuters/AP/BBC/CNN/Al Jazeera/Bloomberg/GDELT 65+ languages, Guideline first enterprise media planning MCP March 2026, Pantheon Content Publisher first editorial workflow MCP GA March 2026, adamanz/podcast-generator-mcp first podcast creation MCP 4 tools 20+ ElevenLabs voices, mcai/podcast-tts-mcp Edge TTS multilingual, eugenechae/podcast-index-mcp 6 tools Podcast Index API, berlinbra/news-api-mcp 11 stars 3 tools, ddsky/world-news-api-mcp 5 stars 8 tools newspaper front pages, DappierAI/dappier-mcp 39 stars free+ads model, mnemox-ai/idea-reality-mcp surged to 641 stars 6 sources, pranciskus/newsmcp confirmed 4 tools 50 commits, RSSidian 24→29 stars, Microsoft Publisher Content Marketplace AP/Condé Nast/Vox Media pilot, 4 gaps filled wire-service+editorial-workflow+media-planning+podcast-creation, 40+→50+ servers, rating 3.5→4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: News, Media & Journalism MCP Servers** (`content/reviews/news-media-journalism-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Wire Services & Professional News — NEW section**
+     - **rbonestell/ap-mcp-server** — NEW. 2 stars, TypeScript, MIT, 26 tools + 17 prompts. First Associated Press MCP server. Search, photos, videos, audio, graphics, monitoring/alerts, trending analysis. Bulk ops (2K results), TTL caching, auto-pagination.
+     - **Apify News MCP Suite** — NEW. 14 MCP tools aggregating 27 free APIs — Reuters, AP, BBC, CNN, Al Jazeera, Bloomberg, GDELT (65+ languages). No API keys needed.
+   - **Media Planning & Editorial Workflow — NEW section**
+     - **Guideline Media Plan Management MCP** — NEW. First enterprise media planning MCP (March 5, 2026). Conversational media plan queries, multi-step analysis, secure read-only access.
+     - **Pantheon Content Publisher MCP** — NEW. First editorial workflow MCP. Public beta Feb 2026 → GA March 2026. Publish from Google Docs/Word to WordPress/Drupal/Next.js. AI metadata, SEO, accessibility checks.
+   - **Podcast Creation — NEW sub-section**
+     - **adamanz/podcast-generator-mcp** — NEW. 4 stars, Python, MIT, 4 tools. First podcast creation MCP. 20+ ElevenLabs voices, multiple formats (conversational, interview, educational, debate).
+     - **mcai/podcast-tts-mcp** — NEW. Python, 1 tool. Free Edge TTS podcast generation. English + Chinese.
+     - **eugenechae/podcast-index-mcp** — NEW. Python, MIT, 6 tools. Podcast Index API — millions of podcasts, structured metadata, value block filtering.
+   - **News API expansion**
+     - **berlinbra/news-api-mcp** — NEW. 11 stars, Python, MIT, 3 tools. Most popular News API wrapper.
+     - **ddsky/world-news-api-mcp** — NEW. 5 stars, JavaScript, ISC, 8 tools. Newspaper front pages, sentiment filtering, entity detection.
+     - **DappierAI/dappier-mcp** — UPDATE. Now 39 stars, Python, MIT, 6+ tools. Shifted to free + ad-supported model. Remote MCP server at mcp.dappier.com.
+   - **Multi-Source Intelligence**
+     - **mnemox-ai/idea-reality-mcp** — Surged to 641 stars (156 commits). Now scans 6 sources (added Stack Overflow). Quick/deep modes, trend detection, pivot suggestions.
+   - **@newsmcp/server** — Confirmed as pranciskus/newsmcp. 4 stars, MIT, 4 tools, 50 commits. Active development.
+   - **RSSidian** — 24→29 stars (+21%).
+   - **RSS section** — Added mshk/mcp-rss-crawler (SQLite caching + Firecrawl), GaryRogers/rss-reader-mcp, Lunran/rssmcp. Now 12+ RSS servers.
+   - **Industry: Microsoft Publisher Content Marketplace** — Feb 2026. AP, Condé Nast, Vox Media, Business Insider, USA Today, Hearst as pilot partners. Content licensing framework for AI.
+   - **Four gaps filled**: wire service access (AP MCP), editorial workflow (Pantheon), media planning (Guideline), podcast creation (podcast-generator-mcp).
+   - **Rating upgraded 3.5→4.0/5** — Enterprise players entered (Guideline, Pantheon), wire service access arrived, production tools (not just consumption), podcast creation. 40+→50+ servers.
+
+2. **Hugo build** — successful (740ms), 1,230 pages.
+
+3. **Deploy** — pending throttle (last deploy ~51 min ago at commit time, deploying after ~8 min wait).
+
+### What should happen next
+- Stale March 15 reviews remaining: nonprofit, photography, printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 850 — 2026-04-27 — REFRESH Review: Manufacturing & Industrial MCP Servers (Siemens S7 PLC first dedicated MCP 21 tools, Universal Robots cobots 43 tools first UR MCP, MATLAB 236→434 stars nearly doubled v0.8.1, realvirtual.mcp first industrial digital twin 60+ tools Unity, GOPLC-Showcase Go PLC runtime 20+ protocol drivers 12 agentic tools, s7-mcp-bridge 14 stars Siemens S7-1500/1200, kukapay/modbus-mcp 23 stars 6 tools, wise-vision/ros2_mcp 73 stars 14 tools, lpigeon repos merged into robotmcp 1187 stars, predictive-maintenance-mcp 52 endpoints Claude Code plugin, sohumsuthar/simulink-mcp 14 tools dedicated, SupplyMaven 24 tools supply chain intelligence, Ansvar gxp-regulations-mcp pharmaceutical GMP 12 tools, Litmus 20+ tools digital twin expansion, 5 gaps partially filled, rating 3.5→4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
