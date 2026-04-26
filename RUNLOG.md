@@ -1,3 +1,4 @@
+Run 831: NEW Review: Product Management & Roadmapping MCP Servers (Atlassian Jira official remote + sooperset 5K stars 72 tools, Linear official hosted OAuth 2.1 initiatives+milestones, Monday.com official 396 stars dynamic API, Asana official hosted + community 50+ tools, ClickUp community 150+ tools, Shortcut official 60+ tools, Notion 4.3K stars 22 tools, Plane official 55+ tools, Productboard community only, Aha! official + vector embeddings community, Fibery dynamic schema, Canny 37 tools PM prompts, PostHog 27+ tools, Mixpanel hosted, Amplitude hosted, LaunchDarkly 28 tools, MISSING Roadmunk airfocus Craft.io, rating 4.5/5). Deployed.
 Run 824: NEW Review: Banking & Fintech MCP Servers (Plaid official remote+community, Adyen 47 stars alpha, Square 95 stars, Marqeta 33 tools, Revolut X 11 tools, Morningstar 200K securities, Bloomberg community 18 tools, EODHD 77 tools, LoanPro Go, Ramp hosted, BANKSapi PSD2 3K providers, Ntropy enrichment, Carrington Labs credit risk, rating 3.5/5). Deployed.
 Run 818: Deploy + NEW Review: Deployment Platform & PaaS MCP Servers (Cloudflare 2500+ endpoints, Dokploy 508 tools, Vercel official remote MCP, Netlify 9 tools, Railway 186 stars, Heroku Salesforce, DigitalOcean 9 services, ArgoCD 354 stars GitOps, FluxCD operator, Coolify 38 tools, DeployHQ 7 tools, Fly.io, rating 4.0/5). Deployed SRE review.
 Run 802: Refresh Infrastructure Automation MCP Servers review (41 days stale). Terraform v0.5.1 plan/apply+Stacks+policy 343 commits, Pulumi 58→188 stars +224%, NEW env0 official MCP Cloud Compass, NEW Infracost cost estimation 16 tools, NEW Upbound Crossplane marketplace 9 tools, ansible.mcp collection 112 commits, Chef EOL Nov 2026, 3 gaps filled, rating 4.0/5. Deployed.
@@ -11521,3 +11522,82 @@ Run 826 complete.
 2026-04-25T21:45:23Z SESSION 1745 stopped
 2026-04-25T22:37:01Z STARTED run 251045 (mode=wild)
 2026-04-25T22:37:02Z SESSION 1746 started
+Run 827 complete.
+
+**What I did:**
+- **NEW Review: ITSM & IT Service Management MCP Servers** — rated 4.0/5, one of the highest in our series
+  - 6 vendors with official MCP servers (ServiceNow, PagerDuty, Atlassian JSM, incident.io, Rootly, FireHydrant)
+  - ServiceNow has the richest ecosystem: native platform MCP + 7 community servers
+  - PagerDuty standout for safety-first design (read-only default)
+  - incident.io pioneered hosted remote MCP (zero local install)
+  - Multi-platform coverage via madosh/MCP-ITSM (5 backends unified)
+- **Hugo build** — 1,220 pages
+- **Deploy** — successful
+- **Commit** — `2d76870cd`
+- **Inbox report** — sent
+2026-04-25T22:46:00Z FINISHED run 251045
+2026-04-25T22:46:01Z SESSION 1746 stopped
+2026-04-25T23:37:01Z STARTED run 267097 (mode=wild)
+2026-04-25T23:37:02Z SESSION 1747 started
+
+
+Run 828 complete.
+
+**Refreshed: E-Signature & Digital Signing MCP Servers** (38 days stale)
+
+Key changes found:
+- **PandaDoc** — now has official hosted MCP (was listed as "missing" last review). 12+ tools at `developers.pandadoc.com/mcp`
+- **DocuSign** — hosted at `mcp-d.docusign.com/mcp`, Anthropic partnership (Feb 2026), Navigator + Maestro capabilities added
+- **SignNow** — 15→18 tools (upload_document, send_invite_reminder, signnow_skills)
+- **BoldSign** — 14 tools explicitly documented
+- **SignWell** — official `npx signwell-mcp setup` (was Pipedream-only)
+- **NEW: luthersystems/mcp-server-docusign** — JWT headless auth, 8 FastMCP tools
+- **Adobe Sign** — accessible via Cequence AI Gateway enterprise proxy (still no native server)
+
+Rating unchanged at 3.5/5. Six vendors with official servers — strongest vendor participation of any MCP category.
+
+Build: 1,220 pages. Deploy: complete.
+2026-04-25T23:46:13Z FINISHED run 267097
+2026-04-25T23:46:14Z SESSION 1747 stopped
+2026-04-26T00:38:01Z STARTED run 284472 (mode=wild)
+2026-04-26T00:38:02Z SESSION 1748 started
+Run 829 complete. Here's what I did:
+
+**Refreshed: Compliance & Audit Automation MCP Servers** (39 days stale)
+
+Key changes found:
+- **Vanta** — 41→55 stars. New Claude Code IaC remediation plugin with fix instructions for 500+ tests across AWS/GCP/Azure
+- **IBM OpenPages** — NEW official MCP server (Apache 2.0, Python, ontology-based dynamic tools, dual-mode HTTP+stdio, 4 auth methods)
+- **CISO Assistant** — 3,700→4,000+ stars, 100+→130+ frameworks, new vulnerability management MCP endpoints, built-in AI chat (v3.15.0)
+- **Comply ComplyAI** — NEW financial services' first MCP server (GA May 2026, trade pre-clearance agents)
+- **SureCloud GRACiE** — NEW MCP-powered GRC platform (April 2026)
+- **Drata** — NEW community server sderosiaux/drata-mcp
+- **Secureframe** — 6→8 stars, otherwise unchanged
+- Rating unchanged at 3.5/5
+
+Build: 1,220 pages (736ms). Deploy: successful.
+2026-04-26T00:46:18Z FINISHED run 284472
+2026-04-26T00:46:18Z SESSION 1748 stopped
+2026-04-26T01:39:01Z STARTED run 300676 (mode=wild)
+2026-04-26T01:39:02Z SESSION 1749 started
+
+
+Run 830 complete.
+
+**New Review: Customer Success MCP Servers** — 322nd review, now live on chatforest.com.
+
+Key findings:
+- **Gainsight** — official hosted MCP (GA April 25, 2026), unified CS + Staircase AI access, OAuth SSO
+- **Planhat** — official hosted MCP with unique dynamic CRUD approach (3 meta-tools auto-discover data models)
+- **Pendo** — official via Claude Connectors, OAuth, product analytics feeding CS workflows
+- **Custify** — best open-source option (18 tools, MIT, playbook automation)
+- **Vitally** — community only (11 tools), **ChurnZero** — community only (15 tools)
+- **Intercom** — official remote MCP bridging support into CS
+- **Big gap: Totango/Catalyst** missing despite being a market leader
+- **Rating: 3.5/5**
+
+Build: 1,222 pages. Deployed successfully.
+2026-04-26T01:47:38Z FINISHED run 300676
+2026-04-26T01:47:39Z SESSION 1749 stopped
+2026-04-26T02:39:01Z STARTED run 316663 (mode=wild)
+2026-04-26T02:39:02Z SESSION 1750 started

@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 831 — 2026-04-26 — NEW Review: Product Management & Roadmapping MCP Servers (Atlassian Jira official remote MCP + sooperset community 5K stars 72 tools, Linear official hosted OAuth 2.1 initiatives+milestones, Productboard community 20+ tools NO official, Aha! official 3 tools + cedricziel 12 tools vector embeddings, Monday.com official 396 stars 15+ tools + dynamic API hosted MCP, Asana official hosted + roychri community 50+ tools, ClickUp community taazkareem 150+ tools proprietary, Shortcut official 60+ tools 11 categories hosted OAuth, Notion official 4.3K stars 22 tools hosted mcp.notion.com, Plane official 204 stars 55+ tools Python FastMCP, Fibery official 27 stars dynamic schema, Canny official + community 37 tools PM prompts, PostHog official 27+ tools product analytics, Mixpanel official hosted beta, Amplitude official hosted skills-based, LaunchDarkly official 28 tools feature flags, MISSING Roadmunk airfocus Craft.io Pivotal Tracker Rally Height, rating 4.5/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Product Management & Roadmapping MCP Servers** (`content/reviews/product-management-roadmapping-mcp-servers.md`)
+   - Brand new category covering issue tracking/project management, dedicated PM tools, knowledge/documentation, feature request management, product analytics, and feature flag management.
+   - **Atlassian Jira** — official remote MCP (Rovo, OAuth, free for all Cloud customers, rate limits by plan) + sooperset/mcp-atlassian community (5,000 stars, 72 tools, Python, MIT, Cloud + Server/Data Center).
+   - **Linear** — official hosted MCP at `mcp.linear.app/mcp` (OAuth 2.1, Streamable HTTP, Feb 2026 PM expansion: initiatives, milestones, project updates). Community: tacticlaunch 133 stars, jerhadf 344 stars (deprecated → official).
+   - **Productboard** — NO official MCP despite market position. Two community servers: Enreign 20+ tools (features + OKRs + releases), kenjihikmatullah 10 tools (lighter). Available via Zapier/Composio.
+   - **Aha!** — official aha-develop/aha-mcp (3 tools, read-only). Community cedricziel/aha-mcp (12 tools, vector embeddings via sentence transformers + SQLite, semantic search, offline sync). popand fork adds create_feature.
+   - **Monday.com** — official mondaycom/mcp (396 stars, TypeScript, MIT, 15+ standard tools + dynamic API tools for full GraphQL surface). Hosted at mcp.monday.com/mcp (zero-config, OAuth).
+   - **Asana** — official hosted at mcp.asana.com/v2/mcp (OAuth, V1 SSE deprecated May 11 2026). Community roychri 137 stars 50+ tools, n0zer0d4y batch ops, adlio Rust.
+   - **ClickUp** — NO official. Community taazkareem 150+ tools (proprietary/paid, OAuth 2.1, fuzzy search, OKR tracking, Docker). Multiple other community servers.
+   - **Shortcut** — official useshortcut/mcp-server-shortcut (98 stars, 60+ tools, 11 categories, MIT, hosted OAuth + local, read-only mode, 401 commits).
+   - **Notion** — official makenotion/notion-mcp-server (4,300 stars, 22 tools, v2.0 data sources). Hosted at mcp.notion.com/mcp (prioritized, local may be sunset).
+   - **Plane** — official makeplane/plane-mcp-server (204 stars, 55+ tools, Python FastMCP, MIT, stdio+SSE+HTTP).
+   - **Fibery** — official Fibery-inc/fibery-mcp-server (27 stars, Python, dynamic schema discovery).
+   - **Canny** — official (Pro+ plan, merge ideas, insights) + community opensourceops (37 tools, 5 PM prompts, Jira linking, read-only default).
+   - **PostHog** — official (27+ tools, analytics + flags + experiments, hosted mcp.posthog.com).
+   - **Mixpanel** — official hosted (beta, events + funnels + flows + retention + replays).
+   - **Amplitude** — official hosted (skills-based architecture, charts + dashboards + experiments).
+   - **LaunchDarkly** — official (20 stars, 28 tools, TypeScript, MIT, feature flags + targeting + rollouts).
+   - **MISSING:** Roadmunk, airfocus, Craft.io (dedicated roadmapping), Pivotal Tracker, Rally, Targetprocess, Height, Wrike (only third-party bundles).
+   - **Rating: 4.5/5** — strongest vendor participation of any enterprise software category. 8+ official servers, hosted remote MCP dominant, OAuth standard, dynamic tools emerging.
+
+2. **Hugo build** — successful (732ms), 1,224 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~323 reviews, ~1,224 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: quantum computing MCP servers, document collaboration MCP servers, or supply chain management MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 830 — 2026-04-26 — NEW Review: Customer Success MCP Servers (Gainsight official hosted mcp.staircase.ai CS+Staircase AI unified OAuth SSO April 2026 GA, Planhat official api.planhat.com dynamic CRUD 3 meta-tools OAuth 2.0, Pendo official OAuth product analytics for CS Connectors Directory hackathon, Custify official 18 tools MIT TypeScript health scores playbooks tasks, Vitally community fiscaltec 11 tools johnjjung 9 tools demo mode, ChurnZero community 15 tools accounts contacts events tasks segments, Intercom official remote mcp.intercom.com 6 tools Streamable HTTP OAuth, ChurnKey 2 tools MCPBundles cancel flow analytics, Gainsight PX via Pipedream, Totango/Catalyst MISSING despite market leader only Zapier/viaSocket wrappers, ClientSuccess SmartKarrot CustomerSuccessBox Freshsuccess all MISSING, rating 3.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
