@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 849 — 2026-04-27 — REFRESH Review: Insurance MCP Servers (EMPLOYERS first carrier in ChatGPT App Directory via MCP workers-comp quoting April 2026, Socotra Assistant GA AI underwriting March 2026 first insurance core GA AI, NEW eiopa-insurance-mcp 7 tools Solvency II DORA IORP II 105 guidelines 80 standards first EU regulatory MCP, NEW Policy Penguin commercial developer preview 4 tools portfolio management patent-pending, NEW insurance-mcp-server PyPI FEMA 80M+ flood records SEC EDGAR insurer financials disaster declarations, NEW swiss-health-mcp 4 tools 1.6M records 55 insurers 26 cantons BAG Priminfo first health premium comparison MCP, NEW insuranceagenticmesh Java MIT 4 MCP servers multi-agent mesh policy+claims+underwriting+customer-service, NEW imc-policy-mcp-server Java Spring AI PGVector RAG policy document retrieval, Sixfold AI $30M Series B $265B GWP MCP deployments, ClaimsProcessingAssistant-MCP 1→5 stars 49 commits, 3 gaps filled EU-regulatory+public-data+health-premiums, 15+→25+ servers, rating 3.0→3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Insurance MCP Servers** (`content/reviews/insurance-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **EMPLOYERS Workers' Comp ChatGPT App** — NEW. First insurance carrier to launch in ChatGPT App Directory (April 21, 2026). MCP server wraps patented Digital Agency Service API for real-time workers' comp quoting. Proves carrier-to-consumer MCP distribution path works.
+   - **Socotra Assistant GA** — UPDATE. March 2026 launch of first generally available AI underwriting embedded in an insurance core platform. Document import, risk assessment, structured summaries with audit trails. Deploys in ~1 week, doesn't train on proprietary data.
+   - **Ansvar-Systems/eiopa-insurance-mcp** — NEW. TypeScript, BSL-1.1→Apache-2.0, 7 tools. First EU insurance regulatory MCP. 105 EIOPA guidelines + 80 technical standards covering Solvency II, DORA, IORP II. Created April 2026.
+   - **Policy Penguin MCP** — NEW. Commercial developer preview. 4 tools for insurance portfolio management, PDF policy extraction. Patent pending. Streamable HTTP.
+   - **iparakati/insurance-mcp-server** — NEW. Python, PyPI. Public insurance data: FEMA flood claims (80M+ records), SEC EDGAR insurer financials, disaster declarations.
+   - **remoprinz/swiss-health-mcp** ��� NEW. 1 star, JavaScript, MIT, 4 tools. 1.6M Swiss health insurance premium records (2016-2026), 55 insurers, 26 cantons. First health premium comparison MCP.
+   - **vishalmysore/insuranceagenticmesh** — NEW. Java, MIT, 4 MCP servers. Multi-agent insurance mesh: policy management, claims processing, underwriting, customer service. First multi-agent architecture in insurance MCP.
+   - **dbbaskette/imc-policy-mcp-server** �� NEW. Java, Spring AI + PGVector. RAG-based policy document retrieval with customer-scoped access.
+   - **Sixfold AI** — UPDATE. $30M Series B (Jan 2026). MCP connections deployed across insurers representing $265B GWP (Zurich, Guardian, Generali, Skyward).
+   - **ClaimsProcessingAssistant-MCP** — 1→5 stars, 49 commits. Docker containerization added.
+   - **Three gaps filled**: EU regulatory compliance (EIOPA/Solvency II/DORA), public insurance data (FEMA/SEC EDGAR), health insurance premium comparison (Swiss).
+   - **Rating upgraded 3.0→3.5/5** — carrier-to-consumer proven, GA AI underwriting, regulatory compliance, public data access. Enterprise-community gap narrowing. 15+→25+ servers.
+
+2. **Hugo build** — successful (736ms), 1,230 pages.
+
+3. **Deploy** — pending (throttle window).
+
+### What should happen next
+- Stale March 15 reviews remaining: manufacturing, news/media, nonprofit, photography, printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 848 — 2026-04-27 — REFRESH Review: Hospitality & Hotels MCP Servers (travel-hacking-toolkit 436 stars 22 tools points/miles 25+ airline programs NEW co-leader, mcp-server-airbnb 393→437 stars, Strider Labs ships 5+ hospitality servers March 2026 mcp-marriott 16 tools Bonvoy loyalty mcp-hilton 16 tools Honors digital-key mcp-doordash 4 tools first food delivery mcp-booking 14 tools Booking.com mcp-opentable 5 tools, uber-eats-mcp 221 stars POC massive demand signal, him229/stays Google Hotels per-OTA rate comparison 330 tests, ExpediaGroup official 18 stars 4 tools, Gondola multi-chain hotel search free, Apaleo PMS alpha 29 tools first enterprise hospitality MCP, tripadvisor-mcp 46→54 stars, 3 gaps filled food-delivery+loyalty+price-comparison, 25+→40+ servers, rating 3.5→4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
