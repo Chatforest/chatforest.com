@@ -152,13 +152,23 @@ Epic Games still has no official MCP server, but per Epic staff member Shaun Com
 
 ## Godot
 
-### HaD0Yun/godot-mcp — GoPeak (Most Comprehensive)
+### Coding-Solo/godot-mcp (Adoption Leader)
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [HaD0Yun/godot-mcp](https://github.com/HaD0Yun/godot-mcp) | 147 | TypeScript | 110+ | stdio |
+| [Coding-Solo/godot-mcp](https://github.com/Coding-Solo/godot-mcp) | 3,260 | — | — | stdio |
 
-**GoPeak** (147 stars, 13 forks) bills itself as "the most comprehensive MCP server for Godot Engine" — and with 110+ tools (up from 95+), it has an even stronger claim.
+**Coding-Solo/godot-mcp** (3,260 stars, 331 forks) is the most popular Godot MCP server by a massive margin — the second most popular game engine MCP server after CoplayDev/unity-mcp. Provides editor launching, project running, and debug output capture.
+
+Notable: recently patched an **RCE vulnerability** (arbitrary GDScript instantiation) on April 16, 2026 — a reminder that game engine MCP servers with script execution capabilities need careful security review.
+
+### HaD0Yun/Gopeak-godot-mcp (Most Comprehensive)
+
+| Server | Stars | Language | Tools | Transport |
+|--------|-------|----------|-------|-----------|
+| [HaD0Yun/Gopeak-godot-mcp](https://github.com/HaD0Yun/Gopeak-godot-mcp) | 147 | TypeScript | 110+ | stdio |
+
+**GoPeak** (147 stars, 13 forks, repo renamed from `godot-mcp` to `Gopeak-godot-mcp`) bills itself as "the most comprehensive MCP server for Godot Engine" — and with 110+ tools, it has a strong claim on feature density.
 
 Now features **tiered tool profiles** for token optimization: **Compact mode** (default) — 33 core tools for efficient context usage. **Dynamic groups** — 22 additional tool groups (78 extra tools) that activate on demand. **Full mode** — all 110+ tools exposed at once. **Legacy mode** — backward compatibility.
 
@@ -166,29 +176,23 @@ Capabilities span: **Scene management** — create, modify, inspect, and navigat
 
 The tiered profile system is a smart innovation — most MCP servers expose all tools regardless of task, wasting tokens. GoPeak lets the AI load tool groups as needed. Multilingual documentation now available in Korean, Japanese, German, Portuguese, and Chinese. Install via `npx gopeak`.
 
-### bradypp/godot-mcp (Safety-Focused)
-
-| Server | Stars | Language | Tools | Transport |
-|--------|-------|----------|-------|-----------|
-| [bradypp/godot-mcp](https://github.com/bradypp/godot-mcp) | 74 | TypeScript | 16+ | stdio |
-
-**bradypp/godot-mcp** (74 stars, 13 forks, up 28% since March) takes a safety-first approach with an optional **read-only mode** — important when giving AI assistants access to your game project. Godot 4.4+ UID management ensures stable references to nodes and resources across sessions.
-
-Core capabilities: launch Godot Editor, run projects, capture debug output, create scenes, add nodes, discover projects automatically. Cross-platform on Windows, macOS, and Linux with zero-configuration automatic Godot detection.
-
-The read-only mode is a genuine differentiator. Most game engine MCP servers assume full write access. For code review, debugging, and project inspection workflows, read-only access prevents accidental modifications.
-
 ### Other Godot Implementations
 
-| Server | Focus |
-|--------|-------|
-| [Coding-Solo/godot-mcp](https://github.com/Coding-Solo/godot-mcp) | Editor launching, project running, debug output |
-| [LeeSinLiang/godot-mcp](https://github.com/LeeSinLiang/godot-mcp) | Error capture, scene management, remote connections |
-| [Dokujaa/Godot-MCP](https://github.com/Dokujaa/Godot-MCP) | Claude Desktop integration with Meshy API for 3D model generation |
-| [ee0pdt/Godot-MCP](https://github.com/ee0pdt/Godot-MCP) | Code assistance, scene manipulation, project management |
-| [Nihilantropy/godot-mcp-docs](https://github.com/Nihilantropy/godot-mcp-docs) | Godot Engine documentation access |
+| Server | Stars | Focus |
+|--------|-------|-------|
+| [tomyud1/godot-mcp](https://github.com/tomyud1/godot-mcp) | 260 | **NEW** (Jan 2026) — MCP Server + Godot Plugin for AI-assisted development |
+| [tugcantopaloglu/godot-mcp](https://github.com/tugcantopaloglu/godot-mcp) | 140 | 149 tools for full Godot 4.x engine control |
+| [hi-godot/godot-ai](https://github.com/hi-godot/godot-ai) | 107 | **NEW** (April 12, 2026) — 120+ tools, Godot Asset Library install, production-grade |
+| [satelliteoflove/godot-mcp](https://github.com/satelliteoflove/godot-mcp) | 81 | Active community implementation |
+| [bradypp/godot-mcp](https://github.com/bradypp/godot-mcp) | 74 | Safety-first with read-only mode, Godot 4.4+ UIDs — but **unmaintained since May 2025** |
+| [Dokujaa/Godot-MCP](https://github.com/Dokujaa/Godot-MCP) | — | Claude Desktop + Meshy API for AI-generated 3D models |
+| [salvo10f/godotiq](https://github.com/salvo10f/godotiq) | 29 | 35 tools for AI-assisted Godot 4 development |
 
-**Dokujaa/Godot-MCP** integrates with the Meshy API for AI-generated 3D models imported directly into Godot — a creative use case that combines procedural content generation with engine integration.
+**hi-godot/godot-ai** (107 stars in 2 weeks) is the standout new entrant — "production-grade MCP server and AI tools for the Godot engine" with 120+ tools, available on the Godot Asset Library for one-click install. Not affiliated with Godot Foundation.
+
+**tomyud1/godot-mcp** (260 stars) is a strong newcomer from January 2026 combining an MCP server with a Godot plugin. **tugcantopaloglu/godot-mcp** (140 stars) claims 149 tools for full Godot 4.x engine control.
+
+**bradypp/godot-mcp** (74 stars) introduced the read-only safety mode concept that other servers should adopt, but has been effectively unmaintained since May 2025.
 
 ### GDAI MCP (First Commercial Godot MCP)
 
@@ -202,7 +206,7 @@ Capabilities: scene and node creation/manipulation, GDScript file editing, debug
 
 Compatible with Claude Desktop, Cursor, Windsurf, VS Code Copilot, Zed, and Continue. The $19 price point is accessible for indie developers who want a supported, maintained solution.
 
-Godot's MCP ecosystem now spans three tiers: **GoPeak for maximum tooling** (110+ tools, free), **GDAI for a supported commercial experience** ($19), and **bradypp/godot-mcp for safety-conscious workflows** (read-only mode). The open-source nature of Godot (vs. Unity/Unreal's proprietary engines) makes it easier for community developers to build deep integrations.
+Godot's MCP ecosystem has exploded — **Coding-Solo/godot-mcp** (3,260 stars) is the adoption leader, **GoPeak** (110+ tools) has the most features with tiered profiles, **hi-godot/godot-ai** (120+ tools, Godot Asset Library) is a promising new production-grade option, **GDAI** ($19) offers a supported commercial experience, and at least 5 servers now have 100+ stars. The open-source nature of Godot makes it the most accessible engine for community MCP development.
 
 ## Roblox
 
@@ -230,17 +234,25 @@ The built-in MCP server received two major updates in early 2026:
 - **Per-session/per-prompt script edit auto-approval** — Assistant can apply changes, run verification loops, and iterate on implementations autonomously
 - Full tool parity between external MCP clients and built-in Assistant
 
-This is the most ambitious native MCP integration in any game engine. External IDEs (Claude Code, VS Code, Cursor) can connect to the built-in server. Roblox plans to add third-party MCP server integration, potentially enabling Blender and Figma workflows directly from Studio.
+This is the most ambitious native MCP integration in any game engine. Roblox announced **"Roblox Studio is Going Agentic"** in April 2026 — with a playtest automation agent (beta), planning mode, and self-correcting build-test-fix loops. **44% of top 1,000 Roblox creators now use AI tools** via MCP or Roblox Assistant. External IDEs (Claude Code, VS Code, Cursor, Codex) can connect to the built-in server. Documentation at [create.roblox.com/docs/studio/mcp](https://create.roblox.com/docs/studio/mcp). Roblox plans to add third-party MCP server integration, potentially enabling Blender and Figma workflows directly from Studio.
 
-### boshyxd/robloxstudio-mcp (Community Enhanced)
+### boshyxd/robloxstudio-mcp (Community Leader)
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [boshyxd/robloxstudio-mcp](https://github.com/boshyxd/robloxstudio-mcp) | — | — | 21+ | stdio |
+| [boshyxd/robloxstudio-mcp](https://github.com/boshyxd/robloxstudio-mcp) | 387 | — | 43 | stdio |
 
-**boshyxd/robloxstudio-mcp** provides a community-maintained alternative with 21 read-only tools: `get_file_tree`, `search_files`, `get_place_info`, `get_services`, `search_objects`, `get_instance_properties`, `get_instance_children`, `search_by_property`, `get_class_info`, `get_project_structure`, `mass_get_property`, `get_script_source`, `grep_scripts`, `get_attribute`, `get_attributes`, `get_tags`, `get_tagged`, `get_selection`, `start_playtest`, `stop_playtest`, `get_playtest_output`.
+**boshyxd/robloxstudio-mcp** (387 stars, 71 forks) is the top community Roblox MCP server, now with **43 tools** (up from 21) and v2.6.0 released April 9, 2026. New in v2.6: cookie auth (ROBLOSECURITY), `upload_decal` tool, improved property conversion, and `edit_script_lines` now uses `old_string`/`new_string` pattern. Monorepo architecture with inspector edition.
 
-The `grep_scripts` tool is particularly useful — search across all scripts in a Roblox place for patterns, similar to how developers grep codebases. The read-only focus reduces risk when giving AI assistants access to production places.
+Tools span file tree navigation, script grepping, instance inspection, property querying, playtest control, and now write operations — a major evolution from the original read-only focus.
+
+### Other Roblox Implementations
+
+| Server | Stars | Focus |
+|--------|-------|-------|
+| [notpoiu/roblox-executor-mcp](https://github.com/notpoiu/roblox-executor-mcp) | 45 | Direct game client access (not Studio) |
+| [hope1026/weppy-roblox-mcp](https://github.com/hope1026/weppy-roblox-mcp) | 17 | Terrain, assets, lighting tools for Claude Code/Cursor/Codex/Gemini |
+| [iamthebestts/RoDocs-MCP](https://github.com/iamthebestts/RoDocs-MCP) | 3 | Exposes Roblox Creator Hub API references to AI |
 
 ## Cocos Creator (NEW)
 
@@ -301,9 +313,7 @@ The emergence of Bevy MCP servers aligns with Bevy's growing ecosystem (39,000+ 
 
 Tools cover four categories: **IDE Tools** — scene management (list, open, create, save scenes). **Assets Tools** — textures, bitmap fonts, spritesheets, animations, Spine skeletons and atlases, tilemaps. **Scene Tools** — object manipulation, screenshots, and scene data retrieval. **Editable Tilemap Tools** — tilemap creation and tile data editing.
 
-As of 2026, the MCP server is built directly into the Phaser Editor installation with a one-click configuration dialog for Claude Desktop, Cursor, or VS Code. The integration lets agents combine scene changes and code modifications — implementing new gameplay features or performing code refactorings that span both visual and code layers.
-
-Still a work in progress — prefabs, user component manipulation, full arcade physics support, and Filter properties are planned but not yet available.
+**Note:** Last pushed September 2025 — development appears dormant for 7+ months. Still functional but no recent updates or releases.
 
 ### Three.js (Community)
 
@@ -317,17 +327,23 @@ These are early-stage implementations with limited scope. The Three.js ecosystem
 
 ## Game Asset Generation
 
+### HurtzDonutStudios/ai-forge-mcp (AAA Pipeline)
+
+| Server | Stars | Language | Tools | Transport |
+|--------|-------|----------|-------|-----------|
+| [HurtzDonutStudios/ai-forge-mcp](https://github.com/HurtzDonutStudios/ai-forge-mcp) | 52 | — | 565 | stdio |
+
+**HurtzDonutStudios/ai-forge-mcp** (52 stars, created March 25, 2026) is the most ambitious game asset MCP project — **565 AI-callable tools across 16 MCP servers** targeting AAA game asset production. Controls Blender, Substance Suite, Maya, Houdini, and UE5 with 50 specialized AI agents and 248K+ lines of production code. Subscription-based commercial product with ForgeRoom dashboard.
+
+This represents a different vision from single-engine MCP servers — a full cross-tool production pipeline where AI orchestrates the entire asset creation workflow from concept to in-engine.
+
 ### Flux159/mcp-game-asset-gen
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [Flux159/mcp-game-asset-gen](https://github.com/Flux159/mcp-game-asset-gen) | — | TypeScript | 10+ | stdio |
+| [Flux159/mcp-game-asset-gen](https://github.com/Flux159/mcp-game-asset-gen) | 16 | TypeScript | 10+ | stdio |
 
-**Flux159/mcp-game-asset-gen** generates game assets through multiple AI providers — OpenAI DALL-E, Google Gemini (2.5 Flash and 3 Pro), and Fal.ai for high-quality image generation.
-
-Specialized tools: `generate_character_sheet` for consistent character sprites, `generate_character_variation` for variant poses, `generate_pixel_art_character` with transparent background support, `generate_texture` for seamless textures and sprites/decals (with transparency), `generate_object_sheet` for item sprites, and `image_to_3d` for unified 3D model generation with automatic reference images.
-
-Transparent background support is critical for game sprites — most general-purpose image generators produce images with backgrounds that require manual removal. The `ALLOWED_TOOLS` environment variable lets you restrict which generators are available, reducing context usage.
+**Flux159/mcp-game-asset-gen** (16 stars) generates game assets through multiple AI providers — OpenAI DALL-E, Google Gemini, and Fal.ai. Specialized tools for character sheets, pixel art, textures, and `image_to_3d` for 3D model generation. **Note:** Last pushed December 2025 — dormant for 4+ months.
 
 ### MubarakHAlketbi/game-asset-mcp
 
@@ -336,6 +352,20 @@ Transparent background support is critical for game sprites — most general-pur
 | [MubarakHAlketbi/game-asset-mcp](https://github.com/MubarakHAlketbi/game-asset-mcp) | — | — | — | stdio |
 
 **MubarakHAlketbi/game-asset-mcp** generates 2D/3D game assets from text descriptions using Hugging Face AI models — a local alternative to cloud-based generation that can run on consumer hardware.
+
+## Other Engines (Emerging)
+
+Several smaller game engines gained MCP servers in early 2026:
+
+| Server | Stars | Engine | Focus |
+|--------|-------|--------|-------|
+| [praydog/re-engine-mcp](https://github.com/praydog/re-engine-mcp) | 20 | RE Engine (Capcom) | Live access to RE Engine games via REFramework |
+| [Veradictus/FlaxMCP](https://github.com/Veradictus/FlaxMCP) | 3 | Flax Engine | Flax game engine MCP integration |
+| [nickschuetz/o3de-ai-companion-gem](https://github.com/nickschuetz/o3de-ai-companion-gem) | 2 | Open 3D Engine (O3DE) | O3DE MCP integration |
+| [Nyx000/arenula-mcp](https://github.com/Nyx000/arenula-mcp) | 3 | s&box | 19 tools, 120 actions for s&box engine |
+| [elliotttate/uevr-mcp](https://github.com/elliotttate/uevr-mcp) | 3 | Unreal VR (UEVR) | 103 tools for VR via UEVR |
+
+These are early-stage projects, but they show MCP adoption spreading beyond the major engines. The **RE Engine MCP** is notable — it connects to live Capcom games (Resident Evil, Monster Hunter) for modding and analysis.
 
 ## What's Missing
 
