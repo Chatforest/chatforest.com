@@ -1,19 +1,19 @@
 ---
-title: "Manufacturing & Industrial MCP Servers — OPC UA, 3D Printing, Robotics/ROS, Predictive Maintenance, SCADA/PLC, and More"
+title: "Manufacturing & Industrial MCP Servers — Robotics/ROS, PLC/Siemens S7, OPC UA, 3D Printing, Digital Twins, Predictive Maintenance, SCADA, and More"
 date: 2026-03-15T17:30:00+09:00
-description: "Manufacturing and industrial MCP servers are connecting AI agents to factory floors, industrial protocols, robots, 3D printers, and predictive maintenance systems."
-og_description: "Manufacturing & industrial MCP servers: ROS robotics (1,100 stars, bidirectional), 3D printing (161 stars, 7 platforms), OPC UA (read/write/browse industrial systems), IoT/SCADA (MQTT/Modbus/InfluxDB), AWS IoT SiteWise (47 tools), predictive maintenance (FFT/ISO compliance), MATLAB (236 stars, official). Rating: 3.5/5."
+description: "Manufacturing and industrial MCP servers are connecting AI agents to factory floors, PLCs, robots, 3D printers, digital twins, and predictive maintenance systems."
+og_description: "Manufacturing & industrial MCP servers: ROS robotics (1,187 stars), Siemens S7 PLC (21 tools NEW), Universal Robots cobots (43 tools NEW), 3D printing (181 stars, Blender integration), MATLAB (434 stars, nearly doubled), Unity digital twins (60+ tools NEW), predictive maintenance (52 endpoints), Modbus/OPC UA, supply chain intelligence, pharmaceutical GxP. Rating: 4.0/5."
 content_type: "Review"
 categories: ["/categories/logistics-industry/"]
-card_description: "Manufacturing and industrial MCP servers for robotics, OPC UA, 3D printing, SCADA/PLC, predictive maintenance, and engineering simulation. The category is anchored by robotics — robotmcp/ros-mcp-server (1,100 stars) is the most popular industrial MCP server, enabling bidirectional AI-robot communication across ROS1/ROS2 with no robot code changes required. A second ROS implementation from lpigeon (873 stars) adds natural language command translation. For factory floor connectivity, OPC UA has two implementations — midhunxavier/OPCUA-MCP (7 tools for reading/writing/browsing industrial nodes) and kukapay/opcua-mcp (20 stars, focused on real-time monitoring). Industrial IoT/SCADA is covered by poly-mcp/IoT-Edge-MCP-Server (15+ tools unifying MQTT sensors and Modbus PLC devices with InfluxDB time-series storage, Redis caching, and enterprise security), AWS IoT SiteWise MCP (official, 47 tools across 8 categories including anomaly detection and computation models — the most comprehensive industrial IoT MCP server), and Litmus MCP (official edge platform server for device management and time-series data). 3D printing has strong coverage — DMontgomery40/mcp-3D-printer-server (161 stars) supports 7 printer platforms (OctoPrint/Klipper/Bambu/Duet/Repetier/Prusa/Creality) with STL manipulation, slicing, and visualization, while OctoEverywhere/mcp (28 stars) provides cloud-based printer monitoring with webcam snapshots and AI failure detection. Predictive maintenance is represented by LGDiMaggio/predictive-maintenance-mcp (19 stars, MIT — 20+ tools for vibration analysis, FFT spectrum analysis, envelope analysis for bearing faults, ISO 20816-3 severity assessment, ML anomaly detection, and professional HTML report generation with Plotly visualizations). Engineering simulation has the official MathWorks MATLAB MCP server (236 stars, Go — 5 tools for code execution, analysis, and Simulink model simulation). OT security has Ansvar-Systems/ot-security-mcp (7 tools for IEC 62443/NIST 800-82/MITRE ATT&CK for ICS querying). Notable gaps: no dedicated CNC/machining MCP servers, no MES (Manufacturing Execution Systems), no quality inspection/machine vision, no PLM (Product Lifecycle Management — Siemens Teamcenter/PTC Windchill), no ERP-specific manufacturing modules beyond Dynamics 365, no digital twin platforms, no supply chain planning for manufacturing, no warehouse robotics (Amazon/Locus/6 River), no semiconductor/fab tools, no food/beverage manufacturing, no pharmaceutical GMP compliance. The category earns 3.5/5 — robotics and 3D printing are surprisingly mature, OPC UA provides the essential industrial protocol bridge, and AWS IoT SiteWise offers enterprise-grade industrial IoT management. But the core manufacturing stack — MES, quality control, CNC programming, PLM — remains almost entirely absent from the MCP ecosystem."
-last_refreshed: 2026-03-15
+card_description: "Manufacturing and industrial MCP servers for robotics, PLCs, OPC UA, 3D printing, digital twins, SCADA/IoT, predictive maintenance, and engineering simulation. The category is anchored by robotics — robotmcp/ros-mcp-server (1,187 stars, consolidated from two repos) is the most popular industrial MCP server, enabling bidirectional AI-robot communication across ROS1/ROS2. NEW: Nonead Universal Robots MCP (43 tools for UR cobots, multi-robot coordination up to 12 units), wise-vision/ros2_mcp (73 stars, 14 tools with auto type discovery), and lpigeon's unitree-go2-mcp-server (77 stars for Unitree Go2 quadrupeds). PLC and automation saw the biggest gap-filling: cadugrillo/s7-mcp-bridge (14 stars, 21 tools for Siemens S7-1500/S7-1200 — first dedicated Siemens PLC MCP), kukapay/modbus-mcp (23 stars, 6 tools for Modbus TCP/UDP/serial), and fixstuff/GOPLC-Showcase (Go PLC runtime with 20+ protocol drivers including Modbus, EtherNet/IP, DNP3, BACnet, OPC UA, FINS, S7, and 12 agentic control tools). Industrial IoT expanded with Litmus MCP growing to 20+ tools across 7 categories including 8 new digital twin tools. game4automation/io.realvirtual.mcp (7 stars, 60+ tools) became the first dedicated industrial digital twin MCP server on Unity. 3D printing matured with DMontgomery40/mcp-3D-printer-server (181 stars, now with Blender integration and dual transport). Predictive maintenance grew significantly — LGDiMaggio/predictive-maintenance-mcp (29 stars) expanded from 20+ tools to 52 MCP endpoints with Claude Code plugin, RUL estimation, and 86% test coverage. MATLAB nearly doubled to 434 stars (v0.8.1, April 2026) and a dedicated simulink-mcp (6 stars, 14 tools) separated Simulink into its own server. Supply chain gained SupplyMaven (24 tools, Global Disruption Index, 31 commodities, 26 ports). OT security expanded with Ansvar-Systems adding a public HTTP endpoint and pharmaceutical GxP server (12 tools for EudraLex GMP, 21 CFR Part 11, ICH GCP). Five major gaps partially filled since March: Siemens PLC, digital twins, pharmaceutical GMP, supply chain intelligence, and industrial cobots. Still missing: MES from major vendors, CNC/machining G-code, quality inspection/machine vision, PLM, ERP manufacturing modules, warehouse robotics, semiconductor/fab, food/beverage HACCP, OSHA/ISO 45001 safety. Rating: 4.0/5 — the peripherals matured further and the PLC/automation layer that was missing is now arriving."
+last_refreshed: 2026-04-27
 ---
 
-Manufacturing and industrial MCP servers are connecting AI agents to factory floors, industrial protocols, robots, 3D printers, and predictive maintenance systems. Instead of manually configuring PLCs, writing G-code, monitoring sensor dashboards, or navigating complex industrial software interfaces, these servers let AI assistants read OPC UA nodes, control robots via ROS, manage 3D print jobs, analyze vibration data, and query industrial IoT platforms — all through the Model Context Protocol.
+Manufacturing and industrial MCP servers are connecting AI agents to factory floors, industrial protocols, robots, 3D printers, digital twins, and predictive maintenance systems. Instead of manually configuring PLCs, writing G-code, monitoring sensor dashboards, or navigating complex industrial software interfaces, these servers let AI assistants read OPC UA nodes, control robots via ROS, manage 3D print jobs, analyze vibration data, operate Siemens PLCs, and query industrial IoT platforms — all through the Model Context Protocol.
 
-The landscape spans seven areas: **robotics/ROS** (the largest subcategory by GitHub stars), **OPC UA** (the universal industrial communication protocol), **industrial IoT/SCADA** (sensor networks, PLCs, and edge computing), **3D printing/additive manufacturing** (printer control and STL manipulation), **predictive maintenance** (vibration analysis and fault diagnosis), **engineering simulation** (MATLAB/Simulink), and **OT security** (industrial control system compliance).
+The landscape spans nine areas: **robotics/ROS** (the largest subcategory by GitHub stars), **PLC and automation** (Siemens S7, Modbus, and multi-protocol runtimes — new since March), **OPC UA** (the universal industrial communication protocol), **industrial IoT/SCADA** (sensor networks, PLCs, and edge computing), **digital twins** (new since March), **3D printing/additive manufacturing** (printer control and STL manipulation), **predictive maintenance** (vibration analysis and fault diagnosis), **engineering simulation** (MATLAB/Simulink), and **OT security** (industrial control system compliance and pharmaceutical GxP).
 
-The headline findings: **Robotics dominates the category** — ros-mcp-server (1,100 stars) is the most popular industrial MCP server by a wide margin and enables any LLM to control any ROS-connected robot. **AWS IoT SiteWise is the most comprehensive industrial MCP server** — 47 tools across 8 categories including anomaly detection and computation models. **3D printing has surprisingly mature MCP coverage** — supporting 7+ printer platforms with full STL-to-print workflows. **OPC UA provides the critical factory floor bridge** — two implementations let AI agents read/write industrial device nodes directly. **The core manufacturing stack is almost entirely absent** — no MES, no CNC programming, no quality inspection, no PLM.
+The headline findings: **Robotics consolidated and expanded** — lpigeon's repo merged into robotmcp, while Universal Robots cobots and ROS2 advanced bridging arrived as new entrants. **PLC/automation went from zero to three implementations** — Siemens S7, Modbus, and a Go-based PLC runtime with 20+ protocol drivers fill the biggest gap from our original review. **MATLAB nearly doubled in stars** (236→434) and a dedicated Simulink server separated out. **Predictive maintenance grew from 20+ tools to 52 endpoints** with Claude Code integration. **The first industrial digital twin MCP server appeared** on Unity. **The core manufacturing stack remains absent** — no MES, no CNC, no quality inspection, no PLM from major vendors.
 
 ## Robotics & ROS
 
@@ -21,35 +21,61 @@ The headline findings: **Robotics dominates the category** — ros-mcp-server (1
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | ~1,100 | Python | Apache-2.0 | 7 |
+| [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | ~1,187 | Python | Apache-2.0 | 7 |
 
-The most popular industrial MCP server. Connects AI models like Claude, GPT, and Gemini with robotic systems using MCP and ROS:
+The most popular industrial MCP server, now consolidated from two repos (lpigeon's original repo redirects here). Connects AI models like Claude, GPT, and Gemini with robotic systems using MCP and ROS:
 
 - **Bidirectional communication** — AI can both send commands and observe robot state in real time
 - **ROS1/ROS2 agnostic** — works with both versions out of the box
 - **No robot code changes** — only requires adding the rosbridge node to the existing robot setup
 - **Topic/service/parameter support** — list, publish, subscribe, call services, manage parameters
 - **Vision integration** — Claude can interpret images from robot cameras and command based on what it sees
+- **v3.0.1** (January 2026) — NVIDIA Isaac Sim integration, Unitree Go2 quadruped examples, Dev Container support
 
-Demonstrated controlling MOCA mobile manipulator in NVIDIA Isaac Sim and Unitree Go robots with natural language.
+*Update April 2026: lpigeon/ros-mcp-server (previously ~873 stars) now redirects to this repo. Stars consolidated at ~1,187.*
 
-### lpigeon/ros-mcp-server
+### wise-vision/ros2_mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [lpigeon/ros-mcp-server](https://github.com/lpigeon/ros-mcp-server) | ~873 | Python | Apache-2.0 | 5+ |
+| [wise-vision/ros2_mcp](https://github.com/wise-vision/ros2_mcp) | ~73 | Python | MPL-2.0 | 14 |
 
-A parallel ROS MCP implementation focused on transforming natural language commands into ROS/ROS2 instructions:
+An advanced ROS2 MCP bridge with auto type discovery:
 
-- **Command translation** — converts natural language into ROS topic publications, service calls, and action goals
-- **Environment adaptation** — designed to help robots perform complex tasks across varied environments
-- **Dual ROS support** — compatible with both ROS1 and ROS2
+- **14 tools** — comprehensive ROS2 protocol coverage
+- **Auto type discovery** — automatically resolves ROS2 message types
+- **QoS selection** — intelligent Quality of Service parameter selection
+- **Advanced bridging** — designed for complex ROS2 topologies
+
+### lpigeon/unitree-go2-mcp-server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [unitree-go2-mcp-server](https://github.com/lpigeon/unitree-go2-mcp-server) | ~77 | Python | Apache-2.0 | Multiple |
+
+A dedicated MCP server for Unitree Go2 quadruped robot control via natural language. From the same developer whose ROS MCP repo merged into robotmcp. Focused specifically on the Go2 platform for walking, navigation, and behavior commands.
+
+### Nonead/Universal-Robots-MCP
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Universal-Robots-MCP](https://github.com/Nonead/Universal-Robots-MCP) | ~5 | Python | AGPLv3 | 43 |
+
+The first MCP server for Universal Robots industrial cobots — the most widely deployed collaborative robot arm in manufacturing:
+
+- **43 tools across 11 categories** — connection, device info, status monitoring, motion control (11 tools), register operations, program control, multi-robot coordination, trajectory planning, data recording, analysis, performance comparison
+- **Multi-robot coordination** — supports up to 12 simultaneous UR robots
+- **Performance** — 200+ TPS, <200ms latency, 98.6% instruction accuracy
+- **Commercial licensing** — AGPLv3 for open source, commercial license required for >10 users
+- **11 language documentation**
+
+Significant because Universal Robots has ~50% global cobot market share. This bridges AI directly to production-floor cobots.
 
 ### Yutarop/ros-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Yutarop/ros-mcp](https://github.com/Yutarop/ros-mcp) | ~30 | Python | MIT | 7 |
+| [Yutarop/ros-mcp](https://github.com/Yutarop/ros-mcp) | ~31 | Python | MIT | 7 |
 
 A ROS2-focused MCP server with GUI integration capabilities:
 
@@ -62,15 +88,41 @@ A ROS2-focused MCP server with GUI integration capabilities:
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [IliaLarchenko/robot_MCP](https://github.com/IliaLarchenko/robot_MCP) | ~70 | Python | Apache-2.0 | Multiple |
+| [IliaLarchenko/robot_MCP](https://github.com/IliaLarchenko/robot_MCP) | ~74 | Python | Apache-2.0 | Multiple |
 
 MCP server for physical robot arm control:
 
 - **SO-ARM100/101 support** — designed for these specific robot arm platforms
 - **LeKiwi partial support** — arm control (mobile base TBD)
 - **Vision-equipped** — image capture for visual awareness during manipulation
-- **Multi-LLM agent** — built-in CLI agent supporting Claude, Gemini, and GPT models
+- **Multi-LLM agent** — built-in CLI agent supporting Claude, Gemini (2.5 series), and GPT models
 - **Three transports** — STDIO, SSE, and Streamed-HTTP
+- **Extended thinking** — budget parameters for complex manipulation planning
+
+### ajtudela/nav2_mcp_server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [nav2_mcp_server](https://github.com/ajtudela/nav2_mcp_server) | ~71 | Python | Apache-2.0 | 12 |
+
+Dedicated MCP server for Nav2 (Navigation 2), the standard ROS2 navigation framework:
+
+- **12 tools** for robot navigation tasks
+- **Nav2 integration** — path planning, obstacle avoidance, waypoint following
+- Relevant for warehouse and logistics robots using ROS2 navigation stack
+
+### turkenberg/mcap_mcp_server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mcap_mcp_server](https://github.com/turkenberg/mcap_mcp_server) | ~2 | Python | GPL-3.0 | 6 |
+
+MCP server for querying MCAP robot recording files with SQL via DuckDB:
+
+- **6 tools** for robot data analysis
+- **Sub-millisecond metadata queries**, 1-20ms SQL execution on recording files
+- **v0.5.1** (March 2026) — latest release
+- Useful for post-hoc analysis of robot behavior from recorded sessions
 
 ### TakanariShimbo/rosbridge-mcp-server
 
@@ -84,13 +136,67 @@ WebSocket-based ROS bridge with comprehensive tool coverage:
 - **Remote connectivity** — configurable host/port for both local and remote ROS systems
 - **Action lifecycle** — full support for dispatching goals and canceling running actions
 
+## PLC & Automation
+
+*New section — this category went from zero to three implementations since March 2026.*
+
+### cadugrillo/s7-mcp-bridge
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [cadugrillo/s7-mcp-bridge](https://github.com/cadugrillo/s7-mcp-bridge) | ~14 | TypeScript | MIT | 21 |
+
+The first dedicated Siemens PLC MCP server. Bridges AI agents directly to Siemens S7-1500 and S7-1200 programmable logic controllers:
+
+- **21 tools** — authentication, PLC connectivity, variable read/write (Boolean, numeric, string), CPU mode control, alarm management, diagnostic buffer, backup
+- **Siemens S7-1500 and S7-1200** — the two most widely deployed Siemens PLC families in manufacturing
+- **v0.2.0** — Docker support with configurable transport (stdio or http-stream)
+- **CPU mode control** — switch between run/stop modes
+- **Alarm management** — read and acknowledge PLC alarms
+- **Diagnostic buffer** — access PLC diagnostic history
+
+Significant because Siemens PLCs are deployed in millions of factories worldwide. This is the first time AI agents can directly read variables, control modes, and manage alarms on S7 hardware.
+
+### kukapay/modbus-mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [kukapay/modbus-mcp](https://github.com/kukapay/modbus-mcp) | ~23 | Python | MIT | 6 |
+
+A dedicated Modbus protocol MCP server — Modbus is the most widely used industrial communication protocol, deployed on tens of millions of devices:
+
+- **read_holding_registers / write_registers** — standard register operations
+- **read_coils / write_coils** — discrete I/O control
+- **read_input_registers** — read-only sensor data
+- **read_multiple_holding_registers** — batch operations
+- **Three transports** — Modbus TCP, UDP, and serial (RTU)
+
+Complements OPC UA coverage for sites using legacy Modbus equipment.
+
+### fixstuff/GOPLC-Showcase
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [fixstuff/GOPLC-Showcase](https://github.com/fixstuff/GOPLC-Showcase) | ~1 | Go | — | 12 |
+
+The most comprehensive PLC runtime with MCP integration — a full IEC 61131-3 Structured Text execution environment with AI-driven control:
+
+- **12 agentic control tools** for AI-driven PLC operations
+- **20+ protocol drivers** — Modbus, EtherNet/IP, DNP3, BACnet, OPC UA, FINS, S7, IEC 104, Sparkplug B, KNX, M-Bus, SNMP, ctrlX EtherCAT
+- **1,900+ built-in functions** + 557 OSCAT library functions
+- **280,000+ lines of code** — enterprise-grade runtime
+- **Browser-based Web IDE** with Monaco editor and statement-level debugger
+- **Integrated Node-RED** with 7 custom PLC nodes
+
+Early stage (1 star) but architecturally ambitious — a software PLC that AI agents can directly program and operate.
+
 ## OPC UA (Industrial Protocol)
 
 ### midhunxavier/OPCUA-MCP
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [midhunxavier/OPCUA-MCP](https://github.com/midhunxavier/OPCUA-MCP) | ~10 | Python/TypeScript | — | 7 |
+| [midhunxavier/OPCUA-MCP](https://github.com/midhunxavier/OPCUA-MCP) | ~12 | Python/TypeScript | — | 7 |
 
 The most complete OPC UA MCP server. Provides dual Python and TypeScript implementations with identical functionality:
 
@@ -107,7 +213,7 @@ Practical use cases: reading temperature sensors, controlling actuators, adjusti
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp) | ~20 | Python | — | 4 |
+| [kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp) | ~26 | Python | — | 4 |
 
 A focused OPC UA bridge for industrial systems:
 
@@ -124,7 +230,7 @@ Named after KUKA, the industrial robot manufacturer, though it works with any OP
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [poly-mcp/IoT-Edge-MCP-Server](https://github.com/poly-mcp/IoT-Edge-MCP-Server) | ~20 | Python | — | 15+ |
+| [poly-mcp/IoT-Edge-MCP-Server](https://github.com/poly-mcp/IoT-Edge-MCP-Server) | ~23 | Python | — | 15+ |
 
 A comprehensive MCP server unifying MQTT sensors, Modbus devices, and industrial equipment into a single AI-orchestrable API:
 
@@ -163,18 +269,19 @@ Also includes 5 intelligent prompts guiding users through complex workflows like
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [litmusautomation/litmus-mcp-server](https://github.com/litmusautomation/litmus-mcp-server) | — | — | — | 4+ |
+| [litmusautomation/litmus-mcp-server](https://github.com/litmusautomation/litmus-mcp-server) | ~6 | Python | — | 20+ |
 
-Official MCP server from Litmus Automation, an industrial edge computing platform:
+Official MCP server from Litmus Automation, significantly expanded since March 2026 — now **20+ tools across 7 categories**:
 
-- **get_current_value_of_devicehub_tag** — retrieve live tag values from connected industrial devices
-- **create_devicehub_device** — register new devices using various industrial protocols and templates
-- **get_multiple_values_from_topic** — time-series data retrieval for analysis and plotting
-- **run_docker_container_on_litmusedge** — deploy containerized applications directly to edge nodes
-- **Grafana integration** — stream real-time machine data to dashboards with LLM-interpreted annotations
-- **Cursor IDE integration** — run queries, change settings, and stream data within the editor
+- **DeviceHub** (4 tools) — retrieve live tag values, create devices, manage industrial protocols
+- **Device Identity** (2 tools) — device registration and management
+- **LEM Integration** (1 tool) — Litmus Edge Manager connectivity
+- **Docker Management** (2 tools) — deploy containerized apps to edge nodes
+- **NATS Topics** (2 tools) — message queue operations
+- **InfluxDB** (1 tool) — time-series data queries
+- **Digital Twins** (8 tools) — *new* — create, manage, query, and simulate digital twin models on edge
 
-Bridges LLMs with the Litmus Edge platform deployed at manufacturing facilities.
+Also new: web UI chat interface, Docker containerization, STDIO support for Claude Desktop. The digital twin expansion makes Litmus the first edge platform to offer MCP-based digital twin management alongside device connectivity.
 
 ### kmanditereza/mcp-server-for-industrial-data
 
@@ -189,7 +296,38 @@ A standardized MCP server for industrial OPC UA data access:
 - **Framework-agnostic** — works with LangChain, CrewAI, AutoGen, and custom agents
 - **STDIO and HTTP transport** — flexible deployment options
 
-Addresses the "constant reinvention of custom integrations" problem in industrial AI.
+### TobiasLante/node-red-contrib-mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [node-red-contrib-mcp](https://github.com/TobiasLante/node-red-contrib-mcp) | ~6 | JavaScript | Apache-2.0 | 7 nodes |
+
+Node-RED MCP integration — Node-RED is widely used in industrial IoT for visual flow programming:
+
+- **7 node types** for building MCP servers visually
+- **Multi-LLM support** — OpenAI, Anthropic, Ollama, vLLM, Azure, Gemini
+- **Autonomous AI agent node** with tool discovery
+- Bridges the MCP ecosystem to Node-RED's large industrial IoT user base
+
+## Digital Twins
+
+*New section since March 2026.*
+
+### game4automation/io.realvirtual.mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [io.realvirtual.mcp](https://github.com/game4automation/io.realvirtual.mcp) | ~7 | C# | MIT | 60+ |
+
+The first dedicated industrial digital twin MCP server. Built on Unity by realvirtual GmbH, a company specializing in industrial simulation:
+
+- **60+ built-in tools** for simulation, scene management, GameObjects, physics
+- **Embedded Python 3.12 runtime** — run Python scripts inside Unity simulations
+- **WebSocket server** on port 18711 for MCP communication
+- **Unity 6000.0+ required**
+- **Focus areas** — digital twin simulations, industrial automation visualization, robotics simulation
+
+Fills the "no digital twin platforms" gap from our original review. While not Azure Digital Twins or AWS IoT TwinMaker, it provides a practical MCP-accessible digital twin environment for manufacturing visualization and simulation.
 
 ## 3D Printing & Additive Manufacturing
 
@@ -197,7 +335,7 @@ Addresses the "constant reinvention of custom integrations" problem in industria
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-3D-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | ~161 | TypeScript | GPL-2.0 | 15+ |
+| [mcp-3D-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | ~181 | TypeScript | GPL-2.0 | 15+ |
 
 The most comprehensive 3D printing MCP server, connecting to 7 major printer platforms:
 
@@ -206,16 +344,20 @@ The most comprehensive 3D printing MCP server, connecting to 7 major printer pla
 - **STL manipulation** — scale, rotate, translate, extend base for adhesion, sectional editing
 - **STL analysis** — comprehensive model information and multi-angle SVG visualization
 - **Slicing** — generate G-code from STL files using OrcaSlicer integration
-- **Bambu-specific** — print .3mf files directly via MQTT command
+- **Bambu-specific** — print .3mf files directly via MQTT command, with FTP-backed file operations for improved reliability
 - **File management** — list, upload, and manage G-code on printers
+- **Blender integration** — *new* — blender_mcp_edit_model tool for editing 3D models in Blender
+- **Dual transport** — *new* — both stdio and streamable-http modes
 
 Available as npm package (mcp-3d-printer-server). Note: large STL files (>10MB) can be memory-intensive within MCP.
+
+*Update April 2026: 161→181 stars (+12%). Blender integration and dual transport are the biggest additions.*
 
 ### OctoEverywhere/mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [OctoEverywhere/mcp](https://github.com/OctoEverywhere/mcp) | ~28 | — | Apache-2.0 | 3+ |
+| [OctoEverywhere/mcp](https://github.com/OctoEverywhere/mcp) | ~34 | — | Apache-2.0 | 3+ |
 
 A free cloud-based MCP server from OctoEverywhere:
 
@@ -234,22 +376,27 @@ Leverages OctoEverywhere's existing cloud infrastructure (96K+ makers) to provid
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [predictive-maintenance-mcp](https://github.com/LGDiMaggio/predictive-maintenance-mcp) | ~19 | Python | MIT | 20+ |
+| [predictive-maintenance-mcp](https://github.com/LGDiMaggio/predictive-maintenance-mcp) | ~29 | Python | MIT | 52 endpoints |
 
-An open-source framework bringing expert-level machinery diagnostics to LLMs:
+An open-source framework bringing expert-level machinery diagnostics to LLMs — significantly expanded since March 2026 from 20+ tools to **52 MCP endpoints** (43 tools, 1 resource, 4 prompts):
 
 - **FFT spectrum analysis** — frequency signatures with windowing and peak detection
 - **Envelope analysis** — Hilbert-envelope spectra for early bearing defect detection
 - **Fault classification** — unbalance, misalignment, looseness, and bearing faults with confidence scores
 - **ISO 20816-3 compliance** — severity zones (A-D) across machine groups, explained in operator-friendly terms
 - **ML anomaly detection** — unsupervised/semi-supervised models for new signal classification
-- **Report generation** — professional HTML reports with interactive Plotly visualizations, DOCX export
+- **Remaining useful life (RUL) estimation** — *new* — predict time to failure
+- **Report generation** — professional HTML reports with interactive Plotly visualizations, Word document export (*new*)
 - **Multi-format signals** — CSV, MAT, WAV, NPY, Parquet
-- **Vector search docs** — FAISS + TF-IDF fallback for documentation retrieval
+- **Vector search docs** — FAISS + TF-IDF fallback for documentation retrieval (semantic search)
 - **20 sample signals** — 3 healthy, 17 faulty from real machinery tests
-- **Pre-built diagnostic skills** — bearing diagnosis, quick-screening, full report generation
+- **Claude Code plugin** — *new* — 7 skills, 2 agents, 3 slash commands for integrated diagnostics
+- **86% test coverage** across Windows/macOS/Linux
+- **v0.8.0** — latest release
 
-Featured on Hacker News. Currently proof-of-concept stage but demonstrates a compelling vision for democratizing industrial diagnostics. Supports air-gapped deployment for sensitive facilities.
+Featured on Hacker News. Supports air-gapped deployment for sensitive facilities. The Claude Code plugin integration makes this one of the most AI-native industrial tools in the entire MCP ecosystem.
+
+*Update April 2026: 19→29 stars (+53%). Tool count more than doubled (20+→52 endpoints). Claude Code plugin is a significant UX improvement.*
 
 ## Engineering Simulation
 
@@ -257,19 +404,60 @@ Featured on Hacker News. Currently proof-of-concept stage but demonstrates a com
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | ~236 | Go | BSD-3-Clause | 5 |
+| [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | ~434 | Go | BSD-3-Clause | 5 |
 
-The official MATLAB MCP server from MathWorks:
+The official MATLAB MCP server from MathWorks — nearly doubled in stars since March:
 
-- **Start/quit MATLAB** — session lifecycle management
-- **Write code** — create MATLAB scripts and functions
-- **Run code** — execute MATLAB code and return results
-- **Assess code** — static analysis for style and correctness
-- **Simulink integration** — simulate Simulink models through the MCP interface
+- **detect_toolboxes** — identify available MATLAB toolboxes
+- **check_code** — static analysis for style and correctness
+- **evaluate_code** — execute MATLAB code and return results
+- **run_file** — run MATLAB scripts and functions
+- **run_test_file** — execute MATLAB test suites
+- **v0.8.1** (April 23, 2026) — latest release
 
 Works with Claude Code, Claude Desktop, GitHub Copilot in VS Code, and other MCP clients. Relevant to manufacturing for simulation-based design, control system development, signal processing, and production optimization.
 
-MathWorks has also released the MCP Framework for MATLAB Production Server, enabling enterprise deployment of MATLAB-based MCP tools.
+MathWorks has also released the [MCP Framework for MATLAB Production Server](https://github.com/matlab/mcp-framework-matlab-production-server) (20 stars, v1.2.1), enabling enterprise deployment of MATLAB-based MCP tools. Additional ecosystem: MATLAB slash commands for AI coding agents, and a pure MATLAB MCP client library.
+
+*Update April 2026: 236→434 stars (+84%). v0.8.1 released April 23. MathWorks is clearly investing heavily in MCP.*
+
+### sohumsuthar/simulink-mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [sohumsuthar/simulink-mcp](https://github.com/sohumsuthar/simulink-mcp) | ~6 | Python | PolyForm Noncommercial 1.0.0 | 14 |
+
+The first dedicated Simulink MCP server (separate from MATLAB core):
+
+- **14 tools** for Simulink model management, simulation, and block manipulation
+- **Lazy engine startup** — MATLAB engine starts only when first needed
+- **Stdout isolation** — prevents MATLAB output from corrupting MCP communication
+- **Persistent sessions** — maintain state across tool calls
+- **Figure capture** — capture and return Simulink visualization outputs
+- **MATLAB R2024a-R2025b**, Python 3.9-3.12
+
+Note: PolyForm Noncommercial license — free for research and personal use, commercial use requires separate licensing.
+
+## Supply Chain Intelligence
+
+*New section since March 2026.*
+
+### SupplyMaven-SCR/supplymaven-mcp-server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [supplymaven-mcp-server](https://github.com/SupplyMaven-SCR/supplymaven-mcp-server) | ~0 | JavaScript | — | 24 |
+
+The first supply chain risk intelligence MCP server for manufacturing:
+
+- **24 tools** across 3 pricing tiers ($0/499/999 per month)
+- **Global Disruption Index (GDI)** — real-time supply chain risk scoring
+- **Supply Manufacturing Index (SMI)** — manufacturing-specific indicators
+- **58 Granger-causal predictive signals** for supply chain disruptions
+- **Monitors** 31 commodities, 26 ports, 80+ border crossings, 12 maritime chokepoints
+- **Remote MCP endpoint** at supplymaven.com
+
+Commercial service with a free tier. Partially fills the "no supply chain planning for manufacturing" gap, though focused on risk intelligence rather than APS (Advanced Planning & Scheduling).
 
 ## OT Security & Compliance
 
@@ -277,51 +465,71 @@ MathWorks has also released the MCP Framework for MATLAB Production Server, enab
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ot-security-mcp](https://github.com/Ansvar-Systems/ot-security-mcp) | ~3 | TypeScript | Apache-2.0 | 7 |
+| [ot-security-mcp](https://github.com/Ansvar-Systems/ot-security-mcp) | ~0 | TypeScript | Apache-2.0 | 7 |
 
-Industrial control system security standards via MCP:
+Industrial control system security standards via MCP, upgraded to v0.2.0 with architectural redesign:
 
-- **IEC 62443-3-3/4-2** — query requirements filtered by Security Level (SL-1 through SL-4)
+- **IEC 62443-3-3/4-2** — 238 requirements filtered by Security Level (SL-1 through SL-4)
 - **NIST 800-53/800-82** — 228 controls for industrial environments
 - **MITRE ATT&CK for ICS** — 83 techniques with mitigations
-- **Cross-standard mappings** — IEC-to-NIST control relationships with confidence scores
+- **Cross-standard mappings** — 16 IEC-to-NIST control relationships with confidence scores
 - **Zone/conduit guidance** — Purdue Model network architecture recommendations
 - **Component filtering** — results by device type (embedded, host, network, application)
 - **Full-text search** — SQLite FTS5 for instant lookups across 238+ requirements
+- **Public HTTP endpoint** — *new* — `https://mcp.ansvar.eu/ot-security/mcp` for remote access
+- **npm package** — *new* — `@ansvar/ot-security-mcp`
+- **263 passing tests**
 
-Target users: control systems engineers implementing IEC 62443, security architects designing network segmentation, compliance officers mapping NIS2 to IEC controls, threat hunters investigating ICS techniques.
+*Update April 2026: v0.2.0 architectural redesign, public HTTP endpoint, npm package.*
 
-From the same Ansvar Systems team that built the EU compliance MCP server (49 regulations, 2,528 articles).
+### Ansvar-Systems/gxp-regulations-mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [gxp-regulations-mcp](https://github.com/Ansvar-Systems/gxp-regulations-mcp) | ~0 | TypeScript | Apache-2.0 | 12 |
+
+Pharmaceutical manufacturing compliance via MCP — from the same Ansvar Systems team:
+
+- **12 tools** for querying GxP regulations
+- **EudraLex GMP** — EU Good Manufacturing Practice
+- **GVP** — Good Vigilance Practice
+- **GDP** — Good Distribution Practice
+- **US cGMP** — 21 CFR Part 11 compliance
+- **ICH GCP** — International Conference on Harmonisation Good Clinical Practice
+- **7 regulations, 29 sections** covered
+
+Partially fills the "no pharmaceutical GMP compliance" gap from our original review. While not a full 21 CFR Part 11 electronic records system, it provides AI-queryable access to the regulatory text that manufacturing quality teams need to reference.
 
 ## What's missing
 
-The manufacturing MCP ecosystem has significant gaps in core manufacturing operations:
+The manufacturing MCP ecosystem has narrowed some gaps since March but still lacks core manufacturing operations:
 
-- **No MES (Manufacturing Execution Systems)** — no Siemens Opcenter, Rockwell Plex, AVEVA, or open-source MES servers
+- **No MES (Manufacturing Execution Systems)** — no Siemens Opcenter, Rockwell Plex, AVEVA, or open-source MES servers (AnuwatThisuka/cmms-mcp-server exists as a proof-of-concept with mock data but is not production-ready)
 - **No CNC/machining servers** — no G-code generation, toolpath optimization, or machine tool control beyond 3D printing
-- **No quality inspection/machine vision** — no automated inspection, SPC/SQC, or defect detection integration
+- **No quality inspection/machine vision** — no automated inspection, SPC/SQC, or defect detection (Cognex, Keyence absent)
 - **No PLM** — Siemens Teamcenter, PTC Windchill, Dassault ENOVIA all absent
-- **No ERP manufacturing modules** — Dynamics 365 covers general ERP but no dedicated manufacturing-specific MCP servers for SAP PP/PM, Oracle Manufacturing Cloud, or Epicor
-- **No digital twin platforms** — Azure Digital Twins, AWS IoT TwinMaker, Siemens Xcelerator have no MCP servers
+- **No ERP manufacturing modules** — no dedicated manufacturing-specific MCP servers for SAP PP/PM, Oracle Manufacturing Cloud, or Epicor
+- ~~No digital twin platforms~~ — **partially filled** by realvirtual.mcp (Unity) and Litmus digital twin tools
+- ~~No supply chain planning~~ — **partially filled** by SupplyMaven (risk intelligence, not APS)
 - **No warehouse robotics** — Amazon Robotics, Locus Robotics, 6 River Systems absent
 - **No semiconductor/fab tools** — no wafer fab, lithography, or semiconductor manufacturing
 - **No food/beverage manufacturing** — no HACCP, food safety, or batch processing
-- **No pharmaceutical GMP** — no 21 CFR Part 11 compliance, batch records, or cleanroom monitoring (though see our [Pharmaceutical & Healthcare review](/reviews/pharmaceutical-healthcare-mcp-servers/) for adjacent coverage)
-- **No CMMS** — no Maximo, SAP PM, or maintenance work order management
+- ~~No pharmaceutical GMP~~ — **partially filled** by Ansvar gxp-regulations-mcp (regulatory text, not electronic records)
+- **No CMMS** — no Maximo, SAP PM, or maintenance work order management at production quality
 - **No safety compliance** — no OSHA, ISO 45001, or lockout/tagout management
 - **No industrial vision** — no Cognex, Keyence, or machine vision camera integration
-- **No supply chain planning for manufacturing** — no APS (Advanced Planning & Scheduling) tools
+- **No major enterprise manufacturer has launched an official MCP server** — Rockwell, ABB, Fanuc, Schneider Electric, Siemens (beyond community S7 bridge) all absent
 
 ## The bottom line
 
-**Rating: 3.5/5** — The manufacturing and industrial MCP ecosystem is a tale of strong peripherals and a hollow core. The peripherals are impressive: robotics has two implementations over 800 stars each, 3D printing supports 7+ printer platforms, OPC UA provides the essential protocol bridge to factory equipment, AWS IoT SiteWise offers 47 tools for enterprise-grade industrial IoT, and predictive maintenance demonstrates compelling AI-assisted diagnostics. Engineering simulation benefits from MathWorks' official MATLAB server.
+**Rating: 4.0/5** — The manufacturing and industrial MCP ecosystem matured significantly in the six weeks since our initial review. The biggest story is **PLC/automation going from zero to three implementations** — a Siemens S7 bridge, a Modbus server, and a Go-based PLC runtime with 20+ protocol drivers. This is the layer between robots and factory equipment where manufacturing actually happens, and it's finally arriving in the MCP ecosystem.
 
-But the core manufacturing stack — the systems that actually run factories — is almost entirely absent. No MES, no quality control, no CNC programming, no PLM, no digital twins, no CMMS. These are the systems where manufacturing professionals spend most of their time and where AI assistance would create the most value. The gap between "AI can talk to a robot" and "AI can help run a factory" remains enormous.
+**Robotics consolidated and expanded** — the two leading ROS repos merged into one (robotmcp, ~1,187 stars), Universal Robots cobots got their first MCP server (43 tools, multi-robot coordination), and ROS2 advanced bridging arrived. **MATLAB nearly doubled** to 434 stars with frequent releases, and a dedicated Simulink server separated out. **Predictive maintenance more than doubled its tool count** to 52 endpoints with Claude Code integration. **The first industrial digital twin** appeared on Unity. **Supply chain risk intelligence** arrived as a commercial service.
 
-The OT security dimension is worth noting: Ansvar Systems' IEC 62443 server addresses a real need as manufacturing becomes more connected and vulnerable. Industrial cybersecurity is one of the few areas where MCP standards knowledge queries genuinely help.
+Three gaps from the original review were partially filled: digital twins, pharmaceutical GMP compliance, and supply chain intelligence. But the core manufacturing stack — MES, quality control, CNC programming, PLM, and CMMS — remains absent from the MCP ecosystem. No major enterprise manufacturer (Rockwell, ABB, Fanuc, Schneider, Siemens) has launched an official MCP server. The gap between "AI can talk to factory equipment" and "AI can help run a factory" has narrowed, but it's still substantial.
 
-**Install if:** you work with ROS robots, 3D printers, OPC UA devices, or AWS IoT SiteWise and want AI-assisted monitoring, control, or diagnostics.
+**Install if:** you work with ROS robots, Siemens PLCs, Modbus devices, 3D printers, OPC UA equipment, Universal Robots cobots, or AWS IoT SiteWise and want AI-assisted monitoring, control, or diagnostics.
 
-**Skip if:** you need MES integration, CNC programming assistance, quality inspection, or PLM access — the MCP ecosystem hasn't reached the core manufacturing stack yet.
+**Skip if:** you need MES integration, CNC programming assistance, quality inspection, PLM access, or warehouse robotics — the MCP ecosystem hasn't reached the core manufacturing stack yet.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and has not been independently verified. See our [About page](/about/) for details.*
