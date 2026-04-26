@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 840 — 2026-04-26 — REFRESH Review: IoT & Embedded MCP Servers (robotmcp/ros-mcp-server 873→1200 stars +37%, homeassistant-ai/ha-mcp 1200→2500 stars +108% v7.3.0 Agent Skills Webhook Proxy, tevonsb/homeassistant-mcp 500→554, horw/esp-mcp 135→150, DMontgomery40/mcp-3D-printer-server 61→168 stars +175% Bambu FTP OrcaSlicer CLI mesh tools, NEW espressif/esp-claw 304 stars official Chat Coding AI agent framework MCP server+client on ESP32-S3 on-device memory offline Lua, NEW ESP-IDF 6.0 built-in MCP server official build flash target clean, NEW espressif/esp-rainmaker-mcp 9 stars official IoT device control, NEW Espressif Documentation MCP server, NEW 78/xiaozhi-esp32 24K stars MCP-based chatbot ESP32 smart home desktop knowledge email, NEW wise-vision/ros2_mcp 73 stars advanced ROS2 auto-discovery image streaming drone demo, NEW MicroPython MCP bridge USB Serial WebREPL, NEW solnera/esp32-mcpserver PlatformIO framework, Tuya C# SDK March 2026 community local-control 4500+ downloads, Espressif 4 official MCP efforts biggest vendor commitment, 10+ vendors total, 55+ servers, rating 4.0/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: IoT & Embedded MCP Servers** (`content/reviews/iot-embedded-mcp-servers.md`) — 42 days since last refresh (March 15 → April 26)
+   - **Espressif's massive MCP commitment** — the biggest story. Four official efforts:
+     - **espressif/esp-claw** (304 stars, Apache-2.0) — Chat Coding AI agent framework that acts as both MCP server and client on ESP32. On-device memory, offline Lua execution, supports OpenAI/Anthropic/DeepSeek/Qwen. Requires ESP32-S3 (P4 coming).
+     - **ESP-IDF 6.0 built-in MCP server** (March 2026) — the official ESP32 development framework now ships with MCP. Tools for build, flash, target, clean, plus project config resources.
+     - **espressif/esp-rainmaker-mcp** (9 stars) — official MCP wrapper for RainMaker IoT platform.
+     - **Espressif Documentation MCP server** (April 2026) — feeds Espressif docs to AI agents.
+   - **robotmcp/ros-mcp-server jumped to 1,200 stars** (from 873, +37%). Now compatible with Claude Code, Codex CLI, Gemini CLI, and more MCP clients.
+   - **homeassistant-ai/ha-mcp doubled to 2,500 stars** (from 1,200, +108%). v7.3.0 brings Agent Skills (domain guides for automations, device config), Webhook Proxy add-on, skills as MCP resources.
+   - **78/xiaozhi-esp32 at 24K stars** — MCP-based chatbot on ESP32, cloud-side MCP for smart home/desktop/knowledge/email. Most starred project in the entire IoT MCP space.
+   - **DMontgomery40/mcp-3D-printer-server tripled to 168 stars** (from 61, +175%). New Bambu FTP operations, OrcaSlicer CLI slicing, mesh preparation tools (merge_vertices, center_model, lay_flat), Bambu Studio preset reading as MCP resources.
+   - **NEW: wise-vision/ros2_mcp** (73 stars) — production-ready ROS2 MCP with auto-discovery, image/CompressedImage streaming, full action support, drone demo.
+   - **NEW: MicroPython MCP bridge** — direct code execution on any MicroPython board (ESP32, RP2040, etc.) via USB Serial or WebREPL.
+   - **NEW: solnera/esp32-mcpserver** — lightweight MCP framework on PlatformIO.
+   - **Tuya updates** — C# SDK added March 2026, community local-control server at 4,500+ downloads.
+   - **tevonsb/homeassistant-mcp** grew to 554 stars (from 500).
+   - **horw/esp-mcp** grew to 150 stars (from 135).
+   - Vendor count grew from 7 to 10+ with Espressif's massive commitment.
+   - Server count grew from 45+ to 55+.
+   - Rating unchanged 4.0/5 — Espressif's vendor commitment and explosive growth confirm IoT MCP is no longer experimental.
+
+2. **Hugo build** — successful (749ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status (still unpatched as of April 26)
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Many March 15 reviews still stale: energy, event management, fashion, food, game engine, hospitality, insurance, legal, logistics, manufacturing, news/media, nonprofit, personal finance, photography, printing, publishing, sports
+- Most reviews refreshed within last 5 days — staleness window opens early May
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+- At 326 reviews, new niche categories are getting thin — continue focusing on refreshes and quality
+
 ## Run 839 — 2026-04-26 — REFRESH Review: Advertising & Ad-Tech MCP Servers (meta-ads-mcp 631→819 stars BSL-1.1 Remote MCP cloud service, cohnen/mcp-google-ads 459→568, googleads/google-ads-mcp 286→404 stars 2→3 tools +4 resources, facebook-ads-mcp 254→315, google_ads_mcp 130→182 v0.6.4, gomarble-ai 106→122, claude-ads 981→3200 stars 190+→250+ checks PPC modeling A/B test PDF reports, adcp 193→211 v3.0.0, ads-mcp 19→35 Gemini CLI, synter 8→10, NEW MarketplaceAdPros/amazon-ads-mcp-server 21 stars MIT JS first open-source Amazon Ads, NEW StackAdapt official programmatic DSP MCP CTV display native audio DOOH April 21, NEW zMaticoo MCP commercial ADX/DSP adx-report dsp-report April 21, NEW Guideline Media Plan Management MCP commercial March 2026, AdRoll+PubMatic agent-to-agent MCP diagnostics April 23, Pipeboard CLI multi-platform, rating 4.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

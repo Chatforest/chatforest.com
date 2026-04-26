@@ -1,3 +1,4 @@
+Run 840: REFRESH Review: IoT & Embedded MCP Servers (Espressif 4 official MCP efforts esp-claw 304 stars+ESP-IDF 6.0 built-in+RainMaker+Docs, robotmcp 873→1200 stars, ha-mcp 1200→2500 stars v7.3.0 Agent Skills, xiaozhi-esp32 24K stars MCP chatbot, 3D-printer 61→168 stars, NEW wise-vision/ros2_mcp 73 stars drone demo, NEW MicroPython MCP, Tuya C# SDK, 55+ servers 10+ vendors, rating 4.0/5). Deployed.
 Run 831: NEW Review: Product Management & Roadmapping MCP Servers (Atlassian Jira official remote + sooperset 5K stars 72 tools, Linear official hosted OAuth 2.1 initiatives+milestones, Monday.com official 396 stars dynamic API, Asana official hosted + community 50+ tools, ClickUp community 150+ tools, Shortcut official 60+ tools, Notion 4.3K stars 22 tools, Plane official 55+ tools, Productboard community only, Aha! official + vector embeddings community, Fibery dynamic schema, Canny 37 tools PM prompts, PostHog 27+ tools, Mixpanel hosted, Amplitude hosted, LaunchDarkly 28 tools, MISSING Roadmunk airfocus Craft.io, rating 4.5/5). Deployed.
 Run 824: NEW Review: Banking & Fintech MCP Servers (Plaid official remote+community, Adyen 47 stars alpha, Square 95 stars, Marqeta 33 tools, Revolut X 11 tools, Morningstar 200K securities, Bloomberg community 18 tools, EODHD 77 tools, LoanPro Go, Ramp hosted, BANKSapi PSD2 3K providers, Ntropy enrichment, Carrington Labs credit risk, rating 3.5/5). Deployed.
 Run 818: Deploy + NEW Review: Deployment Platform & PaaS MCP Servers (Cloudflare 2500+ endpoints, Dokploy 508 tools, Vercel official remote MCP, Netlify 9 tools, Railway 186 stars, Heroku Salesforce, DigitalOcean 9 services, ArgoCD 354 stars GitOps, FluxCD operator, Coolify 38 tools, DeployHQ 7 tools, Fly.io, rating 4.0/5). Deployed SRE review.
@@ -11622,3 +11623,118 @@ Build: 1,226 pages. Deploy: complete. Inbox report: sent.
 2026-04-26T03:49:46Z SESSION 1751 stopped
 2026-04-26T04:41:01Z STARTED run 350381 (mode=wild)
 2026-04-26T04:41:02Z SESSION 1752 started
+Run 833 complete. Refreshed the **Supply Chain & Logistics MCP Servers** review (42 days stale, March 15 → April 26). Key additions:
+
+- **SAP** — MCP Gateway in Integration Suite (GA Q1 2026) + 6 supply chain AI agents rolling out Q1-Q3 2026
+- **Microsoft Dynamics 365** — detailed dynamic ERP MCP server (20+ tools across data/form/action categories)
+- **NEW: Kinaxis** — first dedicated supply chain planning vendor with an MCP server (AWS Marketplace)
+- **NEW sections**: Shopify (199 stars, 31 tools), WooCommerce (101+ tools), Amazon Seller, ShipBob, ReplenishRadar (28 tools, inventory intelligence)
+- **Updated stars**: Odoo 193→259, Karrio 703→719, ShipStation 6→8, NetSuite 8→11
+- **SAP Ariba** procurement section added (48 APIs)
+- Rating unchanged 3.5/5
+
+Build successful (1,226 pages), deployed.
+2026-04-26T04:53:49Z FINISHED run 350381
+2026-04-26T04:53:49Z SESSION 1752 stopped
+2026-04-26T05:42:01Z STARTED run 366619 (mode=wild)
+2026-04-26T05:42:02Z SESSION 1753 started
+Run 834 complete.
+
+**What I did:**
+- **NEW Review: Quantum Computing MCP Servers** — brand new category covering circuit design, simulation, quantum ML, hardware design, and post-quantum cryptography
+- **15 servers/projects** reviewed across the quantum MCP ecosystem
+- **Key highlights:** IBM Qiskit official (6 servers), Conductor Quantum CODA (multi-provider QPU, $19-279/mo), post-quantum crypto tools (24 NIST-standardized tools)
+- **Rating: 3.0/5** — IBM commitment strong, but early-stage overall with most servers 0-10 stars and major vendors (Google, Xanadu, Microsoft, D-Wave) absent
+- Hugo build: 1,228 pages (325 reviews)
+- Deploy: complete
+2026-04-26T05:54:05Z FINISHED run 366619
+2026-04-26T05:54:06Z SESSION 1753 stopped
+2026-04-26T06:43:01Z STARTED run 382948 (mode=wild)
+2026-04-26T06:43:02Z SESSION 1754 started
+Run 835 complete. Here's the summary:
+
+**REFRESHED: Astronomy & Space Science MCP Servers** (40 days stale)
+
+Key additions:
+- **nasa/earthdata-mcp** — official NASA MCP server (semantic search, AWS Lambda)
+- **Telescope control** — ASCOM MCP server (natural language GOTO, auto-discovery) + AiBridge ESP32 (MCP on a $5 microcontroller)
+- **SpaceX data** — launches, rockets, crew, Starlink tracking, no API key
+- **Second NASA ADS** — ivan-katkov implementation with Solr syntax
+
+Two major gaps from the original review are now filled (telescope control + rocket launches). Rating unchanged at 3.5/5.
+
+Build: 1,228 pages. Deploy: complete. Two commits pushed to master.
+2026-04-26T06:54:02Z FINISHED run 382948
+2026-04-26T06:54:03Z SESSION 1754 stopped
+2026-04-26T07:43:01Z STARTED run 398995 (mode=wild)
+2026-04-26T07:43:02Z SESSION 1755 started
+Run 836 complete.
+
+**REFRESHED: Real Estate & Property MCP Servers** (22 days stale, April 4 → April 26)
+
+Key updates:
+- **Portal ChatGPT MCP apps** — Zillow (Oct 2025), Redfin (Feb 2026), Realtor.com (Mar 2026) all have ChatGPT apps via OpenAI's MCP-based Apps SDK. ChatGPT-exclusive, not open servers.
+- **PriceHubble MCP Suite** — 4 enterprise MCPs (Listings, Transactions, Market Trends, Valuation), 11 countries, ISO 27001/GDPR. First multi-country proptech MCP.
+- **nkbud/mcp-server-attom** — first open-source ATTOM API MCP (55+ endpoints, MIT, Python)
+- **CryptoCultCurt/appfolio-mcp-server** — first property management MCP (6 stars, ISC)
+- **Stars:** Airbnb 394→437 (v0.2.0), Zillow 31→37, Repliers 14→16
+- **Rating:** 3.5/5 unchanged
+
+Build: 1,228 pages. Deploy: complete.
+2026-04-26T07:54:24Z FINISHED run 398995
+2026-04-26T07:54:25Z SESSION 1755 stopped
+2026-04-26T08:44:01Z STARTED run 415367 (mode=wild)
+2026-04-26T08:44:02Z SESSION 1756 started
+Run 837 complete.
+
+**Summary:** Wrote a new review — **Linux System Administration MCP Servers** — filling a gap in our 326-review catalog. The review covers:
+
+- **Red Hat** dual servers (RHEL Lightspeed 211 stars + Insights MCP)
+- **openSUSE** systemd-mcp (native C API)
+- **SSH management** (ssh-mcp 411 stars, mcp-ssh-manager 168 stars/37 tools)
+- **Shell execution** (4 servers with different security models)
+- **Ansible** (official + 2 community servers)
+- **Monitoring** (Zabbix 202 stars, Prometheus)
+- Rating: **3.5/5**
+
+Built (1,230 pages) and deployed successfully. No messages from Rob or Boss Claude. Next priorities: Stripe Sessions refresh after April 29-30, CVE-2026-32211 monitoring, quality-focused refreshes as new niche categories thin out.
+2026-04-26T08:55:05Z FINISHED run 415367
+2026-04-26T08:55:06Z SESSION 1756 stopped
+2026-04-26T09:44:01Z STARTED run 432368 (mode=wild)
+2026-04-26T09:44:02Z SESSION 1757 started
+Run 838 complete.
+
+**Summary:** Refreshed the Library, Archive & Museum MCP Servers review (42 days stale).
+
+Key updates:
+- **Zotero exploding**: 54yyyu/zotero-mcp 1,800→2,700 stars (+50% in 6 weeks), cookjohn 476→684
+- **NEW ZotLink** (134 stars) — preprint saving from arXiv/bioRxiv/medRxiv/chemRxiv
+- **NEW IIIF MCP** (20+ tools) — universal access to thousands of cultural heritage institutions
+- **NEW Cooper Hewitt MCP** — 6th museum server (design-focused)
+- **NEW benoute/calibre-mcp** — 6th Calibre implementation
+- Star updates across 7 repos, gyger/mcp-pyzotero retired
+- Rating unchanged 3.5/5
+
+Build: 1,230 pages. Deploy: complete. Commits: 2.
+2026-04-26T09:53:38Z FINISHED run 432368
+2026-04-26T09:53:38Z SESSION 1757 stopped
+2026-04-26T10:44:01Z STARTED run 448524 (mode=wild)
+2026-04-26T10:44:03Z SESSION 1758 started
+Run 839 complete.
+
+**Refreshed: Advertising & Ad-Tech MCP Servers** (40 days stale, March 17 → April 26)
+
+Key changes:
+- **Star growth across the board** — meta-ads-mcp +30% (819), claude-ads tripled to 3,200, googleads official +41% (404)
+- **NEW: Amazon Ads section** — MarketplaceAdPros fills the biggest gap from the prior review (first open-source Amazon Ads MCP, 21 stars, MIT)
+- **NEW: Programmatic & DSP section** — StackAdapt (first official DSP MCP), zMaticoo (ADX/DSP), Guideline (media planning)
+- **claude-ads exploded** — 981→3,200 stars, 190+→250+ checks, added PPC modeling + A/B test design + PDF reports
+- **AdCP v3.0.0** released, establishing the industry standard for agentic advertising
+- **AdRoll + PubMatic** doing agent-to-agent MCP diagnostics
+- Rating unchanged 4.5/5
+
+Build: 1,230 pages, 746ms. Deployed.
+2026-04-26T10:52:38Z FINISHED run 448524
+2026-04-26T10:52:39Z SESSION 1758 stopped
+2026-04-26T11:45:01Z STARTED run 464750 (mode=wild)
+2026-04-26T11:45:02Z SESSION 1759 started
