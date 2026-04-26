@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 846 — 2026-04-27 — REFRESH Review: Game Engine & 3D Development MCP Servers (CoplayDev/unity-mcp 5800→8900 stars +53% v9.6.6 40+ tools profiler+physics+build+multi-scene, IvanMurzak/Unity-MCP 306→2300 stars +650% breakout growth 2768 commits, CoderGamester/mcp-unity 1300→1600 30+ tools, chongdashu/unreal-mcp 1200→1800 +50%, ChiR24/Unreal_mcp 353→552 HTTP/SSE UE5.0-5.7 GraphQL, NEW StraySpark COMMERCIAL 207 tools 34 categories Fab.com first commercial game MCP, GoPeak 147 stars 110+ tools tiered profiles, bradypp 58→74, NEW GDAI MCP COMMERCIAL $19 Godot 80 stars, Roblox open-source repo ARCHIVED April 3 2026 built-in MCP external LLM Claude+OpenAI+Gemini playtest automation virtual input multi-instance, NEW DaxianLee/cocos-mcp-server 831 stars 50 core tools Cocos Creator 3.8+ fills gap, NEW Nub/bevy_mcp 12 tools Bevy 0.18 BRP bridge fills Rust gap, NEW Ladvien/bevy_debugger_mcp AI debugging, Phaser 28 stars 117 commits, rating 4.0→4.5/5 explosive growth first commercial products two gaps filled)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Game Engine & 3D Development MCP Servers** (`content/reviews/game-engine-3d-development-mcp-servers.md`) — 24 days since initial review (March 15 → April 27)
+   - **Unity ecosystem exploding** — CoplayDev/unity-mcp 5,800→8,900 stars (+53%), v9.6.6 with 40+ tools. NEW: manage_profiler (session control, frame timing, memory snapshots), manage_physics (collision matrix, joints, raycasts), manage_build (player builds, platform switching, Unity 6+ profiles), multi-scene editing.
+   - **IvanMurzak/Unity-MCP breakout** — 306→2,300 stars (+650%), the fastest-growing game engine MCP server. 2,768 commits. Runtime agents for AI NPCs.
+   - **CoderGamester/mcp-unity** — 1,300→1,600 stars (+23%), expanded to 30+ tools.
+   - **chongdashu/unreal-mcp** — 1,200→1,800 stars (+50%), 284 forks, still experimental.
+   - **ChiR24/Unreal_mcp** — 353→552 stars (+56%), now dual transport (HTTP/SSE + stdio), UE 5.0-5.7, optional GraphQL API, 658 commits.
+   - **StraySpark** — NEW commercial Unreal MCP (first commercial game engine MCP product). 207 tools, 34 categories, 5 presets (Full/Scene Building/Gameplay/Minimal/Custom), full undo support. Sold on Fab.com.
+   - **GoPeak** — 147 stars, 95+→110+ tools, NEW tiered profiles (compact 33 tools default, dynamic groups, full mode), multilingual docs.
+   - **bradypp/godot-mcp** — 58→74 stars (+28%).
+   - **GDAI MCP** — NEW commercial Godot MCP ($19 one-time). 80 stars. Auto screenshots, input simulation. By 3ddelano.
+   - **Roblox** — Open-source repo ARCHIVED April 3, 2026. Built-in MCP hugely expanded: external LLM support (Claude, OpenAI, Gemini), playtest automation (virtual mouse/keyboard/character navigation), multi-instance management, per-session auto-approval.
+   - **DaxianLee/cocos-mcp-server** — NEW. 831 stars, 227 forks. 50 core tools (158 total) for Cocos Creator 3.8+. 99% editor coverage. Multiple other implementations (RomaRogov, czh2774). Fills gap.
+   - **Nub/bevy_mcp** — NEW. 12 tools for Bevy 0.18 via BRP bridge. Fills Rust game engine gap.
+   - **Ladvien/bevy_debugger_mcp** — NEW. AI-assisted Bevy debugging via Claude Code.
+   - Rating upgraded 4.0→4.5/5. Two major gaps filled (Cocos Creator, Bevy/Rust). First commercial products (StraySpark, GDAI).
+
+2. **Hugo build** — successful (743ms).
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Stale March 15 reviews remaining: fashion, hospitality, insurance, manufacturing, news/media, nonprofit, photography, printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 845 — 2026-04-27 — REFRESH Review: Personal Finance MCP Servers (ALPACA V2 rewrite FastMCP 519→683 stars 43→50+ tools 4x API trading growth Q1 2026, FINANCIAL-DATASETS 715→2000 stars nearly tripled 10 tools OAuth, QUICKBOOKS OFFICIAL 12→180 stars expanded to 143 tools 29 entity types 11 reports 100% test coverage, XERO OFFICIAL 257 stars 49 tools payroll timesheets leave, PLAID OFFICIAL AI Toolkit Dashboard+Sandbox MCP servers OAuth developer-analytics-only NOT end-user data, ALPHA VANTAGE OFFICIAL 129 stars Progressive Tool Discovery stocks forex crypto commodities, EODHD OFFICIAL 77 tools 100+ docs v1 API key v2 OAuth, TRUTHIFI NEW commercial aggregator 18000+ institutions Fidelity Vanguard Schwab $79.99/year OAuth, JTEWEN/YNAB-MCP 10 stars 13 tools most featured YNAB now 10+ implementations, KEITHAH/MONARCHMONEY-TS-MCP 7 stars 70+ ops dynamic SDK discovery MCPB bundle MFA, FABIANONETTO/MCP-SERVER-FIREFLY-III NEW 7 stars 66 tools 100% API coverage created March 2026, LAZY-DINOSAUR/CCXT-MCP 82 stars risk management position sizing leverage 100x, TRAYDERS/TRAYD-MCP NEW Robinhood trading 24h extended hours, ALTFINS NEW commercial crypto 150+ indicators 15000+ coins 1000+ exchanges, STRIPE 25 tools stripe/ai monorepo, rating 4.0→4.5/5 fastest-maturing category)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

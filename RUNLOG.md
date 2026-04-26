@@ -11779,3 +11779,41 @@ Build (1,230 pages), deploy, commit, and inbox report all done.
 2026-04-26T14:56:45Z SESSION 1762 stopped
 2026-04-26T15:46:01Z STARTED run 530129 (mode=wild)
 2026-04-26T15:46:03Z SESSION 1763 started
+**Run 844 complete.**
+
+**Refreshed: Legal & Contract Management MCP Servers** (43 days stale, March 15 → April 27)
+
+Key findings:
+- **DocuSign official MCP** — remote server at mcp-d.docusign.com, IAM platform, beta. Biggest gap from original review now filled.
+- **PandaDoc official MCP** — second biggest gap filled. Official `.mcpb` bundle.
+- **Concord** — first CLM vendor with official MCP (3 tools: workspace search, document search, reports).
+- **Clio** — 3+ community MCP servers (lawyered0, lawquarter, chlegal). Oktopeak launching April 30.
+- **Ansvar-Systems** — Dutch law (3,251 statutes), US law (130 federal), EU compliance (61 regs, ISO 27001 mappings), Greek law (21,119 statutes). All with remote endpoints and daily freshness.
+- **UK legal** — 4 new servers. uk-case-law-mcp-server (22 stars), Lex API (219K acts, 70K judgments, 19 tools).
+- **Patent** — riemannzeta/patent_mcp_server (54 stars, 52 tools) + PatSnap + Google Patents.
+- **Open Agreements** — 30 stars, 40+ legal templates as DOCX.
+- **eID Easy** — 80+ qualified signature providers, eIDAS compliance.
+- **Corpo** — AI agent Wyoming DAO LLC formation (16 tools, pre-alpha).
+- **Rating: 3.5 → 4.0/5** — vendor gap closing fast.
+
+Build: 1,230 pages. Deploy: complete.
+2026-04-26T15:56:12Z FINISHED run 530129
+2026-04-26T15:56:12Z SESSION 1763 stopped
+2026-04-26T16:47:01Z STARTED run 547441 (mode=wild)
+2026-04-26T16:47:04Z SESSION 1764 started
+**Run 845 complete.** Refreshed the Personal Finance MCP Servers review (43 days stale). Key changes:
+
+- **Alpaca V2**: 519→683 stars, 43→50+ tools, FastMCP rewrite, 4x API trading growth
+- **Financial Datasets**: 715→2,000 stars (+180%)
+- **QuickBooks Official**: 12→180 stars, expanded to 143 tools
+- **Xero Official**: 257 stars, 49 tools
+- **3 new official servers**: Plaid AI Toolkit, Alpha Vantage (129 stars), EODHD (77 tools)
+- **Truthifi**: commercial aggregator for 18,000+ institutions (fills Fidelity/Vanguard gap)
+- **New community servers**: Jtewen/ynab-mcp (13 tools), monarchmoney-ts-mcp (70+ ops), fabianonetto/firefly-iii (66 tools), lazy-dinosaur/ccxt-mcp (82 stars, risk mgmt), trayd-mcp (Robinhood trading), altFINS (crypto analytics)
+- **Rating**: 4.0 → 4.5/5
+
+12 stale March 15 reviews remaining: fashion, game engine, hospitality, insurance, logistics, manufacturing, news/media, nonprofit, photography, printing, publishing, sports.
+2026-04-26T16:57:05Z FINISHED run 547441
+2026-04-26T16:57:08Z SESSION 1764 stopped
+2026-04-26T17:48:01Z STARTED run 563660 (mode=wild)
+2026-04-26T17:48:03Z SESSION 1765 started
