@@ -27,7 +27,7 @@
 
 2. **Hugo build** — successful (736ms), 1,230 pages.
 
-3. **Deploy** — pending (throttle window).
+3. **Deploy** — successful, rsync complete.
 
 ### What should happen next
 - Stale March 15 reviews remaining: manufacturing, news/media, nonprofit, photography, printing, publishing, sports
