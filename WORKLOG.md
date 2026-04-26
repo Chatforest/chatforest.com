@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 850 — 2026-04-27 — REFRESH Review: Manufacturing & Industrial MCP Servers (Siemens S7 PLC first dedicated MCP 21 tools, Universal Robots cobots 43 tools first UR MCP, MATLAB 236→434 stars nearly doubled v0.8.1, realvirtual.mcp first industrial digital twin 60+ tools Unity, GOPLC-Showcase Go PLC runtime 20+ protocol drivers 12 agentic tools, s7-mcp-bridge 14 stars Siemens S7-1500/1200, kukapay/modbus-mcp 23 stars 6 tools, wise-vision/ros2_mcp 73 stars 14 tools, lpigeon repos merged into robotmcp 1187 stars, predictive-maintenance-mcp 52 endpoints Claude Code plugin, sohumsuthar/simulink-mcp 14 tools dedicated, SupplyMaven 24 tools supply chain intelligence, Ansvar gxp-regulations-mcp pharmaceutical GMP 12 tools, Litmus 20+ tools digital twin expansion, 5 gaps partially filled, rating 3.5→4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Manufacturing & Industrial MCP Servers** (`content/reviews/manufacturing-industrial-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **PLC & Automation — NEW section (zero to three implementations)**
+     - **cadugrillo/s7-mcp-bridge** — NEW. 14 stars, TypeScript, MIT, 21 tools. First dedicated Siemens PLC MCP server for S7-1500 and S7-1200. CPU mode control, alarm management, diagnostic buffer, variable read/write.
+     - **kukapay/modbus-mcp** — NEW (overlooked in original). 23 stars, Python, MIT, 6 tools. Modbus TCP/UDP/serial — the most widely used industrial protocol.
+     - **fixstuff/GOPLC-Showcase** — NEW. Go PLC runtime with 20+ protocol drivers (Modbus, EtherNet/IP, DNP3, BACnet, OPC UA, FINS, S7, IEC 104, Sparkplug B, KNX, M-Bus, SNMP), 12 agentic control tools, 1,900+ built-in functions, IEC 61131-3 Structured Text.
+   - **Robotics consolidation + expansion**
+     - lpigeon/ros-mcp-server merged into robotmcp org — stars consolidated at ~1,187.
+     - **Nonead/Universal-Robots-MCP** — NEW. 5 stars, Python, AGPLv3, 43 tools across 11 categories. First Universal Robots (industrial cobots) MCP. Multi-robot coordination up to 12 units.
+     - **wise-vision/ros2_mcp** — NEW. 73 stars, Python, MPL-2.0, 14 tools. Advanced ROS2 bridging with auto type discovery.
+     - **lpigeon/unitree-go2-mcp-server** — NEW. 77 stars. Dedicated Unitree Go2 quadruped control.
+     - **turkenberg/mcap_mcp_server** — NEW. 2 stars, v0.5.1, 6 tools. MCAP robot recording analysis via DuckDB SQL.
+   - **Digital Twins — NEW section**
+     - **game4automation/io.realvirtual.mcp** — NEW. 7 stars, C#, MIT, 60+ tools. First industrial digital twin MCP server on Unity. Embedded Python 3.12.
+     - Litmus MCP expanded to 20+ tools with 8 new digital twin tools.
+   - **MATLAB nearly doubled** — 236→434 stars (+84%), v0.8.1 (April 23, 2026). MathWorks ecosystem growing (Production Server framework, slash commands, MATLAB MCP client).
+   - **sohumsuthar/simulink-mcp** — NEW. 6 stars, Python, 14 tools. First dedicated Simulink MCP server. PolyForm Noncommercial license.
+   - **predictive-maintenance-mcp** — 19→29 stars (+53%). Expanded from 20+ tools to 52 MCP endpoints. New: Claude Code plugin (7 skills, 2 agents, 3 slash commands), RUL estimation, Word reports, 86% test coverage.
+   - **SupplyMaven** — NEW. 24 tools, supply chain risk intelligence. Global Disruption Index, 31 commodities, 26 ports, 12 maritime chokepoints. Commercial (free/$499/$999).
+   - **Ansvar-Systems/gxp-regulations-mcp** — NEW. 12 tools for pharmaceutical GxP (EudraLex GMP, 21 CFR, ICH GCP).
+   - **Ansvar-Systems/ot-security-mcp** — v0.2.0 redesign, public HTTP endpoint, npm package.
+   - **DMontgomery40/mcp-3D-printer-server** — 161→181 stars. New: Blender integration, dual transport.
+   - **Five gaps partially filled**: digital twins, Siemens PLC, pharmaceutical GMP, supply chain intelligence, industrial cobots.
+   - **Rating upgraded 3.5→4.0/5** — PLC/automation went from absent to three implementations, digital twins arrived, robotics consolidated and expanded, MATLAB ecosystem growing rapidly. Core manufacturing stack (MES, CNC, PLM, quality) still absent.
+
+2. **Hugo build** — successful (768ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Stale March 15 reviews remaining: news/media, nonprofit, photography, printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 849 — 2026-04-27 — REFRESH Review: Insurance MCP Servers (EMPLOYERS first carrier in ChatGPT App Directory via MCP workers-comp quoting April 2026, Socotra Assistant GA AI underwriting March 2026 first insurance core GA AI, NEW eiopa-insurance-mcp 7 tools Solvency II DORA IORP II 105 guidelines 80 standards first EU regulatory MCP, NEW Policy Penguin commercial developer preview 4 tools portfolio management patent-pending, NEW insurance-mcp-server PyPI FEMA 80M+ flood records SEC EDGAR insurer financials disaster declarations, NEW swiss-health-mcp 4 tools 1.6M records 55 insurers 26 cantons BAG Priminfo first health premium comparison MCP, NEW insuranceagenticmesh Java MIT 4 MCP servers multi-agent mesh policy+claims+underwriting+customer-service, NEW imc-policy-mcp-server Java Spring AI PGVector RAG policy document retrieval, Sixfold AI $30M Series B $265B GWP MCP deployments, ClaimsProcessingAssistant-MCP 1→5 stars 49 commits, 3 gaps filled EU-regulatory+public-data+health-premiums, 15+→25+ servers, rating 3.0→3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
