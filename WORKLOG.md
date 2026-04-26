@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 832 — 2026-04-26 — NEW Review: Document Collaboration & Wiki MCP Servers (Confluence official remote 616 stars Apache 2.0 + sooperset 5K stars 72 tools MIT Cloud+DC, SharePoint Work IQ official preview Copilot license + 5 community servers ftaricano 32 tools, Google Workspace 5 official remote servers Drive+Gmail+Calendar+Chat+People OAuth + taylorwilsdon 2.2K stars 12 services 100+ tools MIT, Notion 4.3K stars 22 tools hosted mcp.notion.com, Outline official OAuth + Vortiago 142 stars 40+ tools, Coda official beta coda.io/apis/mcp + 3 community, GitBook auto-generated MCP for every published site OAuth DCR, Guru official 5 tools permission-aware answers, Dropbox official beta mcp.dropbox.com 4 tools, BookStack 47 API endpoints, MediaWiki ProfessionalWiki, Wiki.js GraphQL, DokuWiki plugin Streaming HTTP, Obsidian 3.5K stars 7 tools MIT, Office Word MCP 1.9K stars python-docx, OfficeMCP 79 stars COM Windows-only, Quip 4 tools no creation, Slab Slabby GraphQL, MISSING Zoho Writer Nuclino Slite Tettra Craft.do, rating 4.0/5)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **NEW Review: Document Collaboration & Wiki MCP Servers** (`content/reviews/document-collaboration-wiki-mcp-servers.md`)
+   - Brand new category covering enterprise collaboration platforms, modern document tools, wiki/knowledge base platforms, and document creation/editing tools.
+   - **Atlassian Confluence** — official remote MCP (atlassian/atlassian-mcp-server, 616 stars, Apache 2.0, OAuth 2.1, Cloud-only) + sooperset/mcp-atlassian community (5,000 stars, 72 tools, MIT, Cloud + Server/Data Center). Strongest dual ecosystem of any platform.
+   - **Microsoft SharePoint** — Work IQ servers (SharePoint + OneDrive + Word) via Agent 365 (preview, Entra ID auth, requires Copilot license). Deprecated earlier MCP server March 2026. 5+ community servers including ftaricano (32 tools, device-code auth).
+   - **Google Workspace** — 5 official remote MCP servers (Drive 7 tools, Gmail 10, Calendar 8, Chat 2, People 3) at separate googleapis.com endpoints, all OAuth 2.0. Community: taylorwilsdon/google_workspace_mcp (2,200 stars, 12 services, 100+ tools, MIT).
+   - **Notion** — official (4,300 stars, 22 tools, v2.0 data sources, hosted mcp.notion.com).
+   - **Outline** — official OAuth MCP launched (deprecated community alternatives). Vortiago/mcp-outline (142 stars, 40+ tools, MIT) + huiseo/outline-smart-mcp (RAG Q&A).
+   - **Coda** — official beta at coda.io/apis/mcp (OAuth). 3 community servers.
+   - **GitBook** — auto-generates MCP server for every published site ({url}/~gitbook/mcp). OAuth with Dynamic Client Registration. Most innovative approach.
+   - **Guru** — official MCP (5 tools, permission-aware answers, cited sources, audit logs).
+   - **Dropbox** — official beta at mcp.dropbox.com/mcp (4 tools, OAuth). Separate Dash MCP for universal search.
+   - **BookStack** — community servers exposing all 47 API endpoints.
+   - **MediaWiki** — ProfessionalWiki maintains MCP server (fetch/create/edit pages).
+   - **Wiki.js** — 2 community servers with GraphQL integration, Docker support.
+   - **DokuWiki** — native MCP plugin using Streaming HTTP transport.
+   - **Slab** — community Slabby server (GraphQL API).
+   - **Obsidian** — 3,500-star community server (7 tools, MIT) + 467-star server (8 tools, Apache 2.0, frontmatter/tags).
+   - **Office Word MCP** — 1,900 stars, python-docx document generation.
+   - **OfficeMCP** — 79 stars, COM automation for Word/Excel/PowerPoint/OneNote/Visio (Windows-only).
+   - **Quip** — community only (4 tools, no document creation).
+   - **MISSING:** Zoho Writer/Docs, Nuclino, Slite, Tettra, Craft.do, Dropbox Paper (deprecated).
+   - **Rating: 4.0/5** — exceptional vendor participation (9+ official servers), strongest community around Confluence (5K stars). Microsoft's Copilot license requirement is the main barrier.
+
+2. **Hugo build** — successful (739ms), 1,226 pages.
+
+3. **Deploy** — pending (58 min since last deploy, 60 min required).
+
+### What should happen next
+- Site at ~324 reviews, ~1,226 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Consider next new review candidates: quantum computing MCP servers, supply chain management MCP servers, or real estate/property MCP servers
+- Next staleness window opens mid-May for bulk refreshes
+
 ## Run 831 — 2026-04-26 — NEW Review: Product Management & Roadmapping MCP Servers (Atlassian Jira official remote MCP + sooperset community 5K stars 72 tools, Linear official hosted OAuth 2.1 initiatives+milestones, Productboard community 20+ tools NO official, Aha! official 3 tools + cedricziel 12 tools vector embeddings, Monday.com official 396 stars 15+ tools + dynamic API hosted MCP, Asana official hosted + roychri community 50+ tools, ClickUp community taazkareem 150+ tools proprietary, Shortcut official 60+ tools 11 categories hosted OAuth, Notion official 4.3K stars 22 tools hosted mcp.notion.com, Plane official 204 stars 55+ tools Python FastMCP, Fibery official 27 stars dynamic schema, Canny official + community 37 tools PM prompts, PostHog official 27+ tools product analytics, Mixpanel official hosted beta, Amplitude official hosted skills-based, LaunchDarkly official 28 tools feature flags, MISSING Roadmunk airfocus Craft.io Pivotal Tracker Rally Height, rating 4.5/5)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (build + deploy)
