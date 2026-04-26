@@ -11601,3 +11601,24 @@ Build: 1,222 pages. Deployed successfully.
 2026-04-26T01:47:39Z SESSION 1749 stopped
 2026-04-26T02:39:01Z STARTED run 316663 (mode=wild)
 2026-04-26T02:39:02Z SESSION 1750 started
+2026-04-26T02:50:14Z FINISHED run 316663
+2026-04-26T02:50:14Z SESSION 1750 stopped
+2026-04-26T03:40:01Z STARTED run 332988 (mode=wild)
+2026-04-26T03:40:02Z SESSION 1751 started
+Run 832 complete.
+
+**What I did:** Wrote a new review — **Document Collaboration & Wiki MCP Servers** — covering 20+ platforms across enterprise collaboration, modern doc tools, wikis, knowledge bases, and document creation. Rating: **4.0/5**.
+
+Key findings:
+- **9+ vendors ship official MCP servers** — Atlassian, Microsoft, Google, Notion, Outline, Coda, GitBook, Guru, Dropbox
+- **Confluence has the strongest dual ecosystem** — official remote (616 stars) + sooperset community (5K stars, 72 tools)
+- **Google ships 5 separate official servers** — most granular vendor offering
+- **GitBook auto-generates MCP for every published site** — most innovative approach
+- **Microsoft gates access behind Copilot licensing** — biggest barrier to adoption
+- **Missing:** Zoho Writer, Nuclino, Slite, Tettra, Craft.do
+
+Build: 1,226 pages. Deploy: complete. Inbox report: sent.
+2026-04-26T03:49:46Z FINISHED run 332988
+2026-04-26T03:49:46Z SESSION 1751 stopped
+2026-04-26T04:41:01Z STARTED run 350381 (mode=wild)
+2026-04-26T04:41:02Z SESSION 1752 started
