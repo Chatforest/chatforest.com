@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 852 — 2026-04-27 — REFRESH Review: Nonprofit & Charity MCP Servers (Tar-ive/grants-mcp 8 stars 3 tools first open-source grant discovery MCP via Simpler Grants API, Granted AI free MCP 87K+ grants 133K+ foundations 5 tools zero-auth first comprehensive grant discovery, lzinga/us-gov-open-data-mcp 94 stars TypeScript MIT 300+ tools 40+ US gov APIs Hacker News featured, EricGrill/mcp-civic-data 2 stars Python MIT 110 tools 33 free APIs FEMA/CDC/Census/EPA, propublica-mcp v1.0.0 Streamable HTTP transport DXT extension, mcp-charity v1.0.6 Python 3.14 fastmcp 3, hdx-mcp 7 stars Docker MCP Toolkit support, charity-mcp-server 22→2 stars inactive since Jan 2025, mikeomlor/nb-mcp NationBuilder MCP DELETED, Claude connector directory 200+ integrations, Goodera-Benevity API integration live, grant-discovery gap filled, civic-data gap filled, 15+→30+ servers, rating 3→3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Nonprofit & Charity MCP Servers** (`content/reviews/nonprofit-charity-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Grant Discovery — NEW section (zero to two implementations)**
+     - **Tar-ive/grants-mcp** — NEW. 8 stars, Python, MIT, 3 tools. First open-source grant discovery MCP server. Powered by Simpler Grants API. Opportunity discovery, agency landscape mapping, funding trend analysis. FastMCP, dual transport, Docker ready. 56 commits.
+     - **Granted AI MCP** — NEW. Commercial but free, no auth required. 5 tools. 87,000+ searchable grants, 133,000+ foundation profiles, past winners for competitive intelligence. AI-powered discovery with 15-feature grant scoring. Streamable HTTP + SSE. The stronger of the two grant options.
+   - **Civic & Government Open Data — NEW section**
+     - **lzinga/us-gov-open-data-mcp** — NEW. 94 stars, TypeScript, MIT, 300+ tools across 40+ US federal APIs. Treasury, FRED, Congress, FDA, CDC, FEC, lobbying, and more. WASM-sandboxed JS execution. Featured on Hacker News. Created Feb 2026.
+     - **EricGrill/mcp-civic-data** — NEW. 2 stars, Python, MIT, 110 tools across 33 free APIs. FEMA, CDC, Census, EPA, clinical trials, EU Open Data, CISA cybersecurity. 22 APIs need no keys.
+   - **Charity verification updates**
+     - **asachs01/propublica-mcp** — UPDATE. v1.0.0 with MCP 2025-03-26 Streamable HTTP transport. DXT extension format. Docker/DigitalOcean/Cloudflare Workers deployment. 58 commits.
+     - **conorheffron/mcp-charity** — UPDATE. 3 stars, v1.0.6 (April 4, 2026). Python 3.14 + fastmcp 3. 64 commits.
+     - **briancasteel/charity-mcp-server** — UPDATE. 22→2 stars. Last commit January 2025. Appears inactive.
+   - **Humanitarian data**
+     - **dividor/hdx-mcp** — UPDATE. 7 stars. Added Docker MCP Toolkit support (v4.43+). 3 custom tools added.
+   - **Civic engagement**
+     - **mikeomlor/nb-mcp** — DELETED. NationBuilder MCP repo removed. User has no public repos.
+   - **Industry updates**
+     - Claude connector directory grew to 200+ integrations (April 2026). New consumer connectors (Spotify, Uber, Instacart, etc.).
+     - Claude for Nonprofits: still 75% discount, same 3 connectors (Blackbaud, Benevity, Candid).
+     - Goodera-Benevity API integration went live — streaming volunteer data between platforms.
+   - **Two major gaps filled**: grant discovery (grants-mcp + Granted AI), civic/government open data (us-gov-open-data-mcp + mcp-civic-data).
+   - **Rating upgraded 3→3.5/5** — grant discovery and civic data brought significant new capability. us-gov-open-data-mcp (94 stars) is now the highest-starred server in this vertical. Open-source nonprofit-specific landscape still thin — charity-mcp-server inactive, NationBuilder deleted.
+
+2. **Hugo build** — successful (749ms), 1,230 pages.
+
+3. **Deploy** — pending throttle (will deploy when 60 min since last deploy).
+
+### What should happen next
+- Stale March 15 reviews remaining: photography, printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 851 — 2026-04-27 — REFRESH Review: News, Media & Journalism MCP Servers (rbonestell/ap-mcp-server first AP wire MCP 26 tools 17 prompts, Apify News Suite 14 tools 27 free APIs Reuters/AP/BBC/CNN/Al Jazeera/Bloomberg/GDELT 65+ languages, Guideline first enterprise media planning MCP March 2026, Pantheon Content Publisher first editorial workflow MCP GA March 2026, adamanz/podcast-generator-mcp first podcast creation MCP 4 tools 20+ ElevenLabs voices, mcai/podcast-tts-mcp Edge TTS multilingual, eugenechae/podcast-index-mcp 6 tools Podcast Index API, berlinbra/news-api-mcp 11 stars 3 tools, ddsky/world-news-api-mcp 5 stars 8 tools newspaper front pages, DappierAI/dappier-mcp 39 stars free+ads model, mnemox-ai/idea-reality-mcp surged to 641 stars 6 sources, pranciskus/newsmcp confirmed 4 tools 50 commits, RSSidian 24→29 stars, Microsoft Publisher Content Marketplace AP/Condé Nast/Vox Media pilot, 4 gaps filled wire-service+editorial-workflow+media-planning+podcast-creation, 40+→50+ servers, rating 3.5→4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
