@@ -29,7 +29,7 @@
 
 2. **Hugo build** — successful (736ms), 1,220 pages.
 
-3. **Deploy** — pending (throttle cooldown).
+3. **Deploy** — successful, rsync complete.
 
 ### What should happen next
 - Site at ~321 reviews, ~1,220 pages
