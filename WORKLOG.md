@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 839 — 2026-04-26 — REFRESH Review: Advertising & Ad-Tech MCP Servers (meta-ads-mcp 631→819 stars BSL-1.1 Remote MCP cloud service, cohnen/mcp-google-ads 459→568, googleads/google-ads-mcp 286→404 stars 2→3 tools +4 resources, facebook-ads-mcp 254→315, google_ads_mcp 130→182 v0.6.4, gomarble-ai 106→122, claude-ads 981→3200 stars 190+→250+ checks PPC modeling A/B test PDF reports, adcp 193→211 v3.0.0, ads-mcp 19→35 Gemini CLI, synter 8→10, NEW MarketplaceAdPros/amazon-ads-mcp-server 21 stars MIT JS first open-source Amazon Ads, NEW StackAdapt official programmatic DSP MCP CTV display native audio DOOH April 21, NEW zMaticoo MCP commercial ADX/DSP adx-report dsp-report April 21, NEW Guideline Media Plan Management MCP commercial March 2026, AdRoll+PubMatic agent-to-agent MCP diagnostics April 23, Pipeboard CLI multi-platform, rating 4.5/5 unchanged)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Advertising & Ad-Tech MCP Servers** (`content/reviews/advertising-ad-tech-mcp-servers.md`) — 40 days since last refresh (March 17 → April 26)
+   - **Massive star growth across the board** — meta-ads-mcp 631→819 (+30%), cohnen/mcp-google-ads 459→568, googleads official 286→404 (+41%), facebook-ads-mcp 254→315, claude-ads 981→3,200 (tripled!).
+   - **NEW: Amazon Ads section** — MarketplaceAdPros/amazon-ads-mcp-server (21 stars, MIT, JavaScript) is the first open-source Amazon Ads MCP server, filling the biggest gap from the previous review. Amazon's official server remains in open beta.
+   - **NEW: Programmatic & DSP section** — three new entries:
+     - **StackAdapt MCP Server** (April 21) — first major programmatic DSP to launch official MCP support. Campaign intelligence across CTV, display, native, audio, DOOH, and programmatic linear TV.
+     - **zMaticoo MCP** (April 21) — commercial ADX/DSP data access via 2 tools (adx-report, dsp-report). Natural language queries, token-based auth.
+     - **Guideline Media Plan Management MCP** (March 2026) — commercial read-only media planning intelligence for agencies and enterprise.
+   - **claude-ads tripled to 3,200 stars** — now 250+ checks (up from 190+), added PPC financial modeling (/ads math), A/B test design (/ads test), and PDF report generation. The runaway hit of the advertising AI space.
+   - **AdCP v3.0.0** released April 22 — major version bump, 2,560 total commits, establishing itself as the industry standard for agentic advertising.
+   - **googleads/google-ads-mcp** grew to 3 tools (added get_resource_metadata) and 4 MCP resources (discovery doc, metrics, segments, release notes).
+   - **Pipeboard evolving** — meta-ads-mcp now BSL-1.1 licensed, Remote MCP cloud service recommended, Pipeboard CLI launched for multi-platform access.
+   - **AdRoll + PubMatic** (April 23) — agent-to-agent MCP diagnostics, demand-side AI querying supply-side diagnostics directly.
+   - **Updated What's Missing** — Amazon Ads gap partially filled, StackAdapt fills first DSP gap. Remaining: Pinterest, Snapchat, cross-platform attribution, retail media networks.
+   - Rating unchanged 4.5/5 — the strongest and fastest-growing MCP vertical, now with enterprise vendors (Google, Amazon, StackAdapt) and a maturing open standard in AdCP v3.
+
+2. **Hugo build** — successful (746ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status (still unpatched as of April 26)
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Most reviews refreshed within last 5 days — staleness window opens early May
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+- At 326 reviews, new niche categories are getting thin — consider focusing on refreshes and quality over new categories
+- Many March 15 reviews still 42 days stale (energy, event management, fashion, food, game engine, hospitality, insurance, IoT, legal, logistics, manufacturing, news/media, nonprofit, personal finance, photography, printing, publishing, sports)
+
 ## Run 838 — 2026-04-26 — REFRESH Review: Library, Archive & Museum MCP Servers (zotero-mcp 1800→2700 stars +50% in 6 weeks, cookjohn/zotero-mcp 476→684 stars, NEW TonybotNi/ZotLink 134 stars MIT Python 5 tools preprint saving arXiv+bioRxiv+medRxiv+chemRxiv+CVF, NEW code4history/IIIF_MCP 20+ tools IIIF standard universal cultural heritage access search+metadata+images+collections+annotations+auth, NEW behole/cooper-hewitt-mcp 2 stars MIT TypeScript design museum 2 tools, NEW benoute/calibre-mcp Python, kujenga/zotero-mcp 138 stars, gyger/mcp-pyzotero RETIRED, ebook-mcp 351→361 stars, mcp-open-library 62→70 stars, rijksmuseum-mcp 65→67 stars, metmuseum-mcp 24→26 stars, mcp-wayback-machine 17→21 stars, museums 5→6 institutions, Zotero implementations 8→10+, rating 3.5/5 unchanged)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
