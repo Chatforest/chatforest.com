@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 845 — 2026-04-27 — REFRESH Review: Personal Finance MCP Servers (ALPACA V2 rewrite FastMCP 519→683 stars 43→50+ tools 4x API trading growth Q1 2026, FINANCIAL-DATASETS 715→2000 stars nearly tripled 10 tools OAuth, QUICKBOOKS OFFICIAL 12→180 stars expanded to 143 tools 29 entity types 11 reports 100% test coverage, XERO OFFICIAL 257 stars 49 tools payroll timesheets leave, PLAID OFFICIAL AI Toolkit Dashboard+Sandbox MCP servers OAuth developer-analytics-only NOT end-user data, ALPHA VANTAGE OFFICIAL 129 stars Progressive Tool Discovery stocks forex crypto commodities, EODHD OFFICIAL 77 tools 100+ docs v1 API key v2 OAuth, TRUTHIFI NEW commercial aggregator 18000+ institutions Fidelity Vanguard Schwab $79.99/year OAuth, JTEWEN/YNAB-MCP 10 stars 13 tools most featured YNAB now 10+ implementations, KEITHAH/MONARCHMONEY-TS-MCP 7 stars 70+ ops dynamic SDK discovery MCPB bundle MFA, FABIANONETTO/MCP-SERVER-FIREFLY-III NEW 7 stars 66 tools 100% API coverage created March 2026, LAZY-DINOSAUR/CCXT-MCP 82 stars risk management position sizing leverage 100x, TRAYDERS/TRAYD-MCP NEW Robinhood trading 24h extended hours, ALTFINS NEW commercial crypto 150+ indicators 15000+ coins 1000+ exchanges, STRIPE 25 tools stripe/ai monorepo, rating 4.0→4.5/5 fastest-maturing category)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Personal Finance MCP Servers** (`content/reviews/personal-finance-mcp-servers.md`) — 43 days since last refresh (March 15 → April 27)
+   - **Alpaca V2** — complete FastMCP rewrite. 519→683 stars (+32%), 43→50+ tools across 9 categories. Alpaca reported 4x API trading growth in Q1 2026 driven by AI.
+   - **Financial Datasets** — nearly tripled 715→2,000 stars. Now 10 tools. OAuth authentication added.
+   - **QuickBooks Official (Intuit)** — exploded from ~12→180 stars. Expanded from ~20 to 143 tools (29 entity types CRUD + 11 financial reports). 335 tests at 100% code coverage. QuickBooks Desktop being discontinued May 31, 2026.
+   - **Xero Official** — 257 stars, 49 tools including payroll (timesheets, employees, leave management).
+   - **Plaid Official AI Toolkit** — NEW. Launched Dashboard MCP Server + Sandbox MCP Server with OAuth. Critical caveat: only covers developer integration analytics, NOT end-user financial data. Community servers still needed for actual banking data.
+   - **Alpha Vantage Official** — NEW. 129 stars. Remote at mcp.alphavantage.co. Stocks, forex, crypto, commodities, technical indicators. Progressive Tool Discovery for token optimization.
+   - **EODHD Official** — NEW. 77 tools, 100+ documentation resources, 3 prompt templates. v1 (API key) and v2 (OAuth). Major update March 31, 2026.
+   - **Truthifi** — NEW commercial MCP aggregator. Connects to 18,000+ financial institutions including Fidelity, Vanguard, Schwab via OAuth. $79.99/year. Partially fills biggest gap from last review.
+   - **Jtewen/ynab-mcp** — NEW. 10 stars, 13 tools — now the most featured YNAB MCP server. YNAB implementations grew from 8 to 10+.
+   - **keithah/monarchmoney-ts-mcp** — NEW. 7 stars, 70+ operations via dynamic SDK method discovery. MCPB bundle, MFA/TOTP support, AES-256 session encryption, smart context management.
+   - **fabianonetto/mcp-server-firefly-iii** — NEW (created March 29, 2026). 7 stars, 66 tools, 100% Firefly III API coverage.
+   - **lazy-dinosaur/ccxt-mcp** — NEW. 82 stars. First crypto MCP with serious risk management: performance analytics, position sizing, leverage up to 100x, stop losses, daily loss limits.
+   - **trayders/trayd-mcp** — NEW. Robinhood trading with 24-hour extended hours and dual-source quotes.
+   - **altFINS** — NEW commercial crypto analytics MCP. 150+ pre-computed indicators, 15,000+ coins, 1,000+ exchanges.
+   - **Stripe** — now 25 tools, consolidated in stripe/ai monorepo.
+   - **IRS Taxpayer MCP** — updated April 9, 2026. Now supports TY2024+TY2025 (OBBB Act).
+   - Rating upgraded 4.0→4.5/5 — fastest-maturing MCP category with vendor participation accelerating across accounting, market data, and brokerage.
+
+2. **Hugo build** — successful (774ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Site at ~326 reviews, ~1,230 pages
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Stale March 15 reviews remaining: fashion, game engine, hospitality, insurance, logistics, manufacturing, news/media, nonprofit, photography, printing, publishing, sports
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 844 — 2026-04-27 — REFRESH Review: Legal & Contract Management MCP Servers (DOCUSIGN OFFICIAL MCP server mcp-d.docusign.com IAM platform beta, PANDADOC OFFICIAL MCP bundle documents templates contacts, CONCORD first CLM vendor with official MCP 3 tools workspace/document search + reports, CLIO 3+ community MCP servers lawyered0 lawquarter chlegal, Ansvar-Systems suite Dutch-law 3251 statutes US-law 130 federal statutes EU-compliance 61 regulations Greek-law 21119 statutes all remote endpoints daily freshness, UK coverage NEW uk-case-law-mcp-server 22 stars National Archives lex-api-mcp 219K acts 70K judgments 19 tools GovUK-MCP 24 tools parliament-mcp, riemannzeta/patent_mcp_server 54 stars 52 tools USPTO, NEW PatSnap MCP Google Patents MCP, Open Agreements 30 stars 40+ legal templates DOCX, eID Easy MCP 80+ qualified signature providers eIDAS, Corpo MCP 16 tools Wyoming DAO LLC AI agent entity formation, rating 3.5→4.0/5 vendor gap closing fast)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

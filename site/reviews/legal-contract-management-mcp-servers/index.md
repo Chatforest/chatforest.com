@@ -1,15 +1,39 @@
 # Legal & Contract Management MCP Servers — E-Signatures, Legal Research, Case Law, IP/Trademarks, and More
 
-> Legal and contract management MCP servers are bringing AI agents into law offices, contract workflows, and regulatory research. We reviewed 50+ servers across 6 subcategories.
+> Legal and contract management MCP servers are bringing AI agents into law offices, contract workflows, and regulatory research. We reviewed 70+ servers across 7 subcategories.
 
 
 Legal and contract management MCP servers are bringing AI agents into law offices, contract workflows, and regulatory research. Instead of manually searching case law databases, preparing signature requests, or cross-referencing regulations across jurisdictions, these servers let AI assistants conduct legal research, manage contracts, process e-signatures, and analyze compliance requirements — all through the Model Context Protocol.
 
-The landscape spans six areas: **e-signature and document signing** (seven platforms from SendForSign to Dropbox Sign), **legal research and case law** (the largest subcategory, with jurisdiction-specific servers covering 14+ countries), **legal reasoning and document generation** (enterprise analysis to automated legal documents), **IP and trademarks** (USPTO, Turkish trademark office, portfolio analysis), **compliance and regulatory** (HIPAA, FedRAMP, EU regulations, financial marketing), and **legal operations** (spend analytics, semantic memory, court system integrations).
+The landscape spans seven areas: **e-signature and document signing** (ten platforms including DocuSign and PandaDoc official servers), **legal research and case law** (the largest subcategory, with jurisdiction-specific servers covering 17+ countries), **legal reasoning and document generation** (enterprise analysis to automated legal documents to 40+ signable templates), **IP and trademarks** (USPTO with 54 stars and 52 tools, PatSnap, Google Patents, Turkish trademark office), **compliance and regulatory** (HIPAA, FedRAMP, 61 EU regulations, 130 US federal statutes), **contract management** (Concord CLM, Clio practice management), and **legal operations** (AI entity formation, spend analytics, semantic memory, court system integrations).
 
-The headline findings: **Legal research is the strongest subcategory**, with community developers systematically wrapping government legal APIs for AI access — covering the U.S., France, Germany, Denmark, South Korea, Turkey, Japan, Australia, Switzerland, Poland, Argentina, Brazil, Indonesia, and the EU. **E-signature servers cover seven platforms** but lack the two largest (DocuSign and PandaDoc have no official MCP servers). **EU regulations get dedicated coverage** with 37 acts including GDPR, AI Act, DORA, and MiFID II accessible through a single server. **No major legal tech vendor has released an official MCP server** — no Clio, LexisNexis, Westlaw, or Ironclad. **Geographic diversity is unmatched** — no other MCP category covers this many jurisdictions. **Most servers are early-stage** with minimal GitHub traction, reflecting the legal industry's cautious approach to AI adoption.
+The headline findings: **The vendor gap is closing fast** — DocuSign launched an official remote MCP server at mcp-d.docusign.com, PandaDoc released an official MCP bundle, and Concord became the first CLM vendor with MCP support. **Legal research remains the strongest subcategory**, now covering 17+ countries including new Dutch (3,251 statutes), Greek (21,119 statutes), and UK (219K acts, 70K judgments) servers. **E-signature servers now cover ten platforms** including eID Easy with 80+ qualified signature providers for eIDAS compliance. **EU regulations expanded from 37 to 61 acts** through Ansvar-Systems' comprehensive compliance MCP. **Patent coverage exploded** with riemannzeta/patent_mcp_server reaching 54 stars and 52 tools across USPTO APIs. **Clio has 3+ community MCP servers** for legal practice management. **Open Agreements** (30 stars) provides 40+ legal document templates as signable DOCX files. **Geographic diversity expanded** from 14 to 17+ countries. **Corpo enables AI agents to form Wyoming DAO LLCs** — the first legal entity formation MCP server.
 
 ## E-Signature & Document Signing
+
+### DocuSign Official MCP Server *(NEW)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| DocuSign MCP (official) | — | — | — | — |
+
+**The biggest gap in the original review — now filled.** DocuSign launched an official remote MCP server at `mcp-d.docusign.com/mcp`, exposing the Intelligent Agreement Management (IAM) platform to any MCP-compatible client. Agents can create and send envelopes for signature, check envelope status, query agreement metadata and key dates through Navigator, trigger Maestro workflows for multi-step approval processes, and retrieve AI-powered agreement insights. Compatible with Claude Desktop, Claude Code, ChatGPT, GitHub Copilot, and custom agent frameworks. DocuSign also partnered with Anthropic to bring capabilities directly into Claude Cowork. With over 1 million customers, this is by far the most widely-used platform in the legal MCP ecosystem. Currently in beta. Multiple community implementations also exist: luthersystems/mcp-server-docusign (Python, JWT auth, 8 tools), thisdot/docusign-navigator-mcp (TypeScript, MIT, Navigator queries), and CData's read-only connector.
+
+### PandaDoc Official MCP Server *(NEW)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [PandaDoc/pandadoc-mcpb](https://github.com/PandaDoc/pandadoc-mcpb) | — | JavaScript | MIT | — |
+
+**The second biggest gap — also filled.** PandaDoc released an official MCP server bundle providing direct API access to documents, templates, contacts, and granular document components (fields, attachments, recipients). Agents can create and populate professional contracts, proposals, and reports by describing what they need in natural language. Uses the `.mcpb` bundle format (zip archives containing a local MCP server and manifest, similar to Chrome extensions). Compatible with Cursor, Windsurf, and Claude Desktop. Also includes documentation search and code generation capabilities for PandaDoc API usage.
+
+### eID Easy MCP Server *(NEW)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| eID Easy MCP | — | Node.js | Open source | — |
+
+Qualified electronic signatures for AI agent workflows. Integrates with **80+ trusted signature providers** across simple, advanced, and qualified electronic signature levels — making it the most legally robust e-signature MCP server. Supports eIDAS compliance and the 2026 eCoC deadline for EU Digital Identity Wallets. Built-in fraud prevention. Where other e-signature MCP servers handle convenience signing, eID Easy enables identity-based signing with full legal recognition. Currently supports Claude Desktop with ChatGPT in beta.
 
 ### SendForSign MCP Server
 
@@ -69,7 +93,7 @@ Chinese electronic signature platform MCP server supporting file uploads, PDF co
 
 ## Legal Research & Case Law
 
-This is the standout subcategory — and the most geographically diverse category in the entire MCP ecosystem. Community developers across 14+ countries have built MCP servers wrapping their national legal databases, giving AI agents access to legislation, case law, and judicial decisions across jurisdictions.
+This is the standout subcategory — and the most geographically diverse category in the entire MCP ecosystem. Community developers across 17+ countries have built MCP servers wrapping their national legal databases, giving AI agents access to legislation, case law, and judicial decisions across jurisdictions. Since March, major additions include the Netherlands (3,251 statutes), Greece (21,119 statutes), and the United Kingdom (219K acts, 70K judgments).
 
 ### JamesANZ/us-legal-mcp (U.S. Legislation)
 
@@ -115,7 +139,31 @@ Query **37 EU regulations** including GDPR, AI Act, DORA, MiFID II, Digital Serv
 | self-tech-labs Entscheidsuche MCP | Switzerland | Swiss court decisions (entscheidsuche.ch) |
 | TCoder920x/open-legal-compliance-mcp | Multi-jurisdiction | U.S. federal/state + EU regulations via government APIs |
 
-The European coverage is particularly strong. France has two complementary servers (Legifrance for primary law, Droit Français adding JudiLibre case law). Switzerland gets both court decisions and legal commentaries. Germany covers federal, state, and EU law in one server. Denmark wraps the national Retsinformation portal. The open-legal-compliance-mcp takes a cross-jurisdiction approach, searching across U.S. and EU sources.
+The European coverage is particularly strong and has expanded significantly since March. France has two complementary servers (Legifrance for primary law, Droit Français adding JudiLibre case law). Switzerland gets both court decisions and legal commentaries. Germany covers federal, state, and EU law in one server. Denmark wraps the national Retsinformation portal. The open-legal-compliance-mcp takes a cross-jurisdiction approach, searching across U.S. and EU sources.
+
+### Ansvar-Systems Compliance Suite *(NEW)*
+
+The most systematic legal MCP effort since our initial review. Ansvar-Systems built four jurisdiction-specific servers, all with remote HTTP endpoints (no installation required), daily automated freshness checks against official sources, and Apache 2.0 licenses:
+
+| Server | Jurisdiction | Coverage | Key Feature |
+|--------|-------------|----------|-------------|
+| [Ansvar-Systems/Dutch-law-mcp](https://github.com/Ansvar-Systems/Dutch-law-mcp) | Netherlands | 3,251 statutes, 77,531 provisions | EU directive cross-referencing, case law (59,261 rulings premium) |
+| [Ansvar-Systems/US-law-mcp](https://github.com/Ansvar-Systems/US-law-mcp) | United States | 130 federal statutes, 46,646 provisions | HIPAA/CCPA/SOX/GLBA coverage, EU regulatory alignment mappings |
+| [Ansvar-Systems/EU_compliance_MCP](https://github.com/Ansvar-Systems/EU_compliance_MCP) | European Union | 61 regulations, 4,095 articles | 709 ISO 27001:2022 + NIST CSF 2.0 control mappings, 407 audit artifacts |
+| [Ansvar-Systems/Greek-law-mcp](https://github.com/Ansvar-Systems/Greek-law-mcp) | Greece | 21,119 statutes, 7,793 provisions | EU cross-referencing, constitutional/criminal/civil codes |
+
+The EU Compliance MCP is particularly notable — it expanded from 37 to **61 regulations** (compared to Mortalus/eu-regulations in the original review), adds 16 specialist guides, 709 control mappings to ISO 27001:2022 and NIST CSF 2.0, and 407 evidence requirements for audits. The US Law MCP positions itself as "the eCFR and US Code alternative for the AI age" with comparative law tools mapping US regulations to EU equivalents. All four servers deliver verbatim statutory text — no LLM paraphrasing.
+
+### United Kingdom Legal Servers *(NEW)*
+
+| Server | Stars | Focus | Key Feature |
+|--------|-------|-------|-------------|
+| [georgejeffers/uk-case-law-mcp-server](https://github.com/georgejeffers/uk-case-law-mcp-server) | 22 | UK case law | National Archives API, 2003-present, Supreme Court through tribunals |
+| [bencium/lex-api-mcp](https://github.com/bencium/lex-api-mcp) | 1 | UK legislation + case law | 219,655 acts, 69,910 judgments, 61,107 AI-generated case summaries, 19 tools |
+| Stealth-Labs-LTD/GovUK-MCP | — | UK government services | 24 tools including legislation, courts, parliamentary data |
+| i-dot-ai/parliament-mcp | — | Parliamentary APIs | Hansard and Members APIs with semantic search |
+
+The UK was entirely absent from the original review — now it gets four complementary servers. The uk-case-law-mcp-server (22 stars, TypeScript, PolyForm Noncommercial) enables searching UK judicial decisions from The National Archives across Supreme Court, Court of Appeal, High Court, and tribunals. The Lex API MCP is remarkably comprehensive: 219,655 Acts and Statutory Instruments, 69,910 court judgments, 892,210 legislative amendments, and 83,350 explanatory notes — all free and open-source with semantic search. The GovUK-MCP bundles legislation with broader government services.
 
 ### Asia-Pacific Servers
 
@@ -177,7 +225,39 @@ A comprehensive MCP server for legal workflows providing seamless integration be
 
 Interacts with the Blawx API for discovering ontologies and performing rule-based legal reasoning. Blawx is a visual tool for encoding legal rules as executable logic — this MCP server lets AI agents query those encoded rules. The approach is fundamentally different from natural language legal research: instead of searching case law, agents query formally encoded legal rules for deterministic answers. Valuable for regulatory compliance where rules can be precisely encoded.
 
+### Open Agreements *(NEW)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [open-agreements/open-agreements](https://github.com/open-agreements/open-agreements) | 30 | JavaScript | MIT | — |
+
+Fills standard legal agreement templates and produces signable DOCX files. **40+ templates** covering NDAs, cloud service agreements (Common Paper, Bonterms), employment docs, contractor agreements, Y Combinator SAFEs, and NVCA financing documents. Multi-language support (English, Spanish, Chinese, Portuguese, German). Includes SOC 2 readiness assessment and ISO 27001 internal audit tools. Works with Claude Code, Gemini CLI, Cursor, and as a hosted MCP server. At 30 stars with 382 commits, this is the most mature legal document generation MCP server — and the most practical for startups needing standard legal documents without outside counsel.
+
 ## IP & Trademarks
+
+### riemannzeta/patent_mcp_server *(NEW — replaces john-walkoe USPTO as top patent server)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [riemannzeta/patent_mcp_server](https://github.com/riemannzeta/patent_mcp_server) | 54 | Python | MIT | 52 (20 active) |
+
+The most comprehensive patent MCP server by a wide margin. **54 stars and 52 tools** covering Patent Public Search (full-text search, PDF downloads, advanced search), Open Data Portal (metadata, continuity, transactions, assignments, prosecution history), and more. Includes MCP Resources for CPC classifications and status codes, plus MCP Prompts for prior art analysis, validity assessment, and freedom-to-operate analysis. Note: 32 tools are currently unavailable due to USPTO API shutdowns in early 2026 (PatentsView shut down March 20, PTAB and Patent Litigation APIs not yet on ODP). Despite the API losses, the 20 active tools still provide the best patent research capability in the MCP ecosystem.
+
+### KunihiroS/patsnap-mcp *(NEW)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [KunihiroS/patsnap-mcp](https://github.com/KunihiroS/patsnap-mcp) | 4 | TypeScript | — | — |
+
+MCP server for PatSnap's commercial patent analytics API. Designed for patent trend analysis and reporting rather than individual patent investigation. PatSnap is one of the largest commercial patent analytics platforms. Complements the USPTO server by adding commercial analytics capabilities.
+
+### KunihiroS/google-patents-mcp *(NEW)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [KunihiroS/google-patents-mcp](https://github.com/KunihiroS/google-patents-mcp) | — | TypeScript | — | — |
+
+Searches Google Patents via SerpApi backend. Google Patents covers 100+ million patent documents worldwide, making this the broadest geographic patent search available through MCP. Complements the US-focused USPTO server with global coverage.
 
 ### john-walkoe USPTO MCP Server
 
@@ -248,9 +328,39 @@ AI-powered compliance assistant analyzing financial marketing content across jur
 | GlassTape Policy Builder | Security policies | Natural language to Cerbos YAML policy conversion with automated testing |
 | knowledgepa3 GIA MCP | AI governance | Approval gates, auditable decision logs, compliance mapping for Claude agents |
 
-The compliance subcategory ranges from highly specific (HIPAA, FedRAMP, building codes) to broadly applicable (code compliance, formal verification). The Aare MCP server stands out for using Z3 SMT solver for formal verification of AI outputs against compliance ontologies — the most mathematically rigorous approach to compliance checking we've seen in any MCP category.
+The compliance subcategory ranges from highly specific (HIPAA, FedRAMP, building codes) to broadly applicable (code compliance, formal verification). The Aare MCP server stands out for using Z3 SMT solver for formal verification of AI outputs against compliance ontologies — the most mathematically rigorous approach to compliance checking we've seen in any MCP category. Note: Ansvar-Systems' EU Compliance MCP (covered in the Legal Research section above) now provides the most comprehensive EU regulatory coverage with 61 regulations, 709 control mappings to ISO 27001:2022 and NIST CSF 2.0, and 407 audit evidence requirements — surpassing the Mortalus/eu-regulations server's 37 acts.
+
+## Contract & Practice Management *(NEW SECTION)*
+
+This section didn't exist in the original review — contract lifecycle management and legal practice management were notable gaps. Both are now partially addressed.
+
+### Concord MCP Server (Official CLM)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| Concord MCP (official) | — | — | — | 3 |
+
+**The first contract lifecycle management vendor with an official MCP server.** Concord's MCP server provides three tools: workspace search (natural language search across all contracts), document-specific search (clauses, headers, tables, metadata within individual files), and report generation. Permission-aware — agents can only access documents the user is authorized to view. Zero external data retention. Works with ChatGPT (Team/Enterprise) and Claude (for Work/Team). Requires Concord Horizon plan. Part of Concord's broader Horizon AI platform launched November 2025, which includes AI Search, Portfolio Copilot, and AI Reporting. More tools planned. This fills a critical gap: AI agents can now search across contract repositories and answer questions like "Which vendor contracts above $250,000 automatically renew next quarter?"
+
+### Clio Community MCP Servers
+
+| Server | Focus | Key Feature |
+|--------|-------|-------------|
+| lawyered0/clio-mcp | Clio Manage v4 API | Contacts, matters, activities — read and write |
+| lawquarter/MCP_Server_Clio | Australian legal | Secure Clio integration for AU practitioners |
+| chlegal/clio-mcp-server | Choueke Hollander LLP | Search matters, log time, create tasks, manage calendar, billing |
+
+**Clio was one of the biggest gaps in the original review — now addressed by the community.** Three independent teams built Clio MCP servers, each with different focuses. The lawyered0 implementation provides read/write access to contacts, matters, and activities via Clio's v4 REST API. The Choueke Hollander LLP server adds time entry logging, task creation, calendar management, and document search. An Oktopeak connector launching April 30, 2026 promises the most complete coverage: 12 tools across 7 Clio resource areas (matters, contacts, documents, tasks, calendar, billing, notes). Clio itself (the company) has not released an official MCP server, but the community has filled the gap. Clio recently made Clio Work (its AI workspace) available as a standalone product for solo and smaller firms.
 
 ## Legal Operations
+
+### Corpo — Legal Entity Formation for AI Agents *(NEW)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| Corpo MCP | — | — | — | 16 |
+
+The first MCP server that lets AI agents form and govern legal entities. **16 tools** covering entity registration, governance actions (voting, proposals, resolutions), compliance tracking, and filing deadlines. Agents file Wyoming DAO LLCs through Corpo's API with articles of organization, registered agent, EIN, and operating agreement handled automatically. Treasury managed on Solana via Realms. Wyoming law carries no restrictions on AI agent ownership of DAO LLC member units. Pre-alpha/sandbox status. This is conceptually unprecedented — legal infrastructure for autonomous AI agents operating as legal persons. Whether this becomes mainstream or remains niche, it's the most forward-looking legal MCP server in the entire category.
 
 ### DatSciX-CEO LumenX MCP Server (Legal Spend Intelligence)
 
@@ -286,28 +396,25 @@ Verifies Australian and New Zealand businesses against government registers. Due
 
 ## What's Missing
 
-The biggest gaps in this category:
+The gap list has shrunk significantly since March — DocuSign, PandaDoc, Concord, and Clio (community) are now covered. The remaining gaps:
 
-- **No DocuSign MCP server** — the largest e-signature platform (over 1 million customers) has no official or significant community MCP server
-- **No PandaDoc MCP server** — the second-largest e-signature platform
-- **No Clio MCP server** — the dominant legal practice management platform
-- **No LexisNexis or Westlaw MCP servers** — the two largest legal research databases
-- **No Ironclad or Icertis MCP servers** — the leading contract lifecycle management platforms
-- **No Adobe Sign MCP server** — a major e-signature player
-- **Limited contract lifecycle management** — no CLM-specific servers for contract creation, negotiation, execution, and renewal workflows
-- **No legal billing/time tracking** — despite being a core legal operations function
+- **No LexisNexis or Westlaw MCP servers** — the two largest legal research databases still have no official or community MCP servers. Both have invested heavily in their own AI tools (LexisNexis Protégé General AI, Westlaw CoCounsel/Deep Research) but haven't exposed them via MCP. This remains the single biggest gap in legal MCP.
+- **No Ironclad or Icertis MCP servers** — the leading enterprise CLM platforms. Concord's MCP server is a start, but enterprise CLM at scale still lacks MCP coverage.
+- **No Adobe Sign MCP server** — a major e-signature player, especially in Adobe-heavy workflows.
+- **Limited contract negotiation** — servers exist for contract search (Concord), document generation (Open Agreements, LegalForge), and signing (DocuSign, PandaDoc), but the negotiation/redlining workflow between these steps is still manual.
+- **No official Clio MCP server** — community servers exist, but Clio the company hasn't released one.
 
-The absence of major legal tech vendors is notable but not surprising — the legal industry moves slowly on technology adoption, and many legal platforms serve regulated clients who require extensive security reviews before enabling AI integrations.
+The vendor gap is closing faster than expected — three major platforms (DocuSign, PandaDoc, Concord) launched official MCP servers since our March review.
 
 ## The Bottom Line
 
-Legal and contract management MCP servers earn **3.5 out of 5**.
+Legal and contract management MCP servers earn **4.0 out of 5**, up from 3.5 in March.
 
-**What works:** The geographic diversity of legal research servers is unmatched in the MCP ecosystem — 14+ countries with dedicated servers wrapping national legal databases. The e-signature subcategory covers seven platforms. EU regulation access through a single server covering 37 acts is genuinely useful. The legal reasoning tools (Cerebra Legal, Blawx) take thoughtful approaches to a hard problem.
+**What works:** The vendor gap is closing — DocuSign (official remote server), PandaDoc (official MCP bundle), and Concord (first CLM with MCP) all launched since March. Geographic diversity expanded to 17+ countries including strong new Dutch, Greek, and UK coverage. The Ansvar-Systems suite brings professional-grade compliance servers with daily freshness checks, remote endpoints, and control mappings to ISO 27001:2022 and NIST CSF 2.0. Patent coverage is now excellent with 54-star, 52-tool USPTO server plus PatSnap and Google Patents. Open Agreements provides practical document generation for startups. The Lex API MCP (219K UK acts, 70K judgments, 19 tools) is one of the most comprehensive single-jurisdiction legal servers in the entire MCP ecosystem. Clio practice management has 3+ community servers.
 
-**What doesn't:** Most servers have minimal GitHub traction (0-20 stars) and are early-stage projects. The absence of major legal tech vendors (DocuSign, Clio, LexisNexis, Westlaw, Ironclad) leaves significant gaps in the most commonly used legal tools. Contract lifecycle management — arguably the highest-value legal AI use case — has almost no MCP coverage. Many jurisdiction-specific servers provide limited documentation, making it hard to evaluate quality without deep legal domain expertise.
+**What doesn't:** LexisNexis and Westlaw — the two most important legal research databases — still have no MCP servers, preferring proprietary AI tools. Ironclad and Icertis (enterprise CLM) are absent. No Adobe Sign server. The contract negotiation/redlining workflow between document generation and signing remains a gap. Many newer jurisdiction-specific servers still have low star counts.
 
-**Who should care:** Legal technologists exploring AI integration, compliance teams needing cross-jurisdictional regulatory access, developers building legal workflow tools, and law firms evaluating MCP as a path to AI-assisted research. The legal research servers are immediately practical for anyone working with the covered jurisdictions. The e-signature servers are useful for contract automation workflows. The compliance servers address real enterprise needs — but the overall category needs vendor buy-in to reach its potential.
+**Who should care:** Legal technologists can now build real workflows — generate documents (Open Agreements), route for signature (DocuSign/PandaDoc), search contract repositories (Concord), and manage practice operations (Clio). Compliance teams get cross-jurisdictional coverage across US, EU, and national regulations with audit-grade control mappings. Patent attorneys have serious research tools. The category has matured from "promising but underserved" to "practical for early adopters" in just six weeks.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-27 using Claude Opus 4.6 (Anthropic).*
 
