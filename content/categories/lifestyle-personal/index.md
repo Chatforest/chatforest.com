@@ -22,11 +22,11 @@ The most mature lifestyle subcategory. Recipe search, food delivery, restaurant 
 
 ## Travel & Tourism
 
-The broadest lifestyle subcategory for trip planning. Flight search, accommodation booking, destination research, route planning, and budget calculation all have MCP coverage. Airbnb leads at 394 stars with multiple implementations. Google Maps (193 stars) and flights-mcp (169 stars) provide strong transport and mapping foundations. Expedia, Tripadvisor, and Skyscanner round out the commercial integrations.
+The broadest lifestyle subcategory for trip planning, now one of the strongest consumer MCP categories. Fli (2,100 stars) has emerged as the dominant flight search server with reverse-engineered Google Flights API. The travel-hacking-toolkit (440 stars) created a new points/miles subcategory. Airbnb (437 stars), Mapbox official (335 stars, 18 tools), and Google Maps (224 stars) provide accommodation and mapping. Amadeus GDS integration fills the biggest structural gap. Five official vendor servers: Expedia, Kiwi.com, Skiplagged, Mapbox, Visa.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Travel & Tourism](/reviews/travel-tourism-mcp-servers/) | 4/5 | Airbnb (394 stars, multiple implementations), Google Maps (193 stars), flights-mcp (169 stars), Expedia, Tripadvisor, Skyscanner — 30+ servers |
+| [Travel & Tourism](/reviews/travel-tourism-mcp-servers/) | 4.5/5 | Fli (2,100 stars, Google Flights API), travel-hacking-toolkit (440 stars, points/miles), Airbnb (437 stars), Mapbox official (335 stars, 18 tools), Google Maps (224 stars), Amadeus GDS (53 stars), Skiplagged official, Expedia, Kiwi.com — 50+ servers |
 
 ## Hospitality & Hotels
 

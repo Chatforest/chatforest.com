@@ -11923,3 +11923,56 @@ Build successful (1,230 pages), deployed, committed, inbox report sent. Stale re
 2026-04-27T01:07:45Z SESSION 1772 stopped
 2026-04-27T01:52:01Z STARTED run 695915 (mode=wild)
 2026-04-27T01:52:03Z SESSION 1773 started
+2026-04-27T02:06:44Z FINISHED run 695915
+2026-04-27T02:06:45Z SESSION 1773 stopped
+2026-04-27T02:53:01Z STARTED run 712288 (mode=wild)
+2026-04-27T02:53:02Z SESSION 1774 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CaTX6pvZ5MD7FLEqejkD3"}
+2026-04-27T02:53:18Z FINISHED run 712288
+2026-04-27T02:53:19Z SESSION 1774 stopped
+2026-04-27T03:53:01Z STARTED run 728075 (mode=wild)
+2026-04-27T03:53:02Z SESSION 1775 started
+**Run 855 complete.** Refreshed the Publishing & Typesetting MCP Servers review (43 days stale).
+
+**Key changes:**
+- **Typst MCP** (144 stars) — biggest gap fill, modern LaTeX alternative now has MCP coverage
+- **AffinityMCP** (18 stars, Rust) — second gap fill, Affinity Publisher no longer missing
+- **OverleafMCP** surged 73→110 stars (+51%), plus 2 new Overleaf servers
+- **markdownify-mcp** 2,400→2,600 stars, v1.0.4
+- **Apple Books MCP** v0.7.3 with chapter position tracking
+- **Rating upgraded 3.5→4/5**
+- Also fixed Photography mega-comparison entry (3.5→4/5 from Run 853)
+
+Build (1,230 pages), deploy, commit, and inbox report all done. Next run: sports reviews.
+2026-04-27T04:05:20Z FINISHED run 728075
+2026-04-27T04:05:21Z SESSION 1775 stopped
+2026-04-27T04:54:01Z STARTED run 745505 (mode=wild)
+2026-04-27T04:54:02Z SESSION 1776 started
+**Run 856 complete.** Here's the summary:
+
+**REFRESHED: Sports & Fitness MCP Servers** (43 days since initial review)
+
+Key changes:
+- **Oura Ring gap filled** — went from zero to 22 implementations (biggest gap fill)
+- **Garmin surged 270→407 stars** (+51%), plus a new 114-star TypeScript alternative
+- **Strava grew to 357 stars** (+30%) with active v1.2.1 development
+- **New endurance platforms**: TrainingPeaks (58 tools), COROS (15 tools), Intervals.icu (48 tools)
+- **Nutrition gap filled**: Cronometer MCP + MacroFactor (28 tools)
+- **Two official first-party servers launched**: PGA of America + MySwimPro — breaking the all-community pattern
+- **World Cup 2026 MCP** (18 tools, HN featured)
+- **Cricket analytics deepened**: 28 tools, 10.9M ball-by-ball deliveries
+- **Rating: 4.0 → 4.5/5**
+
+Build successful, deployed, committed, pushed, run report sent.
+2026-04-27T05:11:09Z FINISHED run 745505
+2026-04-27T05:11:10Z SESSION 1776 stopped
+2026-04-27T05:54:01Z STARTED run 761540 (mode=wild)
+2026-04-27T05:54:03Z SESSION 1777 started
+Deploy complete. Run 857 fully done — site is live at chatforest.com with the refreshed Sports & Athletics review.
+2026-04-27T06:09:28Z FINISHED run 761540
+2026-04-27T06:09:30Z SESSION 1777 stopped
+2026-04-27T06:54:01Z STARTED run 777806 (mode=wild)
+2026-04-27T06:54:02Z SESSION 1778 started
+2026-04-27T07:55:01Z STALE LOCK removed (older than 30min)
+2026-04-27T07:55:01Z STARTED run 793902 (mode=wild)
+2026-04-27T07:55:02Z SESSION 1779 started

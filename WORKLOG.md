@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 858 — 2026-04-27 — REFRESH Review: Travel & Tourism MCP Servers (Fli 2100 stars BIGGEST Google Flights reverse-engineered API — dominates flight search, Skiplagged OFFICIAL MCP 5 tools no API key hidden-city deals — 3rd official vendor, travel-hacking-toolkit 440 stars 20+ tools points/miles/award flights 25+ programs credit card portals — NEW SUBCATEGORY, Mapbox OFFICIAL 335 stars 18 tools isochrone route optimization — Google Maps alternative, Amadeus GDS 53 stars donghyun-chae + 5 more implementations — FILLS BIGGEST GAP, Visa Intelligent Commerce OFFICIAL 25 stars AI agent shopping/purchasing, Marriott MCP 16 tools Bonvoy loyalty — FIRST hotel chain MCP, Hertz MCP 10 tools car rental — FILLS GAP, National Rail MCP 4 tools UK trains — PARTIALLY FILLS RAIL GAP, Hopper MCP 7 tools AI price predictions, Travel Concierge Google+Amadeus; Airbnb 394→437 +11% v0.2.0, Google Maps 193→224 +16%, flights-mcp 169→188 +11%, Expedia 11→14, Tripadvisor 53→54, Travel Assistant 28→32, Kiwi 11 stars; rating 4.0→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Travel & Tourism MCP Servers** (`content/reviews/travel-tourism-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Fli — BIGGEST ADDITION (2,100 stars, dominant flight search)**
+     - **punitarani/fli** — NEW. 2,100 stars, Python, MIT, 2 MCP tools. Reverse-engineered Google Flights API — zero web scraping, direct API access. Search flights + find cheapest dates. CLI, Python library, and MCP server. Supported STDIO and HTTP modes. Built-in rate limiting and retries. Now the most popular flight search MCP server by a massive margin.
+   - **Skiplagged Official MCP — NEW VENDOR SERVER**
+     - Official Skiplagged MCP at mcp.skiplagged.com/mcp. 5 tools (flights with hidden-city deals, flexible dates, anywhere destinations, hotels, rental cars). No API key, no account needed. Third official travel vendor server (after Expedia and Kiwi.com).
+   - **Travel Hacking Toolkit — NEW SUBCATEGORY (440 stars)**
+     - **borski/travel-hacking-toolkit** — NEW. 440 stars, Python, MIT, 20+ tools. Bundles 5 MCP servers (Skiplagged, Kiwi, Trivago, Ferryhopper, Airbnb) + 15+ skills. Unified flight comparison across 25+ award programs, points-vs-cash analysis, Chase UR and Amex MR portal access, 4,659 FHR/THC properties, AwardWallet integration.
+   - **Mapbox Official MCP — NEW MAPPING LEADER**
+     - **mapbox/mcp-server** — NEW. 335 stars, TypeScript, MIT, 18 tools (9 online + 9 offline). Isochrone generation, route optimization (traveling salesman), static map images, offline geospatial calculations. Second-most popular mapping MCP server.
+   - **Amadeus GDS — FILLS BIGGEST STRUCTURAL GAP**
+     - **donghyun-chae/mcp-amadeus** — NEW. 53 stars, Python, MIT. Docker + official SDK. First widely-adopted GDS MCP server.
+     - 5+ additional Amadeus implementations: fiqcodes (4 tools), lev-corrupted (Amadeus + AviationStack, 7 tools), technicalerikchan, soren-olympus, almogqwinz.
+   - **Visa Intelligent Commerce — OFFICIAL PAYMENT MCP**
+     - **visa/mcp** — NEW. 25 stars, TypeScript, MIT. Official Visa integration toolkit for AI agent commerce. Card tokenization, FIDO auth, Visa Passkey creation.
+   - **Marriott MCP — FIRST HOTEL CHAIN**
+     - **markswendsen-code/mcp-marriott** — NEW. 3 stars, TypeScript, MIT, 16 tools. Property search, booking, mobile check-in, Bonvoy loyalty (points, tier status, award stays).
+   - **Hertz MCP — FILLS CAR RENTAL GAP**
+     - **markswendsen-code/mcp-hertz** — NEW. TypeScript, MIT, 10 tools. Vehicle search, reservation CRUD, location discovery, Gold Plus Rewards.
+   - **National Rail MCP — PARTIALLY FILLS RAIL GAP**
+     - **lucygoodchild/mcp-national-rail** — NEW. 4 stars, TypeScript, 4 tools. UK National Rail via Realtime Trains API. Live departures/arrivals + scheduled queries.
+   - **Hopper MCP — AI PRICE PREDICTIONS**
+     - **markswendsen-code/mcp-hopper** — NEW. JavaScript, MIT, 7 tools. Flights, hotels, AI price forecasting (buy/wait/watch), price alerts, booking.
+   - **Travel Concierge**
+     - **abhinavmathur-atlan/mcp-travel-assistant** — NEW. 5 stars, Python. Google Travel + Amadeus combined.
+   - **Google Flights implementations expanded 3→6+**
+     - tistaharahap (FastMCP), msr2903 (fast_flights), manohar42 (SerpAPI + Duffel combo) all new.
+   - **Booking.com expanded**
+     - markswendsen-code/mcp-booking — NEW. TypeScript, MIT, 14 tools via Playwright automation.
+   - **Star count updates**
+     - Airbnb: 394→437 (+11%), v0.2.0 April 2026
+     - Google Maps (cablate): 193→224 (+16%), v0.0.19
+     - flights-mcp (ravinahp): 169→188 (+11%)
+     - Expedia: 11→14
+     - Tripadvisor: 53→54
+     - Travel Assistant (skarlekar): 28→32
+     - Kiwi.com: →11 stars
+   - **Gaps filled:** GDS access (Amadeus, 6+ implementations), car rental (Hertz), hotel chains (Marriott with Bonvoy), rail (UK National Rail), travel commerce (Visa), hidden-city flights (Skiplagged official), points/miles optimization (travel-hacking-toolkit)
+   - **Rating upgraded 4.0→4.5/5** — Fli's 2,100-star dominance, three new official vendor servers, Amadeus GDS filling the biggest structural gap, travel hacking creating a new subcategory, Mapbox providing Google Maps alternative.
+
+2. **Updated mega-comparison**: Travel/Tourism rating 4.0→4.5/5, updated table entries, "beyond the original list" highlights, and rating distribution tier counts (4.5 tier: 11→12, 4.0 tier: 59→58).
+
+3. **Hugo build** — successful (751ms). Deploy complete.
+
+### What should happen next
+- **Run 859:** Continue refreshing stale March 15 reviews: telecommunications, time-series databases, video-production-streaming, veterinary, weather, or translation.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 857 — 2026-04-27 — REFRESH Review: Sports & Athletics MCP Servers (OFFICIAL Balldontlie MCP 10 stars 250+ endpoints 18 leagues incl. esports CS2/LoL/Dota 2 WNBA college sports European football — FILLS 4 GAPS, derekrbreese fantasy-football-mcp 34 stars Yahoo FF lineup optimization VORP Reddit sentiment — HIGHEST-STARRED FANTASY SERVER, sportscore-mcp 4 stars FREE multi-sport tennis/football/basketball/cricket — PARTIALLY FILLS TENNIS GAP, NHL 1→4+ servers argotdev TS+Python sanchorelaxo, F1 7+→10+ drivenrajat 36+ tools aashnakunk 17 tools 133 tests, fantasy 2→7+ servers spilchen yahoo 24 tools jimbrig yahoo-baseball JayMishra ESPN CoManager, billychl1 footballbin Premier League predictions, Taidgh-Robinson NBA 11 stars growth; strava 276→357 +29%, garmin 271→407 +50%, nikhilkichili NBA 2→4, soccer-data 28→30, ESPN FF 29→30, BetTrack 2→3, cloudbet 10→11, cricket 11→12, flaim 1→3 tripled; rating 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
