@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 863 — 2026-04-28 — REFRESH Review: Translation & Localization MCP Servers (DeepL 95→102 stars +7%, Crowdin Copilot LAUNCHED April 2026 Ask Agent + Task Agent AI orchestration Custom Agents MCP integration GitHub GitLab Slack Notion Linear ambiguity resolution, Phrase 65→96 tools +48% v0.5.1 BIGGEST TOOL EXPANSION, Lara Translate v1.0.1 OAuth 2.0 42 commits, Intlayer 627→699 stars +11% 5714 commits, NEW SimpleLocalize official 14 tools Apache-2.0 bulk keys TMS, NEW IntlPull commercial 8 tools branch management platform overrides, NEW dalisys/i18n-mcp 10 stars 16 tools multi-framework hardcoded string detection TypeScript type generation, NEW smartling/smartling-cli-mcp official Docker CLI wrapper 3 tools 38 commits, Lokalise official closed beta February 2026, Smartling community 2 new tools; Google Cloud Translation STILL NO dedicated MCP despite 30+ managed servers; subtitle gap partially filled by Video Caption MCP + Reap; 25+→30+ servers; rating 3.5→4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Translation & Localization MCP Servers** (`content/reviews/translation-localization-mcp-servers.md`) — 44 days since initial review (March 15 → April 28)
+   - **Crowdin Copilot — MAJOR LAUNCH (April 1, 2026)**
+     - AI orchestration platform going beyond translation into full localization management.
+     - Ask Agent — read-only companion for project stats, string status, TM exploration, reports.
+     - Task Agent — read+write access for creating tasks, triggering pre-translation, uploading files, managing workflows with confirmation prompts.
+     - Custom Agents — tailored system prompts for specialized roles.
+     - MCP integration with GitHub, GitLab, Slack, Notion, Linear, PostHog, Sentry.
+     - Ambiguity resolution — collects flags, identifies patterns, synthesizes minimum questions for maximum ambiguity resolution.
+     - Available in Crowdin Store.
+   - **Phrase — BIGGEST TOOL EXPANSION (+48%)**
+     - 65→96 tools in v0.5.1 (April 24, 2026).
+     - Phrase Strings: 47→66 tools. Phrase TMS: 18→30 tools.
+     - 104→141 commits (+36%).
+   - **SimpleLocalize — NEW OFFICIAL TMS**
+     - simplelocalize/simplelocalize-mcp-server. 0 stars, TypeScript, Apache-2.0, 24 commits, 14 tools.
+     - Bulk key creation, translation updates, tag admin, language config, hosting management.
+   - **IntlPull — NEW COMMERCIAL TMS**
+     - @intlpullhq/mcp-server. 8 tools. translate_strings, create_translation_key, search, download/upload, glossary_lookup, tm_search.
+     - Branch management for feature development, platform-specific overrides (iOS/Android/Web).
+   - **dalisys/i18n-mcp — NEW MULTI-FRAMEWORK i18n**
+     - 10 stars, TypeScript, 13 commits, 16 tools across 5 categories.
+     - Hardcoded string detection, TypeScript type generation, real-time file watching, unused translation cleanup.
+     - Supports React, Vue, Svelte, Angular.
+   - **Smartling Official CLI MCP — NEW**
+     - smartling/smartling-cli-mcp. 0 stars, JavaScript, 38 commits, March 2026.
+     - Docker-based CLI wrapper. Routes through customer's preferred NMT/LLM.
+   - **Lokalise Official — CLOSED BETA (February 2026)**
+     - Separate from AbdallahAHO's community server (still 4 stars, 118 commits).
+   - **Lara Translate v1.0.1** — OAuth 2.0 support added, 42 commits, 79→80 stars.
+   - **DeepL**: 95→102 stars (+7%).
+   - **Intlayer**: 627→699 stars (+11%), 5,207→5,714 commits (+10%).
+   - **Smartling community**: 2 new tools (Get Available Accounts, List File Jobs).
+   - **Google Cloud Translation**: STILL no dedicated MCP server despite Google offering 30+ managed MCP servers. Blog post on multilingual chatbots is architecture pattern, not standalone server. Gap persists.
+   - **Transifex**: Still no MCP server. Gap persists.
+   - **Mozilla Pontoon**: Still no MCP server. Gap persists.
+   - **Subtitle/caption localization**: Partially addressed by Video Caption MCP and Reap MCP in video category.
+   - **Rating upgraded 3.5→4.0/5** — Crowdin Copilot AI orchestration, Phrase's 48% tool expansion, three new TMS entrants, and dalisys/i18n-mcp represent meaningful maturation.
+
+2. **Updated mega-comparison**: Translation entry in best-mcp-servers.md (Crowdin Copilot, Phrase 96 tools, dalisys/i18n-mcp added), education-learning category index. Rating updated 3.5→4.0/5.
+
+3. **Hugo build** — successful (754ms). Deploy complete.
+
+### What should happen next
+- **Run 864:** Continue refreshing stale March reviews: veterinary, logistics/supply-chain, video-conferencing, or accessibility.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 862 — 2026-04-27 — REFRESH Review: Video Production & Streaming MCP Servers (Runway Official MCP runwayml/runway-api-mcp-server 16 stars Gen-4.5 native audio multi-shot character-consistent 1-min video — FIRST OFFICIAL AI VIDEO GEN MCP, HeyGen MAJOR UPGRADE Avatar V 4K upscaling HyperFrames open-source HTML-to-MP4 Video Agent 100+ styles Claude Code Skills Brand System — MOST INTEGRATED VIDEO PLATFORM, short-video-maker 799+ stars TikTok/Reels/Shorts automated creation — NEW SUBCATEGORY, agentic-obs 69 tools 8 groups Claude Skills TUI+Web dashboard screenshot monitoring — NEW OBS LEADER, sbroenne/mcp-server-obs .NET 10 VS Code extension, Mux Remote MCP hosted mcp.mux.com OAuth no local install, Vimeo AI API 9 new endpoints transcription subtitle translation audio dubbing, AITuber MCP 1300+ voices 27+ visual styles full pipeline, Video Caption MCP 99+ languages Whisper+Qwen fills caption translation gap, InVideo Sora 2 + Veo 3.1 built in Money Shot e-commerce, YouTube 490→502 stars Google Workspace MCP at Cloud Next 2026 but STILL NO YouTube MCP; OBS 1→4+ implementations; rating upgraded 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

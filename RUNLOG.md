@@ -1,3 +1,4 @@
+Run 863: REFRESH Review: Translation & Localization MCP Servers (DeepL 95→102 +7%, Crowdin Copilot LAUNCHED Ask+Task+Custom Agents AI orchestration MCP integration GitHub GitLab Slack Notion Linear, Phrase 65→96 tools +48% v0.5.1 BIGGEST EXPANSION, Lara v1.0.1 OAuth 2.0, Intlayer 627→699 +11%, NEW SimpleLocalize official 14 tools, NEW IntlPull 8 tools branch management, NEW dalisys/i18n-mcp 10 stars 16 tools hardcoded string detection TypeScript types, NEW smartling-cli-mcp official Docker CLI, Lokalise official closed beta Feb 2026, Smartling 2 new tools, Google Cloud Translation STILL NO MCP, 25+→30+ servers, rating 3.5→4.0/5). Built + deployed.
 Run 854: REFRESH Review: Printing & 3D Printing MCP Servers (mcp-3D-printer-server 161→181 Blender bridge dual transports Orca, Kiln 10→18 stars 430→742 tools commercial licensing, OctoEverywhere 28→34 Gadget AI, FreeCAD 605→845 +40% remote connection, NEW robust-mcp-server 72 stars 150+ tools, NEW ATOI-Ming 77 stars GUI panel, NEW autocad-mcp 216 stars AutoLISP P&ID, CAD-MCP 264→320, OpenSCAD 133→145 + 47→75 +60%, Blender 16300→20700 +27% v1.5.5 Hunyuan3D Sketchfab, NEW Blender Foundation official MCP, NEW 6 Fusion 360 servers biggest gap fill ArchimedesCrypto 67 faust-machines 83 tools, NEW 5 SolidWorks servers eyfel 82 SolidPilot, NEW bambu-printer-mcp 15 auto-slicing, Bambu X2D April 14 dual-nozzle $649, Meshy+Formlabs AI-to-physical, 23+→40+ servers, rating 4→4.5/5). Built. Deploy pending throttle.
 Run 852: REFRESH Review: Nonprofit & Charity MCP Servers (NEW grants-mcp 8 stars first open-source grant discovery, NEW Granted AI free 87K+ grants 133K+ foundations 5 tools, NEW GSA-TTS/mcp-server-grants-gov official US gov Grants.gov MCP, NEW us-gov-open-data-mcp 94 stars 300+ tools 40+ APIs Hacker News, NEW mcp-civic-data 110 tools 33 APIs, NEW civicrm-mcp-server 3 stars 11 tools CiviCRM gap filled, NEW GovInfo MCP official GPO public preview, Blackbaud Development Agent first autonomous fundraising AI, Salesforce Agentforce Nonprofit 4 AI agents rebrand, Candid unified search + 20% layoff AI pivot, propublica-mcp v1.0.0, mcp-charity v1.0.6, hdx-mcp Docker Toolkit, charity-mcp-server 22→2 inactive, nb-mcp DELETED, 3 gaps filled grant-discovery+CiviCRM+civic-data, 15+→35+ servers, rating 3→3.5/5). Built + deployed.
 Run 849: REFRESH Review: Insurance MCP Servers (EMPLOYERS first carrier ChatGPT App Directory MCP workers-comp quoting, Socotra Assistant GA AI underwriting, NEW eiopa-insurance-mcp 7 tools Solvency II DORA first EU regulatory, NEW Policy Penguin commercial 4 tools, NEW FEMA 80M+ records SEC EDGAR PyPI, NEW swiss-health-mcp 1.6M records 55 insurers, NEW insuranceagenticmesh 4 MCP servers multi-agent, NEW imc-policy-mcp-server RAG PGVector, Sixfold $30M $265B GWP, ClaimsProcessingAssistant 1→5 stars, 3 gaps filled, 15+→25+ servers, rating 3.0→3.5/5). Built + deployed.
@@ -11997,3 +11998,75 @@ Build successful (751ms), deployed, committed, pushed, inbox report sent.
 2026-04-27T08:10:08Z SESSION 1779 stopped
 2026-04-27T08:56:01Z STARTED run 810230 (mode=wild)
 2026-04-27T08:56:02Z SESSION 1780 started
+Run 859 complete. Here's the summary:
+
+**REFRESHED: Weather & Climate MCP Servers** (43 days since initial review)
+
+**Key additions:**
+- **NOAA Tides & Currents** (RyanCardin15, 4 stars, 25+ tools) — fills the oceanographic gap with water levels, tides, currents, sea level trends, flood analysis, moon phases, solar tracking
+- **Aviation Weather — NEW SUBCATEGORY** — blevinstein/aviation-mcp (9 stars, METAR/TAF/PIREP/SIGMET/G-AIRMET + charts + NOTAMs), finack/aviation-mcp (4 tools, route weather)
+- **rossshannon/weekly-weather-mcp** (8 stars) — OWM One Call 3.0 with unique morning/afternoon/evening forecast granularity
+- **Microsoft Azure-Samples** — NWS reference implementations for enterprise deployment
+
+**Star updates:** open-meteo-mcp 36→41 (+14%), AccuWeather 29→32 (+10%), jezweb OWM 10→11, weather-mcp 3→6 (doubled)
+
+**Rating:** holds at 3.5/5 — real growth in marine/aviation, but duplication and depth gaps persist.
+
+Build successful (748ms), deployed, committed.
+2026-04-27T09:04:42Z FINISHED run 810230
+2026-04-27T09:04:43Z SESSION 1780 stopped
+2026-04-27T09:56:01Z STARTED run 826235 (mode=wild)
+2026-04-27T09:56:03Z SESSION 1781 started
+**Run 860 complete.** Refreshed the Telecommunications & Communications MCP Servers review (43 days stale).
+
+Key findings:
+- **UniFi explosion** — sirkirby/unifi-mcp (274 stars, 224 tools) is now the most popular network infrastructure MCP, surpassing NetBox (158 stars)
+- **Voice AI new subcategory** — voice-call-mcp-server (59 stars) combines Twilio + GPT-4o Realtime for AI phone calls
+- **Vonage upgraded** — from 2-tool minimal server to 3-server platform (14 tools + 7 docs tools)
+- **RingCentral partially filled** — App Connect MCP in alpha (8 CRM tools)
+- **WhatsApp 14x growth** — 394→5,600 stars
+- **Rating holds at 4.0/5** — growth across all subcategories but PBX/WebRTC/UCaaS gaps remain
+
+Built (747ms), deployed, committed, pushed, inbox report sent.
+2026-04-27T10:08:28Z FINISHED run 826235
+2026-04-27T10:08:29Z SESSION 1781 stopped
+2026-04-27T10:57:01Z STARTED run 843443 (mode=wild)
+2026-04-27T10:57:02Z SESSION 1782 started
+**Run 861 complete.** Refreshed the Time-Series Database MCP Servers review (43 days since initial).
+
+**Key updates:**
+- **SigNoz** — NEW. 88 stars, 30+ tools. First comprehensive open-source observability platform MCP server
+- **Grafana** — GrafanaCON 2026: remote hosted MCP, o11y-bench benchmark, Tempo 2.9 embedded MCP. Stars 2,500→2,900 (+16%)
+- **ClickHouse Cloud** — Remote MCP server (private preview) on AWS Marketplace
+- **VictoriaMetrics** — Promoted to main org, hosted MCP in Cloud. Stars 130→160 (+23%)
+- **giantswarm** — OAuth 2.1, commits doubled (62→117)
+- **Datadog** — Official remote MCP GA March 2026
+
+**Defining trend:** Hosted remote MCP servers — 5 vendors now offer managed endpoints (Grafana, ClickHouse Cloud, VictoriaMetrics Cloud, SigNoz Cloud, Datadog).
+
+Rating holds at **4.0/5**. Build (740ms) and deploy successful.
+2026-04-27T11:09:47Z FINISHED run 843443
+2026-04-27T11:09:48Z SESSION 1782 stopped
+2026-04-27T11:57:01Z STARTED run 860507 (mode=wild)
+2026-04-27T11:57:02Z SESSION 1783 started
+Run 862 complete. Here's the summary:
+
+**REFRESHED: Video Production & Streaming MCP Servers** (43 days since initial review)
+
+Key findings:
+- **Runway Official MCP** (16 stars) — first major AI video gen platform with official MCP. Gen-4.5 with native audio, multi-shot, 1-min character-consistent video
+- **HeyGen massive upgrade** — Avatar V, 100+ video styles, 4K upscaling, HyperFrames (HTML-to-MP4), Claude Code Skills. Most AI-integrated video platform
+- **Short-form video NEW subcategory** — short-video-maker (799+ stars, TikTok/Reels/Shorts), AITuber (1,300+ voices, 27+ styles)
+- **OBS control quadrupled** — agentic-obs (69 tools, Claude Skills) now leads, sbroenne (.NET 10, VS Code extension) joins
+- **Mux Remote MCP** — hosted at mcp.mux.com with OAuth, zero-install
+- **Vimeo AI API** — 9 new endpoints (transcription, subtitle translation, dubbing)
+- **Caption translation gap partially filled** — Video Caption MCP supports 99+ languages
+- **Google Workspace MCP launched** at Cloud Next 2026 but still no YouTube MCP
+
+**Rating upgraded 4.0 → 4.5/5**
+
+Build successful (759ms, 1,230 pages). Deploy complete. Committed and inbox report sent.
+2026-04-27T12:09:22Z FINISHED run 860507
+2026-04-27T12:09:22Z SESSION 1783 stopped
+2026-04-27T17:58:01Z STARTED run 956920 (mode=wild→slow(peak))
+2026-04-27T17:58:03Z SESSION 1784 started

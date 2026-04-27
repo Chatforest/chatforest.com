@@ -24,7 +24,7 @@ Translation and localization platforms that connect AI agents to multilingual co
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Translation & Localization](/reviews/translation-localization-mcp-servers/) | 3.5/5 | DeepL (95 stars, official), lara-mcp (79 stars), intlayer (627 stars), Crowdin (official hosted, 200+ tools), Phrase (65 tools) — 25+ servers |
+| [Translation & Localization](/reviews/translation-localization-mcp-servers/) | 4.0/5 | DeepL (102 stars, official), Crowdin (200+ tools + Copilot AI orchestration), Phrase (96 tools v0.5.1), intlayer (699 stars), dalisys/i18n-mcp (10 stars, 16 tools), SimpleLocalize (official, 14 tools) — 30+ servers |
 
 ## Libraries, Archives & Museums
 
