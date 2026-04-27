@@ -160,7 +160,7 @@ Covers **live sports data, athletic analytics, fitness wearable platforms**, and
 
 **Highlights**: Garmin Connect leads with 96+ tools covering 89% of the API — the most comprehensive fitness MCP server anywhere. Strava has 7+ independent implementations. Formula 1 is the most over-served single sport with 7+ MCP servers. Open Wearables (915 stars) evolved into a unified platform supporting 6 wearable ecosystems. Balldontlie covers 18 leagues with 250+ endpoints. No major platform — Strava, Garmin, Fitbit, or any sports league — has shipped an official server.
 
-**Top-rated**: Sports & Athletics (4/5), Sports & Fitness (4/5), Sports & Fitness Analytics (4/5), Fitness & Wearables (4/5)
+**Top-rated**: Sports & Athletics (4.5/5), Sports & Fitness (4.5/5), Sports & Fitness Analytics (4/5), Fitness & Wearables (4/5)
 
 [Browse all 4 Sports & Fitness reviews →](/categories/sports-fitness/)
 
