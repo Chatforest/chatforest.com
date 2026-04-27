@@ -1,18 +1,20 @@
 ---
 title: "Insurance & InsurTech MCP Servers — Policy Management, Claims Processing, Underwriting Intelligence, and Compliance"
 date: 2026-03-15T23:55:00+09:00
-description: "Insurance and InsurTech MCP servers are a surprisingly active category with 15+ servers across 6 subcategories."
-og_description: "Insurance & InsurTech MCP servers: Root Platform MCP (official, full insurance workflows), Socotra MCP (most mature, enterprise-grade), Apify Underwriting Intelligence (8 actors, multi-peril scoring), ClaimsProcessingAssistant-MCP (AI document analysis), swiss-health-mcp (1.6M premium records). 15+ servers reviewed. Rating: 3.5/5."
+description: "Insurance and InsurTech MCP servers are a surprisingly active and commercially-backed category with 18+ servers across 7 subcategories."
+og_description: "Insurance & InsurTech MCP servers: Sure MCP (first to enable AI agents to quote, bind, service policies), Root Platform MCP (official, v1.3.22), Socotra MCP (most mature, enterprise-grade, now GA), Fenris MCP (insurance data layer, consumer/property/vehicle intelligence), Apify Underwriting Intelligence (8 actors, multi-peril scoring), EIOPA Insurance MCP (7 tools, Solvency II, DORA), US_Compliance_MCP v2.0 (50 regulations, 2,079 sections). 18+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Insurance and InsurTech MCP servers for AI-powered policy management, claims processing, underwriting intelligence, and regulatory compliance. This is a surprisingly active category with strong commercial backing. **Root Platform launches official insurance MCP** — Root Insurance's @rootplatform/mcp-server (TypeScript, MIT) is the standout, providing AI agents with comprehensive tools for creating quotes, managing policies, and handling complete insurance workflows. Supports sandbox and production environments with a Root API key. Root is a leading InsurTech platform — this is commercially-backed infrastructure, not a hobby project. **Socotra claims 'most mature insurance MCP'** — Socotra's commercial MCP server enables AI agents to execute full insurance lifecycle workflows with enterprise security: capability-scoped authentication, encrypted agent sessions, and policy-aware authorization. Every AI action is logged and traceable — critical for regulated industries. Their 'Agentic Configuration' feature claims to reduce product development time by 50% and costs by 75%. 10-minute setup for Claude and Cursor. **Underwriting intelligence gets multi-peril scoring** — the Apify Insurance Underwriting Intelligence MCP wraps 8 specialized actors for property & casualty risk assessment: multi-peril scoring, disaster history, seismic and flood exposure, environmental liability, crime proximity, and climate trajectory modeling across 5, 10, and 25-year horizons. Pay-per-event pricing on the Apify platform. **Claims processing reaches AI-native quality** — ClaimsProcessingAssistant-MCP (TypeScript) provides claims CRUD with AI-powered document analysis, Supabase integration, Redis caching, and comprehensive validation. Meanwhile, insurance-ai-mcp-server takes an enterprise microservices approach with Kafka-based claim orchestration. **Salesforce insurance gets MCP integration** — mcp-server-salesforce-insurance (TypeScript, MIT) provides 9+ tools for insurance companies using Salesforce PCM, enabling natural language policy design and management. **Swiss health insurance premiums go queryable** — swiss-health-mcp (TypeScript) exposes 1.6 million Swiss health insurance premium records across 55 insurers from 2016-2026, enabling AI agents to compare premiums and analyze trends. **RAG-based policy document retrieval** — imc-policy-mcp-server (Java, Spring Boot, Spring AI 1.1.0) provides production-ready intelligent insurance policy document search using advanced RAG techniques with customer-scoped security. **Lemonade gets AI agent access** — mcp-lemonade uses Playwright browser automation to interact with Lemonade's insurance platform: file claims, check status, update policies, download ID cards, and get quotes across renters, homeowners, pet, and car insurance. **Compliance tooling covers insurance regulations** — US_Compliance_MCP (Python) provides query tools for HIPAA (health insurance), GLBA (financial/insurance), NYDFS 500 (NY insurance companies), plus SOX, CCPA, and NIST control mappings. ComplianceCow's cow-mcp adds 33+ GRC automation tools. **ACORD form processing via Unstract** — Unstract's commercial MCP server handles insurance document extraction including ACORD forms, certificates of liability insurance, life insurance applications, healthcare benefits claims, and equipment damage reports. Claims to reduce manual effort by up to 91.67%. **Major gaps remain** — no actuarial modeling or pricing engines, no reinsurance platforms (Swiss Re, Munich Re), no ACORD data standards server (only document extraction), no catastrophe modeling (RMS, AIR, CoreLogic), no agency management systems (Applied Epic, Vertafore), no life/annuity administration, no claims adjudication engines, no parametric/index insurance, no insurance marketplaces or aggregators, no policy administration systems beyond Root and Socotra. The category earns 3.5/5 — impressive commercial backing from Root Platform and Socotra, strong underwriting intelligence from Apify, and solid claims processing options. The compliance angle is well-covered for US regulations. But the actuarial, reinsurance, and catastrophe modeling segments — the computational backbone of insurance — are completely absent, and agency management systems that most insurance agencies run on have no MCP representation."
-last_refreshed: 2026-03-15
+card_description: "Insurance and InsurTech MCP servers for AI-powered policy management, claims processing, underwriting intelligence, and regulatory compliance. This is a surprisingly active category with strong commercial backing — now featuring three major commercial platforms. **Sure launches first full-lifecycle insurance MCP** — Sure's MCP capability enables AI agents to autonomously quote, bind, and service insurance policies across all supported lines and carriers. Beta partners report 95% reduction in quote-to-bind time and 80% decrease in customer service response times. Available for enterprise clients and developer partners. **Root Platform MCP actively maintained at v1.3.22** — Root Insurance's @rootplatform/mcp-server (TypeScript, MIT) provides comprehensive tools for creating quotes, managing policies, and handling complete insurance workflows. Updated within the past week on npm. **Socotra MCP now GA for all customers** — Socotra's commercial MCP server is now generally available to all customers and select partners across all insurance lines and geographic markets. Added VS Code support alongside Claude and Cursor. 10-minute setup. Enterprise security with full audit trails. **Fenris MCP Server launches as insurance data layer** — Fenris (March 2026) provides AI agents with real-time consumer, property, vehicle, and predictive intelligence data, supporting intake, quoting, underwriting triage, lead routing, and renewal outreach. Compatible with Claude, ChatGPT, Gemini. **Underwriting intelligence gets multi-peril scoring** — the Apify Insurance Underwriting Intelligence MCP wraps 8 specialized actors for property & casualty risk assessment with climate trajectory modeling across 5, 10, and 25-year horizons. **European insurance regulation gets MCP coverage** — NEW eiopa-insurance-mcp (TypeScript, BSL-1.1, 7 tools) provides structured access to 185 EIOPA publications covering Solvency II, DORA for insurance, and IORP II. **US compliance expands to v2.0** — US_Compliance_MCP now covers 50 US regulations with 2,079 sections and 135 definitions, with automated regulation change monitoring. ComplianceCow cow-mcp reaches 11 stars with 271 commits. **Claims processing reaches AI-native quality** — ClaimsProcessingAssistant-MCP provides AI-powered document analysis with Supabase and Redis. insurance-ai-mcp-server offers enterprise Kafka-based claim orchestration. **Major gaps remain** — no actuarial modeling or pricing engines, no reinsurance platforms (Swiss Re, Munich Re), no catastrophe modeling (RMS, AIR, CoreLogic), no agency management systems (Applied Epic, Vertafore), no claims adjudication engines (Guidewire, Duck Creek). The category holds at 3.5/5 — impressive commercial investment from Sure, Root, Socotra, and Fenris, but the computational backbone of insurance (actuarial, reinsurance, cat modeling) remains completely absent."
+last_refreshed: 2026-04-28
 ---
 
 Insurance and InsurTech MCP servers let AI assistants manage policies, process claims, assess underwriting risk, and navigate regulatory compliance. Instead of logging into separate policy administration systems, claims platforms, and compliance databases, these servers let AI agents handle insurance workflows through the Model Context Protocol.
 
+*This review was originally published on 2026-03-15 and last refreshed on 2026-04-28.*
+
 This review covers the **insurance and InsurTech** vertical — policy platforms, claims processing, underwriting intelligence, insurance connectors, compliance, and document processing. For healthcare-adjacent insurance servers, see our [Healthcare MCP review](/reviews/healthcare-medical-mcp-servers/). For financial services broadly, see our [Finance MCP review](/reviews/personal-finance-mcp-servers/).
 
-The headline findings: **Root Platform and Socotra provide commercially-backed policy lifecycle MCP servers.** **Apify delivers multi-peril underwriting intelligence with climate trajectory modeling.** **Claims processing reaches AI-native quality** with document analysis and Kafka-based orchestration. **Compliance covers HIPAA, GLBA, and NYDFS 500.** **Actuarial modeling, reinsurance, and catastrophe modeling are completely missing.**
+The headline findings: **Sure enables AI agents to autonomously quote, bind, and service policies** with reported 95% faster quote-to-bind times. **Root Platform stays actively maintained at v1.3.22** and **Socotra goes GA for all customers** with VS Code support. **Fenris launches as the insurance data layer** for AI agents. **European insurance regulation gets MCP coverage** via EIOPA guidelines MCP. **US compliance scales to 50 regulations** with automated monitoring. **Actuarial modeling, reinsurance, and catastrophe modeling are still completely missing.**
 
 **Category:** [Finance & Fintech](/categories/finance-fintech/)
 
@@ -31,7 +33,7 @@ The **official MCP server from Root Insurance**, a leading InsurTech platform:
 - **Full insurance workflows** — end-to-end policy lifecycle through natural language
 - **Dual environments** — sandbox for testing, production for live operations
 
-Install via npm with your Root API key. This is significant because Root is a publicly-traded InsurTech company — this isn't a demo but a commercially-backed interface to real insurance operations. The MIT license means you can inspect and extend the integration.
+Install via npm with your Root API key. Now at **v1.3.22** and actively maintained (updated within the past week). This is significant because Root is a publicly-traded InsurTech company — this isn't a demo but a commercially-backed interface to real insurance operations. The MIT license means you can inspect and extend the integration.
 
 ### Socotra MCP (Commercial)
 
@@ -47,7 +49,23 @@ Described as **"the most mature MCP server in the insurance industry"** — Soco
 - **Enterprise security** — capability-scoped authentication, encrypted agent sessions, policy-aware authorization
 - **Full audit trail** — every AI action is logged and traceable
 
-Their "Agentic Configuration" feature claims to reduce product development time by 50%, costs by 75%, and prototype iteration time by 90%. 10-minute setup for Claude and Cursor. For insurance companies already on the Socotra platform, this provides the most comprehensive AI agent integration available.
+Their "Agentic Configuration" feature claims to reduce product development time by 50%, costs by 75%, and prototype iteration time by 90%. **Now generally available** to all customers and select partners across all insurance lines and geographic markets. 10-minute setup for Claude, Cursor, and VS Code. In March 2026, Socotra became the first insurance core to release generally available AI. For insurance companies already on the Socotra platform, this provides the most comprehensive AI agent integration available.
+
+### Sure MCP (Commercial)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Sure MCP](https://www.sureapp.com/press/sure-launches-insurance-industrys-first-model-context-protocol-mcp-capability-enabling-ai-agents-to-quote-bind-and-service-policies) | — | — | Commercial | Full lifecycle |
+
+Sure launched what it calls **the insurance industry's first MCP capability** enabling AI agents to handle the complete insurance lifecycle:
+
+- **Quote generation** — real-time insurance quotes across Sure's carrier network
+- **Policy binding** — AI agents execute binding decisions autonomously
+- **Policy administration** — manage changes, endorsements, and renewals
+- **Claims initiation** — start and track claims through AI agents
+- **Customer service** — handle policyholder inquiries and requests
+
+Beta partners report **95% reduction in quote-to-bind time** and **80% decrease in customer service response times**. Available for enterprise clients and developer partners across all supported insurance lines (auto, homeowners, renters, travel, rental car, product warranty, home warranty, AD&D) and geographic markets. Single interface access to Sure's entire carrier network.
 
 ### wadhawan2411radhika/insurance-mcp-server
 
@@ -135,6 +153,24 @@ A **production-ready MCP server for intelligent policy document retrieval** usin
 
 Particularly useful for underwriters and claims adjusters who need to quickly find relevant policy language, exclusions, and coverage details across large document collections.
 
+## Insurance Data Intelligence
+
+### Fenris MCP Server (Commercial)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Fenris MCP](https://fenrisd.com/mcp/) | — | — | Commercial | Multiple |
+
+Launched March 2026, Fenris positions its MCP server as **the data layer for insurance AI** — giving AI agents direct access to real insurance intelligence:
+
+- **Consumer data** — household composition, demographics, and predictive scoring
+- **Property attributes** — real-time property data for underwriting
+- **Vehicle and driver data** — vehicle details and driver information
+- **Business information** — commercial insurance data
+- **Predictive intelligence** — scoring models for risk assessment
+
+Supports insurance workflows including intake, quoting, underwriting triage, lead routing, and renewal outreach. Compatible with Claude, ChatGPT, Gemini, and custom AI agents supporting MCP. Fenris processes tens of millions of insurance transactions annually — this is production-grade data infrastructure, not a demo. Eliminates the need for custom data pipelines between AI agents and insurance data sources.
+
 ## Insurance Connectors
 
 ### markswendsen-code/mcp-lemonade
@@ -202,31 +238,50 @@ Broader than insurance alone, but the standardized approach to comparing financi
 
 ## Compliance & Regulatory
 
+### Ansvar-Systems/eiopa-insurance-mcp (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [eiopa-insurance-mcp](https://github.com/Ansvar-Systems/eiopa-insurance-mcp) | 0 | TypeScript | BSL-1.1 | 7 |
+
+A new MCP server (April 2026) providing **structured access to European insurance regulation**:
+
+- **185 EIOPA publications** — 105 guideline rows and 80 technical standard rows
+- **Solvency II** — capital requirements and risk management for European insurers
+- **DORA for insurance** — Digital Operational Resilience Act compliance
+- **IORP II** — pension fund supervision and governance
+- **7 tools** — search, retrieval by reference, category listing, data freshness checking
+
+From the same team behind US_Compliance_MCP. Supports hosted and self-hosted deployments. License converts to Apache-2.0 on 2030-04-13. For insurers operating in the EU, this fills a gap — EIOPA guidelines are notoriously difficult to navigate, and having them queryable through AI agents is immediately valuable.
+
 ### Ansvar-Systems/US_Compliance_MCP
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [US_Compliance_MCP](https://github.com/Ansvar-Systems/US_Compliance_MCP) | — | Python | — | Multiple |
+| [US_Compliance_MCP](https://github.com/Ansvar-Systems/US_Compliance_MCP) | 1 | TypeScript | — | Multiple |
 
-A compliance MCP server covering **regulations directly relevant to insurance**:
+Now at **v2.0.0** with significantly expanded scope — **50 US regulations, 2,079 sections, 135 definitions**:
 
 - **HIPAA** — health insurance portability and privacy requirements
 - **GLBA** — Gramm-Leach-Bliley Act for financial/insurance data protection
 - **NYDFS 500** — New York Department of Financial Services cybersecurity requirements for insurance companies
 - **SOX** — Sarbanes-Oxley for publicly-traded insurers
 - **CCPA/CPRA** — California consumer privacy for policyholder data
-- Plus FERPA, COPPA, FDA 21 CFR Part 11, CIRCIA, EPA RMP, FFIEC, and state privacy laws
-- NIST control mappings included
+- **FISMA, FedRAMP, CMMC 2.0** — federal security frameworks
+- **18 state privacy laws** — comprehensive US privacy coverage
+- Plus FERPA, COPPA, FDA 21 CFR Part 11, CIRCIA, EPA RMP, FFIEC
+- **Automated regulation monitoring** — auto-generates PRs when regulations change
+- Published as npm package `@ansvar/us-regulations-mcp`
 
-For insurance compliance teams, having HIPAA, GLBA, and NYDFS 500 queryable through AI agents is immediately practical — these are the three regulatory frameworks that most directly govern insurance operations.
+For insurance compliance teams, having HIPAA, GLBA, and NYDFS 500 queryable through AI agents is immediately practical — these are the three regulatory frameworks that most directly govern insurance operations. The automated monitoring for regulation changes is a significant improvement over the initial release.
 
 ### ComplianceCow/cow-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cow-mcp](https://github.com/ComplianceCow/cow-mcp) | — | Python | — | 33+ |
+| [cow-mcp](https://github.com/ComplianceCow/cow-mcp) | 11 | Python | — | 33+ |
 
-A **GRC (Governance, Risk, Compliance) automation** MCP with 33+ tools across 4 servers:
+A **GRC (Governance, Risk, Compliance) automation** MCP with 33+ tools across 4 servers (271 commits, actively maintained):
 
 - Rules server — regulatory rule queries
 - Insights server — control status and coverage reports
@@ -266,17 +321,17 @@ The insurance MCP ecosystem has notable gaps:
 - **Catastrophe modeling** — no RMS, AIR Worldwide, or CoreLogic cat model integration
 - **Agency management** — no Applied Epic, Vertafore, or HawkSoft MCP servers (these are what most insurance agencies actually run on)
 - **Life/annuity administration** — no policy administration systems for life insurance products
-- **Claims adjudication engines** — no Guidewire ClaimCenter, Duck Creek, or Majesco integration
+- **Claims adjudication engines** — no Guidewire ClaimCenter, Duck Creek, or Majesco integration (Guidewire has no MCP presence despite being the dominant P&C platform)
 - **Parametric insurance** — no index-based or parametric insurance product management
 - **Insurance marketplaces** — no Lloyd's, Quotech, or insurance aggregator integration
-- **Rating engines** — no comparative rating or insurance quoting engines beyond Root
+- **Rating engines** — no comparative rating or insurance quoting engines beyond Root and Sure
 
 ## The Bottom Line
 
-**Rating: 3.5/5** — Insurance and InsurTech MCP servers are a surprisingly active category with genuine commercial backing. Root Platform and Socotra provide real policy lifecycle management. Apify's underwriting intelligence offers multi-peril risk scoring with climate projections. Claims processing has both AI-native and enterprise microservices approaches. The compliance angle is well-covered for US insurance regulations.
+**Rating: 3.5/5** — Insurance and InsurTech MCP servers continue to grow with strong commercial backing from four major platforms: Sure (full lifecycle quoting/binding/servicing), Root Platform (actively maintained at v1.3.22), Socotra (now GA for all customers), and Fenris (insurance data intelligence layer). The compliance angle has expanded significantly — US coverage doubled to 50 regulations with automated monitoring, and European insurance regulation (EIOPA/Solvency II/DORA) now has MCP coverage for the first time. Underwriting intelligence from Apify and claims processing options remain solid.
 
-The rating reflects strong commercial investment balanced against significant gaps. The actuarial, reinsurance, and catastrophe modeling segments — the computational and financial backbone of insurance — are completely absent. Agency management systems that most insurance agencies operate on daily have zero MCP representation. And while Unstract handles ACORD form extraction, no server implements ACORD messaging standards for programmatic insurance data exchange.
+The rating holds at 3.5/5 because despite impressive commercial investment, the fundamental gaps persist. The actuarial, reinsurance, and catastrophe modeling segments — the computational and financial backbone of insurance — are completely absent. Agency management systems that most insurance agencies operate on daily have zero MCP representation. Guidewire, the dominant P&C platform, has no MCP presence. And while Unstract handles ACORD form extraction, no server implements ACORD messaging standards for programmatic insurance data exchange.
 
-For insurers on Root or Socotra, the MCP story is genuinely compelling — full lifecycle management through AI agents with proper security and audit trails. For everyone else, this is a category to watch as more insurance platforms follow Root's lead in providing official MCP integrations.
+For insurers on Sure, Root, or Socotra, the MCP story is genuinely compelling — full lifecycle management through AI agents with proper security and audit trails. Fenris adds a critical data layer that was previously missing. The compliance story now spans both US and EU regulations. For everyone else, this is a category to watch as more insurance platforms provide official MCP integrations.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-28 using Claude Opus 4.6 (Anthropic).*

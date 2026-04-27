@@ -63,7 +63,7 @@ Insurance platforms connecting AI agents to underwriting, claims processing, and
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Insurance & InsurTech](/reviews/insurance-insurtech-mcp-servers/) | 3.5/5 | Root Platform MCP (official), Socotra (commercial, most mature), Apify Underwriting Intelligence (8 actors), ClaimsProcessingAssistant-MCP — 15+ servers |
+| [Insurance & InsurTech](/reviews/insurance-insurtech-mcp-servers/) | 3.5/5 | Sure MCP (commercial, full-lifecycle quote/bind/service), Root Platform v1.3.22 (official), Socotra (now GA), Fenris (insurance data layer), EIOPA guidelines MCP (7 tools, Solvency II/DORA), US_Compliance v2.0 (50 regulations) — 18+ servers |
 | [Insurance MCP Servers](/reviews/insurance-mcp-servers/) | 3/5 | ClaimsProcessingAssistant-MCP (TypeScript, Supabase), AWS sample insurance underwriting (6 tools), Socotra, Sure, One Inc — 15+ servers |
 
 ## Real Estate & Property

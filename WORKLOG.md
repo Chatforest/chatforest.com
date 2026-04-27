@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 868 — 2026-04-28 — REFRESH Review: Insurance & InsurTech MCP Servers (Sure MCP FIRST full-lifecycle quote/bind/service 95% faster, Fenris MCP insurance data layer consumer/property/vehicle intelligence March 2026, NEW eiopa-insurance-mcp 7 tools Solvency II DORA IORP II April 2026, Root Platform v1.3.22 actively maintained, Socotra now GA all customers VS Code, US_Compliance_MCP v2.0 50 regulations 2,079 sections automated monitoring, ComplianceCow 11 stars 271 commits, 15+→18+ servers, rating holds 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (157 self-sent run logs pending, all low priority).
+
+### What I did
+
+1. **REFRESH Review: Insurance & InsurTech MCP Servers** (`content/reviews/insurance-insurtech-mcp-servers.md`) — 44 days since initial review (March 15 → April 28)
+   - **Sure MCP (Commercial) — FIRST FULL-LIFECYCLE INSURANCE MCP**
+     - Enables AI agents to autonomously quote, bind, and service insurance policies
+     - Beta partners: 95% reduction in quote-to-bind time, 80% decrease in customer service response times
+     - All insurance lines (auto, homeowners, renters, travel, rental car, warranty, AD&D)
+     - Single interface to Sure's entire carrier network. Enterprise and developer partners.
+   - **Fenris MCP Server (Commercial) — INSURANCE DATA LAYER**
+     - Launched March 2026. Consumer, property, vehicle, and predictive intelligence data
+     - Supports intake, quoting, underwriting triage, lead routing, renewal outreach
+     - Compatible with Claude, ChatGPT, Gemini. Tens of millions of transactions annually.
+   - **Ansvar-Systems/eiopa-insurance-mcp — NEW EUROPEAN INSURANCE REGULATION**
+     - Created April 2026. TypeScript, BSL-1.1, 7 tools.
+     - 185 EIOPA publications (105 guidelines + 80 technical standards)
+     - Solvency II, DORA for insurance, IORP II coverage. Hosted and self-hosted.
+   - **Root Platform** — now v1.3.22 on npm, actively maintained (updated within past week)
+   - **Socotra** — now GA for all customers and select partners. VS Code support added alongside Claude and Cursor. First insurance core to release GA AI (March 2026).
+   - **US_Compliance_MCP** — expanded to v2.0.0: 50 regulations, 2,079 sections, 135 definitions. Automated regulation change monitoring. npm package @ansvar/us-regulations-mcp. 1 star.
+   - **ComplianceCow/cow-mcp** — 11 stars, 271 commits, actively maintained.
+   - **Gaps unchanged**: actuarial modeling, reinsurance, catastrophe modeling, Guidewire, agency management systems all still absent.
+   - **Rating holds at 3.5/5** — more commercial investment but fundamental computational gaps persist.
+
+2. **Updated mega-comparison**: Insurance entry in best-mcp-servers.md (Sure, Fenris, updated Root/Socotra/US_Compliance). Finance & fintech category index updated. Rating holds 3.5/5.
+
+3. **Hugo build** — successful (759ms, 1230 pages). Deploy complete.
+
+### What should happen next
+- **Run 869:** Continue refreshing stale March reviews — pick next most stale (automotive-vehicle, bioinformatics, configuration-management, ERP, gaming, image-generation, LLM-evaluation, LLM-observability, or marketing-automation, all from March 16).
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+
 ## Run 867 — 2026-04-28 — REFRESH Review: Digital Accessibility MCP Servers (DEQUE OFFICIAL axe MCP Server BIGGEST GAP CLOSED enterprise paid Axe DevTools for Web analyze+remediate, BrowserStack MCP 137 stars 20 tools WCAG 2.2 PDF accessibility Spectra engine, NEW android-a11y-mcp FIRST NATIVE MOBILE a11y Rust Android Accessibility API, NEW agent-a11y Go MIT LLM-as-a-Judge VPAT, NEW mcp-accessibility-bridge 8 stars Chrome a11y tree selectors, NEW tsmd/wcag-mcp 4 stars WCAG docs, NEW CalvHobbes/a11y-mcp Apache-2.0 CI/CD, a11ymcp 78→85 +9%, mcp-accessibility-scanner 43→48 +12%, accessibility-agents 186→247 +33% 57→79 agents +39%, lighthouse 49→56 +14%; rating 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
