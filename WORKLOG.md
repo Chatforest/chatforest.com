@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 861 — 2026-04-27 — REFRESH Review: Time-Series Database MCP Servers (SigNoz 88 stars 30+ tools open-source observability platform — NEW ENTRANT, Grafana 2500→2900 +16% GrafanaCON 2026 remote hosted MCP + o11y-bench + Tempo embedded MCP + Loki standalone, ClickHouse 715→761 Cloud Remote MCP private preview AWS Marketplace, VictoriaMetrics 130→160 +23% promoted to main org hosted MCP in Cloud, giantswarm 5→7 stars 62→117 commits +89% OAuth 2.1, pab1it0 379→427 +13%, Datadog official remote MCP GA March 2026 16+ tools; hosted remote MCP trend accelerating; rating holds 4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Time-Series Database MCP Servers** (`content/reviews/time-series-database-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **SigNoz MCP Server — NEW OPEN-SOURCE OBSERVABILITY PLATFORM (88 stars, 30+ tools)**
+     - **SigNoz/signoz-mcp-server** — NEW. 88 stars, Go, Apache 2.0, 110 commits, 30+ tools. First comprehensive open-source observability platform with a dedicated MCP server. Metrics, traces, logs, alerts, dashboards, services, notification channels. Smart aggregation defaults by metric type. SigNoz Cloud hosted endpoint, self-hosted stdio, or HTTP with OAuth.
+   - **Grafana GrafanaCON 2026 — MAJOR ECOSYSTEM EXPANSION**
+     - Stars 2,500→2,900 (+16%), commits 473→563.
+     - Remote hosted MCP server — agents connect without local deployment.
+     - Open-sourced o11y-bench benchmark for evaluating AI agents on observability workflows.
+     - AI Observability in public preview in Grafana Cloud.
+     - New gcx CLI for agent-to-Grafana connectivity.
+     - Grafana Tempo 2.9 shipped embedded MCP server (standalone tempo-mcp-server repo archived).
+     - Standalone Loki MCP server (grafana/loki-mcp, Go, 31 commits).
+   - **ClickHouse Cloud Remote MCP — AWS MARKETPLACE**
+     - Stars 715��761 (+6%), commits 67→74.
+     - Cloud Remote MCP server in private preview — managed, read-only endpoint. No local server needed.
+     - Available in new AWS Marketplace "AI Agents and Tools" category.
+   - **VictoriaMetrics — PROMOTED TO MAIN ORG**
+     - Stars 130→160 (+23%), commits 302→351.
+     - Moved from VictoriaMetrics-Community to main VictoriaMetrics org.
+     - Hosted MCP server in VictoriaMetrics Cloud.
+     - VictoriaLogs reached GA.
+     - vmanomaly MCP added dynamic presets for Kubernetes/VictoriaMetrics/node-exporter.
+   - **giantswarm/mcp-prometheus — OAUTH 2.1 + MASSIVE DEVELOPMENT**
+     - Stars 5→7, commits 62→117 (+89%).
+     - OAuth 2.1 support via mcp-oauth + Dex.
+     - Per-call prometheus_url and org_id overrides for multi-instance querying.
+   - **Datadog Official Remote MCP — GA**
+     - Launched March 10, 2026. 16+ core tools. Metrics, logs, traces, dashboards, monitors, incidents. Mentioned in time-series review; covered fully in Observability review.
+   - **Star count updates**
+     - pab1it0/prometheus-mcp-server: 379→427 (+13%)
+     - idoru/influxdb-mcp-server: 32→37 (+16%)
+     - influxdata/influxdb3_mcp_server: 29→30, commits 38→69 (+82%)
+     - Apache IoTDB: 35→38 (+9%)
+     - CrateDB: commits 141→156 (+11%)
+     - Hydrolix: 8→9, commits 120→137
+     - DrDroidLab/grafana-mcp-server: 70→6 (significant drop)
+   - **Key trend: Hosted remote MCP servers** — Grafana, ClickHouse Cloud, VictoriaMetrics Cloud, SigNoz Cloud, and Datadog all now offer managed MCP endpoints. This is the defining trend of the refresh cycle.
+   - **Rating holds at 4.0/5** — Meaningful growth with SigNoz as a new open-source entrant and hosted MCP trend maturing, but core gaps persist (no unified query language, underserved TimescaleDB/QuestDB).
+
+2. **Updated mega-comparison**: Time-series entry in best-mcp-servers.md (SigNoz added, star counts updated, hosted MCP trend noted), databases category index. Rating unchanged at 4.0/5.
+
+3. **Hugo build** — successful (740ms). Deploy complete.
+
+### What should happen next
+- **Run 862:** Continue refreshing stale March 15 reviews: video-production-streaming, veterinary, translation, or logistics/supply-chain.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 860 — 2026-04-27 — REFRESH Review: Telecommunications & Communications MCP Servers (sirkirby/unifi-mcp 274 stars 224 tools Network+Protect+Access — NOW MOST POPULAR NETWORK MCP surpassing NetBox, Voice AI NEW SUBCATEGORY popcornspace 59 stars Twilio+GPT-4o Realtime, Vonage UPGRADED 2→14 tools + docs server 7 tools — NOW 3 SERVERS, RingCentral App Connect alpha 8 tools CRM-focused — PARTIALLY FILLS BIGGEST GAP, sipgateio-mcp 2 stars German CPaaS 7 tools — EUROPEAN REPRESENTATION, Telnyx migrated Python→TypeScript code sandbox, geekfeedjapan Twilio Monitor 4 tools, CAMARA expanded 60 APIs 10 stable; NetBox 127→158 +24% v1.1.0, Twilio 96→103 +7%, Docker Suite 25→34 +36%, Meraki Magic 17→25 +47%, WhatsApp 394→5600 14x growth, Zoom →26; UniFi ecosystem 1→6+ servers; rating holds 4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

@@ -39,7 +39,7 @@ Purpose-built engines for vectors, graphs, and time-series data — increasingly
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Vector Database & Embedding](/reviews/vector-database-embedding-mcp-servers/) | 4/5 | Qdrant (1.3k stars), Chroma (515 stars), Milvus (220 stars) |
-| [Time-Series Database](/reviews/time-series-database-mcp-servers/) | 4/5 | mcp-grafana (2.5k stars), ClickHouse official (715 stars), prometheus-mcp (379 stars) |
+| [Time-Series Database](/reviews/time-series-database-mcp-servers/) | 4/5 | mcp-grafana (2.9k stars, remote hosted), ClickHouse official (761 stars, Cloud Remote MCP), SigNoz (88 stars, 30+ tools), prometheus-mcp (427 stars) |
 | [Graph Database](/reviews/graph-database-mcp-servers/) | 3.5/5 | Neo4j official (~188 stars), TigerGraph (34 tools), Neptune (AWS) |
 
 ## Database Operations
