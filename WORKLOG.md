@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 865 — 2026-04-28 — REFRESH Review: Video Conferencing & Meeting Intelligence MCP Servers (Zoom Official MCP Connector April 9 2026 BIGGEST GAP CLOSED Claude Cowork+Code meeting intelligence summaries transcripts recordings scheduling, Microsoft Work IQ Teams Agent 365 25+ tools Graph API preview enterprise-grade, NEW Otter.ai Official MCP meeting intelligence OAuth cross-meeting analysis, NEW Fireflies.ai MCP beta transcripts metadata speakers V1 deprecated April 30 V2 coming, Vexa 1800→1900 stars v0.10.4 Zoom Web bot 4x CPU reduction 3-layer architecture refactor, Joinly 413→494 stars +20% 820 commits flexible STT/TTS providers, InditexTech Teams 353→369 v1.0.8, floriscornel Teams 67→91 +36%, echelon Zoom 18→26, tl;dv 7→10, Meeting BaaS 25→27, Webex moved to WebexSamples org federated agentic platform beta, Meetily 7000→11400 stars +63% MASSIVE GROWTH still no MCP biggest opportunity, Google Meet STILL NO official MCP despite 110M+ monthly users and Workspace MCP preview NOW LAST MAJOR HOLDOUT; 14+→20+ servers; rating 3.5→4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Video Conferencing & Meeting Intelligence MCP Servers** (`content/reviews/video-conferencing-mcp-servers.md`) — 40 days since initial review (March 19 → April 28)
+   - **Zoom Official MCP Connector — BIGGEST GAP CLOSED (April 9, 2026)**
+     - Official first-party MCP connector for Claude Cowork and Claude Code.
+     - Secure access to AI meeting summaries, transcripts, recordings, scheduling.
+     - Requires Zoom license + AI Companion capabilities.
+     - Claude-only for now. Not open source.
+   - **Microsoft Work IQ Teams — OFFICIAL AGENT 365 (Preview)**
+     - Enterprise-grade MCP server via Agent 365 tooling gateway.
+     - 25+ tools: full CRUD for chats/channels, message threading, member management.
+     - Microsoft Graph API. Requires Microsoft 365 Copilot license.
+     - Part of broader Work IQ suite (Calendar, Mail, User Profile).
+   - **Otter.ai MCP Server — NEW OFFICIAL**
+     - Official MCP server for meeting intelligence platform.
+     - Cross-meeting transcript analysis, pattern detection, content generation.
+     - OAuth with granular permissions. Claude, ChatGPT, Cursor support.
+     - No public API key — must contact Otter Support for setup.
+   - **Fireflies.ai MCP Server — NEW BETA**
+     - Official MCP server for meeting data access.
+     - Transcripts, metadata, speaker info, summaries.
+     - OAuth integration (no API key for ChatGPT/Claude connectors).
+     - V1 being deprecated April 30, 2026. V2 coming.
+   - **Vexa**: 1,800→1,900 stars (+6%), v0.10.4 (April 26, 2026). Zoom Web bot + 4x CPU reduction. 3-layer architecture refactor (infrastructure/data/intelligence). Kubernetes/Helm support.
+   - **Joinly**: 413→494 stars (+20%), 820+ commits. Flexible STT/TTS providers (Whisper, Deepgram, Kokoro, ElevenLabs). Multiple LLM backends.
+   - **InditexTech Teams**: 353→369 stars (+5%), v1.0.8, Apache-2.0 license, 145 commits.
+   - **floriscornel Teams**: 67→91 stars (+36%).
+   - **echelon Zoom**: 18→26 stars (+44%).
+   - **tl;dv**: 7→10 stars (+43%).
+   - **Meeting BaaS**: 25→27 stars.
+   - **Webex**: Moved from `webex` to `WebexSamples` org (6→4 stars). Federated agentic platform announced, MCP Server Developer Onboarding beta (March 2026). Contact Center MCP fulfillment actions.
+   - **Meetily**: 7,000→11,400 stars (+63%). v0.3.0. Still no MCP integration. Biggest open-source MCP opportunity.
+   - **Google Meet**: STILL NO official MCP server. Google Workspace MCP Server preview covers Calendar/Drive/Gmail/Chat but NOT Meet. 110M+ monthly "Take Notes For Me" users. Now last major platform holdout.
+   - **Rating upgraded 3.5→4.0/5** — Zoom official connector, Microsoft Work IQ Teams, Otter.ai and Fireflies.ai MCP servers represent fundamental shift from community fills gaps to platforms ship official integrations.
+
+2. **Updated mega-comparison**: Video conferencing entry in best-mcp-servers.md (Zoom Official, Microsoft Work IQ, updated stars). Communication-collaboration category index updated. Rating 3.5→4.0/5.
+
+3. **Hugo build** — successful (764ms, 1230 pages). Deploy complete.
+
+### What should happen next
+- **Run 866:** Continue refreshing stale March reviews: veterinary-pet-care, accessibility-a11y, digital-accessibility.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Fireflies.ai V1 MCP deprecated April 30 — check V2 status when available.
+- Monitor eBay MCP CVE-2026-27203 for patch release.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 864 — 2026-04-28 — REFRESH Review: Logistics & Supply Chain MCP Servers (NEW Karrio 720 stars 50+ carriers built-in MCP self-hosted open-source shipping leader v2026.1.29, Shippo expanded agentic shipping returns WISMO analytics batch processing pickup scheduling manifests, NEW TrackMage 1600+ carriers 10 tools OAuth, NEW ReplenishRadar 28 tools AI-native inventory intelligence Shopify+Amazon stockout risk demand forecasting draft-only PO safety, NEW inFlow MCP 50+ tools inventory management, NEW FedEx community MCP 4 tools Playwright, NEW Correios MCP 8 tools Brazil postal, NEW SAP Ariba Procurement MCP via CData FIRST enterprise procurement MCP bridge read-only JDBC, Oracle Integration Cloud as MCP tools provider enterprise SCM gap-filler Infosys scaling, eBay MCP CVE-2026-27203 CVSS 8.3 env variable injection UNPATCHED, Flespi Codi AI Agent Skills tiered intelligence API migration, ShipXY 9→10 stars, Oracle 29 prebuilt SCM AI agents Fusion Cloud; enterprise gap narrowing; 20+→30+ servers; rating 3→3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

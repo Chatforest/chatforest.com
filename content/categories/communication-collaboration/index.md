@@ -52,12 +52,12 @@ Calendar access is a gateway to autonomous scheduling. Google Calendar's communi
 
 ## Video Conferencing
 
-Meeting management through MCP — transcripts, recordings, scheduling. Zoom has platform MCP support but no standalone server.
+Meeting management through MCP — transcripts, recordings, scheduling. Zoom launched its official MCP connector April 2026. Microsoft shipped Work IQ Teams via Agent 365.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Zoom MCP Servers](/reviews/zoom-mcp-server/) | 3/5 | echelon-ai-labs/zoom-mcp (26 stars), AI Studio integration — no official standalone |
-| [Video Conferencing](/reviews/video-conferencing-mcp-servers/) | 3.5/5 | Joinly, Vexa, tl;dv, Meeting BaaS — meeting intelligence and transcription |
+| [Zoom MCP Servers](/reviews/zoom-mcp-server/) | 3/5 | Zoom Official MCP Connector (April 2026, Claude), echelon-ai-labs/zoom-mcp (26 stars) |
+| [Video Conferencing](/reviews/video-conferencing-mcp-servers/) | 4.0/5 | Zoom Official, Microsoft Work IQ Teams, Vexa (1,900 stars), Joinly (494 stars), Otter.ai, Fireflies.ai, tl;dv, Meeting BaaS |
 
 ## Telecommunications & CPaaS
 
