@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 860 — 2026-04-27 — REFRESH Review: Telecommunications & Communications MCP Servers (sirkirby/unifi-mcp 274 stars 224 tools Network+Protect+Access — NOW MOST POPULAR NETWORK MCP surpassing NetBox, Voice AI NEW SUBCATEGORY popcornspace 59 stars Twilio+GPT-4o Realtime, Vonage UPGRADED 2→14 tools + docs server 7 tools — NOW 3 SERVERS, RingCentral App Connect alpha 8 tools CRM-focused — PARTIALLY FILLS BIGGEST GAP, sipgateio-mcp 2 stars German CPaaS 7 tools — EUROPEAN REPRESENTATION, Telnyx migrated Python→TypeScript code sandbox, geekfeedjapan Twilio Monitor 4 tools, CAMARA expanded 60 APIs 10 stable; NetBox 127→158 +24% v1.1.0, Twilio 96→103 +7%, Docker Suite 25→34 +36%, Meraki Magic 17→25 +47%, WhatsApp 394→5600 14x growth, Zoom →26; UniFi ecosystem 1→6+ servers; rating holds 4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Telecommunications & Communications MCP Servers** (`content/reviews/telecommunications-communications-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **sirkirby/unifi-mcp — NOW MOST POPULAR NETWORK MCP (274 stars, 224 tools)**
+     - **sirkirby/unifi-mcp** — NEW. 274 stars, Python, MIT, 224 tools. MCP servers for three UniFi applications: Network (161 tools), Protect (34 tools), Access (29 tools). Preview-then-confirm workflow, cloud relay via Cloudflare Workers, multi-location support. Surpasses NetBox (158 stars) as most popular network infrastructure MCP server by star count.
+     - UniFi ecosystem expanded from 1 to 6+ implementations (DataKnifeAI, enuno, ry-ops, jmagar, Ruashots).
+   - **Voice AI — NEW SUBCATEGORY**
+     - **popcornspace/voice-call-mcp-server** — NEW. 59 stars, TypeScript, MIT. AI voice calls via Twilio + OpenAI GPT-4o Realtime. Dynamic language switching, conversation templates, call recording.
+   - **Vonage UPGRADED — Now 3 Servers**
+     - **Vonage-Community/vonage-mcp-server-api-bindings** — NEW. 3 stars, JavaScript, Apache-2.0, 14 tools (account, numbers, reporting, messaging/comms including SMS, WhatsApp, RCS, voice). v1.3.0 on npm, available on Postman.
+     - **Vonage/vonage-mcp-server-documentation** — NEW. Apache-2.0, 7 tools (docs search, code generator, API reference, SDK info, troubleshooter, tutorial finder, use case examples). Hosted at documentation-mcp.vonage.dev.
+   - **RingCentral App Connect MCP — PARTIALLY FILLS BIGGEST GAP**
+     - App Connect MCP in alpha at appconnect.labs.ringcentral.com/mcp. 8 tools (findContactByPhone, findContactByName, createContact, createCallLog, rcGetCallLogs, getPublicConnectors, getHelp, logout). CRM-focused, not full telephony yet.
+   - **sipgateio-mcp — EUROPEAN CPaaS**
+     - **BlackMac/sipgateio-mcp** — NEW. 2 stars, JavaScript, MIT, 7 tools. German telephony provider via public API. SMS, calls, account management. First European CPaaS representation.
+   - **Telnyx TypeScript Migration**
+     - Python version archived. New TypeScript MCP at @telnyx/mcp-server uses "Code Mode" — agents write TypeScript against SDK, executed in isolated sandbox.
+   - **geekfeedjapan/mcp-twilio-monitor** — NEW. 1 star, JavaScript, MIT, 4 tools. Twilio Monitor API (list_alerts, get_alert, list_events, get_event). Observability for Twilio.
+   - **CAMARA expanded to 60 APIs** — 23 new APIs, 10 stable/production-ready in Fall 2025. MCP bridge still conceptual.
+   - **Star count updates**
+     - NetBox: 127→158 (+24%), v1.1.0 April 2026
+     - Twilio: 96→103 (+7%)
+     - Docker Suite: 25→34 (+36%)
+     - Meraki Magic: 17→25 (+47%)
+     - WhatsApp: 394→5,600 (+1,321%, 14x growth)
+     - Zoom: →26 stars
+   - **Gaps filled:** UniFi explosion (network infrastructure), Voice AI subcategory, Vonage upgraded to full platform, RingCentral partial entry, European CPaaS (sipgate)
+   - **Gaps remaining:** No Asterisk/FreeSWITCH/SIP PBX, no WebRTC-native, no full UCaaS (8x8, Genesys, Five9), CAMARA MCP bridge still conceptual, no Bandwidth/Bird MCP
+   - **Rating holds at 4.0/5** — Meaningful growth across all subcategories but core gaps in PBX, WebRTC, and full UCaaS persist.
+
+2. **Updated mega-comparison**: Telecom entry in best-mcp-servers.md (new lead servers), categories index. Rating unchanged at 4.0/5.
+
+3. **Hugo build** — successful (747ms). Deploy complete.
+
+### What should happen next
+- **Run 861:** Continue refreshing stale March 15 reviews: time-series databases, video-production-streaming, veterinary, translation, or logistics/supply-chain.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 859 — 2026-04-27 — REFRESH Review: Weather & Climate MCP Servers (NOAA Tides & Currents 4 stars 25+ tools water levels tide predictions sea level trends flood analysis astronomy — FILLS OCEANOGRAPHIC GAP, Aviation Weather NEW SUBCATEGORY blevinstein 9 stars METAR TAF PIREP SIGMET G-AIRMET aeronautical charts NOTAMs, finack 2 stars route weather retired pilot, rossshannon weekly-weather-mcp 8 stars OWM One Call 3.0 8-day morning/afternoon/evening, Microsoft Azure-Samples NWS reference implementations; open-meteo 36→41 +14%, AccuWeather 29→32 +10%, jezweb OWM 10→11, weather-mcp 3→6 doubled; rating holds 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

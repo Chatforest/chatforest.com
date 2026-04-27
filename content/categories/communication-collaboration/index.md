@@ -65,7 +65,7 @@ The infrastructure layer — SMS, voice, WhatsApp, Telegram through CPaaS platfo
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Telecom & Communications](/reviews/telecommunications-communications-mcp-servers/) | 4/5 | Twilio, Telnyx, Vonage, Sinch, Plivo, Cisco Meraki, NetBox |
+| [Telecom & Communications](/reviews/telecommunications-communications-mcp-servers/) | 4/5 | UniFi Suite (274 stars, 224 tools), NetBox (158 stars), Twilio, Vonage (14 tools + docs), Voice AI, RingCentral (alpha) |
 | [Telecom & Messaging](/reviews/telecommunications-messaging-mcp-servers/) | 4.5/5 | SMS, Voice, WhatsApp, Telegram — CPaaS and unified communications |
 
 ## Social Networking & Community
