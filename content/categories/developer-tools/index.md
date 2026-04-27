@@ -106,7 +106,7 @@ Web accessibility testing and WCAG compliance tools that let AI agents audit, an
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Accessibility & a11y](/reviews/accessibility-a11y-mcp-servers/) | 3.5/5 | ronantakizawa/a11ymcp (78 stars), axe-core-powered scanners, color contrast checking, WCAG remediation — 20+ servers |
-| [Digital Accessibility](/reviews/digital-accessibility-mcp-servers/) | 4/5 | Community-Access/accessibility-agents (186 stars, 57 agents), Lighthouse MCP (49 stars), dual-engine axe-core + IBM Equal Access — 20+ servers |
+| [Digital Accessibility](/reviews/digital-accessibility-mcp-servers/) | 4.5/5 | Deque Official axe MCP (enterprise, paid), BrowserStack MCP (137 stars, WCAG 2.2), accessibility-agents (247 stars, 79 agents), a11ymcp (85 stars) — 25+ servers |
 
 ## Platform-Specific Tools
 

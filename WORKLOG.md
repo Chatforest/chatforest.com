@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 867 — 2026-04-28 — REFRESH Review: Digital Accessibility MCP Servers (DEQUE OFFICIAL axe MCP Server BIGGEST GAP CLOSED enterprise paid Axe DevTools for Web analyze+remediate, BrowserStack MCP 137 stars 20 tools WCAG 2.2 PDF accessibility Spectra engine, NEW android-a11y-mcp FIRST NATIVE MOBILE a11y Rust Android Accessibility API, NEW agent-a11y Go MIT LLM-as-a-Judge VPAT, NEW mcp-accessibility-bridge 8 stars Chrome a11y tree selectors, NEW tsmd/wcag-mcp 4 stars WCAG docs, NEW CalvHobbes/a11y-mcp Apache-2.0 CI/CD, a11ymcp 78→85 +9%, mcp-accessibility-scanner 43→48 +12%, accessibility-agents 186→247 +33% 57→79 agents +39%, lighthouse 49→56 +14%; rating 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Digital Accessibility MCP Servers** (`content/reviews/digital-accessibility-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **Deque Official axe MCP Server — BIGGEST GAP CLOSED**
+     - dequelabs/axe-mcp-server-public. 3 stars, Proprietary, 2 tools.
+     - First introduced at Axe-con 2025, now available to all Axe DevTools for Web customers.
+     - `analyze` + `remediate` tools. Enterprise-grade accessibility testing with AI-powered code-level remediation.
+     - Works with Claude, GitHub Copilot, Cursor, Windsurf, VS Code. Requires Docker + paid subscription.
+     - Privacy-focused: no source code captured or stored.
+   - **BrowserStack MCP Server — ENTERPRISE ACCESSIBILITY PLATFORM**
+     - browserstack/mcp-server. 137 stars, TypeScript, 20 tools.
+     - `runAccessibilityScan` (Spectra™ engine) + `accessibilityExpert` (AI guidance).
+     - WCAG 2.2 compliance. PDF accessibility scanning (first MCP to offer this).
+     - AI-generated contextual code fixes. Launched January 2026.
+   - **benoberkfell/android-a11y-mcp — FIRST NATIVE MOBILE A11Y MCP**
+     - Rust. Uses Android Accessibility API. Inspect accessibility trees, click/type/scroll/swipe.
+     - Auto-installs APK. Partially closes mobile gap (Android only, no iOS).
+   - **plexusone/agent-a11y — GO ACCESSIBILITY TOOLKIT**
+     - 0 stars, Go, MIT. Created Feb 2026.
+     - WCAG 2.0/2.1/2.2. LLM-as-a-Judge for false positive reduction. VPAT reports.
+     - Site crawling, journey-based audits. Multiple report formats.
+   - **yashpreetbathla/mcp-accessibility-bridge — CHROME A11Y TREE**
+     - 8 stars, TypeScript, MIT, 8 tools.
+     - Exposes Chrome accessibility tree via DevTools Protocol.
+     - Generates selectors for Playwright/Selenium/Cypress/WebdriverIO.
+   - **tsmd/wcag-mcp — WCAG DOCUMENTATION REFERENCE**
+     - 4 stars, JavaScript. Structured access to W3C WCAG documentation.
+   - **CalvHobbes/a11y-mcp**: TypeScript, Apache-2.0, 4 tools. Playwright + axe-core with HTTP remote deployment for CI/CD.
+   - **Star updates**: a11ymcp 78→85 (+9%), mcp-accessibility-scanner 43→48 (+12%), priyankark/a11y-mcp unchanged 40, accessibility-agents 186→247 (+33%) now 79 agents (+39%), lighthouse-mcp-server 49→56 (+14%).
+   - **Gaps status**: Deque official CLOSED (paid), native mobile PARTIALLY CLOSED (Android only), VPAT standalone CLOSED (agent-a11y). Still missing: WAVE/Pa11y MCP, iOS/VoiceOver, screen reader simulation, cognitive accessibility tools.
+   - **Rating upgraded 4→4.5/5** — Ecosystem matured from community-only to community + enterprise.
+
+2. **Updated mega-comparison**: Digital accessibility entry in best-mcp-servers.md (Deque official, BrowserStack, updated stars). Developer tools category index updated. Rating 4→4.5/5.
+
+3. **Hugo build** — successful (739ms, 1230 pages). Deploy complete.
+
+### What should happen next
+- **Run 868:** Continue refreshing stale March reviews — pick next most stale review.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Fireflies.ai V1 MCP deprecated April 30 — check V2 status when available.
+- Monitor eBay MCP CVE-2026-27203 for patch release.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 866 — 2026-04-28 — REFRESH Review: Veterinary & Pet Care MCP Servers (NEW Petfinder MCP 4 stars 7 tools FIRST real pet adoption search via Petfinder API breed/size/location filtering, NEW tama96 12 stars Rust MIT 7 tools Tamagotchi P1 recreation desktop+terminal+MCP real-time lifecycle evolution matrix per-action permissions #7 Product Hunt, NEW mcp-fishbase 8 tools FishBase ecology distribution morphology n8n integration 4x tools of original, AgroBR 21→23 stars, NSIP unchanged 1 star 148 commits, MCPet unchanged 10 stars, chatagotchi unchanged 11 stars, fish-mcp-server 0 stars 157 commits; VET INDUSTRY AI LANDSCAPE: Shepherd TranscribeAI+DiagnoseAI, Covetrus AI SOAP, Digitail Tails AI, ezyVet AI-Assisted Notes, Provet Cloud AI summaries, Vetspire AI Scribe, PetDesk AI transcription 8000+ clinics, DaySmart Daisy Voice — ALL building AI internally NONE have published MCP servers; ~5→~8 servers; rating holds 2.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
