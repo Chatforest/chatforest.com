@@ -35,6 +35,19 @@ The headline findings: **Grant discovery arrived** — Tar-ive/grants-mcp (gover
 
 Built with FastMCP. Dual transport support (stdio + HTTP). Docker/Docker Compose ready with cloud deployment guides (Google Cloud Run, AWS ECS). Intelligent caching with configurable TTL. 56 commits on main. Phase 3 (containerization) complete; upcoming phases include intelligent scoring, multi-agency tools, and grant application assistance. Grant *writing* is not yet implemented, but discovery is no longer absent.
 
+### GSA-TTS/mcp-server-grants-gov
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [GSA-TTS/mcp-server-grants-gov](https://github.com/GSA-TTS/mcp-server-grants-gov) | — | Python | MIT | 2 |
+
+**Built by the US federal government** — GSA's Technology Transformation Services created this official Grants.gov API MCP server in March 2026:
+
+- **grants_gov_search_opportunities** — search federal grant opportunities
+- **grants_gov_fetch_opportunity** — retrieve detailed grant information
+
+NIH's ScHARe team maintains a parallel version (NIH-ScHARe/mcp-server-grants-gov) with the same tool set. Both are actively maintained. Notable as the first government-built MCP servers for grant access — a signal that federal agencies see MCP as a legitimate integration path.
+
 ### Granted AI MCP Server
 
 | Server | Type | Tools |
