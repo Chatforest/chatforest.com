@@ -30,8 +30,17 @@
      - Claude connector directory grew to 200+ integrations (April 2026). New consumer connectors (Spotify, Uber, Instacart, etc.).
      - Claude for Nonprofits: still 75% discount, same 3 connectors (Blackbaud, Benevity, Candid).
      - Goodera-Benevity API integration went live — streaming volunteer data between platforms.
-   - **Two major gaps filled**: grant discovery (grants-mcp + Granted AI), civic/government open data (us-gov-open-data-mcp + mcp-civic-data).
-   - **Rating upgraded 3→3.5/5** — grant discovery and civic data brought significant new capability. us-gov-open-data-mcp (94 stars) is now the highest-starred server in this vertical. Open-source nonprofit-specific landscape still thin — charity-mcp-server inactive, NationBuilder deleted.
+   - **CiviCRM gap filled**
+     - **johncallhub/civicrm-mcp-server** — NEW. 3 stars, JavaScript, MIT, 11 tools. First standalone CiviCRM MCP server. Contacts, activities, contributions, events, memberships, custom field auto-discovery. Serves 14K+ orgs (FSF, Creative Commons, Wikimedia, CERN).
+   - **Government MCP servers**
+     - **GSA-TTS/mcp-server-grants-gov** — NEW. 0 stars, Python, MIT, 2 tools. Official US government Grants.gov MCP. Built by GSA Technology Transformation Services.
+     - **GovInfo MCP** — NEW. Official US Government Publishing Office MCP server. Public preview Jan 22, 2026. Federal government documents and publications.
+   - **Industry: Blackbaud "Development Agent"** — March 17, 2026. First fully autonomous fundraising AI agent for Raiser's Edge NXT. Also announced Grant Review Agent. Shift from MCP connectors (query) to autonomous agents (act).
+   - **Industry: Salesforce "Agentforce Nonprofit"** — Rebranded from Nonprofit Cloud. 4 purpose-built AI agents: Prospect Research (GA), Participant Management (GA), Volunteer Capacity & Coverage (GA early 2026), Donor Support (GA summer 2026). NPSP in maintenance mode.
+   - **Industry: Candid** — Unified search merging GuideStar + Foundation Directory (Jan 2026). AI-powered funder recommendations. Laid off ~20% staff for AI-first pivot.
+   - **Industry context**: 92% of nonprofits now use AI but only 7% report major impact ("efficiency plateau").
+   - **Three major gaps filled**: grant discovery (grants-mcp + Granted AI + GSA-TTS), CiviCRM (civicrm-mcp-server), civic/government open data (us-gov-open-data-mcp + mcp-civic-data + GovInfo).
+   - **Rating upgraded 3→3.5/5** — grant discovery, CiviCRM, and civic data brought significant new capability. us-gov-open-data-mcp (94 stars) is now the highest-starred server in this vertical. Blackbaud's autonomous agent and Salesforce's four-agent suite signal nonprofit AI moving from "search" to "act autonomously."
 
 2. **Hugo build** — successful (749ms), 1,230 pages.
 
