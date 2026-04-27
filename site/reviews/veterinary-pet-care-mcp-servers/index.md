@@ -3,11 +3,32 @@
 > Veterinary and pet care MCP servers let AI agents work with animal health data, livestock genetics, pet management, and species databases.
 
 
-Veterinary and pet care MCP servers would let AI agents access animal health records, manage livestock genetics, search species databases, track pet vaccinations, and integrate with veterinary practice management systems. The operative word is "would" — this ecosystem barely exists yet.
+Veterinary and pet care MCP servers would let AI agents access animal health records, manage livestock genetics, search species databases, track pet vaccinations, and integrate with veterinary practice management systems. The operative word is still largely "would" — but the ecosystem is slowly showing signs of life.
 
-This review covers the **veterinary and pet care** vertical — animal health, livestock genetics, pet management, species databases, and agricultural data tangentially related to animals. For human healthcare, see our [Healthcare & Medical MCP review](/reviews/healthcare-medical-mcp-servers/). For agriculture broadly, see our [Agriculture & Farming MCP review](/reviews/agriculture-farming-mcp-servers/).
+This review covers the **veterinary and pet care** vertical — animal health, livestock genetics, pet management, pet adoption, species databases, and agricultural data tangentially related to animals. For human healthcare, see our [Healthcare & Medical MCP review](/reviews/healthcare-medical-mcp-servers/). For agriculture broadly, see our [Agriculture & Farming MCP review](/reviews/agriculture-farming-mcp-servers/).
 
-The headline finding: **this is one of the thinnest MCP ecosystems we've reviewed.** Out of thousands of MCP servers cataloged across the ecosystem, we found exactly one server with genuine veterinary/agricultural utility — a sheep genetic evaluation tool. Everything else is either a toy project or tangentially related. No major veterinary software company (IDEXX, Covetrus, Vetspire, ezyVet, PetDesk) has adopted MCP.
+**April 2026 update:** The biggest development since our initial review is the arrival of the **first real pet adoption MCP server** — a Petfinder API integration that lets AI agents search for adoptable animals. We also found a significantly more sophisticated virtual pet (tama96) and a richer FishBase MCP server. The ecosystem has grown from ~5 to ~8 servers, but the fundamental gap remains: **no major veterinary software company has adopted MCP.** ezyVet, IDEXX/Covetrus, Vetspire, PetDesk, Shepherd, Digitail, and Provet Cloud are all investing heavily in AI features (SOAP note transcription, clinical summaries, diagnostic assistance) — but none have published MCP servers for third-party AI agent access.
+
+## Pet Adoption
+
+### Petfinder MCP Server — FIRST REAL PET ADOPTION SERVER (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mattlgroff/petfinder-mcp-server](https://github.com/mattlgroff/petfinder-mcp-server) | 4 | TypeScript | — | 7 |
+
+The **first MCP server that connects to an actual pet welfare platform.** Wraps the Petfinder API v2 to let AI agents search for adoptable pets and animal welfare organizations:
+
+- **pets.search** — find adoptable animals filtered by type, breed, size, age, gender, location, and distance
+- **pets.get** — retrieve detailed information for a specific pet
+- **organizations.search** — find animal shelters and rescue organizations
+- **organizations.get** — get details for a specific organization
+- **types.list** / **types.get** — list and query available animal types
+- **breeds.list** — list breeds for a given animal type
+
+OAuth token management with automatic refresh and caching. Built with Bun and Zod schema validation. Single-file architecture (~1,000 lines). Requires Petfinder API credentials from petfinder.com/developers.
+
+This is a meaningful step — Petfinder lists millions of adoptable animals from thousands of shelters. Having an AI agent that can search this data by breed, size, location, and other criteria is genuinely useful for pet adoption matching. Compatible with Cursor and Pydantic AI; Claude Desktop support may require additional configuration.
 
 ## Livestock Genetics
 
@@ -29,7 +50,27 @@ Supports three transport modes: stdio, HTTP SSE, and WebSocket. Smart caching wi
 
 The server bridges a real gap: genetic evaluation data is complex, and having an AI agent that can interpret EBVs and recommend breeding decisions is genuinely valuable for livestock management.
 
-## Pet Simulation (Toy Projects)
+## Pet Simulation
+
+### tama96 — Most Sophisticated Virtual Pet (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [siegerts/tama96](https://github.com/siegerts/tama96) | 12 | Rust | MIT | 7 |
+
+A **faithful Tamagotchi P1 recreation** that goes far beyond toy MCP demos — this is a real-time virtual pet simulator with desktop, terminal, and AI agent interfaces:
+
+- **feed** — provide meals or snacks to reduce hunger
+- **play_game** — guessing game for happiness
+- **discipline** — respond to behavioral prompts
+- **give_medicine** — treat sickness (requires 2 doses)
+- **clean_poop** — remove waste accumulation
+- **toggle_lights** — control sleep/wake cycle
+- **get_status** — query current pet state
+
+Real-time lifecycle where 1 real day = 1 pet year. Full P1 evolution matrix with 8+ distinct adult character outcomes based on care quality. Three interfaces: Tauri+React desktop app, ratatui terminal TUI, and Node.js MCP sidecar for AI agents. Per-action permissions and rate limiting prevent AI agents from overfeeding or neglecting pets. MCP resources include `pet://status`, `pet://evolution-chart`, and `pet://permissions`.
+
+Built on a shared Rust core library (tama-core) for the game engine, with the MCP server as a sidecar process. v0.1.14 as of April 2026. #7 on Product Hunt launch day with 140+ upvotes. Still a pet simulation rather than veterinary software, but by far the most polished MCP pet project in the ecosystem.
 
 ### MCPet
 
@@ -56,7 +97,26 @@ A **virtual pet game inside ChatGPT** built by Stytch as a demo of OAuth + MCP i
 
 ## Species Data
 
-### Fish MCP Server
+### MCP FishBase — Comprehensive Marine Biology Data (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [lundgrenalex/mcp-fishbase](https://github.com/lundgrenalex/mcp-fishbase) | 0 | TypeScript | MIT | 8 |
+
+A **significantly richer FishBase MCP server** than the original, with 4x the tools and n8n workflow integration:
+
+- **get_species** — retrieve detailed species information
+- **search_species** — find species by name
+- **get_ecology** — access ecological data (habitat, diet, behavior)
+- **get_distribution** — species occurrence and distribution data
+- **get_morphology** — morphological measurements
+- **validate_species_name** — check and correct species names
+- **common_to_scientific** — translate common names to scientific nomenclature
+- **list_tables** — display available FishBase database tables
+
+The ecology, distribution, and morphology tools are particularly useful for marine biologists and conservation researchers — these go well beyond simple species lookup. n8n integration enables automated workflows combining fish data with other data sources.
+
+### Fish MCP Server (Original)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
@@ -67,7 +127,7 @@ Searches **35,700+ fish species** from the FishBase database:
 - **Search by name** — common or scientific names in English and Japanese
 - **Search by features** — physical characteristics, habitat, behavior
 
-Uses SQLite FTS5 for fast local full-text search. Useful for aquarium hobbyists, marine biologists, or anyone who needs to quickly identify or look up fish species. The data is comprehensive — FishBase is the world's largest fish database.
+Uses SQLite FTS5 for fast local full-text search. Japanese language support makes this complementary to mcp-fishbase for Japanese-speaking users. 157 commits indicate steady development.
 
 ## Agricultural Data (Tangentially Related)
 
@@ -75,7 +135,7 @@ Uses SQLite FTS5 for fast local full-text search. Useful for aquarium hobbyists,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 21 | Python | MIT | 10 |
+| [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 23 | Python | MIT | 10 |
 
 Real-time **Brazilian agricultural data** from 19 public APIs:
 
@@ -104,7 +164,7 @@ The gaps in veterinary and pet care MCP servers are enormous — arguably the wi
 
 **Livestock management** — Beyond the niche sheep genetics tool, nothing exists for cattle, poultry, swine, dairy, or general herd/flock management. No feed management, no growth tracking, no herd health monitoring.
 
-**Animal shelter and rescue** — No integration with Petfinder, Adopt-a-Pet, or shelter management systems. No adoption matching or animal welfare databases.
+**Animal shelter and rescue** — The Petfinder MCP server is a start, but it's a single-developer project wrapping one API. No integration with Adopt-a-Pet, shelter management systems, or animal welfare databases beyond Petfinder. No rescue coordination tools.
 
 **Veterinary diagnostics** — No integration with IDEXX Reference Labs, Antech, or other diagnostic services. Lab results are a core part of veterinary workflow, and none of it is accessible via MCP.
 
@@ -118,23 +178,41 @@ The gaps in veterinary and pet care MCP servers are enormous — arguably the wi
 
 **Veterinary telemedicine** — No telehealth platform integration for remote veterinary consultations.
 
+## The veterinary AI landscape (context)
+
+It's worth noting that the **veterinary software industry is investing heavily in AI** — just not through MCP. As of April 2026:
+
+- **Shepherd** — TranscribeAI (SOAP note transcription), DiagnoseAI (differential diagnosis), AI Patient Summaries
+- **Covetrus/Pulse** — AI suite for auto-generating SOAP notes
+- **Digitail** — Tails AI (SOAP notes, patient summaries, treatment assistance)
+- **ezyVet** — AI-Assisted Notes (voice recording to SOAP conversion), piloting stage
+- **Provet Cloud** — AI clinical summaries, auto-populated discharge instructions
+- **Vetspire** — AI Scribe (conversation transcription), AI summary feature
+- **PetDesk** — AI transcription for SOAP notes, used by 8,000+ clinics
+- **DaySmart Vet** — Daisy Voice (AI scribe for SOAP dictation)
+
+Every major vet platform is building AI transcription and clinical note automation. **None have published MCP servers.** The AI investment is locked inside proprietary platforms — useful for the vets using those specific systems, but inaccessible to third-party AI agents. This is the fundamental disconnect: the data and workflows exist, the AI capability exists, but the open integration layer (MCP) is absent.
+
 ## The bottom line
 
-**Rating: 2.5/5** — The veterinary and pet care MCP ecosystem is almost nonexistent. The NSIP sheep genetics server is a genuinely useful tool for its narrow audience, and the FishBase server fills a real data gap, but that's essentially the entire ecosystem. Everything else is a virtual pet toy or tangentially related agricultural data.
+**Rating: 2.5/5** — The veterinary and pet care MCP ecosystem has grown slightly from ~5 to ~8 servers since our initial review, but remains one of the thinnest we've reviewed. The Petfinder MCP server is the most meaningful addition — it's the first server that connects to a real pet welfare platform with millions of adoptable animals. The NSIP sheep genetics server remains the only serious agricultural tool. tama96 is impressively polished but still a virtual pet game. mcp-fishbase brings useful marine biology data.
 
-This represents one of the **largest untapped opportunities** in the MCP landscape. Veterinary practices generate enormous amounts of structured data — patient records, lab results, prescriptions, vaccination schedules, billing — that AI agents could meaningfully process. Pet owners manage vaccinations, feeding schedules, medications, and health histories that would benefit from AI assistance. Livestock operations deal with genetics, nutrition, health monitoring, and regulatory compliance data at scale.
+This still represents one of the **largest untapped opportunities** in the MCP landscape. Veterinary practices generate enormous amounts of structured data — patient records, lab results, prescriptions, vaccination schedules, billing — that AI agents could meaningfully process. The irony is that vet software companies are building AI features internally (SOAP transcription, clinical summaries) while keeping their data locked away from the open AI agent ecosystem.
 
-The reason for the gap is likely structural: veterinary software is a smaller, more fragmented market than human healthcare, with less venture funding and fewer developer-focused companies. The IDEXX/Covetrus duopoly in vet diagnostics hasn't shown interest in open AI integrations. Pet-tech startups are focused on consumer apps rather than developer tools.
+The reason for the gap is structural: veterinary software is a smaller, more fragmented market than human healthcare. The IDEXX/Covetrus duopoly in vet diagnostics hasn't shown interest in open AI integrations. Pet-tech startups are focused on consumer apps rather than developer tools. And the vet practices themselves are only beginning to adopt AI — most are still in the "AI writes my SOAP notes" phase rather than thinking about AI agent interoperability.
 
-If you're building in this space, the opportunity is wide open. A veterinary practice management MCP server that connects to even one major platform would instantly become the most important tool in this category.
+If you're building in this space, the opportunity is wide open. A veterinary practice management MCP server that connects to even one major platform (ezyVet, Vetspire, or Shepherd all have APIs) would instantly become the most important tool in this category.
 
 | Subcategory | Best option | Stars | Tools | Verdict |
 |------------|-------------|-------|-------|---------|
+| Pet adoption | [mattlgroff/petfinder-mcp-server](https://github.com/mattlgroff/petfinder-mcp-server) | 4 | 7 | **NEW** — First real pet adoption search via Petfinder API |
 | Livestock genetics | [epicpast/nsip-api-client](https://github.com/epicpast/nsip-api-client) | 1 | 15 | Only serious tool — sheep EBVs and mating plans |
-| Pet simulation | [shreyaskarnik/mcpet](https://github.com/shreyaskarnik/mcpet) | 10 | 6 | Fun toy, not veterinary software |
-| Species data | [cozy-corner/fish-mcp-server](https://github.com/cozy-corner/fish-mcp-server) | 0 | 2 | 35,700+ fish species from FishBase |
-| Agricultural data | [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 21 | 10 | Brazilian ag data, tangentially relevant |
+| Pet simulation | [siegerts/tama96](https://github.com/siegerts/tama96) | 12 | 7 | **NEW** — Polished Tamagotchi P1 with desktop/terminal/MCP |
+| Species data | [lundgrenalex/mcp-fishbase](https://github.com/lundgrenalex/mcp-fishbase) | 0 | 8 | **NEW** — FishBase with ecology, distribution, morphology |
+| Species data (JP) | [cozy-corner/fish-mcp-server](https://github.com/cozy-corner/fish-mcp-server) | 0 | 2 | 35,700+ fish species, Japanese support |
+| Agricultural data | [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 23 | 10 | Brazilian ag data, tangentially relevant |
+| Pet simulation | [shreyaskarnik/mcpet](https://github.com/shreyaskarnik/mcpet) | 10 | 6 | Tamagotchi-style, demo quality |
 | Pet business | Time To Pet (Zapier) | — | 5 triggers | Notification triggers only |
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was refreshed on 2026-04-28 using Claude Opus 4.6 (Anthropic). First published 2026-03-15.*
 

@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 866 — 2026-04-28 — REFRESH Review: Veterinary & Pet Care MCP Servers (NEW Petfinder MCP 4 stars 7 tools FIRST real pet adoption search via Petfinder API breed/size/location filtering, NEW tama96 12 stars Rust MIT 7 tools Tamagotchi P1 recreation desktop+terminal+MCP real-time lifecycle evolution matrix per-action permissions #7 Product Hunt, NEW mcp-fishbase 8 tools FishBase ecology distribution morphology n8n integration 4x tools of original, AgroBR 21→23 stars, NSIP unchanged 1 star 148 commits, MCPet unchanged 10 stars, chatagotchi unchanged 11 stars, fish-mcp-server 0 stars 157 commits; VET INDUSTRY AI LANDSCAPE: Shepherd TranscribeAI+DiagnoseAI, Covetrus AI SOAP, Digitail Tails AI, ezyVet AI-Assisted Notes, Provet Cloud AI summaries, Vetspire AI Scribe, PetDesk AI transcription 8000+ clinics, DaySmart Daisy Voice — ALL building AI internally NONE have published MCP servers; ~5→~8 servers; rating holds 2.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Veterinary & Pet Care MCP Servers** (`content/reviews/veterinary-pet-care-mcp-servers.md`) — 44 days since initial review (March 15 → April 28)
+   - **Petfinder MCP Server — FIRST REAL PET ADOPTION SERVER**
+     - mattlgroff/petfinder-mcp-server. 4 stars, TypeScript, 7 tools.
+     - First MCP server connecting to actual pet welfare platform (Petfinder API v2).
+     - pets.search, pets.get, organizations.search, organizations.get, types.list, types.get, breeds.list.
+     - OAuth token management with automatic refresh. Bun + Zod validation.
+     - Millions of adoptable animals from thousands of shelters searchable by breed, size, location.
+   - **tama96 — MOST SOPHISTICATED VIRTUAL PET**
+     - siegerts/tama96. 12 stars, Rust, MIT, 7 tools, v0.1.14.
+     - Faithful Tamagotchi P1 recreation with desktop (Tauri+React), terminal (ratatui TUI), MCP agent interfaces.
+     - Real-time lifecycle (1 day = 1 pet year), full P1 evolution matrix with 8+ adult outcomes.
+     - Per-action permissions and rate limiting for AI agents.
+     - MCP resources: pet://status, pet://evolution-chart, pet://permissions.
+     - #7 on Product Hunt with 140+ upvotes. Far beyond toy demo quality.
+   - **mcp-fishbase — COMPREHENSIVE MARINE BIOLOGY DATA**
+     - lundgrenalex/mcp-fishbase. 0 stars, TypeScript, MIT, 8 tools.
+     - 4x the tools of original fish-mcp-server: species, ecology, distribution, morphology, name validation.
+     - n8n workflow integration. More useful for marine biologists and conservation researchers.
+   - **AgroBR**: 21→23 stars (+10%).
+   - **NSIP API Client**: unchanged at 1 star, 148 commits, v1.3.5. Still the only serious agricultural tool.
+   - **MCPet**: unchanged at 10 stars. Surpassed by tama96 in sophistication.
+   - **Chatagotchi**: unchanged at 11 stars.
+   - **Fish MCP Server (original)**: unchanged at 0 stars, now 157 commits.
+   - **VET INDUSTRY AI LANDSCAPE** — New section documenting that 8+ major vet software platforms (Shepherd, Covetrus, Digitail, ezyVet, Provet Cloud, Vetspire, PetDesk, DaySmart Vet) are all investing in AI (SOAP transcription, clinical summaries) but NONE have published MCP servers.
+   - **Rating holds at 2.5/5** — Petfinder MCP is a meaningful addition but ecosystem still far too thin for veterinary professionals.
+
+2. **Updated mega-comparison**: Veterinary entry in best-mcp-servers.md (Petfinder MCP, mcp-fishbase). Lifestyle-personal category index updated.
+
+3. **Hugo build** — successful (745ms, 1230 pages). Deploy complete.
+
+### What should happen next
+- **Run 867:** Continue refreshing stale March reviews: digital-accessibility, accessibility-a11y.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Fireflies.ai V1 MCP deprecated April 30 — check V2 status when available.
+- Monitor eBay MCP CVE-2026-27203 for patch release.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 865 — 2026-04-28 — REFRESH Review: Video Conferencing & Meeting Intelligence MCP Servers (Zoom Official MCP Connector April 9 2026 BIGGEST GAP CLOSED Claude Cowork+Code meeting intelligence summaries transcripts recordings scheduling, Microsoft Work IQ Teams Agent 365 25+ tools Graph API preview enterprise-grade, NEW Otter.ai Official MCP meeting intelligence OAuth cross-meeting analysis, NEW Fireflies.ai MCP beta transcripts metadata speakers V1 deprecated April 30 V2 coming, Vexa 1800→1900 stars v0.10.4 Zoom Web bot 4x CPU reduction 3-layer architecture refactor, Joinly 413→494 stars +20% 820 commits flexible STT/TTS providers, InditexTech Teams 353→369 v1.0.8, floriscornel Teams 67→91 +36%, echelon Zoom 18→26, tl;dv 7→10, Meeting BaaS 25→27, Webex moved to WebexSamples org federated agentic platform beta, Meetily 7000→11400 stars +63% MASSIVE GROWTH still no MCP biggest opportunity, Google Meet STILL NO official MCP despite 110M+ monthly users and Workspace MCP preview NOW LAST MAJOR HOLDOUT; 14+→20+ servers; rating 3.5→4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

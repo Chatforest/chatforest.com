@@ -43,12 +43,12 @@ The thinnest consumer subcategory. Virtual try-on, wardrobe management, K-beauty
 
 ## Pets & Animal Care
 
-Two reviews cover the animal kingdom from opposite angles. Pet & Animal Care spans virtual pets, wildlife identification, birding data, and pet adoption. Veterinary & Pet Care focuses on animal health records and livestock genetics. Both ecosystems are very early — the strongest server is NSIP (15 tools for sheep genetics), and MCPet (10 stars) is the most popular pet-focused project. A wide-open space for development.
+Two reviews cover the animal kingdom from opposite angles. Pet & Animal Care spans virtual pets, wildlife identification, birding data, and pet adoption. Veterinary & Pet Care focuses on animal health records, livestock genetics, pet adoption, and species data. Both ecosystems are very early — the newest arrival is a Petfinder MCP server (first real pet adoption search), and tama96 (12 stars) is now the most polished pet project. A wide-open space for development.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Pet & Animal Care](/reviews/pet-animal-care-mcp-servers/) | 2.5/5 | NSIP sheep genetics (15 tools), MCPet virtual pet (10 stars, 6 tools), wildlife ID, birding data, pet adoption — 10+ servers |
-| [Veterinary & Pet Care](/reviews/veterinary-pet-care-mcp-servers/) | 2.5/5 | NSIP API Client (15 tools), MCPet (10 stars, 6 tools), Fish MCP (2 tools) — very thin ecosystem |
+| [Veterinary & Pet Care](/reviews/veterinary-pet-care-mcp-servers/) | 2.5/5 | Petfinder MCP (4 stars, 7 tools, pet adoption), NSIP API Client (15 tools), tama96 (12 stars, 7 tools), mcp-fishbase (8 tools) — ~8 servers, growing |
 
 ## Weather & Climate
 
