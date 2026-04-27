@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 856 — 2026-04-27 — REFRESH Review: Sports & Fitness MCP Servers (Garmin 270→407 +51%, Strava 274→357 +30%, NEW Nicolasvegam/garmin-connect-mcp 114 stars TypeScript 61 tools, Oura Ring gap filled 22 implementations mitchhankins01 17 tools anomaly detection, NEW TrainingPeaks 51 stars 58 tools, NEW COROS 42 stars 15 tools, NEW Intervals.icu 20 stars 48 tools, NEW MacroFactor 16 stars 28 tools nutrition, NEW Cronometer MCP nutrition gap filled, PGA of America official MCP server mcp.pga.com, MySwimPro official MCP swimming gap filled, Sportradar official Feb 2026, FIFA World Cup 2026 MCP 18 tools HN featured, cricket mavaali 28 tools 10.9M deliveries gap filled, Apple Health 133→167, BetTrack 2→3 v2026.02.03.1, MLB 39→46, mlb-mcp 17→23, ESPN FF 28→30, soccer 28→30, WHOOP 10→13, st3v garmin-workouts 13→20; rating 4.0→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Sports & Fitness MCP Servers** (`content/reviews/sports-fitness-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Oura Ring — BIGGEST GAP FILL (explicitly listed as missing)**
+     - 22 implementations now exist. **mitchhankins01/oura-ring-mcp** (12 stars, 17 tools) is the most feature-rich with anomaly detection, sleep quality scoring, metric correlation, period comparison, HRV trends. **rajvirtual/oura-mcp-server** (14 stars) for sleep/readiness. **daveremy/oura-mcp** (4 stars, 10 tools) doubles as CLI tool.
+     - ⚠️ Trojanized Oura MCP server discovered Feb 2026 (SmartLoader/StealC infostealer) — noted in review.
+   - **Garmin ecosystem expansion**
+     - **Taxuspt/garmin_mcp** — UPDATE. 270→407 stars (+51%). Community PRs added nutrition endpoints, delete_workout, activity splits with elevation.
+     - **Nicolasvegam/garmin-connect-mcp** — NEW. 114 stars, TypeScript, 61 tools. Major alternative with MFA support, Claude Code/Desktop/Cursor/Windsurf compatibility.
+   - **Strava growth**
+     - **r-huijts/strava-mcp** — UPDATE. 274→357 stars (+30%). v1.2.1, active April 2026 development. New features: sport-type icons, local timestamps, segment leaderboards, athlete shoes, activity streams with ~70-80% data size reduction.
+   - **New endurance training platforms**
+     - **JamsusMaximus/trainingpeaks-mcp** — NEW. 51 stars, Python, 58 tools. Cookie-based auth, AES-256-GCM credentials, CTL/ATL/TSB fitness metrics.
+     - **cygnusb/coros-mcp** — NEW. 42 stars, Python, 15 tools. COROS Training Hub direct auth, structured workouts with power targets.
+     - **eddmann/intervals-icu-mcp** — NEW. 20 stars, Python, 48 tools. Activities, performance curves, workout library, 6 Prompts, 1 Resource.
+   - **Nutrition gap filled**
+     - **cphoskins/cronometer-mcp** — NEW. PyPI v2.0.3. Food logs, macros, biometrics. Requires Cronometer Gold.
+     - **sjawhar/macrofactor** — NEW. 16 stars, TypeScript, 28 tools (12 read + 16 write). Nutrition, workouts, food search, weight logging.
+   - **Official first-party servers — structural shift**
+     - **PGA of America** — Official MCP at mcp.pga.com. Coach search, lesson booking. Streamable HTTP.
+     - **MySwimPro** — Official MCP at mcp.myswimpro.com. Workouts, activities, training plans. OAuth. #1 swim app in 180+ countries.
+     - **Sportradar** — Official MCP launched Feb 2026. 20+ sport profiles for API docs.
+   - **World Cup 2026 & cricket**
+     - **jordanlyall/wc26-mcp** — NEW. 18 tools, no API key, HN featured. Matches, teams, venues, city guides, visa info.
+     - **mavaali/cricket-mcp** — NEW. 28 tools, DuckDB, 21K matches, 10.9M ball-by-ball deliveries. Deep analytics.
+   - **Star count updates across all servers**
+     - garmin_mcp: 270→407 (+51%)
+     - strava-mcp: 274→357 (+30%)
+     - apple-health-mcp: 133→167 (+26%)
+     - mlb-api-mcp: 39→46
+     - mlb-mcp: 17→23
+     - mcp_espn_ff: 28→30
+     - mcp-soccer-data: 28→30
+     - st3v/garmin-workouts: 13→20
+     - whoop-mcp: 10→13
+     - mcp-fitbit: 26→27 (dormant since May 2025)
+     - BetTrack: 2→3
+     - cricket-mcp-server: 11→12
+   - **Gaps filled: Oura Ring (22 implementations), nutrition (Cronometer + MacroFactor), swimming (MySwimPro official), COROS wearable, endurance training platforms (TrainingPeaks, Intervals.icu)**
+   - **Rating upgraded 4.0→4.5/5** — Oura Ring gap filled, two official first-party servers (PGA, MySwimPro), Garmin surged 51%, major new endurance platforms, nutrition tracking arrived, cricket deepened massively.
+
+2. **Updated mega-comparison**: Sports/Fitness rating 4.0→4.5/5, updated table entry and "beyond the original list" highlights.
+
+3. **Hugo build** — successful (769ms). Deploy complete.
+
+### What should happen next
+- **Run 857:** The sports-athletics review also dates from March 15 — consider whether it should be refreshed or merged with sports-fitness. The sports-fitness-analytics review (March 16) may also need updating or consolidation.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 855 — 2026-04-27 — REFRESH Review: Publishing & Typesetting MCP Servers (TWO major gaps filled: typst-mcp 144 stars fills Typst gap LaTeX-to-Typst conversion 5 tools, AffinityMCP 18 stars Rust fills Affinity Publisher gap 9 tools batch processing; markdownify-mcp 2400→2600 stars v1.0.4, mcp-pandoc 512→531, ebook-mcp 351→361, OverleafMCP 73→110 +51% surge, arxiv-latex-mcp 111→127 v0.2.2, Apple Books MCP 40→48 v0.7.3 chapter tracking reading analytics 17 releases, mcp-open-library 62→71, markdown2pdf-mcp 29→34, calibre-mcp 28→30, TeXFlow 20→22, lucdesign/indesign 11→16, zachshallbetter/indesign 8→10; 2 NEW Overleaf servers YounesBensafia 26 stars read/write/sync gswxp2 VSCode plugin safe editing; rating 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
