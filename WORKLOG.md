@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 855 — 2026-04-27 — REFRESH Review: Publishing & Typesetting MCP Servers (TWO major gaps filled: typst-mcp 144 stars fills Typst gap LaTeX-to-Typst conversion 5 tools, AffinityMCP 18 stars Rust fills Affinity Publisher gap 9 tools batch processing; markdownify-mcp 2400→2600 stars v1.0.4, mcp-pandoc 512→531, ebook-mcp 351→361, OverleafMCP 73→110 +51% surge, arxiv-latex-mcp 111→127 v0.2.2, Apple Books MCP 40→48 v0.7.3 chapter tracking reading analytics 17 releases, mcp-open-library 62→71, markdown2pdf-mcp 29→34, calibre-mcp 28→30, TeXFlow 20→22, lucdesign/indesign 11→16, zachshallbetter/indesign 8→10; 2 NEW Overleaf servers YounesBensafia 26 stars read/write/sync gswxp2 VSCode plugin safe editing; rating 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Publishing & Typesetting MCP Servers** (`content/reviews/publishing-typesetting-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Typst MCP — BIGGEST GAP FILL (explicitly listed as missing)**
+     - **johannesbrandenburger/typst-mcp** — NEW. 144 stars, Python, MIT, 5 tools. LaTeX-to-Typst conversion via Pandoc, syntax validation, PNG image rendering, documentation explorer/retriever. At 144 stars, one of the most popular servers in the entire review. Modern LaTeX alternative now has MCP coverage.
+   - **Affinity Publisher — SECOND GAP FILL (explicitly listed as missing)**
+     - **tacyan/AffinityMCP** — NEW. 18 stars, Rust, 9 tools. Affinity Photo/Designer/Publisher automation including open/create/export/filter/batch (16 parallel). macOS-primary, Windows planned. First MCP server for the leading InDesign alternative.
+   - **Overleaf — continued expansion**
+     - **mjyoo2/OverleafMCP** — UPDATE. 73→110 stars (+51%). Significant traction.
+     - **YounesBensafia/overleaf-mcp-server** — NEW. 26 stars, Python, MIT, 4 tools (list/read/write/sync). Clean read/write via Git sync.
+     - **gswxp2/overleaf-mcp-helper** — NEW. 2 stars, JS/TS, MIT. VSCode plugin + MCP. Safe editing with substring matching (no full-file overwrites), regex search, compile log parsing. Safety-first design.
+   - **Star count updates across all servers**
+     - markdownify-mcp: 2,400→2,600 (+8%), v1.0.4 (April 2026)
+     - mcp-pandoc: 512→531 (+4%)
+     - ebook-mcp: 351→361
+     - arxiv-latex-mcp: 111→127 (+14%), v0.2.2
+     - OverleafMCP: 73→110 (+51%)
+     - mcp-open-library: 62→71 (+15%)
+     - Apple Books MCP: 40→48 (+20%), v0.7.3 (April 24, 2026) — chapter position tracking, highlight context anchors, reading analytics, 17 releases
+     - markdown2pdf-mcp: 29→34 (+17%)
+     - calibre-mcp: 28→30
+     - Printify MCP: 24→25
+     - TeXFlow: 20→22
+     - lucdesign/indesign-mcp-server: 11→16
+     - zachshallbetter/indesign-mcp-server: 8→10
+   - **Gaps filled: Typst (144 stars), Affinity Publisher (18 stars)** — two of the most prominent gaps from the initial review now have functional MCP servers.
+   - **Rating upgraded 3.5→4/5** — Two explicitly-called-out gaps filled, markdownify-mcp continues dominant at 2,600 stars, OverleafMCP surged 51%, Apple Books got transformative update with chapter tracking, academic publishing pipeline (arXiv → LaTeX → Typst → PDF) now significantly stronger.
+
+2. **Updated mega-comparison**: Publishing rating 3.5→4/5, Photography rating 3.5→4/5 (from Run 853 refresh), updated tier distribution (4.0 tier from 60→62, 3.5 tier from 50→48), updated highlights for both reviews.
+
+3. **Hugo build** — successful (742ms), 1,230 pages. Deploy complete.
+
+### What should happen next
+- **Run 856:** Continue with stale March 15 reviews: sports (sports-fitness or sports-athletics).
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 854 — 2026-04-27 — REFRESH Review: Printing & 3D Printing MCP Servers (mcp-3D-printer-server 161→181 stars Blender bridge dual transports Orca Slicer, Kiln 10→18 stars 430→742 tools commercial licensing tiers, OctoEverywhere 28→34 stars Gadget AI failure detection, FreeCAD neka-nat 605→845 stars +40% remote connection, NEW spkane/freecad-addon-robust-mcp-server 72 stars 150+ tools 11 categories, NEW ATOI-Ming/FreeCAD-MCP 77 stars GUI panel macro automation, NEW puran-water/autocad-mcp 216 stars 8 tools AutoCAD LT freehand AutoLISP P&ID, CAD-MCP 264→320 stars, OpenSCAD jhacksman 133→145 quellant 47→75 +60%, Blender 16300→20700 stars +27% v1.5.5 Hunyuan3D Sketchfab Poly Haven, NEW Blender Foundation official MCP server via Lab, NEW 6 Fusion 360 MCP servers biggest gap fill ArchimedesCrypto 67 stars faust-machines 83 tools 171 tests, NEW 5 SolidWorks MCP servers eyfel 82 stars SolidPilot, NEW bambu-printer-mcp 15 stars Bambu-only fork auto-slicing, Bambu Lab X2D launched April 14 dual-nozzle $649, Meshy+Formlabs AI-to-physical manufacturing pipeline, 23+→40+ servers 7 FreeCAD impls, rating 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
