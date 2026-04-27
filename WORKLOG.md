@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 864 — 2026-04-28 — REFRESH Review: Logistics & Supply Chain MCP Servers (NEW Karrio 720 stars 50+ carriers built-in MCP self-hosted open-source shipping leader v2026.1.29, Shippo expanded agentic shipping returns WISMO analytics batch processing pickup scheduling manifests, NEW TrackMage 1600+ carriers 10 tools OAuth, NEW ReplenishRadar 28 tools AI-native inventory intelligence Shopify+Amazon stockout risk demand forecasting draft-only PO safety, NEW inFlow MCP 50+ tools inventory management, NEW FedEx community MCP 4 tools Playwright, NEW Correios MCP 8 tools Brazil postal, NEW SAP Ariba Procurement MCP via CData FIRST enterprise procurement MCP bridge read-only JDBC, Oracle Integration Cloud as MCP tools provider enterprise SCM gap-filler Infosys scaling, eBay MCP CVE-2026-27203 CVSS 8.3 env variable injection UNPATCHED, Flespi Codi AI Agent Skills tiered intelligence API migration, ShipXY 9→10 stars, Oracle 29 prebuilt SCM AI agents Fusion Cloud; enterprise gap narrowing; 20+→30+ servers; rating 3→3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Logistics & Supply Chain MCP Servers** (`content/reviews/logistics-supply-chain-mcp-servers.md`) — 44 days since initial review (March 15 → April 28)
+   - **Karrio — OPEN-SOURCE SHIPPING LEADER (720 stars, 50+ carriers)**
+     - karrioapi/karrio. 720 stars, Python, LGPL-3.0, 235 releases, v2026.1.29.
+     - Built-in MCP server for AI assistants (Claude, Cursor, Windsurf).
+     - Self-hosted programmable shipping API: rate shopping, label generation, shipment tracking, carrier management.
+     - 50+ carriers: FedEx, UPS, DHL, USPS, Canada Post, plus dozens of regional carriers.
+     - Dual license (LGPL-3.0 open-source + enterprise commercial).
+   - **Shippo — EXPANDED AGENTIC OPERATIONS**
+     - Beyond label generation: returns automation, WISMO inquiry handling, proactive tracking updates.
+     - Batch processing, pickup scheduling, end-of-day manifest generation.
+     - Shipping analytics (delivery trends, spend distribution across carriers).
+     - Retailers and platform customers experimenting with conversational rate shopping.
+   - **TrackMage — 1,600+ CARRIER TRACKING**
+     - trackmage/trackmage-mcp-server. 2 stars, JavaScript, MIT, 10 tools.
+     - Shipment management, order management, carrier detection.
+     - OAuth authentication. Docker deployment.
+   - **ReplenishRadar — AI-NATIVE INVENTORY INTELLIGENCE**
+     - ReplenishRadar/MCP. 0 stars, JavaScript, Proprietary, 28 tools (18 read + 10 write).
+     - Stockout risk analysis, demand forecasting, purchase order management, sales analytics, SKU health.
+     - Safety design: all write operations create drafts only — no agent can send POs without human approval.
+     - For Shopify and Amazon sellers.
+   - **inFlow MCP — 50+ INVENTORY TOOLS**
+     - bigl34/inflow-mcp-server. 1 star, TypeScript, MIT, 50+ tools.
+     - Product management, sales/purchase orders, customer/vendor records, inventory operations, webhooks.
+     - Token bucket rate limiting, exponential backoff.
+   - **FedEx Community MCP — NEW**
+     - markswendsen-code/mcp-fedex. 0 stars, TypeScript, MIT, 4 tools.
+     - Tracking, rates, location finding, pickup scheduling via Playwright.
+   - **Correios MCP — NEW (Brazil)**
+     - theYahia/correios-mcp. 0 stars, TypeScript, MIT, 8 tools.
+     - Package tracking, shipping cost calculations, delivery time estimates, label generation.
+   - **SAP Ariba Procurement MCP — FIRST ENTERPRISE PROCUREMENT MCP**
+     - CDataSoftware/sap-ariba-procurement-mcp-server-by-cdata. 2 stars, Java, MIT, 3 tools.
+     - Read-only access to SAP Ariba Procurement data via JDBC drivers.
+     - Natural language querying without SQL. First crack in the enterprise procurement MCP wall.
+   - **Oracle Integration as MCP Tools Provider**
+     - Oracle Integration Cloud (OIC) can expose any integration flow as MCP tools.
+     - SAP, Oracle SCM, procurement workflows become agent-callable capabilities.
+     - OAuth2 authentication, session management, audit logging.
+     - Infosys already using this for enterprise AI scaling.
+     - Oracle announced 29 prebuilt AI agents for SCM in Fusion Cloud (February 2026).
+   - **eBay MCP — CVE-2026-27203 (CVSS 8.3 HIGH)**
+     - Environment variable injection via ebay_set_user_tokens tool.
+     - Affects all versions up to 1.7.2. No patch available.
+     - Can lead to configuration overwrites, DoS, potential RCE.
+   - **Flespi — Codi AI + Agent Skills**
+     - Codi AI with real-time processing transparency.
+     - REST API tools and MCP servers for Claude Code, Cursor, other AI IDEs.
+     - Agent Skills following machine-readable SKILL.md specification.
+     - Intelligence scales with subscription tier (Free → Enterprise/Ultimate).
+   - **ShipXY**: 9→10 stars.
+   - **Rating upgraded 3→3.5/5** — Karrio's 720-star open-source platform, Shippo's expanded agentic capabilities, 1600+ carrier tracking via TrackMage, AI-native inventory intelligence via ReplenishRadar, and first enterprise procurement MCP bridges represent meaningful maturation.
+
+2. **Updated mega-comparison**: Logistics entry in best-mcp-servers.md (Karrio 720 stars, ReplenishRadar, TrackMage added), logistics-industry category index. Rating updated 3→3.5/5.
+
+3. **Hugo build** — successful (746ms). Deploy complete.
+
+### What should happen next
+- **Run 865:** Continue refreshing stale March reviews: veterinary, video-conferencing, accessibility, or digital-accessibility.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Monitor eBay MCP CVE-2026-27203 for patch release.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 863 — 2026-04-28 — REFRESH Review: Translation & Localization MCP Servers (DeepL 95→102 stars +7%, Crowdin Copilot LAUNCHED April 2026 Ask Agent + Task Agent AI orchestration Custom Agents MCP integration GitHub GitLab Slack Notion Linear ambiguity resolution, Phrase 65→96 tools +48% v0.5.1 BIGGEST TOOL EXPANSION, Lara Translate v1.0.1 OAuth 2.0 42 commits, Intlayer 627→699 stars +11% 5714 commits, NEW SimpleLocalize official 14 tools Apache-2.0 bulk keys TMS, NEW IntlPull commercial 8 tools branch management platform overrides, NEW dalisys/i18n-mcp 10 stars 16 tools multi-framework hardcoded string detection TypeScript type generation, NEW smartling/smartling-cli-mcp official Docker CLI wrapper 3 tools 38 commits, Lokalise official closed beta February 2026, Smartling community 2 new tools; Google Cloud Translation STILL NO dedicated MCP despite 30+ managed servers; subtitle gap partially filled by Video Caption MCP + Reap; 25+→30+ servers; rating 3.5→4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

@@ -16,7 +16,7 @@ Two reviews cover the supply chain from different angles — enterprise ERP and 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Supply Chain & Logistics](/reviews/supply-chain-logistics-mcp-servers/) | 3.5/5 | Karrio (703 stars, self-hosted multi-carrier), Odoo MCP (193 stars, full ERP CRUD), Shippo (official, agentic shipping), ShipStation (official, 6 stars), UPS (official, 13 stars), Microsoft Dynamics 365 (official ERP), SAP OData Bridge (115 stars), VTEX (163+ endpoints) — 40+ servers |
-| [Logistics & Supply Chain](/reviews/logistics-supply-chain-mcp-servers/) | 3/5 | Shippo MCP (official, multi-carrier), UPS-API/ups-mcp (4 stars, official), skuvault-mcp (production-ready inventory), ebay-mcp (325 tools), flespi-mcp-server (157 fleet tools), mcp-shipxy-api (9 stars, maritime tracking) — 20+ servers |
+| [Logistics & Supply Chain](/reviews/logistics-supply-chain-mcp-servers/) | 3.5/5 | Karrio (720 stars, 50+ carriers, built-in MCP), Shippo MCP (official, expanded agentic shipping), ReplenishRadar (28 tools, inventory intelligence), TrackMage (1600+ carriers), inFlow (50+ tools), SAP Ariba via CData (first procurement MCP), Oracle Integration MCP, ebay-mcp (325 tools, CVE-2026-27203), flespi (157 tools + Codi AI) — 30+ servers |
 
 ## Manufacturing & Robotics
 

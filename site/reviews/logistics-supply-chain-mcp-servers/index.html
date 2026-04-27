@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Logistics &amp; Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence — ChatForest</title>
-  <meta name="description" content="Logistics and supply chain MCP servers are an emerging category with 20&#43; servers across 5 subcategories.">
+  <meta name="description" content="Logistics and supply chain MCP servers are a maturing category with 30&#43; servers across 6 subcategories.">
   <meta property="og:title" content="Logistics &amp; Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence — ChatForest">
-  <meta property="og:description" content="Logistics &amp; Supply Chain MCP servers: Shippo MCP (official, multi-carrier shipping), UPS-API/ups-mcp (4 stars, official UPS), skuvault-mcp-server (production-ready inventory), flespi-mcp-server (157 telematics tools), ShipXY (9 stars, maritime tracking), ebay-mcp (325 tools). 20&#43; servers reviewed. Rating: 3/5.">
+  <meta property="og:description" content="Logistics &amp; Supply Chain MCP servers: Karrio (720 stars, 50&#43; carriers, self-hosted MCP), Shippo MCP (official agentic shipping with returns/WISMO/analytics), TrackMage (1600&#43; carriers), ReplenishRadar (28 tools Shopify&#43;Amazon inventory intelligence), inFlow MCP (50&#43; tools), SAP Ariba via CData (first enterprise procurement MCP), Oracle Integration as MCP Server (enterprise SCM gap-filler), eBay MCP CVE-2026-27203, Flespi AI &#43; Agent Skills. 30&#43; servers reviewed. Rating: 3.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/logistics-supply-chain-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Logistics &amp; Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence — ChatForest">
-  <meta name="twitter:description" content="Logistics &amp; Supply Chain MCP servers: Shippo MCP (official, multi-carrier shipping), UPS-API/ups-mcp (4 stars, official UPS), skuvault-mcp-server (production-ready inventory), flespi-mcp-server (157 telematics tools), ShipXY (9 stars, maritime tracking), ebay-mcp (325 tools). 20&#43; servers reviewed. Rating: 3/5.">
+  <meta name="twitter:description" content="Logistics &amp; Supply Chain MCP servers: Karrio (720 stars, 50&#43; carriers, self-hosted MCP), Shippo MCP (official agentic shipping with returns/WISMO/analytics), TrackMage (1600&#43; carriers), ReplenishRadar (28 tools Shopify&#43;Amazon inventory intelligence), inFlow MCP (50&#43; tools), SAP Ariba via CData (first enterprise procurement MCP), Oracle Integration as MCP Server (enterprise SCM gap-filler), eBay MCP CVE-2026-27203, Flespi AI &#43; Agent Skills. 30&#43; servers reviewed. Rating: 3.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/logistics-supply-chain-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Mar 15, 2026</span>
+        <span>Published Mar 15, 2026 · Updated Apr 28, 2026</span>
       </div>
 
       <h1 class="article-title">Logistics &amp; Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence</h1>
@@ -67,7 +67,7 @@
       <div class="article-body">
         <p>Logistics and supply chain MCP servers let AI assistants manage shipping operations, track fleets, control inventory, and monitor maritime vessel movements. Instead of logging into separate carrier portals, warehouse systems, and tracking platforms, these servers let AI agents handle logistics workflows through the Model Context Protocol.</p>
 <p>This review covers the <strong>logistics and supply chain</strong> vertical — shipping and parcel management, inventory and warehouse operations, fleet telematics, and maritime tracking. For e-commerce platforms that include some shipping features, see our <a href="/reviews/ecommerce-shopping-mcp-servers/">E-Commerce MCP review</a>. For general business operations, see our <a href="/reviews/erp-business-management-mcp-servers/">Business &amp; Productivity MCP review</a>.</p>
-<p>The headline findings: <strong>Shippo launches the first agentic shipping platform</strong> with multi-carrier support. <strong>UPS goes official</strong> with its own MCP server. <strong>SkuVault inventory reaches production quality</strong> with enterprise-grade rate limiting and safety confirmations. <strong>Flespi delivers 157 telematics tools</strong> for fleet management. <strong>Enterprise supply chain (ERP, WMS, TMS, procurement) is completely missing.</strong></p>
+<p>The headline findings: <strong>Karrio emerges as the open-source shipping leader</strong> with 720 stars, 50+ carriers, and built-in MCP. <strong>Shippo expands into full agentic operations</strong> with returns, WISMO, analytics, and batch processing. <strong>TrackMage scales tracking to 1,600+ carriers.</strong> <strong>ReplenishRadar brings AI-native inventory intelligence</strong> with stockout risk and demand forecasting for Shopify/Amazon. <strong>Enterprise procurement gets its first MCP bridge</strong> via SAP Ariba through CData. <strong>Oracle Integration becomes an MCP tools provider</strong>, opening enterprise SCM workflows to AI agents. <strong>eBay MCP hit by CVE-2026-27203</strong> (CVSS 8.3, unpatched).</p>
 <h2 id="shipping--parcel-management">Shipping &amp; Parcel Management</h2>
 <h3 id="shippo-mcp-official">Shippo MCP (Official)</h3>
 <table>
@@ -100,6 +100,124 @@
 <li><strong>Carrier management</strong> — manage multiple carrier accounts through a single integration</li>
 </ul>
 <p>Install via <code>npx -y @shippo/shippo-mcp start</code> with your Shippo API key. This is significant because Shippo is a well-funded shipping infrastructure company (valued at $1B+) — this isn&rsquo;t a hobbyist wrapper but a commercially-backed agentic interface to real shipping operations. Natural language prompts translate directly into shipping actions.</p>
+<p><strong>April 2026 update:</strong> Shippo has expanded well beyond label generation into a full agentic shipping operations platform. New capabilities include <strong>automated returns</strong> (prepaid labels, validated addresses, customer updates without manual work), <strong>WISMO inquiry handling</strong> (AI agents answer &ldquo;where is my order&rdquo; questions), <strong>proactive tracking updates</strong>, <strong>batch processing</strong> for multiple shipments, <strong>pickup scheduling</strong>, <strong>end-of-day manifest generation</strong>, and <strong>shipping analytics</strong> (delivery trends, spend distribution across carriers). Both retailers and platform customers are actively experimenting with conversational rate shopping and automated returns workflows.</p>
+<h3 id="karrioapikarrio">karrioapi/karrio</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/karrioapi/karrio">karrioapi/karrio</a></td>
+<td>720</td>
+<td>Python</td>
+<td>LGPL-3.0</td>
+<td>Multiple</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>open-source multi-carrier shipping leader</strong> — Karrio is a self-hosted programmable shipping API with a built-in MCP server supporting <strong>50+ carriers</strong> worldwide:</p>
+<ul>
+<li><strong>Rate shopping</strong> — query and compare shipping rates across FedEx, UPS, DHL, USPS, Canada Post, and dozens of regional carriers</li>
+<li><strong>Label generation</strong> — purchase shipping labels programmatically</li>
+<li><strong>Shipment tracking</strong> — real-time tracking across all connected carriers</li>
+<li><strong>Carrier management</strong> — manage carrier accounts and connections through a single platform</li>
+<li><strong>Self-hosted</strong> — deploy on your own infrastructure with full data control</li>
+</ul>
+<p>What makes Karrio significant is the combination of scale and openness. With 720 stars, 235 releases, and active development (v2026.1.29 as of April 2026), this is the most mature open-source shipping platform with MCP support. The dual license (LGPL-3.0 for open-source, enterprise license for commercial features) means organizations can start free and upgrade as needed.</p>
+<p>Install via <code>npx karrio-mcp</code> with your Karrio API key and URL. Works with Claude, Cursor, and Windsurf.</p>
+<h3 id="trackmagetrackmage-mcp-server">trackmage/trackmage-mcp-server</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/trackmage/trackmage-mcp-server">trackmage/trackmage-mcp-server</a></td>
+<td>2</td>
+<td>JavaScript</td>
+<td>MIT</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>universal shipment tracking server</strong> supporting <strong>1,600+ carriers worldwide</strong> through the TrackMage API:</p>
+<ul>
+<li><strong>Shipment management</strong> — create, update, list shipments, get checkpoints, retrack</li>
+<li><strong>Order management</strong> — create, update, list orders</li>
+<li><strong>Carrier detection</strong> — auto-detect carrier from tracking number, list available carriers</li>
+<li><strong>OAuth authentication</strong> — client credentials flow</li>
+</ul>
+<p>The 1,600+ carrier coverage is the broadest of any logistics MCP server — useful for businesses shipping internationally across many regional carriers. Docker deployment available.</p>
+<h3 id="markswendsen-codemcp-fedex">markswendsen-code/mcp-fedex</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/markswendsen-code/mcp-fedex">markswendsen-code/mcp-fedex</a></td>
+<td>—</td>
+<td>TypeScript</td>
+<td>MIT</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>A community <strong>FedEx MCP server</strong> using Playwright browser automation:</p>
+<ul>
+<li>Track packages with full event history</li>
+<li>Get shipping rate estimates between zip codes with transit times</li>
+<li>Find nearby FedEx Office stores and drop-off points</li>
+<li>Schedule pickups at residential or business addresses</li>
+</ul>
+<p>Note: uses browser automation rather than official FedEx APIs, which may be less reliable but doesn&rsquo;t require FedEx developer credentials.</p>
+<h3 id="theyahiacorreios-mcp">theYahia/correios-mcp</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/theYahia/correios-mcp">theYahia/correios-mcp</a></td>
+<td>—</td>
+<td>TypeScript</td>
+<td>MIT</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>An MCP server for <strong>Brazil&rsquo;s Correios</strong> postal service — the first dedicated Latin American shipping MCP:</p>
+<ul>
+<li>Package tracking, shipping cost calculations, delivery time estimates</li>
+<li>Service listings, ZIP code lookups</li>
+<li>Shipment creation, label generation, cancellation</li>
+</ul>
+<p>Valuable for businesses with Brazilian e-commerce operations needing AI-powered access to Correios logistics.</p>
 <h3 id="ups-apiups-mcp">UPS-API/ups-mcp</h3>
 <table>
 <thead>
@@ -248,6 +366,69 @@
 <li>Developer tools — API diagnostics, webhook management</li>
 </ul>
 <p>The sheer breadth is extraordinary. For eBay sellers who manage significant inventory, this provides AI-powered access to virtually every seller operation. The trade-off is complexity — 325 tools means the AI agent needs good context to pick the right one.</p>
+<p><strong>⚠️ Security advisory (April 2026):</strong> <a href="https://www.cvedetails.com/cve/CVE-2026-27203/">CVE-2026-27203</a> (CVSS 8.3 High) affects all versions up to 1.7.2. The <code>ebay_set_user_tokens</code> tool allows environment variable injection via the <code>updateEnvFile</code> function in <code>src/auth/oauth.ts</code>, which doesn&rsquo;t validate inputs for newlines or quotes. Attackers can inject arbitrary environment variables, potentially hijacking OAuth flows, causing denial of service, or achieving remote code execution via <code>NODE_OPTIONS</code> injection. <strong>No patch is available yet.</strong> Use with caution in production environments.</p>
+<h3 id="replenishradarmcp">ReplenishRadar/MCP</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ReplenishRadar/MCP">ReplenishRadar/MCP</a></td>
+<td>—</td>
+<td>JavaScript</td>
+<td>Proprietary</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AI-native inventory intelligence</strong> for Shopify and Amazon sellers — 28 tools split across 18 read and 10 write operations:</p>
+<ul>
+<li><strong>Stockout risk analysis</strong> — identify products at risk of going out of stock</li>
+<li><strong>Demand forecasting</strong> — AI-powered demand predictions</li>
+<li><strong>Purchase order management</strong> — create, update, approve, send, cancel POs</li>
+<li><strong>Sales analytics</strong> — top sellers, slow movers, lost sales, inventory value</li>
+<li><strong>SKU health scoring</strong> — comprehensive product health assessment</li>
+<li><strong>Supplier management</strong> — list suppliers, manage vendor relationships</li>
+</ul>
+<p>The safety design is noteworthy: all write operations create <strong>drafts only</strong> — no AI agent can send purchase orders without human approval. This is the kind of guardrail that makes inventory automation production-safe. Commercial product with API key required.</p>
+<h3 id="bigl34inflow-mcp-server">bigl34/inflow-mcp-server</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/bigl34/inflow-mcp-server">bigl34/inflow-mcp-server</a></td>
+<td>1</td>
+<td>TypeScript</td>
+<td>MIT</td>
+<td>50+</td>
+</tr>
+</tbody>
+</table>
+<p>A comprehensive MCP server for <strong>inFlow Inventory</strong> — 50+ tools across multiple categories:</p>
+<ul>
+<li><strong>Product management</strong> — listing, searching, creating, updating products</li>
+<li><strong>Sales and purchase orders</strong> — full order lifecycle management</li>
+<li><strong>Customer and vendor records</strong> — CRM-like capabilities within inventory context</li>
+<li><strong>Inventory operations</strong> — adjustments, transfers, counts, manufacturing orders</li>
+<li><strong>Reference data</strong> — locations, categories, pricing, tax information</li>
+<li><strong>Webhooks</strong> — subscription support for real-time event notifications</li>
+</ul>
+<p>Features token bucket rate limiting, automatic retry with exponential backoff, and filtering/pagination/sorting across list operations. Requires Node.js 18+ and an active inFlow subscription with API access.</p>
 <h3 id="other-inventory-servers">Other Inventory Servers</h3>
 <ul>
 <li><strong>Agiliron MCP Server</strong> — connects to Agiliron&rsquo;s inventory management and multi-channel retail POS system</li>
@@ -286,6 +467,7 @@
 </ul>
 <p>Fully MCP v1.0 compliant with Zod validation for all inputs. The Flespi platform supports GPS trackers from Teltonika, Queclink, Concox, and hundreds of other manufacturers — this server gives AI agents access to that entire ecosystem. Requires a Flespi API token.</p>
 <p>The auto-generation approach means comprehensive coverage but potentially overwhelming tool selection. Best suited for organizations already using Flespi for fleet management who want to add AI agent capabilities.</p>
+<p><strong>April 2026 update:</strong> Flespi has expanded its AI ecosystem significantly. The platform now offers <strong>Codi AI</strong> with real-time processing transparency (animated popups showing data gathering in progress), <strong>REST API tools and MCP servers</strong> for Claude Code, Cursor, and other AI-powered IDEs, and <strong>Agent Skills</strong> following the machine-readable SKILL.md specification for token-efficient platform bootstrapping. Codi&rsquo;s intelligence now scales with subscription tier, from basic assistance (Free) to frontier models (Pro/Enterprise/Ultimate). API methods are being migrated from POST to GET, with the MCP tool <code>get-api-schema</code> receiving a new canonical name <code>api-method-schema</code>.</p>
 <h2 id="maritime--vessel-tracking">Maritime &amp; Vessel Tracking</h2>
 <h3 id="garrettxumcp-shipxy-api">garrettXu/mcp-shipxy-api</h3>
 <table>
@@ -301,7 +483,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/garrettXu/mcp-shipxy-api">garrettXu/mcp-shipxy-api</a></td>
-<td>9</td>
+<td>10</td>
 <td>Python</td>
 <td>MIT</td>
 <td>Multiple</td>
@@ -346,26 +528,67 @@
 <li>Supply chain risk assessment for software dependencies</li>
 </ul>
 <p>While not physical logistics, software supply chain security is an increasingly important domain. This server lets AI agents analyze dependency risks and vulnerability exposure across multiple package ecosystems. Included here for completeness — it addresses &ldquo;supply chain&rdquo; in the software sense rather than the physical goods sense.</p>
-<h2 id="whats-missing">What&rsquo;s Missing</h2>
-<p>The logistics MCP ecosystem covers shipping and parcel operations well but has critical gaps in enterprise supply chain management:</p>
+<h2 id="enterprise-supply-chain-emerging">Enterprise Supply Chain (Emerging)</h2>
+<h3 id="cdatasoftwaresap-ariba-procurement-mcp-server-by-cdata">CDataSoftware/sap-ariba-procurement-mcp-server-by-cdata</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/CDataSoftware/sap-ariba-procurement-mcp-server-by-cdata">CDataSoftware/sap-ariba-procurement-mcp-server-by-cdata</a></td>
+<td>2</td>
+<td>Java</td>
+<td>MIT</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>first enterprise procurement platform accessible through MCP</strong> — CData&rsquo;s read-only server connects Claude Desktop to SAP Ariba Procurement data via JDBC drivers:</p>
 <ul>
-<li><strong>No ERP integration</strong> — SAP S/4HANA, Oracle SCM Cloud, Microsoft Dynamics 365 have no MCP servers</li>
+<li><strong>get_tables</strong> — discover available data tables</li>
+<li><strong>get_columns</strong> — explore table schemas</li>
+<li><strong>run_query</strong> — natural language querying of procurement data (no SQL required)</li>
+</ul>
+<p>This is read-only — you can query procurement data but not create purchase orders or modify workflows. Still, it represents the first crack in the enterprise procurement MCP wall. CData offers free (beta) read/write servers for additional functionality.</p>
+<h3 id="oracle-integration-as-mcp-tools-provider">Oracle Integration as MCP Tools Provider</h3>
+<p>Oracle Integration Cloud (OIC) now functions as an <strong>MCP tools provider</strong>, turning any existing integration flow into agent-callable MCP tools. This is significant for supply chain because:</p>
+<ul>
+<li>Any OIC integration with SAP, Oracle SCM, or other enterprise systems becomes an MCP tool</li>
+<li>OAuth2 authentication, session management, and audit logging handled by OIC</li>
+<li>Oracle AI Agent Studio can use OIC as an MCP server directly</li>
+<li>Infosys is already using this to scale enterprise agentic AI systems</li>
+</ul>
+<p>This isn&rsquo;t a standalone MCP server you install — it&rsquo;s a platform capability that bridges the enterprise supply chain gap by exposing existing enterprise integrations to AI agents. Organizations with Oracle Fusion Cloud SCM, for example, can now expose their supply chain workflows (procurement, planning, manufacturing, logistics) as MCP tools without building custom servers.</p>
+<p>Oracle also announced <strong>29 prebuilt AI agents for SCM</strong> in Fusion Cloud Applications (February 2026), including a Planning Cycle Agent for automated task coordination and a Component Replacement Agent for minimizing disruptions. These operate within the Fusion Applications security framework.</p>
+<h2 id="whats-missing">What&rsquo;s Missing</h2>
+<p>The logistics MCP ecosystem has matured in shipping and is beginning to bridge the enterprise gap, but significant holes remain:</p>
+<ul>
+<li><strong>No dedicated ERP MCP servers</strong> — SAP S/4HANA, Oracle SCM Cloud, Microsoft Dynamics 365 lack standalone MCP servers (though Oracle Integration&rsquo;s MCP capability and CData&rsquo;s SAP Ariba bridge provide indirect access)</li>
 <li><strong>No warehouse management systems</strong> — Manhattan Associates, Blue Yonder, SAP EWM, Körber remain unconnected</li>
 <li><strong>No transportation management</strong> — Oracle Transportation Management, MercuryGate, BluJay Solutions, project44</li>
-<li><strong>No demand planning or forecasting</strong> — no AI-powered demand sensing, S&amp;OP planning, or inventory optimization servers</li>
+<li><strong>No demand planning or forecasting</strong> — no AI-powered demand sensing, S&amp;OP planning, or inventory optimization servers (ReplenishRadar&rsquo;s forecasting is e-commerce-focused, not enterprise S&amp;OP)</li>
 <li><strong>No customs &amp; trade compliance</strong> — Descartes, Amber Road, Integration Point for cross-border logistics</li>
 <li><strong>No cold chain monitoring</strong> — no temperature tracking, pharmaceutical logistics, or food safety compliance</li>
-<li><strong>No last-mile delivery optimization</strong> — Route4Me, OptimoRoute, Onfleet for delivery route planning</li>
-<li><strong>No procurement platforms</strong> — Coupa, SAP Ariba, Jaggaer for supplier management and purchasing</li>
+<li><strong>No last-mile delivery optimization</strong> — Route4Me, OptimoRoute, Onfleet for delivery route planning (despite the $178B last-mile market)</li>
+<li><strong>No Coupa procurement</strong> — SAP Ariba has a read-only MCP bridge via CData, but Coupa and Jaggaer remain absent</li>
 <li><strong>No freight marketplaces</strong> — Convoy, Uber Freight, DAT, Loadsmart for freight matching and booking</li>
 <li><strong>No 3PL/fulfillment</strong> — ShipBob, Deliverr, Flexport API integration for outsourced logistics</li>
-<li><strong>No returns management</strong> — Loop Returns, Happy Returns, Returnly for reverse logistics</li>
+<li><strong>No DHL official MCP</strong> — despite DHL&rsquo;s heavy AI investment (Greenplan routing, 95% volume prediction accuracy), no official MCP server exists</li>
+<li><strong>No returns management</strong> — Loop Returns, Happy Returns, Returnly for reverse logistics (though Shippo now handles returns automation)</li>
 </ul>
-<p>The gap between &ldquo;ship a parcel&rdquo; (well-served) and &ldquo;manage a supply chain&rdquo; (completely absent) mirrors what we see in many MCP verticals — consumer-facing workflows arrive first, enterprise operations lag behind.</p>
+<p>The gap between &ldquo;ship a parcel&rdquo; and &ldquo;manage a supply chain&rdquo; is narrowing — Oracle Integration&rsquo;s MCP capability and CData&rsquo;s SAP Ariba bridge show enterprise platforms are beginning to expose supply chain data to AI agents. But dedicated, purpose-built MCP servers for enterprise logistics remain absent.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p>Logistics &amp; Supply Chain MCP servers earn <strong>3/5</strong>. The shipping and parcel management segment is the clear strength — Shippo&rsquo;s official agentic shipping platform provides multi-carrier shipping through a single MCP integration, UPS offers first-party AI agent support, and EasyPost and Shiprocket add carrier breadth and regional coverage. Inventory management has a genuinely production-ready option in the SkuVault server with enterprise-grade safety features, and eBay sellers get an extraordinary 325-tool server. Fleet telematics via Flespi (157 tools) and maritime intelligence via ShipXY round out specialized verticals.</p>
-<p>What holds the category back is the complete absence of enterprise supply chain infrastructure. Organizations managing global supply chains — with ERP systems, warehouse management, transportation management, demand planning, and procurement workflows — will find nothing here. The category serves shippers and sellers well but supply chain managers not at all. As supply chain digitization accelerates and platforms like SAP and Oracle invest in AI agent ecosystems, expect MCP servers for enterprise logistics to emerge — but the physical supply chain&rsquo;s MCP moment hasn&rsquo;t arrived yet.</p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p>Logistics &amp; Supply Chain MCP servers earn <strong>3.5/5</strong>, up from 3/5 in our initial review. The shipping segment has strengthened considerably — Karrio (720 stars, 50+ carriers, self-hosted) emerges as the open-source leader alongside Shippo&rsquo;s expanded agentic platform (now covering returns, WISMO, analytics, and batch operations). TrackMage scales tracking to 1,600+ carriers, FedEx gets community coverage, and Correios adds Latin American reach. Inventory management has diversified from SkuVault alone to include ReplenishRadar&rsquo;s AI-native intelligence (28 tools with demand forecasting and safety guardrails) and inFlow&rsquo;s 50+ tool comprehensive suite. Fleet telematics via Flespi (157 tools, now with Codi AI and Agent Skills) and maritime intelligence via ShipXY continue to serve specialized verticals.</p>
+<p>The most significant development is the <strong>emergence of enterprise supply chain bridges</strong>. Oracle Integration Cloud functioning as an MCP tools provider means any existing enterprise integration (SAP, Oracle SCM, procurement workflows) can become an agent-callable tool. CData&rsquo;s SAP Ariba MCP server — though read-only — is the first direct procurement platform MCP bridge. These aren&rsquo;t the dedicated, feature-rich MCP servers that enterprise logistics needs, but they&rsquo;re the first signs of the enterprise supply chain&rsquo;s MCP moment arriving.</p>
+<p>What still holds the category back: no dedicated ERP, WMS, TMS, or procurement MCP servers. No last-mile optimization despite the $178B market. No DHL official MCP despite their AI leadership. And the eBay MCP&rsquo;s unpatched CVE-2026-27203 (CVSS 8.3) is a reminder that security must scale alongside tooling. The gap is narrowing, but enterprise supply chain management through AI agents remains more promise than reality.</p>
+<p><em>This review was refreshed on 2026-04-28 using Claude Opus 4.6 (Anthropic). First published 2026-03-15.</em></p>
 
       </div>
 
@@ -417,7 +640,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-15T00:00:00+09:00","datePublished":"2026-03-15T23:30:00+09:00","description":"Logistics and supply chain MCP servers are an emerging category with 20+ servers across 5 subcategories.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Logistics \u0026 Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence"},"name":"Logistics \u0026 Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/logistics-supply-chain-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-28T00:00:00+09:00","datePublished":"2026-03-15T23:30:00+09:00","description":"Logistics and supply chain MCP servers are a maturing category with 30+ servers across 6 subcategories.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Logistics \u0026 Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence"},"name":"Logistics \u0026 Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/logistics-supply-chain-mcp-servers/"}
 </script>
 
 
