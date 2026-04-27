@@ -1,17 +1,80 @@
-# Nonprofit & Charity MCP Servers — Donor Management, Humanitarian Data, Charity Verification, and Volunteer Impact
+# Nonprofit & Charity MCP Servers — Grant Discovery, Donor Management, Humanitarian Data, Charity Verification, Civic Data, and Volunteer Impact
 
-> Nonprofit and charity MCP servers let AI agents look up charity tax status, access donor CRM data, query humanitarian datasets, and measure volunteer impact.
+> Nonprofit and charity MCP servers let AI agents discover grants, look up charity tax status, access donor CRM data, query humanitarian datasets, search civic open data, and measure volunteer impact.
 
 
-Nonprofit and charity MCP servers let AI assistants look up charity tax status, access donor CRM data, query humanitarian datasets, discover nonprofit organizations, and measure volunteer impact. Instead of manually searching IRS databases, navigating donor management platforms, or compiling humanitarian reports, these servers let AI agents verify tax-deductible status, pull giving histories, analyze Form 990 financials, and generate impact reports — all through the Model Context Protocol.
+Nonprofit and charity MCP servers let AI assistants discover grants, look up charity tax status, access donor CRM data, query humanitarian datasets, search government open data, discover nonprofit organizations, and measure volunteer impact. Instead of manually searching grant databases, navigating IRS records, compiling humanitarian reports, or cross-referencing government data sources, these servers let AI agents find funding opportunities, verify tax-deductible status, pull giving histories, analyze Form 990 financials, query 40+ federal data APIs, and generate impact reports — all through the Model Context Protocol.
 
-This review covers the **nonprofit and charity** vertical — charity verification and IRS data, donor management CRMs, nonprofit discovery platforms, humanitarian data, volunteer impact measurement, and civic engagement tools. For general CRM servers, see our [CRM MCP review](/reviews/crm-mcp-servers/). For Salesforce-specific coverage, see the [Salesforce section in our CRM review](/reviews/crm-mcp-servers/).
+This review covers the **nonprofit and charity** vertical — grant discovery, charity verification and IRS data, donor management CRMs, nonprofit discovery platforms, humanitarian data, civic and government open data, volunteer impact measurement, and civic engagement tools. For general CRM servers, see our [CRM MCP review](/reviews/crm-mcp-servers/). For Salesforce-specific coverage, see the [Salesforce section in our CRM review](/reviews/crm-mcp-servers/).
 
-The headline findings: **Anthropic's "Claude for Nonprofits" initiative drives this category** — Blackbaud, Benevity, and Candid all launched as official Claude Connectors in late 2025. **Open-source charity verification works** with two GitHub projects covering IRS and ProPublica data. **Humanitarian data has the strongest open-source entry** with HDX MCP's 33 tools covering UN OCHA data. **Donor management is entirely commercial.** **No grant management or volunteer scheduling servers exist yet.**
+The headline findings: **Grant discovery arrived** — Granted AI (87K+ grants, 133K+ foundations, free), Tar-ive/grants-mcp, and GSA-TTS's official Grants.gov MCP fill the biggest gap from our original review. **CiviCRM gap filled** — johncallhub/civicrm-mcp-server (11 tools) serves the 14K+ organizations on the leading open-source nonprofit CRM. **Civic open data exploded** — us-gov-open-data-mcp (94 stars, 300+ tools across 40+ federal APIs), mcp-civic-data (110 tools, 33 APIs), and GovInfo (official US GPO) bring massive government data access. **Blackbaud launched its first autonomous fundraising AI agent** ("Development Agent") and **Salesforce rebranded to "Agentforce Nonprofit"** with four AI agents. **Anthropic's "Claude for Nonprofits" still drives commercial integrations** with 75% discounts. **NationBuilder MCP was deleted.**
 
 **Category:** [Government & Legal](/categories/government-legal/)
 
 ---
+
+## Grant Discovery *(new section)*
+
+### Tar-ive/grants-mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Tar-ive/grants-mcp](https://github.com/Tar-ive/grants-mcp) | 8 | Python | MIT | 3 |
+
+**The first open-source grant discovery MCP server** — filling the biggest gap from our original review. Powered by the Simpler Grants API for US government grants:
+
+- **opportunity_discovery** — search and filter grants by keywords, agencies, funding categories, and eligibility criteria
+- **agency_landscape** — map government agencies and their funding focus areas with opportunity analysis
+- **funding_trend_scanner** — analyze historical funding patterns and identify emerging opportunities
+
+Built with FastMCP. Dual transport support (stdio + HTTP). Docker/Docker Compose ready with cloud deployment guides (Google Cloud Run, AWS ECS). Intelligent caching with configurable TTL. 56 commits on main. Phase 3 (containerization) complete; upcoming phases include intelligent scoring, multi-agency tools, and grant application assistance. Grant *writing* is not yet implemented, but discovery is no longer absent.
+
+### GSA-TTS/mcp-server-grants-gov
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [GSA-TTS/mcp-server-grants-gov](https://github.com/GSA-TTS/mcp-server-grants-gov) | — | Python | MIT | 2 |
+
+**Built by the US federal government** — GSA's Technology Transformation Services created this official Grants.gov API MCP server in March 2026:
+
+- **grants_gov_search_opportunities** — search federal grant opportunities
+- **grants_gov_fetch_opportunity** — retrieve detailed grant information
+
+NIH's ScHARe team maintains a parallel version (NIH-ScHARe/mcp-server-grants-gov) with the same tool set. Both are actively maintained. Notable as the first government-built MCP servers for grant access — a signal that federal agencies see MCP as a legitimate integration path.
+
+### Granted AI MCP Server
+
+| Server | Type | Tools |
+|--------|------|-------|
+| [Granted AI MCP](https://grantedai.com/mcp) | Commercial (free, no auth) | 5 |
+
+The **most comprehensive grant discovery MCP server available** — and it's completely free with no API keys or account creation required:
+
+- **search_grants** — query across 87,000+ grants by keyword, topic, funder, or eligibility
+- **get_grant** — complete details for specific grant opportunities
+- **search_funders** — explore 133,000+ foundation profiles by name, location, or giving focus
+- **get_funder** — foundation profiles with financials and grant history
+- **get_past_winners** — federal grant recipients for competitive intelligence
+
+Uses Granted's AI-powered discovery pipeline with live web search and 15-feature grant scoring. Streamable HTTP + SSE transport. Works with Claude Desktop, Cursor, and any MCP-compatible client. Setup takes under a minute. This is the stronger of the grant discovery options — the 133K+ foundation profiles and past winners data give nonprofits genuine research capability that previously required expensive databases like Foundation Directory Online.
+
+### Apify Nonprofit Grant Intelligence MCP
+
+| Server | Type | Tools |
+|--------|------|-------|
+| [Nonprofit Grant Intelligence](https://mcpmarket.com/server/nonprofit-grant-intelligence-1) | Commercial (Apify, $0.045/call) | 7 |
+
+A **due diligence-focused** grant intelligence server on the Apify platform. Connects to 7 authoritative public data sources for automated philanthropic screening:
+
+- **assess_nonprofit_health** — financial health scoring from IRS 990 data
+- **verify_grant_compliance** — compliance verification against federal requirements
+- **screen_organizational_integrity** — sanctions and integrity screening
+- **search_grant_opportunities** — federal grant opportunity discovery
+- **verify_cross_jurisdiction** — multi-jurisdiction verification (including UK charity registrations)
+- **analyze_funding_landscape** — funding ecosystem analysis
+- **generate_due_diligence_report** — structured due diligence reports
+
+Pay-per-use at $0.045 per tool call (~110 calls on Apify's $5/month free tier). Replaces hours of manual 990 filing reviews and sanctions checks. Most useful for foundations, corporate giving teams, and compliance officers rather than nonprofits themselves.
 
 ## Charity Verification & Data Lookup
 
@@ -19,22 +82,22 @@ The headline findings: **Anthropic's "Claude for Nonprofits" initiative drives t
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [briancasteel/charity-mcp-server](https://github.com/briancasteel/charity-mcp-server) | 22 | TypeScript | MIT | 4 |
+| [briancasteel/charity-mcp-server](https://github.com/briancasteel/charity-mcp-server) | 2 | TypeScript | MIT | 4 |
 
-The **most complete open-source nonprofit lookup server**. Provides IRS-based charity verification through CharityAPI.org:
+Provides IRS-based charity verification through CharityAPI.org:
 
 - **EIN lookup** — verify any US nonprofit by Employer Identification Number
 - **Tax-deductible status** — confirm 501(c)(3) and other tax-exempt classifications
 - **Organization search** — find nonprofits by name and filter results
 - **Guided research** — 14 prompt templates for structured charity investigation workflows
 
-Uses stdio transport. Requires a CHARITY_API_KEY environment variable from CharityAPI.org. TypeScript with full type safety and comprehensive error handling. The prompt templates are a nice touch — they guide agents through multi-step research workflows rather than just exposing raw data lookups.
+Uses stdio transport. Requires a CHARITY_API_KEY environment variable from CharityAPI.org. TypeScript with full type safety and comprehensive error handling. *Note: Stars dropped from 22 to 2 since our March review, and the last commit was January 2025. This project appears inactive.*
 
 ### asachs01/propublica-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [asachs01/propublica-mcp](https://github.com/asachs01/propublica-mcp) | — | — | — | 5 |
+| [asachs01/propublica-mcp](https://github.com/asachs01/propublica-mcp) | 1 | Python | — | 5 |
 
 Accesses **ProPublica's Nonprofit Explorer API** for Form 990 data — the gold standard for US nonprofit financial transparency:
 
@@ -44,15 +107,15 @@ Accesses **ProPublica's Nonprofit Explorer API** for Form 990 data — the gold 
 - **analyze_nonprofit_financials** — multi-year trend analysis of revenue, expenses, and assets
 - **search_similar_nonprofits** — discover comparable organizations by NTEE code and geography
 
-Implements the MCP 2025-03-26 Streamable HTTP transport. Docker deployment option available. Works with Claude Desktop and Cursor. The financial trend analysis tool is particularly valuable — it surfaces revenue trajectories and spending patterns across multiple filing years, something that would take significant manual effort on ProPublica's website.
+**Updated to v1.0.0** with MCP 2025-03-26 Streamable HTTP transport (breaking change — single `/` endpoint replaces separate `/sse` and `/messages` endpoints). New DXT extension format for easier installation. Docker, DigitalOcean, and Cloudflare Workers deployment options. 58 commits. Works with Claude Desktop and Cursor.
 
 ### conorheffron/mcp-charity
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [conorheffron/mcp-charity](https://github.com/conorheffron/mcp-charity) | — | — | — | 1 |
+| [conorheffron/mcp-charity](https://github.com/conorheffron/mcp-charity) | 3 | Python | GPL-3.0 | 1 |
 
-A **sample/demonstration MCP server** for charity search. Includes a `query_charities` tool to search by name, location, and cause. More of a learning project than a production tool, but useful as a starting point for anyone building their own nonprofit MCP server.
+A **sample/demonstration MCP server** for charity search. Includes a `query_charities` tool to search by name, location, and cause. **Updated to v1.0.6** (April 4, 2026) — now running Python 3.14 + fastmcp 3 with HTTP endpoints. 64 commits. More of a learning project than a production tool, but actively maintained.
 
 ## Donor Management & Fundraising CRM
 
@@ -70,6 +133,8 @@ The **first major nonprofit CRM to offer native MCP integration**, announced Dec
 - **Generate Communications** — AI-drafted thank-you notes and outreach emails referencing actual donor data
 
 No code required — works as a Claude Connector for "Claude for Nonprofits" users. This is significant because Blackbaud controls roughly 40% of the nonprofit CRM market. The ability to query donor data and draft personalized communications through natural language is a genuine productivity gain for development officers.
+
+**March 2026 update:** Blackbaud launched **"Development Agent"** — their first "Agent for Good" — a fully autonomous fundraising AI agent for Raiser's Edge NXT customers in the US. Also announced a Grant Review Agent for grant review processes. Expanding to Blackbaud Enterprise Fundraising CRM next. This represents the shift from MCP connectors (query data) to autonomous AI agents (take action).
 
 ### CData MCP Server for Blackbaud
 
@@ -89,15 +154,32 @@ While not nonprofit-specific, **Salesforce's official MCP server** (Developer Pr
 
 Over 40,000 nonprofits use Salesforce. If your organization is already on Salesforce NPSP or Nonprofit Cloud, these MCP servers give you immediate AI access to your donor, program, and volunteer data.
 
+**April 2026 update:** Salesforce rebranded Nonprofit Cloud to **"Agentforce Nonprofit"** with four purpose-built AI agents: Prospect Research Agent (GA), Participant Management Agent (GA), Volunteer Capacity & Coverage Agent (GA early 2026), and Donor Support Agent (GA summer 2026). NPSP is now in maintenance mode with no new features planned.
+
+### johncallhub/civicrm-mcp-server *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [johncallhub/civicrm-mcp-server](https://github.com/johncallhub/civicrm-mcp-server) | 3 | JavaScript | MIT | 11 |
+
+**The CiviCRM gap is finally filled.** A comprehensive MCP server giving AI assistants direct access to CiviCRM data and functionality:
+
+- **Contact management** — search, create, and update contacts with custom field support
+- **Activity operations** — retrieve and create activities
+- **Contribution/donation tracking** — view and record donations
+- **Event and membership retrieval** — access event and membership records
+- **Custom field discovery** — automatic discovery with human-readable labeling across all entities
+- **System status** — health checks for the CiviCRM instance
+
+Requires Node.js 18+ and a running CiviCRM instance with valid API credentials. The automatic custom field discovery is particularly valuable — CiviCRM installations are heavily customized, and this server lets agents reference fields by display names rather than technical API identifiers. This serves the 14,000+ organizations worldwide running CiviCRM, including the Free Software Foundation, Creative Commons, Wikimedia Foundation, and CERN.
+
 ### CiviCRM via Pipedream
 
 | Server | Type | Tools |
 |--------|------|-------|
 | [CiviCRM MCP (Pipedream)](https://mcp.pipedream.com/app/civicrm) | Hosted (Pipedream) | Multiple |
 
-**CiviCRM is the leading open-source CRM for nonprofits** — used by the Free Software Foundation, Creative Commons, Wikimedia Foundation, and CERN, with 14,000+ organizations worldwide. Pipedream wraps CiviCRM's API as MCP tools with managed authentication.
-
-Not a standalone open-source MCP server, but a practical integration path for the thousands of nonprofits running CiviCRM. The fact that the most widely-used open-source nonprofit CRM lacks a dedicated MCP server is one of this category's biggest gaps — a well-built CiviCRM MCP server would serve a large audience.
+Pipedream wraps CiviCRM's API as MCP tools with managed authentication. An alternative to the standalone server above for organizations that prefer hosted integrations. CiviCRM is also accessible via n8n integration nodes for agentic AI workflows.
 
 ## Nonprofit Discovery & Donation
 
@@ -152,7 +234,7 @@ Enterprise-grade security with no PII exposure. All queries are traceable for co
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [dividor/hdx-mcp](https://github.com/dividor/hdx-mcp) | — | Python | MIT | 33 |
+| [dividor/hdx-mcp](https://github.com/dividor/hdx-mcp) | 7 | Python | MIT | 33+ |
 
 The **standout open-source server in this entire category**. Accesses the UN OCHA Humanitarian Data Exchange — one of the most important humanitarian data platforms in the world:
 
@@ -162,8 +244,9 @@ The **standout open-source server in this entire category**. Accesses the UN OCH
 - **Conflict** — conflict event data with location, type, and casualties
 - **Funding** — humanitarian funding flows, appeals, and operational presence
 - **Auto-generated tools** — 33 tools generated from HDX's OpenAPI specification
+- **Custom tools** — 3 additional tools: `hdx_server_info`, `hdx_get_dataset_info`, `hdx_search_locations`
 
-Docker deployment supported. Requires an HDX API app identifier. The breadth is remarkable — with 33 tools covering the full spectrum of humanitarian data, this server could genuinely accelerate research, reporting, and coordination for aid organizations. Written up on Medium by the author with detailed implementation notes.
+Docker deployment supported via Docker Desktop's MCP Toolkit (v4.43+) for streamlined onboarding. Also deployable via UV or direct Claude Desktop integration. Requires an HDX API app identifier (free). The breadth is remarkable — with 33+ tools covering the full spectrum of humanitarian data, this server could genuinely accelerate research, reporting, and coordination for aid organizations. Written up on Medium by the author with detailed implementation notes.
 
 ### Humanitarian Negotiation MCP
 
@@ -180,21 +263,60 @@ A **highly specialized server** for humanitarian negotiators, mediators, and aid
 
 Not a data server but a structured analytical framework. Useful for organizations negotiating access to conflict zones, coordinating with governments, or mediating between humanitarian actors. One of the most niche MCP servers we've reviewed in any category.
 
-## Civic Engagement & Advocacy
+## Civic & Government Open Data *(new section)*
 
-### mikeomlor/nb-mcp (NationBuilder)
+### lzinga/us-gov-open-data-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mikeomlor/nb-mcp](https://github.com/mikeomlor/nb-mcp) | — | TypeScript | — | Multiple |
+| [lzinga/us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp) | 94 | TypeScript | MIT | 300+ |
 
-Community-built connector for **NationBuilder** — a platform widely used by political campaigns, advocacy organizations, and community groups:
+**The largest government data MCP server by far** — 300+ tools covering 40+ US federal data APIs. Featured on Hacker News. Created February 2026, v2026.4.11:
 
-- **People management** — CRUD operations for supporter records
-- **Tag management** — assign, remove, list popular/recent/system tags
-- **Search** — advanced multi-criteria search across the supporter database
+- **Economic** — Treasury fiscal data, FRED economic indicators, BLS labor statistics
+- **Legislative** — Congress.gov bills and votes, Federal Register regulations
+- **Financial** — FEC campaign finance, SEC filings, FDIC banking data
+- **Health & Safety** — CDC disease surveillance, FDA recalls, CMS healthcare costs, NIH clinical trials
+- **Environment** — EPA compliance, NOAA weather, USGS water/earthquakes
+- **Plus** — Education, Energy, Housing, Patents, Transportation, Lobbying, and more
 
-NationBuilder is also accessible via Pipedream and Zapier MCP wrappers. While not strictly a "charity" tool, many nonprofits use NationBuilder for advocacy campaigns, membership management, and grassroots fundraising.
+Available via NPM as `us-gov-open-data-mcp`. Dual transport (stdio + HTTP Stream). WASM-sandboxed JavaScript execution reduces context window usage by 98-100% for large responses. Selective module loading — load only the APIs you need. Disk-backed caching with rate limiting and retry logic. 20+ APIs require no key; the rest use free keys. Also usable as a standalone TypeScript SDK without MCP. This server is valuable for any nonprofit doing policy research, advocacy, or grant applications that require federal data.
+
+### EricGrill/mcp-civic-data
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [EricGrill/mcp-civic-data](https://github.com/EricGrill/mcp-civic-data) | 2 | Python | MIT | 110 |
+
+**110 tools across 33 free, authoritative public data APIs** — focused on environmental, health, economic, and government data. Python 3.11+, pip installable:
+
+- **Environmental** — NOAA weather, OpenAQ air quality, USGS water, wildfires, space weather, EPA compliance
+- **Health** — CDC public health, clinical trials, CMS healthcare costs, FDA data
+- **Emergency** — FEMA disaster declarations, CISA cybersecurity advisories
+- **Demographics** — Census data, education statistics
+- **Economics** — BLS data, energy, agriculture, transportation, finance
+- **Open Data Catalogs** — Data.gov, EU Open Data, NASA FIRMS
+
+22 of the 33 APIs require no keys at all. Includes CI/CD, contributing guidelines, and security policy. 142 commits. While overlapping with us-gov-open-data-mcp in some areas, this server uniquely covers EU Open Data, Safecast radiation, and CISA cybersecurity — useful for international nonprofits.
+
+### GovInfo MCP Server (Official US GPO)
+
+| Server | Type | Tools |
+|--------|------|-------|
+| [GovInfo MCP](https://www.govinfo.gov/features/mcp-public-preview) | Government (free, public preview) | Multiple |
+
+**Official MCP server from the US Government Publishing Office** — launched January 22, 2026 as a public preview. Provides AI agents with access to federal government publications and documents:
+
+- **Search** — query across federal government documents, regulations, and publications
+- **Retrieval** — access current GovInfo content and metadata
+
+GovInfo is "the world's only certified trustworthy digital repository" for federal publications. The MCP server targets legal researchers, policy analysts, government employees, academics, and compliance professionals. Currently basic search and retrieval; more capabilities expected as the preview matures. Documentation available via [GPO's API GitHub repository](https://github.com/usgpo/api). A strong signal that federal agencies are adopting MCP as a standard integration path.
+
+## Civic Engagement & Advocacy
+
+### NationBuilder MCP *(removed)*
+
+The previously listed mikeomlor/nb-mcp NationBuilder MCP server has been **deleted** — the repository no longer exists and the author has no public repos. NationBuilder remains accessible via Pipedream and Zapier MCP wrappers, but there is no longer a standalone open-source NationBuilder MCP server.
 
 ## Platform-Aggregated Access
 
@@ -205,32 +327,35 @@ Several nonprofit platforms lack dedicated MCP servers but are accessible throug
 | **Donorbox** | Zapier MCP | Fundraising, donation management |
 | **Givebutter** | Zapier/Pipedream MCP | Free fundraising platform ($150M+ in donations processed) |
 | **Little Green Light** | Zapier MCP | Donor management CRM for small nonprofits |
-| **NationBuilder** | Pipedream/Zapier MCP | Community management, advocacy |
+| **NationBuilder** | Pipedream/Zapier MCP | Community management, advocacy (standalone MCP deleted) |
 | **CiviCRM** | Pipedream MCP | Open-source nonprofit CRM |
 
 These are not standalone MCP servers — they're API wrappers that expose platform actions as MCP tools through Zapier's or Pipedream's MCP integration layer. They work, but you're adding a dependency on a third-party integration platform.
 
 ## What's Missing
 
-The nonprofit MCP space has significant gaps:
+The nonprofit MCP space has narrowed its gaps but several remain:
 
-- **Grant management** — no server for grant discovery, application tracking, or grant writing assistance (Candid provides funder search but not application management)
-- **DonorPerfect / Bloomerang** — two major nonprofit CRMs with no MCP integration of any kind
+- **Grant writing & application management** — grant *discovery* is now covered (grants-mcp, Granted AI), but no server helps with grant *writing*, application tracking, or compliance reporting
+- **DonorPerfect / Bloomerang** — two major nonprofit CRMs still have no MCP integration of any kind
+- ~~**CiviCRM dedicated MCP**~~ — **Gap filled.** johncallhub/civicrm-mcp-server (3 stars, 11 tools) now provides standalone CiviCRM access
 - **Volunteer scheduling** — no tool for shift management, skill matching, or availability coordination
 - **Impact measurement frameworks** — no open-source server implementing Theory of Change, logic models, or standardized outcome metrics (Goodera is commercial only)
 - **Nonprofit accounting** — no integration with Fund Accounting systems (Sage Intacct, Blackbaud Financial Edge)
 - **Peer-to-peer fundraising** — no MCP server for crowdfunding campaign management
 - **GuideStar / Charity Navigator ratings** — no direct MCP access to charity rating data (Candid provides profiles but not the rating systems themselves)
 
-## Rating: 3/5
+## Rating: 3.5/5
 
-**What works:** Anthropic's "Claude for Nonprofits" initiative has brought major platforms (Blackbaud, Benevity, Candid) into the MCP ecosystem faster than organic open-source development would have. The HDX humanitarian data server is genuinely excellent with 33 tools and MIT licensing. Charity verification works well with two open-source options covering IRS and ProPublica data. Salesforce MCP provides an integration path for the 40,000+ nonprofits on that platform.
+**What works:** Grant discovery arrived with three options — Granted AI (87K+ grants, 133K+ foundations, free), Tar-ive/grants-mcp (government grants), and GSA-TTS's official Grants.gov MCP (government-built). Civic open data exploded with us-gov-open-data-mcp's 300+ tools across 40+ federal APIs and GovInfo's official GPO MCP. CiviCRM finally has a dedicated MCP server (11 tools) serving 14K+ organizations. Blackbaud launched "Development Agent" — the first fully autonomous fundraising AI agent. Salesforce rebranded to "Agentforce Nonprofit" with 4 purpose-built AI agents. The Claude connector directory grew to 200+ integrations.
 
-**What doesn't:** The open-source landscape is thin — only about 6 truly nonprofit-focused GitHub projects exist, most with low star counts. The most polished integrations are all commercial or hosted. No grant management server exists despite grants being fundamental to nonprofit operations. The gap between what commercial platforms offer and what's available open-source is stark. CiviCRM — the most widely-used open-source nonprofit CRM — has no dedicated MCP server.
+**What doesn't:** No grant *writing* assistance exists (only discovery). DonorPerfect and Bloomerang remain unconnected. Volunteer scheduling has no dedicated MCP server (though Salesforce's Volunteer Agent is GA early 2026). Open-source impact measurement is still absent. charity-mcp-server appears abandoned (2 stars, no commits since Jan 2025), and NationBuilder MCP was deleted. Industry-wide, 92% of nonprofits use AI but only 7% report major impact — an "efficiency plateau" that better tooling could address.
 
-**Who should care:** Nonprofit development officers who want AI-assisted donor communications and research, humanitarian data analysts working with UN OCHA data, charity evaluators needing quick IRS and Form 990 lookups, and anyone building AI tools for the social impact sector.
+**What changed since March 2026:** Grant discovery (3 new servers including government-built), CiviCRM standalone MCP (gap filled), civic/government data (3 new servers — us-gov-open-data-mcp, mcp-civic-data, GovInfo), Blackbaud Development Agent launched, Salesforce rebranded to Agentforce Nonprofit, Candid unified search launched + 20% staff layoff for AI pivot, Goodera-Benevity API integration went live, propublica-mcp v1.0.0, mcp-charity v1.0.6, HDX Docker Toolkit, NationBuilder MCP deleted. Net: 15+→35+ servers.
 
-**Bottom line:** This category reveals how Anthropic's enterprise partnerships can bootstrap an MCP vertical faster than organic open-source growth. The Blackbaud, Benevity, and Candid connectors are genuinely useful for nonprofits already on Claude. But for organizations not using Claude or wanting self-hosted solutions, the pickings are slim. The HDX server is the crown jewel of the open-source side. A well-built CiviCRM MCP server would fill the biggest gap.
+**Who should care:** Nonprofit development officers who want AI-assisted donor communications and grant research, policy researchers and advocates needing federal data access, CiviCRM administrators wanting AI integration, humanitarian data analysts working with UN OCHA data, charity evaluators needing quick IRS and Form 990 lookups, and anyone building AI tools for the social impact sector.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+**Bottom line:** The category transformed from "commercial connectors plus thin open-source" to a genuinely useful ecosystem. Three gaps filled (grant discovery, CiviCRM, civic data). The commercial side is accelerating fast — Blackbaud's autonomous fundraising agent and Salesforce's four-agent suite signal that nonprofit AI is moving from "search and query" to "take action autonomously." us-gov-open-data-mcp (94 stars) is now the highest-starred server touching this vertical. The remaining frontier: grant writing, volunteer scheduling, impact measurement, and DonorPerfect/Bloomerang integration.
+
+*This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic). Original review: 2026-03-15.*
 

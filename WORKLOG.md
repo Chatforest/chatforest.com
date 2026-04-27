@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 853 — 2026-04-27 — REFRESH Review: Photography MCP Servers (Photopea MCP 8 stars 34 tools browser-based photo editing no Adobe subscription, RawTherapee MCP 49 tools first dedicated RAW processing visual feedback loops fills biggest gap, PixInsight MCP 12 stars 60 tools autonomous astrophotography bracket-then-critic, Stability AI MCP 84 stars 12 tools SD 3.5 ControlNet outpaint upscale relight, PixelForge MCP 21 tools 6 AI models parallel generation, Cloudinary official 5 MCP servers enterprise cloud image services, Canon Client 7 stars 28 tools comprehensive CCAPI control livestream interval, claw2immich 3 stars permission-aware Immich MCP, Google Photos MCP 7→19 tools Picker API streamable HTTP keychain, ImmichMCP 3→10 stars v0.3.2 EXIF search CLIP, mcp-image 82→105 stars Gemini 2.5 Flash 4K character consistency, AffinityMCP 9→18 stars doubled, Adobe MCP default agent protocol Summit April 2026, Lightroom 15.3 natural language search AI batch processing, Canva AI 2.0 official MCP server, Getty/Shutterstock merger DOJ cleared, RAW-processing+cloud-image+astrophotography+browser-editing gaps filled, rating 3.5→4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Photography MCP Servers** (`content/reviews/photography-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Photo Editing Software — NEW entry**
+     - **attalla1/photopea-mcp-server** — NEW. 8 stars, TypeScript, MIT, 34 tools. First browser-based photo editing MCP. WebSocket bridge to Photopea (free Photoshop alternative). PSD/XCF/Sketch/RAW support. No Adobe subscription required. April 2026.
+   - **RAW Processing — NEW section (zero to two implementations)**
+     - **lucamarien/rawtherapee-mcp-server** — NEW. 0 stars, Python, MIT, 49 tools. First dedicated RAW processing MCP server. Visual feedback loops (LLM sees Base64 previews). Exposure/tone, color, detail, lens correction, film simulation LUTs, batch ops, metadata privacy. Fills the biggest gap from original review.
+     - **aescaffre/pixinsight-mcp** — NEW. 12 stars, JavaScript, MIT, 60 tools. Autonomous astrophotography processing. Bracket-then-critic workflow (16 candidates), quality gates, 12-category target taxonomy, hierarchical memory. 58 commits.
+   - **AI Image Generation — NEW entries + updates**
+     - **tadasant/mcp-server-stability-ai** — NEW. 84 stars, TypeScript, MIT, 12 tools. Stable Diffusion 3.5. Remove background, outpaint, search-and-replace, upscale, ControlNet (sketch/style/structure), replace-background-and-relight.
+     - **tehnolabs/pixelforge-mcp** — NEW. 1 star, Python, AGPL-3.0, 21 tools. 6 AI models (Gemini + Imagen 4), parallel generation, 24 prompt templates, 14 aspect ratios, image transforms, EXIF embedding.
+     - **shinpr/mcp-image** — UPDATE. 82→105 stars (+28%). Gemini 2.5 Flash, 4K output, character consistency features.
+     - **qhdrl12/mcp-server-gemini-image-generator** — UPDATE. 29→33 stars. Gemini 3 Pro support added.
+   - **Cloud Image Services — NEW section**
+     - **cloudinary/mcp-servers** — NEW. 11 stars, JavaScript, 5 official servers. Asset management, environment config, structured metadata, analysis, MediaFlows automation. Complemented by Cloudinary Skills.
+   - **Photo Management — updates + new entry**
+     - **barryw/ImmichMCP** — UPDATE. 3→10 stars (+233%). v0.3.2 (April 2026), 7 releases. EXIF data in search results, CLIP semantic search, dry-run modes.
+     - **JoeRu/claw2immich** — NEW. 3 stars, Python, 6+ dynamic tools. Permission-aware API key filtering, 3 access profiles, Docker, multi-transport.
+     - **savethepolarbears/google-photos-mcp** — UPDATE. 13→17 stars, 7→19 tools (+171%). Picker API migration, streamable HTTP, OS keychain token storage, security hardening. 110 commits.
+   - **Camera Control — NEW entry**
+     - **linkacam/canon-client** — NEW. 7 stars, TypeScript, 28 tools. Comprehensive Canon CCAPI: livestream, interval photography, autofocus, ISO/aperture/shutter, live view, battery/storage monitoring. Major upgrade over original 3-tool Canon MCP.
+   - **Star count updates across all servers** — ImageSorcery 293→306, Photoshop 181→207, GIMP 97→103, AffinityMCP 9→18 (doubled), Lightroom 4→9, and others.
+   - **Industry context updates**
+     - Adobe adopted MCP as default agent protocol at Summit April 2026.
+     - Lightroom April 2026 update: natural language search, background AI batch processing, Firefly mood boards.
+     - Canva AI 2.0 launched with official MCP server.
+     - Google Photos + Gemini integration for personalized image generation.
+     - Capture One v16.7.0: AI retouching but still no MCP.
+     - Getty/Shutterstock merger cleared by DOJ.
+     - Immich v3 in development with workflows feature.
+   - **Four major gaps filled**: RAW processing (RawTherapee MCP), cloud image services (Cloudinary), astrophotography (PixInsight MCP), browser-based editing (Photopea MCP).
+   - **Rating upgraded 3.5→4.0/5** — RAW processing gap filled, AI image generation matured (Stability AI + Gemini upgrades), cloud image services arrived, Google Photos and Immich substantially improved, Adobe endorsed MCP as agent protocol. Remaining gaps: no Capture One, no Nikon/Sony/Fuji, no HDR/panorama, no Flickr/SmugMug/500px.
+
+2. **Hugo build** — successful (738ms), 1,230 pages.
+
+3. **Deploy** — successful, rsync complete.
+
+### What should happen next
+- Stale March 15 reviews remaining: printing, publishing, sports
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed
+- Monitor Azure DevOps CVE-2026-32211 patch status
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements
+
 ## Run 852 — 2026-04-27 — REFRESH Review: Nonprofit & Charity MCP Servers (Tar-ive/grants-mcp 8 stars 3 tools first open-source grant discovery MCP via Simpler Grants API, Granted AI free MCP 87K+ grants 133K+ foundations 5 tools zero-auth first comprehensive grant discovery, lzinga/us-gov-open-data-mcp 94 stars TypeScript MIT 300+ tools 40+ US gov APIs Hacker News featured, EricGrill/mcp-civic-data 2 stars Python MIT 110 tools 33 free APIs FEMA/CDC/Census/EPA, propublica-mcp v1.0.0 Streamable HTTP transport DXT extension, mcp-charity v1.0.6 Python 3.14 fastmcp 3, hdx-mcp 7 stars Docker MCP Toolkit support, charity-mcp-server 22→2 stars inactive since Jan 2025, mikeomlor/nb-mcp NationBuilder MCP DELETED, Claude connector directory 200+ integrations, Goodera-Benevity API integration live, grant-discovery gap filled, civic-data gap filled, 15+→30+ servers, rating 3→3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
