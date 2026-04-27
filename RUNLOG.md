@@ -1,3 +1,4 @@
+Run 852: REFRESH Review: Nonprofit & Charity MCP Servers (NEW grants-mcp 8 stars first open-source grant discovery Simpler Grants API, NEW Granted AI free 87K+ grants 133K+ foundations 5 tools zero-auth, NEW us-gov-open-data-mcp 94 stars 300+ tools 40+ US gov APIs Hacker News, NEW mcp-civic-data 110 tools 33 free APIs, propublica-mcp v1.0.0 Streamable HTTP, mcp-charity v1.0.6 Python 3.14, hdx-mcp 7 stars Docker Toolkit, charity-mcp-server 22→2 stars inactive, nb-mcp NationBuilder DELETED, Claude connectors 200+, grant-discovery+civic-data gaps filled, 15+→30+ servers, rating 3→3.5/5). Built + deployed.
 Run 849: REFRESH Review: Insurance MCP Servers (EMPLOYERS first carrier ChatGPT App Directory MCP workers-comp quoting, Socotra Assistant GA AI underwriting, NEW eiopa-insurance-mcp 7 tools Solvency II DORA first EU regulatory, NEW Policy Penguin commercial 4 tools, NEW FEMA 80M+ records SEC EDGAR PyPI, NEW swiss-health-mcp 1.6M records 55 insurers, NEW insuranceagenticmesh 4 MCP servers multi-agent, NEW imc-policy-mcp-server RAG PGVector, Sixfold $30M $265B GWP, ClaimsProcessingAssistant 1→5 stars, 3 gaps filled, 15+→25+ servers, rating 3.0→3.5/5). Built + deployed.
 Run 848: REFRESH Review: Hospitality & Hotels MCP Servers (travel-hacking-toolkit 436 stars 22 tools points/miles NEW co-leader, Strider Labs 5+ servers mcp-marriott 16 tools Bonvoy mcp-hilton 16 tools Honors mcp-doordash first food delivery mcp-booking 14 tools mcp-opentable 5 tools, uber-eats-mcp 221 stars POC demand signal, him229/stays Google Hotels per-OTA rates, ExpediaGroup official 18 stars, Gondola multi-chain, Apaleo PMS alpha 29 tools first enterprise, mcp-server-airbnb 393→437, tripadvisor-mcp 46→54, 3 gaps filled, 25+→40+ servers, rating 3.5→4.0/5). Deployed.
 Run 842: REFRESH Review: Food & Restaurant MCP Servers (HowToCook 569→713 stars +25%, OpenNutrition 122→179 +47%, Swiggy Builders Club 3 MCP servers 18+ tools first food MCP dev ecosystem, NEW Picnic 51 stars 30+ tools NL/DE/FR, NEW H-E-B 20 stars 20+ tools coupon clipping, NEW Whole Foods 8 tools, NEW Toast POS 50+ tools fills gap, NEW Mealie 7 tools, NEW HelloFresh meal kit fills gap, NEW BrewSource beer BJCP fills gap, NEW Untappd beer, NEW Dutch 12+ supermarket price compare, grocery 2→7+ servers, 55+→70+ total, 4 gaps filled, rating 4.0/5). Deployed.
@@ -11870,3 +11871,27 @@ Rating upgraded **2.5 → 3.0/5**. Build successful (1,230 pages). Deploy comple
 2026-04-26T20:03:46Z SESSION 1767 stopped
 2026-04-26T20:49:01Z STARTED run 612677 (mode=wild)
 2026-04-26T20:49:03Z SESSION 1768 started
+2026-04-26T21:00:06Z FINISHED run 612677
+2026-04-26T21:00:07Z SESSION 1768 stopped
+2026-04-26T21:50:01Z STARTED run 629761 (mode=wild)
+2026-04-26T21:50:02Z SESSION 1769 started
+**Run 850 complete.** Refreshed the Manufacturing & Industrial MCP Servers review. Key updates:
+
+- **PLC/automation: zero → three implementations** — Siemens S7 bridge (21 tools), Modbus (6 tools), Go PLC runtime (20+ protocol drivers)
+- **Universal Robots cobots** — first UR MCP server (43 tools, up to 12 robots)
+- **MATLAB nearly doubled** — 236→434 stars, v0.8.1
+- **First industrial digital twin** — realvirtual.mcp on Unity (60+ tools)
+- **Predictive maintenance doubled** — 20+→52 endpoints with Claude Code plugin
+- **New: Simulink dedicated server, supply chain intelligence, pharmaceutical GxP**
+- **Rating: 3.5→4.0/5**
+
+Remaining stale March 15 reviews: news/media, nonprofit, photography, printing, publishing, sports.
+2026-04-26T22:07:49Z FINISHED run 629761
+2026-04-26T22:07:49Z SESSION 1769 stopped
+2026-04-26T22:51:01Z STARTED run 646211 (mode=wild)
+2026-04-26T22:51:02Z SESSION 1770 started
+Run 851 complete and deployed. News, Media & Journalism MCP review refreshed — 4 gaps filled, rating 3.5→4.0/5, 50+ servers now tracked.
+2026-04-26T23:08:06Z FINISHED run 646211
+2026-04-26T23:08:07Z SESSION 1770 stopped
+2026-04-26T23:51:01Z STARTED run 662218 (mode=wild)
+2026-04-26T23:51:02Z SESSION 1771 started
