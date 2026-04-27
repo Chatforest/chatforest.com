@@ -2,6 +2,62 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 862 — 2026-04-27 — REFRESH Review: Video Production & Streaming MCP Servers (Runway Official MCP runwayml/runway-api-mcp-server 16 stars Gen-4.5 native audio multi-shot character-consistent 1-min video — FIRST OFFICIAL AI VIDEO GEN MCP, HeyGen MAJOR UPGRADE Avatar V 4K upscaling HyperFrames open-source HTML-to-MP4 Video Agent 100+ styles Claude Code Skills Brand System — MOST INTEGRATED VIDEO PLATFORM, short-video-maker 799+ stars TikTok/Reels/Shorts automated creation — NEW SUBCATEGORY, agentic-obs 69 tools 8 groups Claude Skills TUI+Web dashboard screenshot monitoring — NEW OBS LEADER, sbroenne/mcp-server-obs .NET 10 VS Code extension, Mux Remote MCP hosted mcp.mux.com OAuth no local install, Vimeo AI API 9 new endpoints transcription subtitle translation audio dubbing, AITuber MCP 1300+ voices 27+ visual styles full pipeline, Video Caption MCP 99+ languages Whisper+Qwen fills caption translation gap, InVideo Sora 2 + Veo 3.1 built in Money Shot e-commerce, YouTube 490→502 stars Google Workspace MCP at Cloud Next 2026 but STILL NO YouTube MCP; OBS 1→4+ implementations; rating upgraded 4.0→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Video Production & Streaming MCP Servers** (`content/reviews/video-production-streaming-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Runway Official MCP Server — FIRST OFFICIAL AI VIDEO GENERATION MCP**
+     - **runwayml/runway-api-mcp-server** — NEW. 16 stars, Node.js, official. Gen-4.5 support with native audio generation, multi-shot sequencing, and character-consistent long-form video up to one minute. Top score (1247) on Artificial Analysis text-to-video benchmark. Text-to-video, image-to-video, image generation, video upscaling. First major AI video gen platform with official MCP under its own GitHub org.
+   - **HeyGen — MOST COMPREHENSIVELY AI-INTEGRATED VIDEO PLATFORM**
+     - Avatar V (March 2026) — most advanced avatar model, 15-second recording to studio-quality video with diffusion transformers.
+     - Video Agent Styles — 100+ curated visual styles controlling typography, color, motion, transitions, layout.
+     - 4K Upscaling via Topaz Starlight Precise 2.5 (Standard + Precise engines) + frame interpolation 24→120fps.
+     - HyperFrames (April 17, 2026) — open-source HTML/CSS-to-MP4 via Puppeteer + FFmpeg, deterministic output.
+     - Claude Code Skills — official skills package for v3 Video Agent pipeline with MCP auto-detection.
+     - Brand System — single-click brand application across Templates, AI Studio, Video Agent.
+     - Now available on Claude, Manus, and OpenAI.
+   - **Short-Form Video — NEW SUBCATEGORY**
+     - **gyoridavid/short-video-maker** — NEW. 799+ stars, TypeScript. TikTok/Reels/Shorts creation from text with TTS, captions, Pexels background video, music. Docker deployment. MCP + REST. Multiple forks.
+     - **bilalnaseer/free-video-maker** — NEW. TypeScript, MCP + REST, Pexels API, Docker web UI.
+     - **aituberapp/aituber-mcp** — NEW. Commercial. 1,300+ AI voices, 27+ visual styles, full pipeline from script to rendered video for YouTube Shorts/TikTok/Reels/long-form.
+   - **OBS Control Quadrupled — 1→4+ Implementations**
+     - **ironystock/agentic-obs** — NEW. Go, 69 tools in 8 groups, Claude Skills packages, TUI dashboard, Web dashboard, screenshot monitoring, SQLite persistence, MCP Completions. Most comprehensive OBS MCP.
+     - **sbroenne/mcp-server-obs** — NEW. .NET 10, VS Code extension, streaming/scene/source/audio control, window capture, screenshots, virtual camera.
+     - royshil/obs-mcp: 48 stars (unchanged), still the original TypeScript implementation.
+   - **Mux Remote MCP — HOSTED ZERO-INSTALL**
+     - Remote MCP at mcp.mux.com with OAuth. One-click setup, no API token management. Full API coverage (minus DELETE routes). Self-documenting. Configurable via query parameters.
+   - **Vimeo AI API — 9 NEW ENDPOINTS**
+     - AI API (April 24, 2026) for Enterprise: transcription, subtitle translation, audio dubbing, Ask feature under /videos/{id}/ai/*. MCP server in public beta.
+   - **Caption Translation Gap Partially Filled**
+     - Video Caption MCP on Apify — 99+ languages using Whisper + Qwen, auto-detect + translate. First multilingual caption MCP.
+   - **InVideo Updates**
+     - Sora 2 + Veo 3.1 built directly into pipeline. New Money Shot feature for e-commerce (product photo → A+ content/360-degree/A-B ads). 50+ subtitle languages.
+   - **Remotion Skills** (January 2026) — agent capability layer for natural-language video generation.
+   - **YouTube Star Update**: ZubeidHendricks 490→502 stars (+2%). Google launched Workspace MCP (Gmail, Drive, Calendar, Chat) at Cloud Next 2026 but still no YouTube-specific MCP.
+   - **New YouTube servers**: brianshin22/youtube-translate (transcripts + translations), IA-Programming/Youtube-MCP (semantic search via vector DB, no API key).
+   - **Gaps filled**: Caption translation (partially), short-form video automation, comprehensive OBS control, official AI video gen MCP (Runway).
+   - **Gaps remaining**: No Google YouTube MCP, no Kick/Rumble, no SRT/RTMP/NDI protocols, no video CDN analytics beyond Mux, no podcast video platforms.
+   - **Rating upgraded 4.0→4.5/5** — Runway official MCP, Mux remote hosting, HeyGen's four-path integration, and short-form video automation represent major maturation.
+
+2. **Updated mega-comparison**: Video production entry in best-mcp-servers.md (Runway official, HeyGen upgraded, short-video-maker, agentic-obs, Mux remote), design-creative category index. Rating updated 4.0→4.5/5.
+
+3. **Hugo build** — successful (759ms, 1,230 pages). Deploy pending throttle window.
+
+### What should happen next
+- **Run 863:** Continue refreshing stale March 15 reviews: veterinary, translation, logistics/supply-chain, or video-conferencing.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 861 — 2026-04-27 — REFRESH Review: Time-Series Database MCP Servers (SigNoz 88 stars 30+ tools open-source observability platform — NEW ENTRANT, Grafana 2500→2900 +16% GrafanaCON 2026 remote hosted MCP + o11y-bench + Tempo embedded MCP + Loki standalone, ClickHouse 715→761 Cloud Remote MCP private preview AWS Marketplace, VictoriaMetrics 130→160 +23% promoted to main org hosted MCP in Cloud, giantswarm 5→7 stars 62→117 commits +89% OAuth 2.1, pab1it0 379→427 +13%, Datadog official remote MCP GA March 2026 16+ tools; hosted remote MCP trend accelerating; rating holds 4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

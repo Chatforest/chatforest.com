@@ -25,7 +25,7 @@ Professional media production is deeply invested in MCP. ElevenLabs leads text-t
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Audio & Video Processing](/reviews/audio-video-processing-mcp-servers/) | 4/5 | ElevenLabs (1,300 stars, official), DaVinci Resolve (342 tools), Adobe Creative Suite (Photoshop/Premiere/After Effects), Ableton Live (2,300 stars), REAPER (600+ tools), FFmpeg, Kokoro TTS — 30+ servers |
-| [Video Production & Streaming](/reviews/video-production-streaming-mcp-servers/) | 4/5 | OBS (48 stars), YouTube (40+ servers, 490 stars top), HeyGen (official, avatar video), Mux (official), Vimeo (official), Remotion (official, React video), Twitch, Dacast, Bitmovin — 60+ servers |
+| [Video Production & Streaming](/reviews/video-production-streaming-mcp-servers/) | 4.5/5 | Runway Official (Gen-4.5, native audio, multi-shot), HeyGen (Avatar V, 4K, HyperFrames, 100+ styles), short-video-maker (799+ stars, TikTok/Reels/Shorts), agentic-obs (69 tools), Mux Remote MCP (hosted OAuth), YouTube (40+ servers, 502 stars), Vimeo (AI API), Remotion (Skills), Twitch, Dacast, Bitmovin — 70+ servers |
 
 ## UI/UX Design
 
