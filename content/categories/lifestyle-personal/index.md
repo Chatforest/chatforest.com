@@ -55,11 +55,11 @@ Two reviews cover the animal kingdom from opposite angles. Pet & Animal Care spa
 
 ## Weather & Climate
 
-The broadest personal utility subcategory. Multi-source weather platforms, Open-Meteo, OpenWeatherMap, NOAA, AccuWeather, marine conditions, and air quality monitoring. Weather MCP servers are among the most practical lifestyle tools.
+The broadest personal utility subcategory. Multi-source weather platforms, Open-Meteo, OpenWeatherMap, NOAA (including tides/currents/sea level), AccuWeather, aviation weather (METAR/TAF), marine conditions, and air quality monitoring. Weather MCP servers are among the most practical lifestyle tools.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Weather & Climate](/reviews/weather-climate-mcp-servers/) | 3.5/5 | Multi-source platforms, Open-Meteo, OpenWeatherMap, NOAA, AccuWeather, marine conditions, air quality — 30+ servers |
+| [Weather & Climate](/reviews/weather-climate-mcp-servers/) | 3.5/5 | Multi-source platforms, Open-Meteo (41 stars), OpenWeatherMap, NOAA (incl. Tides & Currents 25+ tools — NEW), AccuWeather (32 stars), aviation METAR/TAF/PIREP (NEW), marine conditions, air quality — 30+ servers |
 
 ## Astrology & Divination
 

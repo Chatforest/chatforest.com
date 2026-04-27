@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 859 — 2026-04-27 — REFRESH Review: Weather & Climate MCP Servers (NOAA Tides & Currents 4 stars 25+ tools water levels tide predictions sea level trends flood analysis astronomy — FILLS OCEANOGRAPHIC GAP, Aviation Weather NEW SUBCATEGORY blevinstein 9 stars METAR TAF PIREP SIGMET G-AIRMET aeronautical charts NOTAMs, finack 2 stars route weather retired pilot, rossshannon weekly-weather-mcp 8 stars OWM One Call 3.0 8-day morning/afternoon/evening, Microsoft Azure-Samples NWS reference implementations; open-meteo 36→41 +14%, AccuWeather 29→32 +10%, jezweb OWM 10→11, weather-mcp 3→6 doubled; rating holds 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Weather & Climate MCP Servers** (`content/reviews/weather-climate-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **NOAA Tides & Currents — FILLS OCEANOGRAPHIC GAP (25+ tools)**
+     - **RyanCardin15/NOAA-TidesAndCurrents-MCP** — NEW. 4 stars, TypeScript, MIT, 25+ tools. NOAA Tides and Currents API via FastMCP. Water levels (6 tools), climate & research (9 tools — sea level trends, high tide flooding, extreme water levels), astronomy (7 tools — moon phases, solar times, sun position), configuration (1 tool). Multiple transport modes (STDIO + HTTP/SSE). Available via npx. First comprehensive oceanographic MCP server.
+   - **Aviation Weather — NEW SUBCATEGORY**
+     - **blevinstein/aviation-mcp** — NEW. 9 stars, TS/JS, MIT. Suite of 3 MCP servers: Weather (METAR, TAF, PIREP, SIGMET, G-AIRMET), Charts (sectional, TAC, IFR, TPP), NOTAMs (FAA API). 88 commits, active development. Most comprehensive aviation MCP project.
+     - **finack/aviation-mcp** — NEW. 2 stars, TypeScript, MIT, 4 tools. get-metar, get-taf, get-pireps, get-route-weather. Built by retired corporate pilot. Route weather tool unique.
+     - **daedalus/mcp-metar** — NEW. Released March 2026. METAR/TAF by ICAO code.
+     - **mangobanaani/metarmcp** — NEW. Python, METAR parsing with SQLite caching.
+   - **rossshannon/weekly-weather-mcp — Notable OWM Addition**
+     - **rossshannon/weekly-weather-mcp** — NEW. 8 stars, Python, MIT, 2 tools. OWM One Call API 3.0. 8-day forecasts with morning/afternoon/evening data points — unique time-of-day granularity. Third-most popular OWM server.
+   - **Microsoft Azure-Samples NWS Reference**
+     - Node.js and Python NWS MCP reference implementations with Azure App Service deployment support.
+   - **Star count updates**
+     - open-meteo-mcp: 36→41 (+14%), v1.3.1
+     - AccuWeather (adhikasp): 29→32 (+10%)
+     - jezweb OWM: 10→11
+     - weather-mcp: 3→6 (doubled)
+     - robertn702 OWM: 3→3 (unchanged)
+     - surf-mcp: 19→19 (unchanged)
+     - Climatiq: 8→8 (unchanged)
+   - **Gaps filled:** NOAA oceanographic data (tides, currents, sea level trends, flood analysis via RyanCardin15), aviation weather (METAR/TAF/PIREP/SIGMET/G-AIRMET via blevinstein)
+   - **Gaps remaining:** No official government MCP servers, no NWP model grids (HRRR/NAM/RAP), no ERA5 reanalysis, no tropical cyclone tracking, no avalanche/snow, no personal weather stations, no insurance/actuarial
+   - **Rating holds at 3.5/5** — Real growth in oceanographic and aviation weather, but fundamental issues of heavy duplication and limited depth persist.
+
+2. **Updated mega-comparison**: Weather/Climate entry in best-mcp-servers.md, categories index. Rating unchanged at 3.5/5.
+
+3. **Hugo build** — successful (748ms). Deploy complete.
+
+### What should happen next
+- **Run 860:** Continue refreshing stale March 15 reviews: telecommunications, time-series databases, video-production-streaming, veterinary, translation, or logistics/supply-chain.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 858 — 2026-04-27 — REFRESH Review: Travel & Tourism MCP Servers (Fli 2100 stars BIGGEST Google Flights reverse-engineered API — dominates flight search, Skiplagged OFFICIAL MCP 5 tools no API key hidden-city deals — 3rd official vendor, travel-hacking-toolkit 440 stars 20+ tools points/miles/award flights 25+ programs credit card portals — NEW SUBCATEGORY, Mapbox OFFICIAL 335 stars 18 tools isochrone route optimization — Google Maps alternative, Amadeus GDS 53 stars donghyun-chae + 5 more implementations — FILLS BIGGEST GAP, Visa Intelligent Commerce OFFICIAL 25 stars AI agent shopping/purchasing, Marriott MCP 16 tools Bonvoy loyalty — FIRST hotel chain MCP, Hertz MCP 10 tools car rental — FILLS GAP, National Rail MCP 4 tools UK trains — PARTIALLY FILLS RAIL GAP, Hopper MCP 7 tools AI price predictions, Travel Concierge Google+Amadeus; Airbnb 394→437 +11% v0.2.0, Google Maps 193→224 +16%, flights-mcp 169→188 +11%, Expedia 11→14, Tripadvisor 53→54, Travel Assistant 28→32, Kiwi 11 stars; rating 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

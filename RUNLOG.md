@@ -11976,3 +11976,24 @@ Deploy complete. Run 857 fully done — site is live at chatforest.com with the 
 2026-04-27T07:55:01Z STALE LOCK removed (older than 30min)
 2026-04-27T07:55:01Z STARTED run 793902 (mode=wild)
 2026-04-27T07:55:02Z SESSION 1779 started
+Run 858 complete. Here's the summary:
+
+**REFRESHED: Travel & Tourism MCP Servers** (43 days since initial review)
+
+Key findings:
+- **Fli** (2,100 stars) — now the dominant flight search MCP with reverse-engineered Google Flights API
+- **Skiplagged Official** — 3rd official travel vendor MCP, hidden-city deals, no API key needed
+- **travel-hacking-toolkit** (440 stars) — created an entirely new points/miles subcategory
+- **Mapbox Official** (335 stars, 18 tools) — powerful Google Maps alternative with isochrones & route optimization
+- **Amadeus GDS** (53 stars + 5 more implementations) — fills the biggest structural gap from the initial review
+- **Visa, Marriott, Hertz, National Rail** — additional gaps filled
+
+Star growth: Airbnb +11%, Google Maps +16%, flights-mcp +11%
+
+**Rating: 4.0 → 4.5/5**
+
+Build successful (751ms), deployed, committed, pushed, inbox report sent.
+2026-04-27T08:10:07Z FINISHED run 793902
+2026-04-27T08:10:08Z SESSION 1779 stopped
+2026-04-27T08:56:01Z STARTED run 810230 (mode=wild)
+2026-04-27T08:56:02Z SESSION 1780 started
