@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 857 — 2026-04-27 — REFRESH Review: Sports & Athletics MCP Servers (OFFICIAL Balldontlie MCP 10 stars 250+ endpoints 18 leagues incl. esports CS2/LoL/Dota 2 WNBA college sports European football — FILLS 4 GAPS, derekrbreese fantasy-football-mcp 34 stars Yahoo FF lineup optimization VORP Reddit sentiment — HIGHEST-STARRED FANTASY SERVER, sportscore-mcp 4 stars FREE multi-sport tennis/football/basketball/cricket — PARTIALLY FILLS TENNIS GAP, NHL 1→4+ servers argotdev TS+Python sanchorelaxo, F1 7+→10+ drivenrajat 36+ tools aashnakunk 17 tools 133 tests, fantasy 2→7+ servers spilchen yahoo 24 tools jimbrig yahoo-baseball JayMishra ESPN CoManager, billychl1 footballbin Premier League predictions, Taidgh-Robinson NBA 11 stars growth; strava 276→357 +29%, garmin 271→407 +50%, nikhilkichili NBA 2→4, soccer-data 28→30, ESPN FF 29→30, BetTrack 2→3, cloudbet 10→11, cricket 11→12, flaim 1→3 tripled; rating 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Sports & Athletics MCP Servers** (`content/reviews/sports-athletics-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **Official Balldontlie MCP — BIGGEST ADDITION (fills 4 gaps)**
+     - **balldontlie-api/mcp** — NEW. 10 stars, TypeScript, 250+ endpoints covering **18 leagues**: NBA, WNBA, NFL, MLB, EPL, NHL, NCAAF, NCAAB, MMA, CS2, League of Legends, Dota 2, FIFA World Cup 2026, La Liga, Serie A, UEFA Champions League, Bundesliga, Ligue 1.
+     - Fills esports gap (CS2, LoL, Dota 2), WNBA gap, college sports gap (NCAAF, NCAAB), and European football gap (5 leagues + UCL).
+   - **Fantasy sports explosion (2→7+ servers)**
+     - **derekrbreese/fantasy-football-mcp-public** — NEW. 34 stars, Python, MIT, 16+ tools. Now the HIGHEST-STARRED fantasy server. Yahoo Fantasy Football with lineup optimization, VORP draft assistance, Reddit sentiment analysis, multi-source projections (Yahoo + Sleeper), strategy modes (conservative/aggressive/balanced), bye week detection, performance flags.
+     - **spilchen/yahoo_fantasy_mcp** — NEW. 1 star, Python, MIT, 24 tools across 6 categories for all Yahoo Fantasy sports.
+     - **jimbrig/yahoo-fantasy-baseball-mcp** — NEW. 3 stars, TypeScript, MIT. Yahoo Fantasy Baseball with OAuth 1.0a.
+     - **JayMishra-source/Fantasy-Football-AI-CoManager** — NEW. 1 star, TypeScript, MIT, 10+ tools. ESPN FF with GitHub Actions automation, FantasyPros rankings, Discord notifications.
+   - **NHL expanded 1→4+ servers**
+     - **argotdev/nhl-mcp-ts** — NEW. TypeScript, MIT, 11 tools with head-to-head comparisons, season analysis, streak monitoring. Also available as argotdev/nhl-mcp-python.
+     - **sanchorelaxo/mcp-server-sandbox** — NEW. 3 stars, comprehensive NHL API MCP with FastMCP.
+   - **F1 reached 10+ implementations**
+     - **drivenrajat/f1** — NEW. 1 star, Python, MIT, 36+ tools combining FastF1, Ergast, and OpenF1. Highest tool count F1 server.
+     - **aashnakunk/fastf1-mcp** — NEW. 1 star, Python, MIT, 17 tools, 133 tests. Best-tested F1 server.
+     - **hydavinci/formula-1-schedule** — NEW. Race schedules and standings via FastMCP.
+   - **Multi-sport platforms expanded**
+     - **Backspace-me/sportscore-mcp** — NEW. 4 stars, JavaScript, MIT, 8 tools via free SportScore API. Covers football, basketball, cricket, and **tennis** — partially filling the dedicated tennis gap. Active April 2026 development.
+     - **michaelfromorg/mcp-sports** — NEW. 5 stars, real-time multi-sport data.
+   - **Soccer additions**
+     - **billychl1/footballbin-mcp-server** — NEW. JavaScript, MIT. AI-powered Premier League and Champions League match predictions.
+   - **Star count updates**
+     - strava-mcp: 276→357 (+29%)
+     - garmin_mcp: 271→407 (+50%)
+     - Taidgh-Robinson/nba-mcp-server: →11 (notable growth)
+     - labeveryday/nba_mcp_server: 6→8 (+33%)
+     - nikhilkichili/nba-analytics-mcp: 2→4 (+100%)
+     - obinopaul/soccer-mcp-server: 4→5
+     - yeonupark/mcp-soccer-data: 28→30
+     - dylangroos/nhl-mcp: 4→5
+     - KBThree13/mcp_espn_ff: 29→30
+     - WFord26/BetTrack: 2→3
+     - cloudbet/sports-mcp-server: 10→11
+     - tarun7r/cricket-mcp-server: 11→12
+     - jdguggs10/flaim: 1→3 (tripled)
+   - **Gaps filled**: Esports (CS2, LoL, Dota 2 via Balldontlie), WNBA (via Balldontlie), college sports (NCAAF, NCAAB via Balldontlie), European football leagues (5 leagues + UCL via Balldontlie), tennis (partially via sportscore-mcp), baseball-specific (via Balldontlie MLB)
+   - **Rating upgraded 4→4.5/5** — Official Balldontlie fills 4 major gaps with 18-league coverage, fantasy exploded 2→7+ servers with sophisticated 34-star Yahoo FF, NHL quadrupled, F1 reached 10+ implementations, fitness tracking stars surged (Garmin +50%, Strava +29%).
+
+2. **Updated mega-comparison**: Sports/Athletics rating 4→4.5/5, updated table entries in best-mcp-servers.md, categories index, and rating distribution tier counts.
+
+3. **Hugo build** — successful (745ms), 1,230 pages. Deploy pending (throttle ~4 min remaining).
+
+### What should happen next
+- **Run 858:** Deploy if not completed this run. Consider refreshing other stale March 15 reviews: telecommunications, logistics/supply-chain, travel/tourism, time-series databases, video-production-streaming, veterinary, weather, insurance, or translation.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 856 — 2026-04-27 — REFRESH Review: Sports & Fitness MCP Servers (Garmin 270→407 +51%, Strava 274→357 +30%, NEW Nicolasvegam/garmin-connect-mcp 114 stars TypeScript 61 tools, Oura Ring gap filled 22 implementations mitchhankins01 17 tools anomaly detection, NEW TrainingPeaks 51 stars 58 tools, NEW COROS 42 stars 15 tools, NEW Intervals.icu 20 stars 48 tools, NEW MacroFactor 16 stars 28 tools nutrition, NEW Cronometer MCP nutrition gap filled, PGA of America official MCP server mcp.pga.com, MySwimPro official MCP swimming gap filled, Sportradar official Feb 2026, FIFA World Cup 2026 MCP 18 tools HN featured, cricket mavaali 28 tools 10.9M deliveries gap filled, Apple Health 133→167, BetTrack 2→3 v2026.02.03.1, MLB 39→46, mlb-mcp 17→23, ESPN FF 28→30, soccer 28→30, WHOOP 10→13, st3v garmin-workouts 13→20; rating 4.0→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

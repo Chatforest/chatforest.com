@@ -15,7 +15,7 @@ The broadest subcategory. Multi-sport platforms cover all major leagues, while i
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Sports & Athletics](/reviews/sports-athletics-mcp-servers/) | 4/5 | garmin_mcp (271 stars, 96+ tools), strava-mcp (276 stars, 25 tools), formula1-mcp (15 stars, 29 tools), balldontlie-mcp (23 stars, NBA/NFL/MLB), ESPN Fantasy Football (29 stars), BetTrack (30+ tools, 70+ markets), cricket-mcp-server (11 stars, 9 tools) — 50+ servers |
+| [Sports & Athletics](/reviews/sports-athletics-mcp-servers/) | 4.5/5 | Official Balldontlie MCP (10 stars, 250+ endpoints, 18 leagues incl. esports), garmin_mcp (407 stars, 96+ tools), strava-mcp (357 stars, 25 tools), fantasy-football-mcp (34 stars, Yahoo FF lineup optimization), formula1-mcp (15 stars, 29 tools, 10+ F1 implementations), ESPN FF (30 stars), cricket-mcp-server (12 stars) — 70+ servers |
 | [Sports & Fitness](/reviews/sports-fitness-mcp-servers/) | 4/5 | garmin_mcp (270 stars, 96+ tools), strava-mcp (274 stars, 25 tools), apple-health-mcp-server (133 stars), mlb-api-mcp (39 stars, 21+ tools), balldontlie-api/mcp (250+ endpoints, 18 leagues), formula1-mcp (15 stars, 29 tools), mcp-fitbit (26 stars, 12 tools) — 35+ servers |
 
 ## Analytics & Performance
