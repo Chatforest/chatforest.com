@@ -62,7 +62,25 @@ The **most comprehensive grant discovery MCP server available** — and it's com
 - **get_funder** — foundation profiles with financials and grant history
 - **get_past_winners** — federal grant recipients for competitive intelligence
 
-Uses Granted's AI-powered discovery pipeline with live web search and 15-feature grant scoring. Streamable HTTP + SSE transport. Works with Claude Desktop, Cursor, and any MCP-compatible client. Setup takes under a minute. This is the stronger of the two grant discovery options — the 133K+ foundation profiles and past winners data give nonprofits genuine research capability that previously required expensive databases like Foundation Directory Online.
+Uses Granted's AI-powered discovery pipeline with live web search and 15-feature grant scoring. Streamable HTTP + SSE transport. Works with Claude Desktop, Cursor, and any MCP-compatible client. Setup takes under a minute. This is the stronger of the grant discovery options — the 133K+ foundation profiles and past winners data give nonprofits genuine research capability that previously required expensive databases like Foundation Directory Online.
+
+### Apify Nonprofit Grant Intelligence MCP
+
+| Server | Type | Tools |
+|--------|------|-------|
+| [Nonprofit Grant Intelligence](https://mcpmarket.com/server/nonprofit-grant-intelligence-1) | Commercial (Apify, $0.045/call) | 7 |
+
+A **due diligence-focused** grant intelligence server on the Apify platform. Connects to 7 authoritative public data sources for automated philanthropic screening:
+
+- **assess_nonprofit_health** — financial health scoring from IRS 990 data
+- **verify_grant_compliance** — compliance verification against federal requirements
+- **screen_organizational_integrity** — sanctions and integrity screening
+- **search_grant_opportunities** — federal grant opportunity discovery
+- **verify_cross_jurisdiction** — multi-jurisdiction verification (including UK charity registrations)
+- **analyze_funding_landscape** — funding ecosystem analysis
+- **generate_due_diligence_report** — structured due diligence reports
+
+Pay-per-use at $0.045 per tool call (~110 calls on Apify's $5/month free tier). Replaces hours of manual 990 filing reviews and sanctions checks. Most useful for foundations, corporate giving teams, and compliance officers rather than nonprofits themselves.
 
 ## Charity Verification & Data Lookup
 
