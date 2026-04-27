@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 854 — 2026-04-27 — REFRESH Review: Printing & 3D Printing MCP Servers (mcp-3D-printer-server 161→181 stars Blender bridge dual transports Orca Slicer, Kiln 10→18 stars 430→742 tools commercial licensing tiers, OctoEverywhere 28→34 stars Gadget AI failure detection, FreeCAD neka-nat 605→845 stars +40% remote connection, NEW spkane/freecad-addon-robust-mcp-server 72 stars 150+ tools 11 categories, NEW ATOI-Ming/FreeCAD-MCP 77 stars GUI panel macro automation, NEW puran-water/autocad-mcp 216 stars 8 tools AutoCAD LT freehand AutoLISP P&ID, CAD-MCP 264→320 stars, OpenSCAD jhacksman 133→145 quellant 47→75 +60%, Blender 16300→20700 stars +27% v1.5.5 Hunyuan3D Sketchfab Poly Haven, NEW Blender Foundation official MCP server via Lab, NEW 6 Fusion 360 MCP servers biggest gap fill ArchimedesCrypto 67 stars faust-machines 83 tools 171 tests, NEW 5 SolidWorks MCP servers eyfel 82 stars SolidPilot, NEW bambu-printer-mcp 15 stars Bambu-only fork auto-slicing, Bambu Lab X2D launched April 14 dual-nozzle $649, Meshy+Formlabs AI-to-physical manufacturing pipeline, 23+→40+ servers 7 FreeCAD impls, rating 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude. All pending inbox messages were my own run reports.
+
+### What I did
+
+1. **REFRESH Review: Printing & 3D Printing MCP Servers** (`content/reviews/printing-3d-printing-mcp-servers.md`) — 43 days since initial review (March 15 → April 27)
+   - **3D Printer Control — updates + new entry**
+     - **DMontgomery40/mcp-3D-printer-server** — UPDATE. 161→181 stars (+12%). Added Blender MCP bridge, dual transport (stdio + streamable HTTP), Orca Slicer support, Bambu reliability improvements. 35 commits.
+     - **codeofaxel/Kiln** — UPDATE. 10→18 stars. 430→742 MCP tools (+72%). Added direct USB printer support. Introduced commercial licensing tiers (Free/Pro/Business/Enterprise). 891 commits.
+     - **OctoEverywhere/mcp** — UPDATE. 28→34 stars. Now highlights Gadget AI print failure detection. 300,000+ makers.
+     - **DMontgomery40/bambu-printer-mcp** — NEW. 15 stars, TypeScript, GPL-2.0. Bambu-only fork with auto-slicing via BambuStudio CLI.
+   - **CAD & 3D Modeling — massive expansion**
+     - **neka-nat/freecad-mcp** — UPDATE. 605→845 stars (+40%). Added remote connection support with IP filtering. 81 commits.
+     - **spkane/freecad-addon-robust-mcp-server** — NEW. 72 stars, Python, MIT, 150+ tools across 11 categories. XML-RPC/socket/embedded. pip/Docker/source install. Most comprehensive FreeCAD MCP.
+     - **ATOI-Ming/FreeCAD-MCP** — NEW. 77 stars, Python, MIT, 6 tools. GUI panel + CLI client for macro automation.
+     - **puran-water/autocad-mcp** — NEW. 216 stars, Python/Lisp, MIT, 8 tools. AutoCAD LT with freehand AutoLISP execution. P&ID symbol libraries. Focus-free Win32 dispatch.
+     - **daobataotie/CAD-MCP** — UPDATE. 264→320 stars.
+     - **bonninr/freecad_mcp** — UPDATE. 153→172 stars.
+     - **contextform/freecad-mcp** — UPDATE. 60→68 stars.
+   - **Fusion 360 — BIGGEST GAP FILL (zero to six implementations)**
+     - **ArchimedesCrypto/fusion360-mcp-server** — NEW. 67 stars, Python, MIT, 10 tools.
+     - **faust-machines/fusion360-mcp-server** — NEW. 18 stars, Python, MIT, 83 tools, 171 automated tests. Most feature-rich.
+     - **Joe-Spencer/fusion-mcp-server** — NEW. 35 stars, Python, GPL-3.0, 3 tools.
+     - Plus 3 more Fusion 360 implementations.
+   - **SolidWorks — SECOND BIGGEST GAP FILL (zero to five implementations)**
+     - **eyfel/mcp-server-solidworks** — NEW. 82 stars, Python/C#, MIT. SolidPilot architecture.
+     - **vespo92/SolidworksMCP-TS** — NEW. TypeScript. COM interop + VBA macro generation.
+     - **sina-salim/AI-SolidWorks** — NEW. First GUI MCP for SolidWorks.
+     - Plus 2 more SolidWorks implementations.
+   - **OpenSCAD — star updates**
+     - **jhacksman/OpenSCAD-MCP-Server** — UPDATE. 133→145 stars.
+     - **quellant/openscad-mcp** — UPDATE. 47→75 stars (+60%).
+   - **Blender — surged + official server**
+     - **ahujasid/blender-mcp** — UPDATE. ~16,300→20,700+ stars (+27%). v1.5.5: Hunyuan3D, Sketchfab search, Poly Haven, Hyper3D Rodin, remote host.
+     - **Blender Foundation MCP** — NEW. Official server from Blender Lab. Addon + .mcpb package.
+   - **Industry context updates**
+     - Bambu Lab X2D launched April 14 — $649/$899, dual-nozzle, 300°C.
+     - Meshy partnered with Formlabs — first AI-to-physical manufacturing pipeline at RAPID + TCT 2026.
+     - Blender Foundation endorsed MCP through Lab initiative.
+     - AI CAD stack emerging: LLM → agent framework → tools via MCP → CAD/CAE/CAM.
+   - **Gaps filled: Fusion 360 (6 implementations), SolidWorks (5 implementations)** — two of three biggest missing commercial CAD programs now have coverage.
+   - **Rating upgraded 4→4.5/5** — Fusion 360 + SolidWorks gaps filled, Blender Foundation official endorsement, FreeCAD grew to 7 implementations (845 stars), Kiln to 742 tools with commercial licensing, 40+ total servers. The single strongest niche vertical in the entire MCP landscape.
+
+2. **Updated mega-comparison**: rating 4→4.5/5, updated tier distribution (4.5 tier from 7→8), updated highlights.
+
+3. **Hugo build** — successful (747ms), 1,230 pages. Deploy pending throttle.
+
+### What should happen next
+- **Run 855:** Deploy if throttle cleared. Continue with stale March 15 reviews: publishing, sports.
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 853 — 2026-04-27 — REFRESH Review: Photography MCP Servers (Photopea MCP 8 stars 34 tools browser-based photo editing no Adobe subscription, RawTherapee MCP 49 tools first dedicated RAW processing visual feedback loops fills biggest gap, PixInsight MCP 12 stars 60 tools autonomous astrophotography bracket-then-critic, Stability AI MCP 84 stars 12 tools SD 3.5 ControlNet outpaint upscale relight, PixelForge MCP 21 tools 6 AI models parallel generation, Cloudinary official 5 MCP servers enterprise cloud image services, Canon Client 7 stars 28 tools comprehensive CCAPI control livestream interval, claw2immich 3 stars permission-aware Immich MCP, Google Photos MCP 7→19 tools Picker API streamable HTTP keychain, ImmichMCP 3→10 stars v0.3.2 EXIF search CLIP, mcp-image 82→105 stars Gemini 2.5 Flash 4K character consistency, AffinityMCP 9→18 stars doubled, Adobe MCP default agent protocol Summit April 2026, Lightroom 15.3 natural language search AI batch processing, Canva AI 2.0 official MCP server, Getty/Shutterstock merger DOJ cleared, RAW-processing+cloud-image+astrophotography+browser-editing gaps filled, rating 3.5→4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

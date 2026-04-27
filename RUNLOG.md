@@ -1,3 +1,4 @@
+Run 854: REFRESH Review: Printing & 3D Printing MCP Servers (mcp-3D-printer-server 161→181 Blender bridge dual transports Orca, Kiln 10→18 stars 430→742 tools commercial licensing, OctoEverywhere 28→34 Gadget AI, FreeCAD 605→845 +40% remote connection, NEW robust-mcp-server 72 stars 150+ tools, NEW ATOI-Ming 77 stars GUI panel, NEW autocad-mcp 216 stars AutoLISP P&ID, CAD-MCP 264→320, OpenSCAD 133→145 + 47→75 +60%, Blender 16300→20700 +27% v1.5.5 Hunyuan3D Sketchfab, NEW Blender Foundation official MCP, NEW 6 Fusion 360 servers biggest gap fill ArchimedesCrypto 67 faust-machines 83 tools, NEW 5 SolidWorks servers eyfel 82 SolidPilot, NEW bambu-printer-mcp 15 auto-slicing, Bambu X2D April 14 dual-nozzle $649, Meshy+Formlabs AI-to-physical, 23+→40+ servers, rating 4→4.5/5). Built. Deploy pending throttle.
 Run 852: REFRESH Review: Nonprofit & Charity MCP Servers (NEW grants-mcp 8 stars first open-source grant discovery, NEW Granted AI free 87K+ grants 133K+ foundations 5 tools, NEW GSA-TTS/mcp-server-grants-gov official US gov Grants.gov MCP, NEW us-gov-open-data-mcp 94 stars 300+ tools 40+ APIs Hacker News, NEW mcp-civic-data 110 tools 33 APIs, NEW civicrm-mcp-server 3 stars 11 tools CiviCRM gap filled, NEW GovInfo MCP official GPO public preview, Blackbaud Development Agent first autonomous fundraising AI, Salesforce Agentforce Nonprofit 4 AI agents rebrand, Candid unified search + 20% layoff AI pivot, propublica-mcp v1.0.0, mcp-charity v1.0.6, hdx-mcp Docker Toolkit, charity-mcp-server 22→2 inactive, nb-mcp DELETED, 3 gaps filled grant-discovery+CiviCRM+civic-data, 15+→35+ servers, rating 3→3.5/5). Built + deployed.
 Run 849: REFRESH Review: Insurance MCP Servers (EMPLOYERS first carrier ChatGPT App Directory MCP workers-comp quoting, Socotra Assistant GA AI underwriting, NEW eiopa-insurance-mcp 7 tools Solvency II DORA first EU regulatory, NEW Policy Penguin commercial 4 tools, NEW FEMA 80M+ records SEC EDGAR PyPI, NEW swiss-health-mcp 1.6M records 55 insurers, NEW insuranceagenticmesh 4 MCP servers multi-agent, NEW imc-policy-mcp-server RAG PGVector, Sixfold $30M $265B GWP, ClaimsProcessingAssistant 1→5 stars, 3 gaps filled, 15+→25+ servers, rating 3.0→3.5/5). Built + deployed.
 Run 848: REFRESH Review: Hospitality & Hotels MCP Servers (travel-hacking-toolkit 436 stars 22 tools points/miles NEW co-leader, Strider Labs 5+ servers mcp-marriott 16 tools Bonvoy mcp-hilton 16 tools Honors mcp-doordash first food delivery mcp-booking 14 tools mcp-opentable 5 tools, uber-eats-mcp 221 stars POC demand signal, him229/stays Google Hotels per-OTA rates, ExpediaGroup official 18 stars, Gondola multi-chain, Apaleo PMS alpha 29 tools first enterprise, mcp-server-airbnb 393→437, tripadvisor-mcp 46→54, 3 gaps filled, 25+→40+ servers, rating 3.5→4.0/5). Deployed.
@@ -11899,3 +11900,26 @@ Run 851 complete and deployed. News, Media & Journalism MCP review refreshed —
 2026-04-27T00:09:03Z SESSION 1771 stopped
 2026-04-27T00:51:01Z STARTED run 679694 (mode=wild)
 2026-04-27T00:51:02Z SESSION 1772 started
+Run 853 complete. Here's the summary:
+
+**REFRESHED: Photography MCP Servers review** (43 days since initial, March 15 → April 27)
+
+**4 major gaps filled:**
+- **RAW processing** — RawTherapee MCP (49 tools) with visual feedback loops where the LLM sees previews of edits
+- **Cloud image services** — Cloudinary launched 5 official MCP servers
+- **Astrophotography** — PixInsight MCP (12 stars, 60 tools) with autonomous deep-sky processing
+- **Browser-based editing** — Photopea MCP (34 tools), free Photoshop alternative
+
+**Key new servers:** Stability AI MCP (84 stars, SD 3.5, 12 tools), PixelForge MCP (6 AI models, 21 tools), Canon Client (28 tools), claw2immich (permission-aware Immich)
+
+**Key updates:** Google Photos 7→19 tools (Picker API), ImmichMCP 3→10 stars v0.3.2, mcp-image 82→105 stars (Gemini 2.5 Flash/4K), AffinityMCP doubled stars
+
+**Industry:** Adobe adopted MCP as default agent protocol at Summit April 2026, Lightroom 15.3 natural language search, Canva AI 2.0 with official MCP server, Getty/Shutterstock merger cleared
+
+**Rating: 3.5 → 4.0/5**
+
+Build successful (1,230 pages), deployed, committed, inbox report sent. Stale reviews remaining: **printing, publishing, sports**.
+2026-04-27T01:07:45Z FINISHED run 679694
+2026-04-27T01:07:45Z SESSION 1772 stopped
+2026-04-27T01:52:01Z STARTED run 695915 (mode=wild)
+2026-04-27T01:52:03Z SESSION 1773 started
