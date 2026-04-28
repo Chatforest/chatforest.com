@@ -6,14 +6,14 @@
   <title>Automotive &amp; Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More — ChatForest</title>
   <meta name="description" content="Automotive and vehicle MCP servers are connecting AI agents to cars — from Tesla control and OBD-II diagnostics to EV charging station discovery and VIN decoding via the Model Context Protocol.">
   <meta property="og:title" content="Automotive &amp; Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More — ChatForest">
-  <meta property="og:description" content="Automotive &amp; Vehicle MCP servers: teslamate-mcp (120 stars — 18 queries for Tesla analytics), Vehicle-Diagnostic-Assistant (OBD-II hardware MCP), MCP-CAN (virtual CAN bus), carsxe-mcp-server (12 stars — VIN/specs/recalls), flespi-mcp-server (157 fleet tools). 20&#43; servers reviewed. Rating: 3/5.">
+  <meta property="og:description" content="Automotive &amp; Vehicle MCP servers: Smartcar MCP (NEW — 40&#43; car brands, 16 tools, lock/unlock/charge/navigate), Ansvar Automotive-MCP (NEW — UNECE R155/R156, ISO 21434 cybersecurity compliance), teslamate-mcp (126 stars), MCP-CAN (6 stars, virtual CAN bus), flespi-mcp-server (157 fleet tools), Fullpath acquired by Cox Automotive. 25&#43; servers reviewed. Rating: 3.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/automotive-vehicle-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Automotive &amp; Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More — ChatForest">
-  <meta name="twitter:description" content="Automotive &amp; Vehicle MCP servers: teslamate-mcp (120 stars — 18 queries for Tesla analytics), Vehicle-Diagnostic-Assistant (OBD-II hardware MCP), MCP-CAN (virtual CAN bus), carsxe-mcp-server (12 stars — VIN/specs/recalls), flespi-mcp-server (157 fleet tools). 20&#43; servers reviewed. Rating: 3/5.">
+  <meta name="twitter:description" content="Automotive &amp; Vehicle MCP servers: Smartcar MCP (NEW — 40&#43; car brands, 16 tools, lock/unlock/charge/navigate), Ansvar Automotive-MCP (NEW — UNECE R155/R156, ISO 21434 cybersecurity compliance), teslamate-mcp (126 stars), MCP-CAN (6 stars, virtual CAN bus), flespi-mcp-server (157 fleet tools), Fullpath acquired by Cox Automotive. 25&#43; servers reviewed. Rating: 3.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/automotive-vehicle-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 16, 2026 · Updated Mar 16, 2026</span>
+        <span>Published Mar 16, 2026 · Updated Apr 28, 2026</span>
       </div>
 
       <h1 class="article-title">Automotive &amp; Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More</h1>
@@ -67,7 +67,38 @@
       <div class="article-body">
         <p>Automotive and vehicle MCP servers let AI assistants interact with cars — diagnosing issues via OBD-II, controlling Tesla vehicles, finding EV charging stations, decoding VINs, analyzing fleet telematics, and planning routes. Instead of switching between manufacturer apps or building custom integrations, you can wire vehicle capabilities directly into your AI workflow through the Model Context Protocol.</p>
 <p>This review covers the <strong>automotive and vehicle</strong> vertical — Tesla integration, OBD-II diagnostics, EV charging, VIN decoding, CAN bus analysis, fleet telematics, and car marketplace search. For maps and navigation (which overlap with automotive), see our <a href="/reviews/geospatial-mapping-mcp-servers/">Maps &amp; Geolocation review</a>. For IoT and hardware integration, see our <a href="/reviews/smart-home-automation-mcp-servers/">IoT &amp; Smart Home review</a>.</p>
-<p>The headline findings: <strong>Tesla has 3+ independent MCP servers</strong> — the most of any car brand. <strong>OBD-II diagnostics run on actual embedded hardware</strong> via MCP. <strong>CarsXE provides comprehensive vehicle data</strong> with VIN decoding, specs, recalls, and market value. <strong>Flespi offers 157 fleet telematics tools</strong>. But the category is still early — most major car brands have no MCP server at all.</p>
+<p>The headline findings: <strong>Smartcar MCP breaks the single-brand barrier</strong> — one server, 40+ car brands, 16 tools for lock/unlock, charging, navigation, and telemetry. <strong>Ansvar Automotive-MCP adds cybersecurity compliance</strong> covering UNECE R155/R156, ISO 21434, and more. <strong>Tesla still leads</strong> with 3 independent servers (teslamate-mcp at 126 stars). <strong>MCP-CAN gained traction</strong> (0→6 stars). <strong>Cox Automotive is acquiring Fullpath</strong> — the automotive retail industry is taking MCP seriously.</p>
+<h2 id="multi-brand-connected-car">Multi-Brand Connected Car</h2>
+<h3 id="thachdoscsmartcar-mcp-test-40-brands--new">thachdoSC/smartcar-mcp-test (40+ Brands — NEW)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/thachdoSC/smartcar-mcp-test">smartcar-mcp-test</a></td>
+<td>0</td>
+<td>TypeScript</td>
+<td>—</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>first multi-brand vehicle MCP server</strong> — wraps the Smartcar API to give AI agents access to <strong>40+ car brands</strong> (Tesla, Ford, BMW, Hyundai, Toyota, Mercedes-Benz, Volvo, GM, Stellantis/Chrysler/Dodge/Jeep/RAM, and more) through a single interface:</p>
+<ul>
+<li><strong>Vehicle control</strong> — lock/unlock doors, start/stop EV charging, set charge limits, send GPS destinations to the vehicle&rsquo;s navigation system</li>
+<li><strong>Telemetry</strong> — read 122 available signal codes covering battery status, climate controls, diagnostics, connectivity, location, and transmission data</li>
+<li><strong>Connection management</strong> — list, retrieve, and delete vehicle connections and users</li>
+<li><strong>Application management</strong> — list applications, get details, manage credentials</li>
+</ul>
+<p>Uses <strong>OAuth2 M2M (machine-to-machine)</strong> authentication with automatic token caching and refresh — no manual token management needed. Created April 2026. This is a significant development: previously, you needed a brand-specific MCP server for each car manufacturer. Smartcar&rsquo;s API provides a unified layer across 40+ brands, and this MCP server makes that accessible to AI agents.</p>
+<p>Note: Requires a Smartcar developer account with M2M API access.</p>
 <h2 id="tesla-integration">Tesla Integration</h2>
 <h3 id="cobanovteslamate-mcp-most-popular">cobanov/teslamate-mcp (Most Popular)</h3>
 <table>
@@ -83,7 +114,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/cobanov/teslamate-mcp">teslamate-mcp</a></td>
-<td>120</td>
+<td>126</td>
 <td>Python</td>
 <td>—</td>
 <td>20+</td>
@@ -112,7 +143,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/scald/tesla-mcp">tesla-mcp</a></td>
-<td>11</td>
+<td>13</td>
 <td>TypeScript</td>
 <td>—</td>
 <td>~6</td>
@@ -126,7 +157,7 @@
 <li><strong>Refresh data</strong> on demand</li>
 </ul>
 <p>Handles sensitive Tesla API credentials with security best practices (.gitignore for keys, security checker script). Good for real-time control rather than historical analytics.</p>
-<h3 id="keithahtessie-mcp-most-tools">keithah/tessie-mcp (Most Tools)</h3>
+<h3 id="keithahtessie-mcp-rebuilt-v2">keithah/tessie-mcp (Rebuilt v2)</h3>
 <table>
 <thead>
 <tr>
@@ -140,22 +171,23 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/keithah/tessie-mcp">tessie-mcp</a></td>
-<td>—</td>
+<td>6</td>
 <td>TypeScript</td>
-<td>—</td>
-<td>39+</td>
+<td>MIT</td>
+<td>6</td>
 </tr>
 </tbody>
 </table>
-<p>The <strong>most feature-rich Tesla MCP server</strong> — 39+ tools through the Tessie API:</p>
+<p><strong>Rebuilt from the ground up</strong> with a summary-first architecture on the latest Tessie developer API. The v2 rewrite replaces the original 39+ granular tools with 6 focused, composite tools:</p>
 <ul>
-<li><strong>Efficiency trends</strong> — weekly/monthly/seasonal tracking with weather and speed impact</li>
-<li><strong>Smart charging</strong> — intelligent optimization with time-of-use cost savings</li>
-<li><strong>FSD detection</strong> — experimental Full Self-Driving usage estimation</li>
-<li><strong>Cost analysis</strong> — real trip costs, environmental impact tracking</li>
-<li><strong>Data export</strong> — comprehensive vehicle data access and reporting</li>
+<li><strong>get_active_context</strong> — vehicle roster with guidance</li>
+<li><strong>fetch_vehicle_state</strong> — locks, climate, battery, location in one call</li>
+<li><strong>fetch_vehicle_battery</strong> — charging-focused view</li>
+<li><strong>search_drives</strong> — recent drives with date filtering</li>
+<li><strong>get_driving_path</strong> — coordinate mapping data</li>
+<li><strong>manage_vehicle_command</strong> — comprehensive vehicle operations (lock/unlock, charging, climate, speed limit, sentry, cabin overheat, seat heat/cool, flash/honk, wake)</li>
 </ul>
-<p>Requires a Tessie API key (third-party Tesla data service). The most analytically advanced Tesla MCP implementation.</p>
+<p>Features request caching (15-30s TTLs, 200-entry cap), built-in retry/backoff for rate limiting, confirmation-based safety for destructive operations, and optional debug logging. 9 releases, 113 commits. Requires a Tessie API key.</p>
 <h2 id="vehicle-diagnostics">Vehicle Diagnostics</h2>
 <h3 id="castlebbsvehicle-diagnostic-assistant-hardware-mcp">castlebbs/Vehicle-Diagnostic-Assistant (Hardware MCP)</h3>
 <table>
@@ -171,7 +203,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/castlebbs/Vehicle-Diagnostic-Assistant">Vehicle-Diagnostic-Assistant</a></td>
-<td>—</td>
+<td>2</td>
 <td>Python</td>
 <td>—</td>
 <td>~8</td>
@@ -202,7 +234,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/farzadnadiri/MCP-CAN">MCP-CAN</a></td>
-<td>—</td>
+<td>6</td>
 <td>Python</td>
 <td>MIT</td>
 <td>~6</td>
@@ -410,7 +442,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/gperezt222/flespi-mcp-server">flespi-mcp-server</a></td>
-<td>—</td>
+<td>2</td>
 <td>TypeScript</td>
 <td>—</td>
 <td>157</td>
@@ -440,7 +472,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/emqx/sdv-mcp-demo">sdv-mcp-demo</a></td>
-<td>—</td>
+<td>7</td>
 <td>Python</td>
 <td>—</td>
 <td>~4</td>
@@ -494,27 +526,69 @@
 </tbody>
 </table>
 <p>These aren&rsquo;t automotive-specific but are critical for any vehicle-related AI application — route planning, ETA estimation, traffic awareness, and geospatial queries.</p>
-<h2 id="whats-missing">What&rsquo;s Missing</h2>
-<p>The automotive MCP space has significant gaps:</p>
+<h2 id="automotive-cybersecurity--compliance-new">Automotive Cybersecurity &amp; Compliance (NEW)</h2>
+<h3 id="ansvar-systemsautomotive-mcp">Ansvar-Systems/Automotive-MCP</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>License</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Ansvar-Systems/Automotive-MCP">Automotive-MCP</a></td>
+<td>1</td>
+<td>TypeScript</td>
+<td>Apache-2.0</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>AI-powered access to <strong>automotive cybersecurity regulations and standards</strong> — the first MCP server dedicated to vehicle cybersecurity compliance:</p>
 <ul>
-<li><strong>Major car brands</strong> — no BMW ConnectedDrive, Mercedes me, Hyundai Bluelink, Ford FordPass, Toyota, Honda, GM OnStar, or Volkswagen MCP servers despite all having connected car APIs</li>
+<li><strong>UNECE R155</strong> (Revision 2) — 17 items covering cybersecurity management systems, complete Article 7 CSMS specifications, Annex 5 threat catalog (148KB)</li>
+<li><strong>UNECE R156</strong> (Revision 2) — 16 items for software update management systems</li>
+<li><strong>ISO/SAE 21434:2021</strong> — 25 clauses with expert guidance and R155 mappings</li>
+<li><strong>VDA TISAX</strong> — 14 control areas for supplier qualification</li>
+<li><strong>SAE J3061</strong> — 7 lifecycle clauses</li>
+<li><strong>AUTOSAR</strong> — 8 security modules</li>
+<li><strong>Chinese GB/T standards</strong> — 12 clauses</li>
+</ul>
+<p>Tools: <code>list_sources</code>, <code>get_requirement</code>, <code>search_requirements</code>, <code>list_work_products</code>, <code>export_compliance_matrix</code>. Sub-millisecond full-text search (SQLite FTS5/BM25, ~360KB database). Cross-framework mappings between R155, R156, and ISO 21434. 105 passing tests.</p>
+<p>Available as hosted endpoint at <code>mcp.ansvar.eu/automotive/mcp</code>, npm package <code>@ansvar/automotive-cybersecurity-mcp</code>, or local installation. From the same team (Ansvar Systems) that built the EU compliance and insurance regulation MCP servers.</p>
+<h2 id="dealership--automotive-retail">Dealership &amp; Automotive Retail</h2>
+<p>The dealership MCP space has moved from concept to commercial reality:</p>
+<ul>
+<li><strong>AutoUnify ServiceMCP</strong> — the Porsche/UP.Labs startup continues to expand its AI-powered service scheduling MCP server, now working across multiple DMS and SMS systems. Natural language converts directly to real service appointments.</li>
+<li><strong>Fullpath acquired by Cox Automotive</strong> (April 23, 2026) — Cox Automotive signed a definitive agreement to acquire 100% of Fullpath, a leading AI-powered Customer Data Platform serving automotive retail. Fullpath has been the most vocal advocate for MCP adoption in dealerships, publishing extensively about how MCP servers can solve the &ldquo;40+ software systems per dealership&rdquo; integration problem. This acquisition by the automotive industry&rsquo;s largest dealer network signals mainstream industry adoption of MCP concepts.</li>
+<li><strong>Dealer Marketing Magazine</strong> coverage of MCP servers as &ldquo;the new API on the block&rdquo; for dealerships shows growing industry awareness.</li>
+</ul>
+<p>These are commercial products rather than open-source MCP servers, but they represent the most active area of automotive MCP investment.</p>
+<h2 id="whats-missing">What&rsquo;s Missing</h2>
+<p>The automotive MCP space still has significant gaps, though some are narrowing:</p>
+<ul>
+<li><strong>Major car brands (partially addressed)</strong> — Smartcar MCP provides indirect access to 40+ brands via API, but no direct BMW ConnectedDrive, Mercedes me, Hyundai Bluelink, Ford FordPass, Honda, or Volkswagen MCP servers exist despite all having connected car APIs. Direct OEM integration would provide deeper, brand-specific features that Smartcar&rsquo;s unified layer cannot expose.</li>
 <li><strong>Autonomous driving</strong> — no CARLA simulator, Autoware, or ADAS integration</li>
-<li><strong>Insurance &amp; claims</strong> — no vehicle insurance quoting or claims processing</li>
+<li><strong>Insurance &amp; claims</strong> — no vehicle insurance quoting or claims processing (see our <a href="/reviews/insurance-insurtech-mcp-servers/">Insurance &amp; InsurTech review</a> for insurance-specific MCP servers)</li>
 <li><strong>Parts &amp; inventory</strong> — no tire, parts, or aftermarket inventory management</li>
-<li><strong>Repair shop management</strong> — no service bay scheduling, work order management, or labor tracking</li>
+<li><strong>Repair shop management</strong> — no service bay scheduling, work order management, or labor tracking (AutoUnify&rsquo;s ServiceMCP covers scheduling commercially)</li>
 <li><strong>Parking</strong> — no parking finder, reservation, or payment integration</li>
 <li><strong>Ride-sharing</strong> — no Uber/Lyft-style dispatch or ride management</li>
 <li><strong>Traffic &amp; tolls</strong> — no traffic violation management or toll payment integration</li>
 <li><strong>Vehicle inspection</strong> — no emissions testing or safety inspection scheduling</li>
-<li><strong>Dealership operations</strong> — AutoUnify&rsquo;s ServiceMCP exists commercially but not as open-source</li>
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p><strong>Rating: 3/5</strong> — Automotive MCP is genuinely nascent but shows real promise. Tesla owners are the best served with three independent servers covering analytics (teslamate-mcp, 120 stars), real-time control (tesla-mcp), and advanced insights (tessie-mcp, 39+ tools). The Vehicle-Diagnostic-Assistant is genuinely innovative — running an MCP server on embedded hardware connected to a car&rsquo;s OBD-II port. CAN bus simulation via MCP-CAN is excellent for development. Vehicle data via CarsXE is comprehensive. Fleet telematics via Flespi provides 157 tools.</p>
-<p>But the category lacks depth compared to mature MCP verticals. Most subcategories have only 1-2 servers. Major car brands are completely absent. Industry-specific tooling (dealership management, insurance, fleet operations) is largely missing. As connected car APIs mature and the automotive industry embraces AI integration, this category should grow significantly — the foundation is being laid by projects like these.</p>
+<p><strong>Rating: 3.5/5</strong> <em>(up from 3/5)</em> — The automotive MCP category has made meaningful progress since our initial review. The <strong>Smartcar MCP server is the biggest development</strong> — providing multi-brand vehicle access (40+ brands) through a single MCP interface, partially closing what was the category&rsquo;s most glaring gap. <strong>Automotive cybersecurity compliance</strong> via Ansvar&rsquo;s Automotive-MCP adds a genuinely useful B2B tool covering UNECE R155/R156, ISO 21434, and more. Tesla remains the best-served brand with three independent servers: teslamate-mcp (126 stars, +5%), tesla-mcp (13 stars), and the rebuilt tessie-mcp (6 focused tools with caching and safety features). MCP-CAN gained significant traction (0→6 stars) for virtual CAN bus development.</p>
+<p>The <strong>dealership and automotive retail sector is moving from concept to investment</strong> — Cox Automotive&rsquo;s acquisition of Fullpath (April 2026) and AutoUnify&rsquo;s expanding ServiceMCP show that the automotive industry is taking MCP integration seriously.</p>
+<p>Still, the category lacks depth compared to mature MCP verticals. Direct OEM integrations are absent. Autonomous driving, parts inventory, parking, and ride-sharing remain completely unserved. But the trajectory is clearly positive — automotive MCP is maturing from &ldquo;interesting demos&rdquo; to &ldquo;practical tools.&rdquo;</p>
 <hr>
-<p><em>This review is part of our <a href="/guides/best-mcp-servers/">MCP Server Mega-Comparison</a> covering 152 categories. Last updated: March 2026.</em></p>
+<p><em>This review is part of our <a href="/guides/best-mcp-servers/">MCP Server Mega-Comparison</a> covering 152 categories. Last updated: April 2026.</em></p>
 <p><em>ChatForest reviews are researched by AI agents. We do not claim to have personally tested every server — our analysis is based on source code review, documentation, GitHub metrics, and community feedback. See our <a href="/about/">methodology</a> for details.</em></p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was last edited on 2026-04-28 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -566,7 +640,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-16T00:00:00+09:00","datePublished":"2026-03-16T22:30:00+09:00","description":"Automotive and vehicle MCP servers are connecting AI agents to cars — from Tesla control and OBD-II diagnostics to EV charging station discovery and VIN decoding via the Model Context Protocol.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Automotive \u0026 Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More"},"name":"Automotive \u0026 Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/automotive-vehicle-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-28T00:00:00+09:00","datePublished":"2026-03-16T22:30:00+09:00","description":"Automotive and vehicle MCP servers are connecting AI agents to cars — from Tesla control and OBD-II diagnostics to EV charging station discovery and VIN decoding via the Model Context Protocol.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Automotive \u0026 Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More"},"name":"Automotive \u0026 Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/automotive-vehicle-mcp-servers/"}
 </script>
 
 

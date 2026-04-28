@@ -44,7 +44,7 @@ The connected car subcategory. Tesla leads with 3+ independent servers, OBD-II d
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Automotive & Vehicle](/reviews/automotive-vehicle-mcp-servers/) | 3/5 | teslamate-mcp (120 stars, 18 analytical queries), tesla-mcp (11 stars, Fleet API), tessie-mcp (39+ tools), Vehicle-Diagnostic-Assistant (OBD-II hardware), MCP-CAN (virtual CAN bus), carsxe-mcp-server (12 stars, VIN/specs/recalls), flespi-mcp-server (157 fleet tools) — 20+ servers |
+| [Automotive & Vehicle](/reviews/automotive-vehicle-mcp-servers/) | 3.5/5 | **NEW** Smartcar MCP (40+ car brands, 16 tools), **NEW** Ansvar Automotive-MCP (UNECE R155/R156 cybersecurity compliance), teslamate-mcp (126 stars), tessie-mcp (rebuilt v2, 6 focused tools), MCP-CAN (6 stars), flespi (157 fleet tools), Cox Automotive acquiring Fullpath — 25+ servers |
 
 ## Aerospace & Defense
 
