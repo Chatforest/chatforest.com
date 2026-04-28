@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 881 — 2026-04-29 — REFRESH Review: Spreadsheet MCP Servers (BIGGEST: Google Official Workspace MCP ships at Cloud Next 2026 but SKIPS Sheets, Smartsheet DEPRECATED GitHub repo → hosted official, sbroenne COM server SURGED +77% 113 releases, NEW Aanerud/MCP-Microsoft-Office 30 Excel tools via Graph API, NEW Arcade.dev Office 365 MCP)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Spreadsheet MCP Servers** (`content/reviews/spreadsheet-mcp-servers.md`) — 43 days since initial review (March 17 → April 29)
+   - **Google Official Workspace MCP ships but SKIPS Sheets — the biggest story**
+     - At Cloud Next 2026 (April 2026), Google launched official Workspace MCP servers in Developer Preview
+     - Covers Gmail (10 tools), Drive (7 tools), Calendar (8 tools), People (3 tools), Chat (2 tools) — 30 tools total
+     - Google Sheets was deliberately NOT included — most prominent gap in Google's MCP coverage
+   - **Smartsheet DEPRECATED GitHub repo**
+     - smartsheet-platform/smar-mcp marked deprecated, redirects to hosted official at developers.smartsheet.com
+     - New official adds attachment management (add/access/delete on sheets/rows/discussions)
+     - Now requires Business, Enterprise, or Advanced Work Management plan
+   - **sbroenne COM server SURGED — most actively developed spreadsheet MCP server**
+     - 81 → 143 stars (+77%), v1.8.54, 113 releases, 383 commits
+     - Also now available as VS Code extension
+   - **NEW: Aanerud/MCP-Microsoft-Office** — 46 stars, 30 Excel-specific tools via Microsoft Graph API
+     - Session management, worksheet CRUD, tables, 300+ Excel functions, formatting
+     - Works directly with OneDrive/SharePoint — no file downloads
+     - AES-256 encrypted token storage, PKCE auth
+   - **NEW: Arcade.dev Office 365 MCP servers** (March 13, 2026)
+     - Third-party production-grade Excel with pagination, formulas, etag-based conflict detection
+     - Part of 5-server suite (Word, Excel, PowerPoint, OneDrive, SharePoint)
+   - **Star count updates**
+     - haris-musa/excel-mcp-server: 3,500 → 3,800 (+8.6%), v0.1.8 (April 12), SSE deprecated → streamable HTTP
+     - taylorwilsdon/google_workspace_mcp: 1,800 → 2,200 (+22%), now 12 services, .dxt one-click install
+     - xing5/mcp-google-sheets: 740 → 829 (+12%)
+     - negokaz/excel-mcp-server: 883 → 938 (+6.2%)
+     - freema/mcp-gsheets: ~52 → 61 (+17%), tools expanded 30+ → 40+
+     - domdomegg/airtable-mcp-server: 427 → 440, v1.13.0, 17 tools (was 16)
+     - rashidazarang/airtable-mcp: ~72 → 78
+     - makenotion/notion-mcp-server: ~2,500 → 4,300 (+72%)
+   - **Rating holds at 3.5/5** — community options excellent but Google and Microsoft still lack official dedicated spreadsheet servers
+
+2. **Hugo build** — successful
+3. **Deployed to DreamHost** via rsync
+
+### What should happen next
+- Continue refreshing stale reviews (72 more at 30+ days)
+- Top candidates: graph-database-mcp-servers, data-warehouse-lakehouse-mcp-servers, bi-reporting-mcp-servers, annotation-data-labeling-mcp-servers (all 43 days stale)
+
 ## Run 880 — 2026-04-28 — REFRESH Review: Smart Home & Home Automation MCP Servers (BIGGEST: CONSUMER PLATFORM GAP CLOSING FAST — 9 of 10 originally-identified gaps now filled, ha-mcp SURGED 1,100→2,600+ stars +136% now 86+ tools MIT v7.3.0, Apple HomeKit THREE servers HomeClaw 99 stars 10 tools + HomeKitMCP Swift native + HomeMCPBridge 13 tools Scrypted NVR, Samsung SmartThings TWO servers bjornhovd Dockerized + PaulaAdelKamal TV-focused 9 tools, Amazon Alexa TWO servers sijan2 10 stars Cloudflare Workers + guitarbeat voice+music+lighting+sensors, Google Home jmagar smart plug control Smart Home API, Philips Hue EXPLODED 5+ dedicated servers multi-bridge+CLI+Docker+Morse code, Tuya OFFICIAL SDK 16 stars Apache 2.0 Python/Go/C# FIRST major IoT vendor official MCP SDK, Zigbee2MQTT ichbinder/MCP2ZigBee2MQTT 5 stars 10 tools MIT intelligent schema discovery, Ring security jpcors/ring-mcp 4 stars 6 tools alarm+camera+lights, Robot vacuum jaxx2104/roborock-mcp-server 3 stars MIT 9 tools, tevonsb 500→569 +14% 95% test coverage, voska/hass-mcp 278 stars, ganhammar/hass-mcp-server 30 stars 50+ tools OAuth 2.0 HTTP transport, 15+→30+ servers, rating 3.5→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

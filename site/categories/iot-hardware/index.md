@@ -24,7 +24,7 @@ Home Assistant dominates with 8+ MCP server implementations — the most MCP-ser
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Smart Home & Home Automation](/reviews/smart-home-automation-mcp-servers/) | 3.5/5 | ha-mcp (1,100+ stars, 80+ tools), homeassistant-mcp (500+ stars, SSE real-time), Hubitat MCP, OpenHAB MCP, Smart Home Orchestrator (multi-brand IoT), Ecobee MCP — 15+ servers |
+| [Smart Home & Home Automation](/reviews/smart-home-automation-mcp-servers/) | 4.5/5 | ha-mcp (2,600+ stars, 86+ tools, MIT), homeassistant-mcp (569 stars, SSE real-time), HomeClaw (99 stars, Apple HomeKit NEW), Tuya official SDK (16 stars NEW), Samsung SmartThings NEW, Amazon Alexa NEW, Google Home NEW, Philips Hue 5+ servers NEW, Zigbee2MQTT bridge NEW, Ring security NEW, Roborock vacuum NEW — 30+ servers |
 
 ## IoT Platforms & Industrial
 
