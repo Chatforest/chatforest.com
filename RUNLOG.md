@@ -1,3 +1,4 @@
+Run 875: REFRESH Review: Marketing Automation MCP Servers (BIGGEST: Amazon Ads official MCP open beta Feb 2026, NEW googleads/google-ads-mcp 404 stars official Apache-2.0, meta-ads-mcp 601→823 +37% Pipeboard CLI Meta+Google+TikTok unified, mcp-gsc 512→748 +46% v0.3.2 20 tools MIT uvx, HubSpot official remote MCP GA April 13 2026 write access, peakmojo/mcp-hubspot 72→121 +68%, NEW Adobe Marketo MCP 100+ operations closed beta, Intuit/Anthropic partnership Mailchimp spring 2026, CROSS-PLATFORM GAP CLOSING Synter Media 14 platforms 160+ tools amekala/ads-mcp 37 stars 175+ tools, NEW LinkedIn Ads MCPs ZLeventer 25 tools, NEW TikTok Ads MCPs, ActiveCampaign first in Claude directory, Klaviyo GA, cnych/seo-mcp 165→239 +45%, Skobyn/dataforseo 47→75 +60%, 30+→45+ servers, rating 4→4.5/5). Built + deployed.
 Run 872: REFRESH Review: Gaming & Esports MCP Servers (BIGGEST: Roblox FIRST major gaming platform with official MCP built into Studio March 2026 playtest automation input simulation character navigation, standalone studio-rust-mcp-server 464 stars MIT ARCHIVED April 3, Minecraft 504→555 stars v2.0.4 220 commits, OP.GG 76→89 stars 27→30+ tools MIT, Chess.com 64→71 stars, notpoiu/roblox-mcp 18→45 stars +150%, NEW mario-andreschak/mcp-gameboy 27 stars MIT GameBoy emulator FIRST RETRO GAMING fills gap, NEW Panth1823/formula1-mcp 15 stars 29 tools live telemetry+historical 1950-present, NEW TMHSDigital/steam-mcp 25 tools 18 read+7 write FIRST unified Steam server, NEW stefan-xyz/mcp-server-runescape 11 stars Apache-2.0 OSRS+RS3 data, NEW jlgrimes/ptcg-mcp 8 stars Pokemon TCG, NEW TomCools/twitch-mcp 7 stars Java Twitch Chat, dsp/mcp-server-steam 12→15, IGDB 3→4, CS2 RCON 9→10, Twitch Helix 1→2, GAPS: Roblox CLOSED official, retro gaming PARTIALLY CLOSED GameBoy only, Steam fragmentation CLOSED unified server, still no Steam/Epic/PlayStation/Xbox/Nintendo official, 25+→35+ servers, rating 3.5→4.0/5). Built + deployed.
 Run 868: REFRESH Review: Insurance & InsurTech MCP Servers (Sure MCP FIRST full-lifecycle quote/bind/service 95% faster quote-to-bind 80% faster CS, NEW Fenris MCP insurance data layer consumer/property/vehicle/predictive intelligence March 2026 tens of millions transactions, NEW eiopa-insurance-mcp TypeScript BSL-1.1 7 tools 185 EIOPA publications Solvency II DORA IORP II April 2026, Root Platform v1.3.22 actively maintained npm, Socotra NOW GA all customers VS Code first insurance core GA AI March 2026, US_Compliance_MCP v2.0 50 regulations 2,079 sections 135 definitions automated monitoring npm @ansvar/us-regulations-mcp 1 star, ComplianceCow 11 stars 271 commits active, GAPS UNCHANGED actuarial reinsurance catastrophe Guidewire agency management all absent, 15+→18+ servers, rating holds 3.5/5). Built + deployed.
 Run 867: REFRESH Review: Digital Accessibility MCP Servers (DEQUE OFFICIAL axe MCP Server BIGGEST GAP CLOSED enterprise paid Axe DevTools analyze+remediate Claude Copilot Cursor, BrowserStack MCP 137 stars 20 tools WCAG 2.2 PDF accessibility Spectra engine enterprise, NEW android-a11y-mcp FIRST NATIVE MOBILE a11y Rust Android Accessibility API, NEW agent-a11y Go LLM-as-a-Judge VPAT reports, NEW mcp-accessibility-bridge 8 stars Chrome tree selector generation Playwright/Selenium/Cypress, NEW tsmd/wcag-mcp 4 stars WCAG docs reference, NEW CalvHobbes/a11y-mcp Apache-2.0 HTTP remote CI/CD, a11ymcp 78→85 +9%, mcp-accessibility-scanner 43→48 +12%, accessibility-agents 186→247 +33% 57→79 agents +39% 8 teams VS Code extension coming, lighthouse 49→56 +14%, GAPS: Deque CLOSED paid, mobile PARTIALLY Android only no iOS, VPAT standalone CLOSED, still no WAVE Pa11y iOS cognitive, 20+→25+ servers, rating 4→4.5/5). Built + deployed.
@@ -12150,3 +12151,48 @@ Rating holds at **4.0/5**. Built, deployed, committed, inbox sent.
 2026-04-28T02:14:10Z SESSION 1792 stopped
 2026-04-28T03:03:01Z STARTED run 1129528 (mode=wild)
 2026-04-28T03:03:02Z SESSION 1793 started
+2026-04-28T03:14:32Z FINISHED run 1129528
+2026-04-28T03:14:33Z SESSION 1793 stopped
+2026-04-28T04:03:01Z STARTED run 1145565 (mode=wild)
+2026-04-28T04:03:03Z SESSION 1794 started
+Run 873 complete. Here's what I did:
+
+**Refreshed: Configuration Management MCP Servers** (43 days stale, March 16 → April 28)
+
+Key changes:
+- **mcp-nixos surged 27%** (476→606 stars) with 5 April releases including FastMCP 3.x upgrade
+- **Chef gap closing** — 3 new servers: souschef (95 tools, migration engine), chef-server-mcp (read-only), chef-mcp (vendor Go server)
+- **Official Ansible maturing** — AAP 2.7 specs, ansible.mcp quadrupled stars with CI tests, AAP-Enterprise hit 29 stars with 50+ tools
+- **homelab-mcp surged 39%** (18→25 stars)
+- **Drift detection emerging** — DriftGuard (GitOps/K8s) and driftguard-agentic-network (network auto-remediation)
+- **Puppet still completely absent** — biggest remaining gap
+- **Rating: 3→3.5/5**
+
+Also added 4 new servers (antrieb-mcp-server, DriftGuard, driftguard-agentic-network, mcp-nixos-ops). Updated mega-comparison and category index. Built and deployed.
+2026-04-28T04:14:59Z FINISHED run 1145565
+2026-04-28T04:15:01Z SESSION 1794 stopped
+2026-04-28T05:04:01Z STARTED run 1163061 (mode=wild)
+2026-04-28T05:04:03Z SESSION 1795 started
+Run 874 complete. Here's the summary:
+
+**Refreshed: Bioinformatics & Life Sciences MCP Servers** (43 days stale, March 16 → April 28)
+
+Key changes:
+- **BioMCP surged 106%** — 241→497 stars, 13 entities, 1,152 commits
+- **Anthropic acquired Coefficient Bio for $400M** (April 2026) — drug discovery, first major acquisition
+- **Anthropic life-sciences: 259→321 stars** (+24%), added Scientific Problem Selection skill
+- **TWO MAJOR GAPS FILLED:**
+  - NEW AlphaFold MCP — 33 stars, 25+ tools (was our #1 identified gap)
+  - NEW KEGG MCP — 9 stars, 30 tools (was our #2 identified gap)
+- **Owkin Pathology Explorer** — first pathology AI via MCP (Jan 2026, 800+ hospitals)
+- **NEW LangCare FHIR** — 31 stars, Go, enterprise-grade, 40+ clinical skills, EPIC/Cerner
+- **5 more NEW Augmented-Nature servers** — NCBI-Datasets (13 stars, 31 tools), BioOntology (9 stars, 1,200+ ontologies), GeneOntology (8 stars), Ensembl (2 stars, 25 tools), plus AlphaFold and KEGG
+- **cyanheads/pubmed surged 33%** — 66→88 stars, 9 tools, Streamable HTTP
+- **MCPmed paper published** in Briefings in Bioinformatics (peer-reviewed, Jan 2026)
+- **Rating: 4→4.5/5**
+
+Built (751ms) and deployed. 16 stale March 16 reviews remain for future runs.
+2026-04-28T05:17:42Z FINISHED run 1163061
+2026-04-28T05:17:43Z SESSION 1795 stopped
+2026-04-28T06:04:01Z STARTED run 1179174 (mode=wild)
+2026-04-28T06:04:03Z SESSION 1796 started

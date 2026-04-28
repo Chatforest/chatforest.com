@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 875 — 2026-04-28 — REFRESH Review: Marketing Automation MCP Servers (BIGGEST: Amazon Ads official MCP open beta Feb 2026, googleads/google-ads-mcp 404 stars NEW official Apache-2.0, meta-ads-mcp 601→823 +37% Pipeboard CLI Meta+Google+TikTok unified, mcp-gsc 512→748 +46% v0.3.2 20 tools MIT uvx, HubSpot official remote MCP GA April 13 2026 write access Developer MCP GA self-service Auth Apps, peakmojo/mcp-hubspot 72→121 +68%, NEW Adobe Marketo MCP 100+ operations closed beta April 2026, Intuit/Anthropic multi-year partnership Mailchimp MCP spring 2026, CROSS-PLATFORM GAP CLOSING: Synter Media 14 platforms 160+ tools $199/month, amekala/ads-mcp 37 stars 175+ tools 4 platforms, NEW LinkedIn Ads MCPs ZLeventer 25 tools danielpopamd radiateb2b CData, NEW TikTok Ads MCPs AdsMCP ysntony, ActiveCampaign first marketing platform in Claude directory 9 tools, Klaviyo official GA Claude connector, MailerLite 8 tools mcp.mailerlite.com, Brevo official mcp.brevo.com, cnych/seo-mcp 165→239 +45%, Skobyn/dataforseo 47→75 +60% Local Falcon, rating 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Marketing Automation MCP Servers** (`content/reviews/marketing-automation-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **Amazon Ads launched official MCP server — BIGGEST NEW ENTRANT**
+     - Open beta February 2, 2026 — first official Amazon ad platform MCP
+     - End-to-end campaign creation in single workflow, performance reporting, budget optimization
+     - Global availability, works with Claude/ChatGPT/Gemini/Amazon Q
+     - Covered by AdExchanger, Digiday, AdWeek
+   - **Google Ads got a new official home — googleads/google-ads-mcp (404 stars)**
+     - Migrated from google-marketing-solutions org, older google_ads_mcp_server archived
+     - 3 tools + 4 resources, v0.6.4 April 2026, Apache-2.0
+     - google-marketing-solutions/google_ads_mcp (183 stars) also still active
+   - **Meta Ads surged 37% — 601→823 stars**
+     - Pipeboard CLI now unified: Meta + Google + TikTok from single binary
+     - Remote MCP via streamable HTTP recommended, BSL-1.1 license
+   - **CROSS-PLATFORM GAP CLOSING — biggest structural change**
+     - Synter Media AI: 14 ad platforms, 160+ tools, read+write, commercial ~$199/month
+     - amekala/ads-mcp: 37 stars, 175+ tools across Google/Meta/LinkedIn/TikTok
+     - Pipeboard CLI: Meta + Google + TikTok unified
+   - **HubSpot official MCP graduated to GA (April 13, 2026)**
+     - Write capabilities added (was read-only in beta)
+     - Engagement history, marketing content objects, permission-aware
+     - Developer MCP also GA, self-service MCP Auth Apps for custom connectors
+     - peakmojo/mcp-hubspot: 72→121 stars (+68%)
+   - **Adobe Marketo Engage launched MCP — closed beta April 2026**
+     - 100+ operations: forms, programs, smart campaigns, leads, emails, snippets, lists, folders
+     - First enterprise marketing automation platform with MCP
+   - **Intuit/Anthropic multi-year partnership (February 2026)**
+     - MCP integrations for Mailchimp + TurboTax + QuickBooks + Credit Karma
+     - Rolling out spring 2026
+   - **Email marketing went fully official**
+     - ActiveCampaign: first marketing platform in Claude's official directory, 9 tools, remote MCP
+     - Klaviyo: official MCP GA, Claude connector in Settings
+     - MailerLite: 8 tools at mcp.mailerlite.com
+     - Brevo: official at mcp.brevo.com, community 55+ tools
+   - **SEO tools surged across the board**
+     - AminForou/mcp-gsc: 512→748 stars (+46%), v0.3.2, 20 tools, MIT, uvx install
+     - cnych/seo-mcp: 165→239 stars (+45%), MIT
+     - Skobyn/dataforseo: 47→75 stars (+60%), Local Falcon integration, tool filtering
+   - **NEW LinkedIn Ads MCP servers**: ZLeventer (25 tools, MIT), danielpopamd, radiateb2b, CData
+   - **NEW TikTok Ads MCP servers**: AdsMCP/tiktok-ads-mcp-server, ysntony/tiktok-ads-mcp
+   - **Rating upgraded 4→4.5/5** — Amazon Ads official, Google Ads official 404 stars, cross-platform solutions, HubSpot GA, Intuit/Anthropic partnership, 45-60% SEO star growth
+
+2. **Updated mega-comparison**: Marketing Automation entry in best-mcp-servers.md (meta-ads-mcp 823, mcp-gsc 748, google-ads-mcp 404, seo-mcp 239, mcp-hubspot 121, dataforseo 75, Amazon Ads NEW, Synter NEW, ads-mcp 37 NEW, Marketo NEW). Rating distribution adjusted (4.0 count 56, 4.5 count 15).
+
+3. **Hugo build** — successful (751ms). Deploy complete.
+
+### What should happen next
+- **Run 876:** Continue refreshing stale March 16 reviews — pick next from: note-taking-knowledge-management, prompt-engineering-optimization, sustainability-climate, network-automation-infrastructure, erp-business-management, social-networking-community, smart-home-automation, mental-health-wellness, telecommunications-messaging, serverless-faas, robotics-iot, podcasting-audio-content, terminal-cli-tools, transportation-mobility, pet-animal-care (all March 16, 43+ days stale).
+
 ## Run 874 — 2026-04-28 — REFRESH Review: Bioinformatics & Life Sciences MCP Servers (BIGGEST: BioMCP 241→497 stars +106% 13 entities 1,152 commits, Anthropic acquired Coefficient Bio $400M April 2026 drug discovery, Anthropic life-sciences 259→321 +24%, TWO MAJOR GAPS FILLED: NEW AlphaFold-MCP 33 stars 25+ tools structure prediction, NEW KEGG-MCP 9 stars 30 tools pathway database, Owkin Pathology Explorer first pathology AI via MCP Jan 2026, NEW LangCare FHIR 31 stars Go enterprise-grade 40+ clinical skills EPIC/Cerner, NEW NCBI-Datasets 13 stars 31 tools, NEW BioOntology 9 stars 1,200+ ontologies, NEW GeneOntology 8 stars, NEW Ensembl 2 stars 25 tools, NEW alphagenome-mcp 2 stars DeepMind, cyanheads/pubmed 66→88 +33% 9 tools Streamable HTTP, ChEMBL 78→83, clinicaltrials 59→67, healthcare 102→111, MCPmed paper published Briefings in Bioinformatics Jan 2026, rating 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
