@@ -24,11 +24,11 @@ The richest subcategory. DAW integration is exceptional — Ableton Live alone h
 
 ## Gaming & Esports
 
-Community-driven and growing fast, but completely lacking official platform support. Minecraft has the standout server — real-time character control via natural language. OP.GG provides the richest esports data across three titles. Chess has the most implementations for a single game.
+**Roblox broke the barrier** — first major gaming platform with official MCP support, built directly into Roblox Studio (March 2026). Minecraft remains the most popular at 555 stars. OP.GG expanded to 30+ tools. New entries include GameBoy emulator, Formula 1 live telemetry (29 tools), RuneScape, and Pokemon TCG. Steam finally gets a unified 25-tool server.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Gaming & Esports](/reviews/gaming-esports-mcp-servers/) | 3.5/5 | Minecraft (504 stars, 15 commands, real-time character control), OP.GG (76 stars, 27 tools for LoL/TFT/Valorant), Chess.com (64 stars, 10 tools), Steam API, CS2 RCON (server management), IGDB (game database), Twitch (13 tools), Roblox (18 tools) — 25+ servers |
+| [Gaming & Esports](/reviews/gaming-esports-mcp-servers/) | 4.0/5 | Roblox Studio built-in MCP (FIRST official platform!), Minecraft (555 stars, real-time character control), OP.GG (89 stars, 30+ tools for LoL/TFT/Valorant), Chess.com (71 stars, 10 tools), Formula 1 (15 stars, 29 tools), GameBoy emulator (27 stars), RuneScape (11 stars), Steam (25 tools unified), CS2 RCON, Twitch — 35+ servers |
 
 ## News & Journalism
 

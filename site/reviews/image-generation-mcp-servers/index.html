@@ -6,14 +6,14 @@
   <title>Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50&#43; More — ChatForest</title>
   <meta name="description" content="Image generation MCP servers let AI agents create, edit, and manipulate images through platforms like DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, Replicate, fal.ai, and Google Imagen.">
   <meta property="og:title" content="Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50&#43; More — ChatForest">
-  <meta property="og:description" content="Image generation MCP servers: ComfyUI (224 stars, 18&#43; tools), Stability AI (81 stars, 11 tools), Gemini (82 stars), fal.ai (76 stars, 600&#43; models), Replicate (93 stars), Flux (50 stars), PiAPI (68 stars, multi-service). 50&#43; servers across 12 subcategories. Rating: 4.0/5.">
+  <meta property="og:description" content="Image generation MCP servers: ComfyUI (294 stars, v1.0 rewrite), Stability AI (84 stars, SD 3.5), Gemini (105 stars, Nano Banana 2/Pro), fal.ai (77 stars, 600&#43; models), Replicate official MCP with auto-discovery, gpt-image-2 support arriving (April 2026). NEW: Adobe Firefly MCP (gap closing), Draw Things local Mac generation. 50&#43; servers across 12 subcategories. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/image-generation-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50&#43; More — ChatForest">
-  <meta name="twitter:description" content="Image generation MCP servers: ComfyUI (224 stars, 18&#43; tools), Stability AI (81 stars, 11 tools), Gemini (82 stars), fal.ai (76 stars, 600&#43; models), Replicate (93 stars), Flux (50 stars), PiAPI (68 stars, multi-service). 50&#43; servers across 12 subcategories. Rating: 4.0/5.">
+  <meta name="twitter:description" content="Image generation MCP servers: ComfyUI (294 stars, v1.0 rewrite), Stability AI (84 stars, SD 3.5), Gemini (105 stars, Nano Banana 2/Pro), fal.ai (77 stars, 600&#43; models), Replicate official MCP with auto-discovery, gpt-image-2 support arriving (April 2026). NEW: Adobe Firefly MCP (gap closing), Draw Things local Mac generation. 50&#43; servers across 12 subcategories. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/image-generation-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 16, 2026 · Updated Mar 16, 2026</span>
+        <span>Published Mar 16, 2026 · Updated Apr 28, 2026</span>
       </div>
 
       <h1 class="article-title">Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50&#43; More</h1>
@@ -66,8 +66,9 @@
 
       <div class="article-body">
         <p>Image generation is one of the most natural use cases for MCP integration. Instead of switching between generation platforms, tweaking parameters in web UIs, or managing API keys across services, an AI agent can generate, edit, upscale, and manipulate images conversationally. The ecosystem has responded with over 50 MCP servers spanning every major generation platform.</p>
-<p>The landscape splits into three tiers: <strong>local generation</strong> (ComfyUI, Stable Diffusion WebUI, local Flux models running on your GPU), <strong>API-based generation</strong> (OpenAI/DALL-E, Stability AI, Google Imagen, Midjourney via proxies), and <strong>platform aggregators</strong> (Replicate, fal.ai, Together AI, PiAPI — services that provide access to hundreds of models through a single API).</p>
-<p>The headline findings: <strong>ComfyUI has the richest MCP integration</strong> with four servers and up to 40+ tools for workflow-based generation. <strong>Stability AI&rsquo;s API wrapper is the most polished single-platform server</strong> with 11 chainable tools. <strong>fal.ai provides the broadest model access</strong> with 600+ models available through a single MCP server. <strong>Google Gemini/Imagen is a fast-growing subcategory</strong> with auto-prompt optimization. <strong>Midjourney works but requires unofficial API proxies</strong> — no direct integration exists. <strong>Adobe Firefly has no MCP server</strong> despite being a major player in the space.</p>
+<p><strong>April 2026 update:</strong> OpenAI released <strong>gpt-image-2</strong> on April 21, 2026 — built on the GPT-5.4 backbone with 4K resolution, ~99% text accuracy across multiple scripts, and 2x faster generation than gpt-image-1. MCP servers are already adding support. Google&rsquo;s Gemini image models have been rebranded as &ldquo;Nano Banana&rdquo; variants (Gemini 3.1 Flash Image = Nano Banana 2, Gemini 3 Pro Image = Nano Banana Pro). ComfyUI&rsquo;s lead server hit 294 stars with a major v1.0 architectural rewrite. Adobe Firefly finally has an MCP server (closing a key gap from our initial review), though adoption is early.</p>
+<p>The landscape splits into three tiers: <strong>local generation</strong> (ComfyUI, Stable Diffusion WebUI, local Flux models running on your GPU, Draw Things on Mac), <strong>API-based generation</strong> (OpenAI/DALL-E/gpt-image-2, Stability AI, Google Imagen/Nano Banana, Midjourney via proxies), and <strong>platform aggregators</strong> (Replicate, fal.ai, Together AI, PiAPI — services that provide access to hundreds of models through a single API).</p>
+<p>The headline findings: <strong>ComfyUI has the richest MCP integration</strong> with four servers and up to 40+ tools for workflow-based generation. <strong>Stability AI&rsquo;s API wrapper is the most polished single-platform server</strong> with 11 chainable tools and new SD 3.5 support. <strong>fal.ai provides the broadest model access</strong> with 600+ models available through a single MCP server. <strong>Google Gemini/Imagen is surging</strong> with shinpr/mcp-image at 105 stars and auto-prompt optimization powered by Nano Banana 2/Pro models. <strong>gpt-image-2 is the new quality benchmark</strong> — lansespirit/image-gen-mcp already supports it alongside gpt-image-1.5 and imagen-4-ultra. <strong>Midjourney launched an enterprise API</strong> in late 2025 but public developer access remains restricted. <strong>Adobe Firefly now has an MCP server</strong> via msabramo/python-firefly, though it&rsquo;s early (2 stars).</p>
 <p>For our review of EverArt&rsquo;s reference MCP server (one of Anthropic&rsquo;s original examples), see <a href="/reviews/everart-mcp-server/">our dedicated EverArt review</a>. For photography-focused image tools (editing, stock photos, EXIF), see <a href="/reviews/photography-mcp-servers/">our Photography MCP review</a>.</p>
 <h2 id="comfyui-4-servers">ComfyUI (4 servers)</h2>
 <p>ComfyUI — the node-based Stable Diffusion interface — has the most sophisticated MCP integration in the image generation space. Its workflow-based architecture maps naturally to MCP tools: each workflow becomes an invocable function.</p>
@@ -85,18 +86,18 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/joenorton/comfyui-mcp-server">joenorton/comfyui-mcp-server</a></td>
-<td>224</td>
+<td>294</td>
 <td>Python</td>
 <td>Apache 2.0</td>
-<td>18+</td>
-<td>Iterative refinement, auto-discovered workflows, asset management, session-based registry</td>
+<td>15+</td>
+<td><strong>v1.0 rewrite</strong>: streamable HTTP, job management, iterative refinement, asset tracking, publishing tools</td>
 </tr>
 <tr>
 <td><a href="https://github.com/shawnrushefsky/comfyui-mcp">shawnrushefsky/comfyui-mcp</a></td>
-<td>6</td>
+<td>8</td>
 <td>TypeScript</td>
 <td>—</td>
-<td>40+</td>
+<td>38+</td>
 <td>Images, video, audio, 3D; 70+ example workflows; template system; Docker; self-configuring</td>
 </tr>
 <tr>
@@ -117,8 +118,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>joenorton/comfyui-mcp-server</strong> (224 stars) is the standout. It automatically discovers ComfyUI workflows and exposes them as MCP tools — meaning any workflow you build in ComfyUI&rsquo;s node editor becomes callable by an AI agent. The iterative refinement feature lets agents generate an image, evaluate it, and regenerate with adjusted parameters without starting from scratch. It uses streamable HTTP transport and session-based registries for multi-user setups.</p>
-<p><strong>shawnrushefsky/comfyui-mcp</strong> takes the broadest approach with 40+ tools and 70+ example workflows covering not just images but video, audio, and even 3D generation. It&rsquo;s self-configuring — it introspects the connected ComfyUI instance to determine available models and capabilities. Docker support makes deployment straightforward.</p>
+<p><strong>joenorton/comfyui-mcp-server</strong> (294 stars, up 31% from 224) is the standout and recently shipped a <strong>v1.0 architectural rewrite</strong>. The new version replaces WebSocket connections with streamable HTTP transport, adds explicit job management (queue status, cancel, asset metadata), and introduces publishing tools for asset distribution. It still auto-discovers ComfyUI workflows and exposes them as MCP tools. The iterative refinement feature lets agents generate, evaluate, and regenerate with adjusted parameters. The v1.0 migration is a breaking change — users of earlier versions should consult the migration notes.</p>
+<p><strong>shawnrushefsky/comfyui-mcp</strong> (8 stars, up from 6) takes the broadest approach with 38+ tools across 9 categories (setup, templates, generation, composition, discovery, task management, agent memory, preferences, SVG/font utilities) and 70+ example workflows covering images, video, audio, and 3D generation. It&rsquo;s self-configuring — it introspects the connected ComfyUI instance to determine available models and capabilities. Docker support makes deployment straightforward.</p>
 <p><strong>artokun/comfyui-mcp</strong> is interesting for its agent-centric design: it includes 3 autonomous agents for image generation, video creation, and model management, plus 10 slash commands for common operations. It tracks all generations in SQLite for history and auditability.</p>
 <p>The ComfyUI subcategory is the most feature-rich in the entire image generation MCP space. The trade-off is complexity — you need a running ComfyUI instance with models installed, which means significant disk space (tens of GB) and ideally a capable GPU.</p>
 <h2 id="stability-ai--stable-diffusion-4-servers">Stability AI / Stable Diffusion (4 servers)</h2>
@@ -136,11 +137,11 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/tadasant/mcp-server-stability-ai">tadasant/mcp-server-stability-ai</a></td>
-<td>81</td>
+<td>84</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>11</td>
-<td>Generate, edit, upscale, remove background, outpaint, search-and-replace, control (sketch/style/structure), relighting</td>
+<td>Generate (incl. SD 3.5), edit, upscale, remove background, outpaint, search-and-replace, control (sketch/style/structure), relighting</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Ichigo3766/image-gen-mcp">Ichigo3766/image-gen-mcp</a></td>
@@ -168,9 +169,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>tadasant/mcp-server-stability-ai</strong> (81 stars) is the best single-platform API wrapper in the entire image generation category. Its 11 tools are chainable — generate an image, remove its background, upscale it, then apply relighting, all in a single conversation. The control tools (sketch, style, structure) let agents apply image-to-image transformations with precise control. It uses Stability AI&rsquo;s cloud API, so no local GPU needed, but API costs apply.</p>
+<p><strong>tadasant/mcp-server-stability-ai</strong> (84 stars, up from 81) is the best single-platform API wrapper in the entire image generation category. It recently added <strong>Stable Diffusion 3.5</strong> and <strong>Stable Image Ultra</strong> support with metadata logging for tracking requests. Its 11 tools are chainable — generate an image, remove its background, upscale it, then apply relighting, all in a single conversation. The control tools (sketch, style, structure) let agents apply image-to-image transformations with precise control. It uses Stability AI&rsquo;s cloud API, so no local GPU needed, but API costs apply.</p>
 <p><strong>Ichigo3766/image-gen-mcp</strong> and <strong>boxi-rgb/sd-webui-mcp</strong> both bridge MCP to a local AUTOMATIC1111/Forge WebUI instance. If you&rsquo;re already running SD locally, these let agents generate images using your installed models and LoRAs without API costs. The trade-off is that you need the WebUI running as a server.</p>
-<h2 id="dall-e--openai-6-servers">DALL-E / OpenAI (6 servers)</h2>
+<h2 id="dall-e--openai-7-servers">DALL-E / OpenAI (7+ servers)</h2>
+<p><strong>Breaking: gpt-image-2 released April 21, 2026.</strong> OpenAI&rsquo;s latest image model runs on the GPT-5.4 backbone with 4K (4096×4096) resolution, ~99% character-level text accuracy across Latin, CJK, Hindi, and Bengali scripts, and 2x faster generation than gpt-image-1. It replaces both DALL-E 3 and the interim gpt-image-1.5 in ChatGPT. API access rolling out to developers in early May 2026. MCP servers are already adding support — lansespirit/image-gen-mcp was first.</p>
 <table>
 <thead>
 <tr>
@@ -190,6 +192,14 @@
 <td>—</td>
 <td>2</td>
 <td>txt2img and img2img; supports DALL-E 2, DALL-E 3, gpt-image-1</td>
+</tr>
+<tr>
+<td><a href="https://github.com/naporin0624/gpt-image-1-mcp">naporin0624/gpt-image-1-mcp</a></td>
+<td>1</td>
+<td>TypeScript</td>
+<td>MIT</td>
+<td>3</td>
+<td><strong>NEW</strong>: gpt-image-1, generate + edit + batch-edit, native transparency, text rendering</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Garoth/dalle-mcp">Garoth/dalle-mcp</a></td>
@@ -233,8 +243,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>spartanz51/imagegen-mcp</strong> (33 stars) is the most capable DALL-E server, supporting three model generations (DALL-E 2, DALL-E 3, and the newer gpt-image-1) with both text-to-image and image-to-image workflows. <strong>Garoth/dalle-mcp</strong> adds editing and variation tools for DALL-E 2.</p>
-<p>The DALL-E/OpenAI subcategory is smaller than expected. This likely reflects that many developers access OpenAI image generation through broader OpenAI MCP servers rather than dedicated image-only ones. The <strong>gpt-image-1</strong> model (OpenAI&rsquo;s latest) is gaining attention, with at least three servers already supporting it. <strong>jacwu&rsquo;s Azure bridge</strong> is notable for enterprise users who need to route through Azure OpenAI endpoints for compliance.</p>
+<p><strong>spartanz51/imagegen-mcp</strong> (33 stars) remains the most capable dedicated DALL-E server, supporting three model generations (DALL-E 2, DALL-E 3, gpt-image-1) with both text-to-image and image-to-image workflows. <strong>naporin0624/gpt-image-1-mcp</strong> is a new addition with batch editing, native transparency support, and advanced text rendering — features that align well with gpt-image-1&rsquo;s strengths.</p>
+<p>The gpt-image-2 release is the biggest story in image generation MCP since our initial review. With ~99% text accuracy and 4K output, it eliminates text rendering as a weakness of OpenAI&rsquo;s models. Expect a wave of gpt-image-2 MCP servers once API access opens broadly in May. <strong>lansespirit/image-gen-mcp</strong> (in the Multi-Provider section below) already supports it alongside gpt-image-1.5. <strong>jacwu&rsquo;s Azure bridge</strong> remains notable for enterprise users routing through Azure OpenAI endpoints — gpt-image-2 availability in Azure Foundry was announced alongside the release.</p>
 <h2 id="flux-6-servers">Flux (6 servers)</h2>
 <p>Flux (from Black Forest Labs, the team behind Stable Diffusion) has rapidly built an MCP presence with six servers:</p>
 <table>
@@ -250,12 +260,12 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/GongRzhe/Image-Generation-MCP-Server">GongRzhe/Image-Generation-MCP-Server</a></td>
-<td>50</td>
+<td><del><a href="https://github.com/GongRzhe/Image-Generation-MCP-Server">GongRzhe/Image-Generation-MCP-Server</a></del></td>
+<td>51</td>
 <td>JavaScript</td>
 <td>MIT</td>
 <td>1</td>
-<td>Replicate-hosted Flux, aspect ratio/format/seed control, batch 1-4 images</td>
+<td><strong>ARCHIVED March 2026.</strong> Replicate-hosted Flux.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/jmanhype/mcp-flux-studio">jmanhype/mcp-flux-studio</a></td>
@@ -303,7 +313,7 @@
 <p><strong>tehw0lf/flux-mcp</strong> stands out for local GPU execution — it runs Flux models directly on your hardware with smart VRAM management and auto-unload. Requires 12GB+ GPU VRAM but eliminates API costs entirely. It supports both FLUX.1-dev and the newer FLUX.2-dev models.</p>
 <p>Most other Flux servers route through Replicate&rsquo;s API, making them easy to set up but subject to per-generation costs.</p>
 <h2 id="google-gemini--imagen-3-servers">Google Gemini / Imagen (3+ servers)</h2>
-<p>Google&rsquo;s image generation capabilities through Gemini and Imagen models have spawned a fast-growing subcategory:</p>
+<p>Google&rsquo;s image generation capabilities have undergone a rebranding: the Gemini image models are now marketed as <strong>&ldquo;Nano Banana&rdquo;</strong> variants — Gemini 3.1 Flash Image is &ldquo;Nano Banana 2&rdquo; and Gemini 3 Pro Image is &ldquo;Nano Banana Pro&rdquo;. The category continues to grow rapidly.</p>
 <table>
 <thead>
 <tr>
@@ -318,19 +328,19 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/shinpr/mcp-image">shinpr/mcp-image</a></td>
-<td>82</td>
+<td>105</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>1</td>
-<td>Gemini models, auto prompt optimization, 3 quality tiers, up to 4K, character consistency</td>
+<td><strong>Nano Banana 2 (Gemini 3.1 Flash) + Nano Banana Pro (Gemini 3 Pro)</strong>, auto prompt optimization via Gemini 2.5 Flash, 3 quality tiers, character consistency, multi-image blending, Google Search grounding</td>
 </tr>
 <tr>
 <td><a href="https://github.com/lansespirit/image-gen-mcp">lansespirit/image-gen-mcp</a></td>
-<td>51</td>
+<td>56</td>
 <td>Python</td>
 <td>—</td>
 <td>3</td>
-<td>gpt-image-1 + Gemini Imagen-4/3, multi-provider, STDIO/HTTP/SSE, Docker, 10+ prompt templates</td>
+<td><strong>gpt-image-2 + gpt-image-1.5 + gpt-image-1 + Imagen-4/4-Ultra/4-Fast/3</strong>, multi-provider, STDIO/HTTP/SSE, Docker, Redis caching, 10+ prompt templates</td>
 </tr>
 <tr>
 <td><a href="https://github.com/qhdrl12/mcp-server-gemini-image-generator">qhdrl12/mcp-server-gemini-image-generator</a></td>
@@ -342,8 +352,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>shinpr/mcp-image</strong> (82 stars) is the most-starred dedicated image generation server outside ComfyUI. Its automatic prompt optimization rewrites your prompt for better results across three quality tiers (fast, balanced, quality). It supports character consistency across multiple generations — useful for creating consistent visual content.</p>
-<p><strong>lansespirit/image-gen-mcp</strong> is notable as a true multi-provider server that combines OpenAI&rsquo;s gpt-image-1 with Google&rsquo;s Imagen-4 and Imagen-3, letting agents choose the best model for each task. It includes 10+ prompt templates for common use cases and supports all three MCP transport modes (STDIO, HTTP, SSE).</p>
+<p><strong>shinpr/mcp-image</strong> (105 stars, up 28% from 82) is the most-starred dedicated image generation server outside ComfyUI and has seen significant model upgrades. It now uses Nano Banana 2 (Gemini 3.1 Flash Image) for fast/balanced tiers and Nano Banana Pro (Gemini 3 Pro Image) for quality tier, with prompt optimization powered by Gemini 2.5 Flash. New features include multi-image blending for composite scenes and Google Search grounding for factually-accurate image generation. Character consistency across multiple generations remains a key differentiator.</p>
+<p><strong>lansespirit/image-gen-mcp</strong> (56 stars, up from 51) has expanded dramatically to become the most comprehensive multi-provider server. It now supports <strong>six OpenAI models</strong> (gpt-image-2, gpt-image-1.5, gpt-image-1, DALL-E 3, DALL-E 2) and <strong>four Google models</strong> (Imagen-4, Imagen-4 Ultra, Imagen-4 Fast, Imagen-3). Being the first MCP server to support gpt-image-2 gives it a notable edge. Redis caching integration is new for production deployments.</p>
 <h2 id="replicate-3-servers">Replicate (3 servers)</h2>
 <table>
 <thead>
@@ -359,11 +369,19 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/deepfates/mcp-replicate">deepfates/mcp-replicate</a></td>
-<td>93</td>
+<td>94</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>13</td>
 <td>Model search, predictions, image caching. No longer maintained — Replicate has official MCP.</td>
+</tr>
+<tr>
+<td><a href="https://mcp.replicate.com/">Replicate Official MCP</a></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>Official hosted MCP server</strong> with auto-discovery via MCP Registry, full API coverage</td>
 </tr>
 <tr>
 <td><a href="https://github.com/gerred/mcp-server-replicate">gerred/mcp-server-replicate</a></td>
@@ -383,7 +401,7 @@
 </tr>
 </tbody>
 </table>
-<p>Replicate&rsquo;s value proposition for MCP is access to hundreds of image models through a single API. <strong>deepfates/mcp-replicate</strong> (93 stars) was the dominant community server but is no longer maintained — Replicate now offers official MCP support. <strong>gomcpgo/replicate_image_ai</strong> is interesting as a single Go binary that wraps multiple model families (Flux, SDXL, Ideogram, Imagen-4) with image-specific features like face enhancement and upscaling.</p>
+<p>Replicate&rsquo;s value proposition for MCP is access to hundreds of image models through a single API. The <strong>Replicate Official MCP server</strong> (hosted at mcp.replicate.com) is now the recommended option — it supports all operations in Replicate&rsquo;s HTTP API and features <strong>auto-discovery via the MCP Registry</strong> (announced February 2026), meaning MCP clients can find and connect to it automatically via a <code>.well-known/mcp/server.json</code> endpoint. It can be used as a remote hosted server or installed locally via npm. <strong>deepfates/mcp-replicate</strong> (94 stars, up from 93) remains available but is explicitly not in active development. <strong>gomcpgo/replicate_image_ai</strong> is interesting as a single Go binary wrapping multiple model families with image-specific features.</p>
 <h2 id="falai-3-servers">fal.ai (3+ servers)</h2>
 <table>
 <thead>
@@ -399,7 +417,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/am0y/mcp-fal">am0y/mcp-fal</a></td>
-<td>76</td>
+<td>77</td>
 <td>Python</td>
 <td>MIT</td>
 <td>8</td>
@@ -554,19 +572,11 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/apinetwork/piapi-mcp-server">apinetwork/piapi-mcp-server</a></td>
-<td>68</td>
+<td>70</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>~15</td>
-<td>Midjourney, Flux, Kling, Luma, Suno, Trellis (3D). Multi-service media generation via PiAPI.</td>
-</tr>
-<tr>
-<td><a href="https://github.com/RamboRogers/cyberimage">RamboRogers/cyberimage</a></td>
-<td>36</td>
-<td>Python</td>
-<td>GPL-3.0</td>
-<td>3</td>
-<td>Flux + Stable Diffusion, web UI, gallery, batch gen, text-to-video, prompt enrichment via OpenAI</td>
+<td>Midjourney, Flux, Kling, Luma, Hunyuan, Skyreels, Wan, Suno, MMAudio, Trellis (3D). Multi-service media generation via PiAPI.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/writingmate/imagegen-mcp">writingmate/imagegen-mcp</a></td>
@@ -574,7 +584,7 @@
 <td>TypeScript</td>
 <td>MIT</td>
 <td>4</td>
-<td>OpenAI gpt-image-1, Google Imagen 4, Gemini Flash, Flux 1.1 Pro, Qwen, SeedDream-4</td>
+<td>OpenAI gpt-image-1, Google Imagen 4, Nano Banana (Gemini 2.5 Flash), Flux 1.1 Pro, Qwen, <strong>SeedDream-4 (ByteDance)</strong></td>
 </tr>
 <tr>
 <td><a href="https://github.com/maheshcr/image-gen-mcp">maheshcr/image-gen-mcp</a></td>
@@ -584,33 +594,45 @@
 <td>5</td>
 <td>Multi-provider (Gemini free tier, fal.ai), cloud storage (Cloudflare R2), cost tracking, budget alerts</td>
 </tr>
+<tr>
+<td><del><a href="https://github.com/RamboRogers/cyberimage">RamboRogers/cyberimage</a></del></td>
+<td>37</td>
+<td>Python</td>
+<td>GPL-3.0</td>
+<td>3</td>
+<td><strong>ARCHIVED March 2026.</strong> Flux + SD, web UI, text-to-video.</td>
+</tr>
 </tbody>
 </table>
-<p><strong>apinetwork/piapi-mcp-server</strong> (68 stars) aggregates multiple generation services including Midjourney, Flux, video (Kling, Luma), audio (Suno), and 3D (Trellis) through PiAPI&rsquo;s unified interface. This is the closest thing to a &ldquo;universal creative AI&rdquo; MCP server.</p>
-<p><strong>writingmate/imagegen-mcp</strong> is notable for supporting six different model families through a single server — useful if you want to compare outputs across providers without switching MCP configurations.</p>
+<p><strong>apinetwork/piapi-mcp-server</strong> (70 stars, up from 68) has expanded its service coverage to include Hunyuan, Skyreels, and Wan video generation plus MMAudio music creation, alongside the existing Midjourney, Flux, Kling, Luma, Suno, and Trellis integrations. This is the closest thing to a &ldquo;universal creative AI&rdquo; MCP server.</p>
+<p><strong>writingmate/imagegen-mcp</strong> now supports <strong>SeedDream-4</strong> (ByteDance&rsquo;s image model) and <strong>Nano Banana</strong> (Google&rsquo;s Gemini 2.5 Flash Image Preview) alongside OpenAI, Imagen 4, and Flux — useful for comparing outputs across six providers without switching MCP configurations.</p>
 <p><strong>maheshcr/image-gen-mcp</strong> includes budget alerts and cost tracking with Cloudflare R2 storage — a practical feature for teams worried about runaway API costs.</p>
+<p><strong>RamboRogers/cyberimage</strong> was archived in March 2026 (37 stars at time of archival). Its cyberpunk-themed web UI and text-to-video features are no longer being developed.</p>
 <h2 id="other-notable-servers">Other Notable Servers</h2>
+<p><strong>Adobe Firefly (NEW):</strong> <a href="https://github.com/msabramo/python-firefly">msabramo/python-firefly</a> (2 stars, Python) — the <strong>first Adobe Firefly MCP server</strong>, closing a gap flagged in our initial review. Provides Python client, CLI tool, and MCP server for Adobe Firefly API image generation. Supports aspect ratio, style, negative prompts, and seeds. Requires Adobe client credentials. Early adoption (2 stars) but functional — this is the only way to access Firefly through MCP.</p>
+<p><strong>Draw Things (NEW):</strong> <a href="https://github.com/james-see/mcp-drawthings">james-see/mcp-drawthings</a> (9 stars, TypeScript, MIT) — <strong>local Mac image generation</strong> via the Draw Things app on Apple Silicon (M1/M2/M3/M4). Four tools: check_status, get_config, generate_image, transform_image. Uses whatever models are loaded in Draw Things — a nice local-first option for Mac users who want zero API costs without the complexity of ComfyUI.</p>
 <p><strong>Leonardo AI:</strong> <a href="https://github.com/ish-joshi/leonardo-mcp-server">ish-joshi/leonardo-mcp-server</a> (2 stars, Python) — the only Leonardo AI MCP server, with HTTP + stdio modes, job creation, model listing, and generation history. Leonardo&rsquo;s strength is its fine-tuned models for game art and concept design.</p>
-<p><strong>Fastmail:</strong> <a href="https://github.com/nikolausm/huggingface-mcp-server">nikolausm/huggingface-mcp-server</a> (0 stars, JavaScript, MIT) — wraps Hugging Face&rsquo;s inference API for multiple Stable Diffusion variants with free tier access.</p>
+<p><strong>Hugging Face:</strong> <a href="https://github.com/nikolausm/huggingface-mcp-server">nikolausm/huggingface-mcp-server</a> (0 stars, JavaScript, MIT) — wraps Hugging Face&rsquo;s inference API for multiple Stable Diffusion variants with free tier access.</p>
 <h2 id="whats-missing">What&rsquo;s Missing</h2>
 <ul>
-<li><strong>Adobe Firefly</strong> — No MCP server exists for Adobe&rsquo;s image generation platform. The &ldquo;firefly-mcp&rdquo; repos on GitHub are for Firefly.ai (a cloud infrastructure company), not Adobe Firefly.</li>
-<li><strong>Canva AI image generation</strong> — Canva&rsquo;s text-to-image features have no MCP integration.</li>
-<li><strong>Dedicated inpainting/outpainting</strong> — Outside ComfyUI, few servers offer robust inpainting or outpainting tools.</li>
-<li><strong>Prompt engineering helpers</strong> — No MCP server focuses specifically on optimizing prompts for different models (shinpr/mcp-image&rsquo;s auto-optimization is the closest).</li>
+<li><del><strong>Adobe Firefly</strong></del> — <strong>Partially addressed.</strong> msabramo/python-firefly now provides MCP access to Adobe Firefly API, though adoption is very early (2 stars). Full feature coverage of Firefly&rsquo;s capabilities (generative fill, text effects, etc.) is not yet available.</li>
+<li><strong>Canva AI image generation</strong> — Canva&rsquo;s text-to-image features still have no MCP integration.</li>
+<li><strong>Dedicated inpainting/outpainting</strong> — Outside ComfyUI, few servers offer robust inpainting or outpainting tools. jmanhype/mcp-flux-studio has inpainting but the category remains thin.</li>
+<li><strong>Prompt engineering helpers</strong> — No MCP server focuses specifically on optimizing prompts for different models. shinpr/mcp-image&rsquo;s auto-optimization (now via Gemini 2.5 Flash) is the closest, and it&rsquo;s quite good.</li>
 <li><strong>Image-to-3D pipelines</strong> — Despite 3D generation models existing (TripoSR, InstantMesh), no dedicated image-to-3D MCP server exists. PiAPI&rsquo;s Trellis integration is the only option.</li>
 <li><strong>Consistent character/style systems</strong> — Only shinpr/mcp-image offers character consistency features. No server provides style transfer across generations in a systematic way.</li>
-<li><strong>Cost comparison tools</strong> — With so many paid API options, no MCP server helps agents choose the cheapest provider for a given generation task.</li>
+<li><strong>Cost comparison tools</strong> — With so many paid API options, no MCP server helps agents choose the cheapest provider for a given generation task (maheshcr&rsquo;s budget tracking is per-provider, not cross-provider).</li>
+<li><strong>gpt-image-2 MCP coverage</strong> — Only lansespirit/image-gen-mcp supports gpt-image-2 so far. Expect rapid adoption once API access opens broadly in May 2026.</li>
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p>The image generation MCP ecosystem is surprisingly mature for a category that barely existed a year ago. 50+ servers, 12 subcategories, and coverage of every major generation platform except Adobe Firefly.</p>
-<p><strong>For local generation:</strong> ComfyUI servers dominate. If you have the hardware, joenorton/comfyui-mcp-server gives you the most flexibility with auto-discovered workflows.</p>
-<p><strong>For API-based generation:</strong> tadasant/mcp-server-stability-ai is the most polished single-platform server. For multi-model access, raveenb/fal-mcp-server&rsquo;s 600+ model catalog is hard to beat.</p>
+<p>The image generation MCP ecosystem continues to mature rapidly. 50+ servers, 12 subcategories, and coverage of every major generation platform. The April 2026 gpt-image-2 release — with near-perfect text rendering and 4K output — shifts the quality landscape significantly. Adobe Firefly finally has an MCP server (early stage). Two servers were archived (GongRzhe Flux, CyberImage), but new additions (Draw Things, naporin0624 gpt-image-1, Adobe Firefly) more than compensate.</p>
+<p><strong>For local generation:</strong> ComfyUI servers dominate. joenorton/comfyui-mcp-server (294 stars, v1.0 rewrite) gives you the most flexibility. NEW: james-see/mcp-drawthings offers a simpler local option for Mac users via Draw Things.</p>
+<p><strong>For API-based generation:</strong> tadasant/mcp-server-stability-ai (now with SD 3.5) is the most polished single-platform server. For multi-model access, raveenb/fal-mcp-server&rsquo;s 600+ model catalog is hard to beat. lansespirit/image-gen-mcp is the first to support gpt-image-2.</p>
 <p><strong>For cost-conscious users:</strong> Together AI servers offer competitive Flux pricing. tehw0lf/flux-mcp runs locally with zero API costs. maheshcr/image-gen-mcp includes budget tracking.</p>
-<p><strong>For quality-first users:</strong> Midjourney works through proxies but is fragile. Ideogram excels at text rendering. Flux 1.1 Pro offers a good balance of quality and API stability.</p>
-<p>The category earns <strong>4.0 out of 5</strong>. Deductions for the Midjourney proxy fragility, missing Adobe Firefly integration, limited inpainting tooling outside ComfyUI, and the lack of cross-provider cost optimization. But the core use case — agents that can generate and manipulate images — is well-served across price points and deployment models.</p>
+<p><strong>For quality-first users:</strong> gpt-image-2 is the new benchmark for text accuracy and resolution (once API access widens in May). Ideogram excels at text rendering today. shinpr/mcp-image (105 stars) offers the best prompt optimization. Flux 1.1 Pro remains a strong balance of quality and API stability.</p>
+<p>The category holds at <strong>4.0 out of 5</strong>. The gpt-image-2 release is transformative but API access is still rolling out. Adobe Firefly&rsquo;s MCP gap is closing but adoption is minimal. Midjourney&rsquo;s enterprise API exists but public developer access is still restricted. The core use case — agents that can generate and manipulate images — is well-served across price points and deployment models, with the ecosystem showing healthy growth (ComfyUI +31%, shinpr/mcp-image +28%).</p>
 <p><strong>Category</strong>: <a href="/categories/design-creative/">Design &amp; Creative MCP Servers</a></p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was refreshed on 2026-04-28 using Claude Opus 4.6 (Anthropic). Originally published 2026-03-16.</em></p>
 
       </div>
 
@@ -662,7 +684,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-16T00:00:00+09:00","datePublished":"2026-03-16T20:00:00+09:00","description":"Image generation MCP servers let AI agents create, edit, and manipulate images through platforms like DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, Replicate, fal.ai, and Google Imagen.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More"},"name":"Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/image-generation-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-28T00:00:00+09:00","datePublished":"2026-03-16T20:00:00+09:00","description":"Image generation MCP servers let AI agents create, edit, and manipulate images through platforms like DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, Replicate, fal.ai, and Google Imagen.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More"},"name":"Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/image-generation-mcp-servers/"}
 </script>
 
 

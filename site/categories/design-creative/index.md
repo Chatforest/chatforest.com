@@ -11,11 +11,11 @@ The creative tool ecosystem is one of the most diverse MCP categories. It spans 
 
 ## Image Generation
 
-AI image creation is exploding with MCP support. ComfyUI leads on flexibility, fal.ai on model breadth (600+), and vendor diversity is remarkable — every major generative AI platform has some form of MCP integration.
+AI image creation continues to surge. **gpt-image-2** (April 2026, GPT-5.4 backbone, 4K, ~99% text accuracy) is the biggest news. ComfyUI leads on flexibility (294 stars, v1.0 rewrite), shinpr/mcp-image surged to 105 stars with Nano Banana 2/Pro models, and Adobe Firefly finally has an MCP server.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Image Generation](/reviews/image-generation-mcp-servers/) | 4/5 | ComfyUI (224 stars, 18+ tools), Stability AI (81 stars), fal.ai (600+ models), Replicate (93 stars), Flux, Google Gemini/Imagen, Midjourney (via unofficial proxies), DALL-E, Ideogram, Leonardo AI — 50+ servers total |
+| [Image Generation](/reviews/image-generation-mcp-servers/) | 4/5 | ComfyUI (294 stars, v1.0 rewrite), shinpr/mcp-image (105 stars, Nano Banana 2/Pro), Stability AI (84 stars, SD 3.5), fal.ai (600+ models), lansespirit (56 stars, first gpt-image-2 support), Replicate official MCP, Adobe Firefly (NEW) — 50+ servers total |
 | [EverArt MCP Server](/reviews/everart-mcp-server/) | 2.5/5 | EverArt (archived May 2025, FLUX/SD/Recraft models, 1 tool, $50/mo minimum) — superseded by Recraft's official 16-tool server |
 
 ## Audio, Video & Streaming

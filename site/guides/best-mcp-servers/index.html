@@ -1152,7 +1152,7 @@
 <td>Image generation</td>
 <td><a href="/reviews/image-generation-mcp-servers/">Image Generation MCP</a></td>
 <td>4.0/5</td>
-<td><a href="https://github.com/joenorton/comfyui-mcp-server">joenorton/comfyui-mcp-server</a> (224 stars, Python, Apache 2.0 — 18+ tools, iterative refinement, auto-discovered workflows), <a href="https://github.com/tadasant/mcp-server-stability-ai">tadasant/mcp-server-stability-ai</a> (81 stars, TypeScript, MIT — 11 chainable tools, generate/edit/upscale/background removal/relighting), <a href="https://github.com/shinpr/mcp-image">shinpr/mcp-image</a> (82 stars, TypeScript — Gemini auto-prompt optimization, 3 quality tiers), <a href="https://github.com/am0y/mcp-fal">am0y/mcp-fal</a> (76 stars, Python — 600+ fal.ai models), <a href="https://github.com/apinetwork/piapi-mcp-server">apinetwork/piapi-mcp-server</a> (68 stars, TypeScript — Midjourney/Flux/Kling/Luma multi-service), <a href="https://github.com/spartanz51/imagegen-mcp">spartanz51/imagegen-mcp</a> (33 stars — DALL-E 2/3 + gpt-image-1)</td>
+<td><a href="https://github.com/joenorton/comfyui-mcp-server">joenorton/comfyui-mcp-server</a> (294 stars, Python, Apache 2.0 — v1.0 rewrite, streamable HTTP, job management), <a href="https://github.com/shinpr/mcp-image">shinpr/mcp-image</a> (105 stars, TypeScript — Nano Banana 2/Pro, auto-prompt optimization), <a href="https://github.com/tadasant/mcp-server-stability-ai">tadasant/mcp-server-stability-ai</a> (84 stars, TypeScript, MIT — 11 chainable tools, SD 3.5), <a href="https://github.com/am0y/mcp-fal">am0y/mcp-fal</a> (77 stars, Python — 600+ fal.ai models), <a href="https://github.com/apinetwork/piapi-mcp-server">apinetwork/piapi-mcp-server</a> (70 stars, TypeScript — Midjourney/Flux/Kling/Luma multi-service), <a href="https://github.com/lansespirit/image-gen-mcp">lansespirit/image-gen-mcp</a> (56 stars — first gpt-image-2 support + Imagen-4 Ultra)</td>
 </tr>
 <tr>
 <td>Fitness / wearables</td>
@@ -1175,8 +1175,8 @@
 <tr>
 <td>Gaming / esports</td>
 <td><a href="/reviews/gaming-esports-mcp-servers/">Gaming &amp; Esports MCP</a></td>
-<td>3.5/5</td>
-<td><a href="https://github.com/yuniko-software/minecraft-mcp-server">yuniko-software/minecraft-mcp-server</a> (504 stars, TypeScript — real-time Minecraft character control), <a href="https://github.com/opgginc/opgg-mcp">opgginc/opgg-mcp</a> (76 stars, 27 tools for LoL/TFT/Valorant), <a href="https://github.com/pab1it0/chess-mcp">pab1it0/chess-mcp</a> (64 stars, Chess.com data), <a href="https://github.com/v9rt3x/cs2-rcon-mcp">v9rt3x/cs2-rcon-mcp</a> (CS2 server management), <a href="https://github.com/mtane0412/twitch-mcp-server">mtane0412/twitch-mcp-server</a> (13 Twitch API tools)</td>
+<td>4.0/5</td>
+<td><a href="https://devforum.roblox.com/t/assistant-updates-studio-built-in-mcp-server-and-playtest-automation/4474643">Roblox Studio Built-in MCP</a> (FIRST official platform MCP, native in Studio, playtest automation), <a href="https://github.com/yuniko-software/minecraft-mcp-server">yuniko-software/minecraft-mcp-server</a> (555 stars, TypeScript — real-time Minecraft character control), <a href="https://github.com/opgginc/opgg-mcp">opgginc/opgg-mcp</a> (89 stars, 30+ tools for LoL/TFT/Valorant), <a href="https://github.com/pab1it0/chess-mcp">pab1it0/chess-mcp</a> (71 stars, Chess.com data), <a href="https://github.com/Panth1823/formula1-mcp">Panth1823/formula1-mcp</a> (15 stars, 29 tools — live telemetry + historical F1 data), <a href="https://github.com/mario-andreschak/mcp-gameboy">mario-andreschak/mcp-gameboy</a> (27 stars, MIT — GameBoy emulator via MCP)</td>
 </tr>
 <tr>
 <td>Government / public sector</td>
@@ -1369,15 +1369,15 @@
 <hr>
 <h2 id="image-generation">Image generation</h2>
 <p>The most fragmented category we&rsquo;ve covered — 20+ servers, no dominant player, no working official server. The <a href="/reviews/everart-mcp-server/">EverArt reference server</a> (2.5/5) was archived in May 2025. No major provider (<a href="https://openai.com/">OpenAI</a>, <a href="https://stability.ai/">Stability AI</a>, Google, <a href="https://www.midjourney.com/">Midjourney</a>) has shipped their own MCP server yet.</p>
-<p>Four approaches have emerged: single-provider API wrappers (OpenAI, Stability, <a href="https://deepmind.google/technologies/gemini/">Gemini</a>, <a href="https://replicate.com/">Replicate</a>), multi-provider aggregators (merlinrabens with 10 providers, PiAPI for Midjourney access), local inference bridges (<a href="https://www.comfy.org/">ComfyUI</a> at 232 stars — the most popular server in the category), and free no-auth options (MCPollinations, <a href="https://huggingface.co/">HuggingFace</a> Spaces bridge). Most servers are dormant — only shinpr/mcp-image (Gemini, 86 stars) shows active development with v0.8.1 adding Google Image Search grounding.</p>
+<p>Four approaches have emerged: single-provider API wrappers (OpenAI, Stability, <a href="https://deepmind.google/technologies/gemini/">Gemini</a>, <a href="https://replicate.com/">Replicate</a>), multi-provider aggregators (PiAPI for Midjourney access, lansespirit for gpt-image-2 + Imagen-4), local inference bridges (<a href="https://www.comfy.org/">ComfyUI</a> at 294 stars with v1.0 rewrite, Draw Things for Mac), and free no-auth options (MCPollinations, <a href="https://huggingface.co/">HuggingFace</a> Spaces bridge). <strong>April 2026 highlight:</strong> OpenAI released gpt-image-2 (GPT-5.4 backbone, 4K, ~99% text accuracy) — lansespirit/image-gen-mcp is the first MCP server to support it. shinpr/mcp-image (105 stars) now uses Nano Banana 2/Pro (Gemini 3.1 Flash / 3 Pro) with Google Search grounding.</p>
 <p><strong>Top picks by use case:</strong></p>
 <ul>
-<li><strong>Best quality:</strong> SureScaleAI/openai-gpt-image-mcp (97 stars) — OpenAI gpt-image-1, best prompt adherence</li>
-<li><strong>Best editing:</strong> tadasant/mcp-server-stability-ai (81 stars) — background removal, recoloring, outpainting, search-and-replace</li>
-<li><strong>Most actively developed:</strong> shinpr/mcp-image (86 stars) — Gemini, prompt optimization, Google Image Search grounding</li>
-<li><strong>Most models:</strong> raveenb/fal-mcp-server (40 stars) — 600+ models on <a href="https://fal.ai/">fal.ai</a></li>
-<li><strong>Free, local:</strong> joenorton/comfyui-mcp-server (232 stars) — any model, no API costs</li>
-<li><strong>Zero friction:</strong> pinkpixel-dev/MCPollinations (39 stars) — free, no auth, no signup</li>
+<li><strong>Best quality:</strong> lansespirit/image-gen-mcp (56 stars) — first gpt-image-2 support, also Imagen-4 Ultra</li>
+<li><strong>Best editing:</strong> tadasant/mcp-server-stability-ai (84 stars) — background removal, recoloring, outpainting, search-and-replace, SD 3.5</li>
+<li><strong>Most actively developed:</strong> shinpr/mcp-image (105 stars) — Nano Banana 2/Pro, prompt optimization, Google Image Search grounding</li>
+<li><strong>Most models:</strong> raveenb/fal-mcp-server (38 stars) — 600+ models on <a href="https://fal.ai/">fal.ai</a></li>
+<li><strong>Free, local:</strong> joenorton/comfyui-mcp-server (294 stars) — v1.0 rewrite, any model, no API costs</li>
+<li><strong>Free, local (Mac):</strong> james-see/mcp-drawthings (9 stars) — Draw Things on Apple Silicon, zero API costs</li>
 </ul>
 <p>See our full <a href="/guides/best-image-generation-mcp-servers/">image generation MCP server comparison</a> for all 20+ servers across four architectural approaches — including a decision flowchart.</p>
 <hr>
@@ -1494,12 +1494,12 @@
 </tr>
 <tr>
 <td>4.0/5</td>
-<td>57</td>
-<td>Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB, AWS, Google Cloud, Azure, Kubernetes, Terraform, Grafana, Datadog, New Relic, Honeycomb, PagerDuty, Framelink, GitMCP, Mem0, Zep/Graphiti, Asana, Google Calendar, CI/CD, Code Security, Secret Management, Log Management, Infrastructure Automation, Database Administration, API Testing, Data Pipeline/ETL, Time-Series Databases, Audio/Video Processing, Workflow Automation, Game Engines/3D, Desktop Automation/Browser Control, E-Commerce/Shopping, Feature Flags/Experimentation, Calendar/Scheduling, Telecommunications/Communications, Government/Public Sector, Construction/Architecture, Personal Finance, Robotics, Apple/macOS, Spreadsheet/Office Suite, Cryptocurrency/DeFi, Container/Docker/Kubernetes, Serverless/FaaS, Vector Database/Embedding, Publishing/Typesetting, Photography</td>
+<td>58</td>
+<td>Filesystem, GitHub, Brave Search, Slack, Sentry, Exa, Neon, Supabase, Stripe, Linear, Todoist, Firecrawl, Tavily, Perplexity, MongoDB, AWS, Google Cloud, Azure, Kubernetes, Terraform, Grafana, Datadog, New Relic, Honeycomb, PagerDuty, Framelink, GitMCP, Mem0, Zep/Graphiti, Asana, Google Calendar, CI/CD, Code Security, Secret Management, Log Management, Infrastructure Automation, Database Administration, API Testing, Data Pipeline/ETL, Time-Series Databases, Audio/Video Processing, Workflow Automation, Game Engines/3D, Desktop Automation/Browser Control, E-Commerce/Shopping, Feature Flags/Experimentation, Calendar/Scheduling, Telecommunications/Communications, Government/Public Sector, Construction/Architecture, Personal Finance, Robotics, Apple/macOS, Spreadsheet/Office Suite, Cryptocurrency/DeFi, Container/Docker/Kubernetes, Serverless/FaaS, Vector Database/Embedding, Publishing/Typesetting, Photography, Gaming/Esports</td>
 </tr>
 <tr>
 <td>3.5/5</td>
-<td>49</td>
+<td>48</td>
 <td>Context7, Memory, Fetch, Notion, Vercel, Figma Dev Mode, Chroma, Browserbase, Crawl4AI, Milvus, Docker, Pulumi, Teams, Atlassian, Obsidian, Shopify, Gmail, Outlook, CRM, Analytics, Cloud Storage, Search Engines, Message Queues, PDF/Documents, Monitoring/Uptime, Notification/Email Delivery, Testing/QA, API Gateways, Container Registries, CDN/Edge Computing, DNS/Domains, Network Security, Performance/Load Testing, AI/ML Model Serving, Data Visualization, Chaos Engineering, Blockchain/Web3, Identity/Auth, Legal/Contract Management, Customer Support/Helpdesk, Supply Chain/Logistics, Energy/Utilities, Education/EdTech, Manufacturing/Industrial, Weather/Climate, Aerospace/Defense, Genealogy/Family History, Library/Archive/Museum, Presentation/Slides, Code Quality/Linting, Automotive/Vehicle</td>
 </tr>
 <tr>

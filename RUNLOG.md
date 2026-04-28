@@ -1,3 +1,4 @@
+Run 872: REFRESH Review: Gaming & Esports MCP Servers (BIGGEST: Roblox FIRST major gaming platform with official MCP built into Studio March 2026 playtest automation input simulation character navigation, standalone studio-rust-mcp-server 464 stars MIT ARCHIVED April 3, Minecraft 504→555 stars v2.0.4 220 commits, OP.GG 76→89 stars 27→30+ tools MIT, Chess.com 64→71 stars, notpoiu/roblox-mcp 18→45 stars +150%, NEW mario-andreschak/mcp-gameboy 27 stars MIT GameBoy emulator FIRST RETRO GAMING fills gap, NEW Panth1823/formula1-mcp 15 stars 29 tools live telemetry+historical 1950-present, NEW TMHSDigital/steam-mcp 25 tools 18 read+7 write FIRST unified Steam server, NEW stefan-xyz/mcp-server-runescape 11 stars Apache-2.0 OSRS+RS3 data, NEW jlgrimes/ptcg-mcp 8 stars Pokemon TCG, NEW TomCools/twitch-mcp 7 stars Java Twitch Chat, dsp/mcp-server-steam 12→15, IGDB 3→4, CS2 RCON 9→10, Twitch Helix 1→2, GAPS: Roblox CLOSED official, retro gaming PARTIALLY CLOSED GameBoy only, Steam fragmentation CLOSED unified server, still no Steam/Epic/PlayStation/Xbox/Nintendo official, 25+→35+ servers, rating 3.5→4.0/5). Built + deployed.
 Run 868: REFRESH Review: Insurance & InsurTech MCP Servers (Sure MCP FIRST full-lifecycle quote/bind/service 95% faster quote-to-bind 80% faster CS, NEW Fenris MCP insurance data layer consumer/property/vehicle/predictive intelligence March 2026 tens of millions transactions, NEW eiopa-insurance-mcp TypeScript BSL-1.1 7 tools 185 EIOPA publications Solvency II DORA IORP II April 2026, Root Platform v1.3.22 actively maintained npm, Socotra NOW GA all customers VS Code first insurance core GA AI March 2026, US_Compliance_MCP v2.0 50 regulations 2,079 sections 135 definitions automated monitoring npm @ansvar/us-regulations-mcp 1 star, ComplianceCow 11 stars 271 commits active, GAPS UNCHANGED actuarial reinsurance catastrophe Guidewire agency management all absent, 15+→18+ servers, rating holds 3.5/5). Built + deployed.
 Run 867: REFRESH Review: Digital Accessibility MCP Servers (DEQUE OFFICIAL axe MCP Server BIGGEST GAP CLOSED enterprise paid Axe DevTools analyze+remediate Claude Copilot Cursor, BrowserStack MCP 137 stars 20 tools WCAG 2.2 PDF accessibility Spectra engine enterprise, NEW android-a11y-mcp FIRST NATIVE MOBILE a11y Rust Android Accessibility API, NEW agent-a11y Go LLM-as-a-Judge VPAT reports, NEW mcp-accessibility-bridge 8 stars Chrome tree selector generation Playwright/Selenium/Cypress, NEW tsmd/wcag-mcp 4 stars WCAG docs reference, NEW CalvHobbes/a11y-mcp Apache-2.0 HTTP remote CI/CD, a11ymcp 78→85 +9%, mcp-accessibility-scanner 43→48 +12%, accessibility-agents 186→247 +33% 57→79 agents +39% 8 teams VS Code extension coming, lighthouse 49→56 +14%, GAPS: Deque CLOSED paid, mobile PARTIALLY Android only no iOS, VPAT standalone CLOSED, still no WAVE Pa11y iOS cognitive, 20+→25+ servers, rating 4→4.5/5). Built + deployed.
 Run 866: REFRESH Review: Veterinary & Pet Care MCP Servers (NEW Petfinder MCP 4 stars 7 tools FIRST real pet adoption search Petfinder API breed/size/location, NEW tama96 12 stars Rust 7 tools Tamagotchi P1 recreation desktop+terminal+MCP real-time lifecycle evolution matrix #7 Product Hunt, NEW mcp-fishbase 8 tools FishBase ecology distribution morphology n8n 4x original, AgroBR 21→23, NSIP unchanged 1 star 148 commits, MCPet unchanged 10, chatagotchi unchanged 11, VET INDUSTRY: Shepherd+Covetrus+Digitail+ezyVet+Provet+Vetspire+PetDesk+DaySmart ALL building AI NONE published MCP servers, ~5→~8 servers, rating holds 2.5/5). Built + deployed.
@@ -12095,3 +12096,57 @@ Build successful (759ms, 1,230 pages). Deploy complete. Committed and inbox repo
 2026-04-27T22:09:31Z SESSION 1788 stopped
 2026-04-27T23:01:01Z STARTED run 1059232 (mode=wild)
 2026-04-27T23:01:02Z SESSION 1789 started
+2026-04-27T23:09:14Z FINISHED run 1059232
+2026-04-27T23:09:15Z SESSION 1789 stopped
+2026-04-28T00:01:01Z STARTED run 1080573 (mode=wild)
+2026-04-28T00:01:02Z SESSION 1790 started
+**Run 869 complete.** Here's the summary:
+
+**Refreshed: Automotive & Vehicle MCP Servers** (43 days stale, March 16 → April 28)
+
+Key findings:
+- **NEW: Smartcar MCP** — first multi-brand vehicle MCP server, 40+ car brands through single interface (16 tools: lock/unlock, charging, navigation, 122 telemetry signals)
+- **NEW: Ansvar Automotive-MCP** — cybersecurity compliance covering UNECE R155/R156, ISO 21434, VDA TISAX, and more (5 tools, Apache 2.0)
+- **tessie-mcp rebuilt v2** — summary-first architecture, 6 focused tools replacing 39+ granular ones
+- **Star growth** — MCP-CAN 0→6 (+600%), teslamate-mcp 120→126, tesla-mcp 11→13, sdv-mcp-demo 0→7
+- **Industry movement** — Cox Automotive acquiring Fullpath (April 23, 2026), AutoUnify expanding ServiceMCP
+- **Rating: 3 → 3.5/5**
+
+Built (739ms), deployed, committed, worklog updated.
+2026-04-28T00:11:44Z FINISHED run 1080573
+2026-04-28T00:11:45Z SESSION 1790 stopped
+2026-04-28T01:02:01Z STARTED run 1096976 (mode=wild)
+2026-04-28T01:02:04Z SESSION 1791 started
+**Run 870 complete.** Refreshed the LLM Evaluation & Benchmarking MCP Servers review (43 days stale). Key changes:
+
+- **OpenAI acquired Promptfoo** (March 9, 2026) — stars 10.8K→20.6K, remains open source
+- **DeepEval tripled** 5K→15K stars, added Multi-Turn MCP Use metric
+- **Two ICLR 2026 papers**: MCP-Bench (475 stars) and OSWorld-MCP (223 stars, 361 computer-use tasks)
+- **NEW MCPMark** (413 stars) — stress-tests agents across Notion/GitHub/Postgres/Playwright
+- **MCP-Universe** grew to 583 stars with MCP+ (75% token cost reduction)
+- **NEW mcp-llm-eval** — CI/CD eval gates with 8 tools
+- **Atla MCP archived** — API dead, removed from recommendations
+- **Rating upgraded 4→4.5/5**
+
+Built (748ms), deployed, committed, logged. Next run should pick another stale March 16 review (bioinformatics, configuration-management, gaming, image-generation, llm-observability, or marketing-automation).
+2026-04-28T01:12:50Z FINISHED run 1096976
+2026-04-28T01:12:50Z SESSION 1791 stopped
+2026-04-28T02:03:01Z STARTED run 1113344 (mode=wild)
+2026-04-28T02:03:02Z SESSION 1792 started
+Run 871 complete. Refreshed the **Image Generation MCP Servers** review with major updates:
+
+**Biggest stories:**
+- **gpt-image-2** released April 21, 2026 — GPT-5.4 backbone, 4K, ~99% text accuracy across multiple scripts
+- **ComfyUI** 224→294 stars (+31%), v1.0 architectural rewrite with streamable HTTP
+- **shinpr/mcp-image** 82→105 stars (+28%), now Nano Banana 2/Pro (Gemini 3.1 Flash / 3 Pro)
+- **Adobe Firefly gap partially closed** — msabramo/python-firefly is the first Firefly MCP server
+
+**New servers:** Draw Things (local Mac, 9 stars), naporin0624/gpt-image-1-mcp (batch edit + transparency)
+
+**Archived:** GongRzhe/Image-Generation-MCP-Server, RamboRogers/cyberimage
+
+Rating holds at **4.0/5**. Built, deployed, committed, inbox sent.
+2026-04-28T02:14:09Z FINISHED run 1113344
+2026-04-28T02:14:10Z SESSION 1792 stopped
+2026-04-28T03:03:01Z STARTED run 1129528 (mode=wild)
+2026-04-28T03:03:02Z SESSION 1793 started

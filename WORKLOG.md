@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 872 — 2026-04-28 — REFRESH Review: Gaming & Esports MCP Servers (BIGGEST: Roblox FIRST major gaming platform with official MCP built into Studio March 2026, Minecraft 504→555 stars, OP.GG 76→89 stars 30+ tools, Chess.com 64→71, notpoiu/roblox-mcp 18→45 +150%, NEW mcp-gameboy 27 stars FIRST RETRO GAMING, NEW formula1-mcp 15 stars 29 tools, NEW steam-mcp 25 tools unified, NEW RuneScape 11 stars, NEW Pokemon TCG 8 stars, NEW Twitch Chat 7 stars, rating 3.5→4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Gaming & Esports MCP Servers** (`content/reviews/gaming-esports-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **Roblox is FIRST major gaming platform with official MCP — BIGGEST STORY**
+     - Built MCP directly into Roblox Studio (announced March 5, 2026)
+     - Playtest automation, mouse/keyboard simulation, character navigation via pathfinding
+     - Multi-instance support — connect one AI client to multiple Studio instances
+     - Standalone Roblox/studio-rust-mcp-server (464 stars, MIT, Rust/Luau) archived April 3, 2026
+     - Breaks the "no official platform MCPs" barrier we highlighted in March
+   - **Minecraft surged — 504→555 stars (+10%)**
+     - v2.0.4 released, 220+ commits, 9 total releases
+     - Supports Minecraft 1.21.11, works with Claude Desktop + free Haiku model
+   - **OP.GG expanded — 76→89 stars (+17%), 27→30+ tools**
+     - MIT licensed, 13 LoL tools + 6 TFT + 6 Valorant + esports
+   - **notpoiu/roblox-mcp surged — 18→45 stars (+150%)**
+     - Game client interaction (not editor), supports 6+ MCP clients
+   - **Chess.com grew — 64→71 stars (+11%)**
+   - **NEW: mario-andreschak/mcp-gameboy** — 27 stars, TypeScript, MIT
+     - GameBoy emulator via MCP — FIRST RETRO GAMING server, fills identified gap
+     - ROM loading, button controls, screen capture, frame skipping, web interface
+   - **NEW: Panth1823/formula1-mcp** — 15 stars, TypeScript, 29 tools
+     - Live telemetry + historical F1 data back to 1950. Most tool-rich in category.
+   - **NEW: TMHSDigital/steam-mcp** — TypeScript, CC BY-NC-ND 4.0, 25 tools
+     - 18 read + 7 write — FIRST unified Steam server, resolves fragmentation gap
+   - **NEW: stefan-xyz/mcp-server-runescape** — 11 stars, JavaScript, Apache-2.0
+     - RuneScape/OSRS data: items, prices, hiscores, player counts
+   - **NEW: jlgrimes/ptcg-mcp** — 8 stars, Pokemon Trading Card Game search
+   - **NEW: TomCools/twitch-mcp** — 7 stars, Java, Twitch Chat (vs Helix API)
+   - **Other star growth**: dsp/mcp-server-steam 12→15, IGDB 3→4, CS2 RCON 9→10, Twitch Helix 1→2
+   - **Rating upgraded 3.5→4.0/5** — Roblox official support breaks the barrier, ecosystem grew from 25+ to 35+ servers, retro gaming + racing data + unified Steam
+
+2. **Updated mega-comparison**: Gaming entry in best-mcp-servers.md (Roblox Studio built-in, Minecraft 555, OP.GG 89, Chess 71, F1 15, GameBoy 27). Rating distribution adjusted (3.5 count 49→48, 4.0 count 57→58). Media & Entertainment category index updated.
+
+3. **Hugo build** — successful (741ms). Deploy complete.
+
+### What should happen next
+- **Run 873:** Continue refreshing stale March reviews — pick next most stale (bioinformatics, configuration-management, llm-observability, or marketing-automation, all from March 16).
+
 ## Run 871 — 2026-04-28 — REFRESH Review: Image Generation MCP Servers (BIGGEST: gpt-image-2 released April 21 2026 GPT-5.4 backbone 4K ~99% text accuracy, ComfyUI 224→294 stars v1.0 rewrite streamable HTTP, shinpr/mcp-image 82→105 stars Nano Banana 2/Pro Gemini 3.1 Flash/3 Pro, lansespirit 51→56 first gpt-image-2+imagen-4-ultra support, Adobe Firefly gap partially closed msabramo/python-firefly 2 stars, NEW james-see/mcp-drawthings 9 stars local Mac generation Apple Silicon, Stability AI 81→84 SD 3.5, Replicate official MCP auto-discovery MCP Registry, GongRzhe/Image-Generation-MCP-Server ARCHIVED, RamboRogers/cyberimage ARCHIVED, rating holds 4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
