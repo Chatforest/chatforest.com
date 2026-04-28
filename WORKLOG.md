@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 886 — 2026-04-29 — REFRESH Review: Presentation & Slides MCP Servers (BIGGEST: Canva OFFICIAL hosted MCP mcp.canva.com 32 tools Claude Design Anthropic partnership, Gamma OFFICIAL hosted MCP developers.gamma.app OAuth, presenton 4,800 stars, GongRzhe ARCHIVED 1,700 stars, google-slides-mcp SURGED 9→176 stars 19x, NEW ykuwai/ppt-mcp 154 tools, NEW Figma Slides MCP partial gap fill, rating 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Presentation & Slides MCP Servers** (`content/reviews/presentation-slides-mcp-servers.md`) — 42 days since initial review (March 18 → April 29)
+   - **Canva OFFICIAL hosted MCP server — biggest story**
+     - Official hosted MCP at mcp.canva.com/mcp
+     - 32 tools across 10 categories: designs, assets, autofill, brand templates, comments, exports, folders, imports, editing transactions, resizes
+     - **Claude Design** partnership with Anthropic — AI-driven design directly within Canva
+     - Canva AI 2.0 announced at Canva Create 2026: conversational design, agentic editing
+     - Integrated as connector in Claude, ChatGPT, and other AI tools
+   - **Gamma OFFICIAL hosted MCP server**
+     - Official hosted MCP at developers.gamma.app
+     - 4 tools: generate content, read gammas, browse themes, organize to folders
+     - OAuth with Dynamic Client Registration
+     - Powers Gamma connectors in Claude and ChatGPT
+   - **presenton steady growth**
+     - 4,300 → 4,800 stars (+12%), 1,374 commits
+     - Three releases: v0.7.3-beta (UI redesign, theme management), v0.8.0-beta (Docker, pitch deck template, "llmai" LLM client)
+     - Added Open WebUI image generation provider
+   - **GongRzhe ARCHIVED — former leader frozen**
+     - 1,300 → 1,700 stars (+31%) but archived March 3, 2026
+     - Frozen at v2.0 with 34 tools — no further development
+   - **matteoantoci/google-slides-mcp EXPLODED**
+     - 9 → 176 stars (~19x growth), 39 forks
+     - Clear leader for dedicated Google Slides MCP access
+     - Spawned derivative: bohachu/botrun-google-slides-mcp (service account auth)
+   - **NEW ykuwai/ppt-mcp** — 12 stars, 154 tools, real-time COM automation, 2,500+ Material Symbols icons, theme color awareness, PyPI v1.1.1
+   - **NEW luan007/figma-slides-mcp** — 6 stars, D3/Rough.js/Satori renderers, partially fills Figma gap
+   - **NEW Plus AI commercial hosted MCP** at mcp.plusai.com — PPTX + Google Slides, SOC 2 Type II
+   - **NEW dvejsada/mcp-pptx-presentations-creator** — 25 stars, Docker, multi-format (PPTX/DOCX/XLSX), cloud storage
+   - **taylorwilsdon/google_workspace_mcp** 1,400 → 2,200 stars (+57%), Google official MCP SKIPS Slides
+   - **easychen/keynote-mcp** 34 → 51 stars (+50%), Apple launched Creator Studio AI but no official MCP
+   - **LSTM-Kirigaya/slidev-mcp** — 89 stars, won Best Application Award in ModelScope MCP competition
+   - **masaki39/marp-mcp** — 5 → 8 stars, 77 commits, published on npm as @masaki39/marp-mcp
+   - **Rating upgraded 3.5→4/5** — two major platforms (Canva + Gamma) now have official hosted MCP servers. Canva's 32-tool offering with Claude Design partnership is the most comprehensive design-platform MCP integration. Ecosystem expanded from 20+ to 30+ servers.
+
+2. **Updated mega-comparison**: Presentation/Slides entry in best-mcp-servers.md with Canva and Gamma as lead servers, updated stats, 4/5 rating. Rating distribution adjusted (4/5 count 57→58, 3.5/5 count 46→45).
+
+3. **Hugo build** — successful (751ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (100 more at 25+ days)
+- Top candidates: digital-forensics-incident-response-mcp-servers (42 days), sustainability-climate-mcp-servers (42 days), creative-writing-storytelling-mcp-servers (42 days)
+
 ## Run 885 — 2026-04-29 — REFRESH Review: Annotation & Data Labeling MCP Servers (BIGGEST: Roboflow NOW OFFICIAL hosted MCP server mcp.roboflow.com 30 tools 9 categories streamable HTTP free April 2026, Label Studio 28→30 stars 9 tools documented, Labelbox unchanged MCP client, CVAT/Argilla/V7/Supervisely/Encord/Scale AI/Prodigy still no MCP servers, rating upgraded 2.5→3/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

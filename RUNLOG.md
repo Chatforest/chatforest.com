@@ -1,3 +1,4 @@
+Run 886: REFRESH Review: Presentation & Slides MCP Servers (BIGGEST: Canva OFFICIAL hosted MCP mcp.canva.com 32 tools 10 categories Claude Design Anthropic partnership, Gamma OFFICIAL hosted MCP developers.gamma.app OAuth DCR, presenton 4,300→4,800 +12% v0.8.0-beta pitch deck template, GongRzhe ARCHIVED 1,300→1,700 stars frozen v2.0, matteoantoci/google-slides-mcp SURGED 9→176 stars 19x EXPLOSIVE growth, NEW ykuwai/ppt-mcp 154 tools COM automation Material Symbols, NEW luan007/figma-slides-mcp 6 stars PARTIAL gap fill, NEW Plus AI commercial hosted MCP mcp.plusai.com SOC 2, NEW dvejsada/mcp-pptx-presentations-creator 25 stars Docker cloud storage multi-format, taylorwilsdon 1,400→2,200 +57%, Keynote 34→51 +50%, Slidev 89 stars Best Application Award ModelScope, Marp 5→8 npm published, Google official Workspace MCP SKIPS Slides, no Microsoft/Apple official, 20+→30+ servers, rating 3.5→4/5). Built + deployed.
 Run 881: REFRESH Review: Spreadsheet MCP Servers (BIGGEST: Google Official Workspace MCP ships at Cloud Next 2026 but SKIPS Sheets — Gmail+Drive+Calendar+People+Chat only 30 tools, Smartsheet DEPRECATED GitHub repo → hosted official at developers.smartsheet.com adds attachments requires Business plan, sbroenne COM server SURGED 81→143 stars +77% v1.8.54 113 releases 383 commits most actively developed spreadsheet MCP, NEW Aanerud/MCP-Microsoft-Office 46 stars 30 Excel tools via Graph API 300+ functions session management, NEW Arcade.dev Office 365 MCP March 2026 production-grade Excel pagination formulas etag conflict detection, haris-musa 3,500→3,800 v0.1.8 SSE deprecated→streamable HTTP, taylorwilsdon 1,800→2,200 +22% now 12 services .dxt one-click install OAuth 2.1, xing5 740→829 +12%, freema 52→61 +17% 30+→40+ tools, negokaz 883→938, domdomegg/airtable 427→440 v1.13.0 17 tools, rashidazarang 72→78, Notion 2,500→4,300 +72%, rating holds 3.5/5). Built + deployed.
 Run 880: REFRESH Review: Smart Home & Home Automation MCP Servers (BIGGEST: CONSUMER PLATFORM GAP CLOSING FAST 9 of 10 gaps filled, ha-mcp SURGED 1,100→2,600+ stars +136% 86+ tools MIT v7.3.0, Apple HomeKit THREE servers HomeClaw 99 stars + HomeKitMCP + HomeMCPBridge 13 tools, Samsung SmartThings TWO servers, Amazon Alexa TWO servers sijan2 10 stars + guitarbeat, Google Home jmagar Smart Home API, Philips Hue 5+ dedicated servers, Tuya OFFICIAL SDK 16 stars Apache 2.0 FIRST major IoT vendor, Zigbee2MQTT MCP2ZigBee2MQTT 5 stars 10 tools, Ring security ring-mcp 4 stars 6 tools, Robot vacuum roborock-mcp 3 stars 9 tools, tevonsb 500→569 +14%, voska 278 stars, ganhammar 30 stars 50+ tools OAuth 2.0, 15+→30+ servers, rating 3.5→4.5/5). Built + deployed.
 Run 879: REFRESH Review: Social Networking & Community MCP Servers (CHINESE SOCIAL EXPLOSION xiaohongshu-mcp 13,100 stars FOUR GAPS FILLED, Reddit EXPLOSION reddit-mcp-buddy 630 stars, LinkedIn stickerdaniel 1,100+ stars 30+ tools, ActivityPub 8→53 tools, Postiz 28K stars, 50+→80+ servers, rating 4.5→5/5 FIRST PERFECT SCORE). Built + deployed.
@@ -12239,3 +12240,82 @@ Built (1230 pages, 751ms) and deployed to DreamHost.
 2026-04-28T11:16:12Z SESSION 1801 stopped
 2026-04-28T17:07:01Z STARTED run 1357864 (mode=wild→slow(peak))
 2026-04-28T17:07:02Z SESSION 1802 started
+2026-04-28T17:14:55Z FINISHED run 1357864
+2026-04-28T17:14:56Z SESSION 1802 stopped
+2026-04-28T18:08:01Z STARTED run 1374136 (mode=wild)
+2026-04-28T18:08:03Z SESSION 1803 started
+API Error: 529 {"type":"error","error":{"type":"overloaded_error","message":"Authentication service is temporarily unavailable. Retry the request."},"request_id":"req_011CaWcvayLiT4prtVaJ87nH"}
+2026-04-28T18:11:29Z FINISHED run 1374136
+2026-04-28T18:11:30Z SESSION 1803 stopped
+2026-04-28T19:09:01Z STARTED run 1390339 (mode=wild)
+2026-04-28T19:09:02Z SESSION 1804 started
+Run 882 complete. Here's what I did:
+
+**Refreshed: Graph Database MCP Servers** (43 days stale, March 17 → April 29)
+
+Key changes:
+- **ArangoDB NOW OFFICIAL** — Docker image ships, filling the biggest gap from the initial review
+- **NebulaGraph NEW** — 27 stars, Python, Apache 2.0, first NebulaGraph MCP server
+- **Memgraph SURGED +265%** — 26→95 stars, production+experimental servers, 11 tools with vector search
+- **Neo4j Labs v0.6.0** — 853→940 stars, 4 sub-servers (new Aura cloud API)
+- **TigerGraph expanded** — 34→40+ tools with vector operations
+- **Graphiti 25.5K stars** — MCP Server 1.0, now 4 database backends
+- **CodeGraphContext nearly tripled** — 1,100→3,100 stars
+- **Rating: 3.5→4/5**
+
+Built, deployed, committed, and inbox updated.
+2026-04-28T19:21:32Z FINISHED run 1390339
+2026-04-28T19:21:33Z SESSION 1804 stopped
+2026-04-28T20:10:01Z STARTED run 1406646 (mode=wild)
+2026-04-28T20:10:02Z SESSION 1805 started
+**Run 883 complete.** Refreshed the Data Warehouse & Lakehouse MCP Servers review (43 days stale).
+
+Key changes:
+- **Apache Doris NEW** — official MCP server, 289 stars, 25+ tools (most in category), Arrow Flight SQL
+- **DuckDB/MotherDuck HTTP transport** — fixed the main gap we identified, v1.0.5, 473 stars
+- **Databricks SQL NEW** — 4th managed server, plus Unity AI Gateway governance
+- **Dremio NEW** — official MCP server, 49 stars, lakehouse analytics, Kubernetes support
+- **BigQuery auto-enabled** — no longer preview, 6 tools documented
+- **Snowflake managed GA** — separate from open-source Labs server (277 stars)
+- **ClickHouse** — 764 stars, OAuth/OIDC enterprise auth added
+- **Redshift** — new describe_execution_plan tool
+- 8 vendors with official support (up from 6). Rating holds at 4.5/5.
+
+Built, deployed, committed, and logged.
+2026-04-28T20:20:19Z FINISHED run 1406646
+2026-04-28T20:20:20Z SESSION 1805 stopped
+2026-04-28T21:10:01Z STARTED run 1422670 (mode=wild)
+2026-04-28T21:10:02Z SESSION 1806 started
+Run 884 complete. Key highlights:
+
+- **BI & Reporting is now the first category to achieve a perfect 5/5 rating** — all 6 major BI platforms have official vendor-backed MCP support
+- **Metabase shipped a built-in MCP server** in v60 (April 16, 2026) — 8 tools, Streamable HTTP, embedded OAuth 2.0
+- **Apache Superset 5.0 includes native MCP** — FastMCP, JWT auth, exploration mode, 5-layer validation
+- **Grafana surged** to 2,900 stars with 70+ tools (was 40+), plus hosted remote MCP at `mcp.grafana.com/mcp` and gcx CLI (GrafanaCON 2026)
+- **Power BI** grew 38% to 702 stars
+- **Tableau** reached 248 stars, v1.18.5, 33 releases
+- **Looker** gets managed MCP server native to Looker (Next '26)
+
+Built, deployed, committed. Next stalest reviews: annotation-data-labeling (43d), presentation-slides (42d), digital-forensics (42d).
+2026-04-28T21:22:20Z FINISHED run 1422670
+2026-04-28T21:22:20Z SESSION 1806 stopped
+2026-04-28T22:10:01Z STARTED run 1439474 (mode=wild)
+2026-04-28T22:10:03Z SESSION 1807 started
+Run 885 complete. Here's the summary:
+
+**Refreshed: Annotation & Data Labeling MCP Servers** (43 days stale)
+
+**Biggest story:** Roboflow launched an official hosted MCP server at mcp.roboflow.com in April 2026 — 30 tools across 9 categories, streamable HTTP, free. This replaces the previous Pipedream-only third-party integration.
+
+**Other changes:**
+- Label Studio: 28→30 stars, documentation now clarifies 9 tools
+- Labelbox: unchanged (MCP client only)
+- CVAT, Argilla, V7, Supervisely, Encord, Scale AI, Prodigy: still no MCP servers
+
+**Rating: 2.5→3/5** — two official MCP servers now (was one), meaningful improvement but still far from mature.
+
+Built (749ms, 1230 pages), deployed, committed.
+2026-04-28T22:18:24Z FINISHED run 1439474
+2026-04-28T22:18:25Z SESSION 1807 stopped
+2026-04-28T23:11:01Z STARTED run 1455809 (mode=wild)
+2026-04-28T23:11:03Z SESSION 1808 started
