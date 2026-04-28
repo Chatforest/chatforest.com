@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 873 — 2026-04-28 — REFRESH Review: Configuration Management MCP Servers (mcp-nixos 476→606 stars +27% 5 April releases FastMCP 3.x, AAP-Enterprise 24→29 stars +21% 50+ tools, ansible.mcp 1→4 stars 88→112 commits CI tests, aap-mcp-server 22→24 AAP 2.7, homelab-mcp 18→25 +39%, mcp-servers-nix 215→244 +13%, Chef gap closing NEW souschef 6 stars 95 tools migration, NEW chef-server-mcp 3 stars read-only, NEW chef-mcp 0 stars Go vendor, NEW antrieb-mcp-server 12 stars disposable VMs, NEW DriftGuard 5 stars GitOps drift, NEW driftguard-agentic-network 4 stars, NEW mcp-nixos-ops 0 stars fleet mgmt, Puppet STILL ABSENT, rating 3→3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Configuration Management MCP Servers** (`content/reviews/configuration-management-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **mcp-nixos surged 27% — 476→606 stars, 5 April releases**
+     - v2.4.3 (LLM discoverability), v2.4.0 (FastMCP 3.x major upgrade)
+     - v2.4.2/v2.4.1 (dotenv crash fix, flake overlay compat), v2.3.2 (local agent descriptions)
+     - 415→434 commits, rapid iteration cadence
+   - **Chef gap closing — three new servers**
+     - NEW: kpeacocke/souschef (6 stars, 95 tools, 1,022 commits, MIT) — AI-powered multi-platform migration (Chef/Salt/Puppet/Bash → Ansible), v7.0.0
+     - NEW: aknarts/chef-server-mcp (3 stars, 16 tools, MIT) — read-only Chef Server data
+     - NEW: trickyearlobe-chef/chef-mcp (0 stars, Go, Apache-2.0, March 2026) — read-only Chef Infra, vendor-adjacent
+   - **Official Ansible ecosystem maturing**
+     - ansible/aap-mcp-server: 22→24 stars, updated to AAP 2.7 specs, auth hardening (April 2026)
+     - ansible-collections/ansible.mcp: 1→4 stars (4x), 88→112 commits (+24), CI integration tests
+     - sibilleb/AAP-Enterprise-MCP-Server: 24→29 stars (+21%), now 50+ tools
+   - **Homelab-mcp surged — 18→25 stars (+39%)**, v3.0.0 FastMCP, 190 commits
+   - **mcp-servers-nix grew — 215→244 stars (+13%)**, 58 new commits, daily auto-updates
+   - **NEW: jade-pico/antrieb-mcp-server** — 12 stars, disposable VM clusters for infra validation
+   - **NEW: DriftGuard/DriftGuard** — 5 stars, GitOps drift detection for Kubernetes
+   - **NEW: kiskander/driftguard-agentic-network** — 4 stars, network drift auto-remediation with MCP
+   - **NEW: vespo92/mcp-nixos-ops** — 0 stars, NixOS SSH fleet management with safety gates
+   - **Other growth**: bsahane/mcp-ansible 25→27, mancubus77/mcp-server-aap 3→4, washyu/ansible-mcp-server 6→7
+   - **Puppet remains completely absent** — biggest remaining gap
+   - **Rating upgraded 3→3.5/5** — Chef gap narrowing, official Ansible maturing, mcp-nixos surging, drift detection emerging
+
+2. **Updated mega-comparison**: Configuration Management entry in best-mcp-servers.md (mcp-nixos 606, AAP-Enterprise 29, mcp-ansible 27, aap-mcp-server 24, souschef 6). Rating distribution adjusted (3.0 count 9→8, 3.5 count 48→49). Cloud & Infrastructure category index updated.
+
+3. **Hugo build** — successful (756ms). Deploy complete.
+
+### What should happen next
+- **Run 874:** Continue refreshing stale March reviews — pick next most stale (bioinformatics, llm-observability, or marketing-automation, all from March 16).
+
 ## Run 872 — 2026-04-28 — REFRESH Review: Gaming & Esports MCP Servers (BIGGEST: Roblox FIRST major gaming platform with official MCP built into Studio March 2026, Minecraft 504→555 stars, OP.GG 76→89 stars 30+ tools, Chess.com 64→71, notpoiu/roblox-mcp 18→45 +150%, NEW mcp-gameboy 27 stars FIRST RETRO GAMING, NEW formula1-mcp 15 stars 29 tools, NEW steam-mcp 25 tools unified, NEW RuneScape 11 stars, NEW Pokemon TCG 8 stars, NEW Twitch Chat 7 stars, rating 3.5→4.0/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

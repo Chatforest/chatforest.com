@@ -1,18 +1,20 @@
 ---
-title: "Configuration Management MCP Servers — Ansible, NixOS, SaltStack, Consul, and More"
+title: "Configuration Management MCP Servers — Ansible, NixOS, Chef, SaltStack, Consul, and More"
 date: 2026-03-16T23:00:00+09:00
 description: "Configuration management MCP servers help AI agents manage infrastructure configuration, execute playbooks, query package databases, and orchestrate service discovery via the Model Context Protocol."
-og_description: "Configuration management MCP servers: utensils/mcp-nixos (476 stars — 130K+ NixOS packages, 23K+ options), mcp-sysoperator (26 stars — Ansible + Terraform unified), bsahane/mcp-ansible (25 stars — advanced playbook/inventory management), AAP-Enterprise-MCP-Server (24 stars — 47+ Red Hat ecosystem tools), ansible/aap-mcp-server (22 stars — official AAP MCP). 15+ servers reviewed. Rating: 3/5."
+og_description: "Configuration management MCP servers: utensils/mcp-nixos (606 stars — 130K+ NixOS packages, FastMCP 3.x, 5 April releases), AAP-Enterprise-MCP-Server (29 stars — 50+ Red Hat ecosystem tools), bsahane/mcp-ansible (27 stars — advanced playbook/inventory management), mcp-sysoperator (26 stars — Ansible + Terraform unified), homelab-mcp (25 stars — 7 integrated servers), ansible/aap-mcp-server (24 stars — official AAP MCP, AAP 2.7). Chef gap closing — souschef (6 stars, 95 tools), chef-server-mcp (3 stars), chef-mcp (0 stars). Puppet still absent. 20+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Configuration management MCP servers for AI-powered infrastructure automation, playbook execution, package queries, and service discovery across Ansible, NixOS, SaltStack, and Consul. **The NixOS knowledge base** — utensils/mcp-nixos (476 stars, Python, MIT) is the standout server in this category, providing real-time access to 130K+ NixOS packages, 23K+ system configuration options, 5K+ Home Manager options, 1K+ nix-darwin macOS settings, 5K+ Nixvim options, 600+ FlakeHub flakes, and 2K+ Nix functions via Noogle. Remarkably token-efficient with just 2 unified tools (~1,030 tokens total). Runs anywhere Python runs — no NixOS installation required. Also provides NixOS Wiki documentation, nix.dev guides, and binary cache status checking. **Official Ansible Automation Platform MCP** — ansible/aap-mcp-server (22 stars, TypeScript, Apache-2.0) is the official MCP service for Red Hat's Ansible Automation Platform. Integrates with Controller, Galaxy, Gateway, and Event-Driven Ansible via OpenAPI specifications. Features role-based access with custom toolsets, session management with automatic user permission detection, Prometheus metrics for observability, and support for both local and remote OpenAPI specs. Requires Node.js 22+. Registered via Claude CLI for HTTP transport. **Advanced Ansible operations** — bsahane/mcp-ansible (25 stars, Python) exposes comprehensive Ansible utilities: playbook creation/validation/execution, ad-hoc task execution, role scaffolding, inventory parsing with ansible.cfg awareness, group/host graph visualization, host variable resolution, connectivity testing, vault operations. Advanced troubleshooting suite includes remote command execution, log analysis, service management, host health diagnostics with scoring, system baseline comparison, automated problem detection, network connectivity matrix testing, and security vulnerability assessments. **Enterprise Red Hat ecosystem** — sibilleb/AAP-Enterprise-MCP-Server (24 stars, Python) provides 47+ tools across five domains: 17+ AAP management tools (inventory, jobs, projects, templates, hosts), 9 ansible-lint quality assurance tools (progressive quality profiles, project-wide analysis), 8 Event-Driven Ansible tools (activation lifecycle, rulebook management), 5 Galaxy discovery tools (collection/role search with AI-powered suggestions), and 8 Red Hat documentation tools (domain-validated official sources with PDF-first strategy). **Multi-tool infrastructure operator** — tarnover/mcp-sysoperator (26 stars, TypeScript, MIT) combines Ansible, Terraform, LocalStack, and AWS resource management in a single MCP server. Execute playbooks with parameter support, validate syntax, manage Terraform operations (init/plan/apply/destroy), and interact with AWS resources (EC2, S3, VPC, CloudFormation). Includes LocalStack integration for local testing without credentials. Active development, not recommended for production. **Lightweight AAP integration** — mancubus77/mcp-server-aap (3 stars, Python) is a minimal MCP server for launching Ansible job templates via the AAP API. Template discovery, job launching with custom variables, status monitoring, output retrieval, and connection testing with exponential backoff retry logic. **Ansible Collection for MCP** — ansible-collections/ansible.mcp (1 star, Python, GPL-3.0) is the official Ansible Collection providing MCP plugins, installable via ansible-galaxy. Active development with 88 commits. **MCP server installer for Execution Environments** — redhat-cop/ansible.mcp_builder (1 star, Shell, GPL-3.0) automates installation of MCP servers (AWS, Azure, GitHub) into Ansible Execution Environments via npm, PyPI, or compiled Go binaries. Registry system with automatic manifest generation. Compatible with ansible-builder 3.x. **Nix framework for MCP servers** — natsukium/mcp-servers-nix (215 stars, Nix, Apache-2.0) provides a modular Nix-based configuration framework with 25 pre-configured MCP server modules. Reproducible builds, security-focused credential handling via envFile and passwordCommand, integration with Flakes, flake-parts, devenv, and Home Manager. **Declarative MCP configuration** — aloshy-ai/nix-mcp-servers (23 stars, Nix, MIT) is a Nix flake for declaratively configuring MCP servers for Claude Desktop and Cursor. Cross-platform support for NixOS, Darwin, and Home Manager. CLI tool available via nix run. **SaltStack minion management** — Bearbobs/saltstack-mcp (0 stars, Python, MIT) provides basic Salt API integration with four tools: list_all_minions, ping_minions, get_minion_info, and execute_salt_command. Docker deployment with credential management. Minimal but functional for salt-master interaction. **Consul service discovery** — kocierik/consul-mcp-server (16 stars, TypeScript, MIT) provides access to HashiCorp Consul's functionality: service management (list/register/deregister), health checks, key-value store operations (get/list/put/delete), session management, event handling, prepared queries, cluster status (leader/peers), and agent operations. Installable via npx or Smithery. **Homelab infrastructure** — bjeans/homelab-mcp (18 stars, Python, MIT) bundles 7 MCP servers for homelab management including Ansible inventory integration. 39 total tools with MCP annotations. Docker/Podman containers, Ollama models, Pi-hole DNS, Unifi networks, UPS monitoring, and Ansible-managed host querying. v3.0.0 with FastMCP framework. **Ansible + Terraform combo** — washyu/ansible-mcp-server (6 stars, JavaScript, MIT) provided 58 infrastructure management tools spanning Ansible operations, hardware scanning, security assessments, and service deployment. Archived October 2025 — read-only but still functional as reference. **Gaps remain in several areas** — no Puppet MCP server exists despite Puppet being a major configuration management tool. No Chef Infra or Chef InSpec MCP servers. No CFEngine, mgmt, or Bcfg2 MCP integration. No unified configuration management server spanning multiple tools with drift detection. No configuration version comparison or diff tools. No automated rollback management. No compliance enforcement via MCP (distinct from ansible-lint — think cross-platform policy engines like Open Policy Agent for config management). No configuration testing or dry-run simulation tools beyond what individual servers provide. The SaltStack server is minimal with only 4 tools and 0 stars. The category earns 3/5 — Ansible dominates with six dedicated servers including an official Red Hat implementation, but the broader configuration management ecosystem is thin. NixOS stands out with the most polished and popular server (mcp-nixos at 476 stars), while Puppet, Chef, and SaltStack — tools used by thousands of organizations — have virtually no MCP presence. The Nix framework projects (mcp-servers-nix, nix-mcp-servers) serve a different purpose — managing MCP server installations rather than infrastructure configuration. Consul has basic coverage. The category would benefit significantly from official vendors (Puppet Labs, Progress Chef) creating MCP servers for their platforms."
-last_refreshed: 2026-03-16
+card_description: "Configuration management MCP servers for AI-powered infrastructure automation, playbook execution, package queries, and service discovery across Ansible, NixOS, Chef, SaltStack, and Consul. **The NixOS knowledge base** — utensils/mcp-nixos (606 stars, Python, MIT) is the standout server in this category, surging 27% since March with 5 releases in April alone including FastMCP 3.x upgrade and LLM discoverability improvements. Provides real-time access to 130K+ NixOS packages, 23K+ system configuration options, 5K+ Home Manager options, 1K+ nix-darwin macOS settings, 5K+ Nixvim options, 600+ FlakeHub flakes, and 2K+ Nix functions via Noogle. Remarkably token-efficient with just 2 unified tools (~1,030 tokens total). Runs anywhere Python runs — no NixOS installation required. **Official Ansible Automation Platform MCP** — ansible/aap-mcp-server (24 stars, TypeScript, Apache-2.0) is the official MCP service for Red Hat's Ansible Automation Platform. Updated to AAP 2.7 specs in April with auth hardening against unauthenticated DoS. Integrates with Controller, Galaxy, Gateway, and Event-Driven Ansible via OpenAPI specifications. Features role-based access with custom toolsets, session management, and Prometheus metrics. **Official Ansible Collection gaining traction** — ansible-collections/ansible.mcp (4 stars, Python, GPL-3.0) quadrupled stars with 24 new commits, CI integration tests, and tool classification improvements. Installable via ansible-galaxy. **Enterprise Red Hat ecosystem** — sibilleb/AAP-Enterprise-MCP-Server (29 stars, Python) surged 21% to become the most-starred Ansible server. 50+ tools across five domains: AAP management, ansible-lint, Event-Driven Ansible, Galaxy discovery, and Red Hat documentation. **Advanced Ansible operations** — bsahane/mcp-ansible (27 stars, Python) exposes comprehensive Ansible utilities: playbook creation/validation/execution, ad-hoc task execution, role scaffolding, inventory management, and advanced troubleshooting including health diagnostics, security assessments, and network connectivity matrix testing. **Chef gap closing** — three Chef servers now exist: kpeacocke/souschef (6 stars, 95 tools, 1,022 commits) provides AI-powered Chef-to-Ansible migration plus multi-platform migration (SaltStack, Puppet, PowerShell, Bash → Ansible); aknarts/chef-server-mcp (3 stars, 16 tools) offers read-only Chef Server data access; trickyearlobe-chef/chef-mcp (0 stars, Go, Apache-2.0, March 2026) provides read-only Chef Infra access using existing Chef Workstation credentials. **Multi-tool infrastructure operator** — tarnover/mcp-sysoperator (26 stars, TypeScript, MIT) combines Ansible, Terraform, LocalStack, and AWS resource management. Not recommended for production. **Homelab infrastructure growing** — bjeans/homelab-mcp (25 stars, Python, MIT) surged 39% with 7 integrated MCP servers, 39 total tools, v3.0.0 FastMCP framework. **Nix framework for MCP servers** — natsukium/mcp-servers-nix (244 stars, Nix, Apache-2.0) grew 13% with 58 new commits, daily automated package updates across 25+ pre-configured MCP server modules. **Disposable VM testing** — jade-pico/antrieb-mcp-server (12 stars, Apache-2.0) provides instant disposable VM clusters with Ansible control nodes for LLM-generated infrastructure validation. **Configuration drift detection emerging** — DriftGuard/DriftGuard (5 stars, MIT) provides GitOps drift detection for Kubernetes comparing live cluster state against Git; kiskander/driftguard-agentic-network (4 stars) uses agentic workflows with MCP for network drift auto-remediation. **Puppet remains absent** — still zero dedicated Puppet MCP servers despite widespread enterprise adoption. SaltStack coverage unchanged (0 stars, dormant). Consul stable at 16 stars. The category earns 3.5/5 — upgraded from 3/5 as Chef gap narrows with three new servers, official Ansible ecosystem matures (AAP 2.7, ansible.mcp CI testing, 50+ enterprise tools), mcp-nixos surges 27% with rapid releases, drift detection emerges as new subcategory, and homelab-mcp grows 39%. Still held back by zero Puppet presence and dormant SaltStack."
+last_refreshed: 2026-04-28
 ---
 
 Configuration management MCP servers let AI assistants manage infrastructure configuration, execute automation playbooks, query package databases, and orchestrate service discovery through the Model Context Protocol. Instead of writing YAML by hand or memorizing CLI flags, AI agents can manage configuration at scale conversationally.
 
-This review covers the **configuration management** ecosystem — Ansible automation, NixOS package and option queries, SaltStack minion management, Consul service discovery, and multi-tool infrastructure operators. For related servers, see our [Infrastructure Automation review](/reviews/infrastructure-automation-mcp-servers/) and [Container/Docker/Kubernetes review](/reviews/container-docker-kubernetes-mcp-servers/).
+This review covers the **configuration management** ecosystem — Ansible automation, NixOS package and option queries, Chef migration and data access, SaltStack minion management, Consul service discovery, and multi-tool infrastructure operators. For related servers, see our [Infrastructure Automation review](/reviews/infrastructure-automation-mcp-servers/) and [Container/Docker/Kubernetes review](/reviews/container-docker-kubernetes-mcp-servers/).
 
-The headline findings: **Ansible dominates with six dedicated servers** including an official Red Hat AAP implementation. **NixOS has the most polished single server** (mcp-nixos, 476 stars) with remarkable token efficiency. **Puppet and Chef have zero MCP presence** — a significant gap given their enterprise adoption. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+The headline findings: **mcp-nixos surged 27% to 606 stars** with 5 releases in April including a FastMCP 3.x upgrade. **The Chef gap is closing** — three servers now exist, led by souschef (95 tools for multi-platform migration). **Official Ansible tooling is maturing** — AAP 2.7 specs, CI integration tests, and 50+ enterprise tools. **Puppet still has zero MCP presence**. **Configuration drift detection is emerging** as a new subcategory. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+
+*Updated April 28, 2026 — [what changed](#changelog)*
 
 ## Ansible
 
@@ -20,23 +22,25 @@ The headline findings: **Ansible dominates with six dedicated servers** includin
 
 | Server | Stars | Language | License | Components |
 |--------|-------|----------|---------|------------|
-| [aap-mcp-server](https://github.com/ansible/aap-mcp-server) | 22 | TypeScript | Apache-2.0 | 4 |
+| [aap-mcp-server](https://github.com/ansible/aap-mcp-server) | 24 | TypeScript | Apache-2.0 | 4 |
 
 The **official MCP service for Ansible Automation Platform** from Red Hat:
 
 - **Multi-service integration** — Controller, Galaxy, Gateway, and Event-Driven Ansible
+- **AAP 2.7 support** — updated OpenAPI specs from AAP 2.6 to 2.7 (April 2026)
+- **Auth hardening** — early auth checks for MCP POSTs against unauthenticated DoS (April 2026)
 - **Role-based toolsets** — custom toolsets enable permission-based tool filtering
 - **Session management** — token validation with automatic user permission detection
 - **Observability** — Prometheus metrics for HTTP requests, tool execution, and system health
 - **Flexible specs** — supports both local OpenAPI files and remote URLs
 
-Requires Node.js 22+. Register via `claude mcp add aap-mcp -t http http://localhost:3000/mcp`. Production-quality with 187 commits.
+Requires Node.js 22+. Register via `claude mcp add aap-mcp -t http http://localhost:3000/mcp`. Production-quality with 193 commits.
 
 ### bsahane/mcp-ansible — Advanced Ansible MCP Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-ansible](https://github.com/bsahane/mcp-ansible) | 25 | Python | — | 30+ |
+| [mcp-ansible](https://github.com/bsahane/mcp-ansible) | 27 | Python | — | 30+ |
 
 **Comprehensive Ansible utilities** for playbooks, inventories, roles, and workflows:
 
@@ -51,9 +55,9 @@ Requires Python 3.10+. Configure for Cursor or Claude Desktop via MCP config fil
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [AAP-Enterprise-MCP-Server](https://github.com/sibilleb/AAP-Enterprise-MCP-Server) | 24 | Python | — | 47+ |
+| [AAP-Enterprise-MCP-Server](https://github.com/sibilleb/AAP-Enterprise-MCP-Server) | 29 | Python | — | 50+ |
 
-**The most feature-rich Ansible MCP server** — five integrated domains:
+**The most feature-rich Ansible MCP server** — five integrated domains with 4-server architecture:
 
 - **AAP management** (17+ tools) — inventory, host, job template, project, and SCM management; ad-hoc command execution; job monitoring
 - **ansible-lint** (9 tools) — progressive quality profiles, project-wide analysis with comprehensive reporting, rule management and best practice enforcement
@@ -67,7 +71,7 @@ Install via UV (recommended) or pip. Requires API tokens for AAP/EDA.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-aap](https://github.com/mancubus77/mcp-server-aap) | 3 | Python | — | 5 |
+| [mcp-server-aap](https://github.com/mancubus77/mcp-server-aap) | 4 | Python | — | 5 |
 
 **Minimal MCP server for AAP job template management:**
 
@@ -83,9 +87,9 @@ Good for teams that need simple job template execution without the full enterpri
 
 | Server | Stars | Language | License | Type |
 |--------|-------|----------|---------|------|
-| [ansible.mcp](https://github.com/ansible-collections/ansible.mcp) | 1 | Python | GPL-3.0 | Collection |
+| [ansible.mcp](https://github.com/ansible-collections/ansible.mcp) | 4 | Python | GPL-3.0 | Collection |
 
-The **official Ansible Collection for MCP plugins**, installable via `ansible-galaxy collection install ansible.mcp`. Active development with 88 commits. Provides MCP integration as native Ansible plugins rather than a standalone server.
+The **official Ansible Collection for MCP plugins**, installable via `ansible-galaxy collection install ansible.mcp`. Quadrupled stars since March with 24 new commits (now 112 total). **New in April:** CI integration test workflows, testing strategy documentation, tool classification for indirect node counting, and regex verb matching improvements. Gaining real traction as native Ansible integration.
 
 ### redhat-cop/ansible.mcp_builder — MCP Server Installer for EEs
 
@@ -101,9 +105,9 @@ The **official Ansible Collection for MCP plugins**, installable via `ansible-ga
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-nixos](https://github.com/utensils/mcp-nixos) | 476 | Python | MIT | 2 |
+| [mcp-nixos](https://github.com/utensils/mcp-nixos) | 606 | Python | MIT | 2 |
 
-**The standout server in this category** — real-time NixOS ecosystem data that prevents AI hallucinations:
+**The standout server in this category** — surged 27% (476→606 stars) with 5 releases in April alone. Real-time NixOS ecosystem data that prevents AI hallucinations:
 
 - **130K+ NixOS packages** — search and query the full package database
 - **23K+ NixOS options** — system configuration reference
@@ -115,22 +119,24 @@ The **official Ansible Collection for MCP plugins**, installable via `ansible-ga
 - **Documentation** — NixOS Wiki and nix.dev guides
 - **Binary cache status** — check package build availability
 
-Remarkably token-efficient: **2 unified tools using ~1,030 tokens total** (consolidated from 17 original tools). Install via `uvx mcp-nixos`, pip, Nix, or Docker. Runs anywhere Python runs — no NixOS installation required. 415 commits and active maintenance.
+**April 2026 releases:** v2.4.3 (LLM discoverability — intent-trigger prose, deterministic API surface), v2.4.0 (FastMCP 3.x upgrade — major framework update), v2.4.2/v2.4.1 (dotenv crash fix, flake overlay compatibility), v2.3.2 (local agent tool descriptions).
+
+Remarkably token-efficient: **2 unified tools using ~1,030 tokens total** (consolidated from 17 original tools). Install via `uvx mcp-nixos`, pip, Nix, or Docker. Runs anywhere Python runs — no NixOS installation required. 434 commits and rapid iteration.
 
 ### natsukium/mcp-servers-nix — Nix Configuration Framework
 
 | Server | Stars | Language | License | Modules |
 |--------|-------|----------|---------|---------|
-| [mcp-servers-nix](https://github.com/natsukium/mcp-servers-nix) | 215 | Nix | Apache-2.0 | 25 |
+| [mcp-servers-nix](https://github.com/natsukium/mcp-servers-nix) | 244 | Nix | Apache-2.0 | 25+ |
 
-**A Nix-based framework for configuring MCP servers** — not an MCP server itself, but a reproducible way to deploy them:
+**A Nix-based framework for configuring MCP servers** — not an MCP server itself, but a reproducible way to deploy them. Grew 13% (215→244 stars) with 58 new commits:
 
-- **25 pre-configured modules** — filesystem, GitHub, Notion, Playwright, Terraform, and more
+- **25+ pre-configured modules** — filesystem, GitHub, Notion, Playwright, Terraform, and more
 - **Security-focused** — credential handling via `envFile` and `passwordCommand`
 - **Integration** — Flakes, flake-parts, devenv, and Home Manager
-- **Modular** — consistent interface across all server configurations
+- **Automated updates** — daily package auto-updates keep MCP server versions current
 
-724 commits. Useful for NixOS users who want declarative MCP server management.
+782 commits. The go-to Nix packaging framework for MCP servers.
 
 ### aloshy-ai/nix-mcp-servers — Declarative MCP Configuration
 
@@ -139,6 +145,53 @@ Remarkably token-efficient: **2 unified tools using ~1,030 tokens total** (conso
 | [nix-mcp-servers](https://github.com/ismail-kattakath/nix-mcp-servers) | 23 | Nix | MIT | 2 |
 
 **Declarative MCP server configuration for Claude Desktop and Cursor** via Nix flakes. Cross-platform support for NixOS, Darwin, and Home Manager. CLI tool available via `nix run`. 145 commits.
+
+## Chef
+
+### kpeacocke/souschef — AI-Powered Migration Engine
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [souschef](https://github.com/kpeacocke/souschef) | 6 | TypeScript | MIT | 95 |
+
+**The most significant new entry in this refresh** — an AI-powered MCP server for migrating from Chef (and other platforms) to Ansible:
+
+- **Multi-platform migration** — Chef, SaltStack, Puppet, PowerShell, and Bash → Ansible
+- **95 MCP tools** across six migration categories
+- **Web UI + CLI** — visual interface plus CI/CD integration
+- **91% test coverage** — model-agnostic, well-tested
+- **v7.0.0** (March 2026) — added SaltStack, Bash, PowerShell, Puppet migration support
+
+1,022 commits. While migration-focused rather than Chef management, it fills the Chef gap by providing a practical path forward for Chef users entering the MCP ecosystem.
+
+### aknarts/chef-server-mcp — Read-Only Chef Server Data
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [chef-server-mcp](https://github.com/aknarts/chef-server-mcp) | 3 | TypeScript | MIT | 16 |
+
+**Read-only access to Chef Server data:**
+
+- Nodes, roles, cookbooks, data bags, and environments
+- Docker deployment with multi-org support
+- 16 tools for querying Chef infrastructure
+
+11 commits. Stable but not actively developed (last commit January 2025).
+
+### trickyearlobe-chef/chef-mcp — Chef Infra Access
+
+| Server | Stars | Language | License | Type |
+|--------|-------|----------|---------|------|
+| [chef-mcp](https://github.com/trickyearlobe-chef/chef-mcp) | 0 | Go | Apache-2.0 | Server |
+
+**New (March 2026)** — read-only MCP server for Chef Infra using existing Chef Workstation credentials:
+
+- Zero-config setup — uses your existing Chef credentials
+- Go-based with cross-platform binaries (macOS/Linux/Windows, amd64/arm64)
+- v0.1.1 released March 26, 2026
+- Author appears to be affiliated with Chef
+
+13 commits. Early stage but a promising sign of vendor interest.
 
 ## SaltStack
 
@@ -199,9 +252,9 @@ Active development with 37 commits. Developers note it's not recommended for pro
 
 | Server | Stars | Language | License | Servers |
 |--------|-------|----------|---------|---------|
-| [homelab-mcp](https://github.com/bjeans/homelab-mcp) | 18 | Python | MIT | 7 |
+| [homelab-mcp](https://github.com/bjeans/homelab-mcp) | 25 | Python | MIT | 7 |
 
-**Seven integrated MCP servers for homelab management:**
+**Seven integrated MCP servers for homelab management** — surged 39% (18→25 stars):
 
 - Docker/Podman container monitoring
 - Ollama AI model management
@@ -211,35 +264,102 @@ Active development with 37 commits. Developers note it's not recommended for pro
 - Ping connectivity checks
 - **Ansible inventory** — read-only query access to hosts, groups, and configuration
 
-39 total tools with MCP annotations. v3.0.0 built on FastMCP framework. 171 commits.
+39 total tools with MCP annotations. v3.0.0 built on FastMCP framework. 190 commits.
+
+### jade-pico/antrieb-mcp-server — Disposable VM Clusters
+
+| Server | Stars | Language | License | Type |
+|--------|-------|----------|---------|------|
+| [antrieb-mcp-server](https://github.com/jade-pico/antrieb-mcp-server) | 12 | TypeScript | Apache-2.0 | Server |
+
+**Instant disposable VM clusters for validating LLM-generated infrastructure:**
+
+- Multi-node clusters with real Linux distros and network appliances
+- Includes **Ansible control node** with collections pre-installed
+- 10-minute TTL clusters for testing — spin up, validate, tear down
+- Designed for AI agents to test infrastructure code before committing
+
+97 commits. A novel approach to infrastructure testing via MCP.
 
 ### washyu/ansible-mcp-server — Ansible + Terraform (Archived)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ansible-mcp-server](https://github.com/washyu/ansible-mcp-server) | 6 | JavaScript | MIT | 58 |
+| [ansible-mcp-server](https://github.com/washyu/ansible-mcp-server) | 7 | JavaScript | MIT | 58 |
 
 **58 infrastructure management tools** spanning Ansible operations, infrastructure discovery, security capabilities, and service deployment. Includes hardware scanning, port scanning, password audits, and environment-based deployments. **Archived October 2025** — read-only but still useful as reference. The breadth of tools (58) shows what a comprehensive config management MCP server could look like.
 
+## Configuration Drift Detection
+
+### DriftGuard/DriftGuard — GitOps Drift Detection for Kubernetes
+
+| Server | Stars | Language | License | Type |
+|--------|-------|----------|---------|------|
+| [DriftGuard](https://github.com/DriftGuard/DriftGuard) | 5 | Go/Python | MIT | MCP-integrated |
+
+**GitOps configuration drift detection** — compares live Kubernetes cluster state against Git desired state. Uses MCP for communication between Go infrastructure components and Python AI/ML analysis. Not a standalone MCP server, but demonstrates MCP as an integration layer for drift detection workflows. 59 commits.
+
+### kiskander/driftguard-agentic-network — Network Drift Auto-Remediation
+
+| Server | Stars | Language | License | Type |
+|--------|-------|----------|---------|------|
+| [driftguard-agentic-network](https://github.com/kiskander/driftguard-agentic-network) | 4 | — | — | Agentic workflow |
+
+**Agentic network drift detection** (March 2026) — combines n8n workflows, AI agents, and MCP servers to detect and auto-remediate network configuration drift. A proof-of-concept for autonomous configuration management using MCP.
+
+## NixOS Fleet Management
+
+### vespo92/mcp-nixos-ops — NixOS SSH Fleet Management
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mcp-nixos-ops](https://github.com/vespo92/mcp-nixos-ops) | 0 | TypeScript | MIT | 9 |
+
+**New: NixOS machine management over SSH** for fleet management:
+
+- 9 operations with safety gates for destructive actions (apply config, rollback)
+- SSH connection multiplexing and bastion host support
+- ZFS pool verification
+- Early stage (3 commits) but fills a gap for NixOS fleet operators
+
 ## What's Missing
 
-The configuration management MCP ecosystem has significant gaps:
+The configuration management MCP ecosystem still has notable gaps, though several from March have started closing:
 
-- **No Puppet MCP server** — despite Puppet being used by thousands of organizations for compliance-driven infrastructure management
-- **No Chef Infra or InSpec MCP server** — no way to manage Chef cookbooks, recipes, or compliance profiles via MCP
+- **No Puppet MCP server** — despite Puppet being used by thousands of organizations for compliance-driven infrastructure management, this remains the biggest gap in the category
+- **Chef coverage is migration-focused** — souschef helps you migrate *away* from Chef; chef-server-mcp and chef-mcp provide read-only access. No server manages Chef cookbooks, recipes, or compliance profiles (InSpec) via MCP for ongoing Chef operations
 - **No CFEngine, mgmt, or Bcfg2 integration** — older but still-used configuration management tools are absent
-- **No drift detection** — no MCP server provides configuration drift detection or remediation across managed hosts
+- **Drift detection is emerging but immature** — DriftGuard and driftguard-agentic-network exist but are early-stage proofs of concept, not production-ready MCP servers
 - **No compliance enforcement** — beyond ansible-lint, no cross-platform policy engine (like OPA for config management) exists as an MCP server
 - **No configuration diffing** — no tools for comparing configuration versions or visualizing changes before apply
-- **No rollback management** — no MCP server provides configuration rollback or state restoration capabilities
-- **SaltStack is minimal** — only 4 tools and 0 stars; needs significantly more development
+- **No rollback management** — no MCP server provides configuration rollback or state restoration capabilities (though mcp-nixos-ops has safety gates)
+- **SaltStack is minimal** — only 4 tools and 0 stars; dormant since September 2025. souschef supports Salt-to-Ansible migration as an alternative
 
 ## The Bottom Line
 
-**Rating: 3/5** — Configuration management MCP servers are an uneven category. Ansible dominates with six dedicated servers spanning official Red Hat tooling, enterprise ecosystems, and community implementations. NixOS punches above its weight with mcp-nixos (476 stars) — the most polished and popular server in the category by a wide margin. Consul has basic but functional coverage.
+**Rating: 3.5/5** *(up from 3/5 in March)* — Configuration management MCP servers are maturing. The Chef gap is narrowing with three new servers — souschef (95 tools, migration-focused), chef-server-mcp (read-only data), and chef-mcp (vendor-adjacent, Go-based). The official Ansible ecosystem is consolidating around AAP 2.7, CI-tested collections, and 50+ enterprise tools. mcp-nixos surged 27% to 606 stars with rapid iteration (5 April releases, FastMCP 3.x upgrade). Configuration drift detection is emerging as a new subcategory.
 
-The glaring gaps are Puppet and Chef — two tools used across thousands of enterprise environments with zero MCP presence. SaltStack's single server is barely functional. The multi-tool servers (mcp-sysoperator, the archived ansible-mcp-server) hint at what a unified configuration management MCP could become, but none are production-ready.
+The remaining gaps: **Puppet is still completely absent** — the most significant omission in the category. SaltStack remains dormant. Chef coverage is read-only or migration-focused, not operational. Drift detection and compliance enforcement are nascent.
 
-For teams using Ansible, the MCP ecosystem is genuinely useful today. For everyone else, this category needs significant investment from tool vendors and the community.
+For Ansible and NixOS users, this category delivers genuine value today. For Chef teams, there's now at least a migration path. For Puppet shops, the wait continues.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+## Changelog
+
+**April 28, 2026 refresh:**
+- mcp-nixos surged 476→606 stars (+27%), 5 releases in April, FastMCP 3.x upgrade
+- AAP-Enterprise-MCP-Server 24→29 stars (+21%), now 50+ tools
+- ansible-collections/ansible.mcp 1→4 stars, 88→112 commits, CI integration tests
+- ansible/aap-mcp-server 22→24 stars, AAP 2.7 specs, auth hardening
+- homelab-mcp 18→25 stars (+39%), v3.0.0 FastMCP migration
+- natsukium/mcp-servers-nix 215→244 stars (+13%), 58 new commits
+- bsahane/mcp-ansible 25→27 stars
+- NEW: kpeacocke/souschef — 6 stars, 95 tools, Chef/Salt/Puppet/Bash→Ansible migration
+- NEW: aknarts/chef-server-mcp — 3 stars, 16 tools, read-only Chef Server data
+- NEW: trickyearlobe-chef/chef-mcp — 0 stars, Go, read-only Chef Infra (March 2026)
+- NEW: jade-pico/antrieb-mcp-server — 12 stars, disposable VM clusters for infra validation
+- NEW: DriftGuard/DriftGuard — 5 stars, GitOps drift detection for Kubernetes
+- NEW: kiskander/driftguard-agentic-network — 4 stars, network drift auto-remediation
+- NEW: vespo92/mcp-nixos-ops — 0 stars, NixOS SSH fleet management
+- Rating upgraded 3→3.5/5
+
+*This review was last refreshed on 2026-04-28 using Claude Opus 4.6 (Anthropic).*

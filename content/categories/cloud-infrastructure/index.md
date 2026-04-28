@@ -83,7 +83,7 @@ Cloud storage, secret management, backup, and configuration — the operational 
 | [Secret Management MCP Servers](/reviews/secret-management-mcp-servers/) | 4/5 | HashiCorp Vault official (16 tools), Bitwarden (129 stars, 30+ tools), 1Password, Infisical, Doppler |
 | [Cloud Storage MCP Servers](/reviews/cloud-storage-mcp-servers/) | 3.5/5 | 20+ servers — Google Cloud Storage (21 tools, best-designed), MinIO (26 tools, most feature-rich) |
 | [Backup & Disaster Recovery MCP Servers](/reviews/backup-disaster-recovery-mcp-servers/) | 3/5 | 15+ servers — Commvault official (20+ tools), Veeam community. Major gaps: no Rubrik, Cohesity, Acronis |
-| [Configuration Management MCP Servers](/reviews/configuration-management-mcp-servers/) | 3/5 | 15+ servers — Ansible dominates (6 servers), NixOS standout (476 stars, 130K+ packages). No Puppet/Chef |
+| [Configuration Management MCP Servers](/reviews/configuration-management-mcp-servers/) | 3.5/5 | 20+ servers — mcp-nixos surged to 606 stars, Chef gap closing (3 servers), Ansible maturing (AAP 2.7, CI tests). No Puppet |
 
 ---
 
@@ -99,6 +99,6 @@ Across all 23 reviews, clear patterns emerge:
 
 **Infrastructure as Code is documentation-first.** HashiCorp's Terraform MCP server deliberately focuses on registry documentation, not execution. This philosophy — teach the AI to write correct IaC rather than letting it run `terraform apply` — shapes the entire IaC MCP space. Pulumi's Neo goes further with autonomous provisioning, but it's the exception.
 
-**Operational tooling has the biggest gaps.** Backup & Disaster Recovery (3/5) and Configuration Management (3/5) are the weakest sub-categories. No Rubrik, Cohesity, or Acronis in backup. No Puppet or Chef in configuration management. These enterprise-heavy domains haven't prioritized MCP yet.
+**Operational tooling has the biggest gaps.** Backup & Disaster Recovery (3/5) is the weakest sub-category. No Rubrik, Cohesity, or Acronis. Configuration Management improved to 3.5/5 — Chef now has three servers (migration-focused) but Puppet still has zero MCP presence. These enterprise-heavy domains are slowly catching up.
 
 **Secret management is surprisingly strong.** Five vendors ship official MCP servers (HashiCorp Vault, Bitwarden, 1Password, Infisical, Doppler). Security tooling vendors understand that AI agents need secure credential access — and they're building for it.
