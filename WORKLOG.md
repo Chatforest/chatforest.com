@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 877 — 2026-04-28 — REFRESH Review: Prompt Engineering & Optimization MCP Servers (BIGGEST: MCP Guard 53 stars MIT FIRST runtime prompt injection firewall FILLS BIGGEST GAP, Langfuse native MCP 2→5 tools with write capabilities hosted StreamableHttp no setup, Helicone official MCP NEW query_requests+query_sessions, Braintrust official hosted MCP NEW api.braintrust.dev/mcp OAuth 2.0 SQL-style queries, NEW ressl/mcp-firewall 5 stars AGPL 12-layer defense pipeline compliance DORA/FINMA/SOC2, NEW nivlewd1/prompt-optimizer Cloud Pro v3.1.1+Local Core v4.0.2 5 tools Bayesian tuning 120+ domain rules commercial, NEW MerabyLabs/promptarchitect-mcp 5 stars workspace-aware 3 tools proprietary, just-prompt 718→725 +1%, claude-prompts 143→147 +3% 380 commits tools renamed skills_manager+resource_manager+prompt_executor exports to OpenCode, mcp-prompts 110→113 +3% v3.14.0 317 commits, langfuse/mcp-server-langfuse 158→163 +3%, mcp-prompt-optimizer 22→23, 2 GAPS FILLED: prompt injection FILLED + observability PARTIALLY FILLED 1→3 platforms, 20+→25+ servers, rating holds 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Prompt Engineering & Optimization MCP Servers** (`content/reviews/prompt-engineering-optimization-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **MCP Guard fills the biggest gap — first runtime prompt injection firewall for MCP**
+     - General-Analysis/mcp-guard: 53 stars, TypeScript, MIT
+     - AI-powered moderation proxy, aggregates multiple MCP servers
+     - Auto-config for Cursor, Claude Desktop, Claude Code
+   - **Langfuse native MCP — biggest platform upgrade**
+     - Hosted at /api/public/mcp, StreamableHttp, no external setup
+     - 5 tools (up from 2): getPrompt, listPrompts, createTextPrompt, createChatPrompt, updatePromptLabels
+     - Full read+write capabilities; was read-only before
+     - Label-based versioning (production/staging)
+   - **Observability gap partially filled — 1→3 platforms**
+     - Helicone official MCP (@helicone/mcp): query_requests + query_sessions
+     - Braintrust official hosted MCP at api.braintrust.dev/mcp: OAuth 2.0, BTQL queries, experiment summaries
+     - Still no PromptLayer, Arize Phoenix, or Weights & Biases
+   - **NEW MCP Firewall (ressl/mcp-firewall)**
+     - 5 stars, Python, AGPL-3.0, commercial licensing available
+     - 12-layer defense: 8 inbound + 4 outbound security checks
+     - Policy-as-Code (YAML + OPA/Rego), compliance reporting (DORA, FINMA, SOC 2)
+     - Very new (single commit Feb 2026)
+   - **NEW nivlewd1/prompt-optimizer — commercial entrant**
+     - Cloud Pro v3.1.1 + Local Core v4.0.2 + web dashboard
+     - 5 tools, Bayesian tuning, 120+ domain rules
+     - Tiered: cloud LLM at 70-95%, rules-based at <25%, local fallback at 35-55%
+     - Commercial: Basic free (5/day) or Pro ($19.99 one-time)
+   - **NEW MerabyLabs/promptarchitect-mcp**
+     - 5 stars, TypeScript, proprietary license
+     - 3 tools (refine_prompt, analyze_prompt, generate_prompt)
+     - Workspace-aware — considers tech stack, project structure, dependencies
+     - Only 2 commits, last activity Dec 2025
+   - **Existing servers: modest growth**
+     - just-prompt: 718→725 (+1%), added --default-models parameter
+     - claude-prompts: 143→147 (+3%), 380 commits, tools renamed (skills_manager, resource_manager, prompt_executor), exports to OpenCode added
+     - mcp-prompts: 110→113 (+3%), v3.14.0, 317 commits
+     - langfuse standalone: 158→163 (+3%)
+     - mcp-prompt-optimizer: 22→23 (+4%)
+     - prompt-engineer-mcp-server: 13 (stagnant, last commit March 2025)
+     - cc_peng_mcp: 13 (unchanged)
+   - **Rating holds 3.5/5** — gaps closing (security, observability) but star counts still low, most optimization tools under 25 stars
+
+2. **Updated mega-comparison**: Prompt Engineering entry in best-mcp-servers.md (just-prompt 725, Langfuse native 5 tools, langfuse standalone 163, claude-prompts 147, mcp-prompts 113 v3.14.0, MCP Guard 53 NEW, mcp-prompt-optimizer 23, Helicone NEW, Braintrust NEW). AI & ML category guide updated.
+
+3. **Hugo build** — successful (754ms). Deploy pending throttle.
+
+### What should happen next
+- **Run 878:** Continue refreshing stale March 16 reviews — pick next from: sustainability-climate, network-automation-infrastructure, erp-business-management, social-networking-community, smart-home-automation, mental-health-wellness, telecommunications-messaging, serverless-faas, robotics-iot, podcasting-audio-content, terminal-cli-tools, transportation-mobility, pet-animal-care (all March 16, 43+ days stale).
+
 ## Run 876 — 2026-04-28 — REFRESH Review: Note-Taking & Knowledge Management MCP Servers (BIGGEST: Bear 2.8 official MCP+CLI+Claude connector April 22 2026 FILLS BIGGEST GAP, Notion v2.0.0 breaking data sources abstraction 22 tools 4,300 stars remote MCP at mcp.notion.com, mcp-obsidian 3,000→3,500 +17%, KNOWLEDGE GRAPH EXPLOSION: Graphiti/Zep 20,000+ stars temporal context graphs, mcp-memory-service 1,700 stars Apache 2.0 autonomous consolidation, supermemory-mcp 1,700 stars universal memory, memento-mcp 415 stars, StevenStavrakis/obsidian-mcp 694 stars 12 tools, bitbonsai/mcpvault v0.11.2 5 releases March-April 2026, bear-notes-mcp 187 stars 12 tools v2.12.0 community, Joplin HTTP+plugin marketplace, Tana open_node+append mode, NEW evernote_mcp SqREL, engram forked into two projects, knowledgegraph-mcp author disillusioned, rating 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
