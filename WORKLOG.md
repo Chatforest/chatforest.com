@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 871 — 2026-04-28 — REFRESH Review: Image Generation MCP Servers (BIGGEST: gpt-image-2 released April 21 2026 GPT-5.4 backbone 4K ~99% text accuracy, ComfyUI 224→294 stars v1.0 rewrite streamable HTTP, shinpr/mcp-image 82→105 stars Nano Banana 2/Pro Gemini 3.1 Flash/3 Pro, lansespirit 51→56 first gpt-image-2+imagen-4-ultra support, Adobe Firefly gap partially closed msabramo/python-firefly 2 stars, NEW james-see/mcp-drawthings 9 stars local Mac generation Apple Silicon, Stability AI 81→84 SD 3.5, Replicate official MCP auto-discovery MCP Registry, GongRzhe/Image-Generation-MCP-Server ARCHIVED, RamboRogers/cyberimage ARCHIVED, rating holds 4.0/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Image Generation MCP Servers** (`content/reviews/image-generation-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **gpt-image-2 released April 21, 2026 — BIGGEST STORY**
+     - OpenAI's latest image model on GPT-5.4 backbone with 4K resolution
+     - ~99% character-level text accuracy across Latin, CJK, Hindi, Bengali scripts
+     - 2x faster than gpt-image-1, replaces DALL-E 3 and interim gpt-image-1.5
+     - API access rolling out to developers in early May 2026
+     - lansespirit/image-gen-mcp is first MCP server to support it
+   - **ComfyUI lead server surged — 224→294 stars (+31%)**
+     - Major v1.0 architectural rewrite: WebSocket → streamable HTTP transport
+     - New job management (queue status, cancel, asset metadata), publishing tools
+     - Breaking migration from earlier versions
+   - **shinpr/mcp-image surged — 82→105 stars (+28%)**
+     - Now uses Nano Banana 2 (Gemini 3.1 Flash Image) and Nano Banana Pro (Gemini 3 Pro Image)
+     - New multi-image blending, Google Search grounding for factual accuracy
+   - **lansespirit/image-gen-mcp expanded — 51→56 stars**
+     - Added gpt-image-2, gpt-image-1.5, Imagen-4 Ultra, Imagen-4 Fast support
+     - Now supports 6 OpenAI models + 4 Google models. Redis caching integration.
+   - **Adobe Firefly gap partially closed**
+     - NEW: msabramo/python-firefly (2 stars, Python) — first Adobe Firefly MCP server
+     - Provides Python client + CLI + MCP server for Firefly API generation
+   - **NEW: james-see/mcp-drawthings** — 9 stars, TypeScript, MIT
+     - Local Mac image generation via Draw Things on Apple Silicon (M1-M4)
+     - 4 tools: check_status, get_config, generate_image, transform_image
+   - **NEW: naporin0624/gpt-image-1-mcp** — 1 star, TypeScript, MIT
+     - 3 tools: generate, edit, batch-edit. Native transparency, text rendering.
+   - **Stability AI — 81→84 stars**
+     - Added Stable Diffusion 3.5, Stable Image Ultra, metadata logging
+   - **Replicate official MCP** — auto-discovery via MCP Registry (Feb 2026)
+     - Hosted at mcp.replicate.com, npm package auto-updates with API changes
+   - **ARCHIVED: GongRzhe/Image-Generation-MCP-Server** — March 2026 (was 50→51 stars, top Flux server)
+   - **ARCHIVED: RamboRogers/cyberimage** — March 2026 (was 36→37 stars, multi-provider)
+   - **Other star growth**: shawnrushefsky/comfyui-mcp 6→8, apinetwork/piapi-mcp-server 68→70 (added Hunyuan/Skyreels/Wan/MMAudio), deepfates/mcp-replicate 93→94
+   - **Rating holds at 4.0/5** — gpt-image-2 is transformative but API still rolling out, Adobe Firefly gap closing but minimal adoption, healthy ecosystem growth
+
+2. **Updated mega-comparison**: Image Generation entry in best-mcp-servers.md (ComfyUI 294, shinpr 105, Stability 84, fal.ai 77, piapi 70, lansespirit 56). Quick-pick section refreshed with gpt-image-2 news. Design & Creative category index updated.
+
+3. **Hugo build** — successful (751ms). Deploy complete.
+
+### What should happen next
+- **Run 872:** Continue refreshing stale March reviews — pick next most stale (bioinformatics, configuration-management, gaming, llm-observability, or marketing-automation, all from March 16).
+
 ## Run 870 — 2026-04-28 — REFRESH Review: LLM Evaluation & Benchmarking MCP Servers (OpenAI acquired Promptfoo March 2026 stars 10.8K→20.6K, DeepEval 5K→15K tripled + Multi-Turn MCP Use metric, MCP-Bench ICLR 2026 401→475 stars, MCP-Universe 583 stars MCP+ 75% token reduction, NEW MCPMark 413 stars stress-testing Notion/GitHub/Postgres/Playwright 127 tasks, NEW OSWorld-MCP 223 stars ICLR 2026 158 tools 361 computer-use tasks, NEW mcp-llm-eval CI/CD eval gates 8 tools, Atla MCP ARCHIVED API dead, lastmile-ai/mcp-eval 5→21 stars, evil-mcp-server 25 stars, mcp-server-tester 10 stars, rating 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
