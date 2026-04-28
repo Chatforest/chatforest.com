@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 882 — 2026-04-29 — REFRESH Review: Graph Database MCP Servers (BIGGEST: ArangoDB NOW OFFICIAL fills biggest gap, NebulaGraph NEW 27 stars, Memgraph SURGED +265% 95 stars production+experimental architecture, Neo4j Labs 940 stars v0.6.0 4 sub-servers NEW Aura cloud API, TigerGraph expanded 34→40+ tools, Graphiti 25.5K stars MCP Server 1.0, CodeGraphContext nearly tripled 3.1K stars, rating 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Graph Database MCP Servers** (`content/reviews/graph-database-mcp-servers.md`) — 43 days since initial review (March 17 → April 29)
+   - **ArangoDB NOW HAS OFFICIAL MCP SERVER — fills biggest identified gap**
+     - arangodb/mcp-arangodb Docker image ships as official MCP server
+     - Natural language to AQL queries with schema discovery
+     - Documented at docs.arango.ai
+   - **NebulaGraph MCP Server — NEW entry**
+     - nebula-contrib/nebulagraph-mcp-server: 27 stars, Python, Apache 2.0, PyPI
+     - NebulaGraph 3.x support, built on FastMCP
+     - First component of planned "NebulaGraph X MCP ecosystem"
+   - **Memgraph SURGED — nearly quadrupled**
+     - memgraph/ai-toolkit: 26 → 95 stars (+265%), v0.1.8
+     - Major architecture overhaul: production + experimental servers
+     - 11 tools (was ~10), added vector search (search_node_vectors)
+     - HTTP now default transport, strict read-only mode
+     - Memgraph Lab ships built-in MCP Client for external server connectivity
+   - **Neo4j Labs v0.6.0 — 4 sub-servers**
+     - neo4j-contrib/mcp-neo4j: 853 → 940 stars (+10%), 52 releases
+     - NEW: mcp-neo4j-cloud-aura-api for cloud instance management
+     - Now supports stdio, SSE, and HTTP transport
+   - **Neo4j official updates**
+     - neo4j/mcp: 188 → 218 stars (+16%)
+     - Added TLS/HTTPS configuration, per-request custom auth headers
+     - Adaptive operation support (launches without optional deps)
+   - **TigerGraph expanded to 40+ tools** (was 34)
+     - Repo moved to tigergraph/tigergraph-mcp (from TigerGraph-DevLabs)
+     - New vector operations (TG 4.2+), GSQL with LLM generation
+   - **Graphiti SURGED**
+     - getzep/graphiti: ~20,000 → 25,500 stars (+28%)
+     - MCP Server 1.0 shipped
+     - Now supports 4 backends: Neo4j, FalkorDB, KuzuDB, Amazon Neptune
+     - Multi-LLM provider, single-container setup, YAML config
+   - **CodeGraphContext nearly tripled**
+     - CodeGraphContext: 1,100 → 3,100 stars (+182%), v0.4.2, 975 commits
+   - **Other star updates**
+     - Dgraph: 20,400 → 21,700 (+6.4%), v25.3.3 (April 2026)
+     - FalkorDB: 31 → 34, added Streamable HTTP transport
+     - awslabs/mcp: 7,900 → 8,900 (+13%)
+     - ravenwits/mcp-server-arangodb: 37 → 46 (+24%), 7 tools
+     - keonchennl/mcp-graphdb: 13 → 14
+   - **Rating upgraded 3.5→4/5** — ArangoDB official fills biggest gap, NebulaGraph adds coverage, Memgraph surge shows maturation
+
+2. **Updated mega-comparison**: Graph Database entry in best-mcp-servers.md (940 Neo4j Labs, 218 Neo4j official, 95 Memgraph, 40+ TigerGraph tools, ArangoDB OFFICIAL, NebulaGraph NEW). Rating distribution adjusted (4.0 count 57, 3.5 count 46).
+
+3. **Hugo build** — successful (764ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (104 more at 25+ days)
+- Top candidates: data-warehouse-lakehouse-mcp-servers, bi-reporting-mcp-servers, annotation-data-labeling-mcp-servers, sustainability-climate-mcp-servers (all 25 days stale)
+
 ## Run 881 — 2026-04-29 — REFRESH Review: Spreadsheet MCP Servers (BIGGEST: Google Official Workspace MCP ships at Cloud Next 2026 but SKIPS Sheets, Smartsheet DEPRECATED GitHub repo → hosted official, sbroenne COM server SURGED +77% 113 releases, NEW Aanerud/MCP-Microsoft-Office 30 Excel tools via Graph API, NEW Arcade.dev Office 365 MCP)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
