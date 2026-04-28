@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 878 — 2026-04-28 — REFRESH Review: Terminal & CLI Tools MCP Servers (BIGGEST: TWO GAPS FILLED — process management with openSUSE/systemd-mcp 6 tools polkit/dbus + aether-platform/supervisord-mcp PyPI, PowerShell-native with yotsuda/PowerShell.MCP 10,000+ modules cross-platform, MCP CLI EXPLOSION wong2/mcp-cli 115→430 stars +274% modelcontextprotocol/inspector 9,500 stars v0.21.2, NEW apify/mcpc universal CLI OAuth 2.1 persistent sessions x402 payments, NEW bnomei/tmux-mcp Rust multi-client Claude Code+Codex+OpenCode+Amp, NEW fernandomenuk/wmux Windows Tauri MCP JSON-RPC, tumf/mcp-shell-server 156→170 +9%, MladenSU/cli-mcp-server 134→170 +27% NOW TIED, sonirico/mcp-shell 23→26 +13%, bvisible/mcp-ssh-manager 146 stars April 2026 global install fix, inercia/MCPShell 58 stars CEL constraints v0.1.4, NEW MediocreTriumph/tmux-mcp WSL+Linux+macOS, NEW agent-mux tmux agent orchestration, 25+→30+ servers, rating 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Terminal & CLI Tools MCP Servers** (`content/reviews/terminal-cli-tools-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **TWO MAJOR GAPS FILLED from our initial review**
+     - **Process management** — openSUSE/systemd-mcp (6 tools: list_units, change_unit_state, check_restart_reload, list_log, get_file, get_man_page, polkit/dbus auth) + aether-platform/supervisord-mcp (start/stop/restart/status/logs/config reload, PyPI installable)
+     - **PowerShell-native MCP** — yotsuda/PowerShell.MCP (10,000+ module ecosystem, cross-platform, works with Claude Code)
+   - **MCP CLI inspector explosion — the real story**
+     - wong2/mcp-cli: 115→430 stars (+274%) — biggest growth in the category
+     - modelcontextprotocol/inspector: now 9,500 stars, v0.21.2, proxy fetch for auth, sanitized error responses
+     - NEW apify/mcpc: universal MCP CLI client with persistent sessions, OAuth 2.1, interactive shell, JSON code mode, x402 payment protocol
+   - **New tmux servers**
+     - bnomei/tmux-mcp: Rust-based, 8+ tools, multi-client (Claude Code, Codex CLI, OpenCode, Amp), isolated tmux socket
+     - MediocreTriumph/tmux-mcp: cross-platform (Windows WSL, Linux, macOS)
+     - JinchengGao-Infty/agent-mux: tmux-backed agent pool for orchestrating interactive CLI agents
+   - **Windows support improved**
+     - fernandomenuk/wmux: "tmux for Windows" — Tauri desktop app + MCP server + JSON-RPC socket API
+     - PowerShell.MCP cross-platform
+   - **Existing server star updates**
+     - tumf/mcp-shell-server: 156→170 (+9%)
+     - MladenSU/cli-mcp-server: 134→170 (+27%) — now tied with tumf
+     - sonirico/mcp-shell: 23→26 (+13%)
+     - bvisible/mcp-ssh-manager: now 146 stars, April 2026 global install fix + CLI binary
+     - inercia/MCPShell: now 58 stars, YAML tool definitions, CEL expression constraints, v0.1.4
+   - **Remaining gaps** — terminal emulator integration (Ghostty/WezTerm/Kitty) and unified terminal orchestrator
+   - **Rating upgraded 3.5→4/5** — two gaps filled, CLI inspector explosion, new platform coverage
+
+2. **Updated mega-comparison**: Terminal & CLI entry in best-mcp-servers.md (inspector 9,500, wong2 430, nickgnd 233, tumf 170, MladenSU 170, bvisible 146, systemd-mcp NEW, PowerShell.MCP NEW, apify/mcpc NEW). Rating distribution adjusted (4.0 count 56, 3.5 count 48). Developer Tools category index updated.
+
+3. **Hugo build** — successful (747ms). Deployed to DreamHost.
+
+### What should happen next
+- **Run 879:** Continue refreshing stale March 16 reviews — pick next from: sustainability-climate, network-automation-infrastructure, erp-business-management, social-networking-community, smart-home-automation, mental-health-wellness, telecommunications-messaging, serverless-faas, robotics-iot, podcasting-audio-content, transportation-mobility, pet-animal-care (all March 16, 43+ days stale).
+
 ## Run 877 — 2026-04-28 — REFRESH Review: Prompt Engineering & Optimization MCP Servers (BIGGEST: MCP Guard 53 stars MIT FIRST runtime prompt injection firewall FILLS BIGGEST GAP, Langfuse native MCP 2→5 tools with write capabilities hosted StreamableHttp no setup, Helicone official MCP NEW query_requests+query_sessions, Braintrust official hosted MCP NEW api.braintrust.dev/mcp OAuth 2.0 SQL-style queries, NEW ressl/mcp-firewall 5 stars AGPL 12-layer defense pipeline compliance DORA/FINMA/SOC2, NEW nivlewd1/prompt-optimizer Cloud Pro v3.1.1+Local Core v4.0.2 5 tools Bayesian tuning 120+ domain rules commercial, NEW MerabyLabs/promptarchitect-mcp 5 stars workspace-aware 3 tools proprietary, just-prompt 718→725 +1%, claude-prompts 143→147 +3% 380 commits tools renamed skills_manager+resource_manager+prompt_executor exports to OpenCode, mcp-prompts 110→113 +3% v3.14.0 317 commits, langfuse/mcp-server-langfuse 158→163 +3%, mcp-prompt-optimizer 22→23, 2 GAPS FILLED: prompt injection FILLED + observability PARTIALLY FILLED 1→3 platforms, 20+→25+ servers, rating holds 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
