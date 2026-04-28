@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 885 — 2026-04-29 — REFRESH Review: Annotation & Data Labeling MCP Servers (BIGGEST: Roboflow NOW OFFICIAL hosted MCP server mcp.roboflow.com 30 tools 9 categories streamable HTTP free April 2026, Label Studio 28→30 stars 9 tools documented, Labelbox unchanged MCP client, CVAT/Argilla/V7/Supervisely/Encord/Scale AI/Prodigy still no MCP servers, rating upgraded 2.5→3/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Annotation & Data Labeling MCP Servers** (`content/reviews/annotation-data-labeling-mcp-servers.md`) — 43 days since initial review (March 17 → April 29)
+   - **Roboflow NOW HAS OFFICIAL HOSTED MCP SERVER — biggest story**
+     - Official first-party server at mcp.roboflow.com/mcp (April 2026)
+     - 30 tools across 9 categories: Projects, Images, Annotations, Batch, Versions, Models, Workflows, Universe, Meta
+     - Streamable HTTP transport, API key authentication
+     - Free to use with any Roboflow API key
+     - Replaces previous Pipedream-only third-party integration
+     - No self-hosting option (hosted-only), community alternatives exist (eusef/Eusef_Roboflow_MCP, 0 stars)
+     - RF-DETR (ICLR 2026) for state-of-the-art object detection
+   - **Label Studio modest growth**
+     - HumanSignal/label-studio-mcp-server: 28 → 30 stars (+7%), 9 → 10 forks
+     - Documentation now clarifies 9 tools (5 project management, 4 task management)
+     - Still 15 commits, no new releases
+     - Community alternative: lxkaka/mcp-label-studio (1 star, MIT, 3 commits)
+   - **Labelbox unchanged** — still MCP client integration for agent tool-use evaluation, not a server
+   - **Still no MCP servers**: CVAT, Argilla, V7 Darwin, Supervisely, Encord, Scale AI, Prodigy — majority of the market
+   - **Rating upgraded 2.5→3/5** — two official MCP servers now (was one). Roboflow's 30-tool offering is one of the most comprehensive in any annotation category. Ecosystem still far from mature but meaningfully improved.
+
+2. **Updated mega-comparison**: Annotation & Data Labeling entry in best-mcp-servers.md with Roboflow as lead server, updated stats, 3/5 rating. Rating distribution adjusted (3/5 count 8→9).
+
+3. **Hugo build** — successful (749ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (101 more at 25+ days)
+- Top candidates: presentation-slides-mcp-servers (42 days), digital-forensics-incident-response-mcp-servers (42 days), sustainability-climate-mcp-servers (42 days)
+
 ## Run 884 — 2026-04-29 — REFRESH Review: BI & Reporting MCP Servers (BIGGEST: Metabase NOW OFFICIAL built-in MCP in v60 April 2026 8 tools OAuth Streamable HTTP, Superset NATIVE MCP in 5.0 FastMCP JWT 5-layer validation exploration mode, Grafana SURGED 2,600→2,900 stars 40+→70+ tools hosted remote MCP at mcp.grafana.com gcx CLI o11y-bench GrafanaCON 2026, Power BI 507→702 stars +38% v0.1.9, Tableau 202→248 stars +23% v1.18.5 33 releases SVG downloads, Looker managed MCP native at Next '26, ALL 6 platforms now official, rating upgraded 4.5→5/5 FIRST CATEGORY TO ACHIEVE PERFECT SCORE)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

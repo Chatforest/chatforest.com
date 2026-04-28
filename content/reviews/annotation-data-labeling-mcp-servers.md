@@ -1,34 +1,34 @@
 ---
-title: "Annotation & Data Labeling MCP Servers — Label Studio, Labelbox, Roboflow, and More"
+title: "Annotation & Data Labeling MCP Servers — Label Studio, Roboflow, Labelbox, and More"
 date: 2026-03-17T21:00:00+09:00
-description: "Annotation and data labeling MCP servers reviewed: Label Studio (official, 28 stars, Python, project/task/prediction management), Labelbox (MCP client integration for agent"
-og_description: "Annotation & data labeling MCP servers: Label Studio (official, 28 stars), Labelbox (MCP client), Roboflow (CV annotation). The ecosystem is early-stage but growing. Rating: 2.5/5."
+description: "Annotation and data labeling MCP servers reviewed: Label Studio (official, 30 stars, 9 tools), Roboflow (NOW OFFICIAL hosted MCP, 30 tools, free), Labelbox (MCP client for agent evaluation). Rating: 3/5."
+og_description: "Annotation & data labeling MCP servers: Label Studio (official, 30 stars, 9 tools), Roboflow (NOW OFFICIAL hosted MCP, 30 tools, free, April 2026), Labelbox (MCP client). Rating: 3/5."
 content_type: "Review"
-card_description: "Data labeling meets MCP, but the ecosystem is thin. Label Studio has the only dedicated MCP server. Labelbox integrates MCP for agent evaluation workflows. Most annotation platforms haven't built MCP servers yet — expect this to change as agentic AI drives demand for labeled training data."
-last_refreshed: 2026-03-17
+card_description: "Roboflow launched an official hosted MCP server in April 2026 with 30 tools — the biggest addition since our initial review. Label Studio remains the open-source leader. Two platforms now have dedicated official MCP servers, up from one. Most annotation platforms still haven't built MCP servers, but momentum is building."
+last_refreshed: 2026-04-29
 ---
 
 Data labeling is the foundation of supervised machine learning — and it's one of the areas where MCP integration makes the most practical sense. An AI agent that can programmatically create labeling projects, import data, manage annotations, and push predictions into a labeling pipeline eliminates enormous amounts of manual coordination between ML engineers and annotation teams.
 
-The reality, though, is that the annotation MCP server ecosystem is still early. Only one major labeling platform has a dedicated MCP server (Label Studio). Others like Labelbox have integrated MCP as a client-side protocol for evaluating agentic tool use, rather than exposing their labeling platform as an MCP server. Most annotation tools — CVAT, Supervisely, Encord, V7 Darwin, Scale AI — don't have MCP servers yet. Part of our **[Data & Analytics](/categories/data-analytics/)** category.
+**April 2026 update:** Roboflow launched an official hosted MCP server at mcp.roboflow.com with 30 tools — the biggest addition since our initial review. The ecosystem now has two platforms with dedicated official MCP servers (Label Studio and Roboflow), plus Labelbox's MCP client integration for agent evaluation. Most annotation tools — CVAT, Supervisely, Encord, V7 Darwin, Scale AI — still don't have MCP servers, but the gap is closing. Rating upgraded from 2.5 to 3/5. Part of our **[Data & Analytics](/categories/data-analytics/)** category.
 
 ## Label Studio — Official MCP Server
 
 | Detail | Info |
 |--------|------|
-| [HumanSignal/label-studio-mcp-server](https://github.com/HumanSignal/label-studio-mcp-server) | 28 stars |
+| [HumanSignal/label-studio-mcp-server](https://github.com/HumanSignal/label-studio-mcp-server) | 30 stars |
 | Language | Python |
 | Transport | stdio |
 | License | Apache-2.0 |
 | Requires | Running Label Studio instance + API key |
 
-Label Studio is the leading open-source data labeling platform, and HumanSignal (the company behind it) has built the only dedicated annotation MCP server in the ecosystem. The server connects to a Label Studio instance via the official label-studio-sdk and exposes tools for the core labeling workflow.
+Label Studio is the leading open-source data labeling platform, and HumanSignal (the company behind it) has built a dedicated annotation MCP server. The server connects to a Label Studio instance via the official label-studio-sdk and exposes 9 tools for the core labeling workflow.
 
-**Project Management** — Create projects, update project settings, list projects, and view project configurations. An agent can spin up a new labeling project with the right labeling interface template programmatically.
+**Project Management (5 tools)** — Create projects, update project settings, list projects, retrieve project details, and view project configurations. An agent can spin up a new labeling project with the right labeling interface template programmatically.
 
-**Task Management** — Import tasks from files, list tasks within a project, and retrieve task data along with existing annotations. This is the core value — feeding data into the labeling pipeline without manual upload steps.
+**Task Management (4 tools)** — Import tasks from JSON files, list tasks within a project, and retrieve task data along with existing annotations. This is the core value — feeding data into the labeling pipeline without manual upload steps.
 
-**Prediction Integration** — Add model predictions to specific tasks. This enables pre-labeling workflows where an ML model generates initial labels that human annotators then correct. Pre-labeling can cut annotation time by 50-80% depending on model quality.
+**Prediction Integration** — Add model predictions to specific tasks with optional versioning and scoring. This enables pre-labeling workflows where an ML model generates initial labels that human annotators then correct. Pre-labeling can cut annotation time by 50-80% depending on model quality.
 
 ### What Works Well
 
@@ -40,7 +40,7 @@ Label Studio is the leading open-source data labeling platform, and HumanSignal 
 
 ### What Doesn't Work Well
 
-**Low star count.** 28 stars suggests limited community adoption so far. This may reflect Label Studio users not yet using MCP-enabled editors, rather than any problem with the server itself.
+**Low star count.** 30 stars suggests limited community adoption so far. This may reflect Label Studio users not yet using MCP-enabled editors, rather than any problem with the server itself.
 
 **Limited tool count.** The server focuses on core operations. Advanced Label Studio features like webhook management, data manager views, annotation agreement metrics, and team management aren't exposed through MCP tools.
 
@@ -62,29 +62,47 @@ Teams building AI agents that use tools (function calling, MCP tool use, etc.) a
 
 This is **not** a general-purpose annotation MCP server. You can't use it to label images, classify text, or annotate NER spans through MCP.
 
-## Roboflow — Computer Vision Annotation via MCP
+## Roboflow — Official Hosted MCP Server (NEW April 2026)
 
 | Detail | Info |
 |--------|------|
-| [Roboflow MCP](https://mcp.pipedream.com/app/roboflow) | Via Pipedream |
-| Platform | Cloud |
-| Focus | Computer vision datasets and models |
+| [mcp.roboflow.com](https://mcp.roboflow.com/) | Official hosted server |
+| Transport | Streamable HTTP |
+| Tools | 30 across 9 categories |
+| Auth | API key via `x-api-key` header |
+| Price | Free |
+| Docs | [docs.roboflow.com/developer/mcp-server](https://docs.roboflow.com/developer/mcp-server) |
 
-Roboflow offers MCP server access through Pipedream's integration platform, enabling AI assistants to interact with Roboflow's computer vision tools. The integration allows management of datasets, model training, and deployment workflows.
+**This is the biggest change since our initial review.** Roboflow launched an official, first-party hosted MCP server in April 2026 — replacing the previous Pipedream-only third-party integration. The server lives at `mcp.roboflow.com/mcp` and exposes 30 tools across the full Roboflow platform.
 
-Roboflow's broader ecosystem includes powerful open-source tools: [supervision](https://github.com/roboflow/supervision) for detection post-processing, [inference](https://github.com/roboflow/inference) for model deployment, and [autodistill](https://github.com/autodistill/autodistill) for using foundation models to auto-label data.
+**30 Tools Across 9 Categories:**
+- **Projects** — workspace and project management
+- **Images** — upload preparation and search
+- **Annotations** — saving annotations to images
+- **Batch** — image batching and labeling job creation
+- **Versions** — dataset version creation and inspection
+- **Models** — model training and inference
+- **Workflows** — building and executing inference pipelines
+- **Universe** — searching Roboflow's public dataset marketplace
+- **Meta** — feedback and issue reporting
+
+Roboflow's broader ecosystem includes powerful open-source tools: [supervision](https://github.com/roboflow/supervision) for detection post-processing, [inference](https://github.com/roboflow/inference) for model deployment, [autodistill](https://github.com/autodistill/autodistill) for using foundation models to auto-label data, and [RF-DETR](https://github.com/roboflow/rf-detr) (ICLR 2026) for state-of-the-art object detection.
 
 ### What Works Well
 
-**Full platform access.** The MCP integration connects to Roboflow's entire platform — dataset management, model training, deployment, and inference.
+**Official and free.** This is Roboflow's own hosted server — no third-party dependency. Free to use with any Roboflow API key.
 
-**Strong ecosystem.** Roboflow has 155+ GitHub repositories and a large computer vision community. The MCP integration is backed by a well-resourced company.
+**Comprehensive tooling.** 30 tools cover the full computer vision workflow from project creation through annotation, training, inference, and pipeline execution. This is the most complete annotation-adjacent MCP server in the ecosystem.
+
+**Modern transport.** Streamable HTTP with API key authentication. Works with Claude Code, Claude Desktop, and any MCP-compatible client. One-command setup for Claude Code CLI.
+
+**Strong ecosystem.** Roboflow has 155+ GitHub repositories, including RF-DETR (ICLR 2026 SOTA object detection). The MCP server is backed by a well-resourced, CV-focused company.
 
 ### What Doesn't Work Well
 
-**Third-party hosting.** The MCP server runs through Pipedream, not directly from Roboflow. This adds a dependency and may not meet security requirements for teams working with sensitive training data.
+**No self-hosting option.** The server is hosted-only — there's no open-source repository to self-host. Teams with strict data sovereignty requirements may need to use the Roboflow Python SDK to build a custom server. Community alternatives exist ([eusef/Eusef_Roboflow_MCP](https://github.com/eusef/Eusef_Roboflow_MCP)) but have minimal adoption.
 
-**No dedicated repository.** There's no standalone open-source Roboflow MCP server to self-host. Teams wanting full control need to build their own using the Roboflow Python SDK.
+**Computer vision only.** Roboflow's MCP server is purpose-built for CV workflows. It's excellent for object detection, segmentation, and classification annotation — but not for text, audio, or multimodal labeling tasks.
 
 ## Platforms Without MCP Servers (Yet)
 
@@ -106,34 +124,34 @@ Several major annotation platforms don't have MCP servers but are worth watching
 
 ## The Landscape
 
-| Platform | Server | Stars | Type | Official? |
-|----------|--------|-------|------|-----------|
-| Label Studio | [HumanSignal/label-studio-mcp-server](https://github.com/HumanSignal/label-studio-mcp-server) | 28 | MCP Server | Yes |
-| Labelbox | Built-in MMC editor | — | MCP Client | Yes |
-| Roboflow | [Via Pipedream](https://mcp.pipedream.com/app/roboflow) | — | Integration | Partial |
-| CVAT | — | — | — | No |
-| Argilla | — | — | — | No |
-| V7 Darwin | — | — | — | No |
-| Supervisely | — | — | — | No |
-| Prodigy | — | — | — | No |
+| Platform | Server | Stars | Tools | Type | Official? |
+|----------|--------|-------|-------|------|-----------|
+| Roboflow | [mcp.roboflow.com](https://mcp.roboflow.com/) | Hosted | 30 | MCP Server | Yes |
+| Label Studio | [HumanSignal/label-studio-mcp-server](https://github.com/HumanSignal/label-studio-mcp-server) | 30 | 9 | MCP Server | Yes |
+| Labelbox | Built-in MMC editor | — | — | MCP Client | Yes |
+| CVAT | — | — | — | — | No |
+| Argilla | — | — | — | — | No |
+| V7 Darwin | — | — | — | — | No |
+| Supervisely | — | — | — | — | No |
+| Prodigy | — | — | — | — | No |
 
 ## Who Should Use What
 
-**Label Studio users:** The official MCP server is the clear choice. It's maintained, uses the official SDK, and covers the core workflow. If you need advanced features, you can extend it or contribute upstream.
+**Computer vision teams:** Roboflow's official MCP server is now the strongest option in this category — 30 tools, hosted, free, and backed by a well-resourced CV platform. If you're doing object detection, segmentation, or classification annotation, start here.
+
+**Label Studio users:** The official MCP server is the clear choice for general-purpose labeling. It's maintained, uses the official SDK, and covers the core workflow. If you need advanced features, you can extend it or contribute upstream.
 
 **Teams evaluating agent tool use:** Labelbox's MCP client integration is purpose-built for this. If you're building agents that call tools and need human evaluation of those interactions, Labelbox is currently the strongest option.
 
-**Computer vision teams:** Roboflow via Pipedream works for basic integration. For production use with sensitive data, consider building a custom MCP server using Roboflow's Python SDK.
+**Everyone else:** The gap is closing but still wide. If you're using CVAT, Argilla, or Prodigy, consider building a lightweight MCP server wrapper around their existing APIs — the Python MCP SDK makes this straightforward.
 
-**Everyone else:** Wait. The annotation MCP ecosystem is early. If you're using CVAT, Argilla, or Prodigy, consider building a lightweight MCP server wrapper around their existing APIs — the Python MCP SDK makes this straightforward.
+## Rating: 3/5 *(up from 2.5/5)*
 
-## Rating: 2.5/5
+The annotation and data labeling MCP ecosystem has improved meaningfully since our initial review. Roboflow's official hosted MCP server — launched in April 2026 with 30 tools across 9 categories — is a genuine addition. The ecosystem now has two platforms with dedicated official MCP servers (Roboflow for computer vision, Label Studio for general-purpose labeling), plus Labelbox's MCP client for agent evaluation.
 
-The annotation and data labeling MCP ecosystem is underdeveloped relative to the opportunity. Label Studio is the only platform with a dedicated, open-source MCP server, and it works well for what it covers. Labelbox has taken an interesting but narrow approach with MCP as a client protocol for agent evaluation.
+The gap between supply and demand is still striking. Data labeling is a $4+ billion industry. Every ML team needs annotation workflows. CVAT, Argilla, Supervisely, Encord, V7 Darwin, Scale AI, and Prodigy still have no MCP servers — that's the majority of the market. But the direction is clear: Roboflow went from a Pipedream-only third-party integration to a 30-tool official hosted server in six weeks. Expect more platforms to follow.
 
-The gap between supply and demand here is striking. Data labeling is a $4+ billion industry. Every ML team needs annotation workflows. Agentic AI is creating new demand for automated data pipeline management. Yet most major annotation platforms haven't built MCP servers.
-
-This will likely change quickly. Label Studio's server took 15 commits to build — the Python MCP SDK makes it easy to wrap existing REST APIs. Expect CVAT, Argilla, and Prodigy to get community MCP servers within the next 6-12 months. For now, Label Studio is the only real option, and it's a good one if you're already in that ecosystem.
+The rating upgrade from 2.5 to 3/5 reflects Roboflow's significant contribution. Two official servers beats one, and Roboflow's 30-tool offering is one of the most comprehensive in any annotation category. The ecosystem is no longer "just Label Studio" — but it's still far from mature.
 
 ---
 
