@@ -146,9 +146,9 @@ Covers the **full healthcare data ecosystem**: FHIR/EHR integration, drug discov
 
 Covers the **physical computing frontier**: robotics (ROS/ROS2, robot arms, drones), smart home automation (Home Assistant, Hubitat, OpenHAB), IoT platforms (ThingsBoard, AWS IoT SiteWise), embedded systems (ESP32, Arduino, Raspberry Pi), 3D printing (OctoPrint, Klipper, Bambu Lab), and industrial controllers (PLCs, OPC UA). Over **150 servers** evaluated across hardware that AI agents can control.
 
-**Highlights**: xiaozhi-esp32 (24,900 stars) is the breakout star — voice AI on ESP32 with 70+ hardware platforms. Home Assistant dominates smart home with 1,600 stars and 96 tools. DimOS (1,700 stars) emerged as the first agentic robotics OS. 3D printing covers OctoPrint, Klipper, Bambu Lab, and FreeCAD (605 stars). Major gap: no Google Home, Alexa, HomeKit, or SmartThings MCP servers.
+**Highlights**: xiaozhi-esp32 (24,900 stars) is the breakout star — voice AI on ESP32 with 70+ hardware platforms. Home Assistant dominates smart home with ha-mcp at 2,600+ stars and 86+ tools. Consumer platform gap closing fast — Apple HomeKit, Samsung SmartThings, Amazon Alexa, Google Home all gained MCP servers. Tuya shipped official MCP SDK. DimOS (1,700 stars) emerged as the first agentic robotics OS. 3D printing covers OctoPrint, Klipper, Bambu Lab, and FreeCAD (605 stars).
 
-**Top-rated**: Robotics (4.5/5), Printing & 3D Printing (4/5), IoT & Embedded (4/5), Robotics & IoT (3.5/5), Smart Home (3.5/5)
+**Top-rated**: Smart Home (4.5/5), Robotics (4.5/5), Printing & 3D Printing (4/5), IoT & Embedded (4/5), Robotics & IoT (3.5/5)
 
 [Browse all 5 IoT & Hardware reviews →](/categories/iot-hardware/)
 

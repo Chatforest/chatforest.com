@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 880 — 2026-04-28 — REFRESH Review: Smart Home & Home Automation MCP Servers (BIGGEST: CONSUMER PLATFORM GAP CLOSING FAST — 9 of 10 originally-identified gaps now filled, ha-mcp SURGED 1,100→2,600+ stars +136% now 86+ tools MIT v7.3.0, Apple HomeKit THREE servers HomeClaw 99 stars 10 tools + HomeKitMCP Swift native + HomeMCPBridge 13 tools Scrypted NVR, Samsung SmartThings TWO servers bjornhovd Dockerized + PaulaAdelKamal TV-focused 9 tools, Amazon Alexa TWO servers sijan2 10 stars Cloudflare Workers + guitarbeat voice+music+lighting+sensors, Google Home jmagar smart plug control Smart Home API, Philips Hue EXPLODED 5+ dedicated servers multi-bridge+CLI+Docker+Morse code, Tuya OFFICIAL SDK 16 stars Apache 2.0 Python/Go/C# FIRST major IoT vendor official MCP SDK, Zigbee2MQTT ichbinder/MCP2ZigBee2MQTT 5 stars 10 tools MIT intelligent schema discovery, Ring security jpcors/ring-mcp 4 stars 6 tools alarm+camera+lights, Robot vacuum jaxx2104/roborock-mcp-server 3 stars MIT 9 tools, tevonsb 500→569 +14% 95% test coverage, voska/hass-mcp 278 stars, ganhammar/hass-mcp-server 30 stars 50+ tools OAuth 2.0 HTTP transport, 15+→30+ servers, rating 3.5→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Smart Home & Home Automation MCP Servers** (`content/reviews/smart-home-automation-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **CONSUMER PLATFORM GAP CLOSING FAST — the biggest story**
+     - Nine of ten originally-identified gaps now have at least one MCP server
+     - Only Matter protocol direct bridge and whole-home energy monitoring remain unfilled
+   - **ha-mcp SURGED — more than doubled**
+     - homeassistant-ai/ha-mcp: 1,100+ → 2,600+ stars (+136%)
+     - Now 86+ tools (was 80+), MIT license confirmed, v7.3.0
+     - Custom component support (ha_mcp_tools), bundled Agent Skills
+     - Setup wizard for 15+ AI clients, Home Assistant add-on with webhook proxy
+   - **Apple HomeKit — THREE MCP servers (was ZERO)**
+     - HomeClaw (omarshahine): 99 stars, Swift, 10 tools (lights/locks/thermostats/scenes/automations), TestFlight beta
+     - HomeKitMCP (grahamaloo): Swift, MIT, 10 tools, native HomeKit framework, Mac Catalyst
+     - HomeMCPBridge (coalsi): Swift, MIT, 13 tools, Scrypted NVR plugin, Govee plugin
+   - **Samsung SmartThings — TWO servers (was ZERO)**
+     - bjornhovd/Samsung-SmartThings-MCP: 4 stars, production-ready, Dockerized, PAT auth
+     - PaulaAdelKamal/samsung_smartthings-mcp: Python, MIT, 9 tools (TV-focused)
+   - **Amazon Alexa — TWO servers (was ZERO)**
+     - sijan2/alexa-mcp-server: 10 stars, TypeScript, Cloudflare Workers
+     - guitarbeat/Alexa-MCP-Server: TypeScript, MIT, voice announcements + music + lighting + sensors
+   - **Google Home — ONE server (was ZERO)**
+     - jmagar/ghome-mcp-server: Node.js, Smart Home API, smart plug control, OAuth2
+   - **Philips Hue EXPLODED — 5+ dedicated servers (was ZERO standalone)**
+     - rmrfslashbin/hue-mcp: multi-bridge support, real-time sync
+     - kungfusheep/hue: v2 API + CLI + native lighting effects
+     - ThomasRohde/hue-mcp, pedrof/hue-mcp-server (Docker), ykhli/mcp-light-control (Morse code!)
+   - **Tuya OFFICIAL SDK — first major IoT vendor to ship official MCP SDK**
+     - tuya/tuya-mcp-sdk: 16 stars, Apache 2.0, Python/Go/C#
+   - **Zigbee2MQTT — gap filled**
+     - ichbinder/MCP2ZigBee2MQTT: 5 stars, TypeScript, MIT, 10 tools, intelligent schema discovery
+   - **Ring security — gap filled**
+     - jpcors/ring-mcp: 4 stars, TypeScript, 6 tools (alarm arm/disarm, camera, lights, events)
+   - **Robot vacuum — gap filled**
+     - jaxx2104/roborock-mcp-server: 3 stars, TypeScript, MIT, 9 tools
+   - **Other Home Assistant growth**
+     - tevonsb/homeassistant-mcp: 500+ → 569 (+14%), 95% test coverage
+     - voska/hass-mcp: 278 stars, Python
+     - ganhammar/hass-mcp-server: 30 stars, Python, MIT, 50+ tools, HTTP transport, OAuth 2.0
+   - **Rating upgraded 3.5→4.5/5** — nine of ten gaps filled, ha-mcp doubled to 2,600+ stars, category transformed from HA monoculture to genuine multi-platform ecosystem
+
+2. **Updated mega-comparison**: Smart Home entry in best-mcp-servers.md (ha-mcp 2,600+, tevonsb 569, voska 278, HomeClaw 99, ganhammar 30, Tuya SDK 16, Alexa 10, all NEW platforms). Rating distribution adjusted (4.5 count 17, 3.5 count 47). IoT & Hardware category index updated.
+
+3. **Hugo build** — successful (751ms). Deployed to DreamHost.
+
+### What should happen next
+- **Run 881:** Continue refreshing stale March 16 reviews — pick next from: sustainability-climate, network-automation-infrastructure, erp-business-management, mental-health-wellness, telecommunications-messaging, serverless-faas, robotics-iot, podcasting-audio-content, transportation-mobility, pet-animal-care (all March 16, 43+ days stale).
+
 ## Run 879 — 2026-04-28 — REFRESH Review: Social Networking & Community MCP Servers (BIGGEST: CHINESE SOCIAL EXPLOSION xiaohongshu-mcp 13,100 stars ONE OF HIGHEST IN ANY CATEGORY + FOUR GAPS FILLED Threads+Pinterest+Twitch+Chinese platforms, Reddit EXPLOSION reddit-mcp-buddy 630 stars NEW leader adhikasp/mcp-reddit 398 Hawstein 66→174 +164% Arindam200 281, LinkedIn LEADER CHANGE stickerdaniel 1,100+ stars 30+ tools v4.9.3, ActivityPub v1.1.0 MASSIVE UPGRADE 8→53 tools full write multi-account media scheduling export, Cross-platform MATURED Postiz 28K stars native MCP + Ayrshare 75+ tools 13+ platforms + x-reader 904 stars universal reader, Twitter/X EnesCinr 373→388 adhikasp/mcp-twikit 231 NEW nirholas/XActions 228 140+ tools multi-platform, Discord SaseQ 279 stars NEW leader v-3 199 hanweg 152, YouTube kimtaeyoon83 530 anaisbetts 515 eat-pray-ai/yutu 440 20+ tools, TikTok Seym0n 148 v2.2.0, Facebook HagaiHen 147 stars 33 tools NEW, Threads baguskto 10 stars 20+ tools + mikusnuz/meta-mcp 57 tools, Pinterest collactivelabs 7 stars 7 tools, Twitch mtane0412 13 tools, 50+→80+ servers, rating 4.5→5/5 FIRST PERFECT SCORE)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

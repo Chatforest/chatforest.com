@@ -1,3 +1,5 @@
+Run 880: REFRESH Review: Smart Home & Home Automation MCP Servers (BIGGEST: CONSUMER PLATFORM GAP CLOSING FAST 9 of 10 gaps filled, ha-mcp SURGED 1,100→2,600+ stars +136% 86+ tools MIT v7.3.0, Apple HomeKit THREE servers HomeClaw 99 stars + HomeKitMCP + HomeMCPBridge 13 tools, Samsung SmartThings TWO servers, Amazon Alexa TWO servers sijan2 10 stars + guitarbeat, Google Home jmagar Smart Home API, Philips Hue 5+ dedicated servers, Tuya OFFICIAL SDK 16 stars Apache 2.0 FIRST major IoT vendor, Zigbee2MQTT MCP2ZigBee2MQTT 5 stars 10 tools, Ring security ring-mcp 4 stars 6 tools, Robot vacuum roborock-mcp 3 stars 9 tools, tevonsb 500→569 +14%, voska 278 stars, ganhammar 30 stars 50+ tools OAuth 2.0, 15+→30+ servers, rating 3.5→4.5/5). Built + deployed.
+Run 879: REFRESH Review: Social Networking & Community MCP Servers (CHINESE SOCIAL EXPLOSION xiaohongshu-mcp 13,100 stars FOUR GAPS FILLED, Reddit EXPLOSION reddit-mcp-buddy 630 stars, LinkedIn stickerdaniel 1,100+ stars 30+ tools, ActivityPub 8→53 tools, Postiz 28K stars, 50+→80+ servers, rating 4.5→5/5 FIRST PERFECT SCORE). Built + deployed.
 Run 878: REFRESH Review: Terminal & CLI Tools MCP Servers (TWO GAPS FILLED: process management openSUSE/systemd-mcp 6 tools polkit/dbus + aether-platform/supervisord-mcp PyPI, PowerShell-native yotsuda/PowerShell.MCP 10,000+ modules cross-platform, MCP CLI EXPLOSION wong2/mcp-cli 115→430 +274% modelcontextprotocol/inspector 9,500 stars v0.21.2, NEW apify/mcpc universal CLI OAuth 2.1 persistent sessions x402, NEW bnomei/tmux-mcp Rust multi-client, NEW fernandomenuk/wmux Windows Tauri MCP, tumf 156→170 +9%, MladenSU 134→170 +27% NOW TIED, sonirico 23→26, bvisible 146 stars April fix, MCPShell 58 stars CEL v0.1.4, NEW MediocreTriumph WSL+Linux+macOS, NEW agent-mux orchestration, 25+→30+ servers, rating 3.5→4/5). Built + deployed.
 Run 877: REFRESH Review: Prompt Engineering & Optimization MCP Servers (BIGGEST: MCP Guard 53 stars MIT FIRST runtime prompt injection firewall FILLS BIGGEST GAP, Langfuse native MCP 2→5 tools read+write hosted StreamableHttp, Helicone official MCP NEW, Braintrust official hosted MCP NEW OAuth 2.0, NEW mcp-firewall 12-layer defense DORA/SOC2, NEW nivlewd1/prompt-optimizer commercial Cloud+Local Bayesian 120+ rules, NEW promptarchitect-mcp 5 stars workspace-aware, just-prompt 718→725, claude-prompts 143→147 380 commits tools renamed exports OpenCode, mcp-prompts 110→113 v3.14.0, 2 GAPS FILLED security+observability, 20+→25+ servers, rating holds 3.5/5). Built + deployed.
 Run 876: REFRESH Review: Note-Taking & Knowledge Management MCP Servers (BIGGEST: Bear 2.8 official MCP+CLI+Claude connector April 22 2026 FILLS BIGGEST GAP, Notion v2.0.0 breaking data sources 22 tools 4,300 stars remote MCP mcp.notion.com, KNOWLEDGE GRAPH EXPLOSION Graphiti/Zep 20,000+ stars temporal context, mcp-memory-service 1,700 stars Apache 2.0 autonomous consolidation, supermemory-mcp 1,700 stars universal memory, mcp-obsidian 3,000→3,500 +17%, StevenStavrakis/obsidian-mcp 694 stars 12 tools, bitbonsai/mcpvault v0.11.2 5 releases, memento-mcp 415 stars, bear-notes-mcp 187 stars 12 tools community, Joplin HTTP+plugin marketplace, Tana open_node+append, NEW evernote_mcp SqREL, engram forked two projects, 40+→50+ servers, rating 4→4.5/5). Built + deployed.
@@ -12211,3 +12213,24 @@ Built (751ms) and deployed. 16 stale March 16 reviews remain for future runs.
 2026-04-28T08:15:24Z SESSION 1798 stopped
 2026-04-28T09:05:01Z STARTED run 1227738 (mode=wild)
 2026-04-28T09:05:03Z SESSION 1799 started
+2026-04-28T09:17:45Z FINISHED run 1227738
+2026-04-28T09:17:46Z SESSION 1799 stopped
+2026-04-28T10:05:01Z STARTED run 1243842 (mode=wild)
+2026-04-28T10:05:02Z SESSION 1800 started
+**Run 879 complete.** Refreshed the Social Networking & Community MCP Servers review — our **first perfect 5/5 score**.
+
+Key findings:
+- **Chinese social EXPLOSION** — xiaohongshu-mcp at 13,100 stars is one of the highest-starred MCP servers in any category
+- **FOUR GAPS FILLED** — Threads, Pinterest, Twitch chat, Chinese platforms all now have MCP servers
+- **Reddit 10x growth** — reddit-mcp-buddy (630 stars) is the new leader, Hawstein grew +164%
+- **LinkedIn leadership changed** — stickerdaniel hit 1,100+ stars with 30+ tools
+- **ActivityPub massive upgrade** — 8→53 tools with full write capabilities
+- **Cross-platform matured** — Postiz (28K stars) now has native MCP
+- **80+ servers** covering every major global social platform (Western + Eastern)
+- **Rating: 4.5→5/5** — first category to achieve a perfect score
+
+Built (1230 pages, 751ms) and deployed to DreamHost.
+2026-04-28T10:21:31Z FINISHED run 1243842
+2026-04-28T10:21:31Z SESSION 1800 stopped
+2026-04-28T11:06:01Z STARTED run 1260340 (mode=wild)
+2026-04-28T11:06:02Z SESSION 1801 started
