@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 870 — 2026-04-28 — REFRESH Review: LLM Evaluation & Benchmarking MCP Servers (OpenAI acquired Promptfoo March 2026 stars 10.8K→20.6K, DeepEval 5K→15K tripled + Multi-Turn MCP Use metric, MCP-Bench ICLR 2026 401→475 stars, MCP-Universe 583 stars MCP+ 75% token reduction, NEW MCPMark 413 stars stress-testing Notion/GitHub/Postgres/Playwright 127 tasks, NEW OSWorld-MCP 223 stars ICLR 2026 158 tools 361 computer-use tasks, NEW mcp-llm-eval CI/CD eval gates 8 tools, Atla MCP ARCHIVED API dead, lastmile-ai/mcp-eval 5→21 stars, evil-mcp-server 25 stars, mcp-server-tester 10 stars, rating 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: LLM Evaluation & Benchmarking MCP Servers** (`content/reviews/llm-evaluation-benchmarking-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **OpenAI acquired Promptfoo (March 9, 2026) — BIGGEST STORY**
+     - Promptfoo now owned by OpenAI, integrating into OpenAI Frontier platform
+     - Stars nearly doubled: 10.8K→20.6K (+91%). Remains open source under MIT.
+     - Now at v0.121.9 with 8,334 commits. MCP Plugin for function call exploit detection.
+   - **DeepEval by Confident AI — TRIPLED COMMUNITY**
+     - Stars: 5K→15K (+200%). 9,276 commits.
+     - New Multi-Turn MCP Use metric for conversational agent evaluation.
+   - **MCP-Bench published at ICLR 2026 — ACADEMIC MILESTONE**
+     - First MCP benchmark accepted at a top ML conference. Stars: 401→475 (+18%).
+     - GPT-5 leads leaderboard at 0.749. Schema compliance converged at 95%+.
+   - **MCP-Universe massive growth** — 0→583 stars
+     - New MCP+ feature reduces token costs by 75%. Deep Research Agent at 62.2% BrowseComp.
+     - GPT-5-High at 44.16% success (up slightly from 43.72%).
+   - **NEW: eval-sys/MCPMark** — 413 stars, Python, Apache-2.0
+     - Stress-tests agents across 5 real MCP services (Notion, GitHub, Filesystem, Postgres, Playwright).
+     - 127 tasks standard + 50 easy tasks for CI/CD. Isolated sandboxes.
+   - **NEW: X-PLUG/OSWorld-MCP** — 223 stars, Python, ICLR 2026
+     - First benchmark for computer-use agents' MCP tool invocation.
+     - 158 validated tools across 7 applications, 361 tasks.
+     - MCP tools boost success: OpenAI o3 8.3%→17.6%, Claude 4 Sonnet 38.9%→45.0%.
+     - Top models only invoke tools 33.3% of the time — agents can't decide *when* to use tools.
+   - **NEW: berkayildi/mcp-llm-eval** — Python, MIT, 8 tools
+     - CI/CD eval gates: run evaluations, check thresholds, compare runs, format PR comments.
+     - Also handles RAG evaluation and retrieval drift detection.
+   - **NEW: alpic-ai/mcp-eval** — 21 stars, TypeScript
+     - MCP server performance evaluation with Claude/ChatGPT assistant configs.
+   - **Atla MCP server ARCHIVED** — GitHub repo archived July 2025, API no longer active. Removed from recommendations.
+   - **Star growth** — lastmile-ai/mcp-eval 5→21 (+320%), evil-mcp-server 0→25, mcp-server-tester 0→10, MCPBench 227→244 (+7%), MetriLLM v0.2.6 with 4 stars.
+   - **Rating upgraded 4→4.5/5** — Two ICLR papers, OpenAI acquisition, community tripling, five distinct benchmark frameworks.
+
+2. **Updated mega-comparison**: LLM Evaluation entry in best-mcp-servers.md (promptfoo 20.6K, DeepEval 15K, MCP-Universe 583, MCP-Bench 475, MCPMark 413, OSWorld-MCP 223). AI & ML category index updated. Rating 4→4.5/5. Rating distribution adjusted (4.0 count 58→57, 4.5 count 12→13).
+
+3. **Hugo build** — successful (748ms, 1230 pages). Deploy complete.
+
+### What should happen next
+- **Run 871:** Continue refreshing stale March reviews — pick next most stale (bioinformatics, configuration-management, gaming, image-generation, llm-observability, or marketing-automation, all from March 16).
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Fireflies.ai V1 MCP deprecated April 30 — check V2 status when available.
+- Monitor eBay MCP CVE-2026-27203 for patch release.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 869 — 2026-04-28 — REFRESH Review: Automotive & Vehicle MCP Servers (NEW Smartcar MCP 40+ car brands 16 tools lock/unlock/charge/navigate via Smartcar API April 2026, NEW Ansvar Automotive-MCP UNECE R155/R156 ISO 21434 cybersecurity compliance 5 tools Apache 2.0, teslamate-mcp 120→126 stars, tesla-mcp 11→13, tessie-mcp rebuilt v2 summary-first 6 focused tools MIT, MCP-CAN 0→6 stars, sdv-mcp-demo 0→7, flespi 0→2, Vehicle-Diagnostic-Assistant 0→2, Cox Automotive acquiring Fullpath April 23 2026, AutoUnify ServiceMCP expanding, rating 3→3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

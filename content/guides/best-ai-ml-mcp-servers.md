@@ -19,7 +19,7 @@ We've published [10 in-depth AI & ML reviews](/reviews/) covering 100+ MCP serve
 | Model hubs & inference | [HuggingFace MCP](/reviews/ai-ml-model-serving-mcp-servers/) | 4/5 | [Ollama MCP](/reviews/ai-ml-model-serving-mcp-servers/) (153 stars, 14 tools, local inference) |
 | Agent orchestration | [Paperclip](/reviews/agent-orchestration-mcp-servers/) | 4.5/5 | [mcp-agent (LastMile AI)](/reviews/agent-orchestration-mcp-servers/) (8.3K stars, workflow patterns) |
 | LLM observability | [Opik MCP](/reviews/llm-observability-mlops-pipeline-mcp-servers/) | 3.5/5 | [OpenTelemetry MCP](/reviews/llm-observability-mlops-pipeline-mcp-servers/) (175 stars, vendor-neutral) |
-| LLM evaluation | [promptfoo](/reviews/llm-evaluation-benchmarking-mcp-servers/) | 4/5 | [DeepEval](/reviews/llm-evaluation-benchmarking-mcp-servers/) (13K+ stars, Pytest-style) |
+| LLM evaluation | [promptfoo](/reviews/llm-evaluation-benchmarking-mcp-servers/) | 4.5/5 | [DeepEval](/reviews/llm-evaluation-benchmarking-mcp-servers/) (15K stars, Pytest-style + Multi-Turn MCP Use) |
 | Prompt engineering | [just-prompt](/reviews/prompt-engineering-optimization-mcp-servers/) | 3.5/5 | [mcp-prompt-optimizer](/reviews/prompt-engineering-optimization-mcp-servers/) (14 research techniques) |
 | Data preparation | [Label Studio MCP](/reviews/annotation-data-labeling-mcp-servers/) | 2.5/5 | [PaddleOCR MCP](/reviews/ocr-document-intelligence-mcp-servers/) (72K parent stars) |
 
@@ -91,21 +91,25 @@ Once your models and agents are running, how do you monitor their behavior, mana
 
 ## LLM Evaluation & Benchmarking — Testing AI Outputs and MCP Servers
 
-**[Full review: LLM Evaluation & Benchmarking MCP Servers →](/reviews/llm-evaluation-benchmarking-mcp-servers/)** | Rating: 4/5
+**[Full review: LLM Evaluation & Benchmarking MCP Servers →](/reviews/llm-evaluation-benchmarking-mcp-servers/)** | Rating: 4.5/5
 
-The highest-rated category in this guide. Evaluating LLM outputs and benchmarking MCP server performance are both well-represented with serious tooling.
+Now **academically validated** with two ICLR 2026 papers (MCP-Bench, OSWorld-MCP). OpenAI's acquisition of Promptfoo, DeepEval tripling its community, and five distinct benchmarking frameworks make this one of the strongest categories.
 
 ### The winner: promptfoo
 
-[promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — 10.8K stars, TypeScript, MIT. The heavyweight of LLM evaluation, now **part of OpenAI** (acquired March 9, 2026). The open-source project continues — CLI and library used by 350K+ developers and 130K monthly active users, with 25%+ of Fortune 500 relying on it. Compares outputs across GPT, Claude, Gemini, Llama with declarative YAML configs. Red-teaming module scans for **50+ vulnerability types** (prompt injection, jailbreaks, PII leaks, tool misuse). MCP Proxy for enterprise security with access control and traffic monitoring. CI/CD integration with GitHub Actions. The OpenAI acquisition signals the strategic importance of eval tooling, and the team has committed to maintaining multi-provider support.
+[promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — **20.6K stars** (up from 10.8K), TypeScript, MIT. The heavyweight of LLM evaluation, now **part of OpenAI** (acquired March 9, 2026). The open-source project continues — CLI and library used by 25%+ of Fortune 500. Compares outputs across GPT, Claude, Gemini, Llama with declarative YAML configs. Red-teaming module scans for **50+ vulnerability types** (prompt injection, jailbreaks, PII leaks, tool misuse). MCP Proxy for enterprise security. MCP Plugin tests agentic systems for function call exploits and system prompt leakage. CI/CD integration with GitHub Actions. Now at v0.121.9 with 8,334 commits.
 
 ### Strong alternatives
 
-**DeepEval** ([confident-ai/deepeval](https://github.com/confident-ai/deepeval)) — **13K+ stars** (up from 5K+), Python, Apache-2.0. Pytest-style LLM unit testing with **50+ metrics** (G-Eval, hallucination, answer relevancy, task completion). The **MCP-Use metric** specifically evaluates how well agents use MCP servers — scoring tool selection and argument quality. MCP server acts as a persistent data layer for running evals, pulling datasets, and inspecting traces from Claude Code or Cursor. 800K daily evaluations.
+**DeepEval** ([confident-ai/deepeval](https://github.com/confident-ai/deepeval)) — **15K stars** (tripled from 5K), Python, Apache-2.0. Pytest-style LLM unit testing with **50+ metrics** (G-Eval, hallucination, answer relevancy, task completion). The **MCP-Use metric** evaluates how well agents use MCP servers. **New: Multi-Turn MCP Use metric** for conversational agent evaluation across extended dialogues. 9,276 commits — extremely active.
 
-**MCP-Bench** ([Accenture/mcp-bench](https://github.com/Accenture/mcp-bench)) — 401 stars. The gold standard for benchmarking tool-using agents. **28 live MCP servers, 250 tools** across finance, travel, science. Published as an academic paper. If you want to evaluate which LLM is best at using MCP tools, this is it.
+**MCP-Universe** ([SalesforceAIResearch/MCP-Universe](https://github.com/SalesforceAIResearch/MCP-Universe)) — **583 stars**, Python. Benchmarks with real-world MCP servers across 6 domains and 231 tasks. **New: MCP+** reduces token costs by up to 75%. Deep Research Agent achieves 62.2% on BrowseComp with GPT-5-medium. Top model GPT-5-High at 44.16% success. 272 commits.
 
-**MCP-Universe** (Salesforce Research) — benchmarks with real-world MCP servers across 6 domains and 231 tasks. Top models: GPT-5 at 43.72% success, Grok-4 at 33.33%, Claude 4.0 Sonnet at 29.44%. **New in February 2026:** Wide & Deep (W&D) research agents that scale width by making more parallel tool calls per turn, improving accuracy while reducing API cost. Also added MCPMark benchmark support. LLM tool-use is far from solved.
+**MCP-Bench** ([Accenture/mcp-bench](https://github.com/Accenture/mcp-bench)) — **475 stars**, published at **ICLR 2026**. **28 live MCP servers, 250 tools** across finance, travel, science. First MCP benchmark at a top ML conference. GPT-5 leads leaderboard at 0.749.
+
+**MCPMark** ([eval-sys/mcpmark](https://github.com/eval-sys/mcpmark)) — **413 stars**, Python, Apache-2.0. Stress-tests agents across 5 real MCP services (Notion, GitHub, Filesystem, Postgres, Playwright) with 127 tasks and isolated sandboxes.
+
+**OSWorld-MCP** ([X-PLUG/OSWorld-MCP](https://github.com/X-PLUG/OSWorld-MCP)) — **223 stars**, Python, **ICLR 2026**. First benchmark for computer-use agents' MCP tool invocation. 158 tools, 361 tasks across 7 applications. MCP tools boost OpenAI o3 from 8.3% to 17.6% success.
 
 **Red-teaming:** promptfoo/evil-mcp-server simulates malicious MCP behaviors (tool poisoning, data exfiltration, hidden instructions). Critical for understanding how agents behave with malicious tools.
 
