@@ -35,7 +35,7 @@ The deepest science MCP ecosystem. Bioinformatics leads with 40+ servers — gen
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Bioinformatics & Life Sciences](/reviews/bioinformatics-life-sciences-mcp-servers/) | 4/5 | biomcp (241 stars, biomedical queries), Anthropic life-sciences (259 stars), PubMed MCP (105 stars), ChEMBL MCP (78 stars, 22 drug discovery tools) — 40+ servers |
+| [Bioinformatics & Life Sciences](/reviews/bioinformatics-life-sciences-mcp-servers/) | 4.5/5 | biomcp (497 stars, +106%), Anthropic life-sciences (321 stars, Coefficient Bio $400M acquisition), AlphaFold MCP (33 stars, 25+ tools — NEW, fills gap), KEGG MCP (9 stars, 30 tools — NEW, fills gap), LangCare FHIR (31 stars, enterprise-grade — NEW) — 55+ servers |
 | [Chemistry & Molecular Modeling](/reviews/chemistry-molecular-modeling-mcp-servers/) | 3.5/5 | ChatMol molecule-mcp (~89 stars, PyMOL/ChimeraX), RDKit MCP (cheminformatics), PubChem (110M+ compounds), DrugBank (17,430+ drugs), Vina docking — 25+ servers |
 
 ## Geospatial & Mapping

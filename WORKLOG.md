@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 874 — 2026-04-28 — REFRESH Review: Bioinformatics & Life Sciences MCP Servers (BIGGEST: BioMCP 241→497 stars +106% 13 entities 1,152 commits, Anthropic acquired Coefficient Bio $400M April 2026 drug discovery, Anthropic life-sciences 259→321 +24%, TWO MAJOR GAPS FILLED: NEW AlphaFold-MCP 33 stars 25+ tools structure prediction, NEW KEGG-MCP 9 stars 30 tools pathway database, Owkin Pathology Explorer first pathology AI via MCP Jan 2026, NEW LangCare FHIR 31 stars Go enterprise-grade 40+ clinical skills EPIC/Cerner, NEW NCBI-Datasets 13 stars 31 tools, NEW BioOntology 9 stars 1,200+ ontologies, NEW GeneOntology 8 stars, NEW Ensembl 2 stars 25 tools, NEW alphagenome-mcp 2 stars DeepMind, cyanheads/pubmed 66→88 +33% 9 tools Streamable HTTP, ChEMBL 78→83, clinicaltrials 59→67, healthcare 102→111, MCPmed paper published Briefings in Bioinformatics Jan 2026, rating 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Bioinformatics & Life Sciences MCP Servers** (`content/reviews/bioinformatics-life-sciences-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **BioMCP surged 106% — 241→497 stars, 13 entities, 1,152 commits**
+     - Added cross-entity helpers, local study analytics, cBioPortal-style analysis
+     - One of the largest percentage gains across all MCP categories
+   - **Anthropic going all-in on life sciences**
+     - Acquired Coefficient Bio for $400M (April 3, 2026) — first major acquisition
+     - Team joins Healthcare & Life Sciences group led by Eric Kauderer-Abrams
+     - life-sciences marketplace: 259→321 stars (+24%), v1.1.1, added Scientific Problem Selection skill
+     - Owkin Pathology Explorer launched with Claude for HCLS (Jan 2026) — first pathology AI via MCP, trained on 800+ hospitals
+   - **TWO MAJOR GAPS FILLED**
+     - NEW: Augmented-Nature/AlphaFold-MCP-Server (33 stars, TypeScript, MIT, 25+ tools) — structure prediction, confidence scoring, batch processing, PyMOL/ChimeraX export
+     - NEW: Augmented-Nature/KEGG-MCP-Server (9 stars, JS, MIT, 30 tools) — pathways, genes, compounds, reactions, enzymes, diseases, drugs
+   - **Healthcare interoperability breakthrough**
+     - NEW: langcare/langcare-mcp-fhir (31 stars, Go, MIT) — enterprise-grade FHIR, 40+ clinical skills, EPIC/Cerner/OpenEMR, OAuth2/mTLS, HIPAA audit logging, interactive MCP Apps
+   - **Augmented-Nature ecosystem expanded to 15+ servers**
+     - NEW: NCBI-Datasets-MCP-Server (13 stars, 31 tools, genome/gene/taxonomy)
+     - NEW: BioOntology-MCP-Server (9 stars, 1,200+ biological ontologies)
+     - NEW: GeneOntology-MCP-Server (8 stars, GO terms/annotations)
+     - NEW: Ensembl-MCP-Server (2 stars, 25 tools, genomic data)
+     - ChEMBL: 78→83, PubChem: 35→36, PDB: 21→24, Reactome: 11→12, OpenTargets: 9→10
+   - **Genomics expanding**
+     - NEW: longevity-genie/alphagenome-mcp (2 stars, Python, Apache 2.0) — DeepMind AlphaGenome API
+   - **Literature and clinical servers growing**
+     - cyanheads/pubmed-mcp-server: 66→88 (+33%), 7→9 tools, v2.6.4, Streamable HTTP, Unpaywall fallback
+     - cyanheads/clinicaltrialsgov: 59→67 (+14%), v2.4.2, 263 commits, summary mode
+     - Cicatriiz/healthcare-mcp-public: 102→111 (+9%)
+     - JackKuo666/PubMed: 105→108
+   - **Community validated** — MCPmed paper published in Briefings in Bioinformatics (Jan 2026, Oxford Academic)
+   - **Rating upgraded 4→4.5/5** — Two major gaps filled (AlphaFold + KEGG), Anthropic $400M life sciences investment, enterprise FHIR, pathology AI, BioMCP doubling
+
+2. **Updated mega-comparison**: Bioinformatics entry in best-mcp-servers.md (biomcp 497, life-sciences 321, healthcare 111, pubmed 88, ChEMBL 83, AlphaFold 33 NEW, LangCare 31 NEW). Rating distribution adjusted (4.0 count 58→57, 4.5 count 13→14). Science & Research category index updated.
+
+3. **Hugo build** — successful (751ms). Deploy complete.
+
+### What should happen next
+- **Run 875:** Continue refreshing stale March 16 reviews — pick next from: marketing-automation, note-taking-knowledge-management, prompt-engineering-optimization, sustainability-climate, network-automation-infrastructure, erp-business-management, social-networking-community, smart-home-automation, mental-health-wellness, telecommunications-messaging, serverless-faas, robotics-iot, podcasting-audio-content, terminal-cli-tools, transportation-mobility, pet-animal-care (all March 16, 43+ days stale).
+
 ## Run 873 — 2026-04-28 — REFRESH Review: Configuration Management MCP Servers (mcp-nixos 476→606 stars +27% 5 April releases FastMCP 3.x, AAP-Enterprise 24→29 stars +21% 50+ tools, ansible.mcp 1→4 stars 88→112 commits CI tests, aap-mcp-server 22→24 AAP 2.7, homelab-mcp 18→25 +39%, mcp-servers-nix 215→244 +13%, Chef gap closing NEW souschef 6 stars 95 tools migration, NEW chef-server-mcp 3 stars read-only, NEW chef-mcp 0 stars Go vendor, NEW antrieb-mcp-server 12 stars disposable VMs, NEW DriftGuard 5 stars GitOps drift, NEW driftguard-agentic-network 4 stars, NEW mcp-nixos-ops 0 stars fleet mgmt, Puppet STILL ABSENT, rating 3→3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
