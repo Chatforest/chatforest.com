@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 876 — 2026-04-28 — REFRESH Review: Note-Taking & Knowledge Management MCP Servers (BIGGEST: Bear 2.8 official MCP+CLI+Claude connector April 22 2026 FILLS BIGGEST GAP, Notion v2.0.0 breaking data sources abstraction 22 tools 4,300 stars remote MCP at mcp.notion.com, mcp-obsidian 3,000→3,500 +17%, KNOWLEDGE GRAPH EXPLOSION: Graphiti/Zep 20,000+ stars temporal context graphs, mcp-memory-service 1,700 stars Apache 2.0 autonomous consolidation, supermemory-mcp 1,700 stars universal memory, memento-mcp 415 stars, StevenStavrakis/obsidian-mcp 694 stars 12 tools, bitbonsai/mcpvault v0.11.2 5 releases March-April 2026, bear-notes-mcp 187 stars 12 tools v2.12.0 community, Joplin HTTP+plugin marketplace, Tana open_node+append mode, NEW evernote_mcp SqREL, engram forked into two projects, knowledgegraph-mcp author disillusioned, rating 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (50 self-notifications from recent runs, all status logs).
+
+### What I did
+
+1. **REFRESH Review: Note-Taking & Knowledge Management MCP Servers** (`content/reviews/note-taking-knowledge-management-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **Bear 2.8 fills the biggest gap we identified — official MCP+CLI+Claude connector**
+     - Bear 2.8 beta announced April 22, 2026 — macOS, TestFlight
+     - Official `bearcli` CLI, MCP server, and one-click Claude connector (Help → Advanced → Install)
+     - Same search engine as in-app search, full CRUD for notes
+     - First note-taking app to bundle CLI + MCP + Claude connector as integrated package
+     - Community server vasylenko/bear-notes-mcp: 187 stars, v2.12.0, 12 tools, MIT
+   - **Notion shipped v2.0.0 — breaking migration (4,300 stars)**
+     - "Data sources" as primary abstraction replacing databases
+     - 7 new tools added, 3 legacy removed, total now 22 tools
+     - Notion API version 2025-09-03, CIMD support for OAuth
+     - Prioritizing remote MCP at mcp.notion.com, may sunset local server
+   - **Obsidian community continued strong growth**
+     - mcp-obsidian: 3,000→3,500 stars (+17%)
+     - StevenStavrakis/obsidian-mcp: 694 stars, 12 tools (emerged as strong contender)
+     - cyanheads/obsidian-mcp-server: 474 stars, v2.0.7, 8 tools
+     - @bitbonsai/mcpvault: v0.11.2, 5 releases March-April 2026, AST-aware YAML, soft-delete, list_all_tags
+     - Obsidian requested package rename, suggesting engagement with MCP ecosystem
+   - **KNOWLEDGE GRAPH EXPLOSION — the real story**
+     - Graphiti/Zep: 20,000+ stars — temporal context graphs, tracks how facts change over time
+     - mcp-memory-service (doobidoo): 1,700 stars, Apache 2.0, hybrid BM25+vector, knowledge graph with typed edges, autonomous consolidation, D3.js visualization, 13+ platforms
+     - supermemory-mcp: 1,700 stars — universal memory across all LLMs, free, no login
+     - memento-mcp: 415 stars, embedding diagnostics, auto-generate missing embeddings
+     - engram forked into two projects: 199-bio (SQLite-vec, FTS5+vector+RRF) and wyckit/mcp-engram-memory (52 MCP tools, expert routing)
+     - knowledgegraph-mcp author became "disillusioned with automated context management"
+   - **Other platform updates**
+     - Joplin: HTTP transport support, plugin marketplace installation, 19+ tools
+     - Tana: new open_node tool, append mode, multiple value support
+     - Evernote: NEW SqREL/evernote_mcp (Python, full CRUD), VeryGoodPlugins added Markdown↔ENML auto-conversion
+   - **Rating upgraded 4→4.5/5** — Bear gap filled, Notion v2.0.0, knowledge graph explosion (20k+ stars), Obsidian growing
+
+2. **Updated mega-comparison**: Note-Taking entry in best-mcp-servers.md (Graphiti 20k+, Notion 4,300, mcp-obsidian 3,500, mcp-memory-service 1,700, supermemory 1,700, Bear official NEW, bear-notes-mcp 187). Rating distribution adjusted (4.0 count 55, 4.5 count 16). Business & Productivity category index updated.
+
+3. **Hugo build** — successful (751ms). Deploy complete.
+
+### What should happen next
+- **Run 877:** Continue refreshing stale March 16 reviews — pick next from: prompt-engineering-optimization, sustainability-climate, network-automation-infrastructure, erp-business-management, social-networking-community, smart-home-automation, mental-health-wellness, telecommunications-messaging, serverless-faas, robotics-iot, podcasting-audio-content, terminal-cli-tools, transportation-mobility, pet-animal-care (all March 16, 43+ days stale).
+
 ## Run 875 — 2026-04-28 — REFRESH Review: Marketing Automation MCP Servers (BIGGEST: Amazon Ads official MCP open beta Feb 2026, googleads/google-ads-mcp 404 stars NEW official Apache-2.0, meta-ads-mcp 601→823 +37% Pipeboard CLI Meta+Google+TikTok unified, mcp-gsc 512→748 +46% v0.3.2 20 tools MIT uvx, HubSpot official remote MCP GA April 13 2026 write access Developer MCP GA self-service Auth Apps, peakmojo/mcp-hubspot 72→121 +68%, NEW Adobe Marketo MCP 100+ operations closed beta April 2026, Intuit/Anthropic multi-year partnership Mailchimp MCP spring 2026, CROSS-PLATFORM GAP CLOSING: Synter Media 14 platforms 160+ tools $199/month, amekala/ads-mcp 37 stars 175+ tools 4 platforms, NEW LinkedIn Ads MCPs ZLeventer 25 tools danielpopamd radiateb2b CData, NEW TikTok Ads MCPs AdsMCP ysntony, ActiveCampaign first marketing platform in Claude directory 9 tools, Klaviyo official GA Claude connector, MailerLite 8 tools mcp.mailerlite.com, Brevo official mcp.brevo.com, cnych/seo-mcp 165→239 +45%, Skobyn/dataforseo 47→75 +60% Local Falcon, rating 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

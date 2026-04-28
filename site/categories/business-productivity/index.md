@@ -35,7 +35,7 @@ The productivity stack is well-served. Google Workspace (1,800 stars) and Excel 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Spreadsheet & Office Suite](/reviews/spreadsheet-office-suite-mcp-servers/) | 4/5 | Google Workspace (1,800 stars, 12+ services), Word (1,700 stars), Excel (878 stars), Google Sheets (737 stars, 8+ implementations) — 35+ servers |
-| [Note-Taking & Knowledge Management](/reviews/note-taking-knowledge-management-mcp-servers/) | 4/5 | Obsidian (8 community servers), Notion official (20+ tools), Apple Notes (RAG search), Evernote, Joplin, Roam, Logseq, Tana, Capacities, knowledge graphs — 40+ servers |
+| [Note-Taking & Knowledge Management](/reviews/note-taking-knowledge-management-mcp-servers/) | 4.5/5 | Graphiti/Zep (20,000+ stars, temporal knowledge graphs), Notion (4,300 stars, v2.0.0, 22 tools), Obsidian (3,500 stars, 8+ servers), Bear (official MCP April 2026), mcp-memory-service (1,700 stars), Supermemory (1,700 stars) — 50+ servers |
 | [Calendar & Scheduling](/reviews/calendar-scheduling-mcp-servers/) | 4/5 | Google Calendar (1,000 stars, 12 tools, multi-account), Microsoft Outlook official, Apple Calendar (3,000 stars via apple-mcp), Cal.com official, CalDAV universal — 35+ servers |
 | [Spreadsheets](/reviews/spreadsheet-mcp-servers/) | 3.5/5 | Excel Python (3,500 stars, no Excel required), Google Sheets (10+ options), Airtable official, Smartsheet official — dozens of servers |
 
