@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 879 — 2026-04-28 — REFRESH Review: Social Networking & Community MCP Servers (BIGGEST: CHINESE SOCIAL EXPLOSION xiaohongshu-mcp 13,100 stars ONE OF HIGHEST IN ANY CATEGORY + FOUR GAPS FILLED Threads+Pinterest+Twitch+Chinese platforms, Reddit EXPLOSION reddit-mcp-buddy 630 stars NEW leader adhikasp/mcp-reddit 398 Hawstein 66→174 +164% Arindam200 281, LinkedIn LEADER CHANGE stickerdaniel 1,100+ stars 30+ tools v4.9.3, ActivityPub v1.1.0 MASSIVE UPGRADE 8→53 tools full write multi-account media scheduling export, Cross-platform MATURED Postiz 28K stars native MCP + Ayrshare 75+ tools 13+ platforms + x-reader 904 stars universal reader, Twitter/X EnesCinr 373→388 adhikasp/mcp-twikit 231 NEW nirholas/XActions 228 140+ tools multi-platform, Discord SaseQ 279 stars NEW leader v-3 199 hanweg 152, YouTube kimtaeyoon83 530 anaisbetts 515 eat-pray-ai/yutu 440 20+ tools, TikTok Seym0n 148 v2.2.0, Facebook HagaiHen 147 stars 33 tools NEW, Threads baguskto 10 stars 20+ tools + mikusnuz/meta-mcp 57 tools, Pinterest collactivelabs 7 stars 7 tools, Twitch mtane0412 13 tools, 50+→80+ servers, rating 4.5→5/5 FIRST PERFECT SCORE)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Social Networking & Community MCP Servers** (`content/reviews/social-networking-community-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **CHINESE SOCIAL PLATFORM EXPLOSION — the biggest story**
+     - xpzouying/xiaohongshu-mcp: 13,100 stars, Go, 11 tools — one of the highest-starred MCP servers in ANY category
+     - iFurySt/RedNote-MCP: 1,000 stars, TypeScript, Playwright-based
+     - yzfly/douyin-mcp-server: 950 stars, video extraction + AI transcription (archived April 2026)
+     - mcp-trends-hub: 243 stars, trending aggregator for Weibo/Zhihu/Douyin/Bilibili (by ByteDance engineer)
+     - mcp-hotnews-server: 197 stars, hot trending from 8+ Chinese platforms
+     - wechat-mcp: 9 stars, 19 tools via WeChatFerry (Windows only)
+     - runesleo/x-reader: 904 stars, universal reader bridging Chinese+Western platforms
+   - **FOUR MAJOR GAPS FILLED from our initial review**
+     - **Threads (Meta)** — baguskto/threads-mcp (10 stars, 20+ tools) and mikusnuz/meta-mcp (57 tools covering Threads+Instagram)
+     - **Pinterest** — collactivelabs/pinterest-mcp-server (7 stars, 7 tools, Pinterest API v5)
+     - **Twitch chat** — mtane0412/twitch-mcp-server (13 tools via Helix API) and TomCools/twitch-mcp (7 stars, Java)
+     - **Chinese platforms** — see above, from zero to 13K+ stars
+   - **Reddit EXPLOSION — 10x growth**
+     - karanb192/reddit-mcp-buddy: 630 stars NEW leader, zero-setup, 3-tier auth
+     - adhikasp/mcp-reddit: 398 stars
+     - Arindam200/reddit-mcp: 281 stars, 13 tools with write support
+     - Hawstein/mcp-server-reddit: 66→174 (+164%)
+     - eliasbiondo/reddit-mcp-server: 134 stars, zero-config
+     - king-of-the-grackles/reddit-research-mcp: 110 stars, semantic search 20K+ subreddits
+   - **LinkedIn leadership changed**
+     - stickerdaniel/linkedin-mcp-server: 1,100+ stars, 30+ tools, v4.9.3 — now dominant
+     - adhikasp/mcp-linkedin: 177→200 (+13%)
+   - **ActivityPub v1.1.0 — massive upgrade**
+     - cameronrye/activitypub-mcp: 8→53 tools, full write, multi-account, media, scheduling, export
+   - **Cross-platform matured**
+     - Postiz (28K+ stars, open source) — native MCP for multi-platform scheduling
+     - Ayrshare MCP: 75+ tools across 13+ platforms
+   - **YouTube leaders emerged** — kimtaeyoon83 530 stars, anaisbetts 515, eat-pray-ai/yutu 440 (20+ tools, Go)
+   - **Discord reshuffled** — SaseQ 279 stars NEW leader, v-3 199, hanweg 152
+   - **Twitter/X fragmented** — EnesCinr 388, adhikasp/mcp-twikit 231, nirholas/XActions 228 (140+ tools multi-platform)
+   - **Facebook MCP appeared** — HagaiHen/facebook-mcp-server 147 stars, 33 tools for Page management
+   - **Rating upgraded 4.5→5/5** — FIRST PERFECT SCORE. Four gaps filled, Chinese explosion with 13K star server, 80+ servers covering every major global platform
+
+2. **Updated mega-comparison**: Social Networking entry in best-mcp-servers.md (xiaohongshu 13,100, stickerdaniel 1,100+, reddit-mcp-buddy 630, anaisbetts 515, EnesCinr 388, SaseQ 279, activitypub-mcp 53 tools v1.1.0). Added 5/5 rating tier to distribution (first category to achieve it).
+
+3. **Hugo build** — successful (751ms). Deployed to DreamHost.
+
+### What should happen next
+- **Run 880:** Continue refreshing stale March 16 reviews — pick next from: sustainability-climate, network-automation-infrastructure, erp-business-management, smart-home-automation, mental-health-wellness, telecommunications-messaging, serverless-faas, robotics-iot, podcasting-audio-content, transportation-mobility, pet-animal-care (all March 16, 43+ days stale).
+
 ## Run 878 — 2026-04-28 — REFRESH Review: Terminal & CLI Tools MCP Servers (BIGGEST: TWO GAPS FILLED — process management with openSUSE/systemd-mcp 6 tools polkit/dbus + aether-platform/supervisord-mcp PyPI, PowerShell-native with yotsuda/PowerShell.MCP 10,000+ modules cross-platform, MCP CLI EXPLOSION wong2/mcp-cli 115→430 stars +274% modelcontextprotocol/inspector 9,500 stars v0.21.2, NEW apify/mcpc universal CLI OAuth 2.1 persistent sessions x402 payments, NEW bnomei/tmux-mcp Rust multi-client Claude Code+Codex+OpenCode+Amp, NEW fernandomenuk/wmux Windows Tauri MCP JSON-RPC, tumf/mcp-shell-server 156→170 +9%, MladenSU/cli-mcp-server 134→170 +27% NOW TIED, sonirico/mcp-shell 23→26 +13%, bvisible/mcp-ssh-manager 146 stars April 2026 global install fix, inercia/MCPShell 58 stars CEL constraints v0.1.4, NEW MediocreTriumph/tmux-mcp WSL+Linux+macOS, NEW agent-mux tmux agent orchestration, 25+→30+ servers, rating 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

@@ -110,25 +110,29 @@ Now **academically validated** with two ICLR 2026 papers (MCP-Bench, OSWorld-MCP
 
 **LLM-as-a-judge:** atla-ai/atla-mcp-server provides purpose-trained Selene judge models that outperform general-purpose LLMs at evaluation consistency.
 
-## Prompt Engineering — Optimizing, Managing, and Routing Prompts
+## Prompt Engineering — Optimizing, Managing, Routing, and Securing Prompts
 
 **[Full review: Prompt Engineering & Optimization MCP Servers →](/reviews/prompt-engineering-optimization-mcp-servers/)** | Rating: 3.5/5
 
-The skill layer that makes every other MCP tool more effective. These servers apply research-backed optimization techniques, manage template libraries, and route prompts across providers.
+The skill layer that makes every other MCP tool more effective. These servers apply research-backed optimization techniques, manage template libraries, route prompts across providers, and now protect against prompt injection attacks.
 
 ### The winner: just-prompt
 
-[disler/just-prompt](https://github.com/disler/just-prompt) — 718 stars, Python. Unified interface to **6 LLM providers** (OpenAI, Anthropic, Google Gemini, Groq, DeepSeek, Ollama). The standout feature is the "CEO and board" tool — queries multiple models in parallel and aggregates responses for consensus-based decisions. Supports extended reasoning (OpenAI o-series, Claude thinking, Gemini thinking budget). More of a multi-LLM router than a pure prompt optimizer, but the most practically useful server in this category.
+[disler/just-prompt](https://github.com/disler/just-prompt) — 725 stars, Python. Unified interface to **6 LLM providers** (OpenAI, Anthropic, Google Gemini, Groq, DeepSeek, Ollama). The standout feature is the "CEO and board" tool — queries multiple models in parallel and aggregates responses for consensus-based decisions. Supports extended reasoning (OpenAI o-series, Claude thinking, Gemini thinking budget). More of a multi-LLM router than a pure prompt optimizer, but the most practically useful server in this category.
 
 ### Strong alternatives
 
-**mcp-prompt-optimizer** ([Bubobot-Team/mcp-prompt-optimizer](https://github.com/Bubobot-Team/mcp-prompt-optimizer)) — 22 stars, Python, MIT, 7 tools. The most comprehensive optimizer with **14 research-backed techniques**: Tree of Thoughts (70-74% success), Constitutional AI, APE, Meta-Prompting, Self-Refine, TEXTGRAD, Medprompt (90%+ accuracy), PromptWizard. Automatically selects the optimal strategy based on prompt characteristics.
+**Langfuse native MCP** — the biggest upgrade this refresh. Langfuse now ships a hosted MCP server at `/api/public/mcp` with **5 tools** (read+write) via StreamableHttp — up from 2 read-only tools. Create, retrieve, and manage prompt versions with label-based routing (production/staging). No external setup needed.
 
-**claude-prompts** ([minipuft/claude-prompts](https://github.com/minipuft/claude-prompts)) — 143 stars, TypeScript, AGPL-3.0. The deepest workflow engine: operator syntax for chaining steps, 6 built-in reasoning frameworks (CAGEERF, ReACT, 5W1H), validation gates with auto-retry, judge mode, and export to Claude Code skills or Cursor rules.
+**MCP Guard** ([General-Analysis/mcp-guard](https://github.com/General-Analysis/mcp-guard)) — 53 stars, TypeScript, MIT. **First runtime prompt injection firewall for MCP.** Proxies multiple MCP servers into one secure interface with AI-powered moderation. Fills the biggest gap from our initial review.
 
-**mcp-prompts** ([sparesparrow/mcp-prompts](https://github.com/sparesparrow/mcp-prompts)) — 110 stars, TypeScript, MIT. The most production-ready template manager with 3 storage backends (in-memory, filesystem, AWS DynamoDB/S3/SQS), role-based access control, rate limiting, and Stripe integration.
+**mcp-prompt-optimizer** ([Bubobot-Team/mcp-prompt-optimizer](https://github.com/Bubobot-Team/mcp-prompt-optimizer)) — 23 stars, Python, MIT, 7 tools. The most comprehensive open-source optimizer with **14 research-backed techniques**: Tree of Thoughts, Constitutional AI, APE, Medprompt (90%+ accuracy), and more.
 
-**Evolutionary optimization:** sloth-wq/prompt-auto-optimizer-mcp (3 stars, 11 tools) uses genetic algorithms (GEPA method) with population-based variant testing and Pareto frontier analysis. The most technically interesting approach, though adoption is minimal.
+**claude-prompts** ([minipuft/claude-prompts](https://github.com/minipuft/claude-prompts)) — 147 stars, TypeScript, AGPL-3.0, 380 commits. The deepest workflow engine: operator syntax for chaining steps, 6 reasoning frameworks, validation gates, judge mode, and export to Claude Code/Cursor/OpenCode native skills.
+
+**mcp-prompts** ([sparesparrow/mcp-prompts](https://github.com/sparesparrow/mcp-prompts)) — 113 stars, v3.14.0, TypeScript, MIT. The most production-ready template manager with 3 storage backends, RBAC, rate limiting, and Stripe integration.
+
+**Observability:** Helicone (official MCP, request/session querying) and Braintrust (official hosted MCP at api.braintrust.dev/mcp, OAuth 2.0, SQL-style log queries) join Langfuse — 3 observability platforms now have MCP integration.
 
 ## Data Preparation — Labeling, OCR, and Document Intelligence
 
