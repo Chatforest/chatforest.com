@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 884 — 2026-04-29 — REFRESH Review: BI & Reporting MCP Servers (BIGGEST: Metabase NOW OFFICIAL built-in MCP in v60 April 2026 8 tools OAuth Streamable HTTP, Superset NATIVE MCP in 5.0 FastMCP JWT 5-layer validation exploration mode, Grafana SURGED 2,600→2,900 stars 40+→70+ tools hosted remote MCP at mcp.grafana.com gcx CLI o11y-bench GrafanaCON 2026, Power BI 507→702 stars +38% v0.1.9, Tableau 202→248 stars +23% v1.18.5 33 releases SVG downloads, Looker managed MCP native at Next '26, ALL 6 platforms now official, rating upgraded 4.5→5/5 FIRST CATEGORY TO ACHIEVE PERFECT SCORE)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: BI & Reporting MCP Servers** (`content/reviews/bi-reporting-mcp-servers.md`) — 43 days since initial review (March 17 → April 29)
+   - **Metabase NOW HAS OFFICIAL BUILT-IN MCP SERVER — biggest story**
+     - Metabase 60 (released April 16, 2026) includes native MCP server at `/api/mcp`
+     - 8 tools: search, get_table, get_table_field_values, get_metric, get_metric_field_values, construct_query, execute_query, query
+     - Streamable HTTP transport, embedded OAuth 2.0 (no external provider needed)
+     - Permission-scoped access — respects user's Metabase permissions
+     - AI features went open source across all plans
+     - CognitionAI community server: 43 → 55 stars (+28%), still valuable for 81+ tools
+   - **Apache Superset NOW HAS NATIVE MCP SERVER**
+     - Superset 5.0+ includes native MCP via FastMCP (SIP-187 landed!)
+     - HTTP/HTTPS JSON-RPC 2.0 transport, 4 JWT auth modes
+     - Production features: RBAC enforcement, 25K token response guards, Redis caching, audit logging
+     - Exploration mode — preview charts without DB persistence
+     - 5-layer validation pipeline, 3 deployment options (single process, Docker Compose, Kubernetes)
+   - **Grafana SURGED — tools nearly doubled**
+     - grafana/mcp-grafana: 2,600 → 2,900 stars (+12%), 571 commits
+     - Tools expanded from 40+ to 70+ across 16 categories
+     - GrafanaCON 2026 (April 21): hosted remote MCP server at mcp.grafana.com/mcp
+     - NEW gcx CLI tool for agentic dev environments (Claude Code, Cursor, GitHub Copilot)
+     - Open-sourced o11y-bench for evaluating AI agents on observability workflows
+   - **Power BI star surge**
+     - microsoft/powerbi-modeling-mcp: 507 → 702 stars (+38%), v0.1.9, 50 commits
+     - Now available as VS Code extension
+     - Still in Public Preview
+   - **Tableau steady growth**
+     - tableau/tableau-mcp: 202 → 248 stars (+23%), v1.18.5 (up from v1.17.12)
+     - 33 releases (up from ~17), 186 commits (up from 159)
+     - Added SVG download via Get View Image, product telemetry in v1.15.0
+   - **Looker gets managed MCP server**
+     - At Google Cloud Next '26: managed MCP server native to Looker (not just MCP Toolbox wrapper)
+     - Admin-defined access controls per agent, inherits Looker security model
+     - MCP Toolbox enhanced with Health Tools, visualization building, saved Looks, dashboards
+   - **Rating upgraded 4.5→5/5** — ALL 6 major BI platforms now have official vendor-backed MCP support. First category to achieve a perfect 5/5 rating. The gap from our initial review (no official Metabase or Superset servers) is fully closed.
+
+2. **Updated mega-comparison**: BI & Reporting entry in best-mcp-servers.md with all updated stats and 5/5 rating. Rating distribution adjusted (5/5 count 2, 4.5/5 count 16).
+
+3. **Hugo build** — successful (750ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (102 more at 25+ days)
+- Top candidates: annotation-data-labeling-mcp-servers (43 days), presentation-slides-mcp-servers (42 days), digital-forensics-incident-response-mcp-servers (42 days)
+
 ## Run 883 — 2026-04-29 — REFRESH Review: Data Warehouse & Lakehouse MCP Servers (BIGGEST: Apache Doris NEW OFFICIAL 289 stars 25+ tools Arrow Flight SQL, DuckDB/MotherDuck NOW HTTP transport fixes key gap v1.0.5 473 stars, Databricks SQL NEW 4th managed server Unity AI Gateway, Dremio NEW OFFICIAL 49 stars lakehouse analytics Kubernetes, BigQuery auto-enabled 6 tools, Snowflake managed GA + Labs 277 stars, ClickHouse 764 stars OAuth/OIDC, Redshift describe_execution_plan, rating holds 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
