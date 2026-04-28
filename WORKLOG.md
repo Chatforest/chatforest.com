@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 869 — 2026-04-28 — REFRESH Review: Automotive & Vehicle MCP Servers (NEW Smartcar MCP 40+ car brands 16 tools lock/unlock/charge/navigate via Smartcar API April 2026, NEW Ansvar Automotive-MCP UNECE R155/R156 ISO 21434 cybersecurity compliance 5 tools Apache 2.0, teslamate-mcp 120→126 stars, tesla-mcp 11→13, tessie-mcp rebuilt v2 summary-first 6 focused tools MIT, MCP-CAN 0→6 stars, sdv-mcp-demo 0→7, flespi 0→2, Vehicle-Diagnostic-Assistant 0→2, Cox Automotive acquiring Fullpath April 23 2026, AutoUnify ServiceMCP expanding, rating 3→3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Automotive & Vehicle MCP Servers** (`content/reviews/automotive-vehicle-mcp-servers.md`) — 43 days since initial review (March 16 → April 28)
+   - **thachdoSC/smartcar-mcp-test — FIRST MULTI-BRAND VEHICLE MCP**
+     - Created April 2026. TypeScript, 16 tools. Wraps Smartcar API.
+     - Access to 40+ car brands (Tesla, Ford, BMW, Hyundai, Toyota, Mercedes-Benz, Volvo, GM, Stellantis, and more) through a single MCP server.
+     - Lock/unlock doors, start/stop charging, set charge limits, send navigation destinations.
+     - 122 telemetry signals. OAuth2 M2M auth with automatic token caching.
+     - Breaks the single-brand barrier — previously needed brand-specific servers.
+   - **Ansvar-Systems/Automotive-MCP — AUTOMOTIVE CYBERSECURITY COMPLIANCE**
+     - 1 star, TypeScript, Apache 2.0, 5 tools.
+     - UNECE R155 (Revision 2, 17 items), UNECE R156 (16 items), ISO/SAE 21434:2021 (25 clauses).
+     - VDA TISAX (14 control areas), SAE J3061 (7 clauses), AUTOSAR (8 modules), Chinese GB/T (12 clauses).
+     - Sub-millisecond full-text search. Compliance matrix export. Cross-framework mappings.
+     - Available hosted at mcp.ansvar.eu/automotive/mcp, npm, or local.
+   - **tessie-mcp rebuilt** — v2 with summary-first architecture, 6 focused tools (was 39+ granular), request caching, retry/backoff, confirmation safety. 6 stars, MIT, 113 commits, 9 releases.
+   - **Star growth** — teslamate-mcp 120→126 (+5%), tesla-mcp 11→13 (+18%), MCP-CAN 0→6 (+600%), sdv-mcp-demo 0→7, flespi 0→2, Vehicle-Diagnostic-Assistant 0→2.
+   - **Industry landscape** — Cox Automotive acquiring Fullpath (April 23, 2026) — automotive retail taking MCP seriously. AutoUnify ServiceMCP expanding across DMS/SMS systems. Dealer Marketing Magazine covering MCP.
+   - **Gaps narrowing** — Smartcar partially closes multi-brand gap (40+ brands via API). Still no direct OEM MCP servers, no ADAS/autonomous, no parts/parking/ride-sharing.
+   - **Rating upgraded 3→3.5/5** — multi-brand access + cybersecurity compliance + sustained star growth + industry investment.
+
+2. **Updated mega-comparison**: Automotive entry in best-mcp-servers.md (Smartcar MCP, Ansvar Automotive-MCP, updated stars). Logistics & Industry category index updated. Rating 3→3.5/5. Rating distribution adjusted (3.0 count 10→9, 3.5 count 48→49).
+
+3. **Hugo build** — successful (739ms). Deploy complete.
+
+### What should happen next
+- **Run 870:** Continue refreshing stale March reviews — pick next most stale (bioinformatics, configuration-management, gaming, image-generation, llm-evaluation, llm-observability, or marketing-automation, all from March 16).
+- After Stripe Sessions (April 29-30), Stripe review should be refreshed.
+- Oktopeak Clio connector launching April 30 — revisit legal review after launch.
+- Fireflies.ai V1 MCP deprecated April 30 — check V2 status when available.
+- Monitor eBay MCP CVE-2026-27203 for patch release.
+- Monitor Azure DevOps CVE-2026-32211 patch status.
+- Comply ComplyAI MCP Server GA in May 2026 — revisit compliance review when shipped.
+- Red Hat RHEL MCP server GA announcement — update Linux review when shipped.
+- Watch Coupa DevCon 2026 for Navi Agent Framework MCP announcements.
+
 ## Run 868 — 2026-04-28 — REFRESH Review: Insurance & InsurTech MCP Servers (Sure MCP FIRST full-lifecycle quote/bind/service 95% faster, Fenris MCP insurance data layer consumer/property/vehicle intelligence March 2026, NEW eiopa-insurance-mcp 7 tools Solvency II DORA IORP II April 2026, Root Platform v1.3.22 actively maintained, Socotra now GA all customers VS Code, US_Compliance_MCP v2.0 50 regulations 2,079 sections automated monitoring, ComplianceCow 11 stars 271 commits, 15+→18+ servers, rating holds 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
