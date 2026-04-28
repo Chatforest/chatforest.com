@@ -2,17 +2,17 @@
 title: "Marketing Automation MCP Servers — Email Marketing, Ad Platforms, SEO, and Social Media Management"
 date: 2026-03-16T15:00:00+09:00
 description: "Marketing automation MCP servers let AI agents manage email campaigns, run ad platforms, analyze SEO data, and schedule social media posts."
-og_description: "Marketing automation MCP servers: pipeboard-co/meta-ads-mcp (601 stars — Meta Ads management), AminForou/mcp-gsc (512 stars — Google Search Console), peakmojo/mcp-hubspot (72 stars — HubSpot CRM), cnych/seo-mcp (165 stars — Ahrefs SEO). 30+ servers reviewed. Rating: 4/5."
+og_description: "Marketing automation MCP servers: pipeboard-co/meta-ads-mcp (823 stars — Meta Ads management), AminForou/mcp-gsc (748 stars — Google Search Console), googleads/google-ads-mcp (404 stars — official Google Ads), peakmojo/mcp-hubspot (121 stars — HubSpot CRM). Amazon Ads official MCP in open beta. 45+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Marketing automation MCP servers for AI-powered email campaigns, advertising management, SEO analysis, and social media scheduling. **Email marketing MCP servers cover the major platforms** — the core challenge of email marketing automation is managing campaigns, contacts, and templates across different providers. deyikong/sendgrid-mcp (21 stars, Python) leads the SendGrid ecosystem with 59 tools covering marketing automations, single send campaigns, contact management, and email statistics — running in read-only mode by default for safety. Garoth/sendgrid-mcp (24 stars, Python) provides a focused set of tools for contact lists, dynamic templates, single sends, and basic analytics. houtini-ai/brevo-mcp offers comprehensive Brevo integration with A/B testing, segmentation, and campaign management. MailerLite provides an official MCP server requiring no API keys — it handles subscriber management, campaign creation, and automation workflows directly. ActiveCampaign and Brevo both have official MCP servers available for Claude Desktop and Cursor integration. LokiMCPUniverse/mailchimp-mcp-server and bryangsmith/MailchimpMCP provide Mailchimp access with campaign management and automation control. **HubSpot has the richest CRM integration** — peakmojo/mcp-hubspot (72 stars, Python) goes beyond basic API access with FAISS vector storage for semantic search across previous interactions, SentenceTransformer embeddings with automatic caching, and duplicate prevention on contact creation. shinzo-labs/hubspot-mcp provides comprehensive API coverage. calypsoCodex/hubspot-mcp-extended offers 106 tools generated from HubSpot's official OpenAPI specs covering contacts, companies, deals, tickets, quotes, products, invoices, and line items. yespark/mcp-hubspot provides 40+ tools for CRM, marketing, and sales automation via REST API. The official HubSpot MCP Server is now in public beta at developers.hubspot.com/mcp. **Ad platform MCP servers are surprisingly mature** — pipeboard-co/meta-ads-mcp (601 stars, Python) is the most popular marketing MCP server overall, providing full campaign lifecycle management for Facebook and Instagram ads including campaign creation, budget updates, ad duplication, performance analytics, audience targeting, and creative optimization. It works with any MCP client. brijr/meta-mcp offers similar functionality with emphasis on creative optimization. google-marketing-solutions/google_ads_mcp is the official Google implementation — Python-based, Apache-2.0 licensed, currently read-only for diagnostics and analytics. cohnen/mcp-google-ads connects Google Ads with Claude AI for natural language campaign analysis. TrueClicks/google-ads-mcp-js is notable for not requiring developer tokens or OAuth credentials — easiest setup. **SEO tools have strong community adoption** — AminForou/mcp-gsc (512 stars, Python) is the most popular SEO MCP server, connecting Google Search Console to AI assistants for natural language SEO analysis including query performance, page analytics, and search appearance data. cnych/seo-mcp (165 stars) provides free SEO analysis based on Ahrefs data including backlink analysis, keyword research, and traffic estimation. Skobyn/dataforseo-mcp-server (47 stars) offers comprehensive DataForSEO API access for SERP data, keyword research, and competitor analysis. mrgoonie/seo-insights-mcp-server provides backlinks, keyword research, and traffic analysis with CLI support. **Social media management covers scheduling and posting** — pascalporedda/typefully-mcp-server (TypeScript) creates and manages drafts on Typefully for X, LinkedIn, Bluesky, and Threads. tn819/buffer-mcp handles Buffer social media scheduling. LokiMCPUniverse/hootsuite-mcp-server integrates with Hootsuite for social media management. mattcoatsworth/Klaviyo-MCP-Server provides comprehensive Klaviyo integration for profiles, lists, segments, campaigns, flows, templates, and catalogs — Klaviyo also offers an official MCP server at developers.klaviyo.com. **Gaps remain in cross-platform orchestration** — no MCP server provides a unified marketing dashboard aggregating data across email, ads, SEO, and social. No dedicated A/B testing orchestrator exists. Affiliate marketing, influencer management, and marketing attribution are not covered. The category would benefit from a 'marketing ops' MCP that connects campaign data across platforms for unified reporting."
-last_refreshed: 2026-03-16
+card_description: "Marketing automation MCP servers for AI-powered email campaigns, advertising management, SEO analysis, and social media scheduling. **Ad platforms exploded with official support** — Amazon Ads launched its official MCP server in open beta (February 2026), joining Google's new googleads/google-ads-mcp (404 stars) as the second major ad platform to go official. pipeboard-co/meta-ads-mcp surged to 823 stars (+37%) with Pipeboard CLI now supporting Meta + Google + TikTok from a single binary. Cross-platform gap is CLOSING: Synter Media AI covers 14 ad platforms with 160+ read/write tools ($199/month), amekala/ads-mcp provides 175+ tools across Google/Meta/LinkedIn/TikTok. NEW LinkedIn Ads MCP servers emerged (ZLeventer 25 tools, danielpopamd, radiateb2b). NEW TikTok Ads MCP servers (AdsMCP, ysntony). **HubSpot went GA** — the official remote MCP server graduated from beta to GA (April 13, 2026) with write capabilities, engagement history, and marketing content objects. Developer MCP also GA with self-service MCP Auth Apps. peakmojo/mcp-hubspot surged 72→121 stars (+68%). **Adobe Marketo Engage launched MCP** — 100+ operations across forms, programs, smart campaigns, leads, and emails (closed beta April 2026). **Intuit and Anthropic announced multi-year partnership** — MCP integrations for Mailchimp, TurboTax, QuickBooks, and Credit Karma rolling out spring 2026. **Email marketing went fully official** — ActiveCampaign became first marketing platform in Claude's official directory with remote MCP (9 tools). MailerLite official MCP at mcp.mailerlite.com (8 tools). Brevo official MCP at mcp.brevo.com. Klaviyo official MCP GA with Claude connector. **SEO tools surged** — AminForou/mcp-gsc 512→748 stars (+46%), v0.3.2, 20 tools, MIT, uvx install method. cnych/seo-mcp 165→239 stars (+45%). Skobyn/dataforseo-mcp-server 47→75 stars (+60%) with Local Falcon integration. **Rating upgraded 4→4.5/5** — Amazon Ads official, Google Ads official 404 stars, cross-platform solutions emerging, HubSpot GA, Intuit/Anthropic partnership, massive star growth."
+last_refreshed: 2026-04-28
 ---
 
 Marketing automation MCP servers let AI agents manage email campaigns, run advertising platforms, analyze SEO data, and schedule social media content. Instead of switching between marketing dashboards, AI assistants can directly create campaigns, analyze performance, and optimize marketing workflows. Part of our **[Business & Productivity MCP category](/categories/business-productivity/)**.
 
 This review covers **marketing automation MCP servers** — email marketing platforms, CRM/marketing hubs, advertising platforms, SEO tools, and social media management. For related servers, see our [Social Media & Marketing review](/reviews/social-media-marketing-mcp-servers/), [E-Commerce & Shopping review](/reviews/ecommerce-shopping-mcp-servers/), and [Analytics & Business Intelligence review](/reviews/analytics-mcp-servers/).
 
-The headline findings: **Ad platform MCPs are surprisingly mature** — pipeboard-co/meta-ads-mcp has 601 stars and handles full campaign lifecycle management. **SEO tools have strong community adoption** with AminForou/mcp-gsc at 512 stars. **Email marketing platforms are well-covered** with official MCPs from MailerLite, Brevo, ActiveCampaign, and Klaviyo. **HubSpot has the richest CRM integration** with vector search and 106-tool comprehensive coverage.
+The headline findings: **Ad platforms are now the most mature MCP category** — Amazon Ads launched its official MCP (February 2026), googleads/google-ads-mcp hit 404 stars, and pipeboard-co/meta-ads-mcp surged to 823 stars. **Cross-platform orchestration gap is closing** — Synter Media covers 14 ad platforms, amekala/ads-mcp covers 4 with 175+ tools. **HubSpot official MCP went GA** with write access (April 13, 2026). **Intuit and Anthropic announced a multi-year partnership** bringing Mailchimp MCP integrations in spring 2026. **SEO tools surged** — GSC at 748 stars (+46%), Ahrefs SEO at 239 stars (+45%).
 
 ## Email Marketing
 
@@ -59,45 +59,62 @@ Better choice when you want a simpler, more focused SendGrid integration without
 - **Campaign lifecycle** — create, update, and send test emails before launching
 - **Multi-channel** — Brevo covers email and SMS marketing
 
-Brevo also offers an official MCP server that connects directly from Claude Desktop and Cursor.
+Brevo now offers an **official MCP server** hosted at mcp.brevo.com — works with Claude Desktop, Cursor, Windsurf, VS Code, and more. Community BusyBee3333/brevo-mcp-2026-complete provides 55+ tools and 14 interactive apps.
 
 ### MailerLite Official MCP — Zero-Config Email Marketing
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [MailerLite MCP](https://www.mailerlite.com/features/mcp) | — | — | — | — |
+| [MailerLite MCP](https://www.mailerlite.com/features/mcp) | — | — | — | 8 |
 
 **Official MailerLite MCP server requiring no API keys** — the easiest email marketing MCP to set up:
 
-- **No API key needed** — direct connection from AI tools to MailerLite
-- **Subscriber management** — create and manage subscriber lists
-- **Campaign creation** — build and send email campaigns via natural language
+- **No API key needed** — direct connection from AI tools to MailerLite at mcp.mailerlite.com
+- **8 tools** — subscriber management, campaign creation, group management, activity tracking
+- **Remote MCP** — hosted server, no downloads or code required
 - **Automation workflows** — set up automated email sequences
 
 Notable for being one of the few email marketing MCPs with an official, no-configuration setup path.
 
 ### Other Email Marketing MCPs
 
-- **ActiveCampaign** — official MCP server available for Claude Desktop and Cursor integration
-- **Klaviyo** — official MCP server at developers.klaviyo.com, plus mattcoatsworth/Klaviyo-MCP-Server (comprehensive profiles, lists, segments, campaigns, flows, templates, catalogs management)
-- **Mailchimp** — LokiMCPUniverse/mailchimp-mcp-server (full API access), bryangsmith/MailchimpMCP (read-only campaign analytics and automation management), AgentX-ai/mailchimp-mcp (read-only)
+- **ActiveCampaign** — official remote MCP server at mcp.activecampaign.com with 9 tools, **first marketing platform in Claude's official directory**. Works with all MCP-compatible AI tools
+- **Klaviyo** — official MCP server now **GA** with enhanced reporting and remote server accessibility. Available as a Claude connector (Settings > Connectors). Plus mattcoatsworth/Klaviyo-MCP-Server (comprehensive profiles, lists, segments, campaigns, flows, templates, catalogs management)
+- **Mailchimp** — **Intuit and Anthropic announced a multi-year partnership** (February 2026) bringing MCP integrations for Mailchimp, TurboTax, QuickBooks, and Credit Karma, rolling out to users in spring 2026. Community servers: LokiMCPUniverse/mailchimp-mcp-server (full API access), bryangsmith/MailchimpMCP (read-only campaign analytics), AgentX-ai/mailchimp-mcp (read-only)
 
 ## HubSpot CRM & Marketing
+
+### HubSpot Official MCP — Now Generally Available
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [HubSpot MCP](https://developers.hubspot.com/mcp) | — | — | — | — |
+
+**The official HubSpot remote MCP server graduated from beta to GA on April 13, 2026** — the most significant CRM MCP milestone:
+
+- **Write capabilities added** — read and write to your CRM through natural conversation (was read-only in beta)
+- **Engagement history** — access contact and company engagement data
+- **Marketing content objects** — manage marketing assets directly
+- **Permission-aware** — respects existing HubSpot user permissions throughout
+- **Developer MCP also GA** — build HubSpot apps using natural language via `hs mcp setup`
+- **Self-service MCP Auth Apps** — build and manage your own AI connectors to HubSpot MCP
+
+The definitive choice for HubSpot users. Remote MCP means no local setup required.
 
 ### peakmojo/mcp-hubspot — HubSpot with Vector Search
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) | 72 | Python | — | 10+ |
+| [mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) | 121 | Python | — | 7 |
 
-**The most-starred community HubSpot MCP** — goes beyond basic API access with intelligent caching:
+**The most-starred community HubSpot MCP** — surged from 72 to 121 stars (+68%) since March:
 
 - **FAISS vector storage** — semantic search across previously retrieved HubSpot data
 - **SentenceTransformer embeddings** — automatic embedding caching and persistent storage
 - **Duplicate prevention** — built-in deduplication when creating contacts and companies
 - **Docker deployment** — simple containerized setup with minimal configuration
 
-Best for teams with large HubSpot datasets who need fast, semantic access to CRM data.
+Best for teams who want semantic search across CRM data — complements the official MCP with capabilities HubSpot's server doesn't offer.
 
 ### calypsoCodex/hubspot-mcp-extended — 106 Tools from OpenAPI Specs
 
@@ -113,7 +130,6 @@ Best for teams with large HubSpot datasets who need fast, semantic access to CRM
 
 ### Other HubSpot MCPs
 
-- **Official HubSpot MCP Server** — now in public beta at developers.hubspot.com/mcp
 - **shinzo-labs/hubspot-mcp** — comprehensive MCP implementation for HubSpot API
 - **yespark/mcp-hubspot** — 40+ tools for CRM, marketing, and sales automation via REST API
 - **lkm1developer/hubspot-mcp-server** — AI assistant integration for HubSpot CRM data
@@ -124,78 +140,105 @@ Best for teams with large HubSpot datasets who need fast, semantic access to CRM
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | 601 | Python | — | 26+ |
+| [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | 823 | Python | BSL-1.1 | 25+ |
 
-**The most-starred marketing automation MCP server** — full campaign lifecycle management for Meta advertising:
+**The most-starred marketing automation MCP server** — surged from 601 to 823 stars (+37%) with Pipeboard expanding beyond Meta:
 
 - **Campaign management** — create campaigns, update budgets, duplicate ads across Facebook and Instagram
 - **Performance analytics** — retrieve detailed performance data and strategic insights
 - **Creative optimization** — visualize ad creatives, analyze performance by creative variant
-- **Audience targeting** — manage audience segments and targeting parameters
-- **Universal MCP client support** — works with Claude Desktop, Cursor, Cherry Studio, and more
-- **OAuth authentication** — simple setup with Meta Business credentials
+- **Audience targeting** — manage audience segments, interests, demographics, and locations
+- **Remote MCP recommended** — streamable HTTP transport via Pipeboard cloud for most users
+- **Pipeboard CLI** — unified command-line tool now supporting **Meta Ads + Google Ads + TikTok Ads** from a single binary
 
-The go-to choice for Meta advertising automation. Community-maintained with 601 stars.
+The go-to choice for Meta advertising automation. Pipeboard's expansion to Google and TikTok makes it the first multi-platform ad MCP ecosystem.
 
-### brijr/meta-mcp — Full Meta Marketing API
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [meta-mcp](https://github.com/brijr/meta-mcp) | — | — | — | 20+ |
-
-**Comprehensive Meta Marketing API coverage** with emphasis on creative optimization:
-
-- **Full campaign lifecycle** — campaign management, analytics, audience targeting
-- **Creative optimization** — tools for optimizing ad creatives across Meta platforms
-- **Facebook + Instagram** — covers all Meta advertising platforms
-
-### google-marketing-solutions/google_ads_mcp — Official Google Ads MCP
+### Amazon Ads MCP Server — Official, Open Beta
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [google_ads_mcp](https://github.com/google-marketing-solutions/google_ads_mcp) | — | Python | Apache-2.0 | 10+ |
+| [Amazon Ads MCP](https://advertising.amazon.com/library/news/amazon-ads-mcp-server-open-beta) | — | — | — | 10+ |
 
-**The official Google Ads MCP implementation** — enables LLMs to interact directly with the Google Ads API:
+**Amazon Ads launched its official MCP server in open beta (February 2, 2026)** — the biggest new entrant in ad platform MCPs:
 
-- **Official Google project** — maintained by Google Marketing Solutions (not an officially supported Google product)
-- **Read-only** — designed for diagnostics and analytics, not campaign modification
-- **Python 3.12** — uses uv for dependency management
-- **Gemini integration** — listed in Gemini's MCP server directory
-- **Apache-2.0 licensed** — open source with permissive licensing
+- **End-to-end campaign creation** — create campaigns, ad groups, and ads in a single workflow (previously 3+ separate operations)
+- **Performance reporting** — pull reports and analytics through natural language
+- **Budget optimization** — adjust bids and budgets across campaigns
+- **Global availability** — available to all Amazon Ads partners with active API credentials
+- **Multi-AI support** — works with Claude, ChatGPT, Gemini, Amazon Q, and others
 
-Best for analytics and reporting. For campaign management, consider community alternatives.
+The first official Amazon advertising MCP. Covered by AdExchanger, Digiday, and AdWeek — signals enterprise ad platform MCP adoption accelerating.
 
-### cohnen/mcp-google-ads — Natural Language Google Ads Analysis
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [mcp-google-ads](https://github.com/cohnen/mcp-google-ads) | — | — | — | 10+ |
-
-**Natural language interface to Google Ads data** — analyze advertising data through conversation:
-
-- **Campaign analysis** — access campaign information and performance metrics
-- **Keyword analytics** — research keyword performance and opportunities
-- **Ad management** — review and analyze ad creative performance
-- **Multi-client** — works with Claude, Cursor, and Windsurf
-
-### TrueClicks/google-ads-mcp-js — Easiest Google Ads Setup
+### googleads/google-ads-mcp — Official Google Ads MCP (New Home)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [google-ads-mcp-js](https://github.com/TrueClicks/google-ads-mcp-js) | — | JavaScript | — | 10+ |
+| [google-ads-mcp](https://github.com/googleads/google-ads-mcp) | 404 | Python | Apache-2.0 | 3 tools + 4 resources |
 
-**The easiest Google Ads MCP to set up** — no developer tokens or OAuth credentials required:
+**Google's official MCP server migrated to the googleads organization** — 404 stars, the authoritative Google Ads MCP:
 
-- **Zero credential setup** — unique among Google Ads MCPs for not requiring developer tokens
-- **JavaScript/Node.js** — runs via npx for quick installation
-- **PPC analysis** — designed for pay-per-click campaign analysis
+- **3 core tools** — `search` (account info retrieval), `get_resource_metadata` (API structure), `list_accessible_customers` (customer IDs)
+- **4 resources** — discovery document, metrics info, segments info, release notes
+- **v0.6.4** — latest release April 23, 2026 with 9 total releases
+- **83 commits** — actively maintained with rapid iteration
+- **Apache-2.0 licensed** — fully open source
+
+Note: google-marketing-solutions/google_ads_mcp (183 stars) remains active alongside this repo. The older google_ads_mcp_server has been archived in favor of this repo.
+
+### Cross-Platform Ad MCPs — The Gap Is Closing
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [ads-mcp](https://github.com/amekala/ads-mcp) | 37 | Multi | Proprietary | 175+ |
+
+**Cross-platform ad management is emerging** — the biggest gap identified in our March review is now closing:
+
+- **amekala/ads-mcp** (37 stars) — 175+ tools across Google Ads (75+), Meta Ads (36), LinkedIn Ads (45), TikTok Ads (31). Works with ChatGPT, Claude, Gemini CLI, Cursor, Codex, and Windsurf. Proprietary license.
+- **Synter Media AI** — 160+ tools across **14 ad platforms** (Google, Meta, LinkedIn, TikTok, Reddit, Pinterest, Snapchat, X, Microsoft, Taboola, and more). First unified cross-platform MCP with full read/write access. Commercial at ~$199/month.
+- **Pipeboard CLI** — supports Meta + Google + TikTok from a single binary alongside the meta-ads-mcp server.
+
+### LinkedIn Ads MCPs — New Category
+
+Multiple LinkedIn Ads MCP servers emerged since March 2026:
+
+- **ZLeventer/linkedin-campaign-manager-mcp** (4 stars, TypeScript, MIT) — 25 read-only tools covering ad accounts, campaigns, creatives, performance analytics, demographics, video analytics, budget pacing, Lead Gen Forms, conversions, and targeting. v1.1.1 April 2026
+- **danielpopamd/linkedin-ads-mcp** — access and analyze LinkedIn Ads data with Claude
+- **radiateb2b/mcp-linkedin-ads** — performance analysis with benchmark comparisons and optimization recommendations
+- **CDataSoftware/linkedin-ads-mcp-server-by-cdata** — read-only via CData JDBC Drivers
+
+### TikTok Ads MCPs — New Category
+
+TikTok Ads MCP servers emerged alongside the platform's growing ad business:
+
+- **AdsMCP/tiktok-ads-mcp-server** (MIT) — OAuth authentication, campaign retrieval, ad group management, performance metrics
+- **ysntony/tiktok-ads-mcp** — comprehensive TikTok Business API integration, campaign/ad group/ad management and reporting
 
 ### Other Ad Platform MCPs
 
-- **EfrainTorres/armavita-meta-ads-mcp** — Meta Marketing API v25 with secure token redaction, cursor pagination
-- **attainmentlabs/meta-ads-mcp** — create and manage Meta ad campaigns from Claude
+- **brijr/meta-mcp** — full Meta Marketing API with creative optimization focus
+- **google-marketing-solutions/google_ads_mcp** (183 stars) — v0.6.4, Python, Apache-2.0, still active
+- **cohnen/mcp-google-ads** — natural language Google Ads analysis with Claude, Cursor, Windsurf
+- **TrueClicks/google-ads-mcp-js** — easiest Google Ads setup, no developer tokens required
+- **EfrainTorres/armavita-meta-ads-mcp** — Meta Marketing API v25 with secure token redaction
 - **gomarble-ai/google-ads-mcp-server** — Google Ads performance data analysis
 - **promobase/google-ads-mcp** — Google Ads API v20 with full type annotations
+
+## Enterprise Marketing Automation
+
+### Adobe Marketo Engage MCP — Closed Beta
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Marketo MCP](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/mcp-server) | — | — | — | 100+ |
+
+**Adobe launched its Marketo Engage MCP server in closed beta (April 2026)** — the first enterprise marketing automation platform with MCP:
+
+- **100+ operations** — forms, programs, smart campaigns, leads, emails, snippets, lists, and folders
+- **No server-side software needed** — executes REST API calls on your behalf via MCP
+- **Enterprise AI integration** — works with Claude, Copilot, and other MCP-compatible systems
+- **Campaign creation via prompts** — "Create a new smart campaign for my next webinar" replaces manual UI clicks
+
+The biggest gap filler for enterprise marketing — Marketo was the most notable absence in our March review.
 
 ## SEO Tools
 
@@ -203,28 +246,29 @@ Best for analytics and reporting. For campaign management, consider community al
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-gsc](https://github.com/AminForou/mcp-gsc) | 512 | Python | — | 5+ |
+| [mcp-gsc](https://github.com/AminForou/mcp-gsc) | 748 | Python | MIT | 20 |
 
-**The most-starred SEO MCP server** — connects Google Search Console to AI assistants:
+**The most-starred SEO MCP server** — surged from 512 to 748 stars (+46%) with significant improvements:
 
-- **Natural language SEO analysis** — query performance, page analytics, search appearance data
-- **Google Search Console data** — direct access to GSC metrics and reports
-- **Conversation-based** — analyze SEO data through natural language prompts
-- **Claude integration** — designed specifically for Claude AI workflows
+- **20 tools** (up from 5+) — comprehensive Google Search Console coverage
+- **v0.3.2** (April 2026) — fixed OAuth browser flow for uvx, added `get_capabilities` tool
+- **uvx installation** — no cloning, no Python setup, no virtual environments needed
+- **Multi-client** — works with Claude Desktop, Cursor, Codex CLI, Gemini CLI, Antigravity
+- **MIT licensed** — fully open source
 
-The standard choice for SEO professionals who want AI-assisted Search Console analysis.
+The standard choice for SEO professionals. The 46% star growth confirms strong community demand.
 
 ### cnych/seo-mcp — Free Ahrefs-Based SEO Analysis
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [seo-mcp](https://github.com/cnych/seo-mcp) | 165 | — | — | 5+ |
+| [seo-mcp](https://github.com/cnych/seo-mcp) | 239 | Python | MIT | 4 |
 
-**Free SEO tool based on Ahrefs data** — no Ahrefs subscription required:
+**Free SEO tool based on Ahrefs data** — surged from 165 to 239 stars (+45%):
 
-- **Backlink analysis** — check backlink profiles for any domain
-- **Keyword research** — discover keyword opportunities and search volumes
-- **Traffic estimation** — estimate organic traffic for domains
+- **4 tools** — backlink analysis, keyword generation, traffic estimation, keyword difficulty
+- **Automated CAPTCHA solving** — handles Ahrefs authentication automatically
+- **Caching** — optimized for repeated queries
 - **Free access** — uses Ahrefs data without requiring a paid account
 
 Popular choice for SEO research without the cost of premium SEO tools.
@@ -233,14 +277,15 @@ Popular choice for SEO research without the cost of premium SEO tools.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [dataforseo-mcp-server](https://github.com/Skobyn/dataforseo-mcp-server) | 47 | — | — | 20+ |
+| [dataforseo-mcp-server](https://github.com/Skobyn/dataforseo-mcp-server) | 75 | TypeScript | MIT | 20+ |
 
-**Full DataForSEO API access** — comprehensive SEO data for professional use:
+**Full DataForSEO API access** — surged from 47 to 75 stars (+60%) with new capabilities:
 
 - **SERP data** — search engine results page analysis
 - **Keyword research** — volume, difficulty, and competition metrics
-- **Competitor analysis** — compare domain performance
-- **Comprehensive API** — covers the full DataForSEO endpoint catalog
+- **Local Falcon integration** — local ranking analysis and Google My Business search (new)
+- **Tool filtering** — enable specific modules via environment variables to reduce context window usage
+- **Zod type-safe** — built with TypeScript and Zod schemas
 
 Requires a DataForSEO API subscription. Best for agencies and professionals needing programmatic SEO data.
 
@@ -249,6 +294,7 @@ Requires a DataForSEO API subscription. Best for agencies and professionals need
 - **mrgoonie/seo-insights-mcp-server** — TypeScript-based, backlinks, keyword research, traffic analysis with CLI support
 - **dataforseo/mcp-server-typescript** — official DataForSEO TypeScript MCP server
 - **AminForou/google-search-console-mcp-v2** — updated version of the GSC MCP
+- **egebese/seo-research-mcp** — free SEO research using Ahrefs data, optimized for AI-powered IDEs
 
 ## Social Media Management
 
@@ -284,18 +330,18 @@ Requires a DataForSEO API subscription. Best for agencies and professionals need
 
 ## What's Missing
 
-The marketing automation MCP ecosystem has notable **gaps**:
+The marketing automation MCP ecosystem has narrowed its **gaps** significantly since March:
 
-- **No unified marketing dashboard** — no MCP aggregates data across email, ads, SEO, and social into a single interface
+- **~~No unified marketing dashboard~~** — **CLOSING**: Synter Media covers 14 platforms, amekala/ads-mcp covers 4, but email+SEO+social still not unified
 - **No A/B testing orchestrator** — individual platforms support A/B tests, but no MCP coordinates testing across channels
-- **Limited cross-platform analytics** — no marketing attribution MCP connecting touchpoints across platforms
+- **~~Limited cross-platform analytics~~** — **CLOSING**: cross-platform ad servers now aggregate performance data across platforms
 - **No affiliate marketing MCP** — affiliate networks (ShareASale, CJ, Impact) are not covered
 - **No influencer management** — no MCP for influencer discovery, outreach, or campaign tracking
-- **Limited marketing automation workflows** — platforms like Marketo, Pardot, and Marketing Cloud lack MCP servers
+- **~~Limited marketing automation workflows~~** — **CLOSING**: Marketo MCP in closed beta, HubSpot GA, ActiveCampaign official
 - **No content calendar MCP** — no unified content planning tool across channels
 
 ## Bottom Line
 
-The marketing automation MCP category is **surprisingly strong at 4/5** — driven by high-quality ad platform MCPs (Meta Ads at 601 stars, official Google Ads), excellent SEO tooling (Google Search Console at 512 stars), and broad email marketing coverage with multiple official MCPs from major platforms. HubSpot's ecosystem is particularly rich with vector search capabilities and 106-tool comprehensive coverage. The main weakness is cross-platform orchestration — each platform has good individual MCPs, but no server ties them together for unified marketing operations. Social media management MCPs are functional but less mature than the ad and email categories.
+The marketing automation MCP category **upgraded to 4.5/5** — driven by explosive growth across every sub-category. Ad platforms saw the biggest leap: Amazon Ads went official (open beta February 2026), Google Ads moved to googleads org with 404 stars, Meta Ads surged to 823 stars, and cross-platform solutions emerged from Synter and amekala. HubSpot's official MCP graduating to GA with write access is a CRM milestone. The Intuit/Anthropic multi-year partnership signals Mailchimp MCP is imminent. SEO tools saw 45-60% star growth across the board. Adobe Marketo's entry closes the enterprise marketing automation gap. The remaining weaknesses are affiliate marketing, influencer management, and a truly unified cross-channel content calendar — but the trajectory from March to April is the strongest improvement of any marketing category.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was refreshed on 2026-04-28 using Claude Opus 4.6 (Anthropic). Previous version: 2026-03-16.*
