@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 883 — 2026-04-29 — REFRESH Review: Data Warehouse & Lakehouse MCP Servers (BIGGEST: Apache Doris NEW OFFICIAL 289 stars 25+ tools Arrow Flight SQL, DuckDB/MotherDuck NOW HTTP transport fixes key gap v1.0.5 473 stars, Databricks SQL NEW 4th managed server Unity AI Gateway, Dremio NEW OFFICIAL 49 stars lakehouse analytics Kubernetes, BigQuery auto-enabled 6 tools, Snowflake managed GA + Labs 277 stars, ClickHouse 764 stars OAuth/OIDC, Redshift describe_execution_plan, rating holds 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Data Warehouse & Lakehouse MCP Servers** (`content/reviews/data-warehouse-lakehouse-mcp-servers.md`) — 43 days since initial review (March 17 → April 29)
+   - **Apache Doris NOW HAS OFFICIAL MCP SERVER — notable new entry**
+     - apache/doris-mcp-server: 289 stars, v0.6.0, Python, Apache 2.0
+     - 25+ MCP tools (most in the category) — query, schema, monitoring, data quality, lineage
+     - Enterprise auth (Token, JWT, OAuth), Arrow Flight SQL 3-10x perf
+     - Multi-catalog federation, ADBC integration
+   - **DuckDB/MotherDuck NOW HAS HTTP TRANSPORT — key gap fixed**
+     - motherduckdb/mcp-server-motherduck: 441 → 473 stars (+7%), v1.0.5, 6 releases
+     - HTTP + stateless-HTTP transport (was stdio only — our main criticism, now fixed)
+     - AWS Bedrock AgentCore Runtime compatibility via stateless-HTTP
+     - Read-only MotherDuck with read-scaling tokens
+   - **Databricks SQL server NEW — 4th managed server**
+     - Direct SQL execution via managed MCP (read + write)
+     - Unity AI Gateway (part of Unity Catalog) enforces governance on all MCP interactions
+     - Managed OAuth for external MCP servers (Glean, GitHub, Google Drive, SharePoint)
+   - **Dremio NEW OFFICIAL MCP SERVER**
+     - dremio/dremio-mcp: 49 stars, Python, Apache 2.0, v0.1.0
+     - Two modes: FOR_DATA_PATTERNS (data exploration) + FOR_SELF (system introspection)
+     - Kubernetes/Helm deployment, OAuth, Prometheus metrics, HPA
+   - **BigQuery auto-enabled — no longer preview**
+     - Now auto-enabled after March 17, 2026
+     - 6 specific tools documented (list_dataset_ids, list_table_ids, get_dataset_info, get_table_info, execute_sql, execute_sql_readonly)
+     - 3-minute query timeout, 3000 row cap
+   - **Snowflake managed MCP server GA**
+     - Managed server reached GA November 2025 (separate from open-source Snowflake-Labs/mcp)
+     - Snowflake-Labs/mcp: 256 → 277 stars (+8%), multi-client support, Docker Compose
+   - **ClickHouse star growth + OAuth/OIDC**
+     - ClickHouse/mcp-clickhouse: 720 → 764 stars (+6%)
+     - OAuth/OIDC auth via FastMCP providers (Azure Entra, Google, GitHub, WorkOS)
+   - **Redshift describe_execution_plan**
+     - awslabs/mcp: 8,500 → 8,900 stars (+5%)
+     - New tool uses EXPLAIN VERBOSE for query plan analysis
+   - **Rating holds 4.5/5** — already one of the strongest categories, got even stronger with 8 vendors (up from 6)
+
+2. **Updated mega-comparison**: Data Warehouse entry in best-mcp-servers.md with all updated stats.
+
+3. **Hugo build** — successful (761ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (103 more at 25+ days)
+- Top candidates: bi-reporting-mcp-servers, annotation-data-labeling-mcp-servers, sustainability-climate-mcp-servers, database-migration-mcp-servers (all 26 days stale)
+
 ## Run 882 — 2026-04-29 — REFRESH Review: Graph Database MCP Servers (BIGGEST: ArangoDB NOW OFFICIAL fills biggest gap, NebulaGraph NEW 27 stars, Memgraph SURGED +265% 95 stars production+experimental architecture, Neo4j Labs 940 stars v0.6.0 4 sub-servers NEW Aura cloud API, TigerGraph expanded 34→40+ tools, Graphiti 25.5K stars MCP Server 1.0, CodeGraphContext nearly tripled 3.1K stars, rating 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

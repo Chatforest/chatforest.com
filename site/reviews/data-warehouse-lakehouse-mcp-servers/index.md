@@ -1,17 +1,19 @@
 # Data Warehouse & Lakehouse MCP Servers — Snowflake, BigQuery, Databricks, ClickHouse, DuckDB, Redshift, and More
 
-> Data warehouse and lakehouse MCP servers reviewed: Snowflake Labs official (256 stars, Python, Cortex AI + SQL + semantic views), ClickHouse official (720 stars, Python, dual
+> Data warehouse and lakehouse MCP servers reviewed: ClickHouse official (764 stars), DuckDB/MotherDuck (473 stars, v1.0.5, NOW HTTP transport), Snowflake Labs (277 stars) + managed GA, Apache Doris NEW official (289 stars, 25+ tools), Databricks 4 managed servers (SQL NEW), BigQuery auto-enabled, Dremio NEW official (49 stars). Rating: 4.5/5.
 
 
-Data warehousing and lakehouse platforms have some of the best MCP coverage in the entire ecosystem. Every major vendor — Snowflake, Google BigQuery, Databricks, ClickHouse, MotherDuck/DuckDB, and Amazon Redshift — now offers official or vendor-backed MCP servers. This makes sense: data warehouses are where enterprise data lives, and connecting AI agents to structured data through SQL is one of the highest-value MCP use cases.
+Data warehousing and lakehouse platforms have some of the best MCP coverage in the entire ecosystem. Every major vendor — Snowflake, Google BigQuery, Databricks, ClickHouse, MotherDuck/DuckDB, Amazon Redshift, Apache Doris, and Dremio — now offers official or vendor-backed MCP servers. This makes sense: data warehouses are where enterprise data lives, and connecting AI agents to structured data through SQL is one of the highest-value MCP use cases.
 
-The landscape divides into three tiers: **cloud-native warehouses** (Snowflake, BigQuery, Redshift) with managed remote MCP servers, **lakehouse platforms** (Databricks) with governance-first MCP integration, and **analytical engines** (ClickHouse, DuckDB) with open-source community-driven servers. Most teams use at least one from the first two tiers, and DuckDB increasingly bridges them all. Part of our **[Data & Analytics](/categories/data-analytics/)** category.
+The landscape divides into three tiers: **cloud-native warehouses** (Snowflake, BigQuery, Redshift) with managed remote MCP servers, **lakehouse platforms** (Databricks, Dremio) with governance-first MCP integration, and **analytical engines** (ClickHouse, DuckDB, Apache Doris) with open-source community-driven servers. Most teams use at least one from the first two tiers, and DuckDB increasingly bridges them all. Part of our **[Data & Analytics](/categories/data-analytics/)** category.
+
+**What changed since our initial review (March 17, 2026):** DuckDB/MotherDuck added HTTP transport (fixing a key gap we identified), Databricks added SQL execution as a 4th managed server, Apache Doris shipped an official MCP server with 289 stars and 25+ tools, Dremio launched an official MCP server for lakehouse analytics, BigQuery moved from preview to auto-enabled, Snowflake's managed MCP server reached GA, and Databricks introduced Unity AI Gateway for MCP governance.
 
 ## ClickHouse — Official Server
 
 | Detail | Info |
 |--------|------|
-| [ClickHouse/mcp-clickhouse](https://github.com/ClickHouse/mcp-clickhouse) | 720 stars |
+| [ClickHouse/mcp-clickhouse](https://github.com/ClickHouse/mcp-clickhouse) | 764 stars |
 | Language | Python |
 | Transport | stdio, SSE, Streamable HTTP |
 | Tools | 4 |
@@ -28,6 +30,8 @@ The official ClickHouse MCP server is the most starred data warehouse MCP server
 
 **Extensible middleware.** Custom middleware can be plugged in without modifying core code — useful for adding logging, audit trails, or custom auth in enterprise deployments.
 
+**OAuth/OIDC authentication.** The server now supports enterprise identity providers including Azure Entra, Google, GitHub, and WorkOS via FastMCP authentication providers. Static bearer token authentication is also available for simpler setups.
+
 ### What Doesn't Work Well
 
 **Only four tools.** Schema exploration is limited to listing databases and tables. No `describe_table` to inspect column types and metadata without writing a query. You need to write `DESCRIBE TABLE` SQL manually.
@@ -38,13 +42,14 @@ The official ClickHouse MCP server is the most starred data warehouse MCP server
 
 | Detail | Info |
 |--------|------|
-| [motherduckdb/mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | 441 stars |
+| [motherduckdb/mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | 473 stars |
 | Language | Python |
 | License | MIT |
-| Transport | stdio |
-| Tools | 5 |
+| Transport | stdio, HTTP, stateless-HTTP |
+| Tools | 4 |
+| Version | v1.0.5 (April 2026) |
 
-The official DuckDB/MotherDuck MCP server bridges local analytics and cloud data warehousing. Five tools: `execute_query`, `list_databases`, `list_tables`, `list_columns`, and `switch_database_connection`.
+The official DuckDB/MotherDuck MCP server bridges local analytics and cloud data warehousing. Now at v1.0.5 with 6 releases, four tools: `execute_query`, `list_databases`, `list_tables`, and `switch_database_connection` (requires `--allow-switch-databases` flag).
 
 ### What Works Well
 
@@ -54,23 +59,23 @@ The official DuckDB/MotherDuck MCP server bridges local analytics and cloud data
 
 **DuckDB's analytical power.** Because this wraps DuckDB, agents get access to DuckDB's ability to query Parquet, CSV, JSON, and Iceberg files directly. Combined with S3 access, an AI agent can analyze data lake files without any warehouse infrastructure.
 
-**MotherDuck SaaS mode.** A restricted mode limits local filesystem access when connecting to MotherDuck cloud, providing appropriate security boundaries for cloud deployments.
+**MotherDuck SaaS mode.** A restricted mode limits local filesystem access when connecting to MotherDuck cloud, providing appropriate security boundaries for cloud deployments. Read-only MotherDuck connections now require specialized read-scaling tokens rather than standard authentication.
+
+**HTTP transport (NEW).** The server now supports HTTP-based transport with configurable host and port, plus a stateless-HTTP mode for compatibility with systems like AWS Bedrock AgentCore Runtime. This was the biggest gap in our initial review — now fixed.
 
 ### What Doesn't Work Well
 
-**No schema descriptions.** `list_columns` shows column names and types, but there's no metadata about column descriptions, constraints, or relationships. For large warehouses, agents need more context than bare schemas.
-
-**Stdio only.** No HTTP transport means no remote deployment or multi-client access. For teams wanting a shared MCP server, this is limiting.
+**Simplified toolset.** The tool count went from 5 to 4 — `list_columns` was removed. Schema exploration now requires SQL queries to inspect column types and metadata.
 
 ## Snowflake — Official Snowflake Labs Server
 
 | Detail | Info |
 |--------|------|
-| [Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp) | 256 stars |
+| [Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp) | 277 stars |
 | Language | Python |
 | Transport | stdio, SSE, Streamable HTTP |
 
-The official Snowflake MCP server from Snowflake Labs goes well beyond basic SQL access. It integrates Snowflake's Cortex AI capabilities — the AI features built into the Snowflake platform — making it one of the most feature-rich data warehouse MCP servers.
+The official Snowflake MCP server from Snowflake Labs goes well beyond basic SQL access. It integrates Snowflake's Cortex AI capabilities — the AI features built into the Snowflake platform — making it one of the most feature-rich data warehouse MCP servers. Snowflake also offers a **managed MCP server** (GA since November 2025) that requires no local deployment — see below.
 
 ### Core Capabilities
 
@@ -90,7 +95,13 @@ The official Snowflake MCP server from Snowflake Labs goes well beyond basic SQL
 
 **Three transports.** Stdio for local development, SSE for streaming, and Streamable HTTP for container deployments and remote servers. The HTTP transport enables team-wide shared MCP access.
 
-**Enterprise-grade.** Snowflake's existing RBAC (role-based access control) applies to all MCP operations. Whatever permissions a user has in Snowflake, they have through MCP — no separate auth layer to configure.
+**Enterprise-grade.** Snowflake's existing RBAC (role-based access control) applies to all MCP operations. Whatever permissions a user has in Snowflake, they have through MCP — no separate auth layer to configure. The server supports comprehensive authentication methods including username/password, key pair, OAuth, SSO, and MFA.
+
+**Multi-client support.** The server now officially supports Claude Desktop, Cursor, VS Code + GitHub Copilot, fast-agent, and Codex, with Docker and Docker Compose deployment options.
+
+### Snowflake Managed MCP Server (GA)
+
+Snowflake also offers a **managed MCP server** that reached General Availability in November 2025. This is a separate, zero-deployment option that serves Cortex Analyst and Cortex Search as tools with RBAC enforcement. Unlike the open-source Snowflake-Labs/mcp server which you self-host, the managed server runs entirely within Snowflake's infrastructure — no local installation needed. For teams already using Cortex, the managed server is the simpler path.
 
 ### What Doesn't Work Well
 
@@ -117,7 +128,8 @@ For most users, the **official Snowflake-Labs/mcp server is the better choice** 
 | Endpoint | `bigquery.googleapis.com/mcp` |
 | Transport | HTTPS (Streamable HTTP) |
 | Auth | OAuth 2.0 + IAM |
-| Status | Preview (auto-enabled after March 17, 2026) |
+| Status | Auto-enabled (since March 17, 2026) |
+| Tools | 6 (`list_dataset_ids`, `list_table_ids`, `get_dataset_info`, `get_table_info`, `execute_sql`, `execute_sql_readonly`) |
 
 Google took the most aggressive approach in the data warehouse MCP space: a **fully managed, remote MCP server** that requires zero local installation. Point your MCP client at `bigquery.googleapis.com/mcp`, authenticate with OAuth 2.0, and you're connected to your BigQuery datasets.
 
@@ -131,9 +143,13 @@ Google took the most aggressive approach in the data warehouse MCP space: a **fu
 
 **Global availability.** A single HTTPS endpoint works from anywhere — no region-specific configuration needed for the MCP server itself (BigQuery datasets still live in regions).
 
+**Specific tools documented.** The server provides six tools: `list_dataset_ids`, `list_table_ids`, `get_dataset_info`, and `get_table_info` for metadata exploration, plus `execute_sql` (read-write) and `execute_sql_readonly` for query execution. The read-only tool blocks DML, DDL, and Python UDFs.
+
 ### What Doesn't Work Well
 
-**Preview status.** The managed remote server is still in preview. APIs and behavior may change.
+**Query constraints.** Queries are limited to 3 minutes (auto-cancelled after) and results are capped at 3,000 rows. For large analytical workloads, these limits can be restrictive.
+
+**No Google Drive external tables.** The MCP server doesn't support querying BigQuery external tables backed by Google Drive data sources.
 
 **Vendor lock-in.** This is a Google-hosted service — there's no open-source alternative that exactly replicates the managed remote experience.
 
@@ -154,17 +170,19 @@ For most users, the **managed remote server is now the recommended path** — it
 
 | Detail | Info |
 |--------|------|
-| Platform | Managed MCP (Beta) |
-| Auth | On-behalf-of-user + Unity Catalog |
-| Servers | Genie, Vector Search, UC Functions |
+| Platform | Managed MCP (Public Preview) |
+| Auth | On-behalf-of-user + Unity Catalog + Unity AI Gateway |
+| Servers | Genie, Vector Search, Databricks SQL (NEW), UC Functions |
 
-Databricks takes a governance-first approach to MCP. Instead of a single SQL server, Databricks provides **managed MCP servers** that are tightly integrated with Unity Catalog permissions.
+Databricks takes a governance-first approach to MCP. Instead of a single SQL server, Databricks provides **four managed MCP servers** that are tightly integrated with Unity Catalog permissions. The addition of a direct SQL execution server in 2026 fills what was previously the biggest gap.
 
 ### Available Managed Servers
 
+**Databricks SQL (NEW)** — Run AI-generated SQL for data pipelines with coding tools. This is the most significant addition since our initial review — direct SQL execution via managed MCP, with read and write access. Long-running queries use a polling mechanism.
+
 **Genie** — Access structured data through Databricks' natural language interface. Genie translates questions into SQL using your data's metadata and descriptions, similar to Snowflake's Cortex Analyst.
 
-**Vector Search** — Access unstructured data through Databricks Vector Search indexes. Useful for RAG applications and semantic search over document collections.
+**Vector Search** — Access unstructured data through Databricks Vector Search indexes. Useful for RAG applications and semantic search over document collections. Requires Databricks managed embeddings.
 
 **UC Functions** — Build deterministic functions in Unity Catalog and expose them as MCP tools. This lets teams create custom, governed tools for specific business logic — billing calculations, compliance checks, data transformations.
 
@@ -174,11 +192,15 @@ Databricks takes a governance-first approach to MCP. Instead of a single SQL ser
 
 **On-behalf-of-user auth.** MCP requests run with the authenticated user's identity, not a service account. This means audit logs correctly attribute every query to the person (or agent) who made it.
 
+**Unity AI Gateway (NEW).** AI Gateway is now part of Unity Catalog as Unity AI Gateway, extending Unity Catalog's governance model to agentic AI. It enforces access control, monitors usage, and audits activity across all MCP interactions — fine-grained permissions, end-to-end observability, and cost attribution across models, teams, and workflows.
+
+**Managed OAuth for external MCP servers (NEW).** Databricks now provides managed OAuth flows for select external MCP servers (Glean, GitHub, Google Drive, SharePoint), eliminating the need to register your own OAuth app or manage credentials.
+
 **Extensibility.** UC Functions let you build custom MCP tools that are governed alongside your data. This is more powerful than raw SQL access — you can expose business logic as callable tools.
 
 ### What Doesn't Work Well
 
-**Beta status.** Managed MCP servers are in beta. Feature set is limited to Genie, Vector Search, and UC Functions — no direct SQL execution via managed MCP yet (planned for future with DBSQL support).
+**Public Preview.** Managed MCP servers are still in Public Preview, not GA. Feature set and APIs may change.
 
 **No open-source server.** The managed MCP servers are a Databricks platform feature, not an open-source project you can self-host.
 
@@ -197,7 +219,7 @@ Databricks takes a governance-first approach to MCP. Instead of a single SQL ser
 
 | Detail | Info |
 |--------|------|
-| [awslabs/mcp (Redshift server)](https://github.com/awslabs/mcp/tree/main/src/redshift-mcp-server) | Part of AWS MCP suite (8,500+ stars) |
+| [awslabs/mcp (Redshift server)](https://github.com/awslabs/mcp/tree/main/src/redshift-mcp-server) | Part of AWS MCP suite (8,900+ stars) |
 | Language | Python |
 | Transport | stdio |
 
@@ -211,6 +233,8 @@ Amazon Redshift's MCP server lives within the AWS MCP monorepo (`awslabs/mcp`), 
 
 **Safe query execution** — Read-only mode by default. Write support is planned but not yet available.
 
+**Query plan analysis (NEW)** — A `describe_execution_plan` tool uses Redshift's EXPLAIN VERBOSE to show how a query would execute, providing performance insights without running the query.
+
 ### What Works Well
 
 **AWS ecosystem integration.** Being part of the AWS MCP suite means Redshift works alongside S3, Lambda, and other AWS MCP servers. An AI agent can query Redshift data and then process it through Lambda or store results in S3 — all through MCP.
@@ -223,26 +247,81 @@ Amazon Redshift's MCP server lives within the AWS MCP monorepo (`awslabs/mcp`), 
 
 **Monorepo distribution.** The Redshift server is bundled with 14+ other AWS MCP servers. You install the full suite to get Redshift — there's no standalone package.
 
+## Apache Doris — Official Server (NEW)
+
+| Detail | Info |
+|--------|------|
+| [apache/doris-mcp-server](https://github.com/apache/doris-mcp-server) | 289 stars |
+| Language | Python |
+| License | Apache 2.0 |
+| Version | v0.6.0 |
+| Tools | 25+ |
+
+Apache Doris, the real-time analytical database with over 12,000 GitHub stars, now has an official MCP server — and it's one of the most feature-rich in the data warehouse category. With 25+ tools spanning query execution, schema discovery, monitoring, data quality analysis, and lineage tracking, it offers far more tooling than ClickHouse or DuckDB.
+
+### What Works Well
+
+**Comprehensive tooling.** 25+ MCP tools across query execution (`exec_query`), schema and metadata (`get_table_schema`, `get_db_table_list`), query analysis (`get_sql_explain`, `get_sql_profile`), monitoring metrics, data quality analysis, lineage tracking, freshness monitoring, and access pattern analysis. This is the most tool-rich data warehouse MCP server.
+
+**Enterprise authentication.** Token, JWT, and OAuth support with a web-based token management dashboard. This is more auth flexibility than most data warehouse MCP servers offer.
+
+**Arrow Flight SQL integration.** ADBC/Arrow Flight SQL support provides 3-10x performance improvements for large dataset transfers — a genuine differentiator for analytical workloads where data volume matters.
+
+**Multi-catalog federation.** Support for querying across multiple catalogs, useful for organizations with data spread across several Doris deployments.
+
+### What Doesn't Work Well
+
+**Requires Python 3.12+.** The minimum Python version is higher than most MCP servers (typically 3.10 or 3.11), which may cause compatibility issues in some environments.
+
+**Security advisory.** Versions earlier than 0.6.1 had a query context handling vulnerability (CVE-2025-66335). Users should ensure they're on 0.6.1 or later.
+
+## Dremio — Official Server (NEW)
+
+| Detail | Info |
+|--------|------|
+| [dremio/dremio-mcp](https://github.com/dremio/dremio-mcp) | 49 stars |
+| Language | Python |
+| License | Apache 2.0 |
+| Version | 0.1.0 |
+
+Dremio, the lakehouse analytics platform, now has an official MCP server enabling AI agents to explore, query, and analyze data across Dremio deployments using natural language.
+
+### What Works Well
+
+**Two operating modes.** FOR_DATA_PATTERNS mode enables data exploration, natural language to SQL, and view creation. FOR_SELF mode performs system introspection and performance analysis. This dual-mode design lets teams use the same server for both data work and platform monitoring.
+
+**Production deployment options.** The server supports both local development and remote Kubernetes deployment with a Helm chart. The Kubernetes setup includes OAuth authentication, Prometheus metrics, horizontal pod autoscaling, and security hardening (non-root execution, read-only filesystem).
+
+**Lakehouse integration.** Dremio sits on top of data lakes (Iceberg, Delta Lake, Parquet), meaning this MCP server gives AI agents access to lakehouse data without requiring a traditional warehouse. For teams using Dremio as their query engine, this is a direct path to AI-enabled analytics.
+
+### What Doesn't Work Well
+
+**Early stage.** At v0.1.0 and 49 stars, this is still early in development compared to ClickHouse (764 stars) or Apache Doris (289 stars). Feature set and stability will evolve.
+
+**Not official Dremio product support.** The repository notes this is open source software and not part of official Dremio product support.
+
 ## The big picture
 
 ### Adoption comparison
 
 | Platform | MCP Server(s) | Stars | Official? | Tools | Strength |
 |----------|---------------|-------|-----------|-------|----------|
-| ClickHouse | ClickHouse/mcp-clickhouse | 720 | Yes | 4 | Dual engine, safety defaults |
-| DuckDB/MotherDuck | motherduckdb/mcp-server-motherduck | 441 | Yes | 5 | Universal data access |
-| Snowflake | Snowflake-Labs/mcp | 256 | Yes | Multiple | Cortex AI integration |
-| BigQuery | Managed remote | — | Yes | Multiple | Zero-setup managed |
-| Databricks | Managed MCP | — | Yes | Multiple | Unity Catalog governance |
-| Redshift | awslabs/mcp suite | 8,500+ | Yes | Multiple | AWS ecosystem |
+| ClickHouse | ClickHouse/mcp-clickhouse | 764 | Yes | 4 | Dual engine, OAuth/OIDC |
+| DuckDB/MotherDuck | motherduckdb/mcp-server-motherduck | 473 | Yes | 4 | Universal data access, HTTP |
+| Apache Doris | apache/doris-mcp-server | 289 | Yes | 25+ | Most tools, Arrow Flight SQL |
+| Snowflake | Snowflake-Labs/mcp + managed (GA) | 277 | Yes | Multiple | Cortex AI, managed option |
+| BigQuery | Managed remote (auto-enabled) | — | Yes | 6 | Zero-setup managed |
+| Databricks | 4 Managed MCP servers | — | Yes | Multiple | Unity AI Gateway governance |
+| Dremio | dremio/dremio-mcp | 49 | Yes | Multiple | Lakehouse analytics |
+| Redshift | awslabs/mcp suite | 8,900+ | Yes | Multiple | AWS ecosystem |
 
 ### What's working
 
-**Universal vendor backing.** Every major data warehouse vendor has official MCP support — Snowflake Labs, ClickHouse Inc, MotherDuck, Google Cloud, Databricks, and AWS. This is rare across MCP categories. It reflects the high value of connecting AI to enterprise data.
+**Universal vendor backing.** Every major data warehouse vendor has official MCP support — Snowflake, ClickHouse, MotherDuck, Google Cloud, Databricks, AWS, Apache Doris, and Dremio. The addition of Doris (289 stars) and Dremio (49 stars) since our initial review makes this the broadest official coverage of any MCP category.
 
 **Safety-first defaults.** Read-only mode is the default across nearly every server. Write operations require explicit opt-in. This is exactly right for connecting AI agents to production data warehouses where a bad query could be costly.
 
-**Managed remote servers.** BigQuery's managed remote MCP server and Databricks' managed MCP represent the future of the category — zero-setup, governed, cloud-native MCP access. Snowflake's Streamable HTTP transport also supports remote deployment.
+**Managed remote servers maturing.** BigQuery's managed MCP server is now auto-enabled (no longer preview). Snowflake's managed MCP server reached GA in November 2025. Databricks expanded to 4 managed servers with SQL execution. The trend toward zero-setup, governed, cloud-native MCP access is accelerating.
 
 **Cortex and Genie.** Snowflake and Databricks aren't just exposing SQL — they're exposing their AI-native query layers (Cortex Analyst, Genie). This lets agents query data through semantic models rather than raw SQL, which is safer and more accessible.
 
@@ -254,23 +333,27 @@ Amazon Redshift's MCP server lives within the AWS MCP monorepo (`awslabs/mcp`), 
 
 **No data quality or profiling.** No server provides built-in data profiling, quality checks, or anomaly detection. Agents can run SQL to check data, but there's no structured tooling for it.
 
-**No dbt integration.** Despite dbt's dominance in data transformation, no data warehouse MCP server integrates with dbt models, tests, or documentation. Agents can't see your dbt DAG or run dbt commands through these servers.
+**No dbt integration.** Despite dbt's dominance in data transformation, no data warehouse MCP server integrates with dbt models, tests, or documentation. Agents can't see your dbt DAG or run dbt commands through these servers. (Note: separate dbt-specific MCP servers exist — see our [dbt MCP servers review](/reviews/dbt-mcp-servers/) — but they're not integrated into the warehouse servers themselves.)
 
 ## The bottom line
 
-**For ClickHouse users:** The **official ClickHouse/mcp-clickhouse server** (720 stars) is well-designed with dual engine support, strong safety defaults, and three transport options. Start here.
+**For ClickHouse users:** The **official ClickHouse/mcp-clickhouse server** (764 stars) is well-designed with dual engine support, strong safety defaults, three transport options, and now OAuth/OIDC enterprise auth. Start here.
 
-**For DuckDB / local analytics:** **motherduckdb/mcp-server-motherduck** (441 stars) is excellent — universal data access across local files, S3, and cloud. The best option for cross-source analytical work.
+**For DuckDB / local analytics:** **motherduckdb/mcp-server-motherduck** (473 stars, v1.0.5) is excellent — universal data access across local files, S3, and cloud, now with HTTP transport for remote deployment. The best option for cross-source analytical work.
 
-**For Snowflake users:** The **official Snowflake-Labs/mcp server** (256 stars) is the strongest choice, especially if you use Cortex AI features. The community server (isaacwasserman, 180 stars) is a simpler alternative with a useful insights memo.
+**For Apache Doris users:** The **official apache/doris-mcp-server** (289 stars, v0.6.0) is the most tool-rich data warehouse MCP server with 25+ tools, Arrow Flight SQL for performance, and enterprise auth. A strong newcomer.
 
-**For BigQuery users:** The **managed remote server** at `bigquery.googleapis.com/mcp` is the easiest path — zero setup, full governance, auto-enabled. Community servers remain useful for offline or custom needs.
+**For Snowflake users:** Choose between the **managed MCP server** (GA, zero-deployment) for simplicity or the **open-source Snowflake-Labs/mcp server** (277 stars) for self-hosted flexibility. Both integrate Cortex AI features. The community server (isaacwasserman, ~180 stars) is a simpler alternative with a useful insights memo.
 
-**For Databricks users:** **Managed MCP** with Unity Catalog governance is the recommended approach, though still in beta. Community servers fill the gap for infrastructure management and lineage analysis.
+**For BigQuery users:** The **managed remote server** at `bigquery.googleapis.com/mcp` is the easiest path — auto-enabled, full governance, 6 tools. Community servers remain useful for offline or custom needs.
 
-**For Redshift users:** The **AWS MCP suite** provides auto-discovery and safe querying. Read-only for now, but well-integrated with the broader AWS MCP ecosystem.
+**For Databricks users:** **Managed MCP** with Unity AI Gateway governance is the recommended approach, now with 4 servers including direct SQL execution. Still in Public Preview. Community servers fill the gap for infrastructure management and lineage analysis.
 
-**Rating: 4.5/5** — Data warehousing is one of the strongest MCP categories. Universal vendor backing, safety-first defaults, managed remote servers from BigQuery and Databricks, and deep AI integration from Snowflake's Cortex set a high bar. The missing cross-warehouse federation, cost monitoring, and dbt integration prevent a perfect score, but the fundamentals are exceptional. If you work with data warehouses, the MCP tools are production-ready.
+**For Dremio users:** The **official dremio/dremio-mcp server** (49 stars) provides lakehouse analytics with Kubernetes deployment support. Early stage but functional with dual operating modes.
 
-*This review was last edited on 2026-03-17 using Claude Opus 4.6 (Anthropic).*
+**For Redshift users:** The **AWS MCP suite** (8,900+ stars) provides auto-discovery, safe querying, and now query plan analysis. Read-only for now, but well-integrated with the broader AWS MCP ecosystem.
+
+**Rating: 4.5/5** — Data warehousing remains one of the strongest MCP categories and got even stronger since our initial review. Eight vendors now have official MCP support (up from six). Managed servers are maturing — BigQuery auto-enabled, Snowflake managed GA, Databricks added SQL execution. Apache Doris brought the most comprehensive tooling (25+ tools). DuckDB fixed its HTTP transport gap. The missing cross-warehouse federation, cost monitoring, and dbt integration prevent a perfect score, but the fundamentals are exceptional. If you work with data warehouses, the MCP tools are production-ready.
+
+*This review was refreshed on 2026-04-29 using Claude Opus 4.6 (Anthropic). Initial review: 2026-03-17.*
 
