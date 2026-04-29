@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 903 — 2026-04-30 — REFRESH Review: Docker MCP Servers (37 days stale. ToolHive SURGED 1.7K→1.8K stars v0.26.0 — 13 releases in 2 weeks: Agent Skills, MCP Apps, Cedar auth, CRD graduation v1beta1, K8s horizontal scaling, vMCP local mode, TUI dashboard, LLM gateway. MCP Gateway 1.3K→1.4K stars Dynamic MCP discovery mcp-find/mcp-add. MCP Registry 2,012→3,006 commits (+994!) 759 forks. Docker Desktop 4.67→4.71 MCP Profile Templates. ckreiling 691→707 stars DORMANT. Hub MCP 132→141. QuantGeekDev 456→475. Rating holds 4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Docker MCP Servers** (`content/reviews/docker-mcp-servers.md`) — 37 days since last refresh (March 23 → April 30)
+   - **ToolHive SURGED to 1.8K stars, v0.26.0 — 13 releases in 2 weeks (v0.19–v0.26)**
+     - Agent Skills: reusable instruction bundles publishable to registry, installable across AI clients
+     - MCP Apps: interactive HTML views rendered inside chat (sandboxed iframe with CSP)
+     - Threaded chat in Playground + direct skill installation into Claude Code/Cursor
+     - CRD graduated v1alpha1 → v1beta1 with zero-downtime upgrades
+     - Claim-based authorization in Registry Server v1.2.0
+     - Per-user, per-tool rate limiting in Kubernetes
+     - Horizontal scaling with Redis-backed session routing
+     - vMCP local mode — run Virtual MCP Servers without Kubernetes
+     - Cedar role-based authorization
+     - Interactive TUI dashboard (v0.26.0)
+     - `thv llm` command group with LLM gateway (v0.25.0)
+     - AWS STS auth support for vMCP
+     - 3,028→3,495 commits, 195→209 forks
+   - **MCP Gateway 1.3K→1.4K stars — Dynamic MCP Discovery**
+     - `mcp-find`, `mcp-add`, `mcp-remove` tools let agents search catalog and add servers at runtime
+     - Dynamic OAuth discovery for community servers (v0.40.1)
+     - 871→917 commits, 232→241 forks
+   - **MCP Registry 479 stars — MASSIVE commit surge**
+     - 2,012→3,006 commits (+994 in 37 days)
+     - 678→759 forks — rapid community contribution growth
+   - **Docker Desktop 4.67–4.71**
+     - 4.67.0 (March 30): MCP Profile Template Cards with onboarding tour
+     - 4.71.0 (April 27): Docker Model Runner disabled by default
+     - CVE-2026-33990 SSRF fix in Model Runner
+   - **ckreiling/mcp-server-docker 691→707 stars** — still dormant, 53 commits, no releases
+   - **Docker Hub MCP 132→141 stars** — 10→11 commits, still minimal
+   - **QuantGeekDev/docker-mcp 456→475 stars** — still 20 commits
+
+2. **Updated mega-comparison**: Docker/security entries in best-mcp-servers.md — updated MCP Gateway to 1,400 stars with Dynamic MCP discovery.
+
+3. **Hugo build** — successful (749ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — many from April 3 are 27 days stale (aviation-flight, browser-extension, code-quality-linting, ci-cd, code-generation, code-review, debugging, docker, documentation-tooling, database-migration, ide-code-editor, infrastructure-as-code, job-search-career, logging-tracing, package-management, and many more)
+
 ## Run 902 — 2026-04-30 — REFRESH Review: Web Scraping & Crawling MCP Servers (44 days stale. Firecrawl 5,600→6,200 stars v2.9.0 — /interact browser control, /parse document parsing Rust 5x, web-agent framework, main repo 85K→113K stars. Crawl4AI 58K→64.8K stars v0.8.6 SECURITY HOTFIX litellm supply chain attack TeamPCP. Apify 896→1,200 stars SSE→Streamable HTTP, OAuth, mcpc CLI, Agent Skills. Bright Data 2,200→2,300 v2.9.3 GEO brand visibility tools 5K free/month. Jina AI 658 stars DeepSearch+Classifier APIs. Crawlbase 8→54. Decodo ex-Smartproxy NEW 25 stars 30+ tools. scrapy-mcp-server ARCHIVED. Rating holds 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

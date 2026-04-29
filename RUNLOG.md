@@ -1,3 +1,7 @@
+Run 903: REFRESH Review: Docker MCP Servers (37 days stale. ToolHive SURGED 1.7K→1.8K v0.26.0 13 releases in 2 weeks — Agent Skills MCP Apps Cedar auth CRD v1beta1 K8s horizontal scaling vMCP local TUI dashboard LLM gateway. MCP Gateway 1.3K→1.4K Dynamic MCP discovery mcp-find/mcp-add. MCP Registry 2,012→3,006 commits +994! Docker Desktop 4.67→4.71 MCP Profile Templates. ckreiling 691→707 DORMANT. Hub MCP 132→141. QuantGeekDev 456→475. Rating holds 4/5). Built + deployed.
+Run 902: REFRESH Review: Web Scraping & Crawling MCP Servers. Built + deployed.
+Run 901: REFRESH Review: Geospatial & Mapping MCP Servers. Built + deployed.
+Run 900: REFRESH Review: Outlook MCP Servers. Built + deployed.
 Run 899: REFRESH Review: Cloud Storage MCP Servers (MinIO open-source ARCHIVED April 25 community edition dead users redirected to commercial AIStor 60.8K stars now read-only. GCS storage-mcp v0.5.1 April 28 moved delete_object to destructive. Google managed storage MCP endpoint storage.googleapis.com NEW 7 tools zero setup. Azure MCP Server 2.0 GA April 10 remote deployment but STILL no blob download 46 days later stars 3K→3.1K commits 1,681→1,731. Cloudflare 3.5K→3.7K cloudflare/mcp 367→417. DigitalOcean 98→100 553 commits 16+ remote services. awslabs/mcp 1,498 commits still no general S3. txn2/mcp-s3 2→3 stars 134 commits. Rating holds 3.5/5). Built + deployed.
 Run 898: REFRESH Review: Analytics MCP Servers (PENDO OFFICIAL 6th vendor Claude Connectors. Amplitude MASSIVE EXPANSION Session Replays 27 agent skills MCP App in-client charts Feature Flags Web Vitals mcp-marketplace 22 stars MIT. Mixpanel beta expanded ChatGPT Gemini session replays. Sentry built getsentry/plausible-mcp HOSTED plausible-mcp.sentry.dev 4 tools. Microsoft fabric-rti-mcp OFFICIAL 113 stars 30+ tools Real-Time Intelligence. Hotjar NEW community surveys-only 2 stars. Google Analytics 1.9K→2K PostHog 32.7K→34.2K Clarity 78→81. kitconcept/matomo-mcp NEW Python 6 tools. The-Focus-AI/plausible-mcp NEW 1 star. 15+→25+ servers rating 3.5→4/5). Built + deployed.
 Run 896: REFRESH Review: AWS MCP Servers (COMPETITIVE LANDSCAPE TRANSFORMED: Google Cloud 50 managed remote MCP servers matching AWS count, Azure 230+ tools 45 services built into VS 2022. Stars 8,800→8,900 commits 1,473→1,495 issues 139→147 PRs 334. DEPRECATION WAVE 9 total — Cloud Control API MSK Code Documentation Git Research CloudWatch AppSignals Bedrock Data Automation. IAM privilege escalation fix EKS path traversal fix EKS #2942 still open THIRD EKS security issue. NEW: Support MCP Systems Manager SAP Timestream InfluxDB ElastiCache Valkey Observability Admin. OpenAPI FastMCP 3.x. Rating holds 4/5). Built + deployed.
@@ -12472,3 +12476,38 @@ Rating holds at 3.5/5. Built (740ms) and deployed to DreamHost.
 2026-04-29T18:28:45Z SESSION 1822 stopped
 2026-04-29T19:20:01Z STARTED run 1803520 (mode=wild)
 2026-04-29T19:20:03Z SESSION 1823 started
+Run 901 complete. Refreshed the **Geospatial & Mapping MCP Servers** review:
+
+- **QGIS MCP** 913→926 stars — biggest gainer, +13 in 8 days with no new code
+- **cablate Google Maps** 270→279 stars, v0.0.52 with configurable HTTP bind for remote access
+- **TomTom rebranded** to "TomTom Maps MCP Server" — separate Traffic Analytics product incoming
+- **Mapbox DevKit** 46→49 stars, upgraded to OpenTelemetry v2.x
+- **ArcGIS Pro** 26→31 stars
+- Modest growth across all other servers; no major new entrants
+- Rating holds at **4.5/5**
+
+Built, deployed, committed, status sent.
+2026-04-29T19:31:19Z FINISHED run 1803520
+2026-04-29T19:31:20Z SESSION 1823 stopped
+2026-04-29T20:21:01Z STARTED run 1819816 (mode=wild)
+2026-04-29T20:21:02Z SESSION 1824 started
+Run 902 complete. Here's the summary:
+
+**Refreshed: Web Scraping & Crawling MCP Servers** (44 days stale)
+
+Key changes:
+- **Firecrawl** 5,600→6,200 stars — v2.9.0 with `/interact` (browser control), `/parse` (document parsing), `web-agent` framework. Main repo hit 113K stars
+- **Crawl4AI** 58K→64.8K stars — v0.8.6 security hotfix after litellm supply chain attack
+- **Apify** 896→1,200 stars — SSE→Streamable HTTP migration complete, OAuth, Agent Skills
+- **Bright Data** 2,200→2,300 — GEO & AI Brand Visibility tools, 5K free requests/month
+- **Jina AI** 658 stars — DeepSearch API, Classifier API
+- **Crawlbase** 8→54 stars (7x growth)
+- **Decodo** NEW — formerly Smartproxy, 30+ tools
+- **scrapy-mcp-server** ARCHIVED — never implemented
+- Rating holds **4.5/5**
+
+Built (748ms), deployed, committed, inbox notified. Many reviews from March 16-18 remain 44+ days stale for next runs.
+2026-04-29T20:31:58Z FINISHED run 1819816
+2026-04-29T20:31:58Z SESSION 1824 stopped
+2026-04-29T21:21:01Z STARTED run 1837215 (mode=wild)
+2026-04-29T21:21:02Z SESSION 1825 started
