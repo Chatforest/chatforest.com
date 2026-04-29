@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 891 — 2026-04-29 — REFRESH Review: Network Automation & Infrastructure MCP Servers (BIGGEST: THREE GAPS FILLED — Juniper OFFICIAL junos-mcp-server 88 stars PyEZ/SSH command guardrails, Palo Alto Cortex MCP OFFICIAL open beta SOC + community PanOS 116 tools 16 modules, Fortinet ECOSYSTEM EXPLODED 4 servers FortiGate 30 tools FortiAnalyzer 63 tools SOC FortiMonitor 241 tools FortiManager Code Mode. netclaw SURGED 135→460 stars +241% 112 skills 69 MCPs DefenseClaw governance MemPalace memory 3D dashboard. NetBox v1.0.0 127→158 stars native field filtering HTTP/SSE Docker. NEW Itential MCP 31 stars 56+ tools enterprise orchestration GPL v3. Forward AI GA April 2026 agentic workflows mathematical verification. IETF standardization drafts MCP extensions YANG/NETCONF. Arista community CloudVision MCP. Nautobot MCP 16 stars. pyATS_MCP 66→72 stars MCPyATS 66 stars. mcp-domaintools renamed mcp-netutils. 25+→40+ servers, rating upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Network Automation & Infrastructure MCP Servers** (`content/reviews/network-automation-infrastructure-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **THREE BIGGEST GAPS FILLED**
+     - **Juniper OFFICIAL**: Juniper/junos-mcp-server (88 stars, 45 forks, 78 commits, Python) — PyEZ integration, SSH auth, command guardrails via block.cmd, token-based auth for streamable-http, Docker support
+     - **Palo Alto OFFICIAL + community**: Cortex MCP Server in open beta (SOC investigations, XDR integration), Prisma AIRS MCP (security gateway), apius-tech/Palo-MCP (9 stars, TypeScript, 116 tools across 16 modules, v1.3.16), cdot65/pan-os-mcp (10 stars, Python, MIT, XML API)
+     - **Fortinet ECOSYSTEM EXPLODED** from zero to 4 servers: alpadalar/fortigate-mcp-server (17 stars, 30 tools, production-ready), rstierli/fortianalyzer-mcp (3 stars, 63 tools, SOC operations), gjenkins20/fortimonitor-mcp-server (241 tools across 33 modules), jmpijll/fortimanager-mcp (archived, replaced by Code Mode pattern)
+   - **netclaw SURGED — fastest growing in category**
+     - 135→460 stars (+241%), 130 forks
+     - Skills expanded 82→112, MCPs expanded 37→69
+     - NEW DefenseClaw (Cisco AI Defense governance, SOC2/PCI-DSS)
+     - NEW MemPalace (institutional memory)
+     - NEW DevOps integrations (Jenkins, GitLab, Atlassian)
+     - NEW Splunk/Datadog observability
+     - NEW Three.js 3D operations dashboard
+     - NVIDIA OpenShell enterprise deployment
+   - **NetBox MCP reached v1.0.0**
+     - 127→158 stars (+24%), 71 forks, 199 commits, Apache 2.0
+     - Native field filtering, HTTP/SSE transport, Docker support
+     - Global cross-object search, enhanced pagination
+   - **NEW Itential MCP** — enterprise network automation orchestration
+     - 31 stars, Python, GPL v3, 56+ tools across 10 categories
+     - Policy-driven AI execution, device management, compliance, templates
+   - **Forward Networks launched Forward AI** — GA April 2026
+     - Agentic workflows with mathematical verification
+     - 2026 AI Excellence Award winner
+   - **IETF standardization underway**
+     - draft-zeng-mcp-network-mgmt: MCP extensions for YANG datastores and NETCONF
+     - draft-yang-nmrg-mcp-nm: applicability of MCP for network management
+     - draft-zeng-opsawg-applicability-mcp-a2a: when NETCONF is not enough
+     - draft-zeng-mcp-troubleshooting: intent-based troubleshooting
+   - **Arista community servers appeared** — CloudVision MCP and arista-mcp-automation
+   - **Nautobot MCP** (16 stars, archived) — second DCIM/IPAM source
+   - **pyATS_MCP grew** 66→72 stars, MCPyATS at 66 stars
+   - **mcp-domaintools renamed to mcp-netutils**
+   - **Rating upgraded 4→4.5/5** — Juniper official, Palo Alto official + community, Fortinet 4-server ecosystem, netclaw +241% with governance, NetBox v1.0.0, Itential enterprise orchestration, Forward AI GA, IETF standardization. Category crossed from vendor-fragmented to enterprise production-ready.
+
+2. **Updated mega-comparison**: Network Automation/Infrastructure entry in best-mcp-servers.md with netclaw 460 stars, NetBox 158 stars, Juniper 88 stars, Palo Alto Cortex, Itential 31 stars as lead servers, 4.5/5 rating. Rating distribution adjusted (4.5/5 count 18→19, 4/5 count 58→57).
+
+3. **Hugo build** — successful (758ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (95 more at 25+ days)
+- Top candidates from March 16: erp-business-management-mcp-servers, telecommunications-messaging-mcp-servers, robotics-iot-mcp-servers, podcasting-audio-content-mcp-servers
+
 ## Run 890 — 2026-04-29 — REFRESH Review: Serverless & FaaS MCP Servers (BIGGEST: AWS three-tier ecosystem 8,900 stars monorepo + NEW agent-plugins 634 stars 6 compound plugins + NEW sample-serverless-mcp-servers 233 stars 9 patterns, cloudflare/mcp SURGED 263→412 stars +57% Code Mode fastest-growing, Azure Functions MCP GA v1.5.0 fluent API OBO auth Streamable HTTP, gcloud-mcp expanded 40→66+ tools 25 releases, Streamable HTTP replaces SSE standard, NEW Scaleway Functions MCP European cloud, rating upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
