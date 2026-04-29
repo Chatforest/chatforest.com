@@ -263,7 +263,7 @@ The [official Fetch server](/reviews/fetch-mcp-server/) (3.5/5) works for basic 
 
 For JavaScript-rendered pages, use [Playwright MCP](/reviews/playwright-mcp-server/) or fetcher-mcp (Playwright-based fetching without the full browser automation toolkit).
 
-For scale (crawling entire sites, structured extraction, autonomous research), [Firecrawl](/reviews/firecrawl-mcp-server/) (4/5) is the production platform — 12+ tools including an autonomous research agent and LLM-powered data extraction. For free open-source crawling with best-in-class markdown extraction, [Crawl4AI](/reviews/crawl4ai-mcp-server/) (3.5/5) is the most popular option — [61,900+ stars](https://github.com/unclecode/crawl4ai), Docker-only, MCP layer still maturing.
+For scale (crawling entire sites, structured extraction, autonomous research), [Firecrawl](/reviews/firecrawl-mcp-server/) (4/5) is the production platform — 12+ tools including browser interaction (`/interact`), document parsing (`/parse` for PDFs/Word/spreadsheets), and a `web-agent` framework for building AI agents. Main repo hit 113,000+ stars. For free open-source crawling with best-in-class markdown extraction, [Crawl4AI](/reviews/crawl4ai-mcp-server/) (3.5/5) is the most popular option — [64,800+ stars](https://github.com/unclecode/crawl4ai), v0.8.6 security hotfix after litellm supply chain attack, MCP layer still maturing.
 
 **Full comparison:** [Best Web Scraping & Fetching MCP Servers in 2026](/guides/best-web-scraping-mcp-servers/)
 
