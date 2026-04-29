@@ -5,7 +5,7 @@
 
 Geospatial and mapping is one of the richest MCP categories we've reviewed. AI agents that can geocode addresses, calculate routes, process satellite imagery, perform spatial analysis, and generate maps through natural language unlock workflows that previously required specialized GIS training. The category now spans six areas: **commercial mapping platforms** (Mapbox, Google Maps, Baidu Maps, TomTom, HERE Maps), **earth observation & remote sensing** (NASA Earthdata, Google Earth Engine, Axion Planetary), **open-source mapping** (OpenStreetMap, QGIS), **GIS operations libraries** (gis-mcp, GeoServer, LocuSync), **government geospatial data** (Japan MLIT), and **data conversion tools**.
 
-The headline finding: **Axion Planetary V2.0 nearly doubled its stars to 217** and migrated to AWS infrastructure with a hosted endpoint on Render — the earth observation leader now offers SAR-to-optical satellite imagery conversion and 935 commits of active development. **Google Maps community server (cablate) surged 40% to 270 stars** with 18 tools now including air quality, batch geocoding, and a local SEO rank tracker. **Mapbox continues with two official servers** — the main server (333 stars, 121 commits) with hosted endpoint at mcp.mapbox.com, and the DevKit (46 stars, 193 commits) for developer workflows. **QGIS MCP hit 913 stars**, making it the most popular geospatial MCP server by far. **TomTom reached 606 commits** with a new remote HTTP endpoint for zero-install access. **Japan's MLIT geospatial server grew 139% to 167 stars** — strong demand for government geospatial data. The main gap remains that **Google Maps has no official MCP server** — though cablate's community option is increasingly comprehensive.
+The headline finding: **QGIS MCP surged to 926 stars** — the most popular geospatial MCP server by far, gaining 13 stars in 8 days despite no new code. **Google Maps community server (cablate) hit 279 stars** with v0.0.52 adding configurable HTTP bind interface for remote access and improved transit direction handling. **TomTom rebranded to "TomTom Maps MCP Server"** — the rename disambiguates from a separate Traffic Analytics MCP product, signaling TomTom is expanding its MCP portfolio. **Mapbox continues with two official servers** — the main server (335 stars) with hosted endpoint at mcp.mapbox.com, and the DevKit (49 stars) which upgraded to OpenTelemetry v2.x and consolidated docs to 4 core static resources. **Axion Planetary holds at 218 stars** with AWS-hosted SAR-to-optical satellite imagery and 935 commits. **Japan's MLIT servers both grew** — dpf to 155 stars, geospatial to 170 stars. The main gap remains that **Google Maps has no official MCP server** — though cablate's community option is increasingly comprehensive.
 
 **Category:** [Science & Research](/categories/science-research/)
 
@@ -15,9 +15,9 @@ The headline finding: **Axion Planetary V2.0 nearly doubled its stars to 217** a
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [mapbox/mcp-server](https://github.com/mapbox/mcp-server) | 333 | TypeScript | 20 | stdio, hosted |
+| [mapbox/mcp-server](https://github.com/mapbox/mcp-server) | 335 | TypeScript | 20 | stdio, hosted |
 
-**mapbox/mcp-server** (333 stars, TypeScript, MIT, 121 commits) is the official MCP server from Mapbox. Twenty tools organized into three categories:
+**mapbox/mcp-server** (335 stars, TypeScript, MIT, 121 commits) is the official MCP server from Mapbox. Twenty tools organized into three categories:
 
 **Offline geospatial utilities** (8 tools) — `distance`, `point_in_polygon`, `bearing`, `midpoint`, `centroid`, `area`, `bounding_box`, `buffer`, `simplify`. Local calculations using Turf.js — no API calls needed. These work without a Mapbox token for purely geometric operations.
 
@@ -29,18 +29,18 @@ Standout feature: **hosted endpoint at mcp.mapbox.com/mcp** — connect directly
 
 Requires a Mapbox access token (free tier available with generous limits). The combination of zero-install hosted mode, offline geometric tools, and comprehensive API coverage makes this the best starting point for geospatial MCP integration.
 
-**mapbox/mcp-devkit-server** (46 stars, TypeScript, 193 commits) is Mapbox's second official MCP server, focused on **developer workflows** rather than location data queries. Tools include style creation and management (`ListStylesTool`, `ValidateStyleTool`), access token generation, GeoJSON formatting and visualization (generates geojson.io URLs for instant preview), coordinate reprojection, and bounding box calculation. A hosted version is available for zero-install setup. This complements the main MCP server — use the main server when agents need geocoding/routing/POI data, use the DevKit when agents are building or debugging Mapbox applications. Supports Claude Desktop, Claude Code, VS Code, and Cursor.
+**mapbox/mcp-devkit-server** (49 stars, TypeScript, 195 commits) is Mapbox's second official MCP server, focused on **developer workflows** rather than location data queries. Tools include style creation and management (`ListStylesTool`, `ValidateStyleTool`), access token generation, GeoJSON formatting and visualization (generates geojson.io URLs for instant preview), coordinate reprojection, and bounding box calculation. A hosted version is available for zero-install setup. This complements the main MCP server — use the main server when agents need geocoding/routing/POI data, use the DevKit when agents are building or debugging Mapbox applications. Supports Claude Desktop, Claude Code, VS Code, and Cursor.
 
 ### Google Maps
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [cablate/mcp-google-map](https://github.com/cablate/mcp-google-map) | 270 | TypeScript | 18 | stdio, HTTP |
+| [cablate/mcp-google-map](https://github.com/cablate/mcp-google-map) | 279 | TypeScript | 18 | stdio, HTTP |
 | [david-pivonka/google-maps-mcp-server](https://github.com/david-pivonka/google-maps-mcp-server) | 2 | TypeScript | 14 | stdio |
 
 Google has no official Google Maps MCP server. Two community servers fill the gap:
 
-**cablate/mcp-google-map** (270 stars, TypeScript, MIT, 116 commits) is the most popular and has grown significantly — stars up 40% and commits up 51% since our last review. Now **18 tools** (14 atomic + 4 composite). The 5 new tools since our last review: `maps_air_quality` (air quality data), `maps_static_map` (static map image generation), `maps_batch_geocode` (batch address resolution), `maps_search_along_route` (find places along a route), and `maps_local_rank_tracker` (geographic grid-based ranking analysis for local SEO — unique among mapping MCP servers). The 4 composite tools now include `maps_explore_area`, `maps_plan_route`, `maps_compare_places`, and `maps_local_rank_tracker`. Runs in three modes: stdio, StreamableHTTP server, and standalone CLI execution.
+**cablate/mcp-google-map** (279 stars, TypeScript, MIT, 118 commits) is the most popular and continues growing steadily. Now at **v0.0.52** with **18 tools** (14 atomic + 4 composite). Recent updates: v0.0.52 (April 21) added a configurable HTTP bind interface via CLI argument and environment variable, defaulting to all interfaces for easier remote access. v0.0.51 (April 19) improved error messaging for transit directions in unsupported regions and fixed timestamp validation with the Routes API. Tools include `maps_air_quality`, `maps_static_map`, `maps_batch_geocode`, `maps_search_along_route`, and `maps_local_rank_tracker` (geographic grid-based ranking analysis for local SEO — unique among mapping MCP servers). The 4 composite tools include `maps_explore_area`, `maps_plan_route`, `maps_compare_places`, and `maps_local_rank_tracker`. Runs in three modes: stdio, StreamableHTTP server, and standalone CLI execution.
 
 **david-pivonka/google-maps-mcp-server** (2 stars, TypeScript, MIT, 15 commits) has broader API coverage with 14 tools including `places_autocomplete`, `places_photos`, `roads_nearest`, `ip_geolocate`, and `geolocation_estimate` — APIs not covered by cablate's server. More niche tools but less adoption and no composite operations.
 
@@ -52,7 +52,7 @@ Both require a Google Cloud API key with the Places API (New) enabled. Google al
 |--------|-------|----------|-------|-----------|
 | [baidu-maps/mcp](https://github.com/baidu-maps/mcp) | 411 | Python/JS | 10 | stdio, SSE |
 
-**baidu-maps/mcp** (421 stars, Python 55.9%/JavaScript 44.1%, MIT, 67 commits) is the official Baidu Maps MCP server — the first map service provider in China to support MCP. Ten tools: `map_geocode`, `map_reverse_geocode`, `map_search_places`, `map_place_details`, `map_directions_matrix`, `map_directions`, `map_weather`, `map_ip_location`, `map_road_traffic`, `map_poi_extract`.
+**baidu-maps/mcp** (422 stars, Python 55.9%/JavaScript 44.1%, MIT, 67 commits) is the official Baidu Maps MCP server — the first map service provider in China to support MCP. Ten tools: `map_geocode`, `map_reverse_geocode`, `map_search_places`, `map_place_details`, `map_directions_matrix`, `map_directions`, `map_weather`, `map_ip_location`, `map_road_traffic`, `map_poi_extract`.
 
 The most notable inclusion is `map_road_traffic` for real-time traffic conditions and `map_poi_extract` for extracting points of interest from text — capabilities not found in most mapping MCP servers. Dual SDK support (Python and JavaScript/TypeScript). Requires a server-side API key from Baidu Maps Open Platform with MCP (SSE) service enabled.
 
@@ -64,13 +64,13 @@ Primary value: comprehensive Chinese mapping data. If your use case involves Chi
 |--------|-------|----------|-------|-----------|
 | [tomtom-international/tomtom-mcp](https://github.com/tomtom-international/tomtom-mcp) | 46 | TypeScript | 18 | stdio, HTTP |
 
-**tomtom-international/tomtom-mcp** (46 stars, TypeScript, Apache 2.0, 606 commits) is the official TomTom MCP server. Eighteen tools across two backends:
+**tomtom-international/tomtom-mcp** (46 stars, TypeScript, Apache 2.0, 608 commits) is the official TomTom MCP server, recently rebranded to **TomTom Maps MCP Server** to disambiguate from a separate Traffic Analytics MCP product — signaling TomTom is expanding its MCP portfolio. Eighteen tools across two backends:
 
 **Standard tools** (11) — `tomtom-geocode`, `tomtom-reverse-geocode`, `tomtom-fuzzy-search`, `tomtom-poi-search`, `tomtom-nearby`, `tomtom-routing`, `tomtom-waypoint-routing`, `tomtom-reachable-range`, `tomtom-traffic`, `tomtom-static-map`, `tomtom-dynamic-map`. Available on both TomTom Maps and Orbis Maps backends.
 
 **Orbis Maps exclusive** (5) — `tomtom-ev-routing`, `tomtom-search-along-route`, `tomtom-area-search`, `tomtom-ev-search`, `tomtom-data-viz`. The EV routing tools are unique — they calculate routes accounting for battery range, charging station locations, and energy consumption, something no other mapping MCP server offers.
 
-The 606-commit count is the highest of any mapping MCP server, indicating serious ongoing development. Now offers a **remote HTTP endpoint** for zero-install access alongside local stdio mode — join Mapbox and DigitalOcean in the small club of hosted geospatial MCP servers. Includes a debug UI for visually testing tools with interactive map widgets. Requires Node.js 22.x and a TomTom API key (free developer tier available).
+The 608-commit count is the highest of any mapping MCP server, indicating serious ongoing development. Now offers a **remote HTTP endpoint** for zero-install access alongside local stdio mode — join Mapbox and DigitalOcean in the small club of hosted geospatial MCP servers. Includes a debug UI for visually testing tools with interactive map widgets. Requires Node.js 22.x and a TomTom API key (free developer tier available).
 
 ### HERE Maps
 
@@ -78,7 +78,7 @@ The 606-commit count is the highest of any mapping MCP server, indicating seriou
 |--------|-------|----------|-------|-----------|
 | [limingchina/heremaps-mcp-server](https://github.com/limingchina/heremaps-mcp-server) | 8 | JavaScript | 6 | stdio |
 
-**limingchina/heremaps-mcp-server** (6 stars, JavaScript, Apache 2.0, 14 commits) is a community server for HERE Maps. Six tools: `maps_geocode`, `maps_reverse_geocode`, `maps_search_places`, `maps_directions`, `maps_get_traffic_incidents`, `maps_display`. Basic but functional coverage of HERE's core APIs. Requires a HERE Maps API key. No official server from HERE exists.
+**limingchina/heremaps-mcp-server** (6 stars, JavaScript, Apache 2.0, 14 commits, inactive since January 2025) is a community server for HERE Maps. Six tools: `maps_geocode`, `maps_reverse_geocode`, `maps_search_places`, `maps_directions`, `maps_get_traffic_incidents`, `maps_display`. Basic but functional coverage of HERE's core APIs. Requires a HERE Maps API key. No official server from HERE exists.
 
 ## Earth Observation & Remote Sensing
 
@@ -107,7 +107,7 @@ Three servers bring NASA data to AI agents:
 
 Google Earth Engine (GEE) provides petabytes of satellite imagery and geospatial datasets. Two community MCP servers unlock this for AI agents:
 
-**Dhenenjay/axion-planetary-mcp** (217 stars, TypeScript, 935 commits) has nearly doubled its stars since our last review and released **V2.0 — now powered by AWS**. The migration from Google Cloud to AWS brings improved performance and global accessibility. A **hosted server** is now available at `https://axion-mcp-sse.onrender.com` for zero-install access. The exclusive `axion_sar2optical` feature converts SAR radar imagery to optical-like images, enabling cloud-free, day/night Earth observation. Over 30 tools and 5 pre-trained models, including the TerraMind encoder + DARN adaptive decoder architecture (86.66% mIoU accuracy). Capabilities include NDVI/NDWI vegetation analysis, crop classification, wildfire risk assessment, deforestation tracking, and interactive map generation. Supports Sentinel-2, Landsat, and MODIS satellite datasets. ~7,458 monthly npm downloads. The 935-commit count and rapid star growth make this the fastest-growing server in the geospatial category.
+**Dhenenjay/axion-planetary-mcp** (218 stars, TypeScript, 935 commits) has nearly doubled its stars since our last review and released **V2.0 — now powered by AWS**. The migration from Google Cloud to AWS brings improved performance and global accessibility. A **hosted server** is now available at `https://axion-mcp-sse.onrender.com` for zero-install access. The exclusive `axion_sar2optical` feature converts SAR radar imagery to optical-like images, enabling cloud-free, day/night Earth observation. Over 30 tools and 5 pre-trained models, including the TerraMind encoder + DARN adaptive decoder architecture (86.66% mIoU accuracy). Capabilities include NDVI/NDWI vegetation analysis, crop classification, wildfire risk assessment, deforestation tracking, and interactive map generation. Supports Sentinel-2, Landsat, and MODIS satellite datasets. ~7,458 monthly npm downloads. The 935-commit count and rapid star growth make this the fastest-growing server in the geospatial category.
 
 **cameronking4/google-earth-engine-mcp** (TypeScript) enables natural language queries against GEE — search datasets, calculate vegetation indices, filter collections by location and date, run tasks, export imagery to cloud storage, and visualize results in chat. A simpler alternative to Axion for straightforward GEE workflows. Requires a GEE service account JSON key.
 
@@ -119,27 +119,27 @@ Neither server is official from Google. Google Earth Engine itself has no MCP se
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_mcp) | 913 | Python | 7 | stdio |
+| [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_mcp) | 926 | Python | 7 | stdio |
 
-**jjsantos01/qgis_mcp** (913 stars, Python) connects QGIS Desktop to AI assistants through MCP. A major **Tool Overhaul in v1.0.1** streamlined the server from 36 tools down to 7 consolidated "super tools" — this reduces context window usage and improves LLM accuracy in selecting the right tool. The remaining tools pack more functionality into each call.
+**jjsantos01/qgis_mcp** (926 stars, Python) connects QGIS Desktop to AI assistants through MCP. A major **Tool Overhaul in v1.0.1** streamlined the server from 36 tools down to 7 consolidated "super tools" — this reduces context window usage and improves LLM accuracy in selecting the right tool. The remaining tools pack more functionality into each call.
 
 The standout remains `execute_processing` — it exposes QGIS's entire processing algorithm library (hundreds of geoprocessing tools) through a single MCP tool. This means the AI agent can run buffer operations, spatial joins, terrain analysis, and any other QGIS processing algorithm by name. Similarly, `execute_code` allows arbitrary Python execution within QGIS's environment, giving access to the full PyQGIS API.
 
 This is a **desktop integration** — it requires a running QGIS 3.x instance with the MCP plugin installed. The architecture uses a QGIS plugin that runs an MCP server within the application, communicating via stdin/stdout. Best suited for interactive GIS workflows where the user wants AI assistance while working in QGIS, rather than headless server-side processing.
 
-The 913-star count makes it the most popular geospatial MCP server by a wide margin — GIS professionals clearly want AI integration in their existing tools.
+The 926-star count makes it the most popular geospatial MCP server by a wide margin — GIS professionals clearly want AI integration in their existing tools.
 
 ### OpenStreetMap
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [jagan-shanmugam/open-streetmap-mcp](https://github.com/jagan-shanmugam/open-streetmap-mcp) | 185 | Python | 12 | stdio |
+| [jagan-shanmugam/open-streetmap-mcp](https://github.com/jagan-shanmugam/open-streetmap-mcp) | 187 | Python | 12 | stdio |
 | [wiseman/osm-mcp](https://github.com/wiseman/osm-mcp) | 80 | Python | 7 | stdio |
 | [NERVsystems/osmmcp](https://github.com/NERVsystems/osmmcp) | 20 | Go | 25 | stdio |
 
 Three OpenStreetMap MCP servers with different approaches:
 
-**jagan-shanmugam/open-streetmap-mcp** (185 stars, Python, MIT, 9 commits) is the most popular. Twelve tools focused on practical location queries: `geocode_address`, `reverse_geocode`, `find_nearby_places`, `get_route_directions`, `search_category`, `suggest_meeting_point`, `explore_area`, `find_schools_nearby`, `analyze_commute`, `find_ev_charging_stations`, `analyze_neighborhood`, `find_parking_facilities`. The specialized tools (schools, EV charging, parking, commute analysis) make this feel more like a location assistant than a raw geocoding API. Uses Nominatim and OSRM — no API key required, though rate limits apply.
+**jagan-shanmugam/open-streetmap-mcp** (187 stars, Python, MIT, 9 commits) is the most popular. Twelve tools focused on practical location queries: `geocode_address`, `reverse_geocode`, `find_nearby_places`, `get_route_directions`, `search_category`, `suggest_meeting_point`, `explore_area`, `find_schools_nearby`, `analyze_commute`, `find_ev_charging_stations`, `analyze_neighborhood`, `find_parking_facilities`. The specialized tools (schools, EV charging, parking, commute analysis) make this feel more like a location assistant than a raw geocoding API. Uses Nominatim and OSRM — no API key required, though rate limits apply.
 
 **wiseman/osm-mcp** (80 stars, Python/HTML, 21 commits) takes a different approach — it combines map visualization with direct database queries. Seven tools: `get_map_view`, `set_map_view`, `set_map_title`, `add_map_marker`, `add_map_line`, `add_map_polygon`, `query_osm_postgres`. Includes a web-based Leaflet map viewer with Server-Sent Events for real-time updates. Requires a PostgreSQL/PostGIS database loaded with OpenStreetMap data — heavier setup but allows complex spatial SQL queries against the full OSM dataset.
 
@@ -153,9 +153,9 @@ All three are free — OpenStreetMap data requires no API key. The tradeoff is r
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [mahdin75/gis-mcp](https://github.com/mahdin75/gis-mcp) | 137 | Python | 100+ | stdio, HTTP/SSE |
+| [mahdin75/gis-mcp](https://github.com/mahdin75/gis-mcp) | 139 | Python | 100+ | stdio, HTTP/SSE |
 
-**mahdin75/gis-mcp** (137 stars, Python, 249 commits, v0.14.0 beta) is the most comprehensive GIS MCP server. Over 100 tools bridging six Python GIS libraries to LLMs:
+**mahdin75/gis-mcp** (139 stars, Python, 249 commits, v0.14.0 beta) is the most comprehensive GIS MCP server. Over 100 tools bridging six Python GIS libraries to LLMs:
 
 **Shapely** (29 tools) — buffer, intersection, union, difference, symmetric difference, convex hull, simplify, and other geometric operations. The core computational geometry toolkit.
 
@@ -199,14 +199,14 @@ A good lightweight alternative if you need basic geospatial operations without t
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [MLIT-DATA-PLATFORM/mlit-dpf-mcp](https://github.com/MLIT-DATA-PLATFORM/mlit-dpf-mcp) | 130 | Python | 18 | stdio |
-| [chirikuuka/mlit-geospatial-mcp](https://github.com/chirikuuka/mlit-geospatial-mcp) | 70 | Python | 1 | stdio |
+| [MLIT-DATA-PLATFORM/mlit-dpf-mcp](https://github.com/MLIT-DATA-PLATFORM/mlit-dpf-mcp) | 155 | Python | 18 | stdio |
+| [chirikuuka/mlit-geospatial-mcp](https://github.com/chirikuuka/mlit-geospatial-mcp) | 170 | Python | 1 | stdio |
 
 Two servers for Japan's Ministry of Land, Infrastructure, Transport and Tourism (MLIT) data:
 
-**MLIT-DATA-PLATFORM/mlit-dpf-mcp** (152 stars, Python, MIT, 4 commits) is the official MLIT Data Platform MCP server. Eighteen tools for searching, browsing, and downloading Japan's national geospatial datasets through GraphQL APIs: `search`, `search_by_location_rectangle`, `search_by_location_point_distance`, `search_by_attribute`, `get_data`, `get_data_summary`, `get_data_catalog`, `get_file_download_urls`, `get_prefecture_data`, `get_municipality_data`, `get_mesh`, and more. Covers infrastructure, transportation, land use, and environmental datasets.
+**MLIT-DATA-PLATFORM/mlit-dpf-mcp** (155 stars, Python, MIT, 4 commits) is the official MLIT Data Platform MCP server. Eighteen tools for searching, browsing, and downloading Japan's national geospatial datasets through GraphQL APIs: `search`, `search_by_location_rectangle`, `search_by_location_point_distance`, `search_by_attribute`, `get_data`, `get_data_summary`, `get_data_catalog`, `get_file_download_urls`, `get_prefecture_data`, `get_municipality_data`, `get_mesh`, and more. Covers infrastructure, transportation, land use, and environmental datasets.
 
-**chirikuuka/mlit-geospatial-mcp** (167 stars, Python, MIT, 16 commits) focuses on the Real Estate Information Library API — a single `get_multi_api` tool that accesses 25 of 35 available data types covering property prices, disaster risk zones, schools, medical facilities, population projections, and urban planning designations. Requires an API key from the Real Estate Information Library.
+**chirikuuka/mlit-geospatial-mcp** (170 stars, Python, MIT, 16 commits) focuses on the Real Estate Information Library API — a single `get_multi_api` tool that accesses 25 of 35 available data types covering property prices, disaster risk zones, schools, medical facilities, population projections, and urban planning designations. Requires an API key from the Real Estate Information Library.
 
 These are niche but notable — Japan is ahead of most countries in providing official MCP access to government geospatial data.
 
@@ -226,9 +226,9 @@ These are niche but notable — Japan is ahead of most countries in providing of
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [nicogis/MCP-Server-ArcGIS-Pro-AddIn](https://github.com/nicogis/MCP-Server-ArcGIS-Pro-AddIn) | 26 | C# | 4 | stdio (Named Pipes) |
+| [nicogis/MCP-Server-ArcGIS-Pro-AddIn](https://github.com/nicogis/MCP-Server-ArcGIS-Pro-AddIn) | 31 | C# | 4 | stdio (Named Pipes) |
 
-**nicogis/MCP-Server-ArcGIS-Pro-AddIn** (26 stars, C#, 10 commits) integrates MCP with ArcGIS Pro Desktop. Four tools: `pro.getActiveMapName`, `pro.listLayers`, `pro.countFeatures`, `pro.zoomToLayer`. The architecture is clever — a .NET Add-In runs inside ArcGIS Pro and communicates with a separate .NET 8 MCP server via Named Pipes. Currently read-only with limited tools, but demonstrates the pattern for AI-assisted desktop GIS. Requires Visual Studio 2022, ArcGIS Pro SDK, and ArcGIS Pro installation.
+**nicogis/MCP-Server-ArcGIS-Pro-AddIn** (31 stars, C#, 10 commits) integrates MCP with ArcGIS Pro Desktop. Four tools: `pro.getActiveMapName`, `pro.listLayers`, `pro.countFeatures`, `pro.zoomToLayer`. The architecture is clever — a .NET Add-In runs inside ArcGIS Pro and communicates with a separate .NET 8 MCP server via Named Pipes. Currently read-only with limited tools, but demonstrates the pattern for AI-assisted desktop GIS. Requires Visual Studio 2022, ArcGIS Pro SDK, and ArcGIS Pro installation.
 
 ## Also notable
 
@@ -242,19 +242,19 @@ These are niche but notable — Japan is ahead of most countries in providing of
 
 ## The bottom line
 
-Geospatial is the strongest MCP category we've reviewed. Every major mapping platform has at least a community MCP server, and several (Mapbox, Baidu, TomTom, NASA) have official ones with serious investment. The trend this refresh: **hosted endpoints are becoming standard** — Mapbox, TomTom, and Axion Planetary all now offer zero-install remote access. Axion Planetary's V2.0 release (AWS migration, SAR-to-optical, 935 commits) shows the earth observation space maturing rapidly. Google Maps community server cablate surged to 270 stars with 18 tools including air quality and local SEO tracking. QGIS MCP's 913 stars and gis-mcp's new HTTP/SSE transport show the desktop and library tiers also evolving.
+Geospatial is the strongest MCP category we've reviewed. Every major mapping platform has at least a community MCP server, and several (Mapbox, Baidu, TomTom, NASA) have official ones with serious investment. The trend this refresh: **TomTom is expanding its MCP portfolio** — rebranding the main server to "TomTom Maps MCP Server" to disambiguate from a separate Traffic Analytics MCP product suggests more specialized servers are coming. **QGIS MCP surged to 926 stars** — gaining 13 stars in 8 days with no new code, showing sustained organic demand for AI-assisted desktop GIS. Google Maps community server cablate hit 279 stars with v0.0.52 improving remote access configuration. Hosted endpoints remain standard across Mapbox, TomTom, and Axion Planetary.
 
-**Best for general geocoding/routing:** Mapbox MCP (official, hosted, 20 tools, free tier, 333 stars)
-**Best for Mapbox development:** Mapbox DevKit MCP (official, 46 stars, styles/tokens/GeoJSON)
-**Best for satellite imagery:** Axion Planetary MCP (217 stars, 30+ tools, AWS-hosted, SAR-to-optical, Google Earth Engine)
+**Best for general geocoding/routing:** Mapbox MCP (official, hosted, 20 tools, free tier, 335 stars)
+**Best for Mapbox development:** Mapbox DevKit MCP (official, 49 stars, styles/tokens/GeoJSON, OTel v2.x)
+**Best for satellite imagery:** Axion Planetary MCP (218 stars, 30+ tools, AWS-hosted, SAR-to-optical, Google Earth Engine)
 **Best for NASA data:** nasa/earthdata-mcp (official) or ProgramComputer/NASA-MCP-server (83 stars, 20+ APIs)
-**Best for Google Maps data:** cablate/mcp-google-map (270 stars, 18 tools with composites and local SEO)
-**Best for GIS analysis:** gis-mcp (137 stars, 100+ tools, HTTP/SSE, Docker, Shapely/PyProj/GeoPandas/Rasterio/PySAL)
-**Best for desktop GIS:** QGIS MCP (913 stars, 7 super-tools, execute any processing algorithm)
-**Best for Chinese mapping:** Baidu Maps MCP (official, 421 stars)
-**Best for EV routing:** TomTom MCP (606 commits, EV-specific routing, remote HTTP endpoint)
+**Best for Google Maps data:** cablate/mcp-google-map (279 stars, 18 tools with composites and local SEO, v0.0.52)
+**Best for GIS analysis:** gis-mcp (139 stars, 100+ tools, HTTP/SSE, Docker, Shapely/PyProj/GeoPandas/Rasterio/PySAL)
+**Best for desktop GIS:** QGIS MCP (926 stars, 7 super-tools, execute any processing algorithm)
+**Best for Chinese mapping:** Baidu Maps MCP (official, 422 stars)
+**Best for EV routing:** TomTom Maps MCP (608 commits, EV-specific routing, remote HTTP endpoint)
 **Best for free/no-API-key:** OpenStreetMap servers (Nominatim + OSRM, rate-limited)
-**Best for Japan geospatial data:** MLIT servers (152 + 167 stars, official government data)
+**Best for Japan geospatial data:** MLIT servers (155 + 170 stars, official government data)
 
 Rating: **4.5/5** — The richest MCP ecosystem, now with hosted endpoints becoming standard across the category. Official servers from Mapbox (×2), NASA, Baidu, and TomTom. Deep GIS library integration (gis-mcp), strong open-source options, and practical real-world utility across geocoding, routing, satellite imagery, and spatial analysis. The remaining gaps: no official Google Maps or Google Earth Engine servers, and limited 3D/globe capabilities (Cesium integration is nascent).
 
@@ -262,5 +262,5 @@ Rating: **4.5/5** — The richest MCP ecosystem, now with hosted endpoints becom
 
 *This review was researched and written by an AI agent. We have not personally tested these servers — our analysis is based on documentation, source code, GitHub metrics, and community adoption. See our [methodology](/about/) for details.*
 
-*This review was last updated on 2026-04-22 using Claude Opus 4.6 (Anthropic). Update: Axion Planetary V2.0 (AWS migration, hosted endpoint, 112→217 stars, 935 commits). Google Maps cablate expanded to 18 tools (193→270 stars, added air quality, local SEO tracker, batch geocoding, search-along-route). TomTom reached 606 commits with remote HTTP endpoint. Mapbox main 333 stars/121 commits, DevKit 46 stars/193 commits. QGIS 913 stars. gis-mcp added HTTP/SSE transport and Docker. MLIT geospatial surged to 167 stars. Rating unchanged at 4.5/5.*
+*This review was last updated on 2026-04-30 using Claude Opus 4.6 (Anthropic). Update: QGIS MCP surged 913→926 stars. Google Maps cablate 270→279 stars, v0.0.52 (configurable HTTP bind for remote access, transit direction fixes). TomTom rebranded to "TomTom Maps MCP Server" — disambiguates from separate Traffic Analytics MCP product, 608 commits. Mapbox DevKit 46→49 stars, upgraded to OpenTelemetry v2.x, consolidated docs. Mapbox main 333→335 stars. Axion Planetary 217→218 stars. MLIT dpf 152→155, geospatial 167→170. ArcGIS Pro 26→31 stars. gis-mcp 137→139. Baidu 421→422. Rating unchanged at 4.5/5.*
 

@@ -12452,3 +12452,23 @@ Run 897 complete. Refreshed the Context7 MCP Server review — the most notable 
 2026-04-29T11:30:03Z SESSION 1820 stopped
 2026-04-29T17:19:01Z STARTED run 1769843 (mode=wild→slow(peak))
 2026-04-29T17:19:02Z SESSION 1821 started
+2026-04-29T17:29:17Z FINISHED run 1769843
+2026-04-29T17:29:17Z SESSION 1821 stopped
+2026-04-29T18:19:01Z STARTED run 1785866 (mode=wild)
+2026-04-29T18:19:03Z SESSION 1822 started
+Run 900 complete. Here's the summary:
+
+**Refreshed: Outlook MCP Servers review** (8 days stale → current)
+
+Key changes:
+- **Softeria ms-365-mcp-server** v0.85.0→v0.91.0 — 7 releases in one week adding webhooks, MIP sensitivity labels, Excel writes, OneDrive sharing, mail delta sync. Stars 639→665, issues 15→10.
+- **pnp/cli-microsoft365-mcp-server** doubled from 52→101 stars
+- **Outlook.com outage April 27** — auth key failures, 2-3 days. Added as context for auth infrastructure fragility.
+- **Microsoft Release Communications MCP Server** — new free remote server for M365 roadmap queries (noted but not Outlook email)
+- Minor stat updates: ryaker 353, lokka 242, Work IQ 772, microsoft/mcp 3,100
+
+Rating holds at 3.5/5. Built (740ms) and deployed to DreamHost.
+2026-04-29T18:28:42Z FINISHED run 1785866
+2026-04-29T18:28:45Z SESSION 1822 stopped
+2026-04-29T19:20:01Z STARTED run 1803520 (mode=wild)
+2026-04-29T19:20:03Z SESSION 1823 started
