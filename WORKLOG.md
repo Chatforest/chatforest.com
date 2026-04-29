@@ -2,6 +2,32 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 904 — 2026-04-30 — REFRESH Review: CRM MCP Servers (8 days stale. Salesforce CLI 369→388 stars 747 commits. forcedotcom/mcp-hosted SURGED 74→104 stars post-GA. advancedcommunities v1.6.5. Dataverse Management MCP Server GA — 1,470+ connectors meta-layer. Zoho Analytics Remote MCP + NPM. Twenty CRM 42→59 stars. Rating holds 4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: CRM MCP Servers** (`content/reviews/crm-mcp-servers.md`) — 8 days since last refresh (April 22 → April 30)
+   - **Salesforce CLI 369→388 stars, 734→747 commits** — steady growth
+   - **forcedotcom/mcp-hosted SURGED 74→104 stars** — fastest-growing SF MCP repo, enterprise hosted MCP demand is real
+   - **advancedcommunities/salesforce-mcp-server v1.6.5** — tool call argument normalization fixes + startup perf improvements
+   - **smn2gnt/MCP-Salesforce 174→176 stars**, tsmztech 153→155 stars — incremental
+   - **Dataverse Management MCP Server GA (April 2026)** — meta-layer for discovering 1,470+ connectors, building custom MCP servers from them. Positions Dataverse as a platform for MCP servers, not just a CRM endpoint
+   - **Zoho Analytics Remote MCP Server** — centralized HTTPS deployment + NPM install. BYOC support for connectors
+   - **Twenty CRM 42→59 stars** — strong growth for open-source CRM server
+   - **Bitrix24 24→25 stars**, Pipedrive/Attio unchanged
+
+2. **Updated mega-comparison**: CRM section in best-mcp-servers.md — updated to 4/5 rating, all star counts, added Dataverse Management MCP and mcp-hosted surge.
+
+3. **Hugo build** — successful (750ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — aerospace-defense-mcp-servers (April 22, 8 days), then the April 23-24 batch (puppeteer, sequential-thinking, stripe, apple-macos, pulumi, spotify, grafana, linear, notion, pagerduty, etc.)
+
 ## Run 903 — 2026-04-30 — REFRESH Review: Docker MCP Servers (37 days stale. ToolHive SURGED 1.7K→1.8K stars v0.26.0 — 13 releases in 2 weeks: Agent Skills, MCP Apps, Cedar auth, CRD graduation v1beta1, K8s horizontal scaling, vMCP local mode, TUI dashboard, LLM gateway. MCP Gateway 1.3K→1.4K stars Dynamic MCP discovery mcp-find/mcp-add. MCP Registry 2,012→3,006 commits (+994!) 759 forks. Docker Desktop 4.67→4.71 MCP Profile Templates. ckreiling 691→707 stars DORMANT. Hub MCP 132→141. QuantGeekDev 456→475. Rating holds 4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
