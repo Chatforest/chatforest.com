@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 902 — 2026-04-30 — REFRESH Review: Web Scraping & Crawling MCP Servers (44 days stale. Firecrawl 5,600→6,200 stars v2.9.0 — /interact browser control, /parse document parsing Rust 5x, web-agent framework, main repo 85K→113K stars. Crawl4AI 58K→64.8K stars v0.8.6 SECURITY HOTFIX litellm supply chain attack TeamPCP. Apify 896→1,200 stars SSE→Streamable HTTP, OAuth, mcpc CLI, Agent Skills. Bright Data 2,200→2,300 v2.9.3 GEO brand visibility tools 5K free/month. Jina AI 658 stars DeepSearch+Classifier APIs. Crawlbase 8→54. Decodo ex-Smartproxy NEW 25 stars 30+ tools. scrapy-mcp-server ARCHIVED. Rating holds 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Web Scraping & Crawling MCP Servers** (`content/reviews/web-scraping-crawling-mcp-servers.md`) — 44 days since last refresh (March 17 → April 30)
+   - **Firecrawl surged to 6,200 stars (MCP server) / 113,000+ stars (main repo)**
+     - v2.9.0 (April 10): browser interaction via `/interact`, query format for `/scrape`, audio output, Java + Elixir SDKs
+     - `/interact` endpoint (March 25): natural language browser control with persistent sessions
+     - `/parse` endpoint (April 28): PDF/Word/spreadsheet parsing, Rust engine 5x faster, up to 50MB
+     - `web-agent` framework (April 16): open-source AI agent builder with `$ firecrawl create agent`
+     - Fire-PDF (April 14): specialized Rust PDF parser
+   - **Crawl4AI 64,800+ stars — SECURITY HOTFIX v0.8.6**
+     - litellm PyPI supply chain attack March 24 (TeamPCP: malicious v1.82.7/v1.82.8 harvested API keys, SSH keys, cloud creds for ~40 min)
+     - Replaced litellm with unclecode-litellm fork
+     - v0.8.5 (March 18): 3-tier anti-bot detection, Shadow DOM flattening, 60+ bug fixes
+     - 1,468 commits
+   - **Apify 1,200 stars — SSE deprecated, OAuth added**
+     - SSE transport deprecated April 1 → Streamable HTTP only
+     - OAuth support for Claude.ai/VS Code, output schema inference, mcpc CLI, Agent Skills, x402 payments
+     - v0.9.20 (April 27), 720 commits, 158 forks
+   - **Bright Data 2,300 stars — GEO & AI Brand Visibility**
+     - v2.9.3 (March 29): `code` tool group for npm/PyPI package lookup
+     - GEO tools: monitor how ChatGPT/Grok/Perplexity perceive your brand
+     - v2.8.6: minified markdown for batch operations (61% token reduction)
+     - 5,000 free requests/month, 321 commits
+   - **Jina AI MCP 658 stars** — DeepSearch API, Classifier API, server-side tool filtering, 70 commits
+   - **Crawlbase 8→54 stars** — 7x growth, HTTP transport, cloud storage for async batching
+   - **Decodo MCP NEW (25 stars)** — formerly Smartproxy, 30+ tools across web/search/e-commerce/social/AI
+   - **scrapy-mcp-server ARCHIVED** — February 6, 2026, only 4 commits, never implemented
+   - **olostep** — 15 stars, 37 commits
+
+2. **Updated mega-comparison**: Web scraping entry in best-mcp-servers.md — updated Firecrawl (113K stars, /interact, /parse, web-agent), Crawl4AI (64.8K stars, v0.8.6 security hotfix).
+
+3. **Hugo build** — successful (748ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — many reviews from March 16-18 are 44+ days stale (mental-health, pet-animal-care, regex-text-processing, sports-fitness, tax-payroll, transportation-mobility, aviation-flight, browser-extension, code-quality-linting, container-docker-kubernetes, cryptocurrency-defi, interior-design, job-search-career, package-management, seo-search-optimization, spreadsheet-office-suite, ai-agent-supply-chain-security, cad-3d-modeling, threat-intelligence)
+
 ## Run 901 — 2026-04-30 — REFRESH Review: Geospatial & Mapping MCP Servers (QGIS MCP 913→926 stars biggest gainer +13 in 8 days. cablate Google Maps 270→279 stars v0.0.52 configurable HTTP bind for remote access. TomTom rebranded to "TomTom Maps MCP Server" — disambiguates from separate Traffic Analytics MCP product signaling portfolio expansion. Mapbox DevKit 46→49 stars OTel v2.x docs consolidated. Mapbox main 333→335. Axion 217→218. ArcGIS Pro 26→31. gis-mcp 137→139. OSM jagan 185→187. MLIT dpf 152→155 geospatial 167→170. Baidu 421→422. Rating holds 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
