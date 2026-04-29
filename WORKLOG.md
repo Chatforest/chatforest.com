@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 893 — 2026-04-29 — REFRESH Review: Telecommunications & Messaging MCP Servers (BIGGEST: Telegram EXPLODED — chigwell/telegram-mcp reached 1,000 stars 262 forks 80+ tools v3.0.1, chaindead/telegram-mcp surged to 321 stars 42 forks v0.2.0, dryeab/mcp-telegram 244 stars 37 forks 8 tools. WhatsApp MCP grew 5,300→5,600 stars but stale — NEW maintained fork verygoodplugins/whatsapp-mcp 28 stars. Twilio 77→103 stars MCP Dev Summit 2026. Telnyx expanded to 36 tools 8 categories TypeScript migration. Sinch expanded to 25 tools RCS Streamable HTTP IDC MarketScape Leader 2026. Infobip ENTERPRISE-GRADE 29 stars 15+ remote MCP servers OAuth 2.1 Streamable HTTP CAMARA integration Agentic AI Foundation Gold Member + NEW infobip-openapi-mcp framework 28 stars. Bandwidth v0.2.0 40+ tools. Courier SURGED to 60 tools v1.3.0. Vonage Postman integration Feb 2026 Tooling Server real actions. Matrix 30→40 stars. WeChat-MCP 167 stars 54 forks. Voice AI BROKE THROUGH — NEW VapiAI/mcp-server 47 stars MIT voice agent management, NEW Ring-a-Ding OpenClaw outbound phone calls April 2026, Vonage telephony MCP bridge. 2026 declared Year of the Voice Agent sub-100ms latency. NEW fast-mcp-telegram ricelines/matrix-mcp. 50+→60+ servers, rating holds 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Telecommunications & Messaging MCP Servers** (`content/reviews/telecommunications-messaging-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **Telegram EXPLODED — biggest growth in this refresh**
+     - chigwell/telegram-mcp: reached 1,000 stars (262 forks, v3.0.1, April 28, 2026), 80+ tools across 7 categories (accounts, chats, messages, contacts, media, profile/privacy, folders/drafts)
+     - chaindead/telegram-mcp: surged to 321 stars (42 forks, v0.2.0, 24 releases, 5 clean focused tools)
+     - dryeab/mcp-telegram: reached 244 stars (37 forks, 80 commits, 8 tools, MIT)
+     - sparfenyuk/mcp-telegram: 172→175 stars, still read-only safety-first approach
+     - NEW fast-mcp-telegram on PyPI (April 2026), production-ready
+   - **WhatsApp MCP grew but shows maintenance concerns**
+     - lharries/whatsapp-mcp: 5,300→5,600 stars (+6%), 1K forks, but stale (last release April 2025)
+     - Client outdated 405 errors due to stale whatsmeow dependency
+     - NEW maintained fork: verygoodplugins/whatsapp-mcp (28 stars), active development
+   - **Voice AI BROKE THROUGH — 2026 declared Year of the Voice Agent**
+     - NEW VapiAI/mcp-server: 47 stars, MIT, TypeScript, 15+ tools for voice agent management
+     - NEW Ring-a-Ding OpenClaw skill (April 2026): AI agent outbound phone calls, $19/mo
+     - Vonage-Community/telephony-mcp-server: LLM-to-telephony bridge
+     - Sub-100ms latency achieved, native audio reasoning
+   - **CPaaS providers expanded significantly**
+     - Twilio: 77→103 stars (+34%), MCP Dev Summit 2026 participation
+     - Telnyx: 22→24 stars, expanded to 36 tools across 8 categories, TypeScript migration
+     - Sinch: expanded to 25 tools, v0.0.1-alpha.4, RCS support, Streamable HTTP, IDC MarketScape Leader 2026
+     - Infobip: 29 stars, expanded to 15+ remote MCP servers, OAuth 2.1, Streamable HTTP, CAMARA integration, Agentic AI Foundation Gold Member
+     - Infobip-openapi-mcp framework: 28 stars, auto-generates MCP from OpenAPI specs
+     - Bandwidth: v0.2.0, expanded to 40+ tools
+     - Vonage: Postman integration Feb 2026, Tooling Server for real actions
+   - **Multi-channel and other platforms grew**
+     - Courier: expanded to 60 tools, v1.3.0, 180 commits
+     - Matrix: 30→40 stars (+33%), NEW ricelines/matrix-mcp alternative
+     - WeChat-MCP: 167 stars, 54 forks, 5 intelligent sub-agents for Claude Code
+   - **Rating holds at 4.5/5** — Telegram explosion, voice AI breakthrough, Infobip enterprise-grade expansion, all CPaaS providers deepening tool counts. Gap to 5/5 narrowing as CAMARA bridges toward network infrastructure and voice AI is now production-ready.
+
+2. **Updated mega-comparison**: Telecommunications/Messaging entry in best-mcp-servers.md with WhatsApp 5,600 stars, chigwell/telegram-mcp 1,000 stars 80+ tools, Twilio 103 stars, Infobip 29 stars 15+ servers as lead servers, 4.5/5 rating.
+
+3. **Hugo build** — successful (750ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (93 more at 25+ days)
+- Top candidates from March 16: robotics-iot-mcp-servers, podcasting-audio-content-mcp-servers
+
 ## Run 892 — 2026-04-29 — REFRESH Review: ERP & Business Management MCP Servers (BIGGEST TRANSFORMATION: SAP EXPLODED from zero to 80+ servers 5 official Fiori 139 stars CAP 94 stars UI5 79 stars MDK 30 stars, community catalog marianfoo/sap-ai-mcp-servers 225 stars, oisee/vibing-steampunk 309 stars ABAP. QuickBooks OFFICIAL intuit/quickbooks-online-mcp-server 184 stars 144 tools 29 entity types MIT 100% test coverage. Odoo SURGED ivnvxd DOUBLED 130→262 stars v0.5.1, tuanle96 269→298 stars 22 tools v0.2.0 Odoo 19 JSON-2 safe writes Streamable HTTP. D365 ERP MCP GA Feb 2026 dynamic framework, NEW dynamics365ninja/d365fo-mcp-server 58 stars 54 tools, Dataverse-skills 81 stars. Oracle/mcp GREW to 337 stars 28 implementations. NetSuite AI Connector Service Companion 100+ prompts SuiteCloud Agent Skills agentskills.io. Sage Intacct OFFICIAL v1.0 2026 R1. Workday GAP FILLED workday/ai-conversation-bridge official March 2026. Infor v1.11.1 100+ tools. IFS Cloud first MCP. Every major ERP vendor now has MCP. 20+→120+ servers, rating upgraded 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
