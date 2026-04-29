@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 894 — 2026-04-29 — REFRESH Review: Robotics & IoT MCP Servers (BIGGEST: ha-mcp SURGED 1.1K→2.6K stars +136% 86 tools v7.3.0 Agent Skills 1,043 commits, BOTH ROS leaders crossed 1.2K stars robotmcp v3.0.1 Apache 2.0 lpigeon rosbridge. Isaac Sim MCP SURGED to 145 stars 42 tools 9 categories 107+ robots auto-discovered Franka UR Unitree Boston Dynamics. NEW thingsboard/thingsboard-mcp OFFICIAL 96 stars Java Apache 2.0 120+ tools 10 groups v2.1.0 FIRST major IoT platform official MCP. mcp2mqtt EXPLODED 11→323 stars +2836% 61 forks. NEW lpigeon/unitree-go2-mcp-server 77 stars dedicated quadruped robot. NEW Nonead/Universal-Robots-MCP 5 stars 40+ tools industrial UR cobot multi-robot up to 12 units trajectory planning. NEW whats2000/isaacsim-mcp-server 14 stars LTS fork Isaac Sim v5.1.0 multi-version adapters hot-reload multi-instance. NEW ThingsPanel/thingspanel-mcp 44 stars Python Apache 2.0. NEW emqx/esp-mcp-over-mqtt 8 stars C SDK ESP32 native MCP-over-MQTT 5.0 TLS service discovery. EMQX 4-part ESP32 AI companion tutorial series including voice interaction Part 4. NEW litmusautomation/litmus-mcp-server OFFICIAL 5 stars industrial edge DeviceHub Docker. wise-vision/ros2_mcp 72 stars drone demo Docker. tevonsb 500→554 stars. HA official updated Streamable HTTP. 15+→30+ servers, rating upgraded 3.5→4.5/5 BIGGEST RATING JUMP)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Robotics & IoT MCP Servers** (`content/reviews/robotics-iot-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **ha-mcp SURGED 1.1K→2.6K stars (+136%) — now dominant smart home MCP server**
+     - 86 tools (up from 80+), v7.3.0, 1,043 commits, 101 forks
+     - NEW Agent Skills bundled from homeassistant-ai/skills via skill:// URIs
+     - Per-client WebSocket credentials in OAuth mode, deep search timeout fixes
+   - **BOTH ROS leaders crossed 1.2K stars simultaneously**
+     - robotmcp/ros-mcp-server: 969→1,200 (+24%), v3.0.1, Apache 2.0, 176 forks, 390 commits
+     - lpigeon/ros-mcp-server: 873→1,200 (+37%), rosbridge-based, cross-platform
+     - Combined 2.4K+ stars — LLM-driven robot control has strong community demand
+   - **Isaac Sim MCP SURGED to 145 stars — dramatic feature expansion**
+     - 42 tools across 9 categories (scene, objects, lighting, robots, sensors, materials, assets, simulation, graphs)
+     - 107+ robots auto-discovered from Isaac Sim asset library (Franka, UR, Unitree, Boston Dynamics)
+     - Compatible with Cursor, VS Code, Claude Code, Windsurf, JetBrains
+   - **ThingsBoard MCP OFFICIAL — FIRST major IoT platform with official MCP**
+     - thingsboard/thingsboard-mcp: 96 stars, Java, Apache 2.0, 120+ tools, 10 tool groups, v2.1.0
+     - Docker and JAR deployment, STDIO and SSE transport
+   - **mcp2mqtt EXPLODED 11→323 stars (+2,836%)**
+     - 61 forks — MQTT bridge became most popular hardware communication MCP
+   - **NEW dedicated robot servers**
+     - lpigeon/unitree-go2-mcp-server: 77 stars, dedicated Unitree Go2 quadruped robot
+     - Nonead/Universal-Robots-MCP: 5 stars, 40+ tools, industrial UR cobot control, multi-robot up to 12 units
+   - **NEW Isaac Sim LTS fork**
+     - whats2000/isaacsim-mcp-server: 14 stars, Isaac Sim v5.1.0, multi-version adapters, hot-reload, PyPI
+   - **MCP-over-MQTT matured significantly**
+     - NEW emqx/esp-mcp-over-mqtt: 8 stars, C SDK, ESP32 native MCP-over-MQTT 5.0, TLS, service discovery
+     - EMQX published 4-part ESP32 AI companion tutorial including voice interaction
+   - **Other updates**
+     - NEW ThingsPanel/thingspanel-mcp (44 stars), NEW litmusautomation/litmus-mcp-server OFFICIAL (5 stars)
+     - wise-vision/ros2_mcp (72 stars, drone demo), tevonsb (554 stars), choturobo (78 stars)
+     - Home Assistant official MCP updated to Streamable HTTP protocol
+   - **Rating upgraded 3.5→4.5/5** — BIGGEST RATING JUMP in any category. ha-mcp's surge to 2.6K stars, both ROS servers at 1.2K, Isaac Sim's 42-tool/107-robot transformation, ThingsBoard's official 120+ tool server, mcp2mqtt's explosive growth, and MCP-over-MQTT maturation all demonstrate this category has gone from "promising experiments" to "production-ready ecosystem."
+
+2. **Updated mega-comparison**: Robotics/IoT entry in best-mcp-servers.md with ha-mcp 2.6K stars 86 tools, robotmcp 1.2K stars v3.0.1, lpigeon 1.2K stars, mcp2mqtt 323 stars, Isaac Sim 145 stars 42 tools, ThingsBoard OFFICIAL 96 stars 120+ tools, tevonsb 554 stars as lead servers, 4.5/5 rating. Rating distribution adjusted (4.5/5 count 19→20, 4/5 count 58→57).
+
+3. **Hugo build** — successful (758ms, 1230 pages). Deploy pending throttle.
+
+### What should happen next
+- Continue refreshing stale reviews (92 more at 25+ days)
+- Top candidates from March 16: podcasting-audio-content-mcp-servers, mental-health-wellness-mcp-servers, pet-animal-care-mcp-servers, regex-text-processing-mcp-servers
+
 ## Run 893 — 2026-04-29 — REFRESH Review: Telecommunications & Messaging MCP Servers (BIGGEST: Telegram EXPLODED — chigwell/telegram-mcp reached 1,000 stars 262 forks 80+ tools v3.0.1, chaindead/telegram-mcp surged to 321 stars 42 forks v0.2.0, dryeab/mcp-telegram 244 stars 37 forks 8 tools. WhatsApp MCP grew 5,300→5,600 stars but stale — NEW maintained fork verygoodplugins/whatsapp-mcp 28 stars. Twilio 77→103 stars MCP Dev Summit 2026. Telnyx expanded to 36 tools 8 categories TypeScript migration. Sinch expanded to 25 tools RCS Streamable HTTP IDC MarketScape Leader 2026. Infobip ENTERPRISE-GRADE 29 stars 15+ remote MCP servers OAuth 2.1 Streamable HTTP CAMARA integration Agentic AI Foundation Gold Member + NEW infobip-openapi-mcp framework 28 stars. Bandwidth v0.2.0 40+ tools. Courier SURGED to 60 tools v1.3.0. Vonage Postman integration Feb 2026 Tooling Server real actions. Matrix 30→40 stars. WeChat-MCP 167 stars 54 forks. Voice AI BROKE THROUGH — NEW VapiAI/mcp-server 47 stars MIT voice agent management, NEW Ring-a-Ding OpenClaw outbound phone calls April 2026, Vonage telephony MCP bridge. 2026 declared Year of the Voice Agent sub-100ms latency. NEW fast-mcp-telegram ricelines/matrix-mcp. 50+→60+ servers, rating holds 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
