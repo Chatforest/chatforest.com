@@ -2,7 +2,7 @@
 title: "LLM Observability & MLOps Pipeline MCP Servers — Datadog, Arize Phoenix, Opik, LangSmith, Langfuse, MLflow, W&B, and More"
 date: 2026-03-16T18:30:00+09:00
 description: "LLM observability and MLOps pipeline MCP servers help AI teams monitor traces, manage prompts, orchestrate ML pipelines, and query experiment data through natural language."
-og_description: "LLM observability & MLOps pipeline MCP servers: Datadog OFFICIAL managed MCP (35 stars, 16+ tools + LLM observability toolset), Arize Phoenix MCP (9.4K stars platform, ~30 tools, built-in), Opik (203 stars, modular toolsets), OpenTelemetry MCP (185 stars, vendor-neutral tracing), Langfuse (163 stars, acquired by ClickHouse), LangSmith (107 stars, LangChain), W&B SURGED (50 stars, 14+ tools up from 6), MLflow OFFICIAL built-in MCP (10 trace tools), ZenML (44 stars, pipeline orchestration), Braintrust MCP (experiment/log analysis), Helicone MCP v0.1.6 (gateway + logging). 15+ servers reviewed. Rating: 4/5."
+og_description: "LLM observability & MLOps pipeline MCP servers: Datadog OFFICIAL managed MCP (35 stars, 16+ tools + LLM observability toolset), Arize Phoenix MCP (9.4K stars platform, ~30 tools, built-in), Opik (203 stars, modular toolsets), OpenTelemetry MCP (185 stars, vendor-neutral tracing), Langfuse (163 stars, acquired by ClickHouse), LangSmith (107 stars, LangChain), W&B SURGED (50 stars, 20 tools up from 6), MLflow OFFICIAL built-in MCP (10 trace tools), ZenML (44 stars, pipeline orchestration), Braintrust MCP (experiment/log analysis), Helicone MCP v0.1.6 (gateway + logging). 15+ servers reviewed. Rating: 4/5."
 content_type: "Review"
 categories: ["/categories/observability-monitoring/"]
 card_description: "LLM observability and MLOps pipeline MCP servers across observability platforms, distributed tracing, prompt management, pipeline orchestration, and experiment tracking. The category has matured significantly since our initial review. Datadog launched an OFFICIAL managed remote MCP server (35 stars, MIT) with 16+ core tools plus dedicated LLM Observability, APM, Error Tracking, and Security toolsets — GA since March 2026, working with Claude Code, Cursor, and VS Code. Arize Phoenix (9,469 stars platform) added a built-in MCP server (@arizeai/phoenix-mcp v4.0.7) with ~30 tools across projects, traces, spans, sessions, prompts, datasets, and experiments. MLflow added an OFFICIAL built-in MCP server (`mlflow mcp run`, 10 trace management tools, MLflow 3.5.1+). wandb/wandb-mcp-server SURGED from 6 to 14+ tools (v0.3.2) adding model registry, artifact management, and Weave trace analysis — 41→50 stars. Langfuse was acquired by ClickHouse (Jan 2026, $400M Series D) — remains MIT open source. comet-ml/opik-mcp holds at 203 stars with remote MCP support and OpenClaw integration. langchain-ai/langsmith-mcp-server grew 89→107 stars. traceloop/opentelemetry-mcp-server steady at 185 stars. NEW Braintrust MCP (@braintrust/mcp-server v0.0.3) provides experiment querying and SQL-based log analysis. Helicone MCP reached v0.1.6. Key gaps narrowing: Datadog provides cross-provider cost visibility, but no unified observability-to-pipeline server exists yet. Rating upgraded: 4/5."
@@ -64,12 +64,12 @@ This is a distinct concern from model serving and inference (covered in our [AI/
 
 | Server | Stars | Language | License | Tools | Key Feature |
 |--------|-------|----------|---------|-------|-------------|
-| [wandb/wandb-mcp-server](https://github.com/wandb/wandb-mcp-server) | 50 | Python | — | 14+ | Official W&B — SURGED from 6 to 14+ tools |
+| [wandb/wandb-mcp-server](https://github.com/wandb/wandb-mcp-server) | 50 | Python | — | 20 | Official W&B — SURGED from 6 to 20 tools |
 | [MLflow built-in MCP](https://mlflow.org/docs/latest/genai/mcp/) | — | Python | Apache 2.0 | 10 | OFFICIAL — built into MLflow 3.5.1+ |
 | [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) | 8 | Python | MIT | 17+ | Community MLflow API coverage |
 | [comet-ml/comet-mcp](https://github.com/comet-ml/comet-mcp) | 1 | Python | Apache 2.0 | 10 | Comet ML experiments + OTel instrumentation |
 
-**W&B MCP** (50 stars, up from 41) has seen the **most dramatic expansion** in this category. The server grew from 6 tools to **14+ tools** with v0.3.2 (April 2026), adding substantial new capabilities:
+**W&B MCP** (50 stars, up from 41) has seen the **most dramatic expansion** in this category. The server grew from 6 tools to **20 tools** with v0.3.2 (April 2026), adding substantial new capabilities:
 
 - **Weave trace analysis** — `infer_trace_schema_tool`, `query_weave_traces_tool`, `count_weave_traces_tool` for LLM trace inspection with detail-level control
 - **Model registry** — `list_registries_tool`, `list_registry_collections_tool`, `list_artifact_versions_tool`, `get_artifact_details_tool`, `compare_artifact_versions_tool` for artifact and model version management
@@ -89,7 +89,7 @@ The model registry and artifact comparison tools are particularly valuable — y
 
 LLM observability and MLOps pipeline MCP servers have **matured significantly** since our initial review. The arrival of Datadog's official MCP server, Arize Phoenix's built-in MCP, MLflow's official MCP integration, and W&B's tool expansion signal that **platform vendors now treat MCP as a standard integration surface**, not an experimental add-on. The category has grown from ~10 servers to 15+, with three major platforms (Datadog, Phoenix, MLflow) adding official MCP support in the past 44 days.
 
-**Best in class:** Arize Phoenix MCP (~30 tools, open-source, self-hostable) is the most comprehensive open-source option. Datadog MCP (managed remote, 16+ tools + specialized toolsets) is the strongest commercial option. W&B MCP (14+ tools, v0.3.2) has shown the most dramatic improvement.
+**Best in class:** Arize Phoenix MCP (~30 tools, open-source, self-hostable) is the most comprehensive open-source option. Datadog MCP (managed remote, 16+ tools + specialized toolsets) is the strongest commercial option. W&B MCP (20 tools, v0.3.2) has shown the most dramatic improvement.
 
 **Most practical for teams already using the platform:** Choose based on what you already run. Datadog users get MCP with zero setup. Phoenix users get it built-in. LangChain teams should use LangSmith MCP. MLflow teams now have an official option. Each server integrates deeply with its parent platform — that's the point.
 
