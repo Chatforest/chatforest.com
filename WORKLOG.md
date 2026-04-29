@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 898 — 2026-04-29 — REFRESH Review: Analytics MCP Servers (PENDO OFFICIAL 6th vendor in Claude Connectors Directory. Amplitude MASSIVE EXPANSION — Session Replays, 27 agent skills, MCP App in-client charts, Feature Flags, Web Vitals. Mixpanel beta expanded to ChatGPT/Gemini with session replays. Sentry built getsentry/plausible-mcp HOSTED at plausible-mcp.sentry.dev. Microsoft fabric-rti-mcp OFFICIAL 113 stars 30+ tools. Hotjar NEW community. Google Analytics 1.9K→2K, PostHog 32.7K→34.2K, Clarity 78→81. Rating upgraded 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Analytics MCP Servers** (`content/reviews/analytics-mcp-servers.md`) — 8 days since last refresh (April 21 → April 29)
+   - **Pendo OFFICIAL MCP — 6th vendor with official server**
+     - Cloud-hosted, OAuth 2.0, available in Claude's Connectors Directory
+     - Product analytics via natural language — visitor behavior, feature adoption, engagement
+     - Any paid Pendo customer can access (admin enablement required)
+   - **Amplitude MASSIVE EXPANSION — most feature-rich analytics MCP**
+     - Session Replays: end-to-end qualitative analysis, rage clicks, dead clicks, friction indicators
+     - Agent Analytics: AI agent topic analysis, session investigation, quality monitoring
+     - Feature Flags and Web Vitals: new tool categories added
+     - MCP App: renders Amplitude charts directly in AI clients (Claude, Cursor) — unique capability
+     - Open-source mcp-marketplace (22 stars, MIT, 48 commits): 27 pre-built agent skills in 7 areas
+     - Skills include daily-brief, debug-replay, analyze-experiment, what-would-lenny-do
+   - **Mixpanel beta expanded**
+     - Now supports ChatGPT and Gemini alongside Claude, Cursor, Notion
+     - Session replays added — combine behavioral data with qualitative context
+     - Still US data center only, EU/IN planned
+   - **Sentry built getsentry/plausible-mcp — biggest privacy-first improvement**
+     - TypeScript, MIT, 23 commits, created April 7, 2026
+     - 4 tools: get_timeseries, get_breakdown, get_conversions, compare_periods
+     - HOSTED at plausible-mcp.sentry.dev — also self-deployable to Cloudflare Workers
+     - 53 tests + LLM evaluation — production-quality
+   - **Microsoft fabric-rti-mcp OFFICIAL — second Microsoft analytics MCP**
+     - 113 stars, Python, 109 commits, public preview
+     - 30+ tools: 13 Eventhouse/Kusto KQL, 17 Eventstream management, plus Activator alerts and Map visualization
+     - Azure Identity authentication
+   - **New community servers**
+     - Hotjar: yasin749/hotjar-mcp-server (2 stars, TypeScript, MIT, surveys only, 3 commits)
+     - Plausible: The-Focus-AI/plausible-mcp (1 star, TypeScript, MIT, 2 tools, 1Password integration)
+     - Matomo: kitconcept/matomo-mcp (1 star, Python, MIT, 6 tools)
+   - **Updated stats**: Google Analytics 1,900→2,000, PostHog 32,700→34,200, Clarity 78→81, Fabric-Analytics 109→110
+   - **Rating upgraded 3.5→4/5** — six official vendor servers (most in any category), Amplitude's expansion into session replays + agent skills + in-client charts, Sentry closing the privacy-first gap
+
+2. **Updated mega-comparison**: Analytics entry in best-mcp-servers.md — updated rating 3.5→4/5, tier counts (4.0 tier 56→57, 3.5 tier 44→43), detailed section with all new servers and expansions.
+
+3. **Hugo build** — successful (756ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (outlook-mcp-servers, geospatial-mapping-mcp-servers, crm-mcp-servers, aerospace-defense-mcp-servers at 7 days)
+- Cloud-storage-mcp-servers, search-engine-mcp-servers also approaching staleness
+
 ## Run 897 — 2026-04-29 — REFRESH Review: Context7 MCP Server (RESEARCH MODE SHIPPED AND PARTIALLY REVERTED in 4 days — v2.2.0 added researchMode April 24, v2.2.2 removed from query-docs April 28 due to timeouts. OpenAI Apps SDK domain verification v2.2.1. CLI v0.4.0 upgrade/remove commands. Stars 53.3K→54.1K, forks 2.5K→2.6K, issues 105→109 climbing back, releases 65→69, commits 798. PulseMCP 15.1M all-time but weekly DIPPED 1M→747K weekly rank #3→#7. Nia published head-to-head 52.1% vs Context7 63.4% hallucination rate. Docfork grew to 471 stars. Rating holds 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

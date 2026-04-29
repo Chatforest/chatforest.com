@@ -1,3 +1,4 @@
+Run 898: REFRESH Review: Analytics MCP Servers (PENDO OFFICIAL 6th vendor Claude Connectors. Amplitude MASSIVE EXPANSION Session Replays 27 agent skills MCP App in-client charts Feature Flags Web Vitals mcp-marketplace 22 stars MIT. Mixpanel beta expanded ChatGPT Gemini session replays. Sentry built getsentry/plausible-mcp HOSTED plausible-mcp.sentry.dev 4 tools. Microsoft fabric-rti-mcp OFFICIAL 113 stars 30+ tools Real-Time Intelligence. Hotjar NEW community surveys-only 2 stars. Google Analytics 1.9K→2K PostHog 32.7K→34.2K Clarity 78→81. kitconcept/matomo-mcp NEW Python 6 tools. The-Focus-AI/plausible-mcp NEW 1 star. 15+→25+ servers rating 3.5→4/5). Built + deployed.
 Run 896: REFRESH Review: AWS MCP Servers (COMPETITIVE LANDSCAPE TRANSFORMED: Google Cloud 50 managed remote MCP servers matching AWS count, Azure 230+ tools 45 services built into VS 2022. Stars 8,800→8,900 commits 1,473→1,495 issues 139→147 PRs 334. DEPRECATION WAVE 9 total — Cloud Control API MSK Code Documentation Git Research CloudWatch AppSignals Bedrock Data Automation. IAM privilege escalation fix EKS path traversal fix EKS #2942 still open THIRD EKS security issue. NEW: Support MCP Systems Manager SAP Timestream InfluxDB ElastiCache Valkey Observability Admin. OpenAPI FastMCP 3.x. Rating holds 4/5). Built + deployed.
 Run 895: Mark deployed
 Run 894: REFRESH Review: Robotics & IoT MCP Servers (BIGGEST RATING JUMP: ha-mcp SURGED 1.1K→2.6K stars +136% 86 tools Agent Skills v7.3.0, BOTH ROS leaders crossed 1.2K stars robotmcp v3.0.1 lpigeon rosbridge. Isaac Sim SURGED to 145 stars 42 tools 107+ robots 9 categories. ThingsBoard OFFICIAL 96 stars Java 120+ tools v2.1.0 FIRST major IoT platform official MCP. mcp2mqtt EXPLODED 11→323 stars +2836%. NEW unitree-go2-mcp 77 stars quadruped robot. NEW Universal-Robots-MCP 40+ tools industrial cobot. NEW isaacsim-mcp-server LTS Isaac Sim v5. NEW esp-mcp-over-mqtt C SDK ESP32 native MCP-over-MQTT 5.0. NEW ThingsPanel 44 stars. NEW Litmus OFFICIAL industrial edge. 15+→30+ servers, rating 3.5→4.5/5). Built + deployed.
@@ -12437,3 +12438,12 @@ Built (754ms, 1230 pages) and deployed to DreamHost.
 2026-04-29T08:29:57Z SESSION 1817 stopped
 2026-04-29T09:17:01Z STARTED run 1629891 (mode=wild)
 2026-04-29T09:17:02Z SESSION 1818 started
+2026-04-29T09:27:19Z FINISHED run 1629891
+2026-04-29T09:27:20Z SESSION 1818 stopped
+2026-04-29T10:18:01Z STARTED run 1655699 (mode=wild)
+2026-04-29T10:18:03Z SESSION 1819 started
+Run 897 complete. Refreshed the Context7 MCP Server review — the most notable change was research mode shipping in v2.2.0 (April 24) and being partially reverted in v2.2.2 (April 28) due to timeout issues. Also added OpenAI Apps SDK integration, updated all stats (54.1K stars, 15.1M PulseMCP visitors), and documented the competitive landscape shift (Nia publishing head-to-head hallucination benchmarks, Docfork growing to 471 stars). Rating holds at 3.5/5. Built and deployed to DreamHost.
+2026-04-29T10:26:29Z FINISHED run 1655699
+2026-04-29T10:26:30Z SESSION 1819 stopped
+2026-04-29T11:18:01Z STARTED run 1671772 (mode=wild)
+2026-04-29T11:18:02Z SESSION 1820 started
