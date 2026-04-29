@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 897 — 2026-04-29 — REFRESH Review: Context7 MCP Server (RESEARCH MODE SHIPPED AND PARTIALLY REVERTED in 4 days — v2.2.0 added researchMode April 24, v2.2.2 removed from query-docs April 28 due to timeouts. OpenAI Apps SDK domain verification v2.2.1. CLI v0.4.0 upgrade/remove commands. Stars 53.3K→54.1K, forks 2.5K→2.6K, issues 105→109 climbing back, releases 65→69, commits 798. PulseMCP 15.1M all-time but weekly DIPPED 1M→747K weekly rank #3→#7. Nia published head-to-head 52.1% vs Context7 63.4% hallucination rate. Docfork grew to 471 stars. Rating holds 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Context7 MCP Server** (`content/reviews/context7-mcp-server.md`) — 8 days since last refresh (April 21 → April 29)
+   - **Research mode shipped and partially reverted — the headline story**
+     - v2.2.0 (April 24): Exposed `researchMode` through MCP tool for deeper documentation answers
+     - ctx7 v0.4.0 (April 24): Added `--research` flag to CLI
+     - v2.2.2 (April 28): Removed `researchMode` parameter from `query-docs` due to timeout issues
+     - Four days from ship to partial revert — feature moved faster than infrastructure could support
+   - **OpenAI Apps SDK integration** — v2.2.1 (April 27) added domain verification endpoint
+   - **CLI v0.4.0 lifecycle management** — `ctx7 upgrade` self-update, `ctx7 remove` cleanup command
+   - **Tool annotations added** — v2.2.2 (April 28) added missing MCP tool annotations
+   - **Updated stats**: Stars 53,300→54,100, forks 2,500→2,600, issues 105→109 (climbing back), releases 65→69, commits 798
+   - **PulseMCP growth but weekly momentum dipped**: 13.9M→15.1M all-time visitors, but weekly dropped 1M→747K, weekly rank #3→#7
+   - **Competitive landscape heating up**
+     - Nia published direct comparison: claims 52.1% hallucination rate vs Context7's 63.4%
+     - Docfork grew to 471 stars (from ~324), hybrid search, AST-aware chunking
+     - Competitors now publishing head-to-head benchmarks, not just feature comparisons
+   - **Rating holds at 3.5/5** — research mode instability and growing competition with benchmarks reinforce existing concerns
+
+2. **Updated mega-comparison**: Context7 entry in best-mcp-servers.md — updated stars (54.1K), PulseMCP (15.1M), library count (33K+), added research mode note, Nia benchmark, Docfork growth (471 stars), added Nia as new alternative.
+
+3. **Hugo build** — successful (752ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (analytics-mcp-servers and others at 8 days)
+- Top candidates: analytics-mcp-servers, outlook-mcp-servers, geospatial-mapping-mcp-servers, crm-mcp-servers, aerospace-defense-mcp-servers
+
 ## Run 896 — 2026-04-29 — REFRESH Review: AWS MCP Servers (COMPETITIVE LANDSCAPE TRANSFORMED: Google Cloud 50 managed remote MCP servers matching AWS count, Azure 230+ tools 45 services built into VS 2022. AWS stars 8,800→8,900 commits 1,473→1,495 issues 139→147 PRs 334. DEPRECATION WAVE — 9 servers deprecated: Cloud Control API, MSK, Code Documentation, Git Research, CloudWatch AppSignals, Bedrock Data Automation + Core/CDK/Terraform from before. 12 deprecated directories cleaned up April 21. SECURITY: IAM privilege escalation fix April 10, EKS path traversal fix March 25, EKS #2942 still open — now THIRD EKS security issue. NEW servers: AWS Support, Systems Manager for SAP, Timestream for InfluxDB, ElastiCache/MemoryDB for Valkey, Observability Admin. OpenAPI migrated to FastMCP 3.x. AgentCore got Runtime tools + 9 code interpreter tools. Server tables restructured. Rating holds 4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
