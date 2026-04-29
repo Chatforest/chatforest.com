@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 895 — 2026-04-29 — REFRESH Review: Podcasting & Audio Content MCP Servers (BIGGEST: MiniMax EXPLODED 421→1,400 stars +233% voice design tool MiniMax-MCP-JS 121 stars. MimikaStudio NEW 540 stars 50+ MCP tools multi-engine TTS Qwen3-TTS/Kokoro/Chatterbox/Supertonic voice cloning from 3 seconds audiobook generation v2026.04.1. ElevenLabs grew 1,100→1,300 stars v0.9.1 14 releases data residency. blacktop/mcp-tts grew to 56 stars 116 commits Agent Skills concurrent mode. Kokoro TTS ecosystem EXPANDED 5+ dedicated servers aparsoft 8 stars scottschram MLX mberg S3 ard1102 Docker. speech-mcp 81 stars multi-speaker narration. total-reaper-mcp 27→44 stars expanded DSL profiles. NEW wegitor/reaper-reapy-mcp 62 stars 40+ tools. bonfire-audio/reaper-mcp 56 stars v0.1.1 58 tools. TwelveTake 15 stars 130 tools v1.1.0. Suno MCP NEW lioensky 25 stars CodeKeanu 2 stars AI music v5. mcp-music-studio NEW 37 stars dual-mode ABC notation + Strudel 30+ instruments 72 drum banks. PODCAST GAP FILLING — Podigee FIRST podcast hosting platform MCP analytics workflow automation. podcast-generator-mcp 4 stars Script→Audio→Final pipeline 20+ voices. kaslin.rocks podcast-assistant-mcp publishing automation. podcast-scraper Deepgram Nova-2. podcast-index-mcp search millions. podcast-transcriber-mcp RSS+Whisper. Deepgram OFFICIAL mcp v0.1.1 April 2026 runtime tool discovery. mamertofabian/elevenlabs-mcp-server 118 stars community. Spotify-mcp 597 stars INACTIVE March 2026. 30+→45+ servers, rating upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Podcasting & Audio Content MCP Servers** (`content/reviews/podcasting-audio-content-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **MiniMax-MCP EXPLODED 421→1,400 stars (+233%) — now most-starred audio MCP server**
+     - 8 tools: text_to_audio, voice_clone, voice_design (NEW), music_generation, generate_image, generate_video, list_voices, query_video_generation
+     - NEW JavaScript implementation MiniMax-MCP-JS (121 stars, TypeScript, npm)
+   - **MimikaStudio is the biggest NEW arrival (540 stars, 50+ MCP tools)**
+     - Multi-engine TTS: Qwen3-TTS (0.6B/1.7B, January 2026), Kokoro-82M, Chatterbox (23 languages), Supertonic-2
+     - Voice cloning from just 3 seconds of audio via Qwen3-TTS
+     - Cross-language cloning via Chatterbox (clone in English, speak in Japanese)
+     - Audiobook generation with queueable chapters, reusable voice presets
+     - v2026.04.1, Apache 2.0, macOS Apple Silicon only
+   - **ElevenLabs grew 1,100→1,300 stars (+18%)**
+     - v0.9.1, 14 releases, 63 commits
+     - NEW data residency configuration for enterprise users
+     - Community server mamertofabian/elevenlabs-mcp-server at 118 stars
+   - **Kokoro TTS ecosystem EXPANDED — 5+ dedicated servers**
+     - aparsoft/kokoro-mcp-server (8 stars, librosa enhancement, YouTube creators, Docker)
+     - scottschram/kokoro-tts-mcp (Apple Silicon MLX, 28 voices, Claude Code/Codex)
+     - mberg/kokoro-tts-mcp (S3 cloud integration)
+     - ard1102/kokoro-tts-mcp-server (Docker Hub production deployment)
+     - Kokoro-82M is now de facto open-source TTS model for MCP
+   - **blacktop/mcp-tts matured (56 stars, 116 commits)**
+     - Agent Skills support, concurrent TTS mode, audio file saving, multi-instance protection
+   - **REAPER DAW expanded**
+     - total-reaper-mcp: 27→44 stars (+63%), 102 commits, expanded profiles (7 profiles)
+     - NEW wegitor/reaper-reapy-mcp: 62 stars, 40+ tools, reapy-based
+     - bonfire-audio/reaper-mcp (was itsuzef): 56 stars, v0.1.1, 58 tools
+     - TwelveTake-Studios: 15 stars, 130 tools, v1.1.0
+   - **Suno MCP servers NEW — AI music generation**
+     - lioensky/MCP-Suno: 25 stars, Suno v5, custom/inspiration modes
+     - CodeKeanu/suno-mcp: 2 stars, Docker, WAV conversion, 6 tools
+   - **mcp-music-studio NEW (37 stars, March 2026)**
+     - Dual-mode: ABC notation composition (30+ instruments, 8 style presets) + Strudel live performance (72 drum banks, 128 GM instruments)
+     - Real-time sheet music rendering in Claude Desktop
+   - **PODCAST WORKFLOW GAP FILLING**
+     - Podigee: FIRST podcast hosting platform MCP (analytics, workflow automation)
+     - podcast-generator-mcp (4 stars): complete Script→Audio→Final Podcast pipeline, 20+ ElevenLabs voices
+     - kaslin.rocks podcast-assistant-mcp: publishing workflow automation, social media drafts, Cloud Run
+     - mcp-podcast-scraper: YouTube scraping + Deepgram Nova-2 transcription
+     - podcast-index-mcp: search millions of podcasts, 6 tools
+     - podcast-transcriber-mcp: RSS + Whisper transcription
+   - **Deepgram OFFICIAL MCP arrived (v0.1.1, April 2026)**
+     - Runtime tool discovery — new tools appear automatically
+     - STT, TTS, diarization, sentiment, topic detection, entity extraction
+   - **speech-mcp: 81 stars, added multi-speaker narration and audio/video transcription**
+   - **Spotify-MCP: 597 stars but marked INACTIVE March 2026**
+   - **Rating upgraded 4→4.5/5** — MiniMax explosion, MimikaStudio arrival, Kokoro ecosystem expansion, Suno music generation, podcast workflow gap filling, Deepgram official entry
+
+2. **Updated mega-comparison**: Podcasting/Audio Content entry in best-mcp-servers.md with MiniMax 1,400 stars, ElevenLabs 1,300 stars, MimikaStudio 540 stars 50+ tools, total-reaper-mcp 44 stars as lead servers, 4.5/5 rating. Rating distribution adjusted (4.5/5 count 20→21, 4/5 count 57→56).
+
+3. **Hugo build** — successful (754ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (91 more at 25+ days)
+- Top candidates from March 16: mental-health-wellness-mcp-servers, pet-animal-care-mcp-servers, regex-text-processing-mcp-servers, podcasting-audio-content now done
+
 ## Run 894 — 2026-04-29 — REFRESH Review: Robotics & IoT MCP Servers (BIGGEST: ha-mcp SURGED 1.1K→2.6K stars +136% 86 tools v7.3.0 Agent Skills 1,043 commits, BOTH ROS leaders crossed 1.2K stars robotmcp v3.0.1 Apache 2.0 lpigeon rosbridge. Isaac Sim MCP SURGED to 145 stars 42 tools 9 categories 107+ robots auto-discovered Franka UR Unitree Boston Dynamics. NEW thingsboard/thingsboard-mcp OFFICIAL 96 stars Java Apache 2.0 120+ tools 10 groups v2.1.0 FIRST major IoT platform official MCP. mcp2mqtt EXPLODED 11→323 stars +2836% 61 forks. NEW lpigeon/unitree-go2-mcp-server 77 stars dedicated quadruped robot. NEW Nonead/Universal-Robots-MCP 5 stars 40+ tools industrial UR cobot multi-robot up to 12 units trajectory planning. NEW whats2000/isaacsim-mcp-server 14 stars LTS fork Isaac Sim v5.1.0 multi-version adapters hot-reload multi-instance. NEW ThingsPanel/thingspanel-mcp 44 stars Python Apache 2.0. NEW emqx/esp-mcp-over-mqtt 8 stars C SDK ESP32 native MCP-over-MQTT 5.0 TLS service discovery. EMQX 4-part ESP32 AI companion tutorial series including voice interaction Part 4. NEW litmusautomation/litmus-mcp-server OFFICIAL 5 stars industrial edge DeviceHub Docker. wise-vision/ros2_mcp 72 stars drone demo Docker. tevonsb 500→554 stars. HA official updated Streamable HTTP. 15+→30+ servers, rating upgraded 3.5→4.5/5 BIGGEST RATING JUMP)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
