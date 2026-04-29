@@ -1,12 +1,12 @@
 ---
 title: "Aerospace & Defense MCP Servers — NASA Official Earthdata, Flightradar24 Official, STK, MAVLink, Axion V2.0, Satellite Imagery, Drones, and More"
 date: 2026-03-15T18:30:00+09:00
-lastmod: 2026-04-22T18:30:00+09:00
+lastmod: 2026-04-30T18:30:00+09:00
 description: "Aerospace and defense MCP servers are enabling AI agents to query NASA data, simulate orbital mechanics, control drones, track flights via Flightradar24's official API, order satellite imagery, and plan space missions."
-og_description: "Aerospace & defense MCP servers: NASA official earthdata-mcp (8 stars, first official NASA MCP), NASA community (83 stars, 20+ APIs), Flightradar24 official (16 stars, 15 tools), Axion V2.0 (218 stars, AWS rebuild, SAR-to-optical), IO-Aerospace (SPICE astrodynamics, hosted), STK MCP (26 stars, Ansys bridge), aerospace-mcp (62 commits, 44+ tools), MAVLinkMCP (16 stars, drone control), SkyFi (commercial satellite imagery), Planetary Computer MCP, OpenSky Network MCP. Rating: 3.5/5."
+og_description: "Aerospace & defense MCP servers: NASA official earthdata-mcp (9 stars, 6 tools, first official NASA MCP), NASA community (83 stars, 20+ APIs), Flightradar24 official (16 stars, 15 tools), Axion V2.0 (218 stars, AWS rebuild, SAR-to-optical), STK MCP (26 stars, Ansys bridge), aerospace-mcp (62 commits, 44+ tools), MAVLinkMCP (16 stars, drone control), SkyFi (commercial satellite imagery), Planetary Computer MCP, OpenSky Network MCP. IO-Aerospace repo removed. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Aerospace and defense MCP servers across NASA data access, orbital mechanics, aviation operations, drone control, satellite tracking, and earth observation. Two watershed developments since March 2026: NASA published its first official MCP server (nasa/earthdata-mcp, 8 stars, 139 commits) providing semantic search over the Common Metadata Repository, and Flightradar24 released an official MCP server (16 stars, 15 tools) — the first major flight tracking platform to ship MCP support, filling a gap we flagged in March. The community space data landscape is anchored by ProgramComputer/NASA-MCP-server (83 stars, TypeScript, npm v1.0.11) providing AI access to 20+ NASA APIs. Earth observation saw the biggest leap: Dhenenjay's Axion MCP (218 stars, +15%) completed a V2.0 rebuild on AWS with 935 commits and introduced an exclusive SAR-to-optical foundation model for cloud-free Earth observation. Commercial satellite imagery ordering arrived via SkyFi MCP (150+ satellite providers) and Microsoft Planetary Computer MCP for STAC data. For orbital mechanics, IO-Aerospace's MCP server (16 stars, 31 commits) remains the production-grade SPICE-powered endpoint at mcp.io-aerospace.org. alti3/stk-mcp grew to 26 stars bridging LLMs to Ansys STK. Aviation expanded with Flightradar24 official (live positions, historical data back to 2016, airline/airport reference) plus community alternatives (sunsetcoder, 46 stars) and an OpenSky Network MCP for open ADS-B data. cheesejaguar/aerospace-mcp continues as the most comprehensive server with 44+ tools and 62 commits spanning aviation and space. Drone control matured with MAVLinkMCP (16 stars) and a January 2026 academic paper demonstrating real UAV flight control via LLM-MCP. Astronomical data access expanded with astro_mcp (60 commits, DESI/SIMBAD/Gaia/40+ services). Defense remains completely absent — no contractors, no C2 systems, no military logistics. The category holds at 3.5/5 — NASA going official and Flightradar24 entering are significant milestones, and earth observation is thriving, but defense is still entirely absent and several subcategories remain thin."
-last_refreshed: 2026-04-22
+card_description: "Aerospace and defense MCP servers across NASA data access, orbital mechanics, aviation operations, drone control, satellite tracking, and earth observation. Two watershed developments since March 2026: NASA published its first official MCP server (nasa/earthdata-mcp, 9 stars, 142 commits) providing semantic search over the Common Metadata Repository, and Flightradar24 released an official MCP server (16 stars, 15 tools) — the first major flight tracking platform to ship MCP support, filling a gap we flagged in March. The community space data landscape is anchored by ProgramComputer/NASA-MCP-server (83 stars, TypeScript, npm v1.0.11) providing AI access to 20+ NASA APIs. Earth observation saw the biggest leap: Dhenenjay's Axion MCP (218 stars, +15%) completed a V2.0 rebuild on AWS with 935 commits and introduced an exclusive SAR-to-optical foundation model for cloud-free Earth observation. Commercial satellite imagery ordering arrived via SkyFi MCP (150+ satellite providers) and Microsoft Planetary Computer MCP for STAC data. For orbital mechanics, IO-Aerospace's SPICE-powered MCP server was previously the production-grade option, but the GitHub repo was removed in April 2026 — the hosted endpoint status at mcp.io-aerospace.org is unclear. alti3/stk-mcp grew to 26 stars bridging LLMs to Ansys STK. Aviation expanded with Flightradar24 official (live positions, historical data back to 2016, airline/airport reference) plus community alternatives (sunsetcoder, 46 stars) and an OpenSky Network MCP for open ADS-B data. cheesejaguar/aerospace-mcp continues as the most comprehensive server with 44+ tools and 62 commits spanning aviation and space. Drone control matured with MAVLinkMCP (16 stars) and a January 2026 academic paper demonstrating real UAV flight control via LLM-MCP. Astronomical data access expanded with astro_mcp (60 commits, DESI/SIMBAD/Gaia/40+ services). Defense remains completely absent — no contractors, no C2 systems, no military logistics. The category holds at 3.5/5 — NASA going official and Flightradar24 entering are significant milestones, and earth observation is thriving, but defense is still entirely absent and several subcategories remain thin."
+last_refreshed: 2026-04-30
 ---
 
 Aerospace and defense MCP servers are enabling AI agents to query NASA's vast data archives, simulate orbital mechanics with SPICE-level accuracy, control drones via natural language, track flights through Flightradar24's official API, order commercial satellite imagery, and analyze earth observation data — all through natural language. Instead of writing Python scripts to query the APOD API or manually running STK scenarios, an AI agent can handle it conversationally: "Show me near-earth asteroids approaching within 5 lunar distances this week, then calculate an observation window from my location."
@@ -15,7 +15,7 @@ This review covers the **aerospace and defense** vertical — space data access,
 
 The landscape spans seven areas: **NASA & space data** (APOD, Mars rovers, NEO, space weather, Earthdata), **orbital mechanics & astrodynamics** (SPICE, STK, orbital propagation), **aviation** (Flightradar24 official, FAA APIs, airport databases, flight tracking, weather), **drones & UAV** (MAVLink, DJI Tello), **satellite tracking & imagery** (TLE data, pass predictions, SkyFi commercial imagery, Planetary Computer), **earth observation** (Axion V2.0 on AWS, Google Earth Engine, SAR-to-optical AI), and **GIS & spatial analysis** (geocoding, routing, coordinate transforms).
 
-The headline findings: **NASA published its first official MCP server** — nasa/earthdata-mcp provides semantic search over the Common Metadata Repository. **Flightradar24 shipped an official MCP server** with 15 tools for live and historical flight data — the first major flight tracking platform to enter the MCP ecosystem. **Axion V2.0 rebuilt on AWS** with 935 commits and an exclusive SAR-to-optical foundation model. **Commercial satellite imagery** arrived via SkyFi MCP. **IO-Aerospace provides production-grade astrodynamics** with a hosted endpoint. **MAVLink MCP bridges AI to millions of real drones**, now backed by academic research. **Defense is still completely absent** — no defense contractors or military-adjacent tools exist in the MCP ecosystem.
+The headline findings: **NASA published its first official MCP server** — nasa/earthdata-mcp now offers 6 tools including new keyword translation and citation discovery, with a hosted HTTP endpoint at cmr.earthdata.nasa.gov. **Flightradar24 shipped an official MCP server** with 15 tools for live and historical flight data — the first major flight tracking platform to enter the MCP ecosystem. **Axion V2.0 rebuilt on AWS** with 935 commits and an exclusive SAR-to-optical foundation model. **Commercial satellite imagery** arrived via SkyFi MCP. **IO-Aerospace removed its MCP server repo** — the previously production-grade SPICE-based astrodynamics endpoint is now unavailable on GitHub. **MAVLink MCP bridges AI to millions of real drones**, now backed by academic research. **Defense is still completely absent** — no defense contractors or military-adjacent tools exist in the MCP ecosystem.
 
 **Category:** [Logistics & Industry](/categories/logistics-industry/)
 
@@ -25,16 +25,18 @@ The headline findings: **NASA published its first official MCP server** — nasa
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [nasa/earthdata-mcp](https://github.com/nasa/earthdata-mcp) | 8 | Python | — | 139 |
+| [nasa/earthdata-mcp](https://github.com/nasa/earthdata-mcp) | 9 | Python | — | 142 |
 
-**NASA's first official MCP server**, providing semantic search over the Common Metadata Repository (CMR) — the central catalog for all NASA Earth science data. Created November 2025, actively developed with 139 commits:
+**NASA's first official MCP server**, providing semantic search over the Common Metadata Repository (CMR) — the central catalog for all NASA Earth science data. Created November 2025, actively developed with 142 commits and now offering six tools:
 
+- **get_keywords** — translates colloquial terms into scientific vocabulary for more effective searches *(new April 2026)*
 - **get_collections** — search for datasets using scientific keywords, instruments, or spatial/temporal parameters
 - **get_granules** — locate specific data files within collections to verify availability
 - **get_services** — find data access endpoints (OPeNDAP, Harmony) and visualization layers
 - **get_tools** — discover web portals and downloadable software associated with datasets
+- **get_citations** — retrieves publication records, DOIs, and citation discovery with reverse lookups *(new April 2026)*
 
-Follows a structured "Discover → Verify → Access" workflow, guiding LLM clients through systematic data discovery and authentication using the earthaccess Python library. Uses embeddings for semantic search. AWS Lambda-based architecture with Terraform infrastructure-as-code. This is a significant milestone — the first time a space agency has published an official MCP server.
+Follows a structured "Discover → Verify → Access" workflow, guiding LLM clients through systematic data discovery and authentication using the earthaccess Python library. Now available via HTTP at `https://cmr.earthdata.nasa.gov/mcp/v1` — the ingestion and embedding pipelines are being deprecated in favor of direct, real-time CMR API integrations. This is a significant milestone — the first time a space agency has published an official MCP server.
 
 A community alternative, [datalayer/earthdata-mcp-server](https://github.com/datalayer/earthdata-mcp-server) (23 stars), provides a separate implementation focused on dataset search and granule downloading.
 
@@ -74,21 +76,17 @@ Multiple community implementations exist alongside the primary server. The n8n w
 
 ## Orbital Mechanics & Astrodynamics
 
-### IO Aerospace MCP Server
+### IO Aerospace MCP Server *(repo removed)*
 
 | Server | Stars | Language | License | Transport | Commits |
 |--------|-------|----------|---------|-----------|---------|
-| [IO-Aerospace-software-engineering/mcp-server](https://github.com/IO-Aerospace-software-engineering/mcp-server) | 16 | .NET (C#) | — | Streamable HTTP, SSE | 31 |
+| ~~IO-Aerospace-software-engineering/mcp-server~~ | — | .NET (C#) | — | Streamable HTTP, SSE | — |
 
-The **most technically sophisticated astrodynamics MCP server**, powered by the IO Astrodynamics framework which provides a .NET wrapper around CSPICE — the same astrodynamics library used by NASA, ESA, and JAXA for mission planning:
+**⚠️ Repository removed (April 2026).** The GitHub repo for this astrodynamics MCP server has been deleted. The IO-Aerospace organization now only hosts its core Astrodynamics framework (37 stars) and a fork of awesome-mcp-servers. The previously hosted endpoint at `mcp.io-aerospace.org` may or may not still be operational.
 
-- **Celestial Body Ephemeris** — precise positions of planets, moons, and other solar system bodies
-- **Orbital Conversions** — transform between Keplerian elements, state vectors, and other orbital representations
-- **Deep Space Station (DSS) Tools** — ground station visibility and communication window calculations
-- **Time Conversions** — UTC, TDB, TT, TAI, and other time systems used in astrodynamics
-- **Unit & Math Utilities** — coordinate frame transformations and unit conversions
+When it existed, this was the **most technically sophisticated astrodynamics MCP server**, powered by the IO Astrodynamics framework providing a .NET wrapper around CSPICE — the same library used by NASA, ESA, and JAXA for mission planning. It offered celestial body ephemeris, orbital conversions, deep space station visibility, time system conversions, and coordinate frame transformations. The key differentiator was a production-hosted endpoint requiring no local installation.
 
-The key differentiator: **production-hosted endpoint** at `mcp.io-aerospace.org` with streamable HTTP transport. No local installation needed — connect any MCP client to the hosted instance and start computing orbits immediately. Also supports SSE for legacy clients and Docker-based self-hosting with SPICE kernel configuration.
+The removal of this repo leaves a gap in the MCP astrodynamics space. STK MCP (below) remains for mission engineering, but there is no longer an open-source, self-hostable SPICE-based MCP server available.
 
 ### Ansys STK MCP
 
@@ -324,6 +322,7 @@ Beyond the defense gap, several aerospace areas lack MCP coverage. Note that sev
 - ~~No official NASA MCP servers~~ — **FILLED:** nasa/earthdata-mcp is now the first official NASA MCP server
 - ~~No FlightRadar24~~ — **FILLED:** Flightradar24 shipped an official MCP server with 15 tools
 - ~~No OpenSky Network~~ — **PARTIALLY FILLED:** an OpenSky Network MCP server now exists for ADS-B data
+- **No open-source astrodynamics MCP server** — IO-Aerospace's SPICE-based server was removed in April 2026, leaving no self-hostable orbital mechanics endpoint
 - **No ESA or JAXA official MCP servers** — still community-built only for non-NASA agencies
 - **No FlightAware** — the other major flight tracking platform still has no MCP server
 - **No ADS-B Exchange** MCP server (OpenSky is available, but ADSBX is not)
@@ -343,7 +342,7 @@ Beyond the defense gap, several aerospace areas lack MCP coverage. Note that sev
 
 Aerospace and defense MCP servers hold at **3.5 out of 5**. The rating reflects significant progress since March 2026 — NASA publishing its first official MCP server, Flightradar24 entering with 15 tools, Axion's V2.0 AWS rebuild with SAR-to-optical AI, and commercial satellite imagery arriving via SkyFi — but the complete absence of defense applications, the still-thin drone ecosystem, and missing coverage in key areas (ESA/JAXA official servers, FlightAware, ATC, propulsion, materials science) prevent an upgrade. The gap between the civilian aerospace side (actively growing) and the defense side (completely empty) remains the defining characteristic of this category.
 
-**Best for space science:** nasa/earthdata-mcp (official) for Earth science data discovery, ProgramComputer/NASA-MCP-server for broad NASA API access, IO-Aerospace for orbital calculations, STK MCP for mission engineering, astro_mcp for astronomical surveys
+**Best for space science:** nasa/earthdata-mcp (official, 6 tools, hosted HTTP endpoint) for Earth science data discovery, ProgramComputer/NASA-MCP-server for broad NASA API access, STK MCP for mission engineering and orbital calculations, astro_mcp for astronomical surveys
 
 **Best for aviation:** Flightradar24 official for live and historical flight data, cheesejaguar/aerospace-mcp for comprehensive flight planning, blevinstein/aviation-mcp for FAA weather data
 

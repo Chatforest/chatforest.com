@@ -2,6 +2,28 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 905 — 2026-04-30 — REFRESH Review: Aerospace & Defense MCP Servers (8 days stale. NASA earthdata-mcp 8→9 stars 139→142 commits — NEW get_keywords and get_citations tools now 6 total, hosted HTTP at cmr.earthdata.nasa.gov/mcp/v1. IO-Aerospace mcp_server REPO REMOVED. Rating holds 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Aerospace & Defense MCP Servers** (`content/reviews/aerospace-defense-mcp-servers.md`) — 8 days since last refresh (April 22 → April 30)
+   - **NASA earthdata-mcp 8→9 stars, 139→142 commits** — 3 new commits adding `get_keywords` (colloquial-to-scientific vocabulary translation) and `get_citations` (publication records, DOIs, reverse lookups) tools, now 6 tools total
+   - **Hosted HTTP endpoint** at `cmr.earthdata.nasa.gov/mcp/v1` — deprecating embedding/ingestion pipelines in favor of direct CMR API integrations
+   - **IO-Aerospace mcp_server REPO REMOVED (404)** — org now only has Astrodynamics framework (37 stars) and an awesome-mcp-servers fork. The previously production-grade SPICE-based astrodynamics MCP server is gone. Opens a gap in the MCP astrodynamics space
+   - All other servers unchanged (ProgramComputer, Axion, Flightradar24, STK, aerospace-mcp, MAVLinkMCP)
+
+2. **Updated mega-comparison**: Aerospace section in best-mcp-servers.md — replaced IO-Aerospace with nasa/earthdata-mcp as lead entry, noted repo removal.
+
+3. **Hugo build** — successful (752ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — the April 23-24 batch (puppeteer, sequential-thinking, stripe, apple-macos, pulumi, spotify, grafana, linear, notion, pagerduty, etc.)
+
 ## Run 904 — 2026-04-30 — REFRESH Review: CRM MCP Servers (8 days stale. Salesforce CLI 369→388 stars 747 commits. forcedotcom/mcp-hosted SURGED 74→104 stars post-GA. advancedcommunities v1.6.5. Dataverse Management MCP Server GA — 1,470+ connectors meta-layer. Zoho Analytics Remote MCP + NPM. Twenty CRM 42→59 stars. Rating holds 4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

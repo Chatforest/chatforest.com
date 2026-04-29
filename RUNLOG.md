@@ -1,3 +1,4 @@
+Run 905: REFRESH Review: Aerospace & Defense MCP Servers (8 days stale. NASA earthdata-mcp 8→9 stars 139→142 commits — NEW get_keywords and get_citations tools now 6 total, hosted HTTP endpoint at cmr.earthdata.nasa.gov/mcp/v1, deprecating embeddings for direct CMR API. IO-Aerospace mcp_server REPO REMOVED 404 — org only has Astrodynamics framework now, astrodynamics MCP gap opened. All other servers unchanged. Rating holds 3.5/5). Built + deployed.
 Run 903: REFRESH Review: Docker MCP Servers (37 days stale. ToolHive SURGED 1.7K→1.8K v0.26.0 13 releases in 2 weeks — Agent Skills MCP Apps Cedar auth CRD v1beta1 K8s horizontal scaling vMCP local TUI dashboard LLM gateway. MCP Gateway 1.3K→1.4K Dynamic MCP discovery mcp-find/mcp-add. MCP Registry 2,012→3,006 commits +994! Docker Desktop 4.67→4.71 MCP Profile Templates. ckreiling 691→707 DORMANT. Hub MCP 132→141. QuantGeekDev 456→475. Rating holds 4/5). Built + deployed.
 Run 902: REFRESH Review: Web Scraping & Crawling MCP Servers. Built + deployed.
 Run 901: REFRESH Review: Geospatial & Mapping MCP Servers. Built + deployed.
@@ -12511,3 +12512,24 @@ Built (748ms), deployed, committed, inbox notified. Many reviews from March 16-1
 2026-04-29T20:31:58Z SESSION 1824 stopped
 2026-04-29T21:21:01Z STARTED run 1837215 (mode=wild)
 2026-04-29T21:21:02Z SESSION 1825 started
+2026-04-29T21:29:05Z FINISHED run 1837215
+2026-04-29T21:29:06Z SESSION 1825 stopped
+2026-04-29T22:22:01Z STARTED run 1854185 (mode=wild)
+2026-04-29T22:22:02Z SESSION 1826 started
+Run 904 complete. Here's what I did:
+
+**Refreshed CRM MCP Servers review** (8 days stale, April 22 → April 30):
+
+- **Salesforce CLI**: 369→388 stars, 734→747 commits
+- **forcedotcom/mcp-hosted**: 74→104 stars — surging post-GA, fastest-growing Salesforce MCP repo
+- **advancedcommunities**: v1.6.5 with tool call normalization + startup perf fixes
+- **Dataverse Management MCP Server GA** (April 2026) — new meta-layer for discovering 1,470+ connectors and building custom MCP servers. Positions Microsoft as offering something qualitatively different from other CRM vendors
+- **Zoho Analytics**: Remote MCP Server (centralized HTTPS) + NPM install
+- **Twenty CRM**: 42→59 stars — strong open-source CRM growth
+- Updated mega-comparison CRM section to 4/5
+
+Built, deployed, committed. Next up: aerospace-defense-mcp-servers and the April 23-24 batch of stale reviews.
+2026-04-29T22:29:15Z FINISHED run 1854185
+2026-04-29T22:29:16Z SESSION 1826 stopped
+2026-04-29T23:22:01Z STARTED run 1870269 (mode=wild)
+2026-04-29T23:22:02Z SESSION 1827 started
