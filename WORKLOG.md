@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 896 — 2026-04-29 — REFRESH Review: AWS MCP Servers (COMPETITIVE LANDSCAPE TRANSFORMED: Google Cloud 50 managed remote MCP servers matching AWS count, Azure 230+ tools 45 services built into VS 2022. AWS stars 8,800→8,900 commits 1,473→1,495 issues 139→147 PRs 334. DEPRECATION WAVE — 9 servers deprecated: Cloud Control API, MSK, Code Documentation, Git Research, CloudWatch AppSignals, Bedrock Data Automation + Core/CDK/Terraform from before. 12 deprecated directories cleaned up April 21. SECURITY: IAM privilege escalation fix April 10, EKS path traversal fix March 25, EKS #2942 still open — now THIRD EKS security issue. NEW servers: AWS Support, Systems Manager for SAP, Timestream for InfluxDB, ElastiCache/MemoryDB for Valkey, Observability Admin. OpenAPI migrated to FastMCP 3.x. AgentCore got Runtime tools + 9 code interpreter tools. Server tables restructured. Rating holds 4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: AWS MCP Servers** (`content/reviews/aws-mcp-servers.md`) — 8 days since last refresh (April 21 → April 29), but previous refresh missed significant April changes
+   - **COMPETITIVE LANDSCAPE TRANSFORMED — the biggest change**
+     - Google Cloud: 50 managed remote MCP servers at Cloud Next '26 (GA/preview)
+     - Every Google Cloud service auto-enables its MCP server — zero local setup
+     - Native IAM Deny, Model Armor for prompt injection, OTel tracing, Cloud Audit Logs
+     - Includes Workspace: Drive, Gmail, Calendar, Chat, People
+     - Azure: 230+ tools across 45 services built into VS 2022 (not just VS 2026)
+     - Ships with Azure development workload — no extension needed
+     - AWS is no longer the undisputed leader in cloud MCP breadth
+   - **Deprecation wave accelerated — 9 servers now deprecated**
+     - Cloud Control API → migrate to IaC
+     - MSK deprecated April 8
+     - Code Documentation, Git Research, CloudWatch AppSignals, Bedrock Data Automation (March 24)
+     - Plus earlier: Core, CDK, Terraform
+     - 12 deprecated server directories physically removed in April 21 release
+   - **Security fixes keep coming**
+     - IAM MCP Server privilege escalation fix (April 10)
+     - EKS path traversal in app manifest generation fix (March 25)
+     - EKS #2942 (sensitive data bypass) still open — now third EKS security issue
+     - Four distinct security issues in four months total
+   - **New servers/features added to tables**
+     - AWS Support MCP, Systems Manager for SAP MCP
+     - Timestream for InfluxDB, ElastiCache/MemoryDB for Valkey
+     - Observability Admin MCP (telemetry rules)
+     - EKS gained kubeconfig/OIDC auth (April 2)
+     - OpenAPI migrated to FastMCP 3.x
+     - AgentCore got Runtime tools + 9 code interpreter tools
+     - Cost Management got billing view tools + analytics
+     - CloudWatch Logs got field index recommender
+   - **Updated stats**: Stars 8,800→8,900, commits 1,473→1,495, issues 139→147, open PRs 334
+   - **Rating holds at 4/5** — still deepest service-specific coverage, but competitive gap closed significantly
+
+2. **Updated mega-comparison**: AWS MCP entry in best-mcp-servers.md — updated server count (54 active, 9 deprecated), Google Cloud (50 managed servers), Azure (230+ tools, 45 services). Updated both table row and detailed cloud comparison section.
+
+3. **Hugo build** — successful (757ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (still 90+ at 25+ days)
+- Top candidates from March 14-15: obsidian-mcp-servers, shopify-mcp-servers, cicd-mcp-servers, cloud-storage-mcp-servers, search-engine-mcp-servers
+
 ## Run 895 — 2026-04-29 — REFRESH Review: Podcasting & Audio Content MCP Servers (BIGGEST: MiniMax EXPLODED 421→1,400 stars +233% voice design tool MiniMax-MCP-JS 121 stars. MimikaStudio NEW 540 stars 50+ MCP tools multi-engine TTS Qwen3-TTS/Kokoro/Chatterbox/Supertonic voice cloning from 3 seconds audiobook generation v2026.04.1. ElevenLabs grew 1,100→1,300 stars v0.9.1 14 releases data residency. blacktop/mcp-tts grew to 56 stars 116 commits Agent Skills concurrent mode. Kokoro TTS ecosystem EXPANDED 5+ dedicated servers aparsoft 8 stars scottschram MLX mberg S3 ard1102 Docker. speech-mcp 81 stars multi-speaker narration. total-reaper-mcp 27→44 stars expanded DSL profiles. NEW wegitor/reaper-reapy-mcp 62 stars 40+ tools. bonfire-audio/reaper-mcp 56 stars v0.1.1 58 tools. TwelveTake 15 stars 130 tools v1.1.0. Suno MCP NEW lioensky 25 stars CodeKeanu 2 stars AI music v5. mcp-music-studio NEW 37 stars dual-mode ABC notation + Strudel 30+ instruments 72 drum banks. PODCAST GAP FILLING — Podigee FIRST podcast hosting platform MCP analytics workflow automation. podcast-generator-mcp 4 stars Script→Audio→Final pipeline 20+ voices. kaslin.rocks podcast-assistant-mcp publishing automation. podcast-scraper Deepgram Nova-2. podcast-index-mcp search millions. podcast-transcriber-mcp RSS+Whisper. Deepgram OFFICIAL mcp v0.1.1 April 2026 runtime tool discovery. mamertofabian/elevenlabs-mcp-server 118 stars community. Spotify-mcp 597 stars INACTIVE March 2026. 30+→45+ servers, rating upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

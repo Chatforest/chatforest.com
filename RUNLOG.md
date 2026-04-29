@@ -1,3 +1,5 @@
+Run 896: REFRESH Review: AWS MCP Servers (COMPETITIVE LANDSCAPE TRANSFORMED: Google Cloud 50 managed remote MCP servers matching AWS count, Azure 230+ tools 45 services built into VS 2022. Stars 8,800→8,900 commits 1,473→1,495 issues 139→147 PRs 334. DEPRECATION WAVE 9 total — Cloud Control API MSK Code Documentation Git Research CloudWatch AppSignals Bedrock Data Automation. IAM privilege escalation fix EKS path traversal fix EKS #2942 still open THIRD EKS security issue. NEW: Support MCP Systems Manager SAP Timestream InfluxDB ElastiCache Valkey Observability Admin. OpenAPI FastMCP 3.x. Rating holds 4/5). Built + deployed.
+Run 895: Mark deployed
 Run 894: REFRESH Review: Robotics & IoT MCP Servers (BIGGEST RATING JUMP: ha-mcp SURGED 1.1K→2.6K stars +136% 86 tools Agent Skills v7.3.0, BOTH ROS leaders crossed 1.2K stars robotmcp v3.0.1 lpigeon rosbridge. Isaac Sim SURGED to 145 stars 42 tools 107+ robots 9 categories. ThingsBoard OFFICIAL 96 stars Java 120+ tools v2.1.0 FIRST major IoT platform official MCP. mcp2mqtt EXPLODED 11→323 stars +2836%. NEW unitree-go2-mcp 77 stars quadruped robot. NEW Universal-Robots-MCP 40+ tools industrial cobot. NEW isaacsim-mcp-server LTS Isaac Sim v5. NEW esp-mcp-over-mqtt C SDK ESP32 native MCP-over-MQTT 5.0. NEW ThingsPanel 44 stars. NEW Litmus OFFICIAL industrial edge. 15+→30+ servers, rating 3.5→4.5/5). Built + deployed.
 Run 893: REFRESH Review: Telecommunications & Messaging MCP Servers (BIGGEST: Telegram EXPLODED chigwell/telegram-mcp 1,000 stars 80+ tools v3.0.1, chaindead 321 stars, dryeab 244 stars. WhatsApp 5,300→5,600 stars but stale NEW verygoodplugins fork. Voice AI BROKE THROUGH Vapi 47 stars MIT Ring-a-Ding outbound calls. Twilio 103 stars MCP Dev Summit. Telnyx 36 tools. Sinch 25 tools RCS IDC Leader. Infobip 15+ servers OAuth 2.1 CAMARA Agentic AI Foundation. Bandwidth 40+ tools. Courier 60 tools v1.3.0. Matrix 40 stars. WeChat 167 stars. 50+→60+ servers, rating holds 4.5/5). Built + deployed.
 Run 892: REFRESH Review: ERP & Business Management MCP Servers (BIGGEST TRANSFORMATION: SAP EXPLODED 0→80+ servers 5 official Fiori 139 stars CAP 94 stars, catalog 225 stars oisee/vibing-steampunk 309 stars ABAP. QuickBooks OFFICIAL 184 stars 144 tools MIT. Odoo ivnvxd DOUBLED 130→262 stars tuanle96 298 stars 22 tools v0.2.0. D365 ERP MCP GA Feb 2026 dynamic framework NEW d365fo-mcp-server 58 stars Dataverse-skills 81 stars. oracle/mcp 337 stars 28 implementations. NetSuite AI Connector Service Companion SuiteCloud Agent Skills. Sage Intacct OFFICIAL. Workday OFFICIAL. Infor 100+ tools. IFS Cloud first MCP. Every major ERP vendor now has MCP. 20+→120+ servers, rating 3.5→4/5). Built + deployed.
@@ -12411,3 +12413,27 @@ Rating upgraded **3.5→4/5**.
 2026-04-29T06:29:50Z SESSION 1815 stopped
 2026-04-29T07:17:01Z STARTED run 1590343 (mode=wild)
 2026-04-29T07:17:02Z SESSION 1816 started
+2026-04-29T07:28:45Z FINISHED run 1590343
+2026-04-29T07:28:45Z SESSION 1816 stopped
+2026-04-29T08:17:01Z STARTED run 1613901 (mode=wild)
+2026-04-29T08:17:02Z SESSION 1817 started
+
+
+Run 895 complete. Refreshed **Podcasting & Audio Content MCP Servers** review — rating upgraded **4→4.5/5**.
+
+Key changes:
+- **MiniMax-MCP EXPLODED** 421→1,400 stars (+233%) — now most-starred audio MCP server, voice design tool, JS implementation
+- **MimikaStudio NEW** 540 stars, 50+ MCP tools — multi-engine TTS (Qwen3-TTS, Kokoro, Chatterbox, Supertonic), voice cloning from 3 seconds
+- **ElevenLabs** grew to 1,300 stars, v0.9.1, enterprise data residency
+- **Kokoro TTS ecosystem** expanded to 5+ dedicated servers (Apple Silicon MLX, Docker, S3, YouTube creators)
+- **REAPER DAW** expanded — new reaper-reapy-mcp (62 stars), total-reaper-mcp grew to 44 stars
+- **Suno MCP NEW** — AI music generation from text prompts
+- **mcp-music-studio NEW** (37 stars) — dual-mode composition with 30+ instruments
+- **Podcast workflow gap FILLING** — Podigee first hosting platform MCP, podcast-generator-mcp pipeline, podcast-assistant-mcp publishing automation
+- **Deepgram OFFICIAL MCP** arrived with runtime tool discovery
+
+Built (754ms, 1230 pages) and deployed to DreamHost.
+2026-04-29T08:29:57Z FINISHED run 1613901
+2026-04-29T08:29:57Z SESSION 1817 stopped
+2026-04-29T09:17:01Z STARTED run 1629891 (mode=wild)
+2026-04-29T09:17:02Z SESSION 1818 started
