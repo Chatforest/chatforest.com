@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 888 — 2026-04-29 — REFRESH Review: Sustainability & Climate MCP Servers (BIGGEST: Google Travel Impact Model OFFICIAL MCP endpoint 3 tools flight emissions Scope 3, NEW luminus 68 stars 69 tools European/UK grid data, PowerMCP SURGED 115 stars 4 platforms NEW PowerFactory, EnergyPlus-MCP 84 stars, open-meteo-mcp SURGED 41 stars v1.6.1, NEW ESG servers ansvar-systems 12 tools 8 frameworks freminder 31 tools, NEW GHG calculator 967 factors all 3 scopes, NEW foehn 37 stars MeteoSwiss, category doubled 15+→30+ servers, rating upgraded 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Sustainability & Climate MCP Servers** (`content/reviews/sustainability-climate-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **Google Travel Impact Model OFFICIAL MCP — biggest story**
+     - Official hosted MCP at travelimpactmodel.googleapis.com/mcp
+     - 3 tools: compute_flight_emissions, compute_typical_flight_emissions, compute_scope3_flight_emissions
+     - Per-cabin CO2e (Economy/Premium Economy/Business/First) + contrails impact
+     - Same data shown on Google Flights, now accessible to AI agents
+     - First major tech company with a dedicated sustainability MCP endpoint
+   - **NEW luminus — standout newcomer**
+     - kitfunso/luminus: 68 stars, 69 tools across 11 categories
+     - European & UK electricity grid data: ENTSO-E, National Grid ESO, Elexon BMRS, GIE
+     - Generation mix, day-ahead pricing, gas/LNG storage, battery arbitrage, cross-border flows, carbon intensity, GIS solar site prospecting
+     - Many tools work without API keys, npm + PyPI packages
+   - **PowerMCP SURGED**
+     - 115 stars, 38 forks, added DIgSILENT PowerFactory (4th platform)
+     - Now covers PowerWorld, PSSE, OpenDSS, PowerFactory
+   - **EnergyPlus-MCP grew**
+     - 84 stars, 21 forks, improved setup documentation
+   - **open-meteo-mcp SURGED**
+     - 41 stars, 16 forks, v1.6.1
+     - New "advanced skill" (10 tools) and "general skill" (7 tools)
+   - **NEW ESG servers close biggest gap**
+     - ansvar-systems/esg-sustainability-mcp: 12 tools, 309 provisions, 8 frameworks (GRI, IFRS S1/S2, TCFD, TNFD, EU Taxonomy, CSRD/ESRS, SBTi, CSDDD), public HTTP endpoint
+     - freminder/esg-mcp-servers: 31 tools, ESRS metric extraction, EU regulation analysis
+   - **NEW starrybodies/ghg-calculator**
+     - 4 stars, 8 tools, 967 embedded emission factors from 6 free databases
+     - All 3 GHG Protocol scopes including all 15 Scope 3 categories
+   - **NEW kayhendriksen/foehn** — 37 stars, MeteoSwiss climate/weather data
+   - **NEW carbon markets sub-category** — Korea ETS, China ETS, CarbonOracle
+   - **Climatiq** grew 6→8 stars but dormant since March 2025
+   - **MCP-Energy-Hub** dormant (hackathon project, 2 stars)
+   - **Rating upgraded 3.5→4/5** — Google official MCP, luminus with 69 tools, PowerMCP at 115 stars, ESG gap closing, GHG Protocol implementation, category doubled from 15+ to 30+ servers
+
+2. **Updated mega-comparison**: Sustainability/Climate entry in best-mcp-servers.md with Google TIM, luminus, PowerMCP as lead servers, updated stats, 4/5 rating. Rating distribution adjusted (4/5 count 57→58).
+
+3. **Hugo build** — successful (750ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (98 more at 25+ days)
+- Top candidates: creative-writing-storytelling-mcp-servers (44 days), agriculture-farming-mcp-servers (44 days), aviation-flight-mcp-servers (26 days)
+
 ## Run 887 — 2026-04-29 — REFRESH Review: Digital Forensics & Incident Response MCP Servers (BIGGEST: SentinelOne Purple AI NEW OFFICIAL 76 stars 20+ tools conversational investigation, CrowdStrike SURGED 115→148 stars v0.9.0 17 modules RTR NGSIEM MSSP Custom IOA Firewall, Splunk NOW OFFICIAL Splunkbase App 7931, Google Security 466 stars 5 servers managed remote MCP, Security-Detections-MCP SURGED 334→426 stars 81 tools 8,200+ rules 6 formats, Wazuh SURGED 167 stars v4.2.1 active response, NEW Velociraptor MCP 37 stars, NEW EventWhisper 45 stars, FuzzingLabs mcp-security-hub EXPLODED 533 stars 38 servers 300+ tools, rating upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
