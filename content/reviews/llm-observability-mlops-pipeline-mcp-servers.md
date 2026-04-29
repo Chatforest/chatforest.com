@@ -66,8 +66,8 @@ This is a distinct concern from model serving and inference (covered in our [AI/
 |--------|-------|----------|---------|-------|-------------|
 | [wandb/wandb-mcp-server](https://github.com/wandb/wandb-mcp-server) | 50 | Python | — | 20 | Official W&B — SURGED from 6 to 20 tools |
 | [MLflow built-in MCP](https://mlflow.org/docs/latest/genai/mcp/) | — | Python | Apache 2.0 | 10 | OFFICIAL — built into MLflow 3.5.1+ |
-| [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) | 8 | Python | MIT | 17+ | Community MLflow API coverage |
-| [comet-ml/comet-mcp](https://github.com/comet-ml/comet-mcp) | 1 | Python | Apache 2.0 | 10 | Comet ML experiments + OTel instrumentation |
+| [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) | 8 | Python | MIT | 39 | Community MLflow — SURGED from 17+ to 39 tools |
+| [comet-ml/comet-mcp](https://github.com/comet-ml/comet-mcp) | 1 | Python | Apache 2.0 | 10+ | Comet ML experiments + asset tools + OTel instrumentation |
 
 **W&B MCP** (50 stars, up from 41) has seen the **most dramatic expansion** in this category. The server grew from 6 tools to **20 tools** with v0.3.2 (April 2026), adding substantial new capabilities:
 
@@ -81,9 +81,14 @@ The model registry and artifact comparison tools are particularly valuable — y
 
 **MLflow built-in MCP** is a **major new addition** — MLflow (the most widely-used open-source ML platform) now ships an official MCP server built directly into the framework. Run it with `mlflow mcp run` (requires MLflow 3.5.1+, installable via `mlflow[mcp]`). Ten trace management tools: `search_traces`, `get_trace`, `delete_traces`, `set_trace_tag`, `delete_trace_tag`, `log_feedback`, `log_expectation`, `get_assessment`, `update_assessment`, and `delete_assessment`. Currently marked as experimental and focused on trace management rather than the full MLflow surface (experiments, runs, model registry). For teams already using MLflow for experiment tracking, this eliminates the need for third-party MCP servers for basic trace operations.
 
-**MLflow MCP (kkruglik)** (8 stars, up from 3) continues as the most comprehensive community MLflow MCP server, covering 17+ tools across experiments, runs, metrics, artifacts, and model registry — features the official MLflow MCP doesn't yet expose.
+**MLflow MCP (kkruglik)** (8 stars, up from 3) has **expanded dramatically** from 17+ to **39 tools** across 4 releases since March:
+- **v0.4.0** (April 22) — `get_experiment_tags`, `audit_mlflow_setup` prompt (evaluates deployment against best practices across 7 categories)
+- **v0.3.0** (April 18) — 5 delete tools (`delete_run`, `delete_experiment`, `delete_model_alias`, `delete_model_version`, `delete_registered_model`), tool annotations on all 39 tools with `readOnlyHint`, `idempotentHint`, and `destructiveHint`
+- **v0.2.0** (April 17) — MLflow 3 LoggedModel support, write tools (register_model, set_model_alias, set tags), search_logged_models, search_experiments, get_parent_run, model registry tools
 
-**Comet MCP** (1 star, maintained) continues with 10 tools for Comet ML experiment tracking with built-in OpenTelemetry instrumentation. Pushed April 24, 2026 — still maintained despite low adoption.
+This is now the most comprehensive MLflow MCP server by far — 39 tools vs. the official MLflow MCP's 10. If you need full experiment, run, artifact, and model registry access via MCP, this is the one to use.
+
+**Comet MCP** (1 star, v1.4.1) added **asset tools and an extensible asset handler plugin system** in April 2026. Still maintained despite low adoption — the OTel instrumentation and asset plugin architecture suggest this is built for internal use at Comet/Opik as much as for external users.
 
 ## The Big Picture
 
