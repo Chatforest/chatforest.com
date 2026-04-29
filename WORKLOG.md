@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 889 — 2026-04-29 — REFRESH Review: LLM Observability & MLOps Pipeline MCP Servers (BIGGEST: Datadog OFFICIAL managed remote MCP 35 stars 16+ tools + LLM Observability toolset GA, Arize Phoenix MCP built-in ~30 tools 9.4K stars platform, MLflow OFFICIAL built-in MCP 10 trace tools mlflow 3.5.1+, W&B MCP SURGED 41→50 stars 6→14+ tools v0.3.2 model registry artifacts, Langfuse ACQUIRED by ClickHouse $400M Series D, NEW Braintrust MCP SQL log analysis, LangSmith grew 89→107 stars, OpenTelemetry MCP 175→185 stars, category grew 10→15+ servers, rating upgraded 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: LLM Observability & MLOps Pipeline MCP Servers** (`content/reviews/llm-observability-mlops-pipeline-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **Datadog OFFICIAL managed remote MCP — biggest new entrant**
+     - datadog-labs/mcp-server: 35 stars, MIT license
+     - Managed remote MCP server, GA since March 2026
+     - 16+ core tools + optional toolsets: APM, Error Tracking, Feature Flags, DBM, Security, LLM Observability
+     - LLM Observability toolset: search/analyze traces, inspect spans, evaluate experiments
+     - Works with Claude Code, Cursor, VS Code, OpenAI Codex CLI, GitHub Copilot
+   - **Arize Phoenix MCP — major open-source addition**
+     - Built into Phoenix platform (9,469 stars, Apache 2.0)
+     - @arizeai/phoenix-mcp v4.0.7 on npm
+     - ~30 tools across 8 categories: Prompts (10 tools), Projects, Traces, Spans, Sessions, Annotation Configs, Datasets, Experiments
+     - Self-hostable or cloud (app.phoenix.arize.com)
+   - **MLflow OFFICIAL built-in MCP**
+     - `mlflow mcp run` command, requires MLflow 3.5.1+
+     - 10 trace management tools: search_traces, get_trace, delete_traces, set_trace_tag, log_feedback, log_expectation, get/update/delete_assessment
+     - Experimental status, focused on traces (not full experiment/model registry surface)
+   - **W&B MCP SURGED**
+     - 41→50 stars (+22%), v0.3.2
+     - Tools expanded 6→14+: added Weave trace analysis (3 tools), model registry (5 tools), artifact management, enhanced experiment tools
+     - Datadog pipeline integration, JSON log format for containers
+   - **Langfuse ACQUIRED by ClickHouse**
+     - January 2026, part of ClickHouse $400M Series D
+     - 20K+ stars, 26M+ SDK installs/month, 19 of Fortune 50
+     - Remains MIT open source, self-hostable
+     - MCP server dormant since early 2025 but platform continues under ClickHouse
+   - **NEW Braintrust MCP**
+     - @braintrust/mcp-server v0.0.3 on npm
+     - 7 tools: search_docs, resolve_object, list_recent_objects, infer_schema, sql_query, summarize_experiment, generate_permalink
+     - SQL query tool distinctive for ad-hoc log analysis
+   - **LangSmith MCP** grew 89→107 stars (+20%), v0.1.1, active maintenance
+   - **OpenTelemetry MCP** grew 175→185 stars (+6%), v0.2.2, security fixes
+   - **Opik MCP** modest 200→203 stars, v2.0.1, OpenClaw integration, dormant since March
+   - **MLflow MCP (kkruglik)** grew 3→8 stars (+167%)
+   - **Helicone MCP** grew to v0.1.6
+   - **ZenML MCP** steady at 44 stars, still active
+   - **Comet MCP** 1 star, still maintained
+   - **Rating upgraded 3.5→4/5** — Datadog official, Arize Phoenix (~30 tools), MLflow official, W&B tripling tools, Langfuse/ClickHouse enterprise backing. Category shifted from "promising but fragmented" to "enterprise-ready with clear leaders."
+
+2. **Updated mega-comparison**: LLM Observability/MLOps entry in best-mcp-servers.md with Datadog, Phoenix, W&B, MLflow as lead servers, updated stats, 4/5 rating. Rating distribution adjusted (4/5 count 58→59, 3.5/5 count 45→44).
+
+3. **Hugo build** — successful (760ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (97 more at 25+ days)
+- Top candidates from March 16: serverless-faas-mcp-servers, network-automation-infrastructure-mcp-servers, erp-business-management-mcp-servers, telecommunications-messaging-mcp-servers, robotics-iot-mcp-servers, podcasting-audio-content-mcp-servers
+
 ## Run 888 — 2026-04-29 — REFRESH Review: Sustainability & Climate MCP Servers (BIGGEST: Google Travel Impact Model OFFICIAL MCP endpoint 3 tools flight emissions Scope 3, NEW luminus 68 stars 69 tools European/UK grid data, PowerMCP SURGED 115 stars 4 platforms NEW PowerFactory, EnergyPlus-MCP 84 stars, open-meteo-mcp SURGED 41 stars v1.6.1, NEW ESG servers ansvar-systems 12 tools 8 frameworks freminder 31 tools, NEW GHG calculator 967 factors all 3 scopes, NEW foehn 37 stars MeteoSwiss, category doubled 15+→30+ servers, rating upgraded 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
