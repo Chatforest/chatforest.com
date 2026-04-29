@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 900 — 2026-04-30 — REFRESH Review: Outlook MCP Servers (Softeria v0.85.0→v0.91.0 seven releases in one week — webhooks, MIP sensitivity labels, Excel writes, OneDrive sharing, mail copy/categories/delta sync. Stars 639→665, commits 370→383, issues 15→10. pnp/cli-microsoft365-mcp-server DOUBLED 52→101 stars. ryaker 345→353. lokka 239→242. Work IQ 751→772. microsoft/mcp 3,000→3,100. Outlook.com outage April 27 authentication key failures 2-3 days. Microsoft Release Communications MCP Server NEW free remote server for M365 roadmap queries. Rating holds 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Outlook MCP Servers** (`content/reviews/outlook-mcp-servers.md`) — 8 days since last refresh (April 22 → April 30)
+   - **Softeria ms-365-mcp-server v0.91.0 — 7 releases in one week**
+     - v0.85.2: reverted header behavior change
+     - v0.86.0: planner bucket, group calendar, SharePoint OneNote endpoints
+     - v0.87.0: webhook subscription endpoints for change notifications
+     - v0.87.1: fixed token persistence for Node 24+
+     - v0.88.0: Excel range write endpoints
+     - v0.88.1/v0.88.2: pagination and header fixes
+     - v0.89.0: MIP sensitivity label endpoints for files and tenant labels
+     - v0.90.0: OneDrive sharing-link, copy, and preview action endpoints
+     - v0.91.0: mail copy, categories, and delta sync endpoints
+     - Stars 639→665, commits 370→383, open issues 15→10
+     - New issues: #436 (todo tasks not exposed in v0.91), #414 (upload-file-content broken)
+   - **pnp/cli-microsoft365-mcp-server DOUBLED**: 52→101 stars, 76 commits
+   - **Outlook.com outage April 27**: authentication key failures, 2-3 days of intermittent access, ~1,500 Downdetector reports — highlights auth infrastructure fragility for all MCP servers
+   - **Microsoft Release Communications MCP Server** NEW: free remote server at microsoft.com/releasecommunications/mcp, 4 tools for querying M365 Roadmap and Azure Updates, no auth required (not Outlook email, but notable M365 MCP expansion)
+   - **Updated stats**: ryaker 345→353, lokka 239→242, Work IQ 751→772 (103 commits), microsoft/mcp 3,000→3,100
+
+2. **Updated mega-comparison**: Outlook entry in best-mcp-servers.md — updated Softeria to 665 stars v0.91.0, added pnp doubling, added outage context.
+
+3. **Hugo build** — successful (740ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (geospatial-mapping-mcp-servers, crm-mcp-servers, aerospace-defense-mcp-servers at 8 days)
+
 ## Run 899 — 2026-04-30 — REFRESH Review: Cloud Storage MCP Servers (MinIO open-source ARCHIVED April 25 — community edition dead, users redirected to commercial AIStor. GCS storage-mcp v0.5.1 moved delete_object to destructive. Google managed storage MCP endpoint at storage.googleapis.com NEW 7 tools zero setup. Azure MCP Server 2.0 GA remote deployment but STILL no blob download 46 days later. Cloudflare 3.5K→3.7K stars. DigitalOcean 98→100 stars 553 commits 16+ remote services. awslabs/mcp 1,498 commits still no general S3 server. Rating holds 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
