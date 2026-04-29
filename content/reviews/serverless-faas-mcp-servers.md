@@ -2,17 +2,17 @@
 title: "Serverless & FaaS MCP Servers — AWS Lambda, Cloudflare Workers, Azure Functions, Google Cloud Run, Vercel, Firebase, and More"
 date: 2026-03-16T22:00:00+09:00
 description: "Serverless and FaaS MCP servers help AI agents deploy, manage, and invoke serverless functions across major cloud platforms via the Model Context Protocol."
-og_description: "Serverless & FaaS MCP servers: awslabs/mcp (8,500 stars — official AWS serverless toolkit), cloudflare/mcp-server-cloudflare (3,500 stars — 16 Cloudflare MCP servers), gcloud-mcp (706 stars — Google Cloud CLI tools), vercel/mcp-handler (573 stars — Next.js/Nuxt MCP adapter), cloud-run-mcp (559 stars — Cloud Run deployment). 25+ servers reviewed. Rating: 4/5."
+og_description: "Serverless & FaaS MCP servers: awslabs/mcp (8,900 stars — official AWS serverless toolkit + MCP Lambda Handler), cloudflare/mcp-server-cloudflare (3,700 stars — 14 Cloudflare MCP servers), cloudflare/mcp SURGED 263→412 stars (Code Mode 2,500+ endpoints), gcloud-mcp (761 stars — 66+ tools), vercel/mcp-handler (592 stars), cloud-run-mcp (598 stars + Cloud Run Skills). NEW aws-samples/sample-serverless-mcp-servers (233 stars, 9 deployment patterns), NEW awslabs/agent-plugins (634 stars, aws-serverless plugin). Azure Functions MCP GA v1.5.0. 30+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Serverless and FaaS MCP servers for AI-powered function deployment, invocation, and management across AWS Lambda, Cloudflare Workers, Azure Functions, Google Cloud Run, Vercel, and Firebase. **The official AWS serverless toolkit** — awslabs/mcp (8,500 stars, Python/TypeScript, Apache-2.0) includes the AWS Serverless MCP Server for complete serverless application lifecycle management via SAM CLI, plus the Lambda Tool MCP Server that exposes Lambda functions as MCP tools for AI agents to invoke without code changes. The monorepo also includes 14+ other AWS MCP servers covering EKS, ECS, CloudFormation, documentation, and support. Enterprise-grade with API Gateway OAuth, Bedrock AgentCore Gateway, and IAM authentication options. **Run any stdio MCP server on Lambda** — awslabs/run-model-context-protocol-servers-with-aws-lambda (350 stars, Python/TypeScript, Apache-2.0) wraps existing stdio-based MCP servers into Lambda functions. Four deployment options: API Gateway with OAuth (Cognito/Okta/Auth0), Bedrock AgentCore Gateway, Lambda function URLs with SigV4 auth, and direct Lambda Invoke API. Compatible with Cursor, Cline, and Claude Desktop. Handles complete server lifecycle per invocation — startup, initialization, request, response, shutdown. **Lambda-to-LLM bridge** — danilop/MCP2Lambda (110 stars, Python, MIT) runs any AWS Lambda function as an LLM tool without code changes. Two modes: pre-discovery (registers functions as individual tools at startup) and generic mode (two universal tools). Security architecture enforces separation of duties — models invoke functions but cannot access AWS services directly. Auto-discovers Lambda functions matching configurable naming patterns (default prefix: mcp2lambda-). Compatible with Claude Desktop and Amazon Bedrock. **Middy middleware for Lambda MCP** — fredericbarthelet/middy-mcp (38 stars, TypeScript, MIT) integrates MCP server hosting into AWS Lambda via the popular Middy middleware framework (v6.0.0+). Supports API Gateway v1/v2 and ALB proxy integrations. Works with MCP protocol version 2025-03-26 and later. Pairs with @middy/http-error-handler for error management. **Cloudflare's comprehensive MCP ecosystem** — cloudflare/mcp-server-cloudflare (3,500 stars, TypeScript, Apache-2.0) provides 16 specialized remote MCP servers across Cloudflare services: Documentation (reference lookup), Workers Bindings (build with storage/AI/compute primitives), Workers Builds (build management), Observability (logs and analytics debugging), Radar (global Internet traffic insights), Container (sandbox development environments), Browser Rendering (web page fetching and screenshots), Logpush (job health summaries), AI Gateway (prompt/response log search), AutoRAG (document search), Audit Logs (query and reporting), DNS Analytics (performance optimization), Digital Experience Monitoring (application insights), CASB (SaaS security misconfigurations), and GraphQL (analytics data). All hosted as remote MCP servers at *.mcp.cloudflare.com. **Token-efficient Cloudflare API access** — cloudflare/mcp (263 stars, TypeScript, Apache-2.0) covers 2,500+ Cloudflare API endpoints through just two tools (search and execute), reducing token consumption from ~2 million (raw OpenAPI spec) to 1,069 tokens via a Code Mode pattern where agents write JavaScript executed server-side. Supports Workers, KV, R2, D1, Pages, DNS, Firewall, Load Balancers, Stream, Images, AI Gateway, Vectorize, Access. OAuth and API token authentication. Single URL: mcp.cloudflare.com/mcp. **Worker-to-MCP bridge** — cloudflare/workers-mcp (627 stars, TypeScript, Apache-2.0) converts TypeScript Worker methods into MCP tools via a build step. Local Node.js proxy handles stdio transport. Access any function, API, or Cloudflare service from Claude Desktop, Cursor, or other MCP clients. **Azure Functions MCP extension** — Azure/azure-functions-mcp-extension (32 stars, C#, MIT) is Microsoft's official extension enabling Azure Functions to act as scalable remote MCP servers. Includes MCP tool trigger for defining tools usable by AI agents. Supports .NET isolated worker model with dedicated integration. Configurable via host.json. Samples available in C#, Python, TypeScript, and Java. Self-hosted option lets developers deploy existing MCP SDK-based servers without code changes. **Deploy to Google Cloud Run** — GoogleCloudPlatform/cloud-run-mcp (559 stars, JavaScript, Apache-2.0) enables AI agents to deploy applications to Cloud Run. Tools for deployment (direct file upload or local folder), service management (list/describe services), and logging (access logs and errors). Works with Gemini CLI, Claude Desktop, Cursor, VS Code. Supports IAM authentication and OAuth. Can itself run on Cloud Run for remote access. **Google Cloud CLI via MCP** — googleapis/gcloud-mcp (706 stars, TypeScript, Apache-2.0) provides 40+ tools across four MCP servers: gcloud (CLI interaction), observability (logs/metrics/traces), storage (bucket/object management), and backupdr (backup and disaster recovery). Supports natural language cloud management, permission controls, and service account impersonation. Currently in preview — may have breaking changes. **Vercel MCP adapter** — vercel/mcp-handler (573 stars, TypeScript, Apache-2.0) is an adapter for building MCP servers on Next.js 13+ and Nuxt 3+. Supports Streamable HTTP and SSE transports with optional Redis for SSE resumability. Full TypeScript support with Zod schema validation. Compatible with Claude Desktop, Cursor, and Windsurf. Requires @modelcontextprotocol/sdk 1.25.2+ for security fixes. **Vercel deployment management** — Quegenx/vercel-mcp-server (60 stars, TypeScript) lets AI assistants manage Vercel infrastructure: team/project management, deployment creation/monitoring, domain/DNS configuration, environment variables, Edge Config, access control, log drains, webhooks, and artifact management. Works with Cursor and Codeium. **Firebase services via MCP** — gannonh/firebase-mcp (241 stars, TypeScript, MIT) connects AI assistants to Firestore (CRUD, composite queries, collection groups), Cloud Storage (upload from content/URLs, metadata), and Firebase Auth (user management). HTTP transport for multi-client connections. Emulator support for testing. 201 commits. **Lightweight serverless MCP framework** — fiberplane/mcp-lite (99 stars, TypeScript) is a zero-dependency MCP framework built on the Fetch API. Type-safe tool definitions via Standard Schema validators (Zod, Valibot, Effect, ArkType). Adapter pattern for sessions and client requests. Runs on Node, Bun, Cloudflare Workers, Deno, and Supabase Edge Functions. DNS rebinding protection built in. **Serverless Framework template** — eleva/serverless-mcp-server (18 stars, JavaScript, MIT) provides a minimal MCP server deployed on AWS Lambda via API Gateway using the Serverless Framework. Local development via serverless-offline. One-command AWS deployment. Built on middy-mcp middleware. **Cloudflare MCP template** — mahmoudfazeli/cloudflare-mcp-template (2 stars, TypeScript, MIT) is a reusable template for building serverless MCP servers with provider plugin architecture. OAuth 2.1 support with Dynamic Client Registration, deployable to Cloudflare Workers or Vercel, Claude.ai compatible. **Gaps remain in several areas** — no unified multi-cloud serverless management tool that spans AWS/Azure/GCP/Cloudflare from a single MCP interface. No serverless cost optimization or billing analysis tools. No cold start analysis or performance benchmarking servers. No OpenFaaS, Knative, or other open-source FaaS platform MCP servers. No serverless CI/CD pipeline integration (no direct triggers for GitHub Actions or GitLab CI on function deploy). Limited function versioning, alias management, and canary deployment tools. No serverless application composition tools (Step Functions/Durable Functions management is minimal). No edge function performance monitoring across providers. The category earns 4/5 — serverless MCP servers represent a rapidly maturing category where the major cloud providers are investing heavily. AWS leads with the most comprehensive ecosystem (official monorepo with 14+ servers, Lambda bridge tools, middleware options). Cloudflare stands out with 16 specialized remote MCP servers and the most token-efficient API access pattern. Google and Microsoft have official support but with smaller communities. Vercel provides the best developer experience for Next.js/Nuxt teams. The main gaps are in cross-cloud management, cost optimization, and open-source FaaS platform support."
-last_refreshed: 2026-03-16
+card_description: "Serverless and FaaS MCP servers for AI-powered function deployment, invocation, and management across AWS Lambda, Cloudflare Workers, Azure Functions, Google Cloud Run, Vercel, and Firebase. **The official AWS serverless toolkit** — awslabs/mcp (8,900 stars, Python/TypeScript, Apache-2.0) includes the AWS Serverless MCP Server for complete serverless application lifecycle management via SAM CLI, plus the Lambda Tool MCP Server that exposes Lambda functions as MCP tools. New MCP Lambda Handler library (on PyPI) for serverless HTTP handlers with pluggable session management (NoOp or DynamoDB). SSE transport removed across all servers in favor of Streamable HTTP. Enterprise-grade with API Gateway OAuth, Bedrock AgentCore Gateway, and IAM authentication. **NEW: AWS Agent Plugins** — awslabs/agent-plugins (634 stars, Feb 2026) packages AWS expertise into 6 compound plugins including aws-serverless (combining MCP servers, agent skills, hooks, and reference docs). Works with Claude Code, Codex, and Cursor. **NEW: AWS Serverless MCP Samples** — aws-samples/sample-serverless-mcp-servers (233 stars) provides 9 reference implementations: stateless MCP on Lambda (Node.js/Python), stateless/stateful MCP on ECS, Strands Agent on Lambda, and lambda-ops-mcp-server. **Run any stdio MCP server on Lambda** — awslabs/run-model-context-protocol-servers-with-aws-lambda (362 stars, Python/TypeScript, Apache-2.0) wraps existing stdio-based MCP servers into Lambda functions. Now supports MCP Streamable HTTP transport via API Gateway. 1,562 commits — very actively maintained. Compatible with Cursor, Cline, and Claude Desktop. **Lambda-to-LLM bridge** — danilop/MCP2Lambda (110 stars, Python, MIT) runs any AWS Lambda function as an LLM tool without code changes. Two modes: pre-discovery (registers functions as individual tools at startup) and generic mode (two universal tools). Security architecture enforces separation of duties — models invoke functions but cannot access AWS services directly. Auto-discovers Lambda functions matching configurable naming patterns (default prefix: mcp2lambda-). Compatible with Claude Desktop and Amazon Bedrock. **Middy middleware for Lambda MCP** — fredericbarthelet/middy-mcp (39 stars, TypeScript, MIT) integrates MCP server hosting into AWS Lambda via the popular Middy middleware framework (v6.0.0+). v0.1.6 latest. Supports API Gateway v1/v2 and ALB proxy integrations. **Cloudflare's comprehensive MCP ecosystem** — cloudflare/mcp-server-cloudflare (3,700 stars, TypeScript, Apache-2.0) provides 14 specialized remote MCP servers across Cloudflare services: Documentation, Workers Bindings, Workers Builds, Observability, Radar, Container, Browser Rendering, Logpush, AI Gateway, Audit Logs, DNS Analytics, Digital Experience Monitoring, CASB, and GraphQL. All hosted as remote MCP servers at *.mcp.cloudflare.com. v0.20.4 latest. Cloudflare published enterprise MCP architecture guidance (April 2026) covering authentication via Cloudflare Access with SSO/MFA, centralized server deployment, and governance patterns. **Token-efficient Cloudflare API access SURGED** — cloudflare/mcp (412 stars — up 57% from 263, TypeScript, Apache-2.0) covers 2,500+ Cloudflare API endpoints through just two tools (search and execute), reducing token consumption from ~2 million to 1,069 tokens via Code Mode. The fastest-growing repo in the category. Supports Workers, KV, R2, D1, Pages, DNS, Firewall, Load Balancers, Stream, Images, AI Gateway, Vectorize, Access. Single URL: mcp.cloudflare.com/mcp. **Worker-to-MCP bridge** — cloudflare/workers-mcp (634 stars, TypeScript, Apache-2.0) converts TypeScript Worker methods into MCP tools via a build step. Now includes guidance recommending remote MCP servers over local implementations. **Azure Functions MCP extension GA** — Azure/azure-functions-mcp-extension (35 stars, C#, MIT) reached General Availability with v1.5.0 (April 2026). Major updates: v1.3.0 structured content support, v1.4.0 resource templates and prompts, v1.5.0-preview.1 fluent API for building MCP Apps with UI views and static assets, v1.5.0 GA output schemas and prompt argument validation. Streamable HTTP transport replaces SSE. On-behalf-of (OBO) authentication with Microsoft Entra. Samples in C#, Python, TypeScript, and Java. **Deploy to Google Cloud Run** — GoogleCloudPlatform/cloud-run-mcp (598 stars, JavaScript, Apache-2.0) enables AI agents to deploy applications to Cloud Run. v1.10.0 latest. New Cloud Run Skills feature leverages gcloud CLI for comprehensive operations through natural language. Works with Gemini CLI, Claude Desktop, Cursor, VS Code. IAM authentication and OAuth. Can itself run on Cloud Run for remote access. **Google Cloud CLI via MCP** — googleapis/gcloud-mcp (761 stars, TypeScript, Apache-2.0) expanded to 66+ tools across four MCP servers: gcloud (CLI interaction), observability (11 tools — logs/metrics/traces), storage (25 tools — bucket/object management), and backupdr (30+ tools). v0.5.1 (April 28, 2026) with 238 commits and 25 releases — very active development. **Vercel MCP adapter** — vercel/mcp-handler (592 stars, TypeScript, Apache-2.0) is an adapter for building MCP servers on Next.js 13+ and Nuxt 3+. v1.1.0 (March 2026). Supports Streamable HTTP and SSE transports with optional Redis for SSE resumability. Full TypeScript support with Zod schema validation. **Vercel deployment management** — Quegenx/vercel-mcp-server (61 stars, TypeScript) lets AI assistants manage Vercel infrastructure: team/project management, deployment creation/monitoring, domain/DNS configuration, environment variables, Edge Config, access control. **Firebase services via MCP** — gannonh/firebase-mcp (244 stars, TypeScript, MIT) connects AI assistants to Firestore, Cloud Storage, and Firebase Auth. HTTP transport for multi-client connections. Emulator support for testing. 201 commits. **Lightweight serverless MCP framework** — fiberplane/mcp-lite (107 stars, TypeScript) is a zero-dependency MCP framework built on the Fetch API. Type-safe tool definitions via Standard Schema validators. Runs on Node, Bun, Cloudflare Workers, Deno, and Supabase Edge Functions. DNS rebinding protection built in. **NEW: Scaleway Functions MCP** — cyclimse/mcp-scaleway-functions (4 stars, unofficial) manages Scaleway serverless functions via MCP — the first European cloud provider FaaS MCP server. **Serverless Framework template** — eleva/serverless-mcp-server (17 stars, JavaScript, MIT) provides a minimal MCP server deployed on AWS Lambda via API Gateway using the Serverless Framework. **Cloudflare MCP template** — mahmoudfazeli/cloudflare-mcp-template (2 stars, TypeScript, MIT) is a reusable template for building serverless MCP servers with provider plugin architecture. OAuth 2.1 support. **Gaps are narrowing but persist** — no unified multi-cloud serverless management tool spanning AWS/Azure/GCP/Cloudflare from a single MCP interface. No serverless cost optimization or billing analysis tools. No cold start analysis or performance benchmarking servers. No OpenFaaS, Knative, or other open-source FaaS platform MCP servers. Serverless CI/CD pipeline integration improving via agent plugins but still limited. Step Functions/Durable Functions management is minimal but improving (Azure fluent API, AWS agent plugins reference Step Functions). No edge function performance monitoring across providers. The category earns **4.5/5** — serverless MCP servers have crossed from 'rapidly maturing' to 'enterprise production-ready.' AWS dominates with a three-tier ecosystem: official monorepo (8,900 stars), agent plugins (634 stars), and reference samples (233 stars). Cloudflare's Code Mode pattern (412 stars, +57%) is the fastest-growing approach. Azure Functions MCP reached GA with fluent API and OBO auth. Google Cloud gcloud-mcp expanded to 66+ tools with very active development. Streamable HTTP is now the standard transport across AWS and Azure."
+last_refreshed: 2026-04-29
 ---
 
 Serverless and FaaS (Function-as-a-Service) MCP servers let AI assistants deploy, invoke, and manage serverless functions across major cloud platforms through the Model Context Protocol. Instead of navigating cloud consoles or memorizing CLI commands, AI agents can manage serverless infrastructure conversationally.
 
 This review covers the **serverless and FaaS** ecosystem — AWS Lambda tools, Cloudflare Workers integration, Azure Functions support, Google Cloud Run deployment, Vercel adapters, Firebase services, and serverless MCP frameworks. For related servers, see our [Cloud Platform review](/reviews/cloud-storage-mcp-servers/) and [Container/Docker/Kubernetes review](/reviews/container-docker-kubernetes-mcp-servers/).
 
-The headline findings: **AWS has the most comprehensive serverless MCP ecosystem** with 14+ official servers in its monorepo (8,500 stars). **Cloudflare leads in remote MCP hosting** with 16 specialized servers and a uniquely token-efficient API pattern covering 2,500+ endpoints through just two tools. **Every major cloud provider now has official MCP support** for their serverless platform. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+The headline findings: **AWS dominates with a three-tier ecosystem** — official monorepo (8,900 stars), agent plugins (634 stars), and reference samples (233 stars). **Cloudflare's Code Mode pattern surged 57%** (263→412 stars) as the most token-efficient API approach. **Azure Functions MCP reached GA** with fluent API, OBO auth, and Streamable HTTP. **Google Cloud gcloud-mcp expanded to 66+ tools** across four servers. **Streamable HTTP is now the standard transport** replacing SSE across AWS and Azure. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## AWS Lambda & Serverless
 
@@ -20,28 +20,58 @@ The headline findings: **AWS has the most comprehensive serverless MCP ecosystem
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [AWS Serverless MCP Server](https://github.com/awslabs/mcp) | 8,500 | Python/TypeScript | Apache-2.0 | 14+ servers |
+| [AWS Serverless MCP Server](https://github.com/awslabs/mcp) | 8,900 | Python/TypeScript | Apache-2.0 | 14+ servers |
 
 The **official AWS MCP monorepo** includes dedicated serverless servers:
 
 - **AWS Serverless MCP Server** — complete serverless application lifecycle management via SAM CLI — build, deploy, test, and debug serverless applications
 - **Lambda Tool MCP Server** — expose any Lambda function as an MCP tool for AI agents to invoke without code changes
+- **MCP Lambda Handler** *(new)* — Python library (on PyPI) for creating serverless HTTP handlers with pluggable session management (NoOp stateless or DynamoDB-backed persistent sessions)
 - **AWS IaC MCP Server** — CloudFormation and CDK infrastructure toolkit
 - **14+ additional servers** — EKS, ECS, CloudFormation, documentation, support, and more
 
-Enterprise authentication options: API Gateway with OAuth (Cognito/Okta/Auth0), Bedrock AgentCore Gateway, Lambda function URLs with SigV4, and direct Lambda Invoke API.
+**SSE transport removed** across all servers — Streamable HTTP is now the standard. Enterprise authentication: API Gateway with OAuth, Bedrock AgentCore Gateway, Lambda function URLs with SigV4, and direct Lambda Invoke API.
+
+### awslabs/agent-plugins (AWS Agent Plugins) *(New)*
+
+| Server | Stars | Language | License | Plugins |
+|--------|-------|----------|---------|---------|
+| [agent-plugins](https://github.com/awslabs/agent-plugins) | 634 | Multi | Apache-2.0 | 6 |
+
+**Compound agent plugins** that package AWS expertise (MCP servers + agent skills + hooks + reference docs) into installable units:
+
+- **aws-serverless** — serverless development expertise with Lambda, API Gateway, EventBridge, Step Functions
+- **deploy-on-aws** — deployment patterns and best practices
+- **databases-on-aws** — database service guidance
+- **sagemaker-ai**, **aws-amplify**, **amazon-location-service**
+
+Works with Claude Code, Codex, and Cursor. Created February 2026 — rapidly adopted.
+
+### aws-samples/sample-serverless-mcp-servers (Reference Implementations) *(New)*
+
+| Server | Stars | Language | License | Samples |
+|--------|-------|----------|---------|---------|
+| [sample-serverless-mcp-servers](https://github.com/aws-samples/sample-serverless-mcp-servers) | 233 | Python/TypeScript | MIT-0 | 9 |
+
+**9 reference implementations** demonstrating different serverless MCP deployment patterns:
+
+- **Stateless MCP on Lambda** — Node.js and Python variants
+- **Stateless/Stateful MCP on ECS** — Node.js and Python variants
+- **Strands Agent on Lambda** — AI Agent using Strands SDK with MCP Server
+- **lambda-ops-mcp-server** — local MCP server for Lambda operations
+- Demonstrates trade-offs between stateful and stateless architectures with session management
 
 ### awslabs/run-model-context-protocol-servers-with-aws-lambda (stdio-to-Lambda Bridge)
 
 | Server | Stars | Language | License | Transports |
 |--------|-------|----------|---------|------------|
-| [run-mcp-servers-with-lambda](https://github.com/awslabs/run-model-context-protocol-servers-with-aws-lambda) | 350 | Python/TypeScript | Apache-2.0 | 4 |
+| [run-mcp-servers-with-lambda](https://github.com/awslabs/run-model-context-protocol-servers-with-aws-lambda) | 362 | Python/TypeScript | Apache-2.0 | 4 |
 
 **Run any existing stdio-based MCP server on Lambda** — wraps local MCP servers into Lambda functions accessible via HTTPS:
 
-- **Four deployment options** — API Gateway with OAuth, Bedrock AgentCore Gateway, Lambda function URLs with SigV4 auth, direct Lambda Invoke API
+- **Four deployment options** — MCP Streamable HTTP via API Gateway (OAuth), Bedrock AgentCore Gateway, Lambda function URLs with SigV4 auth, direct Lambda Invoke API
 - **Complete lifecycle management** — each invocation handles startup, initialization, request forwarding, response, and shutdown
-- **Multi-language** — supports Python and TypeScript MCP server ecosystems
+- **Very active** — 1,562 commits, available on both PyPI and npm
 - **IDE compatible** — works with Cursor, Cline, and Claude Desktop
 
 ### danilop/MCP2Lambda (Lambda-to-LLM Bridge)
@@ -61,22 +91,30 @@ Enterprise authentication options: API Gateway with OAuth (Cognito/Okta/Auth0), 
 
 | Server | Stars | Language | License | Integrations |
 |--------|-------|----------|---------|--------------|
-| [middy-mcp](https://github.com/fredericbarthelet/middy-mcp) | 38 | TypeScript | MIT | 3 |
+| [middy-mcp](https://github.com/fredericbarthelet/middy-mcp) | 39 | TypeScript | MIT | 3 |
 
 **Middy middleware for hosting MCP servers on Lambda** — integrates with the popular Middy framework (v6.0.0+):
 
+- v0.1.6 latest (8 releases total)
 - Supports API Gateway v1 (REST), v2 (HTTP API), and ALB proxy integrations
 - MCP protocol version 2025-03-26 and later
-- Pairs with `@middy/http-error-handler` for error management
 - Requires Node.js 18+
 
 ### eleva/serverless-mcp-server (Serverless Framework Template)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [serverless-mcp-server](https://github.com/eleva/serverless-mcp-server) | 18 | JavaScript | MIT | Example |
+| [serverless-mcp-server](https://github.com/eleva/serverless-mcp-server) | 17 | JavaScript | MIT | Example |
 
-A **minimal MCP server template** deployed on AWS Lambda via API Gateway using the Serverless Framework. One-command AWS deployment, local development via serverless-offline, built on middy-mcp middleware. Good starting point for custom Lambda-hosted MCP servers.
+A **minimal MCP server template** deployed on AWS Lambda via API Gateway using the Serverless Framework. One-command AWS deployment, local development via serverless-offline, built on middy-mcp middleware.
+
+### cyclimse/mcp-scaleway-functions (Scaleway Functions) *(New)*
+
+| Server | Stars | Language | License | Features |
+|--------|-------|----------|---------|----------|
+| [mcp-scaleway-functions](https://github.com/cyclimse/mcp-scaleway-functions) | 4 | — | — | Scaleway FaaS |
+
+**The first European cloud provider FaaS MCP server** — unofficial community project for managing Scaleway serverless functions via MCP. Covers deployment and management of functions on Scaleway's FaaS platform. Small but notable as it expands the category beyond the US hyperscalers.
 
 ## Cloudflare Workers
 
@@ -84,9 +122,9 @@ A **minimal MCP server template** deployed on AWS Lambda via API Gateway using t
 
 | Server | Stars | Language | License | Servers |
 |--------|-------|----------|---------|---------|
-| [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | 3,500 | TypeScript | Apache-2.0 | 16 |
+| [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | 3,700 | TypeScript | Apache-2.0 | 14 |
 
-The **most comprehensive single-provider MCP ecosystem** — 16 specialized remote MCP servers:
+The **most comprehensive single-provider MCP ecosystem** — 14 specialized remote MCP servers (v0.20.4):
 
 - **Workers Bindings** — build with storage, AI, and compute primitives
 - **Workers Builds** — build management and insights
@@ -97,54 +135,55 @@ The **most comprehensive single-provider MCP ecosystem** — 16 specialized remo
 - **Browser Rendering** — web page fetching, markdown conversion, screenshots
 - **Logpush** — job health summaries
 - **AI Gateway** — prompt/response log search
-- **AutoRAG** — document search across RAG indexes
 - **Audit Logs** — query and reporting
 - **DNS Analytics** — performance optimization and debugging
 - **Digital Experience Monitoring** — critical application insights
 - **CASB** — SaaS security misconfiguration detection
 - **GraphQL** — analytics data via Cloudflare's GraphQL API
 
-All hosted as remote MCP servers at `*.mcp.cloudflare.com` — no local installation required.
+All hosted as remote MCP servers at `*.mcp.cloudflare.com` — no local installation required. Cloudflare published enterprise MCP architecture guidance (April 2026) covering centralized deployment, authentication via Cloudflare Access with SSO/MFA, and governance patterns for enterprise adoption.
 
 ### cloudflare/mcp (Token-Efficient API Access)
 
 | Server | Stars | Language | License | Endpoints |
 |--------|-------|----------|---------|-----------|
-| [mcp](https://github.com/cloudflare/mcp) | 263 | TypeScript | Apache-2.0 | 2,500+ |
+| [mcp](https://github.com/cloudflare/mcp) | 412 | TypeScript | Apache-2.0 | 2,500+ |
 
-**The most token-efficient approach to API access** — covers 2,500+ Cloudflare API endpoints through just two tools:
+**The most token-efficient approach to API access — and the fastest-growing repo in the category** (263→412 stars, +57%):
 
 - **`search`** — discover API endpoints by natural language
 - **`execute`** — make authenticated API calls
 
-Uses a "Code Mode" pattern where agents write JavaScript executed server-side. Reduces token consumption from ~2 million (raw OpenAPI spec) to just **1,069 tokens**. Supports Workers, KV, R2, D1, Pages, DNS, Firewall, Load Balancers, Stream, Images, and more. Single URL: `mcp.cloudflare.com/mcp`.
+Uses a "Code Mode" pattern where agents write JavaScript executed server-side. Reduces token consumption from ~2 million (raw OpenAPI spec) to just **1,069 tokens**. Supports Workers, KV, R2, D1, Pages, DNS, Firewall, Load Balancers, Stream, Images, and more. Single URL: `mcp.cloudflare.com/mcp`. Enterprise adoption accelerated after Cloudflare's April 2026 MCP architecture blog post.
 
 ### cloudflare/workers-mcp (Worker-to-MCP Bridge)
 
 | Server | Stars | Language | License | Features |
 |--------|-------|----------|---------|----------|
-| [workers-mcp](https://github.com/cloudflare/workers-mcp) | 627 | TypeScript | Apache-2.0 | Auto-conversion |
+| [workers-mcp](https://github.com/cloudflare/workers-mcp) | 634 | TypeScript | Apache-2.0 | Auto-conversion |
 
-**Automatically converts TypeScript Worker methods into MCP tools** via a build step. Local Node.js proxy handles stdio transport. Exposes custom functions, APIs, or any Cloudflare service to Claude Desktop, Cursor, or other MCP clients.
+**Automatically converts TypeScript Worker methods into MCP tools** via a build step. Local Node.js proxy handles stdio transport. Now includes prominent guidance recommending Cloudflare's remote MCP server approach for new projects. Still useful for existing stdio-based workflows.
 
 ## Azure Functions
 
-### Azure/azure-functions-mcp-extension (Official)
+### Azure/azure-functions-mcp-extension (Official — Now GA)
 
 | Server | Stars | Language | License | Languages |
 |--------|-------|----------|---------|-----------|
-| [azure-functions-mcp-extension](https://github.com/Azure/azure-functions-mcp-extension) | 32 | C# | MIT | 4 |
+| [azure-functions-mcp-extension](https://github.com/Azure/azure-functions-mcp-extension) | 35 | C# | MIT | 5 |
 
-**Microsoft's official MCP extension for Azure Functions:**
+**Microsoft's official MCP extension for Azure Functions — reached General Availability with v1.5.0 (April 2026):**
 
-- Enables Azure Functions apps to act as **scalable remote MCP servers**
-- **MCP tool trigger** for defining tools usable by AI agents
-- Dedicated integration for **.NET isolated worker model**
-- Configurable via `host.json` (server name, version, instructions)
-- Samples in **C#, Python, TypeScript, and Java**
+- **v1.3.0** (March 2026) — structured content support for tools
+- **v1.4.0** (April 2026) — resource templates and prompts functionality
+- **v1.5.0-preview.1** — fluent API for building MCP Apps with UI views, static assets, and visibility controls
+- **v1.5.0 GA** (April 27, 2026) — output schemas, validation for required prompt arguments
+- **Streamable HTTP transport** replaces SSE (recommended for new projects)
+- **On-behalf-of (OBO) authentication** — tools access downstream services using user identity via Microsoft Entra
+- Samples in **C#, Python, TypeScript, Java**, and JavaScript
 - **Self-hosted option** — deploy existing MCP SDK-based servers without code changes
 
-Lower star count reflects newer release — the extension is production-quality backed by Microsoft.
+Rapid release cadence (4 releases in 6 weeks) signals strong investment from Microsoft.
 
 ## Google Cloud
 
@@ -152,13 +191,14 @@ Lower star count reflects newer release — the extension is production-quality 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cloud-run-mcp](https://github.com/GoogleCloudPlatform/cloud-run-mcp) | 559 | JavaScript | Apache-2.0 | 6+ |
+| [cloud-run-mcp](https://github.com/GoogleCloudPlatform/cloud-run-mcp) | 598 | JavaScript | Apache-2.0 | 6+ |
 
-**Deploy applications to Cloud Run via AI agents:**
+**Deploy applications to Cloud Run via AI agents** (v1.10.0):
 
 - **Deployment** — deploy files directly or from local folders to Cloud Run services
 - **Service management** — list and describe Cloud Run services
 - **Logging** — access service logs and error messages
+- **Cloud Run Skills** *(new)* — leverages gcloud CLI for comprehensive Cloud Run operations through natural language prompts
 - **Multi-client** — Gemini CLI, Claude Desktop, Cursor, VS Code
 - **Authentication** — Google Cloud SDK credentials and OAuth
 - Can itself run **on Cloud Run** for remote access with IAM auth
@@ -167,16 +207,16 @@ Lower star count reflects newer release — the extension is production-quality 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [gcloud-mcp](https://github.com/googleapis/gcloud-mcp) | 706 | TypeScript | Apache-2.0 | 40+ |
+| [gcloud-mcp](https://github.com/googleapis/gcloud-mcp) | 761 | TypeScript | Apache-2.0 | 66+ |
 
-**Natural language Google Cloud management** via four MCP servers:
+**Natural language Google Cloud management** via four MCP servers — expanded significantly:
 
-- **gcloud** — CLI interaction for any Google Cloud operation
-- **observability** — logs, metrics, and traces querying
-- **storage** — GCS bucket and object management
-- **backupdr** — backup and disaster recovery
+- **gcloud** — CLI interaction for any Google Cloud operation (1 tool)
+- **observability** — logs, metrics, and traces querying (11 tools)
+- **storage** — GCS bucket and object management (25 tools)
+- **backupdr** — backup and disaster recovery (30+ tools)
 
-Permission controls restrict dangerous commands. Service account impersonation for least-privilege operations. Supports Gemini CLI, Claude Desktop, Cursor, and VS Code. Currently in preview.
+v0.5.1 (April 28, 2026) with 238 commits and 25 releases — very active development. Permission controls restrict dangerous commands. Service account impersonation for least-privilege operations. Supports Gemini CLI, Claude Desktop, Cursor, and VS Code.
 
 ## Vercel
 
@@ -184,16 +224,16 @@ Permission controls restrict dangerous commands. Service account impersonation f
 
 | Server | Stars | Language | License | Frameworks |
 |--------|-------|----------|---------|------------|
-| [mcp-handler](https://github.com/vercel/mcp-handler) | 573 | TypeScript | Apache-2.0 | Next.js, Nuxt |
+| [mcp-handler](https://github.com/vercel/mcp-handler) | 592 | TypeScript | Apache-2.0 | Next.js, Nuxt |
 
-**The official Vercel adapter for building MCP servers** on serverless frameworks:
+**The official Vercel adapter for building MCP servers** on serverless frameworks (v1.1.0, March 2026):
 
 - **Next.js 13+** and **Nuxt 3+** support
 - **Streamable HTTP** and **SSE** transports
 - Optional **Redis** for SSE resumability
 - **Zod** schema validation for type-safe tool definitions
+- 29 releases, 127 commits — actively maintained
 - Compatible with Claude Desktop, Cursor, and Windsurf
-- Requires `@modelcontextprotocol/sdk` 1.25.2+ (security fix)
 
 Ideal for teams building MCP servers as part of their Next.js or Nuxt applications.
 
@@ -201,7 +241,7 @@ Ideal for teams building MCP servers as part of their Next.js or Nuxt applicatio
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [vercel-mcp-server](https://github.com/Quegenx/vercel-mcp-server) | 60 | TypeScript | — | 20+ |
+| [vercel-mcp-server](https://github.com/Quegenx/vercel-mcp-server) | 61 | TypeScript | — | 20+ |
 
 **Manage Vercel infrastructure via AI assistants:**
 
@@ -218,7 +258,7 @@ Ideal for teams building MCP servers as part of their Next.js or Nuxt applicatio
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [firebase-mcp](https://github.com/gannonh/firebase-mcp) | 241 | TypeScript | MIT | 10+ |
+| [firebase-mcp](https://github.com/gannonh/firebase-mcp) | 244 | TypeScript | MIT | 10+ |
 
 **Full Firebase platform access for AI assistants:**
 
@@ -236,7 +276,7 @@ Ideal for teams building MCP servers as part of their Next.js or Nuxt applicatio
 
 | Server | Stars | Language | License | Runtimes |
 |--------|-------|----------|---------|----------|
-| [mcp-lite](https://github.com/fiberplane/mcp-lite) | 99 | TypeScript | — | 5+ |
+| [mcp-lite](https://github.com/fiberplane/mcp-lite) | 107 | TypeScript | — | 5+ |
 
 **A lightweight, fetch-first MCP framework** designed for serverless and edge deployments:
 
@@ -258,19 +298,18 @@ A **reusable template for building serverless MCP servers** with a provider plug
 
 ## What's Missing
 
-Despite strong coverage from major cloud providers, several gaps remain:
+Despite strong coverage from major cloud providers, gaps are narrowing but persist:
 
-- **No unified multi-cloud serverless management** — no single MCP server spans AWS Lambda, Azure Functions, Cloud Functions, and Cloudflare Workers
+- **No unified multi-cloud serverless management** — no single MCP server spans AWS Lambda, Azure Functions, Cloud Functions, and Cloudflare Workers from one interface
 - **No serverless cost optimization** — no billing analysis, right-sizing recommendations, or cost anomaly detection for serverless workloads
 - **No cold start analysis** — no performance benchmarking or cold start monitoring tools
-- **No open-source FaaS support** — no OpenFaaS, Knative, or Fission MCP servers
-- **No serverless CI/CD integration** — no direct pipeline triggers on function deploy
-- **Limited function versioning** — alias management and canary deployments are underserved
-- **No serverless composition** — Step Functions and Durable Functions management is minimal
+- **No open-source FaaS support** — no OpenFaaS, Knative, or Fission MCP servers (Scaleway is the only non-hyperscaler entry)
+- **Serverless CI/CD improving** — AWS agent plugins reference pipeline integration, but direct triggers remain limited
+- **Serverless composition improving** — Azure fluent API for MCP Apps, AWS agent plugins reference Step Functions, but dedicated workflow management tools are still minimal
 - **No edge function monitoring** — cross-provider performance comparison is absent
 
 ## Bottom Line
 
-**Rating: 4/5** — Serverless MCP servers represent a rapidly maturing category where every major cloud provider is investing heavily. AWS leads with the most comprehensive ecosystem — a 14+ server monorepo, Lambda bridge tools, and middleware options. Cloudflare stands out with 16 specialized remote MCP servers and the most token-efficient API access pattern in the entire MCP ecosystem (2,500+ endpoints through two tools). Google and Microsoft have official support but with smaller communities so far. Vercel provides the best developer experience for Next.js/Nuxt teams. The main gaps are in cross-cloud management, cost optimization, and open-source FaaS platform support — areas that will likely see development as enterprise serverless adoption continues to grow.
+**Rating: 4.5/5** — Serverless MCP servers have crossed from "rapidly maturing" to "enterprise production-ready." AWS dominates with a three-tier ecosystem: official monorepo (8,900 stars), agent plugins (634 stars), and reference samples (233 stars) — no other category has this depth. Cloudflare's Code Mode pattern (412 stars, +57%) is the fastest-growing approach for token-efficient API access. Azure Functions MCP reached GA with fluent API, OBO auth, and 4 releases in 6 weeks. Google Cloud gcloud-mcp expanded to 66+ tools with 25 releases. Streamable HTTP has replaced SSE as the standard transport across AWS and Azure. Vercel provides the best developer experience for Next.js/Nuxt teams. The main gaps — cross-cloud management, cost optimization, and open-source FaaS platform support — are narrowing but not yet closed.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-04-29 using Claude Opus 4.6 (Anthropic).*

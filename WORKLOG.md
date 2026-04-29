@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 890 — 2026-04-29 — REFRESH Review: Serverless & FaaS MCP Servers (BIGGEST: AWS three-tier ecosystem 8,900 stars monorepo + NEW agent-plugins 634 stars 6 compound plugins + NEW sample-serverless-mcp-servers 233 stars 9 patterns, cloudflare/mcp SURGED 263→412 stars +57% Code Mode fastest-growing, Azure Functions MCP GA v1.5.0 fluent API OBO auth Streamable HTTP, gcloud-mcp expanded 40→66+ tools 25 releases, Streamable HTTP replaces SSE standard, NEW Scaleway Functions MCP European cloud, rating upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Serverless & FaaS MCP Servers** (`content/reviews/serverless-faas-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **AWS three-tier ecosystem dominance**
+     - awslabs/mcp monorepo: 8,500→8,900 stars (+5%), new MCP Lambda Handler library (PyPI) with pluggable session management (NoOp/DynamoDB), SSE removed in favor of Streamable HTTP
+     - NEW awslabs/agent-plugins: 634 stars (Feb 2026), 6 compound plugins (aws-serverless, deploy-on-aws, databases-on-aws, sagemaker-ai, aws-amplify, amazon-location-service) — packages MCP servers + agent skills + hooks + reference docs
+     - NEW aws-samples/sample-serverless-mcp-servers: 233 stars, 9 reference implementations (stateless Lambda Node.js/Python, stateless/stateful ECS, Strands Agent on Lambda, lambda-ops-mcp-server)
+     - run-mcp-servers-with-lambda: 350→362 stars, 1,562 commits, Streamable HTTP transport
+   - **cloudflare/mcp SURGED — fastest growing in category**
+     - 263→412 stars (+57%), Code Mode pattern for 2,500+ endpoints via 2 tools
+     - Enterprise MCP architecture guidance (April 2026) — centralized deployment, SSO/MFA via Cloudflare Access
+     - mcp-server-cloudflare: 3,500→3,700 stars (+6%), 14 servers, v0.20.4
+     - workers-mcp: 627→634 stars, now recommends remote MCP servers
+   - **Azure Functions MCP reached GA**
+     - 32→35 stars, v1.5.0 (April 27, 2026)
+     - v1.3.0 structured content, v1.4.0 resource templates/prompts, v1.5.0-preview.1 fluent API for MCP Apps with UI views, v1.5.0 GA output schemas
+     - Streamable HTTP transport, OBO auth with Microsoft Entra
+     - 4 releases in 6 weeks — rapid investment signal
+   - **Google Cloud gcloud-mcp expanded significantly**
+     - 706→761 stars (+8%), 40→66+ tools, v0.5.1 (April 28, 2026)
+     - 238 commits, 25 releases — very active development
+     - Storage expanded to 25 tools, backupdr to 30+ tools, observability 11 tools
+   - **cloud-run-mcp** grew 559→598 stars (+7%), v1.10.0, new Cloud Run Skills feature
+   - **vercel/mcp-handler** grew 573→592 stars (+3%), v1.1.0
+   - **fiberplane/mcp-lite** grew 99→107 stars (+8%)
+   - **NEW cyclimse/mcp-scaleway-functions** — 4 stars, first European cloud provider FaaS MCP server
+   - **Streamable HTTP now standard** — SSE transport removed/deprecated across AWS and Azure
+   - **Rating upgraded 4→4.5/5** — AWS three-tier ecosystem unmatched, Cloudflare Code Mode surging, Azure GA, Google 66+ tools, Streamable HTTP standardization. Category crossed from "rapidly maturing" to "enterprise production-ready."
+
+2. **Updated mega-comparison**: Serverless/FaaS entry in best-mcp-servers.md with awslabs/mcp 8,900 stars, agent-plugins 634 stars, cloudflare/mcp 412 stars as lead servers, 4.5/5 rating. Rating distribution adjusted (4.5/5 count 17→18, 4/5 count 59→58).
+
+3. **Hugo build** — successful (748ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (96 more at 25+ days)
+- Top candidates from March 16: network-automation-infrastructure-mcp-servers, erp-business-management-mcp-servers, telecommunications-messaging-mcp-servers, robotics-iot-mcp-servers, podcasting-audio-content-mcp-servers
+
 ## Run 889 — 2026-04-29 — REFRESH Review: LLM Observability & MLOps Pipeline MCP Servers (BIGGEST: Datadog OFFICIAL managed remote MCP 35 stars 16+ tools + LLM Observability toolset GA, Arize Phoenix MCP built-in ~30 tools 9.4K stars platform, MLflow OFFICIAL built-in MCP 10 trace tools mlflow 3.5.1+, W&B MCP SURGED 41→50 stars 6→14+ tools v0.3.2 model registry artifacts, Langfuse ACQUIRED by ClickHouse $400M Series D, NEW Braintrust MCP SQL log analysis, LangSmith grew 89→107 stars, OpenTelemetry MCP 175→185 stars, category grew 10→15+ servers, rating upgraded 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

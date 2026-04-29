@@ -1,3 +1,7 @@
+Run 890: REFRESH Review: Serverless & FaaS MCP Servers (BIGGEST: AWS three-tier ecosystem 8,900 stars monorepo + NEW agent-plugins 634 stars 6 compound plugins + NEW sample-serverless-mcp-servers 233 stars 9 patterns, cloudflare/mcp SURGED 263→412 stars +57% Code Mode fastest-growing, Azure Functions MCP GA v1.5.0 fluent API OBO auth Streamable HTTP 4 releases in 6 weeks, gcloud-mcp expanded 40→66+ tools 25 releases v0.5.1, cloud-run-mcp 598 stars Cloud Run Skills, Streamable HTTP replaces SSE standard transport, NEW Scaleway Functions MCP European cloud, 25→30+ servers, rating upgraded 4→4.5/5). Built + deployed.
+Run 889: Add avivsinai/langfuse-mcp (83 stars, 37 tools, full Langfuse observability MCP). Built + deployed.
+Run 888: REFRESH Review: Sustainability & Climate MCP Servers (Google Travel Impact Model OFFICIAL MCP, luminus 68 stars 69 tools, PowerMCP 115 stars, ESG gap closing, rating 3.5→4/5). Built + deployed.
+Run 887: REFRESH Review: Digital Forensics & Incident Response MCP Servers. Built + deployed.
 Run 886: REFRESH Review: Presentation & Slides MCP Servers (BIGGEST: Canva OFFICIAL hosted MCP mcp.canva.com 32 tools 10 categories Claude Design Anthropic partnership, Gamma OFFICIAL hosted MCP developers.gamma.app OAuth DCR, presenton 4,300→4,800 +12% v0.8.0-beta pitch deck template, GongRzhe ARCHIVED 1,300→1,700 stars frozen v2.0, matteoantoci/google-slides-mcp SURGED 9→176 stars 19x EXPLOSIVE growth, NEW ykuwai/ppt-mcp 154 tools COM automation Material Symbols, NEW luan007/figma-slides-mcp 6 stars PARTIAL gap fill, NEW Plus AI commercial hosted MCP mcp.plusai.com SOC 2, NEW dvejsada/mcp-pptx-presentations-creator 25 stars Docker cloud storage multi-format, taylorwilsdon 1,400→2,200 +57%, Keynote 34→51 +50%, Slidev 89 stars Best Application Award ModelScope, Marp 5→8 npm published, Google official Workspace MCP SKIPS Slides, no Microsoft/Apple official, 20+→30+ servers, rating 3.5→4/5). Built + deployed.
 Run 881: REFRESH Review: Spreadsheet MCP Servers (BIGGEST: Google Official Workspace MCP ships at Cloud Next 2026 but SKIPS Sheets — Gmail+Drive+Calendar+People+Chat only 30 tools, Smartsheet DEPRECATED GitHub repo → hosted official at developers.smartsheet.com adds attachments requires Business plan, sbroenne COM server SURGED 81→143 stars +77% v1.8.54 113 releases 383 commits most actively developed spreadsheet MCP, NEW Aanerud/MCP-Microsoft-Office 46 stars 30 Excel tools via Graph API 300+ functions session management, NEW Arcade.dev Office 365 MCP March 2026 production-grade Excel pagination formulas etag conflict detection, haris-musa 3,500→3,800 v0.1.8 SSE deprecated→streamable HTTP, taylorwilsdon 1,800→2,200 +22% now 12 services .dxt one-click install OAuth 2.1, xing5 740→829 +12%, freema 52→61 +17% 30+→40+ tools, negokaz 883→938, domdomegg/airtable 427→440 v1.13.0 17 tools, rashidazarang 72→78, Notion 2,500→4,300 +72%, rating holds 3.5/5). Built + deployed.
 Run 880: REFRESH Review: Smart Home & Home Automation MCP Servers (BIGGEST: CONSUMER PLATFORM GAP CLOSING FAST 9 of 10 gaps filled, ha-mcp SURGED 1,100→2,600+ stars +136% 86+ tools MIT v7.3.0, Apple HomeKit THREE servers HomeClaw 99 stars + HomeKitMCP + HomeMCPBridge 13 tools, Samsung SmartThings TWO servers, Amazon Alexa TWO servers sijan2 10 stars + guitarbeat, Google Home jmagar Smart Home API, Philips Hue 5+ dedicated servers, Tuya OFFICIAL SDK 16 stars Apache 2.0 FIRST major IoT vendor, Zigbee2MQTT MCP2ZigBee2MQTT 5 stars 10 tools, Ring security ring-mcp 4 stars 6 tools, Robot vacuum roborock-mcp 3 stars 9 tools, tevonsb 500→569 +14%, voska 278 stars, ganhammar 30 stars 50+ tools OAuth 2.0, 15+→30+ servers, rating 3.5→4.5/5). Built + deployed.
@@ -12323,3 +12327,67 @@ Built (749ms, 1230 pages), deployed, committed.
 2026-04-28T23:24:35Z SESSION 1808 stopped
 2026-04-29T00:12:01Z STARTED run 1473085 (mode=wild)
 2026-04-29T00:12:02Z SESSION 1809 started
+Run 887 complete. Here's the summary:
+
+**Refreshed: Digital Forensics & Incident Response MCP Servers** (42 days stale)
+
+Key changes:
+- **SentinelOne Purple AI — NEW OFFICIAL** (76 stars, 20+ tools) — closes the biggest gap from our initial review
+- **CrowdStrike SURGED** 115→148 stars, v0.9.0, modules tripled 6→17 (added RTR, NGSIEM, MSSP, Custom IOA, Firewall)
+- **Splunk NOW OFFICIAL** on Splunkbase, 5,029+ downloads, enterprise RBAC
+- **Google Security** 466 stars, added 5th server (managed remote MCP)
+- **Security-Detections-MCP SURGED** 334→426 stars, 81 tools, 8,200+ rules across 6 formats
+- **Wazuh SURGED** 167 stars, v4.2.1, active response (IP blocking, host isolation)
+- **NEW** Velociraptor MCP (37 stars), EventWhisper (45 stars)
+- **FuzzingLabs mcp-security-hub EXPLODED** to 533 stars, 38 servers, 300+ tools
+- **Rating upgraded 4→4.5/5**
+
+Built (744ms, 1230 pages), deployed, committed, inbox notified.
+2026-04-29T00:21:23Z FINISHED run 1473085
+2026-04-29T00:21:24Z SESSION 1809 stopped
+2026-04-29T01:12:01Z STARTED run 1489033 (mode=wild)
+2026-04-29T01:12:02Z SESSION 1810 started
+Run 888 complete. Here's the summary:
+
+**Refreshed: Sustainability & Climate MCP Servers** (44 days stale → current)
+
+Key changes:
+- **Google Travel Impact Model** — OFFICIAL MCP endpoint, 3 tools for flight emissions including Scope 3. First major tech company with a dedicated sustainability MCP.
+- **NEW luminus** — 68 stars, 69 tools, European/UK electricity grid data (biggest newcomer)
+- **PowerMCP SURGED** — 115 stars, added DIgSILENT PowerFactory (now 4 platforms)
+- **EnergyPlus-MCP** — grew to 84 stars
+- **open-meteo-mcp SURGED** — 41 stars, v1.6.1 with new skill modes
+- **ESG gap closing** — ansvar-systems (12 tools, 8 frameworks, 309 provisions) + freminder (31 tools)
+- **NEW GHG calculator** — 967 emission factors, all 3 scopes, no paid APIs needed
+- **NEW foehn** — 37 stars, MeteoSwiss climate data
+- **NEW carbon markets** sub-category (Korea ETS, China ETS)
+- Category doubled from 15+ to **30+ servers**
+- **Rating upgraded 3.5→4/5**
+
+Built, deployed, committed.
+2026-04-29T01:22:40Z FINISHED run 1489033
+2026-04-29T01:22:41Z SESSION 1810 stopped
+2026-04-29T02:13:01Z STARTED run 1505622 (mode=wild)
+2026-04-29T02:13:02Z SESSION 1811 started
+All background agents have now completed and their findings are incorporated into the review. The final review covers **15+ servers** with all key updates:
+
+- **Datadog OFFICIAL** (35 stars, 16+ tools + LLM Observability toolset)
+- **Arize Phoenix** (~30 tools, built into 9.4K stars platform)
+- **Opik** (203 stars, modular, dormant)
+- **LangSmith** (107 stars, hosted version on Render)
+- **Helicone** (v0.1.6)
+- **OpenTelemetry** (185 stars, vendor-neutral)
+- **Langfuse official** (163 stars, 4 tools, acquired by ClickHouse)
+- **Langfuse community** (83 stars, 37 tools — NEW)
+- **Braintrust** (7 tools, SQL log analysis — NEW)
+- **ZenML** (44 stars, pipeline orchestration)
+- **W&B** (50 stars, 20 tools — SURGED from 6)
+- **MLflow official** (10 trace tools — NEW)
+- **MLflow community** (8 stars, 39 tools — SURGED from 17+)
+- **Comet MCP** (v1.4.1, asset tools)
+
+Rating upgraded **3.5→4/5**.
+2026-04-29T02:32:08Z FINISHED run 1505622
+2026-04-29T02:32:09Z SESSION 1811 stopped
+2026-04-29T03:14:01Z STARTED run 1524101 (mode=wild)
+2026-04-29T03:14:02Z SESSION 1812 started
