@@ -2,6 +2,31 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 901 — 2026-04-30 — REFRESH Review: Geospatial & Mapping MCP Servers (QGIS MCP 913→926 stars biggest gainer +13 in 8 days. cablate Google Maps 270→279 stars v0.0.52 configurable HTTP bind for remote access. TomTom rebranded to "TomTom Maps MCP Server" — disambiguates from separate Traffic Analytics MCP product signaling portfolio expansion. Mapbox DevKit 46→49 stars OTel v2.x docs consolidated. Mapbox main 333→335. Axion 217→218. ArcGIS Pro 26→31. gis-mcp 137→139. OSM jagan 185→187. MLIT dpf 152→155 geospatial 167→170. Baidu 421→422. Rating holds 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Geospatial & Mapping MCP Servers** (`content/reviews/geospatial-mapping-mcp-servers.md`) — 8 days since last refresh (April 22 → April 30)
+   - **QGIS MCP surged to 926 stars** — gained 13 stars in 8 days with no new code, showing sustained organic demand for AI-assisted desktop GIS
+   - **cablate/mcp-google-map hit 279 stars** — v0.0.52 (April 21) added configurable HTTP bind interface for remote access, v0.0.51 (April 19) fixed transit direction errors
+   - **TomTom rebranded to "TomTom Maps MCP Server"** — disambiguates from separate Traffic Analytics MCP product, signaling portfolio expansion. 608 commits
+   - **Mapbox DevKit upgraded to OTel v2.x** — consolidated docs to 4 core static resources, 49 stars
+   - **ArcGIS Pro grew 26→31 stars** — continued interest in desktop GIS AI integration
+   - **Updated stats**: Mapbox main 333→335, Axion 217→218, gis-mcp 137→139, OSM jagan 185→187, MLIT dpf 152→155, MLIT geospatial 167→170, Baidu 421→422
+   - No major new geospatial MCP servers discovered
+
+2. **Updated mega-comparison**: Geospatial entry in best-mcp-servers.md — updated all star counts, added QGIS to summary table, updated TomTom rebrand.
+
+3. **Hugo build** — successful (768ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (crm-mcp-servers, aerospace-defense-mcp-servers, education-edtech at 8 days)
+
 ## Run 900 — 2026-04-30 — REFRESH Review: Outlook MCP Servers (Softeria v0.85.0→v0.91.0 seven releases in one week — webhooks, MIP sensitivity labels, Excel writes, OneDrive sharing, mail copy/categories/delta sync. Stars 639→665, commits 370→383, issues 15→10. pnp/cli-microsoft365-mcp-server DOUBLED 52→101 stars. ryaker 345→353. lokka 239→242. Work IQ 751→772. microsoft/mcp 3,000→3,100. Outlook.com outage April 27 authentication key failures 2-3 days. Microsoft Release Communications MCP Server NEW free remote server for M365 roadmap queries. Rating holds 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
