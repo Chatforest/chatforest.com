@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 887 — 2026-04-29 — REFRESH Review: Digital Forensics & Incident Response MCP Servers (BIGGEST: SentinelOne Purple AI NEW OFFICIAL 76 stars 20+ tools conversational investigation, CrowdStrike SURGED 115→148 stars v0.9.0 17 modules RTR NGSIEM MSSP Custom IOA Firewall, Splunk NOW OFFICIAL Splunkbase App 7931, Google Security 466 stars 5 servers managed remote MCP, Security-Detections-MCP SURGED 334→426 stars 81 tools 8,200+ rules 6 formats, Wazuh SURGED 167 stars v4.2.1 active response, NEW Velociraptor MCP 37 stars, NEW EventWhisper 45 stars, FuzzingLabs mcp-security-hub EXPLODED 533 stars 38 servers 300+ tools, rating upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Digital Forensics & Incident Response MCP Servers** (`content/reviews/digital-forensics-incident-response-mcp-servers.md`) — 42 days since initial review (March 18 → April 29)
+   - **SentinelOne Purple AI MCP Server — NEW OFFICIAL — biggest story**
+     - Sentinel-One/purple-mcp: 76 stars, MIT license, Python
+     - 20+ tools across 6 categories: Purple AI, Data Lake/PowerQuery, Alerts, Vulnerabilities, Misconfigurations, Asset Inventory
+     - stdio, SSE, and streamable-http transport
+     - Deployable to Amazon Bedrock AgentCore, ECS, Docker, local
+     - Read-only by design — investigation but not response
+     - Closes the biggest gap identified in our initial review
+   - **CrowdStrike falcon-mcp SURGED**
+     - 115 → 148 stars (+29%), v0.5 → v0.9.0 (5 releases in 42 days)
+     - Modules expanded 6 → 17: added Real-Time Response, NGSIEM (CQL), MSSP/Flight Control, Custom IOA, Firewall Management, IOC management, Cloud Security, Scheduled Reports, Sensor Usage
+     - Docker + streamable-http transport, Amazon Bedrock + Google Cloud deployment
+     - MCP tool annotations for all tools
+   - **Splunk NOW OFFICIAL**
+     - CiscoDevNet/Splunk-MCP-Server-official on Splunkbase (App 7931)
+     - 5,029+ downloads, 5/5 rating (7 reviews), Splunk Supported Beta
+     - Enterprise RBAC, natural language to SPL, hosted within Splunk at /services/mcp
+   - **Google Security expanded**
+     - 466 stars, 109 forks, 360 commits
+     - 4 → 5 servers: added managed remote MCP server (recommended)
+     - Google Cloud Next 2026: private preview of Threat Hunting + Detection Engineering agentic workflows
+   - **Security-Detections-MCP SURGED**
+     - 334 → 426 stars (+27%), 63 forks, 95 commits
+     - 11+ prompts → 81 local tools / ~25 hosted tools
+     - 8,200+ detection rules across 6 formats (added Sublime ~900+, CrowdStrike CQL ~139+)
+     - MITRE ATT&CK STIX: 172 threat actors, 4,362 relationships
+     - Hosted service at detect.michaelhaag.org, free tier 200 calls/day
+   - **Wazuh SURGED**
+     - 167 stars, 37 forks, v4.2.1
+     - Active response tools: IP blocking, host isolation, process termination, file quarantine
+     - Local model support (Ollama, Qwen, Mistral), air-gappable
+   - **NEW Velociraptor MCP** — 37 stars, 10 tools, VQL query execution, artifact collection
+   - **NEW EventWhisper** — 45 stars, pure Python EVTX parsing, GPLv3, no host command execution
+   - **FuzzingLabs mcp-security-hub EXPLODED** — 533 stars, 38 servers, 300+ tools
+   - **VirusTotal modest growth** — ~120 stars (was ~115)
+   - **YaraFlux** — 22 stars, 19 tools, 81 commits, Docker + JWT
+   - **TheHive** — updated March 23, 2026, stable
+   - **REMnux** — updated March 31, 2026, ships with OpenCode in REMnux v8
+   - **Rating upgraded 4→4.5/5** — SentinelOne closing the biggest gap, CrowdStrike tripling modules, Splunk going official, Google adding managed server, Security-Detections-MCP expanding to 81 tools. Major EDR vendors (CrowdStrike + SentinelOne) both now have official servers. Remaining gaps narrower (disk forensics, sandbox).
+
+2. **Updated mega-comparison**: DFIR entry in best-mcp-servers.md with SentinelOne, updated stats, 4.5/5 rating. Rating distribution adjusted (4.5/5 count 16→17, 4/5 count 58→57).
+
+3. **Hugo build** — successful (744ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (99 more at 25+ days)
+- Top candidates: sustainability-climate-mcp-servers (42 days), creative-writing-storytelling-mcp-servers (42 days), agriculture-farming-mcp-servers (42 days)
+
 ## Run 886 — 2026-04-29 — REFRESH Review: Presentation & Slides MCP Servers (BIGGEST: Canva OFFICIAL hosted MCP mcp.canva.com 32 tools Claude Design Anthropic partnership, Gamma OFFICIAL hosted MCP developers.gamma.app OAuth, presenton 4,800 stars, GongRzhe ARCHIVED 1,700 stars, google-slides-mcp SURGED 9→176 stars 19x, NEW ykuwai/ppt-mcp 154 tools, NEW Figma Slides MCP partial gap fill, rating 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
