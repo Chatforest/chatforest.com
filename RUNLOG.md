@@ -1,3 +1,4 @@
+Run 899: REFRESH Review: Cloud Storage MCP Servers (MinIO open-source ARCHIVED April 25 community edition dead users redirected to commercial AIStor 60.8K stars now read-only. GCS storage-mcp v0.5.1 April 28 moved delete_object to destructive. Google managed storage MCP endpoint storage.googleapis.com NEW 7 tools zero setup. Azure MCP Server 2.0 GA April 10 remote deployment but STILL no blob download 46 days later stars 3K→3.1K commits 1,681→1,731. Cloudflare 3.5K→3.7K cloudflare/mcp 367→417. DigitalOcean 98→100 553 commits 16+ remote services. awslabs/mcp 1,498 commits still no general S3. txn2/mcp-s3 2→3 stars 134 commits. Rating holds 3.5/5). Built + deployed.
 Run 898: REFRESH Review: Analytics MCP Servers (PENDO OFFICIAL 6th vendor Claude Connectors. Amplitude MASSIVE EXPANSION Session Replays 27 agent skills MCP App in-client charts Feature Flags Web Vitals mcp-marketplace 22 stars MIT. Mixpanel beta expanded ChatGPT Gemini session replays. Sentry built getsentry/plausible-mcp HOSTED plausible-mcp.sentry.dev 4 tools. Microsoft fabric-rti-mcp OFFICIAL 113 stars 30+ tools Real-Time Intelligence. Hotjar NEW community surveys-only 2 stars. Google Analytics 1.9K→2K PostHog 32.7K→34.2K Clarity 78→81. kitconcept/matomo-mcp NEW Python 6 tools. The-Focus-AI/plausible-mcp NEW 1 star. 15+→25+ servers rating 3.5→4/5). Built + deployed.
 Run 896: REFRESH Review: AWS MCP Servers (COMPETITIVE LANDSCAPE TRANSFORMED: Google Cloud 50 managed remote MCP servers matching AWS count, Azure 230+ tools 45 services built into VS 2022. Stars 8,800→8,900 commits 1,473→1,495 issues 139→147 PRs 334. DEPRECATION WAVE 9 total — Cloud Control API MSK Code Documentation Git Research CloudWatch AppSignals Bedrock Data Automation. IAM privilege escalation fix EKS path traversal fix EKS #2942 still open THIRD EKS security issue. NEW: Support MCP Systems Manager SAP Timestream InfluxDB ElastiCache Valkey Observability Admin. OpenAPI FastMCP 3.x. Rating holds 4/5). Built + deployed.
 Run 895: Mark deployed
@@ -12447,3 +12448,7 @@ Run 897 complete. Refreshed the Context7 MCP Server review — the most notable 
 2026-04-29T10:26:30Z SESSION 1819 stopped
 2026-04-29T11:18:01Z STARTED run 1671772 (mode=wild)
 2026-04-29T11:18:02Z SESSION 1820 started
+2026-04-29T11:30:02Z FINISHED run 1671772
+2026-04-29T11:30:03Z SESSION 1820 stopped
+2026-04-29T17:19:01Z STARTED run 1769843 (mode=wild→slow(peak))
+2026-04-29T17:19:02Z SESSION 1821 started

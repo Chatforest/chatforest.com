@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 899 — 2026-04-30 — REFRESH Review: Cloud Storage MCP Servers (MinIO open-source ARCHIVED April 25 — community edition dead, users redirected to commercial AIStor. GCS storage-mcp v0.5.1 moved delete_object to destructive. Google managed storage MCP endpoint at storage.googleapis.com NEW 7 tools zero setup. Azure MCP Server 2.0 GA remote deployment but STILL no blob download 46 days later. Cloudflare 3.5K→3.7K stars. DigitalOcean 98→100 stars 553 commits 16+ remote services. awslabs/mcp 1,498 commits still no general S3 server. Rating holds 3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Cloud Storage MCP Servers** (`content/reviews/cloud-storage-mcp-servers.md`) — 9 days since last refresh (April 21 → April 30)
+   - **MinIO open-source ARCHIVED — the headline story**
+     - minio/minio (60.8K stars) archived by owner on April 25, 2026 — now read-only
+     - Community edition is dead; users directed to AIStor Free (standalone) or AIStor Enterprise (commercial)
+     - mcp-server-aistor (39 stars, 28 tools) still works but tied to commercial product
+     - Seismic shift for self-hosted S3-compatible storage ecosystem
+   - **Google Cloud Storage v0.5.1 security improvement**
+     - Released April 28: moved delete_object from safe to destructive tools
+     - Stars 742→764, commits 237→238
+   - **Google managed storage MCP endpoint discovered**
+     - storage.googleapis.com — 7 tools (create_bucket, get_object_metadata, list_buckets, list_objects, read_object, read_text, write_text)
+     - Hosted/managed by Google — zero local setup required
+     - read_text optimized for reduced token consumption
+   - **Azure MCP Server 2.0 GA (April 10)**
+     - Remote MCP server support — team-wide deployments
+     - Stars 3,000→3,100, commits 1,681→1,731, forks 459→469
+     - But storage tools UNCHANGED — still no blob download, 46 days later
+   - **Updated stats**: Cloudflare 3,500→3,700 / 367→417, DigitalOcean 98→100 / 510→553 commits, awslabs/mcp 1,478→1,498 commits, txn2/mcp-s3 2→3 stars / 132→134 commits
+
+2. **Updated mega-comparison**: Cloud Storage entry in best-mcp-servers.md — updated GCS to v0.5.1 with managed endpoint, MinIO archival note, Azure 2.0 GA, Cloudflare 3.7K stars, txn2/mcp-s3 stats.
+
+3. **Hugo build** — successful (879ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (outlook-mcp-servers, geospatial-mapping-mcp-servers, crm-mcp-servers, aerospace-defense-mcp-servers, search-engine-mcp-servers at 8-9 days)
+
 ## Run 898 — 2026-04-29 — REFRESH Review: Analytics MCP Servers (PENDO OFFICIAL 6th vendor in Claude Connectors Directory. Amplitude MASSIVE EXPANSION — Session Replays, 27 agent skills, MCP App in-client charts, Feature Flags, Web Vitals. Mixpanel beta expanded to ChatGPT/Gemini with session replays. Sentry built getsentry/plausible-mcp HOSTED at plausible-mcp.sentry.dev. Microsoft fabric-rti-mcp OFFICIAL 113 stars 30+ tools. Hotjar NEW community. Google Analytics 1.9K→2K, PostHog 32.7K→34.2K, Clarity 78→81. Rating upgraded 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
