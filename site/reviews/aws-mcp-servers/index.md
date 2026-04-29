@@ -1,19 +1,19 @@
-# AWS MCP Servers — 53+ Servers, Two CVEs, and the Biggest Bet in the MCP Ecosystem
+# AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count
 
-> AWS's awslabs/mcp monorepo ships 53+ specialized MCP servers covering compute, databases, AI/ML, serverless, containers, security, and cost analysis. Two CVEs patched, Core MCP deprecated.
+> AWS's awslabs/mcp monorepo has 54 active MCP servers (9 deprecated) covering compute, databases, AI/ML, serverless, containers, security, and cost analysis. Two CVEs patched, IAM and EKS security fixes. Google Cloud now matches with 50 managed servers.
 
 
-Fifty-three MCP servers. One monorepo. Two CVEs. And a managed remote endpoint in preview. AWS hasn't just built an MCP server — they've built an MCP operating system for cloud infrastructure.
+Fifty-four active MCP servers. Nine deprecated. One monorepo. Two CVEs. And a competitive landscape that just shifted under AWS's feet.
 
-The [AWS MCP servers](https://github.com/awslabs/mcp) from awslabs represent the single largest investment in Model Context Protocol infrastructure by any cloud vendor. With 8,800 stars, 1,500 forks, 1,473 commits, and servers spanning everything from S3 storage to genomics workflows, this is AWS betting that natural language will become a primary interface for cloud operations.
+The [AWS MCP servers](https://github.com/awslabs/mcp) from awslabs represent a massive investment in Model Context Protocol infrastructure. With 8,900 stars, 1,500 forks, 1,495 commits, and servers spanning everything from S3 storage to genomics workflows, this is AWS betting that natural language will become a primary interface for cloud operations.
 
-*Updated April 21, 2026: Stars 8,500→8,800, two CVEs discovered and patched (file access bypass + command injection), Core MCP Server deprecated, EKS security bypass reported, server count refined to 53+, competitive landscape updated (Azure in VS Code 2026, Google managed remote MCP).*
+*Updated April 29, 2026: Stars 8,800→8,900, commits 1,473→1,495, issues 139→147. Major deprecation wave — Cloud Control API, MSK, Code Documentation, CloudWatch AppSignals, Git Research, Bedrock Data Automation all deprecated (9 total). IAM privilege escalation and EKS path traversal security fixes. OpenAPI migrated to FastMCP 3.x. COMPETITIVE LANDSCAPE TRANSFORMED: Google Cloud now has 50 managed remote MCP servers (matching AWS count), Azure ships 230+ tools across 45 services built into VS 2022.*
 
-No other MCP project comes close in scope. But scope and quality aren't the same thing. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+But AWS is no longer alone at the top. Google matched the server count, Azure matched the service breadth, and both did it with zero-install managed approaches. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## What It Is
 
-Unlike every other review on this site, this isn't a single server — it's a suite. The `awslabs/mcp` monorepo contains 53+ specialized MCP servers organized into categories (down from 68 at initial review — some servers have been consolidated or deprecated):
+Unlike every other review on this site, this isn't a single server — it's a suite. The `awslabs/mcp` monorepo contains 54 active MCP servers organized into categories (down from 68 at initial review — nine servers have been deprecated in a consolidation wave, and 12 deprecated directories were cleaned up in the April 21 release):
 
 **Documentation & Knowledge** (3 servers):
 
@@ -27,14 +27,14 @@ Unlike every other review on this site, this isn't a single server — it's a su
 
 | Server | What it does |
 |--------|-------------|
-| AWS IaC MCP | CloudFormation docs, CDK guidance, security validation |
-| Cloud Control API MCP | CRUDL operations on AWS resources via natural language |
-| CloudFormation MCP | Direct CloudFormation resource management |
-| EKS MCP | Kubernetes cluster management and deployment |
+| AWS IaC MCP | CloudFormation docs, CDK guidance, security validation (replaces deprecated Cloud Control API + CDK servers) |
+| EKS MCP | Kubernetes cluster management — now with kubeconfig/OIDC auth (April 2026) |
 | ECS MCP | Container orchestration and ECS deployment |
 | Finch MCP | Local container building with ECR integration |
 | Serverless MCP | SAM application lifecycle — init, build, deploy, test, observe |
 | Lambda Tool MCP | Execute Lambda functions as AI tools |
+| AWS Support MCP | AWS Support case management |
+| Systems Manager for SAP MCP | SAP workload management on AWS |
 
 **AI & Machine Learning** (9 servers):
 
@@ -47,61 +47,60 @@ Unlike every other review on this site, this isn't a single server — it's a su
 | Document Loader MCP | Document ingestion and processing |
 | Custom Models MCP | Bedrock custom model import |
 | SageMaker AI MCP | ML training and inference |
-| AgentCore MCP | Agent infrastructure management |
-| SageMaker Unified Studio MCP | Spark troubleshooting and upgrade |
+| AgentCore MCP | Agent infrastructure management — now with Runtime tools + 9 code interpreter tools |
+| SageMaker Unified Studio MCP (Spark Troubleshooting) | Spark job troubleshooting |
+| SageMaker Unified Studio MCP (Spark Upgrade) | Spark version upgrade assistance |
 
-**Data & Analytics** (15 servers):
+**Data & Analytics** (17 servers):
 
 | Server | What it does |
 |--------|-------------|
 | DynamoDB MCP | NoSQL database operations |
-| Aurora PostgreSQL MCP | Aurora PostgreSQL management |
+| Aurora PostgreSQL MCP | Aurora PostgreSQL management (Ultra Fast Create support added April 2026) |
 | Aurora MySQL MCP | Aurora MySQL management |
 | Aurora DSQL MCP | Distributed SQL operations |
 | DocumentDB MCP | Document database management |
-| Neptune MCP | Graph database queries |
+| Neptune MCP | Graph database queries (custom endpoint URL support added) |
 | Keyspaces MCP | Cassandra-compatible database |
+| Timestream for InfluxDB MCP | Time-series database operations |
 | ElastiCache MCP | In-memory caching |
+| ElastiCache/MemoryDB for Valkey MCP | Valkey-compatible in-memory datastore |
 | Memcached MCP | Memcached operations |
 | S3 Tables MCP | S3-backed table management |
 | Redshift MCP | Data warehouse queries |
-| Data Processing MCP | ETL and data pipeline management |
-| Spark MCP | Apache Spark job management |
+| Data Processing MCP | ETL and data pipeline management (now supports `--allow-sensitive-data-access` flag) |
 | AppSync MCP | GraphQL API management |
 | IoT SiteWise MCP | Industrial IoT data |
+| Spark MCP | Apache Spark job management |
 
-**Developer Tools** (6 servers):
-
-| Server | What it does |
-|--------|-------------|
-| Git Research MCP | Git repository analysis |
-| Code Documentation MCP | Automated code documentation |
-| Diagrams MCP | Architecture diagram generation |
-| Frontend MCP | Frontend development assistance |
-| Synthetic Data MCP | Test data generation |
-| IAM MCP | IAM policy management |
-
-**Integration & Messaging** (5 servers):
+**Developer Tools** (2 active servers):
 
 | Server | What it does |
 |--------|-------------|
-| OpenAPI MCP | API specification management |
+| IAM MCP | IAM policy management (privilege escalation vulnerability fixed April 2026) |
+| OpenAPI MCP | API specification management (migrated to FastMCP 3.x April 2026) |
+
+**Integration & Messaging** (4 servers):
+
+| Server | What it does |
+|--------|-------------|
 | SNS/SQS MCP | Message queue and notification management |
 | MQ MCP | Amazon MQ operations |
 | Step Functions MCP | Workflow orchestration |
 | Location Service MCP | Geolocation and mapping |
 
-**Cost & Operations** (7 servers):
+**Cost & Operations** (8 servers):
 
 | Server | What it does |
 |--------|-------------|
-| Billing MCP | AWS billing management |
+| Billing MCP | AWS billing management (billing view tools + analytics added April 2026) |
 | Pricing MCP | Service pricing lookups |
-| Cost Explorer MCP | Cost analysis and forecasting |
-| CloudWatch MCP | Metrics, logs, and Application Signals |
+| CloudWatch MCP | Metrics, logs (field index recommender added), and Application Signals |
 | CloudTrail MCP | Audit trail analysis |
 | Managed Prometheus MCP | Prometheus metrics |
+| Observability Admin MCP | Telemetry rules and configuration |
 | Well-Architected Security MCP | Security posture review |
+| Cost Explorer MCP | Cost analysis and forecasting |
 
 **Healthcare & Life Sciences** (3 servers):
 
@@ -111,7 +110,7 @@ Unlike every other review on this site, this isn't a single server — it's a su
 | HealthImaging MCP | Medical imaging data |
 | HealthLake MCP | FHIR healthcare data |
 
-Plus a **Core MCP Server** that acted as an orchestration layer — though as of March 2026, it's been **deprecated** because modern MCP clients now support multi-server configurations natively.
+**Deprecated servers** (9 total, directories cleaned up April 21): Core MCP Server (orchestration layer, March 2026), CDK MCP Server (replaced by IaC), Cloud Control API MCP (replaced by IaC), Terraform MCP (use HashiCorp's official), MSK MCP (April 2026), Code Documentation MCP, Git Research MCP, CloudWatch AppSignals (folded into CloudWatch), Nova Canvas MCP, and Bedrock Data Automation MCP.
 
 ## Setup
 
@@ -156,17 +155,17 @@ Individual servers can also be run standalone:
 
 The **AWS Knowledge MCP Server** is the easiest to try — it's a fully managed remote server at `https://knowledge-mcp.global.api.aws` with Streamable HTTP transport, no authentication required, and no local setup. Just point your MCP client at the URL and start querying AWS documentation.
 
-**Setup difficulty: Moderate to Hard.** The Knowledge server is one-click. The Documentation server needs Python 3.10+ and `uv`. The API server and infrastructure servers require AWS credentials, proper IAM permissions, and understanding of which of the 68 servers you actually need. The Core MCP Server's role system helps, but "which roles do I enable?" is itself a non-trivial question.
+**Setup difficulty: Moderate to Hard.** The Knowledge server is one-click. The Documentation server needs Python 3.10+ and `uv`. The API server and infrastructure servers require AWS credentials, proper IAM permissions, and understanding of which of the 54 active servers you actually need. With the Core MCP Server deprecated, there's no bundling mechanism — you configure each server individually.
 
 ## What Works Well
 
-**Unmatched breadth.** No other vendor has 53+ MCP servers. Azure has ~5 (now embedded in Visual Studio 2026), Google Cloud launched managed remote MCP servers in early 2026, but neither approaches AWS's coverage. If you're building on AWS, there's likely an MCP server for your service. DynamoDB, EKS, SageMaker, Step Functions, CloudWatch, Cost Explorer — nearly every major AWS service has dedicated MCP tooling.
+**Breadth no longer unmatched, but still deep.** AWS has 54 active MCP servers — Google Cloud now matches with 50 managed remote servers, and Azure ships 230+ tools across 45 services. But AWS's servers go deeper into service-specific operations than either competitor. DynamoDB, EKS, SageMaker, Step Functions, CloudWatch, Cost Explorer — nearly every major AWS service has dedicated MCP tooling with service-specific features that generic cloud APIs don't expose.
 
 **The Knowledge server is genuinely useful.** A managed remote endpoint at `knowledge-mcp.global.api.aws` that indexes AWS documentation, blog posts, What's New announcements, API references, Getting Started guides, Well-Architected guidance, and CDK/CloudFormation materials — all without authentication. Five tools: `search_documentation`, `read_documentation`, `recommend`, `list_regions`, and `get_regional_availability`. The regional availability check alone saves hours of digging through service-specific pages.
 
 **The API server's security model.** `call_aws` validates all CLI commands before execution. `READ_OPERATIONS_ONLY` restricts to read-only. `REQUIRE_MUTATION_CONSENT` requires explicit approval before mutating actions. Denylisted services (deploy, emr) are blocked due to subprocess security risks. `suggest_aws_commands` provides command suggestions based on natural language, including commands released after the model's knowledge cutoff. This is thoughtful infrastructure safety.
 
-**Active development.** 1,473 commits, multiple releases per week via automated CI/CD. The most recent release (April 14, 2026) includes DynamoDB validation updates, Glue Connections API coverage, and AWS CLI upgrades. New servers continue to be added — SageMaker Unified Studio for Spark, Q Index, and AgentCore were April additions. The AWS API MCP Server alone has 5M+ total PyPI downloads. This is not a side project — it's a funded initiative.
+**Active development.** 1,495 commits, multiple releases per week via automated CI/CD. The April 21 release migrated OpenAPI to FastMCP 3.x, added billing view tools to Cost Management, integrated Runtime tools into AgentCore, and cleaned up 12 deprecated server directories. The AWS API MCP Server alone has 5M+ total PyPI downloads. This is not a side project — it's a funded initiative with continuous delivery.
 
 **CloudTrail audit logging.** Every API call made through the managed AWS MCP server is logged to CloudTrail. IAM-based permissions with zero credential exposure. This is how enterprise cloud tooling should work — full auditability, standard AWS security model, no new credential management.
 
@@ -178,17 +177,17 @@ The **AWS Knowledge MCP Server** is the easiest to try — it's a fully managed 
 
 ## What Doesn't Work Well
 
-**Two CVEs in 2026.** [CVE-2026-4270](https://aws.amazon.com/security/security-bulletins/2026-007-AWS/) — a file access restriction bypass in the AWS API MCP Server (versions 0.2.14–1.3.8) allowed reading arbitrary local files by bypassing path validation. CVSS 3.1: AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N — medium severity, high confidentiality impact. Fixed in v1.3.9 (February 12, 2026). CVE-2026-5058 — a remote code execution vulnerability via command injection. Both patched, but two CVEs in the first quarter of 2026 raises the question of what else might be lurking in 53+ servers with 1,473 commits.
+**Security fixes keep coming.** The two CVEs from early 2026 (CVE-2026-4270 file access bypass, CVE-2026-5058 command injection) were patched, but April brought more: the IAM MCP Server had a privilege escalation vulnerability fixed (April 10), and EKS got a path traversal fix in app manifest generation (March 25). That's four distinct security issues across four months — the pace reflects both the attack surface of 54 servers and AWS's responsiveness, but the frequency is concerning.
 
-**EKS security bypass is still open.** Issue [#2942](https://github.com/awslabs/mcp/issues/2942) reports that `list_k8s_resources` bypasses the `--allow-sensitive-data-access` flag, allowing enumeration of secret names, namespaces, labels, and annotations. The documented redaction logic (`HIDDEN_FOR_SECURITY_REASONS`) doesn't appear to exist in the actual codebase. The `cleanup_resource_response()` method only removes metadata, not sensitive values. A PR (#2948) is pending. This is the *second* EKS secret exposure issue — the first (#2588 from our original review) involved decoding secrets to plain text.
+**EKS security bypass is still open.** Issue [#2942](https://github.com/awslabs/mcp/issues/2942) reports that `list_k8s_resources` bypasses the `--allow-sensitive-data-access` flag, allowing enumeration of secret names, namespaces, labels, and annotations. The documented redaction logic (`HIDDEN_FOR_SECURITY_REASONS`) doesn't appear to exist in the actual codebase. A PR (#2948) is pending. This is now the *third* EKS security issue — after the secret exposure (#2588) and the path traversal fix. The EKS MCP Server did gain kubeconfig/OIDC authentication support (April 2), but the security track record remains shaky.
 
-**Overwhelming complexity.** 53+ servers is not a feature — it's a configuration nightmare. The Core MCP Server that was supposed to simplify this with role-based groupings is now deprecated. AWS's answer is "modern MCP clients support multi-server configurations natively" — which is true, but doesn't help with the "which of the 53 servers do I actually need?" question.
+**Overwhelming complexity.** 54 active servers is not a feature — it's a configuration nightmare. The Core MCP Server that was supposed to simplify this with role-based groupings is deprecated. AWS's answer is "modern MCP clients support multi-server configurations natively" — which is true, but doesn't help with the "which of the 54 servers do I actually need?" question. Meanwhile, Google offers 50 managed remote servers that auto-enable when you enable the service, requiring zero local configuration.
 
-**139 open issues (up from 125).** The CloudWatch MCP Server has a tool name that exceeds Bedrock Converse API's 64-character limit (#3181), causing all LLM calls to fail. The AWS Knowledge MCP server has aggressive rate limiting causing startup failures (#2949). The openapi-mcp-server crashes on long API keys due to bcrypt's 72-byte limit (#3093). When your own cloud's MCP servers break your own cloud's AI service, the integration story needs work.
+**147 open issues (up from 139).** The CloudWatch MCP Server has a tool name that exceeds Bedrock Converse API's 64-character limit (#3181), causing all LLM calls to fail. The AWS Knowledge MCP server has aggressive rate limiting causing startup failures (#2949). The openapi-mcp-server crashes on long API keys due to bcrypt's 72-byte limit (#3093). With 334 open PRs, the backlog is growing faster than the team can review. When your own cloud's MCP servers break your own cloud's AI service, the integration story needs work.
 
 **stdio only (mostly).** The Knowledge server supports Streamable HTTP, and the managed AWS MCP preview is remote, but the vast majority of servers are stdio-only. SSE support was explicitly removed in May 2025. For teams that want shared infrastructure MCP endpoints, this is limiting.
 
-**Deprecation churn continues.** The Core MCP Server itself is now deprecated (March 2026), joining the CDK MCP Server, Terraform MCP Server, Diagram server, and Nova Canvas server in the deprecated pile. Healthy consolidation, but painful for early adopters who built workflows around these.
+**Deprecation wave accelerated.** Nine servers are now deprecated — Core, CDK, Cloud Control API, Terraform, MSK, Code Documentation, Git Research, CloudWatch AppSignals, Nova Canvas, and Bedrock Data Automation. The April 21 release removed 12 deprecated directories entirely. Healthy consolidation, but nine deprecations in four months is painful for early adopters who built workflows around these servers.
 
 **Not designed for multi-tenant environments.** The API server's documentation explicitly states this. Some read-only operations can return AWS credentials or sensitive information in command outputs. For platform teams building shared developer tooling, this is a significant limitation.
 
@@ -196,39 +195,39 @@ The **AWS Knowledge MCP Server** is the easiest to try — it's a fully managed 
 
 ## How It Compares
 
-The competitive landscape has shifted since our original review. AWS still leads on server count, but the gap in approach is narrowing:
+The competitive landscape has **transformed** since our original review. AWS no longer leads on server count — and the gap in managed experience has widened against them:
 
-**vs. Azure MCP:** Azure has embedded MCP directly into Visual Studio 2026, consolidating Azure Storage, Cosmos DB, Log Analytics, and App Configuration into a single, enterprise-grade integration. Azure bets on IDE-native MCP; AWS bets on service-specific breadth. Different strategies, both viable.
+**vs. Google Cloud MCP (50 managed servers):** Google launched 50 managed remote MCP servers at Cloud Next '26, covering everything from BigQuery and Spanner to GKE, Cloud Run, Pub/Sub, Cloud Storage, and even Google Workspace (Drive, Gmail, Calendar, Chat). Every Google Cloud service is MCP-enabled by default with native IAM Deny policies, Model Armor for prompt injection defense, OTel tracing, and Cloud Audit Logs. Servers auto-enable when you enable the service — no local setup, no `uv`, no Python. This is the approach AWS should be worried about: same breadth, better developer experience, fully managed. Google matches AWS on count (50 vs. 54) and exceeds it on ease of use.
 
-**vs. Google Cloud MCP:** Google launched managed remote MCP servers accessible via `googleapis.com` endpoints in early 2026 — covering AlloyDB, Spanner, Cloud SQL, Firestore, Bigtable, and a Developer Knowledge server. Google takes the most cloud-native approach: fully managed, no local installation, remote-first. AWS's Knowledge server is similar in concept but Google is ahead on managed remote.
+**vs. Azure MCP (230+ tools, 45 services):** Azure now ships MCP tools built directly into Visual Studio 2022 (not just VS 2026) as part of the Azure development workload — no extension required. 230+ tools across 45 Azure services accessible through GitHub Copilot Chat. The April 2026 Azure DevOps MCP update added WIQL query support. Azure bets on IDE-native MCP with massive tool consolidation; AWS bets on service-specific servers. Azure's approach means zero configuration for VS users — a stark contrast to AWS's 54 separate servers.
 
-**vs. [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5):** Cloudflare earned the highest cloud MCP rating thanks to its Code Mode architecture that exposes 2,500+ API endpoints in just 1,000 tokens. AWS distributes similar functionality across 53+ servers. Cloudflare is more elegant; AWS is more comprehensive.
+**vs. [Cloudflare MCP](/reviews/cloudflare-mcp-server/) (4.5/5):** Cloudflare earned the highest cloud MCP rating thanks to its Code Mode architecture that exposes 2,500+ API endpoints in just 1,000 tokens. AWS distributes similar functionality across 54 servers. Cloudflare is more elegant; AWS is more comprehensive.
 
 **vs. [Docker MCP](/reviews/docker-mcp-server/) (3.5/5) for containers:** AWS has three container-related servers (EKS, ECS, Finch) that operate at a higher level of abstraction — they manage cloud container services, not local Docker daemons. Different use cases: Docker MCP for local development, AWS container MCPs for cloud orchestration.
 
-**vs. [Neon MCP](/reviews/neon-mcp-server/) (4/5) and [Supabase MCP](/reviews/supabase-mcp-server/) (4/5) for databases:** AWS has dedicated servers for Aurora, DynamoDB, DocumentDB, Neptune, Keyspaces, ElastiCache, and Redshift. More databases covered, but each server is narrower. Supabase's single server covers database + auth + storage + edge functions in one package.
+**vs. [Neon MCP](/reviews/neon-mcp-server/) (4/5) and [Supabase MCP](/reviews/supabase-mcp-server/) (4/5) for databases:** AWS has dedicated servers for Aurora, DynamoDB, DocumentDB, Neptune, Keyspaces, ElastiCache, Timestream, and Redshift. More databases covered, but each server is narrower. Supabase's single server covers database + auth + storage + edge functions in one package.
 
 **vs. Terraform MCP (HashiCorp):** AWS deprecated their own Terraform MCP server in favor of the IaC server, and explicitly recommends HashiCorp's official Terraform MCP for Terraform workflows. Healthy ecosystem separation.
 
 ## The Bottom Line
 
-The AWS MCP suite is the most ambitious project in the MCP ecosystem. 53+ servers, active weekly releases, a managed remote endpoint in preview, and coverage of nearly every AWS service. The Knowledge server and API server's security model are genuinely well-designed. The proactive dependency patching (8 aiohttp CVEs resolved in April alone) shows mature security operations.
+The AWS MCP suite is no longer the most ambitious cloud MCP project — Google Cloud's 50 managed remote servers and Azure's 230+ tools make the field genuinely competitive. But AWS still has 54 active servers with deep, service-specific functionality, active weekly releases, and a managed remote endpoint in preview. The Knowledge server and API server's security model remain well-designed. The proactive dependency patching and rapid security response show mature operations.
 
-But ambition creates its own problems. Two CVEs in the first quarter of 2026 — including a file access bypass and command injection — show that 53+ servers create a massive attack surface. The EKS security bypass (#2942) with missing redaction logic is concerning. 139 open issues including Bedrock compatibility breaks in CloudWatch suggest breadth still outpaces polish. The Core MCP Server deprecation, while technically sound, removes the one tool that helped manage the complexity.
+But the competitive gap has closed while AWS's own challenges persist. Four security issues in four months (two CVEs, IAM privilege escalation, EKS path traversal), the still-open EKS security bypass (#2942), 147 open issues, 334 open PRs, and nine deprecated servers show that maintaining 54 servers at this pace is straining even AWS's resources. Meanwhile, Google's servers auto-enable with zero configuration, and Azure's tools come built into your IDE. AWS's stdio-first, Python-required approach feels increasingly dated in a managed-remote world.
 
-For AWS-heavy teams, this remains essential infrastructure — the Knowledge server and API server are worth setting up today. For teams evaluating cloud MCP options, compare against Google Cloud's managed remote MCP (simpler, fewer servers, fully managed) and Cloudflare's elegant single-server approach. Start with the managed AWS MCP preview or the Knowledge server, then add specific servers as needs arise. Don't try to enable everything at once.
+For AWS-heavy teams, this remains essential infrastructure — the Knowledge server and managed AWS MCP preview are worth using today. For teams evaluating cloud MCP options, the choice has become genuinely interesting: Google Cloud for the best managed experience and automatic enablement, Azure for IDE-native integration and consolidated tooling, AWS for the deepest service-specific coverage. Start with the managed AWS MCP preview or the Knowledge server, then add specific servers as needs arise. Don't try to enable everything at once.
 
-**Rating: 4 out of 5** — still the most comprehensive cloud MCP integration in the ecosystem, with active development and proactive security patching, but two CVEs, an open EKS bypass, Core MCP deprecation, and 139 open issues show the cost of maintaining 53+ servers at scale.
+**Rating: 4 out of 5** — still the deepest cloud MCP integration with the most service-specific coverage, but the competitive landscape has transformed (Google matches on count, Azure exceeds on tooling), four security fixes in four months, an open EKS bypass, 147 open issues, 334 open PRs, and nine deprecated servers show the cost of maintaining this many servers at scale.
 
 | | |
 |---|---|
 | **MCP Server** | AWS MCP Servers |
 | **Publisher** | AWS (awslabs) |
 | **Repository** | [awslabs/mcp](https://github.com/awslabs/mcp) |
-| **Stars** | ~8,800 |
+| **Stars** | ~8,900 |
 | **Forks** | ~1,500 |
-| **Commits** | 1,473 |
-| **Servers** | 53+ |
+| **Commits** | 1,495 |
+| **Servers** | 54 active (9 deprecated) |
 | **Transport** | stdio (most), Streamable HTTP (Knowledge, managed preview) |
 | **Language** | Python |
 | **License** | Apache 2.0 |
@@ -238,5 +237,8 @@ For AWS-heavy teams, this remains essential infrastructure — the Knowledge ser
 | **Pricing** | Free (open source) + AWS service costs |
 | **Our rating** | 4/5 |
 
-*This review was last refreshed on 2026-04-21 using Claude Opus 4.6 (Anthropic).*
+| **Open Issues** | 147 |
+| **Open PRs** | 334 |
+
+*This review was last refreshed on 2026-04-29 using Claude Opus 4.6 (Anthropic).*
 

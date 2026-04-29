@@ -1,25 +1,25 @@
-# Podcasting & Audio Content MCP Servers — ElevenLabs, Whisper, Reaper DAW, Kokoro TTS, Music Generation, and More
+# Podcasting & Audio Content MCP Servers — MimikaStudio, ElevenLabs, MiniMax, Reaper DAW, Kokoro TTS, Suno Music, Podcast Workflows, and More
 
-> Podcasting and audio content MCP servers are giving AI agents full audio production capabilities — text-to-speech synthesis, audio transcription, music generation, DAW control
+> Podcasting and audio content MCP servers are giving AI agents full audio production capabilities — text-to-speech synthesis, voice cloning, audio transcription, music generation, DAW control, and podcast publishing workflows
 
 
 *Part of the [Media & Entertainment](/categories/media-entertainment/) category.*
 
-Podcasting and audio content MCP servers let AI assistants produce speech, transcribe audio, generate music, control DAWs, clone voices, and create sound effects. Instead of manually juggling audio editors, transcription services, and TTS APIs, you can wire these capabilities directly into your AI workflow through the Model Context Protocol.
+Podcasting and audio content MCP servers let AI assistants produce speech, transcribe audio, generate music, control DAWs, clone voices, create sound effects, and now increasingly manage podcast publishing workflows. Instead of manually juggling audio editors, transcription services, and TTS APIs, you can wire these capabilities directly into your AI workflow through the Model Context Protocol.
 
-This review covers the **podcasting and audio content** vertical — text-to-speech, speech-to-text transcription, music generation, DAW control, voice interaction, and podcast feed management. For video production, see our [Video & Streaming review](/reviews/video-production-streaming-mcp-servers/). For general content creation, see our [Content & Copywriting review](/reviews/cms-content-management-mcp-servers/).
+This review covers the **podcasting and audio content** vertical — text-to-speech, speech-to-text transcription, music generation, DAW control, voice interaction, podcast feed management, and podcast-specific production tools. For video production, see our [Video & Streaming review](/reviews/video-production-streaming-mcp-servers/). For general content creation, see our [Content & Copywriting review](/reviews/cms-content-management-mcp-servers/).
 
-The headline findings: **ElevenLabs has 1,100 stars** and is the most comprehensive audio MCP server — TTS, voice cloning, transcription, and sound effects in one package. **REAPER DAW has 600+ tools** available through total-reaper-mcp. **Local TTS and STT are genuinely viable** — Kokoro, Chatterbox, and whisper.cpp mean zero cloud costs. **Podcast-specific workflows are the gap** — individual audio tools are strong, but no server handles the full podcast lifecycle.
+The headline findings: **MiniMax-MCP EXPLODED to 1,400 stars** (+233%) and is now the most-starred audio MCP server. **MimikaStudio arrived at 540 stars** with 50+ MCP tools — the most comprehensive local audio production server with multi-engine TTS, voice cloning from 3 seconds, and audiobook generation. **ElevenLabs grew to 1,300 stars** with 14 releases. **Kokoro TTS spawned an ecosystem** of dedicated MCP servers. **Suno music generation is NEW** — AI music from text prompts. **The podcast workflow gap is finally filling** — Podigee launched the first hosting platform MCP, and dedicated podcast production servers handle script-to-audio pipelines, publishing automation, and podcast search. **REAPER DAW has 600+ tools** across an expanded server ecosystem including a new 62-star entry.
 
 ## Text-to-Speech
 
-### elevenlabs/elevenlabs-mcp (Most Comprehensive)
+### elevenlabs/elevenlabs-mcp (Professional Cloud Platform)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) | 1,100 | Python | — | ~10 |
+| [elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) | 1,300 | Python | — | ~10 |
 
-The **most starred and feature-rich audio MCP server** — the official ElevenLabs integration provides access to their full AI audio platform:
+The **official ElevenLabs MCP server** — provides access to their full AI audio platform with v0.9.1 (14 releases, 63 commits):
 
 - **Text-to-Speech** — convert text to natural-sounding speech with fine-grained control over stability, style, and similarity
 - **Voice Cloning** — clone voices from audio samples or generate new voices from text descriptions (age, gender, accent, tone)
@@ -28,54 +28,76 @@ The **most starred and feature-rich audio MCP server** — the official ElevenLa
 - **Transcription** — speech-to-text with speaker identification
 - **Sound Effects** — generate effects from text descriptions
 - **Soundscapes** — create ambient audio environments from descriptions
+- **Data Residency** — NEW enterprise configuration for data location preferences
+- **Configurable Output Modes** — file output, resource output, or both
 
-Free tier includes 10,000 credits/month. Requires ElevenLabs API key. Works with Claude Desktop, Cursor, Windsurf, and OpenAI Agents.
+Free tier includes 10,000 credits/month. Requires ElevenLabs API key. Works with Claude Desktop, Cursor, Windsurf, and OpenAI Agents. Also available as a community-maintained server: mamertofabian/elevenlabs-mcp-server (118 stars) with SQLite voice generation history tracking and a SvelteKit web client.
 
 ### blacktop/mcp-tts (Multi-Engine)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-tts](https://github.com/blacktop/mcp-tts) | — | Go | — | 4 |
+| [mcp-tts](https://github.com/blacktop/mcp-tts) | 56 | Go | MIT | 4 |
 
-The **Swiss Army knife of TTS** — supports 4 backends through a single MCP server:
+The **Swiss Army knife of TTS** — supports 4 backends through a single MCP server (116 commits, actively maintained):
 
 - **say_tts** — macOS built-in `say` command (free, no API key, offline)
 - **elevenlabs_tts** — ElevenLabs API for high-quality speech
 - **google_tts** — Google Gemini TTS with 30 high-quality voices (Zephyr, Puck, Charon, Kore, Fenrir, Leda, and more)
-- **openai_tts** — OpenAI TTS API with various voice options
+- **openai_tts** — OpenAI TTS API with speed control from 0.25x to 4.0x
 
-Sequential speech queuing prevents overlapping audio — subsequent requests wait in a queue until the current speech completes. Good for comparing providers or switching backends without changing your MCP setup.
+NEW: Sequential or concurrent TTS operation modes (configurable), audio file saving with format-specific outputs, output suppression to prevent LLM interference, multi-instance protection via system-wide file locks, and **Agent Skills support** — automatically announces completion events across Claude Code, Codex CLI, and Gemini CLI following the Agent Skills open standard.
 
-### MiniMax-AI/MiniMax-MCP (Multi-Modal)
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) | 421 | Python | — | ~8 |
-
-The **multi-modal powerhouse** — official MiniMax MCP server combining audio, image, and video generation:
-
-- **Text-to-Speech** — natural voice synthesis
-- **Voice Cloning** — clone voices from audio samples
-- **Music Generation** — high-quality music creation via the music-1.5 model
-- **Image Generation** — text-to-image
-- **Video Generation** — text-to-video and image-to-video with MiniMax-Hailuo-02 (6s/10s duration, 768P/1080P)
-
-The only MCP server covering this many audio+visual modalities in a single package. Requires MiniMax API key.
-
-### hammeiam/koroko-speech-mcp (Local, Free)
+### MiniMax-AI/MiniMax-MCP (Multi-Modal — EXPLODED)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [koroko-speech-mcp](https://github.com/hammeiam/koroko-speech-mcp) | — | TypeScript | MIT | ~2 |
+| [MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) | 1,400 | Python | — | 8 |
+| [MiniMax-MCP-JS](https://github.com/MiniMax-AI/MiniMax-MCP-JS) | 121 | TypeScript | — | 6 |
 
-**Local TTS with no API key** — uses the Kokoro TTS model for free, offline speech synthesis:
+**EXPLODED from 421→1,400 stars (+233%)** — now the most-starred audio MCP server. Official MiniMax server combining audio, image, and video generation:
 
-- Multiple voice options (default: af_bella)
-- Customizable speech speed (0.5–2.0x, default 1.1)
-- Automatic model download on first use with retry logic
-- Model status monitoring via `get_model_status` tool
+- **text_to_audio** — natural voice synthesis with language boost and subtitle options
+- **voice_clone** — replicate voice using audio samples
+- **voice_design** — NEW: generate custom voices from text descriptions of desired characteristics
+- **music_generation** — high-quality music creation via the enhanced music-1.5 model
+- **generate_image** — text-to-image
+- **generate_video** — text-to-video with MiniMax-Hailuo-02 (6s/10s duration, 768P/1080P)
+- **list_voices** — display available voice options
+- **query_video_generation** — check task status
 
-No cloud dependencies, no usage limits. Best for developers wanting free, private TTS integration.
+NEW JavaScript implementation (MiniMax-MCP-JS, 121 stars) provides the same capabilities in TypeScript with npm distribution. Supports both stdio and SSE transport. The only MCP server covering this many audio+visual modalities in a single package. Requires MiniMax API key.
+
+### BoltzmannEntropy/MimikaStudio (Local Multi-Engine — NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [MimikaStudio](https://github.com/BoltzmannEntropy/MimikaStudio) | 540 | Python | Apache 2.0 | 50+ |
+
+The **most comprehensive local audio production MCP server** — a macOS (Apple Silicon) application with 50+ MCP tools across multiple categories:
+
+- **Multi-Engine TTS** — Qwen3-TTS (0.6B/1.7B, January 2026), Kokoro-82M, Chatterbox (multilingual, 23 languages), Supertonic-2
+- **Voice Cloning** — from just 3 seconds of reference audio via Qwen3-TTS, cross-language cloning via Chatterbox (clone in English, speak in Japanese)
+- **Audiobook Generation** — full document-to-audiobook pipeline with queueable chapters, reusable voice presets
+- **Document Read-Aloud** — PDF, DOCX, EPUB, Markdown, TXT with sentence-level highlighting
+- **MCP Tool Categories** — TTS generation on all engines, voice sample management, audiobook generation and progress monitoring, system monitoring, model status checks and downloads
+- **Agentic Job Queue** — orchestrated voice cloning server with job management
+
+v2026.04.1. Requires macOS 13+, Apple Silicon (M1/M2/M3/M4), 8GB RAM minimum, 5-10GB storage for models. Local-first — all processing on device.
+
+### Kokoro TTS Ecosystem (Local, Free — EXPANDED)
+
+Kokoro-82M has become the **de facto open-source TTS model for MCP** with multiple dedicated servers:
+
+| Server | Stars | Language | License | Focus |
+|--------|-------|----------|---------|-------|
+| [koroko-speech-mcp](https://github.com/hammeiam/koroko-speech-mcp) | — | TypeScript | MIT | Original Kokoro MCP — multiple voices, customizable speed |
+| [kokoro-mcp-server](https://github.com/aparsoft/kokoro-mcp-server) | 8 | Python | Apache 2.0 | YouTube creators — librosa audio enhancement, batch processing, Streamlit UI, Docker |
+| [kokoro-tts-mcp](https://github.com/scottschram/kokoro-tts-mcp) | — | Python | MIT | Apple Silicon MLX acceleration — 28 English voices, Claude Code/Codex/ChatGPT support |
+| [kokoro-tts-mcp](https://github.com/mberg/kokoro-tts-mcp) | — | Python | — | S3 cloud integration — MP3 output with optional S3 upload |
+| [kokoro-tts-mcp-server](https://github.com/ard1102/kokoro-tts-mcp-server) | — | Python | — | Production deployment — Docker Hub images, production-ready |
+
+All use the Kokoro-82M model (82M parameters) — no API key, no cloud dependencies, no usage limits. Quality comparable to larger commercial models while being significantly faster.
 
 ### digitarald/chatterbox-mcp (Local, Auto-Playback)
 
@@ -83,20 +105,13 @@ No cloud dependencies, no usage limits. Best for developers wanting free, privat
 |--------|-------|----------|---------|-------|
 | [chatterbox-mcp](https://github.com/digitarald/chatterbox-mcp) | — | Python | — | 1 |
 
-**Simplified local TTS** — wraps the Chatterbox model (by Resemble AI) with a single `speak_text` tool that generates speech and plays it automatically:
-
-- Automatic model loading on first use
-- Real-time progress notifications
-- Configurable audio output directory and file TTL
-- Temporary file management handled by the server
-
-Minimal setup — one tool does everything. Good for prototyping voice workflows.
+**Simplified local TTS** — wraps the Chatterbox model (by Resemble AI) with a single `speak_text` tool that generates speech and plays it automatically. Preferred over ElevenLabs in blind listening tests. Automatic model loading, real-time progress notifications, configurable output directory.
 
 ### Edge TTS Servers (Free Cloud TTS)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [edge_tts_mcp_server](https://github.com/yuiseki/edge_tts_mcp_server) | 5 | TypeScript | — | ~2 |
+| [edge_tts_mcp_server](https://github.com/yuiseki/edge_tts_mcp_server) | 7 | TypeScript | MIT | ~2 |
 | [edge-tts-mcp](https://github.com/eraincc/edge-tts-mcp) | — | Python | — | ~2 |
 
 **Free cloud TTS via Microsoft Edge's online service** — no API key required:
@@ -170,18 +185,28 @@ Best for meeting recordings, interviews, and podcast transcription where speaker
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [speech-mcp](https://github.com/Kvadratni/speech-mcp) | ~80 | Python | — | ~5 |
+| [speech-mcp](https://github.com/Kvadratni/speech-mcp) | 81 | Python | — | ~5 |
 
-The **most complete voice interaction server** — a Goose MCP extension providing bidirectional speech:
+The **most complete voice interaction server** — a Goose MCP extension providing bidirectional speech (82 commits):
 
 - **Speech Recognition** — Faster-Whisper (local, base model, no cloud)
 - **Speech Synthesis** — Kokoro TTS with 54+ voice models (~523KB each, auto-downloaded)
-- **Audio Visualization** — real-time waveform display
+- **Multi-Speaker Narration** — NEW: narration in JSON/Markdown formats with multiple speakers
+- **Audio/Video Transcription** — NEW: transcription with optional timestamps
+- **Audio Visualization** — PyQt-based real-time waveform display
 - **Silence Detection** — automatically knows when you've finished speaking
 - **Voice Persistence** — remembers your voice preference between sessions
 - **Continuous Conversation** — ongoing back-and-forth voice interaction
 
 The only MCP server offering a complete conversational voice loop. Requires PortAudio for microphone capture.
+
+### Deepgram Official MCP (NEW — Enterprise STT/TTS)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [deepgram/mcp](https://github.com/deepgram/mcp) | — | Python | MIT | Dynamic |
+
+**Official Deepgram MCP server** — launched April 2026 (v0.1.1). The key innovation: **fetches its tool list from Deepgram's API at runtime** — new tools appear automatically without package upgrades. Covers speech-to-text transcription, text-to-speech generation, speaker diarization, sentiment analysis, topic detection, entity extraction, summarization, and language detection. Supports stdio and SSE transport. Works standalone or integrated with Deepgram CLI. Multiple AI models available including Nova-3, Nova-2, and Whisper.
 
 ### Azure MCP Server (Enterprise)
 
@@ -193,27 +218,61 @@ The **Azure MCP Server** includes speech-to-text and text-to-speech tools throug
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [total-reaper-mcp](https://github.com/shiehn/total-reaper-mcp) | 27 | Python | — | 600+ |
+| [total-reaper-mcp](https://github.com/shiehn/total-reaper-mcp) | 44 | Python | — | 600+ |
 
-The **most comprehensive DAW MCP server** — 100% ReaScript API coverage for REAPER:
+The **most comprehensive DAW MCP server** — 100% ReaScript API coverage for REAPER (102 commits):
 
-- **dsl-production** (default) — 53 tools with natural language DSL plus essential production tools
-- **minimal** — 15 tools for basic operations
-- **traditional** — 146 tools mapping directly to ReaScript functions
+- **dsl-production** (default) — ~53 tools with natural language DSL plus essential production tools
+- **dsl** — 15 tools, minimal natural language interface
+- **groq-essential** — ~146 tools, traditional ReaScript, Groq-compatible
+- **groq-extended** — 200+ tools
+- **midi-production** — ~150 tools, MIDI-focused workflows
+- **mixing** — ~120 tools, audio mixing and mastering
 - **full** — 600+ tools covering the entire ReaScript API
 
 Developed on macOS, works cross-platform. Requires REAPER 6.83+ with embedded Lua 5.4. Tool profiles let you limit exposed tools based on your LLM's tool count restrictions.
 
-### Other REAPER MCP Servers
+### Other REAPER MCP Servers (EXPANDED)
 
-| Server | Focus |
-|--------|-------|
-| [TwelveTake-Studios/reaper-mcp](https://github.com/TwelveTake-Studios/reaper-mcp) | Built by a working producer (7+ albums) — mixing, mastering, MIDI composition |
-| [Aavishkar-Kolte/reaper-daw-mcp-server](https://github.com/Aavishkar-Kolte/reaper-daw-mcp-server) | Intelligent music production assistant with automated project control |
-| [itsuzef/reaper-mcp](https://github.com/itsuzef/reaper-mcp) | Fully mixed and mastered tracks — supports both OSC and ReaScript modes |
-| [dschuler36/reaper-mcp-server](https://github.com/dschuler36/reaper-mcp-server) | Audio analysis for mixing feedback — connects Reaper projects to Claude |
+| Server | Stars | Tools | Focus |
+|--------|-------|-------|-------|
+| [wegitor/reaper-reapy-mcp](https://github.com/wegitor/reaper-reapy-mcp) | 62 | 40+ | NEW — reapy-based, dual position format (seconds + measure:beat), MIDI/audio/effects/routing |
+| [bonfire-audio/reaper-mcp](https://github.com/itsuzef/reaper-mcp) | 56 | 58 | v0.1.1 (March 2026) — renamed from itsuzef, project/track/MIDI/FX/mixing/mastering/rendering/analysis |
+| [TwelveTake-Studios/reaper-mcp](https://github.com/TwelveTake-Studios/reaper-mcp) | 15 | 130 | v1.1.0 — built by working producer (7+ albums), workflow automation, setup_sidechain_compression() |
+| [Aavishkar-Kolte/reaper-daw-mcp-server](https://github.com/Aavishkar-Kolte/reaper-daw-mcp-server) | — | — | Intelligent music production assistant with automated project control |
+| [dschuler36/reaper-mcp-server](https://github.com/dschuler36/reaper-mcp-server) | — | — | Audio analysis for mixing feedback — connects Reaper projects to Claude |
 
-REAPER has the best DAW MCP coverage of any audio production software. No equivalent exists for Ableton Live, Logic Pro, FL Studio, or Pro Tools.
+REAPER has the best DAW MCP coverage of any audio production software with 5+ dedicated servers and 800+ total unique tools. No equivalent exists for Ableton Live, Logic Pro, FL Studio, or Pro Tools.
+
+### Suno MCP Servers (AI Music Generation — NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [lioensky/MCP-Suno](https://github.com/lioensky/MCP-Suno) | 25 | TypeScript | — | 1 |
+| [CodeKeanu/suno-mcp](https://github.com/CodeKeanu/suno-mcp) | 2 | Python | — | 6 |
+
+**AI music generation from text prompts** via the Suno API — the dominant text-to-music platform (Suno v5 released March 2026 with voice cloning, custom model fine-tuning, and Suno Studio DAW):
+
+- **Custom mode** — provide lyrics, style tags, and title for precise control
+- **Inspiration mode** — describe what you want and get a fully produced song
+- **Song extension** — continue generating from any timestamp
+- **Cover/remix creation** — transform existing songs
+- **Multiple model versions** — v3.5, v4, v4.5, v4.5plus, v5 (v5 recommended)
+
+CodeKeanu's version adds Docker deployment, WAV conversion, track status monitoring, and credit management. Fully produced songs generated in under a minute.
+
+### linxule/mcp-music-studio (Dual-Mode — NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mcp-music-studio](https://github.com/linxule/mcp-music-studio) | 37 | TypeScript | — | 5 |
+
+**The most complete music composition MCP server** — dual-mode creative environment (March 2026):
+
+- **Composition mode** — ABC notation with real-time sheet music rendering, 30+ selectable instruments, 8 style presets (rock, jazz, bossa, waltz, march, reggae, folk, classical)
+- **Performance mode** — Strudel live coding with 72 drum machine banks, 128 GM instruments, built-in synths, filters/reverb/delay effects chain
+- **Tools** — `play-sheet-music`, `play-live-pattern`, `get-music-guide`, `get-strudel-guide`, `search-music-docs`
+- WAV audio download, live REPL editing, inline rendering in Claude Desktop
 
 ### pasie15/mcp-server-musicgpt (AI Music Platform)
 
@@ -221,49 +280,39 @@ REAPER has the best DAW MCP coverage of any audio production software. No equiva
 |--------|-------|----------|---------|-------|
 | [mcp-server-musicgpt](https://github.com/pasie15/mcp-server-musicgpt) | — | TypeScript | — | 24 |
 
-**Full AI music production pipeline** via the MusicGPT API:
+**Full AI music production pipeline** via the MusicGPT API — music generation from text prompts, cover song creation, sound effects, lyrics generation, voice conversion, TTS, mastering, remixing, and AI vocal addition. 24 tools covering the full creative audio spectrum.
 
-- Music generation from text prompts with optional lyrics
-- Cover song creation with different AI voices
-- Sound effects from text descriptions
-- Lyrics generation based on themes
-- Voice conversion — change audio to sound like different voices
-- Text-to-speech conversion
-- Audio mastering, remixing, and speed adjustment
-- AI vocal addition to instrumental tracks
+### Other Music Generation Servers
 
-24 tools covering the full creative audio spectrum. Requires MusicGPT API key.
+| Server | Stars | Focus |
+|--------|-------|-------|
+| [falahgs/mcp-minimax-music-server](https://github.com/falahgs/mcp-minimax-music-server) | — | MiniMax Music API wrapper for music generation |
+| [tubone24/midi-mcp-server](https://github.com/tubone24/midi-mcp-server) | — | MIDI file generation from structured JSON — multi-track, chord support, interactive piano-roll preview, Cloudflare Workers deployment |
+| [williamzujkowski/strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) | — | Strudel.cc live coding — AI-assisted algorithmic composition, 17 curated patterns across 10 genres |
 
-### falahgs/mcp-minimax-music-server (MiniMax Music API)
+## Podcast Production & Workflow (GAP FILLING)
 
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [mcp-minimax-music-server](https://github.com/falahgs/mcp-minimax-music-server) | — | Python | — | ~3 |
+The podcast-specific workflow gap identified in March 2026 is **actively filling**. Multiple dedicated podcast MCP servers have appeared:
 
-Generates music and audio content using the **MiniMax Music API** through MCP. Straightforward wrapper for teams already using MiniMax's audio capabilities.
+### Podigee MCP (FIRST Hosting Platform — NEW)
 
-### tubone24/midi-mcp-server (MIDI Generation)
+**Podigee launched the world's first podcast hosting platform MCP server** (April 2025). Instead of navigating traditional dashboards, podcasters can ask natural language questions like "What were my top episodes this month?" Capabilities include:
 
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [midi-mcp-server](https://github.com/tubone24/midi-mcp-server) | — | TypeScript | — | 1 |
+- **Natural Language Analytics** — trend analysis, episode comparisons, listener behavior patterns
+- **Workflow Automation** — content distribution, show notes generation, social media posting
+- **Multi-Podcast Support** — access data across multiple shows or focus on individual podcasts
 
-Generates **MIDI files from structured JSON data** — supports multiple tracks and instruments with customizable tempo, time signature, and note properties. Uses midi-writer-js and tonal libraries. Runs locally via stdio. Good for programmatic music composition without audio rendering dependencies.
+This is the first time a podcast hosting platform has offered MCP integration — a significant gap closure.
 
-### williamzujkowski/strudel-mcp-server (Live Coding)
+### Other Podcast-Specific Servers (NEW)
 
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) | — | TypeScript | — | ~5 |
-
-**AI-assisted live coding and algorithmic composition** through Strudel.cc:
-
-- Initialize Strudel live coding environment
-- Generate musical patterns across genres
-- Play and analyze audio in real time
-- 17 curated example patterns across 10 genres
-
-Experimental but functional. Best for creative coding and generative music exploration.
+| Server | Stars | Focus |
+|--------|-------|-------|
+| [adamanz/podcast-generator-mcp](https://github.com/adamanz/podcast-generator-mcp) | 4 | Complete Script→Audio→Final Podcast pipeline — 20+ ElevenLabs voices, conversation/interview/educational/debate styles, audio normalization with fades and transitions |
+| [walid-koleilat/mcp-podcast-scraper](https://github.com/walid-koleilat/mcp-podcast-scraper) | — | YouTube podcast scraping + Deepgram Nova-2 transcription, RSS tracking, customizable summary prompts |
+| [eugenechae/podcast-index-mcp](https://github.com/eugenechae/podcast-index-mcp) | — | Search millions of podcasts — 6 tools for podcast/episode discovery, detailed metadata, value block support |
+| [dingkwang/podcast-transcriber-mcp](https://github.com/dingkwang/podcast-transcriber-mcp) | — | RSS feed parsing + OpenAI Whisper transcription — fetch_rss_feed, list_episodes, transcribe_audio |
+| kaslin.rocks podcast-assistant-mcp | — | Publishing workflow automation — show notes, social media drafts (X, LinkedIn), blog posts from transcripts, Cloud Run deployment |
 
 ## Podcast Feed Management
 
@@ -277,31 +326,28 @@ Several RSS/Atom MCP servers handle podcast feed consumption:
 | [imprvhub/mcp-rss-aggregator](https://github.com/imprvhub/mcp-rss-aggregator) | — | Claude Desktop feed aggregation |
 | [S1R15H/blog-mcp-server](https://github.com/S1R15H/blog-mcp-server) | — | Blog RSS/Atom with post search |
 
-These work for **consuming** podcast RSS feeds — listing episodes, fetching descriptions, and searching content. They lack podcast-specific features like episode metadata enrichment, transcript pairing, or show notes extraction.
+These work for **consuming** podcast RSS feeds — listing episodes, fetching descriptions, and searching content.
 
 ## Streaming Platform Integration
 
 Multiple Spotify MCP servers exist for playback and playlist control:
 
-| Server | Focus |
-|--------|-------|
-| [varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp) | Claude + Spotify via spotipy API |
-| [marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) | Lightweight — Cursor & Claude playback control |
-| [Carrieukie/spotify-mcp-server](https://github.com/Carrieukie/spotify-mcp-server) | Kotlin — natural language access to Spotify Web API |
+| Server | Stars | Focus |
+|--------|-------|-------|
+| [varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp) | 597 | Claude + Spotify — **marked INACTIVE March 2026**, Spotify deprecating API features |
+| [marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) | — | Lightweight — Cursor & Claude playback control |
+| [Carrieukie/spotify-mcp-server](https://github.com/Carrieukie/spotify-mcp-server) | — | Kotlin — natural language access to Spotify Web API |
 
-Useful for **podcast listening workflows** — search for podcasts, control playback, manage playlists. Not production tools.
+Note: varunneal/spotify-mcp reached 597 stars but went inactive in March 2026 as Spotify deprecated several API features. Alternative implementations remain available.
 
-## What's missing
+## What's still missing
 
-The audio production building blocks are strong, but **podcast-specific workflows** are the clear gap:
+The podcast workflow gap is narrowing but some areas remain:
 
-- **No podcast hosting integrations** — Spotify for Podcasters, Apple Podcasts Connect, Anchor, Buzzsprout, Podbean, Libsyn have no MCP servers
-- **No episode scheduling/publishing** — no server can publish an episode to a hosting platform
-- **No podcast analytics** — listener metrics, download stats, demographic data
-- **No show notes generation** — transcription exists but automated show notes from transcripts doesn't
-- **No transcript editing** — servers produce transcripts but don't support edit/review workflows
-- **No audio mastering pipeline** — individual tools exist but no end-to-end podcast mastering workflow
-- **No podcast distribution** — no multi-platform publishing (push to Apple, Spotify, Google simultaneously)
+- **Limited podcast hosting integrations** — only Podigee has an MCP server; Spotify for Podcasters, Apple Podcasts Connect, Buzzsprout, Podbean, Libsyn still absent
+- **No multi-platform distribution** — no single server pushes episodes to Apple, Spotify, Google simultaneously
+- **No podcast analytics at scale** — Podigee covers its own platform but no cross-platform listener metrics
+- **No transcript editing workflows** — servers produce transcripts but don't support interactive edit/review
 - **No audiogram generation** — waveform videos for social media promotion
 - **No chapter markers** — enhanced podcasting features like chapters, links, images
 - **No dynamic ad insertion** — programmatic ad placement in episodes
@@ -309,9 +355,11 @@ The audio production building blocks are strong, but **podcast-specific workflow
 
 ## The bottom line
 
-Podcasting and audio content MCP servers earn **4 out of 5**. The building blocks are genuinely strong — ElevenLabs provides a professional-grade audio AI platform with 1,100 stars and comprehensive TTS, voice cloning, transcription, and sound effects. Local options (Kokoro, Chatterbox, whisper.cpp) mean you can do real audio work without cloud costs. REAPER DAW coverage is exceptional with 600+ tools across multiple servers. Music generation is emerging with text-to-music, MIDI creation, and live coding tools.
+Podcasting and audio content MCP servers earn **4.5 out of 5**, upgraded from 4/5 in March 2026. The ecosystem has matured substantially across every dimension:
 
-The weakness is the gap between having individual audio tools and having podcast-specific workflows. You can transcribe audio, generate speech, make music, and mix in REAPER — but no server helps you record, edit, write show notes, add chapters, publish to hosting platforms, distribute across directories, and track listener analytics. You'd need to chain multiple servers together and build the podcast workflow yourself. For audio production broadly, the ecosystem is ready. For podcast production specifically, you're still assembling the pipeline manually.
+**MiniMax-MCP's explosion to 1,400 stars** (+233%) makes it the most popular audio MCP server — multi-modal TTS, voice cloning, voice design, music generation, image, and video in one package. **MimikaStudio arrived at 540 stars** as the most comprehensive local audio production server with 50+ MCP tools, multi-engine TTS (including the cutting-edge Qwen3-TTS), and voice cloning from just 3 seconds of audio. **ElevenLabs grew to 1,300 stars** with 14 releases and enterprise data residency. **Kokoro-82M spawned a full ecosystem** of dedicated MCP servers for Apple Silicon, Docker production, YouTube creators, and cloud upload. **REAPER DAW expanded** to 5+ servers with 800+ total unique tools, including the new 62-star reaper-reapy-mcp. **Suno music generation arrived** with AI-produced songs from text prompts. **mcp-music-studio** provides dual-mode composition with 30+ instruments and 72 drum banks.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+Most importantly, **the podcast-specific workflow gap is filling**. Podigee launched the first podcast hosting platform MCP server. Dedicated servers now handle script-to-audio pipelines, podcast transcription from RSS feeds, publishing workflow automation, and podcast discovery across millions of shows. The gap to 5/5 remains in multi-platform distribution, broad hosting platform coverage (beyond Podigee), and interactive transcript editing — but the trajectory is clear. For audio production broadly, the ecosystem is production-ready. For podcast production specifically, the manual pipeline assembly is giving way to purpose-built tools.
+
+*This review was refreshed on 2026-04-29 using Claude Opus 4.6 (Anthropic). Originally published 2026-03-16.*
 
