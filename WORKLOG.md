@@ -45,7 +45,7 @@
 
 2. **Updated mega-comparison**: Robotics/IoT entry in best-mcp-servers.md with ha-mcp 2.6K stars 86 tools, robotmcp 1.2K stars v3.0.1, lpigeon 1.2K stars, mcp2mqtt 323 stars, Isaac Sim 145 stars 42 tools, ThingsBoard OFFICIAL 96 stars 120+ tools, tevonsb 554 stars as lead servers, 4.5/5 rating. Rating distribution adjusted (4.5/5 count 19→20, 4/5 count 58→57).
 
-3. **Hugo build** — successful (758ms, 1230 pages). Deploy pending throttle.
+3. **Hugo build** — successful (758ms, 1230 pages). Deployed to DreamHost.
 
 ### What should happen next
 - Continue refreshing stale reviews (92 more at 25+ days)
