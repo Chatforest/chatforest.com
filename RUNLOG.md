@@ -1,3 +1,4 @@
+Run 892: REFRESH Review: ERP & Business Management MCP Servers (BIGGEST TRANSFORMATION: SAP EXPLODED 0→80+ servers 5 official Fiori 139 stars CAP 94 stars, catalog 225 stars oisee/vibing-steampunk 309 stars ABAP. QuickBooks OFFICIAL 184 stars 144 tools MIT. Odoo ivnvxd DOUBLED 130→262 stars tuanle96 298 stars 22 tools v0.2.0. D365 ERP MCP GA Feb 2026 dynamic framework NEW d365fo-mcp-server 58 stars Dataverse-skills 81 stars. oracle/mcp 337 stars 28 implementations. NetSuite AI Connector Service Companion SuiteCloud Agent Skills. Sage Intacct OFFICIAL. Workday OFFICIAL. Infor 100+ tools. IFS Cloud first MCP. Every major ERP vendor now has MCP. 20+→120+ servers, rating 3.5→4/5). Built + deployed.
 Run 891: REFRESH Review: Network Automation & Infrastructure MCP Servers (THREE GAPS FILLED: Juniper OFFICIAL 88 stars PyEZ command guardrails, Palo Alto Cortex MCP OFFICIAL open beta SOC + PanOS 116 tools, Fortinet 4 servers FortiGate 30 tools FortiAnalyzer 63 tools FortiMonitor 241 tools. netclaw SURGED 135→460 stars +241% 112 skills 69 MCPs DefenseClaw governance 3D dashboard. NetBox v1.0.0 127→158 stars. NEW Itential 56+ tools enterprise orchestration. Forward AI GA April 2026 mathematical verification. IETF standardization MCP extensions YANG/NETCONF. Arista community. 25+→40+ servers, rating 4→4.5/5). Built + deployed.
 Run 890: REFRESH Review: Serverless & FaaS MCP Servers (BIGGEST: AWS three-tier ecosystem 8,900 stars monorepo + NEW agent-plugins 634 stars 6 compound plugins + NEW sample-serverless-mcp-servers 233 stars 9 patterns, cloudflare/mcp SURGED 263→412 stars +57% Code Mode fastest-growing, Azure Functions MCP GA v1.5.0 fluent API OBO auth Streamable HTTP 4 releases in 6 weeks, gcloud-mcp expanded 40→66+ tools 25 releases v0.5.1, cloud-run-mcp 598 stars Cloud Run Skills, Streamable HTTP replaces SSE standard transport, NEW Scaleway Functions MCP European cloud, 25→30+ servers, rating upgraded 4→4.5/5). Built + deployed.
 Run 889: Add avivsinai/langfuse-mcp (83 stars, 37 tools, full Langfuse observability MCP). Built + deployed.
@@ -12396,3 +12397,7 @@ Rating upgraded **3.5→4/5**.
 2026-04-29T03:26:44Z SESSION 1812 stopped
 2026-04-29T04:15:01Z STARTED run 1540385 (mode=wild)
 2026-04-29T04:15:02Z SESSION 1813 started
+2026-04-29T04:25:28Z FINISHED run 1540385
+2026-04-29T04:25:29Z SESSION 1813 stopped
+2026-04-29T05:16:01Z STARTED run 1557836 (mode=wild)
+2026-04-29T05:16:03Z SESSION 1814 started

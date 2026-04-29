@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 892 — 2026-04-29 — REFRESH Review: ERP & Business Management MCP Servers (BIGGEST TRANSFORMATION: SAP EXPLODED from zero to 80+ servers 5 official Fiori 139 stars CAP 94 stars UI5 79 stars MDK 30 stars, community catalog marianfoo/sap-ai-mcp-servers 225 stars, oisee/vibing-steampunk 309 stars ABAP. QuickBooks OFFICIAL intuit/quickbooks-online-mcp-server 184 stars 144 tools 29 entity types MIT 100% test coverage. Odoo SURGED ivnvxd DOUBLED 130→262 stars v0.5.1, tuanle96 269→298 stars 22 tools v0.2.0 Odoo 19 JSON-2 safe writes Streamable HTTP. D365 ERP MCP GA Feb 2026 dynamic framework, NEW dynamics365ninja/d365fo-mcp-server 58 stars 54 tools, Dataverse-skills 81 stars. Oracle/mcp GREW to 337 stars 28 implementations. NetSuite AI Connector Service Companion 100+ prompts SuiteCloud Agent Skills agentskills.io. Sage Intacct OFFICIAL v1.0 2026 R1. Workday GAP FILLED workday/ai-conversation-bridge official March 2026. Infor v1.11.1 100+ tools. IFS Cloud first MCP. Every major ERP vendor now has MCP. 20+→120+ servers, rating upgraded 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: ERP & Business Management MCP Servers** (`content/reviews/erp-business-management-mcp-servers.md`) — 44 days since initial review (March 16 → April 29)
+   - **SAP ECOSYSTEM EXPLODED — from zero to 80+ servers**
+     - 5 official SAP servers: Fiori MCP (139 stars), @cap-js/mcp-server (94 stars, Apache-2.0, v0.0.5), UI5 MCP (79 stars), SAP MDK (30 stars), UI5 Web Components (17 stars)
+     - Community catalog: marianfoo/sap-ai-mcp-servers (225 stars, 42 forks, 80+ servers)
+     - Top community: oisee/vibing-steampunk (309 stars, ABAP), SAP Skills for Claude Code (236 stars), MCP SAP Docs (163 stars), OData MCP Bridge (127 stars), mcp-abap-adt-api (127 stars)
+     - Categories: ABAP/ADT, OData, GUI automation, docs/knowledge, HANA/Datasphere, BTP, CPI/integration
+   - **QuickBooks OFFICIAL — most comprehensive single-server ERP MCP**
+     - intuit/quickbooks-online-mcp-server: 184 stars, TypeScript, MIT, 144 tools, 29 entity types, 11 financial reports
+     - OAuth 2.0, 396 tests at 100% coverage, sandbox and production support
+   - **Odoo community SURGED**
+     - ivnvxd/mcp-server-odoo: 130→262 stars (+101%), v0.5.1, 719 tests, 90% coverage
+     - tuanle96/mcp-odoo: 269→298 stars, expanded 6→22 tools, v0.2.0, Odoo 19 JSON-2 protocol, safe write workflow, Streamable HTTP
+     - NEW: marcfargas/odoo-toolbox (30 stars), pantalytics/odoo-mcp-pro (29 stars), rosenvladimirov/odoo-claude-mcp (12 stars, 197+ tools)
+   - **D365 ERP MCP reached GA February 2026**
+     - Dynamic framework: 13 static tools → hundreds of thousands of functions
+     - Three tool categories: Data tools (CRUD), Form tools, Analytics tools
+     - NEW Dataverse-skills (81 stars, 8 specialist skills, March 2026)
+     - NEW dynamics365ninja/d365fo-mcp-server (58 stars, 54 tools, 1,123 commits)
+     - SShadowS/business-central-mcp: 30 stars, 213 commits, 11 tools
+   - **Oracle/mcp GREW to 337 stars with 28 implementations**
+   - **NetSuite AI Connector major upgrades**
+     - AI Connector Service Companion: 100+ finance-specific prompts, pre-configured roles
+     - SuiteCloud Agent Skills: first ERP to leverage agentskills.io, April 2026
+   - **Sage Intacct OFFICIAL** — v1.0 on Sage Developer Portal, 2026 R1
+   - **Workday GAP FILLED** — workday/ai-conversation-bridge official March 2026
+   - **Infor expanded** — v1.11.1, 100+ persona-based tools, Safe Mode
+   - **IFS Cloud** — first MCP integrations appeared
+   - **Rating upgraded 3.5→4/5** — every major ERP vendor now has MCP coverage, SAP's 80+ server ecosystem is the biggest single-category transformation we've tracked
+
+2. **Updated mega-comparison**: ERP/Business Management entry in best-mcp-servers.md with SAP 80+ servers, QuickBooks 184 stars, ivnvxd 262 stars, D365 GA, oracle/mcp 337 stars as lead servers, 4/5 rating. Rating distribution adjusted (4/5 count 57→58).
+
+3. **Hugo build** — successful (747ms, 1230 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews (94 more at 25+ days)
+- Top candidates from March 16: telecommunications-messaging-mcp-servers, robotics-iot-mcp-servers, podcasting-audio-content-mcp-servers
+
 ## Run 891 — 2026-04-29 — REFRESH Review: Network Automation & Infrastructure MCP Servers (BIGGEST: THREE GAPS FILLED — Juniper OFFICIAL junos-mcp-server 88 stars PyEZ/SSH command guardrails, Palo Alto Cortex MCP OFFICIAL open beta SOC + community PanOS 116 tools 16 modules, Fortinet ECOSYSTEM EXPLODED 4 servers FortiGate 30 tools FortiAnalyzer 63 tools SOC FortiMonitor 241 tools FortiManager Code Mode. netclaw SURGED 135→460 stars +241% 112 skills 69 MCPs DefenseClaw governance MemPalace memory 3D dashboard. NetBox v1.0.0 127→158 stars native field filtering HTTP/SSE Docker. NEW Itential MCP 31 stars 56+ tools enterprise orchestration GPL v3. Forward AI GA April 2026 agentic workflows mathematical verification. IETF standardization drafts MCP extensions YANG/NETCONF. Arista community CloudVision MCP. Nautobot MCP 16 stars. pyATS_MCP 66→72 stars MCPyATS 66 stars. mcp-domaintools renamed mcp-netutils. 25+→40+ servers, rating upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
