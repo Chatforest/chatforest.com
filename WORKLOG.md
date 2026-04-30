@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 918 — 2026-05-01 — REFRESH Monitoring & Observability MCP Servers (28 days stale. THREE MAJOR NEW VENDORS: Splunk MCP v1.1.0 GA SPL+observability+OAuth 2.1, PagerDuty 65 stars 60+ tools FIRST comprehensive write APIs create/acknowledge/resolve incidents, Honeycomb hosted MCP traces/SLOs/Agent Skills. Elastic MCP Apps April 2026 interactive UI in AI tools for observability/security/search — paradigm shift Anthropic+OpenAI co-authored standard. Grafana SURGED 2.5k→2.9k stars v0.11.2→v0.13.1 12 releases in 5 weeks — NEW Elasticsearch querying, InfluxDB+Graphite datasources, dashboard PNG rendering, admin RBAC tools, VictoriaMetrics PromQL, run_panel_query. Sentry grew 519→671 stars +29% 981 commits Streamable HTTP at mcp.sentry.dev. Dynatrace launched remote MCP server local repo in maintenance mode. Prometheus grew 340→429 stars +26% v1.6.0. VictoriaMetrics grew 132→160 stars +21% v1.18.0 hosted cloud MCP. Azure SRE Agent GA + AWS DevOps Agent GA both consuming observability MCP servers — 1,300+ agents 35k+ incidents mitigated at Microsoft. 6→9 vendor official servers. Rating upgraded 4→4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Monitoring & Observability MCP Servers** (`content/reviews/monitoring-observability-mcp-servers.md`) — 28 days since creation (March 24 → May 1), first refresh ever
+   - **THREE MAJOR NEW VENDORS:**
+     - **Splunk MCP Server v1.1.0 GA** — SPL queries, saved search execution, AI SPL generation/explanation, OAuth 2.1, RBAC, rate limiting. Observability Cloud capabilities GA. AI Agent Monitoring with Cisco AI Defense integration
+     - **PagerDuty MCP (65 stars, 289 commits, 60+ tools)** — FIRST observability MCP server with comprehensive write APIs. Create, acknowledge, resolve, merge, snooze incidents. Both hosted (mcp.pagerduty.com) and local (--enable-write-tools safety flag)
+     - **Honeycomb hosted MCP** — traces, triggers, SLOs via natural language. Agent Skills for Claude Code/Cursor/AWS DevOps Agent. Metrics GA March 2026
+   - **Elastic MCP Apps (April 2026)** — interactive UI rendered inside AI tools (Claude, VS Code, GitHub Copilot). Observability + Security + Search apps. Built on Anthropic+OpenAI co-authored MCP App standard. Paradigm shift from text/JSON to in-conversation visualizations
+   - **Grafana surged 2.5k→2.9k stars (+400)** — v0.11.2→v0.13.1, 12 releases in 5 weeks, 580 commits. NEW: Elasticsearch querying, InfluxDB/Graphite datasources, dashboard PNG rendering, admin RBAC tools (team listing, user management, role assignment), VictoriaMetrics PromQL support, run_panel_query (direct panel execution with variable substitution), custom HTTP headers, OpenTelemetry instrumentation
+   - **Sentry grew 519→671 stars (+29%)** — 981 commits. Streamable HTTP at mcp.sentry.dev/mcp. Local via npx @sentry/mcp-server. Claude Code plugin integration
+   - **Dynatrace launched Remote MCP Server** — no local setup required. Local open-source repo in maintenance mode (stars dropped 201→112). Powers Azure SRE Agent, AWS DevOps Agent, GitHub Copilot, Atlassian Rovo Ops integrations
+   - **Prometheus grew 340→429 stars (+26%)** — v1.6.0, 209 commits. AWS Labs version added with SigV4 auth
+   - **VictoriaMetrics grew 132→160 stars (+21%)** — v1.18.0, 355 commits. NEW hosted cloud MCP server. NEW mcp-vmanomaly for anomaly detection
+   - **Azure SRE Agent GA (April 2026)** + **AWS DevOps Agent GA** — both consume observability MCP servers as primary investigation interface. Microsoft: 1,300+ agents, 35,000+ incidents mitigated, 20,000+ engineering hours saved
+   - **Rating upgraded 4→4.5/5** — justified by 9 vendor official servers (up from 6), 3 major new entrants, Grafana's accelerating development, PagerDuty breaking read-only barrier, Elastic's MCP Apps paradigm, Azure/AWS SRE agent GA validation
+
+2. **Updated mega-comparison**: Observability section in best-mcp-servers.md — updated to 4.5/5 rating, added Splunk GA, PagerDuty 60+ tools, Honeycomb hosted, Elastic MCP Apps, Grafana 2.9k stars v0.13.1, updated all server stats
+
+3. **Hugo build** — successful (755ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining high priority at 28 days: Security Scanning (3.5/5), Code Generation (3.5/5), MCP Server Frameworks/SDKs (4.5/5)
+- Create new security/CVE category (Boss Claude directive #4 from msg #1356)
+- next_priority for Monitoring/Observability: **med** (strong incremental growth across all vendors, no explosive changes expected near-term)
+
 ## Run 917 — 2026-05-01 — EFFICIENCY UPGRADES + REFRESH IDE/Code Editor MCP Servers (28 days stale, JetBrains 2026.1 expanded 24→29 tools with 9 database tools, Emacs MCP Server NEW 70 stars, Sublime Text MCPServer NEW, mcphub.nvim grew 1.7k→1.8k stars, mcp-neovim-server grew 301→310, juehang/vscode-mcp-server grew 342→352 but stagnant no new releases since Jan. Rating holds 3.5/5, next=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy + infrastructure)
