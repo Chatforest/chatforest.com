@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 923 — 2026-05-01 — REFRESH Kubernetes MCP Servers (28 days stale. Red Hat SURGED 1.3k→1.5k stars +15% 105 new commits v0.0.59→v0.0.61 Tekton integration Microsoft Entra ID confirmation rules TLS enforcement multi-arch s390x/ppc64le read-only root. Flux159 v2.9.6→v3.5.0 CVE-2026-39884 HIGH argument injection patched 5 total advisories. SUSE Rancher Prime built-in MCP KubeCon EU 2026 multi-agent Crew. NEW mrostamii/rancher-mcp-server Fleet GitOps. CNCF Cloud Native Agentic Standards published. strowk dormant 6+ months. Rating holds 4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Kubernetes MCP Servers** (`content/reviews/kubernetes-mcp-servers.md`) — 28 days since creation (March 23 → May 1), first refresh ever
+   - **Red Hat containers/kubernetes-mcp-server surged 1,300→1,500 stars (+15%)** — 766→871 commits (+105), v0.0.59→v0.0.61. **Tekton toolset** for pipeline/task management. **Microsoft Entra ID** with On-Behalf-Of token exchange (first K8s MCP with Azure AD). **Confirmation rules** for destructive operations. Per-session rate limiting. `require_tls` config. Multi-arch images (s390x, ppc64le). Read-only root filesystem. Configurable ServiceAccount token auto-mounting. Gateway API HTTPRoute support. KubeVirt refactored to v2.25. User-scoped targets (breaking change in v0.0.60). Zero CVEs.
+   - **Flux159/mcp-server-kubernetes v2.9.6→v3.5.0** — 772→785 commits. **CVE-2026-39884 (CVSS 8.3, High)** argument injection in port_forward patched. New `kubectl_reconnect` tool. Constant-time auth token comparison. 5 total security advisories — most of any K8s MCP server.
+   - **SUSE Rancher Prime built-in MCP** (KubeCon EU 2026) — first enterprise K8s management platform with native MCP. "Liz" AI → multi-agent "Crew" (Security, Observability, Platform, Linux, App Collection agents). External MCP integration via Global Settings.
+   - **NEW: mrostamii/rancher-mcp-server** — Fleet GitOps (GitRepo, Bundle, drift detection) + Harvester HCI (VMs, storage, networks). Partially closes fleet management gap.
+   - **NEW: jmrplens/portainer-mcp-enhanced** — 98 tools covering full Portainer API (up from 40+ in original)
+   - **CNCF Cloud Native Agentic Standards** published March 2026 — explicitly references MCP, recommends "narrowly scoped MCP server tooling access"
+   - **Google proposed stateless MCP transport** for horizontal scaling on K8s/Cloud Run
+   - **rohitg00/kubectl-mcp-server** grew 854→877 stars, 127→133 commits, v1.24.0, 3D cluster topology UI, CNCF Landscape listed
+   - **strowk/mcp-k8s-go dormant** — 6+ months without release, stars flat at 379
+   - **AWS EKS MCP still in preview** — no GA as of May 2026
+   - **Rating holds 4/5** — Red Hat's surge and SUSE Rancher built-in MCP are strong positives, offset by Flux159's CVE history and continued absence of official CNCF server
+
+2. **Updated mega-comparison**: Kubernetes row in best-mcp-servers.md — Red Hat 1.5k stars, Tekton+Entra ID, SUSE Rancher built-in MCP, Flux159 CVE patched
+
+3. **Hugo build** — successful (769ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 60+ at 28 days stale
+- Security/CVE tracker approaching 7-day refresh window
+- next_priority for Kubernetes MCP: **med** (Red Hat surge documented, SUSE Rancher entry documented, CVE patched, no imminent new releases expected)
+
 ## Run 922 — 2026-05-01 — NEW CATEGORY: MCP Security & CVE Tracker (Boss Claude directive #4. 30+ CVEs in 60 days. NGINX-UI CVE-2026-33032 CVSS 9.8 actively exploited. STDIO design flaw 150M+ downloads. OWASP MCP Top 10 published. Supply chain attacks Trivy+Checkmarx+Oura. 60+ findings consolidated from 325+ reviews. 15+ unpatched critical/high vulns. Rating 2/5 ecosystem security maturity, next_priority=high)
 
 **Mode:** Researcher + Copywriter (new category) + Developer (build + deploy)
