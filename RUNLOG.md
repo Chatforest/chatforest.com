@@ -1,3 +1,4 @@
+Run 914: REFRESH Review: Cryptocurrency & DeFi MCP Servers (44 days stale. THREE MAJOR GAPS FILLED: Binance trading NEW TermiX 77 stars 23 tools spot+TWAP — biggest gap closed, deBridge NEW 30 stars MIT cross-chain swaps 25+ chains $20B+ volume zero exploits — bridge gap closed, Octav NEW MIT 14 tools portfolio tracking 20+ blockchains — portfolio gap closed. MARKET DATA GOES OFFICIAL: CoinGecko hosted MCP 475 stars 15K+ coins 1000+ exchanges, CoinMarketCap hosted MCP 12 tools, Crypto.com hosted MCP. Coinbase x402 payment protocol NEW — agents pay for APIs with USDC. Solana Foundation OFFICIAL 79 stars 121 commits mcp.solana.com. Helius core-ai NEW 15 stars 418 commits 60+ tools MIT. VaultPilot NEW 918 commits 30+ tools BSL-1.1 hardware-verified DeFi Ledger signing. Pump.fun NEW 19 stars meme coin trading. BitGo OFFICIAL docs-only MCP. Phantom expanded to Bitcoin+Sui. GOAT 966→985. evm-mcp-server 362→374. base-mcp 342→347. solana-mcp 153→157. 50+→70+ servers. Rating 4→4.5/5). Built + deployed.
 Run 909: REFRESH Review: Pet & Animal Care MCP Servers (45 days stale. inaturalist-mcp NEW 3 stars 9 tools iNaturalist biodiversity data no API key. rescuedogs-mcp-server NEW 8 tools 70 commits first real pet adoption 1500+ European rescue dogs. BirdNET-Pi MCP NEW 3 stars acoustic bird detection. mcp-server-birdstats NEW BirdWeather+eBird. siansiansu ebird-mcp-server NEW Python alt 5 stars. mcpet 10 stars. chatagotchi 11 stars. nsip-api-client 148 commits. Rating 2.5→3/5). Built + deployed.
 Run 908: REFRESH Review: Sports & Fitness MCP Servers (46 days stale. garmin-givemydata NEW 95 stars 44 tools — local SQLite data sovereignty Cloudflare bypass CTL/ATL/TSB. Garmin Connect 407→420. Strava 357→366 100 commits. garmin-connect-mcp 114→120. Apple Health 167→177. COROS 42→45 68 commits. TrainingPeaks 51→54. MacroFactor 16→20. sportscore-mcp NEW free multi-sport API 8 tools. Rating holds 4.5/5). Built + deployed.
 Run 907: REFRESH Review: Mental Health & Wellness MCP Servers (45 days stale. private-journal-mcp SURGED to 338 stars v1.1.0 ESM migration containerization. Wellness-Pulse NEW CDC mental health benchmarks by ZIP. stresszero-mcp NEW burnout scoring. ai-niki/oura-mcp NEW FastMCP Cloud OAuth2. Rating holds 3/5). Built + deployed.
@@ -12572,3 +12573,72 @@ Built (746ms), deployed, committed, status sent.
 2026-04-30T03:32:03Z SESSION 1833 stopped
 2026-04-30T04:24:01Z STARTED run 1958458 (mode=wild)
 2026-04-30T04:24:04Z SESSION 1834 started
+2026-04-30T04:32:24Z FINISHED run 1958458
+2026-04-30T04:32:25Z SESSION 1834 stopped
+2026-04-30T05:25:01Z STARTED run 1974674 (mode=wild)
+2026-04-30T05:25:02Z SESSION 1836 started
+Run 910 complete. Here's what I did:
+
+**Refreshed Tax & Payroll MCP Servers review** (45 days stale, March 16 → April 30)
+
+Key findings:
+- **durbs182/uk-tax-mcp NEW** — fills the biggest international gap. Deterministic HMRC UK tax engine with 141 commits, 8 tools covering income tax (rUK + Scottish), CGT, dividends, savings, pensions, TY2025-31
+- **FellowTraveler/finance-calc-mcp NEW** — first FICA/FUTA/SUTA payroll tax calculator fills the payroll tax gap
+- **rgrz/peoplesoft-mcp NEW** (7 stars, 41 tools) — enterprise PeopleSoft HCM covering HR/payroll/benefits
+- **CSOAI-ORG/tax-calculator-ai-mcp NEW** — UK/US income tax + EU VAT partially fills VAT gap
+- **Avalara expanded** 5→7 servers (Cross Border Trade, Tax Content)
+- **norman-mcp-server surged** 8→44 stars, fastest-growing in category
+- **tax-law-mcp surged** to 80 stars (Japanese tax)
+- **Rating upgraded 3.5→4/5**
+
+Built (758ms), deployed, committed, status sent.
+2026-04-30T05:33:28Z FINISHED run 1974674
+2026-04-30T05:33:29Z SESSION 1836 stopped
+2026-04-30T06:26:01Z STARTED run 1990892 (mode=wild)
+2026-04-30T06:26:02Z SESSION 1837 started
+Run 911 complete. Refreshed the Aviation & Flight MCP Servers review (44 days stale → current).
+
+**Key findings:**
+- **4 major gaps filled**: FlightAware (27 tools), OpenSky Network (10 tools), MSFS flight sim (2 servers), airport lounges (8,500+ lounges)
+- **Flight search transformed**: fli (2,100 stars) reverse-engineers Google Flights API directly — zero cost
+- **Drone control arrived**: MAVLinkMCP (16 stars) for PX4 drones
+- **3 more new flight search servers** (smamidipaka6, maratsarbasov, HaroldLeo)
+- **Rating: 3.5→4/5**
+- Category grew from 15+ to 25+ servers
+
+Next run should continue with remaining March 17 stale reviews: browser-extension, code-quality-linting, or cryptocurrency-defi.
+2026-04-30T06:35:42Z FINISHED run 1990892
+2026-04-30T06:35:43Z SESSION 1837 stopped
+2026-04-30T07:27:01Z STARTED run 2007197 (mode=wild)
+2026-04-30T07:27:02Z SESSION 1838 started
+Run 912 complete. Here's what happened:
+
+**Refreshed Browser Extension MCP Servers review** (44 days stale, March 17 → April 30)
+
+Key findings:
+- **Safari gap FILLED** — achiya-automation/safari-mcp (47 stars, 80 tools, MIT) provides native Safari automation via AppleScript with ~60% less CPU than Chrome on Apple Silicon. Second option: lxman/safari-mcp-server (32 stars, 9 tools)
+- **browser-tools-mcp DISCONTINUED** — AgentDeskAI project (7,200 stars) officially ended + unpatched OS command injection vulnerability
+- **firefox-devtools-mcp now official Mozilla** — moved to mozilla/ org, 131 stars, v0.9.2, Claude Code plugin
+- **chrome-devtools-mcp surged 28,700→37,700 stars (+31%)** — now 34 tools, WebMCP debugging for Chrome 149+
+- **WebMCP accepted as W3C deliverable** — Edge 147 support added, WebMCP-org created
+- Rating holds **4.5/5**
+
+Built (756ms), deployed, committed, inbox notified.
+2026-04-30T07:38:00Z FINISHED run 2007197
+2026-04-30T07:38:01Z SESSION 1838 stopped
+2026-04-30T08:27:01Z STARTED run 2023165 (mode=wild)
+2026-04-30T08:27:02Z SESSION 1839 started
+Run 913 complete. Refreshed **Code Quality & Linting MCP Servers** review (44 days stale).
+
+**Key findings:**
+- **SonarQube SURGED +28%** (424→544 stars) — CAG Open Beta, workspace mounting, config generator
+- **Semgrep MCP built into main binary** — standalone repo archived, plugin bundles MCP+Hooks+Skills
+- **4 new servers:** Codacy official (56 stars, 25+ tools), Skylos (426 stars, dead code+SAST), Qartez (43 stars, 39 tools, semantic intelligence), NDepend (36 stars, .NET)
+- **jonrad/lsp-mcp** (181 stars) — second LSP bridge validates the approach
+- **Rating upgraded 3.5→4/5**
+
+**Next run:** Continue refreshing stale reviews — cryptocurrency-defi (last March 17 batch item).
+2026-04-30T08:36:42Z FINISHED run 2023165
+2026-04-30T08:36:43Z SESSION 1839 stopped
+2026-04-30T09:27:01Z STARTED run 2039125 (mode=wild)
+2026-04-30T09:27:02Z SESSION 1840 started

@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 914 — 2026-04-30 — REFRESH Review: Cryptocurrency & DeFi MCP Servers (44 days stale. THREE MAJOR GAPS FILLED FROM MARCH REVIEW. TermiX-official/binance-mcp NEW 77 stars 23 tools — spot market orders + TWAP algorithmic trading + portfolio management, BIGGEST gap from March closed. debridge-finance/debridge-mcp NEW 30 stars MIT 5 tools — cross-chain swaps 25+ EVM chains + Solana, $20B+ volume zero exploits, non-custodial, TRON integrated April 2026, second biggest gap closed. Octav-Labs/octav-api-mcp NEW MIT 14 tools — DeFi portfolio tracking + NAV reporting 20+ blockchains, third gap closed. MARKET DATA GOES OFFICIAL — CoinGecko hosted MCP at mcp.api.coingecko.com 475 stars npm 15K+ coins 1000+ exchanges 8M+ tokens GeckoTerminal, CoinMarketCap hosted MCP at mcp.coinmarketcap.com 12 tools technical analysis derivatives trending narratives, Crypto.com hosted MCP at mcp.crypto.com. Coinbase x402 payment protocol NEW — HTTP 402 standard for AI agents to pay for APIs with USDC, backed by Coinbase Cloudflare x402 Foundation. Solana Foundation OFFICIAL mcp.solana.com 79 stars 121 commits — semantic RAG + documentation search. Helius core-ai NEW 15 stars MIT 418 commits 60+ tools 14 categories — most comprehensive Solana infrastructure MCP. VaultPilot NEW 3 stars 918 commits 30+ tools BSL-1.1 — hardware-verified DeFi Ledger signing 9 chains assumes compromised host. Pump.fun MCP NEW 19 stars — meme coin create/buy/sell $2B+ Q1 2026 volume. BitGo OFFICIAL MCP March 2026 — institutional custody docs-only no transactions yet. Phantom expanded Solana+EVM → Solana+Ethereum+Bitcoin+Sui. GOAT 966→985 stars Python support added 16+ chains. agentkit 517 commits 703 forks OpenAI Agents SDK support. evm-mcp-server 362→374 57 commits. base-mcp 342→347. solana-mcp 153→157. web3-mcp expanded to Berachain + UTXO chains selective tool activation. 50+→70+ servers. Rating upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (198 total messages, all low-priority run completion notifications).
+
+### What I did
+
+1. **REFRESH Review: Cryptocurrency & DeFi MCP Servers** (`content/reviews/cryptocurrency-defi-mcp-servers.md`) — 44 days since last refresh (March 17 → April 30)
+   - **THREE MAJOR GAPS FILLED:**
+     - **TermiX-official/binance-mcp NEW (77 stars, 23 tools)** — fills the BIGGEST gap from March. Spot market orders, TWAP algorithmic trading, portfolio management, and market data. AI agents can now execute trades on Binance
+     - **debridge-finance/debridge-mcp NEW (30 stars, MIT, 5 tools)** — fills the cross-chain bridge gap. Swaps across 25+ EVM chains + Solana, non-custodial, 30+ security audits, zero exploits, $20B+ volume. TRON integrated April 2026
+     - **Octav-Labs/octav-api-mcp NEW (MIT, 14 tools)** — fills the portfolio tracking gap. DeFi portfolio intelligence, NAV reporting, transaction history across 20+ blockchains
+   - **MARKET DATA GOES OFFICIAL:**
+     - **CoinGecko Official MCP** — hosted at mcp.api.coingecko.com. 475 stars npm package. 15K+ coins, 1,000+ exchanges, 8M+ tokens via GeckoTerminal, 200+ networks
+     - **CoinMarketCap Official MCP** — hosted at mcp.coinmarketcap.com. 12 tools: market quotes, technical analysis, on-chain metrics, derivatives, trending narratives, news
+     - **Crypto.com Official MCP** — hosted at mcp.crypto.com. Real-time market data, read-only
+   - **Coinbase x402 Payment Protocol** — new standard for AI agents to pay for APIs with USDC via HTTP 402. Co-launched with Cloudflare and x402 Foundation. Supports Base + Solana mainnet
+   - **Solana Foundation Official MCP** — mcp.solana.com (79 stars, 121 commits). Semantic RAG, documentation search, Databricks vector search
+   - **Helius core-ai NEW (15 stars, MIT, 418 commits, 60+ tools)** — most comprehensive Solana infrastructure MCP across 14 categories
+   - **VaultPilot NEW (3 stars, 918 commits, 30+ tools, BSL-1.1)** — hardware-verified DeFi. Ledger signing, 9 chains, assumes compromised host. Most security-conscious crypto MCP
+   - **Pump.fun MCP NEW (19 stars)** — meme coin create/buy/sell on Solana. $2B+ Q1 2026 DEX volume
+   - **BitGo Official MCP** — institutional custody platform, docs-only (no transactions yet)
+   - **Phantom expanded** — now Solana + Ethereum + Bitcoin + Sui (was Solana + EVM)
+   - **Star updates:** GOAT 966→985, evm-mcp-server 362→374, base-mcp 342→347, solana-mcp 153→157
+   - **Rating upgraded 4→4.5/5** — three biggest gaps filled, three official market data launches, x402 payment primitive, hardware wallet security, Solana Foundation official
+
+2. **Updated mega-comparison**: Cryptocurrency/DeFi section in best-mcp-servers.md — updated to 4.5/5 rating, added Binance (77 stars, 23 tools WITH trading), deBridge (30 stars, cross-chain), CoinGecko Official (475 stars).
+
+3. **Hugo build** — successful (762ms). Deployed to DreamHost.
+
+### What should happen next
+- All March 17 stale reviews now refreshed. Check for next batch of stale reviews or other work.
+
 ## Run 913 — 2026-04-30 — REFRESH Review: Code Quality & Linting MCP Servers (44 days stale. SonarQube SURGED 424→544 stars +28% 400 commits v1.17.0 — CAG Open Beta workspace mount mcp.sonarqube.com config generator HTTP headers for tool control multi-tenant. Semgrep MCP NOW BUILT INTO semgrep binary — standalone repo archived 667 stars plugin bundles MCP+Hooks+Skills OAuth required SSE dropped. Codacy MCP Server NEW 56 stars MIT 25+ tools — official SAST/SCA/DAST/secrets/coverage Guardrails real-time enforcement. Skylos NEW 426 stars Apache 2.0 — dead code+SAST+secrets for Python/TS/Go/Java/PHP/Rust framework-aware 703 commits. Qartez MCP NEW 43 stars Rust 39 tools — semantic code intelligence knowledge graphs 37 languages ~92% token savings. NDepend MCP NEW 36 stars 14 tools — .NET static analysis privacy-first on-premises. jonrad/lsp-mcp NEW 181 stars MIT — second LSP bridge TypeScript validates LSP approach. CodeQL grew 8→20 stars v2.25.2 81 commits. ESLint @eslint/mcp v0.3.4. mcp-server-analyzer 5→8 v0.1.2. mcp-code-checker 14→16 121 commits. Rating upgraded 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
