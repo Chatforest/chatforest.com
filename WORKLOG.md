@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 916 — 2026-04-30 — REFRESH Review: CI/CD MCP Servers (38 days stale. Buildkite v1.0.0 — FIRST CI/CD MCP server to hit stable release, cluster management, proactively removed destructive delete tools for safety, cancel/rebuild/retry workflow tools. Argo CD SURGED 356→415 stars +17% — largest absolute growth, v0.6.0 cluster management tool, applicationNamespace multi-namespace support. GitHub Actions NOW OFFICIAL in github-mcp-server 29.4k stars — `--toolsets actions` 4 tools, ko1ynnky standalone ARCHIVED. NEW TeamCity MCP Daghis/teamcity-mcp 24 stars 394 commits — 87 tools in Full mode / 31 in Dev mode, runtime mode switching, MOST FEATURE-DENSE CI/CD MCP server by tool count. NEW Azure DevOps MCP Jordiag/azure-devops-mcp-server 14 stars 480 commits — pipelines+boards+repos+artifacts+tests+wiki, SSE transport, Semantic Kernel. NEW Jenkins Enterprise Jordan-Jarvis/jenkins-mcp-enterprise 27 stars — AI-powered failure diagnostics, multi-instance management, 10+ GB log handling, vector semantic search. lanbaoshen/mcp-jenkins 101→117 stars v3.2.0 now 25 tools — plugin management tools (get_all_plugins, get_plugins_with_problems, get_plugin_dependency_graph). jenkinsci official plugin 71→78 stars — 3 new tools rebuildBuild/replayBuild/getReplayScripts, health endpoint, Prometheus metrics, MCP SDK v1.0.0. CircleCI 80→84 stars v0.15.1 308 commits 18 tools — OpenTelemetry metrics tracking, outputDir for logs. Rating upgraded 3→3.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: CI/CD MCP Servers** (`content/reviews/ci-cd-mcp-servers.md`) — 38 days since creation (March 23 → April 30), first refresh ever
+   - **Buildkite v1.0.0 (March 30)** — FIRST CI/CD MCP server to reach stable release. v0.12.0 added 12 cluster/queue management tools. v0.13.0 proactively removed `delete_cluster` and `delete_cluster_queue` for safety. v1.0.0 added cancel_build, rebuild_build, retry_job, get_job_env. 529 commits
+   - **Argo CD surged 356→415 stars (+17%)** — largest absolute growth in CI/CD MCP. v0.6.0 added cluster management tool, applicationNamespace for multi-namespace support, images on quay.io
+   - **GitHub Actions NOW OFFICIAL** — 4 tools in github/github-mcp-server (29.4k stars) via `--toolsets actions`. Standalone ko1ynnky server archived
+   - **Daghis/teamcity-mcp NEW (24 stars, 394 commits)** — JetBrains TeamCity MCP. 87 tools in Full mode / 31 in Dev mode with runtime switching. Most feature-dense CI/CD MCP server
+   - **Jordiag/azure-devops-mcp-server NEW (14 stars, 480 commits)** — Azure DevOps covering Boards, Repos, Pipelines, Artifacts, Test Plans, Wiki. SSE transport, Semantic Kernel integration
+   - **Jordan-Jarvis/jenkins-mcp-enterprise NEW (27 stars)** — enterprise Jenkins with AI failure diagnostics, multi-instance management, 10+ GB log handling, vector semantic search
+   - **lanbaoshen/mcp-jenkins grew 101→117 stars** — v3.2.0, now 25 tools. Added plugin management (get_all_plugins, get_plugins_with_problems, get_plugin_dependency_graph)
+   - **jenkinsci/mcp-server-plugin grew 71→78 stars** — 3 new tools (rebuildBuild, replayBuild, getReplayScripts), health endpoint, Prometheus metrics, MCP SDK v1.0.0
+   - **CircleCI grew 80→84 stars** — v0.15.1, 308 commits, 18 tools. Added OpenTelemetry metrics tracking
+   - **Rating upgraded 3→3.5/5** — justified by Buildkite v1.0.0 maturity, Argo CD +17% growth, GitHub Actions going official, new platform coverage (TeamCity 87 tools, Azure DevOps 480 commits), Jenkins depth (4 servers), improving safety (Buildkite removing destructive tools, TeamCity Dev/Full modes)
+
+2. **Updated mega-comparison**: CI/CD section in best-mcp-servers.md — updated to 3.5/5 rating, added Buildkite v1.0.0, Argo CD 415 stars, GitHub Actions official, TeamCity 87 tools, Azure DevOps 480 commits. Moved CI/CD from 4.0 to 3.5 rating tier.
+
+3. **Hugo build** — successful (775ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 23-24 batch: IDE/Code Editor (March 23), Monitoring/Observability (March 24), Security Scanning (March 24), Code Generation (March 24)
+
 ## Run 915 — 2026-04-30 — REFRESH Review: Vector Database & Embedding MCP Servers (41 days stale. TWO BIGGEST GAPS FILLED. redis/mcp-redis NEW OFFICIAL 4,200 stars 1,700 forks — vector index HNSW + similarity search + full Redis data management, BIGGEST gap from March closed, instantly most popular vector DB MCP server. Turbopuffer OFFICIAL MCP NEW @turbopuffer/turbopuffer-mcp npm beta — S3-native serverless Code Mode sandbox, second gap closed. Weaviate v1.37 BUILT-IN MCP April 23 2026 — FIRST vector database to embed MCP directly, Streamable HTTP /v1/mcp schema inspect hybrid search write data standard auth one env var, paradigm shift zero infrastructure. zilliztech/claude-context NEW 9,800 stars — code search MCP powered by Milvus hybrid BM25+dense vector ~40% token reduction 14 languages VS Code extension, most popular MCP in entire vector DB ecosystem. redis/agent-memory-server NEW — semantic/keyword/hybrid agent memory FastMCP. zilliz-mcp-server NEW — Zilliz Cloud management projects clusters. Pinecone Assistant MCP remote hosted endpoint /mcp/assistants/<name> zero infrastructure. Knuckles-Team/vector-mcp NEW — universal vector MCP ChromaDB+Couchbase+MongoDB+Qdrant+PGVector. Qdrant 1,300→1,400 configurable filters inheritable QdrantMCPServer class mcp-for-docs docs search. Chroma 515→540. Milvus 220→230. Weaviate Docs MCP Server. 15+→25+ servers. Rating upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
