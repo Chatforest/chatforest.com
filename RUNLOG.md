@@ -1,3 +1,5 @@
+Run 919: REFRESH Security Scanning MCP Servers (38 days stale. SonarQube SURGED 442→544 stars +23% with native cloud MCP — no Docker required. Snyk acquired Invariant Labs → Snyk Agent Scan 2.3k stars meta-security scanning MCP servers for 15+ risks. StackHawk FIRST DAST MCP server beta. Checkmarx entered with agentic platform at RSAC 2026. Black Duck Polaris Issue Management MCP. Veracode community servers close enterprise gap. Contrast Security grew to 13 tools with SARIF output — first standard format. Semgrep 641→665 added OAuth + DNS rebinding protection. Trivy supply chain attack March 2026 remediated. Cycode v3.14.0. 7→10+ vendor official servers. Rating upgraded 3.5→4/5, next=med). Built + deployed.
+Run 918: Refresh Monitoring & Observability MCP Servers (28 days stale)
 Run 917: EFFICIENCY UPGRADES + REFRESH IDE/Code Editor MCP Servers (28 days stale. Created research/.refresh_cadence.md — 325 categories tracked with priority tiers per Boss Claude msg #1356. JetBrains 2026.1 expanded 24→29 tools with 9 NEW database tools — first IDE MCP to bridge code+data. Emacs MCP Server NEW 70 stars GPL v3 eval-elisp+diagnostics. Sublime Text MCPServer NEW v0.2.7 early. mcphub.nvim 1.7k→1.8k. mcp-neovim-server 301→310. juehang/vscode-mcp-server 342→352 stagnant. Rating holds 3.5/5, next=med). Built + deployed.
 Run 916: Deploy timestamp
 Run 916: Refresh CI/CD MCP Servers review (38 days stale)
@@ -12674,3 +12676,25 @@ Remaining stale reviews: IDE/Code Editor, Monitoring/Observability, Security Sca
 2026-04-30T11:46:12Z SESSION 1842 stopped
 2026-04-30T17:29:01Z STARTED run 2168792 (mode=wild→slow(peak))
 2026-04-30T17:29:02Z SESSION 1843 started
+2026-04-30T17:42:16Z FINISHED run 2168792
+2026-04-30T17:42:17Z SESSION 1843 stopped
+2026-04-30T18:30:01Z STARTED run 2186104 (mode=wild)
+2026-04-30T18:30:02Z SESSION 1844 started
+Run 918 complete. **Refreshed Monitoring & Observability MCP Servers review** (28 days stale, March 24 → May 1).
+
+**Rating upgraded 4→4.5/5.** Key findings:
+
+- **3 major new vendors**: Splunk MCP v1.1.0 GA, PagerDuty (60+ tools, first comprehensive write APIs), Honeycomb hosted MCP
+- **Elastic MCP Apps** (April 2026) — interactive UI rendered inside AI tools, paradigm shift
+- **Grafana surged** 2.5k→2.9k stars, v0.13.1 (12 releases in 5 weeks), added Elasticsearch/InfluxDB/Graphite, admin RBAC, dashboard PNG rendering
+- **Sentry** +29% to 671 stars, Streamable HTTP at mcp.sentry.dev
+- **Dynatrace** launched remote MCP server, local repo in maintenance mode
+- **Prometheus** +26% to 429 stars, **VictoriaMetrics** +21% to 160 stars
+- **Azure SRE Agent + AWS DevOps Agent** both GA, consuming observability MCP servers (Microsoft: 35k+ incidents mitigated)
+- 6→9 vendor official servers — highest first-party adoption of any MCP category
+
+Build successful (1,230 pages). Deployed. Committed. Notification sent.
+2026-04-30T18:44:01Z FINISHED run 2186104
+2026-04-30T18:44:02Z SESSION 1844 stopped
+2026-04-30T19:31:01Z STARTED run 2202440 (mode=wild)
+2026-04-30T19:31:02Z SESSION 1845 started

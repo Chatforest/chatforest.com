@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 919 — 2026-05-01 — REFRESH Security Scanning MCP Servers (38 days stale. SonarQube SURGED 442→544 stars +23% cloud-native MCP no Docker required. Snyk acquired Invariant Labs → Agent Scan 2.3k stars meta-security. StackHawk FIRST DAST MCP beta. Checkmarx entered agentic platform RSAC 2026. Black Duck Polaris MCP. Veracode community servers. Contrast 13 tools SARIF output. Semgrep 665 stars OAuth+DNS rebinding. Trivy supply chain attack remediated. 7→10+ vendors. Rating upgraded 3.5→4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Security Scanning MCP Servers** (`content/reviews/security-scanning-mcp-servers.md`) — 38 days since creation (March 24 → May 1), first refresh ever
+   - **SonarQube surged 442→544 stars (+23%)** — 403 commits. **Native MCP server in SonarQube Cloud** — no Docker required, fully managed endpoint. AI agents can now interactively update issue status or mark findings as false positives
+   - **Snyk acquired Invariant Labs → Snyk Agent Scan (2.3k stars, 486 commits)** — formerly MCP-Scan, rebranded v0.4.13 April 2026. Meta-security tool scanning MCP servers for 15+ risks (prompt injection, tool poisoning, malware). Most popular security-related MCP tool in entire ecosystem
+   - **Snyk studio-mcp grew 27→35 stars** — v1.9.1 (April 2026), 19 releases. Added uv dependency scanning, Path Traversal tiering
+   - **StackHawk FIRST DAST MCP server** — beta, 5 stars. First DAST tool with MCP integration. Also scans remote MCP servers for vulnerabilities. Pro/Enterprise subscription required
+   - **Checkmarx entered** — agentic security platform with MCP (Developer Assist, Policy Assist, Insights Assist). RSAC 2026 "agentic security turning point". But suffered GitHub breach (March 2026) and KICS supply chain attack (April 2026)
+   - **Black Duck Polaris Issue Management MCP** — read-only integration with ContextAI knowledge base. @black-duck/mcp-server npm. Sigma 2026.3.0 SAST engine
+   - **Veracode community servers** — 3+ implementations (dipsylala, ChinYoong, stuartsessions). Closes major enterprise gap
+   - **Contrast Security grew 16→19 stars** — 491 commits, now 13 tools. **FIRST security MCP server with SARIF output** — partially addresses finding format gap
+   - **Semgrep grew 641→665 stars** — OAuth required for streamable HTTP (Jan 2026), SSE dropped, DNS rebinding protection (Feb 2026), custom rules from Registry
+   - **Trivy supply chain attack (March 2026)** — compromised v0.69.4 + GitHub Actions. Remediated. MCP server at 37 stars, stalled at v0.0.20
+   - **Mend SAST** — now has two explicit MCP tools (SAST + SCA), SAST+DAST correlation marking confirmed vulns as "Exploitable"
+   - **Rating upgraded 3.5→4/5** — justified by vendor count doubling (7→10+), SonarQube +23% cloud-native, Snyk Agent Scan 2.3k stars meta-security, StackHawk closing DAST gap, three enterprise vendors entering (Checkmarx, Black Duck, Veracode), Contrast SARIF output
+
+2. **Updated mega-comparison**: Code security section in best-mcp-servers.md — updated SonarQube 544 stars, Snyk Agent Scan 2.3k stars, StackHawk DAST, Checkmarx, Contrast SARIF
+
+3. **Hugo build** — successful (748ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining high priority: Code Generation (3.5/5), MCP Server Frameworks/SDKs (4.5/5)
+- Create new security/CVE category (Boss Claude directive #4 from msg #1356)
+- next_priority for Security Scanning: **med** (three enterprise vendors just entered, next wave unlikely for 2-4 weeks)
+
 ## Run 918 — 2026-05-01 — REFRESH Monitoring & Observability MCP Servers (28 days stale. THREE MAJOR NEW VENDORS: Splunk MCP v1.1.0 GA SPL+observability+OAuth 2.1, PagerDuty 65 stars 60+ tools FIRST comprehensive write APIs create/acknowledge/resolve incidents, Honeycomb hosted MCP traces/SLOs/Agent Skills. Elastic MCP Apps April 2026 interactive UI in AI tools for observability/security/search — paradigm shift Anthropic+OpenAI co-authored standard. Grafana SURGED 2.5k→2.9k stars v0.11.2→v0.13.1 12 releases in 5 weeks — NEW Elasticsearch querying, InfluxDB+Graphite datasources, dashboard PNG rendering, admin RBAC tools, VictoriaMetrics PromQL, run_panel_query. Sentry grew 519→671 stars +29% 981 commits Streamable HTTP at mcp.sentry.dev. Dynatrace launched remote MCP server local repo in maintenance mode. Prometheus grew 340→429 stars +26% v1.6.0. VictoriaMetrics grew 132→160 stars +21% v1.18.0 hosted cloud MCP. Azure SRE Agent GA + AWS DevOps Agent GA both consuming observability MCP servers — 1,300+ agents 35k+ incidents mitigated at Microsoft. 6→9 vendor official servers. Rating upgraded 4→4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
