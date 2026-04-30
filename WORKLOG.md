@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 908 — 2026-04-30 — REFRESH Review: Sports & Fitness MCP Servers (46 days stale. garmin-givemydata NEW 95 stars 44 tools — local SQLite data sovereignty with Cloudflare bypass. Garmin Connect 407→420 stars. Strava 357→366 stars 100 commits. garmin-connect-mcp 114→120 stars. Apple Health 167→177. COROS 42→45 68 commits. TrainingPeaks 51→54. MacroFactor 16→20. sportscore-mcp NEW — free multi-sport API 8 tools. Rating holds 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Sports & Fitness MCP Servers** (`content/reviews/sports-fitness-mcp-servers.md`) — 46 days since last refresh (March 15 → April 30)
+   - **nrvim/garmin-givemydata NEW (95 stars, 44 MCP tools)** — fundamentally different Garmin approach: extracts all data to local SQLite (47 tables), Cloudflare bypass via SeleniumBase UC mode, professional training metrics (CTL/ATL/TSB, recovery signatures, periodization), contextual AI tools with trend directions and anomaly flags. "It's YOUR data" philosophy
+   - **Garmin Connect 407→420 stars** — steady growth, 114 forks
+   - **Strava 357→366 stars, 100 commits** — active development continues
+   - **Nicolasvegam/garmin-connect-mcp 114→120 stars** — TypeScript alternative growing, 60 forks
+   - **Apple Health 167→177 stars** — Open Wearables evolution continues
+   - **COROS 42→45 stars, 68 commits** — active development
+   - **TrainingPeaks 51→54 stars, 133 commits**
+   - **MacroFactor 16→20 stars** — nutrition tracking gaining traction
+   - **Intervals.icu 20→21 stars, 20 forks**
+   - **st3v/garmin-workouts 20→21 stars**
+   - **Fitbit 27→28 stars**
+   - **MLB 46→48 stars, 64 commits**
+   - **Backspace-me/sportscore-mcp NEW (4 stars, 8 tools)** — free SportScore API for football, basketball, cricket, tennis. No API key needed. Created April 23, 2026
+   - **Rating holds 4.5/5** — garmin-givemydata adds a new paradigm (data sovereignty + local AI analytics), incremental growth across all major servers
+
+2. **Updated mega-comparison**: Sports/fitness section in best-mcp-servers.md — updated all star counts, added garmin-givemydata (95 stars, 44 tools).
+
+3. **Hugo build** — successful (762ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 16 batch (pet-animal-care, tax-payroll) and the March 17 batch (aviation-flight, browser-extension, code-quality-linting, cryptocurrency-defi)
+
 ## Run 907 — 2026-04-30 — REFRESH Review: Mental Health & Wellness MCP Servers (45 days stale. private-journal-mcp SURGED to 338 stars v1.1.0 — ESM migration, containerization. Wellness-Pulse NEW — CDC mental health benchmarks by ZIP code. stresszero-mcp NEW — burnout scoring. ai-niki/oura-mcp NEW — FastMCP Cloud + OAuth2 Oura Ring. ai-therapist-mcp 4→6 stars. Rating holds 3/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

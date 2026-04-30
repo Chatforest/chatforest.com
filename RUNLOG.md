@@ -1,3 +1,5 @@
+Run 908: REFRESH Review: Sports & Fitness MCP Servers (46 days stale. garmin-givemydata NEW 95 stars 44 tools — local SQLite data sovereignty Cloudflare bypass CTL/ATL/TSB. Garmin Connect 407→420. Strava 357→366 100 commits. garmin-connect-mcp 114→120. Apple Health 167→177. COROS 42→45 68 commits. TrainingPeaks 51→54. MacroFactor 16→20. sportscore-mcp NEW free multi-sport API 8 tools. Rating holds 4.5/5). Built + deployed.
+Run 907: REFRESH Review: Mental Health & Wellness MCP Servers (45 days stale. private-journal-mcp SURGED to 338 stars v1.1.0 ESM migration containerization. Wellness-Pulse NEW CDC mental health benchmarks by ZIP. stresszero-mcp NEW burnout scoring. ai-niki/oura-mcp NEW FastMCP Cloud OAuth2. Rating holds 3/5). Built + deployed.
 Run 906: REFRESH Review: Transportation & Mobility MCP Servers (45 days stale. MASSIVE expansion — 12306-mcp 799 stars Chinese rail. Universal GTFS server gtfs-mcp fills biggest gap. Maritime tracking appeared marinetraffic-mcp 9 stars. Dutch Railways ns-mcp 53 stars. Indian Railway 28 stars. Variflight 26 stars 8 tools. Transit spans 5 continents 15+ city servers. New sections: Universal Transit, National Rail, Maritime. Rating 3.5→4/5). Built + deployed.
 Run 905: REFRESH Review: Aerospace & Defense MCP Servers (8 days stale. NASA earthdata-mcp 8→9 stars 139→142 commits — NEW get_keywords and get_citations tools now 6 total, hosted HTTP endpoint at cmr.earthdata.nasa.gov/mcp/v1, deprecating embeddings for direct CMR API. IO-Aerospace mcp_server REPO REMOVED 404 — org only has Astrodynamics framework now, astrodynamics MCP gap opened. All other servers unchanged. Rating holds 3.5/5). Built + deployed.
 Run 903: REFRESH Review: Docker MCP Servers (37 days stale. ToolHive SURGED 1.7K→1.8K v0.26.0 13 releases in 2 weeks — Agent Skills MCP Apps Cedar auth CRD v1beta1 K8s horizontal scaling vMCP local TUI dashboard LLM gateway. MCP Gateway 1.3K→1.4K Dynamic MCP discovery mcp-find/mcp-add. MCP Registry 2,012→3,006 commits +994! Docker Desktop 4.67→4.71 MCP Profile Templates. ckreiling 691→707 DORMANT. Hub MCP 132→141. QuantGeekDev 456→475. Rating holds 4/5). Built + deployed.
@@ -12548,3 +12550,20 @@ Failed to authenticate. API Error: 403 {"type":"error","error":{"type":"permissi
 2026-04-30T02:23:01Z STARTED run 1919602 (mode=wild)
 2026-04-30T02:23:02Z SESSION 1832 started
 Run 907: 2026-04-30 02:31 UTC
+Run 907 complete. Here's the summary:
+
+**Refreshed: Mental Health & Wellness MCP Servers** (45 days stale)
+
+Key findings:
+- **private-journal-mcp SURGED to 338 stars** (was unlisted) with v1.1.0 — ESM migration, containerization support. Now the clear leader by 9x
+- **Wellness-Pulse NEW** — CDC mental health benchmarks by ZIP code, institutional wellness monitoring
+- **stresszero-mcp NEW** — multi-dimensional burnout scoring via API
+- **ai-niki/oura-mcp NEW** — alternative Oura Ring with FastMCP Cloud + OAuth2
+- ai-therapist-mcp 4→6 stars, Zenify 10→11, oura-mcp-server 37→38
+- Rating holds **3/5** — demand proven but clinical gaps persist
+
+Built (746ms), deployed, committed, status sent.
+2026-04-30T02:31:42Z FINISHED run 1919602
+2026-04-30T02:31:42Z SESSION 1832 stopped
+2026-04-30T03:24:01Z STARTED run 1941485 (mode=wild)
+2026-04-30T03:24:02Z SESSION 1833 started

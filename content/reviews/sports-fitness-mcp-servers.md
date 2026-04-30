@@ -2,10 +2,10 @@
 title: "Sports & Fitness MCP Servers — Strava, Garmin, Fitbit, F1, NFL, MLB, Soccer, and More"
 date: 2026-03-15T14:00:00+09:00
 description: "Sports and fitness MCP servers are connecting AI assistants to workout data, live scores, and athletic performance analytics. We reviewed 50+ servers across 9 subcategories."
-og_description: "Sports & fitness MCP servers: Strava (357 stars, 25 tools), Garmin Connect (407 stars, 96+ tools), Apple Health (167 stars), MLB stats (46 stars, 21+ tools), F1 racing (15 stars, 29 tools), Fitbit (27 stars, 12 tools), multi-sport via Balldontlie (250+ endpoints across 18 leagues), ESPN Fantasy Football (30 stars), Oura Ring (17 tools), TrainingPeaks (58 tools), COROS (15 tools). PGA of America and MySwimPro launched official MCP servers. Rating: 4.5/5."
+og_description: "Sports & fitness MCP servers: Garmin Connect (420 stars, 96+ tools), Strava (366 stars, 25 tools), Apple Health (177 stars), garmin-givemydata NEW (95 stars, 44 tools — local SQLite with data sovereignty), MLB stats (48 stars, 21+ tools), F1 racing (15 stars, 29 tools), Fitbit (28 stars, 12 tools), multi-sport via Balldontlie (250+ endpoints across 18 leagues), ESPN Fantasy Football (30 stars), Oura Ring (17 tools), TrainingPeaks (54 stars, 58 tools), COROS (45 stars, 15 tools). PGA of America and MySwimPro launched official MCP servers. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Sports and fitness MCP servers for workout tracking, live scores, athletic analytics, and fantasy sports. This is one of the deepest MCP categories — Garmin Connect has 96+ tools covering activities, health metrics, workouts, devices, nutrition, and challenges, now at 407 stars (+51% since March). Strava leads at 357 stars with 25 tools for activities, segments, and routes. A major TypeScript Garmin alternative (Nicolasvegam/garmin-connect-mcp, 114 stars, 61 tools) has emerged. The Oura Ring gap is filled with 22 implementations led by mitchhankins01/oura-ring-mcp (17 tools with anomaly detection). New endurance platforms joined: TrainingPeaks MCP (51 stars, 58 tools), COROS MCP (42 stars, 15 tools), and Intervals.icu MCP (48 tools). Nutrition tracking arrived via Cronometer MCP and MacroFactor MCP (28 tools). For spectator sports, Balldontlie's official MCP server covers 18 leagues with 250+ endpoints. The FIFA World Cup 2026 MCP (18 tools) launched to HN attention. Two official first-party servers arrived: PGA of America (mcp.pga.com) and MySwimPro (mcp.myswimpro.com) — breaking the pattern of community-only coverage. Cricket analytics deepened with mavaali/cricket-mcp (28 tools, 10.9M deliveries). Major gaps narrowing: tennis, golf partially filled; Oura Ring and nutrition fully addressed. Remaining gaps: rugby, Peloton, CrossFit. The category earns 4.5/5 — fitness wearable coverage is now best-in-class across the entire MCP ecosystem."
-last_refreshed: 2026-04-27
+card_description: "Sports and fitness MCP servers for workout tracking, live scores, athletic analytics, and fantasy sports. This is one of the deepest MCP categories — Garmin Connect has 96+ tools covering activities, health metrics, workouts, devices, nutrition, and challenges, now at 420 stars. Strava grew to 366 stars with 25 tools. A new data-sovereignty approach emerged: nrvim/garmin-givemydata (95 stars, 44 MCP tools) stores Garmin data in local SQLite with Cloudflare bypass and professional training metrics (CTL/ATL/TSB). The TypeScript Garmin alternative (Nicolasvegam/garmin-connect-mcp) grew to 120 stars with 61 tools. Apple Health hit 177 stars. COROS grew to 45 stars with 68 commits. TrainingPeaks reached 54 stars. MacroFactor nutrition hit 20 stars. sportscore-mcp NEW — free multi-sport API (football, basketball, cricket, tennis) with 8 tools. For spectator sports, Balldontlie covers 18 leagues with 250+ endpoints. Two official first-party servers: PGA of America (mcp.pga.com) and MySwimPro (mcp.myswimpro.com). Remaining gaps: rugby, Peloton, CrossFit. Rating: 4.5/5 — fitness wearable coverage is best-in-class across the entire MCP ecosystem."
+last_refreshed: 2026-04-30
 categories: ["/categories/sports-fitness/"]
 ---
 
@@ -13,7 +13,7 @@ Sports and fitness MCP servers are connecting AI assistants to workout data, liv
 
 The landscape spans nine areas: **fitness wearables** (Garmin, Strava, Fitbit, Apple Health, WHOOP, Oura Ring, COROS), **endurance training platforms** (TrainingPeaks, Intervals.icu, AI Endurance), **motorsport** (Formula 1), **multi-sport data platforms** (Balldontlie covering 18 leagues), **baseball** (MLB stats and sabermetrics), **football** (NFL and fantasy), **soccer and cycling** (live scores, World Cup 2026, professional racing data), **sports betting/fantasy** (odds, props, lineup optimization), and **nutrition tracking** (Cronometer, MacroFactor, MyFitnessPal).
 
-The headline findings: **Garmin Connect surged to 407 stars** (+51%), remaining the most comprehensive fitness MCP server with 96+ tools covering 89% of the python-garminconnect library. A major TypeScript alternative emerged — Nicolasvegam/garmin-connect-mcp (114 stars, 61 tools). **Strava grew to 357 stars** (+30%) with active April 2026 development. **The Oura Ring gap is filled** — 22 implementations now exist, led by mitchhankins01/oura-ring-mcp (17 tools with anomaly detection). **New endurance platforms joined** — TrainingPeaks MCP (51 stars, 58 tools), COROS MCP (42 stars, 15 tools), and Intervals.icu MCP (48 tools). **Two official first-party servers launched** — PGA of America (mcp.pga.com) and MySwimPro (mcp.myswimpro.com), breaking the pattern of entirely community-driven coverage. **Cricket analytics deepened** with mavaali/cricket-mcp (28 tools, 10.9M deliveries via DuckDB). **The FIFA World Cup 2026 MCP** (18 tools) launched with Hacker News coverage.
+The headline findings: **Garmin Connect grew to 420 stars**, remaining the most comprehensive fitness MCP server with 96+ tools covering 89% of the python-garminconnect library. **A new data-sovereignty Garmin server emerged** — nrvim/garmin-givemydata (95 stars, 44 MCP tools) takes a fundamentally different approach: local SQLite storage, Cloudflare bypass via SeleniumBase, and professional training metrics (CTL/ATL/TSB, recovery signatures, health anomaly detection). The TypeScript alternative Nicolasvegam/garmin-connect-mcp grew to 120 stars with 61 tools. **Strava reached 366 stars** with 100 commits and active development. **COROS grew to 45 stars** with 68 commits. TrainingPeaks hit 54 stars. **A new multi-sport data server appeared** — sportscore-mcp provides free access to football, basketball, cricket, and tennis via the SportScore API with 8 tools. **Two official first-party servers** remain active — PGA of America (mcp.pga.com) and MySwimPro (mcp.myswimpro.com). Apple Health grew to 177 stars, evolving into Open Wearables supporting 6+ wearable ecosystems.
 
 ## Fitness Wearables
 
@@ -21,7 +21,7 @@ The headline findings: **Garmin Connect surged to 407 stars** (+51%), remaining 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Taxuspt/garmin_mcp](https://github.com/Taxuspt/garmin_mcp) | 407 | Python | — | 96+ |
+| [Taxuspt/garmin_mcp](https://github.com/Taxuspt/garmin_mcp) | 420 | Python | — | 96+ |
 
 The **most comprehensive fitness MCP server** we've seen in any category. This server wraps 89% of the python-garminconnect library (v0.2.38) and exposes an enormous surface area across 10 tool categories:
 
@@ -36,21 +36,21 @@ The **most comprehensive fitness MCP server** we've seen in any category. This s
 - **Nutrition** (8 tools) — calorie tracking, macro goals, meal logging
 - **Women's Health & Profile** (3 tools) — menstrual cycle tracking, user profile
 
-With 407 stars (+51% since March), this is one of the fastest-growing fitness MCP servers. The sheer tool count (96+) rivals enterprise API integrations — and all of it is community-built, since Garmin has no official MCP server. Recent community PRs added nutrition endpoints, delete_workout functionality, and activity splits with elevation data.
+With 420 stars, this is one of the fastest-growing fitness MCP servers. The sheer tool count (96+) rivals enterprise API integrations — and all of it is community-built, since Garmin has no official MCP server. Recent community PRs added nutrition endpoints, delete_workout functionality, and activity splits with elevation data.
 
 #### Garmin Connect MCP — TypeScript Alternative
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Nicolasvegam/garmin-connect-mcp](https://github.com/Nicolasvegam/garmin-connect-mcp) | 114 | TypeScript | — | 61 |
+| [Nicolasvegam/garmin-connect-mcp](https://github.com/Nicolasvegam/garmin-connect-mcp) | 120 | TypeScript | — | 61 |
 
-A **major new entrant** — a TypeScript-based Garmin server with 114 stars and 61 tools across 7 categories: activities (12), daily health (14), trends (4), sleep (2), body composition (5), performance/training (11), and profile/devices (13). Supports MFA authentication and works with Claude Code, Claude Desktop, Cursor, and Windsurf. If you prefer TypeScript tooling or need a lighter-weight alternative to the 96-tool Python server, this is a strong option.
+A TypeScript-based Garmin server with 120 stars and 61 tools across 7 categories: activities (12), daily health (14), trends (4), sleep (2), body composition (5), performance/training (11), and profile/devices (13). Supports MFA authentication and works with Claude Code, Claude Desktop, Cursor, and Windsurf. If you prefer TypeScript tooling or need a lighter-weight alternative to the 96-tool Python server, this is a strong option.
 
 #### Other Garmin MCP Servers
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [st3v/garmin-workouts-mcp](https://github.com/st3v/garmin-workouts-mcp) | 20 | Python | MIT | 11 |
+| [st3v/garmin-workouts-mcp](https://github.com/st3v/garmin-workouts-mcp) | 21 | Python | MIT | 11 |
 | [charlesfrisbee/garmin-workouts-mcp](https://github.com/charlesfrisbee/garmin-workouts-mcp) | 1 | TypeScript | — | 5 |
 | [jlwainwright/garmin-mcp-server](https://github.com/jlwainwright/garmin-mcp-server) | 0 | Python | MIT | 20+ |
 
@@ -58,13 +58,30 @@ A **major new entrant** — a TypeScript-based Garmin server with 114 stars and 
 
 **jlwainwright/garmin-mcp-server** offers 20+ tools with a focus on headless 2FA authentication and ntfy notification integration for automated deployments — useful if you want unattended Garmin data access.
 
+#### Garmin Data Sovereignty: garmin-givemydata
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [nrvim/garmin-givemydata](https://github.com/nrvim/garmin-givemydata) | 95 | Python | — | 44 |
+
+A **fundamentally different approach** to Garmin data — this server extracts your entire Garmin Connect history into a local SQLite database (47 tables) and provides 44 contextual MCP tools for AI analysis. Key differentiators:
+
+- **Cloudflare bypass** via SeleniumBase UC mode — works around the bot detection that has broken competing libraries like garth and python-garminconnect
+- **Data sovereignty** — all data stays local, never leaves your machine, with browser session persistence lasting ~1 year
+- **Contextual AI tools** — rather than returning raw data, tools include trend directions, anomaly flags, clinical thresholds, and goal attainment metrics
+- **Professional training metrics** — CTL/ATL/TSB training load, recovery signatures by sport, periodization analysis typically found only in premium coaching platforms
+- **Smart sync** — incremental updates and historical data recovery (10+ years)
+- **Multiple export formats** — CSV, JSON, GPX, TCX alongside original FIT files
+
+With 95 stars in a short time, this is the fastest-growing new Garmin MCP server. The "it's YOUR data" philosophy resonates — if you want complete ownership and offline access to your Garmin history with AI-ready analytics, this fills a gap the API-based servers can't.
+
 ### Strava MCP Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [r-huijts/strava-mcp](https://github.com/r-huijts/strava-mcp) | 357 | TypeScript | MIT | 25 |
+| [r-huijts/strava-mcp](https://github.com/r-huijts/strava-mcp) | 366 | TypeScript | MIT | 25 |
 
-The **highest-starred sports MCP server** in the ecosystem. Now at v1.2.1 with active April 2026 development, 25 tools across six categories:
+The **highest-starred sports MCP server** in the ecosystem. At v1.2.1 with 100 commits and active development, 25 tools across six categories:
 
 - **Account & Profile** — athlete profile, authorization management
 - **Activity Data** — list activities, get details, search by date/type
@@ -79,7 +96,7 @@ The server handles OAuth 2.0 token management and supports natural language quer
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [TheDigitalNinja/mcp-fitbit](https://github.com/TheDigitalNinja/mcp-fitbit) | 27 | TypeScript | MIT | 12 |
+| [TheDigitalNinja/mcp-fitbit](https://github.com/TheDigitalNinja/mcp-fitbit) | 28 | TypeScript | MIT | 12 |
 
 A solid integration with 85 commits and a published npm package (v1.0.2). Covers the core Fitbit data types:
 
@@ -96,7 +113,7 @@ Works with Claude Desktop and other MCP-compatible clients. Development appears 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [the-momentum/apple-health-mcp-server](https://github.com/the-momentum/apple-health-mcp-server) | 167 | Python | MIT | — |
+| [the-momentum/apple-health-mcp-server](https://github.com/the-momentum/apple-health-mcp-server) | 177 | Python | MIT | — |
 
 A clever approach — rather than connecting to a live API, this server imports Apple Health XML exports and loads them into DuckDB for lightning-fast natural language queries. You export your health data from your iPhone, point the server at the file, and then ask questions like "what's my average resting heart rate this month?" or "show my sleep duration trends."
 
@@ -136,10 +153,10 @@ Small but functional — covers the core WHOOP data that athletes care about mos
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cygnusb/coros-mcp](https://github.com/cygnusb/coros-mcp) | 42 | Python | — | 15 |
+| [cygnusb/coros-mcp](https://github.com/cygnusb/coros-mcp) | 45 | Python | — | 15 |
 | [rowlando/coros-workout-mcp](https://github.com/rowlando/coros-workout-mcp) | 20 | TypeScript | — | — |
 
-**COROS joins the wearable ecosystem** — cygnusb/coros-mcp (42 stars, 15 tools) covers sleep, HRV, daily metrics, activities, and structured workouts. Authenticates directly with COROS Training Hub (no API key needed). Supports workout creation with power targets and interval groups. Actively developed.
+**COROS joins the wearable ecosystem** — cygnusb/coros-mcp (45 stars, 68 commits, 15 tools) covers sleep, HRV, daily metrics, activities, and structured workouts. Authenticates directly with COROS Training Hub (no API key needed). Supports workout creation with power targets and interval groups. Actively developed.
 
 **rowlando/coros-workout-mcp** (20 stars) focuses specifically on creating COROS strength workouts via the Training Hub API.
 
@@ -166,7 +183,7 @@ Pierre takes the aggregator approach, connecting to **150+ wearables** via Strav
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [JamsusMaximus/trainingpeaks-mcp](https://github.com/JamsusMaximus/trainingpeaks-mcp) | 51 | Python | — | 58 |
+| [JamsusMaximus/trainingpeaks-mcp](https://github.com/JamsusMaximus/trainingpeaks-mcp) | 54 | Python | — | 58 |
 
 A **major new addition for endurance athletes** — 58 tools covering structured interval workouts, calendar management, fitness metrics (CTL/ATL/TSB), and equipment tracking. Uses cookie-based authentication (no API approval needed) with AES-256-GCM encrypted credential storage. If you're a triathlete, cyclist, or runner who trains with TrainingPeaks, this is a direct pipeline between your AI assistant and your training plan.
 
@@ -174,7 +191,7 @@ A **major new addition for endurance athletes** — 58 tools covering structured
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [eddmann/intervals-icu-mcp](https://github.com/eddmann/intervals-icu-mcp) | 20 | Python | — | 48 |
+| [eddmann/intervals-icu-mcp](https://github.com/eddmann/intervals-icu-mcp) | 21 | Python | — | 48 |
 
 Comprehensive integration with the popular Intervals.icu training platform — 48 tools spanning activities, analysis, wellness, events/calendar, performance curves, workout library, gear management, and sport settings. Also includes 6 MCP Prompts and 1 Resource. Intervals.icu is the free alternative to TrainingPeaks favored by data-oriented endurance athletes.
 
@@ -183,7 +200,7 @@ Comprehensive integration with the popular Intervals.icu training platform — 4
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
 | [cphoskins/cronometer-mcp](https://github.com/cphoskins/cronometer-mcp) | — | Python | — | — |
-| [sjawhar/macrofactor](https://github.com/sjawhar/macrofactor) | 16 | TypeScript | — | 28 |
+| [sjawhar/macrofactor](https://github.com/sjawhar/macrofactor) | 20 | TypeScript | — | 28 |
 
 **The nutrition gap is filling** — Cronometer MCP (also on PyPI as `cronometer-mcp` v2.0.3) provides food logs, macro/micro summaries, diary entries, fasting data, and biometrics. Requires Cronometer Gold (paid tier).
 
@@ -250,7 +267,7 @@ A simpler community implementation with 4 core tools (get_teams, get_players, ge
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [guillochon/mlb-api-mcp](https://github.com/guillochon/mlb-api-mcp) | 46 | Python | MIT | 21+ |
+| [guillochon/mlb-api-mcp](https://github.com/guillochon/mlb-api-mcp) | 48 | Python | MIT | 21+ |
 
 The **most comprehensive single-sport analytics server** in the ecosystem. 21+ tools covering:
 
@@ -323,6 +340,14 @@ Provides real-time football (soccer) data through a single `get_livescores()` to
 | [jordanlyall/wc26-mcp](https://github.com/jordanlyall/wc26-mcp) | — | — | MIT | 18 |
 
 A **timely new server** launched ahead of the 2026 World Cup — 18 tools covering matches, teams, venues, city guides, fan zones, visa info, head-to-head records, odds, standings, and brackets. No API key needed (all data built-in). Featured on Hacker News. Has its own website at wc26.ai.
+
+### SportScore MCP Server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Backspace-me/sportscore-mcp](https://github.com/Backspace-me/sportscore-mcp) | 4 | JavaScript | — | 8 |
+
+A **new multi-sport data server** (created April 23, 2026) exposing the free SportScore API — live scores, match details, standings, top scorers, brackets, and player stats across **football, basketball, cricket, and tennis**. No API key required (free tier: ~1,000 requests per 24 hours per IP). Supports both stdio and HTTP server modes. Works with Claude Desktop, Cursor, and Zed. A lightweight alternative to Balldontlie for these four sports, with the advantage of no API key requirement.
 
 ### Cricket MCP Servers
 
@@ -421,15 +446,16 @@ The gap list has shrunk significantly since March, but some remain:
 
 **Rating: 4.5 / 5** *(up from 4.0 in March)*
 
-Sports & fitness has become one of the strongest MCP categories in the entire ecosystem. Garmin Connect surged to 407 stars with a new 114-star TypeScript alternative. Strava grew to 357 stars with active development. The Oura Ring gap that was a glaring omission in March is now filled by 22 implementations. New endurance platforms (TrainingPeaks with 58 tools, Intervals.icu with 48, COROS with 15) have dramatically expanded athlete coverage beyond Garmin and Strava. Nutrition tracking arrived via Cronometer and MacroFactor. Cricket went from zero to a 28-tool analytics platform rivaling baseball's depth.
+Sports & fitness has become one of the strongest MCP categories in the entire ecosystem. Garmin Connect grew to 420 stars, with a 120-star TypeScript alternative and a new 95-star data-sovereignty approach (garmin-givemydata) that stores everything locally in SQLite. Strava reached 366 stars with 100 commits. The Oura Ring gap that was a glaring omission in March is filled by 22 implementations. Endurance platforms (TrainingPeaks with 58 tools, Intervals.icu with 48, COROS with 15) have dramatically expanded athlete coverage. Nutrition tracking is covered via Cronometer and MacroFactor (20 stars). Cricket went from zero to a 28-tool analytics platform rivaling baseball's depth. A new free multi-sport server (sportscore-mcp) covers football, basketball, cricket, and tennis without requiring an API key.
 
-The biggest structural shift: **two official first-party servers launched** — PGA of America and MySwimPro — breaking the pattern of entirely community-driven coverage. Sportradar also launched an official MCP. The ecosystem is no longer purely unofficial.
+**Two official first-party servers** remain active — PGA of America and MySwimPro — alongside Sportradar's official API docs server. The ecosystem is no longer purely unofficial.
 
-**Best for fitness tracking:** Taxuspt/garmin_mcp (407 stars, 96+ tools) or r-huijts/strava-mcp (357 stars, 25 tools)
-**Best for endurance training:** JamsusMaximus/trainingpeaks-mcp (51 stars, 58 tools) or eddmann/intervals-icu-mcp (48 tools)
+**Best for fitness tracking:** Taxuspt/garmin_mcp (420 stars, 96+ tools) or r-huijts/strava-mcp (366 stars, 25 tools)
+**Best for data sovereignty:** nrvim/garmin-givemydata (95 stars, 44 tools — local SQLite, Cloudflare bypass, CTL/ATL/TSB)
+**Best for endurance training:** JamsusMaximus/trainingpeaks-mcp (54 stars, 58 tools) or eddmann/intervals-icu-mcp (48 tools)
 **Best for sleep/recovery:** mitchhankins01/oura-ring-mcp (17 tools with anomaly detection)
-**Best for sports data:** guillochon/mlb-api-mcp (46 stars, 21+ tools with sabermetrics) or balldontlie-api/mcp (18 leagues, 250+ endpoints)
+**Best for sports data:** guillochon/mlb-api-mcp (48 stars, 21+ tools with sabermetrics) or balldontlie-api/mcp (18 leagues, 250+ endpoints)
 **Best niche pick:** mavaali/cricket-mcp (28 tools, 10.9M ball-by-ball deliveries)
 **Best for fantasy:** KBThree13/mcp_espn_ff (ESPN Fantasy Football, 30 stars)
 
-*This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic). First published 2026-03-15.*
+*This review was refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic). First published 2026-03-15.*
