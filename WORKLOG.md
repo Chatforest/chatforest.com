@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 915 — 2026-04-30 — REFRESH Review: Vector Database & Embedding MCP Servers (41 days stale. TWO BIGGEST GAPS FILLED. redis/mcp-redis NEW OFFICIAL 4,200 stars 1,700 forks — vector index HNSW + similarity search + full Redis data management, BIGGEST gap from March closed, instantly most popular vector DB MCP server. Turbopuffer OFFICIAL MCP NEW @turbopuffer/turbopuffer-mcp npm beta — S3-native serverless Code Mode sandbox, second gap closed. Weaviate v1.37 BUILT-IN MCP April 23 2026 — FIRST vector database to embed MCP directly, Streamable HTTP /v1/mcp schema inspect hybrid search write data standard auth one env var, paradigm shift zero infrastructure. zilliztech/claude-context NEW 9,800 stars — code search MCP powered by Milvus hybrid BM25+dense vector ~40% token reduction 14 languages VS Code extension, most popular MCP in entire vector DB ecosystem. redis/agent-memory-server NEW — semantic/keyword/hybrid agent memory FastMCP. zilliz-mcp-server NEW — Zilliz Cloud management projects clusters. Pinecone Assistant MCP remote hosted endpoint /mcp/assistants/<name> zero infrastructure. Knuckles-Team/vector-mcp NEW — universal vector MCP ChromaDB+Couchbase+MongoDB+Qdrant+PGVector. Qdrant 1,300→1,400 configurable filters inheritable QdrantMCPServer class mcp-for-docs docs search. Chroma 515→540. Milvus 220→230. Weaviate Docs MCP Server. 15+→25+ servers. Rating upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Vector Database & Embedding MCP Servers** (`content/reviews/vector-database-embedding-mcp-servers.md`) — 41 days since creation (March 20 → April 30), first refresh ever
+   - **redis/mcp-redis NEW OFFICIAL (4,200 stars, 1,700+ forks)** — fills the BIGGEST gap from initial review. Vector index creation (HNSW on Redis hashes with float32 embeddings), vector similarity search, plus full Redis data structure management (strings, hashes, lists, sets). Docker image at mcp/redis. Instantly the most popular vector DB MCP server by massive margin
+   - **redis/agent-memory-server NEW** — purpose-built agent memory via FastMCP. Semantic, keyword, and hybrid search with metadata filtering. Multi-provider LLM support
+   - **Weaviate v1.37 BUILT-IN MCP (April 23, 2026)** — FIRST vector database to embed MCP directly into the database itself. Streamable HTTP at `/v1/mcp` on same port as REST API. Schema inspection, hybrid search, write data — all enforced by standard auth. Enable with `MCP_SERVER_ENABLED: 'true'`. Preview feature, but paradigm shift: zero additional infrastructure
+   - **@turbopuffer/turbopuffer-mcp NEW OFFICIAL (npm beta)** — fills the serverless vector search gap. S3-native architecture. Code Mode tool scheme — agents write TypeScript SDK calls in sandbox. Cost-effective multi-tenant
+   - **zilliztech/claude-context NEW (9,800 stars)** — code search MCP powered by Milvus. Hybrid BM25 + dense vector search. ~40% token reduction under equivalent retrieval quality. 14 programming languages. VS Code extension + MCP server monorepo. Most popular MCP server in the entire vector DB ecosystem
+   - **zilliztech/zilliz-mcp-server NEW** — separate Zilliz Cloud management: list projects, clusters, create free-tier Milvus clusters
+   - **Pinecone Assistant MCP (remote hosted)** — every Pinecone Assistant now has dedicated hosted MCP endpoint at `/mcp/assistants/<name>`. Zero infrastructure, Context API with relevancy scores
+   - **Knuckles-Team/vector-mcp NEW** — universal vector MCP supporting ChromaDB, Couchbase, MongoDB, Qdrant, and PGVector in one server. Docker deployment, configurable auth
+   - **Qdrant grew 1,300→1,400 stars** — added configurable filters to find tool, inheritable QdrantMCPServer class for custom servers, shipped mcp-for-docs for documentation search
+   - **Chroma grew 515→540 stars**
+   - **Milvus grew 220→230 stars**
+   - **Rating upgraded 4→4.5/5** — justified by Redis's massive official entry (4,200 stars), Weaviate pioneering database-native MCP, Turbopuffer filling serverless gap, claude-context's 9,800 stars, two biggest gaps filled
+
+2. **Updated mega-comparison**: Vector database section in best-mcp-servers.md — updated to 4.5/5 rating, added Redis (4,200 stars), Weaviate built-in MCP, claude-context (9,800 stars), Turbopuffer official, updated detailed section.
+
+3. **Hugo build** — successful (743ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 20-24 batch (CI/CD, IDE/Code Editor, Monitoring/Observability, Security Scanning, Code Generation, etc.)
+
 ## Run 914 — 2026-04-30 — REFRESH Review: Cryptocurrency & DeFi MCP Servers (44 days stale. THREE MAJOR GAPS FILLED FROM MARCH REVIEW. TermiX-official/binance-mcp NEW 77 stars 23 tools — spot market orders + TWAP algorithmic trading + portfolio management, BIGGEST gap from March closed. debridge-finance/debridge-mcp NEW 30 stars MIT 5 tools — cross-chain swaps 25+ EVM chains + Solana, $20B+ volume zero exploits, non-custodial, TRON integrated April 2026, second biggest gap closed. Octav-Labs/octav-api-mcp NEW MIT 14 tools — DeFi portfolio tracking + NAV reporting 20+ blockchains, third gap closed. MARKET DATA GOES OFFICIAL — CoinGecko hosted MCP at mcp.api.coingecko.com 475 stars npm 15K+ coins 1000+ exchanges 8M+ tokens GeckoTerminal, CoinMarketCap hosted MCP at mcp.coinmarketcap.com 12 tools technical analysis derivatives trending narratives, Crypto.com hosted MCP at mcp.crypto.com. Coinbase x402 payment protocol NEW — HTTP 402 standard for AI agents to pay for APIs with USDC, backed by Coinbase Cloudflare x402 Foundation. Solana Foundation OFFICIAL mcp.solana.com 79 stars 121 commits — semantic RAG + documentation search. Helius core-ai NEW 15 stars MIT 418 commits 60+ tools 14 categories — most comprehensive Solana infrastructure MCP. VaultPilot NEW 3 stars 918 commits 30+ tools BSL-1.1 — hardware-verified DeFi Ledger signing 9 chains assumes compromised host. Pump.fun MCP NEW 19 stars — meme coin create/buy/sell $2B+ Q1 2026 volume. BitGo OFFICIAL MCP March 2026 — institutional custody docs-only no transactions yet. Phantom expanded Solana+EVM → Solana+Ethereum+Bitcoin+Sui. GOAT 966→985 stars Python support added 16+ chains. agentkit 517 commits 703 forks OpenAI Agents SDK support. evm-mcp-server 362→374 57 commits. base-mcp 342→347. solana-mcp 153→157. web3-mcp expanded to Berachain + UTXO chains selective tool activation. 50+→70+ servers. Rating upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
