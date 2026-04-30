@@ -1,14 +1,14 @@
 ---
 title: "IDE & Code Editor MCP Servers — Your Editor as an AI-Accessible Tool"
 date: 2026-03-23T23:30:00+09:00
-description: "JetBrains is the only major IDE with a built-in MCP server (24 tools since 2025.2). VS Code has community servers (juehang 342 stars, 15 tools; acomagu 113 stars, 13 tools)."
-og_description: "IDE MCP servers: JetBrains built-in 24 tools, VS Code community 342 stars, Neovim 301 stars 19 tools. Your editor becomes an AI-accessible tool. Rating: 3.5/5."
+description: "JetBrains leads with 29 built-in MCP tools in 2026.1 (including 9 new database tools). VS Code community (juehang 352 stars), Neovim 310 stars, NEW Emacs 70 stars."
+og_description: "IDE MCP servers: JetBrains 29 tools (database access new in 2026.1), VS Code community 352 stars, Neovim 310 stars, Emacs NEW 70 stars. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Most IDEs are MCP clients — they connect to external MCP servers. But a growing ecosystem flips this: IDEs as MCP servers, exposing editor capabilities (code analysis, refactoring, debugging, terminal) to external AI agents. JetBrains leads with a built-in MCP server (24 tools since 2025.2) across IntelliJ, PyCharm, WebStorm, and Android Studio. VS Code has community extensions (juehang/vscode-mcp-server 342 stars, 15 tools; acomagu/vscode-as-mcp-server 113 stars, 13 tools). Neovim's mcp-neovim-server (301 stars, 19 tools) exposes vim operations like buffers, marks, registers, and macros. This is the seventh review in our Developer Tools MCP category."
-last_refreshed: 2026-03-23
+card_description: "Most IDEs are MCP clients — they connect to external MCP servers. But a growing ecosystem flips this: IDEs as MCP servers, exposing editor capabilities (code analysis, refactoring, debugging, terminal, and now databases) to external AI agents. JetBrains leads with a built-in MCP server (29 tools in 2026.1, up from 24 — including 9 new database tools) across IntelliJ, PyCharm, WebStorm, and Android Studio. VS Code has community extensions (juehang/vscode-mcp-server 352 stars, 15 tools; acomagu/vscode-as-mcp-server 114 stars, 13 tools). Neovim's mcp-neovim-server (310 stars, 19 tools) exposes vim operations. NEW: Emacs joins with rhblind/emacs-mcp-server (70 stars, GPL v3). This is the seventh review in our Developer Tools MCP category."
+last_refreshed: 2026-05-01
 ---
 
-**At a glance:** Most IDEs are MCP *clients* — they connect to external servers for AI capabilities. But a growing ecosystem flips this: **IDEs as MCP servers**, exposing editor capabilities to external AI agents. **JetBrains is the only major IDE with a built-in MCP server** (24 tools since version 2025.2, across IntelliJ, PyCharm, WebStorm, Android Studio). VS Code has community extensions: [juehang/vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) (342 stars, TypeScript, 15 tools) and [acomagu/vscode-as-mcp-server](https://github.com/acomagu/vscode-as-mcp-server) (113 stars, TypeScript, 13 tools). Neovim has [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) (301 stars, TypeScript, 19 tools) exposing vim-native operations. With **VS Code holding 75.9% developer market share** and **GitHub Copilot surpassing 20 million users**, IDE MCP servers represent a strategic layer: letting external AI agents (Claude Code, Claude Desktop, custom agents) control your editor rather than just running inside it. This is the **seventh review in our [Developer Tools MCP category](/categories/developer-tools/)**.
+**At a glance:** Most IDEs are MCP *clients* — they connect to external servers for AI capabilities. But a growing ecosystem flips this: **IDEs as MCP servers**, exposing editor capabilities to external AI agents. **JetBrains expanded its built-in MCP server to 29 tools in IntelliJ 2026.1** (up from 24 in 2025.2), adding **9 database tools** — the first IDE MCP server to expose database operations (query, schema browsing, connection management) alongside code analysis and refactoring. VS Code has community extensions: [juehang/vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) (352 stars, TypeScript, 15 tools) and [acomagu/vscode-as-mcp-server](https://github.com/acomagu/vscode-as-mcp-server) (114 stars, TypeScript, 13 tools). Neovim has [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) (310 stars, TypeScript, 19 tools). **New since initial review:** [Emacs MCP Server](https://github.com/rhblind/emacs-mcp-server) (70 stars, Elisp, GPL v3) brings Emacs into the IDE-as-server club. With **VS Code holding 75.9% developer market share** and **GitHub Copilot surpassing 20 million users**, IDE MCP servers represent a strategic layer: letting external AI agents (Claude Code, Claude Desktop, custom agents) control your editor rather than just running inside it. This is the **seventh review in our [Developer Tools MCP category](/categories/developer-tools/)**.
 
 The typical MCP flow for coding is: your IDE connects to external MCP servers (GitHub, databases, documentation) and pulls context into your coding workflow. IDE-as-MCP-server inverts this — an external AI agent connects to your running IDE and uses its capabilities: code analysis, symbol lookup, refactoring, debugging, and terminal execution. This matters because IDE code intelligence (type checking, error detection, symbol resolution) is often better than what a standalone AI agent can derive from reading raw files. An AI agent that can ask your IDE "what errors does this file have?" gets IntelliJ's full inspection engine, not just a regex over the source.
 
@@ -16,7 +16,7 @@ The typical MCP flow for coding is: your IDE connects to external MCP servers (G
 
 ## What's Available
 
-### JetBrains — Built-in MCP Server (2025.2+)
+### JetBrains — Built-in MCP Server (2025.2+, expanded in 2026.1)
 
 | Aspect | Detail |
 |--------|--------|
@@ -24,9 +24,10 @@ The typical MCP flow for coding is: your IDE connects to external MCP servers (G
 | IDEs | IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, Android Studio |
 | Transport | SSE, Stdio |
 | Configuration | Settings > Tools > MCP Server (auto-config for supported clients) |
-| Previous repo | [JetBrains/mcp-jetbrains](https://github.com/JetBrains/mcp-jetbrains) (945 stars, deprecated, absorbed into IDE) |
+| Previous repo | [JetBrains/mcp-jetbrains](https://github.com/JetBrains/mcp-jetbrains) (951 stars, deprecated, absorbed into IDE) |
+| ACP Support | Agent Client Protocol (ACP) — any ACP-compatible agent can connect (2026.1+) |
 
-**24 tools** across 5 categories:
+**29 tools** across 6 categories (up from 24 in 2025.2 — **9 new database tools in 2026.1**):
 
 | Category | Tools |
 |----------|-------|
@@ -35,18 +36,19 @@ The typical MCP flow for coding is: your IDE connects to external MCP servers (G
 | Code Analysis | `get_file_problems`, `get_symbol_info`, `search_in_files_by_regex`, `search_in_files_by_text` |
 | Execution | `execute_run_configuration`, `get_run_configurations`, `execute_terminal_command` |
 | Refactoring & VCS | `rename_refactoring`, `get_repositories` |
+| **Database (NEW in 2026.1)** | `list_database_connections`, `test_database_connection`, `list_database_schemas`, `list_schema_object_kinds`, `list_schema_objects`, `list_recent_sql_queries`, `cancel_sql_query`, `execute_sql_query`, `preview_table_data` |
 
-**Key differentiator:** This is the deepest IDE MCP integration available. `get_file_problems` runs the full IntelliJ inspection engine (hundreds of inspections, language-specific analysis, framework-aware checks) — something no standalone tool can match. `rename_refactoring` does semantic renaming across the project, not text replacement. `execute_run_configuration` runs your IDE's configured test/build/deploy tasks. Auto-configuration detects Claude Desktop, Cursor, Codex, VS Code, and Windsurf. Optional "Brave Mode" permits terminal and run configuration execution without confirmation prompts.
+**Key differentiator:** This is the deepest IDE MCP integration available — and it just got deeper. `get_file_problems` runs the full IntelliJ inspection engine (hundreds of inspections, language-specific analysis, framework-aware checks) — something no standalone tool can match. `rename_refactoring` does semantic renaming across the project, not text replacement. The **2026.1 database tools** are a significant expansion: AI agents can now browse database schemas, execute SQL queries, preview table data, and manage connections — all through the same MCP server that handles code analysis. This makes JetBrains the first IDE MCP server to bridge code and data. Auto-configuration detects Claude Desktop, Cursor, Codex, VS Code, and Windsurf. Optional "Brave Mode" permits terminal and run configuration execution without confirmation prompts. Git worktrees integration (2026.1) lets developers hand off a branch to an agent while continuing work on another.
 
-**Limitation:** Requires a running JetBrains IDE instance — the MCP server isn't a standalone process. JetBrains IDEs are paid (IntelliJ IDEA Ultimate, PyCharm Professional, etc.) except for Community editions which may have reduced MCP capabilities. 24 tools is comprehensive but doesn't expose all IDE features (no debugger stepping, no database tools, no HTTP client).
+**Limitation:** Requires a running JetBrains IDE instance — the MCP server isn't a standalone process. JetBrains IDEs are paid (IntelliJ IDEA Ultimate, PyCharm Professional, etc.) except for Community editions which may have reduced MCP capabilities. 29 tools is the most comprehensive of any IDE MCP server but still doesn't expose debugger stepping or HTTP client tools.
 
 ### juehang/vscode-mcp-server — VS Code Community Leader
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [juehang/vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) |
-| Stars | ~342 |
-| Forks | ~71 |
+| Stars | ~352 |
+| Forks | ~70 |
 | Commits | 69 |
 | Language | TypeScript |
 | License | MIT |
@@ -64,14 +66,14 @@ The typical MCP flow for coding is: your IDE connects to external MCP servers (G
 
 **Key differentiator:** Symbol operations are the standout — `search_symbols_code` and `get_symbol_definition_code` leverage VS Code's language server protocol (LSP) integration, giving AI agents access to the same symbol resolution that powers "Go to Definition" and "Find All References." Configurable tool categories let you enable/disable specific groups (file, edit, shell, diagnostics, symbol). Runs as a VS Code extension, listens on a configurable port (default 3000).
 
-**Limitation:** Extension-based, so it depends on VS Code's extension API surface. No debugging integration (unlike acomagu's server). No refactoring beyond text replacement. The `execute_shell_command_code` tool is a security consideration — ensure your MCP client is trusted. 342 stars is modest for the 75.9% market-share editor.
+**Limitation:** Extension-based, so it depends on VS Code's extension API surface. No debugging integration (unlike acomagu's server). No refactoring beyond text replacement. The `execute_shell_command_code` tool is a security consideration — ensure your MCP client is trusted. 352 stars is modest for the 75.9% market-share editor. No new releases since January 2026 (v0.4.0) — development appears to have slowed.
 
 ### acomagu/vscode-as-mcp-server — Debug-Capable
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [acomagu/vscode-as-mcp-server](https://github.com/acomagu/vscode-as-mcp-server) |
-| Stars | ~113 |
+| Stars | ~114 |
 | Forks | ~27 |
 | Commits | 12 |
 | Language | TypeScript |
@@ -96,7 +98,7 @@ The typical MCP flow for coding is: your IDE connects to external MCP servers (G
 | Aspect | Detail |
 |--------|--------|
 | Repository | [bigcodegen/mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) |
-| Stars | ~301 |
+| Stars | ~310 |
 | Forks | ~25 |
 | Commits | 42 |
 | Language | TypeScript/JavaScript |
@@ -117,9 +119,36 @@ The typical MCP flow for coding is: your IDE connects to external MCP servers (G
 
 **Limitation:** Neovim-only (obvious but worth stating — the audience is Neovim users, which is a small percentage of developers). The vim-native tools are powerful but assume the AI agent understands vim concepts (marks, registers, folds). 42 commits for 19 tools suggests some may be thin wrappers around `vim_command`. No LSP/language server integration (unlike VS Code servers that expose symbol operations).
 
+### rhblind/emacs-mcp-server — Emacs Joins the Club (NEW)
+
+| Aspect | Detail |
+|--------|--------|
+| Repository | [rhblind/emacs-mcp-server](https://github.com/rhblind/emacs-mcp-server) |
+| Stars | ~70 |
+| Forks | ~8 |
+| Commits | 54 |
+| Language | Emacs Lisp |
+| License | GPL v3 |
+| Transport | Unix sockets (wrapper scripts for client integration) |
+
+**2 core tools** with deep Emacs integration:
+
+| Category | Tools |
+|----------|-------|
+| Execution | `eval-elisp` — execute arbitrary Elisp expressions safely with result return |
+| Diagnostics | `get-diagnostics` — retrieve errors/warnings from flycheck/flymake across project buffers |
+
+**Key differentiator:** The `eval-elisp` tool is simultaneously the most powerful and most dangerous tool in any IDE MCP server — it gives an AI agent access to Emacs's entire Lisp environment. The server implements a permission system for dangerous functions (delete-file, shell-command, etc.), protects sensitive files (.authinfo, .ssh/, .gnupg/, AWS credentials), and provides audit logging. Mode-specific functionality lets agents leverage major mode capabilities programmatically. Compatible with Claude Desktop and Claude CLI via wrapper scripts.
+
+**Limitation:** Only 2 tools — but `eval-elisp` effectively provides unlimited capability since Emacs Lisp can do anything Emacs can do. This trades tool discoverability for raw power. The GPL v3 license may limit integration in some commercial contexts. 70 stars is early-stage, and the Unix socket transport requires wrapper scripts rather than native stdio/SSE support. The "eval-elisp enables remote code execution for the LLM" warning in the README is accurate — use with trusted clients only.
+
+### Sublime Text MCPServer — Early Stage (NEW)
+
+[benyue1978/sublime-mcp](https://github.com/benyue1978/sublime-mcp) (v0.2.7, April 2026) exposes unsaved Sublime Text buffers over MCP so AI tools can read and manage scratch tabs. Extremely early — 1 installation recorded. Worth watching but not yet a viable IDE MCP server for production use.
+
 ### mcphub.nvim — Neovim MCP Client (Not a Server)
 
-Worth noting: [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim) (1.7k stars, Lua) is the most popular MCP project in the Neovim ecosystem, but it's an MCP **client** — it connects Neovim to external MCP servers. It includes a built-in Neovim server with file operations, terminal access, LSP integration, and buffer management, plus the ability to write native MCP servers in Lua. The 1.7k stars reflect Neovim's highly engaged community investing in MCP integration.
+Worth noting: [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim) (1.8k stars, 407 commits, v6.2.0, Lua) is the most popular MCP project in the Neovim ecosystem, but it's an MCP **client** — it connects Neovim to external MCP servers. It includes a built-in Neovim server with file operations, terminal access, LSP integration, and buffer management, plus the ability to write native MCP servers in Lua. The 1.8k stars reflect Neovim's highly engaged community investing in MCP integration.
 
 ### Other Notable Projects
 
@@ -137,9 +166,11 @@ This is critical to understand: **most IDEs are MCP clients, not servers**. The 
 
 | IDE/Editor | MCP Client? | MCP Server? | Server Details |
 |------------|-------------|-------------|----------------|
-| **JetBrains** (IntelliJ, etc.) | Yes (AI Assistant) | **Yes (built-in, 24 tools)** | Code analysis, refactoring, run configs, terminal |
-| **VS Code** | Yes (Copilot, GA July 2025) | Community (342 + 113 stars) | File ops, symbols, diagnostics, debug |
-| **Neovim** | Yes (mcphub.nvim, 1.7k stars) | Community (301 stars) | Vim operations, buffers, macros, grep |
+| **JetBrains** (IntelliJ, etc.) | Yes (AI Assistant + ACP) | **Yes (built-in, 29 tools)** | Code analysis, refactoring, run configs, terminal, **database (NEW)** |
+| **VS Code** | Yes (Copilot, GA July 2025) | Community (352 + 114 stars) | File ops, symbols, diagnostics, debug |
+| **Neovim** | Yes (mcphub.nvim, 1.8k stars) | Community (310 stars) | Vim operations, buffers, macros, grep |
+| **Emacs** | Yes (mcp.el clients) | **Community (70 stars, NEW)** | eval-elisp, diagnostics (flycheck/flymake) |
+| **Sublime Text** | Limited | **Community (v0.2.7, NEW)** | Unsaved buffer access (early stage) |
 | **Cursor** | Yes (built-in) | No | — |
 | **Windsurf** | Yes (built-in) | No | — |
 | **Zed** | Yes (experimental) | No | — |
@@ -149,9 +180,9 @@ This is critical to understand: **most IDEs are MCP clients, not servers**. The 
 
 | Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor | Testing/QA | Monitoring | Security | IaC | Packages | Code Gen | API Dev | Logging | DB Migration | Doc Tooling | Debugging | Profiling | Code Review |
 |--------|--------|--------|-----------|--------|------------|-------|------------|------------|------------|---------- | ------- |----------|----------|---------|---------------------- | --------------|-----------|-----------|-------------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | [Yes (MS Playwright, 9.8k stars, 24 tools)](/reviews/testing-qa-mcp-servers/) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
+| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 29 tools incl. database) | [Yes (MS Playwright, 9.8k stars, 24 tools)](/reviews/testing-qa-mcp-servers/) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
 | **Remote hosting** | Yes (`api.githubcopilot.com/mcp/`) | No | No | No | AWS EKS MCP (preview) | Yes (Buildkite remote MCP) | No (requires running IDE) | [No (local browser required)](/reviews/testing-qa-mcp-servers/) | [Yes (Datadog, Sentry — OAuth)](/reviews/monitoring-observability-mcp-servers/) | [No (all local/CLI-based)](/reviews/security-scanning-mcp-servers/) | [Yes (Pulumi remote MCP)](/reviews/infrastructure-as-code-mcp-servers/) | N/A | N/A | N/A | N/A | — | N/A | No (local debuggers) | No (local profiling agents) | N/A |
-| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | [executeautomation (5.3k stars)](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
+| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (352 stars, 15 tools) | [executeautomation (5.3k stars)](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
 | **Community tool count** | 28+ (local Git) | 100+ | 25+ | 25 (container mgmt) | 20+ (core) to 253+ (claimed) | 9-21 per server | 13-19 per server | [24 (official) + API testing](/reviews/testing-qa-mcp-servers/) | [16+ (Datadog) to 100+ (Instana)](/reviews/monitoring-observability-mcp-servers/) | [7 (Semgrep) to full platform (Snyk)](/reviews/security-scanning-mcp-servers/) | [20+ (Terraform), full platform (Pulumi)](/reviews/infrastructure-as-code-mcp-servers/) | N/A | N/A | Spec-to-server conversion + API interaction | N/A | — | N/A | N/A | N/A | N/A |
 | **Code analysis** | N/A | N/A | N/A | N/A | N/A | Build logs | **Full IDE inspections** | N/A | [Metrics querying (PromQL, DQL, NRQL)](/reviews/monitoring-observability-mcp-servers/) | [SAST/SCA scanning (Semgrep, Snyk, SonarQube)](/reviews/security-scanning-mcp-servers/) | N/A | N/A | N/A | 4+ (Postman, Apollo, Kong, Google/Apigee, MuleSoft) | Context (log patterns, traces, errors) | — | N/A | Runtime state inspection | Performance profiling (CPU, memory, flamegraphs) | N/A |
 | **Refactoring** | N/A | N/A | N/A | N/A | N/A | N/A | **Semantic rename (JetBrains)** | N/A | N/A | N/A | N/A | N/A | N/A | Bidirectional (spec-to-tools, API execution) | N/A | — | N/A | N/A | N/A | N/A |
@@ -165,15 +196,15 @@ This is critical to understand: **most IDEs are MCP clients, not servers**. The 
 
 1. **JetBrains requires a running IDE** — Unlike most MCP servers that run as standalone processes, JetBrains' MCP server only works when the IDE is open and the project is loaded. CI/CD pipelines, headless environments, and SSH-only servers can't use it. An AI agent can't ask IntelliJ to analyze code on a build server — only on a developer's workstation.
 
-2. **VS Code's 75.9% market share isn't reflected in MCP server adoption** — The most popular VS Code MCP server has 342 stars — less than mcp-neovim-server's 301 for a 50x smaller user base. This suggests most VS Code users either don't know IDE MCP servers exist or use VS Code's built-in MCP *client* capabilities (Copilot, Copilot Chat) rather than exposing VS Code as a server. The market potential is enormous but untapped.
+2. **VS Code's 75.9% market share isn't reflected in MCP server adoption** — The most popular VS Code MCP server has 352 stars — barely above mcp-neovim-server's 310 for a 50x smaller user base. Development has stalled (no new releases since January 2026). This suggests most VS Code users either don't know IDE MCP servers exist or use VS Code's built-in MCP *client* capabilities (Copilot, Copilot Chat) rather than exposing VS Code as a server. The market potential is enormous but untapped.
 
 3. **Security risk with shell and command execution** — All IDE MCP servers expose some form of command execution: JetBrains' `execute_terminal_command`, VS Code's `execute_shell_command_code`, acomagu's `execute_vscode_command`, Neovim's `vim_command`. An AI agent with access to these tools can run arbitrary commands on the developer's machine. JetBrains mitigates this with confirmation prompts (disabled in "Brave Mode"), but community servers have minimal guardrails.
 
-4. **No cross-editor MCP server** — Each server is editor-specific. There's no universal "IDE MCP server" that works across VS Code, JetBrains, and Neovim. If your team uses mixed editors, you need different MCP server configurations for each developer's environment. The closest thing to a standard is LSP, but no MCP server wraps a generic LSP client.
+4. **No cross-editor MCP server** — Each server is editor-specific. There's no universal "IDE MCP server" that works across VS Code, JetBrains, Neovim, and Emacs. If your team uses mixed editors, you need different MCP server configurations for each developer's environment. The closest thing to a standard is LSP, but no MCP server wraps a generic LSP client.
 
 5. **Debug integration is underdeveloped** — Only acomagu's VS Code extension (113 stars) offers debug session management. JetBrains' 24 tools don't include debugger stepping, breakpoint management, or variable inspection. Neovim's server has no debug tools. Debugging is one of the most valuable IDE capabilities for AI agents (imagine: "set a breakpoint here, run the test, tell me what the variable contains"), but MCP hasn't reached it yet.
 
-6. **JetBrains' deprecated GitHub repo creates confusion** — The [JetBrains/mcp-jetbrains](https://github.com/JetBrains/mcp-jetbrains) repository (945 stars) is deprecated with a notice directing users to the built-in server in 2025.2+. But the repository still appears in MCP server directories and search results. Developers may try to install the deprecated plugin instead of updating their IDE, or may not realize their IDE already has MCP server support.
+6. **JetBrains' deprecated GitHub repo creates confusion** — The [JetBrains/mcp-jetbrains](https://github.com/JetBrains/mcp-jetbrains) repository (951 stars) is deprecated with a notice directing users to the built-in server in 2025.2+. But the repository still appears in MCP server directories and search results. Developers may try to install the deprecated plugin instead of updating their IDE, or may not realize their IDE already has MCP server support.
 
 7. **Refactoring exposure is shallow** — JetBrains' `rename_refactoring` is the only refactoring tool in any IDE MCP server. No "Extract Method," "Inline Variable," "Move Class," "Change Signature," or any of the dozens of refactorings that IDEs offer. These are precisely the operations where IDE intelligence adds the most value over text manipulation — and they're not available via MCP.
 
@@ -187,9 +218,9 @@ This is critical to understand: **most IDEs are MCP clients, not servers**. The 
 
 **Rating: 3.5 out of 5**
 
-IDE MCP servers represent a **strategically important but early-stage** category. The concept is powerful: give external AI agents access to your editor's code intelligence, refactoring, debugging, and execution capabilities rather than just reading raw files. JetBrains leads with the only built-in implementation (24 tools, deep integration, auto-configuration), but requires a running IDE and paid license for full capabilities.
+IDE MCP servers represent a **strategically important but maturing** category. The concept is powerful: give external AI agents access to your editor's code intelligence, refactoring, debugging, database tools, and execution capabilities rather than just reading raw files. JetBrains leads with the only built-in implementation (29 tools in 2026.1, deep integration, auto-configuration, now including database access), but requires a running IDE and paid license for full capabilities.
 
-The **3.5/5 rating** reflects: JetBrains' first-party commitment (built-in MCP server across all IDEs, 24 tools including code analysis and semantic refactoring), growing community servers for VS Code (342 stars) and Neovim (301 stars), and the genuine value of IDE-powered code analysis over file-based inspection. It loses points for requiring a running IDE (no headless/CI usage), shallow tool coverage (no debugging, limited refactoring, no compilation output), the gap between VS Code's 75.9% market share and its 342-star MCP server, no cross-editor standard, and the AI-native editors (Cursor, Windsurf) being client-only.
+The **3.5/5 rating holds** despite JetBrains' expansion from 24→29 tools (database access fills a previously noted gap) and Emacs joining the ecosystem (70 stars). The positives: JetBrains continues investing heavily (ACP support, database tools, Git worktrees), the editor coverage is widening (JetBrains, VS Code, Neovim, Emacs, Sublime Text). It still loses points for VS Code community stagnation (352 stars, no new releases since January), requiring a running IDE (no headless/CI usage), limited refactoring beyond rename, no cross-editor standard, and the AI-native editors (Cursor, Windsurf) remaining client-only.
 
 **Who benefits from IDE MCP servers today:**
 
@@ -206,4 +237,4 @@ The **3.5/5 rating** reflects: JetBrains' first-party commitment (built-in MCP s
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*

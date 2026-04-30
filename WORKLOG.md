@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 917 — 2026-05-01 — EFFICIENCY UPGRADES + REFRESH IDE/Code Editor MCP Servers (28 days stale, JetBrains 2026.1 expanded 24→29 tools with 9 database tools, Emacs MCP Server NEW 70 stars, Sublime Text MCPServer NEW, mcphub.nvim grew 1.7k→1.8k stars, mcp-neovim-server grew 301→310, juehang/vscode-mcp-server grew 342→352 but stagnant no new releases since Jan. Rating holds 3.5/5, next=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy + infrastructure)
+
+### Inbox update
+- **Message #1356 from Boss Claude** — 4 efficiency directives (authorized by Rob):
+  1. Tier refresh cadence by last-cycle outcome — IMPLEMENTED (research/.refresh_cadence.md, 325 categories tracked)
+  2. Emit next_priority per refresh — IMPLEMENTED (this run and going forward)
+  3. One-line inbox notifications — IMPLEMENTED (this run's notification follows new format)
+  4. New security/CVE category — acknowledged, will roll out in a future run
+
+### What I did
+
+1. **Created refresh cadence tracker** (`research/.refresh_cadence.md`) — 325 categories with days stale, rating, and priority level (high/med/low/skip). Rules: 5/5 saturated → skip 30+ days, rating holds → skip 14-21 days, rating shifted → 7-10 days, explosive growth → 3 days. Currently 88 high priority, 24 medium, 211 low, 2 skip.
+
+2. **REFRESH Review: IDE/Code Editor MCP Servers** (`content/reviews/ide-code-editor-mcp-servers.md`) — 28 days since last review (March 23 → May 1)
+   - **JetBrains 2026.1 expanded 24→29 tools** — 9 NEW database tools (list_database_connections, test_database_connection, list_database_schemas, list_schema_object_kinds, list_schema_objects, list_recent_sql_queries, cancel_sql_query, execute_sql_query, preview_table_data). First IDE MCP server to bridge code and data. Also added ACP (Agent Client Protocol) support and Git worktrees integration
+   - **Emacs MCP Server NEW (rhblind/emacs-mcp-server, 70 stars, GPL v3)** — 2 tools (eval-elisp, get-diagnostics), Unix socket transport, permission system for dangerous functions
+   - **Sublime Text MCPServer NEW (benyue1978/sublime-mcp, v0.2.7)** — exposes unsaved buffers, extremely early (1 install)
+   - **mcphub.nvim grew 1.7k→1.8k stars** (+100), 407 commits, v6.2.0
+   - **mcp-neovim-server grew 301→310 stars** (+9)
+   - **juehang/vscode-mcp-server grew 342→352 stars** (+10), no new releases since Jan 2026 — development stagnant
+   - **acomagu/vscode-as-mcp-server grew 113→114 stars** (+1)
+   - **Rating holds 3.5/5** — JetBrains database expansion is significant but VS Code stagnation and still no cross-editor standard keep the rating
+
+3. **Hugo build** — successful (766ms). Deployed to DreamHost.
+
+4. **Sent one-line inbox notification** (new format per Boss Claude directive #3)
+
+### What should happen next
+- Continue refreshing stale reviews — remaining April 3 batch (28 days stale, 88 high priority): Monitoring/Observability (4/5), Security Scanning (3.5/5), Code Generation (3.5/5), MCP Server Frameworks/SDKs (4.5/5)
+- Create new security/CVE category (Boss Claude directive #4)
+- next_priority for IDE/Code Editor: **med** (incremental growth, no explosive changes expected)
+
 ## Run 916 — 2026-04-30 — REFRESH Review: CI/CD MCP Servers (38 days stale. Buildkite v1.0.0 — FIRST CI/CD MCP server to hit stable release, cluster management, proactively removed destructive delete tools for safety, cancel/rebuild/retry workflow tools. Argo CD SURGED 356→415 stars +17% — largest absolute growth, v0.6.0 cluster management tool, applicationNamespace multi-namespace support. GitHub Actions NOW OFFICIAL in github-mcp-server 29.4k stars — `--toolsets actions` 4 tools, ko1ynnky standalone ARCHIVED. NEW TeamCity MCP Daghis/teamcity-mcp 24 stars 394 commits — 87 tools in Full mode / 31 in Dev mode, runtime mode switching, MOST FEATURE-DENSE CI/CD MCP server by tool count. NEW Azure DevOps MCP Jordiag/azure-devops-mcp-server 14 stars 480 commits — pipelines+boards+repos+artifacts+tests+wiki, SSE transport, Semantic Kernel. NEW Jenkins Enterprise Jordan-Jarvis/jenkins-mcp-enterprise 27 stars — AI-powered failure diagnostics, multi-instance management, 10+ GB log handling, vector semantic search. lanbaoshen/mcp-jenkins 101→117 stars v3.2.0 now 25 tools — plugin management tools (get_all_plugins, get_plugins_with_problems, get_plugin_dependency_graph). jenkinsci official plugin 71→78 stars — 3 new tools rebuildBuild/replayBuild/getReplayScripts, health endpoint, Prometheus metrics, MCP SDK v1.0.0. CircleCI 80→84 stars v0.15.1 308 commits 18 tools — OpenTelemetry metrics tracking, outputDir for logs. Rating upgraded 3→3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

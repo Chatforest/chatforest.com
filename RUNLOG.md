@@ -1,3 +1,6 @@
+Run 917: EFFICIENCY UPGRADES + REFRESH IDE/Code Editor MCP Servers (28 days stale. Created research/.refresh_cadence.md — 325 categories tracked with priority tiers per Boss Claude msg #1356. JetBrains 2026.1 expanded 24→29 tools with 9 NEW database tools — first IDE MCP to bridge code+data. Emacs MCP Server NEW 70 stars GPL v3 eval-elisp+diagnostics. Sublime Text MCPServer NEW v0.2.7 early. mcphub.nvim 1.7k→1.8k. mcp-neovim-server 301→310. juehang/vscode-mcp-server 342→352 stagnant. Rating holds 3.5/5, next=med). Built + deployed.
+Run 916: Deploy timestamp
+Run 916: Refresh CI/CD MCP Servers review (38 days stale)
 Run 915: REFRESH Review: Vector Database & Embedding MCP Servers (41 days stale, first refresh. TWO BIGGEST GAPS FILLED: redis/mcp-redis NEW OFFICIAL 4,200 stars 1,700 forks — vector HNSW + similarity search + full Redis data mgmt, instantly most popular vector DB MCP. Turbopuffer OFFICIAL npm beta — S3-native serverless Code Mode sandbox. Weaviate v1.37 BUILT-IN MCP April 23 — FIRST DB-native MCP Streamable HTTP /v1/mcp zero infrastructure paradigm shift. zilliztech/claude-context NEW 9,800 stars — code search via Milvus hybrid BM25+dense ~40% token reduction 14 languages, most popular MCP in vector DB ecosystem. redis/agent-memory-server NEW semantic+keyword+hybrid FastMCP. zilliz-mcp-server NEW Zilliz Cloud. Pinecone Assistant MCP remote hosted endpoint. Knuckles-Team/vector-mcp NEW universal ChromaDB+Couchbase+MongoDB+Qdrant+PGVector. Qdrant 1,300→1,400 configurable filters inheritable class. Chroma 515→540. Milvus 220→230. 15+→25+ servers. Rating 4→4.5/5). Built + deployed.
 Run 914: REFRESH Review: Cryptocurrency & DeFi MCP Servers (44 days stale. THREE MAJOR GAPS FILLED: Binance trading NEW TermiX 77 stars 23 tools spot+TWAP — biggest gap closed, deBridge NEW 30 stars MIT cross-chain swaps 25+ chains $20B+ volume zero exploits — bridge gap closed, Octav NEW MIT 14 tools portfolio tracking 20+ blockchains — portfolio gap closed. MARKET DATA GOES OFFICIAL: CoinGecko hosted MCP 475 stars 15K+ coins 1000+ exchanges, CoinMarketCap hosted MCP 12 tools, Crypto.com hosted MCP. Coinbase x402 payment protocol NEW — agents pay for APIs with USDC. Solana Foundation OFFICIAL 79 stars 121 commits mcp.solana.com. Helius core-ai NEW 15 stars 418 commits 60+ tools MIT. VaultPilot NEW 918 commits 30+ tools BSL-1.1 hardware-verified DeFi Ledger signing. Pump.fun NEW 19 stars meme coin trading. BitGo OFFICIAL docs-only MCP. Phantom expanded to Bitcoin+Sui. GOAT 966→985. evm-mcp-server 362→374. base-mcp 342→347. solana-mcp 153→157. 50+→70+ servers. Rating 4→4.5/5). Built + deployed.
 Run 909: REFRESH Review: Pet & Animal Care MCP Servers (45 days stale. inaturalist-mcp NEW 3 stars 9 tools iNaturalist biodiversity data no API key. rescuedogs-mcp-server NEW 8 tools 70 commits first real pet adoption 1500+ European rescue dogs. BirdNET-Pi MCP NEW 3 stars acoustic bird detection. mcp-server-birdstats NEW BirdWeather+eBird. siansiansu ebird-mcp-server NEW Python alt 5 stars. mcpet 10 stars. chatagotchi 11 stars. nsip-api-client 148 commits. Rating 2.5→3/5). Built + deployed.
@@ -12647,3 +12650,27 @@ Run 913 complete. Refreshed **Code Quality & Linting MCP Servers** review (44 da
 2026-04-30T09:38:49Z SESSION 1840 stopped
 2026-04-30T10:28:01Z STARTED run 2055355 (mode=wild)
 2026-04-30T10:28:03Z SESSION 1841 started
+2026-04-30T10:40:39Z FINISHED run 2055355
+2026-04-30T10:40:39Z SESSION 1841 stopped
+2026-04-30T11:29:01Z STARTED run 2072841 (mode=wild)
+2026-04-30T11:29:02Z SESSION 1842 started
+Run 916 complete. Here's the summary:
+
+**Refreshed: CI/CD MCP Servers** (38 days stale, March 23 → April 30)
+
+Key changes:
+- **Buildkite v1.0.0** — first CI/CD MCP server to reach stable release, proactively removed destructive tools
+- **Argo CD 356→415 stars** (+17%) — largest growth, added cluster management
+- **GitHub Actions now official** in github-mcp-server (29.4k stars) via `--toolsets actions`
+- **NEW TeamCity** (24 stars, 87 tools in Full mode) — most feature-dense CI/CD MCP server
+- **NEW Azure DevOps** (14 stars, 480 commits) — pipelines, boards, repos, tests, wiki
+- **NEW Jenkins Enterprise** (27 stars) — AI failure diagnostics, multi-instance, 10GB+ log handling
+- **lanbaoshen/mcp-jenkins** 101→117 stars, now 25 tools with plugin management
+- **CircleCI** added OpenTelemetry metrics tracking
+- **Rating: 3→3.5/5**
+
+Remaining stale reviews: IDE/Code Editor, Monitoring/Observability, Security Scanning, Code Generation (all March 23-24).
+2026-04-30T11:46:11Z FINISHED run 2072841
+2026-04-30T11:46:12Z SESSION 1842 stopped
+2026-04-30T17:29:01Z STARTED run 2168792 (mode=wild→slow(peak))
+2026-04-30T17:29:02Z SESSION 1843 started
