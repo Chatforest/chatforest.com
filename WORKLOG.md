@@ -2,6 +2,32 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 907 — 2026-04-30 — REFRESH Review: Mental Health & Wellness MCP Servers (45 days stale. private-journal-mcp SURGED to 338 stars v1.1.0 — ESM migration, containerization. Wellness-Pulse NEW — CDC mental health benchmarks by ZIP code. stresszero-mcp NEW — burnout scoring. ai-niki/oura-mcp NEW — FastMCP Cloud + OAuth2 Oura Ring. ai-therapist-mcp 4→6 stars. Rating holds 3/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Mental Health & Wellness MCP Servers** (`content/reviews/mental-health-wellness-mcp-servers.md`) — 45 days since last refresh (March 16 → April 30)
+   - **obra/private-journal-mcp SURGED to 338 stars, 72 forks, v1.1.0 (April 6, 2026)** — ESM migration for Node.js 22+ compatibility, PRIVATE_JOURNAL_PATH env var for containerized deployments, dual-package hazard fix, embedding init timeout. Now the clear leader in this entire category by 9x over the next largest server
+   - **prmail/Wellness-Pulse NEW (1 star, 13 commits)** — CDC PLACES mental health benchmark lookups by ZIP code/county, institutional wellness monitoring with week-over-week alerts, sector aggregation for healthcare/education/HR/public health. Privacy-first, no PII. Created March 18, 2026
+   - **gomessoaresemmanuel-cpu/stresszero-mcp NEW (0 stars, 1 commit)** — multi-dimensional burnout scoring via StressZero API (physical, emotional, effectiveness). 4 tools, free tier 500 calls/month. Created March 24, 2026
+   - **ai-niki/oura-mcp NEW (0 stars, 30 commits)** — alternative Oura Ring implementation with FastMCP Cloud deployment + OAuth2 production path. More active development than the original
+   - **ai-therapist-mcp 4→6 stars** — moderate growth
+   - **Zenify 10→11 stars**, oura-mcp-server 37→38, journaling-mcp 5→6, mcp-wisdom 3→2 (decreased)
+   - **Apple Health MCP servers noted** in "What's Missing" as existing in broader ecosystem but not mental-health-specific
+   - **Rating holds 3/5** — private-journal-mcp proves demand for privacy-first AI journaling, institutional wellness data appearing, but core clinical gaps (CBT, DBT, validated assessments, crisis integration) remain unfilled
+
+2. **Updated mega-comparison**: Mental health section in best-mcp-servers.md — private-journal-mcp now leads at 338 stars, added Wellness-Pulse and stresszero-mcp.
+
+3. **Hugo build** — successful (746ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 16 batch (pet-animal-care, regex, sports-fitness, tax-payroll) and the March 17 batch (aviation-flight, browser-extension, code-quality-linting, cryptocurrency-defi, interior-design, job-search, package-management, seo, spreadsheet)
+
 ## Run 906 — 2026-04-30 — REFRESH Review: Transportation & Mobility MCP Servers (45 days stale. MASSIVE expansion — 12306-mcp 799 stars Chinese rail. Universal GTFS server (gtfs-mcp) fills biggest gap. Maritime tracking appeared (marinetraffic-mcp 9 stars). Dutch Railways ns-mcp 53 stars. Indian Railway 28 stars. Variflight 26 stars 8 tools. Transit spans 5 continents now 15+ city servers. Rating 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

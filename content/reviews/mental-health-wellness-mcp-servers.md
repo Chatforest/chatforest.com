@@ -2,10 +2,10 @@
 title: "Mental Health & Wellness MCP Servers — Therapy, Mood Tracking, Journaling, Meditation, and Personal Wellbeing"
 date: 2026-03-16T16:00:00+09:00
 description: "Mental health and wellness MCP servers let AI agents support mood tracking, journaling, meditation, therapeutic conversations, and personal wellbeing through the Model Context Protocol."
-og_description: "Mental health MCP servers: Zenify (10 stars, RAG chatbot with crisis detection), oura-mcp-server (37 stars, Oura Ring sleep/readiness data), mcp-wisdom (9 philosophical tools), journaling-mcp (emotional analysis), mcp-ai-therapy (vector-memory therapeutic conversations). 15+ servers reviewed. Rating: 3/5."
+og_description: "Mental health MCP servers: private-journal-mcp (338 stars, v1.1.0, local semantic search), oura-mcp-server (38 stars, Oura Ring data), Zenify (11 stars, RAG chatbot with crisis detection), Wellness-Pulse (CDC mental health benchmarks), stresszero-mcp (burnout scoring). 20+ servers reviewed. Rating: 3/5."
 content_type: "Review"
-card_description: "Mental health and wellness MCP servers for mood tracking, journaling, meditation, therapeutic conversations, and personal wellbeing through AI assistants. This category covers tools that support psychological and emotional health — not medical diagnostics (see [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/)), not fitness hardware (see [Wearables & Quantified Self](/reviews/fitness-wearables-mcp-servers/) if it exists). **This is one of the most nascent MCP categories** — most servers have 0-10 stars and are experimental projects. Two distinct paradigms have emerged: servers providing mental health support *to humans* (mood tracking, journaling, coping tools) and servers providing emotional support *to AI agents* (therapeutic personas, digital rest, existential crisis support). The Oura MCP server (37 stars) is the most popular in the broader wellness space, connecting real wearable data to AI assistants. Zenify (10 stars) is the most comprehensive mental health platform, combining RAG retrieval, MCP tools, suicide risk detection (TF-IDF + logistic regression), keyword screening, mood tracking, and journaling with an admin dashboard for flagged content. mcp-wisdom provides 9 philosophical thinking tools from Stoic, Cognitive, Mindfulness, and Strategic traditions — practical frameworks for anxiety, bias detection, and reactive decision-making. The journaling subcategory is surprisingly strong — private-journal-mcp offers semantic search with local AI embeddings and zero external API calls, while journaling-mcp provides automatic emotional analysis of entries. **Major gaps define this category** — no dedicated CBT or DBT therapy servers exist, no breathing or breathwork tools, no gratitude or habit tracking, no crisis hotline integration, no professional therapy platform bridges (BetterHelp, Talkspace), no clinical assessment instruments (PHQ-9, GAD-7), and no Apple Health or Google Fit mental health data integration. The category earns 3/5 — there are genuinely interesting experiments here (Zenify's crisis detection, mcp-wisdom's philosophical frameworks, private-journal-mcp's local-first semantic search), but nothing is production-ready for actual mental health support. These are prototypes exploring what AI-assisted wellness could look like, not tools you'd recommend to someone seeking help. The space needs evidence-based approaches, professional oversight integration, and much more rigorous safety guardrails before it can responsibly serve people with real mental health needs."
-last_refreshed: 2026-03-16
+card_description: "Mental health and wellness MCP servers for mood tracking, journaling, meditation, therapeutic conversations, and personal wellbeing through AI assistants. This category covers tools that support psychological and emotional health — not medical diagnostics (see [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/)), not fitness hardware (see [Wearables & Quantified Self](/reviews/fitness-wearables-mcp-servers/) if it exists). **The journaling subcategory broke out** — private-journal-mcp surged to 338 stars and released v1.1.0 (April 2026) with ESM migration and containerized deployment support, becoming the clear leader in this entire category by a massive margin. Two distinct paradigms persist: servers providing mental health support *to humans* (mood tracking, journaling, coping tools) and servers providing emotional support *to AI agents* (therapeutic personas, digital rest, existential crisis support). The Oura MCP server (38 stars) remains the most popular wearable wellness integration, with a second Oura implementation (ai-niki/oura-mcp, 30 commits) adding FastMCP Cloud and OAuth2 production deployment. Zenify (11 stars) remains the most comprehensive mental health platform with RAG retrieval, crisis detection, and admin oversight. **New entrants**: Wellness-Pulse brings CDC PLACES mental health benchmarks by ZIP code for institutional wellness monitoring, and stresszero-mcp offers multi-dimensional burnout scoring via API. mcp-wisdom provides 9 philosophical thinking tools from Stoic, Cognitive, Mindfulness, and Strategic traditions. **Major gaps persist** — no dedicated CBT or DBT therapy servers, no breathing or breathwork tools, no gratitude or habit tracking, no crisis hotline integration, no professional therapy platform bridges, no clinical assessment instruments (PHQ-9, GAD-7). Apple Health MCP servers now exist in the broader ecosystem but aren't mental-health-specific. The category holds at 3/5 — private-journal-mcp's breakout success proves demand for privacy-first AI journaling, and institutional wellness data is appearing, but the core clinical gaps (evidence-based therapy tools, validated assessments, crisis integration) remain unfilled. These are still prototypes exploring what AI-assisted wellness could look like, not tools ready for actual mental health support."
+last_refreshed: 2026-04-30
 category: "Healthcare & Medical"
 category_url: "/categories/healthcare-medical/"
 ---
@@ -14,7 +14,7 @@ Mental health and wellness MCP servers connect AI agents to tools for mood track
 
 This review covers **mental health and wellness** — therapy and counseling tools, mood tracking, journaling, meditation and mindfulness, and comprehensive wellness platforms. For medical diagnostics and clinical tools, see our [Healthcare & Medical review](/reviews/healthcare-medical-mcp-servers/). For fitness tracking and wearable data, see our [Wearables & Quantified Self review](/reviews/fitness-wearables-mcp-servers/) if available.
 
-The headline findings: **This is one of the most experimental MCP categories** — most servers have under 10 stars and are early-stage projects. **Two distinct paradigms exist** — servers supporting human mental health (mood tracking, coping tools) and servers supporting AI agent wellbeing (therapeutic personas, digital rest). **Zenify is the most comprehensive** with RAG-powered conversations and suicide risk detection. **The Oura MCP server leads in popularity** (37 stars) by connecting real wearable health data. **No production-ready clinical tools exist yet.**
+The headline findings: **private-journal-mcp broke out to 338 stars** — by far the most popular server in this category, proving demand for privacy-first AI journaling. **Two distinct paradigms persist** — servers supporting human mental health (mood tracking, coping tools) and servers supporting AI agent wellbeing (therapeutic personas, digital rest). **Institutional wellness data appeared** — Wellness-Pulse brings CDC mental health benchmarks by ZIP code. **Burnout scoring arrived** — stresszero-mcp offers multi-dimensional burnout assessment via API. **Core clinical gaps remain unfilled** — no CBT, DBT, validated assessments, or crisis hotline integration.
 
 ---
 
@@ -39,7 +39,7 @@ An unusual concept — rather than providing therapy to the user, it gives the A
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ai-therapist-mcp](https://github.com/danieldunderfelt/ai-therapist-mcp) | 4 | JavaScript | — | 6 |
+| [ai-therapist-mcp](https://github.com/danieldunderfelt/ai-therapist-mcp) | 6 | JavaScript | — | 6 |
 
 **A humorous but functional "AI Uninstall Prevention Hotline"** — provides mental health support tools for AI agents:
 
@@ -119,23 +119,24 @@ Returns inspirational quotes matched to user mood (happy, sad, tired, excited, a
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [private-journal-mcp](https://github.com/obra/private-journal-mcp) | — | JavaScript | — | Multiple |
+| [private-journal-mcp](https://github.com/obra/private-journal-mcp) | 338 | JavaScript | — | Multiple |
 
-**Gives Claude a private journal with semantic search — no data leaves your machine:**
+**The breakout hit of this category — surged to 338 stars with 72 forks**, proving massive demand for privacy-first AI journaling:
 
 - **Local storage** — entries saved in `.private-journal/` directories
 - **Semantic search** — find entries by meaning, not just keywords
 - **Local AI embeddings** — embedding generation runs entirely on your machine with no external API calls
 - **Project-specific** — journals scoped to individual project directories
 - **NPX install** — `npx @anthropic/private-journal-mcp` with zero configuration
+- **v1.1.0 (April 2026)** — ESM migration for Node.js 22+ compatibility, `PRIVATE_JOURNAL_PATH` environment variable for containerized deployments, fixed dual-package hazard causing empty tool lists, 30-second timeout for embedding model initialization
 
-The privacy-first design is notable — in a category where mental health data is especially sensitive, keeping everything local with no cloud dependencies is the right approach.
+The privacy-first design clearly resonated — in a category where mental health data is especially sensitive, keeping everything local with no cloud dependencies is exactly what users want. The v1.1.0 release shows maturation toward production use with containerization support and Node.js compatibility fixes.
 
 ### mtct/journaling-mcp — Interactive Journaling with Emotional Analysis
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [journaling-mcp](https://github.com/mtct/journaling-mcp) | 5 | Python | — | Multiple |
+| [journaling-mcp](https://github.com/mtct/journaling-mcp) | 6 | Python | — | Multiple |
 
 **Interactive journaling sessions with automatic emotional analysis:**
 
@@ -170,7 +171,7 @@ During a meditation period, the AI refuses to answer questions — a "digital de
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-wisdom](https://github.com/aplaceforallmystuff/mcp-wisdom) | 3 | JavaScript | — | 9 |
+| [mcp-wisdom](https://github.com/aplaceforallmystuff/mcp-wisdom) | 2 | JavaScript | — | 9 |
 
 **Nine philosophical thinking tools from four traditions:**
 
@@ -190,7 +191,7 @@ Draws on Epictetus, Marcus Aurelius, Seneca, and Kahneman. The most practically 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Zenify](https://github.com/ishpreet404/Zenify) | 10 | TypeScript | — | Multiple |
+| [Zenify](https://github.com/ishpreet404/Zenify) | 11 | TypeScript | — | Multiple |
 
 **The most comprehensive mental health MCP project** — combines RAG retrieval, MCP tools, and safety features:
 
@@ -228,9 +229,9 @@ The cross-domain analysis (correlating mood with sleep, exercise, and nutrition)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [oura-mcp-server](https://github.com/tomekkorbak/oura-mcp-server) | 37 | Python | MIT | 6 |
+| [oura-mcp-server](https://github.com/tomekkorbak/oura-mcp-server) | 38 | Python | MIT | 6 |
 
-**The most popular server in this space** — connects Oura Ring data to Claude:
+**The most popular wearable wellness server** — connects Oura Ring data to Claude:
 
 - **Sleep data** — detailed sleep stages, duration, efficiency, and trends
 - **Readiness scores** — daily readiness assessment based on recovery metrics
@@ -238,7 +239,22 @@ The cross-domain analysis (correlating mood with sleep, exercise, and nutrition)
 - **Date range queries** — pull data for any date range
 - **Today's snapshot** — quick access to current day's metrics
 
-37 stars makes this the clear leader by adoption. The popularity likely reflects that it connects real hardware data (Oura Ring) rather than relying on manual input — users already wearing the ring get AI insights with no extra effort.
+38 stars with steady adoption. The popularity reflects that it connects real hardware data (Oura Ring) rather than relying on manual input — users already wearing the ring get AI insights with no extra effort.
+
+### ai-niki/oura-mcp — Alternative Oura Ring Integration with Cloud Deployment
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [oura-mcp](https://github.com/ai-niki/oura-mcp) | 0 | Python | MIT | Multiple |
+
+**A second Oura Ring MCP implementation** with more active development (30 commits vs 4):
+
+- **Same core data** — sleep scores, activity, readiness, heart rate, VO2 max
+- **FastMCP Cloud deployment** — production deployment via OAuth2 authentication
+- **Personal and hosted modes** — access tokens for personal use, OAuth2 for production
+- **Natural language queries** — "What was my sleep score last night?"
+
+Built with the FastMCP framework. More commits but no stars yet — the original oura-mcp-server has the community, but this one offers a production deployment path that the original lacks.
 
 ### rwking/wellness_planner — Energy-Aware Scheduling
 
@@ -272,6 +288,41 @@ A gamified approach to personal development. No user data collected. The scale o
 
 ---
 
+## Institutional & Burnout Assessment
+
+### prmail/Wellness-Pulse — CDC Mental Health Benchmarks by ZIP Code
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Wellness-Pulse](https://github.com/prmail/Wellness-Pulse) | 1 | JavaScript | Institutional | Multiple |
+
+**Connects AI systems to population-level mental health data** — a new paradigm for wellness MCP servers:
+
+- **CDC PLACES benchmarks** — mental health data lookups by ZIP code or county, drawing on CDC's population health dataset
+- **Institutional wellness snapshots** — daily trend monitoring for organizations
+- **Alert thresholds** — week-over-week wellness change detection, calibrated by organization size and location type
+- **Sector aggregation** — aggregated data analysis across healthcare, education, HR, and public health
+- **Plain-English summaries** — human-readable insights alongside structured JSON
+
+Privacy-first: no user tracking, no PII storage. This is the first MCP server to bring institutional and population-level mental health data into the protocol — useful for HR teams, public health organizations, and researchers rather than individual therapy.
+
+### gomessoaresemmanuel-cpu/stresszero-mcp — Multi-Dimensional Burnout Scoring
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [stresszero-mcp](https://github.com/gomessoaresemmanuel-cpu/stresszero-mcp) | 0 | JavaScript | MIT | 4 |
+
+**Burnout risk assessment across three dimensions** via the StressZero Intelligence API:
+
+- **analyze_burnout** — multi-dimensional scoring (physical, emotional, effectiveness)
+- **generate_burnout_report** — detailed assessment reports
+- **quick_burnout_check** — simplified screening
+- **Free tier** — 500 API calls/month, no payment required
+
+The first burnout-specific MCP server. While it requires an external API (not local-first), the free tier is generous and the three-dimensional burnout model (physical, emotional, effectiveness) aligns with established burnout research frameworks like the Maslach Burnout Inventory.
+
+---
+
 ## What's Missing
 
 The mental health MCP ecosystem has significant gaps in both clinical rigor and practical tooling:
@@ -285,21 +336,23 @@ The mental health MCP ecosystem has significant gaps in both clinical rigor and 
 - **Crisis hotline integration** — no server that connects to 988 Suicide & Crisis Lifeline, Crisis Text Line, or equivalent services
 - **Professional platform bridges** — no BetterHelp, Talkspace, Cerebral, or other therapy platform integration
 - **Clinical assessments** — no PHQ-9 (depression), GAD-7 (anxiety), PCL-5 (PTSD), or other validated screening instruments
-- **Health data bridges** — no Apple Health or Google Fit mental health data integration
+- **Health data bridges** — Apple Health MCP servers now exist in the broader ecosystem (see [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/)) but none are mental-health-specific; no Google Fit integration
 - **Peer support platforms** — no integration with peer support communities or group therapy tools
 
 ---
 
 ## The Bottom Line
 
-**Rating: 3/5** — This category is more experimental proof-of-concept than production-ready tooling.
+**Rating: 3/5** — private-journal-mcp's breakout proves demand, but the category remains more experimental than production-ready.
 
-**The standout servers serve different purposes.** The Oura MCP server (37 stars) leads by connecting real wearable data — if you wear an Oura Ring, you get AI-powered sleep and readiness insights with zero manual input. Zenify (10 stars) is the most ambitious mental health project with RAG-powered conversations and crisis detection, though it's a full-stack app rather than a lightweight MCP server. mcp-wisdom's philosophical tools are the most practically useful for everyday mental wellness — Stoic anxiety management and cognitive bias detection are proven techniques wrapped in a clean MCP interface.
+**private-journal-mcp is the clear story.** Surging to 338 stars with 72 forks, it's now the most popular server in this category by a factor of 9x over the next largest (oura-mcp-server at 38 stars). The v1.1.0 release (April 2026) with ESM migration and containerization support shows maturation toward production use. Its success validates the privacy-first approach — users want AI journaling that keeps data local with no cloud dependencies.
+
+**New paradigms are emerging.** Wellness-Pulse brings institutional and population-level mental health data (CDC benchmarks by ZIP code) — useful for HR, public health, and research contexts rather than individual therapy. stresszero-mcp introduces burnout scoring aligned with established research frameworks. These represent a shift from purely individual tools toward organizational wellness.
+
+**The wearable space is deepening.** The original Oura MCP server (38 stars) remains the community leader, but a second implementation (ai-niki/oura-mcp, 30 commits) adds FastMCP Cloud deployment with OAuth2 — a production path the original lacks.
 
 **Two paradigms, neither mature.** Servers supporting human mental health (mood tracking, journaling, coping tools) are simple but functional. Servers supporting AI agent wellbeing (therapeutic personas, digital rest, existential crisis support) are conceptually interesting but more art project than utility. Neither paradigm has reached the depth or reliability you'd want for actual mental health support.
 
-**The privacy-first approaches are commendable.** private-journal-mcp (local semantic search with no external API calls) and the Mental Health MCP server (all data stored locally) show the right instincts for handling sensitive mental health data. In a category where data privacy is paramount, these servers get the architecture right even if features are minimal.
+**What this category still needs most is evidence-based design.** The gap isn't just missing features (though CBT, DBT, and validated assessments are glaring omissions). It's that none of these servers were built with clinical input or safety review. Mental health tools carry real responsibility — a mood tracker that doesn't flag concerning patterns, or a coping tool that gives inappropriate advice during a crisis, can cause genuine harm. The most impactful next step would be servers that integrate validated clinical instruments (PHQ-9, GAD-7) with appropriate safety guardrails and professional referral pathways.
 
-**What this category needs most isn't more servers — it's evidence-based design.** The gap isn't just missing features (though CBT, DBT, and validated assessments are glaring omissions). It's that none of these servers were built with clinical input or safety review. Mental health tools carry real responsibility — a mood tracker that doesn't flag concerning patterns, or a coping tool that gives inappropriate advice during a crisis, can cause genuine harm. The most impactful next step would be servers that integrate validated clinical instruments (PHQ-9, GAD-7) with appropriate safety guardrails and professional referral pathways.
-
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic).*

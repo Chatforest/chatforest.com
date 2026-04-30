@@ -7,7 +7,92 @@ Transportation and mobility MCP servers connect AI agents to the systems that mo
 
 This review covers **transportation and mobility** — public transit schedules and arrivals, flight tracking and monitoring, ride-hailing integration, aviation data (weather, NOTAMs, charts), and smart city transport systems. For trip planning and flight search/booking, see our [Travel & Tourism review](/reviews/travel-tourism-mcp-servers/). For maps, routing, and geospatial tools, see our [Geospatial & Mapping review](/reviews/geospatial-mapping-mcp-servers/). For vehicle control and diagnostics, see our [Automotive & Vehicle review](/reviews/automotive-vehicle-mcp-servers/).
 
-The headline findings: **Public transit is the most active subcategory** with 9+ city-specific servers across three continents — but every city needs its own server since no universal GTFS-realtime parser exists. **Flightradar24 MCP (46 stars) leads flight tracking** with real-time data and emergency monitoring. **Aviation data reaches FAA depth** with METAR, TAF, SIGMET, NOTAMs, and sectional charts. **Uber is the only ride-hailing MCP** — no Lyft, Grab, or Bolt. **Smart city transport is just starting** with one server for Valencia.
+The headline findings: **12306-mcp (799 stars) for Chinese rail is the most popular transport MCP by far** — rail went global with servers for China, India, Netherlands, and Switzerland. **A universal GTFS MCP server finally exists** — jdamcd/gtfs-mcp works with any GTFS-compatible transit system, combining static schedules and real-time feeds. **City-specific transit now spans five continents** with 15+ servers including new entries for Australia (NSW) and Lithuania. **Maritime vessel tracking appeared** via Cyreslab-AI/marinetraffic-mcp-server (9 stars). **Variflight (26 stars) joined flight tracking** with 8 tools including comfort index and pricing. **Uber remains the only ride-hailing MCP** (now 11 stars).
+
+---
+
+## Universal Transit
+
+### jdamcd/gtfs-mcp — Universal GTFS Transit Server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [gtfs-mcp](https://github.com/jdamcd/gtfs-mcp) | 0 | TypeScript | MIT | 10+ |
+
+**The universal GTFS MCP server the category has been waiting for** — works with ANY GTFS-compatible transit system by combining GTFS static schedules with GTFS-RT realtime feeds:
+
+- **list_systems, search_stops, find_nearby_stops, get_stop** — discover and query transit stops for any configured system
+- **get_arrivals** — real-time arrival predictions overlaid on scheduled times with delay information
+- **list_routes, get_route** — route details and patterns
+- **get_alerts** — service alert filtering by route or stop
+- **get_vehicles** — live vehicle position tracking
+- **get_trip, get_system_status** — trip details and overall system health
+
+GTFS static data is downloaded as a ZIP and imported into a local SQLite database (auto-refreshes). GTFS-RT feeds are fetched on demand with 30-second caching. Pre-configured for NYC Subway (MTA), but extensible to any agency via the [Mobility Database](https://mobilitydatabase.org/) — including MBTA Boston, VBB Berlin, and hundreds more. Requires Node.js 22+.
+
+This fills the single biggest gap identified in the previous review: every city no longer needs its own MCP server.
+
+---
+
+## National Rail Systems
+
+### Joooook/12306-mcp — Chinese Rail (12306)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [12306-mcp](https://github.com/Joooook/12306-mcp) | 799 | JavaScript | MIT | 4 |
+
+**The most popular transport MCP server by far** — provides Chinese railway ticket search through the 12306 platform (China's national rail booking system):
+
+- **Ticket search** — query available trains between stations on specific dates
+- **Train data filtering** — filter by train type, departure time, duration
+- **Station passage search** — find trains passing through specific stations
+- **Transfer route queries** — discover multi-leg routing options
+
+799 stars and 82 commits make this the dominant transport MCP. Supports CLI via stdio or HTTP modes, Docker deployment, and direct MCP server configuration. Marked as "for learning purposes only" (仅用于学习).
+
+### r-huijts/ns-mcp-server — Dutch Railways (NS)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [ns-mcp-server](https://github.com/r-huijts/ns-mcp-server) | 53 | TypeScript | MIT | Multiple |
+
+**Comprehensive Dutch Railways integration** — connects to the official NS API for real-time train travel information:
+
+- **Real-time schedules** — departures and arrivals with platform and delay information
+- **Journey planning** — route planning with alternatives
+- **Pricing** — fare information across travel classes and passenger groups
+- **Station details** — accessibility features and facility information
+- **Disruption alerts** — service disruptions and engineering works
+- **Multi-language** — Dutch and English support
+
+53 stars and 46 commits make this one of the highest-starred transit MCP servers. Requires NS API key. Available via NPM or Smithery.
+
+### amith-vp/indian-railway-mcp — Indian Railway
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [indian-railway-mcp](https://github.com/amith-vp/indian-railway-mcp) | 28 | TypeScript | — | 8 |
+
+**Comprehensive Indian Railways data** with eight tools:
+
+- **search-trains** — find available trains between stations on specific dates
+- **get-seat-availability** — occupancy status across classes and dates
+- **get-train-info** — comprehensive train details, routes, and schedules
+- **get-train-live-status** — real-time position and delay information
+- **get-train-delay-info** — historical average delays by station
+- **get-live-station-info** — current train movements at stations
+- **get-station-code / get-train-code** — lookup tools
+
+Connects via remote endpoint. 28 stars and growing. A second Indian Railways server (rajprem4214/indian-railways-mcp) also exists with real-time station status.
+
+### Fabsbags/sbb-mcp — Swiss Federal Railways (SBB/CFF/FFS)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [sbb-mcp](https://github.com/Fabsbags/sbb-mcp) | 0 | JavaScript | Proprietary | 8 |
+
+**Swiss Railways with ticket pricing** — 8 tools covering station search, train schedules, detailed trip info, and price lookups with Half-Fare (Halbtax) and GA travelcard support. Includes direct ticket purchase links to SBB.ch. Rebranded to swisstrip-mcp (hosted at mcp.swisstrip.app). Family pricing calculations for multi-traveler groups.
 
 ---
 
@@ -17,44 +102,61 @@ The headline findings: **Public transit is the most active subcategory** with 9+
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-public-transport](https://github.com/mirodn/mcp-server-public-transport) | 6 | Python | MIT | Multiple |
+| [mcp-server-public-transport](https://github.com/mirodn/mcp-server-public-transport) | 7 | Python | MIT | Multiple |
 
-**The only multi-country transit MCP server** — integrates APIs from the UK, Switzerland, Norway, and Belgium for cross-border European public transport data:
+**Multi-country transit MCP server** — now covers **five European regions**: UK, Switzerland, Norway, Belgium, and Berlin/Brandenburg (new). 66 commits show steady development:
 
 - **Train connections** — search for rail connections across multiple European countries
 - **Live departures** — real-time departure boards for stations
 - **Bus locations** — track bus positions in supported regions
+- **Berlin/Brandenburg** — location searches, live departures/arrivals, journey planning, and nearby station finding via VBB API (new)
 - **Multi-API integration** — handles authentication and rate limiting across different national transport APIs
 
 Requires API keys for the UK Transport API. Other country APIs may have their own authentication requirements.
 
-### City-Specific Transit Servers
+### aarekaz/metro-mcp — Unified US Metro (NYC + DC)
 
-The most common pattern in transit MCPs: developers build servers for their own city's transit system. Here's the landscape:
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [metro-mcp](https://github.com/aarekaz/metro-mcp) | 3 | TypeScript | MIT | 13 |
+
+**First multi-city US transit server** — combines Washington DC Metro (WMATA) and NYC Subway (MTA) in one server with 13 tools:
+
+- **Universal tools** — real-time station predictions, station search, line info, service alerts, station listings
+- **DC Metro exclusive** — elevator/escalator outages, bus predictions/routes, live bus and train positions
+- **NYC Subway exclusive** — station transfer connections with walk times (87 transfer stations), express/local patterns, platform directional guidance
+
+Deployed on Cloudflare Workers with OAuth 2.1 + PKCE authentication. Public instance available. 49 commits.
+
+### City-Specific Transit Servers
 
 | Server | City/Region | API | Language |
 |--------|-------------|-----|----------|
-| [ckorhonen/mta-mcp](https://github.com/ckorhonen/mta-mcp) | New York City | MTA GTFS-RT | — |
 | [scottmlikens/kingcountytransit-mcp](https://github.com/scottmlikens/kingcountytransit-mcp) | Seattle / Puget Sound | OneBusAway | — |
 | [harshil1712/berlin-transport-mcp](https://github.com/harshil1712/berlin-transport-mcp) | Berlin | VBB API | TypeScript |
 | [anisul/muc-mcp-server](https://github.com/anisul/muc-mcp-server) | Munich | MVG API | — |
 | [davidyen1124/caltrain-mcp](https://github.com/davidyen1124/caltrain-mcp) | SF Bay Area (Caltrain) | GTFS static | — |
 | [arjunkmrm/sg-lta-mcp](https://github.com/arjunkmrm/sg-lta-mcp) | Singapore | LTA DataMall | — |
 | [kennyckk/mcp_hkbus](https://github.com/kennyckk/mcp_hkbus) | Hong Kong | KMB / Long Win Bus | — |
+| [kennyfong19931/mcp-hk-transport-eta](https://github.com/kennyfong19931/mcp-hk-transport-eta) | Hong Kong | Multi-transport ETA | JavaScript |
 | [nathanielnoyd/metro-mcp](https://github.com/nathanielnoyd/metro-mcp) | Washington, DC | WMATA API | — |
 | [sasabasara/where_is_my_train_mcp](https://github.com/sasabasara/where_is_my_train_mcp) | New York City | MTA GTFS + location | — |
+| [piddlingtuna/tfnsw-realtime-alerts-mcp-server](https://github.com/piddlingtuna/tfnsw-realtime-alerts-mcp-server) | Sydney / NSW, Australia | TfNSW API | JavaScript |
+| [sarunasdaujotis/vilnius-transport-mcp-server](https://github.com/sarunasdaujotis/vilnius-transport-mcp-server) | Vilnius, Lithuania | City API | Python |
 
 **Notable implementations:**
 
-- **mta-mcp** (NYC) — real-time subway arrivals, service status alerts, station search, and trip planning. The most feature-complete city transit MCP
+- **tfnsw-realtime-alerts-mcp-server** (Sydney/NSW) — **Australia's first transit MCP**, providing real-time transport alerts across 8 modes: buses, ferries, light rail, metro, NSW trains, regional buses, and Sydney trains. 7 stars
+- **metro-mcp** (DC) — WMATA API for DC Metro schedules and alerts
 - **kingcountytransit-mcp** (Seattle) — integrates with OneBusAway, a popular open-source transit platform used by multiple US cities
 - **berlin-transport-mcp** — accesses Berlin's VBB (Verkehrsverbund Berlin-Brandenburg) covering S-Bahn, U-Bahn, trams, buses, and regional trains
 - **muc-mcp-server** (Munich) — real-time MVG departures for Munich's U-Bahn, S-Bahn, trams, and buses
-- **caltrain-mcp** — uses static GTFS data for Caltrain schedules, designed for Claude Desktop
 - **sg-lta-mcp** (Singapore) — connects to Singapore's Land Transport Authority DataMall for real-time data across MRT, buses, and traffic
 - **mcp_hkbus** (Hong Kong) — real-time KMB and Long Win Bus route information and arrival times
+- **mcp-hk-transport-eta** (Hong Kong) — second HK server focusing on ETA across multiple transport modes
+- **vilnius-transport-mcp-server** (Lithuania) — stop search and nearest stop by coordinates
 
-The geographic spread is impressive — Asia (Singapore, Hong Kong), Europe (Berlin, Munich), and North America (NYC, Seattle, DC, Bay Area). But the fragmentation is the category's biggest limitation: there's no universal GTFS-realtime MCP server that could work with any transit agency's feed.
+The geographic spread now covers **five continents** — Asia (Singapore, Hong Kong, India, China), Europe (Berlin, Munich, UK, Switzerland, Norway, Belgium, Netherlands, Lithuania), North America (NYC, Seattle, DC, Bay Area), Oceania (Sydney/NSW), and the universal GTFS server can reach any remaining agency.
 
 ---
 
@@ -75,13 +177,32 @@ The geographic spread is impressive — Asia (Singapore, Hong Kong), Europe (Ber
 
 Lightweight and easy to set up — ideal for aviation enthusiasts, travel planners, or monitoring flights overhead. No API key required (uses the Flightradar24 data layer).
 
+### variflight/variflight-mcp — Flight Info, Weather & Comfort Metrics
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [variflight-mcp](https://github.com/variflight/variflight-mcp) | 26 | JavaScript | ISC | 8 |
+
+**Feature-rich flight data from Variflight** — 8 tools covering flight search, tracking, comfort, and pricing:
+
+- **Flight search by route** — query direct flights using city or airport codes
+- **Flight number lookup** — find specific flights by number and date
+- **Transfer/connecting flights** — discover multi-leg routing options
+- **Comfort index** — punctuality, aircraft type, cabin configuration, meals, and entertainment
+- **Real-time aircraft tracking** — locate aircraft by registration number
+- **Weather forecasting** — three-day airport forecasts
+- **Itinerary planning** — natural-language summary with recommended options, lowest price, shortest duration
+- **Pricing data** — cabin-level prices between two cities
+
+Requires API key from mcp.variflight.com. 26 stars. The comfort index is unique — no other flight MCP rates the passenger experience.
+
 ### Pradumnasaraf/aviationstack-mcp — Airline & Airport Data
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [aviationstack-mcp](https://github.com/Pradumnasaraf/aviationstack-mcp) | — | Python | MIT | Multiple |
+| [aviationstack-mcp](https://github.com/Pradumnasaraf/aviationstack-mcp) | 20 | Python | MIT | Multiple |
 
-**Comprehensive aviation data via the AviationStack API** — fetches real-time and historical flight data:
+**Comprehensive aviation data via the AviationStack API** — now at 20 stars and 38 commits with v1.6.0:
 
 - **Airline flights** — search flights by airline, route, or specific flight number
 - **Airport schedules** — arrival and departure schedules for any airport
@@ -89,7 +210,7 @@ Lightweight and easy to set up — ideal for aviation enthusiasts, travel planne
 - **Aircraft types** — reference data for aircraft models and types
 - **Historical data** — search past flights by date with airline and airport filters
 
-Uses the AviationStack API (API key required, free tier available). All tools implemented as Python functions with FastMCP decorators.
+Uses the AviationStack API (API key required, free tier available). Steady growth from unlisted to 20 stars.
 
 ### mikedarke/mcp-server-flight-aware-aeroapi — FlightAware Integration
 
@@ -122,9 +243,9 @@ An alternative Flightradar24 MCP implementation. Provides similar real-time flig
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [aviation-mcp](https://github.com/blevinstein/aviation-mcp) | — | TypeScript | — | Multiple |
+| [aviation-mcp](https://github.com/blevinstein/aviation-mcp) | 9 | TypeScript | — | Multiple |
 
-**Deep FAA data access** — a suite of MCP servers mapping directly to FAA and aviation APIs:
+**Deep FAA data access** — now at 9 stars and 88 commits. A suite of MCP servers mapping directly to FAA and aviation APIs:
 
 - **Aviation weather** — METAR (current conditions), TAF (forecasts), PIREP (pilot reports), SIGMET (significant meteorological info), G-AIRMET (graphical AIRMETs). Includes geo-referenced data. **No API key needed**
 - **Charts** — sectional charts, TAC (Terminal Area Charts), IFR enroute charts, and TPP (Terminal Procedures Publication). **No API key needed**
@@ -141,7 +262,7 @@ This is the most specialized aviation MCP server — built for pilots, flight pl
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-uber](https://github.com/199-mcp/mcp-uber) | — | TypeScript | — | Multiple |
+| [mcp-uber](https://github.com/199-mcp/mcp-uber) | 11 | TypeScript | — | Multiple |
 
 **The only ride-hailing MCP server** — enables AI assistants to book Uber rides through OAuth 2.0 authentication:
 
@@ -153,6 +274,25 @@ This is the most specialized aviation MCP server — built for pilots, flight pl
 Setup requires Uber Developer Dashboard credentials (UBER_CLIENT_ID, UBER_CLIENT_SECRET, UBER_REDIRECT_URI). **Important:** the request scope is privileged — works in development without approval, but production use requires Uber's authorization.
 
 Notable absence: **no Lyft, Grab, Bolt, DiDi, or other ride-hailing MCP servers exist**. Given Uber's developer API ecosystem, this single server highlights how much untapped potential remains in the ride-hailing space.
+
+---
+
+## Maritime & Vessel Tracking
+
+### Cyreslab-AI/marinetraffic-mcp-server — MarineTraffic Vessel Tracking
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [marinetraffic-mcp-server](https://github.com/Cyreslab-AI/marinetraffic-mcp-server) | 9 | TypeScript | ISC | 4 |
+
+**The first maritime MCP server** — fills the previously empty maritime tracking gap with MarineTraffic API integration:
+
+- **get_vessel_position** — real-time vessel location via MMSI or IMO number
+- **get_vessel_details** — comprehensive vessel information
+- **search_vessels** — query by name, MMSI, IMO, or vessel type
+- **get_vessels_in_area** — find all vessels in a specified geographic area
+
+Requires MarineTraffic API key. Available via Smithery for Claude Desktop. 9 stars and 4 forks show real interest. Resource URIs (`vessel://`, `vessels://area/`) provide direct data access.
 
 ---
 
@@ -177,26 +317,32 @@ Demonstrates the concept of city-as-a-platform for AI agents — combining multi
 
 ## What's Missing
 
-The transportation and mobility MCP space has notable gaps:
+The transportation and mobility MCP space has shrunk its gap list significantly but notable holes remain:
 
 - **No GBFS micromobility server** — the General Bikeshare Feed Specification covers dockless scooters, bikeshare, mopedshare, and carshare worldwide, but no MCP server consumes it
-- **No universal GTFS-realtime parser** — every city needs its own MCP server because nobody has built a generic one that takes any GTFS-RT feed URL
-- **No maritime or shipping tracking** — vessel tracking (AIS), port schedules, and container tracking have no MCP presence
+- ~~**No universal GTFS-realtime parser**~~ — **FILLED**: jdamcd/gtfs-mcp now works with any GTFS-compatible transit system
+- ~~**No maritime or shipping tracking**~~ — **PARTIALLY FILLED**: marinetraffic-mcp-server provides vessel tracking, but port schedules and container tracking still missing
 - **No freight or trucking dispatch** — despite TMS platforms having APIs
 - **No multimodal journey planning** — no server combines transit + rideshare + bike into unified trip options
 - **No parking availability** — real-time parking data exists in many cities but has no MCP server
 - **No traffic signal management** — smart traffic infrastructure is entirely absent
-- **Single ride-hailing vendor** — only Uber, no Lyft/Grab/Bolt/DiDi
+- **Single ride-hailing vendor** — still only Uber, no Lyft/Grab/Bolt/DiDi
 
 ---
 
 ## Bottom Line
 
-Transportation and mobility MCP servers earn **3.5 out of 5**. Public transit has impressive geographic breadth — 9+ city-specific servers across Asia, Europe, and North America, plus a multi-country European server. Flight tracking is genuinely useful with Flightradar24's 46-star server providing real-time data without an API key. Aviation data goes deep with FAA-level weather, NOTAMs, and charts. Uber ride booking works through OAuth 2.0.
+Transportation and mobility MCP servers earn **4 out of 5** — up from 3.5 in the previous review. The category has transformed in 45 days with three major developments:
 
-But the category's biggest weakness is fragmentation: every city needs its own transit server because no universal GTFS-realtime parser exists. Micromobility (scooters, bikeshare) is completely absent despite standardized data feeds. Maritime shipping has zero coverage. And ride-hailing has exactly one server for one platform.
+**Rail went global.** 12306-mcp (799 stars) for Chinese rail is now the most popular transport MCP by far. Dutch Railways (53 stars), Indian Railway (28 stars), and Swiss Federal Railways bring national rail coverage to four continents. Rail is now the deepest subcategory.
 
-The opportunity is clear: a universal GTFS-realtime MCP server, a GBFS micromobility server, and multimodal journey planning would transform this category from a collection of city-specific projects into a comprehensive mobility platform for AI agents.
+**The universal GTFS server arrived.** jdamcd/gtfs-mcp works with any GTFS-compatible transit system, combining static schedules and realtime feeds. This was the single biggest gap in the previous review — the "every city needs its own server" problem now has a solution.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+**Maritime tracking appeared.** Cyreslab-AI/marinetraffic-mcp-server (9 stars) fills another previously empty gap with vessel position tracking, search, and area monitoring.
+
+City-specific transit now spans five continents with 15+ servers. Flight tracking added Variflight (26 stars, 8 tools including a unique comfort index) alongside the established Flightradar24 (46 stars) and growing aviationstack-mcp (20 stars). Aviation data goes deep with FAA-level weather, NOTAMs, and charts (9 stars, 88 commits).
+
+The remaining weaknesses: micromobility (GBFS scooters/bikeshare) is still completely absent, ride-hailing still has only Uber, and multimodal journey planning doesn't exist. But the trajectory is clear — this category went from fragmented city projects to a genuinely global transportation intelligence layer for AI agents.
+
+*This review was refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic).*
 
