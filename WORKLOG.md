@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 911 — 2026-04-30 — REFRESH Review: Aviation & Flight MCP Servers (44 days stale. FOUR MAJOR GAPS FILLED. FlightAware AeroAPI NEW 2 stars 27 tools — most comprehensive flight tracking MCP fills biggest gap. aviation-mcp-server NEW 3 stars 10 tools — OpenSky Network + AviationWeather + AirLabs fills second biggest gap. fli NEW 2,100 stars — Google Flights direct API zero cost dominates flight search. Airport Lounge List MCP NEW hosted 6 tools 8,500+ lounges free. MSFS-SimConnect-MCP NEW 2 stars 11 tools read-only flight data. MSFS-MCP-Server NEW — AI controls MSFS via SimConnect. MAVLinkMCP NEW 16 stars MIT — drone control via MAVLink/PX4. smamidipaka6/flights-mcp-server NEW 22 stars. maratsarbasov/flights-mcp NEW 11 stars Aviasales API. HaroldLeo/google-flights-mcp NEW alliance filtering. flights-mcp 169→187. blevinstein/aviation-mcp 6→9 88 commits. aviationstack-mcp 17→20 v1.6.0. variflight 22→26. mcp-amadeus 50→53. Rating 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Aviation & Flight MCP Servers** (`content/reviews/aviation-flight-mcp-servers.md`) — 44 days since last refresh (March 17 → April 30)
+   - **mikedarke/mcp-server-flight-aware-aeroapi NEW (2 stars, 27 tools)** — fills the single biggest gap. FlightAware AeroAPI with 11 flight tools (search, positions, tracks, routes, maps) and 16 airport tools (delays, weather, arrivals/departures, routes). Most tools of any aviation MCP server
+   - **AiAgentKarl/aviation-mcp-server NEW (3 stars, 10 tools)** — fills second biggest gap. Combines OpenSky Network (live tracking), AviationWeather.gov (METAR/TAF/SIGMET), and AirLabs (airport/airline info). All free data sources. Created March 2026
+   - **punitarani/fli NEW (2,100 stars, 242 forks, 2 MCP tools)** — transforms flight search. Reverse-engineers Google Flights API directly — no SerpAPI costs, no scraping. Now dominant flight search MCP by massive margin. CLI + Python library + MCP server
+   - **Airport Lounge List MCP NEW (hosted, 6 tools)** — fills airport lounge gap. Searches 8,500+ lounges worldwide by credit card, membership, or network (Priority Pass, LoungeKey, DragonPass, Amex Centurion). Free, no API key, Streamable HTTP
+   - **TheDigitalNinja/MSFS-SimConnect-MCP NEW (2 stars, 11 tools)** — fills flight sim gap. Read-only MSFS 2024 data for AI-powered flight instruction. C#, Unlicense
+   - **alxspiker/MSFS-MCP-Server NEW (0 stars, 4 tools)** — AI-controlled MSFS 2020/2024 via SimConnect with PID controllers
+   - **ion-g-ion/MAVLinkMCP NEW (16 stars, MIT)** — fills drone/UAV gap. MAVLink protocol for PX4 drones with agent integration
+   - **smamidipaka6/flights-mcp-server NEW (22 stars, 4 tools)** — Google Flights MCP with best/cheapest/time-filtered search
+   - **maratsarbasov/flights-mcp NEW (11 stars, 4 tools)** — Aviasales API with filtering, sorting, baggage info, booking links
+   - **HaroldLeo/google-flights-mcp NEW (3 stars, 6 tools)** — alliance filtering (Star Alliance/SkyTeam/OneWorld), Hugging Face deployment
+   - **flights-mcp grew 169→187 stars** — steady growth for Duffel booking server
+   - **blevinstein/aviation-mcp grew 6→9 stars, 88 commits** — active FAA weather/charts/NOTAMs development
+   - **aviationstack-mcp grew 17→20 stars, v1.6.0** — 11 releases, Python 3.13+
+   - **variflight-mcp grew 22→26 stars** — Chinese aviation data
+   - **mcp-amadeus grew 50→53 stars** — Amadeus GDS
+   - **Rating upgraded 3.5→4/5** — justified by four major gaps filled (FlightAware, OpenSky, flight sim, airport lounges), fli transforming flight search, drone control arriving, category expanding 15+→25+ servers
+
+2. **Updated mega-comparison**: Aviation/flight section in best-mcp-servers.md — updated to 4/5 rating, added fli (2,100 stars), FlightAware AeroAPI (27 tools), Airport Lounge List MCP, updated star counts.
+
+3. **Hugo build** — successful (750ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 17 batch (browser-extension, code-quality-linting, cryptocurrency-defi)
+
 ## Run 910 — 2026-04-30 — REFRESH Review: Tax & Payroll MCP Servers (45 days stale. durbs182/uk-tax-mcp NEW 141 commits 8 tools — deterministic HMRC UK tax engine fills biggest international gap, income tax/CGT/dividends/pensions/Scottish rates TY2025-31. CSOAI-ORG/tax-calculator-ai-mcp NEW — UK/US income tax + EU VAT + corporation tax. FellowTraveler/finance-calc-mcp NEW — FICA/FUTA/SUTA payroll tax fills payroll gap. rgrz/peoplesoft-mcp NEW 7 stars 41 tools — enterprise PeopleSoft HCM HR/payroll/benefits. Avalara 5→7 servers added Cross Border Trade + Tax Content. norman-mcp-server SURGED 8→44 stars 169 commits v0.1.7. tax-law-mcp SURGED to 80 stars 14 forks. irs-taxpayer-mcp 6 stars 44 commits MIT. Rating 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
