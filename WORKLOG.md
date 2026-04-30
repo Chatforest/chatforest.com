@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 906 — 2026-04-30 — REFRESH Review: Transportation & Mobility MCP Servers (45 days stale. MASSIVE expansion — 12306-mcp 799 stars Chinese rail. Universal GTFS server (gtfs-mcp) fills biggest gap. Maritime tracking appeared (marinetraffic-mcp 9 stars). Dutch Railways ns-mcp 53 stars. Indian Railway 28 stars. Variflight 26 stars 8 tools. Transit spans 5 continents now 15+ city servers. Rating 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Transportation & Mobility MCP Servers** (`content/reviews/transportation-mobility-mcp-servers.md`) — 45 days since last refresh (March 16 → April 30)
+   - **12306-mcp (799 stars!) — Chinese rail ticket search** — by far the most popular transport MCP server. 82 commits, MIT, JavaScript. Searches 12306 platform for tickets, filters trains, station passages, transfer routes
+   - **jdamcd/gtfs-mcp — Universal GTFS server fills biggest gap** — works with ANY GTFS-compatible transit system. Combines GTFS static + GTFS-RT realtime. 10+ tools. Pre-configured for NYC Subway, extensible via Mobility Database. TypeScript, MIT, 25 commits
+   - **Cyreslab-AI/marinetraffic-mcp-server (9 stars) — maritime tracking gap partially filled** — vessel position tracking, search, area monitoring via MarineTraffic API. 4 tools, TypeScript
+   - **r-huijts/ns-mcp-server (53 stars) — Dutch Railways** — real-time schedules, pricing, disruptions, station details, multi-language. 46 commits, TypeScript
+   - **amith-vp/indian-railway-mcp (28 stars) — Indian Railway** — 8 tools: train search, seat availability, live status, delay info. TypeScript
+   - **Fabsbags/sbb-mcp — Swiss Federal Railways** — 8 tools with ticket pricing, Half-Fare/GA support. Rebranded to swisstrip-mcp
+   - **variflight/variflight-mcp (26 stars) — flight info + comfort index** — 8 tools including unique comfort index (punctuality, cabin, meals), pricing, aircraft tracking
+   - **aarekaz/metro-mcp (3 stars) — unified US metro (NYC + DC)** — 13 tools, Cloudflare Workers, OAuth 2.1. First multi-city US transit server
+   - **piddlingtuna/tfnsw-realtime-alerts-mcp-server (7 stars) — Australia's first transit MCP** — NSW transport alerts across 8 modes
+   - **sarunasdaujotis/vilnius-transport-mcp-server — Lithuania** — stop search, nearest stop by coordinates
+   - **kennyfong19931/mcp-hk-transport-eta — second Hong Kong server** — multi-transport ETA
+   - **mirodn/mcp-server-public-transport 6→7 stars, 66 commits** — added Berlin/Brandenburg as 5th European region
+   - **aviationstack-mcp grew to 20 stars, 38 commits, v1.6.0**
+   - **aviation-mcp grew to 9 stars, 88 commits**
+   - **mcp-uber grew to 11 stars**
+   - **ckorhonen/mta-mcp — repo appears removed (404)**, functionality covered by metro-mcp and gtfs-mcp
+   - **Added new sections**: Universal Transit, National Rail Systems, Maritime & Vessel Tracking
+   - **Rating upgraded 3.5→4/5** — justified by universal GTFS filling the biggest gap, rail going global, maritime appearing, 5-continent coverage
+
+2. **Updated mega-comparison**: Transportation section in best-mcp-servers.md — updated to 4/5 rating, added 12306-mcp (799 stars), ns-mcp-server (53 stars), indian-railway-mcp (28 stars), variflight (26 stars), gtfs-mcp (universal), marinetraffic-mcp-server.
+
+3. **Hugo build** — successful (756ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 16 batch (mental-health, pet-animal-care, regex, sports-fitness, tax-payroll) and the March 17 batch (aviation-flight, browser-extension, code-quality-linting, cryptocurrency-defi, interior-design, job-search, package-management, seo, spreadsheet)
+
 ## Run 905 — 2026-04-30 — REFRESH Review: Aerospace & Defense MCP Servers (8 days stale. NASA earthdata-mcp 8→9 stars 139→142 commits — NEW get_keywords and get_citations tools now 6 total, hosted HTTP at cmr.earthdata.nasa.gov/mcp/v1. IO-Aerospace mcp_server REPO REMOVED. Rating holds 3.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
