@@ -485,7 +485,7 @@ See our full [image generation MCP server comparison](/guides/best-image-generat
 
 ## Documentation & code context
 
-**Winner: [Context7](/reviews/context7-mcp-server/) (3.5/5)** — the most popular MCP server of 2026 with [54,100 GitHub stars](https://github.com/upstash/context7), [15.1M all-time PulseMCP visitors](https://www.pulsemcp.com/servers/upstash-context7).
+**Winner: [Context7](/reviews/context7-mcp-server/) (3.5/5)** — the most popular MCP server of 2026 with [54,200 GitHub stars](https://github.com/upstash/context7), [15.1M all-time PulseMCP visitors](https://www.pulsemcp.com/servers/upstash-context7).
 
 Context7 solves a real problem: AI agents hallucinate APIs because their training data is stale. Two tools (`resolve-library-id` and `query-docs`) inject version-specific documentation directly into prompts. Now also offers a CLI (v0.4.0), Skills-based plugin system, OpenAI Apps SDK integration, and Gemini CLI support. 33,000+ libraries, 30+ client integrations, dead-simple setup. Research mode shipped April 24 but was partially reverted April 28 due to timeouts.
 
@@ -546,7 +546,7 @@ A category where the community got there first — and got there better.
 
 The key architectural advantage: descriptive output produces more accurate code than prescriptive output. Component nesting is preserved (the official server flattens it), payloads are ~25% smaller, and it works with any Figma account — no Dev seat required, no 6-calls/month cap. 11,500+ weekly npm downloads, 17 releases, MIT license. The most adopted design-to-code MCP server by a wide margin.
 
-**[Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) (3.5/5)** — Figma's official hosted server at `mcp.figma.com/mcp`. 12 tools with exclusive write capabilities: code-to-canvas capture (`generate_figma_design`), Code Connect component mappings, FigJam diagram generation. OAuth authentication, zero-install remote architecture.
+**[Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/) (3.5/5)** — Figma's official hosted server at `mcp.figma.com/mcp`. 12+ tools with exclusive write capabilities: code-to-canvas capture (`generate_figma_design`), Code Connect component mappings, and **new April 2026 additions**: `generate_diagram` for architecture diagrams and ERDs with database relationship connectors, Mermaid.js rendering, and FigJam skills (`generate-project-plan` turns docs/codebases/conversations into visual boards). OAuth authentication, zero-install remote architecture.
 
 The official server's draw is the design-code-design loop — no community server can push code back into Figma as editable designs. Code Connect improves code generation accuracy over time by mapping Figma components to your codebase. But the free tier gives you **6 tool calls per month**, prescriptive output can conflict with your codebase conventions, and nested components get flattened.
 

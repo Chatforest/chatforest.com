@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 920 — 2026-05-01 — REFRESH Code Generation MCP Servers (38 days stale. Context7 SURGED 50.3k→54.2k stars +7.7% v2.2.3 65% token reduction 38% latency reduction 890k weekly npm downloads. E2B MCP ARCHIVED deprecated. magic-mcp 4.5k→4.8k still beta. next-devtools-mcp 694→733 Next.js 16.2 Agent DevTools. code-index-mcp 853→930 +9% tree-sitter AST. Figma expanded diagram generation FigJam skills. NEW Django MCP Server + Rails fast-mcp partially closing framework gap. NEW Cloudflare Code Mode MCP 423 stars 99.9% token reduction. Cursor 3 async subagents. Windsurf acquired by Cognition/Devin ~$250M. Claude Code 4.2k+ skills. Market ~$12.8B in 2026. codegen-sh stagnant acquired by ClickUp. Rating holds 3.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Code Generation MCP Servers** (`content/reviews/code-generation-mcp-servers.md`) — 38 days since creation (March 24 → May 1), first refresh ever
+   - **Context7 surged 50,305→54,200 stars (+7.7%)** — v2.2.3 (April 29, 2026), 802 commits, 890k weekly npm downloads. New architecture: 65% token reduction (9.7k→3.3k avg), 38% latency reduction (24s→15s), 30% fewer tool calls. #1 on MCP.Directory. ContextCrush vulnerability patched Feb 2026
+   - **E2B MCP server ARCHIVED and deprecated** — no longer actively maintained. E2B platform continues via direct SDK integration and Docker partnership, but MCP interface is dead. Major loss for the category
+   - **magic-mcp grew 4,539→4,800 stars (+5.7%)** — still beta, 77 commits. Added semantic code search for project pattern matching
+   - **next-devtools-mcp grew 694→733 stars (+5.6%)** — 143 commits. Next.js 16.2 Agent DevTools: agent-ready scaffolding, browser error forwarding, React DevTools from terminal
+   - **code-index-mcp grew 853→930 stars (+9%)** — 237 commits. Now supports 10 languages with tree-sitter AST parsing, 50+ additional file types
+   - **shadcn-ui MCP grew 2,728→2,800 stars (+2.6%)** — now supports shadcn/ui v4, blocks, demos, metadata
+   - **codegen-sh stagnant 520→521 stars** — acquired by ClickUp, last release v0.57.0 Sep 2025 (7+ months ago)
+   - **Figma MCP expanded (April 2026)** — generate_diagram tool for architecture diagrams/ERDs, Mermaid.js rendering, FigJam skills (read/write boards, generate-project-plan)
+   - **NEW: Django MCP Server** (gts360/django-mcp-server) — Django extension for AI agent interaction via MCP, ORM access in 2 lines, WSGI+ASGI
+   - **NEW: Rails fast-mcp gem** — Turn Rails apps into MCP servers with `bundle add fast-mcp`
+   - **NEW: Cloudflare Code Mode MCP** (423 stars) — 2 tools (search+execute), 99.9% token reduction for 2,500+ API endpoints, V8 isolate execution, OAuth 2.1
+   - **AI coding platform updates:** Cursor 3 (unified workspace, async subagents, Bugbot MCP, Automations), Windsurf (acquired by Cognition/Devin ~$250M, SWE-grep 20x faster, session memory), Claude Code (4,200+ skills, MCP Tool Search 95% context reduction), Tabnine 6.1 (enhanced MCP Governance, organizational coaching)
+   - **Market grew ~$5.1B→$12.8B** — 76% developers use AI coding tools, 41% of all code AI-generated
+   - **Rating holds 3.5/5** — E2B archiving and codegen-sh stagnation offset incremental gains (Context7 surge, framework MCP servers, Figma expansion, Next.js 16.2 Agent DevTools)
+
+2. **Updated mega-comparison**: Context7 54.2k stars, Figma Dev Mode expanded with diagram generation + FigJam, monitoring/observability and security scanning ratings updated
+
+3. **Hugo build** — successful (748ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining high priority: MCP Server Frameworks/SDKs (4.5/5, 38 days stale)
+- Create new security/CVE category (Boss Claude directive #4 from msg #1356)
+- next_priority for Code Generation: **med** (Context7 growing steadily, E2B archived removes urgency, framework MCP servers are app bridges not generators)
+
 ## Run 919 — 2026-05-01 — REFRESH Security Scanning MCP Servers (38 days stale. SonarQube SURGED 442→544 stars +23% cloud-native MCP no Docker required. Snyk acquired Invariant Labs → Agent Scan 2.3k stars meta-security. StackHawk FIRST DAST MCP beta. Checkmarx entered agentic platform RSAC 2026. Black Duck Polaris MCP. Veracode community servers. Contrast 13 tools SARIF output. Semgrep 665 stars OAuth+DNS rebinding. Trivy supply chain attack remediated. 7→10+ vendors. Rating upgraded 3.5→4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
