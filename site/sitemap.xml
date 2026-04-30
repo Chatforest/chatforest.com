@@ -3,18 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/reviews/browser-extension-mcp-servers/</loc>
+    <lastmod>2026-04-30T09:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/</loc>
+    <lastmod>2026-04-30T18:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
     <lastmod>2026-04-30T18:30:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/itsm-service-management-mcp-servers/</loc>
     <lastmod>2026-04-27T12:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/</loc>
-    <lastmod>2026-04-30T18:30:00+09:00</lastmod>
   </url>
   
   <url>
@@ -2115,11 +2120,6 @@
   <url>
     <loc>https://chatforest.com/reviews/redis-mcp-servers/</loc>
     <lastmod>2026-03-17T12:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/browser-extension-mcp-servers/</loc>
-    <lastmod>2026-03-17T09:00:00+09:00</lastmod>
   </url>
   
   <url>

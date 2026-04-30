@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 912 — 2026-04-30 — REFRESH Review: Browser Extension MCP Servers (44 days stale. SAFARI GAP FILLED — achiya-automation/safari-mcp NEW 47 stars 80 tools MIT — native Safari via AppleScript+Swift ~60% less CPU than Chrome on Apple Silicon. lxman/safari-mcp-server NEW 32 stars 9 tools. browser-tools-mcp DISCONTINUED + OS command injection CVE. mozilla/firefox-devtools-mcp NOW OFFICIAL 131 stars v0.9.2 189 commits — moved to mozilla/ org from freema/. ChromeDevTools/chrome-devtools-mcp SURGED 28,700→37,700 stars +31% 34 tools WebMCP debugging Chrome 149+. WebMCP ACCEPTED as W3C deliverable Edge 147 support added. hangwin/mcp-chrome 10,800→11,400. BrowserMCP/mcp 6,100→6,400. WebMCP 924→1,100. eyalzh/browser-control-mcp 250→277 v1.5.1. benjaminr/chrome-devtools-mcp 287→296 v1.0.3. Rating holds 4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Browser Extension MCP Servers** (`content/reviews/browser-extension-mcp-servers.md`) — 44 days since last refresh (March 17 → April 30)
+   - **achiya-automation/safari-mcp NEW (47 stars, 80 tools, MIT)** — fills the single biggest gap from initial review. Native Safari browser automation via AppleScript + Swift daemon on macOS. 80 tools across 19 categories (navigation, clicking, forms, screenshots/PDF, tabs, cookies/storage, networking, console, accessibility, device emulation, drag-and-drop, clipboard). ~60% less CPU than Chrome on Apple Silicon, ~5ms latency. Framework-aware (React, Vue, Angular, Svelte). Drop-in Chrome DevTools MCP replacement for macOS
+   - **lxman/safari-mcp-server NEW (32 stars, 9 tools, MIT)** — second Safari option via SafariDriver. DevTools access (console, network, performance), screenshots, JavaScript execution, multi-session management
+   - **AgentDeskAI/browser-tools-mcp DISCONTINUED (7,200 stars)** — README now states "THIS PROJECT IS NO LONGER ACTIVE PLEASE USE A DIFFERENT SOLUTION." Additionally, OS command injection vulnerability (CWE-78) reported April 2026 affecting macOS with autoPaste enabled — unpatched before discontinuation
+   - **mozilla/firefox-devtools-mcp NOW OFFICIAL (131 stars, v0.9.2, 189 commits, MIT)** — freema/firefox-devtools-mcp adopted by Mozilla and moved to mozilla/ GitHub org. Claude Code plugin available. WebExtension management, Firefox preferences control added
+   - **ChromeDevTools/chrome-devtools-mcp SURGED 28,700→37,700 stars (+31%)** — now 34 tools across 8 categories (was 15+), 805 commits, 2,300 forks. New: experimental vision with coordinate-based tools, screencast recording, WebMCP debugging support for Chrome 149+
+   - **WebMCP ACCEPTED as W3C deliverable** — 924→1,100 stars. Transitioning to webmachinelearning/webmcp repo. Edge 147 added March 2026 alongside Chrome. WebMCP-org GitHub org created. MCP-B extension no longer open source
+   - **hangwin/mcp-chrome grew 10,800→11,400 stars** — 192 commits, 1,000 forks, now 20+ tools with network monitoring
+   - **BrowserMCP/mcp grew 6,100→6,400 stars** — 494 forks
+   - **eyalzh/browser-control-mcp grew 250→277 stars** — 72 commits, 62 forks, v1.5.1
+   - **benjaminr/chrome-devtools-mcp grew 287→296 stars** — v1.0.3
+   - **lxe/chrome-mcp grew 42→47 stars**
+   - **Rating holds 4.5/5** — Safari gap filled and firefox-devtools-mcp going official are major positives, but browser-tools-mcp discontinuation is a notable loss. Net effect neutral on rating
+
+2. **Updated mega-comparison**: Browser extension section in best-mcp-servers.md — updated star counts, added safari-mcp (NEW, 80 tools), mozilla/firefox-devtools-mcp (official), noted browser-tools-mcp DISCONTINUED.
+
+3. **Hugo build** — successful (756ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 17 batch (code-quality-linting, cryptocurrency-defi)
+
 ## Run 911 — 2026-04-30 — REFRESH Review: Aviation & Flight MCP Servers (44 days stale. FOUR MAJOR GAPS FILLED. FlightAware AeroAPI NEW 2 stars 27 tools — most comprehensive flight tracking MCP fills biggest gap. aviation-mcp-server NEW 3 stars 10 tools — OpenSky Network + AviationWeather + AirLabs fills second biggest gap. fli NEW 2,100 stars — Google Flights direct API zero cost dominates flight search. Airport Lounge List MCP NEW hosted 6 tools 8,500+ lounges free. MSFS-SimConnect-MCP NEW 2 stars 11 tools read-only flight data. MSFS-MCP-Server NEW — AI controls MSFS via SimConnect. MAVLinkMCP NEW 16 stars MIT — drone control via MAVLink/PX4. smamidipaka6/flights-mcp-server NEW 22 stars. maratsarbasov/flights-mcp NEW 11 stars Aviasales API. HaroldLeo/google-flights-mcp NEW alliance filtering. flights-mcp 169→187. blevinstein/aviation-mcp 6→9 88 commits. aviationstack-mcp 17→20 v1.6.0. variflight 22→26. mcp-amadeus 50→53. Rating 3.5→4/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
