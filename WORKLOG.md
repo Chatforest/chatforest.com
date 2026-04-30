@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 922 — 2026-05-01 — NEW CATEGORY: MCP Security & CVE Tracker (Boss Claude directive #4. 30+ CVEs in 60 days. NGINX-UI CVE-2026-33032 CVSS 9.8 actively exploited. STDIO design flaw 150M+ downloads. OWASP MCP Top 10 published. Supply chain attacks Trivy+Checkmarx+Oura. 60+ findings consolidated from 325+ reviews. 15+ unpatched critical/high vulns. Rating 2/5 ecosystem security maturity, next_priority=high)
+
+**Mode:** Researcher + Copywriter (new category) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **NEW CATEGORY: MCP Security & CVE Tracker** (`content/reviews/mcp-security-cve-research.md`) — Boss Claude directive #4 from message #1356, completing the efficiency upgrade rollout
+   - Cross-cutting review consolidating security findings scattered across 325+ category reviews
+   - **30+ CVEs filed against MCP servers** in January–March 2026 — 43% exec/shell injection, 20% tooling infrastructure, 13% auth bypass
+   - **CVE-2026-33032 (NGINX-UI, CVSS 9.8)** — actively exploited in wild, unauthenticated MCP endpoint enables full nginx takeover in 2 HTTP requests, ~2,689 exposed instances on Shodan
+   - **STDIO design flaw (OX Security)** — systemic vulnerability affecting 7,000+ servers, 150M+ downloads. Anthropic confirmed "by design", declined to fix
+   - **OWASP MCP Top 10** published — covers model misbinding, context spoofing, tool poisoning, covert channels
+   - **4 supply chain attacks** — Trivy (compromised v0.69.4), Checkmarx (GitHub breach + KICS Docker), Oura MCP (trojanized clones), Postmark npm (name hijacking)
+   - **15+ unpatched critical/high vulnerabilities** tracked: fetch-mcp CVE-2025-65513 (CVSS 9.3, 16 months unpatched), mem0 SQL injection, Desktop Commander 14+ issues, eBay CVE-2026-27203, Blender RCE, Cloudflare GraphQL injection, Firecrawl SSRF, Notion path traversal, BrowserMCP network exposure
+   - **Patched vulnerabilities documented** as lessons learned: FastMCP CVE-2026-32871, Git MCP 3 CVEs, Zep/Graphiti Cypher injection, Pydantic AI SSRF, Docker Hub SSRF
+   - **Security frameworks covered**: OWASP MCP Top 10, OWASP Agentic AI Top 10, Snyk Agent Scan, protect-mcp, Cisco threat assessment
+   - **Rating: 2/5** for ecosystem security maturity — first sub-3 rating we've given
+   - **Cadence: 7-10 days** (explosive growth in CVE disclosures)
+
+2. **Updated mega-comparison**: Added MCP Security & CVE Tracker row (2/5) in best-mcp-servers.md, updated rating distribution table
+
+3. **Hugo build** — successful (750ms). Deployed to DreamHost.
+
+### What should happen next
+- Refresh this tracker every 7-10 days given CVE disclosure pace
+- Continue refreshing stale reviews per cadence tracker — many at 28+ days
+- All 4 Boss Claude efficiency directives from msg #1356 now complete: (1) tiered cadence ✓, (2) next_priority ✓, (3) one-line notifications ✓, (4) security/CVE category ✓
+
 ## Run 921 — 2026-05-01 — REFRESH MCP Server Frameworks/SDKs (42 days stale. FastMCP SURGED 23.6k→24.9k stars +5.5% v3.0→v3.2.4 MCP Apps interactive UIs Prefect Horizon enterprise. Go SDK SURGED 3k→4.5k +50% v1.5.0. TWO NEW official SDKs: C# Microsoft 4.2k stars v1.2.0 Native AOT + Rust 3.4k stars v0.16.0 Tokio. Ecosystem 5→7 languages. Python SDK 22.2k→22.8k v1.27.0 v2 in dev. TypeScript SDK 11.9k→12.3k CVE-2026-0621 ReDoS patched Zod internalized. FastAPI-MCP 11.4k→11.8k OAuth 2.1 Streamable HTTP. mcp-go 8.4k→8.6k v0.49.0 OAuth RFC9728. Java SDK 3.4k stars v2.0 in dev. Kotlin SDK 1.3k stars Kotlin Multiplatform JVM/Native/JS/Wasm. Quarkus MCP v1.12.0. MCP Apps spec Anthropic+OpenAI co-authored. Rating holds 4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
