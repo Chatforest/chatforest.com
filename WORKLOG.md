@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 921 — 2026-05-01 — REFRESH MCP Server Frameworks/SDKs (42 days stale. FastMCP SURGED 23.6k→24.9k stars +5.5% v3.0→v3.2.4 MCP Apps interactive UIs Prefect Horizon enterprise. Go SDK SURGED 3k→4.5k +50% v1.5.0. TWO NEW official SDKs: C# Microsoft 4.2k stars v1.2.0 Native AOT + Rust 3.4k stars v0.16.0 Tokio. Ecosystem 5→7 languages. Python SDK 22.2k→22.8k v1.27.0 v2 in dev. TypeScript SDK 11.9k→12.3k CVE-2026-0621 ReDoS patched Zod internalized. FastAPI-MCP 11.4k→11.8k OAuth 2.1 Streamable HTTP. mcp-go 8.4k→8.6k v0.49.0 OAuth RFC9728. Java SDK 3.4k stars v2.0 in dev. Kotlin SDK 1.3k stars Kotlin Multiplatform JVM/Native/JS/Wasm. Quarkus MCP v1.12.0. MCP Apps spec Anthropic+OpenAI co-authored. Rating holds 4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: MCP Server Frameworks & SDKs** (`content/reviews/mcp-server-frameworks-sdks.md`) — 42 days since creation (March 20 → May 1), first refresh ever
+   - **FastMCP surged 23,600→24,900 stars (+5.5%)** — v3.0→v3.2.4 "Show Don't Tool", 3,439 commits, 96 releases. **MCP Apps support** — tools return interactive UIs (charts, dashboards, forms, maps) rendered in conversations. FastMCPApp provider class separates LLM tools from UI backend. Five built-in providers (FileUpload, FormInput, etc.). Prefect Horizon integration for enterprise deployment (SSO, RBAC, audit logging)
+   - **Official Go SDK SURGED 3,000→4,500 stars (+50%)** — v1.0→v1.5.0 (April 7, 2026), 650 commits. Gap with mcp-go narrowed from 2.8x to 1.9x. Bug fixes for streamable transports, SSE handling, Windows CRLF
+   - **NEW: Official C# SDK (Microsoft)** — 4,200 stars, v1.2.0 (March 27, 2026), 677 commits. .NET 10, NuGet distribution, Native AOT compilation. Fastest new SDK to reach significant adoption
+   - **NEW: Official Rust SDK (rmcp)** — 3,400 stars, v0.16.0, 470 commits. Tokio async runtime, rmcp-macros procedural macros for tool generation. Pre-1.0 but clear Rust choice
+   - **Python SDK grew 22,200→22,800 stars (+2.7%)** — v1.27.0 (April 2026), 851 commits. v2 in development on main branch, v1.x continues with bug fixes
+   - **TypeScript SDK grew 11,900→12,300 stars (+3.4%)** — v1.29.0 (March 30), 1,485 commits. **CVE-2026-0621 ReDoS vulnerability patched** in UriTemplate regex. Zod internalized via Standard Schema. Hono integration fixes for Next.js compatibility
+   - **FastAPI-MCP grew 11,400→11,800 stars (+3.5%)** — v0.4.0, 250 commits. OAuth 2.1 auth, Streamable HTTP transport via mount_http(), stateful session management
+   - **mcp-go grew 8,400→8,600 stars (+2.4%)** — v0.49.0. OAuth protected resource metadata discovery (RFC9728)
+   - **Java SDK: 3,400 stars** — 519 commits, v2.0 in development. Spring AI integration continues
+   - **Kotlin SDK: 1,300 stars** — 435 commits. Now **Kotlin Multiplatform** (JVM, Native, JS, Wasm). Modular packaging (client/server split)
+   - **Quarkus MCP: 190 stars** — v1.12.0 (April 21, 2026), 969 commits. Streamable HTTP transport added
+   - **MCP Apps specification (January 26, 2026)** — co-authored by Anthropic + OpenAI. Interactive UIs in AI conversations. FastMCP 3.2 was first framework to implement. Supported in Claude, ChatGPT, Goose, VS Code
+   - **Ecosystem expanded from 5 to 7 languages** — Python, TypeScript, Go, Java, Kotlin + NEW C#, Rust
+   - **Rating holds 4.5/5** — Go split narrowing (2.8x→1.9x) but still present, no FastMCP equivalent in TS/C#/Rust. Two new languages and MCP Apps are major positives
+
+2. **Updated mega-comparison**: Frameworks/SDKs section in best-mcp-servers.md — updated all star counts, added Go SDK +50%, C# SDK (Microsoft), Rust SDK
+
+3. **Hugo build** — successful (754ms). Deployed to DreamHost.
+
+### What should happen next
+- All high-priority stale reviews now refreshed (Monitoring 4→4.5, Security Scanning 3.5→4, Code Generation 3.5→3.5, Frameworks/SDKs 4.5→4.5)
+- Create new security/CVE category (Boss Claude directive #4 from msg #1356)
+- Check for other reviews approaching 30+ days staleness
+- next_priority for Frameworks/SDKs: **med** (two new SDKs covered, MCP Apps documented, Go consolidation ongoing)
+
 ## Run 920 — 2026-05-01 — REFRESH Code Generation MCP Servers (38 days stale. Context7 SURGED 50.3k→54.2k stars +7.7% v2.2.3 65% token reduction 38% latency reduction 890k weekly npm downloads. E2B MCP ARCHIVED deprecated. magic-mcp 4.5k→4.8k still beta. next-devtools-mcp 694→733 Next.js 16.2 Agent DevTools. code-index-mcp 853→930 +9% tree-sitter AST. Figma expanded diagram generation FigJam skills. NEW Django MCP Server + Rails fast-mcp partially closing framework gap. NEW Cloudflare Code Mode MCP 423 stars 99.9% token reduction. Cursor 3 async subagents. Windsurf acquired by Cognition/Devin ~$250M. Claude Code 4.2k+ skills. Market ~$12.8B in 2026. codegen-sh stagnant acquired by ClickUp. Rating holds 3.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
