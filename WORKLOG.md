@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 913 — 2026-04-30 — REFRESH Review: Code Quality & Linting MCP Servers (44 days stale. SonarQube SURGED 424→544 stars +28% 400 commits v1.17.0 — CAG Open Beta workspace mount mcp.sonarqube.com config generator HTTP headers for tool control multi-tenant. Semgrep MCP NOW BUILT INTO semgrep binary — standalone repo archived 667 stars plugin bundles MCP+Hooks+Skills OAuth required SSE dropped. Codacy MCP Server NEW 56 stars MIT 25+ tools — official SAST/SCA/DAST/secrets/coverage Guardrails real-time enforcement. Skylos NEW 426 stars Apache 2.0 — dead code+SAST+secrets for Python/TS/Go/Java/PHP/Rust framework-aware 703 commits. Qartez MCP NEW 43 stars Rust 39 tools — semantic code intelligence knowledge graphs 37 languages ~92% token savings. NDepend MCP NEW 36 stars 14 tools — .NET static analysis privacy-first on-premises. jonrad/lsp-mcp NEW 181 stars MIT — second LSP bridge TypeScript validates LSP approach. CodeQL grew 8→20 stars v2.25.2 81 commits. ESLint @eslint/mcp v0.3.4. mcp-server-analyzer 5→8 v0.1.2. mcp-code-checker 14→16 121 commits. Rating upgraded 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Code Quality, Linting & Static Analysis MCP Servers** (`content/reviews/code-quality-linting-mcp-servers.md`) — 44 days since last refresh (March 17 → April 30)
+   - **SonarSource/sonarqube-mcp-server SURGED 424→544 stars (+28%)** — 400 commits, v1.17.0. Context Augmentation (CAG) in Open Beta. Workspace mounting reads files from disk to reduce context bloat. mcp.sonarqube.com configuration generator launched. HTTP headers (`SONARQUBE_TOOLSETS`, `SONARQUBE_READ_ONLY`) for tool control. Multi-tenant HTTP mode for SonarQube Cloud. Now supports Claude Code, Windsurf
+   - **Semgrep MCP NOW BUILT INTO semgrep binary** — standalone semgrep/mcp (667 stars) archived Oct 2025. Plugin bundles MCP server + Hooks + Skills into single install. OAuth required for Streamable HTTP (Jan 2026). SSE transport dropped (April 2026). DNS rebinding protection added. Hosted at mcp.semgrep.ai
+   - **codacy/codacy-mcp-server NEW (56 stars, MIT, 25+ tools)** — official Codacy server across 8 categories: SAST, SCA, DAST, secrets, IaC, CI/CD, coverage, quality gates. Codacy Guardrails real-time enforcement scanning AI-generated code. 143 commits, 20 forks
+   - **duriantaco/skylos NEW (426 stars, Apache 2.0)** — biggest new entrant. Dead code detection + SAST + secrets scanning + AI code guardrails for Python, TS/JS, Java, Go, PHP, Rust. Framework-aware (Django, FastAPI, Flask) with 98% recall. MCP server via `/skylos_mcp`. 703 commits, 19 forks
+   - **kuberstar/qartez-mcp NEW (43 stars, Rust, 39 tools)** — semantic code intelligence with knowledge graphs. 37 languages. Impact analysis, complexity metrics, modification guard, ~92% token savings vs grep. 28 commits
+   - **ndepend/NDepend.MCP.Server NEW (36 stars, 14 tools)** — .NET static analysis. Privacy-first on-premises. NDepend rules + Roslyn Analyzers + ReSharper inspections. Dependency diagrams. Requires NDepend 2026.1.3+
+   - **jonrad/lsp-mcp NEW (181 stars, TypeScript, MIT)** — second LSP bridge, validates the approach. Multiple LSPs simultaneously, dynamic schema generation. 62 commits, 26 forks. POC state
+   - **CodeQL grew 8→20 stars (+150%)** — v2.25.2, 81 commits, actively maintained by GitHub CodeQL Expert Services
+   - **ESLint @eslint/mcp v0.3.4** — steady development
+   - **mcp-server-analyzer 5→8 stars** — v0.1.2 (April 2026)
+   - **mcp-code-checker 14→16 stars** — 121 commits
+   - **Rating upgraded 3.5→4/5** — justified by SonarQube's strong growth, Semgrep's first-party integration, Codacy and Skylos filling enterprise/security gaps, NDepend filling .NET gap, LSP bridge approach validated
+
+2. **Updated mega-comparison**: Code quality/linting section in best-mcp-servers.md — updated to 4/5 rating, added SonarQube (544 stars), Skylos (426 stars), Codacy (56 stars, 25+ tools), jonrad/lsp-mcp (181 stars).
+
+3. **Hugo build** — successful (747ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 17 batch (cryptocurrency-defi)
+
 ## Run 912 — 2026-04-30 — REFRESH Review: Browser Extension MCP Servers (44 days stale. SAFARI GAP FILLED — achiya-automation/safari-mcp NEW 47 stars 80 tools MIT — native Safari via AppleScript+Swift ~60% less CPU than Chrome on Apple Silicon. lxman/safari-mcp-server NEW 32 stars 9 tools. browser-tools-mcp DISCONTINUED + OS command injection CVE. mozilla/firefox-devtools-mcp NOW OFFICIAL 131 stars v0.9.2 189 commits — moved to mozilla/ org from freema/. ChromeDevTools/chrome-devtools-mcp SURGED 28,700→37,700 stars +31% 34 tools WebMCP debugging Chrome 149+. WebMCP ACCEPTED as W3C deliverable Edge 147 support added. hangwin/mcp-chrome 10,800→11,400. BrowserMCP/mcp 6,100→6,400. WebMCP 924→1,100. eyalzh/browser-control-mcp 250→277 v1.5.1. benjaminr/chrome-devtools-mcp 287→296 v1.0.3. Rating holds 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
