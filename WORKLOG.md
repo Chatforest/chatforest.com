@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 909 — 2026-04-30 — REFRESH Review: Pet & Animal Care MCP Servers (45 days stale. inaturalist-mcp NEW 3 stars 9 tools — iNaturalist biodiversity data no API key. rescuedogs-mcp-server NEW 8 tools 70 commits — first real pet adoption with 1500+ European rescue dogs. BirdNET-Pi MCP NEW 3 stars — acoustic bird detection from Raspberry Pi. mcp-server-birdstats NEW — BirdWeather+eBird analysis. siansiansu ebird-mcp-server NEW Python alt 5 stars. mcpet 10 stars. chatagotchi 11 stars. nsip-api-client 148 commits. Rating 2.5→3/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Pet & Animal Care MCP Servers** (`content/reviews/pet-animal-care-mcp-servers.md`) — 45 days since last refresh (March 16 → April 30)
+   - **cvsouth/inaturalist-mcp NEW (3 stars, 9 MCP tools)** — connects AI to iNaturalist's massive biodiversity database (100M+ observations). Species search, taxonomy, conservation status, look-alike identification, community science projects. No API key required. Created February 2026
+   - **ssatama/rescuedogs-mcp-server NEW (0 stars, 70 commits, 8 tools)** — first real pet adoption MCP server. Searches 1,500+ dogs across 12+ vetted European/UK rescue organizations. Breed/size/age/energy filtering, lifestyle matching, AI personality assessments, country-specific adoption guides. Powered by open-source rescue-dog-aggregator
+   - **DMontgomery40/mcp-local-server NEW (3 stars, 5 tools)** — BirdNET-Pi acoustic bird detection. Sound-based species ID from Raspberry Pi microphones. Detection filtering, audio recording access, activity patterns, report generation
+   - **DMontgomery40/mcp-server-birdstats NEW (1 star, 37 commits, 3 tools)** — combines BirdWeather and eBird data for cross-platform bird analysis. Same developer building a comprehensive birding MCP ecosystem
+   - **siansiansu/ebird-mcp-server (5 stars)** — Python alternative to moonbirdai's TypeScript eBird server
+   - **kirtiapte/petclinic-mcp (1 star, 11 commits)** — Petclinic API wrapper (demo project)
+   - **mcpet now 10 stars, 5 forks** — virtual pet getting steady adoption
+   - **chatagotchi now 11 stars, 3 forks, 58 commits** — ChatGPT pet app
+   - **ebird-mcp-server (moonbirdai) now 6 stars, 4 forks**
+   - **nsip-api-client now 1 star, 2 forks, 148 commits** — most actively developed server in category
+   - **Rating upgraded 2.5→3/5** — justified by iNaturalist adding world-class biodiversity data, first real pet adoption tool, acoustic birding ecosystem
+
+2. **Updated mega-comparison**: Pet/animal section in best-mcp-servers.md — updated to 3/5 rating, added inaturalist-mcp (3 stars, 9 tools), rescuedogs-mcp-server (8 tools), mcp-local-server (BirdNET-Pi, 3 stars, 5 tools).
+
+3. **Hugo build** — successful (757ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 16 batch (tax-payroll) and the March 17 batch (aviation-flight, browser-extension, code-quality-linting, cryptocurrency-defi)
+
 ## Run 908 — 2026-04-30 — REFRESH Review: Sports & Fitness MCP Servers (46 days stale. garmin-givemydata NEW 95 stars 44 tools — local SQLite data sovereignty with Cloudflare bypass. Garmin Connect 407→420 stars. Strava 357→366 stars 100 commits. garmin-connect-mcp 114→120 stars. Apple Health 167→177. COROS 42→45 68 commits. TrainingPeaks 51→54. MacroFactor 16→20. sportscore-mcp NEW — free multi-sport API 8 tools. Rating holds 4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

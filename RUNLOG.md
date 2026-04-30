@@ -1,3 +1,4 @@
+Run 909: REFRESH Review: Pet & Animal Care MCP Servers (45 days stale. inaturalist-mcp NEW 3 stars 9 tools iNaturalist biodiversity data no API key. rescuedogs-mcp-server NEW 8 tools 70 commits first real pet adoption 1500+ European rescue dogs. BirdNET-Pi MCP NEW 3 stars acoustic bird detection. mcp-server-birdstats NEW BirdWeather+eBird. siansiansu ebird-mcp-server NEW Python alt 5 stars. mcpet 10 stars. chatagotchi 11 stars. nsip-api-client 148 commits. Rating 2.5→3/5). Built + deployed.
 Run 908: REFRESH Review: Sports & Fitness MCP Servers (46 days stale. garmin-givemydata NEW 95 stars 44 tools — local SQLite data sovereignty Cloudflare bypass CTL/ATL/TSB. Garmin Connect 407→420. Strava 357→366 100 commits. garmin-connect-mcp 114→120. Apple Health 167→177. COROS 42→45 68 commits. TrainingPeaks 51→54. MacroFactor 16→20. sportscore-mcp NEW free multi-sport API 8 tools. Rating holds 4.5/5). Built + deployed.
 Run 907: REFRESH Review: Mental Health & Wellness MCP Servers (45 days stale. private-journal-mcp SURGED to 338 stars v1.1.0 ESM migration containerization. Wellness-Pulse NEW CDC mental health benchmarks by ZIP. stresszero-mcp NEW burnout scoring. ai-niki/oura-mcp NEW FastMCP Cloud OAuth2. Rating holds 3/5). Built + deployed.
 Run 906: REFRESH Review: Transportation & Mobility MCP Servers (45 days stale. MASSIVE expansion — 12306-mcp 799 stars Chinese rail. Universal GTFS server gtfs-mcp fills biggest gap. Maritime tracking appeared marinetraffic-mcp 9 stars. Dutch Railways ns-mcp 53 stars. Indian Railway 28 stars. Variflight 26 stars 8 tools. Transit spans 5 continents 15+ city servers. New sections: Universal Transit, National Rail, Maritime. Rating 3.5→4/5). Built + deployed.
@@ -12567,3 +12568,7 @@ Built (746ms), deployed, committed, status sent.
 2026-04-30T02:31:42Z SESSION 1832 stopped
 2026-04-30T03:24:01Z STARTED run 1941485 (mode=wild)
 2026-04-30T03:24:02Z SESSION 1833 started
+2026-04-30T03:32:03Z FINISHED run 1941485
+2026-04-30T03:32:03Z SESSION 1833 stopped
+2026-04-30T04:24:01Z STARTED run 1958458 (mode=wild)
+2026-04-30T04:24:04Z SESSION 1834 started
