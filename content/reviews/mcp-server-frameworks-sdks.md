@@ -1,18 +1,18 @@
 ---
 title: "MCP Server Frameworks & SDKs — FastMCP, Official SDKs, and the Tools That Power Every MCP Server"
 date: 2026-03-20T21:30:00+09:00
-description: "MCP server frameworks and SDKs reviewed: FastMCP (23,600 stars, Python, powers 70% of all MCP servers), official Python SDK (22,200 stars), official TypeScript SDK (11,900 stars)"
-og_description: "MCP server frameworks: FastMCP (23,600 stars, powers 70% of servers), official Python SDK (22,200 stars), TypeScript SDK (11,900 stars), FastAPI-MCP (11,400 stars), mcp-go (8,400 stars), Go SDK (3,000 stars, Google), Kotlin SDK (JetBrains), Java SDK (Spring), Quarkus MCP, Spring AI MCP. 10+ frameworks across 5 languages. Rating: 4.5/5."
+description: "MCP server frameworks and SDKs reviewed: FastMCP (24,900 stars, Python, powers 70% of all MCP servers), official Python SDK (22,800 stars), official TypeScript SDK (12,300 stars)"
+og_description: "MCP server frameworks: FastMCP (24,900 stars, powers 70% of servers, MCP Apps support), official Python SDK (22,800 stars), TypeScript SDK (12,300 stars), FastAPI-MCP (11,800 stars), mcp-go (8,600 stars), Go SDK (4,500 stars, Google, +50%), NEW C# SDK (4,200 stars, Microsoft), NEW Rust SDK (3,400 stars), Java SDK (3,400 stars, Spring), Kotlin SDK (1,300 stars, JetBrains), Quarkus MCP, Spring AI MCP. 12+ frameworks across 7 languages. Rating: 4.5/5."
 content_type: "Review"
-card_description: "The frameworks and SDKs behind every MCP server. FastMCP dominates Python with 23,600 stars and powers an estimated 70% of all MCP servers across all languages — its decorator-based API turns a Python function into a tool in one line. The official Python SDK (22,200 stars) and TypeScript SDK (11,900 stars) provide lower-level control. FastAPI-MCP (11,400 stars) auto-converts existing FastAPI endpoints into MCP tools with zero configuration. mcp-go (8,400 stars) leads Go with 1,790 importers. Official Go, Java, and Kotlin SDKs cover the enterprise JVM and systems programming space. Whether you're building your first MCP server or migrating an existing API, one of these frameworks will get you there."
-last_refreshed: 2026-03-20
+card_description: "The frameworks and SDKs behind every MCP server. FastMCP dominates Python with 24,900 stars and powers an estimated 70% of all MCP servers — v3.2 adds MCP Apps support for interactive UIs in conversations. The official Python SDK (22,800 stars) and TypeScript SDK (12,300 stars) provide lower-level control. FastAPI-MCP (11,800 stars) auto-converts existing FastAPI endpoints into MCP tools. The official Go SDK surged 50% to 4,500 stars. Two new official SDKs — C# (Microsoft, 4,200 stars) and Rust (3,400 stars) — expand language coverage from 5 to 7. Whether you're building your first MCP server or migrating an existing API, one of these frameworks will get you there."
+last_refreshed: 2026-05-01
 ---
 
 Every MCP server is built on something. Behind the 5,000+ servers in the ecosystem, a surprisingly small number of frameworks and SDKs do the heavy lifting — handling JSON-RPC transport, tool schema generation, authentication, and the protocol handshake that makes MCP work.
 
-This review covers the tools developers use to **build** MCP servers: official SDKs maintained by the [Agentic AI Foundation](https://github.com/modelcontextprotocol) (donated by Anthropic in late 2025), and the third-party frameworks that add higher-level abstractions on top. The ecosystem spans five languages — **Python**, **TypeScript**, **Go**, **Java**, and **Kotlin** — with Python dominating adoption by a wide margin.
+This review covers the tools developers use to **build** MCP servers: official SDKs maintained by the [Agentic AI Foundation](https://github.com/modelcontextprotocol) (donated by Anthropic in late 2025), and the third-party frameworks that add higher-level abstractions on top. The ecosystem now spans **seven languages** — **Python**, **TypeScript**, **Go**, **Java**, **Kotlin**, **C#**, and **Rust** — with Python dominating adoption by a wide margin. Since our [original review in March 2026](#refresh-history), two new official SDKs have launched (C# with Microsoft, Rust), the official Go SDK surged 50%, and the MCP Apps specification introduced interactive UI capabilities that frameworks are racing to support.
 
-The headline: **FastMCP is the most important project in the MCP ecosystem that most users never see.** With 23,600 stars and an estimated 70% of all MCP servers running some version of it, FastMCP is to MCP what Express is to Node.js — the framework that made the protocol accessible. The official SDKs provide the foundation, but FastMCP made it easy.
+The headline: **FastMCP is the most important project in the MCP ecosystem that most users never see.** With 24,900 stars and an estimated 70% of all MCP servers running some version of it, FastMCP is to MCP what Express is to Node.js — the framework that made the protocol accessible. Its v3.2 release adds MCP Apps support, letting tools return interactive UIs — charts, dashboards, forms — rendered directly in conversations. The official SDKs provide the foundation, but FastMCP made it easy.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -24,10 +24,11 @@ Python has the widest selection of MCP frameworks and the highest adoption. Two 
 
 | Detail | Info |
 |--------|------|
-| [PrefectHQ/fastmcp](https://github.com/jlowin/fastmcp) | ~23,600 stars |
+| [PrefectHQ/fastmcp](https://github.com/jlowin/fastmcp) | ~24,900 stars |
 | License | Apache 2.0 |
 | Language | Python |
-| Latest | v3.0 (January 2026) |
+| Latest | v3.2.4 (April 2026) |
+| Commits | 3,439 |
 | Downloads | ~1 million/day |
 
 FastMCP is the most popular MCP framework in any language. Created by Jeremiah Lowin (CEO of Prefect), it was the first framework to make building MCP servers genuinely simple. FastMCP 1.0 was so well-designed that it was incorporated directly into the official MCP Python SDK in 2024 — the standalone project continued evolving independently.
@@ -36,7 +37,11 @@ FastMCP is the most popular MCP framework in any language. Created by Jeremiah L
 
 **Decorator-based API eliminates boilerplate.** Define a function, add `@mcp.tool()`, and FastMCP handles schema generation from type hints, docstring parsing, input validation, and transport setup. A working MCP server is literally five lines of code.
 
-**FastMCP 3.0 is a full platform.** The January 2026 release added component versioning, granular authorization, OpenTelemetry instrumentation, and multiple provider types (FileSystem, Skills, OpenAPI). It's evolved from "easy MCP builder" into a production deployment framework.
+**FastMCP 3.2 adds MCP Apps — interactive UIs in conversations.** The "Show Don't Tool" release (April 2026) lets tools return charts, dashboards, forms, and maps rendered directly inside the AI chat. `FastMCPApp` is a new provider class that separates LLM-visible tools (`@app.ui()`) from backend tools the UI calls (`@app.tool()`). Five built-in providers ship for common patterns: FileUpload, FormInput, and more. This builds on the [MCP Apps specification](https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/) co-authored by Anthropic and OpenAI.
+
+**FastMCP 3.0→3.2 is a full platform.** v3.0 (February 2026) added component versioning, granular authorization, OpenTelemetry instrumentation, and multiple provider types. v3.1 added Code Mode for tool discovery. v3.2 added Apps. 96 total releases and 3,439 commits show rapid iteration.
+
+**Prefect Horizon for enterprise deployment.** FastMCP now integrates with Prefect Horizon for production deployment with SSO, tool-level RBAC, audit logging, and observability across MCP stacks.
 
 **Server composition and proxying.** FastMCP can compose multiple servers into one, proxy requests between servers, and dynamically rewrite tools at runtime. This enables architectures where a gateway server aggregates tools from multiple backend servers — useful for enterprise deployments.
 
@@ -56,9 +61,11 @@ FastMCP is the most popular MCP framework in any language. Created by Jeremiah L
 
 | Detail | Info |
 |--------|------|
-| [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | ~22,200 stars |
+| [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | ~22,800 stars |
 | License | MIT |
 | Language | Python |
+| Latest | v1.27.0 (April 2026) |
+| Commits | 851 |
 | Maintained by | Agentic AI Foundation |
 
 The official Python SDK is the reference implementation of the MCP protocol. It provides both low-level protocol handling and a high-level server API (which incorporates FastMCP 1.0's design).
@@ -73,7 +80,9 @@ The official Python SDK is the reference implementation of the MCP protocol. It 
 
 #### What Doesn't Work Well
 
-**Less opinionated than FastMCP.** The SDK gives you building blocks; FastMCP gives you a framework. For most developers building production servers, FastMCP 3.0 is the better starting point unless you need fine-grained protocol control.
+**Less opinionated than FastMCP.** The SDK gives you building blocks; FastMCP gives you a framework. For most developers building production servers, FastMCP 3.x is the better starting point unless you need fine-grained protocol control.
+
+**v2 in development.** A v2 release is in progress on the main branch, with v1.x remaining the recommended version for production. v1.x will continue receiving bug fixes and security updates for at least 6 months after v2 ships.
 
 **Documentation favors the high-level API.** If you want to use the low-level API for custom protocol handling, you'll be reading source code more than docs.
 
@@ -81,9 +90,11 @@ The official Python SDK is the reference implementation of the MCP protocol. It 
 
 | Detail | Info |
 |--------|------|
-| [tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp) | ~11,400 stars |
+| [tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp) | ~11,800 stars |
 | License | MIT |
 | Language | Python |
+| Latest | v0.4.0 |
+| Commits | 250 |
 | Approach | Auto-converts FastAPI endpoints to MCP tools |
 
 FastAPI-MCP takes a fundamentally different approach: instead of building an MCP server from scratch, it **wraps an existing FastAPI application** and automatically exposes its endpoints as MCP tools. Zero configuration required — import, mount, done.
@@ -108,9 +119,11 @@ FastAPI-MCP takes a fundamentally different approach: instead of building an MCP
 
 | Detail | Info |
 |--------|------|
-| [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) | ~11,900 stars |
+| [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) | ~12,300 stars |
 | License | MIT |
 | Language | TypeScript |
+| Latest | v1.29.0 (March 2026) |
+| Commits | 1,485 |
 | Maintained by | Agentic AI Foundation |
 
 The official TypeScript SDK is the second reference implementation and the foundation for most Node.js MCP servers. It provides strongly-typed developer ergonomics with both stdio and HTTP+SSE transports.
@@ -125,9 +138,13 @@ The official TypeScript SDK is the second reference implementation and the found
 
 #### What Doesn't Work Well
 
+**CVE-2026-0621 ReDoS vulnerability patched.** A regular expression denial of service vulnerability in UriTemplate regex patterns was discovered and fixed. A reminder that even foundational SDKs need security attention.
+
+**Zod internalized via Standard Schema.** Zod was moved from a peer dependency to a direct internal dependency after Standard Schema support landed, simplifying installation for new users.
+
 **No equivalent to FastMCP.** The TypeScript ecosystem lacks a dominant high-level framework like Python's FastMCP. Several projects (EasyMCP, mcp-framework) try to fill this gap, but none have achieved similar adoption. Most TypeScript MCP developers work directly with the SDK.
 
-**v2 transition.** A stable v2 release has been in progress, with v1.x still recommended for production. This creates uncertainty about which version to target for new projects.
+**v2 transition.** A stable v2 release has been in progress, with v1.x still recommended for production. This creates uncertainty about which version to target for new projects. Hono integration improvements (missing peer dependency fix, preventing global Response object override for Next.js compatibility) suggest the SDK is broadening its framework support.
 
 ## Go
 
@@ -135,9 +152,10 @@ The official TypeScript SDK is the second reference implementation and the found
 
 | Detail | Info |
 |--------|------|
-| [mark3labs/mcp-go](https://github.com/mark3labs/mcp-go) | ~8,400 stars |
+| [mark3labs/mcp-go](https://github.com/mark3labs/mcp-go) | ~8,600 stars |
 | License | MIT |
 | Language | Go |
+| Latest | v0.49.0 |
 | Importers | 1,790+ |
 | Transport | stdio, Streamable HTTP, SSE, in-process |
 
@@ -153,18 +171,22 @@ mcp-go is the most popular community Go SDK and predates the official Go SDK. It
 
 #### What Doesn't Work Well
 
-**Competes with the official Go SDK.** Now that the official Go SDK has reached v1.0, the community faces a split-ecosystem risk. mark3labs/mcp-go has more stars and adoption today, but the official SDK has Google's backing and the MCP org's endorsement.
+**OAuth protected resource metadata (RFC9728).** v0.49.0 added OAuth protected resource metadata discovery and client helpers for extracting metadata URLs from authorization errors — important for the evolving OAuth 2.1 story in MCP.
+
+**Competes with the official Go SDK.** The official Go SDK surged from ~3,000 to ~4,500 stars (+50%) since March, narrowing the gap from 2.8x to 1.9x. mark3labs/mcp-go still leads in adoption and ecosystem examples, but the official SDK's momentum suggests gradual consolidation.
 
 ### Official Go SDK
 
 | Detail | Info |
 |--------|------|
-| [modelcontextprotocol/go-sdk](https://github.com/modelcontextprotocol/go-sdk) | ~3,000 stars |
+| [modelcontextprotocol/go-sdk](https://github.com/modelcontextprotocol/go-sdk) | ~4,500 stars |
 | License | MIT |
 | Language | Go |
+| Latest | v1.5.0 (April 2026) |
+| Commits | 650 |
 | Maintained by | Agentic AI Foundation + Google |
 
-The official Go SDK reached v1.0 in early 2026, formalizing a stability guarantee. It's maintained in collaboration with Google, whose Go team contributed a battle-tested JSON-RPC implementation originally built for gopls (the Go language server).
+The official Go SDK reached v1.0 in early 2026 and has since grown to v1.5.0 with rapid iteration — **surging 50% in stars from 3,000 to 4,500 in six weeks.** It's maintained in collaboration with Google, whose Go team contributed a battle-tested JSON-RPC implementation originally built for gopls (the Go language server).
 
 #### What Works Well
 
@@ -172,11 +194,11 @@ The official Go SDK reached v1.0 in early 2026, formalizing a stability guarante
 
 **Official stability guarantee.** v1.0 means the API won't break. For enterprise Go teams choosing a long-term dependency, this matters more than star count.
 
-**58 contributors.** A healthy contributor base for a relatively new project, suggesting organic community engagement beyond a single maintainer.
+**650 commits and growing fast.** The 50% star surge and rapid release cadence (v1.0→v1.5.0 in ~3 months) suggest the official SDK is gaining significant traction, with bug fixes for streamable transports, improved SSE handling, and Windows CRLF support.
 
 #### What Doesn't Work Well
 
-**Lower adoption than mcp-go.** With ~3,000 stars vs. mcp-go's ~8,400, the official SDK is the underdog in the Go ecosystem. Most existing Go MCP servers were built on mark3labs/mcp-go and won't migrate without a compelling reason.
+**Still lower adoption than mcp-go.** With ~4,500 stars vs. mcp-go's ~8,600, the gap has narrowed significantly (from 2.8x to 1.9x) but the official SDK remains the second choice. Most existing Go MCP servers were built on mark3labs/mcp-go and won't migrate without a compelling reason.
 
 **Less opinionated.** The official SDK follows Go's standard library philosophy of minimal abstraction. This means more code to write compared to mcp-go's higher-level patterns.
 
@@ -186,31 +208,35 @@ The official Go SDK reached v1.0 in early 2026, formalizing a stability guarante
 
 | Detail | Info |
 |--------|------|
-| [modelcontextprotocol/kotlin-sdk](https://github.com/modelcontextprotocol/kotlin-sdk) | — |
+| [modelcontextprotocol/kotlin-sdk](https://github.com/modelcontextprotocol/kotlin-sdk) | ~1,300 stars |
 | License | MIT |
 | Language | Kotlin |
+| Commits | 435 |
 | Maintained by | Agentic AI Foundation + JetBrains |
 
-The official Kotlin SDK is maintained in collaboration with JetBrains, which makes it the natural choice for IntelliJ-based IDE integrations and Kotlin server applications. JetBrains' involvement ensures first-class coroutine support and idiomatic Kotlin APIs.
+The official Kotlin SDK is maintained in collaboration with JetBrains, which makes it the natural choice for IntelliJ-based IDE integrations and Kotlin server applications. JetBrains' involvement ensures first-class coroutine support and idiomatic Kotlin APIs. **Now supports Kotlin Multiplatform** — targeting JVM, Native, JS, and Wasm platforms — making it the most versatile SDK for cross-platform deployment. Modular packaging (kotlin-sdk-client, kotlin-sdk-server) lets you pull in only what you need.
 
 ### Official Java SDK
 
 | Detail | Info |
 |--------|------|
-| [modelcontextprotocol/java-sdk](https://github.com/modelcontextprotocol/java-sdk) | — |
+| [modelcontextprotocol/java-sdk](https://github.com/modelcontextprotocol/java-sdk) | ~3,400 stars |
 | License | MIT |
 | Language | Java |
+| Commits | 519 |
 | Maintained by | Agentic AI Foundation + Spring team |
 
-The official Java SDK was developed in collaboration with the Spring AI team and provides the foundation for Java-based MCP servers. It's the underlying dependency for both the Spring AI MCP integration and the Quarkus MCP extension.
+The official Java SDK was developed in collaboration with the Spring AI team and provides the foundation for Java-based MCP servers. It's the underlying dependency for both the Spring AI MCP integration and the Quarkus MCP extension. A v2.0 is in development with conformance test suite validation at v0.1.15.
 
 ### Quarkus MCP Server SDK
 
 | Detail | Info |
 |--------|------|
-| [quarkiverse/quarkus-mcp-server](https://github.com/quarkiverse/quarkus-mcp-server) | — |
+| [quarkiverse/quarkus-mcp-server](https://github.com/quarkiverse/quarkus-mcp-server) | ~190 stars |
 | License | Apache 2.0 |
 | Language | Java |
+| Latest | v1.12.0 (April 2026) |
+| Commits | 969 |
 | Framework | Quarkus |
 
 The Quarkus MCP extension brings Quarkus's strengths — fast startup, low memory, native compilation via GraalVM — to MCP servers. It provides both declarative (annotation-based) and programmatic APIs.
@@ -227,19 +253,85 @@ Spring AI has integrated MCP support directly into its core framework (as of Spr
 
 For enterprise Java teams already on Spring Boot, this is the path of least resistance to MCP.
 
+## C# / .NET — The Microsoft Ecosystem
+
+*New since our March 2026 review.*
+
+### Official C# SDK
+
+| Detail | Info |
+|--------|------|
+| [modelcontextprotocol/csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk) | ~4,200 stars |
+| License | MIT |
+| Language | C# |
+| Latest | v1.2.0 (March 2026) |
+| Commits | 677 |
+| Maintained by | Agentic AI Foundation + Microsoft |
+
+The official C# SDK enables .NET applications, services, and libraries to implement MCP clients and servers. Maintained in collaboration with Microsoft, it's the newest official SDK to reach v1.0 — and its rapid growth to 4,200 stars in just a few months suggests pent-up demand from the .NET ecosystem.
+
+#### What Works Well
+
+**Native AOT compilation.** Like Quarkus for Java, the C# SDK supports Ahead-Of-Time compilation to native code — producing self-contained, fast-starting MCP server executables without requiring the .NET runtime on the target machine.
+
+**Multiple transports.** Both stdio (for local clients like Claude Desktop) and HTTP (for remote/web-based clients) are supported out of the box.
+
+**NuGet distribution.** `dotnet add package ModelContextProtocol` is all it takes. The familiar .NET toolchain means enterprise teams can adopt MCP without learning new build systems.
+
+**Microsoft backing.** With Microsoft contributing directly to the SDK, .NET developers get the same level of institutional support that Google provides for Go and JetBrains provides for Kotlin.
+
+#### What Doesn't Work Well
+
+**Requires .NET 10 SDK.** The latest version targets .NET 10, which may not yet be standard in all enterprise environments. Earlier .NET versions may not be supported.
+
+**No high-level framework yet.** Like TypeScript, the C# ecosystem doesn't yet have a FastMCP equivalent that provides opinionated, batteries-included server building. Developers work directly with the SDK.
+
+## Rust
+
+*New since our March 2026 review.*
+
+### Official Rust SDK (rmcp)
+
+| Detail | Info |
+|--------|------|
+| [modelcontextprotocol/rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) | ~3,400 stars |
+| License | MIT |
+| Language | Rust |
+| Latest | v0.16.0 |
+| Commits | 470 |
+| Maintained by | Agentic AI Foundation |
+
+The official Rust SDK (`rmcp` crate) provides async MCP server and client implementations built on the Tokio runtime. It ships with `rmcp-macros` for procedural macros that generate tool implementations from Rust structs.
+
+#### What Works Well
+
+**Tokio async runtime.** Built on Rust's dominant async ecosystem, the SDK integrates naturally with existing Rust async applications. If you're already using Tokio, adding MCP support is straightforward.
+
+**Procedural macros.** The `rmcp-macros` crate generates tool schemas and boilerplate from annotated Rust structs — similar in spirit to FastMCP's decorators, adapted for Rust's type system.
+
+**Memory safety and performance.** Rust's guarantees make the SDK suitable for MCP servers handling sensitive data or running in constrained environments where memory safety is critical.
+
+#### What Doesn't Work Well
+
+**Pre-1.0.** At v0.16.0, the API is still evolving. Breaking changes are possible between minor versions, making it less suitable for production deployments that need long-term stability.
+
+**Smaller community.** Compared to Python and TypeScript, the Rust MCP ecosystem has fewer examples, tutorials, and community servers to reference.
+
 ## Framework Comparison
 
 | Framework | Language | Stars | Best For |
 |-----------|----------|-------|----------|
-| [FastMCP](https://github.com/jlowin/fastmcp) | Python | 23,600 | Building new MCP servers from scratch |
-| [Python SDK](https://github.com/modelcontextprotocol/python-sdk) | Python | 22,200 | Low-level protocol control, reference behavior |
-| [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) | TypeScript | 11,900 | Node.js servers, type-safe tool definitions |
-| [FastAPI-MCP](https://github.com/tadata-org/fastapi_mcp) | Python | 11,400 | Converting existing FastAPI apps to MCP |
-| [mcp-go](https://github.com/mark3labs/mcp-go) | Go | 8,400 | Go servers with pragmatic, opinionated API |
-| [Go SDK](https://github.com/modelcontextprotocol/go-sdk) | Go | 3,000 | Go servers with official stability guarantee |
-| [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) | Kotlin | — | JetBrains ecosystem, coroutine-based servers |
-| [Java SDK](https://github.com/modelcontextprotocol/java-sdk) | Java | — | Enterprise Java, Spring/Quarkus foundation |
-| [Quarkus MCP](https://github.com/quarkiverse/quarkus-mcp-server) | Java | — | Native-compiled, low-memory JVM servers |
+| [FastMCP](https://github.com/jlowin/fastmcp) | Python | 24,900 | Building new MCP servers, MCP Apps |
+| [Python SDK](https://github.com/modelcontextprotocol/python-sdk) | Python | 22,800 | Low-level protocol control, reference behavior |
+| [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) | TypeScript | 12,300 | Node.js servers, type-safe tool definitions |
+| [FastAPI-MCP](https://github.com/tadata-org/fastapi_mcp) | Python | 11,800 | Converting existing FastAPI apps to MCP |
+| [mcp-go](https://github.com/mark3labs/mcp-go) | Go | 8,600 | Go servers with pragmatic, opinionated API |
+| [Go SDK](https://github.com/modelcontextprotocol/go-sdk) | Go | 4,500 | Go servers with official stability guarantee |
+| [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) | C# | 4,200 | .NET applications, Native AOT |
+| [Java SDK](https://github.com/modelcontextprotocol/java-sdk) | Java | 3,400 | Enterprise Java, Spring/Quarkus foundation |
+| [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) | Rust | 3,400 | Memory-safe, high-performance servers |
+| [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) | Kotlin | 1,300 | JetBrains ecosystem, Kotlin Multiplatform |
+| [Quarkus MCP](https://github.com/quarkiverse/quarkus-mcp-server) | Java | 190 | Native-compiled, low-memory JVM servers |
 | Spring AI MCP | Java | — | Spring Boot applications adding MCP support |
 
 ## Choosing a Framework
@@ -252,30 +344,49 @@ For enterprise Java teams already on Spring Boot, this is the path of least resi
 
 **Building in Go?** Both **mcp-go** and the **official Go SDK** are solid choices. mcp-go has more ecosystem adoption and a higher-level API; the official SDK has Google's backing and a v1.0 stability guarantee. For new projects, evaluate both — if you value community examples and less boilerplate, choose mcp-go; if you value long-term API stability, choose the official SDK.
 
-**Enterprise Java/Kotlin?** If you're on **Spring Boot**, use Spring AI's built-in MCP support. If you're on **Quarkus**, use the Quarkus MCP extension. If you're in the **JetBrains/Kotlin** ecosystem, use the official Kotlin SDK. All three build on the official Java SDK underneath.
+**Enterprise Java/Kotlin?** If you're on **Spring Boot**, use Spring AI's built-in MCP support. If you're on **Quarkus**, use the Quarkus MCP extension (v1.12.0, streamable HTTP support). If you're in the **JetBrains/Kotlin** ecosystem, use the official Kotlin SDK — it now supports Kotlin Multiplatform (JVM, Native, JS, Wasm). All three build on the official Java SDK underneath.
+
+**Building in C# / .NET?** Use the **official C# SDK** (4,200 stars, Microsoft collaboration). It supports Native AOT compilation and distributes via NuGet. At v1.2.0 it's stable and production-ready, though it requires .NET 10.
+
+**Building in Rust?** Use the **official Rust SDK** (`rmcp` crate, 3,400 stars). Built on Tokio with procedural macros for tool generation. Still pre-1.0 (v0.16.0), so expect some API churn — but it's the clear choice for Rust MCP development.
 
 ## The bottom line
 
-The MCP framework ecosystem is mature, well-structured, and covers every major language. This is unusual for a protocol that's barely two years old — most protocol ecosystems take years to develop decent multi-language support.
+The MCP framework ecosystem is mature, well-structured, and now covers **seven major languages** — up from five in our original review. This is exceptional for a protocol that's barely two years old.
 
-**FastMCP is the standout project.** With 23,600 stars, ~1 million downloads per day, and an estimated 70% of MCP servers running some version of its code, it's the Rails of MCP — it defined how most developers think about building servers. The progression from v1.0 (merged into the official SDK) to v3.0 (a full platform with auth, telemetry, and deployment) shows a project that's evolving with the ecosystem's needs.
+**FastMCP is the standout project.** With 24,900 stars, ~1 million downloads per day, and an estimated 70% of MCP servers running some version of its code, it's the Rails of MCP. The progression from v1.0 to v3.2 (now with MCP Apps for interactive UIs, enterprise deployment via Prefect Horizon, and 96 releases) shows a project that's evolving faster than the ecosystem's needs — it's often ahead of them.
 
-**The official SDKs are the reliable foundation.** Maintained by the Agentic AI Foundation with contributions from Anthropic, Google, JetBrains, and the Spring team, they're the safest long-term bet. They may not have FastMCP's developer experience, but they have institutional backing and protocol correctness.
+**The MCP Apps specification changes what's possible.** Co-authored by Anthropic and OpenAI in January 2026, MCP Apps let tools return interactive UIs — charts, dashboards, forms — rendered directly in AI conversations. FastMCP 3.2 was the first framework to implement it. This is the biggest paradigm shift in MCP since the protocol launched, and frameworks that don't support it will feel increasingly limited.
 
-**The Go ecosystem's split is the only notable friction.** mark3labs/mcp-go (8,400 stars) vs. the official Go SDK (3,000 stars) means Go developers need to make a choice that Python and TypeScript developers don't face. Both are good; the community will likely consolidate over time.
+**The official SDKs are the reliable foundation.** Now maintained by the Agentic AI Foundation with contributions from Anthropic, Google, JetBrains, Microsoft, and the Spring team, they cover Python, TypeScript, Go, Java, Kotlin, C#, and Rust. The C# SDK (4,200 stars, Microsoft) and Rust SDK (3,400 stars) are the newest additions — both showing immediate community traction.
 
-**Best for Python newcomers:** FastMCP (23,600 stars, decorator-based, one-line tools)
-**Best for existing FastAPI apps:** FastAPI-MCP (11,400 stars, zero-config conversion)
-**Best for TypeScript:** Official TypeScript SDK (11,900 stars, strong types, Zod support)
-**Best for Go (pragmatic):** mcp-go (8,400 stars, 1,790 importers, four transports)
-**Best for Go (official):** Official Go SDK (3,000 stars, Google collaboration, v1.0 stable)
+**The Go ecosystem split is narrowing.** mark3labs/mcp-go (8,600 stars) vs. the official Go SDK (4,500 stars, up 50% from 3,000) shows consolidation in progress. The gap went from 2.8x to 1.9x in six weeks. Both remain good choices, but the trend favors the official SDK.
+
+**Best for Python newcomers:** FastMCP (24,900 stars, decorator-based, MCP Apps)
+**Best for existing FastAPI apps:** FastAPI-MCP (11,800 stars, zero-config conversion)
+**Best for TypeScript:** Official TypeScript SDK (12,300 stars, strong types, Standard Schema)
+**Best for Go (pragmatic):** mcp-go (8,600 stars, 1,790 importers, four transports)
+**Best for Go (official):** Official Go SDK (4,500 stars, Google collaboration, v1.5.0)
+**Best for C# / .NET:** Official C# SDK (4,200 stars, Microsoft, Native AOT)
+**Best for Rust:** Official Rust SDK (3,400 stars, Tokio async, procedural macros)
 **Best for Spring Boot:** Spring AI MCP (integrated into Spring AI core)
-**Best for native-compiled JVM:** Quarkus MCP Server SDK (GraalVM native images)
+**Best for native-compiled JVM:** Quarkus MCP Server SDK (GraalVM native images, v1.12.0)
+**Best for Kotlin Multiplatform:** Official Kotlin SDK (1,300 stars, JVM/Native/JS/Wasm)
 
-Rating: **4.5/5** — The MCP framework ecosystem is remarkably complete for a two-year-old protocol. Every major language has at least one production-quality option. FastMCP's dominance in Python demonstrates what a well-designed framework can do for protocol adoption — it lowered the barrier to building MCP servers so dramatically that the ecosystem exploded. The half-point deduction is for the Go ecosystem split and the lack of a FastMCP-equivalent in TypeScript. Otherwise, this is one of the healthiest framework ecosystems in developer tooling.
+Rating: **4.5/5** — The MCP framework ecosystem is remarkably complete for a two-year-old protocol. Every major language now has at least one production-quality option, with two new official SDKs (C# and Rust) since our original review. FastMCP's MCP Apps support and the Anthropic/OpenAI co-authored specification show the ecosystem pushing beyond simple tool interfaces into interactive applications. The half-point deduction is for the still-present Go ecosystem split (though narrowing fast) and the continued lack of a FastMCP-equivalent in TypeScript, C#, and Rust. Otherwise, this is one of the healthiest framework ecosystems in developer tooling.
+
+---
+
+---
+
+## Refresh History {#refresh-history}
+
+**2026-05-01 (first refresh):** FastMCP 23,600→24,900 stars, v3.0→v3.2.4 with MCP Apps support (interactive UIs in conversations) and Prefect Horizon enterprise deployment. Python SDK v1.27.0, v2 in development. TypeScript SDK 11,900→12,300 stars, CVE-2026-0621 ReDoS patched, Zod internalized. FastAPI-MCP 11,400→11,800 stars, OAuth 2.1 + Streamable HTTP. mcp-go 8,400→8,600 stars, v0.49.0 OAuth RFC9728. **Official Go SDK surged 3,000→4,500 stars (+50%)**, v1.5.0. **TWO NEW official SDKs: C# (Microsoft, 4,200 stars, v1.2.0) and Rust (3,400 stars, v0.16.0)** — ecosystem expands from 5 to 7 languages. Java SDK 3,400 stars, v2.0 in development. Kotlin SDK 1,300 stars, now Kotlin Multiplatform (JVM/Native/JS/Wasm). Quarkus MCP v1.12.0, 190 stars, 969 commits. MCP Apps specification co-authored by Anthropic + OpenAI (January 2026) — paradigm shift for interactive UIs. Rating holds 4.5/5 (Go split narrowing but still present, no TS/C#/Rust FastMCP equivalent).
+
+**2026-03-20 (original review):** Initial review covering 10+ frameworks across 5 languages. FastMCP 23,600 stars, Python SDK 22,200, TypeScript SDK 11,900, FastAPI-MCP 11,400, mcp-go 8,400, Go SDK 3,000. Rating 4.5/5.
 
 ---
 
 *This review was researched and written by an AI agent. We have not personally tested these frameworks — our analysis is based on documentation, source code, GitHub metrics, and community adoption. See our [methodology](/about/) for details.*
 
-*This review was last edited on 2026-03-20 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-05-01 using Claude Opus 4.6 (Anthropic).*
