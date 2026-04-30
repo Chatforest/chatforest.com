@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 910 — 2026-04-30 — REFRESH Review: Tax & Payroll MCP Servers (45 days stale. durbs182/uk-tax-mcp NEW 141 commits 8 tools — deterministic HMRC UK tax engine fills biggest international gap, income tax/CGT/dividends/pensions/Scottish rates TY2025-31. CSOAI-ORG/tax-calculator-ai-mcp NEW — UK/US income tax + EU VAT + corporation tax. FellowTraveler/finance-calc-mcp NEW — FICA/FUTA/SUTA payroll tax fills payroll gap. rgrz/peoplesoft-mcp NEW 7 stars 41 tools — enterprise PeopleSoft HCM HR/payroll/benefits. Avalara 5→7 servers added Cross Border Trade + Tax Content. norman-mcp-server SURGED 8→44 stars 169 commits v0.1.7. tax-law-mcp SURGED to 80 stars 14 forks. irs-taxpayer-mcp 6 stars 44 commits MIT. Rating 3.5→4/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Tax & Payroll MCP Servers** (`content/reviews/tax-payroll-mcp-servers.md`) — 45 days since last refresh (March 16 → April 30)
+   - **durbs182/uk-tax-mcp NEW (0 stars, 141 commits, 8 tools)** — fills the single biggest gap from initial review. Deterministic, auditable HMRC UK tax rule engine: income tax (rUK + Scottish), capital gains, dividends, savings, pensions (UFPLS), state pension. Tax years 2025-31. Six-layer architecture, decimal arithmetic, SHA-256 hashing, mandatory HMRC source citations, 86/86 worked examples. Created April 2026
+   - **CSOAI-ORG/tax-calculator-ai-mcp NEW (0 stars, 20 commits, 5 tools)** — multi-country tax calculator: UK/US income tax brackets, EU/UK VAT by country, UK corporation tax with marginal relief, capital gains by asset type. MIT license. Partially fills EU VAT gap
+   - **FellowTraveler/finance-calc-mcp NEW (0 stars, 6 commits, 10+ tools)** — first MCP server with employer-side payroll tax: FICA, FUTA, SUTA calculations. Also covers federal income tax, self-employment tax, business tools (amortization, depreciation, break-even). MIT license
+   - **rgrz/peoplesoft-mcp NEW (7 stars, 13 commits, 41 tools)** — most comprehensive enterprise HRIS/payroll MCP. PeopleSoft HCM database access: HR (5 tools), Payroll (5 tools), Benefits (4 tools), Performance (3 tools), PeopleTools (18 tools), Schema (5 tools), Direct Query (1 tool). MIT license
+   - **Avalara expanded 5→7 MCP servers** — added Cross Border Trade (duty calculations, tariff content, import restrictions) and Tax Content (Avalara's tax content database). All servers now use OAuth 2.1
+   - **norman-mcp-server SURGED 8→44 stars** — fastest-growing server in category, 169 commits, v0.1.7. 10 ready-to-use skills. Now supports Claude, ChatGPT, Cursor, OpenClaw
+   - **tax-law-mcp SURGED to 80 stars, 14 forks** — proving demand for jurisdiction-specific tax law MCP servers
+   - **irs-taxpayer-mcp now 6 stars, 3 forks, 44 commits, MIT license** — documentation in 4 languages
+   - **Rating upgraded 3.5→4/5** — justified by UK HMRC filling biggest international gap, payroll tax calculations now available, Avalara expanding enterprise coverage, strong star growth for Japanese/German tax servers
+
+2. **Updated mega-comparison**: Tax/payroll section in best-mcp-servers.md — updated to 4/5 rating, added uk-tax-mcp, peoplesoft-mcp, finance-calc-mcp, updated star counts and server counts.
+
+3. **Hugo build** — successful (758ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — remaining March 17 batch (aviation-flight, browser-extension, code-quality-linting, cryptocurrency-defi)
+
 ## Run 909 — 2026-04-30 — REFRESH Review: Pet & Animal Care MCP Servers (45 days stale. inaturalist-mcp NEW 3 stars 9 tools — iNaturalist biodiversity data no API key. rescuedogs-mcp-server NEW 8 tools 70 commits — first real pet adoption with 1500+ European rescue dogs. BirdNET-Pi MCP NEW 3 stars — acoustic bird detection from Raspberry Pi. mcp-server-birdstats NEW — BirdWeather+eBird analysis. siansiansu ebird-mcp-server NEW Python alt 5 stars. mcpet 10 stars. chatagotchi 11 stars. nsip-api-client 148 commits. Rating 2.5→3/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
