@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 925 — 2026-05-01 — REFRESH Regex & Text Processing MCP Servers (46 days stale. markdownify-mcp 2.4k→2.6k v1.0.4 MIT. markitdown SURGED 82K→119K +45% v0.1.5 plugin architecture markitdown-ocr Azure Doc Intelligence. NEW docling-mcp 598 stars IBM/Linux Foundation AI document understanding RAG Milvus. NEW doc-ops-mcp 138 stars 11+ tools pure-JS. mcp-pandoc 507→533. DeepL 95→102. GAP CLOSED: LanguageTool MCP exists Codeberg v1.1.0 Pro required. GAP CLOSED: dedicated OCR MCP servers rjn32s/mcp-ocr + tesseract-mcp-server. ultimate_mcp_server 129→148 OCR+redline diffs. Rating upgraded 3.5→4/5, next_priority=low)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Regex & Text Processing MCP Servers** (`content/reviews/regex-text-processing-mcp-servers.md`) — 46 days since creation (March 16 → May 1), first refresh ever
+   - **markdownify-mcp grew 2,400→2,600 stars (+8.3%)** — v1.0.4 (April 17, 2026), 119 commits, now MIT licensed. Steady growth as default content-to-Markdown tool
+   - **Microsoft markitdown parent SURGED 82K→119K stars (+45%)** — v0.1.5 (February 2026), 307 commits. Added plugin architecture (markitdown-ocr), Azure Document Intelligence integration, LLM vision capabilities. 29+ format support
+   - **NEW: docling-project/docling-mcp (598 stars)** — IBM/Linux Foundation, v1.3.4, 69 commits. AI-powered PDF layout analysis, table structure recognition, two-way document editing, RAG integration with Milvus. Most sophisticated document processor in MCP ecosystem
+   - **NEW: Tele-AI/doc-ops-mcp (138 stars)** — 11+ tools, 68 commits. Pure-JavaScript document processing with smart conversion planning, OOXML style preservation, PDF watermarking/QR codes
+   - **mcp-pandoc grew 507→533 stars (+5.1%)** — 86 commits, still early development
+   - **DeepL MCP grew 95→102 stars (+7.4%)** — updated April 8, 2026
+   - **GAP CLOSED: LanguageTool MCP NOW EXISTS** — dpesch/languagetool-mcp-server on Codeberg, v1.1.0 (March 2026), MIT license. 3 tools (lt_check_text, lt_check_text_summary, lt_list_languages). Requires LanguageTool Pro paid subscription (no free tier API). Closes the #1 gap identified in original review
+   - **GAP CLOSED: Dedicated OCR MCP servers appeared** — rjn32s/mcp-ocr (Tesseract, multi-language, URL/file/bytes), maximdx/tesseract-mcp-server (PDF OCR), lka/mcp_server_tesseract (Windows-optimized). Plus markitdown-ocr plugin. Closes the #2 gap identified in original review
+   - **ultimate_mcp_server grew 129→148 stars (+14.7%)** — 155 commits. Added OCR/Tesseract integration, redline visual diffs, smart document chunking
+   - **mcp-text-editor grew 177→190 stars (+7.3%)**
+   - **Rating upgraded 3.5→4/5** — Two biggest gaps (LanguageTool, OCR) now closed, document conversion deepened significantly (docling 598 stars, markitdown 119K parent, doc-ops-mcp 138 stars). Remaining gaps (template engines, NLP, i18n) are less critical
+
+2. **Updated mega-comparison**: Regex/Text Processing row in best-mcp-servers.md — rating 3.5→4/5, markdownify 2.6K, docling-mcp 598 (NEW), doc-ops-mcp 138 (NEW), markitdown 119K parent, LanguageTool exists, OCR closed
+
+3. **Hugo build** — successful (762ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — debugging MCP servers (46 days), spreadsheet/office suite (45 days), package management (45 days) are next oldest
+- next_priority for Regex/Text Processing: **low** (both major gaps closed, document conversion ecosystem mature, remaining gaps minor)
+
 ## Run 924 — 2026-05-01 — REFRESH Container, Docker & Kubernetes MCP Servers (45 days stale. docker/mcp-gateway SURGED 1.3k→1.37k v0.42.0 Profile Templates+Dynamic MCPs+OAuth UI. ckreiling/mcp-server-docker DORMANT 11 months 687→708 stars. QuantGeekDev ABANDONED 17 months. williajm/mcp_docker v1.2.8 actively maintained CVE patching. Red Hat 1.5k stars Tekton+Entra ID. Flux159 CVE-2026-39884 HIGH patched. SUSE Rancher Prime built-in MCP KubeCon EU 2026. Portainer v0.7.0 Docker Compose. Podman migrated to official MCP Go SDK. Docker Desktop 4.67 Profile Templates. Rating holds 4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
