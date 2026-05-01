@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 926 — 2026-05-01 — REFRESH Debugging MCP Servers (38 days stale. Chrome DevTools SURGED 31k→37.8k +22% v0.23.0 33 tools Chrome extensions debugging WebM screencast. REVERSE ENGINEERING EXPLODED: GhidraMCP 8.7k stars, ida-pro-mcp 8.1k stars 61 repos, radare2-mcp 220 stars official, x64DbgMCPServer 398→466. mcp-debugger 86→101 v0.19.0 added .NET/C# 7th language. DebugMCP 263→321 v1.0.9. XcodeBuildMCP 4.8k→5.4k moved to getsentry org. jdwp-mcp ARCHIVED April 28. Flutter partial coverage via marionette_mcp 267 + mcp_flutter 288. MCPJam/inspector 1.9k new competitor. Rating holds 4.5/5, next_priority=low)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Debugging MCP Servers** (`content/reviews/debugging-mcp-servers.md`) — 38 days since last refresh (March 24 → May 1)
+   - **Chrome DevTools MCP SURGED 31,000→37,800 stars (+22% in 5 weeks)** — v0.23.0 (April 22, 2026), 33 tools (was 29). New: Chrome extensions debugging support, experimental click_at(x,y), WebM screencast recording, auto-handling dialogs during script eval, update notifications
+   - **REVERSE ENGINEERING EXPLODED — biggest gap closure in any refresh:**
+     - **LaurieWired/GhidraMCP (8,700 stars)** — dominant Ghidra MCP, cross-platform, closes #1 gap from original review
+     - **mrexodia/ida-pro-mcp (8,100 stars)** — dominant IDA Pro MCP, 61 total IDA MCP repos on GitHub
+     - **radareorg/radare2-mcp (220 stars)** — official from radareorg, C, cross-platform
+     - **blacktop/ida-mcp-rs (370 stars)** — headless Rust IDA Pro MCP
+     - **P4nda0s/IDA-NO-MCP (1,300 stars)** — alternative IDA approach
+     - **cyberkaida/reverse-engineering-assistant (713 stars)** — Ghidra RE assistant
+     - **symgraph/GhidrAssistMCP (591 stars)** — native Ghidra MCP extension
+     - **sjkim1127/Reversecore_MCP (58 stars)** — multi-tool Ghidra+Radare2+YARA
+   - **debugmcp/mcp-debugger grew 86→101 stars, v0.19.0** — **added .NET/C# via netcoredbg** (7th language), partially closing .NET debugging gap
+   - **microsoft/DebugMCP grew 263→321 stars** — v1.0.9, 116 commits, actively maintained
+   - **x64DbgMCPServer grew 398→466 stars** — 170 commits, actively maintained
+   - **XcodeBuildMCP grew 4,800→5,400 stars** — moved to **getsentry** org, v2.3.2, 1,120 commits
+   - **navicore/jdwp-mcp ARCHIVED April 28, 2026** — moved to self-hosted git, GitHub copy read-only. Java debugging now served by mcp-debugger's Java support
+   - **Flutter partial coverage NEW** — marionette_mcp (267 stars, runtime interaction) and mcp_flutter (288 stars, Dart VM tooling) partially close cross-platform mobile gap
+   - **MCPJam/inspector (1,900 stars)** — new MCP development platform competing with official inspector (9,600 stars)
+   - **embedded-debugger-mcp grew 60→72 stars** — still only embedded debugging MCP
+   - **ScriptedAlchemy/devtools-debugger-mcp stagnant** at 343 stars, no releases
+   - **pansila/mcp_server_gdb dormant** — last release April 2025
+   - **koriym/xdebug-mcp grew 43→48 stars** — 1,132 commits, very active, 6 CLI tools now
+   - **Rating holds 4.5/5** — RE gap closure is massive (biggest in any refresh), .NET gap partially closed, Chrome DevTools surging, but Android/ADB, Firefox/Safari, React Native gaps persist
+
+2. **Updated mega-comparison**: Debugging row in best-mcp-servers.md — Chrome DevTools 37.8K, GhidraMCP 8.7K, ida-pro-mcp 8.1K, radare2-mcp 220 official, DebugMCP 321, mcp-debugger 101 (7 languages)
+
+3. **Hugo build** — successful (751ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — spreadsheet/office suite (45 days), package management (45 days) are next oldest
+- next_priority for Debugging: **low** (RE gaps massively closed, Chrome DevTools surging, .NET added, no imminent major changes expected)
+
 ## Run 925 — 2026-05-01 — REFRESH Regex & Text Processing MCP Servers (46 days stale. markdownify-mcp 2.4k→2.6k v1.0.4 MIT. markitdown SURGED 82K→119K +45% v0.1.5 plugin architecture markitdown-ocr Azure Doc Intelligence. NEW docling-mcp 598 stars IBM/Linux Foundation AI document understanding RAG Milvus. NEW doc-ops-mcp 138 stars 11+ tools pure-JS. mcp-pandoc 507→533. DeepL 95→102. GAP CLOSED: LanguageTool MCP exists Codeberg v1.1.0 Pro required. GAP CLOSED: dedicated OCR MCP servers rjn32s/mcp-ocr + tesseract-mcp-server. ultimate_mcp_server 129→148 OCR+redline diffs. Rating upgraded 3.5→4/5, next_priority=low)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
