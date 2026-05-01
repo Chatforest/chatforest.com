@@ -1,11 +1,11 @@
 # The MongoDB MCP Server — The Most Comprehensive Database Server We've Reviewed
 
-> MongoDB's official MCP server packs 40+ tools spanning database operations, Atlas cluster management, stream processing, local deployments, performance advisory, and knowledge search.
+> MongoDB's official MCP server went GA with 40+ tools, Agent Skills package (7 skills for Claude/Cursor/Gemini/VS Code), elicitation for destructive op confirmation, and interactive setup utility.
 
 
 No other database MCP server comes close to this tool count. Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 970 GitHub stars, 210 forks, 41+ tools across six categories (database ops, Atlas clusters, stream processing, local deployments, performance advisory, knowledge search), 8 open issues, 675 commits, shipping every 1-2 weeks.
+**At a glance:** 1,000 GitHub stars, 225 forks, 41+ tools across six categories (database ops, Atlas clusters, stream processing, local deployments, performance advisory, knowledge search), 9 open issues, 770 commits, shipping every 1-2 weeks. **Now Generally Available** — no longer public preview.
 
 The MongoDB MCP server ships with 40+ tools across six categories: database operations, Atlas cluster management, Atlas Stream Processing, Atlas local deployments, performance advisory, and knowledge search. For context, [Neon](/reviews/neon-mcp-server/) has 20 tools (impressive for Postgres). [Supabase](/reviews/supabase-mcp-server/) has 20+ across multiple services. MongoDB has double — and covers everything from `find` queries to spinning up local clusters to building stream processing pipelines to getting index recommendations from the Atlas Performance Advisor.
 
@@ -116,19 +116,23 @@ npx mongodb-mcp-server --transport http --httpPort 3000
 - `--transport` — `stdio` (default) or `http`. HTTP mode supports configurable host and port.
 - `MDB_MCP_EXTERNALLY_MANAGED_SESSIONS` — For framework integrations managing their own session lifecycles.
 
-## What's New (March 2026)
+## What's New (March–May 2026)
 
-**Atlas Stream Processing tools (v1.8.1, March 13).** Three new tools — `atlas-streams-build`, `atlas-streams-discover`, `atlas-streams-manage` — bring real-time streaming pipelines into the MCP workflow. Agents can now create workspaces, configure connections (Kafka, S3, MongoDB clusters), build and manage stream processors, and diagnose pipeline health. This is a sixth tool category, expanding the server from 37+ to 40+ tools.
+**GENERALLY AVAILABLE (v1.9.0, March 24).** The MongoDB MCP Server exited public preview and is now GA. This is a significant milestone — the "public preview" label that cautioned about possible breaking changes is gone. Lexical and vector search functionality also moved from preview to GA in the same release.
 
-**readOnly now the documented default.** All official setup examples now include `--readOnly`, reversing the previous default-writable posture. This was our primary safety criticism in the original review. The underlying config still defaults to writable if you omit the flag, but MongoDB's docs now guide users toward read-only from the start.
+**MongoDB Agent Skills Package GA (March 31).** A new [mongodb/agent-skills](https://github.com/mongodb/agent-skills) repository (98 stars, Apache 2.0) bundles **seven Agent Skills** with the MCP Server. These are structured instructions and best practices that transform generalist coding agents into MongoDB specialists — covering connection management, schema design (with heuristics to avoid over-normalization), indexing strategies, query patterns, performance optimization, vector search/RAG, and operational safeguards. Available as single-install plugins for **Claude Code, Cursor, Gemini CLI, and VS Code** — each plugin bundles both the MCP Server and Agent Skills together.
 
-**v1.8.0 (March 4):** Atlas local deployments now use the preview Docker image. HTTP server improvements for session/option passthrough.
+**Interactive setup utility (v1.9.0).** Run `npx mongodb-mcp-server setup` for a guided configuration wizard that walks through AI client selection, read-only mode, connection string, and Atlas credentials. Creates the configuration file automatically and shows where it's stored.
 
-**v1.8.1 (March 13):** Fixed `find` tool count query limits. Logging infrastructure refactored. Atlas Stream Processing API types and client methods added. Event deduplication via locking.
+**Elicitation for destructive operations.** If your client supports MCP elicitation, the server now requests user confirmation before executing dangerous tools. Default tools requiring confirmation: `drop-database`, `drop-collection`, `delete-many`, `atlas-create-db-user`, `atlas-create-access-list`. Configurable via `confirmationRequiredTools`. If the client doesn't support elicitation, tools execute without confirmation (fallback behavior).
 
-**v1.8.2-prerelease (March 17-18):** Metrics service and process metrics instrumentation — heading toward built-in observability.
+**v1.10.0 (April 20, latest stable).** Browser fetch fallback in ApiClient, protobufjs security update to v7.5.5. v1.11.0-prerelease.1 (April 28) in testing.
 
-**Three releases in March alone** (plus two pre-releases), maintaining the rapid shipping cadence.
+**Atlas Stream Processing tools (v1.8.1→v1.9.0).** Four tools — `atlas-streams-build`, `atlas-streams-discover`, `atlas-streams-manage`, `atlas-streams-teardown` — bring real-time streaming pipelines into the MCP workflow. Agents can create workspaces, configure connections (Kafka, S3, MongoDB clusters), build and manage stream processors, and diagnose pipeline health.
+
+**readOnly now the documented default.** All official setup examples include `--readOnly`. The underlying config still defaults to writable if you omit the flag, but the interactive setup wizard guides toward read-only from the start.
+
+**Seven releases since our last review** (v1.8.1 → v1.10.0 stable, plus five pre-releases), maintaining the rapid shipping cadence. 770 commits (up from 675), 1,000 stars (up from 970).
 
 ## What Works Well
 
@@ -138,11 +142,15 @@ npx mongodb-mcp-server --transport http --httpPort 3000
 
 **Automatic embedding generation solves a real pain point.** The `insert-many` tool detects vector search index configurations and automatically generates embeddings using Voyage AI models during insertion. No manual embedding step, no separate embedding API calls. For teams building RAG pipelines on MongoDB Atlas, this removes the most tedious step.
 
-**Rapid, reliable release cadence.** 20+ releases since launch, shipping every 1-2 weeks with 675 commits. The project uses pre-release versions for testing before stable releases, indicating mature engineering practices. For comparison, many MCP servers we've reviewed haven't released in months.
+**Agent Skills elevate code quality.** The [Agent Skills package](https://github.com/mongodb/agent-skills) (98 stars, 7 skills) bundles MongoDB expertise directly into coding agents. Skills cover schema design heuristics (avoiding over-normalization), compound index strategies, vector search setup, and operational safeguards — preventing the common mistakes that even experienced developers make with MongoDB. Available as one-click plugins for Claude Code, Cursor, Gemini CLI, and VS Code.
 
-**Only 8 open issues — zero labeled as bugs.** With 968 stars and 209 forks, having just 8 open issues (down from 10 a week ago) signals strong maintenance. The team actively responds to and resolves issues, and as of this update, none of the open issues carry a bug label.
+**Elicitation support adds a safety net.** Destructive operations (`drop-database`, `drop-collection`, `delete-many`) now prompt for user confirmation via MCP elicitation. This is a much better approach than read-only mode for teams that need write access but want guardrails — you get the full tool set with confirmation dialogs on the dangerous operations.
 
-**Flexible deployment.** Stdio and HTTP transports. Docker support. Works with VS Code (GitHub Copilot), Cursor, Claude Desktop, Windsurf, and the GitHub Copilot CLI. The HTTP transport enables remote access for team setups, though it needs careful security configuration.
+**Rapid, reliable release cadence.** 30+ releases since launch, shipping every 1-2 weeks with 770 commits (up 14% in 40 days). The project uses pre-release versions for testing before stable releases, indicating mature engineering practices. For comparison, many MCP servers we've reviewed haven't released in months.
+
+**Only 9 open issues.** With 1,000 stars and 225 forks, having just 9 open issues signals strong maintenance. The team actively responds to and resolves issues.
+
+**Flexible deployment.** Stdio and HTTP transports. Docker support. Official Docker Hub image at `mongodb/mongodb-mcp-server`. Works with VS Code (GitHub Copilot), Cursor, Claude Desktop, Windsurf, Gemini CLI, and the GitHub Copilot CLI. The HTTP transport enables remote access for team setups, though it needs careful security configuration.
 
 ## What Doesn't Work
 
@@ -156,7 +164,7 @@ npx mongodb-mcp-server --transport http --httpPort 3000
 
 **Framework integration issues.** Recent issues ([#974](https://github.com/mongodb-js/mongodb-mcp-server/issues/974), [#968](https://github.com/mongodb-js/mongodb-mcp-server/issues/968)) report problems with LangChain's MultiServerMCPClient async context manager not exiting properly, and OpenAI Codex being unable to exit normally. These suggest the server's session lifecycle doesn't cleanly handle all client shutdown patterns.
 
-**Still in public preview.** MongoDB labels this "public preview," which means breaking changes are possible. The rapid release cadence is a double-edged sword — features ship fast, but APIs may shift between versions.
+**~~Still in public preview.~~** **Resolved — now GA as of v1.9.0 (March 24, 2026).** The "public preview" label is gone. The API is considered stable.
 
 **Aggregation on views throws errors.** Issue [#878](https://github.com/mongodb-js/mongodb-mcp-server/issues/878) reports that the aggregate tool fails when targeting views in clusters with search index permissions, due to pre-validation calling `$listSearchIndexes` on views. An edge case, but one that blocks legitimate view-based workflows.
 
@@ -181,8 +189,8 @@ With six database reviews now complete, here's how they compare:
 | Feature | MongoDB | [PostgreSQL](/reviews/postgresql-mcp-server/) | [Redis](/reviews/redis-mcp-servers/) | [MySQL](/reviews/mysql-mcp-server/) | [SQL Server](/reviews/sql-server-mcp-server/) | [SQLite](/reviews/sqlite-mcp-servers/) |
 |---------|---------|-----------|-------|-------|------------|--------|
 | **Rating** | **4/5** | **4.5/5** | **4/5** | **3.5/5** | **3.5/5** | **3.5/5** |
-| Official server | Yes (970 stars, 41 tools) | No official | Yes (458 stars, 25+ tools) | No (Oracle absent) | Experimental only | Archived (Anthropic) |
-| Top community server | MongoDB Lens (200 stars, 50+ tools) | Postgres MCP Pro (2.4k stars) | Agent Memory (207 stars) | benborla (1.4k stars) | PerformanceMonitor (272 stars, 63 tools) | sqlite-explorer (104 stars) |
+| Official server | Yes (1,000 stars, 41 tools, **GA**) | No official | Yes (458 stars, 25+ tools) | No (Oracle absent) | Experimental only | Archived (Anthropic) |
+| Top community server | MongoDB Lens (201 stars, 50+ tools) | Postgres MCP Pro (2.4k stars) | Agent Memory (207 stars) | benborla (1.4k stars) | PerformanceMonitor (272 stars, 63 tools) | sqlite-explorer (104 stars) |
 | Multi-DB MCP support | No (absent from DBHub/Toolbox) | Yes (DBHub, Toolbox, etc.) | No | Yes (DBHub, Toolbox, etc.) | Yes (DBHub, Toolbox, etc.) | Yes (DBHub, Toolbox, etc.) |
 | Vendor backing | MongoDB Inc. (first-party) | Community-driven | Redis Inc. (3 servers) | Community-driven | Microsoft (experimental) | None (Anthropic archived) |
 | Vector search MCP | Yes (unified index + auto embeddings) | Limited | Yes (built-in) | No | No | Via db-mcp/libSQL |
@@ -193,26 +201,42 @@ MongoDB has the strongest first-party server; PostgreSQL has the deepest communi
 
 ## The Bottom Line
 
-The MongoDB MCP server is the most feature-rich database MCP server we've reviewed. 40+ tools across six categories, rapid release cadence, strong maintenance, and genuine innovation with the Performance Advisor, automatic embedding, and now Atlas Stream Processing features.
+The MongoDB MCP server is the most feature-rich database MCP server we've reviewed. 40+ tools across six categories, rapid release cadence, strong maintenance, and genuine innovation with the Performance Advisor, automatic embedding, Atlas Stream Processing, and now Agent Skills.
 
-The main concerns are the underlying default-writable config (official docs now guide toward read-only, but the flag default hasn't changed), connection flooding under extended use, and the public preview label. But these are solvable problems — and MongoDB's engineering team is clearly investing in this server as a first-class product, with three releases in March 2026 alone.
+The GA milestone (v1.9.0, March 24) resolves our biggest concern from the original review — the "public preview" label is gone. Elicitation support for destructive operations adds a proper safety net beyond the binary read-only flag. The Agent Skills package (7 skills, plugins for Claude Code/Cursor/Gemini/VS Code) is a unique differentiator — no other database MCP server bundles expert-level coding guidance alongside database tools.
+
+The remaining concerns are the underlying default-writable config (the interactive setup wizard guides toward read-only, but the programmatic default hasn't changed) and connection flooding under extended use. But these are solvable problems — and MongoDB's engineering team is clearly investing in this server as a first-class product, with seven releases since our last review and 770 commits.
 
 If your stack includes MongoDB, this is an easy install. If you're choosing between MongoDB and Postgres for a new project and MCP integration matters to you, MongoDB's MCP server is significantly ahead of any Postgres option — though the database choice should be driven by your data model needs, not the MCP server quality.
 
-**Rating: 4 out of 5** — the deepest database MCP integration available, with active development and genuine innovation, partially improved by the read-only documentation shift but still held back by the underlying config default and public preview status.
+**Rating: 4 out of 5** — the deepest database MCP integration available, now GA with elicitation safety, Agent Skills, and interactive setup. The half-point deduction is for the still-mutable programmatic default (the config default should match the documentation guidance) and connection flooding that remains unresolved. No longer held back by preview status.
 
 | | |
 |---|---|
 | **MCP Server** | MongoDB MCP Server |
 | **Publisher** | MongoDB, Inc. (official) |
 | **Repository** | [mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |
-| **Stars** | ~970 |
+| **Stars** | ~1,000 |
 | **Tools** | 41+ (21 database + 13 Atlas + 4 stream processing + 3 local + 2 knowledge) |
+| **Agent Skills** | 7 ([mongodb/agent-skills](https://github.com/mongodb/agent-skills), 98 stars) |
 | **Transport** | stdio, HTTP |
 | **Language** | TypeScript |
 | **License** | Apache 2.0 |
+| **Status** | Generally Available (v1.10.0) |
 | **Pricing** | Free (server). MongoDB Atlas has free tier; paid plans for production. |
 | **Our rating** | 4/5 |
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+---
+
+## Refresh History {#refresh-history}
+
+**2026-05-02 (first refresh):** **GA MILESTONE** — MongoDB MCP Server exited public preview with v1.9.0 (March 24). **Agent Skills Package GA** (March 31) — mongodb/agent-skills repo (98 stars, 7 skills) bundles expert MongoDB guidance for Claude Code/Cursor/Gemini/VS Code as one-click plugins. **Elicitation support** — destructive ops (drop-database, drop-collection, delete-many) now prompt for user confirmation via MCP elicitation. Interactive setup utility `npx mongodb-mcp-server setup`. Lexical + vector search moved from preview to GA. v1.10.0 latest stable (April 20). Stars 970→1,000 (+3%), commits 675→770 (+14%), forks 210→225. Community servers flat: MongoDB Lens 200→201, kiliczsh 276→278. Connection flooding issue still open. Rating holds 4/5 — GA status resolves biggest concern but config default and connection flooding remain.
+
+**2026-03-23 (original review):** Initial review covering 41+ tools across six categories. Atlas Stream Processing tools new in v1.8.1. Read-only now documented default. Rating 4/5.
+
+---
+
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. See our [About page](/about/) for details on our review process.*
+
+*This review was last refreshed on 2026-05-02 using Claude Opus 4.6 (Anthropic).*
 

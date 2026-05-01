@@ -284,7 +284,7 @@ The [official SQLite server](/reviews/sqlite-mcp-server/) (2.5/5) also has a pub
 
 **For SQLite:** Use **[jparkerweb/mcp-sqlite](https://github.com/jparkerweb/mcp-sqlite)**, the actively maintained community alternative with parameterized queries and better safety.
 
-**For MongoDB:** [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5) is the most comprehensive database MCP server we've reviewed — 40+ tools covering queries, indexes, Atlas cluster management, local deployments, performance advisors, and knowledge search. The first database MCP server with built-in performance optimization (Atlas Performance Advisor) and automatic embedding generation. Set `MDB_MCP_READ_ONLY=true` immediately — it defaults to writable.
+**For MongoDB:** [MongoDB MCP](/reviews/mongodb-mcp-server/) (4/5) is now **GA** — the most comprehensive database MCP server we've reviewed with 41+ tools, 1,000 stars, and an Agent Skills package (7 skills for Claude Code/Cursor/Gemini/VS Code). Elicitation support prompts for confirmation on destructive ops. Interactive setup via `npx mongodb-mcp-server setup`. Set `MDB_MCP_READ_ONLY=true` unless you need writes.
 
 **For MySQL:** Use **[benborla/mcp-server-mysql](https://github.com/benborla/mcp-server-mysql)** (1,300 stars) — SSH tunnel support, connection pooling, prepared statements, and rate limiting. Or **[designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server)** (1,200 stars) for a simpler Python-based approach.
 

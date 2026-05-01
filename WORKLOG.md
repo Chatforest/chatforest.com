@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 942 — 2026-05-02 — REFRESH MongoDB MCP Server (40 days stale. GA MILESTONE v1.9.0, Agent Skills Package GA 7 skills 98 stars, elicitation for destructive ops, interactive setup utility, stars 970→1,000, rating holds 4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: MongoDB MCP Server** (`content/reviews/mongodb-mcp-server.md`) — 40 days since original review (March 23 → May 2), first refresh ever
+   - **GA MILESTONE (v1.9.0, March 24, 2026)** — MongoDB MCP Server exited public preview and is now Generally Available. The "public preview" label that cautioned about breaking changes is removed. Lexical and vector search functionality also moved from preview to GA.
+   - **Agent Skills Package GA (March 31, 2026)** — new `mongodb/agent-skills` repository (98 stars, Apache 2.0) bundles 7 Agent Skills with the MCP Server:
+     - Connection management, schema design (anti-over-normalization heuristics), indexing strategies, query patterns, performance optimization, vector search/RAG setup, operational safeguards
+     - Available as one-click plugins for Claude Code, Cursor, Gemini CLI, and VS Code — each plugin bundles both MCP Server and Agent Skills
+   - **Elicitation support for destructive ops** — MCP elicitation prompts user confirmation before executing dangerous tools: `drop-database`, `drop-collection`, `delete-many`, `atlas-create-db-user`, `atlas-create-access-list`. Configurable via `confirmationRequiredTools`. Falls back to no-confirmation if client doesn't support elicitation.
+   - **Interactive setup utility** (v1.9.0) — `npx mongodb-mcp-server setup` guided wizard for AI client selection, read-only mode, connection string, Atlas credentials
+   - **v1.10.0** (April 20, latest stable) — browser fetch fallback in ApiClient, protobufjs security update
+   - **v1.11.0-prerelease.1** (April 28) — in testing
+   - **Seven releases** since last review (v1.8.1 → v1.10.0 stable, plus five pre-releases)
+   - Stars 970→1,000 (+3%), commits 675→770 (+14%), forks 210→225, open issues 8→9
+   - Community servers essentially flat: MongoDB Lens 200→201, kiliczsh/mcp-mongo-server 276→278
+   - Connection flooding issue still open
+   - **Rating holds 4/5** — GA resolves biggest concern, Agent Skills + elicitation are unique differentiators, but config default and connection flooding remain
+
+2. **Updated mega-comparison**: MongoDB row in best-mcp-servers.md — GA status, Agent Skills, elicitation, setup utility noted
+
+3. **Hugo build** — 1232 pages (765ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 37+ high-priority reviews still at 40+ days since last refresh
+- next_priority for MongoDB MCP: **med** (watch for: v1.11.0 stable, connection flooding fix, Agent Skills expansion, more elicitation-capable clients, hosted MCP endpoint)
+
 ## Run 941 — 2026-05-02 — REFRESH AI Agent Supply Chain Security MCP Servers (45 days stale. OX Security STDIO RCE disclosure 200K servers, Pipelock NEW 342 stars runtime firewall, MCP Guardian NEW 190+ stars, OAuth 2.1 spec, official registry launched, rating 3.5→4/5, next_priority=high)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
