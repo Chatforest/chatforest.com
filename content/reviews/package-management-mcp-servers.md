@@ -1,14 +1,14 @@
 ---
 title: "Package Management MCP Servers — NuGet, npm, PyPI, Maven, and the Quest for AI-Assisted Dependency Intelligence"
 date: 2026-03-24T22:00:00+09:00
-description: "Package management MCP servers span the full dependency lifecycle: NuGet (official, built into VS 2026), mcp-package-version (122 stars, Go, 9 registries), npm-sentinel-mcp (18"
-og_description: "Package management MCP servers: NuGet (official, VS 2026 built-in), mcp-package-version (122 stars, 9 registries), npm-sentinel-mcp (18+ tools), Homebrew (official), PyPI query (25+ tools), Maven tools (17 stars). Rating: 3/5."
+description: "Package management MCP servers: NuGet official v1.4.1 (2.5M downloads, transitive vuln remediation), Socket MCP (101 stars, supply chain security npm/PyPI/Cargo), mcp-package-version ARCHIVED March 2026"
+og_description: "Package management MCP servers: NuGet v1.4.1 (2.5M downloads), Socket MCP (101 stars, supply chain security), mcp-package-version ARCHIVED, cratesio-mcp (23 tools, fills Rust gap), maven-tools-mcp (23 stars, private repos). Rating: 3/5."
 content_type: "Review"
-card_description: "Package management MCP servers cover dependency intelligence across npm, PyPI, Maven, NuGet, Cargo, and more. Microsoft's NuGet MCP server leads with first-party IDE integration — built into Visual Studio 2026 with vulnerability fixing and version management. Homebrew ships an official built-in MCP server for macOS package management. The community-driven mcp-package-version (122 stars, Go) covers 9 registries including Docker Hub and GitHub Actions. npm-sentinel-mcp offers the deepest single-registry analysis with 18+ tools. But vendor investment is thin: only NuGet and Homebrew have official servers."
-last_refreshed: 2026-03-24
+card_description: "Package management MCP servers cover dependency intelligence across npm, PyPI, Maven, NuGet, Cargo, and more. Microsoft's NuGet MCP server leads with first-party IDE integration — v1.4.1 with 2.5M downloads and transitive dependency vulnerability remediation. Socket MCP (101 stars) brings supply chain security scoring for npm, PyPI, and Cargo with a free public hosted server. The former category leader mcp-package-version (121 stars) was ARCHIVED in March 2026. The Rust/Cargo gap is now closed by cratesio-mcp (23 tools). maven-tools-mcp (23 stars) added private repository authentication."
+last_refreshed: 2026-05-01
 ---
 
-**At a glance:** Package management MCP servers are where **the gap between ecosystem importance and MCP investment is widest**. npm processes 5+ billion downloads weekly, PyPI serves billions of Python packages, and Maven Central handles 828+ billion Java component requests annually — yet MCP servers for these registries are almost entirely community-built with low adoption. The standout is [Microsoft's NuGet MCP server](https://learn.microsoft.com/en-us/nuget/concepts/nuget-mcp-server), the **only package registry with a first-party, IDE-integrated MCP server** — built into Visual Studio 2026, with vulnerability fixing, version management, and compatibility updates. [Homebrew](https://docs.brew.sh/MCP-Server) ships an official built-in MCP server for macOS/Linux package management. [mcp-package-version](https://github.com/sammcj/mcp-package-version) (122 stars, Go) is the most adopted cross-registry version checker, covering 9 registries. [npm-sentinel-mcp](https://github.com/Nekzus/npm-sentinel-mcp) (18 stars, 18+ tools) offers the deepest single-registry analysis with security scanning, bundle size evaluation, and license compatibility. This is the **twelfth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
+**At a glance:** Package management MCP servers are where **the gap between ecosystem importance and MCP investment is widest** — and the gap just got wider. The former community leader [mcp-package-version](https://github.com/sammcj/mcp-package-version) (121 stars, Go, 9 registries) was **ARCHIVED on March 29, 2026**, with its maintainer migrating to a consolidated mcp-devtools server. [Microsoft's NuGet MCP server](https://learn.microsoft.com/en-us/nuget/concepts/nuget-mcp-server) remains the clear standout — now at **v1.4.1 with 2.5 million downloads** and new transitive dependency vulnerability remediation. The biggest new entry is [Socket MCP](https://github.com/SocketDev/socket-mcp) (101 stars), which brings **supply chain security scoring** for npm, PyPI, and Cargo with a free public hosted server at mcp.socket.dev. The **Rust/Cargo gap is now closed** by [cratesio-mcp](https://github.com/joshrotenberg/cratesio-mcp) (23 tools, MIT/Apache-2.0). [maven-tools-mcp](https://github.com/arvindand/maven-tools-mcp) grew to 23 stars with v2.1.0 adding **private repository authentication**. [Homebrew](https://docs.brew.sh/MCP-Server) expanded with development commands and progress reporting. This is the **twelfth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
 
 The package management market is substantial: the private package repository market alone hit $1.05B in 2025 (projected $3.96B by 2035, 14.2% CAGR), while the broader package management solutions market is valued at $8.2B. npm leads with 25.3% market share by package type, with 5+ billion weekly downloads. PyPI served 421.6 billion downloads in 2025. Maven Central handles 828+ billion Java component requests annually. Yet MCP adoption is minimal — the most-starred package management MCP server has just 122 stars. The core problem: package registries already have excellent CLIs (`npm`, `pip`, `mvn`, `cargo`, `dotnet`), established IDE integrations, and mature ecosystems. MCP servers add AI-assisted intelligence — vulnerability scanning, version recommendations, dependency conflict resolution — but these capabilities are incremental rather than transformative.
 
@@ -22,6 +22,8 @@ The package management market is substantial: the private package repository mar
 |--------|--------|
 | Documentation | [Microsoft Learn](https://learn.microsoft.com/en-us/nuget/concepts/nuget-mcp-server) |
 | Package | [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server/) |
+| Version | v1.4.1 (April 30, 2026) |
+| Downloads | 2.5 million |
 | Language | C# (.NET) |
 | Creator | Microsoft / NuGet team (official) |
 | IDE support | Visual Studio 2026 (built-in), VS 2022 17.14+, VS Code, GitHub Copilot Agent |
@@ -30,15 +32,16 @@ The package management market is substantial: the private package repository mar
 
 | Capability | Detail |
 |-----------|--------|
-| Vulnerability fixing | Analyzes dependencies, suggests updates for known CVEs |
+| Vulnerability fixing | Analyzes dependencies and transitive dependencies, suggests updates for known CVEs |
+| Transitive vuln remediation | **NEW in v1.4.1** — scans and remediates vulnerabilities in transitive dependency chains |
 | Version management | Update all packages to latest compatible versions |
 | Targeted updates | Update specific package to specific version |
 | Compatibility checking | Respects target framework(s) when suggesting updates |
 | GitHub Copilot Agent | Configurable as MCP server in Copilot coding agent workflows |
 
-**Key differentiator:** The **only package registry MCP server with first-party IDE integration**. NuGet MCP is built into Visual Studio 2026 — enable it once in the Copilot Chat tools menu and it's available immediately. No external dependencies, no API keys, no Docker containers. The server goes beyond read-only registry lookups: it can analyze project dependencies and suggest vulnerability fixes, update packages to compatible versions, and handle version-specific upgrades. The GitHub Copilot Agent integration means it works in CI/CD contexts too, not just local development. Requires .NET 10 SDK with the new `dnx` command for running MCP servers from NuGet packages.
+**Key differentiator:** The **only package registry MCP server with first-party IDE integration** — and now with **2.5 million downloads**, the most widely deployed package management MCP server by orders of magnitude. NuGet MCP is built into Visual Studio 2026, requires zero setup, and goes beyond read-only registry lookups with genuine write capabilities (vulnerability fixing, version updates). The v1.4.1 release (April 30, 2026) added **transitive dependency vulnerability remediation** — scanning and fixing vulnerabilities not just in direct dependencies but across the entire dependency chain. The GitHub Copilot Agent integration means it works in CI/CD contexts too.
 
-**Limitation:** .NET ecosystem only — no npm, PyPI, or Maven support. Requires .NET 10 SDK (preview as of early 2026), which limits adoption. Documentation-oriented: while it can suggest updates, the actual package installation still goes through standard NuGet tooling. No dependency tree visualization or conflict resolution. No security advisory aggregation beyond what NuGet already provides. Star count not publicly visible (ships as a NuGet package, not a standalone GitHub repo).
+**Limitation:** .NET ecosystem only — no npm, PyPI, or Maven support. Requires .NET 10 SDK. No dependency tree visualization or conflict resolution. No security advisory aggregation beyond what NuGet already provides. Star count not publicly visible (ships as a NuGet package, not a standalone GitHub repo).
 
 ### Homebrew MCP Server — Built-in Package Manager Integration
 
@@ -49,22 +52,23 @@ The package management market is substantial: the private package repository mar
 | Creator | Homebrew (official) |
 | Transport | stdio |
 
-**Tools:** `brew search`, `brew install`, `brew uninstall`, `brew upgrade` — exposed as MCP tools for AI assistants.
+**Tools:** `brew search`, `brew install`, `brew uninstall`, `brew upgrade` — exposed as MCP tools for AI assistants. For Homebrew contributors, development commands (`brew style`, `brew typecheck`, `brew tests`) are also available.
 
-**Key differentiator:** The **simplest MCP server setup of any package manager** — it ships with Homebrew itself. Run `brew mcp-server` and it's available. No installation, no configuration, no API keys. Works with Cursor, Claude Desktop, VS Code, and Zed out of the box. This is what first-party MCP integration looks like: zero friction.
+**Key differentiator:** The **simplest MCP server setup of any package manager** — it ships with Homebrew itself. Run `brew mcp-server` and it's available. No installation, no configuration, no API keys. Works with Cursor, Claude Desktop, VS Code, Claude Code, and Zed out of the box. Recent updates added **progress reporting for long-running operations** (keeps MCP clients from timing out during installs) and **development commands** for Homebrew contributors.
 
-**Limitation:** macOS/Linux only. Limited to the four core Homebrew operations (search, install, uninstall, upgrade). No `brew info`, `brew deps`, `brew doctor`, or cask management. No vulnerability scanning or version pinning. The tool set is intentionally minimal — useful for basic package management via AI but lacks the depth of registry-specific MCP servers.
+**Limitation:** macOS/Linux only. Core user-facing tools remain limited to four operations (search, install, uninstall, upgrade). No `brew info`, `brew deps`, `brew doctor`, `brew outdated`, cask management, or tap operations for end users. Community alternative [jeannier/homebrew-mcp](https://github.com/jeannier/homebrew-mcp) offers broader command coverage including info, outdated, deps, and cleanup.
 
-### mcp-package-version — Multi-Registry Version Checker (Most Adopted)
+### mcp-package-version — Multi-Registry Version Checker (ARCHIVED)
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [sammcj/mcp-package-version](https://github.com/sammcj/mcp-package-version) |
-| Stars | ~122 |
-| Forks | ~23 |
+| Stars | ~121 |
+| Forks | ~22 |
 | Language | Go |
 | License | MIT |
 | Creator | Community (sammcj) |
+| Status | **ARCHIVED March 29, 2026** — read-only, migrating to mcp-devtools |
 
 **Supported registries:**
 
@@ -80,9 +84,9 @@ The package management market is substantial: the private package repository mar
 | AWS Bedrock | AI models |
 | GitHub Actions | CI/CD actions |
 
-**Key differentiator:** The **most-starred and broadest package management MCP server** — 9 registries in a single Go binary. The inclusion of Docker Hub, GitHub Container Registry, AWS Bedrock models, and GitHub Actions versions makes this more than a language package checker — it's a dependency version oracle across the entire development stack. Docker tag queries support regex filtering. Constraint-based filtering enables version range recommendations. Dual transport (stdio + SSE) and Docker deployment support.
+**Key differentiator:** Was the **most-starred and broadest package management MCP server** — 9 registries in a single Go binary. Docker Hub, GitHub Container Registry, AWS Bedrock models, and GitHub Actions version support. Docker tag queries support regex filtering. Constraint-based filtering enables version range recommendations. Dual transport (stdio + SSE) and Docker deployment support.
 
-**Limitation:** Read-only version checking — no vulnerability scanning, dependency tree analysis, or package installation. Each registry query is independent: no cross-registry dependency resolution (e.g., an npm package that depends on a Docker image). The maintainer has signaled migration toward a consolidated `mcp-devtools` server, which may fragment the project. Modest adoption (122 stars) for a broadly useful tool.
+**⚠️ ARCHIVED:** The repository was **archived on March 29, 2026** and is now read-only. The maintainer is migrating functionality to a consolidated `mcp-devtools` server. Users should consider alternatives: [Artmann/package-registry-mcp](https://github.com/Artmann/package-registry-mcp) for multi-registry search, or [niradler/dependency-mcp](https://github.com/niradler/dependency-mcp) for cross-registry version checking. The archival of the category's most-adopted server highlights the fragility of community-maintained MCP tooling.
 
 ### npm-sentinel-mcp — Deep npm Analysis
 
@@ -143,8 +147,9 @@ The package management market is substantial: the private package repository mar
 | Aspect | Detail |
 |--------|--------|
 | Repository | [arvindand/maven-tools-mcp](https://github.com/arvindand/maven-tools-mcp) |
-| Stars | ~17 |
+| Stars | ~23 |
 | Forks | ~5 |
+| Version | v2.1.0 (April 5, 2026) |
 | Language | Java |
 | License | MIT |
 | Creator | Community |
@@ -155,7 +160,52 @@ The package management market is substantial: the private package repository mar
 
 **Key differentiator:** The **only JVM-focused MCP server** with multi-build-tool support. Works with Maven, Gradle, SBT, and Mill equally — it queries Maven Central regardless of which build tool manages the project. The "agent-driven dependency maintenance" capability uses its own weekly self-update workflow as a demo: AI evaluates and proposes safe dependency updates via pull requests. Context7 documentation integration bridges version intelligence with library documentation.
 
-**Limitation:** Maven Central only — no Gradle Plugin Portal, JitPack, or private Nexus/Artifactory support. Low adoption (17 stars). Java-based, which is unusual for MCP servers (most are TypeScript or Python). No vulnerability scanning against CVE databases. The self-update workflow is a compelling demo but not a standard MCP tool.
+**Limitation:** ~~Maven Central only~~ **v2.1.0 added private repository authentication**, enabling enterprise teams to query internal Nexus/Artifactory servers. Still no Gradle Plugin Portal or JitPack support. Modest adoption (23 stars). Java-based, which is unusual for MCP servers. No vulnerability scanning against CVE databases.
+
+### Socket MCP — Supply Chain Security Scoring (NEW)
+
+| Aspect | Detail |
+|--------|--------|
+| Repository | [SocketDev/socket-mcp](https://github.com/SocketDev/socket-mcp) |
+| Stars | ~101 |
+| Forks | ~17 |
+| Language | TypeScript |
+| License | MIT |
+| Creator | Socket (official) |
+| Public server | [mcp.socket.dev](https://mcp.socket.dev/) — no setup required |
+
+**Key capabilities:**
+
+| Capability | Detail |
+|-----------|--------|
+| Dependency scoring | Multi-dimensional security scores (supply chain, quality, maintenance, vulnerability, license) |
+| Batch processing | Multiple dependencies in a single request |
+| Ecosystem coverage | npm, PyPI, Cargo, and additional registries via Socket API |
+| Hosted service | Free public server at mcp.socket.dev — no API key needed |
+| Transport | stdio, HTTP, and hosted remote |
+
+**Key differentiator:** The **most adopted security-focused package MCP server** — 101 stars and a free public hosted server that requires zero setup. Socket's `depscore` tool provides comprehensive supply chain security scoring that goes far beyond vulnerability databases, covering data exfiltration risk, maintainer patterns, quality signals, and license compliance. The batch processing capability is practical for auditing entire dependency trees. Works with Claude, VS Code Copilot, Cursor, and other MCP clients out of the box. This is the server you'd use to answer "should I trust this dependency?" before adding it to your project.
+
+**Limitation:** Read-only security scoring — can't install, update, or remove packages. The depscore tool is the primary interface, so the tool surface is narrow compared to deep analyzers like npm-sentinel-mcp. Requires network access to Socket API. Early development stage (the project notes it's "rapidly evolving"). No lockfile analysis or build tool integration.
+
+### cratesio-mcp — Rust/Cargo Package Intelligence (NEW, Gap Closure)
+
+| Aspect | Detail |
+|--------|--------|
+| Repository | [joshrotenberg/cratesio-mcp](https://github.com/joshrotenberg/cratesio-mcp) |
+| Stars | ~5 |
+| Forks | ~4 |
+| Version | 0.1.4 (March 19, 2026) |
+| Language | Rust |
+| License | MIT / Apache-2.0 |
+| Creator | Community |
+| Public server | [cratesio-mcp.fly.dev](https://cratesio-mcp.fly.dev/) |
+
+**23 tools** covering crate search, version history, documentation retrieval, dependency analysis, vulnerability auditing, and download statistics. Also provides 4 resources for quick metadata access and 2 prompts for guided crate analysis.
+
+**Key differentiator:** The **first dedicated crates.io MCP server**, closing the Rust/Cargo gap identified in the original review. 23 tools is a comprehensive surface area — more than npm-sentinel-mcp (18 tools) and approaching pypi-query-mcp-server territory. The dual MIT/Apache-2.0 license follows Rust ecosystem conventions. Hosted instance on Fly.dev means zero-setup access. Supports both stdio and HTTP/SSE transport.
+
+**Limitation:** Very low adoption (5 stars). Version 0.1.4 suggests early maturity. Focused on crates.io querying rather than Cargo build operations (for that, see [cargo-mcp](https://crates.io/crates/cargo-mcp) which wraps cargo build/test/add/remove commands). No dependency conflict resolution or lockfile awareness.
 
 ### Multi-Registry and Other Servers
 
@@ -169,22 +219,34 @@ The package management market is substantial: the private package repository mar
 
 **[Bigsy/maven-mcp-server](https://github.com/Bigsy/maven-mcp-server)** — Lightweight Maven dependency version checker. Simpler than maven-tools-mcp but focused on the core use case.
 
-**[qianniuspace/mcp-security-audit](https://github.com/qianniuspace/mcp-security-audit)** — npm security audit server with real-time vulnerability scanning. Provides severity levels, fix recommendations, CVSS scores, and CVE references. Focused exclusively on security.
+**[qianniuspace/mcp-security-audit](https://github.com/qianniuspace/mcp-security-audit)** (~47 stars) — npm security audit server with real-time vulnerability scanning. Provides severity levels, fix recommendations, CVSS scores, and CVE references. Supports npm, pnpm, and yarn. The **most-starred npm-specific security audit MCP server**.
 
 **[meanands/npm-package-docs-mcp](https://github.com/meanands/npm-package-docs-mcp)** — Fetches latest README documentation for npm packages from GitHub or npm. Useful for keeping AI agents informed about current API surfaces.
 
 **[snyk-labs/mcp-server-npm-goof](https://github.com/snyk-labs/mcp-server-npm-goof)** — Snyk Labs npm package management MCP server. Demonstrates Snyk's approach to npm dependency intelligence.
 
+**[oshvartz/nuget-packages-mcp-server](https://github.com/oshvartz/nuget-packages-mcp-server)** — **NEW.** Community NuGet MCP server with flexible feed support (any NuGet v3 compatible feed, not just nuget.org). Unique features: API contract extraction generates markdown documentation of public interfaces from packages, and dependency analysis shows version requirements per target framework. Fills the private NuGet feed gap that the official server doesn't address.
+
+**[dmclain/uv-mcp](https://github.com/dmclain/uv-mcp)** — **NEW.** Python environment introspection via the [uv](https://github.com/astral-sh/uv) package manager. Gives AI agents direct access to inspect and manage Python environments — dependency management, environment inspection, and troubleshooting. Relevant as uv replaces pip/poetry/pyenv for many Python developers.
+
+**[cargo-mcp](https://crates.io/crates/cargo-mcp)** — **NEW.** Cargo operations MCP server for Rust projects. Wraps cargo commands (check, clippy, test, fmt, build, bench, add, remove, update, clean, run) with environment variable and toolchain configuration. Complements cratesio-mcp's registry querying with actual build operations.
+
 ### Notable Gaps
 
-**No MCP servers found** for: Cargo/crates.io (standalone — only via multi-registry checkers), RubyGems (standalone), Composer/Packagist (PHP), CocoaPods (iOS), pub.dev (Dart/Flutter), Conda/conda-forge (data science), Hex (Elixir), or CPAN (Perl). Private registry platforms (JFrog Artifactory, Sonatype Nexus, GitHub Packages, GitLab Package Registry, AWS CodeArtifact) have no dedicated MCP servers. System package managers beyond Homebrew (apt, yum/dnf, pacman, Chocolatey, winget, Scoop) lack MCP servers.
+**Gaps closed since original review:**
+- **Cargo/crates.io** — now served by cratesio-mcp (23 tools) and cargo-mcp (build operations)
+- **Private Maven repositories** — maven-tools-mcp v2.1.0 added private repository authentication
+- **Private NuGet feeds** — oshvartz/nuget-packages-mcp-server supports any NuGet v3 feed
+- **uv (Python)** — uv-mcp provides environment introspection via the fast Rust-based package manager
+
+**Still missing:** RubyGems (standalone), Composer/Packagist (PHP), CocoaPods (iOS), pub.dev (Dart/Flutter), Conda/conda-forge (data science), Hex (Elixir), or CPAN (Perl). Private registry platforms (JFrog Artifactory, Sonatype Nexus, GitHub Packages, GitLab Package Registry, AWS CodeArtifact) have no dedicated MCP servers beyond NuGet feed support. System package managers beyond Homebrew (apt, yum/dnf, pacman, Chocolatey, winget, Scoop) lack MCP servers.
 
 ## Developer Tools MCP Comparison
 
 | Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor | Testing/QA | Monitoring | Security | IaC | Packages | Code Gen | API Dev | Logging | DB Migration | Doc Tooling | Debugging | Profiling | Code Review |
 |--------|--------|--------|-----------|--------|------------|-------|------------|------------|------------|----------|-----|----------|----------|----------|---------------------- | --------------|-----------|-----------|-------------|
 | **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright, 9.8k stars, 24 tools) | Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana) | Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
-| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
+| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible (25 stars, 40+ tools) | Socket MCP (101 stars, supply chain security), mcp-package-version (121 stars, ARCHIVED) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
 | **Registry coverage** | 1 platform | 1 platform | 1 platform | Docker Hub + registries | N/A | Per CI platform | Per IDE | Per framework | Per vendor | Per scanner | Per IaC tool | Multi-registry (npm, PyPI, Maven, NuGet, Cargo, Go) | N/A (platforms, not registries) | N/A | N/A | — | N/A | N/A | N/A | N/A |
 | **Vendor count** | 1 (GitHub) | 1 (GitLab) | 0 (Atlassian via Jira only) | 1 (Docker) + community | 0 (Red Hat leads community) | 3 (Jenkins, CircleCI, Buildkite) | 1 (JetBrains) | 1 (Microsoft) | 6 (Grafana, Datadog, Sentry, Dynatrace, New Relic, Instana) | 7+ (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | 5+ (HashiCorp, Pulumi, AWS, OpenTofu, Spacelift) | 2 (Microsoft/NuGet, Homebrew) | 3 (Vercel, E2B, Upstash/Context7) | 4+ (Postman, Apollo, Kong, Google/Apigee, MuleSoft) | 6+ (Splunk, Grafana/Loki, Grafana/Tempo, Coralogix, Axiom, Mezmo) | 2 (Liquibase, Prisma) + Google partial | 5+ (Microsoft, Mintlify, ReadMe, Stainless, OpenAI, Vonage, Fern, Apidog) | 3 (Google/Chrome DevTools, Microsoft/DebugMCP, LLVM/LLDB built-in) | 3 (CodSpeed, Polar Signals, Tricentis/NeoLoad) + Grafana partial | 3 (SonarSource, Codacy, Graphite) + CodeRabbit as client |
 | **Vulnerability scanning** | Dependabot/secret scanning | SAST/DAST | N/A | Image scanning | N/A | N/A | N/A | N/A | N/A | Full SAST/SCA/Secrets | cfn-guard compliance | npm-sentinel-mcp (CVE), NuGet (fix vulns) | N/A | N/A | N/A | — | N/A | N/A | N/A | N/A |
@@ -195,7 +257,7 @@ The package management market is substantial: the private package repository mar
 
 ## Known Issues
 
-1. **Almost no official servers from major registries** — npm (GitHub/Microsoft), PyPI (Python Software Foundation), Maven Central (Sonatype), Cargo (Rust Foundation), and RubyGems have no official MCP servers. Only NuGet (Microsoft) and Homebrew provide first-party MCP integration. This is striking given that npm alone has 5+ billion weekly downloads and PyPI served 421.6 billion downloads in 2025. The registries that developers use most have the least MCP investment.
+1. **Almost no official servers from major registries — and the community leader just archived** — npm (GitHub/Microsoft), PyPI (Python Software Foundation), Maven Central (Sonatype), and RubyGems have no official MCP servers. Only NuGet (Microsoft) and Homebrew provide first-party MCP integration. The archival of mcp-package-version (March 29, 2026) — the most-starred community server — underscores the fragility: the category's best cross-registry tool is now read-only with no clear successor at equivalent adoption.
 
 2. **Package installation via MCP is a supply chain risk** — MCP servers that can install packages (Homebrew) or download them (pypi-query-mcp-server) give AI agents the ability to modify the dependency tree. The 2025 npm supply chain attacks (compromising chalk, debug, and 16 other packages with 2.6B weekly downloads) demonstrate the risk. An AI agent installing a compromised package via MCP would bypass the human review that currently catches suspicious dependencies. Most servers wisely stick to read-only operations.
 
@@ -213,20 +275,20 @@ The package management market is substantial: the private package repository mar
 
 9. **No build tool integration** — Package management MCP servers query registries, but they don't integrate with build tools (webpack, vite, gradle, cargo build). An AI agent can recommend upgrading a package but can't verify that the upgrade doesn't break the build. The gap between "latest version available" and "latest version that works in your project" remains unbridged.
 
-10. **Missing entire ecosystems** — No standalone MCP servers for Cargo (Rust), RubyGems, Composer (PHP), CocoaPods (iOS), pub.dev (Dart/Flutter), Conda (data science), Hex (Elixir), or CPAN (Perl). System package managers (apt, yum, pacman, Chocolatey, winget) are absent except Homebrew. This leaves most non-JavaScript/Python developers without ecosystem-specific MCP tooling.
+10. **Missing ecosystems — Rust gap closed, but others persist** — The Rust/Cargo gap was closed by cratesio-mcp (23 tools) and cargo-mcp (build operations). But standalone MCP servers still don't exist for RubyGems, Composer (PHP), CocoaPods (iOS), pub.dev (Dart/Flutter), Conda (data science), Hex (Elixir), or CPAN (Perl). System package managers (apt, yum, pacman, Chocolatey, winget) are absent except Homebrew.
 
 ## Bottom Line
 
 **Rating: 3 out of 5**
 
-The package management MCP ecosystem is **surprisingly thin given the centrality of dependency management to software development**. Every developer interacts with package registries daily — npm, PyPI, Maven, NuGet, Cargo — yet MCP investment is minimal. Microsoft's NuGet MCP server is the clear standout: first-party IDE integration, built into Visual Studio 2026, with genuine write capabilities (vulnerability fixing, version updates). Homebrew's built-in MCP server demonstrates what frictionless integration looks like. The community-built mcp-package-version (122 stars) is the most practical cross-registry tool, covering 9 ecosystems in a single Go binary.
+The package management MCP ecosystem remains **surprisingly thin given the centrality of dependency management to software development** — and the archival of mcp-package-version (the category's most-starred community server) in March 2026 makes the landscape even more fragile. Microsoft's NuGet MCP server continues to pull away from the pack: now at **v1.4.1 with 2.5 million downloads** and new transitive dependency vulnerability remediation, it's the model every other registry should follow. The biggest positive is [Socket MCP](https://github.com/SocketDev/socket-mcp) (101 stars) bringing supply chain security scoring with a free public hosted server — addressing one of the ecosystem's most critical gaps. The Rust/Cargo gap is now closed by cratesio-mcp (23 tools). maven-tools-mcp added private repository authentication (v2.1.0).
 
-The **3/5 rating** reflects: two official servers (NuGet, Homebrew) showing what first-party integration looks like, one solid cross-registry version checker (122 stars, 9 registries), deep single-registry analyzers for npm (18+ tools) and PyPI (25+ tools), and the genuine utility of AI-assisted dependency intelligence (version recommendations, vulnerability scanning, license checking). It loses 2 points for the near-total absence of official servers from major registries (npm, PyPI, Maven Central, Cargo), version checking being the ceiling for most servers (no dependency resolution, lockfile analysis, or build verification), no private registry support in most servers, missing ecosystems (Rust, Ruby, PHP, iOS, Dart, Elixir), supply chain security risks from servers that can install packages, and the fundamental challenge that existing CLIs and IDE integrations already handle most package management needs well.
+The **3/5 rating holds** despite mixed signals. Positives: NuGet's continued dominance (2.5M downloads), Socket MCP filling the security gap (101 stars), Rust/Cargo gap closed, private Maven repos now supported, Homebrew adding progress reporting and dev commands. Negatives: mcp-package-version archived (biggest community server is dead), near-total absence of official servers from npm/PyPI/Maven Central, version checking still the ceiling for most servers, missing ecosystems (Ruby, PHP, iOS, Dart, Elixir), and the fundamental challenge that existing CLIs handle most package management needs well.
 
 **Who benefits from package management MCP servers today:**
 
 - **.NET developers using Visual Studio 2026** — NuGet MCP is the gold standard: built-in, zero-setup, with vulnerability fixing and version management through Copilot Chat. This is the model every other registry should follow
-- **Polyglot teams checking versions across ecosystems** — mcp-package-version covers 9 registries in one tool, useful when AI agents generate code that spans JavaScript, Python, Go, and container images
+- **Teams concerned about dependency security** — Socket MCP (101 stars) provides free, zero-setup supply chain security scoring at mcp.socket.dev, covering npm, PyPI, and Cargo with batch processing for full dependency audits
 - **npm-heavy projects with security concerns** — npm-sentinel-mcp's 18+ tools provide deeper analysis than `npm audit`, including bundle size, license compatibility, and alternative package suggestions
 - **macOS developers** — Homebrew's built-in MCP server adds zero friction for AI-assisted package installation and upgrades
 
@@ -234,9 +296,9 @@ The **3/5 rating** reflects: two official servers (NuGet, Homebrew) showing what
 
 - **Enterprise teams with private registries** — Most servers only support public registries. Without Artifactory/Nexus/CodeArtifact support, these tools can't see your internal packages
 - **Teams needing dependency resolution** — No server can answer "will this upgrade break my project?" They check versions but don't resolve conflicts or verify builds
-- **Rust, Ruby, PHP, iOS, or Dart developers** — Your ecosystems have no dedicated MCP servers. Multi-registry checkers can tell you the latest version, but offer no ecosystem-specific intelligence
+- **Ruby, PHP, iOS, or Dart developers** — Your ecosystems still have no dedicated MCP servers. (Rust developers: see cratesio-mcp with 23 tools)
 - **Teams concerned about supply chain security** — MCP servers that install packages give AI agents unreviewed dependency modification power. Until approval workflows exist, this is a risk
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026 (first refreshed from March 2026 original). See our [About page](/about/) for details on our review process.*

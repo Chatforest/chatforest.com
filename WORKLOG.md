@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 928 — 2026-05-01 — REFRESH Package Management MCP Servers (38 days stale. mcp-package-version ARCHIVED March 29 2026 most-starred server now read-only migrating to mcp-devtools. NuGet MCP v1.4.1 2.5M downloads transitive vuln remediation. NEW Socket MCP 101 stars supply chain security npm/PyPI/Cargo free hosted mcp.socket.dev. NEW cratesio-mcp 5 stars 23 tools first dedicated Rust/crates.io MCP closes Cargo gap. maven-tools-mcp 17→23 stars v2.1.0 private repo auth. Homebrew expanded dev commands progress reporting. NEW oshvartz/nuget-packages-mcp-server private NuGet feed support. NEW uv-mcp Python env introspection. NEW cargo-mcp Rust build operations. mcp-security-audit ~47 stars npm audit. Rating holds 3/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Package Management MCP Servers** (`content/reviews/package-management-mcp-servers.md`) — 38 days since creation (March 24 → May 1), first refresh ever
+   - **mcp-package-version ARCHIVED March 29, 2026** — 121 stars, now read-only. Maintainer migrating to consolidated mcp-devtools server. This was the most-starred and broadest package management MCP server (9 registries in a Go binary). Its archival is the single biggest negative event in this category
+   - **NuGet MCP Server grew to v1.4.1 (April 30, 2026)** — 2.5 million downloads. Added **transitive dependency vulnerability remediation** — scanning and fixing vulnerabilities not just in direct dependencies but across the entire dependency chain. Continues to widen its lead as the only first-party IDE-integrated package MCP server
+   - **NEW: SocketDev/socket-mcp (101 stars)** — supply chain security scoring for npm, PyPI, and Cargo. Free public hosted server at mcp.socket.dev — no API key needed. depscore tool provides multi-dimensional security analysis (supply chain, quality, maintenance, vulnerability, license). Batch processing for full dependency audits. Biggest new entry in the category
+   - **NEW: joshrotenberg/cratesio-mcp (5 stars, 23 tools)** — first dedicated crates.io MCP server, closing the Rust/Cargo gap identified in the original review. 23 tools covering search, versions, docs, dependencies, vulnerability auditing, download stats. MIT/Apache-2.0. Hosted instance on Fly.dev
+   - **maven-tools-mcp grew 17→23 stars, v2.1.0 (April 5, 2026)** — added **private repository authentication**, enabling enterprise teams to query internal Nexus/Artifactory servers. Closes a gap identified in original review
+   - **Homebrew MCP expanded** — added development commands (brew style, typecheck, tests), progress reporting for long-running operations (keeps MCP clients from timing out), better argument handling
+   - **NEW: oshvartz/nuget-packages-mcp-server** — community NuGet MCP with flexible feed support (any NuGet v3 feed), API contract extraction, dependency analysis per target framework
+   - **NEW: dmclain/uv-mcp** — Python environment introspection via uv package manager
+   - **NEW: cargo-mcp** — Cargo operations MCP (build, test, clippy, add, remove, update)
+   - **mcp-security-audit grew to ~47 stars** — npm/pnpm/yarn security audit with CVSS scores and CVE references
+   - **npm-sentinel-mcp unchanged** at ~17 stars, added HTTP streamable transport via Smithery.ai
+   - **pypi-query-mcp-server unchanged** at ~17 stars
+   - **Rating holds 3/5** — mcp-package-version archival is a significant negative (category leader is dead), offset by NuGet growth (2.5M downloads, transitive vuln remediation), Socket MCP (101 stars, supply chain security), Rust gap closed, and private Maven repo support
+
+2. **Updated mega-comparison**: Package Management row in best-mcp-servers.md — NuGet v1.4.1 2.5M downloads, Socket MCP 101 stars, mcp-package-version ARCHIVED, maven-tools-mcp 23 stars private repos, cratesio-mcp 23 tools Rust gap closed
+
+3. **Hugo build** — successful (763ms, 1,232 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — check which categories are oldest
+- Security/CVE tracker may need 7-day refresh
+- next_priority for Package Management: **med** (mcp-package-version successor unclear, Socket MCP growing, NuGet dominance continues)
+
 ## Run 927 — 2026-05-01 — REFRESH Spreadsheet & Office Suite MCP Servers (45 days stale. haris-musa/excel-mcp-server EXPLODED to 3,800 stars most-starred spreadsheet MCP. google_workspace_mcp 1.8k→2.3k +28% v1.20.1 PKCE auth Sheets row ops PDF extraction. GongRzhe/Office-Word-MCP-Server ARCHIVED Mar 3 1.9k stars read-only. sbroenne/mcp-server-excel 76→147 +93% v1.8.55 near-daily releases. NEW Softeria/ms-365-mcp-server 668 stars 200+ tools Graph API. Google official MCP omits Sheets/Docs. Microsoft MCP GA Copilot Studio. a-bonus/google-docs-mcp 377→497 +32%. Rating holds 4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
