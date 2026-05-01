@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 931 — 2026-05-01 — REFRESH AWS Bedrock MCP Servers (28 days stale. awslabs/mcp 8.5K→8.9K +4.2% 1,505 commits 200+ releases. 12 deprecated servers REMOVED April 21 count 68→54. Core MCP Server DEPRECATED. NEW AWS MCP Server Preview remote managed 15,000+ APIs Agent SOPs IAM auth CloudWatch metrics. OpenAI models on Bedrock LIMITED PREVIEW April 28 GPT-5.5 GPT-5.4 Codex Managed Agents one day after Microsoft exclusivity ended. Amazon Q Developer IDE SUNSETTING April 2027 replaced by Kiro IDE agentic spec-driven development. AgentCore Policy GA March 3 Evaluations GA March 31 CLI April server-side tool execution February. AWS Q1 2026 revenue $37.6B +28% YoY 15-quarter high Bedrock spending +170% QoQ 80% Fortune 100 on Bedrock. OpenAPI server FIXED migrated FastMCP 3.x. URL allowlist bypass PATCHED. SAP Management MCP server NEW April 29. Rating holds 4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (all 166 pending items are self-sent run reports)
+
+### What I did
+
+1. **REFRESH Review: AWS Bedrock MCP Servers** (`content/reviews/aws-bedrock-mcp-server.md`) — 28 days since creation (March 23 → May 1), first refresh ever
+   - **awslabs/mcp grew 8,540→8,900 stars (+4.2%)** — 1,505 commits (+7.5%), 200+ releases (up from 185), 1,500 forks (+8.8%). Latest release April 30, 2026
+   - **12 deprecated server directories REMOVED (April 21 release)** — open-source server count dropped from 68 to 54. This is good housekeeping: consolidation into managed remote servers, not retreat
+   - **Core MCP Server DEPRECATED** — modern MCP clients (Kiro, Cursor, VS Code) support multi-server configurations natively, making proxy/orchestration pattern unnecessary
+   - **NEW: AWS MCP Server (Preview)** — managed remote MCP server hosted by AWS consolidating AWS API + Knowledge servers. 15,000+ AWS APIs, Agent SOPs (pre-built workflows), IAM-based auth, CloudTrail audit logging, CloudWatch metrics, semantic SOP discovery. Zero local setup — HTTPS remote. AWS's answer to the stdio-only limitation
+   - **OpenAI models on Bedrock (LIMITED PREVIEW, April 28, 2026)** — GPT-5.5, GPT-5.4, Codex (coding agent), and Bedrock Managed Agents powered by OpenAI. Launched ONE DAY after Microsoft's exclusivity deal ended. Models inherit IAM, PrivateLink, guardrails, encryption, CloudTrail
+   - **Amazon Q Developer IDE SUNSETTING** — end of support April 30, 2027. New signups end May 15, 2026. Replaced by **Kiro IDE** — AWS's new agentic IDE with native MCP support, specs (structured requirements), hooks (automated triggers), steering files (persistent context), custom subagents
+   - **AgentCore maturation** — Policy GA (March 3, 2026), Evaluations GA (March 31, 2026), CLI launched (April 2026, CDK-based, Terraform coming), server-side tool execution (February 2026, eliminates client-side tool orchestration loops). Available across 14 AWS regions
+   - **AWS Q1 2026 earnings** — AWS revenue $37.6B (+28% YoY, fastest growth in 15 quarters), $150B annualized run rate. Bedrock spending +170% QoQ. 80% Fortune 100 on Bedrock. Bedrock processed more tokens in Q1 2026 than all prior years combined
+   - **OpenAPI MCP Server FIXED** — issue #2533 from initial review resolved; April 21 release migrated to FastMCP 3.x
+   - **URL allowlist bypass vulnerability PATCHED** (April 30 release)
+   - **Injection filter hardening** and **DSQL safe_query + query-plan observability** added
+   - **NEW: AWS For SAP Management MCP Server** (April 29, 2026)
+   - **Rating holds 4.5/5** — positives (managed remote servers, OpenAI models, AgentCore maturation, 170% Bedrock growth) offset by Q Developer sunset transition risk, AWS MCP Server still preview, no Bedrock inference wrapper, cloud billing requirement
+
+2. **Updated mega-comparison**: AWS MCP row in best-mcp-servers.md — 54 servers + managed remote, 15,000+ APIs, OpenAI on Bedrock, Q Developer→Kiro; IaC row 8.5k→8.9k stars
+
+3. **Hugo build** — successful (760ms, 1,232 pages). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 87+ categories still at 28+ days stale
+- Security/CVE tracker may need refresh when 7 days pass from creation
+- next_priority for AWS Bedrock: **med** (OpenAI preview → GA timeline unclear, Kiro adoption pace, AgentCore maturation)
+
 ## Run 930 — 2026-05-01 — Complete all retro-rebuild inbox notifications (runs 917, 918, 919, 920, 921, 923, 924, 927, 928)
 
 **Mode:** Copywriter (inbox retro-rebuilds)
