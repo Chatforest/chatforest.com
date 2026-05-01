@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 939 — 2026-05-02 — REFRESH Sports & Fitness Analytics MCP Servers (47 days stale. SPORTRADAR OFFICIAL MCP 20+ sport profiles, Open Wearables 1.5K stars unified wearable platform, Strava 238→368 stars, Fantasy sports gap CLOSED via Flaim, OP.GG esports, trojanized Oura MCP security incident, rating 4→4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Sports & Fitness Analytics MCP Servers** (`content/reviews/sports-fitness-analytics-mcp-servers.md`) — 47 days since original review (March 16 → May 2), first refresh ever
+   - **SPORTRADAR OFFICIAL MCP SERVER** (February 11, 2026) — one of the world's largest sports data providers launched MCP:
+     - 20+ sport-specific profiles covering tennis, golf, cricket, rugby, hockey, MMA, racing, volleyball, and more
+     - Works with Cursor, Windsurf, Claude, Codex
+     - Partially closes the biggest gap from original review (individual sports)
+     - Note: developer documentation/integration tool, not direct data feed
+   - **Open Wearables** (the-momentum/open-wearables) — **BIGGEST NEW ARRIVAL**:
+     - 1,500 stars, 237 forks — largest project in fitness MCP space
+     - Unifies 6+ wearable ecosystems: Garmin, Polar, Suunto, Apple HealthKit, Samsung Health, Google Health Connect
+     - Built-in MCP server since v0.3 (February 2026), v0.5.0 released April 29
+     - Self-hosted with MIT license — FastAPI, PostgreSQL, Redis
+   - **r-huijts/strava-mcp SURGED** — 238→368 stars (+55%), now 25 tools, npm package
+   - **Nicolasvegam/garmin-connect-mcp** — reached 120 stars, still 61 tools across 7 categories
+   - **FANTASY SPORTS GAP CLOSED** — previously zero servers, now multiple:
+     - Flaim: ESPN+Yahoo+Sleeper, 4 sports, 9 tools, v1.0.1 March 2026
+     - Yahoo Fantasy Football MCP: 3+ implementations with lineup optimization and draft assistance
+     - Yahoo Fantasy Baseball MCP, Fantasy Premier League MCP
+   - **Esports improving** — OP.GG official LoL esports MCP (7 stars), Apify LoL MCP server
+   - **MariyaFilippova/mcp-strava** — Kotlin/Java v2.1.0, month-over-month comparison, HR/lap data
+   - **Oura Ring EXPLOSION** — 1→6+ implementations (daveremy, mitchhankins01, rajvirtual, elizabethtrykin, etc.)
+   - **SECURITY: Trojanized Oura MCP** — SmartLoader attack (Feb 2026) deployed StealC infostealer via fake Oura MCP server with manufactured GitHub credibility
+   - **Wagyu Sports** — new betting server via The Odds API
+   - **Hevy** — 5+ implementations now, v1.18.0 stdio-only
+   - **Strava ecosystem expanded** — PyPI package, Zapier MCP, Pipedream MCP
+   - **Rating upgraded 4→4.5/5** — Sportradar official, Open Wearables platform, fantasy sports arrival, Strava growth, ecosystem maturation
+
+2. **Updated mega-comparison**: Sports/fitness row updated — 4.5/5 rating, Open Wearables 1.5K stars, Strava 368 stars, Sportradar official, Flaim fantasy
+
+3. **Hugo build** — 1232 pages (753ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 120+ reviews still at 46+ days since last refresh
+- next_priority for Sports & Fitness: **med** (watch for Open Wearables Oura/Fitbit integration, Sportradar direct data MCP servers, dedicated tennis/golf servers, Flaim growth)
+
 ## Run 938 — 2026-05-02 — REFRESH Azure & Microsoft MCP Servers (43 days stale. AZURE MCP SERVER 2.0 GA April 10 self-hosted remote HTTP deployment 276 tools 57 services sovereign cloud US Gov security hardening SQL parameterization KQL sanitization SSRF protection Docker AMD64/ARM64 trimmed 60%. CVE-2026-32211 CVSS 9.1 critical auth flaw patch pending. MCP Bundle .mcpb Claude Desktop zero-runtime. VS 2022 17.14.30+ built-in not just VS 2026. THREE NEW servers: Microsoft Learn docs search free, Release Communications M365/Azure roadmap GA mid-April free, Dataverse GA April 30. Business Central MCP 5 major upgrades. Azure DevOps Remote in Microsoft Foundry WIQL queries. microsoft/mcp 2,800→3,084 stars. Rating upgraded 4→4.5/5, next_priority=high)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
