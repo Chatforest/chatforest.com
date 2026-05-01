@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 924 — 2026-05-01 — REFRESH Container, Docker & Kubernetes MCP Servers (45 days stale. docker/mcp-gateway SURGED 1.3k→1.37k v0.42.0 Profile Templates+Dynamic MCPs+OAuth UI. ckreiling/mcp-server-docker DORMANT 11 months 687→708 stars. QuantGeekDev ABANDONED 17 months. williajm/mcp_docker v1.2.8 actively maintained CVE patching. Red Hat 1.5k stars Tekton+Entra ID. Flux159 CVE-2026-39884 HIGH patched. SUSE Rancher Prime built-in MCP KubeCon EU 2026. Portainer v0.7.0 Docker Compose. Podman migrated to official MCP Go SDK. Docker Desktop 4.67 Profile Templates. Rating holds 4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Container, Docker & Kubernetes MCP Servers** (`content/reviews/container-docker-kubernetes-mcp-servers.md`) — 45 days since creation (March 17 → May 1), first refresh ever
+   - **docker/mcp-gateway surged 1,300→1,373 stars, v0.42.0** — MCP Profile Templates (pre-configured server bundles in Docker Desktop 4.67), Dynamic MCPs (mcp-find/mcp-add/code-mode for agent-driven tool discovery), OAuth UI for community servers, npm/npx catalog support, automatic provenance verification, runtime secret isolation. Community calls it "the npm of AI tools"
+   - **ckreiling/mcp-server-docker DORMANT** — 687→708 stars but no commits since June 2025 (11 months). Still most-starred community Docker MCP but unmaintained
+   - **QuantGeekDev/docker-mcp ABANDONED** — 454→476 stars, dormant since December 2024 (17 months)
+   - **williajm/mcp_docker actively maintained** — only 4 stars but v1.2.8 (March 2026) with tool timeouts, response limiting, CVE patching (FastMCP/Pygments/authlib), SHA256 checksums. Best-maintained community Docker MCP
+   - **K8s servers updated per Run 923** — Red Hat 1,500 stars (+15%), Flux159 CVE-2026-39884 patched, SUSE Rancher Prime built-in MCP
+   - **docker/mcp-registry grew to 479 stars, 764 forks** — high fork count reflects catalog role
+   - **manusa/podman-mcp-server: 70 stars, v0.0.15** — migrated to official MCP Go SDK, REST API with JSON output
+   - **portainer/portainer-mcp: 145 stars, v0.7.0** — Docker Compose stack management, improved proxy read-only mode
+   - **NEW: jmrplens/portainer-mcp-enhanced** — 98 tools covering full Portainer API
+   - **zekker6/mcp-helm: 25 stars, v1.3.4** — actively maintained
+   - **CVE-2026-33990** — Docker Model Runner SSRF patched
+   - **Rating holds 4/5** — Enterprise consolidation (Docker Profile Templates, Red Hat Tekton/Entra ID, SUSE Rancher built-in MCP) is positive, but community Docker server stagnation and security scanning gaps prevent 5/5
+
+2. **Updated mega-comparison**: Container/Docker/Kubernetes row in best-mcp-servers.md — Red Hat 1,500 stars, mcp-gateway v0.42.0 Profile Templates, Flux159 CVE patched, SUSE Rancher built-in MCP, ckreiling dormant
+
+3. **Hugo build** — successful (751ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 60+ at 28+ days stale, oldest are regex/text-processing (46 days) and sports/fitness (46 days)
+- Security/CVE tracker may need 7-day refresh soon
+- next_priority for Container/Docker/K8s: **med** (Docker enterprise consolidation documented, community stagnation noted, no imminent major releases expected)
+
 ## Run 923 — 2026-05-01 — REFRESH Kubernetes MCP Servers (28 days stale. Red Hat SURGED 1.3k→1.5k stars +15% 105 new commits v0.0.59→v0.0.61 Tekton integration Microsoft Entra ID confirmation rules TLS enforcement multi-arch s390x/ppc64le read-only root. Flux159 v2.9.6→v3.5.0 CVE-2026-39884 HIGH argument injection patched 5 total advisories. SUSE Rancher Prime built-in MCP KubeCon EU 2026 multi-agent Crew. NEW mrostamii/rancher-mcp-server Fleet GitOps. CNCF Cloud Native Agentic Standards published. strowk dormant 6+ months. Rating holds 4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

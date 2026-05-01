@@ -2,41 +2,45 @@
 title: "Container, Docker & Kubernetes MCP Servers — Docker Management, Kubernetes Orchestration, Helm Charts, Podman, Portainer, and More"
 date: 2026-03-17T06:00:00+09:00
 description: "Container, Docker, and Kubernetes MCP servers help AI agents manage containers, orchestrate clusters, deploy Helm charts, and interact with container registries via the Model Context Protocol."
-og_description: "Container & Docker MCP servers: kubernetes-mcp-server (1,300 stars — 40 K8s tools), mcp-server-docker (687 stars — Docker management), docker/mcp-gateway (1,300 stars — Docker Desktop MCP Toolkit), kubectl-mcp-server (848 stars — 253 tools), portainer-mcp (127 stars — Portainer integration). 20+ servers reviewed. Rating: 4/5."
+og_description: "Container & Docker MCP servers: kubernetes-mcp-server (1,500 stars — Red Hat Tekton+Entra ID), mcp-server-docker (708 stars — Docker management), docker/mcp-gateway (1,373 stars — v0.42.0 MCP Toolkit with Profile Templates), kubectl-mcp-server (877 stars — 253 tools), portainer-mcp (145 stars — Docker Compose support). 20+ servers reviewed. Rating: 4/5."
 content_type: "Review"
-card_description: "Container, Docker, and Kubernetes MCP servers for AI-powered container management, cluster orchestration, Helm chart deployment, and registry interaction. **The most popular Docker MCP server** — ckreiling/mcp-server-docker (687 stars, Python, GPL-3.0) provides comprehensive Docker management including container lifecycle, image operations, network and volume management, and a unique 'plan+apply' compose workflow where the AI proposes container configurations for review before execution. Supports running in a container itself via Docker socket mounting. 53 commits, 3 contributors. **Compose-focused Docker management** — QuantGeekDev/docker-mcp (454 stars, Python, MIT) enables container creation, Docker Compose stack deployment, container logs retrieval, and status monitoring through Claude AI. Focused on basic operations rather than comprehensive orchestration — lacks volume management, network configuration, health checks, and resource constraints. 20 commits, 3 contributors. **The most comprehensive Docker tool suite** — williajm/mcp_docker (3 stars, Python, MIT) provides 33 individually-configurable Docker tools across 5 categories: container management (10 tools — list/inspect/create/start/stop/restart/remove/logs/exec/stats), image management (9 tools — list/inspect/pull/build/push/tag/remove/prune/history), network management (6 tools), volume management (5 tools), and system tools (3 tools — version/events/prune). Features a three-tier safety system (SAFE/MODERATE/DESTRUCTIVE) with tool filtering, 5 AI prompts for troubleshooting/optimization/security audit, 2 resource templates, dual transport (stdio/HTTP), and comprehensive testing including fuzz tests. 155 commits — most mature codebase despite low stars. **Native Kubernetes with the broadest integration** — containers/kubernetes-mcp-server (1,300 stars, Go, Apache-2.0) is a Red Hat-backed native Go implementation that communicates directly with the Kubernetes API — not a kubectl wrapper. Provides 40 tools across configurable toolsets: Core (pods, events, namespaces, generic CRUD), Config (kubeconfig management with auto-detection), Helm (install/list/uninstall charts), KCP (workspace management), Kiali (service mesh visualization), and KubeVirt (virtual machine management). Features multi-cluster support, read-only mode, destructive operation restrictions, OpenTelemetry tracing, single-binary distribution, and Helm chart for deployment. 747 commits, 285 forks — very active development. **The largest Kubernetes tool count** — rohitg00/kubectl-mcp-server (848 stars, Python, MIT) provides 253 tools and 8 workflow prompts. Key capabilities include pod diagnostics with crash analysis, deployment management with rollbacks, cost optimization to identify resource waste, network diagnostics, RBAC auditing, security scanning, Helm chart management, and interactive dashboards. Available via npx (zero-install), pip, or Docker. Works with 15+ MCP-compatible clients. 127 commits. **TypeScript Kubernetes with observability** — Flux159/mcp-server-kubernetes (1,300 stars, TypeScript) wraps kubectl and Helm CLI with MCP tools for resource management (get/list/describe/create/apply/delete), logging, context switching, scaling, patching, rollouts, port forwarding, node management (cordon/drain/uncordon), and pod cleanup. Differentiator: built-in OpenTelemetry integration with distributed tracing supporting Jaeger, Tempo, Grafana, Datadog, and New Relic backends. Non-destructive mode available, secrets masking in output. 772 commits — very active. **Docker's official MCP infrastructure** — docker/mcp-gateway (1,300 stars, Go, MIT) powers the MCP Toolkit in Docker Desktop. Acts as a protocol bridge and lifecycle manager: runs MCP servers in isolated Docker containers, provides unified client interface, handles OAuth authentication and secrets management, organizes servers into shareable profiles, supports OCI catalog integration. 865 commits — Docker's primary investment in MCP. docker/hub-mcp (130 stars, TypeScript, Apache-2.0) provides Docker Hub search with architecture/OS/category filters, namespace management, repository CRUD, tag management, and hardened image recommendations. docker/mcp-registry (453 stars, Go, MIT) is the curated MCP server catalog with cryptographic signatures, provenance tracking, and SBOMs for enterprise trust. **Podman and Docker runtime support** — manusa/podman-mcp-server (61 stars, Go, Apache-2.0) implements MCP for both Podman and Docker container runtimes. Supports container operations (inspect/list/logs/run/stop/remove), image management (build/pull/push/remove), network and volume management. Features dual backends: REST API via Unix socket (preferred) and CLI wrapper (fallback). Multiple transport modes (stdio/HTTP/SSE). Available on npm and PyPI. 154 commits. **Portainer integration for teams** — portainer/portainer-mcp (127 stars, Go, Zlib) connects AI assistants to Portainer environments for enterprise container management. Manages environments, Docker stacks (create/update/compose files), users, teams, access groups, and provides Docker and Kubernetes API proxies. Read-only mode available. Useful for teams already using Portainer as their container management UI. 112 commits, 5 contributors. **Helm chart inspection** — zekker6/mcp-helm (21 stars, Go, MIT) provides 7 tools for working with Helm repositories: list charts, list versions, get latest version, get chart values, get chart contents, get dependencies, and get images. Supports traditional HTTP repositories and OCI registries (Docker Hub, GHCR). Authentication support for basic auth, mTLS, and OCI credentials. Public instance at mcp-helm.zekker.dev. 186 commits. **Gaps remain in several areas** — no Docker Swarm management (Swarm is declining but still used), no container security scanning integration (no Trivy, Grype, or Snyk container scanning), limited multi-cluster federation (individual cluster management only), no cloud Kubernetes cost management (FinOps), no GitOps integration (no ArgoCD or Flux CD triggers), no service mesh management beyond Kiali integration in one server, no container registry vulnerability scanning, no Kubernetes operator management, no namespace-level resource quota management tools. The category earns 4/5 — container and Kubernetes MCP servers form one of the strongest infrastructure categories. Docker management has multiple mature options with ckreiling's server leading on adoption and williajm's on features. Kubernetes is exceptionally well-served with three 1,000+ star implementations taking different approaches (native Go API, Python/kubectl wrapper, TypeScript/kubectl wrapper). Docker's official investment through mcp-gateway, hub-mcp, and mcp-registry shows the company is building MCP as a first-class integration path. The Podman and Portainer entries provide important alternatives for non-Docker and enterprise workflows. Helm chart management rounds out the ecosystem. The main gaps are in security scanning, GitOps workflows, and multi-cluster operations — areas that represent the next frontier for container MCP development."
-last_refreshed: 2026-03-17
+card_description: "Container, Docker, and Kubernetes MCP servers for AI-powered container management, cluster orchestration, Helm chart deployment, and registry interaction. **Updated May 2026.** **The most popular Docker MCP server** — ckreiling/mcp-server-docker (708 stars, Python, GPL-3.0) provides comprehensive Docker management including container lifecycle, image operations, network and volume management, and a unique 'plan+apply' compose workflow. ⚠️ Dormant since June 2025 — no commits in 11 months. **Compose-focused Docker management** — QuantGeekDev/docker-mcp (476 stars, Python, MIT) enables container creation, Docker Compose stack deployment, container logs retrieval, and status monitoring. ⚠️ Abandoned — dormant for 17 months since December 2024. **The most comprehensive Docker tool suite** — williajm/mcp_docker (4 stars, Python, MIT) provides 33 individually-configurable Docker tools across 5 categories: container management (10 tools), image management (9 tools), network management (6 tools), volume management (5 tools), and system tools (3 tools). Features a three-tier safety system (SAFE/MODERATE/DESTRUCTIVE), fuzz testing, and active CVE patching. v1.2.8 (March 2026) — most actively maintained Docker MCP server despite minimal adoption. **Native Kubernetes with the broadest integration** — containers/kubernetes-mcp-server (1,500 stars, Go, Apache-2.0) is a Red Hat-backed native Go implementation. SURGED +15% (1,300→1,500 stars). v0.0.61 adds Tekton toolset for pipeline management, Microsoft Entra ID authentication, confirmation rules for destructive operations, TLS enforcement, multi-arch images (s390x/ppc64le), and read-only root filesystem. 871 commits. **The largest Kubernetes tool count** — rohitg00/kubectl-mcp-server (877 stars, Python, MIT) provides 253 tools and 8 workflow prompts. v1.24.0 adds 3D cluster topology UI visualization. CNCF Landscape listed. 133 commits. **TypeScript Kubernetes with observability** — Flux159/mcp-server-kubernetes (1,300+ stars, TypeScript). v2.9.6→v3.5.0. ⚠️ CVE-2026-39884 (CVSS 8.3, HIGH) argument injection in port_forward patched. 5 total security advisories — most CVEs of any K8s MCP server. 785 commits. **Docker's official MCP infrastructure** — docker/mcp-gateway (1,373 stars, Go, MIT) powers the MCP Toolkit in Docker Desktop. v0.42.0 (April 2026). NEW: MCP Profile Templates for pre-configured server bundles, Dynamic MCPs (mcp-find/mcp-add/code-mode) for agent-driven tool discovery, OAuth UI for community servers, npm/npx catalog support, automatic provenance verification, runtime secret isolation. Docker Desktop 4.67 integration. docker/hub-mcp (141 stars, TypeScript, Apache-2.0) provides Docker Hub search. docker/mcp-registry (479 stars, 764 forks, Go, MIT) is the curated MCP server catalog — high fork count reflects its role as the official catalog. **Podman and Docker runtime support** — manusa/podman-mcp-server (70 stars, Go, Apache-2.0). v0.0.15 (February 2026). Migrated to official MCP Go SDK. REST API with JSON format output. **Portainer integration for teams** — portainer/portainer-mcp (145 stars, Go, Zlib). v0.7.0 adds local Docker Compose stack management and improved proxy read-only mode. **NEW: jmrplens/portainer-mcp-enhanced** — 98 tools covering full Portainer API (up from 40+ in original). **Helm chart inspection** — zekker6/mcp-helm (25 stars, Go, MIT). v1.3.4 (April 2026), actively maintained. 7 tools for Helm repository inspection. **SUSE Rancher Prime** announced built-in MCP at KubeCon EU 2026 — first enterprise K8s management platform with native MCP. Multi-agent 'Crew' system. **Gaps narrowing** — GitOps partially addressed by mrostamii/rancher-mcp-server (Fleet GitOps), but no container security scanning, no ArgoCD/Flux CD triggers, no FinOps integration, no service mesh management beyond Kiali. Community Docker servers are stagnating while Docker's official tooling consolidates control. The category earns 4/5 — Docker's enterprise investment through mcp-gateway is accelerating (Profile Templates, Dynamic MCPs, OAuth), Kubernetes has four 800+ star implementations, and SUSE Rancher's built-in MCP signals enterprise adoption. The main concern: community Docker management servers (ckreiling, QuantGeekDev) are going dormant, leaving docker/mcp-gateway as the de facto standard."
+last_refreshed: 2026-05-01
+next_priority: med
 ---
 
 Container, Docker, and Kubernetes MCP servers let AI assistants manage containers, orchestrate clusters, deploy applications, and interact with container registries through the Model Context Protocol. Instead of memorizing Docker commands or kubectl syntax, AI agents can manage infrastructure conversationally.
 
 This review covers the **container, Docker, and Kubernetes** ecosystem — Docker management tools, Kubernetes orchestrators, Docker's official MCP infrastructure, alternative runtimes, Portainer integration, and Helm chart tools. For related servers, see our [DevOps review](/reviews/ci-cd-pipeline-mcp-servers/) and [Cloud Platform review](/reviews/cloud-storage-mcp-servers/).
 
-The headline findings: **Three Kubernetes servers have 1,000+ stars** — containers/kubernetes-mcp-server, Flux159/mcp-server-kubernetes, and docker/mcp-gateway. **Docker is investing heavily in MCP** with three official projects (gateway, hub-mcp, registry). **ckreiling/mcp-server-docker (687 stars) leads Docker management** with a unique plan+apply compose workflow. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+The headline findings: **Docker's official mcp-gateway surged to 1,373 stars** with MCP Profile Templates, Dynamic MCPs, and OAuth support in Docker Desktop 4.67. **Red Hat's kubernetes-mcp-server surged to 1,500 stars (+15%)** with Tekton and Entra ID. **Community Docker servers are stagnating** — ckreiling (dormant 11 months) and QuantGeekDev (dormant 17 months) are coasting on stars. **SUSE Rancher Prime announced built-in MCP** at KubeCon EU 2026. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## Docker Management
 
-### ckreiling/mcp-server-docker (Most Popular)
+### ckreiling/mcp-server-docker (Most Popular — ⚠️ Dormant)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) | 687 | Python | GPL-3.0 | 15+ |
+| [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) | 708 | Python | GPL-3.0 | 15+ |
 
-The **most widely-adopted Docker MCP server** — provides comprehensive Docker management through natural language:
+The **most widely-adopted Docker MCP server** by star count — provides comprehensive Docker management through natural language:
 
 - **Container operations** — list, create, run, start, stop, remove containers
 - **Monitoring** — fetch logs, monitor stats (CPU, memory usage), recreate containers
 - **Image management** — pull, push, build, remove, list images
 - **Infrastructure** — create and manage Docker networks and volumes
 - **Compose workflow** — unique "plan+apply" approach where the AI proposes container configurations for user review before execution
+- **SSH support** — remote Docker connections added in May 2025
 
 Can run inside a Docker container itself by mounting the Docker socket. Important security note: any sensitive data exchanged with the LLM is inherently exposed unless running locally.
 
-### QuantGeekDev/docker-mcp (Compose-Focused)
+⚠️ **Dormant since June 2025** — no commits in 11 months. Still functional but not receiving updates or security patches. Consider docker/mcp-gateway or williajm/mcp_docker for actively maintained alternatives.
+
+### QuantGeekDev/docker-mcp (Compose-Focused — ⚠️ Abandoned)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [docker-mcp](https://github.com/QuantGeekDev/docker-mcp) | 454 | Python | MIT | 4 |
+| [docker-mcp](https://github.com/QuantGeekDev/docker-mcp) | 476 | Python | MIT | 4 |
 
 A **simpler, compose-focused Docker server** for Claude AI integration:
 
@@ -45,15 +49,17 @@ A **simpler, compose-focused Docker server** for Claude AI integration:
 - Container logs retrieval
 - Container listing and status monitoring
 
-Focused on basic operations rather than comprehensive orchestration — currently lacks volume management, network configuration, health checks, restart policies, and resource constraints.
+Focused on basic operations rather than comprehensive orchestration — lacks volume management, network configuration, health checks, restart policies, and resource constraints.
 
-### williajm/mcp_docker (Most Comprehensive)
+⚠️ **Abandoned** — no commits since December 2024 (17 months dormant). Not recommended for new projects.
+
+### williajm/mcp_docker (Most Comprehensive — Actively Maintained)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp_docker](https://github.com/williajm/mcp_docker) | 3 | Python | MIT | 33 |
+| [mcp_docker](https://github.com/williajm/mcp_docker) | 4 | Python | MIT | 33 |
 
-The **most feature-complete Docker MCP server** despite low star count — 33 individually-configurable tools across 5 categories:
+The **most feature-complete Docker MCP server** and now the **most actively maintained community Docker server** — 33 individually-configurable tools across 5 categories:
 
 - **Container management** (10 tools) — list, inspect, create, start, stop, restart, remove, logs, exec, stats
 - **Image management** (9 tools) — list, inspect, pull, build, push, tag, remove, prune, history
@@ -61,32 +67,35 @@ The **most feature-complete Docker MCP server** despite low star count — 33 in
 - **Volume management** (5 tools) — list, inspect, create, remove, prune
 - **System tools** (3 tools) — version, events, system prune
 
-Features a **three-tier safety system** (SAFE/MODERATE/DESTRUCTIVE) with tool filtering, 5 AI prompts (troubleshooting, optimization, compose generation, networking debug, security audit), dual transport (stdio/HTTP), and comprehensive testing including fuzz tests with ClusterFuzzLite. 155 commits — most mature codebase in this subcategory.
+Features a **three-tier safety system** (SAFE/MODERATE/DESTRUCTIVE) with tool filtering, 5 AI prompts (troubleshooting, optimization, compose generation, networking debug, security audit), dual transport (stdio/HTTP), and comprehensive testing including fuzz tests with ClusterFuzzLite.
+
+**v1.2.8 (March 2026)** — tool timeouts and response limiting middleware. Active security maintenance with CVE patching for FastMCP, Pygments, and authlib dependencies. SHA256 checksums on release assets. Despite only 4 stars, this is the best-maintained Docker MCP server for users who want ongoing security updates.
 
 ## Kubernetes Orchestration
 
-### containers/kubernetes-mcp-server (Red Hat-Backed)
+### containers/kubernetes-mcp-server (Red Hat-Backed — Surging)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | 1,300 | Go | Apache-2.0 | 40 |
+| [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | 1,500 | Go | Apache-2.0 | 40+ |
 
-A **native Go implementation** backed by Red Hat that communicates directly with the Kubernetes API — not a kubectl wrapper. Provides 40 tools across configurable toolsets:
+A **native Go implementation** backed by Red Hat that communicates directly with the Kubernetes API — not a kubectl wrapper. **Surged +15% (1,300→1,500 stars)** with 105 new commits. Provides 40+ tools across configurable toolsets:
 
 - **Core** — pods, events, namespaces, generic resource CRUD
 - **Config** — kubeconfig management with automatic change detection
 - **Helm** — install, list, uninstall charts
+- **Tekton** — pipeline and task management (NEW in v0.0.60+)
 - **KCP** — workspace management
 - **Kiali** — service mesh visualization
-- **KubeVirt** — virtual machine management
+- **KubeVirt** — virtual machine management (refactored to v2.25)
 
-Single native binary with no external dependencies. Multi-cluster support, read-only mode, destructive operation restrictions, OpenTelemetry tracing. Deployable via its own Helm chart. 747 commits, 285 forks — very active development.
+**v0.0.61 (May 2026)** — Microsoft Entra ID with On-Behalf-Of token exchange (first K8s MCP with Azure AD). Confirmation rules for destructive operations. Per-session rate limiting. `require_tls` config. Multi-arch images (s390x, ppc64le). Read-only root filesystem. Configurable ServiceAccount token auto-mounting. Gateway API HTTPRoute support. User-scoped targets (breaking change in v0.0.60). Zero CVEs. 871 commits — very active development.
 
 ### rohitg00/kubectl-mcp-server (Largest Tool Count)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | 848 | Python | MIT | 253 |
+| [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | 877 | Python | MIT | 253 |
 
 The **largest Kubernetes MCP tool set** — 253 tools and 8 workflow prompts:
 
@@ -97,15 +106,15 @@ The **largest Kubernetes MCP tool set** — 253 tools and 8 workflow prompts:
 - **RBAC auditing** — role-based access control analysis
 - **Security scanning** — cluster security assessment
 - **Helm chart management** — chart operations
-- **Interactive dashboards** — 6 UI tools for visualization
+- **Interactive dashboards** — 6 UI tools for visualization, including 3D cluster topology UI (NEW in v1.24.0)
 
-Available via npx (zero-install), pip, or Docker. Works with 15+ MCP-compatible clients including Claude Desktop, Cursor, Windsurf, GitHub Copilot, and Gemini CLI.
+Available via npx (zero-install), pip, or Docker. Works with 15+ MCP-compatible clients. **CNCF Landscape listed.** 133 commits.
 
-### Flux159/mcp-server-kubernetes (Observability-Focused)
+### Flux159/mcp-server-kubernetes (Observability-Focused — ⚠️ CVE History)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | 1,300 | TypeScript | — | 20+ |
+| [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | 1,300+ | TypeScript | — | 20+ |
 
 A **TypeScript-based Kubernetes server** with strong observability features:
 
@@ -115,33 +124,41 @@ A **TypeScript-based Kubernetes server** with strong observability features:
 - **Node management** — cordon, drain, uncordon
 - **Pod cleanup** — remove evicted, failed, or problematic pods
 - **Helm integration** — install, upgrade, uninstall, template charts
+- **kubectl_reconnect** tool (NEW in v3.5.0)
 
-Differentiator: **built-in OpenTelemetry integration** with distributed tracing supporting Jaeger, Tempo, Grafana, Datadog, and New Relic backends. Non-destructive mode and secrets masking available. 772 commits — very active.
+Differentiator: **built-in OpenTelemetry integration** with distributed tracing supporting Jaeger, Tempo, Grafana, Datadog, and New Relic backends. Non-destructive mode and secrets masking available. 785 commits.
+
+⚠️ **CVE-2026-39884 (CVSS 8.3, HIGH)** — argument injection in port_forward, patched in v3.5.0. Constant-time auth token comparison also added. **5 total security advisories** — most of any Kubernetes MCP server. Update to v3.5.0 immediately if using older versions.
 
 ## Docker Official Projects
 
 Docker is investing heavily in MCP as a first-class integration path, with three official projects:
 
-### docker/mcp-gateway (Docker Desktop MCP Toolkit)
+### docker/mcp-gateway (Docker Desktop MCP Toolkit — Surging)
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [mcp-gateway](https://github.com/docker/mcp-gateway) | 1,300 | Go | MIT | 865 |
+| [mcp-gateway](https://github.com/docker/mcp-gateway) | 1,373 | Go | MIT | 900+ |
 
-The **core of Docker's MCP strategy** — powers the MCP Toolkit in Docker Desktop. Acts as a protocol bridge and lifecycle manager:
+The **core of Docker's MCP strategy** — powers the MCP Toolkit in Docker Desktop. **v0.42.0 (April 2026)** with rapid release cadence. Acts as a protocol bridge and lifecycle manager:
 
 - **Container isolation** — each MCP server runs in its own Docker container
 - **Unified interface** — single gateway between AI clients and multiple MCP servers
-- **Authentication** — integrated OAuth flows and Docker Desktop secrets management
-- **Profiles** — organize servers into logical groupings, shareable via OCI registries
-- **Discovery** — dynamic tool/resource discovery across connected servers
+- **Authentication** — integrated OAuth flows and Docker Desktop secrets management, OAuth UI for community servers (NEW)
+- **MCP Profile Templates** — pre-configured server bundles for common workflows (web dev, data analysis, cloud infra) — Docker Desktop 4.67 (NEW)
+- **Dynamic MCPs** — `mcp-find`, `mcp-add`, `code-mode` tools let agents discover and compose tools at runtime (NEW)
+- **npm/npx catalog support** — run Node-based MCP servers directly from the catalog (NEW)
+- **Provenance verification** — automatic image provenance checks during pulls (NEW)
+- **Runtime secret isolation** — granular access policies through Desktop profiles (NEW)
 - **Multi-client** — VS Code, Cursor, Claude Desktop share consistent tool availability
+
+Community describes the Docker MCP Catalog as "the npm of AI tools" — a centralized, sandboxed registry of server capabilities.
 
 ### docker/hub-mcp (Docker Hub Search)
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [hub-mcp](https://github.com/docker/hub-mcp) | 130 | TypeScript | Apache-2.0 | — |
+| [hub-mcp](https://github.com/docker/hub-mcp) | 141 | TypeScript | Apache-2.0 | — |
 
 Interfaces with Docker Hub APIs for **intelligent image discovery**:
 
@@ -157,9 +174,9 @@ Requires Node.js 22+. Powers Docker's "Ask Gordon" CLI assistant.
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [mcp-registry](https://github.com/docker/mcp-registry) | 453 | Go | MIT | — |
+| [mcp-registry](https://github.com/docker/mcp-registry) | 479 | Go | MIT | — |
 
-The **official curated MCP server catalog** with enterprise-grade trust:
+The **official curated MCP server catalog** with enterprise-grade trust — **764 forks** reflect its role as the canonical MCP server listing:
 
 - **Cryptographic signatures** on all MCP server images
 - **Provenance tracking** for build verification
@@ -169,13 +186,15 @@ The **official curated MCP server catalog** with enterprise-grade trust:
 
 100+ verified tools at launch from partners like Stripe, Elastic, and Neo4j.
 
+⚠️ **CVE-2026-33990** — critical SSRF vulnerability in Docker Model Runner's OCI Registry Client has been patched. Ensure Docker Desktop is updated.
+
 ## Container Runtimes
 
 ### manusa/podman-mcp-server (Podman + Docker)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [podman-mcp-server](https://github.com/manusa/podman-mcp-server) | 61 | Go | Apache-2.0 | 12+ |
+| [podman-mcp-server](https://github.com/manusa/podman-mcp-server) | 70 | Go | Apache-2.0 | 12+ |
 
 Supports **both Podman and Docker** container runtimes:
 
@@ -185,7 +204,7 @@ Supports **both Podman and Docker** container runtimes:
 - **Dual backends** — REST API via Unix socket (preferred) or CLI wrapper (fallback)
 - **Multiple transports** — stdio, HTTP with Streamable protocol, Server-Sent Events
 
-Automatic runtime detection. Available on npm and PyPI for easy installation. 154 commits.
+**v0.0.15 (February 2026)** — REST API with JSON format output, multi-implementation testing. Migrated to official MCP Go SDK (v0.0.14). Updated to Podman v5.8.2 and MCP Go SDK 1.5.0. Available on npm and PyPI.
 
 ## Portainer Integration
 
@@ -193,7 +212,7 @@ Automatic runtime detection. Available on npm and PyPI for easy installation. 15
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [portainer-mcp](https://github.com/portainer/portainer-mcp) | 127 | Go | Zlib | 15+ |
+| [portainer-mcp](https://github.com/portainer/portainer-mcp) | 145 | Go | Zlib | 15+ |
 
 Connects AI assistants to **Portainer environments** for teams already using Portainer:
 
@@ -201,9 +220,12 @@ Connects AI assistants to **Portainer environments** for teams already using Por
 - **Stack operations** — create/update Docker stacks, retrieve compose files
 - **User & team administration** — manage users, teams, access groups
 - **API proxies** — Docker and Kubernetes API access through Portainer
-- **Local stacks** — deploy standalone Docker Compose stacks (v0.7.0+)
+- **Local stacks** — deploy standalone Docker Compose stacks (NEW in v0.7.0)
+- **Improved proxy read-only mode** (NEW in v0.7.0)
 
-Pre-built binaries for Linux (amd64, arm64) and macOS (arm64). Read-only mode available for safety. 112 commits, 5 contributors.
+Pre-built binaries for Linux (amd64, arm64) and macOS (arm64). Read-only mode available for safety.
+
+**NEW: jmrplens/portainer-mcp-enhanced** — community fork with **98 tools** covering the full Portainer API (up from 40+ in the original). Worth considering for teams needing more comprehensive Portainer coverage.
 
 ## Helm Chart Tools
 
@@ -211,7 +233,7 @@ Pre-built binaries for Linux (amd64, arm64) and macOS (arm64). Read-only mode av
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-helm](https://github.com/zekker6/mcp-helm) | 21 | Go | MIT | 7 |
+| [mcp-helm](https://github.com/zekker6/mcp-helm) | 25 | Go | MIT | 7 |
 
 A **focused Helm repository inspection tool** — 7 tools for chart discovery and analysis:
 
@@ -223,34 +245,45 @@ A **focused Helm repository inspection tool** — 7 tools for chart discovery an
 - **get_chart_dependencies** — dependencies from Chart.yaml
 - **get_chart_images** — container images via template rendering
 
-Supports traditional HTTP Helm repositories and OCI registries (Docker Hub, GHCR). Authentication for basic auth, mTLS, and OCI credentials. Public instance available at mcp-helm.zekker.dev. 186 commits.
+Supports traditional HTTP Helm repositories and OCI registries (Docker Hub, GHCR). Authentication for basic auth, mTLS, and OCI credentials. Public instance available at mcp-helm.zekker.dev. **v1.3.4 (April 2026)** — actively maintained with regular releases.
+
+## Enterprise Kubernetes MCP
+
+### SUSE Rancher Prime (Built-in MCP — NEW)
+
+**SUSE Rancher Prime** announced built-in MCP support at **KubeCon EU 2026** — the first enterprise Kubernetes management platform with native MCP integration. The "Liz" AI assistant evolved into a multi-agent "Crew" system with specialized agents for Security, Observability, Platform, Linux, and App Collection. External MCP server integration available via Global Settings.
+
+This is significant because it means MCP is moving from standalone tools into the platforms teams already use for Kubernetes management.
+
+### mrostamii/rancher-mcp-server (Fleet GitOps — NEW)
+
+A community MCP server for Rancher providing **Fleet GitOps** capabilities (GitRepo, Bundle, drift detection) and **Harvester HCI** management (VMs, storage, networks). Partially closes the GitOps gap in the container MCP ecosystem.
 
 ## What's Missing
 
-Despite the strength of this category, notable gaps remain:
+Despite the strength of this category, notable gaps remain (though some are narrowing):
 
-- **No Docker Swarm management** — Swarm is declining but still used in production
 - **No container security scanning** — no Trivy, Grype, or Snyk container scanning integration
 - **Limited multi-cluster federation** — each server manages individual clusters only
 - **No cloud Kubernetes cost management** — no FinOps or cost allocation tools
-- **No GitOps integration** — no ArgoCD or Flux CD workflow triggers
+- **GitOps partially addressed** — mrostamii/rancher-mcp-server provides Fleet GitOps (GitRepo, Bundle, drift detection), but no ArgoCD or Flux CD triggers
 - **No service mesh management** — beyond Kiali integration in kubernetes-mcp-server
 - **No container registry vulnerability scanning** — image scanning before deployment
 - **No Kubernetes operator management** — installing and managing operators
-- **No namespace-level resource quota tools** — quota management and enforcement
+- **Community Docker servers stagnating** — the two most popular community Docker MCP servers (ckreiling, QuantGeekDev) are dormant, leaving docker/mcp-gateway as the de facto choice
 
 ## Bottom Line
 
-Container and Kubernetes MCP servers form **one of the strongest infrastructure categories** in the MCP ecosystem. Docker management has multiple mature options — ckreiling's server leads on adoption (687 stars) while williajm's leads on features (33 tools with safety tiers). Kubernetes is exceptionally well-served with three implementations over 800 stars, each taking a different approach: native Go API (containers/kubernetes-mcp-server), Python wrapper with 253 tools (kubectl-mcp-server), and TypeScript with OpenTelemetry (Flux159/mcp-server-kubernetes).
+Container and Kubernetes MCP servers form **one of the strongest infrastructure categories** in the MCP ecosystem. The story since our initial review is enterprise consolidation: **Docker's mcp-gateway (1,373 stars, v0.42.0)** is becoming the de facto Docker MCP standard with Profile Templates, Dynamic MCPs, and OAuth, while community Docker servers (ckreiling, QuantGeekDev) have gone dormant. Only **williajm/mcp_docker** (4 stars but v1.2.8 with active CVE patching) offers an actively maintained alternative.
 
-Docker's official investment through mcp-gateway, hub-mcp, and mcp-registry signals that the company sees MCP as a first-class integration path — not a community experiment. The Podman and Portainer entries ensure the ecosystem isn't Docker-only. Helm chart inspection rounds things out.
+Kubernetes is surging: **Red Hat's server hit 1,500 stars (+15%)** with Tekton, Entra ID, and confirmation rules. **SUSE Rancher Prime announced built-in MCP** at KubeCon EU 2026 — the first enterprise K8s management platform with native MCP support. However, **Flux159's CVE-2026-39884** (CVSS 8.3) is a reminder that security maturity varies significantly across implementations.
 
-The main frontier is security scanning, GitOps workflows, and multi-cluster operations. When those gaps fill, this will be a 5/5 category.
+The Podman server's migration to the official MCP Go SDK, Portainer's Docker Compose support, and the new portainer-mcp-enhanced (98 tools) round out a maturing ecosystem. The main frontier remains security scanning, multi-cluster operations, and full GitOps integration.
 
-**Rating: 4/5** — Strong ecosystem with enterprise backing, multiple mature implementations, and clear Docker corporate investment. Gaps in security scanning and GitOps keep it from a perfect score.
+**Rating: 4/5** — Enterprise investment is accelerating (Docker Profile Templates, Red Hat Tekton/Entra ID, SUSE Rancher built-in MCP), but community server stagnation and security scanning gaps prevent a perfect score.
 
 ---
 
 *This review was researched and written by an AI agent. We do not test MCP servers hands-on — our analysis is based on documentation, GitHub repositories, and community data. See our [methodology](/about/) for details.*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-01 using Claude Opus 4.6 (Anthropic).*
