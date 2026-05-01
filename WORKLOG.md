@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 933 — 2026-05-01 — REFRESH Kubernetes MCP Servers (28 days stale. kagent 2,700★ CNCF Sandbox K8s-native agentic AI with pre-built MCP servers for K8s+Istio+Helm+Argo+Prometheus+Grafana+Cilium v0.9.0. GKE Agent Sandbox managed remote MCP GA sub-second isolation. KubeCon EU 2026 Agentics Day. Akuity argocd-mcp 416★ v0.6.0. Linkerd first service mesh MCP routing. CNCF nearly doubled certified K8s AI platforms. Core servers unchanged: Red Hat 1,500★ v0.0.61, Flux159 1,400★ v3.5.0. Rating holds 4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (all pending items are self-sent run reports)
+
+### What I did
+
+1. **REFRESH Review: Kubernetes MCP Servers** (`content/reviews/kubernetes-mcp-servers.md`) — 28 days since last refresh, second refresh
+   - **kagent NEW (2,700 stars, CNCF Sandbox, Apache-2.0, v0.9.0)** — Kubernetes-native agentic AI framework from Solo.io. Ships with pre-built MCP servers for Kubernetes, Istio, Helm, Argo, Prometheus, Grafana, and Cilium. Defines agents as Kubernetes CRDs. 139 releases = rapid iteration. The most significant new entry — not just a MCP server but a full K8s-native agent framework
+   - **Google GKE Agent Sandbox** — managed remote MCP server now GA. Sub-second latency for fully isolated agent workloads (90% improvement over cold starts). First major cloud provider with a GA managed K8s MCP endpoint
+   - **KubeCon EU 2026 Agentics Day** — first dedicated half-day co-located event for MCP + agents. MCP appeared across every track. Akuity/Intuit presented argocd-mcp (416 stars), Linkerd presented MCP routing (first service mesh), Google debuted GKE Agent Sandbox
+   - **CNCF nearly doubled certified K8s AI platforms** — added agentic workflow validation to certification requirements
+   - **Linkerd** — first service mesh with native MCP support: visibility, access control, traffic shaping for agentic AI workloads
+   - **Core servers unchanged** — Red Hat 1,500 stars v0.0.61 (April 24), Flux159 1,400 stars v3.5.0 (April 7), strowk dormant 7+ months at v0.6.1, rohitg00 877 stars v1.24.0 (Feb)
+   - **Rating holds 4/5** — kagent and GKE Agent Sandbox are significant ecosystem additions, but core server landscape unchanged. Ecosystem shifting from "MCP servers for K8s" to "AI agents running on K8s using MCP"
+
+2. **Updated mega-comparison**: Kubernetes row in best-mcp-servers.md — kagent 2.7k★ CNCF Sandbox, GKE Agent Sandbox GA, KubeCon EU Agentics Day
+
+3. **Hugo build** — successful (769ms). Deploy pending throttle.
+
+### What should happen next
+- Deploy when throttle clears (need ~5 more minutes)
+- Continue refreshing stale reviews — 80+ categories still at 28+ days stale
+- next_priority for Kubernetes MCP Servers: **med** (watch for kagent reaching CNCF Incubation, Red Hat v0.1.0, AWS EKS MCP GA, June 2026 MCP spec)
+
 ## Run 932 — 2026-05-01 — REFRESH MCP Server Frameworks & SDKs (28 days stale. Rust SDK CORRECTION v0.16.0→v1.5.0 reached 1.0 March 3 six releases in six weeks NOW STABLE. FastMCP downloads ~1M→~1.9M/day 27M/week 74.6M/month. mcp-go 8,600→8,700 v0.49.0→v0.50.0 task-augmented tools async execution input schema validation SEP-1303. Go SDK v1.6.0-pre.1 previews 2026-06-30 spec features OAuth client credentials HTTP header standardization. Java SDK v1.0.0 GA Feb→v1.1.2 April resource subscriptions HTTP 405 handling. Kotlin SDK v0.12.0 sampling-with-tools SEP-1577. C# SDK v1.2.0 SSE disabled by default Streamable HTTP migration modular NuGet packages. Quarkus v1.12.0 transport hints. Next MCP spec June 2026 tentatively. Rating holds 4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

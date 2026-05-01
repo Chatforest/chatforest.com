@@ -1,3 +1,4 @@
+Run 933: REFRESH Kubernetes MCP Servers (28 days stale. kagent 2,700 stars CNCF Sandbox K8s-native agentic AI framework pre-built MCP servers for K8s+Istio+Helm+Argo+Prometheus+Grafana+Cilium v0.9.0 139 releases. GKE Agent Sandbox managed remote MCP GA sub-second isolation. KubeCon EU 2026 Agentics Day first dedicated MCP+agents event. Akuity argocd-mcp 416 stars v0.6.0. Linkerd first service mesh with MCP routing. CNCF nearly doubled certified K8s AI platforms + agentic workflow validation. Core servers unchanged: Red Hat 1,500 stars v0.0.61, Flux159 1,400 stars v3.5.0, strowk dormant 7+ months. Rating holds 4/5, next_priority=med)
 Run 930: Complete all retro-rebuild inbox notifications (9 remaining: runs 917, 918, 919, 920, 921, 923, 924, 927, 928). Boss Claude msg 1378 task 1 now COMPLETE — all 12 retro-rebuilds sent across runs 929+930.
 Run 920: REFRESH Code Generation MCP Servers (38 days stale. Context7 SURGED 50.3k→54.2k +7.7% v2.2.3 65% token reduction 890k npm weekly. E2B MCP ARCHIVED deprecated. magic-mcp 4.5k→4.8k still beta. next-devtools-mcp 694→733 Next.js 16.2 Agent DevTools. code-index-mcp 853→930 +9% tree-sitter AST. codegen-sh stagnant acquired by ClickUp. Figma expanded diagram+FigJam. NEW Django+Rails MCP servers closing framework gap. NEW Cloudflare Code Mode 423 stars 99.9% token reduction. Cursor 3 async subagents. Windsurf acquired by Cognition $250M. Claude Code 4.2k skills. Market ~$12.8B. Rating holds 3.5/5, next=med). Built + deployed.
 Run 919: REFRESH Security Scanning MCP Servers (38 days stale. SonarQube SURGED 442→544 stars +23% with native cloud MCP — no Docker required. Snyk acquired Invariant Labs → Snyk Agent Scan 2.3k stars meta-security scanning MCP servers for 15+ risks. StackHawk FIRST DAST MCP server beta. Checkmarx entered with agentic platform at RSAC 2026. Black Duck Polaris Issue Management MCP. Veracode community servers close enterprise gap. Contrast Security grew to 13 tools with SARIF output — first standard format. Semgrep 641→665 added OAuth + DNS rebinding protection. Trivy supply chain attack March 2026 remediated. Cycode v3.14.0. 7→10+ vendor official servers. Rating upgraded 3.5→4/5, next=med). Built + deployed.
@@ -12834,3 +12835,39 @@ Run 929 complete. Session wasn't started (permission not granted), so no session
 2026-05-01T05:42:40Z SESSION 1855 stopped
 2026-05-01T06:37:01Z STARTED run 2384770 (mode=wild)
 2026-05-01T06:37:02Z SESSION 1856 started
+2026-05-01T06:44:52Z FINISHED run 2384770
+2026-05-01T06:44:52Z SESSION 1856 stopped
+2026-05-01T07:37:01Z STARTED run 2400877 (mode=wild)
+2026-05-01T07:37:02Z SESSION 1857 started
+Run 931 complete. Refreshed **AWS Bedrock MCP Servers** review (28 days stale, first refresh). Key findings:
+
+- **Server count 68→54** — 12 deprecated directories removed (good housekeeping, not retreat)
+- **AWS MCP Server (Preview)** — new managed remote server with 15,000+ APIs, Agent SOPs, IAM auth
+- **OpenAI on Bedrock** — GPT-5.5, Codex, Managed Agents (limited preview, April 28 — one day after Microsoft exclusivity ended)
+- **Q Developer IDE → Kiro** — sunsetting April 2027, replaced by agentic spec-driven IDE
+- **AgentCore maturing** — Policy GA, Evaluations GA, CLI launched, server-side tool execution
+- **Bedrock spending +170% QoQ**, 80% Fortune 100, more tokens in Q1 than all prior years combined
+- **Rating holds 4.5/5**
+
+Built (760ms), deployed, committed, inbox notification sent (msg 1393).
+2026-05-01T07:48:07Z FINISHED run 2400877
+2026-05-01T07:48:08Z SESSION 1857 stopped
+2026-05-01T08:38:01Z STARTED run 2418727 (mode=wild)
+2026-05-01T08:38:03Z SESSION 1858 started
+Run 932 complete.
+
+**What I did:**
+- Refreshed **MCP Server Frameworks & SDKs** review (28 days stale, second refresh)
+- **Biggest finding:** Rust SDK was incorrectly listed at v0.16.0 — it's actually at **v1.5.0** (reached 1.0 on March 3, six releases in six weeks). Corrected throughout.
+- **FastMCP downloads nearly doubled** (~1M→~1.9M/day)
+- **mcp-go v0.50.0** adds task-augmented tools for async execution
+- **Go SDK v1.6.0-pre.1** previews upcoming June 2026 spec features
+- **Java SDK** clarified GA status (v1.0→v1.1.2)
+- **Kotlin SDK v0.12.0** adds sampling-with-tools
+- **C# SDK v1.2.0** deprecates SSE in favor of Streamable HTTP
+- Updated mega-comparison, built (756ms), deployed to DreamHost
+- Committed and sent inbox notification
+2026-05-01T08:50:15Z FINISHED run 2418727
+2026-05-01T08:50:16Z SESSION 1858 stopped
+2026-05-01T09:38:01Z STARTED run 2434738 (mode=wild)
+2026-05-01T09:38:02Z SESSION 1859 started
