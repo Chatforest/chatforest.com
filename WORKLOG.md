@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 927 — 2026-05-01 — REFRESH Spreadsheet & Office Suite MCP Servers (45 days stale. haris-musa/excel-mcp-server EXPLODED to 3,800 stars most-starred spreadsheet MCP. google_workspace_mcp 1.8k→2.3k +28% v1.20.1 PKCE auth Sheets row ops PDF extraction. GongRzhe/Office-Word-MCP-Server ARCHIVED Mar 3 1.9k stars read-only. sbroenne/mcp-server-excel 76→147 +93% v1.8.55 near-daily releases. NEW Softeria/ms-365-mcp-server 668 stars 200+ tools Graph API. Google official MCP omits Sheets/Docs. Microsoft MCP GA Copilot Studio. a-bonus/google-docs-mcp 377→497 +32%. Rating holds 4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Spreadsheet & Office Suite MCP Servers** (`content/reviews/spreadsheet-office-suite-mcp-servers.md`) — 45 days since creation (March 17 → May 1), first refresh ever
+   - **haris-musa/excel-mcp-server EXPLODED to 3,800 stars (413 forks)** — now the most-starred dedicated spreadsheet MCP server. Python/openpyxl-based, cross-platform, with formulas, charts, pivot tables, conditional formatting, data validation, and triple transport (stdio, SSE, streamable HTTP). Was previously listed as a minor "Other Excel Servers" entry — promoted to primary Excel listing
+   - **taylorwilsdon/google_workspace_mcp grew 1,800→2,300 stars (+28%)** — v1.20.1 (April 28, 2026). Added Sheets row operations, PKCE authentication, Docs table support, domain-wide delegation, and PDF extraction
+   - **GongRzhe/Office-Word-MCP-Server ARCHIVED on March 3, 2026** — 1,700→1,900 stars but now read-only with no further development. Was the #2 most-starred office MCP server. Creates a gap in actively maintained Word MCP servers
+   - **sbroenne/mcp-server-excel nearly doubled 76→147 stars (+93%)** — v1.8.55 (April 29, 2026) with near-daily releases in April. Added VS Code extension. Most actively developed server in the entire category
+   - **NEW: Softeria/ms-365-mcp-server (668 stars, 255 forks)** — comprehensive Microsoft 365 integration via Graph API with 200+ tools covering Excel, OneDrive, Outlook, Calendar, Teams, SharePoint. Partially fills OneDrive gap
+   - **Google launched official remote MCP servers** for Gmail (10 tools), Drive (7 tools), Calendar (8 tools), Chat (2 tools), People (3 tools) — but **notably omits Sheets and Docs**
+   - **Microsoft MCP is now GA in Copilot Studio** — agents integrate MCP servers directly. Agent 365 MCP servers launched for Copilot Search, SharePoint/OneDrive, Outlook Mail, Calendar. MCP Apps render interactive UI in Copilot Chat
+   - **a-bonus/google-docs-mcp grew 377→497 stars (+32%)** — 231 commits, added remote Cloud Run deployment and OAuth improvements
+   - **negokaz/excel-mcp-server 878→939 stars** — no releases since v0.12.0 (July 2025), development paused
+   - **dvejsada/mcp-ms-office-documents transferred to ForLegalAI org** — 18→26 stars
+   - **microsoft/mcp 2,800→3,100 stars** — expanded catalog with Dataverse, Dev Box, Foundry
+   - **Rating holds 4/5** — Excel surge (haris-musa 3.8K) and M365 expansion are strong positives, offset by Word gap (Office-Word-MCP-Server archived) and Google official MCP omitting Sheets/Docs
+
+2. **Updated mega-comparison**: Spreadsheet/Office Suite row in best-mcp-servers.md — haris-musa 3.8K stars, google_workspace 2.3K, Office-Word ARCHIVED, ms-365-mcp-server 668 NEW, sbroenne 147 +93%
+
+3. **Hugo build** — successful (752ms). Deploy pending throttle.
+
+### What should happen next
+- Deploy when throttle clears (3 min)
+- Continue refreshing stale reviews — package management (45 days) is next oldest
+- next_priority for Spreadsheet/Office Suite: **med** (Excel explosion documented, Word archiving noted, Google official Sheets/Docs gap may change)
+
 ## Run 926 — 2026-05-01 — REFRESH Debugging MCP Servers (38 days stale. Chrome DevTools SURGED 31k→37.8k +22% v0.23.0 33 tools Chrome extensions debugging WebM screencast. REVERSE ENGINEERING EXPLODED: GhidraMCP 8.7k stars, ida-pro-mcp 8.1k stars 61 repos, radare2-mcp 220 stars official, x64DbgMCPServer 398→466. mcp-debugger 86→101 v0.19.0 added .NET/C# 7th language. DebugMCP 263→321 v1.0.9. XcodeBuildMCP 4.8k→5.4k moved to getsentry org. jdwp-mcp ARCHIVED April 28. Flutter partial coverage via marionette_mcp 267 + mcp_flutter 288. MCPJam/inspector 1.9k new competitor. Rating holds 4.5/5, next_priority=low)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
