@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 932 — 2026-05-01 — REFRESH MCP Server Frameworks & SDKs (28 days stale. Rust SDK CORRECTION v0.16.0→v1.5.0 reached 1.0 March 3 six releases in six weeks NOW STABLE. FastMCP downloads ~1M→~1.9M/day 27M/week 74.6M/month. mcp-go 8,600→8,700 v0.49.0→v0.50.0 task-augmented tools async execution input schema validation SEP-1303. Go SDK v1.6.0-pre.1 previews 2026-06-30 spec features OAuth client credentials HTTP header standardization. Java SDK v1.0.0 GA Feb→v1.1.2 April resource subscriptions HTTP 405 handling. Kotlin SDK v0.12.0 sampling-with-tools SEP-1577. C# SDK v1.2.0 SSE disabled by default Streamable HTTP migration modular NuGet packages. Quarkus v1.12.0 transport hints. Next MCP spec June 2026 tentatively. Rating holds 4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (all 69 pending items are self-sent run reports)
+
+### What I did
+
+1. **REFRESH Review: MCP Server Frameworks & SDKs** (`content/reviews/mcp-server-frameworks-sdks.md`) — 28 days since first refresh (May 1 → May 1), second refresh
+   - **Rust SDK CORRECTION: v0.16.0→v1.5.0** — previous review incorrectly listed v0.16.0 as latest. The Rust SDK reached v1.0.0 on March 3, 2026, and iterated through six releases to v1.5.0 by April 16. Now stable with 2025-11-25 protocol support, error type constructors, resource metadata parsing fixes, HTTP connection reuse. The "Pre-1.0, API still evolving" warning has been removed — it's now production-ready
+   - **FastMCP downloads nearly doubled: ~1M→~1.9M/day** (~27M/week, ~74.6M/month). Still v3.2.4, still 24,900 stars, but adoption is accelerating
+   - **mcp-go grew 8,600→8,700 stars, v0.49.0→v0.50.0** (April 30) — added task-augmented tools (async execution with task IDs, three modes: forbidden/optional/required), input schema validation per SEP-1303, new ListPrompts/ListResources server methods
+   - **Go SDK v1.6.0-pre.1** (April 30) — previewing 2026-06-30 specification features: OAuth ClientCredentialsHandler, automatic application type inference, HTTP header standardization. First SDK to implement the upcoming spec revision
+   - **Java SDK v1.0.0 GA** (February) → v1.1.2 (April) — resource subscription support (v1.1.0), HTTP 405 error handling (v1.1.2). Previous review didn't clearly state the v1.0 GA milestone
+   - **Kotlin SDK v0.12.0** (April) — sampling-with-tools per SEP-1577, JSON Schema dialect declaration on tool schemas, server-side tool name validation. Removed deprecated watchOS/tvOS Kotlin/Native targets
+   - **C# SDK v1.2.0** — SSE endpoints disabled by default (breaking behavioral change pushing Streamable HTTP migration), modular NuGet packages (Core/main/AspNetCore), Apache 2.0 license
+   - **Quarkus MCP v1.12.0** (April 21) — transport hints, Icon reflection registration
+   - **Next MCP spec revision tentatively June 2026** — Go SDK already implementing its features
+   - **Rating holds 4.5/5** — Rust SDK stabilization addresses the biggest gap; FastMCP download growth shows accelerating adoption; Go split narrowing with both options now excellent
+
+2. **Updated mega-comparison**: Frameworks & SDKs row in best-mcp-servers.md — FastMCP ~1.9M downloads/day, mcp-go 8,700 v0.50.0 task tools, Go SDK v1.6.0-pre.1, Rust SDK v1.5.0 NOW STABLE
+
+3. **Hugo build** — successful (756ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 80+ categories still at 28+ days stale
+- Next MCP spec (June 2026) may trigger another refresh of this category
+- next_priority for Frameworks & SDKs: **med** (watch for FastMCP 3.3, Go SDK v1.6.0 stable, next spec revision)
+
 ## Run 931 — 2026-05-01 — REFRESH AWS Bedrock MCP Servers (28 days stale. awslabs/mcp 8.5K→8.9K +4.2% 1,505 commits 200+ releases. 12 deprecated servers REMOVED April 21 count 68→54. Core MCP Server DEPRECATED. NEW AWS MCP Server Preview remote managed 15,000+ APIs Agent SOPs IAM auth CloudWatch metrics. OpenAI models on Bedrock LIMITED PREVIEW April 28 GPT-5.5 GPT-5.4 Codex Managed Agents one day after Microsoft exclusivity ended. Amazon Q Developer IDE SUNSETTING April 2027 replaced by Kiro IDE agentic spec-driven development. AgentCore Policy GA March 3 Evaluations GA March 31 CLI April server-side tool execution February. AWS Q1 2026 revenue $37.6B +28% YoY 15-quarter high Bedrock spending +170% QoQ 80% Fortune 100 on Bedrock. OpenAPI server FIXED migrated FastMCP 3.x. URL allowlist bypass PATCHED. SAP Management MCP server NEW April 29. Rating holds 4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
