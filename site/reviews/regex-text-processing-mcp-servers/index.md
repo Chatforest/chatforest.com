@@ -7,7 +7,9 @@ Regex and text processing MCP servers let AI agents test regex patterns, compare
 
 This review covers **regex and text processing MCP servers** — document conversion, diff/comparison, translation, regex testing, encoding/cryptography, grammar/spelling, and text manipulation. For related servers, see our [Browser Automation review](/reviews/playwright-mcp-server/) (web content extraction), [Search reviews](/reviews/brave-search-mcp-server/) (web search), and [Terminal & CLI Tools review](/reviews/terminal-cli-tools-mcp-servers/) (command-line text processing).
 
-The headline findings: **Document conversion dominates** — markdownify-mcp (2,400 stars) and mcp-pandoc (507 stars) handle nearly any format. **Translation has strong official support** — DeepL and Lara Translate provide production-grade MCPs. **Diff tools are plentiful** — jsondiffpatch's diff-mcp covers text and structured data. **Regex testing is functional but niche** with only a few dedicated servers. **Grammar/spelling lacks a LanguageTool MCP**, leaving a significant gap.
+The headline findings: **Document conversion dominates and deepened** — markdownify-mcp (2,600 stars), docling-mcp (598 stars, IBM), and Microsoft markitdown (119K-star parent) form a strong trio. **Two major gaps now closed** — a LanguageTool MCP server finally exists (requires Pro subscription), and multiple dedicated OCR MCP servers appeared. **Translation has strong official support** — DeepL and Lara Translate provide production-grade MCPs. **Diff tools are plentiful** — jsondiffpatch's diff-mcp covers text and structured data. **Regex testing remains niche** with only a few dedicated servers.
+
+*Last refreshed: May 1, 2026 (46 days since initial review)*
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -19,7 +21,7 @@ The headline findings: **Document conversion dominates** — markdownify-mcp (2,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [markdownify-mcp](https://github.com/zcaceres/markdownify-mcp) | 2,400 | TypeScript | — | 10 |
+| [markdownify-mcp](https://github.com/zcaceres/markdownify-mcp) | 2,600 | TypeScript | MIT | 10 |
 
 **The most popular text processing MCP server** — converts a wide variety of content to Markdown:
 
@@ -28,6 +30,9 @@ The headline findings: **Document conversion dominates** — markdownify-mcp (2,
 - **Web content** — web pages, YouTube transcripts, Bing search results
 - **File retrieval** — read existing Markdown files
 - **10 dedicated tools** — one per content type for clear, focused conversion
+- **v1.0.4** (April 17, 2026) — 119 commits, MIT license, pnpm + uv build
+
+*Update: Grew 2,400→2,600 stars (+8.3%) in 46 days. Now MIT licensed. Steady growth reflects continued adoption as the default content-to-Markdown tool.*
 
 The go-to server for ingesting diverse content into LLM-friendly Markdown format. Especially useful for RAG pipelines and document processing workflows.
 
@@ -35,14 +40,16 @@ The go-to server for ingesting diverse content into LLM-friendly Markdown format
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-pandoc](https://github.com/vivekVells/mcp-pandoc) | 507 | Python | MIT | 1+ |
+| [mcp-pandoc](https://github.com/vivekVells/mcp-pandoc) | 533 | Python | MIT | 1+ |
 
 **Bidirectional document conversion** using the industry-standard Pandoc engine:
 
 - **Input/output formats** — PDF, HTML, Markdown, DOCX, RST, EPUB, LaTeX, and more
 - **Advanced configuration** — YAML defaults files for conversion options
 - **Filter support** — apply Pandoc filters during conversion
-- **Installable via Smithery** — `npx -y @smithery/cli install mcp-pandoc --client claude`
+- **86 commits** — active development, installable via `uvx mcp-pandoc`
+
+*Update: Grew 507→533 stars (+5.1%). Still in early development per README, PDF support still being refined.*
 
 Where markdownify-mcp converts *to* Markdown, mcp-pandoc converts *between* any formats Pandoc supports. The right choice when you need LaTeX output, EPUB generation, or other non-Markdown targets.
 
@@ -50,16 +57,54 @@ Where markdownify-mcp converts *to* Markdown, mcp-pandoc converts *between* any 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [markitdown-mcp](https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp) | (82K parent) | Python | MIT | 1 |
+| [markitdown-mcp](https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp) | (119K parent) | Python | MIT | 1 |
 
-**Official MCP server from Microsoft's markitdown project** (82K+ stars):
+**Official MCP server from Microsoft's markitdown project** (119K stars, up from 82K):
 
 - **Single tool** — `convert_to_markdown(uri)` accepts http:, https:, file:, or data: URIs
 - **Multiple transports** — STDIO, Streamable HTTP, and SSE
-- **Preserves structure** — headings, lists, tables, links maintained as Markdown
-- **Lightweight** — minimal dependencies, focused on one job
+- **v0.1.5** (February 2026) — 307 commits, 29+ document formats
+- **Plugin architecture** — `markitdown-ocr` plugin for enhanced OCR
+- **Azure Document Intelligence** integration for enterprise document processing
+- **LLM vision** capabilities for image descriptions
 
-The simplest option for document-to-Markdown conversion. Microsoft backing means long-term maintenance.
+*Update: Parent project SURGED 82K→119K stars (+45%). Added plugin architecture (markitdown-ocr), Azure Document Intelligence integration, and LLM vision capabilities. Now supports 29+ formats. Docker deployment recommended for Claude Desktop.*
+
+The simplest option for document-to-Markdown conversion. Microsoft backing and explosive growth confirm long-term viability.
+
+### docling-project/docling-mcp — IBM Document Intelligence (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [docling-mcp](https://github.com/docling-project/docling-mcp) | 598 | Python | MIT | 4+ |
+
+**The most sophisticated document processor in the MCP ecosystem** — backed by IBM's Docling library (Linux Foundation):
+
+- **Advanced PDF layout analysis** — AI-powered page layout detection, reading order analysis, table structure recognition
+- **Broad format support** — PDF, DOCX, PPTX, XLSX, HTML, images, audio (WAV/MP3), LaTeX, plain text, USPTO patents, XBRL financial reports
+- **Two-way processing** — not just conversion but interactive document editing (AI agents can manipulate documents with precision)
+- **RAG integration** — built-in Milvus upload and retrieval for retrieval-augmented generation
+- **Document caching** — local caching with memory management for large documents
+- **v1.3.4** (January 2026), 69 commits, installable via `uvx --from docling-mcp docling-mcp-server`
+
+Where markdownify-mcp converts content to Markdown and mcp-pandoc converts between formats, docling-mcp *understands* document structure with AI models. The best choice for complex PDFs with tables, forms, and multi-column layouts.
+
+### Tele-AI/doc-ops-mcp — Universal Document Operations (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [doc-ops-mcp](https://github.com/Tele-AI/doc-ops-mcp) | 138 | JavaScript | — | 11+ |
+
+**Pure-JavaScript document processing** with no external system dependencies:
+
+- **Smart conversion planning** — `plan_conversion` tool analyzes requirements and selects optimal conversion paths
+- **Format conversion** — DOCX→PDF, Markdown→PDF/HTML/DOCX, HTML→Markdown with OOXML style preservation
+- **PDF enhancement** — watermark and QR code addition with configurable positioning
+- **Content rewriting** — batch text replacement and regex patterns across DOCX, HTML, and Markdown
+- **Optional Playwright integration** for enhanced PDF conversion
+- **68 commits**, installable via npm/pnpm/bun or Docker
+
+A good choice when you need document processing without Python dependencies. The smart conversion planning is unique among document MCPs.
 
 ### Other Document Converters
 
@@ -119,7 +164,7 @@ More than simple text comparison — this server understands code structure and 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [deepl-mcp-server](https://github.com/DeepLcom/deepl-mcp-server) | 95 | JavaScript | — | 8 |
+| [deepl-mcp-server](https://github.com/DeepLcom/deepl-mcp-server) | 102 | JavaScript | — | 8 |
 
 **Official MCP server from DeepL** — the industry-leading translation API:
 
@@ -217,6 +262,23 @@ Useful for AI agents working with encoded data, verifying hashes, or testing enc
 
 ## Grammar & Spelling
 
+### dpesch/languagetool-mcp-server — LanguageTool Integration (NEW — GAP CLOSED)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [languagetool-mcp-server](https://codeberg.org/dpesch/languagetool-mcp-server) | — | TypeScript | MIT | 3 |
+
+**The LanguageTool MCP server that was the #1 missing piece in this category now exists:**
+
+- **lt_check_text** — comprehensive text analysis with categorized suggestions (up to 40,000 characters), supports language selection, strict mode, custom rule configuration
+- **lt_check_text_summary** — quick one-line assessment without detailed breakdowns
+- **lt_list_languages** — reference of supported language codes with filtering
+- **v1.1.0** (March 2026) — hosted on Codeberg, STDIO and HTTP transports
+- **Requires LanguageTool Pro** — paid subscription with API access required (free tier does not provide API access)
+- **No installation needed** — `npx @dpesch/languagetool-mcp-server` in MCP config
+
+This closes the single biggest gap identified in our original review. The Pro requirement limits adoption (no free tier API access), but for teams already paying for LanguageTool, this is a significant addition.
+
 ### morahan/SpellChecker-MCP — Multilingual Spell Checking
 
 | Server | Stars | Language | License | Tools |
@@ -249,6 +311,18 @@ Lightweight approach, but limited to English and dependent on Claude's own capab
 
 ---
 
+## OCR — Dedicated Servers (NEW — GAP CLOSED)
+
+| Server | Stars | Language | Tools | Focus |
+|--------|-------|----------|-------|-------|
+| [rjn32s/mcp-ocr](https://github.com/rjn32s/mcp-ocr) | — | Python | 1+ | Tesseract OCR — local files, URLs, raw bytes, auto-install, multi-language |
+| [maximdx/tesseract-mcp-server](https://github.com/maximdx/tesseract-mcp-server) | — | Python | 1+ | Tesseract OCR for PDF documents, English + Chinese out of box |
+| [lka/mcp_server_tesseract](https://github.com/lka/mcp_server_tesseract) | — | — | 1+ | Tesseract OCR optimized for Windows 11 / VS Code |
+
+**Previously the second biggest gap in this category** — we noted that no dedicated OCR MCP existed beyond markdownify-mcp's image conversion. As of early 2026, multiple Tesseract-based OCR MCP servers have appeared. rjn32s/mcp-ocr is the most versatile (accepts files, URLs, and raw bytes with automatic Tesseract installation). maximdx/tesseract-mcp-server specializes in PDF OCR. Microsoft's markitdown project also added a dedicated `markitdown-ocr` plugin.
+
+---
+
 ## Text Manipulation & NLP
 
 ### agent-hanju/char-index-mcp — Character-Level String Operations
@@ -272,20 +346,20 @@ LLMs generate tokens, not characters — they struggle with exact character coun
 | Server | Stars | Language | Tools | Focus |
 |--------|-------|----------|-------|-------|
 | [tivaliy/mcp-nlp](https://github.com/tivaliy/mcp-nlp) | — | Python | 2 | Text similarity via Levenshtein distance and other metrics |
-| [tumf/mcp-text-editor](https://github.com/tumf/mcp-text-editor) | 177 | Python | 3+ | Line-based file editing with conflict detection |
+| [tumf/mcp-text-editor](https://github.com/tumf/mcp-text-editor) | 190 | Python | 3+ | Line-based file editing with conflict detection |
 | [yhzion/comment-stripper-mcp](https://github.com/yhzion/comment-stripper-mcp) | — | TypeScript | 3+ | Batch comment removal from 10+ languages (JS, Python, Java, C++, etc.) |
-| [Dicklesworthstone/ultimate_mcp_server](https://github.com/Dicklesworthstone/ultimate_mcp_server) | 129 | Python | 40+ | Multi-tool server with ripgrep, awk, sed, jq text processing |
+| [Dicklesworthstone/ultimate_mcp_server](https://github.com/Dicklesworthstone/ultimate_mcp_server) | 148 | Python | 40+ | Multi-tool: ripgrep, awk, sed, jq + OCR/Tesseract + redline visual diffs + smart chunking |
 
 ---
 
 ## What's Missing
 
-The regex and text processing MCP landscape has solid coverage for document conversion and translation but notable gaps elsewhere:
+The regex and text processing MCP landscape has improved significantly since March 2026, with two major gaps closed. Remaining gaps:
 
-- **No LanguageTool MCP** — the open-source grammar/style checker for 25+ languages has no MCP wrapper. This is the biggest gap — LanguageTool (12K+ stars) is the gold standard for multilingual proofreading
-- **No template engine MCP** — no Jinja, Handlebars, or Mustache MCP for server-side template rendering
-- **No dedicated OCR MCP** — markdownify-mcp handles some OCR through image conversion, but there's no Tesseract or dedicated OCR server
-- **No unified text pipeline** — no single server combining regex, diff, format conversion, and transformation in one coherent workflow
+- **~~No LanguageTool MCP~~** — ✅ **NOW EXISTS** (dpesch/languagetool-mcp-server, v1.1.0). However, requires LanguageTool Pro paid subscription — no free tier API access. A free/self-hosted LanguageTool MCP would still be valuable
+- **~~No dedicated OCR MCP~~** — ✅ **NOW EXISTS** — multiple Tesseract-based servers (rjn32s/mcp-ocr, maximdx/tesseract-mcp-server) plus markitdown-ocr plugin
+- **No template engine MCP** — still no Jinja, Handlebars, or Mustache MCP for server-side template rendering
+- **No unified text pipeline** — no single server combining regex, diff, format conversion, and transformation in one coherent workflow (ultimate_mcp_server comes closest but is a general-purpose server)
 - **No i18n pipeline** — translation exists but no comprehensive internationalization tooling (plural rules, locale-aware formatting, translation file management)
 - **Limited NLP** — mcp-nlp offers basic text similarity but nothing for entity extraction, sentiment analysis, or text classification
 
@@ -293,14 +367,16 @@ The regex and text processing MCP landscape has solid coverage for document conv
 
 ## Bottom Line
 
-**Rating: 3.5/5** — Document conversion and translation are genuinely strong. The rest of the category is scattered across small, focused servers that each solve one problem well but don't form a cohesive ecosystem.
+**Rating: 4/5** *(upgraded from 3.5/5)* — The two biggest gaps identified in March 2026 (LanguageTool and OCR) are now addressed. Document conversion deepened significantly with docling-mcp (598 stars, IBM/Linux Foundation) and Microsoft markitdown's surge to 119K stars. The ecosystem is maturing from scattered single-purpose tools toward genuine coverage. Remaining gaps (template engines, NLP, i18n pipelines) are less critical for most use cases.
 
 **Best in class:**
-- **Document conversion:** zcaceres/markdownify-mcp (2,400 stars) for to-Markdown, vivekVells/mcp-pandoc (507 stars) for between-formats
-- **Translation:** DeepLcom/deepl-mcp-server (95 stars) for quality, translated/lara-mcp (79 stars) for memory
+- **Document conversion:** zcaceres/markdownify-mcp (2,600 stars) for to-Markdown, docling-project/docling-mcp (598 stars) for AI-powered document understanding, vivekVells/mcp-pandoc (533 stars) for between-formats
+- **Translation:** DeepLcom/deepl-mcp-server (102 stars) for quality, translated/lara-mcp (79 stars) for memory
 - **Diff:** benjamine/jsondiffpatch diff-mcp for text + structured data comparison
+- **Grammar:** dpesch/languagetool-mcp-server for comprehensive grammar/style checking (Pro subscription required)
+- **OCR:** rjn32s/mcp-ocr for dedicated Tesseract OCR
 
-**If you only install one:** markdownify-mcp solves the most common text processing need — getting documents into a format your LLM can work with.
+**If you only install one:** markdownify-mcp solves the most common text processing need — getting documents into a format your LLM can work with. If you need more sophisticated document understanding (complex tables, multi-column layouts), docling-mcp is the upgrade path.
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We research publicly available information but do not hands-on test MCP servers. Last refreshed 2026-05-01.*
 
