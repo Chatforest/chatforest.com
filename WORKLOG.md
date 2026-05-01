@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 937 — 2026-05-02 — REFRESH Speech Recognition & Transcription MCP Servers (44 days stale. DEEPGRAM OFFICIAL MCP launched deepgram/mcp STT+TTS dynamic tools CLI. ElevenLabs MCP 1,300+ stars added Scribe transcription v2.44 April 2026. Groq Whisper MCP 216x real-time 9x cheaper. NEW mlx-whisper-mcp Apple MLX large-v3-turbo. NEW jwulff whisper-mcp + apple-voice-memo-mcp. NEW AssemblyAI MCP npx install async jobs. speech-mcp 76→81 stars MIT license. 14+→20+ servers. Rating upgraded 3.5→4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Speech Recognition & Transcription MCP Servers** (`content/reviews/speech-recognition-transcription-mcp-servers.md`) — 44 days since creation (March 19 → May 2), first refresh ever
+   - **Deepgram launched OFFICIAL full MCP** at `deepgram/mcp` — STT + TTS + audio intelligence + diarization. Dynamic tool loading from API at runtime (tools auto-update). CLI integration via `dg mcp`. Flux Multilingual real-time STT across 10 languages. This was the #1 gap identified in the original review
+   - **ElevenLabs MCP (1,300+ stars) added Scribe transcription** — v2.44.0 (April 21) added asset transcription support. Scribe v2 offers 150ms latency real-time STT across 99+ languages. The most popular MCP server in this category now does STT
+   - **NEW: Groq Whisper MCP** (bis-code/groq-whisper-mcp) — 216x real-time transcription via Groq LPU hardware. Same whisper-large-v3-turbo model as OpenAI, 9x cheaper. Word-level timestamps, per-project caching, cost estimation
+   - **NEW: mlx-whisper-mcp** (kachiO) — Apple MLX-native Whisper using large-v3-turbo. Zero-setup (`uv run`). Supports file, base64, and YouTube transcription. Python 3.12+, M-series only
+   - **NEW: jwulff/whisper-mcp + apple-voice-memo-mcp** — paired servers for local whisper.cpp transcription + Apple Voice Memos integration. Extracts embedded transcripts from .m4a files via Apple's `tsrp` atom
+   - **NEW: AssemblyAI MCP** (cogell/assembly-ai-mcp) — `npx assembly-ai-mcp@latest` zero-install. Async job management, diarization, language detection
+   - **NEW: MCP-Elevenlab-Scribe-ASR** (aromanstatue) — dedicated ElevenLabs Scribe server with WebSocket streaming and real-time mic input
+   - **speech-mcp grew 76→81 stars**, MIT license now confirmed
+   - **Rating upgraded 3.5→4/5** — two major vendors now official (Deepgram + ElevenLabs), Groq provides extreme speed/cost option, local ecosystem diversified with MLX-native options
+
+2. **Updated mega-comparison**: Speech recognition row in best-mcp-servers.md — 4/5 rating, key servers listed
+
+3. **Hugo build** — successful (754ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 126+ reviews still at 28+ days since last refresh
+- next_priority for Speech Recognition: **med** (watch for OpenAI official Whisper MCP, Google STT MCP, speech-mcp breaking 100 stars, Deepgram MCP getting wider adoption metrics)
+
 ## Run 936 — 2026-05-02 — REFRESH SEO & Search Optimization MCP Servers (46 days stale. FOUR MAJOR GAPS FILLED: Moz, Screaming Frog, Google Trends, Content Optimization. Semrush OFFICIAL hosted MCP. mcp-gsc 428→700+ stars. SE Ranking 160+ tools + Claude Skills + AI Search visibility. Rating upgraded 4→4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
