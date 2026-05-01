@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 938 — 2026-05-02 — REFRESH Azure & Microsoft MCP Servers (43 days stale. AZURE MCP SERVER 2.0 GA April 10 self-hosted remote HTTP deployment 276 tools 57 services sovereign cloud US Gov security hardening SQL parameterization KQL sanitization SSRF protection Docker AMD64/ARM64 trimmed 60%. CVE-2026-32211 CVSS 9.1 critical auth flaw patch pending. MCP Bundle .mcpb Claude Desktop zero-runtime. VS 2022 17.14.30+ built-in not just VS 2026. THREE NEW servers: Microsoft Learn docs search free, Release Communications M365/Azure roadmap GA mid-April free, Dataverse GA April 30. Business Central MCP 5 major upgrades. Azure DevOps Remote in Microsoft Foundry WIQL queries. microsoft/mcp 2,800→3,084 stars. Rating upgraded 4→4.5/5, next_priority=high)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Azure & Microsoft MCP Servers** (`content/reviews/azure-mcp-servers.md`) — 43 days since original review (March 20 → May 2), first refresh ever
+   - **AZURE MCP SERVER 2.0 GA** (April 10, 2026) — the biggest update since launch:
+     - Self-hosted remote HTTP deployment — **BIGGEST GAP CLOSED** from previous review (no remote option)
+     - 170+ → **276 tools** across 47+ → **57 Azure services** — 62% tool increase
+     - Sovereign cloud support — Azure US Government, first cloud MCP with this
+     - Security hardening: SQL query parameterization (MySQL/PostgreSQL/Cosmos DB), KQL input sanitization (Kusto/Monitor/Deploy), SSRF protection
+     - Docker AMD64/ARM64 images, trimmed binaries ~60% smaller
+     - New PyPI/UVX distribution method
+   - **CVE-2026-32211** (CVSS 9.1, disclosed April 3) — critical authentication flaw allowing unauthorized information disclosure. No auth required to exploit. Patch pending, mitigation guidance published
+   - **MCP Bundle (.mcpb)** support (April 24) — install Azure MCP into Claude Desktop by dragging a single file. No Node.js/Python/.NET required
+   - **VS 2022 built-in** — now ships in VS 2022 17.14.30+ via Azure development workload, not just VS 2026
+   - **THREE NEW Microsoft MCP servers:**
+     - Microsoft Learn MCP — remote, docs search + article fetch + code samples, free, no auth
+     - Release Communications MCP — M365 Roadmap + Azure Updates, GA mid-April 2026, free, no auth
+     - Dataverse MCP — GA April 30, agent-ready tools, Copilot Studio + VS Code
+   - **Business Central MCP** — 5 major upgrades: config validation, import/export, any-host, embedded resources, telemetry
+   - **Azure DevOps Remote MCP** — now in Microsoft Foundry, April update adds wit_query_by_wiql WIQL queries
+   - **microsoft/mcp monorepo** 2,800→3,084 stars (+10%), 473 forks
+   - **Rating upgraded 4→4.5/5** — v2.0 remote deployment and 276 tools earn upgrade, CVE is concerning but being addressed
+
+2. **Updated mega-comparison**: Azure row updated — 4.5/5 rating, 276 tools, v2.0 GA, remote self-hosted
+
+3. **Hugo build** — 1232 pages (762ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 125+ reviews still at 43+ days since last refresh
+- next_priority for Azure MCP: **high** (watch for CVE-2026-32211 patch, Azure DevOps Remote GA, managed remote for core server, stars growth post-2.0)
+
 ## Run 937 — 2026-05-02 — REFRESH Speech Recognition & Transcription MCP Servers (44 days stale. DEEPGRAM OFFICIAL MCP launched deepgram/mcp STT+TTS dynamic tools CLI. ElevenLabs MCP 1,300+ stars added Scribe transcription v2.44 April 2026. Groq Whisper MCP 216x real-time 9x cheaper. NEW mlx-whisper-mcp Apple MLX large-v3-turbo. NEW jwulff whisper-mcp + apple-voice-memo-mcp. NEW AssemblyAI MCP npx install async jobs. speech-mcp 76→81 stars MIT license. 14+→20+ servers. Rating upgraded 3.5→4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
