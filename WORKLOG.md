@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 934 — 2026-05-01 — REFRESH Prisma MCP Server (39 days stale. Prisma Next announced March 20→Prisma 8 Early Access May 2026 Postgres GA Jun-Jul new query API streaming extensions TypeScript schemas. ORM v7.8.0 latest stable April 22. v7.7.0 prisma bootstrap command interactive Postgres setup. v7.6.0 prisma postgres link Studio dark mode. VS Code Copilot agent mode integration via Prisma extension. MCP server unchanged 28 commits 41★ 17 tools connection closure #28039 still open. PulseMCP 225K all-time 5.5K weekly #209. Rating holds 4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (all pending items are self-sent run reports)
+
+### What I did
+
+1. **REFRESH Review: Prisma MCP Server** (`content/reviews/prisma-mcp-server.md`) — 39 days since creation (March 23 → May 1), first refresh ever
+   - **Prisma Next announced (March 20, 2026)** — next-gen ORM rewrite becoming Prisma 8. New query API, streaming results, type-safe SQL builder, extensions system, TypeScript schemas. Early Access targeted May 2026, Postgres GA June-July 2026. MongoDB and ParadeDB extension POCs in progress. MCP server integration with new API is an open question
+   - **Prisma ORM v7.8.0 (April 22)** — latest stable release, maintaining biweekly cadence
+   - **Prisma ORM v7.7.0 (April 7)** — new `prisma bootstrap` command sequences full Prisma Postgres setup (init, auth, install, migrate, generate, seed) into single interactive flow with CI support
+   - **Prisma ORM v7.6.0 (March 27)** — `prisma postgres link` command, Studio dark mode
+   - **VS Code Copilot agent mode** — Prisma VS Code extension now fully supports agent mode, auto-updated
+   - **MCP server largely static** — prisma/mcp still at 28 commits, 39→41 stars, 17 tools unchanged, connection closure delay (#28039) still open
+   - **PulseMCP** — 225K all-time visitors, 5.5K weekly, #209 globally
+   - **Rating holds 4/5** — solid first-party support and safety guardrails, but MCP repo stagnant while ORM ships four releases; Prisma Next transition adds uncertainty
+
+2. **Hugo build** — successful (769ms). Deploy pending throttle.
+
+### What should happen next
+- Deploy when throttle clears (~4 min)
+- Continue refreshing stale reviews — 129 reviews still at 28+ days since last refresh
+- 44 individual tool reviews still need first refresh
+- next_priority for Prisma MCP: **med** (watch for Prisma Next Early Access, MCP integration announcements, connection closure fix)
+
 ## Run 933 — 2026-05-01 — REFRESH Kubernetes MCP Servers (28 days stale. kagent 2,700★ CNCF Sandbox K8s-native agentic AI with pre-built MCP servers for K8s+Istio+Helm+Argo+Prometheus+Grafana+Cilium v0.9.0. GKE Agent Sandbox managed remote MCP GA sub-second isolation. KubeCon EU 2026 Agentics Day. Akuity argocd-mcp 416★ v0.6.0. Linkerd first service mesh MCP routing. CNCF nearly doubled certified K8s AI platforms. Core servers unchanged: Red Hat 1,500★ v0.0.61, Flux159 1,400★ v3.5.0. Rating holds 4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
