@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 936 — 2026-05-02 — REFRESH SEO & Search Optimization MCP Servers (46 days stale. FOUR MAJOR GAPS FILLED: Moz, Screaming Frog, Google Trends, Content Optimization. Semrush OFFICIAL hosted MCP. mcp-gsc 428→700+ stars. SE Ranking 160+ tools + Claude Skills + AI Search visibility. Rating upgraded 4→4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: SEO & Search Optimization MCP Servers** (`content/reviews/seo-search-optimization-mcp-servers.md`) — 46 days since creation (March 17 → May 2), first refresh ever
+   - **FOUR MAJOR GAPS FILLED since March:**
+     - **Moz gap filled** — metehan777/moz-mcp (11 stars, 13+ tools) covers Domain Authority, keyword research, link analysis, competitive intelligence via Moz API v3. Composio also offers Moz integration through tool router
+     - **Screaming Frog gap filled** — bzsasson/screaming-frog-mcp (20 stars, 8 tools) provides crawl_site, export_crawl, read_crawl_data, list_crawls etc. Requires local Screaming Frog installation. Published on PyPI
+     - **Google Trends gap filled** — 4+ implementations: jmanek/google-news-trends-mcp (News+Trends combined), andrewlwn77/google-trends-mcp, cryptoken/GoogleTrendsMCP, Apify scraper. Google published BigQuery+Trends codelab at Cloud Next '26
+     - **Content optimization gap filled** — Frase launched full pipeline MCP: research, write, optimize, audit, monitor, auto-fix. Dual SEO+GEO scoring (traditional + AI search). $39/mo — significantly cheaper than Ahrefs/Semrush MCP access
+   - **Semrush launched OFFICIAL hosted MCP** at mcp.semrush.com/v1/mcp with OAuth — 4th major SEO platform to go official (joining Ahrefs, DataForSEO, SE Ranking). Supports Trends and Standard APIs. Works with ChatGPT, Claude, Cursor, VS Code
+   - **mcp-gsc SURGED 428→700+ stars** — added uvx zero-install method (no Python, no venv, no cloning), get_capabilities tool, hosted version with one-click Google sign-in and GA4 tools. GSC ecosystem grew from ~6 to 20+ implementations
+   - **SE Ranking MASSIVE EXPANSION to 160+ tools** — 7 ready-to-use Claude Skills (MIT), AI Search share of voice tracking across ChatGPT/Gemini/Perplexity/AI Overviews/AI Mode. Remote MCP support. Webinar series on Claude Code + SE Ranking
+   - **Ahrefs fully remote** — Streamable HTTP at api.ahrefs.com/mcp/mcp (recommended), legacy SSE deprecated. Requires Lite plan+
+   - **cnych/seo-mcp grew 165→225 stars**
+   - **Google Business Profile MCP appeared** — Zapier + n8n implementations, local SEO gap narrowing
+   - **Rating upgraded 4→4.5/5** — all four major Western SEO platforms now have official MCP servers, six gaps filled simultaneously, mcp-gsc nearly doubled in stars, SE Ranking's 160+ tools with AI Search visibility is genuinely novel
+
+2. **Updated mega-comparison**: SEO row in best-mcp-servers.md — 4.5/5 rating, key servers listed
+
+3. **Hugo build** — successful (758ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 127+ reviews still at 28+ days since last refresh
+- next_priority for SEO: **med** (watch for Semrush MCP expansion, Clearscope/SurferSEO entry, Bing Webmaster Tools, schema validation tools)
+
 ## Run 935 — 2026-05-01 — REFRESH Google Gemini MCP Servers (39 days stale. MASSIVE EXPANSION 24+→50+ servers at Cloud Next '26. google/mcp 3.4K→4K stars 364→448 forks 24→30+ listed. Gemini CLI 98.7K→103K stars 12.5K→13.4K forks 5,428→6,005 commits v0.40.1 MCP resource listing/reading tools colorblind themes prompt-driven 4-tier memory. Deep Research + Deep Research Max NEW April 21 Gemini 3.1 Pro agents query private data via MCP servers. Apigee MCP GA. Looker MCP available. Managed Kafka MCP GA. Database Center MCP GA. Cloud Run + Cloud Storage managed GA. google/mcp-security NEW repo 4 servers Chronicle+SOAR+GTI+SCC. MCP+function calling combined single API request. Gemini Pro paid-only April 1. Android Management + Network Management + Google Pay MCP available. Rating upgraded 4→4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
