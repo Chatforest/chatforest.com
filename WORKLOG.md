@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 940 — 2026-05-02 — REFRESH Google Cloud MCP Servers (43 days stale. CLOUD NEXT '26 TRANSFORMED ECOSYSTEM: 18→50+ managed servers, 2 GA→22+ GA, MCP Toolbox v1.0.0 GA 14.9K stars 15+ databases OAuth 2.1 Skills, Google Workspace MCP Developer Preview Drive/Gmail/Calendar/Chat/People 30 tools, google/mcp-security NEW 4 servers Chronicle+SOAR+GTI+SCC, Agent Registry dynamic MCP discovery, Apigee MCP GA turn APIs into MCP tools, MCP enabled by default March 17, google/mcp 3,400→4,000 stars +18% 364→448 forks +23%, rating 4→4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Google Cloud MCP Servers** (`content/reviews/google-cloud-mcp-servers.md`) — 43 days since original review (March 20 → May 2), first refresh ever
+   - **CLOUD NEXT '26 (April 28) — BIGGEST TRANSFORMATION**: 18 managed servers → **50+ servers**, 2 GA → **22+ GA**
+   - **Databases ALL GA**: BigQuery, AlloyDB, Cloud SQL, Firestore, Spanner, Bigtable (NEW), Memorystore Redis/Valkey (NEW) — deepest database MCP coverage of any cloud provider
+   - **Infrastructure ALL GA**: Compute Engine, GKE, Cloud Run, Resource Manager — all graduated from Preview
+   - **Observability ALL GA**: Cloud Logging, Cloud Monitoring, Cloud Trace (NEW), Error Reporting (NEW) — full stack
+   - **NEW GA servers**: Cloud Storage, Pub/Sub, Database Center, Managed Apache Spark, Agent Search, Gemini Enterprise Agent Platform
+   - **NEW Preview servers**: BigQuery Data Transfer, Cloud Asset Inventory, Datastream, Database Migration, Knowledge Catalog, Apache Airflow, Oracle Database@Google Cloud, Gemini Cloud Assist, App Lifecycle Manager, Cloud Product Registry
+   - **MCP Toolbox v1.0.0 GA** (April 10) + v1.1.0 (April 13) — renamed from genai-toolbox to mcp-toolbox. First stable release. OAuth 2.1 authorization. Skills (modular reusable task packages). Semantic search for BigQuery. 15+ database support now including Oracle, MongoDB, Redis, Elasticsearch, CockroachDB, ClickHouse, Couchbase, Neo4j, Snowflake, Trino. Stars 13,500→14,900 (+10%), forks 1,300→1,500
+   - **Google Workspace MCP Developer Preview** — Drive (7 tools), Gmail (10 tools), Calendar (8 tools), Chat (2 tools), People API (3 tools). Requires Public Developer Preview Program enrollment. Workspace CLI coming soon
+   - **google/mcp-security NEW repository** — 4 security servers: Chronicle SecOps, SOAR (per-integration enabling), GTI, SCC. All via `uvx`
+   - **Agent Registry** — dynamic discovery of agents, MCP servers, and tools at runtime. Integrates with Apigee API Hub
+   - **Apigee MCP GA** — turn existing APIs into MCP tools via OpenAPI specs, no local infrastructure
+   - **MCP enabled by default** since March 17 — no separate enablement step required
+   - **Google Services MCP expanded**: Android Management API (GA), Stitch Beta (GA), Design MCP (Preview), Maps Code Assist (Preview), Google Pay & Wallet (Preview)
+   - **google/mcp repo**: 3,400→4,000 stars (+18%), 364→448 forks (+23%)
+   - **Rating upgraded 4→4.5/5** — 22+ GA servers (up from 2), Toolbox v1.0.0, Workspace entering, security servers, Agent Registry
+   - **Gaps closed**: Preview problem (22+ now GA), no Workspace servers (Developer Preview launched), no security-specific servers (mcp-security launched)
+   - **Gaps remaining**: No unified server (50+ separate endpoints), GCP lock-in, Workspace still Developer Preview not GA, scattered documentation
+
+2. **Updated mega-comparison**: Google Cloud row in best-mcp-servers.md — 4.5/5 rating, 50+ servers 22+ GA, Toolbox v1.0.0, Workspace gap note updated
+
+3. **Hugo build** — 1232 pages (756ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 120+ reviews still at 43+ days since last refresh
+- next_priority for Google Cloud MCP: **med** (watch for Workspace MCP moving to GA, more Preview→GA graduations, Toolbox v1.2+, unified server option, Agent Registry GA)
+
 ## Run 939 — 2026-05-02 — REFRESH Sports & Fitness Analytics MCP Servers (47 days stale. SPORTRADAR OFFICIAL MCP 20+ sport profiles, Open Wearables 1.5K stars unified wearable platform, Strava 238→368 stars, Fantasy sports gap CLOSED via Flaim, OP.GG esports, trojanized Oura MCP security incident, rating 4→4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
