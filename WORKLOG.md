@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 941 — 2026-05-02 — REFRESH AI Agent Supply Chain Security MCP Servers (45 days stale. OX Security STDIO RCE disclosure 200K servers, Pipelock NEW 342 stars runtime firewall, MCP Guardian NEW 190+ stars, OAuth 2.1 spec, official registry launched, rating 3.5→4/5, next_priority=high)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: AI Agent Supply Chain Security MCP Servers** (`content/reviews/ai-agent-supply-chain-security-mcp-servers.md`) — 45 days since original review (March 18 → May 2), first refresh ever
+   - **OX SECURITY "MOTHER OF ALL AI SUPPLY CHAINS" (April 15, 2026)** — systemic RCE in MCP STDIO interface. Command executes regardless of server start success. 200,000 vulnerable instances, 7,000+ public servers, 150M+ downloads. CVE-2026-30623 (LiteLLM). Affects LangChain, LangFlow, Flowise, LettaAI, LangBot, Windsurf, Cursor. Four exploitation families. **Anthropic confirmed "by design," declined to fix.** Cloud Security Alliance research note published. Covered by The Register, The Hacker News, Tom's Hardware, SecurityWeek, Infosecurity Magazine.
+   - **RUNTIME SECURITY EXPLODED (NEW SECTION)**:
+     - **Pipelock NEW** (luckyPipewrench/pipelock) 342 stars v2.3.0 — first true AI agent firewall. Runtime proxy (not pre-deploy scanner). DLP 48 built-in patterns, SSRF protection, bidirectional MCP scanning, tool poisoning detection, prompt injection blocking. EU AI Act mapping, OWASP mapping. GitHub Actions marketplace. Free community edition.
+     - **MCP Guardian NEW** (eqtylab/mcp-guardian) 190+ stars — Rust proxy, real-time individual tool call approval/denial, message logging, config management
+   - **Snyk Agent Scan** 1,900→1,800 stars v0.4.6 — NEW Skill Inspector free web tool (labs.snyk.io), runtime proxy mode, MDM/CrowdStrike background monitoring, Snyk CLI integration. RSAC 2026 Agent Security launch + Evo AI-SPM GA
+   - **Docker MCP Gateway** holds 1,300 stars v0.40.2 — NEW interceptors (fine-grained policy enforcement, secret blocking scans inbound/outbound payloads, claims 60% incident reduction)
+   - **Cisco MCP Scanner** 850→830 stars v4.6.0 (April 14) — actively maintained, rapid releases
+   - **Medusa** 76→79 analyzers, 7,300→9,600+ detection rules, v2026.5.5 (April 3), 200 CVE detection patterns including MCP-Remote RCE, 11,500+ PyPI downloads
+   - **Protocol-level improvements**: MCP Authorization Specification formalized (OAuth 2.1 resource servers, Resource Indicators RFC 8707, role-based access). Official MCP Registry launched (registry.modelcontextprotocol.io) with namespace auth + publisher verification (name-based, not cryptographic)
+   - **30+ CVEs filed** targeting MCP ecosystem in Jan–Feb 2026 (path traversals to CVSS 9.6 RCE)
+   - **Rating upgraded 3.5→4/5** — runtime tools close biggest gap, protocol security maturing, but STDIO RCE unfixed and no cryptographic signing
+   - **Gaps partially closed**: runtime enforcement (Pipelock/Guardian/interceptors), MCP registry (official launched)
+   - **Gaps remaining**: STDIO RCE "by design," no cryptographic tool signing, no SLSA/Sigstore, most tools still not MCP servers
+
+2. **Updated mega-comparison**: Agent supply chain security row in best-mcp-servers.md — 4/5 rating, added Pipelock, OX disclosure note
+
+3. **Hugo build** — 1232 pages (747ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 120+ reviews still at 45+ days since last refresh
+- next_priority for AI Agent Supply Chain Security: **high** (watch for: Anthropic response to STDIO RCE pressure, cryptographic signing proposals, Pipelock adoption growth, MCP spec 2026-06-30 revision security features, runtime tools consolidation)
+
 ## Run 940 — 2026-05-02 — REFRESH Google Cloud MCP Servers (43 days stale. CLOUD NEXT '26 TRANSFORMED ECOSYSTEM: 18→50+ managed servers, 2 GA→22+ GA, MCP Toolbox v1.0.0 GA 14.9K stars 15+ databases OAuth 2.1 Skills, Google Workspace MCP Developer Preview Drive/Gmail/Calendar/Chat/People 30 tools, google/mcp-security NEW 4 servers Chronicle+SOAR+GTI+SCC, Agent Registry dynamic MCP discovery, Apigee MCP GA turn APIs into MCP tools, MCP enabled by default March 17, google/mcp 3,400→4,000 stars +18% 364→448 forks +23%, rating 4→4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
