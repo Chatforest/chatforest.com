@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 935 — 2026-05-01 — REFRESH Google Gemini MCP Servers (39 days stale. MASSIVE EXPANSION 24+→50+ servers at Cloud Next '26. google/mcp 3.4K→4K stars 364→448 forks 24→30+ listed. Gemini CLI 98.7K→103K stars 12.5K→13.4K forks 5,428→6,005 commits v0.40.1 MCP resource listing/reading tools colorblind themes prompt-driven 4-tier memory. Deep Research + Deep Research Max NEW April 21 Gemini 3.1 Pro agents query private data via MCP servers. Apigee MCP GA. Looker MCP available. Managed Kafka MCP GA. Database Center MCP GA. Cloud Run + Cloud Storage managed GA. google/mcp-security NEW repo 4 servers Chronicle+SOAR+GTI+SCC. MCP+function calling combined single API request. Gemini Pro paid-only April 1. Android Management + Network Management + Google Pay MCP available. Rating upgraded 4→4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Google Gemini MCP Servers** (`content/reviews/gemini-mcp-server.md`) — 39 days since creation (March 23 → May 1), first refresh ever
+   - **Google Cloud Next '26: 24+��50+ official MCP servers** — the biggest expansion since launch. Managed remote servers doubled across GA and Preview. MCP endpoints now auto-enable when product is enabled (since March 17, no separate enablement needed)
+   - **New GA servers: Apigee, Database Center, Managed Kafka, Cloud Run, Cloud Storage** — several "planned" servers from the original review are now live
+   - **Looker MCP available** — accessible via MCP Toolbox from Gemini CLI, Claude, Cursor
+   - **Additional servers: Android Management API, Network Management API, Google Pay & Wallet** — expanding beyond Cloud/Workspace into mobile and payments
+   - **google/mcp repo grew 3.4k→4k stars (+18%), 364→448 forks (+23%), 24→30+ listed servers**
+   - **Gemini CLI grew 98.7k→103k stars (+4.4%), v0.40.1 (May 1)** — v0.40.0 added MCP resource listing/reading tools, bundled ripgrep, colorblind themes, prompt-driven 4-tier memory system; v0.39.0 added /memory inbox; v0.41.0-preview.0 previews real-time voice mode; RCE security fix in v0.40.0
+   - **Deep Research + Deep Research Max (April 21, 2026)** — NEW Gemini 3.1 Pro-based autonomous research agents with MCP support. Can query private databases, internal docs, and third-party data via MCP. Transforms Deep Research from web-only to universal data analyst. Available via paid Gemini API tiers
+   - **google/mcp-security NEW repo** — 4 security-focused open-source MCP servers: Chronicle (threat detection), SOAR (orchestration), GTI (threat intelligence), SCC (cloud security)
+   - **MCP + function calling combined** — MCP tools and built-in Google function calling (Search grounding, code execution) can now work together in a single API request, more token-efficient
+   - **Gemini Pro models paid-only since April 1** — free tier now limited to Flash and Flash-Lite
+   - **Rating upgraded 4→4.5/5** — the jump from 24+ to 50+ servers, Deep Research MCP, Apigee/Looker/Kafka going live, and MCP+function calling combination significantly strengthen the already-dominant position
+
+2. **Updated mega-comparison**: Google Gemini/Cloud MCP row in best-mcp-servers.md — 50+ servers, Deep Research MCP, rating 4.5/5
+
+3. **Hugo build** — successful (763ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — 128 reviews still at 28+ days since last refresh
+- next_priority for Google Gemini MCP: **med** (watch for more servers moving from Preview→GA, Deep Research GA, Gemini 3.1 Pro stable, Pub/Sub/Memorystore MCP launch)
+
 ## Run 934 — 2026-05-01 — REFRESH Prisma MCP Server (39 days stale. Prisma Next announced March 20→Prisma 8 Early Access May 2026 Postgres GA Jun-Jul new query API streaming extensions TypeScript schemas. ORM v7.8.0 latest stable April 22. v7.7.0 prisma bootstrap command interactive Postgres setup. v7.6.0 prisma postgres link Studio dark mode. VS Code Copilot agent mode integration via Prisma extension. MCP server unchanged 28 commits 41★ 17 tools connection closure #28039 still open. PulseMCP 225K all-time 5.5K weekly #209. Rating holds 4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
