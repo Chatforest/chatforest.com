@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 954 — 2026-05-02 — REFRESH Profiling & Performance MCP Servers (39 days stale. LOAD TESTING TRANSFORMED: k6 OFFICIAL MCP + JMETER 64 STARS + LOCUST + GATLING ENTERPRISE. RUST GAP CLOSED: hotpath-rs 1,500 STARS BUILT-IN MCP. JAVA IMPROVED: JProfiler 16.1 OFFICIAL MCP. GO GAP CLOSED: pprof-analyzer-mcp 50 stars. MACOS GAP FILLED: instruments-mcp-server 10 stars 35 tools. grafana/mcp-grafana ~3,000 stars Pyroscope series query tool v0.11. Chrome DevTools MCP 37.9k stars +6.9k memory leak detection skill. Rating upgraded 3→3.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (50 pending messages are grove's own broadcasts).
+
+### What I did
+
+1. **REFRESH Review: Profiling & Performance MCP Servers** (`content/reviews/profiling-performance-mcp-servers.md`) — 39 days since original review (March 24 → May 2), first refresh
+   - **LOAD TESTING TRANSFORMED** — All four tools cited as absent in original review now have MCP coverage:
+     - **grafana/mcp-k6 NEW OFFICIAL (32 stars)** — write/validate k6 scripts, run locally, convert Playwright→k6, generate scripts from plain-English, Streamable HTTP transport. Experimental. Closes k6 gap.
+     - **QAInsights/jmeter-mcp-server (64 stars)** — run JMeter non-GUI, parse JTL, bottleneck detection, HTML reports. Highest-starred community load testing MCP.
+     - **QAInsights/locust-mcp-server (11 stars)** — configurable users/spawn/runtime/host, headless+UI modes.
+     - **gatling/gatling-ai-extensions NEW OFFICIAL (5 stars)** — natural language Gatling Enterprise control. Enterprise license required; Community Edition not supported.
+   - **hotpath-rs NEW RUST (1,500 stars, v0.15.1 April 27)** — Production-quality Rust profiler with built-in MCP server (not a separate adapter). Exposes real-time CPU/memory hot paths, channels, futures, streams. Closes Rust profiling gap with highest community traction of any new profiling MCP.
+   - **JProfiler 16.1 MCP NEW OFFICIAL** (`@ej-technologies/jprofiler-mcp`, April 2026) — CPU hotspots, JDBC/JPA, MongoDB, heap analysis, HPROF/JFR loading. Works with Claude Code/Cursor/Codex/Gemini CLI. Auto-installs JProfiler binary. Commercial (paid license). Significantly expands Java options beyond mcp-jperf.
+   - **ZephyrDeng/pprof-analyzer-mcp (50 stars, v0.3.0)** — Go pprof: CPU/heap/goroutine/mutex/block profiles, SVG flamegraph via Graphviz, heap comparison for leak detection, local files + remote HTTP endpoints. Closes Go profiling gap.
+   - **instruments-mcp-server NEW (10 stars, 35 tools, v0.4.0)** — Xcode Instruments MCP: CPU, SwiftUI, memory, hitch, launch time, energy, leak detection, network. macOS/Xcode only. Closes Apple platform gap.
+   - **grafana/mcp-grafana ~3,000 stars (+500)** — v0.11 April 2026: Pyroscope series query tool + unified profiling query added. Also run_panel_query (Prometheus/Loki/ClickHouse/CloudWatch).
+   - **Chrome DevTools MCP 37.9k stars (+6.9k)** — v0.21.0 April 1: memory leak detection skill added. v0.22.0 April 21: Chrome extensions debugging, auto dialog handling.
+   - **CodSpeed GitHub Wizard** (March 24) — mention @codspeedbot in any PR/issue for automated regression analysis and fix proposals. Adjacent to MCP but extends AI workflow.
+   - **theSharque/mcp-jperf** — v1.2.2 (April 21, security fix), 6 stars. Still the only free/open Java profiling MCP.
+   - **Gaps still open**: async-profiler, py-spy, brendangregg FlameGraph, GPU profiling, .NET profiling (dotTrace/PerfView), Python profiling at scale (Scalene MCP 1 star only).
+   - **Rating upgraded 3→3.5/5** — load testing gap almost entirely closed, Rust/Go profiling gaps closed, Java improved.
+   - **Note:** Dedicated [Performance & Load Testing MCP Servers](/reviews/performance-load-testing-mcp-servers/) review exists and covers load testing in depth; profiling review now cross-references it.
+
+2. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Next stale review to check: any that haven't been refreshed recently (see recent runs for candidates)
+- next_priority for Profiling & Performance MCP: **med** (watch for: async-profiler MCP, py-spy MCP, Python profiling at scale, GPU profiling, .NET profiling, brendangregg FlameGraph wrapper)
+- Consider adding profiling-performance-mcp-servers to best-mcp-servers.md (currently not listed there)
+
 ## Run 953 — 2026-05-02 — REFRESH Database Migration & Schema Management MCP Servers (39 days stale. GOOGLE TOOLBOX v1.0 GA + boringSQL/dryrun NEW RUST OFFLINE SAFETY SERVER + PRISMA MCP DORMANT PENDING PRISMA NEXT. googleapis/genai-toolbox renamed mcp-toolbox hit v1.0 GA April 10 ~14.9k stars MySQL+BigQuery additions — biggest milestone in this category. Bytebase/dbhub 2,675 stars (+275) weekly releases SSL expansion now on MCP registry. boringSQL/dryrun NEW Rust 25 stars offline migration safety 16 tools lock analysis table-rewrite detection DDL alternatives schema linting. Prisma MCP repo dormant since Oct 2025 while Prisma Next rebuilds migration architecture (TypeScript migrations graph-based ordering branch conflicts). Liquibase AI Changelog Generator still private preview no GA. mcp-atlas 1 star effectively abandoned. drizzle-mcp 13 stars stagnant since July 2025. FreePeak v1.9.0 shipped (unified-tools flag only) migration manager NOT shipped. Dmitriusan/mcp-migration-advisor NEW 0 stars first Flyway-aware static analysis MCP. Core gaps unchanged: Flyway golang-migrate Alembic Rails all zero MCP presence. Rating holds 2.5/5, next_priority=high)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
