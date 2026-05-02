@@ -493,8 +493,10 @@ Context7 solves a real problem: AI agents hallucinate APIs because their trainin
 But popularity doesn't mean perfection. A [ContextCrush context poisoning vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) was [patched February 23, 2026](https://www.infosecurity-magazine.com/news/contextcrush-ai-development-tools/), the free tier was cut 83–92% in January 2026, and community-contributed docs are unverified against official sources. Competitors are now publishing head-to-head benchmarks — [Nia claims 52.1% hallucination rate vs. Context7's 63.4%](https://www.trynia.ai/blog/nia-vs-context7).
 
 **Alternatives worth considering:**
-- **[GitMCP](/reviews/gitmcp-server/)** (4/5, [7,800 stars](https://github.com/nicholasgriffintn/gitmcp)) — replace `github.com` with `gitmcp.io` in any URL. Zero setup, free, works with any public repo. Best for libraries Context7 hasn't indexed.
-- **Docs MCP Server** (1,200 stars) — fully local, code never leaves your machine. Best for privacy-sensitive work.
+- **[GitMCP](/reviews/gitmcp-server/)** (4/5, [8,000 stars](https://github.com/idosal/git-mcp)) — replace `github.com` with `gitmcp.io` in any URL. Zero setup, free, works with any public repo. Best for libraries Context7 hasn't indexed.
+- **Docs MCP Server** (1,300 stars) — fully local, code never leaves your machine. Best for privacy-sensitive work.
+- **[LangChain mcpdoc](https://github.com/langchain-ai/mcpdoc)** (982 stars) — bridges the llms.txt standard to IDEs. Any site publishing llms.txt becomes accessible through MCP.
+- **Google Developer Knowledge API** (official) — programmatic access to all Google developer documentation with 24-hour re-indexing. SearchDocumentChunks, GetDocument, AnswerQuery tools.
 - **Ref.Tools** (1,000 stars) — smart chunking extracts exactly the tokens needed. Best for large API docs where context bloat is a problem.
 - **Docfork** ([471 stars](https://github.com/docfork/docfork)) — "Cabinets" for project-specific context isolation, hybrid search (semantic + BM25). Best for teams with multiple tech stacks.
 - **Nia** (Y Combinator-backed) — indexes source code directly, [claims lower hallucination rates](https://www.trynia.ai/blog/nia-vs-context7). Best for bleeding-edge framework work.

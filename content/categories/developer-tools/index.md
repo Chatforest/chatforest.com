@@ -93,7 +93,7 @@ IDE integration, documentation, and workflow tooling.
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [IDE & Code Editor](/reviews/ide-code-editor-mcp-servers/) | 3.5/5 | VS Code MCP (built-in), JetBrains MCP (official), Neovim (community) |
-| [Documentation Tooling](/reviews/documentation-tooling-mcp-servers/) | 3.5/5 | GitMCP (7.8k stars), Microsoft Learn MCP (1.5k stars), Mintlify (auto-generated) |
+| [Documentation Tooling](/reviews/documentation-tooling-mcp-servers/) | 4/5 | Google Developer Knowledge (official), GitMCP (8k stars), LangChain mcpdoc (982 stars llms.txt bridge), Microsoft Learn (1.6k stars), GitBook auto-MCP, Sphinx MCP appearing |
 | [Terminal & CLI Tools](/reviews/terminal-cli-tools-mcp-servers/) | 4/5 | 30+ servers — inspector (9,500 stars), wong2/mcp-cli (430 stars +274%), tmux (233 stars), shell execution (170 stars each), SSH manager (146 stars, 37 tools). TWO GAPS FILLED: systemd-mcp + supervisord-mcp (process mgmt), PowerShell.MCP (10K+ modules) |
 | [Context7](/reviews/context7-mcp-server/) | 3.5/5 | 50.1K stars, 10.1M visitors — real-time library docs for AI agents, Skills plugin, patched context poisoning vuln |
 | [ReactBits](/reviews/reactbits-mcp-server/) | 3.5/5 | 135+ animated React components (CSS + Tailwind), 5 tools, ReactBits.dev library (24K+ stars) |

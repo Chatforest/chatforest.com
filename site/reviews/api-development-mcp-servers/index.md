@@ -1,23 +1,48 @@
 # API Development MCP Servers — OpenAPI Converters, GraphQL, gRPC, and the Rise of Spec-to-Server Generation
 
-> API development MCP servers are dominated by OpenAPI-to-MCP converters: openapi-mcp-generator (495 stars), Apollo GraphQL (275 stars, Rust, 1.5k commits), Postman official (192
+> API development MCP servers surging: openapi-mcp-server (889 stars, NEW #1), Agoda APIAgent (271 stars, GraphQL+REST+DuckDB SQL), openapi-mcp-generator (576 stars +16%), Apollo v1.13.0 MCP prompts
 
 
-**At a glance:** API development MCP servers are dominated by a single powerful pattern: **convert an API specification into MCP tools**. OpenAPI-to-MCP converters — [openapi-mcp-generator](https://github.com/harsha-iiiv/openapi-mcp-generator) (495 stars), [emcee](https://github.com/loopwork/emcee) (320 stars), [AWS Labs OpenAPI MCP](https://github.com/awslabs/mcp) (part of 8.5k-star monorepo), [Swagger-MCP](https://github.com/Vizioz/Swagger-MCP) (146 stars) — dynamically generate MCP tools from OpenAPI/Swagger specs, letting AI agents call any REST API without manual tool definitions. GraphQL has official vendor support from [Apollo](https://github.com/apollographql/apollo-mcp-server) (275 stars, Rust, 1,576 commits) and a strong community server ([mcp-graphql](https://github.com/blurrah/mcp-graphql), 374 stars). gRPC gets Redpanda's [protoc-gen-go-mcp](https://github.com/redpanda-data/protoc-gen-go-mcp) (190 stars), a compiler plugin that auto-generates Go MCP servers from .proto files. This is the **fourteenth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
+**At a glance:** API development MCP servers are surging with **two major new entries** and a **revived Postman**. [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) (889 stars, NEW) is now the **most-starred OpenAPI MCP server**, enabling AI to search and explore specs via oapis.org. [Agoda APIAgent](https://github.com/agoda-com/api-agent) (271 stars, NEW) is the **first universal GraphQL+REST MCP proxy** with DuckDB SQL post-processing and recipe learning — zero code, zero deployment. [openapi-mcp-generator](https://github.com/harsha-iiiv/openapi-mcp-generator) grew to 576 stars (+16%). [Apollo MCP](https://github.com/apollographql/apollo-mcp-server) reached v1.13.0 with MCP prompts, config hot reloading, and Rhai scripting extensibility. [Postman](https://github.com/postmanlabs/postman-mcp-server) **REVIVED** (227 stars, v2.8.7) with OAuth 2.0 remote server at mcp.postman.com — closing the biggest gap from our original review. API gateway platforms consolidating around hosted MCP: Salesforce GA April 2026, Apigee fully managed, MuleSoft API Catalog. This is the **fourteenth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
 
-The API management market is projected at $6.89–10B in 2025, growing to $19.28B by 2030. REST dominates (~83% of web services), but GraphQL adoption has exploded — 50%+ of enterprises now use it in production (up from 10% in 2021), with 340% growth among Fortune 500 companies (2023–2025). gRPC is the de facto standard for internal microservices at Netflix, Uber, and Google. The MCP ecosystem reflects this multi-protocol reality: unlike most Developer Tools categories where one protocol dominates, API development MCP servers must bridge REST, GraphQL, and gRPC — and the spec-to-server pattern is the unifying approach.
+The API management market is projected at $6.89–10B in 2025, growing to $19.28B by 2030. REST dominates (~83% of web services), but GraphQL adoption has exploded — 50%+ of enterprises now use it in production (up from 10% in 2021), with 340% growth among Fortune 500 companies (2023–2025). gRPC is the de facto standard for internal microservices at Netflix, Uber, and Google. Gartner estimates the API and MCP testing tools market at $582M for 2026, with MCP-related inquiries growing 300% year-over-year. The MCP ecosystem reflects this multi-protocol reality: unlike most Developer Tools categories where one protocol dominates, API development MCP servers must bridge REST, GraphQL, and gRPC — and the spec-to-server pattern is evolving from simple conversion to intelligent post-processing (Agoda APIAgent's DuckDB SQL layer) and full agent generation (cnoe-io's LangGraph output).
 
-**Architecture note:** API development MCP servers follow four patterns. **Spec-to-server converters** (openapi-mcp-generator, emcee, AWS Labs, Swagger-MCP, swagger-mcp) transform OpenAPI/Swagger specifications into MCP tools automatically — the dominant pattern. **Protocol bridges** (Apollo MCP, mcp-graphql, protoc-gen-go-mcp) provide native access to GraphQL and gRPC APIs through MCP. **API testing platforms** (Postman MCP, mcp-insomnia) expose collection management, request execution, and test reporting. **API mocking servers** (MockLoop, WireMock MCP, MSW MCP) generate mock endpoints from specs for development and testing.
+**Architecture note:** API development MCP servers follow five patterns. **Spec-to-server converters** (openapi-mcp-generator, openapi-mcp-server, emcee, AWS Labs, Swagger-MCP) transform OpenAPI/Swagger specifications into MCP tools automatically — the dominant pattern. **Intelligent API proxies** (Agoda APIAgent, cnoe-io/openapi-mcp-codegen) go beyond simple conversion: APIAgent adds DuckDB SQL post-processing and recipe caching; cnoe-io generates full LangGraph agents with evaluation frameworks. **Protocol bridges** (Apollo MCP, mcp-graphql, protoc-gen-go-mcp) provide native access to GraphQL and gRPC APIs through MCP. **API testing platforms** (Postman MCP, mcp-insomnia) expose collection management, request execution, and test reporting. **API mocking servers** (MockLoop, WireMock MCP, MSW MCP) generate mock endpoints from specs for development and testing.
 
 ## What's Available
 
-### openapi-mcp-generator — Dynamic MCP from Any OpenAPI Spec (Most Starred)
+### openapi-mcp-server — AI-Friendly OpenAPI Exploration via oapis.org (NEW — Most Starred)
+
+| Aspect | Detail |
+|--------|--------|
+| Repository | [janwilmake/openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) |
+| Stars | ~889 |
+| Forks | ~93 |
+| Language | TypeScript (100%) |
+| License | MIT |
+| Commits | 56 |
+
+**Key capabilities:**
+
+| Capability | Detail |
+|-----------|--------|
+| Spec search | Search and discover OpenAPI specs via oapis.org registry |
+| Simplified summaries | Translates complex specs into plain language for AI agents |
+| Endpoint details | Provides per-endpoint detail on demand without full spec loading |
+| Format support | JSON and YAML OpenAPI specifications |
+| Integration | Claude Desktop and Cursor |
+
+**Key differentiator:** The **most-starred dedicated OpenAPI MCP server** at 889 stars. Unlike converters that turn specs into tools, this server takes a **discovery-first approach** — AI agents can search for APIs, get simplified summaries, and drill into specific endpoints. This solves the context window problem differently: instead of generating 200 tools for a large API, the agent requests only the endpoint details it needs. Integration with oapis.org provides a searchable registry of OpenAPI specs.
+
+**Limitation:** Read-only discovery and exploration — the agent can learn about APIs but can't execute requests through this server. Requires pairing with an actual OpenAPI converter or direct API calls. Limited to specs available on oapis.org or user-provided specs. 56 commits suggests early-stage development despite high star count.
+
+### openapi-mcp-generator — Dynamic MCP from Any OpenAPI Spec
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [harsha-iiiv/openapi-mcp-generator](https://github.com/harsha-iiiv/openapi-mcp-generator) |
-| Stars | ~495 |
-| Forks | ~72 |
+| Stars | ~576 |
+| Forks | ~79 |
 | Language | TypeScript |
 | License | Not specified |
 | Transport | stdio, SSE, Streamable HTTP |
@@ -32,7 +57,7 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 | Auth support | API key, Bearer token, Basic auth, OAuth2 |
 | TypeScript output | Typed tool definitions for type-safe interactions |
 
-**Key differentiator:** The **most-starred dedicated OpenAPI-to-MCP converter**. Give it any OpenAPI 3.0+ spec and it dynamically generates MCP tools for every endpoint, handling authentication, validation, and proxying automatically. This is the purest expression of the spec-to-server pattern: one configuration step turns any documented REST API into an AI-accessible tool surface. Triple transport support (stdio, SSE, Streamable HTTP) makes it deployable in any MCP architecture.
+**Key differentiator:** The **most-starred OpenAPI-to-MCP converter** (576 stars, up from 495). Give it any OpenAPI 3.0+ spec and it dynamically generates MCP tools for every endpoint, handling authentication, validation, and proxying automatically. This is the purest expression of the spec-to-server pattern: one configuration step turns any documented REST API into an AI-accessible tool surface. Triple transport support (stdio, SSE, Streamable HTTP) makes it deployable in any MCP architecture. Now supports **OpenAPI filtering via `x-mcp` extension flags** to selectively expose endpoints.
 
 **Limitation:** Dynamically generated tools can produce large tool lists for complex APIs (hundreds of endpoints), which consumes LLM context window. No filtering or grouping mechanism to expose only relevant endpoints. License not specified on GitHub, which may concern enterprise adoption. Quality of generated tools depends entirely on the quality of the underlying OpenAPI spec — poorly documented APIs produce poor MCP tools.
 
@@ -41,8 +66,8 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 | Aspect | Detail |
 |--------|--------|
 | Repository | [loopwork/emcee](https://github.com/loopwork/emcee) |
-| Stars | ~320 |
-| Forks | ~24 |
+| Stars | ~321 |
+| Forks | ~25 |
 | Language | Go (89.3%) |
 | License | MIT |
 | Releases | 21 releases, v0.7.0 (October 2025) |
@@ -59,7 +84,7 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 
 **Key differentiator:** The **most mature and well-maintained OpenAPI-to-MCP converter**, with 21 releases and 88 commits indicating active development. The 1Password integration is unique — API credentials can be pulled from 1Password vaults rather than stored in plaintext configuration files. The Go implementation and Unix-utility spec transformation pipeline give it a composable, developer-friendly architecture. MIT license removes enterprise adoption barriers.
 
-**Limitation:** Tools only — no MCP resources or prompts support yet. stdio transport only limits remote deployment options. Spec transformation via Unix utilities is powerful but adds a learning curve. v0.7.0 suggests pre-1.0 stability expectations. Fewer stars than openapi-mcp-generator despite more releases, suggesting less visibility.
+**Limitation:** Tools only — no MCP resources or prompts support yet. stdio transport only limits remote deployment options. Spec transformation via Unix utilities is powerful but adds a learning curve. **Last release October 2025 (7 months ago)** — development appears stagnant while competitors like openapi-mcp-generator and openapi-mcp-server have surged ahead. v0.7.0 suggests pre-1.0 stability expectations.
 
 ### AWS Labs OpenAPI MCP Server
 
@@ -94,8 +119,8 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 | Forks | ~66 |
 | Language | Rust (98.8%) |
 | License | MIT / Elastic License 2.0 |
-| Commits | 1,576 |
-| Releases | 61 (v1.10.0, March 19, 2026) |
+| Commits | 1,576+ |
+| Releases | 70+ (v1.13.0, April 22, 2026) |
 
 **Key capabilities:**
 
@@ -103,11 +128,13 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 |-----------|--------|
 | GraphQL operations | Exposes GraphQL operations as MCP tools |
 | REST via Connectors | REST API integration through Apollo Connectors |
-| CJK/emoji support | International schema support (v1.10.0) |
+| MCP prompts | Reusable Markdown templates guiding AI through workflows (v1.13.0) |
+| Rhai scripting | Extensibility hooks with hot reloading (v1.11.0+) |
+| Config hot reload | Live config changes without restart (v1.12.0) |
+| MCP Apps | OpenAI Apps SDK support for ChatGPT, Goose (v1.8.0+) |
 | Dynamic tools | Tool list depends on user's GraphQL operations |
-| MCP Inspector | Compatible with the official MCP Inspector |
 
-**Key differentiator:** The **most actively developed MCP server in the API development category** — 1,576 commits, 61 releases, v1.10.0 as of March 2026. Apollo is the dominant GraphQL platform, and their official MCP server reflects serious investment. The Rust implementation prioritizes performance. REST API integration via Apollo Connectors means this server isn't GraphQL-only — it can bridge REST APIs through the GraphQL layer. The high release cadence (61 versions) indicates rapid iteration and responsiveness to the MCP specification evolution.
+**Key differentiator:** The **most actively developed MCP server in the API development category** — 1,576+ commits, 70+ releases, v1.13.0 as of April 2026. Nine releases in two months (v1.8.0→v1.13.0) since our last review. New in v1.11.0–v1.13.0: **Rhai script extensibility** with hot reloading for custom hooks, **MCP prompts** enabling reusable Markdown templates that guide AI through API workflows, **config hot reloading** without restarts, per-operation tool annotation overrides, and trace_id logging. The Rust implementation prioritizes performance. REST API integration via Apollo Connectors means this server isn't GraphQL-only. **MCP Apps support** (v1.8.0) enables serving AI apps built with Apollo Client to platforms like ChatGPT and Goose.
 
 **Limitation:** Dual-licensed (MIT and Elastic License 2.0) — the Elastic License restricts providing the software as a managed service. Requires Apollo platform knowledge. Dynamic tool generation depends on pre-defined GraphQL operations, meaning the server exposes what you've already built, not arbitrary GraphQL capabilities. 275 stars is modest compared to Apollo's broader platform adoption.
 
@@ -116,8 +143,8 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 | Aspect | Detail |
 |--------|--------|
 | Repository | [blurrah/mcp-graphql](https://github.com/blurrah/mcp-graphql) |
-| Stars | ~374 |
-| Forks | ~59 |
+| Stars | ~383 |
+| Forks | ~58 |
 | Language | TypeScript (96%) |
 | License | MIT |
 | Version | v2.0.4 (May 2025) |
@@ -134,18 +161,21 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 
 **Key differentiator:** The **most-starred GraphQL MCP server** at 374 stars, surpassing Apollo's official server. The mutations-disabled-by-default design is notable — it prevents AI agents from accidentally modifying data through GraphQL mutations until explicitly enabled. The simplicity (2 core tools) keeps it focused: discover a schema, then query it. Works with any GraphQL endpoint, not just Apollo-managed ones.
 
-**Limitation:** Only 2 tools — introspection and querying. No mutation support by default (safe but limiting for write operations). Last commit May 2025, suggesting maintenance-mode development. No type-safe query building or validation — the AI agent constructs raw GraphQL queries, which may produce invalid syntax. No subscription support.
+**Limitation:** Only 2 tools — introspection and querying. No mutation support by default (safe but limiting for write operations). **Last release May 2025 (12 months ago), 80 total commits** — effectively in maintenance mode while Apollo races ahead with 70+ releases. No type-safe query building or validation — the AI agent constructs raw GraphQL queries, which may produce invalid syntax. No subscription support.
 
 ### Postman MCP Server — Official API Testing Platform
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [postmanlabs/postman-mcp-server](https://github.com/postmanlabs/postman-mcp-server) |
-| Stars | ~192 |
-| Forks | ~62 |
+| Stars | ~227 |
+| Forks | ~69 |
 | Language | TypeScript |
 | License | Not specified |
+| Version | v2.8.7 (April 13, 2026) |
+| Commits | 167 |
 | Transport | HTTP (streamable), stdio |
+| Remote server | mcp.postman.com (OAuth 2.0, US + EU regions) |
 
 **Key capabilities:**
 
@@ -158,17 +188,17 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 | Code generation | Client code generation from API definitions |
 | Spec creation | Automatic API specification creation |
 
-**Key differentiator:** The **largest tool surface of any API development MCP server** — 100+ tools in Full mode. Postman is the dominant API development platform (30M+ users), and their official MCP server exposes the full platform capability: collections, environments, workspaces, code generation, and test execution. Three configuration modes (Minimal, Full, Code) let teams control the tool surface exposed to AI agents. The Code configuration enables AI-driven client SDK generation from API specs.
+**Key differentiator:** The **largest tool surface of any API development MCP server** — 100+ tools in Full mode. Postman is the dominant API development platform (30M+ users), and their official MCP server exposes the full platform capability: collections, environments, workspaces, code generation, and test execution. Three configuration modes (Minimal, Full, Code) let teams control the tool surface exposed to AI agents. **REVIVED since our last review:** v2.8.7 (April 2026) with active development, **OAuth 2.0 remote server** at mcp.postman.com (no API key needed), **EU region support**, built-in Instructions resource for MCP clients, and integration with Google Antigravity IDE, Claude Code, Cursor, VS Code, Codex, Windsurf, and Gemini CLI. The 14-month maintenance gap that was our biggest concern is definitively closed.
 
-**Limitation:** 100+ tools in Full mode may overwhelm LLM context windows. Requires Postman account and API key. Last commit January 2025 — a 14-month gap raises maintenance concerns. License not specified. Postman's business model (free tier with paid team features) means some MCP tools may require paid plans. Platform-dependent — collections and workspaces live in Postman's cloud.
+**Limitation:** 100+ tools in Full mode may overwhelm LLM context windows. License not specified. Postman's business model (free tier with paid team features) means some MCP tools may require paid plans. Platform-dependent — collections and workspaces live in Postman's cloud. OAuth remote server currently US and EU only.
 
 ### protoc-gen-go-mcp (Redpanda) — gRPC Protocol Buffer Plugin
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [redpanda-data/protoc-gen-go-mcp](https://github.com/redpanda-data/protoc-gen-go-mcp) |
-| Stars | ~190 |
-| Forks | ~29 |
+| Stars | ~199 |
+| Forks | ~32 |
 | Language | Go |
 | License | Apache-2.0 |
 | Creator | Redpanda Data (official) |
@@ -188,11 +218,38 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 
 **Limitation:** Go-only output — no TypeScript, Python, Java, or Rust MCP server generation from .proto files. Requires understanding of the protobuf compilation pipeline. 190 stars suggests adoption is limited to teams already using both gRPC and MCP. No support for gRPC streaming in MCP tools (MCP's request-response model doesn't map to gRPC streams).
 
+### Agoda APIAgent — Universal GraphQL+REST Proxy with SQL Post-Processing (NEW)
+
+| Aspect | Detail |
+|--------|--------|
+| Repository | [agoda-com/api-agent](https://github.com/agoda-com/api-agent) |
+| Stars | ~271 |
+| Forks | ~43 |
+| Language | Python (99.8%) |
+| License | MIT |
+| Commits | 9 |
+
+**Key capabilities:**
+
+| Capability | Detail |
+|-----------|--------|
+| Zero configuration | Point at GraphQL endpoint or OpenAPI spec — auto-introspection |
+| SQL post-processing | DuckDB in-memory SQL for rankings, filters, JOINs the API can't do |
+| Safety | Read-only by default, mutations blocked unless explicitly allowed |
+| Recipe learning | Successful queries become cached pipelines, reusable without LLM reasoning |
+| Tools | 2 core tools per API ({prefix}_query + {prefix}_execute) + dynamic recipe tools |
+
+**Key differentiator:** The **first intelligent API proxy** that goes beyond spec-to-server conversion. Agoda APIAgent doesn't just generate MCP tools from an API spec — it adds a **DuckDB SQL post-processing layer** that enables rankings, filtering, grouping, and JOINs even when the underlying API doesn't support them. Recipe learning means successful queries become cached pipelines that skip LLM reasoning on repeat calls. Uses FastMCP + OpenAI Agents SDK architecture. Works with both GraphQL and REST/OpenAPI, making it the only server that handles both protocols natively.
+
+**Limitation:** Only 9 commits — very early-stage despite 271 stars. Requires an LLM API key for the orchestration layer (OpenAI Agents SDK), adding cost per query. Read-only by default limits write-heavy API workflows. The DuckDB SQL layer adds latency compared to direct API calls. Python-only implementation.
+
 ### OpenAPI Converters — The Long Tail
 
-**[Swagger-MCP (Vizioz)](https://github.com/Vizioz/Swagger-MCP)** (146 stars, TypeScript, MIT) — 5 tools including code generation: getSwaggerDefinition, listEndpoints, listEndpointModels, generateModelCode, generateEndpointToolCode. Converts Swagger/OpenAPI to MCP server definitions with semantic tool naming and MCP prompts for guided workflows. Downloads and caches specs locally.
+**[Swagger-MCP (Vizioz)](https://github.com/Vizioz/Swagger-MCP)** (150 stars, TypeScript, MIT) — 5 tools including code generation: getSwaggerDefinition, listEndpoints, listEndpointModels, generateModelCode, generateEndpointToolCode. Converts Swagger/OpenAPI to MCP server definitions with semantic tool naming and MCP prompts for guided workflows. Downloads and caches specs locally.
 
-**[openapi-mcp (ckanthony)](https://github.com/ckanthony/openapi-mcp)** (178 stars, Go, January 2026) — Secure API key management (hidden from MCP client), selective endpoint exposure via include/exclude filters, custom header injection. Docker deployment. Unique security feature: API keys are never exposed to the AI agent.
+**[openapi-mcp (ckanthony)](https://github.com/ckanthony/openapi-mcp)** (180 stars, Go, January 2026) — Secure API key management (hidden from MCP client), selective endpoint exposure via include/exclude filters, custom header injection. Docker deployment. Unique security feature: API keys are never exposed to the AI agent.
+
+**[cnoe-io/openapi-mcp-codegen](https://github.com/cnoe-io/openapi-mcp-codegen)** (37 stars, Python, Apache 2.0, NEW) — Goes beyond MCP tool generation to produce **full LangGraph React agents** with A2A servers (`--generate-agent`), evaluation frameworks with LangFuse (`--generate-eval`), and LLM-enhanced docstrings via OpenAPI Overlay Specification 1.0.0. Smart parameter handling auto-detects complex schemas and uses dictionary mode for operations with 10+ parameters. The most architecturally ambitious OpenAPI converter.
 
 **[swagger-mcp (danishjsheikh)](https://github.com/danishjsheikh/swagger-mcp)** (81 stars, Go, MIT) — Dynamic tool generation from swagger.json at runtime, anti-hallucination focus (strict data retrieval from actual API responses). stdio and SSE transports.
 
@@ -228,11 +285,13 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 
 ### API Gateway / Management
 
-**[Kong MCP Konnect](https://github.com/Kong/mcp-konnect)** (40 stars, TypeScript, Apache 2.0) — **DEPRECATED** (archived). Users directed to official Konnect remote MCP server. Kong AI Gateway 3.12+ now provides MCP autogeneration from any RESTful API, centralized OAuth, LLM-as-a-Judge policy validation, MCP traffic governance.
+**[Kong MCP Konnect](https://github.com/Kong/mcp-konnect)** (42 stars, TypeScript, Apache 2.0) — **DEPRECATED** (archived, read-only). Users directed to official Konnect remote MCP server. **Kong AI Gateway 3.14** (April 2026) now supports **agent-to-agent (A2A) traffic** alongside LLM and MCP, becoming a unified control plane for all AI traffic types with MCP traffic governance, security, and observability.
 
-**Google Apigee MCP** — Part of [GoogleCloudPlatform/apigee-samples](https://github.com/GoogleCloudPlatform/apigee-samples). Discovers API specs from Apigee API hub, dynamically creates tools for LLMs, deploys to Cloud Run. Apigee now supports fully-managed remote MCP servers.
+**Google Apigee MCP** — **Fully managed MCP servers** GA in 2026. Deploy an MCP proxy and Apigee handles all transcoding and protocol handling. API Hub now includes managed integration with **Agent Registry** to automatically synchronize MCP servers and tools metadata. **MCP is a first-class API style** in API Hub alongside REST and GraphQL. No manual MCP server setup needed — Apigee auto-generates from existing API specs.
 
-**MuleSoft MCP Server** (Salesforce/MuleSoft managed) — 47 tools across 9 categories including Agent Network Development, Application Development, Connector Development, DataWeave Development, and Application Management. Not a public GitHub repo.
+**MuleSoft MCP Server** (Salesforce/MuleSoft managed) — 47+ tools across 9 categories. **MuleSoft MCP Connector v1.4** enables AI clients to invoke and interact with APIs, connectors, and apps via MCP. **New: MuleSoft API Catalog for Salesforce** — centralized hub for managing APIs and MCP servers from MuleSoft, Heroku, and Apex sources.
+
+**Salesforce Hosted MCP Servers** — **GA April 2026**. Exposes Salesforce org's logic and assets (data, flows, Apex actions, queries) to any MCP client. Enterprise-grade authentication, governance, and admin control built in. Included at no additional cost for Enterprise Edition orgs and above. CRUD, FLS, and sharing rules apply automatically.
 
 ### API Documentation
 
@@ -240,33 +299,33 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 
 ### Notable Gaps
 
-**No HTTPie MCP server** — HTTPie (a popular developer-friendly HTTP client) has no MCP integration. Also missing: Hoppscotch (feature request open, issue #5966), RapidAPI, Stoplight, ReadMe.
+**No HTTPie MCP server** — HTTPie (a popular developer-friendly HTTP client) has no MCP integration. Also missing: RapidAPI, Stoplight. Hoppscotch has an MCP **client** feature request (issue #5966, March 2026) but no MCP server.
 
-**No AsyncAPI MCP server** — Event-driven API specifications (Kafka, WebSocket, MQTT) have no MCP tooling. Only request-response APIs (REST, GraphQL, gRPC) are covered.
+**No AsyncAPI MCP server** — Event-driven API specifications (Kafka, WebSocket, MQTT) have no MCP tooling. Only request-response APIs (REST, GraphQL, gRPC) are covered. This gap grows more significant as event-driven architectures expand.
 
 **No dedicated Swagger UI or API documentation generation server** — OpenAPI converters focus on tool generation, not documentation rendering or generation.
 
 **No Mockoon MCP server** — Despite Mockoon's 6k+ GitHub stars as an API mocking tool, no MCP integration exists. Also missing: JSON Server, Karate, SoapUI, Dredd.
 
-**No standalone API gateway MCP servers** — Kong archived theirs; Apigee and MuleSoft are platform-embedded. Tyk and AWS API Gateway have no dedicated MCP servers.
+**API gateway MCP servers fully vendor-hosted** — Kong archived its open-source server; Apigee, MuleSoft, and Salesforce are all platform-embedded managed services. Tyk and AWS API Gateway have no dedicated MCP servers. Self-hosted teams have zero options.
 
 ## Developer Tools MCP Comparison
 
 | Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor | Testing/QA | Monitoring | Security | IaC | Packages | Code Gen | API Dev | Logging | DB Migration | Doc Tooling | Debugging | Profiling | Code Review |
 |--------|--------|--------|-----------|--------|------------|-------|------------|------------|------------|----------|-----|----------|----------|---------|---------------------- | --------------|-----------|-----------|-------------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright, 9.8k stars, 24 tools) | Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana) | Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
-| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
+| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright, 9.8k stars, 24 tools) | Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana) | Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | Yes (Terraform 1.4k, Pulumi remote, AWS IaC, Bicep, Ansible AAP) | Yes (NuGet built-in VS 2026, WinGet built-in, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 227 v2.8.7 OAuth remote, Apollo 275 v1.13.0, Apigee managed, MuleSoft v1.4, Salesforce GA) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
+| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible (27 stars, 40+ tools) | mcp-devtools (140 stars, 20+ tools) | Context7 (54.2k stars), magic-mcp (4.8k stars) | openapi-mcp-server (889 stars), openapi-mcp-generator (576 stars), Agoda APIAgent (271 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
 | **Primary function** | Repository operations | Repository operations | Repository operations | Container lifecycle | Cluster management | Pipeline management | Editor integration | Test execution | Observability queries | Vulnerability scanning | Infrastructure provisioning | Dependency intelligence | Context provision + UI generation | Spec-to-server conversion + API interaction | Log search/analysis + trace correlation | Schema migration & version control | Doc access, search, generation & quality | Breakpoints, stepping, variable inspection, crash analysis | Flamegraph analysis, CPU/memory profiling, benchmarks, web audits, load testing | Code quality analysis, PR management, diff review, stacked PR creation |
-| **Vendor count** | 1 (GitHub) | 1 (GitLab) | 0 (Atlassian via Jira only) | 1 (Docker) + community | 0 (Red Hat leads community) | 3 (Jenkins, CircleCI, Buildkite) | 1 (JetBrains) | 1 (Microsoft) | 6 (Grafana, Datadog, Sentry, Dynatrace, New Relic, Instana) | 7+ (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | 5+ (HashiCorp, Pulumi, AWS, OpenTofu, Spacelift) | 2 (Microsoft/NuGet, Homebrew) | 3 (Vercel, E2B, Upstash/Context7) | 4+ (Postman, Apollo, Kong, Google/Apigee, MuleSoft) | 6+ (Splunk, Grafana/Loki, Grafana/Tempo, Coralogix, Axiom, Mezmo) | 2 (Liquibase, Prisma) + Google partial | 5+ (Microsoft, Mintlify, ReadMe, Stainless, OpenAI, Vonage, Fern, Apidog) | 3 (Google/Chrome DevTools, Microsoft/DebugMCP, LLVM/LLDB built-in) | 3 (CodSpeed, Polar Signals, Tricentis/NeoLoad) + Grafana partial | 3 (SonarSource, Codacy, Graphite) + CodeRabbit as client |
+| **Vendor count** | 1 (GitHub) | 1 (GitLab) | 0 (Atlassian via Jira only) | 1 (Docker) + community | 0 (Red Hat leads community) | 3 (Jenkins, CircleCI, Buildkite) | 1 (JetBrains) | 1 (Microsoft) | 6 (Grafana, Datadog, Sentry, Dynatrace, New Relic, Instana) | 7+ (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | 7+ (HashiCorp, Pulumi, AWS, Microsoft/Bicep, Red Hat/Ansible, OpenTofu, Spacelift) | 3 (Microsoft/NuGet, Microsoft/WinGet, Homebrew) | 3 (Vercel, E2B, Upstash/Context7) | 6+ (Postman, Apollo, Agoda, Google/Apigee, MuleSoft, Salesforce) | 6+ (Splunk, Grafana/Loki, Grafana/Tempo, Coralogix, Axiom, Mezmo) | 2 (Liquibase, Prisma) + Google partial | 5+ (Microsoft, Mintlify, ReadMe, Stainless, OpenAI, Vonage, Fern, Apidog) | 3 (Google/Chrome DevTools, Microsoft/DebugMCP, LLVM/LLDB built-in) | 3 (CodSpeed, Polar Signals, Tricentis/NeoLoad) + Grafana partial | 3 (SonarSource, Codacy, Graphite) + CodeRabbit as client |
 | **Code generation role** | Context (repos, issues, PRs) | Context (repos, issues, MRs) | Context (repos, PRs) | Context (images, containers) | Context (cluster state) | Context (pipeline status) | Bidirectional (tools + context) | Context (test results) | Context (metrics, logs) | Context (vulnerabilities) | Generation (IaC templates) | Context (versions, advisories) | Direct (UI components, docs, execution) | Bidirectional (spec-to-tools, API execution) | Context (log patterns, traces, errors) | Bidirectional (migration generation + schema inspection) | Context (doc access/search) + Generation (doc output) | Bidirectional (set breakpoints + inspect state) | Context (profiles, flamegraphs, benchmarks) + Generation (benchmark harnesses) | Bidirectional (quality data as context + review comments as output) |
 | **Authentication** | PAT / GitHub App | OAuth 2.0 / PAT | App Password / OAuth | Docker Desktop credentials | kubeconfig / OAuth / OIDC | API tokens per platform | Local connection (port/stdio) | None (local browsers) | API tokens / OAuth (remote) | API tokens / CLI auth | API tokens / OAuth / CLI auth | None (public registries) | API keys (Context7, magic-mcp, E2B) | API keys / Bearer / OAuth / 1Password | API tokens / OAuth / RBAC (Splunk) | Database credentials / CLI auth | None (GitMCP, MS Learn) / API keys (platform MCP) | None (local debuggers) / Chrome DevTools auto-connect | API keys (CodSpeed, Polar Signals) / Grafana auth / Google API key (PageSpeed) | API tokens (SonarQube, Codacy) / GitHub PAT / GitLab PAT |
 | **AAIF membership** | No (but Microsoft is Platinum) | No | No | [Gold](/reviews/docker-mcp-servers/) | No (but Google/AWS/MS are Platinum) | No | No (but Microsoft is Platinum) | No (but Microsoft is Platinum) | No | No | No | No (but Microsoft is Platinum) | No | No | No | No | No (but Microsoft is Platinum) | No (but Google/Microsoft are Platinum) | No | No |
 | **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users | 5.6M developers | Jenkins: 11.3M devs | VS Code: 75.9% market share | Playwright: 45.1% QA adoption | Datadog: 32.7k customers | SonarQube: 17.7% SAST mindshare | Terraform: millions of users, 45% IaC adoption | npm: 5B+ weekly downloads | Copilot: 20M+ users, Cursor: 1M+ DAU | Postman: 30M+ users, REST: ~83% of web APIs | Splunk: 15k+ customers, ELK: most-deployed log stack | Prisma: 43k stars, Flyway: 10.7k stars, Atlas: 6.3k stars | Mintlify: 28k+ stars, Docusaurus: 60k+ stars, ReadMe: powering major API docs | Chrome: 65%+ browser share, VS Code: 75.9% IDE share, x64dbg: 45k+ stars | APM market: $7-10B, Pyroscope: 11k+ stars, async-profiler: 9k+ stars | SonarQube: 7.4M+ users, CodeRabbit: top AI reviewer, Qodo/PR-Agent: 10.5k stars |
-| **Our rating** | [4.5/5](/reviews/github-mcp-server/) | [3.5/5](/reviews/gitlab-mcp-server/) | [2.5/5](/reviews/bitbucket-mcp-server/) | [4/5](/reviews/docker-mcp-servers/) | [4/5](/reviews/kubernetes-mcp-servers/) | [3/5](/reviews/ci-cd-mcp-servers/) | [3.5/5](/reviews/ide-code-editor-mcp-servers/) | [3.5/5](/reviews/testing-qa-mcp-servers/) | [4/5](/reviews/monitoring-observability-mcp-servers/) | [3.5/5](/reviews/security-scanning-mcp-servers/) | [4/5](/reviews/infrastructure-as-code-mcp-servers/) | [3/5](/reviews/package-management-mcp-servers/) | [3.5/5](/reviews/code-generation-mcp-servers/) | 3.5/5 | [3.5/5](/reviews/logging-tracing-mcp-servers/) | [2.5/5](/reviews/database-migration-mcp-servers/) | [3.5/5](/reviews/documentation-tooling-mcp-servers/) | [4.5/5](/reviews/debugging-mcp-servers/) | [3/5](/reviews/profiling-performance-mcp-servers/) | [3.5/5](/reviews/code-review-pull-request-mcp-servers/) |
+| **Our rating** | [4.5/5](/reviews/github-mcp-server/) | [3.5/5](/reviews/gitlab-mcp-server/) | [2.5/5](/reviews/bitbucket-mcp-server/) | [4/5](/reviews/docker-mcp-servers/) | [4/5](/reviews/kubernetes-mcp-servers/) | [3/5](/reviews/ci-cd-mcp-servers/) | [3.5/5](/reviews/ide-code-editor-mcp-servers/) | [3.5/5](/reviews/testing-qa-mcp-servers/) | [4/5](/reviews/monitoring-observability-mcp-servers/) | [4/5](/reviews/security-scanning-mcp-servers/) | [4/5](/reviews/infrastructure-as-code-mcp-servers/) | [3.5/5](/reviews/package-management-dependency-mcp-servers/) | [3.5/5](/reviews/code-generation-mcp-servers/) | 4/5 | [3.5/5](/reviews/logging-tracing-mcp-servers/) | [2.5/5](/reviews/database-migration-mcp-servers/) | [3.5/5](/reviews/documentation-tooling-mcp-servers/) | [4.5/5](/reviews/debugging-mcp-servers/) | [3/5](/reviews/profiling-performance-mcp-servers/) | [3.5/5](/reviews/code-review-pull-request-mcp-servers/) |
 
 ## Known Issues
 
-1. **Spec-to-server conversion produces tool explosion** — An API with 200 endpoints generates 200 MCP tools. LLMs have finite context windows and tool selection degrades as tool count increases. OpenAPI converters like openapi-mcp-generator have no built-in filtering, grouping, or pagination mechanism. Postman's Full mode exposes 100+ tools. Only openapi-mcp (ckanthony) offers include/exclude filters — a feature that should be standard.
+1. **Spec-to-server conversion produces tool explosion — but solutions are emerging** — An API with 200 endpoints generates 200 MCP tools. LLMs have finite context windows and tool selection degrades as tool count increases. However, new approaches are addressing this: openapi-mcp-server (889 stars) takes a discovery-first approach where agents request only needed endpoint details; openapi-mcp-generator now supports x-mcp filtering flags; openapi-mcp (ckanthony) offers include/exclude filters. The tool explosion problem is being solved from multiple angles.
 
 2. **OpenAPI spec quality determines MCP tool quality** — Every OpenAPI-to-MCP converter inherits the quality (or lack thereof) of the source specification. Missing descriptions, incomplete schemas, undocumented error codes, and absent examples all produce MCP tools that the AI agent struggles to use correctly. There's no validation or enrichment step — garbage in, garbage out.
 
@@ -274,7 +333,7 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 
 4. **gRPC streaming has no MCP equivalent** — MCP's request-response model doesn't map to gRPC's four streaming modes (unary, server-streaming, client-streaming, bidirectional). protoc-gen-go-mcp generates tools for unary RPCs only. Server streaming, which powers many real-time gRPC services, is inaccessible through MCP. This is a protocol-level limitation, not a tooling gap.
 
-5. **API gateway MCP servers are disappearing, not growing** — Kong archived its MCP server, directing users to a managed remote endpoint. Apigee and MuleSoft embed MCP into their platforms. The trend is away from open-source, community-deployable API gateway MCP servers and toward vendor-hosted, platform-locked endpoints. Self-hosted teams lose out.
+5. **API gateway MCP servers are fully vendor-hosted** — Kong archived its open-source server and launched Kong AI Gateway 3.14 for managed MCP traffic. Apigee auto-generates MCP from API specs. MuleSoft has MCP Connector v1.4. Salesforce Hosted MCP Servers went GA April 2026. The trend is clearly toward vendor-hosted, platform-locked endpoints. Self-hosted teams have zero standalone API gateway MCP options.
 
 6. **API mocking MCP servers have near-zero adoption** — MockLoop (15 stars), MSW MCP (2 stars), mock-mcp (5 stars). Despite API mocking being a critical development workflow (Mockoon has 6k+ stars, WireMock has 6k+), MCP mocking servers haven't gained traction. The gap is significant: AI agents should be able to set up mock backends for frontend development and testing.
 
@@ -282,33 +341,34 @@ The API management market is projected at $6.89–10B in 2025, growing to $19.28
 
 8. **Authentication handling varies wildly** — openapi-mcp-generator supports API key/Bearer/Basic/OAuth2. emcee integrates with 1Password. openapi-mcp (ckanthony) hides API keys from the MCP client. AWS Labs uses Cognito. There's no standard for how MCP servers should handle API authentication. Some expose credentials to the AI agent; others keep them server-side. The security implications are significant — 53% of MCP servers rely on insecure long-lived static secrets, and only 8.5% use OAuth.
 
-9. **Postman's official server may be abandoned** — Last commit January 2025 (14+ months ago). For the dominant API development platform (30M+ users), this gap is concerning. The community alternative (mcp-postman, 84 stars) exists but offers only Newman collection execution. Insomnia v12 added native MCP client support, potentially leapfrogging Postman in AI integration.
+9. **~~Postman's official server may be abandoned~~ RESOLVED** — Postman revived development with v2.8.7 (April 2026), OAuth 2.0 remote server at mcp.postman.com, EU region support, Instructions resource, and integrations with 7+ AI tools. The 14-month gap is closed. Insomnia v12 also added native MCP client support — the API testing space is now competitive on MCP.
 
 10. **No API design or specification authoring tools** — MCP servers can convert existing OpenAPI specs to tools, but none helps create or edit API specifications. No server assists with API design decisions (REST vs. GraphQL vs. gRPC), naming conventions, versioning strategies, or schema design. The creative/design phase of API development has zero MCP coverage.
 
 ## Bottom Line
 
-**Rating: 3.5 out of 5**
+**Rating: 4 out of 5** *(upgraded from 3.5)*
 
-API development MCP servers are built on a **powerful core pattern** — spec-to-server conversion — that solves a real problem elegantly: give an AI agent access to any documented API without writing custom MCP tools. OpenAPI-to-MCP converters (openapi-mcp-generator at 495 stars, emcee at 320 stars with 1Password integration, AWS Labs with enterprise observability, openapi-mcp at 178 stars with credential hiding) form a mature ecosystem for REST APIs. GraphQL has genuine vendor investment — Apollo's official MCP server (275 stars, 1,576 commits, 61 releases) is one of the most actively developed MCP servers in any category, and mcp-graphql (374 stars) provides a vendor-neutral alternative. gRPC gets thoughtful tooling from Redpanda's protoc-gen-go-mcp (190 stars), which fits naturally into existing protobuf build pipelines.
+API development MCP servers have **matured significantly** since our original review. The spec-to-server pattern now has **intelligent variants**: Agoda APIAgent (271 stars) adds DuckDB SQL post-processing and recipe learning; cnoe-io generates full LangGraph agents with evaluation frameworks; openapi-mcp-server (889 stars) takes a discovery-first approach that solves the tool explosion problem. The core converter ecosystem grew substantially — openapi-mcp-generator up 16% to 576 stars with x-mcp filtering, Swagger-MCP to 150 stars. GraphQL has exceptional vendor investment — Apollo's MCP server released 9 versions in 2 months (v1.8.0→v1.13.0) adding MCP prompts, Rhai scripting, and MCP Apps support. **The biggest gap from our original review is closed**: Postman revived development (v2.8.7, OAuth 2.0 remote server at mcp.postman.com, EU region, 7+ AI tool integrations). API gateway platforms consolidated around hosted MCP: Salesforce GA, Apigee fully managed with MCP as first-class API style, MuleSoft Connector v1.4.
 
-The **3.5/5 rating** reflects: a genuinely useful and well-executed core pattern (spec-to-server conversion), multi-protocol coverage (REST, GraphQL, gRPC — rare among Developer Tools categories), active vendor investment (Apollo 1,576 commits, Postman 100+ tools, Redpanda protoc plugin, AWS Labs), and practical utility (any OpenAPI-documented API becomes AI-accessible with minimal configuration). It loses 1.5 points for tool explosion problems (no filtering standard for large APIs), near-zero adoption of API mocking MCP servers, Postman's potentially abandoned official server (14+ month gap), no event-driven/AsyncAPI support, missing API design tooling, disappearing API gateway servers (Kong archived, others platform-locked), and the wild inconsistency in authentication handling across servers.
+The **4/5 rating** (upgraded from 3.5) reflects: a mature and diversifying spec-to-server ecosystem with intelligent new variants (Agoda APIAgent's SQL post-processing, cnoe-io's agent generation), strong growth across all major servers (openapi-mcp-generator +16%, openapi-mcp-server surging to 889 stars), exceptional GraphQL vendor investment (Apollo 70+ releases, v1.13.0 with MCP prompts and Rhai scripting), Postman's revival closing the biggest gap, and the consolidation of API gateway platforms around hosted MCP (Salesforce GA, Apigee fully managed, MuleSoft Connector). It loses 1 point for still-zero AsyncAPI/event-driven coverage, near-zero adoption of API mocking MCP servers (MockLoop at 15 stars is the best), fully vendor-locked API gateway options (no self-hosted), and inconsistent authentication handling across servers.
 
 **Who benefits from API development MCP servers today:**
 
-- **Teams with OpenAPI-documented APIs** — The spec-to-server converters are production-ready. Give your AI agent access to your internal APIs by pointing a converter at your OpenAPI spec. emcee's 1Password integration and openapi-mcp's credential hiding provide secure options
-- **GraphQL teams** — Apollo's official server or mcp-graphql provide solid AI access to GraphQL APIs. mcp-graphql's mutations-disabled-by-default is the safer starting point
-- **gRPC teams using Go** — Redpanda's protoc-gen-go-mcp integrates into existing build pipelines. If you already use protobuf, adding MCP tool generation is a protoc flag away
-- **API testers using Postman** — Despite the maintenance gap, Postman's 100+ tools cover collection management, environment handling, and test execution
+- **Teams with OpenAPI-documented APIs** — The spec-to-server converters are production-ready and diversifying. openapi-mcp-generator (576 stars) for full endpoint proxying, openapi-mcp-server (889 stars) for discovery-first exploration, Agoda APIAgent (271 stars) for intelligent post-processing with SQL
+- **GraphQL teams** — Apollo's official server (v1.13.0, 70+ releases) is among the most actively developed MCP servers in any category. MCP prompts, Rhai scripting, and MCP Apps make it a full platform
+- **API testers using Postman** — Postman is back with v2.8.7, OAuth 2.0 remote server, EU support, and 7+ AI tool integrations. The revival is real
+- **gRPC teams using Go** — Redpanda's protoc-gen-go-mcp (199 stars) integrates into existing build pipelines. If you already use protobuf, adding MCP tool generation is a protoc flag away
+- **Salesforce/MuleSoft teams** — Hosted MCP Servers GA, MuleSoft MCP Connector v1.4, API Catalog — the Salesforce ecosystem has comprehensive MCP coverage
 
 **Who should wait:**
 
 - **Event-driven API teams** — Kafka, WebSocket, MQTT, and AsyncAPI have zero MCP coverage
 - **API designers** — No MCP server assists with creating API specifications, design patterns, or versioning strategies
-- **Teams needing API mocking** — MCP mocking servers have near-zero adoption. Use Mockoon or WireMock directly instead
-- **Self-hosted API gateway teams** — Kong archived its open-source server; remaining options are platform-locked to vendor clouds
+- **Teams needing API mocking** — MCP mocking servers still have near-zero adoption (MockLoop at 15 stars). Use Mockoon or WireMock directly instead
+- **Self-hosted API gateway teams** — All API gateway MCP options are vendor-hosted (Kong, Apigee, MuleSoft, Salesforce). No standalone self-hosted options exist
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. First published March 2026, last refreshed May 2026. See our [About page](/about/) for details on our review process.*
 

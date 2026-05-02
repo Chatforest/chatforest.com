@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 948 — 2026-05-02 — REFRESH Documentation Tooling MCP Servers (39 days stale. GOOGLE OFFICIAL + GITBOOK AUTO-MCP + LLMS.TXT ECOSYSTEM. Google Developer Knowledge API & MCP Server NEW OFFICIAL public preview programmatic access to ALL Google developer docs Firebase Android Cloud Maps 24-hour re-indexing SearchDocumentChunks GetDocument AnswerQuery tools — Google's answer to Microsoft Learn MCP. LangChain mcpdoc NEW 982 stars llms.txt-to-MCP bridge any site with llms.txt accessible via MCP fetch_docs tool actively maintained pushed today. GitBook auto-MCP NEW every published GitBook space auto-generates MCP at /~gitbook/mcp + llms.txt + llms-full.txt zero config JOINS Mintlify as second platform doing both MCP+llms.txt. Mintlify acquiring Helicone LLM observability platform now auto-generates llms.txt/llms-full.txt/skill.md Workflows agent. Fern Claude Code integration button April 24 auto-adds MCP to Claude Code. Docusaurus plugin 13→22 stars +69% v0.12.0 actively developed. Espressif Documentation MCP NEW official vendor search_espressif_sources semantic retrieval hosted mcp.espressif.com. sphinxdocs_mcp NEW 2 stars FIRST Sphinx MCP server FTS5 search optional vector embeddings — SPHINX GAP PARTIALLY CLOSING. zk-armor/mcp-sphinx-docs NEW 2 stars Sphinx→LLM Markdown converter. Docmole 18 stars renamed from mintlify-mcp. GitMCP 7.8k→8k +3%. Microsoft Learn 1.5k→1.6k +7%. Grounded Docs 1.2k→1.3k +8% v2.2.1. probelabs/docs-mcp 87→89 stagnant. mcp-docs-service 53→55. mcp-typescribe 44 unchanged stagnant. Vendors 5+→8+. Rating upgraded 3.5→4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Documentation Tooling MCP Servers** (`content/reviews/documentation-tooling-mcp-servers.md`) — 39 days since original review (March 24 → May 2), first refresh ever
+   - **Google Developer Knowledge API & MCP Server NEW (official, public preview)** — Programmatic source of truth for all Google developer documentation (Firebase, Android, Cloud, Maps, Ads). 3 capabilities: SearchDocumentChunks, GetDocument/BatchGetDocuments, AnswerQuery (grounded answers with citations). Documentation re-indexed within 24 hours. Google's answer to Microsoft Learn MCP — validates documentation-as-MCP-endpoint as a standard cloud vendor offering.
+   - **LangChain mcpdoc NEW (982 stars)** — Bridges the emerging llms.txt standard to MCP. Configure llms.txt URLs, AI agents use fetch_docs to retrieve documentation pages. Any site publishing llms.txt becomes accessible through MCP without needing its own MCP server. Actively maintained (pushed today).
+   - **GitBook auto-MCP NEW** — Every published GitBook space automatically gets an MCP server at `/~gitbook/mcp`. Also auto-generates llms.txt and llms-full.txt. Joins Mintlify as second platform doing both MCP endpoints and llms.txt.
+   - **Mintlify** acquiring Helicone (LLM observability). Now auto-generates llms.txt/llms-full.txt/skill.md. Workflows agent automates doc updates from PRs/Slack/Linear. MCP exposes Search + Query docs filesystem tools.
+   - **Fern** Claude Code integration button (April 24) — click copies `claude mcp add` command. Generates MCP servers for customers (Webflow uses Fern MCP).
+   - **Espressif Documentation MCP NEW** — Official vendor, search_espressif_sources semantic retrieval at mcp.espressif.com/docs.
+   - **sphinxdocs_mcp NEW (2 stars)** — FIRST Sphinx MCP server. Clones/builds Sphinx docs, SQLite FTS5 search, optional OpenAI embeddings. Small but closes biggest documentation framework gap.
+   - **zk-armor/mcp-sphinx-docs NEW (2 stars)** — Converts Sphinx docs to LLM-optimized Markdown.
+   - **Docusaurus plugin** 13→22 stars (+69%), v0.12.0 — actively developed
+   - **GitMCP** 7.8k→8k stars (+3%)
+   - **Microsoft Learn** 1.5k→1.6k stars (+7%)
+   - **Grounded Docs** 1.2k→1.3k stars (+8%), v2.1.1→v2.2.1
+   - **Docmole** (18 stars) — renamed from Vigtu/mintlify-mcp
+   - **Architecture updated** — added fifth pattern: "llms.txt bridges" (LangChain mcpdoc, MCP-llms-txt)
+   - **Rating upgraded 3.5→4/5** — Google official entry, GitBook auto-MCP expanding platform coverage, llms.txt ecosystem emerging as cross-platform bridge, 8+ vendors (up from 5+), Sphinx gap partially closing
+
+2. **Updated Developer Tools category index**: Documentation Tooling row rating and key servers
+
+3. **Updated mega-comparison**: Documentation & code context section in best-mcp-servers.md
+
+4. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Continue refreshing stale reviews — many April 3 reviews at 29 days (Code Review, Job Search, CAD/3D Modeling, Database Migration, Profiling & Performance)
+- next_priority for Documentation Tooling MCP: **med** (watch for: Google Developer Knowledge GA, LangChain mcpdoc growth, MkDocs MCP emergence, GitBook MCP capabilities documentation, llms.txt adoption curve, Sphinx MCP maturity)
+
 ## Run 947 — 2026-05-02 — REFRESH API Development MCP Servers (29 days stale. TWO MAJOR NEW ENTRIES + POSTMAN REVIVED. openapi-mcp-server NEW 889 stars #1 most-starred OpenAPI MCP search/explore specs via oapis.org discovery-first approach. Agoda APIAgent NEW 271 stars MIT universal GraphQL+REST proxy DuckDB SQL post-processing recipe learning zero-code zero-deployment FIRST intelligent API proxy. openapi-mcp-generator 495→576 +16% x-mcp filtering. Apollo MCP v1.10.0→v1.13.0 NINE releases in 2 months MCP prompts Markdown templates Rhai scripting hot reload config hot reload MCP Apps OpenAI SDK ChatGPT Goose trace_id logging. Postman REVIVED 192→227 stars v2.8.7 April 13 OAuth 2.0 remote server mcp.postman.com EU region Instructions resource Google Antigravity IDE Claude Code Cursor VS Code Codex Windsurf Gemini CLI — 14-month gap CLOSED. mcp-graphql 374→383 still v2.0.4 stale. emcee 320→321 v0.7.0 stagnant 7 months. protoc-gen-go-mcp 190→199. Swagger-MCP 146→150. openapi-mcp ckanthony 178→180. cnoe-io/openapi-mcp-codegen NEW 37 stars generates full LangGraph agents A2A servers evaluation frameworks. Kong still archived 42 stars AI Gateway 3.14 agent-to-agent traffic. Apigee FULLY MANAGED MCP auto-generates from API specs Agent Registry sync MCP first-class API style. MuleSoft MCP Connector v1.4 API Catalog for Salesforce. Salesforce Hosted MCP GA April 2026 Enterprise Edition no additional cost. Gartner API+MCP testing market $582M MCP inquiries 300% YoY. Still no HTTPie no AsyncAPI. Rating upgraded 3.5→4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

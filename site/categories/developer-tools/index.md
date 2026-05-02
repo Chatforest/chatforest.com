@@ -44,7 +44,7 @@ Managing containers, clusters, and infrastructure as code.
 |--------|--------|-------------|
 | [Docker](/reviews/docker-mcp-servers/) | 4/5 | docker-mcp (official, 4.5k stars), community servers for Compose |
 | [Kubernetes](/reviews/kubernetes-mcp-servers/) | 4/5 | mcp-server-kubernetes (1.4k stars), kubectl-mcp (950 stars) |
-| [Infrastructure as Code](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | terraform-mcp-server (Hashicorp, 1.4k stars), Pulumi MCP (official) |
+| [Infrastructure as Code](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | terraform-mcp-server (HashiCorp, 1.4k stars v0.5.2), Bicep MCP (Microsoft, 10 tools), Red Hat Ansible AAP MCP (official), Pulumi MCP, StackGen (25+ tools) |
 | [Container Registry](/reviews/container-registry-mcp-servers/) | 3.5/5 | 12+ servers — Docker Hub (130 stars, 13 tools), JFrog (112 stars, 22+ tools), Harbor (11 tools), Nexus (16 tools) |
 | [API Gateway](/reviews/api-gateway-mcp-servers/) | 3.5/5 | 15+ servers — Cloudflare (263 stars, 2,500+ endpoints), Kong (official, 12 tools), APISIX (34 stars, 30+ tools), Envoy AI Gateway (1.4K stars) |
 
@@ -56,7 +56,7 @@ Tools for writing better, safer code.
 |--------|--------|-------------|
 | [Security Scanning](/reviews/security-scanning-mcp-servers/) | 3.5/5 | Snyk MCP (official), Semgrep MCP (community), Trivy (community) |
 | [Code Generation](/reviews/code-generation-mcp-servers/) | 3.5/5 | Cline (12.5k stars), aider (26k stars), Continue (24k stars) |
-| [API Development](/reviews/api-development-mcp-servers/) | 3.5/5 | openapi-mcp-generator (495 stars), Apollo GraphQL (275 stars), Postman (official) |
+| [API Development](/reviews/api-development-mcp-servers/) | 4/5 | openapi-mcp-server (889 stars NEW), Agoda APIAgent (271 stars NEW), openapi-mcp-generator (576 stars +16%), Apollo v1.13.0, Postman revived v2.8.7 OAuth remote |
 | [Code Quality & Linting](/reviews/code-quality-linting-mcp-servers/) | 3.5/5 | mcp-language-server (1,500 stars, LSP bridge), SonarQube MCP (424 stars, official), Semgrep MCP (639 stars) |
 | [Feature Flags & Experimentation](/reviews/feature-flags-experimentation-mcp-servers/) | 4/5 | 15+ servers — LaunchDarkly (official hosted), GrowthBook (14 tools, 7K+ stars), Unleash (official), Flagsmith (500+ API endpoints), PostHog (27 tools) |
 
@@ -90,7 +90,7 @@ IDE integration, documentation, and workflow tooling.
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [IDE & Code Editor](/reviews/ide-code-editor-mcp-servers/) | 3.5/5 | VS Code MCP (built-in), JetBrains MCP (official), Neovim (community) |
-| [Documentation Tooling](/reviews/documentation-tooling-mcp-servers/) | 3.5/5 | GitMCP (7.8k stars), Microsoft Learn MCP (1.5k stars), Mintlify (auto-generated) |
+| [Documentation Tooling](/reviews/documentation-tooling-mcp-servers/) | 4/5 | Google Developer Knowledge (official), GitMCP (8k stars), LangChain mcpdoc (982 stars llms.txt bridge), Microsoft Learn (1.6k stars), GitBook auto-MCP, Sphinx MCP appearing |
 | [Terminal & CLI Tools](/reviews/terminal-cli-tools-mcp-servers/) | 4/5 | 30+ servers — inspector (9,500 stars), wong2/mcp-cli (430 stars +274%), tmux (233 stars), shell execution (170 stars each), SSH manager (146 stars, 37 tools). TWO GAPS FILLED: systemd-mcp + supervisord-mcp (process mgmt), PowerShell.MCP (10K+ modules) |
 | [Context7](/reviews/context7-mcp-server/) | 3.5/5 | 50.1K stars, 10.1M visitors — real-time library docs for AI agents, Skills plugin, patched context poisoning vuln |
 | [ReactBits](/reviews/reactbits-mcp-server/) | 3.5/5 | 135+ animated React components (CSS + Tailwind), 5 tools, ReactBits.dev library (24K+ stars) |

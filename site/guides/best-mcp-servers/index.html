@@ -1223,8 +1223,8 @@
 <tr>
 <td>Infrastructure as Code</td>
 <td><a href="/reviews/infrastructure-as-code-mcp-servers/">IaC MCP</a></td>
-<td>4.5/5</td>
-<td><a href="https://github.com/hashicorp/terraform-mcp-server">hashicorp/terraform-mcp-server</a> (1.3k stars, Go — registry lookup, workspace mgmt), <a href="https://github.com/Flux159/mcp-server-kubernetes">Flux159/mcp-server-kubernetes</a> (1.4k stars, TypeScript — kubectl/Helm), <a href="https://github.com/containers/kubernetes-mcp-server">containers/kubernetes-mcp-server</a> (1.3k stars, Go — native K8s/OpenShift), <a href="https://github.com/awslabs/mcp">awslabs/mcp</a> (8.9k stars, Python — AWS IaC suite), <a href="https://www.pulumi.com/docs/ai/mcp-server/">Pulumi MCP</a> (official — cloud queries, Neo integration), <a href="https://docs.ansible.com/projects/vscode-ansible/mcp/">Ansible MCP</a> (Red Hat — AAP management)</td>
+<td>4/5</td>
+<td><a href="https://github.com/hashicorp/terraform-mcp-server">hashicorp/terraform-mcp-server</a> (1.4k stars, Go, v0.5.2 — Stacks + plan/apply detail tools), <a href="https://github.com/awslabs/mcp">awslabs/mcp</a> (8.9k stars, Python — AWS IaC + cfn-mcp-server 1,100+ resources), <a href="https://www.pulumi.com/docs/ai/mcp-server/">Pulumi MCP</a> (official — Neo delegation), <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-mcp-server">Bicep MCP</a> (Microsoft official — 10 tools, ARM decompilation, AVM), <a href="https://www.redhat.com/en/blog/it-automation-agentic-ai-introducing-mcp-server-red-hat-ansible-automation-platform">Red Hat Ansible AAP MCP</a> (official tech preview — RBAC, read-only/read-write), <a href="https://stackgen.com/mcp-server">StackGen MCP</a> (25+ tools, multi-cloud agentic IaC)</td>
 </tr>
 <tr>
 <td>MCP server frameworks / SDKs</td>
@@ -1396,8 +1396,10 @@
 <p>But popularity doesn&rsquo;t mean perfection. A <a href="https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/">ContextCrush context poisoning vulnerability</a> was <a href="https://www.infosecurity-magazine.com/news/contextcrush-ai-development-tools/">patched February 23, 2026</a>, the free tier was cut 83–92% in January 2026, and community-contributed docs are unverified against official sources. Competitors are now publishing head-to-head benchmarks — <a href="https://www.trynia.ai/blog/nia-vs-context7">Nia claims 52.1% hallucination rate vs. Context7&rsquo;s 63.4%</a>.</p>
 <p><strong>Alternatives worth considering:</strong></p>
 <ul>
-<li><strong><a href="/reviews/gitmcp-server/">GitMCP</a></strong> (4/5, <a href="https://github.com/nicholasgriffintn/gitmcp">7,800 stars</a>) — replace <code>github.com</code> with <code>gitmcp.io</code> in any URL. Zero setup, free, works with any public repo. Best for libraries Context7 hasn&rsquo;t indexed.</li>
-<li><strong>Docs MCP Server</strong> (1,200 stars) — fully local, code never leaves your machine. Best for privacy-sensitive work.</li>
+<li><strong><a href="/reviews/gitmcp-server/">GitMCP</a></strong> (4/5, <a href="https://github.com/idosal/git-mcp">8,000 stars</a>) — replace <code>github.com</code> with <code>gitmcp.io</code> in any URL. Zero setup, free, works with any public repo. Best for libraries Context7 hasn&rsquo;t indexed.</li>
+<li><strong>Docs MCP Server</strong> (1,300 stars) — fully local, code never leaves your machine. Best for privacy-sensitive work.</li>
+<li><strong><a href="https://github.com/langchain-ai/mcpdoc">LangChain mcpdoc</a></strong> (982 stars) — bridges the llms.txt standard to IDEs. Any site publishing llms.txt becomes accessible through MCP.</li>
+<li><strong>Google Developer Knowledge API</strong> (official) — programmatic access to all Google developer documentation with 24-hour re-indexing. SearchDocumentChunks, GetDocument, AnswerQuery tools.</li>
 <li><strong>Ref.Tools</strong> (1,000 stars) — smart chunking extracts exactly the tokens needed. Best for large API docs where context bloat is a problem.</li>
 <li><strong>Docfork</strong> (<a href="https://github.com/docfork/docfork">471 stars</a>) — &ldquo;Cabinets&rdquo; for project-specific context isolation, hybrid search (semantic + BM25). Best for teams with multiple tech stacks.</li>
 <li><strong>Nia</strong> (Y Combinator-backed) — indexes source code directly, <a href="https://www.trynia.ai/blog/nia-vs-context7">claims lower hallucination rates</a>. Best for bleeding-edge framework work.</li>
