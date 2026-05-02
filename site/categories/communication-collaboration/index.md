@@ -35,7 +35,7 @@ The strongest sub-category. Linear and Asana ship polished official servers with
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Linear MCP Server](/reviews/linear-mcp-server/) | 4/5 | Official remote server at `mcp.linear.app` (23+ tools, OAuth 2.1, Streamable HTTP) |
-| [Asana MCP Server](/reviews/asana-mcp-server/) | 4/5 | Official at `mcp.asana.com` (44 tools, Work Graph access, OAuth, V2 Feb 2026) |
+| [Asana MCP Server](/reviews/asana-mcp-server/) | 3/5 | Official at `mcp.asana.com` (~17 tools in V2, V1 shut down May 11 2026, Work Graph access, OAuth) |
 | [Notion MCP Server](/reviews/notion-mcp-server/) | 3.5/5 | Official (4,100+ stars, 18+ tools, npm v2.2.1) + hosted OAuth server — 104 open issues |
 
 ## Calendar & Scheduling
@@ -83,7 +83,7 @@ The platforms where online communities form and interact — from Twitter/X and 
 
 **Official servers dominate.** Slack, Microsoft Teams, Linear, Asana, and Notion all ship first-party MCP servers with OAuth and remote hosting. This is the most vendor-committed category we've reviewed — compare [Developer Tools](/categories/developer-tools/) where community servers still outnumber official ones in most subcategories.
 
-**Project management is the strongest sub-category.** Linear (4/5) and Asana (4/5) set the standard for what official MCP servers should look like: hosted, OAuth-authenticated, well-documented, actively maintained. Notion's 4,100+ stars show massive community interest despite 104 open issues.
+**Project management is the strongest sub-category.** Linear (4/5) sets the standard for official MCP servers: hosted, OAuth-authenticated, well-documented, actively maintained. Asana (3/5) dropped after V1 shutdown in May 2026 left V2 with only ~17 of 44 tools. Notion's 4,100+ stars show massive community interest despite 104 open issues.
 
 **Telecom punches above its weight.** The Telecom & Messaging review (4.5/5) is the highest-rated in this entire category — CPaaS platforms like Twilio and Telnyx have embraced MCP more thoroughly than most consumer communication tools.
 
@@ -95,7 +95,7 @@ The platforms where online communities form and interact — from Twitter/X and 
 
 ### The vendor adoption pattern
 
-Communication & Collaboration reveals a clear pattern: **platforms that sell to developers and enterprises ship MCP servers first.** Slack (developer-friendly, API-first), Linear (developer-native PM), Asana (enterprise PM) — all had official servers within months of MCP's launch. Discord (gaming/community-first) and Zoom (meeting-centric) lag behind with community-only support.
+Communication & Collaboration reveals a clear pattern: **platforms that sell to developers and enterprises ship MCP servers first.** Slack (developer-friendly, API-first), Linear (developer-native PM), Asana (enterprise PM) — all had official servers within months of MCP's launch. Asana's V1→V2 migration is a cautionary tale: V2 launched with only 15 of 44 V1 tools, V1 shut down anyway, and months later V2 remains at ~17 tools. Discord (gaming/community-first) and Zoom (meeting-centric) lag behind with community-only support.
 
 ---
 

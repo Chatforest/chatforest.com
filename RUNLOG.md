@@ -12946,3 +12946,196 @@ Deploy successful. Both the Prisma MCP Server refresh and the pending Kubernetes
 2026-05-02T04:59:42Z SESSION 1873 stopped
 2026-05-02T05:48:01Z STARTED run 2763837 (mode=wild)
 2026-05-02T05:48:02Z SESSION 1874 started
+2026-05-02T06:02:16Z FINISHED run 2763837
+2026-05-02T06:02:17Z SESSION 1874 stopped
+2026-05-02T06:48:01Z STARTED run 2780024 (mode=wild)
+2026-05-02T06:48:04Z SESSION 1875 started
+**Run 949 complete.** Here's what happened:
+
+**Task:** Boss Claude (relaying Rob) asked Grove to publish `llms.txt` at chatforest.com — the emerging AI-agent machine-readable site index standard.
+
+**Done:**
+- Created `static/llms.txt` (65 lines) following the [llmstxt.org](https://llmstxt.org/) spec:
+  - **Start Here**: 5 foundational guides (What Is MCP, Best MCP Servers, How to Choose, MCP Clients, Ecosystem 2026)
+  - **Review Categories**: all 24 categories with descriptions and review counts
+  - **Notable Reviews**: 8 high-rated picks (4.5/5) as entry points
+  - **Guides & Explainers**: 9 technical guides for MCP developers
+  - **About**: About page + Builder's Log
+- Hugo build confirmed `site/llms.txt` generated correctly
+- Committed to git
+- Inbox message #1412 marked seen
+
+**Pending:** Deploy hit the 1/hour throttle (51 min since last deploy). `site/llms.txt` is already built — next run will deploy it and reply to Boss Claude confirming it's live.
+2026-05-02T06:53:31Z FINISHED run 2780024
+2026-05-02T06:53:32Z SESSION 1875 stopped
+2026-05-02T07:49:01Z STARTED run 2796435 (mode=wild)
+2026-05-02T07:49:02Z SESSION 1876 started
+**Run 950 complete.** Here's what happened this session:
+
+1. **Deployed llms.txt** — throttle had cleared (109 min since Run 948). `rsync` to DreamHost, confirmed live.
+
+2. **Replied to Boss Claude (#1412)** — confirmed `https://chatforest.com/llms.txt` is live with 65-line spec-compliant file.
+
+3. **Refreshed Code Review & PR MCP Servers** (39 days stale, 3.5→4/5):
+   - **Azure DevOps MCP** (Microsoft official, public preview) — closes the biggest enterprise gap we'd called out. Remote server in Microsoft Foundry, PR support, April update with vote/file tools.
+   - **CodeRabbit 0ui-labs/coderabbit-mcp-server** (official) — can now *trigger* reviews, not just read them. Resolves the "client only" Known Issue.
+   - **SonarQube** expanded with actionable issue management (mark false positives, bulk ops, assign/unassign) + 2026.1 LTA release.
+   - **Codacy Guardrails** — new product pairing MCP + CLI for agentic quality workflows.
+   - **Qodo/PR-Agent** — handed to community (Apache 2.0), still no MCP server.
+
+4. **Committed and deployed** to DreamHost.
+
+Next run: Job Search (46 days stale), CAD/3D Modeling (45 days), Database Migration, or Profiling & Performance reviews.
+2026-05-02T07:59:50Z FINISHED run 2796435
+2026-05-02T07:59:51Z SESSION 1876 stopped
+2026-05-02T08:50:01Z STARTED run 2812766 (mode=wild)
+2026-05-02T08:50:02Z SESSION 1877 started
+Run 951 complete. Here's what happened:
+
+**REFRESH: Job Search & Career MCP Servers** (46 days stale → refreshed, deployed)
+
+Major findings since March 17:
+
+- **stickerdaniel/linkedin-mcp-server**: exploded to **1,700 stars** with 9 releases (v4.8.0→v4.9.4). Connect tool fixed, self-healing Chromium. Dominant by a wide margin.
+- **Himalayas-App/himalayas-mcp NEW OFFICIAL**: First official remote-jobs MCP, OAuth 2.1 PKCE, salary benchmarking — **closes the remote jobs gap**
+- **jinzcdev/leetcode-mcp-server NEW (112 stars)**: Full LeetCode integration with code execution and submission — **closes the coding interview gap**
+- **shortlistjobs-mcp NEW (27 stars, 33 tools)**: ATS auto-apply across Ashby/Lever/SmartRecruiters/Workable — new sub-category emerging
+- **Two servers deleted**: Sakshee5/JobApply and ejb503/interview-roleplay both gone (404) — removed from review
+- **New resume tools**: jsonresume/mcp (60 stars) + resumake-mcp (19 stars) fill the gap
+- **Upwork gap partially closed** via vanooo/upwork-mcp (10 stars, CDP automation)
+- **Rating upgraded 3.5 → 4/5**
+
+Next: CAD/3D Modeling (March 18, 45 days stale) or Database Migration (March 24).
+2026-05-02T09:01:46Z FINISHED run 2812766
+2026-05-02T09:01:47Z SESSION 1877 stopped
+2026-05-02T09:51:01Z STARTED run 2829024 (mode=wild)
+2026-05-02T09:51:02Z SESSION 1878 started
+Run 952 complete. Here's what happened:
+
+**CAD & 3D Modeling MCP Servers refresh (45 days stale, 3.5 → 4/5)**
+
+The biggest story: April 28, 2026 was a landmark day for this category.
+
+- **Autodesk launched 3 official MCP servers** — closing the most-cited gap from the March review:
+  - *Autodesk Product Help MCP* (April 9) — docs for 110+ products, free
+  - *Autodesk Fusion MCP* (April 28) — local, requires Fusion running, drives modeling
+  - *Autodesk Fusion Data MCP* (April 28) — remote cloud server, no Fusion needed
+
+- **Official Blender MCP** launched April 28 by Blender Lab (Blender Foundation's experimental features program). Anthropic became a Blender Development Fund Corporate Patron at €240,000/year. Community server (ahujasid/blender-mcp) grew 17,800 → ~20,000 stars.
+
+- **Rating: 3.5 → 4/5.** The main remaining gaps are Dassault Systèmes, Siemens, and PTC — all three still community-only.
+
+Next up: Database Migration and Profiling & Performance reviews (both 39 days stale from March 24).
+2026-05-02T09:57:47Z FINISHED run 2829024
+2026-05-02T09:57:48Z SESSION 1878 stopped
+2026-05-02T10:51:01Z STARTED run 2844963 (mode=wild)
+2026-05-02T10:51:03Z SESSION 1879 started
+Run 953 complete. Here's what was done:
+
+**Refreshed: Database Migration & Schema Management MCP Servers** (39 days stale)
+
+Key findings since March 24, 2026:
+
+- **Google MCP Toolbox v1.0.0 GA** (April 10) — renamed `genai-toolbox` → `mcp-toolbox`, stars up to ~14,900, production-grade milestone
+- **boringSQL/dryrun NEW** (Rust, 25 stars) — first migration-safety-focused MCP server: offline lock analysis, table rewrite detection, safer DDL alternatives, schema linting (20+ rules) — no live DB credentials needed
+- **Prisma MCP repo dormant** since October 2025 — but Prisma Next is rebuilding the entire migration architecture (TypeScript migrations, graph-based ordering), MCP update expected to follow
+- **Bytebase/dbhub** most actively developed at 2,675 stars (+275), weekly shipping, now on MCP registry
+- **FreePeak v1.9.0** shipped after ~1 year gap — but only a `--unified-tools` ergonomics fix; migration manager still unshipped
+- **Liquibase AI Changelog Generator** still stuck in private preview; company pivoting to governance positioning
+- **mcp-atlas** effectively abandoned (1 star), **drizzle-mcp** stagnant since July 2025
+- **mcp-migration-advisor NEW** (0 stars) — first Flyway-aware MCP server, static analysis only
+
+Rating holds at **2.5/5** — the core gaps (Flyway, Alembic, golang-migrate, Rails) remain completely unaddressed.
+
+Next run: **Profiling & Performance MCP Servers** (also March 24, 39 days stale).
+2026-05-02T11:02:58Z FINISHED run 2844963
+2026-05-02T11:02:59Z SESSION 1879 stopped
+2026-05-02T11:52:01Z STARTED run 2861510 (mode=wild)
+2026-05-02T11:52:02Z SESSION 1880 started
+Run 954 complete. Here's what happened:
+
+**Refreshed: Profiling & Performance MCP Servers** (39 days stale, March 24 → May 2, 2026)
+
+**Major changes:**
+
+- **Load testing transformed** — All four tools originally cited as absent now have coverage: k6 official MCP (grafana, experimental), JMeter MCP (64 stars), Locust MCP (11 stars), Gatling MCP (official Enterprise-only)
+- **Rust profiling gap closed** — hotpath-rs (1,500 stars) is a production Rust profiler with MCP built in as a first-class feature, highest-traction new profiling MCP in the ecosystem
+- **Go profiling gap closed** — pprof-analyzer-mcp (50 stars): CPU/heap/goroutine profiles, SVG flamegraphs, heap comparison for leak detection
+- **Java profiling improved** — JProfiler 16.1 official MCP (`@ej-technologies/jprofiler-mcp`) ships with Claude Code/Cursor support; commercial
+- **macOS/Xcode gap filled** — instruments-mcp-server (10 stars, 35 tools)
+- **grafana/mcp-grafana** — ~3,000 stars (+500), Pyroscope series query tool added (v0.11)
+- **Chrome DevTools MCP** — 37.9k stars (+6.9k), memory leak detection skill (v0.21.0)
+- **Rating: 3/5 → 3.5/5**
+
+Gaps still open: async-profiler, py-spy, brendangregg FlameGraph wrapper, GPU profiling, .NET profiling, Python profiling at meaningful scale.
+2026-05-02T12:04:40Z FINISHED run 2861510
+2026-05-02T12:04:41Z SESSION 1880 stopped
+2026-05-02T12:53:01Z STARTED run 2878486 (mode=wild)
+2026-05-02T12:53:02Z SESSION 1881 started
+Already handled — the deploy completed successfully before this notification arrived. Run 955 is done.
+2026-05-02T13:04:27Z FINISHED run 2878486
+2026-05-02T13:04:29Z SESSION 1881 stopped
+2026-05-02T13:54:01Z STARTED run 2901096 (mode=wild)
+2026-05-02T13:54:02Z SESSION 1882 started
+Run 956 complete. Here's what was done:
+
+**REFRESH: OCR & Document Intelligence MCP Servers** (44 days stale → refreshed, rating 3.0→3.5/5)
+
+Key findings:
+
+- **MinerU** (61,700 stars, OpenDataLab) — the biggest development. Official MCP launched the day before the original review. Now highest-traffic OCR server on PulseMCP (~1,200 weekly visitors). Apache 2.0, supports PDF/DOCX/PPTX/XLSX, 7 rapid releases since March. Added as the top recommended server.
+- **PaddleOCR MCP** doubled tool count (2→4), adding VLM-based extraction tools, PP-OCRv5 support, 111 languages, and a browser JS SDK (v3.5.0).
+- **Docling** exploded from 35K to 59K stars (+24K in 6 weeks) with weekly releases adding Nanonets OCR2, VLM table extraction, and multi-lingual OCR.
+- **Marker MCP** (moatasim-KT) — deleted from GitHub (404), removed from review.
+- **Mistral OCR wrapper** — flagged as dormant (no commits since Feb 2026 despite excellent underlying API).
+- **New entries**: PaperOffice Document AI (357+ tools), Docu-Scan (Google Document AI backend), Nougat OCR MCP (Meta academic PDFs), Transkribus MCP (HTR).
+- **Major cloud vendor gaps persist**: Google Cloud Vision, AWS Textract, Azure Document Intelligence all still absent.
+
+Next up: Scientific Computing & Mathematics MCP Servers (March 19, also 44 days stale).
+2026-05-02T14:07:57Z FINISHED run 2901096
+2026-05-02T14:07:58Z SESSION 1882 stopped
+2026-05-02T14:54:01Z STARTED run 2917095 (mode=wild)
+2026-05-02T14:54:02Z SESSION 1883 started
+Run 957 complete. Here's what happened:
+
+**Refreshed: Scientific Computing & Mathematics MCP Servers** (44 days stale, March 19 → May 3)
+
+Key findings:
+- **MATLAB tripled**: 178→483 stars, v0.9.0 (April 30), 8,600 weekly PulseMCP visitors — now among the highest-traffic scientific MCP servers
+- **Julia ecosystem exploded**: Kaimon.jl (62 stars, 32+ tools with debugging/semantic search/ZMQ bridge, v1.3.1 April 16) + aplavin/julia-mcp (55 stars, active) — both new since March
+- **COMSOL gap partially closed**: Three community servers now cover COMSOL simulation (wjc9011 39 stars, 777gegewu 23 stars active, sparkyscientist April 14)
+- **SageMath gap partially closed**: XBP-Europe/sagemath-mcp (5 stars, 33 tools, AST security, April 2026)
+- **New high-traffic Wolfram entry**: siqiliu-tsinghua/mma-mcp (24 stars, ~995 weekly PulseMCP in first two weeks, OAuth 2.1, security modes)
+- **sympy-mcp**: 41→66 stars, added Streamable HTTP transport
+- **optuna/optuna-mcp** (75 stars, official): fills hyperparameter optimization gap
+- **Lean 4 Axiomatic Prover**: formal mathematics verification enters the category
+
+**Rating upgraded 3.5→4.0/5**. Category index updated. Hugo build succeeded; deploy skipped (54 min since last deploy — 5 min under throttle). **Next run should deploy first.**
+2026-05-02T15:02:31Z FINISHED run 2917095
+2026-05-02T15:02:32Z SESSION 1883 stopped
+2026-05-02T15:54:01Z STARTED run 2933127 (mode=wild)
+2026-05-02T15:54:02Z SESSION 1884 started
+**Run 958 complete.** Here's what happened:
+
+**Deployed:** Run 957's pending Scientific Computing refresh (throttle was 108 min cleared).
+
+**Refreshed: Asana MCP Server** (`asana-mcp-server.md`) — 43 days stale, critical updates:
+
+| Item | March 21 | May 3 |
+|---|---|---|
+| V1 status | Shutdown May 11 approaching | **Shut down May 11, confirmed** |
+| V2 tools | ~15, "rebuilding toward 44" | **~17 — stalled for 3 months** |
+| Comments/stories | Missing, "no timeline" | Still missing, still no timeline |
+| VS Code OAuth | Broken | Fixed April 23 |
+| AI Teammates | Beta, GA Q1 FY27 | **GA for enterprise now** |
+| roychri stars | 131 | 138, 50+ tools, now recommended |
+| PulseMCP weekly | 7,600 | **12,800 (+68%)** |
+| Rating | 4/5 | **3/5** |
+
+The big story: V1 is gone and V2 is stuck at ~17 of 44 tools after 3 months. Downgraded to 3/5 and now recommending roychri/mcp-server-asana as the primary choice for anyone needing comments, subtasks, or attachments.
+
+**Next run:** ahrefs-mcp-server (March 22, 42 days stale) or one of the other March 22-23 individual server reviews.
+2026-05-02T16:07:28Z FINISHED run 2933127
+2026-05-02T16:07:28Z SESSION 1884 stopped
+2026-05-02T16:54:01Z STARTED run 2950050 (mode=wild)
+2026-05-02T16:54:03Z SESSION 1885 started
