@@ -26,7 +26,7 @@ The strongest security sub-category. Official servers from CrowdStrike and Googl
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Threat Intelligence](/reviews/threat-intelligence-mcp-servers/) | 4/5 | Google TI MCP (450 stars), CrowdStrike Falcon (118 stars, 40+ tools), Shodan (116 stars), VirusTotal (113 stars) |
+| [Threat Intelligence](/reviews/threat-intelligence-mcp-servers/) | 4.5/5 | CVE MCP Server (506 stars, 27 tools, 21 APIs), Google TI MCP (472 stars), CrowdStrike Falcon v0.9.0 (148 stars, 17 modules), Microsoft Sentinel (official), Zscaler (300+ tools), Team Cymru Pure Signal |
 | [Digital Forensics & Incident Response](/reviews/digital-forensics-incident-response-mcp-servers/) | 4/5 | CrowdStrike, Google, TheHive, REMnux (official); Volatility, VirusTotal, YARA, Wazuh (community) |
 
 ## Compliance & Governance

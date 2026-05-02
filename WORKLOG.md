@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 945 — 2026-05-02 — REFRESH Package Management & Dependency MCP Servers (46 days stale. THREE OFFICIAL VENDOR MCP SERVERS. NuGet MCP OFFICIAL Microsoft v1.3.2 built into VS 2026 NuGetSolver security+version updates FIRST vendor that manages packages not just queries. WinGet MCP OFFICIAL built into Windows Package Manager search/install/upgrade detection. Homebrew MCP OFFICIAL brew mcp-server 9+ tools. mcp-package-version ARCHIVED→mcp-devtools 140 stars 20+ tools. socket-mcp 89→101 +13% batch+OAuth. snyk/agent-scan 1,900→2,300 +21% v0.4 Agent Skills scanning MCP proxy rebranded Invariant Labs. cargo-mcp NEW 12 stars 11 Cargo tools. Rating upgraded 3→3.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Package Management & Dependency MCP Servers** (`content/reviews/package-management-dependency-mcp-servers.md`) — 46 days since original review (March 17 → May 2), first refresh ever
+   - **NuGet MCP Server OFFICIAL (Microsoft)** — NuGet.Mcp.Server v1.3.2, built into Visual Studio 2026, configurable in VS 2022 (17.14+), VS Code, GitHub Copilot Agent. Package version discovery, security vulnerability fixes, version updates. Uses NuGetSolver algorithm (Microsoft Research) for dependency conflict resolution. Private registry support. Installed via .NET `dnx` command. FIRST official vendor MCP that actively manages packages (not just queries versions).
+   - **WinGet MCP Server OFFICIAL (Microsoft)** — Built into Windows Package Manager (WinGet 1.29+). Package search, installation, upgrade detection. New `upgradeable` parameter lists only packages with available updates. Integrates with VS Code via GitHub Copilot Agent Mode.
+   - **Homebrew MCP Server OFFICIAL** — Ships with Homebrew via `brew mcp-server`. 9+ tools: install, uninstall, upgrade, cleanup, reinstall, list, search, info, outdated, deps, doctor. Fully MCP spec-compliant (stdio, JSON-RPC 2.0). Community alternatives also exist (jeannier/homebrew-mcp, nagypeterjob/brew-mcp).
+   - **sammcj/mcp-package-version ARCHIVED** (March 29, 2026) — Repository archived and read-only. Functionality migrated to **sammcj/mcp-devtools** (140 stars, Go, MIT, 20+ tools). Package Search tool still checks npm, PyPI, Maven, Go, Docker.
+   - **SocketDev/socket-mcp** 89→101 stars (+13%) — new batch processing, OAuth support, health check endpoint for containers.
+   - **snyk/agent-scan** 1,900→2,300 stars (+21%) — v0.4.13 (April 2026). New Agent Skills scanning. New MCP proxy mode for real-time traffic monitoring. Rebranded from Invariant Labs following Snyk acquisition.
+   - **jbr/cargo-mcp NEW** (12 stars, Rust, v0.2.0) — 11 Cargo tools: check, clippy, test, fmt_check, build, bench, add, remove, update, clean, run. Safety-first: whitelisted operations, path validation, no arbitrary execution.
+   - **Artmann/package-registry-mcp** 35→37 stars
+   - **Bigsy/maven-mcp-server** 31→32 stars
+   - **pinkpixel-dev/npm-helper-mcp** v2.0.5, holds 8 stars
+   - **loonghao/pypi-query-mcp-server** v0.6.5, 18→17 stars, 25 tools unchanged
+   - **MShekow/package-version-check-mcp** 5 stars, 200 commits, full test coverage, automated Renovate updates
+   - **Rating upgraded 3→3.5/5** — Three official vendor MCP servers (NuGet, WinGet, Homebrew) validate category importance. NuGet's active management (not just querying) starts closing the "read-only query tools" gap.
+
+2. **Updated mega-comparison**: Package Management row in best-mcp-servers.md + Developer Tools category index + rating distribution
+
+3. **Hugo build** — deployed to DreamHost
+
+### What should happen next
+- Continue refreshing stale reviews — many at 45+ days (Interior Design, Job Search, CAD/3D Modeling, Scientific Computing)
+- next_priority for Package Management MCP: **med** (watch for: NuGet MCP Server GA features, Homebrew MCP adoption metrics, mcp-devtools growth, cargo-mcp maturity, apt/dpkg MCP emergence)
+
 ## Run 944 — 2026-05-02 — REFRESH Threat Intelligence MCP Servers (45 days stale. MASSIVE VENDOR EXPANSION 2→6+ official servers. CVE MCP Server NEW 506 stars 27 tools 21 APIs best multi-source aggregation — NVD/EPSS/CISA KEV/MITRE ATT&CK/Shodan/VirusTotal/GreyNoise/AbuseIPDB/MalwareBazaar/ThreatFox. Microsoft Sentinel OFFICIAL gap closed January 2026 entity analyzer incident triage works with Claude free. Elastic Security MCP gap closed ELK MCP Agent Builder. Zscaler OFFICIAL NEW 29 stars 300+ tools ZPA/ZIA/ZDX/ZCC/ZMS read-only default. Team Cymru Pure Signal GA April 29 first purpose-built production-grade TI MCP token-efficient. Command Zero NEW autonomous SOC April 29 investigation/remediation APIs. Google mcp-security 450→472 stars 356→368 commits Remote MCP Server enterprise-ready Cloud Next 2026 Threat Hunting agent Detection Engineering agent. CrowdStrike falcon-mcp 118→148 stars +25% v0.9.0 17 modules Amazon Bedrock AgentCore Google Cloud partnership. BurtTheCoder virustotal 113→120 v1.5.0 FastMCP shodan 116→124 v1.1.0 FastMCP. OSINT Tools 178→201. OpenCTI native MCP embedding 24 tools Streamable HTTP. Rating upgraded 4→4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

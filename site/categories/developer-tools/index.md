@@ -33,7 +33,7 @@ Automation pipelines, testing frameworks, and package management for shipping so
 | [CI/CD Pipeline Servers](/reviews/ci-cd-pipeline-mcp-servers/) | 4/5 | 15+ servers — Jenkins plugin (68 stars, 15+ tools), CircleCI (80 stars, 14 tools), Argo CD (350 stars, 12 tools), Buildkite (official) |
 | [Testing & QA](/reviews/testing-qa-mcp-servers/) | 3.5/5 | Playwright MCP (official, 7.7k stars), Appium (official), BrowserStack |
 | [Package Management](/reviews/package-management-mcp-servers/) | 3/5 | npm-mcp (55 stars), pypi-mcp, NuGet, Maven — all community-built |
-| [Package Management & Dependency](/reviews/package-management-dependency-mcp-servers/) | 3/5 | 20+ servers — version checking (121 stars), vulnerability scanning (Snyk 1,900 stars, Socket 89 stars), 10+ registries |
+| [Package Management & Dependency](/reviews/package-management-dependency-mcp-servers/) | 3.5/5 | 25+ servers — NuGet MCP OFFICIAL (Microsoft), WinGet MCP OFFICIAL, Homebrew MCP OFFICIAL, mcp-devtools (140 stars), Snyk (2,300 stars), Socket (101 stars), cargo-mcp NEW |
 | [Database Migration](/reviews/database-migration-mcp-servers/) | 2.5/5 | Prisma MCP (official), Flyway (community), Liquibase (community) |
 
 ## Containers & Infrastructure
@@ -171,7 +171,7 @@ Across all 48 reviews, key themes emerge:
 
 **Feature flags and API gateways have arrived.** LaunchDarkly, GrowthBook, Unleash, Kong, Cloudflare, and Envoy all ship MCP integrations — bringing runtime infrastructure management to AI agents.
 
-**Community fills vendor gaps.** Categories like Package Management, Database Migration, Container Registries, and Logging are almost entirely community-built, with no vendor backing.
+**Community fills vendor gaps.** Categories like Database Migration, Container Registries, and Logging are almost entirely community-built, with no vendor backing. Package Management now has official vendor support from Microsoft (NuGet, WinGet) and Homebrew.
 
 ---
 
