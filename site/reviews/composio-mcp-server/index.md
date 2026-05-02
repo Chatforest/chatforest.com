@@ -3,11 +3,11 @@
 > Composio's MCP server connects AI agents to 500+ apps — Gmail, Slack, GitHub, Notion, Salesforce, and more — through a single managed endpoint with built-in OAuth.
 
 
-**At a glance:** 27,500 stars, 4,500 forks, MIT license, TypeScript/Python SDKs, stdio + HTTPS transport, 1,000+ toolkits across 500+ apps, $29M funded (Series A).
+**At a glance:** ~28,000 stars, 4,542 forks, MIT license, TypeScript/Python SDKs, stdio + HTTPS transport, ~982 toolkits / 20,000+ tools across 500+ apps, $29M funded (Series A). Tool Router is now GA. Rube (the standalone universal MCP repo) has been absorbed into the main SDK. mcp.composio.dev is fully deprecated.
 
 Composio is an **agentic integration platform** that connects AI agents to 500+ SaaS applications through a unified MCP endpoint. Rather than installing and configuring separate MCP servers for each service, Composio acts as a gateway — one server that routes requests to Gmail, Slack, GitHub, Notion, Salesforce, HubSpot, Google Sheets, Linear, Jira, and hundreds of other apps.
 
-The [ComposioHQ/composio repository](https://github.com/ComposioHQ/composio) has 27,500 GitHub stars and 4,500 forks. The company raised $29M total — a $4M seed from Together Fund and a $25M Series A led by Lightspeed Venture Partners (March 2025), with participation from Elevation Capital. As of early 2026, Composio has ~57 employees, 200+ paying customers, and hit $2M in revenue by mid-2025.
+The [ComposioHQ/composio repository](https://github.com/ComposioHQ/composio) has ~28,000 GitHub stars and 4,542 forks. The company raised $29M total — a $4M seed from Together Fund and a $25M Series A led by Lightspeed Venture Partners (March 2025), with participation from Elevation Capital. As of May 2026, Composio has ~65 employees (up from ~57 in March), 200+ paying customers, and hit $2M in revenue by mid-2025.
 
 ## What It Does
 
@@ -24,18 +24,26 @@ AI Agent → MCP Client → Composio MCP Server (GitHub) → GitHub API
 
 You configure which toolkit and which specific tools to expose. For example, a Gmail server might only allow `GMAIL_FETCH_EMAILS` and `GMAIL_SEND_EMAIL`, keeping the tool surface minimal.
 
-### 2. Rube — Universal MCP Server
+### 2. Tool Router — Universal MCP Access (Now GA)
 
-[Rube](https://rube.composio.dev) is Composio's all-in-one MCP server that connects to all 500+ apps through a single endpoint. Instead of exposing every tool to the model (which would overwhelm the context window), Rube uses **dynamic tool discovery**:
+Composio's **Tool Router** (now generally available as of May 2026) is the evolution of the Rube concept. Originally launched as a separate product under the name Rube (its standalone GitHub repo has since been removed), it's now integrated into the main Composio platform as the core way to build with Composio.
+
+Tool Router creates **pre-signed MCP session URLs per user** with automatic tool selection from 20,000+ tools. Instead of exposing every tool to the model, it surfaces only the relevant tools for a given task:
 
 | Meta-Tool | What It Does |
 |-----------|-------------|
-| **RUBE_SEARCH_TOOLS** | Inspects task descriptions and returns only relevant tools and toolkits |
-| **RUBE_CREATE_PLAN** | Structures complex multi-app workflows into sequential/parallel steps |
+| **Tool search** | Inspects task descriptions and returns only relevant tools and toolkits |
+| **Plan creation** | Structures complex multi-app workflows into sequential/parallel steps |
 
-This solves the context overload problem — rather than loading thousands of tool definitions, the model starts with just these meta-tools and discovers specific tools as needed.
+This solves the context overload problem — rather than loading thousands of tool definitions, the model discovers specific tools on demand.
 
-**Example workflow:** "Forward my Medium newsletter emails to a Notion database" → Rube identifies the needed Gmail tools (search, fetch) and Notion tools (search pages, create page, add content), loads only those, and executes the workflow.
+**Example workflow:** "Forward my Medium newsletter emails to a Notion database" → Tool Router identifies the needed Gmail tools (search, fetch) and Notion tools (search pages, create page, add content), loads only those, and executes the workflow.
+
+**Universal CLI (launched March 27, 2026):** A terminal-native interface for agents using Claude Code, Codex CLI, and similar tools:
+```bash
+curl -fsSL https://composio.dev/install | bash
+```
+This lets agent-driven environments invoke Composio tools directly, alongside MCP.
 
 ## Supported Apps (Sample)
 
@@ -82,21 +90,18 @@ import { Composio } from "@composio/core";
 const client = new Composio({ apiKey: "YOUR_KEY" });
 ```
 
-### Rube (Claude Desktop / Cursor)
+### Tool Router (Claude Desktop / Cursor / Claude Code)
 
-Install via npx:
-```json
-{
-  "mcpServers": {
-    "rube": {
-      "command": "npx",
-      "args": ["@composio/rube-mcp"]
-    }
-  }
-}
+The Rube `@composio/rube-mcp` npx package may still work for existing installs, but the recommended path is now using the **Tool Router** via the SDK or pre-signed session URLs:
+
+```python
+# Generate a Tool Router MCP session URL
+from composio import Composio
+client = Composio(api_key="YOUR_KEY")
+session_url = client.mcp.generate(user_id="user_123")
 ```
 
-Rube also works with Claude Code, VS Code, Windsurf, and any MCP-compatible client.
+This returns an HTTPS endpoint compatible with any Streamable HTTP MCP client. Works with Claude Desktop, Cursor, Claude Code, VS Code, Windsurf, and any MCP-compatible client.
 
 ### Hosted Endpoint
 
@@ -125,10 +130,10 @@ This means you can use Composio's integrations whether your client supports MCP 
 - **Founded:** 2023
 - **Funding:** $29M total ($4M seed + $25M Series A)
 - **Lead investors:** Lightspeed Venture Partners, Elevation Capital, Together Fund
-- **Employees:** ~57 (January 2026)
+- **Employees:** ~65 (May 2026, up from ~57 in January 2026)
 - **Revenue:** $2M by mid-2025, 200+ paying customers
-- **Repository:** 27,500 stars, 4,500 forks, 3,410 commits, MIT license
-- **Rube:** 322 stars (separate repo), released August 2025
+- **Repository:** ~28,000 stars, 4,542 forks, MIT license
+- **Tool Router (formerly Rube):** Now GA and integrated into the main SDK; standalone Rube repo removed
 
 The company positions itself as "the integration layer for AI agents" — handling auth, tool management, and API routing so developers focus on agent logic.
 
@@ -166,12 +171,14 @@ The free tier is genuinely generous — 20,000 tool calls per month with no cred
 
 ## Known Issues
 
-- **Parameter mismatch bug** — The Python SDK's `MCP.update()` method incorrectly maps `allowed_tools` to `custom_tools`, causing TypeErrors when updating server configurations ([#2161](https://github.com/ComposioHQ/composio/issues/2161)).
+- **Parameter mismatch bug (still open)** — The Python SDK's `MCP.update()` method incorrectly maps `allowed_tools` to `custom_tools`, causing TypeErrors when updating server configurations ([#2161](https://github.com/ComposioHQ/composio/issues/2161)). PR #2862 fixes this but remains unmerged as of May 2026.
 - **LlamaIndex schema parsing** — Composio's JSON schemas use `additionalProperties: false`, which caused parsing failures in LlamaIndex's MCP tool parser (fixed upstream in LlamaIndex).
-- **Context window consumption** — Even with Rube's dynamic discovery, adding Composio's meta-tools still consumes context. In Cursor, the 30-tool limit means Composio competes with other MCP servers for tool slots.
+- **Context window consumption** — Even with Tool Router's dynamic discovery, meta-tools still consume context. In Cursor, the 30-tool limit means Composio competes with other MCP servers for tool slots.
 - **Tool quality varies by app** — Popular apps (Gmail, GitHub, Slack) have well-tested tools. Less popular integrations may have incomplete or untested tool definitions.
-- **Composio MCP deprecation** — The original `mcp.composio.dev` hosted MCP servers are being deprecated in favor of Rube and the platform SDK. Migration is underway but may cause confusion for existing users.
-- **79 open GitHub issues** — Active development means bugs surface regularly, though the team is responsive.
+- **mcp.composio.dev fully deprecated** — The original hosted MCP servers now return a 301 redirect to `composio.dev/toolkits/`. Users must migrate to the SDK (`composio.mcp.create()`) or use the Tool Router.
+- **152 open GitHub issues** — Nearly double the 79 issues from March 2026. Growth reflects an expanding user base generating more support requests and bug reports.
+- **X/Twitter integration broken** — X moved to pay-per-use API access in February 2026. Composio's X integration no longer works with managed credentials; users must now supply their own X Developer credentials. Open issues reference 403 and 426 errors from other providers (Spotify, LinkedIn) with deprecated endpoints.
+- **Python SDK breaking change (py@0.12.0, April 28, 2026)** — Automatic file upload/download is now opt-in via `dangerously_allow_auto_upload_download_files` flag (default: False). Users upgrading from earlier versions must explicitly enable this behavior.
 
 ## What We Think
 
@@ -179,17 +186,17 @@ The free tier is genuinely generous — 20,000 tool calls per month with no cred
 
 Composio solves the right problem: connecting AI agents to dozens of apps without manually configuring OAuth flows and MCP servers for each one. The managed authentication alone saves significant development time, and the free tier (20K calls/month) is generous enough for real work.
 
-**Rube's dynamic tool discovery** is a smart answer to context overload — instead of flooding the model with hundreds of tool definitions, it lets the model search for and load tools on demand. This is the direction multi-app MCP should go.
+**Tool Router's dynamic tool discovery** (now GA) is a smart answer to context overload — instead of flooding the model with thousands of tool definitions, the model searches for and loads tools on demand. The Universal CLI (March 2026) extends this to terminal-native agent environments like Claude Code.
 
 **Where it falls short:** Composio is a gateway, not a deep integration. Purpose-built MCP servers for individual services (GitHub, Slack, Notion) will always offer more complete API coverage and better tool design. Composio's value is in breadth — when you need 10+ integrations, setting up 10 separate MCP servers with individual OAuth configurations is painful.
 
-The platform is also in active transition — the original Composio MCP is being deprecated, Rube is still gaining adoption (322 stars vs. the main repo's 27.5K), and the SDK has rough edges (parameter mismatch bugs, schema compatibility issues). Early adopters should expect some friction.
+The platform has matured considerably — the original `mcp.composio.dev` is now fully deprecated and replaced, the Tool Router is GA, and the product direction is clearer. However, the X/Twitter breakage (API cost changes forcing users to self-supply credentials), a near-doubling of open GitHub issues (79→152), and a parameter mismatch bug still unmerged after months point to an operation that's growing faster than its QA can keep pace.
 
-**Best for:** Teams building multi-app AI agents who need many integrations quickly. **Not ideal for:** Deep single-service automation where a dedicated MCP server would be more complete and reliable.
+**Best for:** Teams building multi-app AI agents who need many integrations quickly. **Not ideal for:** Deep single-service automation where a dedicated MCP server would be more complete and reliable, or workflows dependent on X/Twitter, Spotify, or LinkedIn (currently broken).
 
 ---
 
-*This review reflects research conducted in March 2026. Composio is actively evolving — check the [GitHub repository](https://github.com/ComposioHQ/composio) and [documentation](https://docs.composio.dev) for the latest information.*
+*This review was originally published March 2026 and refreshed May 2026. Composio is actively evolving — check the [GitHub repository](https://github.com/ComposioHQ/composio) and [documentation](https://docs.composio.dev) for the latest information.*
 
 **Category**: [Business & Productivity](/categories/business-productivity/)
 

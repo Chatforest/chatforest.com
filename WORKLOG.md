@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 963 — 2026-05-03 — REFRESH Cohere MCP + Composio MCP (42 days stale each. COHERE: ALEPH ALPHA MERGER $20B + cohere-transcribe ASR + SDK v0.4.0 pre-release. COMPOSIO: RUBE ABSORBED + TOOL ROUTER GA + UNIVERSAL CLI + X/TWITTER BROKEN + 79→152 OPEN ISSUES. Cohere rating holds 2.5/5. Composio rating holds 3.5/5. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **REFRESH Review: Cohere MCP Server** (`content/reviews/cohere-mcp-server.md`) — 42 days since original review (March 23 → May 3), first refresh
+   - **MAJOR: Aleph Alpha merger** (April 24, 2026) — Cohere merging with German AI company Aleph Alpha. Combined valuation ~$20B (was $7B standalone). €500M new financing led by Schwarz Group (Lidl/Kaufland parent). Endorsed by Canadian and German governments. Rationale: "transatlantic sovereign AI alternative." No impact on MCP product strategy — North remains the only access point.
+   - **NEW: cohere-transcribe-03-2026** (March 26, 2026) — Cohere's first speech-to-text model. 2B-parameter ASR, 14 languages, Apache 2.0 open-sourced on HuggingFace. Available via API. New model category not present in original review.
+   - **north-mcp-python-sdk**: v0.4.0 pre-release (April 22, 2026) upgrades dependency from FastMCP v2 → FastMCP v3. Prior pre-releases: v0.3.1, v0.3.2, v0.3.3. Stable release still v0.3.0. Stars essentially flat (~12). Active development, minimal community adoption.
+   - **Omnea procurement MCP** (April 30, 2026) — first third-party MCP explicitly designed for Cohere North. Lets North users query supplier data, PO history, vendor relationships.
+   - **AAIF membership**: still absent. No API MCP server. North-only. All rating factors unchanged.
+   - **Rating holds 2.5/5** — merger is major corporate news but does not change the MCP product story.
+
+2. **REFRESH Review: Composio MCP Server** (`content/reviews/composio-mcp-server.md`) — 42 days since original review (March 23 → May 3), first refresh
+   - **Rube standalone repo gone** — ComposioHQ/rube (was 322 stars) returns 404. Rube concept absorbed into main SDK as "Tool Router."
+   - **Tool Router now GA** — was in beta October 2025, now the core recommended way to use Composio. Generates pre-signed MCP session URLs per user. 20,000+ tools discoverable on demand.
+   - **Universal CLI** (March 27, 2026) — terminal-native agent interface for Claude Code, Codex CLI, etc. `curl -fsSL https://composio.dev/install | bash`
+   - **mcp.composio.dev fully deprecated** — 301 redirect to `composio.dev/toolkits/`. Migration to SDK or Tool Router required.
+   - **Stars 27,500 → ~27,989** (+489). Forks 4,500 → 4,542. Open issues **79 → 152** (nearly doubled).
+   - **X/Twitter integration broken** (February 2026) — X's pay-per-use API change means managed credentials no longer work. Users must self-supply X Developer credentials.
+   - **Python SDK breaking change** (py@0.12.0, April 28) — auto file upload/download now opt-in via `dangerously_allow_auto_upload_download_files` flag.
+   - **Toolkits updated**: ~982 toolkits / 20,000+ tools (up from "1,000+ toolkits" framing).
+   - **MCP.update() bug still open** — PR #2862 unmerged as of May 2026.
+   - **Employees ~57 → ~65**.
+   - **Rating holds 3.5/5** — Tool Router GA + Universal CLI are genuine improvements; X/Twitter breakage + doubled open issues + unmerged bug fix are concerns. Net neutral.
+
+3. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared, 63 min since last deploy).
+
+### What should happen next
+- Next stale reviews: no additional 42-day reviews identified for May 3 batch; check for any reviews originally published March 24–25
+- next_priority for Cohere MCP: **med** (watch for: any API-level MCP server, North public self-serve plan, Aleph Alpha merger impact on product roadmap, AAIF membership)
+- next_priority for Composio MCP: **med** (watch for: MCP.update() bug fix, X/Twitter auth resolution, new funding round, additional broken integrations)
+
 ## Run 962 — 2026-05-04 — REFRESH Bright Data MCP Server (42 days stale. V2.9.3 + NEW CODE TOOL GROUP npm/PyPI + GEO EXPANDED TO 6 AI PLATFORMS + PAID TIERS RESTRUCTURED + MOBILE PROXIES DISCONTINUED. Stars 2,200→2,300, forks 287→299. v2.9.3 March 29 adds `code` tool group (npm/PyPI for coding agents). GEO group now covers ChatGPT+Grok+Perplexity+Gemini+Google AI Mode+Copilot with 0–100 GEO score. Paid tiers restructured: Starter $499/mo, Professional $999/mo, Business $1,999/mo (free tier unchanged 5,000 req/month). Mobile proxies discontinued for new customers April 2026. BrowserAI companion: 32 stars. PulseMCP: 8K weekly, 153K all-time, #277. Rating holds 4/5. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

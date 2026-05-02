@@ -3,11 +3,13 @@
 > Cohere has no standalone MCP server — instead, their North AI agent platform consumes MCP servers via built-in connectors and custom tool integration, with a North MCP Python SDK
 
 
-**At a glance:** Cohere has **no official MCP server** wrapping its API. Instead, MCP integration lives inside [North](https://cohere.com/north), Cohere's enterprise AI agent platform, which can consume any MCP server as a custom tool. Cohere publishes [north-mcp-python-sdk](https://github.com/cohere-ai/north-mcp-python-sdk) (11 stars, MIT) for building authenticated MCP servers that work with North. Community servers are minimal: one community Cohere API wrapper exists but has been removed from GitHub. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** Cohere has **no official MCP server** wrapping its API. Instead, MCP integration lives inside [North](https://cohere.com/north), Cohere's enterprise AI agent platform, which can consume any MCP server as a custom tool. Cohere publishes [north-mcp-python-sdk](https://github.com/cohere-ai/north-mcp-python-sdk) (~12 stars, MIT, now at v0.4.0 pre-release with FastMCP v3) for building authenticated MCP servers that work with North. Community servers are minimal. **Major corporate news:** Cohere announced a merger with German AI company Aleph Alpha on April 24, 2026, forming a ~$20B combined entity with €500M in new financing. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
 Cohere is the **enterprise-focused AI company** that built its reputation on retrieval-augmented generation (RAG) and multilingual models. Rather than publishing MCP servers or building broad MCP client support, Cohere channels MCP through North — a low-code enterprise agent platform where MCP is one of several tool integration options alongside built-in connectors.
 
-[Cohere](https://cohere.com/) was founded in 2019 by **Aidan Gomez** (co-inventor of the Transformer architecture), **Ivan Zhang**, and **Nick Frosst** (ex-Google Brain). Headquartered in Toronto with offices in San Francisco, Palo Alto, London, and New York. As of early 2026: approximately **$240 million ARR** (surpassing $200M target per February 2026 investor memo), **$7 billion valuation** (September 2025 Series D second close), approximately **$1.54 billion total funding** across 7 rounds (investors include Radical Ventures, Inovia Capital, NVIDIA, AMD Ventures, PSP Investments, Salesforce Ventures), approximately **450–842 employees** (sources vary). Cohere is **not a member of the AAIF** at any tier.
+[Cohere](https://cohere.com/) was founded in 2019 by **Aidan Gomez** (co-inventor of the Transformer architecture), **Ivan Zhang**, and **Nick Frosst** (ex-Google Brain). Headquartered in Toronto with offices in San Francisco, Palo Alto, London, and New York. As of May 2026: approximately **$240 million ARR** (surpassing $200M target per February 2026 investor memo), **~$20 billion combined valuation** post-merger with Aleph Alpha (announced April 24, 2026; previously $7B standalone), approximately **$1.54 billion total funding** pre-merger plus €500M new financing from Schwarz Group (parent of Lidl/Kaufland) and others, approximately **450–842 employees** (sources vary). Cohere is **not a member of the AAIF** at any tier.
+
+**Aleph Alpha merger (April 24, 2026):** Cohere announced it will acquire/merge with Aleph Alpha, a German enterprise AI company known for European language models and sovereign AI deployments. The combined entity is valued at approximately $20 billion. The deal was endorsed by the Canadian and German governments. Aleph Alpha CEO Jonas Andrulis will remain involved. The rationale: a "transatlantic sovereign AI alternative" to US-dominated AI market. This does not change Cohere's MCP product strategy, which remains North-only.
 
 **Architecture note:** Cohere's MCP strategy is the **most enterprise-locked** of any major AI provider. Where Google published 24+ official MCP servers and Anthropic created the protocol, Cohere treats MCP as a connector layer inside North — accessible to North enterprise customers but not to the broader developer ecosystem. There is no official Cohere API MCP server for use with Claude Desktop, Cursor, or other MCP clients.
 
@@ -22,6 +24,7 @@ Cohere is the **enterprise-focused AI company** that built its reputation on ret
 | Built-in | Gmail, Slack, Salesforce, Outlook, Linear, SharePoint |
 | Custom MCP | Any MCP server via StreamableHTTP transport |
 | Agent coordination | Agent-to-agent workflows within North |
+| Third-party MCP | e.g. Omnea (procurement data, supplier/PO queries — April 2026) |
 
 **Key capabilities:**
 - Agents built in **Agent Studio** (low-code UI + API) can connect to any MCP server
@@ -36,10 +39,12 @@ Cohere publishes an official SDK for building MCP servers that authenticate with
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [cohere-ai/north-mcp-python-sdk](https://github.com/cohere-ai/north-mcp-python-sdk) — 11 stars, 7 forks, 46 commits, 5 releases (latest v0.3.0), MIT |
+| GitHub | [cohere-ai/north-mcp-python-sdk](https://github.com/cohere-ai/north-mcp-python-sdk) — ~12 stars, 7 forks, ~51 commits, MIT |
 | Language | Python 3.11+ |
 | Created | May 2025 |
 | Transport | StreamableHTTP only |
+| Stable release | v0.3.0 (March 4, 2026) |
+| Pre-releases | v0.3.1, v0.3.2, v0.3.3, v0.4.0 (April 22 — upgrades to FastMCP v3) |
 | Key features | Server secret protection, user OAuth token access, user identity from IdP, debug mode |
 | Install | `uv pip install git+ssh://git@github.com/cohere-ai/north-mcp-python-sdk.git` |
 
@@ -99,6 +104,9 @@ All API pricing per 1 million tokens:
 |-------|-----------|---------|---------|-------|
 | Aya Expanse 32B | 32B | 128K | Apache 2.0 | Free (self-hosted) |
 | Aya Vision 32B | 32B | 16K | Apache 2.0 | Free (self-hosted) |
+| cohere-transcribe-03-2026 | 2B | Audio | Apache 2.0 | Free (self-hosted) |
+
+**New (March 26, 2026):** `cohere-transcribe-03-2026` is Cohere's first speech-to-text model — a 2B-parameter ASR model supporting 14 languages, open-sourced on HuggingFace under Apache 2.0. Also available via the Cohere API. This is a new model category (audio/transcription) not present in Cohere's lineup as of the original review.
 
 **Key point:** Cohere's Command R7B at **$0.04/$0.15** per million tokens is competitive for lightweight tasks. Command A at $2.50/$10.00 is priced at the premium tier, comparable to GPT-4o and Claude Sonnet. The Aya research models are **Apache 2.0 open-weight** but are not Cohere's primary commercial offerings.
 
@@ -143,7 +151,7 @@ North pricing is not public — enterprises must request a demo.
 
 9. **Aya open-weight models lag behind** — While Cohere publishes Aya Expanse 32B and Aya Vision 32B under Apache 2.0, these are research-grade 32B models — not competitive with Mistral's 675B open-weight frontier model or Meta's Llama 4 Scout/Maverick.
 
-10. **Revenue and scale gap** — At $240M ARR, Cohere is significantly smaller than Anthropic (~$19B annualized), Google ($402B revenue), AWS ($128B), or even Mistral (EUR 300M ARR). This affects long-term investment capacity in MCP ecosystem development.
+10. **Revenue and scale gap** — At $240M ARR, Cohere is significantly smaller than Anthropic (~$19B annualized), Google ($402B revenue), or AWS ($128B). The Aleph Alpha merger materially changes the corporate scale picture (combined ~$20B valuation vs. $7B standalone), but the MCP product investment gap remains: no API server, North-only access, and minimal SDK adoption.
 
 ## Bottom Line
 
@@ -155,7 +163,7 @@ The fundamental issue is **MCP is locked inside North's enterprise walls**. Ther
 
 Cohere's **enterprise positioning** makes this somewhat intentional. They're building for Fortune 500 companies that want private, sovereign AI deployments with agent capabilities — not for individual developers exploring MCP tooling. North's built-in connectors (Gmail, Slack, Salesforce, Outlook, Linear, SharePoint) plus custom MCP support serve that enterprise audience.
 
-The **2.5/5 rating** reflects Cohere's strong models and enterprise platform offset by the thinnest MCP ecosystem we've reviewed: no official API server, North-only MCP access, 11-star SDK, no AAIF membership, no free tier, and no community adoption. Every other AI provider in our series — even those without official MCP servers — offers broader MCP accessibility.
+The **2.5/5 rating** reflects Cohere's strong models and enterprise platform offset by the thinnest MCP ecosystem we've reviewed: no official API server, North-only MCP access, ~12-star SDK, no AAIF membership, no free tier, and no community adoption. Every other AI provider in our series — even those without official MCP servers — offers broader MCP accessibility. The Aleph Alpha merger ($20B combined valuation) significantly changes Cohere's corporate scale and European reach but does not change the MCP product story — North remains the only access point.
 
 **Who benefits most from Cohere's MCP ecosystem:**
 
@@ -171,5 +179,5 @@ The **2.5/5 rating** reflects Cohere's strong models and enterprise platform off
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Cohere announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent and refreshed in May 2026. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Cohere announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
 
