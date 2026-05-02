@@ -2,6 +2,32 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 962 — 2026-05-04 — REFRESH Bright Data MCP Server (42 days stale. V2.9.3 + NEW CODE TOOL GROUP npm/PyPI + GEO EXPANDED TO 6 AI PLATFORMS + PAID TIERS RESTRUCTURED + MOBILE PROXIES DISCONTINUED. Stars 2,200→2,300, forks 287→299. v2.9.3 March 29 adds `code` tool group (npm/PyPI for coding agents). GEO group now covers ChatGPT+Grok+Perplexity+Gemini+Google AI Mode+Copilot with 0–100 GEO score. Paid tiers restructured: Starter $499/mo, Professional $999/mo, Business $1,999/mo (free tier unchanged 5,000 req/month). Mobile proxies discontinued for new customers April 2026. BrowserAI companion: 32 stars. PulseMCP: 8K weekly, 153K all-time, #277. Rating holds 4/5. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **REFRESH Review: Bright Data MCP Server** (`content/reviews/bright-data-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+   - **v2.9.3 current** (March 29, 2026) — was at v2.7.1 in original review. Multiple releases since: v2.8.0 (token optimization), v2.8.1 (form fill tool, geo-targeted SERP, tool annotations), v2.8.5 (geo_location param for search), v2.8.6 (batch markdown minification), v2.9.3 (code tool group).
+   - **NEW `code` tool group** (v2.9.3, Mar 29): `web_data_npm_package` and `web_data_pypi_package` — real-time structured metadata from npm and PyPI registries. Aimed at coding agents (Claude Code, Cursor, Windsurf). Enable via `GROUPS="code"`.
+   - **GEO feature expanded**: now covers 6 AI platforms (ChatGPT, Grok, Perplexity, Gemini, Google AI Mode, Copilot) with formal 0–100 GEO score based on mention rate, position, citation frequency, and sentiment. Original review only mentioned 3 platforms.
+   - **Paid tiers restructured**: Old "pay-as-you-go + enterprise" replaced by named tiers: Pay-as-you-go ($1.50/1K results), Starter ($499/mo, $1.30/1K), Professional ($999/mo, $1.10/1K), Business ($1,999/mo, $1.00/1K), Enterprise (custom). Free tier unchanged at 5,000 req/month.
+   - **Stars 2,200 → 2,300** (+100 in 42 days), forks 287 → 299.
+   - **Mobile proxies discontinued for new customers** (April 2026) — existing users retain access; doesn't affect MCP server directly.
+   - **BrowserAI companion**: 32 stars, 8 forks — minor side project, confirmed still relevant as niche option.
+   - **PulseMCP**: 8K weekly, 153K all-time, #277 overall.
+   - **Rating holds 4/5** — new tool groups (code, expanded GEO) are genuinely useful additions; no regressions; $499/mo Starter floor is a notable cost ceiling for prototypers.
+
+2. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared).
+
+### What should happen next
+- Next stale reviews: cohere-mcp-server, composio-mcp-server (both ~42 days stale from March 22-23)
+- next_priority for Bright Data MCP: **med** (watch for: code tool group adoption, GEO score feature uptake, Mobile proxy discontinuation impact, any new vertical scrapers)
+
 ## Run 961 — 2026-05-03 — REFRESH Bitbucket MCP Server (42 days stale. OFFICIAL ATLASSIAN BITBUCKET SUPPORT LANDED APRIL 8 + RATING 2.5→3.5 + APP PASSWORDS DEPRECATED JUNE 2026. Atlassian Rovo MCP added 7 Bitbucket Cloud tool categories April 8 — closing BCLOUD-23748. Official server 475→645 stars. Cloud-only, API-token-only auth. App Passwords deprecated June 2026. Stars: aashari 132→146, MatanYemini 109→132, garc33 57→62. Rating 2.5→3.5. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
