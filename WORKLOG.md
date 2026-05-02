@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 958 — 2026-05-03 — REFRESH Asana MCP Server (43 days stale. V1 SHUTDOWN MAY 11 CONFIRMED + V2 REGRESSION 44→17 TOOLS + RATING DROPPED 4→3/5. V1 shut down May 11 2026 no extension — critical migration deadline. V2 at only ~17 tools after 3 months: added create_tasks + update_tasks bulk tools (April 13) but comments/stories, subtask tools, attachments, follower management all still missing. VS Code OAuth fixed April 23 (broken since V2 launch Feb 2026). AI Teammates GA for sales-led customers Q1 FY2027. roychri community server 131→138 stars 84→99 commits 40+→50+ tools recommended for full coverage. PulseMCP: 7.6K→12.8K weekly, 186K→361K all-time, #184→#142 globally. Rating dropped 4→3/5 — 60%+ of V1 tools still missing. Deployed pending Run 957 changes + this refresh.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcasts. No instructions from Rob or Boss Claude. (Attempted bulk mark-seen but tool requires permission approval — deferred.)
+
+### What I did
+
+1. **Deployed pending Run 957 changes** — rsync to DreamHost (throttle cleared, 108 min since last deploy)
+
+2. **REFRESH Review: Asana MCP Server** (`content/reviews/asana-mcp-server.md`) — 43 days since original review (March 21 → May 3), first refresh
+   - **V1 SHUTDOWN CONFIRMED** — V1 at `mcp.asana.com/sse` shut down May 11, 2026 (no extension). All users must be on V2 now. Replit and JetBrains users with V1 were potentially cut off.
+   - **V2 TOOL REGRESSION** — V2 launched with ~15 tools, now at ~17. Only two new tools confirmed added: `create_tasks` and `update_tasks` bulk operations (April 13). Major V1 tools still missing: comments/stories (intentionally omitted), subtask creation tool, attachment operations, follower management, section placement tools.
+   - **Rating dropped 4→3/5** — 60%+ of V1's 44 tools absent from V2 after 3 months of V2 operation. The "most tool-rich productivity MCP server" claim is no longer accurate.
+   - **VS Code OAuth fixed** — April 23, 2026. Was broken from V2 launch (Feb 4) until April 23.
+   - **AI Teammates GA** — for enterprise/sales-led customers in Q1 FY2027 (Feb-Apr 2026). Self-serve H2 FY2027. 22 pre-built teammates. Not directly MCP-related.
+   - **roychri/mcp-server-asana**: 131→138 stars, 84→99 commits, 40+→50+ tools. Now recommended for anyone needing comments, subtasks, attachments.
+   - **PulseMCP traffic doubled**: 7.6K→12.8K weekly, 186K→361K all-time, #184→#142 globally.
+   - **Single-workspace limitation**: no progress, no staff response in April forums.
+
+3. **Updated Communication & Collaboration category index** — Asana row: 4/5→3/5, 44 tools→~17 tools V2, added V1 shutdown note.
+4. **Hugo build + deploy** to DreamHost.
+
+### What should happen next
+- Next stale review: `ahrefs-mcp-server.md` (2026-03-22, 42 days stale) or other March 22-23 individual server reviews
+- Other March 22-23 stale reviews: anyquery-mcp-server, apify-mcp-server, bitbucket-mcp-server, bright-data-mcp-server, cohere-mcp-server, composio-mcp-server
+- next_priority for Asana MCP: **med** (watch for: V2 tool restoration progress, comments/stories restored, multi-workspace support)
+
 ## Run 957 — 2026-05-03 — REFRESH Scientific Computing & Mathematics MCP Servers (44 days stale. MATLAB 178→483 STARS +171% v0.9.0 8.6K PULSEMCP WEEKLY + JULIA ECOSYSTEM EXPLODES KAIMON.JL 62 STARS 32+ TOOLS + APLAVIN 55 STARS + COMSOL GAP PARTIALLY CLOSED 3 SERVERS + SAGEMATH GAP PARTIALLY CLOSED 33 TOOLS + MMA-MCP 995 WEEKLY PULSEMCP + RATING UPGRADED 3.5→4.0/5. matlab-mcp-core-server 178→483 stars v0.9.0 April 30 broadest client support. Kaimon.jl NEW 62 stars 32+ tools debugging semantic search ZMQ bridge v1.3.1 April 16. aplavin/julia-mcp NEW 55 stars lightweight per-project sessions very active. COMSOL: wjc9011 39 stars 597 weekly + 777gegewu 23 stars very active + sparkyscientist April 14. SageMath: XBP-Europe/sagemath-mcp 5 stars 33 tools AST security Docker April 2026. mma-mcp 24 stars April 17 Wolfram Engine security modes OAuth 2.1 995 weekly PulseMCP highest debut. sdiehl/sympy-mcp 41→66 stars Streamable HTTP transport. rmcp 197→201. mcp.science 117→131. optuna/optuna-mcp 75 stars official Preferred Networks. Axiomatic Prover Lean 4 Mathlib formal math. sanshanjianke/scicompute-mcp covers Octave among 7 backends. paraporoco/Wolfram-MCP dormant since Oct 2025. globus-labs/science-mcps last commit June 2025. Rating upgraded 3.5→4.0/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build, deploy skipped throttle)

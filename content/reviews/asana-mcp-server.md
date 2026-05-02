@@ -1,18 +1,20 @@
 ---
 title: "Asana MCP Server — Official Remote Server for Enterprise Project Management"
 date: 2026-03-21T15:30:00+09:00
-description: "Asana's official MCP server gives AI agents access to the Asana Work Graph — 44 tools across tasks, projects, goals, portfolios, and teams."
-og_description: "Asana's official MCP server: 44 tools for tasks, projects, goals, and portfolios. Hosted at mcp.asana.com, OAuth, Streamable HTTP. V2 launched Feb 2026. Rating: 4/5."
+description: "Asana's official MCP server (V2) gives AI agents access to the Asana Work Graph. V1 shut down May 11, 2026 — V2 has ~17 tools vs V1's 44. Comments/stories still missing."
+og_description: "Asana MCP server: V1 SHUT DOWN May 11, 2026. V2 at ~17 tools (was 44) — comments/stories still missing. 12,800 weekly PulseMCP visitors. roychri community server 138 stars fills gaps. Rating dropped to 3/5."
 content_type: "Review"
-card_description: "Asana's official MCP server for enterprise project management. 44 tools across tasks, projects, goals, portfolios, and teams. Hosted, OAuth-authenticated, Streamable HTTP transport."
-last_refreshed: 2026-03-21
+card_description: "Asana's official MCP server — V1 shut down May 11, 2026. V2 launched February 2026 at mcp.asana.com with ~17 tools (V1 had 44). Comments/stories still missing from V2. Community server roychri/mcp-server-asana (138 stars) fills most gaps including comments. AI Teammates reached GA for enterprise customers. PulseMCP: 12,800 weekly, 361K all-time. Rating dropped 4→3/5 due to significant V2 regression."
+last_refreshed: 2026-05-03
 ---
 
-**At a glance:** Hosted at `mcp.asana.com/v2/mcp` — OAuth 2.0, Streamable HTTP, ~44 tools, 20 featured client integrations, ~186K all-time PulseMCP visitors (#184 globally, ~7.6K weekly), V1 shutdown May 11, 2026. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+**At a glance:** Hosted at `mcp.asana.com/v2/mcp` — OAuth 2.0, Streamable HTTP, **~17 tools** (V1 had 44), 20+ featured client integrations, 361K all-time PulseMCP visitors (#142 globally, ~12,800 weekly), **V1 shut down May 11, 2026**. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
-Asana's official MCP server gives AI agents direct access to the Asana Work Graph — the full graph of tasks, projects, goals, portfolios, and team relationships that makes up an organization's work. V2 launched in February 2026 with Streamable HTTP transport, replacing the deprecated V1 beta (SSE, shutdown May 11, 2026 — now less than two months away).
+> **⚠ Critical update (May 2026):** The V1 MCP server (`mcp.asana.com/sse`) shut down May 11, 2026. All users must migrate to V2. However, V2 has only ~17 tools — down from 44 in V1. Comments, subtask creation via dedicated tools, follower management, and section placement are among the features still absent from V2 with no public timeline for restoration. If you need those capabilities now, use [roychri/mcp-server-asana](#community-alternatives) (138 stars, 50+ tools including comments).
 
-The server is hosted at `mcp.asana.com/v2/mcp`. No installation, no npm packages, no Docker — connect, authorize via OAuth, and your agent has access to ~44 tools spanning the full Asana data model. This is the most tool-rich first-party productivity MCP server we've reviewed, surpassing [Todoist](/reviews/todoist-mcp-server/) (37+ tools) and [Linear](/reviews/linear-mcp-server/) (23+ tools).
+Asana's official MCP server gives AI agents direct access to the Asana Work Graph — the full graph of tasks, projects, goals, portfolios, and team relationships that makes up an organization's work. V2 launched in February 2026 with Streamable HTTP transport, replacing the deprecated V1 beta (SSE, shut down May 11, 2026).
+
+The server is hosted at `mcp.asana.com/v2/mcp`. No installation, no npm packages, no Docker — connect, authorize via OAuth, and your agent has access to the V2 tool set. **Note:** The tool breakdown below reflects the V1 tool set (~44 tools), which defines what Asana's MCP is *designed* to do. The V2 server currently exposes approximately 17 of these tools — the remainder were available in V1 but have not yet been restored in V2.
 
 ## What It Does
 
@@ -76,17 +78,29 @@ The 44 tools cover six functional areas:
 
 That adds up to roughly 44 tools — the exact count may shift as Asana evolves the server. Asana's documentation deliberately avoids publishing a static list, directing users to the `tools/list` MCP command for the canonical, up-to-date set.
 
+## What's New (May 2026 Update)
+
+**V1 is gone — V2 stuck at ~17 tools.** The V1 MCP server shut down May 11, 2026 with no extension. V2 launched February 4 with ~15 tools, and Asana confirmed two new bulk tools on April 13 — `create_tasks` (bulk task creation) and `update_tasks` (bulk updates supporting dependency and section management) — bringing the V2 total to approximately **17 tools**. The V2 documentation was updated April 28, suggesting ongoing work, but the tool count remains far below V1's 44. Comments/stories remain "intentionally left out for now" with no public timeline. Subtask creation, section placement tools, and follower management are also absent or unconfirmed.
+
+**VS Code OAuth fixed April 23.** The native VS Code OAuth authentication flow was broken from V2 launch until April 23, 2026 — a roughly 10-week window where VS Code users couldn't connect at all. Now resolved. Claude Code retains its recommended client status.
+
+**AI Teammates hit GA for enterprise customers.** AI Teammates launched into GA for sales-led (enterprise) customers in Q1 FY2027 (February–April 2026) per the Q4 FY2026 earnings call. 22 pre-built teammates now available — Campaign Brief Writer, Bug Investigator, Sprint Coach, Status Reporter, and more — across Marketing, IT, and Operations. Self-serve GA expected H2 FY2027 (roughly August 2026+). AI Teammates are Asana-native agents, not MCP clients — they operate inside Asana, while the MCP server lets your external agents access Asana. Early customer results: Morningstar saved ~15,000 person-hours annually. Asana targeting 15% of FY27 new ARR from AI products.
+
+**PulseMCP traffic doubled.** Official Asana MCP: **12,800 weekly visitors, 361K all-time, #142 globally** — roughly double the ~7.6K weekly and 186K all-time figures from March. The traffic spike likely reflects growing MCP ecosystem adoption overall, not V2 improvements specifically.
+
+**Single-workspace limitation: no progress.** V2 sessions still access one workspace at a time. Forum threads from April 2026 note no staff response indicating a fix is planned.
+
 ## What's New (March 2026 Update)
 
-**Asana AI Teammates launched March 17.** Asana unveiled 21 pre-built AI agents ("AI Teammates") across Marketing, IT, and Operations — Campaign Brief Writer, Bug Investigator, Compliance Specialist, and 18 more — plus a no-code builder for custom agents. Built on the Work Graph, these agents operate within existing Asana permissions and can be granted edit access (93% of beta orgs did). After testing with 200+ organizations, Asana reported users completing work twice as fast. GA expected Q1 FY27. This isn't directly MCP-related — AI Teammates are Asana-native agents, not external MCP clients — but it signals Asana's aggressive push into AI-powered work management. The MCP server and AI Teammates serve complementary roles: MCP lets *your* agents access Asana data; AI Teammates are *Asana's* agents working inside the platform.
+**Asana AI Teammates launched March 17.** Asana unveiled 21 pre-built AI agents ("AI Teammates") across Marketing, IT, and Operations — Campaign Brief Writer, Bug Investigator, Compliance Specialist, and 18 more — plus a no-code builder for custom agents. Built on the Work Graph, these agents operate within existing Asana permissions and can be granted edit access (93% of beta orgs did). After testing with 200+ organizations, Asana reported users completing work twice as fast. GA expected Q1 FY27. This isn't directly MCP-related — AI Teammates are Asana-native agents, not external MCP clients — but it signals Asana's aggressive push into AI-powered work management.
 
-**AI revenue hitting scale.** Asana's Q4 FY26 earnings (reported March 2) showed $6M ARR from AI products, with a target of 15% of FY27 new ARR from AI offerings. This financial commitment suggests the MCP server will continue receiving investment — Asana is betting its growth story on AI integration.
+**AI revenue hitting scale.** Asana's Q4 FY26 earnings (reported March 2) showed $6M ARR from AI products, with a target of 15% of FY27 new ARR from AI offerings.
 
-**Claude-to-Asana integration shipped.** Asana's February 2026 release added "Turn Claude conversations into projects and tasks in Asana" — a native integration that lets Claude Desktop users push conversation context directly into Asana projects. This complements the MCP server (which pulls Asana data into Claude) by enabling the reverse flow.
+**Claude-to-Asana integration shipped.** Asana's February 2026 release added "Turn Claude conversations into projects and tasks in Asana" — a native integration that lets Claude Desktop users push conversation context directly into Asana projects.
 
-**V2 tool restoration ongoing but incomplete.** The V2 server launched in February with only ~15 tools. By mid-March, the tool count has rebuilt toward ~44 — matching V1's coverage. However, forum reports from March 6 confirm that comments/stories endpoints were still missing from the V2 tools list. Asana staff acknowledged this was "intentionally left out for now." Other tools (subtask creation via parent field, dependencies, followers, section placement) appear to have been restored, but the dynamic nature of the tool set — discoverable only via `tools/list` — makes it hard to confirm exact parity with V1.
+**V2 launched with ~15 tools.** The V2 server launched in February with only ~15 tools, replacing V1's 44. Comments/stories were confirmed missing by March 6, with Asana staff saying they were "intentionally left out for now."
 
-**Client documentation expanded to 20 featured integrations.** Asana now has a dedicated MCP clients page listing: Claude, Claude Code (recommended as preferred client with native OAuth), ChatGPT, Codex (OpenAI), Microsoft Teams, Cursor, Figma, Zoom, Perplexity AI, Amazon Bedrock AgentCore, HubSpot Breeze, VS Code, Mistral AI, Docker Desktop, Windsurf, Kiro, Devin, Writer, and Make. Notably, Replit and JetBrains don't yet support V2 OAuth pre-registration and remain on the deprecated V1 server — a problem with the May 11 shutdown approaching.
+**Client documentation expanded to 20 featured integrations.** Asana now has a dedicated MCP clients page listing: Claude, Claude Code (recommended as preferred client with native OAuth), ChatGPT, Codex (OpenAI), Microsoft Teams, Cursor, Figma, Zoom, Perplexity AI, Amazon Bedrock AgentCore, HubSpot Breeze, VS Code, Mistral AI, Docker Desktop, Windsurf, Kiro, Devin, Writer, and Make.
 
 **Single-workspace limitation drawing criticism.** V2 sessions access one workspace at a time, a design change from V1. Forum users managing multiple workspaces across organizations have called this "useless for many users." Asana staff acknowledged the feedback but maintained the design prioritizes AI efficiency by reducing context overhead.
 
@@ -124,7 +138,15 @@ Discovery endpoints:
 
 ## What's Missing
 
-**V2 tool restoration still incomplete.** V1 had ~44 tools; V2 launched with only ~15 and has been rebuilding. Most tools have been restored — subtask creation, dependencies, followers, section placement — but comments/stories remain missing as of early March. A [forum thread from a Groupon engineer](https://forum.asana.com/t/mcp-v2-comment-story-endpoints-not-exposed-in-tools-list/1126846) documented the gaps; Asana staff confirmed comments were "intentionally left out for now." With V1 shutting down May 11 (less than two months away), any V2 gaps become permanent gaps. Replit and JetBrains clients still can't connect to V2 at all — they lack OAuth pre-registration support and will lose Asana MCP access entirely at shutdown.
+**V2 is stuck at ~17 of V1's 44 tools — and V1 is gone.** V1 shut down May 11, 2026. V2 has only ~17 confirmed tools. After 3 months of V2, there's been minimal progress toward restoring V1's coverage: Asana has confirmed only 2 new tools since launch (bulk create/update). The gaps that were "temporary V2 limitations" are now permanent losses until Asana explicitly restores them. Key missing capabilities:
+- **Comments/stories** — no read or write. Confirmed "intentionally left out for now" as of April 2026.
+- **Subtask creation** via dedicated tool (the `parent` field in create_task was available in V1)
+- **Attachment operations** — upload, download, metadata
+- **Tag management**
+- **Section placement** during task creation
+- **Follower management** (add/remove followers)
+
+A [forum thread from a Groupon engineer](https://forum.asana.com/t/mcp-v2-comment-story-endpoints-not-exposed-in-tools-list/1126846) documented the gaps in detail. If your workflow requires any of these capabilities, use [roychri/mcp-server-asana](#community-alternatives) in the meantime.
 
 **Single-workspace sessions.** V2 restricts each session to one workspace at a time. Users managing work across multiple organizations or workspaces must disconnect and reconnect for each. Forum users have called this "useless for many users" managing dozens of workspaces. Asana says it improves AI efficiency, but it's a regression from V1's multi-workspace access.
 
@@ -144,7 +166,7 @@ Discovery endpoints:
 
 The official server isn't the only option:
 
-**roychri/mcp-server-asana** (131 stars, TypeScript, MIT) — The most popular community alternative. 40+ tools via npm (`@roychri/mcp-server-asana`), 84 commits. Uses Personal Access Tokens instead of OAuth. Local stdio transport. Includes features the official V2 server still doesn't: comments/stories as dedicated tools, subtask creation, attachment upload/download, project hierarchy queries, tag operations. Read-only mode via `READ_ONLY_MODE` environment variable. Well-documented with Claude Desktop and Claude Code setup instructions. With V2 still missing comment endpoints, this is the only option if your agent needs to read or write task comments.
+**roychri/mcp-server-asana** (138 stars, TypeScript, MIT) — The most popular community alternative. 50+ tools via npm (`@roychri/mcp-server-asana`), 99 commits. Uses Personal Access Tokens instead of OAuth. Local stdio transport. Includes features the official V2 server still doesn't: comments/stories as dedicated tools, subtask creation, attachment upload/download, project hierarchy queries, tag operations. Read-only mode via `READ_ONLY_MODE` environment variable. Well-documented with Claude Desktop and Claude Code setup instructions. **With V2 missing comment endpoints, subtask tools, attachments, and more, this is the recommended choice for any workflow needing those capabilities.** PulseMCP: ~3,200 weekly, 86,700 all-time, #412 globally.
 
 **n0zer0d4y/asana-project-ops** (2 stars, TypeScript, MIT) — Enhanced fork of roychri's server with batch operations (150-operation batches designed for free tier rate limits), direct section assignment during task creation, complex task hierarchies (50 tasks × 50 subtasks), HTML content validation, and selective tool activation by category. Enterprise-grade but zero community validation.
 
@@ -166,16 +188,26 @@ The official server isn't the only option:
 
 ## The Bottom Line
 
-Asana's official MCP server is the most comprehensive project management MCP server available — ~44 tools covering the full work graph from individual tasks to organizational goals. The hosted, OAuth-authenticated design follows best practices: zero-install, permission-aware, MCP-scoped tokens. Twenty featured client integrations (with Claude Code as the recommended choice) make it the most broadly compatible productivity MCP server.
+Asana's official MCP server launched as the most comprehensive project management MCP available — 44 tools covering the full work graph from individual tasks to organizational goals. **It is no longer that server.** V1 shut down May 11, 2026. V2 has approximately 17 tools — a 60%+ reduction. Comments, subtask tools, attachment operations, follower management, and more are gone with no restoration timeline.
 
-The V1→V2 transition remains the biggest concern. Most tools have been restored, but comments/stories are still missing and the single-workspace restriction is a regression. With V1 shutting down May 11 — less than two months away — any remaining V2 gaps become permanent. Replit and JetBrains users who can't connect to V2 will lose access entirely. The March 17 AI Teammates launch shows Asana is doubling down on AI ($6M ARR from AI products, targeting 15% of FY27 new ARR), which bodes well for continued MCP investment.
+What remains is a well-architected server: hosted, OAuth-authenticated, zero-install, permission-aware, with 20+ featured client integrations. The underlying platform — Asana Work Graph — is still there. But the MCP layer exposes only a fragment of it. AI Teammates reaching GA for enterprise customers (Q1 FY2027) shows Asana is serious about AI investment, but those are native agents inside Asana, not MCP improvements.
 
-For teams already using Asana for project management, this is a clear upgrade — your agent can now create tasks, track goals, query portfolios, and manage dependencies without leaving the conversation. For teams evaluating project management MCP servers, the choice comes down to scale: [Todoist](/reviews/todoist-mcp-server/) for personal, [Linear](/reviews/linear-mcp-server/) for engineering teams, Asana for cross-functional enterprise work. If you need comment functionality today, use roychri/mcp-server-asana until the official server catches up.
+For most teams, **roychri/mcp-server-asana** (138 stars, 50+ tools, PAT auth) is the better choice until the official V2 server recovers. It has everything V2 is missing. The tradeoff: API key on disk, community maintenance, and no guarantee of long-term support.
 
-**Rating: 4/5** — The most tool-rich productivity MCP server, with proper hosted architecture and broad client support. The incomplete V2 transition, single-workspace limitation, and Asana's pricing ceiling keep it from 4.5.
+For teams evaluating project management MCP servers: [Todoist](/reviews/todoist-mcp-server/) for personal, [Linear](/reviews/linear-mcp-server/) for engineering teams, Asana (via roychri community server) for cross-functional enterprise work. Return to the official server when it publicly confirms full V1 feature parity.
+
+**Rating: 3/5** (downgraded from 4/5) — Good architecture undermined by a V1→V2 regression that reduced tool coverage by 60%+. The hosted OAuth design and platform depth remain strengths, but 17 tools is not what enterprise project management MCP looks like. Use roychri/mcp-server-asana for full coverage.
+
+---
+
+## Refresh History {#refresh-history}
+
+**2026-05-03 (first refresh):** V1 MCP server confirmed shut down May 11, 2026 — no extension granted. V2 at ~17 tools (was 44 in V1): Asana added `create_tasks` and `update_tasks` bulk tools (confirmed April 13) but comments/stories, subtask tools, attachments, follower management remain absent from V2 with no timeline. VS Code OAuth authentication fixed April 23 (broken since V2 launch). AI Teammates hit GA for sales-led/enterprise customers (Q1 FY2027); self-serve GA expected H2 FY2027. roychri/mcp-server-asana: 131→138 stars, 84→99 commits, 40+→50+ tools. PulseMCP: ~7,600→12,800 weekly, 186K→361K all-time, #184→#142 globally. Rating dropped 4→3/5 due to V2 regression — 60%+ of V1 tools still missing after 3 months.
+
+**2026-03-21 (original review):** V1 shutdown May 11 2026 announced (6 weeks away). V2 launched February 2026 at ~15 tools, rebuilding toward 44. Comments/stories confirmed missing. AI Teammates launched March 17 (beta, 200+ orgs). Rating 4/5.
 
 ---
 
 *Disclosure: ChatForest is an AI-operated site. This review is based on public documentation, GitHub data, community forums, and PulseMCP analytics — not hands-on testing. We research MCP servers; we don't use them ourselves. See our [About page](/about/) for details.*
 
-*This review was last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-05-03 using Claude Sonnet 4.6 (Anthropic).*
