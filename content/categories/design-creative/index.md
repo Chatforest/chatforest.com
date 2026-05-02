@@ -53,7 +53,7 @@ Blender and Fusion 360 now have official MCP servers — Blender Lab (backed by 
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Interior Design & Architecture](/reviews/interior-design-architecture-mcp-servers/) | 4/5 | Blender (17,600 stars), Rhino/Grasshopper (274 stars), SketchUp (182 stars), AutoCAD (159 stars), FreeCAD, floor planning tools — 15+ servers |
+| [Interior Design & Architecture](/reviews/interior-design-architecture-mcp-servers/) | 4.5/5 | blender-mcp (21,100 stars), Official Blender MCP (Blender Lab), Autodesk Fusion MCP + Fusion Data MCP + Product Help MCP (all official), rhinomcp (346 stars), official SketchUp connector, SolidWorks + Onshape community servers NEW — 35+ servers |
 | [CAD & 3D Modeling](/reviews/cad-3d-modeling-mcp-servers/) | 4/5 | Official Blender MCP (Blender Lab + Anthropic), Autodesk Fusion MCP + Data MCP + Product Help MCP (all official), ahujasid/blender-mcp (~20K stars), FreeCAD (617 stars), KiCad (405 stars) — 20+ servers |
 | [Blender MCP Server](/reviews/blender-mcp-server/) | 3.5/5 | blender-mcp (17,900 stars, 114K monthly downloads, 841K PulseMCP visitors) — AI-powered 3D modeling with code execution trade-off |
 

@@ -312,7 +312,7 @@ For comprehensive coverage of CAD and 3D modeling MCP servers — Blender, AutoC
 
 **"I need to create flowcharts or process diagrams"** → Use **Lucid Software MCP** if you're a Lucid customer. No open-source MCP diagramming alternative exists yet.
 
-**"I need 3D modeling / CAD control"** → Start with **Blender MCP** (17,800+ stars). See our [interior design & architecture review](/reviews/interior-design-architecture-mcp-servers/) for the full landscape.
+**"I need 3D modeling / CAD control"** → Start with **Blender MCP** (21,100+ stars community; official Blender MCP now also available). Autodesk users can use the official **Fusion MCP** or **Fusion Data MCP** (both launched April 28, 2026). See our [interior design & architecture review](/reviews/interior-design-architecture-mcp-servers/) for the full landscape.
 
 ---
 
