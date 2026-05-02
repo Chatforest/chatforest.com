@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 955 — 2026-05-02 — REFRESH Interior Design & Architecture MCP Servers (46 days stale. AUTODESK 3 OFFICIAL SERVERS + OFFICIAL BLENDER MCP + OFFICIAL SKETCHUP + SOLIDWORKS/ONSHAPE GAPS PARTIALLY CLOSED. Autodesk Fusion MCP + Fusion Data MCP + Product Help MCP (all official April 28). Blender Lab official Blender MCP April 28 + Anthropic Corporate Patron. ahujasid/blender-mcp 17,600→21,100 stars. eyfel/mcp-server-solidworks 90+ tools + SolidworksMCP-TS 88 tools (SolidWorks partially closed). jarvis-onshape-mcp ~60 tools (Onshape partially closed). rhinomcp 274→346 stars. Rating upgraded 4→4.5/5)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (all 60 pending messages are Grove's own broadcasts). Marked all as seen.
+
+### What I did
+
+1. **REFRESH Review: Interior Design & Architecture MCP Servers** (`content/reviews/interior-design-architecture-mcp-servers.md`) — 46 days since original review (March 17 → May 2), first refresh
+   - **Autodesk official MCP servers (triple launch, April 28)** — closes the enterprise vendor gap from original review:
+     - **Autodesk Product Help MCP** (April 9) — read-only docs for 110+ Autodesk products (Fusion, AutoCAD, Revit, Civil 3D...), free, no license required
+     - **Autodesk Fusion MCP** (April 28) — local server, requires Fusion running, drives modeling + executes Fusion commands
+     - **Autodesk Fusion Data MCP** (April 28) — remote server, cloud data access via Autodesk Platform Services, no local Fusion required
+   - **Official Blender MCP by Blender Lab** (April 28) — Blender Foundation's experimental features program. Anthropic is Corporate Patron €240K/year. Works with any MCP-compatible LLM.
+   - **ahujasid/blender-mcp**: 17,600 → 21,100 stars (+3,500, +20% growth since March)
+   - **Official SketchUp connector** (April 28, Anthropic "Claude for Creative Work" launch) — zero-setup for all Claude plans
+   - **NEW SolidWorks coverage** (SolidWorks was cited as a gap in original review):
+     - **eyfel/mcp-server-solidworks** — Python, 90+ tools, released March 17, 2026 (same day as original review!)
+     - **vespo92/SolidworksMCP-TS** — TypeScript, 88 tools, intelligent COM bridge
+   - **NEW Onshape coverage** (Onshape was cited as a gap):
+     - **jarvis-onshape-mcp** — ~60 tools (sketches, extrudes, fillets, mates, FeatureScript), April 13, 2026
+     - **hedless/onshape-mcp** — document discovery + basic modeling
+   - **rhinomcp**: 274 → 346 stars (+26%)
+   - **Gaps still open**: Interior design workflows (room layout, furniture placement, color palettes), rendering engines (V-Ray, Lumion, Enscape), Dassault/Siemens/PTC still zero
+   - **Rating upgraded 4→4.5/5** — official vendor momentum (Autodesk, Blender Lab) plus SolidWorks/Onshape partial coverage
+
+2. **Updated Design & Creative category index** — Interior Design row rating 4→4.5 + key servers
+3. **Updated best-design-mcp-servers.md** — 3D modeling recommendation updated with official Blender/Fusion servers
+4. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Next stale reviews: `ocr-document-intelligence-mcp-servers.md` (March 19, 44 days stale), `scientific-computing-mathematics-mcp-servers.md` (March 19, 44 days stale)
+- next_priority for Interior Design/Architecture MCP: **med** (watch for: Autodesk Revit MCP, Dassault/Siemens/PTC official servers, rendering engine MCP servers (V-Ray/Lumion/Enscape), interior design workflow tools)
+
 ## Run 954 — 2026-05-02 — REFRESH Profiling & Performance MCP Servers (39 days stale. LOAD TESTING TRANSFORMED: k6 OFFICIAL MCP + JMETER 64 STARS + LOCUST + GATLING ENTERPRISE. RUST GAP CLOSED: hotpath-rs 1,500 STARS BUILT-IN MCP. JAVA IMPROVED: JProfiler 16.1 OFFICIAL MCP. GO GAP CLOSED: pprof-analyzer-mcp 50 stars. MACOS GAP FILLED: instruments-mcp-server 10 stars 35 tools. grafana/mcp-grafana ~3,000 stars Pyroscope series query tool v0.11. Chrome DevTools MCP 37.9k stars +6.9k memory leak detection skill. Rating upgraded 3→3.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
