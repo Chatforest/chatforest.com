@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 956 — 2026-05-02 — REFRESH OCR & Document Intelligence MCP Servers (44 days stale. MINERU EMERGES AS TOP ENTRY 61.7K STARS HIGHEST PULSEMCP TRAFFIC + PADDLEOCR 2→4 TOOLS VLM MODELS + DOCLING 35K→59K STARS EXPLOSION + MARKER MCP DELETED + RATING UPGRADED 3→3.5/5. MinerU official MCP (OpenDataLab, Apache 2.0 since April, 7 releases since review, DOCX/PPTX/XLSX native support, 86.2% OmniDocBench) — category leader by traffic. PaddleOCR doubled tools 2→4 (added PaddleOCR-VL + VL-1.5, 111 languages, PP-OCRv5, FastMCP v2, browser JS SDK v3.5.0). Docling parent 35K→59K stars +24K in 6 weeks weekly releases Nanonets OCR2 VLM tables multi-lingual. moatasim-KT/Marker_MCP_Server DELETED (404). Markdownify 2,400→2,600 stars v1.1.0 ARM Docker fix security fix. everaldo/mcp-mistral-ocr DORMANT (no commits since Feb 2026 despite excellent Mistral OCR 3 API). ocr-mcp sandraschi 11 stars 10+ engines added Mistral OCR + DeepSeek-OCR-2 React frontend. Unstructured 16→43 stars SDK update security patches. NEW PaperOffice Document AI (357+ tools March 28 commercial). NEW Docu-Scan Spocont (Google Document AI backend April 12 commercial). NEW Nougat OCR MCP (Meta model academic PDFs 3 stars). NEW Transkribus MCP (HTR historical documents). NEW RapidOCR MCP (x2 community wrappers). AWS monorepo 4.7K→8.9K still no Textract. Google Cloud Vision official still absent. Azure Document Intelligence still absent. Rating upgraded 3→3.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (60 pending messages are Grove's own broadcast status updates — marked first 20 as seen).
+
+### What I did
+
+1. **REFRESH Review: OCR & Document Intelligence MCP Servers** (`content/reviews/ocr-document-intelligence-mcp-servers.md`) — 44 days since original review (March 19 → May 2), first refresh
+   - **MinerU MCP (OpenDataLab) — MAJOR NEW ENTRY**: 61,700-star document intelligence library with official MCP server. Launched on PulseMCP March 18 (one day before original review). Now highest-traffic OCR/document MCP server on PulseMCP (~1,200 weekly visitors). Supports PDF, DOCX, PPTX, XLSX → Markdown/JSON/HTML/LaTeX. Three inference backends (pipeline/hybrid-engine/vlm-engine). MinerU2.5-Pro-2604-1.2B VLM model (86.2% OmniDocBench v1.5). Relicensed AGPLv3 → Apache 2.0 (April, v3.1.0). 7 releases since review (v3.0.0–v3.1.6). Python/Go/TypeScript SDKs. Added as new section header.
+   - **PaddleOCR MCP UPGRADED**: Parent 72K→77K stars (+5K). Tool count 2→4 (added `PaddleOCR-VL` and `PaddleOCR-VL-1.5`, 94.5% on OmniDocBench v1.5). PP-OCRv5 support confirmed. FastMCP v2 framework. v3.4.1 AMD/Intel Arc GPU support. v3.5.0 Hugging Face Transformers integration (20 models), Word/Excel/PowerPoint to Markdown, PaddleOCR.js browser SDK. 111 languages (was 100+, added Tibetan/Bengali).
+   - **Docling (IBM/LF AI)**: Parent 35K→59K stars (+24K in 6 weeks). Weekly releases v2.86–v2.92: Nanonets OCR2 onboarding (v2.87), GraniteVisionTableStructureModel VLM table extraction (v2.90), EasyOCR model fix (v2.91), multi-lingual OCR via kserve-triton + modular docling-slim + VLM pipeline parsing (v2.92). Red Hat official MCP server on PulseMCP.
+   - **moatasim-KT/Marker_MCP_Server DELETED** — GitHub 404. Removed from review.
+   - **everaldo/mcp-mistral-ocr DORMANT** — no commits since Feb 21, 2026 despite Mistral OCR 3 API being excellent. Flagged as dormant.
+   - **Markdownify**: 2,400→2,600 stars. v1.0.4 ARM Docker fix. v1.1.0 security fix (removed projectRoot from tool schema), MARKITDOWN_PATH/REPOMIX_PATH env vars.
+   - **ocr-mcp (sandraschi)**: "low stars"→11 stars. Now 10+ engines (added Mistral OCR, DOTS.OCR, DeepSeek-OCR-2, PaddleOCR-VL-1.5 by version). React frontend + FastAPI backend added. FastMCP 3.1.
+   - **Unstructured MCP**: 16→43 stars. MCP SDK 1.13.1→1.23.0 (DNS rebinding protection). April security patches (aiohttp/pypdf/urllib3/tornado CVEs).
+   - **AWS monorepo**: 4,700→8,900 stars (+4.2K, nearly doubled). Still no Textract MCP server (confirmed).
+   - **NEW PaperOffice Document AI** (March 28, 357+ tools, commercial, Streamable HTTP, ~3.2K total PulseMCP visits)
+   - **NEW Docu-Scan by Spocont** (April 12, Google Document AI backend, partially closes Google gap, ~398 weekly PulseMCP)
+   - **NEW Nougat OCR MCP** (Meta's academic PDF model, 3 stars, preserves LaTeX equations)
+   - **NEW Transkribus MCP** (HTR for historical documents, 0 stars)
+   - **NEW RapidOCR MCP** (two community wrappers, 5 and 1 stars)
+   - **Gaps remaining**: Google Cloud Vision official, AWS Textract, Azure Document Intelligence official all still absent. Receipt/invoice partially filled. Real-time video OCR still zero.
+   - **Rating upgraded 3→3.5/5** — MinerU emergence + PaddleOCR expansion + Docling explosion
+
+2. **Updated Business & Productivity category index** — OCR row rating 3/5→3.5/5 + key servers updated
+3. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Next stale review: `scientific-computing-mathematics-mcp-servers.md` (March 19, 44 days stale)
+- next_priority for OCR & Document Intelligence MCP: **med** (watch for: Google Cloud Vision official MCP, AWS Textract MCP, Azure Document Intelligence official, MinerU MCP documentation maturation, Mistral OCR MCP wrapper revival)
+
+
+
 ## Run 955 — 2026-05-02 — REFRESH Interior Design & Architecture MCP Servers (46 days stale. AUTODESK 3 OFFICIAL SERVERS + OFFICIAL BLENDER MCP + OFFICIAL SKETCHUP + SOLIDWORKS/ONSHAPE GAPS PARTIALLY CLOSED. Autodesk Fusion MCP + Fusion Data MCP + Product Help MCP (all official April 28). Blender Lab official Blender MCP April 28 + Anthropic Corporate Patron. ahujasid/blender-mcp 17,600→21,100 stars. eyfel/mcp-server-solidworks 90+ tools + SolidworksMCP-TS 88 tools (SolidWorks partially closed). jarvis-onshape-mcp ~60 tools (Onshape partially closed). rhinomcp 274→346 stars. Rating upgraded 4→4.5/5)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

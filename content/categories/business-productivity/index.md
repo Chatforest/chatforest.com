@@ -119,5 +119,5 @@ OCR, PDF extraction, and document intelligence tools that let AI agents read and
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [OCR & Document Intelligence](/reviews/ocr-document-intelligence-mcp-servers/) | 3/5 | PaddleOCR (72K+ parent stars, 100+ languages), Markdownify MCP (2,400 stars), multi-model OCR (DeepSeek/Florence-2/PaddleOCR) — 14+ servers |
+| [OCR & Document Intelligence](/reviews/ocr-document-intelligence-mcp-servers/) | 3.5/5 | MinerU (61.7K stars, highest PulseMCP traffic), PaddleOCR (77K parent stars, 111 languages, 4 tools), Markdownify MCP (2.6K stars), Docling (59K stars, Red Hat MCP) |
 | [PDF & Document Processing](/reviews/pdf-document-mcp-servers/) | 3.5/5 | Microsoft MarkItDown (90,700 stars, 29+ formats), IBM Docling (37K+ stars), PDF Reader MCP (557 stars) — 15+ servers |

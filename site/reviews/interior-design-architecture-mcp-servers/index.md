@@ -7,7 +7,56 @@ Interior design and architecture MCP servers connect AI agents to CAD software, 
 
 This review covers **CAD control, BIM automation, 3D modeling, and architectural design tools** — AutoCAD, FreeCAD, Blender, SketchUp, Rhino/Grasshopper, Revit, Fusion 360, and OpenSCAD. For general-purpose 3D file processing, see our [3D Printing review](/reviews/printing-3d-printing-mcp-servers/) if available.
 
-The headline findings: **Blender MCP is the star of the category with 17.6k GitHub stars** — one of the most popular MCP servers in existence. **Every major CAD platform now has MCP support**, from AutoCAD to Rhino to Revit. **Rhino/Grasshopper has the most implementations** with 5+ independent servers reflecting the computational design community's enthusiasm. **FreeCAD-MCP offers 57 tools** including Docker headless execution and AI-powered 3D generation. **The glaring gap is actual interior design** — room layout, furniture placement, and color palette tools don't exist yet.
+The headline findings: **blender-mcp has grown to 21,100 GitHub stars** (+3,500 since March) — still one of the most popular MCP servers in existence. **April 28, 2026 was a watershed day for this category**: Autodesk launched three official MCP servers, Blender Lab released the official Blender MCP connector, and SketchUp got an official Anthropic connector — all part of Anthropic's "Claude for Creative Work" launch. **The SolidWorks and Onshape gaps are now partially closed** with community servers from March–April 2026. **The glaring gap remains actual interior design** — room layout, furniture placement, and color palette tools still don't exist.
+
+## What's New (March–May 2026)
+
+### April 28, 2026 — Autodesk Launches Three Official MCP Servers
+
+**The single biggest development in this category's history.** Autodesk shipped three official MCP servers as part of Anthropic's "Claude for Creative Work" launch, directly closing the enterprise CAD gap we cited in our original review:
+
+- **[Autodesk Product Help MCP](https://www.autodesk.com/solutions/autodesk-ai/autodesk-mcp-servers)** (April 9, 2026) — Read-only access to help documentation for 110+ Autodesk products: Fusion, AutoCAD, Revit, Civil 3D, and more. Free, no Autodesk license required. Claude can now look up any Autodesk product documentation directly.
+
+- **Autodesk Fusion MCP** (April 28, 2026) — Local MCP server, requires Fusion 360 running on the machine. Drives modeling operations and executes Fusion commands via AI. Compatible with Claude Desktop, Cursor, and any MCP HTTP client. Technical foundation was Joe-Spencer/fusion-mcp-server (an Autodesk employee's personal project). Autodesk plans additional servers for Revit and more products.
+
+- **Autodesk Fusion Data MCP** (April 28, 2026) — Remote MCP server, no local Fusion required. Queries and manages Fusion design data via Autodesk Platform Services (APS) cloud. Compatible with Claude Desktop and VS Code. Enables connecting Fusion to internal systems and automating multi-step engineering workflows without the desktop app running.
+
+**Significance**: Our original review cited "no official vendor servers from Autodesk, Dassault, Siemens, or PTC" as the category's biggest enterprise gap. With Fusion MCP + Fusion Data MCP, Autodesk becomes the first major mechanical CAD vendor with production official MCP servers.
+
+### April 28, 2026 — Official Blender MCP by Blender Lab
+
+**[Blender Lab](https://www.blender.org/lab/mcp-server/)** (the Blender Foundation's experimental features program) released the **Official Blender MCP server** on April 28, 2026. This is the officially Blender Foundation-endorsed MCP bridge — not a community fork. Key points:
+
+- Built on the open MCP standard — works with Claude and other MCP-capable LLMs, not just Anthropic products
+- Provides a direct bridge to Blender's full Python API
+- **Anthropic joined the Blender Development Fund as Corporate Patron** at €240,000/year (alongside Netflix, Epic Games, Wacom)
+- Long-term, the official server is the supported path; the community ahujasid/blender-mcp remains more widely installed for now
+
+**ahujasid/blender-mcp** has surged to **21,100 stars** (+3,500 from March, +20% growth) despite — or perhaps because of — the official release announcement.
+
+### April 28, 2026 — SketchUp Official Connector
+
+Anthropic's "Claude for Creative Work" launch on April 28 included an **official SketchUp connector** — 3D architectural modeling driven directly from conversation. This is in addition to the community `mhyrr/sketchup-mcp` that has existed since early 2026. The official connector provides zero-setup access for SketchUp users on Claude Free, Pro, and Team plans.
+
+### March–April 2026 — SolidWorks and Onshape Gaps Partially Closed
+
+Two major gaps cited in our original review now have community solutions:
+
+**SolidWorks MCP Servers** (both emerged March 2026):
+- **[eyfel/mcp-server-solidworks](https://github.com/eyfel/mcp-server-solidworks)** — Python-based, 90+ tools. Released March 17, 2026 — same day as our original review.
+- **[vespo92/SolidworksMCP-TS](https://github.com/vespo92/SolidworksMCP-TS)** — Node.js/TypeScript, 88 working tools, intelligent COM bridge for SolidWorks automation.
+
+**Onshape MCP Servers** (April 2026):
+- **[jarvis-onshape-mcp](https://github.com/ReshefElisha/jarvis-onshape-mcp)** — ~60 tools: sketches, extrudes, fillets, mates, parametric variables, custom FeatureScript. Released April 13, 2026. Leverages Onshape's API-first cloud architecture.
+- **[hedless/onshape-mcp](https://github.com/hedless/onshape-mcp)** — Programmatic CAD modeling with document discovery.
+
+**Note**: These are early-stage community servers, not official vendor releases. But they represent the first MCP coverage for two of the world's most widely used mechanical CAD platforms.
+
+### rhinomcp Star Growth
+
+**jingcheng-chen/rhinomcp** has grown to **346 stars** (was 274 in March, +26%). Still the leading Rhino MCP server with 55 forks and active community use.
+
+---
 
 ---
 
@@ -17,9 +66,9 @@ The headline findings: **Blender MCP is the star of the category with 17.6k GitH
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [blender-mcp](https://github.com/ahujasid/blender-mcp) | 17,600+ | Python | — | 18+ |
+| [blender-mcp](https://github.com/ahujasid/blender-mcp) | 21,100+ | Python | — | 18+ |
 
-**The dominant Blender-to-AI bridge with massive community adoption:**
+**The dominant Blender-to-AI bridge with massive community adoption** (17,600 → 21,100 stars since March 2026, +20%):
 
 - **Two-way communication** — connects Claude AI to Blender through a socket-based server
 - **Object manipulation** — create, modify, and delete 3D objects with natural language
@@ -46,6 +95,20 @@ At 17.6k stars, this is one of the most popular MCP servers across all categorie
 - **Comprehensive coverage** — goes beyond basic object creation into lighting and rendering
 
 An interesting approach that connects Blender to the broader automation ecosystem rather than just direct AI chat.
+
+### Official Blender MCP — Blender Lab (NEW April 2026)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Official Blender MCP](https://www.blender.org/lab/mcp-server/) | — | Python | — | Multiple |
+
+**The officially Blender Foundation-endorsed MCP server** (April 28, 2026):
+
+- **Blender Lab project** — the Blender Foundation's experimental features program
+- **Open MCP standard** — works with Claude and any other MCP-compatible LLM
+- **Full Python API access** — direct bridge to Blender's complete scripting interface
+- **Anthropic is Corporate Patron** — Anthropic joined Blender Development Fund at €240K/year
+- **Long-term supported path** — vs. community ahujasid/blender-mcp (still more widely installed)
 
 ---
 
@@ -215,7 +278,7 @@ The woodworking joinery tools make this uniquely valuable for furniture design a
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rhinomcp](https://github.com/jingcheng-chen/rhinomcp) | 274 | Python | — | Multiple |
+| [rhinomcp](https://github.com/jingcheng-chen/rhinomcp) | 346 | Python | — | Multiple |
 
 **The most popular Rhino-to-AI bridge:**
 
@@ -324,16 +387,105 @@ Revit is the industry standard for BIM in architecture, and having MCP support �
 - **Direct execution** — runs generated scripts in Fusion 360
 - **Multi-client** — works with Claude, Cursor, or any MCP client
 
-### Joe-Spencer/fusion-mcp-server — Autodesk Resources and Tools
+### Joe-Spencer/fusion-mcp-server — Technical Foundation for Autodesk's Official Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
 | [fusion-mcp-server](https://github.com/Joe-Spencer/fusion-mcp-server) | — | — | — | Multiple |
 
-**Provides Autodesk resources and tools to AI clients:**
+**Provides Autodesk resources and tools to AI clients** — and served as the technical foundation for Autodesk's three official MCP servers launched April 28, 2026. Joe Spencer is an Autodesk employee. If you're on Fusion 360, prefer the official **Autodesk Fusion MCP** and **Autodesk Fusion Data MCP** now that they're available.
 
-- **ADSK resources** — exposes Autodesk documentation and capabilities
-- **Tool integration** — bridges Fusion 360's API with MCP protocol
+### Autodesk Fusion MCP — Official (NEW April 2026)
+
+| Server | Source | Setup | Stars |
+|--------|--------|-------|-------|
+| Autodesk Fusion MCP | Official (Autodesk) | Local, requires Fusion running | Official |
+
+**Drive Fusion 360 modeling through AI** (April 28, 2026):
+
+- **Local server** — Fusion 360 must be running on the machine
+- **Modeling commands** — create, modify, and execute Fusion operations via natural language
+- **Compatible with** Claude Desktop, Cursor, any MCP HTTP client
+- **Part of Anthropic's "Claude for Creative Work" launch**
+
+### Autodesk Fusion Data MCP — Official (NEW April 2026)
+
+| Server | Source | Setup | Stars |
+|--------|--------|-------|-------|
+| Autodesk Fusion Data MCP | Official (Autodesk) | Remote, no Fusion install needed | Official |
+
+**Query and manage Fusion design data from the cloud** (April 28, 2026):
+
+- **Remote server** — no local Fusion 360 installation required
+- **Cloud data access** — queries Fusion design history, assemblies, and project data via Autodesk Platform Services
+- **Compatible with** Claude Desktop and VS Code
+- **Use cases** — connect Fusion data to internal systems, automate multi-step engineering workflows
+
+### Autodesk Product Help MCP — Official (NEW April 2026)
+
+| Server | Source | Setup | Coverage |
+|--------|--------|-------|----------|
+| Autodesk Product Help MCP | Official (Autodesk) | Hosted, free | 110+ products |
+
+**Access Autodesk documentation for 110+ products** (April 9, 2026):
+
+- **Read-only** — search and retrieve Autodesk help docs
+- **110+ products covered** — Fusion 360, AutoCAD, Revit, Civil 3D, Maya, 3ds Max, and more
+- **Free, no Autodesk license required**
+
+---
+
+## SolidWorks (NEW)
+
+### eyfel/mcp-server-solidworks — 90+ Tool Python Server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mcp-server-solidworks](https://github.com/eyfel/mcp-server-solidworks) | — | Python | — | 90+ |
+
+**Community SolidWorks MCP server** (released March 17, 2026):
+
+- **90+ MCP tools** — comprehensive SolidWorks automation coverage
+- **Python-first implementation** — standard Python toolchain
+- **Natural language CAD** — drive SolidWorks operations through AI assistants
+
+### vespo92/SolidworksMCP-TS — TypeScript COM Bridge
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [SolidworksMCP-TS](https://github.com/vespo92/SolidworksMCP-TS) | — | TypeScript | — | 88 |
+
+**Node.js/TypeScript SolidWorks MCP server** with intelligent COM bridge:
+
+- **88 working tools** — comparable coverage to the Python implementation
+- **COM bridge architecture** — interfaces with SolidWorks via Windows COM/API
+- **TypeScript implementation** — for teams preferring the Node.js ecosystem
+
+**Note**: SolidWorks is the most widely used professional mechanical CAD platform. Both of these are early-stage community servers — no official SolidWorks MCP server exists. But the gap cited in our original review is now partially closed.
+
+---
+
+## Onshape (NEW)
+
+### jarvis-onshape-mcp — Full Parametric Cloud CAD
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [jarvis-onshape-mcp](https://github.com/ReshefElisha/jarvis-onshape-mcp) | — | — | — | ~60 |
+
+**Claude Opus 4.7 plugin for Onshape** (April 13, 2026):
+
+- **~60 tools** — sketches, extrudes, fillets, mates, parametric variables, custom FeatureScript
+- **Onshape's API-first design** makes this the cloud CAD platform best positioned for MCP
+- **Full parametric workflow** — create, modify, and query Onshape designs through conversation
+
+### hedless/onshape-mcp — Document Discovery
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [hedless/onshape-mcp](https://github.com/hedless/onshape-mcp) | — | — | — | Multiple |
+
+**Programmatic CAD modeling** with Onshape document discovery and basic modeling operations.
 
 ---
 
@@ -394,7 +546,17 @@ Revit is the industry standard for BIM in architecture, and having MCP support �
 
 ## What's Missing
 
-The biggest gap in this category is **interior design itself**. Despite the strong CAD/3D modeling coverage, there are no MCP servers for:
+### Gaps Closed Since March 2026
+
+- **Autodesk/Fusion 360** — ✅ Three official MCP servers launched April 28, 2026
+- **Blender (official)** — ✅ Blender Lab official server launched April 28, 2026
+- **SketchUp (official)** — ✅ Official Anthropic connector launched April 28, 2026
+- **SolidWorks** — ✅ Partially closed — community servers eyfel/mcp-server-solidworks (90+ tools) and SolidworksMCP-TS (88 tools) emerged March 2026. No official SolidWorks server yet.
+- **Onshape** — ✅ Partially closed — jarvis-onshape-mcp (~60 tools, April 2026). No official Onshape server yet.
+
+### Gaps Still Open
+
+The biggest remaining gap is **interior design itself**. Despite the strong CAD/3D modeling coverage, there are still no MCP servers for:
 
 - **Room layout and space planning** — no automated furniture placement, no traffic flow analysis
 - **Floor plan generation** — no text-to-floor-plan tools
@@ -408,20 +570,23 @@ The biggest gap in this category is **interior design itself**. Despite the stro
 - **Acoustics** — no room acoustic analysis or soundproofing recommendations
 - **Structural engineering** — no load calculations or structural analysis
 - **Cost estimation** — no material quantity takeoffs or budget planning
-- **SolidWorks** — the most widely used professional mechanical CAD has no established MCP server
-- **Onshape** — the cloud-native CAD platform lacks MCP integration
+- **Dassault Systèmes (SOLIDWORKS, CATIA)** — still no official server
+- **Siemens (NX, Solid Edge)** — still no official server
+- **PTC (Creo)** — still no official server
 
 ---
 
 ## Bottom Line
 
-The interior design and architecture MCP server category is **exceptionally strong on the CAD/3D modeling side** but almost completely empty on the design decision-making side. If you need AI-controlled CAD — Blender, AutoCAD, FreeCAD, SketchUp, Rhino, Revit, or Fusion 360 — you have excellent options with active development and significant community adoption. Blender MCP at 17.6k stars is among the most popular MCP servers in existence, and the Rhino/Grasshopper ecosystem has 5+ independent implementations showing genuine demand from the computational design community.
+April 28, 2026 was a watershed moment for this category. Autodesk launched three official MCP servers (Fusion MCP, Fusion Data MCP, Product Help), Blender Lab released the official Blender MCP connector, and SketchUp got an official Anthropic connector — all in a single day, all tied to Anthropic's "Claude for Creative Work" launch. This directly addressed the "no official vendor servers" critique from our original review.
 
-But if you're looking for AI-assisted interior design — "help me arrange furniture in my living room" or "suggest a color palette for this bedroom" — MCP servers can't help you yet. This represents a significant opportunity: the interior design market is massive, and the gap between powerful CAD automation tools and accessible design tools is exactly where new MCP servers could add the most value.
+The category is now **exceptional on the CAD/3D modeling side** with strong official vendor backing, community star growth (blender-mcp at 21,100 stars), and newly partial coverage for SolidWorks and Onshape. Rhino/Grasshopper has 5+ active implementations. Every major 3D modeling platform now has at least one working MCP server, and the most important ones (Blender, Fusion 360) now have official servers.
 
-**Rating: 4/5** — Outstanding CAD/3D tool coverage with strong community adoption. The Blender, Rhino, and AutoCAD ecosystems alone justify a high rating. Points deducted for the complete absence of interior design workflow tools, rendering engine integration, and building code compliance checking.
+But if you're looking for AI-assisted **interior design** — "help me arrange furniture in my living room" or "suggest a color palette for this bedroom" — MCP servers still can't help you. The gap between powerful CAD automation tools and accessible design decision tools remains completely unfilled. Rendering engines (V-Ray, Lumion, Enscape), building code compliance, lighting design, and furniture catalogs are all zero-coverage zones.
+
+**Rating: 4.5/5** *(upgraded from 4/5)* — Official vendor momentum (Autodesk, Blender Lab, SketchUp) plus SolidWorks/Onshape partial coverage pushes this above a 4. The remaining half-point reflects the complete absence of interior design workflow tools, rendering engine integration, and the major industrial CAD vendors (Dassault, Siemens, PTC) still sitting on the sidelines.
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-02 using Claude Sonnet 4.6 (Anthropic).*
 
