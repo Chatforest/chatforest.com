@@ -5,7 +5,7 @@
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 1,600 GitHub stars · 109 forks · v0.4.4 (October 2, 2025) · Go · AGPLv3 license · 54 plugins + 13 database connectors + 23 SQLite extensions · stdio/SSE/HTTP transports
+**At a glance:** ~1,600 GitHub stars · v0.4.4 (October 2, 2025, **no release in 7 months**) · Go · AGPLv3 license · 47 plugins + 13 database connectors + 22 SQLite extensions · stdio/SSE/HTTP transports
 
 Most MCP servers connect to one thing. The [Anyquery MCP server](https://github.com/julien040/anyquery) by Julien Cagniart connects to everything — or tries to. Install a plugin, and your GitHub issues, Notion databases, Slack messages, Gmail inbox, Spotify playlists, and CSV files all become SQL tables that your AI agent can query.
 
@@ -23,7 +23,7 @@ The core workflow:
 
 ### Plugin Ecosystem
 
-The 54 available plugins span SaaS apps, local applications, and developer tools:
+The 47 available plugins span SaaS apps, local applications, and developer tools (down from 54 at launch — some consolidation since the October 2025 release):
 
 | Category | Plugins |
 |----------|---------|
@@ -154,10 +154,11 @@ The trade-off is clear: Anyquery gives you breadth (many sources, one interface)
 - Anyone doing DevOps correlation (GitHub + monitoring + infrastructure)
 
 **Not ideal for:**
-- Agents that need to write/update data (read-only limitation)
+- Agents that need to write/update data (read-only limitation, no write support after 7+ months of development)
 - Projects needing deep API coverage for a single service (individual MCP servers go deeper)
 - Organizations with AGPL licensing concerns (core engine is copyleft)
 - Production systems needing guaranteed uptime (depends on plugin quality and source API stability)
+- Teams that need active maintenance and bug fixes (no releases since October 2025)
 
 ## The Licensing Question
 
@@ -165,15 +166,19 @@ AGPLv3 is polarizing. If you modify the Anyquery core engine and deploy it as a 
 
 The plugins themselves are not subject to AGPL. Each plugin has its own license, and the RPC library connecting plugins to the engine is MIT-licensed — deliberately permissive to encourage ecosystem growth.
 
-## Rating: 4.0 / 5
+## Rating: 3.5 / 5
+
+*(Downgraded from 4.0/5 in the May 2026 refresh — see below.)*
 
 Anyquery occupies a unique position in the MCP ecosystem: the universal data bridge. No other single MCP server connects to this many data sources through a unified SQL interface. The cross-source JOIN capability alone justifies installation for teams working across multiple tools.
 
-It loses a full point for the read-only limitation (write support would make this transformative rather than merely useful), the five-month gap since the last release, and the plugin ecosystem's uneven coverage — some plugins are well-maintained, others haven't been updated in months. The AGPLv3 licensing is a consideration but not a flaw.
+**What changed since March 2026:** No new releases in 7 months (v0.4.4 remains current as of May 2026). The plugin count declined from 54 to 47 — some integrations were consolidated or removed. Write support, promised for development, has not shipped. The project now shows signs of extended dormancy rather than active iteration.
 
-For agents that need to answer questions across multiple data sources — "which GitHub issues assigned to me don't have Notion tasks?" or "show me all Salesforce deals alongside their Slack channel activity" — Anyquery is the most efficient path available today.
+The rating drops to 3.5/5. The core concept remains strong and the tool still works, but the stalled development cadence and shrinking plugin ecosystem are meaningful negatives for teams evaluating production dependencies. The original 4.0/5 assumed active development would close the write-operations gap. After 7 months without a release, that assumption no longer holds.
+
+For agents that need to answer questions across multiple data sources — "which GitHub issues assigned to me don't have Notion tasks?" or "show me all Salesforce deals alongside their Slack channel activity" — Anyquery is still the most efficient read-only path available today. But if write operations are required, individual MCP servers per data source remain the only viable option.
 
 ---
 
-*This review reflects research conducted on March 23, 2026. Anyquery is under active development — features and plugin availability may change. We research MCP servers thoroughly but do not test them hands-on. Visit the [Anyquery GitHub repository](https://github.com/julien040/anyquery) for the latest information.*
+*This review was originally published March 23, 2026 and refreshed May 3, 2026. Refresh findings: v0.4.4 remains current (7 months since last release), plugin count declined 54→47, no write support added, project appears dormant. We research MCP servers thoroughly but do not test them hands-on. Visit the [Anyquery GitHub repository](https://github.com/julien040/anyquery) for the latest information.*
 

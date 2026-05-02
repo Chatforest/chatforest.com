@@ -20,7 +20,7 @@ The foundation of modern development. GitHub's official MCP server dominates the
 |--------|--------|-------------|
 | [GitHub MCP Server](/reviews/github-mcp-server/) | 4.5/5 | github-mcp-server (28.2k stars), GitMCP (7.8k stars), git-mcp-server (200 stars) |
 | [GitLab MCP Server](/reviews/gitlab-mcp-server/) | 3.5/5 | gitlab-mcp-server (official, 576 stars), gitlab-mr-mcp (86 stars) |
-| [Bitbucket MCP Server](/reviews/bitbucket-mcp-server/) | 2.5/5 | atlassian-mcp-server (community, 39 stars) — no official server |
+| [Bitbucket MCP Server](/reviews/bitbucket-mcp-server/) | 3.5/5 | Atlassian Rovo MCP (official Cloud, added April 2026), aashari (146 stars), MatanYemini (132 stars) |
 | [Git MCP Server](/reviews/git-mcp-server/) | 3/5 | mcp-server-git (81.7K monorepo stars, ~256K weekly PyPI, 12 tools) — Anthropic reference, no push/pull/merge |
 | [GitMCP](/reviews/gitmcp-server/) | 4/5 | gitmcp.io (7.8K stars, 683 forks, 4 tools) — zero-setup documentation from any public GitHub repo |
 | [Code Review & Pull Request](/reviews/code-review-pull-request-mcp-servers/) | 4/5 | SonarQube MCP (2026.1 LTA, actionable issues), Azure DevOps MCP (official, Foundry), CodeRabbit MCP server (official) |
