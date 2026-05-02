@@ -47,7 +47,7 @@ Managing containers, clusters, and infrastructure as code.
 |--------|--------|-------------|
 | [Docker](/reviews/docker-mcp-servers/) | 4/5 | docker-mcp (official, 4.5k stars), community servers for Compose |
 | [Kubernetes](/reviews/kubernetes-mcp-servers/) | 4/5 | mcp-server-kubernetes (1.4k stars), kubectl-mcp (950 stars) |
-| [Infrastructure as Code](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | terraform-mcp-server (Hashicorp, 1.4k stars), Pulumi MCP (official) |
+| [Infrastructure as Code](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | terraform-mcp-server (HashiCorp, 1.4k stars v0.5.2), Bicep MCP (Microsoft, 10 tools), Red Hat Ansible AAP MCP (official), Pulumi MCP, StackGen (25+ tools) |
 | [Container Registry](/reviews/container-registry-mcp-servers/) | 3.5/5 | 12+ servers — Docker Hub (130 stars, 13 tools), JFrog (112 stars, 22+ tools), Harbor (11 tools), Nexus (16 tools) |
 | [API Gateway](/reviews/api-gateway-mcp-servers/) | 3.5/5 | 15+ servers — Cloudflare (263 stars, 2,500+ endpoints), Kong (official, 12 tools), APISIX (34 stars, 30+ tools), Envoy AI Gateway (1.4K stars) |
 

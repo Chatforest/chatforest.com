@@ -1,18 +1,18 @@
 ---
 title: "Infrastructure as Code MCP Servers — Terraform, Pulumi, and the IaC Vendors Building AI-Native Infrastructure Workflows"
 date: 2026-03-24T21:00:00+09:00
-description: "Infrastructure as Code MCP servers are vendor-driven: Terraform (1.3k stars, Go, Registry + HCP), Pulumi (remote MCP, Neo delegation), AWS IaC (8.5k stars monorepo, CloudFormation"
-og_description: "IaC MCP ecosystem: Terraform (1.3k stars), Pulumi (remote), AWS IaC (CloudFormation/CDK), OpenTofu (84 stars), Spacelift Intent (121 stars). Rating: 4/5."
+description: "Infrastructure as Code MCP servers are vendor-driven: Terraform (1.4k stars, Go, v0.5.2 Stacks + plan/apply tools), Pulumi (remote MCP, Neo delegation), AWS IaC (8.9k stars monorepo), Bicep OFFICIAL (Microsoft, 10 tools), Red Hat Ansible AAP OFFICIAL (tech preview). Rating: 4/5."
+og_description: "IaC MCP ecosystem: Terraform (1.4k stars v0.5.2), Pulumi (remote), AWS IaC, Bicep OFFICIAL (10 tools), Red Hat Ansible AAP OFFICIAL, StackGen NEW (25+ tools). Rating: 4/5."
 content_type: "Review"
-card_description: "Infrastructure as Code MCP servers are where IaC vendors are building AI-native infrastructure workflows. HashiCorp's Terraform MCP server leads (1.3k stars, Go, Registry + HCP Terraform integration, workspace management). Pulumi offers a remote MCP server with Neo delegation for automated infrastructure tasks. AWS bundles CloudFormation and CDK support into a unified IaC MCP server (part of the 8.5k-star awslabs/mcp monorepo). OpenTofu's official server (84 stars, TypeScript) mirrors Terraform's Registry-first approach. Spacelift Intent (121 stars, Go, Apache-2.0) takes the boldest approach — provisioning cloud resources from natural language without generating IaC code."
-last_refreshed: 2026-03-24
+card_description: "Infrastructure as Code MCP servers are where IaC vendors are building AI-native infrastructure workflows. HashiCorp's Terraform MCP server leads (1.4k stars, Go, v0.5.2 with Stacks support + plan/apply detail tools + OTel instrumentation). Pulumi offers a remote MCP server with Neo delegation. AWS bundles CloudFormation and CDK into a unified IaC MCP server (8.9k-star monorepo). TWO MAJOR GAPS CLOSED: Microsoft Bicep MCP server (10 tools, ARM decompilation, Azure Verified Modules) and Red Hat Ansible Automation Platform MCP server (official tech preview, AAP 2.6.4, read-only + read-write modes, RBAC). StackGen NEW (25+ tools, multi-cloud agentic IaC). CDKTF deprecated December 2025."
+last_refreshed: 2026-05-02
 ---
 
-**At a glance:** Infrastructure as Code is where **IaC vendors are building AI-native infrastructure workflows**. Unlike [security scanning](/reviews/security-scanning-mcp-servers/) where vendors instrument the coding loop, IaC vendors are building MCP servers that let AI agents **query, plan, and manage infrastructure directly**. [HashiCorp's Terraform MCP server](https://github.com/hashicorp/terraform-mcp-server) leads community adoption (1.3k stars, Go) with Registry lookups and HCP Terraform/Enterprise workspace management. [Pulumi](https://www.pulumi.com/docs/ai/mcp-server/) offers a remote MCP server with Neo delegation for automated infrastructure tasks. [AWS](https://awslabs.github.io/mcp/servers/aws-iac-mcp-server) bundles CloudFormation and CDK support into a unified IaC MCP server. [OpenTofu](https://github.com/opentofu/opentofu-mcp-server) (84 stars, TypeScript) mirrors Terraform's Registry-first approach as an open-source alternative. [Spacelift Intent](https://github.com/spacelift-io/spacelift-intent) (121 stars, Go) takes the boldest approach — provisioning cloud resources from natural language without generating IaC code. This is the **eleventh review in our [Developer Tools MCP category](/categories/developer-tools/)**. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance:** Infrastructure as Code is where **IaC vendors are building AI-native infrastructure workflows**. Unlike [security scanning](/reviews/security-scanning-mcp-servers/) where vendors instrument the coding loop, IaC vendors are building MCP servers that let AI agents **query, plan, and manage infrastructure directly**. [HashiCorp's Terraform MCP server](https://github.com/hashicorp/terraform-mcp-server) leads community adoption (1.4k stars, Go, v0.5.2) with Registry lookups, HCP Terraform/Enterprise workspace management, and NEW Stacks support + plan/apply detail tools. [Pulumi](https://www.pulumi.com/docs/ai/mcp-server/) offers a remote MCP server with Neo delegation for automated infrastructure tasks. [AWS](https://awslabs.github.io/mcp/servers/aws-iac-mcp-server) bundles CloudFormation and CDK support into a unified IaC MCP server, plus a NEW cfn-mcp-server for managing 1,100+ AWS resources via Cloud Control API. **TWO MAJOR GAPS CLOSED:** [Microsoft Bicep MCP server](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-mcp-server) ships 10 tools for high-quality Bicep code generation (ARM decompilation, Azure Verified Modules, diagnostics), and [Red Hat's official Ansible Automation Platform MCP server](https://www.redhat.com/en/blog/it-automation-agentic-ai-introducing-mcp-server-red-hat-ansible-automation-platform) launches as tech preview in AAP 2.6.4 with dual read-only/read-write modes and RBAC. [StackGen](https://stackgen.com/mcp-server) enters with 25+ tools for agentic multi-cloud IaC. [OpenTofu](https://github.com/opentofu/opentofu-mcp-server) (92 stars, TypeScript) mirrors Terraform's Registry-first approach. [Spacelift Intent](https://github.com/spacelift-io/spacelift-intent) (124 stars, Go) provisions cloud resources from natural language, now complemented by Spacelift Intelligence for infrastructure-aware conversations. **Notable:** HashiCorp deprecated CDKTF in December 2025; Chef hits EOL November 2026; Puppet community forked to OpenVox. This is the **eleventh review in our [Developer Tools MCP category](/categories/developer-tools/)**. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
-The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6% CAGR) is undergoing an AI transformation. 45% of organizations use IaC tools, and 74% of IT leaders consider IaC essential to their cloud strategy. The MCP integration layer reflects the market's competitive dynamics: HashiCorp (Terraform) and Pulumi ship official servers, OpenTofu mirrors Terraform's approach as the open-source fork, and platform vendors (AWS, Spacelift, env0) add MCP to their existing orchestration layers. The core promise is straightforward: AI agents that can look up provider documentation, validate templates, manage workspaces, and even provision infrastructure — all through natural language rather than HCL or YAML.
+The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6% CAGR) is undergoing an AI transformation. 45% of organizations use IaC tools, and 74% of IT leaders consider IaC essential to their cloud strategy. The MCP integration layer reflects the market's competitive dynamics: HashiCorp (Terraform), Pulumi, Red Hat (Ansible), and Microsoft (Bicep) ship official servers, OpenTofu mirrors Terraform's approach as the open-source fork, and platform vendors (AWS, Spacelift, env0, StackGen) add MCP to their existing orchestration layers. **Notable market shifts:** HashiCorp deprecated CDKTF in December 2025, Chef's Infra Server hits EOL in November 2026, and Puppet's community forked to OpenVox after Perforce restricted binary access — the traditional configuration management era is ending while IaC+MCP accelerates. The core promise is straightforward: AI agents that can look up provider documentation, validate templates, manage workspaces, and even provision infrastructure — all through natural language rather than HCL, YAML, or Bicep.
 
-**Architecture note:** IaC MCP servers follow three distinct patterns. **Registry-first** servers (Terraform, OpenTofu, Pulumi) focus on documentation and metadata — looking up provider schemas, module details, and resource documentation so AI agents can write correct IaC code. **Platform-integrated** servers (HCP Terraform, Pulumi Cloud, AWS IaC, env0) connect to cloud orchestration platforms for workspace management, run triggering, and deployment troubleshooting. **Codeless provisioning** (Spacelift Intent) skips code generation entirely, translating natural language directly into provider API calls. Most servers support stdio transport for IDE integration; Pulumi and Spacelift also offer remote/hosted MCP endpoints.
+**Architecture note:** IaC MCP servers follow four distinct patterns. **Registry-first** servers (Terraform, OpenTofu, Pulumi) focus on documentation and metadata — looking up provider schemas, module details, and resource documentation so AI agents can write correct IaC code. **Platform-integrated** servers (HCP Terraform, Pulumi Cloud, AWS IaC, env0, Red Hat AAP) connect to cloud orchestration platforms for workspace management, run triggering, and deployment troubleshooting. **Code-quality** servers (Bicep MCP, Terraform v0.5.x plan tools) provide compilation diagnostics, code transformation, and plan inspection — helping AI agents write correct code and catch errors before deployment. **Codeless provisioning** (Spacelift Intent, StackGen) skips or generates code autonomously, translating natural language into infrastructure changes. Most servers support stdio transport for IDE integration; Pulumi, Spacelift, and several others also offer remote/hosted MCP endpoints.
 
 ## What's Available
 
@@ -21,24 +21,33 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 | Aspect | Detail |
 |--------|--------|
 | Repository | [hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) |
-| Stars | ~1,300 |
-| Forks | ~135 |
+| Stars | ~1,400 |
+| Forks | ~153 |
 | Language | Go |
 | License | MPL-2.0 |
 | Creator | HashiCorp (official) |
+| Latest release | v0.5.2 (April 28, 2026) |
 | Transport | Stdio, StreamableHTTP |
+| Commits | 345 |
 
-**Three toolset categories:**
+**Four toolset categories:**
 
 | Toolset | Capabilities |
 |---------|-------------|
 | Registry | Provider search, provider details, module information, policy management |
 | Private Registry | Private Terraform registry access for organization modules |
-| Terraform/HCP | Workspace listing/management, organization/project operations, run management, variable handling |
+| Terraform/HCP | Workspace listing/management, organization/project operations, run management, variable handling, **policy set management** (`list_workspace_policy_sets`, `attach_policy_set_to_workspaces`) |
+| **Stacks (NEW)** | Deploy and manage Terraform Stacks using natural language |
 
-**Key differentiator:** The **most-starred IaC MCP server** and the first official MCP server from a major IaC vendor. HashiCorp's server covers both the public Terraform Registry (provider and module lookups) and HCP Terraform/Enterprise platform operations (workspaces, runs, variables). The `--toolsets` and `--tools` flags let teams expose only the capabilities they need — Registry-only for coding assistance, or full platform access for infrastructure management. Dual transport support (stdio + StreamableHTTP) enables both IDE integration and remote deployment. HashiCorp also ships [Vault MCP server](https://github.com/hashicorp/vault-mcp-server) (37 stars, Go) for secrets management and a Vault Radar MCP server for secret detection — building a full infrastructure security stack.
+**NEW in v0.5.x (April 2026):**
+- **Plan and apply detail tools** — `get_plan_json_output`, `get_plan_details`, `get_plan_logs`, `get_apply_details`, `get_apply_logs` — the server now exposes plan/apply inspection, partially closing the "documentation-only" gap
+- **OpenTelemetry instrumentation** — tool usage metrics, latency tracking, failure monitoring
+- **Token permissions visibility** — `get_token_permissions` tool shows what the configured token can access
+- **Authorization header support** and heartbeat interval configuration for remote deployments
 
-**Limitation:** Platform operations (workspaces, runs, variables) require HCP Terraform or Terraform Enterprise — not available for CLI-only Terraform users. The server doesn't execute `terraform plan` or `terraform apply` directly; it queries the Registry and manages the platform. Teams using open-source Terraform without HCP get Registry lookups only. Star count (1.3k) is modest for a tool used by millions of developers. No built-in drift detection or state inspection via MCP.
+**Key differentiator:** The **most-starred IaC MCP server** and the first official MCP server from a major IaC vendor. HashiCorp's server covers both the public Terraform Registry (provider and module lookups) and HCP Terraform/Enterprise platform operations (workspaces, runs, variables). The `--toolsets` and `--tools` flags let teams expose only the capabilities they need — Registry-only for coding assistance, or full platform access for infrastructure management. Dual transport support (stdio + StreamableHTTP) enables both IDE integration and remote deployment. The v0.5.x releases add **Stacks support** for deploying multi-component infrastructure and **plan/apply detail tools** that let AI agents inspect what Terraform will change before approving — a significant step toward AI-assisted infrastructure operations beyond documentation lookup. HashiCorp also ships [Vault MCP server](https://github.com/hashicorp/vault-mcp-server) (45 stars, Go, 124 commits) for secrets management and a Vault Radar MCP server for secret detection — building a full infrastructure security stack.
+
+**Limitation:** Platform operations (workspaces, runs, variables) require HCP Terraform or Terraform Enterprise — not available for CLI-only Terraform users. The new plan/apply tools inspect existing runs but still don't trigger `terraform plan` or `terraform apply` directly — the server reads plan data, not executes plans. Teams using open-source Terraform without HCP get Registry lookups only. Still in beta status — not recommended for production environments.
 
 ### Pulumi — Remote MCP with AI Delegation
 
@@ -69,8 +78,8 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 | Aspect | Detail |
 |--------|--------|
 | Repository | [awslabs/mcp](https://github.com/awslabs/mcp) (monorepo, `src/aws-iac-mcp-server`) |
-| Stars | ~8,500 (monorepo) |
-| Forks | ~1,400 |
+| Stars | ~8,900 (monorepo) |
+| Forks | ~1,500 |
 | Language | Python |
 | License | Apache-2.0 |
 | Creator | AWS (official) |
@@ -90,14 +99,16 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 
 **Key differentiator:** The **most comprehensive validation-focused IaC MCP server**. While Terraform and Pulumi MCP servers focus on Registry lookups, AWS's server actually validates templates — `validate_cloudformation_template` runs cfn-lint for syntax errors, `check_cloudformation_template_compliance` runs cfn-guard for security/compliance rules, and `troubleshoot_cloudformation_deployment` analyzes stack failures using 30+ known patterns with CloudTrail integration. This makes it the only IaC MCP server that catches errors before deployment. Supports CDK across five languages (TypeScript, Python, Java, C#, Go). The deprecated standalone CDK MCP server has been folded into this unified server. Part of AWS's massive MCP monorepo (8.5k stars, 14+ servers).
 
-**Limitation:** AWS-only — no multi-cloud support. The 8.5k stars are for the entire awslabs/mcp monorepo (14+ servers), not the IaC server specifically. CloudFormation is losing market share to Terraform and Pulumi — teams not on CloudFormation/CDK get no value. The troubleshooting tool requires AWS credentials with CloudFormation and CloudTrail read access. No `terraform plan`-equivalent for previewing changes.
+**Update (May 2026):** AWS also ships [cfn-mcp-server](https://awslabs.github.io/mcp/servers/cfn-mcp-server) — a separate CloudFormation MCP server that enables LLMs to directly create and manage **1,100+ AWS resources** through natural language using AWS Cloud Control API and IaC Generator. The deprecated Cloud Control API MCP Server has been migrated into the IaC MCP Server.
+
+**Limitation:** AWS-only — no multi-cloud support. The 8.9k stars are for the entire awslabs/mcp monorepo, not the IaC server specifically. CloudFormation is losing market share to Terraform and Pulumi — teams not on CloudFormation/CDK get no value. The troubleshooting tool requires AWS credentials with CloudFormation and CloudTrail read access.
 
 ### OpenTofu — Open-Source Terraform Alternative
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [opentofu/opentofu-mcp-server](https://github.com/opentofu/opentofu-mcp-server) |
-| Stars | ~84 |
+| Stars | ~92 |
 | Forks | ~6 |
 | Language | TypeScript |
 | License | MPL-2.0 |
@@ -108,14 +119,14 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 
 **Key differentiator:** The **open-source IaC MCP alternative** to Terraform's server. Released alongside OpenTofu 1.10 (July 2025), the MCP server provides Registry access for the OpenTofu ecosystem — provider schemas, module documentation, and resource definitions. Available both as a local Node.js server and a hosted Cloudflare Worker at `mcp.opentofu.org`, enabling zero-setup access. The OpenTofu Registry is compatible with most Terraform providers, so this server is useful even for teams evaluating the Terraform-to-OpenTofu migration.
 
-**Limitation:** Registry-only — no workspace management, run triggering, or platform integration (OpenTofu doesn't have an enterprise platform equivalent to HCP Terraform). Only 84 stars and v1.0.0 — early adoption stage. The feature set mirrors Terraform's Registry toolset but lacks the private registry and platform capabilities. OpenTofu's market share is still growing (the fork is from August 2023), so some providers may have better Terraform Registry coverage.
+**Limitation:** Registry-only — no workspace management, run triggering, or platform integration (OpenTofu doesn't have an enterprise platform equivalent to HCP Terraform). Only 92 stars and v1.0.0 — early adoption stage. The feature set mirrors Terraform's Registry toolset but lacks the private registry, Stacks, and platform capabilities that Terraform v0.5.x now offers. OpenTofu's market share is still growing (the fork is from August 2023), so some providers may have better Terraform Registry coverage.
 
 ### Spacelift Intent — Natural Language Infrastructure Provisioning
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [spacelift-io/spacelift-intent](https://github.com/spacelift-io/spacelift-intent) |
-| Stars | ~121 |
+| Stars | ~124 |
 | Forks | ~9 |
 | Language | Go |
 | License | Apache-2.0 |
@@ -134,37 +145,94 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 
 **Key differentiator:** The **most architecturally radical IaC MCP server**. Instead of helping AI agents write Terraform/Pulumi code, Intent skips code generation entirely — it translates natural language requests directly into provider API calls using the same Terraform providers. Resources are tracked in a local SQLite database with full state management, dependency tracking, and drift detection. This makes it a complete infrastructure provisioning tool, not just a documentation lookup. Supports all OpenTofu providers (AWS, GCP, Azure, etc.). Open-source under Apache-2.0 with a commercial hosted version on the Spacelift platform (policy-as-code, centralized state, audit trails).
 
-**Limitation:** Bypassing IaC code means losing the auditability, review process, and version control that make IaC valuable. The SQLite state storage is local — no remote state locking or team collaboration without the commercial platform. The February 2026 incident where an AI agent ran `terraform destroy` and deleted 2.5 years of production data highlights the risk of AI-driven infrastructure changes without human review gates. Early stage — 121 stars, no established best practices for securing codeless provisioning.
+**Update (May 2026):** Spacelift has announced **Spacelift Intelligence**, which builds on Intent by adding infrastructure awareness — it understands how your infrastructure is currently set up and provides a conversational interface for system-level information. Demonstrated at KubeCon + CloudNativeCon Europe 2026 in Amsterdam.
 
-### Ansible — Community-Built Automation
+**Limitation:** Bypassing IaC code means losing the auditability, review process, and version control that make IaC valuable. The SQLite state storage is local — no remote state locking or team collaboration without the commercial platform. The February 2026 incident where an AI agent ran `terraform destroy` and deleted 2.5 years of production data highlights the risk of AI-driven infrastructure changes without human review gates. Early stage — 124 stars, no established best practices for securing codeless provisioning.
+
+### Ansible — Red Hat Official + Community
 
 | Aspect | Detail |
 |--------|--------|
-| Repository | [bsahane/mcp-ansible](https://github.com/bsahane/mcp-ansible) |
-| Stars | ~25 |
-| Forks | ~11 |
+| Official server | [Red Hat Ansible Automation Platform MCP](https://www.redhat.com/en/blog/it-automation-agentic-ai-introducing-mcp-server-red-hat-ansible-automation-platform) |
+| Status | Technology Preview (AAP 2.6.4, January 30, 2026) |
+| Community server | [bsahane/mcp-ansible](https://github.com/bsahane/mcp-ansible) (27 stars, 11 forks) |
 | Language | Python |
-| Creator | Community |
-| Latest push | January 2025 |
 
-**40+ tools** covering playbook management (create, validate, run), inventory operations (parse, graph, find-host, diff), role creation, Ansible Vault (encrypt/decrypt/rekey), project management, task execution, diagnostics (ansible-diagnose-host, capture-baseline, compare-states), auto-healing, security audit, and performance monitoring.
+**Red Hat Official MCP Server (NEW — GAP CLOSED):**
+
+Red Hat launched an **official MCP server for Ansible Automation Platform** on January 30, 2026, as a technology preview in AAP 2.6.4. This closes the biggest gap identified in the original review — the absence of an official Red Hat MCP server.
+
+| Capability | Detail |
+|------------|--------|
+| Deployment modes | **Read-only** (safe querying/monitoring) or **Read-write** (execute jobs, implement changes) |
+| Security model | Dual-layer: server-level config + user-level RBAC permissions inherited from AAP APIs |
+| Core features | Job management, inventory management, security compliance, infrastructure estate management |
+| Supported clients | Cursor, Claude, and other MCP-compatible clients |
+| Installation | Deployed as part of standard AAP installation (containerized or OpenShift) |
+
+**Key differentiator:** The **first enterprise-grade IaC MCP server with built-in governance**. Unlike Terraform or Spacelift MCP servers where security is configured externally, Red Hat's server enforces a dual-layer security model where AI agents inherit the user's existing RBAC permissions. The configurable read-only vs. read-write modes let organizations start with safe querying before enabling automation. Deploys as part of the standard AAP installation — no separate infrastructure needed.
+
+**Community server (bsahane/mcp-ansible):** Still provides the **broadest tool count** of any IaC MCP server — 40+ tools covering playbook management, inventory operations, Ansible Vault, diagnostics, auto-healing, security audit, and performance monitoring. 27 stars, 11 forks, 9 commits.
 
 **Additional Ansible MCP projects:**
 
-- **[ansible-collections/ansible.mcp](https://github.com/ansible-collections/ansible.mcp)** (1 star, Python, GPL-3.0) — Official Ansible Collection with MCP plugins. Installable via `ansible-galaxy`.
+- **[ansible-collections/ansible.mcp](https://github.com/ansible-collections/ansible.mcp)** (Python, GPL-3.0) — Official Ansible Collection with MCP plugins. Installable via `ansible-galaxy`.
 - **[a37ai/ansible-tower-mcp](https://github.com/a37ai/ansible-tower-mcp)** — MCP server for Ansible Tower/AWX, enabling job management, inventory queries, and workflow automation via AI agents.
-- **[sibilleb/AAP-Enterprise-MCP-Server](https://github.com/sibilleb/AAP-Enterprise-MCP-Server)** — Enterprise MCP server for Ansible Automation Platform (AAP) and Event-Driven Ansible (EDA).
-- **[ansible/ansible.mcp_builder](https://github.com/redhat-cop/ansible.mcp_builder)** — Ansible Collection for deploying MCP servers within Execution Environments.
+- **[sibilleb/AAP-Enterprise-MCP-Server](https://github.com/sibilleb/AAP-Enterprise-MCP-Server)** — Community enterprise MCP server for AAP and Event-Driven Ansible (EDA).
+- **[redhat-cop/ansible.mcp_builder](https://github.com/redhat-cop/ansible.mcp_builder)** — Ansible Collection for deploying MCP servers within Execution Environments.
 
-**Key differentiator:** The **broadest tool count** of any IaC MCP server — 40+ tools covering the full Ansible lifecycle from inventory management to auto-healing. The diagnostics suite (diagnose-host, capture-baseline, compare-states) is unique among IaC MCP servers. Red Hat's investment in the Ansible MCP ecosystem (official collection, AAP enterprise server, MCP builder) signals enterprise commitment.
+**Limitation:** The official Red Hat MCP server is a **technology preview** — not production-supported yet. Requires Ansible Automation Platform (not available for open-source Ansible Core users). The community server (27 stars) remains low-adoption. Ansible's procedural (playbook-based) approach is architecturally different from declarative IaC tools (Terraform/Pulumi), so the MCP use cases differ.
 
-**Limitation:** All community-built — no official Red Hat MCP server for Ansible Core. The primary repo (25 stars) has low adoption and hasn't been updated since January 2025. The official ansible.mcp collection has only 1 star. Multiple competing servers fragment the small community. Ansible's procedural (playbook-based) approach is architecturally different from declarative IaC tools (Terraform/Pulumi), so the MCP use cases differ.
+### Bicep — Microsoft Official Azure IaC (NEW — GAP CLOSED)
+
+| Aspect | Detail |
+|--------|--------|
+| Documentation | [Bicep MCP server](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-mcp-server) |
+| Availability | VS Code Bicep extension v0.40.2+, Visual Studio 2026 built-in |
+| Language | C# (.NET) |
+| Creator | Microsoft (official) |
+| Install | `dnx -y Azure.Bicep.McpServer` (NuGet) |
+| Transport | Stdio |
+
+**10 tools for Bicep code generation:**
+
+| Tool | Capability |
+|------|-----------|
+| `decompile_arm_template_file` | Convert ARM template JSON → Bicep syntax |
+| `decompile_arm_parameters_file` | Convert ARM parameter files → Bicep parameters (.bicepparam) |
+| `format_bicep_file` | Apply consistent formatting (indentation, spacing, line breaks) |
+| `get_az_resource_type_schema` | Get schema for specific Azure resource type and API version |
+| `get_bicep_best_practices` | Return Bicep coding best practices and guidelines |
+| `get_bicep_file_diagnostics` | Analyze Bicep file, return all compilation diagnostics |
+| `get_deployment_snapshot` | Preview resources from .bicepparam, compare implementations |
+| `get_file_references` | Analyze Bicep file, return all referenced files (modules, parameters, dependencies) |
+| `list_avm_metadata` | List metadata for all Azure Verified Modules (AVM) |
+| `list_az_resource_types_for_provider` | List all resource types for a specific Azure provider |
+
+**Key differentiator:** The **first Azure-native IaC MCP server** — directly closes the Bicep gap flagged in the original review. Unlike other IaC MCP servers that focus on documentation lookup, Bicep MCP provides actual **code transformation tools** (ARM → Bicep decompilation) and **compilation diagnostics** that catch errors before deployment. The Azure Verified Modules integration (`list_avm_metadata`) gives AI agents access to Microsoft's curated module library. Built into Visual Studio 2026 out-of-the-box as part of Azure MCP Server. Works with Claude Desktop, Claude Code, OpenAI Codex CLI, and LM Studio.
+
+**Limitation:** Azure-only — no multi-cloud support. The MCP server helps generate Bicep code but cannot deploy directly to Azure. No way to guarantee the AI agent will use specific Bicep tools — depends on agent orchestrator behavior. Requires .NET 10.0 SDK for standalone installation outside VS Code.
+
+### StackGen — Agentic Multi-Cloud IaC (NEW)
+
+| Aspect | Detail |
+|--------|--------|
+| Product page | [StackGen MCP Server](https://stackgen.com/mcp-server) |
+| Tools | 25+ |
+| Creator | StackGen (official) |
+| Supported clients | Claude Desktop/Code, Cursor, Gemini CLI, Windsurf |
+
+**Key capabilities:** Create and manage AppStacks (infrastructure blueprints), multi-cloud deployment across AWS/Azure/GCP, import existing resources via Cloud2Code, detect and manage configuration drift, apply governance policies, version control synchronization with GitHub. Enterprise security features include encrypted token storage, command sanitization, TLS encryption, and governance enforcement.
+
+**Key differentiator:** The **most comprehensive agentic IaC MCP server** — 25+ tools spanning the full infrastructure lifecycle from generation to drift detection to incident remediation. Unlike Spacelift Intent which provisions resources without code, StackGen generates IaC code with governance guardrails. Multi-cloud support (AWS, Azure, GCP) in a single MCP server — unique among IaC MCP servers. Claims 95% reduction in infrastructure effort for developers.
+
+**Limitation:** Commercial platform — no open-source version or GitHub repository found. Requires StackGen account and Personal Access Token. Vendor lock-in to StackGen's platform. Claims of 95% effort reduction and 70% MTTR improvement are vendor-reported metrics.
 
 ### Additional Servers
 
-**[env0 MCP Server](https://github.com/env0/mcp-server)** (4 stars, TypeScript) — Official IaC orchestration platform MCP server. Deploy, cancel, and inspect environments. Access Cloud Compass for resource visibility. Requires Docker and env0 account. Early stage.
+**[env0 MCP Server](https://github.com/env0/mcp-server)** (4 stars, TypeScript, 46 commits) — Official IaC orchestration platform MCP server. Deploy, cancel, inspect environments, fetch error logs with context-aware fix suggestions, approve/cancel/rerun deployments. Access Cloud Compass for resource visibility. Inherits env0's existing security roles and audit logging.
 
-**[HashiCorp Vault MCP](https://github.com/hashicorp/vault-mcp-server)** (37 stars, Go) — Secrets management for IaC workflows. Mount management (KV v1/v2), secret read/write/delete, PKI certificate management. Supports stdio and StreamableHTTP. Companion to the Terraform MCP server.
+**[HashiCorp Vault MCP](https://github.com/hashicorp/vault-mcp-server)** (45 stars, Go, 124 commits) — Secrets management for IaC workflows. Mount management (KV v1/v2), secret read/write/delete, PKI certificate management. Supports stdio and StreamableHTTP. Companion to the Terraform MCP server. Stars grew 37→45 (+22%).
 
 **[Vault Radar MCP](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview)** — Beta. Queries HCP Vault Radar for data sources, resources, events, and detected secret types. Available on AWS Marketplace.
 
@@ -176,21 +244,26 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 
 **[zekker6/mcp-helm](https://github.com/zekker6/mcp-helm)** — MCP server for Helm package manager. Query repositories, retrieve chart information, access chart values without local Helm installation.
 
-**[Crossplane MCP servers](https://github.com/cychiang/crossplane-mcp-server)** — Community servers for querying Crossplane resources (XRDs, Compositions, ManagedResources) via MCP. Multiple implementations exist.
+**[Crossplane MCP servers](https://github.com/cychiang/crossplane-mcp-server)** — Community servers for querying Crossplane resources (XRDs, Compositions, ManagedResources) via MCP. Crossplane graduated to CNCF maturity.
 
 ### Notable Gaps
 
-**No MCP servers found** for: Chef, Puppet, SaltStack, Vagrant, Packer, Nomad, or CDK for Terraform (CDKTF). Bicep (Azure's IaC language) has no MCP server despite growing adoption. Google Cloud Deployment Manager and Azure Resource Manager templates lack MCP integration.
+**No MCP servers found** for: SaltStack, Vagrant, Packer, or Nomad. Google Cloud Deployment Manager lacks MCP integration. **Status changes since original review:**
+- **Bicep — GAP CLOSED** (Microsoft official, 10 tools, VS Code + VS 2026 built-in)
+- **Ansible official — GAP CLOSED** (Red Hat AAP 2.6.4, tech preview)
+- **CDKTF — DEPRECATED** by HashiCorp in December 2025 (no longer a gap — the product no longer exists; Pulumi is now the clear leader in "real languages for IaC")
+- **Chef — approaching EOL** (Infra Server hits end-of-life November 2026 — unlikely to get MCP support)
+- **Puppet — community forked to OpenVox** after Perforce restricted binary access (MCP support unlikely in the near term)
 
 ## Developer Tools MCP Comparison
 
 | Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor | Testing/QA | Monitoring | Security | IaC | Packages | Code Gen | API Dev | Logging | DB Migration | Doc Tooling | Debugging | Profiling | Code Review |
 |--------|--------|--------|-----------|--------|------------|-------|------------|------------|------------|----------|-----|----------|----------|----------|---------------------- | --------------|-----------|-----------|-------------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright, 9.8k stars, 24 tools) | Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana) | Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
+| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright, 9.8k stars, 24 tools) | Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana) | Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | Yes (Terraform 1.4k v0.5.2, Pulumi remote, AWS IaC, OpenTofu 92, **Bicep 10 tools**, **Red Hat AAP**) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
 | **Codeless provisioning** | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | Yes (Spacelift Intent — NL to provider API calls) | N/A | N/A | N/A | N/A | — | N/A | N/A | N/A | N/A |
-| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
-| **Vendor count** | 1 (GitHub) | 1 (GitLab) | 0 (Atlassian via Jira only) | 1 (Docker) + community | 0 (Red Hat leads community) | 3 (Jenkins, CircleCI, Buildkite) | 1 (JetBrains) | 1 (Microsoft) | 6 (Grafana, Datadog, Sentry, Dynatrace, New Relic, Instana) | 7+ (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | 5+ (HashiCorp, Pulumi, AWS, OpenTofu, Spacelift) | 2 (Microsoft/NuGet, Homebrew) | 3 (Vercel, E2B, Upstash/Context7) | 4+ (Postman, Apollo, Kong, Google/Apigee, MuleSoft) | 6+ (Splunk, Grafana/Loki, Grafana/Tempo, Coralogix, Axiom, Mezmo) | 2 (Liquibase, Prisma) + Google partial | 5+ (Microsoft, Mintlify, ReadMe, Stainless, OpenAI, Vonage, Fern, Apidog) | 3 (Google/Chrome DevTools, Microsoft/DebugMCP, LLVM/LLDB built-in) | 3 (CodSpeed, Polar Signals, Tricentis/NeoLoad) + Grafana partial | 3 (SonarSource, Codacy, Graphite) + CodeRabbit as client |
-| **Template validation** | N/A | N/A | N/A | Dockerfile linting | manifest validation | Pipeline linting | N/A | N/A | N/A | IaC scanning (Trivy, Cycode) | Yes (AWS cfn-lint + cfn-guard) | npm-sentinel-mcp (CVE), NuGet (fix vulns) | N/A | N/A | N/A | — | N/A | N/A | N/A | N/A |
+| **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible community (27 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
+| **Vendor count** | 1 (GitHub) | 1 (GitLab) | 0 (Atlassian via Jira only) | 1 (Docker) + community | 0 (Red Hat leads community) | 3 (Jenkins, CircleCI, Buildkite) | 1 (JetBrains) | 1 (Microsoft) | 6 (Grafana, Datadog, Sentry, Dynatrace, New Relic, Instana) | 7+ (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | 7+ (HashiCorp, Pulumi, AWS, OpenTofu, Spacelift, **Microsoft/Bicep**, **Red Hat/Ansible**, StackGen) | 2 (Microsoft/NuGet, Homebrew) | 3 (Vercel, E2B, Upstash/Context7) | 4+ (Postman, Apollo, Kong, Google/Apigee, MuleSoft) | 6+ (Splunk, Grafana/Loki, Grafana/Tempo, Coralogix, Axiom, Mezmo) | 2 (Liquibase, Prisma) + Google partial | 5+ (Microsoft, Mintlify, ReadMe, Stainless, OpenAI, Vonage, Fern, Apidog) | 3 (Google/Chrome DevTools, Microsoft/DebugMCP, LLVM/LLDB built-in) | 3 (CodSpeed, Polar Signals, Tricentis/NeoLoad) + Grafana partial | 3 (SonarSource, Codacy, Graphite) + CodeRabbit as client |
+| **Template validation** | N/A | N/A | N/A | Dockerfile linting | manifest validation | Pipeline linting | N/A | N/A | N/A | IaC scanning (Trivy, Cycode) | Yes (AWS cfn-lint + cfn-guard, **Bicep diagnostics**, Terraform plan inspection) | npm-sentinel-mcp (CVE), NuGet (fix vulns) | N/A | N/A | N/A | — | N/A | N/A | N/A | N/A |
 | **Authentication** | PAT / GitHub App | OAuth 2.0 / PAT | App Password / OAuth | Docker Desktop credentials | kubeconfig / OAuth / OIDC | API tokens per platform | Local connection (port/stdio) | None (local browsers) | API tokens / OAuth (remote) | API tokens / CLI auth | API tokens / OAuth / CLI auth | None (public registries) | API keys (Context7, magic-mcp, E2B) | API keys / Bearer / OAuth / 1Password | API tokens / OAuth / RBAC (Splunk) | Database credentials / CLI auth | None (GitMCP, MS Learn) / API keys (platform MCP) | None (local debuggers) / Chrome DevTools auto-connect | API keys (CodSpeed, Polar Signals) / Grafana auth / Google API key (PageSpeed) | API tokens (SonarQube, Codacy) / GitHub PAT / GitLab PAT |
 | **AAIF membership** | No (but Microsoft is Platinum) | No | No | [Gold](/reviews/docker-mcp-servers/) | No (but Google/AWS/MS are Platinum) | No | No (but Microsoft is Platinum) | No (but Microsoft is Platinum) | No | No | No | No (but Microsoft is Platinum) | No | No | No | No | No (but Microsoft is Platinum) | No (but Google/Microsoft are Platinum) | No | No |
 | **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users | 5.6M developers | Jenkins: 11.3M devs | VS Code: 75.9% market share | Playwright: 45.1% QA adoption | Datadog: 32.7k customers | SonarQube: 17.7% SAST mindshare | Terraform: millions of users, 45% IaC adoption | npm: 5B+ weekly downloads, PyPI: 421.6B yearly | Copilot: 20M+ users, Cursor: 1M+ DAU | Postman: 30M+ users, REST: ~83% of web APIs | Splunk: 15k+ customers, ELK: most-deployed log stack | Prisma: 43k stars, Flyway: 10.7k stars, Atlas: 6.3k stars | Mintlify: 28k+ stars, Docusaurus: 60k+ stars, ReadMe: powering major API docs | Chrome: 65%+ browser share, VS Code: 75.9% IDE share, x64dbg: 45k+ stars | APM market: $7-10B, Pyroscope: 11k+ stars, async-profiler: 9k+ stars | SonarQube: 7.4M+ users, CodeRabbit: top AI reviewer, Qodo/PR-Agent: 10.5k stars |
@@ -200,7 +273,7 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 
 1. **AI-driven infrastructure destruction is a proven risk** — In February 2026, an AI coding agent ran `terraform destroy` on production infrastructure, deleting 2.5 years of course data for a 100,000-student education platform. IaC MCP servers that enable `plan`/`apply`/`destroy` operations without mandatory human approval gates create real-world destruction risk. Spacelift Intent's codeless provisioning amplifies this — resources can be created and destroyed without any code review process.
 
-2. **Registry lookup is the ceiling for most servers** — Terraform, OpenTofu, and Pulumi MCP servers primarily look up documentation and schemas. They don't execute infrastructure operations (plan, apply, destroy) or inspect actual deployed state. This makes them documentation tools — useful for helping AI agents write correct IaC code, but not for managing infrastructure. AWS's IaC server is the exception with actual validation capabilities.
+2. **Registry lookup is the ceiling for most servers** — OpenTofu and Pulumi MCP servers primarily look up documentation and schemas. **Partially addressed:** Terraform MCP v0.5.x adds plan/apply detail tools for inspecting runs, and Bicep MCP adds compilation diagnostics and ARM decompilation. But most servers still don't execute infrastructure operations (plan, apply, destroy) or inspect actual deployed state. AWS's IaC server remains the leader for validation capabilities.
 
 3. **No standard for IaC findings or state representation in MCP** — Each server returns infrastructure data in its own format. Terraform workspace state, Pulumi stack resources, and CloudFormation stack events look completely different. No MCP-native schema exists for representing infrastructure resources, their relationships, or their drift status. This prevents cross-tool infrastructure visibility.
 
@@ -212,35 +285,37 @@ The Infrastructure as Code market ($2.2B in 2025, projected $12.9B by 2032, 28.6
 
 7. **OpenTofu vs. Terraform fragmentation** — The Terraform/OpenTofu fork creates ecosystem fragmentation. Teams must choose between HashiCorp's Terraform MCP server (1.3k stars, platform integration) and OpenTofu's MCP server (84 stars, fully open-source). Provider registries are mostly compatible but diverging. This mirrors the broader IaC community split.
 
-8. **Codeless provisioning lacks governance** — Spacelift Intent provisions real cloud resources from natural language without generating reviewable code. The open-source version has no policy gates, approval workflows, or audit trails — only the commercial Spacelift platform adds OPA policy-as-code integration. For any production use, the lack of governance in the open-source version is a blocker.
+8. **Codeless provisioning governance is improving** — Spacelift Intent provisions real cloud resources from natural language without generating reviewable code. The open-source version still lacks policy gates, but **Spacelift Intelligence** (announced 2026) adds infrastructure awareness and is integrated with the commercial platform's OPA policy-as-code. StackGen also addresses this with built-in governance policies. For production use, the open-source Intent version remains a governance risk.
 
-9. **Low adoption relative to IaC tool popularity** — Terraform has millions of users, but the MCP server has 1.3k stars. Pulumi's MCP server has 57 stars. OpenTofu's has 84. Ansible's community server has 25. The IaC community has not yet broadly adopted MCP-based workflows, likely because infrastructure changes carry higher blast radius than code changes.
+9. **Low adoption relative to IaC tool popularity** — Terraform has millions of users, but the MCP server has 1.4k stars (up from 1.3k). OpenTofu's has 92 (up from 84). Ansible's community server has 27. Growth is steady but modest — the IaC community has not yet broadly adopted MCP-based workflows, likely because infrastructure changes carry higher blast radius than code changes. The arrival of official servers from Red Hat and Microsoft may accelerate enterprise adoption.
 
-10. **Missing enterprise IaC vendors** — Chef, Puppet, and SaltStack have no MCP presence. Bicep (Azure's IaC) and Google Cloud Deployment Manager are absent. CDK for Terraform (CDKTF) — which lets developers use TypeScript/Python to write Terraform — has no MCP server despite being a natural fit for AI-assisted IaC.
+10. **Missing enterprise IaC vendors (partially addressed)** — **Bicep gap closed** (Microsoft official, 10 tools). **Ansible gap closed** (Red Hat AAP MCP, tech preview). **CDKTF deprecated** by HashiCorp December 2025 — no longer relevant. Chef hits EOL November 2026, Puppet forked to OpenVox — both unlikely to gain MCP support. SaltStack and Google Cloud Deployment Manager remain absent. The gap list has shrunk significantly since the original review.
 
 ## Bottom Line
 
 **Rating: 4 out of 5**
 
-The Infrastructure as Code MCP ecosystem has **strong vendor representation** — five or more vendors (HashiCorp, Pulumi, AWS, OpenTofu, Spacelift) have shipped official MCP servers, with HashiCorp and Pulumi treating MCP as a first-class integration point. The architectural diversity is notable: Registry-first servers (Terraform, OpenTofu) for documentation lookup, platform-integrated servers (HCP Terraform, Pulumi Cloud, AWS IaC) for workspace and deployment management, and codeless provisioning (Spacelift Intent) for natural language infrastructure. AWS's IaC server stands out with actual template validation — the only server that catches errors before deployment rather than just looking up documentation.
+The Infrastructure as Code MCP ecosystem has **strong and growing vendor representation** — seven or more vendors (HashiCorp, Pulumi, AWS, OpenTofu, Spacelift, Red Hat, Microsoft) have shipped official MCP servers, with the two biggest gaps from our March 2026 review now closed. Red Hat's official Ansible AAP MCP server (tech preview, January 2026) brings enterprise-grade RBAC and dual read-only/read-write modes. Microsoft's Bicep MCP server ships 10 tools for Azure IaC with ARM decompilation and Azure Verified Modules. Terraform MCP v0.5.x adds plan/apply detail tools and Stacks support, partially closing the "documentation-only" gap. StackGen enters with the most comprehensive agentic IaC server (25+ tools, multi-cloud). HashiCorp deprecated CDKTF in December 2025, and Chef hits EOL November 2026 — the traditional config management era is winding down while IaC+MCP accelerates.
 
-The **4/5 rating** reflects: strong multi-vendor investment (5+ official servers from major IaC players), HashiCorp's comprehensive Registry + platform integration (1.3k stars), Pulumi's innovative AI-to-AI delegation via Neo, AWS's unique validation capabilities (cfn-lint + cfn-guard + CloudTrail troubleshooting), OpenTofu's open-source alternative, Spacelift Intent's bold codeless provisioning approach, and the genuine utility of AI-assisted IaC authoring (correct provider schemas, module documentation, resource definitions). It loses the remaining 1 point for the proven destruction risk of AI-driven infrastructure changes (February 2026 incident), most servers being documentation-only (no plan/apply/state inspection), no standard for representing infrastructure state in MCP, state file security concerns, low community adoption relative to IaC tool popularity, missing vendors (Chef, Puppet, Bicep, CDKTF), and the unresolved Terraform/OpenTofu fragmentation.
+The **4/5 rating holds** with strengthened fundamentals: expanded multi-vendor investment (7+ official servers, up from 5+), two major gap closures (Bicep, Ansible), HashiCorp's v0.5.x improvements (plan/apply visibility, OTel, Stacks), and StackGen's agentic approach. It still loses 1 point for the proven destruction risk of AI-driven infrastructure changes (February 2026 incident), most servers still being primarily documentation-focused (Terraform v0.5.x reads plans but doesn't trigger them), no standard for representing infrastructure state in MCP, state file security concerns, and modest community adoption growth (Terraform 1.3k→1.4k, OpenTofu 84→92).
 
 **Who benefits from IaC MCP servers today:**
 
 - **Terraform/OpenTofu developers** — Registry lookup via MCP gives AI coding assistants accurate provider schemas, module documentation, and resource definitions. This directly reduces HCL errors and speeds up configuration authoring
 - **Platform engineering teams on HCP Terraform** — Workspace management, run triggering, and variable handling via MCP enables AI-assisted infrastructure operations without leaving the IDE
 - **AWS CloudFormation/CDK teams** — The AWS IaC server's validation tools (cfn-lint, cfn-guard) catch template errors and compliance violations before deployment — genuinely useful for catching misconfigurations
-- **Teams evaluating codeless provisioning** — Spacelift Intent offers a glimpse of infrastructure-without-code for prototyping and experimentation (not recommended for production without the commercial platform's governance)
+- **Azure Bicep teams** — Microsoft's official Bicep MCP server provides ARM decompilation, compilation diagnostics, and Azure Verified Modules access. Built into VS Code and Visual Studio 2026 — zero additional setup for existing Bicep developers
+- **Ansible Automation Platform teams** — Red Hat's official MCP server (tech preview) brings natural language interaction to AAP with enterprise RBAC inherited from existing permissions. Start with read-only mode for safe querying
+- **Teams evaluating codeless provisioning** — Spacelift Intent offers a glimpse of infrastructure-without-code for prototyping and experimentation (not recommended for production without the commercial platform's governance). StackGen provides a more governed alternative with 25+ tools
 - **Pulumi teams with Pulumi Cloud** — Neo delegation lets AI assistants offload infrastructure tasks to Pulumi's autonomous agent, reducing manual infrastructure work
 
 **Who should be cautious:**
 
 - **Teams without strong infrastructure governance** — AI agents with IaC MCP access can potentially create, modify, or destroy cloud resources. Without approval gates, policy-as-code, and audit trails, this is a production risk. The February 2026 destruction incident is a warning
 - **Multi-cloud teams** — No cross-platform IaC MCP server exists. Managing Terraform + Pulumi + CloudFormation via separate MCP servers creates tooling sprawl with no coordination
-- **Enterprise teams on Chef/Puppet/SaltStack** — These configuration management platforms have no MCP servers. AI-assisted IaC workflows are currently limited to Terraform, Pulumi, CloudFormation, and Ansible ecosystems
+- **Enterprise teams on Chef/Puppet/SaltStack** — Chef hits EOL November 2026 and Puppet forked to OpenVox — neither is likely to gain MCP support. SaltStack remains absent. Consider migration to Terraform/Pulumi/Ansible for AI-assisted IaC workflows
 - **Teams concerned about state file security** — MCP servers that query infrastructure state expose sensitive data (IP addresses, connection strings, resource IDs) to the LLM. Verify your LLM provider's data handling before connecting IaC state
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*

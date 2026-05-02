@@ -40,7 +40,7 @@ IaC tools and configuration automation — Terraform leads, but Ansible, Pulumi,
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Infrastructure as Code MCP Servers](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | Terraform (1.3k stars), Pulumi Neo (remote MCP), AWS IaC (CloudFormation/CDK), OpenTofu |
+| [Infrastructure as Code MCP Servers](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | Terraform (1.4k stars v0.5.2), Bicep MCP (Microsoft, 10 tools), Red Hat Ansible AAP (official), Pulumi Neo, AWS IaC, StackGen (25+ tools) |
 | [Infrastructure Automation MCP Servers](/reviews/infrastructure-automation-mcp-servers/) | 4/5 | Terraform (35+ tools), Ansible (official AAP tech preview), tfmcp (357 stars, full execution) |
 | [Terraform MCP Server](/reviews/terraform-mcp-server/) | 4/5 | HashiCorp's terraform-mcp-server (1,300 stars) — registry docs, HCP workspace management, dual transport |
 | [Pulumi MCP Server](/reviews/pulumi-mcp-server/) | 3.5/5 | Pulumi MCP (188 stars) — registry docs, stack management, Neo delegation for autonomous provisioning |

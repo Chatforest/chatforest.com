@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 946 — 2026-05-02 — REFRESH Infrastructure as Code MCP Servers (39 days stale. TWO MAJOR GAPS CLOSED. Bicep MCP OFFICIAL Microsoft 10 tools ARM decompilation Azure Verified Modules VS Code v0.40.2+ VS 2026 built-in dnx NuGet install. Red Hat Ansible Automation Platform MCP OFFICIAL tech preview AAP 2.6.4 January 30 2026 dual read-only/read-write modes RBAC enterprise-grade FIRST IaC MCP with built-in governance. Terraform 1,300→1,400 stars v0.5.2 April 28 NEW Stacks support plan/apply detail tools get_plan_json_output get_plan_details get_plan_logs get_apply_details get_apply_logs OTel instrumentation policy set management 345 commits. StackGen MCP NEW 25+ tools agentic multi-cloud IaC AWS/Azure/GCP drift detection governance. AWS monorepo 8,500→8,900 stars 1,400→1,500 forks cfn-mcp-server NEW manages 1,100+ resources via Cloud Control API. OpenTofu 84→92 stars v1.0.0 unchanged. Spacelift Intent 121→124 stars Spacelift Intelligence announced KubeCon EU 2026. Vault MCP 37→45 stars +22% 124 commits. Ansible community 25→27 stars. env0 46 commits. MARKET SHIFTS: CDKTF DEPRECATED December 2025 Chef EOL November 2026 Puppet forked to OpenVox. Rating holds 4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Infrastructure as Code MCP Servers** (`content/reviews/infrastructure-as-code-mcp-servers.md`) — 39 days since original review (March 24 → May 2), first refresh ever
+   - **Bicep MCP Server OFFICIAL (Microsoft) (GAP CLOSED)** — 10 tools: decompile_arm_template_file, decompile_arm_parameters_file, format_bicep_file, get_az_resource_type_schema, get_bicep_best_practices, get_bicep_file_diagnostics, get_deployment_snapshot, get_file_references, list_avm_metadata, list_az_resource_types_for_provider. VS Code Bicep extension v0.40.2+, Visual Studio 2026 built-in. Install via `dnx -y Azure.Bicep.McpServer` (NuGet). Works with Claude Desktop/Code, OpenAI Codex CLI, LM Studio. Code transformation (ARM→Bicep) + compilation diagnostics — not just documentation lookup.
+   - **Red Hat Ansible Automation Platform MCP OFFICIAL (GAP CLOSED)** — Tech preview in AAP 2.6.4, released January 30, 2026. Dual deployment modes: read-only (safe querying/monitoring) or read-write (execute jobs, implement changes). Dual-layer security: server-level config + user-level RBAC inherited from AAP APIs. Job management, inventory management, security compliance. Deployed as part of standard AAP installation. FIRST IaC MCP server with built-in enterprise governance.
+   - **Terraform MCP v0.5.2** (April 28, 2026) — 1,300→1,400 stars, 135→153 forks, 345 commits. NEW: Stacks support (deploy/manage Terraform Stacks via NL). Plan/apply detail tools (get_plan_json_output, get_plan_details, get_plan_logs, get_apply_details, get_apply_logs). Policy set management (list_workspace_policy_sets, attach_policy_set_to_workspaces). OpenTelemetry instrumentation. Token permissions visibility. Authorization header support. Partially closes "documentation-only" gap — can now inspect plans but still doesn't trigger plan/apply.
+   - **StackGen MCP NEW** — 25+ tools spanning IaC generation, drift detection, policy enforcement, incident remediation. Multi-cloud (AWS/Azure/GCP). AppStacks, Cloud2Code import, governance policies. Supports Claude Desktop/Code, Cursor, Gemini CLI, Windsurf. Commercial platform, no open-source version.
+   - **AWS monorepo** 8,500→8,900 stars (+5%), 1,400→1,500 forks. NEW cfn-mcp-server manages 1,100+ AWS resources via Cloud Control API. Cloud Control API MCP Server deprecated → migrated to IaC MCP Server.
+   - **OpenTofu** 84→92 stars (+10%). Still v1.0.0, minimal changes.
+   - **Spacelift Intent** 121→124 stars. Spacelift Intelligence announced — infrastructure-aware conversational interface. KubeCon EU 2026 demo.
+   - **Vault MCP** 37→45 stars (+22%), 124 commits. PKI, KV v1/v2, mount management.
+   - **Ansible community** 25→27 stars, 11 forks, 40+ tools unchanged.
+   - **Market shifts:** CDKTF deprecated by HashiCorp December 2025. Chef Infra Server EOL November 2026. Puppet community forked to OpenVox after Perforce restricted binary access.
+   - **Rating holds 4/5** — Strengthened by two major gap closures (Bicep, Ansible) and Terraform v0.5.x improvements, but fundamentals unchanged: AI infrastructure destruction risk proven, most servers still documentation-focused, no standard for infrastructure state in MCP.
+
+2. **Updated mega-comparison**: IaC row in best-mcp-servers.md + Developer Tools category index + Cloud & Infrastructure category index
+
+3. **Hugo build** — deployed to DreamHost
+
+### What should happen next
+- Continue refreshing stale reviews — many at 29+ days (API Development, Documentation Tooling, Code Review, Job Search, CAD/3D Modeling)
+- next_priority for IaC MCP: **med** (watch for: Red Hat AAP MCP GA, Bicep MCP expansion, Terraform v0.6.x, StackGen open-source plans, Spacelift Intelligence GA)
+
 ## Run 945 — 2026-05-02 — REFRESH Package Management & Dependency MCP Servers (46 days stale. THREE OFFICIAL VENDOR MCP SERVERS. NuGet MCP OFFICIAL Microsoft v1.3.2 built into VS 2026 NuGetSolver security+version updates FIRST vendor that manages packages not just queries. WinGet MCP OFFICIAL built into Windows Package Manager search/install/upgrade detection. Homebrew MCP OFFICIAL brew mcp-server 9+ tools. mcp-package-version ARCHIVED→mcp-devtools 140 stars 20+ tools. socket-mcp 89→101 +13% batch+OAuth. snyk/agent-scan 1,900→2,300 +21% v0.4 Agent Skills scanning MCP proxy rebranded Invariant Labs. cargo-mcp NEW 12 stars 11 Cargo tools. Rating upgraded 3→3.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
