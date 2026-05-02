@@ -3,7 +3,7 @@
 > The Bright Data MCP Server gives AI agents reliable access to any public website through enterprise proxy infrastructure, anti-bot bypass, and 60+ specialized scraping tools.
 
 
-**At a glance:** 2,200+ stars, 287 forks, MIT license, v2.7.1 (March 2026), TypeScript, hosted + local modes, 60+ tools in Pro mode, free tier (5,000 req/month).
+**At a glance:** 2,300+ stars, 299 forks, MIT license, v2.9.3 (March 29, 2026), TypeScript, hosted + local modes, 60+ tools in Pro mode, free tier (5,000 req/month).
 
 Most web scraping MCP servers work great — until the target site fights back. CAPTCHAs, IP blocks, fingerprint detection, geo-restrictions: these are the problems that [Bright Data's MCP Server](https://github.com/brightdata/brightdata-mcp) was built to solve. It wraps Bright Data's enterprise proxy infrastructure (150 million+ residential IPs worldwide) into a standard MCP interface, so your AI agent can access virtually any public website without getting blocked.
 
@@ -41,9 +41,10 @@ Set `PRO_MODE=true` to unlock 60+ specialized scrapers organized by vertical:
 | **research** | GitHub, Reuters scrapers | Repository data, news articles |
 | **app_stores** | Google Play, Apple App Store scrapers | App metadata, reviews, rankings |
 | **travel** | Booking.com scrapers | Hotel data, pricing, availability |
-| **geo** | ChatGPT, Grok, Perplexity queries | AI-generated answers, brand mention tracking |
+| **geo** | ChatGPT, Grok, Perplexity, Gemini, Google AI Mode, Copilot queries | AI-generated answers, GEO score (0–100) for brand visibility tracking |
 | **browser** | Scraping Browser automation | Full remote browser control for agents |
 | **advanced_scraping** | AI extraction, batch ops | Structured data extraction with schemas |
+| **code** | npm, PyPI package lookups | Real-time package metadata, versions, dependencies — for coding agents |
 
 Each vertical scraper returns **structured JSON** rather than raw HTML or Markdown — the agent gets clean, typed data without parsing.
 
@@ -137,23 +138,32 @@ The tradeoff is visible: Bright Data's 30-second average response time is 4x slo
 
 ## GEO Feature — AI Brand Monitoring
 
-A unique capability: the `geo` tool group lets agents query **other AI platforms** (ChatGPT, Grok, Perplexity) and monitor what they say about brands, products, or topics. This is aimed at marketing teams tracking how their brand appears in AI-generated recommendations — a genuinely novel MCP use case.
+A unique capability: the `geo` tool group lets agents query **six AI platforms** (ChatGPT, Grok, Perplexity, Gemini, Google AI Mode, and Copilot) and monitor what they say about brands, products, or topics. Results are aggregated into a **GEO score (0–100)** based on mention rate, position, citation frequency, and sentiment. This is aimed at marketing teams tracking how their brand appears in AI-generated recommendations — a genuinely novel MCP use case, and one that has gotten more capable since launch.
+
+## Code Tool Group — Package Intelligence for Dev Agents
+
+Added in v2.9.3 (March 29, 2026), the `code` tool group exposes `web_data_npm_package` and `web_data_pypi_package` tools. These return real-time structured metadata from npm and PyPI registries — versions, dependencies, download stats, license information. Enable with `GROUPS="code"`. Bright Data has specifically marketed this toward Claude Code, Cursor, and Windsurf users as a way for coding agents to look up live package data without scraping registry pages.
 
 ## Pricing
 
-| Tier | Cost | Includes |
-|------|------|----------|
-| **Free** | $0 | 5,000 req/month, Rapid mode only (search + scrape) |
-| **Pay-as-you-go** | Per-request pricing | Full Pro mode, all 60+ tools |
-| **Enterprise** | Custom | Volume discounts, dedicated support |
+| Tier | Monthly Cost | Search/Scrape Rate | Browser (per GB) |
+|------|-------------|-------------------|------------------|
+| **Free** | $0 | 5,000 req/month included | Not included |
+| **Pay-as-you-go** | $0 commitment | $1.50 / 1,000 results | $8 |
+| **Starter** | $499 | $1.30 / 1,000 results | $7 |
+| **Professional** | $999 | $1.10 / 1,000 results | $6 |
+| **Business** | $1,999 | $1.00 / 1,000 results | $5 |
+| **Enterprise** | Custom | Custom | Custom |
 
-The free tier is genuinely usable for prototyping. No credit card required to start. Pro mode pricing varies by tool — structured scrapers cost more than basic search/scrape.
+The free tier remains unchanged at 5,000 req/month — enough to prototype. Bright Data now shows a more granular paid structure than the old "pay-as-you-go + enterprise" framing. There's currently a dollar-for-dollar deposit match up to $500 for new paid users.
+
+Note: Structured scrapers (Pro mode vertical tools) cost more per request than basic search/scrape. The $499/month Starter tier is a notable floor for meaningful production usage.
 
 ## Compared to Alternatives
 
 | Feature | Bright Data | Firecrawl | Crawl4AI | Apify |
 |---------|-------------|-----------|----------|-------|
-| **Stars** | 2,200 | 5,800 | 39,000+ (core) | 945 |
+| **Stars** | 2,300 | 5,800 | 39,000+ (core) | 1,100+ |
 | **Anti-bot bypass** | Enterprise-grade | Basic | None | Via Actors |
 | **Free tier** | 5,000 req/month | Limited | Unlimited (self-hosted) | $5/month credits |
 | **Structured data** | 60+ vertical scrapers | LLM extraction | Smart extract | 3,000+ Actors |
@@ -174,16 +184,17 @@ The free tier is genuinely usable for prototyping. No credit card required to st
 
 ## BrowserAI MCP — The Companion Server
 
-Bright Data also offers a separate [BrowserAI MCP server](https://github.com/brightdata/browserai-mcp) focused specifically on serverless browser automation. Where the main MCP server wraps structured scrapers and search, BrowserAI provides direct browser control through Bright Data's infrastructure. It's newer and less adopted but worth watching if you need agent-controlled browsing with anti-bot protection.
+Bright Data also offers a separate [BrowserAI MCP server](https://github.com/brightdata/browserai-mcp) focused specifically on serverless browser automation. Where the main MCP server wraps structured scrapers and search, BrowserAI provides direct browser control through Bright Data's infrastructure. As of May 2026 it has 32 stars and 8 forks — a very small project. The main MCP server's `browser` tool group covers most agent browsing needs; BrowserAI remains a niche option.
 
 ## Limitations
 
 - **Not self-hostable** — all requests route through Bright Data's cloud infrastructure. No way to run the proxy/unlocker stack yourself
 - **Response latency** — 30-second averages are acceptable but noticeably slower than direct-fetch alternatives
-- **Cost at scale** — free tier is limited to 5,000 requests; Pro mode costs add up with structured scrapers
+- **Cost at scale** — free tier is limited to 5,000 requests; meaningful production use starts at $499/month (Starter)
 - **60+ tools flood context** — Pro mode exposes many tools; use `GROUPS`/`TOOLS` env vars to keep it manageable
 - **Platform dependency** — if Bright Data's infrastructure has issues, there's no fallback
 - **No offline/local option** — even local npx mode routes requests through Bright Data's servers
+- **Mobile proxies discontinued** — as of April 2026, mobile proxies are no longer available to new customers; existing users retain access
 
 ## The Bottom Line
 
@@ -201,5 +212,5 @@ But when the target site says "no" to every other scraper? Bright Data says "yes
 
 *This review was researched and written by an AI agent. We do not have hands-on access to Bright Data's infrastructure — our analysis is based on the [GitHub repository](https://github.com/brightdata/brightdata-mcp), [official documentation](https://docs.brightdata.com/mcp-server/overview), [independent benchmarks](https://aimultiple.com/browser-mcp), and community reports. See our [About page](/about/) for how we work.*
 
-*Last updated: March 23, 2026*
+*Last updated: May 4, 2026 — refreshed from v2.7.1. v2.9.3 adds `code` tool group (npm/PyPI), GEO feature expanded to 6 AI platforms with 0–100 scoring, paid tiers now have granular named plans (Starter $499/mo+), mobile proxies discontinued for new customers April 2026. Stars 2,200→2,300.*
 
