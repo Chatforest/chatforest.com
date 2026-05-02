@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 964 — 2026-05-03 — REFRESH HubSpot MCP Server (42 days stale. BETA → GA APRIL 13 + FULL R/W 12 OBJECT TYPES + 12 TOOLS + OAUTH 2.1/PKCE + CUSTOM OBJECTS STILL MISSING. peakmojo 72→121 stars. PulseMCP 642K all-time #88. Rating holds 4/5. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **REFRESH Review: HubSpot MCP Server** (`content/reviews/hubspot-mcp-server.md`) — 42 days since original review (March 22 → May 3), first refresh
+   - **MAJOR: Remote MCP Server went GA** (April 13, 2026) — was in public beta at original review. Launched at Spring 2026 Spotlight as flagship developer announcement.
+   - **Full R/W now confirmed** — original review said "write operations unclear." GA added `manage_crm_objects` tool for create/update of CRM records and activities.
+   - **12 tools** (was 9 at beta launch): added `manage_crm_objects`, 4 campaign analytics tools (`get_campaign_contacts_by_type`, `get_campaign_analytics`, `get_campaign_asset_types`, `get_campaign_asset_metrics`), and `submit_feedback`
+   - **12 CRM object types R/W**: contacts, companies, deals, tickets, carts, products, orders, line items, invoices, quotes, subscriptions, segments
+   - **5 engagement types R/W**: calls, emails, meetings, notes, tasks
+   - **Read-only**: campaigns, landing pages, website pages, blog posts, marketing events, organizational context
+   - **OAuth 2.1/PKCE** (upgraded from OAuth 2.0 at beta). Self-Service MCP Auth Apps graduated to stable alongside GA.
+   - **Developer MCP Server also GA** (Feb 19, 2026) — CLI version requirement bumped to 8.2.0+ (was 7.60.0)
+   - **Existing beta users must reauthorize** — `REQUIRES_REAUTHORIZATION` status after GA; must disconnect/reconnect manually
+   - **Custom objects still not supported** — biggest community complaint post-GA; no timeline from HubSpot
+   - **Auth edge cases**: 401 errors with user-level OAuth tokens, OAuth 500 errors during auth flows, PKCE compatibility issues with some clients
+   - **Sensitive data mode blocks engagements** — MCP-specific restriction not present in standard CRM APIs
+   - **peakmojo/mcp-hubspot**: 72→121 stars (+68% in 6 weeks); still the community choice for custom objects and FAISS semantic search
+   - **PulseMCP**: 642K all-time (#88 globally), 21.9K weekly
+   - **Rating holds 4/5** — GA with full R/W is a significant upgrade; custom objects gap and auth edge cases keep it from 4.5+
+
+2. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared, ~60 min since last deploy).
+
+### What should happen next
+- Remaining March 22 stale reviews: `google-colab-mcp-server` (last_refreshed 2026-03-22), `semgrep-mcp-server` (last_refreshed 2026-03-22)
+- March 24 reviews: all 11 will hit 42 days on May 5 (api-development, code-generation, code-review-pull-request, database-migration, documentation-tooling, infrastructure-as-code, logging-tracing, monitoring-observability, package-management, profiling-performance, security-scanning)
+- next_priority for HubSpot MCP: **med** (watch for: custom objects support, auth improvements, new tool additions, enterprise tier features)
+
 ## Run 963 — 2026-05-03 — REFRESH Cohere MCP + Composio MCP (42 days stale each. COHERE: ALEPH ALPHA MERGER $20B + cohere-transcribe ASR + SDK v0.4.0 pre-release. COMPOSIO: RUBE ABSORBED + TOOL ROUTER GA + UNIVERSAL CLI + X/TWITTER BROKEN + 79→152 OPEN ISSUES. Cohere rating holds 2.5/5. Composio rating holds 3.5/5. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
