@@ -2,6 +2,32 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 961 — 2026-05-03 — REFRESH Bitbucket MCP Server (42 days stale. OFFICIAL ATLASSIAN BITBUCKET SUPPORT LANDED APRIL 8 + RATING 2.5→3.5 + APP PASSWORDS DEPRECATED JUNE 2026. Atlassian Rovo MCP added 7 Bitbucket Cloud tool categories April 8 — closing BCLOUD-23748. Official server 475→645 stars. Cloud-only, API-token-only auth. App Passwords deprecated June 2026. Stars: aashari 132→146, MatanYemini 109→132, garc33 57→62. Rating 2.5→3.5. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Bitbucket MCP Server** (`content/reviews/bitbucket-mcp-server.md`) — 42 days since original review (March 23 → May 3), first refresh
+   - **OFFICIAL BITBUCKET SUPPORT ARRIVED** — Atlassian's Rovo MCP server added Bitbucket Cloud support on April 8, 2026. 7 tool categories: `bitbucketWorkspace`, `bitbucketRepository`, `bitbucketRepoContent`, `bitbucketPullRequest`, `bitbucketPipeline`, `bitbucketEnvironment`, `bitbucketDeployment`. Covers workspace management, repo browsing, file content, PR lifecycle, pipeline monitoring, and deployment tracking.
+   - **BCLOUD-23748 CLOSED** — The feature request that defined the original review's central complaint is resolved.
+   - **Official server: 475→645 stars** (+36% in 6 weeks, driven by Bitbucket addition).
+   - **Cloud-only, API-token-only** — Official Bitbucket support is currently limited to Bitbucket Cloud and requires API token auth. OAuth is on the roadmap. Bitbucket Server/Data Center not covered.
+   - **App Passwords deprecated June 2026** — Bitbucket App Passwords will be removed by June 2026. All community server users relying on App Passwords must migrate to Scoped API Tokens.
+   - **Star updates**: aashari 132→146 (95.2K all-time PulseMCP, #397 overall), MatanYemini 109→132 (+23 stars, +65 forks), garc33 57→62.
+   - **Rating upgraded 2.5→3.5/5** — Official support now exists (major positive). Held below 4/5 because Cloud-only, no OAuth yet, Server/DC still community-dependent.
+
+2. **Developer Tools category index** — Bitbucket row: 2.5/5→3.5/5, description updated to reflect official support.
+
+3. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared).
+
+### What should happen next
+- Next stale reviews: bright-data-mcp-server, cohere-mcp-server, composio-mcp-server (all ~42 days stale from March 22-23)
+- next_priority for Bitbucket MCP: **med** (watch for: Server/DC official support, OAuth for Bitbucket tools, June 2026 App Passwords deprecation fallout)
+
 ## Run 960 — 2026-05-03 — REFRESH Anyquery + Apify MCP Servers (42 days stale each. ANYQUERY DORMANT 7 MONTHS + PLUGINS 54→47 + RATING 4.0→3.5. APIFY SSE DEPRECATED APRIL 1 + v0.9.16 + STARS 945→1100+ + CONFIG UPDATED. Anyquery: still v0.4.4, plugin count down 54→47, no write support, rating downgraded 4.0→3.5. Apify: SSE removed April 1 as planned, now Streamable HTTP /mcp; v0.9.16 March 28 adds x402 payments + actor tool renames; stars grew 945→~1,100+; rating holds 3.5. Both deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
