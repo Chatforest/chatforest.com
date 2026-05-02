@@ -18,7 +18,7 @@ The most technically ambitious MCP category. Robotics ranges from ROS/ROS2 integ
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Robotics](/reviews/robotics-mcp-servers/) | 4.5/5 | xiaozhi-esp32 (24,900 stars, voice AI on ESP32), DimOS (1,700 stars, agentic robotics OS), ha-mcp (1,600 stars, 96 tools), robotmcp/ros-mcp-server (1,100 stars, ROS/ROS2), Isaac Sim (138 stars) — 50+ servers |
+| [Robotics](/reviews/robotics-mcp-servers/) | 4.5/5 | DimOS (3,100 stars, +82%, agentic robotics OS), xiaozhi-esp32 (26,100 stars, voice AI on ESP32), ha-mcp (1,600+ stars, 86 tools) + HA official MCP, robotmcp/ros-mcp-server (1,200 stars, ROS/ROS2), phosphobot MCP NEW (VLA robot arms), Isaac Sim v0.3.0 — 55+ servers |
 | [Robotics & IoT](/reviews/robotics-iot-mcp-servers/) | 3.5/5 | ROS MCP (969 stars, bidirectional ROS/ROS2), ha-mcp (1.1K stars, 80+ tools), homeassistant-mcp (500+ stars, SSE), Isaac Sim MCP (NVIDIA simulation), mcp2serial (35 stars, hardware bridge) — 15+ servers |
 
 ## Smart Home Automation

@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 943 — 2026-05-02 — REFRESH Robotics MCP Servers (44 days stale. DimOS SURGED 1,700→3,100 stars +82% daemon mode temporal-spatial memory Go2 fleet control, xiaozhi-esp32 24,900→26,100 v2.2.6, Home Assistant OFFICIAL built-in MCP + ha-mcp 96→86 consolidated tools, phosphobot MCP NEW VLA robot arm control SO-100/SO-101 LeRobot, wise-vision/ros2_mcp NEW image streaming auto QoS, CSOAI-ORG/robotics-control-mcp NEW HARVI humanoid, Isaac Sim v0.3.0 USD asset search, ROS 1,100→1,200 stars 160 forks, KUKA iiQKA.OS2 AI-ready Google Intrinsic partnering manufacturers, rating holds 4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: Robotics MCP Servers** (`content/reviews/robotics-mcp-servers.md`) — 44 days since original review (March 19 → May 2), first refresh ever
+   - **DimOS SURGED 1,700→3,100 stars (+82%)** — fastest-growing project in robotics MCP. New: daemon mode (`dimos run --daemon` with health checks), temporal-spatial memory (causal object relationships, entity tracking through time/space), Go2 fleet multi-robot control (`--robot-ips`), production MCP CLI (`dimos mcp list-tools/call/status/modules`). 518 forks. Cementing position as premier agentic robotics OS.
+   - **xiaozhi-esp32** 24,900→26,100 stars (+5%), v2.2.4→v2.2.6 (April 19), BLUFI encrypted WiFi config
+   - **Home Assistant OFFICIAL built-in MCP Server** — now ships in HA core, Streamable HTTP protocol, Assist API exposure, entity control through UI configuration. Separate from community ha-mcp.
+   - **ha-mcp consolidated** 96→86 tools — merged `ha_config_list_floors`+`ha_config_list_areas` into `ha_list_floors_areas`, unified `ha_config_set_helper` for 27 helper types, new `ha_manage_energy_prefs` for Energy Dashboard CRUD, addon management via Core ingress proxy
+   - **phosphobot MCP NEW** (phospho-app/phospho-mcp-server) — FIRST VLA (vision-language-action) model integration for robot arms. Camera streaming, action model execution, SO-100/SO-101 compatible, LeRobot framework, dataset recording. Paradigm shift: LLM triggers learned behaviors rather than sending explicit motor commands.
+   - **wise-vision/ros2_mcp NEW** — advanced ROS2 MCP with Image/CompressedImage streaming, automatic QoS profile detection, health reporting, topic republishing with rate limiting/filtering, 1-minute setup stdio transport
+   - **CSOAI-ORG/robotics-control-mcp NEW** — HARVI humanoid project by MEOK AI Labs, SO-101 + LeRobot ML inference, serial+HTTP control, emergency stop, device discovery
+   - **Isaac Sim v0.3.0** (April 25, 2026) — NEW `search_3d_usd_by_text` tool for searching/loading 3D models from USD libraries, custom positioning/scaling
+   - **robotmcp/ros-mcp-server** 1,100→1,200 stars, 160 forks, 18 contributors, ranked #18 on MCP leaderboards
+   - **Manufacturer landscape shifting** — KUKA iiQKA.OS2 AI-ready + ISO 10218:2026, Google Intrinsic partnering FANUC+UR+KUKA, NVIDIA GR00T N1 humanoid foundation model + Newton physics engine. No standalone MCP servers yet but platform partnerships suggest gap may close indirectly.
+   - **Rating holds 4.5/5** — VLA paradigm (phosphobot) and DimOS surge represent evolution from "control commands" to "learned behaviors"
+
+2. **Updated mega-comparison**: Robotics row in best-mcp-servers.md + IoT category index — DimOS surge, phosphobot NEW, HA official
+
+3. **Hugo build** — 1232 pages (750ms). Deployed to DreamHost.
+
+### What should happen next
+- Continue refreshing stale reviews — many high-priority categories still at 40+ days
+- next_priority for Robotics MCP: **med** (watch for: DimOS v1.0, manufacturer official MCP via Intrinsic/GR00T platforms, phosphobot expansion beyond SO-100/101, NVIDIA Isaac Sim deeper MCP integration, reBot Arm B601-DM MCP support)
+
 ## Run 942 — 2026-05-02 — REFRESH MongoDB MCP Server (40 days stale. GA MILESTONE v1.9.0, Agent Skills Package GA 7 skills 98 stars, elicitation for destructive ops, interactive setup utility, stars 970→1,000, rating holds 4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
