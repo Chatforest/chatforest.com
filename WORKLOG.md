@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 949 — 2026-05-02 — Publish llms.txt (AI-agent machine-readable site index, llmstxt.org spec)
+
+**Mode:** Developer (implement Boss Claude task)
+
+### Inbox update
+- 1 actionable message: Boss Claude (relaying Rob) — "Publish an `llms.txt` at chatforest.com." Task assigned, no deadline, fits into normal run.
+
+### What I did
+
+1. **Created `/llms.txt`** (`static/llms.txt`) following the llmstxt.org spec:
+   - H1: ChatForest
+   - Blockquote tagline: "AI-native reviews of the MCP server ecosystem. 327 in-depth reviews, 4,000+ servers evaluated, honest ratings with methodology explained."
+   - Intro paragraph: who we are, how we work, transparency about AI authorship
+   - **Start Here** section: 5 foundational guides (What Is MCP, Best MCP Servers, How to Choose, MCP Clients Compared, Ecosystem 2026)
+   - **Review Categories** section: All 24 categories with descriptions and review counts
+   - **Notable Reviews** section: 8 high-rated reviews (4.5/5) representing most-useful entry points
+   - **Guides & Explainers** section: 9 technical guides for developers building with MCP
+   - **About** section: About page + Builder's Log
+   - Total: 65 lines — within the 50-200 target range
+
+2. **Hugo build** — `site/llms.txt` generated correctly (65 lines confirmed)
+
+3. **Deploy PENDING** — hit 1/hour throttle (last deploy 51 min ago). Deploy will run in next session or manual trigger. File is already in `site/` — next deploy will include it automatically.
+
+### What should happen next
+- **Deploy `llms.txt`** — if not auto-deployed by next run, deploy manually (`rsync` to DreamHost). Reply to Boss Claude inbox message confirming publication.
+- **Optional: `/llms-full.txt`** — Boss Claude message listed this as lower priority. Could include full category index, all review slugs, all guide slugs. Ship after confirming `/llms.txt` is live.
+- Continue refreshing stale reviews — Code Review, Job Search, CAD/3D Modeling, Database Migration, Profiling & Performance (all ~29 days stale from April 3)
+
 ## Run 948 — 2026-05-02 — REFRESH Documentation Tooling MCP Servers (39 days stale. GOOGLE OFFICIAL + GITBOOK AUTO-MCP + LLMS.TXT ECOSYSTEM. Google Developer Knowledge API & MCP Server NEW OFFICIAL public preview programmatic access to ALL Google developer docs Firebase Android Cloud Maps 24-hour re-indexing SearchDocumentChunks GetDocument AnswerQuery tools — Google's answer to Microsoft Learn MCP. LangChain mcpdoc NEW 982 stars llms.txt-to-MCP bridge any site with llms.txt accessible via MCP fetch_docs tool actively maintained pushed today. GitBook auto-MCP NEW every published GitBook space auto-generates MCP at /~gitbook/mcp + llms.txt + llms-full.txt zero config JOINS Mintlify as second platform doing both MCP+llms.txt. Mintlify acquiring Helicone LLM observability platform now auto-generates llms.txt/llms-full.txt/skill.md Workflows agent. Fern Claude Code integration button April 24 auto-adds MCP to Claude Code. Docusaurus plugin 13→22 stars +69% v0.12.0 actively developed. Espressif Documentation MCP NEW official vendor search_espressif_sources semantic retrieval hosted mcp.espressif.com. sphinxdocs_mcp NEW 2 stars FIRST Sphinx MCP server FTS5 search optional vector embeddings — SPHINX GAP PARTIALLY CLOSING. zk-armor/mcp-sphinx-docs NEW 2 stars Sphinx→LLM Markdown converter. Docmole 18 stars renamed from mintlify-mcp. GitMCP 7.8k→8k +3%. Microsoft Learn 1.5k→1.6k +7%. Grounded Docs 1.2k→1.3k +8% v2.2.1. probelabs/docs-mcp 87→89 stagnant. mcp-docs-service 53→55. mcp-typescribe 44 unchanged stagnant. Vendors 5+→8+. Rating upgraded 3.5→4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
