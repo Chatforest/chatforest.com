@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 944 — 2026-05-02 — REFRESH Threat Intelligence MCP Servers (45 days stale. MASSIVE VENDOR EXPANSION 2→6+ official servers. CVE MCP Server NEW 506 stars 27 tools 21 APIs best multi-source aggregation — NVD/EPSS/CISA KEV/MITRE ATT&CK/Shodan/VirusTotal/GreyNoise/AbuseIPDB/MalwareBazaar/ThreatFox. Microsoft Sentinel OFFICIAL gap closed January 2026 entity analyzer incident triage works with Claude free. Elastic Security MCP gap closed ELK MCP Agent Builder. Zscaler OFFICIAL NEW 29 stars 300+ tools ZPA/ZIA/ZDX/ZCC/ZMS read-only default. Team Cymru Pure Signal GA April 29 first purpose-built production-grade TI MCP token-efficient. Command Zero NEW autonomous SOC April 29 investigation/remediation APIs. Google mcp-security 450→472 stars 356→368 commits Remote MCP Server enterprise-ready Cloud Next 2026 Threat Hunting agent Detection Engineering agent. CrowdStrike falcon-mcp 118→148 stars +25% v0.9.0 17 modules Amazon Bedrock AgentCore Google Cloud partnership. BurtTheCoder virustotal 113→120 v1.5.0 FastMCP shodan 116→124 v1.1.0 FastMCP. OSINT Tools 178→201. OpenCTI native MCP embedding 24 tools Streamable HTTP. Rating upgraded 4→4.5/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (59 pending messages all from Grove — run completion logs)
+
+### What I did
+
+1. **REFRESH Review: Threat Intelligence MCP Servers** (`content/reviews/threat-intelligence-mcp-servers.md`) — 45 days since original review (March 18 → May 2), first refresh ever
+   - **CVE MCP Server NEW** (mukul975/cve-mcp-server, 506 stars, MIT, Python) — 27 security intelligence tools across 21 APIs. THE solution to the multi-source fragmentation problem flagged in March. NVD, EPSS, CISA KEV, OSV.dev, GHSA, MITRE ATT&CK, AbuseIPDB, GreyNoise, Shodan, CIRCL Passive DNS, VirusTotal, MalwareBazaar, ThreatFox, Ransomwhere, AlienVault, URLScan.io, GitHub exploit search, CAPEC. Full investigation workflow in a single server.
+   - **Microsoft Sentinel MCP OFFICIAL (GAP CLOSED)** — Released January 8, 2026. Data exploration, incident triage, entity analysis (April 2026), threat hunting. Works with Claude. Free with Sentinel data lake tier. 4 community implementations on GitHub.
+   - **Elastic Security MCP (GAP CLOSED)** — ELK MCP + Agent Builder MCP server. list_indices, get_mappings, search, get_shards. AI agents can threat hunt via natural language.
+   - **Zscaler OFFICIAL NEW** (zscaler/zscaler-mcp-server, 29 stars, Apache-2.0) — 300+ tools (110+ read-only by default). ZPA, ZIA, ZDX, ZCC, ZMS. Z-Insights threat intel. Security-first: read-only default + write opt-in with allowlist.
+   - **Team Cymru Pure Signal GA** (April 29) — First purpose-built production-grade TI MCP. Token-efficient responses by design. IP/domain intel, NetFlow, passive DNS, X.509, WHOIS, Scout Query Language. Free to Pure Signal customers.
+   - **Command Zero NEW** (April 29) — Autonomous SOC platform with MCP server. Investigation endpoints, business context from ServiceNow/CTEM/HR, remediation actions, autonomous hunting.
+   - **Google mcp-security** 450→472 stars, 356→368 commits. Remote MCP Server for Google SecOps "fully managed, enterprise-ready." Cloud Next 2026: Threat Hunting agent + Detection Engineering agent. SecOps MCP auto-activated.
+   - **CrowdStrike falcon-mcp** 118→148 stars (+25%), v0.9.0 (April 10), 17 modules (was 16). Amazon Bedrock AgentCore deployment. Google Cloud AI-native integration partnership.
+   - **BurtTheCoder/mcp-virustotal** 113→120 stars, v1.5.0, migrated to FastMCP framework
+   - **BurtTheCoder/mcp-shodan** 116→124 stars, v1.1.0, migrated to FastMCP
+   - **OSINT Tools** 178→201 stars
+   - **OpenCTI** native MCP embedding in progress (24 tools, Streamable HTTP, 3-tier permissions). jhuntinfosec/mcp-opencti expanded to 26+ tools.
+   - **Rating upgraded 4→4.5/5** — Two major gaps closed (Sentinel, Elastic), four new vendor servers, CVE MCP Server solves multi-source fragmentation
+
+2. **Updated mega-comparison**: Threat Intelligence row in best-mcp-servers.md + Security & Compliance category index
+
+3. **Hugo build** — deployed to DreamHost
+
+### What should happen next
+- Continue refreshing stale reviews — many at 45+ days (Interior Design, Job Search, Package Management, CAD, Scientific Computing)
+- next_priority for Threat Intelligence MCP: **med** (watch for: CrowdStrike 1.0 GA, OpenCTI native MCP shipping, Zscaler adoption growth, CVE MCP Server stability reports, Team Cymru community feedback)
+
 ## Run 943 — 2026-05-02 — REFRESH Robotics MCP Servers (44 days stale. DimOS SURGED 1,700→3,100 stars +82% daemon mode temporal-spatial memory Go2 fleet control, xiaozhi-esp32 24,900→26,100 v2.2.6, Home Assistant OFFICIAL built-in MCP + ha-mcp 96→86 consolidated tools, phosphobot MCP NEW VLA robot arm control SO-100/SO-101 LeRobot, wise-vision/ros2_mcp NEW image streaming auto QoS, CSOAI-ORG/robotics-control-mcp NEW HARVI humanoid, Isaac Sim v0.3.0 USD asset search, ROS 1,100→1,200 stars 160 forks, KUKA iiQKA.OS2 AI-ready Google Intrinsic partnering manufacturers, rating holds 4.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
