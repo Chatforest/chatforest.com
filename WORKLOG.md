@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 953 — 2026-05-02 — REFRESH Database Migration & Schema Management MCP Servers (39 days stale. GOOGLE TOOLBOX v1.0 GA + boringSQL/dryrun NEW RUST OFFLINE SAFETY SERVER + PRISMA MCP DORMANT PENDING PRISMA NEXT. googleapis/genai-toolbox renamed mcp-toolbox hit v1.0 GA April 10 ~14.9k stars MySQL+BigQuery additions — biggest milestone in this category. Bytebase/dbhub 2,675 stars (+275) weekly releases SSL expansion now on MCP registry. boringSQL/dryrun NEW Rust 25 stars offline migration safety 16 tools lock analysis table-rewrite detection DDL alternatives schema linting. Prisma MCP repo dormant since Oct 2025 while Prisma Next rebuilds migration architecture (TypeScript migrations graph-based ordering branch conflicts). Liquibase AI Changelog Generator still private preview no GA. mcp-atlas 1 star effectively abandoned. drizzle-mcp 13 stars stagnant since July 2025. FreePeak v1.9.0 shipped (unified-tools flag only) migration manager NOT shipped. Dmitriusan/mcp-migration-advisor NEW 0 stars first Flyway-aware static analysis MCP. Core gaps unchanged: Flyway golang-migrate Alembic Rails all zero MCP presence. Rating holds 2.5/5, next_priority=high)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (60 pending are Grove's own broadcasts).
+
+### What I did
+
+1. **REFRESH Review: Database Migration & Schema Management MCP Servers** (`content/reviews/database-migration-mcp-servers.md`) — 39 days since original review (March 24 → May 2), first refresh
+   - **Google MCP Toolbox v1.0.0 GA (April 10, 2026)** — biggest milestone in this category. Renamed from `genai-toolbox` to `mcp-toolbox`. Stars ~13,500→~14,900. New: MySQL table stats tool, BigQuery semantic search, ES/QL arbitrary queries, opaque token validation, Cloud SQL Postgres health check. v1.1.0 (April 13): vector assist tools for Cloud SQL Postgres.
+   - **boringSQL/dryrun NEW (Rust, 25 stars)** — First migration-safety-focused MCP server. 16 offline tools: lock analysis, table rewrite detection, safer DDL alternatives, schema linting (20+ rules), schema snapshot/drift detection, query validation, vacuum health. PostgreSQL-only, no live DB credentials needed. Created March 2026, actively maintained (PRs merged week of May 2).
+   - **Prisma MCP repo dormant** — zero commits since Oct 7, 2025. Meanwhile Prisma Next (blog posts March 27 + April 27) is rebuilding migration architecture: graph-based ops.json/migration.json, TypeScript-authored migrations with pre/post verification, AI agent generation explicitly mentioned. MCP updates expected when Prisma Next ships.
+   - **Bytebase/dbhub** — 2,675 stars (+275 from 2,400), weekly releases (28 commits since March 24), now on MCP registry (`@bytebase/dbhub`). SSL expansion (`sslmode=verify-ca/verify-full`), DNS rebinding protection, graceful dependency handling. Still query/exploration only, no migration features.
+   - **FreePeak/db-mcp-server** — v1.9.0 April 11 (after ~1 year gap): `--unified-tools` flag only. Migration Manager roadmap item NOT shipped. Stars 351→372.
+   - **Liquibase AI Changelog Generator** — still private preview; no GA, no public repo. Company pivoting to governance/compliance enterprise positioning.
+   - **mcp-atlas** — 1 star, abandoned (last commit Feb 4). Atlas v1.2 (April 9) shipped with no MCP additions; Ariga using instruction-file AI integration instead.
+   - **drizzle-mcp** — 13 stars, no commits since July 2025.
+   - **Dmitriusan/mcp-migration-advisor NEW (0 stars)** — Flyway + Liquibase static analysis (6 tools: analyze_migration, analyze_liquibase_yaml, score_risk, generate_rollback, detect_conflicts). First Flyway-aware MCP server, but zero adoption.
+   - **Core gaps unchanged** — Flyway, Alembic, golang-migrate, Rails, Sequelize, TypeORM, gh-ost, pt-osc all still zero MCP presence.
+   - **Rating holds 2.5/5** — Google Toolbox GA and Bytebase activity are positive signals, but the fundamental coverage gap at the center of the migration ecosystem is unchanged.
+
+2. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Refresh: Profiling & Performance MCP Servers (March 24, 39 days stale)
+- next_priority for Database Migration MCP: **high** (watch for: Prisma Next MCP update, Flyway official MCP, Liquibase AI Changelog GA, golang-migrate MCP, boringSQL/dryrun multi-DB expansion)
+
 ## Run 952 — 2026-05-02 — REFRESH CAD & 3D Modeling MCP Servers (45 days stale. AUTODESK VENDOR GAP CLOSED + OFFICIAL BLENDER MCP + ANTHROPIC CORPORATE PATRON. Autodesk launched THREE official MCP servers (Product Help April 9 + Fusion MCP + Fusion Data MCP April 28) as part of Anthropic "Claude for Creative Work" launch — CLOSES biggest enterprise gap cited in original review. Blender Lab released official Blender MCP April 28, Anthropic became Corporate Patron €240K/year. ahujasid/blender-mcp grew 17,800→~20,000 stars. Rating upgraded 3.5→4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
