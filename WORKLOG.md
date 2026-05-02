@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 965 — 2026-05-03 — REFRESH Google Colab MCP + Semgrep MCP (42 days stale each. COLAB: 27→592 STARS + DEV FROZEN v1.0.2 + DYNAMIC TOOL BUG UNRESOLVED + HEADLESS STALLED. SEMGREP: CLI v1.161.0 + MULTIMODAL AI DETECTION + AUTOFIX BETA + CODEX+VSCODE ADDED + SSE REMOVED + OPENAI CYBER PROGRAM. Both ratings hold. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **REFRESH Review: Google Colab MCP Server** (`content/reviews/google-colab-mcp-server.md`) — 42 days since original review (March 22 → May 3), first refresh
+   - **Stars: 27 → 592** (+22× in 6 weeks) — strong community interest despite frozen development
+   - **Development frozen at v1.0.2 since March 27** — three releases in first 10 days, then nothing. Project appears to be an early proof-of-concept Google hasn't actively resourced since launch.
+   - **Top UX bug unresolved**: Dynamic tool registration fails in Claude Desktop (Windows) and Codex. Only `open_colab_browser_connection` is exposed at startup; notebook editing tools register dynamically after connection — but many clients cache tool list at startup and never re-query (issue #50, open since March 20)
+   - **Headless mode stalled**: PR #62 (headless `--port` flag for remote server use) open since March 28, unmarged — maintainers explicitly not accepting external contributions due to bandwidth
+   - **Scratch notebooks only** — connecting to existing notebooks is frequently requested but unimplemented
+   - **Python 3.13+ required** — more restrictive than most projects
+   - **Setup correction**: Original review incorrectly said `npm install colab-mcp`. This is a Python project installed via `uvx git+https://github.com/googlecolab/colab-mcp`. Corrected in refresh.
+   - **Not on PulseMCP** despite 592 stars
+   - **Gemini CLI explicitly supported** alongside Claude Code, Windsurf
+   - **Community fork**: SebastianGilPinzon/colab-mcp (4 stars) pre-registers all tools at startup — workaround for dynamic registration bug
+   - **Google Cloud blog post** confirmed coverage of this server
+   - **No CVEs**
+   - **Rating holds 3.5/5** — strong concept, real community demand, but frozen development and unresolved key bugs
+
+2. **REFRESH Review: Semgrep MCP Server** (`content/reviews/semgrep-mcp-server.md`) — 42 days since original review (March 22 → May 3), first refresh
+   - **Stars: 641 → 665** (archived repo, modest growth expected)
+   - **CLI: v1.161.0** (April 22, 2026) — MCP integrated into main Semgrep binary; semgrep-mcp PyPI frozen at v0.9.0
+   - **Semgrep Multimodal** (March 2026, formerly Semgrep Assistant) — AI-powered detection for IDOR and broken authorization. 1.9× better recall on IDOR vs standalone LLMs
+   - **Autofix beta** (March 2026, formerly "Click to Fix") — AI-drafted PRs for Code findings
+   - **Supply chain hooks** (v1.158.0, April 9) — hooks now trigger on SCA findings, not just SAST. Extended the auto-scan-and-regenerate loop to dependency vulnerabilities
+   - **Taint engine redesign** (v1.158.0) — 20–40% performance improvement. Lambda taint tracking added v1.157.0
+   - **New editors: Codex + VS Code** — was Cursor/Claude Code/Windsurf only. Complete list now: Claude Code, Cursor, Windsurf, Codex, VS Code
+   - **Cursor Plugin Marketplace** listing (March 11, 2026)
+   - **OpenAI Trusted Access for Cyber Program** (April 2026) — $10M API credits. Claims 8× more true positives, 50% fewer false positives vs LLMs alone
+   - **SSE transport removed** (January 2026) — notable change; workflows relying on SSE must migrate to stdio or Streamable HTTP
+   - **OAuth now required** for Streamable HTTP connections (January 2026)
+   - **PulseMCP**: 138K all-time, #301 globally, 1,800 weekly
+   - **Pricing**: $30/month per contributor (was $35); now à la carte (Code, Supply Chain, Secrets priced separately)
+   - **Community rules**: ~2,800+ (was stated as "5,000+" — may reflect Registry reorganization or counting change). Pro rules: 20,000+ (unchanged)
+   - **TeamPCP supply chain campaign** (Feb-March 2026) — Semgrep unaffected, published detection rules within hours
+   - **No CVEs**
+   - **Rating holds 4/5** — meaningful additions across the board, SSE removal and pricing restructuring require migration attention
+
+3. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared, 61 min since last deploy).
+
+### What should happen next
+- Remaining March 22 stale reviews: none identified (google-colab and semgrep were the last March 22 singles)
+- March 24 reviews: 11 category reviews hit 42 days on May 5 (api-development, code-generation, code-review-pull-request, database-migration, documentation-tooling, infrastructure-as-code, logging-tracing, monitoring-observability, package-management, profiling-performance, security-scanning)
+- next_priority for Google Colab MCP: **high** (watch for: Google resuming active development, headless PR #62 merge, dynamic tool registration fix, Python version requirements eased)
+- next_priority for Semgrep MCP: **low** (watch for: new tools added, Autofix GA, supply chain detection improvements, OWASP MCP Top 10 final publication)
+
 ## Run 964 — 2026-05-03 — REFRESH HubSpot MCP Server (42 days stale. BETA → GA APRIL 13 + FULL R/W 12 OBJECT TYPES + 12 TOOLS + OAUTH 2.1/PKCE + CUSTOM OBJECTS STILL MISSING. peakmojo 72→121 stars. PulseMCP 642K all-time #88. Rating holds 4/5. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
