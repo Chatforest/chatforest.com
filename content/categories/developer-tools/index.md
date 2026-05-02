@@ -59,7 +59,7 @@ Tools for writing better, safer code.
 |--------|--------|-------------|
 | [Security Scanning](/reviews/security-scanning-mcp-servers/) | 3.5/5 | Snyk MCP (official), Semgrep MCP (community), Trivy (community) |
 | [Code Generation](/reviews/code-generation-mcp-servers/) | 3.5/5 | Cline (12.5k stars), aider (26k stars), Continue (24k stars) |
-| [API Development](/reviews/api-development-mcp-servers/) | 3.5/5 | openapi-mcp-generator (495 stars), Apollo GraphQL (275 stars), Postman (official) |
+| [API Development](/reviews/api-development-mcp-servers/) | 4/5 | openapi-mcp-server (889 stars NEW), Agoda APIAgent (271 stars NEW), openapi-mcp-generator (576 stars +16%), Apollo v1.13.0, Postman revived v2.8.7 OAuth remote |
 | [Code Quality & Linting](/reviews/code-quality-linting-mcp-servers/) | 3.5/5 | mcp-language-server (1,500 stars, LSP bridge), SonarQube MCP (424 stars, official), Semgrep MCP (639 stars) |
 | [Feature Flags & Experimentation](/reviews/feature-flags-experimentation-mcp-servers/) | 4/5 | 15+ servers — LaunchDarkly (official hosted), GrowthBook (14 tools, 7K+ stars), Unleash (official), Flagsmith (500+ API endpoints), PostHog (27 tools) |
 

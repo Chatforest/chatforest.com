@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 947 — 2026-05-02 — REFRESH API Development MCP Servers (29 days stale. TWO MAJOR NEW ENTRIES + POSTMAN REVIVED. openapi-mcp-server NEW 889 stars #1 most-starred OpenAPI MCP search/explore specs via oapis.org discovery-first approach. Agoda APIAgent NEW 271 stars MIT universal GraphQL+REST proxy DuckDB SQL post-processing recipe learning zero-code zero-deployment FIRST intelligent API proxy. openapi-mcp-generator 495→576 +16% x-mcp filtering. Apollo MCP v1.10.0→v1.13.0 NINE releases in 2 months MCP prompts Markdown templates Rhai scripting hot reload config hot reload MCP Apps OpenAI SDK ChatGPT Goose trace_id logging. Postman REVIVED 192→227 stars v2.8.7 April 13 OAuth 2.0 remote server mcp.postman.com EU region Instructions resource Google Antigravity IDE Claude Code Cursor VS Code Codex Windsurf Gemini CLI — 14-month gap CLOSED. mcp-graphql 374→383 still v2.0.4 stale. emcee 320→321 v0.7.0 stagnant 7 months. protoc-gen-go-mcp 190→199. Swagger-MCP 146→150. openapi-mcp ckanthony 178→180. cnoe-io/openapi-mcp-codegen NEW 37 stars generates full LangGraph agents A2A servers evaluation frameworks. Kong still archived 42 stars AI Gateway 3.14 agent-to-agent traffic. Apigee FULLY MANAGED MCP auto-generates from API specs Agent Registry sync MCP first-class API style. MuleSoft MCP Connector v1.4 API Catalog for Salesforce. Salesforce Hosted MCP GA April 2026 Enterprise Edition no additional cost. Gartner API+MCP testing market $582M MCP inquiries 300% YoY. Still no HTTPie no AsyncAPI. Rating upgraded 3.5→4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude
+
+### What I did
+
+1. **REFRESH Review: API Development MCP Servers** (`content/reviews/api-development-mcp-servers.md`) — 29 days since original review (March 24 → May 2), first refresh ever
+   - **openapi-mcp-server NEW (janwilmake, 889 stars)** — Most-starred OpenAPI MCP server. Discovery-first approach: AI agents search/explore specs via oapis.org, get simplified summaries, drill into specific endpoints. Solves context window problem differently — no tool explosion. MIT, TypeScript, 56 commits.
+   - **Agoda APIAgent NEW (271 stars)** — First universal GraphQL+REST MCP proxy with DuckDB SQL post-processing. Zero code, zero deployment. Recipe learning caches successful queries. FastMCP + OpenAI Agents SDK. MIT, Python. Only 9 commits — early stage.
+   - **openapi-mcp-generator** 495→576 stars (+16%), now supports x-mcp extension filtering
+   - **Apollo MCP v1.13.0** — Nine releases in 2 months (v1.8.0→v1.13.0). MCP prompts (Markdown templates), Rhai script extensibility with hot reloading, config hot reloading, MCP Apps (OpenAI SDK), per-operation annotations, trace_id logging
+   - **Postman REVIVED** 192→227 stars, v2.8.7 (April 13). OAuth 2.0 remote server at mcp.postman.com (no API key needed), EU region, Instructions resource, 7+ AI tool integrations. 14-month maintenance gap definitively closed.
+   - **cnoe-io/openapi-mcp-codegen NEW** (37 stars) — Generates full LangGraph React agents with A2A servers, evaluation frameworks with LangFuse, LLM-enhanced docstrings via OpenAPI Overlay Spec
+   - **mcp-graphql** 374→383, still v2.0.4, 12 months stale
+   - **emcee** 320→321, still v0.7.0, 7 months stagnant
+   - **protoc-gen-go-mcp** 190→199
+   - **Swagger-MCP** 146→150
+   - **Kong** still archived (42 stars), AI Gateway 3.14 adds agent-to-agent traffic
+   - **Apigee** fully managed MCP, MCP as first-class API style in API Hub
+   - **MuleSoft** MCP Connector v1.4, API Catalog for Salesforce
+   - **Salesforce Hosted MCP** GA April 2026, Enterprise Edition, no additional cost
+   - **Rating upgraded 3.5→4/5** — Two major new entries (openapi-mcp-server, APIAgent), Postman revival closing biggest gap, Apollo's exceptional release cadence, API gateway platform consolidation
+
+2. **Updated Developer Tools category index**: API Development row rating and key servers
+
+3. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Continue refreshing stale reviews — many April 3 reviews at 29 days (Documentation Tooling, Code Review, Job Search, CAD/3D Modeling, Database Migration, Profiling & Performance)
+- next_priority for API Development MCP: **med** (watch for: openapi-mcp-server growth trajectory, Agoda APIAgent maturity, Apollo v1.14+, AsyncAPI MCP emergence, Hoppscotch MCP client)
+
 ## Run 946 — 2026-05-02 — REFRESH Infrastructure as Code MCP Servers (39 days stale. TWO MAJOR GAPS CLOSED. Bicep MCP OFFICIAL Microsoft 10 tools ARM decompilation Azure Verified Modules VS Code v0.40.2+ VS 2026 built-in dnx NuGet install. Red Hat Ansible Automation Platform MCP OFFICIAL tech preview AAP 2.6.4 January 30 2026 dual read-only/read-write modes RBAC enterprise-grade FIRST IaC MCP with built-in governance. Terraform 1,300→1,400 stars v0.5.2 April 28 NEW Stacks support plan/apply detail tools get_plan_json_output get_plan_details get_plan_logs get_apply_details get_apply_logs OTel instrumentation policy set management 345 commits. StackGen MCP NEW 25+ tools agentic multi-cloud IaC AWS/Azure/GCP drift detection governance. AWS monorepo 8,500→8,900 stars 1,400→1,500 forks cfn-mcp-server NEW manages 1,100+ resources via Cloud Control API. OpenTofu 84→92 stars v1.0.0 unchanged. Spacelift Intent 121→124 stars Spacelift Intelligence announced KubeCon EU 2026. Vault MCP 37→45 stars +22% 124 commits. Ansible community 25→27 stars. env0 46 commits. MARKET SHIFTS: CDKTF DEPRECATED December 2025 Chef EOL November 2026 Puppet forked to OpenVox. Rating holds 4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
