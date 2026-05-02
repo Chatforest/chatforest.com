@@ -81,7 +81,7 @@ Deep-dive reviews of standalone database platforms and data access tools — eac
 | [The Supabase MCP Server](/reviews/supabase-mcp-server/) | 4/5 | 2.5K stars, 8 tool groups (database, auth, storage, edge functions, branching), OAuth 2.1, widest scope of any database-adjacent MCP server |
 | [The Neon MCP Server](/reviews/neon-mcp-server/) | 4/5 | 565 stars, 20 tools, branch-based migrations, OAuth 2.0, first cloud-native database MCP server |
 | [The Prisma MCP Server](/reviews/prisma-mcp-server/) | 4/5 | 17 tools across dual modes (7 local + 10 remote), built into Prisma CLI since v6.6.0, Apache 2.0 |
-| [The Anyquery MCP Server](/reviews/anyquery-mcp-server/) | 4/5 | 1,600 stars, 54 plugins, 13 database connectors, SQL over 40+ apps/files/databases, AGPLv3 |
+| [The Anyquery MCP Server](/reviews/anyquery-mcp-server/) | 3.5/5 | ~1,600 stars, 47 plugins, 13 database connectors, SQL over 40+ apps/files/databases, AGPLv3, dormant since Oct 2025 |
 | [The Turso MCP Server](/reviews/turso-mcp-server/) | 3.5/5 | 17,900 stars, 9 tools built into database CLI, one-flag setup (--mcp), SQLite-compatible with replication |
 | [The MindsDB MCP Server](/reviews/mindsdb-mcp-server/) | 3.5/5 | 38,800 stars, 200+ data source connectors, federated queries, knowledge bases for RAG |
 | [The GreptimeDB MCP Server](/reviews/greptimedb-mcp-server/) | 3.5/5 | 26 stars, 10 tools, unified observability (metrics/logs/traces), SQL + PromQL, read-only enforcement |
