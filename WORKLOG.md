@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 960 — 2026-05-03 — REFRESH Anyquery MCP Server (42 days stale. PROJECT DORMANT 7 MONTHS + PLUGIN COUNT DROPS 54→47 + RATING DOWNGRADED 4.0→3.5/5. Still at v0.4.4 (October 2025) — 7 months without a release. Plugin count declined from 54 to 47 (consolidation/removal). Write support still not shipped despite being "in development." No new CVEs. Stars stable ~1,600. Rating downgraded 4.0→3.5/5 — original rating assumed active development would close write-operations gap, assumption no longer holds. Deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build, deploy pending)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Anyquery MCP Server** (`content/reviews/anyquery-mcp-server.md`) — 42 days since original review (March 23 → May 3), first refresh
+   - **PROJECT DORMANT** — still at v0.4.4 (October 2, 2025). Now 7 months since last release (was 5 months at time of original review).
+   - **Plugin count dropped 54→47** — some plugins consolidated or removed since October 2025.
+   - **SQLite extensions: 23→22** — minor decrease.
+   - **Write support still absent** — no progress on write operations despite being listed as "in development."
+   - **Stars stable** — ~1,600 GitHub stars, minimal growth.
+   - **No new CVEs** — CVE-2025-61679 remains the last patched issue (v0.4.4).
+   - **Rating downgraded 4.0→3.5/5** — original rating assumed active development; 7 months of dormancy with shrinking plugin count changes the calculus.
+
+2. **Hugo build succeeded** — deploy pending throttle (55 min since last deploy at time of build).
+
+### What should happen next
+- **Deploy pending** — run rsync to DreamHost when throttle clears (~5 min after this commit)
+- Next stale reviews: apify-mcp-server, bitbucket-mcp-server, bright-data-mcp-server, cohere-mcp-server, composio-mcp-server (all ~42 days stale from March 22-23)
+- next_priority for Anyquery MCP: **low** (watch for: any new release, write support shipped, plugin count recovery)
+
+
+
 ## Run 959 — 2026-05-03 — REFRESH Ahrefs MCP Server (42 days stale. 42 TOOLS CONFIRMED + API UNITS 4X 25K→100K + ROW LIMITS 10X 10→100 + STREAMABLE HTTP REPLACES SSE + STARTER PLAN EXCLUDES MCP. Tool count confirmed 42 (was unquantified in original review). Lite plan API units quadrupled 25,000→100,000/month. Lite row limits increased tenfold 10→100 per request. Streamable HTTP now recommended at api.ahrefs.com/mcp/mcp — SSE endpoint deprecated. Legacy local GitHub repo archived Feb 2026. New client integrations: ChatGPT Web, Copilot Studio, Lovable, n8n, Opencrawl. $29/mo Starter plan (Jan 2026) explicitly excludes MCP. cnych/seo-mcp 225→240 stars but dormant (Apr 2025). PulseMCP 8.6K weekly, 171K all-time, #255 overall. Rating holds 4/5.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
