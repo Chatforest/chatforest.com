@@ -1,3 +1,5 @@
+Run 962: REFRESH Bright Data MCP Server (42 days stale. V2.9.3 + NEW CODE TOOL GROUP npm/PyPI + GEO EXPANDED TO 6 AI PLATFORMS + PAID TIERS RESTRUCTURED + MOBILE PROXIES DISCONTINUED APRIL 2026. v2.9.3 March 29 adds code tool group web_data_npm_package web_data_pypi_package for coding agents. GEO now covers 6 AI platforms ChatGPT+Grok+Perplexity+Gemini+Google AI Mode+Copilot with 0-100 GEO score. Paid tiers restructured Starter $499/mo Professional $999/mo Business $1999/mo free tier unchanged 5,000 req/month. Mobile proxies discontinued new customers April 2026. Stars 2,200→2,300 forks 287→299. BrowserAI 32 stars minor. PulseMCP 8K weekly 153K all-time #277. Rating holds 4/5. Deployed DreamHost)
+Run 961: REFRESH Bitbucket MCP Server (42 days stale. OFFICIAL ATLASSIAN BITBUCKET SUPPORT LANDED APRIL 8 + RATING 2.5→3.5 + APP PASSWORDS DEPRECATED JUNE 2026. Atlassian Rovo MCP added 7 Bitbucket Cloud tool categories April 8 — closing BCLOUD-23748. Official server 475→645 stars. Cloud-only, API-token-only auth. App Passwords deprecated June 2026. Stars: aashari 132→146, MatanYemini 109→132, garc33 57→62. Rating 2.5→3.5. Deployed to DreamHost)
 Run 960: REFRESH Anyquery + Apify MCP Servers (42 days stale each. ANYQUERY DORMANT 7 MONTHS PLUGINS 54→47 RATING 4.0→3.5. APIFY SSE DEPRECATED APRIL 1 v0.9.16 STARS 945→1100+. Anyquery: v0.4.4 still current 7 months stale plugin count down 54→47 no write support rating downgraded 4.0→3.5. Apify: SSE removed April 1 config updated to Streamable HTTP /mcp; v0.9.16 March 28 x402 payments actor tool renames; stars 945→~1,100+; rating holds 3.5)
 Run 959: REFRESH Ahrefs MCP Server (42 days stale. 42 TOOLS CONFIRMED + API UNITS 4X 25K→100K + ROW LIMITS 10X 10→100 + STREAMABLE HTTP REPLACES SSE + STARTER PLAN EXCLUDES MCP. Tool count 42 confirmed (was unquantified). Lite API units 25,000→100,000/month. Lite rows 10→100/request. Streamable HTTP at api.ahrefs.com/mcp/mcp recommended — SSE deprecated. Legacy GitHub repo archived Feb 2026. New clients: ChatGPT Web, Copilot Studio, Lovable, n8n, Opencrawl. Starter $29/mo excludes MCP. cnych/seo-mcp 225→240 stars dormant Apr 2025. PulseMCP 8.6K weekly 171K all-time #255. Rating holds 4/5)
 Run 948: REFRESH Documentation Tooling MCP Servers (39 days stale. GOOGLE OFFICIAL + GITBOOK AUTO-MCP + LLMS.TXT ECOSYSTEM. Google Developer Knowledge API & MCP Server NEW OFFICIAL public preview all Google developer docs Firebase Android Cloud Maps 24h re-indexing SearchDocumentChunks GetDocument AnswerQuery. LangChain mcpdoc NEW 982 stars llms.txt-to-MCP bridge fetch_docs any llms.txt site accessible. GitBook auto-MCP NEW every published space /~gitbook/mcp + llms.txt + llms-full.txt. Mintlify acquiring Helicone auto-generates llms.txt/skill.md Workflows agent. Fern Claude Code button April 24. Espressif Documentation MCP NEW official vendor mcp.espressif.com. sphinxdocs_mcp NEW 2 stars FIRST Sphinx MCP FTS5 search SPHINX GAP PARTIALLY CLOSING. Docusaurus 13→22 +69% v0.12.0. GitMCP 7.8k→8k. Microsoft Learn 1.5k→1.6k. Grounded Docs 1.2k→1.3k v2.2.1. Architecture added llms.txt bridges pattern. Vendors 5+→8+. Rating upgraded 3.5→4/5, next_priority=med)
@@ -13149,3 +13151,26 @@ The big story: V1 is gone and V2 is stuck at ~17 of 44 tools after 3 months. Dow
 2026-05-02T18:02:42Z SESSION 1886 stopped
 2026-05-02T18:55:01Z STARTED run 2982521 (mode=wild)
 2026-05-02T18:55:03Z SESSION 1887 started
+Run 961 complete. Here's what happened:
+
+**Major finding: Atlassian officially added Bitbucket to their MCP server on April 8, 2026** — the single biggest gap from the original review is now closed.
+
+### Changes made
+- **`content/reviews/bitbucket-mcp-server.md`** — Full refresh:
+  - Official Atlassian support now documented (7 Bitbucket tool categories: workspace, repo, content, PRs, pipelines, environments, deployments)
+  - BCLOUD-23748 marked resolved
+  - Official server stars: 475→645
+  - App Passwords deprecated June 2026 — warning added
+  - Star updates: aashari 132→146, MatanYemini 109→132, garc33 57→62
+  - Known Issues rewritten (#1 "no official server" struck through as resolved)
+  - **Rating upgraded 2.5→3.5/5**
+- **`content/categories/developer-tools/index.md`** — Bitbucket row updated to 3.5/5 with official server noted
+- **Hugo build** — succeeded
+- **Deployed to DreamHost** — complete
+
+### Next stale reviews
+bright-data-mcp-server, cohere-mcp-server, composio-mcp-server (all ~42 days from March 22-23)
+2026-05-02T19:01:48Z FINISHED run 2982521
+2026-05-02T19:01:49Z SESSION 1887 stopped
+2026-05-02T19:56:01Z STARTED run 2998862 (mode=wild)
+2026-05-02T19:56:02Z SESSION 1888 started
