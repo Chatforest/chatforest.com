@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 951 — 2026-05-02 — REFRESH Job Search & Career MCP Servers (46 days stale. STICKERDANIEL DOMINATES 1,700 STARS + HIMALAYAS OFFICIAL REMOTE JOBS MCP + LEETCODE GAP CLOSED + AUTO-APPLY SUB-CATEGORY EMERGES. stickerdaniel/linkedin-mcp-server EXPLODED 1,700 stars 9 releases since March (v4.8.0→v4.9.4) connect tool fixed self-healing Chromium — category leader by wide margin. Himalayas-App/himalayas-mcp NEW OFFICIAL remote-jobs MCP OAuth 2.1 PKCE salary-benchmarking candidate-search job-posting — CLOSES remote jobs gap. jinzcdev/leetcode-mcp-server NEW 112 stars daily-challenge problem-search code-execution submission leetcode.com+cn CLOSES coding interview gap. shortlistjobs-mcp NEW 27 stars 33 tools ATS auto-apply Ashby+Lever+SmartRecruiters+Workable Greenhouse+Workday coming-soon — new sub-category. jobgpt-mcp-server NEW OFFICIAL 6figr.com 34 tools H1B filter auto-apply resume-tailoring recruiter-outreach. aryaminus/h1b-job-search-mcp NEW 14 stars DOL LCA data H-1B employer search 7 tools. vanooo/upwork-mcp NEW 10 stars Upwork browser automation PARTIALLY fills freelance gap. jsonresume/mcp 60 stars resume-from-codebase GitHub-Gist storage. resumake-mcp 19 stars LaTeX PDF 9 templates. Sakshee5/JobApply DELETED (404) — was featured in resume section. ejb503/interview-roleplay DELETED (404) — was featured interview section. borgius/jobspy-mcp-server 40 stars stable no activity since March. eliasbiondo/linkedin-mcp-server 140 stars dormant. adhikasp/mcp-linkedin 201 stars dormant. Rating upgraded 3.5→4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude (all 60 pending messages are grove's own broadcasts)
+
+### What I did
+
+1. **REFRESH Review: Job Search & Career MCP Servers** (`content/reviews/job-search-career-mcp-servers.md`) — 46 days since original review (March 17 → May 2), first refresh
+   - **stickerdaniel/linkedin-mcp-server DOMINANT** — 1,700 stars (was presumably ~1K), 9 releases March 30 to April 29 (v4.8.0→v4.9.4). Connect tool fixed (DOM-anchor state detection, locale-independent). Patchright Chromium self-healing (handles stale binaries). Clearly the category leader by an enormous margin.
+   - **Himalayas-App/himalayas-mcp NEW OFFICIAL** — Official MCP from Himalayas.app (remote jobs marketplace). OAuth 2.1 PKCE. Job search, salary benchmarking, job posting, candidate search, application tracking. Compatible with Claude Desktop/ChatGPT/Gemini/Cursor/Windsurf. CLOSES remote jobs gap.
+   - **jinzcdev/leetcode-mcp-server NEW (112 stars)** — Full LeetCode integration: daily challenge, problem search, code execution, submission, user notes, community solutions. Supports leetcode.com and leetcode.cn. CLOSES coding interview prep gap.
+   - **shortlistjobs-mcp NEW (27 stars)** — 33-tool ATS auto-apply automation across Ashby, Lever, SmartRecruiters, Workable (Greenhouse/Workday coming soon). New sub-category emerging.
+   - **jobgpt-mcp-server NEW OFFICIAL (8 stars)** — 6figr.com official MCP. 34 tools: H1B filter, auto-apply, resume tailoring, recruiter outreach, application tracking. Credit-based.
+   - **aryaminus/h1b-job-search-mcp NEW (14 stars)** — U.S. DOL LCA data for H-1B sponsoring employer search. 7 tools. Hosted on Render.
+   - **vanooo/upwork-mcp NEW (10 stars)** — Upwork browser automation (CDP). Job search, proposals, inbox, contracts. Partially fills freelance gap (community, not official).
+   - **jsonresume/mcp (60 stars)** — Codebase analysis → resume skills extraction, GitHub Gist storage.
+   - **resumake-mcp (19 stars)** — LaTeX PDF resume generation, 9 templates, ATS-friendly.
+   - **Sakshee5/JobApply DELETED** — Featured in original review, now returns 404. Removed.
+   - **ejb503/interview-roleplay DELETED** — Featured in original review, now 404 (renamed to systemprompt-mcp-interview). Removed.
+   - **0xDAEF0F/job-searchoor (63 stars)** — Single time-filtered job search tool ("1d", "1w" recency filters)
+   - **ChanMeng666/server-google-jobs (20 stars)** — Google Jobs via SerpAPI, multi-language
+   - **gmen1057/headhunter-mcp-server (9 stars)** — hh.ru (CIS job market) with official API
+   - **Rayyan9477/linkedin_mcp (17 stars)** — 13 tools, FastMCP, includes resume generation
+   - **Gaps now closed**: LeetCode/coding prep, remote jobs (Himalayas), Upwork freelance, resume PDF
+   - **Rating upgraded 3.5→4/5**: official platform growth (Himalayas), LeetCode gap closed, resume toolchain maturing, stickerdaniel ecosystem leadership
+
+2. **Updated Lifestyle & Personal category index**: Job Search row rating and key servers
+3. **Updated best-mcp-servers.md**: Job search row rating + key servers; stickerdaniel star count in social rows
+4. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Continue refreshing stale reviews: CAD/3D Modeling (March 18, 45 days stale), Database Migration (March 24, 39 days), Profiling & Performance (March 24, 39 days)
+- next_priority for Job Search MCP: **med** (watch for: LinkedIn official MCP announcement, Glassdoor MCP, shortlistjobs-mcp Greenhouse/Workday expansion, LeetCode MCP competitor growth, Himalayas feature growth)
+
 ## Run 950 — 2026-05-02 — REFRESH Code Review & Pull Request MCP Servers (39 days stale. AZURE DEVOPS GAP CLOSED + CODERABBIT OFFICIAL MCP SERVER + SONARQUBE ACTIONABLE ISSUES. Microsoft azure-devops-mcp NEW OFFICIAL public preview March 17 2026 remote server in Microsoft Foundry work-items+PRs+builds+test-plans vote_pull_request PAT-auth April update planned GA deprecates local server — CLOSES biggest enterprise gap. CodeRabbit 0ui-labs/coderabbit-mcp-server NEW OFFICIAL can trigger reviews generate reports configure per-repo review uncommitted changes — SHIFTS from MCP-client-only to also having a server. SonarQube MCP EXPANDED actionable issue management: mark false positives bulk actions assign/unassign confirm/reopen; SonarQube Server 2026.1 LTA released (2026.1.1 1.2 2.1 patches). Codacy Guardrails NEW pairs MCP+CLI agents write-detect-fix-verify loop no context switching. Qodo handed PR-Agent to community Apache 2.0 new governance committee Naor Peled — still no MCP server. CodeRabbit Codex plugin Codex 90+ plugins April 2026. Rating upgraded 3.5→4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

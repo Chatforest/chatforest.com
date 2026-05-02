@@ -79,11 +79,11 @@ GEDCOM file processing, Gramps Web integration, FamilySearch, WikiTree, historic
 
 ## Job Search & Career
 
-LinkedIn scraping, multi-platform job aggregation, resume tailoring, and interview preparation. The most commercially relevant lifestyle subcategory.
+LinkedIn scraping, multi-platform job aggregation, resume generation, auto-apply ATS automation, and interview preparation including coding challenges. stickerdaniel/linkedin-mcp-server dominates at 1,700 stars. Himalayas-App/himalayas-mcp closes the remote jobs gap with an official OAuth 2.1 MCP. jinzcdev/leetcode-mcp-server (112 stars) closes the coding interview gap.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Job Search & Career](/reviews/job-search-career-mcp-servers/) | 3.5/5 | LinkedIn scraping, multi-platform job aggregation, resume tailoring, interview preparation — 20+ servers |
+| [Job Search & Career](/reviews/job-search-career-mcp-servers/) | 4/5 | stickerdaniel (1,700 stars), Himalayas official remote jobs, jinzcdev/leetcode (112 stars), shortlistjobs auto-apply, borgius/jobspy — 25+ servers |
 
 ---
 
