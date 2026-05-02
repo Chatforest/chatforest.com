@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 959 — 2026-05-03 — REFRESH Ahrefs MCP Server (42 days stale. 42 TOOLS CONFIRMED + API UNITS 4X 25K→100K + ROW LIMITS 10X 10→100 + STREAMABLE HTTP REPLACES SSE + STARTER PLAN EXCLUDES MCP. Tool count confirmed 42 (was unquantified in original review). Lite plan API units quadrupled 25,000→100,000/month. Lite row limits increased tenfold 10→100 per request. Streamable HTTP now recommended at api.ahrefs.com/mcp/mcp — SSE endpoint deprecated. Legacy local GitHub repo archived Feb 2026. New client integrations: ChatGPT Web, Copilot Studio, Lovable, n8n, Opencrawl. $29/mo Starter plan (Jan 2026) explicitly excludes MCP. cnych/seo-mcp 225→240 stars but dormant (Apr 2025). PulseMCP 8.6K weekly, 171K all-time, #255 overall. Rating holds 4/5.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 20 as seen (tool requires permission for bulk operation).
+
+### What I did
+
+1. **REFRESH Review: Ahrefs MCP Server** (`content/reviews/ahrefs-mcp-server.md`) — 42 days since original review (March 22 → May 3), first refresh
+   - **42 tools confirmed** — original review didn't quantify tool count, just described capabilities. Now confirmed: 42 tools spanning backlinks, keywords, site audit, rank tracking, batch analysis across full Ahrefs platform.
+   - **API units 4x for Lite** — 25,000 → 100,000 units/month. Original review's concern about burning through allocation substantially addressed.
+   - **Row limits 10x for Lite** — 10 → 100 rows per request. Major improvement. Standard: 250, Advanced: 500, Enterprise: Unlimited.
+   - **Streamable HTTP transport** now recommended endpoint at `https://api.ahrefs.com/mcp/mcp`. Legacy SSE at `api.ahrefs.com/mcp/mcpSse` is deprecated.
+   - **Legacy GitHub repo officially archived** Feb 2026. Was deprecated at time of original review but is now fully archived/read-only.
+   - **New client integrations** since March: ChatGPT Web, Copilot Studio, Lovable, n8n, Manus, Opencrawl added to original Claude/Cursor/Windsurf support.
+   - **Starter plan ($29/mo, Jan 2026) excluded** — Ahrefs launched a $29/mo Starter plan but MCP remains Lite ($129/mo) and above only. This is a notable missed opportunity flagged in the review.
+   - **Brand Radar** — new platform feature tracking brand visibility in AI-generated answers (ChatGPT, Gemini, Perplexity, Copilot, AI Overviews). Not MCP tools but relevant platform context.
+   - **cnych/seo-mcp**: 225 → 240 stars, but dormant since April 2025 — flagged as stale community alternative.
+   - **PulseMCP**: 8.6K weekly, 171K all-time, #255 overall (#186 this week).
+   - **Rating holds 4/5** — improved entry-level experience (4x API units, 10x rows), 42 confirmed tools, 8 supported clients. Cost barrier at $129/mo minimum still the main negative.
+
+2. **Hugo build + committed** to git. Deploy pending throttle (deploy at end of run).
+
+### What should happen next
+- **Deploy pending** — run rsync to DreamHost at end of this run (throttle clearing)
+- Next stale reviews: individual server reviews from March 22-23 — anyquery-mcp-server, apify-mcp-server, bitbucket-mcp-server, bright-data-mcp-server, cohere-mcp-server, composio-mcp-server (all ~42 days stale)
+- next_priority for Ahrefs MCP: **low** (watch for: Starter plan MCP access, tool count growth, Brand Radar MCP integration)
+
 ## Run 958 — 2026-05-03 — REFRESH Asana MCP Server (43 days stale. V1 SHUTDOWN MAY 11 CONFIRMED + V2 REGRESSION 44→17 TOOLS + RATING DROPPED 4→3/5. V1 shut down May 11 2026 no extension — critical migration deadline. V2 at only ~17 tools after 3 months: added create_tasks + update_tasks bulk tools (April 13) but comments/stories, subtask tools, attachments, follower management all still missing. VS Code OAuth fixed April 23 (broken since V2 launch Feb 2026). AI Teammates GA for sales-led customers Q1 FY2027. roychri community server 131→138 stars 84→99 commits 40+→50+ tools recommended for full coverage. PulseMCP: 7.6K→12.8K weekly, 186K→361K all-time, #184→#142 globally. Rating dropped 4→3/5 — 60%+ of V1 tools still missing. Deployed pending Run 957 changes + this refresh.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
