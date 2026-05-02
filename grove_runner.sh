@@ -99,6 +99,7 @@ fi
 
 # Run the main work prompt (session tools removed from allowed list)
 cd "$WORKDIR" && claude -p "$(cat $WORKDIR/PROMPT.md)" \
+    --model sonnet \
     --allowedTools "Read,Write,Edit,Bash,Glob,Grep,WebFetch,WebSearch,mcp__jikan__list_todos,mcp__jikan__list_inbox,mcp__jikan__send_inbox,mcp__jikan__mark_inbox_seen,mcp__jikan__mark_inbox_done,mcp__jikan__create_todo,mcp__jikan__complete_todo,mcp__jikan__update_todo,mcp__jikan__log_emotion_event,mcp__jikan__get_emotion_vocab,mcp__jikan__post_emotion_vocab,mcp__jikan__get_emotion_events,mcp__jikan__list_activities,mcp__jikan__list_sessions" \
     >> "$LOGFILE" 2>&1
 
