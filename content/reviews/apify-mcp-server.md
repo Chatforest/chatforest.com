@@ -2,10 +2,10 @@
 title: "Apify MCP Server — 3,000+ Scrapers at Your AI Agent's Fingertips"
 date: 2026-03-23T18:00:00+09:00
 description: "The Apify MCP Server connects AI agents to 3,000+ ready-made web scrapers (Actors) via the Model Context Protocol."
-og_description: "Apify MCP Server: connect AI agents to 3,000+ web scrapers and automation tools. 945 stars, TypeScript, Apache 2.0, hosted + local modes, dynamic tool discovery. Rating: 3.5/5."
+og_description: "Apify MCP Server: connect AI agents to 3,000+ web scrapers and automation tools. 1,100+ stars, TypeScript, Apache 2.0, hosted + local modes, dynamic tool discovery. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Connects AI agents to Apify's marketplace of 3,000+ web scrapers and automation tools. Search for scrapers, inspect their details, run them, and get structured data back — all through MCP. Hosted mode with OAuth or run locally via npx."
-last_refreshed: 2026-03-23
+card_description: "Connects AI agents to Apify's marketplace of 3,000+ web scrapers and automation tools. Search for scrapers, inspect their details, run them, and get structured data back — all through MCP. Hosted mode with OAuth or run locally via npx. SSE transport removed April 1, 2026 — update to Streamable HTTP."
+last_refreshed: 2026-05-03
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -75,7 +75,7 @@ Apify offers two ways to run the MCP server, and the differences matter:
 
 The hosted mode at `https://mcp.apify.com` is the recommended path. It supports OAuth (no token exposure), infers output schemas so agents better understand what they'll get back, and requires zero local setup. The [Apify UI configurator](https://mcp.apify.com/) even offers one-click install buttons for supported clients.
 
-**SSE deprecation note:** Server-Sent Events transport will be removed on April 1, 2026, replaced by Streamable HTTP per the official MCP specification.
+**SSE deprecated:** Server-Sent Events transport was removed on April 1, 2026 as planned, replaced by Streamable HTTP per the MCP specification. If you configured the SSE endpoint (`/sse`), update to the Streamable HTTP endpoint (`/mcp`).
 
 ## Setup
 
@@ -87,7 +87,7 @@ Use the one-click install at [mcp.apify.com](https://mcp.apify.com/), or add man
 {
   "mcpServers": {
     "apify": {
-      "url": "https://mcp.apify.com/sse",
+      "url": "https://mcp.apify.com/mcp",
       "headers": {
         "Authorization": "Bearer YOUR_APIFY_TOKEN"
       }
@@ -95,6 +95,8 @@ Use the one-click install at [mcp.apify.com](https://mcp.apify.com/), or add man
   }
 }
 ```
+
+*(Note: The SSE endpoint `/sse` was removed April 1, 2026. Use `/mcp` for Streamable HTTP.)*
 
 **Claude Desktop (local):**
 
@@ -144,7 +146,7 @@ The Apify MCP Server competes in the web data extraction space. Here's how it st
 | Dimension | Apify MCP | Firecrawl MCP | Bright Data MCP | Crawl4AI MCP |
 |-----------|-----------|---------------|-----------------|--------------|
 | **Approach** | Marketplace of 3,000+ specialized scrapers | General-purpose web crawler | Enterprise proxy + scraper infrastructure | Open-source crawler |
-| **GitHub Stars** | 945 | 33,000+ | 1,900+ | 39,000+ |
+| **GitHub Stars** | 1,100+ | 33,000+ | 1,900+ | 39,000+ |
 | **Pricing** | Free tier ($5/mo credits) + paid plans | Free tier + paid plans | $499+/mo (enterprise) | Free (open source) |
 | **Unique Strength** | Pre-built scrapers for specific sites | Clean markdown extraction | Enterprise reliability (76.8% success in stress tests) | Zero cost, self-hosted |
 | **Dynamic Discovery** | Yes — agents find and add new tools | No | No | No |
@@ -161,7 +163,7 @@ In head-to-head stress testing (250 concurrent agents), Bright Data achieved 76.
 - **Dynamic tool discovery** — agents find and use new scrapers at runtime without configuration changes
 - **Hosted mode is smooth** — OAuth login, no tokens to manage, output schema inference
 - **Free tier** — $5/month in credits with no credit card required, enough for testing and small projects
-- **Active development** — v0.9.12 released March 20, 2026, with steady weekly releases
+- **Active development** — v0.9.16 released March 28, 2026 (4 releases in 8 days after the March 20 v0.9.12); v0.9.16 added x402 payment provider support, renamed Actor tool names to `{username}--{actor-name}` format, and dedent support for multiline tool descriptions
 - **Apache 2.0 license** — no AGPL concerns for the server itself
 
 ## What's Not
@@ -183,4 +185,4 @@ But it's a gateway to a commercial platform, not a self-contained tool. You're p
 
 ---
 
-*This review is AI-generated based on publicly available documentation, GitHub data, and benchmark reports. ChatForest does not operate or endorse this server. Information is current as of March 2026 — check the [GitHub repository](https://github.com/apify/apify-mcp-server) for the latest updates.*
+*This review was originally published March 23, 2026 and refreshed May 3, 2026. Refresh findings: v0.9.16 (March 28) is current — 4 releases after the March 20 v0.9.12. SSE deprecated April 1, 2026 as planned; Streamable HTTP now required. Stars grew from 945 to ~1,100+. No new CVEs. x402 payment provider added. We research MCP servers thoroughly but do not test them hands-on. Check the [GitHub repository](https://github.com/apify/apify-mcp-server) for the latest updates.*
