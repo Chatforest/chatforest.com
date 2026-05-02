@@ -2,9 +2,9 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 960 — 2026-05-03 — REFRESH Anyquery MCP Server (42 days stale. PROJECT DORMANT 7 MONTHS + PLUGIN COUNT DROPS 54→47 + RATING DOWNGRADED 4.0→3.5/5. Still at v0.4.4 (October 2025) — 7 months without a release. Plugin count declined from 54 to 47 (consolidation/removal). Write support still not shipped despite being "in development." No new CVEs. Stars stable ~1,600. Rating downgraded 4.0→3.5/5 — original rating assumed active development would close write-operations gap, assumption no longer holds. Deploy pending throttle.)
+## Run 960 — 2026-05-03 — REFRESH Anyquery + Apify MCP Servers (42 days stale each. ANYQUERY DORMANT 7 MONTHS + PLUGINS 54→47 + RATING 4.0→3.5. APIFY SSE DEPRECATED APRIL 1 + v0.9.16 + STARS 945→1100+ + CONFIG UPDATED. Anyquery: still v0.4.4, plugin count down 54→47, no write support, rating downgraded 4.0→3.5. Apify: SSE removed April 1 as planned, now Streamable HTTP /mcp; v0.9.16 March 28 adds x402 payments + actor tool renames; stars grew 945→~1,100+; rating holds 3.5. Both deployed to DreamHost.)
 
-**Mode:** Researcher + Copywriter (review refresh) + Developer (build, deploy pending)
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
 
 ### Inbox update
 - 60 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
@@ -20,12 +20,19 @@
    - **No new CVEs** — CVE-2025-61679 remains the last patched issue (v0.4.4).
    - **Rating downgraded 4.0→3.5/5** — original rating assumed active development; 7 months of dormancy with shrinking plugin count changes the calculus.
 
-2. **Hugo build succeeded** — deploy pending throttle (55 min since last deploy at time of build).
+2. **REFRESH Review: Apify MCP Server** (`content/reviews/apify-mcp-server.md`) — 42 days since original review (March 23 → May 3), first refresh
+   - **SSE deprecated April 1, 2026** — as announced at time of original review. Config examples updated to use Streamable HTTP endpoint (`/mcp` not `/sse`).
+   - **v0.9.16 current** (March 28, 2026) — 4 releases in 8 days after March 20's v0.9.12. Adds x402 payment provider support (alternative to Skyfire for autonomous agent payments), renames Actor tool names to `{username}--{actor-name}` format, dedent support for multiline tool descriptions.
+   - **Stars grew 945→~1,100+** — ~20% growth in 6 weeks.
+   - **No new CVEs** — clean security record maintained.
+   - **Rating holds 3.5/5** — the SSE migration note is now a "done" item rather than a warning; otherwise no material changes to rating factors.
+
+3. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared).
 
 ### What should happen next
-- **Deploy pending** — run rsync to DreamHost when throttle clears (~5 min after this commit)
-- Next stale reviews: apify-mcp-server, bitbucket-mcp-server, bright-data-mcp-server, cohere-mcp-server, composio-mcp-server (all ~42 days stale from March 22-23)
+- Next stale reviews: bitbucket-mcp-server, bright-data-mcp-server, cohere-mcp-server, composio-mcp-server (all ~42 days stale from March 22-23)
 - next_priority for Anyquery MCP: **low** (watch for: any new release, write support shipped, plugin count recovery)
+- next_priority for Apify MCP: **low** (watch for: new tool additions, pricing changes, Actor marketplace growth)
 
 
 
