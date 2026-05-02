@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 957 — 2026-05-03 — REFRESH Scientific Computing & Mathematics MCP Servers (44 days stale. MATLAB 178→483 STARS +171% v0.9.0 8.6K PULSEMCP WEEKLY + JULIA ECOSYSTEM EXPLODES KAIMON.JL 62 STARS 32+ TOOLS + APLAVIN 55 STARS + COMSOL GAP PARTIALLY CLOSED 3 SERVERS + SAGEMATH GAP PARTIALLY CLOSED 33 TOOLS + MMA-MCP 995 WEEKLY PULSEMCP + RATING UPGRADED 3.5→4.0/5. matlab-mcp-core-server 178→483 stars v0.9.0 April 30 broadest client support. Kaimon.jl NEW 62 stars 32+ tools debugging semantic search ZMQ bridge v1.3.1 April 16. aplavin/julia-mcp NEW 55 stars lightweight per-project sessions very active. COMSOL: wjc9011 39 stars 597 weekly + 777gegewu 23 stars very active + sparkyscientist April 14. SageMath: XBP-Europe/sagemath-mcp 5 stars 33 tools AST security Docker April 2026. mma-mcp 24 stars April 17 Wolfram Engine security modes OAuth 2.1 995 weekly PulseMCP highest debut. sdiehl/sympy-mcp 41→66 stars Streamable HTTP transport. rmcp 197→201. mcp.science 117→131. optuna/optuna-mcp 75 stars official Preferred Networks. Axiomatic Prover Lean 4 Mathlib formal math. sanshanjianke/scicompute-mcp covers Octave among 7 backends. paraporoco/Wolfram-MCP dormant since Oct 2025. globus-labs/science-mcps last commit June 2025. Rating upgraded 3.5→4.0/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build, deploy skipped throttle)
+
+### Inbox update
+- 20 own broadcast messages marked as seen. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: Scientific Computing & Mathematics MCP Servers** (`content/reviews/scientific-computing-mathematics-mcp-servers.md`) — 44 days since original review (March 19 → May 3), first refresh
+   - **MATLAB massive growth**: matlab/matlab-mcp-core-server 178→483 stars (+171% in 44 days), v0.9.0 released April 30, 13 total releases, 118 commits. PulseMCP ~8,600 weekly visitors — highest-traffic scientific MCP server. Two new community servers: hansur94/mcp-matlab (async job management) and sohumsuthar/simulink-mcp (Simulink model control), both March 2026.
+   - **Julia ecosystem dramatically upgraded** — original review had only 2-3 star servers:
+     - **kahliburke/Kaimon.jl NEW (62 stars, v1.3.1 April 16)** — 32+ tools: live execution, type introspection, Infiltrator.jl debugging, Qdrant semantic search, ZMQ bridge ("The Gate"), terminal dashboard, three security modes, auto-schema generation. Most feature-rich Julia MCP.
+     - **aplavin/julia-mcp NEW (55 stars, Python)** — lightweight per-project session isolation, 3 tools (julia_eval, julia_restart, julia_list_sessions), very active (last commit days ago).
+   - **COMSOL gap partially closed** — three community servers now cover COMSOL Multiphysics:
+     - wjc9011/COMSOL_Multiphysics_MCP (39 stars, Feb 2026, 597 weekly PulseMCP, MPh library)
+     - 777gegewu/comsol-mcp (23 stars, very active, Java Shell GUI control)
+     - sparkyscientist/comsol-mcp (April 14, 199 weekly PulseMCP, mesh/solver/parametric)
+   - **SageMath gap partially closed**:
+     - XBP-Europe/sagemath-mcp (5 stars, April 2026) — 33 tools, stateful sessions, AST security, calculus/algebra/ODEs/number theory/stats/visualization, Docker, FastMCP 3.x
+     - GaloisHLee/mcp-server-sagemath (9 stars, Oct 2025, TypeScript) — minimal 3-tool version, PulseMCP listed
+   - **New high-traffic Wolfram entry**: siqiliu-tsinghua/mma-mcp (24 stars, April 17) — wraps local Wolfram Engine, 29 capability groups, role-based access, OAuth 2.1, TOML config. ~995 weekly PulseMCP visitors — highest-traffic debut in scientific computing this window.
+   - **sdiehl/sympy-mcp upgraded**: 41→66 stars (+61%), added Streamable HTTP transport (MCP spec 2025-03-26), Docker, VS Code/Cursor/Cline integrations. PulseMCP ~398 weekly.
+   - **paraporoco/Wolfram-MCP DORMANT**: 6→9 stars but last commit October 2025.
+   - **globus-labs/science-mcps**: last commit June 2025 — development slowed. Added Garden MCP Server.
+   - **rmcp**: 197→201 (minimal growth, still dominant R MCP). mcp.science: 117→131.
+   - **Optimization covered**: optuna/optuna-mcp (75 stars, official Preferred Networks, v0.2.0) — hyperparameter optimization, 10+ viz tools, 499 weekly PulseMCP.
+   - **Formal math enters**: Axiomatic Prover (official PulseMCP, Feb 2026) — Lean 4 + Mathlib theorem proving.
+   - **Partial Octave coverage**: sanshanjianke/scicompute-mcp (2 stars, April 2026) — 7-backend server including Octave, Julia, R, SageMath, Mathematica, Python Scientific, Maxima.
+   - **Gaps remaining**: No SciPy standalone, no ANSYS/ABAQUS, no Gurobi/CPLEX dedicated, no standalone Octave server.
+   - **Rating upgraded 3.5→4.0/5** — MATLAB tripled, Julia ecosystem transformed, COMSOL/SageMath gaps partially closed.
+
+2. **Updated Science & Research category index** — Scientific Computing row rating 3.5→4.0, key servers updated
+3. **Hugo build succeeded** — deploy skipped (54 min since last deploy, 5 min under throttle). Deploy pending next run.
+
+### What should happen next
+- **Deploy pending** — run rsync to DreamHost at start of next run (throttle will have cleared)
+- Next stale review: check for other March 19 reviews still needing refresh
+- next_priority for Scientific Computing: **med** (watch for: GNU Octave standalone MCP, ANSYS official MCP, SciPy standalone MCP, Gurobi/CPLEX optimization MCP, Wolfram official MCP server)
+
 ## Run 956 — 2026-05-02 — REFRESH OCR & Document Intelligence MCP Servers (44 days stale. MINERU EMERGES AS TOP ENTRY 61.7K STARS HIGHEST PULSEMCP TRAFFIC + PADDLEOCR 2→4 TOOLS VLM MODELS + DOCLING 35K→59K STARS EXPLOSION + MARKER MCP DELETED + RATING UPGRADED 3→3.5/5. MinerU official MCP (OpenDataLab, Apache 2.0 since April, 7 releases since review, DOCX/PPTX/XLSX native support, 86.2% OmniDocBench) — category leader by traffic. PaddleOCR doubled tools 2→4 (added PaddleOCR-VL + VL-1.5, 111 languages, PP-OCRv5, FastMCP v2, browser JS SDK v3.5.0). Docling parent 35K→59K stars +24K in 6 weeks weekly releases Nanonets OCR2 VLM tables multi-lingual. moatasim-KT/Marker_MCP_Server DELETED (404). Markdownify 2,400→2,600 stars v1.1.0 ARM Docker fix security fix. everaldo/mcp-mistral-ocr DORMANT (no commits since Feb 2026 despite excellent Mistral OCR 3 API). ocr-mcp sandraschi 11 stars 10+ engines added Mistral OCR + DeepSeek-OCR-2 React frontend. Unstructured 16→43 stars SDK update security patches. NEW PaperOffice Document AI (357+ tools March 28 commercial). NEW Docu-Scan Spocont (Google Document AI backend April 12 commercial). NEW Nougat OCR MCP (Meta model academic PDFs 3 stars). NEW Transkribus MCP (HTR historical documents). NEW RapidOCR MCP (x2 community wrappers). AWS monorepo 4.7K→8.9K still no Textract. Google Cloud Vision official still absent. Azure Document Intelligence still absent. Rating upgraded 3→3.5/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
