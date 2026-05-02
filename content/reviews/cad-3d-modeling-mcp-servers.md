@@ -1,29 +1,47 @@
 ---
 title: "CAD & 3D Modeling MCP Servers — Blender, FreeCAD, AutoCAD, KiCad, SolidWorks, Fusion 360, OpenSCAD, and More"
 date: 2026-03-18T22:00:00+09:00
-description: "CAD and 3D modeling MCP servers reviewed: Blender MCP (17,800 stars, Python, MIT, scene manipulation + Poly Haven + Hyper3D Rodin), FreeCAD MCP (617 stars, Python, MIT, 10 tools"
-og_description: "CAD & 3D modeling MCP servers: Blender MCP (17,800 stars, scene manipulation + AI models), FreeCAD (617 stars, 10 tools, parts library), KiCad (405 stars, netlist/BOM/DRC), CAD-MCP (270 stars, multi-CAD), AutoCAD (177 stars, P&ID + AutoLISP), OpenSCAD (135 stars, text-to-3D), SolidWorks (67 stars, COM bridge), Fusion 360, Onshape. Rating: 3.5/5."
+description: "CAD and 3D modeling MCP servers reviewed: Official Blender MCP (Blender Lab + Anthropic, April 2026), Autodesk official servers (Fusion MCP + Fusion Data MCP + Product Help), ahujasid/blender-mcp (20,000 stars), FreeCAD MCP (617 stars), KiCad (405 stars). Rating: 4/5."
+og_description: "CAD & 3D modeling MCP servers: Official Blender MCP (Anthropic Corporate Patron), Autodesk official Fusion MCP + Data MCP + Product Help, ahujasid/blender-mcp 20K stars, FreeCAD (617 stars), KiCad (405 stars), AutoCAD (177 stars). Rating: 4/5."
 content_type: "Review"
-card_description: "CAD and 3D modeling is one of the most active MCP verticals by star count, driven almost entirely by **Blender MCP** (17,800 stars) — the third most-starred MCP server overall. Beyond Blender, the ecosystem covers the full spectrum of computer-aided design: **FreeCAD MCP** (617 stars, Python, MIT) gives AI agents 10 tools for creating and editing parametric 3D models with parts library access. **KiCad MCP** (405 stars, Python, MIT) enables AI-assisted PCB design with netlist extraction, BOM generation, and design rule checking. **CAD-MCP** (270 stars, Python, MIT) controls AutoCAD, GstarCAD, and ZWCAD through natural language drawing commands. **AutoCAD MCP** (177 stars, Python/AutoLISP, MIT) is the most engineered AutoCAD integration — dual backends (File IPC for live AutoCAD, ezdxf for headless), focus-free dispatch, P&ID symbol library, and undo/redo. **OpenSCAD MCP** (135 stars, Python, MIT) takes a unique approach — generating 3D models from text descriptions or images via Gemini AI and multi-view reconstruction, with direct 3D printer support. **SolidWorks MCP** (67 stars, Python/C#, MIT) bridges Claude to SolidWorks via a version-aware C# adapter and COM bridge. **Fusion 360** has two community servers (19-27 stars) with up to 30 tools for sketching, features, and export. **Seeed Studio's KiCad MCP** (20 stars, 39 tools) adds embedded code generation and hardware validation — it can generate device trees and HAL initialization code from schematics. **Onshape MCP** (11 stars, TypeScript, MIT) offers cloud-native CAD integration via REST API. The category's strength is breadth — every major CAD platform has at least one MCP server. The weakness is depth — most servers beyond Blender and FreeCAD have minimal adoption and incomplete tool coverage. No official vendor servers exist from Autodesk, Dassault (SolidWorks), Siemens (NX/Solid Edge), or PTC (Creo)."
-last_refreshed: 2026-03-18
+card_description: "April 2026 brought a sea change: **Autodesk launched three official MCP servers** (Fusion MCP for local modeling, Fusion Data MCP for cloud data, Product Help MCP for docs across 110+ products) and **Anthropic became a Blender Development Fund Corporate Patron**, releasing the **official Blender MCP** (developed by Blender Lab). The community servers remain essential: **ahujasid/blender-mcp** (~20,000 stars) is still the most widely installed Blender MCP. **FreeCAD MCP** (617 stars) gives AI agents 10 tools for parametric CAD with parts library access. **KiCad MCP** (405 stars) enables AI-assisted PCB design with netlist, BOM, and DRC. **CAD-MCP** (270 stars) controls AutoCAD, GstarCAD, and ZWCAD. **AutoCAD MCP** (177 stars) has dual backends, P&ID symbols, and undo/redo. **OpenSCAD MCP** (135 stars) generates 3D models from text via Gemini AI. **SolidWorks MCP** (67 stars) bridges Claude via C# COM adapter. The biggest gap in our March review — no official vendor servers from Autodesk — is now closed. Dassault, Siemens, and PTC remain gaps."
+last_refreshed: 2026-05-02
 ---
 
 CAD and 3D modeling MCP servers let AI agents create, modify, and analyze engineering designs and 3D models through natural language. The category spans **3D modeling** (Blender, OpenSCAD), **parametric CAD** (FreeCAD, Fusion 360, SolidWorks, Onshape), **2D drafting** (AutoCAD, GstarCAD, ZWCAD), and **electronic design automation** (KiCad PCB design).
 
-The headline: **Blender MCP dominates by stars** (17,800 — one of the most-starred MCP servers in any category), but the engineering CAD side is where the more interesting integrations are happening. **FreeCAD MCP** (617 stars) and **KiCad MCP** (405 stars) show genuine demand from the open-source engineering community. **AutoCAD MCP** (177 stars) demonstrates surprisingly sophisticated architecture with dual backends and focus-free dispatch. The biggest gap: **no official vendor servers** from Autodesk, Dassault Systèmes, Siemens, or PTC.
+**April 28, 2026 changed this category.** As part of Anthropic's "Claude for Creative Work" launch, both Blender and Autodesk moved from community-only to official MCP support in a single day. Anthropic announced an official Blender connector (developed by Blender Lab) and joined the Blender Development Fund as a Corporate Patron at €240,000/year. Autodesk simultaneously launched two official Fusion MCP servers — local for modeling and remote for cloud data — after having already released a Product Help MCP server on April 9. The biggest gap in this category — **no official vendor servers from Autodesk** — is now closed.
+
+The headline: **ahujasid/blender-mcp** grew from 17,800 → ~20,000 stars and remains the most widely installed Blender integration. The official Blender Lab server is the long-term supported path. **FreeCAD MCP** (617 stars) and **KiCad MCP** (405 stars) show genuine demand from the open-source engineering community. **AutoCAD MCP** (177 stars) demonstrates surprisingly sophisticated architecture with dual backends and focus-free dispatch. Dassault Systèmes (SolidWorks), Siemens, and PTC remain the outstanding vendor gaps.
 
 ## 3D Modeling & Visualization
 
-### Blender MCP
+### Official Blender MCP (Blender Lab)
 
 | Detail | Info |
 |--------|------|
-| [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | ~17,800 stars |
+| [blender.org/lab/mcp-server](https://www.blender.org/lab/mcp-server/) | Official |
+| Developer | Blender Foundation (Blender Lab) |
+| Announced | April 28, 2026 |
+| License | Open source |
+| Sponsor | Anthropic (Corporate Patron, €240,000/year) |
+
+On April 28, 2026, Blender announced an official MCP connector developed by Blender Lab — the Foundation's program for experimental features. Anthropic became a Blender Development Fund Corporate Patron at €240,000/year to support the integration. The connector is built on the open MCP standard, so it works with any MCP-capable LLM, not just Claude.
+
+**What it offers:** A direct bridge to Blender's Python API from any MCP client. The same scene inspection, Python code execution, and automation capabilities as the community server — but developed and maintained by the Blender Foundation itself. For long-term production use, the official server is the supported path.
+
+The community server (ahujasid/blender-mcp, below) remains more widely installed for now and includes third-party integrations (Poly Haven, Hyper3D Rodin, Sketchfab) that may not exist in the official version yet.
+
+### Blender MCP (Community)
+
+| Detail | Info |
+|--------|------|
+| [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | ~20,000 stars |
 | License | MIT |
 | Language | Python |
 | Transport | stdio (socket-based) |
 
-The most popular CAD/3D MCP server by a massive margin. Connects Blender to Claude AI through a socket-based server running inside Blender as an addon.
+The most widely installed CAD/3D MCP server. Connects Blender to Claude AI through a socket-based server running inside Blender as an addon. Grew from 17,800 → ~20,000 stars since March 2026 — boosted further by Anthropic's official Blender announcement and Corporate Patron news.
 
 ### What Works Well
 
@@ -83,20 +101,36 @@ The most popular open-source engineering CAD MCP server. Runs as a FreeCAD addon
 
 A second FreeCAD server ([lucygoodchild/freecad-mcp-server](https://github.com/lucygoodchild/freecad-mcp-server), 5 stars, TypeScript) offers 7 tools with explicit boolean operations (union, cut, common) and primitive creation (box, cylinder, sphere) — more structured but less adopted.
 
-### Fusion 360
+### Autodesk Fusion MCP (Official)
+
+| Detail | Info |
+|--------|------|
+| Autodesk Fusion MCP | Official, local |
+| Autodesk Fusion Data MCP | Official, remote (cloud) |
+| Autodesk Product Help MCP | Official, read-only docs |
+| Announced | April 28, 2026 (Fusion); April 9 (Product Help) |
+| Available | Autodesk App Store + autodesk.com/solutions/autodesk-ai/autodesk-mcp-servers |
+
+On April 28, 2026 — as part of Anthropic's "Claude for Creative Work" launch — Autodesk announced two official Fusion MCP servers:
+
+**Autodesk Fusion MCP** runs locally alongside a running Fusion instance. It provides modeling capabilities and executes Fusion commands directly. Compatible with Claude Desktop, Cursor, and any MCP-capable HTTP client. This is the "do CAD work" server — AI agents can drive Fusion through natural language design intent.
+
+**Autodesk Fusion Data MCP** runs remotely (no Fusion installation required). It queries and manages Fusion design data through Autodesk's cloud services. Compatible with Claude Desktop and VS Code. This is the "query CAD data" server — useful for downstream consumers of Fusion designs who don't need to run Fusion itself.
+
+On April 9, Autodesk had already announced the **Autodesk Product Help MCP Server** — a read-only service providing AI agents access to help documentation across 110+ Autodesk products (Fusion, AutoCAD, Revit, Civil 3D, and more). Available at no cost.
+
+Autodesk is a gold-level member of the Agentic AI Foundation and plans additional MCP servers for Revit and other products.
+
+The **original community server** by [Joe-Spencer](https://github.com/Joe-Spencer/fusion-mcp-server) was developed by an Autodesk employee and served as the technical foundation for this work. **JustusBraitinger's server** (30+ tools — sketching, features, analysis, export) remains the most feature-complete Fusion MCP implementation for power users who need capabilities not yet in the official server.
+
+### Fusion 360 (Community)
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
 | [JustusBraitinger/Autodesk-Fusion-360-MCP-Server](https://github.com/JustusBraitinger/Autodesk-Fusion-360-MCP-Server) | 19 | Python | 30+ |
-| [Joe-Spencer/fusion-mcp-server](https://github.com/Joe-Spencer/fusion-mcp-server) | 27 | Python | 3 |
+| [Joe-Spencer/fusion-mcp-server](https://github.com/Joe-Spencer/fusion-mcp-server) | — | Python | baseline |
 
-Two Fusion 360 MCP servers with very different approaches:
-
-**JustusBraitinger's server** (19 stars, Python, MIT) is the more capable. Thirty-plus tools across four categories: sketching & creation (10 tools — lines, circles, arcs, rectangles, splines, extrude, revolve), feature & modification (11 tools — fillet, chamfer, shell, mirror, pattern, combine, split), analysis & control (6 tools — mass properties, interference check, measure), and export (2 tools — STEP, STL). Uses an event-driven task queue to handle Fusion 360's non-thread-safe API, allowing asynchronous MCP requests to execute sequentially on the main UI thread. This is a genuine "conversational CAD" proof of concept.
-
-**Joe-Spencer's server** (27 stars, Python, GPL-3.0) has only 3 tools — `message_box`, `create_new_sketch`, `create_parameter`. Early-stage, but the higher star count suggests interest in the concept.
-
-Neither is official — Autodesk has not published an MCP server for any of its products.
+**JustusBraitinger's server** is the most feature-complete community option: 30+ tools across sketching & creation, feature & modification, analysis & control, and export (STEP, STL). Uses an event-driven task queue to handle Fusion 360's non-thread-safe API. This remains valuable for capabilities not yet exposed by the official servers.
 
 ### SolidWorks
 
@@ -204,16 +238,19 @@ Two other KiCad servers exist: [mixelpixx/KiCAD-MCP-Server](https://github.com/m
 
 ## The bottom line
 
-CAD and 3D modeling MCP servers span every major platform, but adoption is concentrated in two camps: **Blender for 3D art/visualization** (17,800 stars) and **open-source engineering tools** (FreeCAD at 617, KiCad at 405). The commercial CAD side is entirely community-driven — no official servers from Autodesk, Dassault, Siemens, or PTC.
+April 2026 transformed this category. Autodesk launched three official MCP servers (Fusion MCP, Fusion Data MCP, Product Help MCP) and Anthropic joined the Blender Development Fund at €240,000/year while backing the official Blender Lab MCP connector. The biggest criticism from March — no official vendor servers — is now substantially resolved for Autodesk. Dassault Systèmes (SolidWorks/CATIA), Siemens (NX/Solid Edge), and PTC (Creo) remain the outstanding gaps on the commercial CAD side.
 
-**Best for 3D modeling/art:** Blender MCP (17,800 stars, full scene control, asset ecosystem)
+Community servers still lead on raw capability and installation base: ahujasid/blender-mcp at ~20,000 stars and JustusBraitinger's Fusion server (30+ tools) outpace their official counterparts today. Over time, official servers typically catch up.
+
+**Best for 3D modeling/art:** Official Blender MCP (Blender Lab + Anthropic, long-term supported) or ahujasid/blender-mcp (~20,000 stars, wider installed base, third-party asset integrations)
+**Best for Fusion 360:** Autodesk Fusion MCP (official, local modeling) + Autodesk Fusion Data MCP (official, cloud data)
+**Best for Autodesk docs:** Autodesk Product Help MCP (110+ products, free, official)
 **Best for parametric CAD:** FreeCAD MCP (617 stars, parts library, remote operation)
-**Best for PCB design:** KiCad MCP (405 stars, netlist/BOM/DRC) or Seeed Studio's KiCad MCP (39 tools, code generation)
+**Best for PCB design:** KiCad MCP (405 stars, netlist/BOM/DRC) or Seeed Studio's KiCad MCP (39 tools, firmware code generation)
 **Best for AutoCAD:** puran-water/autocad-mcp (177 stars, dual backends, P&ID, undo/redo)
-**Best for Fusion 360:** JustusBraitinger's server (30+ tools, full sketching/feature/export)
 **Best for text-to-3D:** OpenSCAD MCP (135 stars, AI-generated models, direct printing)
 
-Rating: **3.5/5** — The breadth is impressive: every major CAD platform has at least one MCP server. Blender MCP's 17,800 stars prove massive demand for AI-assisted 3D work. The open-source CAD and EDA tools (FreeCAD, KiCad, OpenSCAD) have strong community servers. But most engineering CAD servers are early-stage with limited tools and minimal adoption. The absence of any official vendor server from the big four (Autodesk, Dassault, Siemens, PTC) means the most widely-used commercial CAD platforms have only community integrations. Fusion 360 and Onshape's API-first architectures make them the most likely candidates for official MCP support — if the vendors decide AI-assisted design is worth investing in.
+Rating: **4/5** — Two major gap closures in a single day: Autodesk's official Fusion MCP servers (local + cloud) and the official Blender Lab connector backed by Anthropic. The commercial CAD ecosystem is no longer purely community-driven for the two most widely-used platforms. Open-source tools (FreeCAD, KiCad) remain strong. Remaining gaps: Dassault Systèmes, Siemens, PTC still lack official servers; Autodesk Revit MCP is announced but not yet available; most servers beyond Blender and FreeCAD have limited adoption and tool depth.
 
 ---
 
@@ -221,4 +258,4 @@ Rating: **3.5/5** — The breadth is impressive: every major CAD platform has at
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was last edited on 2026-03-18 using Claude Opus 4.6 (Anthropic).*
+*This review was originally published on 2026-03-18. Last refreshed on 2026-05-02 using Claude Sonnet 4.6 (Anthropic).*

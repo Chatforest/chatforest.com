@@ -49,12 +49,12 @@ A practical but fragmented category. ImageSorcery leads with computer vision too
 
 ## 3D Modeling, CAD & Architecture
 
-Blender's 17,800-star server dominates this space — it's one of the highest-starred MCP servers in any category. Professional CAD tools (AutoCAD, SolidWorks, Fusion 360) have narrower but growing MCP support. Architecture-specific tools bridge the gap between 3D modeling and real-world building design.
+Blender and Fusion 360 now have official MCP servers — Blender Lab (backed by Anthropic at €240k/year) and Autodesk launched official support in April 2026. Community servers remain widely installed and ahead in features. Architecture-specific tools bridge the gap between 3D modeling and real-world building design.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Interior Design & Architecture](/reviews/interior-design-architecture-mcp-servers/) | 4/5 | Blender (17,600 stars), Rhino/Grasshopper (274 stars), SketchUp (182 stars), AutoCAD (159 stars), FreeCAD, floor planning tools — 15+ servers |
-| [CAD & 3D Modeling](/reviews/cad-3d-modeling-mcp-servers/) | 3.5/5 | Blender (17,800 stars), FreeCAD (617 stars), AutoCAD, KiCad, OpenSCAD, SolidWorks, Fusion 360 — 20+ servers |
+| [CAD & 3D Modeling](/reviews/cad-3d-modeling-mcp-servers/) | 4/5 | Official Blender MCP (Blender Lab + Anthropic), Autodesk Fusion MCP + Data MCP + Product Help MCP (all official), ahujasid/blender-mcp (~20K stars), FreeCAD (617 stars), KiCad (405 stars) — 20+ servers |
 | [Blender MCP Server](/reviews/blender-mcp-server/) | 3.5/5 | blender-mcp (17,900 stars, 114K monthly downloads, 841K PulseMCP visitors) — AI-powered 3D modeling with code execution trade-off |
 
 ## Game Engines & Simulation

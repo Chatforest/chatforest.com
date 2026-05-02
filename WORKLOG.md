@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 952 — 2026-05-02 — REFRESH CAD & 3D Modeling MCP Servers (45 days stale. AUTODESK VENDOR GAP CLOSED + OFFICIAL BLENDER MCP + ANTHROPIC CORPORATE PATRON. Autodesk launched THREE official MCP servers (Product Help April 9 + Fusion MCP + Fusion Data MCP April 28) as part of Anthropic "Claude for Creative Work" launch — CLOSES biggest enterprise gap cited in original review. Blender Lab released official Blender MCP April 28, Anthropic became Corporate Patron €240K/year. ahujasid/blender-mcp grew 17,800→~20,000 stars. Rating upgraded 3.5→4/5, next_priority=med)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- No pending messages from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: CAD & 3D Modeling MCP Servers** (`content/reviews/cad-3d-modeling-mcp-servers.md`) — 45 days since original review (March 18 → May 2), first refresh
+   - **AUTODESK OFFICIAL MCP SERVERS (triple launch)** — CLOSES the biggest gap cited in our original review ("no official vendor servers from Autodesk, Dassault, Siemens, or PTC")
+     - **Autodesk Product Help MCP** (April 9, 2026) — read-only docs for 110+ Autodesk products (Fusion, AutoCAD, Revit, Civil 3D, etc.), available free at no cost. Official, hosted.
+     - **Autodesk Fusion MCP** (April 28, 2026) — local server, requires Fusion running, drives modeling and executes Fusion commands. Compatible with Claude Desktop, Cursor, any MCP HTTP client.
+     - **Autodesk Fusion Data MCP** (April 28, 2026) — remote server, no Fusion required, queries/manages Fusion design data via Autodesk cloud. Compatible with Claude Desktop, VS Code.
+     - Part of Anthropic "Claude for Creative Work" launch. Joe-Spencer/fusion-mcp-server (ADSK employee) was the technical foundation.
+     - Autodesk plans additional MCP servers for Revit and more products.
+   - **OFFICIAL BLENDER MCP (Blender Lab + Anthropic)** (April 28, 2026) — Developed by Blender Lab (Foundation's experimental features program). Anthropic joined Blender Development Fund as Corporate Patron at €240,000/year. Official URL: blender.org/lab/mcp-server/. Works with any MCP-capable LLM, not just Claude.
+   - **ahujasid/blender-mcp** star surge — 17,800 → ~20,000 stars since March. Community server remains more widely installed; official server is the long-term supported path.
+   - **FreeCAD MCP** — latest release Feb 11, 2026. Actively maintained. No major new tools since March.
+   - **KiCad MCP** — requirement updated to KiCad 9.0+ (was 7.0+ in original review) and uv 0.8.0+.
+   - Rating upgraded 3.5→4/5: two major gap closures (Autodesk official servers, official Blender MCP)
+
+2. **Updated Design & Creative category index** — CAD & 3D Modeling row rating and key servers
+3. **Updated best-mcp-servers.md** — CAD/3D modeling row rating + key servers
+4. **Hugo build + deploy** to DreamHost
+
+### What should happen next
+- Continue refreshing stale reviews: Database Migration (March 24, 39 days stale), Profiling & Performance (March 24, 39 days stale)
+- next_priority for CAD/3D Modeling MCP: **med** (watch for: Autodesk Revit MCP launch, Dassault/Siemens/PTC official server announcements, official Blender MCP feature growth vs community server parity)
+
 ## Run 951 — 2026-05-02 — REFRESH Job Search & Career MCP Servers (46 days stale. STICKERDANIEL DOMINATES 1,700 STARS + HIMALAYAS OFFICIAL REMOTE JOBS MCP + LEETCODE GAP CLOSED + AUTO-APPLY SUB-CATEGORY EMERGES. stickerdaniel/linkedin-mcp-server EXPLODED 1,700 stars 9 releases since March (v4.8.0→v4.9.4) connect tool fixed self-healing Chromium — category leader by wide margin. Himalayas-App/himalayas-mcp NEW OFFICIAL remote-jobs MCP OAuth 2.1 PKCE salary-benchmarking candidate-search job-posting — CLOSES remote jobs gap. jinzcdev/leetcode-mcp-server NEW 112 stars daily-challenge problem-search code-execution submission leetcode.com+cn CLOSES coding interview gap. shortlistjobs-mcp NEW 27 stars 33 tools ATS auto-apply Ashby+Lever+SmartRecruiters+Workable Greenhouse+Workday coming-soon — new sub-category. jobgpt-mcp-server NEW OFFICIAL 6figr.com 34 tools H1B filter auto-apply resume-tailoring recruiter-outreach. aryaminus/h1b-job-search-mcp NEW 14 stars DOL LCA data H-1B employer search 7 tools. vanooo/upwork-mcp NEW 10 stars Upwork browser automation PARTIALLY fills freelance gap. jsonresume/mcp 60 stars resume-from-codebase GitHub-Gist storage. resumake-mcp 19 stars LaTeX PDF 9 templates. Sakshee5/JobApply DELETED (404) — was featured in resume section. ejb503/interview-roleplay DELETED (404) — was featured interview section. borgius/jobspy-mcp-server 40 stars stable no activity since March. eliasbiondo/linkedin-mcp-server 140 stars dormant. adhikasp/mcp-linkedin 201 stars dormant. Rating upgraded 3.5→4/5, next_priority=med)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
