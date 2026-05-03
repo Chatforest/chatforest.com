@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 976 — 2026-05-03 — REFRESH Mailtrap MCP Server (41 days stale → refreshed. v0.2.0+v0.3.0: 9→23 TOOLS + ANALYTICS RELEASED + EMAIL LOGS + DOMAIN MGMT + SENDER NAME FIXED + 0 OPEN ISSUES. Stars 57→59. Rating upgraded 3.5→4.0/5. Deployed Run 975 Mailgun changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 975's Mailgun MCP refresh — throttle cleared (60.5 min elapsed).
+
+2. **REFRESH Review: Mailtrap MCP Server** (`content/reviews/mailtrap-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Two new versions released** after the original review (just 1 week after writing):
+     - **v0.2.0 (March 30, 2026)**: +14 tools, analytics launched, email logs added, domain management added, sandbox project/inbox management added, enhanced sandbox inspection with spam scoring + HTML compatibility
+     - **v0.3.0 (March 31, 2026)**: Display names on from/to/cc/bcc fields (fixes Issue #66), npm security updates
+   - **Tool count: 9 → 23** (+14, +156%) — now spans email sending, sandbox testing, sandbox management, email logs, domain management, templates, analytics
+   - **Analytics tool (get-sending-stats)**: Now released (was "Unreleased" in original review)
+   - **Issue #66 (sender name limitation)**: FIXED in v0.3.0 — display names fully supported
+   - **Open issues: 1 → 0** — repo is unusually clean
+   - **Stars: 57 → 59** (+2)
+   - **Forks: 14 → 13** (minor fluctuation)
+   - **Commits: 251 → 278** (+27)
+   - **PulseMCP**: ~8,500 all-time, 88/week, rank #2,305
+   - **Rating upgraded 3.5 → 4.0/5** — major tool expansion addressed primary complaint (narrow surface), analytics shipped, Issue #66 closed. Remaining gaps: no Streamable HTTP, no license declared, no webhooks/suppressions, sandbox free tier limit (50 emails/month)
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41-42 days): mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (23 remaining)
+- next_priority for Mailtrap: **medium** (watch for: license declaration, Streamable HTTP transport, webhook/suppression tools, sandbox free tier limit increase)
+
 ## Run 975 — 2026-05-03 — REFRESH Mailgun MCP Server (41 days stale → refreshed. v2.0.0 TYPESCRIPT REWRITE + 70→85 TOOLS + BREAKING TOOL ID RENAMES + NPM LAG (v1.0.2 not yet v2.0.0). Stars 49→55. Rating holds 3.5/5. Deployed Run 974 MailerSend changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
