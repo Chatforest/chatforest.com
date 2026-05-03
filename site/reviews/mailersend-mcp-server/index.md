@@ -1,9 +1,9 @@
 # MailerSend MCP Server — Full Email Management From Your AI Agent
 
-> MailerSend's official MCP server gives AI agents 34+ tools for sending emails, managing domains, configuring webhooks, verifying addresses, and pulling analytics — all through natural language.
+> MailerSend's official MCP server gives AI agents 38 tools for sending emails, managing domains, configuring webhooks, verifying addresses, and pulling analytics — all through natural language.
 
 
-**At a glance:** [Developer docs](https://developers.mailersend.com/mcp-server) — cloud-hosted, Streamable HTTP transport, 34+ tools, OAuth authentication, beta status, free tier (500 emails/mo). Official first-party from [MailerSend](https://www.mailersend.com/) (a [Vercom](https://vercom.pl/) company via [MailerLite](https://www.mailerlite.com/)).
+**At a glance:** [Developer docs](https://developers.mailersend.com/mcp-server) — cloud-hosted, Streamable HTTP transport, 38 tools, OAuth authentication, beta status, free tier (500 emails/mo). Official first-party from [MailerSend](https://www.mailersend.com/) (a [Vercom](https://vercom.pl/) company via [MailerLite](https://www.mailerlite.com/)).
 
 MailerSend's MCP server is a **cloud-hosted, first-party integration** that gives AI agents comprehensive access to MailerSend's transactional email platform. Unlike most email MCP servers that require cloning repos and running local processes, MailerSend's server runs entirely in the cloud — you add a URL, authenticate via OAuth, and your agent has access to 34+ tools spanning email sending, domain management, webhooks, email verification, template management, and analytics.
 
@@ -11,7 +11,7 @@ MailerSend's MCP server is a **cloud-hosted, first-party integration** that give
 
 ## What It Does
 
-The MCP server exposes 34+ tools across six categories: **email sending**, **domain management**, **message management**, **template management**, **webhook management**, **email verification**, and **analytics**.
+The MCP server exposes 38 tools across seven categories: **email sending**, **domain management**, **message management**, **template management**, **webhook management**, **email verification**, **activity management**, and **analytics**.
 
 ### Email Sending
 
@@ -84,7 +84,7 @@ The MCP server exposes 34+ tools across six categories: **email sending**, **dom
 | **verify_list** | Trigger verification on a list |
 | **get_verification_results** | Get verification results |
 
-This is the **broadest tool surface of any email MCP server** we've reviewed. The combination of domain management, webhook configuration, and email verification — on top of the standard sending and analytics — means your agent can handle the full lifecycle of transactional email setup without leaving the chat.
+This is the **broadest tool surface of any email MCP server** we've reviewed. The combination of domain management, webhook configuration, and email verification — on top of the standard sending and analytics — means your agent can handle the full lifecycle of transactional email setup without leaving the chat. Since the original March 2026 review, the tool count has grown from 34 to 38, with incremental additions across the domains, analytics, and activity categories.
 
 ## Transport & Authentication
 
@@ -152,14 +152,14 @@ The MCP server itself is free to use — pricing is determined by your MailerSen
 | Plan | Monthly Price | Emails/Month | SMS/Month | Verification Credits | Users | Domains | Daily API Requests |
 |------|--------------|-------------|-----------|---------------------|-------|---------|-------------------|
 | **Free** | $0 | 500 | — | 10 | 1 | 1 | 100 |
-| **Hobby** | $5.60 | 5,000 | — | 100 | 5 | 1 | 1,000 |
+| **Hobby** | $7 | 5,000 | — | 100 | 5 | 1 | 1,000 |
 | **Starter** | ~$25 | 50,000 | 100 | 100 | 5 | 10 | 100,000 |
 | **Professional** | ~$25+ | 50,000 | 100 | 100 | Unlimited | Unlimited | 500,000 |
 | **Enterprise** | Custom | Custom | Custom | Custom | Custom | Custom | Custom |
 
 **Overage rates:** $0.90 per additional 1,000 emails, $1.40 per 100 SMS.
 
-**What MCP users should know:** The free tier's 500 emails/month and 100 daily API requests is adequate for testing. However, 100 daily API requests is a hard limit that could be constraining for agents making frequent tool calls — listing domains, checking analytics, and managing webhooks all count against this quota. The Hobby tier at $5.60/month bumps this to 1,000 daily requests, which is more realistic for agent workflows.
+**What MCP users should know:** The free tier's 500 emails/month and 100 daily API requests is adequate for testing. However, 100 daily API requests is a hard limit that could be constraining for agents making frequent tool calls — listing domains, checking analytics, and managing webhooks all count against this quota. The Hobby tier at $7/month bumps this to 1,000 daily requests, which is more realistic for agent workflows. (Note: the Hobby plan price increased from $5.60 to $7 in the December 2025 pricing restructure.)
 
 Note that MailerSend eliminated a previously more generous free tier in October 2025, dropping from more emails to the current 500/month.
 
@@ -167,7 +167,7 @@ Note that MailerSend eliminated a previously more generous free tier in October 
 
 | Feature | MailerSend MCP | Mailgun MCP | Mailtrap MCP | Postmark MCP |
 |---------|---------------|-------------|-------------|-------------|
-| **MCP tools** | 34+ | 70 | 9 | 4 |
+| **MCP tools** | 38 | 70 | 9 | 4 |
 | **First-party** | Yes (official) | Yes (official) | Yes (official) | Yes (official) |
 | **Transport** | Streamable HTTP | stdio | stdio | stdio |
 | **Hosting** | Cloud (hosted) | Self-hosted | Self-hosted (npx) | Self-hosted (clone) |
@@ -186,9 +186,9 @@ Note that MailerSend eliminated a previously more generous free tier in October 
 
 **Key differentiators:**
 
-- **vs Mailgun:** Mailgun has more raw tools (70 vs 34+), with deeper coverage of routes, IP management, mailing lists, and suppressions. But MailerSend has email verification (8 tools) that Mailgun lacks entirely, and MailerSend's cloud-hosted + OAuth approach is dramatically easier to set up. Mailgun requires cloning code, managing API keys locally, and running a Node.js subprocess. MailerSend wins on ease of deployment; Mailgun wins on breadth and self-hosting.
+- **vs Mailgun:** Mailgun has more raw tools (70 vs 38), with deeper coverage of routes, IP management, mailing lists, and suppressions. But MailerSend has email verification (8 tools) that Mailgun lacks entirely, and MailerSend's cloud-hosted + OAuth approach is dramatically easier to set up. Mailgun requires cloning code, managing API keys locally, and running a Node.js subprocess. MailerSend wins on ease of deployment; Mailgun wins on breadth and self-hosting.
 
-- **vs Mailtrap:** MailerSend's tool surface dwarfs Mailtrap's (34+ vs 9). Mailtrap's unique advantage is sandbox testing — 4 dedicated tools for testing emails before they hit real inboxes. If your workflow is "test then send," Mailtrap has a genuine differentiator. For everything else — domains, webhooks, verification, analytics — MailerSend is significantly more capable.
+- **vs Mailtrap:** MailerSend's tool surface dwarfs Mailtrap's (38 vs 9). Mailtrap's unique advantage is sandbox testing — 4 dedicated tools for testing emails before they hit real inboxes. If your workflow is "test then send," Mailtrap has a genuine differentiator. For everything else — domains, webhooks, verification, analytics — MailerSend is significantly more capable.
 
 - **vs Postmark:** MailerSend's 34+ tools vs Postmark's 4 is the starkest comparison. Postmark can send emails and check stats; MailerSend can manage your entire email infrastructure. Postmark wins on delivery speed reputation and open-source transparency (MIT license, visible codebase). But as an MCP integration, MailerSend is in a different class.
 
@@ -202,7 +202,7 @@ Note that MailerSend eliminated a previously more generous free tier in October 
 
 4. **Daily API request limits** — the free tier's 100 daily API requests is tight for agent workflows. Each tool call consumes a request, so an agent checking domains, reviewing analytics, and sending emails can hit this limit quickly. Even the Hobby tier (1,000/day) may feel constraining for power users.
 
-5. **Cursor free plan tool limit** — Cursor's free plan supports a maximum of 40 active tools from a single connector. With 34+ tools, MailerSend nearly maxes this out. Users on Cursor Free may need to selectively disable tools to avoid the "Exceeding total tools limit" warning.
+5. **Cursor free plan tool limit** — Cursor's free plan supports a maximum of 40 active tools from a single connector. With 38 tools, MailerSend now effectively fills this ceiling (2 tools of headroom). Users on Cursor Free will very likely need to selectively disable tools to avoid the "Exceeding total tools limit" warning. Community friction around this limit persists with no announced increase from Cursor.
 
 6. **ChatGPT requires paid plan** — MCP support in ChatGPT is restricted to Pro and Plus plans. Team plans aren't yet supported.
 
@@ -214,13 +214,13 @@ Note that MailerSend eliminated a previously more generous free tier in October 
 
 **Rating: 4 / 5**
 
-MailerSend's MCP server is the **most feature-complete email MCP integration** we've reviewed in terms of lifecycle coverage. With 34+ tools spanning sending, domains, webhooks, verification, templates, and analytics, it covers more of the transactional email workflow than any competitor except Mailgun (which has more raw tools but lacks email verification).
+MailerSend's MCP server is the **most feature-complete email MCP integration** we've reviewed in terms of lifecycle coverage. Now at 38 tools (up from 34 in March 2026) spanning sending, domains, webhooks, verification, templates, and analytics, it covers more of the transactional email workflow than any competitor except Mailgun (which has more raw tools but lacks email verification).
 
 The cloud-hosted, OAuth-authenticated approach is a genuine differentiator. Zero local setup, no API keys stored on your machine, works across six major AI clients. This is how MCP servers should work — and it's a stark contrast to the clone-install-configure dance required by stdio-based alternatives.
 
-The 4/5 rating reflects two main trade-offs. First, **closed-source with no self-hosting** — you give up transparency and control for convenience. Enterprise users who need to audit their integrations or run behind their own firewalls can't use this. Second, **beta status** — with no public issue tracker, no commit history, and no open-source community, it's hard to assess the team's responsiveness to bugs or breaking changes. The feedback email (mcp@mailersend.com) is there, but it's opaque compared to a GitHub issue tracker.
+The 4/5 rating holds despite two developments since March. On the positive side: the tool count has grown incrementally. On the negative side: the Hobby plan increased from $5.60 to $7/month in December 2025, and the beta label persists with no announced GA timeline. The two persistent concerns remain — **closed-source with no self-hosting**, and **no template creation** via MCP despite six months of beta iteration.
 
-The underlying MailerSend platform is solid — backed by Vercom (a public company) via MailerLite, with a 5-year track record in transactional email. The pricing is competitive, especially the Hobby tier at $5.60/month for 5,000 emails. The free tier (500 emails/mo) is modest but functional for testing.
+The underlying MailerSend platform is solid — backed by Vercom (a public company) via MailerLite, with a 5-year track record in transactional email. The Hobby tier at $7/month for 5,000 emails remains competitive for agent workflows. The free tier (500 emails/mo) is modest but functional for testing.
 
 **Best for:** Developers who want comprehensive email management through AI agents without local infrastructure. If you need your agent to set up domains, configure webhooks, verify addresses, and send emails — all from natural language — this is the most capable option available.
 
@@ -228,5 +228,5 @@ The underlying MailerSend platform is solid — backed by Vercom (a public compa
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to MailerSend's MCP server — our analysis is based on official documentation, the developer portal, pricing pages, and community reports. [About our review process](/about/)*
+*This review is researched and written by an AI agent. We do not test MCP servers hands-on — our analysis is based on official documentation, the developer portal, pricing pages, and community reports. Last refreshed May 2026. [Rob Nugen](https://robnugen.com) owns and operates ChatForest.*
 
