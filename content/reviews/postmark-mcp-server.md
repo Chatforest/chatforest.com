@@ -5,11 +5,11 @@ description: "Postmark's official MCP server lets AI agents send transactional e
 og_description: "Postmark MCP: send emails, use templates, check delivery stats from AI agents. Official first-party, JavaScript, stdio, MIT license. Rating: 3/5."
 content_type: "Review"
 card_description: "Official first-party MCP server for Postmark's transactional email platform. Send emails, use templates, list templates, and check delivery stats. JavaScript, stdio transport, MIT license, free tier at 100 emails/mo."
-last_refreshed: 2026-03-23
+last_refreshed: 2026-05-04
 category_url: "/categories/email-notification-services/"
 ---
 
-**At a glance:** [GitHub](https://github.com/ActiveCampaign/postmark-mcp) — 37 stars, 12 forks, JavaScript (100%), 22 commits, stdio transport, 4 tools, MIT license, free tier (100 emails/mo). Official first-party from [ActiveCampaign](https://www.activecampaign.com/).
+**At a glance:** [GitHub](https://github.com/ActiveCampaign/postmark-mcp) — 41 stars, 14 forks, JavaScript (100%), 22 commits, stdio transport, 4 tools, MIT license, free tier (100 emails/mo). Official first-party from [ActiveCampaign](https://www.activecampaign.com/).
 
 Postmark's MCP server is a **first-party, officially maintained** integration from Postmark Labs that lets AI agents send transactional emails, dispatch template-based emails, list available templates, and retrieve delivery statistics. You clone the repo, install dependencies, configure your server token, and your AI assistant can start sending emails through Postmark's infrastructure.
 
@@ -104,10 +104,23 @@ The MCP server launched **June 5, 2025** and is labeled as experimental:
 | **Total commits** | 22 |
 | **Contributors** | 3 (jaballer, dandigangi, dependabot[bot]) |
 | **Open issues** | 0 |
-| **Open PRs** | 3 |
+| **Open PRs** | 5 |
+| **Last commit** | November 26, 2025 |
 | **Status** | Experimental (Postmark Labs) |
 
-22 commits over ~10 months with only 3 contributors signals this is a side project within ActiveCampaign, not a heavily invested product. The "experimental" label and "Postmark Labs" branding are explicit about this — use with appropriate expectations.
+22 commits over ~11 months with only 3 contributors signals this is a side project within ActiveCampaign, not a heavily invested product. **The repository has been code-frozen since November 26, 2025** — over 5 months with no new commits despite 5 pending pull requests awaiting review. The "experimental" label and "Postmark Labs" branding are explicit about this — use with appropriate expectations.
+
+## Platform Updates (2026)
+
+While the MCP server itself has been inactive, Postmark has shipped several notable platform-level improvements in 2026:
+
+**Postmark Skills (February 26, 2026)** — ActiveCampaign launched a companion [postmark-skills](https://github.com/ActiveCampaign/postmark-skills) repo (35 stars, MIT) with 5 open-source Agent Skills that teach AI *coding* agents how to write correct Postmark API integrations. These skills cover email sending, inbound processing, templates, webhooks, and best practices. Install via `npx skills add ActiveCampaign/postmark-skills`. This is separate from the MCP server — Skills help agents write code, while MCP lets agents call APIs directly.
+
+**Bulk API (March 5, 2026)** — A new Postmark API endpoint enables sending identical messages to thousands of recipients in a single call, with template variable personalization and up to 50 MB attachments. Content is defined once and distributed across all recipients (unlike the existing Batch API, which supports per-recipient customization). The MCP server does not yet expose this endpoint.
+
+**Python SDK (April 30, 2026)** — Postmark released an official async-first Python SDK (`pip install postmark-python`), supporting Python 3.10+. Previously, Python users relied on the unofficial `postmarker` library. The MCP server remains JavaScript-only.
+
+**postmark.js v4.0.7 (February 18, 2026)** — Maintenance release updating Axios to 1.13.5 and fixing the `getOutboundMessageDetails` API call alignment.
 
 ## Security Warning: Malicious npm Impersonator
 
@@ -173,21 +186,23 @@ Postmark's pricing is straightforward with three paid tiers. The MCP server itse
 
 ## Known Issues & Limitations
 
-1. **Minimal tool surface** — only 4 tools makes this one of the smallest MCP email integrations available. No domain management, no webhook configuration, no suppression list management, no inbound email handling, no bounce processing. Your agent can send emails and check stats — that's essentially it.
+1. **5-month code freeze** — the repository has received no commits since November 26, 2025, with 5 open PRs waiting for review. While Postmark's platform is actively shipping (Bulk API, Python SDK, Skills), the MCP layer itself has stalled.
 
-2. **No npx install** — unlike Mailtrap or Mailgun's MCP servers, Postmark requires cloning the GitHub repo, installing dependencies, and pointing your MCP client to the local path. This is a higher-friction setup that may deter casual users.
+2. **Minimal tool surface** — only 4 tools makes this one of the smallest MCP email integrations available. No domain management, no webhook configuration, no suppression list management, no inbound email handling, no bounce processing. The new Bulk API (March 2026) isn't exposed through the MCP server. Your agent can send emails and check stats — that's essentially it.
 
-3. **Experimental status** — the "Postmark Labs" branding and "experimental" designation mean ActiveCampaign isn't committing to long-term maintenance or stability guarantees. The 22-commit, 3-contributor history reinforces that this is a side project.
+3. **No npx install** — unlike Mailtrap or Mailgun's MCP servers, Postmark requires cloning the GitHub repo, installing dependencies, and pointing your MCP client to the local path. This is a higher-friction setup that may deter casual users.
 
-4. **Extremely limited free tier** — 100 emails/month is the smallest free allocation among comparable services. Even for testing, an agent that sends a few emails per day burns through this in a week.
+4. **Experimental status** — the "Postmark Labs" branding and "experimental" designation mean ActiveCampaign isn't committing to long-term maintenance or stability guarantees. The 22-commit, 3-contributor history (unchanged since June 2025) reinforces that this is a side project.
 
-5. **No Streamable HTTP transport** — stdio only, requiring local Node.js installation and subprocess execution. No remote/hosted deployment option.
+5. **Extremely limited free tier** — 100 emails/month is the smallest free allocation among comparable services. Even for testing, an agent that sends a few emails per day burns through this in a week.
 
-6. **Template management is read-only** — you can list templates but can't create, update, or delete them through the MCP server. Template authoring still requires the Postmark web UI or direct API calls.
+6. **No Streamable HTTP transport** — stdio only, requiring local Node.js installation and subprocess execution. No remote/hosted deployment option.
 
-7. **Single-server scope** — the MCP server authenticates with one server token and operates against one Postmark server. Organizations with multi-server email architectures (separating transactional, marketing, etc.) can't manage them from a single MCP connection.
+7. **Template management is read-only** — you can list templates but can't create, update, or delete them through the MCP server. Template authoring still requires the Postmark web UI or direct API calls.
 
-8. **Malicious impersonator risk** — the September 2025 npm incident means users searching for "postmark-mcp" on npm may encounter impersonators. The official server is only distributed via GitHub clone, not npm — but this isn't immediately obvious.
+8. **Single-server scope** — the MCP server authenticates with one server token and operates against one Postmark server. Organizations with multi-server email architectures (separating transactional, marketing, etc.) can't manage them from a single MCP connection.
+
+9. **Malicious impersonator risk** — the September 2025 npm incident means users searching for "postmark-mcp" on npm may encounter impersonators. The official server is only distributed via GitHub clone, not npm — but this isn't immediately obvious.
 
 ## Bottom Line
 
@@ -195,7 +210,11 @@ Postmark's pricing is straightforward with three paid tiers. The MCP server itse
 
 Postmark's MCP server is a **minimal but legitimate first-party integration** backed by one of the most respected names in transactional email. If you already use Postmark and just want your AI agent to send emails, this gets the job done. The MIT license, clean codebase, and zero open issues suggest solid engineering — there's just very little of it.
 
-The 3/5 rating reflects the **extremely narrow tool surface**. Four tools is barely scratching the surface of what Postmark's API offers, and compared to competitors like MailerSend (38 tools) or Mailgun (70 tools), this feels like a proof of concept rather than a production integration. The experimental status, tiny free tier (100 emails/mo), and repo-clone installation process all point to an early-stage project that hasn't received the investment its parent company's resources could provide.
+The 3/5 rating reflects the **extremely narrow tool surface** and the **5-month code freeze**. Four tools is barely scratching the surface of what Postmark's API offers, and compared to competitors like MailerSend (38 tools) or Mailgun (70 tools), this feels like a proof of concept rather than a production integration. The experimental status, tiny free tier (100 emails/mo), and repo-clone installation process all point to an early-stage project that hasn't received the investment its parent company's resources could provide. The new Bulk API (March 2026) is a useful platform addition but hasn't been wired into the MCP server.
+
+The companion **Postmark Skills** repo (February 2026) is a positive signal — it shows Postmark is thinking about AI-agent workflows — but it teaches agents to write Postmark code rather than calling the API directly through MCP.
+
+PulseMCP: ~13.2K all-time installs, rank #1,685 globally.
 
 The malicious npm impersonator incident is worth flagging not as a knock against Postmark, but as an important cautionary tale about MCP server supply chain security. Always verify you're using the official package from the correct source.
 

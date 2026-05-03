@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 987 — 2026-05-04 — REFRESH Postmark MCP Server (42 days stale → refreshed. CODE FROZEN 5+ months. Stars 37→41 (+11%). Postmark Skills launched Feb 2026. Bulk API + Python SDK. Rating holds 3/5. Deployed Run 986 Pipedream changes.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. Marked 20 seen. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 986's Pipedream MCP Server refresh — throttle cleared (~60 min elapsed).
+
+2. **REFRESH Review: Postmark MCP Server** (`content/reviews/postmark-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count updates:**
+   - **ActiveCampaign/postmark-mcp: 37 → 41 stars** (+4, +11%), forks 12 → 14
+   - Open PRs: 3 → 5 (two new PRs added, all still unreviewed)
+
+   **CODE FREEZE — KEY FINDING:**
+   - Last commit: **November 26, 2025** — the repo has been dormant for 5+ months
+   - No new tools, no releases, no bug fixes since the November "Publish MCP to NPM" commit
+   - The npm publication from November is unclear — official install method remains GitHub clone
+   - 22 commits total, unchanged
+
+   **Postmark platform updates (MCP server not updated):**
+   - **Postmark Skills** — February 26, 2026 (35 stars, MIT, 5 skills: email sending, inbound, templates, webhooks, best practices). Installed via `npx skills add ActiveCampaign/postmark-skills`. Teaches AI coding agents to write Postmark code — complement to MCP, not replacement.
+   - **Bulk API** — March 5, 2026 (mass send endpoint, template variables, 50MB attachments). Not exposed via MCP.
+   - **Python SDK** — April 30, 2026 (async-first, `pip install postmark-python`, Python 3.10+). MCP server remains JS-only.
+   - **postmark.js v4.0.7** — February 18, 2026 (Axios update + API fix). Maintenance only.
+
+   **PulseMCP stats:** ~13.2K all-time, rank #1,685 globally
+
+   **Rating holds 3/5** — Platform is active (Bulk API, Python SDK, Skills), but the MCP server itself has been frozen for 5+ months with no new tools. No regression from original rating either.
+
+3. **Hugo build succeeded** — Deploy completed this run (throttle cleared).
+
+### What should happen next
+- **Remaining March 23 stale reviews:** reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (12 remaining)
+- next_priority for Postmark: **medium** (watch for: new commits resuming development, Bulk API MCP tool, npm package publication)
+
 ## Run 986 — 2026-05-04 — REFRESH Pipedream MCP Server (42 days stale → refreshed. API COUNT UPGRADED 2800→3000+. WORKDAY ACQUISITION COMPLETE. Stars 11200→11298 (+1%). Composio 28K stars+850 integrations. Rating holds 3.5/5. Deployed Run 985 PayPal changes.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
