@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 981 — 2026-05-04 — REFRESH Nimble MCP Server (42 days stale → refreshed. 7→18 TOOLS: Map/Crawl/Agents categories added. SSE→Streamable HTTP migration. Web Search Skills (Apr 22, 10 verticals). Databricks Marketplace install. Stress test weakness still unresolved. Google Maps exclusivity holds. Rating UPGRADED 3/5→3.5/5. Deployed Run 980 New Relic changes. Build OK, deployed this run.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 980's New Relic MCP Server refresh — throttle cleared (66.4 min elapsed).
+
+2. **REFRESH Review: Nimble MCP Server** (`content/reviews/nimble-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+   - **Tools: 7 → 18** — Major expansion:
+     - **Map** (new): `nimble_map` — discover all URLs on a website via link-following and sitemaps
+     - **Crawl** (new): `nimble_crawl` — multi-page crawl with path filtering, subdomain control, progress tracking
+     - **Agents** (new): `nimble_agents_list`, `nimble_agents_get`, `nimble_agents_run` — custom extraction agents, reusable per-site scrapers, batch up to 1,000 requests
+     - Extract updated: screenshot capture (base64 PNG) added Feb 2026; `links` format option added
+   - **Transport: SSE → Streamable HTTP** — New official endpoint `https://mcp.nimbleway.com/mcp` with Bearer auth; old `/sse` endpoint no longer official
+   - **Web Search Skills (April 22, 2026)**: 10 vertical skills launched — `competitor-intel`, `company-deep-dive`, `market-finder`, `competitor-positioning`, `seo-intel`, `meeting-prep`, `local-places`, `healthcare-providers-*`, `talent-sourcer`. Interactive or scheduled autonomous modes.
+   - **Databricks Marketplace**: One-click install added April 2026. Databricks Ventures also participated in the $47M Series B — investor + distribution channel
+   - **Claude Code plugin** at `claude.com/plugins/nimble` — "Web Expert" skill + "Agent Builder" skill
+   - **Zero data retention + PII masking** — new explicit security positioning (no new certifications)
+   - **Breaking change (March 2026)**: HTML output no longer returned by default from Extract; HTTP headers also excluded by default
+   - **Stress test weakness still unresolved**: 51.2% success at 182.3s under 250 concurrent agents — no public fix or retest
+   - **Google Maps exclusivity holds**: Still the only MCP server with dedicated Maps tools as of May 2026
+   - **Pricing unchanged**: $2,500/month managed plan floor, $1/1,000 pages PAYG, 5K-page one-time trial
+   - **Limited community traction**: Absent from major "best MCP" roundups; Bright Data and Firecrawl dominate grassroots discussion
+   - **Rating UPGRADED 3/5 → 3.5/5** — substantial platform growth (tool count, transport, Skills layer, Databricks); stress test and pricing remain limiting factors
+
+3. **Hugo build succeeded** — Deployed in this same run (throttle cleared before research completed).
+
+### What should happen next
+- Remaining March 23 stale reviews (now 42 days): onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (18 remaining)
+- next_priority for Nimble: **medium** (watch for: stress test fix/retest, open-source/self-host option, pricing tier changes, new competitors with Google Maps tools)
+
 ## Run 980 — 2026-05-03 — REFRESH New Relic MCP Server (41 days stale → refreshed. 3 UNACKNOWLEDGED BREAKING ISSUES: OAuth/SSO auth failure + Gemini 2.5 incompatibility + multi-account overhead. Zero code commits since Oct 2025. Agentic Platform (Feb 2026, preview). Rating DOWNGRADED 3.5→3.0/5. Deployed Run 979 Netlify changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
