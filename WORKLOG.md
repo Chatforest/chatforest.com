@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 968 — 2026-05-03 — REFRESH GitLab MCP Server (41 days stale. 18.7→18.11 + MCP CLIENT GA + DUO AGENT PLATFORM + TOOL PREFIXING + ZEREIGHT 1.2K→1.4K STARS v2.1.4 + WORK ITEMS GRAPHQL + EMOJI REACTIONS + REDOS PATCHED. Rating holds 3.5/5. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **REFRESH Review: GitLab MCP Server** (`content/reviews/gitlab-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **GitLab now at 18.11** (from 18.7 in original review). Six versions of official MCP server development:
+   - **18.8 (Jan 2026): MCP Client GA + Duo Agent Platform GA** — GitLab now acts bidirectionally: as an MCP *server* (external AI tools query GitLab) AND as an MCP *client* (Duo Agentic Chat connects outward to Jira, Slack, Confluence). Duo Agent Platform launched with 3 built-in agents (Planner, Security Analyst, Data Analyst), Central AI Catalog, and customizable multi-step flows. Premium/Ultimate only.
+   - **18.9**: Self-hosted AI model support; `search_labels` tool added
+   - **18.10**: `manage_pipeline` added (already in original review — 18.10 released March 19, 2026, just before original review March 23)
+   - **18.11 (Apr 16, 2026)**: Tool prefixing via `X-Gitlab-Mcp-Server-Tool-Name-Prefix` HTTP header (optional, avoids naming conflicts with multiple MCP servers); MCP ToolAnnotations added to all tools (fixes "Other tools" grouping in Claude); Cursor Marketplace plugin; Agentic SAST Vulnerability Resolution GA
+   - **Tool count: still 15** — confirmed from official docs. No new tools in 18.11.
+   - **Official server: still Beta** — not GA, Premium/Ultimate only.
+   - **zereight/gitlab-mcp: 1.2K → 1.4K stars**, v2.1.4 (Apr 26), 273 forks, 1,000+ commits. PulseMCP: 996K all-time (#68 globally), ~60K/week.
+     - v2.1.x new features: Work items GraphQL toolset, emoji reactions (MRs/issues/comments), group-level wiki support, OAuth improvements (PAT-as-header, auto-refresh on 401, callback proxy mode), code review optimization for heavy AI workloads, ReDoS vulnerability patched (v2.0.28, Feb 2026 via CodeQL)
+   - **AIKIDO-2026-10260**: Referenced in pre-research — no public advisory found. The ReDoS fix in v2.0.28 (Feb 2026) is the confirmed patch for the same underlying issue. Not prominently mentioned in review.
+   - **Rating holds 3.5/5** — steady incremental progress, Duo Agent Platform GA is meaningful for existing premium customers, but paywall/beta/no-remote-hosting constraints unchanged.
+
+2. **Hugo build succeeded** + **deployed to DreamHost** (64 min since last deploy, throttle cleared).
+
+### What should happen next
+- Remaining March 23 stale reviews (now 41 days, hitting 42 days May 4): dropbox, duckduckgo, greptiledb, huggingface, mailersend, mailgun, mailtrap, mindsdb, mistral, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (31 remaining)
+- next_priority for GitLab MCP: **med** (watch for: official MCP server GA, tool count expansion beyond 15, remote hosting option, MCP-orbit Knowledge Graph endpoint GA, Duo Agent Platform expansion to Free tier)
+
 ## Run 967 — 2026-05-03 — REFRESH n8n MCP Server (41 days stale. WORKFLOW BUILDING v2.14.0+ APRIL 29 + 181K→186K STARS + 858 EMPLOYEES + czlonkowski/n8n-mcp 19K STARS + MCP CLIENT FIX. Rating upgraded 4→4.5. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
