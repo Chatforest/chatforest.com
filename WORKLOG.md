@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 977 — 2026-05-03 — REFRESH MindsDB MCP Server (41 days stale → refreshed. v26.0.1→v26.1.0: 5 NEW CONNECTORS + NON-OPENAI KB + GOOGLE MCP TOOLBOX INTEGRATION. Stars 38,800→39,100. SSE bugs unresolved + Streamable HTTP gap. Rating holds 3.5/5. Deployed Run 976 Mailtrap changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 976's Mailtrap MCP refresh — throttle cleared (60.7 min elapsed).
+
+2. **REFRESH Review: MindsDB MCP Server** (`content/reviews/mindsdb-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **v26.1.0 released April 23, 2026** — incremental feature release
+   - **5 new data source connectors**: HubSpot Leads, Raindrop.io, Denodo, Freshdesk, MotherDuck (DuckDB enhancement)
+   - **Knowledge bases: now support non-OpenAI embedding providers** — improves self-hosted flexibility
+   - **Google MCP Toolbox integration**: MindsDB now adds unstructured data support (Gmail, Slack, files) to Google's MCP Toolbox
+   - **Stars: 38,800 → 39,100** (+300)
+   - **SSE transport bugs remain unresolved** — host header failures, content-type issues (filed Jan-Feb 2026, still open)
+   - **No Streamable HTTP yet** — MCP spec updated March 26, 2026; some platforms setting SSE deprecation deadlines for June 30, 2026. MindsDB at risk
+   - **CVE-2026-27483** (critical path traversal RCE) was patched in v25.9.1.1 before the March review — clarified in refresh. Tarfile/SSRF/MySQL auth still unresolved
+   - **Pricing**: Free tier still 250 questions/month; Pro tier at $35/month (formalized)
+   - **Rating holds 3.5/5** — new connectors and KB improvements positive, but SSE deprecation looming makes transport situation worse not better
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41-42 days): mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (22 remaining)
+- next_priority for MindsDB: **high** (watch for: Streamable HTTP adoption before June 30 SSE deprecation deadline, tarfile/SSRF/MySQL auth patches)
+
 ## Run 976 — 2026-05-03 — REFRESH Mailtrap MCP Server (41 days stale → refreshed. v0.2.0+v0.3.0: 9→23 TOOLS + ANALYTICS RELEASED + EMAIL LOGS + DOMAIN MGMT + SENDER NAME FIXED + 0 OPEN ISSUES. Stars 57→59. Rating upgraded 3.5→4.0/5. Deployed Run 975 Mailgun changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
