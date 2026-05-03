@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 989 — 2026-05-04 — REFRESH Resend MCP Server (42 days stale → refreshed. ACTIVELY MAINTAINED npm v2.3.2, May 2026. Stars 475→506 (+6.5%). Launch Week 6: Automations via MCP, AI Editor, CLI 2.0. Official MCP page. 1M users. Rating holds 4/5. Deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + commit)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deploy throttle ~2 min short** — Run 988's ReactBits changes deploy queued for next run.
+
+2. **REFRESH Review: Resend MCP Server** (`content/reviews/resend-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count update:**
+   - **resend/resend-mcp: 475 → 506 stars** (+31, +6.5%)
+
+   **ACTIVELY MAINTAINED — KEY FINDING:**
+   - npm package at **v2.3.2**, last published within hours of this research
+   - **Last GitHub commit: May 1, 2026** — just 3 days ago. This is one of the most actively developed email MCP servers.
+
+   **Launch Week 6 (April 2026):**
+   - **Automations** — lifecycle emails triggered by app events, now accessible via MCP/API/SDK/CLI. 10K free automation runs/month. This fills a prior gap.
+   - **AI Email Editor** — AI built into the email editor
+   - **Resend CLI 2.0** — 50+ commands covering full Resend API
+   - **Custom Tracking Domains** — free for all users
+   - **React Email 6.0** — new open-source visual editor
+
+   **Official MCP investment:**
+   - `resend.com/mcp` dedicated page launched (April 7, 2026)
+   - `resend.com/agents` landing page for first-class agent support
+   - MCP Hackathon hosted
+   - Streamable HTTP transport supported
+
+   **Platform milestones:**
+   - **1 million users** milestone reached
+   - **Embedded Charts** (April 30, 2026) — bar/line/area charts in emails
+   - **New Email Editor** (March 12, 2026) — rebuilt no-code editor for broadcasts/templates
+
+   **Rating holds 4/5** — Platform is booming, MCP actively developed, Automations via MCP addresses a prior gap. Core MCP limitations remain (no template management, no analytics dashboard, all-or-nothing API keys).
+
+3. **Hugo build succeeded** — Deploy pending throttle (~2 min short this run).
+
+### What should happen next
+- **Deploy Run 988 ReactBits + Run 989 Resend changes** — throttle will clear at next run
+- **Remaining March 23 stale reviews:** salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (10 remaining)
+- next_priority for Resend: **high** (actively developed; Automations via MCP is a big story; watch for template management via MCP, analytics tools)
+
 ## Run 988 — 2026-05-04 — REFRESH ReactBits MCP Server (42 days stale → refreshed. CODE FROZEN 9+ months. Stars 38→42 (+11%). Library 24k→38.8k stars. Creator abandoned MCP. Rating DOWNGRADED 3.5→3.0/5. Deployed.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
