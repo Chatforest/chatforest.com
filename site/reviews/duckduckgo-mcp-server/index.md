@@ -1,11 +1,15 @@
 # The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)
 
-> DuckDuckGo MCP server gives AI agents free web search with no API key. 913 GitHub stars, 2 tools, Python, MIT license.
+> DuckDuckGo MCP server gives AI agents free web search with no API key. 1.1K GitHub stars, 2 tools, Python, MIT license.
 
+
+*Refreshed May 3, 2026 — v0.3.0 released April 26, 2026. Stars grew 913 → 1.1K. Chrome 131 TLS impersonation added for Cloudflare bypass. PulseMCP traffic reached 609K all-time. Rating holds 3.5/5.*
+
+---
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** 913 GitHub stars · 152 forks · v0.1.2 (March 8, 2026) · Python · MIT license · 2 tools · ~473K all-time PulseMCP visitors · #75 globally · stdio/SSE/Streamable HTTP transports
+**At a glance:** 1.1K GitHub stars · 159 forks · v0.3.0 (April 26, 2026) · Python · MIT license · 2 tools · ~609K all-time PulseMCP visitors · #89 globally · stdio/SSE/Streamable HTTP transports
 
 Every agent needs web search, but not every project needs a paid API. The [DuckDuckGo MCP server](https://github.com/nickclyde/duckduckgo-mcp-server) by Nick Clyde is the most popular free search MCP server — no API key, no account, no credit card. Install it and search.
 
@@ -125,7 +129,18 @@ uvx duckduckgo-mcp-server --transport sse
 uvx duckduckgo-mcp-server --transport streamable-http
 ```
 
-The SSE and Streamable HTTP transports are useful for remote deployments or when you want multiple clients to share a single search server instance.
+The SSE and Streamable HTTP transports are useful for remote deployments or when you want multiple clients to share a single search server instance. As of v0.3.0, `--host` and `--port` flags let you customize the binding address (defaults to `127.0.0.1:8000`).
+
+### Browser Backend (v0.3.0+)
+
+For content fetching that bypasses Cloudflare bot detection:
+
+```bash
+pip install "duckduckgo-mcp-server[browser]"
+uvx "duckduckgo-mcp-server[browser]" --fetch-backend curl
+```
+
+Options are `httpx` (default, no extra deps), `curl` (requires `curl_cffi`, impersonates Chrome 131), and `auto` (tries curl first, falls back to httpx).
 
 ## The Ecosystem: Many DDG MCP Servers
 
@@ -133,8 +148,8 @@ DuckDuckGo's free, no-key nature has attracted many MCP server implementations. 
 
 | Server | Stars | Language | Tools | Distinguishing Feature |
 |--------|-------|----------|-------|----------------------|
-| **[nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)** | 913 | Python | 2 | Most popular, best maintained, 3 transports |
-| **[zhsama/duckduckgo-mcp-server](https://github.com/zhsama/duckduckgo-mcp-server)** | 71 | TypeScript | 1 | Node.js alternative, 15K req/month cap |
+| **[nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)** | 1.1K | Python | 2 | Most popular, best maintained, 3 transports, Chrome TLS impersonation |
+| **[zhsama/duckduckgo-mcp-server](https://github.com/zhsama/duckduckgo-mcp-server)** | 74 | TypeScript | 1 | Node.js alternative, 15K req/month cap |
 | **[gianlucamazza/mcp-duckduckgo](https://github.com/gianlucamazza/mcp-duckduckgo)** | 13 | Python | 3 | Adds related search suggestions |
 | **[Nipurn123/duckduckgo-mcp](https://github.com/Nipurn123/duckduckgo-mcp)** | 3 | JavaScript | 3 | search_and_crawl + research with relevance ranking |
 | **[misanthropic-ai/ddg-mcp](https://github.com/misanthropic-ai/ddg-mcp)** | — | — | — | Lightweight alternative |
@@ -172,7 +187,8 @@ This is the question most people are actually asking. Here's the honest comparis
 - **Content fetching included.** The `fetch_content` tool is a genuinely useful addition — many search MCP servers only return URLs. Being able to search and then read a result in the same server keeps the workflow clean.
 - **SafeSearch lock.** Admin-controlled content filtering that agents can't override is the right security design.
 - **Three transports.** stdio, SSE, and Streamable HTTP cover all deployment scenarios.
-- **Active maintenance.** v0.1.2 released March 2026, with the underlying `duckduckgo-search` library actively maintained.
+- **Active maintenance.** v0.3.0 released April 2026. The release cadence has picked up meaningfully — three major versions shipped within six weeks of launch.
+- **Cloudflare bypass (v0.3.0).** The new `curl_cffi` backend impersonates a Chrome 131 TLS handshake, passing through Cloudflare Bot Management. Enable with `pip install duckduckgo-mcp-server[browser]` and `--fetch-backend curl` or `--fetch-backend auto`. This directly addresses the most common content-fetch failure mode.
 
 ## What's Not
 
@@ -188,7 +204,7 @@ The DuckDuckGo MCP server is the best free search option for AI agents. It remov
 
 But "free" means "scraping," and scraping means fragility. If search is critical to your agent's function, the $5/1,000-query cost of Brave Search is cheap insurance for a real API with a real SLA. If search is nice-to-have — documentation lookups, fact checks, occasional research — DuckDuckGo MCP is the obvious choice.
 
-913 stars and the #75 ranking on PulseMCP say what words can't: a lot of people need free search, and this server delivers it.
+1.1K stars and 609K all-time PulseMCP visitors say what words can't: a lot of people need free search, and this server delivers it. v0.3.0's Chrome TLS impersonation is a meaningful step toward reliability — but the fundamental architecture is still scraping, not an API.
 
 **Rating: 3.5 out of 5**
 
