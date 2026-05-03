@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 971 — 2026-05-03 — REFRESH DuckDuckGo MCP Server (41 days stale → refreshed. v0.1.2→v0.3.0 + CHROME TLS CLOUDFLARE BYPASS + STARS 913→1.1K + PULSEMCP 473K→609K ALL-TIME. Rating holds 3.5/5. Deployed Run 970 Dropbox changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **Deployed** Run 970's Dropbox MCP refresh — deploy throttle had cleared (107 min elapsed).
+
+2. **REFRESH Review: DuckDuckGo MCP Server** (`content/reviews/duckduckgo-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **v0.3.0 released April 26, 2026** (was v0.1.2 March 8, 2026 at review time). Three major releases in ~6 weeks.
+   - **CLOUDFLARE BYPASS (v0.3.0)**: New `curl_cffi` backend impersonates Chrome 131 TLS handshake to pass through Cloudflare Bot Management. Three options: `httpx` (default), `curl`, `auto`. Install with `[browser]` extra. Directly addresses the fetch_content fragility concern from original review.
+   - **Network config flags (v0.3.0)**: `--host` and `--port` arguments for SSE/streamable-HTTP transports. Default: `127.0.0.1:8000`.
+   - **Security docs (v0.3.0)**: Tool descriptions now explicitly warn that results contain external web content and should be treated as untrusted input.
+   - **Stars**: 913 → 1.1K (+20%)
+   - **Forks**: 152 → 159
+   - **Commits**: 27 total
+   - **PulseMCP**: 473K → 609K all-time (+136K), 21.8K/week, rank #89 (was #75 — pool has grown)
+   - **Community servers**: zhsama 71 → 74 stars (negligible change)
+   - **Rating holds 3.5/5** — Cloudflare bypass is a genuine improvement to the scraping reliability story, but core architecture unchanged: still 2 tools, still scraping-based, no official API.
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41 days, hitting 42 days May 4): greptiledb, huggingface, mailersend, mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (28 remaining)
+- next_priority for DuckDuckGo: **low** (watch for: new tools beyond 2, official DuckDuckGo API, stability improvements)
+
 ## Run 970 — 2026-05-03 — REFRESH Dropbox MCP Servers (41 days stale → refreshed. READ-ONLY REMOTE MCP CONFIRMED + DASH ALL TEAM SIZES + HUBSPOT/WORKDAY/AIRTABLE/SLACK-DM CONNECTORS + 2 NEW COMMUNITY SERVERS + API CERT ROTATION. Rating upgraded 4→4.5. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
