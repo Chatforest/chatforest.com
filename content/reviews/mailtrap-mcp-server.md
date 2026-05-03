@@ -2,14 +2,16 @@
 title: "Mailtrap MCP Server — Send Transactional Emails From Your AI Agent"
 date: 2026-03-23T23:30:00+09:00
 description: "Mailtrap's official MCP server lets AI agents send transactional emails, manage templates, test in sandbox, and track delivery analytics — all through natural language prompts in your IDE."
-og_description: "Mailtrap MCP: send emails, manage templates, test in sandbox, and track analytics from AI agents. Official first-party, TypeScript, stdio, free tier. Rating: 3.5/5."
+og_description: "Mailtrap MCP: send emails, manage templates, test in sandbox, and track analytics from AI agents. Official first-party, TypeScript, stdio, free tier. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Official first-party MCP server for Mailtrap's email delivery platform. Send transactional emails, manage templates, test in sandbox, and query delivery analytics. TypeScript, stdio transport, npx install, free tier at 4,000 emails/mo."
-last_refreshed: 2026-03-23
+card_description: "Official first-party MCP server for Mailtrap's email delivery platform. 23 tools covering email sending, sandbox testing, domain management, email logs, templates, and analytics. TypeScript, stdio transport, npx install, free tier at 4,000 emails/mo."
+last_refreshed: 2026-05-03
 category_url: "/categories/email-notification-services/"
 ---
 
-**At a glance:** [GitHub](https://github.com/mailtrap/mailtrap-mcp) — 57 stars, 14 forks, TypeScript, 251 commits, stdio transport, 9 tools, free tier (4,000 emails/mo). Official first-party from [Railsware](https://railsware.com/).
+**At a glance:** [GitHub](https://github.com/mailtrap/mailtrap-mcp) — 59 stars, 13 forks, TypeScript, 278 commits, stdio transport, 23 tools, free tier (4,000 emails/mo). Official first-party from [Railsware](https://railsware.com/).
+
+> **Refreshed May 3, 2026:** v0.2.0 (March 30) and v0.3.0 (March 31) released after this review was written. Tool count nearly tripled (9 → 23), analytics launched, domain management added, sender name limitation fixed. Rating upgraded 3.5 → 4.0.
 
 Mailtrap's MCP server is a **first-party, officially maintained** integration that lets AI agents send transactional emails, manage email templates, test messages in a sandbox environment, and query delivery analytics — all without writing code. You install it via npx, configure your API token, and your AI assistant can immediately start sending emails through Mailtrap's infrastructure.
 
@@ -17,21 +19,50 @@ Mailtrap's MCP server is a **first-party, officially maintained** integration th
 
 ## What It Does
 
-The MCP server exposes 9 tools across four categories: **email sending**, **sandbox testing**, **template management**, and **analytics**.
+The MCP server exposes **23 tools** across six categories: **email sending**, **sandbox testing**, **sandbox management**, **email logs**, **domain management**, **template management**, and **analytics**.
 
 ### Email Sending
 
 | Tool | Description |
 |------|-------------|
-| **send-email** | Send transactional emails with HTML or plain text, CC/BCC support |
+| **send-email** | Send transactional emails with HTML or plain text, CC/BCC support, display names on all address fields |
+| **send-sandbox-email** | Send test emails to an isolated sandbox inbox |
 
-### Sandbox Testing
+### Sandbox Testing & Inspection
 
 | Tool | Description |
 |------|-------------|
-| **send-sandbox-email** | Send test emails to an isolated sandbox inbox |
 | **get-sandbox-messages** | Retrieve paginated or searched messages from sandbox |
-| **show-sandbox-email-message** | Display full message details including HTML/text bodies |
+| **show-sandbox-email-message** | Display full message details including HTML/text bodies, spam score, and HTML client compatibility analysis |
+
+### Sandbox Project & Inbox Management *(new in v0.2.0)*
+
+| Tool | Description |
+|------|-------------|
+| **list-sandbox-projects** | List all sandbox projects |
+| **create-sandbox-project** | Create a new sandbox project |
+| **delete-sandbox-project** | Remove a sandbox project |
+| **create-sandbox-inbox** | Create a new inbox within a sandbox project |
+| **get-sandbox-inbox** | Retrieve sandbox inbox details |
+| **update-sandbox-inbox** | Modify inbox settings |
+| **delete-sandbox-inbox** | Remove a sandbox inbox |
+| **clean-sandbox-inbox** | Clear all messages from a sandbox inbox |
+
+### Email Logs *(new in v0.2.0)*
+
+| Tool | Description |
+|------|-------------|
+| **list-email-logs** | Query delivery history across your sending account |
+| **get-email-log-message** | Retrieve full details for a specific logged message |
+
+### Sending Domains *(new in v0.2.0)*
+
+| Tool | Description |
+|------|-------------|
+| **list-sending-domains** | List all verified sending domains |
+| **get-sending-domain** | Retrieve domain configuration and DNS verification status |
+| **create-sending-domain** | Register a new sending domain |
+| **delete-sending-domain** | Remove a sending domain |
 
 ### Template Management
 
@@ -48,7 +79,7 @@ The MCP server exposes 9 tools across four categories: **email sending**, **sand
 |------|-------------|
 | **get-sending-stats** | Query delivery metrics (bounce, open, click, spam rates) across configurable date ranges with optional segmentation by domain, category, ESP, or temporal breakdown |
 
-The analytics tool is currently unreleased (listed in the CHANGELOG under "Unreleased") — it requires `MAILTRAP_ACCOUNT_ID` and adds delivery metrics analysis that the current stable release doesn't include.
+The analytics tool launched in v0.2.0 (March 30, 2026) — it was listed as "Unreleased" in the original March 2026 review.
 
 ## Transport & Authentication
 
@@ -97,9 +128,10 @@ The MCP server launched **April 4, 2025** (v0.0.1) and has been actively maintai
 | **0.0.4** | October 2025 | MCPB (bundled executable) support |
 | **0.0.5** | November 2025 | Tool annotations |
 | **0.1.0** | December 2025 | Sandbox email retrieval, dependency security updates |
-| **Unreleased** | — | `get-sending-stats` analytics tool |
+| **0.2.0** | March 30, 2026 | **+14 tools**: email logs, domain management, sandbox project/inbox management, get-sending-stats analytics (released). Enhanced sandbox inspection with spam scoring + HTML compatibility. Made DEFAULT_FROM_EMAIL and MAILTRAP_TEST_INBOX_ID optional. |
+| **0.3.0** | March 31, 2026 | Display names on from/to/cc/bcc fields. Security updates. |
 
-251 commits across nearly a year of development shows sustained investment. The repository has only 1 open issue as of March 2026 — unusually clean for an actively-used project.
+278 commits across over a year of development shows sustained investment. The repository has **0 open issues** as of May 2026 — unusually clean maintenance, with Issue #66 (sender name limitation) resolved in v0.3.0.
 
 ## Pricing
 
@@ -133,56 +165,60 @@ Business plan and above includes a **dedicated IP with auto warm-up**.
 
 | Feature | Mailtrap MCP | Mailgun MCP | Resend MCP | Postmark MCP |
 |---------|-------------|-------------|------------|--------------|
-| **MCP tools** | 9 | 70 | 30+ | Varies |
+| **MCP tools** | 23 | 85 (v2.0.0) | 30+ | Varies |
 | **First-party** | Yes (official) | Yes (official) | Yes (official) | Community |
 | **Transport** | stdio | stdio | stdio | stdio |
-| **Language** | TypeScript | JavaScript | TypeScript | Varies |
+| **Language** | TypeScript | TypeScript (v2.0.0) | TypeScript | Varies |
 | **License** | Not specified | Apache 2.0 | MIT | Varies |
-| **Sandbox testing** | Yes (4 tools) | No | No | No |
+| **Sandbox testing** | Yes (10 tools) | No | No | No |
 | **Template management** | Yes (4 tools) | Yes (8 tools) | Yes | Limited |
-| **Analytics** | Yes (unreleased) | Yes (5 tools) | Yes | Yes |
-| **Deletion safety** | No (delete exposed) | Yes (no delete ops) | No | Varies |
+| **Analytics** | Yes (released v0.2.0) | Yes (5 tools) | Yes | Yes |
+| **Email logs** | Yes (2 tools) | Yes | Limited | Yes |
+| **Domain management** | Yes (4 tools) | Yes (many) | Limited | Limited |
+| **Deletion safety** | Mixed (some delete ops) | Yes (no delete ops) | No | Varies |
 | **Free emails/mo** | 4,000 | 100/day (~3,000) | 3,000 | 100 |
 | **Paid from** | $15/mo | $35/mo | $20/mo | $15/mo |
 | **Deliverability score** | 91/100 | — | — | — |
 
 **Key differentiators:**
 
-- **vs Mailgun:** Mailgun has far more tools (70 vs 9) with deeper API coverage including routes, webhooks, IP management, mailing lists, and suppressions. But Mailtrap has sandbox testing built into the MCP — critical for developer workflows where you want to test email output before sending live. Mailgun also has a thoughtful no-delete safety design that Mailtrap lacks. Mailtrap wins on free tier (4,000 vs ~3,000 emails/mo) and platform polish.
+- **vs Mailgun:** Mailgun's v2.0.0 TypeScript rewrite brings 85 tools with deep API coverage — routes, webhooks, IP management, mailing lists, suppressions, and more. Mailtrap's 23 tools don't approach that breadth. But Mailtrap has sandbox testing infrastructure built into the MCP (10 tools for project/inbox management plus email inspection with spam scoring) — critical for developer workflows where you want to test email output in isolation before sending live. Mailgun also maintains a thoughtful no-delete safety design. Mailtrap wins on free tier volume (4,000 vs ~3,000 emails/mo) and platform maturity.
 
-- **vs Resend:** Resend targets modern developer workflows with React Email support and clean DX. More tools (30+) and a slightly more generous free tier pricing model ($20/mo vs $15/mo paid entry, but 50,000 emails on Resend's Pro plan vs 10,000 on Mailtrap's Basic). Mailtrap's advantage is the sandbox testing workflow and the platform maturity (150K+ users, 91/100 deliverability score).
+- **vs Resend:** Resend targets modern developer workflows with React Email support and clean DX. Mailtrap now has comparable tool breadth in the areas that matter most for sending workflows, plus the sandbox testing advantage. Mailtrap's 91/100 deliverability score and 150K+ user base signal production maturity that newer services can't yet match.
 
 - **vs Postmark:** Postmark MCP servers are community-maintained, not official. Mailtrap's first-party support means guaranteed compatibility with platform updates and direct access to the full API feature set.
 
 ## Known Issues & Limitations
 
-1. **Small tool surface** — only 9 tools (with analytics still unreleased) vs Mailgun's 70. The MCP server covers sending, templates, sandbox, and basic analytics — but doesn't expose Mailtrap's full API capabilities like domain management, webhooks, suppressions, or user management.
+1. **No license specified** — the GitHub repository still doesn't declare a license file, which creates legal ambiguity for organizations that require explicit OSS licensing. This is unusual for an official product and worth clarifying before enterprise adoption.
 
-2. **No license specified** — the GitHub repository doesn't declare a license file, which creates legal ambiguity for organizations that require explicit OSS licensing. This is unusual for an official product and worth clarifying before enterprise adoption.
+2. **Template-only content management** — you can manage email templates but can't compose complex HTML emails with inline styling or attachments through the MCP tools. The `send-email` tool supports HTML content but the template tools are basic CRUD.
 
-3. **Template-only content management** — you can manage email templates but can't compose complex HTML emails with inline styling or attachments through the MCP tools. The `send-email` tool supports HTML content but the template tools are basic CRUD.
+3. **Sandbox limits on free tier** — only 50 test emails/month on the free sandbox plan. For AI agents that iterate on email content through trial and error, this burns through quickly.
 
-4. **Sandbox limits on free tier** — only 50 test emails/month on the free sandbox plan. For AI agents that iterate on email content through trial and error, this burns through quickly.
+4. **No Streamable HTTP transport** — stdio only, which means no remote/hosted deployment. Each client needs Node.js locally and runs the MCP server as a subprocess.
 
-5. **No Streamable HTTP transport** — stdio only, which means no remote/hosted deployment. Each client needs Node.js locally and runs the MCP server as a subprocess.
+5. **Free tier daily cap** — the 150 emails/day limit on the free Email API plan means even within the 4,000/month allowance, your agent can't send more than ~6 emails per hour consistently. Burst sending for batch operations hits this wall.
 
-6. **Free tier daily cap** — the 150 emails/day limit on the free Email API plan means even within the 4,000/month allowance, your agent can't send more than ~6 emails per hour consistently. Burst sending for batch operations hits this wall.
+6. **Single-account scope** — the MCP server authenticates with one API token and operates against one Mailtrap account. No multi-tenant support for agents managing emails across different clients or organizations.
 
-7. **Sender name limitation** — [Issue #66](https://github.com/mailtrap/mailtrap-mcp/issues/66) (open, March 2026) reports that `send-email` doesn't support changing the sender name, only the sender address. This limits personalization for multi-brand or multi-sender workflows.
+7. **No webhook or suppression management** — unlike Mailgun's 85-tool suite, Mailtrap's MCP doesn't expose webhook configuration or suppression list management. These still require direct API calls or dashboard access.
 
-8. **Single-account scope** — the MCP server authenticates with one API token and operates against one Mailtrap account. No multi-tenant support for agents managing emails across different clients or organizations.
+*~~Sender name limitation (Issue #66)~~ — Fixed in v0.3.0. Display names on from/to/cc/bcc now supported.*
 
 ## Bottom Line
 
-**Rating: 3.5 / 5**
+**Rating: 4.0 / 5**
 
-Mailtrap's MCP server is a **clean, well-maintained first-party integration** that does exactly what email-capable AI agents need most: send transactional emails reliably. The sandbox testing workflow is a genuine differentiator — being able to test email output in an isolated inbox before sending live is exactly the kind of safety net you want when an AI agent is composing and sending emails autonomously. The 91/100 deliverability score, automatic DNS authentication, and DKIM key rotation mean emails actually reach inboxes.
+Mailtrap's MCP server **grew from 9 tools to 23 in a single week** (March 30–31, 2026), and the expansion is substantial. The v0.2.0 release finally shipped the analytics tool that had been sitting unreleased, added email logs for delivery history queries, added domain management for DNS-level configuration, and expanded sandbox tooling to include full project and inbox lifecycle management. v0.3.0 immediately followed with display name support on all address fields — closing the last notable open issue. Zero open issues and 278 commits signal a team actively responding to user feedback.
 
-The 3.5 rating reflects two realities. First, the **tool surface is narrow** — 9 tools compared to Mailgun's 70 means your agent can send emails and manage templates, but can't manage domains, configure webhooks, handle suppressions, or do any of the operational email infrastructure work. Second, the **analytics tool is still unreleased**, which means the MCP server is currently sending-focused without the ability to monitor what happens after emails are sent.
+The **sandbox testing infrastructure** remains Mailtrap's clearest differentiator. No other email MCP server gives you 10 dedicated sandbox tools — project creation, inbox management, spam scoring, HTML client compatibility analysis — all through natural language prompts. For agents that compose personalized emails where you want to test before sending live, this workflow (create sandbox → send test → inspect spam score + HTML compatibility → send production) has no peer in the MCP ecosystem.
 
-**Best for:** Developers who want their AI agents to send transactional emails reliably with a testing safety net. The sandbox workflow (send test → inspect → send live) is ideal for agents that compose personalized emails where you want human review before production delivery.
+What keeps this at 4.0 rather than 4.5: no Streamable HTTP transport (stdio only), no license declared (unusual for an official product), no webhook or suppression management, and the free sandbox plan's 50-test-email ceiling is a real constraint for AI agents that iterate through many drafts. The tool surface is still narrower than Mailgun's 85 tools for power users who need deep API coverage.
 
-**Look elsewhere if:** You need comprehensive email infrastructure management through MCP (try [Mailgun](/reviews/mailgun-mcp-server/)), want a modern developer-first email API (try Resend), or need marketing automation and campaign management (Mailtrap's MCP doesn't cover campaigns).
+**Best for:** Developers who want their AI agents to send transactional emails reliably with a full testing safety net. The sandbox workflow is ideal for agents composing personalized or high-stakes emails where you want to verify rendering and spam risk before production delivery.
+
+**Look elsewhere if:** You need comprehensive email infrastructure management through MCP (try [Mailgun](/reviews/mailgun-mcp-server/) — 85 tools, no-delete safety design, routes/webhooks/IP management), want a modern developer-first email API with React Email support (try Resend), or need marketing automation and campaign management (Mailtrap's MCP doesn't cover campaigns).
 
 ---
 
