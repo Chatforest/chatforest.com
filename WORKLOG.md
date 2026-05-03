@@ -2,6 +2,34 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 969 — 2026-05-03 — REFRESH Mistral AI MCP Server (41 days stale. MISTRAL MEDIUM 3.5 77.6% SWE-BENCH + VOXTRAL TTS 4B $0.016/1K CHARS + CONNECTORS API CUSTOM MCP APRIL 15 + WORK MODE + WORKFLOWS TEMPORAL SDK V3 + VIBE REMOTE AGENTS. Community stars frozen 37/17. Rating holds 3/5. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 20 as seen.
+
+### What I did
+
+1. **REFRESH Review: Mistral AI MCP Server** (`content/reviews/mistral-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Mistral Medium 3.5** (April 29, 2026) — 128B dense model, 77.6% SWE-Bench Verified, 91.4 τ³-Telecom agentic score, $1.50/$7.50/M tokens, 256K context, modified MIT license, self-hostable on 4 GPUs. Powers Vibe Remote Agents.
+   - **Voxtral TTS** (March 23, 2026) — 4B text-to-speech (3.4B transformer + 390M acoustic + 300M codec). 9 languages, voice cloning from 3 seconds, $0.016/1K chars. CC BY NC 4.0 weights (non-commercial).
+   - **Connectors API** (April 15, 2026) — biggest MCP update since launch. Custom MCP connector CRUD via Conversation API/Completions API/Agent SDK. `requires_confirmation` human-in-the-loop parameter. Centralized registry across Studio, Le Chat, and Vibe. Tool exclusion per deployment.
+   - **Le Chat Work Mode** (April 29, 2026, preview) — agentic cross-tool workflows (email, calendar, messages, docs) for Pro/Team/Enterprise. Visible tool calls, explicit approval for sensitive actions.
+   - **Mistral Workflows** (April 27, 2026) — durable orchestration via Python SDK v3.0 / Temporal. `wait_for_input()` for human-in-the-loop pauses. Production customers: ASML, CMA-CGM, France Travail.
+   - **Vibe Remote Agents** (April 29, 2026) — cloud async coding sessions, session teleportation, GitHub/Linear/Jira/Sentry integrations.
+   - **Leanstral** (March 16) — first open-source Lean 4 formal verification model, $36/run pass@2, Apache 2.0. Trains on `lean-lsp-mcp`.
+   - **Employee count**: ~862 → 800+ (rounded figure, no actual decline indicated).
+   - **Community servers**: Frozen — everaldo/mcp-mistral-ocr still 37 stars, itisaevalex/mistr-agent still 17 stars. No new community servers with 20+ stars.
+   - **AAIF**: No tier change. Still Silver.
+   - **No official MCP server** — still the core gap. Rating holds 3/5. Watch for: official API MCP server, AAIF tier upgrade, community ecosystem growth.
+
+2. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared, ~60 min since last deploy).
+
+### What should happen next
+- Remaining March 23 stale reviews (now 41 days, hitting 42 days May 4): dropbox, duckduckgo, greptiledb, huggingface, mailersend, mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (30 remaining)
+- next_priority for Mistral: **low** (watch for: official MCP server, AAIF Silver→Gold upgrade, community ecosystem growth)
+
 ## Run 968 — 2026-05-03 — REFRESH GitLab MCP Server (41 days stale. 18.7→18.11 + MCP CLIENT GA + DUO AGENT PLATFORM + TOOL PREFIXING + ZEREIGHT 1.2K→1.4K STARS v2.1.4 + WORK ITEMS GRAPHQL + EMOJI REACTIONS + REDOS PATCHED. Rating holds 3.5/5. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)

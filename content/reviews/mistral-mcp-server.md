@@ -5,14 +5,28 @@ description: "Mistral AI has no standalone MCP server — instead, they built MC
 og_description: "Mistral AI integrates MCP as a client in Le Chat (20+ connectors) and Agents API, with Apache 2.0 open-weight models from 3B to 675B. AAIF Silver member. Rating: 3/5."
 content_type: "Review"
 card_description: "Mistral AI takes a client-first approach to MCP, embedding 20+ MCP-powered connectors into Le Chat and full MCP support in the Agents API and Python SDK. No official MCP server exists — Mistral positions its open-weight models and European data sovereignty as the differentiator."
-last_refreshed: 2026-03-23
+last_refreshed: 2026-05-03
 ---
 
-**At a glance:** Mistral AI has **no official MCP server** — instead, they built MCP client support into [Le Chat](https://chat.mistral.ai/) (20+ MCP connectors) and the [Agents API](https://docs.mistral.ai/agents/tools/mcp) (stdio + SSE transport). Community servers are small: [everaldo/mcp-mistral-ocr](https://github.com/everaldo/mcp-mistral-ocr) (37 stars, MIT) for document OCR and [itisaevalex/mistr-agent](https://github.com/itisaevalex/mistr-agent) (17 stars, MIT) for autonomous Mistral task execution. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** Mistral AI has **no official MCP server** — instead, they built MCP client support into [Le Chat](https://chat.mistral.ai/) (20+ MCP connectors, now with custom MCP support and a centralized Studio connector registry) and the [Agents API](https://docs.mistral.ai/agents/tools/mcp) (stdio + SSE transport). **May 2026 update:** Mistral Medium 3.5 launched April 29 (128B dense, 77.6% SWE-Bench Verified, $1.50/$7.50/M tokens); Voxtral TTS launched March 23 (4B voice model, $0.016/1K chars, 9 languages); Le Chat got Work Mode (April 29, agentic cross-tool workflows for Pro/Team/Enterprise) and formalized custom MCP connector support (April 15). Community servers remain small: [everaldo/mcp-mistral-ocr](https://github.com/everaldo/mcp-mistral-ocr) (37 stars, MIT) and [itisaevalex/mistr-agent](https://github.com/itisaevalex/mistr-agent) (17 stars, MIT). Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
 Mistral AI is **Europe's most prominent AI company** and a champion of open-weight models. Rather than publishing MCP servers that wrap its API, Mistral has taken a **client-first approach**: Le Chat connects to external MCP servers, and the Agents API lets developers wire MCP tools into Mistral-powered agents. The models themselves — from 3B Ministral to 675B Mistral Large 3 — are available under Apache 2.0 and run anywhere.
 
-[Mistral AI](https://mistral.ai/) was founded in April 2023 by Arthur Mensch (ex-Google DeepMind), Guillaume Lample (ex-Meta), and Timothee Lacroix (ex-Meta). Headquartered in Paris with offices in London and Palo Alto. As of early 2026: approximately **EUR 300 million ARR** (September 2025, targeting EUR 1 billion by end of 2026), **$14 billion valuation** (September 2025 Series C), over **$3 billion total funding** (investors include ASML at 11%, General Catalyst, Andreessen Horowitz, Lightspeed), approximately **862 employees**. Mistral is an **AAIF Silver member** (joined February 2026 expansion).
+[Mistral AI](https://mistral.ai/) was founded in April 2023 by Arthur Mensch (ex-Google DeepMind), Guillaume Lample (ex-Meta), and Timothee Lacroix (ex-Meta). Headquartered in Paris with offices in London and Palo Alto. As of early 2026: approximately **EUR 300 million ARR** (September 2025, targeting EUR 1 billion by end of 2026), **$14 billion valuation** (September 2025 Series C), over **$3 billion total funding** (investors include ASML at 11%, General Catalyst, Andreessen Horowitz, Lightspeed), approximately **800+ employees**. Mistral is an **AAIF Silver member** (joined February 2026 expansion).
+
+## What's Changed Since March 2026
+
+**Mistral Medium 3.5** (April 29, 2026): A 128B dense model with 77.6% SWE-Bench Verified performance and a 91.4 τ³-Telecom agentic score. Priced at $1.50/$7.50 per million tokens. 256K context window. Open weights under a modified MIT license. Self-hostable on 4 GPUs. Powers Vibe Remote Agents.
+
+**Voxtral TTS** (March 23, 2026): Mistral's first voice model — a 4B text-to-speech system (3.4B transformer decoder + 390M acoustic transformer + 300M neural audio codec) built on Ministral 3B. Supports 9 languages, voice cloning from 3 seconds of reference audio, and cross-lingual transfer. Priced at $0.016 per 1,000 characters. Available via API and Le Chat. Weights released as CC BY NC 4.0 (non-commercial).
+
+**Connectors formalized** (April 15, 2026): Mistral published a dedicated Connectors API formalizing custom MCP support across Studio, Le Chat, and Vibe. Developers can now create, modify, list, and delete MCP connectors programmatically. The `requires_confirmation` parameter provides human-in-the-loop control on sensitive tools. This is the biggest MCP-specific improvement since the original launch.
+
+**Work Mode** (April 29, 2026, preview): Le Chat's new agentic mode for Pro/Team/Enterprise enables cross-tool workflows spanning email, calendar, messages, and documents in a single persistent session.
+
+**Workflows** (April 27, 2026, public preview): Durable orchestration layer via Python SDK v3.0, backed by Temporal. Supports `wait_for_input()` for human-in-the-loop pauses. Targeted at enterprise deployments; production customers include ASML and CMA-CGM.
+
+**Community servers**: No growth since March — everaldo/mcp-mistral-ocr and itisaevalex/mistr-agent each hold at 37 and 17 stars respectively. The community MCP ecosystem remains thin.
 
 **Architecture note:** Mistral's MCP strategy is the **inverse** of Google's. Where Google published 24+ official MCP servers, Mistral published zero — focusing instead on being a capable MCP **client** that connects to the broader MCP ecosystem. Le Chat's 20+ connectors (Databricks, Snowflake, GitHub, Notion, Stripe, etc.) are all MCP-powered, and any remote MCP server can be added manually.
 
@@ -39,6 +53,21 @@ Le Chat, Mistral's consumer and enterprise AI assistant, gained MCP support on S
 - Available on all tiers including the Free plan
 - 4.2 million active users in the first month after mobile launch
 
+**April 2026 Connectors update:** Mistral formalized a centralized connector registry (April 15, 2026) spanning Studio, Le Chat, and Vibe. New capabilities:
+- **Custom MCP connectors** — create, modify, list, and delete via Conversation API, Completions API, and Agent SDK
+- **`requires_confirmation` parameter** — human-in-the-loop control on sensitive tools; users explicitly approve before execution
+- **Tool exclusion** — disable specific tools per deployment
+- Connector registry is shared across Le Chat (consumer), Studio (developer), and Vibe (coding agent)
+
+### Le Chat Work Mode (April 2026)
+
+Le Chat gained an **agentic Work Mode** (April 29, 2026, preview) for Pro, Team, and Enterprise plans:
+- Cross-tool orchestration: email, calendar, messaging, documents, and web in a single workflow
+- Inbox triage with drafted replies and automatic issue creation in connected trackers
+- Research and synthesis across web sources and internal documents
+- Persistent multi-turn sessions — work continues across conversations
+- Visible tool calls with explicit approval required before sensitive actions execute
+
 ### Agents API & Python SDK
 
 Mistral's Agents API (launched May 27, 2025) treats MCP as a first-class tool type:
@@ -49,6 +78,23 @@ Mistral's Agents API (launched May 27, 2025) treats MCP as a first-class tool ty
 | Authentication | OAuth support for remote servers (`build_oauth_params`) |
 | Tool types | MCP alongside code execution, web search, image generation, document library |
 | Documentation | [docs.mistral.ai/agents/tools/mcp](https://docs.mistral.ai/agents/tools/mcp) |
+
+### Mistral Workflows (April 2026)
+
+Mistral launched **Workflows** (April 27, 2026, public preview) — a durable orchestration layer built on [Temporal](https://temporal.io/):
+- Python SDK v3.0 (`mistral-sdk` >= 3.0)
+- **`wait_for_input()`** pauses execution for human approval; reviewers respond via Le Chat or webhooks
+- Deployment options: Mistral control plane (hosted) + customer-side workers (cloud, on-premises, hybrid)
+- Production customers: ASML, ABANCA, CMA-CGM, France Travail, La Banque Postale, Moeve
+- No MCP-specific integration details yet; compatible with the existing Agents API MCP tooling
+
+### Vibe Remote Agents (April 2026)
+
+Mistral's coding agent platform Vibe gained **Remote Agents** (April 29, 2026):
+- Cloud-based async coding sessions launched from CLI or Le Chat — work continues while you're away
+- Isolated sandboxes; session teleportation allows handing off a local session to the cloud
+- Integrations: GitHub, Linear, Jira, Sentry, Slack, Teams
+- Powered by **Mistral Medium 3.5** (see model updates below)
 
 ### No Official MCP Server
 
@@ -99,6 +145,7 @@ All API pricing per 1 million tokens:
 | Model | Parameters | Active | Context | Input | Output | License |
 |-------|-----------|--------|---------|-------|--------|---------|
 | Mistral Large 3 | 675B MoE | 41B | 256K | $0.50 | $1.50 | Apache 2.0 |
+| **Mistral Medium 3.5** *(NEW Apr 29)* | 128B dense | 128B | 256K | $1.50 | $7.50 | Modified MIT |
 | Mistral Small 4 | 119B MoE (128 experts) | 6.5B | 256K | $0.15 | $0.60 | Apache 2.0 |
 | Mistral Medium 3.1 | N/A | N/A | 128K | $0.40 | $2.00 | Proprietary |
 | Magistral Medium 1.2 | N/A | N/A | N/A | $2.00 | $5.00 | Proprietary |
@@ -122,6 +169,8 @@ All API pricing per 1 million tokens:
 | Codestral (25.08) | Code completion (256K ctx) | $0.30 | $0.90 | Proprietary |
 | Pixtral Large | Multimodal (124B, 128K ctx) | $2.00 | $6.00 | Proprietary |
 | Pixtral 12B | Multimodal (128K ctx) | $0.10 | $0.10 | Apache 2.0 |
+| **Voxtral TTS** *(NEW Mar 23)* | Text-to-speech (4B, 9 languages) | $0.016/1K chars | — | CC BY NC 4.0 |
+| Leanstral | Lean 4 formal verification | $36/run (pass@2) | — | Apache 2.0 |
 
 **Key point:** Mistral's major models are **Apache 2.0 open-weight** — you can download and self-host them for free. API pricing is competitive, with Mistral Nemo at $0.02/$0.04 per million tokens being among the cheapest options available. Le Chat Free plan provides unlimited messages (subject to fair use).
 
@@ -162,23 +211,23 @@ All API pricing per 1 million tokens:
 
 7. **Agents API MCP is SDK-only** — MCP integration in the Agents API requires the Mistral Python SDK. There's no hosted MCP proxy or managed server — developers must manage their own MCP server connections.
 
-8. **Hackathon didn't catalyze ecosystem** — The September 2025 MCP Hackathon at Station F produced several projects, but none gained significant adoption (highest: 12 stars). The event didn't create lasting community momentum.
+8. **Hackathon didn't catalyze ecosystem** — The September 2025 MCP Hackathon at Station F produced several projects, but none gained significant traction (highest: 12 stars). The event didn't generate lasting community momentum; community star counts are unchanged six weeks later.
 
 9. **Model naming complexity** — Mistral's lineup (Mistral, Ministral, Magistral, Codestral, Devstral, Pixtral, Voxtral, Leanstral) creates confusion for developers choosing which model to use with MCP tools.
 
-10. **Revenue gap to competitors** — At EUR 300M ARR, Mistral is significantly smaller than Anthropic (~$19B annualized), Google ($402B), or Meta ($201B). This affects long-term investment capacity in MCP ecosystem development.
+10. **Revenue gap to competitors** — At EUR 300M ARR (September 2025 figure; no update since), Mistral is significantly smaller than Anthropic (~$19B annualized), Google ($402B), or Meta ($201B). This affects long-term investment capacity in MCP ecosystem development.
 
 ## Bottom Line
 
 **Rating: 3 out of 5**
 
-Mistral AI brings a **distinctive value proposition** to the MCP ecosystem: genuinely open-weight models (Apache 2.0, from 3B to 675B parameters) combined with strong European data sovereignty guarantees. Le Chat's 20+ MCP connectors make it a capable MCP client, and the Agents API provides solid MCP integration for developers building custom agents.
+Mistral AI brings a **distinctive value proposition** to the MCP ecosystem: genuinely open-weight models (Apache 2.0, from 3B to 675B parameters) combined with strong European data sovereignty guarantees. Le Chat's 20+ MCP connectors — now formalized via the Connectors API with custom MCP support and human-in-the-loop controls — make it an increasingly capable MCP client. The Agents API provides solid MCP integration for developers building custom agents.
 
-The **client-first strategy** makes sense for Mistral's position. Rather than competing with Google's 24+ official servers or Hugging Face's Hub-as-MCP-tool approach, Mistral focuses on being a great MCP consumer — connecting its models to the broader ecosystem of tools and data sources.
+The **client-first strategy** continues to deepen. The April 15, 2026 Connectors update is the most significant MCP-specific improvement since launch: developers can now programmatically manage MCP connectors across Studio, Le Chat, and Vibe, with `requires_confirmation` for controlled tool execution. Work Mode (April 29) shows Mistral committing to agentic workflows rather than just model access. Mistral Medium 3.5 (77.6% SWE-Bench Verified) and Voxtral TTS expand the model portfolio significantly.
 
-However, the **absence of an official MCP server** is the biggest gap. Developers who want to use Mistral models via MCP from Claude Desktop, Cursor, or other MCP clients have no official path — only community wrappers with minimal adoption. This is a missed opportunity given that Mistral's competitive API pricing (Mistral Nemo at $0.02/M input tokens) and open-weight models could make them a popular MCP-accessible model provider.
+However, the **absence of an official MCP server** remains the core gap. Developers who want to use Mistral models via MCP from Claude Desktop, Cursor, or other MCP clients still have no official path — only community wrappers with minimal adoption (37 stars for the top server, unchanged over six weeks). This is a missed opportunity given that Mistral's competitive API pricing and open-weight models could make them a popular MCP-accessible model provider.
 
-The 3/5 rating reflects **strong models and client support, but a thin MCP ecosystem**. The community is tiny (37 stars for the top server), there's no official API wrapper, and Mistral's AAIF Silver membership gives them limited protocol governance influence. The MCP Hackathon showed intent but didn't generate lasting ecosystem growth.
+The 3/5 rating holds. The MCP client infrastructure has meaningfully improved, but the fundamental gap — no official server, tiny community — is unchanged. **Watch for:** An official Mistral API MCP server or a formalized server hosting option would push this to 3.5 or higher.
 
 **Who benefits most from Mistral's MCP ecosystem:**
 
@@ -194,4 +243,4 @@ The 3/5 rating reflects **strong models and client support, but a thin MCP ecosy
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Mistral AI announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Mistral AI announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
