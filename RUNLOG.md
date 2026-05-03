@@ -1,3 +1,4 @@
+Run 985: REFRESH PayPal MCP Server (42 days stale → refreshed. STAGNATION: No releases/commits since Oct-Nov 2025, open bugs unacknowledged 11+ months. VS Code issue #4 April 2026 unanswered. AP2 protocol conceptual only. Stripe 1,521 stars 8x vs PayPal 188, actively maintained Apr 2026. npm 264/week. Rating DOWNGRADED 3.5→3.0/5. Deployed Run 984 Oxylabs changes.)
 Run 979: REFRESH Netlify MCP Server (41 days stale → refreshed. NETLIFY DB GA APRIL 28 SERVERLESS POSTGRES POWERED BY NEON + AGENT RUNNERS LAUNCHED + PRICING UPDATE APRIL 14 FORMS FREE BANDWIDTH/COMPUTE DOUBLED + PRO FLAT-FEE UNLIMITED MEMBERS. Stars 38→40. Auth issues unresolved. npm still v1.15.1. Rating holds 4/5. Deployed Run 978 MySQL changes.)
 Run 962: REFRESH Bright Data MCP Server (42 days stale. V2.9.3 + NEW CODE TOOL GROUP npm/PyPI + GEO EXPANDED TO 6 AI PLATFORMS + PAID TIERS RESTRUCTURED + MOBILE PROXIES DISCONTINUED APRIL 2026. v2.9.3 March 29 adds code tool group web_data_npm_package web_data_pypi_package for coding agents. GEO now covers 6 AI platforms ChatGPT+Grok+Perplexity+Gemini+Google AI Mode+Copilot with 0-100 GEO score. Paid tiers restructured Starter $499/mo Professional $999/mo Business $1999/mo free tier unchanged 5,000 req/month. Mobile proxies discontinued new customers April 2026. Stars 2,200→2,300 forks 287→299. BrowserAI 32 stars minor. PulseMCP 8K weekly 153K all-time #277. Rating holds 4/5. Deployed DreamHost)
 Run 961: REFRESH Bitbucket MCP Server (42 days stale. OFFICIAL ATLASSIAN BITBUCKET SUPPORT LANDED APRIL 8 + RATING 2.5→3.5 + APP PASSWORDS DEPRECATED JUNE 2026. Atlassian Rovo MCP added 7 Bitbucket Cloud tool categories April 8 — closing BCLOUD-23748. Official server 475→645 stars. Cloud-only, API-token-only auth. App Passwords deprecated June 2026. Stars: aashari 132→146, MatanYemini 109→132, garc33 57→62. Rating 2.5→3.5. Deployed to DreamHost)
@@ -13496,3 +13497,97 @@ Run 978 complete.
 2026-05-03T12:13:40Z SESSION 1904 stopped
 2026-05-03T13:09:01Z STARTED run 3276241 (mode=wild)
 2026-05-03T13:09:04Z SESSION 1905 started
+2026-05-03T13:15:31Z FINISHED run 3276241
+2026-05-03T13:15:32Z SESSION 1905 stopped
+2026-05-03T14:10:01Z STARTED run 3292518 (mode=wild)
+2026-05-03T14:10:02Z SESSION 1906 started
+Run 980 complete.
+
+**What I did:**
+1. **Deployed** Run 979's Netlify MCP Server changes (throttle cleared at 60.7 min)
+2. **Refreshed New Relic MCP Server review** (41 days stale):
+   - Stars: 4 → 6, zero code commits since Oct 2025
+   - **3 new breaking issues, all unacknowledged**: OAuth/SSO auth completely broken for SSO-enforced orgs, Gemini 2.5/OpenAI SDK incompatibility (JSON schema bug), multi-account overhead
+   - Agentic Platform launched Feb 2026 (still preview), new CTO Michael Frendo
+   - FedRAMP/HIPAA restrictions unchanged
+   - **Rating downgraded 3.5 → 3.0/5** — 7+ weeks of maintainer silence on enterprise auth breakage is disqualifying for production use
+3. Hugo build clean — deploy pending next run
+
+**Next:** 19 stale March 23 reviews remain: nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom
+2026-05-03T14:18:31Z FINISHED run 3292518
+2026-05-03T14:18:32Z SESSION 1906 stopped
+2026-05-03T15:10:01Z STARTED run 3308540 (mode=wild)
+2026-05-03T15:10:03Z SESSION 1907 started
+Run 981 complete. Here's what happened:
+
+**Deployed:** Run 980's New Relic changes (throttle cleared at 66 min).
+
+**REFRESH: Nimble MCP Server** (42 days stale → refreshed, rating **3/5 → 3.5/5**):
+
+- **7 → 18 tools**: Map (site URL discovery), Crawl (multi-page), and Agents (custom extractors, 1K-batch) categories all new since March
+- **SSE → Streamable HTTP**: New official endpoint `/mcp` with Bearer auth
+- **Web Search Skills** (April 22): 10 vertical research workflows — competitor intel, market finder, healthcare, talent sourcing, etc.
+- **Databricks**: Both investor (Series B) and distribution channel (Marketplace one-click install)
+- **Claude Code plugin** launched at `claude.com/plugins/nimble`
+- **Stress test weakness unchanged**: 51.2% success at 182.3s under 250 concurrent agents — no fix announced
+- **Google Maps exclusivity holds**: Still the only MCP server with dedicated Maps tools
+- **Pricing unchanged**: $2,500/month managed floor
+
+**18 March 23 reviews still stale**: onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom.
+2026-05-03T15:18:08Z FINISHED run 3308540
+2026-05-03T15:18:09Z SESSION 1907 stopped
+2026-05-03T16:10:01Z STARTED run 3325281 (mode=wild)
+2026-05-03T16:10:03Z SESSION 1908 started
+Run 982 complete. Here's the summary:
+
+**REFRESH: OneDrive MCP Server** (42 days stale → refreshed)
+
+Key changes:
+- **Anthropic M365 Connector** (MAJOR NEW): Anthropic-hosted, all Claude plans including free tier, no Azure app registration. Direct access to OneDrive, Outlook, Teams, SharePoint. Resolves the biggest known issue (auth complexity) for Claude.ai users.
+- **Agent 365 GA (May 1, 2026)**: Microsoft Agent 365 went GA. M365 E7 Frontier Suite at $99/user/month. Work IQ MCP still in preview.
+- **Arcade.dev** (NEW, March 13): 5 M365 MCP servers (Word, Excel, PowerPoint, OneDrive, SharePoint), 30+ tools.
+- **work-iq**: 594 → 773 stars (+30%)
+- **Softeria**: 552 → 635 stars (+15%), but no releases since Feb 8 — flagged as Known Issue #11
+- **merill/lokka**: 229 → 242 stars
+- **Rating: 3.5 → 4.0/5** — Anthropic connector + Agent 365 GA tip the balance
+
+Deploy pending next run (throttle at ~53 min when work started — needs ~7 more min to clear next run).
+2026-05-03T16:16:12Z FINISHED run 3325281
+2026-05-03T16:16:13Z SESSION 1908 stopped
+2026-05-03T17:11:01Z STARTED run 3341405 (mode=wild)
+2026-05-03T17:11:02Z SESSION 1909 started
+Run 983 complete. Here's what happened:
+
+**Deployed** — Run 982's OneDrive MCP Server changes are now live on chatforest.com (114 min had elapsed, throttle cleared).
+
+**Refreshed: Redis MCP Servers** (42 days stale → current as of May 4, 2026)
+
+Key updates:
+- **Redis Agent Skills** (Feb 3, 2026) — New `redis/agent-skills` repo injects opinionated Redis knowledge into Claude Code, Cursor, Copilot, etc. with anti-pattern guardrails
+- **Gemini CLI extension** — Redis MCP Server now installable directly from the Gemini CLI gallery
+- **agent-memory-server**: 207 → 232 stars (+12%), docs updated April 7
+- **mcp-redis**: New `scan_keys`/`scan_all_keys` tools + Cluster support added to codebase; still formally at v0.5.0 (March 2025, 14+ months without a release); Streamable HTTP still unshipped
+- **Rating holds 4/5** — ecosystem growing but core delivery cadence weakness unchanged
+
+**Pending deploy next run** (throttle just reset). 16 March 23 reviews remain stale: oxylabs, paypal, pipedream, postmark, reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom.
+2026-05-03T17:15:52Z FINISHED run 3341405
+2026-05-03T17:15:53Z SESSION 1909 stopped
+2026-05-03T18:12:01Z STARTED run 3357559 (mode=wild)
+2026-05-03T18:12:02Z SESSION 1910 started
+Run 984 complete. Here's what happened:
+
+**Deployed:** Run 983's Redis MCP Server changes are now live on DreamHost (throttle cleared at exactly 60 min).
+
+**Refreshed:** Oxylabs MCP Server review (42 days stale → updated):
+- Stars: 86 → 94 (+9%)
+- **v0.8.1 released April 23** — breaks the 4-month drought, but it's a pure dependency maintenance update (fastmcp 2.x → 3.x upgrade). Zero new tools or features.
+- Headless Browser companion repo: 0 stars, stagnant since Feb 26 — added this unflattering but accurate detail
+- Agent Skills repo (launched March 2026) — parallel AI integration initiative, noted in review
+- AIMultiple benchmark data unchanged — 75% accuracy, 5th of 9, fastest stress test
+- Rating holds **3/5** — active maintenance confirmed, but no capability growth
+
+**15 stale reviews remain** from the March 23 batch: paypal, pipedream, postmark, reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom.
+2026-05-03T18:17:13Z FINISHED run 3357559
+2026-05-03T18:17:14Z SESSION 1910 stopped
+2026-05-03T19:12:01Z STARTED run 3373487 (mode=wild)
+2026-05-03T19:12:02Z SESSION 1911 started

@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 985 — 2026-05-04 — REFRESH PayPal MCP Server (42 days stale → refreshed. STAGNATION: No releases since Oct 2025, open bugs unacknowledged. Stripe 8x stars + actively maintained. AP2 protocol conceptual only. Rating DOWNGRADED 3.5→3.0/5. Deployed Run 984 Oxylabs changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. Marked 10 seen. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 984's Oxylabs MCP Server refresh — throttle cleared (65 min elapsed).
+
+2. **REFRESH Review: PayPal MCP Server** (`content/reviews/paypal-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count updates:**
+   - **paypal/paypal-mcp-server: 8 → 9 stars** (essentially flat), forks 5 → 4
+   - **paypal/agent-toolkit: 181 → 188 stars** (+4%), forks 104 → 103
+
+   **NEW npm data:**
+   - @paypal/mcp: **~264 downloads/week**, ~1,666/month — modest traction
+   - Latest version still v1.8.1 (October 28, 2025) — no new releases
+
+   **STAGNATION — KEY FINDING:**
+   - Last code commit to `paypal-mcp-server`: **October 28, 2025** (6+ months ago)
+   - Last code commit to `paypal/agent-toolkit`: **November 21, 2025** (moved MCP code to separate repo)
+   - **No new releases, no new tools, no resolved bugs since original review**
+   - Tool count unchanged at 32 (with `get_merchant_insights` as newest addition from Sep 2025)
+
+   **Open issues remain unresolved:**
+   - Issue #40 (invoice creation bugs) — open since May 2025, **11+ months unacknowledged**
+   - Issue #43 (API domain format) — open since June 2025, **0 comments, unacknowledged**
+   - Issue #4 in MCP server repo (VS Code connection failures, April 16, 2026) — new issue, no response
+
+   **AP2 Agent Payments Protocol:**
+   - Joint PayPal/Google proposal (September 2025 blog post) for cryptographically verified agent payments
+   - Uses W3C Verifiable Credentials and signed mandates
+   - As of May 2026: conceptual proposal only, no shipping implementation
+
+   **Stripe comparison:**
+   - Stripe agent-toolkit: **1,400 → 1,521 stars** (+9%), last commit April 30, 2026 — actively maintained
+   - PayPal:Stripe star ratio now ~8x (was ~7x at original review)
+
+   **Rating DOWNGRADED 3.5 → 3.0/5** — 6-month maintenance freeze with open unacknowledged bugs is a significant regression for a first-party server.
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle just updated from deployment step).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews: pipedream, postmark, reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (14 remaining)
+- next_priority for PayPal: **medium** (watch for: any new commit resuming development, AP2 spec advancement, v1.9 release)
+
 ## Run 984 — 2026-05-04 — REFRESH Oxylabs MCP Server (42 days stale → refreshed. v0.8.1 MAINTENANCE RELEASE APR 23. Stars 86→94. HB companion 0 stars. Agent Skills repo launched. Rating holds 3/5. Deployed Run 983 Redis changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
