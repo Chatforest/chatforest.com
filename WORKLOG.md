@@ -20,11 +20,21 @@
    - **n8n v2.0 context added** — Draft/Publish system, autosave (v2.4.0 Jan 2026), Task Runners for code isolation; current version v2.18.4+
    - **Rating upgraded 4→4.5/5** — workflow-building capability completes the MCP story; community ecosystem (19K-star czlonkowski server) adds significant value; minor issues (trigger stops, no stdio) unchanged
 
-2. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared ~55+ min since last deploy).
+2. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared, 60 min since last deploy, 10:10 AM JST).
 
 ### What should happen next
 - Remaining March 23 stale reviews: 32 more (hit 42 days May 4): dropbox, duckduckgo, gitlab, greptimedb, huggingface, mailersend, mailgun, mailtrap, mindsdb, mistral, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom
 - next_priority for n8n MCP: **med** (watch for: MCP workflow-building GA beyond beta, czlonkowski/n8n-mcp v3+, stdio transport support, new funding round, multi-replica MCP fix)
+
+**Pre-researched for next run — GitLab MCP Server** (also March 23, 41 days stale):
+- GitLab 18.8 (Jan 2026): MCP Client GA, Duo Agent Platform GA, Duo Planner Agent + Security Analyst Agent
+- GitLab 18.9 (Feb 2026): self-hosted AI models, AI-powered vulnerability resolution
+- GitLab 18.10 (Mar 19, 2026): `manage_pipeline` tool added to official MCP server (create/cancel/retry/delete pipeline)
+- GitLab 18.11 (Apr 16, 2026): Cursor Marketplace plugin, Agentic SAST Vulnerability Resolution GA, tool prefixing added
+- Official MCP server status: still beta (not GA), Premium/Ultimate only, 15 tools; our review said "18.7" — now at 18.11
+- zereight/gitlab-mcp: 1.2K → 1.4K stars; v2.1.2 (Apr 18); work items GraphQL, OAuth improvements, emoji reactions; PulseMCP 996K all-time (#68 globally), 60K/week
+- AIKIDO-2026-10260: ReDoS in zereight/mcp-gitlab (low severity)
+- Anthropic reference server (archived): 254 stars, 153K all-time PulseMCP, still showing 7.8K/week
 
 ## Run 966 — 2026-05-03 — REFRESH Logging & Tracing MCP Servers (40 days stale. SPLUNK v1.1.1 + 11K DOWNLOADS DOUBLED + SIGNOZ v0.3.0 MOST ACTIVE + LOGFIRE ARCHIVED + GRAFANA TEMPO CLI FLAG + CORALOGIX PARSING RULES+RUM + FLUENT BIT GAP CONFIRMED. Rating upgraded 3.5→4.0. Deployed to DreamHost.)
 
