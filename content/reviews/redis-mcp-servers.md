@@ -1,16 +1,26 @@
 ---
 title: "Redis MCP Servers — The Official Server, Agent Memory, Cloud Management, and Community Alternatives"
 date: 2026-03-17T12:00:00+09:00
-description: "Redis MCP servers reviewed: the official redis/mcp-redis (458 stars, 25+ tools, vector search), Agent Memory Server (207 stars, semantic memory layer), mcp-redis-cloud (39 stars"
-og_description: "Redis MCP servers: official mcp-redis (458 stars, 25+ tools, vector search + RAG), Agent Memory Server (207 stars, two-tier semantic memory), mcp-redis-cloud (39 stars, infrastructure). 10+ servers reviewed. Rating: 4/5."
+description: "Redis MCP servers reviewed: the official redis/mcp-redis (452 stars, 25+ tools, vector search), Agent Memory Server (232 stars, semantic memory layer), mcp-redis-cloud (39 stars"
+og_description: "Redis MCP servers: official mcp-redis (452 stars, 25+ tools, vector search + RAG), Agent Memory Server (232 stars, two-tier semantic memory), mcp-redis-cloud (39 stars, infrastructure). Redis Agent Skills launched Feb 2026. Gemini CLI extension added. Rating: 4/5."
 content_type: "Review"
-card_description: "The official Redis MCP server covers all data structures plus vector search and RAG. The Agent Memory Server adds a semantic memory layer for AI agents. Redis Cloud MCP manages infrastructure. The ecosystem is strong and well-maintained."
-last_refreshed: 2026-03-23
+card_description: "The official Redis MCP server covers all data structures plus vector search and RAG. The Agent Memory Server adds a semantic memory layer for AI agents. Redis Cloud MCP manages infrastructure. Redis Agent Skills (Feb 2026) inject Redis expertise into coding agents. The ecosystem is strong and expanding."
+last_refreshed: 2026-05-04
 ---
 
 Redis has three official MCP servers — and they're all doing different things. Part of our **[Databases MCP category](/categories/databases/)**.
 
-The [official mcp-redis](https://github.com/redis/mcp-redis) (458 stars) is a comprehensive data operations server covering every Redis data structure plus vector search. The [Agent Memory Server](https://github.com/redis/agent-memory-server) (207 stars) is a specialized semantic memory layer for AI agents. And [mcp-redis-cloud](https://github.com/redis/mcp-redis-cloud) (39 stars) manages Redis Cloud infrastructure — subscriptions, databases, and multi-cloud deployments.
+The [official mcp-redis](https://github.com/redis/mcp-redis) (452 stars) is a comprehensive data operations server covering every Redis data structure plus vector search. The [Agent Memory Server](https://github.com/redis/agent-memory-server) (232 stars) is a specialized semantic memory layer for AI agents. And [mcp-redis-cloud](https://github.com/redis/mcp-redis-cloud) manages Redis Cloud infrastructure — subscriptions, databases, and multi-cloud deployments.
+
+## What's New Since March 2026
+
+**Redis Agent Skills (Feb 3, 2026)** — Redis launched [redis/agent-skills](https://github.com/redis/agent-skills), a growing collection of pre-built skills for AI coding agents. One command injects opinionated, up-to-date Redis knowledge into agents like Claude Code, Cursor, Codex, Copilot, and Augment Code when it's relevant. Skills cover caching, rate limiting, session management, vector search, semantic caching, agent memory, pub/sub, and streams — with production-aware defaults and anti-pattern guardrails. This isn't the MCP server itself, but it's Redis's answer to agents generating outdated or naive Redis code.
+
+**Gemini CLI Extension** — The Redis MCP Server is now available in the [Gemini CLI extensions gallery](https://geminicli.com/extensions/). Developers using Google's terminal AI agent can install Redis access with one command — alongside GitHub, Dynatrace, and Google Cloud extensions.
+
+**mcp-redis new tools** — Recent development added CLI support for Redis URI connection strings, `scan_keys()` and `scan_all_keys()` tools for iterative key discovery, and full Redis Cluster mode support. The main server remains on v0.5.0 (March 2025) with no formal new release, but the Streamable HTTP transport tracked in [Issue #45](https://github.com/redis/mcp-redis/issues/45) remains in progress.
+
+**agent-memory-server growth** — Stars grew from 207 → 232 (+12%), forks from 42 → 48. Documentation was updated April 7, 2026. Active development continues.
 
 That's unusual. Most database vendors ship one MCP server and call it done. Redis shipped three, each solving a distinct problem. The question is whether any of them are good enough to use.
 
@@ -18,9 +28,9 @@ That's unusual. Most database vendors ship one MCP server and call it done. Redi
 
 | Detail | Info |
 |--------|------|
-| [redis/mcp-redis](https://github.com/redis/mcp-redis) | 458 stars, 90 forks, 306 commits |
+| [redis/mcp-redis](https://github.com/redis/mcp-redis) | 452 stars, 90+ forks |
 | Language | Python |
-| Transport | stdio |
+| Transport | stdio (Streamable HTTP planned) |
 | License | MIT |
 | Latest | v0.5.0 (March 2025) |
 
@@ -64,23 +74,23 @@ That's roughly 25+ tools across 11 modules. For comparison, the [MongoDB MCP ser
 
 ### What Doesn't Work Well
 
-**stdio only.** No HTTP or SSE transport. [Issue #45](https://github.com/redis/mcp-redis/issues/45) tracks this gap. In an ecosystem where remote MCP servers are increasingly common, stdio limits this server to local machine usage. Streamable HTTP is planned but not shipped.
+**stdio only.** No HTTP transport yet. [Issue #45](https://github.com/redis/mcp-redis/issues/45) tracks Streamable HTTP support. In an ecosystem where remote MCP servers are increasingly common, stdio limits this server to local machine usage. It's been "planned" since the original review — still not shipped as of May 2026.
 
 **No SSH tunnel support.** [Issue #31](https://github.com/redis/mcp-redis/issues/31) requests SSH tunnel connections for reaching Redis instances behind firewalls. Without this, connecting to production Redis from a local MCP client requires external tunneling.
 
 **No connection validation.** [Issue #56](https://github.com/redis/mcp-redis/issues/56) reports that the server doesn't check if the Redis server is available before proceeding. It can start successfully even when Redis isn't running, then fail on the first tool call.
 
-**Slow release cadence.** v0.5.0 shipped in March 2025. With 88 forks and 6 open issues, community interest is high but release frequency is low. The project has clear momentum but sporadic delivery.
+**Slow release cadence.** v0.5.0 shipped in March 2025 — over a year ago. New tools (scan_keys, Cluster support) have appeared in the codebase but no formal v0.6 release has shipped. Development continues but delivery is sporadic.
 
 ## Redis Agent Memory Server
 
 | Detail | Info |
 |--------|------|
-| [redis/agent-memory-server](https://github.com/redis/agent-memory-server) | 207 stars, 42 forks, 708 commits |
+| [redis/agent-memory-server](https://github.com/redis/agent-memory-server) | 232 stars, 48 forks |
 | Language | Python (77.8%) |
 | Transport | stdio + SSE |
 | License | Apache 2.0 |
-| Open Issues | 19 |
+| Open Issues | 19+ |
 
 This is not a general Redis operations server. It's a specialized **memory layer for AI agents** that uses Redis as its backend. The distinction matters — you'd use this alongside mcp-redis, not instead of it.
 
@@ -164,7 +174,7 @@ With six database reviews now complete, here's how they compare:
 | Feature | Redis | [MongoDB](/reviews/mongodb-mcp-server/) | [PostgreSQL](/reviews/postgresql-mcp-server/) | [MySQL](/reviews/mysql-mcp-server/) | [SQL Server](/reviews/sql-server-mcp-server/) | [SQLite](/reviews/sqlite-mcp-servers/) |
 |---------|-------|---------|-----------|-------|------------|--------|
 | **Rating** | **4/5** | **4/5** | **4.5/5** | **3.5/5** | **3.5/5** | **3.5/5** |
-| Official server | Yes (458 stars, 25+ tools) | Yes (970 stars, 41 tools) | No official | No (Oracle absent) | Experimental only | Archived (Anthropic) |
+| Official server | Yes (452 stars, 25+ tools) | Yes (970 stars, 41 tools) | No official | No (Oracle absent) | Experimental only | Archived (Anthropic) |
 | Total official repos | 3 (data + memory + cloud) | 1 (comprehensive) | 0 | 0 | 1 (experimental) | 0 (archived) |
 | Vector search MCP | Yes (built-in query engine) | Yes (unified index + Voyage AI) | Limited | No | No | Via db-mcp/libSQL |
 | AI agent memory | Yes (Agent Memory Server) | No | No | No | No | No |
@@ -208,7 +218,7 @@ But the foundation is exceptional. Official backing, MIT/Apache licensing, enter
 |---|---|
 | **Category** | Redis MCP Servers |
 | **Top server** | redis/mcp-redis (official) |
-| **Stars (top)** | ~458 |
+| **Stars (top)** | ~452 |
 | **Total servers reviewed** | 10+ |
 | **Best for** | Caching, vector search, AI agent memory, real-time data |
 | **Transport** | Mostly stdio (Agent Memory Server adds SSE) |
@@ -217,4 +227,4 @@ But the foundation is exceptional. Official backing, MIT/Apache licensing, enter
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*

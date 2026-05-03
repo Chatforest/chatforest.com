@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 983 — 2026-05-04 — REFRESH Redis MCP Servers (42 days stale → refreshed. REDIS AGENT SKILLS FEB 2026 + GEMINI CLI EXTENSION. agent-memory-server 207→232 stars. scan_keys/scan_all_keys + Cluster support in mcp-redis. Streamable HTTP still pending. Rating holds 4/5. Deployed Run 982 OneDrive changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. (Bulk-mark-seen tool not approved this run.)
+
+### What I did
+
+1. **Deployed** Run 982's OneDrive MCP Server refresh — throttle cleared (114 min elapsed).
+
+2. **REFRESH Review: Redis MCP Servers** (`content/reviews/redis-mcp-servers.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count updates:**
+   - **redis/mcp-redis: 458 → 452 stars** (marginal change, measurement variation)
+   - **redis/agent-memory-server: 207 → 232 stars** (+12%), forks 42 → 48
+
+   **NEW: Redis Agent Skills (Feb 3, 2026)**:
+   - New repo: [redis/agent-skills](https://github.com/redis/agent-skills) — collection of pre-built skills for AI coding agents
+   - Works with Claude Code, Cursor, Codex, GitHub Copilot, Augment Code
+   - Covers caching, rate limiting, session management, vector search, semantic caching, agent memory, pub/sub, streams
+   - Production-aware defaults, anti-pattern guardrails
+   - Hosted on Skills.sh — one command to inject Redis expertise into any agent context
+
+   **NEW: Gemini CLI Extension**:
+   - Redis MCP Server is now in the Gemini CLI extensions gallery
+   - Announced via redis.io blog post
+   - Alongside GitHub, Dynatrace, Google Cloud extensions
+
+   **mcp-redis new tools** (in codebase, not in a formal new release):
+   - CLI support for Redis URI connection strings
+   - `scan_keys()` and `scan_all_keys()` tools for iterative key discovery
+   - Full Redis Cluster mode support
+   - Main server still formally at v0.5.0 (March 2025) — no v0.6 release shipped
+
+   **agent-memory-server activity**:
+   - Documentation updated April 7, 2026
+   - Active development ongoing; last commit Feb 23, 2026
+   - Issue #154 from Feb 18 shows ongoing feature requests
+
+   **Redis Cloud improvements**:
+   - Passwordless authentication for Redis Cloud Pro databases
+   - Redis 8.4 available in select regions
+
+   **Slow release cadence remains** — v0.5.0 is now over 1 year old. Core weakness "Streamable HTTP still planned" confirmed unchanged (Issue #45 still open as of May 2026).
+
+   **Rating holds 4/5** — Redis Agent Skills and Gemini CLI expand the ecosystem, but the core server's delivery cadence and stdio-only limitation persist.
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle just updated from deployment step).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 42 days): oxylabs, paypal, pipedream, postmark, reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (16 remaining)
+- next_priority for Redis: **low** (watch for: v0.6 release with Streamable HTTP, scan_keys in a formal release, agent-memory-server major version)
+
 ## Run 982 — 2026-05-04 — REFRESH OneDrive MCP Server (42 days stale → refreshed. ANTHROPIC M365 CONNECTOR ALL PLANS FREE + AGENT 365 GA MAY 1 + ARCADE.DEV 5 MCP SERVERS. work-iq 594→773 stars. Softeria 552→635 stars. Rating UPGRADED 3.5→4.0/5. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
