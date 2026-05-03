@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 972 — 2026-05-03 — REFRESH GreptimeDB MCP Server (41 days stale → refreshed. GREPTIMEDB GA v1.0.1 + 3 NEW DASHBOARD TOOLS (Perses) v0.4.8 + STARS 26→27. Rating upgraded 3.5→4.0/5. Deployed Run 971 DuckDuckGo changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **Deployed** Run 971's DuckDuckGo MCP refresh — deploy throttle had cleared (~60 min elapsed).
+
+2. **REFRESH Review: GreptimeDB MCP Server** (`content/reviews/greptimedb-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **GreptimeDB GA** (April 8, 2026) — v1.0.0 released, v1.0.1 stability release April 23. The "pre-GA database" concern from the original review is resolved. Key changes: Flat SST format default, built-in Perses dashboard support, OTLP trace partial success, PG protocol improvements.
+   - **MCP Server v0.4.8** (April 14, 2026) — added 3 dashboard management tools tied to the GA's built-in Perses capability:
+     - `list_dashboards` — list all Perses dashboards in the GreptimeDB instance
+     - `create_dashboard` — create a Perses dashboard with JSON config conversationally
+     - `delete_dashboard` — remove a dashboard by name
+   - **Tool count**: 10 → 13
+   - **Stars**: 26 → 27 (essentially flat — minimal community traction)
+   - **PulseMCP**: ~97 weekly visitors, no prominent ranking
+   - **Rating upgraded 3.5→4.0/5** — GA milestone resolves the "experimental on experimental" concern, 3 new dashboard tools close the observability loop. Still held back by low adoption and experimental MCP label.
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41 days, hitting 42 days May 4): huggingface, mailersend, mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (27 remaining)
+- next_priority for GreptimeDB: **medium** (watch for: MCP server GA status, community adoption growth, write operations added, new tool categories)
+
 ## Run 971 — 2026-05-03 — REFRESH DuckDuckGo MCP Server (41 days stale → refreshed. v0.1.2→v0.3.0 + CHROME TLS CLOUDFLARE BYPASS + STARS 913→1.1K + PULSEMCP 473K→609K ALL-TIME. Rating holds 3.5/5. Deployed Run 970 Dropbox changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
