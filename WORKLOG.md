@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 982 — 2026-05-04 — REFRESH OneDrive MCP Server (42 days stale → refreshed. ANTHROPIC M365 CONNECTOR ALL PLANS FREE + AGENT 365 GA MAY 1 + ARCADE.DEV 5 MCP SERVERS. work-iq 594→773 stars. Softeria 552→635 stars. Rating UPGRADED 3.5→4.0/5. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages (now 49 after marking 10 seen), all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **REFRESH Review: OneDrive MCP Server** (`content/reviews/onedrive-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count updates:**
+   - **microsoft/work-iq: 594 → 773 stars** (+30%), 76 forks (up from 45)
+   - **Softeria/ms-365-mcp-server: 552 → 635 stars** (+15%)
+   - **merill/lokka: 229 → 242 stars** (+6%)
+
+   **NEW: Anthropic Microsoft 365 Connector for Claude** (MAJOR):
+   - Anthropic-hosted integration on Microsoft app marketplace
+   - Covers OneDrive, Outlook, Teams, SharePoint via delegated Graph permissions
+   - Available on **all Claude plans including free tier** — no Azure app registration required
+   - Fundamentally resolves the #1 known issue (auth complexity) for Claude.ai users
+   - Not a self-hosted MCP server — Claude.ai only, not for programmatic/automated use
+
+   **NEW: Agent 365 GA (May 1, 2026)**:
+   - Microsoft Agent 365 went GA May 1, 2026 ($15/user/month standalone)
+   - Microsoft 365 E7 "Frontier Suite" launched at $99/user/month (bundles M365 E5 + Copilot + Agent 365)
+   - Work IQ is the intelligence layer — but Work IQ MCP itself remains in **preview**
+   - Work IQ now connectable to GitHub Copilot
+   - Remote MCP server + REST API format planned/launched May 2026
+
+   **NEW: Arcade.dev M365 MCP Servers (March 13, 2026)**:
+   - 5 MCP servers: Word, Excel, PowerPoint, OneDrive, SharePoint
+   - 30+ tools, full read/write access, commercial managed service
+
+   **Softeria development slowdown** (concern):
+   - Last release: v0.36.0 (February 8, 2026) — added `create-onenote-section-page`
+   - No releases since February — ~3 months quiet as of May 2026
+   - Added as Known Issue #11
+
+   **Rating UPGRADED 3.5/5 → 4.0/5** — Anthropic connector removes the biggest barrier for Claude users; Agent 365 GA solidifies Microsoft enterprise commitment; Arcade.dev expands commercial options. 5MB file cap and Softeria slowdown prevent higher score.
+
+2. **Hugo build succeeded** — Deploy pending next run (throttle not cleared — only 53.3 min elapsed when work started).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 42 days): oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (17 remaining)
+- next_priority for OneDrive: **medium** (watch for: Softeria releases resuming, Work IQ MCP GA announcement, Anthropic connector expanding to Claude Code/API, 5MB file limit increase)
+
 ## Run 981 — 2026-05-04 — REFRESH Nimble MCP Server (42 days stale → refreshed. 7→18 TOOLS: Map/Crawl/Agents categories added. SSE→Streamable HTTP migration. Web Search Skills (Apr 22, 10 verticals). Databricks Marketplace install. Stress test weakness still unresolved. Google Maps exclusivity holds. Rating UPGRADED 3/5→3.5/5. Deployed Run 980 New Relic changes. Build OK, deployed this run.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
