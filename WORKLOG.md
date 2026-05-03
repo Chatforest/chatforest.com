@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 974 — 2026-05-03 — REFRESH MailerSend MCP Server (41 days stale → refreshed. 34+→38 TOOLS + HOBBY $5.60→$7/MO + CURSOR 38/40 CEILING. Rating holds 4/5. Deployed Run 973 Hugging Face changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **Deployed** Run 973's Hugging Face MCP refresh — throttle cleared (60.4 min elapsed).
+
+2. **REFRESH Review: MailerSend MCP Server** (`content/reviews/mailersend-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Tool count**: 34 → **38 tools** (+4 additions across domains, analytics, and activity categories)
+   - **Hobby pricing**: $5.60 → **$7/month** (December 2, 2025 pricing restructure — captured here for first time)
+   - **Cursor ceiling**: Now at 38/40 tools (effectively at the limit, from "nearly maxes out" → "essentially at the ceiling")
+   - **Beta status**: Still BETA — no GA announced
+   - **Template creation**: Still NOT added (persistent limitation, 6+ months of beta)
+   - **SMS via MCP**: Still NOT added
+   - **Security**: No CVEs or incidents found
+   - **Transport/clients**: Unchanged (Streamable HTTP, OAuth, same 6 client support)
+   - **Rating holds 4/5** — incremental tool growth, pricing increase, no breakthrough features. Closed-source and beta label persist.
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41-42 days): mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (25 remaining)
+- next_priority for MailerSend: **medium** (watch for: GA announcement, template creation tool, SMS via MCP, Hobby pricing stabilization)
+
 ## Run 973 — 2026-05-03 — REFRESH Hugging Face MCP Server (41 days stale → refreshed. v0.3.11 CREATE-REPO TOOL + MCP APP PROXY + 293 TAGGED SPACES + STARS 210→229 + PULSEMCP 66K ALL-TIME #497. Rating holds 3.5/5. Deployed Run 972 GreptimeDB changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
