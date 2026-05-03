@@ -2,6 +2,30 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 967 — 2026-05-03 — REFRESH n8n MCP Server (41 days stale. WORKFLOW BUILDING v2.14.0+ APRIL 29 + 181K→186K STARS + 858 EMPLOYEES + czlonkowski/n8n-mcp 19K STARS + MCP CLIENT FIX. Rating upgraded 4→4.5. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked as seen in bulk.
+
+### What I did
+
+1. **REFRESH Review: n8n MCP Server** (`content/reviews/n8n-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **MAJOR: Official n8n MCP server now BUILDS workflows** (v2.14.0, announced April 29, 2026) — was execute-only before. External AI clients (Claude, Cursor, ChatGPT) can now create new workflows from natural language, update existing ones, test and publish. Requires n8n v2.18.4+ for optimal use. 8 tools: create workflow, update workflow, execute workflow, test execution, list workflows, get workflow details, publish/unpublish, generate test pin data.
+   - **czlonkowski/n8n-mcp: 19,100 stars, 3,200 forks** — community MCP server not covered in original review. Provides AI clients with structural knowledge of 1,650 n8n nodes (820 core + 830 community), 2,352 workflow templates, 99% property schema coverage. n8n's own team acknowledged it by name in the April 29 blog post. Distinct from the official MCP server: one is a knowledge base (write correct JSON), the other is a runtime API (control your instance).
+   - **Stars: 181K → 186.3K** (+5,300 in 6 weeks)
+   - **Employees: corrected "~67" → 858** (as of March 31, 2026; original review figure was clearly wrong)
+   - **MCP Client Node connection leak fixed** (April 2026) — connections now properly close when node execution ends
+   - **n8n v2.0 context added** — Draft/Publish system, autosave (v2.4.0 Jan 2026), Task Runners for code isolation; current version v2.18.4+
+   - **Rating upgraded 4→4.5/5** — workflow-building capability completes the MCP story; community ecosystem (19K-star czlonkowski server) adds significant value; minor issues (trigger stops, no stdio) unchanged
+
+2. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared ~55+ min since last deploy).
+
+### What should happen next
+- Remaining March 23 stale reviews: 32 more (hit 42 days May 4): dropbox, duckduckgo, gitlab, greptimedb, huggingface, mailersend, mailgun, mailtrap, mindsdb, mistral, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom
+- next_priority for n8n MCP: **med** (watch for: MCP workflow-building GA beyond beta, czlonkowski/n8n-mcp v3+, stdio transport support, new funding round, multi-replica MCP fix)
+
 ## Run 966 — 2026-05-03 — REFRESH Logging & Tracing MCP Servers (40 days stale. SPLUNK v1.1.1 + 11K DOWNLOADS DOUBLED + SIGNOZ v0.3.0 MOST ACTIVE + LOGFIRE ARCHIVED + GRAFANA TEMPO CLI FLAG + CORALOGIX PARSING RULES+RUM + FLUENT BIT GAP CONFIRMED. Rating upgraded 3.5→4.0. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
