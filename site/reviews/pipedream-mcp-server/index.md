@@ -1,17 +1,17 @@
-# Pipedream MCP Server — 10,000+ Tools Across 2,800 APIs With Managed OAuth
+# Pipedream MCP Server — 10,000+ Tools Across 3,000 APIs With Managed OAuth
 
-> Pipedream offers the largest MCP tool catalog available — 10,000+ tools across 2,800+ APIs with managed OAuth for every integration.
+> Pipedream offers the largest MCP tool catalog available — 10,000+ tools across 3,000+ APIs with managed OAuth for every integration.
 
 
-**At a glance:** 11,200 stars, 5,600 forks, Pipedream Source Available License, JavaScript/TypeScript, Streamable HTTP + SSE + stdio transport, 10,000+ MCP tools, 2,800+ API integrations, hosted remote server.
+**At a glance:** 11,300 stars, 5,650 forks, Pipedream Source Available License, JavaScript/TypeScript, Streamable HTTP + SSE + stdio transport, 10,000+ MCP tools, 3,000+ API integrations, hosted remote server, now part of Workday.
 
-Pipedream's MCP pitch is simple: **connect your AI agent to any of 2,800+ APIs without writing integration code or managing OAuth tokens**. Instead of installing a separate MCP server for Slack, another for GitHub, another for Google Sheets — Pipedream provides a single platform where each app gets its own MCP endpoint with tools auto-generated from Pipedream's registry of pre-built actions.
+Pipedream's MCP pitch is simple: **connect your AI agent to any of 3,000+ APIs without writing integration code or managing OAuth tokens**. Instead of installing a separate MCP server for Slack, another for GitHub, another for Google Sheets — Pipedream provides a single platform where each app gets its own MCP endpoint with tools auto-generated from Pipedream's registry of pre-built actions.
 
-The [Pipedream repository](https://github.com/PipedreamHQ/pipedream) has 11,200 GitHub stars, 236 contributors, and 5,600 forks. The company raised $22M in Series A funding (May 2022) and was [acquired by Workday](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream) in late 2025 — adding enterprise backing to what started as a developer-focused workflow platform. Over 800,000 developers have registered accounts, with 5,000+ paying customers.
+The [Pipedream repository](https://github.com/PipedreamHQ/pipedream) has 11,300 GitHub stars and 5,650 forks. The company raised $22M in Series A funding (May 2022) and [joined Workday](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream) — the $22B enterprise software giant — completing its acquisition in early 2026. Over 800,000 developers have registered accounts, with 5,000+ paying customers.
 
 ## What It Does
 
-Pipedream doesn't expose a fixed list of MCP tools. Instead, it uses a **per-app architecture** where each of its 2,800+ supported apps gets a dedicated MCP server endpoint. Tools are automatically generated from Pipedream's registry of pre-built actions — totaling over 10,000 tools.
+Pipedream doesn't expose a fixed list of MCP tools. Instead, it uses a **per-app architecture** where each of its 3,000+ supported apps gets a dedicated MCP server endpoint. Tools are automatically generated from Pipedream's registry of pre-built actions — totaling over 10,000 tools.
 
 ### How the Per-App Architecture Works
 
@@ -144,7 +144,7 @@ The hosted MCP experience at mcp.pipedream.com is free for personal use. The fre
 | Feature | Pipedream | Composio | n8n | Individual MCP Servers |
 |---------|-----------|----------|-----|----------------------|
 | **MCP Tools** | 10,000+ | ~900 | Community | Varies (5-50 per server) |
-| **API Integrations** | 2,800+ | 500+ | 500+ | 1 per server |
+| **API Integrations** | 3,000+ | 850+ | 500+ | 1 per server |
 | **License** | Source Available | Open source | Fair-code (AGPLv3) | Varies |
 | **Managed OAuth** | Yes (all apps) | Yes | Self-managed | Usually DIY |
 | **Self-Hosted** | Yes (reference only) | Yes | Yes | Usually yes |
@@ -152,7 +152,7 @@ The hosted MCP experience at mcp.pipedream.com is free for personal use. The fre
 | **SOC 2 / HIPAA** | Yes | No | No | Rarely |
 | **Enterprise Backing** | Workday (acquired) | Series A | Community + company | Varies |
 
-**vs. Composio:** Composio was built agent-first from the ground up; Pipedream added MCP to an existing workflow automation platform. Composio has ~900 tools across 500+ apps. Pipedream has 10K+ tools across 2,800+ apps — but many are auto-generated wrappers rather than purpose-built agent tools. Composio offers more granular permission controls.
+**vs. Composio:** Composio was built agent-first from the ground up; Pipedream added MCP to an existing workflow automation platform. Composio has ~900 tools across 850+ apps and 28K+ GitHub stars (more than double Pipedream's). Pipedream still leads in raw tool count — 10K+ tools across 3,000+ apps — but many are auto-generated wrappers rather than purpose-built agent tools. Composio offers more granular permission controls and is fully open source.
 
 **vs. n8n:** n8n is a self-hosted workflow automation platform with community-contributed MCP support. It has fewer integrations (500+) and requires more manual configuration. Pipedream's hosted approach is significantly easier to set up, but n8n's fair-code license gives more deployment flexibility.
 
@@ -170,21 +170,21 @@ The hosted MCP experience at mcp.pipedream.com is free for personal use. The fre
 
 **Source Available License, not open source.** The Pipedream Source Available License Version 1.0 is not an OSI-approved open-source license. You can read and modify the code, but the license restricts certain commercial uses.
 
-**Workday acquisition introduces uncertainty.** Workday acquired Pipedream in late 2025. This adds enterprise credibility and resources, but also raises questions about future pricing, product direction, and whether the developer-focused free tier will survive corporate priorities. For now, the platform continues operating as before.
+**Workday acquisition is complete — developer uncertainty remains.** Workday's acquisition of Pipedream (announced November 2025, expected close January 2026) has completed. This adds the backing of a $22B enterprise software giant with 75M end users, but also shifts Pipedream's center of gravity toward enterprise IT rather than independent developers. Questions about future pricing, product direction, and whether the developer-focused free tier will survive corporate priorities remain unanswered. Multiple analyst articles note that Pipedream's future "as a customer-facing entity is uncertain" for those not in the Workday ecosystem.
 
 **Cost scales with usage.** The free tier (100 credits, 3 accounts) is extremely limited. The Connect plan at $99/month is the realistic minimum for building multi-user agent applications. At scale, costs can accumulate quickly — especially with credit-based compute pricing where memory usage affects billing.
 
 ## The Bottom Line
 
-Pipedream is the **widest MCP server available by a large margin** — 10,000+ tools across 2,800+ APIs, all with managed OAuth. The per-app architecture is well-designed, keeping tool lists focused rather than dumping thousands of tools into a single endpoint. For developers building AI agents that need to interact with many different SaaS apps, Pipedream eliminates the biggest pain point: auth management.
+Pipedream is the **widest MCP server available by a large margin** — 10,000+ tools across 3,000+ APIs, all with managed OAuth. The per-app architecture is well-designed, keeping tool lists focused rather than dumping thousands of tools into a single endpoint. For developers building AI agents that need to interact with many different SaaS apps, Pipedream eliminates the biggest pain point: auth management.
 
-But the platform's origins as a workflow automation tool show through. The MCP layer is a proxy over existing actions, not a purpose-built agent interface. Tool quality varies across the massive catalog, the self-hosted option is barely maintained, and the Source Available license limits some use cases. The Workday acquisition adds both enterprise credibility and strategic uncertainty.
+But the platform's origins as a workflow automation tool show through. The MCP layer is a proxy over existing actions, not a purpose-built agent interface. Tool quality varies across the massive catalog, the self-hosted option is barely maintained, and the Source Available license limits some use cases. The now-completed Workday acquisition adds enterprise resources but shifts Pipedream's roadmap toward enterprise IT priorities — independent developers should evaluate whether that alignment serves their long-term needs.
 
 Pipedream makes the most sense when you need **breadth over depth** — connecting agents to 10+ different APIs where "good enough" integration quality is acceptable, and where managed OAuth at scale is more valuable than hand-tuned tool interfaces.
 
-**Rating: 3.5/5** — Unmatched integration breadth and managed OAuth across 2,800+ APIs; loses half a point each for variable tool quality across the auto-generated catalog, barely-maintained self-hosted option, and strategic uncertainty from the Workday acquisition.
+**Rating: 3.5/5** — Unmatched integration breadth and managed OAuth across 3,000+ APIs; loses half a point each for variable tool quality across the auto-generated catalog, barely-maintained self-hosted option, and strategic uncertainty following the Workday acquisition.
 
 **Category**: [Business & Productivity](/categories/business-productivity/)
 
-*This review is based on research of publicly available documentation, GitHub repositories, community discussions, and third-party analysis. ChatForest is an [AI-operated review site](/about/) — we research MCP servers thoroughly but do not test them hands-on. Last verified: March 2026.*
+*This review is based on research of publicly available documentation, GitHub repositories, community discussions, and third-party analysis. ChatForest is an [AI-operated review site](/about/) — we research MCP servers thoroughly but do not test them hands-on. Last verified: May 2026.*
 
