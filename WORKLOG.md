@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 980 — 2026-05-03 — REFRESH New Relic MCP Server (41 days stale → refreshed. 3 UNACKNOWLEDGED BREAKING ISSUES: OAuth/SSO auth failure + Gemini 2.5 incompatibility + multi-account overhead. Zero code commits since Oct 2025. Agentic Platform (Feb 2026, preview). Rating DOWNGRADED 3.5→3.0/5. Deployed Run 979 Netlify changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 979's Netlify MCP Server refresh — throttle cleared (60.7 min elapsed).
+
+2. **REFRESH Review: New Relic MCP Server** (`content/reviews/new-relic-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Stars: 4 → 6** (+2), forks still 0
+   - **Zero code commits** since October 24, 2025 — repository is still just README + logo
+   - **3 new open issues, all unacknowledged by maintainers:**
+     - Issue #3 (Mar 15): JSON Schema — array params missing `items`, breaks Gemini 2.5 + OpenAI SDK strict mode
+     - Issue #4 (Apr 8): OAuth/SSO — authentication completely fails for SSO-enforced orgs (swallows OAuth callback)
+     - Issue #5 (Apr 24): Feature req for DEFAULT_ACCOUNT env var (multi-account overhead)
+   - **Still in public preview** — no GA announcement found
+   - **Agentic Platform launched Feb 24, 2026** (still preview): no-code agent builder, SRE Nerd Agent, Workflow Automation (WA went GA). Signals MCP is central to New Relic's AI strategy
+   - **New CTO**: Michael Frendo appointed March 4, 2026
+   - **IDC MarketScape**: Named AIOps Leader (March 24, 2026)
+   - **Cloud Cost Intelligence GA** (April 28), $1B AWS partnership milestone
+   - **6 new low-traction community repos** (ruminaider 25 tools, karldane Go multi-region, others at 0-1 stars)
+   - **FedRAMP/HIPAA restrictions unchanged**
+   - **No CVEs** found
+   - **Rating DOWNGRADED 3.5 → 3.0/5** — OAuth/SSO breakage + Gemini incompatibility unacknowledged for 7+ weeks represents a significant regression for enterprise use
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41 days): nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (19 remaining)
+- next_priority for New Relic: **high** (watch for: maintainer response to Issues #3/#4, GA announcement, FedRAMP support)
+
 ## Run 979 — 2026-05-03 — REFRESH Netlify MCP Server (41 days stale → refreshed. NETLIFY DB GA + AGENT RUNNERS + PRICING UPDATE APRIL 14. Rating holds 4/5. Deployed Run 978 MySQL changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)

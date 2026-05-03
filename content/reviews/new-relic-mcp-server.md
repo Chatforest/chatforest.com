@@ -2,14 +2,14 @@
 title: "New Relic MCP Server — AI-Powered Observability with NRQL Queries, Alerts, Entity Discovery, and Log Analysis"
 date: 2026-03-23T23:30:00+09:00
 description: "New Relic's official MCP server gives AI assistants access to observability data including NRQL queries, alert management, entity discovery, deployment analysis, and log examination."
-og_description: "New Relic MCP: NRQL queries, alerts, entity discovery, log analysis, deployment impact. Official first-party observability MCP. Rating: 3.5/5."
+og_description: "New Relic MCP: NRQL queries, alerts, entity discovery, log analysis, deployment impact. Official first-party observability MCP. Rating: 3.0/5."
 content_type: "Review"
 card_description: "Official first-party MCP server from New Relic for engineers and SREs building AI-assisted observability workflows. Provides AI assistants with access to NRQL query execution, natural language to NRQL conversion, alert management, entity discovery, synthetic monitor listing, deployment impact analysis, golden metrics analysis, Kafka metrics, thread analysis, and log examination. Supports both API key and OAuth 2.0 authentication."
 categories: ["/categories/observability-monitoring/"]
-last_refreshed: 2026-03-23
+last_refreshed: 2026-05-03
 ---
 
-**At a glance:** [GitHub](https://github.com/newrelic/mcp-server) — 4 stars, 0 forks. Official first-party from [New Relic](https://newrelic.com/). Public preview. 15+ observability tools across 6 categories covering queries, alerts, entities, logs, and advanced analysis.
+**At a glance:** [GitHub](https://github.com/newrelic/mcp-server) — 6 stars, 0 forks. Official first-party from [New Relic](https://newrelic.com/). Public preview. 15+ observability tools across 6 categories covering queries, alerts, entities, logs, and advanced analysis.
 
 The New Relic MCP Server is the **official first-party MCP integration** for [New Relic's](https://newrelic.com/) observability platform. It connects AI agents and development tools directly to New Relic's telemetry data, enabling engineers to query metrics, investigate alerts, analyze performance, and generate insights using natural language — all without leaving their IDE or AI assistant.
 
@@ -104,11 +104,26 @@ Access is governed by New Relic's **Role-Based Access Control (RBAC)**. The MCP 
 | Date | Event |
 |------|-------|
 | Jun 2025 | New Relic announces MCP support (press release) |
+| Oct 24, 2025 | Last GitHub commit to `newrelic/mcp-server` (no code changes since) |
 | Nov 2025 | MCP Server launches into public preview |
 | Nov 2025 | Agentic AI Monitoring announced alongside MCP Server |
-| 2025-2026 | Community implementations emerge (cloudbring, thrashy, ulucaydin, piekstra, buallen) |
+| Jan 22, 2026 | ChatGPT observability solution and Japan Data Center announced |
+| Feb 24, 2026 | **Agentic Platform** launched (still in preview): no-code agent builder, SRE Nerd Agent, dynamic agent runtime, Workflow Automation (GA) |
+| Mar 4, 2026 | **Michael Frendo** appointed CTO |
+| Mar 15, 2026 | Issue #3: JSON Schema breakage (Gemini 2.5/OpenAI SDK incompatibility) filed — no response |
+| Mar 24, 2026 | New Relic named Leader in 2026 IDC MarketScape for AIOps |
+| Apr 8, 2026 | Issue #4: OAuth/SSO auth breakage filed — no response |
+| Apr 22, 2026 | $1B transacted in AWS partnership milestone |
+| Apr 28, 2026 | Cloud Cost Intelligence GA; Session Replay for mobile launched |
+| 2025-2026 | Community implementations emerge (cloudbring, thrashy, ulucaydin, piekstra, buallen, ducduyn31, ruminaider, karldane, and others) |
 
-The official `newrelic/mcp-server` repository has only **2 commits** from **1 contributor** (nr-aks) as of March 2026 — the actual server implementation appears to be managed internally, with the GitHub repo serving primarily as documentation and a public entry point.
+The official `newrelic/mcp-server` repository has only **2 commits** from **1 contributor** (nr-aks) — last code commit was October 24, 2025. The repository contains only two files (README.md and a logo SVG). The actual server implementation lives at `mcp.newrelic.com/mcp/` and is managed entirely outside GitHub. As of May 2026, **three open issues have received zero maintainer responses**:
+
+- **Issue #3** (March 15, 2026): JSON Schema Validation Error — array-type parameters missing `items` property. Breaks Gemini 2.5 (400 Bad Request) and OpenAI SDK strict validation. Affected tools include `get_entity`, `search_entities`, `list_recent_issues`, `analyze_transactions`. Only lenient clients like Cursor work around it.
+- **Issue #4** (April 8, 2026): OAuth completely breaks when the user's New Relic org enforces SSO. The SSO redirect chain swallows the MCP OAuth callback — users in SSO orgs cannot complete authentication at all.
+- **Issue #5** (April 24, 2026): Feature request for a `DEFAULT_ACCOUNT` env var — agents query all accounts on every investigation, causing unnecessary overhead in multi-account environments.
+
+The lack of any maintainer engagement on these issues — particularly the OAuth/SSO breakage and Gemini incompatibility — is a significant concern for a first-party enterprise tool.
 
 ## Pricing
 
@@ -144,32 +159,36 @@ Additional data ingest beyond included amounts is billed at volume-based rates.
 
 ## Known Issues & Limitations
 
-1. **Public preview status** — The server is in public preview. Features and behavior may change. Not recommended for mission-critical automated workflows yet.
+1. **Public preview status** — The server remains in public preview as of May 2026 — no GA announcement has been made. Features and behavior may change. Not recommended for mission-critical automated workflows.
 
-2. **Minimal GitHub presence** — Only 4 stars, 0 forks, 2 commits from 1 contributor. The actual server appears to be managed internally, making it difficult to assess code quality, report issues, or contribute improvements.
+2. **Gemini 2.5 / OpenAI SDK strict mode incompatibility** *(NEW — Issue #3, March 2026, unresolved)* — Array-type parameters are missing `items` property in the JSON schema, causing 400 Bad Request errors in Gemini 2.5 and OpenAI SDK strict validation mode. Affected tools include `get_entity`, `search_entities`, `list_recent_issues`, `analyze_transactions`, and others. Only lenient clients (Cursor) work around it. Unacknowledged by maintainers for 7+ weeks.
 
-3. **FedRAMP/HIPAA prohibited** — The MCP server **must not be used** if your accounts or data fall under FedRAMP or HIPAA compliance mandates. This is a hard restriction, not just a recommendation.
+3. **OAuth/SSO authentication breakage** *(NEW — Issue #4, April 2026, unresolved)* — OAuth authentication completely fails for users in New Relic orgs that enforce SSO. The SSO redirect chain swallows the MCP OAuth callback — such users cannot complete authentication at all. This affects most enterprise deployments. Unacknowledged by maintainers.
 
-4. **RBAC complexity** — Access requires proper organizational role assignment. Users must have specific capabilities granted through New Relic's RBAC system, which can be confusing to configure — permission errors are a common troubleshooting issue.
+4. **Minimal GitHub presence and no maintainer engagement** — Only 6 stars, 0 forks, 2 commits from 1 contributor (last commit October 2025). Three open issues filed between March and April 2026 have received zero maintainer responses. The actual server implementation is entirely closed and hosted at `mcp.newrelic.com/mcp/`.
 
-5. **Rate limiting** — Subject to New Relic's standard API rate limits (REST API v2 per-account limits, NerdGraph limits, Synthetic Monitoring API at 3 req/sec). Heavy automated querying could hit these limits.
+5. **FedRAMP/HIPAA prohibited** — The MCP server **must not be used** if your accounts or data fall under FedRAMP or HIPAA compliance mandates. This restriction has not changed despite other platform enhancements.
 
-6. **No local/self-hosted option** — Unlike some MCP servers that run locally via npx or Docker, the New Relic MCP server connects to New Relic's cloud platform. You need an active New Relic account and internet connectivity.
+6. **RBAC complexity** — Access requires proper organizational role assignment through New Relic's RBAC system. Permission errors are a common troubleshooting issue.
 
-7. **Limited community ecosystem** — Multiple community alternatives exist (cloudbring, thrashy, ulucaydin, piekstra, buallen, ducduyn31), but none have significant adoption. The ecosystem is fragmented compared to more mature MCP integrations.
+7. **Rate limiting** — Subject to New Relic's standard API rate limits (REST API v2, NerdGraph, Synthetic Monitoring API at 3 req/sec). Heavy automated querying could hit these limits.
 
-8. **New Relic account required** — Even the free tier requires account creation. Engineers evaluating the MCP server need to have New Relic instrumentation already deployed in their infrastructure to get meaningful results.
+8. **No local/self-hosted option** — Connects to New Relic's cloud platform only. An active account and internet connectivity are required.
+
+9. **Multi-account overhead** — No `DEFAULT_ACCOUNT` env var; agents query all accounts on every investigation. Feature requested (Issue #5, April 2026) but unacknowledged.
+
+10. **New Relic account required** — Even the free tier requires account creation and deployed instrumentation to get meaningful results.
 
 ## The Bottom Line
 
 The New Relic MCP Server represents a thoughtful approach to **AI-powered observability** — rather than just exposing raw API endpoints, it provides intelligent analysis tools that help AI assistants understand system health, diagnose issues, and assess deployment impact. The natural language to NRQL conversion is a standout feature that lowers the barrier to querying complex telemetry data.
 
-The tool set is well-designed for **real-world SRE and DevOps workflows**: checking alerts, analyzing golden metrics, investigating deployments, examining logs for patterns, and generating impact reports. The breadth of analysis tools (Kafka metrics, thread analysis, error group tracking) shows New Relic is targeting practical engineering use cases, not just dashboard access.
+The tool set is well-designed for **real-world SRE and DevOps workflows**: checking alerts, analyzing golden metrics, investigating deployments, examining logs for patterns, and generating impact reports. New Relic's broader push into agentic AI — the Agentic Platform, SRE Nerd Agent, and Workflow Automation launched in February 2026 — signals that MCP is central to the company's AI strategy.
 
-However, the **public preview status** combined with the **minimal GitHub footprint** (4 stars, 2 commits) raises questions about maturity and community validation. The FedRAMP/HIPAA restriction will be a dealbreaker for regulated industries. And unlike payment MCP servers where the free tier is genuinely free, meaningful use of the New Relic MCP server requires having New Relic instrumentation already deployed — this is a tool for existing New Relic customers, not a way to attract new ones.
+However, the **41 days since the original review have brought more problems than progress**. Three open issues filed in March and April 2026 have gone completely unacknowledged: the OAuth/SSO breakage means enterprise users in SSO-enforced orgs cannot authenticate at all, and the JSON schema incompatibility breaks Gemini 2.5 and OpenAI SDK strict mode. The repository has had zero code commits since October 2025. The server remains in public preview with no GA timeline, FedRAMP/HIPAA restrictions still in place, and the GitHub repo still containing just a README and a logo.
 
-**Rating: 3.5 / 5** — Official first-party from a major observability platform with genuinely useful analysis tools that go beyond simple data access. The natural language query support and intelligent analysis features set it apart from community alternatives. Loses points for public preview instability, minimal open source presence, FedRAMP/HIPAA restrictions, and the reality that you need an existing New Relic deployment to get value. If New Relic graduates this from preview with broader compliance support and stronger community engagement, it could reach a 4.
+**Rating: 3.0 / 5** — Downgraded from 3.5. The analysis tool design is genuinely useful, and New Relic's agentic platform momentum is real. But three unacknowledged breaking issues — particularly complete OAuth/SSO auth failure and Gemini incompatibility — represent a regression in usability for the clients and deployment patterns most common in enterprise environments. A first-party tool from a platform company that goes 7+ weeks without acknowledging critical auth breakage is not production-ready. Rating can recover if New Relic addresses the open issues and graduates to GA.
 
 **Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
-*This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Information is current as of March 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*
+*This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Originally published March 2026; refreshed May 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*
