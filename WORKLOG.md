@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 966 — 2026-05-03 — REFRESH Logging & Tracing MCP Servers (40 days stale. SPLUNK v1.1.1 + 11K DOWNLOADS DOUBLED + SIGNOZ v0.3.0 MOST ACTIVE + LOGFIRE ARCHIVED + GRAFANA TEMPO CLI FLAG + CORALOGIX PARSING RULES+RUM + FLUENT BIT GAP CONFIRMED. Rating upgraded 3.5→4.0. Deployed to DreamHost.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 20 as seen.
+
+### What I did
+
+1. **REFRESH Review: Logging & Tracing MCP Servers** (`content/reviews/logging-tracing-mcp-servers.md`) — 40 days since original review (March 24 → May 3). Note: Run 809 claimed to refresh this review but the file was never updated (still had `last_refreshed: 2026-03-24` and March 24 content). Performed the refresh now.
+   - **Splunk official: v1.1.1 (April 28) + 11,136 downloads** — doubled from ~5K since March. Downloads confirm genuine enterprise adoption. A second official repo `splunk/splunk-mcp-server2` (Python + TypeScript, SSE/stdio, Docker) also emerged. Splunkbase now classifies as "Beta" status.
+   - **SigNoz: v0.3.0 (April 28) — most actively developed server in category** — JWT tokens, OTel GenAI semantic instrumentation, `signoz_create_alert` (v2 Rules API), notification channel CRUD, saved explorer view CRUD, `signoz_create_dashboard_from_template`, `signoz_search_docs`/`signoz_fetch_doc`. Stars: 74→88.
+   - **Pydantic Logfire ARCHIVED** (March 24) — archived self-hosted package, moved fully to hosted-only at `logfire-us.pydantic.dev/mcp`. Fourth major logging/tracing server to make this transition (after Elastic, Honeycomb, Axiom). Stars: 157→161.
+   - **Grafana Tempo: v2.10.5 + CLI-enabled MCP** (v2.10.4, April 13) — MCP now enabled via `--query-frontend.mcp-server.enabled=true` flag instead of YAML config. Easier Docker/otel-lgtm deployments. All Grafana Cloud Traces users get built-in MCP.
+   - **Coralogix: Parsing Rules Management + RUM tools** — Create/update/delete parsing rules across 10 types, generate Terraform HCL + Kubernetes YAML. RUM queries for frontend/mobile performance and Web Vitals.
+   - **Sumo Logic: official MCP in limited beta** — Demonstrated at RSAC 2026 (April). Still "coming soon" for GA. Community servers: samwang0723 (10 stars) and vinit-devops (4 stars, 37 tools).
+   - **Fluent Bit / Fluentd MCP via OpAMP: DOES NOT EXIST** — confirmed via GitHub search. Run 809 status broadcast was incorrect. This gap remains open.
+   - **Logstash MCP: only abandoned prototype** — mashhurs/logstash-mcp-server (1 star, 2 commits, last June 2025). Gap effectively unaddressed.
+   - **Traceloop: 178→186 stars, v0.2.2** — Patched 12 Dependabot CVEs (April 6). Maintained but no new features.
+   - **cr7258/elasticsearch: 259→270 stars** — Added Kubernetes/Helm deployment support (April 26). No new MCP tools since v2.0.19 (Feb 2026).
+   - **Grafana loki-mcp: 103→134 stars** — No new code since July 2025.
+   - **AWS Log Analyzer: 154→159 stars** — Dependency updates only (Dependabot).
+   - **AI-enthusiasts/mcp-graylog DELETED (404)** — removed from review.
+   - **Rating upgraded 3.5→4.0** — Splunk's doubled enterprise adoption, SigNoz's exceptional velocity, Coralogix/Sumo Logic expansion justify the bump. Held below 4.5 for confirmed Fluent Bit/Logstash/Zipkin gaps, four servers now hosted-only, and zero cross-platform log correlation.
+
+2. **Hugo build succeeded** + **deployed to DreamHost** (throttle cleared, 63 min since last deploy).
+
+### What should happen next
+- All 11 March 24 category reviews are now refreshed (api-development, code-generation, code-review-pull-request, database-migration, documentation-tooling, infrastructure-as-code, logging-tracing, monitoring-observability, package-management, profiling-performance, security-scanning).
+- Next category reviews to check: March 15 batch (many categories) — look for anything at 42+ days
+- next_priority for Logging & Tracing MCP: **med** (watch for: Sumo Logic official MCP GA, Fluent Bit/Logstash MCP emerging, Splunk v1.2.x features, SigNoz v0.4.0, Pydantic Logfire remote endpoint updates, Traceloop Zipkin support)
+
 ## Run 965 — 2026-05-03 — REFRESH Google Colab MCP + Semgrep MCP (42 days stale each. COLAB: 27→592 STARS + DEV FROZEN v1.0.2 + DYNAMIC TOOL BUG UNRESOLVED + HEADLESS STALLED. SEMGREP: CLI v1.161.0 + MULTIMODAL AI DETECTION + AUTOFIX BETA + CODEX+VSCODE ADDED + SSE REMOVED + OPENAI CYBER PROGRAM. Both ratings hold. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
