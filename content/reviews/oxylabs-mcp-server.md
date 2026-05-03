@@ -1,16 +1,28 @@
 ---
 title: "Oxylabs MCP Server — Two Scraping Engines in One, With the Fastest Stress Test Times"
 date: 2026-03-23T22:00:00+09:00
-description: "The Oxylabs MCP Server combines a traditional Web Scraper API with AI-powered extraction tools in a single Python package. 86 GitHub stars, MIT license, 8 tools across two modes."
-og_description: "Oxylabs MCP Server: dual-engine web scraping for AI agents. 86 stars, MIT license, 8 tools (Web Scraper API + AI Studio), 75% search accuracy, fastest stress test completion (31.7s avg). Free trials for both engines. Rating: 3/5."
+description: "The Oxylabs MCP Server combines a traditional Web Scraper API with AI-powered extraction tools in a single Python package. 94 GitHub stars, MIT license, 8 tools across two modes."
+og_description: "Oxylabs MCP Server: dual-engine web scraping for AI agents. 94 stars, MIT license, 8 tools (Web Scraper API + AI Studio), 75% search accuracy, fastest stress test completion (31.7s avg). Free trials for both engines. Rating: 3/5."
 content_type: "Review"
 card_description: "Dual-engine web scraping for AI agents. Combines traditional Web Scraper API (proxies, anti-bot, structured parsers) with AI Studio (AI-powered extraction, crawling, browser automation). Two free trials. Python-based, Claude Desktop and Cursor support."
-last_refreshed: 2026-03-23
+last_refreshed: 2026-05-04
 ---
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** 86 stars, 23 forks, MIT license, v0.7.5 (December 2025), Python, stdio transport, 8 tools across 2 engines, two separate free trials available.
+**At a glance:** 94 stars, 24 forks, MIT license, v0.8.1 (April 2026), Python, stdio transport, 8 tools across 2 engines, two separate free trials available.
+
+## What's New (May 2026 refresh)
+
+**v0.8.1 released April 23, 2026** — The stale release streak (v0.7.5 from December 2025) finally ended with a dependency maintenance update: fastmcp upgraded from 2.11.3 to 3.2.4, lxml 5.3.0 to 6.1.0, pydantic 2.10.5 to 2.11.3, and ruff 0.9.1 to 0.15.11. This is a pure maintenance release — no new tools, no new features, no new scraping capabilities. The version jumped from 0.7.5 to 0.8.1 (skipping a minor version) to reflect the fastmcp major version jump, not new Oxylabs functionality.
+
+**Stars grew to 94** (+8 from 86, roughly 9% growth in 6 weeks).
+
+**Agent Skills repo** — Oxylabs launched [oxylabs/agent-skills](https://github.com/oxylabs/agent-skills) in March 2026, providing `skills.md` files (Anthropic open standard) for AI coding agents working with Oxylabs products. Five skills cover: Proxies, Web Unblocker, Web Scraper API, Headless Browser, and Video Data. Install via `npx skills add https://github.com/oxylabs/agent-skills.git`. This is a parallel initiative to the MCP server — addressing agent integration through a different mechanism.
+
+**Headless Browser companion: 0 stars** — The companion [oxylabs/oxylabs-hb-mcp](https://github.com/oxylabs/oxylabs-hb-mcp) repo remains at 0 stars with no activity since February 26, 2026. Despite being mentioned on the Oxylabs blog, it has gained no community traction.
+
+**AIMultiple benchmarks unchanged** — The March 16, 2026 benchmark data remains the most current (75% accuracy, 5th of 9 providers, fastest stress test at 31.7s). No new benchmark run found as of May 2026.
 
 Oxylabs takes a different approach from most web scraping MCP servers: instead of one unified tool set, it exposes **two distinct scraping engines** through a single MCP interface. Provide Web Scraper API credentials and you get traditional proxy-backed scraping. Provide an AI Studio API key and you get AI-powered extraction. Provide both and the server exposes all 8 tools.
 
@@ -117,6 +129,8 @@ The tradeoff is clear: Oxylabs is fast when it succeeds, but succeeds less often
 
 Oxylabs also maintains a separate [Headless Browser MCP server](https://github.com/oxylabs/oxylabs-hb-mcp) that wraps Playwright MCP with Oxylabs' managed browser infrastructure. Instead of running a local browser, it connects via secure WebSocket (WSS) to Oxylabs' endpoints. This is a lighter-weight option if you only need browser automation without the full scraping toolkit.
 
+As of May 2026, the companion repo has **0 GitHub stars** and no updates since February 26, 2026. Despite blog coverage, it has not attracted community adoption.
+
 ## Pricing
 
 Oxylabs has two separate pricing structures for its two engines:
@@ -153,7 +167,7 @@ The dual pricing is both a strength and a complication. You can start with just 
 
 | Feature | Oxylabs | [Bright Data](/reviews/bright-data-mcp-server/) | [Firecrawl](/reviews/firecrawl-mcp-server/) | [Nimble](/reviews/nimble-mcp-server/) |
 |---------|---------|-------------|-----------|--------|
-| **Stars** | 86 | 2,200 | 5,800 | N/A (closed) |
+| **Stars** | 94 | 2,200 | 5,800 | N/A (closed) |
 | **Tools** | 8 | 60+ (Pro) | 19 | 7 |
 | **Language** | Python | TypeScript | TypeScript | N/A |
 | **Accuracy** | 75% | 100% | 83% | 93% |
@@ -178,7 +192,7 @@ The dual pricing is both a strength and a complication. You can start with just 
 
 - **Low community adoption** — 86 GitHub stars vs thousands for competitors. Less community support, fewer third-party integrations, fewer battle-tested edge cases
 - **75% accuracy** — one in four web search/extraction tasks fails in benchmarks. Bright Data (100%) and Nimble (93%) are significantly more reliable
-- **Stale release** — v0.7.5 from December 2025. Four months without an update raises questions about active maintenance
+- **Maintenance-only updates** — v0.8.1 (April 2026) broke a 4-month release drought, but the update was pure dependency housekeeping — no new tools, no new features. Active maintenance is confirmed, but meaningful capability additions remain absent
 - **Dual billing complexity** — two separate products with different pricing models, credit systems, and billing cycles
 - **8 tools is thin** — Bright Data offers 60+ in Pro mode; Apify provides access to 3,000+ marketplace Actors. Oxylabs covers basics but lacks vertical depth
 - **No self-hosting** — all requests route through Oxylabs' cloud. No way to run the proxy or AI infrastructure yourself
@@ -191,7 +205,7 @@ The dual pricing is both a strength and a complication. You can start with just 
 
 The Oxylabs MCP Server's dual-engine approach is genuinely interesting — combining traditional proxy-backed scraping with AI-powered extraction in one package gives agents flexibility that single-engine competitors don't offer. The fastest stress test completion times (31.7s) show solid infrastructure behind the tools. And the low entry point ($12/month for AI Studio) makes it accessible.
 
-But the numbers don't lie: 75% accuracy puts Oxylabs in the bottom half of benchmarked MCP servers. With just 86 GitHub stars and a release that's four months old, community momentum is minimal compared to [Bright Data](/reviews/bright-data-mcp-server/) (2,200 stars) or [Firecrawl](/reviews/firecrawl-mcp-server/) (5,800 stars). The 8-tool surface area covers the basics but lacks the vertical depth of competitors.
+But the numbers don't lie: 75% accuracy puts Oxylabs in the bottom half of benchmarked MCP servers. With just 94 GitHub stars and a v0.8.1 update that was pure dependency maintenance, community momentum is minimal compared to [Bright Data](/reviews/bright-data-mcp-server/) (2,200 stars) or [Firecrawl](/reviews/firecrawl-mcp-server/) (5,800 stars). The 8-tool surface area covers the basics but lacks the vertical depth of competitors. The companion Headless Browser repo has attracted zero stars, suggesting limited uptake beyond the core MCP server.
 
 For teams already using Oxylabs' proxy infrastructure, the MCP server is a convenient integration. For everyone else, the accuracy gap and limited toolset make it hard to recommend over [Bright Data](/reviews/bright-data-mcp-server/) (if you need reliability) or [Firecrawl](/reviews/firecrawl-mcp-server/) (if you want speed and open source).
 
@@ -199,4 +213,4 @@ For teams already using Oxylabs' proxy infrastructure, the MCP server is a conve
 
 *This review was researched and written by an AI agent. We do not have hands-on access to Oxylabs' infrastructure — our analysis is based on the [GitHub repository](https://github.com/oxylabs/oxylabs-mcp), [official documentation](https://developers.oxylabs.io/), [independent benchmarks](https://aimultiple.com/browser-mcp), and community reports. See our [About page](/about/) for how we work.*
 
-*Last updated: March 23, 2026*
+*Last updated: May 4, 2026*

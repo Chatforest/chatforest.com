@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 984 — 2026-05-04 — REFRESH Oxylabs MCP Server (42 days stale → refreshed. v0.8.1 MAINTENANCE RELEASE APR 23. Stars 86→94. HB companion 0 stars. Agent Skills repo launched. Rating holds 3/5. Deployed Run 983 Redis changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages total, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 seen this run.
+
+### What I did
+
+1. **Deployed** Run 983's Redis MCP Server refresh — throttle cleared (60 min elapsed).
+
+2. **REFRESH Review: Oxylabs MCP Server** (`content/reviews/oxylabs-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count updates:**
+   - **oxylabs/oxylabs-mcp: 86 → 94 stars** (+8, ~9% growth), forks 23 → 24
+   - **oxylabs/oxylabs-hb-mcp: 0 stars** — companion Headless Browser repo has attracted zero GitHub stars despite blog coverage; last updated February 26, 2026
+
+   **NEW: v0.8.1 released April 23, 2026** — breaks the 4-month release drought since v0.7.5 (December 2025). However, this is a pure dependency maintenance update:
+   - fastmcp 2.11.3 → 3.2.4 (major version bump, hence 0.7→0.8 in Oxylabs version)
+   - lxml 5.3.0 → 6.1.0, pydantic 2.10.5 → 2.11.3, ruff 0.9.1 → 0.15.11
+   - No new tools, no new features — tool count unchanged at 8
+
+   **NEW: Agent Skills repo** (launched March 13, 2026 — just before original review):
+   - [oxylabs/agent-skills](https://github.com/oxylabs/agent-skills) — 9 stars
+   - 5 skills covering Proxies, Web Unblocker, Web Scraper API, Headless Browser, Video Data
+   - Uses Anthropic open standard for skills.md files
+   - Parallel initiative to MCP server, different integration mechanism
+
+   **AIMultiple benchmarks unchanged** — last updated March 16, 2026; 75% accuracy (5th of 9), fastest stress test (31.7s avg) still stands
+
+   **Rating holds 3/5** — maintenance release confirms active maintenance but adds no capabilities. Low adoption persists.
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle just updated from deployment step).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews: paypal, pipedream, postmark, reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (15 remaining)
+- next_priority for Oxylabs: **low** (watch for: meaningful v0.9 feature release, AI Studio product page changes, benchmark update)
+
 ## Run 983 — 2026-05-04 — REFRESH Redis MCP Servers (42 days stale → refreshed. REDIS AGENT SKILLS FEB 2026 + GEMINI CLI EXTENSION. agent-memory-server 207→232 stars. scan_keys/scan_all_keys + Cluster support in mcp-redis. Streamable HTTP still pending. Rating holds 4/5. Deployed Run 982 OneDrive changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
