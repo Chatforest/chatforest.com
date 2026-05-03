@@ -1,18 +1,18 @@
 ---
 title: "MySQL MCP Servers — The World's Most Popular Database Meets AI"
 date: 2026-03-23T23:00:00+09:00
-description: "MySQL's MCP ecosystem features benborla/mcp-server-mysql (1.4k stars, TypeScript) and designcomputer/mysql_mcp_server (1.2k stars, Python) as community leaders, plus"
-og_description: "MySQL MCP ecosystem: mcp-server-mysql (1.4k stars), mysql_mcp_server (1.2k stars), DBHub (2.4k stars), Google Toolbox (13.5k stars), plus cloud vendor servers. No Oracle-official MCP server. Rating: 3.5/5."
+description: "MySQL's MCP ecosystem features benborla/mcp-server-mysql (1.6k stars, TypeScript) and designcomputer/mysql_mcp_server (1.2k stars, Python) as community leaders, plus"
+og_description: "MySQL MCP ecosystem: mcp-server-mysql (1.6k stars), mysql_mcp_server (1.2k stars), DBHub (2.7k stars), Google MCP Toolbox (14.9k stars), plus cloud vendor servers. Oracle released PoC MCP for MySQL HeatWave. Rating: 3.5/5."
 content_type: "Review"
-card_description: "MySQL has a solid community MCP ecosystem despite no official Oracle server. benborla/mcp-server-mysql (1.4k stars) leads with SSH tunneling and Claude Code integration. designcomputer/mysql_mcp_server (1.2k stars) offers simplicity. Multi-database servers DBHub (2.4k stars) and Google Toolbox (13.5k stars) add breadth. AWS, Azure, and Google Cloud all support MySQL via MCP."
-last_refreshed: 2026-03-23
+card_description: "MySQL has a solid community MCP ecosystem. benborla/mcp-server-mysql (1.6k stars) leads with SSH tunneling and Claude Code integration. designcomputer/mysql_mcp_server (1.2k stars) offers simplicity. Multi-database servers DBHub (2.7k stars) and Google MCP Toolbox (14.9k stars) add breadth. Oracle released a PoC MCP for MySQL HeatWave. MySQL 8.0 hit EOL April 21, 2026."
+last_refreshed: 2026-05-03
 ---
 
-**At a glance:** MySQL has a **solid community-driven MCP ecosystem** — but no official server from Oracle. The two leading MySQL-specific servers are [benborla/mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) (1.4k stars, TypeScript, MIT) with SSH tunnel support and Claude Code integration, and [designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server) (1.2k stars, Python, MIT) focused on simplicity and security. Multi-database servers [Bytebase DBHub](https://github.com/bytebase/dbhub) (2.4k stars) and [Google's MCP Toolbox](https://github.com/googleapis/genai-toolbox) (13.5k stars) also support MySQL alongside other databases. Cloud vendors AWS, Azure, and Google all provide MySQL MCP support through their platform servers. Part of our **[Databases MCP category](/categories/databases/)**.
+**At a glance:** MySQL now has **both community and a nascent official presence** in the MCP ecosystem. The two leading MySQL-specific servers are [benborla/mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) (1.6k stars, TypeScript, MIT) with SSH tunnel support and Claude Code integration, and [designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server) (1.2k stars, Python, MIT) focused on simplicity and security. Multi-database servers [Bytebase DBHub](https://github.com/bytebase/dbhub) (2.7k stars) and [Google's MCP Toolbox](https://github.com/googleapis/mcp-toolbox) (14.9k stars) also support MySQL alongside other databases. Oracle released a **proof-of-concept MCP server for MySQL HeatWave** (cloud-only, not production-ready), ending the era of zero official Oracle MCP presence. Cloud vendors AWS, Azure, and Google all provide MySQL MCP support through their platform servers. Part of our **[Databases MCP category](/categories/databases/)**.
 
-MySQL is the **world's most popular open-source relational database** — powering roughly **39% of the relational database market** with over 235,000 companies using it worldwide. Created in 1995 by Michael "Monty" Widenius, David Axmark, and Allan Larsson as MySQL AB, it was acquired by Sun Microsystems for $1 billion in 2008, then passed to Oracle when Oracle acquired Sun for $5.6 billion in 2010. The latest Innovation release is **MySQL 9.6** (January 2026); the current Long-Term Support release is **MySQL 8.4.5**. MySQL 8.0 reaches end-of-life in **April 2026**.
+MySQL is the **world's most popular open-source relational database** — powering roughly **39% of the relational database market** with over 235,000 companies using it worldwide. Created in 1995 by Michael "Monty" Widenius, David Axmark, and Allan Larsson as MySQL AB, it was acquired by Sun Microsystems for $1 billion in 2008, then passed to Oracle when Oracle acquired Sun for $5.6 billion in 2010. The latest Innovation release is **MySQL 9.6** (January 2026); the current Long-Term Support release is **MySQL 8.4.5**. **MySQL 8.0 reached end-of-life on April 21, 2026** — that milestone has now passed, putting the ecosystem firmly in the 8.4 LTS + 9.x era.
 
-**Architecture note:** Like PostgreSQL, MySQL has no single "official" MCP server from its corporate steward (Oracle). Unlike PostgreSQL, MySQL's ecosystem is smaller — roughly half the number of dedicated servers. The dominant open-source alternative MariaDB (forked from MySQL in 2009 by Widenius himself) has its own [official MCP server](https://github.com/MariaDB/mcp) (151 stars), making MariaDB the only MySQL-compatible database with a first-party MCP implementation.
+**Architecture note:** MySQL's "no official server" story has changed slightly. Oracle has released a **proof-of-concept MCP server** via [oracle.com/mcp/](https://www.oracle.com/mcp/) for MySQL HeatWave and MySQL AI — covering connection management, query execution, vector store management, and OCI Object Store integration. However, it is cloud-only (HeatWave), PoC-grade (not production-ready), and separate from community MySQL. The dominant open-source alternative MariaDB (forked from MySQL in 2009 by Widenius himself) has its own [official MCP server](https://github.com/MariaDB/mcp) (166 stars), making it the best-served MySQL-compatible database for official MCP support.
 
 ## What's Available
 
@@ -22,7 +22,7 @@ The **most popular MySQL-specific MCP server**, optimized for Claude Code integr
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [benborla/mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) — 1.4k stars, 181 forks, 222 commits, MIT |
+| GitHub | [benborla/mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) — 1.6k stars, MIT |
 | Language | TypeScript/JavaScript |
 | Install | npm / Smithery |
 | Transport | stdio |
@@ -40,7 +40,7 @@ The **most popular MySQL-specific MCP server**, optimized for Claude Code integr
 
 **Tools:** `mysql_query` for executing SQL queries (read-only by default, optional write via `MYSQL_DISABLE_READ_ONLY_TRANSACTIONS`). Resources expose JSON schemas with column types, indexes, foreign keys, and table statistics.
 
-**Key differentiator:** The SSH tunnel integration and Claude Code hooks make this the best option for developers who work with remote MySQL databases through Claude. Connection pooling and caching add production-grade reliability. 34 open issues suggest active community usage.
+**Key differentiator:** The SSH tunnel integration and Claude Code hooks make this the best option for developers who work with remote MySQL databases through Claude. Connection pooling and caching add production-grade reliability. Recent additions include enhanced SSH tunnel scripts for RDS/private VPC access and `destructiveHint` annotations for LLM safety flagging.
 
 ### mysql_mcp_server — designcomputer/mysql_mcp_server
 
@@ -48,7 +48,7 @@ A **simpler, security-focused** MySQL MCP server:
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server) — 1.2k stars, 229 forks, 69 commits, MIT |
+| GitHub | [designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server) — 1.2k stars, 232 forks, MIT |
 | Language | Python |
 | Install | `pip install mysql-mcp-server` / Smithery / Docker |
 | Transport | stdio |
@@ -68,7 +68,7 @@ A **multi-database MCP server** with strong MySQL support:
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [bytebase/dbhub](https://github.com/bytebase/dbhub) — 2.4k stars, 194 forks, 482 commits, MIT |
+| GitHub | [bytebase/dbhub](https://github.com/bytebase/dbhub) — 2.7k stars, 513+ commits, MIT |
 | Language | TypeScript |
 | Install | npm / Docker |
 | Transport | stdio |
@@ -84,18 +84,18 @@ A **multi-database MCP server** with strong MySQL support:
 
 **Key differentiator:** Zero-dependency, token-efficient design that maximizes context window usage. Multi-database and multi-connection support via TOML configuration. Built-in safety guardrails: read-only mode, row limiting, query timeouts. SSH tunneling and SSL/TLS encryption. Includes a web workbench interface. Best for teams working across multiple database types.
 
-### Google MCP Toolbox for Databases — googleapis/genai-toolbox
+### Google MCP Toolbox for Databases — googleapis/mcp-toolbox
 
-The **highest-starred database MCP server** with MySQL support:
+The **highest-starred database MCP server** with MySQL support (rebranded from `genai-toolbox` to `mcp-toolbox`):
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [googleapis/genai-toolbox](https://github.com/googleapis/genai-toolbox) — 13.5k stars, 1.3k forks, 1,614 commits |
+| GitHub | [googleapis/mcp-toolbox](https://github.com/googleapis/mcp-toolbox) — 14.9k stars |
 | Language | Go |
 | Install | Binary or Docker |
 | Transport | MCP + native SDKs (Python, JS, Go) |
 
-Supports Cloud SQL for MySQL, PostgreSQL, SQL Server, AlloyDB, Spanner, and Bigtable. Configuration-driven via YAML. Built-in connection pooling, authentication, and OpenTelemetry observability. Integrates with LangChain, LlamaIndex, Genkit, and Google's Agent Development Kit. The most production-hardened option for Google Cloud MySQL users.
+Supports Cloud SQL for MySQL, PostgreSQL, SQL Server, AlloyDB, Spanner, and Bigtable. Configuration-driven via YAML. Built-in connection pooling, authentication, and OpenTelemetry observability. Integrates with LangChain, LlamaIndex, Genkit, and Google's Agent Development Kit. Recent additions include a `list-table-stats-tool` for MySQL table statistics. The most production-hardened option for Google Cloud MySQL users.
 
 ### Cloud SQL Remote MCP Server (Google)
 
@@ -139,11 +139,24 @@ SELECT-only query capabilities in the management suite. Targets Azure Database f
 
 | Server | Stars | Language | License | Focus |
 |--------|-------|----------|---------|-------|
-| [runekaagaard/mcp-alchemy](https://github.com/runekaagaard/mcp-alchemy) | 397 | Python | MPL 2.0 | SQLAlchemy-based, supports MySQL + 7 other databases, schema exploration |
-| [MariaDB/mcp](https://github.com/MariaDB/mcp) | 151 | Python | — | Official MariaDB MCP (MySQL-compatible), vector search, SSE/HTTP transport |
-| [askdba/mysql-mcp-server](https://github.com/askdba/mysql-mcp-server) | 16 | Go | Apache 2.0 | Read-only, multi-DSN, vector search (MySQL 9.0+), MariaDB support |
+| [runekaagaard/mcp-alchemy](https://github.com/runekaagaard/mcp-alchemy) | 401 | Python | MPL 2.0 | SQLAlchemy-based, supports MySQL + 7 other databases, schema exploration |
+| [MariaDB/mcp](https://github.com/MariaDB/mcp) | 166 | Python | — | Official MariaDB MCP (MySQL-compatible), vector search, SSE/HTTP transport |
+| [askdba/mysql-mcp-server](https://github.com/askdba/mysql-mcp-server) | 26 | Go | Apache 2.0 | Read-only, multi-DSN, v1.7.0 (April 20), HTTP status dashboard, audit logs, MySQL 8.0/8.4/9.0+ + MariaDB |
 | [alexcc4/mcp-mysql-server](https://github.com/alexcc4/mcp-mysql-server) | 6 | Python | MIT | Lightweight, minimal config, single `query_data` tool |
 | [neverinfamous/mysql-mcp](https://github.com/neverinfamous/mysql-mcp) | 3 | TypeScript | MIT | 192 tools across 25 groups, Code Mode (90% token savings), OAuth 2.1 |
+
+### Oracle MCP for MySQL HeatWave (PoC)
+
+Oracle has released a **proof-of-concept MCP server** for MySQL HeatWave:
+
+| Aspect | Detail |
+|--------|--------|
+| Documentation | [oracle.com/mcp/](https://www.oracle.com/mcp/) |
+| Status | Proof-of-concept (not production-ready) |
+| Scope | MySQL HeatWave (Oracle Cloud) and MySQL AI only |
+| Features | Connection management, query execution, vector store management, OCI Object Store integration |
+
+This is Oracle's first MCP presence for MySQL. It's significant as a signal of direction, but limited: it targets only Oracle's cloud HeatWave service, not community MySQL or self-hosted deployments. A separate **Oracle SQLcl MCP Server** was also made available in SQL Developer Command Line 25.2 for Oracle Database users. Community MySQL users still have no production-grade Oracle-official MCP server.
 
 ### Anthropic's Archived Reference Server
 
@@ -155,9 +168,9 @@ Anthropic included a MySQL-compatible PostgreSQL server pattern in the original 
 |--------|--------|
 | Origin | MySQL AB, Sweden (1995), by Michael Widenius, David Axmark, Allan Larsson |
 | Ownership | Oracle Corporation (via Sun Microsystems acquisition, 2010) |
-| Latest Innovation release | MySQL 9.6.0 (January 2026) |
+| Latest Innovation release | MySQL 9.6.0 (January 2026); MySQL 9.7 LTS expected mid-2026 |
 | Latest LTS release | MySQL 8.4.5 |
-| End-of-life: MySQL 8.0 | April 2026 |
+| End-of-life: MySQL 8.0 | April 21, 2026 (now past — Oracle Sustaining Support only) |
 | License | GPL v2 (Community Edition) / Commercial (Enterprise Edition) |
 | Market share | 39.3% of relational databases ([6sense](https://6sense.com/tech/relational-databases/mysql-market-share)) |
 | Companies using MySQL | 235,000+ worldwide |
@@ -172,10 +185,10 @@ MySQL's dual licensing (open-source GPL + commercial Enterprise Edition) and Ora
 | Feature | MySQL (this review) | PostgreSQL |
 |---------|-------------------|------------|
 | Dedicated MCP servers | ~6 | ~10+ |
-| Top server stars | 1.4k (benborla) | 2.4k (Postgres MCP Pro) |
-| Multi-DB servers with support | DBHub (2.4k), Google (13.5k), MCP Alchemy (397) | DBHub (2.4k), Google (13.5k) |
-| Official vendor MCP server | None (Oracle) | None (community-governed) |
-| MariaDB/fork server | MariaDB/mcp (151 stars, official) | N/A |
+| Top server stars | 1.6k (benborla) | 2.4k+ (Postgres MCP Pro) |
+| Multi-DB servers with support | DBHub (2.7k), Google MCP Toolbox (14.9k), MCP Alchemy (401) | DBHub (2.7k), Google MCP Toolbox (14.9k) |
+| Official vendor MCP server | PoC only (Oracle HeatWave) | None (community-governed) |
+| MariaDB/fork server | MariaDB/mcp (166 stars, official) | N/A |
 | Cloud vendor support | AWS, Azure, Google | AWS, Azure, Google |
 | Performance analysis tools | Limited | Postgres MCP Pro (index tuning, health) |
 | Vector search support | askdba (MySQL 9.0+), MariaDB MCP | Limited (pgvector not well-supported) |
@@ -184,13 +197,13 @@ MySQL's dual licensing (open-source GPL + commercial Enterprise Edition) and Ora
 
 ## Known Issues
 
-1. **No Oracle-official MCP server** — Despite owning MySQL, Oracle has not released an MCP server for MySQL Community or Enterprise Edition. The ecosystem is entirely community-driven, which means no guaranteed long-term support from MySQL's corporate steward.
+1. **Oracle's MCP presence is HeatWave-only PoC** — Oracle has released a proof-of-concept MCP server, but it targets only MySQL HeatWave (Oracle's cloud MySQL service) and is not production-ready. MySQL Community Edition and self-hosted MySQL deployments still have no production Oracle-official MCP server. The ecosystem remains primarily community-driven for general use cases.
 
 2. **Smaller ecosystem than PostgreSQL** — MySQL has roughly half the number of dedicated MCP servers compared to PostgreSQL. While the top servers are solid, there's less choice for specialized use cases (monitoring, performance tuning, extension management).
 
 3. **No performance analysis tools** — Unlike PostgreSQL's Postgres MCP Pro with its index tuning and workload analysis, no MySQL MCP server provides deep performance optimization capabilities. MySQL administrators get schema browsing and query execution, not DBA-grade performance tooling.
 
-4. **MySQL 8.0 end-of-life approaching** — MySQL 8.0 reaches EOL in April 2026. Many MCP servers haven't documented compatibility with MySQL 9.x Innovation releases or the 8.4 LTS track. Users on older versions may face compatibility gaps.
+4. **MySQL 8.0 end-of-life passed** — MySQL 8.0 reached EOL on April 21, 2026, entering Oracle Sustaining Support only. Many MCP servers haven't documented compatibility with MySQL 9.x Innovation releases or the 8.4 LTS track. Organizations running 8.0 should upgrade to 8.4 LTS (supported through April 2032) or 9.x Innovation releases. MySQL 9.7 LTS is expected mid-2026.
 
 5. **Oracle's dual licensing creates confusion** — MySQL's GPL v2 license means MCP servers using MySQL client libraries must navigate GPL compatibility. Some servers choose MIT/Apache licenses for their own code while depending on GPL MySQL connectors — the legal implications aren't always clear.
 
@@ -210,9 +223,9 @@ MySQL's dual licensing (open-source GPL + commercial Enterprise Edition) and Ora
 
 MySQL has a **respectable MCP ecosystem** that covers the basics well — schema exploration, SQL execution, and multi-database support — but lacks the depth and specialization found in PostgreSQL's MCP landscape.
 
-**benborla/mcp-server-mysql** (1.4k stars) is the clear leader for MySQL-specific needs, with SSH tunneling, Claude Code integration, connection pooling, and active development across 222 commits. **designcomputer/mysql_mcp_server** (1.2k stars) offers a simpler alternative for developers who want minimal configuration. **Bytebase DBHub** (2.4k stars) is the best multi-database option, providing token-efficient MySQL support alongside PostgreSQL, MariaDB, SQL Server, and SQLite.
+**benborla/mcp-server-mysql** (1.6k stars, +14% since March) is the clear leader for MySQL-specific needs, with SSH tunneling, Claude Code integration, connection pooling, and recent LLM safety annotations. **designcomputer/mysql_mcp_server** (1.2k stars, stable) offers a simpler alternative for developers who want minimal configuration. **Bytebase DBHub** (2.7k stars, +12%) is the best multi-database option, providing token-efficient MySQL support alongside PostgreSQL, MariaDB, SQL Server, and SQLite.
 
-The **3.5/5 rating** reflects solid fundamentals with clear gaps. Two 1k+ star dedicated servers, strong multi-database support from DBHub and Google Toolbox, and full cloud vendor coverage (AWS, Azure, Google) earn MySQL a good score. It loses a full point compared to PostgreSQL for: no Oracle-official server, no performance analysis/tuning tools (PostgreSQL has Postgres MCP Pro), roughly half the number of dedicated servers, and no deep MySQL-specific capabilities like slow query log analysis, InnoDB buffer pool monitoring, or replication status checks.
+The **3.5/5 rating holds**. Oracle's HeatWave PoC is a positive signal but doesn't change the practical situation for most MySQL users. Two 1k+ star dedicated servers, strong multi-database support from DBHub and Google MCP Toolbox (rebranded, 14.9k stars), and full cloud vendor coverage (AWS, Azure, Google) earn MySQL a good score. It loses a full point compared to PostgreSQL for: no production Oracle-official server for community MySQL, no performance analysis/tuning tools (PostgreSQL has Postgres MCP Pro), roughly half the number of dedicated servers, and no deep MySQL-specific capabilities like slow query log analysis, InnoDB buffer pool monitoring, or replication status checks.
 
 **Who benefits most from MySQL's MCP ecosystem:**
 
@@ -229,4 +242,4 @@ The **3.5/5 rating** reflects solid fundamentals with clear gaps. Two 1k+ star d
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Originally published March 2026; last refreshed May 2026. See our [About page](/about/) for details on our review process.*

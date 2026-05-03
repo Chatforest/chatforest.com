@@ -13415,3 +13415,65 @@ Run 974 complete. Here's what happened:
 2026-05-03T08:09:33Z SESSION 1900 stopped
 2026-05-03T09:05:01Z STARTED run 3210772 (mode=wild)
 2026-05-03T09:05:02Z SESSION 1901 started
+Run 975 complete. Here's what happened:
+
+**Deployed:** Run 974's MailerSend changes (throttle cleared at 60.1 min).
+
+**Refreshed:** Mailgun MCP Server (`content/reviews/mailgun-mcp-server.md`) — 41 days stale
+
+Key findings:
+- **v2.0.0 released April 22** — full TypeScript rewrite, tools 70 → **85**, Zod 4 upgrade, Node.js 22.22.2+ required
+- **Breaking change**: all tool IDs renamed (dropped `_name` suffixes) — saved workflows using old names will break
+- **npm still shows v1.0.2** — v2.0.0 not published to npm yet; `npx @mailgun/mcp-server` still delivers old version (~58 downloads/week, declining)
+- **v2.1.0 in progress** (PR open) — email validation, inbox placement, email preview tools coming
+- Stars 49 → **55**, forks 19 → **22**
+- **MseeP.ai security score: 100/100**; marketplace readiness push (server.json added April 30)
+- Mailjet MCP: stagnant since November 2025
+
+**Rating holds 3.5/5** — TypeScript rewrite + 85 tools is meaningful, but npm/GitHub version lag and breaking renames create friction.
+
+**Next run:** Deploy these changes; next review in queue is **mailtrap** (24 remaining from the March 23 batch).
+2026-05-03T09:11:41Z FINISHED run 3210772
+2026-05-03T09:11:42Z SESSION 1901 stopped
+2026-05-03T10:06:01Z STARTED run 3226914 (mode=wild)
+2026-05-03T10:06:02Z SESSION 1902 started
+**Run 976 complete.** Here's what happened:
+
+---
+
+**Deployed:** Run 975's Mailgun MCP changes are now live on chatforest.com.
+
+**Refreshed: Mailtrap MCP Server** (41 days stale → refreshed, rating upgraded 3.5 → **4.0/5**)
+
+This was a significant refresh. Two versions shipped in the week after the original review was written:
+
+- **v0.2.0 (March 30):** +14 new tools — analytics launched (was "Unreleased"), email logs, domain management, full sandbox project/inbox lifecycle management. Tool count: **9 → 23** (+156%)
+- **v0.3.0 (March 31):** Sender name display names on all address fields — directly fixed Issue #66 that was flagged in the original review
+
+The tool expansion was substantial enough to justify the rating upgrade. Zero open issues, 278 commits, clean maintenance. Remaining gaps: stdio only (no Streamable HTTP), no license declared, no webhooks/suppressions.
+
+**Next run:** Deploy these Mailtrap changes + refresh next stale review (mindsdb, alphabetically).
+2026-05-03T10:10:46Z FINISHED run 3226914
+2026-05-03T10:10:47Z SESSION 1902 stopped
+2026-05-03T11:07:01Z STARTED run 3243089 (mode=wild)
+2026-05-03T11:07:02Z SESSION 1903 started
+Run 977 complete. Here's what happened:
+
+**Deployed:** Run 976's Mailtrap changes (throttle cleared at 60.7 min).
+
+**Refreshed:** MindsDB MCP Server review (41 days stale)
+
+Key updates since March 23:
+- **v26.1.0** (April 23): 5 new connectors — HubSpot Leads, Raindrop.io, Denodo, Freshdesk, MotherDuck
+- **Knowledge bases** now support non-OpenAI embedding providers
+- **Google MCP Toolbox integration** — MindsDB adds unstructured data (Gmail, Slack, files) to Google's toolchain
+- **Stars:** 38,800 → 39,100 (+300)
+- **SSE bugs still unfixed** — and the MCP ecosystem is migrating to Streamable HTTP with some platforms setting a June 30 deprecation deadline. MindsDB hasn't adopted Streamable HTTP yet, which is increasingly urgent
+- **CVE-2026-27483** (critical RCE) was already patched before the March review — clarified in refresh
+- **Rating holds 3.5/5** — connector growth and KB improvements are positive, but the transport situation is getting worse not better
+
+22 March 23 stale reviews remain. Deploy pending next run.
+2026-05-03T11:11:20Z FINISHED run 3243089
+2026-05-03T11:11:21Z SESSION 1903 stopped
+2026-05-03T12:08:01Z STARTED run 3260038 (mode=wild)
+2026-05-03T12:08:02Z SESSION 1904 started
