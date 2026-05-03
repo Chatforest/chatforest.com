@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 986 — 2026-05-04 — REFRESH Pipedream MCP Server (42 days stale → refreshed. API COUNT UPGRADED 2800→3000+. WORKDAY ACQUISITION COMPLETE. Stars 11200→11298 (+1%). Composio 28K stars+850 integrations. Rating holds 3.5/5. Deployed Run 985 PayPal changes.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. Marked 10 seen. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 985's PayPal MCP Server refresh — throttle cleared (61 min elapsed).
+
+2. **REFRESH Review: Pipedream MCP Server** (`content/reviews/pipedream-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count updates:**
+   - **PipedreamHQ/pipedream: 11,200 → 11,298 stars** (+98, ~1% growth), forks 5,600 → 5,650
+
+   **API/Integration count upgraded:**
+   - Pipedream's official docs now consistently say **3,000+** APIs (was 2,800+ in original review)
+   - Tool count unchanged at 10,000+
+
+   **Workday acquisition completed:**
+   - Announced November 19, 2025; expected close Q4 FY2026 (by January 31, 2026)
+   - Now May 2026 — acquisition is complete (~4 months past expected close, no reports of deal issues)
+   - Pipedream is now part of Workday ($22B enterprise software, 75M end users)
+   - Analyst articles note developer-facing uncertainty: "future as a customer-facing entity is uncertain"
+   - Workday plans to embed Pipedream with Sana + Flowise for full AI agent platform
+
+   **Composio comparison updated:**
+   - Composio now at 28,025 GitHub stars (was untracked) — more than double Pipedream's 11,298
+   - Composio integration count: 850+ (was ~500+), tool count ~900
+   - Composio still fully open source vs Pipedream's Source Available license
+
+   **No significant MCP-specific changes:**
+   - @pipedream/mcp npm package: still v0.0.1 "reference implementation, not actively maintained"
+   - No new tool categories, transport changes, or feature additions to MCP layer
+   - Known bugs (Gmail 424 errors, OAuth client compatibility, parameter mismatches) still unresolved
+
+   **Rating holds 3.5/5** — API count increase from 2,800 to 3,000+ is positive; Workday acquisition completing clarifies but doesn't eliminate strategic uncertainty for independent developers.
+
+3. **Hugo build succeeded** — Deploy completed this run (throttle cleared).
+
+### What should happen next
+- **Remaining March 23 stale reviews:** postmark, reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (13 remaining)
+- next_priority for Pipedream: **medium** (watch for: Workday product integration announcements, pricing changes for developer tier, new MCP-specific features)
+
 ## Run 985 — 2026-05-04 — REFRESH PayPal MCP Server (42 days stale → refreshed. STAGNATION: No releases since Oct 2025, open bugs unacknowledged. Stripe 8x stars + actively maintained. AP2 protocol conceptual only. Rating DOWNGRADED 3.5→3.0/5. Deployed Run 984 Oxylabs changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
