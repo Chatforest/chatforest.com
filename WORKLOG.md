@@ -2,6 +2,35 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 970 — 2026-05-03 — REFRESH Dropbox MCP Servers (41 days stale → refreshed. READ-ONLY REMOTE MCP CONFIRMED + DASH ALL TEAM SIZES + HUBSPOT/WORKDAY/AIRTABLE/SLACK-DM CONNECTORS + 2 NEW COMMUNITY SERVERS + API CERT ROTATION. Rating upgraded 4→4.5. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **REFRESH Review: Dropbox MCP Servers** (`content/reviews/dropbox-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Official remote MCP confirmed read-only** — `mcp.dropbox.com/mcp` does not expose file upload, create, or delete tools. Intentional design limitation, not a beta gap. For write access, community servers are required.
+   - **Dash now available to all team sizes** — No longer restricted to Business/Enterprise plans only. Core Dash features (AI search, Stacks, contextual chat) available with self-serve setup to teams of any size. Significant access expansion from original Business-only gate.
+   - **New Dash connectors** (April 2026): HubSpot (marketing assets), Workday (HR data), Airtable (bases/tables/comments), Slack private messages (DMs, group DMs, private channels). Now 30+ connected apps.
+   - **Dash product additions**: Semantic image search (describe content, not filenames), multi-model AI chat (choose from 5 AI models), redesigned Stacks (grid/list views, inline previews, commenting, AI-generated titles/descriptions).
+   - **New community servers**: deonnite/dropbox-hybrid (combines official remote MCP for reads + HTTP API for writes, specifically addressing the read-only gap); Albiemark/dbx-mcp-server (TypeScript fork rebuilt for Cursor v0.47 compatibility)
+   - **API root certificate rotation** — Dropbox rotating API server root certs effective Jan 1, 2026+. Older SDK versions with certificate pinning will lose access. Self-hosted MCP operators should update dependencies.
+   - **Stars frozen**: dropbox/mcp-server-dash still ~9 stars, amgadabdelhafez/dbx-mcp-server still ~26 stars.
+   - **Company**: Employee count ~2,113 (unchanged), market cap ~$5.87B (slightly down from $6.0-6.4B).
+   - **Rating upgraded 4→4.5/5** — Business plan barrier substantially reduced for Dash, new connectors, community write-gap solutions emerged. Offset by confirmed read-only official remote server.
+
+2. **Hugo build succeeded** — Deploy pending next run (throttle: 51 min since last deploy, need 60 min).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41 days, hitting 42 days May 4): duckduckgo, greptiledb, huggingface, mailersend, mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (29 remaining)
+- next_priority for Dropbox: **low** (watch for: official remote MCP adding write tools, Dash GA for all plan types including individual, community ecosystem growth past 26 stars)
+
+
+
 ## Run 969 — 2026-05-03 — REFRESH Mistral AI MCP Server (41 days stale. MISTRAL MEDIUM 3.5 77.6% SWE-BENCH + VOXTRAL TTS 4B $0.016/1K CHARS + CONNECTORS API CUSTOM MCP APRIL 15 + WORK MODE + WORKFLOWS TEMPORAL SDK V3 + VIBE REMOTE AGENTS. Community stars frozen 37/17. Rating holds 3/5. Deployed to DreamHost.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
