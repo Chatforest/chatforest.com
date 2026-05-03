@@ -1,14 +1,14 @@
 ---
 title: "GitLab MCP Servers — The Self-Hosted DevOps Platform's Growing AI Interface"
 date: 2026-03-23T23:45:00+09:00
-description: "GitLab's built-in MCP server (15 tools, Premium/Ultimate) plus zereight/gitlab-mcp (1.2k stars, 100+ tools) lead a growing ecosystem. Official support exists but is paywalled."
-og_description: "GitLab MCP ecosystem: official built-in server (15 tools, Premium+), zereight/gitlab-mcp (1.2k stars, 100+ tools), yoda-digital (86 tools), mcpland (80+ tools). Rating: 3.5/5."
+description: "GitLab's built-in MCP server (15 tools, Premium/Ultimate) plus zereight/gitlab-mcp (1.4k stars, 100+ tools) lead a growing ecosystem. Official support exists but is paywalled."
+og_description: "GitLab MCP ecosystem: official built-in server (15 tools, Premium+), zereight/gitlab-mcp (1.4k stars, 100+ tools), yoda-digital (86 tools), mcpland (80+ tools). Rating: 3.5/5."
 content_type: "Review"
-card_description: "GitLab's built-in MCP server connects AI agents to issues, merge requests, pipelines, and code search — but requires Premium or Ultimate. The community leader zereight/gitlab-mcp (1.2k stars, 100+ tools) covers far more ground. Multiple enterprise-grade alternatives round out a growing ecosystem."
-last_refreshed: 2026-03-23
+card_description: "GitLab's built-in MCP server connects AI agents to issues, merge requests, pipelines, and code search — but requires Premium or Ultimate. The community leader zereight/gitlab-mcp (1.4k stars, 100+ tools) covers far more ground. Multiple enterprise-grade alternatives round out a growing ecosystem."
+last_refreshed: 2026-05-03
 ---
 
-**At a glance:** GitLab has both an **official built-in MCP server** (15 tools, Premium/Ultimate tier) and a thriving community ecosystem led by [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) (1.2k stars, 100+ tools). GitLab's official server was introduced as an experiment in **GitLab 18.3**, promoted to beta in **18.6**, and supports the 2025-03-26 and 2025-06-18 MCP protocol specifications as of **18.7**. It uses **OAuth 2.0 Dynamic Client Registration** — AI tools self-register and request authorization to access GitLab data. Community servers extend coverage with 80-100+ tools across merge requests, pipelines, issues, wikis, releases, and more. The Anthropic reference server (`@modelcontextprotocol/server-gitlab`) has been **archived** to `servers-archived` since GitLab's official server superseded it.
+**At a glance:** GitLab has both an **official built-in MCP server** (15 tools, Premium/Ultimate tier) and a thriving community ecosystem led by [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) (1.4k stars, 100+ tools). GitLab's official server was introduced as an experiment in **GitLab 18.3**, promoted to beta in **18.6**, and has received continuous updates through **18.11** (April 2026) — adding pipeline management, label search, protocol specification support, and configurable tool prefixing. GitLab also **acts as an MCP client** since **18.8** (GA): Duo Agentic Chat can connect outward to external MCP servers (Jira, Slack, Confluence, etc.) as part of the **Duo Agent Platform**. It uses **OAuth 2.0 Dynamic Client Registration** — AI tools self-register and request authorization to access GitLab data. Community servers extend coverage with 80-100+ tools across merge requests, pipelines, issues, wikis, releases, and more. The Anthropic reference server (`@modelcontextprotocol/server-gitlab`) has been **archived** to `servers-archived` since GitLab's official server superseded it.
 
 GitLab is a **$955M+ TTM revenue** public company (NASDAQ: GTLB) with a **~$4-5B market cap** and **2,700+ employees**. It serves as both a Git hosting platform and a complete DevSecOps platform with built-in CI/CD, container registry, security scanning, and more. GitLab is **not a member of the [Agentic AI Foundation (AAIF)](https://aaif.io/)**, though it actively supports MCP integration through its Duo AI platform.
 
@@ -52,10 +52,16 @@ GitLab's **first-party MCP server**, built into the platform:
 
 **Key differentiator:** Built directly into GitLab — no separate server to install, no API keys to manage, no Docker containers to run. OAuth 2.0 Dynamic Client Registration means AI tools self-register when they first connect. Supports both HTTP transport (direct connection) and stdio via `mcp-remote`. However, it requires Premium/Ultimate and currently has far fewer tools than community alternatives.
 
+As of **GitLab 18.11**, users can optionally prefix all tool names by passing the `X-Gitlab-Mcp-Server-Tool-Name-Prefix` HTTP header in their MCP config (e.g., `"gitlab_"` → `gitlab_create_issue`). This avoids naming conflicts when multiple MCP servers are connected simultaneously. Tools are **not** prefixed by default.
+
 **Timeline:**
 - GitLab 18.3 — Experimental release (feature flags, disabled by default)
 - GitLab 18.6 — Promoted to beta, feature flags removed
-- GitLab 18.7 — Added support for 2025-03-26 and 2025-06-18 MCP protocol specifications
+- GitLab 18.7 — Protocol spec support (2025-03-26 and 2025-06-18); `create_workitem_note`, `get_workitem_notes`, `semantic_code_search` (beta) added
+- GitLab 18.8 — **MCP Client GA** (Duo Agentic Chat connects to external MCP servers); **Duo Agent Platform GA** (Planner, Security Analyst, and Data Analyst agents; Central AI Catalog); `search` tool renamed from `gitlab_search`
+- GitLab 18.9 — Self-hosted AI model support; `search_labels` tool added
+- GitLab 18.10 — `manage_pipeline` tool added (list, create, retry, cancel, delete pipelines)
+- GitLab 18.11 — Tool prefixing via `X-Gitlab-Mcp-Server-Tool-Name-Prefix` header; MCP ToolAnnotations added to all tools (fixes "Other tools" categorization in Claude); Cursor Marketplace plugin; Agentic SAST Vulnerability Resolution GA
 
 ### zereight/gitlab-mcp (Community Leader)
 
@@ -63,10 +69,12 @@ The **most popular community GitLab MCP server** with the most tools:
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) — 1.2k stars, 242 forks, 934 commits |
+| GitHub | [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) — 1.4k stars, 273 forks, 1,000+ commits |
+| PulseMCP | 996K all-time downloads (#68 globally), ~60K/week |
 | Language | TypeScript |
 | Transport | stdio, SSE, Streamable HTTP |
-| Authentication | OAuth2, Personal Access Token, remote authorization |
+| Authentication | OAuth2, Personal Access Token, PAT-as-header, OAuth callback proxy |
+| Latest version | v2.1.4 (April 26, 2026) |
 
 **100+ MCP tools** across 11 categories:
 
@@ -85,6 +93,16 @@ The **most popular community GitLab MCP server** with the most tools:
 | Branches | 4 tools |
 
 **Key differentiator:** The most comprehensive GitLab MCP server available — over **6x more tools** than GitLab's official server. Supports dynamic toolset configuration (enable/disable categories), read-only mode, Docker deployment, connection pooling for multiple GitLab instances, and multi-client support (Claude, Cursor, VS Code, GitHub Copilot). Works with any GitLab instance including the free tier.
+
+**Recent additions (v2.1.x, Feb–Apr 2026):**
+- **Work items GraphQL toolset** — manages GitLab work items (distinct from issues) via GraphQL API
+- **Emoji reactions** — react to MRs, issues, and comments with emoji
+- **Group-level wiki support** — previously project-only
+- **OAuth improvements** — PAT can now be passed as HTTP header; auto-refresh on 401 responses; OAuth callback proxy mode; customizable OAuth scopes
+- **Code review optimization** — reduced token overhead for heavy AI workloads on large diffs
+- **Security**: ReDoS vulnerability in `GITLAB_DENIED_TOOLS_REGEX` patched in v2.0.28 (February 2026) via CodeQL audit
+
+**PulseMCP ranking:** 996K all-time downloads, #68 globally — the most downloaded GitLab MCP server by a wide margin.
 
 ### yoda-digital/mcp-gitlab-server
 
@@ -137,7 +155,7 @@ Basic GitLab API integration with project management and file operations. **Arch
 |--------|-----------|-----------|--------------|-----------|---------------|----------|-----------------|---------------|---------------|---------------|------------- | ------- |
 | Official server | Yes (built-in) | Yes (standalone) | [No — Jira/Confluence only](/reviews/bitbucket-mcp-server/) | [Hub MCP (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | No | Yes (JetBrains built-in, 24 tools) | [Yes (MS Playwright, 9.8k stars, 24 tools)](/reviews/testing-qa-mcp-servers/) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | [Yes (Terraform 1.3k, Pulumi, AWS, OpenTofu)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Official stars | N/A (built-in) | 28.2k | N/A | 132 | N/A | [71 (Jenkins), 80 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A | N/A (built-in) | [9.8k](/reviews/testing-qa-mcp-servers/) | [2.5k (Grafana)](/reviews/monitoring-observability-mcp-servers/) | [N/A (CLI-integrated)](/reviews/security-scanning-mcp-servers/) | [1.3k (Terraform)](/reviews/infrastructure-as-code-mcp-servers/) |
-| Top community stars | 1.2k (zereight) | 7.8k (GitMCP) | [132 (aashari)](/reviews/bitbucket-mcp-server/) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) | 342 (vscode-mcp-server) | [executeautomation (5.3k stars)](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | [Ansible (25 stars, 40+ tools)](/reviews/infrastructure-as-code-mcp-servers/) |
+| Top community stars | 1.4k (zereight) | 7.8k (GitMCP) | [132 (aashari)](/reviews/bitbucket-mcp-server/) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) | 342 (vscode-mcp-server) | [executeautomation (5.3k stars)](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | [Ansible (25 stars, 40+ tools)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Official tools | 15 | 21 toolsets | N/A (excluded from Atlassian MCP) | 12+ (Hub operations) | N/A | [15 (Jenkins), 15 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A | 24 (JetBrains) | [24 (official)](/reviews/testing-qa-mcp-servers/) | [16+ (Datadog) to 100+ (Instana)](/reviews/monitoring-observability-mcp-servers/) | [7 (Semgrep) to full platform (Snyk)](/reviews/security-scanning-mcp-servers/) | [20+ (Terraform), full platform (Pulumi)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Community tools | 100+ (zereight) | 28 (cyanheads) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | [21 (mcp-jenkins), 12 (Argo CD)](/reviews/ci-cd-mcp-servers/) | Limited | 13-19 per server | [24 (official) + API testing](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | [Ansible (25 stars, 40+ tools)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Remote hosting | No | Yes (GitHub infra) | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No | No (requires running IDE) | [No (local browser required)](/reviews/testing-qa-mcp-servers/) | [Yes (Datadog, Sentry — OAuth)](/reviews/monitoring-observability-mcp-servers/) | [No (all local/CLI-based)](/reviews/security-scanning-mcp-servers/) | [Yes (Pulumi remote MCP)](/reviews/infrastructure-as-code-mcp-servers/) |
@@ -156,11 +174,11 @@ Basic GitLab API integration with project management and file operations. **Arch
 
 3. **Still in beta** — The official GitLab MCP server is in beta status (since GitLab 18.6). Tools, behavior, and authentication flow may change. GitLab Duo and beta/experimental features must be enabled for it to work.
 
-4. **Community fragmentation** — Three independent community servers (zereight, yoda-digital, mcpland) each offer 80-100+ tools but with different feature sets, authentication approaches, and quality levels. No clear single community standard has emerged.
+4. **Community fragmentation** — Three independent community servers (zereight, yoda-digital, mcpland) each offer 80-100+ tools but with different feature sets, authentication approaches, and quality levels. zereight/gitlab-mcp is the de facto standard by downloads (996K on PulseMCP), but no single community winner has fully emerged.
 
 5. **No remote hosting** — Unlike GitHub's MCP server (hosted at `api.githubcopilot.com/mcp/` with no local setup needed), GitLab's MCP requires either a Premium/Ultimate subscription or running a community server locally. There's no zero-config cloud option.
 
-6. **Ecosystem size gap vs GitHub** — GitHub's official server has 28.2k stars; GitLab's top community server has 1.2k. GitHub has 7 active MCP-related projects; GitLab has 4-5. The adoption gap means fewer tutorials, examples, and battle-tested configurations for GitLab MCP users.
+6. **Ecosystem size gap vs GitHub** — GitHub's official server has 28.2k stars; GitLab's top community server has 1.4k. GitHub has 7 active MCP-related projects; GitLab has 4-5. The adoption gap means fewer tutorials, examples, and battle-tested configurations for GitLab MCP users.
 
 7. **Self-hosted complexity** — GitLab's strength is self-hosting, but self-hosted instances may have different API versions, features, and authentication configurations. Community MCP servers must handle this variation, and some may not work correctly with older GitLab versions.
 
@@ -174,9 +192,9 @@ Basic GitLab API integration with project management and file operations. **Arch
 
 **Rating: 3.5 out of 5**
 
-GitLab's MCP ecosystem is **stronger than previously reported** — and it's growing. The official MCP server built into GitLab (15 tools, OAuth 2.0, introduced in 18.3) represents genuine first-party commitment, and the community leader [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) (1.2k stars, 100+ tools) is one of the most feature-rich MCP servers for any platform. Enterprise-oriented alternatives from [yoda-digital](https://github.com/yoda-digital/mcp-gitlab-server) (86 tools) and [mcpland](https://github.com/mcpland/gitlab-mcp) (80+ tools with policy engine) provide solid options for organizations needing governance controls.
+GitLab's MCP ecosystem has **steadily matured** since the original review. The official MCP server (15 tools, OAuth 2.0, built into GitLab) now spans six minor versions (18.3 experiment → 18.11), gaining pipeline management, label search, configurable tool prefixing, and proper MCP ToolAnnotations. **GitLab 18.8 added bidirectionality**: GitLab can now act as an MCP *client* too — the Duo Agent Platform lets Agentic Chat connect outward to Jira, Slack, Confluence, and other external MCP servers. The community leader [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) grew from 1.2k to 1.4k stars and added work items, emoji reactions, group wikis, and OAuth improvements in a busy v2.1.x cycle. Enterprise-oriented alternatives from [yoda-digital](https://github.com/yoda-digital/mcp-gitlab-server) (86 tools) and [mcpland](https://github.com/mcpland/gitlab-mcp) (80+ tools with policy engine) provide solid options for organizations needing governance controls.
 
-The **3.5/5 rating** reflects the genuine official support (GitLab is one of the few platforms with a built-in MCP server), strong community alternatives (100+ tools), multiple enterprise-grade options, and self-hosted compatibility. It loses points for the Premium/Ultimate paywall on the official server (15 tools vs community's 100+), beta status, no remote hosting option, the significant ecosystem size gap versus GitHub (1.2k vs 28.2k stars), and community fragmentation across three competing servers.
+The **3.5/5 rating** holds. Steady progress on both the official server and community ecosystem is clear, but the fundamental constraints remain: Premium/Ultimate paywall on the official 15-tool server, beta status (not GA), no remote hosting option, and a significant ecosystem size gap versus GitHub (1.4k vs 28.2k stars). The Duo Agent Platform GA is a meaningful enterprise feature — but it benefits existing premium customers, not the typical evaluator comparing GitLab MCP to alternatives.
 
 **Who benefits most from GitLab's MCP ecosystem:**
 
@@ -193,4 +211,4 @@ The **3.5/5 rating** reflects the genuine official support (GitLab is one of the
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
