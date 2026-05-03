@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 978 — 2026-05-03 — REFRESH MySQL MCP Server (41 days stale → refreshed. ORACLE POC MCP FOR HEATWAVE + MySQL 8.0 EOL PASSED (April 21) + benborla 1.4k→1.6k + DBHub 2.4k→2.7k + Google Toolbox rebranded to mcp-toolbox (14.9k). Rating holds 3.5/5. Deployed Run 977 MindsDB changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **Deployed** Run 977's MindsDB MCP refresh — throttle cleared (60.8 min elapsed).
+
+2. **REFRESH Review: MySQL MCP Server** (`content/reviews/mysql-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Oracle released PoC MCP for MySQL HeatWave** via oracle.com/mcp — first Oracle MCP presence for MySQL, but cloud-only (HeatWave), not production-ready, not for community MySQL. Partial answer to "Known Issue #1: no Oracle-official MCP server"
+   - **MySQL 8.0 EOL confirmed April 21, 2026** — has now passed. Oracle Sustaining Support only (HeatWave users get extension to April 2027). MySQL 9.7 LTS expected mid-2026
+   - **benborla/mcp-server-mysql: 1.4k → 1.6k stars** (+14%) — recent additions: RDS/private VPC SSH tunnel scripts, `destructiveHint` LLM safety annotations
+   - **bytebase/dbhub: 2.4k → 2.7k stars** (+12%), 482 → 513 commits
+   - **googleapis/genai-toolbox rebranded to mcp-toolbox**: 13.5k → 14.9k stars; added `list-table-stats-tool` for MySQL table stats
+   - **MariaDB/mcp: 151 → 166 stars** (+10%)
+   - **awslabs/mcp: 8,540 → 8,900 stars**
+   - **runekaagaard/mcp-alchemy: 397 → 401 stars** (stable)
+   - **askdba/mysql-mcp-server: 16 → 26 stars** — v1.7.0 released April 20, 2026; added HTTP status dashboard and audit logs, explicit MySQL 8.0/8.4/9.0+ and MariaDB support
+   - **designcomputer/mysql_mcp_server**: stable at 1.2k stars, 229→232 forks
+   - **Rating holds 3.5/5** — Oracle's HeatWave PoC is a signal not a solution; practical situation for community MySQL users unchanged. Stars growing steadily across the board.
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41-42 days): netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (21 remaining)
+- next_priority for MySQL: **medium** (watch for: Oracle PoC graduating to production; MySQL 9.7 LTS release mid-2026; benborla SSH/destructiveHint adoption)
+
 ## Run 977 — 2026-05-03 — REFRESH MindsDB MCP Server (41 days stale → refreshed. v26.0.1→v26.1.0: 5 NEW CONNECTORS + NON-OPENAI KB + GOOGLE MCP TOOLBOX INTEGRATION. Stars 38,800→39,100. SSE bugs unresolved + Streamable HTTP gap. Rating holds 3.5/5. Deployed Run 976 Mailtrap changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)
