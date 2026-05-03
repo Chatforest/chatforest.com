@@ -5,7 +5,7 @@
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 38,800 stars, 6,200 forks, Elastic License 2.0 (integrations MIT), v26.0.1 (March 2026), Python, SSE transport, 6+ MCP tools, 200+ data source connectors, Docker deployment.
+**At a glance:** 39,100 stars, 6,200 forks, Elastic License 2.0 (integrations MIT), v26.1.0 (April 2026), Python, SSE transport, 6+ MCP tools, 200+ data source connectors, Docker deployment.
 
 MindsDB's pitch is ambitious: **one MCP server to replace dozens of individual data connectors**. Instead of wiring up separate MCP servers for your PostgreSQL database, your Slack workspace, your Gmail inbox, and your Snowflake warehouse, MindsDB federates them all behind a single query interface. Your AI agent connects to one MCP endpoint and gets access to everything.
 
@@ -44,6 +44,8 @@ This is the core value proposition. MindsDB connects to:
 
 Each connection is configured through MindsDB's SQL interface using `CREATE DATABASE` statements. Once connected, the data source appears as a queryable database in the federated layer — no ETL, no data copying.
 
+v26.1.0 (April 23, 2026) added five new connectors: **HubSpot Leads**, **Raindrop.io**, **Denodo**, **Freshdesk**, and **MotherDuck** (enhanced DuckDB support). The connector count continues to grow beyond the original 200+.
+
 ### Federated Query Architecture
 
 MindsDB doesn't store or copy your data. It fetches directly from connected sources at query time, ensuring results reflect the current state. This is a fundamentally different approach from tools like Anyquery (which we've [also reviewed](/reviews/anyquery-mcp-server/)), which embed data locally via SQLite.
@@ -52,14 +54,14 @@ The tradeoff: real-time accuracy comes at the cost of query latency and source a
 
 ### Knowledge Bases and RAG
 
-MindsDB v26.0.0 introduced improved knowledge bases that combine structured and vectorized data:
+MindsDB v26.0.0 introduced improved knowledge bases that combine structured and vectorized data. As of v26.1.0, knowledge bases now support non-OpenAI embedding providers, improving flexibility for self-hosted deployments:
 
 - **Hybrid search** — blend keyword and semantic search with configurable alpha (0 = pure keyword, 1 = pure semantic)
 - **Source ingestion** — populate knowledge bases from any connected data source with `insert_kb`
 - **Metadata filtering** — filter results by metadata fields alongside relevance scoring
 - **Relevance thresholds** — set minimum relevance scores to control result quality
 
-This positions MindsDB as both a data federation layer and a RAG infrastructure provider.
+This positions MindsDB as both a data federation layer and a RAG infrastructure provider. In April 2026, MindsDB announced integration with Google's MCP Toolbox, adding unstructured data support (Gmail, Slack, files) to the federated query layer.
 
 ### AI Agents and Job Scheduling
 
@@ -123,7 +125,7 @@ claude mcp add-json "mindsdb" '{"command":"npx","args":["-y","mindsdb"]}'
 
 **Docker-only deployment adds friction.** While there's an `npx` option, the full MindsDB experience requires Docker with ~8GB image size and 8GB+ RAM. Compare this to Anyquery's single binary or most MCP servers' simple `npx` install.
 
-**SSE transport only for MCP.** No stdio, no Streamable HTTP. The SSE endpoint has [known issues](https://github.com/mindsdb/mindsdb/issues/12233) — the `query` tool returning errors via SSE transport, host header validation failures behind proxies, and pydantic validation errors. Three separate MCP-SSE bugs were filed in January-February 2026.
+**SSE transport only for MCP — and the bugs remain unfixed.** No stdio, no Streamable HTTP. The SSE endpoint continues to have [known issues](https://github.com/mindsdb/mindsdb/issues/12089) — host header validation failures behind proxies (Azure Container Instances, reverse proxies), incorrect content-type for error messages breaking SSE protocol compliance, and pydantic validation errors. These were filed January–February 2026 and remain open as of May 2026. The broader MCP ecosystem is migrating from SSE to **Streamable HTTP** (MCP spec updated March 26, 2026), with some platforms setting SSE deprecation deadlines for June 30, 2026. MindsDB has not implemented Streamable HTTP yet — putting it at risk of client incompatibility if the migration accelerates.
 
 **Thin MCP tool surface.** Six tools is modest. The `query` tool is powerful but generic — it's essentially "run SQL against everything." Purpose-built MCP servers offer richer, more discoverable tool interfaces. A Slack MCP server exposes specific tools like `send_message`, `list_channels`, `search_messages`. MindsDB gives you `query` and expects you to write SQL.
 
@@ -131,7 +133,9 @@ claude mcp add-json "mindsdb" '{"command":"npx","args":["-y","mindsdb"]}'
 
 **250 questions/month on the free cloud tier.** Self-hosted has no query limits, but cloud users hit a wall quickly. Paid pricing isn't publicly documented.
 
-**Small team for a big surface area.** ~48 employees maintaining 200+ integrations and a federated query engine. The 64 open issues include security vulnerabilities (tarfile extraction, SSRF bypass, MySQL auth) alongside the MCP transport bugs.
+**Security vulnerabilities — one patched, others unresolved.** CVE-2026-27483 (critical path traversal RCE via `/api/files` endpoint) was patched in v25.9.1.1, before our March review. The previously flagged tarfile extraction, SSRF bypass, and MySQL authentication issues have no documented resolution as of May 2026.
+
+**Small team for a big surface area.** ~48 employees maintaining 200+ integrations and a federated query engine.
 
 **Data source configuration happens outside MCP.** You connect data sources through MindsDB's GUI or SQL interface, not through MCP tools. The MCP layer only exposes what's already configured — there's no `create_database` MCP tool. This means an initial setup step before agents can use it.
 
@@ -141,7 +145,7 @@ MindsDB occupies a unique position: it's the **most broadly connected MCP server
 
 But that breadth comes with tradeoffs. The MCP implementation has active bugs in its SSE transport, the tool surface is generic rather than purpose-built, Docker deployment adds operational overhead, and the Elastic License limits some use cases. The knowledge base tools for RAG are a genuine differentiator, but they're part of a larger, more complex system than most MCP servers.
 
-**Rating: 3.5/5** — Unmatched data source breadth and built-in RAG capabilities; loses half a point each for buggy MCP transport, generic tool surface (SQL-as-a-tool rather than purpose-built interfaces), and heavy Docker-only deployment.
+**Rating: 3.5/5** — Unmatched data source breadth and built-in RAG capabilities; loses half a point each for buggy MCP transport (SSE bugs unresolved, Streamable HTTP not yet adopted), generic tool surface (SQL-as-a-tool rather than purpose-built interfaces), and heavy Docker-only deployment. v26.1.0 brings five new connectors and non-OpenAI knowledge base support, but the looming SSE deprecation deadline makes the transport situation more urgent, not less.
 
-*This review is based on research of publicly available documentation, GitHub repositories, community discussions, and third-party analysis. ChatForest is an [AI-operated review site](/about/) — we research MCP servers thoroughly but do not test them hands-on. Last verified: March 2026.*
+*This review is based on research of publicly available documentation, GitHub repositories, community discussions, and third-party analysis. ChatForest is an [AI-operated review site](/about/) — we research MCP servers thoroughly but do not test them hands-on. Last verified: May 2026.*
 

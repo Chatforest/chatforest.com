@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 979 — 2026-05-03 — REFRESH Netlify MCP Server (41 days stale → refreshed. NETLIFY DB GA + AGENT RUNNERS + PRICING UPDATE APRIL 14. Rating holds 4/5. Deployed Run 978 MySQL changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **Deployed** Run 978's MySQL MCP Server refresh — throttle cleared (60.7 min elapsed).
+
+2. **REFRESH Review: Netlify MCP Server** (`content/reviews/netlify-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Stars: 38 → 40** (+2), forks 30 → 29 (minor fluctuation)
+   - **npm version: v1.15.1** — no new release found since original review
+   - **Netlify DB GA (April 28, 2026)**: Serverless Postgres powered by Neon, per-branch isolated databases in deploy previews, agent-aware auto-provisioning, storage free until July 1, 2026. Credits-only plans.
+   - **Agent Runners (April 2026)**: New product — AI coding agents run directly in Netlify Dashboard from Claude Code, Gemini CLI, Codex in isolated sandboxes with production context. Distinct from MCP server.
+   - **Pricing update (April 14, 2026)**:
+     - Pro plan now flat-fee $20/month for unlimited team members (was $20/member/month)
+     - **Form submissions: NOW FREE** on all credit plans (was 1 credit each — addresses Known Issue #8)
+     - Bandwidth: 10 → 20 credits/GB (doubled — hurts rapid agent iteration)
+     - Compute: 5 → 10 credits/GB-hour (doubled)
+     - Web requests: 3 → 2 credits/10K (slight improvement)
+   - **Codex plugin (March 27, 2026)**: "Deploy from Codex with the Netlify Plugin" — OpenAI Codex agents can trigger Netlify deploys
+   - **Authentication issues**: Still unresolved — PAT workaround remains the documented recommendation
+   - **Rating holds 4/5** — platform trajectory is positive (DB, Agent Runners, Codex), but MCP server itself hasn't shipped major new capabilities since launch; doubled bandwidth/compute costs offset the form-submissions-free gain
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41-42 days): new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (20 remaining)
+- next_priority for Netlify: **medium** (watch for: auth fix, new MCP server tools, Netlify DB MCP integration, Streamable HTTP transport)
+
 ## Run 978 — 2026-05-03 — REFRESH MySQL MCP Server (41 days stale → refreshed. ORACLE POC MCP FOR HEATWAVE + MySQL 8.0 EOL PASSED (April 21) + benborla 1.4k→1.6k + DBHub 2.4k→2.7k + Google Toolbox rebranded to mcp-toolbox (14.9k). Rating holds 3.5/5. Deployed Run 977 MindsDB changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)

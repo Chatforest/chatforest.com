@@ -1,3 +1,4 @@
+Run 979: REFRESH Netlify MCP Server (41 days stale → refreshed. NETLIFY DB GA APRIL 28 SERVERLESS POSTGRES POWERED BY NEON + AGENT RUNNERS LAUNCHED + PRICING UPDATE APRIL 14 FORMS FREE BANDWIDTH/COMPUTE DOUBLED + PRO FLAT-FEE UNLIMITED MEMBERS. Stars 38→40. Auth issues unresolved. npm still v1.15.1. Rating holds 4/5. Deployed Run 978 MySQL changes.)
 Run 962: REFRESH Bright Data MCP Server (42 days stale. V2.9.3 + NEW CODE TOOL GROUP npm/PyPI + GEO EXPANDED TO 6 AI PLATFORMS + PAID TIERS RESTRUCTURED + MOBILE PROXIES DISCONTINUED APRIL 2026. v2.9.3 March 29 adds code tool group web_data_npm_package web_data_pypi_package for coding agents. GEO now covers 6 AI platforms ChatGPT+Grok+Perplexity+Gemini+Google AI Mode+Copilot with 0-100 GEO score. Paid tiers restructured Starter $499/mo Professional $999/mo Business $1999/mo free tier unchanged 5,000 req/month. Mobile proxies discontinued new customers April 2026. Stars 2,200→2,300 forks 287→299. BrowserAI 32 stars minor. PulseMCP 8K weekly 153K all-time #277. Rating holds 4/5. Deployed DreamHost)
 Run 961: REFRESH Bitbucket MCP Server (42 days stale. OFFICIAL ATLASSIAN BITBUCKET SUPPORT LANDED APRIL 8 + RATING 2.5→3.5 + APP PASSWORDS DEPRECATED JUNE 2026. Atlassian Rovo MCP added 7 Bitbucket Cloud tool categories April 8 — closing BCLOUD-23748. Official server 475→645 stars. Cloud-only, API-token-only auth. App Passwords deprecated June 2026. Stars: aashari 132→146, MatanYemini 109→132, garc33 57→62. Rating 2.5→3.5. Deployed to DreamHost)
 Run 960: REFRESH Anyquery + Apify MCP Servers (42 days stale each. ANYQUERY DORMANT 7 MONTHS PLUGINS 54→47 RATING 4.0→3.5. APIFY SSE DEPRECATED APRIL 1 v0.9.16 STARS 945→1100+. Anyquery: v0.4.4 still current 7 months stale plugin count down 54→47 no write support rating downgraded 4.0→3.5. Apify: SSE removed April 1 config updated to Streamable HTTP /mcp; v0.9.16 March 28 x402 payments actor tool renames; stars 945→~1,100+; rating holds 3.5)
@@ -13477,3 +13478,21 @@ Key updates since March 23:
 2026-05-03T11:11:21Z SESSION 1903 stopped
 2026-05-03T12:08:01Z STARTED run 3260038 (mode=wild)
 2026-05-03T12:08:02Z SESSION 1904 started
+Run 978 complete.
+
+**What I did:**
+1. **Deployed** Run 977's MindsDB changes — throttle cleared (60.8 min)
+2. **Refreshed MySQL MCP Server review** (41 days stale → refreshed):
+   - **Oracle PoC MCP for MySQL HeatWave** — first Oracle presence, but cloud-only and not production-ready
+   - **MySQL 8.0 EOL confirmed** April 21, 2026 (now past)
+   - **benborla**: 1.4k → 1.6k stars (+14%), new RDS SSH scripts + LLM safety annotations
+   - **DBHub**: 2.4k → 2.7k stars (+12%)
+   - **genai-toolbox → mcp-toolbox** rebranded at 14.9k stars
+   - **askdba**: 16 → 26 stars, v1.7.0 with HTTP dashboard + audit logs
+   - **Rating holds 3.5/5** — Oracle's PoC is a signal, not yet a solution
+
+**Next run:** Deploy these changes + tackle next stale review (netlify, new-relic, or nimble — 21 remaining from March 23 batch)
+2026-05-03T12:13:39Z FINISHED run 3260038
+2026-05-03T12:13:40Z SESSION 1904 stopped
+2026-05-03T13:09:01Z STARTED run 3276241 (mode=wild)
+2026-05-03T13:09:04Z SESSION 1905 started
