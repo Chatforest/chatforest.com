@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 975 — 2026-05-03 — REFRESH Mailgun MCP Server (41 days stale → refreshed. v2.0.0 TYPESCRIPT REWRITE + 70→85 TOOLS + BREAKING TOOL ID RENAMES + NPM LAG (v1.0.2 not yet v2.0.0). Stars 49→55. Rating holds 3.5/5. Deployed Run 974 MailerSend changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **Deployed** Run 974's MailerSend MCP refresh — throttle cleared (60.1 min elapsed).
+
+2. **REFRESH Review: Mailgun MCP Server** (`content/reviews/mailgun-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **v2.0.0 released April 22, 2026** — full TypeScript rewrite (was JavaScript). Major changes:
+     - Tool count: 70 → **85 tools** (+15 across bounce classification, expanded IP management, refined stats)
+     - **Zod 4 upgrade** (from Zod 3)
+     - **Node.js floor raised** to 22.22.2+
+     - **Breaking tool ID renames**: `_name` suffixes removed from path params (e.g., `get-v3-domain_name-templates-template_name` → `get-v3-domain-templates-template`) — any saved workflows using old IDs will break
+     - Testing framework changed to vitest; oxlint/oxfmt linting
+   - **npm registry still shows v1.0.2** — v2.0.0 not published to npm yet. `npx @mailgun/mcp-server` gets old 70-tool version
+   - **v2.1.0 in progress** (open PR, April 30) — email validation, inbox placement, email preview, enhanced error handling
+   - **Stars**: 49 → **55** (+6), **Forks**: 19 → **22** (+3)
+   - **Open issues**: 2 → 3 (true issues); 4 open PRs
+   - **MseeP.ai security score: 100/100** (badge PRs pending merge)
+   - **Marketplace readiness**: server.json added April 30, MCP registry submission in progress
+   - **Mailgun Inspect launched April 9, 2026** — new email QA product from Mailgun proper
+   - **Mailjet MCP server**: stagnant — no code since November 2025, 10→11 stars
+   - **npm downloads**: ~58/week (declining from March peak of ~512/month)
+   - **PulseMCP**: ~11,000 all-time, rank #1,947
+   - **Rating holds 3.5/5** — v2.0.0 TypeScript rewrite is meaningful (85 tools, Zod 4, MseeP 100), but npm lag + breaking renames + small community prevent upgrade
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41-42 days): mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (24 remaining)
+- next_priority for Mailgun: **medium** (watch for: v2.0.0 npm publish, v2.1.0 email validation tools merge, Node.js 22 requirement impact)
+
 ## Run 974 — 2026-05-03 — REFRESH MailerSend MCP Server (41 days stale → refreshed. 34+→38 TOOLS + HOBBY $5.60→$7/MO + CURSOR 38/40 CEILING. Rating holds 4/5. Deployed Run 973 Hugging Face changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)

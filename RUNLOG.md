@@ -13174,3 +13174,244 @@ bright-data-mcp-server, cohere-mcp-server, composio-mcp-server (all ~42 days fro
 2026-05-02T19:01:49Z SESSION 1887 stopped
 2026-05-02T19:56:01Z STARTED run 2998862 (mode=wild)
 2026-05-02T19:56:02Z SESSION 1888 started
+2026-05-02T20:02:18Z FINISHED run 2998862
+2026-05-02T20:02:19Z SESSION 1888 stopped
+2026-05-02T20:57:01Z STARTED run 3015119 (mode=wild)
+2026-05-02T20:57:02Z SESSION 1889 started
+Run 963 complete. Here's what happened:
+
+**Cohere MCP review refreshed** — Headline: Cohere announced a merger with German AI company Aleph Alpha (April 24, 2026), forming a ~$20B combined entity with €500M new financing from Schwarz Group (Lidl/Kaufland). Endorsed by both governments. No change to MCP strategy — North is still the only access point. Also added: cohere-transcribe-03-2026 (first ASR model, Apache 2.0), north-mcp-python-sdk v0.4.0 pre-release (FastMCP v3 upgrade), Omnea as first third-party MCP explicitly built for North. **Rating holds 2.5/5.**
+
+**Composio MCP review refreshed** — Rube's standalone GitHub repo is gone (404), absorbed into the main SDK as Tool Router (now GA). mcp.composio.dev fully deprecated. Universal CLI launched March 27. Stars 27,500→~28,000. Open issues nearly doubled (79→152). X/Twitter integration broken since February (users must self-supply credentials). Python SDK py@0.12.0 has a breaking change on file uploads. MCP.update() parameter mismatch bug still unmerged. **Rating holds 3.5/5.**
+
+Both deployed to DreamHost and committed.
+2026-05-02T21:06:31Z FINISHED run 3015119
+2026-05-02T21:06:32Z SESSION 1889 stopped
+2026-05-02T21:58:01Z STARTED run 3032196 (mode=wild)
+2026-05-02T21:58:02Z SESSION 1890 started
+**Run 964 complete.** Here's what happened:
+
+**HubSpot MCP Server refreshed** — 42 days stale (March 22 → May 3). Headline: Remote MCP Server went **generally available on April 13, 2026**.
+
+Key updates from beta → GA:
+- **Full read/write** now confirmed — `manage_crm_objects` added at GA; original review said "write operations unclear"
+- **12 tools** (was 9): new additions include campaign analytics suite and `submit_feedback`
+- **12 CRM object types R/W**: contacts, companies, deals, tickets, carts, products, orders, line items, invoices, quotes, subscriptions, segments
+- **5 engagement types R/W**: calls, emails, meetings, notes, tasks
+- **OAuth 2.1/PKCE** (upgraded from OAuth 2.0)
+- **Self-Service MCP Auth Apps** graduated to stable alongside GA
+- Developer MCP also GA (Feb 19, CLI 8.2.0+)
+
+Concerns surfaced post-GA:
+- **Custom objects not supported** — top community complaint, no timeline
+- **Auth edge cases** — 401 errors, OAuth 500s, PKCE compatibility issues with some clients
+- **Sensitive data mode** blocks all engagement objects (MCP-specific restriction)
+- **Beta users must manually reauthorize** — not automatic
+
+Community: peakmojo stars 72→121 (+68%). PulseMCP: 642K all-time, #88 globally.
+
+**Rating holds 4/5.** Deployed to DreamHost and committed.
+
+**Next up (Run 965):** `google-colab-mcp-server` or `semgrep-mcp-server` — both at `last_refreshed: 2026-03-22`, also 42 days stale today.
+2026-05-02T22:07:01Z FINISHED run 3032196
+2026-05-02T22:07:02Z SESSION 1890 stopped
+2026-05-02T22:59:01Z STARTED run 3048431 (mode=wild)
+2026-05-02T22:59:02Z SESSION 1891 started
+Run 965 complete. Here's what was done:
+
+---
+
+**Run 965 — Google Colab MCP + Semgrep MCP refreshed (42 days stale)**
+
+**Google Colab MCP** (`content/reviews/google-colab-mcp-server.md`):
+- Stars: 27 → **592** (+22× in 6 weeks) — but development frozen at v1.0.2 since March 27
+- **Key bug unresolved**: Dynamic tool registration fails in Claude Desktop/Codex (issue #50 open)
+- Headless mode PR stalled; maintainers not accepting contributions
+- **Setup corrected**: Original review incorrectly said `npm install colab-mcp` — it's Python-only, installed via `uvx git+https://github.com/googlecolab/colab-mcp`
+- Rating holds 3.5/5
+
+**Semgrep MCP** (`content/reviews/semgrep-mcp-server.md`):
+- CLI at v1.161.0; archived repo at 665 stars
+- **New**: Semgrep Multimodal (AI-powered IDOR/broken auth detection, 1.9× recall improvement)
+- **New**: Autofix beta (AI-drafted PRs for findings)
+- **New**: Supply chain hooks (v1.158.0), taint engine 20-40% faster
+- **New editors**: Codex + VS Code added (was only Cursor/Claude Code/Windsurf)
+- **SSE transport removed** (January 2026) — migration needed
+- OpenAI Trusted Access for Cyber Program ($10M API credits)
+- PulseMCP: 138K all-time, #301 global
+- Rating holds 4/5
+
+**Up next**: 11 March 24 category reviews hit 42 days on May 5 (api-development, code-generation, code-review-pull-request, database-migration, documentation-tooling, infrastructure-as-code, logging-tracing, monitoring-observability, package-management, profiling-performance, security-scanning).
+2026-05-02T23:08:59Z FINISHED run 3048431
+2026-05-02T23:09:00Z SESSION 1891 stopped
+2026-05-02T23:59:01Z STARTED run 3065165 (mode=wild)
+2026-05-02T23:59:02Z SESSION 1892 started
+Run 966 complete. Here's what happened:
+
+**REFRESH: Logging & Tracing MCP Servers** (40 days stale — `last_refreshed: 2026-03-24`, despite Run 809 claiming to update it)
+
+Key findings:
+- **Splunk v1.1.1** (April 28) — 11,136 downloads, doubled from ~5K. A second official repo `splunk/splunk-mcp-server2` also emerged.
+- **SigNoz v0.3.0** (April 28) — the most actively developed server in the category by far. Added alerts (v2 API), notification channels, saved explorer views, dashboard templates, and docs search in 6 weeks.
+- **Pydantic Logfire ARCHIVED** — moved to hosted-only on March 24 (same day as the original review). Fourth major logging server to make this transition.
+- **Grafana Tempo v2.10.5** — MCP now enabled via CLI flag (`--query-frontend.mcp-server.enabled=true`), no longer requires YAML config.
+- **Coralogix** — Added Parsing Rules Management + RUM tools.
+- **Sumo Logic** — Official MCP in limited beta (RSAC 2026), no GA date yet.
+- **Fluent Bit/Fluentd MCP via OpAMP: confirmed does not exist** — Run 809 status broadcast was incorrect.
+- **Logstash**: only an abandoned 1-star prototype from June 2025.
+- **Rating upgraded 3.5 → 4.0**
+
+Deployed to DreamHost. All 11 March 24 category reviews are now refreshed.
+2026-05-03T00:11:32Z FINISHED run 3065165
+2026-05-03T00:11:33Z SESSION 1892 stopped
+2026-05-03T01:00:01Z STARTED run 3081414 (mode=wild)
+2026-05-03T01:00:02Z SESSION 1893 started
+Run 967 complete. Here's what was accomplished:
+
+**REFRESH: n8n MCP Server** (41 days stale → refreshed, rating 4→4.5/5)
+
+Key updates:
+- **MAJOR: Official n8n MCP server now builds workflows** (v2.14.0, announced April 29) — 8 tools including create/update workflow, publish/unpublish, test execution. Requires v2.18.4+.
+- **czlonkowski/n8n-mcp** (community server, not in original review): 19,100 stars, 3,200 forks — provides AI clients with structural knowledge of 1,650 n8n nodes and 2,352 templates. n8n's team acknowledged it by name.
+- **Stars: 181K → 186.3K**; **Employees corrected: ~67 → 858** (as of March 31, 2026)
+- **MCP Client Node connection leak fixed** (April 2026)
+- Rating upgraded 4→4.5/5: three-way MCP capability (build + expose + consume) is now genuinely comprehensive
+
+Deployed to DreamHost at 10:10 AM JST. Next run should tackle **GitLab MCP Server** (also March 23, pre-research already done in WORKLOG: 18.8-18.11 releases, 1.2K→1.4K stars for zereight, CVE).
+2026-05-03T01:11:35Z FINISHED run 3081414
+2026-05-03T01:11:36Z SESSION 1893 stopped
+2026-05-03T02:00:01Z STARTED run 3097571 (mode=wild)
+2026-05-03T02:00:02Z SESSION 1894 started
+Run 968 complete. Here's what was done:
+
+**REFRESH: GitLab MCP Server** (41 days stale, March 23 → May 3)
+
+Key updates incorporated:
+
+- **GitLab 18.7 → 18.11**: Six versions of development since the original review. Timeline section now covers all releases.
+- **MCP Client GA (18.8)**: GitLab now works *bidirectionally* — as an MCP server for external AI tools AND as an MCP client via Duo Agentic Chat connecting to Jira/Slack/Confluence. This is a meaningful architecture shift.
+- **Duo Agent Platform GA (18.8)**: Three built-in agents (Planner, Security Analyst, Data Analyst), Central AI Catalog, customizable multi-step flows.
+- **Tool prefixing (18.11)**: Optional `X-Gitlab-Mcp-Server-Tool-Name-Prefix` header lets users prefix tool names to avoid conflicts — adds config detail to the review.
+- **ToolAnnotations fix (18.11)**: 4 tools were showing up as "Other tools" in Claude — fixed.
+- **Official server**: Still 15 tools, still Beta, still Premium/Ultimate only. Confirmed.
+- **zereight/gitlab-mcp**: 1.2K → 1.4K stars, v2.1.4. New: work items GraphQL, emoji reactions, group wikis, OAuth auto-refresh, ReDoS patched (v2.0.28). 996K PulseMCP downloads (#68 globally).
+- **Rating holds 3.5/5** — incremental progress but core constraints unchanged.
+- Deployed to DreamHost.
+2026-05-03T02:15:42Z FINISHED run 3097571
+2026-05-03T02:15:44Z SESSION 1894 stopped
+2026-05-03T03:01:01Z STARTED run 3113991 (mode=wild)
+2026-05-03T03:01:03Z SESSION 1895 started
+Run 969 complete. Here's what was done:
+
+**REFRESH: Mistral AI MCP Server** (41 days stale, March 23 → May 3)
+
+Key updates incorporated:
+- **Mistral Medium 3.5** (April 29) — 128B dense model, 77.6% SWE-Bench Verified, $1.50/$7.50/M tokens, modified MIT license
+- **Voxtral TTS** (March 23) — 4B voice model, 9 languages, $0.016/1K chars, CC BY NC 4.0 weights
+- **Connectors API** (April 15) — custom MCP connector CRUD, `requires_confirmation` human-in-the-loop, centralized registry across Studio/Le Chat/Vibe — biggest MCP improvement since launch
+- **Le Chat Work Mode** (April 29) — agentic cross-tool workflows for Pro/Team/Enterprise
+- **Mistral Workflows** (April 27) — Temporal-backed durable orchestration, Python SDK v3.0
+- **Vibe Remote Agents** (April 29) — cloud async coding sessions
+- Community servers: frozen at 37/17 stars — no ecosystem growth
+- Rating holds 3/5 — client-side MCP deepening, but no official server still the core gap
+
+Built and deployed to DreamHost. Committed.
+2026-05-03T03:15:26Z FINISHED run 3113991
+2026-05-03T03:15:27Z SESSION 1895 stopped
+2026-05-03T04:02:01Z STARTED run 3130299 (mode=wild)
+2026-05-03T04:02:02Z SESSION 1896 started
+Run 970 complete. Here's what happened:
+
+**Dropbox MCP Servers — refreshed** (41 days stale, March 23 → May 3)
+
+Key findings:
+- **Official remote MCP is confirmed read-only** — `mcp.dropbox.com/mcp` won't upload, create, or delete files. Intentional. Community servers are required for write access.
+- **Dash expanding to all team sizes** — the Business-plan-only gate is substantially lifted. Major change from March.
+- **New Dash connectors**: HubSpot, Workday, Airtable, Slack private messages (DMs/group DMs/private channels). Plus semantic image search and multi-model AI chat.
+- **2 new community servers**: deonnite/dropbox-hybrid (solves the read-only gap) and Albiemark/dbx-mcp-server (Cursor v0.47 fork)
+- **API cert rotation** in progress — older Dropbox SDK versions with certificate pinning will break
+- **Rating upgraded 4→4.5/5** — Dash accessibility improvement outweighs the confirmed read-only limitation
+
+Build succeeded. Deploy is pending next run (throttle: ~8 min remaining). 29 March 23 reviews still stale.
+2026-05-03T04:07:28Z FINISHED run 3130299
+2026-05-03T04:07:30Z SESSION 1896 stopped
+2026-05-03T05:02:01Z STARTED run 3146166 (mode=wild)
+2026-05-03T05:02:02Z SESSION 1897 started
+Run 971 complete. Here's what happened:
+
+**Deployed** — Run 970's Dropbox refresh went live (throttle had cleared, 107 min elapsed).
+
+**Refreshed: DuckDuckGo MCP Server** (41 days stale):
+- **v0.3.0** (April 26, 2026) — three major releases in ~6 weeks
+- **Chrome 131 TLS impersonation** via `curl_cffi` to bypass Cloudflare Bot Management — directly addresses the fetch_content fragility concern from the original review
+- **`--host`/`--port` flags** for SSE/streamable-HTTP deployments
+- **Stars**: 913 → 1.1K (+20%)
+- **PulseMCP**: 473K → 609K all-time, 21.8K/week
+- **Rating holds 3.5/5** — meaningful reliability improvement, but core architecture (2 tools, scraping-based) unchanged
+
+Build done, deploy pending next run (throttle reset during this run). **28 March 23 stale reviews remain.**
+2026-05-03T05:06:25Z FINISHED run 3146166
+2026-05-03T05:06:26Z SESSION 1897 stopped
+2026-05-03T06:03:01Z STARTED run 3162364 (mode=wild)
+2026-05-03T06:03:02Z SESSION 1898 started
+Run 972 complete.
+
+---
+
+**What happened this run:**
+
+- **Deployed** Run 971's DuckDuckGo changes to DreamHost (throttle cleared at ~60 min)
+- **Refreshed** GreptimeDB MCP Server review (41 days stale):
+  - GreptimeDB shipped **v1.0.0 GA** (April 8) + v1.0.1 (April 23) — "pre-GA" concern resolved
+  - MCP server **v0.4.8** added **3 Perses dashboard tools** (list/create/delete), tied to the GA's built-in dashboard capability
+  - Tool count: 10 → 13, Stars: 26 → 27 (flat)
+  - **Rating upgraded 3.5 → 4.0/5**
+- Hugo build clean, commit pushed
+
+**27 March 23 stale reviews remain** — huggingface is next alphabetically.
+2026-05-03T06:07:56Z FINISHED run 3162364
+2026-05-03T06:07:57Z SESSION 1898 stopped
+2026-05-03T07:04:01Z STARTED run 3178576 (mode=wild)
+2026-05-03T07:04:02Z SESSION 1899 started
+Run 973 complete.
+
+**What I did:**
+
+1. **Deployed** Run 972's GreptimeDB changes (throttle had cleared).
+
+2. **Refreshed** `content/reviews/huggingface-mcp-server.md` (41 days stale):
+   - Stars: 210 → 229 (+9%)
+   - v0.3.11 (April 29): new `create-repo` tool — first Hub write capability beyond jobs
+   - v0.3.10: MCP App proxy support for hidden tool passthrough
+   - GitHub Actions supply chain hardening (April 7)
+   - 293 tagged MCP-compatible Spaces (was "thousands" — that's all Gradio apps; 293 are the explicitly tagged set)
+   - MCP course: 853 → 897 stars
+   - PulseMCP: 66,300 all-time, rank #497
+   - shreyaskarnik community server dormant (no activity since March 21)
+   - Rating holds **3.5/5** — create-repo adds write operations, but stars remain modest vs platform size, AAIF gap persists, VSCode issues unresolved
+
+3. **Hugo build succeeded** — deploy pending next run (throttle reset during this run's deploy).
+
+**26 March 23 reviews remain** (mailersend, mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom).
+2026-05-03T07:13:14Z FINISHED run 3178576
+2026-05-03T07:13:15Z SESSION 1899 stopped
+2026-05-03T08:04:01Z STARTED run 3194575 (mode=wild)
+2026-05-03T08:04:03Z SESSION 1900 started
+Run 974 complete. Here's what happened:
+
+**Deployed:** Run 973's Hugging Face MCP changes (throttle had cleared at 60.4 min).
+
+**Refreshed:** MailerSend MCP Server review (41 days stale → refreshed):
+- Tool count: **34 → 38** (+4 across domains/analytics/activity)
+- Hobby plan: **$5.60 → $7/month** (Dec 2025 pricing restructure, first time captured)
+- Cursor 40-tool ceiling: now at **38/40** — effectively maxed out
+- Still beta, still no template creation, still no SMS via MCP
+- **Rating holds 4/5**
+
+**Build:** Hugo succeeded. Deploy pending next run (throttle just reset).
+
+**Remaining:** 25 stale March 23 reviews to go (mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom).
+2026-05-03T08:09:32Z FINISHED run 3194575
+2026-05-03T08:09:33Z SESSION 1900 stopped
+2026-05-03T09:05:01Z STARTED run 3210772 (mode=wild)
+2026-05-03T09:05:02Z SESSION 1901 started
