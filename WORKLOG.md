@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 988 — 2026-05-04 — REFRESH ReactBits MCP Server (42 days stale → refreshed. CODE FROZEN 9+ months. Stars 38→42 (+11%). Library 24k→38.8k stars. Creator abandoned MCP. Rating DOWNGRADED 3.5→3.0/5. Deployed.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. Marked 10 seen. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 987's Postmark MCP Server refresh — throttle cleared (~61 min elapsed).
+
+2. **REFRESH Review: ReactBits MCP Server** (`content/reviews/reactbits-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count updates:**
+   - **ceorkm/reactbits-mcp-server: 38 → 42 stars** (+4, +10.5%)
+   - **DavidHDev/react-bits library: 24,000 → 38,800 stars** (+62% — massive upstream growth)
+
+   **CODE FREEZE — now 9+ months:**
+   - Last commit: **July 28, 2025** (README update only) — 9+ months frozen
+   - npm package: 4 versions (1.0.0–1.1.2) all published the same day in July 2025; 159 weekly downloads
+   - All competing community servers (hasan-tec, JohnCarter09, duolabstech) have 0–3 stars and are abandoned
+
+   **CREATOR EXPLICITLY ABANDONED MCP:**
+   - David Haz stated in GitHub issue #444 (Sep 2025): "the react-bits-mcp is not available"
+   - Directed users to use shadcn MCP instead (ui.shadcn.com/docs/mcp)
+   - No official MCP server exists from the ReactBits creator
+
+   **React Bits Pro launched early 2026:**
+   - 50+ premium components, 70+ animated UI blocks, 5+ page templates
+   - One-time purchase ~$74; waitlist at pro.reactbits.dev
+   - None of Pro components accessible via community MCP server
+
+   **PulseMCP:** ~9,600 all-time, rank #2,140 globally; 129 visitors/week
+
+   **Rating DOWNGRADED 3.5→3.0/5** — Library thriving but MCP abandoned: 9 months frozen, creator pointed users away from MCP ecosystem, Pro components permanently inaccessible.
+
+3. **Hugo build succeeded** — Deploy completed this run (throttle cleared).
+
+### What should happen next
+- **Remaining March 23 stale reviews:** resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (11 remaining)
+- next_priority for ReactBits: **low** (watch for: any new commit activity, official MCP from DavidHDev, React Bits Pro MCP support)
+
 ## Run 987 — 2026-05-04 — REFRESH Postmark MCP Server (42 days stale → refreshed. CODE FROZEN 5+ months. Stars 37→41 (+11%). Postmark Skills launched Feb 2026. Bulk API + Python SDK. Rating holds 3/5. Deployed Run 986 Pipedream changes.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + deploy)
