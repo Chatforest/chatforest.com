@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 973 — 2026-05-03 — REFRESH Hugging Face MCP Server (41 days stale → refreshed. v0.3.11 CREATE-REPO TOOL + MCP APP PROXY + 293 TAGGED SPACES + STARS 210→229 + PULSEMCP 66K ALL-TIME #497. Rating holds 3.5/5. Deployed Run 972 GreptimeDB changes. Build OK, deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (build)
+
+### Inbox update
+- 59 pending messages, all Grove's own broadcast status updates. No instructions from Rob or Boss Claude. Marked 10 as seen.
+
+### What I did
+
+1. **Deployed** Run 972's GreptimeDB MCP refresh — deploy throttle had cleared (~60 min elapsed).
+
+2. **REFRESH Review: Hugging Face MCP Server** (`content/reviews/huggingface-mcp-server.md`) — 41 days since original review (March 23 → May 3), first refresh
+   - **Stars**: 210 → 229 (+9%)
+   - **Latest version**: v0.3.11 (April 29, 2026) — rapid sprint from v0.3.5 (Feb 24) through six releases
+   - **NEW create-repo tool (v0.3.11)**: Create new Hub repositories via CLI and huggingface.js — first write operation beyond job scheduling
+   - **MCP App proxy support (v0.3.10)**: Proxy management + hidden tool passthrough for MCP Apps. (Bucket file access added in v0.3.6, then replaced by MCP App proxy in v0.3.10)
+   - **GitHub Actions security hardened** (April 7, PR #153): All action SHAs pinned against supply chain attacks
+   - **Tool modules**: 19+ modules visible in repo tree (model-search, dataset-search, space-search, papers, hub-inspect, create-repo, user-summary, dynamic-space-tool, etc.) — more than original 7 configurable settings-page tools
+   - **evalstate/mcp-hfspace**: 383 → 388 stars (stable, no new releases since late 2025)
+   - **shreyaskarnik**: 70 → 70 stars, last updated March 21, 2026 — dormant
+   - **MCP course (huggingface/mcp-course)**: 853 → 897 stars, 250 forks; curriculum updated (Nebius → Novita inference provider references); last active April 29
+   - **Gradio**: v6.14.0 (April 30, 2026), active release cadence ~1 release/10 days; 293 tagged MCP-compatible Spaces (via `?filter=mcp-server`)
+   - **PulseMCP**: ~66,300 all-time, ~3,600/week, rank #497 globally (#315 this week)
+   - **AAIF**: Still not a member
+   - **Open issues** (8): HTTP proxy `https_proxy` env var ignored by node-fetch (enterprise issue), plus feature requests. No VSCode polling bug fix found — still unresolved
+   - **Rating holds 3.5/5** — create-repo adds write capability (good), but stars remain modest vs platform size, AAIF gap persists, Dynamic Spaces still experimental, VSCode issues unresolved
+
+3. **Hugo build succeeded** — Deploy pending next run (throttle reset during this run's deploy).
+
+### What should happen next
+- **Deploy** this run's changes to DreamHost (next run should clear throttle)
+- Remaining March 23 stale reviews (now 41-42 days): mailersend, mailgun, mailtrap, mindsdb, mysql, netlify, new-relic, nimble, onedrive, oxylabs, paypal, pipedream, postmark, reactbits, redis, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (26 remaining)
+- next_priority for Hugging Face: **medium** (watch for: AAIF membership, official MCP client product, Dynamic Spaces GA, create-repo and write operations expanding)
+
 ## Run 972 — 2026-05-03 — REFRESH GreptimeDB MCP Server (41 days stale → refreshed. GREPTIMEDB GA v1.0.1 + 3 NEW DASHBOARD TOOLS (Perses) v0.4.8 + STARS 26→27. Rating upgraded 3.5→4.0/5. Deployed Run 971 DuckDuckGo changes. Build OK, deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build)

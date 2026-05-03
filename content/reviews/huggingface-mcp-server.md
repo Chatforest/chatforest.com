@@ -2,13 +2,15 @@
 title: "Hugging Face MCP Server — The AI Community Hub Meets the Model Context Protocol"
 date: 2026-03-23T16:30:00+09:00
 description: "Hugging Face operates an official MCP server connecting AI assistants to the Hub's 1M+ models, 500K+ datasets, and thousands of Gradio Spaces."
-og_description: "Hugging Face's official MCP server (210 stars, 98 releases) connects AI assistants to 1M+ models, 500K+ datasets, and MCP-compatible Gradio Spaces. Rating: 3.5/5."
+og_description: "Hugging Face's official MCP server (229 stars, v0.3.11) connects AI assistants to 1M+ models, 500K+ datasets, and MCP-compatible Gradio Spaces. Now with repo creation. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Hugging Face operates the official hf-mcp-server connecting AI assistants to the Hub's 1M+ models, 500K+ datasets, Spaces, and papers. Any Gradio Space can become an MCP tool with one line of code. The server supports Streamable HTTP, OAuth, and 7 built-in tools."
-last_refreshed: 2026-03-23
+card_description: "Hugging Face operates the official hf-mcp-server connecting AI assistants to the Hub's 1M+ models, 500K+ datasets, Spaces, and papers. Any Gradio Space can become an MCP tool with one line of code. The server supports Streamable HTTP, OAuth, and includes tools for search, Hub inspection, job management, and repository creation."
+last_refreshed: 2026-05-03
 ---
 
-**At a glance:** [huggingface/hf-mcp-server](https://github.com/huggingface/hf-mcp-server) (210 stars, 56 forks, 723 commits, 98 releases, MIT license) — the official Hugging Face MCP server connecting AI assistants to the Hub. Plus [evalstate/mcp-hfspace](https://github.com/evalstate/mcp-hfspace) (383 stars, 56 forks, MIT) for direct Spaces integration and [shreyaskarnik/huggingface-mcp-server](https://github.com/shreyaskarnik/huggingface-mcp-server) (70 stars, MIT) for read-only Hub API access. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** [huggingface/hf-mcp-server](https://github.com/huggingface/hf-mcp-server) (229 stars, 59 forks, MIT license, v0.3.11) — the official Hugging Face MCP server connecting AI assistants to the Hub. Plus [evalstate/mcp-hfspace](https://github.com/evalstate/mcp-hfspace) (388 stars, 56 forks, MIT) for direct Spaces integration and [shreyaskarnik/huggingface-mcp-server](https://github.com/shreyaskarnik/huggingface-mcp-server) (70 stars, MIT, dormant) for read-only Hub API access. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+
+*Refreshed May 2026: v0.3.11 adds repository creation tool; MCP App proxy support; 293 tagged MCP Spaces; PulseMCP #497 (66K all-time). Stars 210→229. Rating holds 3.5/5.*
 
 Hugging Face's MCP server connects your AI assistant — Claude Desktop, Cursor, VS Code, Gemini CLI, ChatGPT, or any MCP-compatible client — directly to the **largest open-source AI hub in the world**: 1 million+ models, 500,000+ datasets, and thousands of Gradio Spaces that can each serve as their own MCP tool. The server provides 7 built-in tools for searching and exploring Hub resources, plus a unique ability to dynamically call any MCP-compatible Gradio Space at runtime.
 
@@ -18,9 +20,9 @@ Hugging Face's MCP server connects your AI assistant — Claude Desktop, Cursor,
 
 ## What It Does
 
-### Built-in Tools (7)
+### Built-in Tools (8+)
 
-The official HF MCP server includes 7 tools, configurable via your [MCP settings](https://huggingface.co/settings/mcp):
+The official HF MCP server includes configurable tools via your [MCP settings](https://huggingface.co/settings/mcp). As of v0.3.11 (April 29, 2026):
 
 | Tool | What It Does |
 |------|-------------|
@@ -31,13 +33,16 @@ The official HF MCP server includes 7 tools, configurable via your [MCP settings
 | Documentation Semantic Search | Search Hugging Face documentation using natural language |
 | Hub Repository Details | Get detailed info about models, datasets, and Spaces (optionally includes README) |
 | Run and Manage Jobs | Run, monitor, and schedule jobs on Hugging Face infrastructure |
+| **Create Repository** *(new v0.3.11)* | Create new Hub repositories via CLI and huggingface.js |
+
+The tool module tree also includes `duplicate-space`, `gradio-files`, `hf-api-call`, `hub-inspect`, `paper-summary`, `repo-search`, `space-files`, `space-info`, `user-summary`, and `dynamic-space-tool` — with configurable subsets exposed depending on your settings. v0.3.10 added **MCP App proxy support**, enabling hidden tool passthrough for MCP Apps.
 
 ### Gradio Spaces as MCP Tools
 
 This is Hugging Face's **unique differentiator** in the MCP ecosystem. Any Gradio Space can become an MCP tool:
 
 - **For Space creators:** Add `mcp_server=True` to `launch()` — Gradio automatically converts Python functions into MCP-compatible tools using docstrings for descriptions
-- **For users:** Browse [MCP-compatible Spaces](https://huggingface.co/spaces?filter=mcp-server), click the MCP badge, and add them to your tools
+- **For users:** Browse [MCP-compatible Spaces](https://huggingface.co/spaces?filter=mcp-server) (293 tagged as of May 2026), click the MCP badge, and add them to your tools
 - **Dynamic Spaces (experimental):** Your assistant can discover and use MCP-compatible Spaces on-the-fly without manual setup
 - **Capabilities:** Image generation (FLUX.1), audio transcription, text-to-speech, vision models, object detection, and more — whatever the community builds
 
@@ -53,27 +58,28 @@ This is Hugging Face's **unique differentiator** in the MCP ecosystem. Any Gradi
 
 ## Community Servers
 
-### evalstate/mcp-hfspace (383 stars)
+### evalstate/mcp-hfspace (388 stars)
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [evalstate/mcp-hfspace](https://github.com/evalstate/mcp-hfspace) — 383 stars, 56 forks, 155 commits, MIT |
+| GitHub | [evalstate/mcp-hfspace](https://github.com/evalstate/mcp-hfspace) — 388 stars, 56 forks, MIT |
 | Language | TypeScript |
 | What it does | Direct integration between Claude Desktop and Hugging Face Spaces with automatic endpoint discovery |
 | Default Space | FLUX.1-schnell for image generation |
 | Features | Private Space access via HF token, Claude Desktop mode for optimized image returns, custom API endpoints |
-| Downloads | ~14.7K npm downloads |
-| Status | Superseded by official HF MCP server but still actively maintained; popular for local deployment |
+| PulseMCP | ~17,300 all-time visits, #1,382 globally |
+| Status | Superseded by official HF MCP server but stable; no new releases since late 2025 |
 
-### shreyaskarnik/huggingface-mcp-server (70 stars)
+### shreyaskarnik/huggingface-mcp-server (70 stars, dormant)
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [shreyaskarnik/huggingface-mcp-server](https://github.com/shreyaskarnik/huggingface-mcp-server) — 70 stars, 13 forks, 6 commits, MIT |
+| GitHub | [shreyaskarnik/huggingface-mcp-server](https://github.com/shreyaskarnik/huggingface-mcp-server) — 70 stars, 12 forks, 6 commits, MIT |
 | Language | Python |
 | What it does | Read-only access to Hub APIs — search models, datasets, Spaces, papers, collections |
 | Tools | 10 tools: search-models, get-model-info, search-datasets, get-dataset-info, search-spaces, get-space-info, get-paper-info, get-daily-papers, search-collections, get-collection-info |
 | Features | Custom `hf://` URI schemes, prompt templates for model comparison and paper summarization |
+| Status | Last updated March 21, 2026 — no activity since original review. Effectively dormant. |
 
 ### huangxinping/huggingface-daily-paper-mcp (niche)
 
@@ -86,7 +92,7 @@ This is Hugging Face's **unique differentiator** in the MCP ecosystem. Any Gradi
 
 ## Hugging Face MCP Course
 
-Hugging Face partnered with Anthropic to create a **free, open-source MCP course** — [huggingface/mcp-course](https://github.com/huggingface/mcp-course) (853 stars, 235 forks). Covers MCP fundamentals, building servers with Gradio and Python SDK, building clients, and a final project. This makes Hugging Face the **leading educational resource** for MCP development.
+Hugging Face partnered with Anthropic to create a **free, open-source MCP course** — [huggingface/mcp-course](https://github.com/huggingface/mcp-course) (897 stars, 250 forks as of May 2026). Covers MCP fundamentals, building servers with Gradio and Python SDK, building clients, and a final project. This makes Hugging Face the **leading educational resource** for MCP development. Recent updates updated inference provider references across all language translations (Nebius → Novita).
 
 ## Hugging Face Pricing
 
@@ -110,19 +116,19 @@ The MCP server itself is **free** — it accesses the Hub's free API. Costs only
 
 | Feature | Hugging Face | Anthropic | Google | OpenAI | Meta/Llama |
 |---------|-------------|-----------|--------|--------|------------|
-| Official MCP server | Yes (210 stars) | No (reference servers) | Yes (3.4k stars) | No | No |
+| Official MCP server | Yes (229 stars) | No (reference servers) | Yes (14.7k stars) | No | No |
 | Server approach | Hub access + Gradio Spaces | Reference implementations | Managed remote + open-source | Client only | Client only (Llama Stack) |
 | MCP client | No | Yes (all Claude products) | Yes (Gemini CLI, SDKs) | Yes (ChatGPT, Agents SDK) | Yes (Llama Stack) |
 | AAIF member | No | Yes (platinum, co-founder) | Yes (platinum) | Yes (platinum, co-founder) | No |
 | Unique strength | 1M+ models, Gradio-as-MCP | Created the protocol | Most official servers (24+) | 900M+ weekly users | Fully free models |
-| MCP course/education | Yes (free course, 853 stars) | Yes (docs + specification) | No | No | No |
+| MCP course/education | Yes (free course, 897 stars) | Yes (docs + specification) | No | No | No |
 | Free tier | Yes (full Hub access) | Yes (limited Claude) | Yes (Flash models) | Yes (limited ChatGPT) | Yes (all models free) |
 
 ## Known Issues
 
-1. **Not an AAIF member** — Despite deep MCP investment (official server, free course, Gradio integration), Hugging Face is not a member of the Agentic AI Foundation. This means no seat at the governance table where MCP's future is decided by Anthropic, OpenAI, Google, Microsoft, and AWS.
+1. **Not an AAIF member** — Despite deep MCP investment (official server, free course, Gradio integration), Hugging Face has not joined the Agentic AI Foundation. This means no seat at the governance table where MCP's future is decided by Anthropic, OpenAI, Google, Microsoft, and AWS.
 
-2. **Relatively low GitHub stars (210)** — Compared to Google's MCP repo (3.4k stars) or Anthropic's reference servers (81.8k stars), the official HF MCP server has modest adoption. The 98 releases and 723 commits show active development, but community awareness lags.
+2. **Relatively low GitHub stars (229)** — Compared to Google's MCP Toolbox (14.7K stars) or Anthropic's reference servers (~84K stars), the official HF MCP server has modest adoption. Active development (v0.3.11, April 29, 2026) shows commitment, but community awareness lags platform size.
 
 3. **Client timeout issues** — Claude Desktop uses a hard 60-second timeout and doesn't use progress notifications for keep-alive. Compute-intensive Gradio Spaces (image generation, large model inference) can exceed this limit, causing silent failures.
 
@@ -148,9 +154,9 @@ Hugging Face brings something **no other AI company offers** to the MCP ecosyste
 
 The **Gradio integration** is the standout feature. Adding `mcp_server=True` to a Space's `launch()` call is arguably the easiest path from "Python function" to "MCP tool" in the entire ecosystem. Combined with free Spaces hosting, this lowers the barrier to MCP server creation below what any other platform offers.
 
-On the **educational side**, Hugging Face's free MCP course (853 stars, built with Anthropic) is the most comprehensive learning resource for MCP development. No other AI company has invested this heavily in MCP education.
+On the **educational side**, Hugging Face's free MCP course (897 stars as of May 2026, built with Anthropic) is the most comprehensive learning resource for MCP development. No other AI company has invested this heavily in MCP education.
 
-The 3.5/5 rating reflects the **gap between potential and current state**. The official server has modest adoption (210 stars vs. thousands for comparable servers), Hugging Face isn't in the AAIF, there's no MCP client product, Dynamic Spaces is still experimental, and the quality of community Gradio tools varies widely. The server is also a **Hub discovery tool**, not a model inference tool — you search for models, you don't run them through MCP (that requires separate Inference API or Endpoints setup).
+The 3.5/5 rating reflects the **gap between potential and current state**. The official server has modest adoption (229 stars, ~66K PulseMCP visits globally, rank #497), Hugging Face isn't in the AAIF, there's no MCP client product, Dynamic Spaces is still experimental, and the quality of community Gradio tools varies widely. The server is also a **Hub discovery and management tool**, not a model inference tool — you search for models and now create repos, but running them requires separate Inference API or Endpoints setup.
 
 **Who benefits most from Hugging Face's MCP ecosystem:**
 
@@ -166,4 +172,4 @@ The 3.5/5 rating reflects the **gap between potential and current state**. The o
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Hugging Face announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Hugging Face announcements. Originally published March 2026; refreshed May 2026. See our [About page](/about/) for details on our review process.*
