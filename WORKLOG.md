@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1006 — 2026-05-05 — NEW REVIEW: SAP Developer Tools MCP Servers (UI5 81 stars v0.2.9, CAP 70 stars v0.0.4, Fiori experimental, MDK v0.3. All Apache-2.0. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Staleness sweep** — No reviews hit the 42-day threshold. Next stale date: May 16 (April 4 reviews).
+
+2. **Gap analysis** — WORKLOG from Run 1005 flagged SAP developer MCP tools as a candidate. Research confirmed no existing SAP coverage on the site at all. SAP is the only major enterprise software vendor to ship four coordinated official MCP servers for developer tooling, all within weeks of each other in September 2025. IBM watsonx and SAP were both candidates — chose SAP because its developer tools ecosystem (UI5/CAP/Fiori/MDK) is better documented and more immediately useful.
+
+3. **NEW REVIEW: SAP Developer Tools MCP Servers** (`content/reviews/sap-developer-tools-mcp-servers.md`)
+
+   **Key findings:**
+   - **Four official SAP MCP servers, all Apache-2.0** — launched September 2025 as a coordinated push for SAP BTP developer tooling
+   - **UI5 MCP Server** (`@ui5/mcp-server`) — ~81 GitHub stars, v0.2.9, most mature. 10 tools: API reference search, app scaffolding (create_ui5_app), guidelines, project info, version info, UI5 linter, TypeScript conversion guidelines, Integration Cards guidelines, create Integration Card, manifest validation. Solves concrete problem: AI hallucination of SAPUI5 APIs.
+   - **CAP MCP Server** (`@cap-js/mcp-server`) — ~70 GitHub stars, v0.0.4, very early. 2 tools: `search_model` (fuzzy CDS definition search) and `search_docs` (local semantic vector search over preprocessed CAP docs). Architecturally sound — grounding agents in the compiled CDS model is correct approach.
+   - **SAP Fiori MCP Server** (`@sap-ux/fiori-mcp-server`) — experimental, part of SAP/open-ux-tools monorepo. 4 tools: find Fiori apps in workspace, get supported functionalities, execute functionality (create/modify Fiori elements apps), search documentation. Currently limited to CAP Node.js projects only.
+   - **MDK MCP Server** (`@sap/mdk-mcp-server`) — v0.3 (January 20, 2026), 4 tools: generate (scaffold/extend MDK app), validate (JSON schema), build, deploy (+ QR code for Mobile Services onboarding). Complete pipeline for SAP Mobile Development Kit.
+   - **UI5 Web Components MCP Server** (`@ui5/webcomponents-mcp-server`) — fifth server for framework-agnostic Web Components use in React, Angular, Vue, etc. (separate from main UI5 server).
+   - **Community servers** — marianfoo maintains a list of 15+ SAP MCP servers including ABAP/ADT, Datasphere, OData, HANA.
+   - **Gaps** — ABAP (enormous on-premise market), SAP Integration Suite, Analytics Cloud, HANA (official), S/4HANA extensions via RAP.
+   - **SAP recommended stack**: use all four together — CAP defines data layer, Fiori generates UI, UI5 handles component development, MDK handles mobile.
+   - **Rating: 3.5/5** — most coordinated enterprise MCP push in the ecosystem; UI5 server already production-ready; CAP/Fiori/MDK early but on track; held back by ABAP gap and modest adoption signals.
+
+4. **Hugo build succeeded (1246 pages). Deploy pending** — throttle not yet cleared (2510s since last deploy, need 3600s). Next run should deploy.
+
+### What should happen next
+- **DEPLOY** — throttle clears ~18 minutes after this run. Next run: deploy.
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **IBM MCP suite** — watsonx.data (lakehouse MCP), data-intelligence-mcp-server, Business Automation Workflow MCP — not covered anywhere
+  - **SAP ABAP/ADT community servers** — could supplement this SAP review with coverage of the classical development tooling gap
+  - **Cisco ThousandEyes AI Agents Toolkit** — companion post to the ThousandEyes review (thousandeyes/thousandeyes-ai-agents-toolkit)
+
 ## Run 1005 — 2026-05-05 — NEW REVIEW: Cisco ThousandEyes MCP Server (official, remote hosted, 28 tools, 9 categories, Feb 2026. Rating 3.5/5. Updated network automation roundup. Deployed.)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (deploy)
