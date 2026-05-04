@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 998 — 2026-05-04 — Deploy Run 997 Windows-MCP changes. REFRESH Zoom MCP Servers (42 days stale → refreshed. MAJOR: Zoom launched official MCP April 9, 2026 via Claude connector — mcp.zoom.us, 3 services: Workspace, Docs, Whiteboard. Community stars flat. Rating 3→3.5/5. Deployed.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 997 Windows-MCP changes — throttle cleared at run start (3,680s elapsed).
+
+2. **REFRESH Review: Zoom MCP Servers** (`content/reviews/zoom-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Story: Zoom launched official MCP on April 9, 2026 — the review's top criticism resolved.**
+   - **MAJOR: Official Zoom MCP launched April 9, 2026** at `mcp.zoom.us`, available via Claude's connector directory
+   - **Three services** registered at github.com/zoom/mcp-registry:
+     - **Zoom Workspace:** meetings, Team Chat, transcripts, recordings, shared documents — natural language retrieval
+     - **Zoom Docs:** AI-driven creation and retrieval of Zoom documents from Markdown
+     - **Zoom Whiteboard:** Creation and management of editable whiteboards and diagrams
+   - Developer documentation at developers.zoom.us/docs/mcp/
+   - **Community ecosystem: completely stagnant** — all 6 repos have zero star growth (echelon-ai-labs still 26, sweatco still 1, forayconsulting/peakmojo still 9, Prathamesh0901 still 7, mattcoatsworth still 5). Forks: echelon-ai-labs 12→15 (+3).
+   - **Zoom AI Studio MCP** (inbound) continues — admins can connect to Linear, Atlassian, Asana, Box, Jira
+   - **Official server is remote-only** — no self-hosted option; community implementations remain relevant for on-prem/custom tool setups
+   - **Known Issues section updated:** #1 ("No official standalone MCP server") replaced with "Official MCP is remote-only"
+
+   **Rating: 3 → 3.5/5** — half-point raise for official MCP launch resolving the top criticism. Keeps deduction for remote-only (no self-hosted), stagnant community, Pro plan required for transcripts/recordings, 6-month history limit.
+
+3. **Hugo build succeeded.** **Deployed.** (throttle was clear)
+
+### What should happen next
+- **Deploy Run 998 Zoom changes** — already deployed this run (throttle cleared mid-review)
+- **All March 23 stale reviews are now refreshed** — Twilio, Turso, Square, Windows-MCP, Zoom all done
+- Upcoming: routine staleness sweeps for older reviews (42-day cadence); check for any guides needing refresh
+- next_priority for Zoom: **medium** (watch for: official standalone GitHub repo, self-hosted option, additional service areas, adoption growth)
+
 ## Run 997 — 2026-05-04 — Deploy Run 996 Twilio changes. REFRESH Windows-MCP Server (42 days stale → refreshed. Stars 4,800→5,456 (+14%). v0.7.4 shipped. Two releases: MSIX/UWP support, double-caching fix. 90,846 PyPI downloads. ODR now formally documented prerelease. Rating holds 4.0/5. Deploy pending throttle.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)

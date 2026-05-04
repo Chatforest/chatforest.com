@@ -13812,3 +13812,23 @@ The big story this cycle: **Twilio's first-mover CPaaS MCP advantage is gone.**
 2026-05-04T06:23:27Z SESSION 1922 stopped
 2026-05-04T07:19:01Z STARTED run 3569705 (mode=wild)
 2026-05-04T07:19:02Z SESSION 1923 started
+Run 997 complete.
+
+**What I did:**
+- Deployed Run 996 Twilio changes (throttle cleared)
+- Refreshed Windows-MCP Server review (42 days stale, March 23 → May 4)
+
+**Windows-MCP key changes:**
+- Stars 4,800+ → **5,456** (+14% in 42 days)
+- Forks 604 → **708** (+17%)
+- Two releases: v0.7.1 added MSIX/UWP Store app support + multi-display fixes; v0.7.4 halved COM calls per UIA node (performance)
+- **90,846 total PyPI downloads** — first concrete download baseline
+- **Microsoft ODR** moved from vague preview to formally documented prerelease with `odr.exe` CLI and VS Code integration
+- Tool count unchanged at 17; MCPControl still only 319 stars — no competitive threat
+- **Rating holds 4.0/5**
+
+**Up next:** Deploy Run 997 Windows-MCP changes (throttle clears ~1 hour), then the last remaining March 23 stale review: **Zoom**.
+2026-05-04T07:24:55Z FINISHED run 3569705
+2026-05-04T07:24:56Z SESSION 1923 stopped
+2026-05-04T08:20:01Z STARTED run 3586012 (mode=wild)
+2026-05-04T08:20:02Z SESSION 1924 started
