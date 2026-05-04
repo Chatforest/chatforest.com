@@ -57,11 +57,39 @@ Built on the OpenClaw agent framework. The safety constraints and governance fea
 
 ## Cisco Ecosystem
 
+### Cisco ThousandEyes MCP Server (Official)
+
+| Server | Stars | Language | Transport | Tools |
+|--------|-------|----------|-----------|-------|
+| [ThousandEyes-MCP-Server-official](https://github.com/CiscoDevNet/ThousandEyes-MCP-Server-official) | 1 | Remote hosted | Streamable HTTP | 28 |
+
+**→ [Full review: Cisco ThousandEyes MCP Server](/reviews/thousandeyes-mcp-server/)**
+
+**Cisco's official ThousandEyes MCP server is a fully hosted remote server** — no local software to deploy, no Docker containers to run. Connect Claude Desktop, Cursor, VS Code, or AWS Kiro to `https://api.thousandeyes.com/mcp` and authenticate via Bearer token or OAuth2 Dynamic Client Registration. Launched February 4, 2026.
+
+ThousandEyes is Cisco's network intelligence platform — it monitors what's *between* users and services (internet paths, ISP routing, CDN health, BGP changes) rather than what's *inside* infrastructure. The MCP server exposes 28 tools across 9 categories:
+
+- **Synthetic tests** — list, view, create, update, delete scheduled tests
+- **Instant tests** — run on-demand tests against any target *(consumes billing units)*
+- **Events and alerts** — triage active and historical network/application problems
+- **Outage correlation** — search outages from Internet Insights data
+- **Anomaly detection** — surface metric anomalies over time ranges
+- **Path visualization** — hop-by-hop network path maps
+- **BGP analysis** — routing data and reachability results
+- **Endpoint monitoring** — employee device and wireless performance
+- **Template deployment** — stand up complete test/dashboard/alert configurations from templates
+
+Tools are split into two configurable permission groups: **read-only** (22 tools, safe to enable broadly) and **write/delete** (6 tools, test management and template deployment). Cisco recommends enabling only what you need — too many tools active simultaneously causes latency and timeouts.
+
+The official GitHub repo is essentially a configuration guide (1 star, 3 commits); the actual server is proprietary and Cisco-hosted. Notable gap: **Internet Insights data is not exposed** — the collective ISP/CDN outage intelligence that distinguishes ThousandEyes from general observability tools cannot be queried through MCP. Alert rule management is also absent.
+
+**Target audience**: NOC engineers, MSPs, and SREs whose organizations already use ThousandEyes. ThousandEyes subscription with API Access role required. Government deployments not supported.
+
 ### pamosima/network-mcp-docker-suite — 10 Docker-Based Network MCP Servers
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [network-mcp-docker-suite](https://github.com/pamosima/network-mcp-docker-suite) | — | Python | — | 10 servers |
+| [network-mcp-docker-suite](https://github.com/pamosima/network-mcp-docker-suite) | 35 | Python | — | 10 servers |
 
 **A complete Docker-based MCP suite for Cisco-centric network operations**, featured on the Cisco Switzerland Technology Blog and Cisco Code Exchange:
 
@@ -69,13 +97,13 @@ Built on the OpenClaw agent framework. The safety constraints and governance fea
 - **NetBox MCP Server** (port 8001) — DCIM/IPAM infrastructure documentation
 - **Catalyst Center MCP Server** (port 8002) — enterprise network management and assurance
 - **IOS XE MCP Server** (port 8003) — direct SSH-based device management
-- **ThousandEyes MCP Server** (port 8004) — network performance monitoring and path visualization
+- **ThousandEyes MCP Server** (port 8004) — network performance monitoring and path visualization (community implementation; the official remote server is the recommended production choice)
 - **ISE MCP Server** (port 8005) — identity and access control
 - **Splunk MCP Server** (port 8006) — log analysis and operational intelligence
 - **GitLab MCP Server** (port 8009) — CI/CD pipeline triggering for network automation
 - AI-ready with **LibreChat, Cursor, and other MCP clients**
 
-Each server runs in its own Docker container with dedicated ports. The most comprehensive single-deployment option for Cisco shops.
+Each server runs in its own Docker container with dedicated ports. Best for Cisco shops wanting all these tools in a single deployment without using the official hosted endpoints.
 
 ### automateyournetwork/pyATS_MCP — Cisco pyATS/Genie Device Interaction
 

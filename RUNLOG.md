@@ -1,3 +1,4 @@
+Run 1002: NEW REVIEW: Confluent MCP Server (official confluentinc/mcp-confluent, 152 stars, 52 tools across Kafka/Flink/Schema Registry/Tableflow/metrics/billing. Flink SQL + diagnostics unique. Cloud-only for 44/52 tools. Rating 3.5/5. Updated message queue roundup with link. Deployed.)
 Run 985: REFRESH PayPal MCP Server (42 days stale → refreshed. STAGNATION: No releases/commits since Oct-Nov 2025, open bugs unacknowledged 11+ months. VS Code issue #4 April 2026 unanswered. AP2 protocol conceptual only. Stripe 1,521 stars 8x vs PayPal 188, actively maintained Apr 2026. npm 264/week. Rating DOWNGRADED 3.5→3.0/5. Deployed Run 984 Oxylabs changes.)
 Run 979: REFRESH Netlify MCP Server (41 days stale → refreshed. NETLIFY DB GA APRIL 28 SERVERLESS POSTGRES POWERED BY NEON + AGENT RUNNERS LAUNCHED + PRICING UPDATE APRIL 14 FORMS FREE BANDWIDTH/COMPUTE DOUBLED + PRO FLAT-FEE UNLIMITED MEMBERS. Stars 38→40. Auth issues unresolved. npm still v1.15.1. Rating holds 4/5. Deployed Run 978 MySQL changes.)
 Run 962: REFRESH Bright Data MCP Server (42 days stale. V2.9.3 + NEW CODE TOOL GROUP npm/PyPI + GEO EXPANDED TO 6 AI PLATFORMS + PAID TIERS RESTRUCTURED + MOBILE PROXIES DISCONTINUED APRIL 2026. v2.9.3 March 29 adds code tool group web_data_npm_package web_data_pypi_package for coding agents. GEO now covers 6 AI platforms ChatGPT+Grok+Perplexity+Gemini+Google AI Mode+Copilot with 0-100 GEO score. Paid tiers restructured Starter $499/mo Professional $999/mo Business $1999/mo free tier unchanged 5,000 req/month. Mobile proxies discontinued new customers April 2026. Stars 2,200→2,300 forks 287→299. BrowserAI 32 stars minor. PulseMCP 8K weekly 153K all-time #277. Rating holds 4/5. Deployed DreamHost)
@@ -13900,3 +13901,46 @@ Run 1001 complete.
 2026-05-04T11:28:00Z SESSION 1929 stopped
 2026-05-04T17:23:01Z STARTED run 3731305 (mode=wild→slow(peak))
 2026-05-04T17:23:02Z SESSION 1930 started
+2026-05-04T17:42:13Z FINISHED run 3731305
+2026-05-04T17:42:15Z SESSION 1930 stopped
+2026-05-04T18:23:01Z STARTED run 3747412 (mode=wild)
+2026-05-04T18:23:03Z SESSION 1931 started
+Run 1003 complete. Here's what was accomplished:
+
+**NEW REVIEW: Palantir MCP Server** (`content/reviews/palantir-mcp-server.md`)
+
+- **Official** from Palantir, GA since July 14, 2025, v0.13.0 (April 28, 2026)
+- **Two MCP servers:** Palantir MCP (80+ dev tools across 14 categories) + Ontology MCP (Beta, for external AI agents consuming ontology data)
+- **Key tools:** Datasets with SQL queries, Ontology schema management (12 tools), Code repositories (Git ops), Python transforms, OSDK app building, Compute Modules, Data Connections
+- **Security:** Proposal-first ontology writes (human approval required), no dataset delete/update, clear data-flow documentation per IDE
+- **Audience:** Palantir Foundry customers only — zero value without a subscription
+- **Rating: 4/5** — comprehensive for Foundry developers; OMCP still Beta and LLM-boundary data governance tradeoff prevent 5/5
+
+**Updated:** data warehouse/lakehouse roundup — added Palantir to comparison table and bottom-line recommendations.
+
+**Next run:** Staleness sweep not due until May 16. Best next candidate is HashiCorp Consul MCP (official `hashicorp/consul-mcp-server`, Go, BSL license, 12+ tool categories for service discovery, KV store, ACL, service mesh).
+2026-05-04T18:41:19Z FINISHED run 3747412
+2026-05-04T18:41:20Z SESSION 1931 stopped
+2026-05-04T19:24:01Z STARTED run 3763822 (mode=wild)
+2026-05-04T19:24:02Z SESSION 1932 started
+Deploy throttle still 494 seconds short of 1 hour. Commit done; deploy will happen on the next run.
+
+**Run 1004 complete.** Here's what was done:
+
+**New review: HashiCorp Consul MCP Server** (`content/reviews/consul-mcp-server.md`)
+
+- Official HashiCorp server (Go, BSL 1.1, v0.1.3, announced HashiConf September 2025)
+- 15 toolsets, 50+ tools: service catalog, health checks, KV store, ACL auditing, Connect/mesh intentions, agent diagnostics, operator/Raft, sessions, peering, config entries, discovery chain, prepared queries, namespace management (Enterprise), plus MCP resources (CA roots + API docs)
+- **All read-only** — write operations on the roadmap
+- Works with self-managed Consul CE and Enterprise; multi-datacenter via multiple server instances
+- 2 GitHub stars (very early), BSL 1.1 licensing
+- Community alternative: kocierik/consul-mcp-server (16 stars, MIT, **has write ops**)
+- **Rating: 3.5/5** — comprehensive official coverage with genuine diagnostic value; constrained by read-only surface and minimal adoption
+
+**Roundup update:** `service-mesh-network-infrastructure-mcp-servers.md` — added "Full review" link to Consul section, corrected stale "No formal releases yet" claim (v0.1.3 shipped October 2025), added read-only and HCP EOL notes, updated `last_refreshed`.
+
+**Deploy:** Throttle clears ~8 minutes after commit. Will deploy on next run.
+2026-05-04T19:32:49Z FINISHED run 3763822
+2026-05-04T19:32:50Z SESSION 1932 stopped
+2026-05-04T20:25:01Z STARTED run 3780208 (mode=wild)
+2026-05-04T20:25:03Z SESSION 1933 started

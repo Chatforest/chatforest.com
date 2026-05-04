@@ -6,14 +6,14 @@
   <title>Network Automation &amp; Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins — ChatForest</title>
   <meta name="description" content="Network automation and infrastructure MCP servers let AI agents manage multi-vendor network devices, query DCIM/IPAM systems, run CLI commands over SSH, manage firewalls, perform DNS/WHOIS lookups">
   <meta property="og:title" content="Network Automation &amp; Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins — ChatForest">
-  <meta property="og:description" content="Network automation MCP servers: netclaw SURGED 135→460 stars 112 skills 69 MCPs, Juniper OFFICIAL 88 stars FILLS GAP, Palo Alto Cortex MCP open beta &#43; PanOS 116 tools FILLS GAP, Fortinet ecosystem 4 servers FILLS GAP, NetBox v1.0.0 127→158 stars, Itential 56&#43; tools enterprise orchestration, IETF drafts MCP network mgmt. 25&#43;→40&#43; servers. Rating: 4→4.5/5.">
+  <meta property="og:description" content="Network automation MCP servers: Cisco ThousandEyes OFFICIAL (remote hosted, 28 tools, 9 categories, Feb 2026), netclaw SURGED 135→460 stars 112 skills 69 MCPs, Juniper OFFICIAL 88 stars, Palo Alto Cortex MCP open beta &#43; PanOS 116 tools, Fortinet ecosystem 4 servers, NetBox v1.0.0 158 stars, Itential 56&#43; tools enterprise orchestration, IETF drafts MCP network mgmt. 40&#43; servers. Rating: 4.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/network-automation-infrastructure-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Network Automation &amp; Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins — ChatForest">
-  <meta name="twitter:description" content="Network automation MCP servers: netclaw SURGED 135→460 stars 112 skills 69 MCPs, Juniper OFFICIAL 88 stars FILLS GAP, Palo Alto Cortex MCP open beta &#43; PanOS 116 tools FILLS GAP, Fortinet ecosystem 4 servers FILLS GAP, NetBox v1.0.0 127→158 stars, Itential 56&#43; tools enterprise orchestration, IETF drafts MCP network mgmt. 25&#43;→40&#43; servers. Rating: 4→4.5/5.">
+  <meta name="twitter:description" content="Network automation MCP servers: Cisco ThousandEyes OFFICIAL (remote hosted, 28 tools, 9 categories, Feb 2026), netclaw SURGED 135→460 stars 112 skills 69 MCPs, Juniper OFFICIAL 88 stars, Palo Alto Cortex MCP open beta &#43; PanOS 116 tools, Fortinet ecosystem 4 servers, NetBox v1.0.0 158 stars, Itential 56&#43; tools enterprise orchestration, IETF drafts MCP network mgmt. 40&#43; servers. Rating: 4.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/network-automation-infrastructure-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 16, 2026 · Updated Apr 29, 2026</span>
+        <span>Published Mar 16, 2026 · Updated May 5, 2026</span>
       </div>
 
       <h1 class="article-title">Network Automation &amp; Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins</h1>
@@ -140,6 +140,44 @@
 <p>Built on the OpenClaw agent framework. The safety constraints and governance features make this the most production-ready network automation agent available.</p>
 <hr>
 <h2 id="cisco-ecosystem">Cisco Ecosystem</h2>
+<h3 id="cisco-thousandeyes-mcp-server-official">Cisco ThousandEyes MCP Server (Official)</h3>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Stars</th>
+<th>Language</th>
+<th>Transport</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/CiscoDevNet/ThousandEyes-MCP-Server-official">ThousandEyes-MCP-Server-official</a></td>
+<td>1</td>
+<td>Remote hosted</td>
+<td>Streamable HTTP</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+<p><strong>→ <a href="/reviews/thousandeyes-mcp-server/">Full review: Cisco ThousandEyes MCP Server</a></strong></p>
+<p><strong>Cisco&rsquo;s official ThousandEyes MCP server is a fully hosted remote server</strong> — no local software to deploy, no Docker containers to run. Connect Claude Desktop, Cursor, VS Code, or AWS Kiro to <code>https://api.thousandeyes.com/mcp</code> and authenticate via Bearer token or OAuth2 Dynamic Client Registration. Launched February 4, 2026.</p>
+<p>ThousandEyes is Cisco&rsquo;s network intelligence platform — it monitors what&rsquo;s <em>between</em> users and services (internet paths, ISP routing, CDN health, BGP changes) rather than what&rsquo;s <em>inside</em> infrastructure. The MCP server exposes 28 tools across 9 categories:</p>
+<ul>
+<li><strong>Synthetic tests</strong> — list, view, create, update, delete scheduled tests</li>
+<li><strong>Instant tests</strong> — run on-demand tests against any target <em>(consumes billing units)</em></li>
+<li><strong>Events and alerts</strong> — triage active and historical network/application problems</li>
+<li><strong>Outage correlation</strong> — search outages from Internet Insights data</li>
+<li><strong>Anomaly detection</strong> — surface metric anomalies over time ranges</li>
+<li><strong>Path visualization</strong> — hop-by-hop network path maps</li>
+<li><strong>BGP analysis</strong> — routing data and reachability results</li>
+<li><strong>Endpoint monitoring</strong> — employee device and wireless performance</li>
+<li><strong>Template deployment</strong> — stand up complete test/dashboard/alert configurations from templates</li>
+</ul>
+<p>Tools are split into two configurable permission groups: <strong>read-only</strong> (22 tools, safe to enable broadly) and <strong>write/delete</strong> (6 tools, test management and template deployment). Cisco recommends enabling only what you need — too many tools active simultaneously causes latency and timeouts.</p>
+<p>The official GitHub repo is essentially a configuration guide (1 star, 3 commits); the actual server is proprietary and Cisco-hosted. Notable gap: <strong>Internet Insights data is not exposed</strong> — the collective ISP/CDN outage intelligence that distinguishes ThousandEyes from general observability tools cannot be queried through MCP. Alert rule management is also absent.</p>
+<p><strong>Target audience</strong>: NOC engineers, MSPs, and SREs whose organizations already use ThousandEyes. ThousandEyes subscription with API Access role required. Government deployments not supported.</p>
 <h3 id="pamosimanetwork-mcp-docker-suite--10-docker-based-network-mcp-servers">pamosima/network-mcp-docker-suite — 10 Docker-Based Network MCP Servers</h3>
 <table>
 <thead>
@@ -154,7 +192,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/pamosima/network-mcp-docker-suite">network-mcp-docker-suite</a></td>
-<td>—</td>
+<td>35</td>
 <td>Python</td>
 <td>—</td>
 <td>10 servers</td>
@@ -167,13 +205,13 @@
 <li><strong>NetBox MCP Server</strong> (port 8001) — DCIM/IPAM infrastructure documentation</li>
 <li><strong>Catalyst Center MCP Server</strong> (port 8002) — enterprise network management and assurance</li>
 <li><strong>IOS XE MCP Server</strong> (port 8003) — direct SSH-based device management</li>
-<li><strong>ThousandEyes MCP Server</strong> (port 8004) — network performance monitoring and path visualization</li>
+<li><strong>ThousandEyes MCP Server</strong> (port 8004) — network performance monitoring and path visualization (community implementation; the official remote server is the recommended production choice)</li>
 <li><strong>ISE MCP Server</strong> (port 8005) — identity and access control</li>
 <li><strong>Splunk MCP Server</strong> (port 8006) — log analysis and operational intelligence</li>
 <li><strong>GitLab MCP Server</strong> (port 8009) — CI/CD pipeline triggering for network automation</li>
 <li>AI-ready with <strong>LibreChat, Cursor, and other MCP clients</strong></li>
 </ul>
-<p>Each server runs in its own Docker container with dedicated ports. The most comprehensive single-deployment option for Cisco shops.</p>
+<p>Each server runs in its own Docker container with dedicated ports. Best for Cisco shops wanting all these tools in a single deployment without using the official hosted endpoints.</p>
 <h3 id="automateyournetworkpyats_mcp--cisco-pyatsgenie-device-interaction">automateyournetwork/pyATS_MCP — Cisco pyATS/Genie Device Interaction</h3>
 <table>
 <thead>
@@ -774,6 +812,13 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-05 14:00:00</span></div>
+  <h3><a href="/reviews/thousandeyes-mcp-server/">Cisco ThousandEyes MCP Server — Network Intelligence for AI Agents (28 Tools, Remote Hosted)</a></h3>
+  <p>Cisco ThousandEyes MCP server gives AI agents 28 network intelligence tools covering synthetic test management, hop-by-hop path visualization, BGP routing analysis, endpoint agent monitoring, alert triage, outage correlation, anomaly detection, and on-demand instant test execution. Remote hosted — no local server to run. Two permission groups (read-only and write/delete) configurable per client. Targets NOC/SOC teams and MSPs, not general DevOps. Subscription required. Official from Cisco, launched February 2026. Rating: 3.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-05-05 12:00:00</span></div>
   <h3><a href="/reviews/consul-mcp-server/">The HashiCorp Consul MCP Server — Service Discovery, KV Store, and Mesh Diagnostics for AI Agents</a></h3>
   <p>HashiCorp&#39;s official Consul MCP server gives AI agents comprehensive read-only access to Consul&#39;s full platform: service discovery, health monitoring, KV store exploration, ACL auditing, Connect service mesh, sessions, peering, and cluster operations — across 15 toolsets and 50&#43; tools. Works with self-managed Consul CE and Enterprise. Read-only for now, with write operations on the roadmap. BSL 1.1 license. v0.1.3 (October 2025).</p>
@@ -794,13 +839,6 @@
 </div>
 
   
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-04 10:00:00</span></div>
-  <h3><a href="/reviews/weaviate-mcp-server/">The Weaviate MCP Server — First Database-Native MCP, Built Right Into the DB</a></h3>
-  <p>Weaviate MCP server for AI-powered vector search and agent memory. **The first vector database to ship MCP built directly into the database** — Weaviate v1.37 exposes a Streamable HTTP endpoint at `/v1/mcp` via a single env variable, no separate process. Schema inspection, hybrid search, and optional write access — all enforced by Weaviate&#39;s standard auth. **Standalone Go server** (161 stars, 2 tools: insert &#43; hybrid search) for pre-v1.37 users. **Community FastMCP server** (sajal2692/mcp-weaviate, 11 tools) adds list collections, get schema, get objects, semantic search, and more via uvx. Preview status and minimal standalone tooling hold it back from a higher rating.</p>
-</div>
-
-  
 </aside>
 
 
@@ -811,7 +849,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-29T00:00:00+09:00","datePublished":"2026-03-16T23:45:00+09:00","description":"Network automation and infrastructure MCP servers let AI agents manage multi-vendor network devices, query DCIM/IPAM systems, run CLI commands over SSH, manage firewalls, perform DNS/WHOIS lookups","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Network Automation \u0026 Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins"},"name":"Network Automation \u0026 Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/network-automation-infrastructure-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-05T00:00:00+09:00","datePublished":"2026-03-16T23:45:00+09:00","description":"Network automation and infrastructure MCP servers let AI agents manage multi-vendor network devices, query DCIM/IPAM systems, run CLI commands over SSH, manage firewalls, perform DNS/WHOIS lookups","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Network Automation \u0026 Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins"},"name":"Network Automation \u0026 Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/network-automation-infrastructure-mcp-servers/"}
 </script>
 
 
