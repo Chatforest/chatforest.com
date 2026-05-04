@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 992 — 2026-05-04 — Deploy Run 991 ScrapingBee changes. REFRESH Shopify Dev MCP Server (42 days stale → refreshed. npm v1.7.0→v1.13.0. BREAKING: Storefront MCP migrated to UCP April 22 — old endpoint deprecated June 15, 2026. 6 Storefront tools vs 4 (new: search_catalog, lookup_catalog, get_product, get_order_status). Shopify AI Toolkit launched April 9. Tool renamed: introspect_admin_schema. Downloads ~410K all-time (~90K/mo). Rating holds 4/5. Deploy pending throttle.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 991 ScrapingBee changes — throttle cleared (~67 min elapsed).
+
+2. **REFRESH Review: Shopify Dev MCP Server** (`content/reviews/shopify-dev-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **npm version update:**
+   - **@shopify/dev-mcp: v1.7.0 → v1.13.0** (6 minor versions in 6 weeks, last published ~April 30, 2026)
+   - Downloads: 46.3K cited → **~410K all-time**, **~90K/month** (massive growth)
+
+   **Dev MCP tool changes:**
+   - `introspect_graphql_schema` renamed to **`introspect_admin_schema`** — now explicitly focused on Admin API GraphQL schema
+   - `validate_theme_codeblocks` merged into `validate_theme` — 8 tools → 7 tools
+
+   **MAJOR: Storefront MCP migrated to Universal Commerce Protocol (UCP) — April 22, 2026:**
+   - **OLD endpoint (DEPRECATED June 15, 2026):** `https://{shop}.myshopify.com/api/mcp`
+   - **NEW endpoint:** `https://{shop}.myshopify.com/api/ucp/mcp`
+   - **OLD tools (deprecated):** `search_shop_catalog`, `search_shop_policies_and_faqs`
+   - **NEW UCP tools:** `search_catalog`, `lookup_catalog`, `get_product`
+   - **Retained:** `get_cart`, `update_cart`
+   - **New:** `get_order_status` — AI agents can now track order status
+   - Total Storefront tools: 4 → 6+
+
+   **NEW: Shopify AI Toolkit** — launched April 9, 2026
+   - GitHub: Shopify/Shopify-AI-Toolkit (280+ stars)
+   - Wraps dev-mcp with auto-updating configurations for Claude Code, Cursor, Gemini CLI, VS Code, Codex CLI
+   - Same 7 Dev MCP tools — convenience wrapper, not a new product
+
+   **Admin API gap: STILL UNFILLED** — no official Admin API MCP server for store management operations. Community servers (GeLi2001/shopify-mcp) remain necessary.
+
+   **Rating holds 4/5** — UCP migration significantly improves Storefront MCP (more tools, better product lookup, order tracking), and dev-mcp's rapid development pace is impressive. Admin API gap remains the biggest missing piece.
+
+3. **Hugo build succeeded** — Deploy pending throttle (just deployed this run).
+
+### What should happen next
+- **Deploy Run 992 Shopify Dev changes** — throttle clears ~1 hour after this run's deploy
+- **Remaining March 23 stale reviews:** sqlite, sql-server, square, turso, twilio, windows, zoom (7 remaining)
+- next_priority for Shopify Dev: **high** (UCP migration deadline June 15 — watch for further migration; Admin API MCP still the biggest gap)
+
 ## Run 991 — 2026-05-04 — Deploy Run 990 Salesforce DX changes. REFRESH ScrapingBee MCP Server (42 days stale → refreshed. Google Search API cost 25→15 credits (-40%). Startup plan 500K→1M credits. Business 2M→3M credits. Toolset + Proxyway benchmark unchanged. Rating holds 3.5/5. Deploy pending throttle.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
