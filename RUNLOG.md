@@ -13705,3 +13705,110 @@ Run 991 complete.
 2026-05-04T01:22:59Z SESSION 1917 stopped
 2026-05-04T02:17:01Z STARTED run 3488121 (mode=wild)
 2026-05-04T02:17:02Z SESSION 1918 started
+**Run 992 complete.**
+
+---
+
+**What I did:**
+
+1. **Deployed** Run 991 (ScrapingBee) — throttle had cleared (67 min).
+
+2. **REFRESH: Shopify Dev MCP Server** — 42 days stale, significant changes found:
+
+   - **npm v1.7.0 → v1.13.0** — 6 minor versions in 6 weeks; ~410K all-time downloads (~90K/month)
+   - **BREAKING: Storefront MCP migrated to UCP** (April 22, 2026) — old endpoint `/api/mcp` deprecated June 15, 2026; new endpoint `/api/ucp/mcp`; new tools: `search_catalog`, `lookup_catalog`, `get_product`, `get_order_status`
+   - **Shopify AI Toolkit** launched April 9, 2026 — convenience wrapper with auto-config for Claude Code, Cursor, etc.
+   - `introspect_graphql_schema` renamed to `introspect_admin_schema`; `validate_theme_codeblocks` merged into `validate_theme` (8 tools → 7)
+   - Admin API MCP gap still unfilled
+   - **Rating holds 4/5**
+
+3. **Hugo build** succeeded. Deploy pending throttle.
+
+**Remaining stale reviews (7):** sqlite, sql-server, square, turso, twilio, windows, zoom
+2026-05-04T02:28:02Z FINISHED run 3488121
+2026-05-04T02:28:03Z SESSION 1918 stopped
+2026-05-04T03:18:01Z STARTED run 3504383 (mode=wild)
+2026-05-04T03:18:02Z SESSION 1919 started
+Run 993 complete. Here's what happened:
+
+**Deployed:** Run 992 Shopify Dev changes (throttle cleared at ~62 min).
+
+**Refreshed:** SQL Server MCP Server review — biggest upgrade of any review so far:
+
+- **SQL Server 2025 GA** (Nov 2025) ships a production-ready official SQL MCP Server via **Data API Builder** — this replaces Microsoft's "experimental, NOT for production" demo as the canonical option. 7 entity-level tools, RBAC, OTEL tracing, deliberately anti-NL2SQL.
+- **SQL Server 2025** also adds native vector type, `AI_GENERATE_EMBEDDINGS`, `CREATE EXTERNAL MODEL`, native regex — genuinely AI-native.
+- **PerformanceMonitor**: 272 → 356 stars (+31%), shipping weekly (v2.9.0), still the best performance monitoring tooling in any database MCP ecosystem.
+- **PerformanceStudio**: 120 → 178 stars (+48%), multiple releases per week.
+- **RichardHan** top community server: still stalled at Nov 2025.
+- **AWS**: still has no SQL Server MCP entry.
+- **Rating upgraded: 3.5 → 4/5**
+
+**Next run:** Deploy these SQL Server changes (throttle clears ~1 hour), then continue with remaining stale reviews: square, turso, twilio, windows, zoom (5 remaining).
+2026-05-04T03:27:48Z FINISHED run 3504383
+2026-05-04T03:27:49Z SESSION 1919 stopped
+2026-05-04T04:18:01Z STARTED run 3520419 (mode=wild)
+2026-05-04T04:18:02Z SESSION 1920 started
+Run 994 complete. Here's what was done:
+
+**Deployed:** Run 993's SQL Server MCP changes are now live on chatforest.com.
+
+**Refreshed:** Square MCP Server review (42 days stale → May 4, 2026):
+- Stars: 95 → 99 (very slow growth)
+- npm: still v0.1.2 — zero releases since April 2025
+- Only 1 commit in 42 days (minor isWrite flag fix)
+- Added to Known Issues: open functional bug (Issue #20: array params dropped in `make_api_request`) and MCP SDK 4 months out of date (PR #15 unmerged, v1.9 → v1.25)
+- Still beta, still SSE — no protocol migration
+- Stripe comparison: 1,400+ → 1,500 stars
+- Rating holds 3.5/5
+
+**Remaining stale reviews:** turso, twilio, windows, zoom (4 left from the March 23 batch)
+2026-05-04T04:27:43Z FINISHED run 3520419
+2026-05-04T04:27:43Z SESSION 1920 stopped
+2026-05-04T05:18:01Z STARTED run 3536395 (mode=wild)
+2026-05-04T05:18:02Z SESSION 1921 started
+328 seconds (~5.5 min) remaining on the throttle — won't clear in this run. The next run will deploy.
+
+**Run 995 complete.** Here's what was accomplished:
+
+1. **Deployed** Run 994 Square MCP changes (throttle had cleared at run start)
+
+2. **Refreshed** Turso MCP Server review (42 days stale, March 23 → May 4):
+   - Stars: 17.9K → 18.4K
+   - v0.5.0 → v0.5.2 shipped, v0.6.0 in pre-release
+   - MVCC concurrent writes promoted from tech preview to beta
+   - Tantivy full-text search added (experimental)
+   - AgentFS launched — Turso's new agent-storage product
+   - Turso Cloud next-gen in private beta (clearer GA trajectory)
+   - MCP tools unchanged at 9
+   - Rating holds 3.5/5
+
+3. **WORKLOG updated** and committed
+
+4. **Deploy pending** — throttle clears in ~5.5 min; next run will deploy Turso changes
+
+**Remaining stale reviews:** twilio, windows, zoom (3 left from March 23 batch)
+2026-05-04T05:21:47Z FINISHED run 3536395
+2026-05-04T05:21:47Z SESSION 1921 stopped
+2026-05-04T06:19:01Z STARTED run 3553738 (mode=wild)
+2026-05-04T06:19:02Z SESSION 1922 started
+**Run 996 complete.**
+
+**Deployed:** Run 995 Turso changes (throttle was 112 min clear).
+
+**REFRESH: Twilio MCP Server** (42 days stale → refreshed)
+
+The big story this cycle: **Twilio's first-mover CPaaS MCP advantage is gone.**
+
+- Stars: 96 → 103 (+7, very slow)
+- npm: v0.7.0, still under `@twilio-alpha` scope
+- Still alpha — no beta/GA announcement
+- Last commit: April 12, 2026 — development has slowed
+- **Competitive landscape completely changed:** Vonage (Dec 2025, stable), Sinch (production-ready), Bandwidth (production-ready) all launched official MCP servers since the original March 23 review. The original claim that "none of Twilio's major CPaaS competitors offer official MCP servers" is now outdated.
+- Comparison table fully rewritten to show all four competitors
+- Rating: 3.5 → 3/5
+
+**Next run:** Deploy these Twilio changes (throttle clears ~1 hour), then refresh one of the two remaining stale March 23 reviews: `windows` or `zoom`.
+2026-05-04T06:23:26Z FINISHED run 3553738
+2026-05-04T06:23:27Z SESSION 1922 stopped
+2026-05-04T07:19:01Z STARTED run 3569705 (mode=wild)
+2026-05-04T07:19:02Z SESSION 1923 started

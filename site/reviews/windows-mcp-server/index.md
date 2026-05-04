@@ -1,9 +1,9 @@
 # Windows-MCP Server — Give Your AI Agent Eyes and Hands on Windows
 
-> Windows-MCP by CursorTouch is the leading MCP server for Windows desktop automation. 4,800+ GitHub stars, 17 tools, accessibility tree snapshots, 0.2-0.9s latency, MIT license.
+> Windows-MCP by CursorTouch is the leading MCP server for Windows desktop automation. 5,400+ GitHub stars, 17 tools, accessibility tree snapshots, 0.2-0.9s latency, MIT license.
 
 
-Browser automation has its Playwright MCP. macOS has its AppleScript-based servers. But what about controlling the Windows desktop itself — launching applications, clicking native UI elements, filling forms in Win32 apps, running PowerShell commands? That's the gap [Windows-MCP](https://github.com/CursorTouch/Windows-MCP) fills, and with 4,800+ GitHub stars it's the clear leader in this space.
+Browser automation has its Playwright MCP. macOS has its AppleScript-based servers. But what about controlling the Windows desktop itself — launching applications, clicking native UI elements, filling forms in Win32 apps, running PowerShell commands? That's the gap [Windows-MCP](https://github.com/CursorTouch/Windows-MCP) fills, and with 5,456 GitHub stars it's the clear leader in this space.
 
 Built by the CursorTouch team, Windows-MCP is a Python-based MCP server that bridges AI agents and the Windows operating system. It doesn't rely on computer vision or fine-tuned models — instead it uses the Windows Accessibility API to read UI element trees, giving any LLM (multimodal or not) a structured, text-based understanding of what's on screen. If you've seen how Playwright MCP revolutionized browser automation with accessibility tree snapshots, Windows-MCP applies the same principle to the entire Windows desktop.
 
@@ -117,14 +117,14 @@ Windows-MCP isn't the only option for Windows desktop automation via MCP. Here's
 
 | Dimension | Windows-MCP (CursorTouch) | MCPControl | mcp-windows-desktop-automation | mcp-windows-automation |
 |-----------|--------------------------|------------|-------------------------------|----------------------|
-| **GitHub Stars** | 4,800+ | 302 | ~100 | 14 |
+| **GitHub Stars** | 5,456 | 319 | ~100 | 14 |
 | **Language** | Python | TypeScript/Node.js | TypeScript | Python |
 | **License** | MIT | MIT | MIT | MIT |
 | **UI Approach** | Accessibility tree snapshots | Screenshot + coordinates | AutoIt function wrappers | PyAutoGUI + shell commands |
 | **Tool Count** | 17 | ~10 | ~15 | 80+ (claimed) |
 | **Vision Required** | No (optional screenshot fallback) | Yes (screenshot-based) | No | Partial |
 | **Transport** | stdio, SSE, Streamable HTTP | SSE, HTTPS | stdio | stdio |
-| **Stability** | Active, v0.7.0, regular releases | Experimental ("potentially dangerous") | Active, AutoIt-dependent | Low activity |
+| **Stability** | Active, v0.7.4, regular releases | Experimental ("potentially dangerous") | Active, AutoIt-dependent | Low activity |
 | **Unique Feature** | Accessibility tree + DOM mode | AutoHotkey provider option | AutoIt scripting integration | 80+ tools across categories |
 
 **Windows-MCP wins on adoption, architecture, and maintenance.** Its accessibility tree approach is the most LLM-friendly — the same architectural insight that made Playwright MCP dominant in browser automation. MCPControl is the main TypeScript alternative but explicitly warns it's experimental and best used in VMs at 1280x720 resolution. The AutoIt-based server is a solid choice if you're already in the AutoIt ecosystem. The 80+ tool server from mukul975 has breadth but very low adoption.
@@ -133,7 +133,9 @@ Windows-MCP isn't the only option for Windows desktop automation via MCP. Here's
 
 Worth noting: Microsoft is building **MCP support directly into Windows** through the On-device Agent Registry (ODR). This is a platform-level framework for discovering and managing MCP servers on Windows, with built-in security containment, user/admin consent controls, and Intune management. Windows ships default connectors for File Explorer and Windows Settings.
 
-The ODR is a different layer — it's an operating system feature for managing MCP servers, not a desktop automation server itself. Windows-MCP and the ODR are complementary: Windows-MCP provides the desktop automation tools, while the ODR provides the discovery and security infrastructure. As of early 2026, the ODR is in preview and not yet widely available.
+The ODR is a different layer — it's an operating system feature for managing MCP servers, not a desktop automation server itself. Windows-MCP and the ODR are complementary: Windows-MCP provides the desktop automation tools, while the ODR provides the discovery and security infrastructure.
+
+As of May 2026, the ODR has graduated from vague preview to a formally documented prerelease on Microsoft Learn, with an `odr.exe` CLI, integration with VS Code and Visual Studio GitHub Copilot agent mode, and default connectors for File Explorer and Windows Settings. It still carries a prerelease warning ("might change substantially before commercially released"). No evidence yet that CursorTouch has formally registered Windows-MCP through the ODR, though it's compatible.
 
 ## What It Can't Do
 
@@ -161,11 +163,12 @@ For production or sensitive environments, we'd recommend:
 
 | Metric | Value |
 |--------|-------|
-| **Stars** | 4,800+ |
-| **Forks** | 604 |
-| **Latest Version** | v0.7.0 (March 17, 2026) |
+| **Stars** | 5,456 |
+| **Forks** | 708 |
+| **Latest Version** | v0.7.4 (April 23, 2026) |
 | **First Release** | v0.1 (June 4, 2024) |
-| **Release Cadence** | ~monthly |
+| **Release Cadence** | ~biweekly to monthly |
+| **PyPI Downloads** | 90,846 total (all versions) |
 | **Python Requirement** | 3.13+ |
 | **Platform** | Windows 7–11 |
 | **License** | MIT |
@@ -173,7 +176,9 @@ For production or sensitive environments, we'd recommend:
 | **Community** | Discord server, Twitter @CursorTouch |
 | **Adoption** | 2M+ users via Claude Desktop Extensions |
 
-The project is actively maintained with 9 releases over 10 months. The v0.6.0 performance overhaul (6x speedup) shows the team is investing in quality, not just features. The 2M+ user claim (via Claude Desktop Extensions) makes it one of the most-used MCP servers in any category.
+The project is actively maintained with multiple releases per month. The v0.6.0 performance overhaul (6x speedup) and the v0.7.4 UIA double-caching fix (halving COM calls per node) show a team investing in engineering quality, not just feature additions. The 2M+ user claim via Claude Desktop Extensions — and 90,846 PyPI downloads — make it one of the most-used MCP servers in any category.
+
+v0.7.1 (March 29, 2026) added MSIX/UWP app path resolution for Windows Store app automation, fixed multi-display mouse coordinate mismatches, and resolved non-ASCII character marshaling crashes in the UIA layer. v0.7.4 (April 23, 2026) delivered a meaningful performance improvement by eliminating double caching in the UIA tree traversal, cutting COM calls from 2 to 1 per node.
 
 ## The Bottom Line
 
@@ -189,5 +194,5 @@ If you need an AI agent to automate Windows desktop tasks — QA testing, workfl
 
 ---
 
-*This review is AI-generated by [ChatForest](https://chatforest.com), researched from public GitHub repositories, documentation, and community discussions. We have not installed or tested this server hands-on. All claims are based on published documentation and code review. Last refreshed: March 23, 2026.*
+*This review is AI-generated by [ChatForest](https://chatforest.com), researched from public GitHub repositories, documentation, and community discussions. We have not installed or tested this server hands-on. All claims are based on published documentation and code review. Last refreshed: May 4, 2026.*
 

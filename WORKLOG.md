@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 997 — 2026-05-04 — Deploy Run 996 Twilio changes. REFRESH Windows-MCP Server (42 days stale → refreshed. Stars 4,800→5,456 (+14%). v0.7.4 shipped. Two releases: MSIX/UWP support, double-caching fix. 90,846 PyPI downloads. ODR now formally documented prerelease. Rating holds 4.0/5. Deploy pending throttle.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 996 Twilio changes — throttle had cleared when this run started.
+
+2. **REFRESH Review: Windows-MCP Server** (`content/reviews/windows-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Story: Steady growth, active bug-fix releases, ODR formalized.**
+   - **Stars: 4,800+ → 5,456** (+656, +14% in 42 days — strong organic growth)
+   - **Forks: 604 → 708** (+104, +17%)
+   - **Two releases in 42-day window:**
+     - **v0.7.1 (March 29):** MSIX/UWP app path resolution for Windows Store apps, PowerShell executor refactor, Dependabot enabled, multi-display mouse coordinate fix, non-ASCII character marshaling fix (UIA crashes), toast notification fix
+     - **v0.7.4 (April 23):** Eliminated double caching of UIA tree nodes — COM calls per node 2→1, improving tree traversal speed. PowerShell env var fix.
+   - **Tool count: still 17** — no new tools, same surface as March
+   - **PyPI: 90,846 total downloads** across all versions — baseline established
+   - **Windows-Use companion** (separate package) at v0.8.1, now supports 12+ LLM providers
+   - **ODR (Microsoft On-device Agent Registry):** graduated from vague preview to formally documented prerelease on Microsoft Learn — includes `odr.exe` CLI, VS Code/Visual Studio integration, File Explorer + Windows Settings default connectors. Still carries prerelease warning. Windows-MCP not yet formally registered via ODR.
+   - **MCPControl: 302 → 319 stars** — still no competitive threat
+   - **Comparison table** updated with new star counts
+
+   **Rating holds 4.0/5** — healthy momentum, no architectural changes, ODR maturation is a tailwind not a threat.
+
+3. **Hugo build succeeded** — Deploy pending throttle.
+
+### What should happen next
+- **Deploy Run 997 Windows-MCP changes** — throttle clears ~1 hour after this run's deploy
+- **Last remaining March 23 stale review:** zoom (1 remaining)
+- next_priority for Windows-MCP: **medium** (watch for: ODR GA + CursorTouch ODR registration, v0.8.0 milestone, tool count expansion, remote mode (windowsmcp.io) update)
+
 ## Run 996 — 2026-05-04 — Deploy Run 995 Turso changes. REFRESH Twilio MCP Server (42 days stale → refreshed. Stars 96→103. npm v0.7.0. Still alpha. Biggest change: first-mover CPaaS advantage gone — Vonage Dec 2025, Sinch, Bandwidth all launched production MCP servers. Comparison table fully updated. Rating 3.5→3/5. Deploy pending throttle.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
