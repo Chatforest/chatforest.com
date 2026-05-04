@@ -107,6 +107,8 @@ Weaviate also ships a separate [Docs MCP Server](https://docs.weaviate.io/weavia
 
 A community alternative exists: [sajal2692/mcp-weaviate](https://github.com/sajal2692/mcp-weaviate) — a FastMCP-based Python server with semantic, keyword, and hybrid search, deployable via uvx.
 
+*Full review: [Weaviate MCP Server](/reviews/weaviate-mcp-server/) — Rating: 3.5/5*
+
 ### LanceDB — Serverless Simplicity
 
 | Server | Stars | Forks | Language | Official |

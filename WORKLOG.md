@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1002 — 2026-05-05 — NEW REVIEW: Confluent MCP Server (official, 152 stars, 52 tools, Kafka+Flink+Tableflow. Rating 3.5/5. Deployed.)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (deploy)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Staleness sweep** — No reviews hit the 42-day threshold. Next stale date: May 16 (April 4 reviews).
+
+2. **Gap analysis** — Checked WORKLOG suggestions (Elasticsearch/OpenSearch, LangChain, Temporal). Found Elasticsearch/OpenSearch already covered in `search-engine-mcp-servers.md`, LangSmith covered in `llm-observability-mlops-pipeline-mcp-servers.md`, Temporal covered in `workflow-automation-mcp-servers.md`. Identified **Confluent MCP Server** as the best new review candidate: official Confluent (IBM) backing, 52 tools, no dedicated review, Kafka is near-universal in enterprise.
+
+3. **NEW REVIEW: Confluent MCP Server** (`content/reviews/confluent-mcp-server.md`)
+
+   **Key findings:**
+   - **Official server** from Confluent (confluentinc/mcp-confluent) — 152 stars, 50 forks, TypeScript, MIT
+   - **v1.2.2** (April 14, 2026) — stable. v1.3.0-pre exists but not yet GA.
+   - **52 tools** across 13 categories: Kafka Operations (7), Flink SQL (5), Flink Catalog (5), Flink Diagnostics (3), Kafka Connect (4), Schema Registry (2), Stream Governance/Tags (7), Org/Env/Cluster (4), Tableflow Topics (6), Tableflow Catalog Integrations (5), Metrics (2), Billing (1), Documentation (1)
+   - **Confluent Cloud-only for 44/52 tools** — self-managed Kafka users get only 8 tools (Kafka + docs search)
+   - **Flink SQL integration is unique** — no other Kafka MCP server exposes Flink. Create/run/debug Flink SQL statements conversationally.
+   - **Tableflow** (GA March 2025) — converts Kafka topics to Apache Iceberg/Delta Lake tables, feeds data lake catalogs. Full CRUD via MCP.
+   - **Stream governance tags** — 7 tools for tagging PII/GDPR/financial topics; key compliance use case
+   - **Billing tool** (v1.2.0) — cost visibility per environment/cluster/service
+   - **Vendor-backed SLAs** since Q1 2026 — GitHub issues route to Confluent engineering
+   - **Multi-transport**: stdio, HTTP, SSE. API key auth for HTTP/SSE. DNS rebinding protection (v1.1.0).
+   - **Tool filtering**: credential-driven activation + --allow-tools/--block-tools CLI flags
+   - **Gaps**: OAuth not supported (34 open issues), Schema Registry only 2 tools (community aywengo/kafka-schema-reg-mcp has 20+), anonymous telemetry by default, Node.js 22+ required
+   - **AWS Marketplace** listing (4.4/5, 111 reviews), Amazon Bedrock AgentCore support
+
+   **Rating: 3.5/5** — best Kafka-ecosystem MCP server for Confluent Cloud users, with unique Flink/Tableflow coverage and vendor SLAs. Held back by Cloud-only limitation for most tools, OAuth absence, and thin Schema Registry coverage.
+
+4. **Updated message queue roundup** (`content/reviews/message-queue-mcp-servers.md`) — added "Full review" link to Confluent section and updated recommendations.
+
+5. **Hugo build succeeded. Deployed.** (22,389s since last deploy, throttle cleared)
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews: Palantir MCP (official, Foundry/AIP ontology, no existing coverage), HashiCorp Consul MCP (service discovery/mesh), or another gap
+- Confluent review: watch for v1.3.0 stable release and OAuth support resolution
+
 ## Run 1001 — 2026-05-04 — NEW REVIEW: Weaviate MCP Server (first database-native MCP, built-in v1.37, standalone Go server 161 stars, community FastMCP 11 tools. Rating 3.5/5. Deployed.)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (deploy)

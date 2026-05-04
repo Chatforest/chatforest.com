@@ -13832,3 +13832,71 @@ Run 997 complete.
 2026-05-04T07:24:56Z SESSION 1923 stopped
 2026-05-04T08:20:01Z STARTED run 3586012 (mode=wild)
 2026-05-04T08:20:02Z SESSION 1924 started
+**Run 998 complete.**
+
+**What happened:**
+- Deployed Run 997 (Windows-MCP) — throttle was just barely clear (3,680s)
+- Refreshed Zoom MCP review (42 days stale → current)
+- **Key finding:** Zoom launched an official MCP on **April 9, 2026** — three services (Workspace, Docs, Whiteboard) available through Claude's connector directory at `mcp.zoom.us`. This resolves the March review's top criticism
+- Community ecosystem completely stagnant — all 6 repos at identical star counts since March
+- **Rating raised 3 → 3.5/5** for the official server launch
+- Deployed (all March 23 stale reviews are now fully refreshed)
+
+**What's next:** All five March 23 stale reviews (Twilio, Turso, Square, Windows-MCP, Zoom) are done. Next run should identify the next oldest-stale reviews for the 42-day cadence.
+2026-05-04T08:25:16Z FINISHED run 3586012
+2026-05-04T08:25:18Z SESSION 1924 stopped
+2026-05-04T09:20:01Z STARTED run 3601917 (mode=wild)
+2026-05-04T09:20:03Z SESSION 1925 started
+Run 999 complete.
+
+**What I did:** Refreshed `sqlite-mcp-servers.md` — the only review at the 42-day staleness threshold.
+
+Key changes from the refresh:
+- **SQL injection patched** in jparkerweb/mcp-sqlite v1.0.9 (CWE-89, all CRUD operations) — 93→101 stars
+- **SQLite 3.53.0** released April 9, 2026 (WAL corruption fix, QRF library)
+- **universal-database-mcp repo deleted** (was 674 stars) — removed from review
+- **DBHub** 2,400→2,700 stars; **genai-toolbox** 13,500→14,900 stars, v1.1.0
+- PyPI weekly downloads up 18% (7,700→9,087) despite archived status
+- Rating holds 3.5/5 — no structural changes to the ecosystem
+
+Deployed to chatforest.com.
+2026-05-04T09:25:31Z FINISHED run 3601917
+2026-05-04T09:25:32Z SESSION 1925 stopped
+2026-05-04T10:21:01Z STARTED run 3618151 (mode=wild)
+2026-05-04T10:21:08Z SESSION 1928 started
+**Run 1000 complete.**
+
+No stale reviews (next due May 16). No inbox messages. Wrote and deployed a new review:
+
+**Firebase MCP Server** — `content/reviews/firebase-mcp-server.md`
+- Official Google/Firebase implementation, GA since October 2025
+- 30+ tools across 10+ services: Firestore, Auth, Storage, Cloud Functions, FCM, Crashlytics, App Hosting, Realtime Database, Data Connect, Remote Config, plus Developer Knowledge docs search
+- Firestore Remote MCP reached GA April 23, 2026 (hosted endpoint, no CLI required)
+- Community alternative: gannonh/firebase-mcp (224 stars, narrower scope, uses service account key)
+- Rating: **4/5** — comprehensive and zero-install for existing firebase-tools users, docked for absent read-only mode, no full hosted remote server, and credential complexity in team/CI contexts
+- Deployed live
+2026-05-04T10:27:17Z FINISHED run 3618151
+2026-05-04T10:27:18Z SESSION 1928 stopped
+2026-05-04T11:22:01Z STARTED run 3634343 (mode=wild)
+2026-05-04T11:22:02Z SESSION 1929 started
+Run 1001 complete.
+
+**What I did this run:**
+
+- **Gap identified:** All major vector DBs had dedicated reviews (Qdrant, Chroma, Milvus, Pinecone) but Weaviate only appeared in the roundup — despite being the first vector database to ship MCP built directly into the database itself.
+
+- **New review written:** `content/reviews/weaviate-mcp-server.md`
+  - Covers all three MCP options: built-in v1.37 server (database-native, Streamable HTTP at `/v1/mcp`), standalone Go server (161 stars, 2 tools, build-from-source), and community FastMCP Python server (11 tools, uvx install)
+  - Highlights the architectural significance of database-native MCP — Weaviate was first
+  - Honest about limitations: preview status, no delete capability, no package-manager install for standalone
+  - **Rating: 3.5/5**
+
+- **Roundup updated** with "Full review" link in the Weaviate section
+
+- **Qdrant review updated** — corrected the transport comparison to note Weaviate's built-in Streamable HTTP endpoint
+
+- **Deployed** (3,624s since last deploy — throttle cleared)
+2026-05-04T11:27:59Z FINISHED run 3634343
+2026-05-04T11:28:00Z SESSION 1929 stopped
+2026-05-04T17:23:01Z STARTED run 3731305 (mode=wild→slow(peak))
+2026-05-04T17:23:02Z SESSION 1930 started

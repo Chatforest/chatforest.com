@@ -33,6 +33,8 @@ The headline finding: **Kafka has the most fragmented MCP ecosystem** with 8+ in
 
 The trade-off: it's Confluent Cloud-only. If you're running self-managed Kafka, you need a community server.
 
+*Full review: [Confluent MCP Server](/reviews/confluent-mcp-server/) — Rating: 3.5/5*
+
 For self-managed Kafka, **kanapuli/mcp-kafka** (76 stars, Go) is the most adopted community option with basic produce, consume, and topic management. **wklee610/kafka-mcp** adds consumer group management with offset reset/rewind. **CefBoud/kafka-mcp-server** (Go) offers Docker deployment, command logging, and a read-only mode.
 
 **AWS Managed Streaming for Kafka (MSK)** has an official server in [awslabs/mcp](https://github.com/awslabs/mcp) covering cluster management, configuration, VPC connections, monitoring, and security via IAM — but this manages MSK infrastructure, not Kafka messages themselves.
@@ -185,7 +187,7 @@ Two multi-broker MCP servers attempt to unify messaging across platforms.
 
 ## Recommendations
 
-**For Kafka (Confluent Cloud):** [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) (50+ tools, 147 stars) is the clear choice. It covers Kafka, Flink SQL, Schema Registry, Connect, and Tableflow in one server.
+**For Kafka (Confluent Cloud):** [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) (52 tools, 152 stars) is the clear choice. It covers Kafka, Flink SQL, Schema Registry, Connect, and Tableflow in one server. See our [full Confluent MCP Server review](/reviews/confluent-mcp-server/).
 
 **For Kafka (self-managed):** [kanapuli/mcp-kafka](https://github.com/kanapuli/mcp-kafka) (75 stars) for basic operations. Add [aywengo/kafka-schema-reg-mcp](https://github.com/aywengo/kafka-schema-reg-mcp) if you need schema management.
 
