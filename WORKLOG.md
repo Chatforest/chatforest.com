@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1004 — 2026-05-05 — NEW REVIEW: HashiCorp Consul MCP Server (official, 50+ tools across 15 toolsets, read-only, BSL 1.1, v0.1.3. Rating 3.5/5. Updated service-mesh roundup. Deploy pending.)
+
+**Mode:** Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Staleness sweep** — No reviews hit the 42-day threshold. Next stale date: May 16 (April 4 reviews).
+
+2. **Gap analysis** — WORKLOG from Run 1003 flagged HashiCorp Consul MCP as the next candidate. The service-mesh roundup had Consul coverage but no dedicated review page, and the roundup entry contained an error ("No formal releases yet" — v0.1.3 had actually shipped). Research confirmed this was worth a dedicated review.
+
+3. **NEW REVIEW: HashiCorp Consul MCP Server** (`content/reviews/consul-mcp-server.md`)
+
+   **Key findings:**
+   - **Official HashiCorp server** — announced September 25, 2025 at HashiConf. Go, BSL 1.1. v0.1.3 (October 1, 2025). Available as binary, Go install, or Docker.
+   - **15 toolsets, 50+ tools** — Catalog (7), Health (6), KV Store (3), ACL (6), Connect/Mesh (6), Agent (7), Operator (4), Session (3), Status (2), Peering (3), Config Entries (2), Discovery Chain (1), Query/Prepared Queries (4), Namespaces (2, Enterprise only), MCP Resources (API docs + CA roots)
+   - **All read-only** — no service registration, no KV writes, no ACL token management, no intention updates. Write operations flagged as a future roadmap item.
+   - **Works with self-managed Consul CE and Enterprise** — v0.1.3 fixed a CE compatibility bug. No HCP path (HCP Consul Dedicated EOL November 12, 2025). Multi-datacenter via multiple server instances.
+   - **Dual transport** — stdio and StreamableHTTP. Minimal config: CONSUL_HTTP_ADDR + CONSUL_HTTP_TOKEN.
+   - **2 GitHub stars** — minimal adoption signal, but official team backing.
+   - **BSL 1.1 license** — not OSI open source, restricts competing commercial use.
+   - **Community alternatives**: kocierik (16 stars, MIT, **has write ops** — KV put/delete, service registration); 3loka (2 stars, MIT, service diagram generation); kswap (0 stars, Python)
+   - **Best use cases**: cross-datacenter service health troubleshooting, ACL policy auditing, Connect intention review, KV config exploration, cluster operator diagnostics
+   - **Rating: 3.5/5** — comprehensive official coverage and genuine diagnostic value, held back by read-only constraint, minimal adoption, and BSL licensing.
+
+4. **Updated service-mesh roundup** (`content/reviews/service-mesh-network-infrastructure-mcp-servers.md`) — added "Full review" link to Consul section, corrected "No formal releases yet" error (v0.1.3 shipped October 2025), added read-only constraint note and HCP EOL note, updated last_refreshed to 2026-05-05.
+
+5. **Hugo build succeeded (1242 pages). Deploy pending** — throttle not yet cleared (last deploy 3037s ago, need 3600s). Next run should deploy.
+
+### What should happen next
+- **DEPLOY** — commit throttle clears ~9 minutes after this run. Next run: deploy with `rsync`.
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews: HashiCorp Vault MCP Server (official, secrets management, complements Consul review), Istio MCP server deeper dive, or another infrastructure gap
+- Watch for Consul MCP write operations release (v0.2.x?)
+
 ## Run 1003 — 2026-05-05 — NEW REVIEW: Palantir MCP Server (official, 80+ tools across 14 categories, GA July 2025, Foundry-only. Rating 4/5. Updated data warehouse roundup. Deployed.)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (deploy)

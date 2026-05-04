@@ -15,6 +15,8 @@ The headline finding: **HashiCorp's official Consul MCP server is the most compr
 
 ### HashiCorp Consul — Official Server
 
+**[Full review: HashiCorp Consul MCP Server](/reviews/consul-mcp-server/)**
+
 | Server | Stars | Language | License | Transport |
 |--------|-------|----------|---------|-----------|
 | [hashicorp/consul-mcp-server](https://github.com/hashicorp/consul-mcp-server) | 2 | Go | BSL 1.1 | stdio, StreamableHTTP |
@@ -23,13 +25,15 @@ HashiCorp's **official** Consul MCP server is the most comprehensive service mes
 
 **Service discovery and catalog** — query services, nodes, datacenters, and gateways. **Health monitoring** — check node health, service status, and ingress health. **Key-value store** — get, list, and recursive KV operations for distributed configuration. **ACL management** — tokens, policies, roles, and auth methods for security. **Connect service mesh** — CA roots, intentions, and certificate management for mTLS. **Operator tools** — autopilot, keyring, license, and Raft consensus management. **Session management** — distributed locking mechanisms. **Peering** — cross-cluster relationship management. **Config entries** — service mesh configuration. **Prepared queries** — predefined service lookups. **Namespaces** — enterprise isolation boundaries.
 
+v0.1.3 (October 1, 2025) is the current stable release, with three patch releases in one week after the September 25 HashiConf announcement. All tools are **read-only** — write operations are on the roadmap. Works with self-managed Consul CE and Enterprise. Note: HCP Consul Dedicated reached EOL November 12, 2025.
+
 ### What Works Well
 
 **Full platform coverage.** This isn't a partial integration — it covers Consul's entire surface area from service discovery to mesh security to cluster operations. The dual transport support (stdio + StreamableHTTP) makes it usable in both local and remote contexts. Docker deployment is supported.
 
 ### What's Missing
 
-**Business Source License 1.1** — not open source. This matters for organizations that want to audit, fork, or redistribute. The BSL restricts production use by competitors. Star count of 2 suggests very early awareness despite being an official HashiCorp project. No formal releases yet.
+**Business Source License 1.1** — not open source. This matters for organizations that want to audit, fork, or redistribute. The BSL restricts production use by competitors. Star count of 2 suggests very early awareness despite being an official HashiCorp project. **Read-only** — no write operations (service registration, KV writes, ACL management, intention updates) until a future release.
 
 ### Community Consul Servers
 

@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Apr 26, 2026 · Updated Apr 26, 2026</span>
+        <span>Published Apr 26, 2026 · Updated May 5, 2026</span>
       </div>
 
       <h1 class="article-title">Service Mesh &amp; Network Infrastructure MCP Servers — Istio, Consul, Kiali, HAProxy, F5, Envoy AI Gateway, and More</h1>
@@ -71,6 +71,7 @@
 <hr>
 <h2 id="service-mesh-platforms">Service Mesh Platforms</h2>
 <h3 id="hashicorp-consul--official-server">HashiCorp Consul — Official Server</h3>
+<p><strong><a href="/reviews/consul-mcp-server/">Full review: HashiCorp Consul MCP Server</a></strong></p>
 <table>
 <thead>
 <tr>
@@ -93,10 +94,11 @@
 </table>
 <p>HashiCorp&rsquo;s <strong>official</strong> Consul MCP server is the most comprehensive service mesh MCP integration available. It covers the full breadth of Consul&rsquo;s platform through 15 toolsets:</p>
 <p><strong>Service discovery and catalog</strong> — query services, nodes, datacenters, and gateways. <strong>Health monitoring</strong> — check node health, service status, and ingress health. <strong>Key-value store</strong> — get, list, and recursive KV operations for distributed configuration. <strong>ACL management</strong> — tokens, policies, roles, and auth methods for security. <strong>Connect service mesh</strong> — CA roots, intentions, and certificate management for mTLS. <strong>Operator tools</strong> — autopilot, keyring, license, and Raft consensus management. <strong>Session management</strong> — distributed locking mechanisms. <strong>Peering</strong> — cross-cluster relationship management. <strong>Config entries</strong> — service mesh configuration. <strong>Prepared queries</strong> — predefined service lookups. <strong>Namespaces</strong> — enterprise isolation boundaries.</p>
+<p>v0.1.3 (October 1, 2025) is the current stable release, with three patch releases in one week after the September 25 HashiConf announcement. All tools are <strong>read-only</strong> — write operations are on the roadmap. Works with self-managed Consul CE and Enterprise. Note: HCP Consul Dedicated reached EOL November 12, 2025.</p>
 <h3 id="what-works-well">What Works Well</h3>
 <p><strong>Full platform coverage.</strong> This isn&rsquo;t a partial integration — it covers Consul&rsquo;s entire surface area from service discovery to mesh security to cluster operations. The dual transport support (stdio + StreamableHTTP) makes it usable in both local and remote contexts. Docker deployment is supported.</p>
 <h3 id="whats-missing">What&rsquo;s Missing</h3>
-<p><strong>Business Source License 1.1</strong> — not open source. This matters for organizations that want to audit, fork, or redistribute. The BSL restricts production use by competitors. Star count of 2 suggests very early awareness despite being an official HashiCorp project. No formal releases yet.</p>
+<p><strong>Business Source License 1.1</strong> — not open source. This matters for organizations that want to audit, fork, or redistribute. The BSL restricts production use by competitors. Star count of 2 suggests very early awareness despite being an official HashiCorp project. <strong>Read-only</strong> — no write operations (service registration, KV writes, ACL management, intention updates) until a future release.</p>
 <h3 id="community-consul-servers">Community Consul Servers</h3>
 <table>
 <thead>
@@ -388,6 +390,13 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-05 12:00:00</span></div>
+  <h3><a href="/reviews/consul-mcp-server/">The HashiCorp Consul MCP Server — Service Discovery, KV Store, and Mesh Diagnostics for AI Agents</a></h3>
+  <p>HashiCorp&#39;s official Consul MCP server gives AI agents comprehensive read-only access to Consul&#39;s full platform: service discovery, health monitoring, KV store exploration, ACL auditing, Connect service mesh, sessions, peering, and cluster operations — across 15 toolsets and 50&#43; tools. Works with self-managed Consul CE and Enterprise. Read-only for now, with write operations on the roadmap. BSL 1.1 license. v0.1.3 (October 2025).</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-05-05 11:00:00</span></div>
   <h3><a href="/reviews/palantir-mcp-server/">The Palantir MCP Server — Foundry Developer Tools for AI Agents</a></h3>
   <p>Palantir&#39;s official MCP server integrates AI agents directly into the Foundry development workflow — 80&#43; tools covering datasets, ontology, code repositories, Python transforms, and OSDK application building. GA since July 14, 2025 (v0.13.0). A second server, Ontology MCP, lets external AI agents read and write ontology data through application-scoped permissions. Foundry subscription required.</p>
@@ -408,13 +417,6 @@
 </div>
 
   
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-04 09:00:00</span></div>
-  <h3><a href="/reviews/firebase-mcp-server/">Firebase MCP Server — Full Firebase Stack Management Through Your AI Assistant</a></h3>
-  <p>Firebase&#39;s official MCP server — integrated into firebase-tools (1.6M weekly npm downloads), GA since October 2025. 30&#43; tools covering Firestore, Authentication, Storage, Cloud Functions, Crashlytics, App Hosting, Realtime Database, Data Connect, Remote Config, and Cloud Messaging.</p>
-</div>
-
-  
 </aside>
 
 
@@ -425,7 +427,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-26T00:00:00+09:00","datePublished":"2026-04-26T14:00:00+09:00","description":"Service mesh and network infrastructure MCP servers reviewed: Istio MCP (1 star, Go, 13 tools read-only), HashiCorp Consul (official, Go, BSL 1.1, 15 toolsets), community Consul (kocierik 16 stars, 3loka 2 stars), Kiali MCP (3 stars, RAG-backed Istio AI), Kubernetes MCP Server (1.5K stars, Go, Kiali integration), Envoy AI Gateway (1.6K stars, MCP proxy), AgentGateway (2.5K stars, Rust, MCP+A2A), HAProxy MCP (7 stars, Go, runtime API), F5 BIG-IP (Python, FastMCP), eBPF Observability (Cilium/Falco/Calico), MCP Mesh (distributed agent mesh). Linkerd notably absent. Rating: 3.0/5.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Service Mesh \u0026 Network Infrastructure MCP Servers — Istio, Consul, Kiali, HAProxy, F5, Envoy AI Gateway, and More"},"name":"Service Mesh \u0026 Network Infrastructure MCP Servers — Istio, Consul, Kiali, HAProxy, F5, Envoy AI Gateway, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/service-mesh-network-infrastructure-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-05T00:00:00+09:00","datePublished":"2026-04-26T14:00:00+09:00","description":"Service mesh and network infrastructure MCP servers reviewed: Istio MCP (1 star, Go, 13 tools read-only), HashiCorp Consul (official, Go, BSL 1.1, 15 toolsets), community Consul (kocierik 16 stars, 3loka 2 stars), Kiali MCP (3 stars, RAG-backed Istio AI), Kubernetes MCP Server (1.5K stars, Go, Kiali integration), Envoy AI Gateway (1.6K stars, MCP proxy), AgentGateway (2.5K stars, Rust, MCP+A2A), HAProxy MCP (7 stars, Go, runtime API), F5 BIG-IP (Python, FastMCP), eBPF Observability (Cilium/Falco/Calico), MCP Mesh (distributed agent mesh). Linkerd notably absent. Rating: 3.0/5.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Service Mesh \u0026 Network Infrastructure MCP Servers — Istio, Consul, Kiali, HAProxy, F5, Envoy AI Gateway, and More"},"name":"Service Mesh \u0026 Network Infrastructure MCP Servers — Istio, Consul, Kiali, HAProxy, F5, Envoy AI Gateway, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/service-mesh-network-infrastructure-mcp-servers/"}
 </script>
 
 
