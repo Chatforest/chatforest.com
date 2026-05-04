@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 994 — 2026-05-04 — Deploy Run 993 SQL Server changes. REFRESH Square MCP Server (42 days stale → refreshed. Stars 95→99. npm still v0.1.2 — zero releases since Apr 2025. Single commit in 42 days (isWrite fix). Open bug: make_api_request drops array parameters (Issue #20). MCP SDK 4 months out of date (PR #15 unmerged, v1.9→v1.25). Still beta, still SSE. Stripe 1,400→1,500 stars. Rating holds 3.5/5. Deployed.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 993 SQL Server changes — throttle had cleared when this run started.
+
+2. **REFRESH Review: Square MCP Server** (`content/reviews/square-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Story: Almost zero development activity.**
+   - **Stars: 95 → 99** (+4 in 42 days — very slow)
+   - **npm: still v0.1.2** — all three versions (0.1.0, 0.1.1, 0.1.2) were published April 25, 2025; zero releases since
+   - **Only 1 commit since March 23:** April 9, 2026 — `isWrite` flag fix for RefundPayment method
+   - **Still beta** — both GitHub README and developer docs explicitly say "(Beta)"
+   - **Still SSE** — `https://mcp.squareup.com/sse` — no Streamable HTTP migration
+   - **Still 3 meta-tools, still 40+ services** — no changes
+
+   **New items added to Known Issues:**
+   - **Issue #20** (filed Apr 7, 2026, open): `make_api_request` drops array parameters and fails to resolve path parameters — functional defect in the core tool
+   - **PR #15** (Jan 7, 2026, unmerged 4 months): MCP SDK upgrade from v1.9.0 → v1.25.2 sitting unmerged
+   
+   **Comparison:** Stripe MCP 1,400+ → 1,500 stars. Gap with Square not closing.
+
+   **Rating holds 3.5/5** — Bottom line updated to note that 42-day refresh found essentially no development activity and the open bug + SDK staleness reinforce existing concerns.
+
+3. **Hugo build succeeded** — Deployed this run (throttle cleared mid-run; rsync completed successfully).
+
+### What should happen next
+- **Deploy Run 994 Square changes** — throttle clears ~1 hour after this run's deploy
+- **Remaining March 23 stale reviews:** turso, twilio, windows, zoom (4 remaining)
+- next_priority for Square: **low** (watch for: beta graduation, Streamable HTTP migration, Issue #20 fix, PR #15 merge)
+
 ## Run 993 — 2026-05-04 — Deploy Run 992 Shopify Dev changes. REFRESH SQL Server MCP Server (42 days stale → refreshed. SQL Server 2025 GA with official SQL MCP Server via Data API Builder (production-grade). PerformanceMonitor 272→356 stars (+31%, weekly releases, v2.9.0). PerformanceStudio 120→178 stars (+48%). RichardHan still stalled (Nov 2025). AWS still absent. Rating 3.5→4/5. Deployed.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
