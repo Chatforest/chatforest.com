@@ -5,6 +5,8 @@
 
 **At a glance:** Hosted MCP server (no GitHub repo), closed-source, Streamable HTTP transport, API key auth, ~15 tools, credit-based pricing from $49/mo. Acquired by Oxylabs (June 2025).
 
+> **Refreshed May 4, 2026:** Google Search API credit cost reduced 40% (25 → 15 credits/call) — a post-Oxylabs acquisition infrastructure improvement. Toolset and architecture unchanged. Proxyway benchmark figures unchanged. Rating holds 3.5/5.
+
 ScrapingBee's MCP server takes a different approach from most entries in the MCP ecosystem: it's a **fully hosted, managed endpoint** — there's no repository to clone, no server to run, and no infrastructure to maintain. You get an MCP URL with your API key baked in, point your AI client at it, and your agent can immediately scrape websites, take screenshots, download files, and query specialized data extractors for Google, Amazon, Walmart, and other major platforms.
 
 [ScrapingBee](https://www.scrapingbee.com/) was founded in 2019 by Pierre De Wulf and Kevin Sahin in France. The company bootstrapped to ~$5M ARR with just 7 employees before being [acquired by Oxylabs](https://www.scrapingbee.com/blog/scrapingbee-acquisition/) in June 2025 for an eight-figure sum (~$11.5M). ScrapingBee continues operating as a separate product and entity, with both founders staying on. Oxylabs is a Lithuanian web data extraction company — the acquisition expands their reach into the direct-to-consumer market.
@@ -104,6 +106,7 @@ ScrapingBee uses **credit-based pricing**. Each API request costs 1–75 credits
 |---------|------------|
 | Basic request (no JS) | 1 credit |
 | JavaScript rendering (default) | 5 credits |
+| Google Search API | 15 credits *(reduced from 25 post-Oxylabs acquisition)* |
 | Premium proxy | 10–25 credits |
 | Stealth proxy | 75 credits |
 
@@ -112,14 +115,14 @@ ScrapingBee uses **credit-based pricing**. Each API request costs 1–75 credits
 | Plan | Monthly Price | API Credits | Concurrent Requests |
 |------|--------------|-------------|-------------------|
 | **Free Trial** | $0 | 1,000 | — |
-| **Freelance** | $49 | 250,000 | 10 |
-| **Startup** | $99 | 500,000 | 50 |
-| **Business** | $249 | 2,000,000 | 100 |
-| **Business+** | $599 | 8,000,000 | 200 |
+| **Freelance** | $49.99 | 250,000 | 10 |
+| **Startup** | $99.99 | 1,000,000 | 50 |
+| **Business** | $249.99 | 3,000,000 | 100 |
+| **Business+** | $599.99 | 8,000,000 | 200 |
 
-Custom plans available for higher volumes (e.g., 20M credits, 400 concurrent requests).
+Custom enterprise plans available for higher volumes (14M–41M+ credits).
 
-**Credit math for MCP users:** With JavaScript rendering enabled by default (5 credits/request), the Freelance plan gives you ~50,000 actual scraping calls. With stealth proxy enabled (75 credits), that drops to ~3,333. Plan your credit budget based on the proxy tier you need, not the raw credit number.
+**Credit math for MCP users:** With JavaScript rendering enabled by default (5 credits/request), the Startup plan gives you ~200,000 actual scraping calls. Google SERP scraping now costs 15 credits per call (reduced from 25 post-Oxylabs acquisition), so the Startup plan yields ~66,000 SERP queries. With stealth proxy enabled (75 credits), effective calls drop to ~13,333. Plan your credit budget based on the proxy tier and scraper type you need, not the raw credit number.
 
 ## How It Compares
 

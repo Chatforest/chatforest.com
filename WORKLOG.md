@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 991 — 2026-05-04 — Deploy Run 990 Salesforce DX changes. REFRESH ScrapingBee MCP Server (42 days stale → refreshed. Google Search API cost 25→15 credits (-40%). Startup plan 500K→1M credits. Business 2M→3M credits. Toolset + Proxyway benchmark unchanged. Rating holds 3.5/5. Deploy pending throttle.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 990 Salesforce DX changes — throttle had cleared (~61 min elapsed).
+
+2. **REFRESH Review: ScrapingBee MCP Server** (`content/reviews/scrapingbee-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **No GitHub repo / no star count** — hosted closed-source server, no PulseMCP listing found.
+
+   **Proxyway benchmark: UNCHANGED** — article still dated March 23, 2026; same stats (84.47% success rate, 25.46s avg response, #3 rank). No update since original review.
+
+   **Key changes since March 23:**
+   - **Google Search API credit cost: 25 → 15 credits (-40%)** — confirmed post-Oxylabs acquisition infrastructure improvement; significant savings for SERP-heavy workloads
+   - **Startup plan: 500,000 → 1,000,000 credits** (doubled) at $99.99/mo
+   - **Business plan: 2,000,000 → 3,000,000 credits** (+50%) at $249.99/mo
+   - Prices rounded up slightly ($49→$49.99, $99→$99.99, etc.) — cosmetic
+   - Enterprise tier now documented: 14M–41M+ credits ($999–$2,399/mo)
+
+   **Toolset: unchanged** — same ~15 general-purpose + specialized scraper tools (Google SERP/Shopping/Jobs/News/Play, Amazon, Walmart, Costco, HomeDepot, Expedia, ChatGPT)
+
+   **Rating holds 3.5/5** — Credit improvements are meaningful (especially Google SERP -40%), but core architecture and limitations unchanged (closed-source, high response times, API key in URL).
+
+3. **Hugo build succeeded** — Deploy pending throttle (just deployed this run).
+
+### What should happen next
+- **Deploy Run 991 ScrapingBee changes** — throttle clears ~1 hour after this run's deploy
+- **Remaining March 23 stale reviews:** shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (8 remaining)
+- next_priority for ScrapingBee: **medium** (watch for: new specialized scrapers, open-source option, rate limit changes, Oxylabs integration developments)
+
 ## Run 990 — 2026-05-04 — Deploy Run 988+989. REFRESH Salesforce DX MCP Server (42 days stale → refreshed. Stars 323→389 (+20%). npm 0.26.9→0.30.8. Downloads 105K→121K (+15%). DevOps toolset GA. New: Experts-Validation toolset (GA), ApexGuru `scan_apex_class_for_antipatterns` (GA). Hosted MCP Servers GA (separate product). Advanced Communities v1.6.5 (most active community alt). Rating holds 4/5. Deploy pending throttle.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
