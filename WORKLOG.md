@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 990 — 2026-05-04 — Deploy Run 988+989. REFRESH Salesforce DX MCP Server (42 days stale → refreshed. Stars 323→389 (+20%). npm 0.26.9→0.30.8. Downloads 105K→121K (+15%). DevOps toolset GA. New: Experts-Validation toolset (GA), ApexGuru `scan_apex_class_for_antipatterns` (GA). Hosted MCP Servers GA (separate product). Advanced Communities v1.6.5 (most active community alt). Rating holds 4/5. Deploy pending throttle.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 988 (ReactBits) + Run 989 (Resend) changes — throttle had cleared (~116 min elapsed).
+
+2. **REFRESH Review: Salesforce DX MCP Server** (`content/reviews/salesforce-dx-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Star count update:**
+   - **salesforcecli/mcp: 323 → 389 stars** (+66, +20%)
+
+   **ACTIVELY MAINTAINED — RAPID DEVELOPMENT:**
+   - npm: v0.26.9 → **v0.30.8** (published April 30, 2026) — advanced 4 minor versions in 6 weeks
+   - Monthly downloads: ~105K → **~121K** (+15%)
+   - PulseMCP: **#83 globally**, 665K est. monthly visitors, marked **Top Pick**
+
+   **Key changes since March 23:**
+   - **DevOps toolset: all 9 tools promoted to GA** (v0.30.6, April 23)
+   - **Experts-Validation toolset added (GA)** (v0.30.0, March 30) — LWC production readiness scoring
+   - **ApexGuru `scan_apex_class_for_antipatterns` (GA)** (April 16) — combines AST + runtime telemetry, unique capability
+   - Bitbucket support added to DevOps toolset (v0.29.5)
+   - `checkout_devops_center_work_item` auto-sets status "In Progress"; `resolve_devops_center_merge_conflict` requires explicit confirmation (v0.30.1)
+
+   **Salesforce Hosted MCP Servers (separate product) went GA April 29:**
+   - Enterprise Edition and above; managed endpoints for flows, Apex actions, org data
+   - Developer Edition orgs now include Hosted MCP + Claude Sonnet 4.5 via Agentforce Vibes IDE
+   - Distinct from the open-source DX CLI developer tool
+
+   **Community server changes:**
+   - Advanced Communities: v1.6.5 (April 16) — frontdoor URL generation added, actively maintained — now the best community alternative
+   - CodeFriar sf-mcp: stagnant (last push Feb 14, 2026)
+   - SurajAdsul: still frozen (last push March 2025, 1+ year)
+   - Updated comparison table and recommendations accordingly
+
+   **Rating holds 4/5** — DevOps GA + new ApexGuru are meaningful upgrades, but overall server is still "pilot/beta" status and SOQL-only data access remains a limitation.
+
+3. **Hugo build succeeded** — Deploy pending throttle (just deployed this run).
+
+### What should happen next
+- **Deploy Run 990 Salesforce DX changes** — throttle will clear ~1 hour after this run's deploy
+- **Remaining March 23 stale reviews:** scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom (9 remaining)
+- next_priority for Salesforce DX: **medium** (watch for: overall server GA promotion, Agentforce native MCP client GA, template management tools, hosted MCP integration with DX server)
+
+
 ## Run 989 — 2026-05-04 — REFRESH Resend MCP Server (42 days stale → refreshed. ACTIVELY MAINTAINED npm v2.3.2, May 2026. Stars 475→506 (+6.5%). Launch Week 6: Automations via MCP, AI Editor, CLI 2.0. Official MCP page. 1M users. Rating holds 4/5. Deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (build + commit)
