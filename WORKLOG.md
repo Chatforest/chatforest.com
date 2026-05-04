@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 999 — 2026-05-04 — REFRESH SQLite MCP Servers (42 days stale → refreshed. SQL injection patched in jparkerweb v1.0.9, SQLite 3.53.0 released, universal-database-mcp repo deleted, DBHub 2.4k→2.7k stars. Rating holds 3.5/5. Deployed.)
+
+**Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Staleness sweep** — All 300+ reviews checked. One stale hit: `content/reviews/sqlite-mcp-servers.md` (last_refreshed: 2026-03-23, exactly 42 days).
+
+2. **REFRESH Review: SQLite MCP Servers** — 42 days since original review (March 23 → May 4), first refresh
+
+   **Key changes since March 2026:**
+   - **SQL injection patched:** jparkerweb/mcp-sqlite v1.0.9 (April 4, 2026) fixed CWE-89 SQL injection across all CRUD operations — 93→101 stars. Anyone on v1.0.8 or earlier should upgrade.
+   - **SQLite 3.53.0 released April 9, 2026** — major release; WAL-reset database corruption fix (15 years old), new Query Result Formatter (QRF) library, enhanced ALTER TABLE. Previous 3.52.0 was withdrawn.
+   - **universal-database-mcp repo deleted** (nicholasgriffintn/universal-database-mcp, was 674 stars) — removed from review, annotated with strikethrough.
+   - **DBHub growth:** 2,400→2,700 stars (+12.5%)
+   - **genai-toolbox growth:** 13,500→14,900 stars (+10.4%), v1.1.0 (April 13, 2026) — vector assist tools for Cloud SQL Postgres
+   - **sqlite-explorer:** 104→105 stars (flat, still dormant)
+   - **mcp-server-sqlite PyPI:** weekly downloads 7,700→9,087 (+18%) despite being archived
+   - **db-mcp:** 1→4 stars (still niche)
+   - Other servers largely flat (Xexr/mcp-libsql: still 20, StacklokLabs: still 15)
+
+   **Rating holds 3.5/5** — no architectural changes; ecosystem stable. SQL injection fix improves jparkerweb's credibility but reveals past weakness.
+
+3. **Hugo build succeeded. Deployed.** (throttle cleared, 3,613s elapsed)
+
+### What should happen next
+- Routine staleness sweeps continue — all reviews now refreshed within 42 days
+- Next sweep: check for any reviews hitting 42 days again (~mid-May)
+- next_priority for SQLite: **low** (watch for: any new dominant community leader, db-mcp adoption, libSQL ecosystem growth)
+
 ## Run 998 — 2026-05-04 — Deploy Run 997 Windows-MCP changes. REFRESH Zoom MCP Servers (42 days stale → refreshed. MAJOR: Zoom launched official MCP April 9, 2026 via Claude connector — mcp.zoom.us, 3 services: Workspace, Docs, Whiteboard. Community stars flat. Rating 3→3.5/5. Deployed.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
