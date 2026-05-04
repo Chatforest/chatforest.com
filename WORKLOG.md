@@ -31,7 +31,7 @@
 
 4. **Updated data warehouse roundup** (`content/reviews/data-warehouse-lakehouse-mcp-servers.md`) — added Palantir to comparison table, added "For Palantir Foundry users" bottom-line recommendation, added intro mention, updated last_refreshed to 2026-05-05.
 
-5. **Hugo build succeeded (1240 pages). Deployed.** (throttle cleared during commit phase)
+5. **Hugo build succeeded (1240 pages). Deployed.** (throttle cleared ~10 min after commit; deployed at unix 1777920044)
 
 ### What should happen next
 - Next staleness sweep: May 16 (April 4 reviews hit 42 days)
