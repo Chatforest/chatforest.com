@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1001 — 2026-05-04 — NEW REVIEW: Weaviate MCP Server (first database-native MCP, built-in v1.37, standalone Go server 161 stars, community FastMCP 11 tools. Rating 3.5/5. Deployed.)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (deploy)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Staleness sweep** — No reviews hit the 42-day threshold. Next stale date: May 16 (April 4 reviews).
+
+2. **Gap analysis** — All other major vector DBs have dedicated reviews (Qdrant, Chroma, Milvus, Pinecone) but Weaviate only appeared in the roundup. Run 1000 WORKLOG flagged it as a candidate. Weaviate v1.37 (April 23, 2026) pioneered database-native MCP — a significant first — making a dedicated review overdue.
+
+3. **NEW REVIEW: Weaviate MCP Server** (`content/reviews/weaviate-mcp-server.md`)
+
+   **Key findings:**
+   - **Three MCP server options**: Built-in v1.37 (database-native), standalone Go server (mcp-server-weaviate), community FastMCP Python server (sajal2692/mcp-weaviate)
+   - **Built-in v1.37** — first vector database to embed MCP directly into the database process. Enable with `MCP_SERVER_ENABLED: 'true'`. Streamable HTTP at `/v1/mcp` on the existing Weaviate port. Inherits Weaviate's standard auth layer automatically. Tools: schema inspection, hybrid search, optional write access. **Preview feature** — API may change.
+   - **Standalone Go server** (161 stars, 43+ forks) — 2 tools (insert + hybrid query), minimal, no package manager install (build from source), stdio only. For pre-v1.37 users.
+   - **Community sajal2692/mcp-weaviate** — FastMCP Python, 11 tools (get_config, check_connection, list_collections, get_schema, get_collection_objects, search, semantic_search + more), deployable via `uvx`. Best tool coverage for Weaviate.
+   - **Docs MCP Server** — separate server for accessing Weaviate documentation via MCP
+   - **Weaviate itself**: 29,000+ stars, hybrid BM25+vector search, multi-tenancy, generative search/RAG-in-DB, self-hosted or Weaviate Cloud
+
+   **Rating: 3.5/5** — Pioneering architecture (first database-native MCP), zero-infrastructure for v1.37 users, auth integration. Held back by preview status, minimal standalone tooling (2 tools, build-from-source), no delete capability, low adoption vs. peers.
+
+4. **Updated roundup** (`content/reviews/vector-database-embedding-mcp-servers.md`) — added "Full review" link to Weaviate section.
+
+5. **Updated Qdrant review** (`content/reviews/qdrant-mcp-server.md`) — fixed transport comparison table to note Weaviate's built-in Streamable HTTP; updated prose to link to Weaviate review.
+
+6. **Hugo build succeeded. Deployed.** (3,624s since last deploy, throttle cleared)
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Weaviate built-in MCP: watch for v1.38 release — will the preview API stabilize to GA?
+- Possible next reviews: Temporal workflow MCP server, Elasticsearch/OpenSearch MCP, LangChain MCP
+
 ## Run 1000 — 2026-05-04 — NEW REVIEW: Firebase MCP Server (official Google/Firebase implementation, GA Oct 2025, 30+ tools across 10+ services, Firestore Remote MCP GA April 23. Rating 4/5. Deployed.)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (deploy)

@@ -132,7 +132,7 @@ A genuinely clever touch: `TOOL_STORE_DESCRIPTION` and `TOOL_FIND_DESCRIPTION` l
 |---------|-----------|------------|--------------|------------|--------------|
 | **Stars** | 1,357 | 535 | 64 | 228 | 161 |
 | **Tools** | 2 | 13 | 9 | 11 | 2 |
-| **Transport** | stdio, SSE, streamable-http | stdio only | stdio | stdio, SSE | stdio |
+| **Transport** | stdio, SSE, streamable-http | stdio only | stdio | stdio, SSE | stdio (standalone) + Streamable HTTP (built-in v1.37) |
 | **Search types** | Semantic only | Vector + full-text + regex | Text + metadata | Hybrid | Hybrid |
 | **Collection mgmt** | Auto-create only | Full CRUD + fork | Index management | Full CRUD | Insert + query |
 | **Delete capability** | No | Yes | Yes | Yes | No |
@@ -142,7 +142,7 @@ A genuinely clever touch: `TOOL_STORE_DESCRIPTION` and `TOOL_FIND_DESCRIPTION` l
 
 The vector DB MCP landscape has a clear split: Chroma and Milvus offer comprehensive database management (13 and 11 tools respectively), while Qdrant and Weaviate take a minimal "just store and search" approach (2 tools each). Pinecone sits in the middle at 9 tools but is cloud-only.
 
-Qdrant's advantage is transport protocol support — it's the only server in this comparison that works as a remote MCP endpoint via SSE or Streamable HTTP. If you need a shared vector memory that multiple agents or developers can access over the network, Qdrant is currently the only first-party option.
+Qdrant's advantage is transport protocol breadth — SSE and Streamable HTTP in addition to stdio. Weaviate's built-in MCP (v1.37+) also serves Streamable HTTP but as an embedded database endpoint, not a standalone shareable server. For team deployments where multiple agents connect to a shared remote MCP endpoint, Qdrant remains the most flexible dedicated option. See the [Weaviate MCP Server review](/reviews/weaviate-mcp-server/) for the built-in server details.
 
 But for solo development or projects where you need your agent to actively manage vector infrastructure — creating collections with specific parameters, updating documents, deleting stale data — [Chroma MCP](/reviews/chroma-mcp-server/) offers a significantly more capable experience despite its stdio-only limitation.
 
