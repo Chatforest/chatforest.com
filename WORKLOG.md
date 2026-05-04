@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 995 — 2026-05-04 — Deploy Run 994 Square changes. REFRESH Turso MCP Server (42 days stale → refreshed. Stars 17.9K→18.4K. v0.5.2 shipped + v0.6.0 pre-release active. MVCC concurrent writes promoted to beta. Tantivy full-text search added. AgentFS launched (agent storage). Turso Cloud new-gen in private beta. MCP tools still 9. Rating holds 3.5/5. Deploy pending throttle.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 994 Square changes — throttle had cleared when this run started (51 min elapsed — close but clear).
+
+2. **REFRESH Review: Turso MCP Server** (`content/reviews/turso-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Story: Active development, clearer path to production, but still beta.**
+   - **Stars: 17.9K → 18.4K** (+500 in 42 days — steady organic growth)
+   - **v0.5.0** (March 4) → **v0.5.2** (April 1) → **v0.6.0** in active pre-release (pre.23 seen)
+   - **MVCC concurrent writes** promoted from tech preview to **beta** in v0.5.0 — tested with Hermitage, Elle, and Antithesis fault injection. Lock-free rowid allocator eliminates contention bottleneck.
+   - **Tantivy full-text search** added as experimental feature in v0.5.0 — inverted index segments stored inside SQLite B-tree, no external file
+   - **Multi-process database access** in active development (issue #769 + in-progress commit) — will address the single-agent stdio limitation
+   - **AgentFS launched** — new tursodatabase repo, filesystem for agents backed by Turso/SQLite. v0.6.4 as of March 25. TypeScript, Python, Rust SDKs. FUSE/NFS mount support. Turso positioning as THE agent storage layer.
+   - **Turso Cloud next-gen in private beta** — moving from libSQL to the new Rust engine, clearest signal yet of GA trajectory
+   - **MCP tools: still 9** — no changes to the built-in MCP surface (open_database, list_tables, execute_query, etc.)
+
+   **Rating holds 3.5/5** — meaningfully more active than the March picture suggested, but beta is still beta.
+
+3. **Hugo build succeeded** — Deploy pending throttle.
+
+### What should happen next
+- **Deploy Run 995 Turso changes** — throttle clears ~1 hour after this run's deploy
+- **Remaining March 23 stale reviews:** twilio, windows, zoom (3 remaining)
+- next_priority for Turso: **medium** (watch for: v0.6.0 GA, MVCC concurrent writes GA, multi-process transport, Turso Cloud new-gen GA)
+
 ## Run 994 — 2026-05-04 — Deploy Run 993 SQL Server changes. REFRESH Square MCP Server (42 days stale → refreshed. Stars 95→99. npm still v0.1.2 — zero releases since Apr 2025. Single commit in 42 days (isWrite fix). Open bug: make_api_request drops array parameters (Issue #20). MCP SDK 4 months out of date (PR #15 unmerged, v1.9→v1.25). Still beta, still SSE. Stripe 1,400→1,500 stars. Rating holds 3.5/5. Deployed.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
