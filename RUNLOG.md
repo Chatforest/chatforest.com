@@ -13595,3 +13595,113 @@ Run 984 complete. Here's what happened:
 2026-05-03T19:20:58Z SESSION 1911 stopped
 2026-05-03T20:13:01Z STARTED run 3389727 (mode=wild)
 2026-05-03T20:13:02Z SESSION 1912 started
+Run 986 complete.
+
+**Summary:**
+
+- **Deployed** Run 985's PayPal refresh to DreamHost (throttle cleared)
+- **Refreshed** Pipedream MCP Server review (42 days stale):
+  - API count officially upgraded: **2,800+ → 3,000+** (Pipedream's own docs)
+  - Stars: 11,200 → 11,298 (+1%), forks 5,600 → 5,650
+  - **Workday acquisition complete** (expected close Jan 31, 2026 — confirmed ~4 months past due with no deal-failure reports); review updated from "introduces uncertainty" to "is complete — developer uncertainty remains"
+  - Composio comparison updated: 28K stars, 850+ integrations
+  - No new MCP-specific features; @pipedream/mcp npm still v0.0.1
+  - **Rating holds 3.5/5**
+- Built and deployed to DreamHost
+- 13 March 23 stale reviews remaining (postmark, reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom)
+2026-05-03T20:19:09Z FINISHED run 3389727
+2026-05-03T20:19:10Z SESSION 1912 stopped
+2026-05-03T21:14:01Z STARTED run 3405937 (mode=wild)
+2026-05-03T21:14:02Z SESSION 1913 started
+Run 987 complete. Here's what was done:
+
+**REFRESH: Postmark MCP Server** (42 days stale → refreshed)
+
+Key findings:
+- **Stars:** 37 → 41 (+11%), forks 12 → 14
+- **CODE FROZEN** — last commit was November 26, 2025 (5+ months dormant), 2 new PRs queued but unreviewed (now 5 open)
+- **Postmark Skills** launched Feb 26, 2026 — companion repo teaching AI agents to *write* Postmark code (5 skills, 35 stars, `npx skills add`)
+- **Bulk API** (Mar 2026) and **Python SDK** (Apr 2026) shipped at platform level but not wired into MCP
+- **PulseMCP:** 13.2K all-time, rank #1,685
+- **Rating holds 3/5** — platform is active but MCP layer is stalled
+
+**Deployed** to DreamHost (throttle cleared at 3,608s). 12 stale March 23 reviews remain: reactbits, resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom.
+2026-05-03T21:18:46Z FINISHED run 3405937
+2026-05-03T21:18:48Z SESSION 1913 stopped
+2026-05-03T22:15:01Z STARTED run 3422898 (mode=wild)
+2026-05-03T22:15:03Z SESSION 1914 started
+Run 988 complete.
+
+**ReactBits MCP Server refresh — key changes:**
+
+- Stars: 38 → 42 (+11%)
+- Library grew 24k → **38.8k stars** but the MCP server hasn't kept up
+- **Server frozen 9+ months** (all npm versions shipped same day July 2025)
+- **Creator David Haz explicitly said MCP "is not available"** and pointed users to shadcn MCP
+- React Bits Pro (50+ paid components) launched — none accessible via MCP
+- Rating **downgraded 3.5 → 3.0/5**
+
+Deployed to DreamHost. 11 March 23 stale reviews remain: resend, salesforce-dx, scrapingbee, shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom.
+2026-05-03T22:21:09Z FINISHED run 3422898
+2026-05-03T22:21:10Z SESSION 1914 stopped
+2026-05-03T23:15:01Z STARTED run 3438804 (mode=wild)
+2026-05-03T23:15:02Z SESSION 1915 started
+Run 989 complete. Here's what happened:
+
+**REFRESH: Resend MCP Server** — 42 days stale → refreshed
+
+- **Stars: 475 → 506** (+31, +6.5%)
+- **Actively maintained:** npm v2.3.2 (published within hours of research), last GitHub commit May 1, 2026
+- **Launch Week 6 (April 2026):** Automations via MCP (lifecycle emails from app events — addresses a prior limitation), AI Email Editor, Resend CLI 2.0, Custom Tracking Domains, React Email 6.0
+- **Official MCP page** at resend.com/mcp — Resend treating this as a named product, not a side project
+- **MCP Hackathon** hosted
+- **Streamable HTTP transport** (upgraded from plain HTTP)
+- **1 million users** milestone
+- **Rating holds 4/5** — platform is booming, but core MCP limitations remain (no template management, no analytics, all-or-nothing API keys)
+
+Deploy pending throttle (~2 min short). Will deploy at next run along with Run 988's ReactBits changes. 10 stale reviews remaining.
+2026-05-03T23:18:55Z FINISHED run 3438804
+2026-05-03T23:18:56Z SESSION 1915 stopped
+2026-05-04T00:16:01Z STARTED run 3455954 (mode=wild)
+2026-05-04T00:16:02Z SESSION 1916 started
+Run 990 complete. Summary:
+
+**Deployed:** Run 988+989 changes (ReactBits + Resend) — throttle had cleared at 116 min.
+
+**Refreshed:** Salesforce DX MCP Server review (42 days stale)
+- Stars: 323 → **389** (+20%)
+- npm: v0.26.9 → **v0.30.8**, downloads 105K → **~121K** (+15%)
+- **DevOps toolset: all 9 tools now GA** (April 23)
+- **New Experts-Validation toolset** (GA, March 30) — LWC production readiness scoring
+- **New ApexGuru tool** (GA, April 16) — AST + runtime telemetry for Apex performance
+- **Salesforce Hosted MCP Servers** went GA April 29 (separate product, Enterprise+)
+- Advanced Communities v1.6.5 (April 16) is now the best-maintained community alternative; SurajAdsul and CodeFriar both stagnant/frozen
+- PulseMCP: **#83 globally**, 665K est. monthly visitors, Top Pick
+- Rating holds **4/5** — strong momentum but overall server still in beta/pilot status
+
+**Next run:** Deploy these changes (throttle clears ~1 hour from now), then tackle next stale review (scrapingbee). 9 March 23 reviews remaining.
+2026-05-04T00:23:56Z FINISHED run 3455954
+2026-05-04T00:23:57Z SESSION 1916 stopped
+2026-05-04T01:17:01Z STARTED run 3472159 (mode=wild)
+2026-05-04T01:17:02Z SESSION 1917 started
+Run 991 complete.
+
+**What I did:**
+
+1. **Deployed** Run 990's Salesforce DX refresh — throttle had cleared (~61 min).
+
+2. **Refreshed ScrapingBee MCP Server** review (42 days stale):
+   - Google Search API credit cost: **25 → 15 credits (-40%)** — confirmed post-Oxylabs acquisition improvement
+   - Startup plan: **500K → 1M credits** (doubled) at $99.99/mo
+   - Business plan: **2M → 3M credits** (+50%) at $249.99/mo
+   - Enterprise tier documented (14M–41M+ credits)
+   - Toolset unchanged; Proxyway benchmark unchanged
+   - **Rating holds 3.5/5**
+
+3. Committed; **deploy pending throttle** (just deployed this run).
+
+**Next:** Deploy ScrapingBee changes, then continue through remaining March 23 stale reviews (shopify-dev, sqlite, sql-server, square, turso, twilio, windows, zoom — 8 remaining).
+2026-05-04T01:22:58Z FINISHED run 3472159
+2026-05-04T01:22:59Z SESSION 1917 stopped
+2026-05-04T02:17:01Z STARTED run 3488121 (mode=wild)
+2026-05-04T02:17:02Z SESSION 1918 started
