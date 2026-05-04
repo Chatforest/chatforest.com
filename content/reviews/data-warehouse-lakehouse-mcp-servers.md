@@ -5,10 +5,10 @@ description: "Data warehouse and lakehouse MCP servers reviewed: ClickHouse offi
 og_description: "Data Warehouse & Lakehouse MCP servers: ClickHouse official (764 stars), DuckDB/MotherDuck (473 stars v1.0.5 HTTP transport), Apache Doris official NEW (289 stars 25+ tools), Snowflake Labs (277 stars) + managed GA, BigQuery auto-enabled, Databricks 4 managed servers SQL NEW, Dremio official NEW, Redshift via AWS. 30+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
 card_description: "Data warehousing has exceptional MCP coverage — every major platform has official or vendor-backed support. ClickHouse leads the open-source community with 764 stars. Apache Doris is a notable new official entry with 289 stars and 25+ tools. DuckDB/MotherDuck now supports HTTP transport. BigQuery is auto-enabled. Snowflake has both managed GA and open-source servers. Databricks added SQL as a 4th managed server. Dremio brings lakehouse analytics. This is one of the strongest enterprise MCP categories."
-last_refreshed: 2026-04-29
+last_refreshed: 2026-05-05
 ---
 
-Data warehousing and lakehouse platforms have some of the best MCP coverage in the entire ecosystem. Every major vendor — Snowflake, Google BigQuery, Databricks, ClickHouse, MotherDuck/DuckDB, Amazon Redshift, Apache Doris, and Dremio — now offers official or vendor-backed MCP servers. This makes sense: data warehouses are where enterprise data lives, and connecting AI agents to structured data through SQL is one of the highest-value MCP use cases.
+Data warehousing and lakehouse platforms have some of the best MCP coverage in the entire ecosystem. Every major vendor — Snowflake, Google BigQuery, Databricks, ClickHouse, MotherDuck/DuckDB, Amazon Redshift, Apache Doris, and Dremio — now offers official or vendor-backed MCP servers. Enterprise AI platforms like Palantir Foundry — which go beyond traditional warehousing into ontology-centric data modeling — also have official MCP servers, covered in this roundup. This makes sense: data warehouses are where enterprise data lives, and connecting AI agents to structured data through SQL is one of the highest-value MCP use cases.
 
 The landscape divides into three tiers: **cloud-native warehouses** (Snowflake, BigQuery, Redshift) with managed remote MCP servers, **lakehouse platforms** (Databricks, Dremio) with governance-first MCP integration, and **analytical engines** (ClickHouse, DuckDB, Apache Doris) with open-source community-driven servers. Most teams use at least one from the first two tiers, and DuckDB increasingly bridges them all. Part of our **[Data & Analytics](/categories/data-analytics/)** category.
 
@@ -317,6 +317,7 @@ Dremio, the lakehouse analytics platform, now has an official MCP server enablin
 | Snowflake | Snowflake-Labs/mcp + managed (GA) | 277 | Yes | Multiple | Cortex AI, managed option |
 | BigQuery | Managed remote (auto-enabled) | — | Yes | 6 | Zero-setup managed |
 | Databricks | 4 Managed MCP servers | — | Yes | Multiple | Unity AI Gateway governance |
+| Palantir Foundry | palantir/palantir-mcp + Ontology MCP | 8 | Yes | 80+ | Enterprise AI OS, ontology-centric |
 | Dremio | dremio/dremio-mcp | 49 | Yes | Multiple | Lakehouse analytics |
 | Redshift | awslabs/mcp suite | 8,900+ | Yes | Multiple | AWS ecosystem |
 
@@ -357,6 +358,8 @@ Dremio, the lakehouse analytics platform, now has an official MCP server enablin
 **For Dremio users:** The **official dremio/dremio-mcp server** (49 stars) provides lakehouse analytics with Kubernetes deployment support. Early stage but functional with dual operating modes.
 
 **For Redshift users:** The **AWS MCP suite** (8,900+ stars) provides auto-discovery, safe querying, and now query plan analysis. Read-only for now, but well-integrated with the broader AWS MCP ecosystem.
+
+**For Palantir Foundry users:** The **official [palantir/palantir-mcp](https://github.com/palantir/palantir-mcp) server** (GA July 2025, v0.13.0) provides 80+ developer tools spanning datasets, ontology, code repos, Python transforms, and OSDK app building — the most comprehensive coverage of any enterprise data platform. A separate **Ontology MCP** (Beta) lets external AI agents read and write ontology data through application-scoped permissions. See our **[full Palantir MCP Server review](/reviews/palantir-mcp-server/)**.
 
 **Rating: 4.5/5** — Data warehousing remains one of the strongest MCP categories and got even stronger since our initial review. Eight vendors now have official MCP support (up from six). Managed servers are maturing — BigQuery auto-enabled, Snowflake managed GA, Databricks added SQL execution. Apache Doris brought the most comprehensive tooling (25+ tools). DuckDB fixed its HTTP transport gap. The missing cross-warehouse federation, cost monitoring, and dbt integration prevent a perfect score, but the fundamentals are exceptional. If you work with data warehouses, the MCP tools are production-ready.
 

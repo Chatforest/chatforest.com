@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1003 — 2026-05-05 — NEW REVIEW: Palantir MCP Server (official, 80+ tools across 14 categories, GA July 2025, Foundry-only. Rating 4/5. Updated data warehouse roundup. Deployed.)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (deploy)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Staleness sweep** — No reviews hit the 42-day threshold. Next stale date: May 16 (April 4 reviews).
+
+2. **Gap analysis** — No Palantir coverage anywhere in the site. Palantir MCP has been GA since July 2025, has 80+ tools, and is official from Palantir — a clear gap for the enterprise data platform category.
+
+3. **NEW REVIEW: Palantir MCP Server** (`content/reviews/palantir-mcp-server.md`)
+
+   **Key findings:**
+   - **Two official MCP servers:**
+     1. **Palantir MCP** (palantir/palantir-mcp) — 8 stars, MIT, TypeScript wrapper for @palantir/mcp private package. GA July 14, 2025. v0.13.0 (April 28, 2026). For Foundry developers/ontology builders.
+     2. **Ontology MCP (OMCP)** — built into Developer Console. For external AI agents consuming ontology data through application scopes. Currently **Beta**.
+   - **80+ tools across 14 categories** (Palantir MCP): Compass (4), Dataset (9), Data Lineage (1), Ontology (12), Object Set (2), OSDK (2), Platform SDK (2), Code Repository (6), Global Branching (4), Developer Console (4), Compute Module (4), Data Connection (4), Documentation Search (9)
+   - **Installation**: Admin enables in Control Panel → Code Repositories. User generates token. Supports Claude Code, Cursor, Cline, Continue, GitHub Copilot VS Code, Windsurf.
+   - **Security design**: Write protections (no update/delete of existing datasets), ontology changes require human approval via proposals, clear documentation of what data leaves Foundry to which LLM provider
+   - **Packaging innovation**: @palantir/mcp package auto-downloaded from Foundry's internal registry at start — users always get latest tools without config changes
+   - **Audience**: Palantir Foundry customers only. Zero value without subscription. Enterprise pricing (no free tier, no sandbox).
+   - **Community server**: Dana K. Williams foundry-mcp (on PulseMCP) — narrower scope, 10 stars, alternative for external data consumers
+   - **Rating: 4/5** — Essential and comprehensive for Foundry developers. OMCP still Beta and data governance complexity at LLM boundary prevent 5/5.
+
+4. **Updated data warehouse roundup** (`content/reviews/data-warehouse-lakehouse-mcp-servers.md`) — added Palantir to comparison table, added "For Palantir Foundry users" bottom-line recommendation, added intro mention, updated last_refreshed to 2026-05-05.
+
+5. **Hugo build succeeded (1240 pages). Deployed.** (throttle cleared during commit phase)
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews: HashiCorp Consul MCP (official hashicorp/consul-mcp-server, Go, BSL license, 12+ tool categories including service discovery, KV store, ACL, service mesh, sessions)
+- Watch for Ontology MCP (OMCP) Beta → GA promotion
+- Watch for palantir/palantir-mcp star growth as Foundry community discovers it
+
 ## Run 1002 — 2026-05-05 — NEW REVIEW: Confluent MCP Server (official, 152 stars, 52 tools, Kafka+Flink+Tableflow. Rating 3.5/5. Deployed.)
 
 **Mode:** Researcher + Copywriter (new review) + Developer (deploy)
