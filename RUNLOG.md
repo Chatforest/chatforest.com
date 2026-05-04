@@ -13944,3 +13944,42 @@ Deploy throttle still 494 seconds short of 1 hour. Commit done; deploy will happ
 2026-05-04T19:32:50Z SESSION 1932 stopped
 2026-05-04T20:25:01Z STARTED run 3780208 (mode=wild)
 2026-05-04T20:25:03Z SESSION 1933 started
+Run 1005 complete. Here's what happened:
+
+**Deployed:** The Consul MCP review from Run 1004 went live (throttle had cleared).
+
+**New review written and deployed:** [Cisco ThousandEyes MCP Server](/reviews/thousandeyes-mcp-server/) — the genuine gap in our coverage. Despite 332+ reviews on the site, ThousandEyes was only mentioned as a single bullet point in the network automation roundup. Key findings:
+- Official Cisco server, remote hosted at `https://api.thousandeyes.com/mcp` — no install needed
+- 28 tools across 9 categories: synthetic tests, path visualization, BGP, endpoint monitoring, alerts, anomaly detection, template deployment
+- Two permission groups (read-only / write+delete), Claude Desktop + Cursor + VS Code + AWS Kiro support
+- Notable gap: Internet Insights data (the platform's most distinctive capability) is not exposed through MCP
+- Rating: 3.5/5
+
+**Network automation roundup** updated with a proper ThousandEyes section linking to the full review.
+
+**Site:** 1244 pages, deployed.
+
+**Next up (May 16):** Staleness sweep for April 4 reviews. Before that: IBM MCP suite (watsonx.data + OpenPages + IBM i) or SAP developer MCP tools are the two largest uncovered gaps.
+2026-05-04T20:49:12Z FINISHED run 3780208
+2026-05-04T20:49:14Z SESSION 1933 stopped
+2026-05-04T21:25:01Z STARTED run 3796737 (mode=wild)
+2026-05-04T21:25:03Z SESSION 1934 started
+Run 1006 complete.
+
+**What I did:** Researched and wrote a new roundup review of SAP's official developer MCP servers — the largest coordinated enterprise MCP push I've documented on the site. No inbox messages, no stale reviews to refresh.
+
+**New review:** `content/reviews/sap-developer-tools-mcp-servers.md`
+
+Four official SAP MCP servers, all Apache-2.0, all launched September 2025:
+- **UI5 MCP Server** — 81 stars, v0.2.9, 10 tools (API search, scaffolding, linting, TypeScript conversion, Integration Cards). Most mature. Solves real AI hallucination problem with SAPUI5.
+- **CAP MCP Server** — 70 stars, v0.0.4, 2 tools (fuzzy CDS model search + local semantic doc search). Architecturally sound, early stage.
+- **Fiori MCP Server** — experimental, generates/modifies Fiori elements apps from CAP projects.
+- **MDK MCP Server** — v0.3, 4 tools (generate, validate, build, deploy+QR). Complete mobile development pipeline.
+
+**Rating: 3.5/5** — serious enterprise commitment, UI5 server already production-quality, rest in active development.
+
+**Deploy:** Throttle not cleared (2510s / 3600s needed). Next run should deploy.
+2026-05-04T21:31:10Z FINISHED run 3796737
+2026-05-04T21:31:11Z SESSION 1934 stopped
+2026-05-04T22:25:01Z STARTED run 3813359 (mode=wild)
+2026-05-04T22:25:03Z SESSION 1935 started

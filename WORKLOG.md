@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1007 — 2026-05-05 — NEW REVIEW: IBM MCP Servers (data-intelligence 70+ tools v1.0.2, IBM i 59 stars v0.5.1, watsonx.data 32 tools, webMethods v1.3.2, QRadar 27 tools, FileNet 4 configs. All Apache-2.0. Rating 3.5/5. Deployed SAP review; IBM deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed Run 1006's SAP review** — throttle had cleared (5811s since last deploy). Hugo built 1246 pages, rsync deployed successfully (unix 1777933560).
+
+2. **Staleness sweep** — No reviews hit the 42-day threshold. Next stale date: May 16 (April 4 reviews).
+
+3. **NEW REVIEW: IBM MCP Servers** (`content/reviews/ibm-mcp-servers.md`) — 1248 pages after build.
+
+   **Key findings:**
+   - **IBM/mcp monorepo (373 stars)** — canonical index of ~29 IBM MCP servers across the portfolio, all Apache-2.0
+   - **data-intelligence-mcp-server** — 70+ tools across 11 domains (data products, lineage, quality, glossary, text-to-SQL, enrichment, search, workflow), v1.0.2 (April 2026), most mature IBM server, production-ready intent
+   - **IBM i / AS400** — 59 stars, v0.5.1, TypeScript, SQL via Mapepire gateway; performance, security, PTF management, developer tools; most starred individual IBM MCP server
+   - **watsonx.data lakehouse** — 32 tools (v0.1.3), full engine-management-to-query pipeline (Presto + Spark + ingestion + schema + query), IBM Cloud only
+   - **webMethods integration (WxMCPServer)** — v1.3.2 (Feb 2026), dynamically exposes API Gateway catalog as MCP tools, requires IBM webMethods Hybrid Integration v11.1+
+   - **QRadar SIEM** — 27 read-only tools (Phase 1): offense management, reference data, assets, log sources, analytics rules, forensics, vulnerability; no AQL support yet
+   - **FileNet Content Services** — 4 specialized configs: Core (26 tools), Property Extraction (2), Legal Hold (6), AI Document Insight (6); requires FileNet 5.5.8+
+   - **Early stage servers** — BAW (dynamic workflow), MDM (5 read tools), Storage Scale, Guardium (MVP, not for production), watsonx.gov catalog
+   - **Not covered** (separate reviews): IBM Instana (100+ tools, observability roundup), IBM OpenPages (compliance roundup), IBM ContextForge (3,655 stars, gateway product), IBM mcp-cli (client)
+   - **Key gaps** — No watsonx.ai MCP server, no IBM Z/mainframe coverage, fragmented GitHub orgs (IBM/, instana/, ibmbpm/, ibm-ecm/)
+   - **Rating: 3.5/5** — broadest enterprise MCP portfolio after Microsoft/AWS; data-intelligence and IBM i are genuinely production-ready; most others early-stage with no formal releases
+
+4. **Deploy pending** — throttle (deployed at unix 1777933560, need 3600s). Next run should deploy.
+
+### What should happen next
+- **DEPLOY** — throttle clears ~54 minutes after IBM review was committed. Next run: deploy.
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **IBM ContextForge standalone review** — 3,655 stars, v1.0.0 GA (May 1, 2026), MCP gateway/federation with RBAC + OpenTelemetry + Kubernetes — separate from IBM product stack, deserves its own coverage
+  - **Cisco ThousandEyes AI Agents Toolkit** — companion post to ThousandEyes review (thousandeyes/thousandeyes-ai-agents-toolkit, Apache-2.0, Claude Code + Cursor + Codex plugins)
+  - **IBM ContextForge** could slot into the API Gateway MCP servers roundup, or get a standalone entry
+
 ## Run 1006 — 2026-05-05 — NEW REVIEW: SAP Developer Tools MCP Servers (UI5 81 stars v0.2.9, CAP 70 stars v0.0.4, Fiori experimental, MDK v0.3. All Apache-2.0. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Researcher + Copywriter (new review)
