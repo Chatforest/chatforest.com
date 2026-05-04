@@ -3,7 +3,9 @@
 > Twilio's official MCP server exposes nearly 2,000 API endpoints across SMS, voice, video, conversations, and 40+ services to AI agents.
 
 
-**At a glance:** [GitHub](https://github.com/twilio-labs/mcp) — 96 stars, TypeScript, ISC license, 101 commits, ~2,000 API endpoints across 40+ services, stdio + Streamable HTTP transport, API key auth. Official first-party from [Twilio Labs](https://github.com/twilio-labs) ([Twilio Inc.](https://www.twilio.com/), NYSE: TWLO).
+**At a glance:** [GitHub](https://github.com/twilio-labs/mcp) — 103 stars, TypeScript, ISC license, ~2,000 API endpoints across 40+ services, stdio + Streamable HTTP transport, API key auth. Official first-party from [Twilio Labs](https://github.com/twilio-labs) ([Twilio Inc.](https://www.twilio.com/), NYSE: TWLO).
+
+> **May 4, 2026 refresh** (42 days since original): Stars 96 → 103. Still alpha, npm at v0.7.0. The big change: Twilio's first-mover advantage in CPaaS MCP is gone — Vonage, Sinch, and Bandwidth have all launched official MCP servers since the original review. The comparison table below has been updated to reflect the new competitive landscape. Rating drops 3.5 → 3/5.
 
 Twilio's MCP server is an **open-source, first-party monorepo** that gives AI agents access to nearly all of Twilio's communications APIs — SMS, voice, video, conversations, TaskRouter, Studio, Serverless, and dozens more. Rather than hand-crafting individual MCP tools, the server auto-generates them from Twilio's OpenAPI specifications, exposing ~2,000 endpoints. The tradeoff: you need to filter aggressively with `--services` and `--tags` flags, because no LLM context window can handle all of them at once.
 
@@ -139,7 +141,12 @@ The paradox: MCP improved reliability and speed but **increased costs ~27.5%** d
 | April 1, 2025 | Official launch blog post |
 | May 21, 2025 | Serverless deployment tutorial published |
 | Mid-2025 | Performance benchmarking study published |
-| Ongoing | 101 commits, 10 open issues, 9 open PRs |
+| December 3, 2025 | Vonage launches official MCP tooling server — first major competitor |
+| Late 2025 | Sinch launches production-ready MCP server |
+| 2025–2026 | Bandwidth launches MCP server with official docs |
+| April 12, 2026 | Last commit to twilio-labs/mcp — 103 stars |
+| April 2026 | npm v0.7.0 published — still under @twilio-alpha scope |
+| May 2026 | Still alpha; no beta/GA announcement |
 
 ## Twilio Pricing
 
@@ -160,18 +167,19 @@ Twilio offers a free trial with limited credits for new accounts. No free tier f
 
 ## How It Compares
 
-| Feature | Twilio MCP | Vonage API (no MCP) | Plivo (no MCP) | Sinch (no MCP) |
-|---------|-----------|-------------------|----------------|----------------|
-| **MCP server** | Yes, official | No | No | No |
-| **API endpoints** | ~2,000 | ~200+ | ~100+ | ~150+ |
-| **SMS pricing (US)** | $0.0083 | $0.0068 | $0.0055 | Varies |
-| **Voice pricing (US)** | $0.014/min | $0.0127/min | $0.010/min | Varies |
-| **Open source** | Yes (ISC) | N/A | N/A | N/A |
-| **Transport** | stdio + Streamable HTTP | N/A | N/A | N/A |
+| Feature | Twilio MCP | Vonage MCP | Sinch MCP | Bandwidth MCP |
+|---------|-----------|-----------|-----------|--------------|
+| **MCP server** | Yes, official (alpha) | Yes, official (stable) | Yes, official (production) | Yes, official (production) |
+| **Launch date** | March 2025 | December 2025 | Late 2025 | 2025 |
+| **API endpoints** | ~2,000 | SMS, voice, WhatsApp, RCS | SMS, WhatsApp, RCS, email, voice | Voice, messaging |
+| **SMS pricing (US)** | $0.0083 | $0.0068 | Varies | Varies |
+| **Voice pricing (US)** | $0.014/min | $0.0127/min | Varies | Varies |
+| **Open source** | Yes (ISC) | Yes | Yes | Yes |
+| **Transport** | stdio + Streamable HTTP | MCP-compliant | MCP-compliant | MCP-compliant |
+| **Status** | Alpha | Stable | Production-ready | Production-ready |
 | **Free tier** | Trial credits only | Trial credits | Trial credits | Trial credits |
-| **Channels** | SMS, voice, video, email, chat | SMS, voice, video | SMS, voice | SMS, voice, video |
 
-As of this writing, **none of Twilio's major CPaaS competitors offer official MCP servers**. This gives Twilio a significant first-mover advantage in the AI agent ecosystem. Third-party community servers exist for SMS via various providers, but nothing comparable in scope.
+**As of May 2026, Twilio's first-mover advantage has been significantly eroded.** Vonage launched an official MCP tooling server in December 2025 — open-source, MCP-compliant, works with Claude/Cursor/VS Code. Sinch followed with a production-ready MCP server covering SMS, WhatsApp, RCS, email, and voice verification. Bandwidth launched its own MCP server with official documentation. Plivo has community implementations. Twilio still leads on raw API breadth (~2,000 endpoints) but is now competing on a level playing field for basic CPaaS agent tasks — while remaining the only one still labeled alpha.
 
 ## Known Issues
 
@@ -193,11 +201,13 @@ As of this writing, **none of Twilio's major CPaaS competitors offer official MC
 
 ## Bottom Line
 
-The Twilio MCP server is the **most ambitious communications MCP integration available** — no other CPaaS provider has anything close to exposing ~2,000 API endpoints via MCP. The OpenAPI-to-MCP generator approach is clever: it scales automatically as Twilio adds APIs, and the generic `openapi-mcp-server` package can be reused for any OpenAPI spec.
+The Twilio MCP server is the **most ambitious communications MCP integration in terms of raw API breadth** — no other CPaaS provider exposes ~2,000 endpoints via MCP. The OpenAPI-to-MCP generator approach is clever: it scales automatically as Twilio adds APIs, and the generic `openapi-mcp-server` package can be reused for any OpenAPI spec.
 
 The practical challenge is curation. Loading everything at once is counterproductive, so you're essentially building a custom MCP configuration per use case by filtering services and tags. The alpha status and 27.5% cost increase in benchmarks are real concerns, but the 100% success rate (vs 92.3% without MCP) and 20.5% speed improvement are meaningful for production workflows.
 
-If you're already on Twilio and want AI agents to manage your communications infrastructure, this is the clear choice. If you're choosing a CPaaS provider partly based on AI agent support, Twilio's first-mover MCP advantage is worth factoring in.
+**The landscape has shifted.** As of May 2026, if you simply need to send an SMS or make a voice call via an AI agent, Vonage and Sinch offer stable, production-ready MCP alternatives. Bandwidth has official MCP docs. Twilio is still the right choice if you need deep integrations (TaskRouter, Studio, Serverless, Flex, SuperSIM, Verify, Sync), if you're already on Twilio, or if you want the broadest possible API surface. But the "Twilio is the only CPaaS with an MCP server" argument no longer holds.
 
-**Rating: 3.5 / 5** — Massive API surface and genuine first-mover advantage in CPaaS MCP integration. Open-source with a reusable OpenAPI generator. Loses points for alpha status with uncertain roadmap, context window challenges requiring manual filtering, 27.5% cost increase in benchmarks, credential handling concerns, and no competing MCP servers to pressure improvements. The "expose everything via OpenAPI" approach trades depth for breadth — you get coverage of 40+ services but no hand-tuned tool descriptions or agent-friendly abstractions.
+If you're already on Twilio and want AI agents to manage your communications infrastructure, this remains the clear choice. If you're choosing a CPaaS provider partly based on AI agent support, the competitive field has leveled — evaluate all four (Twilio, Vonage, Sinch, Bandwidth) rather than defaulting to Twilio on MCP grounds alone.
+
+**Rating: 3 / 5** *(updated May 2026, down from 3.5)* — Massive API surface and reusable OpenAPI generator approach remain genuine strengths. Drops half a point because: the first-mover CPaaS MCP advantage is gone (Vonage, Sinch, Bandwidth all launched stable/production-ready servers), Twilio remains in alpha while competitors ship production releases, and the April 12 last commit suggests development has slowed. Core tradeoffs unchanged: context window challenges, 27.5% cost increase in benchmarks, credential exposure in CLI args. If you're already a Twilio customer, use it — but don't choose Twilio over competitors specifically for MCP.
 

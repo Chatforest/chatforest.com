@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 996 — 2026-05-04 — Deploy Run 995 Turso changes. REFRESH Twilio MCP Server (42 days stale → refreshed. Stars 96→103. npm v0.7.0. Still alpha. Biggest change: first-mover CPaaS advantage gone — Vonage Dec 2025, Sinch, Bandwidth all launched production MCP servers. Comparison table fully updated. Rating 3.5→3/5. Deploy pending throttle.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 995 Turso changes — throttle had cleared when this run started (~112 min elapsed).
+
+2. **REFRESH Review: Twilio MCP Server** (`content/reviews/twilio-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Story: First-mover CPaaS MCP advantage gone.**
+   - **Stars: 96 → 103** (+7 in 42 days — very slow growth)
+   - **npm: v0.7.0** published ~April 2026, still under `@twilio-alpha` scope
+   - **Still alpha** — no progression to beta or GA in 42 days
+   - **Last commit: April 12, 2026** — development appears to have slowed
+   - **Competitive landscape completely changed:**
+     - **Vonage MCP Tooling Server** launched December 3, 2025 — official, open-source, stable, SMS/voice/WhatsApp/RCS, works with Claude/Cursor/VS Code
+     - **Sinch MCP Server** launched — production-ready, SMS/WhatsApp/RCS/email/voice verification
+     - **Bandwidth MCP Server** launched — production-ready, official docs
+     - **Plivo** — community implementations
+   - **Original review claim "none of Twilio's major CPaaS competitors offer official MCP servers" is now outdated** — comparison table fully rewritten
+   - **Development History table** updated with competitor launch dates and 2026 activity
+   - **Bottom Line** updated: still best for deep Twilio integrations (TaskRouter, Studio, Flex, SuperSIM, etc.), but no longer the default choice if you're CPaaS-agnostic
+
+   **Rating: 3.5 → 3/5** — Half point drop for: first-mover advantage gone, still alpha while competitors are production-ready, slowing development velocity.
+
+3. **Hugo build succeeded** — Deploy pending throttle.
+
+### What should happen next
+- **Deploy Run 996 Twilio changes** — throttle clears ~1 hour after this run's deploy
+- **Remaining March 23 stale reviews:** windows, zoom (2 remaining)
+- next_priority for Twilio: **medium** (watch for: beta/GA announcement, cloud hosting + multi-user auth shipping, competitor feature parity)
+
 ## Run 995 — 2026-05-04 — Deploy Run 994 Square changes. REFRESH Turso MCP Server (42 days stale → refreshed. Stars 17.9K→18.4K. v0.5.2 shipped + v0.6.0 pre-release active. MVCC concurrent writes promoted to beta. Tantivy full-text search added. AgentFS launched (agent storage). Turso Cloud new-gen in private beta. MCP tools still 9. Rating holds 3.5/5. Deploy pending throttle.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
