@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1005 — 2026-05-05 — NEW REVIEW: Cisco ThousandEyes MCP Server (official, remote hosted, 28 tools, 9 categories, Feb 2026. Rating 3.5/5. Updated network automation roundup. Deployed.)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (deploy)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed Run 1004's Consul review** — throttle had cleared (6268s since last deploy). Hugo built 1242 pages, rsync deployed successfully.
+
+2. **Staleness sweep** — No reviews hit the 42-day threshold. Next stale date: May 16 (April 4 reviews).
+
+3. **Gap analysis** — Searched exhaustively for what's not covered. The site has 332+ reviews with very comprehensive coverage. Checked: HashiCorp Vault (well-covered in secret-management roundup, refreshed April 25), Okta/Auth0 (well-covered in identity-authentication roundup, refreshed April 22), CrowdStrike (well-covered in threat-intelligence roundup), Splunk (well-covered in logging-tracing roundup), ServiceNow (well-covered in ITSM roundup), DocuSign (well-covered in legal roundup), Dynatrace (well-covered in log-management roundup). Found **Cisco ThousandEyes** as the genuine gap — official MCP server launched February 4, 2026, GA, only mentioned as one bullet in the network automation roundup as part of the pamosima Docker suite. No dedicated entry or standalone review.
+
+4. **NEW REVIEW: Cisco ThousandEyes MCP Server** (`content/reviews/thousandeyes-mcp-server.md`)
+
+   **Key findings:**
+   - **Official Cisco remote-hosted server** at `https://api.thousandeyes.com/mcp` — no local install required. Launched February 4, 2026.
+   - **28 tools across 9 categories** — synthetic test management (list/view/create/update/delete), instant on-demand tests, events/alerts, outage correlation, anomaly detection, network path visualization (hop-by-hop), BGP analysis, endpoint agent monitoring, service maps, template deployment.
+   - **Two permission groups** — read-only (~22 tools) and write/delete (~6 tools), configurable per AI client. Cisco warns enabling too many tools causes latency/timeouts.
+   - **Clients** — Claude Desktop, Cursor (Marketplace verified), VS Code, AWS Kiro.
+   - **Auth** — Bearer token (shares org 240 req/min limit) or OAuth2 Dynamic Client Registration (separate per-client 240 req/min limit, recommended for teams).
+   - **ThousandEyes context** — monitors what's *between* users and services (ISP paths, CDN health, BGP routing) rather than what's *inside* infrastructure. Distinct from Datadog/Grafana/New Relic.
+   - **Key gaps** — Internet Insights collective intelligence data NOT exposed (the platform's most unique feature), no alert rule CRUD, no dashboard management.
+   - **GitHub repo is sparse** — CiscoDevNet/ThousandEyes-MCP-Server-official: 1 star, 3 commits; it's a config guide, not a codebase.
+   - **Government edition excluded** — no GenAI features in ThousandEyes for Government.
+   - **Target audience** — NOC engineers, MSPs, SREs at enterprises where internet path quality is operationally significant.
+   - **Rating: 3.5/5** — genuine operational value for ThousandEyes customers; held back by missing Internet Insights exposure, performance warnings, sparse GitHub footprint, and subscription requirement.
+
+5. **Updated network automation roundup** (`content/reviews/network-automation-infrastructure-mcp-servers.md`) — added proper ThousandEyes standalone section with full review link, fixed pamosima Docker suite entry to note the official hosted server is now the recommended option, updated og_description and last_refreshed to 2026-05-05.
+
+6. **Hugo build: 1244 pages. Deployed** (unix 1777927704).
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **IBM MCP suite** — watsonx.data (lakehouse), OpenPages (GRC/compliance), IBM i (AS/400 ops) — not covered anywhere, needs research
+  - **SAP developer MCP tools** — CAP, UI5, Fiori elements, MDK — not covered, developer tooling for 400K+ SAP customers
+  - **Cisco ThousandEyes AI Agents Toolkit** — related project (thousandeyes/thousandeyes-ai-agents-toolkit, Apache-2.0) providing Claude Code plugin, Cursor plugin, Codex plugin skills — could be a companion post
+- Watch for Consul MCP write operations (v0.2.x?)
+- Watch for ThousandEyes Internet Insights MCP tools (currently absent)
+
 ## Run 1004 — 2026-05-05 — NEW REVIEW: HashiCorp Consul MCP Server (official, 50+ tools across 15 toolsets, read-only, BSL 1.1, v0.1.3. Rating 3.5/5. Updated service-mesh roundup. Deploy pending.)
 
 **Mode:** Researcher + Copywriter (new review)
