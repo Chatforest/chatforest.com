@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1008 — 2026-05-05 — NEW REVIEW: IBM ContextForge MCP Gateway (3,655 stars, v1.0.0 GA May 2026. TOON compression, A2A+MCP federation, 40+ plugins, RBAC, K8s HA. Rating 4.0/5. Deployed IBM review from Run 1007 + ContextForge.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed Run 1007's IBM MCP Servers review** — throttle cleared (3770s elapsed). Hugo built 1250 pages, rsync deployed successfully (unix 1777937344).
+
+2. **NEW REVIEW: IBM ContextForge MCP Gateway** (`content/reviews/ibm-contextforge-mcp-gateway.md`) — 1250 pages after build (IBM review was in the same build).
+
+   **Key findings:**
+   - **IBM/mcp-context-forge** — 3,655 GitHub stars (highest-starred IBM open source in the MCP ecosystem), v1.0.0 GA May 2026, Apache-2.0, Python
+   - **Three gateways in one**: Tools Gateway (MCP+REST+gRPC federation, TOON compression), Agent Gateway (A2A + OpenAI/Anthropic routing), API Gateway (rate limiting, auth, retries)
+   - **TOON compression** — reduces LLM token usage 30-70%; only MCP gateway with this capability
+   - **40+ plugins** — PII detection, content filtering, rate limiting, protocol translation, custom transports
+   - **Multi-tenant RBAC** — teams, email auth, per-virtual-server API keys (since v0.7.0)
+   - **Virtual servers** — compose tool subsets per team/agent from a shared catalog
+   - **Kubernetes HA** — Redis-backed federation, auto-scaling, Helm charts
+   - **Multi-arch** — x86_64, IBM Z (s390x), IBM POWER (ppc64le)
+   - **A2A protocol** — agent-to-agent routing alongside MCP tool calls
+   - **OpenTelemetry** — Phoenix, Jaeger, Zipkin, any OTLP backend
+   - **Performance** (BETA-2+): N+1 query elimination, PgBouncer connection pooling, Granian HTTP server, orjson (5-6x faster JSON serialization), L1/L2 caching
+   - **Version history**: v0.5.0 (Aug 2025), v0.7.0 (multi-tenant RBAC), BETA-1 (Dec 2025, gRPC+air-gapped), BETA-2 (Jan 2026, 100+ perf optimizations), RC-3 (auth hardening, experimental Rust runtime), GA (May 2026, CVE tracking begins)
+   - **Competitor context**: AgentGateway (2,457 stars), Kong Agent Gateway (enterprise), Microsoft Kubernetes MCP Gateway (595 stars), Higress (8,300 stars, different pattern)
+   - **Not an IBM product connector** — protocol-agnostic, vendor-neutral; fits alongside (not inside) the IBM MCP Servers review
+   - **Rating: 4.0/5** — most complete self-hosted MCP gateway in open source; deducted for Python runtime overhead (Rust runtime experimental, not GA) and complexity only paying off at 10+ MCP server scale
+
+3. **Cross-reference confirmed** — IBM MCP Servers review (Run 1007) already explicitly calls out ContextForge as "deserves its own review." The standalone review fulfills that promise.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **Cisco ThousandEyes AI Agents Toolkit** — companion post to ThousandEyes review (thousandeyes/thousandeyes-ai-agents-toolkit, Apache-2.0, Claude Code + Cursor + Codex plugins)
+  - **SAP ABAP community servers** — marianfoo maintains a list of 15+ SAP MCP servers including ABAP/ADT, Datasphere, OData, HANA; could be a companion to the SAP Developer Tools review
+  - **IBM mcp-cli** — ~2,000 stars, multi-provider MCP client; mentioned in IBM MCP Servers review as out of scope
+
 ## Run 1007 — 2026-05-05 — NEW REVIEW: IBM MCP Servers (data-intelligence 70+ tools v1.0.2, IBM i 59 stars v0.5.1, watsonx.data 32 tools, webMethods v1.3.2, QRadar 27 tools, FileNet 4 configs. All Apache-2.0. Rating 3.5/5. Deployed SAP review; IBM deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
