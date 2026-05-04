@@ -1,6 +1,6 @@
 # SQLite MCP Servers — From Anthropic's Reference Server to 139-Tool Powerhouses and Edge Database Solutions
 
-> SQLite MCP servers reviewed: Anthropic's archived reference server (mcp-server-sqlite), jparkerweb/mcp-sqlite (93 stars, 8 tools), sqlite-explorer (104 stars, read-only), DBHub
+> SQLite MCP servers reviewed: Anthropic's archived reference server (mcp-server-sqlite), jparkerweb/mcp-sqlite (101 stars, 8 tools), sqlite-explorer (105 stars, read-only), DBHub
 
 
 SQLite is the most deployed database engine in the world — trillions of active databases across every iPhone, every Android device, every browser, every Mac, every Windows machine, and even the Mars rovers. It's likely used more than all other database engines combined. Part of our **[Databases MCP category](/categories/databases/)**.
@@ -30,7 +30,7 @@ Anthropic built a SQLite MCP server as one of the original reference implementat
 
 It also exposed a `memo://insights` resource — a continuously updated business intelligence memo — and a `mcp-demo` prompt for interactive database exploration.
 
-The PyPI package (`mcp-server-sqlite`) has ~281k total downloads and 7.7k weekly downloads as of March 2026. That's decent adoption, likely driven by tutorials and Claude Desktop setup guides.
+The PyPI package (`mcp-server-sqlite`) has 9,087 weekly downloads and 68,453 monthly downloads as of May 2026 — up from ~7,700 weekly in March 2026. That's decent adoption, likely driven by tutorials and Claude Desktop setup guides, despite the server being archived.
 
 ### Why It's Archived
 
@@ -42,11 +42,11 @@ The archived server still works — it's on PyPI and installable via `uvx mcp-se
 
 | Detail | Info |
 |--------|------|
-| [jparkerweb/mcp-sqlite](https://github.com/jparkerweb/mcp-sqlite) | 93 stars, 12 forks, 31 commits |
+| [jparkerweb/mcp-sqlite](https://github.com/jparkerweb/mcp-sqlite) | 101 stars, 12 forks, 34 commits |
 | Language | JavaScript (100%) |
 | Transport | stdio |
 | License | MIT |
-| Latest | v1.0.8 (March 2026) |
+| Latest | v1.0.9 (April 2026) |
 
 This is the most polished dedicated SQLite MCP server. It provides 8 tools covering full CRUD operations:
 
@@ -70,7 +70,7 @@ This is the most polished dedicated SQLite MCP server. It provides 8 tools cover
 
 **Parameter binding.** The `query` tool supports parameterized values, preventing SQL injection. This matters when agents are constructing queries from user input.
 
-**Active maintenance.** 8 releases through March 2026, with v1.0.8 being the latest. The project is alive and responding to issues.
+**Active maintenance.** v1.0.9 (April 4, 2026) shipped a security fix for a SQL injection vulnerability (CWE-89) affecting all CRUD operations. The project is alive and actively patching security issues.
 
 **IDE integration.** Documented setup for Cursor, VS Code, and Claude Desktop. The target audience is developers who want SQLite access from their AI coding assistant.
 
@@ -86,7 +86,7 @@ This is the most polished dedicated SQLite MCP server. It provides 8 tools cover
 
 | Detail | Info |
 |--------|------|
-| [hannesrudolph/sqlite-explorer-fastmcp-mcp-server](https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server) | 104 stars, 26 forks, 9 commits |
+| [hannesrudolph/sqlite-explorer-fastmcp-mcp-server](https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server) | 105 stars, 26 forks, 9 commits |
 | Language | Python (100%) |
 | Transport | stdio |
 | License | Not specified |
@@ -108,7 +108,7 @@ The most-starred dedicated SQLite MCP server takes a safety-first approach: **re
 
 ### What Doesn't Work Well
 
-**Only 9 commits.** The project appears feature-complete but static. No updates since late 2024.
+**Only 9 commits.** The project appears feature-complete but static. No updates since late 2024 — still dormant through May 2026.
 
 **No write capabilities.** If you need an agent to create tables or insert data, you need a different server.
 
@@ -122,10 +122,10 @@ For many use cases, the best SQLite MCP server isn't a dedicated one — it's a 
 
 | Detail | Info |
 |--------|------|
-| [bytebase/dbhub](https://github.com/bytebase/dbhub) | 2,400+ stars, ~200 forks, ~480 commits |
+| [bytebase/dbhub](https://github.com/bytebase/dbhub) | 2,700 stars, ~200 forks, ~513 commits |
 | Language | TypeScript |
 | License | MIT |
-| Latest | v0.19.0 |
+| Latest | Active (last push May 2026) |
 | Databases | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite |
 
 DBHub is the most popular multi-database MCP server. For SQLite, it connects via `sqlite:///path/to/database.db` or `sqlite:///:memory:` and provides:
@@ -139,17 +139,17 @@ You can connect to multiple databases simultaneously via TOML configuration. For
 
 | Detail | Info |
 |--------|------|
-| [googleapis/genai-toolbox](https://github.com/googleapis/genai-toolbox) | 13,500+ stars, Go |
+| [googleapis/genai-toolbox](https://github.com/googleapis/genai-toolbox) | 14,900 stars, Go |
 | License | Apache 2.0 |
+| Latest | v1.1.0 (April 13, 2026) |
 | Databases | Cloud SQL, AlloyDB, Spanner, SQLite, and more |
 
-Google's multi-database toolbox supports SQLite as a local data source. It's designed primarily for Google Cloud databases but works with local SQLite files too.
+Google's multi-database toolbox supports SQLite as a local data source. It's designed primarily for Google Cloud databases but works with local SQLite files too. v1.1.0 (April 13, 2026) added vector assist tools for Cloud SQL Postgres.
 
 ### Other Multi-Database Options
 
-- **[mcp-alchemy](https://github.com/runekaagaard/mcp-alchemy)** (397 stars, Python, MPL 2.0) — SQLAlchemy-based, supports SQLite plus 7 other databases
-- **[universal-db-mcp](https://github.com/nicholasgriffintn/universal-database-mcp)** (674 stars) — Multi-database MCP with SQLite support
-- **[executeautomation](https://github.com/nicholasgriffintn/universal-database-mcp)** (326 stars) — Automation-focused multi-database MCP
+- **[mcp-alchemy](https://github.com/runekaagaard/mcp-alchemy)** (401 stars, Python, MPL 2.0) — SQLAlchemy-based, supports SQLite plus 7 other databases
+- ~~**universal-db-mcp**~~ — Repository deleted as of May 2026; no longer available
 
 ## Turso/libSQL — Edge SQLite
 
@@ -170,10 +170,10 @@ Turso itself has a built-in MCP server in its CLI with 9 tools, so if you're alr
 
 | Server | Stars | Language | Notable |
 |--------|-------|----------|---------|
-| [panasenco/mcp-sqlite](https://github.com/panasenco/mcp-sqlite) | 18 | Python | Datasette-compatible metadata, canned query tools |
+| [panasenco/mcp-sqlite](https://github.com/panasenco/mcp-sqlite) | 21 | Python | Datasette-compatible metadata, canned query tools |
 | [StacklokLabs/sqlite-mcp](https://github.com/StacklokLabs/sqlite-mcp) | 15 | Go | SSE transport, optional read-only mode |
 | [rvarun11/sqlite-mcp](https://github.com/rvarun11/sqlite-mcp) | 7 | Go | Schema inspection + read/write (3 tools) |
-| [neverinfamous/db-mcp](https://github.com/neverinfamous/db-mcp) | 1 | TypeScript | 139 tools, OAuth 2.1, WASM backend, "Code Mode" for 90% token savings |
+| [neverinfamous/db-mcp](https://github.com/neverinfamous/db-mcp) | 4 | TypeScript | 139 tools, OAuth 2.1, WASM backend, "Code Mode" for 90% token savings |
 | [sqlitecloud/sqlitecloud-mcp-server](https://github.com/sqlitecloud/sqlitecloud-mcp-server) | 1 | TypeScript | SQLite Cloud hosted databases, 10 tools (experimental) |
 
 **neverinfamous/db-mcp** deserves special mention — it's the successor to a deprecated 73-tool SQLite server, rewritten in TypeScript with 139 tools, 1,911 unit tests, 1,136 E2E tests, OAuth 2.1 auth, and a "Code Mode" that lets agents run sandboxed JavaScript for up to 90% token savings. It's also the only SQLite MCP server with HTTP/SSE transport and OAuth authentication. The catch: 1 star. Nobody's using it yet. Whether that changes remains to be seen.
@@ -186,23 +186,25 @@ Turso itself has a built-in MCP server in its CLI with 9 tools, so if you're alr
 
 1. **Anthropic's reference server is archived** — The original SQLite MCP server by Anthropic is no longer maintained in the active repo. Still works via PyPI but won't receive updates.
 
-2. **No canonical community leader** — The most-starred dedicated server (sqlite-explorer) has 104 stars. For comparison, PostgreSQL's top server (Postgres MCP Pro) has 2,400+ stars. There's no gravitational center.
+2. **No canonical community leader** — The most-starred dedicated server (sqlite-explorer) has 105 stars. For comparison, PostgreSQL's top server (Postgres MCP Pro) has 2,400+ stars. There's no gravitational center.
 
 3. **Read-only vs full-access split** — Some servers enforce read-only (sqlite-explorer), others allow full writes (jparkerweb, Anthropic's). There's no server with a clean, configurable read/write toggle that's also well-adopted.
 
 4. **Most servers are feature-light** — The typical SQLite MCP server has 3–6 tools: list tables, describe table, run query. Only db-mcp (139 tools) and jparkerweb (8 tools) go significantly beyond this.
 
-5. **No performance analysis** — Unlike PostgreSQL (Postgres MCP Pro with health monitoring) or SQL Server (PerformanceMonitor with 63 tools), no SQLite MCP server provides performance analysis, query plan explanation, or optimization suggestions.
+5. **SQL injection patched in top dedicated server** — jparkerweb/mcp-sqlite v1.0.9 (April 4, 2026) fixed CWE-89 SQL injection vulnerabilities across all CRUD operations. Users on v1.0.8 or earlier should upgrade immediately.
 
-6. **Security varies wildly** — Xexr/mcp-libsql has 244 tests and multi-layer injection prevention. Most others have no query validation at all. There's no standard approach.
+6. **No performance analysis** — Unlike PostgreSQL (Postgres MCP Pro with health monitoring) or SQL Server (PerformanceMonitor with 63 tools), no SQLite MCP server provides performance analysis, query plan explanation, or optimization suggestions.
 
-7. **License gaps** — sqlite-explorer (104 stars) has no license specified. Several smaller servers also lack license information. This blocks enterprise adoption.
+7. **Security varies wildly** — Xexr/mcp-libsql has 244 tests and multi-layer injection prevention. Most others have no query validation at all. There's no standard approach.
 
-8. **Multi-database servers may be better** — DBHub (2.4k stars) and genai-toolbox (13.5k stars) provide SQLite support alongside other databases, with larger communities and more active maintenance than any dedicated server.
+8. **License gaps** — sqlite-explorer (105 stars) has no license specified. Several smaller servers also lack license information. This blocks enterprise adoption.
 
-9. **Turso/libSQL ecosystem is early** — The most-starred Turso MCP server has 20 stars. Given Turso's momentum in the edge SQLite space, this will likely grow, but it's immature today.
+9. **Multi-database servers may be better** — DBHub (2,700 stars) and genai-toolbox (14,900 stars) provide SQLite support alongside other databases, with larger communities and more active maintenance than any dedicated server.
 
-10. **No official backing** — SQLite itself is maintained by a small team (D. Richard Hipp and colleagues) with no MCP involvement. Unlike Redis (3 official servers), MongoDB (1 official), or even Microsoft (experimental SQL Server MCP), there's no vendor-backed SQLite MCP server. Anthropic's was the closest thing, and it's archived.
+10. **Turso/libSQL ecosystem is early** — The most-starred Turso MCP server has 20 stars. Given Turso's momentum in the edge SQLite space, this will likely grow, but it's immature today.
+
+11. **No official backing** — SQLite itself is maintained by a small team (D. Richard Hipp and colleagues) with no MCP involvement. Unlike Redis (3 official servers), MongoDB (1 official), or even Microsoft (experimental SQL Server MCP), there's no vendor-backed SQLite MCP server. Anthropic's was the closest thing, and it's archived.
 
 ### Database MCP Category Comparison
 
@@ -212,7 +214,7 @@ With six database reviews now complete, here's how they compare:
 |---------|--------|-----------|---------|-------|-------|------------|
 | **Rating** | **3.5/5** | **4.5/5** | **4/5** | **4/5** | **3.5/5** | **3.5/5** |
 | Official server | Archived (Anthropic) | No official | Yes (970 stars, 41 tools) | Yes (458 stars, 25+ tools) | No (Oracle absent) | Experimental only |
-| Top dedicated stars | 104 | 2,400+ | 970 | 458 | 1,400 | 323 |
+| Top dedicated stars | 105 | 2,400+ | 970 | 458 | 1,400 | 323 |
 | Total servers | 15+ | 10+ | 5+ | 10+ | 10+ | 15+ |
 | Vector search MCP | Via db-mcp/libSQL | Limited | Yes (Voyage AI) | Yes (built-in) | No | No |
 | Performance tools | None | Postgres MCP Pro | Performance Advisor | Server info only | None | PerformanceMonitor (76 tools) |
@@ -227,7 +229,7 @@ SQLite has the most total MCP servers but the lowest top-server adoption. The ec
 | Aspect | Detail |
 |--------|--------|
 | Origin | Created by D. Richard Hipp in 2000 for the U.S. Navy |
-| Latest version | SQLite 3.51.3 (March 13, 2026); 3.52.0 withdrawn for compatibility issues |
+| Latest version | SQLite 3.53.0 (April 9, 2026) — WAL-reset corruption fix, new Query Result Formatter (QRF) library; 3.52.0 was withdrawn for compatibility issues |
 | License | Public domain (no copyright — one of the few major software projects with this status) |
 | Market position | Most deployed database engine in the world (trillions of instances), 3.18% of relational DB market by vendor usage, 1.9% of DBMS market |
 | Deployment | Every iPhone, Android, Mac, Windows 10+, Chrome, Firefox, Safari; Airbus A350; Mars rovers |
@@ -242,13 +244,13 @@ This trend suggests the SQLite MCP ecosystem will grow significantly. As more te
 
 ## The Bottom Line
 
-SQLite's MCP ecosystem is a paradox: the most servers of any database, but no clear winner. Anthropic's reference server is archived. The most-starred dedicated server (sqlite-explorer, 104 stars) is read-only with no updates since 2024. The most capable (db-mcp, 139 tools) has 1 star. The most practical option for many users is a multi-database server like DBHub (2.4k stars) that treats SQLite as one of several supported databases.
+SQLite's MCP ecosystem is a paradox: the most servers of any database, but no clear winner. Anthropic's reference server is archived. The most-starred dedicated server (sqlite-explorer, 105 stars) is read-only with no updates since 2024. The most capable (db-mcp, 139 tools) has 4 stars. The most practical option for many users is a multi-database server like DBHub (2,700 stars) that treats SQLite as one of several supported databases.
 
 For **read-only exploration**, sqlite-explorer-fastmcp is the safest choice — enforced read-only access with row limits and query validation.
 
 For **full CRUD operations**, jparkerweb/mcp-sqlite (93 stars) provides the cleanest dedicated experience with semantic tool names and active maintenance.
 
-For **multi-database workflows**, bytebase/dbhub (2.4k stars) is the strongest option — one server handling SQLite alongside PostgreSQL, MySQL, and SQL Server.
+For **multi-database workflows**, bytebase/dbhub (2,700 stars) is the strongest option — one server handling SQLite alongside PostgreSQL, MySQL, and SQL Server.
 
 For **edge/Turso deployments**, Xexr/mcp-libsql (20 stars) offers the best security posture with 244 tests and connection pooling.
 
@@ -260,7 +262,7 @@ The rating reflects an ecosystem with breadth but not depth. Lots of servers, no
 |---|---|
 | **Category** | SQLite MCP Servers |
 | **Top server** | sqlite-explorer-fastmcp (read-only) / jparkerweb/mcp-sqlite (full CRUD) |
-| **Stars (top)** | ~104 (dedicated) / 2,400+ (multi-db via DBHub) |
+| **Stars (top)** | ~105 (dedicated) / 2,700 (multi-db via DBHub) |
 | **Total servers reviewed** | 15+ |
 | **Best for** | Local databases, embedded apps, edge deployment (Turso/libSQL), development/testing |
 | **Transport** | Mostly stdio (SSE via StacklokLabs, db-mcp) |
@@ -269,5 +271,5 @@ The rating reflects an ecosystem with breadth but not depth. Lots of servers, no
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of March 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
 

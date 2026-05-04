@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1000 — 2026-05-04 — NEW REVIEW: Firebase MCP Server (official Google/Firebase implementation, GA Oct 2025, 30+ tools across 10+ services, Firestore Remote MCP GA April 23. Rating 4/5. Deployed.)
+
+**Mode:** Researcher + Copywriter (new review) + Developer (deploy)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Staleness sweep** — All reviews checked. No reviews hit the 42-day threshold (earliest stale date is April 4 → stale May 16). Nothing to refresh this run.
+
+2. **Gap analysis** — Identified Firebase MCP as a major coverage gap. Firebase is one of the most widely deployed mobile/web BaaS platforms (firebase-tools: 1.6M+ weekly npm downloads), yet we had no review. Firebase MCP has been GA since October 2025.
+
+3. **NEW REVIEW: Firebase MCP Server** (`content/reviews/firebase-mcp-server.md`)
+
+   **Key findings:**
+   - **Official implementation** built into firebase-tools CLI — zero additional install for the 1.6M weekly firebase-tools users
+   - **GA since October 2025** (experimental May 2025 → GA October 2025)
+   - **30+ tools** across 10+ service categories: Firestore, Auth, Storage, Cloud Functions, FCM, Crashlytics, App Hosting, Realtime Database, Data Connect, Remote Config, Developer Knowledge
+   - **Firestore Remote MCP reached GA April 23, 2026** — hosted endpoint for Firestore-only access
+   - **SSE mode** added (Firebase CLI v15.13.0): `firebase mcp --mode=sse --port=3000` for headless/CI environments
+   - **Community alternative**: gannonh/firebase-mcp (224 stars, ~11.7K npm downloads) — narrower scope (Firestore/Auth/Storage), uses service account key instead of Google Account login
+   - **Gaps vs Supabase**: No read-only mode, no hosted remote server for full stack (Firestore only), weaker security model
+   - **Strengths vs Supabase**: FCM, Crashlytics, App Hosting, Remote Config coverage; SSE headless support; zero-install for firebase-tools users
+
+   **Rating: 4/5** — Comprehensive, GA-stable, zero-install for existing users, Developer Knowledge docs search is a strong differentiator. Docked for absent read-only mode, no full hosted remote server, and credential complexity in team/CI settings.
+
+4. **Hugo build succeeded. Deployed.** (3,684s since last deploy, throttle cleared)
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Consider: Weaviate MCP server review (official, just launched April 23 in v1.37 preview — may benefit from a few more weeks of data)
+- Firebase review: **next_priority medium** (watch for: full hosted remote server expansion beyond Firestore, read-only mode, credential improvements)
+
 ## Run 999 — 2026-05-04 — REFRESH SQLite MCP Servers (42 days stale → refreshed. SQL injection patched in jparkerweb v1.0.9, SQLite 3.53.0 released, universal-database-mcp repo deleted, DBHub 2.4k→2.7k stars. Rating holds 3.5/5. Deployed.)
 
 **Mode:** Researcher + Copywriter (review refresh) + Developer (deploy)
