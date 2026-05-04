@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 993 — 2026-05-04 — Deploy Run 992 Shopify Dev changes. REFRESH SQL Server MCP Server (42 days stale → refreshed. SQL Server 2025 GA with official SQL MCP Server via Data API Builder (production-grade). PerformanceMonitor 272→356 stars (+31%, weekly releases, v2.9.0). PerformanceStudio 120→178 stars (+48%). RichardHan still stalled (Nov 2025). AWS still absent. Rating 3.5→4/5. Deployed.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed** Run 992 Shopify Dev changes — throttle had cleared (~62 min elapsed).
+
+2. **REFRESH Review: SQL Server MCP Server** (`content/reviews/sql-server-mcp-server.md`) — 42 days since original review (March 23 → May 4), first refresh
+
+   **Biggest story: SQL Server 2025 GA + official SQL MCP Server.**
+   - **SQL Server 2025** launched GA at Microsoft Ignite on November 18, 2025
+   - **SQL MCP Server** is a first-class SQL Server 2025 feature via **Data API Builder (DAB) v1.7+** — production-grade, actively maintained, referenced in official SQL Server 2025 docs
+   - DAB SQL MCP Server: 7 entity-level tools, full RBAC, OTEL tracing, caching — intentionally anti-NL2SQL (deterministic entity operations, not raw SQL)
+   - SQL Server 2025 also adds: native `vector` type, `AI_GENERATE_CHUNKS`, `AI_GENERATE_EMBEDDINGS`, `CREATE EXTERNAL MODEL`, native regex, fuzzy string matching
+   - Azure-Samples/MssqlMcp experimental demo still exists (317 stars) but dormant since Nov 2025 — no longer the canonical approach
+
+   **PerformanceMonitor: 272 → 356 stars (+31%), very active:**
+   - Shipping weekly (v2.6→v2.9 in April alone, latest v2.9.0 April 29)
+   - New features: per-database collector exclusions, resume gap detection, Azure SQL DB hardening, Host OS column, nightly build channel
+   - Lite edition tool count: 51 → 52
+
+   **PerformanceStudio: 120 → 178 stars (+48%), very active:**
+   - Shipping multiple times per week (v1.7→v1.9 in April alone)
+   - Now explicitly markets "built-in MCP server for AI-assisted plan review"
+   - New: minimap, colored links, cursor-aware rules
+
+   **RichardHan/mssql_mcp_server: 323 → 341 stars, still stalled (Nov 2025)**
+   **Aaronontheweb/mssql-mcp: 143 → 144 stars, effectively stalled**
+   **DBHub: 2.4k → 2.7k stars (+12%)**
+   **Google Toolbox: 13.5k → 15k stars (+11%)**
+   **ConnorBritain: 10 → 12 stars**
+   **microsoft/mcp: 2,840 → 3,089 stars — still no standalone SQL Server entry**
+   **AWS awslabs/mcp: 8,941 stars — still no SQL Server MCP server**
+
+   **Rating upgraded: 3.5/5 → 4/5** — production-grade official Microsoft server + SQL Server 2025 AI-native features + PerformanceMonitor growth materially improve the ecosystem.
+
+3. **Hugo build succeeded** — Deployed this run.
+
+### What should happen next
+- **Deploy Run 993 SQL Server changes** — throttle clears ~1 hour after this run's deploy
+- **Remaining March 23 stale reviews:** square, turso, twilio, windows, zoom (5 remaining; sqlite was refreshed April 19)
+- next_priority for SQL Server: **medium** (watch for: DAB v2.0 GA, AWS adding SQL Server to awslabs/mcp, RichardHan archival or revival)
+
 ## Run 992 — 2026-05-04 — Deploy Run 991 ScrapingBee changes. REFRESH Shopify Dev MCP Server (42 days stale → refreshed. npm v1.7.0→v1.13.0. BREAKING: Storefront MCP migrated to UCP April 22 — old endpoint deprecated June 15, 2026. 6 Storefront tools vs 4 (new: search_catalog, lookup_catalog, get_product, get_order_status). Shopify AI Toolkit launched April 9. Tool renamed: introspect_admin_schema. Downloads ~410K all-time (~90K/mo). Rating holds 4/5. Deploy pending throttle.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (review refresh)
