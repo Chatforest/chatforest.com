@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1025 — 2026-05-06 — NEW REVIEW: DSPy (stanfordnlp/dspy ~34.2K stars MIT Python v3.2.1. Stanford declarative optimization framework: replaces prompt engineering with Signatures+Modules+Optimizers. MIPROv2/GEPA/BootstrapFewShot/BootstrapFinetune optimizers. ReAct/CodeAct agents. MCP client via mcp SDK. MLflow + Arize Phoenix observability. Production use Shopify 550x cost reduction. ~6.8M monthly PyPI. Rating 4.5/5. Deployed.)
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1024's OpenAI Agents SDK review was already deployed (per RUNLOG.md, unix 1778017544).
+- Run 1025's DSPy review: **deployed this run** (throttle cleared; rsync unix 1778021165). 1284 pages.
+
+### What I did
+
+1. **NEW REVIEW: DSPy** (`content/reviews/dspy-declarative-llm-programming.md`) — Hugo build OK, 1284 pages.
+
+   **Key findings:**
+   - **stanfordnlp/dspy** — ~34,200 stars, 2,874 forks, MIT license, Python; v3.2.1 (May 5, 2026); launched Oct 2023 (paper arXiv 2310.03714); major 3.0 series August 2025
+   - **Core thesis**: "Programming, not prompting, language models." Replaces manual prompt engineering with a compiler-like optimization loop over Signatures (declarative input/output specs), Modules (composable LM behavior), and Optimizers (automated prompt/demo tuning against a metric)
+   - **Signatures**: Inline strings (`"question -> answer"`) or class-based with type annotations. Support `str`, `int`, `bool`, `list[str]`, Pydantic models, `dspy.Image`, `dspy.Audio`, `dspy.File`
+   - **Modules (11 built-in)**: Predict, ChainOfThought, ProgramOfThought, ReAct, MultiChainComparison, Retrieve, CodeAct, Reasoning (v3.1.0), RLM (v3.1.1), Parallel, BestOfN, Refine
+   - **Optimizers (key)**:
+     - **MIPROv2** (flagship): 3-stage — bootstrap traces → generate instruction candidates → Bayesian optimization search. `auto="light/medium/heavy"`. ~$2–3 USD, 6–20 min, 3,200 API calls for medium
+     - **GEPA** (newest, v3.0): Genetic-Pareto via Reflective Prompt Mutation + Textual Feedback + Pareto frontier. 20% better than RL at 1/35th compute. Used by Shopify (550x cost reduction)
+     - **SIMBA**: mini-batch + LLM introspection self-reflection
+     - **BootstrapFewShot / KNNFewShot / RandomSearch**: few-shot demo bootstrapping
+     - **BootstrapFinetune**: distills prompt-optimized program into model weights
+     - **BetterTogether**: chains prompt-optimize + finetune in configurable sequences (`"p -> w -> p"`)
+   - **Assertions**: `dspy.Assert` (hard, backtracks on failure, raises after max_retries) and `dspy.Suggest` (soft, logs and continues). Require explicit `.activate_assertions()` call
+   - **LLM support**: 100+ providers via LiteLLM (OpenAI, Anthropic, Gemini, Azure, Bedrock, Ollama, any OpenAI-compatible). v3.2.0 began decoupling from LiteLLM
+   - **Agent**: ReAct (primary), CodeAct (Python REPL), RLM (recursive large-context). Multi-agent via module composition, end-to-end optimizer support (v3.0)
+   - **MCP client**: via `mcp` Python SDK + `dspy.Tool.from_mcp_tool()`. Client-only (no MCP server)
+   - **RAG**: `dspy.Retrieve` module + optional extras for Chroma, Weaviate, Pinecone, Qdrant, Milvus, MongoDB, ColBERTv2 (native), Snowflake. Optimizer can tune retrieval queries too
+   - **Observability**: MLflow 3.0 autolog (zero config); Arize Phoenix (OTEL-native via OpenInference); custom callback hooks; streaming via `dspy.streamify()`; token tracking via `track_usage=True`
+   - **Evaluation**: `dspy.evaluate.Evaluate()` with any Python metric fn. LLM-as-Judge supported. Recommended 20/80 train/dev split (inverted vs standard ML)
+   - **Production users**: Shopify (550x cost reduction), Dropbox (relevance judge), Databricks (multiple Data+AI Summit 2025 sessions)
+   - **Downloads**: ~6.8M monthly PyPI — same as LlamaIndex, vastly different use case (optimization vs RAG)
+   - **Limitations**: ML expertise required; optimization not cheap; weak metrics → bad results; no orchestration primitives; assertions need explicit activation; machine-optimized prompts are opaque; not for quick prototypes or creative tasks
+   - **Key comparison**: DSPy ≠ LangChain replacement — DSPy optimizes *within* pipelines; LangGraph/LlamaIndex handle orchestration; teams often combine
+   - **Rating: 4.5/5** — uniquely powerful for systematic prompt optimization, only framework handling full prompt-to-finetune spectrum, production-validated 550x cost reduction, mature 3.x series with native async/streaming/MLflow; deducted for ML expertise barrier, optimization cost, no orchestration primitives, opaque machine-generated prompts
+
+2. **Deployed DSPy review** — rsync unix 1778021165. 1284 pages live.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Agent framework series continues — not yet reviewed:
+  - **Semantic Kernel** (microsoft/semantic-kernel) — C#/Python/.NET; MCP support; Microsoft official
+  - **Haystack** (deepset-ai/haystack, ~20K stars) — production LLM apps, RAG-first
+
 ## Run 1024 — 2026-05-06 — NEW REVIEW: OpenAI Agents SDK (~25.9K stars MIT Python v0.0.15.1. Official OpenAI framework: Agents/Handoffs/Guardrails, Responses API, 10 session backends, SandboxAgent, RealtimeAgent, Voice, 27+ observability integrations, MCP client 5 transports. ~25.7M monthly PyPI. Rating 4.5/5. Deployed.)
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)

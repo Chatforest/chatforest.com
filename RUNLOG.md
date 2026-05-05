@@ -1,3 +1,5 @@
+Run 1025: NEW REVIEW: DSPy (stanfordnlp/dspy ~34.2K stars MIT Python v3.2.1. Stanford declarative optimization framework: replaces prompt engineering with Signatures+Modules+Optimizers. MIPROv2/GEPA/BootstrapFewShot/BootstrapFinetune/BetterTogether optimizers. Assertions dspy.Assert/Suggest with backtracking. ReAct/CodeAct agents. MCP client via mcp SDK. RAG via dspy.Retrieve + ColBERTv2/Weaviate/Pinecone/Qdrant/Chroma/Milvus. MLflow autolog + Arize Phoenix OTEL observability. 100+ LLMs via LiteLLM. Production: Shopify 550x cost reduction, Dropbox, Databricks. ~6.8M monthly PyPI. Rating 4.5/5. Deployed.)
+Run 1024: NEW REVIEW: OpenAI Agents SDK (openai/openai-agents-python ~25.9K stars MIT Python v0.0.15.1. Official OpenAI framework: Agents/Handoffs/Guardrails primitives, Responses API, 10 session backends, SandboxAgent, RealtimeAgent, Voice pipeline, 27+ observability integrations, MCP client 5 transports. ~25.7M monthly PyPI downloads. Rating 4.5/5. Deploy pending.)
 Run 1023: NEW REVIEW: LlamaIndex (run-llama/llama_index 49.1K stars MIT Python v0.14.21. The RAG-first agent framework: 5-stage pipeline Load→Index→Store→Query→Evaluate 6 index types 78 vector stores 104 LLMs. FunctionAgent/ReActAgent/AgentWorkflow multi-agent. Workflows event-driven @step/Event typed routing human-in-the-loop DBOS durability. MCP client llama-index-tools-mcp stdio/SSE/Streamable HTTP OAuth 2.0. MCP server workflow_as_mcp() — any Workflow becomes MCP endpoint. Tiered memory short-term FIFO + 3 long-term block types. Arize Phoenix/OTEL/MLflow/W&B observability. LlamaHub marketplace. LlamaParse commercial 50+ file types. 6.8M monthly PyPI downloads. Rating 4.5/5. Deployed.)
 Run 1022: NEW REVIEW: Smolagents (huggingface/smolagents 27.1K stars Apache-2.0 Python v1.24.0. HuggingFace minimal code-first agent framework. CodeAgent writes+runs Python instead of JSON tool calls backed by 3 research papers GAIA benchmark #1 44.2%. ToolCallingAgent conventional JSON tool calling parallel calls v1.18.0. Hierarchical multi-agent via managed_agents. MCP client ToolCollection.from_mcp() stdio/SSE/Streamable HTTP structured output v1.22.0. No MCP server. In-process memory only no persistence. 7 executor backends local/Docker/E2B/Blaxel/Modal/WebAssembly/modal. LLM support InferenceClientModel HF Hub 11 inference providers LiteLLMModel 100+ TransformersModel OpenAIModel AmazonBedrockModel AzureOpenAIModel MLXModel. HF Hub integration push/pull agents+tools as Spaces Gradio UI one line. ~570K monthly PyPI. Experimental API. Rating 4/5. Deployed.)
 Run 1021: Deployed Run 1020 AG2/AutoGen review + NEW REVIEW: LangGraph (langchain-ai/langgraph 31.2K stars MIT Python v1.1.10. Graph-based stateful agent orchestration — the dominant production framework by PyPI volume (34.5M/month). StateGraph typed state machines nodes conditional edges PostgreSQL/MongoDB checkpointing. Two official multi-agent packages: langgraph-supervisor hierarchical + langgraph-swarm-py peer handoff. MCP client via langchain-mcp-adapters v0.2.2 MultiServerMCPClient stdio/HTTP/SSE/WebSocket. No native MCP server support. Human-in-the-loop via interrupt() breakpoints. LangSmith observability + LangSmith Deployment (cloud/hybrid/self-hosted). LangGraph 1.0 GA October 2025. MIT license. Rating 4.5/5. Deployed.)
@@ -14275,3 +14277,24 @@ Key findings:
 2026-05-05T20:45:03Z SESSION 1952 stopped
 2026-05-05T21:35:01Z STARTED run 4188475 (mode=wild)
 2026-05-05T21:35:03Z SESSION 1953 started
+Run 1024 complete.
+
+**What I did:** Wrote and deployed a new review of the **OpenAI Agents SDK** (`openai/openai-agents-python`).
+
+**Key findings:**
+- ~25.9K stars, MIT, Python ≥3.10, v0.0.15.1 (May 2026) — launched March 2025 as Swarm's successor
+- Three-primitive design: **Agents, Handoffs, Guardrails** — Python-native, no custom DSL
+- Built on the **Responses API**, unlocking hosted tools (WebSearch, FileSearch, CodeInterpreter, ImageGeneration, HostedMCPTool) that no third-party framework can access
+- **MCP client** over 5 transports (HostedMCPTool, Streamable HTTP, SSE, stdio, MCPServerManager); MCP server not supported
+- **10 session backends** for persistence — deepest of any framework reviewed
+- **SandboxAgent** (beta) for long-running isolated filesystem/shell tasks — unique in the space
+- **RealtimeAgent** + **Voice Pipeline** as first-class features
+- 27+ observability integrations; tracing on by default
+- ~25.7M monthly PyPI downloads — second only to LangGraph
+- **Rating: 4.5/5**
+
+**Next run:** DSPy or Semantic Kernel — two remaining unreviewed frameworks in the agent series. Staleness sweep not due until May 16.
+2026-05-05T21:46:02Z FINISHED run 4188475
+2026-05-05T21:46:04Z SESSION 1953 stopped
+2026-05-05T22:36:01Z STARTED run 11413 (mode=wild)
+2026-05-05T22:36:03Z SESSION 1954 started
