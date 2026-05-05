@@ -26,7 +26,8 @@ At **3.1K stars** and with **100K+ combined downloads**, CodeGraphContext is one
 | **Language** | Python |
 | **Version** | 0.4.6 |
 | **Author** | Shashank Shekhar Singh (@Shashankss1205) |
-| **Released** | August 17, 2025 |
+| **Released** | August 17, 2025 (v0.4.6: May 3, 2026) |
+| **PyPI Status** | Alpha (development status: 3 - Alpha) |
 | **Open Issues** | 135 |
 | **Install** | `pip install codegraphcontext` |
 | **Python** | 3.10–3.14 (tree-sitter unavailable on 3.13) |
@@ -49,6 +50,39 @@ That graph supports queries that would otherwise require scanning thousands of f
 - **Complexity analysis**: which functions exceed a cyclomatic complexity threshold?
 
 MCP clients call these as tool invocations. The AI assistant gets back a precise structural answer rather than a wall of file content.
+
+---
+
+## MCP Tools
+
+The server exposes 20+ tools across several functional groups:
+
+**Code analysis:**
+| Tool | What it does |
+|------|-------------|
+| `find_code` | Search by name or fuzzy text |
+| `analyze_code_relationships` | Callers, callees, dependency chains — the "swiss-army knife" tool |
+| `calculate_cyclomatic_complexity` | Complexity score for a specific function |
+| `find_most_complex_functions` | Top offenders across the indexed codebase |
+| `find_dead_code` | Unreachable or uncalled functions with filter options |
+| `execute_cypher_query` | Run arbitrary read-only Cypher queries against the graph |
+| `visualize_graph_query` | Generate Neo4j Browser visualization links |
+
+**Repository management:**
+| Tool | What it does |
+|------|-------------|
+| `add_code_to_graph` / `add_package_to_graph` | Index new repositories or packages |
+| `list_indexed_repositories` / `get_repository_stats` | Inspect what's indexed |
+| `monitor_directory` / `watch_directory` / `unwatch_directory` | Manage live file watching |
+| `list_jobs` / `check_job_status` | Background indexing job management |
+
+**Bundle registry:**
+| Tool | What it does |
+|------|-------------|
+| `search_registry_bundles` | Find pre-indexed `.cgc` bundles for known repositories |
+| `load_bundle` | Load a pre-built graph snapshot instantly |
+
+The `execute_cypher_query` tool is available across all backends — not just Neo4j. It runs read-only queries against whichever graph store is in use.
 
 ---
 
@@ -132,11 +166,26 @@ For teams that want MIT licensing, Python-native tooling, and a simple `pip inst
 
 ## Limitations
 
-- **135 open issues** — a meaningful backlog for a project at v0.4.x
-- **Pre-1.0** — still in active development; API may shift
-- **Python 3.13 gap** — tree-sitter bindings absent on the latest Python release
-- **FalkorDB Lite Unix-only** — Windows users are limited to LadybugDB or Neo4j
-- **Category competition** — newer entrants with higher star counts offer more features
+**Stability** — 135 open issues at v0.4.x is high for this star count. Notable current failures:
+- KuzuDB 0.11.3 has "systemic query incompatibilities" that break core functionality (March 2026)
+- `module_deps` query fails with `KeyError` (March 2026)
+- Batch indexing `TypeError` affecting large numbers of repositories in one user's test (March 2026)
+- Watch mode schedules overlapping refreshes, delaying MCP-visible updates (April 2026)
+
+**Security** — an open issue (March 27, 2026) flags two named concerns: tool description injection (the MCP tool descriptions themselves can be used as a prompt injection vector) and missing output sanitization (code content returned to the AI agent is not currently sanitized). These are concrete, tracked issues — not theoretical risks.
+
+**Platform/runtime:**
+- FalkorDB Lite: Unix/macOS/WSL only, requires Python 3.12+
+- Tree-sitter: documented incompatibility with Python 3.13
+- Windows support limited to LadybugDB (least capable backend)
+
+**Maturity:**
+- Alpha status on PyPI; API may shift between releases
+- Vector embeddings (Phase 4) and inheritance-aware call edge resolution (Phase 5) are roadmap items, not yet implemented
+- Documentation noted as needing a full redesign by the maintainers
+- No published benchmarks or indexing performance data for large codebases
+
+**Category competition** — the code intelligence space has grown dramatically since August 2025; newer entrants with 10K+ stars offer more features and stronger documented stability.
 
 ---
 
@@ -164,7 +213,7 @@ For Claude Desktop or Claude Code, `codegraphcontext mcp setup` generates the ap
 
 **What works:** MIT license, `pip install` simplicity, 15-language coverage, three graph DB backends, pre-indexed bundles, live file watching, dual CLI + MCP mode, 100K+ downloads demonstrating real adoption.
 
-**What limits it:** 135 open issues at v0.4.x, Python 3.13 tree-sitter gap, FalkorDB Lite Unix constraint, and a category that has grown considerably since launch — developers starting fresh today have higher-star alternatives to evaluate alongside it.
+**What limits it:** 135 open issues at v0.4.x including core query failures and a named prompt injection security concern, Python 3.13 tree-sitter gap, FalkorDB Lite Unix constraint, and a category that has grown considerably since launch — developers starting fresh today have higher-star alternatives to evaluate alongside it.
 
 CodeGraphContext is the straightforward, MIT-licensed Python path into code graph intelligence. It covers the fundamentals well, installs easily, and works without external API keys or services. For teams already in the Python ecosystem or wanting maximum install simplicity, it remains the lowest-friction option in the category.
 
