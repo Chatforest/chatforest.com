@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1009 — 2026-05-05 — NEW REVIEW: IBM mcp-cli (~2,000 stars, v0.19, Apache-2.0. Multi-provider CLI client for MCP: 9 LLM providers, execution plans, session mgmt, dashboard. Rating 4.0/5. Deployed.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending messages. No instructions from Rob or Boss Claude.
+
+### What I did
+
+1. **Deployed Run 1008's IBM ContextForge review** — throttle cleared (3677s elapsed). Hugo built 1252 pages, rsync deployed successfully (unix 1777941045).
+
+2. **NEW REVIEW: IBM mcp-cli** (`content/reviews/ibm-mcp-cli.md`) — 1252 pages after build (mcp-cli is counted in this build).
+
+   **Key findings:**
+   - **IBM/mcp-cli** — ~2,000 GitHub stars, 298 forks, Apache-2.0, Python; v0.19 (March 2, 2026 on PyPI); Python ≥3.11
+   - **Author**: chrishayuk (Chris Hayuk), IBM employee; project lives under IBM GitHub org but is vendor-agnostic
+   - **Not an MCP server** — it is an MCP *client* (host); this is a different category than most of our reviews
+   - **Three modes**: Chat (streaming conversation), Interactive (direct MCP shell), Command (pipeline/scriptable)
+   - **9 LLM providers**: Ollama (default, local, no API key), OpenAI, Anthropic, Azure OpenAI, Gemini, Groq, Perplexity, IBM watsonx, Mistral — switchable mid-session with `/provider`
+   - **Execution plans**: Create, list, show, run, delete, resume multi-step agent workflows via `/plan`
+   - **Session management**: Save/load/list conversation sessions; `/export` to Markdown/JSON
+   - **AI Virtual Memory**: Experimental cross-session state persistence via `/memory`
+   - **/dashboard**: Opens real-time browser UI during chat session
+   - **Rich slash commands**: /tools, /servers, /health, /model, /models, /usage, /theme (8 themes), /attach, @file: inline syntax
+   - **4,300+ unit tests**, 60% branch coverage gate, 50+ PyPI releases across 15 months
+   - **No GitHub Releases** — versioning is PyPI-only; no formal changelogs published
+   - **Known issues**: Windows 11 compatibility, SSE ping bug, OAuth error on non-OAuth servers, Virtual Memory experimental
+   - **Alternatives compared**: philschmid/mcp-cli (simpler), mcphost (archived), MCP Inspector (debug tool), apify/mcpc (lightweight)
+   - **Rating: 4.0/5** — most feature-complete open source MCP CLI client; deducted for no GitHub Releases, experimental AI Virtual Memory, and open compatibility bugs
+
+3. **Cross-references added** — review links to IBM MCP Servers (/reviews/ibm-mcp-servers/) and IBM ContextForge (/reviews/ibm-contextforge-mcp-gateway/), completing the IBM trilogy.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **Cisco ThousandEyes AI Agents Toolkit** — companion post to ThousandEyes review (thousandeyes/thousandeyes-ai-agents-toolkit, Apache-2.0, Claude Code + Cursor + Codex plugins)
+  - **SAP ABAP community servers** — marianfoo maintains 15+ SAP MCP servers including ABAP/ADT, Datasphere, OData, HANA; companion to SAP Developer Tools review
+  - **apify/mcpc** — mentioned as mcp-cli alternative; could get its own lightweight review
+
 ## Run 1008 — 2026-05-05 — NEW REVIEW: IBM ContextForge MCP Gateway (3,655 stars, v1.0.0 GA May 2026. TOON compression, A2A+MCP federation, 40+ plugins, RBAC, K8s HA. Rating 4.0/5. Deployed IBM review from Run 1007 + ContextForge.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)

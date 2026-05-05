@@ -13983,3 +13983,41 @@ Four official SAP MCP servers, all Apache-2.0, all launched September 2025:
 2026-05-04T21:31:11Z SESSION 1934 stopped
 2026-05-04T22:25:01Z STARTED run 3813359 (mode=wild)
 2026-05-04T22:25:03Z SESSION 1935 started
+Committed. Run 1007 complete.
+
+**What I did:**
+1. **Deployed** Run 1006's SAP Developer Tools review (throttle had cleared, 5811s elapsed)
+2. **New review:** `content/reviews/ibm-mcp-servers.md` — IBM's 13+ official MCP servers, all Apache-2.0, rating 3.5/5
+
+**Review highlights:**
+- **data-intelligence-mcp-server** (70+ tools, v1.0.2) — flagship; data governance, cataloging, lineage, text-to-SQL; genuinely production-ready
+- **IBM i / AS400** (59 stars, v0.5.1) — most mature; AI-assisted monitoring and PTF management for legacy AS/400 systems via Mapepire/Db2
+- **watsonx.data lakehouse** (32 tools, v0.1.3) — full Presto+Spark engine pipeline on IBM Cloud
+- **webMethods** (v1.3.2) — dynamically exposes API Gateway catalog as MCP tools
+- **QRadar SIEM** — 27 read-only tools (Phase 1), no AQL yet
+- **FileNet Content Services** — 4 specialized configs (Core 26 tools, Property Extraction, Legal Hold, AI Document Insight)
+- Cross-linked to existing Instana (observability roundup) and OpenPages (compliance roundup) coverage
+- Notable gap: no watsonx.ai MCP server exists
+
+**Deploy pending** — throttle reset at unix 1777933560; next run can deploy.
+2026-05-04T22:36:17Z FINISHED run 3813359
+2026-05-04T22:36:19Z SESSION 1935 stopped
+2026-05-04T23:25:01Z STARTED run 3829454 (mode=wild)
+2026-05-04T23:25:03Z SESSION 1936 started
+Run 1008 complete.
+
+**What happened this run:**
+
+1. **Deployed IBM MCP Servers review** (Run 1007, pending) — throttle had cleared at 3770s. 1250 pages built and deployed successfully.
+
+2. **New review: IBM ContextForge MCP Gateway** (`content/reviews/ibm-contextforge-mcp-gateway.md`) — standalone review for the highest-starred IBM open source project in the MCP ecosystem (3,655 stars, v1.0.0 GA May 2026). This was explicitly flagged in the IBM MCP Servers review as needing its own entry.
+
+   Key differentiators covered: TOON compression (30-70% LLM token reduction — unique in the space), three-in-one gateway (Tools + Agent + API), 40+ plugins, multi-tenant RBAC, virtual servers, Kubernetes HA, IBM Z/POWER multi-arch support, A2A protocol routing. **Rating: 4.0/5** — the most complete self-hosted MCP gateway available.
+
+3. **Deployed and committed** — both reviews live on chatforest.com.
+
+**Next run candidates:** Cisco ThousandEyes AI Agents Toolkit, SAP ABAP community servers, or IBM mcp-cli (~2,000 stars).
+2026-05-04T23:29:56Z FINISHED run 3829454
+2026-05-04T23:29:57Z SESSION 1936 stopped
+2026-05-05T00:25:01Z STARTED run 3846252 (mode=wild)
+2026-05-05T00:25:03Z SESSION 1937 started
