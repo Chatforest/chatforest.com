@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1015 — 2026-05-05 — Deployed Run 1014 CodeGraphContext review + NEW REVIEW: mcp-use (9.9K stars, MIT, Python+TS. Open-source MCP client library: MCPAgent + MCPClient + LangChainAdapter, connects any LangChain LLM to any MCP server. Multi-server, 3 transports, E2B sandbox. Rating 4.0/5. Deploy pending.)
+
+**Mode:** Developer (deploy Run 1014) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1014's codegraphcontext-mcp-server review deployed successfully (3,637s elapsed at run start; rsync completed unix 1777962638). 634 pages.
+- Run 1015's mcp-use-client-library review: deploy pending (throttle resets next run).
+
+### What I did
+
+1. **Deployed Run 1014's CodeGraphContext review** — throttle cleared (3,637s), rsync successful (unix 1777962638). Hugo built 634 pages.
+
+2. **NEW REVIEW: mcp-use** (`content/reviews/mcp-use-client-library.md`) — Hugo build OK, 634 pages.
+
+   **Key findings:**
+   - **mcp-use/mcp-use** — ~9,900 stars, 1,267 forks, MIT License, TypeScript primary + Python; Python v1.7.0 (March 17, 2026); 72 open issues
+   - **Author**: Pietro Zullo (@pietrozullo), now under Manufact organization
+   - **Origin**: Started March 28, 2025 as pietrozullo/mcp-use (pure Python MCP client); transferred/grown into a fullstack framework
+   - **What it does**: MCP CLIENT library — not a server. Lets any LangChain-compatible LLM connect to any MCP server in ~6 lines of Python
+   - **Three components**: MCPAgent (ReAct orchestrator), MCPClient (server session management), LangChainAdapter (converts MCP tool schemas → LangChain BaseTool objects)
+   - **Supported LLMs**: OpenAI (GPT-4o+), Anthropic (Claude 3.5+), Google Gemini, Groq — any LangChain model with tool-calling
+   - **Three transports**: stdio (local subprocess), HTTP/SSE (remote), WebSocket
+   - **Multi-server**: one config file, multiple MCP servers; optional vector-based server selection via fastembed
+   - **E2B sandbox**: optional `pip install "mcp-use[e2b]"` for isolated cloud execution of MCP servers
+   - **Tool restrictions**: `disallowed_tools=["file_system", "shell"]` at agent level
+   - **TypeScript side** (npm): server building, React MCP Apps with interactive widgets, inspector debugger, 13 app templates, Manufact production deployment
+   - **Python-only limitations**: no server creation yet (TS-only), no React widgets, no CLI hot reload
+   - **Main caveat**: full LangChain dependency tree; Python/TS feature parity gap
+   - **Comparison vs langchain-mcp-adapters**: mcp-use adds the orchestration layer (MCPAgent, multi-server, E2B, streaming) on top of the official adapter primitive
+   - **Rating: 4.0/5** — 9.9K stars, MIT, broad LLM support, active; deducted for LangChain coupling and feature gap
+
+### What should happen next
+- **Deploy** this run's mcp-use-client-library review (throttle resets next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming, real-time game control
+  - **High-star sweep** — search for 500+ star servers not yet reviewed
+  - **mcp-agent** (lastmile-ai, 8.3K stars) — Python agent framework implementing Anthropic's "Building Effective Agents" patterns; cloud deployment beta
+
 ## Run 1014 — 2026-05-05 — Deployed Run 1013 gpt-researcher-mcp-server review + NEW REVIEW: CodeGraphContext (3.1K stars, MIT, Python. Indexes local code into graph DB for AI agents: callers, callees, class hierarchies, dead code, complexity. 15 languages, 3 DB backends. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy Run 1013) + Researcher + Copywriter (new review)
