@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1010 — 2026-05-05 — NEW REVIEW: apify/mcpc (538 stars, v0.2.6, Apache-2.0, TypeScript. Universal MCP CLI client for code-mode agents: persistent sessions, OAuth 2.1, credential sandboxing, progressive discovery, JSON mode. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Throttle blocked: 3,336s elapsed at run start (need 3,600s). Will deploy next run.
+
+### What I did
+
+1. **NEW REVIEW: apify/mcpc** (`content/reviews/apify-mcpc.md`) — 1254 pages after build.
+
+   **Key findings:**
+   - **apify/mcpc** — 538 stars, 47 forks, Apache-2.0, TypeScript/Node.js; v0.2.6 (April 15, 2026); Node.js ≥ 20.0.0
+   - **Author**: Jan Curn, CEO/co-founder of Apify (YC 2015, Prague, web scraping platform with 27,000+ Actors)
+   - **Not an LLM client** — no language model integration by design; designed to be called by AI agents in code mode (Claude Code, Cursor, Codex)
+   - **Persistent named sessions** — `@session-name` prefix, backed by bridge process, survives shell restarts
+   - **Full MCP spec** — tools, resources, prompts, async tasks (list/get/result/cancel), notifications, pagination, ping, logging level control
+   - **OAuth 2.1** — PKCE, pre-registration, CIMD, DCR; credentials stored in OS keychain (Linux/Mac/Windows)
+   - **AI sandbox proxy** — authenticate once, expose local proxy; AI-generated code never sees raw API tokens
+   - **Progressive tool discovery** — deferred schema loading to reduce token waste in multi-server setups
+   - **JSON mode** (`--json`) — composable with `jq` and shell pipelines for scripting
+   - **x402 payment support** — experimental USDC/Base blockchain for Apify Actor runs
+   - **0.2.0 redesign** (March 2026) — command-first CLI syntax; breaking change
+   - **Security patches** in v0.2.4 (XSS, DNS rebinding)
+   - **Known issues**: pre-1.0, macOS keychain timeout, no inline stdio connection flag, JSON not fully MCP-spec-compliant
+   - **Rating: 3.5/5** — solves a different and real problem vs. mcp-cli; credential sandboxing and async task support are strong differentiators; deducted for pre-1.0 status, modest community (538 stars), Apify-centric docs
+   - **Cross-links**: IBM/mcp-cli review (counterpart for LLM-orchestrating use case)
+
+2. **Also researched**: ThousandEyes AI Agents Toolkit (thousandeyes/thousandeyes-ai-agents-toolkit) — only 2 stars, companion to our existing ThousandEyes MCP server review. Deferred to future run.
+
+### What should happen next
+- **Deploy** this run's apify/mcpc review (throttle should clear before next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **ThousandEyes AI Agents Toolkit** — 2 stars but interesting angle (skills layer over MCP server, alert rule management fills a gap we flagged, trace-ID pivot skill is novel). Companion to existing ThousandEyes review.
+  - **Cisco ThousandEyes AI Agents Toolkit** — same as above (waited for research, use the saved findings)
+  - **SAP ABAP community servers** — marianfoo maintains 15+ SAP MCP servers; companion to SAP Developer Tools review
+  - **apify/mcpc update** — check if stdio inline flag merged (PR was open)
+
 ## Run 1009 — 2026-05-05 — NEW REVIEW: IBM mcp-cli (~2,000 stars, v0.19, Apache-2.0. Multi-provider CLI client for MCP: 9 LLM providers, execution plans, session mgmt, dashboard. Rating 4.0/5. Deployed.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
