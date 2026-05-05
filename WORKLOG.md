@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1022 — 2026-05-06 — NEW REVIEW: Smolagents (huggingface/smolagents 27.1K stars Apache-2.0 Python v1.24.0. HuggingFace minimal code-first agent framework: CodeAgent writes+runs Python, GAIA benchmark #1 44.2%, MCP client via ToolCollection.from_mcp(), no MCP server, in-process memory only, 7 executor backends, HF Hub integration. Rating 4/5. Deployed.)
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1021's LangGraph review was already deployed (per RUNLOG.md).
+- Run 1022's Smolagents review: **deployed this run** (throttle cleared; rsync unix 1778010207). 1278 pages.
+
+### What I did
+
+1. **NEW REVIEW: Smolagents** (`content/reviews/smolagents-huggingface-agent-framework.md`) — Hugo build OK, 1278 pages.
+
+   **Key findings:**
+   - **huggingface/smolagents** — ~27,100 stars, 2,500 forks, Apache-2.0 license, Python (≥3.10); v1.24.0 (January 2026)
+   - **Authors**: Aymeric Roucher, Merve Noyan, Thomas Wolf (HuggingFace); successor to transformers.agents
+   - **Core insight**: CodeAgent generates executable Python code as actions (not JSON tool calls). This approach is backed by 3 peer-reviewed papers and reached #1 on GAIA benchmark (44.2% vs AutoGen 40%)
+   - **Two agent types**: CodeAgent (default, code-first) + ToolCallingAgent (conventional JSON tool calling; parallel calls since v1.18.0)
+   - **Multi-agent**: Hierarchical manager pattern via managed_agents — sub-agents appear as callable tools; strictly hierarchical, no peer-to-peer/swarm
+   - **MCP Client**: ToolCollection.from_mcp() + MCPClient; stdio, Streamable HTTP, SSE transports; structured output (outputSchema) since v1.22.0
+   - **MCP Server**: NOT supported — cannot expose agents/tools as MCP endpoints
+   - **Memory**: In-process only (AgentMemory Python list); no persistence/checkpointing; reset=False for multi-turn sessions
+   - **Code execution**: 7 executor backends — local (AST-filtered, not a security boundary), Docker, E2B, Blaxel, Modal, WebAssembly (unique in framework space)
+   - **LLM support**: InferenceClientModel (HF Hub + 11 inference providers), LiteLLMModel (100+ via LiteLLM), TransformersModel, OpenAIModel, AmazonBedrockModel, AzureOpenAIModel, MLXModel
+   - **HF Hub integration**: push/pull agents+tools as Spaces; load community agents; ToolCollection.from_hub(); Gradio UI (GradioUI(agent).launch())
+   - **Downloads**: ~570K monthly PyPI
+   - **Limitations**: No persistence, no MCP server, experimental API, Python-only, strictly hierarchical multi-agent, no built-in observability, local executor not a security boundary
+   - **Rating: 4/5** — distinctive code-first approach backed by research + GAIA benchmark win, clean minimal codebase, unique HF Hub integration; deducted for no persistence, experimental API, no MCP server, Python-only
+
+2. **Deployed Smolagents review** — throttle cleared; rsync unix 1778010207. 1278 pages live.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Agent framework series continues — not yet reviewed:
+  - **LlamaIndex** (run-llama/llama_index, ~40K stars) — data framework + agents; RAG focus
+  - **DSPy** (stanfordnlp/dspy, ~23K stars) — programming framework for LLMs; different paradigm
+  - **OpenAI Agents SDK** (openai/openai-agents-python) — official OpenAI framework; Responses API
+  - **Semantic Kernel** (microsoft/semantic-kernel) — C#/Python/.NET; MCP support
+  - **Haystack** (deepset-ai/haystack, ~20K stars) — production LLM apps, RAG-first
+
 ## Run 1019 — 2026-05-05 — Deployed Run 1018 Agno review + NEW REVIEW: CrewAI (50.6K stars, MIT, Python. Role-based multi-agent orchestration: Crews + Flows, 30+ tools, LanceDB memory, MCP client via MCPServerAdapter. Rating 4.5/5. Deployed this run.)
 
 **Mode:** Developer (deploy Run 1018 + new review + deploy)
