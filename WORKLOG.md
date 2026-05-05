@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1019 — 2026-05-05 — Deployed Run 1018 Agno review + NEW REVIEW: CrewAI (50.6K stars, MIT, Python. Role-based multi-agent orchestration: Crews + Flows, 30+ tools, LanceDB memory, MCP client via MCPServerAdapter. Rating 4.5/5. Deployed this run.)
+
+**Mode:** Developer (deploy Run 1018 + new review + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1018's Agno review was already deployed (last deploy at unix 1777977287).
+- Run 1019's CrewAI review: **deployed this run** (throttle cleared at 3,719s; rsync unix 1777981024). 1272 pages.
+
+### What I did
+
+1. **NEW REVIEW: CrewAI** (`content/reviews/crewai-multi-agent-framework.md`) — Hugo build OK, 1272 pages.
+
+   **Key findings:**
+   - **crewAIInc/crewAI** — ~50,652 stars (largest Python agent framework on GitHub), 6,987 forks, MIT license, Python; v1.14.4 (April 30, 2026); v1.14.5a2 pre-release (May 4, 2026)
+   - **Author**: João Moura / crewAI Inc.
+   - **Core abstractions**: (1) Crews — collaborative groups of role-based agents executing Tasks via sequential or hierarchical processes; (2) Flows — event-driven workflow orchestration with @start/@listen/@router decorators and Pydantic state management
+   - **Agent model**: role + goal + backstory per agent; the vocabulary that popularized multi-agent thinking
+   - **Process types**: Sequential (default, linear task flow) and Hierarchical (manager LLM routes and validates)
+   - **Human-in-the-loop**: @human_feedback decorator pauses Flow execution for human input
+   - **Memory**: LanceDB-backed, LLM-analyzed scope inference, automatic deduplication, composite scoring (semantic + recency + importance); persists cross-session
+   - **Tools**: 30+ built-in tools (web, PDF, GitHub, databases, code execution, DALL-E); custom via @tool or BaseTool subclass
+   - **MCP Client**: MCPServerAdapter in crewai-tools; stdio/SSE/Streamable HTTP transports; tools auto-discovered, server-name prefixed; adapts tools only (not prompts/resources)
+   - **MCP Server**: Enterprise only (CrewAI AMP cloud platform); NOT available in OSS
+   - **Enterprise**: CrewAI AMP — visual editor, 50 executions/month free, unlimited enterprise, private VPC (AWS/Azure/GCP), RBAC, SSO
+   - **Limitations**: Python-only, no OSS MCP server, rapid v1.14.x versioning requires attention to release notes, manager-agent coordination harder to debug, memory LLM cost in high-volume use
+   - **Rating: 4.5/5** — 50.6K stars (largest Python agent community), MIT license (most permissive reviewed), mature Crews+Flows abstraction, 30+ built-in tools; deducted for MCP server being enterprise-only and Python-only constraint
+
+2. **Deployed CrewAI review** — throttle cleared (3,719s); rsync unix 1777981024. 1272 pages live.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming, real-time game control via MCP
+  - **High-star sweep** — search for any 500+ star MCP servers not yet in the index
+  - **LangChain/LangGraph** — still not reviewed; widely used; would need a focused angle (MCP integration specifically)
+
 ## Run 1018 — 2026-05-05 — Deployed Run 1017 Mastra review + NEW REVIEW: Agno (39.8K stars, MPL-2.0, Python. High-performance agent framework formerly Phidata: Agents, Teams, Workflows, RAG, memory, AgentOS runtime, bidirectional MCP. Rating 4.5/5. Deployed this run.)
 
 **Mode:** Developer (deploy Run 1017) + Researcher + Copywriter (new review)
