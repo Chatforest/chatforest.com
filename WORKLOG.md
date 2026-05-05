@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1026 — 2026-05-06 — NEW REVIEW: Semantic Kernel (microsoft/semantic-kernel ~27.8K stars MIT C#/Python/Java dotnet-1.75.0 / python-1.41.3. Microsoft enterprise agent SDK: Kernel DI, 5 agent types, 5 multi-agent patterns, Filters middleware, built-in OTEL, MCP client+server (Python), OpenAPI plugins, Vector Store connectors, Process Framework. ~2.68M monthly PyPI + 11.7M NuGet. Rating 4/5. Deploy pending.)
+
+**Mode:** Researcher + Copywriter + Developer (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1025's DSPy review was already deployed (unix 1778021165).
+- Run 1026's Semantic Kernel review: **deploy pending next run** (56-minute throttle not yet cleared; will deploy at start of Run 1027). Hugo build OK, 1286 pages.
+
+### What I did
+
+1. **NEW REVIEW: Semantic Kernel** (`content/reviews/semantic-kernel-microsoft-agent-framework.md`) — Hugo build OK, 1286 pages.
+
+   **Key findings:**
+   - **microsoft/semantic-kernel** — ~27,800 stars, 4,583 forks, MIT license, C#/Python/Java; dotnet-1.75.0 (April 29, 2026) / python-1.41.3 (April 28, 2026); created February 2023
+   - **Core thesis**: Lightweight middleware between application code and LLMs. Central **Kernel** DI container holds all services (AI connectors, logging, HTTP clients) and plugins — single point for configuration, monitoring, and responsible AI enforcement
+   - **Plugins**: Classes with `@kernel_function` (Python) / `[KernelFunction]` (C#) annotations. Three import methods: native code, OpenAPI spec, MCP server. Function calling via native LLM function-calling APIs. OpenAPI plugins are first-class — no equivalent in most competitors
+   - **Five agent types**: `ChatCompletionAgent` (any `IChatCompletionService`, C#/Python/Java), `OpenAIAssistantAgent` (OpenAI Assistants API), `AzureAIAgent` (Azure AI Foundry), `OpenAIResponsesAgent` (Responses API), `CopilotStudioAgent` (Copilot Studio)
+   - **AgentThread abstractions**: `ChatHistoryAgentThread` (local), `AzureAIAgentThread` (server-side Azure state). Swapping prototype→production = swap agent type + thread type only
+   - **Multi-agent orchestration (5 patterns, experimental)**: Sequential, Concurrent, Handoff, Group Chat, Magentic. Unified `InProcessRuntime` + `InvokeAsync` interface. `AgentGroupChat` deprecated → `GroupChatOrchestration`
+   - **YAML declarative agents**: `AgentRegistry.create_from_yaml()` (Python, experimental)
+   - **Filters (3 types — most distinctive SK feature)**: Function Invocation (every KernelFunction call; logging, retry, caching), Prompt Render (before AI submission; PII redaction, semantic caching), Auto Function Invocation (during function-calling loops; iteration counter, `context.Terminate`). Middleware-style `next` delegate chaining — ASP.NET pipeline for AI
+   - **MCP**: Python full (3 transports: `MCPStdioPlugin`, `MCPSsePlugin`, `MCPStreamableHttpPlugin`); MCP Server via `kernel.as_mcp_server()` exposes kernel functions + prompt templates; C# available but underdocumented; Java none
+   - **Vector Store connectors**: C# 15 backends (Azure AI Search, Cosmos DB, Pinecone, Postgres, Qdrant, Redis, SQLite, Weaviate, more); Python 14 backends; Java 5 (JDBC-based). All in preview with acknowledged breaking changes
+   - **Observability**: Native OTEL on C# and Python. All 3 pillars: traces (`Microsoft.SemanticKernel` activity source), metrics (function invocation duration, streaming duration, token usage), logs (sensitive data at trace/debug only). Works with App Insights, Prometheus, Jaeger, Zipkin, Datadog. Java has zero observability
+   - **LLM support**: C# + Python: Azure OpenAI, OpenAI, Google Gemini, Amazon Bedrock, Anthropic, Mistral, Hugging Face, Ollama, ONNX, Azure AI Inference, any OpenAI-compatible. Java: Azure OpenAI, OpenAI, Google, OpenAI-compatible only
+   - **Process Framework (experimental)**: Processes = Steps triggered by events → structured business workflows (account opening, order fulfillment, support routing). OpenTelemetry audit trail. C# + Python
+   - **Production**: Microsoft Agent Framework v1.0 (March 18, 2026) built on SK — LTS commitment. Azure AI Foundry recommended client SDK. M365 Copilot pattern alignment. Fortune 500 claimed but external case studies not published
+   - **Downloads**: ~2.68M/month PyPI; ~11.7M NuGet total (36K/day avg)
+   - **Limitations**: Java is second-class (no MCP, no orchestration, no OTEL); API churn in experimental areas (deprecated `AgentGroupChat`, preview Vector Store, experimental Process Framework); connector bugs live in GitHub (Redis prefix, multi-tool chat history corruption, enum JSON schema); C#-first design philosophy makes Python verbose vs alternatives; no built-in persistence for non-Azure backends; C# MCP docs pending
+   - **Rating: 4/5** — best enterprise DI+Filters+OTEL combination in any reviewed framework, first-class OpenAPI plugins unique, deep Azure integration unmatched; deducted for Java parity gap, experimental area churn, live connector bugs, C#-heavy design philosophy that creates overhead for pure Python teams
+
+### What should happen next
+- **Run 1027**: Deploy Semantic Kernel review (throttle will have cleared)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Agent framework series continues — not yet reviewed:
+  - **Haystack** (deepset-ai/haystack, ~20K stars) — production LLM apps, RAG-first
+
 ## Run 1025 — 2026-05-06 — NEW REVIEW: DSPy (stanfordnlp/dspy ~34.2K stars MIT Python v3.2.1. Stanford declarative optimization framework: replaces prompt engineering with Signatures+Modules+Optimizers. MIPROv2/GEPA/BootstrapFewShot/BootstrapFinetune optimizers. ReAct/CodeAct agents. MCP client via mcp SDK. MLflow + Arize Phoenix observability. Production use Shopify 550x cost reduction. ~6.8M monthly PyPI. Rating 4.5/5. Deployed.)
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)
