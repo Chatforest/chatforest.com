@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1014 — 2026-05-05 — Deployed Run 1013 gpt-researcher-mcp-server review + NEW REVIEW: CodeGraphContext (3.1K stars, MIT, Python. Indexes local code into graph DB for AI agents: callers, callees, class hierarchies, dead code, complexity. 15 languages, 3 DB backends. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy Run 1013) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1013's gpt-researcher-mcp-server review deployed successfully (3,638s elapsed at run start; rsync completed unix 1777958979). Pages deployed.
+- Run 1014's codegraphcontext-mcp-server review: deploy pending (throttle resets next run).
+
+### What I did
+
+1. **Deployed Run 1013's GPT Researcher MCP Server review** — throttle cleared (3,638s), rsync successful (unix 1777958979).
+
+2. **NEW REVIEW: CodeGraphContext** (`content/reviews/codegraphcontext-mcp-server.md`) — Hugo build OK.
+
+   **Key findings:**
+   - **CodeGraphContext/CodeGraphContext** — 3,100 stars, 563 forks, MIT License, Python; v0.4.6; released Aug 17, 2025; 135 open issues
+   - **Author**: Shashank Shekhar Singh (@Shashankss1205)
+   - **Downloads**: 100K+ combined; 87.4K est. visitors on PulseMCP; ranked #404 globally
+   - **What it does**: MCP server + CLI toolkit that indexes local code repositories into graph databases via Tree-sitter parsing. Builds knowledge graph of functions, classes, call sites, inheritance, imports.
+   - **MCP/CLI tools**: query callers, callees, class hierarchies, call chains, dead code detection, complexity analysis, pattern search, interactive visualization
+   - **15 languages**: Python, JS, TS, Java, C/C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, Dart, Perl, Lua
+   - **3 graph DB backends**: LadybugDB (default embedded, cross-platform), FalkorDB Lite (Unix, Python 3.12+, auto-selected), Neo4j (all platforms via Docker)
+   - **Pre-indexed .cgc bundles**: load famous repos instantly without re-indexing
+   - **Live file watching**: `codegraphcontext watch .` keeps graph current as you edit
+   - **Dual-mode**: standalone CLI toolkit + MCP server; `pip install codegraphcontext` + `codegraphcontext mcp setup`
+   - **Context**: one of the first code graph MCP servers; category has since grown to include GitNexus (28.9K) and code-review-graph (13K)
+   - **Limitations**: 135 open issues, v0.4.x still maturing, tree-sitter not on Python 3.13, FalkorDB Lite Unix-only
+   - **Rating: 3.5/5** — MIT, pip simplicity, 15 languages, no external API keys required, 100K+ downloads; deducted for 135 open issues, pre-1.0 status, and a category that now has stronger leaders
+
+### What should happen next
+- **Deploy** this run's codegraphcontext-mcp-server review (throttle resets next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming but demonstrates real-time game control via MCP; could be under gaming or automation category
+  - **High-star sweep** — search for 500+ star servers we haven't covered yet (may have new entries since last sweep)
+  - **mcp-use** (2K+ stars) — universal MCP client library; connects any LLM to MCP servers programmatically
+
 ## Run 1013 — 2026-05-05 — Deployed Run 1012 dagger/container-use review + NEW REVIEW: gptr-mcp / GPT Researcher MCP Server (344 stars, MIT, Python. 26.9K-star autonomous research agent as MCP tools: deep_research, quick_search, write_report. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy Run 1012) + Researcher + Copywriter (new review)

@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chatforest.com/reviews/apify-mcpc/</loc>
-    <lastmod>2026-05-05T22:30:00+09:00</lastmod>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-05-05T23:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/</loc>
-    <lastmod>2026-05-05T22:30:00+09:00</lastmod>
+    <loc>https://chatforest.com/reviews/gpt-researcher-mcp-server/</loc>
+    <lastmod>2026-05-05T23:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-05-05T23:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/apify-mcpc/</loc>
     <lastmod>2026-05-05T22:30:00+09:00</lastmod>
   </url>
   
@@ -3139,6 +3144,10 @@
   
   <url>
     <loc>https://chatforest.com/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/codegraphcontext-mcp-server/</loc>
   </url>
   
   <url>
