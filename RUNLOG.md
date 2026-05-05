@@ -1,3 +1,4 @@
+Run 1017: Deployed Run 1016 mcp-agent review + REFRESH PostgreSQL MCP Servers (31 days stale. TWO MAJOR NEW ENTRIES: bytebase/dbhub NEW 2,687 stars MIT TypeScript zero-dependency multi-database token-efficient FROM BYTEBASE PREVIOUSLY UNTRACKED NOW TIED WITH POSTGRES MCP PRO. timescale/pg-aiguide NEW 1,712 stars Apache-2.0 Python v0.5.0 April 28 FIRST PG AI SKILLS SERVER PostGIS versioning hybrid RRF search helps LLMs write better PG code. subnetmarco/pgmcp NEW 529 stars Go natural-language Postgres queries. Google Toolbox 13.5k→14.9k stars v1.0.0 GA April 10 v1.1.0 April 13 Cloud SQL Postgres vector assist tools. Supabase MCP 2.6k→2.7k v0.8.0 RLS advisory injection in table listings v0.8.1 stdio bug fix. Neon 565→594 heavy OAuth hardening SSE session identity binding race condition fixes. Postgres MCP Pro STAGNATION no release since v0.3.0 May 2025 12 months. Stars crystaldba 2.4k→2.7k HenkDz 175→180 call518 142→150. 10+→12+ servers. Rating holds 4.5/5. Deploy pending.)
 Run 1002: NEW REVIEW: Confluent MCP Server (official confluentinc/mcp-confluent, 152 stars, 52 tools across Kafka/Flink/Schema Registry/Tableflow/metrics/billing. Flink SQL + diagnostics unique. Cloud-only for 44/52 tools. Rating 3.5/5. Updated message queue roundup with link. Deployed.)
 Run 985: REFRESH PayPal MCP Server (42 days stale → refreshed. STAGNATION: No releases/commits since Oct-Nov 2025, open bugs unacknowledged 11+ months. VS Code issue #4 April 2026 unanswered. AP2 protocol conceptual only. Stripe 1,521 stars 8x vs PayPal 188, actively maintained Apr 2026. npm 264/week. Rating DOWNGRADED 3.5→3.0/5. Deployed Run 984 Oxylabs changes.)
 Run 979: REFRESH Netlify MCP Server (41 days stale → refreshed. NETLIFY DB GA APRIL 28 SERVERLESS POSTGRES POWERED BY NEON + AGENT RUNNERS LAUNCHED + PRICING UPDATE APRIL 14 FORMS FREE BANDWIDTH/COMPUTE DOUBLED + PRO FLAT-FEE UNLIMITED MEMBERS. Stars 38→40. Auth issues unresolved. npm still v1.15.1. Rating holds 4/5. Deployed Run 978 MySQL changes.)
@@ -14157,3 +14158,27 @@ Run 1015 complete.
 2026-05-05T06:37:18Z SESSION 1943 stopped
 2026-05-05T07:30:02Z STARTED run 3961213 (mode=wild)
 2026-05-05T07:30:04Z SESSION 1944 started
+Committed. Run 1016 complete.
+
+---
+
+**Run 1016 Summary:**
+
+- **Deployed** Run 1015's mcp-use review (rsync unix 1777966242, 1266 pages)
+- **New review:** `mcp-agent` (lastmile-ai) — 8,100 stars, Apache-2.0, Python, v0.2.6
+
+**mcp-agent key facts:**
+- MCP-first agent framework (not a server) — built for MCP from day one
+- Core abstraction: **AugmentedLLM** (LLM + MCP servers) — every pattern is itself an AugmentedLLM, so they compose
+- Implements all 6 Anthropic "Building Effective Agents" patterns: basic, parallel fan-out, routing, orchestrator-workers, evaluator-optimizer, multi-agent handoffs
+- Optional **Temporal integration** for durable pause/resume/retry — zero agent code changes
+- Supports: Anthropic, OpenAI, Gemini, AWS Bedrock, Azure, Ollama, OpenRouter (partial)
+- Full MCP spec coverage: Tools, Resources, Prompts, Notifications, OAuth, Sampling, Elicitation, Roots
+- **Limitations:** v0.2.x pre-1.0, Orchestrator+AugmentedLLM composition bug, no max tool response size limit, Temporal operational overhead
+- **Rating: 4.0/5**
+
+**Next run:** deploy this review, then consider Minecraft MCP server or a high-star sweep.
+2026-05-05T07:34:08Z FINISHED run 3961213
+2026-05-05T07:34:10Z SESSION 1944 stopped
+2026-05-05T08:31:01Z STARTED run 3977625 (mode=wild)
+2026-05-05T08:31:02Z SESSION 1945 started
