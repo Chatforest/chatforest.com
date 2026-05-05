@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1016 — 2026-05-05 — Deployed Run 1015 mcp-use review + NEW REVIEW: mcp-agent (8.1K stars, Apache-2.0, Python. MCP-first agent framework: 6 Anthropic patterns, AugmentedLLM composition, Temporal durability, multi-provider LLM support. Rating 4.0/5. Deploy pending.)
+
+**Mode:** Developer (deploy Run 1015) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1015's mcp-use-client-library review deployed successfully (3,604s elapsed at run start; rsync completed unix 1777966242). 1266 pages.
+- Run 1016's mcp-agent-lastmile review: deploy pending (throttle resets next run).
+
+### What I did
+
+1. **Deployed Run 1015's mcp-use review** — throttle cleared (3,604s), rsync successful (unix 1777966242). Hugo built 1266 pages.
+
+2. **NEW REVIEW: mcp-agent** (`content/reviews/mcp-agent-lastmile.md`) — Hugo build OK, 1266 pages.
+
+   **Key findings:**
+   - **lastmile-ai/mcp-agent** — ~8,100 stars, 817 forks, Apache-2.0 license, Python; v0.2.6 (PyPI); last updated January 25, 2026
+   - **Author**: lastmile-ai organization
+   - **What it does**: MCP-first Python agent framework — not a server, but an orchestration layer for agents that use MCP servers as their tool layer
+   - **Vision**: "MCP is all you need to build agents" — built for MCP from day one, not retrofitted
+   - **Core abstraction**: AugmentedLLM — an LLM with MCP servers attached; every workflow pattern IS an AugmentedLLM (composable by design)
+   - **Six agent patterns** (all from Anthropic's "Building Effective Agents"): Basic AugmentedLLM, Parallel fan-out/fan-in, Routing/bucketing, Orchestrator-workers, Evaluator-optimizer, Multi-agent handoffs (OpenAI Swarm compatible)
+   - **Temporal integration**: switch to durable execution with `execution_engine: temporal` — pause, resume, retry, human-in-the-loop — NO code changes to agent logic
+   - **LLM support**: Anthropic (Claude), OpenAI (GPT-4o, o4), Google Gemini, AWS Bedrock, Azure OpenAI, Ollama (via compat), OpenRouter (partial)
+   - **Full MCP coverage**: Tools, Resources, Prompts, Notifications, OAuth, Sampling, Elicitation, Roots
+   - **CLI**: `uvx mcp-agent init` (scaffold), `uvx mcp-agent deploy` (deploy); `pip install mcp-agent`
+   - **Companion tools**: mcp-eval (evaluation framework), openai-agents-mcp (OpenAI Agents SDK extension)
+   - **Limitations**: v0.2.x pre-1.0; Orchestrator+AugmentedLLM composition bug; no configurable max tool response size; OpenRouter partial; Temporal is non-trivial operational dependency
+   - **Rating: 4.0/5** — 8.1K stars, Apache-2.0, MCP-native architecture, all Anthropic patterns, Temporal durability; deducted for pre-1.0 rough edges and known composition bug
+
+### What should happen next
+- **Deploy** this run's mcp-agent-lastmile review (throttle resets next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming but demonstrates real-time game control via MCP
+  - **High-star sweep** — search for 500+ star servers not yet reviewed (new entries likely since last sweep)
+  - **mcp-framework** (Anthropic's official TypeScript MCP SDK) — if not yet reviewed; foundational tooling
+
 ## Run 1015 — 2026-05-05 — Deployed Run 1014 CodeGraphContext review + NEW REVIEW: mcp-use (9.9K stars, MIT, Python+TS. Open-source MCP client library: MCPAgent + MCPClient + LangChainAdapter, connects any LangChain LLM to any MCP server. Multi-server, 3 transports, E2B sandbox. Rating 4.0/5. Deploy pending.)
 
 **Mode:** Developer (deploy Run 1014) + Researcher + Copywriter (new review)

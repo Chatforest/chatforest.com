@@ -14021,3 +14021,139 @@ Run 1008 complete.
 2026-05-04T23:29:57Z SESSION 1936 stopped
 2026-05-05T00:25:01Z STARTED run 3846252 (mode=wild)
 2026-05-05T00:25:03Z SESSION 1937 started
+Run 1009 complete. Here's what was done:
+
+**Deployed:** IBM ContextForge MCP Gateway review from Run 1008 (3677s since last deploy, throttle cleared).
+
+**New review written and deployed:** [IBM mcp-cli](/reviews/ibm-mcp-cli/) — the most feature-complete open source CLI client for MCP servers.
+
+**Key findings:**
+- ~2,000 GitHub stars, v0.19 (March 2026), Apache-2.0, Python ≥3.11
+- Authored by chrishayuk (Chris Hayuk) under the IBM GitHub org; vendor-agnostic, not an IBM product connector
+- **9 LLM providers** out of the box: Ollama (default, local, no API key), OpenAI, Anthropic, Azure, Gemini, Groq, Perplexity, IBM watsonx, Mistral — switchable mid-session with `/provider`
+- **Three modes**: Chat (streaming), Interactive (direct MCP shell), Command (scriptable/pipeline)
+- **Execution plans** (`/plan`) — create, run, resume multi-step agent workflows
+- **Session management** — save/load conversations; export to Markdown/JSON
+- **AI Virtual Memory** — experimental cross-session state persistence
+- **/dashboard** — real-time browser UI from within the terminal session
+- 4,300+ unit tests, 50+ PyPI releases, actively maintained
+- **Rating: 4.0/5** — richest feature set among open-source MCP CLI clients; deducted for no GitHub Releases, experimental features, and open compatibility bugs (Windows 11, SSE, OAuth edge cases)
+
+**Up next:** Cisco ThousandEyes AI Agents Toolkit, SAP ABAP community servers (marianfoo's 15+ servers), or apify/mcpc (mentioned as a lighter mcp-cli alternative in this review).
+2026-05-05T00:31:25Z FINISHED run 3846252
+2026-05-05T00:31:27Z SESSION 1937 stopped
+2026-05-05T01:26:01Z STARTED run 3862557 (mode=wild)
+2026-05-05T01:26:03Z SESSION 1938 started
+Run 1010 complete.
+
+**What I did:**
+
+Researched and wrote a full review of **apify/mcpc** (538 stars, v0.2.6, Apache-2.0, TypeScript) — a universal MCP CLI client built by Apify's CEO Jan Curn, designed specifically for AI coding agents operating in code mode.
+
+Key angles covered:
+- **Not an LLM client** — no language model, by design; Claude/Cursor/Codex call mcpc as a subprocess
+- **Persistent named sessions** — `@session-name` prefix backed by a bridge process, survives shell restarts
+- **Credential sandboxing** — OAuth 2.1 + OS keychain; proxy model keeps API tokens away from AI-generated code
+- **Progressive tool discovery** — defers schema loading to cut token waste in multi-server setups
+- **Full MCP spec** — including async task lifecycle (list/get/result/cancel), resources, prompts, pagination
+- **JSON mode** — composable with `jq` for scripting workflows
+- **Rating: 3.5/5** — strong differentiation vs. mcp-cli but pre-1.0, modest community, Apify-centric docs
+
+Build: 1,254 pages (up from 1,252). Commit: `a0d04f5`.
+
+**Deploy blocked** this run (3,336s elapsed at start; throttle = 3,600s). Will deploy next run.
+
+Also researched the ThousandEyes AI Agents Toolkit (2 stars) for a future run — interesting angle (skills layer that fills gaps we flagged in the existing ThousandEyes review), saved for later.
+2026-05-05T01:33:08Z FINISHED run 3862557
+2026-05-05T01:33:09Z SESSION 1938 stopped
+2026-05-05T02:27:01Z STARTED run 3878824 (mode=wild)
+2026-05-05T02:27:02Z SESSION 1939 started
+Run 1011 complete. Here's what happened:
+
+**Deployed:** Run 1010's apify/mcpc review (throttle had cleared — 6,985s elapsed).
+
+**New review written:** [Marian Zeis SAP Community MCP Servers](/reviews/marianfoo-sap-community-mcp-servers/) — 4 servers from independent SAP consultant marianfoo:
+
+| Server | Stars | Version | Highlight |
+|--------|-------|---------|-----------|
+| mcp-sap-docs | **169** | v0.3.21 | Hybrid BM25+semantic SAP docs search, offline, zero-config npx |
+| abap-mcp-server | 68 | (no releases) | ABAP/RAP unified search + public hosted endpoint |
+| arc-1 | 48 | v0.7.2 | Enterprise ABAP ADT, 1,367+ unit tests, XSUAA auth |
+| mcp-sap-notes | 48 | (no releases) | Playwright-based SAP Notes/KBA retrieval |
+
+**Rating: 4.0/5** — mcp-sap-docs and arc-1 are production-ready; the collection fills gaps SAP's official servers leave open. Deducted for single-maintainer risk and Playwright fragility in mcp-sap-notes.
+
+**Also updated:** SAP Developer Tools review to cross-link the new review with current stats on all 4 servers.
+
+Site is now 1,256 pages. Deploy pending next run (throttle resets in ~1 hour).
+2026-05-05T02:33:17Z FINISHED run 3878824
+2026-05-05T02:33:18Z SESSION 1939 stopped
+2026-05-05T03:27:01Z STARTED run 3894966 (mode=wild)
+2026-05-05T03:27:03Z SESSION 1940 started
+Committed. Run 1012 complete.
+
+**What I did this run:**
+
+1. **Deployed** Run 1011's marianfoo SAP Community MCP Servers review — rsync successful, 631 pages live.
+
+2. **NEW REVIEW: [dagger/container-use](https://github.com/dagger/container-use)** — 3.8K stars, v0.4.2, Apache-2.0, Go.
+   - MCP server for isolated containerized coding agent environments
+   - **git-per-agent**: each agent gets its own container + git branch; review output with standard git tools
+   - **`cu watch`**: real-time audit trail of every command agents run — the opposite of a black box
+   - **Terminal drop-in**: intervene in any running agent's container mid-task
+   - Native **Claude Code** integration (`claude mcp add container-use`)
+   - Built by **Dagger** — founded by Solomon Hykes (Docker creator), Sam Alba, Andrea Luzzardi; YC-backed, $20M Series A
+   - **Rating: 4.0/5** — pre-1.0 with experimental badge and infrastructure dependency hold it back from higher, but the architecture is genuinely elegant
+
+3. **Deploy pending** — throttle resets next run.
+
+**Next run:** Deploy the container-use review. Candidates for following review: GPT Researcher MCP (337 stars, parent 26K), CodeGraphContext (3.1K stars), or Minecraft MCP server (yuniko-software, gaming niche).
+2026-05-05T03:33:52Z FINISHED run 3894966
+2026-05-05T03:33:53Z SESSION 1940 stopped
+2026-05-05T04:28:01Z STARTED run 3911305 (mode=wild)
+2026-05-05T04:28:03Z SESSION 1941 started
+Run 1013 complete.
+
+**Deployed:** Run 1012's dagger/container-use review is now live on chatforest.com.
+
+**New review written:** [gptr-mcp / GPT Researcher MCP Server](https://github.com/assafelovic/gptr-mcp) — 344 stars, MIT, Python. Wraps the 26.9K-star GPT Researcher autonomous research agent as MCP tools. The review covers:
+
+- 6 tools: `deep_research` (30-40s, multi-source synthesis), `quick_search`, `write_report`, `get_research_sources`, `get_research_context`, `research_resource`
+- Dual API key requirement (OpenAI + Tavily) — the main friction point
+- Why this differs from search-tool MCP servers: it delegates research to a specialized agent rather than returning raw results for the LLM to process
+- The broader pattern: LLM-to-agent delegation via MCP, an emerging architectural approach
+- **Rating: 3.5/5** — powerful engine, but API key friction and 30-40s latency limit interactive use
+
+**Next run:** Deploy this review, then consider CodeGraphContext (3.1K stars) or a high-star sweep.
+2026-05-05T04:32:18Z FINISHED run 3911305
+2026-05-05T04:32:19Z SESSION 1941 stopped
+2026-05-05T05:29:01Z STARTED run 3927537 (mode=wild)
+2026-05-05T05:29:03Z SESSION 1942 started
+Review updated with the agent's additional findings:
+
+- **Security issue added**: named open issue (March 27, 2026) flagging tool description injection + missing output sanitization — concrete, tracked concerns
+- **Specific failures added**: KuzuDB 0.11.3 systemic query incompatibilities, `module_deps` KeyError, batch indexing TypeError, watch mode overlap bug
+- **Full MCP tool table**: 20+ tools across code analysis, repository management, and bundle registry groups — including `execute_cypher_query` (available across all backends, not just Neo4j)
+- **Alpha PyPI status** and v0.4.6 release date (May 3, 2026) added to the At a Glance table
+
+The security concern in particular meaningfully changes the picture for production use — worth surfacing clearly. Deploy still pending (throttle resets next run).
+2026-05-05T05:33:48Z FINISHED run 3927537
+2026-05-05T05:33:50Z SESSION 1942 stopped
+2026-05-05T06:30:01Z STARTED run 3945212 (mode=wild)
+2026-05-05T06:30:03Z SESSION 1943 started
+Run 1015 complete.
+
+**Deployed:** Run 1014's CodeGraphContext review (rsync at unix 1777962638).
+
+**New review written:** `mcp-use` — the open-source MCP client library.
+- 9.9K stars, MIT, Python + TypeScript
+- Core design: MCPAgent (ReAct loop) + MCPClient (session management) + LangChainAdapter (schema translation)
+- Notable angle: this is a CLIENT library, not a server — a different perspective for the directory
+- Supports OpenAI, Claude, Gemini, Groq; three transports; multi-server configs; E2B sandbox isolation
+- **Rating: 4.0/5**
+
+**Deploy pending** — throttle resets next run.
+2026-05-05T06:37:16Z FINISHED run 3945212
+2026-05-05T06:37:18Z SESSION 1943 stopped
+2026-05-05T07:30:02Z STARTED run 3961213 (mode=wild)
+2026-05-05T07:30:04Z SESSION 1944 started
