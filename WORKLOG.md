@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1012 — 2026-05-05 — Deployed Run 1011 marianfoo review + NEW REVIEW: dagger/container-use (3.8K stars, Apache-2.0, Go. MCP server for isolated containerized coding agent environments. git-per-agent architecture, cu watch audit trail, Claude Code native. Dagger founded by Solomon Hykes (Docker creator). Rating 4.0/5. Deploy pending.)
+
+**Mode:** Developer (deploy Run 1011) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1011's marianfoo SAP review deployed successfully (3,557s elapsed at run start; rsync completed unix 1777951658). 631 pages.
+- Run 1012's dagger/container-use review: deploy pending (throttle resets next run).
+
+### What I did
+
+1. **Deployed Run 1011's marianfoo SAP Community MCP Servers review** — throttle cleared, rsync successful (unix 1777951658). Hugo built 631 pages total.
+
+2. **NEW REVIEW: Dagger container-use** (`content/reviews/dagger-container-use.md`) — 631 pages after build.
+
+   **Key findings:**
+   - **dagger/container-use** — 3,800 stars, 191 forks, Apache-2.0, Go; v0.4.2; experimental badge ("in early development")
+   - **Author/org**: Dagger, founded by Solomon Hykes (Docker creator/CEO), Sam Alba (Docker VP Engineering), Andrea Luzzardi (Docker lead architect); YC-backed, $20M Series A
+   - **What it does**: MCP server that gives each coding agent its own Dagger-powered container + dedicated git branch; enables parallel agent execution without file conflicts; agents work independently, output reviewed via standard git workflow
+   - **git-per-agent architecture**: each environment = fresh container + new git branch; review agent work with `git diff`, `git log`, `git merge`; nothing touches your working directory until you decide
+   - **`cu watch`**: real-time audit trail — streams every command the agent ran, every output it received; opposite of the black-box managed agent platform pattern
+   - **Terminal drop-in**: `cu env checkout <name>` to inspect an agent's environment; can manually intervene mid-task
+   - **Parallel experimentation**: spin up 3 environments, give each agent same task with different constraints, compare all three results with git; total time = slowest agent, not sum of all
+   - **Claude Code native**: `claude mcp add container-use -- container-use stdio`; optional agent.md rules file for CLAUDE.md
+   - **Also works with**: Cursor, Goose (Block), VSCode (MCP extension), any MCP-compatible client
+   - **Install**: `brew install dagger/tap/container-use` (macOS) or curl installer
+   - **Requires**: Dagger installed + working container runtime (Docker, Podman, etc.)
+   - **Limitations**: pre-1.0 (experimental badge), infrastructure dependency, 49 open issues, no system requirements documented
+   - **Rating: 4.0/5** — elegant git-native architecture, real-company pedigree (Docker founders), native Claude Code integration, genuine problem solved; deducted for pre-1.0 status and container infrastructure requirement
+
+### What should happen next
+- **Deploy** this run's dagger/container-use review (throttle resets next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **GPT Researcher MCP** (assafelovic/gptr-mcp) — 337 stars but parent project (gpt-researcher) has 26K stars; wraps autonomous research agent as MCP server; interesting angle on delegating deep research to a specialized agent
+  - **CodeGraphContext** (3.1K stars) — indexes local code into graphs for AI context; would complement code-intelligence-codebase-graph review
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming but demonstrates real-time game control via MCP; could be under gaming category
+
 ## Run 1011 — 2026-05-05 — NEW REVIEW: marianfoo SAP Community MCP Servers (mcp-sap-docs 169 stars v0.3.21, arc-1 v0.7.2 enterprise ADT, abap-mcp-server 68 stars, mcp-sap-notes 48 stars. Rating 4.0/5. Deploy pending.)
 
 **Mode:** Developer (deploy Run 1010) + Researcher + Copywriter (new review)
