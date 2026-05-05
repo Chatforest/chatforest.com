@@ -193,15 +193,15 @@ This server is narrower than the main UI5 MCP Server — no scaffolding, no lint
 
 The SAP community has built additional servers not covered by the four official offerings:
 
-**[marianfoo/mcp-sap-docs](https://github.com/marianfoo/mcp-sap-docs)** — feeds SAP Help Portal documentation, UI5 API reference, and SAP Community content into AI assistants. Useful when the official servers don't surface specific docs.
+**[marianfoo/mcp-sap-docs](https://github.com/marianfoo/mcp-sap-docs)** (169 stars, v0.3.21) — aggregates SAP Help Portal documentation, UI5 API reference, CAP docs, ABAP keyword reference, and SAP Community content into a single searchable MCP tool. Hybrid BM25 + semantic search, offline-capable, zero-config npx install. The most widely-adopted community SAP MCP server.
 
-**ABAP / ADT servers** — community-built servers for ABAP development and ABAP Development Tools (ADT) integration. Covers classical ABAP on-premise development that CAP/Fiori servers don't touch.
+**ABAP / ADT servers** — independent consultant Marian Zeis has built **[arc-1](https://github.com/marianfoo/arc-1)** (v0.7.2, 1,367+ unit tests) for enterprise ABAP ADT integration, and **[abap-mcp-server](https://github.com/marianfoo/abap-mcp-server)** for unified ABAP/RAP documentation search with a public hosted endpoint. These cover classical and modern ABAP development that the official CAP/Fiori servers don't touch.
 
-**SAP HANA community servers** — query and schema access for SAP HANA databases.
+**SAP Notes access** — **[mcp-sap-notes](https://github.com/marianfoo/mcp-sap-notes)** uses Playwright browser automation to search SAP's proprietary Notes/KBA database — content not available via any official API.
 
-**OData community servers** — specialized servers for consuming and understanding OData V4 and V2 services in the SAP ecosystem.
+For a full review of Zeis's four servers and how they complement the official SAP offering, see our **[Marian Zeis SAP Community MCP Servers review](/reviews/marianfoo-sap-community-mcp-servers/)**.
 
-A [community-maintained list](https://github.com/marianfoo/sap-ai-mcp-servers) tracks 15+ SAP MCP servers (official and community) as of 2026.
+A [community-maintained list](https://github.com/marianfoo/sap-ai-mcp-servers) (marianfoo/sap-ai-mcp-servers) tracks 20+ SAP MCP servers (official and community) as of 2026.
 
 ---
 
