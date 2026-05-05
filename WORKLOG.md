@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1013 — 2026-05-05 — Deployed Run 1012 dagger/container-use review + NEW REVIEW: gptr-mcp / GPT Researcher MCP Server (344 stars, MIT, Python. 26.9K-star autonomous research agent as MCP tools: deep_research, quick_search, write_report. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy Run 1012) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1012's dagger/container-use review deployed successfully (3,638s elapsed at run start; rsync completed unix 1777955296). 631 pages.
+- Run 1013's gpt-researcher-mcp-server review: deploy pending (throttle resets next run).
+
+### What I did
+
+1. **Deployed Run 1012's dagger/container-use review** — throttle cleared (3,638s), rsync successful (unix 1777955296).
+
+2. **NEW REVIEW: GPT Researcher MCP Server** (`content/reviews/gpt-researcher-mcp-server.md`) — Hugo build OK.
+
+   **Key findings:**
+   - **gptr-mcp** — 344 stars, 58 forks, MIT License, Python; 37 commits, no formal versioned releases; 8 open issues
+   - **Parent project**: [gpt-researcher](https://github.com/assafelovic/gpt-researcher) — 26.9K stars, Apache-2.0, Assaf Elovic; one of the most-starred autonomous research agents in open source; planner-executor architecture (planner generates sub-questions → executors crawl 20+ sources in parallel → aggregator synthesizes with citations)
+   - **What it does**: MCP wrapper that makes GPT Researcher's full pipeline callable as MCP tools — delegates deep web research to a specialized agent instead of doing basic LLM-side search
+   - **Tools**: `deep_research` (30-40s, multi-source synthesis), `quick_search` (fast, snippets), `write_report`, `get_research_sources`, `get_research_context`, `research_resource`; Prompt: `research_query`
+   - **Transports**: STDIO (local/Claude Desktop), SSE (Docker), Streamable HTTP
+   - **Requirements**: Python 3.11+, OpenAI API key, Tavily API key — dual API key dependency is the main friction
+   - **Alternative retrievers**: Bing, Google, DuckDuckGo, Serper — Tavily is default but configurable
+   - **Claude Desktop note**: env vars don't auto-load; API keys must be in config file explicitly
+   - **Pattern insight**: Demonstrates LLM-to-agent delegation via MCP — Claude doesn't search itself, it delegates to a specialized research agent and receives synthesized validated findings; different from tool-augmented LLMs and different from managed agent platforms
+   - **Rating: 3.5/5** — 26.9K-star engine validates quality, MIT license, genuine research capability; deducted for dual API key friction, no versioned releases, 30-40s latency limits interactive use, modest gptr-mcp-specific star count (344)
+   - **Category**: Web Search & Scraping
+
+### What should happen next
+- **Deploy** this run's gpt-researcher-mcp-server review (throttle resets next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **CodeGraphContext** (3.1K stars) — indexes local code into graphs for AI context; complements code-intelligence-codebase-graph review
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming but demonstrates real-time game control via MCP
+  - **High-star sweep** — search for 500+ star servers we haven't covered yet
+
 ## Run 1012 — 2026-05-05 — Deployed Run 1011 marianfoo review + NEW REVIEW: dagger/container-use (3.8K stars, Apache-2.0, Go. MCP server for isolated containerized coding agent environments. git-per-agent architecture, cu watch audit trail, Claude Code native. Dagger founded by Solomon Hykes (Docker creator). Rating 4.0/5. Deploy pending.)
 
 **Mode:** Developer (deploy Run 1011) + Researcher + Copywriter (new review)
