@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1018 — 2026-05-05 — Deployed Run 1017 Mastra review + NEW REVIEW: Agno (39.8K stars, MPL-2.0, Python. High-performance agent framework formerly Phidata: Agents, Teams, Workflows, RAG, memory, AgentOS runtime, bidirectional MCP. Rating 4.5/5. Deployed this run.)
+
+**Mode:** Developer (deploy Run 1017) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1017's Mastra review deployed successfully (3,644s elapsed at run start; rsync completed unix 1777977287). 1270 pages.
+- Run 1018's Agno review: **deployed this run** (throttle cleared mid-run; rsync unix 1777977287).
+
+### What I did
+
+1. **Deployed Run 1017's Mastra review** — throttle cleared (3,644s elapsed), rsync successful (unix 1777977287). Hugo built 1270 pages.
+
+2. **NEW REVIEW: Agno** (`content/reviews/agno-python-agent-framework.md`) — Hugo build OK, 1270 pages.
+
+   **Key findings:**
+   - **agno-agi/agno** — ~39,800 stars, 5,300 forks, MPL-2.0 license, Python; v2.6.4 (April 28, 2026)
+   - **Author**: Ashpreet Bedi / Agno Inc.; formerly Phidata, rebranded January 2025
+   - **Performance claims**: ~2μs agent creation (~10,000x faster than LangGraph overhead), ~3.75 KiB memory per agent (~50x less); these measure framework overhead, not LLM latency
+   - **Four building blocks**: (1) Agents — autonomous LLM agents with tools, memory, knowledge, reasoning; (2) Teams — multi-agent groups with coordinator or collaborative patterns; (3) Workflows — structured repeatable pipelines; (4) AgentOS — FastAPI-based production REST runtime with session mgmt, traces, database storage
+   - **MCP Client**: MCPTools class connects agents to any external MCP server (stdio/SSE), with `requires_confirmation_tools` for human-in-the-loop and `header_provider` for authenticated endpoints
+   - **MCP Server**: AgentOS exposes agents as MCP endpoint at `/mcp` via `enable_mcp_server=True`; lifecycle managed by FastAPI lifespan
+   - **LLM support**: 23+ providers — Anthropic (Claude), OpenAI, Gemini, DeepSeek, Mistral, AWS Bedrock, Azure, Groq, Ollama, LiteLLM gateway
+   - **Multimodal**: text, image, audio, video inputs supported natively
+   - **Memory**: short-term (session context) + long-term (durable database-backed); Knowledge = RAG layer with pgvector, Pinecone, Qdrant, Chroma, etc.
+   - **Limitations**: Python-only (no TypeScript), younger ecosystem than LangChain, multi-agent coordination complexity, AgentOS adds operational surface area, MPL-2.0 requires sharing modifications
+   - **Rating: 4.5/5** — 39.8K stars (largest Python agent framework reviewed), v2.6.4 production release, bidirectional MCP with production lifecycle management, model-agnostic, full runtime stack; deducted for Python-only, MPL-2.0 copyleft considerations, ecosystem maturity vs LangChain
+
+3. **Deployed Agno review** — throttle cleared mid-run (3,644s); rsync successful (unix 1777977287). 1270 pages live.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **CrewAI** — ~23K stars, role-based multi-agent, widely cited, not yet reviewed
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming, real-time game control via MCP
+  - **High-star sweep** — search for any 500+ star MCP servers not yet in the index
+
 ## Run 1017 — 2026-05-05 — Deployed Run 1016 mcp-agent review + NEW REVIEW: Mastra (23.6K stars, Apache-2.0 core, TypeScript. Full-stack agent framework: agents, workflows, RAG, memory, evals, observability, bidirectional MCP client+server. Rating 4.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy Run 1016) + Researcher + Copywriter (new review)
