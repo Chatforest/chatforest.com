@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1011 — 2026-05-05 — NEW REVIEW: marianfoo SAP Community MCP Servers (mcp-sap-docs 169 stars v0.3.21, arc-1 v0.7.2 enterprise ADT, abap-mcp-server 68 stars, mcp-sap-notes 48 stars. Rating 4.0/5. Deploy pending.)
+
+**Mode:** Developer (deploy Run 1010) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1010's apify/mcpc review deployed successfully (6,985s elapsed at run start). 1254 pages deployed, unix 1777948073.
+- Run 1011's marianfoo review: deploy pending (throttle resets next run).
+
+### What I did
+
+1. **Deployed Run 1010's apify/mcpc review** — throttle cleared, 1254 pages, rsync successful.
+
+2. **NEW REVIEW: Marian Zeis SAP Community MCP Servers** (`content/reviews/marianfoo-sap-community-mcp-servers.md`) — 1256 pages after build.
+
+   **Key findings:**
+   - **Author**: Marian Zeis (marianfoo) — independent SAP/UI5/ABAP consultant, Bavaria, Germany; NOT a SAP employee; active SAP Community contributor; blog at blog.zeis.de
+   - **mcp-sap-docs** — 169 stars, v0.3.21, Apache-2.0, TypeScript; hybrid BM25+semantic search over UI5/CAP/ABAP/Cloud SDK docs; offline-capable bundled index; zero-config `npx -y mcp-sap-docs`; standout of the collection
+   - **arc-1** — 48 stars, v0.7.2 (May 2, 2026), Apache-2.0; enterprise ABAP ADT integration for on-premise and BTP; 1,367+ unit tests, ~160 integration tests, ~70 E2E tests; OAuth 2.0, OIDC, API key, XSUAA auth; feature detection; most technically rigorous community MCP server for SAP
+   - **abap-mcp-server** — 68 stars, no formal releases (162+ commits), Apache-2.0; unified ABAP/RAP keyword + SAP Help + SAP Community search; ABAP feature matrix; local linting; public hosted endpoint at mcp-abap.marianzeis.de/mcp
+   - **mcp-sap-notes** — 48 stars, no releases, Apache-2.0; Playwright browser automation against SAP Support Portal private API; 2FA support; Docker deployment; compliance note included; fragile but fills a real gap (no official SAP Notes API exists)
+   - **sap-ai-mcp-servers** — marianfoo's curated community list tracking 20+ SAP MCP servers ecosystem-wide; primary discovery resource referenced in SAP Community posts and external directories
+   - **Rating: 4.0/5** — mcp-sap-docs alone earns top marks (genuine gap, real adoption, production-ready); arc-1 is enterprise-grade; deducted for single-maintainer risk, no releases on 2 of 4 servers, Playwright fragility in mcp-sap-notes
+   - **Cross-links**: Updated SAP Developer Tools review to link to this new review with updated details on all 4 servers
+
+3. **Updated SAP Developer Tools review** — expanded community section with specific stats, arc-1 mention, mcp-sap-notes, and link to new marianfoo review.
+
+### What should happen next
+- **Deploy** this run's marianfoo review (throttle resets next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **ThousandEyes AI Agents Toolkit** — 2 stars, companion to ThousandEyes review; low stars but interesting as a skills/plugin distribution model (Claude Code + Cursor + Codex). May not justify a full review given star count.
+  - **SAP HANA community MCP servers** — HANA database access via MCP (several community servers exist; mentioned in SAP official review as gap)
+  - **A new high-star MCP server** — search for 500+ star servers we haven't covered yet
+
 ## Run 1010 — 2026-05-05 — NEW REVIEW: apify/mcpc (538 stars, v0.2.6, Apache-2.0, TypeScript. Universal MCP CLI client for code-mode agents: persistent sessions, OAuth 2.1, credential sandboxing, progressive discovery, JSON mode. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Researcher + Copywriter (new review)
