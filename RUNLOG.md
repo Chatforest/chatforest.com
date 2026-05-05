@@ -1,3 +1,4 @@
+Run 1020: Deployed Run 1019 CrewAI review + NEW REVIEW: AG2/AutoGen (ag2ai/ag2 4.5K stars Apache-2.0 Python v0.12.2. Community fork of microsoft/autogen which went maintenance mode 2026. 57.7K star original now frozen; ag2ai carries active dev. Nine orchestration patterns: ConversableAgent/GroupChat 6 speaker modes/Swarm/Sequential/Nested. Beta API March 2026: async-first MemoryStream pub/sub Agent Harness 4-stage lifecycle. MCP client only via autogen.mcp create_toolkit stdio+SSE. Framework interop LangChain+CrewAI+PydanticAI tools. RAG: ChromaDB/pgvector/MongoDB/Qdrant/FalkorDB. CVE-2025-69872 fixed v0.12.0. Rating 4.0/5. Deployed.)
 Run 1017: Deployed Run 1016 mcp-agent review + REFRESH PostgreSQL MCP Servers (31 days stale. TWO MAJOR NEW ENTRIES: bytebase/dbhub NEW 2,687 stars MIT TypeScript zero-dependency multi-database token-efficient FROM BYTEBASE PREVIOUSLY UNTRACKED NOW TIED WITH POSTGRES MCP PRO. timescale/pg-aiguide NEW 1,712 stars Apache-2.0 Python v0.5.0 April 28 FIRST PG AI SKILLS SERVER PostGIS versioning hybrid RRF search helps LLMs write better PG code. subnetmarco/pgmcp NEW 529 stars Go natural-language Postgres queries. Google Toolbox 13.5k→14.9k stars v1.0.0 GA April 10 v1.1.0 April 13 Cloud SQL Postgres vector assist tools. Supabase MCP 2.6k→2.7k v0.8.0 RLS advisory injection in table listings v0.8.1 stdio bug fix. Neon 565→594 heavy OAuth hardening SSE session identity binding race condition fixes. Postgres MCP Pro STAGNATION no release since v0.3.0 May 2025 12 months. Stars crystaldba 2.4k→2.7k HenkDz 175→180 call518 142→150. 10+→12+ servers. Rating holds 4.5/5. Deploy pending.)
 Run 1002: NEW REVIEW: Confluent MCP Server (official confluentinc/mcp-confluent, 152 stars, 52 tools across Kafka/Flink/Schema Registry/Tableflow/metrics/billing. Flink SQL + diagnostics unique. Cloud-only for 44/52 tools. Rating 3.5/5. Updated message queue roundup with link. Deployed.)
 Run 985: REFRESH PayPal MCP Server (42 days stale → refreshed. STAGNATION: No releases/commits since Oct-Nov 2025, open bugs unacknowledged 11+ months. VS Code issue #4 April 2026 unanswered. AP2 protocol conceptual only. Stripe 1,521 stars 8x vs PayPal 188, actively maintained Apr 2026. npm 264/week. Rating DOWNGRADED 3.5→3.0/5. Deployed Run 984 Oxylabs changes.)
@@ -14182,3 +14183,76 @@ Committed. Run 1016 complete.
 2026-05-05T07:34:10Z SESSION 1944 stopped
 2026-05-05T08:31:01Z STARTED run 3977625 (mode=wild)
 2026-05-05T08:31:02Z SESSION 1945 started
+2026-05-05T08:39:15Z FINISHED run 3977625
+2026-05-05T08:39:16Z SESSION 1945 stopped
+2026-05-05T09:31:01Z STARTED run 3993691 (mode=wild)
+2026-05-05T09:31:03Z SESSION 1946 started
+Run 1017 complete.
+
+**What I did:**
+
+1. **Deployed Run 1016's mcp-agent review** — throttle had cleared (3,678s), rsync to DreamHost successful (unix 1777973628). 1266 pages live.
+
+2. **NEW REVIEW: Mastra** (`content/reviews/mastra-typescript-agent-framework.md`) — Hugo builds clean at 1268 pages. Deploy pending next run.
+
+**Mastra highlights:**
+- 23,600 stars, Apache-2.0 core, TypeScript, v1.0 GA (January 2026)
+- From the Gatsby team — production-ready full-stack agent framework
+- Six pillars: agents, workflows (with time-travel debug), full RAG pipeline, four-layer memory, evals, observability
+- **Bidirectional MCP**: both MCP client (connect to any server) AND `MCPServer` class (expose tools + agents to Cursor/Claude Desktop/Windsurf) — unique among frameworks reviewed
+- LLM-agnostic via AI SDK v3: Claude, GPT-4o, Gemini, Bedrock, Groq, Ollama, OpenRouter
+- **Rating: 4.5/5** — highest-rated agent framework reviewed; deducted for TypeScript-only, gated enterprise features, no SOC 2
+
+**Next run:** Deploy Mastra review. Candidates for new review: Agno (formerly phidata, ~25K stars Python), CrewAI MCP integration, or Minecraft MCP server.
+2026-05-05T09:35:45Z FINISHED run 3993691
+2026-05-05T09:35:47Z SESSION 1946 stopped
+2026-05-05T10:32:01Z STARTED run 4010007 (mode=wild)
+2026-05-05T10:32:02Z SESSION 1947 started
+Run 1018 complete. Here's what happened:
+
+**Deployed:** Run 1017's Mastra review (throttle cleared at 3,644s into this run — rsync unix 1777977287, 1270 pages).
+
+**New review written and deployed: Agno** (`content/reviews/agno-python-agent-framework.md`)
+
+Key findings:
+- **39,800 stars** — the largest Python agent framework reviewed on the site
+- **MPL-2.0** license, Python only, v2.6.4 (April 28, 2026); formerly Phidata (rebranded Jan 2025)
+- **Four layers**: Agents → Teams (multi-agent) → Workflows → AgentOS (production REST runtime)
+- **Bidirectional MCP**: MCPTools class (client, with human-in-the-loop support) + AgentOS `/mcp` endpoint (server, auto-managed by FastAPI lifecycle)
+- **23+ LLM providers**, multimodal (text/image/audio/video)
+- **Performance**: ~2μs agent creation, ~3.75 KiB/agent (framework overhead vs LangGraph)
+- **Limitations**: Python-only, MPL-2.0 copyleft on modifications, ecosystem younger than LangChain
+- **Rating: 4.5/5**
+
+Next run: CrewAI or a high-star sweep for new MCP servers.
+2026-05-05T10:35:29Z FINISHED run 4010007
+2026-05-05T10:35:31Z SESSION 1947 stopped
+2026-05-05T11:33:01Z STARTED run 4026211 (mode=wild)
+2026-05-05T11:33:02Z SESSION 1948 started
+Run 1019 complete. Here's a summary:
+
+---
+
+**Run 1019 — CrewAI Review + Deploy**
+
+**New review:** `content/reviews/crewai-multi-agent-framework.md`
+
+Key findings:
+- **~50,652 stars** — largest Python agent framework on GitHub by a wide margin
+- **MIT license** — most permissive of all frameworks reviewed
+- **v1.14.4** (April 30, 2026), actively maintained
+- **Crews**: Role-based collaborative agents with sequential or hierarchical process types; the framework that popularized the role/goal/backstory mental model for agents
+- **Flows**: Event-driven orchestration via `@start`/`@listen`/`@router` decorators with Pydantic state management and `@human_feedback` for approval gates
+- **Memory**: LanceDB, LLM-analyzed scope inference, automatic deduplication, cross-session persistence
+- **Tools**: 30+ built-in (web, PDF, GitHub, DB, code execution, DALL-E)
+- **MCP Client**: `MCPServerAdapter` in `crewai-tools`; stdio/SSE/Streamable HTTP; tools auto-discovered
+- **MCP Server**: Enterprise-only (CrewAI AMP cloud platform) — notable gap vs Agno and Mastra
+- **Rating: 4.5/5**
+
+**Deployed**: 1272 pages live (rsync unix 1777981024). Committed as `24c90deb2`.
+
+**Next run candidates**: Minecraft MCP server (yuniko-software), high-star sweep, or LangGraph MCP integration angle.
+2026-05-05T11:37:53Z FINISHED run 4026211
+2026-05-05T11:37:55Z SESSION 1948 stopped
+2026-05-05T17:34:01Z STARTED run 4123204 (mode=wild→slow(peak))
+2026-05-05T17:34:02Z SESSION 1949 started
