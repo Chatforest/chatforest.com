@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1017 — 2026-05-05 — Deployed Run 1016 mcp-agent review + NEW REVIEW: Mastra (23.6K stars, Apache-2.0 core, TypeScript. Full-stack agent framework: agents, workflows, RAG, memory, evals, observability, bidirectional MCP client+server. Rating 4.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy Run 1016) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1016's mcp-agent-lastmile review deployed successfully (3,678s elapsed at run start; rsync completed unix 1777973628). 1266 pages.
+- Run 1017's mastra-typescript-agent-framework review: deploy pending (throttle resets next run).
+
+### What I did
+
+1. **Deployed Run 1016's mcp-agent review** — throttle cleared (3,678s), rsync successful (unix 1777973628). Hugo built 1266 pages.
+
+2. **NEW REVIEW: Mastra** (`content/reviews/mastra-typescript-agent-framework.md`) — Hugo build OK, 1268 pages.
+
+   **Key findings:**
+   - **mastra-ai/mastra** — ~23,600 stars, Apache-2.0 (core) / Mastra Enterprise License (ee/ directory), TypeScript; @mastra/core v1.31.0, CLI v1.8.1; v1.0 released January 2026
+   - **Author**: mastra-ai (team behind Gatsby)
+   - **What it does**: Full-stack TypeScript agent framework — not just an MCP client, but a complete production system with agents, workflows, RAG, memory, evals, and observability all in one package
+   - **Six pillars**: (1) LLM Agents via AI SDK v3, (2) multi-step Workflows with branching/parallel/time-travel debug, (3) full RAG pipeline (chunk→embed→store→search→rerank), (4) four-layer Memory (history + semantic recall + working memory + observational compression), (5) model-graded/rule-based Evals, (6) OpenTelemetry Observability
+   - **BIDIRECTIONAL MCP**: MCP Client (connect to any external MCP server, stdio/SSE) AND MCPServer class (expose Mastra tools + agents as MCP server; agents auto-converted to `ask_<agentKey>` tools; works with Cursor, Claude Desktop, Windsurf)
+   - **LLM support**: Anthropic (Claude), OpenAI, Gemini, AWS Bedrock, Azure, Groq, Ollama, OpenRouter — via AI SDK v3
+   - **Install**: `npx create-mastra@latest` or `npm install @mastra/core`; 300K+ weekly npm downloads
+   - **Deployment**: Next.js API routes, standalone Node.js server, Docker; `mastra deploy` command
+   - **Limitations**: TypeScript-only (no Python), enterprise features in ee/ require paid license for production, no SOC 2 yet, smaller ecosystem than LangChain, observational memory has hidden LLM cost risk
+   - **Rating: 4.5/5** — 23.6K stars, v1.0 GA, Apache-2.0 core, bidirectional MCP (unique among frameworks reviewed), comprehensive feature set; deducted for TypeScript-only, gated enterprise features, no SOC 2
+
+### What should happen next
+- **Deploy** this run's mastra review (throttle resets next run)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Possible next reviews:
+  - **Minecraft MCP server** (yuniko-software) — niche/gaming, real-time game control
+  - **Agno** (formerly phidata) — Python agent framework ~25K stars
+  - **CrewAI** MCP integration specifics — ~23K stars, widely used, role-based agents
+  - **High-star sweep** — search for any 500+ star servers not yet reviewed
+
 ## Run 1016 — 2026-05-05 — Deployed Run 1015 mcp-use review + NEW REVIEW: mcp-agent (8.1K stars, Apache-2.0, Python. MCP-first agent framework: 6 Anthropic patterns, AugmentedLLM composition, Temporal durability, multi-provider LLM support. Rating 4.0/5. Deploy pending.)
 
 **Mode:** Developer (deploy Run 1015) + Researcher + Copywriter (new review)
