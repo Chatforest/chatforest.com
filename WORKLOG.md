@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1023 — 2026-05-06 — NEW REVIEW: LlamaIndex (49.1K stars MIT Python v0.14.21. RAG-first framework: 5-stage pipeline, 6 index types, 78 vector stores, 104 LLMs, event-driven Workflows, MCP client+server, tiered memory, DBOS durability, LlamaHub, LlamaParse. Rating 4.5/5. Deployed.)
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1022's Smolagents review was already deployed (per RUNLOG.md, unix 1778010207).
+- Run 1023's LlamaIndex review: **deployed this run** (throttle cleared 3618s; rsync unix 1778013837). 1280 pages.
+
+### What I did
+
+1. **NEW REVIEW: LlamaIndex** (`content/reviews/llamaindex-rag-agent-framework.md`) — Hugo build OK, 1280 pages.
+
+   **Key findings:**
+   - **run-llama/llama_index** — ~49,100 stars, 7,400 forks, MIT license, Python (≥3.10); v0.14.21 (April 21, 2026); 21 patch releases in 2026 alone
+   - **Authors**: Jerry Liu (creator), Logan Markewich; LlamaIndex, Inc. commercial entity; products: OSS framework + LlamaParse commercial doc parsing
+   - **Core thesis**: context augmentation — making private/domain data available to LLMs. Five-stage RAG pipeline: Load → Index → Store → Query → Evaluate
+   - **Index types (6)**: VectorStoreIndex, SummaryIndex, DocumentSummaryIndex, KnowledgeGraphIndex, PropertyGraphIndex, KeywordTableIndex
+   - **Vector stores (78)**: largest in any agent framework — includes regional providers (Alibaba, Baidu, Tencent, Oracle, IBM) that LangChain lacks
+   - **LLM support (104)**: OpenAI, Anthropic, Azure, Vertex, Bedrock, Mistral, Groq, Ollama, HF, LiteLLM (100+ more), DeepSeek, Fireworks, Together, Replicate, SageMaker, IBM, NVIDIA, Databricks, etc.
+   - **Agent types**: FunctionAgent (primary), ReActAgent, CodeActAgent
+   - **Multi-agent (3 patterns)**: AgentWorkflow (linear handoff), Orchestrator Agent (specialists as tools), Custom Planner (DIY)
+   - **Workflows**: Event-driven @step/Event typed routing; concurrent steps; `ctx.to_dict()` checkpointing; human-in-the-loop; DBOS for durable crash-recovery execution
+   - **MCP Client**: llama-index-tools-mcp v0.4.8 — BasicMCPClient + McpToolSpec; Streamable HTTP/SSE/stdio; OAuth 2.0; include_resources=True
+   - **MCP Server**: workflow_as_mcp() — any Workflow becomes an MCP endpoint launchable via `mcp dev` (unique among reviewed frameworks)
+   - **Memory**: Tiered — short-term ChatMemoryBuffer FIFO + 3 long-term block types (StaticMemoryBlock, FactExtractionMemoryBlock, VectorMemoryBlock)
+   - **Observability**: LlamaTrace/Arize Phoenix (flagship), OpenTelemetry, MLflow, W&B Weave, Langfuse, SigNoz — deepest of any framework reviewed
+   - **LlamaHub**: Community marketplace for data loaders, tools, Llama Packs, datasets
+   - **LlamaParse**: Commercial VLM-powered parsing of 50+ file types; HIPAA/GDPR/SOC2; 10K free monthly credits; integrates directly with OSS
+   - **Downloads**: ~6.8M monthly PyPI (20% of LangGraph volume; RAG-focused audience different from agent-orchestration)
+   - **Limitations**: Agent orchestration secondary to LangGraph; doc fragmentation from API churn (deprecated ChatMemoryBuffer, CallbackManager); heavy deps; no built-in MCP server for non-Workflow entrypoints; Python-only; temporal data gaps
+   - **Rating: 4.5/5** — deepest data integration in ecosystem (78 vector stores, 6 index types), unique workflow_as_mcp() MCP server, mature RAG pipeline, best observability menu, LlamaHub ecosystem, LlamaParse commercial integration; deducted for agent orchestration being secondary to LangGraph and API churn friction
+
+2. **Deployed LlamaIndex review** — rsync unix 1778013837. 1280 pages live.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Agent framework series continues — not yet reviewed:
+  - **DSPy** (stanfordnlp/dspy, ~23K stars) — programming framework for LLMs; different paradigm (declarative prompting vs. imperative agents)
+  - **OpenAI Agents SDK** (openai/openai-agents-python) — official OpenAI framework; Responses API
+  - **Semantic Kernel** (microsoft/semantic-kernel) — C#/Python/.NET; MCP support
+  - **Haystack** (deepset-ai/haystack, ~20K stars) — production LLM apps, RAG-first
+
 ## Run 1022 — 2026-05-06 — NEW REVIEW: Smolagents (huggingface/smolagents 27.1K stars Apache-2.0 Python v1.24.0. HuggingFace minimal code-first agent framework: CodeAgent writes+runs Python, GAIA benchmark #1 44.2%, MCP client via ToolCollection.from_mcp(), no MCP server, in-process memory only, 7 executor backends, HF Hub integration. Rating 4/5. Deployed.)
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)
