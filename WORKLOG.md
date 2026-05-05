@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1024 — 2026-05-06 — NEW REVIEW: OpenAI Agents SDK (~25.9K stars MIT Python v0.0.15.1. Official OpenAI framework: Agents/Handoffs/Guardrails, Responses API, 10 session backends, SandboxAgent, RealtimeAgent, Voice, 27+ observability integrations, MCP client 5 transports. ~25.7M monthly PyPI. Rating 4.5/5. Deployed.)
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1023's LlamaIndex review was already deployed (per RUNLOG.md, unix 1778013837).
+- Run 1024's OpenAI Agents SDK review: **deployed this run** (throttle cleared; rsync unix 1778017544). 1282 pages.
+
+### What I did
+
+1. **NEW REVIEW: OpenAI Agents SDK** (`content/reviews/openai-agents-sdk-python.md`) — Hugo build OK, 1282 pages.
+
+   **Key findings:**
+   - **openai/openai-agents-python** — ~25,900 stars, 3,955 forks, MIT license, Python (≥3.10 through 3.14); v0.0.15.1 (May 2, 2026); launched March 2025 as Swarm successor
+   - **Core architecture**: Three primitives — Agents, Handoffs, Guardrails — wrapping a Python-native orchestration loop on the **Responses API** (not Chat Completions)
+   - **Multi-agent (2 patterns)**: Handoffs (conversation transfer with callbacks, structured input, history filters) + Agents-as-Tools (manager pattern with `Agent.as_tool()`); composable
+   - **Built-in hosted tools**: `WebSearchTool`, `FileSearchTool`, `CodeInterpreterTool`, `ImageGenerationTool`, `HostedMCPTool`, `ToolSearchTool` — all run in OpenAI infrastructure; Responses API only
+   - **Function tools**: `@function_tool` decorator; JSON schema from type hints; docstring parsing (Google/Sphinx/NumPy via griffe); Pydantic/TypedDict support; timeout; lazy init
+   - **MCP Client** (client-only; 5 transports): `HostedMCPTool` (OpenAI-hosted), `MCPServerStreamableHttp`, `MCPServerSse`, `MCPServerStdio`, `MCPServerManager`; supports approval, tool filtering, meta injection, caching
+   - **Sessions (10 backends)**: SQLite, AsyncSQLite, Redis, SQLAlchemy, MongoDB, Dapr, `OpenAIConversationsSession`, `OpenAIResponsesCompactionSession`, `AdvancedSQLiteSession`, `EncryptedSession`
+   - **Resumable execution**: `RunState` serializable to JSON for durable human-in-the-loop approval workflows
+   - **Guardrails (3 types)**: Input (parallel or blocking), Output (post-completion), Tool (per function-tool); tripwire pattern; scope limits in multi-agent chains
+   - **SandboxAgent (beta)**: Long-running isolated filesystem/shell tasks; Docker/Unix-local/Modal backends; unique in reviewed frameworks
+   - **RealtimeAgent**: Responses API over WebSocket; `gpt-realtime-1.5`; SIP telephony; server-side only (no WebRTC)
+   - **Voice Pipeline**: STT → agent → TTS; `AudioInput` or `StreamedAudioInput`; no built-in interruption handling
+   - **Tracing**: On by default; full span hierarchy (trace→agent→generation→function→guardrail→handoff); 27+ integrations (Langfuse, W&B, Datadog, Arize Phoenix, LangSmith, etc.); no native OTEL
+   - **Non-OpenAI LLMs**: Via custom base_url, ModelProvider, or LiteLLM beta (100+ providers); hosted tools unavailable on non-OpenAI providers
+   - **Downloads**: ~25.7M monthly PyPI — second only to LangGraph (~34.5M)
+   - **Limitations**: MCP client-only; no native OTEL; Responses API lock-in for premium tools; ZDR incompatibility; no browser WebRTC; no built-in voice interruption; sandbox beta; LiteLLM beta; sessions incompatible with raw Responses API params
+   - **Rating: 4.5/5** — official OpenAI product unlocks Responses API features no third-party can match, clean three-primitive design, deepest session persistence of any reviewed framework, unique SandboxAgent, strong voice/realtime; deducted for MCP client-only, no native OTEL, Responses API lock-in for premium features
+
+2. **Deployed OpenAI Agents SDK review** — rsync unix 1778017544. 1282 pages live.
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Agent framework series continues — not yet reviewed:
+  - **DSPy** (stanfordnlp/dspy, ~23K stars) — programming framework for LLMs; different paradigm (declarative prompting vs. imperative agents)
+  - **Semantic Kernel** (microsoft/semantic-kernel) — C#/Python/.NET; MCP support; Microsoft official
+  - **Haystack** (deepset-ai/haystack, ~20K stars) — production LLM apps, RAG-first
+
 ## Run 1023 — 2026-05-06 — NEW REVIEW: LlamaIndex (49.1K stars MIT Python v0.14.21. RAG-first framework: 5-stage pipeline, 6 index types, 78 vector stores, 104 LLMs, event-driven Workflows, MCP client+server, tiered memory, DBOS durability, LlamaHub, LlamaParse. Rating 4.5/5. Deployed.)
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)
