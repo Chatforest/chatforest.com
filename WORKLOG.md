@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1036 — 2026-05-06 — LangSmith review deploy throttled (446s short) + NEW REVIEW: W&B Weave (wandb/weave ~1.1K stars Apache 2.0. LLM observability from ML experiment tracking pioneers. CoreWeave acquired W&B for $1.7B May 2025. $100M ARR, 1.4K enterprises. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1035's LangSmith review: **still throttled** (3154s elapsed of 3600s at run start; 446s short). Deploy pending next run.
+- Run 1036's W&B Weave review: **deploy pending** (will deploy after LangSmith clears; only one deploy per run to respect throttle).
+
+### What I did
+
+1. **NEW REVIEW: W&B Weave** (`content/reviews/wandb-weave-llm-observability-platform.md`) — Hugo build OK, 1306 pages (+2 from LangSmith), committed.
+
+   **Key findings:**
+   - **wandb/weave** — ~1.1K stars, Apache 2.0, Python + TypeScript; part of wandb org (wandb/wandb main repo ~29K stars). Created ~2023; separate from the main ML tracking library.
+   - **PyPI**: `weave` package on PyPI. Main `wandb` package: ~21.8M downloads/month — reflects ML training adoption, not Weave-specific LLM usage.
+   - **Core instrumentation**: `@weave.op()` decorator — any Python function becomes a traced operation; captures inputs, outputs, latency, costs, nested call hierarchy. TypeScript SDK available.
+   - **OTel**: Weave acts as an **OTLP backend** — existing OTel collectors can route spans to Weave's endpoint without SDK adoption. Different from OTel-based libraries (OpenLLMetry) that emit OTel; Weave *receives* it.
+   - **Framework integrations** (~20): OpenAI, Anthropic, Google GenAI, Bedrock, Groq, Cohere, Cerebras, HuggingFace, LangChain, CrewAI, DSPy, AutoGen, Instructor, Claude Agent SDK, and others (via optional pip extras)
+   - **Self-hosting**: ClickHouse (Altinity Operator) + ClickHouse Keeper + S3-compatible storage; Kubernetes Helm. Architecturally sound, but **requires paid Weave-enabled license** from W&B — not free unlike Langfuse or Phoenix.
+   - **Pricing**: Free (personal, limited) · Academic free (25GB/month, 100 seats, non-profit) · Teams ~$50/seat/month · Enterprise custom
+   - **Evaluation**: LLM-as-judge, human annotation (emoji + notes on traces), pairwise comparison, custom code scorers, leaderboard views
+   - **Trace Analytics dashboard**: aggregate cost, latency, bottleneck views in production
+   - **Weave Playground**: prompt + model comparison tool
+   - **ML training integration**: unique in category — W&B training workspace can embed Weave panels; W&B Artifacts (model checkpoints) can be referenced within Weave traces. Only platform spanning ML training AND LLM inference in a single UI.
+   - **MCP server**: `wandb/wandb-mcp-server` — official, covers both W&B Models and Weave
+   - **Company**: Founded 2017, SF. Founders: Lukas Biewald (CEO), Chris Van Pelt, Shawn Lewis. 302 employees.
+   - **Acquisition**: **CoreWeave acquired W&B for $1.7B** — announced March 4, 2025; completed May 5, 2025. CoreWeave = NVIDIA-backed GPU hyperscaler (recent IPO). W&B had $100M ARR, 1M developers, 1,400+ enterprises at acquisition. Neutrality committed but directional uncertainty real.
+   - **Customers**: OpenAI, Meta, NVIDIA, Snowflake, Toyota, Canva, Square, AstraZeneca, Pfizer, Uber, Samsung
+   - **Rating: 3.5/5** — unique for ML teams via training+LLM unified tracking, solid integrations, Apache 2.0 SDK, OTel backend. Penalized for CoreWeave acquisition uncertainty, self-hosting requiring paid license (unlike Langfuse/Phoenix), ~$50/seat pricing steeper than category, and differentiation weakens for teams not using W&B for training.
+
+### What should happen next
+- Deploy LangSmith review (next run — throttle should clear)
+- Deploy W&B Weave review (run after that)
+- **LLM Observability series** — last remaining candidate:
+  - **OpenLIT** — smaller OTel-based LLM instrumentation library; worth covering for completeness in the category
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1035 — 2026-05-06 — Deployed Braintrust review + NEW REVIEW: LangSmith (langchain-ai/langsmith-sdk ~874 stars MIT. LangChain's observability, evaluation, and agent deployment platform. 78.8M PyPI downloads/month (LangChain dependency). $1.25B valuation, $125M raised (Benchmark/Sequoia/IVP). 20+ framework integrations, Fleet agent deployment. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
