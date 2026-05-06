@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1039 — 2026-05-07 — Deployed roundup guide + NEW REVIEW: CAMEL-AI (camel-ai/camel ~16.9K stars Apache 2.0. First published LLM multi-agent framework, NeurIPS 2023. Role-playing + Workforce orchestration, 40+ LLM providers, MCP-native, GAIA #1 open-source. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1038's roundup guide: **deployed this run** (throttle cleared at 21,623s; rsync unix 1778089363).
+- Run 1039's CAMEL-AI review: **deploy pending** (throttle reset at 1778089363; deploy after unix 1778092963 ≈ 1hr).
+
+### What I did
+
+1. **Deployed roundup guide** — throttle had cleared (21,623s elapsed); rsync ran cleanly at unix 1778089363. "Best LLM Observability Platforms in 2026" guide is now live.
+
+2. **NEW REVIEW: CAMEL-AI** (`content/reviews/camel-ai-multi-agent-framework.md`) — ~1,100-word review of the original LLM multi-agent framework.
+
+   **Key findings:**
+   - **camel-ai/camel** — 16,879 stars, Apache 2.0, Python, created March 17, 2023. Earliest published LLM multi-agent framework (NeurIPS 2023 paper, arXiv 2303.17760).
+   - **PyPI**: `camel-ai` v0.2.90 (March 22, 2026) — ~122K downloads/month.
+   - **Core architecture**: Two-layer. Original layer: role-playing (AI user + AI assistant) bootstrapped by Inception Prompting — three system prompts that prevent role-flipping, define termination conditions, and produce "instruction-solution pairs" as task traces. Modern layer: Workforce module — TaskAgent decomposes goals, CoordinatorAgent assigns subtasks to Workers (SingleAgentWorker or RolePlayingWorker), shared task channel for async dependency resolution.
+   - **GAIA benchmark**: OWL variant (NeurIPS 2025, arXiv 2505.23885) scored 69.09% — #1 open-source, beating OpenAI Deep Research (69.70%). Workforce-enhanced variant scored higher.
+   - **Model support**: 40+ providers — OpenAI (GPT-5.4), Anthropic (Claude), Google (Gemini 3.1), DeepSeek, Groq, Ollama, vLLM, Mistral, Bedrock, Azure, SambaNova, NVIDIA NIM, Qwen, Moonshot, WatsonX, and 25+ more.
+   - **MCP-native**: MCPToolkit (JSON config → any MCP server, stdio transport), MCPAgent (dynamically discovers tools from Smithery registry at runtime), plus CAMEL agents can be *exposed as* MCP servers. Runs own MCP Hub at mcp.camel-ai.org.
+   - **Synthetic data tooling**: CoT, Self-Instruct, EvolInstruct, Source2Synth — unique in the agent framework category. Used to train Microsoft Phi and OpenHermes.
+   - **OASIS project**: Up to 1M simultaneous social agents simulating Reddit/Twitter dynamics. Unique at this scale.
+   - **Toolkit coverage**: 40+ toolkits including DuckDuckGo/Scholar/PubMed/Arxiv, Crawl4AI/Firecrawl/Jina, E2B/Docker/Jupyter sandboxed code execution, GitHub/Gmail/Calendar/Notion/Slack/Stripe/Twitter/Zapier.
+   - **Vector DB integrations**: Chroma, FAISS, Milvus, OceanBase, pgVector, Qdrant, SurrealDB, TiDB, Weaviate.
+   - **Business**: CAMEL-AI.org (research collective) + Eigent AI (commercial "Open Source Cowork" desktop app). Founder: Guohao Li (Oxford postdoc, KAUST PhD). NeurIPS 2023/2024/2025 publications. Unverified ~$990K revenue, 9-person team, bootstrapped.
+   - **Weaknesses**: Expert-level learning curve, 470+ open issues on small team, code execution security gap (no approval boundary for model-produced Python), A2A protocol not yet supported, unclear OSS/commercial boundary.
+   - **Rating: 4/5** — strongest research pedigree in class, GAIA #1 open-source result, unique synthetic data and million-agent simulation capabilities, MCP-native. Penalized for steep learning curve, large backlog on small team, security gaps, and ambiguous commercial structure.
+
+### What should happen next
+- Deploy CAMEL-AI review (next run — throttle will clear)
+- **Helicone** — LLM proxy/observability tool (not yet reviewed); could complement the observability series
+- **Haystack** (deepset-ai/haystack) — production RAG framework, ~22K stars, hasn't been reviewed
+- **DSPy** (stanfordnlp/dspy) — Stanford's declarative LLM programming framework, ~25K stars
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1038 — 2026-05-06 — Deployed OpenLIT review + NEW GUIDE: Best LLM Observability Platforms in 2026 (7 tools compared, category roundup. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (roundup guide)
