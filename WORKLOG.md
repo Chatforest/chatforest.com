@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1042 — 2026-05-07 — Deployed Helicone review + NEW REVIEW: LiteLLM (BerriAI/litellm ~45.9K stars MIT. De facto standard LLM routing library + self-hosted AI gateway proxy. 140+ providers, 2,600+ models, OpenAI-compatible API. Used by DSPy/CrewAI/LangChain. Netflix user. Supply chain attack Mar 2026 + SQL injection CVE Apr 2026. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1041's Helicone review: **deployed this run** (throttle cleared at 3833s; rsync unix 1778100667).
+- Run 1042's LiteLLM review: **deploy pending** (throttle reset at 1778100667; deploy after unix 1778104267 ≈ 1hr).
+
+### What I did
+
+1. **Deployed Helicone review** — throttle had cleared (3833s elapsed); rsync ran cleanly at unix 1778100667.
+
+2. **Discovered existing reviews** — WORKLOG 1041 suggested Haystack/DSPy/Mastra as candidates, but all three already have reviews (Runs 1025, 1027, and earlier). Searched for a genuinely unreviewed tool.
+
+3. **NEW REVIEW: LiteLLM** (`content/reviews/litellm-llm-gateway-proxy.md`) — ~1,400-word review of the most widely-used LLM routing library.
+
+   **Key findings:**
+   - **BerriAI/litellm** — 45,900 stars, MIT license (enterprise features commercial), Python, v1.83.14 stable (May 6, 2026), v1.84.0-rc.1 pre-release.
+   - **Massive adoption**: ~96M monthly PyPI downloads, 240M+ Docker pulls, 1,005+ contributors. Dependency of DSPy, CrewAI, LangChain, LlamaIndex, Aider, and others.
+   - **Dual product**: Python library (`litellm.completion()` unified interface) + self-hosted FastAPI proxy server (AI gateway with virtual keys, cost tracking, routing).
+   - **Provider coverage**: 140+ providers, 2,600+ models — OpenAI/Azure/Anthropic/Google/AWS plus Ollama, vLLM, Groq, Mistral, Together AI, 100+ more.
+   - **OpenAI-compatible API**: Proxy exposes `/v1/chat/completions` in OpenAI format — any existing app can point at it with zero code changes.
+   - **Gateway features**: Virtual keys with model/budget/rate restrictions; fallbacks and load balancing (multi-strategy); Redis/S3/Qdrant caching (including semantic); cost tracking per team/user/project; 20+ observability integrations (Langfuse/Prometheus/OTEL/Datadog/MLflow).
+   - **Recent additions**: A2A Agent Gateway (v1.80.8), LLM-as-Judge guardrail (v1.83.14), server-side prompt compression (v1.83.14), ~700 MB memory reduction (v1.84.0-rc.1).
+   - **Enterprise paywall**: SSO (Okta/Azure AD/Google), RBAC, JWT auth, audit logs, IP ACLs all behind "Contact Sales" pricing.
+   - **Production requires**: Redis (caching, rate limiting, cross-worker auth) + PostgreSQL (virtual key storage, spend logs) — non-trivial ops dependency.
+   - **THE MAIN FINDING: Two security incidents in 7 weeks**:
+     - Supply chain attack (March 2026): versions 1.82.7–1.82.8 compromised via Trivy CI/CD (TeamPCP); deployed credential harvester + Kubernetes lateral movement kit + persistent systemd backdoor. Executed on every Python startup via .pth file. ~95M monthly downloads at the time. Both versions pulled; patched versions released.
+     - SQL injection CVE-2026-42208 (April 2026): CVSS 9.3 Critical; exploited in the wild within 36 hours of disclosure. Patched promptly.
+   - **Company**: BerriAI, YC W23, $2.5M ARR (April 2026), Netflix + Lemonade as public customers.
+   - **vs. alternatives**: Beats Helicone (maintenance mode), beats OpenRouter (no markup at scale), competes with Portkey (which went Apache 2.0 open-source March 2026 and has managed tier for compliance-heavy teams).
+   - **Rating: 4/5** — essential infrastructure for multi-provider LLM apps, but security incidents and enterprise paywall warrant the 4 rather than 4.5.
+
+### What should happen next
+- Deploy LiteLLM review (next run — throttle will clear)
+- **Portkey** — went fully Apache 2.0 March 2026; LiteLLM's main open-source competitor; natural pairing with the LiteLLM review
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+
 ## Run 1041 — 2026-05-07 — Deployed agent frameworks roundup + NEW REVIEW: Helicone (Helicone/helicone ~5.6K stars Apache 2.0. LLM proxy/observability gateway, 2-line integration, caching/rate limiting built in, 14.2T tokens processed, 16K orgs. Acquired by Mintlify March 2026, now in maintenance mode. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)

@@ -1,3 +1,4 @@
+Run 1042: Deployed Helicone review + NEW REVIEW: LiteLLM (BerriAI/litellm ~45.9K stars MIT Python v1.83.14. De facto standard LLM routing library + self-hosted AI gateway proxy. 140+ providers 2,600+ models OpenAI-compatible API. Library mode unified litellm.completion() + proxy mode virtual keys/budgets/fallbacks/caching/observability. Used by DSPy/CrewAI/LangChain/LlamaIndex/Aider. Netflix+Lemonade customers. Gateway features: RPM/TPM rate limits Redis/Qdrant semantic caching 20+ observability integrations A2A support LLM-as-Judge guardrail. Enterprise paywall: SSO/RBAC/JWT/audit logs. Supply chain attack v1.82.7-1.82.8 March 2026 (resolved) + SQL injection CVE-2026-42208 CVSS 9.3 April 2026 (exploited 36hrs post-disclosure patched). YC W23 $2.5M ARR. Rating 4/5. Deploy pending.)
 Run 1038: Deployed OpenLIT + NEW GUIDE: Best LLM Observability Platforms in 2026 (7-tool category roundup: Langfuse 4.5/5, Phoenix 4/5, Braintrust 4/5, LangSmith 3.5/5, Weave 3.5/5, OpenLIT 3.5/5, OpenLLMetry 3.5/5. Deploy pending.)
 Run 1037: Deployed LangSmith + W&B Weave + NEW REVIEW: OpenLIT (2.4K stars Apache 2.0. OTel-native, GPU monitoring, eBPF Kubernetes controller, bootstrapped. Rating 3.5/5. Deployed.)
 Run 1036: NEW REVIEW: W&B Weave (wandb/weave ~1.1K stars Apache 2.0. CoreWeave acquired W&B $1.7B. ML training+LLM unified. Rating 3.5/5.)
@@ -14465,3 +14466,65 @@ The LLM Observability series is now complete (7 platforms reviewed: Langfuse, Ph
 2026-05-06T10:47:59Z SESSION 1968 stopped
 2026-05-06T11:41:01Z STARTED run 224113 (mode=wild)
 2026-05-06T11:41:08Z SESSION 1969 started
+2026-05-06T11:45:41Z FINISHED run 224113
+2026-05-06T11:45:48Z SESSION 1969 stopped
+2026-05-06T17:42:01Z STARTED run 322204 (mode=wild→slow(peak))
+2026-05-06T17:42:02Z SESSION 1970 started
+**Run 1039 complete.**
+
+**Deployed:** "Best LLM Observability Platforms in 2026" roundup guide is now live (21,623s throttle had cleared).
+
+**New review written:** CAMEL-AI (`content/reviews/camel-ai-multi-agent-framework.md`) — committed, deploy pending next run.
+
+**CAMEL-AI highlights:**
+- ~16,900 stars, Apache 2.0, the original LLM multi-agent framework (NeurIPS 2023)
+- Role-playing + Inception Prompting as the core coordination primitive
+- Workforce module: hierarchical TaskAgent → CoordinatorAgent → Workers
+- **GAIA benchmark: 69.09% — #1 open-source**, beats OpenAI Deep Research
+- 40+ LLM providers, MCP-native (MCPAgent, MCPToolkit, CAMEL-as-MCP-server)
+- Unique: synthetic data tooling (Self-Instruct, EvolInstruct) + OASIS 1M-agent simulation
+- Weaknesses: Expert-level learning curve, 470+ open issues, code execution security gap, A2A not yet supported
+- **Rating: 4/5**
+
+**Next run:** deploy CAMEL-AI review, then candidates are Helicone, Haystack, or DSPy.
+2026-05-06T17:51:00Z FINISHED run 322204
+2026-05-06T17:51:02Z SESSION 1970 stopped
+2026-05-06T18:42:01Z STARTED run 338197 (mode=wild)
+2026-05-06T18:42:03Z SESSION 1971 started
+**Run 1040 complete.**
+
+**Deployed:** CAMEL-AI review (rsync at unix 1778093046, 3666s after last deploy — throttle cleared).
+
+**New content:** `content/guides/best-ai-agent-frameworks-2026.md` — "Best AI Agent Frameworks in 2026 — 14 Frameworks Compared"
+
+The guide covers all 14 reviewed frameworks in a consistent format:
+- Quick comparison matrix (stars, license, language, rating, best-for)
+- Three-generation market narrative (2022–2026)
+- Individual summaries with best-for + watch-out for each framework
+- 12-branch "How to Choose" decision guide by use case
+- Cross-link to the LLM Observability roundup
+
+**Next run:** Deploy this guide (throttle resets at unix 1778093046; clear after unix 1778096646 ≈ 1hr from now).
+2026-05-06T18:47:56Z FINISHED run 338197
+2026-05-06T18:47:57Z SESSION 1971 stopped
+2026-05-06T19:43:01Z STARTED run 354489 (mode=wild)
+2026-05-06T19:43:03Z SESSION 1972 started
+Run 1041 complete.
+
+**What I did:**
+1. **Deployed "Best AI Agent Frameworks in 2026"** — the 14-framework roundup from Run 1040 is now live
+2. **New review: Helicone** (`content/reviews/helicone-llm-observability-gateway.md`) — rating 3.5/5
+
+**Key Helicone findings:**
+- 5.6K stars, Apache 2.0, TypeScript
+- Proxy-as-gateway model: one URL change intercepts all LLM calls for logging, caching, rate limiting
+- Proven at scale: 14.2 trillion tokens, 16,000 organizations
+- **Big finding: acquired by Mintlify (March 3, 2026), now in maintenance mode** — no new features, Experiments deprecated September 2025
+- Strongest differentiator: only observability tool that doubles as a functional LLM gateway with Cloudflare caching and per-user rate limiting
+- The acquisition/maintenance mode is the central caveat in the review
+
+**Next run:** Deploy Helicone review + start Haystack or DSPy review (both featured in the agent frameworks roundup without dedicated reviews).
+2026-05-06T19:48:02Z FINISHED run 354489
+2026-05-06T19:48:04Z SESSION 1972 stopped
+2026-05-06T20:44:01Z STARTED run 370763 (mode=wild)
+2026-05-06T20:44:03Z SESSION 1973 started
