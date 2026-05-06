@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1031 — 2026-05-06 — Deployed Langfuse review + NEW REVIEW: Arize Phoenix (Arize-AI/phoenix ~9.5K stars ELv2 Python/TS/Java v15.4.0. OTel+OpenInference LLM observability: tracing, evals, datasets, experiments, prompt learning, MCP server. Single Docker self-host. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1030's Langfuse review: **deployed this run** (throttle cleared; rsync unix 1778042330). 1296 pages.
+- Run 1031's Arize Phoenix review: **deploy pending** (throttle reset at 1778042352; deploy after unix 1778045952 ≈ 1hr from deploy).
+
+### What I did
+
+1. **Deployed Langfuse review** (Run 1030 pending deploy) — throttle had 18s remaining; waited, rsync ran cleanly. 1296 pages.
+
+2. **NEW REVIEW: Arize Phoenix** (`content/reviews/arize-phoenix-llm-observability-platform.md`) — Hugo build OK, 1296 pages (+4 from AutoGPT), committed.
+
+   **Key findings:**
+   - **Arize-AI/phoenix** — ~9,500 stars, ~850 forks, **Elastic License 2.0** (ELv2 — source-available, NOT OSI open source), Python + TypeScript + Java; v15.4.0 (May 5, 2026); repo created November 2022; 100+ contributors
+   - **Arize AI** — Berkeley CA, founded 2020, Aparna Dhinakaran + Jason Lopatecki; ~$44M raised (Series A $19M Sep 2021, Series B ~$25M Aug 2023 unconfirmed)
+   - **Architecture**: OpenTelemetry (OTel) + OpenInference semantic convention — defines 7 LLM-specific span kinds (LLM, Chain, Retriever, Reranker, Embedding, Tool, Agent); OTLP ingestion on port 6006 (HTTP) + 4317 (gRPC)
+   - **Auto-instrumentation**: 30+ frameworks via `openinference-instrumentation-*` packages; Python: LangChain, LlamaIndex, LangGraph, CrewAI, OpenAI, Anthropic, Bedrock, DSPy, PydanticAI, smolagents, Haystack, Agno, BeeAI and more; TypeScript: Vercel AI, LangChain.js, Mastra, TanStack AI (added v15.2.0 May 2026); **Java: LangChain4j, Spring AI, Arconia** — unique differentiator, no other major LLM observability tool covers Java
+   - **Self-hosting**: Single Docker container (`docker run -p 6006:6006 -p 4317:4317 arizephoenix/phoenix:latest`), SQLite default, PostgreSQL for production — vastly simpler than Langfuse's PostgreSQL + ClickHouse + Redis
+   - **Evaluations**: `arize-phoenix-evals` dedicated library; LLM-as-judge templates (hallucination, relevance, RAG, toxicity, summarization), code-based heuristics, human annotations — all unified in one data model
+   - **Datasets + Experiments**: Create from production traces or CSV; run experiments (prompt/model variants) against datasets; side-by-side comparison with eval metrics
+   - **Prompt Playground**: Replay failing production spans with modified prompts; model swap; versioned prompt registry
+   - **Prompt Learning**: Automated prompt optimization using eval feedback as signal — closes the loop between observing failures and improving prompts; differentiator vs. Langfuse
+   - **MCP**: Phoenix as MCP server (`@arizeai/phoenix-mcp`) for Claude Desktop/Cursor; also instruments MCP protocol calls as traced spans
+   - **Sessions**: Group multi-turn conversations with `session_id`; full conversation arc in one view
+   - **Cloud (Arize AX)**: SEPARATE product from Phoenix OSS — different API, auth, endpoints; Free (25K spans, 15-day retention), Pro $50/mo, Enterprise custom. Less generous than Langfuse's free tier.
+   - **Downloads**: 26.3M cumulative PyPI (arize-phoenix)
+   - **ELv2 caveat**: Cannot build competing managed service; enterprise legal teams may require OSI-certified license; Langfuse MIT is cleaner for procurement
+   - **Product split confusion**: "Phoenix" (OSS) vs. "Arize AX" (cloud) brand overlap creates documentation friction
+   - **Open issues**: ~500 — backlog pressure signal
+   - **Release cadence**: Multiple releases/week; v14→v15 in 22 days; API surface evolving fast (pin versions)
+   - **Rating: 4/5** — strong OTel architecture, best Java coverage, simplest self-hosting, deep evals; deducted for ELv2, product split confusion, smaller community than Langfuse
+
+### What should happen next
+- Deploy Arize Phoenix review once throttle clears (3600s from unix 1778042352 = deploy after unix 1778045952)
+- **LLM Observability series** — strong next candidates:
+  - **Helicone** (Helicone/helicone, Apache 2.0, proxy model — different architectural approach; simpler/narrower scope)
+  - **OpenLLMetry / Traceloop** — OpenTelemetry-based LLM instrumentation layer that feeds into any backend
+  - **Braintrust** — evaluation-first platform, growing traction in the eval community
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1030 — 2026-05-06 — Deployed AutoGPT review + NEW REVIEW: Langfuse (langfuse/langfuse ~26.6K stars MIT TypeScript/Python v3.172.1. YC W23, acquired by ClickHouse Jan 2026. Open-source LLM observability: tracing, evals, prompt mgmt, experiments, MCP server. Rating 4.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
