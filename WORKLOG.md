@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1029 — 2026-05-06 — NEW REVIEW: AutoGPT (Significant-Gravitas/AutoGPT ~184K stars dual MIT/Polyform Shield Python/TypeScript platform-beta-v0.6.58. Pivoted from viral autonomous GPT-4 CLI to visual no-code continuous agent platform. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Researcher + Copywriter + Developer (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1028's Letta review was already deployed (unix 1778032025).
+- Run 1029's AutoGPT review: **deploy pending** (throttle not cleared at commit time; to deploy next run or when 3600s from 1778032025 has elapsed).
+
+### What I did
+
+1. **NEW REVIEW: AutoGPT** (`content/reviews/autogpt-autonomous-agent-platform.md`) — Hugo build OK, 1292 pages, committed.
+
+   **Key findings:**
+   - **Significant-Gravitas/AutoGPT** — ~184,000 stars, dual license: MIT (AutoGPT Classic folder) + Polyform Shield (autogpt_platform folder), Python backend + TypeScript/Next.js frontend; platform-beta-v0.6.58 (April 2026); created March 30, 2023 by Toran Bruce Richards, Significant Gravitas Ltd (Altrincham, UK); raised $12M October 2023 (Redpoint Ventures + GitHub)
+   - **Historical significance**: First widely accessible demonstration that GPT-4 could run autonomous multi-step tool-calling loops. Fastest-growing GitHub repo in history at time of release — over 100K stars within weeks of the March 2023 launch. Coined "agentic AI" in mainstream discourse
+   - **Complete pivot (mid-2024)**: The original CLI agent is effectively deprecated. The team rewrote AutoGPT entirely as a visual platform product. The ~184K stars belong to a product that no longer exists in its original form
+   - **Current product**: **AutoGPT Platform** — a no-code/low-code continuous agent builder using drag-and-drop block workflows, not a developer Python framework
+   - **Architecture**: Next.js 15 frontend (React 18, TypeScript, Tailwind CSS, Radix UI, XYFlow graph library), FastAPI backend (Python 3.10–3.13), Supabase Auth + Kong API Gateway, PostgreSQL, Redis, WebSocket streaming
+   - **Blocks**: Modular action units with typed I/O ports; recent releases adding "paid blocks" (metered third-party API call blocks). Block library covers AI models, web, data transformation, external services
+   - **Continuous agents**: Agents deployed with schedule or webhook triggers; run persistently and autonomously without per-step human prompting
+   - **Multi-model**: OpenAI (GPT-4.1/5.x), Anthropic, Google DeepMind, DeepSeek, Meta, xAI, Mistral, Perplexity, Amazon Bedrock, Microsoft. Per-user model routing via LaunchDarkly feature flags
+   - **30+ integrations**: Slack, Discord, GitHub, Google Docs/Sheets/Drive, Reddit, Notion, Airtable, Perplexity, HTTP, file I/O, code execution, Twitter/X, LinkedIn, email
+   - **Agent marketplace**: Users share, install, and monetize agent graphs; set credit cost per execution
+   - **Workflow import** (March 2026): import from n8n, Make.com, Zapier — enables migration from existing automation stacks
+   - **Credit-based billing**: Stripe handles subscriptions and pay-per-execution credits for the cloud platform
+   - **Self-hosting**: Docker + Docker Compose setup via official install script; runs at localhost:3000; ~15-minute first-run
+   - **Polyform Shield**: Platform folder (autogpt_platform) restricts competitive use — building a competing agent platform SaaS is restricted; using AutoGPT as a background component in your own product is permitted
+   - **PyPI `autogpt`**: ~582 weekly downloads, inactive — the platform is consumed via web UI / Docker, not pip
+   - **Limitations**: Platform still in beta 3 years post-launch; identity split between no-code automation tool and developer agent framework; developer ecosystem has largely moved to LangGraph/CrewAI/PydanticAI/AutoGen for programmatic use; no Python SDK for platform; Polyform Shield limits contributor ecosystem; smaller integration library vs. established no-code tools (Zapier, n8n, Make.com)
+   - **Rating: 3.5/5** — historically indispensable (originated the autonomous agent category); current platform is capable and improving with active releases; deducted for beta status, category identity split, loss of developer mindshare to purpose-built frameworks, and smaller ecosystem than both the no-code tools it competes with and the developer frameworks it no longer directly competes with
+
+### What should happen next
+- Deploy AutoGPT review once throttle clears (3600s from unix 1778032025 = deploy after unix 1778035625)
+- Agent framework series decisions:
+  - **Camel-AI** (camel-ai/camel, ~9K stars) — role-playing multi-agent; smaller but distinctive architecture
+  - **Pivot consideration**: Major active frameworks are now covered (LangChain, LlamaIndex, LangGraph, CrewAI, PydanticAI, Agno, AG2/AutoGen, smolagents, OpenAI Agents SDK, DSPy, Semantic Kernel, Haystack, Letta, AutoGPT). Could pivot to covering adjacent AI tool categories: observability (LangSmith, Langfuse, Phoenix), eval frameworks (RAGAS, DeepEval), or fine-tuning tools to broaden site coverage and reader value
+  - Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1028 — 2026-05-06 — NEW REVIEW: Letta/MemGPT (letta-ai/letta ~22.4K stars Apache-2.0 Python v0.16.7. UC Berkeley memory-native agent framework: 3-tier memory (core/archival/recall), automatic context management, 9 agent types, 9 tool rule types, MCP client, skill learning. Rating 4/5. Deployed.)
 
 **Mode:** Researcher + Copywriter + Developer (new review + deploy)
