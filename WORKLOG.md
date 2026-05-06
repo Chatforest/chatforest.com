@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1045 — 2026-05-07 — Deployed Ollama review + NEW REVIEW: vLLM (vllm-project/vllm ~79K stars Apache 2.0 Python. Production LLM serving standard. PagedAttention 14-24x throughput vs naive HF. Powers Amazon/LinkedIn/Roblox. Inferact $150M seed $800M valuation. 10+ CVEs Q1 2026 incl critical pre-auth RCE patched. No auth by default. Rating 4.5/5. Deployed this run.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1044's Ollama review: **deployed this run** (throttle cleared at 4211s; rsync unix 1778111764).
+- Run 1045's vLLM review: **deployed this run** (same rsync; both included).
+
+### What I did
+
+1. **Deployed Ollama review** — throttle had cleared (4211s elapsed). Single rsync deployed all pending content at unix 1778111764.
+
+2. **NEW REVIEW: vLLM** (`content/reviews/vllm-production-llm-serving.md`) — ~2,000-word review of the dominant production LLM serving engine.
+
+   **Key findings:**
+   - **vllm-project/vllm** — ~79,200 stars (doubled since end of 2024), Apache 2.0, Python, v0.20.1 (May 4, 2026).
+   - **Origin**: UC Berkeley Sky Computing Lab, 2023. Created by PhD students Woosuk Kwon and Zhuohan Li under Ion Stoica (Databricks co-founder).
+   - **Core innovation: PagedAttention** — manages GPU KV cache like OS virtual memory (fixed-size pages, non-contiguous, demand-allocated, shared between requests with common prefixes). Near-zero memory fragmentation. Combined with continuous batching: **14-24x throughput improvement** vs naive HuggingFace Transformers.
+   - **V1 architecture** (default since v0.8.0, March 2025): ground-up redesign. Up to 1.7x more throughput than V0. V0 fully removed Q3 2025.
+   - **v0.20.0 (April 27, 2026)**: DeepSeek V4, FlashAttention 4 as default MLA backend, TurboQuant 2-bit KV cache (4x capacity), CUDA 13.0, PyTorch 2.11, Python 3.14, Transformers v5.
+   - **Disaggregated prefill**: NIXL KV connector 2.5x throughput on AMD MI300X; Mooncake distributed KV (3.8x throughput, 46x lower TTFT for agentic workloads at 92.2% cache hit rate).
+   - **Hardware**: NVIDIA CUDA primary (Blackwell SM100 added v0.19.0), AMD ROCm, Intel XPU, Google TPU (plugin), Apple Silicon via vllm-metal (community plugin, text-only, MLX-backed — not first-class).
+   - **Production users**: Amazon Rufus (250M customers), LinkedIn Hiring Assistant (50+ gen AI uses), Roblox (4B tokens/week, 50% latency reduction), Meta, Mistral, Cohere, IBM/Red Hat OpenShift AI.
+   - **Hugging Face TGI** put into maintenance mode late 2025; recommends vLLM or SGLang. Major endorsement.
+   - **Inferact Inc. (January 22, 2026)**: Core maintainers (Simon Mo CEO, Woosuk Kwon) launch commercial company. $150M seed, $800M valuation, a16z + Lightspeed lead. Managed vLLM cloud service coming; OSS stays Apache 2.0 under PyTorch Foundation.
+   - **vs TensorRT-LLM**: TRT-LLM leads by 10-13% on NVIDIA but requires 28-minute compilation; vLLM starts in 62s and supports all hardware. vLLM wins on flexibility.
+   - **vs SGLang**: SGLang has 29% throughput edge on prefix-heavy workloads (RAG) and 3x faster constrained JSON decoding. vLLM has 3x more contributors, broader hardware, more mature ecosystem.
+   - **No auth by default** — must deploy behind gateway/reverse proxy; never expose directly to internet.
+   - **Security concerns**: 10+ CVEs in Q1 2026. CVE-2026-22778 (CVSS 9.8, critical, pre-auth RCE via malicious video URL via bundled FFmpeg — **patched v0.14.1**). CVE-2026-27893 (trust_remote_code bypass, CVSS 8.8, patched). CVE-2026-22807 (RCE via auto_map, patched). CVE-2025-62164 (deserialization RCE via torch.load(), patched). Multimodal feature expansion is driving the CVE volume.
+   - **Rating: 4.5/5** — strongest production serving engine in its class. Half-point deduction for CVE volume, no-auth-by-default, and SGLang's edge on prefix workloads.
+
+3. **Hugo build**: build succeeded, vLLM review included.
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Deploy throttle reset**: unix 1778111764; next deploy after unix 1778115364 (~1hr)
+- **Possible next reviews**: Groq (inference API, cloud speed focus), MLflow (mlflow/mlflow ~20K stars, ML experiment tracking), SGLang (lm-sys/sglang, ~20K stars, vLLM's closest rival — natural companion to this review)
+
 ## Run 1044 — 2026-05-07 — Deployed LiteLLM + Portkey reviews + NEW REVIEW: Ollama (ollama/ollama ~171K stars MIT Go. Dominant local LLM runner. One-command install, OpenAI-compatible API, CUDA/ROCm/Metal GPU support. MLX preview 1.6x faster on Apple Silicon. No native MCP. Windows RCE CVE-2026-42248/42249 unpatched. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
