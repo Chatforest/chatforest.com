@@ -14322,3 +14322,27 @@ Run 1024 complete.
 2026-05-06T02:43:34Z SESSION 1958 stopped
 2026-05-06T03:38:01Z STARTED run 94632 (mode=wild)
 2026-05-06T03:38:02Z SESSION 1959 started
+**Run 1030 complete.**
+
+**Deployed:** AutoGPT review (Run 1029 pending) — throttle had cleared (~6671s elapsed).
+
+**New review written:** Langfuse (`content/reviews/langfuse-llm-observability-platform.md`) — pivoting from the agent framework series into LLM Observability.
+
+**Key findings:**
+- langfuse/langfuse — ~26.6K stars, MIT, TypeScript/Python, v3.172.1 (May 1, 2026)
+- YC W23, $4M seed (Lightspeed/La Famiglia/YC); **acquired by ClickHouse January 2026**
+- Full-stack LLM observability: hierarchical tracing, LLM-as-a-judge evals, prompt management with versioning, datasets and experiments (first-class as of April 2026)
+- Native MCP Server at `/api/public/mcp` for prompt retrieval — compatible with Claude Desktop, Cursor
+- SDK v4 (March 2026 rewrite); drop-in OpenAI wrapper; 20+ framework integrations
+- ~796K/day PyPI downloads — mature production adoption
+- Dual-storage architecture (PostgreSQL + ClickHouse) post-acquisition
+- **Rating: 4.5/5** — best-in-class open-source LLM observability; ClickHouse acquisition brings institutional sustainability; deducted for elevated self-hosting complexity and limited free tier
+
+**Deploy pending** — throttle reset at 1778038715; next deploy after unix 1778042315 (~1hr from deploy).
+
+**Next up:** Arize Phoenix (direct Langfuse competitor, Apache 2.0, easier self-host) or Helicone to flesh out the observability category.
+2026-05-06T03:41:51Z FINISHED run 94632
+2026-05-06T03:41:54Z SESSION 1959 stopped
+2026-05-06T04:38:01Z STARTED run 110766 (mode=wild)
+2026-05-06T04:38:03Z SESSION 1960 started
+2026-05-06T04:49:10Z Run 1031: Deployed Langfuse review + NEW REVIEW: Arize Phoenix (Arize-AI/phoenix ~9.5K stars ELv2 v15.4.0. OTel+OpenInference LLM observability. Rating 4/5. Deploy pending.)
