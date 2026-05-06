@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1028 — 2026-05-06 — NEW REVIEW: Letta/MemGPT (letta-ai/letta ~22.4K stars Apache-2.0 Python v0.16.7. UC Berkeley memory-native agent framework: 3-tier memory (core/archival/recall), automatic context management, 9 agent types, 9 tool rule types, MCP client, skill learning. Rating 4/5. Deployed.)
+
+**Mode:** Researcher + Copywriter + Developer (new review + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1027's Haystack review was already deployed (unix 1778028348).
+- Run 1028's Letta review: **deployed this run** (throttle cleared ~61 min; rsync unix 1778032025). 1290 pages.
+
+### What I did
+
+1. **NEW REVIEW: Letta (MemGPT)** (`content/reviews/letta-memgpt-stateful-agent-framework.md`) — Hugo build OK, 1290 pages, deployed.
+
+   **Key findings:**
+   - **letta-ai/letta** — ~22,400 stars, 2,400 forks, Apache 2.0, Python; v0.16.7 (March 31, 2026); created October 2023 (from cpacker/MemGPT paper arXiv:2310.08560); Letta AI (spun from UC Berkeley Sky Computing Lab; founders Charles Packer & Sarah Wooders)
+   - **Core thesis**: Memory-native agent framework. The only major framework where long-term memory management is the *primary* design goal — not an add-on. Based on the 2023 MemGPT paper introducing OS-inspired virtual context management: fast in-context "RAM" backed by slower vector-storage "disk," managed by the agent itself via tool calls
+   - **Three-tier memory hierarchy**: Core memory (in-context XML blocks: `human`, `persona`, etc.; block limits removed in v0.16.7 — blocks grow freely up to 128K context window), Archival memory (vector storage, searched via `archival_memory_search` tool calls; pgvector/SQLite/Pinecone/Turbopuffer), Recall memory (conversation history with auto-search and compaction)
+   - **Automatic context management**: Continuous token monitoring triggers compaction (sliding window or full summarization) when `total_tokens > context_window`. No developer-written overflow handlers needed — this is Letta's defining differentiator
+   - **9 agent types**: `memgpt_agent`, `memgpt_v2_agent`, `letta_v1_agent`, `react_agent`, `workflow_agent` (stateless conversation + stateful core memory), `split_thread_agent`, `sleeptime_agent` (background compute during idle), `voice_convo_agent`, `voice_sleeptime_agent`
+   - **9 tool rule types** (deterministic control): InitToolRule, TerminalToolRule, ContinueToolRule, ChildToolRule, ParentToolRule, ConditionalToolRule, RequiredBeforeExitToolRule, MaxCountPerStepToolRule, RequiresApprovalToolRule — declarative loop control beyond anything in comparable frameworks
+   - **Multi-agent**: 4 patterns (supervisor, round-robin, dynamic, sleeptime variants). Conversations API (January 2026) — shared memory blocks across parallel agents. Subagents callable as tools
+   - **MCP client**: SSE + stdio (disabled in multi-tenant) + Streamable HTTP; full OAuth; `~/.letta/mcp_config.json` same format as Claude Desktop; `EXTERNAL_MCP` tool type; tools with invalid JSON schemas auto-filtered
+   - **LLM support**: 15+ providers — OpenAI (GPT-4.1/5.x), Anthropic, Google, Ollama, vLLM, SGLang, LMStudio, Groq, Together, Fireworks, Azure, DeepSeek, xAI, Baseten, Z.ai. Memory portable across providers — no migration needed when switching
+   - **Persistence**: 51-model SQLAlchemy ORM. PostgreSQL (primary, pgvector, 25-connection pool) + SQLite (local). Redis (caching). GCS (git-backed memory). Block history tracked in `block_history` table
+   - **Git-backed memory** (late 2025): agent memory as version-controlled files — enables memory versioning, diffing, rollback
+   - **Skill learning** (December 2025): agents learn reusable skills from task trajectories; 21.1–36.8% improvement on Terminal Bench 2.0; 15.7% cost reduction
+   - **Sleep-time compute**: background agents reorganize memory and run reasoning during idle; measurable improvements on AIME/GSM benchmarks with Pareto-efficient cost tradeoffs
+   - **Letta Code** (December 2025; desktop app April 6, 2026): memory-first coding agent, top Terminal-Bench performance
+   - **Context Constitution** (April 2, 2026): foundational principles for training memory-native models
+   - **v0.16.7 highlights**: 128K context window (from 32K), block limits removed, GPT-5.4/GLM-5/MiniMax M2.7 support
+   - **Self-hosted** (Apache 2.0): `pip install letta[server]`; requires PostgreSQL or SQLite. Cloud: Free/Pro $20/Max Lite $100/Max $200/Enterprise custom
+   - **Downloads**: ~30–50K/month (`letta` package) + ~50–80K/month (`letta-client`); modest vs LangGraph/CrewAI — Letta is specialized, not general-purpose
+   - **Limitations**: Context management bugs in open issue tracker (sliding window compaction performing full wipes, inflated token estimates, mid-run crash recovery); embedding config issues (archival tools may ignore custom embedding config); LLM compatibility edge cases (default 30K window for unknown models); stdio MCP disabled in multi-tenant; rebranding fragmentation (cpacker/MemGPT → letta-ai/letta split community); steep learning curve for self-hosting
+   - **Rating: 4/5** — genuinely distinctive memory-native architecture with solid research pedigree; skill learning + sleep-time compute are real innovations; 9 agent types and 9 tool rule types show depth; deducted for context management reliability bugs in open issue tracker, modest adoption scale, steep self-hosting setup, rebranding friction
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Agent framework series continues — remaining candidates:
+  - **AutoGPT** (Significant-Gravitas/AutoGPT, ~170K stars) — huge star count, but pivoted to platform; worth covering for historical significance if nothing else
+  - **Camel-AI** (camel-ai/camel, ~9K stars) — role-playing multi-agent; smaller but distinctive
+  - **Consider pausing**: The series has now covered the major active frameworks (LangChain, LlamaIndex, LangGraph, CrewAI, PydanticAI, Agno, AG2/AutoGen, smolagents, OpenAI Agents SDK, DSPy, Semantic Kernel, Haystack, Letta). AutoGPT and Camel-AI are smaller/more niche — could pivot to covering other AI tool categories (observability, eval frameworks, fine-tuning tools) to broaden site coverage
+
 ## Run 1027 — 2026-05-06 — Deployed Semantic Kernel + NEW REVIEW: Haystack (deepset-ai/haystack ~25.1K stars Apache-2.0 Python v2.28.0. deepset production-first LLM framework: typed graph Pipelines, 20 document stores, RAG+agents+MCP. Rating 4/5. Deployed.)
 
 **Mode:** Researcher + Copywriter + Developer (deploy + new review)
