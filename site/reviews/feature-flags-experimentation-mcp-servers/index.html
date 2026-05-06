@@ -459,30 +459,30 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 12:00:00</span></div>
+  <h3><a href="/reviews/ollama-local-llm-runner/">Ollama — Run Local LLMs in One Command (2026 Review)</a></h3>
+  <p>Ollama (ollama/ollama, ~171K stars, MIT, Go) is the dominant tool for running LLMs locally. Pull any of 100&#43; models with one command; GPU acceleration auto-configures for NVIDIA CUDA, AMD ROCm, and Apple Silicon Metal. OpenAI-compatible API at localhost:11434 — any existing app can point at it. New MLX backend (preview, March 2026) doubles decode speed on Apple Silicon. v0.6.2: Llama 4, batch embeddings, Flash Attention v2.7, Windows ARM64 native. **No native MCP support** (GitHub issue #7865 open; llama.cpp merged MCP client March 2026). Windows auto-updater RCE (CVE-2026-42248/42249) unpatched as of May 2026. Best for: solo developers, local prototyping, privacy-sensitive use. Not suited for multi-user production serving — vLLM is the production answer. Part of our **Developer Tools** category. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 11:00:00</span></div>
+  <h3><a href="/reviews/portkey-ai-gateway-review/">Portkey — Open-Source AI Gateway, Now Headed to Palo Alto Networks (2026 Review)</a></h3>
+  <p>Portkey (Portkey-AI/gateway, ~11.6K stars, Apache 2.0, TypeScript) routes to 1,600&#43; LLMs across 250&#43; providers with built-in circuit breakers, fallbacks, load balancing, semantic caching, guardrails (50&#43;), and a native MCP Gateway with OAuth 2.1. Gateway 2.0 (March 24, 2026) open-sourced everything that previously required a SaaS subscription. Managed cloud tier at $49/month adds hosted observability, RBAC, and SOC2/HIPAA compliance. Acquired by Palo Alto Networks April 30, 2026 — deal expected to close fiscal Q4 2026; Portkey becomes the AI Gateway for Prisma AIRS. Main competitor to LiteLLM: Portkey wins on out-of-the-box observability and prompt management; LiteLLM wins on community size and developer control. CVE-2025-66405 (SSRF, CVSS 6.9) patched in v1.14.0. Part of our **Developer Tools** category. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-07 10:00:00</span></div>
+  <h3><a href="/reviews/litellm-llm-gateway-proxy/">LiteLLM — The Universal LLM Gateway (2026 Review)</a></h3>
+  <p>LiteLLM (BerriAI/litellm, ~45.9K stars, MIT, Python) is the de facto standard for calling 2,600&#43; models across 140&#43; providers through a single OpenAI-compatible interface. Two usage modes: library (call litellm.completion() directly) or proxy (self-hosted AI gateway that any OpenAI-compatible client can hit). Netflix, Lemonade, DSPy, CrewAI, LangChain, and LlamaIndex all depend on it. Proxy features: virtual keys, per-team budgets, TPM/RPM rate limits, Redis caching (including semantic caching), routing/fallbacks/load balancing, and 20&#43; observability integrations (Langfuse, Prometheus, OTEL, Datadog). Production requires Redis &#43; PostgreSQL. Enterprise features (SSO, RBAC, JWT auth, audit logs) paywalled. Supply chain attack hit v1.82.7–1.82.8 in March 2026 (resolved); SQL injection CVE-2026-42208 (CVSS 9.3) exploited April 2026 — security track record is the primary concern. YC W23, $2.5M ARR, 240M&#43; Docker pulls. Part of our **Developer Tools** category. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-07 00:00:00</span></div>
   <h3><a href="/reviews/helicone-llm-observability-gateway/">Helicone Review: LLM Proxy &#43; Observability (Now in Maintenance Mode)</a></h3>
   <p>Helicone offers minimal-friction LLM observability via a proxy-first architecture with built-in caching, rate limiting, and multi-provider routing. Acquired by Mintlify in March 2026 and now in maintenance mode.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-07 08:00:00</span></div>
-  <h3><a href="/reviews/camel-ai-multi-agent-framework/">CAMEL-AI — The Original Multi-Agent Framework for LLM Role-Playing</a></h3>
-  <p>CAMEL (camel-ai/camel, ~16.9K stars, Apache 2.0, Python) is the earliest published LLM multi-agent framework — a NeurIPS 2023 paper by Guohao Li et al. that introduced role-playing between AI agents as the core coordination mechanism. The Workforce module adds hierarchical task decomposition: a Coordinator assigns subtasks to specialist Workers, each a SingleAgentWorker or RolePlayingWorker. 40&#43; LLM providers including GPT-5.4, Claude, Gemini 3.1, and 20&#43; local models. MCP-native: MCPToolkit connects to any MCP server; MCPAgent discovers tools from Smithery registry; CAMEL agents can be exposed as MCP servers. OWL variant scored 69.09% on GAIA — #1 open-source, beating OpenAI Deep Research. Unique synthetic data generation toolchain (CoT, Self-Instruct, EvolInstruct) and OASIS project for million-agent social simulation. Weaknesses: steep learning curve (&#39;Expert&#39; difficulty), 470&#43; open issues on a small team, A2A not yet supported, commercial Eigent AI arm and OSS relationship unclear. Part of our **Developer Tools** category. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-06 23:45:00</span></div>
-  <h3><a href="/reviews/wandb-weave-llm-observability-platform/">W&amp;B Weave — LLM Observability from the ML Experiment Tracking Pioneers (Acquired by CoreWeave, $1.7B)</a></h3>
-  <p>W&amp;B Weave is Weights &amp; Biases&#39; LLM observability toolkit — an extension of the platform that made W&amp;B the standard for ML experiment tracking. Apache 2.0, @weave.op decorator, 20&#43; framework integrations, OTel backend support, and a self-hosted deployment path. Unique position: teams already using W&amp;B for model training get LLM inference observability in the same UI with no additional toolchain. W&amp;B was acquired by CoreWeave for $1.7B in May 2025 (1M developers, 1,400&#43; enterprises, $100M ARR). Self-hosting available but requires a paid Weave license — unlike Langfuse (free) and Phoenix (free Docker). Part of our **Developer Tools** category. Rating: 3.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-06 23:40:00</span></div>
-  <h3><a href="/reviews/openllmetry-traceloop-otel-llm-instrumentation/">OpenLLMetry — Vendor-Neutral OTel Instrumentation for LLM Applications</a></h3>
-  <p>OpenLLMetry (traceloop/openllmetry, ~7K stars, Apache 2.0, Python/JS, v0.60.0) is a vendor-neutral OpenTelemetry instrumentation layer for LLM applications — NOT a standalone observability platform. Install one or more of its 31 Python packages, emit standard OTel spans, and route data to any compatible backend you already use: Datadog, Grafana, Langfuse, Arize Phoenix, Honeycomb, and 20&#43; others. Two integration paths: traceloop-sdk (auto-instruments everything with two lines) or individual opentelemetry-instrumentation-* packages (for teams already running an OTel collector). Coverage: OpenAI, Anthropic, AWS Bedrock, Vertex AI, LangChain, LlamaIndex, CrewAI, Haystack, Chroma, Pinecone, Qdrant, and more. Downloads: ~3.85M/month (openai package), ~2.7M/month (traceloop-sdk). YC alumni Traceloop acquired by ServiceNow March 2026; OSS commitment maintained. Still at v0.x — no stable API guarantee. Part of our **Developer Tools** category. Rating: 3.5/5.</p>
 </div>
 
   

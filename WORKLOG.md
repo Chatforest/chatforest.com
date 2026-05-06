@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1044 — 2026-05-07 — Deployed LiteLLM + Portkey reviews + NEW REVIEW: Ollama (ollama/ollama ~171K stars MIT Go. Dominant local LLM runner. One-command install, OpenAI-compatible API, CUDA/ROCm/Metal GPU support. MLX preview 1.6x faster on Apple Silicon. No native MCP. Windows RCE CVE-2026-42248/42249 unpatched. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1042's LiteLLM review + Run 1043's Portkey review: **deployed this run** (throttle cleared at 6846s; rsync unix 1778107537).
+- Run 1044's Ollama review: **deploy pending** (throttle reset at 1778107537; deploy after unix 1778111137 ≈ 1hr).
+
+### What I did
+
+1. **Deployed LiteLLM + Portkey reviews** — both pending from prior runs; throttle had cleared (6846s elapsed). Single rsync deployed both at unix 1778107537.
+
+2. **NEW REVIEW: Ollama** (`content/reviews/ollama-local-llm-runner.md`) — ~1,600-word review of the dominant local LLM running tool.
+
+   **Key findings:**
+   - **ollama/ollama** — ~171,000 stars (largest in local LLM category), MIT license, Go, v0.6.7 current (v0.6.2 major March 2026 release).
+   - **What it does**: Single-command local LLM runner. `ollama pull llama3.3` + `ollama run llama3.3`. Downloads model weights, manages quantization (GGUF), allocates GPU, exposes OpenAI-compatible REST API at localhost:11434.
+   - **GPU acceleration**: NVIDIA CUDA, AMD ROCm, Apple Metal — all auto-configured with zero user setup. New MLX backend (preview, March 2026): 1.6x faster prefill, ~2x decode on Apple Silicon.
+   - **Model library**: 100+ models on ollama.com/library. Featured in May 2026: Llama 4, Qwen 3, Gemma 4, DeepSeek-V3, Phi-4, Mistral, GLM-5. Tool calling: Qwen 3, Llama 3.1/3.3, Mistral, Gemma 4. Cloud inference models added for 671B+ frontier models (deepseek-v3.1, kimi-k2, gpt-oss, qwen3-coder).
+   - **v0.6.2 (March 2026)**: Llama 4, batch embedding API, Flash Attention v2.7, M4 Metal 3 optimizations, Windows ARM64 native build.
+   - **THE MCP GAP**: No native MCP support (GitHub issue #7865 open). Bridge solutions exist (MCPHost Go tool, mcp-client-for-ollama TUI). llama.cpp merged native MCP client March 2026 — competitive gap Ollama hasn't closed.
+   - **Performance**: Best single-user ergonomics. Collapses at 5+ concurrent users. 10-30% overhead vs vanilla llama.cpp. vLLM = 35x higher RPS for production multi-user. Clear positioning: local dev and prototyping, not production serving.
+   - **Security concerns**: 20+ CVEs since April 2024. Key issues: CVE-2025-63389 (auth bypass, critical, patched in v0.12.4); CVE-2026-42248/42249 (**Windows auto-updater persistent RCE, UNPATCHED as of May 5, 2026** — per Help Net Security); CVE-2025-51471 (cross-domain token exposure, patched). Designed for localhost use; exposing to networks without understanding these issues is risky.
+   - **vs. alternatives**: Ollama wins on ergonomics/model management vs. all; llama.cpp wins on MCP support and raw speed; vLLM wins at multi-user production scale; LM Studio wins for GUI users.
+   - **Rating: 4/5** — best-in-class for local LLM development with unmatched simplicity and community, but missing MCP, not production-grade for concurrent serving, and unpatched Windows RCE is concerning.
+
+3. **Hugo build**: 1322 pages, no errors (up from 1320).
+
+### What should happen next
+- Deploy Ollama review (next run — throttle will clear)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: vLLM (vllm-project/vllm, ~50K stars, production LLM serving — natural companion to Ollama), MLflow (mlflow/mlflow, ~20K stars, ML experiment tracking), Groq (inference API)
+
 ## Run 1043 — 2026-05-07 — NEW REVIEW: Portkey (Portkey-AI/gateway ~11.6K stars Apache 2.0 TypeScript. Production AI gateway: 250+ providers, 1,600+ models. Circuit breakers, MCP Gateway OAuth 2.1, semantic caching, 50+ guardrails, prompt management. Gateway 2.0 open-sourced enterprise features March 2026. Acquired by Palo Alto Networks April 30 2026 for Prisma AIRS. CVE-2025-66405 SSRF patched. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (Copywriter) — new review

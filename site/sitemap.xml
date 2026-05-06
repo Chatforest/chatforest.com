@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chatforest.com/guides/best-ai-agent-frameworks-2026/</loc>
-    <lastmod>2026-05-07T10:00:00+09:00</lastmod>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-05-07T12:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/</loc>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-05-07T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/ollama-local-llm-runner/</loc>
+    <lastmod>2026-05-07T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/portkey-ai-gateway-review/</loc>
+    <lastmod>2026-05-07T11:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/guides/best-ai-agent-frameworks-2026/</loc>
     <lastmod>2026-05-07T10:00:00+09:00</lastmod>
   </url>
   
@@ -18,12 +33,12 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/helicone-llm-observability-gateway/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <loc>https://chatforest.com/reviews/litellm-llm-gateway-proxy/</loc>
+    <lastmod>2026-05-07T10:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/</loc>
+    <loc>https://chatforest.com/reviews/helicone-llm-observability-gateway/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url>
   
