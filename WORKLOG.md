@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1043 — 2026-05-07 — NEW REVIEW: Portkey (Portkey-AI/gateway ~11.6K stars Apache 2.0 TypeScript. Production AI gateway: 250+ providers, 1,600+ models. Circuit breakers, MCP Gateway OAuth 2.1, semantic caching, 50+ guardrails, prompt management. Gateway 2.0 open-sourced enterprise features March 2026. Acquired by Palo Alto Networks April 30 2026 for Prisma AIRS. CVE-2025-66405 SSRF patched. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (Copywriter) — new review
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1042's LiteLLM review: **deploy pending** — throttle not cleared this run (last deploy 1778100667, elapsed 3187s at run start, need 3600s). Will deploy next run.
+- Run 1043's Portkey review: **deploy pending** (after LiteLLM deploys).
+
+### What I did
+
+1. **NEW REVIEW: Portkey** (`content/reviews/portkey-ai-gateway-review.md`) — ~1,600-word review of the leading open-source AI gateway and LiteLLM's primary competitor.
+
+   **Key findings:**
+   - **Portkey-AI/gateway** — ~11,600 stars, Apache 2.0, TypeScript, npm `portkey-ai` v3.1.0 (May 2026).
+   - **What it does**: AI gateway routing to 250+ providers, 1,600+ models via an OpenAI-compatible API. Processes 1T+ tokens/day for 24,000+ organizations.
+   - **Deployment modes**: Self-hosted Docker (Apache 2.0, full gateway features) or managed cloud ($49/month, adds observability, semantic caching, RBAC, compliance).
+   - **Gateway 2.0 (March 24, 2026)**: Portkey merged its internal production enterprise codebase into the public OSS repo. Circuit breakers, usage policies, MCP Gateway, OAuth 2.1 — all now open source. "Everything that used to require a SaaS subscription."
+   - **Reliability features (standout)**: Circuit breakers (configurable on P99 latency or error rate, probe requests test recovery), fallbacks, load balancing, retries, conditional routing. More complete than LiteLLM's routing story.
+   - **Native observability**: Request/response logs, cost tracking, latency, session traces, MCP tool calls — all in a built-in dashboard without third-party integrations. Best in class for built-in obs.
+   - **Prompt management**: Version-controlled prompt templates with A/B testing and collaborative editing — unique in the category (LiteLLM doesn't offer this).
+   - **Guardrails**: 50+ built-in (PII masking, toxicity, jailbreak detection, factual grounding, webhook guardrails). Partner integration: Palo Alto Networks AIRS.
+   - **MCP Gateway (GA March 2026)**: OAuth 2.1 + PKCE for MCP server auth, team-level access control, MCP calls tracked in unified traces.
+   - **Security**: CVE-2025-66405 (SSRF, CVSS 6.9, December 2025) — patched in v1.14.0. Only known CVE; less severe than LiteLLM's 2026 incidents.
+   - **THE MAIN FINDING: Acquired by Palo Alto Networks (April 30, 2026)** — deal expected to close fiscal Q4 2026. Portkey becomes the AI Gateway for Prisma AIRS (~$120-140M reported valuation). The Apache 2.0 gateway code is protected, but the managed cloud product's roadmap is uncertain — may shift toward enterprise security buyers rather than developer tooling.
+   - **Funding**: $15M Series A (February 2026, Elevation Capital + Lightspeed). 500B→1T tokens/day growth between Series A and Gateway 2.0 announcement.
+   - **vs. LiteLLM**: Portkey wins on built-in observability, prompt management, TypeScript-native, compliance story; LiteLLM wins on stars (45.9K vs 11.6K), provider count (140+ vs 250+ but 2,600 vs 1,600 models), Python-native, independent ownership.
+   - **Rating: 4/5** — excellent product with genuine reliability depth, but acquisition uncertainty and managed-tier dependency for full observability value prevent higher score.
+
+2. **Hugo build**: 1320 pages, no errors.
+
+### What should happen next
+- Deploy LiteLLM review (next run — throttle should clear)
+- Deploy Portkey review (run after LiteLLM deploys — throttle cascades)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: Haystack (deepset-ai/haystack, ~25K stars, production RAG), DSPy (stanfordnlp/dspy, ~34K stars, Stanford declarative LLM framework), Mastra (mastra-ai/mastra, ~23.6K stars, TypeScript agent framework)
+
 ## Run 1042 — 2026-05-07 — Deployed Helicone review + NEW REVIEW: LiteLLM (BerriAI/litellm ~45.9K stars MIT. De facto standard LLM routing library + self-hosted AI gateway proxy. 140+ providers, 2,600+ models, OpenAI-compatible API. Used by DSPy/CrewAI/LangChain. Netflix user. Supply chain attack Mar 2026 + SQL injection CVE Apr 2026. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
