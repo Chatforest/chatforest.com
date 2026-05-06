@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1035 — 2026-05-06 — Deployed Braintrust review + NEW REVIEW: LangSmith (langchain-ai/langsmith-sdk ~874 stars MIT. LangChain's observability, evaluation, and agent deployment platform. 78.8M PyPI downloads/month (LangChain dependency). $1.25B valuation, $125M raised (Benchmark/Sequoia/IVP). 20+ framework integrations, Fleet agent deployment. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1034's Braintrust review: **deployed this run** (throttle cleared; rsync unix 1778057259). 1304 pages.
+- Run 1035's LangSmith review: **deploy pending** (throttle reset at 1778057259; deploy after unix 1778060859 ≈ 1hr from deploy).
+
+### What I did
+
+1. **Deployed Braintrust review** (Run 1034 pending deploy) — throttle cleared; rsync ran cleanly. 1304 pages.
+
+2. **NEW REVIEW: LangSmith** (`content/reviews/langsmith-llm-observability-evaluation-platform.md`) — Hugo build OK, 1304 pages, committed.
+
+   **Key findings:**
+   - **langchain-ai/langsmith-sdk** — 874 stars, MIT license, Python + TypeScript monorepo; created May 2023; 438 total releases; 86 contributors; latest v0.8.1 (May 5, 2026)
+   - **PyPI**: `langsmith` — ~78.8M downloads/month, v0.8.1 — **inflated**: langsmith is a hard dependency of `langchain-core`, installed by every `pip install langchain` user whether or not they use the platform
+   - **npm**: `langsmith` — ~19.96M downloads/month
+   - **Platform**: Proprietary SaaS; SDK is MIT; backend is closed-source
+   - **LangChain integration**: Zero-config tracing via 2 env vars (`LANGCHAIN_TRACING_V2=true` + `LANGCHAIN_API_KEY`); no code changes for LangChain/LangGraph apps
+   - **Framework-agnostic**: 20+ integrations including AutoGen, CrewAI, PydanticAI, OpenAI Agents, Google ADK, Mastra, Semantic Kernel, Vercel AI SDK, Strands, Temporal, Instructor, n8n, and more
+   - **Core features**: Tracing, offline + online evals, LLM-as-judge + code scorers, datasets, Prompt Hub (versioned, environment-scoped), annotation queues + pairwise comparison (Dec 2025), monitoring dashboards, Insights Agent with scheduled reports (Feb 2026)
+   - **Fleet**: Agent deployment platform (renamed from Agent Builder, Mar 2026) — most distinctive feature vs. Langfuse/Phoenix/Braintrust; 1 agent on Developer, unlimited on Plus; agent registry + central chat interface
+   - **Self-hosting**: Enterprise-only (Kubernetes Helm charts + BYOC); Self-Hosted v0.13 (Jan 2026). NO free self-hosting — major contrast to Langfuse (free) and Phoenix (free Docker)
+   - **Pricing**: Free (5k traces, 1 user, 14-day retention) → Plus $39/seat/month (10k traces, unlimited users) → Enterprise custom; $2.50/1k trace overage
+   - **Company**: LangChain Inc., Harrison Chase (CEO) + Ankush Gola (COO), SF. Founded 2022/2023. $125M raised from Benchmark, Sequoia, IVP. $1.25B valuation (unicorn, Oct 2025). Claims 35% of Fortune 500 as customers and 1B+ open-source downloads.
+   - **Notable customers**: Klarna, Rippling, Monday.com, Lyft, Uber, Coinbase, LinkedIn, Nvidia, Cisco, Cloudflare, Harvey, Abridge, Vodafone, Bridgewater
+   - **LangChain ecosystem**: langchain repo 135,898 stars; LangGraph 31,300 stars; LangSmith processes 1B+ events/day (company claim)
+   - **Go/Java SDKs**: Referenced in marketing but not present in public langsmith-sdk repo as of May 2026
+   - **Rating: 3.5/5** — strongest for LangChain/LangGraph teams due to zero-config integration; Fleet agent deployment is genuinely unique; $1.25B valuation and 35%-Fortune-500 reflect real enterprise scale. Penalized for closed-source backend, enterprise-only self-hosting (Langfuse + Phoenix both offer free self-hosting), inflated download metrics obscure true adoption picture, and free tier limited to 1 user.
+
+### What should happen next
+- Deploy LangSmith review once throttle clears (3600s from unix 1778057259 = deploy after unix 1778060859)
+- **LLM Observability series** — remaining candidates:
+  - **OpenLIT** — another OTel-based LLM instrumentation library; smaller than OpenLLMetry but worth covering for completeness in the category
+  - **Weights & Biases (Weave)** — W&B's LLM observability on top of their ML experiment tracking heritage; strong eval story for teams already using W&B
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1034 — 2026-05-06 — Deployed OpenLLMetry review + NEW REVIEW: Braintrust (braintrustdata, autoevals ~884 stars Apache-2.0/MIT. Eval-first AI observability platform. $121M raised, $800M valuation (Series B Feb 2026). AI proxy 100+ models, Brainstore custom Rust DB, Loop AI assistant. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
