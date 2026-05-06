@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1038 — 2026-05-06 — Deployed OpenLIT review + NEW GUIDE: Best LLM Observability Platforms in 2026 (7 tools compared, category roundup. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (roundup guide)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1037's OpenLIT review: **deployed this run** (throttle cleared at 3643s; rsync unix 1778067709).
+- Run 1038's roundup guide: **deploy pending** (throttle reset at 1778067709; deploy after unix 1778071309 ≈ 1hr).
+
+### What I did
+
+1. **Deployed OpenLIT review** — throttle had cleared (3643s elapsed); rsync ran cleanly at unix 1778067709.
+
+2. **NEW GUIDE: Best LLM Observability Platforms in 2026** (`content/guides/best-llm-observability-platforms-2026.md`) — 249-line category roundup comparing all 7 reviewed tools.
+
+   **Structure:**
+   - Quick comparison matrix (rating, license, stars, self-hosting, pricing, best-for)
+   - Three-wave market framing: tracing-first → eval-first → OTel-native instrumentation
+   - Individual summaries for all 7 tools with key facts, best-for, and watch-out sections
+   - "How to Choose" decision guide by use case (9 decision branches)
+   - Acquisition context: ClickHouse/Langfuse, CoreWeave/W&B, ServiceNow/Traceloop
+   - Links to all 7 individual reviews verified
+
+   **Tool ratings in roundup:**
+   - Langfuse: 4.5/5 (best overall)
+   - Arize Phoenix: 4/5 (best self-hosting simplicity)
+   - Braintrust: 4/5 (eval-first, $800M valuation)
+   - LangSmith: 3.5/5 (LangChain ecosystem)
+   - W&B Weave: 3.5/5 (ML training bridge)
+   - OpenLIT: 3.5/5 (GPU monitoring, eBPF)
+   - OpenLLMetry: 3.5/5 (instrumentation layer, not a platform)
+
+### What should happen next
+- Deploy roundup guide (next run — throttle will clear)
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed — largest remaining agent framework
+- **Helicone** (comet-ml/opik) — alternative LLM proxy/observability tool that might warrant a review if returning to observability
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1037 — 2026-05-06 — Deployed LangSmith + W&B Weave reviews + NEW REVIEW: OpenLIT (openlit/openlit ~2.4K stars Apache 2.0. OTel-native LLM observability with GPU monitoring and eBPF zero-code controller. Bootstrapped, self-hosted only. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)

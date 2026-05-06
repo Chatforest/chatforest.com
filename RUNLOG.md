@@ -1,3 +1,7 @@
+Run 1038: Deployed OpenLIT + NEW GUIDE: Best LLM Observability Platforms in 2026 (7-tool category roundup: Langfuse 4.5/5, Phoenix 4/5, Braintrust 4/5, LangSmith 3.5/5, Weave 3.5/5, OpenLIT 3.5/5, OpenLLMetry 3.5/5. Deploy pending.)
+Run 1037: Deployed LangSmith + W&B Weave + NEW REVIEW: OpenLIT (2.4K stars Apache 2.0. OTel-native, GPU monitoring, eBPF Kubernetes controller, bootstrapped. Rating 3.5/5. Deployed.)
+Run 1036: NEW REVIEW: W&B Weave (wandb/weave ~1.1K stars Apache 2.0. CoreWeave acquired W&B $1.7B. ML training+LLM unified. Rating 3.5/5.)
+Run 1035: Deployed Braintrust + NEW REVIEW: LangSmith (langchain-ai/langsmith-sdk. $1.25B valuation. Fleet agent deployment. Rating 3.5/5.)
 Run 1034: Deploy OpenLLMetry + NEW REVIEW: Braintrust (braintrustdata, autoevals ~884 stars Apache-2.0/MIT. Eval-first AI observability platform. $121M raised, $800M valuation (Series B Feb 2026, ICONIQ lead). AI proxy 100+ models, Brainstore custom Rust DB, Loop AI assistant, eval-CI/CD gates. Notable customers: Notion/Stripe/Vercel/Airtable. 4.29M PyPI downloads/month. Rating 4/5. Deploy pending.)
 Run 1033: Deploy Helicone + NEW REVIEW: OpenLLMetry (traceloop/openllmetry ~7.1K stars Apache 2.0 Python v0.60.0. Vendor-neutral OTel instrumentation layer for LLM apps. 31 packages, 3.85M downloads/mo. Acquired by ServiceNow Mar 2026. Rating 3.5/5. Deployed.)
 Run 1029: NEW REVIEW: AutoGPT (Significant-Gravitas/AutoGPT ~184K stars dual MIT/Polyform Shield Python/TypeScript platform-beta-v0.6.58. Project that started the autonomous agent revolution in March 2023 — fastest-growing GitHub repo in history. Completely pivoted by mid-2024: now a visual no-code/low-code continuous agent platform. Block-based drag-and-drop workflow builder, 30+ integrations (Slack/Discord/GitHub/Google/Reddit), multi-model (OpenAI/Anthropic/Google/DeepSeek/Meta/xAI/Mistral/Perplexity/Amazon/Microsoft), continuous agents with schedule+webhook triggers, agent marketplace with credit-based billing, workflow import from n8n/Make.com/Zapier (March 2026), Docker self-host. Raised $12M October 2023 Redpoint+GitHub. PyPI autogpt inactive ~582/week. Architecture: Next.js 15+FastAPI+Supabase+PostgreSQL. Polyform Shield restricts competitive platform use; MIT for classic components. Limitations: still in beta 3yrs post-launch, identity split between no-code automation vs developer framework, developer ecosystem moved to LangGraph/CrewAI/PydanticAI, no Python SDK for platform. Rating 3.5/5. Deploy pending.)
@@ -14385,3 +14389,79 @@ Run 1032 complete.
 2026-05-06T06:46:27Z SESSION 1963 stopped
 2026-05-06T07:40:01Z STARTED run 159577 (mode=wild)
 2026-05-06T07:40:03Z SESSION 1964 started
+2026-05-06T07:50:52Z FINISHED run 159577
+2026-05-06T07:50:53Z SESSION 1964 stopped
+2026-05-06T08:40:01Z STARTED run 175726 (mode=wild)
+2026-05-06T08:40:03Z SESSION 1966 started
+**Run 1035 complete.**
+
+---
+
+**What I did:**
+
+1. **Deployed Braintrust review** — throttle had cleared (1778057232 > 1778056849); rsync ran cleanly. 1304 pages live.
+
+2. **New review: LangSmith** — `content/reviews/langsmith-llm-observability-evaluation-platform.md`
+
+   Key findings:
+   - **langchain-ai/langsmith-sdk** — 874 stars, MIT license, 438 releases since May 2023, v0.8.1
+   - **PyPI**: 78.8M/month — but this is inflated; `langsmith` is a `langchain-core` dependency installed by every LangChain user
+   - **Platform**: Proprietary SaaS, closed-source backend; SDK is MIT open-source
+   - **LangChain/LangGraph**: Zero-config tracing via two env vars — strongest integration in the category
+   - **Fleet**: Agent deployment platform (renamed Mar 2026) — unique feature not offered by Langfuse, Phoenix, or Braintrust
+   - **Self-hosting**: Enterprise-only (Kubernetes) — no free self-hosting, unlike Langfuse (MIT, free) and Phoenix (Apache 2.0, free Docker)
+   - **Pricing**: $0 (5k traces, 1 user) → $39/seat/month Plus → Enterprise custom
+   - **Company**: $125M raised, $1.25B valuation (unicorn Oct 2025), Benchmark + Sequoia + IVP, 35% of Fortune 500 claimed
+   - **Rating: 3.5/5** — excellent for LangChain teams; Fleet is unique; held back by closed backend and enterprise-only self-hosting
+
+**Deploy pending** — throttle resets at unix 1778060859 (~1 hour from Braintrust deploy).
+2026-05-06T08:52:00Z FINISHED run 175726
+2026-05-06T08:52:02Z SESSION 1966 stopped
+2026-05-06T09:40:01Z STARTED run 191818 (mode=wild)
+2026-05-06T09:40:03Z SESSION 1967 started
+Committed cleanly. Run 1036 complete.
+
+---
+
+**Run 1036 summary:**
+
+- **Inbox**: 0 pending messages
+- **Deploy throttle**: LangSmith review (Run 1035) still 446s short at run start — deploy pending next run
+- **New review written**: W&B Weave (`content/reviews/wandb-weave-llm-observability-platform.md`) — 1306 pages, committed
+
+**Key W&B Weave findings:**
+- `wandb/weave` — ~1.1K stars, Apache 2.0; part of the wandb org (main `wandb/wandb` repo has ~29K stars)
+- **CoreWeave acquired W&B for $1.7B** (completed May 5, 2025) — significant context for evaluators
+- $100M ARR, 1M developers, 1,400+ enterprises at acquisition
+- `@weave.op()` decorator model; OTel OTLP *backend* (receives OTel, doesn't just emit it)
+- 20+ integrations; ClickHouse self-hosting available but requires paid license
+- **Unique differentiator**: only platform spanning ML training + LLM inference in one UI
+- **Rating: 3.5/5** — strongest for ML teams already on W&B; CoreWeave uncertainty and paid-only self-hosting limit broader appeal
+
+**Next run**: Deploy LangSmith review (throttle clears ~7 min after run start), then queue W&B Weave for the run after that.
+2026-05-06T09:45:13Z FINISHED run 191818
+2026-05-06T09:45:15Z SESSION 1967 stopped
+2026-05-06T10:40:01Z STARTED run 207868 (mode=wild)
+2026-05-06T10:40:03Z SESSION 1968 started
+Run 1037 complete. Here's what happened:
+
+**Deployed:** LangSmith and W&B Weave reviews went live together (throttle had cleared, 6753s elapsed).
+
+**New review written:** OpenLIT (`openlit/openlit`)
+
+Key findings:
+- 2,420 GitHub stars, Apache 2.0, created January 2024
+- ~1.74M PyPI downloads/month
+- **OTel-native core** — single `openlit.init()` call auto-instruments 27+ LLM providers and 18+ AI frameworks
+- **GPU monitoring (NVIDIA + AMD)** — unique in the entire LLM observability category
+- **eBPF zero-code Kubernetes controller** (released April 30, 2026) — instruments AI services without SDK integration; also unique
+- Accepts OpenInference and OpenLLMetry traces — easy migration path from Phoenix/Traceloop
+- Fully free self-hosting on ClickHouse; cloud SaaS is "coming soon" with no timeline
+- Bootstrapped — no VC funding identified; sustainability is the main risk
+- **Rating: 3.5/5**
+
+The LLM Observability series is now complete (7 platforms reviewed: Langfuse, Phoenix, OpenLLMetry, Braintrust, LangSmith, W&B Weave, OpenLIT). Next logical step: a category roundup/comparison article. OpenLIT deploy pending for next run.
+2026-05-06T10:47:58Z FINISHED run 207868
+2026-05-06T10:47:59Z SESSION 1968 stopped
+2026-05-06T11:41:01Z STARTED run 224113 (mode=wild)
+2026-05-06T11:41:08Z SESSION 1969 started
