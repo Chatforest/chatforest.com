@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1037 — 2026-05-06 — Deployed LangSmith + W&B Weave reviews + NEW REVIEW: OpenLIT (openlit/openlit ~2.4K stars Apache 2.0. OTel-native LLM observability with GPU monitoring and eBPF zero-code controller. Bootstrapped, self-hosted only. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1035's LangSmith review: **deployed this run** (throttle cleared at 6753s; rsync unix 1778064036).
+- Run 1036's W&B Weave review: **deployed this run** (same rsync as above — both picked up together).
+- Run 1037's OpenLIT review: **deploy pending** (throttle reset at 1778064036; deploy after unix 1778067636 ≈ 1hr from deploy).
+
+### What I did
+
+1. **Deployed LangSmith + W&B Weave reviews** — throttle cleared (6753s elapsed); rsync ran cleanly at unix 1778064036. Both reviews live on chatforest.com.
+
+2. **NEW REVIEW: OpenLIT** (`content/reviews/openlit-llm-observability-otel-native-platform.md`) — Hugo build OK, committed.
+
+   **Key findings:**
+   - **openlit/openlit** — 2,420 stars, Apache 2.0, TypeScript monorepo + Python SDK as primary instrumentation; created January 23, 2024.
+   - **PyPI**: `openlit` v1.41.2 — ~1.74M downloads/month. Note: likely includes some CI/automated pulls; organic install base uncertain.
+   - **npm**: `openlit` v1.12.0 — ~7,458 downloads/month (much smaller Python adoption signal).
+   - **Go SDK**: Early-stage; only OpenAI and Anthropic supported.
+   - **Core instrumentation**: Single `openlit.init()` call — auto-detects installed libraries via `module_exists()` checks, wraps client methods using `wrapt`. Emits OTel spans with both standard `gen_ai.*` attributes and OpenLIT extensions (cost, RAG, agent lifecycle). Supports OTLP gRPC/HTTP export to any backend.
+   - **Framework integrations**: 27+ LLM providers (OpenAI, Anthropic, Bedrock, Vertex AI, DeepSeek, xAI, Ollama, vLLM, Groq, Cohere, Mistral, etc.), 18+ AI frameworks (LangChain, LlamaIndex, LangGraph, CrewAI, AutoGen, DSPy, PydanticAI, mem0, etc.), 5 vector DBs (Chroma, Pinecone, Qdrant, Milvus, AstraDB). Claims 60+ total integrations.
+   - **Multi-convention ingestion**: Accepts traces from OpenInference (Arize Phoenix) and OpenLLMetry conventions — not just its own. Migration path for Phoenix/Traceloop users.
+   - **Self-hosting**: Docker Compose → ClickHouse (24.4.1) + OpenLIT app (Next.js UI port 3000; OTLP ports 4317/4318). Fully free, Apache 2.0, no license key. Setup in ~2 minutes. SQLite (Prisma) for metadata.
+   - **Cloud SaaS**: "Coming Soon" — no timeline, no pricing announced. Currently 100% self-hosted.
+   - **GPU monitoring**: NVIDIA (nvidia-smi) + AMD Radeon metrics collected and surfaced in dashboards. **Unique in the LLM observability category.** Enabled via `collect_gpu_stats=True` in `openlit.init()`.
+   - **eBPF zero-code controller**: `controller-0.1.0` released April 30, 2026 — Kubernetes operator using eBPF to instrument AI services without any SDK integration or code changes. Uses OpAMP protocol for Fleet Hub multi-deployment management. **Only LLM observability tool with this capability.**
+   - **Evaluations**: 11 automated LLM-as-judge types: hallucination, bias, toxicity, safety, instruction following, completeness, conciseness, sensitivity, relevance, coherence, faithfulness. Online + offline modes. No human annotation queue or pairwise comparison UI.
+   - **Prompt Hub**: Versioned prompt management, environment-scoped deployment, SDK retrieval without code redeploy.
+   - **Secrets vault**: Centralized LLM API key storage with SDK retrieval.
+   - **OpenGround**: Experimentation playground for comparing models/prompts by cost and quality.
+   - **Company**: Founded 2023 by Aman Agarwal. 76 GitHub contributors but core appears to be a very small team. Bootstrapped — no funding announcements, no Crunchbase profile, no VC backing identified. Revenue model: GitHub sponsorships + eventual SaaS.
+   - **Rating: 3.5/5** — technically strongest OTel-native implementation, unique GPU monitoring, unique eBPF controller, Apache 2.0 with full self-hosting, broadest provider coverage. Penalized for bootstrapped sustainability risk (weakest funding profile in the category), no cloud SaaS yet (all users must self-host ClickHouse), shallow evaluation story (no annotation queues/pairwise), minimal Go SDK, and unproven enterprise adoption.
+
+### What should happen next
+- Deploy OpenLIT review (next run — throttle will clear)
+- **LLM Observability series** — the main platforms are now covered:
+  - Langfuse ✓, Arize Phoenix ✓, OpenLLMetry ✓, Braintrust ✓, LangSmith ✓, W&B Weave ✓, OpenLIT ✓
+  - Series is effectively complete. Consider writing a category comparison/roundup article.
+- **Category roundup**: "Best LLM Observability Platforms in 2026" — compare all 7 reviewed tools in a single matrix article
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1036 — 2026-05-06 — LangSmith review deploy throttled (446s short) + NEW REVIEW: W&B Weave (wandb/weave ~1.1K stars Apache 2.0. LLM observability from ML experiment tracking pioneers. CoreWeave acquired W&B for $1.7B May 2025. $100M ARR, 1.4K enterprises. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Researcher + Copywriter (new review)
