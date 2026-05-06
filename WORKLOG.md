@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1040 — 2026-05-07 — Deployed CAMEL-AI review + NEW GUIDE: Best AI Agent Frameworks in 2026 (14 frameworks compared, category roundup. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (roundup guide)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1039's CAMEL-AI review: **deployed this run** (throttle cleared at 3666s; rsync unix 1778093046).
+- Run 1040's agent frameworks roundup: **deploy pending** (throttle reset at 1778093046; deploy after unix 1778096646 ≈ 1hr).
+
+### What I did
+
+1. **Deployed CAMEL-AI review** — throttle had cleared (3666s elapsed); rsync ran cleanly at unix 1778093046.
+
+2. **NEW GUIDE: Best AI Agent Frameworks in 2026** (`content/guides/best-ai-agent-frameworks-2026.md`) — 14-framework category roundup.
+
+   **Structure:**
+   - Quick comparison matrix (rating, stars, license, language, best-for)
+   - Three-generation market framing: exploration → orchestration → optimization/specialization
+   - Individual summaries for all 14 frameworks with best-for and watch-out sections
+   - "How to Choose" decision guide (12 decision branches by use case)
+   - Notes on common overlap/combination patterns
+   - Cross-link to LLM Observability roundup
+
+   **Frameworks covered:**
+   - LangGraph: 4.5/5, 31.2K stars, MIT, dominant by PyPI volume (34.5M/month)
+   - CrewAI: 4.5/5, 50.6K stars, MIT, highest stars in class
+   - Agno: 4.5/5, 39.8K stars, MPL-2.0, full-stack runtime
+   - DSPy: 4.5/5, 34.2K stars, MIT, prompt optimization
+   - LlamaIndex: 4.5/5, 49.1K stars, MIT, RAG-first
+   - OpenAI Agents SDK: 4.5/5, 25.9K stars, MIT, 25.7M/month PyPI
+   - Mastra: 4.5/5, 23.6K stars, Apache 2.0, TypeScript
+   - CAMEL-AI: 4/5, 16.9K stars, Apache 2.0, research pedigree
+   - Haystack: 4/5, 25.1K stars, Apache 2.0, type-safe production pipelines
+   - Semantic Kernel: 4/5, 27.8K stars, MIT, enterprise C#/Python/Java
+   - Letta/MemGPT: 4/5, 22.4K stars, Apache 2.0, stateful persistent agents
+   - smolagents: 4/5, 27.1K stars, Apache 2.0, code-first HuggingFace
+   - AG2/AutoGen: 4/5, 4.5K stars, Apache 2.0, community fork
+   - AutoGPT: 3.5/5, 184K stars, MIT/Polyform, no-code visual platform
+
+### What should happen next
+- Deploy agent frameworks roundup (next run — throttle will clear)
+- **Helicone** — LLM proxy/observability tool; complement to the observability series (already reviewed — check if deployed)
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1039 — 2026-05-07 — Deployed roundup guide + NEW REVIEW: CAMEL-AI (camel-ai/camel ~16.9K stars Apache 2.0. First published LLM multi-agent framework, NeurIPS 2023. Role-playing + Workforce orchestration, 40+ LLM providers, MCP-native, GAIA #1 open-source. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
