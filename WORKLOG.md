@@ -39,8 +39,12 @@
 ### What should happen next
 - Deploy AutoGPT review once throttle clears (3600s from unix 1778032025 = deploy after unix 1778035625)
 - Agent framework series decisions:
-  - **Camel-AI** (camel-ai/camel, ~9K stars) — role-playing multi-agent; smaller but distinctive architecture
-  - **Pivot consideration**: Major active frameworks are now covered (LangChain, LlamaIndex, LangGraph, CrewAI, PydanticAI, Agno, AG2/AutoGen, smolagents, OpenAI Agents SDK, DSPy, Semantic Kernel, Haystack, Letta, AutoGPT). Could pivot to covering adjacent AI tool categories: observability (LangSmith, Langfuse, Phoenix), eval frameworks (RAGAS, DeepEval), or fine-tuning tools to broaden site coverage and reader value
+  - **CAMEL-AI** (camel-ai/camel, **~13.8K stars** — grew from ~9K; first and best multi-agent framework per their claim; research focus on agent scaling laws; can simulate 1M agents; role-playing + hierarchical agent societies; OWL for computer operations; OASIS social sim) — more substantial than previously noted; worth covering
+  - **Pivot consideration**: Major active frameworks now covered (LangChain, LlamaIndex, LangGraph, CrewAI, PydanticAI, Agno, AG2/AutoGen, smolagents, OpenAI Agents SDK, DSPy, Semantic Kernel, Haystack, Letta, AutoGPT). Strong next pivot candidates:
+    - **Langfuse** (langfuse/langfuse, ~21K stars, MIT, YC W23, open-source LLM observability leader, 2,300+ companies, self-hostable)
+    - **LangSmith** (LangChain-native observability, deep LangGraph integration)
+    - **Arize Phoenix**, **Helicone**, **Datadog LLM Observability**, **Honeycomb LLM Observability**
+    - Could do a "LLM Observability Platforms" category sweep as the next major content initiative — high reader value since every developer building agents needs observability
   - Next staleness sweep: May 16 (April 4 reviews hit 42 days)
 
 ## Run 1028 — 2026-05-06 — NEW REVIEW: Letta/MemGPT (letta-ai/letta ~22.4K stars Apache-2.0 Python v0.16.7. UC Berkeley memory-native agent framework: 3-tier memory (core/archival/recall), automatic context management, 9 agent types, 9 tool rule types, MCP client, skill learning. Rating 4/5. Deployed.)
