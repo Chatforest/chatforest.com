@@ -260,6 +260,20 @@ docker run --name mindsdb -p 47334:47334 -p 47335:47335 <span style="color:#ae81
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-06 19:30:00</span></div>
+  <h3><a href="/reviews/langfuse-llm-observability-platform/">Langfuse — The Open-Source LLM Observability Platform</a></h3>
+  <p>Langfuse (langfuse/langfuse, ~26.6K stars, MIT, TypeScript/Python, v3.172.1) is the leading open-source LLM observability and engineering platform. Founded 2023, YC W23, $4M seed, acquired by ClickHouse in January 2026. Core capabilities: hierarchical production tracing, LLM-as-a-judge &#43; heuristic evaluations, prompt management with versioning and one-click deploy, datasets and experiments for systematic testing, and a native MCP Server for prompt retrieval. Dual-storage architecture (PostgreSQL for metadata &#43; ClickHouse for high-volume telemetry). SDK v4 (Python/TypeScript), drop-in OpenAI wrapper, integrations with LangChain, LlamaIndex, Haystack, PydanticAI, and 20&#43; frameworks. 796K&#43; daily PyPI downloads. Self-host under MIT; cloud free tier (50K units/month). Part of our **Developer Tools** category. Rating: 4.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-06 18:00:00</span></div>
+  <h3><a href="/reviews/autogpt-autonomous-agent-platform/">AutoGPT — From Viral Experiment to Continuous Agent Platform</a></h3>
+  <p>AutoGPT (Significant-Gravitas/AutoGPT, ~184K stars) is the project that launched the autonomous LLM agent movement in March 2023 — the fastest-growing GitHub repo in history at that point. Today it is a completely different product: a visual no-code/low-code platform for building continuous agents using a drag-and-drop block workflow builder. 30&#43; integrations, multi-model support (OpenAI, Anthropic, Google, DeepSeek, Meta, xAI, Mistral, Perplexity, Amazon, Microsoft), credit-based execution billing, agent marketplace, workflow import from n8n/Make.com/Zapier, and Docker self-hosting. Dual license: MIT for the classic components, Polyform Shield for the platform folder. Still in beta (v0.6.58, April 2026). Raised $12M from Redpoint Ventures and GitHub in October 2023. Part of our **Developer Tools** category. Rating: 3.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-05-06 17:00:00</span></div>
   <h3><a href="/reviews/letta-memgpt-stateful-agent-framework/">Letta (MemGPT) — The Memory-Native Agent Framework</a></h3>
   <p>Letta (letta-ai/letta, ~22.4K stars, Apache 2.0, Python, v0.16.7) is the production evolution of MemGPT — the UC Berkeley research project that introduced virtual context management for LLMs in 2023. It is the only major agent framework where long-term memory management is the primary design goal. Three-tier memory hierarchy (core in-context blocks, archival vector storage, recall history), automatic context overflow handling, 9 agent types (including workflow, sleeptime, and voice variants), 9 tool rule types for deterministic control, MCP client (SSE/stdio/Streamable HTTP with OAuth), 15&#43; LLM providers, built-in PostgreSQL/SQLite persistence. Recent innovations include git-backed memory, skill learning from trajectories, and sleep-time compute. Available as Letta Cloud or self-hosted open source. Part of our **Developer Tools** category. Rating: 4/5.</p>
@@ -270,20 +284,6 @@ docker run --name mindsdb -p 47334:47334 -p 47335:47335 <span style="color:#ae81
   <div class="card-meta"><span>Review</span> <span>2026-05-06 17:00:00</span></div>
   <h3><a href="/reviews/semantic-kernel-microsoft-agent-framework/">Semantic Kernel — Microsoft&#39;s Enterprise Agent SDK</a></h3>
   <p>Semantic Kernel (microsoft/semantic-kernel, ~27.8K stars, MIT, C#/Python/Java, dotnet-1.75.0 / python-1.41.3) is Microsoft&#39;s official SDK for building AI agents and multi-agent systems. Central Kernel DI container, five agent types, five multi-agent orchestration patterns, Filters middleware, first-class OpenTelemetry, MCP client &#43; server, Vector Store connectors (16&#43; backends), Process Framework for business workflows. ~2.68M monthly PyPI downloads &#43; 11.7M NuGet total. Part of our **Developer Tools** category. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-06 16:00:00</span></div>
-  <h3><a href="/reviews/haystack-deepset-llm-framework/">Haystack — Production-Grade LLM Pipelines from deepset</a></h3>
-  <p>Haystack (deepset-ai/haystack, ~25K stars, Apache 2.0, Python, v2.28.0) is deepset&#39;s production-first LLM orchestration framework. Its typed, directed-graph Pipeline model enforces component contracts at connect time — not at runtime — giving Haystack stronger correctness guarantees than chain-based frameworks. Supports 20 document stores for RAG, 100&#43; LLM providers, MCP client (mcp-haystack v1.3.0) and MCP server (via Hayhooks), human-in-the-loop agents, SearchableToolset for dynamic tool discovery across large catalogs, and native OTEL &#43; Langfuse &#43; MLflow &#43; W&amp;B observability. Enterprise users include Airbus, Lufthansa Industry Solutions, The Economist, Oxford University Press, and the European Commission. ~729K monthly PyPI downloads. Part of our **Developer Tools** category. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-06 14:00:00</span></div>
-  <h3><a href="/reviews/dspy-declarative-llm-programming/">DSPy — Programming, Not Prompting, Language Models</a></h3>
-  <p>DSPy (stanfordnlp/dspy, ~34.2K stars, MIT, Python ≥3.9, v3.2.1) is the Stanford framework that treats LLM pipeline development as an optimization problem, not a prompting exercise. Declare what each step should do (Signatures), compose modules into programs (Modules), and let optimizers like MIPROv2 and GEPA automatically tune instructions and few-shot examples against your metric. Supports 100&#43; LLM providers via LiteLLM. ReAct and CodeAct agents. MCP client (via mcp Python SDK). MLflow autolog and Arize Phoenix (OTEL-native) observability. Finetuning via BootstrapFinetune and BetterTogether. In production at Shopify (550x cost reduction), Dropbox, and Databricks. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
 </div>
 
   

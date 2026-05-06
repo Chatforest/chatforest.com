@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1030 — 2026-05-06 — Deployed AutoGPT review + NEW REVIEW: Langfuse (langfuse/langfuse ~26.6K stars MIT TypeScript/Python v3.172.1. YC W23, acquired by ClickHouse Jan 2026. Open-source LLM observability: tracing, evals, prompt mgmt, experiments, MCP server. Rating 4.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1029's AutoGPT review: **deployed this run** (throttle cleared ~6671s; rsync unix 1778038715). 643 pages.
+- Run 1030's Langfuse review: **deploy pending** (throttle reset at 1778038715; deploy after unix 1778042315 ≈ 1hr from deploy).
+
+### What I did
+
+1. **Deployed AutoGPT review** (Run 1029 pending deploy) — rsync ran cleanly, 1292 pages deployed.
+
+2. **NEW REVIEW: Langfuse** (`content/reviews/langfuse-llm-observability-platform.md`) — Hugo build OK, 643 pages, committed.
+
+   **Key findings:**
+   - **langfuse/langfuse** — ~26,600 stars, ~2,700 forks, MIT license (core), TypeScript + Python; v3.172.1 (May 1, 2026); created 2023 by Clemens Rawert, Marc Klingen (CEO), Maximilian Deichmann
+   - **YC W23**, $4M seed (Lightspeed, La Famiglia, YC) September 2023
+   - **Acquired by ClickHouse** January 2026 — ClickHouse raised $400M Series D at $15B valuation; Langfuse remains open-source with no license change; dual-storage architecture now uses PostgreSQL (metadata) + ClickHouse (high-volume telemetry)
+   - **Core product**: LLM observability and engineering platform — tracing, evaluations, prompt management, datasets, experiments
+   - **Tracing**: hierarchical trace model (trace → observations/spans), decorator API, drop-in OpenAI wrapper, integrations for LangChain/LlamaIndex/Haystack/PydanticAI/20+ frameworks
+   - **Evaluations**: LLM-as-a-judge (auto-score in production), heuristic evals (code-based), human review queues — all scores unified in same data model
+   - **Prompt management**: centralized registry, versioning, one-click deploy without code pushes; `lf.get_prompt("name")` at runtime
+   - **Experiments** (first-class April 2026): datasets from production traces, side-by-side comparison of prompt/model variants before deploying
+   - **MCP Server**: native `/api/public/mcp` on any Langfuse instance (cloud or self-hosted); reads/writes prompts; compatible with Claude Desktop, Cursor; community extension adds traces/sessions/scores
+   - **SDK v4** (Python + TypeScript, March 2026): full rewrite with performance improvements and cleaner async support
+   - **Downloads**: ~796K/day PyPI — mature production-scale adoption
+   - **Pricing**: Free (50K units/mo, 30-day retention), Core $29/mo, Pro $199/mo, Enterprise $2,499+/mo (per-org not per-seat); self-hosted MIT free
+   - **Competitors**: LangSmith (LangChain-native SaaS), Arize Phoenix (simpler self-host, less mature), Helicone (narrow proxy scope), Logfire (cheaper at scale, fewer LLM features)
+   - **Limitations**: Self-hosting now requires PostgreSQL + ClickHouse + Redis (higher operational floor than before acquisition); free tier lacks Playground and Experiments; agentic workloads can rack up surprising unit costs; observation-centric data model (refactored March–April 2026) adds migration friction for pre-v3 users
+   - **Rating: 4.5/5** — best-in-class open-source LLM observability stack; ClickHouse acquisition adds institutional sustainability; deducted for self-hosting complexity and limited free tier
+
+### What should happen next
+- Deploy Langfuse review once throttle clears (3600s from unix 1778038715 = deploy after unix 1778042315)
+- **LLM Observability category** — strong next candidates:
+  - **Arize Phoenix** (Arize-AI/phoenix, ~5–8K stars, Apache 2.0 Python, OTEL-native, easy single-container self-host) — direct Langfuse competitor worth covering for comparison
+  - **Helicone** (Helicone/helicone, ~2–3K stars, Apache 2.0, proxy model for cost tracking) — narrower scope, still worth a review
+  - **OpenLLMetry** / **Traceloop** — OpenTelemetry-based observability layer for LLMs
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1029 — 2026-05-06 — NEW REVIEW: AutoGPT (Significant-Gravitas/AutoGPT ~184K stars dual MIT/Polyform Shield Python/TypeScript platform-beta-v0.6.58. Pivoted from viral autonomous GPT-4 CLI to visual no-code continuous agent platform. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Researcher + Copywriter + Developer (new review)
