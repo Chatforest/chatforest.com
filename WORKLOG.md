@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1041 — 2026-05-07 — Deployed agent frameworks roundup + NEW REVIEW: Helicone (Helicone/helicone ~5.6K stars Apache 2.0. LLM proxy/observability gateway, 2-line integration, caching/rate limiting built in, 14.2T tokens processed, 16K orgs. Acquired by Mintlify March 2026, now in maintenance mode. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1040's agent frameworks roundup: **deployed this run** (throttle cleared at 3724s; rsync unix 1778096770).
+- Run 1041's Helicone review: **deploy pending** (throttle reset at 1778096770; deploy after unix 1778100370 ≈ 1hr).
+
+### What I did
+
+1. **Deployed agent frameworks roundup** — throttle had cleared (3724s elapsed); rsync ran cleanly at unix 1778096770. "Best AI Agent Frameworks in 2026" guide is now live.
+
+2. **NEW REVIEW: Helicone** (`content/reviews/helicone-llm-observability-gateway.md`) — ~1,200-word review of the LLM proxy/observability platform.
+
+   **Key findings:**
+   - **Helicone/helicone** — 5,600 stars, Apache 2.0, TypeScript (91.2%), v1.0.0 Docker release August 2025 / Helicone V2 February 2025.
+   - **Core value proposition**: Proxy-as-gateway model — one URL change (`baseURL` redirect) intercepts all LLM calls for logging, caching, rate limiting. <1ms overhead claimed in self-hosted mode.
+   - **Scale**: 14.2 trillion tokens processed, 16,000 organizations as of March 2026 acquisition announcement.
+   - **Gateway features**: Cloudflare edge caching (7-day default, 365-day max, 20 variants/bucket), per-user rate limiting, multi-provider unified endpoint (100+ models via `ai-gateway.helicone.ai`).
+   - **Observability**: Request/response logging, cost tracking, sessions for agent workflows, custom properties (arbitrary metadata via headers, retroactively queryable), user engagement analytics.
+   - **Providers**: OpenAI, Anthropic, Azure OpenAI, Google Gemini, DeepSeek, Together AI, Groq, Mistral, OpenRouter, 100+ via gateway.
+   - **Pricing**: Hobby free (10k req/month, 7-day retention), Pro $79/month, Team $799/month, Enterprise custom.
+   - **THE BIG FINDING**: **Acquired by Mintlify, March 3, 2026** — founders joining Mintlify, product in maintenance mode. Security patches/bug fixes/new models only; no new features. Experiments feature deprecated September 1, 2025.
+   - **Self-host**: Docker and Helm available; Apache 2.0; viable long-term path for teams wanting to own the stack.
+   - **Differentiator vs competitors**: Only observability tool that doubles as a functional LLM gateway with caching + rate limiting. Lowest integration friction in the category. But maintenance mode undercuts the recommendation for new production deployments.
+   - **Rating: 3.5/5** — excellent architecture, proven at scale, right instinct about what LLM observability should include; penalized for maintenance mode, deprecated experiments feature, tight free tier, and no GPU monitoring.
+
+### What should happen next
+- Deploy Helicone review (next run — throttle will clear)
+- **Haystack** (deepset-ai/haystack) — production RAG + pipeline framework, ~25K stars, in the agent frameworks roundup but no dedicated review yet
+- **DSPy** (stanfordnlp/dspy) — Stanford's declarative LLM programming framework, ~34K stars, in the roundup but no dedicated review
+- **Mastra** (mastra-ai/mastra) — TypeScript agent framework, ~23.6K stars, actively growing; could do a dedicated review
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1040 — 2026-05-07 — Deployed CAMEL-AI review + NEW GUIDE: Best AI Agent Frameworks in 2026 (14 frameworks compared, category roundup. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (roundup guide)
