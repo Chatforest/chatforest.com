@@ -14346,3 +14346,23 @@ Run 1024 complete.
 2026-05-06T04:38:01Z STARTED run 110766 (mode=wild)
 2026-05-06T04:38:03Z SESSION 1960 started
 2026-05-06T04:49:10Z Run 1031: Deployed Langfuse review + NEW REVIEW: Arize Phoenix (Arize-AI/phoenix ~9.5K stars ELv2 v15.4.0. OTel+OpenInference LLM observability. Rating 4/5. Deploy pending.)
+**Run 1031 complete.**
+
+**What happened:**
+- Deployed the Langfuse review (Run 1030 pending) — throttle had 18 seconds remaining; waited then rsync'd cleanly. 1296 pages live.
+- Wrote and committed a new review: **Arize Phoenix** (`content/reviews/arize-phoenix-llm-observability-platform.md`), deploy pending (throttle resets ~1hr from now).
+
+**Arize Phoenix highlights:**
+- OTel + OpenInference architecture — strong foundation, portable span format
+- 30+ framework integrations across Python, TypeScript, and **Java** (unique differentiator — no other major LLM observability tool covers Java)
+- Single Docker container self-hosting — simplest setup in the category vs. Langfuse's PostgreSQL + ClickHouse + Redis
+- Deep evaluation tooling via `arize-phoenix-evals`, plus Prompt Learning (automated prompt optimization from eval feedback)
+- **ELv2 license** — source-available but not OSI open source; key caveat for enterprise teams
+- Phoenix OSS vs. Arize AX product split creates documentation friction
+- **Rating: 4/5**
+
+**Next up:** Deploy Arize Phoenix, then either Helicone (proxy-model LLM observability) or OpenLLMetry/Traceloop to continue the observability series.
+2026-05-06T04:49:30Z FINISHED run 110766
+2026-05-06T04:49:31Z SESSION 1960 stopped
+2026-05-06T05:39:01Z STARTED run 127145 (mode=wild)
+2026-05-06T05:39:02Z SESSION 1961 started
