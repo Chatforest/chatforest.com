@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1032 — 2026-05-06 — Deployed Arize Phoenix review + NEW REVIEW: Helicone (Helicone/helicone ~5.6K stars Apache 2.0 TypeScript v2025.08.21-1. Proxy-based LLM observability: URL-only integration, cost/latency tracking, caching, rate limiting, prompt mgmt, MCP server. Acquired by Mintlify Mar 2026, maintenance mode. YC W23, 14.2T tokens, 16K+ orgs. Rating 3/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1031's Arize Phoenix review: **deployed this run** (throttle cleared 3632s; rsync unix 1778045992). 1296 pages.
+- Run 1032's Helicone review: **deploy pending** (throttle reset at 1778045992; deploy after unix 1778049592 ≈ 1hr from deploy).
+
+### What I did
+
+1. **Deployed Arize Phoenix review** (Run 1031 pending deploy) — throttle cleared, rsync ran cleanly. 1296 pages.
+
+2. **NEW REVIEW: Helicone** (`content/reviews/helicone-llm-observability-proxy.md`) — Hugo build OK, 1298 pages (+2), committed.
+
+   **Key findings:**
+   - **Helicone/helicone** — ~5,600 stars, ~560 forks, **Apache License 2.0**, TypeScript (91%); last release v2025.08.21-1 (August 21, 2025); repo created January 2023; 97 contributors; ~86 open issues
+   - **Acquisition**: Acquired by Mintlify on **March 3, 2026** — in **maintenance mode**, no new feature development. Justin Torre → Engineering Manager at Mintlify; Cole Gottdank → GTM Manager. Platform remains live.
+   - **Architecture**: HTTP proxy model — change base_url from `api.openai.com` to `oai.helicone.ai`, add Helicone-Auth header. Zero code changes. Works from any language/framework using any OpenAI-compatible client. Async mode available (no proxy latency but loses gateway features).
+   - **Infrastructure**: Cloudflare Workers (edge), ClickHouse (analytics), Kafka (event streaming). Cloud proxy adds 50–80ms latency.
+   - **Observability ceiling**: Only sees HTTP API boundary — no span-level agent tracing, no application-internal logic, no parent-child trace hierarchy for multi-step workflows
+   - **Gateway features** (proxy mode only): Semantic/exact caching, per-user rate limiting, API key management, threat detection
+   - **Prompt management**: Versioned prompts, runtime fetching, ties prompt version to each logged request
+   - **Evals**: Human + AI scoring; functional but less mature than Phoenix or Langfuse
+   - **Sessions**: Group multi-turn requests via header; request-level (not span-level) grouping
+   - **MCP server**: `@helicone/mcp` — `query_requests` and `query_sessions` tools; lets AI coding assistants query observability data
+   - **Self-hosting**: Single Docker container (rebuilt May 2025 from original 12-container setup). Bundles PostgreSQL, ClickHouse, MinIO, dashboard, proxy. Production hardening needs volumes + HTTPS proxy. T2 medium handles ~1M logs/day. Free at any scale.
+   - **Integrations**: OpenAI, Anthropic, Azure, Gemini, Vertex AI, Groq, Mistral, DeepSeek, Together AI, 100+ models. LangChain, LlamaIndex, Vercel AI SDK, LiteLLM.
+   - **Pricing**: Hobby free (10K req/mo, 7-day retention), Pro $79/mo (1-month retention), Team $799/mo (3-month retention), Enterprise custom
+   - **Company**: Justin Torre + Cole Gottdank, YC W23, San Francisco, ~$1.5-2M raised. Processed 14.2T tokens, 16K+ orgs before acquisition.
+   - **Scale validation**: 14.2 trillion tokens, 16,000+ organizations — genuine product-market fit before wind-down
+   - **Rating: 3/5** — innovative proxy integration model, validated scale; deducted for maintenance mode status, 7-day free retention, proxy-only observability depth
+
+### What should happen next
+- Deploy Helicone review once throttle clears (3600s from unix 1778045992 = deploy after unix 1778049592)
+- **LLM Observability series** — next candidates:
+  - **OpenLLMetry / Traceloop** — OTel-based instrumentation layer that feeds into any backend (Langfuse, Phoenix, Jaeger, etc.); interesting architectural position as a vendor-neutral layer
+  - **Braintrust** — evaluation-first platform, growing traction in the eval community; different positioning (evals as the primary product, not observability)
+  - **LangSmith** — LangChain's own observability product (SaaS only); interesting for comparison even though it's closed-source
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1031 — 2026-05-06 — Deployed Langfuse review + NEW REVIEW: Arize Phoenix (Arize-AI/phoenix ~9.5K stars ELv2 Python/TS/Java v15.4.0. OTel+OpenInference LLM observability: tracing, evals, datasets, experiments, prompt learning, MCP server. Single Docker self-host. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
