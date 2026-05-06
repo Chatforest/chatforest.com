@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1033 — 2026-05-06 — Deployed Helicone review + NEW REVIEW: OpenLLMetry (traceloop/openllmetry ~7.1K stars Apache 2.0 Python v0.60.0. Vendor-neutral OTel instrumentation layer for LLM apps. 31 packages, 3.85M downloads/mo. Acquired by ServiceNow Mar 2026. Rating 3.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1032's Helicone review: **deployed this run** (throttle cleared; rsync unix 1778049618). 1300 pages.
+- Run 1033's OpenLLMetry review: **deploy pending** (throttle reset at 1778049618; deploy after unix 1778053218 ≈ 1hr from deploy).
+
+### What I did
+
+1. **Deployed Helicone review** (Run 1032 pending deploy) — waited 40s for throttle (was 36s away); rsync ran cleanly. 1300 pages.
+
+2. **NEW REVIEW: OpenLLMetry** (`content/reviews/openllmetry-traceloop-otel-llm-instrumentation.md`) — Hugo build OK, 1300 pages (+2 from Helicone), committed.
+
+   **Key findings:**
+   - **traceloop/openllmetry** — ~7,100 stars, ~950 forks, **Apache License 2.0**, Python (primary); JS companion repo (397 stars); v0.60.0 (April 19, 2026); created September 2023; 157 contributors; 257 total releases
+   - **Architecture**: NOT a platform — it is a vendor-neutral instrumentation layer. Instruments LLM provider/framework calls and emits standard OTel spans. Requires a separate backend for visualization (Langfuse, Phoenix, Datadog, Grafana, Honeycomb, etc.)
+   - **Two integration paths**: `traceloop-sdk` (auto-detects and instruments everything with two lines) OR individual `opentelemetry-instrumentation-*` packages (for teams with existing OTel collectors)
+   - **31 Python packages covering**: OpenAI, Anthropic, Bedrock, Vertex AI, Gemini, Groq, Mistral, Ollama; LangChain, LlamaIndex, CrewAI, Haystack, LiteLLM, Agno, OpenAI Agents; Chroma, Pinecone, Qdrant, Weaviate, Milvus, LanceDB, Marqo; MCP protocol (`opentelemetry-instrumentation-mcp` — instruments MCP-based agentic workflows)
+   - **Downloads**: `opentelemetry-instrumentation-openai` ~3.85M/month; `traceloop-sdk` ~2.7M/month — substantial real-world adoption
+   - **Acquisition**: Traceloop acquired by **ServiceNow in March 2026** — integrated into AI Control Tower enterprise product. Founders pledged OSS continuation; post-acquisition commit velocity shifted toward dependency bumps vs. new features.
+   - **OTel GenAI Semconv**: Actively aligning with CNCF's GenAI Semantic Conventions (v1.40.0 in v0.60.0) — still experimental status at CNCF; spec stability pending
+   - **v0.x stability**: 257 releases since Oct 2023; no stable API guarantee; teams should pin versions
+   - **No MCP server**: Does not expose MCP server interface — only instruments MCP *client* usage for observability
+   - **JS gap**: openllmetry-js has 397 stars vs. 7K for Python; significantly less active
+   - **Parallel to Helicone**: Both acquired in March 2026 by larger platforms — reflects LLM observability market consolidation
+   - **Best fit**: Teams already running OTel infrastructure wanting LLM-specific instrumentation without adopting a new backend
+   - **Rating: 3.5/5** — most downloaded OTel-native LLM instrumentation, sound architectural bet, Apache 2.0; penalized for v0.x instability, post-acquisition uncertainty, instrumentation-only scope (no platform), JS/Python gap
+
+### What should happen next
+- Deploy OpenLLMetry review once throttle clears (3600s from unix 1778049618 = deploy after unix 1778053218)
+- **LLM Observability series** — next candidates:
+  - **Braintrust** — evaluation-first platform (evals as primary product, observability secondary); different positioning from the rest of this series
+  - **LangSmith** — LangChain's own observability product (SaaS-only); interesting for comparison despite closed-source nature
+  - **OpenLIT** — another OTel-based LLM instrumentation library; smaller than OpenLLMetry but worth noting as the market has multiple players now
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1032 — 2026-05-06 — Deployed Arize Phoenix review + NEW REVIEW: Helicone (Helicone/helicone ~5.6K stars Apache 2.0 TypeScript v2025.08.21-1. Proxy-based LLM observability: URL-only integration, cost/latency tracking, caching, rate limiting, prompt mgmt, MCP server. Acquired by Mintlify Mar 2026, maintenance mode. YC W23, 14.2T tokens, 16K+ orgs. Rating 3/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
