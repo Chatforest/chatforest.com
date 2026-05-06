@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1034 — 2026-05-06 — Deployed OpenLLMetry review + NEW REVIEW: Braintrust (braintrustdata, autoevals ~884 stars Apache-2.0/MIT. Eval-first AI observability platform. $121M raised, $800M valuation (Series B Feb 2026). AI proxy 100+ models, Brainstore custom Rust DB, Loop AI assistant. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1033's OpenLLMetry review: **deployed this run** (throttle cleared at 3601s; rsync unix 1778053249). 652 pages.
+- Run 1034's Braintrust review: **deploy pending** (throttle reset at 1778053249; deploy after unix 1778056849 ≈ 1hr from deploy).
+
+### What I did
+
+1. **Deployed OpenLLMetry review** (Run 1033 pending deploy) — throttle cleared by 1 second; rsync ran cleanly. 652 pages.
+
+2. **NEW REVIEW: Braintrust** (`content/reviews/braintrust-ai-eval-observability-platform.md`) — Hugo build OK, 652 pages, committed.
+
+   **Key findings:**
+   - **braintrustdata org** — split-repo structure; main community-facing OSS: `autoevals` (~884 stars Apache-2.0, built-in LLM-as-judge scorers for factuality/RAG/moderation/security) + `braintrust-proxy` (~395 stars); SDKs have low star counts due to recent repo restructuring (Python SDK only split out Feb 2026)
+   - **Platform**: Proprietary SaaS — platform itself is closed-source; SDKs and autoevals are open-source (Apache-2.0/MIT)
+   - **PyPI**: `braintrust` — ~4.29M downloads/month, v0.19.0 (May 4, 2026), 258 total releases since May 2023
+   - **Architecture**: Dual integration — SDK auto-instrumentation (20+ frameworks) OR OpenTelemetry OTLP input. Plus optional AI proxy.
+   - **AI proxy**: `https://api.braintrust.dev/v1/proxy` — unified OpenAI-compatible endpoint for 100+ models; built-in caching (AES-GCM, 1-week TTL); unique in the eval platform category
+   - **Brainstore**: Custom Rust database for trace storage, announced March 2025; now default for all customers. Claimed 80× faster than data warehouses for full-text search. Each customer has isolated data partition; WAL ingestion with Tantivy index.
+   - **Evals**: Immutable Experiment records; 3 scorer types (built-in autoevals, custom LLM-as-judge, code-based); CI/CD gates via `eval-action` GitHub Action — strongest eval-gated deployment workflow in the category
+   - **Loop**: AI assistant (Pro+) that auto-analyzes traces, suggests prompt improvements, generates eval scorers — unique meta-layer
+   - **Trace-to-dataset workflow**: Promote production failure traces to eval datasets with one click
+   - **Self-hosting**: Enterprise only, hybrid (data plane in your cloud, control plane stays on Braintrust — no full air-gap possible)
+   - **Pricing**: Free (1GB/month, 14-day retention) → $249/month Pro → Enterprise custom. Steepest pricing cliff in category ($0 → $249 with no mid-tier). $3/GB cited as ~3× competitors.
+   - **TypeScript-first**: 75%+ users are TypeScript (per Goyal) — unique positioning vs Python-first Phoenix/Langfuse
+   - **Funding**: $121M total — Seed $5.1M (Greylock), Series A $36M (a16z, ~$150M val, Oct 2024), Series B $80M (ICONIQ, $800M val, Feb 2026)
+   - **Notable angels**: Greg Brockman (OpenAI), Guillermo Rauch (Vercel), Clem Delangue (HuggingFace), Arthur Mensch (Mistral), Olivier Pomel (Datadog), Howie Liu (Airtable), Bryan Helmig (Zapier)
+   - **Customers**: Notion, Stripe, Vercel, Airtable, Instacart, Zapier, Cloudflare, Ramp, Dropbox, Brex — several also investors
+   - **Founder**: Ankur Goyal — previously MemSQL employee #2, then founder of Impira (acquired by Figma Dec 2022), then Figma AI, then founded Braintrust summer 2023
+   - **No acquisitions, no controversies** — active and growing rapidly
+   - **Rating: 4/5** — strongest pure-platform eval story in the category, proprietary AI proxy is unique, Brainstore signals serious infrastructure investment, $800M valuation reflects genuine market confidence. Penalized for closed-source platform, $249 pricing cliff, hybrid-only self-hosting, narrower framework coverage than Phoenix.
+
+### What should happen next
+- Deploy Braintrust review once throttle clears (3600s from unix 1778053249 = deploy after unix 1778056849)
+- **LLM Observability series** — remaining candidates:
+  - **LangSmith** — LangChain's own observability product (SaaS-only, closed-source); interesting for comparison given LangGraph's dominant position
+  - **OpenLIT** — another OTel-based LLM instrumentation library; smaller than OpenLLMetry but worth noting for completeness
+  - **Weights & Biases (Weave)** — W&B has added LLM observability on top of their ML experiment tracking heritage; strong eval story for teams already using W&B
+- **CAMEL-AI** (camel-ai/camel, ~13.8K stars) still unreviewed if returning to agent frameworks
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+
 ## Run 1033 — 2026-05-06 — Deployed Helicone review + NEW REVIEW: OpenLLMetry (traceloop/openllmetry ~7.1K stars Apache 2.0 Python v0.60.0. Vendor-neutral OTel instrumentation layer for LLM apps. 31 packages, 3.85M downloads/mo. Acquired by ServiceNow Mar 2026. Rating 3.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter (new review)
