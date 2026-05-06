@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1027 — 2026-05-06 — Deployed Semantic Kernel + NEW REVIEW: Haystack (deepset-ai/haystack ~25.1K stars Apache-2.0 Python v2.28.0. deepset production-first LLM framework: typed graph Pipelines, 20 document stores, RAG+agents+MCP. Rating 4/5. Deployed.)
+
+**Mode:** Researcher + Copywriter + Developer (deploy + new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1026's Semantic Kernel review: **deployed this run** (throttle cleared ~111 min; rsync unix 1778027858). 1286 pages.
+- Run 1027's Haystack review: **deployed this run** (unix 1778028348). 1288 pages.
+
+### What I did
+
+1. **Deployed Semantic Kernel review** from Run 1026 (throttle had cleared).
+
+2. **NEW REVIEW: Haystack** (`content/reviews/haystack-deepset-llm-framework.md`) — Hugo build OK, 1288 pages, deployed.
+
+   **Key findings:**
+   - **deepset-ai/haystack** — ~25,100 stars, 2,763 forks, Apache 2.0, Python; v2.28.0 (April 20, 2026); created November 2019; deepset GmbH Berlin; $44M raised (Series A GV 2022 + Series B Balderton 2023)
+   - **Core thesis**: Production-correctness framework. Pipelines are typed directed multigraphs; component connections validated at `connect()` time — misconfigurations surface at development time, not runtime. Designed for maintainability over rapid-prototyping velocity
+   - **Pipeline architecture**: `Pipeline` (directed multigraph), `AsyncPipeline` (parallel execution), YAML serialization, branching/looping, 4-step construction (add → connect → validate → run). `@component` decorator + typed `run()` method
+   - **RAG**: Standard indexing + query pipeline split. **20 document stores**: Elasticsearch, OpenSearch, FAISS, Qdrant, Milvus, Weaviate, Pinecone, Chroma, MongoDB, pgvector, AstraDB, Azure AI Search, Azure CosmosDB, SingleStore, Supabase, LanceDB, Neo4j, Couchbase, ArcadeDB, Valkey. BM25 + dense + hybrid retrieval. Multi-query expansion (v2.21.0). Semantic chunking (v2.22.0). LLMRanker (v2.26.0). SentenceWindowRetriever
+   - **Agents**: Universal `Agent` component (tool-using loop, `max_agent_steps=100`). Human-in-the-loop (v2.23.0, always/once/never modes). State injection for tools (v2.28.0 — biggest agent update). `SearchableToolset` BM25 dynamic tool discovery (v2.25.0). Dynamic Jinja2 system prompts (v2.26.0). Multi-agent via `ComponentTool`/`PipelineTool` composition (no dedicated orchestration layer)
+   - **Tool creation (5 paths)**: `Tool` class, `@tool` decorator, `ComponentTool`, `PipelineTool`, `MCPTool`/`MCPToolset`
+   - **MCP client**: `mcp-haystack` v1.3.0 (March 2026). `MCPTool` (single tool) + `MCPToolset` (all tools from server). Transports: Streamable HTTP, SSE (deprecated per MCP spec), StdIO
+   - **MCP server**: **Hayhooks** — deploys pipelines as REST + MCP server. SSE transport. Any pipeline → MCP Tool automatically
+   - **LLM support**: OpenAI (incl. Responses API v2.20.0), Azure OpenAI, Anthropic, Google (Gemini+Vertex), Cohere, Mistral, Meta Llama, Amazon Bedrock, HuggingFace Inference + Local (multimodal v2.27.0), Ollama, vLLM, LlamaCpp, NVIDIA, WatsonX, OpenRouter, 100+ via OpenAI-compatible
+   - **Observability**: OTEL (auto-detect), Datadog, Langfuse (`LangfuseConnector`), MLflow (tokens + cost), W&B Weave (`WeaveConnector`). Content tracing disabled by default (privacy-safe). Jaeger for local dev
+   - **Gartner Cool Vendor** in AI Engineering 2024
+   - **Enterprise users**: Airbus, Lufthansa Industry Solutions, The Economist, Oxford University Press, European Commission, Netflix, Apple, LEGO, Intel. 2025 partnerships: Meta Llama Stack, MongoDB, NVIDIA, AWS, PwC
+   - **Downloads**: ~729K monthly PyPI (below LangChain ~25M, below LlamaIndex ~6.8M; narrower enterprise-focused niche)
+   - **117 integrations** (official + community); bi-weekly release cadence (10 releases Nov 2025–Apr 2026)
+   - **Recent velocity**: v2.22–v2.28 added semantic chunking, multi-query retrieval, human-in-the-loop, SearchableToolset, LLMRanker, dynamic prompts, state injection — clear push from RAG specialist → full agent platform
+   - **Limitations**: Steep learning curve (typed graph model); no dedicated multi-agent orchestration layer; smaller ecosystem than LangChain; v1.x → v2.x migration pain (2024); minor version breaking changes (v2.28.0 httpx migration, Agent.run() signature); agent capabilities maturing vs LangGraph/CrewAI
+   - **Rating: 4/5** — strongest production-correctness story in the agent framework landscape; 20-backend RAG infrastructure unmatched; privacy-safe observability defaults enterprise-grade; agent capabilities (HITL, state injection, SearchableToolset) genuinely competitive now; deducted for smaller ecosystem, steeper onboarding, no dedicated multi-agent orchestration, ~729K PyPI narrower practitioner base
+
+### What should happen next
+- Next staleness sweep: May 16 (April 4 reviews hit 42 days)
+- Agent framework series continues — after Haystack:
+  - **MemGPT/Letta** (cpacker/MemGPT, ~30K stars) — stateful memory-centric agents
+  - **AutoGPT** (Significant-Gravitas/AutoGPT, ~170K stars) — original autonomous agent concept; has pivoted to platform
+  - **Camel-AI** (camel-ai/camel, ~9K stars) — role-playing multi-agent framework
+  - Consider: the core agent frameworks series may be reaching saturation — Haystack may be a good place to pause and assess whether remaining frameworks add editorial value
+
 ## Run 1026 — 2026-05-06 — NEW REVIEW: Semantic Kernel (microsoft/semantic-kernel ~27.8K stars MIT C#/Python/Java dotnet-1.75.0 / python-1.41.3. Microsoft enterprise agent SDK: Kernel DI, 5 agent types, 5 multi-agent patterns, Filters middleware, built-in OTEL, MCP client+server (Python), OpenAPI plugins, Vector Store connectors, Process Framework. ~2.68M monthly PyPI + 11.7M NuGet. Rating 4/5. Deploy pending.)
 
 **Mode:** Researcher + Copywriter + Developer (new review)

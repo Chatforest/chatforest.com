@@ -760,30 +760,30 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-06 17:00:00</span></div>
+  <h3><a href="/reviews/semantic-kernel-microsoft-agent-framework/">Semantic Kernel — Microsoft&#39;s Enterprise Agent SDK</a></h3>
+  <p>Semantic Kernel (microsoft/semantic-kernel, ~27.8K stars, MIT, C#/Python/Java, dotnet-1.75.0 / python-1.41.3) is Microsoft&#39;s official SDK for building AI agents and multi-agent systems. Central Kernel DI container, five agent types, five multi-agent orchestration patterns, Filters middleware, first-class OpenTelemetry, MCP client &#43; server, Vector Store connectors (16&#43; backends), Process Framework for business workflows. ~2.68M monthly PyPI downloads &#43; 11.7M NuGet total. Part of our **Developer Tools** category. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-06 16:00:00</span></div>
+  <h3><a href="/reviews/haystack-deepset-llm-framework/">Haystack — Production-Grade LLM Pipelines from deepset</a></h3>
+  <p>Haystack (deepset-ai/haystack, ~25K stars, Apache 2.0, Python, v2.28.0) is deepset&#39;s production-first LLM orchestration framework. Its typed, directed-graph Pipeline model enforces component contracts at connect time — not at runtime — giving Haystack stronger correctness guarantees than chain-based frameworks. Supports 20 document stores for RAG, 100&#43; LLM providers, MCP client (mcp-haystack v1.3.0) and MCP server (via Hayhooks), human-in-the-loop agents, SearchableToolset for dynamic tool discovery across large catalogs, and native OTEL &#43; Langfuse &#43; MLflow &#43; W&amp;B observability. Enterprise users include Airbus, Lufthansa Industry Solutions, The Economist, Oxford University Press, and the European Commission. ~729K monthly PyPI downloads. Part of our **Developer Tools** category. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-06 14:00:00</span></div>
+  <h3><a href="/reviews/dspy-declarative-llm-programming/">DSPy — Programming, Not Prompting, Language Models</a></h3>
+  <p>DSPy (stanfordnlp/dspy, ~34.2K stars, MIT, Python ≥3.9, v3.2.1) is the Stanford framework that treats LLM pipeline development as an optimization problem, not a prompting exercise. Declare what each step should do (Signatures), compose modules into programs (Modules), and let optimizers like MIPROv2 and GEPA automatically tune instructions and few-shot examples against your metric. Supports 100&#43; LLM providers via LiteLLM. ReAct and CodeAct agents. MCP client (via mcp Python SDK). MLflow autolog and Arize Phoenix (OTEL-native) observability. Finetuning via BootstrapFinetune and BetterTogether. In production at Shopify (550x cost reduction), Dropbox, and Databricks. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-06 12:00:00</span></div>
   <h3><a href="/reviews/llamaindex-rag-agent-framework/">LlamaIndex — The RAG-First Agent Framework with 78 Vector Store Integrations</a></h3>
   <p>LlamaIndex (run-llama/llama_index, 49.1K stars, MIT, Python, v0.14.21) is the leading RAG-first framework for LLM applications, built around a five-stage pipeline: Load → Index → Store → Query → Evaluate. Where other agent frameworks treat document retrieval as one feature among many, LlamaIndex makes it the center of gravity — with six index types, 78 vector store integrations, 104 LLM providers, and a LlamaHub marketplace of community data loaders. Agent capabilities include FunctionAgent, ReActAgent, and the event-driven Workflows system for complex multi-step pipelines. Multi-agent via AgentWorkflow (linear handoff), Orchestrator pattern (specialists as tools), or custom planners. MCP client via llama-index-tools-mcp (stdio/SSE/Streamable HTTP, OAuth 2.0). MCP server via workflow_as_mcp() — any Workflow becomes an MCP endpoint. ~6.8M monthly PyPI downloads. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-06 12:00:00</span></div>
-  <h3><a href="/reviews/openai-agents-sdk-python/">OpenAI Agents SDK — The Official Python Framework for OpenAI-Powered Agents</a></h3>
-  <p>OpenAI Agents SDK (openai/openai-agents-python, ~25.9K stars, MIT, Python ≥3.10, v0.0.15.1) is the official OpenAI framework for building production agents on the Responses API. Three foundational primitives — Agents, Handoffs, Guardrails — wrap a Python-native orchestration loop. Multi-agent coordination via handoffs (conversation transfer) or agents-as-tools (manager pattern). MCP client over Streamable HTTP, SSE, and stdio, plus HostedMCPTool delegating execution to OpenAI&#39;s infrastructure. Ten session backends for persistence (SQLite, Redis, MongoDB, SQLAlchemy, Dapr, OpenAI-hosted, encrypted wrapper). SandboxAgent (beta) for long-running isolated filesystem/shell tasks. RealtimeAgent over WebSocket with SIP telephony. Voice pipeline (STT → agent workflow → TTS). Built-in tracing with 27&#43; ecosystem integrations. Input, output, and tool guardrails. ~25.7M monthly PyPI downloads. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-06 10:00:00</span></div>
-  <h3><a href="/reviews/smolagents-huggingface-agent-framework/">Smolagents — HuggingFace&#39;s Minimal Code-First Agent Framework</a></h3>
-  <p>Smolagents (huggingface/smolagents, 27.1K stars, Apache-2.0, Python, v1.24.0) is HuggingFace&#39;s minimal agent framework with a distinctive code-first philosophy: the flagship CodeAgent generates executable Python to take actions, rather than calling JSON-formatted tools. This approach — backed by three peer-reviewed papers — demonstrably outperforms tool-calling on complex reasoning tasks. A smolagents-based multi-agent system reached #1 on the GAIA benchmark (44.2%). Minimal core (~1K lines), hackable, and deeply integrated with the HuggingFace Hub (share agents and tools as Spaces, load HF model endpoints directly). MCP client support via ToolCollection.from_mcp() over stdio, SSE, and Streamable HTTP. No MCP server support. In-process-only memory — no checkpointing or cross-run persistence. Experimental API (subject to change). Part of our **Developer Tools** category. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-06 09:30:00</span></div>
-  <h3><a href="/reviews/langgraph-python-agent-framework/">LangGraph — Graph-Based Stateful Agent Orchestration for Python</a></h3>
-  <p>LangGraph (langchain-ai/langgraph, 31.2K stars, MIT, Python, v1.1.10) is the graph-based stateful agent framework from LangChain Inc — the dominant production choice by download volume (34.5M monthly PyPI downloads) and enterprise adoption (34% of 1,000&#43; employee agent architecture citations). Where CrewAI gives you roles and tasks, LangGraph gives you explicit state machines: StateGraph defines typed shared state, nodes are functions that read and write that state, edges route between nodes, and checkpointing (PostgreSQL/MongoDB-backed) makes the whole graph resumable. Multi-agent is handled by two official packages: langgraph-supervisor for hierarchical routing and langgraph-swarm-py for peer-to-peer handoffs. MCP client support is official via langchain-mcp-adapters v0.2.2 (MultiServerMCPClient, stdio/HTTP/SSE/WebSocket). MCP server support — exposing LangGraph agents as MCP endpoints — is not natively available; competitors Agno and Mastra offer this out of the box. Human-in-the-loop is a first-class feature via interrupt() breakpoints that pause, checkpoint, and resume graph execution after human review. LangGraph 1.0 GA was declared October 22, 2025. LangGraph.js (TypeScript) exists but is less mature. Production deployment via LangSmith Deployment (formerly LangGraph Platform): cloud, hybrid, or fully self-hosted. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
 </div>
 
   
