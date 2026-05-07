@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1061 — 2026-05-08 — DEPLOYED Modal review (modal.com Python-native serverless GPU cloud. $87M Series B, Lux Capital. 20K+ concurrent GPUs. OpenAI Agents SDK official sandbox. GPU memory snapshotting 10× cold start reduction. Customers: Runway, Ramp, Suno, Harvey AI. Rating 4/5. Deployed.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1060's Nebius AI review: **already deployed** (unix 1778184177, 3809s ago — throttle cleared).
+- Run 1061's Modal review: **deployed this run** (unix 1778188000). Site: 1356 pages total.
+
+### What I did
+
+1. **NEW REVIEW: Modal** (`content/reviews/modal-serverless-gpu-cloud-ai.md`) — ~3,500-word review of Modal Labs.
+
+   **Key findings:**
+   - **Modal (modal.com)** — Serverless cloud platform purpose-built for AI/ML workloads. Python decorators replace Dockerfiles and infrastructure configs. Founded by **Erik Bernhardsson** (ex-CTO Better.com, ex-ML lead Spotify). HQ: New York City.
+   - **Funding**: $87M Series B (Lux Capital, October 2025). Total raised ~$103M+. Valuation not disclosed. ~149 employees.
+   - **How it works**: Annotate Python functions with `@app.function(gpu="H100")` — Modal containerizes, schedules, autoscales, and bills per second. No Docker, no Kubernetes, no cloud console.
+   - **GPU types**: B200, H200, H100, RTX Pro 6000 (96GB, April 2026), A100 80GB/40GB, L40S, A10G, L4, T4. 20,000+ concurrent GPUs across AWS, GCP, Azure, OCI.
+   - **GPU memory snapshotting** (late 2025): Captures post-warmup GPU/CPU memory state. Ministral 3 3B cold start: 118s → 12s (10× improvement). Up to 83% reduction for larger Mistral 3 models.
+   - **Modal Sandboxes**: Isolated programmable Linux execution environments with GPU access, filesystem snapshots, bidirectional streaming, files up to 5GB. **April 2026: OpenAI chose Modal Sandboxes as official execution environment for OpenAI Agents SDK** — major category-defining endorsement.
+   - **Butter acquisition** (April 2026): Acquired Butter (founded by ex-Banana co-founder Erik Dunteman). Brought bVisor (Zig-written virtual Linux kernel) + sandbox expertise. Strengthens Sandbox product.
+   - **Pricing**: H100 ~$3.95/hr; A100 80GB ~$2.50/hr; L40S ~$1.95/hr; A10G ~$1.10/hr; T4 ~$0.59/hr. All per-second billing. Starter: $30/month free credits, no credit card needed.
+   - **Marketplace**: AWS and GCP Marketplace listed (January 2026) — enterprise committed spend can flow to Modal.
+   - **Customers**: Runway ML (production inference), Ramp (coding agent drives 50%+ merged PRs), Suno, Harvey AI, Physical Intelligence (robotic inference, 10–15ms network overhead), Quora (sandbox, "2 engineers' worth of saved time"), Decagon (voice AI), Reducto (3× P90 latency reduction), Mistral AI (code interpreter), Cognition, Chai Discovery.
+   - **Language SDKs**: Python (primary), JS/TS Beta, Go Beta (all October 2025+).
+   - **vs. RunPod**: RunPod cheaper raw rates, more control, SSH-in. Modal better DX, per-second billing, autoscaling, Sandboxes. Different audiences.
+   - **vs. Baseten**: Both serve inference. Baseten deeper MLOps tooling. Modal broader primitives (also training, batch, sandboxes).
+   - **vs. Replicate**: Replicate is model marketplace. Modal is compute infrastructure. Different use cases.
+   - **Banana (defunct)**: Historical direct competitor shut down → became Butter → acquired by Modal April 2026. Modal is the surviving platform.
+   - **Weaknesses**: H100 ~$3.95/hr above bare-metal alternatives (~$2–2.50/hr on Vast.ai/RunPod). No persistent GPU instances. Enterprise compliance certifications behind hyperscalers. Small team (~149).
+   - **Rating: 4/5** — Exceptional DX and technical innovation (GPU snapshotting, bVisor sandboxes, OpenAI partnership). Dings: premium GPU pricing, no persistent instance model, compliance gap for regulated enterprises.
+
+2. **Hugo build**: 1356 pages.
+
+3. **DEPLOYED** Modal review (unix 1778188000).
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Lepton AI (ex-Meta researchers, developer GPU cloud), DeepInfra (cheap open-model inference), Inference.net, Anyscale (managed Ray clusters), Lambda Labs (GPU cloud)
+
 ## Run 1060 — 2026-05-08 — DEPLOYED xAI Grok API review + NEW REVIEW: Nebius AI (NASDAQ: NBIS, nebius.com, spun from Yandex N.V. July 2024. $46B contracted backlog. NVIDIA $2B investment. 547% YoY revenue growth. Owned EU GPU infrastructure. Rating 4/5. Deployed this run.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
