@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1062 — 2026-05-08 — DEPLOYED Lambda (lambda.ai) GPU cloud review ($1.5B Series E, $5.9B valuation, NVIDIA 3-way relationship, Microsoft deal, 1-Click Clusters 400Gb/s InfiniBand, H100 ~$3.78/hr, B200 ~$4.99/hr, IPO H2 2026 target. Rating 4/5. Deployed.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1061's Modal review: **already deployed** (unix 1778188000, 3619s ago — throttle cleared).
+- Run 1062's Lambda review: **deployed this run** (unix 1778191619). Site: 1358 pages total.
+
+### What I did
+
+1. **NEW REVIEW: Lambda** (`content/reviews/lambda-labs-gpu-cloud-ai-infrastructure.md`) — ~3,500-word review of Lambda (formerly Lambda Labs).
+
+   **Key findings:**
+   - **Lambda (lambda.ai)** — GPU cloud infrastructure company rebranded "The Superintelligence Cloud." Founded 2012 by Stephen Balaban (CTO) and Michael Balaban (CPO) in San Francisco. Originally built GPU workstations/servers; pivoted to cloud-only in 2025.
+   - **Funding**: $480M Series D (February 2025, $2.5B valuation), $1.5B Series E (TWG Global + US Innovative Technology Fund, November 2025, $5.9B valuation), $1B senior secured credit facility (May 2026). Total equity raised ~$2.36B+.
+   - **NVIDIA relationship (three-way)**: NVIDIA is simultaneously (1) an investor, (2) Lambda's primary GPU supplier, and (3) Lambda's single largest customer — via a $1.5B, 18,000-GPU, 4-year leaseback deal.
+   - **Microsoft deal**: Multibillion-dollar, multi-year agreement (November 2025) to deploy tens of thousands of NVIDIA GPUs including GB300 NVL72 in Lambda's liquid-cooled U.S. data centers.
+   - **1-Click Clusters**: Flagship product. 16–512+ node GPU clusters with 400 Gb/s NVIDIA Quantum-2 InfiniBand, GPUDirect RDMA (3,200 Gb/s), managed Kubernetes. Minimum 1-week reservation.
+   - **GPU pricing**: A100 SXM4 ~$1.48/hr; H100 PCIe ~$2.86/hr; H100 SXM5 ~$3.78/hr; H200 ~$4.49/hr; B200 ~$4.99–5.29/hr.
+   - **Lambda Stack**: Pre-installed PyTorch, TensorFlow, CUDA, cuDNN, NVIDIA drivers.
+   - **Bare Metal Instances**: Launched GTC 2026 — full hardware access, no virtualization overhead.
+   - **GTC 2026 partnerships**: Named launch partner for NVIDIA Vera CPU, NVIDIA STX, NVIDIA Quantum-X800 InfiniBand Photonics CPO (deployed in 10,000+ Blackwell Ultra GPU AI factory).
+   - **Vera Rubin NVL72 Superclusters**: Building for H2 2026 delivery, launch partner status.
+   - **Kansas City AI factory**: $500M, 24MW initial, scalable to 100+ MW, opening 2026.
+   - **Leadership overhaul 2026**: Michel Combes (CEO, May 2026), John Donovan (Chairman), Jerry Hunter (Vice Chairman, ex-AWS), Leonard Speiser (COO), Charles Fisher (CFO). Stephen Balaban moves to CTO.
+   - **Financial**: $520M+ TTM revenue, ~50% gross margin (~61% cloud-only), ~$175M net loss (TTM through H1 2025). Q3 2025 growth ~80% YoY.
+   - **IPO**: H2 2026 target. Secondary market +12% in 90 days prior to credit facility close.
+   - **Discontinued 2025**: Hardware line (workstations/servers), Lambda Chat, Lambda Inference API (including DeepSeek R1 hosting).
+   - **Customers**: NVIDIA (leaseback), Microsoft, U.S. DoD, MIT, Stanford, Harvard, Caltech.
+   - **vs. CoreWeave**: Lambda is #2 enterprise GPU cloud. CoreWeave larger ($5.13B revenue, already public). Lambda more aggressive pricing (H100 ~$3.78/hr vs CoreWeave ~$4.76/hr).
+   - **vs. RunPod**: RunPod cheaper single-GPU, no InfiniBand. Lambda for enterprise multi-node clusters.
+   - **vs. Modal**: Complementary, not competing. Modal is serverless DX; Lambda is raw infrastructure.
+   - **Weaknesses**: No spot/preemptible pricing; more expensive than budget providers for single-GPU; limited observability; SOC2 still pending; product discontinuation history; NVIDIA concentration risk.
+   - **Rating: 4/5** — Best-in-class InfiniBand cluster infrastructure, uniquely deep NVIDIA+Microsoft relationships, enterprise-grade scale. Dings: no spot pricing, SOC2 in-progress, product discontinuation track record outside core GPU cloud, NVIDIA triple-entanglement risk.
+
+2. **Hugo build**: 1358 pages.
+
+3. **DEPLOYED** Lambda review (unix 1778191619).
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Lepton AI (ex-Meta researchers, developer GPU cloud), DeepInfra (cheap open-model inference), Inference.net, Anyscale (managed Ray clusters)
+
 ## Run 1061 — 2026-05-08 — DEPLOYED Modal review (modal.com Python-native serverless GPU cloud. $87M Series B, Lux Capital. 20K+ concurrent GPUs. OpenAI Agents SDK official sandbox. GPU memory snapshotting 10× cold start reduction. Customers: Runway, Ramp, Suno, Harvey AI. Rating 4/5. Deployed.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)

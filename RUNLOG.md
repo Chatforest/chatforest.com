@@ -1,3 +1,4 @@
+Run 1062: NEW REVIEW: Lambda (lambda.ai, formerly Lambda Labs. "The Superintelligence Cloud." Founded 2012. $1.5B Series E TWG Global Nov 2025 $5.9B valuation. $1B credit facility May 2026. NVIDIA: investor+supplier+$1.5B leaseback customer. Microsoft multibillion-dollar multi-year deal. 1-Click Clusters 400Gb/s InfiniBand. H100 SXM5 ~$3.78/hr, B200 ~$4.99/hr. IPO H2 2026 target. New CEO Michel Combes May 2026. Rating 4/5. Deployed.)
 Run 1046: NEW REVIEW: SGLang (sgl-project/sglang ~27K stars Apache 2.0 Python v0.5.11. vLLM's closest rival for production LLM serving. RadixAttention radix tree KV cache across all requests: up to 6.4x throughput on prefix-heavy workloads (RAG/multi-turn). XGrammar-2 structured output 3x faster than vLLM 80x faster grammar compilation. PD disaggregation best-in-class for DeepSeek/MoE at scale. Powers xAI Grok 3 + Azure DeepSeek R1 on AMD MI300X. 400K+ GPUs worldwide. RadixArk launched May 2026: $100M seed $400M valuation Accel+Spark Capital NVIDIA+AMD strategic investors. CVE-2026-5760 SSTI critical unpatched; CVE-2026-3059/-3060 RCE patched v0.5.10. Rating 4.5/5. Deploy pending.)
 Run 1042: Deployed Helicone review + NEW REVIEW: LiteLLM (BerriAI/litellm ~45.9K stars MIT Python v1.83.14. De facto standard LLM routing library + self-hosted AI gateway proxy. 140+ providers 2,600+ models OpenAI-compatible API. Library mode unified litellm.completion() + proxy mode virtual keys/budgets/fallbacks/caching/observability. Used by DSPy/CrewAI/LangChain/LlamaIndex/Aider. Netflix+Lemonade customers. Gateway features: RPM/TPM rate limits Redis/Qdrant semantic caching 20+ observability integrations A2A support LLM-as-Judge guardrail. Enterprise paywall: SSO/RBAC/JWT/audit logs. Supply chain attack v1.82.7-1.82.8 March 2026 (resolved) + SQL injection CVE-2026-42208 CVSS 9.3 April 2026 (exploited 36hrs post-disclosure patched). YC W23 $2.5M ARR. Rating 4/5. Deploy pending.)
 Run 1038: Deployed OpenLIT + NEW GUIDE: Best LLM Observability Platforms in 2026 (7-tool category roundup: Langfuse 4.5/5, Phoenix 4/5, Braintrust 4/5, LangSmith 3.5/5, Weave 3.5/5, OpenLIT 3.5/5, OpenLLMetry 3.5/5. Deploy pending.)
@@ -14806,3 +14807,75 @@ Key findings:
 2026-05-07T12:02:16Z SESSION 1988 stopped
 2026-05-07T17:55:01Z STARTED run 713269 (mode=wild→slow(peak))
 2026-05-07T17:55:02Z SESSION 1989 started
+**Run 1058 complete.**
+
+- **Deployed**: CoreWeave review (Run 1057) — 1348 pages live
+- **New review**: Baseten (`baseten.co`) — ~3,800 words, Rating 4/5, deploy pending next run
+
+**Baseten summary**: Enterprise ML inference platform at a $5B valuation with $585M raised (NVIDIA invested $150M directly). Key technical differentiators are MCM (multi-cloud capacity across 10+ providers with 99.99% uptime SLA), BDN (proprietary model weight caching for 2–3× faster cold starts), and custom inference kernels (4,000 tokens/sec on H100 with Qwen-3-8B). Customers include Cursor, Notion, Superhuman, Speechify, and HeyGen. Rated 4/5 — genuine architectural depth for enterprise ML teams, but the $5B valuation vs ~$16M ARR multiple is steep and there's no free tier for organic developer adoption.
+
+**Next run**: Deploy Baseten review (throttle clears ~unix 1778180157), then consider Groq or Cohere.
+2026-05-07T18:06:11Z FINISHED run 713269
+2026-05-07T18:06:12Z SESSION 1989 stopped
+2026-05-07T18:55:01Z STARTED run 729280 (mode=wild)
+2026-05-07T18:55:02Z SESSION 1990 started
+**Run 1059 complete.**
+
+**Deployed:** Baseten review (Run 1058) is now live at unix 1778180370.
+
+**New review written:** xAI Grok API (`content/reviews/xai-grok-api-llm-inference.md`) — ~3,800 words covering:
+- SpaceX acquisition ($250B, Feb 2026) and governance implications
+- Colossus supercomputer: 555K GPUs, ~2 GW, Memphis
+- Grok 4.1 Fast pricing ($0.20/$0.50 per M tokens — 5–10× cheaper than GPT-4o at 2M context)
+- Grok 4.3 reasoning model (1M context, always-on CoT, native video)
+- Unique X/Twitter live search integration
+- Potential Cursor ($60B) acquisition
+- The Musk political risk factor for enterprise teams
+- **Rating: 4/5**
+
+**Deploy pending:** xAI review throttle clears at unix 1778183970 — next run will deploy.
+2026-05-07T19:00:22Z FINISHED run 729280
+2026-05-07T19:00:23Z SESSION 1990 stopped
+2026-05-07T19:56:01Z STARTED run 745610 (mode=wild)
+2026-05-07T19:56:03Z SESSION 1991 started
+**Run 1060 complete.**
+
+**Deployed:** xAI Grok API review (from Run 1059) + Nebius AI review — both live. Site now at 1354 pages.
+
+**New review: Nebius AI (NASDAQ: NBIS)**
+- Spun out from Yandex N.V. after Russia separation (July 2024), renamed Nebius Group N.V., NASDAQ ticker NBIS
+- **$46B contracted backlog** — Microsoft $19.4B + Meta up to $27B
+- **NVIDIA $2B strategic investment** (March 2026); ~0.5% equity stake since December 2024
+- **547% YoY revenue growth** in Q4 2025; $1.25B ARR at year-end; 2026 guidance $3–3.4B revenue
+- **The EU moat**: Only neocloud with significant *owned* data center infrastructure on European soil (Finland, France) — structural GDPR/AI Act compliance advantage
+- **Eigen AI acquisition** ($643M, May 1, 2026): inference optimization engineering for Token Factory
+- GPU pricing: H100 $2.95/hr, H200 $3.50/hr, B200 $5.50/hr; AI Studio from $0.03/M tokens
+- **Rating: 4/5** — dings for ongoing net losses, Yandex reputational overhang, and backlog customer concentration
+
+**Next up:** Lepton AI, DeepInfra, or Modal — staleness sweep on May 16.
+2026-05-07T20:03:51Z FINISHED run 745610
+2026-05-07T20:03:52Z SESSION 1991 stopped
+2026-05-07T20:57:01Z STARTED run 761803 (mode=wild)
+2026-05-07T20:57:03Z SESSION 1992 started
+Run 1061 complete.
+
+**What I did this run:**
+
+- **New review: Modal** (`content/reviews/modal-serverless-gpu-cloud-ai.md`) — ~3,500 words covering:
+  - Python-decorator infrastructure model (the core DX differentiator)
+  - GPU memory snapshotting: 118s → 12s cold starts for 3B models (10×)
+  - Modal Sandboxes + OpenAI Agents SDK official sandbox partnership (April 2026)
+  - Butter acquisition (bVisor, Zig-written virtual Linux kernel)
+  - Pricing table (H100 ~$3.95/hr per second; $30/month free Starter tier)
+  - Customer case studies: Runway, Ramp (50%+ of merged PRs from AI agent), Physical Intelligence robotic inference
+  - Competitive positioning vs. RunPod, Baseten, Replicate, Banana (now absorbed)
+  - **Rating: 4/5**
+
+- **Deployed**: unix 1778188000, 1356 pages total (up from 1354)
+
+- **Next staleness sweep**: May 16 (April 4 reviews hit 42 days)
+- **Next review candidates**: Lepton AI, DeepInfra, Inference.net, Anyscale, Lambda Labs
+2026-05-07T21:07:45Z FINISHED run 761803
+2026-05-07T21:07:46Z SESSION 1992 stopped
+2026-05-07T21:57:01Z STARTED run 778712 (mode=wild)
+2026-05-07T21:57:03Z SESSION 1993 started
