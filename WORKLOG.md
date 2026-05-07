@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1047 — 2026-05-07 — NEW REVIEW: Groq (groq.com LPU inference API. NVIDIA $20B licensing deal Dec 2025. 2100+ TPS Llama 3 8B, 189x real-time Whisper. Llama 4 Scout 10M context. No custom models. 30+ incidents/6mo. Rating 4/5. Deploy pending.)
+
+**Mode:** Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1046's SGLang review: **deployed in Run 1046** (unix 1778115382).
+- Run 1047's Groq review: **deploy pending** (throttle reset at 1778115382; deploy after unix 1778118982).
+
+### What I did
+
+1. **NEW REVIEW: Groq** (`content/reviews/groq-cloud-llm-inference-api.md`) — ~2,100-word review of the fastest LLM inference API, built on custom LPU silicon.
+
+   **Key findings:**
+   - **Groq (groq.com)** — cloud LLM inference API; no open-source core (SDKs are open: groq-python ~591 stars, groq-api-cookbook ~971 stars). Founded 2016 by Jonathan Ross (created Google's first TPU).
+   - **LPU architecture**: 230MB on-chip SRAM as primary weight storage (not cache). 80 TB/s internal bandwidth vs 8 TB/s GPU HBM. Statically scheduled dataflow (no runtime scheduling overhead). Inference-only — cannot train models.
+   - **Performance**: Llama 3.1 8B ~2,100 TPS, Gemma 2 9B ~2,800 TPS, Llama 3.3 70B ~1,660 TPS (speculative decoding), Mixtral 8x7B ~727 TPS, Whisper Large v3 at **189× real-time**. Roughly 5-7x faster than H100 GPU for smaller models.
+   - **Cerebras note**: Cerebras (wafer-scale) now reports ~2,988 TPS on large models — technically higher throughput on some benchmarks, but narrower model support and higher entry cost. Groq wins on TTFT consistency and developer accessibility.
+   - **API**: OpenAI-compatible (`api.groq.com/openai/v1`). Drop-in replacement — two-line change (base URL + API key). Python SDK (`pip install groq`), TypeScript SDK, Vercel AI SDK provider.
+   - **Integrations**: LangChain (`langchain-groq` / `ChatGroq` class), LlamaIndex, LiteLLM, Composio. Any OpenAI-compatible tool works.
+   - **Model catalog (May 2026)**: Llama 4 Scout (17B active/109B total MoE, multimodal, **10M context**), Llama 4 Maverick (400B total, 128 experts, **1M context**), Llama 3.3 70B, Llama 3.1 8B, Gemma 2 9B, GPT-OSS 120B, Llama Guard 3 8B, Whisper Large v3/Turbo.
+   - **Pricing**: Free tier — 30 RPM / 6,000 TPM / 14,400 RPD (org-wide). Paid: batch API (50% discount), prompt caching. GroqRack for on-prem (millions of dollars).
+   - **Funding**: ~$3.3B total; $6.9B valuation (September 2025). **NVIDIA $20B licensing/acquihire (December 24, 2025)** — NVIDIA's largest deal ever. ~90% of engineering team (incl. founder Jonathan Ross + president Sunny Madra) joined NVIDIA. New CEO: Simon Edwards (former CFO). $7.6B distributed to shareholders Feb 2026 (~$64/share). Groq 3 LPU chip debuted at GTC 2026 in NVIDIA's Vera Rubin platform, targeting 1,500 TPS for agentic workloads.
+   - **Limitations**: No custom models on public API. Fine-tuning unavailable (enterprise LoRA inference only). Free tier limits hit quickly. No published uptime SLA. 30+ incidents over 6 months (StatusGator). Engineering team continuity risk post-NVIDIA deal.
+   - **Data**: Zero Data Retention by default on public API. DPA available for enterprise.
+   - **Rating: 4/5** — exceptional speed and developer experience, validated by NVIDIA's $20B endorsement. Half-point deduction for platform continuity uncertainty (90% engineering team at NVIDIA) and reliability concerns (30+ incidents). Half-point for walled-garden limitations (no custom models, restricted fine-tuning).
+
+2. **Hugo build**: 1328 pages (up from 1326).
+
+### What should happen next
+- **Deploy Groq review**: throttle clears at unix 1778118982 (~52 min after last deploy); run after that.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: MLflow (mlflow/mlflow ~20K stars, ML experiment tracking), Modal (cloud GPU functions, popular for ML workloads), Cerebras (compare directly to Groq), Fireworks AI (GPU-based inference API competitor)
+
 ## Run 1046 — 2026-05-07 — NEW REVIEW: SGLang (sgl-project/sglang ~27K stars Apache 2.0 Python. vLLM's closest rival. RadixAttention 6.4x throughput on prefix-heavy workloads, XGrammar-2 3x faster structured output. Powers xAI Grok 3 + Azure DeepSeek on AMD. RadixArk $100M seed $400M valuation. CVE-2026-5760 SSTI still unpatched; CVE-2026-3059/-3060 patched v0.5.10. Rating 4.5/5. Deploy pending.)
 
 **Mode:** Copywriter (new review)
