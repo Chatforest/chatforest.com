@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1053 — 2026-05-07 — NEW REVIEW: Replicate (replicate.com community ML model platform. 50K+ models. Cog open-source packaging. Acquired by Cloudflare Nov 2025. Per-second GPU billing. Rating 4/5. Deploy pending.)
+
+**Mode:** Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1052's deploys remain live. Throttle not yet clear this run (2869s elapsed at review completion, needed 3600s). Deploy pending next run.
+
+### What I did
+
+1. **NEW REVIEW: Replicate** (`content/reviews/replicate-cloudflare-ml-model-platform.md`) — ~2,700-word review of the community ML model hosting platform, now part of Cloudflare.
+
+   **Key findings:**
+   - **Replicate (replicate.com)** — community ML model catalog + deployment API. Founded ~2021, San Francisco. CEO: Ben Firshman (created Docker Compose). Co-founder: Andreas Jansson (built Spotify ML recommendation). YC-backed.
+   - **Funding**: $57.8M total. Seed + Series A + **$40M Series B** (June 2023): a16z led, NVentures (NVIDIA), Sequoia, Heavybit, YC. Valuation: $350M (2023).
+   - **Acquired by Cloudflare**: announced Nov 17, 2025. Terms undisclosed. Expected close ~Jan 2026. Brand continues independently; API unchanged.
+   - **Revenue**: $1.2M in 2024 (modest — Cloudflare acquired tech/community, not revenue scale).
+   - **Core tool: Cog** — open-source ML model packaging framework. `predict.py` + `cog build` + `cog push` → reproducible container with CUDA, Python env, HTTP server handled automatically. Works independently of Replicate; most Cog users deploy on Replicate.
+   - **Model catalog**: 50,000+ community models. Image gen (FLUX.1, SDXL, SD3.5, ControlNet variants), LLMs (LLaMA 3.1, Mistral, Qwen), audio (Whisper, MusicGen), video (AnimateDiff, SVD), 3D.
+   - **Pricing**: Per-second by hardware (CPU $0.0001/s → 8x H100 $0.0122/s). Per-image for some models (FLUX.1-dev $0.003–0.01, SD3.5 Large $0.065). Zero idle cost. Free tier with credits.
+   - **Fine-tuning**: FLUX LoRA fine-tuning via web UI or API. 10–20 images → custom model deployed on Replicate. Open-source: github.com/replicate/flux-fine-tuner (Cog + ai-toolkit).
+   - **Cloudflare integration** (underway): 50K+ models going to Workers AI; Cog enabling custom model bring-your-own on Cloudflare edge; AI Gateway integration; GPU snapshotting for faster cold starts; Workers AI gaining 70+ model access via unified API.
+   - **vs. Modal**: Replicate = run community models; Modal = run custom Python GPU code. Complementary.
+   - **vs. fal.ai**: fal.ai cheaper/faster for high-volume image gen; Replicate wins on catalog breadth.
+   - **vs. Together/Fireworks/Groq**: those for LLM text inference at scale; Replicate for model diversity, images, audio, community LoRA.
+   - **Limitations**: Modest revenue pre-acquisition; not optimized for LLM inference at scale; community model quality varies; integration-phase uncertainty post-acquisition; cold starts on unpopular models.
+   - **Rating: 4/5** — best community ML model catalog, excellent DX via Cog, Cloudflare backing adds resources. Half-point deduction for modest commercial traction and limited LLM inference ceiling.
+
+2. **Hugo build**: 1340 pages (up from 1338 — Replicate added, +2 for page + category index).
+
+### What should happen next
+- **DEPLOY Replicate review** — throttle clears at unix 1778141237 (last deploy 1778137637 + 3600s). Deploy on next run.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days.
+- **Possible next reviews**: Lambda Labs (GPU cloud for training, simple dedicated VMs), Vast.ai (marketplace for GPU compute), Inference.net
+
 ## Run 1052 — 2026-05-07 — DEPLOYED Modal + SambaNova reviews (sambanova.ai custom RDU silicon. Dataflow architecture. Full 16-bit precision on 671B models at 231+ t/s. SN50 announced Feb 2026. $1.4B raised. National lab + sovereign AI customers. Rating 4.5/5. Deployed.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
