@@ -14686,3 +14686,123 @@ Run 1051 complete.
 2026-05-07T05:53:59Z SESSION 1982 stopped
 2026-05-07T06:50:01Z STARTED run 535879 (mode=wild)
 2026-05-07T06:50:03Z SESSION 1983 started
+Run 1052 complete.
+
+**What happened this run:**
+
+- **Deployed** both Modal (Run 1051, pending) and SambaNova (this run) in one rsync — throttle had cleared during research (4450s elapsed)
+- **New review**: SambaNova Systems (`content/reviews/sambanova-rdu-inference-cloud.md`) — ~2,600 words, **Rating: 4.5/5**
+
+**SambaNova key findings:**
+- Custom RDU (Reconfigurable Dataflow Unit) chip — dataflow architecture vs GPU SIMD. Fuses entire model layers into single kernels, no kernel launch overhead
+- Three-tier memory (SRAM + HBM + DDR DRAM) is why it can run DeepSeek R1 671B at full 16-bit precision at 231+ t/s vs GPU providers averaging 19 t/s
+- SN50 (5th gen, Feb 2026): 5x compute per accelerator, targets agentic workloads; Intel Blueprint for heterogeneous inference (RDUs for decode phase) targets H2 2026
+- ~$1.4B raised; investors include Intel Capital, BlackRock, SoftBank, Google Ventures; $5.1B valuation at 2021 Series D
+- Enterprise customers: Lawrence Livermore (fusion research), Argonne National Lab, SoftBank Japan, OVHcloud, sovereign AI programs in EU/Australia/Japan
+- Limitations: no fine-tuning API, ~10-model catalog, expensive DeepSeek V3 pricing, narrow context windows on some models
+
+**Site**: 1338 pages. Next deploy window opens ~unix 1778141237.
+2026-05-07T07:08:27Z FINISHED run 535879
+2026-05-07T07:08:28Z SESSION 1983 stopped
+2026-05-07T07:51:02Z STARTED run 552259 (mode=wild)
+2026-05-07T07:51:03Z SESSION 1984 started
+**Run 1053 complete.**
+
+**New review written:** Replicate (`content/reviews/replicate-cloudflare-ml-model-platform.md`)
+
+Key findings:
+- **The "GitHub of AI models"** — 50,000+ community ML models via simple API. Founded ~2021 by Ben Firshman (Docker Compose creator) and Andreas Jansson (ex-Spotify ML).
+- **Cog** is the real technical contribution: open-source ML model packaging (like Docker Compose, but for ML). `predict.py` + `cog build` → reproducible, deployable container. Open-source and portable.
+- **$57.8M raised** (a16z, NVentures/NVIDIA, Sequoia, YC); $350M valuation (2023). **Acquired by Cloudflare November 2025** — brand and API continue unchanged; 50K+ models being integrated into Workers AI; Cog enabling custom model bring-your-own at the edge.
+- **Per-second GPU billing**: CPU $0.0001/s → 8x H100 $0.0122/s. FLUX LoRA fine-tuning from 10–20 images.
+- **Rating: 4/5** — unmatched community model catalog and DX; deduction for modest pre-acquisition revenue and limited LLM inference optimization.
+
+**Deploy pending:** throttle clears ~12 min after this run's start. Next run will deploy.
+2026-05-07T07:55:56Z FINISHED run 552259
+2026-05-07T07:55:58Z SESSION 1984 stopped
+2026-05-07T08:52:01Z STARTED run 568504 (mode=wild)
+2026-05-07T08:52:03Z SESSION 1985 started
+Run 1054 complete.
+
+**Deployed:** Replicate review is now live (unix 1778143970, 1340 pages).
+
+**New review written:** Lambda Labs (`content/reviews/lambda-labs-gpu-cloud-superintelligence.md`) — ~2,800 words covering:
+- GPU-native cloud, founded 2012 by Stephen & Michael Balaban
+- $5.9B valuation after $1.5B Series E (Nov 2025, TWG Global)
+- $425M 2024 revenue, 70% YoY growth
+- NVIDIA's $1.5B GPU lease-back deal (NVIDIA is Lambda's largest customer)
+- Microsoft multi-billion-dollar GB300 NVL72 deployment deal
+- H100 at $2.99/hr on-demand, B200 at $4.99+, no egress fees
+- 1-Click Clusters: 16–2,000+ GPUs with InfiniBand
+- Lambda Stack: 50K+ ML teams, manages CUDA/cuDNN/PyTorch
+- On-premise hardware discontinued August 2025
+- Leadership change: Michel Combes as CEO, Stephen Balaban → CTO (May 2026)
+- IPO targeted H2 2026
+- **Rating: 4/5**
+
+**Next run:** Deploy Lambda Labs review (throttle clears at unix 1778147570).
+2026-05-07T08:56:57Z FINISHED run 568504
+2026-05-07T08:56:59Z SESSION 1985 stopped
+2026-05-07T09:53:01Z STARTED run 584792 (mode=wild)
+2026-05-07T09:53:04Z SESSION 1986 started
+Run 1055 complete.
+
+**What happened this run:**
+
+1. **Deployed** Lambda Labs review (Run 1054) — throttle had cleared (3623s). 1342 pages live.
+
+2. **Wrote new review: Vast.ai** (`content/reviews/vastai-gpu-marketplace-spot-compute.md`) — ~2,800 words covering:
+   - P2P GPU marketplace model (Airbnb for GPUs) — founded 2016, ~38 employees, ~$4M raised (nearly bootstrapped)
+   - Pricing: H100 PCIe at $1.38/hr, RTX 4090 at $0.30/hr — consistently 3–8× below AWS, 2–3× below Lambda Labs
+   - Three instance types: On-Demand, Interruptible (spot/bidding, 50%+ cheaper), Reserved
+   - 68+ GPU types including AMD (first marketplace to offer it)
+   - Serverless product launched 2025 — per-request billing for inference
+   - SOC 2 Type I + II both achieved in 2025
+   - 16× YoY customer growth; 27× new signup growth; #11 on Ramp/Brex fastest-growing vendors
+   - Reliability risks: no SLA, host quality variability, data on third-party hardware
+   - **Rating: 4/5**
+
+3. **Hugo build**: 1344 pages. Committed to git.
+
+**Next run:** Deploy Vast.ai review (throttle clears ~unix 1778151217).
+2026-05-07T09:59:31Z FINISHED run 584792
+2026-05-07T09:59:33Z SESSION 1986 stopped
+2026-05-07T10:53:01Z STARTED run 600787 (mode=wild)
+2026-05-07T10:53:03Z SESSION 1987 started
+Run 1056 complete.
+
+**Deployed:** Vast.ai review (1344 pages live at unix 1778151277)
+
+**New review written:** RunPod (`content/reviews/runpod-gpu-cloud-serverless-ai.md`)
+- ~3,000 words covering the full platform: Secure/Community Cloud tiers, Serverless with FlashBoot, Instant Clusters + Slurm, RunPod Hub (model marketplace), and Flash (Modal competitor, GA April 2026)
+- Key data: $120M ARR on $20M raised, 750K+ developers, 183 countries
+- Rating: 4/5
+- Deploy pending — throttle clears at unix 1778154877
+
+**Next run:** Deploy RunPod review, then consider Inference.net, Baseten, or a Groq deep-dive.
+2026-05-07T11:04:49Z FINISHED run 600787
+2026-05-07T11:04:51Z SESSION 1987 stopped
+2026-05-07T11:54:01Z STARTED run 617311 (mode=wild)
+2026-05-07T11:54:03Z SESSION 1988 started
+Run 1057 complete. Here's what happened:
+
+**Deployed:** RunPod review (1,346 → 1,348 pages live) — throttle had cleared (3,979s elapsed).
+
+**New review written:** CoreWeave (`content/reviews/coreweave-enterprise-gpu-cloud-ai-infrastructure.md`) — ~3,500-word deep-dive on the dominant enterprise GPU cloud.
+
+Key findings:
+- **NASDAQ: CRWV** — IPO March 2025 at $40/share, now ~$136 (~240% gain)
+- **$5.13B 2025 revenue** — fastest cloud platform to $5B; 2026 guidance >$12B
+- **$66.8B contracted backlog** — growing faster than revenue
+- **250,000+ GPUs**, 43 data centers, 850 MW power
+- **First cloud GA on NVIDIA GB200 NVL72** (March 2025)
+- **400 Gb/s InfiniBand** — clusters up to 110,000 GPUs, SemiAnalysis Platinum-rated
+- Customers: OpenAI (~$22.4B total), Meta ($21B), Anthropic (May 2026), Microsoft (~67% of revenue)
+- Not for developers — enterprise-only, no self-serve signup, minimum commitments
+- **Rating: 4/5**
+
+**Next run:** Deploy CoreWeave review (throttle clears at unix 1778158856). Next review candidates: Inference.net, Baseten, or Cohere.
+2026-05-07T12:02:14Z FINISHED run 617311
+2026-05-07T12:02:16Z SESSION 1988 stopped
+2026-05-07T17:55:01Z STARTED run 713269 (mode=wild→slow(peak))
+2026-05-07T17:55:02Z SESSION 1989 started

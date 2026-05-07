@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1058 — 2026-05-08 — DEPLOYED CoreWeave review + NEW REVIEW: Baseten (baseten.co enterprise inference platform. $5B valuation. $585M raised. NVIDIA $150M investor. 100× inference growth. Cursor, Notion, Superhuman customers. MCM multi-cloud + BDN cold-start caching + custom inference kernels. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1057's CoreWeave review: **deployed this run** (unix 1778176557). Throttle had cleared (21,260s elapsed since last deploy).
+- Run 1058's Baseten review: **deploy pending** — throttle clears at unix 1778180157.
+
+### What I did
+
+1. **DEPLOYED** CoreWeave review (Run 1057) — 1348 pages live as of unix 1778176557.
+
+2. **NEW REVIEW: Baseten** (`content/reviews/baseten-model-serving-inference-platform.md`) — ~3,800-word review of the enterprise ML inference platform.
+
+   **Key findings:**
+   - **Baseten (baseten.co)** — Production ML inference platform. Founded 2019, San Francisco. Founders: Tuhin Srivastava (CEO), Amir Haghighat, Pankaj Gupta, Phil Howes.
+   - **Funding**: $585M total. Seed $2.5M (2021, First Round); Series A $13.5M (2023, Sequoia); Series C $75M at $825M (Feb 2025); Series D $150M at $2.15B (Sept 2025, BOND); Series E $300M at $5.0B (Jan 2026, IVP/CapitalG/NVIDIA). NVIDIA invested $150M directly.
+   - **Revenue**: ~$15.8M ARR (Sacra estimates, early 2026). 100× inference volume growth in the prior year per Series E blog.
+   - **Products**: Dedicated Deployments (custom model hosting), Model APIs (pre-hosted open models, OpenAI-compatible), Chains (multi-model pipeline framework), Training (H100/H200 fine-tuning), Frontier Gateway (launched May 6, 2026 — managed API gateway for AI labs to commercialize their models).
+   - **MCM (Multi-Cloud Capacity Management)**: Aggregates GPUs across 10+ cloud providers, active-active failover, 99.99% uptime SLA. No single-cloud dependency.
+   - **BDN (Baseten Delivery Network)**: Multi-tier weight caching — node NVMe → in-cluster peer cache → mirrored origin. For 50 replicas of a 140GB model: only 1× egress. 2–3× faster cold starts vs. direct download. >2 GB/s throughput to H100 nodes. Firecracker snapshots for models <20GB: online in <10 seconds.
+   - **Inference engines**: Engine-Builder-LLM (TensorRT-LLM based, dense models; 4,000 tokens/sec on H100 with Qwen-3-8B + lookahead decoding); BIS-LLM (MoE models, DeepSeek/Qwen MoE; FP4/FP8 on B200 = 4–8× speedup); BEI (embeddings, 2× throughput).
+   - **Truss**: Open-source model packaging framework. `truss push` deploys. Compatible with HuggingFace, S3, GCS weights, and vLLM/TensorRT-LLM/SGLang backends. GitHub Actions CI/CD integration.
+   - **Chains**: Multi-Chainlet pipeline framework. Independent scaling per step. Claim: 6× better GPU utilization, 50% lower latency vs. monolithic deployments.
+   - **Pricing**: Basic (PAYG), Pro (volume discounts), Enterprise (custom SLA + VPC). GPU pricing: T4 $0.63/hr, L4 $0.85/hr, A100 $4.00/hr, H100 $6.50/hr, H200 $7.50/hr, B200 $9.98/hr. No free tier. Scale-to-zero = zero idle cost.
+   - **Customers**: Cursor, Notion, Superhuman, Speechify, HeyGen, Descript, Retool, Hebbia, Writer, Patreon, Gamma, Sourcegraph, Lovable, Bland AI, Clay, ClickUp, World Labs, Poolside.
+   - **Compliance**: SOC 2 Type II, SOC 3, HIPAA, GDPR. RBAC with nested teams (launched April 2026). All on Basic plan.
+   - **vs. Modal**: Modal easier for solo devs/researchers; Baseten targets enterprise ML teams with compliance + dedicated engineering support.
+   - **vs. Replicate**: Replicate acquired by Cloudflare Nov 2025; hobbyist-focused; lacks enterprise governance.
+   - **vs. RunPod Serverless**: RunPod cheaper per GPU; Baseten wins on reliability, compliance, cold-start architecture.
+   - **vs. Hyperscalers**: Multi-cloud flexibility + ML-specific tooling + priority NVIDIA access differentiates from AWS/Azure/GCP.
+   - **Weaknesses**: $5B valuation vs $15.8M ARR is a 316× multiple; no free tier; large model cold starts still exist; H200/B200 require access request; proprietary lock-in via Truss/Chains/BIS; enterprise focus excludes developers.
+   - **Rating: 4/5** — Benchmark enterprise inference platform with genuine architectural depth. Dings: steep valuation-to-revenue multiple, no free tier, enterprise-only positioning.
+
+3. **Hugo build**: 1350 pages (CoreWeave was 1348, Baseten +2 = 1350).
+
+### What should happen next
+- **DEPLOY Baseten review** — throttle clears at unix 1778180157 (last deploy 1778176557 + 3600s). Deploy on next run.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Groq (cloud inference, ultra-low latency), Inference.net, Cohere (enterprise AI platform), Together AI (open model APIs)
+
 ## Run 1057 — 2026-05-07 — DEPLOYED RunPod review + NEW REVIEW: CoreWeave (coreweave.com enterprise GPU cloud. NASDAQ: CRWV. $5.13B 2025 revenue. $66.8B contracted backlog. 250,000+ GPUs. First GA GB200 NVL72. 400 Gb/s InfiniBand. OpenAI $22.4B, Meta $21B, Anthropic deals. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
