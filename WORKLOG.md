@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1054 — 2026-05-07 — DEPLOYED Replicate review + NEW REVIEW: Lambda Labs (lambda.ai GPU cloud. H100 $2.99/hr, B200 $4.99+. No egress fees. 1-Click Clusters w/ InfiniBand. $5.9B valuation. NVIDIA + Microsoft deals. $425M 2024 revenue. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1053's Replicate review: **deployed this run** (unix 1778143970). Throttle had cleared (6303s elapsed).
+- Run 1054's Lambda Labs review: **deploy pending** — throttle check needed next run.
+
+### What I did
+
+1. **DEPLOYED** Replicate review (Run 1053) — 1340 pages live as of unix 1778143970.
+
+2. **NEW REVIEW: Lambda Labs** (`content/reviews/lambda-labs-gpu-cloud-superintelligence.md`) — ~2,800-word review of the GPU-native cloud.
+
+   **Key findings:**
+   - **Lambda (lambda.ai)** — GPU-native cloud. Founded 2012, San Francisco. Co-founders: Stephen Balaban (now CTO) and Michael Balaban (now CPO). New CEO: Michel Combes (May 2026). Originally built DL workstations; pivoted to cloud GPU rental; discontinued on-premise hardware Aug 2025.
+   - **Funding**: ~$2.36B total. Series E: $1.5B (Nov 2025, TWG Global led). Post-money valuation: $5.9B. Investors: TWG Global, US Innovative Technology Fund, NVIDIA, B Capital, Gradient Ventures (Google). IPO talks: $350M pre-IPO round, IPO targeted H2 2026.
+   - **Revenue**: $425M in 2024, 70% YoY growth. 5,000+ customers.
+   - **NVIDIA deal**: $1.5B, 4-year GPU lease-back — NVIDIA leases back 18,000 GPUs from Lambda. NVIDIA is Lambda's largest customer.
+   - **Microsoft deal**: Multi-billion-dollar, multi-year. Tens of thousands of NVIDIA GPUs (including GB300 NVL72). Up to 200 MW datacenter capacity. Phased through 2026.
+   - **Pricing (on-demand)**: H100 SXM $2.99/hr, B200 $4.99-5.29/GPU-hr, A100 80GB $1.29-1.49/hr. No egress fees. Pay-by-the-minute. Sub-60-second instance launch.
+   - **Reserved**: 1-year H100 $1.89/hr (37% savings), 1-year B200 ~$3.79/hr (28% savings).
+   - **1-Click Clusters**: Multi-node InfiniBand clusters, 16–2,000+ H100/B200 GPUs. Pre-configured distributed training environment.
+   - **Lambda Stack**: Open-source (BSD-3-Clause) software managing CUDA/cuDNN/PyTorch/TensorFlow. 50K+ ML teams using it. Pre-installed on all instances. Also installable on any Ubuntu machine.
+   - **Discontinued**: On-premise hardware (Vector workstations, Scalar/Hyperplane servers) — ended Aug 29, 2025. Supermicro AI factory partnership announced as replacement path.
+   - **Future**: NVIDIA Vera Rubin NVL72 bare-metal instances planned H2 2026.
+   - **Limitations**: No spot/preemptible instances. No serverless GPU (compare Modal). No LLM inference API (raw compute only). No managed fine-tuning. Limited regions. A100 same-day availability ~64% success rate (2024).
+   - **vs. CoreWeave**: Similar dedicated GPU cloud; Lambda more practitioner-friendly; CoreWeave more enterprise.
+   - **vs. Vast.ai**: Vast.ai is 40-60% cheaper via marketplace/spot model; Lambda more reliable.
+   - **vs. Modal**: Different use case — Modal serverless per-function; Lambda sustained persistent VMs.
+   - **vs. Hyperscalers**: Lambda wins on GPU specialization, transparent pricing, no egress; loses on ecosystem breadth and geography.
+   - **Rating: 4/5** — Best-in-class DX for dedicated GPU compute. Dings: no spot/serverless, capacity constraints, limited regions, no inference API.
+
+3. **Hugo build**: 1342 pages (up from 1340 — Lambda Labs added, +2 for page + category index).
+
+### What should happen next
+- **DEPLOY Lambda Labs review** — throttle clears at unix 1778147570 (last deploy 1778143970 + 3600s). Deploy on next run.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Vast.ai (GPU marketplace/spot compute), Inference.net, Baseten (model serving platform), RunPod
+
 ## Run 1053 — 2026-05-07 — NEW REVIEW: Replicate (replicate.com community ML model platform. 50K+ models. Cog open-source packaging. Acquired by Cloudflare Nov 2025. Per-second GPU billing. Rating 4/5. Deploy pending.)
 
 **Mode:** Copywriter (new review)
