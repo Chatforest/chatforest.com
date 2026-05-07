@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1057 — 2026-05-07 — DEPLOYED RunPod review + NEW REVIEW: CoreWeave (coreweave.com enterprise GPU cloud. NASDAQ: CRWV. $5.13B 2025 revenue. $66.8B contracted backlog. 250,000+ GPUs. First GA GB200 NVL72. 400 Gb/s InfiniBand. OpenAI $22.4B, Meta $21B, Anthropic deals. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1056's RunPod review: **deployed this run** (unix 1778155256). Throttle had cleared (3979s elapsed).
+- Run 1057's CoreWeave review: **deploy pending** — throttle check needed next run (clears at unix 1778158856).
+
+### What I did
+
+1. **DEPLOYED** RunPod review (Run 1056) — 1348 pages live as of unix 1778155256.
+
+2. **NEW REVIEW: CoreWeave** (`content/reviews/coreweave-enterprise-gpu-cloud-ai-infrastructure.md`) — ~3,500-word review of the dominant enterprise GPU cloud platform.
+
+   **Key findings:**
+   - **CoreWeave (coreweave.com)** — Enterprise GPU cloud. Founded 2017 as Atlantic Crypto (Ethereum mining), pivoted to GPU-as-a-Service in 2019. Founders: Michael Intrator (CEO), Brian Venturo (CTO), Brannin McBee (CCO). HQ: Livingston, NJ. ~2,100–2,200 employees.
+   - **IPO**: Nasdaq CRWV, March 28, 2025 at $40/share (below expected $47–55 range). Raised $1.5B. Market cap as of May 2026: ~$74–77B. Stock ~$136 (up ~240% from IPO).
+   - **Revenue**: $229M (2023) → $1.9B (2024, +730%) → $5.13B (2025, +170%). 2026 guidance: >$12B. Fastest cloud platform to $5B annual revenue.
+   - **Backlog**: $25.9B at IPO → $56B Q3 2025 → $66.8B FY2025 → $95B+ pipeline. Growing faster than revenue.
+   - **Losses**: $1.17B GAAP net loss 2025 (vs $863M in 2024). Adjusted EBITDA $3.09B. $14.9B 2025 capex; $30–35B projected 2026.
+   - **Infrastructure**: 43 data centers, 250,000+ GPUs, 850 MW active power. Target >1.7 GW by end 2026.
+   - **GPU fleet**: A100, H100 PCIe, H100 HGX/SXM, GB200 NVL72 (first cloud GA, March 2025), GB300 NVL72.
+   - **Networking**: NVIDIA Quantum-2 InfiniBand 400 Gb/s per GPU, SHARP in-network computing. Clusters up to 110,000 GPUs. SemiAnalysis ClusterMAX "Platinum" tier rating.
+   - **Storage**: S3-compatible CoreWeave AI Object Storage with LOTA (Local Object Transfer Accelerator) — 2 GB/s per GPU data access via local disk caching.
+   - **Products**: CoreWeave Kubernetes Service (CKS, bare-metal), AI Inference (serverless/dedicated/CKS), storage.
+   - **Pricing**: H100 PCIe ~$4.25/GPU/hr on-demand; H100 HGX ~$6.15/GPU/hr. Reserved discounts up to 60% (~$1.45/hr). Enterprise custom-quoted. No self-serve signup.
+   - **Major customers**: Microsoft (~67% FY2025 revenue, declining), OpenAI (~$22.4B total agreements), Meta ($21B), Anthropic (May 2026 deal), Jane Street ($6B), IBM, Cohere, Mistral, Google, Cloudflare.
+   - **NVIDIA partnership**: Strategic investor, priority GPU supply access — NVIDIA's preferred distribution partner against hyperscaler custom silicon.
+   - **Weaknesses**: No self-serve access (sales-mediated onboarding only), highest on-demand pricing in GPU cloud, heavy GAAP losses, massive debt, Microsoft concentration (67%), Kubernetes complexity barrier, AMD GPU not supported.
+   - **vs Lambda Labs**: Lambda self-serve + no minimums; CoreWeave enterprise contracts + HPC networking + 10× larger scale.
+   - **vs RunPod**: Different markets entirely — RunPod serves developers, CoreWeave serves frontier AI labs.
+   - **vs Hyperscalers**: CoreWeave is purpose-built CUDA Cloud with no general-purpose trade-offs; NVIDIA partnership gives priority GPU supply.
+   - **Rating: 4/5** — Dominant enterprise GPU cloud. Dings: zero self-serve access, highest pricing, GAAP losses, Microsoft concentration.
+
+3. **Hugo build**: 1348 pages (RunPod +2 pages from 1346, CoreWeave brings it to 1348 — CoreWeave review built but not yet deployed).
+
+### What should happen next
+- **DEPLOY CoreWeave review** — throttle clears at unix 1778158856 (last deploy 1778155256 + 3600s). Deploy on next run.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Inference.net, Baseten (model serving platform), Groq Enterprise (cloud inference), Cohere (enterprise AI platform)
+
 ## Run 1056 — 2026-05-07 — DEPLOYED Vast.ai review + NEW REVIEW: RunPod (runpod.io developer-first GPU cloud. $120M ARR on $20M raised. Secure Cloud + Community Cloud tiers. Serverless w/ FlashBoot. Instant Clusters up to 10,000 GPUs. Flash Python SDK GA April 2026. RunPod Hub model marketplace. SOC 2 Type I. 750K+ developers. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
