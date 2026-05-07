@@ -306,6 +306,20 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 19:00:00</span></div>
+  <h3><a href="/reviews/together-ai-open-model-cloud-inference/">Together AI — Open-Model Cloud Built by the FlashAttention Team (2026 Review)</a></h3>
+  <p>Together AI (together.ai) is the AI-native cloud built by the researchers who created FlashAttention and trained the Stanford CRFM models. **Chief Scientist Tri Dao** invented FlashAttention; the four co-founders include Percy Liang (Stanford CRFM), Chris Ré (Stanford NLP), and Ce Zhang (ETH Zürich) — some of the most cited ML researchers alive. FlashAttention-4 reaches **1605 TFLOPs/s on NVIDIA Blackwell**, 1.3x faster than cuDNN. **200&#43; open-source models** including Llama 4 Scout (10M context), DeepSeek V4, Qwen3 variants. Full stack: serverless inference, SFT fine-tuning, and dedicated GPU clusters (H100/H200/B200/GB200). **36,000 NVIDIA GB200 NVL72 GPUs** co-built with Hypertec. **$300M ARR** (Sept 2025), &#43;130% YoY. $305M Series B at $3.3B valuation (Feb 2025). $25 free credits for new users; $15K–$50K startup credits via AI Perks. Batch API available at 50% discount. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 17:00:00</span></div>
+  <h3><a href="/reviews/fireworks-ai-llm-inference-fine-tuning/">Fireworks AI — Fast Inference &#43; Fine-Tuning on One Platform (2026 Review)</a></h3>
+  <p>Fireworks AI (fireworks.ai) is a GPU-based cloud inference and fine-tuning platform built by the team behind PyTorch at Meta. Its FireAttention custom CUDA kernel delivers 4x faster throughput than vLLM, with FP8 precision and AMD MI300 support. **13 trillion tokens processed per day. 99.8% uptime Q1 2026.** OpenAI-compatible API; two-line migration from any OpenAI integration. Full fine-tuning stack: SFT, DPO, and RFT up to 1T-parameter models. Multi-LoRA serving: up to 100 LoRA adapters per GPU base model. Named customers include Cursor (3x speedup reported), Perplexity, Notion, Uber, DoorDash, Shopify, Upwork. $315M annualized revenue (Feb 2026), &#43;416% YoY. $250M Series C at $4B valuation (Oct 2025); NVIDIA and AMD among investors. Microsoft Foundry partnership announced March 2026. Unlike inference-only competitors, Fireworks integrates the full fine-tune → deploy loop on one platform. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-07 15:30:00</span></div>
   <h3><a href="/reviews/cerebras-wafer-scale-llm-inference/">Cerebras — Wafer-Scale LLM Inference (2026 Review)</a></h3>
   <p>Cerebras (cerebras.ai) is a cloud LLM inference API and hardware company built around the Wafer-Scale Engine — a chip the size of an entire silicon wafer. **4 trillion transistors. 44 GB on-chip SRAM. 21 PB/s internal bandwidth.** The WSE-3 delivers 969 tokens/second on Llama 3.1 405B (fastest ever for a 400B&#43; model), ~3,000 tokens/sec on GPT-OSS 120B, and ~2,500 tokens/sec on Llama 3.3 70B. OpenAI-compatible API; drop-in for any OpenAI integration. **1 million free tokens per day** — the most generous free tier of any inference API. Models: Llama 4 Scout/Maverick, Llama 3.3 70B, GPT-OSS 120B, Qwen3 32B, Qwen3 235B. **OpenAI signed a $20B compute deal** — Cerebras now powers GPT-OSS-Spark, OpenAI&#39;s first production model not running on NVIDIA. Revenue: $510M in 2025, profitable. IPO roadshow launched May 2026, targeting $22–25B valuation. Revenue concentrated: 86% from two UAE entities (MBZUAI, G42). Part of our **Developer Tools** category. Rating: 4.5/5.</p>
@@ -316,20 +330,6 @@
   <div class="card-meta"><span>Reviews</span> <span>2026-05-07 15:00:00</span></div>
   <h3><a href="/reviews/sglang-structured-generation-llm-serving/">SGLang — Fastest Structured Output and Prefix-Heavy LLM Serving (2026 Review)</a></h3>
   <p>SGLang (sgl-project/sglang, ~27,100 stars, Apache 2.0, Python) is vLLM&#39;s closest open-source rival, winning on prefix-heavy workloads and structured output speed. RadixAttention maintains a radix tree of KV cache across all requests: up to 6.4x throughput on RAG/multi-turn vs vLLM. Zero-overhead CPU scheduler (~1.1x throughput gain), cache-aware load balancer (1.9x multi-node gain). XGrammar-2 structured output: 80x faster compilation, &lt;40μs overhead per token. Best-in-class PD disaggregation for DeepSeek V3/V4/R1 at scale. Runs on 400K&#43; GPUs; powers **xAI Grok 3**, Microsoft Azure DeepSeek (AMD MI300X), LinkedIn, Cursor, Google Cloud. **RadixArk (May 2026): $100M seed, $400M valuation, Accel &#43; Spark Capital**, NVIDIA &#43; AMD strategic investors. Joined PyTorch ecosystem. 3 critical CVEs in Q1 2026: CVE-2026-5760 SSTI still unpatched; CVE-2026-3059/-3060 pickle RCE patched in v0.5.10. No auth by default. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 14:00:00</span></div>
-  <h3><a href="/reviews/groq-cloud-llm-inference-api/">Groq — The Fastest LLM Inference API (2026 Review)</a></h3>
-  <p>Groq (groq.com) is a cloud LLM inference API built on the Language Processing Unit (LPU) — a custom ASIC with 230MB of on-chip SRAM and 80 TB/s internal bandwidth that eliminates the memory-bottleneck limiting GPU inference. **2,100&#43; tokens/sec on Llama 3 8B. Whisper at 189x real-time.** OpenAI-compatible API; drop-in for any existing OpenAI integration. Model catalog includes Llama 4 Scout (10M context window), Llama 4 Maverick (1M context), Llama 3.3 70B, Gemma 2 9B, Whisper Large v3. LangChain, LlamaIndex, LiteLLM, Vercel AI SDK all have native Groq integrations. **December 2025: NVIDIA agreed to a $20B licensing deal** — industry validation of LPU technology, but ~90% of engineering staff joined NVIDIA, creating platform continuity uncertainty. No custom models on public API. Fine-tuning not available; LoRA inference only for enterprise. Batch API (50% discount) and prompt caching on paid tiers. 30&#43; outages reported over 6 months. Part of our **Developer Tools** category. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 13:00:00</span></div>
-  <h3><a href="/reviews/vllm-production-llm-serving/">vLLM — The Production Standard for LLM Serving (2026 Review)</a></h3>
-  <p>vLLM (vllm-project/vllm, ~79K stars, Apache 2.0, Python) is the production standard for high-throughput LLM serving. PagedAttention manages GPU KV cache like OS virtual memory — near-zero memory waste, 14-24x throughput vs naive HuggingFace Transformers, continuous batching, prefix caching, chunked prefill, 7 speculative decoding methods. v0.20.1 (May 2026): FlashAttention 4, DeepSeek V4, CUDA 13.0, TurboQuant 2-bit KV cache. Disaggregated prefill via NIXL (2.5-3.8x throughput gains). **Inferact Inc. (January 2026): $150M seed, $800M valuation, a16z &#43; Lightspeed** to commercialize vLLM. Powers Amazon Rufus, LinkedIn Hiring Assistant, Roblox. Hugging Face TGI in maintenance mode — recommends vLLM. 10&#43; CVEs in Q1 2026 including critical pre-auth RCE (patched). No auth by default. Not suitable for Apple Silicon or edge/local dev — use Ollama/llama.cpp there. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
 </div>
 
   
