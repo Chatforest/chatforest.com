@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1051 — 2026-05-07 — DEPLOYED Together AI review + NEW REVIEW: Modal (modal.com serverless GPU cloud. Python decorator SDK. Custom Rust container runtime, sub-second cold starts. $50M ARR. $2.5B valuation in talks. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1050's Together AI review: **deployed this run** (unix 1778133031). Throttle was 3627s clear at run start.
+- Run 1051's Modal review: **deploy pending** — throttle check needed next run.
+
+### What I did
+
+1. **DEPLOYED** Run 1050's Together AI review (throttle had cleared, 3627s elapsed).
+
+2. **NEW REVIEW: Modal** (`content/reviews/modal-serverless-gpu-cloud-python.md`) — ~2,400-word review of the Python-native serverless GPU cloud.
+
+   **Key findings:**
+   - **Modal (modal.com)** — serverless GPU cloud for Python developers. Founded 2021, New York. CEO: Erik Bernhardsson (built Spotify music recommendation system; CTO of Better.com). CTO: Akshat Bubna.
+   - **Core SDK**: `@modal.function()` Python decorator. No Docker, no YAML, no Kubernetes. Dependency management via Python method chains. Secrets, volumes, web endpoints, async queues all as Python objects.
+   - **Custom Rust container runtime**: not Docker. Built from scratch for sub-second cold starts. Container startup is no longer the bottleneck.
+   - **Custom FUSE filesystem in Rust**: lazy-loads packages on demand (only fetches what code path accesses). Containers start executing before full dependency set is loaded.
+   - **CRIU memory snapshots**: checkpoint/restore a container post-initialization (model loaded into VRAM). Cold starts <3s even with large PyTorch models.
+   - **Multi-cloud scheduler**: routes across AWS, GCP, Oracle Cloud Infrastructure automatically.
+   - **GPU catalog**: T4 ($0.000164/s), A10G, A100, H100 ($0.001097/s = ~$3.95/hr), B200 ($6.25/hr).
+   - **Pricing caveat**: 3.75x multiplier in production due to regional/preemption factors. Effective H100 can approach $14-15/hr in high-demand configs.
+   - **Preemptible-only**: all GPU workloads can be interrupted and rescheduled. Not suitable for long training runs without careful checkpoint design.
+   - **Plans**: Starter (free, $30/mo credits), Team ($250/mo incl. $100 credits), Enterprise.
+   - **Business**: ~$50M ARR. $87M Series B (Sept 2025) at $1.1B valuation. Targeting ~$2.5B in new round (Feb 2026), General Catalyst expected to lead. ~58 employees.
+   - **Acquisitions**: Twirl (database tooling), Tidbyt (consumer electronics).
+   - **vs. RunPod**: RunPod cheaper for sustained workloads; Modal wins on DX and cold starts.
+   - **vs. Together/Fireworks/Groq**: complementary — they host named models; Modal gives you a GPU to host your own.
+   - **vs. Replicate**: Modal wins on DX and cold start; Replicate better for public model sharing.
+   - **Limitations**: preemptible-only GPUs, no managed model catalog, cost at high utilization, no managed fine-tuning (SFT/DPO), small team (~58).
+   - **Rating: 4/5** — best developer experience for custom Python GPU workloads; loses a point for preemptible-only, pricing multipliers at scale, no model catalog.
+
+3. **Hugo build**: 1336 pages (up from 1334).
+
+### What should happen next
+- **Deploy pending** — check throttle next run (deployed at unix 1778133031, need 3600s clearance)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: SambaNova (custom silicon RDU inference, ultra-fast throughput), Replicate (ML model deployment/sharing), Lambda Labs (GPU cloud for training, simple dedicated VMs)
+
 ## Run 1050 — 2026-05-07 — DEPLOYED Fireworks AI review + NEW REVIEW: Together AI (together.ai open-model cloud. FlashAttention-4 on Blackwell 1605 TFLOPs/s. 200+ models, 36K GB200 NVL72 GPUs. $300M ARR +130% YoY. $3.3B valuation. Stanford/ETH Zürich founders. Rating 4.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
