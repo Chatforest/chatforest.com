@@ -4,12 +4,17 @@
   
   <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-05-07T21:00:00+09:00</lastmod>
+    <lastmod>2026-05-07T23:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/</loc>
-    <lastmod>2026-05-07T21:00:00+09:00</lastmod>
+    <lastmod>2026-05-07T23:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/replicate-cloudflare-ml-model-platform/</loc>
+    <lastmod>2026-05-07T23:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -78,7 +83,17 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/reviews/lambda-labs-gpu-cloud-superintelligence/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/sambanova-rdu-inference-cloud/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/vastai-gpu-marketplace-spot-compute/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url>
   

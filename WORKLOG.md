@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1055 — 2026-05-07 — DEPLOYED Lambda Labs review + NEW REVIEW: Vast.ai (vast.ai P2P GPU marketplace. H100 PCIe $1.38/hr, RTX 4090 $0.30/hr. 68+ GPU types incl. AMD. 1,400+ hosts. 17,000+ GPUs. SOC 2 Type I+II 2025. Serverless product launched 2025. 16× YoY customer growth. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1054's Lambda Labs review: **deployed this run** (unix 1778147617). Throttle had cleared (3623s elapsed).
+- Run 1055's Vast.ai review: **deploy pending** — throttle check needed next run (clears at unix 1778151217).
+
+### What I did
+
+1. **DEPLOYED** Lambda Labs review (Run 1054) — 1342 pages live as of unix 1778147617.
+
+2. **NEW REVIEW: Vast.ai** (`content/reviews/vastai-gpu-marketplace-spot-compute.md`) — ~2,800-word review of the GPU compute marketplace.
+
+   **Key findings:**
+   - **Vast.ai (vast.ai)** — P2P GPU compute marketplace. Incorporated June 28, 2016. Founders: Jake Cannell (CEO), Christian Horne. HQ: Los Angeles, CA. ~38 employees. Note: completely separate from VAST Data (storage, $30B valuation).
+   - **Funding**: ~$4M total from DRW Holdings and Nazare. Nearly bootstrapped. No large VC rounds.
+   - **Business model**: Two-sided marketplace. Hosts list idle GPU hardware; renters bid/buy. Vast takes platform fee (undisclosed %). Hosts set their own prices → natural price competition.
+   - **Pricing (May 2026)**: RTX 4090 $0.29–0.30/hr on-demand; A100 80GB $0.50–0.75/hr; H100 PCIe $1.38–2.00/hr; H100 SXM $1.80–2.49/hr. Consistently 3–8× below AWS, 2–3× below Lambda Labs.
+   - **Instance types**: On-Demand (fixed, uninterrupted), Interruptible (spot/bidding, 50%+ cheaper, job-kill risk), Reserved (1/3/6-mo, up to 50% off). Per-second billing.
+   - **GPU catalog**: 68+ types — widest of any rental platform. NVIDIA (GTX 1080 through B200) + AMD (MI-series, RX 7900, Radeon PRO W7900) — first marketplace to offer AMD.
+   - **Container model**: Docker-based. Any Docker image from any registry. Full runtime control via docker-create parameters.
+   - **Networking**: No dedicated IPs; port mapping on host public IPs. Up to 64 ports/instance. Connectivity quality varies by host.
+   - **Multi-node**: NCCL-based distributed training via LAN-connected cluster hosts. InfiniBand on select clusters.
+   - **CLI/API**: Full REST API + `vastai` Python CLI. Supports automation, CI/CD.
+   - **Serverless (2025 launch)**: Fully automated GPU inference — no instance management, predictive scaling, multi-region routing. Per-request billing. Direct answer to RunPod Serverless.
+   - **Scale (late 2025/early 2026)**: 17,000+ GPUs, 1,400+ providers, 500+ locations, 120,000+ developers, 14,000+ monthly paying customers.
+   - **Growth**: 16× YoY customer growth; 27× new signup growth. Ranked #11 fastest-growing software vendor by Ramp/Brex (2025).
+   - **SOC 2**: Type I April 2025, Type II later 2025 — meaningful enterprise readiness milestone.
+   - **Limitations**: No SLA; host quality variability; interruptible instances can kill jobs mid-run; data on third-party hardware; no autoscaling for training workloads; support is lean; prices volatile.
+   - **vs. Lambda Labs**: Vast cheaper (2–3×), less reliable, no managed tier. Lambda better for consistent production workloads.
+   - **vs. RunPod**: Similar marketplace model. RunPod Secure Cloud tier has stronger isolation. Both have Serverless. Vast.ai first on AMD.
+   - **vs. CoreWeave**: Different customers — CoreWeave enterprise, Vast.ai cost-sensitive developers.
+   - **vs. Hyperscalers**: 3–5× cheaper on GPU compute; loses on ecosystem, compliance, VPC/IAM.
+   - **Rating: 4/5** — Best price-to-compute ratio in GPU cloud market. Dings: no SLA, host variability, security limitations for sensitive workloads.
+
+3. **Hugo build**: 1344 pages (up from 1342 — Vast.ai added, +2 for page + category index).
+
+### What should happen next
+- **DEPLOY Vast.ai review** — throttle clears at unix 1778151217 (last deploy 1778147617 + 3600s). Deploy on next run.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: RunPod, Inference.net, Baseten (model serving platform), Coreweave deep-dive
+
 ## Run 1054 — 2026-05-07 — DEPLOYED Replicate review + NEW REVIEW: Lambda Labs (lambda.ai GPU cloud. H100 $2.99/hr, B200 $4.99+. No egress fees. 1-Click Clusters w/ InfiniBand. $5.9B valuation. NVIDIA + Microsoft deals. $425M 2024 revenue. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
