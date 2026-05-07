@@ -210,6 +210,20 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-08 00:00:00</span></div>
+  <h3><a href="/reviews/baseten-model-serving-inference-platform/">Baseten Review: The Enterprise Inference Platform at a $5B Valuation</a></h3>
+  <p>Baseten is a production ML inference platform used by Cursor, Notion, Superhuman, and Speechify. With $585M raised and NVIDIA as an investor, it has built proprietary cold-start tech, multi-cloud capacity management, and inference kernels that put it in direct competition with Modal, Replicate, and AWS SageMaker. We review the product, pricing, architecture, and who it is actually for.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-08 00:00:00</span></div>
+  <h3><a href="/reviews/xai-grok-api-llm-inference/">xAI Grok API Review: SpaceX-Owned, 555K-GPU Colossus, and the Most Aggressive Pricing at the Frontier</a></h3>
+  <p>xAI is the AI lab Elon Musk founded in 2023, now a SpaceX subsidiary valued at $250 billion. Its Grok API is OpenAI-compatible, offers the largest context windows of any frontier model (2M tokens on Grok 4.1 Fast), live access to X (Twitter) data, and prices that undercut GPT-4o by 5–10×. We review the infrastructure, models, pricing, enterprise readiness, and whether the Musk factor is a dealbreaker.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-07 23:00:00</span></div>
   <h3><a href="/reviews/replicate-cloudflare-ml-model-platform/">Replicate — The Community ML Model Platform (Now Part of Cloudflare)</a></h3>
   <p>Replicate (replicate.com) is the platform that became known as the **GitHub of AI models** — a community catalog of 50,000&#43; open-source machine learning models accessible via a single API. **Founded ~2021** by Ben Firshman (created Docker Compose at Docker; CEO) and Andreas Jansson (built music recommendation at Spotify). YC-backed, with a $40M Series B (June 2023) led by a16z with NVentures, Sequoia, and Heavybit. Valued at $350M in 2023. **Acquired by Cloudflare in November 2025** — brand continues independently; API unchanged. The platform&#39;s core tool is **Cog**, an open-source framework for packaging ML models into production-ready containers. Run public models (FLUX, SDXL, Whisper, LLaMA) via API in minutes, or push your own model using Cog. Fine-tune FLUX via LoRA with a handful of images. GPU billing per-second: CPU to 8x H100. Post-acquisition, Cloudflare is integrating Replicate&#39;s 50K&#43; model catalog into Workers AI and enabling Cog-packaged custom models on the edge. Part of our **Developer Tools** category. Rating: 4/5.</p>
@@ -220,20 +234,6 @@
   <div class="card-meta"><span>Reviews</span> <span>2026-05-07 21:00:00</span></div>
   <h3><a href="/reviews/modal-serverless-gpu-cloud-python/">Modal — Serverless GPU Cloud for Python (2026 Review)</a></h3>
   <p>Modal (modal.com) is the serverless GPU cloud built around one idea: Python code should run in the cloud exactly as it runs locally. **Founded 2021** by Erik Bernhardsson (built Spotify&#39;s music recommendation system; CTO of Better.com) and Akshat Bubna. The platform uses a custom container runtime written in Rust (not Docker), a custom lazy-loading filesystem (not overlayfs), and a multi-cloud scheduler across AWS, GCP, and Oracle Cloud — all designed to achieve **sub-second cold starts**. You decorate a Python function with `@modal.function()` and it runs on a GPU in the cloud; no Dockerfile, no YAML, no Kubernetes. Supports inference, training, batch jobs, scheduled functions, streaming, and web endpoints. GPUs include T4, A10G, A100, H100, and **B200 at $6.25/hr**. Per-second billing; zero idle cost. **$87M Series B** (Sept 2025) at $1.1B valuation. Reported **$2.5B valuation** in new funding talks (Feb 2026), led by General Catalyst. **~$50M ARR**. Part of our **Developer Tools** category. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 19:00:00</span></div>
-  <h3><a href="/reviews/together-ai-open-model-cloud-inference/">Together AI — Open-Model Cloud Built by the FlashAttention Team (2026 Review)</a></h3>
-  <p>Together AI (together.ai) is the AI-native cloud built by the researchers who created FlashAttention and trained the Stanford CRFM models. **Chief Scientist Tri Dao** invented FlashAttention; the four co-founders include Percy Liang (Stanford CRFM), Chris Ré (Stanford NLP), and Ce Zhang (ETH Zürich) — some of the most cited ML researchers alive. FlashAttention-4 reaches **1605 TFLOPs/s on NVIDIA Blackwell**, 1.3x faster than cuDNN. **200&#43; open-source models** including Llama 4 Scout (10M context), DeepSeek V4, Qwen3 variants. Full stack: serverless inference, SFT fine-tuning, and dedicated GPU clusters (H100/H200/B200/GB200). **36,000 NVIDIA GB200 NVL72 GPUs** co-built with Hypertec. **$300M ARR** (Sept 2025), &#43;130% YoY. $305M Series B at $3.3B valuation (Feb 2025). $25 free credits for new users; $15K–$50K startup credits via AI Perks. Batch API available at 50% discount. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 17:00:00</span></div>
-  <h3><a href="/reviews/fireworks-ai-llm-inference-fine-tuning/">Fireworks AI — Fast Inference &#43; Fine-Tuning on One Platform (2026 Review)</a></h3>
-  <p>Fireworks AI (fireworks.ai) is a GPU-based cloud inference and fine-tuning platform built by the team behind PyTorch at Meta. Its FireAttention custom CUDA kernel delivers 4x faster throughput than vLLM, with FP8 precision and AMD MI300 support. **13 trillion tokens processed per day. 99.8% uptime Q1 2026.** OpenAI-compatible API; two-line migration from any OpenAI integration. Full fine-tuning stack: SFT, DPO, and RFT up to 1T-parameter models. Multi-LoRA serving: up to 100 LoRA adapters per GPU base model. Named customers include Cursor (3x speedup reported), Perplexity, Notion, Uber, DoorDash, Shopify, Upwork. $315M annualized revenue (Feb 2026), &#43;416% YoY. $250M Series C at $4B valuation (Oct 2025); NVIDIA and AMD among investors. Microsoft Foundry partnership announced March 2026. Unlike inference-only competitors, Fireworks integrates the full fine-tune → deploy loop on one platform. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
 </div>
 
   

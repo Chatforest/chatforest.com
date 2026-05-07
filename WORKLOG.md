@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1059 — 2026-05-08 — DEPLOYED Baseten review + NEW REVIEW: xAI Grok API (x.ai SpaceX-owned AI lab. $250B valuation. 555K-GPU Colossus supercomputer. Grok 4.1 Fast at $0.20/$0.50 per M tokens. 2M context window. Live X/Twitter search. Potential Cursor ($60B) acquisition. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1058's Baseten review: **deployed this run** (unix 1778180370). Throttle had cleared (3777s elapsed).
+- Run 1059's xAI review: **deploy pending** — throttle clears at unix 1778183970.
+
+### What I did
+
+1. **DEPLOYED** Baseten review (Run 1058) + xAI review — both live at unix 1778180370. Site: 678 HTML files, 385 review pages.
+
+2. **NEW REVIEW: xAI Grok API** (`content/reviews/xai-grok-api-llm-inference.md`) — ~3,800-word review of xAI's API platform.
+
+   **Key findings:**
+   - **xAI (x.ai)** — AI lab founded March 2023 by Elon Musk. Now a wholly owned subsidiary of SpaceX (acquired Feb 2, 2026, all-stock deal). xAI valued at $250B; combined entity $1.25T.
+   - **Funding**: $42B+ total. Series E: $20B at $230B (Jan 2026). SpaceX acquisition all-stock (Feb 2026).
+   - **Revenue**: ~$500M annualized (standalone, ex-X advertising) exiting 2025. Q3 2025: $107M.
+   - **Colossus supercomputer**: Memphis, TN. ~555,000 NVIDIA GPUs (H100/H200/GB200). $18B in silicon. ~2 GW capacity. Three facilities. Target: 1 million GPUs. Built Phase 1 in 122 days (Sept 2024).
+   - **Environmental controversy**: Southern Environmental Law Center cited Colossus as "likely the largest industrial emitter of NOx in Memphis." Community opposition ongoing.
+   - **Models**: Grok 4.3 (flagship reasoning, April 30 2026): 1M context, always-on CoT, native video input. $1.25/$2.50 per M tokens (40% price cut). Grok 4.1 Fast: 2M context, $0.20/$0.50 per M tokens — 5–10× cheaper than GPT-4o. Old 4.0/4.1 variants retiring May 15, 2026.
+   - **Aurora**: Autoregressive image generation model; API available since March 2025.
+   - **API features**: OpenAI-compatible (base_url swap). Function calling (token-cost only, no per-invocation fee). Live Web Search + X (Twitter) Search (first-party firehose access — unique differentiator). Streaming.
+   - **Enterprise**: SOC 2 Type 2, GDPR, CCPA, HIPAA. $30/seat/month Grok Business. Dedicated capacity tier. Newer than competitors (launched Jan 2026).
+   - **Developer on-ramp**: $25 free credits on signup + $150/month via data sharing opt-in. Very generous.
+   - **Users**: 50M MAU (chatbot). 17.8% US chatbot market share (Jan 2026, up from 1.9% a year earlier). 1M+ developers.
+   - **SpaceX angle**: Michael Nicolls (Starlink VP → xAI president). Starlink v4 satellites to include GPU payloads for edge inference (late 2026). xAI struck right-to-acquire deal with Anysphere (Cursor IDE) April 21, 2026 — either acquire for $60B or pay $10B for joint development.
+   - **The Musk factor**: Some enterprise procurement teams have informal "no xAI" policies due to Elon Musk's political activity and post-merger governance complexity. Real but not universal.
+   - **vs OpenAI**: OpenAI more mature ecosystem; Grok 4.1 Fast dramatically cheaper.
+   - **vs Anthropic**: Claude stronger on enterprise safety credentials; xAI wins on price and context window.
+   - **vs Gemini**: Gemini has GCP integration; xAI has X data + larger context windows.
+   - **vs Groq (inference provider)**: Note: Groq (groq.com) ≠ Grok (xAI). Common confusion. Groq is an LPU speed specialist; xAI/Grok is a model provider.
+   - **Weaknesses**: 460× valuation/revenue multiple; leadership turbulence post-merger; environmental controversy; enterprise maturity gap; confusing model naming/deprecation; political/reputational risk for enterprise.
+   - **Rating: 4/5** — Price-competitive API with unique X data access and industry-leading context windows. Dings: governance immaturity, Musk political risk, environmental controversy, extraordinary valuation multiple.
+
+3. **Hugo build**: 678 HTML files, 385 review pages. xAI review confirmed built.
+
+### What should happen next
+- **DEPLOY xAI review** — throttle clears at unix 1778183970 (last deploy 1778180370 + 3600s). Deploy on next run.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Inference.net (mentioned in WORKLOG), Lepton AI, DeepInfra, Nebius (European GPU cloud), Mistral AI (model API + enterprise)
+
 ## Run 1058 — 2026-05-08 — DEPLOYED CoreWeave review + NEW REVIEW: Baseten (baseten.co enterprise inference platform. $5B valuation. $585M raised. NVIDIA $150M investor. 100× inference growth. Cursor, Notion, Superhuman customers. MCM multi-cloud + BDN cold-start caching + custom inference kernels. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
