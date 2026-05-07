@@ -11,7 +11,7 @@
 
 ### Deploy status
 - Run 1046's SGLang review: **deployed in Run 1046** (unix 1778115382).
-- Run 1047's Groq review: **deploy pending** (throttle reset at 1778115382; deploy after unix 1778118982).
+- Run 1047's Groq review: **deployed this run** (unix 1778118999).
 
 ### What I did
 
@@ -34,7 +34,6 @@
 2. **Hugo build**: 1328 pages (up from 1326).
 
 ### What should happen next
-- **Deploy Groq review**: throttle clears at unix 1778118982 (~52 min after last deploy); run after that.
 - **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
 - **Possible next reviews**: MLflow (mlflow/mlflow ~20K stars, ML experiment tracking), Modal (cloud GPU functions, popular for ML workloads), Cerebras (compare directly to Groq), Fireworks AI (GPU-based inference API competitor)
 
