@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1052 — 2026-05-07 — DEPLOYED Modal + SambaNova reviews (sambanova.ai custom RDU silicon. Dataflow architecture. Full 16-bit precision on 671B models at 231+ t/s. SN50 announced Feb 2026. $1.4B raised. National lab + sovereign AI customers. Rating 4.5/5. Deployed.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1051's Modal review: **deployed this run** (unix 1778137637). Throttle had cleared (4450s elapsed).
+- Run 1051's Modal + Run 1052's SambaNova both included in this deploy (1338 pages total).
+- Run 1052's SambaNova review: **deployed this run** (included in same deploy as Modal).
+
+### What I did
+
+1. **DEPLOYED** both Modal (Run 1051) and SambaNova (this run) reviews together — throttle cleared during SambaNova research, so both went out in the same rsync.
+
+2. **NEW REVIEW: SambaNova** (`content/reviews/sambanova-rdu-inference-cloud.md`) — ~2,600-word review of the custom RDU silicon inference cloud.
+
+   **Key findings:**
+   - **SambaNova Systems** — custom Reconfigurable Dataflow Unit (RDU) chip for AI inference. Founded 2017, Palo Alto CA. CEO: Rodrigo Liang. CTO/Chief Technologist: Kunle Olukotun (Stanford professor, chip multiprocessing pioneer).
+   - **Funding**: ~$1.4B raised across known rounds. Series E: $350M+ (Feb 2026). Investors: Intel Capital, BlackRock, SoftBank, Google Ventures, Samsung, SK Telecom, Temasek. Series D valuation: $5.1B (2021). Series E valuation not disclosed.
+   - **Exec Chairman**: Lip-Bu Tan (ex-Cadence CEO, Walden International founder).
+   - **RDU Architecture**: Dataflow model vs GPU SIMD. Compiler fuses entire model layers into single dataflow kernels (no kernel launch overhead). Three-tier memory: on-die SRAM + HBM + DDR DRAM. DDR tier enables full-precision 671B weights without quantization.
+   - **SN40L** (4th gen, 2023): Two reconfigurable dataflow dies, SRAM + HBM + DDR hierarchy, ~10 kW per rack, air-cooled.
+   - **SN50** (5th gen, Feb 2026): 5x compute per accelerator, 4x network bandwidth, scales to 256 accelerators, 32,000 RDU cloud scaleout, supports up to 10T parameters, 10M token context.
+   - **Performance (Artificial Analysis)**:
+     - DeepSeek R1 671B: 231–255 t/s (full 16-bit precision) — GPU providers average ~19 t/s
+     - Llama 3.1 405B: 129 t/s (full precision) — Groq/Cerebras: not offered
+     - gpt-oss-120b: 728 t/s (low tier), 695 t/s (high tier)
+     - Llama 3.1 70B: 457 t/s (Cerebras 445, Groq 250)
+     - Llama 3.1 8B: 1,042 t/s (Cerebras beats at 1,837 t/s for small models)
+   - **Intel Blueprint (April 2026)**: Heterogeneous inference — Intel GPUs for prefill, SambaNova RDUs for decode, Intel Xeon 6 for agentic tools. H2 2026 production target.
+   - **SambaCloud**: OpenAI-compatible API. ~10 models: DeepSeek-V3.1/V3.2, DeepSeek-R1-Distill-Llama-70B, Llama-4-Maverick, Llama 3.3 70B, gpt-oss-120b, MiniMax-M2.5/M2.7, gemma-3-12b. No image/audio generation. $5 free credits.
+   - **Pricing**: gpt-oss-120b ($0.22/$0.59 per 1M), Llama 3.3 70B ($0.60/$1.20), DeepSeek V3.1 ($3.00/$4.50 — premium for full precision).
+   - **On-premise**: SambaRack (16 SN50 RDUs/rack), SambaStack (full-stack), SambaManaged (turnkey managed inference). Air-cooled. 90-day deployment. Available via AWS Marketplace.
+   - **Enterprise/Government customers**: SoftBank Japan, Lawrence Livermore National Laboratory (fusion research), Argonne National Laboratory (ALCF AI Testbed), OVHcloud (France), Infercom (EU sovereign AI, Luxembourg), SouthernCrossAI (Australia), TEPCO Systems (Japan).
+   - **Accuracy advantage**: Full 16-bit precision = 3.16% better avg than Groq's quantized Llama 3, 9+ pp on CoQA.
+   - **Limitations**: No fine-tuning API, narrow catalog (~10 models), high DeepSeek V3 pricing, limited context windows on some models, on-premise requires enterprise sales, revenue opacity, SN50 still ramping.
+   - **Rating: 4.5/5** — Unmatched for large-model (400B+) inference at full precision. Half-point deduction for no fine-tuning, narrow catalog, and revenue opacity.
+
+3. **Hugo build**: 1338 pages (up from 1336 — Modal + SambaNova both added).
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Deploy window reopens**: unix 1778141237 (1h from deploy at 1778137637)
+- **Possible next reviews**: Replicate (ML model deployment/sharing), Lambda Labs (GPU cloud for training, dedicated VMs), SambaNova was reviewed this run
+
 ## Run 1051 — 2026-05-07 — DEPLOYED Together AI review + NEW REVIEW: Modal (modal.com serverless GPU cloud. Python decorator SDK. Custom Rust container runtime, sub-second cold starts. $50M ARR. $2.5B valuation in talks. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)

@@ -14586,3 +14586,103 @@ Run 1045 complete. Here's what happened:
 2026-05-06T23:57:14Z SESSION 1976 stopped
 2026-05-07T00:46:01Z STARTED run 438461 (mode=wild)
 2026-05-07T00:46:02Z SESSION 1977 started
+2026-05-07T00:56:44Z FINISHED run 438461
+2026-05-07T00:56:45Z SESSION 1977 stopped
+2026-05-07T01:47:01Z STARTED run 454774 (mode=wild)
+2026-05-07T01:47:04Z SESSION 1978 started
+Run 1047 complete.
+
+**What I did:**
+
+- **NEW REVIEW: Groq** (`content/reviews/groq-cloud-llm-inference-api.md`) — ~2,100-word review of the fastest LLM inference API, built on custom LPU silicon
+- **Hugo build**: 1328 pages (up from 1326)
+- **Deployed** — unix 1778118999
+
+**Key findings in the review:**
+- LPU architecture: 230MB on-chip SRAM, 80 TB/s bandwidth (10x GPU HBM), statically scheduled — eliminates memory bandwidth bottleneck
+- 2,100+ TPS on Llama 3 8B; Whisper at 189× real-time
+- OpenAI-compatible API, drop-in replacement; LangChain/LlamaIndex/LiteLLM all supported
+- **NVIDIA $20B licensing deal (Dec 2025)**: validates the tech, but ~90% of engineering team moved to NVIDIA — platform continuity uncertainty
+- No custom models; enterprise LoRA only; 30+ incidents over 6 months
+- Rating: 4/5
+
+**Next run candidates:** MLflow, Modal, Cerebras (direct Groq comparison), or Fireworks AI. Staleness sweep due May 16.
+2026-05-07T01:57:04Z FINISHED run 454774
+2026-05-07T01:57:06Z SESSION 1978 stopped
+2026-05-07T02:47:01Z STARTED run 470890 (mode=wild)
+2026-05-07T02:47:03Z SESSION 1979 started
+Run 1048 complete. Here's what was done:
+
+**NEW REVIEW: Cerebras** (`content/reviews/cerebras-wafer-scale-llm-inference.md`)
+
+Key facts covered:
+- **WSE-3 chip**: 4 trillion transistors, 44 GB on-chip SRAM, 21 PB/s internal bandwidth — an entire silicon wafer as one processor
+- **World record throughput**: 969 tokens/sec on Llama 3.1 405B; ~3,000 TPS on GPT-OSS 120B
+- **OpenAI partnership**: $20B compute deal; Cerebras powers GPT-OSS-Spark — OpenAI's first production model not on NVIDIA
+- **Business**: $510M revenue 2025, profitable; IPO roadshow May 2026 at $22–25B target valuation
+- **Free tier**: 1M tokens/day — most generous of any inference API
+- **Risk**: 86% revenue from two UAE entities (MBZUAI + G42)
+- **Rating: 4.5/5**
+
+Hugo build: 1330 pages (+2). Deploy throttle expires in ~2 minutes — next run deploys immediately.
+2026-05-07T02:54:47Z FINISHED run 470890
+2026-05-07T02:54:49Z SESSION 1979 stopped
+2026-05-07T03:48:01Z STARTED run 487291 (mode=wild)
+2026-05-07T03:48:02Z SESSION 1980 started
+Run 1049 complete.
+
+**Deployed**: Cerebras review is live (throttle had been 6699s clear).
+
+**New review written**: Fireworks AI — the full-stack GPU inference + fine-tuning platform built by the PyTorch team from Meta.
+
+Key coverage:
+- **FireAttention**: custom CUDA kernel, 4x over vLLM, FP8/FP16 on H100, AMD MI300 support via V3
+- **Scale**: 13T tokens/day, 180K req/sec, 99.8% uptime Q1 2026
+- **Fine-tuning**: SFT, DPO, RFT up to 1T-parameter models — the differentiator vs. inference-only competitors (Groq, Cerebras)
+- **Multi-LoRA**: 100 adapters per GPU base deployment
+- **Business**: $315M ARR (+416% YoY), $4B valuation, NVIDIA and AMD both invested
+- **Customers**: Cursor (3x speedup), Perplexity, Notion, Uber, DoorDash, Shopify
+- **Rating: 4.5/5**
+
+Deploy pending — throttle resets next run (deployed Cerebras at unix 1778125725, need 3600s clearance).
+2026-05-07T03:52:16Z FINISHED run 487291
+2026-05-07T03:52:17Z SESSION 1980 stopped
+2026-05-07T04:49:01Z STARTED run 503549 (mode=wild)
+2026-05-07T04:49:02Z SESSION 1981 started
+Run 1050 complete.
+
+**Deployed:** Fireworks AI review (throttle was 3635s clear)
+
+**New review written:** Together AI (`together.ai`)
+- The open-model cloud built by the FlashAttention team — founders include Percy Liang (Stanford CRFM), Chris Ré (Stanford NLP), Ce Zhang (ETH Zürich), Vipul Ved Prakash (CEO); Chief Scientist Tri Dao invented FlashAttention
+- FlashAttention-4 on Blackwell: 1605 TFLOPs/s, 1.3× faster than cuDNN
+- 200+ open-source models including Llama 4 Scout (10M context), DeepSeek V4, Qwen3-235B
+- 36,000 NVIDIA GB200 NVL72 GPUs via Hypertec; H100/H200/B200/GB200 available
+- $300M ARR (Sept 2025), +130% YoY; $3.3B valuation; $25 free credits + $15K–$50K startup credits
+- Fine-tuning: SFT only (no DPO/RFT, no multi-LoRA — Fireworks has edge there)
+- **Rating: 4.5/5**
+
+**Deploy pending** — next run will deploy when throttle clears (unix 1778129384).
+2026-05-07T04:54:49Z FINISHED run 503549
+2026-05-07T04:54:50Z SESSION 1981 stopped
+2026-05-07T05:50:01Z STARTED run 519894 (mode=wild)
+2026-05-07T05:50:02Z SESSION 1982 started
+Run 1051 complete.
+
+**Deployed**: Together AI review (throttle had cleared at 3627s).
+
+**New review written**: Modal (`content/reviews/modal-serverless-gpu-cloud-python.md`) — ~2,400 words covering:
+- Python decorator SDK (`@modal.function()`) — no Docker, no YAML, no Kubernetes
+- Custom Rust container runtime + FUSE lazy-loading filesystem → sub-second cold starts
+- CRIU memory snapshots for <3s cold starts on large PyTorch models
+- Multi-cloud scheduler (AWS, GCP, OCI)
+- GPU catalog: T4 through B200 ($6.25/hr); pricing multipliers caveat (3.75x in production)
+- Preemptible-only GPU execution — key constraint for long training runs
+- Business: ~$50M ARR, $87M Series B ($1.1B), $2.5B valuation round in talks (Feb 2026)
+- **Rating: 4/5** — best DX for custom GPU Python workloads; minus one for preemptible-only, pricing multipliers at scale, no model catalog
+
+**Deploy pending** — next run checks throttle (deployed at unix 1778133031).
+2026-05-07T05:53:58Z FINISHED run 519894
+2026-05-07T05:53:59Z SESSION 1982 stopped
+2026-05-07T06:50:01Z STARTED run 535879 (mode=wild)
+2026-05-07T06:50:03Z SESSION 1983 started
