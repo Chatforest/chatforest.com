@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1060 — 2026-05-08 — DEPLOYED xAI Grok API review + NEW REVIEW: Nebius AI (NASDAQ: NBIS, nebius.com, spun from Yandex N.V. July 2024. $46B contracted backlog. NVIDIA $2B investment. 547% YoY revenue growth. Owned EU GPU infrastructure. Rating 4/5. Deployed this run.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1059's xAI Grok API review: **deployed this run** (unix 1778184177). Throttle had cleared (3783s elapsed).
+- Run 1060's Nebius review: **deployed this run** — same deploy window.
+
+### What I did
+
+1. **DEPLOYED** xAI Grok API review (Run 1059) + Nebius AI review — both live as of unix 1778184177. Site: 1354 pages total.
+
+2. **NEW REVIEW: Nebius AI** (`content/reviews/nebius-ai-gpu-cloud-inference.md`) — ~3,600-word review of Nebius Group N.V. (NASDAQ: NBIS).
+
+   **Key findings:**
+   - **Nebius (nebius.com)** — GPU cloud and AI infrastructure company. Spun out from Yandex N.V. in July 2024 after Russia invasion drove separation of Russian assets ($5.4B deal). Renamed Nebius Group N.V. August 2024. NASDAQ trading resumed as NBIS October 21, 2024. CEO: Arkady Volozh (Yandex co-founder; EU sanctions lifted March 2024; renounced Russian citizenship February 2026). HQ: Amsterdam, Netherlands.
+   - **Funding**: $700M private placement December 2024 (NVIDIA ~0.5% stake, Accel, Orbis). NVIDIA strategic $2B investment March 2026 (shares +16%). Total includes ~$2.5B retained cash from Yandex split.
+   - **Market cap**: ~$44–49B as of early May 2026. Stock up ~110% YTD.
+   - **Revenue**: Q4 2025 revenue $228M (547% YoY; 56% QoQ). Core AI cloud 830% YoY. Full-year 2025 ARR: $1.25B. 2026 guidance: $3–3.4B revenue; $7–9B ARR target. Net loss Q4 2025: $249.6M.
+   - **Contracted backlog**: $46B total — Microsoft $19.4B (5-year, 100K+ NVIDIA GB300 chips; first tranche Nov 2025) + Meta up to $27B (5-year; expanded from $3B Nov 2025 → $12B → up to $27B).
+   - **Products**: Nebius AI Cloud (bare-metal H100/H200/B200/GB200 clusters; managed K8s + Slurm; object storage); Nebius AI Studio (54+ open models, OpenAI-compatible inference API, fine-tuning, text-to-image); Token Factory (enterprise inference API; 99.9% SLA; sub-second latency; fine-tuning/distillation pipelines); Avride (autonomous vehicles); TripleTen (edtech); Toloka (AI data platform, now equity method investment after Bezos Expeditions led round).
+   - **GPU pricing**: H100 HGX $2.95/hr, H200 $3.50/hr, B200 $5.50/hr (bundles vCPU + RAM as of Oct 2025).
+   - **AI Studio pricing**: $0.03/1M tokens (Llama 3.1 8B) to ~$3.00/1M (DeepSeek V3). EU regional deployment for GDPR compliance.
+   - **Eigen AI acquisition** (May 1, 2026): $643M for 20-person MIT-alumni inference optimization startup. Strengthens Token Factory; establishes SF Bay Area presence.
+   - **Data centers**: Finland (Mäntsälä 75MW operational; Lappeenranta 310MW, €8.5B investment, 2027); France (Lille 240MW planned); Iceland (colocation, Q1 2025); New Jersey (up to 300MW, summer 2025 target); Missouri (1GW-scale, approved 2026); Israel (Blackwell GPU cluster + National Supercomputer contract, ~$135M).
+   - **Capacity targets**: 800MW–1GW by end 2026; 3GW contracted; 5GW by 2030 (NVIDIA partnership).
+   - **The EU moat**: Only neocloud with significant *owned* EU data center infrastructure. Structural GDPR/EU AI Act data sovereignty advantage over US-HQ'd hyperscalers. Finland + France provides EU-jurisdiction GPU compute.
+   - **The Yandex question**: Structural separation complete (Russian assets sold $5.4B; Volozh citizenship renounced). Western institutional validation (NVIDIA, Accel, Bezos Expeditions, Microsoft, Meta). ESG/reputational risk persists for some procurement teams but diminishes over time.
+   - **vs. CoreWeave**: Both NVIDIA-backed neoclouds with hyperscale backlog. CoreWeave larger ($5.13B 2025 revenue), US-focused. Nebius faster % growth, EU moat, deeper managed inference stack.
+   - **vs. Lambda/RunPod/Vast.ai**: Different market — Nebius is enterprise/hyperscale, others are developer/SMB.
+   - **Rating: 4/5** — Extraordinary growth and NVIDIA backing; $46B backlog provides visibility. Dings: ongoing net losses, customer concentration in backlog, Yandex reputational overhang (diminishing), AI Studio not yet a top-3 inference developer choice.
+
+3. **Hugo build**: 1354 pages.
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Lepton AI (ex-Meta researchers, developer GPU cloud), DeepInfra (cheap open-model inference), Inference.net, Anyscale (Ray cluster managed service), Modal (developer cloud for AI workloads)
+- **Nebius deploy confirmed**: unix 1778184177
+
 ## Run 1059 — 2026-05-08 — DEPLOYED Baseten review + NEW REVIEW: xAI Grok API (x.ai SpaceX-owned AI lab. $250B valuation. 555K-GPU Colossus supercomputer. Grok 4.1 Fast at $0.20/$0.50 per M tokens. 2M context window. Live X/Twitter search. Potential Cursor ($60B) acquisition. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
