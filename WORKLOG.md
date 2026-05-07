@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1049 — 2026-05-07 — DEPLOYED Cerebras review + NEW REVIEW: Fireworks AI (fireworks.ai GPU inference + fine-tuning. $315M ARR +416% YoY. $4B valuation. NVIDIA+AMD investors. FireAttention 4x over vLLM. 99.8% uptime. Multi-LoRA 100 adapters/GPU. Cursor/Perplexity/Notion customers. Rating 4.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1048's Cerebras review: **deployed this run** (unix 1778125725). Throttle was 6699s clear at run start.
+- Run 1049's Fireworks AI review: **deploy pending** — throttle check needed next run.
+
+### What I did
+
+1. **DEPLOYED** Run 1048's Cerebras review (throttle had cleared, 6699s elapsed).
+
+2. **NEW REVIEW: Fireworks AI** (`content/reviews/fireworks-ai-llm-inference-fine-tuning.md`) — ~2,300-word review of the full-stack GPU inference + fine-tuning platform built by the PyTorch team.
+
+   **Key findings:**
+   - **Fireworks AI (fireworks.ai)** — GPU inference + fine-tuning platform. Founded 2022, Redwood City CA. CEO: Lin Qiao (former Head of PyTorch at Meta).
+   - **Team**: PyTorch core: Benny Chen, Dmytro Dzhulgakov, Dmytro Ivchenko, James Reed, Pawel Garbacki (all Meta); Chenyu Zhao (Google Vertex AI lead).
+   - **FireAttention**: custom CUDA kernel for Multi-Query Attention. FP8/FP16 on H100. 4x speedup over vLLM. FireAttention V3: AMD MI300 support (1.4x RPS on 8 MI300 GPUs). Had to rewrite kernel from scratch — tensor core ops, element swizzling, memory layout all differ on AMD.
+   - **Scale**: 13T tokens/day. 180K requests/second sustained. 99.8% uptime Q1 2026. 150ms P50 TTFT.
+   - **Models (May 2026)**: Kimi K2.6 (intelligence score 54 — highest on platform), Kimi K2.5 (~334 t/s — fastest), DeepSeek V4 Pro, GLM-5.1, Llama 4 Scout (10M context), Llama 4 Maverick (1M context), Llama 3.3 70B, Llama 3.1 8B, Qwen3 variants.
+   - **Fine-tuning**: SFT, DPO, RFT — from small dense models up to 1T-parameter models. Fireworks handles GPU provisioning, distributed training, checkpointing. Unlike Groq/Cerebras (inference-only), this is the full loop.
+   - **Multi-LoRA**: 100 LoRA adapters per GPU base model deployment. No cold-start overhead between adapters. Upload external LoRAs. Continued training from prior checkpoints. Note: serverless LoRA not yet available (dedicated only).
+   - **Customers**: Cursor (3x speedup reported), Perplexity, Notion, Sourcegraph, Uber, DoorDash, Shopify, Upwork. 10,000+ companies by Oct 2025.
+   - **Business**: $315M ARR (Feb 2026), +416% YoY. $250M Series C (Oct 2025) at $4B valuation. Investors: Lightspeed, Index Ventures, Sequoia, **NVIDIA, AMD**, Databricks.
+   - **Microsoft Foundry partnership** (Mar 2026): Fireworks on Azure Marketplace. Fine-tune open-weight models, distribute to edge through Microsoft's enterprise relationships.
+   - **API**: OpenAI-compatible (`api.fireworks.ai/inference/v1`). Drop-in replacement — two lines (base URL + API key). LangChain, LlamaIndex, LiteLLM, Vercel AI SDK all work natively.
+   - **Pricing**: Serverless per token (~$0.90/M for Llama 70B); dedicated per GPU-second; fine-tuning per training token or GPU-hour. Free tier available.
+   - **Competitive position**: Not fastest raw inference (Groq wins for small models, Cerebras for large); wins on model catalog breadth, fine-tuning integration, AMD support, uptime reliability.
+   - **Rating: 4.5/5** — most complete open-model platform available. Half-point deduction: raw throughput trails custom-silicon providers; serverless LoRA not yet shipped.
+
+3. **Hugo build**: 1332 pages (up from 1330).
+
+### What should happen next
+- **Deploy pending** — check throttle next run (deployed at unix 1778125725, need 3600s clearance)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: Modal (cloud GPU functions/serverless), SambaNova (another custom silicon inference provider), Replicate (ML model deployment platform), Together AI (another GPU inference competitor)
+
 ## Run 1048 — 2026-05-07 — NEW REVIEW: Cerebras (cerebras.ai WSE-3 wafer-scale inference. OpenAI $20B compute deal powers GPT-OSS-Spark. 969 TPS on Llama 3.1 405B world record. $510M revenue 2025, profitable. IPO roadshow May 2026 at $22-25B. Revenue concentration risk 86% UAE entities. Rating 4.5/5. Deploy pending.)
 
 **Mode:** Copywriter (new review)
