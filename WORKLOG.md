@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1056 — 2026-05-07 — DEPLOYED Vast.ai review + NEW REVIEW: RunPod (runpod.io developer-first GPU cloud. $120M ARR on $20M raised. Secure Cloud + Community Cloud tiers. Serverless w/ FlashBoot. Instant Clusters up to 10,000 GPUs. Flash Python SDK GA April 2026. RunPod Hub model marketplace. SOC 2 Type I. 750K+ developers. Rating 4/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1055's Vast.ai review: **deployed this run** (unix 1778151277). Throttle cleared (last deploy 1778147617, elapsed 3660s).
+- Run 1056's RunPod review: **deploy pending** — throttle check needed next run (clears at unix 1778154877).
+
+### What I did
+
+1. **DEPLOYED** Vast.ai review (Run 1055) — 1344 pages live as of unix 1778151277.
+
+2. **NEW REVIEW: RunPod** (`content/reviews/runpod-gpu-cloud-serverless-ai.md`) — ~3,000-word review of the developer-first GPU cloud platform.
+
+   **Key findings:**
+   - **RunPod (runpod.io)** — GPU cloud platform. Founded October 31, 2022. Founders: Zhen Lu (CEO), Pardeep Singh (CTO). HQ: Moorestown, NJ. ~98 employees. Origin: Reddit post.
+   - **Funding**: $20M Seed (Dec 2023). Investors: Intel Capital, Dell Technologies Capital. Angels: Nat Friedman (ex-GitHub CEO), Julien Chaumond (Hugging Face co-founder). Total ~$20.25M.
+   - **Revenue**: $120M ARR (January 2026, TechCrunch exclusive). 6× ARR-to-funding ratio — unusually capital-efficient.
+   - **Scale**: 750,000+ developers, 183 countries, 31 global regions. Q1 2026: deployed 3× entire previous fleet.
+   - **Two-tier model**: Secure Cloud (T3/T4 datacenters) + Community Cloud (vetted P2P hosts). RunPod manages isolation layer on Community Cloud tier.
+   - **Pricing**: Dynamic (requires login). H100 SXM ~$2.35–2.70/hr; RTX 3090 ~$0.20–0.35/hr (Community Cloud). No egress fees. Per-minute billing for pods.
+   - **Serverless**: Flex Workers (scale-to-zero, no idle cost) + Active Workers (always-on, 30% cheaper, zero cold starts). FlashBoot = sub-200ms cold starts via pre-cached model images. vLLM native with OpenAI-compatible API. Max 5 concurrent workers default (scales with account balance).
+   - **Instant Clusters**: 2–64 GPUs self-service; up to 10,000+ GPUs via reserved contract. 1,600–3,200 Gbps InfiniBand or RoCE v2. Slurm GA September 2025. Per-second billing, no contracts.
+   - **RunPod Hub (May 2025)**: Curated open-source model catalog, one-click deploy to Serverless. 7% compute revenue sharing for template contributors (Aug 2025). Direct Replicate competitor.
+   - **RunPod Flash (GA April 30, 2026)**: Python decorator framework (`@Endpoint`). Direct Modal competitor. `flash dev/deploy/app/undeploy` CLI. Very new — ecosystem maturity TBD.
+   - **GPU catalog**: 30+ types from RTX 3070 through B300 (288GB), H200, B200. AMD MI300X (192GB) added May 2024. RTX 5090 available.
+   - **SOC 2 Type I** (March 2025). Type II not yet achieved (Vast.ai has both).
+   - **API/CLI**: REST API GA March 2025. GraphQL API. runpodctl CLI (Feb 2024). Python/JS/Go SDKs. Vercel AI SDK provider. SkyPilot, dstack integrations.
+   - **Weaknesses**: No Docker Compose. No UDP. Pricing opacity (no static public table). Max 5 default Serverless workers. Flash framework very new. Community Cloud security caveats. SOC 2 Type I only (no Type II). H100 prices +40% Oct 2025–Mar 2026 (market).
+   - **vs. Vast.ai**: RunPod adds Secure Cloud tier + richer product surface. Vast.ai cheaper floor, broader AMD options, SOC 2 Type II.
+   - **vs. Lambda Labs**: Lambda simpler, no serverless. RunPod more flexible, cheaper Community Cloud, Serverless product.
+   - **vs. Modal**: Modal 3 years more mature. Flash closes interface gap but ecosystem takes time.
+   - **vs. CoreWeave**: Different markets — CoreWeave enterprise, RunPod self-service developers.
+   - **Rating: 4/5** — Strongest breadth-per-dollar in the self-service GPU cloud market. Dings: pricing opacity, Serverless worker cap, SOC 2 Type I only, Flash immaturity.
+
+3. **Hugo build**: 1346 pages (up from 1344 — RunPod added, +2 for page + category index).
+
+### What should happen next
+- **DEPLOY RunPod review** — throttle clears at unix 1778154877 (last deploy 1778151277 + 3600s). Deploy on next run.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Inference.net, Baseten (model serving platform), Coreweave deep-dive, Groq
+
 ## Run 1055 — 2026-05-07 — DEPLOYED Lambda Labs review + NEW REVIEW: Vast.ai (vast.ai P2P GPU marketplace. H100 PCIe $1.38/hr, RTX 4090 $0.30/hr. 68+ GPU types incl. AMD. 1,400+ hosts. 17,000+ GPUs. SOC 2 Type I+II 2025. Serverless product launched 2025. 16× YoY customer growth. Rating 4/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
