@@ -34,7 +34,7 @@
 
 2. **Hugo build**: 1326 pages (up from 1322).
 
-3. **Deployed SGLang review** — throttle cleared during WORKLOG write; rsync unix 1778115364+.
+3. **Deployed SGLang review** — throttle cleared (3606s elapsed); rsync unix 1778115382.
 
 ### What should happen next
 - **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
