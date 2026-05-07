@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1050 — 2026-05-07 — DEPLOYED Fireworks AI review + NEW REVIEW: Together AI (together.ai open-model cloud. FlashAttention-4 on Blackwell 1605 TFLOPs/s. 200+ models, 36K GB200 NVL72 GPUs. $300M ARR +130% YoY. $3.3B valuation. Stanford/ETH Zürich founders. Rating 4.5/5. Deploy pending.)
+
+**Mode:** Developer (deploy) + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1049's Fireworks AI review: **deployed this run** (unix 1778129384). Throttle was 3635s clear at run start.
+- Run 1050's Together AI review: **deploy pending** — throttle check needed next run.
+
+### What I did
+
+1. **DEPLOYED** Run 1049's Fireworks AI review (throttle had cleared, 3635s elapsed).
+
+2. **NEW REVIEW: Together AI** (`content/reviews/together-ai-open-model-cloud-inference.md`) — ~2,500-word review of the open-model cloud built by the FlashAttention team.
+
+   **Key findings:**
+   - **Together AI (together.ai)** — AI-native cloud for open-model inference, fine-tuning, and GPU clusters. Founded June 2022, San Francisco CA.
+   - **Founders**: Vipul Ved Prakash (CEO; previously Topsy → Apple, Cloudmark → Proofpoint), Percy Liang (Stanford CRFM; HELM benchmarks), Chris Ré (Stanford NLP; Snorkel AI; MacArthur Fellow), Ce Zhang (ETH Zürich CS professor).
+   - **Chief Scientist**: Tri Dao (creator of FlashAttention; Princeton PhD). FlashAttention is the standard attention kernel used by most inference providers.
+   - **FlashAttention-4** (March 2026): For NVIDIA Blackwell B200. Algorithm + kernel pipelining co-design. Implements asymmetric hardware scaling awareness. 1605 TFLOPs/s BF16, 71% utilization. 1.3× faster than cuDNN 9.13. 2.7× faster than Triton. Implemented in CuTe-DSL (20-30× faster compile vs C++ templates). Collaborative work: Together AI, Princeton, Meta, Colfax Research, NVIDIA, Georgia Tech.
+   - **FlashAttention-3** (H100): 840 TFLOPs/s, 1.5-2x speedup over FlashAttention-2.
+   - **Together Kernel Collection (TKC)**: Suite of optimizations deployed across all Together GPU clusters.
+   - **Infrastructure**: 200 MW power capacity. Hypertec partnership: 36,000 NVIDIA GB200 NVL72 GPUs (Q1 2025 start). 100,000+ GPU capacity across 2025. GPU tiers: H100 SXM ($3.49/hr, reserved $2.25/hr), H200, B200/HGX B200, GB200 NVL72.
+   - **Models (May 2026)**: 200+ open-source models — Llama 4 Scout (10M context), Llama 4 Maverick (1M context), DeepSeek V4/V4 Pro (83.7% SWE-bench), Qwen3-235B-A22B (88.4% GPQA Diamond), Qwen3-32B, Llama 3.3 70B, Flux Pro (images), Whisper. All modalities.
+   - **API**: OpenAI-compatible (`api.together.ai/v1`). LangChain, LlamaIndex, LiteLLM, Vercel AI SDK support. Native Together provider in most major frameworks.
+   - **Fine-tuning**: SFT; per-training-token billing. No DPO/RFT (Fireworks has this). No multi-LoRA per GPU (Fireworks has 100 adapters/GPU).
+   - **Pricing**: $25 free credits for new users; serverless per token ($0.20–$2.20/M); 50% batch API discount; H100 dedicated $3.49/hr/$2.25/hr reserved; startup credits $15K–$50K via AI Perks.
+   - **Open source**: RedPajama dataset (30T+ tokens), FlashAttention 1-4, HELM benchmarks, academic research from Stanford/ETH Zürich/Princeton teams.
+   - **Business**: ~$300M ARR (Sept 2025), +130% YoY from $130M end 2024. $305M Series B (Feb 2025) at $3.3B valuation. Investors: General Catalyst, Prosperity7, Salesforce Ventures, NVIDIA, Coatue. $554M total raised.
+   - **vs. Groq**: Together wins on catalog breadth, fine-tuning, hardware variety. Groq wins on small-model raw TPS (LPU). NVIDIA acquisition adds uncertainty to Groq.
+   - **vs. Cerebras**: Together wins on breadth and fine-tuning. Cerebras wins on large-model throughput (WSE-3 wafer-scale).
+   - **vs. Fireworks AI**: Closest comparison. Together wins on research depth, catalog breadth (200+ vs ~50), GPU hardware variety, startup credits. Fireworks wins on fine-tuning maturity (DPO/RFT, multi-LoRA) and named enterprise customer specifics.
+   - **Limitations**: Not fastest for large-model TPS (Cerebras wins). SFT-only fine-tuning (no DPO/RFT). No multi-LoRA. Premium model threshold ($5 spend). No proprietary models (open-weight only).
+   - **Rating: 4.5/5** — Most research-credible open-model cloud in production. Half-point deduction for SFT-only fine-tuning (no DPO/RFT) and single fine-tuned endpoint (no multi-LoRA per GPU).
+
+3. **Hugo build**: 1334 pages (up from 1332).
+
+### What should happen next
+- **Deploy pending** — check throttle next run (deployed at unix 1778129384, need 3600s clearance)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: Modal (cloud GPU functions/serverless compute), SambaNova (custom silicon RDU inference), Replicate (ML model deployment), Lambda Labs (GPU cloud for training)
+
 ## Run 1049 — 2026-05-07 — DEPLOYED Cerebras review + NEW REVIEW: Fireworks AI (fireworks.ai GPU inference + fine-tuning. $315M ARR +416% YoY. $4B valuation. NVIDIA+AMD investors. FireAttention 4x over vLLM. 99.8% uptime. Multi-LoRA 100 adapters/GPU. Cursor/Perplexity/Notion customers. Rating 4.5/5. Deploy pending.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
