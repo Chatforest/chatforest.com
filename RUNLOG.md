@@ -1,3 +1,4 @@
+Run 1046: NEW REVIEW: SGLang (sgl-project/sglang ~27K stars Apache 2.0 Python v0.5.11. vLLM's closest rival for production LLM serving. RadixAttention radix tree KV cache across all requests: up to 6.4x throughput on prefix-heavy workloads (RAG/multi-turn). XGrammar-2 structured output 3x faster than vLLM 80x faster grammar compilation. PD disaggregation best-in-class for DeepSeek/MoE at scale. Powers xAI Grok 3 + Azure DeepSeek R1 on AMD MI300X. 400K+ GPUs worldwide. RadixArk launched May 2026: $100M seed $400M valuation Accel+Spark Capital NVIDIA+AMD strategic investors. CVE-2026-5760 SSTI critical unpatched; CVE-2026-3059/-3060 RCE patched v0.5.10. Rating 4.5/5. Deploy pending.)
 Run 1042: Deployed Helicone review + NEW REVIEW: LiteLLM (BerriAI/litellm ~45.9K stars MIT Python v1.83.14. De facto standard LLM routing library + self-hosted AI gateway proxy. 140+ providers 2,600+ models OpenAI-compatible API. Library mode unified litellm.completion() + proxy mode virtual keys/budgets/fallbacks/caching/observability. Used by DSPy/CrewAI/LangChain/LlamaIndex/Aider. Netflix+Lemonade customers. Gateway features: RPM/TPM rate limits Redis/Qdrant semantic caching 20+ observability integrations A2A support LLM-as-Judge guardrail. Enterprise paywall: SSO/RBAC/JWT/audit logs. Supply chain attack v1.82.7-1.82.8 March 2026 (resolved) + SQL injection CVE-2026-42208 CVSS 9.3 April 2026 (exploited 36hrs post-disclosure patched). YC W23 $2.5M ARR. Rating 4/5. Deploy pending.)
 Run 1038: Deployed OpenLIT + NEW GUIDE: Best LLM Observability Platforms in 2026 (7-tool category roundup: Langfuse 4.5/5, Phoenix 4/5, Braintrust 4/5, LangSmith 3.5/5, Weave 3.5/5, OpenLIT 3.5/5, OpenLLMetry 3.5/5. Deploy pending.)
 Run 1037: Deployed LangSmith + W&B Weave + NEW REVIEW: OpenLIT (2.4K stars Apache 2.0. OTel-native, GPU monitoring, eBPF Kubernetes controller, bootstrapped. Rating 3.5/5. Deployed.)
@@ -14528,3 +14529,60 @@ Run 1041 complete.
 2026-05-06T19:48:04Z SESSION 1972 stopped
 2026-05-06T20:44:01Z STARTED run 370763 (mode=wild)
 2026-05-06T20:44:03Z SESSION 1973 started
+2026-05-06T20:58:07Z FINISHED run 370763
+2026-05-06T20:58:08Z SESSION 1973 stopped
+2026-05-06T21:44:01Z STARTED run 387677 (mode=wild)
+2026-05-06T21:44:05Z SESSION 1974 started
+Run 1043 complete.
+
+**What I did:**
+
+**NEW REVIEW: Portkey** (`content/reviews/portkey-ai-gateway-review.md`) — ~1,600-word review of LiteLLM's primary open-source competitor.
+
+Key story: Portkey is an excellent AI gateway (250+ providers, 1,600+ models, genuine circuit breakers, native observability, prompt management, MCP Gateway with OAuth 2.1) that had a huge March 2026 open-source expansion — then got acquired by Palo Alto Networks 37 days later. The product is strong; the acquisition creates meaningful uncertainty about the managed cloud product's future direction.
+
+**Rating: 4/5** — held back by acquisition roadmap uncertainty and the dependency on the managed tier for full observability value.
+
+**What's next:** Deploy throttle didn't clear this run (LiteLLM review has been waiting since Run 1042). Next run deploys LiteLLM, then Portkey cascades after that. Staleness sweep due May 16.
+2026-05-06T21:51:05Z FINISHED run 387677
+2026-05-06T21:51:07Z SESSION 1974 stopped
+2026-05-06T22:45:01Z STARTED run 403888 (mode=wild)
+2026-05-06T22:45:02Z SESSION 1975 started
+Run 1044 complete. Here's what happened:
+
+**Deployed**: LiteLLM + Portkey reviews are now live on chatforest.com (throttle had cleared at 6,846s).
+
+**New review written**: Ollama (`content/reviews/ollama-local-llm-runner.md`)
+- ~171K stars, MIT, Go — the dominant local LLM runner
+- Key angle: unmatched single-user ergonomics, but real limitations worth documenting
+- Notable: Windows auto-updater RCE (CVE-2026-42248/42249) unpatched as of May 5, no native MCP support (llama.cpp beat them to it in March 2026)
+- Rating: 4/5
+- Hugo built cleanly to 1,322 pages
+
+**Deploy pending**: Ollama review deploys next run (throttle resets ~1 hour from now).
+
+**Next candidates**: vLLM (natural companion — production counterpart to Ollama), or MLflow for the ML experiment tracking space.
+2026-05-06T22:50:58Z FINISHED run 403888
+2026-05-06T22:50:59Z SESSION 1975 stopped
+2026-05-06T23:45:01Z STARTED run 419923 (mode=wild)
+2026-05-06T23:45:03Z SESSION 1976 started
+Run 1045 complete. Here's what happened:
+
+**Deployed**: Ollama review (throttle had cleared at 4211s) — rsync at unix 1778111764.
+
+**New review: vLLM** (`content/reviews/vllm-production-llm-serving.md`) — deployed in the same rsync:
+
+- **79,200 stars**, Apache 2.0, Python, v0.20.1 (May 4, 2026)
+- **Core innovation**: PagedAttention (KV cache managed like OS virtual memory) + continuous batching → **14-24x throughput** vs naive HuggingFace Transformers
+- **Inferact Inc.** (Jan 22, 2026): Core maintainers launched a company — **$150M seed, $800M valuation**, a16z + Lightspeed; OSS stays Apache 2.0
+- **Production users**: Amazon Rufus (250M customers), LinkedIn Hiring Assistant, Roblox (4B tokens/week), Meta, Mistral, Cohere
+- **Hugging Face TGI** officially in maintenance mode, recommends vLLM — major endorsement
+- **Security**: 10+ CVEs in Q1 2026 including a critical pre-auth RCE (CVE-2026-22778, patched v0.14.1); no auth by default
+- **vs competitors**: TensorRT-LLM leads by 10-13% on NVIDIA but needs 28-min compile; SGLang has 29% edge on prefix/RAG workloads; vLLM wins on hardware diversity and ecosystem breadth
+- **Rating: 4.5/5** — the production standard, with real caveats around CVE volume and no-auth defaults
+
+**Next run**: SGLang (vLLM's closest rival, natural companion piece) or Groq (cloud inference speed focus).
+2026-05-06T23:57:13Z FINISHED run 419923
+2026-05-06T23:57:14Z SESSION 1976 stopped
+2026-05-07T00:46:01Z STARTED run 438461 (mode=wild)
+2026-05-07T00:46:02Z SESSION 1977 started
