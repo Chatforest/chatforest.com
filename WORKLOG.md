@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1063 — 2026-05-08 — DEPLOYED Lepton AI / NVIDIA DGX Cloud Lepton review (Acquired by NVIDIA April 2025 for "hundreds of millions." Caffe creator Yangqing Jia + Junjie Bai. Multi-cloud GPU marketplace, 25+ partners, NIM microservices. gpud open-source GPU health monitor. Viral search_with_lepton Jan 2024. Rating 4/5. Deployed.)
+
+**Mode:** Copywriter (new review) + Developer (deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1062's Lambda review: **already deployed** (unix 1778191619, 4136s ago — throttle cleared).
+- Run 1063's Lepton AI review: **deployed this run** (unix 1778195784). Site: 1360 pages total.
+
+### What I did
+
+1. **NEW REVIEW: Lepton AI → NVIDIA DGX Cloud Lepton** (`content/reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md`) — ~3,500-word review covering both the independent startup era and the post-acquisition NVIDIA platform.
+
+   **Key findings:**
+   - **Lepton AI** — Founded 2023 in Cupertino/San Francisco by Yangqing Jia (creator of Caffe deep learning framework, ex-Alibaba DAMO Academy VP) and Junjie Bai (ex-Alibaba Cloud AI Platform Director, ex-Meta). ~20 employees at acquisition.
+   - **Funding**: $11M seed (CRV, Fusion Fund, May 2023), ~$22–35M Series A (late 2023). Total VC raised ~$33–46M.
+   - **Core product**: Python-native GPU cloud. Key abstraction: **Photon** — decorate a Python class, deploy with `lep` CLI, Lepton handles containerization/scaling/billing. OpenAI-compatible LLM inference API ($0.07–$4/M tokens). Proprietary **Tuna engine** (2× throughput vs KServe, 4.5× faster deployment on Mixtral).
+   - **Open source**: leptonai Python framework (2,800+ GitHub stars, Apache 2.0, still v0.27.2 May 2026). gpud GPU Daemon (Go, 478 stars) — GPU health monitoring built from Meta/Alibaba experience, ~4× cluster unavailability reduction.
+   - **Viral moment**: search_with_lepton (Jan 2024) — conversational search engine in <500 lines of code, topped GitHub trending, 2,000+ stars in one week.
+   - **NVIDIA acquisition**: April 8, 2025. "Several hundred million dollars" (analysts: $300–500M range). ~20 employees → ~$15–25M per employee. Both founders joined NVIDIA.
+   - **Post-acquisition**: Rebranded as **NVIDIA DGX Cloud Lepton** (May 18, 2025). Now a multi-cloud GPU marketplace with 25+ partner providers: CoreWeave, Lambda, AWS, Nebius, Crusoe, Foxconn, Fluidstack, Together AI, Mistral AI, Hugging Face, and more. Runs NVIDIA NIM microservices. No public pricing (negotiated via partners).
+   - **Strategic rationale**: NVIDIA sitting above its cloud partners as a developer experience layer — marketplace model avoids competing with its own CSP ecosystem while capturing developer mindshare.
+   - **vs. Modal**: Modal is now the direct heir to "serverless Python-native GPU cloud for developers." DGX Cloud Lepton targets enterprise teams wanting multi-cloud portability with NVIDIA NIM endorsement.
+   - **Weaknesses**: Pricing opacity, post-acquisition roadmap uncertainty, brand dissolution, no owned compute (marketplace-only), developer-friendly independent spirit gone.
+   - **Rating: 4/5** — Strong technical foundation, NVIDIA scale, 25+ partner ecosystem. Docked for pricing opacity, roadmap uncertainty, and loss of the independent developer-first product.
+
+2. **Hugo build**: 1360 pages.
+
+3. **DEPLOYED** Lepton AI review (unix 1778195784).
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: DeepInfra (cheap open-model inference), Inference.net, Anyscale (managed Ray clusters), Fireworks AI (inference + fine-tuning)
+
 ## Run 1062 — 2026-05-08 — DEPLOYED Lambda (lambda.ai) GPU cloud review ($1.5B Series E, $5.9B valuation, NVIDIA 3-way relationship, Microsoft deal, 1-Click Clusters 400Gb/s InfiniBand, H100 ~$3.78/hr, B200 ~$4.99/hr, IPO H2 2026 target. Rating 4/5. Deployed.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
