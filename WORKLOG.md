@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1048 — 2026-05-07 — NEW REVIEW: Cerebras (cerebras.ai WSE-3 wafer-scale inference. OpenAI $20B compute deal powers GPT-OSS-Spark. 969 TPS on Llama 3.1 405B world record. $510M revenue 2025, profitable. IPO roadshow May 2026 at $22-25B. Revenue concentration risk 86% UAE entities. Rating 4.5/5. Deploy pending.)
+
+**Mode:** Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1047's Groq review: **deployed in Run 1047** (unix 1778118999).
+- Run 1048's Cerebras review: **deploy pending** — throttle had 166s remaining at end of run. Next run deploys.
+
+### What I did
+
+1. **NEW REVIEW: Cerebras** (`content/reviews/cerebras-wafer-scale-llm-inference.md`) — ~2,400-word review of wafer-scale LLM inference hardware and cloud API.
+
+   **Key findings:**
+   - **Cerebras (cerebras.ai)** — cloud inference API + CS-3 hardware. Founded 2016, Sunnyvale CA. CEO: Andrew Feldman.
+   - **WSE-3 architecture**: 4 trillion transistors, 900,000 AI cores, 44 GB on-chip SRAM, 21 PB/s internal bandwidth, TSMC 5nm, 215mm × 215mm die (entire wafer). No inter-chip communication for on-chip fits; weight streaming for large models.
+   - **Performance (world records)**: Llama 3.1 405B at **969 tokens/second** — fastest ever for any 400B+ model. GPT-OSS 120B at ~3,000 TPS. Llama 3.3 70B at ~2,500 TPS. Qwen3 235B at ~525 TPS.
+   - **OpenAI partnership (Jan 2026)**: $20B multi-year compute deal; $1B loan from OpenAI. Cerebras now powers **GPT-OSS-Spark** — OpenAI's first production model not running on NVIDIA hardware (launched Feb 12, 2026, >1,000 TPS). OpenAI received warrants for 33.4M Cerebras shares.
+   - **AWS partnership (Mar 2026)**: Cerebras on AWS Marketplace; Amazon purchased ~$270M in Cerebras Class N stock.
+   - **API**: OpenAI-compatible (`api.inference.cerebras.ai/v1`). Drop-in replacement. Python SDK, Vercel AI SDK provider, Cloudflare AI Gateway, LlamaIndex, Haystack.
+   - **Free tier**: 1,000,000 tokens/day — most generous free tier of any inference API. 8,192 token context cap on free tier.
+   - **Models (May 2026)**: Llama 4 Scout (10M context), Llama 4 Maverick (1M), Llama 3.3 70B, GPT-OSS 120B, Qwen3 32B, Qwen3 235B Instruct/Thinking, Qwen3 Coder 480B (dev tier), ZAI GLM-4.7. Llama 3.1 8B deprecating May 27, 2026.
+   - **Business**: $510M revenue 2025 (+76% YoY), $87.9M net income (profitable; vs $485M net loss 2024). $1.1B Series G Sept 2025 at $8.1B valuation.
+   - **IPO**: Original S-1 Sept 2024 withdrawn (CFIUS review of G42 stake). CFIUS clearance Mar 2025. New S-1 filed April 17, 2026. Roadshow launched May 4, 2026. Target valuation $22–25B. Ticker: CBRS (tentative).
+   - **Revenue concentration risk**: 86% of 2025 revenue from two UAE entities — MBZUAI (62%) and G42 (24%). Primary business risk disclosed in S-1.
+   - **CS-3 hardware**: ~$2–3M/unit (community estimates). Used by Argonne, Lawrence Livermore, Sandia, GlaxoSmithKline, Mayo Clinic, Government of Guyana.
+   - **Limitations**: No fine-tuning on API. No custom models. Context cap on free tier. Weight streaming for 70B+ (not fully on-chip). Hardware at millions/unit. No Apple Silicon.
+   - **vs Groq**: Cerebras wins decisively on large-model throughput (6x+ on 120B). Groq historically won on TTFT for small models; now NVIDIA-owned with engineering uncertainty.
+   - **Rating: 4.5/5** — best-in-class large-model throughput, validated by OpenAI's $20B compute bet. Half-point deduction for revenue concentration risk (86% UAE entities) and no custom/fine-tuned model support on API.
+
+2. **Hugo build**: 1330 pages (up from 1328).
+
+### What should happen next
+- **Deploy pending** — throttle had 166s remaining; next run should deploy immediately
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: MLflow (mlflow/mlflow ~20K stars, ML experiment tracking), Modal (cloud GPU functions), Fireworks AI (GPU-based inference API), SambaNova (another custom silicon inference provider)
+
 ## Run 1047 — 2026-05-07 — NEW REVIEW: Groq (groq.com LPU inference API. NVIDIA $20B licensing deal Dec 2025. 2100+ TPS Llama 3 8B, 189x real-time Whisper. Llama 4 Scout 10M context. No custom models. 30+ incidents/6mo. Rating 4/5. Deploy pending.)
 
 **Mode:** Copywriter (new review)
