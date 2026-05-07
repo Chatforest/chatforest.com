@@ -817,6 +817,13 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 15:30:00</span></div>
+  <h3><a href="/reviews/cerebras-wafer-scale-llm-inference/">Cerebras — Wafer-Scale LLM Inference (2026 Review)</a></h3>
+  <p>Cerebras (cerebras.ai) is a cloud LLM inference API and hardware company built around the Wafer-Scale Engine — a chip the size of an entire silicon wafer. **4 trillion transistors. 44 GB on-chip SRAM. 21 PB/s internal bandwidth.** The WSE-3 delivers 969 tokens/second on Llama 3.1 405B (fastest ever for a 400B&#43; model), ~3,000 tokens/sec on GPT-OSS 120B, and ~2,500 tokens/sec on Llama 3.3 70B. OpenAI-compatible API; drop-in for any OpenAI integration. **1 million free tokens per day** — the most generous free tier of any inference API. Models: Llama 4 Scout/Maverick, Llama 3.3 70B, GPT-OSS 120B, Qwen3 32B, Qwen3 235B. **OpenAI signed a $20B compute deal** — Cerebras now powers GPT-OSS-Spark, OpenAI&#39;s first production model not running on NVIDIA. Revenue: $510M in 2025, profitable. IPO roadshow launched May 2026, targeting $22–25B valuation. Revenue concentrated: 86% from two UAE entities (MBZUAI, G42). Part of our **Developer Tools** category. Rating: 4.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-07 15:00:00</span></div>
   <h3><a href="/reviews/sglang-structured-generation-llm-serving/">SGLang — Fastest Structured Output and Prefix-Heavy LLM Serving (2026 Review)</a></h3>
   <p>SGLang (sgl-project/sglang, ~27,100 stars, Apache 2.0, Python) is vLLM&#39;s closest open-source rival, winning on prefix-heavy workloads and structured output speed. RadixAttention maintains a radix tree of KV cache across all requests: up to 6.4x throughput on RAG/multi-turn vs vLLM. Zero-overhead CPU scheduler (~1.1x throughput gain), cache-aware load balancer (1.9x multi-node gain). XGrammar-2 structured output: 80x faster compilation, &lt;40μs overhead per token. Best-in-class PD disaggregation for DeepSeek V3/V4/R1 at scale. Runs on 400K&#43; GPUs; powers **xAI Grok 3**, Microsoft Azure DeepSeek (AMD MI300X), LinkedIn, Cursor, Google Cloud. **RadixArk (May 2026): $100M seed, $400M valuation, Accel &#43; Spark Capital**, NVIDIA &#43; AMD strategic investors. Joined PyTorch ecosystem. 3 critical CVEs in Q1 2026: CVE-2026-5760 SSTI still unpatched; CVE-2026-3059/-3060 pickle RCE patched in v0.5.10. No auth by default. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
@@ -824,23 +831,16 @@
 
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 14:00:00</span></div>
+  <h3><a href="/reviews/groq-cloud-llm-inference-api/">Groq — The Fastest LLM Inference API (2026 Review)</a></h3>
+  <p>Groq (groq.com) is a cloud LLM inference API built on the Language Processing Unit (LPU) — a custom ASIC with 230MB of on-chip SRAM and 80 TB/s internal bandwidth that eliminates the memory-bottleneck limiting GPU inference. **2,100&#43; tokens/sec on Llama 3 8B. Whisper at 189x real-time.** OpenAI-compatible API; drop-in for any existing OpenAI integration. Model catalog includes Llama 4 Scout (10M context window), Llama 4 Maverick (1M context), Llama 3.3 70B, Gemma 2 9B, Whisper Large v3. LangChain, LlamaIndex, LiteLLM, Vercel AI SDK all have native Groq integrations. **December 2025: NVIDIA agreed to a $20B licensing deal** — industry validation of LPU technology, but ~90% of engineering staff joined NVIDIA, creating platform continuity uncertainty. No custom models on public API. Fine-tuning not available; LoRA inference only for enterprise. Batch API (50% discount) and prompt caching on paid tiers. 30&#43; outages reported over 6 months. Part of our **Developer Tools** category. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-07 13:00:00</span></div>
   <h3><a href="/reviews/vllm-production-llm-serving/">vLLM — The Production Standard for LLM Serving (2026 Review)</a></h3>
   <p>vLLM (vllm-project/vllm, ~79K stars, Apache 2.0, Python) is the production standard for high-throughput LLM serving. PagedAttention manages GPU KV cache like OS virtual memory — near-zero memory waste, 14-24x throughput vs naive HuggingFace Transformers, continuous batching, prefix caching, chunked prefill, 7 speculative decoding methods. v0.20.1 (May 2026): FlashAttention 4, DeepSeek V4, CUDA 13.0, TurboQuant 2-bit KV cache. Disaggregated prefill via NIXL (2.5-3.8x throughput gains). **Inferact Inc. (January 2026): $150M seed, $800M valuation, a16z &#43; Lightspeed** to commercialize vLLM. Powers Amazon Rufus, LinkedIn Hiring Assistant, Roblox. Hugging Face TGI in maintenance mode — recommends vLLM. 10&#43; CVEs in Q1 2026 including critical pre-auth RCE (patched). No auth by default. Not suitable for Apple Silicon or edge/local dev — use Ollama/llama.cpp there. Part of our **Developer Tools** category. Rating: 4.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 12:00:00</span></div>
-  <h3><a href="/reviews/ollama-local-llm-runner/">Ollama — Run Local LLMs in One Command (2026 Review)</a></h3>
-  <p>Ollama (ollama/ollama, ~171K stars, MIT, Go) is the dominant tool for running LLMs locally. Pull any of 100&#43; models with one command; GPU acceleration auto-configures for NVIDIA CUDA, AMD ROCm, and Apple Silicon Metal. OpenAI-compatible API at localhost:11434 — any existing app can point at it. New MLX backend (preview, March 2026) doubles decode speed on Apple Silicon. v0.6.2: Llama 4, batch embeddings, Flash Attention v2.7, Windows ARM64 native. **No native MCP support** (GitHub issue #7865 open; llama.cpp merged MCP client March 2026). Windows auto-updater RCE (CVE-2026-42248/42249) unpatched as of May 2026. Best for: solo developers, local prototyping, privacy-sensitive use. Not suited for multi-user production serving — vLLM is the production answer. Part of our **Developer Tools** category. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-07 11:00:00</span></div>
-  <h3><a href="/reviews/portkey-ai-gateway-review/">Portkey — Open-Source AI Gateway, Now Headed to Palo Alto Networks (2026 Review)</a></h3>
-  <p>Portkey (Portkey-AI/gateway, ~11.6K stars, Apache 2.0, TypeScript) routes to 1,600&#43; LLMs across 250&#43; providers with built-in circuit breakers, fallbacks, load balancing, semantic caching, guardrails (50&#43;), and a native MCP Gateway with OAuth 2.1. Gateway 2.0 (March 24, 2026) open-sourced everything that previously required a SaaS subscription. Managed cloud tier at $49/month adds hosted observability, RBAC, and SOC2/HIPAA compliance. Acquired by Palo Alto Networks April 30, 2026 — deal expected to close fiscal Q4 2026; Portkey becomes the AI Gateway for Prisma AIRS. Main competitor to LiteLLM: Portkey wins on out-of-the-box observability and prompt management; LiteLLM wins on community size and developer control. CVE-2025-66405 (SSRF, CVSS 6.9) patched in v1.14.0. Part of our **Developer Tools** category. Rating: 4/5.</p>
 </div>
 
   
