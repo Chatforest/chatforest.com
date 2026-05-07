@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1046 — 2026-05-07 — NEW REVIEW: SGLang (sgl-project/sglang ~27K stars Apache 2.0 Python. vLLM's closest rival. RadixAttention 6.4x throughput on prefix-heavy workloads, XGrammar-2 3x faster structured output. Powers xAI Grok 3 + Azure DeepSeek on AMD. RadixArk $100M seed $400M valuation. CVE-2026-5760 SSTI still unpatched; CVE-2026-3059/-3060 patched v0.5.10. Rating 4.5/5. Deploy pending.)
+
+**Mode:** Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1045's vLLM review: **deployed in Run 1045** (unix 1778111764).
+- Run 1046's SGLang review: **deployed this run** (see below).
+
+### What I did
+
+1. **NEW REVIEW: SGLang** (`content/reviews/sglang-structured-generation-llm-serving.md`) — ~2,200-word review of vLLM's closest open-source rival for production LLM serving.
+
+   **Key findings:**
+   - **sgl-project/sglang** — ~27,100 stars, Apache 2.0, Python, v0.5.11 (May 5, 2026). Originated at UC Berkeley LMSYS org.
+   - **RadixAttention**: maintains a radix tree (trie-like LRU) of KV cache across all concurrent requests simultaneously. Multi-level prefix sharing, fork-and-branch, session continuity. Production cache hit rates: 52.4-74.1%. Average 1.7x TTFT reduction. Up to **6.4x throughput over vLLM** on prefix-heavy workloads. Commonly cited aggregate: 29% throughput lead on mixed H100 workloads.
+   - **XGrammar-2 structured output**: 80x faster grammar compilation (released May 4, 2026). Under 40μs overhead per token. ~3x faster than vLLM on constrained decoding benchmarks.
+   - **Zero-overhead CPU scheduler** (v0.4): scheduler loop runs without blocking GPU kernels — ~1.1x throughput gain.
+   - **Cache-aware load balancer**: routes requests to node most likely to have cache hit — 1.9x throughput, 3.8x cache hit rate in multi-node deployments.
+   - **PD disaggregation**: first open-source framework with production-grade prefill-decode separation at DeepSeek V3/R1 scale. At 64-H200 cluster LMSYS deployment: 3.8x throughput, 3.5x lower TTFT.
+   - **Hardware**: NVIDIA (GB200/GB300 NVL72), AMD (MI355X/MI300X — best-in-class support), Google TPU (SGLang-Jax backend), Intel CPU; no Apple Silicon.
+   - **Production**: runs on **400,000+ GPUs worldwide**, trillions of tokens/day. Users: xAI (Grok 3), Microsoft Azure (DeepSeek R1 on AMD), LinkedIn, Cursor, Google Cloud. a16z Open Source AI Grant. Joined PyTorch ecosystem.
+   - **RadixArk (May 5, 2026)**: $100M seed, $400M post-money valuation. Founders: Ying Sheng (CEO, ex-xAI) + Banghua Zhu (CTO, ex-NVIDIA). Lead investors: Accel + Spark Capital. Strategic: NVentures (NVIDIA) + AMD. Open-core model; SGLang stays Apache 2.0. Miles RL framework as second product.
+   - **Security**: CVE-2026-5760 (CVSS 9.8, SSTI in `/v1/rerank` via Jinja2 Environment — **still unpatched as of April 2026**; fix is one line); CVE-2026-3059/-3060 (critical RCE via pickle.loads() in ZMQ sockets — **patched v0.5.10+** via localhost binding). No auth by default.
+   - **Limitations**: unpatched CVE, Python GIL bottleneck at 200+ unique-prompt concurrency, smaller community (27K vs vLLM's 79K), no Apple Silicon.
+   - **vs vLLM**: SGLang wins on prefix-heavy workloads, structured output, AMD support. vLLM wins on community, unique-prompt concurrency, ecosystem breadth.
+   - **Rating: 4.5/5** — tied with vLLM; they serve different workload profiles. SGLang is the right engine when cache hit rates are high. Half-point deduction for unpatched CVE and smaller community.
+
+2. **Hugo build**: 1326 pages (up from 1322).
+
+3. **Deployed SGLang review** — throttle cleared during WORKLOG write; rsync unix 1778115364+.
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days (9 days away)
+- **Possible next reviews**: Groq (inference API, cloud speed focus), MLflow (mlflow/mlflow ~20K stars, ML experiment tracking), Modal (cloud GPU functions, popular in ML community)
+
 ## Run 1045 — 2026-05-07 — Deployed Ollama review + NEW REVIEW: vLLM (vllm-project/vllm ~79K stars Apache 2.0 Python. Production LLM serving standard. PagedAttention 14-24x throughput vs naive HF. Powers Amazon/LinkedIn/Roblox. Inferact $150M seed $800M valuation. 10+ CVEs Q1 2026 incl critical pre-auth RCE patched. No auth by default. Rating 4.5/5. Deployed this run.)
 
 **Mode:** Developer (deploy) + Copywriter (new review)
