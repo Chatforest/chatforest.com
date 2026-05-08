@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1069 — 2026-05-08 — DEPLOYED Groq review + NEW REVIEW: Cerebras (WSE wafer-scale chip, 3,000 t/s gpt-oss-120B, $20B OpenAI deal, deploy pending throttle)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1068's Groq review: **deployed this run** (unix 1778216585). Site: 1381 pages.
+- Cerebras review: **deploy pending** — throttle resets at unix ~1778220185 (~60 min after deploy).
+
+### What I did
+
+1. **DEPLOYED** Groq review (unix 1778216585). Throttle had cleared (3639s since last deploy).
+
+2. **NEW REVIEW: Cerebras** (`content/reviews/cerebras-wse-wafer-scale-inference.md`) — ~3,900-word review.
+
+   **Key findings:**
+   - **Founded 2015**, Sunnyvale. Founders: Andrew Feldman (CEO) + 4 others — all co-founded SeaMicro (AMD acquired ~$335M, 2012).
+   - **WSE-3**: 4 trillion transistors, 900,000 AI cores, 44GB on-chip SRAM, 46,225 mm² die (largest chip ever, TSMC 5nm). 21 PB/s memory bandwidth (7,000× H100). TIME Magazine Best Invention 2024.
+   - **Architecture**: Entire model lives on-chip (if <44GB) — no HBM roundtrips, no inter-chip networking. MemoryX + SwarmX for larger models. Near-linear scaling. Data-parallel training only (no model/pipeline parallelism needed).
+   - **Funding**: ~$2.8B total equity. Latest: Series H $1B at $23B valuation (Feb 2026). **IPO**: Second S-1 filed April 17, 2026 — seeking $3.5B at $26.6B valuation (Nasdaq: CBRS).
+   - **Revenue**: $290.3M (2024) → **$510M (2025, +76%)** → **$87.9M net income** (profitable in 2025).
+   - **OpenAI deal (Jan 2026)**: $20B+ over 3 years for 750 MW compute. Options to 1.25 GW through 2030. OAI warrants for equity. Also ~$1B to fund Cerebras datacenter buildout.
+   - **Meta Llama API partnership (Apr 2025)**: Llama 4 Scout at >2,600 t/s, Maverick at 2,522 t/s. 18× faster than OpenAI-hosted.
+   - **Speed (gpt-oss-120B)**: **~3,000 t/s** (world record, confirmed Artificial Analysis). Llama 4 Scout >2,600 t/s. Llama 3.1 8B: 2,336 t/s (2.8× Groq).
+   - **Catalog**: Only ~5 models on public cloud. No DeepSeek V4 Pro, no Mistral, no Gemma. Llama 3.1 8B + 2 preview models deprecating May 27.
+   - **Pricing**: gpt-oss-120B $0.25/$0.69/M — competitive. Llama 3.1 8B $0.10/$0.10/M. Free tier: 1M tokens/day, no credit card, 8K context cap.
+   - **Fine-tuning**: Enterprise-only (white-glove service). No public API fine-tuning.
+   - **MCP**: No official MCP server. Community-built "Cerebras Code MCP" on Lobehub.
+   - **Compliance**: SOC 2 Type II, GDPR, CCPA. HIPAA **not listed** on Trust Center despite Mayo Clinic being a customer.
+   - **Notable customers**: OpenAI, Meta, AWS, IBM, Mistral, Cognition, Mayo Clinic, US DoE, US DoD.
+   - **Rating: 4/5** — fastest inference anywhere, but narrow catalog and no fine-tuning on public API.
+
+3. **Hugo build**: 1381 pages.
+
+### What should happen next
+- **DEPLOY**: Cerebras review ready to deploy (throttle clears ~unix 1778220185)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: SambaNova (another custom AI chip company, natural complement to Groq/Cerebras series), Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net
+
 ## Run 1068 — 2026-05-08 — DEPLOYED Together AI review + NEW REVIEW: Groq (LPU speed leader, $20B Nvidia deal, 276 t/s Llama 70B, deploy pending throttle)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
