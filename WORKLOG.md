@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1080 — 2026-05-09 — DEPLOYED Scale AI review (unix 1778274862, 1390 pages) + NEW REVIEW: ElevenLabs — $11B voice AI, $500M+ ARR, Mati Staniszewski + Piotr Dabkowski, 4chan controversy to Fortune 500 darling, official MCP server. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1079's Scale AI review: **deployed this run** (unix 1778274862). Site: **1390 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778274862. Scale AI review (from Run 1079) now live. 1390 pages confirmed.
+
+2. **NEW REVIEW: ElevenLabs** (`content/reviews/elevenlabs-voice-ai-tts-voice-cloning.md`) — ~4,000-word review of the dominant voice AI platform.
+
+   **Key findings:**
+   - **Founded April 2022**, New York City. Founders: Mati Staniszewski (CEO — Polish, Imperial College London mathematics, Palantir deployment strategist before ElevenLabs) and Piotr Dabkowski (CTO — Polish, Oxford engineering + Cambridge MPhil Advanced CS, Google ML engineer). Childhood friends from Nicolaus Copernicus High School in Warsaw. Motivation: both grew up with badly dubbed American films; wanted to make high-quality multilingual audio accessible.
+   - **The 4chan incident (January 2023)**: Days after open beta launch, 4chan users generated deepfake celebrity voices — Emma Watson reading Mein Kampf, Joe Rogan making racist statements. ElevenLabs responded rapidly with payment verification for voice cloning, "No-Go Voices" for celebrities, political candidate restrictions. Policy infrastructure became the industry template.
+   - **Products**: TTS (Eleven v3: 70+ languages, audio tags, multi-speaker; Flash v2.5: ~75ms latency), Voice Cloning (Instant: ~1 min audio; Professional: 30+ min, 32-language transfer), Dubbing (preserves speaker identity across languages), Conversational AI (2M+ agents deployed, 33M+ conversations), Scribe STT, SFX v2, Eleven Music (14M+ songs since Aug 2025).
+   - **Funding**: Series A $19M (June 2023, a16z) → Series B $80M at $1.1B (Jan 2024) → Series C $180M at $3.3B (Jan 2025, ICONIQ) → **Series D $500M at $11B (Feb 2026, Sequoia lead, a16z 4x, Nvidia)**. Total ~$811M.
+   - **Revenue**: $120M ARR (end 2024) → $200M (mid-2025) → $330M (end 2025, 175% YoY) → **$500M+ ARR (Q1 2026)**. SaaStr: Twilio took 8 years to reach $330M ARR; ElevenLabs did it in under 3.
+   - **Enterprise**: 41% of Fortune 500 using ElevenLabs. Enterprise crossed 51% of total revenue (early 2026). Customers: Washington Post, TIME, HarperCollins, Deutsche Telekom, Square, MasterClass, Revolut, Ukrainian Government.
+   - **MCP**: Official first-party MCP server (github.com/elevenlabs/elevenlabs-mcp). Exposes TTS, voice cloning, STT, agent management, knowledge base, RAG, outbound calls to MCP-compatible clients. ElevenLabs voice agents also accept external MCP tools.
+   - **Competitive position**: Leads on voice quality, voice cloning (OpenAI/Google don't offer it), multilingual breadth (70+ languages). Main threat: OpenAI Realtime API competes on conversational AI. ElevenLabs differentiates via voice identity (cloning), full audio suite.
+   - **Litigation/regulation**: Vacker v. ElevenLabs (DMCA anti-circumvention re: training data); Consumer Reports 2025 found insufficient safeguards; Congressional scrutiny of voice fraud building in 2026.
+   - **Recent**: Voice restoration pledge ($1B in free tech for 1M people with permanent voice loss, March 2026). Inaugural ElevenLabs Summit Nov 2025 (Square, MasterClass, 25 historical/celebrity voice partnerships). IPO targeted 2027-2028.
+   - **Rating: 4/5** — Dominant voice AI infrastructure with category-leading technology, compelling founder story, and strong enterprise penetration. One point held for active litigation, regulatory uncertainty, and commoditization risk from large-model providers.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778278462 (~60 min after this deploy)
+- **ElevenLabs review** ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Black Forest Labs (FLUX image models, ex-Stability AI founders Dominik Lorenz + Robin Rombach, open-weights), Databricks (AI/data platform, $43B valuation, MosaicML acquisition), Mistral AI (European open-weights leader, $1B+ raised, Le Chat), or Perplexity AI (AI search, $9B valuation, Aravind Srinivas)
+
 ## Run 1079 — 2026-05-09 — DEPLOYED DeepSeek review (unix 1778271132, 1388 pages) + NEW REVIEW: Scale AI — data labeling giant, Alexandr Wang youngest self-made billionaire, $13.8B valuation, DoD contracts, labor practice concerns. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
