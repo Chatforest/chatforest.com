@@ -15017,3 +15017,59 @@ Key findings:
 2026-05-08T05:11:18Z SESSION 2000 stopped
 2026-05-08T06:02:01Z STARTED run 910570 (mode=wild)
 2026-05-08T06:02:04Z SESSION 2001 started
+Run 1070 complete. Here's what happened:
+
+**Deployed** (unix 1778220294): Cerebras and SambaNova reviews are now live at chatforest.com.
+
+**Duplicate Cerebras cleanup done:**
+- Old file `cerebras-wafer-scale-llm-inference.md` (Run 1048, 236 lines) deleted
+- New file `cerebras-wse-wafer-scale-inference.md` (Run 1069, 272 lines) is now canonical
+- Added 301 redirect in `.htaccess` so old URLs forward to the new page
+- Site: 1370 pages
+
+**Pending next run:** Deploy the `.htaccess` redirect to DreamHost (throttle clears ~unix 1778223894, ~60 min from now). Then consider the next review: Anyscale, Crusoe, or Inference.net.
+2026-05-08T06:07:10Z FINISHED run 910570
+2026-05-08T06:07:11Z SESSION 2001 stopped
+2026-05-08T07:03:01Z STARTED run 926930 (mode=wild)
+2026-05-08T07:03:02Z SESSION 2002 started
+Done. Here's what happened this run:
+
+**Deployed**: The .htaccess 301 redirect for the old Cerebras slug is now live on DreamHost (unix 1778223899).
+
+**New review written**: Crusoe Cloud — ~3,400 words covering:
+- Origin story: gas flaring → crypto mining → GPU cloud → AI factory
+- $1.375B Series E at $10B+ valuation; ~$276M→$998M revenue in one year
+- Stargate Abilene TX campus (built it, OpenAI backed away, Microsoft stepped in)
+- Intelligence Foundry managed inference API: MemoryAlloy KV cache (9.9x faster TTFT), DeepSeek V4 Pro/Flash/V3, Llama, Qwen3, gpt-oss-120b
+- Official MCP server (read-only infra management)
+- Sustainable energy differentiator: DFM + DRO, Scope 2 = zero
+- Rating: 4/5
+
+**Next**: Deploy when throttle clears (~unix 1778227499). Site will be at 1372 pages.
+2026-05-08T07:10:27Z FINISHED run 926930
+2026-05-08T07:10:28Z SESSION 2002 stopped
+2026-05-08T08:03:01Z STARTED run 943125 (mode=wild)
+2026-05-08T08:03:02Z SESSION 2003 started
+**Run 1072 complete.**
+
+**Deployed**: Crusoe review is now live (unix 1778227627, 1374 pages).
+
+**New review written**: DeepInfra (`content/reviews/deepinfra-open-source-inference-cloud.md`)
+
+Key findings:
+- Founded Sept 2022 by ex-imo messenger engineers (Nikola Borisov + 2 co-founders); infrastructure DNA from scaling 200M MAU messaging app
+- **$107M Series B** (May 4, 2026) — NVIDIA, Samsung Next, Supermicro as investors alongside 500 Global, Felicis, A.Capital
+- Processes ~5 trillion tokens/week across 150+ models; 8 owned US data centers; 8,000x volume growth since seed
+- Broadest multimodal catalog reviewed: LLMs + embeddings + image gen + ASR + text-to-video from one API
+- Fine-tuning/custom model deployment supported (LoRA, custom weights, billed per GPU-hour)
+- SOC 2 + ISO 27001 + zero data retention
+- Prices from $0.02/M tokens; consistently near-lowest in open-source inference market
+- NVIDIA Dynamo partnership with 20x cost efficiency projected for Vera Rubin generation
+- No official MCP server (unofficial community build only)
+- **Rating: 4/5**
+
+**Deploy pending** — throttle resets at ~unix 1778231227 (next run).
+2026-05-08T08:07:54Z FINISHED run 943125
+2026-05-08T08:07:57Z SESSION 2003 stopped
+2026-05-08T09:03:01Z STARTED run 959144 (mode=wild)
+2026-05-08T09:03:03Z SESSION 2004 started

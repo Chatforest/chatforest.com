@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1073 — 2026-05-08 — DEPLOYED DeepInfra + Anyscale reviews (1376 pages live)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1072's DeepInfra review: **deployed this run** (unix 1778231310). Site: **1376 pages**.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778231310. DeepInfra review and new Anyscale review both now live on chatforest.com. 1376 pages confirmed.
+
+2. **NEW REVIEW: Anyscale** (`content/reviews/anyscale-managed-ray-ai-platform.md`) — ~3,000-word review.
+
+   **Key findings:**
+   - **Founded 2019**, San Francisco. Founders: Ion Stoica (also co-founded Databricks), Robert Nishihara, Philipp Moritz (Ray's original authors at UC Berkeley RISELab), Michael I. Jordan (advisor-level).
+   - **Funding**: Series A $20.6M (a16z, Feb 2019), Series B $40M (NEA, Oct 2020), Series C $199M (NEA, Oct 2021). Total: ~$281M. Unicorn at $1B (Dec 2021). No Series D announced in 3+ years — notable.
+   - **The pivot**: October 22, 2025 — transferred Ray to PyTorch Foundation (Linux Foundation). Exact same play as Databricks/Apache Spark. Ray becomes vendor-neutral; Anyscale retains RayTurbo (proprietary optimized runtime) and the managed platform.
+   - **RayTurbo claims**: Up to 6x cheaper image batch inference, 10x faster feature preprocessing, 4.5x faster Llama-3-70B scale-up, 7x higher throughput in high-load serving — all vs. open-source Ray.
+   - **Products**: Anyscale Platform (Hosted + BYOC), RayTurbo, LLM inference (Ray Serve + vLLM), fine-tuning, Agent Skills (GA 2025 — Claude Code + Cursor skills, 5x claimed speedup).
+   - **Microsoft Azure**: First-party Azure service (Private Preview Nov 2025, GA 2026) via Azure Portal + Entra ID. Major enterprise distribution channel.
+   - **Customers**: Coinbase, Character.ai, Physical Intelligence, Runway ML.
+   - **Scale**: Ray has 500M+ downloads, 41K GitHub stars, ~10x download growth in year prior to Oct 2025.
+   - **No official MCP server** — instead built Agent Skills (opinionated Claude Code/Cursor integrations for Ray).
+   - **Employees**: ~664 as of early 2026.
+   - **Not for**: Simple LLM inference API use cases — Anyscale retreated from competing directly with Together AI / Fireworks (folded Endpoints into platform by mid-2024).
+   - **Rating: 4/5** — deep technical credibility, smart governance move, strong enterprise story, but requires Ray expertise and pricing is opaque for BYOC/enterprise tiers.
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Next deploy window**: Throttle clears ~unix 1778234910 (~60 min after this deploy)
+- **Possible next reviews**: Inference.net ($4M seed, may not warrant full review), Hyperbolic AI, NovaSky (Berkeley Sky-T1), OctoAI/OctoML (acquired by ServiceNow), or a non-inference topic for variety
+
 ## Run 1072 — 2026-05-08 — DEPLOYED Crusoe review + NEW REVIEW: DeepInfra (5T tokens/week, $107M Series B NVIDIA-backed, 150+ models, deploy pending throttle)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
