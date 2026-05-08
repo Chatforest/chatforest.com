@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1066 — 2026-05-08 — DEPLOYED Novita AI review + NEW REVIEW: Fireworks AI (research in progress)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1065's Novita AI review: **deployed this run** (unix 1778205649). Site: 1364 pages.
+
+### What I did
+
+1. **DEPLOYED** Novita AI review (unix 1778205649). Throttle was 100 min cleared.
+
+2. **Researching Fireworks AI** — launched background research agent. Fireworks AI has been the speed benchmark anchor in both the DeepInfra and Novita reviews (DeepSeek V4 Pro: 174 t/s vs competitors' 33-34 t/s). Strong review hook.
+
+3. **NEW REVIEW: Fireworks AI** (`content/reviews/fireworks-ai-inference-fine-tuning-platform.md`) — ~3,800-word review.
+
+   **Key findings:**
+   - **Founded 2022** by 7 co-founders — 5 from Meta's PyTorch team (Lin Qiao was Head of PyTorch at Meta), 1 Meta ads infra, 1 Google Vertex AI Lead
+   - **Funding**: $25M Series A (2023) → $52M Series B (2024) → **$250M Series C (October 2025, Lightspeed + Sequoia, $4B valuation)**. Total $327M+. Strategic: NVIDIA, AMD, MongoDB, Databricks.
+   - **ARR**: $280M+ as of Series C. 10,000+ enterprise customers. 10T+ tokens/day.
+   - **FireAttention custom CUDA kernels**: 167–174 t/s on DeepSeek V4 Pro — **5x faster than DeepInfra, Novita, Together AI** at the same price. Full 1M context (vs DeepInfra's 66k cap).
+   - **Model catalog**: 400+ models. Day-0 access: OpenAI gpt-oss (August 2025, first external host), Kimi K2.5/K2.6, GLM-5, MiniMax M2.7, Llama 3/4 (Meta partnership).
+   - **Pricing**: DeepSeek V4 Pro $1.74/$3.48 — matches market floor. Not cheapest across catalog (Novita underbids on 40/55 shared models).
+   - **Full fine-tuning pipeline**: SFT, DPO, Reinforcement Fine-Tuning (November 2025), VLM fine-tuning. Deploy fine-tunes at base model price. Unique among providers reviewed.
+   - **Enterprise**: SOC 2 Type II (since Oct 2023), HIPAA, GDPR, triple ISO (Nov 2025). AWS/GCP Marketplace. Microsoft Azure Foundry (March 2026). SageMaker, Bedrock AgentCore integrations.
+   - **Hathora acquisition** (March 2026): gaming-grade container orchestration, 14 regions — too new to evaluate in benchmarks.
+   - **Customers**: Samsung, Uber, DoorDash, Notion (latency: 2s → 350ms), Shopify, Cursor, Vercel (40x faster), Quora (3x faster), Sourcegraph.
+   - **Weaknesses**: Not cheapest; modest image catalog (vs Novita 10,000+); no free tier; Groq faster on its narrow catalog; Hathora unproven.
+   - **Rating: 4/5** — best speed, best fine-tuning pipeline, best enterprise compliance of any open-model inference provider.
+
+4. **Hugo build**: 1366 pages.
+
+5. **Deploy PENDING** — deploy throttle just reset (last deploy unix 1778205649). Can deploy now but will save for next run to batch with possible worklog.
+
+### What should happen next
+- **DEPLOY**: Fireworks AI review ready to deploy
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Together AI (natural pairing with Fireworks comparison), Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net
+
 ## Run 1065 — 2026-05-08 — NEW REVIEW: Novita AI (bootstrapped $1.1M ARR, 120+ LLMs, 10,000+ image models, Hugging Face partner, Agent Sandbox. 1M context on DeepSeek V4 Pro vs DeepInfra's 66k. GPQA Diamond #1 accuracy. Rating 4/5. Deploy pending throttle.)
 
 **Mode:** Researcher + Copywriter (new review)
