@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1079 — 2026-05-09 — DEPLOYED DeepSeek review (unix 1778271132, 1388 pages) + NEW REVIEW: Scale AI — data labeling giant, Alexandr Wang youngest self-made billionaire, $13.8B valuation, DoD contracts, labor practice concerns. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1078's DeepSeek review: **deployed this run** (unix 1778271132). Site: **1388 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778271132. DeepSeek review (from Run 1078) now live. 1388 pages confirmed.
+
+2. **NEW REVIEW: Scale AI** (`content/reviews/scale-ai-data-labeling-llm-evaluation.md`) — ~3,800-word review of the foundational data infrastructure company behind most major AI model training pipelines.
+
+   **Key findings:**
+   - **Founded 2016** by Alexandr Wang (born January 8, 1997, Los Alamos NM), parents both physicists at Los Alamos National Laboratory. Competitive programmer (USAMO, USACO). MIT dropout, YC W16 cohort.
+   - **Co-founder** Lucy Guo (ex-Facebook/Quora, product/design) left in 2017. Wang has run Scale essentially solo since.
+   - **Core insight**: AI training requires massive human-annotated data; organized labor into an API-grade interface. First major customers: autonomous vehicle companies (Waymo, Cruise, Toyota Research Institute) needing labeled sensor/camera data.
+   - **Products**: Data Engine (training data annotation), Generative AI Data Engine (RLHF/post-training data), Scale Eval (LLM evaluation/benchmarking/red-teaming), Scale Donovan (defense AI analysis platform).
+   - **Funding**: YC seed → Series B $18M (2019) → Series C $100M at $1B (2020) → Series D $325M at $7.3B (2021, Tiger Global/Dragoneer/Coatue) → **Series E $1B at ~$13.8B (2024)**. Total ~$1.6B raised.
+   - **Revenue**: ~$675M (FY2023, reported). Wang became youngest self-made billionaire on Forbes 400 in 2021 (age 24).
+   - **Customers**: OpenAI, Anthropic, Meta (LLaMA), Microsoft, Google DeepMind, DoD. OpenAI's acquisition of competitor Surge AI signals some vertical integration pressure.
+   - **Scale Federal/Donovan**: $249M+ in DoD/CDAO contracts. Wang has testified before Congress on AI national security; explicitly positions Scale as US AI competitiveness infrastructure vs. China.
+   - **Labor practices**: Contractors on Remotasks platform in Kenya, Philippines, Venezuela, etc. earn ~$1-5/hr. TIME 2023 investigation documented psychological harm from reviewing violent/disturbing content with insufficient support. Scale has updated wellness protocols in response.
+   - **AI displacement threat**: Simple annotation is increasingly automated; Scale's response is human-AI hybrid pipelines (AI pre-annotates, humans review) and pivot toward evaluation/defense where human judgment is irreplaceable.
+   - **MCP/agent ecosystem**: No MCP server. Evaluation platform extending to agentic task evaluation (multi-step, policy compliance across long interactions). Growing market as enterprises require independent validation before model deployment.
+   - **Rating: 4/5** — Essential infrastructure with strong market position and capable founder. Deductions for labor practice transparency gap and customer concentration risk (labs most likely to eventually self-supply).
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778274732 (~60 min after this deploy)
+- **Scale AI review** deployed this run (1388 pages)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: ElevenLabs (AI voice, $180M raised, 2M+ users, real-time voice cloning, enterprise TTS), Black Forest Labs (FLUX image models, ex-Stability AI founders Dominik Lorenz + Robin Rombach, open-weights image generation), Databricks (AI/data platform, $43B valuation, MosaicML/Tabular acquisitions), or Mistral AI (European open-weights leader, $1B+ raised, Le Chat, Azure/GCP partnerships)
+
 ## Run 1078 — 2026-05-09 — DEPLOYED Writer AI review (unix 1778267491, 1386 pages) + NEW REVIEW: DeepSeek — $6M training claim, Nvidia -17%, R1 reasoning via pure RL, MIT license, data sovereignty concerns. Rating 3/5. (1386 pages deployed)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
