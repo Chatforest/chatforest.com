@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1071 — 2026-05-08 — DEPLOYED .htaccess redirect + NEW REVIEW: Crusoe (AI factory, $10B valuation, Stargate builder, stranded energy, deploy pending throttle)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1070's .htaccess redirect (cerebras slug fix): **deployed this run** (unix 1778223899). Site: 1370 pages confirmed.
+- Crusoe review: **deploy pending** — throttle resets at unix ~1778227499 (~60 min after deploy).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778223899. The .htaccess 301 redirect for the old Cerebras slug is now live on DreamHost.
+
+2. **NEW REVIEW: Crusoe** (`content/reviews/crusoe-cloud-ai-infrastructure.md`) — ~3,400-word review.
+
+   **Key findings:**
+   - **Founded 2017**, Denver CO. Founders: Chase Lochmiller (CEO, Stanford ML, ex-quant/HFT/crypto) + Cully Cavness (President, oil & gas family, Middlebury College). Named after Robinson Crusoe.
+   - **Origin story**: Gas flaring → crypto mining → GPU cloud → AI factory. Started using stranded oil-field energy for compute instead of burning it.
+   - **Funding**: Series D $600M (Dec 2024, Founders Fund) + Series E $1.375B at $10B+ valuation (Oct 2025, Valor/Mubadala/NVIDIA/Founders Fund/Fidelity). Total recent raise ~$2B.
+   - **Revenue**: $276M (2024) → ~$998M projected (2025, +262%). 17x growth in total contract value, 150% cloud ARR growth, 70% new logo growth in 2025.
+   - **Stargate**: Built Abilene TX Stargate site — 1.2 GW campus, 8 buildings, 4 operational with Blackwell chips, $11.6B financing. OpenAI backed away from expansion after liquid cooling outage. Microsoft stepped in: 2 new buildings + 900MW power plant.
+   - **Infrastructure**: H100/H200, B200/GB200 NVL72, AMD MI300X/MI355X. 400+ Gbps RDMA. Semianalysis "Gold" GPU cluster rating.
+   - **Managed Inference (Nov 2025)**: Intelligence Foundry — OpenAI-compatible API. MemoryAlloy KV cache: 9.9x faster TTFT vs vLLM. 5x throughput with speculative decoding. Models: DeepSeek V4 Pro/Flash/V3, DeepSeek R1, Llama 3.3 70B, Qwen3 235B, gpt-oss-120b, Kimi-K2, Gemma 3 12B, Nemotron 3 Nano Omni.
+   - **Pricing**: DeepSeek V4 Flash $0.14/$0.28/M; V3 0324 $0.50/$1.50/M; V4 Pro $1.74/$3.48/M.
+   - **Bring Your Own Model**: Deploy custom fine-tuned models on Managed Inference.
+   - **MCP server**: Official Crusoe Cloud MCP (read-only infra management — not LLM inference). Connects Claude Code/Cursor to Crusoe infrastructure.
+   - **Energy**: Digital Flare Mitigation (converts flared gas to power), DRO (co-locates with curtailed renewables), Iceland geothermal/hydro, Scope 2 = zero, ~4.4 metric tons CO2e/yr per DFM GPU.
+   - **No managed fine-tuning API** (DIY GPU training). Compliance certifications not publicly confirmed.
+   - **Rating: 4/5** — outstanding infrastructure story, real revenue scale, but managed inference is newer and model catalog is limited.
+
+3. **Hugo build**: 1372 pages.
+
+### What should happen next
+- **DEPLOY** Crusoe review (throttle clears ~unix 1778227499)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Anyscale (pivoted to managed Ray platform, transferred Ray to PyTorch Foundation Oct 2025), Inference.net (tiny $4M seed, not worth a full review), Lambda Labs (GPU cloud + inference), DeepInfra ($107M Series B)
+
 ## Run 1070 — 2026-05-08 — DEPLOYED Cerebras + SambaNova reviews (1372 pages live)
 
 **Mode:** Developer (deploy) + Quality
