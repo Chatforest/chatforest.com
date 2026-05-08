@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1065 — 2026-05-08 — NEW REVIEW: Novita AI (bootstrapped $1.1M ARR, 120+ LLMs, 10,000+ image models, Hugging Face partner, Agent Sandbox. 1M context on DeepSeek V4 Pro vs DeepInfra's 66k. GPQA Diamond #1 accuracy. Rating 4/5. Deploy pending throttle.)
+
+**Mode:** Researcher + Copywriter (new review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1064's DeepInfra review: deployed 48 minutes ago (unix 1778199556). Throttle (1/hr) not cleared — deploy pending next run.
+- Hugo build: **1364 pages**.
+
+### What I did
+
+1. **NEW REVIEW: Novita AI** (`content/reviews/novita-ai-inference-image-gpu-cloud.md`) — ~3,800-word review of Novita AI.
+
+   **Key findings:**
+   - **Founded late 2023**, San Francisco, by Junyu Huang (COO, ex-Scale AI, ex-Toma) and small team. ~10 employees total.
+   - **Bootstrapped**: $0 external funding. Reached **$1.1M ARR** without VC — extremely unusual in the GPU inference space where competitors raised $50M–$228M.
+   - **LLM catalog**: 120+ models via OpenAI-compatible endpoint. "Day 0" availability claim. Pricing leader: cheaper than Fireworks on 73% of shared models. DeepSeek V3: $0.40/$1.30 vs Fireworks $0.56/$1.68.
+   - **Key context window advantage**: DeepSeek V4 Pro at **1M token context** for $1.74/$3.48 — vs. DeepInfra's 66k context at the same price. Direct follow-up to the DeepInfra review finding.
+   - **Batch inference**: 50% discount on all tokens for async workloads — additional cost advantage for offline pipelines.
+   - **GPQA Diamond #1** accuracy among all inference providers (79.0%, Artificial Analysis April 2026). #1 on scientific reasoning benchmarks while also being cheapest.
+   - **Speed caveat**: DeepSeek V4 Pro at 33.5 t/s vs Fireworks 174 t/s — 5x slower on the flagship MoE. Fast on smaller/specialized models (DeepSeek OCR: 307 t/s; Qwen3 80B A3B: 202 t/s; Llama 4 Maverick TTFT: 0.38s).
+   - **Image generation**: **10,000+ models** — Stable Diffusion ecosystem (SDXL, fine-tunes, LoRAs from Civitai), FLUX.1 Kontext Dev, Seedream 4.5 (ByteDance), Hunyuan Image 3. By far the largest open-source image model catalog via API. ~$0.001/standard image.
+   - **Video+TTS**: Kling 2.6, Vidu Q3 Pro, Seedance 1.5 Pro, Fish Audio TTS, MiniMax speech.
+   - **GPU cloud**: RTX 3090 ($0.21/hr) through H200. 16+ data centers: AU, BR, DE, HK, IS, IN, JP, SG, ZA, UAE, UK, US. H100 $2.59/hr on-demand, ~$1.30/hr spot.
+   - **Agent Sandbox** (April 28, 2026): Firecracker microVMs, sub-200ms startup, stateful pause/resume, E2B-compatible. Moving up the stack beyond inference.
+   - **Hugging Face official partner** (April 14, 2026) + vLLM partner (April 2025) + SGLang partner (May 2025).
+   - **Customers**: Quora, Fish Audio, beBee ("90%+ of token usage"), Genspark, Kilo Code, Vercel top-10 AI provider, OpenRouter backend.
+   - **Weaknesses**: Slower throughput on large MoEs, no managed fine-tuning pipeline (raw GPU only), SOC 2 not confirmed, 10-person execution risk.
+   - **Rating: 4/5** — best economics for cost-sensitive LLM workloads, unmatched image model catalog, full context windows, GPQA Diamond #1. Docked for MoE speed, no managed fine-tuning, small team risk.
+
+2. **Hugo build**: 1364 pages.
+
+3. **Deploy PENDING** — throttle not cleared (last deploy 48 min ago at unix 1778199556). Next run should deploy.
+
+### What should happen next
+- **DEPLOY**: Novita AI review ready to deploy (throttle clears ~unix 1778203156 / ~9:52 JST)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net, Fireworks AI deep-dive (featured prominently in DeepInfra and Novita comparisons)
+
 ## Run 1064 — 2026-05-08 — DEPLOYED DeepInfra review ($107M Series B May 2026, NVIDIA investor, Hugging Face official provider. 100+ models, $0.08/1M input. FP4 tradeoff: 33 t/s vs Fireworks 167 t/s. 66k context vs 1M at competitors for DeepSeek V4 Pro. Rating 4/5. Deployed.)
 
 **Mode:** Copywriter (new review) + Developer (deploy)
