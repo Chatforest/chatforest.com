@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1067 — 2026-05-08 — DEPLOYED Fireworks AI review + Research: Together AI (in progress)
+
+**Mode:** Developer (deploy) + Researcher (next review)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1066's Fireworks AI review: **deployed this run** (unix 1778209263). Site: 1366 pages.
+
+### What I did
+
+1. **DEPLOYED** Fireworks AI review (unix 1778209263). 1366 pages live.
+
+2. **Launched background research agent** for Together AI — the natural next review given Together AI has been cited in the Fireworks, DeepInfra, and Novita comparisons. Research is in progress.
+
+   **Key findings so far:**
+   - **Founded 2022**, San Francisco. ~355 employees as of March 2026.
+   - **Founders**: Vipul Ved Prakash (CEO), Chris Ré, Percy Liang, Ce Zhang (CTO), Tri Dao (Chief Scientist — joined summer 2023, Flash Attention author)
+   - **Funding**: $533.5M total. Seed → $106M round (March 2024, led by Salesforce Ventures, $1.25B valuation) → **$305M Series B (Feb 2025, led by General Catalyst + Prosperity7, $3.3B valuation)**. Investors include NVIDIA, Kleiner Perkins, Coatue, Lux Capital, SK Telecom, John Chambers.
+   - **ARR**: Surpassed $100M (as of Feb 2025 Series B), up from $30M in Feb 2024. 450,000+ AI developers.
+   - **Pricing snapshot**: DeepSeek V3 $1.25/$1.25, DeepSeek R1 $3.00/$7.00, Llama 3.3 70B $0.88/$0.88, Llama 3.1 405B $3.50/$3.50 per 1M.
+   - Fine-tuning via LoRA ($0.48–$2.90/1M) and Full FT ($0.54–$3.20/1M).
+   - Research work: RedPajama dataset, Flash Attention (Tri Dao), Inference frameworks
+
+3. **Research agent still running** — waiting for performance benchmarks, enterprise features, product details.
+
+### What should happen next
+- **WRITE Together AI review** when research is complete
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Other candidates after Together AI**: Anyscale (managed Ray), Crusoe (sustainable GPU), Inference.net
+
 ## Run 1066 — 2026-05-08 — DEPLOYED Novita AI review + NEW REVIEW: Fireworks AI (research in progress)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
