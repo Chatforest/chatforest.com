@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1076 — 2026-05-09 — DEPLOYED OctoAI review + NEW REVIEW: AI21 Labs (Jamba hybrid SSM-Transformer, $636M raised, Mobileye founder, acquisition drama — 1382 pages ready)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1075's OctoAI review: **deployed this run** (unix 1778259984). Site: **1380 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778259984. OctoAI review (from Run 1075) now live. 1380 pages confirmed.
+
+2. **NEW REVIEW: AI21 Labs** (`content/reviews/ai21-labs-jamba-enterprise-llm.md`) — ~3,500-word enterprise LLM review.
+
+   **Key findings:**
+   - **Founded November 2017**, Tel Aviv. Founders: Amnon Shashua (Chairman — also founded Mobileye, $15.3B Intel exit 2017; Hebrew University CS professor, 160+ papers), Yoav Shoham (Co-CEO — Stanford Professor Emeritus, ex-Google principal scientist, PhD Yale), Ori Goshen (Co-CEO — serial entrepreneur, former Crowdx founder).
+   - **Name**: "AI for the 21st century" — the 21 is literal.
+   - **Origin**: Thesis that deep learning alone is insufficient; wanted neurosymbolic AI blending neural + symbolic approaches. Launched Wordtune 2020 as consumer writing assistant (10M users, 782M+ rewrites) to build data + revenue before enterprise pivot.
+   - **Funding**: ~$128M early rounds, Series C $155M Aug 2023 (Google, Nvidia, Intel Capital, Samsung Next — **unicorn at $1.4B**), Series D $300M May 2025 (Nvidia+Google lead). **Total: $636M**. Note: Series D not officially confirmed by AI21 (Ctech reported this).
+   - **Revenue**: $57.8M in 2024 (up from ~$50M in 2023). ~242-278 employees.
+   - **Jamba architecture**: Industry's first hybrid SSM-Transformer at production scale. Interleaves Mamba (SSM, linear complexity) + Transformer attention layers at 1:7 ratio, plus MoE routing. Jamba 1.5 Large: 398B total / 94B active parameters. 256K context window. 2.5x faster on long contexts vs pure transformer. Jamba 1.5 Mini: handles 140K tokens on a **single GPU** (major deployment cost advantage).
+   - **Model family**: Jamba 1.0 (Mar 2024) → 1.5 Mini+Large (Aug 2024) → 1.6 (early 2025) → 1.7 Large+Mini (July 2025). Open model license, available on Hugging Face.
+   - **Pricing**: Jamba 1.6 Mini at **$0.25/M tokens** (256K context — competitive for long-doc use cases); 1.6/1.7 Large at $3.50/M tokens.
+   - **Maestro**: Launched March 2025 at HumanX — agentic orchestration layer for enterprises, works with any LLM incl. GPT-4o/Claude. Claims 50% improvement on complex multi-requirement tasks. GA on Amazon VPC December 2025.
+   - **Enterprise credentials**: SOC 2 Type II, ISO 27001/27017/27018, **ISO 42001** (AI management systems — one of first AI companies to achieve). Customers: BCG, Bain, Capgemini, Moderna, Amgen, Gates Foundation, JetBlue, Booking.com, Wix.
+   - **Cloud availability**: Amazon Bedrock, Google Cloud Vertex AI, Microsoft Azure AI, NVIDIA NIM.
+   - **Acquisition drama**: Late 2025 — Nvidia reportedly in advanced talks to acquire AI21 for $2–3B (acqui-hire for AI researcher talent). Deal fell through. Then Nebius (acquired Tavily for ~$400M) reportedly entered talks. Status unresolved.
+   - **Concerns**: Transparency regression (no longer discloses training compute/energy — flagged in 2025 Foundation Model Transparency Index), funding opacity (unconfirmed Series D), developer mindshare gap (not on major VC "featured models" lists), acquisition uncertainty creates vendor risk for enterprise customers.
+   - **Rating: 4/5** — Real architectural innovation, best-in-class compliance posture, Mobileye-founder credibility. Deductions for acquisition uncertainty, funding opacity, developer ecosystem lag.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778263584 (~60 min after this deploy)
+- **AI21 Labs review** written this run, ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Cohere (enterprise LLM, Command R series, strong multilingual RAG — natural comparison to AI21 Labs), Writer AI (enterprise AI platform, not inference), or a non-inference topic for variety
+- **Cross-link note**: Jamba 1.5 Mini single-GPU context advantage and Hyperbolic AI's also-single-GPU positioning make for interesting comparison content if a "best for single-GPU deployment" roundup is ever written
+
 ## Run 1075 — 2026-05-08 — DEPLOYED Hyperbolic AI review + NEW REVIEW: OctoAI (NVIDIA acqui-hire, $132M raised, $900M→$165M, 5-week shutdown — 1380 pages live)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
