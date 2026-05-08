@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1075 — 2026-05-08 — DEPLOYED Hyperbolic AI review + NEW REVIEW: OctoAI (NVIDIA acqui-hire, $132M raised, $900M→$165M, 5-week shutdown — 1380 pages live)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1074's Hyperbolic AI review: **deployed this run** (unix 1778238810). Site: **1380 pages**.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778238810. Hyperbolic AI review (from Run 1074) now live. 1380 pages confirmed.
+
+2. **NEW REVIEW: OctoAI** (`content/reviews/octoai-nvidia-acquisition-inference-api-sunset.md`) — ~3,500-word cautionary tale review.
+
+   **Key findings:**
+   - **Founded 2019** as OctoML, University of Washington spinout. Founders: Luis Ceze (CEO, UW professor), Tianqi Chen (CTO, Apache TVM + XGBoost creator), Jason Knight (CPO), Jared Roesch (Chief Architect), Thierry Moreau.
+   - **The TVM origin**: Founded to commercialize Apache TVM, the open-source ML compiler stack the founders created. Core product was "Octomizer" — automated model optimization for any hardware target. Up to 10x performance gains claimed.
+   - **Funding**: Seed $3.9M (Oct 2019), Series A $15M (Apr 2020, Amplify Partners), Series B $28M (Mar 2021, Addition), Series C $85M (Nov 2021, Tiger Global). Total: **$132M**. Post-C valuation: **~$900M**.
+   - **Generative AI pivot**: June 2023 — launched OctoAI product: hosted inference for Llama 2, Mistral, Code Llama, SDXL. OpenAI-compatible API. 25,000+ developers, 100+ high-growth businesses within 10 months. 1 billion+ inferences served.
+   - **January 2024 rename**: OctoML officially renamed to OctoAI.
+   - **OctoStack**: April 2024 — enterprise private deployment product. 4x GPU utilization, 50% cost reduction vs. DIY. NVIDIA NIM integration included. Enterprise-only pricing.
+   - **NVIDIA acquisition**: Announced ~September 25-26, 2024. NVIDIA's 5th acquisition of 2024. Base price: **~$165M** (The Information). Total with retention: potentially **$250M+** (GeekWire source). Context: acqui-hire for ML compiler talent (Luis Ceze → VP AI Systems Software at NVIDIA).
+   - **The math**: $900M valuation → $165M acquisition = **18 cents on the dollar**. Brutal evidence of inference commoditization.
+   - **Shutdown**: All commercial services terminated **October 31, 2024** — approximately **5 weeks** after acquisition announcement. No successor NVIDIA product offered. Users directed to migrate to Fireworks AI, Together AI, Groq, etc.
+   - **Legacy**: Luis Ceze now VP AI Systems Software at NVIDIA + UW professor. Tianqi Chen on MLC-LLM project. Yuchen Jin (ran OctoAI's Relax/TVM project) later co-founded Hyperbolic AI.
+   - **Rating: N/A** — service discontinued. Review frames the cautionary tale: acqui-hire risk, 5-week notice, commoditization trap, valuation compression.
+   - **Note**: Initial research brief incorrectly attributed acquisition to ServiceNow; corrected to NVIDIA based on research.
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Next deploy window**: Throttle clears ~unix 1778242410 (~60 min after this deploy)
+- **Possible next reviews**: AI21 Labs (Jamba architecture, enterprise RAG — not yet reviewed), Writer AI (enterprise AI platform, not just inference), Cohere (enterprise LLM, Command series), or a non-inference topic for variety (e.g., AI coding tools roundup, vector database comparison)
+- **OctoAI → Hyperbolic connection**: The Hyperbolic AI review mentions Yuchen Jin worked at OctoAI; the OctoAI review could cross-link to Hyperbolic for continuity — may want to add a link in a future edit pass
+
 ## Run 1074 — 2026-05-08 — DEPLOYED Anyscale review + NEW REVIEW: Hyperbolic AI (Math Olympian CEO, decentralized GPU inference, Karpathy's favorite, 1378 pages live)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
