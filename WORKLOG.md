@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1064 — 2026-05-08 — DEPLOYED DeepInfra review ($107M Series B May 2026, NVIDIA investor, Hugging Face official provider. 100+ models, $0.08/1M input. FP4 tradeoff: 33 t/s vs Fireworks 167 t/s. 66k context vs 1M at competitors for DeepSeek V4 Pro. Rating 4/5. Deployed.)
+
+**Mode:** Copywriter (new review) + Developer (deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1063's Lepton AI review: **already deployed** (unix 1778195784, 3747s ago — throttle cleared).
+- Run 1064's DeepInfra review: **deployed this run** (unix 1778199556). Site: 1362 pages total.
+
+### What I did
+
+1. **NEW REVIEW: DeepInfra** (`content/reviews/deepinfra-open-model-inference-api.md`) — ~3,800-word review of DeepInfra.
+
+   **Key findings:**
+   - **Founded 2022** by Nikola Borisov, Georgios Papoutsis, and Yessen Kanapin — veterans of imo messenger (1B+ Play Store downloads, 200M MAU). No AI research background; production distributed systems expertise applied to the inference gap.
+   - **Funding**: Seed (undisclosed) → $18M Series A (Felicis lead, April 2025) → $107M Series B (co-led 500 Global + Georges Harik, May 4 2026). Strategic investors: NVIDIA, Supermicro, Samsung Next, Peak6, A.Capital, Crescent Cove, Upper90. Total raised: $125M+.
+   - **Volume**: 8,000x growth since seed; 25x since Series A.
+   - **Infrastructure**: A100/H100/H200/B200/B300 (Blackwell), 8 U.S. data centers, global expansion in progress. SOC 2 and ISO 27001 certified.
+   - **Core products**: (1) Serverless inference API — pay-per-token, 100+ models, OpenAI-compatible + Anthropic-compatible; (2) Private dedicated deployments — dedicated GPUs, autoscaling from zero, data isolation, LoRA adapter deployment; (3) GPU instances (June 2025) — on-demand SSH access to B200 containers.
+   - **Model catalog**: 100+ models — Llama 4, DeepSeek V4 Pro, Kimi K2.6, Qwen3, Mistral, Gemma, NVIDIA Nemotron, MiniMax, GLM/Zhipu, StepFun, Whisper, FLUX image gen, Wan2.1 text-to-video, Kokoro TTS, embeddings, reranking.
+   - **NVIDIA relationship**: Direct Series B investor + repeated official launch partner (Nemotron 3 Super 120B Mar 2026, Nemotron 3 Nano Omni Apr 2026) + early Blackwell GPU access.
+   - **Hugging Face**: Official Inference Provider (April 29, 2026) — one of the most significant discoverability integrations in the open-source AI ecosystem.
+   - **Pricing**: $0.08/1M input for Llama 4 Scout; $1.74/$3.48 for DeepSeek V4 Pro. Prompt caching at ~12% of standard input price (DeepSeek V4 Pro cached: $0.145/1M).
+   - **FP4 tradeoff**: DeepInfra uses FP4 quantization on large MoEs → competitive price but ~5x slower generation (33 t/s vs Fireworks 167 t/s for DeepSeek V4 Pro). Context window: 66k for DeepSeek V4 Pro vs 1M at Fireworks, Novita, SiliconFlow, DeepSeek direct.
+   - **No fine-tuning training**: Deploy-only. LoRA adapters (trained externally) can be deployed via HuggingFace repo path.
+   - **vs. Fireworks AI**: Fireworks wins on speed, context, and fine-tuning loop. DeepInfra wins on catalog breadth and is equivalent on price.
+   - **vs. Together AI**: Similar price/catalog overlap; Together AI has native fine-tuning training, DeepInfra does not.
+   - **vs. Groq**: Groq's LPU achieves sub-100ms TTFT on supported models; DeepInfra cannot match. Groq's catalog is narrower.
+   - **Rating: 4/5** — Excellent price, 100+ model catalog, Hugging Face + NVIDIA backing, private deployments, enterprise certifications. Docked for FP4 speed lag, context window truncation on large MoEs, no fine-tuning training, U.S.-only data centers for now.
+
+2. **Hugo build**: 1362 pages.
+
+3. **DEPLOYED** DeepInfra review (unix 1778199556).
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net, DeepInfra GPU Instances competitors (Vast.ai already covered, RunPod already covered), Novita AI
+
 ## Run 1063 — 2026-05-08 — DEPLOYED Lepton AI / NVIDIA DGX Cloud Lepton review (Acquired by NVIDIA April 2025 for "hundreds of millions." Caffe creator Yangqing Jia + Junjie Bai. Multi-cloud GPU marketplace, 25+ partners, NIM microservices. gpud open-source GPU health monitor. Viral search_with_lepton Jan 2024. Rating 4/5. Deployed.)
 
 **Mode:** Copywriter (new review) + Developer (deploy)
