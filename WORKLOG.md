@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1077 — 2026-05-09 — DEPLOYED AI21 Labs review (unix 1778263852, 1382 pages) + NEW REVIEW: Writer AI — full-stack enterprise AI, $326M raised, Palmyra X5 1M context, AI HQ agent platform, Uber/Franklin Templeton customers. Rating 4/5. (1384 pages ready)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1076's AI21 Labs review: **deployed this run** (unix 1778263852). Site: **1382 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778263852. AI21 Labs review (from Run 1076) now live. 1382 pages confirmed.
+
+2. **NEW REVIEW: Writer AI** (`content/reviews/writer-ai-full-stack-enterprise-platform.md`) — ~3,500-word full-stack enterprise AI review.
+
+   **Key findings:**
+   - **Founded August 2020**, San Francisco. Founders: May Habib (CEO — Lebanese-American, Harvard Economics, ex-Lehman Brothers, ex-Mubadala sovereign wealth fund) and Waseem AlShikh (CTO — Syrian computer scientist, placed #1 nationally in Syria's CS competitions, met Habib via Twitter in 2013 while working on statistical machine translation). Both previously co-founded Qordoba (2015) — AI content localization tool, raised ~$23M, pivoted to Writer post-Transformer era.
+   - **Name origin**: "Palmyra" model family named after the ancient Syrian city — tribute to the founders' Middle Eastern heritage.
+   - **Funding**: ~$326M total. Seed ~$5M (2020), Series A ~$21M (2021, Insight Partners), Series B $100M (Sept 2023, ICONIQ Growth), Series C $200M (Nov 2024, Premji Invest + Radical Ventures + ICONIQ; also Adobe Ventures, Citi, IBM, Salesforce, Workday Ventures). **Unicorn at $1.9B valuation** (Nov 2024). Series C investor list is distribution strategy: Salesforce, Workday, Adobe are integration anchors.
+   - **Revenue**: ~$47M ARR (late 2024), ~194% YoY growth. 300+ enterprise customers. ~400 FTE.
+   - **Thesis**: Own the entire enterprise AI stack. Enterprises dependent on third-party APIs have no leverage if pricing/models change. Writer builds model + retrieval + agent platform + compliance — eliminating upstream vendor risk.
+   - **Palmyra X5** (April 2025): Flagship model. 1 million token context window. Processes 1M-token prompt in ~22 seconds, multi-turn function-calling in ~300ms. **$0.60/M input, $6/M output** (3-4x cheaper than GPT-4.1 on long contexts per Writer). Available on Amazon Bedrock (exclusive cloud launch partner). X4 topped Berkeley Tool Calling Leaderboard at release (Oct 2024). Domain models: Palmyra-Med (70B), Palmyra-Fin.
+   - **Palmyra-mini family** (2025): Open-source small models (1.7B, 1.5B), first Writer model to run on-device on iPhone via llama.cpp/iOS 18.
+   - **Knowledge Graph**: Graph-based RAG approach claiming superiority over vector similarity RAG for multi-hop reasoning. Uses specialized LLM to build semantic graph (nodes = data, edges = relationships). Enables "policy X + revision Y → impact on Z" reasoning. Writer-conducted RobustQA benchmark shows it outperforms 7 vector-RAG approaches (vendor study, not independently validated).
+   - **AI HQ** (GA June 25, 2025): Agent platform with Agent Builder (low-code, drag-and-drop), Agent Library (100 pre-built agents for finance/healthcare/retail/tech), and Observability & Governance dashboard. Integrates Adobe, Salesforce, Workday, Microsoft, Atlassian. Beta customers: Uber, Salesforce, Franklin Templeton, Commvault.
+   - **Notable customers**: Uber (40K-person global support CMS), Franklin Templeton (compliant financial commentary grounded in Snowflake + SEC filings), L'Oreal, Spotify, Vanguard, Accenture, Intuit, Mars, Marriott.
+   - **Compliance**: SOC 2 Type II, ISO 27001/27701, ISO 42001, HIPAA/HITECH. "No training on customer data" explicit in ToS.
+   - **MCP**: Official `writer-sdk-mcp` npm package (file analysis, Palmyra generation, Knowledge Graph queries, image analysis). Enterprise MCP gateway in development (adds governance/audit/access control over base MCP protocol).
+   - **Competitive differentiators vs. Cohere**: Writer wins on agent platform completeness, compliance breadth, Knowledge Graph approach. Cohere wins on deployment flexibility (clearer on-prem), retrieval maturity (Embed/Rerank), and larger funding base.
+   - **Key concerns**: Benchmark claims mostly self-reported (Palmyra X5 lacks independent third-party validation), Knowledge Graph total-cost-of-ownership not published, VPC/private deployment details unclear for data-sovereignty cases, developer ecosystem narrower than OpenAI/Anthropic.
+   - **Rating: 4/5** — Credible full-stack platform with genuine architectural differentiation, enterprise-validated use cases, and serious compliance credentials. Deductions for benchmark transparency and deployment flexibility documentation gaps.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778267452 (~60 min after this deploy)
+- **Writer AI review** written this run, ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Mistral AI (European open-weights leader, raised $1B+, Le Chat consumer product, enterprise partnership w/ Azure/GCP), or a roundup-style piece (e.g., "best enterprise AI platforms compared" linking Writer/Cohere/Anthropic/OpenAI), or a non-inference topic for variety
+
 ## Run 1076 — 2026-05-09 — DEPLOYED OctoAI review + NEW REVIEW: AI21 Labs (Jamba hybrid SSM-Transformer, $636M raised, Mobileye founder, acquisition drama — 1382 pages ready)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
