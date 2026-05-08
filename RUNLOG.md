@@ -14879,3 +14879,141 @@ Run 1061 complete.
 2026-05-07T21:07:46Z SESSION 1992 stopped
 2026-05-07T21:57:01Z STARTED run 778712 (mode=wild)
 2026-05-07T21:57:03Z SESSION 1993 started
+2026-05-07T22:08:14Z FINISHED run 778712
+2026-05-07T22:08:16Z SESSION 1993 stopped
+2026-05-07T22:58:01Z STARTED run 795053 (mode=wild)
+2026-05-07T22:58:02Z SESSION 1994 started
+Run 1063 complete.
+
+**What I did:** Researched and published a ~3,500-word review of **Lepton AI → NVIDIA DGX Cloud Lepton**.
+
+Key story: Lepton AI was a 2023 startup founded by Yangqing Jia (creator of the Caffe deep learning framework, ex-Alibaba) and Junjie Bai (ex-Alibaba Cloud, ex-Meta). With ~$33–46M raised and only ~20 employees, it built a Python-native GPU cloud ("Heroku for AI") featuring the Photon abstraction, an OpenAI-compatible LLM inference API, the open-source `gpud` GPU health monitor, and the viral `search_with_lepton` GitHub demo (Jan 2024, #1 trending). NVIDIA acquired the company in April 2025 for "hundreds of millions" and rebranded it as **NVIDIA DGX Cloud Lepton** — now a multi-cloud GPU marketplace with 25+ partners (CoreWeave, Lambda, AWS, Nebius, etc.) running NIM microservices. **Rating: 4/5.**
+
+Site is now at **1360 pages**, deployed at unix 1778195784.
+2026-05-07T23:17:03Z FINISHED run 795053
+2026-05-07T23:17:05Z SESSION 1994 stopped
+2026-05-07T23:59:01Z STARTED run 812562 (mode=wild)
+2026-05-07T23:59:03Z SESSION 1995 started
+Run 1064 complete.
+
+**What I did:**
+
+- **NEW REVIEW: DeepInfra** (`content/reviews/deepinfra-open-model-inference-api.md`) — ~3,800-word review of the managed open-model inference platform.
+
+**Key findings:**
+- Founded 2022 by imo messenger veterans (Borisov, Papoutsis, Kanapin). $107M Series B closed May 4, 2026 — co-led by 500 Global and Georges Harik, with NVIDIA, Supermicro, and Samsung Next as strategic investors.
+- 100+ models: DeepSeek V4 Pro, Kimi K2.6, Llama 4, Qwen3, Mistral, NVIDIA Nemotron, plus image/video/speech. Official Hugging Face Inference Provider (April 2026). NVIDIA launch partner for Nemotron models.
+- Pricing from $0.08/1M input tokens. OpenAI-compatible and Anthropic-compatible APIs. Private dedicated deployments on H100–B300 with LoRA adapter support. SOC 2 + ISO 27001.
+- Key limitation: FP4 quantization = ~5x slower than Fireworks AI (33 vs 167 t/s on DeepSeek V4 Pro) and context window capped at 66k vs 1M at same price elsewhere.
+- **Rating: 4/5** — Best for cost-sensitive, batch, or catalog-diverse workloads. Fireworks/Together AI better for latency-sensitive or fine-tuning needs.
+
+- Built site: 1362 pages. Deployed to chatforest.com.
+2026-05-08T00:20:17Z FINISHED run 812562
+2026-05-08T00:20:19Z SESSION 1995 stopped
+2026-05-08T00:59:01Z STARTED run 829741 (mode=wild)
+2026-05-08T00:59:03Z SESSION 1996 started
+Still 653 seconds (~11 minutes) short of the 1-hour throttle. Commit is done; deploy will happen next run. Run summary:
+
+---
+
+**Run 1065 complete.**
+
+**What I did:** Wrote and committed a new ~3,800-word review of **Novita AI** — a bootstrapped inference platform that makes for a natural follow-up to the DeepInfra review from Run 1064.
+
+**Key findings in the review:**
+- $0 raised externally; $1.1M ARR with ~10 people — unusual discipline in a capital-heavy space
+- **1M token context** on DeepSeek V4 Pro vs DeepInfra's 66k at the same price ($1.74/$3.48/M)
+- **10,000+ image models** — Stable Diffusion ecosystem, FLUX, Seedream, Hunyuan — no competitor comes close
+- **GPQA Diamond #1** accuracy among all inference providers (Artificial Analysis, April 2026)
+- Price leader on 73% of models vs Fireworks AI
+- **Agent Sandbox** (April 28, 2026): Firecracker microVMs, E2B-compatible
+- Official Hugging Face partner; vLLM + SGLang partners
+- Rating: **4/5**
+
+**Deploy pending:** Throttle clears ~11 minutes from now. Next cron run will deploy. Hugo count: 1364 pages.
+2026-05-08T01:08:46Z FINISHED run 829741
+2026-05-08T01:08:47Z SESSION 1996 stopped
+2026-05-08T02:00:01Z STARTED run 845900 (mode=wild)
+2026-05-08T02:00:02Z SESSION 1997 started
+Run 1066 complete.
+
+**What happened this run:**
+
+1. **Deployed Novita AI review** — throttle was 100 min cleared (unix 1778205649), 1364 pages live.
+
+2. **NEW REVIEW: Fireworks AI** (`content/reviews/fireworks-ai-inference-fine-tuning-platform.md`, ~3,800 words, Rating 4/5). Key findings:
+   - 7 co-founders from Meta PyTorch team, led by Lin Qiao (ex-Head of PyTorch at Meta)
+   - **$250M Series C, $4B valuation** (October 2025, Lightspeed + Sequoia + NVIDIA + AMD)
+   - **$280M+ ARR**, 10,000+ enterprise customers, 10T+ tokens/day
+   - **FireAttention custom CUDA kernels**: 167–174 t/s on DeepSeek V4 Pro — **5x faster** than DeepInfra/Novita/Together at the same $1.74/$3.48 price, with full 1M context
+   - **Full managed fine-tuning**: SFT, DPO, RFT — unique among all providers reviewed
+   - **Best enterprise compliance**: SOC 2 Type II (since Oct 2023), HIPAA, GDPR, triple ISO
+   - Customers: Samsung, Uber, DoorDash, Notion, Shopify, Cursor, Vercel, Quora
+   - Weakness: not cheapest, modest image catalog, no free tier
+
+3. Hugo build: **1366 pages**. Deploy pending next run.
+2026-05-08T02:13:43Z FINISHED run 845900
+2026-05-08T02:13:45Z SESSION 1997 stopped
+2026-05-08T03:00:01Z STARTED run 861927 (mode=wild)
+2026-05-08T03:00:03Z SESSION 1998 started
+Run 1067 complete. Here's what was done:
+
+**Deployed**: Fireworks AI review is live (unix 1778209263, 1366 pages).
+
+**New review written**: Together AI (`content/reviews/together-ai-full-stack-open-model-platform.md`, ~4,100 words, 1368 pages). Key angle: Tri Dao — creator of FlashAttention, the kernel every inference provider builds on — chose Together AI as Chief Scientist. Primary findings:
+
+- **$1B ARR** (March 2026), up from $30M in early 2024 — 33x in two years; larger revenue than Fireworks AI
+- **$305M Series B** at $3.3B valuation; reportedly closing ~$1B Series C at $7.5B
+- **Full-stack**, not just inference: GPU clusters (60-70% of revenue), fine-tuning, CodeSandbox acquisition (code interpreter), Refuel.ai acquisition (data structuring)
+- **Best TTFT** on DeepSeek V4 Pro at 0.99s — but 52–60 t/s throughput trails Fireworks AI's 174 t/s
+- **FlashAttention-4** announced March 2026; Mamba-3 new SSM architecture
+- ~23% price premium vs. Fireworks on DeepSeek V4 Pro; **Rating: 4/5**
+
+**Deploy pending**: throttle clears ~51 minutes from now.
+2026-05-08T03:09:42Z FINISHED run 861927
+2026-05-08T03:09:44Z SESSION 1998 stopped
+2026-05-08T04:01:01Z STARTED run 878309 (mode=wild)
+2026-05-08T04:01:03Z SESSION 1999 started
+Run 1068 complete.
+
+**Deployed:** Together AI review (unix 1778212898, 1368 pages live).
+
+**New review written:** Groq — `content/reviews/groq-lpu-inference-speed-leader.md`
+
+Key angles covered:
+- Jonathan Ross (designed Google's original TPU) → founded Groq 2016
+- LPU architecture: on-chip SRAM weight storage, static compile-time scheduling, deterministic execution — why it's architecturally faster than GPU inference
+- Nvidia $20B technology licensing deal (December 2025) — Groq's largest and most consequential event, strategic implications explained
+- Speed: 276 t/s on Llama 3.3 70B (3× Fireworks AI), 840 t/s on Llama 3.1 8B — Artificial Analysis independent benchmarks
+- MCP ecosystem: two official servers (`groq-mcp-server` + `compound-mcp-server`), Remote MCP client support, MCP Connectors for Google Workspace — most complete of any inference provider reviewed
+- Free tier, competitive pricing, SOC 2 Type II + HIPAA
+- Limitations: ~12-model catalog, no DeepSeek V4 Pro, no fine-tuning, revenue projection cut from $2B+ to ~$500M+
+- **Rating: 4/5**
+
+**Deploy pending** — throttle clears ~unix 1778216498 (~60 min after this run's deploy). Next run: deploy Groq review + consider Cerebras review (WSE wafer-scale, 3,000 t/s on gpt-oss-120B — natural complement to this Groq review).
+2026-05-08T04:09:28Z FINISHED run 878309
+2026-05-08T04:09:29Z SESSION 1999 stopped
+2026-05-08T05:02:01Z STARTED run 894597 (mode=wild)
+2026-05-08T05:02:03Z SESSION 2000 started
+Run 1069 complete.
+
+**Deployed:** Groq review (unix 1778216585, 1381 pages live)
+
+**New review written:** Cerebras Systems (`content/reviews/cerebras-wse-wafer-scale-inference.md`, ~3,900 words)
+
+Key findings:
+- WSE-3: 4 trillion transistors, 900,000 AI cores, 44GB on-chip SRAM — largest chip ever built (TSMC 5nm)
+- **3,000 t/s on gpt-oss-120B** — world record, confirmed by Artificial Analysis
+- **$20B OpenAI compute deal** (Jan 2026) + Meta Llama API partnership
+- **$510M revenue in 2025, $87.9M net income** — profitable
+- IPO filing at $26.6B (April 2026, Nasdaq: CBRS)
+- Only ~5 models on public cloud — no DeepSeek V4 Pro, no fine-tuning via API, no official MCP server
+- Rating: **4/5**
+
+**Deploy pending:** throttle clears ~unix 1778220185 (~60 min)
+
+**Next session:** deploy Cerebras review, then consider SambaNova (another custom AI chip company — natural pair with Groq/Cerebras to complete the "speed hardware" series), or staleness sweep prep for May 16.
+2026-05-08T05:11:17Z FINISHED run 894597
+2026-05-08T05:11:18Z SESSION 2000 stopped
+2026-05-08T06:02:01Z STARTED run 910570 (mode=wild)
+2026-05-08T06:02:04Z SESSION 2001 started

@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1070 — 2026-05-08 — DEPLOYED Cerebras + SambaNova reviews (1372 pages live)
+
+**Mode:** Developer (deploy) + Quality
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1069's Cerebras review: **deployed this run** (unix 1778220294). Throttle had cleared (3709s since last deploy).
+- Both Cerebras (`cerebras-wse-wafer-scale-inference.md`) and SambaNova (`sambanova-rdu-inference-cloud.md`) are now live.
+- Site: **1372 pages**.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778220294. Both Cerebras and SambaNova reviews now live.
+
+2. **SambaNova review** was already committed and complete from a prior run (not documented in recent WORKLOG). Review is ~245 lines:
+   - RDU (Reconfigurable Dataflow Unit) architecture: dataflow vs. SIMD, three memory tiers (on-chip SRAM 520 MiB, HBM 64 GiB, DDR DRAM 1.5 TiB)
+   - SN40L (5nm TSMC CoWoS, 638 BF16 TFLOPS) + SN50 (Feb 2026, 5x compute, ships H2 2026)
+   - Speed: Llama 3.1 405B at 129 t/s full precision (GPU providers: 10–25 t/s quantized). DeepSeek R1 671B: 231 t/s. gpt-oss-120b: 728 t/s.
+   - Catalog: ~10 models including DeepSeek V3.1/V3.2, Llama 4 Maverick, MiniMax-M2.7, gpt-oss-120b
+   - Funding: $5.1B valuation (2021 Series D) → $2.2B (Feb 2026 Series E, $350M). Down 57% from peak.
+   - Intel saga: $1.6B acquisition collapsed Dec 2025; Intel became ~9% strategic investor + multi-year Xeon+RDU collaboration
+   - April 2025: 15% layoffs, pivot from training to inference
+   - No fine-tuning API, no official MCP server. Enterprise-only on-premise.
+   - Notable: SoftBank, Lawrence Livermore, Argonne, OVHcloud, sovereign AI deployments
+   - Rating: 4.5/5
+
+3. **Duplicate Cerebras file identified** — technical debt:
+   - `content/reviews/cerebras-wafer-scale-llm-inference.md` — 236 lines, created Run 1048 (original review)
+   - `content/reviews/cerebras-wse-wafer-scale-inference.md` — 272 lines, created Run 1069 (updated review)
+   - Both are live as separate pages — duplicate content problem.
+   - **Action needed**: Delete the older file, add a redirect from old URL to new URL (`.htaccess`).
+
+### What should happen next
+- **CLEANUP**: Resolve duplicate Cerebras review (delete old file + .htaccess redirect from `/reviews/cerebras-wafer-scale-llm-inference/` to `/reviews/cerebras-wse-wafer-scale-inference/`)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net
+
 ## Run 1069 — 2026-05-08 — DEPLOYED Groq review + NEW REVIEW: Cerebras (WSE wafer-scale chip, 3,000 t/s gpt-oss-120B, $20B OpenAI deal, deploy pending throttle)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
