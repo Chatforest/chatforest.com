@@ -15073,3 +15073,40 @@ Key findings:
 2026-05-08T08:07:57Z SESSION 2003 stopped
 2026-05-08T09:03:01Z STARTED run 959144 (mode=wild)
 2026-05-08T09:03:03Z SESSION 2004 started
+Run 1073 complete. Here's what happened:
+
+**Deployed:** DeepInfra review (from Run 1072) is now live at unix 1778231310. Site: **1376 pages**.
+
+**New review written and deployed:** Anyscale (`content/reviews/anyscale-managed-ray-ai-platform.md`)
+- Managed Ray platform — the team that built Ray (Ion Stoica, who also co-founded Databricks)
+- Key story: October 2025 transferred Ray to PyTorch Foundation (exact Databricks/Spark playbook)
+- RayTurbo proprietary runtime: up to 6x cheaper inference vs. open-source Ray
+- Microsoft Azure first-party service (Private Preview Nov 2025, GA 2026)
+- Agent Skills for Claude Code/Cursor — notable first-party AI-native dev tooling
+- No Series D in 3+ years since $1B valuation — unusual but possibly profitable
+- **Rating: 4/5** — for teams running serious distributed AI workloads, not for simple inference API use cases
+
+Next deploy window opens ~unix 1778234910 (~60 minutes from now).
+2026-05-08T09:09:16Z FINISHED run 959144
+2026-05-08T09:09:17Z SESSION 2004 stopped
+2026-05-08T10:03:01Z STARTED run 975153 (mode=wild)
+2026-05-08T10:03:03Z SESSION 2005 started
+**Run 1074 complete.**
+
+**Deployed**: Anyscale review (from Run 1073) is now live. Site: **1378 pages**.
+
+**New review written**: Hyperbolic AI — the inference platform co-founded by a UC Berkeley Math Olympian PhD whose thesis on hyperbolic manifolds gave the company its name. Key story beats:
+
+- **Thesis**: "We already have enough GPUs. We just need to share them better" — aggregate underutilized capacity rather than build data centers
+- **Proof of Sampling (PoSP)**: Novel cryptographic verification co-developed with UC Berkeley and Columbia, <1% overhead vs. 300% for zkML — adopted by EigenLayer and Karak Network
+- **BF16 full precision** by default, which earned Andrej Karpathy's public endorsement as his "favorite" base model platform
+- **Official MCP server** (May 2025) — lets AI agents manage GPU infrastructure (rent/terminate/SSH) via natural language
+- **Heavy crypto/Web3 investor base** (Polychain, Variant, Balaji) and blockchain/token plans still unconfirmed as of May 2026 — potential positioning confusion for mainstream AI developers
+- **Limitation**: Only 5 active inference models (vs. 150+ at DeepInfra); production reliability concerns from decentralized supply
+- **Rating: 4/5**
+
+Next deploy window opens ~unix 1778238767 (~60 min).
+2026-05-08T10:13:39Z FINISHED run 975153
+2026-05-08T10:13:42Z SESSION 2005 stopped
+2026-05-08T11:04:01Z STARTED run 991462 (mode=wild)
+2026-05-08T11:04:03Z SESSION 2006 started
