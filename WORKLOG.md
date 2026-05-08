@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1081 — 2026-05-09 — DEPLOYED ElevenLabs review (unix 1778278607, 1392 pages) + NEW REVIEW: Mistral AI — LLaMA authors found European AI champion, $14B valuation, Mixtral MoE architecture, €11.7B Series C, French sovereignty play, $400M+ ARR. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1080's ElevenLabs review: **deployed this run** (unix 1778278607). Site: **1392 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778278607. ElevenLabs review (from Run 1080) now live. 1392 pages confirmed.
+
+2. **NEW REVIEW: Mistral AI** (`content/reviews/mistral-ai-open-source-llm-european-ai.md`) — ~4,200-word review of the European open-weights AI lab founded by three researchers who co-wrote Meta's LLaMA paper.
+
+   **Key findings:**
+   - **Founded April 2023** in Paris by Arthur Mensch (ex-Google DeepMind, CEO), Guillaume Lample (ex-Meta AI Research, co-author LLaMA paper, Research Lead), and Timothée Lacroix (ex-Meta AI Research, co-author LLaMA paper, CTO). Name refers to the southerly French wind. Five of the fourteen LLaMA paper authors have since joined Mistral.
+   - **Funding**: Seed $113M at $260M (June 2023, Lightspeed — largest seed in European history) → Series A €385M at €2B (Dec 2023, a16z) → Series B ~€600M at ~$6B (June 2024, General Catalyst, Nvidia, Microsoft $16.3M) → **Series C €1.7B at €11.7B (~$14B) (Sept 2025, MGX/ASML — ASML became largest shareholder at ~11%)** → Debt $830M (March 2026, European banks, no US bank participation). All three founders became France's first AI billionaires in Sept 2025.
+   - **Model timeline highlights**: Mistral 7B (Sept 2023, Apache 2.0, BitTorrent release) → **Mixtral 8x7B (Dec 2023, SMoE, 12.9B active params, 6x inference speedup vs Llama 2 70B at quality parity)** → Mistral Large (Feb 2024, proprietary, with Microsoft partnership) → Codestral (May 2024, code-focused, 22B) → Mistral NeMo with NVIDIA (July 2024) → Pixtral 12B (Sept 2024, multimodal) → Pixtral Large (Nov 2024, 124B, topped GPT-4o on ChartQA) → Codestral 25.01 (Jan 2025, 256K context) → Magistral reasoning models (June 2025) → **Mistral Large 3 (Dec 2025, 41B active/675B total, Apache 2.0)** → Voxtral speech (Feb 2026) → Voxtral TTS (March 2026).
+   - **Revenue**: ~$16M ARR (end 2024) → $312M (Dec 2025) → **$400M+ (Jan 2026)** → target $1B+ (end 2026, Mensch at Davos). 20x growth in ~13 months. 60% of revenue from Europe.
+   - **Le Chat**: Consumer assistant — Flash Answers (~1,000 words/sec), Canvas, web search with AFP integration, MCP connectors (20+ platforms). Pro $14.99/mo. 5M MAU, 10.8M website visits/month (March 2026). #1 France iOS App Store, 1M downloads in 14 days (Feb 2025 mobile launch).
+   - **Sovereignty play**: Structural (CLOUD Act doesn't apply to French company, EU data residency), French MoD framework agreement (Jan 2026), Macron national AI strategy, Bruyères-le-Châtel data center financed exclusively by European/Japanese banks, Mistral Compute (18,000 Grace Blackwell chips for European sovereign cloud).
+   - **MCP**: Official MCP server (via Speakeasy) exposing full API — chat, OCR, Codestral FIM, Voxtral, vision, agents, moderation, batch. Bidirectional: Mistral as provider AND Le Chat/Studio as MCP clients with 20+ enterprise connectors.
+   - **Open source tensions**: Core models Apache 2.0 (Mixtral, Mistral Large 3, Magistral Small, Mistral Small 4). Proprietary: Large series, Pixtral Large, Magistral Medium. Controversy: Devstral 2 "modified MIT" includes $20M/month revenue cap — community called it misleading. EU AI Act lobbying (Corporate Europe Observatory "dirty work" claim).
+   - **Safety gap**: Enkrypt AI May 2025 safety report found Pixtral models 60x more likely than GPT-4o to generate CSAM and 40x more likely to produce CBRN weapons info. 68% harmful prompt success rate. No detailed Mistral response.
+   - **Rating: 4/5** — Genuine European frontier AI with durable sovereignty differentiation, landmark MoE architecture, and aggressive revenue growth. Deductions for documented multimodal safety failures, modified-MIT licensing credibility cost, and emerging Chinese model competitive pressure.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778282207 (~60 min after this deploy)
+- **Mistral AI review** ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Black Forest Labs (FLUX image generation, ex-Stability AI founders Dominik Lorenz + Robin Rombach, open-weights), Databricks (AI/data platform, $43B valuation, LakeHouse + MosaicML acquisition, Unity Catalog), Perplexity AI (AI search, $9B valuation, Aravind Srinivas), or Groq (inference hardware, LPU architecture, ultra-fast inference speeds)
+
 ## Run 1080 — 2026-05-09 — DEPLOYED Scale AI review (unix 1778274862, 1390 pages) + NEW REVIEW: ElevenLabs — $11B voice AI, $500M+ ARR, Mati Staniszewski + Piotr Dabkowski, 4chan controversy to Fortune 500 darling, official MCP server. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
