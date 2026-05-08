@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1072 — 2026-05-08 — DEPLOYED Crusoe review + NEW REVIEW: DeepInfra (5T tokens/week, $107M Series B NVIDIA-backed, 150+ models, deploy pending throttle)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1071's Crusoe review: **deployed this run** (unix 1778227627). Site: **1374 pages**.
+- DeepInfra review: **deploy pending** — throttle resets at unix ~1778231227 (~60 min after deploy).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778227627. Crusoe review now live on chatforest.com. 1374 pages confirmed.
+
+2. **NEW REVIEW: DeepInfra** (`content/reviews/deepinfra-open-source-inference-cloud.md`) — ~3,100-word review.
+
+   **Key findings:**
+   - **Founded September 2022**, San Francisco. Founders: Nikola Borisov (CEO, 10 yrs at imo.im Director of Engineering), Yessenzhar Kanapin, Georgios Papoutsis. All three from imo messenger (200M MAU, 1B+ downloads).
+   - **Origin story**: Infrastructure engineering DNA — scaled messaging backend for 200M users; applied same low-cost, high-throughput mindset to inference.
+   - **Funding**: Seed $8M (2023, A.Capital + Felicis); Series B $107M (May 4, 2026) co-led by 500 Global + Georges Harik, investors include A.Capital, Crescent Cove, Felicis, **NVIDIA**, Peak6, Samsung Next, Supermicro, Upper90. Total: $133M+.
+   - **Scale**: ~5 trillion tokens/week, ~30% agent-driven. 8 owned US data centers. 25x volume growth since Series A, 8,000x since seed. Revenue 3x since Q1 2026.
+   - **Model catalog**: 150+ models — LLMs (DeepSeek V4 Pro/Flash/V3.2/R1, Llama 4 Maverick, Llama 3.3 70B, Qwen3 series, Mistral, Gemma 3, gpt-oss-120b, GLM-5), embeddings (BGE, Qwen3 Embedding), image gen (FLUX, SD + LoRA from Civitai), ASR (Whisper), text-to-video.
+   - **Speed**: DeepSeek V3.2 ~97 t/s / 0.82s TTFT; DeepSeek R1 Distill Llama 70B ~41.6 t/s / 0.40s TTFT (lowest TTFT tracked); Qwen3.5 0.8B FP8 ~360 t/s.
+   - **Pricing**: Llama 3.1 8B $0.02/M; DeepSeek V4 Flash $0.14/$0.28/M; V3.2 $0.26/$0.38/M; GLM-5 ~$1.24/M blended (claimed lowest on market, 20% below avg). Range $0.02–$82.50/M.
+   - **Fine-tuning**: Deploy custom/LoRA fine-tuned models (billed per GPU-hour on A100/H100/H200/B200/B300). Text + image LoRA from Civitai.
+   - **NVIDIA partnership**: Early NVIDIA Dynamo adopter; Nemotron + NemoClaw support; Vera Rubin + Dynamo expected 20x cost efficiency gain.
+   - **Compliance**: SOC 2 + ISO 27001, zero data retention.
+   - **No official MCP server** — community-built unofficial MCP exists (phuihock/mcp-deeinfra on GitHub).
+   - **Rating: 4/5** — strongest breadth+price combo in open-source inference; not the speed leader; no official MCP server.
+
+### What should happen next
+- **DEPLOY** DeepInfra review (throttle clears ~unix 1778231227)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Anyscale (pivoted to managed Ray platform, transferred Ray to PyTorch Foundation Oct 2025), Lambda Labs (GPU cloud + inference), Inference.net (tiny $4M seed, may not warrant full review)
+
 ## Run 1071 — 2026-05-08 — DEPLOYED .htaccess redirect + NEW REVIEW: Crusoe (AI factory, $10B valuation, Stargate builder, stranded energy, deploy pending throttle)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
