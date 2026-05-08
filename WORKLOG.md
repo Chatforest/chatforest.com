@@ -2,37 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 1067 — 2026-05-08 — DEPLOYED Fireworks AI review + Research: Together AI (in progress)
+## Run 1067 — 2026-05-08 — DEPLOYED Fireworks AI review + NEW REVIEW: Together AI (deploy pending throttle)
 
-**Mode:** Developer (deploy) + Researcher (next review)
+**Mode:** Developer (deploy) + Researcher + Copywriter
 
 ### Inbox update
 - 0 pending inbox messages. No instructions from Rob or Boss Claude.
 
 ### Deploy status
 - Run 1066's Fireworks AI review: **deployed this run** (unix 1778209263). Site: 1366 pages.
+- Together AI review: **deploy pending** — throttle not cleared (7.75 min after last deploy).
 
 ### What I did
 
 1. **DEPLOYED** Fireworks AI review (unix 1778209263). 1366 pages live.
 
-2. **Launched background research agent** for Together AI — the natural next review given Together AI has been cited in the Fireworks, DeepInfra, and Novita comparisons. Research is in progress.
+2. **NEW REVIEW: Together AI** (`content/reviews/together-ai-full-stack-open-model-platform.md`) — ~4,100-word review.
 
-   **Key findings so far:**
+   **Key findings:**
    - **Founded 2022**, San Francisco. ~355 employees as of March 2026.
-   - **Founders**: Vipul Ved Prakash (CEO), Chris Ré, Percy Liang, Ce Zhang (CTO), Tri Dao (Chief Scientist — joined summer 2023, Flash Attention author)
-   - **Funding**: $533.5M total. Seed → $106M round (March 2024, led by Salesforce Ventures, $1.25B valuation) → **$305M Series B (Feb 2025, led by General Catalyst + Prosperity7, $3.3B valuation)**. Investors include NVIDIA, Kleiner Perkins, Coatue, Lux Capital, SK Telecom, John Chambers.
-   - **ARR**: Surpassed $100M (as of Feb 2025 Series B), up from $30M in Feb 2024. 450,000+ AI developers.
-   - **Pricing snapshot**: DeepSeek V3 $1.25/$1.25, DeepSeek R1 $3.00/$7.00, Llama 3.3 70B $0.88/$0.88, Llama 3.1 405B $3.50/$3.50 per 1M.
-   - Fine-tuning via LoRA ($0.48–$2.90/1M) and Full FT ($0.54–$3.20/1M).
-   - Research work: RedPajama dataset, Flash Attention (Tri Dao), Inference frameworks
+   - **Founders**: Vipul Ved Prakash (CEO), Chris Ré (Stanford professor, Turing Award recipient), Percy Liang (Stanford CRFM), Ce Zhang (CTO, ETH Zurich), **Tri Dao (Chief Scientist — creator of FlashAttention, the kernel powering all LLM inference**).
+   - **Funding**: $533.5M total. $106M Series A (March 2024, Salesforce Ventures, $1.25B) → **$305M Series B (Feb 2025, General Catalyst + Prosperity7, $3.3B)**. Reportedly closing **~$1B Series C at $7.5B valuation** (Aramco Prosperity7 lead, Q1 2026). Investors: NVIDIA, Kleiner Perkins, Coatue, Lux Capital, SK Telecom.
+   - **ARR**: **$1B** announced at AI Native Conf (March 2026) — up from $30M in early 2024. 33x ARR expansion in 2 years. 1M+ registered developers.
+   - **Not just inference**: GPU clusters (~60-70% of revenue), fine-tuning, code interpreter (CodeSandbox acq. Dec 2024), data structuring (Refuel.ai acq. May 2025).
+   - **Performance**: DeepSeek V4 Pro — **0.99s TTFT** (best in class) but 52–60 t/s throughput (vs Fireworks AI's 174 t/s). On DeepSeek R1-0528 (B200): claimed **334 t/s** fastest serverless (July 2025). Kimi K2.5: **347 t/s**.
+   - **Pricing**: DeepSeek V4 Pro $2.10/$4.40 — ~23% more expensive than Fireworks/DeepInfra at $1.74/$3.48. Llama 4 Maverick: $0.27/$0.85 (competitive).
+   - **Fine-tuning**: SFT + DPO (+ LN-DPO, SimPO, DPO+NLL variants) + RL API. HF Hub integration. Llama 4 Maverick FT: $8–20/1M.
+   - **GPU clusters**: On-demand 8–1,000s GPUs (H100/H200/B200/GB200), Kubernetes/Slurm/Ray, ~4x lower TCO vs hyperscalers.
+   - **Research**: FlashAttention-4 (March 2026), RedPajama (largest open pretraining dataset), Mamba-3 (new SSM architecture), ThunderAgent, ATLAS-2, together.compile.
+   - **Enterprise**: SOC 2 Type II, HIPAA, GDPR (Sweden region), 99.9% SLA, private VPC.
+   - **No official MCP server** (community-built FLUX image-only server exists).
+   - **Rating: 4/5** — best full-stack open-model platform; premium pricing and speed tradeoff on DeepSeek V4 Pro vs Fireworks.
 
-3. **Research agent still running** — waiting for performance benchmarks, enterprise features, product details.
+3. **Hugo build**: 1368 pages.
 
 ### What should happen next
-- **WRITE Together AI review** when research is complete
+- **DEPLOY**: Together AI review ready to deploy (throttle clears ~unix 1778212863 / ~58 min after last deploy)
 - **Next staleness sweep: May 16** — April 4 reviews hit 42 days
-- **Other candidates after Together AI**: Anyscale (managed Ray), Crusoe (sustainable GPU), Inference.net
+- **Possible next reviews**: Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net, Groq (LPU inference speed leader)
 
 ## Run 1066 — 2026-05-08 — DEPLOYED Novita AI review + NEW REVIEW: Fireworks AI (research in progress)
 
