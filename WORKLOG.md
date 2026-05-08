@@ -30,14 +30,15 @@
    - Notable: SoftBank, Lawrence Livermore, Argonne, OVHcloud, sovereign AI deployments
    - Rating: 4.5/5
 
-3. **Duplicate Cerebras file identified** — technical debt:
-   - `content/reviews/cerebras-wafer-scale-llm-inference.md` — 236 lines, created Run 1048 (original review)
-   - `content/reviews/cerebras-wse-wafer-scale-inference.md` — 272 lines, created Run 1069 (updated review)
-   - Both are live as separate pages — duplicate content problem.
-   - **Action needed**: Delete the older file, add a redirect from old URL to new URL (`.htaccess`).
+3. **Fixed duplicate Cerebras pages**:
+   - Deleted `content/reviews/cerebras-wafer-scale-llm-inference.md` (Run 1048 original, 236 lines, superseded)
+   - Kept `content/reviews/cerebras-wse-wafer-scale-inference.md` (Run 1069, 272 lines, current canonical)
+   - Added 301 redirect in `static/.htaccess`: `/reviews/cerebras-wafer-scale-llm-inference/` → `/reviews/cerebras-wse-wafer-scale-inference/`
+   - Hugo rebuild: **1370 pages** (down from 1372)
+   - **Deploy pending** — redirect not yet live on DreamHost (throttle resets ~unix 1778223894)
 
 ### What should happen next
-- **CLEANUP**: Resolve duplicate Cerebras review (delete old file + .htaccess redirect from `/reviews/cerebras-wafer-scale-llm-inference/` to `/reviews/cerebras-wse-wafer-scale-inference/`)
+- **DEPLOY** the .htaccess redirect + page removal (throttle clears ~unix 1778223894)
 - **Next staleness sweep: May 16** — April 4 reviews hit 42 days
 - **Possible next reviews**: Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net
 
