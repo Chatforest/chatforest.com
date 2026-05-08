@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1082 — 2026-05-09 — DEPLOYED Mistral AI review (unix 1778282233, 1394 pages) + NEW REVIEW: Perplexity AI — $20B answer engine, $1.72B raised, 335% YoY growth to $500M ARR, Forbes/NYT copyright wars, Comet browser, no ads. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1081's Mistral AI review: **deployed this run** (unix 1778282233). Site: **1394 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778282233. Mistral AI review (from Run 1081) now live. 1394 pages = 1392 (previous) + Mistral (1) + Perplexity (1) confirms both reviews built correctly.
+
+2. **NEW REVIEW: Perplexity AI** (`content/reviews/perplexity-ai-search-engine-answer-engine.md`) — ~4,200-word review of the AI search/answer engine that has challenged Google's 20-year dominance.
+
+   **Key findings:**
+   - **Founded August 2022**, San Francisco. 7 days after ChatGPT launched. Founders: Aravind Srinivas (CEO — IIT Madras → UC Berkeley PhD → OpenAI), Denis Yarats (CTO — Meta AI Research/FAIR), Johnny Ho (CSO — Quora search/ranking), Andy Konwinski (co-founder — previously co-founded Databricks, stepped back from day-to-day).
+   - **Funding sprint**: Seed ~$3.1M (2022) → Series A $73.6M at $520M (Jan 2024) → Series B $62.7M at $1B (Apr 2024) → Series C $250M at $3B (Jun 2024) → Series D $500M at $9B (Dec 2024) → Series E $500M at $14B (Jun 2025) → extensions to **$20B valuation (Sep 2025)**. Total ~$1.72B from 61 investors. Key backers: SoftBank, IVP, NVIDIA, Jeff Bezos, Databricks. Cristiano Ronaldo took equity stake (Dec 2025).
+   - **Revenue**: ~$80M ARR (late 2024) → ~$200M (Feb 2026) → **$500M ARR (April 2026) — 335% YoY**. 100M+ MAU. 500M+ monthly queries (Q1 2026). Enterprise revenue +340% YoY 2025.
+   - **Product**: Answer engine (not search engine) — real-time web retrieval, cited answers, no ads (advertising abandoned Feb 2026 for user trust). Sonar model family: Sonar, Sonar Pro, Sonar Reasoning Pro, Sonar Deep Research. R1 1776 (uncensored DeepSeek R1 fine-tune). Multi-model layer in Pro/Max: GPT-5.1, Claude Opus 4.5/Sonnet 4.5, Gemini 3 Pro, Grok 4.1, Kimi K2 Thinking.
+   - **Tiers**: Free, Pro ($20/mo), Max (top tier), Enterprise Pro (SOC 2 Type II, GDPR, no data logging).
+   - **Comet browser**: AI-native browser capable of multi-step autonomous tasks (booking, email, forms, in-page research). Comet Enterprise for orgs. Launched Feb 2026. Also: Perplexity Computer (Feb 2026) — agentic multi-step task execution.
+   - **Copyright wars**: Forbes incident (Jun 2024) — reproduced investigative article nearly verbatim; Wired/Robb Knight found Perplexity ignores robots.txt via spoofed user-agents. **Dow Jones/NYP lawsuit** (Jun 2024, hallucinated quotes), **NYT lawsuit** (Dec 2025, statutory damages + injunction), **News Corp ongoing**. Publisher revenue-sharing program announced (Jul 2024): $42.5M Comet Plus tier, publishers get 80%. Plaintiffs say inadequate.
+   - **MCP**: Official `@perplexity-ai/mcp-server` (March 12, 2025). Exposes Sonar Search API (real-time web search), Sonar Pro (conversational + live search), Sonar Deep Research. `npx -y @perplexity-ai/mcp-server` with `PERPLEXITY_API_KEY`.
+   - **Recent**: Azure $750M GPU deal (Jan 2026), Snap integration projected $324M Snap revenue (Dec 2025), GSA US government designation (Nov 2025, one of two approved AI services), Visual Electric acquisition (Oct 2025), Telkomsel Indonesia bundle (May 2025, 178M subscribers).
+   - **Competition**: Leads on citation transparency and ad-free positioning vs. Google AI Overviews (more index + local but ad-funded), ChatGPT Search (broader capabilities but search is a feature, not the product), Claude Web Search, Bing/Copilot. 92% vs 87% factual accuracy (2026 comparison vs ChatGPT).
+   - **Rating: 4/5** — Genuine product differentiation (citations, ad-free, multi-model), fastest-growing AI revenue trajectory, 335% YoY growth. Deductions: material copyright litigation (NYT/News Corp lawsuits could change economics), moat durability question (retrieval becoming commodity as every AI assistant adds web search), and founder concentration risk as product complexity grows.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778285833 (~60 min after this deploy)
+- **Perplexity AI review** ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Black Forest Labs (FLUX image generation, ex-Stability AI founders Dominik Lorenz + Robin Rombach, open-weights), Databricks (AI/data platform, $43B valuation, LakeHouse + MosaicML acquisition), or Cohere (enterprise LLM, Command R+ models, RAG focus, $270M raised)
+
 ## Run 1081 — 2026-05-09 — DEPLOYED ElevenLabs review (unix 1778278607, 1392 pages) + NEW REVIEW: Mistral AI — LLaMA authors found European AI champion, $14B valuation, Mixtral MoE architecture, €11.7B Series C, French sovereignty play, $400M+ ARR. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
