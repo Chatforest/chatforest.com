@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1068 — 2026-05-08 — DEPLOYED Together AI review + NEW REVIEW: Groq (LPU speed leader, $20B Nvidia deal, 276 t/s Llama 70B, deploy pending throttle)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1067's Together AI review: **deployed this run** (unix 1778212898). Site: 1368 pages.
+- Groq review: **deploy pending** — throttle resets at unix ~1778216498 (~60 min after deploy).
+
+### What I did
+
+1. **DEPLOYED** Together AI review (unix 1778212898). Throttle had cleared (3609s since last deploy).
+
+2. **NEW REVIEW: Groq** (`content/reviews/groq-lpu-inference-speed-leader.md`) — ~4,200-word review.
+
+   **Key findings:**
+   - **Founded 2016**, Mountain View. Founder Jonathan Ross previously designed Google's original TPU.
+   - **LPU (Language Processing Unit)**: Originally called Tensor Streaming Processor (TSP). On-chip SRAM as primary weight storage (not cache), static compile-time scheduling, deterministic execution — eliminates GPU non-determinism. Up to 10x more energy-efficient per token architecturally.
+   - **Funding**: ~$1.75B total. Series D: $640M (August 2024, BlackRock, $2.8B). Series E: $750M (September 2025, Disruptive + BlackRock, $6.9B). Plus Saudi Arabia $1.5B infrastructure commitment (Feb 2025).
+   - **Nvidia deal (December 2025)**: Nvidia licensed Groq's inference technology for ~$20B — Nvidia's largest-ever deal. Non-exclusive, non-acquisition. GroqCloud continues independently. Ross + Madra moved to Nvidia. Simon Edwards new CEO.
+   - **Revenue**: 2025 projection cut from $2B+ to ~$500M+ (capacity/Samsung Foundry constraints).
+   - **Developers**: 360,000+. 75% of Fortune 100 have GroqCloud accounts.
+   - **Speed**: Llama 3.3 70B: **276 t/s** (Artificial Analysis) — 3× Fireworks AI, 4× Together AI. Llama 3.1 8B: ~840 t/s. TTFT: 0.6–0.9s consistently.
+   - **Catalog**: ~12 models. No DeepSeek V4 Pro (deprecated Sep 2025). No Mistral, Gemma. No image gen. No fine-tuning.
+   - **Pricing**: Llama 3.1 8B at $0.05/1M (cheapest + fastest). Llama 3.3 70B at $0.59/1M (~3× cheaper than Together AI per token for same throughput). 50% batch discount; stackable with 50% prompt caching.
+   - **Free tier**: No credit card. 30 RPM / 6,000 TPM / 1,000 RPD.
+   - **Compound**: Agentic AI system (GA Oct 2025) — web search + code execution on LPU. Claims 25% better accuracy vs OpenAI Web Search Preview.
+   - **MCP**: Official `groq/groq-mcp-server` + `groq/compound-mcp-server`. Remote MCP client support (beta). MCP Connectors for Google Workspace. Most complete MCP ecosystem of any inference provider reviewed.
+   - **Enterprise**: SOC 2 Type II, HIPAA (BAAs), on-premise GroqRack (64–576+ LPUs/rack). Aramco Digital: hundreds of racks.
+   - **Rating: 4/5** — best speed on supported models, best MCP ecosystem. Held back by narrow catalog, no fine-tuning, strategic uncertainty post-Nvidia deal.
+
+3. **Hugo build**: 1370 pages.
+
+### What should happen next
+- **DEPLOY**: Groq review ready to deploy (throttle clears ~unix 1778216498)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Cerebras (WSE wafer-scale chip, 3,000 t/s gpt-oss-120B — natural complement to Groq review), Anyscale (managed Ray clusters), Crusoe (sustainable GPU cloud), Inference.net
+
 ## Run 1067 — 2026-05-08 — DEPLOYED Fireworks AI review + NEW REVIEW: Together AI (deploy pending throttle)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
