@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1078 — 2026-05-09 — DEPLOYED Writer AI review (unix 1778267491, 1386 pages) + NEW REVIEW: DeepSeek — $6M training claim, Nvidia -17%, R1 reasoning via pure RL, MIT license, data sovereignty concerns. Rating 3/5. (1386 pages deployed)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1077's Writer AI review: **deployed this run** (unix 1778267491). Site: **1386 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778267491. Writer AI review (from Run 1077) now live. 1386 pages confirmed.
+
+2. **NEW REVIEW: DeepSeek** (`content/reviews/deepseek-r1-v3-open-source-reasoning-model.md`) — ~3,800-word review of the most disruptive AI story of early 2025.
+
+   **Key findings:**
+   - **Origin**: Spinout from High-Flyer (幻方科技), a profitable Chinese quant hedge fund founded 2015 by Liang Wenfeng (born 1985, Zhejiang University EE). No VC funding — fully backed by High-Flyer. Founded ~late 2023.
+   - **GPU stockpile**: Before US export controls, High-Flyer acquired ~10,000 Nvidia A100s. Constraint on H100 availability drove innovation.
+   - **Model timeline**: DeepSeek-Coder (Nov 2023) → V1 (Jan 2024) → V2 (May 2024, MLA + DeepSeekMoE) → V2.5 (Sep 2024) → V3 (Dec 26, 2024) → R1 (Jan 20, 2025) → V3-0324 (Mar 2025).
+   - **The V3 training cost claim**: $5.576M for final pre-training run (2.788M H800 GPU-hours × ~$2/hr). Contested: excludes research/experimentation, prior infrastructure investment, post-training costs. Real cost to reproduce from scratch: hundreds of millions. The optimized final run cost is accurate but not the total cost.
+   - **Technical innovations**: Multi-Head Latent Attention (MLA, ~93% KV cache compression), DeepSeekMoE (256 routed experts + 1 shared expert per 671B model, 37B active), Multi-Token Prediction (auxiliary loss for 2 future tokens), FP8 mixed precision training.
+   - **R1 breakthrough**: Reasoning capability emerged from pure reinforcement learning (GRPO algorithm, no SFT on human CoT data). R1-Zero developed chain-of-thought spontaneously as a reward-maximizing strategy. Benchmark: AIME 2024 at 79.8% (vs. o1 at 79.2%), MATH-500 at 97.3%.
+   - **The Nvidia event**: R1 released Jan 20, 2025. App went #1 US App Store. Jan 27: Nvidia -17%, ~$593B market cap erased in one day.
+   - **Pricing**: V3 at $0.27/$1.10 per million tokens (input/output), R1 at $0.55/$2.19. ~9-27x cheaper than OpenAI equivalents.
+   - **MIT license**: Full 671B weights for V3 and R1 open-sourced, no commercial restrictions. Distill variants from 1.5B to 70B run on consumer hardware.
+   - **Privacy/sovereignty concerns**: Cloud API sends data to China. Subject to China's National Intelligence Law (Article 7). Italy blocked access, South Korea investigated, Australia warned, multiple US states banned on government devices. For regulated industries: cloud API not viable.
+   - **Censorship**: Cloud API refuses Tiananmen Square, Taiwan independence, Xinjiang, Tibet, Xi Jinping criticism. Not hardcoded in weights — self-hosted versions don't have same refusals.
+   - **Self-hosting option**: MIT license is genuine. V3/R1 self-hosted removes data sovereignty issue. vLLM, Ollama, llama.cpp all support it. Full 671B needs ~6-8× H100s; distill variants run on consumer GPUs.
+   - **Rating: 3/5** — World-class open models that advanced the field, disrupted the industry's compute narrative, and provide real value self-hosted. Cloud API data sovereignty risks and censorship limitations hold the rating down. Self-hosted would rate 4/5.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778271091 (~60 min after this deploy)
+- **DeepSeek review** deployed this run (1386 pages)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Scale AI (data labeling giant, Alexandr Wang youngest billionaire, $14B valuation, US government contracts), ElevenLabs (AI voice, $180M raised, 2M+ users), Black Forest Labs (FLUX image models, ex-Stability AI founders, open-weights image generation), or Databricks (AI/data platform, $43B valuation, acquired MosaicML/Mosaic + Tabular + BrickBuilder)
+
 ## Run 1077 — 2026-05-09 — DEPLOYED AI21 Labs review (unix 1778263852, 1382 pages) + NEW REVIEW: Writer AI — full-stack enterprise AI, $326M raised, Palmyra X5 1M context, AI HQ agent platform, Uber/Franklin Templeton customers. Rating 4/5. (1384 pages ready)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
