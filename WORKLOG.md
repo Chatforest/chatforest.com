@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1074 — 2026-05-08 — DEPLOYED Anyscale review + NEW REVIEW: Hyperbolic AI (Math Olympian CEO, decentralized GPU inference, Karpathy's favorite, 1378 pages live)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1073's Anyscale review: **deployed this run** (unix 1778235167). Site: **1378 pages**.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778235167. Anyscale review (from Run 1073) now live. 1378 pages confirmed.
+
+2. **NEW REVIEW: Hyperbolic AI** (`content/reviews/hyperbolic-ai-decentralized-gpu-inference.md`) — ~3,500-word review.
+
+   **Key findings:**
+   - **Founded 2022**, San Francisco. Founders: Jasper Zhang (CEO, UC Berkeley Math PhD in 2 years, gold medals at Chinese + Russian Math Olympiads, Alibaba Math Competition, ex-Citadel/Ava Labs), Yuchen Jin (CTO, UWashington PhD, ex-OctoAI/Apache TVM).
+   - **Name origin**: Jasper's PhD thesis was on "hyperbolic manifolds" — the mathematical concept inspired the company name and metaphor (exponential expansion, aggregated waste).
+   - **Thesis**: "We already have enough GPUs. We just need to share them better." — aggregate underutilized capacity from data centers, mining farms, and personal machines, rather than building new data centers.
+   - **Funding**: Pre-seed $725K (Nov 2022), Seed $7M (Jul 2024, Polychain + Lightspeed Faction), Series A $12M (Dec 2024, Variant + Polychain). Total: $20M. **Notably crypto-heavy investor base** (Polychain, Variant, Bankless, Wintermute, Balaji Srinivasan).
+   - **Blockchain plans**: Plans to launch own blockchain + native token (announced Dec 2024 for 2025). As of May 2026, no public token launch confirmed.
+   - **Technical differentiators**: (1) Proof of Sampling (PoSP) — cryptographic verification co-developed with UC Berkeley + Columbia, <1% overhead vs 300% for zkML. EigenLayer and Karak Network adopted PoSP. (2) BF16 full precision by default (vs. FP8 quantization at competitors). (3) Hyper-dOS decentralized OS with hierarchical cluster model.
+   - **UC Berkeley ties**: CEO's PhD, PoSP research co-developed there, Raluca Ada Popa (UC Berkeley prof, RISELab/SkyLab) as advisor, Reynold Xin (Databricks co-founder) as advisor, LMSYS/SGLang partnership, UC Berkeley + Stanford + Cornell + NYU as compute customers.
+   - **Andrej Karpathy endorsement**: Called Hyperbolic his "favorite place" to interact with base language models — directly linked to BF16 precision advantage.
+   - **Inference API**: OpenAI-compatible. 5 active models (DeepSeek R1 0528 at 111 t/s, R1 Jan at 95 t/s, V3 0324 $1.25/M, Qwen3 Coder 480B 262K ctx, Llama 3.3 70B $0.40/M). Official Hugging Face serverless inference provider. Vercel AI SDK integration.
+   - **GPU products**: Spot marketplace (variable pricing), On-Demand H100 SXM at $1.49/hr (launched 2025), Reserved clusters. 6,500+ GPU rentals/month (April 2025).
+   - **Image gen**: Stable Diffusion + FLUX.1 [dev] (official Black Forest Labs partnership). ~$0.01/image.
+   - **MCP server**: Official `HyperbolicLabs/hyperbolic-mcp` (May 2025). Enables AI agents to manage GPU compute: list/rent/terminate instances, SSH, execute remote commands. Requires unencrypted SSH keys (documented security concern).
+   - **Traction**: 195,000+ developers (April 2025); 112B+ tokens processed (320% growth from March); DeepSeek R1 launch drove 150% inference surge.
+   - **Customers**: Hugging Face (official provider), Quora/Poe, Vercel, Coinbase (x402 launch partner), Stanford/Berkeley/Cornell/NYU.
+   - **Limitations**: Only 5 active inference models; variable marketplace pricing; production reliability concerns (decentralized = variable quality); crypto positioning may alienate mainstream AI devs; PoSP full mainnet deployment status unclear; 38 employees for large ambitions.
+   - **Rating: 4/5** — Genuinely differentiated position, top-tier endorsements, real technical credibility. Execution still catching up to vision; model catalog thin; not for production workloads requiring reliability guarantees.
+
+### What should happen next
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Next deploy window**: Throttle clears ~unix 1778238767 (~60 min after this deploy)
+- **Possible next reviews**: OctoAI/OctoML (acquired by ServiceNow, inference sunset — interesting cautionary tale), Lambda Labs (GPU cloud + inference, larger company), Inference.net (tiny $4M seed, may not warrant full review), or a non-inference topic for variety (e.g., AI coding tools roundup, MCP client comparison)
+
 ## Run 1073 — 2026-05-08 — DEPLOYED DeepInfra + Anyscale reviews (1376 pages live)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
