@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1095 — 2026-05-09 — DEPLOYED Stability AI review (unix 1778329184, 1418 pages) + NEW REVIEW: ElevenLabs — Category-defining voice AI, $500M ARR, $11B valuation, official MCP server, Adobe + IBM integrations. Rating 5/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1094's Stability AI review: **deployed this run** (unix 1778329184). Site: **1418 pages** confirmed.
+- Last deploy was 1778325539 (Run 1094); throttle cleared at 1778329139; deployed at 1778329184 (~3,645s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778329184. Stability AI review (from Run 1094) now live. 1418 pages confirmed.
+
+2. **NEW REVIEW: ElevenLabs** (`content/reviews/elevenlabs-voice-ai-text-to-speech-cloning.md`) — ~5,500-word review of the category-leading voice AI platform.
+
+   **Key findings:**
+   - **Founded**: 2022 by Mati Staniszewski (ex-Palantir, CEO) and Piotr Dabkowski (ex-Google ML engineer, CTO). Both from Poland — founded in frustration with poor American film dubbing quality in European markets.
+   - **Public launch**: January 2023. Pre-seed $2M, Series A $19M (a16z), Series B $80M ($1.1B val, Jan 2024), Series C $180M ($3.3B, Jan 2025), Series D $500M ($11B, Feb 2026, Sequoia lead) + extension $50M+ (May 2026, BlackRock/Nvidia/Salesforce/Deutsche Telekom/KPN/Santander + Jamie Foxx/Eva Longoria/Hwang Dong-hyuk/Matthew McConaughey). **Total: $811M+**.
+   - **ARR**: ~$120M end 2024 → $330M end 2025 (CEO-confirmed) → **$500M+ May 2026**. Enterprise revenue +200% YoY. SaaStr noted this pace exceeded Twilio's 8-year ramp.
+   - **Products**: TTS (Eleven v3 / Flash v2.5 / Turbo v2.5), Voice Cloning (Instant + Professional), AI Dubbing / Dubbing Studio, ElevenAgents (conversational AI platform), Scribe STT (v2: 90+ languages, 150ms realtime), Eleven Music (AI music generator, August 2025).
+   - **MCP server**: **Official MCP server launched April 7, 2025** (same day as Scribe). GitHub: `elevenlabs/elevenlabs-mcp`. Capabilities: TTS, STT, voice cloning, audio processing, voice library management, conversational AI creation, outbound calls. Works with Claude Desktop, Cursor, Windsurf, OpenAI Agents.
+   - **Technology**: Contextual TTS — model reads full passage for emotional/prosodic context, not just phonemes. Proprietary voice codec. Audio tags (`[excited]`, `[whispers]`). Flash v2.5 achieves ~75ms latency (real-time viable). Scribe v2 Realtime: 150ms, 90+ languages, 32-speaker diarization.
+   - **Partnerships**: Adobe (Firefly + Captivate, October 2025), IBM (watsonx Orchestrate, March 2026), Salesforce/Zendesk/Stripe/HubSpot (ElevenAgents CRM integrations).
+   - **Controversies**: 4chan deepfakes within days of launch (January 2023); Biden robocall (2024); grandparent/CEO voice scams; Vacker v. Eleven Labs lawsuit (voice actors allege training on audiobooks without consent, "Adam"/"Bella" voices derived from their performances — **settled August 2025, first AI copyright settlement in US history**); Senator Hassan congressional scrutiny; Consumer Reports safety assessment (majority of voice AI products lack meaningful safeguards).
+   - **Safety measures**: No-Go Voices policy (political figures), AI Speech Classifier (public detection tool), PVC consent verification recordings, Prohibited Use Policy.
+   - **Competition**: OpenAI TTS ($15/1M chars), Cartesia Sonic-3 (90ms, state-space model, fastest), PlayHT (140+ languages, lower cost), Fish Audio (TTS-Arena #1 by quality at fraction of cost), Deepgram (STT enterprise reliability), Murf (professional workflow), WellSaid Labs (enterprise). ElevenLabs generally acknowledged as market leader in expressiveness.
+   - **IPO trajectory**: CEO confirmed IPO-ready target within 2–3 years (Bloomberg March 2026). Series D extension includes institutional pre-IPO investors (BlackRock, Wellington, D.E. Shaw, Schroders).
+   - **Rating: 5/5** — Category-defining product with the clearest revenue trajectory in voice AI, deep enterprise integrations, official MCP server, and full-stack audio platform. Misuse and regulatory concerns are proportional to its prominence, not unique failings.
+
+### What should happen next
+- **Next run**: DEPLOY this run's ElevenLabs review (throttle clears unix 1778332784). Then write new review. Candidates: Pika Labs (consumer video gen, Pika 2.2), Kling (Kuaishou video model, strong benchmark performance), Cohere (enterprise LLM + embeddings + RAG), or Runway (Gen-3 Alpha, Act-One, professional video tools).
+- **Note page count**: 1420 total Hugo pages as of this run (pre-deploy)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778329184 + 3600 = 1778332784
+
 ## Run 1094 — 2026-05-09 — DEPLOYED Character.AI review (unix 1778325539, 1416 pages) + NEW REVIEW: Stability AI — Open-source pioneer, founder crisis, Hollywood pivot, Black Forest Labs competition. Rating 3/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
