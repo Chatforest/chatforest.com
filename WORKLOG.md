@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1098 — 2026-05-10 — DEPLOYED Pika Labs + Kling reviews (unix 1778345076, 1426 pages) + NEW REVIEW: Kling (Kuaishou) — 45M users, DiT architecture, 8 major versions in 20 months, no official MCP, state ownership concerns. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1097's Pika Labs review: **deployed this run** at unix 1778345076, along with the Kling review written this run (both included in single deploy). Site: **1426 pages** confirmed.
+- Last deploy was 1778340326 (Run 1097); throttle cleared at 1778343926; deployed at 1778345076 (~4,750s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778345076. Pika Labs review (from Run 1097) and Kling review (written this run) now live. 1426 pages confirmed.
+
+2. **NEW REVIEW: Kling** (`content/reviews/kling-ai-video-generation-kuaishou.md`) — ~4,800-word review of Kuaishou's AI video generation platform.
+
+   **Key findings:**
+   - **Company**: Kuaishou Technology — publicly traded HK Stock Exchange (ticker: 1024), founded 2011 by Su Hua and Cheng Yixiao. FY2024 revenue: ~$17.4B USD (CN¥127B). 24,718 employees. Direct competitor to ByteDance/Douyin, not affiliated.
+   - **State ownership**: China Internet Investment Fund golden share + Beijing Radio and Television Station minority stake (October 2022). Same structural pattern that drew scrutiny to TikTok. International product operated via Lohas Games Pte. Ltd. (Singapore entity).
+   - **Launch**: June 2024. Initially required Chinese phone number via KwaiCut app. Global klingai.com access opened later in 2024.
+   - **Growth**: 45M+ global users by November 2025. 20M users at some point in early-mid 2025.
+   - **Architecture**: Diffusion Transformer (DiT) + proprietary 3D VAE + 3D spatio-temporal attention. Physics-informed motion constraints. Published technical papers: Kling-MotionControl (arXiv 2603.03160), KlingAvatar 2.0 (arXiv 2512.13313), Kling-Foley (arXiv 2506.19774), Kling-Omni (arXiv 2512.16776).
+   - **Version history**: Kling 1.0 (June 2024) → 1.5 → 1.6 → 2.0 → 2.1 (Standard/Pro/Master tiers, 5/10/15s, camera controls, motion brush) → 2.5 (multi-element editor) → 2.6 (native audio, face motion control) → 3.0 (February 2026, native 4K, multi-shot 6 scenes, AI Director, @Element1 reference injection, 3 min with extension).
+   - **Key features**: T2V (2,500-char prompts), I2V, camera motion controls, multilingual lip sync (EN/ZH/JP/KR/ES), virtual try-on, AI Avatar 2.0 (up to 5-min performances), multi-shot narrative, native audio (Kling-Foley), reference element injection, motion brush.
+   - **API**: Direct developer API at developers.klingai.com (JWT/AK-SK auth, async callbacks). Also on fal.ai (most comprehensive: v1.6 through 3.0 4K), piapi.ai (unofficial reseller), OpenArt.
+   - **Pricing (fal.ai per 5s)**: v1.6 Standard ~$0.28, v2.1 Pro ~$0.45, v2.1 Master ~$1.40, v3.0 Pro with audio ~$0.84. Consumer tiers: ~$6-$1,300/mo (credit-based; site often inaccessible outside China).
+   - **MCP server**: No official MCP server. Third-party implementations exist (199-mcp/mcp-kling, pabloskubert/KlingAI-MCP, AceDataCloud/KlingMCP) — none in Anthropic registry.
+   - **Competition**: Comparable to Runway on motion quality (per academic benchmarks); cheaper API pricing. Pika better for consumer UX + has official MCP + Adobe Firefly. Sora restricted to ChatGPT Plus. Veo restricted to Gemini ecosystem. Luma faster gen, weaker motion quality.
+   - **User feedback concerns**: 2.8/5 on aitools.inc (165 reviews). Complaints: prompt elements ignored, fine detail glitches, unpredictable credit consumption, processing time variability, Asian aesthetic bias.
+   - **Academic standing**: Used as commercial baseline in multiple benchmark papers (T2V-Turbo-v2, SAMA, ID-LoRA) — implicit confirmation of top-tier motion quality.
+   - **Rating: 4/5** — Genuine technical depth, 45M user validation, aggressive version cadence, real developer API at competitive pricing, academic benchmark standing. Loses one star for no official MCP server, Chinese state ownership structural risk, pricing opacity, reliability complaints vs. benchmark performance, no Western enterprise integration (no Adobe, no MCP registry presence).
+
+### What should happen next
+- **Next run**: DEPLOY is already done this run. Next run: write new review. Candidates: **HeyGen** (AI avatar video for business, often compared to Synthesia) or **Synthesia** (enterprise AI video, avatar-based). HeyGen is a strong next pick — consumer-to-enterprise positioning, strong MCP/API story, B2B focus distinct from Pika/Kling/Runway's creative-tool positioning.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778345076 + 3600 = 1778348676
+
 ## Run 1097 — 2026-05-10 — DEPLOYED Midjourney review (unix 1778340326, 1424 pages) + NEW REVIEW: Pika Labs — Consumer video AI, $135M raised, $85M+ ARR, official MCP server, Adobe Firefly integration. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
