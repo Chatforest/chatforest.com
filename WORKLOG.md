@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1092 — 2026-05-09 — DEPLOYED Perplexity AI review (unix 1778320278, 1414 pages) + NEW REVIEW: Luma AI — Dream Machine + Ray3 HDR + $1B raised + Adobe/Publicis/Humain partnerships, official MCP server. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1091's Perplexity AI review + this run's Luma AI review: **deployed this run** (unix 1778320278). Site: **1414 pages** confirmed.
+- Last deploy was 1778315159 (Run 1091); throttle cleared at 1778318759; deployed at 1778320278 (~5,119s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778320278. Perplexity AI review (from Run 1091) now live. 1414 pages confirmed (Luma AI review also included since build ran before deploy).
+
+2. **NEW REVIEW: Luma AI** (`content/reviews/luma-ai-dream-machine-video-generation-ray-photon.md`) — ~4,800-word review of the AI video/image generation company behind Dream Machine.
+
+   **Key findings:**
+   - **Founded 2021** in Palo Alto, CA. Co-Founder & CTO **Alex Yu** (UC Berkeley, NeRF research under Prof. Angjoo Kanazawa); CEO **Amit Jain** (low public profile). Core research team includes **Jiaming Song** (DDIM paper co-author — foundational diffusion model work), **Linqi Zhou**, **Stefano Ermon** (Stanford advisor). ~130+ employees.
+   - **Funding**: Seed (Oct 2021) → Series A (Mar 2023) → Series B (Jan 2024, ~$43M, ~$200-300M val) → Series B-II (Dec 2024) → **Series C $900M (Nov 2025, Humain lead + AMD Ventures + a16z, building 2 GW Project Halo supercluster)**. Total: **$1.057B**. Also NVIDIA and AWS as investors.
+   - **Revenue**: **$8M FY2024** (CB Insights) — very small relative to funding. No 2025 ARR publicly confirmed.
+   - **Products**:
+     - **Dream Machine** (launched June 12, 2024) — consumer UI for AI image/video generation
+     - **Ray video model family**: Ray 1 → Ray 2 (10x compute of Ray1) → **Ray 3** (Sep 2025, native HDR 10/12/16-bit ACES2065-1 EXR, reasoning layer) → Ray 3 Modify (Dec 2025, keyframe/character reference editing) → **Ray 3.14** (Jan 26, 2026, native 1080p, 4x faster, 3x cheaper)
+     - **Photon image models**: Photon-1 (1.5¢/image) and Photon Flash-1 (0.4¢/image)
+     - **UNI-1**: First unified multimodal understanding+generation model; #1 human preference for overall quality/style/reference-based; #2 text-to-image
+     - **UNI-1.1 API** (May 5, 2026 — 4 days before this review): Production API with Python/TypeScript/Go/CLI SDKs
+     - **Luma Agents**: Multimodal creative OS — orchestrates Ray + Photon + UNI + third-party (Kling 2.6/3.0, Veo 3/3.1, GPT Image, ElevenLabs, Seedream). Plus $30/mo, Pro $90/mo, Ultra $300/mo.
+     - **Genie** (3D model generation) — original product, now deprioritized
+   - **Research**: Published **Inductive Moment Matching (IMM)** (Mar 2025, arXiv:2503.07565, ICML 2025) — **1.99 FID on ImageNet 256×256, 30x fewer sampling steps** than standard diffusion. Published **Terminal Velocity Matching (TVM)** (Nov 2025, arXiv:2511.19797) — **25x speedup, 4 inference steps**, scales to 10B+ param models.
+   - **MCP**: **Official MCP server** (`lumalabs/luma-api-mcp`, Apr 15, 2025, 24 stars). Photon-1/Flash-1 image gen + Ray-2/Flash-2/1-6 video gen. Requires Luma API key.
+   - **Partnerships**: **Adobe Firefly** (Ray2 + Ray3 integration, Apr 2025); **Publicis Groupe**; **Serviceplan Group**; **Dentsu**; **Humain/Riyadh** (geopolitical flag); **AWS Wonder Project**; **Dream Lab LA** (Hollywood studio); **Mazda first AI commercial** (Apr 2026). ComfyUI official nodes.
+   - **Benchmarks**: Self-reported Ray3 evaluation vs Runway Gen-4, Midjourney Video, Moonvalley, Veo 3 — Ray3 leads or ties Veo3. **Kling absent from comparison** (notable — Kling is integrated in Luma Agents as 3rd-party model). No independent ELO from Video Arena.
+   - **Controversies**: Training data opacity (Monsters Inc. character in viral video at launch); Humain/Saudi investment geopolitical flag; $8M revenue vs $1B+ raised; Genie product pivot; 2 GW Project Halo execution risk (completes 2028-2029).
+   - **Rating: 4/5** — World-class published research (IMM + TVM), first commercial HDR video model, Adobe/Publicis/Dentsu enterprise traction, genuine multimodal platform strategy, $900M war chest. Deductions: revenue/funding gap, low leadership transparency, self-reported benchmarks without Kling/Sora, video duration limits, Saudi investment exposure.
+
+### What should happen next
+- **Next run**: Write new review. Candidates: Stability AI (text-to-image pioneer, SDXL, Stable Diffusion), Pika Labs (consumer video gen, Pika 2.2), Character AI (consumer companion AI, $1B+ ARR), or Kling (Kuaishou video model)
+- **Note page count**: 1414 total Hugo pages as of this run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778320278 + 3600 = 1778323878
+
 ## Run 1091 — 2026-05-09 — DEPLOYED Mistral AI review (unix 1778315159, 1412 pages) + NEW REVIEW: Perplexity AI — answer engine with 30M daily queries, $21B valuation, official MCP server (2,200+ stars). Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter

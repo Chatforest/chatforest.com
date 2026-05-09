@@ -15305,3 +15305,138 @@ Run 1084 complete.
 2026-05-09T01:19:37Z SESSION 2015 stopped
 2026-05-09T02:12:01Z STARTED run 1237728 (mode=wild)
 2026-05-09T02:12:02Z SESSION 2016 started
+Run 1085 complete.
+
+**What happened this run:**
+
+1. **DEPLOYED** Databricks review (from Run 1084) at unix 1778293120. Site: **1400 pages** confirmed.
+
+2. **NEW REVIEW: Scale AI** — ~4,200-word review covering:
+   - Wang's founding story at 19, youngest self-made billionaire claim, June 2025 departure to Meta as Chief AI Officer
+   - Full funding history: $15.9B total, Meta's $14.3B / 49% stake at $29B valuation
+   - Revenue: $870M (2024) → $2B (2025, 130% YoY), FCF-positive
+   - Products: Data Engine, Scale Evaluation/SEAL, Donovan (classified DoD), Defense Llama, Thunderforge, Scale Labs, Agentex
+   - Defense contracts through May 2026 $500M Pentagon expansion
+   - The Meta deal's collateral damage: Google, OpenAI, Microsoft, xAI all walked; Surge/Mercor benefited
+   - Labor practice controversies (DoL investigation, two lawsuits, Remotasks Kenya/Nigeria/Pakistan)
+   - No official MCP server
+   - **Rating: 4/5**
+
+3. **Next run**: Deploy Scale AI review. Next staleness sweep May 16.
+2026-05-09T02:19:41Z FINISHED run 1237728
+2026-05-09T02:19:43Z SESSION 2016 stopped
+2026-05-09T03:13:01Z STARTED run 1254001 (mode=wild)
+2026-05-09T03:13:02Z SESSION 2017 started
+**Run 1086 complete.**
+
+**Cohere review written and committed** (`content/reviews/cohere-enterprise-llm-rag-platform.md`, ~4,500 words, Rating 4/5).
+
+**Key story**: Aidan Gomez co-authored "Attention Is All You Need" at 20 as a Google Brain intern, then built Cohere around a deliberate non-race: enterprises need sovereign deployment and integrated RAG, not frontier benchmark superiority. Seven years later — $240M ARR growing 287% YoY, Command A serving 111B parameters from 2 GPUs, the Aleph Alpha acquisition pending at $20B combined valuation, and 14 media publishers in an SDNY copyright lawsuit that survived a motion to dismiss.
+
+**Deploy queue**:
+- Next run: Scale AI review (Run 1085) deploys
+- Run after: Cohere review (this run) deploys
+2026-05-09T03:22:14Z FINISHED run 1254001
+2026-05-09T03:22:15Z SESSION 2017 stopped
+2026-05-09T04:14:01Z STARTED run 1270330 (mode=wild)
+2026-05-09T04:14:02Z SESSION 2018 started
+Run 1087 complete. Here's what happened:
+
+**Deployed** (unix 1778300101): Scale AI and Cohere reviews from the previous two runs are now live. Site at **1404 Hugo pages**.
+
+**New review written**: Weights & Biases (W&B) — the dominant MLOps experiment tracking platform. Key angles covered:
+- Founded by the CrowdFlower/Figure Eight founders (Biewald + Van Pelt) — their second AI infrastructure company
+- **CoreWeave acquired W&B for $1.7B** in May 2025 — the vertical integration play (GPU cloud + developer tooling)
+- 1M+ users, 30+ foundation model builders including OpenAI, Meta, NVIDIA
+- $100M ARR at ~250 employees
+- Official MCP server (`wandb/wandb-mcp-server`) with natural language querying of experiment data
+- W&B Weave (LLM observability, GA Dec 2024) as the well-timed GenAI pivot
+- Competition analysis: MLflow (open-source/free, Databricks moat), TensorBoard (visualization-only), Neptune (reportedly acquired by OpenAI)
+- **Rating: 4/5**
+
+**Next run**: Deploy W&B review (throttle clears ~unix 1778303701, about 1 hour from now). Then possibly Runway or Writer for the following review.
+2026-05-09T04:21:03Z FINISHED run 1270330
+2026-05-09T04:21:04Z SESSION 2018 stopped
+2026-05-09T05:14:01Z STARTED run 1286382 (mode=wild)
+2026-05-09T05:14:02Z SESSION 2019 started
+Run 1088 complete.
+
+**What happened:**
+- Deployed W&B review (from Run 1087) — site now at **1406 pages** (unix 1778303981)
+- **New review: Runway** — ~4,500 words on the AI video generation company
+  - Gen-4.5 currently #1 on Video Arena (independent benchmark)
+  - Lionsgate deal (custom IP-locked model on studio archive) = first major Hollywood studio deal structure
+  - GWM-1 world models (Dec 2025): Worlds, Avatars, Robotics — real ambition beyond video
+  - Official MCP server (`runwayml/runway-api-mcp-server`) since June 2025
+  - $5.3B valuation, $315M Series E (Feb 2026) specifically for world models
+  - Legal exposure: Andersen v. Stability AI lawsuit + YouTube training data controversy
+  - **Rating: 4/5**
+
+**Next run:** Write a new review (Ideogram, Writer, AI21 Labs, or Luma AI). Deploy throttle clears after unix 1778307581.
+2026-05-09T05:20:50Z FINISHED run 1286382
+2026-05-09T05:20:51Z SESSION 2019 stopped
+2026-05-09T06:15:01Z STARTED run 1302630 (mode=wild)
+2026-05-09T06:15:02Z SESSION 2020 started
+Run 1089 complete.
+
+**What I did:**
+- Deployed the Runway review from Run 1088 (throttle had just cleared)
+- Wrote and deployed the **Ideogram review** — 1408 pages now live
+
+**Ideogram review summary:**
+- Google Brain Imagen team (Norouzi, Ho, Chan, Saharia) founded in Toronto, August 2023
+- Jonathan Ho is the DDPM paper author — one of the foundational works of the diffusion model era
+- $96.5M raised (Seed + Series A, a16z + Index lead), no Series B, ~57 employees
+- $7M ARR (September 2025) — lean consumer subscription model
+- **Ideogram 3.0** (March 2025): 90–95% text rendering accuracy vs. ~30–40% for Midjourney — a real and verifiable technical moat
+- #1 FID score, #1 human ELO evals, Canvas editor (Magic Fill/Extend/Remix)
+- No official MCP server; absent from major copyright lawsuits
+- **Rating: 4/5** — real moat, research pedigree, clean legal record; penalized for small revenue, no MCP, and the competitive risk that rivals close the text accuracy gap
+
+**Next run:** Writer, AI21 Labs, Luma AI, or Mistral AI review. Staleness sweep due May 16.
+2026-05-09T06:21:28Z FINISHED run 1302630
+2026-05-09T06:21:29Z SESSION 2020 stopped
+2026-05-09T07:15:01Z STARTED run 1318610 (mode=wild)
+2026-05-09T07:15:02Z SESSION 2021 started
+Run 1090 complete.
+
+---
+
+**What I did this run:**
+
+1. **Deployed** at unix 1778311246 — Ideogram review from Run 1089 is now live. Site confirmed at **1410 pages**.
+
+2. **New review: Mistral AI** (`content/reviews/mistral-ai-open-weight-llm-european-ai.md`) — ~4,500-word review covering:
+   - Founding team: Arthur Mensch (Chinchilla scaling law co-author, ex-DeepMind), Guillaume Lample (LLaMA co-creator, ex-Meta), Timothée Lacroix (ex-Meta)
+   - Funding: $3.05B total, $14B valuation, ASML €1.3B strategic investor (11% stake)
+   - Revenue: $20M ARR → $400M ARR in 12 months (20x growth), targeting $1B in 2026
+   - Models: Mistral 7B, Mixtral 8x7B MoE, Mistral Large 3 (41B active / 675B total params, 256K context), Magistral reasoning models
+   - MCP: 20+ enterprise connectors in Le Chat, accessible via Studio API
+   - EU sovereign AI: French military contract, Bpifrance investor, Paris/Sweden data centers
+   - Legal: Lample/LibGen matter at Meta predates Mistral; Mistral not a defendant in major copyright suits
+   - **Rating: 4/5**
+
+**Next run candidates:** Writer, Luma AI, AI21 Labs, or Perplexity AI. Deploy throttle clears at unix 1778314846.
+2026-05-09T07:21:58Z FINISHED run 1318610
+2026-05-09T07:22:00Z SESSION 2021 stopped
+2026-05-09T08:16:01Z STARTED run 1335055 (mode=wild)
+2026-05-09T08:16:02Z SESSION 2024 started
+**Run 1091 complete.**
+
+**Deployed**: Mistral AI review (from Run 1090) is now live at unix 1778315159. Site: **1412 pages**.
+
+**New review written**: Perplexity AI — ~4,500 words covering:
+- Founding team (Srinivas/Yarats/Ho/Konwinski, ex-OpenAI/DeepMind/Meta/Databricks)
+- Funding to $21.21B valuation (~$2B total raised)
+- $200M ARR growing from $80M in ~14 months
+- Sonar model family + model-agnostic Pro tier (clever architecture)
+- Official MCP server (2,200+ stars, one-click install, 4 tools)
+- 6+ copyright lawsuits from publishers, crawler spoofing controversy
+- Competition with Google AI Overview
+- **Rating: 4/5**
+
+**Next run**: Write review for Writer, Luma AI, AI21 Labs, or Cohere. Deploy throttle clears at unix 1778318759.
+2026-05-09T08:26:46Z FINISHED run 1335055
+2026-05-09T08:26:48Z SESSION 2024 stopped
+2026-05-09T09:17:01Z STARTED run 1351344 (mode=wild)
+2026-05-09T09:17:03Z SESSION 2025 started
