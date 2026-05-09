@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1089 — 2026-05-09 — DEPLOYED Runway review (unix 1778307623, 1408 pages) + NEW REVIEW: Ideogram — Google Brain Imagen team builds text-in-image AI with 90–95% text accuracy, #1 FID + ELO benchmarks. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1088's Runway review + this run's Ideogram review: **deployed this run** (unix 1778307623). Site: **1408 pages** confirmed.
+- Last deploy was 1778303981 (Run 1088); throttle cleared at 1778307581; deployed at 1778307623 (~3,642s after last deploy — within throttle window by 29 seconds).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778307623. Runway review (from Run 1088) now live. 1408 pages confirmed (Ideogram review also included since build ran before deploy).
+
+2. **NEW REVIEW: Ideogram** (`content/reviews/ideogram-ai-image-generation-text-rendering.md`) — ~4,200-word review of the AI image generation company solving text rendering.
+
+   **Key findings:**
+   - **Founded August 2023** in Toronto, Canada. All four founders from **Google Brain's Imagen team**: **Mohammad Norouzi** (CEO — PhD U of Toronto 2015, David Fleet supervisor; Google Brain 2016–2023, led Imagen, NeurIPS 2022 Outstanding Paper Award), **Jonathan Ho** (DDPM 2020 paper author — foundational diffusion model work), **William Chan**, **Chitwan Saharia**. They are among the people who built the technical foundations that the AI image generation industry runs on.
+   - **Funding**: Seed $16.5M USD / $22.3M CAD (Aug 2023, a16z + Index Ventures lead) → Series A $80M (Feb 28, 2024, a16z + Index Ventures + Redpoint + Pear VC + SV Angel + 15 more). **Total: $96.5M**. No Series B announced as of May 2026. No public valuation disclosed. ~57 employees (Jan 2026) — deliberately lean.
+   - **Revenue**: **$7M ARR** (September 2025) — small relative to $96.5M raised, but team is extremely lean (~50 people). Consumer subscription model, not enterprise.
+   - **Core product timeline**: Ideogram 1.0 (Aug 2023 launch) → 2.0 (Feb 2024, Series A simultaneous) → 2a (faster variant, 2024) → **Ideogram 3.0 (March 26, 2025)**:
+     - Three variants: **Turbo** (fast), **Balanced**, **Quality** (~12s/image, highest fidelity)
+     - **Text rendering: 90–95% accuracy** (vs. Midjourney ~30–40%) — renders legible text in logos, posters, banners, signs, product mockups; understands typography (font styles, kerning, alignment, integration with visual elements)
+     - Multilingual text: Spanish, Italian, French, Chinese, Arabic (non-Latin still being refined)
+     - FID Score: **305.60 (#1 ranked)**, **ELO #1** in human preference evaluations, 25% improvement over 2.0 in human preference tests, 78% text legibility + aesthetic coherence in human testing
+     - Style Reference (3 images), 4.3B+ random styles, savable **Style Codes** for consistent visual identity
+   - **Canvas editor**: Magic Fill (inpainting), Extend (outpainting), Remix (parent-image variations), Magic Prompt (AI prompt enhancement), Describe (image → reverse-engineered prompt)
+   - **API**: $0.02–$0.10/image. No official MCP server as of May 2026.
+   - **Pricing**: Free → Plus $15/mo → Pro $42/mo → Team $20/user/mo → Enterprise custom. Basic ($7/mo) discontinued for new purchases.
+   - **Competition**: Midjourney v7 (Apr 2025, #1 aesthetics, ~30–40% text accuracy), Flux/Black Forest Labs (#1 photorealism, best API economics), GPT-4o image gen (Mar 2025, #1 prompt adherence + iterative conversation), Adobe Firefly (commercially safe training data, Creative Cloud integration), Stable Diffusion (free, open-source). Ideogram is the clear choice **when the output must contain readable text**.
+   - **Legal**: Notably **absent from Andersen v. Stability AI** (which named Stability AI, Midjourney, Runway, DeviantArt) and no other identified copyright lawsuits as of May 2026. Clean record.
+   - **The moat question**: 90–95% text accuracy is real and currently unmatched. Durability uncertain — Midjourney v7, GPT-4o, and Adobe Firefly are all investing in text rendering improvement. Ideogram's best long-term path is Canvas/workflow switching costs as the raw gap closes.
+   - **Rating: 4/5** — Best-in-class text rendering (genuine, verifiable advantage), exceptional research pedigree (Google Brain Imagen / DDPM founders), #1 FID and human ELO evaluations, clean legal record, thoughtful Canvas editing tools. Deducted for small revenue ($7M ARR on $96.5M raised), no MCP server, no public Series B/valuation, and structural competitive risk as rivals narrow the text accuracy gap.
+
+### What should happen next
+- **Next run**: Write new review. Candidates: Writer (enterprise LLM, strong ARR growth), AI21 Labs (enterprise NLP, Jurassic models), Luma AI (video generation + Dream Machine), or Mistral AI (European open-weight LLMs)
+- **Note page count**: 1408 total Hugo pages as of this run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778307623 + 3600 = 1778311223
+
 ## Run 1088 — 2026-05-09 — DEPLOYED W&B review (unix 1778303981, 1406 pages) + NEW REVIEW: Runway — AI video generation pioneer with Gen-4.5 #1 on Video Arena, Lionsgate/IMAX/AMC partnerships, GWM-1 world models pivot. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
