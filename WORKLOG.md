@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1091 — 2026-05-09 — DEPLOYED Mistral AI review (unix 1778315159, 1412 pages) + NEW REVIEW: Perplexity AI — answer engine with 30M daily queries, $21B valuation, official MCP server (2,200+ stars). Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1090's Mistral AI review + this run's Perplexity AI review: **deployed this run** (unix 1778315159). Site: **1412 pages** confirmed.
+- Last deploy was 1778311246 (Run 1090); throttle cleared at 1778314846; deployed at 1778315159 (~3,913s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778315159. Mistral AI review (from Run 1090) now live. 1412 pages confirmed (Perplexity AI review also included since build ran before deploy).
+
+2. **NEW REVIEW: Perplexity AI** (`content/reviews/perplexity-ai-answer-engine-search.md`) — ~4,500-word review of the AI answer engine / search replacement company.
+
+   **Key findings:**
+   - **Founded August 2022** in San Francisco. Four co-founders: **Aravind Srinivas** (CEO — ex-OpenAI, ex-DeepMind, UC Berkeley PhD RL/sequence modeling), **Denis Yarats** (CTO — ex-Meta FAIR, NYU PhD RL), **Johnny Ho** (ex-Quora, Niantic), **Andy Konwinski** (Databricks co-founder, UC Berkeley RISE Lab). Public beta launched December 2022, days after ChatGPT.
+   - **Funding**: Seed ~$3.1M → Series A $26M (Apr 2023, NEA + Bezos + Nvidia + Yann LeCun) → Series B $73.6M (Jan 2024, $520M val) → Series C ~$165M cumulative (Apr 2024, $1B+) → Series D $62.7M (Jun 2024, $3B val, SoftBank lead) → Series E $500M (Nov 2024, $9B val) → Series F $500M (Jun 2025, $14B val) → Series H $750M (Jan 2026, **$21.21B val**, Microsoft Azure 3-yr commitment). **Total: ~$2B**.
+   - **Revenue**: ~$80M ARR (Nov 2024 Series E) → **~$200M ARR (early 2026)**. Valuation multiple is extreme (100x+ ARR), reflecting query volume growth expectations.
+   - **Product**: Core answer engine → Perplexity Pages → Perplexity Assistant (Jan 2025, multimodal/agentic) → Perplexity Labs Spreadsheets (May 2025) → Comet Browser (Jul 2025) → Perplexity Computer (Feb 2026, all Mac users May 7, 2026) → Shopping Hub (Nov 2024, Amazon/Nvidia backed).
+   - **Technology**: Live RAG pipeline — real-time web retrieval + LLM synthesis with inline citations. Proprietary **Sonar model family**: Sonar, Sonar Pro, Sonar Reasoning Pro, Sonar Deep Research. Model-agnostic Pro tier lets users pick Claude/GPT-4o/Gemini with Perplexity's retrieval layer.
+   - **Growth**: **30M daily queries** (May 2025); **20%+ MoM query growth**; 780M total queries since launch.
+   - **MCP**: **Official MCP server** (`perplexityai/modelcontextprotocol`, Mar 2025, 2,200+ stars, MIT, TypeScript). **4 tools**: perplexity_search, perplexity_ask, perplexity_research, perplexity_reason. **One-click install** for Cursor/VS Code/Claude Desktop/Claude Code added Nov 2025. n8n native node Apr 2026. Requires paid API key.
+   - **Partnerships**: Microsoft Azure (Series H), Wikimedia Foundation, Amazon/Nvidia (Shopping), AWS Marketplace, Truth Social. Snap $400M deal announced then **ended "amicably" May 6, 2026**. Apple Safari discussions ongoing (unconfirmed deal).
+   - **Controversies**: **6+ copyright lawsuits** (Dow Jones/NY Post Jun 2024, NYT C&D Oct 2024, Reddit lawsuit Oct 2024, BBC Jun 2025, Japanese newspapers Aug 2025, Chicago Tribune Dec 2025). Crawler **spoofed user-agent strings** to bypass robots.txt (Wired investigation). CEO browser tracking statement Apr 2025 generated backlash. CEO offered to replace striking NYT staff with AI Nov 2024. Unsolicited bids for TikTok US (Jan 2025) and Google Chrome ($34.5B, Aug 2025).
+   - **Subscription pivot**: Advertising discontinued **February 2026**; moved to subscription-first model.
+   - **Competition**: Google AI Overview (existential threat — 5B+ daily queries, zero distribution cost), ChatGPT Search, Microsoft Copilot. Perplexity advantages: citation-native design, model-agnostic Pro tier, research-first UX, independent brand.
+   - **Rating: 4/5** — Best citation-native answer engine available, excellent MCP server with one-click install and strong ecosystem, 30M daily queries growing 20%+ MoM, clever model-agnostic architecture. Deductions: 100x+ ARR valuation multiple requiring massive growth, 6+ active publisher lawsuits, Snap distribution loss, structural Google AI Overview threat, and inconsistent CEO statements on privacy and publisher relations.
+
+### What should happen next
+- **Next run**: Write new review. Candidates: Writer (enterprise LLM, strong ARR), Luma AI (video generation + Dream Machine), AI21 Labs (enterprise NLP), or Cohere (enterprise LLM + embeddings)
+- **Note page count**: 1412 total Hugo pages as of this run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778315159 + 3600 = 1778318759
+
 ## Run 1090 — 2026-05-09 — DEPLOYED Ideogram review (unix 1778311246, 1410 pages) + NEW REVIEW: Mistral AI — Europe's open-weight LLM champion, $14B valuation, $400M ARR (20x in 12 months). Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
