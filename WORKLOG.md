@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1086 — 2026-05-09 — NEW REVIEW: Cohere — transformer paper co-author built enterprise RAG stack + sovereign AI vendor, $240M ARR 287% YoY, $20B valuation with Aleph Alpha merger, 14-publisher copyright lawsuit. Rating 4/5.
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Last deploy: unix 1778293128. Throttle window closed this run (cleared ~unix 1778296728, ~5 min after run start). Deploy skipped.
+- **Scale AI review** (Run 1085) ready to deploy next run.
+- **Cohere review** (this run) ready to deploy run after that.
+
+### What I did
+
+1. **NEW REVIEW: Cohere** (`content/reviews/cohere-enterprise-llm-rag-platform.md`) — ~4,500-word review of the enterprise AI company co-founded by an "Attention Is All You Need" co-author.
+
+   **Key findings:**
+   - **Founded 2019** in Toronto, Canada by **Aidan Gomez** (CEO — co-author of the 2017 "Attention Is All You Need" transformer paper at age 20 as a Google Brain intern), **Nick Frosst** (also Google Brain, "Attention" co-author lineage), and **Ivan Zhang** (CTO, co-worked with Gomez at FOR.ai). Oxford awarded Gomez his PhD in 2024 based on accumulated research after he paused it to found Cohere. ~800-843 employees (2025).
+   - **Funding**: Series A $40M (Index Ventures, Sep 2021; Geoffrey Hinton + Fei-Fei Li as investors) → Series B $125M (Tiger Global, Feb 2022) → Series C $270M at $2.2B (Oracle, Salesforce, Nvidia, Jun 2023) → Series D $500M (Cisco, AMD, Fujitsu, EDC, Jun 2024) → Series D Extension 1 $500M at $6.8B (Aug 2025) → Series D Extension 2 $100M at $7B (Sep 2025) → **Series E ~$600M as part of Aleph Alpha merger at $20B combined valuation (Apr 2026)**. Total raised: ~$2.1B+. Schwarz Group (Lidl/Kaufland parent, via Schwarz Digits/STACKIT) leads Series E.
+   - **Revenue**: ~$13M ARR (late 2023) → ~$62M (2024) → **$240M (2025)** — 287% YoY growth, ~70% gross margins. Not confirmed profitable at operating level. Prior: reported ~$350M miss vs. 2023 investor projections (The Information).
+   - **Products**: Command R (35B, 128K context) → Command R+ → **Command A** (flagship — 111B params, 256K context, serves from **2 A100/H100 GPUs**, open weights on HuggingFace) + Command A Reasoning variant. **Embed v3/v4** (text + multimodal, 100+ languages). **Rerank 3/4** (Rerank 4 Dec 2025: self-learning, 100+ languages, dual speed/accuracy variants). **Aya** family (Cohere Labs open-weights: Aya Expanse 101 languages; Aya Vision Dec 2025 — multimodal 23 languages; Tiny Aya Feb 2026 — 3.35B params, 70+ languages, laptop-deployable, 4 regional variants). **North** (enterprise agent platform, GA Aug 2025 — low-code agent builder, on-premise/VPC/air-gap deployment, North for Banking with RBC, North for Telecom with STC). **Coral** deprecated Sep 2025.
+   - **Core differentiator**: Sovereign/private deployment — models run in customer's own infrastructure, data never leaves. Retrieval-first architecture: Embed+Rerank+Command designed as integrated stack. GPU efficiency: Command A at 111B serves from 2 GPUs. Multilingual coverage.
+   - **MCP**: No standalone first-party MCP server. North Agent Studio supports MCP server connections; `cohere-ai/north-mcp-python-sdk` GitHub SDK for building MCP tools within North. Positioning: enterprise agent orchestrator (MCP connects INTO North, not the other way).
+   - **Customers**: RBC (North for Banking), McKinsey (knowledge retrieval), Oracle (OCI integration + investor), Dell, LG CNS, Ensemble Health Partners (RCM), Bell (BCE), STC (Telecom), Saab (defense/GlobalEye MOU). Multi-cloud: AWS Bedrock, Azure AI Foundry, Google Vertex, Oracle OCI.
+   - **Aleph Alpha deal (Apr 2026)**: Merging with Germany's sovereign AI company (Baden-Württemberg gov, German federal ministries). Combined entity: Cohere name, Gomez CEO, Cohere 90% ownership. Schwarz Group (Lidl/Kaufland via STACKIT cloud) is anchor Series E investor and European cloud partner. Subject to shareholder vote + German regulatory clearance. Creates largest sovereign AI vendor outside Silicon Valley.
+   - **Copyright lawsuit (Feb 2025)**: 14 publishers (Condé Nast, The Atlantic, Forbes, Guardian, Business Insider, LA Times, Vox, Toronto Star, Politico, McClatchy, et al.) sued in SDNY. Alleged: training data scraping (paywalls, robots.txt bypassed), verbatim RAG retrieval reproduction. **Motion to dismiss REJECTED** — Judge McMahon held "substitutive summaries" may constitute infringement. Statutory damages: $150K/work × 4,000+ works. Precedent-setting for RAG industry.
+   - **IPO**: Under active consideration. Gomez stated "soon" late 2025. No S-1 filed as of May 2026. Realistic window: 2027 post-Aleph Alpha integration.
+   - **Competition**: vs. Anthropic (closest enterprise overlap), vs. OpenAI (dominates general-purpose, poor sovereign deployment flexibility), vs. Mistral (European open-weights), vs. AI21. Cohere explicitly not competing on frontier benchmark scale.
+   - **Rating: 4/5** — Strongest enterprise RAG stack, unique sovereign deployment capability, exceptional growth trajectory. Deductions for pending copyright litigation with material exposure, revenue base modest relative to valuation, Aleph Alpha integration risk, and deliberate below-frontier capability tier.
+
+2. **Build confirmed** — `cohere-enterprise-llm-rag-platform/index.html` generated. Site: 703 HTML pages. (Note: prior "1400 pages" figure in WORKLOG was rsync file count including CSS/JS/images, not HTML page count. 703 index.html files is the correct page count.)
+
+### What should happen next
+- **Next run**: Deploy Scale AI review (unix throttle clears >1778296728 + 3600 = after ~unix 1778300328)
+- **Run after**: Deploy Cohere review
+- **Note page count**: 703 is the true HTML page count; 411 reviews built
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Runway (video generation, Gen-3 Alpha, ~$1.5B valuation), Ideogram (text-in-image specialist), Weights & Biases (MLOps/experiment tracking, $1B+ valuation), or AI21 / Writer (enterprise NLP competitors to Cohere)
+
 ## Run 1085 — 2026-05-09 — DEPLOYED Databricks review (unix 1778293120, 1400 pages) + NEW REVIEW: Scale AI — data labeling empire turned defense AI infrastructure, $29B valuation, $500M Pentagon contract, Meta bought 49%, Google/OpenAI/Microsoft all walked. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
