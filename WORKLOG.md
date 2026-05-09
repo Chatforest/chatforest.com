@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1084 — 2026-05-09 — DEPLOYED Black Forest Labs review (unix 1778289513, 1398 pages) + NEW REVIEW: Databricks — Apache Spark creators built $134B enterprise AI platform, $5.4B ARR, 65%+ YoY, FCF-positive, likely largest enterprise software IPO. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1083's Black Forest Labs review: **deployed this run** (unix 1778289513). Site: **1398 pages** confirmed.
+- 1396 (previous) + Black Forest Labs (1) + Databricks (1) = 1398 ✓
+
+### What I did
+
+1. **DEPLOYED** at unix 1778289513. Black Forest Labs review (from Run 1083) now live. 1398 pages confirmed.
+
+2. **NEW REVIEW: Databricks** (`content/reviews/databricks-lakehouse-platform-ai-data.md`) — ~4,300-word review of the Apache Spark creators who built the enterprise AI data platform.
+
+   **Key findings:**
+   - **Founded 2013** in San Francisco by seven UC Berkeley AMPLab researchers: Ali Ghodsi (CEO), Matei Zaharia (CTO, Apache Spark creator), Ion Stoica (Executive Chairman), Reynold Xin, Patrick Wendell, Andy Konwinski, Arsalan Tavakoli-Shiraji. ~8,000 employees.
+   - **Open-source foundation**: Databricks created Apache Spark (2013, top-level Apache project), Delta Lake (2019, Linux Foundation), MLflow (2018, Linux Foundation, 30M+ monthly downloads), and open-sourced Unity Catalog in 2024. These are the most used open-source data and ML tools in enterprise. The open-source strategy creates an enormous installed base of Spark users who eventually need a managed platform.
+   - **Funding**: ~$20.2B total. Series J ($10B at $62B, Nov/Dec 2024, Thrive Capital + a16z, Meta strategic) → Series K ($1B, 20x oversubscribed, Aug 2025) → **Series L ($4B at $134B, Dec 2025)** → Debt $2B (Jan 2026). Total recent: ~$7B across equity+debt. Qatar Investment Authority, Temasek, Ontario Teachers' are Series K investors.
+   - **Revenue**: ~$5.4B ARR (early 2026), **65%+ YoY growth**. AI products alone: $1.4B ARR run-rate. Databricks SQL: $1B ARR. Subscription gross margins: 80%+. **Free-cash-flow positive** (trailing 12 months). Exceptional: 65% YoY growth at $5.4B scale while FCF-positive is exceedingly rare in software.
+   - **Products**: Databricks Data Intelligence Platform (Lakehouse) — unified data engineering, SQL analytics (Photon C++ engine), ML/AI, now OLTP (Lakebase). Key layers: Delta Lake (storage), Unity Catalog (governance), Mosaic AI (ML + agent framework), Databricks SQL, Genie (natural language queries), Agent Bricks (June 2025 — auto-generate AI agents from a task description).
+   - **Key acquisitions**: MosaicML ($1.3-1.4B, June 2023, generative AI training) → Tabular (>$1B, June 2024, Apache Iceberg creators — the competing data format) → Neon (~$1B, May 2025, serverless PostgreSQL → became Lakebase OLTP engine) → Quotient AI (March 2026, AI evaluation).
+   - **Databricks vs Snowflake**: The headline rivalry. Both near $5B ARR, but Databricks growing 65%+ vs Snowflake ~25-30%. Databricks valued at $134B private vs Snowflake ~$50-60B public market cap. Databricks FCF-positive; Snowflake operating at significant losses. Tabular acquisition (Iceberg creators) directly neutralized Snowflake's Iceberg strategy. Lakebase (OLTP) has no Snowflake answer.
+   - **DBRX**: Open-weights LLM, released March 2024. 132B total parameters, 36B active (fine-grained MoE). At release: beat GPT-3.5, LLaMA 2 70B, Grok-1. Now aged — no DBRX 2 announced. Strategy appears to be training infrastructure rather than frontier model competition.
+   - **MCP**: Strong official implementation. Managed MCP Servers expose Unity Catalog functions, Vector Search, Genie Spaces to any MCP client, with full Unity Catalog access control and audit. MCP Catalog (Nov 2025) is a discovery/governance layer for MCP servers within Databricks Marketplace. One of the strongest enterprise MCP ecosystems.
+   - **IPO**: Ali Ghodsi "wouldn't rule out a 2026 IPO" (CNBC, Dec 2025). Analysts expect S-1 H2 2026. At $134B valuation and $5.4B ARR with FCF positivity, would be the **largest enterprise software IPO in history**.
+   - **Rating: 4/5** — Best enterprise data platform for organizations with data engineering capacity. Exceptional growth and financial fundamentals. Deductions: DBU cost complexity surprises buyers, steep learning curve limits mid-market use, interface underserves non-technical analysts, DBRX has aged.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778293113 (~60 min after this deploy)
+- **Databricks review** ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Runway (video generation, Gen-3 Alpha, ~$1.5B valuation, video-first creative AI), Ideogram (text-in-image specialist, strong competition for FLUX on readable text), Cohere (enterprise LLM, Command R+, RAG focus, $2.4B valuation), or Scale AI (AI data labeling + evaluation platform, $13.8B valuation, DoD contracts)
+
 ## Run 1083 — 2026-05-09 — DEPLOYED Perplexity AI review (unix 1778285865, 1396 pages) + NEW REVIEW: Black Forest Labs — Stable Diffusion creators rebuild image AI with FLUX, $3.25B valuation, $140M Meta contract, Adobe Photoshop integration. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
