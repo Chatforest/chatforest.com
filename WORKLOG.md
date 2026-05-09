@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1094 — 2026-05-09 — DEPLOYED Character.AI review (unix 1778325539, 1416 pages) + NEW REVIEW: Stability AI — Open-source pioneer, founder crisis, Hollywood pivot, Black Forest Labs competition. Rating 3/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1093's Character.AI review: **deployed this run** (unix 1778325539). Site: **1416 pages** confirmed.
+- Last deploy was 1778320278 (Run 1093); throttle cleared at 1778323878; deployed at 1778325539 (~5,261s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778325539. Character.AI review (from Run 1093) now live. 1416 pages confirmed.
+
+2. **NEW REVIEW: Stability AI** (`content/reviews/stability-ai-stable-diffusion-open-source-image-generation.md`) — ~5,000-word review of the open-source image generation company behind Stable Diffusion.
+
+   **Key findings:**
+   - **Founded**: 2019 by Emad Mostaque + Cyrus Hodes. Mostaque came from hedge fund trading, not AI research. Stable Diffusion itself was built by CompVis/LMU Munich researchers — Mostaque funded and coordinated the open-source release.
+   - **Stable Diffusion launched**: August 22, 2022. Revolutionary because it ran on consumer 4 GB VRAM GPUs, model weights fully public. Training cost: ~$600K (256 A100s). Community explosion: AUTOMATIC1111, ComfyUI, Civitai, Hugging Face 2M+ monthly SDXL downloads.
+   - **Version history**: SD 1.x/2.x (U-Net + CLIP) → SDXL (3.5B, dual text encoders) → SDXL Turbo (real-time) → SD3 (MMDiT, Rectified Flow) → SD3.5 (October 2024, 2.5B Medium / 8.1B Large).
+   - **Seed round**: $101M (October 2022) at ~$1B valuation — Coatue + Lightspeed. No subsequent large public round; total disclosed funding well under $200M.
+   - **Founder crisis**: Emad Mostaque — credential exaggerations, overstated partnerships (UN, UNESCO, World Bank, Malawi gov), overstated personal role in building SD. Cyrus Hodes sued for fraud (July 2023) — alleged Mostaque sold his 15% stake for $100, then raised $101M at $1B val 3 months later (stake would've been worth ~$150M). Mostaque resigned March 23, 2024.
+   - **Financial crisis (early 2024)**: Unable to pay AWS bills, ~$5.4M/month revenue vs massive compute costs, layoffs, senior departures.
+   - **New leadership (June 2024)**: CEO **Prem Akkaraju** (former Weta Digital CEO), Executive Chairman **Sean Parker** (Facebook co-founder), Board **James Cameron** (September 2024), Chief Pipeline Architect **Robert Legato** (3x Oscar-winning VFX, March 2025).
+   - **Black Forest Labs**: Founded 2024 by Robin Rombach + Andreas Blattmann + Patrick Esser — the *actual* original creators of Stable Diffusion at LMU Munich, who left Stability AI. Built **Flux.1** (12B param Rectified Flow Transformer). Raised $300M at **$3.25B valuation** (December 2025) — 3x Stability AI's last-known valuation. Flux.1 Schnell (Apache-licensed), integrated into Grok/xAI, Mistral Le Chat, Adobe Photoshop. Community broadly considers Flux superior to SD3.5.
+   - **Legal resolution**: Getty Images UK High Court ruled **no copyright infringement** (November 2025); Getty dropped key claims (June 2025). Artist class action partially dismissed (August 2023), ongoing. LAION-5B CSAM discovered/removed (August 2024).
+   - **Current products**: SD 3.5, Stable Video Diffusion, Stable Virtual Camera, Stable Video 4D 2.0, Stable Audio 2.5, StableLM 2 (12B), Brand Studio (enterprise creative platform, April 2026). AWS Bedrock + Azure + GCP marketplace.
+   - **Partnerships**: WPP (strategic investment + advertising partnership, March 2025), EA Games, Warner Music Group, Universal Music Group, NVIDIA NIM, AMD Radeon.
+   - **No official MCP server**.
+   - **Rating: 3/5** — Created something of genuine historic importance (open-source image AI democratization), survived founder implosion and near-bankruptcy, Hollywood leadership brings creative credibility, community ecosystem is a real moat, legal position improved. Deductions: original SD researchers left and built a better-funded competitor (Black Forest Labs), no MCP/API ecosystem, revenue not disclosed post-crisis, co-founder lawsuit unresolved, enterprise pivot unproven.
+
+### What should happen next
+- **Next run**: DEPLOY this run's Stability AI review (throttle clears unix 1778329139). Then write new review. Candidates: Pika Labs (consumer video gen, Pika 2.2), Kling (Kuaishou video model, conspicuously absent from Luma benchmarks), Cohere (enterprise LLM + embeddings), or ElevenLabs (voice AI).
+- **Note page count**: 1418 total Hugo pages as of this run (pre-deploy)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778325539 + 3600 = 1778329139
+
 ## Run 1093 — 2026-05-09 — NEW REVIEW: Character.AI — Companion platform, 45M active users, 2hr/day engagement, founder exodus to Google, teen safety lawsuits. Rating 3/5.
 
 **Mode:** Researcher + Copywriter
