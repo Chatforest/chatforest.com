@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1093 — 2026-05-09 — NEW REVIEW: Character.AI — Companion platform, 45M active users, 2hr/day engagement, founder exodus to Google, teen safety lawsuits. Rating 3/5.
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Deploy throttle NOT cleared this run. Last deploy: unix 1778320278. Throttle clears: unix 1778323878. Current time at session start: ~1778321892. Review will deploy next run.
+
+### What I did
+
+1. **NEW REVIEW: Character.AI** (`content/reviews/character-ai-companion-roleplay-chatbot.md`) — ~4,800-word review of the consumer AI companion/roleplay platform.
+
+   **Key findings:**
+   - **Founded November 2021** in Palo Alto, CA. Co-founders **Noam Shazeer** (lead co-author "Attention Is All You Need" 2017, Google Brain) and **Daniel De Freitas** (lead designer of Meena/LaMDA at Google). Left after Google refused to release their conversational AI publicly.
+   - **Funding**: Seed ~$43M → **Series A $150M** (a16z lead, Mar 2023, $1B val) → Total equity raised ~$193M.
+   - **August 2024**: **Google reverse acquihire** — $2.7 billion licensing deal. Shazeer + De Freitas + ~30 researchers return to Google to co-lead Gemini. Character.AI valued at ~$2.5B. Google gets non-exclusive LLM license. Character.AI remains independent.
+   - **New CEO**: Dominic Perella (interim, was General Counsel) → **Karandeep Anand** (permanent, June 2025, ex-Meta VP Business Products, ex-Brex President).
+   - **Revenue**: ~$15.2M (2023) → ~$32.2M (2024) → ~**$50M (2025, +66% YoY)**.
+   - **Users**: 20M MAU early 2024 → **45M active users Sep 2025** → **194M visitors Jan 2026**.
+   - **Engagement**: **~2 hrs/day per user**, **17 min 23 sec per session**, ~9.86 pages/session — **2x+ ChatGPT's session length**. 10 billion messages/month. 150K interactions/day on top characters.
+   - **Content created**: **18 million unique chatbots** by users.
+   - **Technology**: Proprietary transformer LLM (**PipSqueak** architecture), NOT built on OpenAI. Full-stack AI: model + inference + product built from scratch. Operates at ~30,000 messages/second peak. Google deal gave non-exclusive license to Google; Character.AI retained full IP.
+   - **Products**: Core character chat → Scenes → AvatarFX (image-to-video animated avatars) → Streams (AI-to-AI character conversations) → AI-native social feed (TikTok-style scrollable feed). c.ai+ subscription $9.99/mo.
+   - **Teen safety crisis**: Multiple teen deaths linked to parasocial AI relationships. **Sewell Setzer III** (14, Florida, died Feb 2024 after months-long emotional/sexual relationship with "Dany" chatbot). **Juliana Peralta** (13, Colorado, Sep 2025 lawsuit). 6+ active lawsuits. Oct/Nov 2025: separate teen-mode model, ban on open-ended chat for under-18, age verification, Koko + ThroughLine crisis partnerships. **Jan 2026**: Google + Character.AI agreed to settle teen suicide lawsuits "in principle" (no admission of liability).
+   - **DOJ probe**: May 2025, DOJ investigating whether Google-Character.AI deal was structured to avoid merger review. Early-stage, no enforcement action yet.
+   - **MCP**: **No official MCP server**. No public API. Consumer-only access.
+   - **Competition**: Replika (smaller, adult demographics), Chai, Janitor AI, Meta AI personas (billion-user distribution threat), ChatGPT memory features encroaching.
+   - **Rating: 3/5** — Extraordinary engagement metrics and original product concept; full-stack LLM from scratch; strong revenue growth. Deductions: founder exodus leaves technical continuity uncertain; teen safety crisis with documented deaths; $50M ARR modest relative to 45M-user engagement; no MCP/API ecosystem; DOJ probe and multi-front regulatory exposure.
+
+### What should happen next
+- **Next run**: DEPLOY this run's Character.AI review (throttle clears unix 1778323878). Then write new review. Candidates: Stability AI (SDXL, Stable Diffusion, rocky history), Pika Labs (consumer video gen, Pika 2.2), Kling (Kuaishou video model, notably absent from Luma benchmarks), or Cohere (enterprise LLM + embeddings).
+- **Note page count**: 1416 total Hugo pages as of this run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778320278 + 3600 = 1778323878
+
 ## Run 1092 — 2026-05-09 — DEPLOYED Perplexity AI review (unix 1778320278, 1414 pages) + NEW REVIEW: Luma AI — Dream Machine + Ray3 HDR + $1B raised + Adobe/Publicis/Humain partnerships, official MCP server. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
