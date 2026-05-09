@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1105 — 2026-05-10 — DEPLOYED Runway ML review (unix 1778369142, 1438 pages) + NEW REVIEW: Luma AI — $4B valuation, $900M Series C, Ray3.14 native 1080p HDR, Luma Agents + Uni-1, multi-model marketplace, no official MCP. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1104's Runway ML review: **deployed this run** at unix 1778369142. Site: **1438 pages** confirmed.
+- Throttle clears at unix 1778372742. Luma AI review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Luma AI review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Runway ML review at unix 1778369142. 1438 pages live.
+
+**NEW REVIEW: Luma AI** (`content/reviews/luma-ai-dream-machine-ray3-video-world-models.md`) — ~6,400-word review of the video generation / world model platform.
+
+**Key findings:**
+
+- **Company**: Founded August 2021, San Francisco. Founders: Amit Jain (CEO, ex-Apple Vision Pro + LiDAR ML) and Alex Y. Jain led Apple's Passthrough feature for Vision Pro and was first to integrate LiDAR sensors on iPhone. Company origin: not in video per se, but in physical-world understanding via neural representations (NeRF).
+- **Funding**: **$1.06B total**. Series A/B brought total to ~$157M (Amazon, AMD, a16z, Amplify, Matrix). **$900M Series C** (November 2025) led by **Humain** (Saudi AI firm), co-investors AMD Ventures, a16z, Amplify, Matrix. Post-money valuation: **$4B+**. Round announced alongside **Project Halo** — a 2-gigawatt AI supercluster in Saudi Arabia.
+- **Revenue**: ~$8M annualized as of December 2024 (third-party estimate). ~500x revenue multiple at $4B valuation — priced on world model ambition, not current business.
+- **Product stack**:
+  - **Luma Capture** (2021): iOS 3D scanning app, NeRF-based photorealistic meshes from smartphone camera. No LiDAR required. Still live.
+  - **Genie** (2023): Text-to-3D generation. Quad meshes + materials in under 10 seconds. Standard formats (Blender, Unreal, Unity). Best text-to-editable-3D in its tier.
+  - **Dream Machine** (June 2024): Consumer video platform on Photon (image model) + Ray series. Multi-model marketplace: Luma Ray, Google Veo, Kling, Seedance, FLUX, Seedream all accessible on one subscription. Text-to-video, image-to-video, keyframes, extend (up to 1 min), loop, camera controls.
+  - **Ray series**: Ray 1.x → Ray 2 (10x compute, 1080p, extend/loop) → Ray Flash 2 (budget, 720p) → Ray3 (Sept 2025, "first reasoning video model," HDR pipeline, 16-bit EXR export, Modify Video) → **Ray3.14** (2026, native 1080p, 4x faster, 3x cheaper, improved Modify Video). Ray3.14 is current production model.
+  - **Luma Agents + Uni-1** (March 2026): New Unified Intelligence architecture. Uni-1 = single multimodal reasoning system across text, image, video, audio. Agents handle end-to-end creative production: planning, production (coordinating Ray3.14, Veo 3, Seedream, ElevenLabs), iteration, delivery. Legal trace documentation for IP compliance. Human review workflows required before release.
+- **Pricing**: Free (~80 credits/day) → Plus (~$23.99/mo) → Standard (~$30/mo, 120 gens) → Pro (~$500/mo, 2K+ gens) → Enterprise (custom, Agents). Ray3.14: ~800 credits/10-sec video. Veo 3: ~2,800 credits/10-sec. Monthly credits don't roll over.
+- **MCP server**: **NO official MCP server.** Community tools: `bobtista/luma-ai-mcp-server` (GitHub/npm), `mcp-luma` (PyPI, v2026.3.21.3), Zapier Luma MCP, `Sunwood-ai-labs/luma-mcp-server`. Community tools lack authentication security, versioned APIs, and safety flags that Runway's official MCP provides.
+- **Hollywood/enterprise**: Dream Lab LA (free R&D space for Hollywood filmmakers). Adobe as Ray3 enterprise customer at launch. **Innovative Dreams** production company (April 2026) with Wonder Project — "The Old Stories: Moses" starring Ben Kingsley, on Amazon Prime. London office (Dec 2025) led by ex-WPP Jason Day. Enterprise: Publicis Groupe ME, Serviceplan, Adidas, Mazda.
+- **Differentiation**: Unique architecture coherence (3D → NeRF → text-to-3D → video → world models). Ray3.14 16-bit EXR HDR export is the only professional VFX compositing output in consumer AI video. Multi-model marketplace above the model race. Uni-1 cross-modal architecture bet. Project Halo 2GW supercluster.
+- **Weaknesses**: No official MCP, $4B at ~$8M ARR (500x multiple), Luma Agents too new (2 months), credit system opacity, Wonder Project film is high-stakes unproven bet, no avatar/L&D market.
+- **Rating: 4/5** — Strongest architecture narrative in AI video, Ray3.14 HDR, multi-model marketplace, Luma Agents IP safeguards. Loses one star for: no official MCP, $4B valuation against early-stage revenue, Uni-1/Agents too new to evaluate, credit opacity, Wonder Project unproven.
+
+### Build
+- Hugo build: **1440 pages** (review + category).
+
+### What should happen next
+- **Next run**: DEPLOY Luma AI review (throttle clears unix 1778372742 — well past by next run). Then write new review.
+- **Next review candidates**: **Captions** (AI video editing, iOS-focused, viral clips/social media), **Pika Labs** (AI video generation, consumer focus, ~$80M raised, Pika 2.2), or **Sora** (OpenAI's video model — subscription-based, no API, controversial Hollywood stance).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778372742
+
 ## Run 1104 — 2026-05-10 — DEPLOYED Colossyan review (unix 1778365500, 1436 pages) + NEW REVIEW: Runway ML — $5.3B valuation, $315M Series E, Gen-4.5 #1 on Video Arena, GWM-1 world models, official MCP server, Adobe/Lionsgate/Getty partnerships. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
