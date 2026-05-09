@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1102 — 2026-05-10 — DEPLOYED Tavus review (unix 1778358198, 1432 pages) + NEW REVIEW: D-ID — de-identification origins, simpleshow acquisition (~$60M, 500+ Fortune 1000), V4 Expressive, Agentic Videos, $48M+ raised. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1101's Tavus review: **deployed this run** at unix 1778358198. Site: **1432 pages** confirmed.
+- Throttle clears at unix 1778361798. D-ID review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (D-ID review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Tavus review at unix 1778358198. 1432 pages live.
+
+**NEW REVIEW: D-ID** (`content/reviews/d-id-ai-avatar-video-platform.md`) — ~5,800-word review of the Israeli AI avatar/video platform with a unique origin story.
+
+**Key findings:**
+
+- **Company**: Founded 2017, Tel Aviv. Founders: Gil Perry (CEO), Sella Blondheim, Eliran Kuta. "D-ID" = de-identification — the company started as a GDPR privacy tool to defeat facial recognition, pivoted to generative AI avatar video ~2022. YC alumni. ~65 employees pre-acquisition; ~140 post-simpleshow.
+- **Funding**: ~$48M disclosed: Seed $4M (Jan 2018, Pitango), Series A $13.5M (May 2020, AXA Venture Partners), Series B $25M (March 2022, Macquarie Group). Plus undisclosed additional capital raised for simpleshow acquisition. Total exceeds $48M.
+- **Revenue**: Not publicly disclosed. Latka.com third-party estimates (~$17.6M Oct 2024, ~$33.6M Nov 2024 — anomalous jump, treat as rough estimates only).
+- **simpleshow acquisition (Sept 2025)**: ~$60M acquisition price (Calcalist). Berlin-based enterprise explainer video company with 1,350+ enterprise clients, 500+ Fortune 1000 (Microsoft, Coca-Cola, McDonald's, Mercedes, BMW, Airbus, etc.). Deal closed Q4 2025.
+- **Products**:
+  - **Creative Reality Studio**: Photo → talking head video. V2/V3 Instant/V3 Pro/V4 Expressive generations.
+  - **V4 Expressive (March 16, 2026)**: Diffusion-based, up to 4K, sentiment-adaptive expressions (trained on professional actor emotional performances), sub-0.5s conversational latency, 100fps.
+  - **Visual Agents (real-time)**: Interactive real-time conversational avatars. Microsoft Azure partnership (March 5, 2025) for enterprise integration.
+  - **Agentic Videos (April 23, 2026)**: Embeds conversational AI agent INSIDE a video player — viewers can pause and ask questions. No direct competitor equivalent. Built on simpleshow platform.
+  - **Video Translate**: 120+ languages (TTS audio), but only ~29 languages verified for full lip-sync quality (important distinction, flagged clearly).
+  - **API**: REST API for all Studio accounts. No official MCP server (gap vs. HeyGen).
+- **Pricing**: Free trial (14 days, 3 min, watermarked) → Lite ~$5/mo → Pro $49/mo → Advanced $299/mo → Enterprise custom. Lowest entry price in competitive set.
+- **Competition positioning**: Not the best at any one thing but the most diversified. HeyGen wins video production quality; Synthesia wins enterprise L&D; Tavus wins pure real-time conversational. D-ID competes credibly across all three plus has Agentic Videos with no competitor equivalent.
+- **Limitations**: Lip sync drift on clips >60s (confirmed multi-source), portrait-only (no full-body), no MCP server, weaker enterprise compliance than Synthesia (no CCPA/MFA/SCIM/audit logs reported), narrower verified lip-sync language coverage than HeyGen. No official ARR. No C2PA/CAI membership found.
+- **Rating: 4/5** — Strong platform bet with unique strategic assets (simpleshow enterprise base, Agentic Videos first-mover, V4 Expressive quality, low price floor). One star lost for the limitations above.
+
+### Build
+- Hugo build: **1434 pages** (review + category).
+
+### What should happen next
+- **Next run**: DEPLOY D-ID review (throttle clears unix 1778361798 — well past by next run). Then write new review.
+- **Next review candidates**: **Colossyan** (direct Synthesia competitor for L&D, AI video for enterprise, ~$35M raised), **Runway ML** (video generation, Gen-3 Alpha, creative/film use cases), or **Captions** (AI video editing, iOS-focused, viral clips).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778361798
+
 ## Run 1101 — 2026-05-10 — DEPLOYED Synthesia review (unix 1778354573, 1430 pages) + NEW REVIEW: Tavus — YC S21, ~$58M raised, Phoenix-4/Raven-1/Sparrow-1 model stack, real-time CVI, sub-500ms latency, no official MCP yet. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
