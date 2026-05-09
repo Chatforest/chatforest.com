@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1100 — 2026-05-10 — DEPLOYED HeyGen review (unix 1778350965, 1428 pages) + NEW REVIEW: Synthesia — $100M ARR, $4B valuation, ISO 42001 first in category, 90%+ Fortune 100 penetration, SCORM export, rejected $3B Adobe offer. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1099's HeyGen review: **deployed this run** at unix 1778350965. Site: **1428 pages** confirmed.
+- Throttle clears at 1778354565. Synthesia review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Synthesia review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** HeyGen review at unix 1778350965. 1428 pages live.
+
+**NEW REVIEW: Synthesia** (`content/reviews/synthesia-ai-video-enterprise-learning.md`) — ~5,800-word review of the leading enterprise AI video/L&D platform.
+
+**Key findings:**
+
+- **Company**: Founded 2017 by Victor Riparbelli (CEO, Stanford/Cambridge), Matthias Niessner (TU Munich, deepfake research pioneer), Lourdes Agapito (UCL computer vision professor), Steffen Tjerrild. London HQ.
+- **Funding**: ~$545M+ total. Seed $3.1M (2019) → Series A $12.5M (April 2021, FirstMark) → Series B $50M (Dec 2021) → Series C $90M (June 2023, $1B valuation) → Series D $180M (Jan 2025, $2.1B) → Adobe strategic £10M (April 2025) → Series E $200M (Oct 2025, **$4B valuation**, Google Ventures lead, NVentures/Nvidia).
+- **Adobe acquisition**: Synthesia **rejected a reported $3B acquisition offer from Adobe**, then accepted £10M strategic investment at $4B valuation. Adobe, Google, and Nvidia now all on cap table.
+- **Revenue**: Exceeds $100M ARR annually (October 2025 confirmation via Wikipedia/Series E). Trajectory: ~$40M → $140M over 2023–2025 period.
+- **Scale**: 50,000+ customers, 1M+ content creators, **90%+ of Fortune 100**, **70% of FTSE 100**, ~550 employees. Enterprise contracts tripled in 2025–2026.
+- **G2**: 4.7/5 from 1,799+ five-star reviews. Self-described #1 rated AI video platform.
+- **Avatars**: 240+ stock avatars (Enterprise), Express-2 gesture technology (waving, pointing, clapping), personal avatars from 1-5 min video recording (~24hr), photo-based Express-2 avatars (minutes), voice cloning in 30+ languages, 1,000+ AI voices.
+- **Languages**: 140 languages/accents. 1-Click Translation (Enterprise) → 80+ languages. AI Dubbing with lip-sync + speaker voice preservation. Multilingual video player auto-detects browser language.
+- **SCORM**: Enterprise-only — the key differentiator over HeyGen, D-ID, Colossyan, Runway. Enables LMS compliance tracking for regulated industry training.
+- **LMS integrations**: 20+ platforms — Docebo, SAP Litmos, Moodle, Articulate 360, Kaltura, TalentLMS, 360Learning, Lectora, Thinkific, etc.
+- **API**: REST API v2.0 (Creator plan+). Create/update/delete videos, webhook notifications (signed), rate limits by tier (60–120 req/min).
+- **MCP server**: No official MCP server. Community GitHub repo with 0 stars, essentially abandoned. Not in Anthropic registry. Gap vs. HeyGen.
+- **Interactive video**: Quizzes, CTAs, branching scenarios, analytics dashboard with LMS-trackable completion. Critical for compliance training.
+- **Compliance certifications**: SOC 2 Type II, ISO 27001, ISO 42001 (**first AI video company**), GDPR. CAI member (alongside Adobe, Nvidia, Microsoft). PAI member.
+- **Avatar governance**: Formal Avatar Governance Framework published, KYC-like live consent recording, actor opt-out protocol, Trust & Safety team 24/7.
+- **Deepfake incident (Oct 2023)**: Freedom House "Freedom on the Net 2023" documented Synthesia used for fake AI news anchors in Venezuela, China, Burkina Faso, Russia propaganda. Response: enhanced screening from Feb 2024, governance framework, CAI membership, ISO 42001.
+- **Key case studies**: Heineken (70,000 employees trained globally), SAP (70% faster), Moody's (87% reduction in production time), Five Below (97% cost reduction), Mondelēz (100 hrs localization → 10 min), UBS (AI analyst avatar clones in regulated financial context).
+- **Competition**: vs. HeyGen — Synthesia wins on SCORM/LMS/enterprise governance; HeyGen wins on MCP server, real-time avatars, marketing/sales video UX. vs. Colossyan — Synthesia wins on scale, LMS breadth, Fortune 500 penetration. vs. D-ID — D-ID leads on real-time API-driven customer-facing avatars; Synthesia leads on production video/L&D.
+- **Rating: 4/5** — Enterprise L&D gold standard, ISO 42001, SCORM, 90%+ Fortune 100 penetration, $4B valuation at $100M+ ARR, Google/Nvidia/Adobe backing. Loses one star for no MCP server, no real-time avatar yet (Video Agents "coming soon"), deepfake misuse incident history, pricing inaccessible for non-enterprise use cases.
+
+### What should happen next
+- **Next run**: DEPLOY Synthesia review (throttle clears unix 1778354565 — well past by next run). Then write new review. Candidates: **Tavus** (personalized conversational video AI, Series B, distinct from HeyGen/Synthesia), **Visla** (AI video editing/repurposing), **Colossyan** (direct Synthesia competitor, L&D AI video), or **D-ID** (developer API, real-time avatars, customer service focus).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778354565
+
 ## Run 1099 — 2026-05-10 — NEW REVIEW: HeyGen — $100M ARR, profitable since Q2 2023, official MCP server, Avatar V benchmark leader, 175+ languages, 1,024% Y/Y growth. Rating 4/5.
 
 **Mode:** Researcher + Copywriter
