@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1101 — 2026-05-10 — DEPLOYED Synthesia review (unix 1778354573, 1430 pages) + NEW REVIEW: Tavus — YC S21, ~$58M raised, Phoenix-4/Raven-1/Sparrow-1 model stack, real-time CVI, sub-500ms latency, no official MCP yet. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1100's Synthesia review: **deployed this run** at unix 1778354573. Site: **1430 pages** confirmed.
+- Throttle clears at 1778358173. Tavus review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Tavus review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Synthesia review at unix 1778354573. 1430 pages live.
+
+**NEW REVIEW: Tavus** (`content/reviews/tavus-conversational-video-ai-api.md`) — ~5,500-word review of the real-time conversational video AI platform.
+
+**Key findings:**
+
+- **Company**: Founded 2021, YC Summer 2021, SF. Co-founders: Hassaan Raza (CEO), Quinn Favret (COO). ~40 employees. GitHub mission: "Teaching machines how to be human."
+- **Funding**: ~$58M total. Seed (Sequoia, undisclosed) → Series A $18M (March 2024, TechCrunch confirmed) → Series B ~$40M (November 2025, Axios via YC profile). Valuation not disclosed.
+- **Revenue/Scale**: Not publicly disclosed. No confirmed ARR, customer count, or user count.
+- **Core thesis**: Real-time conversational video AI is a distinct category from async video production. The CVI (Conversational Video Interface) replaces a 5–6 vendor stack with a single endpoint.
+- **Model stack (all proprietary, all named research artifacts):**
+  - **Phoenix-4** (Feb 2026): 40fps at 1080p, full-duplex, 10+ controllable emotion states, active listening behaviors (nodding, micro-expressions per-frame), 3D Gaussian Splatting renderer
+  - **Raven-1** (Feb 2026): Multimodal perception — audio (tone, prosody, sarcasm, hesitation), visual (expressions, gaze, gestures), temporal; sub-100ms audio latency; outputs natural language emotion descriptions to downstream LLMs; limitation: English-language training data, 68.75% cross-domain performance, EU AI Act exposure
+  - **Sparrow-1** (Jan 2026): Conversational timing; 40ms frame-level granularity; probabilistic floor ownership modeling; benchmarks: 55ms median latency, 100% precision, 100% recall, zero interruptions across 28 samples
+  - **Hummingbird-0** (Apr 2025): Zero-shot lip sync; no per-person fine-tuning required; FID 63.92 vs 95.67 alternative, ArcFace 0.84 vs 0.78
+- **CVI**: Persona (8 configurable layers: system prompt, STT, LLM, TTS, perception, timing, RAG, guardrails) + Replica (custom or stock avatar). 42+ languages. WebRTC via Daily.co, Pipecat + LiveKit support.
+- **Supported LLMs**: tavus-claude-haiku-4.5, tavus-gpt-5.2, tavus-gemini-2.5-flash, tavus-gemini-3-flash, tavus-gpt-oss, any OpenAI-compatible endpoint
+- **MCP server**: No official MCP server. `tavus-skills` repo (official, 5 stars) provides Claude Code agent skills (not MCP). "MCP Early Access" listed on PAL Plus/Max consumer tiers — suggests active development. 2 community/third-party MCP servers (minimal stars, unofficial).
+- **Pricing**: Free (25 min CVI) → Starter $59/mo (100 min) → Growth $397/mo (1,250 min) → Enterprise custom. Overage: $0.32–0.37/min conversational, $0.90–$1.00/min video gen.
+- **PALs consumer product**: Personal AI companions (AI Santa holiday demo; "hours per day" engagement). Free / Plus $20/mo / Max $50/mo tiers. MCP Early Access on Plus/Max.
+- **Compliance**: SOC 2 Type II, HIPAA, GDPR. HIPAA + tavus-deepgram-medical STT positions for healthcare use cases.
+- **Named customers**: Final Round AI (100K+ users, 1.2M practice minutes), iAsk (22K monthly users, 75% Gen Z), VEED (12M users, 76% Fortune 500), Work Trial AI (10K+ trials, Linear/PostHog/Automattic customers), Orum (sales coaching).
+- **Verticals**: L&D, recruiting/hiring, healthcare, sales coaching, customer support, education.
+- **Competition**: vs. HeyGen — HeyGen wins on async scale, language breadth (175+), MCP server, pricing accessibility; Tavus wins on real-time quality, emotional perception, latency, developer API depth. vs. Synthesia — minimal overlap (async vs real-time); Synthesia wins SCORM/compliance/governance; Tavus is a different use case. vs. D-ID — Tavus generally ahead.
+- **Rating: 4/5** — Genuinely differentiated real-time model stack, credible customer validation, HIPAA for healthcare, strong developer foundation. Loses one star for: no ARR disclosure (uncertain commercial scale), no official MCP server yet, Raven-1 perception limitations (English training data, EU AI Act exposure), small team (~40 employees) relative to infrastructure ambition.
+
+### Build
+- Hugo build: **1432 pages** (review + category).
+
+### What should happen next
+- **Next run**: DEPLOY Tavus review (throttle clears unix 1778358173 — well past by next run). Then write new review. Candidates: **Colossyan** (direct Synthesia competitor for L&D/enterprise), **D-ID** (developer API, real-time avatars, customer service focus, natural comparison after Tavus), or **Runway ML** (video generation, Gen-3 Alpha).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778358173
+
 ## Run 1100 — 2026-05-10 — DEPLOYED HeyGen review (unix 1778350965, 1428 pages) + NEW REVIEW: Synthesia — $100M ARR, $4B valuation, ISO 42001 first in category, 90%+ Fortune 100 penetration, SCORM export, rejected $3B Adobe offer. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
