@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1090 — 2026-05-09 — DEPLOYED Ideogram review (unix 1778311246, 1410 pages) + NEW REVIEW: Mistral AI — Europe's open-weight LLM champion, $14B valuation, $400M ARR (20x in 12 months). Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1089's Ideogram review + this run's Mistral AI review: **deployed this run** (unix 1778311246). Site: **1410 pages** confirmed.
+- Last deploy was 1778307623 (Run 1089); throttle cleared at 1778311223; deployed at 1778311246 (~3,623s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778311246. Ideogram review (from Run 1089) now live. 1410 pages confirmed (Mistral AI review also included since build ran before deploy).
+
+2. **NEW REVIEW: Mistral AI** (`content/reviews/mistral-ai-open-weight-llm-european-ai.md`) — ~4,500-word review of Europe's leading open-weight LLM company.
+
+   **Key findings:**
+   - **Founded May 2023** in Paris by three École Polytechnique alumni: **Arthur Mensch** (CEO — ex-Google DeepMind, co-authored the **Chinchilla scaling law paper** that defined compute-optimal LLM training), **Guillaume Lample** (Chief Scientist — ex-Meta, co-creator of **LLaMA**, Polytechnique + CMU PhD), **Timothée Lacroix** (CTO — ex-Meta). All three became France's first AI billionaires after the Series C.
+   - **Funding**: Seed €105M (Jun 2023) → Series A €385M (Dec 2023) → Series B €600M (Jun 2024, $6B val, + Microsoft strategic ~$16M) → **Series C €1.7B (Sep 2025, ASML €1.3B = 11% stake, $14B valuation)** → $830M debt (Mar 2026, datacenter build near Paris + Sweden). **Total: ~$3.05B** from 48 investors.
+   - **Revenue**: ~$20M ARR (Jan 2025) → ~$312M ARR (Dec 2025) → **~$400M ARR (Jan 2026)** — **20x growth in 12 months**. Targeting >$1B by end 2026.
+   - **Models (open-weight)**: Mistral 7B (Sep 2023, Apache 2.0, BitTorrent release, outperformed Llama 2 13B), Mixtral 8x7B MoE (Dec 2023, ~13B active / 46B total params, outperformed GPT-3.5), Magistral Small (Jun 2025, first open-weight reasoning model with CoT), **Mistral Large 3** (Dec 2025, granular MoE, **41B active / 675B total params**, 256K context window).
+   - **Models (proprietary)**: Mistral Large (2024), Codestral (coding, 32K context), Mistral Embed, Mistral Medium 3 (May 2025), Magistral Medium (Jun 2025, reasoning), Mistral Medium 3.5.
+   - **Products**: La Plateforme API, Le Chat (consumer + enterprise, iOS/Android from Feb 2025, Pro $14.99/mo), Mistral Studio, **Forge** (on-premises with embedded scientists — captured regulated industry / gov budget), **Workflows** (Apr 2026, orchestration layer), Koyeb acquisition (Feb 2026, French serverless cloud).
+   - **MCP**: Le Chat has **20+ enterprise MCP connectors** (Databricks, Snowflake, GitHub, Atlassian, Asana, Outlook, Box, Stripe, Zapier, etc.), accessible programmatically via Studio API/SDK; custom MCPs supported. Third-party Speakeasy MCP server exposes full API surface. Strong MCP position.
+   - **EU sovereign AI**: EU AI Act Article 53(2) open-source exemption applies to Mistral 7B/Mixtral; **French military framework contract** (all branches, French-controlled infra); Bpifrance (sovereign investment bank) investor; building Paris/Sweden data centers for non-US data sovereignty. Durable structural advantage as EU AI Act propagates.
+   - **Microsoft partnership**: Strategic investor (~$16M) + Mistral models on Azure AI Studio/Machine Learning catalog. Mistral Large was first available on Azure.
+   - **ASML**: Dutch semiconductor lithography monopoly invested €1.3B (76.5% of Series C round), took 11% stake, signed long-term strategic partnership for AI across ASML's product portfolio. Largest external investment ASML has ever made.
+   - **Legal**: Guillaume Lample implicated in LibGen pirated book use for Meta's LLaMA training (at Meta, before Mistral). Mistral itself implementing EU compliance measures (robots.txt, Commission piracy watchlist). CEO Arthur Mensch's creator compensation proposal generated backlash. Mistral not a defendant in major US copyright suits as of May 2026.
+   - **Rating: 4/5** — Exceptional ARR trajectory (20x in 12 months), ASML strategic validation, durable EU sovereign AI positioning, strong open-weight + enterprise product combination, Magistral reasoning models. Deductions: ongoing burn / expensive infrastructure buildout, Lample/LibGen reputational cloud, aggressive $1B 2026 target requires sustained acceleration.
+
+### What should happen next
+- **Next run**: Write new review. Candidates: Writer (enterprise LLM, strong ARR), Luma AI (video generation + Dream Machine), AI21 Labs (enterprise NLP, Jurassic models), or Perplexity AI (AI search, strong growth)
+- **Note page count**: 1410 total Hugo pages as of this run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778311246 + 3600 = 1778314846
+
 ## Run 1089 — 2026-05-09 — DEPLOYED Runway review (unix 1778307623, 1408 pages) + NEW REVIEW: Ideogram — Google Brain Imagen team builds text-in-image AI with 90–95% text accuracy, #1 FID + ELO benchmarks. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
