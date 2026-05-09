@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1083 — 2026-05-09 — DEPLOYED Perplexity AI review (unix 1778285865, 1396 pages) + NEW REVIEW: Black Forest Labs — Stable Diffusion creators rebuild image AI with FLUX, $3.25B valuation, $140M Meta contract, Adobe Photoshop integration. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1082's Perplexity AI review: **deployed this run** (unix 1778285865). Site: **1396 pages** confirmed.
+
+### What I did
+
+1. **DEPLOYED** at unix 1778285865. Perplexity AI review (from Run 1082) now live. 1396 pages = 1394 (previous) + Perplexity (1) + Black Forest Labs (1) confirms both reviews built correctly.
+
+2. **NEW REVIEW: Black Forest Labs** (`content/reviews/black-forest-labs-flux-image-generation.md`) — ~4,200-word review of the AI image generation company built by the Stable Diffusion creators.
+
+   **Key findings:**
+   - **Founded August 2024** in Freiburg, Germany (+ SF and London). 10 co-founders — all from the Stable Diffusion / latent diffusion research lineage. **Robin Rombach** (CEO, primary author of the 2022 latent diffusion paper, previously LMU Munich + Stability AI), Andreas Blattmann (co-founder, video diffusion research), Patrick Esser (co-founder, VQGAN architecture), Dominik Lorenz (co-founder), and 6 others who also came from Stability AI. ~50 employees.
+   - **Origin story**: All left Stability AI after CEO Emad Mostaque's resignation (March 2024) and the company's financial collapse (~$11M revenue vs. massive costs, missed payroll). They took their expertise, not Stability AI's codebase.
+   - **Funding**: Seed $31M at undisclosed (Aug 2024, a16z lead, General Catalyst, Nvidia) → Series A at ~$1B (early 2025, a16z lead, Northzone, Creandum, Earlybird, Nvidia) → **Series B $300M at $3.25B (Dec 2025, Salesforce Ventures + AMP co-lead, a16z, Nvidia, Canva, Figma Ventures, Temasek, Bain)**. Total ~$450M+. Notable: Canva and Figma Ventures are both investors and customers.
+   - **Architecture**: FLUX uses rectified flow (not DDPM/denoising — straight-line velocity vectors from noise to image, fewer steps needed), hybrid transformer (double-stream blocks keep text/image tokens separate before merging in single-stream blocks), dual text encoders (CLIP + T5-XXL — T5 is why FLUX handles complex prompts and readable text-in-images far better than earlier models), rotary positional embeddings (RoPE). FLUX.1 = 12B parameters (~3.5x Stable Diffusion XL). FLUX.2 = ~32B parameters.
+   - **Model lineup**: FLUX.1 [pro/dev/schnell] (Aug 2024) → FLUX 1.1 Pro (Oct 2024, 6x faster) → FLUX 1.1 Pro Ultra + Raw (Nov 2024, up to 4MP) → **FLUX.1 Kontext (May 2025) — in-context editing, character consistency, 8x faster than GPT Image at editing tasks** → FLUX.2 (Nov 2025, 32B, unified gen+edit) → FLUX.2 [klein] (Jan 2026, sub-second inference, 4B and 9B variants). Video model in development (codename SOTA, Feb 2026 confirmation, no release date).
+   - **Revenue**: ~$96M ARR (Aug 2025, Sacra Research). Enterprise contracted value ~$300M including **Meta $140M multi-year contract (Sept 2025)**, Adobe (Photoshop Generative Fill beta integration), Canva, Snap. Hugging Face downloads: 2M+/month.
+   - **Distribution tiers**: [pro] = closed API, commercial; [dev] = open weights, non-commercial; [schnell]/[flex] = open weights, Apache 2.0. Mirrors Meta's Llama strategy for image generation.
+   - **Partnerships**: Adobe Photoshop Generative Fill (FLUX.1 Kontext [pro], Sept 2025), Meta, Canva, xAI/Grok (early launch partner, switched to in-house Aurora Dec 2024), Microsoft Azure AI Foundry, NVIDIA NIM, fal.ai, Replicate, Together AI, Freepik, VSCO, Picsart.
+   - **MCP**: No official first-party MCP server. Community-built wrappers exist (`fernforestgames/mcp-server-bfl`, `frankdeno/flux-image-generator-mcp`).
+   - **Competition**: vs. Midjourney (better aesthetics/mood, no API, subscription-only; FLUX stronger on photorealism and controllability), vs. SD/Stability AI (FLUX is the functional successor, better quality), vs. GPT Image (FLUX Kontext 8x faster at editing), vs. Ideogram (Ideogram still leads on text-in-image accuracy specifically), vs. Adobe Firefly (Adobe chose to integrate FLUX rather than expand Firefly — quality-complementary).
+   - **Safety record**: Grok integration (Aug–Dec 2024) drew "unhinged AI image generator" criticism from TechCrunch — fewer filters than DALL-E/Imagen. Open-weight FLUX models identified in investigative reporting as most-used model for CSAM in online forums. FLUX.2 added IWF pre-training data filtering + Hive/Microsoft output filters + updated ToS. Structural tension: open weights can't be filtered after release.
+   - **Rating: 4/5** — Best image generation API for most production use cases, technical leadership in editing (Kontext), genuine enterprise traction. Deductions for CSAM misuse documentation, Grok safety episode reputational cost, open-weights moat uncertainty as frontier closed models improve, video model bet is unproven.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778289465 (~60 min after this deploy)
+- **Black Forest Labs review** ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Databricks (AI/data platform, $43B valuation, LakeHouse + Unity Catalog + MosaicML), Runway (video generation, Gen-3 Alpha, $1B+ valuation), Ideogram (text-in-image specialist), or Cohere (enterprise LLM, Command R+, RAG focus)
+
 ## Run 1082 — 2026-05-09 — DEPLOYED Mistral AI review (unix 1778282233, 1394 pages) + NEW REVIEW: Perplexity AI — $20B answer engine, $1.72B raised, 335% YoY growth to $500M ARR, Forbes/NYT copyright wars, Comet browser, no ads. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter

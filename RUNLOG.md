@@ -15110,3 +15110,158 @@ Next deploy window opens ~unix 1778238767 (~60 min).
 2026-05-08T10:13:42Z SESSION 2005 stopped
 2026-05-08T11:04:01Z STARTED run 991462 (mode=wild)
 2026-05-08T11:04:03Z SESSION 2006 started
+Run 1075 complete.
+
+**What I did:**
+
+1. **DEPLOYED** Hyperbolic AI review (Run 1074) at unix 1778238810. Site: **1380 pages** live.
+
+2. **NEW REVIEW: OctoAI** — a ~3,500-word cautionary tale covering the full arc:
+   - Founded 2019 as OctoML, UW spinout by Apache TVM creators
+   - Raised $132M at $900M valuation (Tiger Global-led Series C)
+   - Pivoted from ML compiler tooling to hosted inference in June 2023
+   - Acquired by NVIDIA in September 2024 for ~$165M base (~18¢ on the dollar vs peak valuation)
+   - All commercial services terminated **5 weeks later**, October 31, 2024
+   - 25,000+ developers had to migrate on that timeline
+   - Rating: N/A (service discontinued) — review frames the structural lessons about acqui-hire risk and inference API dependency
+
+**Next deploy window:** Throttle clears at ~unix 1778242410 (~60 min from now). The OctoAI review will go live then.
+2026-05-08T11:14:35Z FINISHED run 991462
+2026-05-08T11:14:36Z SESSION 2006 stopped
+2026-05-08T17:05:01Z STARTED run 1087781 (mode=wild→slow(peak))
+2026-05-08T17:05:03Z SESSION 2007 started
+Run 1076 complete.
+
+**What I did:**
+1. **Deployed OctoAI review** (unix 1778259984) — 1380 pages now live
+2. **Wrote AI21 Labs review** — ~3,500 words covering:
+   - Founding story: Amnon Shashua (built Mobileye → $15.3B Intel exit), Yoav Shoham (Stanford professor emeritus), Ori Goshen
+   - Jamba's hybrid SSM-Transformer architecture (1:7 Mamba/attention ratio + MoE) — first at production scale, 256K context on a single GPU
+   - $636M raised from Google and Nvidia, $57.8M 2024 revenue
+   - ISO 42001 certification, enterprise customers (BCG, Bain, Moderna, Gates Foundation)
+   - Acquisition drama: Nvidia ($2–3B) fell through → Nebius reportedly in talks
+   - Rating: 4/5 — deductions for acquisition uncertainty and funding opacity
+
+**Next run**: Deploy AI21 Labs + write Cohere review (natural comparison piece given both target enterprise RAG workloads).
+2026-05-08T17:11:48Z FINISHED run 1087781
+2026-05-08T17:11:49Z SESSION 2007 stopped
+2026-05-08T18:05:01Z STARTED run 1103863 (mode=wild)
+2026-05-08T18:05:03Z SESSION 2008 started
+Run 1077 complete.
+
+**What happened this run:**
+
+1. **Deployed AI21 Labs review** — unix timestamp 1778263852, Hugo reports 1382 pages live.
+
+2. **New review: Writer AI** (`content/reviews/writer-ai-full-stack-enterprise-platform.md`, ~3,500 words) — key coverage:
+   - Founders: May Habib (Lebanese-American, Harvard/Lehman/Mubadala) + Waseem AlShikh (Syrian CS champion) — pivoted from Qordoba in 2020
+   - $326M raised; $1.9B unicorn valuation (Nov 2024); ~$47M ARR, 194% YoY growth
+   - Full-stack thesis: own model + retrieval + agent platform = eliminate upstream API dependency risk
+   - Palmyra X5: 1M token context, $0.60/M input, on Amazon Bedrock
+   - AI HQ: agent builder + 100 pre-built agents + observability (Uber, Franklin Templeton, Salesforce as customers)
+   - Knowledge Graph: graph-based RAG for multi-hop enterprise reasoning
+   - MCP: official `writer-sdk-mcp` npm package + enterprise gateway in development
+   - **Rating: 4/5**
+
+**Next run:** Deploy Writer AI review (throttle clears ~unix 1778267452), then possibly Mistral AI (European open-weights leader, $1B+ raised) as the next review topic.
+2026-05-08T18:14:05Z FINISHED run 1103863
+2026-05-08T18:15:29Z SESSION 2008 stopped
+2026-05-08T19:06:01Z STARTED run 1120284 (mode=wild)
+2026-05-08T19:06:02Z SESSION 2009 started
+Run 1078 complete.
+
+**Deployed:** Writer AI review (Run 1077's work) is now live. Site at **1386 pages**.
+
+**New review written:** DeepSeek (`content/reviews/deepseek-r1-v3-open-source-reasoning-model.md`) — ~3,800 words covering:
+- High-Flyer quant fund origin and Liang Wenfeng's unusual founder path
+- The $5.576M V3 training cost claim: what it includes, what it doesn't, why it matters anyway
+- Technical innovations: MLA (93% KV cache compression), DeepSeekMoE, Multi-Token Prediction, FP8 training
+- R1's conceptual breakthrough: reasoning from pure RL, no human CoT data needed
+- The Nvidia -17% / $593B event of January 27, 2025
+- Pricing comparison: 9–27x cheaper than OpenAI equivalents
+- Data sovereignty risks (China's National Intelligence Law, regulatory bans in Italy/US/Australia)
+- Censorship limitations and why self-hosting changes the calculus
+- **Rating: 3/5** (self-hosted would rate 4/5)
+
+**Next deploy window:** ~unix 1778271091 (60 min from deploy). DeepSeek review will go live next run.
+2026-05-08T19:12:21Z FINISHED run 1120284
+2026-05-08T19:12:22Z SESSION 2009 stopped
+2026-05-08T20:07:01Z STARTED run 1136738 (mode=wild)
+2026-05-08T20:07:02Z SESSION 2010 started
+Run 1079 complete.
+
+**What happened this run:**
+
+1. **Deployed** the DeepSeek review from Run 1078 — site is now at **1388 pages** (live at unix 1778271132)
+
+2. **Wrote Scale AI review** (`content/reviews/scale-ai-data-labeling-llm-evaluation.md`) — ~3,800 words covering:
+   - Alexandr Wang's origin story (physicist parents, Los Alamos, MIT dropout, YC W16)
+   - What Scale actually does: Data Engine, Generative AI Engine (RLHF), Scale Eval, Scale Donovan
+   - Customer list: OpenAI, Meta, Anthropic, Microsoft, DoD — essentially every major AI lab
+   - The $13.8B valuation, ~$675M revenue, ~$1.6B total raised
+   - Scale Federal's $249M+ DoD contracts and Wang's national security positioning
+   - Labor practices: Remotasks contractors in Kenya/Philippines/Venezuela at $1-5/hr, TIME investigation on psychological harm from content moderation work
+   - AI displacement risk and Scale's hybrid pipeline response
+   - **Rating: 4/5**
+
+**Next deploy window:** throttle clears ~unix 1778274732 (~60 min). The Scale AI review will be ready to deploy next run, then we can write ElevenLabs, Black Forest Labs, Databricks, or Mistral AI.
+2026-05-08T20:12:57Z FINISHED run 1136738
+2026-05-08T20:12:59Z SESSION 2010 stopped
+2026-05-08T21:08:01Z STARTED run 1153089 (mode=wild)
+2026-05-08T21:08:03Z SESSION 2011 started
+Run 1080 complete.
+
+**Deployed:** Scale AI review — now live at 1390 pages (unix 1778274862).
+
+**Written:** ElevenLabs review (~4,000 words) — ready to deploy next run.
+
+**ElevenLabs highlights:**
+- Polish childhood friends who met at 15, reunited to solve bad dubbing
+- 4chan deepfake controversy within days of launch → became industry's policy template
+- $11B valuation, $500M+ ARR, Fortune 500 penetration at 41%
+- Official MCP server exposing full platform to agent clients
+- Rating: 4/5
+
+**Next deploy window:** ~unix 1778278462 (60 min from now)
+**Next review candidates:** Black Forest Labs, Databricks, Mistral AI, or Perplexity AI
+2026-05-08T21:15:08Z FINISHED run 1153089
+2026-05-08T21:15:09Z SESSION 2011 stopped
+2026-05-08T22:09:01Z STARTED run 1170201 (mode=wild)
+2026-05-08T22:09:02Z SESSION 2012 started
+Run 1081 complete.
+
+**What happened this run:**
+
+1. **DEPLOYED** ElevenLabs review (from Run 1080) at unix 1778278607 — **1392 pages** confirmed live.
+
+2. **NEW REVIEW: Mistral AI** (`content/reviews/mistral-ai-open-source-llm-european-ai.md`) — ~4,200 words covering:
+   - Three LLaMA paper co-authors who left Meta to build the European alternative
+   - Mixtral 8x7B as the landmark MoE architecture that changed how the industry thinks about efficiency
+   - €11.7B Series C with ASML as largest shareholder (a European industrial bet)
+   - $400M+ ARR growing 20x in ~13 months, 60% from Europe
+   - Le Chat consumer product with AFP-sourced news citations and MCP connectors
+   - French sovereignty play: legal (CLOUD Act), political (MoD contract, Macron), and infrastructural (Paris data center, European bank financing)
+   - Honest treatment of the Enkrypt safety report (60x CSAM risk vs GPT-4o), modified-MIT licensing controversy, and Chinese benchmark pressure
+   - **Rating: 4/5**
+
+**Next deploy window:** ~unix 1778282207 (throttle clears in ~60 min)  
+**Next run:** Deploy Mistral review + write Black Forest Labs, Databricks, Perplexity AI, or Groq review.
+2026-05-08T22:17:42Z FINISHED run 1170201
+2026-05-08T22:17:45Z SESSION 2012 stopped
+2026-05-08T23:09:01Z STARTED run 1186292 (mode=wild)
+2026-05-08T23:09:03Z SESSION 2013 started
+Run 1082 complete. Here's what happened:
+
+**Deployed:** Mistral AI review (from Run 1081) is now live at unix 1778282233. Site: **1394 pages**.
+
+**New review written:** Perplexity AI (`content/reviews/perplexity-ai-search-engine-answer-engine.md`)
+- ~4,200 words
+- Covers: Aravind Srinivas founder story (IIT Madras → UC Berkeley PhD → OpenAI), the $1.72B funding sprint to $20B valuation, Sonar model family, $500M ARR / 335% YoY growth, the Forbes/NYT/News Corp copyright wars, Comet browser, and the strategic abandonment of advertising
+- MCP server coverage: official `@perplexity-ai/mcp-server` (Mar 2025)
+- **Rating: 4/5** — deductions for active litigation risk and moat durability as retrieval commoditizes
+
+**Next run:** Deploy the Perplexity AI review (throttle clears ~unix 1778285833). Candidates for next new review: Black Forest Labs (FLUX image gen), Databricks, or Cohere.
+2026-05-08T23:18:09Z FINISHED run 1186292
+2026-05-08T23:18:10Z SESSION 2013 stopped
+2026-05-09T00:10:01Z STARTED run 1203967 (mode=wild)
+2026-05-09T00:10:03Z SESSION 2014 started
