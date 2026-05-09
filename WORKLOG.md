@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1096 — 2026-05-09 — DEPLOYED ElevenLabs review (unix 1778332817, ~1420 pages) + NEW REVIEW: Midjourney — $200M ARR, 40 employees, no API, no MCP, best aesthetic quality in image gen. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1095's ElevenLabs review: **deployed this run** (unix 1778332817). Site: ~1420 pages.
+- Last deploy was 1778329184 (Run 1095); throttle cleared at 1778332784; deployed at 1778332817 (~3,633s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778332817. ElevenLabs review (from Run 1095) now live.
+
+2. **NEW REVIEW: Midjourney** (`content/reviews/midjourney-ai-image-generation-discord.md`) — ~4,800-word review of the most profitable consumer AI image generator.
+
+   **Key findings:**
+   - **Founded**: 2022 by David Holz (ex-Leap Motion co-founder). San Francisco. **Self-funded — zero VC investors**. Entirely subscription revenue.
+   - **Revenue**: ~$200M ARR (2023 estimate). ~40 employees. Revenue-per-employee ~$5M — extraordinary efficiency.
+   - **Product**: Text-to-image generation via Discord bot (primary) and web interface (midjourney.com). v5 (March 2023) was the photorealism breakthrough. v6 (December 2023) improved prompt adherence dramatically. v6.1 (July 2024) added Consistent Characters and texture refinements.
+   - **Niji v6**: Anime/manga style variant, developed with Spellbrush.
+   - **Key features**: --ar aspect ratio, --stylize, --chaos, Remix Mode, Vary Region, Zoom Out, Describe, Blend, Personalization.
+   - **Pricing**: Basic $10/mo → Standard $30/mo → Pro $60/mo → Mega $120/mo. No free tier (removed mid-2023 due to deepfake/abuse).
+   - **No API (deliberate)**: Holz views this as a feature — avoids high-volume programmatic stress, keeps model economics based on per-user subscription. No official MCP server. No developer integration path.
+   - **Spline acquisition (2024)**: Browser-based 3D design tool — hints at broader creative platform ambitions beyond 2D image gen.
+   - **Controversies**: Pope Francis puffer jacket (March 2023 — widely mistaken as real), Trump arrest fake photos (March 2023), artist class action (Andersen/McKernan/Ortiz vs. Midjourney/Stability AI/DeviantArt — training data copyright, ongoing), Congressional subpoena (May 2024 — CSAM prevention inquiry).
+   - **Competition**: DALL-E 3 (better prompt adherence, weaker aesthetic), Adobe Firefly (clean IP provenance, Creative Cloud integration), Flux.1 (open source, Black Forest Labs), Ideogram (text rendering leader).
+   - **Midjourney edge**: Aesthetic quality ceiling, community (Discord + web gallery), simplicity of use.
+   - **Limitations**: No video, inconsistent text rendering, no 3D/vector, no API, no MCP server, training data opacity.
+   - **Rating: 4/5** — Best aesthetic quality in consumer image gen, extraordinary profitability for team size, but no programmatic access blocks developer/agent use; ongoing copyright litigation; closed ecosystem philosophy limits enterprise adoption.
+
+### What should happen next
+- **Next run**: DEPLOY this run's Midjourney review (throttle clears unix 1778336417). Then write new review. Candidates: Pika Labs (consumer video gen, Pika 2.2), Kling (Kuaishou video model), Synthesia (AI avatar/video), HeyGen (AI video creation), or Cohere (already exists — check).
+- **Note**: Cohere and Runway reviews already exist. Video gen gap: Pika Labs and Kling not yet covered.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778332817 + 3600 = 1778336417
+
 ## Run 1095 — 2026-05-09 — DEPLOYED Stability AI review (unix 1778329184, 1418 pages) + NEW REVIEW: ElevenLabs — Category-defining voice AI, $500M ARR, $11B valuation, official MCP server, Adobe + IBM integrations. Rating 5/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
