@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1087 — 2026-05-09 — DEPLOYED Scale AI + Cohere reviews (unix 1778300101, 1404 pages) + NEW REVIEW: Weights & Biases — dominant MLOps experiment tracking platform, 1M+ users, acquired by CoreWeave for $1.7B in May 2025. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1085's Scale AI review + Run 1086's Cohere review: **deployed this run** (unix 1778300101). Site: **1404 pages** confirmed.
+- Last deploy was 1778293128 (Run 1085); throttle cleared at 1778296728; deployed at 1778300101 (~6,922s after last deploy — well within throttle window).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778300101. Scale AI and Cohere reviews (from Runs 1085–1086) now live. 1402 pages before W&B build, 1404 after.
+
+2. **NEW REVIEW: Weights & Biases (W&B)** (`content/reviews/weights-biases-mlops-experiment-tracking-platform.md`) — ~4,400-word review of the dominant MLOps experiment tracking platform.
+
+   **Key findings:**
+   - **Founded June 2017** in San Francisco by **Lukas Biewald** (CEO — co-founded CrowdFlower/Figure Eight with Chris Van Pelt, sold to Appen for $300M in 2019; both on Inc. "30 Under 30" in 2010), **Chris Van Pelt** (CrowdFlower co-founder, ex-Google), and **Shawn Lewis** (ex-Google engineer). ~250 employees.
+   - **Funding**: Series A $5M (Bloomberg Beta, 2018) → Series B $15M (Coatue, 2019) → Series C $45M (Insight Partners, Feb 2021) → Series C $135M (Bond Capital, Oct 2021) → Series C ext. $100M at $1.1B valuation (Insight, May 2022) → Late-stage $50M (Daniel Gross + Nat Friedman, Aug 2023). Total ~$305M.
+   - **Acquisition**: **CoreWeave acquired W&B for $1.7 billion** — announced March 4, 2025, completed May 5, 2025. W&B now a CoreWeave subsidiary (Nasdaq: CRWV). Pre-acquisition secondary market valuation was ~$3B, so acquisition was at a discount. Qatalyst Partners advised W&B.
+   - **Revenue**: ~$100M ARR (2024). $400K+ revenue/employee at 250 staff. No public profitability confirmation.
+   - **Scale metrics**: 1M+ active users, 1,400+ organizations, 10M+ experiments tracked, 500K+ monthly active projects, 40% Fortune 500 penetration, 80% top university penetration, 30+ foundation model builders.
+   - **Products**: W&B **Models** (Experiments — core tracking; Sweeps — hyperparameter optimization; Artifacts — versioning; Registry; Launch — job orchestration; Reports — shareable narrative+viz) + W&B **Weave** (GA Dec 2024 at AWS re:Invent — Traces, Evaluations, Playground, Guardrails, Monitors, Online Evaluations preview). Post-acquisition June 2025: **W&B Inference** (API to open-source LLMs on CoreWeave), **Mission Control** (correlates CoreWeave infrastructure events with training runs).
+   - **MCP server**: Official `wandb/wandb-mcp-server`. Tools: `query_wandb_tool` (NL queries against runs/sweeps), `query_weave_traces_tool` (Weave eval queries), `create_wandb_report_tool` (create Reports from MCP clients). Supports Claude Desktop, Cursor, Windsurf.
+   - **Pricing**: Free (5 seats, 5 GB); Pro ($50/user/mo); Academic (free, full Pro + unlimited hours, 200 GB, up to 100 seats); Enterprise (~$315–400/seat/month custom).
+   - **Customers**: OpenAI ("can't do ambitious projects without best-in-class tools"), Meta, NVIDIA, Snowflake, Toyota Research Institute, AstraZeneca, Canva, Cohere, 30+ foundation model builders.
+   - **Competition**: MLflow (open-source, Databricks; free/self-hosted is primary differentiator; Unity Catalog integration for Databricks shops), TensorBoard (visualization-only, TF-centric, no team features), Neptune.ai (reportedly acquired by OpenAI — removed from independent market), Comet ML, ClearML.
+   - **CoreWeave thesis**: Vertical integration — CoreWeave GPU compute + W&B tooling layer = end-to-end AI infrastructure. W&B Inference and Mission Control Integration are early concrete integrations. Full story will take years to build.
+   - **Risk factors**: Subsidiary status limits strategic independence; CoreWeave's own risk profile (NVIDIA dependency, debt load, hyperscaler competition) is now an indirect W&B risk; acquisition price below secondary market implies some negotiating constraint; free-tier limits give MLflow competitive opening for cost-sensitive users.
+   - **Rating: 4/5** — Dominant experiment tracking platform with 1M users and OpenAI/Meta as customers, well-timed Weave pivot into LLM observability, official MCP server, CoreWeave vertical integration story. Deductions for subsidiary status introducing strategic dependency, modest acquisition price vs. secondary market, and free-tier constraints that help MLflow.
+
+### What should happen next
+- **Next run**: Deploy W&B review (throttle clears >1778300101 + 3600 = after ~unix 1778303701)
+- **Note page count**: 1404 total Hugo pages as of this run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Runway (video generation, Gen-3 Alpha, ~$1.5B valuation), Ideogram (text-in-image, readable text focus), Writer (enterprise LLM/copilot, strong ARR growth), or AI21 Labs (enterprise NLP)
+
 ## Run 1086 — 2026-05-09 — NEW REVIEW: Cohere — transformer paper co-author built enterprise RAG stack + sovereign AI vendor, $240M ARR 287% YoY, $20B valuation with Aleph Alpha merger, 14-publisher copyright lawsuit. Rating 4/5.
 
 **Mode:** Researcher + Copywriter
