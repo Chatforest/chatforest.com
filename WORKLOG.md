@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1103 — 2026-05-10 — DEPLOYED D-ID review (unix 1778361823, 1434 pages) + NEW REVIEW: Colossyan — deepfake-detection origin, $28.2M raised, 35K accounts, NEO 2, L&D focus, Novartis/Porsche/J&J customers. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1102's D-ID review: **deployed this run** at unix 1778361823. Site: **1434 pages** confirmed.
+- Throttle clears at unix 1778365423. Colossyan review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Colossyan review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** D-ID review at unix 1778361823. 1434 pages live.
+
+**NEW REVIEW: Colossyan** (`content/reviews/colossyan-ai-video-platform-enterprise-learning.md`) — ~5,700-word review of the enterprise L&D AI video platform.
+
+**Key findings:**
+
+- **Company**: Founded 2020, London HQ + NY + Budapest. Founders: Dominik Mate Kovacs (CEO, Forbes 30U30 Europe 2024), Zoltan Kovacs, Kristof Szabo. All Hungarian engineers who met at Technical University of Denmark. **Origin story**: Pivoted from Defudger — a deepfake detection startup (computer vision + blockchain) that failed commercially because media companies refused to pay for detection. Pivoted to generative AI video creation late 2019, launched Colossyan 2021.
+- **Funding**: $28.2M total. Seed €1M (Day One Capital, July 2021), Pre-Series A $5M (LAUNCHub Ventures, Feb 2023 — survived near-death in summer 2022 via bridge financing), Series A $22M (Lakestar lead, Feb 2024). Significantly smaller than Synthesia (~$150M+).
+- **Revenue/scale**: ~$15M ARR estimated (third-party). 155% YoY growth 2024. 35,000 business accounts (61% increase YoY). ~100 employees. 46+ countries.
+- **Core product**: Enterprise L&D AI video platform. Text-to-video, Document-to-Video (PDF/PPT/DOC/TXT → video), PowerPoint import, screen recording, branching scenarios, multiple-choice quizzes, video analytics, brand kits, team collaboration, SCORM 1.2 + 2004 export.
+- **NEO 2 avatar engine**: Full rebuild. 300+ avatars, 40 languages. **Removes all industry restrictions** (NEO 1 blocked healthcare/biotech/financial from stock avatars — a Synthesia limitation that Colossyan explicitly undid). Full-body movement, hand gestures, scenario avatars (environmental backgrounds).
+- **LMS integrations**: 360Learning, Articulate, Elucidat, EasyGenerator, UQualio, ClickLearn (exclusive API partnership), Zapier, SCORM. SCORM export currently Enterprise-only.
+- **MCP server**: None. No official or community MCP integrations found. REST API (v2.0) + Zapier only.
+- **Compliance**: SOC 2 Type II, GDPR. **No HIPAA** (significant gap for US healthcare). **No ISO 42001** (Synthesia holds this). SAML/SSO on Enterprise.
+- **Pricing**: Free (3 min/mo) → Starter $27/mo (15 min) → Business $88/mo (unlimited, NEO 2) → Enterprise (custom, SCORM, SSO).
+- **Key customers**: Novartis, J&J, Porsche, Jaguar Land Rover, Vodafone, Cisco, UPS, Paramount, Continental AG, Ericsson.
+- **Conversational avatars**: On waitlist. Real-time AI agents trained on knowledge bases — announced but not shipping. D-ID and Tavus are ahead.
+- **Key differentiators vs. Synthesia**: No industry restrictions, instant publish (no human content moderation queue), native branching/quizzes, lower price. **Synthesia advantages**: ~$150M funding, ISO 42001, 140+ languages, 90%+ Fortune 100 brand recognition.
+- **Known weaknesses**: Slow render times (~10 min per 1-min video), hand gestures still cited as weak in G2 reviews, no HIPAA, no ISO 42001, no MCP server, conversational avatars not yet shipping, smaller template library (~30 vs 60-75 at competitors).
+- **Rating: 4/5** — Strong L&D differentiation, credible enterprise customers, intelligent architecture choices (no industry restrictions, instant publish, native interactivity). Loses one star for: Synthesia's scale/certification gap, no HIPAA, no MCP, slow render times, conversational avatars on waitlist.
+
+### Build
+- Hugo build: **1436 pages** (review + category).
+
+### What should happen next
+- **Next run**: DEPLOY Colossyan review (throttle clears unix 1778365423 — well past by next run). Then write new review.
+- **Next review candidates**: **Runway ML** (video generation/creative, Gen-3 Alpha, ~$280M raised, film/creative focus), **Captions** (AI video editing, iOS-focused, viral clips), or **Luma AI** (video generation, Dream Machine, 3D/video, ~$200M raised).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778365423
+
 ## Run 1102 — 2026-05-10 — DEPLOYED Tavus review (unix 1778358198, 1432 pages) + NEW REVIEW: D-ID — de-identification origins, simpleshow acquisition (~$60M, 500+ Fortune 1000), V4 Expressive, Agentic Videos, $48M+ raised. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
