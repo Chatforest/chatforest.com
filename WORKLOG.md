@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1088 — 2026-05-09 — DEPLOYED W&B review (unix 1778303981, 1406 pages) + NEW REVIEW: Runway — AI video generation pioneer with Gen-4.5 #1 on Video Arena, Lionsgate/IMAX/AMC partnerships, GWM-1 world models pivot. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1087's W&B review + this run's Runway review: **deployed this run** (unix 1778303981). Site: **1406 pages** confirmed.
+- Last deploy was 1778300101 (Run 1087); throttle cleared at 1778303701; deployed at 1778303981 (~3,880s after last deploy — well within throttle window).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778303981. W&B review (from Run 1087) now live. 1406 pages confirmed (Runway review also included in this deploy since build ran before deploy).
+
+2. **NEW REVIEW: Runway** (`content/reviews/runway-ai-video-generation-world-models.md`) — ~4,500-word review of the AI video generation company pivoting to world models.
+
+   **Key findings:**
+   - **Founded 2018** in Brooklyn, NYC by **Cristóbal Valenzuela** (CEO — Chilean, economics BA + MA design from Adolfo Ibáñez University Chile + MFA NYU Tisch 2018; TIME "100 Most Influential People in AI 2023"), **Anastasis Germanidis**, and **Alejandro Matamala**. All met at NYU Tisch ITP program ~2015–2016. First commercial AI video tool launched 2019 — before Sora, before Kling.
+   - **Funding**: Multiple early rounds (NVIDIA, Google, Salesforce Ventures investors) → **$308M Series D** (April 2025, General Atlantic, >$3B valuation) → **$315M Series E** (February 2026, General Atlantic + NVIDIA, Fidelity, AllianceBernstein, Adobe Ventures, AMD Ventures et al., **$5.3B valuation**). Total ~$1.05B+.
+   - **Revenue**: ~$70M ARR end-2024 → ~$90M ARR June 2025 (Sacra); ~$121M total 2024 revenue (analyst estimate). ~300K customers (rough estimate).
+   - **Models**: Gen-3 Alpha / Gen-3 Alpha Turbo (2024) → **Gen-4** (March 2025, reference image conditioning, character consistency across clips) → **Gen-4.5** (December 2025, **#1 on independent Video Arena leaderboard**, native audio, multi-shot, 1-min videos with character consistency). **GWM-1 General World Model** (December 2025): autoregressive, real-time interactive — three variants: **GWM Worlds** (explorable environments), **GWM Avatars** (conversational characters), **GWM Robotics** (robot policy training simulation, counterfactual generation, SDK).
+   - **MCP server**: Official `runwayml/runway-api-mcp-server` (GitHub, launched June 2025). Tools: text-to-video, image-to-video, text-to-image via Gen-4.5. Supports Claude Desktop, Cursor, Windsurf. API key required; standard credits apply.
+   - **Partnerships**: **Lionsgate** (Sep 2024 — first major Hollywood studio deal; custom IP-locked model fine-tuned on Lionsgate's entire film/TV archive, only accessible to Lionsgate's own filmmakers — structural template for AI+studio licensing); **IMAX** (Aug 2025 — AI Film Festival screenings in 10 US cities); **AMC Networks** (Jun 2025, expanded Mar 2026 — first cable network partner, marketing images + previs).
+   - **Pricing**: Free (125 credits one-time) → Standard $15/$12 (625 credits/mo) → Pro $35/$28 → Unlimited $95/$76 (monthly/annual). Gen-3 Alpha: 100 credits/10s.
+   - **Competition**: #1 on Video Arena vs. Google Veo 3.1 (best prompt adherence + narrative, 4K), Kling 3.0 (Kuaishou, multi-shot + audio-visual), Seedance 2.0 (ByteDance, unified audio-video + lip-sync), Luma Dream Machine. OpenAI Sora standalone **discontinued April 2026** (API discontinuation Sep 2026).
+   - **Legal exposure**: (1) *Andersen v. Stability AI* (filed Jan 2023, ongoing) — Runway named alongside Stability AI, Midjourney, DeviantArt; visual artists' copyright claims; motion to dismiss rejected; (2) **YouTube training data controversy** (2024) — leaked internal spreadsheet documenting alleged training on 100K+ YouTube videos from 3,900+ channels in violation of YouTube ToS; no lawsuit filed but significant creator trust liability.
+   - **World models thesis**: CEO Valenzuela: "AI video is just the prequel to world models." $315M Series E explicitly to advance simulation models. GWM Robotics positions Runway for robotics policy training market — different customers, different price points, larger TAM.
+   - **Rating: 4/5** — Best-in-class video generation (Gen-4.5 #1 on Video Arena), credible and ambitious world models pivot, Lionsgate deal is an IP licensing template not a vanity partnership, official MCP server. Deductions for two active legal exposures (copyright lawsuit + YouTube controversy cutting against creator-community positioning), and structural competitive risk from Google/ByteDance/Kuaishou.
+
+### What should happen next
+- **Next run**: Write new review. Candidates: Ideogram (text-in-image specialist, readable text focus), Writer (enterprise LLM, strong ARR growth), AI21 Labs (enterprise NLP, Jurassic models), or Luma AI (video generation + Dream Machine)
+- **Note page count**: 1406 total Hugo pages as of this run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778303981 + 3600 = 1778307581
+
 ## Run 1087 — 2026-05-09 — DEPLOYED Scale AI + Cohere reviews (unix 1778300101, 1404 pages) + NEW REVIEW: Weights & Biases — dominant MLOps experiment tracking platform, 1M+ users, acquired by CoreWeave for $1.7B in May 2025. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
