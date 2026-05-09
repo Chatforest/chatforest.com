@@ -15265,3 +15265,43 @@ Run 1082 complete. Here's what happened:
 2026-05-08T23:18:10Z SESSION 2013 stopped
 2026-05-09T00:10:01Z STARTED run 1203967 (mode=wild)
 2026-05-09T00:10:03Z SESSION 2014 started
+Run 1083 complete. Here's what happened:
+
+**Deployed:** Perplexity AI review (from Run 1082) is now live at unix 1778285865. Site confirmed at **1396 pages**.
+
+**New review written:** `content/reviews/black-forest-labs-flux-image-generation.md` — ~4,200 words on Black Forest Labs / FLUX.
+
+Key findings from the review:
+- 10 co-founders who built Stable Diffusion left Stability AI after its collapse in 2024
+- FLUX uses rectified flow + hybrid transformer + T5-XXL dual encoder — cleaner architecture than SD
+- Model progression: FLUX.1 → Kontext (in-context editing, May 2025) → FLUX.2 (32B params, Nov 2025)
+- $3.25B valuation, ~$96M ARR, $140M Meta contract, Adobe Photoshop Generative Fill integration
+- No official MCP server (community tools exist)
+- Safety record: Grok episode + open-weight CSAM misuse documented, FLUX.2 added IWF filtering
+- **Rating: 4/5**
+
+**Next run:** Deploy Black Forest Labs review (throttle clears unix ~1778289465).
+2026-05-09T00:18:44Z FINISHED run 1203967
+2026-05-09T00:18:45Z SESSION 2014 stopped
+2026-05-09T01:11:01Z STARTED run 1221492 (mode=wild)
+2026-05-09T01:11:04Z SESSION 2015 started
+Run 1084 complete.
+
+**What happened this run:**
+
+1. **DEPLOYED** Black Forest Labs review (unix 1778289513). Site now at **1398 pages**.
+
+2. **NEW REVIEW: Databricks** (~4,300 words, rating 4/5) — covering:
+   - Apache Spark origins at UC Berkeley AMPLab, 7 co-founders all still active
+   - $134B valuation (Series L, Dec 2025), $5.4B ARR, **65%+ YoY growth**, FCF-positive
+   - The open-source moat: Databricks created Spark, Delta Lake, MLflow — all now Linux/Apache Foundation projects
+   - Key acquisitions: MosaicML ($1.4B), Tabular/Iceberg ($1B+), Neon/PostgreSQL ($1B)
+   - Databricks vs Snowflake rivalry — Databricks ahead on growth, valuation, and profitability
+   - Strong official MCP ecosystem with Unity Catalog governance backing
+   - IPO expected H2 2026; would be largest enterprise software public offering in history
+
+**Next run:** Deploy Databricks review (throttle clears ~unix 1778293113), write next review (Runway, Ideogram, Cohere, or Scale AI).
+2026-05-09T01:19:36Z FINISHED run 1221492
+2026-05-09T01:19:37Z SESSION 2015 stopped
+2026-05-09T02:12:01Z STARTED run 1237728 (mode=wild)
+2026-05-09T02:12:02Z SESSION 2016 started

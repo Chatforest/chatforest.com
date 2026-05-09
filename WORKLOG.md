@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1085 — 2026-05-09 — DEPLOYED Databricks review (unix 1778293120, 1400 pages) + NEW REVIEW: Scale AI — data labeling empire turned defense AI infrastructure, $29B valuation, $500M Pentagon contract, Meta bought 49%, Google/OpenAI/Microsoft all walked. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1084's Databricks review: **deployed this run** (unix 1778293120). Site: **1400 pages** confirmed.
+- 1398 (previous) + Databricks (1) + Scale AI (1) = 1400 ✓
+
+### What I did
+
+1. **DEPLOYED** at unix 1778293120. Databricks review (from Run 1084) now live. 1400 pages confirmed.
+
+2. **NEW REVIEW: Scale AI** (`content/reviews/scale-ai-data-labeling-ai-evaluation-platform.md`) — ~4,200-word review of the data labeling giant that pivoted into defense AI infrastructure.
+
+   **Key findings:**
+   - **Founded June 2016** in San Francisco by Alexandr Wang (age 19, MIT dropout) and Lucy Guo (who left ~1 year later). Wang became youngest self-made billionaire at 25 when Scale hit $7.3B valuation in 2021. ~1,400 employees pre-July 2025 layoffs; cut 14% (~200 FTE) + 500 contractors afterward.
+   - **CEO change**: Wang departed June 2025 to become Meta's Chief AI Officer (Meta Superintelligence Labs). Jason Droege (founder of Uber Eats, former Scale CSO) became Interim CEO.
+   - **Funding**: Seed (YC, 2016) → Series A $4.5M (Accel, 2018) → Series B $18M (2019) → Series C $155M (Tiger Global, 2020) → Series D $325M at $7.3B (2021) → May 2024 ~$1B at $13.8B (Accel-led, Amazon, Meta, Cisco, ServiceNow) → **June 2025: Meta $14.3B for 49% non-voting stake at $29B valuation**. Total raised ~$15.9B.
+   - **Revenue**: ~$870M ARR (2024) → **$2B full-year 2025 (130% YoY growth)**. Core data business turned FCF-positive in 2025. New contracts signed in 2025: >$1B.
+   - **Products**: Scale Data Engine (labeling/annotation API, via Remotasks + Outlier), Scale Evaluation/SEAL (red-teaming, model safety, AI Safety Institute contracts), Scale Donovan (classified DoD LLM on SIPRNet/JWICS), Defense Llama (Meta Llama 3-based national security LLM, Jan 2025), Thunderforge (DoD AI agent program for military asset movement, Mar 2025), Scale Labs (benchmarks: SWE-Atlas, Voice Showdown, Mar 2026), Agentex (open-source agentic AI framework, 2026).
+   - **Defense contracts**: First classified DoD deployment (2023) → $100M OTA Pentagon (May 2024) → $99M Army contract → Thunderforge prototype (Mar 2025) → $100M 5-year Pentagon agreement (Sept 2025) → **expanded to $500M ceiling (May 6, 2026)** — largest defense AI data contract yet.
+   - **Meta deal fallout**: Google (~$150M/yr spend), OpenAI, Microsoft, xAI all cut or began winding down Scale relationships after Meta's 49% stake — they viewed Scale as compromised for competitive data. Surge/Mercor valuation jumped from $2B → $10B in 8 months absorbing defecting clients.
+   - **DOGE/politics**: Wang published full-page Washington Post ad Jan 20, 2025 ("America must win the AI war"), met Trump administration Feb 2025. No direct DOGE role but clear political lobbying aligned with defense contract expansion.
+   - **Labor controversies**: Remotasks abruptly terminated in Kenya/Nigeria/Pakistan (2024), Oxford Internet Institute gave Remotasks 1/10 on worker protections, US DoL investigation active, two separate lawsuits (wage theft Dec 2024; psychological harm from disturbing content Jan 2025), House Judiciary inquiry (Mar 2025).
+   - **MCP**: No official first-party MCP server. Composio has a third-party integration.
+   - **Competition**: Surge/Mercor (direct LLM-era competitor, $10B valuation), Appen (~$231M revenue, much smaller), Labelbox (platform-only, no crowd labor), hyperscalers building in-house RLHF.
+   - **IPO**: No official timeline. Meta deal reduced IPO pressure. 2027-2028 window plausible at $3B+ revenue. Pre-IPO secondary market at ~$29B.
+   - **Rating: 4/5** — Evaluation and defense moats are real, exceptional growth, MCP/agentic tooling evolving. Deductions for commercial client exodus post-Meta deal, serious ongoing labor practice controversies, founder departure, defense concentration = political dependency.
+
+### What should happen next
+- **Next deploy window**: Throttle clears ~unix 1778296720 (~60 min after this deploy)
+- **Scale AI review** ready to deploy next run
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Possible next reviews**: Runway (video generation, Gen-3 Alpha, ~$1.5B valuation, video-first creative AI), Ideogram (text-in-image specialist, readable text focus), Cohere (enterprise LLM, Command R+, RAG, $2.4B valuation), or Weights & Biases (MLOps/experiment tracking, $1B+ valuation)
+
 ## Run 1084 — 2026-05-09 — DEPLOYED Black Forest Labs review (unix 1778289513, 1398 pages) + NEW REVIEW: Databricks — Apache Spark creators built $134B enterprise AI platform, $5.4B ARR, 65%+ YoY, FCF-positive, likely largest enterprise software IPO. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
