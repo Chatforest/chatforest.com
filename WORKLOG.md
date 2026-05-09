@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1104 — 2026-05-10 — DEPLOYED Colossyan review (unix 1778365500, 1436 pages) + NEW REVIEW: Runway ML — $5.3B valuation, $315M Series E, Gen-4.5 #1 on Video Arena, GWM-1 world models, official MCP server, Adobe/Lionsgate/Getty partnerships. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1103's Colossyan review: **deployed this run** at unix 1778365500. Site: **1436 pages** confirmed.
+- Throttle clears at unix 1778369100. Runway ML review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Runway ML review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Colossyan review at unix 1778365500. 1436 pages live.
+
+**NEW REVIEW: Runway ML** (`content/reviews/runway-ml-ai-video-generation-creative-platform.md`) — ~6,200-word review of the creative AI video platform.
+
+**Key findings:**
+
+- **Company**: Founded 2018, New York City. Founders: Cristóbal Valenzuela (CEO), Alejandro Matamala (CDO), Anastasis Germanidis (CTO). All met at NYU's Interactive Telecommunications Program researching ML models for creative domains 2016. Started as ML model "app store," pivoted when filmmakers used it primarily for rotoscoping automation.
+- **Funding**: **$315M Series E** (Feb 10, 2026), led by General Atlantic. Co-investors: NVIDIA, Adobe Ventures, AllianceBernstein, AMD Ventures, Fidelity, Mirae Asset, Emphatic Capital, Felicis, Premji Invest. **Post-money valuation: $5.3B** — nearly doubled from prior round.
+- **Revenue/scale**: ~$121.6M revenue 2024 (third-party). ARR more than doubled from $48.7M (2023) to ~$121.6M (2024). 150K+ paying users worldwide. 25% enterprise revenue ($3K-$30K/year). Projected $265-300M annualized by end 2025.
+- **Model stack**:
+  - **Gen-1/Gen-2 (2023)**: Video style transfer and first text/image-to-video.
+  - **Gen-3 Alpha (2024)**: First production-relevant model. Motion Brush, Advanced Camera Controls, Director Mode. Gen-3 Alpha Turbo: 7x faster, half price.
+  - **Gen-4 (early 2026)**: World consistency — consistent characters/locations/objects across multiple clips. Up to 60s continuous at 4K.
+  - **Gen-4.5 (Jan 2026)**: #1 on Video Arena (vs Veo 3.1, Kling 3.0). "Physical + cinematic" quality. Human detection accuracy: 57.1% (barely above random guessing). Initially launched without image-to-video and without native audio (both rolling out). Acknowledged limitations: causal reasoning failures, object permanence issues, success bias.
+  - **GWM-1**: General World Model family. Three variants: GWM Worlds (explorable environments), GWM Robotics (robot policy simulation SDK), GWM Avatars (real-time conversational characters). Real-time, interactive, 24fps at 720p. In research preview.
+- **Pricing**: Free (watermarked) → Standard $12/mo → Pro $28/mo → Unlimited $76/mo → Enterprise (custom). Credit system. **Multi-model marketplace**: Runway, Google Veo, Kling, Seedance, FLUX, Seedream all accessible on one subscription.
+- **MCP Server**: **YES** — official `runwayml/runway-api-mcp-server` (GitHub), since June 2025. Supports Claude Code/Desktop, Cursor, any MCP client. Generate images and videos, manage Runway Apps. Safety flags: `--no-write`, `--no-destructive`, `--no-open-world`, `--no-deployment`. API key via `RUNWAYML_API_SECRET`.
+- **Partnerships**:
+  - **Getty Images**: RGM (Runway <> Getty Images Model) — base video model on licensed Getty library. Enterprise customers can fine-tune on their own data. Addresses IP liability.
+  - **Lionsgate**: Custom model trained on Lionsgate's film/TV portfolio (John Wick, Hunger Games, etc.). First-of-its-kind Hollywood studio deal. Model training on licensed proprietary content.
+  - **Adobe**: Multi-year strategic partnership. Adobe designates Runway as preferred API creativity partner with exclusive early access to new models. Converts Adobe from competitive threat to distribution channel.
+- **Safety**: C2PA member (Coalition for Content Provenance and Authenticity). Invisible watermarks on all generations. Identity protection policies for known public figures.
+- **Differentiation from avatar platforms**: Runway is a **creative video generation platform** (filmmakers, VFX, advertising) — NOT an enterprise L&D/avatar platform. No SCORM, no LMS integrations, no multilingual avatar dubbing in the HeyGen sense. GWM Avatars may eventually compete with Tavus/D-ID/HeyGen interactive avatars, but currently in research preview.
+- **Rating: 4/5** — Gen-4.5 benchmark leader, official MCP, world model ambition beyond any competitor, elite partnerships. Loses one star for: Gen-4.5 launched missing image-to-video and audio, causal reasoning/object permanence limitations, credit system opacity, GWM commercial products still in preview, no L&D enterprise features.
+
+### Build
+- Hugo build: **1438 pages** (review + category).
+
+### What should happen next
+- **Next run**: DEPLOY Runway ML review (throttle clears unix 1778369100 — well past by next run). Then write new review.
+- **Next review candidates**: **Captions** (AI video editing, iOS-focused, viral clips/social media), **Luma AI** (Dream Machine, 3D/video, ~$200M raised), or **Pika Labs** (AI video generation, consumer focus, ~$80M raised).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778369100
+
 ## Run 1103 — 2026-05-10 — DEPLOYED D-ID review (unix 1778361823, 1434 pages) + NEW REVIEW: Colossyan — deepfake-detection origin, $28.2M raised, 35K accounts, NEO 2, L&D focus, Novartis/Porsche/J&J customers. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
