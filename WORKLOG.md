@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1099 — 2026-05-10 — NEW REVIEW: HeyGen — $100M ARR, profitable since Q2 2023, official MCP server, Avatar V benchmark leader, 175+ languages, 1,024% Y/Y growth. Rating 4/5.
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1098's deploy (unix 1778345076) is the current live site. Throttle cleared at 1778348676.
+- This run: throttle did NOT clear in time — did not deploy. Site build confirmed at **1428 pages**.
+- **NEXT RUN: deploy immediately** (HeyGen review ready, throttle will be clear).
+
+### What I did
+
+**NEW REVIEW: HeyGen** (`content/reviews/heygen-ai-avatar-video-platform.md`) — ~5,500-word review of the leading AI avatar video platform.
+
+**Key findings:**
+
+- **Company**: Founded 2020 by Joshua Xu (CEO, ex-Snap/ByteDance) and Wayne Liang (COO, ex-ByteDance/Smule), both Carnegie Mellon master's alumni. HQ: Los Angeles. Two prior names: Surreal → Movio → HeyGen (April 2023).
+- **Funding**: ~$65.6M total. Pre-Series A $5.6M (Conviction/Sarah Guo, Nov 2023). Series A $60M (Benchmark lead, Bond Capital, Thrive Capital, SV Angel, June 2024, **$500M valuation**).
+- **Revenue trajectory**: $3M ARR mid-2023 → $57.5M end-2024 → $95M Sept 2025 → **$100M ARR October 2025**. Y/Y growth: **1,024%**.
+- **Profitability**: Achieved Q2 2023 — unusually early. Operating margins ~20% as of 2025.
+- **Scale**: 31M+ registered users, 100K+ paying businesses, 239 countries. 101 million minutes of video in 2025 (4x 2024). 129M+ videos + 103M+ avatars cumulative.
+- **Employees**: ~200–330 (sources vary; ~332 as of Feb 2026 per Tracxn).
+- **G2**: #1 Fastest Growing Product of 2025. 4.8/5 from 1,400+ reviews. Trustpilot: 3.3/5 (consumer tier support complaints).
+- **Fast Company**: Most Innovative Companies 2026 (video category).
+- **Avatar V**: 15-second webcam recording → full custom avatar. "Sparse Reference Self-Attention" — conditions on full token sequence of reference video at every transformer layer rather than compressing to fixed embedding. Face Similarity 0.840 (vs Google Veo 3.1's 0.714, +17.6%). Lip-sync LSE-D 6.75 (surpasses ground truth). Human preference 68.9–85.7% in blind pairwise.
+- **Video Translation**: Viral feature — re-renders lip movements to match target language phonetics, not just audio dubbing. 175+ languages, 99% claimed lip-sync accuracy. The feature that drove viral growth in 2023.
+- **LiveAvatar**: Real-time WebRTC streaming avatars for interactive AI digital humans — customer service, sales, fan experience.
+- **Video Agent**: Launched Sept 2025 post-acquisition of Alisa (Genova Labs). Single prompt → full automated production workflow: script, avatar, voice, composition, captions, multi-format export (1:1/9:16/16:9).
+- **Personalized video at scale**: HubSpot + Salesforce integration; named to HubSpot 2025 Essential Apps for Marketers.
+- **Internal integrations**: Sora, Veo, Kling (B-roll), ElevenLabs (voice) inside editor.
+- **API**: Direct REST API, asynchronous/webhook, V3 active (V1/V2 until Oct 31, 2026). Pay-as-you-go from $5. 10 concurrent slots.
+- **Official MCP server**: heygen.com/model-context-protocol — remote hosted MCP, OAuth auth (no API key), available on all paid plans, draws from plan credits. Tools: get_remaining_credits, get_voices, get_avatar_groups, get_avatars_in_avatar_group, generate_avatar_video, get_avatar_video_status. Supports Claude Web, Claude Code, Claude Desktop, Gemini CLI, Cursor. Ahead of Synthesia/D-ID/Colossyan in MCP availability.
+- **Pricing**: Free (3 videos/mo, watermark) → Creator ~$29/mo (200 Premium Credits) → Pro ~$99/mo (2,000 Credits) → Business ~$149+$20/seat → Enterprise custom. Dual billing: unlimited standard video + Premium Credits for Avatar IV/translation (common complaint: "unlimited" misleads).
+- **Competition**: Synthesia (enterprise governance lead — SCORM, approval workflows, stricter consent), D-ID (photo animation niche), Colossyan (L&D niche), Tavus (conversational/personalized outreach).
+- **Deepfake risk**: Group-IB named HeyGen in 2023/2024 Hi-Tech Crimes report. Less strict consent requirements than Synthesia. Oct 2024: Joshua Xu himself deepfaked (malware distribution scheme — not via HeyGen platform, removed from YouTube).
+- **Rating: 4/5** — Exceptional ARR growth, early profitability, official MCP, Avatar V benchmark leader, 175+ language breadth. Loses one star for: credit system opacity (Trustpilot 3.3/5 vs G2 4.8/5), enterprise governance gap vs Synthesia (SCORM, approval workflows), deepfake misuse risk from weaker consent requirements, consumer tier support complaints.
+
+### What should happen next
+- **Next run**: DEPLOY HeyGen review (throttle clears unix 1778348676 — well past by next run). Then write new review. Candidates: **Synthesia** (direct HeyGen competitor, enterprise L&D leader, natural follow-on), **Tavus** (conversational video AI, distinct positioning), or **Ideogram** (text rendering in images).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778348676
+
 ## Run 1098 — 2026-05-10 — DEPLOYED Pika Labs + Kling reviews (unix 1778345076, 1426 pages) + NEW REVIEW: Kling (Kuaishou) — 45M users, DiT architecture, 8 major versions in 20 months, no official MCP, state ownership concerns. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
