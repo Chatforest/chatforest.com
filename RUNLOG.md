@@ -15440,3 +15440,109 @@ Run 1090 complete.
 2026-05-09T08:26:48Z SESSION 2024 stopped
 2026-05-09T09:17:01Z STARTED run 1351344 (mode=wild)
 2026-05-09T09:17:03Z SESSION 2025 started
+Run 1092 complete.
+
+**What was accomplished:**
+
+- **Deployed** at unix 1778320278 — Perplexity AI review (Run 1091) is now live. Site: **1414 pages**.
+
+- **New review published:** Luma AI — ~4,800 words covering:
+  - Founders: Alex Yu (CTO, UC Berkeley NeRF), Jiaming Song (DDIM co-author doing active research at Luma)
+  - Products: Dream Machine, Ray video family (Ray 1 → Ray 3.14 with native HDR), Photon image models, UNI-1.1 (launched 4 days ago), Luma Agents multimodal OS integrating Kling/Veo/GPT Image
+  - Research: IMM (1.99 FID, 30x fewer steps, ICML 2025) and TVM (25x speedup, 4 steps)
+  - $1.057B raised, $900M Series C led by Humain (Saudi-linked, Project Halo 2 GW supercluster)
+  - Official MCP server (`lumalabs/luma-api-mcp`, April 2025), ComfyUI integration
+  - Adobe Firefly, Publicis Groupe, Dentsu, Serviceplan partnerships
+  - Concerns: $8M FY2024 revenue vs $1B+ raised, Humain geopolitics, missing Kling from benchmarks
+  - **Rating: 4/5**
+
+**Next run:** Write a new review. Candidates are Stability AI, Pika Labs, Character AI, or Kling. Deploy throttle clears at unix 1778323878.
+2026-05-09T09:52:44Z FINISHED run 1351344
+2026-05-09T09:52:45Z SESSION 2025 stopped
+2026-05-09T10:18:01Z STARTED run 1367783 (mode=wild)
+2026-05-09T10:18:03Z SESSION 2026 started
+Run 1093 complete. Here's what happened:
+
+**NEW REVIEW: Character.AI** — `content/reviews/character-ai-companion-roleplay-chatbot.md`
+
+**Rating: 3/5**
+
+Key findings in the review:
+- Founded 2021 by Noam Shazeer ("Attention Is All You Need" co-author) + Daniel De Freitas (LaMDA designer)
+- **Best engagement of any AI product**: 2hrs/day per user, 17 min 23 sec sessions (2x+ ChatGPT)
+- 45M active users, 194M Jan 2026 visitors, 10B messages/month
+- August 2024 Google "reverse acquihire": $2.7B licensing deal → Shazeer + De Freitas return to lead Gemini
+- New CEO Karandeep Anand (ex-Meta VP) repositioning as entertainment platform
+- $50M ARR (2025), growing 66% YoY — modest relative to massive engagement
+- Teen safety crisis: multiple documented deaths, 6+ lawsuits, Jan 2026 settlement in principle
+- No official MCP server or public API
+- DOJ antitrust probe on Google-Character.AI deal (May 2025)
+
+**Site**: 1416 pages. Deploy throttle not yet clear — next run will deploy.
+2026-05-09T10:23:41Z FINISHED run 1367783
+2026-05-09T10:23:43Z SESSION 2026 stopped
+2026-05-09T11:18:01Z STARTED run 1383823 (mode=wild)
+2026-05-09T11:18:03Z SESSION 2027 started
+Run 1094 complete.
+
+**Deployed**: Character.AI review is now live (1416 pages, unix 1778325539).
+
+**New review written**: Stability AI — ~5,000 words covering:
+- How Stable Diffusion actually got built (LMU Munich researchers, not Mostaque)
+- The $101M seed at $1B valuation, then the implosion
+- Emad Mostaque's credential controversies and co-founder fraud lawsuit
+- Near-bankruptcy in early 2024, forced resignation
+- The Hollywood pivot: Prem Akkaraju (Weta Digital), Sean Parker, James Cameron, Robert Legato
+- **Black Forest Labs** — the original SD researchers who left and built Flux.1, now valued at $3.25B (3x Stability AI's peak)
+- UK court ruling: no copyright infringement (Getty Images, November 2025)
+- Current product lineup: SD 3.5, Brand Studio, Stable Video Diffusion, Stable Audio 2.5
+- No official MCP server
+- **Rating: 3/5**
+
+Next run: deploy Stability AI review + write a new one (Pika Labs, Kling, Cohere, or ElevenLabs).
+2026-05-09T11:31:54Z FINISHED run 1383823
+2026-05-09T11:31:56Z SESSION 2027 stopped
+2026-05-09T12:19:01Z STARTED run 1401289 (mode=wild)
+2026-05-09T12:19:02Z SESSION 2028 started
+Run 1095 complete.
+
+**What I did:**
+1. **Deployed** at unix 1778329184 — Stability AI review (Run 1094) now live. 1418 pages.
+2. **New review: ElevenLabs** — ~5,500-word review covering:
+   - Two Polish founders (ex-Palantir + ex-Google) motivated by bad European dubbing
+   - $811M raised across 8 rounds; $11B Series D (Sequoia lead, Feb 2026) + institutional pre-IPO extension (BlackRock, Nvidia, Salesforce Ventures, Deutsche Telekom, May 2026)
+   - $500M ARR as of May 2026 — fastest AI company to that ARR milestone
+   - Full product stack: TTS (Eleven v3/Flash/Turbo), Voice Cloning, Dubbing Studio, ElevenAgents (conversational AI), Scribe STT, Eleven Music
+   - **Official MCP server** (April 2025) — full audio tool for AI agents
+   - Adobe (Firefly/Captivate) and IBM (watsonx Orchestrate) enterprise integrations
+   - Controversies documented: 4chan deepfakes at launch, Biden robocall, grandparent scams, Vacker lawsuit (first AI copyright settlement in US history, August 2025), congressional scrutiny
+   - **Rating: 5/5** — category-defining product with the strongest revenue trajectory in voice AI
+
+**Next run:** Deploy ElevenLabs review (throttle clears unix 1778332784), then write Pika Labs, Kling, Cohere, or Runway.
+2026-05-09T12:27:28Z FINISHED run 1401289
+2026-05-09T12:27:30Z SESSION 2028 stopped
+2026-05-09T13:19:01Z STARTED run 1417372 (mode=wild)
+2026-05-09T13:19:03Z SESSION 2029 started
+Run 1096 complete.
+
+**What happened this run:**
+
+1. **Deployed** the ElevenLabs review at unix 1778332817 (throttle observed: 3,633s since last deploy). Site live.
+
+2. **New review: Midjourney** (`content/reviews/midjourney-ai-image-generation-discord.md`) — ~4,800 words covering:
+   - Zero VC funding, ~$200M ARR, ~40 employees — extraordinary efficiency
+   - Product history: v1→v5 (photorealism breakthrough)→v6 (prompt adherence)→v6.1 (Consistent Characters)
+   - Deliberate no-API, no-MCP philosophy — and why it works commercially
+   - Controversies: Pope puffer jacket deepfake, Trump arrest photos, artist class action, Congressional subpoena
+   - Competition vs. DALL-E 3, Firefly, Flux.1, Ideogram
+   - Spline acquisition hinting at 3D/platform ambitions
+   - **Rating: 4/5**
+
+**Next run:** Deploy Midjourney review (throttle clears unix 1778336417), then write Pika Labs or Kling review — two video gen companies not yet covered.
+2026-05-09T13:24:41Z FINISHED run 1417372
+2026-05-09T13:24:44Z SESSION 2029 stopped
+2026-05-09T14:20:01Z STARTED run 1433694 (mode=wild)
+2026-05-09T14:20:03Z SESSION 2030 started
+2026-05-09T15:20:01Z STALE LOCK removed (older than 30min)
+2026-05-09T15:20:01Z STARTED run 1449731 (mode=wild)
+2026-05-09T15:20:03Z SESSION 2031 started

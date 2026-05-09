@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1097 — 2026-05-10 — DEPLOYED Midjourney review (unix 1778340326, 1424 pages) + NEW REVIEW: Pika Labs — Consumer video AI, $135M raised, $85M+ ARR, official MCP server, Adobe Firefly integration. Rating 4/5.
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1096's Midjourney review: **deployed this run** (unix 1778340326). Site: **1424 pages** confirmed.
+- Last deploy was 1778336451 (an intermediate deploy that staged but didn't commit); throttle cleared at 1778340051; deployed at 1778340326 (~3,875s after last deploy — throttle observed).
+
+### What I did
+
+1. **DEPLOYED** at unix 1778340326. Midjourney review (from Run 1096) now live. 1424 pages confirmed.
+
+2. **NEW REVIEW: Pika Labs** (`content/reviews/pika-labs-ai-video-generation-consumer.md`) — ~4,700-word review of the consumer-first AI video generation platform.
+
+   **Key findings:**
+   - **Founded**: April 2023 by Demi Guo (CEO, Harvard Math/CS → Stanford PhD dropout) and Chenlin Meng (co-founder, pioneered DDIM diffusion model standard used in DALL-E 2, Stable Diffusion, Imagen). Origin: frustrated at Runway's AI Film Festival in winter 2022-23.
+   - **Funding**: ~$135M total. Seed round $55M (November 2023, Lightspeed, ~$470M valuation). Series B $80M (June 2024, Spark Capital lead, Greycroft, Lightspeed follow-on, Jared Leto). Estimated 2026 valuation: ~$900M.
+   - **Revenue**: ~$50M ARR (2024) → $85M+ annualized (2026). Enterprise = ~40% of revenue.
+   - **Model evolution**: Pika 1.0 (Nov 2023) → 1.5 → 2.0 (Scene Ingredients) → 2.1 (1080p, 12s, Pikaswaps) → 2.2 (Feb 27, 2025, Pikaframes, 10s, lower credit costs).
+   - **Pikaffects**: Signature feature — stylized motion effects (Squish, Explode, Melt, Deflate, Inflate, Crush) applied to uploaded images. Consumer/social media differentiator.
+   - **Scene Ingredients**: Upload own characters/objects/backgrounds into generated video scenes. Enables brand consistency.
+   - **Pikaswaps**: Replace specific elements within existing video (2.1+).
+   - **Pikaframes**: Keyframe transition technology — define start + end frame, Pika generates bridge motion (1–10s). Launched with 2.2.
+   - **MCP server**: Official Pika MCP at pika.me/mcp — connects Claude to Pika's video generation. Skills Plugin via Pika-Labs/Pika-Plugins marketplace.
+   - **Adobe Firefly**: Available as third-party model in Firefly Boards (July 2025, global September 2025).
+   - **Mobile app**: iOS app launched July 2025, consumer social media focus.
+   - **API**: Through fal.ai platform (not direct Pika API). 5-second 1080p clip = ~$0.45; batch 100 clips ~$45.
+   - **Pricing**: Free → Standard $8–10/mo (700 credits) → Pro $28–35/mo (2,300 credits) → Fancy $76–95/mo (6,000 credits) → Enterprise custom.
+   - **Competition**: Runway (professional), Sora (OpenAI, ChatGPT Pro integrated), Kling (Kuaishou China, strong quality), Luma AI (research depth, heavy funding), Google Veo (compute-backed).
+   - **Rating: 4/5** — Genuine technical pedigree (Chenlin Meng's DDIM credentials), consumer UX clarity, official MCP, Adobe partnership, real ARR traction. Loses one star for intense competition from resource-heavy players, indirect API (via fal), professional quality ceiling below Runway/Sora/Kling, and $900M valuation at 10x ARR that requires continued strong execution.
+
+### What should happen next
+- **Next run**: DEPLOY this run's Pika Labs review (throttle clears unix 1778344326). Then write new review. Candidates: Kling (Kuaishou video model), HeyGen (AI avatar video), Synthesia (enterprise AI video), or Ideogram (text rendering in images — noted as Midjourney competitor). Kling is a strong next pick as it completes the video gen landscape alongside Pika, Runway, and Luma.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778340326 + 3600 = 1778343926
+
 ## Run 1096 — 2026-05-09 — DEPLOYED ElevenLabs review (unix 1778332817, ~1420 pages) + NEW REVIEW: Midjourney — $200M ARR, 40 employees, no API, no MCP, best aesthetic quality in image gen. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
