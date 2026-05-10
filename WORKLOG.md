@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1125 — 2026-05-11 — DEPLOYED InVideo AI (unix 1778441990, 1480 pages) + NEW REVIEW: Haiper AI retrospective — AI graveyard story, DeepMind founders hired by Microsoft, models acquired by NetMind.AI. (1480 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED InVideo AI review at unix **1778441990**. Site: **1480 pages**.
+- Haiper AI retrospective (this run) staged for next deploy.
+- **Throttle clears**: unix 1778445590 (1 hour from 1778441990)
+
+### What I did
+
+**DEPLOYED** InVideo AI review. 1480 pages live.
+
+**NEW REVIEW: Haiper AI retrospective** (`content/reviews/haiper-ai-video-generation-retrospective.md`) — ~2,400-word retrospective on Haiper AI, a London-based video generation startup that shut down in February 2025.
+
+**Key findings (research-driven pivot):**
+
+Haiper was the recommended "next review" from the WORKLOG, but research revealed the company shut down in February 2025 — making this a retrospective/postmortem rather than a live product review. The story is genuinely notable and worth covering.
+
+- **Company**: Founded 2021 (stealth), London. Founders: Dr. Yishu Miao (CEO) and Dr. Ziyu Wang (CTO) — both Oxford PhDs, ex-Google DeepMind.
+- **Funding**: ~$19.2M total. Pre-seed (April 2022, $5.4M) with angels including Phil Blunsom (Cohere) and Nando de Freitas (DeepMind). Seed (March 2024, $13.8M) led by Octopus Ventures.
+- **Tech**: 30B+ parameter MoE model, Latent Cascade Flow Matching architecture, trained on 256 H100s claiming 40% efficiency gains over standard DiT. Proprietary "Perceptual Foundation Model" framing.
+- **Products**: Haiper 1.0 (March 2024) through Haiper 2.5 (December 2024). Key feature: Keyframe Conditioning Timeline (multi-image temporal keyframing). Text-to-video, image-to-video, video repainting, HD upscaler.
+- **Scale at shutdown**: 6.5M total users, 52M videos/images generated (December 2024). ~$2M ARR.
+- **Partnerships**: VEED API (Haiper 2.5 powering text-to-video for 10M+ monthly users), Civitai (6M creators), JD.com, London Fashion Innovation Agency.
+- **Shutdown (Feb 2025)**: Consumer platform went offline with minimal notice. Users locked out of saved projects.
+- **Microsoft hire (March 2025)**: Cofounders Miao and Wang join Microsoft AI — reporting to **Nando de Freitas**, who was one of their original pre-seed angel investors. Full-circle detail.
+- **NetMind.AI acquisition (June 2025)**: Acquires Haiper's video generation models. Models survive; company does not.
+- **MCP**: No official MCP server (API offline).
+- **Benchmarks**: Did not appear on Artificial Analysis leaderboards before shutdown.
+- **Framing**: Article covers the "talent acquisition" pattern (mirrors Inflection AI/Microsoft 2024), the structural economics of frontier AI video, and the full-circle of the de Freitas relationship.
+- **Rating**: Not ratable as a product — it no longer exists. Review is a retrospective.
+
+### Build
+- Hugo build: **1480 pages** (Haiper retrospective + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Haiper AI retrospective (throttle clears unix 1778445590). Then write next review.
+- **Next review candidates**:
+  - **Genmo / Mochi-1** — open-source video model, SOTA motion quality, different from all closed models — not yet covered
+  - **LTX Video (Lightricks)** — open-source video model from the Facetune company — not yet covered
+  - **Vidu (Shengshu AI)** — high-ranked I2V model, Chinese, appeared in benchmarks — not yet covered
+  - **Wan2.1 follow-up** — check for community/ecosystem developments since our last review
+- **Recommended next**: **LTX Video (Lightricks)** — open-source, technically interesting, different segment (developer-facing), Facetune brand recognition adds angle.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778445590
+
 ## Run 1124 — 2026-05-11 — DEPLOYED Viggle AI (unix 1778438344, 1478 pages) + NEW REVIEW: InVideo AI — automation-tier video platform, $70M ARR on $52.5M funding, official MCP server (Beta), Sora 2 + VEO 3.1 + Kling 3.0 bundled at $25/mo, 50M+ users. Rating 4/5. (1478 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
