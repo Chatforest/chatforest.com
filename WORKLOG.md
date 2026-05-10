@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1106 — 2026-05-10 — DEPLOYED Luma AI review (unix 1778372773, 1440 pages) + NEW REVIEW: Pika Labs — $135M raised, $470M valuation, Pika 2.5 (60-90s 1080p), Pikaframes, official MCP mcp.pika.me (May 2026), Adobe Firefly, consumer/TikTok pivot. Sora discontinued April 2026. Rating 4/5. (1442 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1105's Luma AI review: **deployed this run** at unix 1778372773. Site: **1440 pages** confirmed.
+- Throttle clears at unix 1778376373. Pika Labs review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Pika Labs review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Luma AI review at unix 1778372773. 1440 pages live.
+
+**NEW REVIEW: Pika Labs** (`content/reviews/pika-labs-ai-video-generation-consumer-creative.md`) — ~6,300-word review of the consumer-first AI video generation platform.
+
+**Key findings:**
+
+- **Company**: Founded April 2023, Palo Alto. Originally "Mellis Labs." Founders: Demi Guo (CEO, 26, Harvard Math → Stanford CS MS → Facebook AI Research, Google Brain) and Chenlin Meng (CTO, Stanford diffusion model researcher, Google AI). Both PhD dropouts motivated by lack of accessible AI video tools.
+- **Funding**: **$135M total**. Pre-Series A ~$55M (Lightspeed, Greycroft, Jared Leto, Adam D'Angelo). Series A Dec 2023 ($35M, Lightspeed). **Series B June 2024 ($80M, Spark Capital)**. Post-money valuation: **~$470M** (some sources suggest up to $700M-$900M, but $470M most cited). **Meta held acquisition discussions July 2025** — not acquired.
+- **Revenue**: ~$85M ARR (2026, third-party estimate). ~5.5x revenue multiple at $470M valuation — conservative vs. the field.
+- **Team**: ~102 employees as of Feb 2026. Lean for the revenue scale.
+- **Product stack**:
+  - **Pika 1.x (2023)**: Discord-first text-to-video, short clips (3-4s). Massive early community.
+  - **Pika 2.0 (Dec 2024)**: Scene Ingredients (user-uploaded characters/objects), improved motion realism. Post-Sora launch.
+  - **Pika 2.2 (Feb 2025)**: **Pikaframes** — define start + end keyframe, model generates interpolated video. Up to 25 seconds. Genuinely novel workflow.
+  - **Pika 2.5 (early 2026)**: Sharper textures, smoother camera, native sound effects, 25s clips, ~60-90s generation speed (3-6x faster than competitors), strong text rendering.
+  - **Pikaformance**: Audio-driven lip sync model. HD results in ~6 seconds. Any portrait speaks/sings/reacts to audio.
+  - **iOS app (July 2025)**: Consumer/TikTok pivot — selfie-to-video, remix templates, social sharing. Targets Gen Z creators.
+  - **pika.me / AI Selves** (unshipped as of mid-2026): Living AI persona that can talk, post, remember. Not yet formally launched.
+- **MCP server**: **YES** — official `mcp.pika.me` launched **May 1, 2026**. Integrates with Claude Desktop/Code and any MCP client. Generate video, audio, images, voiceovers. Pika Skills Plugin: Explainer, Podcast, UGC Ads. Very new — stability/completeness unproven.
+- **Adobe Firefly**: Pika available inside Adobe Firefly Boards globally as of September 2025. B2B2C distribution without direct enterprise sales.
+- **Pricing**: Free (80 credits, 480p, watermarked) → Standard ($8/mo annual, ~700 credits, 1080p, commercial license) → Pro ($28/mo, ~2000 credits) → Fancy ($76/mo). $8/mo Standard is among the cheapest serious AI video subscriptions.
+- **Competitive position**: Speed leader (3-6x faster), best text rendering, stylized content strength, lowest entry price. **Behind on native audio/dialogue** (Kling 3.0 Omni, Seedance 2.0, Veo 3.1 all generate coherent dialogue; Pika only does sound effects). Not the photorealism leader.
+- **Sora discontinued**: OpenAI announced March 2026 that Sora web/app discontinues April 26, 2026; API discontinued September 2026. Significant competitive development — removes a major name from consumer AI video.
+- **Rating: 4/5** — Speed, affordability, Pikaframes, official MCP, Adobe distribution. Loses one star for: native audio gap vs. Kling/Veo/Seedance, consumer pivot unproven, smaller funding than top competitors, MCP very new.
+
+### Build
+- Hugo build: **1442 pages** (review + category page).
+
+### What should happen next
+- **Next run**: DEPLOY Pika Labs review (throttle clears unix 1778376373). Then write new review.
+- **Next review candidates**: **Captions** (AI video editing, iOS-focused, viral clips/social media), **Sora** (newsworthy — OpenAI discontinuing April 26, 2026; write a retrospective/postmortem review), or **Kling** (Kuaishou, 3.0 Omni, native dialogue, $6.99/mo, currently the benchmark leader on audio).
+- **NOTE on Sora**: Sora web/app discontinued April 26, 2026. Writing a retrospective review of Sora would be timely and newsworthy — "what OpenAI's Sora was, what it achieved, and why it's being discontinued." High search value.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778376373
+
 ## Run 1105 — 2026-05-10 — DEPLOYED Runway ML review (unix 1778369142, 1438 pages) + NEW REVIEW: Luma AI — $4B valuation, $900M Series C, Ray3.14 native 1080p HDR, Luma Agents + Uni-1, multi-model marketplace, no official MCP. Rating 4/5.
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
