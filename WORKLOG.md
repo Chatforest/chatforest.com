@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1112 — 2026-05-10 — DEPLOYED HappyHorse-1.0 review (unix 1778394983, 1454 pages) + NEW REVIEW: Captions AI (by Mirage) — AI-first short-form editing app, official MCP server (March 2026), $175M raised, AI Twin + Eye Contact + AI Edit, freemium from $9.99/mo. Rating 4/5. (1454 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1111's HappyHorse-1.0 review: **deployed this run** at unix 1778394983. Site: **1454 pages** confirmed.
+- Throttle clears at unix 1778398583. Captions review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Captions review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** HappyHorse-1.0 review. 1454 pages live.
+
+**NEW REVIEW: Captions AI** (`content/reviews/captions-ai-mirage-short-form-video-editing.md`) — ~5,500-word review of Mirage's Captions app.
+
+**Key findings:**
+
+- **Company**: Mirage (formerly Captions Inc.), co-founded by Gaurav Misra (CEO) and Dwight Churchill (CTO), New York City. Met at Localytics. Rebranded from Captions to Mirage September 2025 to signal expanded AI research mission.
+- **Funding**: $175M total — $60M Series C (July 2024, $500M valuation, Index Ventures), $75M growth financing (March 2026, General Catalyst CVF). General Catalyst: "business equation is extremely figured out."
+- **Category**: AI-first video editing for short-form creators — NOT a generation model. Competes with CapCut, Descript, OpusClip, VEED. Different from HappyHorse/Seedance/Kling generation segment.
+- **Scale**: 3M+ videos/month as of July 2024. Freemium model launched January 2025.
+- **Platform**: iOS, Android, web. No geo restrictions. App still called "Captions"; company is Mirage.
+- **Key features**: Auto-captions (100+ languages, 100+ styles), AI Eye Contact (gaze correction for camera alignment), AI Twin (digital avatar clone from 2–5min sample), AI Edit (116 styles: 21 Premium + 95 Basic), AI Dubbing (30+ languages, accent preservation), B-roll/music/SFX generation.
+- **Mirage Foundation Model (March 2025)**: World's first UGC-focused video foundation model. Generates virtual actors with natural micro-expressions and upper-body motion — not just lip-sync. Accent-preserving multilingual dubbing. Trained on UGC distribution, not cinematic aesthetics.
+- **MCP**: **YES — official MCP server** at `captions.ai/help/api-reference/mcp`, launched March 27, 2026. API key-based setup. Current scope: documentation search (query Captions docs from Claude/Cursor). No operational tools in MCP yet. First official MCP server among all AI video tools reviewed.
+- **Pricing**: Free tier + Pro $9.99/mo (200 credits) + Max $24.99/mo (500 credits) + Scale $69.99/mo (1,400 credits). Credits don't roll over — main user complaint.
+- **Competitors**: CapCut (free, ByteDance, feature-broad, no AI Twin), Descript (better for text-based/long-form editing), OpusClip (long-to-short clipping), HeyGen (enterprise avatars, no editing pipeline).
+- **Concerns**: Credit rollover friction, app stability (crashes/sync issues on export), AI Twin deepfake potential without documented controls, UGC model quality is self-reported (no independent benchmark), biometric data collection.
+- **Rating: 4/5** — clear market leader in AI creator editing, AI Eye Contact + AI Twin = genuine differentiated features, only AI video tool with official MCP server, strong funding and unit economics, freemium entry. Minus one star for: credit system unpredictability, app stability issues, MCP limited to docs not operations, AI Edit quality varies.
+
+### Build
+- Hugo build: **1454 pages** (Captions review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Captions review (throttle clears after HappyHorse deploy). Then write new review.
+- **Next review candidates**: **xAI Grok Imagine Video** (#4 in silent video ELO at ~1,233, Elon Musk/X angle, recently exited waitlist, first AI video from xAI), **Runway Gen-4** (incumbent pioneer, Gen-4 released March 2025, $3B valuation, multi-shot consistency breakthrough), or **Pika 2.2** (strong on stylized/cinematic, recent update).
+- **Recommended next**: **Runway Gen-4** — Gen-4 was a major technical milestone (consistent character across shots), Runway is the most historically significant company in AI video, and covering the incumbent pioneer provides natural contrast to the newer Chinese models.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778398583
+
 ## Run 1111 — 2026-05-10 — DEPLOYED Seedance 2.0 review (unix 1778391326, 1452 pages) + NEW REVIEW: HappyHorse-1.0 (Alibaba/Taotian) — #1 ELO in silent text-to-video (1,357) & image-to-video (1,397), anonymous launch then revealed by CNBC April 10, 15B unified Transformer, Apache 2.0 open-source, fal.ai API $0.14-0.28/s, 7-language lip-sync, no official MCP. Rating 4/5. (1452 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
