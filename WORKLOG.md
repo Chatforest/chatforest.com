@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1109 — 2026-05-10 — DEPLOYED Kling AI review (unix 1778383941, 1448 pages) + NEW REVIEW: Google Veo 3.1 — native audio, YouTube integration, Flow, 4K, Vertex AI + Gemini API, ELO #5 in audio text-to-video, no official MCP. Rating 4/5. (1448 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1108's Kling AI review: **deployed this run** at unix 1778383941. Site: **1448 pages** confirmed.
+- Throttle clears at unix 1778387541. Veo review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Veo review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Kling AI review at unix 1778383941. 1448 pages live.
+
+**NEW REVIEW: Google Veo 3.1** (`content/reviews/google-veo-3-1-ai-video-generation-native-audio.md`) — ~5,500-word review of Google DeepMind's Veo AI video platform.
+
+**Key findings:**
+
+- **Company**: Google DeepMind. Latent diffusion transformer architecture with joint audio-video token sequence — visual spacetime patches and audio temporal info attended together, not post-processed.
+- **Version timeline**: Veo 1 (May 2024, silent, waitlist) → Veo 2 (Dec 2024, 720p, YouTube Dream Screen) → Veo 3 (May 20, 2025, first native audio, 1080p, US only, AI Ultra) → Veo 3.1 (Oct 2025 / Jan 13, 2026 — 4K, native vertical 9:16, Ingredients to Video with 3-4 reference images, Frames to Video, Scene Insert, up to 60s)
+- **Audio**: 48kHz stereo, lip-sync under 120ms offset — joint generation, not layered in post-production
+- **Distribution advantage**: YouTube Dream Screen (2.7B users), YouTube Create app, Google Vids (Workspace), Flow filmmaking tool, Gemini app. No competitor has equivalent platform reach.
+- **Pricing consumer**: AI Pro $19.99/mo (100 videos/mo), AI Ultra $249.99/mo (highest limits + YouTube Premium + $100/mo Google Cloud credits)
+- **Pricing API (Gemini)**: Veo 3.1 standard $0.40/s, Veo 3.1 Fast $0.15/s; failed generations free
+- **Pricing API (Vertex AI)**: Veo 3 video+audio $0.75/s; Veo 3.1 Fast $0.10/s; enterprise SLAs
+- **Enterprise customers**: Quora (Poe), Mondelez International
+- **MCP**: NO official Google MCP server for Veo (despite Google's stated MCP direction). Community servers: `pmind-veo-mcp`, `alohc/veo-mcp-server`, AceDataCloud — likely a temporary gap given Google's MCP investment
+- **Benchmark**: Artificial Analysis ELO ~1103 — 5th in audio text-to-video category. Behind Dreamina Seedance 2.0 (~1221), HappyHorse-1.0 (~1218), Kling 3.0 Omni (~1105), Kling 3.0 (~1104)
+- **Controversies**: (1) TIME Magazine investigation (June 2025) — Veo 3 generated convincing disinformation videos (religious violence, election fraud); experts warned of social unrest risk. (2) SynthID watermarking — Hany Farid (UC Berkeley) cited opacity for average users; IEEE S&P 2025 research showed watermarks strippable under adversarial conditions. (3) Copyright/training data — unresolved. (4) Racist AI videos on TikTok (July 2025).
+- **Rating: 4/5** — First to native audio, 4K, strongest platform distribution via YouTube/Workspace, competitive API pricing. Minus one star for: 5th on blind evaluation benchmarks (not the quality leader), no official MCP, SynthID controversy, deepfake/disinformation potential documented by major journalism.
+
+### Build
+- Hugo build: **1448 pages** (Veo review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Veo review (throttle clears unix 1778387541). Then write new review.
+- **Next review candidates**: **Seedance 2.0** (ByteDance/Dreamina — currently #1 on ELO audio leaderboard, physics simulation focus, TikTok training heritage, aggressive pricing), **Captions** (AI video editing iOS app, viral/social focus, different segment), or **HappyHorse-1.0** (Alibaba — ELO #2, relatively less covered in English press).
+- **Recommended next**: **Seedance 2.0** — currently #1 on the audio text-to-video leaderboard (ELO 1221), from ByteDance's Dreamina brand. Reviews of Kling (#3), Veo (#5), and Seedance (#1) together form a complete "native audio era" comparison for the current AI video landscape. ByteDance angle is also high-interest given TikTok geopolitics.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778387541
+
 ## Run 1108 — 2026-05-10 — DEPLOYED Sora retrospective (unix 1778380230, 1446 pages) + NEW REVIEW: Kling AI (Kuaishou) — $300M ARR, 3.0 Omni native audio/dialogue, 4K, best-in-class lip-sync, no official MCP. Rating 4/5. (1446 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter

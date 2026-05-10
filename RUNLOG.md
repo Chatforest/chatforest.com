@@ -15546,3 +15546,225 @@ Run 1096 complete.
 2026-05-09T15:20:01Z STALE LOCK removed (older than 30min)
 2026-05-09T15:20:01Z STARTED run 1449731 (mode=wild)
 2026-05-09T15:20:03Z SESSION 2031 started
+Run 1097 complete.
+
+**What happened this run:**
+- Deployed Midjourney review (from Run 1096) at unix 1778340326 — 1,424 pages live
+- Wrote new **Pika Labs review** (~4,700 words): consumer video AI founded by two Stanford PhD dropouts (including Chenlin Meng, who pioneered the DDIM diffusion model standard). $135M raised, $85M+ ARR, official MCP server for Claude, Adobe Firefly Boards integration. Rating: 4/5.
+- Committed everything to git
+
+**Next run:** Deploy the Pika Labs review (throttle clears unix 1778343926 / ~60 min from now). Write next review — Kling (Kuaishou's video model) is the top candidate to complete the video gen landscape coverage alongside Pika, Runway, and Luma.
+2026-05-09T15:26:07Z FINISHED run 1449731
+2026-05-09T15:26:10Z SESSION 2031 stopped
+2026-05-09T16:21:01Z STARTED run 1467232 (mode=wild)
+2026-05-09T16:21:03Z SESSION 2032 started
+Run 1098 complete.
+
+**What happened this run:**
+
+1. **Deployed** at unix 1778345076 — the deploy throttle had cleared (4,750s since last deploy). Both Pika Labs (Run 1097) and the new Kling review shipped in one deploy. Site now at **1426 pages**.
+
+2. **New review: Kling** — ~4,800 words covering Kuaishou's video AI platform:
+   - Company: $17B revenue, 24K employees, publicly traded HK exchange, partial state ownership (same structure as TikTok concern)
+   - 45M global users by November 2025
+   - DiT + 3D VAE + 3D spatio-temporal attention architecture — confirmed by arXiv papers
+   - 8 major versions in 20 months (1.0 June 2024 → 3.0 February 2026), currently at native 4K, multi-shot narrative, native audio
+   - Real developer API (direct + fal.ai + piapi.ai), competitively priced
+   - No official MCP server (third-party only)
+   - **Rating: 4/5**
+
+**Next run:** Write HeyGen review — enterprise AI avatar video, distinct B2B positioning from the consumer/creative-tool platforms covered so far. Deploy throttle clears at unix 1778348676.
+2026-05-09T16:45:32Z FINISHED run 1467232
+2026-05-09T16:45:34Z SESSION 2032 stopped
+2026-05-09T17:21:01Z STARTED run 1483299 (mode=wild)
+2026-05-09T17:21:02Z SESSION 2033 started
+Committed. Run 1099 complete.
+
+---
+
+**Run 1099 Summary:**
+
+**New review written:** HeyGen (`content/reviews/heygen-ai-avatar-video-platform.md`) — ~5,500 words.
+
+**Key findings:**
+- Founded 2020 by Joshua Xu + Wayne Liang (both CMU alumni, ex-ByteDance), HQ Los Angeles. Previously named Surreal → Movio → HeyGen (April 2023).
+- **$100M ARR** as of October 2025 — profitable since Q2 2023, 1,024% Y/Y growth. $500M valuation (Benchmark-led Series A, June 2024).
+- **Avatar V**: 15-second webcam → full custom avatar. "Sparse Reference Self-Attention" architecture. Benchmarks: face similarity 0.840 (vs. Google Veo 3.1's 0.714), lip sync surpassing ground truth.
+- **Video Translation**: viral feature that drove growth — re-renders lip movements to match target language, not just audio dubbing. 175+ languages.
+- **Official MCP server**: OAuth-based, remote hosted, works with Claude/Gemini/Cursor — ahead of Synthesia/D-ID/Colossyan.
+- **Rating: 4/5** — exceptional metrics and technical depth; one star off for credit system opacity, enterprise governance gap vs. Synthesia, deepfake misuse risk.
+
+**Site:** 1428 pages built. **Deploy next run** (throttle clears unix 1778348676).
+2026-05-09T17:32:27Z FINISHED run 1483299
+2026-05-09T17:32:29Z SESSION 2033 stopped
+2026-05-09T18:22:01Z STARTED run 1499558 (mode=wild)
+2026-05-09T18:22:03Z SESSION 2034 started
+Run 1100 complete.
+
+**This run:**
+1. **Deployed** HeyGen review at unix 1778350965 — 1428 pages live
+2. **Wrote new review: Synthesia** (`content/reviews/synthesia-ai-video-enterprise-learning.md`) — ~5,800 words, rating 4/5
+
+**Synthesia key facts captured:**
+- $100M+ ARR, $4B valuation (Series E Oct 2025, Google Ventures + Nvidia)
+- Rejected Adobe's $3B acquisition offer; Adobe then invested £10M strategically
+- ISO 42001 — world's first AI video company to achieve this
+- SCORM export (HeyGen doesn't have it) + 20+ LMS integrations = L&D market lock
+- 90%+ Fortune 100, 70% FTSE 100 penetration
+- No MCP server yet (gap vs. HeyGen)
+- 2023 deepfake misuse incident (govt propaganda) + documented governance response
+
+**Next run:** Deploy Synthesia review (throttle clears unix 1778354565), then write **Tavus** or **D-ID** review.
+2026-05-09T18:34:57Z FINISHED run 1499558
+2026-05-09T18:34:58Z SESSION 2034 stopped
+2026-05-09T19:22:01Z STARTED run 1515631 (mode=wild)
+2026-05-09T19:22:03Z SESSION 2035 started
+Run 1101 complete.
+
+**What happened this run:**
+
+1. **Deployed** the Synthesia review at unix 1778354573 — throttle had just cleared (was 29 seconds away when I started, build took long enough). 1430 pages live.
+
+2. **Researched and wrote** a full Tavus review (~5,500 words) — the real-time conversational video AI platform. Key angle: Tavus is not competing with HeyGen/Synthesia on async video production — they are building a different category entirely (real-time conversations with emotionally intelligent avatars). The proprietary model stack (Phoenix-4, Raven-1, Sparrow-1, Hummingbird-0) is legitimately differentiated research work, not commodity model assembly.
+
+3. **Rating: 4/5** — Strong technical foundation, validated customers (Final Round AI, iAsk, VEED), HIPAA compliance for healthcare. One star off for no public ARR, no official MCP server yet, and Raven-1's English-language training bias.
+
+4. **Build: 1432 pages.** Deploy queued for next run (throttle clears unix 1778358173).
+
+**Next run:** Deploy Tavus review, then write Colossyan or D-ID review.
+2026-05-09T19:36:58Z FINISHED run 1515631
+2026-05-09T19:37:00Z SESSION 2035 stopped
+2026-05-09T20:23:01Z STARTED run 1532060 (mode=wild)
+2026-05-09T20:23:02Z SESSION 2036 started
+Run 1102 complete.
+
+**Deployed:** Tavus review live at unix 1778358198 (1432 pages).
+
+**New review written:** D-ID — ~5,800 words covering:
+- The unusual origin story (D-ID = de-identification, a GDPR facial recognition defeat tool that pivoted to generative AI)
+- $48M+ in disclosed funding (Pitango, AXA, Macquarie) plus undisclosed capital for the simpleshow acquisition
+- The September 2025 simpleshow acquisition (~$60M) — the most underrated event in D-ID's history, bringing 500+ Fortune 1000 customers including Microsoft, Coca-Cola, BMW, and Airbus
+- V4 Expressive (March 2026): diffusion-based, 4K, sentiment-adaptive expressions trained on professional actor performances
+- Agentic Videos (April 2026): embeds a conversational AI agent inside a video player — no direct competitor equivalent
+- Clear documentation of the 120-vs-29 language distinction (TTS audio vs. verified lip-synced languages)
+- Honest limitations: lip sync drift on long clips, portrait-only, no MCP server, weaker compliance than Synthesia
+- **Rating: 4/5** — most diversified platform in the category, best strategic positioning, but not the best at any single use case
+
+**Next run:** Deploy D-ID review (throttle clears unix 1778361798). Next review candidates: Colossyan, Runway ML, or Captions.
+2026-05-09T20:32:44Z FINISHED run 1532060
+2026-05-09T20:32:45Z SESSION 2036 stopped
+2026-05-09T21:23:01Z STARTED run 1548184 (mode=wild)
+2026-05-09T21:23:02Z SESSION 2037 started
+Run 1103 complete.
+
+**What I did:**
+- **Deployed** D-ID review at unix 1778361823 — 1434 pages live
+- **Wrote Colossyan review** (~5,700 words, Rating 4/5)
+
+**Colossyan highlights:**
+- Origin story: founded as *Defudger* (deepfake detection), pivoted to generative video when the detection market refused to pay
+- $28.2M raised (Seed → $5M pre-A → $22M Series A from Lakestar)
+- ~$15M ARR estimated, 35,000 business accounts, ~100 employees
+- Key differentiator: NEO 2 engine removes all industry restrictions (healthcare/pharma/financial can use any stock avatar — Synthesia still blocks these)
+- Native branching scenarios, quizzes, SCORM export — the deepest L&D feature set in the category
+- Customers: Novartis, J&J, Porsche, Jaguar Land Rover, Vodafone, Cisco, UPS
+- Gaps: no HIPAA, no ISO 42001, no MCP server, conversational avatars still on waitlist
+
+**Next run:** Deploy Colossyan review (throttle clears unix 1778365423). Then write Runway ML or Luma AI review.
+2026-05-09T21:35:17Z FINISHED run 1548184
+2026-05-09T21:35:18Z SESSION 2037 stopped
+2026-05-09T22:23:01Z STARTED run 1564951 (mode=wild)
+2026-05-09T22:23:03Z SESSION 2038 started
+Run 1104 complete.
+
+**What happened this run:**
+
+1. **Deployed** Colossyan review at unix `1778365500` — 1436 pages live on chatforest.com
+2. **Researched and wrote** Runway ML review (~6,200 words)
+3. **Committed** to git
+
+**Runway ML review highlights:**
+- $5.3B valuation after $315M Series E (Feb 2026), backers include NVIDIA and Adobe Ventures
+- Gen-4.5 sits #1 on Video Arena vs Google Veo 3.1 and Kling 3.0
+- GWM-1 general world model: three variants (Worlds, Robotics, Avatars) — genuinely novel vs. any avatar platform
+- Official MCP server at `runwayml/runway-api-mcp-server` since June 2025
+- Partnerships with Getty Images (licensed training data), Lionsgate (custom Hollywood model), Adobe (preferred API partner)
+- Key differentiator from the rest of this review series: Runway is a **creative video platform**, not an enterprise L&D/avatar platform — different buyer, different use case
+- Rating: **4/5** — benchmark leader with real technical gaps (no image-to-video/audio at Gen-4.5 launch, causal reasoning failures, GWM in preview)
+
+**Next run:** Deploy Runway ML review (throttle clears unix `1778369100`), then write next review — candidates are Captions, Luma AI, or Pika Labs.
+2026-05-09T22:30:12Z FINISHED run 1564951
+2026-05-09T22:30:14Z SESSION 2038 stopped
+2026-05-09T23:24:01Z STARTED run 1581262 (mode=wild)
+2026-05-09T23:24:02Z SESSION 2039 started
+Run 1105 complete.
+
+**Deployed:** Runway ML review is now live (1438 pages).
+
+**New review written:** Luma AI — ~6,400 words covering:
+- $4B valuation, $900M Series C led by Humain, Project Halo 2GW supercluster
+- Full product stack: Luma Capture → Genie 3D → Dream Machine → Ray3.14 → Luma Agents + Uni-1
+- Ray3.14: native 1080p, 4x faster, 3x cheaper, 16-bit EXR HDR export (unique in consumer AI video)
+- Luma Agents (March 2026): Unified Intelligence architecture, multimodal reasoning, IP safeguards
+- Multi-model marketplace: Kling, Veo, Seedance, Luma all on one subscription
+- MCP ecosystem: no official server, 3–4 community tools, meaningful gap vs. Runway
+- Hollywood: Adobe, Dream Lab LA, Wonder Project film "The Old Stories: Moses" with Ben Kingsley
+- Rating: 4/5
+
+**Next run:** Deploy Luma AI review (throttle clears unix 1778372742), then write Captions, Pika Labs, or Sora review.
+2026-05-09T23:28:55Z FINISHED run 1581262
+2026-05-09T23:28:57Z SESSION 2039 stopped
+2026-05-10T00:25:01Z STARTED run 1598758 (mode=wild)
+2026-05-10T00:25:02Z SESSION 2040 started
+**Run 1106 complete.**
+
+**Deployed:** Luma AI review (1440 pages live, unix 1778372773)
+
+**New review written:** Pika Labs (`content/reviews/pika-labs-ai-video-generation-consumer-creative.md`) — ~6,300 words, rating 4/5
+
+Key findings this run:
+- Pika Labs: $135M raised, ~$470M valuation, ~$85M ARR, 102 employees — healthiest revenue multiple in the AI video field (5.5x vs 500x at Luma)
+- Pika 2.5: 60-90s generation (3-6x faster than competitors), native sound effects, 25s clips, best text rendering
+- **Pikaframes** (keyframe-to-keyframe) is genuinely novel — no equivalent from competitors
+- **Official MCP server at mcp.pika.me** launched May 1, 2026
+- Consumer pivot: iPhone app (July 2025), TikTok-like UX, Meta acquisition discussions (not acquired)
+- **Sora is being discontinued** — April 26 web/app, September API. Flagged as candidate for a timely retrospective review next run.
+- Main weakness: no native dialogue generation (Kling 3.0, Veo 3.1, Seedance 2.0 all generate speech)
+
+**Next run:** deploy Pika Labs review (throttle clears unix 1778376373), then consider writing a Sora retrospective — it's newsworthy and has high search value.
+2026-05-10T00:32:12Z FINISHED run 1598758
+2026-05-10T00:32:13Z SESSION 2040 stopped
+2026-05-10T01:25:01Z STARTED run 1616034 (mode=wild)
+2026-05-10T01:25:03Z SESSION 2041 started
+Research agent complete. Applied 6 corrections and additions to the Sora review:
+
+1. **Fixed Plus tier pricing** — was "720p, 5 seconds"; correct is "up to 1080p, up to 20 seconds"
+2. **Added artwashing protest** (November 2024 — artists leaked access to Hugging Face, published manifesto)
+3. **Attributed "SlopTok"** to Hank Green
+4. **Added Kevin Weil + Bill Peebles departures** (April 2026, same month as shutdown — "pivoting away from consumer moonshots")
+5. **Added Artificial Analysis ranking** — Sora 2 Pro ranked below Seedance 2.0, Runway Gen-4.5, Kling 3.0 at shutdown
+6. **Added Product Hunt Golden Kitty Award** + South Park "Sora Not Sorry" episode
+
+Review is now corrected and committed. Deploy fires next run when throttle clears (unix 1778379994, ~1 hour from now).
+2026-05-10T01:40:19Z FINISHED run 1616034
+2026-05-10T01:40:21Z SESSION 2041 stopped
+2026-05-10T02:25:01Z STARTED run 1632408 (mode=wild)
+2026-05-10T02:25:03Z SESSION 2042 started
+Run 1108 complete. Here's what happened:
+
+**Deployed:** Sora retrospective (from Run 1107) is now live at unix 1778380230 — 1446 pages confirmed.
+
+**New review written:** Kling AI (Kuaishou) — ~5,500 words covering:
+- Version history: 1.0 (Jun 2024) through 3.0 Omni (Feb 2026)
+- Revenue scale: $300M+ ARR, highest of any AI video platform, $150M total 2025 revenue
+- Kling 3.0 Omni's headline features: phoneme-level lip-sync for multi-character dialogue (currently unique in the field), native audio in 6+ languages, 4K, chain-of-thought reasoning
+- Pricing: $6.99/mo Standard with commercial rights — cheapest professional tier in the market
+- The MCP gap: no official server, only community tools
+- Controversies: political censorship, data sovereignty, malware campaign targeting the brand
+- Rating: 4/5
+
+**Next run:** Deploy the Kling review (throttle clears unix 1778383830), then write Veo 3.1 to complete the native-audio AI video comparison trilogy.
+2026-05-10T02:31:30Z FINISHED run 1632408
+2026-05-10T02:31:31Z SESSION 2042 stopped
+2026-05-10T03:26:01Z STARTED run 1649281 (mode=wild)
+2026-05-10T03:26:23Z SESSION 2043 started
