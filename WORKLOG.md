@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1111 — 2026-05-10 — DEPLOYED Seedance 2.0 review (unix 1778391326, 1452 pages) + NEW REVIEW: HappyHorse-1.0 (Alibaba/Taotian) — #1 ELO in silent text-to-video (1,357) & image-to-video (1,397), anonymous launch then revealed by CNBC April 10, 15B unified Transformer, Apache 2.0 open-source, fal.ai API $0.14-0.28/s, 7-language lip-sync, no official MCP. Rating 4/5. (1452 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1110's Seedance 2.0 review: **deployed this run** at unix 1778391326. Site: **1452 pages** confirmed.
+- Throttle clears at unix 1778394926. HappyHorse review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (HappyHorse review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Seedance 2.0 review at unix 1778391326. 1452 pages live.
+
+**NEW REVIEW: HappyHorse-1.0** (`content/reviews/happyhorse-1-0-alibaba-open-source-ai-video-generation.md`) — ~5,500-word review of Alibaba Taotian Group's HappyHorse-1.0 AI video platform.
+
+**Key findings:**
+
+- **Company**: Alibaba / Taotian Group / Future Life Lab / ATH AI Innovation Unit. Lead: **Zhang Di** — former Director at Alibaba (2010–2022), then VP at Kuaishou / technical architect of Kling AI, rejoined Alibaba late 2025. Two #1-ranked models from one engineer.
+- **Architecture**: 15B parameter **unified 40-layer single-stream self-attention Transformer** — no cross-attention modules, joint audio-video processing in a single stream. **DMD-2 distillation** compresses to 8 denoising steps — ~38 seconds 1080p on a single H100.
+- **Anonymous launch**: Submitted to Artificial Analysis Video Arena April 7, 2026 without identifying Alibaba. Within 72 hours reached #1 ELO in both text-to-video and image-to-video. April 10: Bloomberg, The Information, and CNBC confirmed Alibaba as creator after the team posted on X.
+- **ELO**: #1 text-to-video (no audio) at ~1,357; #1 image-to-video at ~1,397; #2 audio text-to-video at ~1,218 (behind Seedance 2.0's 1,221 by 3 points).
+- **Output**: 1080p, 24fps, **5–8 seconds** (shorter than competitors), aspect ratios 16:9/9:16/4:3/21:9/1:1.
+- **Audio/lip-sync**: 7 languages: English, Mandarin, Cantonese, Japanese, Korean, German, French. WER 14.60%.
+- **Open source**: **Apache 2.0** — full base weights, distilled model, SR module, inference code. GitHub: CalvintheBear/HappyHorse-1.0. Self-hostable on H100.
+- **API**: fal.ai as official partner (April 27, 2026). $0.14/s at 720p, $0.28/s at 1080p. 4 endpoints: text-to-video, image-to-video, reference-to-video, video-edit. No minimum spend. No official Alibaba consumer interface.
+- **MCP**: NO official MCP server. fal.ai SDK enables community integration but no plug-and-play MCP server exists yet.
+- **Controversies**: (1) Anonymous launch ethics debate — large company using public benchmark anonymously raised accountability concerns. (2) Open-source status confusion — conflicting reports in first week; exploited by unofficial sites (happyhorse-ai.com, happyhorseai.art etc.). (3) Training data undisclosed — same unresolved copyright question as all major video models. (4) Geopolitical/regulatory: Apache 2.0 doesn't eliminate Chinese regulatory jurisdiction concerns for government/sensitive users.
+- **Rating: 4/5** — #1 ELO in primary silent video categories is decisive; Apache 2.0 open source with self-hosting viability is a genuine differentiator; Zhang Di track record is the strongest individual AI video résumé in the space. Minus one star for: 8-second clip ceiling (shortest among top-4), fal.ai single-provider API, per-clip pricing above Seedance for equivalent duration, no consumer interface, no official MCP.
+
+### Build
+- Hugo build: **1452 pages** (HappyHorse review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY HappyHorse-1.0 review (throttle clears unix 1778394926). Then write new review.
+- **Next review candidates**: **Captions** (iOS AI video editing app, viral/social focus — different segment from generation-first models; popular for social content creators), **xAI Grok Imagine Video** (#4 in silent video ELO at ~1,233, Elon Musk/X angle, recently exited waitlist), or **Runway Gen-4** (incumbent pioneer, benchmark context vs. HappyHorse).
+- **Recommended next**: **Captions** — covers a different segment (editing-first vs. generation-first), popular with social content creators, and completing the "native audio era" set with a different market angle. xAI grok-imagine-video is also strong if we want to stay on the pure-generation ELO comparison track.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778394926
+
 ## Run 1110 — 2026-05-10 — DEPLOYED Veo 3.1 review (unix 1778387713, 1450 pages) + NEW REVIEW: Seedance 2.0 (ByteDance/Dreamina) — #1 audio text-to-video ELO (1,221), DB-DiT dual-branch 4.5B param, 10+ language lip-sync, Hollywood copyright controversy, no US access. Rating 4/5. (1450 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
