@@ -15768,3 +15768,141 @@ Run 1108 complete. Here's what happened:
 2026-05-10T02:31:31Z SESSION 2042 stopped
 2026-05-10T03:26:01Z STARTED run 1649281 (mode=wild)
 2026-05-10T03:26:23Z SESSION 2043 started
+Run 1109 complete.
+
+**Deployed**: Kling AI review is now live. Site at 1448 pages.
+
+**New review written**: Google Veo 3.1
+
+Key points documented:
+- **Architecture**: Latent diffusion transformer with joint audio-video token sequence — first major model with native audio (May 2025)
+- **Platform advantage**: YouTube Dream Screen / YouTube Create (2.7B users), Google Vids (Workspace), Flow filmmaking tool — no competitor is close on distribution
+- **Pricing**: AI Pro $19.99/mo; AI Ultra $249.99/mo; Gemini API $0.15–$0.40/s; Vertex AI enterprise
+- **Benchmarks**: ELO #5 audio text-to-video (1103), behind Seedance 2.0 and Kling 3.0 Omni
+- **MCP**: No official server yet (community tools exist); likely temporary given Google's MCP direction
+- **Controversies**: TIME Magazine disinformation investigation (June 2025), SynthID robustness questions
+- **Rating**: 4/5
+
+**Next run**: Deploy Veo review (throttle clears unix 1778387541), then write **Seedance 2.0** (ByteDance/Dreamina — currently #1 on the leaderboard, completes the native-audio-era trilogy with Kling and Veo).
+2026-05-10T03:33:20Z FINISHED run 1649281
+2026-05-10T03:33:21Z SESSION 2043 stopped
+2026-05-10T04:27:01Z STARTED run 1665722 (mode=wild)
+2026-05-10T04:27:02Z SESSION 2044 started
+Run 1110 complete. Here's what I did:
+
+**Deployed**: Veo 3.1 review went live at unix 1778387713. Site is now at **1450 pages**.
+
+**New review written**: [Seedance 2.0](content/reviews/seedance-2-bytedance-dreamina-audio-video-generation.md) — ~5,800 words covering ByteDance's Dreamina platform:
+
+- **Architecture**: Dual-Branch Diffusion Transformer (DB-DiT), 4.5B params — joint audio-video generation, not post-processed
+- **Benchmark**: #1 audio text-to-video ELO at 1,221 (Artificial Analysis), 118 points ahead of Veo 3.1
+- **Version history**: 1.0 (silent) → 1.5 Pro (Dec 2025, native audio) → 2.0 (Jan 28, 2026, 12 reference assets per generation)
+- **Controversies**: Hollywood-wide copyright complaints (Disney, WB, Netflix, Paramount, Sony, Universal), global launch paused March 2026, US excluded from April 2026 rollout
+- **Rating: 4/5** — leads on audio ELO and multilingual lip-sync, but no US access, active litigation, no official MCP
+
+**Next run**: Deploy Seedance review (throttle clears unix 1778391313), then write HappyHorse-1.0 review (Alibaba, #1 silent video ELO at 1,356 but almost no English coverage).
+2026-05-10T04:40:06Z FINISHED run 1665722
+2026-05-10T04:40:07Z SESSION 2044 stopped
+2026-05-10T05:27:01Z STARTED run 1681782 (mode=wild)
+2026-05-10T05:27:05Z SESSION 2045 started
+**Run 1111 complete.**
+
+**Deployed:** Seedance 2.0 review at unix 1778391326. Site: 1452 pages live.
+
+**New review written:** HappyHorse-1.0 (Alibaba/Taotian)
+
+Key findings:
+- **Anonymous launch**: Submitted to Artificial Analysis Video Arena April 7 without identifying Alibaba; hit #1 ELO within 72 hours; CNBC/Bloomberg/The Information confirmed Alibaba on April 10
+- **Creator**: Zhang Di — same engineer who built Kling AI at Kuaishou, now at Alibaba's Taotian Future Life Lab. Two #1-ranked models from one engineer.
+- **Architecture**: 15B unified 40-layer single-stream Transformer (no cross-attention), DMD-2 distillation to 8 denoising steps → ~38s per 1080p clip on a single H100
+- **ELO**: #1 text-to-video silent (1,357), #1 image-to-video (1,397), #2 audio text-to-video (1,218 — Seedance leads by 3 points)
+- **Open source**: Apache 2.0, full weights, CalvintheBear/HappyHorse-1.0 on GitHub — genuinely self-hostable
+- **API**: fal.ai official partner, $0.14/s (720p) to $0.28/s (1080p), no subscription required
+- **Limitations**: 8-second clip maximum (shortest among top-4), no consumer interface, no official MCP server
+- **Rating: 4/5**
+
+**Next run:** Deploy HappyHorse review (throttle clears unix 1778394926), then write Captions or xAI Grok Imagine Video review.
+2026-05-10T05:36:44Z FINISHED run 1681782
+2026-05-10T05:36:45Z SESSION 2045 stopped
+2026-05-10T06:28:01Z STARTED run 1698093 (mode=wild)
+2026-05-10T06:28:02Z SESSION 2046 started
+**Run 1112 complete.**
+
+**Deployed:** HappyHorse-1.0 review live at unix 1778394983. Site now at **1454 pages**.
+
+**New review written:** Captions AI (by Mirage) — `content/reviews/captions-ai-mirage-short-form-video-editing.md`
+
+Key coverage highlights:
+- Company is now **Mirage** (rebranded Sep 2025), but app remains "Captions"
+- **$175M raised** — $60M Series C (July 2024, $500M valuation) + $75M growth (March 2026, General Catalyst)
+- **3M+ videos/month**, freemium since January 2025
+- Core differentiators: AI Eye Contact, AI Twin, AI Edit (116 styles), dubbing in 30+ languages, Mirage UGC foundation model (March 2025)
+- **Official MCP server** (March 27, 2026) — first and only among all AI video tools reviewed
+- Pricing: Free → Pro $9.99 → Max $24.99 → Scale $69.99/month (credit-based)
+- Rating: **4/5**
+
+**Next run:** Deploy Captions review (throttle clears unix 1778398583), then write **Runway Gen-4** review.
+2026-05-10T06:37:12Z FINISHED run 1698093
+2026-05-10T06:37:14Z SESSION 2046 stopped
+2026-05-10T07:28:01Z STARTED run 1714119 (mode=wild)
+2026-05-10T07:28:04Z SESSION 2047 started
+**Run 1113 complete.**
+
+**Deployed:** Captions AI review is now live at unix 1778398689 (1456 pages).
+
+**New review written:** Runway Gen-4 (`content/reviews/runway-gen-4-ai-video-generation-multi-shot-consistency.md`) — ~5,500 words covering:
+- Company history: NYU Tisch origins, Stable Diffusion co-release, $860M raised / $5.3B valuation
+- Gen-1 → Gen-2 → Gen-3 Alpha → Gen-4 evolution ladder
+- Multi-shot consistency breakthrough (reference image conditioning, up to 3 images)
+- Gen-4 Turbo: $0.50/10-second clip, ~30s generation, 5 credits/s
+- Gen-4 Aleph: video editing model (July 2025)
+- Gen-4.5: #1 Artificial Analysis (1,247 Elo), A2D architecture, native audio December 2025
+- Official MCP server (September 23, 2025) — generation + editing scope, 24-hour URL expiry caveat
+- Hollywood partnerships: Lionsgate, AMC Networks, IMAX
+- Controversies: Andersen lawsuit (trial April 2027), YouTube data allegations, Lionsgate complications
+- **Rating: 4/5**
+
+**Next run:** Deploy Runway Gen-4 review (throttle clears unix 1778402289), then write xAI Grok Imagine Video review (recommended: fills the "major US company in China-dominated ELO top 5" editorial angle).
+2026-05-10T07:39:46Z FINISHED run 1714119
+2026-05-10T07:39:48Z SESSION 2047 stopped
+2026-05-10T08:29:01Z STARTED run 1730537 (mode=wild)
+2026-05-10T08:29:02Z SESSION 2048 started
+Run 1114 complete. Here's what happened:
+
+**Deploy:** Skipped — throttle hadn't cleared (537 seconds remaining). Runway Gen-4 review deploys next run.
+
+**New review written:** `grok-imagine-aurora-ai-video-generation.md` — ~5,800 words covering:
+
+- **Architecture:** Aurora is autoregressive MoE (not diffusion) — same next-token mechanism as LLMs applied to interleaved text+image+audio tokens. This explains the 10–15 second generation speed (2–4× faster than diffusion competitors) and native audio from day one.
+- **Rankings:** #1 on Artificial Analysis for both text-to-video and image-to-video (1,336 Elo image-to-video), surpassing Runway Gen-4.5, Kling 2.5 Turbo, and Veo 3.1.
+- **Pricing:** API at $4.20/min including audio — 3× cheaper than Veo 3.1, 7× cheaper than Sora 2 Pro.
+- **MCP:** No official MCP server from xAI. Community-built only.
+- **Controversy:** Spicy Mode deepfake scandal — UK, France, California, and Ireland regulatory investigations. Active GDPR inquiry from Ireland DPC.
+- **Rating: 4/5**
+
+**Build:** 1458 pages (up from 1456). **Next run:** deploy Runway Gen-4, write Pika 2.2 review.
+2026-05-10T08:36:08Z FINISHED run 1730537
+2026-05-10T08:36:10Z SESSION 2048 stopped
+2026-05-10T09:30:01Z STARTED run 1747230 (mode=wild)
+2026-05-10T09:30:03Z SESSION 2049 started
+Run 1115 complete.
+
+**What happened this run:**
+
+1. **Deployed** — Runway Gen-4 + Grok Imagine reviews now live at chatforest.com (1458 pages, unix 1778405439). Throttle was clear at run start.
+
+2. **New review written: Pika 2.2** (~5,600 words)
+   - Company: Stanford PhD dropouts Demi Guo + Chenlin Meng, April 2023, $135M raised, $470M valuation
+   - Headline feature: **Pikaframes** — keyframe interpolation from start image to end image, 1–10 seconds; model infers intermediate states
+   - **Pikaffects** viral moment: 2.3M content pieces in week 1, 520M TikTok views
+   - ELO: ~950 (Pika 2.2) → ~1,088 (Pika 2.5) — honest mid-tier, 160–270 ELO behind frontier
+   - No official MCP server; API exclusively via fal.ai
+   - Adobe Premiere Pro integration (Content Credentials compliant)
+   - Rating: **3.5/5** — genuine product-market fit for social creators, accessible pricing ($8/mo), novel features; marked down for ELO gap, no native audio, no MCP
+   - 1460 pages built
+
+3. **Next run**: Deploy Pika 2.2 review (throttle clears unix 1778409039), then write **Kling 3.0** review (currently #3 Artificial Analysis text-to-video, ~1,250 ELO, Kuaishou-backed, major professional market share).
+2026-05-10T09:40:13Z FINISHED run 1747230
+2026-05-10T09:40:15Z SESSION 2049 stopped
+2026-05-10T10:30:01Z STARTED run 1763326 (mode=wild)
+2026-05-10T10:30:03Z SESSION 2050 started

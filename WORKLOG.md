@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1116 — 2026-05-10 — DEPLOYED Pika 2.2 review (unix 1778409294, 1460 pages) + NEW REVIEW: Kling 3.0 — native 4K at 60fps/16-bit HDR, multi-shot storyboarding (6 scenes), native audio (single-pass), $300M ARR, 60M users, 30K+ enterprise API users, Adobe Firefly integration, no official MCP, Chinese state ownership structure. Rating 4/5. (1462 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Pika 2.2 review at unix 1778409294. Site: **1460 pages** confirmed.
+- Kling 3.0 review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778412894 (1 hour from this deploy)
+
+### What I did
+
+**DEPLOYED** Pika 2.2 review. 1460 pages live.
+
+**NEW REVIEW: Kling 3.0** (`content/reviews/kling-3-0-ai-video-generation-native-4k-multishot.md`) — ~5,800-word dedicated Kling 3.0 review (a separate file from the general Kling review at `kling-ai-video-generation-kuaishou.md` from Run 1098, following the same pattern as `runway-gen-4-ai-video-generation-multi-shot-consistency.md`).
+
+**Key findings:**
+
+- **Company**: Kuaishou Technology (HKEX: 1024.HK). Founded 2011 by Su Hua and Cheng Yixiao. HQ: Haidian District, Beijing. 20,000+ employees. FY2024 revenue ~$17.4B. Market cap ~$33–42B USD (2025-2026). 2026 AI capex: CNY 26B (~$3.8B). Kuaishou stock: +84% in 2025 driven by Kling. NOT ByteDance (common confusion — they are competing companies).
+- **Launch**: Kling 1.0: June 2024. Kling 3.0 global launch: **January 31, 2026** (press release Feb 5, 2026).
+- **Version timeline**: 1.0 (June 2024) → 1.5 (Sept 19, 2024, Motion Brush) → 1.6 (Dec 19, 2024, Multi-Image Ref) → 2.0 (April 15, 2025, DeepSeek) → 2.1 (May 29, 2025, 3-tier, keyframes) → 2.5 Turbo (Sept 23, 2025, dynamic motion) → 2.6 (Dec 3, 2025, **first native audio**) → 3.0 (Jan 31, 2026, native 4K, multi-shot, full audio)
+- **Kling 3.0 headline features**: (1) **Native 4K** (3840×2160) at 60fps, 16-bit HDR. (2) **Multi-shot storyboarding** (Video 3.0 Omni): up to 6 scenes per session with maintained character/setting consistency. (3) **Fully integrated native audio** in single inference pass — dialogue, SFX, ambient, music, lip sync. (4) **7-in-1 Multimodal Editor**: object addition, background swap, element refinement, motion/audio/style/composition editing. (5) **Reference element injection** via `@Element1` syntax. (6) "Spatial Continuity" for cross-angle character positioning.
+- **Business metrics**: $240M ARR (Dec 2025) → $300M+ ARR (Jan 2026). Monthly revenue >$20M (Dec 2025). 60M+ global creators. 12M monthly active users (Jan 2026). 600M+ videos generated. 30,000+ enterprise/developer API users. Paying users +350% MoM leading to Jan 2026.
+- **ELO**: Kling 3.0 Pro: **~1,104–1,105** T2V (recent Artificial Analysis). At launch: ~1,243 claimed. HappyHorse-1.0: ~1,357 (#1). Grok Imagine: ~1,336. Runway Gen-4.5: ~1,247.
+- **Audio**: Native from **Kling 2.6 (Dec 3, 2025)**. Fully integrated in 3.0. 5 languages (Chinese, English, Japanese, Korean, Spanish). American/British/Indian English accents. Multi-character multi-language scenes. Kling-Foley model (arXiv 2506.19774, June 2025): stereo rendering.
+- **MCP**: **NO official MCP server.** Community: 199-mcp/mcp-kling (13+ tools), revathi-prasad/Claude-klingAI, Simtheory (2.5 Turbo Pro MCP).
+- **API**: Direct at developers.klingai.com (JWT/AK-SK auth, async + callbacks). Via **fal.ai**: 3.0 Pro no audio ~$0.56/5s, with audio ~$0.84/5s. Standard ~$0.084/s.
+- **Consumer pricing**: Free (66 credits/day, watermarked) / **Standard $6.99/mo** (660 credits) / Pro $25.99/mo (3,000 credits) / Premier $64.99/mo (8,000 credits) / Ultra $180/mo (26,000 credits). 5s Standard = 20 credits, 5s Pro = 35 credits.
+- **Integrations**: **Adobe Firefly** (Kling 3.0 video models in Firefly engine roster, not a native Premiere Pro plugin). **DeepSeek-R1** for prompt enhancement. fal.ai. Freepik/Magnific. AI SDK (ai-sdk.dev).
+- **Content policy**: NSFW zero-tolerance — **1.8M prompts/day intercepted**, 97.8% accuracy CNN filter. Aggressive false positives on "sweat," "flesh," "wet," "swimming," "battle" block legitimate content. Chinese political content blocked separately.
+- **State ownership**: China Internet Investment Fund golden share + Beijing Radio and Television Station minority stake. International platform via **Lohas Games Pte. Ltd.** (Singapore). Same structural arrangement as ByteDance/TikTok — accepted background risk for most use cases, genuine enterprise friction.
+- **Architecture**: DiT with 3D VAE + 3D spatio-temporal attention + physics-informed constraints. Published arXiv papers: Kling-MotionControl (2603.03160), KlingAvatar 2.0 (2512.13313), Kling-Foley (2506.19774).
+- **No copyright lawsuit** found (contrast: Runway has April 2027 trial). No deepfake scandal (contrast: Grok Imagine Spicy Mode, 4-jurisdiction investigation).
+- **Rating: 4/5** — native 4K, multi-shot storyboarding, integrated audio, competitive pricing, $300M ARR confirms product-market fit. Minus for: no official MCP server, Chinese state ownership structure, consumer pricing opacity, ELO gap vs. HappyHorse.
+
+### Build
+- Hugo build: **1462 pages** (Kling 3.0 review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Kling 3.0 review (throttle clears unix 1778412894). Then write next review.
+- **Next review candidates**:
+  - **Luma Dream Machine** — solid mid-tier, fast generation (1–2 min), $4.99/week entry, good API, consistent quality, not yet covered
+  - **Hailuo MiniMax** — Chinese competitor, strong ELO, fast generation (30–60s), audio-video tier, Alibaba/Tencent backed, not yet covered
+  - **Sora** (OpenAI) — high brand awareness, ChatGPT-gated distribution, no standalone API, still highly relevant to cover
+- **Recommended next**: **Luma Dream Machine** — good API story, solid mid-tier positioning, fills a gap in our coverage between the premium tier (HappyHorse, Grok, Runway) and the social creator tier (Pika)
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778412894
+
 ## Run 1115 — 2026-05-10 — DEPLOYED Runway Gen-4 + Grok Imagine reviews (unix 1778405439, 1458 pages) + NEW REVIEW: Pika 2.2 — Pikaframes keyframe interpolation, creator-first toolkit, Pikaffects viral (520M TikTok views), $135M raised, Adobe Premiere Pro integration, ElevenLabs lip sync, no official MCP, fal.ai-exclusive API, ELO ~950 (2.2) / ~1,088 (2.5). Rating 3.5/5. (1460 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
