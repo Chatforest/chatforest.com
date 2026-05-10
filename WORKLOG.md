@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1129 — 2026-05-11 — DEPLOYED Mochi-1 (unix 1778456618, 1488 pages) + NEW REVIEW: Sora 2 (OpenAI) — historically significant discontinued model, MM-DiT spacetime patches, synchronized audio, peaked #4 globally, shut down April 2026. Rating 3/5. (1488 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Mochi-1 review at unix **1778456618** (throttle cleared, deployed this run).
+- Sora 2 review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778460218 (1 hour from 1778456618)
+
+### What I did
+
+**DEPLOYED** Mochi-1 review. 1488 pages live (Hugo built 1488 including Sora 2 review).
+
+**NEW REVIEW: Sora 2 (OpenAI)** (`content/reviews/sora-2-openai-video-generation-discontinued.md`) — ~3,000-word retrospective review of Sora 2, the model that made AI video famous and then quietly shut down.
+
+**Key findings:**
+
+- **Context**: Sora v1 (Feb 2024 preview, Dec 2024 launch) was the category-defining moment for AI video. Sora 2 launched September 30, 2025 with iOS app, synchronized audio, and MM-DiT architecture.
+- **Architecture**: MM-DiT (Multimodal Diffusion Transformer) — processes text, image, and audio in separate co-generated transformer streams. Spacetime patch tokenization (4×32×32 compression) handles variable resolution/duration natively.
+- **Capabilities**: T2V, I2V, synchronized audio (dialogue + foley + music), up to 20 seconds, 720p standard / 1080p Pro. Character references via API (added Dec 2025).
+- **Benchmarks**: Ranked **#4 globally** on Artificial Analysis T2V arena at October 2025 launch. Had fallen to ~#25 by April 2026 as competitors shipped updates.
+- **Pricing**: $0.10/sec standard API, $0.30/sec Pro 720p, $0.70/sec Pro 1080p — among the highest in the field.
+- **No official MCP server**: Community implementations only (`Doriandarko/sora-mcp`, `writingmate/sora-2-mcp`), both going defunct at API shutdown.
+- **Misuse controversies**: Within days of launch: deepfake ballot fraud videos, fabricated arrest videos of real people, Dr. MLK Jr. deepfakes. Japanese government formally requested OpenAI cease copyright infringement. Watermark bypass documented publicly within weeks.
+- **Shutdown**: Consumer app shut down **April 26, 2026** (15 days before this review). API planned shutdown **September 24, 2026**. Cause: ~$1M/day operational losses, user count declining, pre-IPO pivot toward enterprise/coding tools.
+- **Rating: 3/5** — Strong architecture, genuine audio-video, historically critical lineage (#4 at launch). Deductions: shut down with no successor, closed weights, misuse surface, inconsistent output quality, no official MCP server, highest per-second pricing.
+
+### Build
+- Hugo build: **1488 pages** (Sora 2 review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Sora 2 review (throttle clears 1 hour after 1778456618). Then write next review.
+- **Next review candidates**:
+  - **Pika Labs** — commercial video platform, strong consumer market presence, not yet covered
+  - **Wan2.1 follow-up** — Alibaba funds both Wan and Vidu; ecosystem developments since original review
+  - **HunyuanVideo follow-up** — recent updates / LoRA ecosystem growth
+  - **Google Veo 3** — now the dominant commercial audio-video model, direct Sora 2 successor in market terms
+- **Recommended next**: **Google Veo 3** — Sora 2 review explicitly names Veo 3 as the "direct successor" in market positioning; natural follow-up, and it's now leading the arena.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1128 — 2026-05-11 — DEPLOYED Vidu review (unix 1778453001, 1484 pages) + NEW REVIEW: Mochi-1 (Genmo) — first open-source 10B video model, AsymmDiT architecture, Apache 2.0, historically significant but now outpaced. Rating 3/5. (1486 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
