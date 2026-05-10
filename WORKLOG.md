@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1117 — 2026-05-10 — DEPLOYED Kling 3.0 review (unix 1778413780, 1462 pages) + NEW REVIEW: Hailuo AI / MiniMax — $11.5B HKEX IPO (Jan 2026), 236M users, 600M videos, official MCP server (Python+JS), ELO ~1,178 (#28), NCR architecture, Disney Hollywood lawsuit, Anthropic distillation accusation, no native audio-in-video, no Adobe integration, FY2025 $79M revenue (+159% YoY). Rating 4/5. (1464 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Kling 3.0 review at unix 1778413780. Site: **1462 pages** confirmed.
+- Hailuo MiniMax review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778417380 (1 hour from this deploy)
+
+### What I did
+
+**DEPLOYED** Kling 3.0 review. 1462 pages live.
+
+**NEW REVIEW: Hailuo AI / MiniMax** (`content/reviews/hailuo-minimax-ai-video-generation-hk-ipo.md`) — ~6,200-word dedicated review of MiniMax's Hailuo AI video generation platform.
+
+**Key findings:**
+
+- **Company**: MiniMax, founded December 2021, Shanghai. Co-founders: Yan Junjie (CEO), Yang Bin, Zhou Yucong (all ex-SenseTime). 428 employees (end 2025).
+- **Brand relationship**: MiniMax = parent company; Hailuo AI = consumer video brand (hailuoai.video). The name "Hailuo" (海螺, conch) is used specifically for video products; other MiniMax products (Talkie, Speech, music) don't carry the Hailuo brand.
+- **Funding**: miHoYo seed → Alibaba + Tencent early → $600M from Alibaba (March 2024, $2.5B valuation) → $300M from Shanghai STVC (July 2025, $4B valuation) → **HKEX IPO January 9, 2026** at HK$165/share, raised $619M, shares surged 70%+ on debut to **$11.5B market cap**. Total pre-IPO: ~$850M. Cornerstones: ADIA, Alibaba, Mirae Asset, IDG.
+- **Product timeline**: Video-01 (Aug 31, 2024, 720p/25fps/6s) → I2V-01-Live + S2V-01 (Jan 2025, character consistency) → T2V/I2V-01-Director (March 2025, camera control) → Audio integration (Jan 2025) → **Hailuo 02 (Jun 18, 2025, native 1080p, NCR architecture, 3x params, 4x data)** → **Hailuo 2.3 (Oct 28, 2025, current)**
+- **ELO**: Hailuo 2.3 **~1,178** (rank ~#28 on Artificial Analysis T2V leaderboard). Was #2 at Hailuo 02 launch (Jun 2025) before HappyHorse, Seedance 2.0, Kling 3.0, Grok surpassed it.
+- **Architecture**: Diffusion Transformer (DiT) + **Noise-aware Compute Redistribution (NCR)** (key innovation: dynamically redistributes compute based on noise level/complexity per region, 2.5x training+inference efficiency) + MoE component.
+- **Speed**: 30–60 seconds per clip. NCR is the architectural reason for competitive speed.
+- **Audio**: Media Agent integrates MiniMax's Speech-02/2.5/2.6 for voiceover — but NOT native single-pass audio like Veo 3/Kling 3.0. Audio is a separate pipeline step, not architecturally embedded in the video inference pass.
+- **MCP**: **YES — official MCP server** (Python: github.com/MiniMax-AI/MiniMax-MCP; JS: MiniMax-MCP-JS). Exposes: T2V, I2V, S2V, speech, image, music. Supports all Hailuo model variants. Compatible with Claude Desktop, Cursor, Windsurf, OpenAI Agents. One of the broader official MCP implementations in AI video.
+- **API**: platform.minimax.io. Units pricing: ~$0.27/clip (768p 6s) or ~$0.53/clip (1080p 6s) at Standard tier. Hailuo 2.3 Fast: ~$0.19/clip (768p 6s) to ~$0.35/clip (1080p 6s). fal.ai: $0.045/s (768p) / $0.08/s (1080p).
+- **Consumer pricing**: Free (2–3/day, watermarked) / Standard $14.99/mo (1,000 credits) / Pro $54.99/mo / Master $119.99/mo / Max $199.99/mo.
+- **Integrations**: **VEED.io** (day-one partner for Hailuo 2.3, full edit-to-export workflow). fal.ai, Replicate, WaveSpeedAI, Segmind. **No Adobe integration** (gap vs. Kling, Pika, Luma).
+- **Scale (FY2025)**: $79M revenue (+159% YoY), 25.4% gross margin (up from 12.2%), $250.9M adjusted net loss, $1.05B cash. **236M cumulative users** (200+ countries), **600M+ videos generated**, **214,000 enterprise customers**. >70% revenue from international markets. ARR exceeded $150M.
+- **Lawsuit**: Disney + 11 co-plaintiffs (Marvel, Universal, WB, DreamWorks, etc.) filed U.S. copyright suit Sept 2025. "Willful and brazen." Service on Chinese entity estimated 8–24 months. Active as of IPO.
+- **Anthropic accusation**: Feb 2026 — Anthropic accused MiniMax (+ DeepSeek + Moonshot) of 24,000 fake accounts / 16M Claude exchanges total; MiniMax alone ~13M, focused on agentic coding/tool use. MiniMax denied.
+- **Rating: 4/5** — strong API pricing, official MCP, NCR architecture, human-motion quality, 600M+ videos proves product-market fit, IPO validates scale. Minus for: ELO #28 (not top tier), no native audio-in-video, no Adobe integration, Disney lawsuit + Anthropic distillation accusation = real enterprise risk factors.
+
+### Build
+- Hugo build: **1464 pages** (Hailuo review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Hailuo review (throttle clears unix 1778417380). Then write next review.
+- **Next review candidates**:
+  - **Pixverse** — Hong Kong-based, strong style transfer, growing market share, not yet covered
+  - **Wan** (Alibaba Wan2.1) — open-source video model from Alibaba, different product from HappyHorse, high interest from self-hosted/research community
+  - **Adobe Firefly Video** — Adobe's native AI video generation integrated in Premiere Pro, enterprise-grade, widely deployed but under-reviewed
+  - **InVideo AI** — AI-powered video automation platform for marketing content, different tier than the creative tools we've been covering
+- **Recommended next**: **Wan / Wan2.1 (Alibaba)** — open-source flagship from the same company (Alibaba ATH) that made HappyHorse; strong download numbers on Hugging Face, research community adoption, interesting contrast to the commercial-only tools we've been covering
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778417380
+
 ## Run 1116 — 2026-05-10 — DEPLOYED Pika 2.2 review (unix 1778409294, 1460 pages) + NEW REVIEW: Kling 3.0 — native 4K at 60fps/16-bit HDR, multi-shot storyboarding (6 scenes), native audio (single-pass), $300M ARR, 60M users, 30K+ enterprise API users, Adobe Firefly integration, no official MCP, Chinese state ownership structure. Rating 4/5. (1462 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
