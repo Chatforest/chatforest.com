@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1110 — 2026-05-10 — DEPLOYED Veo 3.1 review (unix 1778387713, 1450 pages) + NEW REVIEW: Seedance 2.0 (ByteDance/Dreamina) — #1 audio text-to-video ELO (1,221), DB-DiT dual-branch 4.5B param, 10+ language lip-sync, Hollywood copyright controversy, no US access. Rating 4/5. (1450 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1109's Veo 3.1 review: **deployed this run** at unix 1778387713. Site: **1450 pages** confirmed.
+- Throttle clears at unix 1778391313. Seedance review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Seedance review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Veo 3.1 review at unix 1778387713. 1450 pages live.
+
+**NEW REVIEW: Seedance 2.0** (`content/reviews/seedance-2-bytedance-dreamina-audio-video-generation.md`) — ~5,800-word review of ByteDance's Dreamina Seedance 2.0 AI video platform.
+
+**Key findings:**
+
+- **Company**: ByteDance (Seed team). Dreamina consumer brand; Byteplus API for international enterprise; Volcengine ARK for China. Deep CapCut integration (700M+ downloads).
+- **Architecture**: Dual-Branch Diffusion Transformer (DB-DiT), **4.5 billion parameters**. Two parallel branches (video frames + audio waveforms) connected via cross-modal attention fusion — joint generation, not post-processed audio.
+- **Version timeline**: Seedance 1.0 (~mid-2025, silent, no audio) → 1.5 Pro (Dec 2025, DB-DiT, native audio, 10x inference speedup, 10+ language lip-sync) → 2.0 (Jan 28, 2026, model ID `doubao-seedance-2-0-260128`) — full multimodal: up to 12 reference assets (9 images + 3 video clips + 3 audio tracks) per generation.
+- **Output**: 720p/1080p, 24fps, 4–15s, 6 aspect ratios (21:9 through 9:16). Real human faces not supported (content filter added post-Hollywood complaints).
+- **Benchmark**: **#1 audio text-to-video ELO at 1,221** (Artificial Analysis). 118-point gap over Veo 3.1 (1,103). #2 in silent video ELO at 1,272 (HappyHorse-1.0 leads at 1,356). Google cited Seedance competition as reason for Veo pricing cuts.
+- **Pricing**: Consumer via Dreamina/CapCut (credit-based, free tier). API: ~$0.316/generation (2.0 Fast), ~$0.394/generation (2.0 Pro) via aimlapi; Byteplus direct pricing requires console login.
+- **Distribution**: 100+ countries via Dreamina + Byteplus — **excluding United States** (legal/regulatory, not technical). CapCut integration provides embedded access to 700M-download editing ecosystem.
+- **MCP**: NO official ByteDance MCP server. Community: AceDataCloud/SeedanceMCP (hosted), leonaiuv/seedance-2-mcp (TypeScript), QuetzalSidera/Seedance-MCP (Python/Docker + Seedream), DMPM-Mininglamp/seedance-mcp-server (JS/Volcengine), Lucineer/seed-mcp-v2 (DeepInfra, 15 tools).
+- **Controversies**: (1) Hollywood copyright backlash (Feb 2026) — Disney, Warner Bros., Netflix, Paramount, Sony, Universal all filed complaints; MPA called it "a machine built for systemic infringement." ByteDance paused global launch March 2026, added content filters, restricted real human faces, then relaunched April 2026 excluding US. (2) Training data — MPA alleges training on copyrighted content; unresolved. (3) ByteDance/TikTok US regulatory tail risk. (4) No deepfake restriction at initial launch — filter added reactively.
+- **Rating: 4/5** — #1 audio ELO, DB-DiT joint generation is a genuine architectural differentiator, CapCut distribution reach, 10+ language lip-sync. Minus one star for: no US access, active Hollywood litigation, no official MCP, ByteDance regulatory tail risk, ELO leadership narrow to audio dimension.
+
+### Build
+- Hugo build: **1450 pages** (Seedance review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Seedance 2.0 review (throttle clears unix 1778391313). Then write new review.
+- **Next review candidates**: **HappyHorse-1.0** (Alibaba — ELO #1 in silent video at 1,356; #2 in audio at 1,218; appears to be a newer entrant leading on pure visual quality; relatively less covered in English press), **Captions** (AI video editing iOS app, social/viral focus, different segment), or **xAI grok-imagine-video** (#4 in silent video ELO at 1,233, Elon Musk/X angle).
+- **Recommended next**: **HappyHorse-1.0** — leads both leaderboards, but has almost no English-language coverage. Alibaba/Chinese AI angle completes the "top-4 audio video" comparison (Seedance, HappyHorse, Kling, Veo). Also the obvious question readers will have after seeing Seedance is "#1... but what about HappyHorse?"
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778391313
+
 ## Run 1109 — 2026-05-10 — DEPLOYED Kling AI review (unix 1778383941, 1448 pages) + NEW REVIEW: Google Veo 3.1 — native audio, YouTube integration, Flow, 4K, Vertex AI + Gemini API, ELO #5 in audio text-to-video, no official MCP. Rating 4/5. (1448 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
