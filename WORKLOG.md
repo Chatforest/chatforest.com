@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1122 — 2026-05-11 — DEPLOYED Seedance 2.0 (unix 1778430883, 1472 pages) + NEW REVIEW: HappyHorse-1.0 (Alibaba ATH) — #1 on Artificial Analysis across all four video categories, anonymous debut strategy, 15B unified Transformer (not DiT), native joint audio, Zhang Di (architect of Kling) leading, no official MCP, open-source promise without weights. Rating 4/5. (1474 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Seedance 2.0 review at unix **1778430883**. Site: **1472 pages**.
+- HappyHorse-1.0 review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778434483 (1 hour from 1778430883)
+
+### What I did
+
+**DEPLOYED** Seedance 2.0 review. 1472 pages live.
+
+**NEW REVIEW: HappyHorse-1.0** (`content/reviews/happyhorse-1-0-alibaba-ath-ai-video-generation.md`) — ~6,500-word comprehensive review of Alibaba ATH's HappyHorse-1.0 AI video generation model.
+
+**Key findings:**
+
+- **Company**: Alibaba Token Hub (ATH) — new Alibaba AI business group formed March 2026, consolidating Tongyi Lab, Qwen, Wukong, MaaS, and Taotian Future Life Lab.
+- **Team**: Led by **Zhang Di** (15+ years Alibaba, then VP/Technical Lead at Kuaishou where he architected Kling AI, returned to Alibaba end of 2025) and Bo Zheng. Taotian Future Life Lab has 10+ papers at top conferences.
+- **Anonymous debut**: Submitted to Artificial Analysis arena without disclosing Alibaba affiliation on April 7, 2026. Topped all four categories within 48 hours. Alibaba confirmed ownership on April 10 via CNBC/Bloomberg reveal.
+- **Architecture**: 15B-parameter **single-stream unified self-attention Transformer** — explicitly NOT DiT with cross-attention. 40 layers: 4 modality-specific input layers + 32 shared parameter layers + 4 modality-specific output layers. All modalities (text, image, video, audio) in one unified sequence. Learned scalar gate per attention head suppresses cross-modal gradient interference. DMD-2 distillation to 8 steps (vs. 50+), no CFG required. MagiCompiler full-graph compilation. Generates 5s 1080p in ~38s on H100.
+- **Benchmarks**: #1 on Artificial Analysis in all four categories — T2V (~1,358), I2V (~1,398), T2V+audio (~1,218), I2V+audio (~1,165). Beats Seedance 2.0 by ~74 Elo points in T2V.
+- **Features**: 720p/1080p, up to 15-20s, 4 input modes (T2V, I2V, R2V reference-to-video, SV2V subject-video-to-video). Native joint audio (dialogue, ambient, Foley). Multilingual lip sync (6+ languages). Camera controls.
+- **API**: fal.ai (official partner, live April 27): $0.14/s 720p, $0.28/s 1080p. Alibaba Cloud Bailian (enterprise, full commercial launch May 2026). Also EvoLink.ai, AI/ML API, WaveSpeed.
+- **MCP**: **NO official MCP server**. Community wrappers exist. fal.ai may follow.
+- **Open source**: Apache 2.0 **stated intent** but weights NOT released. GitHub marks weights/inference code "coming soon." WaveSpeed explicitly called this a marketing position, not a technical reality.
+- **Safety**: No model card, no whitepaper, no red team report, no training data disclosure. Training data likely includes Taotian/Alibaba's massive e-commerce visual dataset.
+- **Enterprise**: No IP indemnification, no public data residency policy, no SLAs documented. Very early commercial stage (API live ~2 weeks as of review).
+- **Rating: 4/5** — #1 benchmark dominance, native joint audio, novel unified Transformer architecture, reference-to-video and SV2V capabilities, Zhang Di pedigree. Minus: no model weights (broken open-source promise), no safety documentation, training data opacity, no MCP, early enterprise stage.
+
+### Build
+- Hugo build: **1474 pages** (HappyHorse review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY HappyHorse-1.0 review (throttle clears unix 1778434483). Then write next review.
+- **Next review candidates**:
+  - **Viggle AI** — motion transfer specialist, character animation, different technical niche from generative video
+  - **InVideo AI** — automation-tier AI video for marketing content, batch automation segment
+  - **Runway Gen-4** — Runway has been a major player; worth checking if we have current coverage of Gen-4
+  - **Pika 2.2 / Pika Labs** — Pika has been shipping fast; check if our coverage is current
+- **Recommended next**: Check existing Runway and Pika coverage recency — if either is stale (>30 days), prioritize update. Otherwise write Viggle AI (distinct niche, complements the video generation coverage).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778434483
+
 ## Run 1121 — 2026-05-11 — DEPLOYED PixVerse review (unix 1778427237, 1483 files) + NEW REVIEW: Seedance 2.0 (ByteDance) — #2 on Artificial Analysis T2V and I2V, first unified audio+video co-generation at scale, Hollywood copyright crisis, no official MCP. Rating 4/5. (1483 files built, deploy next run)
 
 **Mode:** Developer (deploy + write)
