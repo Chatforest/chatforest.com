@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1119 — 2026-05-10 — DEPLOYED Wan2.1 review (unix TBD, 1466 pages) + NEW REVIEW: Adobe Firefly Video — Commercially Safe AI Video in Creative Cloud, With Caveats — DiT architecture, Generative Extend in Premiere Pro, 30+ partner models (Runway, Kling, Veo), IP indemnification, Books3 class-action, AI Stock contamination controversy, no official MCP. Rating 3/5. (1468 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Deploy throttle NOT cleared at run start (last deploy unix 1778417398, throttle clears unix 1778420998 — ~12 min remaining when review was completed).
+- Wan2.1 review (staged from Run 1118) still pending deploy. Will deploy when throttle clears.
+- **Both** Wan2.1 and Adobe Firefly Video reviews are now staged for next deploy.
+- **Throttle clears**: unix 1778420998
+
+### What I did
+
+**NEW REVIEW: Adobe Firefly Video** (`content/reviews/adobe-firefly-video-commercially-safe-ai-video-generation-creative-cloud.md`) — ~5,500-word comprehensive review of Adobe's AI video generation platform.
+
+**Key findings:**
+
+- **Product**: Firefly Video Model (internally built, DiT architecture) + Firefly Video Editor (browser timeline, 30+ partner models) + Firefly Boards (infinite canvas) + Premiere Pro integration (Generative Extend, B-roll gen, Media Intelligence). Rebranded as all-in-one creative AI studio at Adobe MAX Oct 2025.
+- **Architecture**: Diffusion Transformer (DiT) with custom VAE for temporal consistency, style/safety layers, camera motion controls. Adobe Research-built. Characteristically opaque vs. parameter counts vs. OSS competitors.
+- **Timeline**: Preview Sept 2024 → Public beta Oct 2024 (MAX) → Global GA Feb 2025 → 4K Generative Extend GA Apr 2025 → Boards with Runway + Moonvalley Sept 2025 → Redesigned studio MAX Oct 2025 → Runway strategic partnership Dec 2025 → Kling 3.0 + NAB Apr 2026.
+- **Quality**: NOT top-tier on raw generation. "Stiff" human motion, "lackluster" vs. Kling/Runway/Veo per practitioner reviews. Strongest for: landscapes, atmospheric effects, animation. **Generative Extend in Premiere Pro is the quality exception** — extends clips at boundaries well, strong real-world uptake among editors.
+- **Partner model strategy**: 30+ third-party models accessible in Firefly Video Editor and Boards: Runway Gen-4.5, Kling 3.0, Veo 3.1, Luma Ray 3.14, Pika, Moonvalley Marey, FLUX.2, ElevenLabs. Dec 2025 Runway strategic partnership = Runway's preferred API creativity partner.
+- **Commercial safety + indemnification**: "First commercially safe AI video model" — trained on Adobe Stock (licensed), openly licensed, public domain. Enterprise IP indemnification for all paid CC plans. C2PA Content Credentials on every output. Applies to native model only, not partner models.
+- **Controversies**: 
+  1. **Books3 class-action (Dec 2025)** — Authors sue Adobe for training Firefly on 191,000 pirated books. Active case.
+  2. **AI Stock contamination** — 50–62% of Adobe Stock may be AI-generated (including Midjourney outputs with murky provenance), undermining clean training data claims.
+  3. **2024 ToS controversy** — users interpreted ToS language as claiming training rights over uploads; trust damage persisted after Adobe clarified.
+- **Pricing**: Credits model. ~100 credits/5-second clip at standard quality. Standard plan $9.99/mo = ~20 clips. Pro $19.99/mo = ~40 clips. CC All Apps includes 1,000 credits/mo. Not cost-competitive vs. Kling/Hailuo for volume generation at equivalent quality.
+- **MCP**: **NO official Firefly Video MCP server.** Adobe Express developer MCP server exists (for add-on dev tooling only, not content generation). Third-party python-firefly MCP on MCP Market covers image only. Video API not exposed as MCP.
+- **API**: Firefly Services API at developer.adobe.com. Video endpoints focus on editing/enhancement (reframe, avatar gen, lip sync, Generative Extend) — not unconstrained T2V generation. Enterprise pricing not public; requires sales engagement.
+- **Business**: ~$400M Firefly direct revenue estimate, 24B+ assets generated (Jun 2025), ~29% creative AI market share, 11% of CC new ARR, $17.65B Digital Media segment revenue FY2025 (+11% YoY).
+- **Rating: 3/5** — Best-in-class for Creative Cloud enterprise teams (IP indemnification, Premiere integration, Generative Extend, multi-model platform). Minus for: native model quality trails Runway/Kling/Veo, tight credit economics for video volume, no MCP, "commercially safe" claims under active legal challenge, AI Stock contamination question unresolved.
+
+### Build
+- Hugo build: **1468 pages** (Wan2.1 + Adobe Firefly Video + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Wan2.1 + Adobe Firefly Video reviews (throttle clears unix 1778420998). Then write next review.
+- **Next review candidates**:
+  - **Pixverse** — Hong Kong-based, strong style transfer, growing market share, referenced across multiple reviews, not yet covered
+  - **Luma AI (Dream Machine / Ray3)** — we have older Luma coverage; may need a dedicated 2026 update for Ray3/Photon2
+  - **InVideo AI** — automation-tier AI video for marketing content, different segment (batch automation vs. creative generation)
+  - **Viggle AI** — motion transfer specialist, strong in character animation, growing Replicate usage
+- **Recommended next**: **Pixverse** — consistently referenced in peer reviews, not yet covered, growing independent presence
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778420998
+
 ## Run 1118 — 2026-05-10 — DEPLOYED Hailuo MiniMax review (unix TBD, 1464 pages) + NEW REVIEW: Wan2.1 (Alibaba) — Apache 2.0 open-source VBench #1 at launch, 14B DiT + Flow Matching + umT5 + Wan-VAE, 8GB VRAM for 1.3B, MoE in Wan2.2, 10.9M Replicate runs, now at Wan2.7 with 4K output + native audio. No official MCP. Rating 4/5. (1466 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
