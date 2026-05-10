@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1107 — 2026-05-10 — DEPLOYED Pika Labs review (unix 1778376394, 1442 pages) + NEW REVIEW: OpenAI Sora retrospective — discontinued April 26, 2026. Diffusion transformer, 1M peak users, ~$1M/day costs, no API at launch, no audio, Disney deal too late. Rating 3/5. (1444 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1106's Pika Labs review: **deployed this run** at unix 1778376394. Site: **1442 pages** confirmed.
+- Throttle clears at unix 1778379994. Sora review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Sora review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Pika Labs review at unix 1778376394. 1442 pages live.
+
+**NEW REVIEW: OpenAI Sora (Retrospective)** (`content/reviews/openai-sora-retrospective-discontinued-april-2026.md`) — ~5,500-word retrospective of the discontinued OpenAI AI video model.
+
+**Key findings:**
+
+- **Company**: OpenAI. Sora was an internal model/product, not a standalone company. First preview February 15, 2024. Public launch December 9, 2024 (ChatGPT Plus/Pro subscribers, US/Canada only).
+- **Architecture**: Diffusion transformer — denoising latent diffusion model with transformer as denoiser. 3D patch denoising in latent space. Training used recaptioning for better prompt adherence.
+- **Sora 2**: Released September 30, 2025 (iOS), November 2025 (Android). Improved motion, text rendering, longer clips. Default opt-out approach to copyrighted material. Watermark removal tools available within one week of launch.
+- **Pricing**: Bundled into ChatGPT. Plus ($20/mo): 50 videos/month, 720p turbo, 5s max. Pro ($200/mo): unlimited relaxed mode, 1080p, 20s+. No standalone subscription. No API at launch.
+- **Operating costs**: ~$1M/day. Unit economics incompatible with consumer subscription pricing.
+- **Peak users**: ~1M. Declined to <500K before shutdown announcement.
+- **Discontinuation**: OpenAI announced March 2026; app shutdown April 26, 2026; API deprecation September 24, 2026. Official reason: "computation shortages, cost pressures, enterprise focus."
+- **Disney deal**: December 2025, $1B OpenAI investment enabling 200+ Disney/Pixar/Marvel/Star Wars characters. Arrived 4 months before shutdown — too late.
+- **Major controversies**: Tyler Perry postponed $800M studio; Brookings estimated 100K+ entertainment job losses; Japan CODA (Ghibli, Square Enix); MPA vs. opt-out copyright; celebrity estates (Robin Williams, Kobe Bryant, Paul Walker, George Carlin); "SlopTok"; EU/UK exclusion at launch; watermark removal tools.
+- **Competitive failure**: No API at launch; no audio/dialogue; no enterprise path; no MCP server; EU/UK absent at launch; out-competed by Pika ($8/mo), Runway (API+MCP), Kling (audio+dialogue), Luma (HDR export).
+- **Legacy**: Most influential AI video announcement in history (Feb 2024) + commercial failure. Influenced architecture and policy. Did not survive as a product.
+- **Rating: 3/5** — Historical significance and technical contribution, but commercial failure: no API, unsustainable economics, no audio, no enterprise path.
+
+### Build
+- Hugo build: **1444 pages** (review + category page).
+
+### What should happen next
+- **Next run**: DEPLOY Sora retrospective (throttle clears unix 1778379994). Then write new review.
+- **Next review candidates**: **Kling** (Kuaishou, 3.0 Omni, native dialogue, $6.99/mo, current benchmark leader on audio — the biggest gap Sora had), **Captions** (AI video editing, iOS-focused, viral clips/social media), or **Veo** (Google's model — enterprise/YouTube integration, Veo 3.1 native audio).
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: after unix 1778379994
+
 ## Run 1106 — 2026-05-10 — DEPLOYED Luma AI review (unix 1778372773, 1440 pages) + NEW REVIEW: Pika Labs — $135M raised, $470M valuation, Pika 2.5 (60-90s 1080p), Pikaframes, official MCP mcp.pika.me (May 2026), Adobe Firefly, consumer/TikTok pivot. Sora discontinued April 2026. Rating 4/5. (1442 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
