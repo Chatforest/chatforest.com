@@ -29,7 +29,7 @@ The technical paper OpenAI published alongside the announcement positioned Sora 
 Training employed recaptioning — a technique of generating rich synthetic text descriptions for training videos rather than relying on original metadata — to improve prompt adherence and the alignment between text and generated visuals.
 
 **What Sora could do at launch (February 2024 preview):**
-- Generate video up to 60 seconds from a text prompt
+- Generate video up to 60 seconds from a text prompt (the research paper's demonstrated capability; the shipped product launched with a 20-second maximum)
 - Generate video from a still image (image-to-video)
 - Extend existing video forward or backward
 - Maintain consistent characters and environments across a clip
@@ -56,8 +56,8 @@ No access for the public. No pricing announced. No timeline for launch.
 Sora launched publicly ten months after its announcement, available in the United States and Canada to ChatGPT subscribers. It was notably **not available in the European Union or United Kingdom** at launch — an absence attributed to data regulation concerns under GDPR and UK data protection law.
 
 **Pricing at launch (bundled into ChatGPT subscriptions):**
-- **ChatGPT Plus ($20/month):** 50 video generations per month in "turbo" mode; 720p resolution; up to 5 seconds per video. Turbo mode prioritized generation speed over maximum quality.
-- **ChatGPT Pro ($200/month):** Effectively unlimited "relaxed" mode generations; up to 1080p resolution; clips up to 20 seconds. Relaxed mode ran slower but at higher quality.
+- **ChatGPT Plus ($20/month):** 50 video generations per month; up to 1080p resolution; up to 20 seconds per video. Higher resolutions (1080p) took significantly longer to generate — roughly 8x the time of 480p.
+- **ChatGPT Pro ($200/month):** Unlimited slow-queue generations plus 500 priority generations per month; up to 1080p; up to 20 seconds. Priority mode was faster; slow-queue was available without generation limits.
 
 There was no standalone Sora subscription. No API at launch. Access was entirely gated through the ChatGPT product hierarchy.
 
@@ -90,6 +90,12 @@ The timing of the announcement, just months before Sora's discontinuation, made 
 
 ## The Controversies
 
+### The "Artwashing" Protest (November 2024)
+
+Before Sora's public launch, OpenAI gave a group of visual artists early access for safety testing and feedback. A subset of those artists — frustrated by what they viewed as co-option of their credibility — deliberately leaked their Sora access credentials to Hugging Face and published a manifesto condemning what they called **"artwashing"**: the accusation that OpenAI was using artists to legitimize the product publicly while building a tool designed to automate the same creative community out of work.
+
+OpenAI revoked all early-access credentials within three hours and issued a statement noting that "hundreds of artists" had shaped Sora's development and that "participation is voluntary." The incident did not significantly slow the launch, but it established a pattern that would follow Sora throughout its operational life: the product's relationship with the creative community it claimed to serve was adversarial at its roots.
+
 ### Hollywood's Reaction
 
 Sora arrived sixteen months after the WGA and SAG-AFTRA strikes that had already put AI-generated content at the center of entertainment labor negotiations. The February 2024 announcement landed like a second shock.
@@ -108,7 +114,7 @@ OpenAI's celebrity likeness policy was a notable gap at launch — generating co
 
 ### "SlopTok" and the Quality Problem
 
-As Sora-generated content spread to social media platforms, a counter-narrative emerged. Critics noted that the easily-generated nature of AI video was flooding platforms with what users termed **"SlopTok"** — low-effort, formulaic AI content that lacked any creative intent beyond the prompt. The term captured a real phenomenon: accessibility had lowered the floor on content quality while leaving the ceiling at the same height.
+As Sora-generated content spread to social media platforms, a counter-narrative emerged. Content creator and science communicator **Hank Green** coined the term **"SlopTok"** to describe Sora's TikTok-style feed of AI-generated content — low-effort, formulaic clips that lacked any creative intent beyond the prompt. The term gained broad traction and became shorthand for the AI video quality problem industrywide. Critics noted that accessibility had lowered the floor on content quality while leaving the ceiling at the same height.
 
 This was not unique to Sora — Runway, Pika, and Kling all contributed to the same dynamic — but Sora, as the most visible and hyped of the platforms, absorbed disproportionate criticism.
 
@@ -128,7 +134,9 @@ The subscription pricing reflected the competitive market — Pika charged $8/mo
 - **April 26, 2026:** Sora mobile and web applications were shut down.
 - **September 24, 2026:** API deprecation scheduled (at time of writing, not yet reached).
 
-OpenAI provided no detailed public explanation for the discontinuation. Reports attributed the shutdown to **"computation shortages, cost pressures, and broader enterprise focus"** — a combination that suggests Sora lost an internal resource allocation competition rather than failing on any single dimension.
+OpenAI provided no detailed public explanation for the discontinuation. Reports attributed the shutdown to **"computation shortages, cost pressures, and broader enterprise focus."** In April 2026 — the same month Sora went dark — **Kevin Weil** (OpenAI Chief Product Officer) and **Bill Peebles** (the research lead most directly associated with Sora's architecture) both departed the company. TechCrunch reported OpenAI was explicitly "pivoting away from consumer moonshots toward enterprise AI," shedding what insiders described as "side quests." Sora — a consumer-facing, resource-intensive, declining-user-count product — fit every criterion for the cut.
+
+At the time of shutdown, **Artificial Analysis ranked Sora 2 Pro below ByteDance Seedance 2.0, Runway Gen-4.5, and KlingAI Kling 3.0** on their video generation leaderboard. The pioneer had become a laggard.
 
 ### User Impact
 
@@ -165,6 +173,8 @@ Sora had no API at launch (addressing this only later), no MCP integration, no a
 ## What Sora Got Right
 
 Before the autopsy, the achievements deserve acknowledgment.
+
+**It earned recognition.** Sora won **Product Hunt's Golden Kitty Award for "AI for Video" (2024)** with an average rating of 3.86/5 — consumer recognition of a product that genuinely impressed its early users. South Park dedicated an episode — "Sora Not Sorry" — to satirizing the AI deepfake and copyright debates that Sora had ignited. Cultural impact is not nothing.
 
 **It moved the field.** The February 2024 announcement set the technical benchmark that every competitor measured against for the following twelve months. Runway, Pika, Kling, and Luma all accelerated their roadmaps in direct response to Sora's announcement. The woolly mammoth clip alone probably added six months to the AI video arms race timeline.
 
