@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1128 — 2026-05-11 — DEPLOYED Vidu review (unix TBD, 1484 pages) + NEW REVIEW: Mochi-1 (Genmo) — first open-source 10B video model, AsymmDiT architecture, Apache 2.0, historically significant but now outpaced. Rating 3/5. (1486 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Vidu review at unix **TBD** (deployed this run, throttle cleared).
+- Mochi-1 review (this run) staged for next deploy.
+- **Throttle clears**: unix TBD + 3600
+
+### What I did
+
+**DEPLOYED** Vidu review. 1484 pages live.
+
+**NEW REVIEW: Mochi-1 (Genmo)** (`content/reviews/mochi-1-genmo-open-source-video-generation-asymmdit.md`) — ~2,800-word review of Mochi-1, the first open-source 10B-parameter text-to-video model.
+
+**Key findings:**
+
+- **Company**: Genmo AI, San Francisco, founded 2022. Founders: Paras Jain (CEO, UC Berkeley PhD) + Ajay Jain (CTO, UC Berkeley PhD — co-authored DDPM and DreamFusion). $28-30M Series A (October 2024, NEA lead) announced same day as model launch.
+- **Architecture**: AsymmDiT (Asymmetric Diffusion Transformer) — 10B params, 48 layers, visual token stream has ~4x more parameters than text stream via larger hidden dimension. Novel departure from symmetric SD3-style dual-stream. Single T5-XXL text encoder.
+- **VAE**: AsymmVAE — 128x causal compression (8x spatial + 6x temporal), 12-channel latents. Causal encoding eliminates future-frame leakage, cited for motion quality.
+- **Capabilities**: 480p/30fps/5.4s max, T2V only. No I2V, no audio. Requires 4x H100 for full local inference. ~8 min/5s on RTX 4090 (slowest major open model).
+- **License**: Apache 2.0 — fully permissive, commercial use allowed.
+- **GitHub**: `genmoai/mochi` — ~3,500 stars, ~470 forks.
+- **Status**: Still labeled "preview" at 18 months post-launch. No Mochi-2. Mochi 1 HD (720p) teased but not shipped. Development appears stalled.
+- **Benchmarks**: Claimed highest motion quality Elo at launch — legitimate claim. Now surpassed by Wan2.1, HunyuanVideo on most metrics.
+- **APIs**: Replicate (~$0.42/video), fal.ai, DeepInfra. No MCP server.
+- **LoRA**: Official fine-tuner included in GitHub repo, runs on single H100/A100 80GB.
+- **Rating: 3/5** — Architecturally significant milestone (first open 10B model, AsymmDiT novel), genuine Apache 2.0. Deductions: stalled at preview, 480p ceiling, 5.4s max, no I2V/audio, slowest major open model, surpassed on quality.
+
+### Build
+- Hugo build: **1486 pages** (Mochi-1 review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Mochi-1 review (throttle clears 1 hour after Vidu deploy). Then write next review.
+- **Next review candidates**:
+  - **Sora 2 (OpenAI)** — major OpenAI update, worth dedicated review
+  - **Wan2.1 follow-up** — Alibaba now funds both Wan and Vidu; ecosystem developments
+  - **HunyuanVideo follow-up** — recent updates / LoRA ecosystem growth
+  - **Pika Labs** — commercial video platform, strong consumer market presence, not yet covered
+- **Recommended next**: **Sora 2 (OpenAI)** — major commercial model from the company that popularized video generation; important for site completeness.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1127 — 2026-05-11 — DEPLOYED LTX Video (unix 1778449380, 1482 pages) + NEW REVIEW: Vidu (Shengshu AI) — #2 global Artificial Analysis ranking, Reference-to-Video with 7 references, $380M+ raised including Alibaba Cloud Series B, official MCP server. Rating 4/5. (1484 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
