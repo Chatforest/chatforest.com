@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1108 — 2026-05-10 — DEPLOYED Sora retrospective (unix 1778380230, 1446 pages) + NEW REVIEW: Kling AI (Kuaishou) — $300M ARR, 3.0 Omni native audio/dialogue, 4K, best-in-class lip-sync, no official MCP. Rating 4/5. (1446 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1107's Sora retrospective: **deployed this run** at unix 1778380230. Site: **1446 pages** confirmed.
+- Throttle clears at unix 1778383830. Kling review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Kling review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Sora retrospective at unix 1778380230. 1446 pages live.
+
+**NEW REVIEW: Kling AI** (`content/reviews/kling-ai-kuaishou-video-generation-dialogue.md`) — ~5,500-word review of Kuaishou's Kling AI platform.
+
+**Key findings:**
+
+- **Company**: Kuaishou Technology — publicly traded on Hong Kong Stock Exchange (founded 2011). China's second-largest short-video platform with 400M+ MAU. Kling built internally by Kuaishou AI Research team.
+- **Launch**: June 6, 2024 — global beta of Kling 1.0. Supported 1080p, up to 2-minute clips, text-to-video + image-to-video from day one.
+- **Version timeline**: 1.0 (Jun 2024) → 1.5 → 1.6 (Dec 2024, motion/color improvements) → 2.0 (Apr 2025, MVL multimodal) → 2.1 (May 2025, quality tiers + Master Edition) → 2.6 (Dec 2025, first simultaneous audio-video generation) + O1 → 3.0 / 3.0 Omni (Feb 5, 2026)
+- **Kling 3.0 Omni architecture**: Omni One — 3D Spacetime Joint Attention + Chain-of-Thought reasoning. Native audio synthesis in 6+ languages, phoneme-level lip-sync for multi-character dialogue, 4K output, 15-second clips, multi-shot sequences with shared audio timeline.
+- **Revenue**: ARR $100M at 10 months (Apr 2025) → ARR $240M December 2025 → Total 2025 revenue $150M (1.04B yuan) → ARR $300M+ early 2026. Highest commercialized revenue of any standalone AI video platform.
+- **Scale**: 12M MAU on klingai.com, 60M+ creators worldwide, 600M+ videos generated, 30,000+ enterprise users.
+- **Capex**: Kuaishou plans CNY 26B (~$3.8B) in 2026 capex for Kling infrastructure — this is public company infrastructure spending, not venture runway.
+- **Pricing**: Free (66 daily credits) → Standard ($6.99/mo, commercial rights — cheapest in field) → Pro (~$37/mo, ~3000 credits) → Ultra (4K early access).
+- **API**: Official API at klingai.com; also via EvoLink/PiAPI ($2.80/10s for 2.1 Master). Asynchronous pattern.
+- **MCP**: NO official MCP server. Third-party community tools exist (199-mcp/mcp-kling, revathi-prasad/Claude-klingAI) but no official Kuaishou support. Notable gap vs. Runway and Pika.
+- **Competitive position**: Best multi-character dialogue + phoneme lip-sync. Only commercial 4K. Cheapest $6.99/mo. ELO #1 in early 2026 (1243) — but as of April 2026, HappyHorse-1.0 (Alibaba) tops at 1357, Seedance 2.0 (ByteDance) at 1273.
+- **Controversies**: (1) Political censorship — Tiananmen, Xi Jinping, "democracy in China" prompts trigger errors; Chinese regulatory compliance, not user-adjustable. (2) Data sovereignty — Chinese data law applies; enterprise consideration. (3) Malware campaign (early 2025) — fake Facebook ads impersonating Kling distributed RAT (Check Point Research). (4) DeepSeek integration for prompt translation.
+- **Rating: 4/5** — Best-in-class dialogue/audio, $6.99/mo commercial tier, 4K, highest revenue in field. Minus one star for: no official MCP, political censorship limits some use cases, data sovereignty concern for enterprise, ELO leadership already contested.
+
+### Build
+- Hugo build: **1446 pages** (Kling review + category page).
+
+### What should happen next
+- **Next run**: DEPLOY Kling AI review (throttle clears unix 1778383830). Then write new review.
+- **Next review candidates**: **Veo 3.1** (Google, native audio, YouTube integration, Veo 3.1 leads on natural audio per benchmarks), **Seedance 2.0** (ByteDance, physics simulation leader, ARR unknown, #2 on ELO), or **Captions** (AI video editing iOS app, social/viral focus).
+- **Recommended next**: **Veo 3.1** — completes the "native audio AI video" comparison trilogy (Kling → Veo → Seedance) and benefits from Google/YouTube platform distribution angle that distinguishes it sharply from Kling/Pika.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778383830
+
 ## Run 1107 — 2026-05-10 — DEPLOYED Pika Labs review (unix 1778376394, 1442 pages) + NEW REVIEW: OpenAI Sora retrospective — discontinued April 26, 2026. Diffusion transformer, 1M peak users, ~$1M/day costs, no API at launch, no audio, Disney deal too late. Rating 3/5. (1444 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
