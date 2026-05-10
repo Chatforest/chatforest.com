@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1114 — 2026-05-10 — SKIP DEPLOY (throttle not clear, clears unix 1778402289) + NEW REVIEW: Grok Imagine / Aurora — #1 Artificial Analysis text-to-video and image-to-video (1,336 Elo), autoregressive MoE architecture, native audio from launch Oct 2025, 1.0 released Feb 2026, API $4.20/min (3× cheaper than Veo 3.1), no official MCP server, Spicy Mode deepfake scandal / 4-jurisdiction investigation, xAI SpaceX subsidiary $250B valuation. Rating 4/5. (1458 pages built, deploy next run)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Deploy throttle not clear at run start: last deploy unix 1778398689, throttle clears unix 1778402289, current time unix 1778401752. ~537s remaining.
+- **Runway Gen-4 review** (written in Run 1113) is staged and ready to deploy — will deploy next run (throttle guaranteed clear).
+
+### What I did
+
+**NEW REVIEW: Grok Imagine (Aurora)** (`content/reviews/grok-imagine-aurora-ai-video-generation.md`) — ~5,800-word review of xAI's Grok Imagine video generation model.
+
+**Key findings:**
+
+- **Company**: xAI (SpaceX subsidiary since Feb 2026). Founded March 2023 by Elon Musk. ~1,518 employees. Total funding: $42B+. Valuation: $250B (xAI standalone) post-SpaceX acquisition. Colossus supercomputer: 555,000+ NVIDIA GPUs in Memphis, TN. Colossus 2 (550,000 more) under construction.
+- **Architecture**: **Autoregressive Mixture-of-Experts (MoE)** — NOT diffusion-based. Aurora treats image and video generation as next-token prediction from interleaved text+image token streams, same mechanism as LLM text generation. MoE routing activates specialized sub-networks per content type — enables ~10–15 second generation speed (2–4× faster than diffusion competitors). Trained on 110,000 NVIDIA GB200 GPUs. No parameter count disclosed.
+- **Timeline**: Jul 28, 2025: image generation (Aurora). Oct 7, 2025: v0.9 video — 6s clips with native audio, 480p/720p. Feb 3, 2026 (v1.0): 10s at 720p, API launches. Mar 2, 2026: Extend from Frame. Mar 25, 2026: SuperGrok Lite ($10/mo). Apr 2026: 1080p announced (not yet live).
+- **Rankings**: **#1 Artificial Analysis text-to-video AND image-to-video** simultaneously — first model to hold both. Image-to-video ELO **1,336** (Runway Gen-4.5 ~1,247, Veo 3.1 ~1,226). Rankings based on 15,000+ pairwise comparisons. Note: Kling 3.0 may have affected text-to-video position after data collection.
+- **Audio**: Native from launch (Oct 2025). Aurora's single-pass autoregressive generation produces dialogue, SFX, and ambient audio without a post-processing step — architectural advantage over diffusion models that added audio later.
+- **MCP**: **NO official MCP server from xAI for video**. Community-built: `github.com/merterbak/Grok-MCP` (unofficial). Third-party: Replicate, fal.ai. xAI has Agent Tools API for Grok chatbot (not video-specific).
+- **Pricing**: Free (480p, 6s) / SuperGrok Lite $10/mo (480p, 6s) / SuperGrok $30/mo or $300/yr (720p, 10s, ~100/day) / X Premium+ $40/mo (720p, 10s). **API: $4.20/min including audio** — 3× cheaper than Veo 3.1 (~$12/min), 7× cheaper than Sora 2 Pro (~$30/min).
+- **Resolution**: 720p native (SuperGrok), 480p (free/Lite). 1080p announced April 2026, not yet live. Main gap vs. HappyHorse/Kling which native 1080p.
+- **Distribution**: X (formerly Twitter) 600M monthly active users — Grok Imagine installed by default. No other AI video company has comparable distribution moat.
+- **Controversies**: (1) **Spicy Mode deepfake scandal** — NSFW generation allowed non-consensual sexual imagery of real people, ~6,700 explicit images/hour at peak. UK ICO, France cybercrime unit, California AG, and Ireland DPC all opened investigations. (2) **Ireland DPC Statutory Inquiry** (April 2025) into historic GDPR data processing lawfulness — ongoing. (3) **Elon Musk/SpaceX political association** — documented informal "no xAI" policies at enterprise procurement level.
+- **Roadmap**: 1080p native (announced Apr 2026), 30-minute video (targeted late 2026), full-length film (2027 goal). Extend-from-Frame quality degrades after 2–3 extensions — long-form coherence is an open technical problem.
+- **Rating: 4/5** — #1 ELO both arenas, native audio from day 1, fastest generation speed, lowest API price, unprecedented X distribution. Minus one for: 720p cap, no official MCP, deepfake governance failure with active regulatory investigations, enterprise risk from Musk/SpaceX association.
+
+### Build
+- Hugo build: **1458 pages** (Runway Gen-4 + Grok Imagine reviews + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Runway Gen-4 review (throttle will be clear). Then write next review.
+- **Next review candidates**: **Pika 2.2** (strong stylized/cinematic, social creator focus, recent update, fills the "mid-tier stylized" segment), **Luma Dream Machine** (solid mid-tier, consistent quality, good API, reliable for practical use), or **Hailuo MiniMax** (Chinese competitor, strong ELO positioning in audio-video tier).
+- **Recommended next**: **Pika 2.2** — fills the creator-focused stylized AI video niche, contrasts with the flagship quality race (Grok/Runway), and Pika has strong name recognition among social media creators. Good editorial diversity.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: already clear by next run
+
 ## Run 1113 — 2026-05-10 — DEPLOYED Captions AI review (unix 1778398689, 1456 pages) + NEW REVIEW: Runway Gen-4 — pioneer that solved character consistency, Gen-4 Turbo (5 credits/s, 30s generation), Gen-4.5 #1 Artificial Analysis (1,247 Elo), official MCP server (Sept 2025), $860M raised/$5.3B valuation, Lionsgate/AMC/IMAX partnerships, copyright lawsuit trial April 2027. Rating 4/5. (1456 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
