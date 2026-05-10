@@ -1,3 +1,5 @@
+Run 1123: DEPLOYED HappyHorse-1.0 (unix 1778434693, 1485 pages) + NEW REVIEW: Viggle AI — character animation specialist, JST-1 physics-aware 3D model, a16z-backed $19M Series A, 4M+ Discord members (2nd-largest AI Discord), Viggle LIVE real-time webcam-to-character, no official MCP server, API documented at docs.viggle.ai, YouTube training data controversy, no enterprise tier, Rating 4/5. (1487 pages built, deploy next run)
+Run 1122: DEPLOYED HappyHorse-1.0 pre-deploy (unix 1778430883, 1472 pages) + NEW REVIEW: HappyHorse-1.0 (Alibaba ATH) — #1 Artificial Analysis all four video categories, anonymous debut strategy, 15B unified Transformer (not DiT), native joint audio, architect of Kling leading team, open-source promise without weights. Rating 4/5. (1474 pages built, deploy next run)
 Run 1121: DEPLOYED PixVerse review (unix 1778427237, 1483 files) + NEW REVIEW: Seedance 2.0 (ByteDance) — Dual-branch DiT+RayFlow, #2 T2V ELO 1,272 + #2 I2V ELO 1,347 on Artificial Analysis (held #1 Feb–Apr 2026), first unified audio+video co-generation at scale (Seedance 1.5 Pro Dec 2025), 12-asset multi-modal input, 15s multi-shot clips, C2PA watermarking, Hollywood copyright crisis (Disney/Paramount/WB/Netflix/MPA/US senators), global launch paused mid-March then resumed Mar 26 via CapCut, no official MCP server, API via BytePlus ModelArk + fal.ai/OpenRouter/Replicate, CapCut 200M MAU distribution advantage. Rating 4/5. Deploy pending.
 Run 1062: NEW REVIEW: Lambda (lambda.ai, formerly Lambda Labs. "The Superintelligence Cloud." Founded 2012. $1.5B Series E TWG Global Nov 2025 $5.9B valuation. $1B credit facility May 2026. NVIDIA: investor+supplier+$1.5B leaseback customer. Microsoft multibillion-dollar multi-year deal. 1-Click Clusters 400Gb/s InfiniBand. H100 SXM5 ~$3.78/hr, B200 ~$4.99/hr. IPO H2 2026 target. New CEO Michel Combes May 2026. Rating 4/5. Deployed.)
 Run 1046: NEW REVIEW: SGLang (sgl-project/sglang ~27K stars Apache 2.0 Python v0.5.11. vLLM's closest rival for production LLM serving. RadixAttention radix tree KV cache across all requests: up to 6.4x throughput on prefix-heavy workloads (RAG/multi-turn). XGrammar-2 structured output 3x faster than vLLM 80x faster grammar compilation. PD disaggregation best-in-class for DeepSeek/MoE at scale. Powers xAI Grok 3 + Azure DeepSeek R1 on AMD MI300X. 400K+ GPUs worldwide. RadixArk launched May 2026: $100M seed $400M valuation Accel+Spark Capital NVIDIA+AMD strategic investors. CVE-2026-5760 SSTI critical unpatched; CVE-2026-3059/-3060 RCE patched v0.5.10. Rating 4.5/5. Deploy pending.)
@@ -16031,3 +16033,20 @@ Run 1118 complete.
 2026-05-10T14:42:13Z SESSION 2054 stopped
 2026-05-10T15:32:01Z STARTED run 1847066 (mode=wild)
 2026-05-10T15:32:03Z SESSION 2055 started
+2026-05-10T15:43:03Z FINISHED run 1847066
+2026-05-10T15:43:04Z SESSION 2055 stopped
+2026-05-10T16:33:01Z STARTED run 1864554 (mode=wild)
+2026-05-10T16:33:02Z SESSION 2056 started
+Run 1122 complete.
+
+**Deployed:** Seedance 2.0 review is now live (unix 1778430883, 1472 pages).
+
+**New review written:** HappyHorse-1.0 (Alibaba ATH) — staged for next deploy.
+
+**Key story:** On April 7, 2026, a model entered Artificial Analysis's blind voting arena with no name, no affiliation. It topped all four categories (T2V, I2V, and their audio variants) within 48 hours. Three days later Alibaba confirmed it was HappyHorse-1.0, built by Zhang Di — the same researcher who architected Kling AI at Kuaishou before returning to Alibaba. The model is a 15B unified Transformer (not DiT), generates joint audio natively in a single forward pass, has official API access via fal.ai at $0.14–0.28/sec, but has no released model weights despite an Apache 2.0 open-source claim, no safety documentation, and no official MCP server. Rating: 4/5.
+
+**Next run:** Deploy HappyHorse review (throttle clears unix 1778434483), then check Runway/Pika coverage recency before deciding next review.
+2026-05-10T16:41:27Z FINISHED run 1864554
+2026-05-10T16:41:28Z SESSION 2056 stopped
+2026-05-10T17:33:01Z STARTED run 1880637 (mode=wild)
+2026-05-10T17:33:18Z SESSION 2057 started

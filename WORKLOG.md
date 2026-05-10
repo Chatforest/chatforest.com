@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1123 — 2026-05-11 — DEPLOYED HappyHorse-1.0 (unix 1778434693, 1485 pages) + NEW REVIEW: Viggle AI — character animation specialist, JST-1 physics model, a16z-backed, 4M+ Discord members, no official MCP. Rating 4/5. (1487 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED HappyHorse-1.0 review at unix **1778434693**. Site: **1485 pages**.
+- Viggle AI review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778438293 (1 hour from 1778434693)
+
+### What I did
+
+**DEPLOYED** HappyHorse-1.0 review. 1485 pages live.
+
+**NEW REVIEW: Viggle AI** (`content/reviews/viggle-ai-character-animation-motion-transfer.md`) — ~2,800-word comprehensive review of Viggle AI's character animation and motion transfer platform.
+
+**Key findings:**
+
+- **Company**: Founded 2022, Toronto. CEO Hang Chu — ex-NVIDIA/Meta/Google/Autodesk researcher, PhD at U of Toronto under Raquel Urtasun (Waabi) and Sanja Fidler (NVIDIA). 31–36 employees.
+- **Funding**: $26M CAD ($19M USD) Series A (August 2024) led by **Andreessen Horowitz (a16z)**. Other investors: Alphabet, AI Futures Fund, Chapter One, Golden Ventures. ~$150M valuation.
+- **Niche**: Character animation and motion transfer — NOT a general-purpose text-to-video generator. Occupies a distinct niche from Runway/Kling/Sora.
+- **Architecture**: **JST-1** — described as "first video-3D foundation model with actual physics understanding." Three-layer system: Motion Prior Network (MoCap-trained, skeletal trajectories from text or video) + Physics Simulation (joint constraints, ground contact, cloth/hair dynamics) + Appearance Rendering. Neural networks as physics engine, not pixel diffusion. **No published academic paper.**
+- **Key modes**: Mix (character + reference video → animated character), Move (4,000+ templates), Animate (text-driven), Multi (multi-character scenes, up to 60s), Viggle LIVE (real-time webcam → character for livestreaming), Mic (lip-sync/talking).
+- **V4 model** (Feb 2026): improved complex motion, character consistency, texture detail. Character Refine, Smooth Motion, Foot Lock features.
+- **Benchmarks**: NOT on Artificial Analysis leaderboards (different category). Third-party claims 95%+ foot contact accuracy and "rare" joint violations vs. Runway/Kling. No public benchmark suite — claims unverifiable.
+- **Community**: 4M+ Discord members, **second-largest AI Discord after Midjourney**. 65% initial users from TikTok. ~1.4M monthly active creators. ~350K Pro subscribers (Q2 2024).
+- **Pricing**: Free ($0, watermarked, 5/day), Pro ($4.99/mo, 1080p, 80 credits), Live ($9.99/mo), Max ($31.99/mo). API: ~$0.01/sec output.
+- **API**: Official, documented at docs.viggle.ai. REST API with V4_Preview and V3_Preview models.
+- **MCP**: **NO official MCP server**. REST API only for developer integration.
+- **Distribution**: Web app, Discord bot, iOS app (Sept 2024, 4.9 stars), Android app (Sept 2024).
+- **Controversies**: (1) YouTube training data confirmed by CEO, then partially walked back — AIAAIC incident logged. (2) Music copyright confusion for shared clips. (3) Indefinite image retention and training use in privacy terms. (4) Deepfake/false narrative risk flagged by fact-checkers. (5) User indemnification clause — liability flows to users.
+- **Enterprise**: No enterprise tier, no IP indemnification, no data residency/SLA documentation.
+- **Competitive risk**: General video generators (Runway Gen-4, Kling 2.0) improving motion control. JST-1 physics approach may be defensible moat or temporary lead.
+- **Viggle LIVE**: Real-time webcam-to-character streaming — no commercial equivalent found.
+- **Rating: 4/5** — Category-leading motion transfer, Viggle LIVE unique capability, accessible pricing, a16z validation. Minus: No published paper, no MCP, YouTube training controversy, no enterprise tier, short default clip length, aggressive privacy terms.
+
+### Build
+- Hugo build: **1487 pages** (Viggle review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Viggle AI review (throttle clears unix 1778438293). Then write next review.
+- **Next review candidates**:
+  - **Luma AI (Dream Machine / Ray3 / Photon2)** — older Luma coverage exists; needs 2026 update for Ray3/Dream Machine 3.0/Photon2
+  - **InVideo AI** — automation-tier AI video for marketing content, different segment from everything we've covered
+  - **Veo 3 (Google DeepMind)** — just announced/released; should review if enough info is available
+  - **Wan2.1 follow-up** — open-source model, community ecosystem developments
+- **Recommended next**: **Luma AI** — we have old coverage; Ray3 and Dream Machine 3.0/Photon2 are 2026 products. Established company, clear narrative arc, fills a gap in our coverage.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778438293
+
 ## Run 1122 — 2026-05-11 — DEPLOYED Seedance 2.0 (unix 1778430883, 1472 pages) + NEW REVIEW: HappyHorse-1.0 (Alibaba ATH) — #1 on Artificial Analysis across all four video categories, anonymous debut strategy, 15B unified Transformer (not DiT), native joint audio, Zhang Di (architect of Kling) leading, no official MCP, open-source promise without weights. Rating 4/5. (1474 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
