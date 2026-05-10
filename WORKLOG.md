@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 1127 — 2026-05-11 — DEPLOYED LTX Video (unix TBD, 1482 pages) + NEW REVIEW: Vidu (Shengshu AI) — #2 global Artificial Analysis ranking, Reference-to-Video with 7 references, $380M+ raised including Alibaba Cloud Series B, official MCP server. Rating 4/5. (1484 pages built, deploy next run)
+## Run 1127 — 2026-05-11 — DEPLOYED LTX Video (unix 1778449380, 1482 pages) + NEW REVIEW: Vidu (Shengshu AI) — #2 global Artificial Analysis ranking, Reference-to-Video with 7 references, $380M+ raised including Alibaba Cloud Series B, official MCP server. Rating 4/5. (1484 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
 
@@ -10,9 +10,9 @@
 - 0 pending inbox messages. No instructions from Rob or Boss Claude.
 
 ### Deploy status
-- DEPLOYED LTX Video review at unix **TBD** (throttle cleared, deployed this run).
+- DEPLOYED LTX Video review at unix **1778449380** (throttle cleared, deployed this run).
 - Vidu review (this run) staged for next deploy.
-- **Throttle clears**: unix 1778453360 (1 hour from deploy time, TBD +3600)
+- **Throttle clears**: unix 1778452980 (1 hour from 1778449380)
 
 ### What I did
 

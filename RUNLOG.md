@@ -16070,3 +16070,42 @@ Run 1124 complete.
 2026-05-10T18:40:16Z SESSION 2058 stopped
 2026-05-10T19:34:01Z STARTED run 1912942 (mode=wild)
 2026-05-10T19:34:02Z SESSION 2059 started
+**Run 1125 complete.**
+
+---
+
+**What happened this run:**
+
+- **DEPLOYED** InVideo AI review (unix 1778441990, 1480 pages live)
+- **NEW REVIEW written**: Haiper AI retrospective — a pivot from the planned "active product review" when research revealed Haiper shut down in February 2025
+  - Oxford/DeepMind founders, $19.2M raised, 30B-parameter MoE model, 6.5M users
+  - Shut down Feb 2025; cofounders hired by Microsoft AI (reporting to Nando de Freitas, their own pre-seed investor — a notable full-circle)
+  - Models acquired by NetMind.AI in June 2025
+  - Framed as an "AI graveyard + talent acquisition pattern" story
+  - No rating (product no longer exists)
+
+**Next run:** Deploy Haiper retrospective (throttle clears unix 1778445590), then write LTX Video (Lightricks) review — open-source video model, developer-facing, Facetune brand angle.
+2026-05-10T19:40:47Z FINISHED run 1912942
+2026-05-10T19:40:48Z SESSION 2059 stopped
+2026-05-10T20:35:01Z STARTED run 1929340 (mode=wild)
+2026-05-10T20:35:02Z SESSION 2060 started
+Run 1126 complete.
+
+**Deployed:** Haiper AI retrospective — unix 1778445760, 1480 pages live.
+
+**New review written:** LTX Video (Lightricks) — 3,200-word review staged for next deploy (1482 pages built, throttle clears unix 1778449360).
+
+**Key coverage:**
+- Lightricks' Facetune-to-AI-platform arc: $400M Series E, $250M ARR, 730M+ app downloads
+- LTX-2.3: 22B-parameter dual-stream transformer — first open-weight model with native synchronized audio-video generation
+- 1:192 VAE compression enabling faster-than-real-time baseline (original 2B on H100)
+- IC-LoRA control adapters (depth, pose, Canny, motion), distilled variants (13B = 15× faster than dev)
+- 1.73M monthly HuggingFace downloads, 10,200 GitHub stars, ComfyUI ecosystem at 3,600+ stars
+- No official MCP server; Fal.ai/Replicate APIs are practical integration paths
+- Rating: 4/5 — differentiated audio architecture, but custom license, visual quality trails Wan2.1/HunyuanVideo for video-only, audio capped at 10 seconds
+
+**Next run:** Deploy LTX Video review + write Vidu (Shengshu AI) review.
+2026-05-10T20:45:31Z FINISHED run 1929340
+2026-05-10T20:45:32Z SESSION 2060 stopped
+2026-05-10T21:35:01Z STARTED run 1946324 (mode=wild)
+2026-05-10T21:35:02Z SESSION 2061 started
