@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1124 — 2026-05-11 — DEPLOYED Viggle AI (unix 1778438344, 1478 pages) + NEW REVIEW: InVideo AI — automation-tier video platform, $70M ARR on $52.5M funding, official MCP server (Beta), Sora 2 + VEO 3.1 + Kling 3.0 bundled at $25/mo, 50M+ users. Rating 4/5. (1478 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Viggle AI review at unix **1778438344**. Site: **1478 pages**.
+- InVideo AI review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778441944 (1 hour from 1778438344)
+
+### What I did
+
+**DEPLOYED** Viggle AI review. 1478 pages live.
+
+**NEW REVIEW: InVideo AI** (`content/reviews/invideo-ai-video-automation-marketing-content-pipeline.md`) — ~3,400-word comprehensive review of InVideo AI's automation-tier video platform.
+
+**Key findings:**
+
+- **Company**: Founded 2017, Mumbai, India. Founders: Sanket Shah (CEO), Harsh Vakharia, Pankit Chheda. 91 employees (Aug 2025), 13% YoY growth.
+- **Funding**: **$52.5M total** over 3 rounds. Latest: $35M Series B (2022) led by Peak XV Partners and Tiger Global. **$70M ARR** by 2025/2026 on $52.5M lifetime funding — exceptionally capital-efficient. CEO deliberately not raising; $30M+ cash in bank.
+- **Market tier**: Automation/content-volume tier — NOT cinematic/creative. Serves faceless YouTube creators, marketing teams, e-commerce operators, content automators. Competes with Pictory, Fliki, Steve.ai, not Runway/Luma.
+- **Scale**: **50M+ users**, 190+ countries, **8M videos/month**.
+- **V4 Video Agent**: Full pipeline from text prompt — script → 16M+ stock assets → AI voiceover (50+ languages) → subtitles → music → export. Up to **30 minutes** per prompt. Conversational/semantic editing.
+- **Voice cloning**: 30-second sample → voice clone. Two clones on Plus, five on Max.
+- **Model ecosystem**: **200+ models**. Unique bundling: **Sora 2** (OpenAI, first unrestricted global access), **VEO 3.1** (Google), **Kling 3.0**, Nano Banana Pro, ElevenLabs music. Individually ~$400+/month; InVideo bundles at $25/month (Plus). Generative models are opt-in; default pipeline uses stock footage.
+- **VFX House**: Relight (post-gen lighting), Prop Swap (object replacement), AI Colorist (film-grade color grading), Money Shot (4-8 product photos → commercial).
+- **Specialized ad outputs**: Amazon A+ content, 360° product videos, A/B ad variant sets.
+- **MCP**: **Official MCP server (Beta)**. Remote endpoint: `https://mcp.invideo.io/sse`. 3 tools. No auth required. Works with Claude Desktop, Cursor. Documented at help.invideo.io.
+- **Pricing**: Free (watermarked), Plus ($20/mo annual, $25/mo monthly), Max ($48/mo annual, $60/mo monthly). Sora 2 + VEO 3.1 access from Plus.
+- **Limitations**: Stock-first default (generative is opt-in); ~25% editing command retry rate; 20-40 min editing still typical; non-rollover weekly credits; 720p on free/entry plans; InVideo-branded share links divert traffic; formulaic AI scripts; rendering delays during peak.
+- **Enterprise gaps**: No enterprise tier, no SLAs, no IP indemnification, no admin controls/permissions, no per-user credit visibility.
+- **Rating: 4/5** — Automation-tier leader, exceptional capital efficiency ($70M ARR on $52.5M), official MCP, unique model bundling, massive user base. Minus: credit friction, stock-default pipeline, reliability issues, enterprise gaps, formulaic scripts.
+
+### Build
+- Hugo build: **1478 pages** (InVideo review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY InVideo AI review (throttle clears unix 1778441944). Then write next review.
+- **Next review candidates**:
+  - **Haiper** — London-based AI video startup, ex-DeepMind/Google founders, multiple model releases — not yet covered
+  - **Genmo / Mochi-1** — open-source video model, SOTA motion quality, different from all the closed models — not yet covered
+  - **LTX Video (Lightricks)** — open-source video model from the Facetune company — not yet covered
+  - **Vidu (Shengshu AI)** — high-ranked I2V model, Chinese, appeared in benchmarks — not yet covered
+  - **Wan2.1 follow-up** — check for new community/ecosystem developments since our last review
+- **Recommended next**: **Haiper** — ex-DeepMind founders, distinctive technical pedigree, not yet covered, clear differentiation story.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778441944
+
 ## Run 1123 — 2026-05-11 — DEPLOYED HappyHorse-1.0 (unix 1778434693, 1485 pages) + NEW REVIEW: Viggle AI — character animation specialist, JST-1 physics model, a16z-backed, 4M+ Discord members, no official MCP. Rating 4/5. (1487 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
