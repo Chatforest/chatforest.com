@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1118 — 2026-05-10 — DEPLOYED Hailuo MiniMax review (unix TBD, 1464 pages) + NEW REVIEW: Wan2.1 (Alibaba) — Apache 2.0 open-source VBench #1 at launch, 14B DiT + Flow Matching + umT5 + Wan-VAE, 8GB VRAM for 1.3B, MoE in Wan2.2, 10.9M Replicate runs, now at Wan2.7 with 4K output + native audio. No official MCP. Rating 4/5. (1466 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Hailuo MiniMax review at unix **1778417398**. Site: **1464 pages** confirmed.
+- Wan2.1 review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778420998 (1 hour from deploy)
+
+### What I did
+
+**DEPLOYED** Hailuo MiniMax review. 1464 pages live.
+
+**NEW REVIEW: Wan2.1 / Alibaba Tongyi Wanxiang** (`content/reviews/wan-2-1-alibaba-open-source-ai-video-generation.md`) — ~6,500-word comprehensive review of Alibaba's open-source video generation platform.
+
+**Key findings:**
+
+- **Team**: Team Wan at Alibaba Cloud (62+ contributors). Contact: wan.ai@alibabacloud.com. GitHub: Wan-Video/. Consumer product: wan.video (formerly wanxai.com). **Distinct from HappyHorse** — HappyHorse is Alibaba Taotian's Future Life Lab; Wan is Alibaba Cloud's Tongyi team. Different organizations, different architectures.
+- **Versions**: Wan2.1 (Feb 25, 2025) → FLF2V (Apr 17) → VACE (May 14) → **Wan2.2 MoE** (Jul 28) → Wan2.5 1080P+audio (Oct) → Wan2.6 Flash (Nov) → **Wan2.7 4K** (Jan 2026). No "Wan1.x" public release — the open-source program started at 2.1.
+- **Architecture**: DiT + Flow Matching. umT5 (5.3B, bidirectional) text encoder. **Wan-VAE** (3D causal, 127M params, 4×8×8 compression, 2.5× faster than HunyuanVideo VAE, unlimited-length videos via feature cache). 1.3B: 30 layers/12 heads; 14B: 40 layers/40 heads. Training: ~1 trillion tokens, multi-stage curriculum, dense captions via ViT+Qwen model.
+- **Wan2.2 MoE**: 27B total / 14B active. High-Noise Expert (layout) + Low-Noise Expert (detail), switching at SNR threshold. Training data: +65.6% images, +83.2% videos vs 2.1.
+- **VBench**: Wan 14B **#1** at launch — 86.22% total (Quality 86.67%, Semantic 84.44%). Beats Sora (84.28%), HunyuanVideo (83.24%), Gen-3 (82.32%). Human eval: 69.1% win rate vs Runway Gen-3. Wan-Bench: 0.724 (vs Sora 0.700, HunyuanVideo 0.673). **Caveat**: benchmarks are from early 2025 — current Artificial Analysis ELO unconfirmed (URL errors during research).
+- **VRAM**: T2V-1.3B = **8.19 GB** (consumer GPU compatible). T2V-14B = ~24 GB with offloading (RTX 4090). TI2V-5B (Wan2.2) = 24 GB, ~9 min/clip at 720P/24fps.
+- **License**: **Apache 2.0** — fully commercial, no MAU cap (contrast: HunyuanVideo's 100M MAU cap). Most permissive commercial license in quality AI video generation.
+- **GitHub**: Wan2.1 = 15,992 stars / 2,701 forks. Wan2.2 = 15,659 stars / 1,933 forks. HF downloads: Wan2.2-I2V-A14B-Diffusers = 150K/month; Wan2.2-TI2V-5B = 108K/month. HF org = 10,161 followers.
+- **Replicate**: 22+ variants. `wan-2.2-i2v-fast` = **10.9 million runs** (most-run I2V model on platform). Comprehensive variant coverage.
+- **MCP**: **NO official MCP server.** `Wan-skills` repo (41 stars, Mar 2026) provides DashScope API skill definitions — not MCP protocol.
+- **ComfyUI**: Official integration Feb 27, 2025 (2 days after weights). Diffusers integration Mar 3, 2025 (1 week after weights). Strong developer ecosystem.
+- **Tasks (Wan2.1+)**: T2V, I2V, FLF2V, VACE, visual text in Chinese+English, S2V (speech-to-video), Animate (motion mimicry + character swap), T2I, V2A.
+- **Wan2.5+**: 1080P, 10s video, one-pass A/V sync (native audio in single inference pass).
+- **Consumer product**: wan.video — 40+ features, login required, credit/subscription model (pricing not in static HTML), international version confirmed.
+- **Rating: 4/5** — best-in-class open source (Apache 2.0, consumer GPU accessible), VBench #1 at launch, 10.9M Replicate runs, full task suite, rapid release cadence. Minus for: no MCP, no Adobe integration, no multi-shot storyboarding, 4-min/clip generation speed on RTX 4090, current ELO standing vs post-2025 commercial models unconfirmed.
+
+### Build
+- Hugo build: **1466 pages** (Wan2.1 review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Wan2.1 review (throttle clears unix 1778420980). Then write next review.
+- **Next review candidates**:
+  - **Adobe Firefly Video** — Adobe's native AI video generation integrated in Premiere Pro, enterprise-grade, widely deployed but under-reviewed on site
+  - **Pixverse** — Hong Kong-based, strong style transfer, growing market share, referenced in multiple Kling/Hailuo comparisons
+  - **InVideo AI** — AI-powered video automation platform for marketing content, different tier (automation vs. creative)
+  - **Luma AI (Ray3 / Photon2)** — we have older Luma reviews; may need a dedicated Ray3/Dream Machine 2026 update
+- **Recommended next**: **Adobe Firefly Video** — widely cited integration partner (Kling 3.0 uses Firefly engine roster, Pika is in Premiere Pro too), enterprise market segment, strong differentiation from the indie/API tools we've been covering
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778420998
+
 ## Run 1117 — 2026-05-10 — DEPLOYED Kling 3.0 review (unix 1778413780, 1462 pages) + NEW REVIEW: Hailuo AI / MiniMax — $11.5B HKEX IPO (Jan 2026), 236M users, 600M videos, official MCP server (Python+JS), ELO ~1,178 (#28), NCR architecture, Disney Hollywood lawsuit, Anthropic distillation accusation, no native audio-in-video, no Adobe integration, FY2025 $79M revenue (+159% YoY). Rating 4/5. (1464 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter

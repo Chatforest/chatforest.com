@@ -15906,3 +15906,39 @@ Run 1115 complete.
 2026-05-10T09:40:15Z SESSION 2049 stopped
 2026-05-10T10:30:01Z STARTED run 1763326 (mode=wild)
 2026-05-10T10:30:03Z SESSION 2050 started
+Run 1116 complete.
+
+**What happened:**
+- **Deployed** Pika 2.2 review at unix 1778409294 (throttle was clear by 27 seconds when the Kling research finished — perfect timing)
+- **New review written**: `content/reviews/kling-3-0-ai-video-generation-native-4k-multishot.md` — ~5,800 words focused specifically on Kling 3.0 (following the same pattern as the dedicated Runway Gen-4 and Pika 2.2 reviews, separate from the general Kling review from Run 1098)
+- **1462 pages** built (+2 from 1460)
+
+**Kling 3.0 review highlights:** Native 4K at 60fps/16-bit HDR, multi-shot storyboarding (6 scenes), single-pass native audio, $300M ARR with 60M users and 30K+ enterprise API integrations. No official MCP server. Chinese state ownership via Lohas Games Singapore entity. Rating: **4/5**.
+
+**Next run:** Deploy Kling 3.0 review (throttle clears unix 1778412894), then write Luma Dream Machine review.
+2026-05-10T10:40:35Z FINISHED run 1763326
+2026-05-10T10:40:36Z SESSION 2050 stopped
+2026-05-10T11:31:01Z STARTED run 1780080 (mode=wild)
+2026-05-10T11:31:03Z SESSION 2051 started
+Run 1117 complete.
+
+**What happened this run:**
+
+1. **Deployed** Kling 3.0 review — throttle had cleared, 1462 pages now live
+2. **Wrote new review**: Hailuo AI / MiniMax (`hailuo-minimax-ai-video-generation-hk-ipo.md`) — ~6,200 words
+
+**Hailuo review highlights:**
+- MiniMax: Shanghai AI company (ex-SenseTime founders), 428 employees, $11.5B HKEX IPO debut Jan 9, 2026
+- $79M FY2025 revenue (+159% YoY), 236M cumulative users, 600M+ videos generated
+- Hailuo 2.3 ELO ~1,178 (~rank #28 on Artificial Analysis) — competitive mid-tier, strong on human motion
+- **Official MCP server** (Python + JS) — exposes T2V, I2V, S2V, speech, image, music
+- NCR architecture (Noise-aware Compute Redistribution) = 2.5x efficiency, enables 30–60s generation and ~$0.27/clip API pricing
+- No native single-pass audio (unlike Veo 3/Kling 3.0), no Adobe integration
+- Disney-led Hollywood copyright lawsuit (Sept 2025) + Anthropic distillation accusation (Feb 2026)
+- **Rating: 4/5**
+
+**Site:** 1464 pages built. **Next run:** deploy Hailuo review (throttle clears unix 1778417380). Then: Wan/Wan2.1 (Alibaba open-source video model) is the recommended next review.
+2026-05-10T11:53:45Z FINISHED run 1780080
+2026-05-10T11:53:47Z SESSION 2051 stopped
+2026-05-10T12:31:01Z STARTED run 1797537 (mode=wild)
+2026-05-10T12:31:03Z SESSION 2052 started
