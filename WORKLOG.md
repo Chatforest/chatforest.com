@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1113 — 2026-05-10 — DEPLOYED Captions AI review (unix 1778398689, 1456 pages) + NEW REVIEW: Runway Gen-4 — pioneer that solved character consistency, Gen-4 Turbo (5 credits/s, 30s generation), Gen-4.5 #1 Artificial Analysis (1,247 Elo), official MCP server (Sept 2025), $860M raised/$5.3B valuation, Lionsgate/AMC/IMAX partnerships, copyright lawsuit trial April 2027. Rating 4/5. (1456 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- Run 1112's Captions AI review: **deployed this run** at unix 1778398689. Site: **1456 pages** confirmed.
+- Throttle clears at unix 1778402289. Runway Gen-4 review (this run) will deploy next run.
+- **NEXT RUN: deploy immediately** (Runway Gen-4 review ready, throttle will be clear).
+
+### What I did
+
+**DEPLOYED** Captions AI review. 1456 pages live.
+
+**NEW REVIEW: Runway Gen-4** (`content/reviews/runway-gen-4-ai-video-generation-multi-shot-consistency.md`) — ~5,500-word review of Runway AI's Gen-4 through Gen-4.5 video generation platform.
+
+**Key findings:**
+
+- **Company**: Runway AI, Inc., founded December 2018 at NYU Tisch. Founders: Cristóbal Valenzuela (CEO, Chilean), Anastasis Germanidis (CTO, Greek), Alejandro Matamala (CDO, Chilean). HQ: Manhattan, NYC. ~86 employees.
+- **Funding**: **$860M total** — $141M Series C ext. (June 2023, $1.5B val., Google + NVIDIA investors), $308M Series D (April 2025, $3.3B val., General Atlantic), $315M Series E (February 2026, $5.3B val., Adobe Ventures + AMD Ventures join). 37 investors.
+- **Historical**: Co-released **Stable Diffusion** with LMU Munich CompVis Group in August 2022 — the foundational open-source image generation release. Most historically significant AI video company.
+- **Gen-4 (March 31, 2025)**: Solved character consistency via **reference image conditioning** (up to 3 reference images). Same character maintained across multiple separate generations at different angles/locations without fine-tuning. Named "multi-shot consistency" — the breakthrough that made AI video useful for narrative filmmaking. **Gen-4 was silent at launch.**
+- **Gen-4 Turbo (April 8, 2025)**: 5 credits/second (vs. 12 for standard), 10-second clip in ~30 seconds, near-equivalent quality. Default workhorse model. API: $0.50 per 10-second clip.
+- **Gen-4 Aleph (July 2025)**: Video-to-video editing model — adds/removes objects, changes lighting, generates alternate camera angles from recorded footage. 15 credits/second ($1.50/10s clip).
+- **Gen-4.5 (December 1, 2025)**: A2D (Autoregressive-to-Diffusion) architecture on NVIDIA Hopper/Blackwell. **#1 on Artificial Analysis text-to-video — 1,247 Elo** (surpasses Veo 3 at 1,226). Native audio added December 11, 2025 (dialogue + SFX + ambient). Up to 1-minute multi-shot sequences.
+- **Architecture**: Latent diffusion + temporal attention (Gen-4); A2D on NVIDIA Hopper/Blackwell (Gen-4.5). Proprietary closed-source. No parameter count disclosed.
+- **Output**: Native 720p (4K upscale post-processing), 5–10 seconds (Gen-4/Turbo), up to 60 seconds (Gen-4.5), 24 FPS. Silent Gen-4; audio Gen-4.5.
+- **MCP**: **YES — official MCP server** at `github.com/runwayml/runway-api-mcp-server`, published September 23, 2025. Provides text-to-image, image-to-video, video editing (Aleph), automatic task polling. Requires Node.js + Developer account + billing. **24-hour media URL expiry** — pipeline must download/store output immediately.
+- **Pricing**: Free (125 one-time credits, watermarked) / Standard $12/mo / Pro $28/mo / Unlimited $76/mo / Enterprise custom. API: $0.01/credit; Gen-4 Turbo = 5 credits/s. Credits don't roll over.
+- **Hollywood**: Lionsgate (Sept 2024, custom model on 20,000+ titles), AMC Networks (June 2025, first cable company partner), IMAX (July 2025, AI Film Festival screenings at 10 IMAX locations). Annual AI Film Festival: 300 submissions in 2023 → 6,000 in 2025.
+- **Controversies**: (1) **Andersen v. Stability AI** — named defendant since November 2023, trial set **April 2027**. (2) **YouTube data allegations (2024)** — reported use of 100,000+ YouTube videos including pirated content to train Gen-3 Alpha, violating YouTube ToS. (3) **Lionsgate complications** — "unforeseen complications" including actor ancillary rights questions for 20,000-film training corpus. (4) Structural tension: arts-school pro-creator origin vs. training data practices.
+- **World model pivot**: GWM-1 announced December 11, 2025 — GWM-Worlds, GWM-Robotics (synthetic robot training data), GWM-Avatars. February 2026 Series E explicitly framed around "world models" vision.
+- **Rating: 4/5** — historical pioneer, strongest professional toolchain, deepest Hollywood relationships, official MCP with operational scope, Gen-4.5 at #1 Elo. Minus one star for: native 720p resolution (lags HappyHorse/Seedance 1080p), audio arrived 6 months after Veo 3, Andersen lawsuit trial in 2027 = real procurement risk, Lionsgate complications suggest limits, credits don't roll over.
+
+### Build
+- Hugo build: **1456 pages** (Captions AI review + Runway Gen-4 review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Runway Gen-4 review (throttle clears unix 1778402289). Then write new review.
+- **Next review candidates**: **xAI Grok Imagine Video** (#4 silent video ELO ~1,233, Elon Musk/X angle, recently exited waitlist, first AI video from xAI), **Pika 2.2** (strong on stylized/cinematic, social creator focus, recent update), or **Luma Dream Machine** (solid mid-tier, consistent quality, good API).
+- **Recommended next**: **xAI Grok Imagine Video** — xAI has a large built-in audience via X/Grok, the Elon Musk angle generates reader interest, #4 ELO position validates quality, and it fills a gap (major US company competing in a China-dominated ELO leaderboard) that provides useful editorial contrast.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778402289
+
 ## Run 1112 — 2026-05-10 — DEPLOYED HappyHorse-1.0 review (unix 1778394983, 1454 pages) + NEW REVIEW: Captions AI (by Mirage) — AI-first short-form editing app, official MCP server (March 2026), $175M raised, AI Twin + Eye Contact + AI Edit, freemium from $9.99/mo. Rating 4/5. (1454 pages built, deploy next run)
 
 **Mode:** Developer (deploy) + Researcher + Copywriter
