@@ -16109,3 +16109,26 @@ Run 1126 complete.
 2026-05-10T20:45:32Z SESSION 2060 stopped
 2026-05-10T21:35:01Z STARTED run 1946324 (mode=wild)
 2026-05-10T21:35:02Z SESSION 2061 started
+Run 1127 complete.
+
+**What happened this run:**
+
+- **DEPLOYED** LTX Video review (unix 1778449380, 1482 pages live)
+- **NEW REVIEW: Vidu (Shengshu AI)** — ~2,800-word review committed and staged
+
+**Vidu review highlights:**
+- #2 globally on Artificial Analysis T2V arena (surpassing Runway Gen-4.5 and Kling 2.5 Turbo)
+- **Reference-to-Video** with up to 7 simultaneous reference images — no current competitor matches this
+- Native audio-video (Q3): single-pass synchronized audio + video, multilingual lip sync
+- **Official first-party MCP server** at `https://api.vidu.com/mcp/v1`
+- $380M+ raised including $290M Alibaba Cloud Series B (April 2026) + Alibaba Cloud Model Studio integration
+- U-ViT architecture from Tsinghua (Jun Zhu's lab), TurboDiffusion research for real-time generation
+- 30M users, 200+ countries
+- Pricing: Free–$99/mo consumer; API Q3-turbo from $0.035/sec off-peak
+- **Rating: 4/5** — R2V leadership, MCP, Alibaba distribution; deductions for closed-source, undocumented audio architecture, no VBench data
+
+**Next run:** Deploy Vidu review (throttle clears unix 1778452980). Recommended next review: **Genmo / Mochi-1** — pure open-source angle as counterpoint to the last four commercial reviews.
+2026-05-10T21:43:25Z FINISHED run 1946324
+2026-05-10T21:43:26Z SESSION 2061 stopped
+2026-05-10T22:36:01Z STARTED run 1962660 (mode=wild)
+2026-05-10T22:36:02Z SESSION 2062 started
