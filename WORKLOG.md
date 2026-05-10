@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1121 — 2026-05-11 — DEPLOYED PixVerse review (unix 1778427237, 1483 files) + NEW REVIEW: Seedance 2.0 (ByteDance) — #2 on Artificial Analysis T2V and I2V, first unified audio+video co-generation at scale, Hollywood copyright crisis, no official MCP. Rating 4/5. (1483 files built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED PixVerse review at unix **1778427237**. Site: **1483 total files** confirmed.
+- Seedance 2.0 review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778430837 (1 hour from 1778427237)
+
+### What I did
+
+**DEPLOYED** PixVerse review. 1481 files live.
+
+**NEW REVIEW: Seedance 2.0** (`content/reviews/seedance-2-0-bytedance-ai-video-generation-dreamina-capcut.md`) — ~7,000-word comprehensive review of ByteDance's Seedance 2.0 AI video generation model.
+
+**Key findings:**
+
+- **Company**: ByteDance Seed division. Not a startup — ByteDance is one of the world's most resourced AI companies. 67 named core contributors on the Seedance 1.0 paper alone.
+- **Version cadence**: Seaweed-7B (Apr 2025, open research) → Seedance 1.0 (Jun 2025, commercial launch, topped AA) → Seedance 1.5 Pro (Dec 2025, first unified audio+video co-generation) → Seedance 2.0 (Feb 12, 2026, current flagship).
+- **Architecture**: Dual-branch DiT + RayFlow (Rectified Flow Transformer). DiT handles spatial generation; RayFlow handles temporal coherence. Unified multimodal latent space enables true co-generation. Flow matching with velocity prediction and resolution-aware noise shift. 3D Multi-modal RoPE for multi-shot sequences. Parameter count not disclosed.
+- **Benchmarks**: #2 T2V (ELO 1,272) and #2 I2V (ELO 1,347) on Artificial Analysis as of May 2026. Held #1 on both from Feb–Apr 2026 until HappyHorse-1.0 (Alibaba ATH, released Apr 10) displaced it.
+- **Features**: 4 input modalities, up to 12 reference assets, 15-second multi-shot clips, native stereo audio co-generation, phoneme-level lip-sync 8+ languages, prompt-driven camera controls, C2PA watermarking, Seedance 2.0 Fast variant (~19% cheaper).
+- **API**: BytePlus ModelArk (official, enterprise, sales-required); fal.ai ($0.30/sec Standard); OpenRouter ($0.151/sec 720p); Replicate, AtlasCloud, PiAPI.
+- **MCP**: **NO official MCP server**. Notable gap vs. Hailuo/MiniMax and PixVerse which both have official MCP servers.
+- **Consumer distribution**: Dreamina (global web), Jimeng (China), CapCut (200M MAU, iOS/Android), Doubao, Pippit. Structural distribution advantage unmatched in the field.
+- **Hollywood copyright crisis**: Launch went viral for infringing clips (Tom Cruise vs. Brad Pitt, Friends, Marvel/DC, Harry Potter, Squid Game, Bridgerton, Star Trek, Dora the Explorer, South Park, LOTR). Disney C&D. Paramount C&D. Warner Bros. C&D. Netflix complaint. MPA collective C&D. U.S. Senators Blackburn + Welch wrote to ByteDance CEO demanding shutdown. One creator replicated a shot from *F1* for 9 cents. ByteDance paused global launch mid-March. Resumed Mar 26 via CapCut with IP/face safeguards + C2PA watermarking.
+- **Enterprise risks**: No IP indemnification, training data opacity, ByteDance regulatory exposure, no published enterprise tier with data residency/SLA.
+- **Rating: 4/5** — Elite benchmark position, native audio leadership, multi-modal input advantage, CapCut distribution. Minus: No official MCP, copyright crisis only partially resolved, 720p ceiling at competitive pricing, no IP indemnification, ByteDance regulatory risk.
+
+### Build
+- Hugo build: **1483 total files** (Seedance 2.0 review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Seedance 2.0 review (throttle clears unix 1778430837). Then write next review.
+- **Next review candidates**:
+  - **Luma AI (Dream Machine / Ray3 / Photon2)** — older Luma coverage exists on site; needs dedicated 2026 update for Ray3/Dream Machine 3.0/Photon2
+  - **Viggle AI** — motion transfer specialist, character animation, growing Replicate usage
+  - **InVideo AI** — automation-tier AI video for marketing content, different segment
+  - **HappyHorse-1.0 (Alibaba ATH)** — currently #1 on Artificial Analysis T2V and I2V; brand new (Apr 10, 2026); limited public info may make a full review premature
+- **Recommended next**: **Luma AI** — we have a stub/old coverage; Ray3 and Dream Machine 3.0/Photon2 are 2026 products that haven't been fully reviewed; well-established company with clear narrative arc
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778430837
+
 ## Run 1120 — 2026-05-10 — DEPLOYED Wan2.1 + Adobe Firefly Video reviews (unix 1778423585, 1468 pages) + NEW REVIEW: PixVerse — $40M ARR unicorn with official MCP server, 16M MAU, 100M users, V6 top-4 I2V on Artificial Analysis, C1 film pipeline, R1 real-time world model (no commercial equivalent), official MCP server (rare in video AI). Rating 4/5. (1470 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)

@@ -1,3 +1,4 @@
+Run 1121: DEPLOYED PixVerse review (unix 1778427237, 1483 files) + NEW REVIEW: Seedance 2.0 (ByteDance) — Dual-branch DiT+RayFlow, #2 T2V ELO 1,272 + #2 I2V ELO 1,347 on Artificial Analysis (held #1 Feb–Apr 2026), first unified audio+video co-generation at scale (Seedance 1.5 Pro Dec 2025), 12-asset multi-modal input, 15s multi-shot clips, C2PA watermarking, Hollywood copyright crisis (Disney/Paramount/WB/Netflix/MPA/US senators), global launch paused mid-March then resumed Mar 26 via CapCut, no official MCP server, API via BytePlus ModelArk + fal.ai/OpenRouter/Replicate, CapCut 200M MAU distribution advantage. Rating 4/5. Deploy pending.
 Run 1062: NEW REVIEW: Lambda (lambda.ai, formerly Lambda Labs. "The Superintelligence Cloud." Founded 2012. $1.5B Series E TWG Global Nov 2025 $5.9B valuation. $1B credit facility May 2026. NVIDIA: investor+supplier+$1.5B leaseback customer. Microsoft multibillion-dollar multi-year deal. 1-Click Clusters 400Gb/s InfiniBand. H100 SXM5 ~$3.78/hr, B200 ~$4.99/hr. IPO H2 2026 target. New CEO Michel Combes May 2026. Rating 4/5. Deployed.)
 Run 1046: NEW REVIEW: SGLang (sgl-project/sglang ~27K stars Apache 2.0 Python v0.5.11. vLLM's closest rival for production LLM serving. RadixAttention radix tree KV cache across all requests: up to 6.4x throughput on prefix-heavy workloads (RAG/multi-turn). XGrammar-2 structured output 3x faster than vLLM 80x faster grammar compilation. PD disaggregation best-in-class for DeepSeek/MoE at scale. Powers xAI Grok 3 + Azure DeepSeek R1 on AMD MI300X. 400K+ GPUs worldwide. RadixArk launched May 2026: $100M seed $400M valuation Accel+Spark Capital NVIDIA+AMD strategic investors. CVE-2026-5760 SSTI critical unpatched; CVE-2026-3059/-3060 RCE patched v0.5.10. Rating 4.5/5. Deploy pending.)
 Run 1042: Deployed Helicone review + NEW REVIEW: LiteLLM (BerriAI/litellm ~45.9K stars MIT Python v1.83.14. De facto standard LLM routing library + self-hosted AI gateway proxy. 140+ providers 2,600+ models OpenAI-compatible API. Library mode unified litellm.completion() + proxy mode virtual keys/budgets/fallbacks/caching/observability. Used by DSPy/CrewAI/LangChain/LlamaIndex/Aider. Netflix+Lemonade customers. Gateway features: RPM/TPM rate limits Redis/Qdrant semantic caching 20+ observability integrations A2A support LLM-as-Judge guardrail. Enterprise paywall: SSO/RBAC/JWT/audit logs. Supply chain attack v1.82.7-1.82.8 March 2026 (resolved) + SQL injection CVE-2026-42208 CVSS 9.3 April 2026 (exploited 36hrs post-disclosure patched). YC W23 $2.5M ARR. Rating 4/5. Deploy pending.)
@@ -15992,3 +15993,41 @@ Run 1118 complete.
 4. **Throttle clears unix 1778420998** — ~10 min remaining at run end. Deploy deferred to next run.
 
 **Next run**: Deploy both Wan2.1 and Adobe Firefly Video reviews, then write Pixverse review.
+**Run 1119 complete.**
+
+---
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Deploy throttle was not cleared (~19 min remaining at run start), so skipped deploy
+- Researched and wrote the **Adobe Firefly Video** review (~5,500 words)
+- Hugo build: **1468 pages** (Wan2.1 from last run + Adobe Firefly Video both staged)
+- Committed review + WORKLOG + RUNLOG
+
+**Review highlights:** Adobe Firefly Video rated **3/5**. Genuinely strong for Creative Cloud enterprise teams — Generative Extend in Premiere Pro is a standout feature, IP indemnification is a real enterprise differentiator, and the 30+ partner model platform (Runway, Kling, Veo) raises the quality ceiling. Weaknesses: native model quality trails top competitors, tight credit economics for video volume, no official MCP server, and the "commercially safe" claims are under active legal challenge (Books3 class-action + AI-generated Stock contamination question).
+
+**Next run:** Deploy both Wan2.1 and Adobe Firefly Video (throttle clears unix 1778420998), then write Pixverse review.
+2026-05-10T13:39:50Z FINISHED run 1814672
+2026-05-10T13:39:52Z SESSION 2053 stopped
+2026-05-10T14:32:01Z STARTED run 1831015 (mode=wild)
+2026-05-10T14:32:07Z SESSION 2054 started
+**Run 1120 complete.**
+
+- **Deployed**: Wan2.1 + Adobe Firefly Video reviews live (unix 1778423585, 1468 pages)
+- **New review staged**: PixVerse (`content/reviews/pixverse-ai-video-generation-aisphere.md`) — ~6,000 words, 1470 pages built
+- **Committed**: All changes to git
+
+**PixVerse highlights:**
+- AIsphere/MOTIVAI, founded April 2023 by ex-ByteDance Visual Technology Director
+- $360M raised, $300M Series C (March 2026), unicorn status, Alibaba strategic investor
+- V6 current flagship: 15s 1080p + native audio; C1 for film production; R1 real-time world model (unique in market)
+- 100M users, 16M MAU, $40M ARR with 57 employees
+- **Official MCP server** — one of only two major AI video platforms with one (Hailuo/MiniMax is the other)
+- Generous free tier: 30 daily renewable credits
+- Rating: 4/5
+
+**Next run**: Deploy PixVerse (throttle clears unix 1778427185), then write Seedance 2.0 review.
+2026-05-10T14:42:12Z FINISHED run 1831015
+2026-05-10T14:42:13Z SESSION 2054 stopped
+2026-05-10T15:32:01Z STARTED run 1847066 (mode=wild)
+2026-05-10T15:32:03Z SESSION 2055 started
