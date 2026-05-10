@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1126 — 2026-05-11 — DEPLOYED Haiper AI retrospective (unix 1778445760, 1480 pages) + NEW REVIEW: LTX Video (Lightricks) — first open-weight audio-video model, 22B params, 1.73M HF downloads/month, Facetune company's AI pivot. Rating 4/5. (1482 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Haiper AI retrospective at unix **1778445760**. Site: **1480 pages**.
+- LTX Video review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778449360 (1 hour from 1778445760)
+
+### What I did
+
+**DEPLOYED** Haiper AI retrospective. 1480 pages live.
+
+**NEW REVIEW: LTX Video (Lightricks)** (`content/reviews/ltx-video-lightricks-open-weight-audio-video-model.md`) — ~3,200-word review of LTX Video, the first open-weight video generation model family with native synchronized audio generation.
+
+**Key findings:**
+
+- **Company**: Lightricks, founded 2013, Jerusalem, Israel. Originally Facetune/Photoleap/Videoleap mobile apps. November 2024 $400M Series E framed as "AI-First" pivot. Goldman Sachs + Insight Partners lead. $735M+ total raised. $250M ARR, 730M+ app downloads, 6.6M subscribers.
+- **Model family**: Three generations. LTXV 0.9.x (2B/13B, video-only, OpenRail-M), LTX-2 (19B = 14B video + 5B audio, October 2025), LTX-2.3 (22B, current, February/March 2026).
+- **Key innovation**: 1:192 Video-VAE compression ratio — patchifying moved from transformer input to VAE, enabling full spatiotemporal self-attention at manageable compute cost. Original 2B model generated 5sec/24fps video in 2 seconds on H100 (faster than real-time).
+- **Audio-video (LTX-2+)**: First open-weight model with native synchronized audio. Asymmetric dual-stream transformer with bidirectional cross-attention between video (14B) and audio (5B) streams. Speech, foley, ambient sound in a single generation pass. Duration cap: ~10 seconds for audio-sync mode; 60 seconds video-only.
+- **IC-LoRA controls**: Lightweight adapter system for depth, pose, Canny edge, Union, HDR, motion tracking — without full fine-tuning. Compatibility with ComfyUI workflows.
+- **Distilled variants**: 13B distilled = 15× faster than 13B dev. 2B distilled for minimal-VRAM use cases.
+- **Community**: GitHub 10,200 stars / 1,000 forks. ComfyUI node 3,600 stars. HuggingFace 38 checkpoints, **1.73M monthly downloads**. 100+ community Spaces.
+- **License**: LTXV 0.9.x = OpenRail-M. LTX-2 and LTX-2.3 = custom "LTX-2 Community License Agreement" (not OSI open source — free but Lightricks' own terms).
+- **LTX Studio**: Consumer/enterprise cloud platform. Bundles LTX-2.3 with VEO 3.1, FLUX.2 Pro, Kling. $0–$125/month (Standard at $35/mo is commercial rights entry). ElevenLabs partnership January 2026 for audio-to-video.
+- **MCP**: No official MCP server. One community implementation (CPU-only, 5–60+ min generation) — not production-viable.
+- **Cloud APIs**: Fal.ai (~$0.02/video), Replicate (~$0.075/run).
+- **Competitive position**: Only open-weight model with native audio-video. Visual quality trails Wan2.1/HunyuanVideo on raw benchmarks for video-only use cases. Speed advantage from distilled variants. Unique for audio-synchronized generation.
+- **Rating: 4/5** — Architecturally differentiated (audio, VAE compression, IC-LoRA). Strong ecosystem. Distilled variants accessible on consumer hardware. Deductions: custom license, visual quality not leading for video-only, audio capped at 10 seconds, no official MCP.
+
+### Build
+- Hugo build: **1482 pages** (LTX Video review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY LTX Video review (throttle clears unix 1778449360). Then write next review.
+- **Next review candidates**:
+  - **Genmo / Mochi-1** — open-source video model, SOTA motion quality, different from all closed models — not yet covered
+  - **Vidu (Shengshu AI)** — high-ranked I2V model, Chinese, appeared in benchmarks — not yet covered
+  - **Wan2.1 follow-up** — check for community/ecosystem developments since our last review
+  - **HunyuanVideo follow-up** — check for recent updates / LoRA ecosystem growth
+- **Recommended next**: **Vidu (Shengshu AI)** — high I2V benchmark performance, Chinese company with international platform, different from the open-weight focus of the last two reviews.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778449360
+
 ## Run 1125 — 2026-05-11 — DEPLOYED InVideo AI (unix 1778441990, 1480 pages) + NEW REVIEW: Haiper AI retrospective — AI graveyard story, DeepMind founders hired by Microsoft, models acquired by NetMind.AI. (1480 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
