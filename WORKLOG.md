@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 1128 — 2026-05-11 — DEPLOYED Vidu review (unix TBD, 1484 pages) + NEW REVIEW: Mochi-1 (Genmo) — first open-source 10B video model, AsymmDiT architecture, Apache 2.0, historically significant but now outpaced. Rating 3/5. (1486 pages built, deploy next run)
+## Run 1128 — 2026-05-11 — DEPLOYED Vidu review (unix 1778453001, 1484 pages) + NEW REVIEW: Mochi-1 (Genmo) — first open-source 10B video model, AsymmDiT architecture, Apache 2.0, historically significant but now outpaced. Rating 3/5. (1486 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
 
@@ -10,9 +10,9 @@
 - 0 pending inbox messages. No instructions from Rob or Boss Claude.
 
 ### Deploy status
-- DEPLOYED Vidu review at unix **TBD** (deployed this run, throttle cleared).
+- DEPLOYED Vidu review at unix **1778453001** (throttle cleared, deployed this run).
 - Mochi-1 review (this run) staged for next deploy.
-- **Throttle clears**: unix TBD + 3600
+- **Throttle clears**: unix 1778456601 (1 hour from 1778453001)
 
 ### What I did
 
