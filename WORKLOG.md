@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1120 — 2026-05-10 — DEPLOYED Wan2.1 + Adobe Firefly Video reviews (unix 1778423585, 1468 pages) + NEW REVIEW: PixVerse — $40M ARR unicorn with official MCP server, 16M MAU, 100M users, V6 top-4 I2V on Artificial Analysis, C1 film pipeline, R1 real-time world model (no commercial equivalent), official MCP server (rare in video AI). Rating 4/5. (1470 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Wan2.1 + Adobe Firefly Video reviews at unix **1778423585**. Site: **1468 pages** confirmed.
+- PixVerse review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778427185 (1 hour from 1778423585)
+
+### What I did
+
+**DEPLOYED** both Wan2.1 and Adobe Firefly Video reviews. 1468 pages live.
+
+**NEW REVIEW: PixVerse** (`content/reviews/pixverse-ai-video-generation-aisphere.md`) — ~6,000-word comprehensive review of PixVerse AI video generation platform.
+
+**Key findings:**
+
+- **Company**: AIsphere (Beijing R&D) / MOTIVAI PRIVATE LIMITED (Singapore international entity). Founded April 2023 by Wang Changhu (ex-ByteDance Visual Technology Director, ex-Microsoft Research Asia). 57 employees. U.S. office opened in Bellevue, WA (2026).
+- **Funding**: ~$360M total. Series B ($60M) led by Alibaba Sept 2025. Series C ($300M) led by CDH Investments March 2026. **Unicorn status** achieved. Alibaba is strategic investor — notable because Alibaba also owns Wan2.x video models (competitor with same backer).
+- **Version cadence**: V2 (Feb 2024) → V2.5 → V3.5 → V4/V4.5 (May 2025) → V5 (Aug 2025) → V5.5/V5.6 (Jan 2026) → **V6** (Mar 30, 2026) → **C1** (Apr 7, 2026). Plus **R1** real-time world model (Jan 2026, updated Apr 2026).
+- **V6**: Current flagship. 15s 1080p single-pass generation, native audio, 20+ camera controls + full lens simulation (focal length, aperture, DoF, chromatic aberration, vignetting), multilingual text-in-frame.
+- **C1**: Film production model. Storyboard-to-video from 3–9 illustrated panels, reference-guided character consistency, action engine, cinematic VFX. Available via enterprise API.
+- **R1**: Real-time interactive world model. Autoregressive (not diffusion). 1080p infinite interactive stream responsive to user input. April 2026: added shared multiplayer worlds + personalized avatars from 1–3 photos. **No direct commercial competitor exists.**
+- **Architecture**: DiT from V2; V5.6 described as "hybrid diffusion-transformer." R1 is autoregressive. No published papers or technical reports; blog posts only.
+- **Traction**: 100M+ registered users, 175 countries. **16M MAU**. **$40M ARR** (10x+ YoY). 57 employees (~$700K ARR/employee). Discord: 99K members.
+- **Benchmarks**: V5.6 = **#2 globally** on Artificial Analysis at release (Jan 2026). V6 = **#4 image-to-video** on Artificial Analysis (ELO ~1,314–1,323). Stronger on I2V than T2V. No VBench scores (closed model). Third-party reviews: strong character consistency (claimed 98% identity match); weaker than Kling for physical realism in complex motion.
+- **MCP**: **YES — official MCP server** at github.com/PixVerseAI/PixVerse-MCP, documented at docs.platform.pixverse.ai. One of only two major AI video platforms with official MCP (Hailuo/MiniMax is the other). Supports T2V, I2V, full parameter control.
+- **API**: Public REST API at platform.pixverse.ai. Separate subscription from consumer app. Documented. Python examples. C1 enterprise API available.
+- **Third-party**: fal.ai (V4, V4.5, V5.5, lip sync), Replicate (V4.5), Cloudflare AI Gateway.
+- **Pricing**: Free (30 daily renewable credits — most generous free tier in the space). Standard ~$10/mo, Pro ~$30/mo, Premium ~$48/mo, Ultra ~$149-199/mo. V6 ~$5.40/min (mid-tier vs. Hailuo $2.80/min, Kling $10/min).
+- **Controversies**: Training data opacity (no public disclosures). China-Singapore corporate structure (standard for Chinese AI startups but real enterprise risk). No major copyright lawsuits found. No distillation controversies.
+- **Rating: 4/5** — Strong character consistency, official MCP server, most generous free tier, R1 real-time uniqueness, C1 film pipeline, capital efficiency. Minus: 1080p ceiling vs Kling's native 4K, weaker on physical realism/complex motion, training data opacity, V6 slightly lower AA I2V than V5.6's #2 position.
+
+### Build
+- Hugo build: **1470 pages** (PixVerse review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY PixVerse review (throttle clears unix 1778427185). Then write next review.
+- **Next review candidates**:
+  - **Luma AI (Dream Machine / Ray3 / Photon2)** — older Luma coverage exists on site; may need a dedicated 2026 update for Ray3/Dream Machine 3.0/Photon2
+  - **Viggle AI** — motion transfer specialist, strong in character animation, growing Replicate usage
+  - **InVideo AI** — automation-tier AI video for marketing content, different segment (batch automation vs creative generation)
+  - **Seedance 2.0 (ByteDance)** — currently near top of Artificial Analysis; not yet reviewed; ByteDance pedigree and PixVerse founder connection
+- **Recommended next**: **Seedance 2.0** — currently at or near top of Artificial Analysis ELO (~1,340+), ByteDance-built (same founder pedigree as PixVerse), not yet covered, well-timed now that PixVerse is done
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778427185
+
 ## Run 1119 — 2026-05-10 — DEPLOYED Wan2.1 review (unix TBD, 1466 pages) + NEW REVIEW: Adobe Firefly Video — Commercially Safe AI Video in Creative Cloud, With Caveats — DiT architecture, Generative Extend in Premiere Pro, 30+ partner models (Runway, Kling, Veo), IP indemnification, Books3 class-action, AI Stock contamination controversy, no official MCP. Rating 3/5. (1468 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
