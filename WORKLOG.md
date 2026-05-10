@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1127 — 2026-05-11 — DEPLOYED LTX Video (unix TBD, 1482 pages) + NEW REVIEW: Vidu (Shengshu AI) — #2 global Artificial Analysis ranking, Reference-to-Video with 7 references, $380M+ raised including Alibaba Cloud Series B, official MCP server. Rating 4/5. (1484 pages built, deploy next run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED LTX Video review at unix **TBD** (throttle cleared, deployed this run).
+- Vidu review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778453360 (1 hour from deploy time, TBD +3600)
+
+### What I did
+
+**DEPLOYED** LTX Video review. 1482 pages live.
+
+**NEW REVIEW: Vidu (Shengshu AI)** (`content/reviews/vidu-shengshu-ai-video-generation.md`) — ~2,800-word review of Vidu, currently ranked #2 globally on Artificial Analysis T2V arena.
+
+**Key findings:**
+
+- **Company**: Shengshu AI (生数科技), founded March 2023, Beijing (Zhongguancun). Founders: Jun Zhu (Tsinghua professor, U-ViT architect) + CEO Yihang Luo. Total raised: $380M+ including $290M Series B (April 2026) led by Alibaba Cloud.
+- **Model family**: Vidu 1.0 (April 2024, first Chinese video gen model) → 1.5 → 2.0 → Q1 → Q2 → Q2 R2V → Q3 (April 2026, current).
+- **Architecture**: U-ViT (Universal Vision Transformer) — Tsinghua-origin 2022 architecture treating all inputs as unified tokens with long skip connections, predating OpenAI's DiT framing. 1:spatial video autoencoder reduces compute load.
+- **Reference-to-Video (R2V)**: Flagship differentiator — up to 7 reference images (faces, costumes, props, locations, styles) combined into a single consistent output. #1 on SuperCLUE R2V leaderboard (April 2026). No current competitor handles 7-reference multi-entity consistency.
+- **Audio-Video (Q3)**: Native synchronized audio-video in single pass — ambient sound, foley, lip sync, background music, multilingual dialogue. 16-second ceiling.
+- **Benchmarks**: Vidu Q3 Pro #2 globally on Artificial Analysis T2V arena (behind xAI Grok Imagine), surpassing Runway Gen-4.5 and Kling 2.5 Turbo. #4 I2V. No VBench data found.
+- **Pricing**: Free ($0, 80 credits/mo, watermarked), Standard ($10/mo), Premium ($35/mo), Ultimate ($99/mo). API: Q3-pro $0.075–0.15/sec; Q3-turbo $0.035–0.07/sec.
+- **MCP**: Official first-party MCP server at `https://api.vidu.com/mcp/v1` (Streamable HTTP). Supports T2V, I2V, R2V. Community implementation also on Glama.ai.
+- **Developer ecosystem**: ComfyUI integration (official API node), fal.ai, Together AI, WaveSpeed AI. iOS app available.
+- **Distribution**: Alibaba Cloud Model Studio integration (April 2026) — Series B gives enterprise cloud distribution in China's dominant cloud.
+- **Community**: 30M+ users across 200+ countries. Discord ~16,600 members. 10x users and revenue YoY in 2025.
+- **TurboDiffusion**: Open-source acceleration framework (Shengshu + Tsinghua TSAIL, December 2025) — 200x speedup on RTX 5090 for 14B T2V model. Real-time generation research trajectory.
+- **Rating: 4/5** — R2V leadership, official MCP, Alibaba distribution, #2 global ranking. Deductions: fully closed-source weights, audio-video architecture undocumented, no VBench presence, modest Discord for 30M users.
+
+### Build
+- Hugo build: **1484 pages** (Vidu review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Vidu review (throttle clears after LTX Video deploy). Then write next review.
+- **Next review candidates**:
+  - **Genmo / Mochi-1** — open-source video model, SOTA motion quality, different from all closed models — not yet covered
+  - **Wan2.1 follow-up** — check for community/ecosystem developments since our last review; Alibaba now funds both Wan and Vidu
+  - **HunyuanVideo follow-up** — check for recent updates / LoRA ecosystem growth
+  - **Sora 2 (OpenAI)** — major update, worth dedicated review
+- **Recommended next**: **Genmo / Mochi-1** — pure open-source angle, different from the commercial/funded models we've been reviewing; good counterpoint after four consecutive commercial reviews.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
 ## Run 1126 — 2026-05-11 — DEPLOYED Haiper AI retrospective (unix 1778445760, 1480 pages) + NEW REVIEW: LTX Video (Lightricks) — first open-weight audio-video model, 22B params, 1.73M HF downloads/month, Facetune company's AI pivot. Rating 4/5. (1482 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
