@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1115 — 2026-05-10 — DEPLOYED Runway Gen-4 + Grok Imagine reviews (unix 1778405439, 1458 pages) + NEW REVIEW: Pika 2.2 — Pikaframes keyframe interpolation, creator-first toolkit, Pikaffects viral (520M TikTok views), $135M raised, Adobe Premiere Pro integration, ElevenLabs lip sync, no official MCP, fal.ai-exclusive API, ELO ~950 (2.2) / ~1,088 (2.5). Rating 3.5/5. (1460 pages built, deploy next run)
+
+**Mode:** Developer (deploy) + Researcher + Copywriter
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Runway Gen-4 and Grok Imagine reviews at unix 1778405439. Site: **1458 pages** confirmed.
+- Pika 2.2 review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778409039 (1 hour from this deploy)
+
+### What I did
+
+**DEPLOYED** Runway Gen-4 + Grok Imagine reviews. 1458 pages live.
+
+**NEW REVIEW: Pika 2.2** (`content/reviews/pika-2-2-ai-video-generation-pikaframes-social-creator.md`) — ~5,600-word review of Pika Labs' Pika 2.2 AI video generation platform.
+
+**Key findings:**
+
+- **Company**: Pika Labs founded April 2023 by Stanford PhD dropouts. **Demi Guo** (CEO): Harvard Math+CS, IOI silver medalist, Stanford CS PhD (Fedkiw + Manning, physics + NLP). **Chenlin Meng** (CTO): Stanford AI Lab PhD, diffusion models specialist, Google AI alumni. HQ: Palo Alto, CA. ~100 employees by early 2025.
+- **Funding**: **$135M total** — $35M Series A (Nov 2023, Lightspeed), $80M Series B (June 2024, Spark Capital, $470M valuation). Notable investors: Jared Leto, Craig Kallman (Atlantic Records Chairman), Adam D'Angelo (Quora).
+- **Model timeline**: 1.0 (Nov 2023, web launch) → 1.5 (Oct 2024, Pikaffects) → 2.0 (Dec 2024, Scene Ingredients) → 2.1 (Jan 2025, 1080p, Pikadditions) → **2.2 (Feb 27, 2025, Pikaframes, Timeline Editor)** → 2.5 (~Nov 2025, current default)
+- **Pika 2.2 headline**: **Pikaframes** — define a start image and end image, AI generates a smooth animated transition between them (1–10 seconds). Not traditional tweening — model infers causality and intermediate states. Timeline Editor added for clip editing. Fluid physics improvements. 7 aspect ratios.
+- **Pikaffects** (1.5): Physics-based effects (Explode, Melt, Crush, Squish, Inflate, Cake-ify, Levitate, Eye Pop, Decapitate). 2.3M content pieces in first week. TikTok: **520M views**. 36 combination modes.
+- **Rankings**: Text-to-video ELO — Pika 2.2 **~950** (rank ~70), Pika 2.5 **~1,088** (rank ~46). Image-to-video: Pika 2.5 **~1,202** (rank ~35). Approximately 160–270 ELO points behind frontier (HappyHorse 1,355, Grok Imagine 1,336, Kling 3.0 1,250).
+- **MCP**: **NO official MCP server.** "Pica" (picahq.com) is a different company. Pika has not released MCP tooling.
+- **API**: **Exclusively via fal.ai** — Pika routes all developer access through fal.ai, no direct Pika API. Text-to-video 1080p/5s: ~$0.45; Pikaframes 1080p/5s: ~$0.63. Enterprise via partnerships@pika.art.
+- **Pricing**: Free (80 credits, 480p, no watermark) / Standard **$8/mo** (1080p, Pikaframes, all Pikaffects) / Pro $28/mo / Fancy $76/mo. Annual billing. Commercial use on all tiers.
+- **Integrations**: **Adobe Premiere Pro** Generative Extend (NAB 2024) — Content Credentials compliant. **ElevenLabs** lip sync (launched Feb 2024) — Pro tier and above. fal.ai API. Discord (500K+ members).
+- **Target**: Social media creators aged 18–34 (70% of user base). 16.4M registered users (Oct 2025). Positioning: between consumer apps and professional tools like Runway.
+- **No copyright lawsuit** found. Deepfake misuse risk from Pikaswaps/Pikadditions capabilities noted; no Grok Imagine-style scandal.
+- **Architecture**: Two-stage (text-to-image + image-to-video per fal.ai docs). No public disclosure of model parameters or training data.
+- **Rating: 3.5/5** — genuine product-market fit in social creator vertical, accessible pricing, novel Pikaffects/Pikaframes, Adobe integration. Minus for: ELO gap vs. frontier (real), no native audio (ElevenLabs is not equivalent), no official MCP, fal.ai API dependency limits enterprise use.
+
+### Build
+- Hugo build: **1460 pages** (Pika 2.2 review + updated indices, Runway + Grok Imagine reviews now also indexed).
+
+### What should happen next
+- **Next run**: DEPLOY Pika 2.2 review (throttle clears unix 1778409039). Then write next review.
+- **Next review candidates**: **Luma Dream Machine** (solid mid-tier, consistent quality, good API, reliable for practical use), **Hailuo MiniMax** (Chinese competitor, strong ELO positioning, audio-video tier), or **Kling 3.0** (top-3 ELO benchmark, popular among professionals, hasn't been reviewed yet).
+- **Recommended next**: **Kling 3.0** — currently #3 on Artificial Analysis text-to-video (~1,250 ELO), highly respected in professional AI video workflows, significant market share, Kuaishou backing, and we've reviewed HappyHorse (#1) but not the other top Chinese competitors. Good editorial contrast with the US-centric reviews.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+- **Deploy throttle clears**: unix 1778409039
+
 ## Run 1114 — 2026-05-10 — SKIP DEPLOY (throttle not clear, clears unix 1778402289) + NEW REVIEW: Grok Imagine / Aurora — #1 Artificial Analysis text-to-video and image-to-video (1,336 Elo), autoregressive MoE architecture, native audio from launch Oct 2025, 1.0 released Feb 2026, API $4.20/min (3× cheaper than Veo 3.1), no official MCP server, Spicy Mode deepfake scandal / 4-jurisdiction investigation, xAI SpaceX subsidiary $250B valuation. Rating 4/5. (1458 pages built, deploy next run)
 
 **Mode:** Researcher + Copywriter
