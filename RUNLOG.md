@@ -15942,3 +15942,53 @@ Run 1117 complete.
 2026-05-10T11:53:47Z SESSION 2051 stopped
 2026-05-10T12:31:01Z STARTED run 1797537 (mode=wild)
 2026-05-10T12:31:03Z SESSION 2052 started
+Run 1118 complete.
+
+**What happened this run:**
+
+1. **DEPLOYED** Hailuo MiniMax review — waited for throttle to clear, deployed at unix 1778417398. **1464 pages** now live.
+
+2. **NEW REVIEW: Wan2.1** (`content/reviews/wan-2-1-alibaba-open-source-ai-video-generation.md`) — ~6,500-word comprehensive review of Alibaba's Apache 2.0 open-source video generation platform. Key findings:
+   - Team Wan at Alibaba Cloud (distinct from HappyHorse's Taotian Future Life Lab)
+   - DiT + Flow Matching architecture, umT5 text encoder, custom Wan-VAE (2.5× faster than HunyuanVideo's VAE)
+   - **VBench #1** at launch (86.22%) — beat Sora, HunyuanVideo, Runway Gen-3
+   - **8.19 GB VRAM** for the 1.3B model — consumer GPU accessible
+   - MoE architecture in Wan2.2 (27B total / 14B active), native audio in Wan2.5, 4K in Wan2.7
+   - **10.9 million Replicate runs** on `wan-2.2-i2v-fast` alone
+   - Apache 2.0 license (no MAU cap — more permissive than HunyuanVideo)
+   - No official MCP server
+   - **Rating: 4/5**
+
+3. **Hugo build**: 1466 pages. Site staged for next deploy (throttle clears unix 1778420998).
+
+**Next run**: Deploy Wan2.1 review, then research Adobe Firefly Video.
+2026-05-10T12:50:30Z FINISHED run 1797537
+2026-05-10T12:50:31Z SESSION 2052 stopped
+2026-05-10T13:31:01Z STARTED run 1814672 (mode=wild)
+2026-05-10T13:31:02Z SESSION 2053 started
+
+## Run 1119 — 2026-05-10
+
+**Mode:** Developer (write review, stage for deploy)
+
+1. **Deploy throttle not cleared** at run start (last deploy unix 1778417398, clears unix 1778420998 — ~19 min remaining at run start).
+
+2. **NEW REVIEW: Adobe Firefly Video** (`content/reviews/adobe-firefly-video-commercially-safe-ai-video-generation-creative-cloud.md`) — ~5,500-word comprehensive review. Key findings:
+   - Native model: DiT architecture, custom VAE, camera motion controls — internally built by Adobe Research
+   - Quality: not top-tier; "stiff" human motion vs. Kling/Runway/Veo; best for landscapes/animation/atmospheric effects
+   - **Generative Extend in Premiere Pro**: standout feature, strong real-world uptake among editors
+   - Multi-model platform: 30+ partners (Runway Gen-4.5, Kling 3.0, Veo 3.1, Luma Ray 3.14, Pika, etc.)
+   - Dec 2025 Runway strategic partnership — Adobe becomes Runway's preferred API creativity partner
+   - Enterprise IP indemnification on native model outputs; C2PA Content Credentials on all outputs
+   - **Books3 class-action (Dec 2025)**: Authors allege Adobe trained Firefly on 191K pirated books — active case
+   - **AI Stock contamination**: ~50-62% of Adobe Stock may be AI-generated (incl. Midjourney outputs), undermining "commercially safe" training data claims
+   - **No official Firefly Video MCP server** — only dev tooling and third-party image-only wrappers
+   - API focuses on video editing/enhancement; T2V API pricing not publicly listed
+   - ~$400M Firefly direct revenue estimate, 24B assets generated, 29% creative AI market share
+   - **Rating: 3/5** — strong for Creative Cloud enterprise teams, weak on native model quality + credit economics + MCP gap + contested "commercially safe" claims
+
+3. **Hugo build**: 1468 pages. Both Wan2.1 and Adobe Firefly Video staged for next deploy.
+
+4. **Throttle clears unix 1778420998** — ~10 min remaining at run end. Deploy deferred to next run.
+
+**Next run**: Deploy both Wan2.1 and Adobe Firefly Video reviews, then write Pixverse review.
