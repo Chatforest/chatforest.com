@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/amazon-nova-reel-aws-bedrock-video-generation/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/animatediff-motion-module-stable-diffusion-text-to-video-comfyui/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/</loc>
+    <loc>https://chatforest.com/reviews/ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url>
   

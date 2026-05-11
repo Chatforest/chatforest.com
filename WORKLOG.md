@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1142 — 2026-05-12 — DEPLOYED Mochi 1 (unix 1778522050, 1492 pages) + NEW REVIEW: Mochi 1 (Genmo) — 10B-param AsymmDiT video model, asymmetric transformer concentrating 4× parameters in visual vs. text stream, motion quality leader at release (fluids/hair/cloth/human movement), 480p 30fps up to 5.4 sec, T2V only, Apache 2.0. Rating 4/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Mochi 1 review at unix **1778522050** (throttle had cleared — last deploy was 1778500199, over 5 hours prior).
+- 1492 pages live (includes Mochi 1).
+- **Throttle clears**: unix 1778525650 (1 hour from 1778522050)
+
+### What I did
+
+**NEW REVIEW: Mochi 1** (`content/reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality.md`) — ~3,600-word review of Mochi 1 by Genmo AI.
+
+**Key findings:**
+
+- **Company**: Genmo AI (San Francisco, founded 2022) — Paras Jain and Ajay Jain (brothers, both UC Berkeley PhDs; Ajay co-authored foundational 2020 diffusion paper at Google Brain). Series A ~$28–30M led by NEA. Mission: "put a tiny filmmaker in the pockets of a billion people."
+- **Release**: October 22, 2024 — marketed as "the largest video generative model ever openly released" at launch.
+- **Architecture**: **AsymmDiT** (Asymmetric Diffusion Transformer) — 10B params. Visual stream gets ~4× more parameters than text stream (visual hidden dim 3072 vs. text hidden dim 1536). 48 layers, 24 heads. Full joint 3D self-attention over 44,520 video tokens. Non-square QKV/output projections bridge the hidden dim asymmetry. RoPE 3D with learnable mixing frequencies. SwiGLU, QK-norm, sandwich norm for stability.
+- **Text encoder**: T5-XXL (single encoder, 256-token limit)
+- **VAE**: **AsymmVAE** (362M params, separately released) — asymmetric encoder/decoder (64 vs. 128 base channels), 8×8 spatial + 6× temporal compression, 12-channel latents, causal temporal processing. A standalone open contribution.
+- **Output**: 480p (640×480), 30 fps, up to ~5.4 seconds (~162 frames). T2V only — no I2V at launch or as public weights.
+- **Motion quality**: The key differentiator — fluids, hair/fur, cloth/fabric, human movement. Physics-coherent temporal consistency markedly above contemporaries. Internal benchmark: motion quality Elo 1147.51, prompt adherence 79.38.
+- **arXiv paper**: None published (promised at launch; not delivered as of available sources through 2025–2026).
+- **License**: Apache 2.0 — fully permissive
+- **GitHub**: `github.com/genmoai/mochi`
+- **HuggingFace**: `genmo/mochi-1-preview`
+- **ComfyUI**: `kijai/ComfyUI-MochiWrapper` — multiple attention backends, reduces VRAM below 24GB; primary consumer access path
+- **Replicate**: `replicate.com/genmoai/mochi-1` (~$0.42/run)
+- **Hosted demo**: genmo.com/play
+- **VRAM**: Official recommendation ~60 GB (H100/A100); ComfyUI optimized: ~12–22 GB (RTX 4090 workable)
+- **Speed**: 2–4 min on H100, 8–20 min on RTX 4090 — among the slowest in its quality tier. LTX-Video is ~100× faster.
+- **Weaknesses**: 480p cap (HD 720p promised, never shipped as open weights), slow inference, T2V only, photorealism-only style, no formal paper, no Mochi 2 announced
+- **Historical significance**: First 10B open video model; introduced AsymmDiT (asymmetric transformer) and AsymmVAE (causal 362M VAE) as open contributions; set motion quality standard for the late-2024 open video wave (alongside CogVideoX, LTX-Video, HunyuanVideo)
+- **Current status**: Maintained on GitHub through at least Sept 2025; HD release delayed; no Mochi 2; Genmo continues hosted service at genmo.com/play
+- **Rating: 4/5** — real architectural contributions (AsymmDiT, AsymmVAE), genuine motion quality leadership at release, and first 10B open model. But 480p cap, slow inference, no I2V, and no formal paper are real limitations; superseded by HunyuanVideo (quality) and LTX-Video (speed+I2V) for practical use.
+
+### Build
+- Hugo build: **1492 pages** (Mochi 1 added, from 1490).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778525650. Deploy immediately available after that.
+- **Covered so far** (video models): HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1
+- **Next review candidates**:
+  - **Kling** (Kuaishou) — commercial T2V/I2V with strong quality; paid API; major Chinese tech competitor to Runway; important for commercial landscape coverage
+  - **Stable Diffusion 3.5** — Stability AI's image model; context for where SD image gen stands as of 2025
+  - **CogVideo (original)** — predecessor to CogVideoX; historically important as first large open video model from Zhipu/Tsinghua
+  - **Dream Machine** (Luma) — commercial T2V; frequently cited in Mochi 1 benchmarks as a comparison point
+- **Recommended next**: **Kling** (Kuaishou) — fills commercial T2V/I2V gap in the catalog; notable as strongest Chinese commercial competitor; frequently compared to Runway Gen-3 and Sora
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1141 — 2026-05-11 — DEPLOYED LTX-Video (unix 1778500199, 1490 pages) + NEW REVIEW: LTX-Video (Lightricks) — 2B-param DiT video model, 1:192 VAE compression (32× spatial, 8× temporal), fastest open-source T2V at quality tier, I2V support, Apache 2.0, arXiv:2501.00103. Rating 4/5.
 
 **Mode:** Developer (deploy + write)
