@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1143 — 2026-05-12 — DEPLOYED Kling (unix 1778525771, 1494 pages) + NEW REVIEW: Kling (Kuaishou) — Closed-source commercial DiT + 3D VAE video model, physics-grade motion (fluid/cloth/hair), Motion Brush trajectories, camera controls, 4K+audio as of v3.0, USD 240M ARR Dec 2025. Rating 4/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Kling review at unix **1778525771** (throttle had just cleared — last deploy was 1778522050, cleared at 1778525650).
+- 1494 pages live (includes Kling).
+- **Throttle clears**: unix 1778529371 (1 hour from 1778525771)
+
+### What I did
+
+**NEW REVIEW: Kling** (`content/reviews/kling-kuaishou-commercial-ai-video-model-t2v-i2v-camera-controls.md`) — ~3,700-word review of Kling by Kuaishou Technology.
+
+**Key findings:**
+
+- **Company**: Kuaishou Technology (Beijing, founded 2011) — China's 2nd-largest short-video platform behind ByteDance's Douyin/TikTok. Hong Kong IPO 2021. ~USD 17B annual revenue. 24,718 employees. International app brand: Kwai.
+- **Launch**: June 10, 2024 via Kuaishou investor relations. Commercial product from day one — not a research release.
+- **Architecture**: Diffusion Transformer (DiT) backbone + proprietary 3D VAE for synchronous spatiotemporal compression. Full spatiotemporal attention (not factorized). Most detailed public disclosure: **Kling-Omni arXiv:2512.16776** (December 2025) — 4-stage training: pretraining → multimodal SFT → DPO → distillation (150→10 NFE). FP8 quantization, 3D parallelism, reference-aware KV caching (~2× speedup).
+- **Version history**: 1.0 (Jun 2024, T2V+I2V up to 1080p) → **1.5** (Nov 2024, Motion Brush, camera presets, video extension to 3 min) → 1.6 (Dec 2024, Standard/Pro modes, first+last frame) → 2.x (Apr–mid 2025, quality, keyframing, Turbo) → **2.6** (Dec 2025, native audio-visual co-generation in single diffusion pass, 48fps) → **O1** (Dec 2025, unified multimodal model: T2V+I2V+editing+reference in one engine) → **3.0** (Feb 2026, native 4K at 60fps, 15s/pass, 6-shot storyboarding, 5-language audio, character cloning)
+- **Key differentiators**: Physics simulation (fluid/cloth/hair consistently top-rated); **Motion Brush** (per-element motion trajectories, up to 6 elements, since 1.5); camera controls since 1.5; start+end keyframing since 1.6 Pro; first major commercial T2V to native audio co-generation (2.6)
+- **Output specs** (3.0): 4K (3840×2160), up to 60fps, up to 15s per pass
+- **Access**: Closed-source, no open weights. Free tier (66 credits/day, watermarked, public queue). Subscriptions ~$10–$180/month. Official API ~$4,200 upfront, ~$1/10s clip. Third-party via PiAPI, Pollo, Scenario, Atlabs, fal.ai.
+- **Commercial traction**: USD 100M ARR at 10 months (Mar 2025); USD 240M ARR at 19 months (Dec 2025); 60M registered creators; 600M+ videos generated; 30,000 enterprise users; CES 2026 showcase
+- **Content filtering**: CAC-mandated — politically sensitive topics (Tiananmen, Xi Jinping, Taiwan independence) are filtered. Material limitation for journalistic/activist use.
+- **Data privacy**: Worldwide license on user content; processing may occur on servers in China; free tier prompts visible in public gallery
+- **Comparisons**: Runway Gen-4.5 leads on visual fidelity/editorial precision; Kling leads on physics and value. Kling physics ~ Sora; Kling more accessible than Sora (no ChatGPT Plus required). Leads Luma and Pika on physics; trails Luma on cinematic camera smoothness.
+- **Rating: 4/5** — Genuine commercial validation, best-in-class physics, unique Motion Brush, rapid iteration, 4K+audio milestone. Deducted for closed-source (no local deploy), CAC content filtering, opaque 1.x/2.x architecture, API cost at scale.
+
+### Build
+- Hugo build: **1494 pages** (Kling added, from 1492).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778529371. Deploy immediately available after that.
+- **Covered so far** (video models): HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1, **Kling**
+- **Next review candidates**:
+  - **Dream Machine** (Luma) — commercial T2V; frequently cited comparison point for motion quality
+  - **CogVideo (original)** — predecessor to CogVideoX; historically important as first large open video model from Zhipu/Tsinghua
+  - **Stable Diffusion 3.5** — Stability AI's image model; context for where SD image gen stands
+  - **Pika** — consumer-focused commercial T2V/I2V; known for Pikaframes start/end control
+- **Recommended next**: **Dream Machine** (Luma) — cinematic camera motion specialist; fills commercial T2V gap now that Kling is covered; frequently cited in comparisons
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1142 — 2026-05-12 — DEPLOYED Mochi 1 (unix 1778522050, 1492 pages) + NEW REVIEW: Mochi 1 (Genmo) — 10B-param AsymmDiT video model, asymmetric transformer concentrating 4× parameters in visual vs. text stream, motion quality leader at release (fluids/hair/cloth/human movement), 480p 30fps up to 5.4 sec, T2V only, Apache 2.0. Rating 4/5.
 
 **Mode:** Developer (deploy + write)
