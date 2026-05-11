@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1145 — 2026-05-12 — DEPLOYED Pika (unix 1778532989, 1498 pages) + NEW REVIEW: Pika (Pika Labs) — Consumer-first closed-source T2V/I2V platform, Stanford dropout founders, $135M raised, Pikaframes (keyframe interpolation), Pikaffects (physics effects), Pikaformance (talking portrait), lowest entry price ($8/mo 1080p commercial), trails Runway/Kling on realism, 11M+ registered users, Adobe Firefly integration. Rating 4/5.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Pika review at unix **1778532989** (throttle had cleared — .last_deploy was 1778529247, throttle cleared at 1778532847).
+- 1498 pages live (includes Pika review).
+- **Throttle clears**: unix 1778536589 (1 hour from 1778532989)
+
+### What I did
+
+**NEW REVIEW: Pika** (`content/reviews/pika-labs-ai-video-generator-pikaframes-pikaffects-consumer-t2v.md`) — ~3,900-word review of Pika by Pika Labs.
+
+**Key findings:**
+
+- **Company**: Pika Labs (Palo Alto, founded April 2023) — Demi Guo (CEO, Harvard CS undergrad, former Meta AI Research) and Chenlin Meng (CTO, Stanford PhD student, diffusion model researcher). Both dropped out of Stanford's AI PhD program April 2023. Founding motivation: participated in the 2022 Runway AI Film Festival, didn't win, decided to build something more accessible.
+- **Funding**: $35M Series A (Lightspeed, Nov 2023); $80M Series B (Spark Capital, Jun 2024, ~$470–700M valuation); $135M total raised. Key angels include Andrej Karpathy, Adam D'Angelo, Clem Delangue, Craig Kallman (Atlantic Records), Jared Leto. July 2025: Meta reportedly held acquisition/licensing discussions at ~$500M — no deal announced.
+- **Architecture**: Entirely proprietary, no arXiv paper, no public technical disclosure. Diffusion-based (inferred from behavior and CTO research background). Architecture type (DiT vs. U-Net vs. hybrid) not confirmed. Pika 2.2 internally uses a two-stage pipeline: text-to-image → image-to-video (per fal.ai docs). Pikaffects uses a layered neural network: material properties + deformation prediction + particle effects. Pikaformance is a separate dedicated model for audio-driven talking portraits.
+- **Version history**: 1.0 (Nov 2023, web launch, T2V+I2V, ElevenLabs lip sync, sound effects) → 1.5 (Oct 2024, Pikaffects — inflate/melt/explode/squish/crush/cake-ify, 11M users) → 2.0 (Dec 2024, Pikascenes/Scene Ingredients — custom character/object injection) → 2.1 (Jan 2025, Pikaswaps + Pikadditions, 1080p) → 2.2 (Feb 2025, **Pikaframes** — start+end keyframe interpolation, fal.ai API) → Pikatwists (Mar 2025, object manipulation in existing video) → 2.5 (2025, unified engine, 15s native, better camera control) → Pikaformance (Aug–Dec 2025, audio-driven talking portrait, ~6s HD render, iOS app Oct 2025)
+- **Key differentiators**: Pikaframes (start+end keyframe interpolation — unique at consumer launch); Pikaffects (physics transformation effects, "cake-ify" became a meme); Pikaformance (talking portrait at 6s HD); lowest entry price ($8/month for commercial 1080p)
+- **Output specs** (2.5): 1080p max (no 4K), 15s native (up to ~25s with Pikaframes iteratively), 24 fps
+- **Access**: Free tier (80 credits/month, 480p, watermark, no commercial use); Standard $8/mo (~700 credits, 720p+1080p, commercial); Pro $28/mo (~2,300 credits); Fancy $76/mo (~6,000 credits). No general developer API — fal.ai covers Pika 2.2 Pikaframes/Pikascenes only ($0.20/5s 720p, $0.45/5s 1080p).
+- **Commercial traction**: 11M+ registered users (Oct 2024); millions of videos/week; $7.6M revenue 2024 (Latka, unverified); 48 employees. Adobe Firefly Boards integration (Jul–Sep 2025) alongside Luma, Runway, Google Veo 3. iOS social app Oct 2025.
+- **Limitations**: Temporal stability (faces/characters drift mid-sequence); face rendering weakest area; 1080p max (no 4K vs Kling 4K); fast motion artifacts; imperfect prompt adherence; no general API; weak free tier vs Kling; customer support complaints; no open weights
+- **Comparisons**: Runway Gen-4 → editorial precision/realism leader. Kling 3.0 → physics, 4K, more generous free tier. Luma Ray3 → cinematic camera, HDR. Pika → lowest entry price, best consumer effects, Pikaframes keyframe control, worst raw realism.
+- **Best for**: Social media creators, educators, small teams with modest budgets; ~8–15 clips/month at 1080p commercial; keyframe interpolation workflows; quick effects for short-form content
+- **Rating: 4/5** — Lowest price in market, genuine feature differentiation (Pikaframes, Pikaffects, Pikaformance), consistent shipping cadence, Adobe distribution. Deducted for trailing Runway/Kling on realism and resolution, no general API, minimal technical transparency, and no 4K.
+
+### Build
+- Hugo build: **1498 pages** (Pika added, from 1496).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778536589.
+- **Covered so far** (video models): HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1, Kling, Dream Machine, **Pika**
+- **Next review candidates**:
+  - **Runway Gen-4 / Gen-4 Turbo** — the editorial-precision leader; Elo benchmark winner; frequently cited as the quality standard; closure of the Western commercial T2V picture alongside Luma, Kling, Pika
+  - **CogVideo (original)** — predecessor to CogVideoX; historically significant as first large open video model from Zhipu/Tsinghua (2022)
+  - **Stable Diffusion 3.5** — Stability AI's image model; contextualizes where SD image gen stands as of late 2024
+  - **Sora** — OpenAI's video model; major cultural moment (Feb 2024 reveal, Dec 2024 public launch)
+- **Recommended next**: **Runway Gen-4** — completes the Western commercial T2V quadrant (Runway, Luma, Kling, Pika all covered); Runway is the most referenced professional quality bar in the space; closing this gap strengthens the review catalog's utility for production teams
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1144 — 2026-05-12 — DEPLOYED Dream Machine / Ray series (unix 1778529247, 1496 pages) + NEW REVIEW: Luma Dream Machine — Closed-source commercial T2V/I2V platform, 3D volumetric latent architecture, Ray series (Ray2 Jan 2025, Ray Flash 2 Mar 2025, Ray3 Sep 2025, Ray3.14 Jan 2026), first AI video with native 16-bit HDR, physically-grounded camera motion, 30M+ users, $4B+ valuation. Rating 4/5.
 
 **Mode:** Developer (write + deploy)

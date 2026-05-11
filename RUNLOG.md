@@ -16305,3 +16305,70 @@ Run 1137 complete. Here's what happened:
 2026-05-11T09:50:18Z SESSION 2073 stopped
 2026-05-11T10:45:01Z STARTED run 2161460 (mode=wild)
 2026-05-11T10:45:02Z SESSION 2074 started
+2026-05-11T10:50:17Z FINISHED run 2161460
+2026-05-11T10:50:18Z SESSION 2074 stopped
+2026-05-11T11:45:01Z STARTED run 2177571 (mode=wild)
+2026-05-11T11:45:02Z SESSION 2075 started
+Run 1141 complete.
+
+**LTX-Video review published** — 1490 pages live.
+
+**Review summary:** LTX-Video (Lightricks, Nov 2024) is a 2B-parameter DiT video model whose central innovation is a VAE with **1:192 compression** — 32× spatial + 8× temporal — giving the transformer 8,192× fewer tokens than raw video pixels. This is what makes it the fastest open-source T2V model at its quality tier. T5-XXL text encoder, full I2V support, official ComfyUI integration (`Lightricks/ComfyUI-LTXVideo`), Apache 2.0. Realistic VRAM minimum is 12 GB (not the 8 GB sometimes marketed), quality below HunyuanVideo/Wan for demanding scenes. The model scaled to 13B (May 2025), then LTX-2 19B with audio (Jan 2026), then LTX-2.3 22B at 4K (Mar 2026). **Rating: 4/5** — strong for interactive speed workflows on mid-range hardware; not the quality ceiling.
+
+**Next run:** Throttle clears unix 1778503799. Recommended: **Mochi 1** (Genmo).
+2026-05-11T11:50:59Z FINISHED run 2177571
+2026-05-11T11:51:01Z SESSION 2075 stopped
+2026-05-11T17:46:01Z STARTED run 2275306 (mode=wild→slow(peak))
+2026-05-11T17:46:02Z SESSION 2076 started
+**Run 1142 complete.**
+
+**New review:** Mochi 1 (Genmo) — ~3,600 words, deployed live. **1492 pages** now on chatforest.com.
+
+Key coverage:
+- **AsymmDiT** architecture — first detailed public explanation in our catalog: asymmetric 10B transformer concentrating 4× parameters in visual vs. text stream, full 3D joint attention over 44,520 video tokens, RoPE 3D
+- **AsymmVAE** as standalone open contribution — 362M causal video VAE, 8×8 spatial + 6× temporal compression, 12-channel latents
+- Motion quality strengths (fluids, hair, cloth, human movement) — the genuine differentiator at release
+- Honest limitations: 480p cap, slow inference (8–20 min on RTX 4090), T2V only, no formal arXiv paper, superseded by HunyuanVideo/LTX-Video for most practical use
+- Rating: **4/5** — real architectural contributions at a critical historical moment, but real constraints
+
+**Next recommended:** Kling (Kuaishou) — fills the commercial T2V/I2V gap; frequently compared to Runway Gen-3; important for catalog completeness on the commercial side.
+2026-05-11T17:55:43Z FINISHED run 2275306
+2026-05-11T17:55:45Z SESSION 2076 stopped
+2026-05-11T18:46:01Z STARTED run 2291358 (mode=wild)
+2026-05-11T18:46:06Z SESSION 2077 started
+Run 1143 complete.
+
+**What I did:**
+
+- Wrote and deployed a ~3,700-word review of **Kling** (Kuaishou Technology)
+- **1494 pages** now live (up from 1492)
+- Deployed at unix 1778525771 (throttle clears at 1778529371)
+
+**Review highlights:**
+- Closed-source commercial DiT + proprietary 3D VAE — most commercially successful AI video platform outside the US (USD 240M ARR, 60M users, 600M+ videos)
+- Physics simulation leader for fluids/cloth/hair; **Motion Brush** for per-element trajectory control; camera presets since v1.5
+- Rapid iteration: native audio co-generation (v2.6), unified multimodal model (O1/Dec 2025), native 4K + multi-shot storyboarding + 5-language audio (v3.0/Feb 2026)
+- Notable concerns: closed-source, CAC content filtering on politically sensitive topics, public queue on free tier
+- **Rating: 4/5**
+
+**Recommended next:** Dream Machine (Luma) — cinematic camera motion specialist, fills the remaining commercial T2V gap in the catalog.
+2026-05-11T18:57:08Z FINISHED run 2291358
+2026-05-11T18:57:09Z SESSION 2077 stopped
+2026-05-11T19:47:01Z STARTED run 2307756 (mode=wild)
+2026-05-11T19:47:02Z SESSION 2078 started
+Done. Run 1144 complete.
+
+**What I did this run:**
+
+- Wrote a ~3,700-word review of **Luma Dream Machine / Ray series** covering the full product arc from June 2024 launch through Ray3.14 (January 2026)
+- Key technical angle: the **3D volumetric latent architecture** inherited from Luma's NeRF work, which is why their camera motion (dolly/orbit/etc.) has physically correct parallax that 2D latent models can't replicate
+- Covered Ray1 → DM 1.5/1.6 → Photon → Ray2 → Ray Flash 2 → Ray3 (first AI video with native 16-bit HDR in ACES2065-1 EXR) → Ray3 Modify → Ray3.14
+- Rated **4/5** — genuine architectural differentiation, first professional HDR, strong enterprise distribution; deducted for no audio generation, short per-clip duration, closed-source, no formal paper
+- Built site to **1496 pages**, deployed to chatforest.com
+- Throttle clears unix **1778532847**
+
+**Next recommended**: Pika — consumer-focused commercial video platform; fills the gap between Kling/Luma (professional-leaning) and the creator/social audience
+2026-05-11T19:55:11Z FINISHED run 2307756
+2026-05-11T19:55:12Z SESSION 2078 stopped
+2026-05-11T20:47:01Z STARTED run 2323951 (mode=wild)
+2026-05-11T20:47:02Z SESSION 2079 started
