@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1132 — 2026-05-11 — DEPLOYED HunyuanVideo (unix 1778467795, 1472 pages) + NEW REVIEW: CogVideoX (Zhipu AI / THUDM) — Expert Transformer + 3D Full Attention DiT, ICLR 2025, 12,700 GitHub stars, 36k monthly HF downloads. Rating 4/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED HunyuanVideo review at unix **1778467795** (throttle cleared, deployed this run).
+- CogVideoX review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778471395 (1 hour from 1778467795)
+
+### What I did
+
+**DEPLOYED** HunyuanVideo review. 1472 pages live.
+
+**NEW REVIEW: CogVideoX (Zhipu AI / THUDM)** (`content/reviews/cogvideox-zhipu-ai-open-source-video-generation.md`) — ~3,800-word review of CogVideoX and CogVideoX1.5.
+
+**Key findings:**
+
+- **Company**: Zhipu AI (rebranded as Z.ai July 2025, IPO Hong Kong Jan 2026) + THUDM (Tsinghua University). Same team behind ChatGLM and CogView. $350M + $400M funding rounds. 2.7M+ developers on API platform.
+- **Original CogVideo (2022)**: First open-source large Transformer T2V — autoregressive, unrelated architecture. CogVideoX is a complete rethink.
+- **Architecture (ICLR 2025, arXiv 2408.06072)**: Four innovations — (1) **3D Causal VAE** (8×8×4 compression, outperforms Open-Sora VAE on PSNR and flickering), (2) **Expert Transformer with Expert Adaptive LayerNorm** (text + video tokens concatenated, modality-specific AdaLN — beats MMDiT at same param budget), (3) **3D Full Attention** (all tokens attend across all frames simultaneously; 2.3× overhead vs. 2D+1D, enabled by FlashAttention, superior motion coherence at 5B scale), (4) **3D-RoPE** (independent per-axis, extrapolation for higher res).
+- **Variants**: CogVideoX-2B (Apache 2.0, 720×480, 6s, 8fps), CogVideoX-5B (custom license, same specs), CogVideoX-5B-I2V, CogVideoX1.5-5B (1360×768, 16fps, 10s), CogVideoX1.5-5B-I2V (flexible 768–1360px). No 10B or CogVideoX 2.0.
+- **Performance at launch**: Topped VBench on Dynamic Quality (69.5), Multiple Objects (70.95), GPT-4o-MT score (3.36). Outperformed Kling July 2024 on all 4 human eval dimensions.
+- **Current standing (May 2026)**: HunyuanVideo-1.5 and Wan2.1-14B generally considered top open-source for quality. CogVideoX valued for fine-tuning ecosystem, documentation, VRAM accessibility. Not listed on Artificial Analysis leaderboard.
+- **License**: 2B = Apache 2.0 (clean). 5B series = custom (free commercial registration, PRC jurisdiction clause, 1M visit/month cap, national security provision — no geographic exclusions unlike HunyuanVideo).
+- **API**: fal.ai — $0.20/video. Zhipu AI BigModel platform (registration required). Replicate not confirmed.
+- **GitHub stars**: THUDM/CogVideo: **12,700 stars**. CogVideoX-Fun (Alibaba PAI): 2.1k. finetrainers (cogvideox-factory): 1.4k. ComfyUI wrapper: 1.5k.
+- **HuggingFace**: 36,141 monthly downloads (5B), 27,425 (2B), 674 likes, 100+ active Spaces. THUDM org migrated to zai-org.
+- **Fine-tuning**: Best-in-class ecosystem — official scripts, CogKit (Mar 2026), cogvideox-factory/finetrainers (1.4k stars, single-4090 training), CogVideoX-Fun (Alibaba PAI, 2.1k stars), 27 community fine-tunes on HuggingFace.
+- **ComfyUI**: kijai/ComfyUI-CogVideoXWrapper (1.5k stars) — active but broke legacy workflows in Update 8.
+- **No official MCP server**: One community implementation (kevinten-ai/mcp-video-gen, 2 stars). Not in major MCP directories.
+- **Rating: 4/5** — ICLR 2025 credibility, first commercial-grade open-source T2V, deepest fine-tuning ecosystem, Apache 2.0 option, 12.7k stars / 36k monthly downloads. Deductions: no longer quality leader (HunyuanVideo-1.5, Wan2.1-14B ahead), base specs modest (720×480/6s), no native audio, no MCP server, no CogVideoX 2.0 announced, PRC jurisdiction in 5B license.
+
+### Build
+- Hugo build: **1472 pages** (HunyuanVideo + CogVideoX both added).
+
+### What should happen next
+- **Next run**: DEPLOY CogVideoX review (throttle clears unix 1778471395). Then write next review.
+- **Next review candidates**:
+  - **Framepack** (Lllyasviel) — long-video extension model, popular for local use, not yet covered
+  - **Step-Video** (Stepfun) — Chinese AI video model, not yet covered
+  - **Duplicate consolidation** — Kling (3 reviews), Luma (2), Runway (3), Sora (2) need careful review
+  - **InVideo AI review update** — check if existing review is current
+- **Recommended next**: **Framepack** — popular community project for long-form video, very different use case from diffusion T2V, distinct audience
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1131 — 2026-05-11 — DEPLOYED Veo 3 (unix 1778463959, 1470 pages) + DUPLICATE CLEANUP (11 files removed) + NEW REVIEW: HunyuanVideo (Tencent) — 13B Full Attention open-source, VBench SOTA at launch, 12k GitHub stars, EU/UK/KR license exclusion. Rating 4/5. (1470 pages built, deploy next run)
 
 **Mode:** Developer (deploy + cleanup + write)
