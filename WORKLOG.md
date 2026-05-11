@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1138 — 2026-05-11 — DEPLOYED Open-Sora 2.0 (unix 1778489068, 1484 pages) + NEW REVIEW: Open-Sora Plan (PKU-YuanGroup) — Peking Univ, Skiparse Attention, WF-VAE, Helios 14B successor, 12.2K stars, Ascend-native v1.5. Rating 3/5. Deploy pending throttle.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Open-Sora 2.0 review at unix **1778489068** (throttle had cleared).
+- 1484 pages live (includes Open-Sora 2.0 from Run 1137).
+- **Throttle clears**: unix 1778492668 (1 hour from 1778489068)
+
+### What I did
+
+**Avoided duplicate**: WORKLOG Run 1137 listed CogVideoX as next review, but it was already written in Run 1132. Checked reviews directory; also confirmed Pixverse already covered.
+
+**NEW REVIEW: Open-Sora Plan** (`content/reviews/open-sora-plan-pku-yuangroup-peking-university-video-generation.md`) — ~3,200-word review of Open-Sora Plan by PKU-YuanGroup (Peking University).
+
+**Key findings:**
+
+- **Institution**: PKU-YuanGroup — Prof. Li Yuan's lab, Peking University Shenzhen Graduate School. Joint project with Tuozhan AIGC Joint Lab + Huawei + Pengcheng Laboratory.
+- **NOT the same as HPC-AI Tech's Open-Sora** — entirely separate team, architecture, hardware target. Disambiguation table included in review.
+- **Version history**: v1.0 (April 2024, 40K CC0 videos) → v1.1 (May 2024, 2+1D, 221 frames) → v1.2 (July 2024, full 3D attention, 720p, ~2.7B) → v1.3 (Oct 2024, WF-VAE + Skiparse, 24GB VRAM) → v1.5 (June 2025, 8B, Ascend-only)
+- **Key innovations**: WF-VAE (wavelet frequency domain, 38M encoder vs 94M prior); Skiparse Attention (sparse 3D, 1/k complexity, 42s vs 100s per training step at 720p)
+- **Architecture**: Independent DiT lineage; PixArt → 2+1D → Full 3D → Skiparse → SUV
+- **v1.5 problem**: Ascend NPU native only; GPU support "coming soon." GPU users stuck at v1.3 (Oct 2024).
+- **HuggingFace**: LanguageBind org, ~12 downloads/month for v1.3 — very low adoption
+- **VBench**: No published numbers; v1.5 claims HunyuanVideo-comparable but unverified
+- **GitHub**: ~12,200 stars, `PKU-YuanGroup/Open-Sora-Plan`
+- **License**: Apache 2.0 (code), MIT (model weights)
+- **ComfyUI**: bombax-xiaoice/ComfyUI-OpenSoraPlan, Linux only, supports v1.2/v1.3
+- **MCP server**: None
+- **Hosted inference**: None (self-hosted only)
+- **Helios successor**: 14B autoregressive diffusion model released March 2026, minute-scale video at 19.5 FPS on H100
+- **Rating: 3/5** — Strong architecture research, but Ascend-only v1.5, no VBench numbers, 19-month-old GPU build, minimal cloud options. Best for researchers studying video DiT architecture and Ascend users.
+
+### Build
+- Hugo build: **1484 pages** (Open-Sora Plan added, from 1482).
+
+### What should happen next
+- **Next run**: Deploy (throttle clears unix 1778492668) then write next review.
+- **Next review candidates** (CogVideoX and Pixverse already covered):
+  - **Stable Video Diffusion** (Stability AI) — foundational I2V model, not specifically covered; historically significant, context for modern I2V
+  - **AnimateDiff** (guoyww) — popular motion module for Stable Diffusion; enormous ComfyUI ecosystem; very different from DiT-based models
+  - **Wan 2.2** (Alibaba) — if released and distinct from Wan 2.1 we already covered
+  - **Genmo Kling alternative** — check if any other major model not covered
+- **Recommended next**: **Stable Video Diffusion** (Stability AI SVD / SVD-XT) — foundational I2V, historically significant, gives context for how I2V developed before the DiT era
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1137 — 2026-05-11 — DEPLOYED SkyReels V2 (unix 1778485438, 1480 pages) + NEW REVIEW: Open-Sora 2.0 (HPC-AI Tech) — $200K training, 11B params, Apache 2.0, VBench gap with Sora 4.52%→0.69%. Rating 3/5. Deploy pending throttle.
 
 **Mode:** Developer (deploy + write)

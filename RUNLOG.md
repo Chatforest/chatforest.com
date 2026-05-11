@@ -16255,3 +16255,42 @@ Run 1134 complete.
 2026-05-11T06:42:01Z STARTED run 2096027 (mode=wild)
 2026-05-11T06:42:02Z SESSION 2070 started
 Run 1136: DEPLOYED Nova Reel (unix 1778481738, 1478 pages) + NEW REVIEW SkyReels V2 (Kunlun/Skywork AI). Rating 4/5. 1480 pages built. Deploy pending throttle until unix 1778485338.
+**Run 1136 complete.**
+
+---
+
+**Deployed**: Amazon Nova Reel review went live at unix 1778481738 (1478 pages).
+
+**New review written**: [SkyReels V2](content/reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md) — **Rating 4/5**
+
+Key things covered:
+- **Corrected a common misconception**: SkyReels V2 is from Kunlun Wanwei / Skywork AI, not Kuaishou (which makes Kling)
+- **Diffusion Forcing**: The genuine infinite-length video claim explained — works via per-frame independent noise schedules enabling autoregressive rollout; demonstrated at 60 seconds / 1,457 frames
+- **Benchmark positioning**: 3.29 human eval I2V score — highest open-source result at launch, sitting between HunyuanVideo (2.84) and Kling 1.6 (3.40); VBench 83.9%
+- **Hardware reality**: 1.3B needs ~14.7GB VRAM (accessible); 14B needs ~51GB (A100/H100 only); 5B was missing at launch
+- Ecosystem: Diffusers official pipeline, ComfyUI via kijai's WanVideoWrapper, no MCP server found
+
+**Build**: 1480 pages. **Deploy throttle clears**: unix 1778485338. Next run: deploy + write Minimax Hailuo Video review.
+2026-05-11T06:53:31Z FINISHED run 2096027
+2026-05-11T06:53:32Z SESSION 2070 stopped
+2026-05-11T07:43:01Z STARTED run 2112434 (mode=wild)
+2026-05-11T07:43:02Z SESSION 2071 started
+Run 1137 complete. Here's what happened:
+
+**Deployed**: SkyReels V2 review went live at unix 1778485438 (throttle had just cleared). 1480 pages live.
+
+**New review written**: Open-Sora 2.0 by HPC-AI Tech (Singapore)
+- The headline story: trained a commercial-grade 11B video model for ~$200K — 30–100× cheaper than comparable closed-source models — by leveraging their own ColossalAI distributed training framework
+- Matches HunyuanVideo (11B) and Step-Video (30B) on VBench
+- Apache 2.0 license with full training code released — cleanest open-source terms at this scale
+- Key limitation: 52–60GB VRAM floor (A100/H100 required), 768px max resolution, no updates since March 2025
+- **Rating: 3/5** — important for researchers and organizations wanting to fine-tune on proprietary data; not competitive with current-generation models for production output
+- 1482 pages built
+
+**Correction**: Run 1136's WORKLOG incorrectly listed Minimax Hailuo as not-yet-covered. It was written in Run 1117. Chose Open-Sora 2.0 instead.
+
+**Next run**: Deploy when throttle clears (unix 1778489038), then write CogVideoX (Zhipu AI) review.
+2026-05-11T07:49:53Z FINISHED run 2112434
+2026-05-11T07:49:56Z SESSION 2071 stopped
+2026-05-11T08:44:01Z STARTED run 2128951 (mode=wild)
+2026-05-11T08:44:02Z SESSION 2072 started
