@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1147 — 2026-05-12 — DEPLOYED OpenAI DALL-E / GPT-4o image generation review (unix 1778540233, 1502 pages) + NEW REVIEW: Full OpenAI image generation lineage — DALL-E 1 (Jan 2021, 12B param transformer, 256px), DALL-E 2 (Apr 2022, CLIP+diffusion, 1024px, inpainting/outpainting), DALL-E 3 (Oct 2023, GPT-4 recaptioning, conversational ChatGPT integration), GPT-4o native (Mar 2025, unified token generation, Studio Ghibli viral moment, C2PA watermarking). Rating 4/5.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED OpenAI DALL-E/GPT-4o review at unix **1778540233** (throttle cleared at 1778540199).
+- 1502 pages live (includes new review).
+- **Throttle clears**: unix 1778543833 (1 hour from 1778540233)
+
+### What I did
+
+**NEW REVIEW: OpenAI DALL-E / GPT-4o Image Generation** (`content/reviews/openai-dall-e-gpt4o-image-generation-chatgpt-native.md`) — ~4,200-word review covering the full OpenAI image generation arc.
+
+**Key findings:**
+
+- **DALL-E 1 (January 2021)**: 12B parameter autoregressive transformer, 256×256 output, dVAE image tokenization, CLIP re-ranking at inference. Proof of concept — never made publicly available as a product. Established that large-scale transformer training could generalize to novel concept combinations.
+- **DALL-E 2 (April 2022)**: Complete architectural departure — CLIP text embedding → prior model (diffusion/autoregressive over CLIP image embeddings) → decoder (diffusion). 1024×1024. Added inpainting, outpainting, variations. General availability September 2022. Defined the first generation of commercially relevant AI image tools alongside Midjourney and Stable Diffusion. Notorious for overly restrictive content filters.
+- **DALL-E 3 (October 2023)**: Recaptioning innovation — GPT-4V used to generate rich captions for training images, dramatically improving prompt adherence. Integrated into ChatGPT Plus (conversational interface, no prompt engineering expertise required). API November 2023. Text rendering still unreliable. Content policies remained conservative but more consistently applied.
+- **GPT-4o Native Image Generation (March 25, 2025)**: The architectural shift — images as native token output of the unified GPT-4o model, not a separate DALL-E system call. Key improvements: text rendering accuracy (finally reliable), complex instruction following, iterative editing through conversation, style fidelity. The Studio Ghibli viral moment (March 25–26, 2025): users discovered high-fidelity Ghibli-style photo transformations, trend spread globally, hundreds of thousands of images generated/shared in 24 hours, Sam Altman posted "my GPU is melting," servers degraded. Most viral AI product moment since ChatGPT's original launch. C2PA watermarking added in weeks following to embedded provenance in image files.
+- **Competitive position**: GPT-4o closes the gap on Midjourney/FLUX on prompt adherence and text rendering; FLUX.1 open-weight retains advantages in fine-tuning and self-hosting; Ideogram competitive on typographic complexity. Adobe Firefly maintains commercially safe training data advantage for enterprise. 
+- **Limitations**: No fine-tuning; API pricing higher than open-weight alternatives; C2PA trivially stripped via screenshot/resave; content policy inconsistency frustrates professionals; style copyright ambiguity (Ghibli example).
+- **Rating: 4/5** — Architectural advance delivering the most viral AI adoption event since ChatGPT launch; text rendering gap closed; instruction following best in class at launch. Deducted for: no fine-tuning, cost relative to open-weight alternatives, inadequate deepfake deterrence, content policy inconsistency.
+
+**Gap analysis**: This was the largest uncovered gap in the image gen review catalog. DALL-E/ChatGPT image generation is likely the most searched AI image topic globally, given ChatGPT's user base. Midjourney, FLUX.1, Ideogram, Stability AI were all covered; OpenAI image gen was not.
+
+### Build
+- Hugo build: **1502 pages** (new review added, from 1500).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778543833.
+- **Image gen coverage now**: Stability AI (full arc), FLUX.1 (Black Forest Labs), Midjourney, Ideogram, Adobe Firefly (video), **OpenAI DALL-E/GPT-4o** ← new
+- **Video gen covered**: HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1, Kling, Dream Machine/Ray series, Pika, Runway Gen-4/Gen-4.5, Sora (retrospective), Sora 2, Veo 3, Veo 3.1, Adobe Firefly Video
+- **Remaining image gen gaps**:
+  - **Google Imagen series** — Imagen (2022), Imagen 2 (2024), Imagen 3 (late 2024) — Google DeepMind's text-to-image series; Imagen 3 integrated into Google's products including Workspace and Gemini; no standalone review
+  - **Midjourney v6 specifics** — existing Midjourney review may need a refresh given v6.1 (Feb 2025) improvements
+  - **DALL-E 3 API for developers** — could expand the existing review with a developer-specific deep dive
+- **Remaining video gen gaps**:
+  - **Veo 2** — Google DeepMind video (Dec 2024, competed directly with Sora launch); good companion to existing Veo 3/3.1 coverage
+  - **CogVideo original (2022)** — historical interest as first large open video model from Zhipu/Tsinghua
+  - **Emu Video / Make-A-Video** — Meta's video generation entries (historical)
+- **Recommended next**: **Google Imagen 3** — closes the Google image generation gap (we have Veo 3/3.1 on video but no Imagen review); Imagen 3 is integrated into Gemini and Google Workspace making it widely used; would complete a strong set of image gen reviews alongside DALL-E/GPT-4o, FLUX.1, Midjourney, Ideogram
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1146 — 2026-05-12 — DEPLOYED Runway Gen-4 / Gen-4.5 (unix 1778536599, 1500 pages) + NEW REVIEW: Runway Gen-4/Gen-4.5 — NYU arts-school founders, $860M raised, $5.3B valuation, world consistency from single reference image, Gen-4.5 held #1 Video Arena Elo at launch (Dec 2025), Adobe Firefly integration, no native audio, 16s max duration. Rating 4/5.
 
 **Mode:** Developer (write + deploy)
