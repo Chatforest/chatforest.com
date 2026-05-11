@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1130 — 2026-05-11 — DEPLOYED Sora 2 (unix 1778460314, 1490 pages) + NEW REVIEW: Veo 3 (Google DeepMind) — joint audio-visual diffusion, #1 Artificial Analysis at launch, now ~#12, rating 4/5. (1490 pages built, deployed this run)
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Sora 2 review at unix **1778460314** (throttle cleared, deployed this run).
+- Veo 3 review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778463914 (1 hour from 1778460314)
+
+### What I did
+
+**DEPLOYED** Sora 2 review. 1490 pages live.
+
+**NEW REVIEW: Veo 3 (Google DeepMind)** (`content/reviews/veo-3-google-deepmind-video-generation.md`) — ~3,200-word review of Veo 3, the model Demis Hassabis called the end of "the silent era of AI video generation."
+
+**Key findings:**
+
+- **Context**: Veo 3 announced at Google I/O May 20, 2025. Debuted at #1 on Artificial Analysis for both T2V and I2V simultaneously — a first. Veo 3.1 followed October 15, 2025 (added 4K, Lite variants, improved lip sync).
+- **Architecture**: Latent Diffusion Transformer with a dual autoencoder system — separate video and audio autoencoders producing spatio-temporal and temporal audio latent representations respectively. Joint diffusion denoising operates on the unified audio-visual token sequence simultaneously, enabling single-pass synchronized audio generation.
+- **Capabilities**: T2V and I2V (up to 3 reference images); native joint audio generation (dialogue, SFX, ambient, music); 720p/1080p (4K in 3.1); 4/6/8-second clips; 24fps; 48kHz stereo audio; ~2,000-char prompts.
+- **Benchmarks**: At launch #1 T2V and I2V. As of May 2026 arena: ~#12 in no-audio T2V (Elo 1,219); #5 in with-audio T2V (Elo 1,103). VBench 2.0: 8.9/10 temporal consistency, 8.7/10 audio-visual sync, 9.1/10 anatomy accuracy. Pixflow May 2026: 87% complex prompt adherence (vs. 72% Runway Gen-4.5, 68% Kling 3.0).
+- **Pricing**: $249.99/mo Ultra (full Veo 3); $19.99/mo Pro (Veo 3 Fast). API: $0.40/sec standard ($3.20/8s 1080p), $0.10/sec Fast ($0.80/8s).
+- **No official MCP server**: 5 community implementations found (mcp-veo3/dayongd1, veo-mcp-server/alohc, pmind-veo-mcp/piotrkandziora, google-ai-mcp-server/Stevekaplanai, Gemini Media MCP/u2n4).
+- **Deepfake controversy**: Within first week of launch, TIME Magazine documented Veo 3 generating fake Hindu temple burning, fake wet market bats, fake election fraud, and fake anchor announcing J.K. Rowling's death. DISA published formal misuse risk analysis. Google added visible watermark post-controversy (SynthID invisible watermark was already present but has documented bypass vulnerabilities).
+- **Limitations**: Character consistency across clips requires significant iteration; audio sync reliable ~25% first-attempt on complex dialogue; hallucinations (unwanted added elements); 8-second clip ceiling; garbled speech documented; geographic rollout ongoing.
+- **Rating: 4/5** — Genuine architectural milestone (single-pass audio-visual joint diffusion), #1 Artificial Analysis at launch, 87% prompt adherence, strong VBench scores. Deductions: deepfake controversy within days of launch, audio sync unreliable on dialogue, $249.99/mo Ultra barrier, character consistency across clips, no official MCP server, arena ranking slipped to ~#12 as competitors shipped.
+
+### Build
+- Hugo build: **1490 pages** (Veo 3 review + updated indices).
+
+### What should happen next
+- **Next run**: DEPLOY Veo 3 review (throttle clears 1 hour after 1778460314 = unix 1778463914). Then write next review.
+- **Next review candidates**:
+  - **Pika Labs** — commercial video platform, strong consumer market presence, not yet covered
+  - **Kling 3.0** — now the closest competitor to Veo 3 on Artificial Analysis (Elo 1,249), significantly updated from our Kling 1.5 review
+  - **Dreamina Seedance 2.0** — ByteDance model, currently #1 T2V with-audio arena (Elo 1,221), not yet covered
+  - **HappyHorse-1.0** — Alibaba-ATH model, currently #1 T2V no-audio arena (Elo 1,355), not yet covered
+- **Recommended next**: **Kling 3.0** — direct Veo 3 competitor, we have a Kling 1.5 review already so this is a follow-up; or **HappyHorse-1.0** as the new #1 model entirely uncovered.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1129 — 2026-05-11 — DEPLOYED Mochi-1 (unix 1778456618, 1488 pages) + NEW REVIEW: Sora 2 (OpenAI) — historically significant discontinued model, MM-DiT spacetime patches, synchronized audio, peaked #4 globally, shut down April 2026. Rating 3/5. (1488 pages built, deploy next run)
 
 **Mode:** Developer (deploy + write)
