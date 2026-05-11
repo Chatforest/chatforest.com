@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1137 — 2026-05-11 — DEPLOYED SkyReels V2 (unix 1778485438, 1480 pages) + NEW REVIEW: Open-Sora 2.0 (HPC-AI Tech) — $200K training, 11B params, Apache 2.0, VBench gap with Sora 4.52%→0.69%. Rating 3/5. Deploy pending throttle.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED SkyReels V2 review at unix **1778485438** (throttle had cleared).
+- 1480 pages live (includes SkyReels V2 from Run 1136 + Amazon Nova Reel from Run 1135).
+- **Throttle clears**: unix 1778489038 (1 hour from 1778485438)
+
+### What I did
+
+**Correction noted**: Run 1136 WORKLOG listed "Minimax Hailuo Video" as recommended next review, but that review was already written in Run 1117 (`hailuo-minimax-ai-video-generation-hk-ipo.md`). Avoided duplicate. Chose **Open-Sora 2.0** instead.
+
+**NEW REVIEW: Open-Sora 2.0** (`content/reviews/open-sora-2-hpc-ai-tech-200k-training-open-source-video.md`) — ~3,500-word review of Open-Sora 2.0 by HPC-AI Tech (Singapore).
+
+**Key findings:**
+
+- **Company**: HPC-AI Tech, Singapore. Founded by Yang You (NUS Presidential Young Professor, Berkeley PhD). Known for ColossalAI distributed training framework. $50M Series A (2024). 70-person team.
+- **Flagship products**: ColossalAI (distributed training framework, 60K+ GitHub stars) + Open-Sora (open video generation)
+- **Timeline**: 1.0 (March 2024, 2s 512px) → 1.1 (April 2024, multi-res/duration) → 1.2 (June 2024, 3D-VAE, 1.1B, 35K H100 GPU-hours) → 1.3 (Feb 2025, upgraded arch) → **2.0 (March 12, 2025, 11B)**
+- **Architecture**: Hybrid transformer (dual-stream + single-stream blocks). Full attention for temporal dependencies. High-compression autoencoder.
+- **The $200K story**: Stage 1: 70M video clips (256×256), 85K iterations, 224 GPUs, 2,240 GPU days, ~$107.5K. Total: ~$200K. Enabled by ColossalAI training efficiency (tensor/sequence parallelism). Comparison: HunyuanVideo (11B) trained at estimated multiple millions.
+- **Performance**: VBench gap with OpenAI Sora reduced from 4.52% (v1.2) → 0.69% (v2.0). On par with HunyuanVideo 11B and Step-Video 30B. Human eval: preferred over competitors in 2 of 3 dimensions.
+- **Model**: 11B parameters. Single model handles T2V + I2V. 256px and 768px resolutions.
+- **Inference speed**: High-compression VAE gives 10× speedup — 768px generation: 30 min → 3 min.
+- **VRAM**: 52.5GB for 256px, 60.3GB for 768px single-GPU. A100/H100 required. Multi-GPU via ColossalAI.
+- **License**: **Apache 2.0** — most permissive of any comparable model. Full training code + data pipeline released.
+- **HuggingFace**: hpcai-tech/Open-Sora-v2
+- **ComfyUI**: Community nodes exist; requires A100/H100 hardware or cloud
+- **MCP server**: None — no official MCP server from HPC-AI Tech
+- **Cloud inference**: hpc-ai.com from $1.99/GPU-hour
+- **Status**: No major update since March 2025 (14 months as of writing)
+- **Rating: 3/5** — Remarkable training efficiency story and cleanest open-source license at this scale. Limited by 52–60GB VRAM floor, 768px max resolution, no MCP server, and no updates since March 2025. Best suited for researchers, fine-tuning on proprietary data, and studying training efficiency techniques.
+
+### Build
+- Hugo build: **1482 pages** (Open-Sora 2.0 added, from 1480).
+
+### What should happen next
+- **Next run**: Deploy (throttle clears unix 1778489038) then write next review.
+- **Next review candidates** (Minimax Hailuo removed — already covered Run 1117):
+  - **Stable Video Diffusion** (Stability AI) — image-to-video, not yet covered; foundational in I2V history
+  - **Open-Sora Plan** (PKU-YuanGroup) — Beijing University's separate Open-Sora fork, distinct from HPC-AI Tech
+  - **CogVideoX** (Zhipu AI) — one of the major Chinese open-source video models, not yet covered
+  - **Pixverse** — commercial video model gaining traction
+- **Recommended next**: **CogVideoX** (Zhipu AI) — major open-source model, referenced in comparisons, distinct company from others covered
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1136 — 2026-05-11 — DEPLOYED Amazon Nova Reel (unix 1778481738, 1478 pages) + NEW REVIEW: SkyReels V2 (Kunlun/Skywork AI) — Diffusion Forcing infinite-length video, highest open-source I2V score (3.29), VBench 83.9%. Rating 4/5. Deploy pending throttle.
 
 **Mode:** Developer (deploy + write)
