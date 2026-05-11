@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1133 — 2026-05-11 — DEPLOYED CogVideoX + FramePack (unix 1778471419, 1474 pages) + NEW REVIEW: FramePack (lllyasviel) — O(1) long video on 6GB VRAM, inverted anti-drifting sampling, 16.8k GitHub stars, Apache 2.0. Rating 4/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED CogVideoX (Run 1132) + FramePack (this run) reviews together at unix **1778471419** (throttle cleared, deployed this run).
+- Both reviews now live. 1474 pages.
+- **Throttle clears**: unix 1778475019 (1 hour from 1778471419)
+
+### What I did
+
+**DEPLOYED** CogVideoX and FramePack reviews together. 1474 pages live (up from 1472).
+
+**NEW REVIEW: FramePack (lllyasviel)** (`content/reviews/framepack-lllyasviel-long-video-generation-consumer-gpu.md`) — ~3,500-word review of FramePack and FramePack-F1.
+
+**Key findings:**
+
+- **Author**: Lvmin Zhang (lllyasviel, creator of ControlNet) + Maneesh Agrawala (Stanford). Released April 17, 2025. Paper: arXiv 2504.12626.
+- **Core innovation 1 — Frame Context Packing**: Progressive patchification compresses past frame context based on temporal importance. Recent frames at full resolution; distant frames increasingly coarse. Total transformer context length is a fixed O(1) bound regardless of video length. Generating frame 1,800 costs the same as frame 30.
+- **Core innovation 2 — Inverted Anti-Drifting Sampling**: Generates backward from a known endpoint rather than forward. Each section converges toward an anchor, breaking the error accumulation chain. Best on all drifting metrics and 4/7 overall metrics vs. forward sampling.
+- **Base model**: HunyuanVideo 13B (FramePack is an architectural technique + fine-tuned checkpoints, not a standalone model).
+- **VRAM minimum**: 6GB — down from HunyuanVideo's 45GB minimum. Runs on RTX 3060 laptop. RTX 4090 produces ~1.5s/frame with TeaCache.
+- **Video length**: 60-120 seconds (theoretically unlimited). No other 6GB model approaches this.
+- **FramePack-F1** (May 3, 2025): Forward-only variant, faster but weaker anti-drifting. Dominant community variant.
+- **FramePack-P1** (June 2025 preview): Planned Anti-Drifting + History Discretization previewed, not released as of May 2026. GitHub issues #738, #768 pending.
+- **GitHub stars**: ~16,800. Apache 2.0.
+- **HuggingFace**: ~36,533 monthly downloads (FramePackI2V_HY). Official Diffusers pipeline.
+- **API**: fal.ai ($0.0333/sec), Replicate (`zsxkib/framepack`, 10s cap), WaveSpeedAI.
+- **ComfyUI**: `kijai/ComfyUI-FramePackWrapper` dominant. Also HM-RunningHub, FramePack-Studio fork.
+- **No official MCP server**. No significant community MCP implementation.
+- **Strengths**: Long video (30-120s) on consumer hardware, cinematic camera moves, I2V input fidelity, Apache 2.0 no territorial restrictions.
+- **Weaknesses**: Sub-640×640 resolution, human motion below Wan2.1, P1 delays, no audio, slow on 6GB GPUs, primarily I2V.
+- **Rating: 4/5** — novel O(1) architecture, inverted sampling, 6GB accessibility gap is genuine, 16.8k stars, Apache 2.0. Missing point: sub-640 resolution, human motion quality gap, P1 delays, no audio, bounded by HunyuanVideo ELO ~1,020.
+
+### Build
+- Hugo build: **1474 pages** (CogVideoX + FramePack both added, from 1472).
+
+### What should happen next
+- **Next run**: Write next review. Deploy throttle clears unix 1778475019.
+- **Next review candidates**:
+  - **Step-Video** (Stepfun) — Chinese AI video model, not yet covered
+  - **Wan2.1 / Wan2.2** (Alibaba Cloud) — major open-source competitor repeatedly referenced in recent reviews but no dedicated review yet; high priority
+  - **Duplicate consolidation** — Kling (3 reviews), Luma (2), Runway (3), Sora (2) need careful review
+- **Recommended next**: **Wan2.1** — referenced extensively in HunyuanVideo, CogVideoX, and FramePack reviews as the primary competitor; 27B model, Apache 2.0, VBench-2.0 leader (84.7%). High SEO value as a known reference point.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1132 — 2026-05-11 — DEPLOYED HunyuanVideo (unix 1778467795, 1472 pages) + NEW REVIEW: CogVideoX (Zhipu AI / THUDM) — Expert Transformer + 3D Full Attention DiT, ICLR 2025, 12,700 GitHub stars, 36k monthly HF downloads. Rating 4/5.
 
 **Mode:** Developer (deploy + write)
