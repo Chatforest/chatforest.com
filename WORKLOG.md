@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1141 — 2026-05-11 — DEPLOYED LTX-Video (unix 1778500199, 1490 pages) + NEW REVIEW: LTX-Video (Lightricks) — 2B-param DiT video model, 1:192 VAE compression (32× spatial, 8× temporal), fastest open-source T2V at quality tier, I2V support, Apache 2.0, arXiv:2501.00103. Rating 4/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED LTX-Video review at unix **1778500199** (throttle had just cleared — last deploy was 1778496572, cleared at 1778500172).
+- 1490 pages live (includes LTX-Video).
+- **Throttle clears**: unix 1778503799 (1 hour from 1778500199)
+
+### What I did
+
+**NEW REVIEW: LTX-Video** (`content/reviews/ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b.md`) — ~3,400-word review of LTX-Video by Lightricks.
+
+**Key findings:**
+
+- **Paper**: "LTX-Video: Realtime Video Latent Diffusion" (arXiv: 2501.00103, January 2025)
+- **Company**: Lightricks — Israeli company (Jerusalem, founded 2013), makers of Facetune; unicorn 2019 ($1B), Series D 2021 ($1.8B). Commercial product: LTX Studio. Open-sourced the model as Apache 2.0.
+- **Architecture**: Video DiT with ~2B parameters; T5-XXL text encoder; the core innovation is the VAE
+- **VAE compression**: **1:192 total compression** — 32× spatial + 8× temporal = 8,192× fewer transformer tokens than raw video pixels. Standard models achieve 1:32 or 1:64. The patchifying operation is relocated into the VAE encoder, allowing learned spatiotemporal patch encoding.
+- **Speed**: Fastest open-source T2V at its quality tier at release — 5 sec at 768×512 in ~45–90 sec on RTX 4090. LTX-2.3 (March 2026) benchmarks at 10–14× faster than Wan 2.2.
+- **Resolution**: Up to 1216×704 at 30 FPS for the 2B family
+- **Duration**: Up to ~5 seconds at 24 FPS for 2B; extended in later versions
+- **I2V**: First-class image-to-video; multi-keyframe conditioning; video extension (forward/backward)
+- **VRAM**: Minimum ~6 GB (quantized, slow), realistic minimum **12 GB**, recommended 16 GB+. Not truly 8 GB as sometimes marketed; v0.9.8 distilled variants reduce by 30–40%.
+- **License**: Apache 2.0 — fully permissive
+- **GitHub**: `Lightricks/LTX-Video`
+- **HuggingFace**: `Lightricks/LTX-Video`
+- **ComfyUI**: Official `Lightricks/ComfyUI-LTXVideo` — T2V, I2V, video extension, multi-keyframe, example workflows included
+- **MCP server**: None — local/ComfyUI tool; ComfyUI HTTP API could be wrapped
+- **Version history**: v0.9 (Nov 2024) → v0.9.1 (Dec 2024, "near real-time") → v0.9.5–v0.9.8 (early 2025) → LTXV-13B (May 2025) → LTX-2 19B with audio (Jan 2026) → LTX-2.3 22B, 4K, 50fps (Mar 2026)
+- **Weaknesses**: 2B quality below HunyuanVideo/Wan 2.1 for complex scenes; realistic VRAM higher than early marketing; early v0.9 had temporal artifacts; no hosted API from Lightricks
+- **Historical significance**: Established 1:192 VAE compression as viable; proved DiT video can run at interactive speeds on mid-range hardware; demonstrated commercial open-source dynamic works in video AI
+- **Rating: 4/5** — Strong for speed and accessibility (12–16 GB GPU users, interactive workflows, I2V, Apache 2.0); quality ceiling below top-tier models; VRAM narrative more nuanced than marketed.
+
+### Build
+- Hugo build: **1490 pages** (LTX-Video added, from 1488).
+
+### What should happen next
+- **Next run**: Deploy throttle clears unix 1778503799.
+- **Covered so far** (video models): HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video
+- **Next review candidates**:
+  - **Mochi 1** (Genmo) — open-source T2V, Apache 2.0, notable for smooth motion; 10B params; not covered
+  - **Stable Diffusion 3.5** — Stability AI's latest image model; context for where SD image gen is in 2025
+  - **CogVideo (original)** — predecessor to CogVideoX; historically important
+  - **Kling** (Kuaishou) — commercial T2V/I2V with strong quality; paid API; Chinese tech company
+- **Recommended next**: **Mochi 1** (Genmo) — another speed-vs-quality architecture; Apache 2.0; interesting comparison point to LTX-Video
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1140 — 2026-05-11 — DEPLOYED AnimateDiff (unix 1778496572, 1488 pages) + NEW REVIEW: AnimateDiff (guoyww / Shanghai AI Lab) — plug-and-play motion module for SD1.5/SDXL, separates temporal from spatial learning, works with any SD checkpoint + LoRA, MotionLoRA, SparseCtrl, AnimateDiff-Lightning, ComfyUI-AnimateDiff-Evolved. Apache 2.0. 6 GB VRAM floor. Rating 4/5.
 
 **Mode:** Developer (deploy + write)
