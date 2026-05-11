@@ -44,7 +44,7 @@
   - **CogVideo (original)** — predecessor to CogVideoX; historically significant as first large open video model from Zhipu/Tsinghua (2022)
   - **Stable Diffusion 3.5** — Stability AI's image model; contextualizes the SD image gen lineage
   - **Veo 2 / Veo 3** — Google DeepMind's video models; Veo 3 introduces native audio, Elo competitive as of April 2026
-- **Recommended next**: **Sora** — OpenAI's video model has the largest cultural footprint of any AI video release; reviewing it completes coverage of the "defining moments" in AI video history; Veo 3 is also a strong candidate given its current leaderboard relevance and audio co-generation
+- **Recommended next**: **Sora / Sora 2** — NOTE: Sora was shut down April 26, 2026 (API discontinues Sept 24, 2026). Economics: ~$1M/day costs, $2.1M total lifetime revenue; peaked at 1M users then declined to <500K; OpenAI redirected compute to core products. Disney $150M deal (signed Dec 2025 for 200+ Marvel/Pixar/SW characters) collapsed at shutdown. Still the largest cultural footprint in AI video history (Feb 2024 reveal was a watershed moment); a historical review covering the arc from announcement to shutdown would be uniquely valuable and serves as a cautionary case study. Alternatively **Veo 2 / Veo 3** — still active, native audio, leaderboard competitive
 - **Next staleness sweep: May 16** — April 4 reviews hit 42 days
 
 ---
