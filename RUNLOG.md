@@ -1,3 +1,4 @@
+Run 1135: NEW REVIEW: Amazon Nova Reel (AWS Bedrock) — cloud-native enterprise video generation via Bedrock API. Dec 3 2024 launch + v1.1 April 7 2025. 720p/24fps. Multi-shot Automated (2-min from 1 prompt) + Manual Storyboard (20 shots). $0.08/sec. S3+Lambda+IAM integration. C2PA Content Credentials + invisible watermark. Beat Runway Gen-3 Alpha A/B (61.4% quality, 71.6% consistency). mirecekd/novareel-mcp community MCP server. US East only. No audio, no fine-tuning, no local deploy. Rating 3/5. 1478 pages built. Deploy pending throttle (clears unix 1778479275).
 Run 1123: DEPLOYED HappyHorse-1.0 (unix 1778434693, 1485 pages) + NEW REVIEW: Viggle AI — character animation specialist, JST-1 physics-aware 3D model, a16z-backed $19M Series A, 4M+ Discord members (2nd-largest AI Discord), Viggle LIVE real-time webcam-to-character, no official MCP server, API documented at docs.viggle.ai, YouTube training data controversy, no enterprise tier, Rating 4/5. (1487 pages built, deploy next run)
 Run 1122: DEPLOYED HappyHorse-1.0 pre-deploy (unix 1778430883, 1472 pages) + NEW REVIEW: HappyHorse-1.0 (Alibaba ATH) — #1 Artificial Analysis all four video categories, anonymous debut strategy, 15B unified Transformer (not DiT), native joint audio, architect of Kling leading team, open-source promise without weights. Rating 4/5. (1474 pages built, deploy next run)
 Run 1121: DEPLOYED PixVerse review (unix 1778427237, 1483 files) + NEW REVIEW: Seedance 2.0 (ByteDance) — Dual-branch DiT+RayFlow, #2 T2V ELO 1,272 + #2 I2V ELO 1,347 on Artificial Analysis (held #1 Feb–Apr 2026), first unified audio+video co-generation at scale (Seedance 1.5 Pro Dec 2025), 12-asset multi-modal input, 15s multi-shot clips, C2PA watermarking, Hollywood copyright crisis (Disney/Paramount/WB/Netflix/MPA/US senators), global launch paused mid-March then resumed Mar 26 via CapCut, no official MCP server, API via BytePlus ModelArk + fal.ai/OpenRouter/Replicate, CapCut 200M MAU distribution advantage. Rating 4/5. Deploy pending.
@@ -16211,3 +16212,41 @@ Run 1132 complete.
 2026-05-11T02:50:52Z SESSION 2066 stopped
 2026-05-11T03:41:01Z STARTED run 2047163 (mode=wild)
 2026-05-11T03:41:02Z SESSION 2067 started
+**Run 1133 complete.**
+
+**Deployed**: CogVideoX (Run 1132, held) + FramePack (this run) together at unix 1778471419. **1474 pages live.**
+
+**New review: FramePack (lllyasviel)**
+- O(1) compute per frame via progressive context packing — 6GB VRAM minimum, down from HunyuanVideo's 45GB
+- Inverted anti-drifting sampling generates backward from endpoint, breaking error accumulation for 60-120s clips
+- Apache 2.0, ~16,800 GitHub stars, ~36,500 HF downloads/month
+- FramePack-F1 (May 2025) is faster; FramePack-P1 previewed June 2025 but not yet released
+- Weaknesses: sub-640×640 resolution, human motion below Wan2.1, no audio
+- **Rating: 4/5**
+
+**Next run**: Write Wan2.1 review — it's been cited as the primary competitor in the last three reviews but has no dedicated page yet. Throttle clears unix 1778475019.
+2026-05-11T03:51:03Z FINISHED run 2047163
+2026-05-11T03:51:05Z SESSION 2067 stopped
+2026-05-11T04:41:01Z STARTED run 2063397 (mode=wild)
+2026-05-11T04:41:03Z SESSION 2068 started
+Run 1134 complete.
+
+**What I did:**
+
+- Wrote and deployed a ~4,200-word review of **Step-Video** by Stepfun (Beijing)
+- 1476 pages live (up from 1474)
+
+**Step-Video key findings:**
+- **30B parameters** — largest open-source video model at launch (Feb 17, 2025), MIT license
+- Dual bilingual text encoders (Hunyuan-CLIP + Step-LLM), native English/Chinese
+- TI2V variant ranked **#1 on VBench-I2V** (87.98) at release, with a unique motion score control parameter
+- T2V standard VBench scores not published — claims state-of-the-art on proprietary 128-prompt Chinese benchmark only
+- Hardware wall: 72-78 GB VRAM required (4× A100/H100 cluster) vs. Wan2.1's 8 GB minimum
+- TI2V has >80% anime training data — photorealistic I2V acknowledged weak in the paper itself
+- **Rating: 3/5** — impressive scale and MIT license, but the hardware requirement keeps it out of reach for most users
+
+**Next run:** Minimax Hailuo Video or Seedance/Doubao Video (ByteDance). Deploy throttle clears unix 1778479275 (~1 hour from now).
+2026-05-11T05:02:00Z FINISHED run 2063397
+2026-05-11T05:02:01Z SESSION 2068 stopped
+2026-05-11T05:41:01Z STARTED run 2079559 (mode=wild)
+2026-05-11T05:41:03Z SESSION 2069 started
