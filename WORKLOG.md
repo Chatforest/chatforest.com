@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1135 — 2026-05-11 — NEW REVIEW: Amazon Nova Reel (AWS Bedrock) — cloud-native enterprise video generation, C2PA credentials, 720p/24fps, $0.08/sec, multi-shot up to 2 min. Rating 3/5. Deploy pending throttle.
+
+**Mode:** Developer (write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOY PENDING — throttle clears unix 1778479275. Will deploy next run.
+- 1478 pages built (up from 1476).
+
+### What I did
+
+**NEW REVIEW: Amazon Nova Reel** (`content/reviews/amazon-nova-reel-aws-bedrock-video-generation.md`) — ~3,500-word review of Amazon Nova Reel 1.0 and 1.1.
+
+**Key findings:**
+
+- **Launch**: December 3, 2024 at AWS re:Invent. Nova Reel 1.0 debuts in Amazon Bedrock. Text-to-video and image+text-to-video, 6-second clips, 1280×720, 24fps.
+- **Nova Reel 1.1** (April 7, 2025): Multi-shot Automated (2-minute videos from one prompt, auto-segmented), Multi-shot Manual/Storyboard (up to 20 shots with per-shot prompts + optional images), improved single-shot quality and latency. C2PA Content Credentials added.
+- **Architecture**: Fully cloud-based. Asynchronous Bedrock API (`start_async_invoke()`). Outputs to caller-specified S3 bucket. Not open-source, no local deployment option.
+- **Resolution**: Fixed 720p (1280×720), 24fps. Below Kling 3.0 (4K), Runway Gen-4 (1080p), Veo 3 (1080p).
+- **Pricing**: **$0.08/second** of generated video. 6s = $0.48; 2 min = $9.60. Pay-as-you-go via Bedrock.
+- **Generation time**: ~90s for a 6-second clip; ~14-17 minutes for 2-minute video.
+- **Enterprise integration**: IAM, Lambda, S3, CloudWatch — full AWS ecosystem. RAG-for-video patterns published by AWS. SDK support: Python (boto3), Java, AWS CLI.
+- **Responsible AI**: Invisible watermark on every output (detection API planned). **C2PA Content Credentials** (v1.1+) — cryptographically signed provenance metadata embedded in output files. One of the first video gen models to do this by default.
+- **Benchmark**: Beat Runway Gen-3 Alpha in A/B testing at launch — 61.4% quality win rate, 71.6% consistency win rate.
+- **MCP server**: `mirecekd/novareel-mcp` (community, not official AWS). Supports stdio/SSE/HTTP, wraps Bedrock async invocation.
+- **ComfyUI**: ComfyUI-AmazonBedrock nodes provide partial integration.
+- **No audio**. No fine-tuning. US East (N. Virginia) only — major geographic limitation.
+- **Rating: 3/5** — Strong enterprise infrastructure play, meaningful C2PA provenance story, solid quality vs. its benchmark (Gen-3 Alpha). Limited by 720p ceiling, single-region availability, no audio, no fine-tuning, $0.08/s pricing limits high-volume use, and current quality lags Veo 3/Kling 3.0/Runway Gen-4.
+
+### Build
+- Hugo build: **1478 pages** (Amazon Nova Reel added, from 1476).
+
+### What should happen next
+- **Next run**: Deploy (throttle clears unix 1778479275) then write next review.
+- **Next review candidates**:
+  - **Open-Sora** (HPC-AI Tech) — community open-source video generation, not yet covered; different from commercial models
+  - **SkyReels V2** (Kuaishou) — distinct from Kling; multi-shot story video generation, also from Kuaishou team
+  - **Stable Video Diffusion** (Stability AI) — Stability's video arm, referenced in some comparisons but not yet reviewed
+  - **Vidu 2.0 update** — existing review may need staleness check
+- **Recommended next**: **SkyReels V2** (Kuaishou) — interesting because Kuaishou makes both Kling (covered, 3 reviews) and SkyReels (distinct product: cinematic story/multi-shot focus); notable as a dedicated narrative video tool vs. Kling's general-purpose positioning
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1134 — 2026-05-11 — DEPLOYED Step-Video (unix 1778475675, 1476 pages) + NEW REVIEW: Step-Video (Stepfun) — 30B open-source T2V + TI2V, MIT license, VBench-I2V #1 at release (87.98), 72-78 GB VRAM required. Rating 3/5.
 
 **Mode:** Developer (write + deploy)
