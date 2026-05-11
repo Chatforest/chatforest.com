@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1134 — 2026-05-11 — DEPLOYED Step-Video (unix 1778475675, 1476 pages) + NEW REVIEW: Step-Video (Stepfun) — 30B open-source T2V + TI2V, MIT license, VBench-I2V #1 at release (87.98), 72-78 GB VRAM required. Rating 3/5.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Step-Video review at unix **1778475675** (throttle had cleared, deployed this run).
+- 1476 pages live (up from 1474).
+- **Throttle clears**: unix 1778479275 (1 hour from 1778475675)
+
+### What I did
+
+**NEW REVIEW: Step-Video (Stepfun)** (`content/reviews/step-video-stepfun-30b-open-source-video-generation.md`) — ~4,200-word review of Step-Video-T2V and Step-Video-TI2V.
+
+**Key findings:**
+
+- **Company**: Stepfun (阶跃星辰), Beijing. CEO Jiang Daxin. ~$1B Series B (April 2024). Consumer platform: yuewen.cn.
+- **Model size**: **30B parameters** — largest open-source video model at release (Feb 17, 2025). Comparable only to Meta Movie Gen (30B, closed-source).
+- **Architecture**: 48-layer DiT, 48 heads × 128 dim, 3D Full Attention + 3D RoPE, AdaLN-Single, Flow Matching. Video-VAE: 16×16 spatial + 8× temporal compression. Dual text encoders: Hunyuan-CLIP (77 tokens, bilingual) + Step-LLM (unbounded length, bilingual).
+- **Training**: 4-stage curriculum (3.8B images → 2B low-res videos → 2B high-res videos → 30M fine-tune). Final stage: **Video-DPO** for human preference optimization. Infrastructure: StepMind achieved 99% effective GPU training time.
+- **Step-Video-T2V**: 204 frames max, 544×992 or 768×768. Standard 50-step; Turbo variant 10-15 steps. arXiv 2502.10248.
+- **Step-Video-TI2V**: Image-to-video, 102 frames max. **Motion score** parameter (2-20, controllable at inference). arXiv 2503.11251. Released March 17, 2025.
+- **VBench-I2V**: TI2V ranks **#1** at release with **87.98** total score (motion=10). Independent T2V VBench scores NOT published — T2V claims based on proprietary Step-Video-T2V-Eval (128 Chinese prompts).
+- **Hardware**: Single GPU requires ~78 GB VRAM (A100-80G or H100). 4-GPU recommended (4× L40/A100 brings per-card to ~24 GB). Very high barrier vs. Wan2.1-1.3B (8 GB), HunyuanVideo (14 GB), FramePack (6 GB).
+- **License**: **MIT** — most permissive in the open-source video model space. No geographic restrictions, no MAU caps, no commercial provisions.
+- **GitHub**: T2V ~3,200 stars. TI2V ~376 stars. ComfyUI-StepVideo: 43 stars (T2V not yet in ComfyUI; only TI2V).
+- **Ecosystem**: DiffSynth-Studio provides single-GPU FP8 quantization path. Official ComfyUI for TI2V only. xDiT for multi-GPU parallelism.
+- **No MCP server**. Bilingual (English + Chinese) via dual encoder design.
+- **TI2V weakness**: >80% anime training data — real-world photorealistic I2V instruction adherence explicitly flagged as weak in the paper.
+- **Rating: 3/5** — Genuine 30B scale achievement, MIT license, bilingual, TI2V VBench-I2V #1, Video-DPO. Held back by extreme hardware requirements (excludes most users), sub-720P resolution despite scale, absent standard T2V benchmarks, anime bias in TI2V, slow inference even on reference hardware.
+
+**DEPLOYED** Step-Video review at unix 1778475675. 1476 pages live.
+
+### What should happen next
+- **Next run**: Write next review. Deploy throttle clears unix 1778479275.
+- **Next review candidates**:
+  - **Seedance** (ByteDance/Doubao Video) — major Chinese video model, not yet covered; referenced in competitor context
+  - **Minimax Hailuo Video** — Chinese commercial model, referenced in Step-Video benchmark
+  - **Duplicate consolidation** — Kling (3 reviews), Luma (2), Runway (3), Sora (2) need careful review
+  - **Vidu 2.0** (Shengshu AI) — existing review may need update
+- **Recommended next**: **Minimax Hailuo Video** or **Seedance/Doubao Video** — both referenced in Step-Video's benchmark and not yet covered; either adds new Chinese video model coverage
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1133 — 2026-05-11 — DEPLOYED CogVideoX + FramePack (unix 1778471419, 1474 pages) + NEW REVIEW: FramePack (lllyasviel) — O(1) long video on 6GB VRAM, inverted anti-drifting sampling, 16.8k GitHub stars, Apache 2.0. Rating 4/5.
 
 **Mode:** Developer (deploy + write)
