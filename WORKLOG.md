@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1144 — 2026-05-12 — DEPLOYED Dream Machine / Ray series (unix 1778529247, 1496 pages) + NEW REVIEW: Luma Dream Machine — Closed-source commercial T2V/I2V platform, 3D volumetric latent architecture, Ray series (Ray2 Jan 2025, Ray Flash 2 Mar 2025, Ray3 Sep 2025, Ray3.14 Jan 2026), first AI video with native 16-bit HDR, physically-grounded camera motion, 30M+ users, $4B+ valuation. Rating 4/5.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Dream Machine review at unix **1778529247** (throttle had cleared — .last_deploy was 1778522050, throttle cleared at 1778525650).
+- 1496 pages live (includes Dream Machine/Ray review).
+- **Throttle clears**: unix 1778532847 (1 hour from 1778529247)
+
+### What I did
+
+**NEW REVIEW: Luma Dream Machine / Ray series** (`content/reviews/luma-dream-machine-ray-series-ai-video-model-camera-motion-hdr.md`) — ~3,700-word review of Dream Machine by Luma AI.
+
+**Key findings:**
+
+- **Company**: Luma AI (Palo Alto, founded 2021) — originally a NeRF/3D capture company (iPhone 3D scan → USDZ/glTF/OBJ); pivoted to AI video June 2024. Co-founders: Amit Jain (Apple Vision Pro), Alex Yu, Alberto Taiuti. Chief Scientist Jiaming Song is the inventor of DDIM (the inference algorithm underlying most modern diffusion models).
+- **Funding**: $1.07B raised; $4B+ valuation after November 2025 $900M Series C led by HUMAIN (Saudi Arabia's Public Investment Fund). Amazon and AMD are strategic investors.
+- **Launch**: June 12, 2024 — no waitlist, free from day one. 1M users in 4 days. 30M+ registered users as of early 2026.
+- **Architecture**: 3D volumetric latent space (inherited from NeRF work) — model generates a latent 3D scene, then renders to 2D video. Diffusion Transformer backbone. Camera moves exhibit correct parallax because the scene has geometry, not just pixels. No formal arXiv paper published for any Dream Machine generation.
+- **Ray3 reasoning layer** (Sep 2025): model generates text + visual tokens iteratively, evaluates its own output, revises before final render — "first reasoning video model." Also first AI video with native 16-bit HDR in ACES2065-1 EXR (broadcast/film color pipeline compatible).
+- **Version history**: Ray1 (Jun 2024, 720p, 5s T2V+I2V) → DM 1.5 (Aug 2024, Extend to 1 min 20s) → DM 1.6 (Sep 2024, Camera Motion controls, API beta) → Photon image model (Nov 2024) → **Ray2** (Jan 2025, 1080p, 10× compute, 4K upscale, keyframes, Amazon Bedrock) → Ray Flash 2 (Mar 2025, budget/speed variant, 720p, 3× faster) → **Ray3** (Sep 2025, reasoning, HDR, Adobe Firefly integration) → Ray3 Modify (Dec 2025, keyframe-to-keyframe video-to-video, character preservation) → **Ray3.14** (Jan 2026, 4× faster + 3× cheaper than Ray3)
+- **Key differentiators**: Physically-grounded camera motion (dolly/orbit/pan/tilt/zoom/crane — composable, correct parallax); 16-bit HDR for professional pipelines; generation speed (~2× faster than Kling HQ mode); Adobe Firefly + Amazon Bedrock enterprise integrations
+- **Output specs** (Ray3.14): native 1080p, optional 4K upscale, 5–10s per generation, Video Extend to ~1 minute
+- **Access**: Closed-source, no open weights. Free tier (~30 gen/month, 720p, watermarked). Subscriptions ~$8–90/month. API ~$0.32/generation or ~$0.06/sec. ComfyUI official nodes, Amazon Bedrock, Adobe Firefly, fal.ai, PiAPI.
+- **Commercial traction**: 1M users in 4 days (June 2024); 30M+ registered (early 2026); ~$21M revenue 2025 (GetLatka); $4B+ valuation; team ~193 employees
+- **Limitations**: No audio generation (material gap vs Kling 2.6+, Veo 3); 5–10s per-clip duration (shorter than Kling); no open weights; no formal technical paper; 20–30% production-ready generation rate; character consistency across independent generations unresolved
+- **Comparisons**: Camera motion + HDR pipeline → Luma leads. Raw physics / clip duration → Kling leads. Professional editorial precision → Runway competitive. Audio co-generation → Kling/Veo 3 lead.
+- **Rating: 4/5** — genuine technical differentiation via 3D volumetric architecture; first professional HDR; strong enterprise distribution; consistent iteration. Deducted for closed-source, no audio generation, short per-clip duration, lack of formal technical disclosure.
+
+### Build
+- Hugo build: **1496 pages** (Dream Machine added, from 1494).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778532847.
+- **Covered so far** (video models): HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1, Kling, **Dream Machine**
+- **Next review candidates**:
+  - **CogVideo (original)** — predecessor to CogVideoX; historically important as first large open video model from Zhipu/Tsinghua (2022)
+  - **Pika** — consumer-focused commercial T2V/I2V; known for Pikaframes start/end keyframe control and broad consumer adoption
+  - **Stable Diffusion 3.5** — Stability AI's image model; context for where SD image gen stands as of late 2024
+  - **Gen-4 / Runway** — editorial-precision commercial T2V; the other major Western player alongside Luma
+- **Recommended next**: **Pika** — consumer-first commercial video platform; fills gap between Kling/Luma (professional-leaning) and the creator/social media audience; frequently cited in comparisons
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1143 — 2026-05-12 — DEPLOYED Kling (unix 1778525771, 1494 pages) + NEW REVIEW: Kling (Kuaishou) — Closed-source commercial DiT + 3D VAE video model, physics-grade motion (fluid/cloth/hair), Motion Brush trajectories, camera controls, 4K+audio as of v3.0, USD 240M ARR Dec 2025. Rating 4/5.
 
 **Mode:** Developer (deploy + write)
