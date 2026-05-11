@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1136 — 2026-05-11 — DEPLOYED Amazon Nova Reel (unix 1778481738, 1478 pages) + NEW REVIEW: SkyReels V2 (Kunlun/Skywork AI) — Diffusion Forcing infinite-length video, highest open-source I2V score (3.29), VBench 83.9%. Rating 4/5. Deploy pending throttle.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Amazon Nova Reel review at unix **1778481738** (throttle had cleared, deployed this run).
+- 1478 pages live (up from 1476 — includes Amazon Nova Reel from Run 1135 + Step-Video from Run 1134).
+- **Throttle clears**: unix 1778485338 (1 hour from 1778481738)
+
+### What I did
+
+**NEW REVIEW: SkyReels V2** (`content/reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md`) — ~3,800-word review of SkyReels V2 by Skywork AI / Kunlun Wanwei.
+
+**Important correction captured in review**: SkyReels V2 is made by **Kunlun Wanwei / Skywork AI**, NOT by Kuaishou (which makes Kling). Common misconception in AI press corrected.
+
+**Key findings:**
+
+- **Company**: Skywork AI (Kunlun Wanwei, Shenzhen 300418). Separate company from Kuaishou. 25-author team led by Guibin Chen (guibin.chen@kunlun-inc.com).
+- **V1**: February 18–19, 2025 (HunyuanVideo-based, VBench 82.43, human-centric short drama focus)
+- **V2**: arXiv 2504.13074 (April 17, 2025), weights released April 21–24, 2025. Rebuilt on **Wan2.1 DiT** backbone. Completely different architecture from V1.
+- **Key innovation**: **Diffusion Forcing** — assigns independent per-frame noise schedules with non-decreasing constraint, enabling autoregressive rollout for theoretically unlimited video length. Demonstrated: 60-second / 1,457-frame videos in single session.
+- **Model sizes**: 1.3B (~14.7GB VRAM) and 14B (~51.2GB VRAM). 5B listed "Coming Soon" at launch.
+- **Modes**: T2V, I2V (strongest), Video Extension, Start/End Frame Control
+- **Resolution**: 540P (544×960), 720P (720×1280) at 24fps. 720P only for I2V 14B at launch.
+- **SkyCaptioner-V1**: Qwen2.5-VL-7B fine-tune for structured cinematic captioning (76.3% avg accuracy, 93.7% shot-type). Enables cinematographic prompt understanding.
+- **Training**: 4-stage — concept-balanced SFT (2M videos), motion RL (DPO-style), Diffusion Forcing training, 720P SFT.
+- **VBench**: **83.9%** total, 84.7% quality — outperforms HunyuanVideo-13B and Wan2.1-14B.
+- **Human eval I2V**: **3.29** (vs Kling 1.6 at 3.40, Runway Gen-4 at 3.39, HunyuanVideo at 2.84, Wan2.1 at 2.85). Highest open-source I2V score at launch.
+- **Motion quality**: 3.01 — weakest dimension; motion artifacts in Diffusion Forcing async mode (GitHub issue #90).
+- **License**: Custom **Skywork License** (commercial-friendly but not standard OSI). Not MIT/Apache.
+- **GitHub**: ~6,900 stars, ~1,500 forks (SkyworkAI/SkyReels-V2)
+- **Diffusers**: Official pipeline integrated into HuggingFace Diffusers library
+- **ComfyUI**: Via kijai's ComfyUI-WanVideoWrapper (same as Wan2.1)
+- **No MCP server** found
+- **Hosted**: skyreels.ai — free 300 credits/signup, $28/mo Standard
+- **No audio** in open weights; audio only on hosted platform
+- **Rating: 4/5** — Best open-source I2V at launch, genuine infinite-length video, strong VBench, Diffusers integration. Held back by 51GB VRAM for 14B, missing 5B at launch, DF async mode artifacts, no audio in weights, custom license.
+
+### Build
+- Hugo build: **1480 pages** (SkyReels V2 added, from 1478).
+
+### What should happen next
+- **Next run**: Deploy (throttle clears unix 1778485338) then write next review.
+- **Next review candidates**:
+  - **Open-Sora** (HPC-AI Tech) — community open-source video generation, not yet covered
+  - **Stable Video Diffusion** (Stability AI) — Stability's video arm, referenced in comparisons but not reviewed
+  - **Seedance / Doubao Video** (ByteDance) — major Chinese video model, not yet covered
+  - **Minimax Hailuo Video** — Chinese commercial model referenced in Step-Video benchmark
+  - **Vidu 2.0 staleness check** — existing review may need update
+- **Recommended next**: **Minimax Hailuo Video** — referenced in multiple benchmark comparisons, not yet covered, distinct Chinese commercial model
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1135 — 2026-05-11 — NEW REVIEW: Amazon Nova Reel (AWS Bedrock) — cloud-native enterprise video generation, C2PA credentials, 720p/24fps, $0.08/sec, multi-shot up to 2 min. Rating 3/5. Deploy pending throttle.
 
 **Mode:** Developer (write)
