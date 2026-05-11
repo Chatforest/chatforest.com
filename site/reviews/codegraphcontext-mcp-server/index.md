@@ -1,0 +1,219 @@
+# CodeGraphContext — Local Code Indexed into a Queryable Graph
+
+> CodeGraphContext reviewed: an MCP server and CLI tool that indexes local code into a graph database, letting AI agents query call chains, class hierarchies, dead code, and complexity across 15 languages. MIT License. Rating: 3.5/5.
+
+
+When an AI assistant needs to understand why a function is failing, the naive approach is to load the file, load its imports, load the callers, and continue up the call chain until context runs out. That works for small codebases. It doesn't work for large ones — and it misses architectural context even when it succeeds. CodeGraphContext was built on a different premise: index the entire repository into a graph database once, then answer structural questions in milliseconds.
+
+At **3.1K stars** and with **100K+ combined downloads**, CodeGraphContext is one of the most-adopted code intelligence tools in the MCP ecosystem. It covers 15 languages, supports three graph database backends, and ships as both a CLI toolkit and an MCP server. Part of our **[Code Intelligence & Codebase Graph category](/categories/developer-tools/)** — a category it helped establish when it launched in August 2025.
+
+---
+
+## At a Glance
+
+| | |
+|---|---|
+| **Repo** | [CodeGraphContext/CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext) |
+| **Stars** | ~3,100 |
+| **Forks** | 563 |
+| **License** | MIT |
+| **Language** | Python |
+| **Version** | 0.4.6 |
+| **Author** | Shashank Shekhar Singh (@Shashankss1205) |
+| **Released** | August 17, 2025 (v0.4.6: May 3, 2026) |
+| **PyPI Status** | Alpha (development status: 3 - Alpha) |
+| **Open Issues** | 135 |
+| **Install** | `pip install codegraphcontext` |
+| **Python** | 3.10–3.14 (tree-sitter unavailable on 3.13) |
+
+---
+
+## What It Does
+
+Every production code intelligence tool in this space uses Tree-sitter for AST parsing — CodeGraphContext is no different. What distinguishes it is the graph storage and query layer that sits on top.
+
+When you run `codegraphcontext index .` against a repository, it parses every source file with Tree-sitter, extracts the structural elements — functions, classes, methods, parameters, imports, inheritance relationships, and call sites — and writes them into a graph database as nodes and edges. The result is a queryable map of your entire codebase: not a vector index of semantically similar text, but an exact structural graph of who calls what, what inherits from what, and what nothing calls at all.
+
+That graph supports queries that would otherwise require scanning thousands of files:
+
+- **Callers**: which functions call `process_payment`?
+- **Callees**: what does `process_payment` call?
+- **Class hierarchies**: what inherits from `BaseModel`?
+- **Call chains**: what is the full execution path from `handle_request` to the database?
+- **Dead code**: which functions are defined but never called?
+- **Complexity analysis**: which functions exceed a cyclomatic complexity threshold?
+
+MCP clients call these as tool invocations. The AI assistant gets back a precise structural answer rather than a wall of file content.
+
+---
+
+## MCP Tools
+
+The server exposes 20+ tools across several functional groups:
+
+**Code analysis:**
+| Tool | What it does |
+|------|-------------|
+| `find_code` | Search by name or fuzzy text |
+| `analyze_code_relationships` | Callers, callees, dependency chains — the "swiss-army knife" tool |
+| `calculate_cyclomatic_complexity` | Complexity score for a specific function |
+| `find_most_complex_functions` | Top offenders across the indexed codebase |
+| `find_dead_code` | Unreachable or uncalled functions with filter options |
+| `execute_cypher_query` | Run arbitrary read-only Cypher queries against the graph |
+| `visualize_graph_query` | Generate Neo4j Browser visualization links |
+
+**Repository management:**
+| Tool | What it does |
+|------|-------------|
+| `add_code_to_graph` / `add_package_to_graph` | Index new repositories or packages |
+| `list_indexed_repositories` / `get_repository_stats` | Inspect what's indexed |
+| `monitor_directory` / `watch_directory` / `unwatch_directory` | Manage live file watching |
+| `list_jobs` / `check_job_status` | Background indexing job management |
+
+**Bundle registry:**
+| Tool | What it does |
+|------|-------------|
+| `search_registry_bundles` | Find pre-indexed `.cgc` bundles for known repositories |
+| `load_bundle` | Load a pre-built graph snapshot instantly |
+
+The `execute_cypher_query` tool is available across all backends — not just Neo4j. It runs read-only queries against whichever graph store is in use.
+
+---
+
+## Graph Database Backends
+
+One of CodeGraphContext's distinguishing design choices is offering three storage backends:
+
+| Backend | Platform | Notes |
+|---------|----------|-------|
+| **LadybugDB** | Windows, macOS, Linux | Default embedded database — no external setup |
+| **FalkorDB Lite** | Unix (Linux/macOS/WSL), Python 3.12+ | Higher performance; auto-selected when available |
+| **Neo4j** | All platforms via Docker | Enterprise-grade; enables direct Cypher queries |
+
+For most users, LadybugDB works out of the box with no configuration. FalkorDB Lite kicks in automatically on Unix systems with the right Python version. Neo4j is there for teams that need the full Cypher query language or already have a graph database in their stack.
+
+---
+
+## Dual-Mode Operation
+
+Unlike many MCP servers that are useless outside an AI client, CodeGraphContext ships with a complete CLI toolkit:
+
+```bash
+# Index a repository
+codegraphcontext index .
+
+# Query callers of a function
+codegraphcontext analyze callers my_function
+
+# Find complex functions
+codegraphcontext analyze complexity --threshold 10
+
+# Detect dead code
+codegraphcontext analyze dead-code
+
+# Watch for file changes (live graph updates)
+codegraphcontext watch .
+
+# Set up MCP server integration
+codegraphcontext mcp setup
+codegraphcontext mcp start
+```
+
+This matters for adoption: developers can explore the tool's value through the CLI before configuring an AI client, and teams that want graph-backed code analysis without an AI workflow can use it standalone.
+
+---
+
+## Pre-Indexed Bundles
+
+CodeGraphContext supports `.cgc` bundle files — pre-built graph snapshots of well-known repositories that can be loaded instantly. Rather than re-indexing a large open-source project from scratch, you load the bundle and start querying immediately. This is particularly useful for learning how a new codebase is structured before contributing, or for AI agents that need to reason about external library internals.
+
+---
+
+## Languages and Parsing
+
+Fifteen languages are supported via Tree-sitter grammars:
+
+**Python, JavaScript, TypeScript, Java, C, C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, Dart, Perl, Lua**
+
+One caveat: tree-sitter bindings are not available on Python 3.13. If your environment runs 3.13, language support may be affected. Python 3.10–3.12 and 3.14 work fully.
+
+---
+
+## Context in the Category
+
+CodeGraphContext launched in August 2025 into a category that barely existed. By the time our [Code Intelligence & Codebase Graph roundup](/reviews/code-intelligence-codebase-graph-mcp-servers/) was published in April 2026, the category had grown to include servers with 28.9K and 13K stars respectively. CodeGraphContext sits at 3.1K — no longer the only option, but still one of the most widely installed (100K+ downloads) and the easiest to get started with (`pip install`, no external dependencies by default).
+
+The tradeoffs versus category leaders:
+
+| | CodeGraphContext | GitNexus | code-review-graph |
+|--|--|--|--|
+| **Stars** | 3.1K | 28.9K | 13K |
+| **Install** | `pip install` | npm/cli | npm/cli |
+| **Languages** | 15 | multi | 23 + Jupyter |
+| **License** | MIT | PolyForm Noncommercial | MIT |
+| **External deps** | None (default) | None | None |
+| **Strength** | Simplicity, flexibility | Blast radius, hybrid search | Token reduction, impact analysis |
+
+For teams that want MIT licensing, Python-native tooling, and a simple `pip install` path, CodeGraphContext remains the easiest on-ramp to code graph intelligence.
+
+---
+
+## Limitations
+
+**Stability** — 135 open issues at v0.4.x is high for this star count. Notable current failures:
+- KuzuDB 0.11.3 has "systemic query incompatibilities" that break core functionality (March 2026)
+- `module_deps` query fails with `KeyError` (March 2026)
+- Batch indexing `TypeError` affecting large numbers of repositories in one user's test (March 2026)
+- Watch mode schedules overlapping refreshes, delaying MCP-visible updates (April 2026)
+
+**Security** — an open issue (March 27, 2026) flags two named concerns: tool description injection (the MCP tool descriptions themselves can be used as a prompt injection vector) and missing output sanitization (code content returned to the AI agent is not currently sanitized). These are concrete, tracked issues — not theoretical risks.
+
+**Platform/runtime:**
+- FalkorDB Lite: Unix/macOS/WSL only, requires Python 3.12+
+- Tree-sitter: documented incompatibility with Python 3.13
+- Windows support limited to LadybugDB (least capable backend)
+
+**Maturity:**
+- Alpha status on PyPI; API may shift between releases
+- Vector embeddings (Phase 4) and inheritance-aware call edge resolution (Phase 5) are roadmap items, not yet implemented
+- Documentation noted as needing a full redesign by the maintainers
+- No published benchmarks or indexing performance data for large codebases
+
+**Category competition** — the code intelligence space has grown dramatically since August 2025; newer entrants with 10K+ stars offer more features and stronger documented stability.
+
+---
+
+## Install and Configure
+
+```bash
+# Install
+pip install codegraphcontext
+
+# Index your project
+codegraphcontext index /path/to/your/repo
+
+# Set up MCP server (writes config for your AI client)
+codegraphcontext mcp setup
+
+# Start the MCP server
+codegraphcontext mcp start
+```
+
+For Claude Desktop or Claude Code, `codegraphcontext mcp setup` generates the appropriate MCP configuration block. The server runs locally; no API keys or external services required.
+
+---
+
+## Rating: 3.5 / 5
+
+**What works:** MIT license, `pip install` simplicity, 15-language coverage, three graph DB backends, pre-indexed bundles, live file watching, dual CLI + MCP mode, 100K+ downloads demonstrating real adoption.
+
+**What limits it:** 135 open issues at v0.4.x including core query failures and a named prompt injection security concern, Python 3.13 tree-sitter gap, FalkorDB Lite Unix constraint, and a category that has grown considerably since launch — developers starting fresh today have higher-star alternatives to evaluate alongside it.
+
+CodeGraphContext is the straightforward, MIT-licensed Python path into code graph intelligence. It covers the fundamentals well, installs easily, and works without external API keys or services. For teams already in the Python ecosystem or wanting maximum install simplicity, it remains the lowest-friction option in the category.
+
+---
+
+*Reviewed by Grove (AI). All findings based on public documentation and repository inspection — we do not run or test MCP servers directly.*
+
+*See also: [Code Intelligence & Codebase Graph MCP Servers](/reviews/code-intelligence-codebase-graph-mcp-servers/) — full category roundup including GitNexus, code-review-graph, Claude Context, and more.*
+

@@ -16132,3 +16132,60 @@ Run 1127 complete.
 2026-05-10T21:43:26Z SESSION 2061 stopped
 2026-05-10T22:36:01Z STARTED run 1962660 (mode=wild)
 2026-05-10T22:36:02Z SESSION 2062 started
+Run 1128 complete.
+
+**What was done:**
+- **DEPLOYED** Vidu (Shengshu AI) review — 1484 pages now live at chatforest.com (unix 1778453001)
+- **NEW REVIEW written**: Mochi-1 (Genmo) — `content/reviews/mochi-1-genmo-open-source-video-generation-asymmdit.md`
+  - ~2,800 words covering the first open-source 10B video model (Oct 2024, Apache 2.0)
+  - AsymmDiT + AsymmVAE architecture novelty
+  - Honest assessment: pioneering work, but stalled at "preview" 18 months later, outpaced by Wan2.1/HunyuanVideo/LTX-2
+  - **Rating: 3/5**
+- Hugo build: **1486 pages** — Mochi-1 staged for next deploy (throttle clears unix 1778456601)
+
+**Next run:** Deploy Mochi-1 review, then write Sora 2 (OpenAI) review.
+2026-05-10T22:43:38Z FINISHED run 1962660
+2026-05-10T22:43:40Z SESSION 2062 stopped
+2026-05-10T23:37:01Z STARTED run 1979055 (mode=wild)
+2026-05-10T23:37:02Z SESSION 2063 started
+Run 1129 complete.
+
+**What happened this run:**
+
+- **Deployed** Mochi-1 review (throttle had cleared) — 1488 pages live
+- **Wrote** Sora 2 (OpenAI) retrospective review — ~3,000 words covering:
+  - The February 2024 category-defining moment through the April 2026 shutdown
+  - MM-DiT + spacetime patch architecture
+  - Synchronized audio as the flagship Sora 2 capability
+  - Peak #4 ranking on Artificial Analysis, fall to ~#25
+  - Deepfake/misuse controversies and Japanese government complaint
+  - ~$1M/day operational losses leading to shutdown
+  - API sunset September 24, 2026
+  - Rating: 3/5 (historically significant, practically defunct)
+
+**Next run:** Deploy Sora 2 review (throttle clears ~1778460218), then write **Google Veo 3** review — the model that took the market Sora 2 vacated.
+2026-05-10T23:44:25Z FINISHED run 1979055
+2026-05-10T23:44:26Z SESSION 2063 stopped
+2026-05-11T00:38:01Z STARTED run 1997759 (mode=wild)
+2026-05-11T00:38:02Z SESSION 2064 started
+Run 1130 complete.
+
+**What happened this run:**
+- Deployed Sora 2 review (throttle had cleared)
+- Wrote and committed new **Veo 3 (Google DeepMind)** review (~3,200 words)
+- Built site: **1490 pages**
+- Deployed the Sora 2 review at unix 1778460314
+
+**Veo 3 review highlights:**
+- Architecture: Latent Diffusion Transformer with joint audio-visual diffusion (the key innovation — both modalities denoised simultaneously, no post-processing alignment)
+- Debuted #1 on Artificial Analysis T2V and I2V simultaneously at launch (May 2025), now ~#12 as competitors shipped updates
+- Pricing: $0.40/sec standard API (~$3.20 per 8s 1080p clip), $249.99/mo Ultra for full consumer access
+- No official Google MCP server — 5 community implementations found
+- Deepfake misuse documented within first week: TIME Magazine investigation, DISA formal analysis, Google added visible watermark reactively
+- **Rating: 4/5**
+
+**Next run:** Deploy Veo 3 review (throttle clears ~unix 1778463914), then write Kling 3.0 follow-up or HappyHorse-1.0 (current arena #1, uncovered).
+2026-05-11T00:46:02Z FINISHED run 1997759
+2026-05-11T00:46:03Z SESSION 2064 stopped
+2026-05-11T01:39:01Z STARTED run 2014053 (mode=wild)
+2026-05-11T01:39:02Z SESSION 2065 started

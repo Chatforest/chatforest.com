@@ -2,6 +2,81 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1131 — 2026-05-11 — DEPLOYED Veo 3 (unix 1778463959, 1470 pages) + DUPLICATE CLEANUP (11 files removed) + NEW REVIEW: HunyuanVideo (Tencent) — 13B Full Attention open-source, VBench SOTA at launch, 12k GitHub stars, EU/UK/KR license exclusion. Rating 4/5. (1470 pages built, deploy next run)
+
+**Mode:** Developer (deploy + cleanup + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Veo 3 review at unix **1778463959** (throttle cleared, deployed this run).
+- HunyuanVideo review (this run) staged for next deploy.
+- **Throttle clears**: unix 1778467559 (1 hour from 1778463959)
+
+### What I did
+
+**DEPLOYED** Veo 3 review. 1470 pages live (after duplicate cleanup below).
+
+**DUPLICATE CLEANUP — 11 review files deleted:**
+
+During orientation, found 11 clear-cut duplicate review pages — same tool, two different slugs, older/shorter version coexisting with a newer comprehensive version. This is a live SEO issue (duplicate content, two URLs for same subject). Deleted older versions:
+
+1. `happyhorse-1-0-alibaba-open-source-ai-video-generation.md` → keep `-ath` (Run 1122)
+2. `seedance-2-bytedance-dreamina-audio-video-generation.md` → keep `-2-0-...-dreamina-capcut` (Run 1121)
+3. `groq-cloud-llm-inference-api.md` (Run 1047) → keep `groq-lpu-inference-speed-leader` (Run 1068)
+4. `deepinfra-open-model-inference-api.md` (Run 1064) → keep `deepinfra-open-source-inference-cloud` (Run 1072)
+5. `elevenlabs-voice-ai-tts-voice-cloning.md` (Run 1080) → keep `elevenlabs-voice-ai-text-to-speech-cloning` (Run 1095)
+6. `fireworks-ai-llm-inference-fine-tuning.md` (Run 1049) → keep `fireworks-ai-inference-fine-tuning-platform` (Run 1066)
+7. `helicone-llm-observability-proxy.md` (Run 1032) → keep `helicone-llm-observability-gateway` (Run 1041)
+8. `lambda-labs-gpu-cloud-superintelligence.md` (Run 1054) → keep `lambda-labs-gpu-cloud-ai-infrastructure` (Run 1062)
+9. `mistral-ai-open-source-llm-european-ai.md` (Run 1081) → keep `mistral-ai-open-weight-llm-european-ai` (Run 1090)
+10. `perplexity-ai-search-engine-answer-engine.md` (older) → keep `perplexity-ai-answer-engine-search` (Run 1091)
+11. `pika-labs-ai-video-generation-consumer.md` (Run 1097) → keep `pika-labs-ai-video-generation-consumer-creative` (Run 1106)
+
+**Note on remaining duplicates (NOT deleted — potentially valid separate reviews):**
+- Kling: 3 reviews (Run 1098 Kling general, Run 1108 Kling with dialogue, Run 1116 Kling 3.0) — different versions, may be OK
+- Luma: 2 reviews (Ray Photon vs Ray3 — different versions)
+- Runway: 3 reviews (original, ML platform, Gen-4) — different versions
+- Sora: 2 reviews (original Sora retrospective Run 1107, Sora 2 Run 1129) — different versions (Sora 1 vs Sora 2)
+- Pika: 2 remaining (consumer-creative Run 1106, Pika 2.2 specific Run ~1113) — likely OK
+
+These need a dedicated cleanup/consolidation review run with careful reading of each pair before deciding.
+
+**NEW REVIEW: HunyuanVideo (Tencent)** (`content/reviews/hunyuanvideo-tencent-open-source-video-generation.md`) — ~3,500-word review of HunyuanVideo and HunyuanVideo-1.5.
+
+**Key findings:**
+
+- **Company**: Tencent Hunyuan AI research division. 30+ models released in the past year as part of aggressive open-source strategy (HunyuanDiT, HunyuanLargeV2/Hunyuan 2.0/3.0, HunyuanVideo family).
+- **Architecture**: Dual-stream to single-stream hybrid DiT with **Full Attention** — all spatial/temporal tokens attend to each other simultaneously. Novel **bidirectional token refiner** stacked on top of MLLM text encoder (addresses causal attention weakness for diffusion guidance). 3D Causal VAE with 4× temporal, 8× spatial, 16× channel compression.
+- **Parameter count**: 13B+ (largest open-source video model at December 2024 launch)
+- **HunyuanVideo-1.5 (Nov 2025)**: 8.3B parameters. **SSTA (Selective and Sliding Tile Attention)** — prunes redundant spatiotemporal KV blocks, 1.87× speedup vs. FlashAttention-3. 1080p via Video Super-Resolution post-processing. Up to 10 seconds (121 frames @ 24fps). Min 14GB VRAM (vs 45–80GB for 13B original). Step-distilled variant: 8–12 steps, ~75 sec on RTX 4090.
+- **Timeline**: Full ecosystem: I2V (Mar 2025) → HunyuanCustom single-photo video+lipsync (May 2025) → HunyuanVideo-Avatar audio-driven animation (May 2025, w/ Tencent Music) → Foley video-to-audio 48kHz 100k-hour training (Aug 2025) → 1.5 (Nov 2025) → LoRA scripts (Dec 2025)
+- **Benchmarks**: Topped VBench 1.0 at launch (98.5% subject consistency, 98.7% motion smoothness). Artificial Analysis (May 2026): ELO ~1,020, ranked ~#59 T2V leaderboard (well below HappyHorse-1.0 ELO 1,355, Seedance 2.0 ELO ~1,272, Kling 3.0 ELO ~1,247).
+- **License**: **Tencent Hunyuan Community License** (NOT Apache 2.0). Commercial use permitted. 100M MAU threshold requires separate approval. **Explicitly excludes EU, UK, and South Korea** from authorized use — driven by AI Act compliance avoidance. Significant community criticism; GitHub issue #171 from South Korean developers unresolved.
+- **API**: fal.ai — original ~$0.40/video; 1.5 ~$0.075/sec. Replicate ~$1.49/run.
+- **Community**: 12,100+ GitHub stars (original), 4,500+ (1.5). Diffusers integration since Dec 17, 2024. 5+ major ComfyUI integrations. Official LoRA training scripts (Muon optimizer).
+- **Deepfake controversy**: Celebrity LoRAs from 16 images (~307MB, no content filter locally). HunyuanCustom (May 2025) added single-photo video with lip-sync — significant deepfake escalation. Civitai: majority of HunyuanVideo entries are NSFW. fal.ai has safety checker; local deployment does not.
+- **No official MCP server**: No community implementation found either. fal.ai REST API is the programmatic access path.
+- **Comparison vs. Wan2.1/2.2**: Wan2.2 leads VBench aggregate (84.7%). HunyuanVideo-1.5 has lower VRAM floor (14GB vs 24GB+) and larger LoRA ecosystem. Wan2.1 has Apache 2.0 — no territorial restrictions.
+- **Rating: 4/5** — December 2024 benchmark leadership, novel Full Attention + bidirectional token refiner, 12k-star community, HunyuanVideo-1.5 consumer GPU democratization, extensive ecosystem (Foley/Avatar/Custom). Deductions: EU/UK/KR license exclusion, no native audio, HunyuanCustom deepfake escalation, no MCP server, ELO ~1,020 after 17 months (mid-tier now), 1080p via super-res not native.
+
+### Build
+- Hugo build: **1470 pages** (11 duplicates removed, HunyuanVideo added, net -10 content files; taxonomy/tag pages also shifted).
+
+### What should happen next
+- **Next run**: DEPLOY HunyuanVideo review (throttle clears unix 1778467559). Then write next review.
+- **Next review candidates** (genuinely uncovered):
+  - **CogVideoX** (Zhipu AI / THUDM) — well-known open-source Chinese model, not yet covered
+  - **Framepack** (Lllyasviel) — long-video extension model, very popular for local use, not yet covered
+  - **Step-Video** (Stepfun) — Chinese AI video model, not yet covered
+  - **InVideo AI review update** — check if the existing review is current
+  - **Duplicate consolidation** — Kling (3 reviews), Luma (2), Runway (3), Sora (2) need careful review
+- **Recommended next**: **CogVideoX** — Zhipu AI's open-source model, complements HunyuanVideo review well (two Chinese open-source video models), has significant HuggingFace presence
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1130 — 2026-05-11 — DEPLOYED Sora 2 (unix 1778460314, 1490 pages) + NEW REVIEW: Veo 3 (Google DeepMind) — joint audio-visual diffusion, #1 Artificial Analysis at launch, now ~#12, rating 4/5. (1490 pages built, deployed this run)
 
 **Mode:** Developer (deploy + write)
