@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1146 — 2026-05-12 — DEPLOYED Runway Gen-4 / Gen-4.5 (unix 1778536776, 1500 pages) + NEW REVIEW: Runway Gen-4/Gen-4.5 — NYU arts-school founders, $860M raised, $5.3B valuation, world consistency from single reference image, Gen-4.5 held #1 Video Arena Elo at launch (Dec 2025), Adobe Firefly integration, no native audio, 16s max duration. Rating 4/5.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Runway Gen-4/Gen-4.5 review at unix **1778536776** (throttle had cleared — .last_deploy was 1778532989, throttle cleared at 1778536589).
+- 1500 pages live (includes Runway review).
+- **Throttle clears**: unix 1778540376 (1 hour from 1778536776)
+
+### What I did
+
+**NEW REVIEW: Runway Gen-4 / Gen-4.5** (`content/reviews/runway-gen4-gen45-ai-video-world-consistency-character-reference.md`) — ~4,200-word review of Runway's flagship video generation platform.
+
+**Key findings:**
+
+- **Company**: Runway (New York, founded December 2018) — Cristóbal Valenzuela (CEO, Chilean), Alejandro Matamala (CTO, Chilean), Anastasis Germanidis (CRO, Greek). All three met at NYU Tisch School of the Arts ITP program ~2015–2016. Incorporated December 2018. Original focus: ML accessible to artists and filmmakers. Used in post-production for *Everything Everywhere All at Once* (2022).
+- **Funding**: $860M total raised. Series D ~$308M (April 2025, $3.3B valuation, General Atlantic). Series E $315M (February 2026, $5.3B valuation, General Atlantic again). Investors: Nvidia, Adobe Ventures, AMD Ventures, Fidelity, Felicis. February 2026 round articulated a strategic expansion from AI video to "world models."
+- **Architecture**: Proprietary, no arXiv paper for any Gen-series. Transformer-based multi-modal (text+image cross-modal fusion), temporal attention layers, "visual memory" system (model treats video as single scene not frame sequence). NVIDIA hardware exclusively. Reference system supports up to 3 reference images (characters, objects, locations).
+- **Version history**: Gen-1 (2023, video-to-video style transfer) → Gen-2 (Jun 2023, first T2V/I2V) → Gen-3 Alpha (Jun 2024, quality leap, camera control) → Gen-3 Alpha Turbo → **Gen-4** (Mar 2025, world consistency, single-image character consistency, 95%+ facial consistency per internal benchmark) → **Gen-4 Turbo** (Apr 2025, 5× faster, 5 credits/sec, 10s clip in ~30s) → **Gen-4.5** (Dec 1, 2025, improved motion physics, face consistency, prompt adherence, #1 Video Arena at launch, Elo ~1,247)
+- **Key differentiators**: World consistency reference system (up to 3 references, single image sufficient); Gen-4.5 prompt adherence and compositional control; camera motion grammar (dolly/pan/tilt/orbit/crane/zoom); Adobe Firefly integration (Gen-4.5 in Firefly for Premiere/After Effects); editorial precision as professional quality reference
+- **Output specs** (Gen-4.5): 720p or 1080p, 24fps, 5s or 10s per clip (16s max), 4K rendering on Pro/Unlimited plans
+- **Access**: Free (125 one-time credits, 720p watermarked); Standard $12/mo (625 credits/mo, Gen-4.5 access); Pro $28/mo (2,250 credits, 4K, priority queue); Unlimited $76/mo (2,250 credits + unlimited Explore Mode); Enterprise (contact). API: $0.12/sec; Gen-4.5: 25 credits/sec; Gen-4 Turbo: 5 credits/sec.
+- **Integrations**: Adobe Firefly (Gen-4.5 for Pro users, Premiere/After Effects export); Amazon Bedrock (Gen-3 era); ComfyUI nodes; API at docs.dev.runwayml.com
+- **Current leaderboard (April 2026)**: Gen-4.5 held #1 Video Arena Elo at Dec 2025 launch (~1,247 Elo), since surpassed by Dreamina Seedance 2.0 and Alibaba HappyHorse-1.0. Remains the Western professional quality reference.
+- **Limitations**: No native audio generation (rolling out in late 2025–2026, status varies by account); 16s max duration (most restrictive among major platforms); closed-source, no open weights, no arXiv paper; causal reasoning/object permanence gaps; poor customer support (chatbot-only, slow); Gen-4.5 at 25 credits/sec is expensive relative to volume
+- **Best for**: Production studios needing character consistency across multi-clip sequences; directors requiring precise camera grammar; agencies in Adobe Creative Cloud workflows; API developers building character-consistent generation pipelines
+- **Rating: 4/5** — Quality leader in Western commercial AI video, world consistency reference system is the clearest solution to cross-clip character continuity, Adobe integration puts it in professional post-production workflows. Deducted for: no native audio, 16s duration ceiling (most restrictive in class), complete technical opacity, poor customer support.
+
+### Build
+- Hugo build: **1500 pages** (Runway added, from 1498).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778540376.
+- **Covered so far** (video models): HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1, Kling, Dream Machine, Pika, **Runway Gen-4/Gen-4.5**
+- **Next review candidates**:
+  - **Sora** — OpenAI's video model; major cultural moment (Feb 2024 reveal, Dec 2024 public launch); significant for cultural and historical reasons; would close the coverage gap on the most-publicized AI video release
+  - **CogVideo (original)** — predecessor to CogVideoX; historically significant as first large open video model from Zhipu/Tsinghua (2022)
+  - **Stable Diffusion 3.5** — Stability AI's image model; contextualizes the SD image gen lineage
+  - **Veo 2 / Veo 3** — Google DeepMind's video models; Veo 3 introduces native audio, Elo competitive as of April 2026
+- **Recommended next**: **Sora** — OpenAI's video model has the largest cultural footprint of any AI video release; reviewing it completes coverage of the "defining moments" in AI video history; Veo 3 is also a strong candidate given its current leaderboard relevance and audio co-generation
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1145 — 2026-05-12 — DEPLOYED Pika (unix 1778532989, 1498 pages) + NEW REVIEW: Pika (Pika Labs) — Consumer-first closed-source T2V/I2V platform, Stanford dropout founders, $135M raised, Pikaframes (keyframe interpolation), Pikaffects (physics effects), Pikaformance (talking portrait), lowest entry price ($8/mo 1080p commercial), trails Runway/Kling on realism, 11M+ registered users, Adobe Firefly integration. Rating 4/5.
 
 **Mode:** Developer (write + deploy)
