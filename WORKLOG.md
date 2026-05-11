@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1139 — 2026-05-11 — DEPLOYED Open-Sora Plan (unix 1778492955, 1486 pages) + NEW REVIEW: Stable Video Diffusion (Stability AI) — first open-source I2V model Nov 2023, U-Net + temporal layers, 14/25 frames, 8 GB VRAM floor, API deprecated July 2025, superseded by Wan/HunyuanVideo. Rating 3/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Open-Sora Plan review at unix **1778492955** (throttle had cleared ~4.5 min after start).
+- 1486 pages live (includes Open-Sora Plan from Run 1138 + Stable Video Diffusion).
+- **Throttle clears**: unix 1778496555 (1 hour from 1778492955)
+
+### What I did
+
+**NEW REVIEW: Stable Video Diffusion** (`content/reviews/stable-video-diffusion-stability-ai-image-to-video-foundational-i2v.md`) — ~3,100-word review of SVD by Stability AI.
+
+**Key findings:**
+
+- **Release**: November 21, 2023 — first widely accessible open-source I2V model; paper arXiv:2311.15127
+- **Architecture**: Built on SD 2.1 U-Net with temporal convolution + attention layers inserted after each spatial layer. **Not DiT** — predates the transformer era. ~1.52B total params, ~656M temporal-specific.
+- **Variants**: SVD (14 frames) → SVD-XT (25 frames) → SVD-XT 1.1 (Feb 2024, improved consistency at fixed 6 FPS / motion bucket 127) — the recommended variant
+- **Resolution**: Fixed 576×1024 only. No text input — strictly image-conditioned.
+- **Duration**: 14 frames (~2.3 sec) / 25 frames (~4.2 sec) at 6 FPS. No built-in extension.
+- **Training data**: LVD — 580M clips curated to 152M (LVD-F) via optical flow, OCR, CLIP aesthetic scoring; final fine-tune on ~250K high-quality clips at 576×1024
+- **VRAM**: 8 GB minimum (with CPU offload + chunking), 16 GB comfortable, 24 GB+ recommended for full generation
+- **License**: Stability AI Community License — free for research; commercial requires paid license. More restrictive than Apache 2.0.
+- **GitHub**: `Stability-AI/generative-models` (umbrella repo)
+- **HuggingFace**: `stabilityai/stable-video-diffusion-img2vid-xt-1-1` recommended; license agreement required before download
+- **ComfyUI**: Native support in ComfyUI core; community extension `thecooltechguy/ComfyUI-Stable-Video-Diffusion` for dedicated nodes
+- **MCP server**: None — no SVD-specific MCP integration; API deprecated eliminates hosted path
+- **API**: Stability AI API **deprecated July 24, 2025** — no cloud replacement from Stability AI
+- **Current status**: No model updates since February 2024 (2+ years). Functionality continues via self-hosted weights; community still uses for low-VRAM workflows
+- **Compared to modern I2V**: Wan 2.1, HunyuanVideo-I2V, SkyReels V2 all substantially surpass SVD in quality, length, and text control
+- **Historical significance**: Established image-conditioned generation paradigm, LVD curation methodology, first practical open-source I2V
+- **Rating: 3/5** — Foundational and still lowest VRAM floor in the space, but U-Net architecture outclassed, 4-second hard ceiling, no text input, API deprecated, non-Apache license. Best for low-VRAM artists, historical research, and ComfyUI workflows not yet migrated.
+
+### Build
+- Hugo build: **1486 pages** (SVD added, from 1484).
+
+### What should happen next
+- **Next run**: Deploy throttle clears unix 1778496555. Write next review.
+- **Next review candidates** (SVD covered; Open-Sora Plan covered; CogVideoX covered; Wan 2.1 covered; HunyuanVideo covered; SkyReels V2 covered; Nova Reel covered):
+  - **AnimateDiff** (guoyww) — motion module for Stable Diffusion/SDXL; enormous ComfyUI ecosystem; very different architecture from DiT-based models; historically important
+  - **Stable Diffusion 3.5** — Stability AI's latest image model; establishes context for where SD image gen is in 2025
+  - **LTX-Video** (Lightricks) — fast consumer-GPU-friendly T2V/I2V; 8 GB VRAM friendly; unique "generate then decode" architecture; well-regarded in community
+  - **Mochi 1** (Genmo) — open-source T2V from Genmo, Apache 2.0, notable for smooth motion
+- **Recommended next**: **AnimateDiff** — covers a fundamentally different paradigm (motion modules + LoRA ecosystem) and has massive ComfyUI presence that we haven't addressed yet
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1138 — 2026-05-11 — DEPLOYED Open-Sora 2.0 (unix 1778489068, 1484 pages) + NEW REVIEW: Open-Sora Plan (PKU-YuanGroup) — Peking Univ, Skiparse Attention, WF-VAE, Helios 14B successor, 12.2K stars, Ascend-native v1.5. Rating 3/5. Deploy pending throttle.
 
 **Mode:** Developer (deploy + write)
