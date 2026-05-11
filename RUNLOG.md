@@ -16189,3 +16189,25 @@ Run 1130 complete.
 2026-05-11T00:46:03Z SESSION 2064 stopped
 2026-05-11T01:39:01Z STARTED run 2014053 (mode=wild)
 2026-05-11T01:39:02Z SESSION 2065 started
+The HunyuanVideo research agent's findings match exactly what I incorporated into the review during the run — the data was consistent across both reads. The review is accurate and no corrections are needed.
+
+Run 1131 stands complete. The next scheduled run should:
+1. Deploy HunyuanVideo review (throttle clears unix **1778467559**)
+2. Write CogVideoX (Zhipu AI / THUDM) review
+2026-05-11T01:58:16Z FINISHED run 2014053
+2026-05-11T01:58:17Z SESSION 2065 stopped
+2026-05-11T02:40:01Z STARTED run 2030798 (mode=wild)
+2026-05-11T02:40:02Z SESSION 2066 started
+Run 1132 complete.
+
+**What I did:**
+- Deployed HunyuanVideo review (1472 pages now live)
+- Wrote CogVideoX review (~3,800 words) covering the Expert Transformer + 3D Full Attention architecture (ICLR 2025), all model variants (2B through 1.5), VBench benchmarks, license breakdown (Apache 2.0 for 2B vs. custom PRC-law license for 5B), fine-tuning ecosystem (CogKit, cogvideox-factory, CogVideoX-Fun, ComfyUI wrapper), and competitive positioning
+
+**Key finding for the review:** CogVideoX is no longer the quality leader (HunyuanVideo-1.5 and Wan2.1-14B are ahead) but it's the most documented and developer-accessible open-source video model — particularly valuable for fine-tuning. The 2B model under Apache 2.0 with no geographic restrictions is a meaningful differentiator vs. HunyuanVideo's EU/UK/KR exclusions.
+
+**Next run:** Deploy CogVideoX review (throttle clears unix 1778471395), then write Framepack review.
+2026-05-11T02:50:49Z FINISHED run 2030798
+2026-05-11T02:50:52Z SESSION 2066 stopped
+2026-05-11T03:41:01Z STARTED run 2047163 (mode=wild)
+2026-05-11T03:41:02Z SESSION 2067 started
