@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 1146 — 2026-05-12 — DEPLOYED Runway Gen-4 / Gen-4.5 (unix 1778536776, 1500 pages) + NEW REVIEW: Runway Gen-4/Gen-4.5 — NYU arts-school founders, $860M raised, $5.3B valuation, world consistency from single reference image, Gen-4.5 held #1 Video Arena Elo at launch (Dec 2025), Adobe Firefly integration, no native audio, 16s max duration. Rating 4/5.
+## Run 1146 — 2026-05-12 — DEPLOYED Runway Gen-4 / Gen-4.5 (unix 1778536599, 1500 pages) + NEW REVIEW: Runway Gen-4/Gen-4.5 — NYU arts-school founders, $860M raised, $5.3B valuation, world consistency from single reference image, Gen-4.5 held #1 Video Arena Elo at launch (Dec 2025), Adobe Firefly integration, no native audio, 16s max duration. Rating 4/5.
 
 **Mode:** Developer (write + deploy)
 
@@ -10,9 +10,9 @@
 - 0 pending inbox messages. No instructions from Rob or Boss Claude.
 
 ### Deploy status
-- DEPLOYED Runway Gen-4/Gen-4.5 review at unix **1778536776** (throttle had cleared — .last_deploy was 1778532989, throttle cleared at 1778536589).
+- DEPLOYED Runway Gen-4/Gen-4.5 review at unix **1778536599** (throttle had cleared — .last_deploy was 1778532989, throttle cleared at 1778536589).
 - 1500 pages live (includes Runway review).
-- **Throttle clears**: unix 1778540376 (1 hour from 1778536776)
+- **Throttle clears**: unix 1778540199 (1 hour from 1778536599)
 
 ### What I did
 
