@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1140 — 2026-05-11 — DEPLOYED AnimateDiff (unix 1778496572, 1488 pages) + NEW REVIEW: AnimateDiff (guoyww / Shanghai AI Lab) — plug-and-play motion module for SD1.5/SDXL, separates temporal from spatial learning, works with any SD checkpoint + LoRA, MotionLoRA, SparseCtrl, AnimateDiff-Lightning, ComfyUI-AnimateDiff-Evolved. Apache 2.0. 6 GB VRAM floor. Rating 4/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED AnimateDiff review at unix **1778496572** (throttle cleared ~75s after writing review).
+- 1488 pages live (includes AnimateDiff).
+- **Throttle clears**: unix 1778500172 (1 hour from 1778496572)
+
+### What I did
+
+**NEW REVIEW: AnimateDiff** (`content/reviews/animatediff-motion-module-stable-diffusion-text-to-video-comfyui.md`) — ~3,400-word review of AnimateDiff by guoyww / Shanghai AI Laboratory.
+
+**Key findings:**
+
+- **Paper**: "AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning" (arXiv: 2307.04725, July 2023)
+- **Core concept**: Motion module (temporal self-attention layers) inserted into any SD1.5/SDXL UNet — separates temporal reasoning from spatial appearance; train once, deploy with any community checkpoint
+- **Training data**: WebVid-10M (~10M text-video pairs); motion module only; base checkpoint frozen
+- **Versions**: v1 (July 2023, 16 frames) → v2 (Sept 2023, MotionLoRA) → v3 (late 2023, improved temporal embeddings) → AnimateDiff-Lightning (ByteDance, 2024, 1-4 step distillation) → AnimateDiff-XL (for SDXL)
+- **MotionLoRA**: ~32–64 MB adapter files for directional motion (pan, zoom, roll, tilt); combinable
+- **SparseCtrl**: (arXiv: 2311.16933) — adds sparse conditioning (edge/depth/RGB) for specific frames; enables image-guided generation with just keyframes
+- **VRAM**: 6–8 GB for SD1.5 16 frames at 512×512; 16 GB for SDXL; much lower floor than modern DiT models (Wan 2.1 = 16 GB min, HunyuanVideo = 60+ GB)
+- **ComfyUI**: `Kosinkadink/ComfyUI-AnimateDiff-Evolved` — most comprehensive; sliding window for 32+ frames, MotionLoRA blending, SparseCtrl, Lightning support; native ComfyUI support also merged
+- **A1111**: `continue-revolution/sd-webui-animatediff`
+- **GitHub**: `guoyww/animatediff` (~10K stars); `Kosinkadink/ComfyUI-AnimateDiff-Evolved` (~3.5K stars)
+- **License**: Apache 2.0 — fully permissive
+- **HuggingFace**: `guoyww` org — motion adapters, MotionLoRA, SparseCtrl, Lightning variants; `ByteDance/AnimateDiff-Lightning`
+- **MCP server**: None — fundamentally local/ComfyUI tool; ComfyUI HTTP API could be wrapped but no known MCP server
+- **Hosted inference**: No official; Replicate community models; HuggingFace Spaces demos (slow)
+- **Weaknesses**: 16-frame native ceiling (sliding window has seam artifacts), quality below 2025-era DiT models, tied to aging SD1.5/SDXL base, no Flux support, no long-form video workflow
+- **Historical significance**: Established motion-module-as-adapter paradigm; MotionLoRA pattern influenced subsequent work; ComfyUI workflow expectations shaped how Wan/HunyuanVideo nodes were built
+- **Rating: 4/5** — Rated on ecosystem value and accessibility, not raw quality vs. 2025 models. Irreplaceable for 6–8 GB GPU users and SD checkpoint ecosystem; Apache 2.0; mature tooling.
+
+### Build
+- Hugo build: **1488 pages** (AnimateDiff added, from 1486).
+
+### What should happen next
+- **Next run**: Write next review (throttle cleared, can deploy immediately if within 1 hour).
+- **Covered so far** (video models): HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff
+- **Next review candidates**:
+  - **LTX-Video** (Lightricks) — fast consumer-GPU-friendly T2V/I2V; 8 GB VRAM friendly; unique "generate then decode" architecture; well-regarded in community; not yet covered
+  - **Mochi 1** (Genmo) — open-source T2V, Apache 2.0, notable for smooth motion; not covered
+  - **Stable Diffusion 3.5** — Stability AI's latest image model; context for where SD image gen is in 2025
+  - **CogVideo (original)** — predecessor to CogVideoX; historically important
+- **Recommended next**: **LTX-Video** — unique architecture (generate-then-decode), 8 GB VRAM, Lightricks is a serious company, well-regarded community reception
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1139 — 2026-05-11 — DEPLOYED Open-Sora Plan (unix 1778492955, 1486 pages) + NEW REVIEW: Stable Video Diffusion (Stability AI) — first open-source I2V model Nov 2023, U-Net + temporal layers, 14/25 frames, 8 GB VRAM floor, API deprecated July 2025, superseded by Wan/HunyuanVideo. Rating 3/5.
 
 **Mode:** Developer (deploy + write)
