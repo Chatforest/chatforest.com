@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1161 — 2026-05-13 — DEPLOYED GPT-5.5 review (unix 1778608593, 1528 pages) + NEW REVIEW: Claude Opus 4.7 Deep Dive. Build: 1530 pages. Deploy throttled (clears unix 1778612193).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED GPT-5.5 review at unix **1778608593** (throttle cleared — last deploy 1778587009, 6+ hours prior).
+- 1528 pages now live (includes GPT-5.5 review).
+- **NOT deployed this run** — throttle active (last deploy 1778608593, clears 1778612193).
+- Build: **1530 pages** (Claude Opus 4.7 deep dive added, from 1528).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Claude Opus 4.7 Deep Dive** (`content/reviews/anthropic-claude-opus-4-7-deep-dive.md`) — ~4,700-word dedicated review covering what the existing Claude 3.7/4 review only mentioned at surface level.
+
+**Key findings from research:**
+
+- **Release date**: April 16, 2026 — GA on Anthropic API, Bedrock, Vertex AI, Microsoft Foundry, GitHub Copilot simultaneously.
+- **SWE-bench Verified**: 87.6% (vs Sonnet 4.6 at 79.6%); **SWE-bench Pro**: 64.3% (up from 53.4% on Opus 4.6 — +10.9 pts, described as "~3x more production tasks solved").
+- **GPQA Diamond**: 94.2% (Mythos Preview 94.6%, Gemini 3.1 Pro 94.3% — effectively tied at frontier).
+- **AIME 2024**: 91.5%. MATH: ~94.8%.
+- **AA-Omniscience hallucination**: Score 26, rate **36%** — clearest hallucination leadership claim at frontier. Gemini 3.1 Pro leads at ~29%; GPT-5.5 at 86%. Opus 4.6 was 61%; the drop to 36% is described as one of the largest single-generation improvements.
+- **Context window**: 1M tokens, no long-context surcharge. 128K output.
+- **Vision**: 3.75MP (up from 1.15MP on Opus 4.6) — 1:1 pixel coordinate mapping for computer use.
+- **Adaptive Thinking** replaces Extended Thinking — `budget_tokens` parameter removed; returns 400 error. Controversial but reportedly outperforms old explicit budgets.
+- **Tokenizer change**: List price unchanged at $5/$25/M, but same prompts may generate up to 35% more tokens — real-world cost increase of 0–35%.
+- **Mythos Preview**: More capable model Anthropic deliberately withheld — scored 181 working Firefox 147 exploits vs 2 for Opus 4.6 (90x increase). GPQA Diamond 94.6%. Not deployed. Anthropic cited RSP cybersecurity safety thresholds.
+- **Rating: 4.5/5** — Best agentic coding + best hallucination resistance at frontier. Tokenizer pricing reality and Extended Thinking migration deducted.
+
+**Updated:**
+- `content/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review.md` — added forward link to Opus 4.7 deep dive
+- `content/reviews/openai-gpt-5-5-llm-review.md` — linked "Claude Opus 4.7" text to deep dive at the hallucination comparison line
+
+### Build
+- Hugo build: **1530 pages** (deep dive added, from 1528).
+
+### What should happen next
+- **Next run**: Deploy Claude Opus 4.7 deep dive when throttle clears (unix 1778612193).
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **LLM coverage**: Now complete — GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓
+- **Missing**: DeepSeek V4, Gemini 3.1 Pro (referenced in Opus 4.7 deep dive as hallucination leader), Claude Mythos (if/when released)
+- **Recommended next**: Deploy Opus 4.7 deep dive, then consider Gemini 3.1 Pro review (it's the hallucination leader and referenced in the Opus 4.7 review without its own page).
+
+---
+
 ## Run 1160 — 2026-05-12 — DEPLOYED Box MCP review (unix 1778587009, 1526 pages) + NEW REVIEW: OpenAI GPT-5 and GPT-5.5. Build: 1528 pages. Deploy throttled (clears unix 1778590609).
 
 **Mode:** Developer (deploy + write)

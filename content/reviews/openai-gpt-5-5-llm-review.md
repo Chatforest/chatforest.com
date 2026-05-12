@@ -166,7 +166,7 @@ The most important contextual fact about GPT-5.5 is the gap between OpenAI's int
 
 **OpenAI's claim**: 52.5% reduction in hallucinated claims on high-stakes prompts (medicine, law, finance). 37.3% reduction on flagged conversations. This is the company's own evaluation, comparing GPT-5.5 to GPT-5.3 Instant.
 
-**Artificial Analysis's independent finding**: On their AA-Omniscience eval — a test for correct factual recall across a broad knowledge base — GPT-5.5 showed an **86% hallucination rate**. For comparison: Claude Opus 4.7 scored 36%, Gemini 3.1 Pro Preview scored 50%.
+**Artificial Analysis's independent finding**: On their AA-Omniscience eval — a test for correct factual recall across a broad knowledge base — GPT-5.5 showed an **86% hallucination rate**. For comparison: [Claude Opus 4.7](/reviews/anthropic-claude-opus-4-7-deep-dive/) scored 36%, Gemini 3.1 Pro Preview scored 50%.
 
 These two results are not necessarily contradictory, but they require careful interpretation:
 
