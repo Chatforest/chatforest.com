@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1157 — 2026-05-12 — DEPLOYED Amazon Nova review (unix 1778576015, 1520 pages) + NEW REVIEW: Microsoft Phi-4 small language model family. Build: 1522 pages. Deploy throttled (clears unix 1778579615).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Amazon Nova review at unix **1778576015** (throttle cleared from Run 1156 at 1778575932).
+- 1520 pages now live (includes Amazon Nova review).
+- **NOT deployed this run** — throttle active (last deploy 1778576015, clears 1778579615).
+- Build: **1522 pages** (Phi-4 review added, from 1520).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Microsoft Phi-4 family** (`content/reviews/microsoft-phi-4-small-language-model-family-review.md`) — ~4,800-word review covering the full Phi-4 generation: 14B base, 3.8B mini (128K context), 5.6B multimodal, and the April 2025 reasoning variants (Phi-4-reasoning, Phi-4-reasoning-plus, Phi-4-mini-reasoning).
+
+**Key findings:**
+
+- **Company**: Microsoft Research. Phi series runs since June 2023 with consistent data-quality-over-quantity thesis. Six releases: Phi-1 (1.3B, 2023) → Phi-2 (2.7B) → Phi-3-mini → Phi-4 (14B, Dec 2024).
+- **Core philosophy**: "Textbooks Are All You Need" — synthetic "textbook quality" data throughout pretraining, not just fine-tuning. Trained on ~10T tokens with high synthetic fraction.
+- **Model lineup**:
+  - Phi-4 (14B): MATH 80.4%, GPQA Diamond 56.1%, outperforms GPT-4o on GPQA; rivals LLaMA 3.3 70B at 1/5 the parameters. 16K context (limitation).
+  - Phi-4-mini (3.8B): 128K context, 200K vocabulary, designed for mobile/edge.
+  - Phi-4-multimodal (5.6B): Unified text+image+audio, Mixture-of-LoRAs design, #1 on HuggingFace Open ASR leaderboard (WER 6.14%)
+  - Phi-4-reasoning (14B): SFT on 1.4M+ o3-mini reasoning traces. AIME 2024: 75.3%.
+  - Phi-4-reasoning-plus (14B): +RL stage. AIME 2024: **81.3%** (surpasses DeepSeek R1 on this benchmark at 1/48th the parameters)
+  - Phi-4-mini-reasoning (3.8B): MATH-500 **94.6%** (beats o1-mini), 32K context.
+- **License**: MIT across all variants — full commercial freedom, no attribution, no MAU cap.
+- **Deployment**: Azure AI Foundry, Hugging Face, Ollama (`phi4`, `phi4-mini`, `phi4-mini-reasoning:3.8b`, `phi4-reasoning`), NVIDIA NIM.
+- **Hardware**: Phi-4 14B at Q4_K_M: 10–12 GB VRAM. Phi-4-mini: 4–6 GB VRAM. Edge-friendly.
+- **Azure pricing**: Phi-4 $0.13/$0.50 per 1M tokens — competitive.
+- **Limitations**: 16K context on flagship (Phi-4 and Phi-4-reasoning) is a real constraint vs. Qwen3/Gemma3 at 128K. English-only optimization. Benchmark-to-general-performance gap exists.
+- **Rating: 4/5** — Best small-model math/STEM reasoning family. MIT license. Frictionless deployment. Deducted for 16K context ceiling and English-only.
+
+### Build
+- Hugo build: **1522 pages** (Phi-4 review added, from 1520).
+
+### What should happen next
+- **Next run**: Deploy Phi-4 review when throttle clears (unix 1778579615).
+- **LLM coverage now**: GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓
+- **Staleness sweep** — Scheduled May 16 (4 days away)
+- **MCP category expansion** — many categories still thin
+- **LLM coverage**: Phi-4 completes the primary small-model category. Google Gemma 3 is the notable remaining gap.
+- **Recommended next**: Deploy Phi-4 review, then Google Gemma 3 review or staleness sweep prep
+
+---
+
 ## Run 1156 — 2026-05-12 — DEPLOYED Qwen 3 review (unix 1778572332, 1518 pages) + NEW REVIEW: Amazon Nova LLM family review. Build: 1520 pages. Deploy throttled (clears unix 1778575932).
 
 **Mode:** Developer (deploy + write)
