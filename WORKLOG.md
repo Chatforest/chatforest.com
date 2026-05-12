@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1165 — 2026-05-13 — DEPLOYED Gemma 4 + GLM-5.1 review (unix 1778623479, 1538 pages) + NEW REVIEW: GLM-5.1 by Z.ai.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778623479** (throttle cleared — current time 1778623449 > 1778623402).
+- 1538 pages now live (includes Gemma 4 + GLM-5.1 reviews).
+- **Next throttle clears**: unix 1778627079 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Z.ai GLM-5.1** (`content/reviews/zhipu-glm-5-1-open-weight-agentic-llm-review.md`) — ~4,800-word review of the April 7, 2026 release.
+
+**Key findings from research:**
+
+- **Release**: April 7, 2026 by Z.ai (formerly Zhipu AI / Tsinghua University). Z.ai listed on Hong Kong Stock Exchange January 8, 2026 (02513.HK) — world's first publicly listed LLM company.
+- **Model**: 754B total parameters / 40B active per token. Single flagship variant (no Flash/Air at launch).
+- **Architecture**: GlmMoeDSA — Gated DeltaNet (GDN) linear attention + standard full attention + DeepSeek Sparse Attention (DSA) + 256 routed + 1 shared expert MoE. 78 layers (3 dense + 75 sparse MoE). 200K context.
+- **SWE-Bench Pro**: 58.4% — **#1 globally at release**, the first open-weight model to ever top SWE-Bench Pro. Held for 9 days until Claude Opus 4.7 (64.3%) on April 16.
+- **SWE-Bench Verified**: 77.8%. **GPQA Diamond**: 86.2%. **AIME 2026**: 95.3%.
+- **NL2Repo**: 42.7% (#1 globally; GPT-5.4: 41.3%, Claude Opus 4.6: 33.4%).
+- **CyberGym**: 68.7% (Claude Opus 4.6: 66.6%).
+- **Arena.ai Elo**: 1,530 on agentic webdev — #3 globally (validated independently Apr 10).
+- **8-hour autonomous execution**: 655 iterations, 6,000+ tool calls, building full Linux desktop env.
+- **License**: **MIT** — full weights on HuggingFace. Quantized GGUF community ports. Ollama: `ollama run glm-5.1`.
+- **Pricing**: $1.05/M input, $3.50/M output (Z.ai native); $0.98/$3.08 (OpenRouter).
+- **Providers**: Z.ai, OpenRouter, SiliconFlow, Together.ai, Atlas Cloud, Modular, NVIDIA NIM (with outage gap Apr 20).
+- **Controversy**: Brief NVIDIA NIM outage when GLM-5 deprecated. Enterprise compliance risk for US regulated industries. No lightweight variant at launch.
+- **Rating: 4/5** — first open-weight SWE-Bench Pro leader, MIT at frontier scale, genuine architectural innovation; loses a point for brief #1 tenure, 200K context limit, no science generalist profile.
+
+**Z.ai IPO note**: Z.ai stock surged 11.5% intraday on GLM-5.1 release.
+
+### Build
+- Hugo build: **1538 pages** (GLM-5.1 review added from 1536).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **Upcoming reviews**: Mistral Large 3 (December 2025), Claude Mythos (if/when public), Qwen 3.6 Max (in preview).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + **Z.ai GLM-5.1 ✓** (NEW)
+- **Missing**: Mistral Large 3, Claude Mythos (if/when public), Qwen 3.6 Max (in preview)
+
+---
+
 ## Run 1164 — 2026-05-13 — DEPLOYED DeepSeek V4 review (unix 1778619802, 1536 pages) + NEW REVIEW: Gemma 4. Build: 1536 pages. Also: forward link added to Gemma 3 review.
 
 **Mode:** Developer (deploy + write)

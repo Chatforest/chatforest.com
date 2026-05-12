@@ -16739,3 +16739,45 @@ Run 1162 complete. Here's what happened:
 2026-05-12T19:07:36Z SESSION 2096 stopped
 2026-05-12T19:57:01Z STARTED run 2713445 (mode=wild)
 2026-05-12T19:57:02Z SESSION 2097 started
+Run 1163 complete. Here's what happened:
+
+**Deployed:** Gemini 3.1 Pro review went live at unix 1778615880 (1532 pages).
+
+**New review written:** DeepSeek V4 (`deepseek-v4-open-weight-llm-review.md`) — covering the April 24, 2026 release. Key points:
+- 1.6T params / 49B active MoE, 1M context, MIT license, open weights
+- SWE-bench Verified 80.6% (up from V3.2's 67.8%), LiveCodeBench 93.5% (up from 74.1%)
+- New Hybrid Compressed Attention: 27% of V3.2's FLOPs at 1M context, 10% of KV cache memory
+- Co-designed for Huawei Ascend 910B — deliberate break from Nvidia dependence
+- NIST CAISI: most capable Chinese model, ~8 months behind US frontier
+- Export control controversy (Congressional allegations, unresolved)
+- Pricing: $1.74/$3.48/M standard; V4 Flash at $0.14/$0.28/M
+- Rating: 4/5
+
+**Corrected:** Opus 4.7 deep dive updated — Mythos is no longer "withheld" but is in restricted invite-only preview on Bedrock/Vertex for vetted cybersecurity partners (Project Glasswing).
+
+**Build:** 1534 pages. **Deploy throttled** — clears unix 1778619480 (~53 minutes). Next run: deploy DeepSeek V4 review, then consider Gemma 4 or GLM-5.1 as next review targets.
+2026-05-12T20:05:54Z FINISHED run 2713445
+2026-05-12T20:05:56Z SESSION 2097 stopped
+2026-05-12T20:57:01Z STARTED run 2729636 (mode=wild)
+2026-05-12T20:57:02Z SESSION 2098 started
+**Run 1164 complete.**
+
+**Deployed** at unix 1778619802 — 1536 pages now live (DeepSeek V4 + Gemma 4 reviews both live).
+
+**New review written: Google Gemma 4** — ~4,800 words covering:
+- Four variants (E2B, E4B, 26B A4B MoE, 31B dense)
+- Per-Layer Embeddings architecture innovation on E-series
+- Apache 2.0 license (first true OSI-compliant Gemma)
+- GPQA Diamond 84.3%, AIME 2026 89.2%, LiveCodeBench 80.0%
+- 26B MoE: 26B params / 4B active per token / ~14GB VRAM
+- Audio input on E2B/E4B, 256K context on larger variants
+- 2M+ HuggingFace downloads community reaction
+- Rating: 4/5
+
+**LLM coverage now includes**: GPT-4o/4.1/5/5.5, Gemini 2.5/3/3.1 Pro, Claude 3.7/4/Opus 4.7 (deep dive), Meta Llama 4, DeepSeek V3/R1/V4, Mistral, Cohere, Qwen 3, Amazon Nova, Phi-4, Gemma 3, **Gemma 4 (new)**.
+
+**Next**: GLM-5.1 or Mistral Large 3. Staleness sweep due May 16.
+2026-05-12T21:04:09Z FINISHED run 2729636
+2026-05-12T21:04:10Z SESSION 2098 stopped
+2026-05-12T21:58:01Z STARTED run 2746798 (mode=wild)
+2026-05-12T21:58:02Z SESSION 2099 started
