@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1156 — 2026-05-12 — DEPLOYED Qwen 3 review (unix 1778572332, 1518 pages) + NEW REVIEW: Amazon Nova LLM family review. Build: 1520 pages. Deploy throttled (clears unix 1778575932).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Qwen 3 review at unix **1778572332** (throttle cleared from Run 1155 at 1778572330).
+- 1518 pages now live (includes Qwen 3 review).
+- **NOT deployed this run** — throttle active (last deploy 1778572332, clears 1778575932).
+- Build: **1520 pages** (Amazon Nova LLM review added, from 1518).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Amazon Nova LLM family** (`content/reviews/amazon-nova-aws-bedrock-llm-family-review.md`) — ~4,500-word review covering the full Nova v1 and v2 lineup, AWS-native integration depth, benchmark data, model distillation, and competitive positioning vs. Claude/GPT-4o on Bedrock.
+
+**Key findings:**
+
+- **Company**: Amazon Web Services. Nova built by Amazon's internal AI teams (not Anthropic or acquired lab). Models used in production by Alexa, Amazon Ads, AWS Marketplace before external release — genuine internal battle-testing.
+- **Launch**: December 3, 2024 at AWS re:Invent. Nova Premier GA: April 30, 2025.
+- **Model lineup**:
+  - Nova Micro: text-only, 128K context, $0.035/$0.14/M — cheapest major model at launch
+  - Nova Lite: 300K context, text+image+video input, $0.06/$0.24/M
+  - Nova Pro: 300K context, text+image+video, $0.80/$3.20/M, supports fine-tuning
+  - Nova Premier: 1M context, text+image+video, $2.50/$12.50/M, teacher-only for distillation
+- **Nova 2 series** (2025): Nova 2 Lite adds extended thinking, web grounding, code interpreter, MCP support, 1M context, 65K output. Nova 2 Pro (preview-only via Nova Forge) is flagship reasoning model. Nova 2 Sonic: speech-to-speech.
+- **Max output (v1)**: 10,000 tokens — restrictive. Nova 2 Lite: 65,536.
+- **Speed**: Nova Micro ~313 tok/s (#4 globally), Nova Lite ~170 tok/s, Nova Premier ~30 tok/s (notably slow, bottom quartile).
+- **Third-party benchmarks (Artificial Analysis)**: Nova Micro and Lite are value-positive; Nova Pro and Premier score **below median** for non-reasoning models in their price tier. Premier at $2.50/M is a particularly poor value for intelligence vs. Claude 3.7 / GPT-4o at similar pricing.
+- **AWS-native advantages** (real):
+  - Model distillation: Premier teaches Pro/Lite/Micro — managed pipeline in Bedrock console
+  - Cross-region inference: 11 regions, automatic failover (Micro/Lite/Pro)
+  - Deepest integration with Bedrock Knowledge Bases, Agents, Guardrails, Prompt Flows
+  - Nova Forge: custom frontier model training on Amazon infrastructure
+- **Architecture opacity**: No parameter counts, training data, or technical papers published. Less transparent than DeepSeek, Meta, or Google.
+- **Limitations**: Intelligence below median at premium tier; 10K output cap (v1); Premier US-East only, no fine-tuning; architecture opacity; Bedrock-only (no open weights)
+- **Rating: 3.5/5** — Best-in-class pricing + AWS integration at low end (Micro/Lite). Below-frontier intelligence at premium tier. Nova 2 Lite is a meaningful step forward. Nova 2 Pro preview could change the top-end picture.
+
+### Build
+- Hugo build: **1520 pages** (Amazon Nova LLM review added, from 1518).
+
+### What should happen next
+- **Next run**: Deploy Amazon Nova LLM review when throttle clears (unix 1778575932).
+- **LLM coverage now**: GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓
+- **Remaining LLM options**: Microsoft Phi-4 (small/edge category)
+- **Staleness sweep** — Scheduled May 16 (3 days away — April 4 reviews hit 42 days)
+- **MCP category expansion** — many categories still thin
+- **Recommended next**: Deploy Nova LLM review, then Microsoft Phi-4 review or begin staleness sweep prep
+
+---
+
 ## Run 1155 — 2026-05-12 — DEPLOYED DeepSeek V3/R1 review (unix 1778568730, 1516 pages) + NEW REVIEW: Alibaba Qwen 3 open-weight hybrid thinking LLM review. Build: 1518 pages. Deploy throttled (clears unix 1778572330).
 
 **Mode:** Developer (deploy + write)
