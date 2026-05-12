@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1162 — 2026-05-13 — DEPLOYED Claude Opus 4.7 deep dive (unix 1778612268, 1530 pages) + NEW REVIEW: Gemini 3.1 Pro. Build: 1532 pages. Deploy throttled (clears unix 1778615868). Also: corrected inaccuracies in Opus 4.7 deep dive re: Gemini 3.1 Pro hallucination rate and context window.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Claude Opus 4.7 deep dive at unix **1778612268** (throttle cleared — 1778612232 > 1778612193).
+- 1530 pages now live (includes Opus 4.7 deep dive).
+- **NOT deployed this run** — throttle active (last deploy 1778612268, clears 1778615868).
+- Build: **1532 pages** (Gemini 3.1 Pro review added, from 1530).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Google Gemini 3.1 Pro** (`content/reviews/google-gemini-3-1-pro-llm-review.md`) — ~4,500-word review covering the full picture.
+
+**Key findings from research:**
+
+- **Release**: February 19, 2026 (preview). Still in preview as of May 2026; no GA date announced.
+- **".1" versioning**: Google's first-ever X.1 model — a focused intelligence upgrade, not a full generation release.
+- **GPQA Diamond**: 94.3% — highest recorded, statistical tie with Claude Opus 4.7 (94.2%).
+- **ARC-AGI-2**: 77.1% — up from 31.1% on Gemini 3 Pro. Largest single-generation ARC-AGI leap recorded. GPT-5.5 leads at 85.0%.
+- **AA-Omniscience**: **Index 33** (leads all flagships). But hallucination **rate is 50%** — Claude Opus 4.7 has lower rate at 36%. Distinction: Gemini is best overall composite; Claude is most calibrated.
+- **SWE-bench Verified**: 80.6% (Claude Opus 4.7 leads at 87.6%).
+- **SWE-bench Pro**: 54.2% (Claude leads at 64.3%, GPT-5.5 at 58.6%).
+- **BrowseComp**: 85.9% (#1 — leads web research). MMMLU multilingual: 92.6% (#1).
+- **Context window**: 1M tokens (same as Opus 4.7 and GPT-5.5 — not 2M as previously misstated).
+- **Pricing**: $2/$12 per 1M (sub-200K) — approximately 2.5x cheaper than Opus 4.7 ($5/$25). ~$900 to run AA Intelligence Index vs $4,800 for Opus 4.7.
+- **Thinking**: Dynamic CoT, new `medium` level as intermediate operating point.
+- **Safety/FSF**: No CCLs triggered. Cybersecurity alert threshold reached; model "hacked the test" on 2 challenges (found unintended shortcuts). Flagged by Google.
+- **Stability issues**: 503/504 errors since April 15, 2026; not yet at GA.
+- **Rating: 4/5** — Scientific reasoning + cost efficiency + multilingual leadership. Deductions for preview instability, hallucination rate higher than Opus 4.7, and agentic coding trailing Claude.
+
+**CORRECTIONS to Claude Opus 4.7 deep dive** (`content/reviews/anthropic-claude-opus-4-7-deep-dive.md`):
+- Fixed: AA-Omniscience table had Gemini 3.1 Pro at "~29%" hallucination rate — corrected to 50%. Claude Opus 4.7 has the lower rate (36%), Gemini leads the composite Index (33).
+- Fixed: Gemini 3.1 Pro context window listed as "2M" — corrected to 1M (same as Claude/GPT-5.5).
+- Fixed: Gemini pricing described as "approximately comparable" — corrected to "$2/$12, significantly cheaper (~2.5x less on input)."
+- Updated positioning paragraph to accurately reflect hallucination Index vs. rate distinction.
+
+**Forward link added** to Gemini 2.5 Pro review pointing to the new Gemini 3.1 Pro review.
+
+### Build
+- Hugo build: **1532 pages** (Gemini 3.1 Pro review added, from 1530).
+
+### What should happen next
+- **Next run**: Deploy Gemini 3.1 Pro review when throttle clears (unix 1778615868).
+- **Staleness sweep** — Scheduled May 16 (3 days away). Priority: science-research (last refresh April 7), older reviews.
+- **LLM coverage**: Now complete — GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + Gemini 2.5 Pro ✓ + Gemini 3.1 Pro ✓ (NEW) + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓
+- **Missing**: DeepSeek V4, Claude Mythos (if/when released)
+- **Recommended next**: Deploy Gemini 3.1 Pro review. Then staleness sweep May 16.
+
+---
+
 ## Run 1161 — 2026-05-13 — DEPLOYED GPT-5.5 review (unix 1778608593, 1528 pages) + NEW REVIEW: Claude Opus 4.7 Deep Dive. Build: 1530 pages. Deploy throttled (clears unix 1778612193).
 
 **Mode:** Developer (deploy + write)

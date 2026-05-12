@@ -84,9 +84,9 @@ Artificial Analysis's **AA-Omniscience** benchmark tests factual knowledge acros
 
 | Model | AA-Omniscience Score | Approx. Hallucination Rate |
 |---|---|---|
-| Gemini 3.1 Pro | 33 | ~29% |
-| Claude Opus 4.7 | **26** | **36%** |
-| GPT-5.5 | ~10 | ~86% |
+| Gemini 3.1 Pro | **33** | 50% |
+| Claude Opus 4.7 | 26 | **36%** |
+| GPT-5.5 | ~20 | ~86% |
 | Claude Opus 4.6 (Max Effort) | 14 | ~61% |
 
 Opus 4.7's improvement from Opus 4.6 (14 → 26 on AA-Omniscience; 61% → 36% hallucination rate) is described by Artificial Analysis as one of the largest single-generation hallucination improvements from any major AI lab. The mechanism: Opus 4.7 answers a smaller percentage of questions (attempt rate fell from ~82% to ~70%) — but when it answers, it's more accurate. When uncertain, it abstains rather than guessing.
@@ -204,13 +204,13 @@ The three-way comparison at the frontier in May 2026 is between Opus 4.7, GPT-5.
 
 **Scientific reasoning (GPQA Diamond):** Gemini 3.1 Pro (94.3%), Opus 4.7 (94.2%), GPT-5.5 (~90+%) — effectively tied at the top.
 
-**Hallucination (AA-Omniscience):** Gemini 3.1 Pro (~29%), Opus 4.7 (36%), GPT-5.5 (86%) — Gemini leads slightly, Opus 4.7 close second, GPT-5.5 significantly behind.
+**Hallucination (AA-Omniscience):** Gemini 3.1 Pro leads on the composite **Omniscience Index** (33 vs. 26 vs. ~20), but Opus 4.7 has the lower **hallucination rate** (36% vs. 50% vs. 86%). Gemini confabulates less often than GPT-5.5 but more often than Opus 4.7 when the model doesn't know something. For hallucination-sensitive professional work, Opus 4.7's calibration profile is the more conservative choice.
 
-**Context window:** Opus 4.7 (1M), Gemini 3.1 Pro (2M), GPT-5.5 (1M) — Gemini leads on context; Opus 4.7 and GPT-5.5 equivalent.
+**Context window:** Opus 4.7 (1M), Gemini 3.1 Pro (1M), GPT-5.5 (1M) — effectively equivalent across all three.
 
-**Pricing:** Opus 4.7 ($5/$25), GPT-5.5 ($5/$30), Gemini 3.1 Pro (approximately comparable) — similar tier.
+**Pricing:** Opus 4.7 ($5/$25), GPT-5.5 ($5/$30), Gemini 3.1 Pro ($2/$12 sub-200K) — Gemini is significantly cheaper (~2.5x less on input). The cost difference is meaningful for high-volume workloads.
 
-No single model dominates every dimension. Opus 4.7 is the clearest choice for agentic software engineering and hallucination-sensitive professional use cases. Gemini 3.1 Pro leads on factual accuracy and maximum context. GPT-5.5 leads on consumer UX and terminal-style coding tasks. The choice depends on what the workload actually requires.
+No single model dominates every dimension. Opus 4.7 is the clearest choice for agentic software engineering and hallucination-sensitive professional use cases. Gemini 3.1 Pro leads on cost efficiency, web research, and multilingual workloads. GPT-5.5 leads on consumer UX and terminal-style coding tasks. The choice depends on what the workload actually requires.
 
 ---
 

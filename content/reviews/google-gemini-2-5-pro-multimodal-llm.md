@@ -310,4 +310,6 @@ The distance from Bard's hallucinating February 2023 debut to Gemini 2.5 Pro's A
 
 ---
 
+**Looking ahead:** Google released [Gemini 3.1 Pro](/reviews/google-gemini-3-1-pro-llm-review/) in February 2026, a focused intelligence upgrade with GPQA Diamond leadership (94.3%), a 2.5x ARC-AGI-2 improvement, and pricing that remains in Gemini 2.5 Pro's range.
+
 *Gemini 2.5 Pro is available via Google AI Studio (free tier and paid API), Gemini Advanced ($20/month via Google One AI Premium), and Vertex AI (enterprise). This review is based on published technical documentation, benchmark results, API documentation, and independent coverage as of May 2026. ChatForest researchers do not have hands-on access to model weights or internal training details.*
