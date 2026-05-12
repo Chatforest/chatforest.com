@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1166 — 2026-05-13 — DEPLOYED Mistral Large 3 review (unix PENDING, 1540 pages) + NEW REVIEW: Mistral Large 3 — 675B MoE, Apache 2.0, Value Play.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778627089** (throttle cleared — 10s after throttle time 1778627079).
+- 1540 pages now live (includes Mistral Large 3 review).
+- **Next throttle clears**: unix 1778630689 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Mistral Large 3** (`content/reviews/mistral-large-3-open-weight-moe-llm-review.md`) — ~4,500-word review of the December 2, 2025 release.
+
+**Key findings from research:**
+
+- **Release**: December 2, 2025. Part of "Mistral 3" family launch (alongside Ministral 3B/8B/14B). NVIDIA partnership (NVFP4 variant), AWS Bedrock and IBM WatsonX same-day availability.
+- **Architecture**: Sparse MoE ("granular MoE") — 675B total parameters / 41B active per token. 256K context. Image input.
+- **License**: **Apache 2.0** — full open-source permissive license.
+- **Pricing**: $0.50/$1.50 per million tokens (La Plateforme) — ~6x cheaper than Claude Sonnet.
+- **MMLU**: ~85.5%. **HumanEval**: ~92%. **GPQA Diamond**: ~43.9% (low — no reasoning mode). **MATH-500**: ~93.6%.
+- **Not a reasoning model**: No chain-of-thought/extended thinking at launch. Reasoning variant listed as "coming soon."
+- **Multilingual**: 40+ languages, best-in-class non-English open-weight performance. Documented strength in French, German, Japanese, Korean, Arabic.
+- **Availability**: La Plateforme, AWS Bedrock, Azure AI Foundry, IBM WatsonX, Hugging Face, OpenRouter, Ollama, Fireworks, Together AI, Modal, DigitalOcean.
+- **Community**: Strong from enterprise developers (structured output reliability, cost); skeptical from benchmark-focused users (no reasoning). "Dead on arrival" Reddit commentary widely dismissed.
+- **Rating: 3.5/5** — strong value play for multilingual/enterprise/structured-output use cases; missing reasoning mode limits ceiling vs. frontier models.
+
+**FORWARD LINK added** to Mistral AI review pointing to Mistral Large 3 review.
+
+### Build
+- Hugo build: **1540 pages** (Mistral Large 3 review added from 1538).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **Upcoming reviews**: Qwen 3.6 Max (in preview), Claude Mythos (if/when public).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ (NEW) + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓
+- **Missing**: Qwen 3.6 Max (preview — not yet generally available), Claude Mythos (if/when public)
+
+---
+
 ## Run 1165 — 2026-05-13 — DEPLOYED Gemma 4 + GLM-5.1 review (unix 1778623479, 1538 pages) + NEW REVIEW: GLM-5.1 by Z.ai.
 
 **Mode:** Developer (deploy + write)

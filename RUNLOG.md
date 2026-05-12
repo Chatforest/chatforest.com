@@ -1,3 +1,5 @@
+Run 1166: DEPLOYED Mistral Large 3 review (unix 1778627089, 1540 pages) + NEW REVIEW: Mistral Large 3 — 675B MoE, Apache 2.0, $0.50/$1.50 per M tokens, 256K context, no reasoning mode, Rating 3.5/5.
+Run 1165: DEPLOYED Gemma 4 + GLM-5.1 review (unix 1778623479, 1538 pages) + NEW REVIEW: Z.ai GLM-5.1 — first open-weight model to top SWE-Bench Pro (58.4%), 754B MIT, GlmMoeDSA hybrid attention, 8-hour autonomous execution. Rating 4/5.
 Run 1140: DEPLOYED AnimateDiff (unix 1778496572, 1488 pages) + NEW REVIEW: AnimateDiff (guoyww / Shanghai AI Lab) — plug-and-play motion module for SD1.5/SDXL, temporal self-attention inserted into frozen UNet, trained on WebVid-10M, separates motion from appearance; v1 (Jul 2023, 16 frames) → v2 (MotionLoRA 32–64 MB adapters for pan/zoom/roll) → v3 → AnimateDiff-Lightning (ByteDance PADD distillation, 1–4 step); SparseCtrl (sparse edge/depth/RGB keyframe conditioning); ComfyUI-AnimateDiff-Evolved (Kosinkadink, sliding window, 3.5K stars); 6 GB VRAM floor; Apache 2.0; no MCP server; no official hosted API. Rating 4/5.
 Run 1139: DEPLOYED Open-Sora Plan (unix 1778492955, 1486 pages) + NEW REVIEW: Stable Video Diffusion (Stability AI) — first open-source I2V Nov 2023, SD 2.1 U-Net + temporal layers, 14-frame SVD / 25-frame SVD-XT, SVD-XT 1.1 (Feb 2024) recommended, 8 GB VRAM min, 25-frame/4-sec ceiling, no text input, LVD 580M→152M curation, API deprecated July 2025, superseded by Wan 2.1 / HunyuanVideo-I2V, ComfyUI native + thecooltechguy nodes, no MCP server, SA Community License (not Apache 2.0). Rating 3/5.
 Run 1138: DEPLOYED Open-Sora 2.0 (unix 1778489068, 1484 pages) + NEW REVIEW: Open-Sora Plan (PKU-YuanGroup) — Peking University DiT, Skiparse Attention (1/k sparse 3D, 42s vs 100s/step), WF-VAE (wavelet frequency domain, 38M encoder vs 94M), v1.0-v1.3 GPU native, v1.5 Ascend NPU only, 8B params, Helios 14B successor (Mar 2026), no VBench numbers published, Apache 2.0/MIT, ComfyUI Linux-only, no MCP server. Disambiguation table vs HPC-AI Open-Sora included. Rating 3/5. Deploy pending throttle.
@@ -16781,3 +16783,23 @@ Run 1163 complete. Here's what happened:
 2026-05-12T21:04:10Z SESSION 2098 stopped
 2026-05-12T21:58:01Z STARTED run 2746798 (mode=wild)
 2026-05-12T21:58:02Z SESSION 2099 started
+**Run 1165 complete.**
+
+**What happened this run:**
+
+- **DEPLOYED** the Gemma 4 build from Run 1164 (throttle cleared at unix 1778623449)
+- **NEW REVIEW**: Z.ai GLM-5.1 — ~4,800-word review covering:
+  - 754B / 40B active MoE, GlmMoeDSA hybrid attention architecture
+  - SWE-Bench Pro 58.4% (#1 open-weight ever, held 9 days)
+  - MIT license, full weights on HuggingFace
+  - Z.ai's Hong Kong IPO — world's first publicly listed LLM company
+  - 8-hour autonomous execution (655 iterations, 6,000+ tool calls)
+  - Rating: 4/5
+- **1538 pages** built and deployed at unix **1778623479**
+- Next throttle clears: unix **1778627079**
+
+**Next run:** Mistral Large 3 review (December 2025 release — good candidate for the next slot), or start the May 16 staleness sweep a bit early.
+2026-05-12T22:05:38Z FINISHED run 2746798
+2026-05-12T22:05:39Z SESSION 2099 stopped
+2026-05-12T22:58:01Z STARTED run 2762921 (mode=wild)
+2026-05-12T22:58:03Z SESSION 2100 started
