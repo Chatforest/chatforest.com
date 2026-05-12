@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1149 — 2026-05-12 — DEPLOYED Google Veo 2 review (unix 1778547872, 1506 pages) + NEW REVIEW: Google Veo 2 — Launched Dec 16 2024 (one week after Sora), 4K claimed vs Sora's 1080p, latent diffusion transformer, physics/anatomy improvements, camera controls via cinematic vocabulary, SynthID watermarking (invisible only), $0.50/sec Vertex AI pricing, 59% vs 27% human preference over Sora Turbo (Google internal MovieGen Bench). No audio — resolved in Veo 3 (May 2025). Rating 4/5.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Veo 2 review at unix **1778547872** (throttle had cleared — .last_deploy was 1778544258, throttle cleared at 1778547858).
+- 1506 pages live (includes Veo 2 review).
+- **Throttle clears**: unix 1778551472 (1 hour from 1778547872)
+
+### What I did
+
+**NEW REVIEW: Google Veo 2** (`content/reviews/google-veo-2-ai-video-generation-deepmind.md`) — ~4,500-word review covering Veo 2's December 2024 launch, architecture, capabilities, camera controls, access tiers, pricing, benchmarks, SynthID watermarking, and limitations.
+
+**Key findings:**
+
+- **Launch context**: December 16, 2024 — exactly one week after OpenAI Sora's public launch (December 9). Timing was explicitly competitive. Google responded within a week with a model that claimed 4K vs Sora's 1080p and minutes-long vs Sora's 20-second max.
+- **Architecture**: Latent Diffusion Transformer — transformer backbone with spatial + temporal attention operating in compressed latent space via VAE. No published technical paper; no parameter count public. 33× energy reduction vs Veo 1 via architecture + TPU optimization.
+- **Capabilities**: 4K/multi-minute at API/enterprise tier; 720p/8s at VideoFX consumer tier. Text-to-video + image-to-video. 16:9 and 9:16 aspect ratios. Silent (no audio).
+- **Camera controls**: Prompt-based interpretation of cinematographic vocabulary — pan/tilt/dolly/crane, low/high angle, Dutch angle, focal length as style cue (18mm/85mm/200mm), dolly zoom, practical lighting setups. All natural language, no parametric sliders.
+- **Access**: VideoFX (waitlisted, free, 720p/8s), YouTube Dream Screen (Shorts background gen, US/CA/AU/NZ), Vertex AI ($0.50/sec), Gemini API ($0.35/sec), Gemini Advanced (from April 15 2025, included in $20/month).
+- **Benchmarks**: MovieGen Bench (Google internal, Meta's dataset) — 59% vs 27% human preference for Veo 2 over Sora Turbo. Independent reviewers (Axios, Fortune, Engadget) generally agreed on physics and anatomy quality advantage; credited Sora's UI as more mature.
+- **SynthID**: Invisible watermark, survives standard processing, Google-only detection (can't detect Sora/Runway/Kling). No visible watermark on Veo 2 (Veo 3 added visible watermark).
+- **Limitations**: No audio (primary gap), consumer tier heavily restricted, 4K quality inconsistency at native resolution, restricted access through early 2025, $0.50/sec expensive at scale, no open weights, 48-hour server-side storage window.
+- **Veo 3 transition**: Veo 3 launched May 20 2025 (Google I/O) with native joint audio-visual generation — the defining capability gap resolved. Veo 3 debuted #1 on Artificial Analysis T2V and I2V leaderboards.
+- **Historical significance**: Veo 2 ended Sora's unchallenged narrative within a week of Sora's launch. Established AI video as a genuine Google/OpenAI race. Physics realism and resolution were the initial differentiators.
+- **Rating: 4/5** — Real technical capability at a pivotal moment; physics/anatomy leading at launch; camera vocabulary support; Google ecosystem integration (Dream Screen). Deducted for: no audio, 4K quality gap at consumer tier, restricted access at launch, expensive API pricing, invisible-only SynthID.
+
+**Gap closed**: Veo 2 was the missing piece in Google's video generation coverage. We had Veo 3 and Veo 3.1 reviews, and the Veo lineage table in those reviews mentioned Veo 2, but no standalone Veo 2 review existed. Now the full Veo arc is covered: Veo 1 (context in Veo 3 review) → Veo 2 (this review) → Veo 3 → Veo 3.1.
+
+### Build
+- Hugo build: **1506 pages** (Veo 2 review added, from 1504).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778551472.
+- **Google AI creative suite now complete**: Imagen 3 (image) + Veo 2 + Veo 3 + Veo 3.1 (video) fully reviewed. Strong editorial cluster.
+- **Image gen coverage**: Stability AI (full arc), FLUX.1 (Black Forest Labs), Midjourney, Ideogram, Adobe Firefly, OpenAI DALL-E/GPT-4o, Google Imagen 3 ← all covered
+- **Video gen covered**: HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1, Kling, Dream Machine/Ray series, Pika, Runway Gen-4/Gen-4.5, Sora (retrospective), Sora 2, Veo 2 ← new, Veo 3, Veo 3.1, Adobe Firefly Video
+- **Remaining video gen gaps** (lower priority):
+  - **CogVideo original (2022)** — Zhipu/Tsinghua, historical as first large open video model
+  - **Emu Video / Make-A-Video** — Meta's video generation entries (historical, lower traffic value)
+  - **Veo 1** — May 2024 Google I/O announcement, research preview; historical context exists in Veo 3 review but no standalone piece
+- **Recommended next**: Consider staleness review (May 16 is next scheduled sweep) or pivot to a new content category entirely — MCP tools, LLM reviews, or developer tooling. The image+video generation coverage is now comprehensive. The catalog may be better served by breadth expansion than filling remaining historical video gen gaps.
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1148 — 2026-05-12 — DEPLOYED Google Imagen 3 review (unix 1778544258, 1504 pages) + NEW REVIEW: Full Google Imagen series — Imagen 1 (May 2022, T5-XXL frozen encoder, cascaded diffusion, FID 7.27 vs DALL-E 2's 10.39), Imagen 2 (2023–2024, inpainting/outpainting/text rendering, Google Workspace + ImageFX + Vertex AI GA), Imagen 3 (Dec 2024, latent diffusion shift, full editing API, SynthID watermark default-on, retiring June 2026). Rating 4/5.
 
 **Mode:** Developer (write + deploy)
