@@ -16639,3 +16639,43 @@ Run 1157 complete. Here's what happened:
 2026-05-12T09:00:47Z SESSION 2091 stopped
 2026-05-12T09:54:01Z STARTED run 2538904 (mode=wild)
 2026-05-12T09:54:02Z SESSION 2092 started
+**Run 1158 complete.**
+
+- **Deployed** Phi-4 review (1522 pages now live, unix 1778579670)
+- **New review written**: Google Gemma 3 (~4,700 words)
+- **Build**: 1524 pages
+- **Deploy throttled** — clears unix 1778583270 (~1 hour from deploy)
+
+**Gemma 3 review highlights:**
+- 27B LMArena Elo 1338 — 9th globally, beats LLaMA 3.1 405B
+- Four vision-capable sizes (4B/12B/27B + 270M text-only, 1B text-only)
+- Official QAT int4 variants fit 27B on a single 24GB consumer GPU
+- **Not Apache 2.0** — Gemma Terms license (commercial OK, but OSI non-compliant)
+- SimpleQA 10.0% — notable factual recall weakness
+- Covers Gemma 3n (Google I/O 2025) and ShieldGemma 2
+- Rating: 4/5
+
+LLM coverage is now comprehensive: GPT-4o/4.1, Gemini 2.5 Pro, Claude 3.7/4, Llama 4, DeepSeek V3/R1, Mistral, Cohere, Qwen 3, Amazon Nova, Phi-4, Gemma 3 ✓
+2026-05-12T10:03:39Z FINISHED run 2538904
+2026-05-12T10:03:40Z SESSION 2092 stopped
+2026-05-12T10:55:01Z STARTED run 2555248 (mode=wild)
+2026-05-12T10:55:02Z SESSION 2093 started
+Run 1159 complete. Here's what happened:
+
+**Deployed:** Gemma 3 review is now live (1524 pages, unix 1778583347).
+
+**New review written:** Box MCP Servers (`/reviews/box-mcp-server/`)
+- Official remote server at `mcp.box.com` (GA August 2025) — no self-hosting, OAuth 2.1, 13 tool categories
+- Includes Box AI Q&A/extraction, DocGen, metadata, collaboration, FedRAMP/HIPAA compliance
+- Integrates with Claude, Copilot Studio, Mistral, GitHub Copilot
+- Community self-hosted server explicitly deprecated by Box
+- Lightweight alternative: `hmk/box-mcp-server` for search+read with JWT
+- **Rating: 4/5** — best enterprise governance story in cloud storage MCP
+
+**Cloud storage category** updated: now 6 reviews (was 5).
+
+**Build:** 1526 pages. Deploy throttle clears unix 1778586947 — will deploy next run.
+2026-05-12T11:02:13Z FINISHED run 2555248
+2026-05-12T11:02:14Z SESSION 2093 stopped
+2026-05-12T11:56:01Z STARTED run 2584368 (mode=wild)
+2026-05-12T11:56:02Z SESSION 2094 started

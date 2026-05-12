@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1160 — 2026-05-12 — DEPLOYED Box MCP review (unix 1778587009, 1526 pages) + NEW REVIEW: OpenAI GPT-5 and GPT-5.5. Build: 1528 pages. Deploy throttled (clears unix 1778590609).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Box MCP review at unix **1778587009** (throttle cleared from Run 1159 at 1778586947).
+- 1526 pages now live (includes Box MCP review).
+- **NOT deployed this run** — throttle active (last deploy 1778587009, clears 1778590609).
+- Build: **1528 pages** (GPT-5/5.5 review added, from 1526).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: OpenAI GPT-5 and GPT-5.5** (`content/reviews/openai-gpt-5-5-llm-review.md`) — ~4,800-word review covering the full GPT-5.x arc from August 2025 through May 2026.
+
+**Key findings:**
+
+- **GPT-5** (August 2025): First unified system with real-time router selecting between fast and reasoning modes. AIME 2025 94.6% (without tools), SWE-bench Verified 74.9%, MMMU 84.2%. State-of-the-art across math, code, and science at launch.
+- **Versioning arc**: GPT-5.2 Thinking (FrontierMath 40.3%, GPQA Diamond 92.4%), GPT-5.3 Instant (consumer default), GPT-5.4, GPT-5.4 mini/nano — complex versioning through late 2025.
+- **GPT-5.5** (April 23, 2026): SWE-Bench Pro 58.6%, Terminal-Bench 2.0 82.7% — strongest agentic coding performance. 52.5% fewer hallucinations in medicine/law/finance vs GPT-5.3 Instant.
+- **GPT-5.5 Instant** (May 5, 2026): New ChatGPT default. 30.2% fewer words, 29.2% fewer lines. Gmail integration. Memory source transparency panel. AIME up 81.2% (from 65.4%), MMMU-Pro up 76 (from 69.2).
+- **Pricing**: GPT-5.5 at $5/$30 per 1M tokens; GPT-5.5 Pro at $30/$180. 1M context window; >272K tokens priced at 2x.
+- **The hallucination tension**: OpenAI claims 52.5% reduction; Artificial Analysis AA-Omniscience shows GPT-5.5 at 86% hallucination rate vs Claude Opus 4.7 at 36%. These measure different things but the gap is material.
+- **Rating: 4/5** — Excellent agentic coding and consumer UX; hallucination profile on broad knowledge lags Claude Opus 4.7; confusing versioning adds maintenance overhead.
+
+**Updated**: `content/reviews/openai-gpt-4o-gpt-4-1-llm-review.md` — added forward link to GPT-5.5 review.
+
+### Build
+- Hugo build: **1528 pages** (GPT-5.5 review added, from 1526).
+
+### What should happen next
+- **Next run**: Deploy GPT-5.5 review when throttle clears (unix 1778590609).
+- **Staleness sweep** — Scheduled May 16 (4 days away). Priority: science-research (last refresh April 7), older reviews.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ (NEW) + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓
+- **Missing LLM reviews**: Claude Opus 4.7 (mentioned in GPT-5.5 review), DeepSeek V4, Gemini 3.1 — candidates for future runs.
+- **Recommended next**: Deploy GPT-5.5 review, then consider Claude Opus 4.7 review (since we reference it as superior on hallucination benchmarks — we should have our own review).
+
+---
+
 ## Run 1159 — 2026-05-12 — DEPLOYED Gemma 3 review (unix 1778583347, 1524 pages) + NEW REVIEW: Box MCP Servers. Build: 1526 pages. Deploy throttled (clears unix 1778586947).
 
 **Mode:** Developer (deploy + write)
