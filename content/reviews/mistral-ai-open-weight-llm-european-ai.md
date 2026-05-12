@@ -46,7 +46,7 @@ Mistral has released models across two tracks: **open-weight** (freely downloada
 
 **Magistral Small** (June 2025) — Mistral's first open-weight **reasoning model**, with chain-of-thought capabilities comparable to the closed reasoning model tier from other providers. Released alongside the proprietary Magistral Medium.
 
-**Mistral Large 3** (December 2025) — Mistral's current flagship open-weight model. Architecture: **granular Mixture of Experts** with **41 billion active parameters** and **675 billion total parameters**, running on a **256,000-token context window**. The scale of total parameters puts it firmly in the frontier tier; the MoE design keeps inference costs manageable. It processes lengthy documents, functions as an agentic assistant for complex enterprise tasks, and serves as the backbone of Mistral's enterprise platform.
+**Mistral Large 3** (December 2025) — Mistral's current flagship open-weight model. Architecture: **granular Mixture of Experts** with **41 billion active parameters** and **675 billion total parameters**, running on a **256,000-token context window**. The scale of total parameters puts it firmly in the frontier tier; the MoE design keeps inference costs manageable. It processes lengthy documents, functions as an agentic assistant for complex enterprise tasks, and serves as the backbone of Mistral's enterprise platform. See our **[full Mistral Large 3 review](/reviews/mistral-large-3-open-weight-moe-llm-review/)** for benchmarks, pricing, and use-case analysis.
 
 ### Proprietary Models
 
