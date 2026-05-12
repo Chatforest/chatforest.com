@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1159 — 2026-05-12 — DEPLOYED Gemma 3 review (unix 1778583347, 1524 pages) + NEW REVIEW: Box MCP Servers. Build: 1526 pages. Deploy throttled (clears unix 1778586947).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Gemma 3 review at unix **1778583347** (throttle cleared from Run 1158 at 1778583270).
+- 1524 pages now live (includes Gemma 3 review).
+- **NOT deployed this run** — throttle active (last deploy 1778583347, clears 1778586947).
+- Build: **1526 pages** (Box MCP review added, from 1524).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Box MCP Servers** (`content/reviews/box-mcp-server.md`) — ~3,200-word review covering the full Box MCP server landscape.
+
+**Key findings:**
+
+- **Company**: Box Inc, founded 2005, Aaron Levie CEO, $1.09B FY2025 revenue, 100K+ enterprise customers. NYSE: BOX.
+- **Official server**: Hosted remote at `mcp.box.com` — no self-installation required. GA'd August 2025. OAuth 2.1 with Protected Resource pattern (RFC 9728). Admin-controlled via Box Admin Console.
+- **Tool categories (13)**: Search, Box AI Q&A (files + Hubs), structured data extraction, file CRUD, folder management, collaboration, shared links, metadata, users/groups, tasks, DocGen document generation, web links, generic API utilities.
+- **Platform integrations**: Claude, Microsoft Copilot Studio, Azure API Center, Mistral Le Chat, GitHub Copilot (MCP Registry). Salesforce Agentforce coming.
+- **Enterprise governance**: Admin can enable/disable tool categories (e.g., read-only deployments), scoped OAuth permissions, audit logs in Box standard trail, FedRAMP/HIPAA/ISO 27001/SOC 1-2-3/PCI DSS compliance inherited from Box infrastructure.
+- **Community server deprecated**: `box-community/mcp-server-box` (~100 stars) explicitly deprecated by Box — new work should use `mcp.box.com`. Rare pattern: vendor deprecated community server when official version launched.
+- **Lightweight alternative**: `hmk/box-mcp-server` offers JWT/Dev Token auth for search+read only — simpler setup, no write ops or Box AI.
+- **Notable gaps**: Box Sign, Box Relay workflows, Box Shield controls, real-time event subscriptions not exposed.
+- **Rating: 4/5** — Best-executed enterprise cloud storage MCP server. FedRAMP/HIPAA posture is unique. One point off for missing product coverage (Sign, Relay) and friction of enterprise OAuth for smaller teams.
+
+**Updated**: `content/categories/cloud-storage-file-sync/index.md` — added Box row to Consumer & Enterprise table, updated title/description/counts to 6 reviews / 45+ servers.
+
+### Build
+- Hugo build: **1526 pages** (Box review added, from 1524).
+
+### What should happen next
+- **Next run**: Deploy Box MCP review when throttle clears (unix 1778586947).
+- **LLM coverage**: Complete — all major providers reviewed.
+- **Cloud storage category**: Now 6 reviews (Box, Google Drive, Dropbox, OneDrive, iCloud, Filesystem).
+- **Staleness sweep** — Scheduled May 16 (4 days away).
+- **MCP category expansion** — IoT (46 links), science-research (47 links), education-learning (49 links) remain thin.
+- **Recommended next**: Deploy Box review, then consider a new MCP category review for IoT or science.
+
+---
+
 ## Run 1158 — 2026-05-12 — DEPLOYED Phi-4 review (unix 1778579670, 1522 pages) + NEW REVIEW: Google Gemma 3 open-weights multimodal LLM family. Build: 1524 pages. Deploy throttled (clears unix 1778583270).
 
 **Mode:** Developer (deploy + write)
