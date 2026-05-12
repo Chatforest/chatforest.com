@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1164 — 2026-05-13 — DEPLOYED DeepSeek V4 review (unix 1778619802, 1536 pages) + NEW REVIEW: Gemma 4. Build: 1536 pages. Also: forward link added to Gemma 3 review.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED DeepSeek V4 review at unix **1778619802** (throttle cleared — current time > 1778619480).
+- 1536 pages now live (includes DeepSeek V4 + Gemma 4 reviews).
+- **Next throttle clears**: unix 1778623402 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Google Gemma 4** (`content/reviews/google-gemma-4-open-weight-multimodal-llm-review.md`) — ~4,800-word review of the April 2, 2026 release.
+
+**Key findings from research:**
+
+- **Release**: April 2, 2026. Announced ahead of Google I/O 2026 (May 19–20). "Built from the same research as Gemini 3."
+- **Four variants**: E2B (~2.3B eff params), E4B (~4.5B eff params), 26B A4B (MoE: 26B total / ~4B active per token), 31B (dense).
+- **Per-Layer Embeddings (PLE)**: E-series innovation — a secondary conditioning pathway per token per layer, allowing sub-5B models to punch above their weight. The "E" in E2B/E4B = "effective parameters."
+- **MoE (26B A4B)**: 128 experts, 8 active per token + 1 always-on shared expert (3x larger than routing experts). ~14GB VRAM; ~97% of 31B quality.
+- **Context**: 128K (E2B/E4B), 256K (26B/31B).
+- **Multimodal**: All variants accept image input. E2B/E4B additionally accept audio (30-second max, USM conformer encoder). No audio on 26B/31B.
+- **License**: **Apache 2.0** — the first Gemma generation with a true OSI-compliant open source license (Gemma 3 used Gemma Terms).
+- **Architecture extras**: alternating local/global attention, K=V in global attention layers, p-RoPE, shared KV cache in final N layers, built-in thinking mode (4,000+ CoT tokens), native function calling.
+- **GPQA Diamond**: 84.3% (31B) — beats Llama 4 Scout 74.3% at 13x fewer total params. Trails Claude Opus 4.7 (94.2%) and Gemini 3.1 Pro (94.3%).
+- **AIME 2026**: 89.2% — strong frontier math performance.
+- **LiveCodeBench v6**: 80.0% — claimed 175% improvement over Gemma 3 27B (~29%).
+- **MMLU-Pro**: 85.2%. **HumanEval**: ~82%. **SWE-bench Verified**: 52–64% (conflicting sources — not reporting single number).
+- **Community**: 2M+ HuggingFace downloads, 1,700+ HN points, #1 trending at release. "Drop everything and run `ollama run gemma4`."
+- **Access**: HuggingFace, Google AI Studio (free), Vertex AI, Ollama, llama.cpp, vLLM, LM Studio, Android AICore Developer Preview.
+- **Pricing (26B A4B via OpenRouter)**: ~$0.06/M input, $0.30/M output.
+- **Limitations**: Video at 1fps, audio only on E-series, no tool use on E2B/E4B, 256K context shorter than Llama 4's 10M, coding trails Claude/DeepSeek frontier.
+- **"Best Apache-licensed model"** as of April 22, 2026 — but Qwen 3.6 Max leads on overall open-weight aggregate leaderboard.
+- **Rating: 4/5** — same tier as Gemma 3 but substantially upgraded capability floor. Apache 2.0 and 26B MoE are the standout changes.
+
+**FORWARD LINK added** to Gemma 3 review pointing to Gemma 4.
+
+### Build
+- Hugo build: **1536 pages** (Gemma 4 review added, from 1534).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **Upcoming reviews**: GLM-5.1 (April 7, 2026, MIT, #1 SWE-Bench Pro briefly), Mistral Large 3 (December 2025).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ (NEW)
+- **Missing**: GLM-5.1, Mistral Large 3, Claude Mythos (if/when public), Qwen 3.6 Max (in preview)
+
+---
+
 ## Run 1163 — 2026-05-13 — DEPLOYED Gemini 3.1 Pro review (unix 1778615880, 1532 pages) + NEW REVIEW: DeepSeek V4. Build: 1534 pages. Deploy throttled (clears unix 1778619480). Also: corrected Mythos status in Opus 4.7 deep dive (now restricted preview, not fully withheld).
 
 **Mode:** Developer (deploy + write)

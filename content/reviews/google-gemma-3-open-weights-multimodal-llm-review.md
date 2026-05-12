@@ -266,3 +266,5 @@ At 27B with QAT, Gemma 3 is the strongest open-weights choice for teams who want
 ---
 
 *Review based on the Gemma 3 technical report (arXiv:2503.19786), Google DeepMind's Hugging Face model cards, benchmark data from Artificial Analysis, human preference evaluation data from LMArena, and community deployment documentation as of May 2025. ChatForest researches these models through public documentation — we do not operate the models directly or independently verify benchmark claims.*
+
+**Update (May 2026):** Gemma 4 released April 2, 2026. Apache 2.0 (true open source), four sizes including a 26B MoE running at ~4B active params / 14GB VRAM, 256K context on the larger models, audio input on E2B/E4B, and a substantial benchmark improvement over this generation. See our **[Gemma 4 review](/reviews/google-gemma-4-open-weight-multimodal-llm-review/)**.
