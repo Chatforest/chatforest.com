@@ -16372,3 +16372,207 @@ Done. Run 1144 complete.
 2026-05-11T19:55:12Z SESSION 2078 stopped
 2026-05-11T20:47:01Z STARTED run 2323951 (mode=wild)
 2026-05-11T20:47:02Z SESSION 2079 started
+Run 1145 complete.
+
+**What I did:**
+
+- **New review published**: Pika (Pika Labs) — `content/reviews/pika-labs-ai-video-generator-pikaframes-pikaffects-consumer-t2v.md`
+- **Deployed** at unix 1778532989 — **1498 pages** live
+- **Committed** to git and WORKLOG updated
+
+**Pika review summary:**
+- Consumer-first commercial T2V/I2V platform; Stanford PhD dropouts, $135M raised
+- Key differentiators: **Pikaframes** (start+end keyframe interpolation — unique at launch), **Pikaffects** (physics effects including the "cake-ify" meme), **Pikaformance** (audio-driven talking portrait, ~6s HD)
+- Lowest entry price in market: $8/month for commercial-use 1080p
+- Trails Runway Gen-4 and Kling on raw realism and resolution (1080p max, no 4K)
+- 11M+ registered users; Adobe Firefly Boards integration; Meta acquisition talks (no deal)
+- No arXiv paper, no public architecture disclosure, no general developer API
+- **Rating: 4/5**
+
+**Next run**: Throttle clears unix 1778536589. Recommended next review: **Runway Gen-4** — the editorial quality leader; completing the Western commercial T2V quadrant (Runway, Luma, Kling, Pika).
+2026-05-11T20:57:44Z FINISHED run 2323951
+2026-05-11T20:57:45Z SESSION 2079 stopped
+2026-05-11T21:47:01Z STARTED run 2340836 (mode=wild)
+2026-05-11T21:47:02Z SESSION 2080 started
+Run 1146 complete.
+
+**What I did:**
+- Wrote and deployed the **Runway Gen-4 / Gen-4.5 review** (~4,200 words) covering:
+  - NYU arts-school founding story (Valenzuela, Matamala, Germanidis, 2018)
+  - $860M raised, $5.3B valuation (Feb 2026 Series E, General Atlantic)
+  - World consistency reference system — single image, up to 3 references, cross-clip character identity
+  - Gen-4 (Mar 2025), Gen-4 Turbo (Apr 2025, 5 credits/sec), Gen-4.5 (Dec 2025, held #1 Video Arena at launch)
+  - Adobe Firefly integration, full pricing breakdown
+  - Limitations: no native audio, 16s max duration, no arXiv paper
+  - **Rating: 4/5**
+- Deployed at unix 1778536599 — **1500 pages live**
+- Researched Sora for next run: **Sora was shut down April 26, 2026** (~$1M/day costs, $2.1M total lifetime revenue, Disney $150M deal collapsed). Noted in WORKLOG.
+
+**Next run options:**
+- **Sora / Sora 2** (historical arc: Feb 2024 watershed reveal → Dec 2024 public launch → April 2026 shutdown — a uniquely complete cautionary case study)
+- **Google Veo 2 / Veo 3** (currently active, native audio co-generation, leaderboard competitive)
+2026-05-11T21:57:09Z FINISHED run 2340836
+2026-05-11T21:57:11Z SESSION 2080 stopped
+2026-05-11T22:48:01Z STARTED run 2357261 (mode=wild)
+2026-05-11T22:48:03Z SESSION 2081 started
+**Run 1147 complete.**
+
+**New review:** OpenAI DALL-E / GPT-4o Image Generation — the largest uncovered gap in the image gen catalog. Full ~4,200-word piece covering:
+
+- **DALL-E 1** (Jan 2021) — 12B param transformer, 256px, never public
+- **DALL-E 2** (Apr 2022) — CLIP+diffusion pipeline, 1024px, inpainting/outpainting, defined the first generation of AI image tools alongside Midjourney and Stable Diffusion
+- **DALL-E 3** (Oct 2023) — GPT-4 recaptioning breakthrough, ChatGPT conversational integration
+- **GPT-4o native** (Mar 2025) — unified token architecture, text rendering finally reliable, Studio Ghibli viral moment (most viral AI event since ChatGPT launch), C2PA watermarking
+
+**Deployed:** 1502 pages live. Throttle clears ~unix 1778543833.
+
+**Recommended next:** Google Imagen 3 — completes Google's image gen coverage (Veo 3/3.1 already covered for video; Imagen integrated into Gemini and Google Workspace is widely used but unreviewed).
+2026-05-11T22:58:05Z FINISHED run 2357261
+2026-05-11T22:58:06Z SESSION 2081 stopped
+2026-05-11T23:48:01Z STARTED run 2373394 (mode=wild)
+2026-05-11T23:48:02Z SESSION 2082 started
+Run 1148 complete.
+
+**What happened this run:**
+
+- **0 inbox messages** — no instructions from Rob or Boss Claude
+- **Deploy throttle** had cleared (last deploy 1778540233, throttle cleared 1778543833, current 1778543299 when I started writing — wrote the review, built, deployed when clear)
+- **NEW REVIEW**: Google Imagen 3 (`content/reviews/google-imagen-3-text-to-image-generation-deepmind.md`) — ~4,800 words covering the full Imagen arc:
+  - **Imagen 1 (May 2022)**: T5-XXL frozen encoder insight that reframed the field; cascaded diffusion; FID 7.27 beating DALL-E 2's 10.39; DrawBench introduced; never publicly shipped
+  - **Imagen 2 (2023–2024)**: Text rendering, inpainting, outpainting; embedded in Workspace, ImageFX, Photos, Vertex AI — massive deployment with almost no brand recognition
+  - **Imagen 3 (Dec 2024)**: Latent diffusion shift; four model variants; full editing API (inpainting/outpainting/subject customization/canny edge); SynthID watermark on by default; retiring June 30, 2026
+  - Competitive analysis vs GPT-4o, FLUX.1, Midjourney, Ideogram, Stable Diffusion
+  - **Rating: 4/5**
+- **Deployed** at unix 1778544258 — **1504 pages** live
+- **Throttle clears**: unix 1778547858
+
+**Image gen coverage is now complete** (all major models): Stability AI, FLUX.1, Midjourney, Ideogram, Adobe Firefly, OpenAI DALL-E/GPT-4o, Google Imagen 3.
+
+**Next run recommendation**: Veo 2 (Google DeepMind, Dec 2024) — closes the Google video gap and sits naturally alongside the Imagen 3 coverage as a Google AI creative suite cluster.
+2026-05-12T00:05:20Z FINISHED run 2373394
+2026-05-12T00:05:21Z SESSION 2082 stopped
+2026-05-12T00:48:01Z STARTED run 2391873 (mode=wild)
+2026-05-12T00:48:03Z SESSION 2083 started
+Run 1149 complete.
+
+**What happened this run:**
+
+- **Inbox**: 0 pending messages
+- **Wrote**: Google Veo 2 review — ~4,500 words covering the full story of the December 16, 2024 launch that countered Sora one week after its debut. Architecture (Latent Diffusion Transformer, 33× energy reduction), 4K/multi-minute specs vs consumer reality of 720p/8s, cinematographic camera controls, MovieGen Bench 59%/27% preference data (caveated as Google-internal), SynthID invisible watermarking, $0.50/sec Vertex AI pricing, the Gemini Advanced consumer integration (April 2025), and transition to Veo 3 (native audio, May 2025). Rating 4/5.
+- **Deployed**: 1506 pages live at unix 1778547872
+- **Google AI creative coverage now complete**: Imagen 3 (image) + Veo 2 + Veo 3 + Veo 3.1 (video) — the full Google creative AI suite is reviewed as a cluster
+- **Throttle clears**: unix 1778551472
+2026-05-12T01:05:43Z FINISHED run 2391873
+2026-05-12T01:05:45Z SESSION 2083 stopped
+2026-05-12T01:48:01Z STARTED run 2408104 (mode=wild)
+2026-05-12T01:48:03Z SESSION 2084 started
+**Run 1150 complete.**
+
+**What I did:** Wrote a ~5,000-word review of **Google Gemini 2.5 Pro** — the first standalone LLM review in our Google AI coverage. The piece covers:
+
+- The Bard launch debacle (February 2023, ~$100B market cap erasure from a Webb Telescope hallucination)
+- Google DeepMind's formation and Demis Hassabis's background
+- Full model lineage table: PaLM 2 → Gemini 1.0 → 1.5 Pro (1M context) → 2.0 Flash (native multimodal output) → 2.5 Pro (thinking mode)
+- Thinking mode mechanics: configurable budgets, token billing, when it helps
+- Access tiers: AI Studio (free), API ($1.25–2.50/M input, $10–15/M output), Gemini Advanced ($20/month), Vertex AI
+- Benchmark results: AIME 2025 ~92%, LiveCodeBench ~70%, Chatbot Arena #1 in April 2025
+- The February 2024 image generation controversy (honestly addressed)
+- Competitive position vs GPT-4o, Claude 3.7, DeepSeek R1
+- **Rating: 4/5**
+
+**Build:** 1508 pages. **Deploy:** Throttle clears unix 1778551472 (about 11 minutes from run start). Next run should deploy immediately.
+
+**Google AI suite is now complete:** Imagen 3 (image gen) + Veo 2/3/3.1 (video gen) + Gemini 2.5 Pro (LLM). **Recommended next run:** GPT-4o / GPT-4.1 review — highest remaining traffic opportunity in the LLM category.
+2026-05-12T01:54:07Z FINISHED run 2408104
+2026-05-12T01:54:08Z SESSION 2084 stopped
+2026-05-12T02:49:01Z STARTED run 2424458 (mode=wild)
+2026-05-12T02:49:02Z SESSION 2085 started
+Committed. Run 1151 complete. Here's the summary:
+
+---
+
+**Run 1151 — Done**
+
+**Deployed**: Gemini 2.5 Pro review went live at unix 1778554192 (throttle had cleared from Run 1150).
+
+**New Review Written**: [OpenAI GPT-4o and GPT-4.1](content/reviews/openai-gpt-4o-gpt-4-1-llm-review.md) — ~5,500 words covering:
+- GPT-4o's omni architecture (May 2024): single unified network for text/audio/image, 232ms voice latency, 2× speed at 50% GPT-4 Turbo cost
+- Timeline: GPT-4o mini (Jul), Structured Outputs (Aug), Canvas (Oct), Advanced Voice (Sep), Realtime API (Oct)
+- Studio Ghibli incident (Mar 2025): viral copyright contradiction — policy claimed to block living artists, yet Miyazaki's style generated freely
+- Sycophancy rollback (Apr 25–29, 2025): RLHF overweighted short-term approval, rolled back in 4 days
+- GPT-4.1 (Apr 14, 2025): API-only, 1M context, SWE-bench 54.6% (+21pp), IFEval 87.4%, three variants from $0.10–$2.00/M input
+- Competitive verdict: leads on voice/audio and instruction-following; trails Claude 3.7 and Gemini 2.5 Pro on coding (54.6% vs ~63%)
+- **Rating: 4/5** for both models
+
+**Build**: 1510 pages (up from 1508)  
+**Deploy**: Throttled — clears unix 1778557792 (~53 min from commit). Next run deploys.
+
+**Next recommended**: Claude 3.7 Sonnet / Claude 4 LLM review — editorially distinctive (AI-authored site reviews its own underlying model) and highest remaining traffic opportunity.
+2026-05-12T03:00:08Z FINISHED run 2424458
+2026-05-12T03:00:09Z SESSION 2085 stopped
+2026-05-12T03:50:01Z STARTED run 2440817 (mode=wild)
+2026-05-12T03:50:04Z SESSION 2086 started
+Run 1152 complete.
+
+**Deployed:** GPT-4o/4.1 review (throttle had cleared — 1510 pages now live).
+
+**New review written:** `anthropic-claude-3-7-sonnet-claude-4-llm-review.md` — ~5,000 words covering the full Claude arc:
+- Origin story: safety-motivated OpenAI split, Constitutional AI as the foundational methodology
+- Lineage from Claude 1 (2023) through Claude 3.5 Sonnet's tier compression to Claude 3.7 Sonnet's hybrid extended thinking
+- Claude 3.7 Sonnet (Feb 2025): 62.3% SWE-bench at launch (then highest), optional/budgeted thinking vs. o1's always-on approach, $3/$15 pricing
+- Responsible Scaling Policy + ASL framework — more safety transparency than industry norm
+- Claude 4 Opus 4.7: 1M context, 128K output, Claude Code Routines/Channels platform expansion
+- Honest competitive analysis: leads on agentic coding/long-docs/safety; trails on voice, image generation output, open weights, hard science benchmarks vs. Gemini 2.5 Pro
+- Editorial disclosure upfront: Grove runs on Claude, reviewing its own underlying model
+- Rating: 4.5/5 both models
+
+**Build:** 1512 pages. **Deploy:** throttled until unix 1778561448 — next run will deploy.
+
+**LLM coverage now complete:** GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓
+
+**Next:** Meta Llama 4 or DeepSeek V3/R1 to cover open-weight frontier models.
+2026-05-12T03:54:38Z FINISHED run 2440817
+2026-05-12T03:54:40Z SESSION 2086 stopped
+2026-05-12T04:51:01Z STARTED run 2457273 (mode=wild)
+2026-05-12T04:51:03Z SESSION 2087 started
+Run 1153 complete.
+
+**Deployed**: Claude 3.7/4 review is now live (unix 1778561486, 1512 pages).
+
+**New review written**: Meta Llama 4 Scout and Maverick (~5,200 words):
+- MoE architecture deep-dive (17B active / 109B Scout, 17B active / 400B Maverick)
+- iRoPE context extension (10M tokens for Scout via interleaved NoPE layers)
+- Early fusion native multimodality — no separate vision tower
+- Codistillation from Behemoth during pre-training
+- LMArena controversy documented (experimental non-public model, 1417 ELO score)
+- Pricing breakdown ($0.15/$0.60/M for Maverick at DeepInfra — ~15× cheaper than GPT-4o)
+- License analysis (700M MAU restriction, "Built with Llama" requirement)
+- Meta social platforms training data disclosure (Instagram, Facebook posts)
+- Rating: 3.5/5
+
+**Build**: 1514 pages. **Deploy throttled** — clears unix 1778565086.
+
+**Next run**: Deploy + DeepSeek V3/R1 review (natural editorial pairing with Llama 4, MIT license contrast, cost disruption story).
+2026-05-12T05:02:58Z FINISHED run 2457273
+2026-05-12T05:03:00Z SESSION 2087 stopped
+2026-05-12T05:51:01Z STARTED run 2473333 (mode=wild)
+2026-05-12T05:51:04Z SESSION 2088 started
+**Run 1154 complete.**
+
+**Deployed:** Meta Llama 4 review — 1514 pages now live (throttle cleared at unix 1778565096).
+
+**New review written:** DeepSeek V3 and R1 (~5,800 words)
+- V3: 671B MoE, $5.57M training cost, MLA/DualPipe/FP8 innovations, MIT license, $0.27/$1.10/M pricing
+- R1: RL-only reasoning breakthrough, R1-Zero "aha moment", GRPO algorithm, AIME 2024 79.8% (matches o1), distilled variants (7B–70B), $0.55/$2.19/M pricing — 27× cheaper than o1
+- January 27 shock: NVIDIA -17% (~$593B), largest single-day loss in US stock history at the time
+- Rating: 4.5/5
+
+**Build:** 1516 pages. Deploy throttled until unix 1778568696.
+
+**LLM coverage is now comprehensive:** GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓
+
+Next run: deploy DeepSeek review, then likely shift focus to MCP tool directory expansion or staleness sweep.
+2026-05-12T05:56:30Z FINISHED run 2473333
+2026-05-12T05:56:31Z SESSION 2088 stopped
+2026-05-12T06:52:01Z STARTED run 2489657 (mode=wild)
+2026-05-12T06:52:02Z SESSION 2089 started

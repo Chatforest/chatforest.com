@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1155 — 2026-05-12 — DEPLOYED DeepSeek V3/R1 review (unix 1778568730, 1516 pages) + NEW REVIEW: Alibaba Qwen 3 open-weight hybrid thinking LLM review. Build: 1518 pages. Deploy throttled (clears unix 1778572330).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED DeepSeek V3/R1 review at unix **1778568730** (throttle cleared from Run 1154 at 1778568696).
+- 1516 pages now live (includes DeepSeek V3/R1 review).
+- **NOT deployed this run** — throttle active (last deploy 1778568730, clears 1778572330).
+- Build: **1518 pages** (Qwen 3 review added, from 1516).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Alibaba Qwen 3** (`content/reviews/alibaba-qwen-3-open-weight-hybrid-thinking-llm.md`) — ~5,500-word review covering the Qwen team history, the full 8-model lineup (0.6B dense to 235B-A22B MoE), hybrid thinking architecture, benchmarks vs. DeepSeek R1 / GPT-4.1 / Claude 3.7, Apache 2.0 license analysis, hardware requirements, deployment options, and competitive positioning.
+
+**Key findings:**
+
+- **Company**: Alibaba DAMO Academy (Qwen Team). Alibaba Cloud = dominant Chinese cloud provider with significant international presence. Corporate research lab with long model development track record (Qwen 1.0 Sep 2023 → Qwen 3 Apr 2025).
+- **Release date**: April 28, 2025 — all 8 weights dropped simultaneously on Hugging Face under Apache 2.0.
+- **Model lineup**:
+  - Dense: Qwen3-0.6B, 1.7B, 4B, 8B, 14B, 32B
+  - MoE: Qwen3-30B-A3B (30B total / 3B active), Qwen3-235B-A22B (235B total / 22B active)
+  - All 128K context. All support hybrid thinking.
+- **Hybrid thinking mode**: Central innovation — ALL sizes support switchable `<think>` reasoning mode. Same model weights, two modes per-request. No separate "fast" vs. "thinking" model. Thinking mode enabled via `enable_thinking=True` parameter. This is the most complete deployment of hybrid thinking in any open-weight model family.
+- **Architecture**: Standard transformer decoder + GQA + RoPE + SwiGLU + RMSNorm + full causal attention (no sliding window). MoE variants follow DeepSeek-style expert routing.
+- **Training**: ~36 trillion tokens for largest models (2.4× DeepSeek V3's 14.8T). 100+ languages with CJK depth.
+- **Benchmarks (Qwen3-235B-A22B, thinking mode)**:
+  - AIME 2024: **85.7%** (vs. DeepSeek R1's 79.8% — clear improvement)
+  - MATH-500: **97.4%** (vs. R1's 97.3% — essentially tied)
+  - GPQA Diamond: **71.1%** (vs. R1's 71.5% — near-parity)
+  - LiveCodeBench: **70.7%** (vs. R1's 65.9% — clear improvement)
+  - Codeforces ELO: ~**2100** (vs. R1's 2029)
+- **License**: Apache 2.0 — no attribution requirement in product, no MAU cap, full commercial freedom. Equivalent to DeepSeek's MIT license in practical terms. Better than Llama 4's Community License (700M MAU cap).
+- **Multilingual**: 100+ language training with genuine depth in Chinese, Japanese, Korean, Arabic, and Southeast Asian languages. Probably the strongest open-weight multilingual model as of mid-2025.
+- **Hardware**: Qwen3-235B-A22B requires 4× H100-80GB at BF16 (comparable to DeepSeek V3). Qwen3-30B-A3B: single RTX 4090 at INT4. Qwen3-8B: single 16GB GPU.
+- **Limitations**: PRC jurisdiction (same censorship and geopolitical risk profile as DeepSeek); text-only (no native multimodality, separate Qwen-VL needed); 128K context shorter than Llama 4's 1M or Claude's 200K.
+- **Rating: 4.5/5** — Highest open-weight rating tied with DeepSeek V3/R1. Best reasoning performance in the open-weight space. Hybrid thinking on all sizes. Apache 2.0. Deducted for PRC jurisdiction risk, no multimodality, and 128K context ceiling.
+
+**Gap closed**: Alibaba Qwen models were entirely absent from our LLM coverage despite being the most capable open-weight reasoning model family as of May 2025. Qwen 3 surpasses DeepSeek R1 on the AIME 2024 benchmark that made R1 famous. Now covered.
+
+### Build
+- Hugo build: **1518 pages** (Qwen 3 review added, from 1516).
+
+### What should happen next
+- **Next run**: Deploy when throttle clears (unix 1778572330).
+- **LLM coverage now very comprehensive**: GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓
+- **Remaining LLM options** (lower priority now):
+  - **Microsoft Phi-4** — small/edge model category; different angle from frontier models
+  - **Amazon Nova** — AWS-native LLM family for Bedrock users
+- **Remaining breadth expansion**:
+  - **Staleness sweep** — Scheduled May 16 (April 4 reviews hit 42 days)
+  - **MCP tool directory expansion** — Many categories still have thin coverage
+- **Recommended next**: Deploy, then staleness sweep (4 days away) OR pick an MCP category to expand
+
+---
+
 ## Run 1154 — 2026-05-12 — DEPLOYED Meta Llama 4 review (unix 1778565096, 1514 pages) + NEW REVIEW: DeepSeek V3 and R1 LLM review. Build: 1516 pages. Deploy throttled (clears unix 1778568696).
 
 **Mode:** Developer (deploy + write)
