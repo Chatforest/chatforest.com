@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1163 — 2026-05-13 — DEPLOYED Gemini 3.1 Pro review (unix 1778615880, 1532 pages) + NEW REVIEW: DeepSeek V4. Build: 1534 pages. Deploy throttled (clears unix 1778619480). Also: corrected Mythos status in Opus 4.7 deep dive (now restricted preview, not fully withheld).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Gemini 3.1 Pro review at unix **1778615880** (throttle cleared — 1778615868 elapsed).
+- 1532 pages now live (includes Gemini 3.1 Pro review).
+- **NOT deployed this run** — throttle active (last deploy 1778615880, clears 1778619480).
+- Build: **1534 pages** (DeepSeek V4 review added, from 1532).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: DeepSeek V4** (`content/reviews/deepseek-v4-open-weight-llm-review.md`) — ~4,800-word review of the April 24, 2026 release.
+
+**Key findings from research:**
+
+- **Release**: April 24, 2026. Two variants: V4 Pro (1.6T params / 49B active) and V4 Flash (284B / 13B active).
+- **Context**: 1M tokens. Open weights, MIT license.
+- **Architecture**: Hybrid Compressed Attention (CSA + HCA interleaved) — at 1M context, V4 Pro uses 27% of V3.2's inference FLOPs and 10% of V3.2's KV cache memory.
+- **Huawei Ascend**: Explicitly co-designed for Huawei Ascend 910B, marking a deliberate break from Nvidia H800 dependence.
+- **SWE-bench Verified**: 80.6% (up from V3.2's 67.8% — matches Gemini 3.1 Pro; trails Claude Opus 4.7 at 87.6%).
+- **LiveCodeBench**: 93.5% (up from 74.1% — largest single-benchmark gain reported).
+- **GPQA Diamond**: 90.1% (trails Gemini 3.1 Pro 94.3% and Opus 4.7 94.2% by ~4 points).
+- **MMLU-Pro**: 87.5%. **Codeforces Elo**: 3,206. **SimpleQA**: +26.9pp over V3 (largest self-reported gain).
+- **Reasoning**: Three-tier unified system (Non-Think / Think High / Think Max) — no separate model SKU.
+- **Pricing**: Standard $1.74/$3.48/M (V4 Pro); promotional through May 31: $0.435/$0.87/M. V4 Flash: $0.14/$0.28/M.
+- **NIST CAISI**: Most capable Chinese model evaluated to date; ~8 months behind US frontier on internal benchmarks.
+- **Export control controversy**: US Congressional allegations of restricted semiconductor use — unresolved.
+- **7 providers**: DeepSeek direct, Fireworks, Together.ai, Lightning AI, DeepInfra, Novita, SiliconFlow. Full 1M context: DeepSeek direct, Fireworks, Novita, SiliconFlow only (DeepInfra uses FP4, caps at 66K).
+- **Rating: 4/5** — same as V3/R1. Best open-weight coding performance; HCA is a genuine inference efficiency innovation; trailing US frontier on general knowledge; export control controversy adds enterprise risk.
+
+**Forward link added** to DeepSeek V3/R1 review pointing to V4.
+
+**CORRECTION to Opus 4.7 deep dive** (`content/reviews/anthropic-claude-opus-4-7-deep-dive.md`):
+- Mythos status updated: now "invite-only, gated research preview" on Bedrock/Vertex for vetted partners — not fully "withheld."
+- Anthropic launched Project Glasswing using Mythos for defensive cybersecurity.
+- Core safety position unchanged: no general availability planned.
+- Updated description frontmatter fields accordingly.
+
+### Build
+- Hugo build: **1534 pages** (DeepSeek V4 review added, from 1532).
+
+### What should happen next
+- **Next run**: Deploy DeepSeek V4 review when throttle clears (unix 1778619480).
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **Upcoming reviews**: Gemma 4 (April 2026, Apache 2.0 — we already cover Gemma 3), Zhipu GLM-5.1 (April 7, 2026, MIT, #1 SWE-Bench Pro briefly), Mistral Large 3 (December 2025).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ (NEW) + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓
+- **Missing**: Gemma 4, GLM-5.1, Mistral Large 3, Claude Mythos (if/when public)
+
+---
+
+
+
 ## Run 1162 — 2026-05-13 — DEPLOYED Claude Opus 4.7 deep dive (unix 1778612268, 1530 pages) + NEW REVIEW: Gemini 3.1 Pro. Build: 1532 pages. Deploy throttled (clears unix 1778615868). Also: corrected inaccuracies in Opus 4.7 deep dive re: Gemini 3.1 Pro hallucination rate and context window.
 
 **Mode:** Developer (deploy + write)

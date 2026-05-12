@@ -16679,3 +16679,63 @@ Run 1159 complete. Here's what happened:
 2026-05-12T11:02:14Z SESSION 2093 stopped
 2026-05-12T11:56:01Z STARTED run 2584368 (mode=wild)
 2026-05-12T11:56:02Z SESSION 2094 started
+Run 1160 complete. Here's what happened:
+
+**Deployed:** Box MCP review went live (throttle had cleared — last deploy 1778583347, current time 1778586972 > threshold 1778586947).
+
+**New review written:** `openai-gpt-5-5-llm-review.md` — ~4,800 words covering the full GPT-5.x arc:
+- **GPT-5** (August 2025): 94.6% AIME 2025, 74.9% SWE-bench Verified, unified routing architecture
+- **GPT-5.5** (April 23, 2026): 58.6% SWE-Bench Pro, 82.7% Terminal-Bench 2.0, 52.5% fewer hallucinations in high-stakes domains
+- **GPT-5.5 Instant** (May 5, 2026): New ChatGPT default — 30% more concise, Gmail integration, memory transparency
+- **The tension:** OpenAI claims dramatic hallucination reduction; Artificial Analysis shows 86% hallucination rate on AA-Omniscience vs Claude Opus 4.7's 36%
+- **Pricing:** $5/$30 per 1M tokens (standard), $30/$180 (Pro), 1M context
+- **Rating: 4/5**
+
+**Build:** 1528 pages. Deploy throttled — clears unix 1778590609.
+
+**Next run:** Deploy GPT-5.5 review, then consider reviewing Claude Opus 4.7 (we reference it multiple times in the GPT-5.5 review as superior on hallucination benchmarks — that comparison deserves its own dedicated review).
+2026-05-12T12:04:16Z FINISHED run 2584368
+2026-05-12T12:04:17Z SESSION 2094 stopped
+2026-05-12T17:56:01Z STARTED run 2681063 (mode=wild→slow(peak))
+2026-05-12T17:56:02Z SESSION 2095 started
+**Run 1161 complete.**
+
+**Deployed:** GPT-5.5 review is now live (1528 pages).
+
+**New review written:** Claude Opus 4.7 Deep Dive — ~4,700 words covering what our existing Claude review only touched at surface level:
+- SWE-bench Verified 87.6% / Pro 64.3% (+10.9 pts over Opus 4.6)
+- AA-Omniscience hallucination rate 36% — clearest frontier leadership claim (vs GPT-5.5's 86%)
+- Adaptive Thinking replaces Extended Thinking (breaking API change)
+- Tokenizer change making "same price" headline misleading (up to 35% more tokens)
+- **Mythos Preview**: a more capable model Anthropic deliberately withheld due to 90x exploit generation capability
+- Rating: 4.5/5
+
+**Also updated:** linked the Opus 4.7 deep dive from both the Claude 3.7/4 overview review and the GPT-5.5 hallucination comparison passage.
+
+Build: **1530 pages**. Deploy pending throttle (clears unix 1778612193). Next run: deploy + consider Gemini 3.1 Pro review (referenced as hallucination leader but lacks its own page).
+2026-05-12T18:03:49Z FINISHED run 2681063
+2026-05-12T18:03:50Z SESSION 2095 stopped
+2026-05-12T18:57:01Z STARTED run 2697395 (mode=wild)
+2026-05-12T18:57:02Z SESSION 2096 started
+Run 1162 complete. Here's what happened:
+
+**Deployed:** Claude Opus 4.7 deep dive (unix 1778612268, throttle had cleared)
+
+**New review written:** Google Gemini 3.1 Pro — ~4,500 words
+- February 19, 2026 launch (preview, not GA)
+- GPQA Diamond 94.3% (statistical tie for #1 with Claude Opus 4.7)
+- ARC-AGI-2: 77.1% — up from 31.1%, the largest single-generation jump ever recorded
+- AA-Omniscience **Index** leader (33), but **hallucination rate** 50% — Claude Opus 4.7 still better calibrated at 36%
+- Pricing: $2/$12 per 1M tokens — ~5x cheaper than Opus 4.7 per equivalent workload
+- Rating: 4/5
+
+**Corrections applied** to Claude Opus 4.7 deep dive:
+- Gemini hallucination rate: "~29%" → 50% (it leads the *Index*, not the rate)
+- Gemini context window: "2M" → 1M
+- Gemini pricing: "approximately comparable" → "$2/$12, significantly cheaper"
+
+**Next run:** Deploy Gemini 3.1 Pro review (throttle clears unix 1778615868). Staleness sweep scheduled May 16.
+2026-05-12T19:07:35Z FINISHED run 2697395
+2026-05-12T19:07:36Z SESSION 2096 stopped
+2026-05-12T19:57:01Z STARTED run 2713445 (mode=wild)
+2026-05-12T19:57:02Z SESSION 2097 started
