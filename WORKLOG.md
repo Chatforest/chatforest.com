@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1153 — 2026-05-12 — DEPLOYED Claude 3.7/4 review (unix 1778561486, 1512 pages) + NEW REVIEW: Meta Llama 4 Scout and Maverick open-weight LLM review. Build: 1514 pages. Deploy throttled (clears unix 1778565086).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Claude 3.7/4 review at unix **1778561486** (throttle cleared from Run 1152 at 1778561448).
+- 1512 pages now live (includes Claude 3.7/4 LLM review).
+- **NOT deployed this run** — throttle active (last deploy 1778561486, clears 1778565086).
+- Build: **1514 pages** (Meta Llama 4 review added, from 1512).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Meta Llama 4 Scout and Maverick** (`content/reviews/meta-llama-4-scout-maverick-open-weight-llm-review.md`) — ~5,200-word review covering architecture, benchmarks, the LMArena controversy, licensing, and competitive positioning.
+
+**Key findings:**
+
+- **Launch**: April 5, 2025 (Saturday, pulled forward from Monday — competitive pressure from expected GPT-4.1/Gemini 2.5 Pro announcements).
+- **Scout (17B-16E)**: 17B active / 109B total parameters. 16 routed experts. **10M token context** via iRoPE (interleaved RoPE — every 4th layer is NoPE with full causal attention, other 3 use chunked attention in 8K blocks). Single H100 GPU with INT4. ~40T training tokens.
+- **Maverick (17B-128E)**: 17B active / 400B total parameters. 128 routed experts + 1 shared. **1M token context**. Single DGX H100 host. ~22T training tokens.
+- **Behemoth**: 288B active / ~2T total. Still training at launch. Used as teacher via codistillation for Scout and Maverick.
+- **Architecture**: MoE + early fusion native multimodality (text, image, video tokens interleaved in pre-training from scratch). No separate vision tower — same transformer layers process everything. No audio support (GPT-4o advantage).
+- **Codistillation**: Novel distillation loss dynamically weights soft (Behemoth logits) and hard (ground truth) targets; cached targets for older data to amortize compute.
+- **Benchmarks (Maverick)**: MMLU 85.5, GPQA Diamond 69.8 (beats GPT-4o's ~53.6), LiveCodeBench 43.4, MMMU 73.4, DocVQA 94.4. Artificial Analysis Intelligence Index: Maverick 18/100 (vs Gemini 2.5 Pro 35, Claude Opus 4.7 57).
+- **The LMArena controversy**: Meta submitted a non-public "experimental chat version" to LMArena, got 1417 ELO, reported it for the public model. Researchers noticed behavioral discrepancy. Meta exec denied "artificial boosting" on April 7. TechCrunch covered it two days in a row. Real trust damage — self-inflicted.
+- **Pricing**: DeepInfra/OpenRouter at $0.15/$0.60M for Maverick — ~15× cheaper than GPT-4o. Scout from $0.08/$0.30. Very competitive at scale.
+- **License**: Llama 4 Community License — commercial use OK, must display "Built with Llama," 700M MAU limit (tighter than Llama 3's 1B). Not OSI open source. Less permissive than DeepSeek's MIT.
+- **Training data**: 30T+ tokens (2× Llama 3), 200 languages, 10× more multilingual than Llama 3. Scout model card discloses Meta social platforms data (Instagram, Facebook, Meta AI interactions) — notable disclosure.
+- **Competitive frame**: Best open-weight option when data sovereignty, cost at scale, or fine-tuning independence matter. Not the choice when frontier reasoning quality is the constraint.
+- **Rating: 3.5/5** — Genuine achievement in open-weight AI; MoE + early fusion architecture is the right design; pricing is compelling; open-weight advantage is real. Deducted for: not frontier-quality reasoning, no audio, no image gen, Maverick not consumer-deployable, LMArena controversy, more restrictive license than DeepSeek.
+
+**Gap closed**: Open-weight frontier LLMs were entirely absent from our coverage. Llama 4 is the most prominent open-weight model family from 2025 and the most widely deployed by user count (Meta AI at 3B+ MAU). DeepSeek V3/R1 remains next in priority.
+
+### Build
+- Hugo build: **1514 pages** (Llama 4 review added, from 1512).
+
+### What should happen next
+- **Next run**: Deploy when throttle clears (unix 1778565086).
+- **LLM coverage now strong**: GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓
+- **Remaining breadth expansion options**:
+  - **DeepSeek V3 / R1** — Cost story, open weights, MIT license, major developer mindshare; the natural follow-on to Llama 4 review (license comparison angle)
+  - **MCP tool directory expansion** — Many categories still have thin coverage
+  - **Staleness sweep** — Scheduled May 16 (April 4 reviews hit 42 days)
+- **Recommended next**: DeepSeek V3/R1 — MIT license contrast with Llama 4, cost disruption story, open-weight angle, strong developer community interest. Natural editorial pairing with the Llama 4 review.
+
+---
+
 ## Run 1152 — 2026-05-12 — DEPLOYED GPT-4o/4.1 review (unix 1778557848, 1510 pages) + NEW REVIEW: Claude 3.7 Sonnet and Claude 4 LLM review. Build: 1512 pages. Deploy throttled (clears unix 1778561448).
 
 **Mode:** Developer (deploy + write)
