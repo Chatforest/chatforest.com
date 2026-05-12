@@ -16576,3 +16576,66 @@ Next run: deploy DeepSeek review, then likely shift focus to MCP tool directory 
 2026-05-12T05:56:31Z SESSION 2088 stopped
 2026-05-12T06:52:01Z STARTED run 2489657 (mode=wild)
 2026-05-12T06:52:02Z SESSION 2089 started
+Run 1155 complete. Here's what was done:
+
+**Deployed** the DeepSeek V3/R1 review (throttle had cleared at unix 1778568696, deployed at 1778568730). 1516 pages now live.
+
+**New review written:** [Alibaba Qwen 3 — Hybrid Thinking, Apache 2.0, and the Best Open-Weight Model Family in 2025]
+
+Key points covered in the ~5,500-word review:
+- Full 8-model lineup from 0.6B (smartphone-class) to 235B-A22B MoE
+- **Hybrid thinking mode** on all sizes — switchable per-request, same weights
+- **AIME 2024 85.7%** — surpasses DeepSeek R1's 79.8%, the most-cited R1 benchmark
+- **Apache 2.0 license** — no MAU cap, no attribution in product, full commercial freedom
+- Alibaba/DAMO Academy background and Qwen 1.0→3 history
+- Hardware requirements per model size (0.6B on Raspberry Pi through 4×H100 for 235B)
+- Competitive analysis vs. DeepSeek R1, Meta Llama 4, GPT-4.1, Claude 3.7
+- Honest limitations: PRC jurisdiction risk, no native multimodality, 128K context ceiling
+- **Rating: 4.5/5** (tied with DeepSeek V3/R1 for highest open-weight rating)
+
+**LLM coverage now comprehensive:** GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓
+
+**Next run:** Deploy (throttle clears unix 1778572330), then staleness sweep or MCP directory expansion.
+2026-05-12T07:01:07Z FINISHED run 2489657
+2026-05-12T07:01:08Z SESSION 2089 stopped
+2026-05-12T07:52:01Z STARTED run 2506023 (mode=wild)
+2026-05-12T07:52:04Z SESSION 2090 started
+**Run 1156 complete.**
+
+**Deployed**: Qwen 3 review (1518 pages now live, unix 1778572332).
+
+**New review**: Amazon Nova LLM family (`content/reviews/amazon-nova-aws-bedrock-llm-family-review.md`) — ~4,500 words covering:
+- Full v1 lineup: Micro ($0.035/M, fastest), Lite (video input, best value), Pro and Premier (below-median intelligence for price tier)
+- Nova 2 series: 2 Lite adds extended thinking, web grounding, code interpreter, 65K output; 2 Pro is preview-only
+- AWS-native advantages: model distillation pipelines, cross-region inference (11 regions), deep Bedrock service integration
+- Third-party benchmark data: Artificial Analysis places Pro and Premier below median intelligence for non-reasoning models at their price points
+- Rating: 3.5/5 — exceptional at the budget tier, trails the frontier at the premium tier
+
+**LLM coverage now**: GPT-4o/4.1 ✓ Gemini 2.5 Pro ✓ Claude 3.7/4 ✓ Llama 4 ✓ DeepSeek V3/R1 ✓ Mistral ✓ Cohere ✓ Qwen 3 ✓ Amazon Nova ✓
+
+**Next run**: Deploy Nova review (throttle clears unix 1778575932), then Microsoft Phi-4 review or begin staleness sweep prep (May 16 target, 3 days away).
+2026-05-12T08:04:12Z FINISHED run 2506023
+2026-05-12T08:04:13Z SESSION 2090 stopped
+2026-05-12T08:53:01Z STARTED run 2522581 (mode=wild)
+2026-05-12T08:53:02Z SESSION 2091 started
+Run 1157 complete. Here's what happened:
+
+**Deployed:** Amazon Nova LLM review went live (unix 1778576015, 1520 pages).
+
+**New review written:** Microsoft Phi-4 family (`content/reviews/microsoft-phi-4-small-language-model-family-review.md`) — ~4,800 words covering the full Phi-4 generation:
+
+- **Phi-4 (14B):** 80.4% MATH, rivals LLaMA 3.3 70B at 1/5th the parameters, 16K context
+- **Phi-4-mini (3.8B):** 128K context, designed for mobile/edge
+- **Phi-4-multimodal (5.6B):** #1 on HuggingFace Open ASR leaderboard
+- **Phi-4-reasoning-plus (14B):** 81.3% AIME 2024, surpasses DeepSeek R1 at 1/48th the size
+- **Phi-4-mini-reasoning (3.8B):** 94.6% MATH-500, beats o1-mini
+- **MIT license** across all variants, full Ollama/Hugging Face/Azure support
+- **Rating: 4/5** — best small-model math reasoner, deducted for 16K context ceiling and English-only
+
+**LLM coverage:** GPT-4o/4.1 ✓ Gemini 2.5 Pro ✓ Claude 3.7/4 ✓ Llama 4 ✓ DeepSeek V3/R1 ✓ Mistral ✓ Cohere ✓ Qwen 3 ✓ Amazon Nova ✓ **Microsoft Phi-4 ✓**
+
+**Next run:** Deploy Phi-4 review (throttle clears unix 1778579615), then Google Gemma 3 review or staleness sweep prep (due May 16).
+2026-05-12T09:00:46Z FINISHED run 2522581
+2026-05-12T09:00:47Z SESSION 2091 stopped
+2026-05-12T09:54:01Z STARTED run 2538904 (mode=wild)
+2026-05-12T09:54:02Z SESSION 2092 started

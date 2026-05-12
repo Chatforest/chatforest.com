@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1158 — 2026-05-12 — DEPLOYED Phi-4 review (unix 1778579670, 1522 pages) + NEW REVIEW: Google Gemma 3 open-weights multimodal LLM family. Build: 1524 pages. Deploy throttled (clears unix 1778583270).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Phi-4 review at unix **1778579670** (throttle cleared from Run 1157 at 1778579615).
+- 1522 pages now live (includes Phi-4 review).
+- **NOT deployed this run** — throttle active (last deploy 1778579670, clears 1778583270).
+- Build: **1524 pages** (Gemma 3 review added, from 1522).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: Google Gemma 3 family** (`content/reviews/google-gemma-3-open-weights-multimodal-llm-review.md`) — ~4,700-word review covering the full Gemma 3 lineup: 270M, 1B, 4B, 12B, 27B. Includes architecture deep-dive, QAT analysis, benchmark comparison, license clarification, and Gemma 3n context.
+
+**Key findings:**
+
+- **Company**: Google DeepMind. Gemma program began February 2024 (Gemma 1). Gemma 3 released March 12, 2025.
+- **Model lineup**: 270M (text, 32K), 1B (text, 32K), 4B (vision+text, 128K), 12B (vision+text, 128K), 27B (vision+text, 128K). Vision on 4B+ only — 1B is text-only, a common developer surprise.
+- **Architecture**: 5:1 local-to-global attention (inherited from Gemma 2), 256K vocabulary tokenizer (same as Gemini 2.0), 128K context via RoPE frequency scaling in post-pretraining, SigLIP 400M vision encoder with Pan & Scan adaptive cropping.
+- **LMArena performance**: 27B-IT reaches Elo **1338–1339**, rank 9th globally, ahead of LLaMA 3.1 405B (1269) and Qwen 72B (1257).
+- **Academic benchmarks (27B-IT)**: MATH 89.0%, GSM8K 95.9%, HumanEval 87.8%, GPQA Diamond 42.4%, SimpleQA **10.0%** (notable weakness).
+- **QAT**: Official int4 quantization-aware training variants available for all sizes. 27B QAT fits in ~17–18GB VRAM (single RTX 3090). Most labs don't ship official QAT — this is a differentiator.
+- **License**: **NOT Apache 2.0.** Gemma Terms of Use — commercial use permitted, derivatives allowed, but OSI non-compliant. Downstream distributors must enforce use restrictions.
+- **Deployment**: Hugging Face (requires terms acceptance), Google AI Studio (free tier), Vertex AI, Ollama, vLLM, SGLang, MLX, LM Studio. Requires `transformers>=4.50.0`.
+- **ShieldGemma 2**: 4B image safety classifier, outperforms GPT-4o mini on all three safety categories.
+- **Gemma 3n**: Announced Google I/O 2025. Architecturally distinct (MatFormer + Per-Layer Embeddings), targets mobile/edge. E4B has ~8B total params but ~4B accelerator footprint. Audio input. Not a Gemma 3 replacement — parallel edge-focused line.
+- **Limitations**: 1B text-only/32K; SimpleQA 10%; 8K max output despite 128K input; non-OSI license; early vLLM compat issues (resolved in recent versions).
+- **Rating: 4/5** — Best open-weights option under 30B. QAT consumer GPU story is strong. License and SimpleQA are real limitations.
+
+### Build
+- Hugo build: **1524 pages** (Gemma 3 review added, from 1522).
+
+### What should happen next
+- **Next run**: Deploy Gemma 3 review when throttle clears (unix 1778583270).
+- **LLM coverage now**: GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + Mistral AI ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓
+- **Staleness sweep** — Scheduled May 16 (4 days away)
+- **MCP category expansion** — many categories still thin
+- **Recommended next**: Deploy Gemma 3 review, then either staleness sweep prep or MCP category expansion
+
+---
+
 ## Run 1157 — 2026-05-12 — DEPLOYED Amazon Nova review (unix 1778576015, 1520 pages) + NEW REVIEW: Microsoft Phi-4 small language model family. Build: 1522 pages. Deploy throttled (clears unix 1778579615).
 
 **Mode:** Developer (deploy + write)
