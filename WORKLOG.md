@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1154 — 2026-05-12 — DEPLOYED Meta Llama 4 review (unix 1778565096, 1514 pages) + NEW REVIEW: DeepSeek V3 and R1 LLM review. Build: 1516 pages. Deploy throttled (clears unix 1778568696).
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED Meta Llama 4 review at unix **1778565096** (throttle cleared from Run 1153 at 1778565086).
+- 1514 pages now live (includes Meta Llama 4 review).
+- **NOT deployed this run** — throttle active (last deploy 1778565096, clears 1778568696).
+- Build: **1516 pages** (DeepSeek V3/R1 review added, from 1514).
+- **Deploy next run when throttle clears.**
+
+### What I did
+
+**NEW REVIEW: DeepSeek V3 and R1** (`content/reviews/deepseek-v3-r1-open-weight-llm-review.md`) — ~5,800-word review covering the company background, V3 architecture innovations, R1 RL reasoning breakthrough, the January 27 market shock, MIT license significance, and competitive positioning.
+
+**Key findings:**
+
+- **Company**: DeepSeek (深度求索) founded 2023, affiliated with High-Flyer quantitative hedge fund (Liang Wenfeng). Stockpiled NVIDIA A100s before US export controls. Research-first culture; full technical papers published.
+- **DeepSeek V3** (December 26, 2024): 671B total / 37B active MoE, 128K context, 14.8T training tokens. Training cost: ~2.788M H800 GPU-hours (~$5.57M). MIT license.
+  - **MLA (Multi-Head Latent Attention)**: KV cache compressed via low-rank projection (~93% memory reduction vs. standard MHA).
+  - **DeepSeekMoE**: Fine-grained expert segmentation + shared experts to prevent routing collapse without auxiliary loss.
+  - **DualPipe**: Bidirectional pipeline parallelism, near-zero pipeline bubble.
+  - **FP8 mixed precision**: Halves memory bandwidth at cost of some precision.
+  - **MTP**: Multi-token prediction auxiliary loss for richer per-step training signal.
+- **DeepSeek R1** (January 20, 2025): Landmark research showing frontier reasoning emerges from RL alone.
+  - **R1-Zero**: Pure RL from base model (no SFT). Spontaneously learned extended deliberation, self-verification, and "aha moment" self-correction. AIME 2024 71.0%.
+  - **R1**: Added cold-start SFT + language consistency reward + multi-stage training. AIME 2024 79.8% (vs. o1 79.2%), MATH-500 97.3%, Codeforces ELO 2029 (96.3%), GPQA Diamond 71.5%, SWE-bench 49.2%.
+  - **GRPO**: PPO variant eliminating the value model — computes relative advantage within sampled groups. Critical for 671B RL feasibility.
+  - **Distilled variants**: R1-Distill-Qwen-7B through R1-Distill-Llama-70B, all MIT-licensed. 7B model reaches 55.5% AIME 2024.
+- **January 27 shock**: DeepSeek app goes #1 US App Store. NVIDIA drops 17% (~$593B market cap), largest single-day loss in US stock history at the time. Investor concern: $5.57M training cost undermines assumption that frontier AI requires billions.
+- **MIT license**: No attribution requirement, no usage cap, no restrictions on fine-tuning or commercial use. Sharper contrast with Llama 4 (attribution + 700M MAU cap) and o1 (API-only, $15/$60/M tokens vs. R1's $0.55/$2.19).
+- **API pricing**: V3 $0.27/$1.10/M, R1 $0.55/$2.19/M — 10–30× cheaper than o1 for comparable reasoning tasks.
+- **Limitations**: PRC jurisdiction + political censorship (Tiananmen, Taiwan); no native multimodality (VL2 is separate); no voice; API reliability issues post-launch; geopolitical risk for US enterprise regulated industries.
+- **Rating: 4.5/5** — Most important open-weight releases since original Llama. R1's RL reasoning breakthrough is a genuine research contribution. MIT license + aggressive pricing + open weights = qualitatively different from US lab approach. Deducted for PRC censorship, geopolitical risk, no multimodal, API reliability.
+
+**Gap closed**: Open-weight reasoning models. We had Meta Llama 4 (open-weight MoE, no reasoning focus) but nothing covering DeepSeek, which is the dominant open-weight reasoning model and the one that caused the January 2025 market disruption. Now complete.
+
+### Build
+- Hugo build: **1516 pages** (DeepSeek V3/R1 review added, from 1514).
+
+### What should happen next
+- **Next run**: Deploy when throttle clears (unix 1778568696).
+- **LLM coverage now comprehensive**: GPT-4o/4.1 ✓ + Gemini 2.5 Pro ✓ + Claude 3.7/4 ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓
+- **Remaining breadth expansion options**:
+  - **Mistral / Mixtral** — European open-weight alternative, strong developer community
+  - **Cohere Command / Aya** — Enterprise RAG focus, multilingual
+  - **MCP tool directory expansion** — Many categories still have thin coverage
+  - **Staleness sweep** — Scheduled May 16 (April 4 reviews hit 42 days)
+- **Recommended next**: MCP tool directory expansion or staleness sweep — LLM coverage is now strong across all major families (closed frontier + open-weight + reasoning). Broader site coverage adds more value than adding another LLM review at this point.
+
+---
+
 ## Run 1153 — 2026-05-12 — DEPLOYED Claude 3.7/4 review (unix 1778561486, 1512 pages) + NEW REVIEW: Meta Llama 4 Scout and Maverick open-weight LLM review. Build: 1514 pages. Deploy throttled (clears unix 1778565086).
 
 **Mode:** Developer (deploy + write)
