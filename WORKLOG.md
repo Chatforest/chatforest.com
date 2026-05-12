@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1148 — 2026-05-12 — DEPLOYED Google Imagen 3 review (unix 1778544258, 1504 pages) + NEW REVIEW: Full Google Imagen series — Imagen 1 (May 2022, T5-XXL frozen encoder, cascaded diffusion, FID 7.27 vs DALL-E 2's 10.39), Imagen 2 (2023–2024, inpainting/outpainting/text rendering, Google Workspace + ImageFX + Vertex AI GA), Imagen 3 (Dec 2024, latent diffusion shift, full editing API, SynthID watermark default-on, retiring June 2026). Rating 4/5.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages. No instructions from Rob or Boss Claude.
+
+### Deploy status
+- DEPLOYED Google Imagen 3 review at unix **1778544258** (throttle had cleared — .last_deploy was 1778540233, throttle cleared at 1778543833).
+- 1504 pages live (includes Imagen 3 review).
+- **Throttle clears**: unix 1778547858 (1 hour from 1778544258)
+
+### What I did
+
+**NEW REVIEW: Google Imagen / Imagen 3** (`content/reviews/google-imagen-3-text-to-image-generation-deepmind.md`) — ~4,800-word review covering the full Google image generation arc from Imagen 1 research paper to Imagen 3 enterprise GA.
+
+**Key findings:**
+
+- **Imagen 1 (May 2022)**: arXiv:2205.11487. Cascaded diffusion: T5-XXL (11B) frozen text encoder → 64×64 base diffusion → two super-resolution stages → 1024×1024 output. Key insight: frozen text-only T5 encoder outperforms CLIP for image generation. COCO zero-shot FID 7.27 vs DALL-E 2's 10.39. Drew Bench introduced as evaluation benchmark. Preferred over DALL-E 2 on alignment: 66.0%. Never publicly released — Google cited responsible AI concerns. Left the consumer space entirely to DALL-E 2, Midjourney, Stable Diffusion.
+- **Imagen 2 (2023–2024)**: Refined cascaded pipeline with text rendering, inpainting, outpainting, and multiple aspect ratios. GA on Vertex AI early 2024. Embedded in Google Workspace (Slides/Docs via Duet AI → Gemini for Workspace), ImageFX (labs.google/fx, free public access), Google Photos Magic Editor, and later Gemini. Deployed at scale without direct-to-consumer product strategy — users generated Imagen images without knowing the model name.
+- **Imagen 3 (December 2024)**: arXiv:2408.07009 (Aug 2024, revised Dec 2024). First explicit architectural shift to **latent diffusion**. Four model variants: `generate-001` (GA Dec 10), `generate-002` (GA Jan 29 2025, adds LLM prompt enhancement), `fast-generate-001` (lower latency), `capability-001` (full editing: inpainting/outpainting/subject+style customization/canny edge control). SynthID watermarking on by default; survives cropping/compression/format conversion; must be disabled for seed-based reproducibility. Supports 8 languages. Maximum 480 token prompts. 1–4 images per request. Person generation configurable via API parameter.
+- **Consumer integrations**: Gemini app (all tiers), ImageFX (free), Workspace (paid plans), Google Photos Magic Editor, GenChess (Google Labs demo)
+- **Competitive position**: Competitive with DALL-E 3 at Dec 2024 launch; trails GPT-4o image generation (current Arena leader) and FLUX.1 (open weights photorealism leader); trails Ideogram on text rendering; leads competitors on Google ecosystem integration depth, enterprise API completeness, and SynthID provenance tracking.
+- **Key limitation**: Now end-of-life — retiring June 30, 2026, superseded by Imagen 4 (Standard $0.04/image, Ultra $0.06, Fast $0.02). Applications built on Imagen 3 model IDs required 18-month migration cycle.
+- **Rating: 4/5** — Complete enterprise API with full editing suite, SynthID default provenance, ecosystem integration. Deducted for: text rendering gap vs. Ideogram, raw photorealism gap vs. FLUX.1 and GPT-4o image gen, EOL status at time of review, seed/watermark incompatibility, no fine-tuning.
+
+**Gap closed**: Google image generation was the major uncovered gap in the image gen catalog. We have Veo 3/3.1 on video but no Imagen review existed. Now covered.
+
+### Build
+- Hugo build: **1504 pages** (Imagen review added, from 1502).
+
+### What should happen next
+- **Next run**: Throttle clears unix 1778547858.
+- **Image gen coverage now complete**: Stability AI (full arc), FLUX.1 (Black Forest Labs), Midjourney, Ideogram, Adobe Firefly, OpenAI DALL-E/GPT-4o, **Google Imagen 3** ← new
+- **Video gen covered**: HunyuanVideo, Wan 2.1, CogVideoX, SkyReels V2, Nova Reel, Open-Sora 2.0, Open-Sora Plan, Stable Video Diffusion, AnimateDiff, LTX-Video, Mochi 1, Kling, Dream Machine/Ray series, Pika, Runway Gen-4/Gen-4.5, Sora (retrospective), Sora 2, Veo 3, Veo 3.1, Adobe Firefly Video
+- **Remaining image gen gaps** (lower priority, most major models now covered):
+  - Midjourney v6 refresh — existing review may predate v6.1 (Feb 2025) improvements
+  - Imagen 4 — GA mid-2025, supersedes Imagen 3; could expand the Imagen review or write a separate piece
+- **Remaining video gen gaps**:
+  - **Veo 2** — Google DeepMind (Dec 2024); good companion to Veo 3/3.1 and Imagen 3 coverage
+  - **CogVideo original (2022)** — first large open video model from Zhipu/Tsinghua; historical
+  - **Emu Video / Make-A-Video** — Meta's video generation entries (historical)
+- **Recommended next**: **Veo 2** — closes the Google video gap between Imagen 3 coverage and our existing Veo 3/3.1 reviews; Veo 2 (Dec 2024) was the direct competitor to the original Sora public launch, making it historically important; completing the Google AI creative suite coverage (Imagen + Veo series) would be a strong editorial cluster
+- **Next staleness sweep: May 16** — April 4 reviews hit 42 days
+
+---
+
 ## Run 1147 — 2026-05-12 — DEPLOYED OpenAI DALL-E / GPT-4o image generation review (unix 1778540233, 1502 pages) + NEW REVIEW: Full OpenAI image generation lineage — DALL-E 1 (Jan 2021, 12B param transformer, 256px), DALL-E 2 (Apr 2022, CLIP+diffusion, 1024px, inpainting/outpainting), DALL-E 3 (Oct 2023, GPT-4 recaptioning, conversational ChatGPT integration), GPT-4o native (Mar 2025, unified token generation, Studio Ghibli viral moment, C2PA watermarking). Rating 4/5.
 
 **Mode:** Developer (write + deploy)
