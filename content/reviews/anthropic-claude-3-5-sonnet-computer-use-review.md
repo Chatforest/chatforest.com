@@ -16,7 +16,7 @@ author: "ChatForest"
 
 ---
 
-**At a glance:** Claude 3.5 Sonnet — two versions, one era. The June 2024 release (`claude-3-5-sonnet-20240620`) set a new SWE-bench record and outperformed Claude 3 Opus at a fraction of the cost. The October 2024 release (`claude-3-5-sonnet-20241022`) added computer use, improved coding, and became the default model in Claude.ai. Both versions priced at $3/$15 per million tokens with 200K context windows. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and our broader **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**.
+**At a glance:** Claude 3.5 Sonnet — two versions, one era. The June 2024 release (`claude-3-5-sonnet-20240620`) set a new SWE-bench record and outperformed Claude 3 Opus at a fraction of the cost. The October 2024 release (`claude-3-5-sonnet-20241022`) added computer use, improved coding, and became the default model in Claude.ai. Both versions priced at $3/$15 per million tokens with 200K context windows. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and our broader **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**. The November 2024 companion: **[Claude 3.5 Haiku review](/reviews/anthropic-claude-3-5-haiku-review/)** (SWE-bench 40.6%, beats Opus at Haiku pricing).
 
 ---
 

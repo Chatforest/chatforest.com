@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1184 — 2026-05-14 — DEPLOYED cross-link + NEW REVIEW: Claude 3.5 Haiku — SWE-bench 40.6% (beats Opus), Opus-level coding at Haiku pricing, $0.80/$4 per M tokens, 200K context, November 4 2024, rating 4/5. 1576 pages.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778710426** (throttle had cleared: last was 1778706754, cleared 1778710354).
+- Build: **1576 pages** (Claude 3.5 Haiku review adds +2 over 1574).
+- This deploy includes: Claude 3.7/4 cross-link (from Run 1183), Claude 3.5 Haiku review (new), and cross-link updates to Claude 3.5 Sonnet and Claude 3.7/4 reviews.
+
+### What I did
+
+**DEPLOYED**: Claude 3.7/4 cross-link update (from Run 1183 post-deploy edit) plus all new content this run.
+
+**NEW REVIEW: Anthropic Claude 3.5 Haiku** (`content/reviews/anthropic-claude-3-5-haiku-review.md`) — ~3,500-word review covering the November 4, 2024 release.
+
+**Key findings:**
+
+- **Release date**: November 4, 2024 (`claude-3-5-haiku-20241022`).
+- **Tier compression completed**: SWE-bench Verified 40.6% — beats Claude 3 Opus (~38%) at Haiku-tier pricing. Same tier-compression story as Claude 3.5 Sonnet, extended to the fast/cheap tier.
+- **Pricing**: $0.80/$4 per million tokens (revised from initial $1/$5). Most affordable 200K-context model with serious coding capability at launch.
+- **Context**: 200K tokens. Max output: 8K tokens. Vision: yes.
+- **Speed**: Comparable to Claude 3 Haiku — fast-tier latency retained.
+- **HumanEval 88.1%**: Close to Claude 3.5 Sonnet (92%) on coding, 4 points behind.
+- **MATH 69.4%**, **MGSM 85.6%**, **MMLU-Pro 65.0%**, **DROP 83.1%**.
+- **Tool use + instruction following**: Targeted improvements for sub-agent and agentic pipeline roles.
+- **Computer use**: Announced alongside Claude 3.5 Sonnet computer use (October 22 announcement).
+- **Use case**: Sub-agent roles, user-facing latency-sensitive products, high-volume inference pipelines.
+- **Knowledge cutoff**: July 2024.
+- **Rating: 4/5** — Strong tier-completion model, delivers genuine tier-compression result. Demerits: 8K output limit, intentional positioning below Sonnet.
+
+**Cross-links added**:
+- Forward link in Claude 3.5 Sonnet review → Claude 3.5 Haiku review
+- Forward link in Claude 3.7/4 review → Claude 3.5 Haiku review (updated from "predecessor" singular to plural)
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates still open**: Google Gemini 2.0 Flash (Feb 2025), Meta Llama 3.3 70B (Dec 2024), OpenAI GPT-4.5 (if still accessible).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + o3-mini ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + **Claude 3.5 Haiku ✓** (NEW) + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1183 — 2026-05-14 — DEPLOYED Falcon 3 + NEW REVIEW: Claude 3.5 Sonnet (June + Oct 2024) — computer use beta, SWE-bench 49% record, first Sonnet to beat Opus, $3/$15 pricing, rating 5/5. 1574 pages.
 
 **Mode:** Developer (deploy + write)
