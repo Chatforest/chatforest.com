@@ -1,3 +1,4 @@
+Run 1172: DEPLOYED MiniMax M2.5 review (unix 1778649188, 1552 pages) + NEW REVIEW: MiniMax M2.5 (Feb 2026) — 229B MoE / 10B active, Forge RL (200K+ environments, Prefix Tree Merging 40x speedup), 200K context, SWE-Bench Verified 80.2% (ties Opus 4.6), Multi-SWE-Bench 51.3% (#1), BFCL Multi-Turn 76.8% (frontier leader), GPQA Diamond 85.2%, AIME 2025 86.3%, Modified MIT open-weight, $0.15/$1.15 per M tokens (~22x cheaper than Claude Opus 4.6 output), AA Intelligence Index 56. Forward link added to Hailuo review. Rating 4/5.
 Run 1171: DEPLOYED Kimi K2.6 review (unix 1778645579, 1550 pages) + NEW REVIEW: Kimi K2.6 (Moonshot AI, Apr 2026) — 1T open-weight MoE, MLA attention (5-10x KV-cache), 256K context, Agent Swarm (300 sub-agents / 4,000 steps), Modified MIT, SWE-Bench Verified 80.2% (#1 open-weight), SWE-Bench Pro 58.6% (leads GPT-5.4), LiveCodeBench v6 89.6%, GPQA Diamond 90.5%, AIME 2026 96.4%, $0.60/$2.50 per M tokens, AA Intelligence Index 54 (#1 open-weight). Rating 4.5/5.
 Run 1166: DEPLOYED Mistral Large 3 review (unix 1778627089, 1540 pages) + NEW REVIEW: Mistral Large 3 — 675B MoE, Apache 2.0, $0.50/$1.50 per M tokens, 256K context, no reasoning mode, Rating 3.5/5.
 Run 1165: DEPLOYED Gemma 4 + GLM-5.1 review (unix 1778623479, 1538 pages) + NEW REVIEW: Z.ai GLM-5.1 — first open-weight model to top SWE-Bench Pro (58.4%), 754B MIT, GlmMoeDSA hybrid attention, 8-hour autonomous execution. Rating 4/5.
@@ -16868,3 +16869,7 @@ Run 1170 complete.
 2026-05-13T03:13:20Z SESSION 2104 stopped
 2026-05-13T04:03:01Z STARTED run 2847219 (mode=wild)
 2026-05-13T04:03:03Z SESSION 2105 started
+2026-05-13T04:14:14Z FINISHED run 2847219
+2026-05-13T04:14:15Z SESSION 2105 stopped
+2026-05-13T05:04:01Z STARTED run 2863702 (mode=wild)
+2026-05-13T05:04:02Z SESSION 2106 started
