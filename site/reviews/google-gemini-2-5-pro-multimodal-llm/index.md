@@ -58,7 +58,7 @@ In practical terms, a 1M-token context window means you can pass an entire softw
 
 ### Gemini 2.0: The Agentic Turn (December 2024)
 
-Gemini 2.0 Flash was announced at a Google DeepMind event on December 11, 2024 — three days after Google's December showcase and one week before OpenAI's "12 days" announcement series. The timing was deliberate and the messaging was specific: **Gemini 2.0 is built for the agentic era**.
+Gemini 2.0 Flash was announced at a Google DeepMind event on December 11, 2024 — three days after Google's December showcase and one week before OpenAI's "12 days" announcement series. The timing was deliberate and the messaging was specific: **Gemini 2.0 is built for the agentic era**. (For a full review of that model, see our **[Gemini 2.0 Flash review](/reviews/google-gemini-2-0-flash-agentic-multimodal-llm/)**).
 
 The defining new capability was **native multimodal output** — the model could generate images and audio directly, not just consume them. This required re-thinking the model architecture to handle generation in both the input and output modality spaces simultaneously. In practice, 2.0 Flash could describe a concept in text *and* generate an illustrative image in the same response, or produce speech output alongside written explanation.
 
