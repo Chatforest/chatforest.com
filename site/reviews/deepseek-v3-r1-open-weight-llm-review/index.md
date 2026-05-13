@@ -266,7 +266,7 @@ But for developers who need open weights, full data sovereignty, MIT license, or
 
 ---
 
-**Looking ahead:** DeepSeek released V4 on April 24, 2026 — 1.6T parameter MoE, 80.6% SWE-bench Verified (up from 67.8% on V3.2), 93.5% LiveCodeBench, and a new Hybrid Compressed Attention architecture that cuts inference FLOPs by 73% at 1M context. See our **[DeepSeek V4 review](/reviews/deepseek-v4-open-weight-llm-review/)**.
+**Looking ahead:** After V3 and R1, DeepSeek continued refining the 671B line through V3.1, V3.1-Terminus, and V3.2-Exp before releasing **DeepSeek V3.2** on December 1, 2025 — adding DeepSeek Sparse Attention (50% lower long-context costs) and reasoning-in-tool-use, with the V3.2-Speciale variant achieving IMO 2025 gold-medal performance. See our **[DeepSeek V3.2 review](/reviews/deepseek-v3-2-dsa-sparse-attention-open-weight-llm-review/)**. Then on April 24, 2026, DeepSeek released V4 — 1.6T parameter MoE, 80.6% SWE-bench Verified, 93.5% LiveCodeBench, and a new Hybrid Compressed Attention architecture. See our **[DeepSeek V4 review](/reviews/deepseek-v4-open-weight-llm-review/)**.
 
 ---
 

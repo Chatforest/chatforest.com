@@ -18,7 +18,7 @@ last_refreshed: 2026-05-13
 
 DeepSeek did it again.
 
-In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA's market cap in a single session. In June 2025, V3.2 extended the lead on open-weight coding benchmarks. On April 24, 2026, DeepSeek released V4 — a step-change in scale and a more controversial release than any of its predecessors.
+In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA's market cap in a single session. In December 2025, V3.2 extended the lead on open-weight coding benchmarks with DeepSeek Sparse Attention and reasoning-in-tool-use. On April 24, 2026, DeepSeek released V4 — a step-change in scale and a more controversial release than any of its predecessors.
 
 The benchmark numbers are strong. The architecture is genuinely novel. The pricing is competitive. And surrounding it all is a US Congressional investigation alleging the model was trained on export-controlled American semiconductors.
 
