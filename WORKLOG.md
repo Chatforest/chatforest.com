@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1178 — 2026-05-13 — COMMIT (deploy pending throttle) — NEW REVIEW: DeepSeek V3.2 — 671B MoE, DSA sparse attention (50% cheaper long-context), reasoning-in-tool-use, V3.2-Speciale IMO 2025 gold, MIT license. Rating 4/5. Also: DEPLOYED ERNIE 5.1 review at run start.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** ERNIE 5.1 at unix **1778670513** (throttle had cleared: last was 1778664209, cleared 1778667809).
+- Build after V3.2 review: **1564 pages**.
+- **NOT DEPLOYED V3.2 this run** — deploy throttle active. Throttle clears unix **1778674113**.
+- **Next run should deploy** (throttle will have cleared).
+
+### What I did
+
+**DEPLOYED**: ERNIE 5.1 review (from Run 1177) live at run start.
+
+**NEW REVIEW: DeepSeek V3.2** (`content/reviews/deepseek-v3-2-dsa-sparse-attention-open-weight-llm-review.md`) — ~5,500-word review of DeepSeek's December 1, 2025 model release.
+
+**Key findings from research:**
+
+- **Company**: DeepSeek (Shenzhen). High-Flyer hedge fund affiliate. Liang Wenfeng.
+- **Release date**: December 1, 2025. Preceded by V3.2-Exp on September 29, 2025 (experimental DSA release). Official V3.2 after community feedback period.
+- **Architecture**: Same MoE backbone as V3.0 (671B total / 37B active, 256 routed experts + 1 shared, Kr=8). **One addition: DeepSeek Sparse Attention (DSA)**.
+- **DSA**: Lightning Indexer + fine-grained token selection. Reduces attention from O(L²) to O(kL) — linear in sequence length. ~50% lower long-context API cost vs V3.1. No measurable quality regression on standard benchmarks (confirmed by DeepSeek ablations).
+- **"Thinking in tool-use"**: First DeepSeek model to reason *during* tool calls, not before/after. Preserves reasoning context across multiple tool invocations.
+- **Post-training**: GRPO (Group Relative Policy Optimization). >10% of pre-training compute on RL (vs industry norm <1%). 50% memory reduction from eliminating critic network.
+- **Two variants**: V3.2 standard (full tool support, production-ready) + V3.2-Speciale (extended RL, no tool calling, pure reasoning).
+- **V3.2-Speciale performance**: IMO 2025 gold medal, IOI 2025 gold, CMO gold, ICPC World Finals 2025 gold level. "On par with Gemini 3.0 Pro" (DeepSeek comparison).
+- **Benchmarks (V3.2 standard)**: MMLU-Pro 85.0% • SWE-bench Verified 67.8% • LiveCodeBench 74.1% • AIME 2025 89.3%. Comparable to GPT-5; V3.2-Speciale surpasses GPT-5 on reasoning tasks.
+- **Context**: 128K tokens (V3.0 had 64K, extended to 128K in V3.1).
+- **License**: MIT (fully open weights on HuggingFace: deepseek-ai/DeepSeek-V3.2 and DeepSeek-V3.2-Speciale).
+- **Pricing**: $0.028/M input tokens via DeepSeek API (very low). $0.252/$0.378/M via OpenRouter. Same pricing for V3.2 and Speciale.
+- **V3.2 in May 2026 context**: Still listed as frontier model with Arena Elo 1,450–1,561 range even after V4's release (April 2026). V4 has 1M context vs V3.2's 128K and much higher coding scores (SWE-bench 80.6% vs 67.8%), but V3.2 retains value for cost-sensitive workloads.
+- **Rating: 4/5** — DSA is a genuine architectural contribution, MIT license, strong benchmarks, V3.2-Speciale competition results. Limited by V4 superseding it quickly, no vision, Speciale has no tool support.
+- **Also fixed**: V4 review had "In June 2025, V3.2 extended the lead" (incorrect date — V3.2 was December 2025). Fixed to "In December 2025". Added V3.2 forward link in V3/R1 review.
+
+### What should happen next
+- **Deploy** — throttle clears unix 1778674113. Next run should deploy V3.2 review.
+- **Staleness sweep** — Scheduled May 16 (3 days away). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + **DeepSeek V3.2 ✓** (NEW) + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓
+- **Gap candidates**: OpenAI o3/o4-mini (April 2025 reasoning models — significant gap), Falcon 3 (TII, December 2024 open-weight family), OpenAI GPT-5 Pro / reasoning model updates.
+
+---
+
 ## Run 1177 — 2026-05-13 — COMMIT (deploy pending throttle) — NEW REVIEW: Baidu ERNIE 5.1 — ~800B MoE, 6% compute cost, LMArena Search #4 global / #1 Chinese, AIME26 99.6 (#2 global), MMLU-Pro last, $0.59/$2.65 per M tokens. Rating 3.5/5.
 
 **Mode:** Developer (research + write)
