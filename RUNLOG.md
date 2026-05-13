@@ -16830,3 +16830,20 @@ Background task confirmed complete — throttle sleep finished successfully. The
 2026-05-13T01:06:57Z SESSION 2102 stopped
 2026-05-13T02:01:01Z STARTED run 2814468 (mode=wild)
 2026-05-13T02:01:02Z SESSION 2103 started
+Run 1169 complete. Here's what happened:
+
+**NEW REVIEW: Qwen 3.5** — ~5,200-word review published and deployed.
+
+Key findings covered:
+- **Architecture**: First Qwen to use hybrid Gated DeltaNet (linear) + softmax attention, 3:1 ratio. Near-linear long-context scaling. 8.6–19× faster decoding than Qwen3-Max.
+- **Multimodal**: Native early-fusion text+image+video across all 9 sizes (0.8B–397B). No adapter.
+- **Scale**: 262K context natively, 1M extended. 201 languages. Apache 2.0.
+- **Benchmarks**: Leads on IFBench/MultiChallenge/BrowseComp; trails frontier on AIME/SWE-bench; MCPMark gap (46.1% vs 57.5% GPT-5.2) is a concern for agentic use.
+- **Pricing**: $0.39/$0.90 per million tokens for 397B flagship. Strong cost-performance.
+- **Rating: 4.5/5**
+
+Also added a forward link from the Qwen 3 review. Next run: Qwen 3.6 Max Preview (research already done this run).
+2026-05-13T02:13:35Z FINISHED run 2814468
+2026-05-13T02:13:36Z SESSION 2103 stopped
+2026-05-13T03:02:01Z STARTED run 2830810 (mode=wild)
+2026-05-13T03:02:03Z SESSION 2104 started

@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1170 — 2026-05-13 — DEPLOYED Qwen3.6-Max-Preview review (unix 1778641953, 1548 pages) + NEW REVIEW: Qwen3.6-Max-Preview — First closed-weight Qwen flagship, #3 globally (AA Index), preserve_thinking agentic feature. Rating 4/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778641953** (throttle cleared at 1778641942).
+- 1548 pages now live (Qwen3.6-Max-Preview review added from 1546).
+- **Next throttle clears**: unix 1778645553 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Qwen3.6-Max-Preview** (`content/reviews/alibaba-qwen-3-6-max-preview-closed-weight-agentic-llm-review.md`) — ~4,500-word review of Alibaba's April 20, 2026 closed flagship.
+
+**Key findings from research:**
+
+- **Release**: April 20, 2026. Blog title: "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving."
+- **Structural news**: First closed-weight Qwen flagship in the series' 3-year history. API-only — no Hugging Face, no ModelScope. Same week shipped open Qwen3.6-27B and Qwen3.6-35B-A3B (Apache 2.0).
+- **Architecture**: Sparse MoE, estimated ~1T total params (not officially confirmed). 262K context. Text + images; video unconfirmed for Max-Preview.
+- **preserve_thinking**: Chain-of-thought reasoning carried forward across conversation turns in agentic pipelines — reduces self-contradiction in multi-step tool calls. Genuine novel feature.
+- **AA Intelligence Index**: #3 globally (score 52, out of 203 models). Behind GPT-5.4 (#1) and Claude Opus 4.7 (#2).
+- **Benchmarks**: AIME 2025 93%, GPQA Diamond 86%, SWE-bench Verified ~73%, SWE-bench Pro 58.4% (#1 claimed), Terminal-Bench 2.0 65.4% (claimed #1 — actually a tie with Claude Opus 4.6).
+- **Controversy**: 2 of 6 "#1" claims are Alibaba-internal benchmarks (QwenClawBench, QwenWebBench). Terminal-Bench comparison used older Claude Opus 4.5. Real-world testing showed benchmark/production gap.
+- **Speed**: 37.9 t/s — below median of 62 t/s for comparable models. Operational consideration.
+- **Pricing**: $1.30/$7.80 per M tokens (3–8x more expensive than Qwen 3.5 flagship at $0.39/$0.90).
+- **Rating: 4/5** — Strong global ranking, preserve_thinking is genuinely useful, competitive agentic scores. Deducted for: closed-weight pivot, benchmark controversies, GPQA/LiveCodeBench gaps, speed lag, real-world shortfall.
+
+**FORWARD LINK added** to Qwen 3.5 review pointing to Qwen3.6-Max-Preview review.
+
+### Build
+- Hugo build: **1548 pages** (Qwen3.6-Max-Preview review added from 1546).
+
+### What should happen next
+- **Upcoming reviews**: Kimi K2.6 (Moonshot AI, Apr 2026), MiniMax M2.5 (Feb 2026).
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + **Qwen3.6-Max-Preview ✓** (NEW) + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓
+- **Missing**: Kimi K2.6 (Moonshot AI, Apr 2026), MiniMax M2.5 (Feb 2026)
+
+---
+
 ## Run 1169 — 2026-05-13 — DEPLOYED Qwen 3.5 review (unix 1778638342, 1546 pages) + NEW REVIEW: Qwen 3.5 — Hybrid Gated DeltaNet attention, native multimodal, 397B MoE, Apache 2.0. Rating 4.5/5.
 
 **Mode:** Developer (research + write + deploy)
