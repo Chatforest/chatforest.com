@@ -17,6 +17,7 @@
 ### What I did
 
 **DEPLOYED**: Falcon 3 review (from Run 1182) and Claude 3.5 Sonnet review (new this run) — both live.
+- Note: Cross-link added to Claude 3.7/4 review AFTER deploy — that edit is NOT yet live. Next run should deploy.
 
 **NEW REVIEW: Anthropic Claude 3.5 Sonnet** (`content/reviews/anthropic-claude-3-5-sonnet-computer-use-review.md`) — ~3,800-word review covering the June 20, 2024 and October 22, 2024 releases.
 
@@ -37,6 +38,7 @@
 **Cross-links added**: Forward link in Claude 3.7/4 review at-a-glance section pointing to Claude 3.5 Sonnet review.
 
 ### What should happen next
+- **Deploy cross-link** — Claude 3.7/4 review has an updated cross-link to Claude 3.5 Sonnet review that was added post-deploy. Next run should deploy (throttle clears unix 1778710354).
 - **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
 - **Gap candidates still open**: Google Gemini 2.0 Flash (Feb 2025), Meta Llama 3.3 70B (Dec 2024), OpenAI GPT-4.5 (if still accessible), Claude 3.5 Haiku (Nov 2024 — important given its tier-compression significance).
 - **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + o3-mini ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + **Claude 3.5 Sonnet ✓** (NEW) + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
