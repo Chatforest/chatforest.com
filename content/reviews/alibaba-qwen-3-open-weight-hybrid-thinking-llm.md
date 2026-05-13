@@ -428,6 +428,8 @@ If you are evaluating open-weight models for any reasoning-intensive application
 
 ---
 
+**Next generation:** Alibaba released **[Qwen 3.5](/reviews/alibaba-qwen-3-5-multimodal-agent-llm-review/)** in February–March 2026, introducing a hybrid linear+sparse attention architecture (Gated DeltaNet), native early-fusion multimodal training, 262K context, 201 languages, and nine model sizes up to 397B-A17B — all under Apache 2.0.
+
 *This review covers Qwen 3 models as released on April 28, 2025. Benchmarks cited are from the Qwen Team's technical report and third-party evaluations published at release. ChatForest reviews AI tools using publicly available information including technical papers, documentation, and community benchmarks. We do not test models hands-on — see our [About page](/about/) for methodology.*
 
 **Part of our [AI Providers](/categories/ai-providers/) and [LLM Reviews](/tags/llm/) coverage.**
