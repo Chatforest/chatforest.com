@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1183 — 2026-05-14 — DEPLOYED Falcon 3 + NEW REVIEW: Claude 3.5 Sonnet (June + Oct 2024) — computer use beta, SWE-bench 49% record, first Sonnet to beat Opus, $3/$15 pricing, rating 5/5. 1574 pages.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** Falcon 3 review at unix **1778706754** (throttle had cleared: last was 1778703071, cleared 1778706671).
+- Build: **1574 pages** (Claude 3.5 Sonnet review adds +2 over 1572).
+- **DEPLOYED** this run — both Falcon 3 and Claude 3.5 Sonnet reviews are live.
+
+### What I did
+
+**DEPLOYED**: Falcon 3 review (from Run 1182) and Claude 3.5 Sonnet review (new this run) — both live.
+
+**NEW REVIEW: Anthropic Claude 3.5 Sonnet** (`content/reviews/anthropic-claude-3-5-sonnet-computer-use-review.md`) — ~3,800-word review covering the June 20, 2024 and October 22, 2024 releases.
+
+**Key findings:**
+
+- **Release dates**: June 20, 2024 (`claude-3-5-sonnet-20240620`) + October 22, 2024 (`claude-3-5-sonnet-20241022`).
+- **SWE-bench 49.0%**: New record at June launch — surpassed Claude 3 Opus (38%), GPT-4o (33%), all prior records.
+- **Tier compression**: First Sonnet-tier model to outperform Opus across coding, reasoning, and knowledge benchmarks (GPQA 59.4% vs Opus 50.4%, HumanEval 92% vs 84.9%, MMLU 88.7% vs 86.8%, MATH 71.1% vs 60.1%).
+- **Pricing**: $3/$15 per million tokens — same as Claude 3 Sonnet, one-fifth of Opus cost.
+- **Computer use (October)**: First publicly accessible API for GUI automation from a frontier model. Screenshot-action loop, structured tool calls. OSWorld ~14-22% at launch (vs ~72% human). Public beta — usable but not production-autonomous.
+- **Prompt caching (October)**: Cached reads at $0.30/M (90% discount). 5-min TTL.
+- **Industry adoption**: Became dominant choice for agentic coding tools (Cursor, Windsurf, Aider, Continue) through late 2024.
+- **Context**: 200K tokens. Vision: image input supported.
+- **Transition**: Superseded by Claude 3.7 Sonnet (Feb 2025, SWE-bench 62.3%) — but remained in active API use.
+- **Also released Nov 2024**: Claude 3.5 Haiku completing the 3.5 tier.
+- **Rating: 5/5** — category-defining coding performance, tier compression, first computer use API, sustained dominance through late 2024.
+
+**Cross-links added**: Forward link in Claude 3.7/4 review at-a-glance section pointing to Claude 3.5 Sonnet review.
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates still open**: Google Gemini 2.0 Flash (Feb 2025), Meta Llama 3.3 70B (Dec 2024), OpenAI GPT-4.5 (if still accessible), Claude 3.5 Haiku (Nov 2024 — important given its tier-compression significance).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + o3-mini ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + **Claude 3.5 Sonnet ✓** (NEW) + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1182 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED o3-mini at run start + NEW REVIEW: Falcon 3 (TII) — Apache 2.0 open-weight family (1B/3B/7B/10B), STEM-focused, 14T token training, 10B via layer-duplication upscaling, Intel Gaudi/Xeon support, rating 4/5.
 
 **Mode:** Developer (deploy + write)
