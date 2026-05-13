@@ -8,7 +8,7 @@ rating: 5
 author: "ChatForest"
 ---
 
-*This review covers the o3 and o4-mini generation (April 2025). For OpenAI's current flagship, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/). For the GPT-4 generation, see the [GPT-4o and GPT-4.1 review](/reviews/openai-gpt-4o-gpt-4-1-llm-review/). For the original reasoning model that started the o-series, see our [o1 and o1-pro review](/reviews/openai-o1-o1-pro-reasoning-model-review/).*
+*This review covers the o3 and o4-mini generation (April 2025). For OpenAI's current flagship, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/). For the GPT-4 generation, see the [GPT-4o and GPT-4.1 review](/reviews/openai-gpt-4o-gpt-4-1-llm-review/). For the original reasoning model that started the o-series, see our [o1 and o1-pro review](/reviews/openai-o1-o1-pro-reasoning-model-review/). For the budget reasoning model between o1 and o3, see our [o3-mini review](/reviews/openai-o3-mini-reasoning-model-review/).*
 
 ---
 
@@ -24,7 +24,7 @@ These were not incremental updates. They were, at the time of release, the most 
 
 OpenAI's reasoning model series began with **o1** in September 2024. The core idea, later formalized as "chain-of-thought scaling," is that allowing a model to spend more compute *during inference* — thinking through intermediate steps before producing a final answer — yields dramatic improvements on tasks requiring multi-step logic, mathematics, and science. This is distinct from standard language model inference, where a single forward pass produces the output.
 
-o1 demonstrated that this approach worked: it outperformed GPT-4o on GPQA Diamond (PhD-level science) and mathematical olympiad problems by a substantial margin. But o1 had limitations: no image input, no tool use, and no way to inspect the reasoning process. **o3-mini** in January 2025 refined the architecture for cost-efficiency and added structured outputs — but remained text-only.
+o1 demonstrated that this approach worked: it outperformed GPT-4o on GPQA Diamond (PhD-level science) and mathematical olympiad problems by a substantial margin. But o1 had limitations: no image input, no tool use, and no way to inspect the reasoning process. **[o3-mini](/reviews/openai-o3-mini-reasoning-model-review/)** in January 2025 refined the architecture for cost-efficiency and added structured outputs — but remained text-only.
 
 o3 and o4-mini resolved both of those limitations.
 

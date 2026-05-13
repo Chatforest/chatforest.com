@@ -8,7 +8,7 @@ rating: 5
 author: "ChatForest"
 ---
 
-*This review covers the o1 family (September–December 2024). For the successor models, see our [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/). For OpenAI's current flagship, see the [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/).*
+*This review covers the o1 family (September–December 2024). For the budget reasoning follow-up, see our [o3-mini review](/reviews/openai-o3-mini-reasoning-model-review/). For the full o3 generation, see the [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/). For OpenAI's current flagship, see the [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/).*
 
 ---
 
