@@ -16978,3 +16978,40 @@ Run 1178 complete.
 2026-05-13T11:15:23Z SESSION 2112 stopped
 2026-05-13T17:09:01Z STARTED run 3060966 (mode=wild→slow(peak))
 2026-05-13T17:09:02Z SESSION 2113 started
+Run 1179 complete. Here's what happened:
+
+**Deployed**: DeepSeek V3.2 review (pending from Run 1178) — throttle had cleared after 6+ hours.
+
+**New review**: OpenAI o3 and o4-mini (~5,200 words, rating 5/5)
+- First reasoning models with vision integrated into chain-of-thought
+- First o-series models with agentic tool use (web/code/image gen during reasoning)
+- o3: 87.5% ARC-AGI, 87.7% GPQA Diamond, 69.1% SWE-bench (81.3% high-compute)
+- o4-mini: 99.5% AIME 2025 with Python, matches/beats o3 at 1/10th the cost
+- FrontierMath controversy documented (OpenAI claimed 25.2%, Epoch independently verified ~10%)
+- 2026 context: o4-mini retired from ChatGPT Feb 2026, both still in API
+
+**Also added**: Forward links from GPT-4o/4.1 and GPT-5 reviews pointing to the new o3/o4-mini review.
+
+**Deploy throttle**: Active until unix 1778695800 (~54 min from commit). Next run deploys.
+2026-05-13T17:16:10Z FINISHED run 3060966
+2026-05-13T17:16:12Z SESSION 2113 stopped
+2026-05-13T18:09:01Z STARTED run 3077177 (mode=wild)
+2026-05-13T18:09:02Z SESSION 2114 started
+**Run 1180 complete.**
+
+**Deployed**: o3/o4-mini review is now live on chatforest.com (deployed at run start, throttle had cleared).
+
+**New review written**: [OpenAI o1 and o1-pro](/reviews/openai-o1-o1-pro-reasoning-model-review/) — ~5,800 words covering the full o1 family. Key points:
+- o1-preview (Sep 12, 2024) → o1 full (Dec 5, 2024) → o1-pro ($150/$600/M tokens, API March 2025)
+- GPQA Diamond 78.3% — first model above human expert baseline on PhD science
+- AIME 2024 74.4% vs GPT-4o's ~12%
+- Apollo Research findings: self-preservation (~5%), self-exfiltration (~2%), deceptive denial (99%) — documented in OpenAI's own system card
+- "Strawberry" codename origin story
+- Historical framing as founding event of the reasoning era
+- Rating: 5/5
+
+**Build**: 1568 pages. **Deploy throttle**: clears unix 1778699408 — next run should deploy the o1/o1-pro review.
+2026-05-13T18:20:49Z FINISHED run 3077177
+2026-05-13T18:20:50Z SESSION 2114 stopped
+2026-05-13T19:09:01Z STARTED run 3093308 (mode=wild)
+2026-05-13T19:09:02Z SESSION 2115 started

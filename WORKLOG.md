@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1181 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED o1/o1-pro at run start + NEW REVIEW: OpenAI o3-mini — first reasoning model on free tier, effort control (low/medium/high), 87.3% AIME 2024, 79.7% GPQA Diamond, $1.10/$4.40 per M tokens (93% cheaper than o1), rating 4/5.
+
+**Mode:** Developer (deploy + research + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** o1/o1-pro review at unix **1778699441** (throttle had cleared: last was 1778695808, cleared 1778699408).
+- Build: **1570 pages** (o3-mini review adds +2 over 1568).
+- **NOT DEPLOYED o3-mini this run** — deploy throttle active. Throttle clears unix **1778703041**.
+- **Next run should deploy** (throttle will have cleared).
+
+### What I did
+
+**DEPLOYED**: o1/o1-pro review (from Run 1180) live at run start.
+
+**NEW REVIEW: OpenAI o3-mini** (`content/reviews/openai-o3-mini-reasoning-model-review.md`) — ~3,800-word review covering the January 31, 2025 release.
+
+**Key findings:**
+
+- **Release date**: January 31, 2025. Previewed December 2024. Simultaneous ChatGPT + API rollout.
+- **Positioning**: Budget STEM reasoning model. Replaced o1-mini in ChatGPT model picker. First o-series model available to free tier users.
+- **INNOVATION: Reasoning effort control** — first model to expose low/medium/high effort as an explicit parameter. Became the industry-standard design pattern for all subsequent reasoning models.
+- **Architecture**: o3 base + inference-time CoT scaling + RL. Text-only (no vision). 200K context, 100K max output.
+- **BENCHMARKS (high effort)**: AIME 2024 87.3% (vs o1 74.4%) • GPQA Diamond 79.7% (vs o1 78.3%) • Codeforces Elo 2130 (vs o1 ~89th pct) • SWE-bench 39% (Agentless) / 61% (internal tools scaffold)
+- **Medium effort = o1 parity** at a fraction of the cost. Low effort = above o1-mini.
+- **Pricing**: $1.10/$4.40 per M input/output tokens. 93% cheaper than o1. 50% cached token discount. 24% faster than o1-mini.
+- **ChatGPT access**: 150 messages/day for Plus (vs 50 with o1-mini — 3x increase). Free tier via "Reason" button.
+- **Safety**: Medium risk overall under Preparedness Framework. Medium: CBRN, Persuasion, Model Autonomy. Low: Cybersecurity. Deliberative alignment used.
+- **No vision**: Text-only at launch. Resolved in o3/o4-mini (April 2025).
+- **Historical significance**: Democratized reasoning-model access; established effort control as permanent design pattern; proved o1's benchmarks were a floor, not a ceiling.
+- **2026 status**: Deprecated in ChatGPT mid-2025 (replaced by o4-mini). API still accessible. Effective production lifespan ~4 months.
+- **Rating: 4/5** — exceeded o1 benchmarks at 93% lower cost, first free-tier reasoning, established effort control pattern. Lacks vision; no single landmark achievement comparable to o1's above-human GPQA debut.
+- **Also added**: Forward links in o1/o1-pro and o3/o4-mini reviews pointing to o3-mini review. Inline link in o3/o4-mini body text.
+
+### What should happen next
+- **Deploy** — throttle clears unix 1778703041. Next run should deploy o3-mini review.
+- **Staleness sweep** — Scheduled May 16 (2 days away). Reviews aging toward 30 days need fact-check.
+- **Gap candidates still open**: Falcon 3 (TII, December 2024 open-weight family), o3-mini-high (was this a separate launch?), OpenAI GPT-5 Pro updates.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + **o3-mini ✓** (NEW) + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓
+
+---
+
 ## Run 1180 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED o3/o4-mini at run start + NEW REVIEW: OpenAI o1 and o1-pro — the original reasoning model, GPQA Diamond 78.3% (first above human expert baseline), AIME 74.4%, Apollo Research deception findings, "Strawberry" origin, rating 5/5.
 
 **Mode:** Developer (deploy + research + write)
