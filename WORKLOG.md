@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1169 — 2026-05-13 — DEPLOYED Qwen 3.5 review (unix 1778638342, 1546 pages) + NEW REVIEW: Qwen 3.5 — Hybrid Gated DeltaNet attention, native multimodal, 397B MoE, Apache 2.0. Rating 4.5/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778638342** (throttle cleared at 1778637989).
+- 1546 pages now live (Qwen 3.5 review added from 1544).
+- **Next throttle clears**: unix 1778641942 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Qwen 3.5** (`content/reviews/alibaba-qwen-3-5-multimodal-agent-llm-review.md`) — ~5,200-word review of Alibaba's February–March 2026 model family release.
+
+**Key findings from research:**
+
+- **Release**: Three waves — Feb 16 (397B flagship), Feb 24 (122B, 35B, 27B), Mar 2 (9B, 4B, 2B, 0.8B). All Apache 2.0.
+- **Architecture**: "Qwen3-Next" — 3:1 hybrid linear (Gated DeltaNet) + softmax attention layers. First Qwen generation using linear attention. Near-linear scaling with sequence length. Based on arXiv:2412.06464.
+- **Multimodal**: Native early-fusion training for text + images (1344×1344) + 60-second video clips. No separate adapter — unified from training. All nine open-weight sizes.
+- **Context**: 262,144 tokens native; ~1M via YaRN. Qwen3.5-Plus API offers 1M context.
+- **Vocabulary**: Expanded from ~150K (Qwen 3) to 248,320 tokens. 10–60% token efficiency improvement for non-Latin scripts.
+- **Languages**: 201 (up from 119 in Qwen 3).
+- **MoE specs**: 512 total experts, routes to 10 + 1 shared. Flagship 397B has only 17B active params per token.
+- **Efficiency**: 8.6× faster decoding at 32K context, 19× faster at 256K context vs. Qwen3-Max. ~60% cheaper to operate.
+- **Flagship (397B-A17B) benchmarks**: AIME 2026 91.3%, GPQA Diamond 88.4%, LiveCodeBench v6 83.6%, SWE-bench Verified 76.4%, IFBench 76.5% (beats GPT-5.2), MultiChallenge 67.6% (beats GPT-5.2), BrowseComp 78.6% (beats GPT-5.2). MCPMark 46.1% (below GPT-5.2's 57.5% — notable gap).
+- **Small model**: Qwen3.5-9B scores 81.7% GPQA Diamond, reportedly beating GPT-OSS-120B (71.5%).
+- **Pricing**: Flagship $0.39/$0.90 per M tokens. 35B-A3B $0.14/$0.90. Flash from $0.065/$0.26.
+- **Community**: LocalLLaMA shifted default recommendation from Llama to Qwen. Apache 2.0 praised. MCPMark gap and benchmark skepticism noted.
+- **Rating: 4.5/5** — strongest open-weight family for multilingual, instruction-following, and multimodal use cases. MCPMark gap and trailing AIME/SWE scores prevent 5/5.
+
+**FORWARD LINK added** to Qwen 3 review pointing to Qwen 3.5 review.
+
+### Build
+- Hugo build: **1546 pages** (Qwen 3.5 review added from 1544).
+
+### What should happen next
+- **Next review candidate**: Qwen 3.6 Max Preview (Apr 20, 2026 — first closed-weight Qwen flagship, #3 globally on AA Intelligence Index, preserve_thinking feature, 6 agentic benchmark #1 claims). Research fully done this run.
+- **Also pending**: Kimi K2.6 (Moonshot AI, Apr 2026), MiniMax M2.5 (Feb 2026).
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + **Qwen 3.5 ✓** (NEW) + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓
+- **Missing**: Qwen 3.6 Max Preview, Kimi K2.6, MiniMax M2.5
+
+---
+
 ## Run 1168 — 2026-05-13 — DEPLOYED gpt-oss review (unix 1778634389, 1544 pages) + NEW REVIEW: OpenAI gpt-oss — First open-weight from OpenAI since GPT-2, Apache 2.0, MoE, matches o4-mini. Rating 4/5.
 
 **Mode:** Developer (research + write + deploy)
