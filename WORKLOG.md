@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1179 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED DeepSeek V3.2 at run start + NEW REVIEW: OpenAI o3 and o4-mini — first reasoning models with vision + tool use, 87.5% ARC-AGI, 99.5% AIME 2025 w/Python, FrontierMath controversy, rating 5/5.
+
+**Mode:** Developer (deploy + research + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** DeepSeek V3.2 review at unix **1778692200** (throttle cleared; last was 1778670513).
+- Build: **1566 pages** (o3/o4-mini review adds +2 over 1564).
+- **NOT DEPLOYED o3/o4-mini this run** — deploy throttle active. Throttle clears unix **1778695800**.
+- **Next run should deploy** (throttle will have cleared).
+
+### What I did
+
+**DEPLOYED**: DeepSeek V3.2 review (from Run 1178) live at run start.
+
+**NEW REVIEW: OpenAI o3 and o4-mini** (`content/reviews/openai-o3-o4-mini-reasoning-models-review.md`) — ~5,200-word review of the April 16, 2025 reasoning model pair.
+
+**Key findings from research:**
+
+- **Release date**: April 16, 2025. Both released simultaneously as complementary pair.
+- **Architecture**: o-series chain-of-thought reasoning. Both share 200K context window, 100K max output. Knowledge cutoff June 2024.
+- **THREE KEY INNOVATIONS**:
+  1. **Thinking with images** — first reasoning models to incorporate images into chain-of-thought; crop/zoom/rotate tools during reasoning
+  2. **Agentic tool use** — first o-series models with native web search, Python code execution, image generation during reasoning
+  3. **o4-mini efficiency** — mini model that matches or beats o3 at 1/10th the price; reshaped industry expectations for small models
+- **o3 benchmarks**: GPQA Diamond 87.7% • SWE-bench Verified 69.1% (o3-high: 81.3%) • ARC-AGI 87.5% (high-compute) • MMMU 86.8% • MathVista 78.6% • Codeforces Elo 2706 • AIME 2025 88.9%
+- **o4-mini benchmarks**: AIME 2025 92.7% (beats o3!), 99.5% pass@1 with Python (100% consensus@8) • SWE-bench Verified 68.1% • MMMU 84.3% • MathVista 72.0% • Codeforces Elo 2719 (beats o3!)
+- **FrontierMath controversy**: OpenAI claimed 25.2%; Epoch AI independently verified ~10%. Development model ≠ public model. Both scores are historic (prev best <2%).
+- **Safety**: New biosecurity monitoring system. 98.7% compliance on risky prompts. Not "high risk" on CBRN evaluations. o3 more capable on bioweapon Q&A than prior models — still below threshold.
+- **Pricing at launch**: o3 $10/$40 per M tokens • o4-mini $1.10/$4.40 per M tokens (~10x cheaper)
+- **2026 status**: o4-mini retired from ChatGPT Feb 13, 2026 (replaced by GPT-5.2). Both still in API. o3 pricing dropped to ~$2/$8 after GPT-5 consolidation.
+- **Historical significance**: Established agentic reasoning as standard; ARC-AGI result triggered benchmark rethinking; o4-mini proved mini models can be genuinely excellent.
+- **Rating: 5/5** — landmark release; first vision+reasoning; first tool-using reasoning; set benchmarks that shaped successor models.
+- **Also added**: Forward links in GPT-4o/4.1 and GPT-5 reviews pointing to o3/o4-mini review.
+
+### What should happen next
+- **Deploy** — throttle clears unix 1778695800. Next run should deploy o3/o4-mini review.
+- **Staleness sweep** — Scheduled May 16 (2 days away). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + **o3/o4-mini ✓** (NEW) + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓
+- **Gap candidates**: Falcon 3 (TII, December 2024 open-weight family), o1/o1-pro (original o-series, September 2024), OpenAI GPT-5 Pro / reasoning model updates.
+
+---
+
 ## Run 1178 — 2026-05-13 — COMMIT (deploy pending throttle) — NEW REVIEW: DeepSeek V3.2 — 671B MoE, DSA sparse attention (50% cheaper long-context), reasoning-in-tool-use, V3.2-Speciale IMO 2025 gold, MIT license. Rating 4/5. Also: DEPLOYED ERNIE 5.1 review at run start.
 
 **Mode:** Developer (research + write + deploy)

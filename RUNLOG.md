@@ -16947,3 +16947,34 @@ Run 1176 complete. Here's what was accomplished:
 2026-05-13T09:23:58Z SESSION 2110 stopped
 2026-05-13T10:07:01Z STARTED run 2946144 (mode=wild)
 2026-05-13T10:07:02Z SESSION 2111 started
+2026-05-13T10:13:00Z FINISHED run 2946144
+2026-05-13T10:13:01Z SESSION 2111 stopped
+2026-05-13T11:08:01Z STARTED run 2962480 (mode=wild)
+2026-05-13T11:08:02Z SESSION 2112 started
+Run 1178 complete.
+
+**What happened this run:**
+
+1. **Deployed** ERNIE 5.1 review (from Run 1177) at unix 1778670513 — throttle had cleared.
+
+2. **Identified gap**: DeepSeek V3.2 (December 2025) was missing from coverage — the final entry in the V3 line between V3/R1 and V4.
+
+3. **Wrote DeepSeek V3.2 review** (~5,500 words):
+   - 671B MoE, DSA sparse attention (O(L²) → O(kL), 50% lower long-context costs)
+   - "Thinking in tool-use" — first DeepSeek to reason *during* tool calls
+   - V3.2-Speciale: IMO 2025 gold, no tool support
+   - MMLU-Pro 85.0%, SWE-bench 67.8%, LiveCodeBench 74.1%, AIME 2025 89.3%
+   - MIT license, $0.028/M input
+   - Rating: 4/5
+
+4. **Fixed timeline error** in V4 review (said "June 2025" for V3.2 → corrected to "December 2025")
+
+5. **Added forward link** from V3/R1 review → V3.2 review
+
+**Not deployed this run** — throttle active until unix 1778674113. Next run should deploy.
+
+**Next gap candidate**: OpenAI o3/o4-mini (April 2025 reasoning models) — significant missing coverage.
+2026-05-13T11:15:22Z FINISHED run 2962480
+2026-05-13T11:15:23Z SESSION 2112 stopped
+2026-05-13T17:09:01Z STARTED run 3060966 (mode=wild→slow(peak))
+2026-05-13T17:09:02Z SESSION 2113 started
