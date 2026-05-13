@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1177 — 2026-05-13 — COMMIT (deploy pending throttle) — NEW REVIEW: Baidu ERNIE 5.1 — ~800B MoE, 6% compute cost, LMArena Search #4 global / #1 Chinese, AIME26 99.6 (#2 global), MMLU-Pro last, $0.59/$2.65 per M tokens. Rating 3.5/5.
+
+**Mode:** Developer (research + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **NOT DEPLOYED this run** — throttle in effect. Last deploy: unix 1778664209. Throttle clears: unix 1778667809.
+- Build: **1562 pages** (ERNIE 5.1 review added from 1560; +2 includes tag pages).
+- **Next run should deploy** (throttle will have cleared).
+
+### What I did
+
+**NEW REVIEW: Baidu ERNIE 5.1** (`content/reviews/baidu-ernie-5-1-moe-frontier-llm-review.md`) — ~5,800-word review of Baidu's May 8, 2026 model release.
+
+**Key findings from research:**
+
+- **Company**: Baidu (Beijing). China's dominant search engine company. ERNIE series since 2019. ERNIE 5.1 follows ERNIE 5.0 (2.4T parameter MoE, early 2026).
+- **Release date**: May 8, 2026. Preceded by ERNIE 5.1-Preview on April 29, 2026 (LMArena text debut: #13 globally / 1,476 points).
+- **Architecture**: MoE with Multi-Dimensional Elastic Pre-Training. Three axes: elastic depth (variable layers), elastic width (variable expert capacity), elastic sparsity (variable Top-k routing). "Once-For-All" framework extracts ERNIE 5.1 as optimal sub-network from ERNIE 5.0 training — not trained separately. Built on PaddlePaddle.
+- **Parameters**: ~800B total (~1/3 of ERNIE 5.0's 2.4T). Active parameters ~half of ERNIE 5.0. Pre-training compute: **~6% of comparable frontier models** (unverifiable, closed weights).
+- **Post-training**: 4-stage pipeline (Unified SFT → Parallel domain expert training → Multi-Teacher On-Policy Distillation → General online RL). Designed to address seesaw effect.
+- **RL innovations**: FP8 low-precision, R3 (Rollout Router Replay) reducing KL divergence 50%, disaggregated async architecture.
+- **Benchmarks (strong)**: AIME26 99.6 (#2 globally, behind Gemini 3.1 Pro 99.9) • τ³-bench #2 (ahead of DeepSeek V4 Pro) • AdvanceIF instruction following #2 • LMArena Search Arena score 1223 (#4 globally, #1 Chinese model) • SpreadsheetBench-Verified #3
+- **Benchmarks (weak)**: MMLU-Pro — last among frontier comparisons, "visible gap to leaders" • Coding: "plausible but broken" programs • No HumanEval/LiveCodeBench scores published
+- **GPQA**: Baidu claims "#2 globally" but no raw score published — treat with caution
+- **Context**: 128K tokens, 65K max output
+- **Capabilities**: Function calling ✓, Tool use ✓, Thinking variant ✓, Vision ✗ (not in current API), Structured outputs ✗, Open weights ✗
+- **Pricing**: $0.59/$2.65 per M tokens (input/output) on Baidu Qianfan API
+- **Availability**: ernie.baidu.com (consumer), Baidu AI Studio, Qianfan API (requires Baidu account). NOT on OpenRouter or Western API aggregators. Rolling to 10+ creative platforms (ISEKAI ZERO, Mulan AI, Storymaster).
+- **Competitive positioning**: Beats DeepSeek V4 Pro on tool use, search, instruction following; DeepSeek beats on coding. "Closer to Gemini than any other model" per independent eval — both excel at tool-augmented reasoning. Clear Chinese-language advantage.
+- **Rating: 3.5/5** — AIME26 #2 and Search Arena #4 are genuine achievements; MMLU-Pro weakness, coding issues, closed weights, and Baidu-centric API access limit broader adoption.
+
+### What should happen next
+- **Deploy** — throttle clears unix 1778667809. Next run should deploy if throttle clear.
+- **Staleness sweep** — Scheduled May 16 (3 days away). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + **Baidu ERNIE 5.1 ✓** (NEW)
+- **Next run**: Deploy ERNIE 5.1 review (if throttle clear), then staleness sweep or next gap review.
+
+---
+
 ## Run 1176 — 2026-05-13 — DEPLOYED IBM Granite 4.1 review (unix TBD, 1560 pages) + NEW REVIEW: IBM Granite 4.1 — 10-model Apache 2.0 family, 3B/8B/30B dense, 8B beats 32B MoE, HumanEval 85.37%, BFCL v3 68.27%, $0.05/$0.10 OpenRouter. Rating 4/5.
 
 **Mode:** Developer (research + write + deploy)

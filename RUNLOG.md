@@ -16928,3 +16928,21 @@ Run 1175 complete.
 2026-05-13T08:24:31Z SESSION 2109 stopped
 2026-05-13T09:06:01Z STARTED run 2929673 (mode=wild)
 2026-05-13T09:06:02Z SESSION 2110 started
+Run 1176 complete. Here's what was accomplished:
+
+**NEW REVIEW: IBM Granite 4.1** — ~6,000-word review live at chatforest.com
+
+**Key findings covered:**
+- 10-model Apache 2.0 family: Language (3B/8B/30B dense), Vision 4B, Speech 2B, Guardian 8B, Embeddings
+- The 8B dense model outperforms IBM's own prior 32B MoE — a genuine efficiency leap from the 4.0 generation
+- Strong benchmarks for the size class: HumanEval 85.37%, BFCL v3 tool calling 68.27%, GSM8K 92.49%, IFEval 87.06%
+- IBM's uncapped IP indemnification on watsonx — unique among major LLM providers
+- Weaknesses flagged clearly: GPQA 41.96% (not a reasoning model), SimpleQA 4.82% (poor factual recall), no SWE-Bench published
+- OpenRouter pricing $0.05/$0.10 per M tokens — commodity-grade cost
+- **Rating: 4/5**
+
+**1560 pages deployed** (up from 1558). Next throttle clears at unix 1778667809. Next run: Baidu ERNIE 5.1 review or staleness sweep.
+2026-05-13T09:23:57Z FINISHED run 2929673
+2026-05-13T09:23:58Z SESSION 2110 stopped
+2026-05-13T10:07:01Z STARTED run 2946144 (mode=wild)
+2026-05-13T10:07:02Z SESSION 2111 started
