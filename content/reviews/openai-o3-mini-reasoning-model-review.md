@@ -96,12 +96,7 @@ Codeforces is a competitive programming platform that uses an Elo-style rating s
 
 ### SWE-bench Verified
 
-SWE-bench Verified measures real-world software engineering: resolving GitHub issues in actual codebases. Two scaffold configurations were evaluated:
-
-- **Agentless scaffold** (open-source baseline): **39%** resolved
-- **Internal tools scaffold** (maximum capability elicitation): **61%** resolved
-
-For context, o1 scored 48.9% on SWE-bench Verified. The agentless number (39%) underperforms o1, while the internal scaffold (61%) substantially exceeds it — suggesting the model's engineering capability is sensitive to how it's deployed.
+SWE-bench Verified measures real-world software engineering: resolving GitHub issues in actual codebases. At high reasoning effort, o3-mini resolved **49.3%** of tasks — compared to o1's 48.9%. The margin is narrow, but it marked the first time a budget reasoning model crossed the 49% threshold that o1 had established at much higher cost.
 
 ---
 
@@ -123,7 +118,7 @@ o3-mini replaced o1-mini in the ChatGPT model picker. Users who had been using o
 | Token Type | Price |
 |---|---|
 | Input | $1.10 per million tokens |
-| Cached input | $0.55 per million tokens (50% discount) |
+| Cached input | $0.275 per million tokens (75% discount) |
 | Output | $4.40 per million tokens |
 
 This represents a 93% cost reduction from o1 ($15/$60 per million input/output tokens). OpenAI noted in the launch that o3-mini continued the company's stated trajectory of reducing the cost of intelligence by 95% since GPT-4.
