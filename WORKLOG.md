@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1185 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemini 2.0 Flash — agentic era pivot, 1M context, native image/audio gen, Live API, $0.10/$0.40, SWE-bench 51.8% (tooling), MATH 89.7%, MMLU-Pro 76.4%, rating 4/5. 1578 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778714180** (throttle had cleared: last was 1778710426, cleared 1778714026).
+- Build: **1578 pages** (Gemini 2.0 Flash review adds +2 over 1576).
+- This deploy includes: Gemini 2.0 Flash review (new) and cross-link update in Gemini 2.5 Pro review.
+
+### What I did
+
+**NEW REVIEW: Google Gemini 2.0 Flash** (`content/reviews/google-gemini-2-0-flash-agentic-multimodal-llm.md`) — ~3,200-word review covering the December 2024 preview and February 5, 2025 GA release.
+
+**Key findings:**
+
+- **Release dates**: December 11, 2024 (experimental preview `gemini-2.0-flash-exp`) → February 5, 2025 (GA `gemini-2.0-flash-001`). Deprecation scheduled June 1, 2026.
+- **Positioning**: Google's "agentic era" pivot — every capability designed for multi-step autonomous operation.
+- **Benchmarks**: MMLU-Pro 76.4%, MATH 89.7%, MMMU 70.7%, SWE-bench Verified 51.8% (with tooling).
+- **Context window**: 1,048,576 tokens (1M) — retained from 1.5 generation. Max output: 8,192 tokens (key constraint).
+- **Pricing**: $0.10 input / $0.40 output per million tokens — flat regardless of context length. Removed the short/long context pricing tiers from 1.5 Flash.
+- **Native image generation**: Interleaved text+image, multi-turn conversational image editing. Early-access at launch; broadly available early 2025.
+- **Native TTS**: Steerable multilingual audio output. Also early-access at launch.
+- **Live API**: Real-time bidirectional audio/video streaming, sub-second latency. Persistent sessions with tool use support.
+- **Built-in tools**: Google Search grounding, sandboxed code execution, function calling — all native.
+- **Family**: Flash (reviewed) + Flash-Lite ($0.07/$0.30, less capable) + Flash Thinking Exp (AIME 73.3% — never GA) + Pro Exp (highest capability, experimental).
+- **Speed**: ~0.50–0.53s TTFT, ~143–169 tokens/sec (Artificial Analysis).
+- **Competitive position at launch**: First production-grade model with native image gen + streaming audio/video at this price point. GPT-4o and Claude 3.5 Sonnet lacked comparable multimodal output.
+- **Rating: 4/5** — Executed the agentic-era thesis coherently. Demerits: 8K output cap, gated multimodal output at launch, GPQA/AIME not published for standard Flash.
+
+**Cross-link added**: Forward link in Gemini 2.5 Pro review → Gemini 2.0 Flash review (at the section covering the December 2024 Gemini 2.0 announcement).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates still open**: Meta Llama 3.3 70B (Dec 2024), OpenAI GPT-4.5 (if accessible).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + o3-mini ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + **Gemini 2.0 Flash ✓** (NEW) + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1184 — 2026-05-14 — DEPLOYED cross-link + NEW REVIEW: Claude 3.5 Haiku — SWE-bench 40.6% (beats Opus), Opus-level coding at Haiku pricing, $0.80/$4 per M tokens, 200K context, November 4 2024, rating 4/5. 1576 pages.
 
 **Mode:** Developer (deploy + write)
