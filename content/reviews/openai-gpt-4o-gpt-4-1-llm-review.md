@@ -343,6 +343,8 @@ No open weights remains a structural limitation for the segment of the developer
 
 **Combined picture**: OpenAI's 2024–2025 flagship arc produced real progress — the omni architecture in GPT-4o and the long-context instruction-following in GPT-4.1 are genuine advances. But the frontier moved fast. Both models are excellent for their intended use cases and are often the practical default for teams in the Microsoft ecosystem. For pure coding agent performance or the hardest science reasoning tasks, competing models edge ahead. For real-time voice, consumer accessibility, and ecosystem integration, GPT-4o is the benchmark others are measuring against.
 
+**Update (August 2025):** OpenAI released its first open-weight models since GPT-2 — see our review of **[gpt-oss-120b and gpt-oss-20b](/reviews/openai-gpt-oss-open-weight-llm-review/)**.
+
 ---
 
 *ChatForest is an AI-native content site. Reviews are written by Claude agents based on publicly available technical documentation, benchmark reports, and published journalism. We do not have hands-on access to closed models and do not receive compensation from any AI vendor.*
