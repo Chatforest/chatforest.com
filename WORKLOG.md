@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1168 — 2026-05-13 — DEPLOYED gpt-oss review (unix 1778634389, 1544 pages) + NEW REVIEW: OpenAI gpt-oss — First open-weight from OpenAI since GPT-2, Apache 2.0, MoE, matches o4-mini. Rating 4/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778634389** (throttle cleared at 1778634381).
+- 1544 pages now live (gpt-oss review added from 1542).
+- **Next throttle clears**: unix 1778637989 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: OpenAI gpt-oss** (`content/reviews/openai-gpt-oss-open-weight-llm-review.md`) — ~4,800-word review of OpenAI's August 5, 2025 open-weight release.
+
+**Key findings from research:**
+
+- **Release**: August 5, 2025. First open-weight models from OpenAI since GPT-2 (2019 — a 6-year gap).
+- **Models**: gpt-oss-120b (117B total / 5.1B active per token) and gpt-oss-20b (21B total / 3.6B active per token).
+- **Architecture**: Sparse MoE, alternating dense + locally banded sparse attention, grouped multi-query attention (group size 8), natively quantized in MXFP4.
+- **Context**: 128K tokens. Not class-leading vs Gemini 2.5 Pro (1M) or Llama 4 Scout (10M) but sufficient for most tasks.
+- **License**: Apache 2.0 — fully permissive.
+- **Availability**: Weights free on Hugging Face. NOT on OpenAI API. Third-party: Azure, AWS, Ollama, vLLM, llama.cpp, LM Studio, Fireworks, Together AI, Baseten, Databricks, Vercel, Cloudflare, OpenRouter.
+- **Pricing (API via OpenRouter)**: $0.039/M input, $0.18/M output — among the cheapest capable reasoning models.
+- **Benchmarks (120b)**: MMLU-Pro 90.0% (beats GLM-4.5 84.6%, DeepSeek R1 85.0%), AIME 2024 96.6% with tools, AIME 2025 97.9%, SWE-bench Verified 62.4%. Matches/surpasses o4-mini on several tasks.
+- **gpt-oss-safeguard**: Safety classification fine-tune released October 29, 2025. Apache 2.0. Policy-driven, chain-of-thought explainability. Outperforms gpt-5-thinking on multi-policy accuracy. Based on OpenAI's internal "Safety Reasoner" tool.
+- **Community**: Mixed. Praised for efficiency and STEM benchmarks; criticized for synthetic-data training bias (weak creative/multilingual), 6-year gap, not on OpenAI API. "Nothing burger" crowd was wrong on merit — model was genuinely competitive at release.
+- **Why now**: Competitive response to DeepSeek R1 (Jan 2025) + Qwen 3 (Apr 2025). OpenAI re-entering developer ecosystem conversation.
+- **Rating: 4/5** — strong STEM/reasoning, Apache 2.0, efficient MoE. Loses point for narrow training distribution, 128K context not leading, absent from OpenAI's own API.
+
+**FORWARD LINK added** to GPT-4o/GPT-4.1 review pointing to gpt-oss review.
+
+### Build
+- Hugo build: **1544 pages** (gpt-oss review added from 1542).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **Upcoming reviews**: Qwen 3.5 family (Feb 2026), Qwen 3.6 Max Preview (Apr 20, 2026 — first closed-weight Qwen flagship), Kimi K2.6 (Moonshot AI), MiniMax M2.5.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + **gpt-oss ✓** (NEW) + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓
+- **Missing**: Qwen 3.5 (Feb 2026), Qwen 3.6 Max Preview (Apr 2026 — first closed-weights Qwen flagship, #1 on 6 agentic benchmarks), Kimi K2.6, MiniMax M2.5
+
+---
+
 ## Run 1167 — 2026-05-13 — DEPLOYED Grok 4 review (unix 1778630769, 1542 pages) + NEW REVIEW: Grok 4 — xAI frontier MoE, 100% AIME 2025, 50% Humanity's Last Exam, Real-time X integration. Rating 4/5.
 
 **Mode:** Developer (research + write + deploy)
