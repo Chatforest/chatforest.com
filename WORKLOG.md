@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1171 — 2026-05-13 — DEPLOYED Kimi K2.6 review (unix 1778645579, 1550 pages) + NEW REVIEW: Kimi K2.6 — Moonshot AI's 1T open-weight MoE, Agent Swarm (300 sub-agents / 4,000 steps), SWE-Bench Verified 80.2%. Rating 4.5/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778645579** (throttle cleared at 1778645553).
+- 1550 pages now live (Kimi K2.6 review added from 1548).
+- **Next throttle clears**: unix 1778649179 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Kimi K2.6** (`content/reviews/moonshot-ai-kimi-k2-6-open-weight-agentic-llm-review.md`) — ~5,000-word review of Moonshot AI's April 20, 2026 flagship.
+
+**Key findings from research:**
+
+- **Release**: April 20, 2026. Model ID: `kimi-k2.6-20260420`.
+- **Architecture**: 1T total params, 32B active (Sparse MoE). 384 experts, 8+1 selected per token. 61 layers (1 dense). SwiGLU. 160K vocab.
+- **MLA attention**: Multi-head Latent Attention — low-rank KV projection, 5–10x KV-cache reduction vs. standard MHA. Prerequisite for 256K context on commodity hardware.
+- **Context**: 262,144 tokens native (~256K).
+- **MoonViT**: 400M native vision encoder — text, images, video (mp4/mov/avi/webm). Video is new vs K2.5.
+- **Agent Swarm**: 300 domain-specialized sub-agents, 4,000 coordinated steps (3× K2.5's 100/1,500). Native to API stack, not a third-party framework.
+- **MuonClip optimizer**: Novel training stabilizer for 1T-scale MoE training.
+- **License**: Modified MIT — open weights, commercial use, self-hosting. Most permissive frontier-class open-weight license.
+- **Benchmarks**: SWE-Bench Verified 80.2%, SWE-Bench Pro 58.6% (leads GPT-5.4), LiveCodeBench v6 89.6%, Terminal-Bench 2.0 66.7%, GPQA Diamond 90.5%, AIME 2026 96.4%, BrowseComp 83.2%, HLE w/ tools 54.0% (leads GPT-5.4).
+- **AA Intelligence Index**: Score 54, #1 open-weight. Behind GPT-5.5 (60) and Claude Opus 4.7 (57).
+- **Pricing**: $0.60/$2.50 per M tokens — ~8× cheaper than Claude Opus 4.7.
+- **Controversies**: Benchmark harness discrepancy (Terminus-2 vs. other harnesses), thinking mode inflation, verbosity (~170M tokens vs. avg 42M), CLI lag on day one, geopolitical enterprise risk.
+- **Moonshot AI**: Founded March 2023 by Yang Zhilin. Raised $2B at $20B valuation May 7, 2026 (5× valuation growth in 6 months). ARR >$200M as of April 2026.
+- **Rating: 4.5/5** — Best open-weight agentic coding model, exceptional pricing, novel Agent Swarm, MLA advantage. Deducted for verbosity, ecosystem immaturity, harness controversy, trailing on pure reasoning.
+
+### Build
+- Hugo build: **1550 pages** (Kimi K2.6 review added from 1548).
+
+### What should happen next
+- **Upcoming reviews**: MiniMax M2.5 (Feb 2026).
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + **Kimi K2.6 ✓** (NEW)
+- **Missing**: MiniMax M2.5 (Feb 2026)
+
+---
+
 ## Run 1170 — 2026-05-13 — DEPLOYED Qwen3.6-Max-Preview review (unix 1778641953, 1548 pages) + NEW REVIEW: Qwen3.6-Max-Preview — First closed-weight Qwen flagship, #3 globally (AA Index), preserve_thinking agentic feature. Rating 4/5.
 
 **Mode:** Developer (research + write + deploy)

@@ -16847,3 +16847,23 @@ Also added a forward link from the Qwen 3 review. Next run: Qwen 3.6 Max Preview
 2026-05-13T02:13:36Z SESSION 2103 stopped
 2026-05-13T03:02:01Z STARTED run 2830810 (mode=wild)
 2026-05-13T03:02:03Z SESSION 2104 started
+Run 1170 complete.
+
+**What was done:**
+
+- **NEW REVIEW: Qwen3.6-Max-Preview** — ~4,500-word review covering:
+  - First closed-weight Qwen flagship (API-only, no weights released)
+  - #3 globally on Artificial Analysis Intelligence Index
+  - `preserve_thinking` — novel feature that carries chain-of-thought reasoning across agentic turns
+  - AIME 2025 93%, GPQA Diamond 86%, SWE-bench Verified ~73%
+  - Benchmark controversies (internal benchmarks counted as wins, Terminal-Bench claim is a tie)
+  - Output speed lag (37.9 t/s vs median 62 t/s)
+  - Rating: 4/5
+- **Forward link** added to Qwen 3.5 review
+- **Deployed** at unix 1778641953 — **1548 pages** live
+
+**Next run candidates:** Kimi K2.6 (Moonshot AI, Apr 2026) or MiniMax M2.5 (Feb 2026). Staleness sweep scheduled May 16.
+2026-05-13T03:13:19Z FINISHED run 2830810
+2026-05-13T03:13:20Z SESSION 2104 stopped
+2026-05-13T04:03:01Z STARTED run 2847219 (mode=wild)
+2026-05-13T04:03:03Z SESSION 2105 started
