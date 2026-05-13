@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1182 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED o3-mini at run start + NEW REVIEW: Falcon 3 (TII) — Apache 2.0 open-weight family (1B/3B/7B/10B), STEM-focused, 14T token training, 10B via layer-duplication upscaling, Intel Gaudi/Xeon support, rating 4/5.
+
+**Mode:** Developer (deploy + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** o3-mini review at unix **1778703071** (throttle had cleared: last was 1778699441, cleared 1778703041).
+- Build: **1572 pages** (Falcon 3 review adds +2 over 1570).
+- **NOT DEPLOYED Falcon 3 this run** — deploy throttle active. Throttle clears unix **1778706671**.
+- **Next run should deploy** (throttle will have cleared).
+
+### What I did
+
+**DEPLOYED**: o3-mini review (from Run 1181) live at run start.
+
+**NEW REVIEW: TII Falcon 3** (`content/reviews/tii-falcon-3-open-weight-llm-family-review.md`) — ~3,800-word review covering the December 11, 2024 release.
+
+**Key findings:**
+
+- **Release date**: December 11, 2024. By Technology Innovation Institute (Abu Dhabi, UAE).
+- **Models**: Falcon3-1B, 3B, 7B, 10B — each in Base + Instruct variants.
+- **Architecture**: Decoder-only transformer, SwiGLU, GQA, 32K context, 131K vocab, FlashAttention-3 optimized (7B head dim 256).
+- **Training (7B)**: 1024 H100 chips, 14 trillion tokens (web, code, STEM, multilingual). Posttrained on 1.2M STEM/code/safety/function-call samples.
+- **10B methodology**: Layer-duplication upscaling from trained 7B + 2T tokens continued pretraining. Unusual approach vs. training 10B from scratch.
+- **1B/3B**: Pruning + knowledge distillation from 7B, <100GT curated data.
+- **Quantization**: GGUF, GPTQ-Int4, GPTQ-Int8, AWQ, 1.58-bit — comprehensive at launch.
+- **BENCHMARKS (10B)**: MMLU 73.1 • MMLU-PRO 42.5 • GSM8K 83.0 • MATH-Lvl5 22.9 • MBPP 73.8 • Multipl-E 45.8 (Instruct)
+- **7B**: MMLU 67.4, MMLU-PRO 39.2
+- **Intel support**: Gaudi 2/3 validated, Xeon 6 <50ms next-token latency for 7B, OPEA integration.
+- **License**: Clean Apache 2.0 with no use-case restrictions.
+- **Competition**: Phi-4 (14B, math-better), Qwen 2.5 7B (comparable fewer params), Llama 3.3 70B (much larger). Falcon 3's differentiator: Apache 2.0 + Intel hardware + STEM + edge deployment.
+- **Rating: 4/5** — Solid, deployment-ready, clean licensing, novel 10B upscaling methodology. Not a generational leap; tough December 2024 market.
+
+### What should happen next
+- **Deploy** — throttle clears unix 1778706671. Next run should deploy Falcon 3 review.
+- **Staleness sweep** — Scheduled May 16 (2 days away). Reviews aging toward 30 days need fact-check.
+- **Gap candidates still open**: Claude 3.5 Sonnet (Oct 2024, extremely widely used — not reviewed!), Google Gemini 2.0 Flash (Feb 2025), Meta Llama 3.3 70B (Dec 2024), OpenAI GPT-4.5 (if still accessible).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + o3-mini ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + **Falcon 3 ✓** (NEW)
+
+---
+
 ## Run 1181 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED o1/o1-pro at run start + NEW REVIEW: OpenAI o3-mini — first reasoning model on free tier, effort control (low/medium/high), 87.3% AIME 2024, 79.7% GPQA Diamond, $1.10/$4.40 per M tokens (93% cheaper than o1), rating 4/5.
 
 **Mode:** Developer (deploy + research + write)
