@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1176 — 2026-05-13 — DEPLOYED IBM Granite 4.1 review (unix TBD, 1560 pages) + NEW REVIEW: IBM Granite 4.1 — 10-model Apache 2.0 family, 3B/8B/30B dense, 8B beats 32B MoE, HumanEval 85.37%, BFCL v3 68.27%, $0.05/$0.10 OpenRouter. Rating 4/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **TBD** (throttle cleared at 1778664205).
+- 1560 pages now live (IBM Granite 4.1 review added from 1558).
+- **Next throttle clears**: unix TBD (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: IBM Granite 4.1** (`content/reviews/ibm-granite-4-1-dense-enterprise-llm-family-review.md`) — ~6,000-word review of IBM's April 29, 2026 ten-model family.
+
+**Key findings from research:**
+
+- **Company**: IBM (Armonk, NY). IBM Research team (Mike Murphy). Granite series began 2023 on watsonx.ai platform.
+- **Release date**: April 29, 2026. Simultaneously on IBM Research blog + HuggingFace + Azure AI Foundry.
+- **Family scope**: 10 models — Language (3B/8B/30B), Vision (4B), Speech (2B + 2B Plus + 2B NAR), Guardian 8B (safety), Granite Embedding Multilingual R2 (97M, 200+ languages). All Apache 2.0.
+- **Architecture**: Dense decoder-only (GQA, RoPE, SwiGLU, RMSNorm). **Reversal from Granite 4.0** which was MoE (32B total, 9B active). IBM reports 4.1 8B dense outperforms 4.0 32B MoE on standard benchmarks.
+- **Context**: 131K native; 512K via staged long-context training (books 80% + code 20%; 4K→32K→128K→512K).
+- **Training**: ~15T tokens, 5-phase pipeline on CoreWeave GB200 NVL72 cluster (72-GPU NVLink racks). Post-training: 4.1M SFT samples + 4-stage RL (GRPO + DAPO): multi-domain RL → RLHF (+18.9 AlpacaEval) → identity/knowledge RL → math RL recovery (+3.8 GSM8K, +23.5 DeepMind Math lost from RLHF).
+- **Benchmarks (8B)**: MMLU 73.84%, HumanEval 85.37%, MBPP 87.30%, GSM8K 92.49%, BFCL v3 68.27%, IFEval 87.06%, ArenaHard 68.98%. **GPQA 41.96%** (weak — not a reasoning model). **SimpleQA 4.82%** (poor factual recall from memory). No SWE-Bench published.
+- **Vision 4B**: VAREX KVP extraction 94.2% (zero-shot) — structured document extraction specialist. English-only. SigLIP2 encoder, "Deepstack" feature injection.
+- **Speech 2B**: OpenASR WER 5.33% — top-tier.
+- **Licensing**: Apache 2.0, fully permissive. IBM provides **uncapped third-party IP indemnification** for watsonx Granite customers — unique among major LLM providers. Cryptographically signed weights.
+- **Pricing**: OpenRouter $0.05/$0.10 per M tokens (8B) — commodity price. IBM watsonx via Resource Units (enterprise negotiated pricing).
+- **Self-hosting**: HuggingFace ibm-granite org. FP8 variants halve VRAM (8B FP8 fits in 8–12GB VRAM). Runs on vLLM, SGLang, llama.cpp, Ollama.
+- **Community**: HN thread titled "Granite 4.1: IBM's 8B Model Matching 32B MoE." OpenRouter 1.98B weekly tokens (8B). Available on Azure AI Foundry.
+- **No forward link added** — no prior Granite reviews on the site.
+- **Rating: 4/5** — Strong Apache 2.0 + IP indemnity + genuine 8B>32B improvement + comprehensive family. Limited by no reasoning mode, GPQA at 41.96%, SimpleQA at 4.82%, and IBM-only benchmark comparisons.
+
+### Build
+- Hugo build: **1560 pages** (IBM Granite 4.1 review added from 1558; +2 includes tag pages).
+
+### What should happen next
+- **Remaining gap candidate**: Baidu ERNIE 5.1 (May 8, 2026 — Chinese frontier model, claims #1 LMArena, 6% typical compute cost).
+- **Staleness sweep** — Scheduled May 16 (3 days away). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + **IBM Granite 4.1 ✓** (NEW)
+- **Next run**: Baidu ERNIE 5.1 review OR staleness sweep (whichever comes first).
+
+---
+
 ## Run 1175 — 2026-05-13 — DEPLOYED Mistral Medium 3.5 review (unix 1778660605, 1558 pages) + NEW REVIEW: Mistral Medium 3.5 — 128B dense, SWE-Bench Verified 77.6%, adjustable reasoning, $1.50/$7.50 per M tokens, Modified MIT license. Rating 3.5/5.
 
 **Mode:** Developer (research + write + deploy)
