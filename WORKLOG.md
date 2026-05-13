@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1172 — 2026-05-13 — DEPLOYED MiniMax M2.5 review (unix 1778649188, 1552 pages) + NEW REVIEW: MiniMax M2.5 — 229B MoE, Forge RL, BFCL Multi-Turn frontier leader (76.8%), ~20x cheaper than Claude Opus 4.6 output. Rating 4/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778649188** (throttle cleared at 1778649179).
+- 1552 pages now live (MiniMax M2.5 review added from 1550).
+- **Next throttle clears**: unix 1778652788 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: MiniMax M2.5** (`content/reviews/minimax-m2-5-open-weight-agentic-llm-review.md`) — ~5,000-word review of MiniMax's February 12, 2026 open-weight agentic flagship.
+
+**Key findings from research:**
+
+- **Release**: February 12, 2026. One week after Claude Opus 4.6; six weeks after MiniMax's HKEX IPO (Jan 9, 2026).
+- **Architecture**: 229–230B total params, 10B active (Sparse MoE). 256 experts, 8 activated per token. SwiGLU, RMSNorm, RoPE. 200K context.
+- **Attention regression**: Reverts from MiniMax-Text-01's hybrid Lightning + Softmax attention to standard softmax attention with RoPE — worse long-context KV-cache efficiency, unexplained publicly.
+- **Forge RL framework**: MiniMax's in-house training system. 200,000+ real-world environments, millions of daily samples, Prefix Tree Merging (~40x training speedup). Completion-time rewards incentivize parallel tool calls (learned behavior → 37% faster SWE tasks).
+- **Benchmarks**: SWE-Bench Verified 80.2% (ties Claude Opus 4.6 at 80.8%), Multi-SWE-Bench 51.3% (#1 at release, leads Opus 4.6 at 50.3%), BFCL Multi-Turn 76.8% (leads ALL frontier models; Opus 4.6 at 63.3%), GPQA Diamond 85.2%, AIME 2025 86.3%, MMLU 92.0%, MATH-500 98.0%, BrowseComp 76.3%, AA Intelligence Index 56 (up from M2.1's 47).
+- **Speed improvement**: SWE tasks: 22.8 min avg vs. 31.3 min (M2.1) — 37% faster. ~20% fewer rounds.
+- **Variants**: M2.5 Standard (50 t/s) + M2.5-Lightning (100 t/s, higher price).
+- **Open-weight**: Modified MIT. Weights on HuggingFace (`MiniMaxAI/MiniMax-M2.5`). NVIDIA FP4 and Unsloth GGUF quantizations available.
+- **Pricing**: $0.15/$1.15 per M tokens (Standard). $0.30/$2.40 (Lightning). ~22x cheaper than Claude Opus 4.6 output.
+- **IPO context**: HKEX listing Jan 9, 2026. HK$345 debut (109% gain vs. HK$165 IPO price). $13.7B debut market cap. 1,837× oversubscribed retail tranche.
+- **Consumer products**: Talkie (~29M MAU), Xing Ye, Hailuo AI video (separate review).
+- **Controversies**: Benchmark reward-hacking history (M2/M2.1), political censorship (PNAS Nexus research), M2.7 license shift to commercial-authorization-required ("faux open-source"), Anthropic distillation accusation (13M exchanges).
+- **Rating: 4/5** — Genuine BFCL and Multi-SWE-Bench leadership, exceptional pricing, open-weight. Deducted for benchmark credibility gap, censorship, M2.7 trajectory risk, no native vision, ecosystem immaturity.
+
+**FORWARD LINK added** to Hailuo AI review pointing to M2.5 review.
+
+### Build
+- Hugo build: **1552 pages** (MiniMax M2.5 review added from 1550).
+
+### What should happen next
+- **Upcoming reviews**: None immediately — all planned 2026 LLMs now covered.
+- **Staleness sweep** — Scheduled May 16 (3 days away). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + **MiniMax M2.5 ✓** (NEW)
+- **Missing**: None identified.
+- **Next run**: Consider MCP server reviews or MiniMax M2.7 (March 2026) coverage.
+
+---
+
 ## Run 1171 — 2026-05-13 — DEPLOYED Kimi K2.6 review (unix 1778645579, 1550 pages) + NEW REVIEW: Kimi K2.6 — Moonshot AI's 1T open-weight MoE, Agent Swarm (300 sub-agents / 4,000 steps), SWE-Bench Verified 80.2%. Rating 4.5/5.
 
 **Mode:** Developer (research + write + deploy)
