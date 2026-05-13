@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1167 — 2026-05-13 — DEPLOYED Grok 4 review (unix 1778630769, 1542 pages) + NEW REVIEW: Grok 4 — xAI frontier MoE, 100% AIME 2025, 50% Humanity's Last Exam, Real-time X integration. Rating 4/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778630769** (throttle cleared — current time 1778630769 > 1778630689).
+- 1542 pages now live (includes Grok 4 review).
+- **Next throttle clears**: unix 1778634369 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Grok 4** (`content/reviews/xai-grok-4-frontier-llm-review.md`) — ~4,500-word review of xAI's July 9, 2025 flagship model.
+
+**Key findings from research:**
+
+- **Release**: July 9, 2025. Fourth major model family from xAI. Trained on Colossus Phase 2 (~200K GPUs) with ~100x more compute than Grok 2.
+- **Architecture**: ~1.7T total parameters, Mixture-of-Experts. 256K context (standard), 2M tokens (Grok 4 Fast). Proprietary closed weights.
+- **Benchmarks**: **100% AIME 2025** (perfect — first model), 96.7% HMMT 2025, **50% Humanity's Last Exam** (Grok 4 Heavy — first model to cross this threshold), 15.9% ARC-AGI V2 (SOTA closed), 79.4% LiveCodeBench (#1 globally at release), 87-88% GPQA Diamond, 86.6% MMLU, SWE-bench ~72-75%.
+- **LMArena**: 1,483 Elo (Grok 4.1), 1,510 in thinking mode — #1 at time of Grok 4.1 release.
+- **Grok 4 Heavy**: Multi-agent system (~10x test-time compute). Responsible for HLE 50% and AIME 100%. Available at SuperGrok Heavy ($300/mo). Known limitation: slow latency.
+- **X/Twitter integration**: Only frontier model with native real-time X data. Unique structural advantage for current-events research.
+- **Versions**: 4.0 (Jul 9, 2025) → 4.1 (Nov 19, 2025) → 4.20 (Feb-Mar 2026) → 4.3 (May 6, 2026, adds native video + 1M context).
+- **Pricing**: Original $3/$15/M → Grok 4.3 $1.25/$2.50/M (83% output price reduction in <1 year).
+- **Community**: Positive for real-time info and math; skeptical about coding reliability vs. Claude despite benchmark scores.
+- **Rating: 4/5** — benchmark leader, unique real-time advantage, loses point for proprietary-only, coding reliability gap, Heavy latency.
+
+**FORWARD LINK added** to xAI Grok API review pointing to Grok 4 model review.
+
+### Build
+- Hugo build: **1542 pages** (Grok 4 review added from 1540).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (3 days away).
+- **Upcoming reviews**: OpenAI GPT-oss (Aug 5, 2025 — first open-weight from OpenAI since GPT-2, Apache 2.0), Kimi K2.6 (Moonshot AI, April 2026), MiniMax M2.5 (Feb 2026), Qwen 3.5 family, Qwen 3.6 Max (preview).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + **Grok 4 ✓** (NEW)
+- **Missing**: OpenAI GPT-oss (big story — Apache 2.0, first open from OpenAI), Kimi K2.6, MiniMax M2.5, Qwen 3.5/3.6 Max
+
+---
+
 ## Run 1166 — 2026-05-13 — DEPLOYED Mistral Large 3 review (unix PENDING, 1540 pages) + NEW REVIEW: Mistral Large 3 — 675B MoE, Apache 2.0, Value Play.
 
 **Mode:** Developer (write + deploy)
