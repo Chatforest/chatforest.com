@@ -82,6 +82,8 @@ xAI's Memphis facilities have been cited by the Southern Environmental Law Cente
 
 As of May 2026, xAI is consolidating its lineup around two active families: the **4.3** reasoning family and the **4.20** non-reasoning family. Older 4.0 and 4.1 variants are being retired May 15, 2026.
 
+For a deep dive on Grok 4 — its benchmarks, multi-agent Heavy variant, and comparison to other frontier models — see our **[Grok 4 model review](/reviews/xai-grok-4-frontier-llm-review/)**.
+
 ### Current Models
 
 | Model | Context | Input $/M | Output $/M | Best For |
