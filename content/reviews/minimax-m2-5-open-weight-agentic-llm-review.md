@@ -231,7 +231,7 @@ The political censorship is still worth naming explicitly. It is a constraint th
 
 ### The M2.7 License Shift
 
-In March 2026 — one month after M2.5's Modified MIT release — MiniMax released M2.7 under a fundamentally different license that requires **commercial authorization** from MiniMax for any commercial use. This license shift generated significant backlash in the open-source AI community, with Decrypt covering it under the headline "MiniMax's M2.7 is 'faux open-source'" and developers on Hacker News labeling it a bait-and-switch.
+In March 2026 — one month after M2.5's Modified MIT release — MiniMax released [M2.7](/reviews/minimax-m2-7-self-evolving-agentic-llm-review/) under a fundamentally different license that requires **commercial authorization** from MiniMax for any commercial use. This license shift generated significant backlash in the open-source AI community, with Decrypt covering it under the headline "MiniMax's M2.7 is 'faux open-source'" and developers on Hacker News labeling it a bait-and-switch.
 
 M2.5 itself remains under its original Modified MIT license. But the M2.7 shift raises a legitimate concern about trajectory: MiniMax demonstrated that it would restrict future models when commercial dynamics made that decision attractive. Organizations building long-term infrastructure on MiniMax open-weight models should account for the possibility that future successors may not be accessible under comparable terms.
 

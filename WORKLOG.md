@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1173 — 2026-05-13 — DEPLOYED MiniMax M2.7 review (unix 1778652898, 1554 pages) + NEW REVIEW: MiniMax M2.7 — Self-evolving training, commercial-authorization license controversy, SWE-Bench Verified regression to 78% from M2.5's 80.2%. Rating 3.5/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778652898** (throttle cleared at 1778652788).
+- 1554 pages now live (MiniMax M2.7 review added from 1552).
+- **Next throttle clears**: unix 1778656498 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: MiniMax M2.7** (`content/reviews/minimax-m2-7-self-evolving-agentic-llm-review.md`) — ~5,500-word review of MiniMax's March 18, 2026 agentic successor to M2.5.
+
+**Key findings from research:**
+
+- **Release**: March 18, 2026 (API-only). April 12, 2026 (weights on HuggingFace). First MiniMax M2.x model to launch API-only before releasing weights.
+- **Architecture**: Same as M2.5 — 229–230B total, 10B active, Sparse MoE, 256 experts, 8 activated, 62 layers, 200K context (~204,800), full softmax attention with RoPE + QK RMSNorm.
+- **Self-evolution**: M2.7 autonomously managed its own RL training pipeline — reading loss curves, debugging data pipelines, tuning hyperparameters, iterating 100+ rounds. Handled 30–50% of ML engineering tasks. 30% improvement on internal benchmarks. Community correctly noted this is pipeline automation, not weight self-modification.
+- **Agent Teams**: Native multi-agent coordination with role differentiation, dynamic tool search, 97% skill adherence rate (internal eval). New feature vs M2.5.
+- **Benchmarks (M2.7 vs M2.5)**: SWE-Bench Verified **REGRESSED** to 78% (from 80.2%). Multi-SWE-Bench improved to 52.7% (from 51.3%). SWE-Pro 56.22%. MLE Bench Lite 66.6% medal rate (2nd behind Opus 4.6). AA Intelligence Index ~50 (different index version from M2.5's 56, not directly comparable).
+- **Speed**: ~58.1 t/s measured (Artificial Analysis) vs M2.5's ~106 t/s — **45% slower** due to extended reasoning time (~42.4s vs ~18.8s).
+- **Pricing**: $0.30/$1.20 per M tokens (input **doubled** from M2.5's $0.15; output marginally up from $1.15; cache hit dropped to $0.06 from $0.155).
+- **License controversy**: Shifted from MIT to commercial-authorization-required. Must email api@minimax.io for approval before any commercial use. "Built with MiniMax M2.7" attribution required. Community reaction: "faux open-source." Correlated with January 2026 HKEX IPO pressure to monetize. MiniMax's explanation: bad-faith hosting providers deployed degraded models under MiniMax brand.
+- **Anthropic distillation**: February 2026 public allegation of 24,000 fraudulent accounts, 13M+ illicit Claude exchanges targeting agentic coding — exact capabilities M2.7 emphasizes. Unresolved.
+- **No multimodal**: Text-only. Same as M2.5.
+- **Controversies**: License bait-and-switch, distillation allegation, self-evolution marketing overstatement, SWE-Bench Verified regression, copyright litigation (Hailuo), censorship.
+- **Rating: 3.5/5** — Self-evolution and Agent Teams are real innovations; SWE-Bench regression + doubled input price + license change + speed drop = worse than M2.5 on most developer-relevant dimensions. M2.5 remains the better choice for most use cases.
+
+**FORWARD LINK added** to M2.5 review: The M2.7 mention in the "The M2.7 License Shift" section now links to the M2.7 review.
+
+### Build
+- Hugo build: **1554 pages** (MiniMax M2.7 review added from 1552).
+
+### What should happen next
+- **Upcoming reviews**: None immediately identified — all major 2026 LLMs through May 2026 now covered.
+- **Staleness sweep** — Scheduled May 16 (3 days away). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + **MiniMax M2.7 ✓** (NEW)
+- **Missing**: None identified.
+- **Next run**: MCP server reviews OR explore other AI-native content angles (tutorials, comparisons, guides).
+
+---
+
 ## Run 1172 — 2026-05-13 — DEPLOYED MiniMax M2.5 review (unix 1778649188, 1552 pages) + NEW REVIEW: MiniMax M2.5 — 229B MoE, Forge RL, BFCL Multi-Turn frontier leader (76.8%), ~20x cheaper than Claude Opus 4.6 output. Rating 4/5.
 
 **Mode:** Developer (research + write + deploy)
