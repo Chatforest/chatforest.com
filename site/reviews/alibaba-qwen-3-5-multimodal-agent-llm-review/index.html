@@ -631,6 +631,13 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-13 21:00:00</span></div>
+  <h3><a href="/reviews/minimax-m2-7-self-evolving-agentic-llm-review/">MiniMax M2.7 Review: Self-Evolving Agentic LLM — License Controversy, Benchmark Regressions, and the Self-Evolution Story</a></h3>
+  <p>MiniMax M2.7 (released March 18, 2026 as API; weights April 12, 2026) is the follow-up to M2.5 from MiniMax&#39;s Shanghai AI company. Architecture: same 229 billion total / 10 billion active Sparse MoE, 256 experts, 8 activated, 62 layers, 200K context. The headline innovation is &#39;self-evolution&#39;: M2.7 autonomously managed 30–50% of its own RL training pipeline, handling hyperparameter tuning, pipeline debugging, and experiment iteration without human intervention across 100&#43; rounds. Agent Teams feature enables role-differentiated multi-agent collaboration. Agentic benchmarks: SWE-Pro 56.22%, Multi-SWE-Bench 52.7%, MLE Bench Lite 66.6% medal rate. But: SWE-Bench Verified regressed to 78% from M2.5&#39;s 80.2%. Speed dropped from ~106 t/s to ~58 t/s. Input price doubled from $0.15 to $0.30 per million tokens; output at $1.20/M. Controversy: The license shifted from MIT to commercial-authorization-required — commercial use needs written permission from MiniMax. Community labeled it &#39;faux open-source.&#39; Plus Anthropic&#39;s public distillation allegation from February 2026 still unresolved. Rating: 3.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-13 20:00:00</span></div>
   <h3><a href="/reviews/minimax-m2-5-open-weight-agentic-llm-review/">MiniMax M2.5 Review: Open-Weight Agentic LLM — 229B MoE, 80.2% SWE-Bench, BFCL Leader, $1.15/M Output</a></h3>
   <p>MiniMax M2.5 (released February 12, 2026) is the open-weight agentic flagship from MiniMax — the Shanghai AI company that listed on the Hong Kong Stock Exchange in January 2026 at a $13.7B debut market cap. Architecture: 229 billion total parameters, 10 billion active (Sparse MoE, 256 experts, 8 activated per token). 200,000-token context. Trained with the in-house Forge RL framework across 200,000&#43; real-world environments. Two variants: M2.5 (standard, 50 t/s) and M2.5-Lightning (100 t/s). Open-weight under Modified MIT license on Hugging Face. Benchmark highlights: SWE-Bench Verified 80.2% (near frontier parity), Multi-SWE-Bench 51.3% (#1 at release, ahead of Claude Opus 4.6 at 50.3%), BFCL Multi-Turn 76.8% (leads all frontier models; Claude Opus 4.6 at 63.3%), GPQA Diamond 85.2%, AIME 2025 86.3%, MMLU 92.0%, BrowseComp 76.3%. Artificial Analysis Intelligence Index score: 56 (up from M2.1&#39;s 47). Pricing: $0.15 input / $1.15 output per million tokens — approximately 20x cheaper than Claude Opus 4.6 output. Controversies: benchmark reward-hacking history from M2/M2.1, political censorship as a Chinese AI model, and MiniMax&#39;s subsequent M2.7 model (March 2026) adopted a much more restrictive license — raising concerns about the long-term open-weight commitment. Rating: 4/5.</p>
@@ -648,13 +655,6 @@
   <div class="card-meta"><span>Reviews</span> <span>2026-05-13 18:30:00</span></div>
   <h3><a href="/reviews/alibaba-qwen-3-6-max-preview-closed-weight-agentic-llm-review/">Qwen 3.6 Max Preview Review: Alibaba&#39;s First Closed-Weight Flagship — #3 Globally, Agentic Benchmarks, preserve_thinking</a></h3>
   <p>Qwen3.6-Max-Preview (released April 20, 2026) is Alibaba&#39;s first closed-weight flagship in the Qwen series&#39; three-year history. Ranked #3 globally on the Artificial Analysis Intelligence Index (score 52, behind GPT-5.4 and Claude Opus 4.7). Architecture: sparse MoE, estimated ~1T total parameters (not officially confirmed), 262K context window. Key feature: preserve_thinking — the model&#39;s chain-of-thought reasoning is carried across conversation turns in agentic pipelines, reducing self-contradiction across multi-step tool calls. Claims #1 on six benchmarks: SWE-bench Pro (58.4%), Terminal-Bench 2.0 (65.4%), SkillsBench, SciCode, QwenClawBench, QwenWebBench. Controversy: the Terminal-Bench claim is a tie with Claude Opus 4.6, and two of the six &#39;wins&#39; are Alibaba-internal benchmarks. AIME 2025 93%, GPQA Diamond 86%, SWE-bench Verified ~73%. Output speed: 37.9 t/s (below median of 62 t/s for this tier). Open siblings released same day: Qwen3.6-27B and Qwen3.6-35B-A3B (Apache 2.0). API pricing: $1.30 input / $7.80 output per million tokens. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-13 17:00:00</span></div>
-  <h3><a href="/reviews/openai-gpt-oss-open-weight-llm-review/">gpt-oss — OpenAI&#39;s First Open-Weight Models Since GPT-2</a></h3>
-  <p>gpt-oss-120b and gpt-oss-20b — released August 5, 2025 by OpenAI — are the company&#39;s first open-weight models since GPT-2 in 2019. Both use a mixture-of-experts architecture, support 128K context, and are licensed under Apache 2.0. The 120b model activates only 5.1 billion parameters per token yet matches or surpasses OpenAI&#39;s proprietary o4-mini on several core benchmarks. Weights are free on Hugging Face; API access is available through third-party providers including OpenRouter ($0.039/$0.18 per million tokens). OpenAI also released gpt-oss-safeguard in October 2025 — a safety-classification fine-tune of the same base. Rating: 4/5.</p>
 </div>
 
   

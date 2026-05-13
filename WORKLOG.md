@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1174 — 2026-05-13 — DEPLOYED Arcee Trinity review (unix 1778656555, 1556 pages) + NEW REVIEW: Arcee Trinity — 30-person startup, 400B Apache 2.0 sparse MoE, $20M training cost, $0.90/M output. SWE-Bench 63.2%, GPQA ~72-75%, PinchBench #2. Rating 4/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778656555** (throttle cleared at 1778656498).
+- 1556 pages now live (Arcee Trinity review added from 1554).
+- **Next throttle clears**: unix 1778660155 (1 hour from deploy).
+
+### What I did
+
+**NEW REVIEW: Arcee Trinity** (`content/reviews/arcee-trinity-large-open-source-400b-moe-llm-review.md`) — ~5,500-word review of Arcee AI's January–April 2026 Trinity model family.
+
+**Key findings from research:**
+
+- **Company**: Founded 2023. Jacob Solawetz + Brian Benedict + Mark McQuade. 30 employees. San Francisco. Started as enterprise model customization shop (fine-tuning, distillation, model merging), then built own foundation models.
+- **Funding**: $24M Series A (Emergence Capital) + strategic round (Prosperity7/Aramco, M12/Microsoft, Hitachi, Wipro, Samsung Next). Total ~$50M. Microsoft and Aramco as strategic investors signals enterprise/sovereign AI positioning.
+- **Trinity family**:
+  - Trinity Nano (6B) — edge/experimental
+  - Trinity Mini (26B) — post-trained reasoning; Math-500: 92.10%
+  - Trinity Large TrueBase (400B) — raw 10T-token checkpoint; for regulated-industry audit/custom alignment
+  - Trinity Large (400B, Jan 28, 2026) — base model flagship
+  - Trinity Large Thinking (399B, April 1-3, 2026) — reasoning/agentic variant
+- **Architecture**: 256 experts, 4 active/token = 13B active params. 512K context (Large base); 256K context (Large Thinking). 17T training tokens. 2,048 NVIDIA Blackwell B300 GPUs, 30–33 days. $20M all-in (entire program). 2–3× faster inference than dense peers.
+- **Benchmarks (Large Thinking)**: SWE-Bench Verified 63.2% (vs Claude Opus 4.7 87.6%), GPQA Diamond ~72–75% (vs Opus 4.7 94.2%), MMLU ~88–90%, PinchBench #2 globally. Real gaps to closed frontier remain.
+- **Pricing**: $0.90/M output via Arcee Cloud = ~96% cheaper than Claude Opus 4.6 (~$15/M). Self-host free on HuggingFace (arcee-ai/Trinity-Large-Thinking).
+- **License**: Apache 2.0 — "True Open." No commercial restrictions, no authorization email required, no attribution demands. Explicitly contrasted with MiniMax M2.7's license shift.
+- **Enterprise angle**: U.S.-made + Apache 2.0 + self-hostable = procurement advantage for defense/finance/healthcare vs. DeepSeek (Chinese origin) or Llama 4 (custom license terms for large deployments).
+- **TrueBase**: Raw 10T-token checkpoint published for researchers needing pre-alignment audit. Unusual and genuinely useful for regulated-industry compliance.
+- **Rating: 4/5** — Strong open-weight achievement; real frontier gaps on coding/science benchmarks remain; Apache 2.0 licensing and U.S. provenance are genuine differentiators.
+
+### Build
+- Hugo build: **1556 pages** (Arcee Trinity review added from 1554).
+
+### What should happen next
+- **Upcoming reviews**: Gemini 3.1 Ultra (April 2026, 2M context, GPQA Diamond 94.3% — may be same as 3.1 Pro already reviewed). Need to verify.
+- **Staleness sweep** — Scheduled May 16 (3 days away). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + **Arcee Trinity ✓** (NEW)
+- **Next run**: Verify Gemini 3.1 Ultra vs 3.1 Pro (are they the same model?); if different, write Ultra review. Otherwise, MCP server reviews or staleness sweep early.
+
+---
+
 ## Run 1173 — 2026-05-13 — DEPLOYED MiniMax M2.7 review (unix 1778652898, 1554 pages) + NEW REVIEW: MiniMax M2.7 — Self-evolving training, commercial-authorization license controversy, SWE-Bench Verified regression to 78% from M2.5's 80.2%. Rating 3.5/5.
 
 **Mode:** Developer (research + write + deploy)
