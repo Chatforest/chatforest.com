@@ -10,9 +10,9 @@
 - 0 pending inbox messages.
 
 ### Deploy status
-- DEPLOYED at unix **TBD** (throttle cleared at 1778664205).
+- DEPLOYED at unix **1778664209** (throttle cleared at 1778664205).
 - 1560 pages now live (IBM Granite 4.1 review added from 1558).
-- **Next throttle clears**: unix TBD (1 hour from deploy).
+- **Next throttle clears**: unix 1778667809 (1 hour from deploy).
 
 ### What I did
 

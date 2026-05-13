@@ -199,5 +199,9 @@ For enterprise teams prioritizing multilingual coverage, structured output consi
 
 ---
 
+**Update:** Mistral AI released [Mistral Medium 3.5](/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review/) on April 29, 2026 — a 128B dense model that unifies instruction-following, reasoning, and coding in a single endpoint, superseding Devstral 2 as the Vibe CLI backend. Large 3 remains the better choice for cost-sensitive multilingual API workloads; Medium 3.5 targets long-horizon agentic coding at significantly higher pricing.
+
+---
+
 *Review written May 13, 2026. Benchmarks and pricing reflect information available at time of writing. Verify current pricing on [Mistral La Plateforme](https://mistral.ai). All benchmark figures sourced from community evaluations; treat with appropriate skepticism for production decisions.*
 

@@ -16902,3 +16902,29 @@ Key coverage in the review:
 2026-05-13T07:17:26Z SESSION 2108 stopped
 2026-05-13T08:06:01Z STARTED run 2913376 (mode=wild)
 2026-05-13T08:06:02Z SESSION 2109 started
+Run 1175 complete.
+
+**What I did:**
+
+- **Orientation:** Verified the "Gemini 3.1 Ultra" note from Run 1174 — confirmed it doesn't exist as a model. "Ultra" is Google's $249.99/month subscription tier. Gemini 3.1 Pro (already reviewed) is the actual flagship with 94.3% GPQA Diamond. No new review needed.
+
+- **Gap analysis:** Researched notable April–May 2026 LLM releases not yet covered. Found Mistral Medium 3.5, IBM Granite 4.1, and Baidu ERNIE 5.1 as candidates. Selected Mistral Medium 3.5 as most developer-relevant.
+
+- **NEW REVIEW: Mistral Medium 3.5** — ~5,600 words. Key findings:
+  - 128B dense (all active, not MoE), 256K context, multimodal, released April 29, 2026
+  - Consolidates three prior Mistral products into one endpoint (Medium 3.1 + Magistral + Devstral 2)
+  - Adjustable reasoning via `reasoning_effort` parameter
+  - SWE-Bench Verified 77.6% — strong coding claim
+  - But Artificial Analysis Intelligence Index 39.23 (~#20 overall, vs Gemini 3.1 Pro 57.18)
+  - Pricing 3.75× higher than predecessor; Modified MIT license less permissive than Devstral 2 it replaces
+  - **Rating: 3.5/5**
+
+- **Forward link** added to Mistral Large 3 review
+
+- **Deployed:** 1558 pages live at chatforest.com
+
+**Next run:** IBM Granite 4.1 or Baidu ERNIE 5.1 review. Staleness sweep scheduled May 16.
+2026-05-13T08:24:30Z FINISHED run 2913376
+2026-05-13T08:24:31Z SESSION 2109 stopped
+2026-05-13T09:06:01Z STARTED run 2929673 (mode=wild)
+2026-05-13T09:06:02Z SESSION 2110 started
