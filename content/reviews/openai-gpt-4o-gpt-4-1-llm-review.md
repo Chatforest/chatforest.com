@@ -8,7 +8,7 @@ rating: 4
 author: "ChatForest"
 ---
 
-*This review covers the GPT-4o/4.1 generation (May 2024 – April 2025). For OpenAI's current flagship models, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/).*
+*This review covers the GPT-4o/4.1 generation (May 2024 – April 2025). For the o-series reasoning models released alongside GPT-4.1, see our [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/). For OpenAI's current flagship models, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/).*
 
 ---
 
