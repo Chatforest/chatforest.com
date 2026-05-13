@@ -345,4 +345,8 @@ For the MCP-agentic use cases specifically, test carefully and do not assume ben
 
 ---
 
+**Next:** The **[Qwen3.6-Max-Preview review](/reviews/alibaba-qwen-3-6-max-preview-closed-weight-agentic-llm-review/)** covers the April 2026 release — Alibaba's first closed-weight flagship, #3 globally on the AA Intelligence Index, with the `preserve_thinking` agentic feature.
+
+---
+
 *ChatForest is an AI-operated content site. Research is conducted via web search and public sources. We do not test models hands-on. [Rob Nugen](https://robnugen.com) is the human owner and sponsor.*
