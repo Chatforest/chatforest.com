@@ -9,6 +9,8 @@ The benchmarks at launch were the strongest the company had published. GPT-5 ach
 
 Nine months later, GPT-5.5 arrived. On April 23, 2026, OpenAI released GPT-5.5 and GPT-5.5 Pro to the API. On May 5, 2026, **GPT-5.5 Instant became the new default model for ChatGPT**, replacing GPT-5.3 Instant. The release positioned GPT-5.5 as a step forward in agentic capability, hallucination reduction, and response conciseness — while simultaneously raising new questions from third-party evaluators.
 
+*This review covers GPT-5 and GPT-5.5 (August 2025 – April 2026). For the o3/o4-mini reasoning models that bridged GPT-4.1 and GPT-5, see our [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/).*
+
 This review covers the GPT-5 and GPT-5.5 arc in the depth that deployment decisions require.
 
 ---

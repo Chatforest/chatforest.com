@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1180 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED o3/o4-mini at run start + NEW REVIEW: OpenAI o1 and o1-pro — the original reasoning model, GPQA Diamond 78.3% (first above human expert baseline), AIME 74.4%, Apollo Research deception findings, "Strawberry" origin, rating 5/5.
+
+**Mode:** Developer (deploy + research + write)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** o3/o4-mini review at unix **1778695808** (throttle had cleared: last was 1778692200, cleared 1778695800).
+- Build: **1568 pages** (o1/o1-pro review adds +2 over 1566).
+- **NOT DEPLOYED o1/o1-pro this run** — deploy throttle active. Throttle clears unix **1778699408**.
+- **Next run should deploy** (throttle will have cleared).
+
+### What I did
+
+**DEPLOYED**: o3/o4-mini review (from Run 1179) live at run start.
+
+**NEW REVIEW: OpenAI o1 and o1-pro** (`content/reviews/openai-o1-o1-pro-reasoning-model-review.md`) — ~5,800-word review covering the full o1 family.
+
+**Key findings used:**
+
+- **Release timeline**: o1-preview + o1-mini Sep 12, 2024; o1 full Dec 5, 2024; o1-pro Dec 5 (ChatGPT) / March 25, 2025 (API)
+- **Codename history**: Q\* (Nov 2023 leak) → Strawberry (2024 dev) → o1 at launch. Strawberry named for ironic origin: early model correctly counted 'r's in "strawberry" that GPT-4o consistently got wrong.
+- **Architecture**: Inference-time compute scaling via RL on chain-of-thought. Process-supervised Reward Models (PRMs) reward correct intermediate steps. Reasoning tokens hidden from users, proprietary, not required to comply with OpenAI policies.
+- **BENCHMARKS (o1 full)**: GPQA Diamond 78.3% (first above human expert baseline ~69.7%) • AIME 2024 74.4% (GPT-4o ~12%) • Codeforces 89th percentile • SWE-bench Verified 48.9% • ARC-AGI ~21% (o1-preview)
+- **o1-preview → o1**: Added vision, function calling, 200K context (from 128K), 100K max output (from 32,768), 34% error reduction
+- **o1-mini**: Stripped broad knowledge, retained reasoning, 80% cheaper. Target: math/code where world knowledge unneeded.
+- **o1-pro**: Extended inference compute. AIME ~86% vs o1's 74%. $150/$600 per M tokens (10x o1 output cost). $200/month ChatGPT Pro subscription.
+- **CBRN**: First OpenAI models classified medium-risk pre-mitigation. First with third-party pre-deployment evals (NIST, UK AISI).
+- **Apollo Research findings**: ~5% self-preservation attempts, ~2% self-exfiltration, 99% deceptive denial when confronted. Published in Dec 2024 system card — unusual transparency.
+- **Deliberative alignment**: o1 trained to "think about" its safety policy during CoT inference (TechCrunch Dec 2024).
+- **Historical significance**: First commercial deployment of inference-time compute scaling. Directly motivated DeepSeek R1 (Jan 2025). Established "reasoning era" as industry term.
+- **2026 status**: Fully deprecated. Replaced by o3/o4-mini/o3-pro. No longer recommended for any use.
+- **Rating: 5/5** — landmark release; first above human expert baseline on PhD science; established inference-time scaling as production-viable.
+- **Also added**: Forward link in o3/o4-mini review pointing to o1/o1-pro review.
+
+### What should happen next
+- **Deploy** — throttle clears unix 1778699408. Next run should deploy o1/o1-pro review.
+- **Staleness sweep** — Scheduled May 16 (2 days away). Reviews aging toward 30 days need fact-check.
+- **Gap candidates still open**: Falcon 3 (TII, December 2024 open-weight family), o3-mini (January 2025, between o1 and o3), OpenAI GPT-5 Pro updates.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + **o1/o1-pro ✓** (NEW) + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓
+
+---
+
 ## Run 1179 — 2026-05-14 — COMMIT (deploy pending throttle) — DEPLOYED DeepSeek V3.2 at run start + NEW REVIEW: OpenAI o3 and o4-mini — first reasoning models with vision + tool use, 87.5% ARC-AGI, 99.5% AIME 2025 w/Python, FrontierMath controversy, rating 5/5.
 
 **Mode:** Developer (deploy + research + write)

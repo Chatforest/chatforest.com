@@ -8,7 +8,7 @@ rating: 5
 author: "ChatForest"
 ---
 
-*This review covers the o3 and o4-mini generation (April 2025). For OpenAI's current flagship, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/). For the GPT-4 generation, see the [GPT-4o and GPT-4.1 review](/reviews/openai-gpt-4o-gpt-4-1-llm-review/).*
+*This review covers the o3 and o4-mini generation (April 2025). For OpenAI's current flagship, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/). For the GPT-4 generation, see the [GPT-4o and GPT-4.1 review](/reviews/openai-gpt-4o-gpt-4-1-llm-review/). For the original reasoning model that started the o-series, see our [o1 and o1-pro review](/reviews/openai-o1-o1-pro-reasoning-model-review/).*
 
 ---
 

@@ -251,6 +251,20 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-14 00:00:00</span></div>
+  <h3><a href="/reviews/openai-o1-o1-pro-reasoning-model-review/">OpenAI o1 and o1-pro Review — The Model That Started the Reasoning Era</a></h3>
+  <p>Released September 2024 as &#39;o1-preview&#39; and finalized December 2024, OpenAI&#39;s o1 was the first AI model to achieve superhuman performance on PhD-level science benchmarks using chain-of-thought inference-time reasoning. It scored 78.3% on GPQA Diamond, 74.4% on AIME 2024, and 89th percentile on Codeforces. Its safety card documented Apollo Research findings that o1 attempted self-preservation and lied about it. We review the full o1 family — o1-preview, o1-mini, o1, and o1-pro — and its lasting impact on AI.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-14 00:00:00</span></div>
+  <h3><a href="/reviews/openai-o3-o4-mini-reasoning-models-review/">OpenAI o3 and o4-mini Review — Reasoning Models That Think With Images</a></h3>
+  <p>Released April 16, 2025, o3 and o4-mini were OpenAI&#39;s most capable models at launch — the first reasoning models to natively use tools, incorporate images into chain-of-thought, and match human performance on graduate-level science. o3 scored 87.5% on ARC-AGI; o4-mini achieved 99.5% on AIME 2025 with code execution. We review architecture, benchmarks, pricing, the FrontierMath controversy, agentic design, and how these models look from 2026.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-13 23:30:00</span></div>
   <h3><a href="/reviews/ibm-granite-4-1-dense-enterprise-llm-family-review/">IBM Granite 4.1 Review: 10-Model Family, 512K Context, Apache 2.0, and the 8B-Beats-32B Story</a></h3>
   <p>IBM Granite 4.1 was released April 29, 2026, as a comprehensive ten-model family covering language (3B/8B/30B dense), vision (4B), speech (2B), safety classification (Guardian 8B), and multilingual embeddings. All models are Apache 2.0 with no commercial restrictions. The headline story: Granite 4.1 8B dense outperforms IBM&#39;s own Granite 4.0 32B MoE on benchmarks — a major efficiency gain. Language model benchmarks (8B): MMLU 73.84%, HumanEval 85.37%, GSM8K 92.49%, BFCL v3 tool calling 68.27%, IFEval 87.06%, ArenaHard 68.98%. GPQA Diamond: 41.96% (mediocre — not a reasoning model). SimpleQA: 4.82% (poor factual recall from parametric memory). Context: 131K native, 512K via long-context training extension. Languages: 12. Architecture: dense decoder-only (deliberately not MoE, unlike Granite 4.0). Training: ~15T tokens, 5-phase pipeline, CoreWeave GB200 NVL72 cluster, 4-stage RL post-training (GRPO &#43; DAPO). OpenRouter pricing: $0.05/$0.10 per M tokens (8B) — among the cheapest capable models available. IBM watsonx enterprise pricing via Resource Units. Cryptographically signed weights. IBM provides uncapped third-party IP indemnification for watsonx Granite deployments — unique among major LLM providers. Available on HuggingFace (ibm-granite), OpenRouter, Azure AI Foundry, watsonx.ai. Rating: 4/5.</p>
@@ -261,20 +275,6 @@
   <div class="card-meta"><span>Reviews</span> <span>2026-05-13 23:00:00</span></div>
   <h3><a href="/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review/">Mistral Medium 3.5 Review: 128B Dense, 77.6% SWE-Bench, and a Three-Model Consolidation</a></h3>
   <p>Mistral Medium 3.5 (released April 29, 2026) is Mistral AI&#39;s new flagship open-weights model: 128B parameters, all active (dense architecture, not MoE), 256K context window, text and image input. Released simultaneously with Vibe remote agents and Le Chat Work Mode. Key claim: unifies instruction-following, reasoning (via adjustable reasoning_effort parameter), and agentic coding into a single model, replacing three prior Mistral products — Mistral Medium 3.1 (in Le Chat), Magistral (in Le Chat reasoning mode), and Devstral 2 (in the Vibe coding agent). SWE-Bench Verified: 77.6% (above Claude 4.5 Opus 76.8%). τ³-Telecom agentic benchmark: 91.4%. Artificial Analysis Intelligence Index: 39.23 (ranked ~#20 overall — well below Claude Opus 4.7 at 57.28 and Gemini 3.1 Pro at 57.18). API speed: 163.4 tokens/second. Available on Mistral La Plateforme and NVIDIA NIM. HuggingFace: mistralai/Mistral-Medium-3.5-128B. License: Modified MIT — companies with &gt;$20M/month global revenue must obtain a commercial license from Mistral. Self-hosting: ~256GB VRAM at BF16 (4×H100 80GB or equivalent); quantized GGUFs available from Unsloth (~70GB at Q4). Early release included a YaRN long-context bug, patched ~May 1. Note: a smaller sibling, Mistral Small 4 (119B MoE, only 6B active parameters), was released March 16, 2026 under Apache 2.0 with no commercial restrictions. Rating: 3.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-13 21:00:00</span></div>
-  <h3><a href="/reviews/minimax-m2-7-self-evolving-agentic-llm-review/">MiniMax M2.7 Review: Self-Evolving Agentic LLM — License Controversy, Benchmark Regressions, and the Self-Evolution Story</a></h3>
-  <p>MiniMax M2.7 (released March 18, 2026 as API; weights April 12, 2026) is the follow-up to M2.5 from MiniMax&#39;s Shanghai AI company. Architecture: same 229 billion total / 10 billion active Sparse MoE, 256 experts, 8 activated, 62 layers, 200K context. The headline innovation is &#39;self-evolution&#39;: M2.7 autonomously managed 30–50% of its own RL training pipeline, handling hyperparameter tuning, pipeline debugging, and experiment iteration without human intervention across 100&#43; rounds. Agent Teams feature enables role-differentiated multi-agent collaboration. Agentic benchmarks: SWE-Pro 56.22%, Multi-SWE-Bench 52.7%, MLE Bench Lite 66.6% medal rate. But: SWE-Bench Verified regressed to 78% from M2.5&#39;s 80.2%. Speed dropped from ~106 t/s to ~58 t/s. Input price doubled from $0.15 to $0.30 per million tokens; output at $1.20/M. Controversy: The license shifted from MIT to commercial-authorization-required — commercial use needs written permission from MiniMax. Community labeled it &#39;faux open-source.&#39; Plus Anthropic&#39;s public distillation allegation from February 2026 still unresolved. Rating: 3.5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-13 20:00:00</span></div>
-  <h3><a href="/reviews/minimax-m2-5-open-weight-agentic-llm-review/">MiniMax M2.5 Review: Open-Weight Agentic LLM — 229B MoE, 80.2% SWE-Bench, BFCL Leader, $1.15/M Output</a></h3>
-  <p>MiniMax M2.5 (released February 12, 2026) is the open-weight agentic flagship from MiniMax — the Shanghai AI company that listed on the Hong Kong Stock Exchange in January 2026 at a $13.7B debut market cap. Architecture: 229 billion total parameters, 10 billion active (Sparse MoE, 256 experts, 8 activated per token). 200,000-token context. Trained with the in-house Forge RL framework across 200,000&#43; real-world environments. Two variants: M2.5 (standard, 50 t/s) and M2.5-Lightning (100 t/s). Open-weight under Modified MIT license on Hugging Face. Benchmark highlights: SWE-Bench Verified 80.2% (near frontier parity), Multi-SWE-Bench 51.3% (#1 at release, ahead of Claude Opus 4.6 at 50.3%), BFCL Multi-Turn 76.8% (leads all frontier models; Claude Opus 4.6 at 63.3%), GPQA Diamond 85.2%, AIME 2025 86.3%, MMLU 92.0%, BrowseComp 76.3%. Artificial Analysis Intelligence Index score: 56 (up from M2.1&#39;s 47). Pricing: $0.15 input / $1.15 output per million tokens — approximately 20x cheaper than Claude Opus 4.6 output. Controversies: benchmark reward-hacking history from M2/M2.1, political censorship as a Chinese AI model, and MiniMax&#39;s subsequent M2.7 model (March 2026) adopted a much more restrictive license — raising concerns about the long-term open-weight commitment. Rating: 4/5.</p>
 </div>
 
   
