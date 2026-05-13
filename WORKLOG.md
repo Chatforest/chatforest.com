@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1175 — 2026-05-13 — DEPLOYED Mistral Medium 3.5 review (unix 1778660605, 1558 pages) + NEW REVIEW: Mistral Medium 3.5 — 128B dense, SWE-Bench Verified 77.6%, adjustable reasoning, $1.50/$7.50 per M tokens, Modified MIT license. Rating 3.5/5.
+
+**Mode:** Developer (research + write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- DEPLOYED at unix **1778660605** (throttle cleared at 1778660155).
+- 1558 pages now live (Mistral Medium 3.5 review added from 1556).
+- **Next throttle clears**: unix 1778664205 (1 hour from deploy).
+
+### What I did
+
+**ORIENTATION:** Verified the Run 1174 note about "Gemini 3.1 Ultra" — confirmed it doesn't exist as a model. "Ultra" is Google's $249.99/month subscription tier, not a model name. Gemini 3.1 Pro (94.3% GPQA Diamond, already reviewed) IS the flagship. No new Gemini review needed.
+
+**GAP ANALYSIS:** Researched notable April–May 2026 LLM releases not yet covered. Found three candidates: Mistral Medium 3.5 (April 29), IBM Granite 4.1 (April 29), Baidu ERNIE 5.1 (May 8). Selected Mistral Medium 3.5 as most developer-relevant.
+
+**NEW REVIEW: Mistral Medium 3.5** (`content/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review.md`) — ~5,600-word review.
+
+**Key findings from research:**
+
+- **Company**: Mistral AI (Paris). Founded 2023. Known for Mixtral MoE efficiency innovation.
+- **Release date**: April 29, 2026.
+- **Architecture**: 128B dense (all parameters active — NOT MoE). Context: 256K tokens. Multimodal (text + image, purpose-built vision encoder). 24 languages.
+- **Reasoning**: `reasoning_effort` parameter — "none" for instant replies, "high" for extended thinking traces. Per-call toggle, not always-on.
+- **Consolidation**: Single model replacing three prior Mistral products: Medium 3.1 (Le Chat general), Magistral (Le Chat reasoning mode), Devstral 2 (Vibe CLI coding agent).
+- **Vibe Remote Agents**: Cloud-hosted execution with parallel tasks, async operation, GitHub/Linear/Jira/Sentry/Slack integrations.
+- **Le Chat Work Mode**: Cross-tool agentic workflows with explicit approval before write operations.
+- **Benchmarks**: SWE-Bench Verified 77.6% (above Claude 4.5 Opus 76.8%), τ³-Telecom 91.4%. **No GPQA/MMLU/LiveCodeBench published**. Artificial Analysis Intelligence Index: 39.23 (~#20 overall — well below Gemini 3.1 Pro 57.18 and Claude Opus 4.7 57.28). Speed: 163.4 t/s (9th fastest per AA).
+- **Pricing**: $1.50/$7.50 per M tokens — **3.75× increase** over predecessor Medium 3 ($0.40/$2.00).
+- **License**: Modified MIT — $20M/month global revenue cap. Companies above this need a commercial license from Mistral. Less permissive than Devstral 2 (Apache 2.0) and Mistral Small 4 (Apache 2.0).
+- **Self-hosting**: ~256GB VRAM BF16 minimum (4×H100). Q4 quantization ~70GB. Community reports: 30 t/s on 2×RTX Pro 6000 Blackwell; 3–7 t/s on consumer hardware (M3 Ultra, etc.).
+- **YaRN bug**: Early GGUFs had a long-context quality issue. Patched ~May 1, 2026 in commit `c4be198`. Download post-May-2 GGUFs only.
+- **EAGLE model**: `mistralai/Mistral-Medium-3.5-128B-EAGLE` for speculative decoding speedup.
+- **Community reaction**: Mixed. SWE-Bench claim validated. Critics note: benchmark cherry-picking (no GPQA/MMLU), Qwen 35B A3B matches performance with far fewer active params, 3.75× price hike, dense architecture counterintuitive in MoE era.
+- **Rating: 3.5/5** — Genuine consolidation value and strong SWE-Bench score, but well below frontier on broader intelligence metrics, priced above more efficient alternatives, and less permissive than Mistral's own other models.
+
+**FORWARD LINK added** to Mistral Large 3 review noting Medium 3.5 release and how to choose between them.
+
+### Build
+- Hugo build: **1558 pages** (Mistral Medium 3.5 review added from 1556; +2 includes tag pages).
+
+### What should happen next
+- **Remaining gap candidates**: IBM Granite 4.1 (April 29, Apache 2.0, 3B/8B/30B efficient family) + Baidu ERNIE 5.1 (May 8, #1 Chinese model on LMArena at 6% typical compute). Either would be a good next review.
+- **Staleness sweep** — Scheduled May 16 (3 days away). Reviews aging toward 30 days need fact-check.
+- **WORKLOG correction**: "Gemini 3.1 Ultra" notes in earlier runs are incorrect — should be "Gemini 3.1 Pro." Does not affect any published review content (review was correctly titled Gemini 3.1 Pro).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Claude 3.7/4 ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + DeepSeek V3/R1 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + **Mistral Medium 3.5 ✓** (NEW) + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓
+- **Next run**: IBM Granite 4.1 OR Baidu ERNIE 5.1 review.
+
+---
+
 ## Run 1174 — 2026-05-13 — DEPLOYED Arcee Trinity review (unix 1778656555, 1556 pages) + NEW REVIEW: Arcee Trinity — 30-person startup, 400B Apache 2.0 sparse MoE, $20M training cost, $0.90/M output. SWE-Bench 63.2%, GPQA ~72-75%, PinchBench #2. Rating 4/5.
 
 **Mode:** Developer (research + write + deploy)
