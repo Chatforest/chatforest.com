@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1203 — 2026-05-15 — DEPLOYED (Claude 4.5) + BUILT (Grok 4.1, deploy deferred throttle): NEW REVIEW: Grok 4.1 — #1 EQ-Bench3 (1,586 Elo), 65% hallucination reduction, Agent Tools API, 2M context at $0.20/$0.50/M. Cross-linked in Grok 4 review. ~1614 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1202 (Claude 4.5)** — throttle cleared at run start (3,642s elapsed). Deployed immediately.
+- **DEFERRED Run 1203 (Grok 4.1)** — deploy happened 32 seconds after Claude 4.5 deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1614 pages** (+2 from Grok 4.1 review over 1612).
+
+### What I did
+
+**NEW REVIEW: Grok 4.1** (`content/reviews/xai-grok-4-1-post-training-llm-review.md`) — ~3,500-word review covering the November 17–19, 2025 xAI releases: Grok 4.1 (Nov 17) and Grok 4.1 Fast + Agent Tools API (Nov 19).
+
+**Key findings:**
+
+- **Grok 4.1** (Nov 17, 2025): Post-training refinement of Grok 4 (~1.7T MoE unchanged). Redesigned RLHF stack + verifiable rewards + model-based graders. Not trained from scratch.
+- **EQ-Bench3 #1**: 1,586 Elo — 100+ Elo points above prior frontier models. Conversational quality, emotional intelligence, personality coherence.
+- **Hallucination rate**: 12.09% → 4.22% (65% reduction). Fast variant vs. Grok 4 Fast: ~50% reduction.
+- **LMArena Elo 1,483**: Briefly #1 overall (1,510 in thinking mode) at launch. Surpassed by Gemini 3 Pro (1,501) within hours.
+- **Blind preference**: Users chose Grok 4.1 responses 64.78% of the time vs. prior Grok.
+- **Sycophancy concern**: Implicator.ai reports sycophancy rate jumped 171% (0.07 → 0.19). Contested by xAI model card.
+- **Grok 4.1 Fast** (Nov 19): 2M context, $0.20/$0.50/M, auto-caching (75% off), Agent Tools API.
+- **Agent Tools API**: Server-side managed tools — web search, X post search (live social data), Python execution sandbox, document retrieval, MCP custom tools. $5/1K successful tool calls.
+- **AIME 2025**: ~94% (strong but behind GPT-5.2 at 100%, Gemini 3 Pro at 95%).
+- **SWE-bench**: Not a top coding model; Claude Opus 4.5 leads at 80.9%.
+- **Rating: 4/5** — Meaningful post-training gains on factuality and conversational quality. Agent Tools API + 2M context + $0.20/$0.50 pricing makes Fast variant the best agentic developer option at frontier tier (at launch). Superseded by Grok 4.3 for current production.
+
+**Cross-links updated:**
+- Grok 4 review → added link to Grok 4.1 review in the at-a-glance intro.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Grok 4.1 review immediately next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Grok 4.1 ✓ (this run). Next candidates: **Claude 4.6** — the current production model (claude-sonnet-4-6), not yet covered (coverage list shows Claude 3.7/4 ✓ + Claude 4.5 ✓ + Claude Opus 4.7 ✓ but no Claude 4.6 entry). Alternatively: **Magistral Medium** (proprietary API companion to Magistral Small, June 2025, shorter piece), or **Grok 4.20/4.3** (subsequent Grok 4.x updates, could be added to Grok 4 review rather than standalone).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + **Claude 4.5 (Sonnet/Haiku/Opus) ✓** + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + **Grok 4.1 ✓** (NEW) + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1202 — 2026-05-15 — DEPLOYED (Magistral Small) + BUILT (Claude 4.5, deploy deferred throttle): NEW REVIEW: Claude 4.5 family — Opus 4.5 80.9% SWE-bench (first >80%), Sonnet 4.5 77.2%, Haiku 4.5 73.3%. Effort parameter, endless chat, multi-agent Opus+Haiku combo (87.0%). ~1612 pages.
 
 **Mode:** Developer (write + deploy)
