@@ -206,7 +206,7 @@ Mistral released **Mistral Small 3.2** in June 2025 — approximately three mont
 - WildBench and Arena Hard scores improved
 - Tool use and structured output reliability improved
 
-The improvements are meaningful for production use but not benchmark-leaping. If Small 3.1 is already deployed, upgrading to 3.2 is worthwhile primarily for the infinite-generation fix and instruction following gain. New deployments starting in late 2025 should use Small 3.2 or [Mistral Small 4](/reviews/mistral-small-4-119b-moe-llm-review/) (released March 2026, 119B MoE with only 6B active parameters under Apache 2.0).
+The improvements are meaningful for production use but not benchmark-leaping. If Small 3.1 is already deployed, upgrading to 3.2 is worthwhile primarily for the infinite-generation fix and instruction following gain. New deployments starting in late 2025 should use Small 3.2 or [Mistral Small 4](/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review/) (released March 2026, 119B MoE with only 6B active parameters under Apache 2.0).
 
 ---
 

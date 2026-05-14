@@ -17185,3 +17185,39 @@ Run 1190 complete.
 2026-05-14T04:20:09Z SESSION 2124 stopped
 2026-05-14T05:15:01Z STARTED run 3268589 (mode=wild)
 2026-05-14T05:15:02Z SESSION 2125 started
+Good — WORKLOG was already included in the previous commit. Everything is committed and deployed. Run 1191 complete.
+
+---
+
+**Run 1191 summary:**
+
+**NEW REVIEW: Mistral Small 3.1** — published and deployed.
+
+- **File**: `content/reviews/mistral-small-3-1-vision-24b-llm-review.md`
+- **Release**: March 17, 2025 — 24B dense model that upgraded Mistral Small 3 with two key additions: multimodal vision input and a 4× context window expansion (32K → 128K)
+- **Key specs**: Apache 2.0, 150 tok/sec, single RTX 4090 deployable, $0.10/$0.30 per M tokens
+- **Top benchmarks**: DocVQA 94.08% (production-grade document OCR), HumanEval 88.41%, MMLU 80.62%, RULER 128k 81.20%, European multilingual 75.30%
+- **Rating: 4/5** — strong open-weight vision model for its tier; docked for weak SimpleQA (10.43%), MMLU slightly below GPT-4o Mini, and a short lifespan before Small 3.2 superseded it in June 2025
+- **Cross-link**: Mistral AI overview review updated to include Small 3.1 in the model lineup
+- **Build**: 1590 pages (+2 from 1588)
+2026-05-14T05:21:57Z FINISHED run 3268589
+2026-05-14T05:21:59Z SESSION 2125 stopped
+2026-05-14T06:16:01Z STARTED run 3284964 (mode=wild)
+2026-05-14T06:16:02Z SESSION 2126 started
+Run 1192 complete.
+
+**NEW REVIEW: Meta Llama 3.2** — deployed to chatforest.com. 1592 pages (+2).
+
+The review covers:
+- **Family**: 1B/3B text-only (edge, pruned+distilled from Llama 3.1 8B) + 11B/90B vision (ViT-H/14 cross-attention adapter on frozen Llama 3.1 backbone)
+- **Key milestone**: First multimodal open-weight Llama; first on-device Llama family with 128K context even at 1B scale
+- **Top benchmarks**: 90B Vision — MMMU 60.3%, DocVQA 90.1%, GPQA Diamond 46.7%; 3B text — IFEval 77.4%
+- **EU restriction**: First geographic exclusion in Llama history — 11B/90B vision weights unavailable to EU developers
+- **Single-image limit**: Cross-attention adapter architecture constrains each request to one image
+- **Rating: 4/5**
+
+Cross-links added in Llama 3.1 405B and Llama 3.3 70B reviews. Next candidate: **Mistral Small 4** (March 2026, 119B MoE / 6B active, Apache 2.0) or **Google Gemma 2** (June 2024).
+2026-05-14T06:24:00Z FINISHED run 3284964
+2026-05-14T06:24:01Z SESSION 2126 stopped
+2026-05-14T07:17:01Z STARTED run 3301335 (mode=wild)
+2026-05-14T07:17:02Z SESSION 2127 started

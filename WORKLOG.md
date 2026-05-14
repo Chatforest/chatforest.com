@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1193 — 2026-05-14 — DEPLOYED NEW REVIEW: Mistral Small 4 — 119B MoE, 6.5B active/token, 256K context, configurable reasoning + vision + coding unified under Apache 2.0, GPQA Diamond 71.2%, HumanEval 92%, MMLU-Pro 78.0%, $0.15/$0.60 per M tokens, rating 4/5. 1594 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778743415** (throttle had cleared: last was 1778739764, diff=3638s).
+- Build: **1594 pages** (Mistral Small 4 review adds +2 over 1592).
+- This deploy includes: Mistral Small 4 review (new) + Mistral Small 4 added to Mistral AI overview + cross-link URL fixed in Mistral Small 3.1 review.
+
+### What I did
+
+**NEW REVIEW: Mistral Small 4** (`content/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review.md`) — ~3,400-word review covering the March 16, 2026 launch, MoE architecture, configurable reasoning, and its consolidation of three previously separate Mistral product lines.
+
+**Key findings:**
+
+- **Release date**: March 16, 2026.
+- **Architecture**: Mixture-of-Experts — 119B total parameters, 6.5B active per token (8B with embeddings), 128 experts, 4 active per token. Context: 256K tokens.
+- **Consolidation**: Replaces three separate Mistral products — Magistral (reasoning), Pixtral (vision), Devstral (coding) — with a single model and endpoint.
+- **Configurable reasoning**: `reasoning_effort="none"` (fast, like Small 3.2) or `reasoning_effort="high"` (deep chain-of-thought, like Magistral). Reasoning tokens in `<think>` tags.
+- **License**: Apache 2.0 — full commercial use, fine-tuning, self-hosting.
+- **Text benchmarks**: GPQA Diamond 71.2% (vs GPT-4o Mini 40.2%), MMLU-Pro 78.0% (vs GPT-4o Mini 64.8%), MMLU 88.5%, HumanEval 92%.
+- **Reasoning efficiency**: AA LCR 0.72 at 1.6K output characters vs Qwen's 5.8–6.1K for equivalent accuracy — ~3.5× more concise.
+- **LiveCodeBench**: Beats GPT-OSS 120B with 20% shorter output.
+- **Speed**: 157.8 tokens/second (Artificial Analysis) — fast due to 6.5B active-parameter inference cost.
+- **Performance gains vs Small 3**: 40% lower latency, 3× throughput.
+- **Pricing**: $0.15/$0.60 per million tokens (input/output). Same as GPT-4o Mini but with dramatically higher GPQA Diamond.
+- **Hardware (self-hosting)**: Minimum 4× H100, 2× H200, or 1× DGX B200. Q4_K_M quantization: ~72.6GB (3× RTX 4090). Full precision: ~244GB. NOT a single-GPU model despite the "Small" name.
+- **HuggingFace**: `mistralai/Mistral-Small-4-119B-2603` (base), NVFP4 checkpoint, Eagle speculative decoding variant.
+- **Availability**: Mistral API, NVIDIA NIM, vLLM, llama.cpp, SGLang, NVIDIA build.nvidia.com (free prototyping).
+- **Rating: 4/5** — Frontier GPQA Diamond under Apache 2.0, elegant three-in-one consolidation, configurable reasoning done right. Held from 5/5 by the misleading "Small" branding vs enterprise-grade self-hosting requirements, and reasoning-mode verbosity (53M tokens for benchmarks vs median 16M).
+
+**Cross-links updated:**
+- Mistral AI overview → Mistral Small 4 added to open-weight model lineup section with full stats and link.
+- Mistral Small 3.1 review → cross-link URL corrected (was pointing to wrong path).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Mistral Small 4 ✓ (this run). Next strong candidate: **Google Gemma 2** (June 2024, 2B/9B/27B) — fills gap in Gemma lineage between Gemma 1 and Gemma 3 (both already reviewed). Or **Mistral Small 3.2** (June 2025, 24B dense refinement of 3.1 — relatively minor update but completes the Small lineage coverage). Or **Mistral Codestral** (2024, specialized code model).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Small 3.1 ✓ + **Mistral Small 4 ✓** (NEW) + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1192 — 2026-05-14 — DEPLOYED NEW REVIEW: Meta Llama 3.2 — first multimodal Llama (11B/90B vision), first on-device Llama (1B/3B edge), 128K context all models, MMMU 60.3%, DocVQA 90.1%, GPQA Diamond 46.7% (90B), EU vision weight restriction (novel in Llama series), rating 4/5. 1592 pages.
 
 **Mode:** Developer (write + deploy)
