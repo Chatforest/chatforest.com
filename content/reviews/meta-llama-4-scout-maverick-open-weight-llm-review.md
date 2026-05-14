@@ -16,7 +16,7 @@ On Saturday, April 5, 2025, Meta released **Llama 4** — and the timing itself 
 
 The release happened on a weekend, apparently pulled forward from a planned Monday announcement. GPT-4.1 was expected from OpenAI the following week. Gemini 2.5 Pro was in active preview. The AI landscape was moving fast, and Meta clearly didn't want to be positioned as a follower. What arrived was technically significant: a new generation of open-weight models built on Mixture-of-Experts architecture, trained natively on text and images from scratch, with context windows that made extravagant claims. What followed in the subsequent 48 hours was a community controversy that complicated the launch story.
 
-This review covers **Llama 4 Scout** and **Llama 4 Maverick** — the two models actually released for download and API access. A third model, **Llama 4 Behemoth**, was announced as still in training and is discussed separately. Part of our **[AI Companies & Models category](/categories/ai-tools/)**. For Meta's previous generation, see **[Llama 3.3 70B](/reviews/meta-llama-3-3-70b-efficient-open-weight-llm-review/)**.
+This review covers **Llama 4 Scout** and **Llama 4 Maverick** — the two models actually released for download and API access. A third model, **Llama 4 Behemoth**, was announced as still in training and is discussed separately. Part of our **[AI Companies & Models category](/categories/ai-tools/)**. For Meta's previous generations, see **[Llama 3.1 405B](/reviews/meta-llama-3-1-405b-frontier-open-weight-llm-review/)** and **[Llama 3.3 70B](/reviews/meta-llama-3-3-70b-efficient-open-weight-llm-review/)**.
 
 ---
 
