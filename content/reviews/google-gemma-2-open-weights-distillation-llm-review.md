@@ -24,7 +24,7 @@ This review examines what produced those results: the architectural choices that
 
 ## Background: The Gemma Program
 
-Gemma 2 is the second generation of Google DeepMind's open-weights model family. **Gemma 1**, released February 21, 2024, shipped in 2B and 7B sizes and established the program's initial positioning: open weights derived from the same research infrastructure as Gemini, targeting developer and researcher use cases where self-hosting matters.
+Gemma 2 is the second generation of Google DeepMind's open-weights model family. **[Gemma 1](/reviews/google-gemma-1-open-weights-gemini-era-llm-review/)**, released February 21, 2024, shipped in 2B and 7B sizes and established the program's initial positioning: open weights derived from the same research infrastructure as Gemini, targeting developer and researcher use cases where self-hosting matters.
 
 **Gemma 2** extended the family upward (to 27B) and downward (to 2B, now improved), while introducing a set of architectural changes significant enough to warrant its own technical report. The development is attributed to "Gemma Team, Google DeepMind" — the combined research organization formed by the 2023 merger of Google Brain and DeepMind.
 

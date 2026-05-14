@@ -30,7 +30,7 @@ Companion to our **[Gemma 3 review](/reviews/google-gemma-3-open-weights-multimo
 
 ## The Gemma Program: Four Generations
 
-Google's Gemma family began in February 2024. **Gemma 1** was modest — 2B and 7B sizes, limited context, Gemma Terms license. **[Gemma 2](/reviews/google-gemma-2-open-weights-distillation-llm-review/)** (June 2024) introduced interleaved sliding-window attention and 9B/27B sizes with knowledge distillation — the 27B reached ELO 1218 on Chatbot Arena, above Llama 3 70B. **Gemma 3** (March 2025) added vision input, expanded to 128K context on its larger models, and introduced QAT quantization variants — but retained Gemma Terms and stayed in dense architecture.
+Google's Gemma family began in February 2024. **[Gemma 1](/reviews/google-gemma-1-open-weights-gemini-era-llm-review/)** was modest — 2B and 7B sizes, limited context, Gemma Terms license. **[Gemma 2](/reviews/google-gemma-2-open-weights-distillation-llm-review/)** (June 2024) introduced interleaved sliding-window attention and 9B/27B sizes with knowledge distillation — the 27B reached ELO 1218 on Chatbot Arena, above Llama 3 70B. **Gemma 3** (March 2025) added vision input, expanded to 128K context on its larger models, and introduced QAT quantization variants — but retained Gemma Terms and stayed in dense architecture.
 
 **Gemma 4** drops in April 2026 with a significantly expanded mandate: four architecturally diverse model sizes, MoE for the first time, audio input, a new embedding technique for edge efficiency, and a license upgrade to full Apache 2.0.
 

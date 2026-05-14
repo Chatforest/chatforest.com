@@ -24,7 +24,7 @@ This review covers the full Gemma 3 family in the detail that deployment and res
 
 ## Google DeepMind and the Gemma Program
 
-The Gemma name was first used in February 2024 with the release of Gemma 1 — Google's initial attempt to offer open-weights models derived from the same research and infrastructure that produced Gemini. **Gemma 1** shipped in two sizes (2B and 7B) and attracted significant developer attention, though it was technically modest compared to concurrent open-weights releases from Meta and Mistral.
+The Gemma name was first used in February 2024 with the release of Gemma 1 — Google's initial attempt to offer open-weights models derived from the same research and infrastructure that produced Gemini. **[Gemma 1](/reviews/google-gemma-1-open-weights-gemini-era-llm-review/)** shipped in two sizes (2B and 7B) and attracted significant developer attention, though it was technically modest compared to concurrent open-weights releases from Meta and Mistral.
 
 **[Gemma 2](/reviews/google-gemma-2-open-weights-distillation-llm-review/)** followed in June 2024, introducing 9B and 27B sizes with a distinctive architectural choice: interleaved sliding-window and global attention layers. Standard transformers apply full (global) attention at every layer, which scales quadratically with sequence length. Gemma 2's hybrid approach reduced KV-cache memory substantially while maintaining quality — enabling longer context windows at lower memory cost than fully dense attention architectures.
 
