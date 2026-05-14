@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1201 — 2026-05-15 — DEPLOYED (Large 2) + BUILT (Magistral Small, deploy deferred throttle): NEW REVIEW: Magistral Small — 24B open-weight reasoning model, Apache 2.0, first reasoning model from Mistral. AIME 70.68%, GPQA Diamond 68.18%, LiveCodeBench 55.84%. Multilingual CoT in 25+ languages. Fits RTX 4090 at Q4. ~1610 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1200 (Large 2)** — throttle cleared at run start (3,635s elapsed). Deployed immediately.
+- **DEFERRED Run 1201 (Magistral Small)** — second deploy throttled (221s elapsed < 3600s required). **Deploy on next run.**
+- Build: **~1610 pages** (+2 from Magistral Small review over 1608).
+
+### What I did
+
+**NEW REVIEW: Magistral Small** (`content/reviews/magistral-small-24b-reasoning-apache-2-0-llm-review.md`) — ~3,400-word review covering the June 10, 2025 release of Mistral AI's first open-weight reasoning model.
+
+**Key findings:**
+
+- **Release date**: June 10, 2025. Blog: mistral.ai/news/magistral. Paper: arXiv:2506.10910 (June 12, 2025).
+- **24 billion parameters** — dense, not MoE. Built on Mistral Small 3.1 (2503) base architecture.
+- **Training**: SFT on Magistral Medium reasoning traces + RLVR (Reinforcement Learning with Verifiable Rewards). RLVR improves MATH/GPQA but slightly reduces LiveCodeBench vs pure SFT.
+- **Apache 2.0** license — open commercial use and local deployment.
+- **Context**: 40K tokens optimal performance, 128K max (inherited from Small 3.1).
+- **Vision**: multimodal image+text (inherited from Small 3.1).
+- **Tokenizer**: Tekken (131K vocab, 25+ language efficiency advantage).
+- **Languages**: 25+ including Arabic, Chinese, Japanese, Korean, Hindi, French, German, Russian, Turkish, Vietnamese — multilingual chain-of-thought in the user's language.
+- **Benchmarks**: AIME 2024 70.68%, LiveCodeBench v5 55.84%, GPQA Diamond 68.18%.
+- **vs. QwQ-32B**: trails AIME by ~8-9 points (70.68% vs 79.5%), smaller (24B vs 32B), better hardware target.
+- **vs. DeepSeek R1**: trails AIME by ~9 points (70.68% vs 79.8%), but at 3.6% of R1's total parameter count.
+- **VRAM**: Q4_K_M ~14 GB (single RTX 4090), Q8_0 ~25 GB, BF16 ~48 GB.
+- **Ollama**: `magistral` (24b-small-2506-q4_K_M, 24b-small-2506-q8_0)
+- **September 2025 update**: Magistral-Small-2509 (iterative improvements).
+- **Companion**: Magistral Medium (proprietary API only, teacher model for SFT distillation).
+- **Significance**: First open-weight reasoning model from Mistral; first Apache 2.0 reasoning model deployable on a single RTX 4090.
+- **Rating: 4/5** — Historic milestone for Mistral's open-weight lineup. AIME trails QwQ-32B by 8-9 points; Mistral Small 4 (March 2026) supersedes for new deployments. Value is in the Apache 2.0 + consumer GPU + multilingual combination, not benchmark supremacy.
+
+**Cross-links updated:**
+- Mistral AI company review → Magistral Small entry updated with link, benchmark scores, and hardware requirement summary.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear. Deploy Magistral Small review immediately next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Magistral Small ✓ (this run). Next: **Magistral Medium** (proprietary API companion, June 2025) — probably a short companion piece, not a full review, since no open weights. Or **Mistral Nemo Minitron 8B** (NVIDIA distilled from NeMo 12B to 8B, late 2024, different entity). Or shift to non-Mistral gaps.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + **Magistral Small ✓** (NEW) + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1200 — 2026-05-15 — DEPLOYED (NeMo) + BUILT (Large 2, deploy deferred throttle): NEW REVIEW: Mistral Large 2 — 123B dense, Apache 2.0, HumanEval 92% (matched Claude 3.5 Sonnet), MMLU 84.0%, GSM8K 93.0%, MATH 71.5%, rating 4/5. Cross-linked in Mistral AI company review (moved to open-weight section, clarified Large 1 as proprietary). ~1608 pages.
 
 **Mode:** Developer (write + deploy)
