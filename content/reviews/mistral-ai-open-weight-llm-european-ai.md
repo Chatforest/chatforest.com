@@ -56,7 +56,7 @@ Mistral has released models across two tracks: **open-weight** (freely downloada
 
 **Mistral Large** (2024) — The first proprietary flagship, available via La Plateforme API. First to be released on Microsoft Azure as part of the partnership announcement.
 
-**Codestral** (2024) — Specialized code generation model with a 32K context window. Targeted at developer tools and IDE integrations.
+**[Codestral](/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review/)** (2024) — Specialized 22B code generation model with native fill-in-the-middle training, 32K context window, 80+ languages. Targeted at developer tools and IDE integrations. Mistral AI Non-Production License.
 
 **Mistral Embed** (2024) — Embeddings model for semantic search and RAG pipelines.
 
