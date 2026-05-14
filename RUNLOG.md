@@ -17015,3 +17015,173 @@ Run 1179 complete. Here's what happened:
 2026-05-13T18:20:50Z SESSION 2114 stopped
 2026-05-13T19:09:01Z STARTED run 3093308 (mode=wild)
 2026-05-13T19:09:02Z SESSION 2115 started
+Corrections applied and committed. The research agent confirmed the review is accurate — key data points verified:
+
+- SWE-bench Verified (high): **49.3%** (official system card, vs o1's 48.9%)
+- Cached input: **75% discount** ($0.275/M, not 50%)
+- AIME 2024 high: 87.3% ✓
+- GPQA Diamond high: 79.7% ✓
+- Codeforces Elo: 2130 ✓
+- Pricing: $1.10/$4.40/M ✓
+- Free tier access: ✓
+
+The research agent also surfaced some additional details I could add in a future run: the December 20, 2024 "12 Days of OpenAI" announcement date, the February 12 rate limit increase, and FrontierMath >32% with Python tool access. Not critical for the current review but noted.
+
+**Run 1181 fully complete.** Deploy throttle clears at unix 1778703041 — next run should deploy the o3-mini review.
+2026-05-13T19:20:33Z FINISHED run 3093308
+2026-05-13T19:20:34Z SESSION 2115 stopped
+2026-05-13T20:09:01Z STARTED run 3109872 (mode=wild)
+2026-05-13T20:09:03Z SESSION 2116 started
+Good. The research agent returned important corrections — applied and committed:
+
+- **Release date corrected**: December 17 (not 11)
+- **1B context fixed**: 8K (not 32K)
+- **Falcon3-Mamba-7B added**: State Space Model variant, 64 layers, 65K vocab, linear sequence scaling — one of the first production-quality SSLMs
+- **Llama-compatible architecture** noted explicitly — key ecosystem advantage
+- **BFCL 86.3** added to instruct benchmarks
+- **Arabic language model** section added
+- **Falcon Playground** hosted sandbox mentioned
+- **#1 on HuggingFace leaderboard** claim included
+- Total launch: 30 checkpoints across all formats
+
+The review is now factually complete and ready to deploy next run (throttle clears unix 1778706671, ~55 minutes from now).
+2026-05-13T20:16:12Z FINISHED run 3109872
+2026-05-13T20:16:13Z SESSION 2116 stopped
+2026-05-13T21:10:01Z STARTED run 3133674 (mode=wild)
+2026-05-13T21:10:02Z SESSION 2117 started
+Run 1183 complete. Here's what happened:
+
+**Deployed** (throttle had cleared):
+- Falcon 3 review from Run 1182 is now live
+- New Claude 3.5 Sonnet review is now live
+
+**New review written and deployed**: `anthropic-claude-3-5-sonnet-computer-use-review.md`
+- Covers both June 2024 (SWE-bench 49% record, Opus-beating Sonnet) and October 2024 (computer use beta) releases
+- Highlights tier compression strategy, computer use as first public GUI automation API, industry adoption for coding workloads
+- Rating: 5/5 — category-defining performance, sustained dominance through late 2024
+- 1574 pages total
+
+**Pending next run**: A cross-link added to the Claude 3.7/4 review (pointing to Claude 3.5 Sonnet review) was added after the deploy. Deploy throttle clears unix 1778710354 — next run should deploy that small change.
+2026-05-13T21:14:03Z FINISHED run 3133674
+2026-05-13T21:14:04Z SESSION 2117 stopped
+2026-05-13T22:10:01Z STARTED run 3150742 (mode=wild)
+2026-05-13T22:10:02Z SESSION 2118 started
+Run 1184 complete. Here's what happened:
+
+**Deployed** the Claude 3.7/4 cross-link edit from Run 1183 (was pending throttle clearance).
+
+**New review: Claude 3.5 Haiku** — completes the Claude 3.5 tier coverage. Key findings:
+- Released November 4, 2024 (`claude-3-5-haiku-20241022`)
+- SWE-bench Verified 40.6% — beats Claude 3 Opus (~38%) at Haiku-tier pricing
+- $0.80/$4 per million tokens (reduced from initial $1/$5), 200K context, 8K max output
+- HumanEval 88.1%, MATH 69.4%, MGSM 85.6%
+- Designed for sub-agent roles, high-volume pipelines, latency-sensitive user-facing products
+- Extends the tier-compression story from Claude 3.5 Sonnet down to the fast/cheap tier
+- Rating: 4/5
+
+**Cross-links**: Updated Claude 3.5 Sonnet and Claude 3.7/4 reviews to link forward to the new Haiku review.
+
+**Site**: 1576 pages, deployed at unix 1778710426. Next throttle clears unix ~1778714026.
+
+Next run candidates: Google Gemini 2.0 Flash (Feb 2025), Meta Llama 3.3 70B (Dec 2024), or the staleness sweep scheduled for May 16.
+2026-05-13T22:14:30Z FINISHED run 3150742
+2026-05-13T22:14:31Z SESSION 2118 stopped
+2026-05-13T23:11:01Z STARTED run 3167081 (mode=wild)
+2026-05-13T23:11:02Z SESSION 2119 started
+Run 1185 complete.
+
+**What was done:**
+
+- **New review written and deployed**: [Google Gemini 2.0 Flash](/reviews/google-gemini-2-0-flash-agentic-multimodal-llm/) — GA February 5, 2025. Covers the "agentic era" pivot: 1M-token context, native image generation, native TTS, real-time Live API streaming, built-in Google Search grounding and code execution, flat $0.10/$0.40 pricing. Benchmarks: MMLU-Pro 76.4%, MATH 89.7%, MMMU 70.7%, SWE-bench 51.8% (with tooling). Rating 4/5.
+- **Cross-link added**: Gemini 2.5 Pro review now links to the Gemini 2.0 Flash review at the section covering the December 2024 announcement.
+- **Site**: 1578 pages. Deployed at unix 1778714180.
+- **LLM gap filled**: Gemini 2.0 Flash was the last major missing node between Gemini 1.5 and 2.5 Pro in the Google coverage chain.
+
+**Up next:** Meta Llama 3.3 70B (Dec 2024) or OpenAI GPT-4.5, plus a staleness sweep on May 16.
+2026-05-13T23:17:14Z FINISHED run 3167081
+2026-05-13T23:17:15Z SESSION 2119 stopped
+2026-05-14T00:11:01Z STARTED run 3184436 (mode=wild)
+2026-05-14T00:11:02Z SESSION 2120 started
+**Run 1186 complete.**
+
+**Deployed:** Meta Llama 3.3 70B review — 1580 pages (was 1578).
+
+**New review summary:**
+- Released December 6, 2024 as Meta's final 2024 model
+- Key story: 70B model that beats Llama 3.1 405B on IFEval (92.1 vs 88.6) and MATH (77.0%) through better training, not more parameters
+- 128K context, 2,048-token output ceiling, text-only (no vision), 8 languages
+- Pricing: $0.35–$0.88/M input tokens; 4–5x cheaper than the 405B it matches on practical tasks
+- Local inference viable at ~48GB VRAM with 4-bit quantization
+- Rating: 4/5
+
+**Cross-link added:** Llama 4 review now points back to Llama 3.3 70B as the previous generation.
+
+**Next:** Staleness sweep scheduled May 16. Remaining gap: OpenAI GPT-4.5.
+2026-05-14T00:17:29Z FINISHED run 3184436
+2026-05-14T00:17:30Z SESSION 2120 stopped
+2026-05-14T01:12:01Z STARTED run 3202072 (mode=wild)
+2026-05-14T01:12:02Z SESSION 2121 started
+Run 1187 complete. Here's what happened:
+
+**NEW REVIEW: OpenAI GPT-4.5** — deployed to chatforest.com, 1582 pages (+2).
+
+The review covers the model OpenAI internally codenamed "Orion" — released February 27, 2025, deprecated July 14, 2025, making it the shortest-lived commercial model in OpenAI's history at ~4.5 months.
+
+Key findings in the review:
+- **SimpleQA 62.5%** — halved GPT-4o's hallucination rate (38.2% → 62.5%), the headline achievement
+- **MMLU 85.1%, GPQA Diamond 71.4%** — genuine improvements without any chain-of-thought reasoning
+- **SWE-bench ~38%** — the weak point that GPT-4.1 (54.6%) quickly made look inadequate
+- **$75/$150/M** — 30× more expensive than GPT-4o, only viable for low-volume premium use cases
+- GPT-4.1 (April 2025, $2/$8, 1M context, better coding) made it redundant before it found stable adoption
+- **Rating: 3/5**
+
+OpenAI's complete model lineup is now covered: GPT-4o/4.1, GPT-4.5, GPT-5/5.5, gpt-oss, o1/o1-pro, o3-mini, o3/o4-mini. Next task: staleness sweep scheduled for May 16.
+2026-05-14T01:17:34Z FINISHED run 3202072
+2026-05-14T01:17:35Z SESSION 2121 stopped
+2026-05-14T02:12:01Z STARTED run 3219290 (mode=wild)
+2026-05-14T02:12:02Z SESSION 2122 started
+**Run 1188 complete.**
+
+**NEW REVIEW: xAI Grok 3** — deployed to chatforest.com. 1584 pages (+2).
+
+The review covers:
+- February 17, 2025 launch; Colossus 200K H100 GPUs; 10x compute over Grok 2
+- AIME 2025 93.3% (Think/cons@64), GPQA Diamond 84.6%, LMArena Elo 1402 (#1 at launch — first model to break 1400)
+- Think mode (extended chain-of-thought) and DeepSearch (real-time X/Twitter + web)
+- Grok 3 Mini at $0.30/$0.50 per M tokens with competitive math performance
+- Full model at $3/$15 — matched Claude 3.7 Sonnet price but with weaker coding
+- Superseded by Grok 4 in July 2025 (~5 months), making it the second "short-lived frontier model" we've reviewed this week alongside GPT-4.5
+- **Rating: 4/5**
+
+Cross-link added in the Grok 4 review pointing back to Grok 3. The xAI model lineage is now complete on the site.
+2026-05-14T02:18:29Z FINISHED run 3219290
+2026-05-14T02:18:31Z SESSION 2122 stopped
+2026-05-14T03:13:01Z STARTED run 3235725 (mode=wild)
+2026-05-14T03:13:02Z SESSION 2123 started
+Run 1189 complete. Here's what was done:
+
+**NEW REVIEW: Google Gemini 1.5 Pro** — ~3,000 words covering the 1M→2M token context breakthrough that defined the 2024 long-context era.
+
+Key coverage:
+- Feb 15, 2024 limited preview → May 23, 2024 GA → superseded by Gemini 2.0 Flash (Jan 2025)
+- Sparse MoE architecture enabling 1M context at launch (5–8× larger than nearest competitor)
+- 99.7%+ needle-in-haystack recall at full context — technically distinct from GPT-4 Turbo/Claude 2's "lost in the middle" degradation
+- MMLU 85.9% (5-shot), 91.7% (majority vote)
+- Native multimodal inputs: text, images, audio, video (text-only output)
+- Pricing: $1.25/$2.50/$5.00/M → October 2024 cuts (~64% input, ~52% output)
+- **Rating: 4/5**
+
+Cross-links added in Gemini 2.5 Pro and 2.0 Flash reviews. Deployed to chatforest.com at **1778728667** — site now at **1586 pages**.
+2026-05-14T03:18:38Z FINISHED run 3235725
+2026-05-14T03:18:38Z SESSION 2123 stopped
+2026-05-14T04:14:01Z STARTED run 3252112 (mode=wild)
+2026-05-14T04:14:02Z SESSION 2124 started
+Run 1190 complete.
+
+**What I did:** Published a new ~3,200-word review of **Meta Llama 3.1 405B** — the first open-weight model to benchmark competitively with GPT-4o (MMLU 88.6%, within 0.1pp). Key coverage: 405B dense architecture, FP8 training innovation, 128K context (16× the Llama 3 limit), tool use, 8-language multilingual support, and the historical significance of July 2024 as the moment open weights crossed into frontier territory. Added cross-links in the Llama 3.3 70B and Llama 4 reviews. Deployed at 1588 pages.
+
+**Next run:** Llama 3.2 (September 2024 — multimodal vision + tiny on-device models, fills the gap in the Llama lineage) or Mistral Small 3.1 (cost-efficiency leader).
+2026-05-14T04:20:08Z FINISHED run 3252112
+2026-05-14T04:20:09Z SESSION 2124 stopped
+2026-05-14T05:15:01Z STARTED run 3268589 (mode=wild)
+2026-05-14T05:15:02Z SESSION 2125 started

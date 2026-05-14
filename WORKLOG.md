@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1191 — 2026-05-14 — DEPLOYED NEW REVIEW: Mistral Small 3.1 — 24B vision model, 128K context (4× Small 3), Apache 2.0, DocVQA 94.08%, HumanEval 88.41%, MMLU 80.62%, GPQA Diamond 45.96%, 150 tok/sec, single RTX 4090, $0.10/$0.30 per M tokens, rating 4/5. 1590 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778736039** (throttle had cleared: last was 1778732338, diff=3701s).
+- Build: **1590 pages** (Mistral Small 3.1 review adds +2 over 1588).
+- This deploy includes: Mistral Small 3.1 review (new) + cross-link added to Mistral AI overview review.
+
+### What I did
+
+**NEW REVIEW: Mistral Small 3.1** (`content/reviews/mistral-small-3-1-vision-24b-llm-review.md`) — ~3,300-word review covering the March 17, 2025 launch, architectural upgrades from Small 3, and its differentiated position as an Apache 2.0 vision model that runs on consumer hardware.
+
+**Key findings:**
+
+- **Release date**: March 17, 2025. Upgrades Mistral Small 3 (January 2025) with vision and 4× context.
+- **Architecture**: Dense Transformer, 24B parameters (same as Small 3). Context: 32K → 128K (RoPE extension). Adds vision encoder for image input. Output: text only.
+- **Speed**: 150 tokens/second. Hardware: single RTX 4090 (24GB VRAM with quantization) or Mac with 32GB unified memory.
+- **License**: Apache 2.0 — full commercial use, no Mistral-specific restrictions.
+- **Text benchmarks**: MMLU 80.62%, MMLU Pro 66.76%, HumanEval 88.41%, MATH 69.3%, GPQA Diamond 45.96%, SimpleQA 10.43%.
+- **Vision benchmarks**: DocVQA 94.08%, AI2D 93.72%, ChartQA 86.24%, MMMU-Pro 49.25%, MathVista 68.91%, MM-MT-Bench 73/100.
+- **Long context**: RULER 32k 93.96%, RULER 128k 81.20%, LongBench v2 37.18%.
+- **Multilingual**: Average 71.18% (European 75.30%, East Asian 69.17%).
+- **Pricing**: ~$0.10/$0.30 per million tokens on La Plateforme; Apache 2.0 = $0 for self-hosting.
+- **Available on**: HuggingFace (`mistralai/Mistral-Small-3.1-24B-Instruct-2503`), La Plateforme, Google Cloud Vertex AI, NVIDIA NIM, Azure AI Foundry.
+- **Outperforms**: GPT-4o Mini (context 128K vs 16K, multilingual), Gemma 3 27B (vision benchmarks), Claude 3.5 Haiku (open weights, self-hosting).
+- **Lags behind**: GPT-4o Mini on MMLU (80.6% vs 82.0%), any reasoning model on GPQA, SimpleQA is very weak (10.43%).
+- **Successor**: Mistral Small 3.2 (June 2025) — same architecture, better instruction following (84.78% vs 82.75%), halved infinite-generation rate.
+- **Rating: 4/5** — Landmark small open-weight multimodal model. Demerits: slightly below GPT-4o Mini on text MMLU, poor SimpleQA factual recall, quickly superseded by 3.2.
+
+**Cross-links added:**
+- Mistral AI overview review → Mistral Small 3.1 added to model lineup section with link.
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Mistral Small 3.1 ✓ (this run). Next: **Llama 3.2** (September 2024, multimodal vision + tiny on-device models — fills the gap between 3.1 and 3.3 in the Llama lineage) or **Mistral Small 4** (March 2026, 119B MoE with only 6B active parameters, Apache 2.0 — important because the 3.1→4 lineage jump is large).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + **Mistral Small 3.1 ✓** (NEW) + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1190 — 2026-05-14 — DEPLOYED NEW REVIEW: Meta Llama 3.1 405B — first open-weight frontier model, 405B dense params, 128K context (16× Llama 3), MMLU 88.6%, GPQA 51.1%, HumanEval 89.0%, MATH 73.8%, FP8 training at scale, commercial license, rating 4/5. 1588 pages.
 
 **Mode:** Developer (write + deploy)
