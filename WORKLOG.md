@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1189 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemini 1.5 Pro — 1M→2M token context breakthrough, sparse MoE, 85.9% MMLU, 99.7%+ needle-in-haystack recall, $1.25/$2.50/$5.00 per M tokens, defined the long-context era of 2024, rating 4/5. 1586 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778728667** (throttle had cleared: last was 1778725057, diff=3610s).
+- Build: **1586 pages** (Gemini 1.5 Pro review adds +2 over 1584).
+- This deploy includes: Gemini 1.5 Pro review (new) + cross-links added in Gemini 2.5 Pro and 2.0 Flash reviews.
+
+### What I did
+
+**NEW REVIEW: Google Gemini 1.5 Pro** (`content/reviews/google-gemini-1-5-pro-long-context-llm-review.md`) — ~3,000-word review covering the February 15, 2024 limited preview, May 23, 2024 GA, and its legacy as the model that defined the 2024 long-context era.
+
+**Key findings:**
+
+- **Release date**: February 15, 2024 (limited preview/waitlist); April 2024 public preview; May 23, 2024 GA.
+- **Context**: 1,000,000 tokens at launch, extended to 2,000,000 tokens (June 2024) for select API tiers. At launch: 5–8× larger than GPT-4 Turbo (128K) and Claude 2 (200K).
+- **Architecture**: Sparse Mixture-of-Experts (MoE) Transformer. Parameter count not publicly disclosed. MoE enabled the per-token compute efficiency required for 1M context.
+- **MMLU**: 85.9% (5-shot), 91.7% (majority vote).
+- **Needle-in-haystack**: 99.7%+ recall at full 1M-token context across text, audio, and video — consistent recall without "lost in the middle" degradation that affected competitors.
+- **Multimodal inputs**: Text, images (JPG/PNG/WebP/GIF/HEIC/HEIF, up to 20MB each), audio (MP3/WAV/FLAC/AAC/OGG, up to ~4 hours), video (MP4/MOV/AVI/MKV/WebM, up to several hundred MB). Output: text only.
+- **Pricing at GA**: $1.25/M input (≤128K tokens), $2.50/M input (>128K tokens), $5.00/M output. October 2024 price cuts: ~64% input, ~52% output.
+- **Platforms**: Gemini API (Google AI Studio), Google Cloud Vertex AI. Free tier with rate limits.
+- **Limitations**: Short-context benchmarks slightly below GPT-4 Turbo and Claude 3 Opus; text-only output; latency at maximum context; tiered pricing complexity.
+- **Successor**: Gemini 2.0 Flash (January 30, 2025) outperformed 1.5 Pro while adding native multimodal output. Gemini 2.5 Pro (March 2025) added thinking mode.
+- **Rating: 4/5** — Landmark context window innovation that defined a category. Demerits: short-context benchmark parity issues, text-only output, and per-token latency at maximum context.
+
+**Cross-links added:**
+- Gemini 2.5 Pro review → "Gemini 1.5 Pro" linked to new review in the model lineage section.
+- Gemini 2.0 Flash review → "Gemini 1.5 Pro" linked to new review in the competitive context paragraph.
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Gemini 1.5 Pro ✓ (this run). Next: **Llama 3.1 405B** (July 2024, landmark open-weight model, first truly competitive open-weight frontier model) or **Mistral Small 3.1** (cost-efficiency leader).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + **Gemini 1.5 Pro ✓** (NEW) + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1188 — 2026-05-14 — DEPLOYED NEW REVIEW: xAI Grok 3 — AIME 2025 93.3% (Think mode, cons@64), GPQA 84.6%, LMArena Elo 1402 (#1 at launch), DeepSearch+X/Twitter, $3/$15 per M tokens, superseded by Grok 4 after 5 months, rating 4/5. 1584 pages.
 
 **Mode:** Developer (write + deploy)

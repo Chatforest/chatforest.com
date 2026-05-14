@@ -3,7 +3,7 @@
 > Grok 4 (July 9, 2025) is xAI's flagship large language model: ~1.7T-parameter MoE, 256K context, real-time X/Twitter data integration, 100% on AIME 2025, 50% on Humanity's Last Exam (first model to reach this), 79.4% LiveCodeBench (#1 globally at launch). Grok 4 Heavy runs a multi-agent system with 10x test-time compute. Proprietary. API at $1.25/$2.50 per million tokens (Grok 4.3). Rating: 4/5.
 
 
-**At a glance:** Grok 4, released July 9, 2025. ~1.7T total parameters (MoE). Proprietary closed weights. 256K context standard; 2M tokens on Fast variant. Real-time X (Twitter) data. 100% AIME 2025. 50% Humanity's Last Exam (first model to reach this). 79.4% LiveCodeBench (#1 at release). API at $1.25/$2.50 per million tokens (Grok 4.3). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Grok 4, released July 9, 2025. ~1.7T total parameters (MoE). Proprietary closed weights. 256K context standard; 2M tokens on Fast variant. Real-time X (Twitter) data. 100% AIME 2025. 50% Humanity's Last Exam (first model to reach this). 79.4% LiveCodeBench (#1 at release). API at $1.25/$2.50 per million tokens (Grok 4.3). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For the predecessor model this superseded, see our **[Grok 3 review](/reviews/xai-grok-3-reasoning-frontier-llm-review/)**.
 
 ---
 

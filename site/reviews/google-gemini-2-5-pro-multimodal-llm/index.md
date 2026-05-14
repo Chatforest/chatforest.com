@@ -50,7 +50,7 @@ When Google rebranded Bard's underlying model to "Gemini" in late 2023, it was n
 
 ### Gemini 1.5 Pro: The Context Window Breakthrough (February 2024)
 
-The defining feature of Gemini 1.5 Pro was not a benchmark score. It was a **1-million-token context window** — approximately 750,000 words, or roughly 30 full novels. At the time, GPT-4 had a 128K context window and Claude 2 had a 200K context window. Gemini 1.5 Pro's 1M context was a 5–8× advantage over the nearest competitor, later extended to **2 million tokens** for specific API tiers.
+The defining feature of **[Gemini 1.5 Pro](/reviews/google-gemini-1-5-pro-long-context-llm-review/)** was not a benchmark score. It was a **1-million-token context window** — approximately 750,000 words, or roughly 30 full novels. At the time, GPT-4 had a 128K context window and Claude 2 had a 200K context window. Gemini 1.5 Pro's 1M context was a 5–8× advantage over the nearest competitor, later extended to **2 million tokens** for specific API tiers.
 
 The architectural change that enabled this was a shift to **sparse Mixture of Experts (MoE)** — a design where different "expert" networks activate for different parts of an input, rather than running the full model weights for every token. MoE allows larger total parameter counts with lower per-token compute, which in turn enables the extended attention mechanisms required for very long contexts.
 
