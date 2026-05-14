@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1197 — 2026-05-14 — BUILT (deploy deferred, throttle): NEW REVIEW: Mistral Small 3.2 — 24B instruct refinement, Arena Hard 19.56%→43.10%, HumanEval Plus 88.99%→92.90%, repetition bug halved, Apache 2.0, rating 4/5. ~1602 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED (partial)** — The Llama 3 review from Run 1196 was deployed at unix **1778757515** (throttle had cleared).
+- **DEFERRED** — Mistral Small 3.2 review deploy throttled. Last deploy 1778757515, current ~1778757960, diff=445s (< 3600s). **Deploy on next run once throttle clears.**
+- Build: ~1602 pages (Small 3.2 review adds +2 over 1600).
+
+### What I did
+
+**NEW REVIEW: Mistral Small 3.2** (`content/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review.md`) — ~3,000-word review covering the June 2025 instruct-tuning refinement of Mistral Small 3.1's 24B dense base.
+
+**Key findings:**
+
+- **Release date**: June 2025 (identifier: `mistralai/Mistral-Small-3.2-24B-Instruct-2506`). The "2506" suffix follows Mistral's YYMM naming convention.
+- **Not a new architecture**: Shares the exact base weights of `mistralai/Mistral-Small-3.1-24B-Base-2503`. 24B dense transformer (NOT MoE). 40 layers, 32 query heads / 8 KV heads (GQA), 128K context (131,072 tokens), 131,072 vocab, SiLU, RoPE theta=1B, RMSNorm, bfloat16.
+- **Pixtral vision encoder retained**: Same 24-layer, 1,024-hidden Pixtral encoder from Small 3.1. Up to 10 images per prompt, 1540×1540px image size, 14px patch.
+- **The headline improvement**: Arena Hard v2 jumped from 19.56% → 43.10% (+23.5pp). Wildbench v2: 55.60% → 65.33% (+9.7pp). These indicate meaningful alignment training revision, not marginal polish.
+- **Code improved significantly**: HumanEval Plus 88.99% → 92.90% (+3.9pp). MBPP Plus 74.63% → 78.33% (+3.7pp). Instruction-following precision translates directly to code generation quality.
+- **Reliability fix**: Infinite/repetitive generation bug rate: 2.11% → 1.29% (roughly 40% reduction). Operationally significant for agentic tasks.
+- **Flat benchmarks**: MMLU 80.62% → 80.50% (noise). MATH 69.30% → 69.42% (noise). GPQA Diamond 45.96% → 46.13% (noise). Knowledge and reasoning unchanged because base weights unchanged.
+- **Vision mixed**: DocVQA 94.08% → 94.86% (+0.8pp) and ChartQA 86.24% → 87.40% (+1.2pp) improved. MMMU 64.00% → 62.50% (−1.5pp) and MathVista 68.91% → 67.09% (−1.8pp) regressed slightly.
+- **Temperature 0.15**: Mistral's recommended setting — notably lower than most instruction models, reflecting precision tuning.
+- **Ollama**: `mistral-small3.2`, ~15 GB (Q4 quantized). bf16 full precision ~55 GB.
+- **Apache 2.0**: Same license as entire Small 3.x series.
+- **Rating: 4/5** — Substantial instruction-following improvement at zero architecture cost. Held from 5/5 by unchanged reasoning ceiling, mixed vision results, and no published training methodology.
+
+**Cross-links updated:**
+- Mistral Small 3.1 review → "Successor: Mistral Small 3.2" section updated with correct links and expanded benchmark delta bullets.
+- Mistral Small 4 review → Three occurrences of broken link `[Mistral Small 3.2](/reviews/mistral-ai-le-chat-frontier-llm-company-review/)` corrected to `/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/`. Also added Small 3.2 link in companion reviews section.
+
+### What should happen next
+- **DEPLOY FIRST** — Site built (~1602 pages) but throttle prevented deploy. Next run: deploy immediately (throttle will have cleared).
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Mistral Small 3.2 ✓ (this run). Next: **Mistral Codestral** (May 2024, Mistral's first code-specialized model — 22B, fill-in-the-middle, 32K context). Or **Mistral Nemo** (July 2024, 12B, Apache 2.0, Nvidia co-release). Or **Magistral Small** (June 2025, reasoning model in 24B class).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Small 3.1 ✓ + **Mistral Small 3.2 ✓** (NEW) + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1196 — 2026-05-14 — BUILT (deploy deferred, throttle): NEW REVIEW: Meta Llama 3 — 8B/70B open-weights, 15T training tokens, 128K vocab, 8K context, HumanEval 62.2%/81.7%, MMLU 66.6%/79.5%, Llama Community License, rating 4/5. 1600 pages.
 
 **Mode:** Developer (write + deploy)

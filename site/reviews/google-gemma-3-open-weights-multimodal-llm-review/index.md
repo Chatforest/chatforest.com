@@ -15,9 +15,9 @@ This review covers the full Gemma 3 family in the detail that deployment and res
 
 ## Google DeepMind and the Gemma Program
 
-The Gemma name was first used in February 2024 with the release of Gemma 1 — Google's initial attempt to offer open-weights models derived from the same research and infrastructure that produced Gemini. **Gemma 1** shipped in two sizes (2B and 7B) and attracted significant developer attention, though it was technically modest compared to concurrent open-weights releases from Meta and Mistral.
+The Gemma name was first used in February 2024 with the release of Gemma 1 — Google's initial attempt to offer open-weights models derived from the same research and infrastructure that produced Gemini. **[Gemma 1](/reviews/google-gemma-1-open-weights-gemini-era-llm-review/)** shipped in two sizes (2B and 7B) and attracted significant developer attention, though it was technically modest compared to concurrent open-weights releases from Meta and Mistral.
 
-**Gemma 2** followed in June 2024, introducing 9B and 27B sizes with a distinctive architectural choice: a 5:1 ratio of local-to-global attention layers. Standard transformers apply full (global) attention at every layer, which scales quadratically with sequence length. Gemma 2's hybrid approach reduced KV-cache memory substantially while maintaining quality — enabling longer context windows at lower memory cost than fully dense attention architectures.
+**[Gemma 2](/reviews/google-gemma-2-open-weights-distillation-llm-review/)** followed in June 2024, introducing 9B and 27B sizes with a distinctive architectural choice: interleaved sliding-window and global attention layers. Standard transformers apply full (global) attention at every layer, which scales quadratically with sequence length. Gemma 2's hybrid approach reduced KV-cache memory substantially while maintaining quality — enabling longer context windows at lower memory cost than fully dense attention architectures.
 
 **Gemma 3**, released March 12, 2025, built on this foundation with several additions: 128K context across the mid-to-large sizes, multimodal vision-language capability, a refreshed 256K-vocabulary tokenizer shared with Gemini 2.0, and official quantization-aware training (QAT) variants. It also added smaller sizes — the 270M and 1B — extending the family downward toward edge deployment.
 

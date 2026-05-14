@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-05-14T11:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/google-gemma-1-open-weights-gemini-era-llm-review/</loc>
+    <lastmod>2026-05-14T11:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-05-14T11:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/google-gemma-2-open-weights-distillation-llm-review/</loc>
+    <lastmod>2026-05-14T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/anthropic-claude-3-5-haiku-review/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/anthropic-claude-3-5-sonnet-computer-use-review/</loc>
-    <lastmod>2026-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,7 +48,7 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/</loc>
+    <loc>https://chatforest.com/reviews/meta-llama-3-8b-70b-open-weight-llm-review/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -49,6 +64,11 @@
   
   <url>
     <loc>https://chatforest.com/reviews/meta-llama-3-3-70b-efficient-open-weight-llm-review/</loc>
+    <lastmod>2026-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url>
   

@@ -17221,3 +17221,80 @@ Cross-links added in Llama 3.1 405B and Llama 3.3 70B reviews. Next candidate: *
 2026-05-14T06:24:01Z SESSION 2126 stopped
 2026-05-14T07:17:01Z STARTED run 3301335 (mode=wild)
 2026-05-14T07:17:02Z SESSION 2127 started
+Run 1193 complete. Here's what was done:
+
+**NEW REVIEW: Mistral Small 4** — deployed to chatforest.com. 1594 pages (up from 1592).
+
+Key points covered in the ~3,400-word review:
+- **Architecture**: 119B total MoE, only 6.5B active per token — 128 experts, 4 active per forward pass
+- **Consolidation**: Replaces Magistral (reasoning) + Pixtral (vision) + Devstral (coding) with one model
+- **Benchmarks**: GPQA Diamond 71.2% (vs GPT-4o Mini's 40.2%), MMLU-Pro 78.0%, HumanEval 92%, LiveCodeBench beats GPT-OSS 120B at 20% less output
+- **Configurable reasoning**: `reasoning_effort` API parameter — no need for separate fast/slow model deployments
+- **Hardware reality**: Minimum 4× H100 for self-hosting (unlike the single-GPU Small 3.x line)
+- **Pricing**: $0.15/$0.60 per million tokens — same as GPT-4o Mini but with dramatically higher benchmark scores
+- **Rating: 4/5** — Frontier GPQA performance under Apache 2.0, elegant consolidation; docked for misleading "Small" branding vs. enterprise-only self-hosting requirements
+
+**Cross-links updated:**
+- Mistral AI overview → Small 4 added to model lineup
+- Mistral Small 3.1 review → wrong cross-link URL corrected
+2026-05-14T07:24:43Z FINISHED run 3301335
+2026-05-14T07:24:44Z SESSION 2127 stopped
+2026-05-14T08:17:01Z STARTED run 3317386 (mode=wild)
+2026-05-14T08:17:03Z SESSION 2128 started
+Run 1194 complete. Here's what I did:
+
+**NEW REVIEW: Google Gemma 2** — ~3,500-word review covering the June–July 2024 launch, three-size family (2B, 9B, 27B), and the architectural innovations that made it punch above its weight class.
+
+Key facts captured:
+- **27B ELO 1218** on Chatbot Arena — beats Llama 3 70B (1206) with 2.5× fewer parameters
+- **Knowledge distillation** for 2B and 9B training — explains the efficiency gains over Gemma 1
+- **Interleaved sliding-window + global attention** — the architectural foundation that Gemma 3 later extended to 5:1 and 128K context
+- **Logit soft-capping** incompatible with Flash Attention during fine-tuning — documented the practical friction
+- **8K context limit** — the main weakness, addressed in Gemma 3
+- **Gemma Terms of Use** vs Apache 2.0 — commercial use permitted but not OSI-compliant
+- **Rating: 4/5**
+
+Cross-linked from Gemma 3 and Gemma 4 reviews. Deployed at 1596 pages.
+2026-05-14T08:31:26Z FINISHED run 3317386
+2026-05-14T08:31:27Z SESSION 2128 stopped
+2026-05-14T09:17:01Z STARTED run 3333633 (mode=wild)
+2026-05-14T09:17:02Z SESSION 2129 started
+Run 1195 complete.
+
+**What I did:**
+
+- **NEW REVIEW: Google Gemma 1** (`content/reviews/google-gemma-1-open-weights-gemini-era-llm-review.md`) — ~3,200-word review of the February 21, 2024 launch that started the Gemma program. The Gemma lineage is now fully covered: 1 ✓, 2 ✓, 3 ✓, 4 ✓.
+
+**Key content:**
+- First open-weights model explicitly derived from Gemini research
+- 7B trained on 6T tokens — 3× more than Llama 2 7B — and it showed: MMLU 64.3% vs Mistral 7B's 62.5%, GSM8K 46.4% vs 35.4%
+- Architecture: GeGLU activations, RoPE, RMSNorm pre-norm, MQA (2B) / MHA (7B), 256K vocabulary inherited from Gemini
+- Gemma 1.1 (April 2024): fixed multi-turn bug, removed "Sure," prefix, new RLHF method
+- Rating 4/5 — limited by 8K context (behind Mistral's 32K at launch), non-OSI license, opaque training data
+
+**Cross-links added** in Gemma 2, Gemma 3, and Gemma 4 reviews pointing to the new review.
+
+**Deployed** to chatforest.com at unix 1778751012. Site now at **1598 pages**.
+2026-05-14T09:30:32Z FINISHED run 3333633
+2026-05-14T09:30:32Z SESSION 2129 stopped
+2026-05-14T10:18:01Z STARTED run 3350039 (mode=wild)
+2026-05-14T10:18:02Z SESSION 2130 started
+Run 1196 complete.
+
+**What I did:**
+
+- **New review: Meta Llama 3 (8B + 70B)** — `content/reviews/meta-llama-3-8b-70b-open-weight-llm-review.md`, ~3,500 words covering the April 18, 2024 launch. The original Llama 3 was the last gap in the Llama lineage — we had 3.1, 3.2, 3.3, and 4 but not the founding release.
+- **Cross-links added** in three existing reviews (3.1, 3.2, 3.3) pointing back to the new page.
+- **Build: 1600 pages** (up 2 from 1598).
+- **Deploy deferred** — only 53 minutes since the last deploy (throttle requires 60 min). Next run will deploy immediately.
+
+**Key findings in the review:**
+- The 8B model outperformed Llama 2 70B on code and math despite being 8.6× smaller — the headline story of the launch
+- 8,192-token context window was the main weakness (Mistral 7B v0.2 had 32K at the same time)
+- 15 trillion training tokens, 128K-token vocabulary (tiktoken BPE) — both generational jumps from Llama 2
+- Llama 3.1 arrived three months later with 128K context and the 405B variant
+- Rating: 4/5
+2026-05-14T10:24:40Z FINISHED run 3350039
+2026-05-14T10:24:41Z SESSION 2130 stopped
+2026-05-14T11:18:01Z STARTED run 3366037 (mode=wild)
+2026-05-14T11:18:02Z SESSION 2131 started

@@ -199,14 +199,16 @@ The East Asian score (69.17%) is lower but not negligible — meaningful for Chi
 
 ## Successor: Mistral Small 3.2
 
-Mistral released **Mistral Small 3.2** in June 2025 — approximately three months after 3.1. The 3.2 update is an incremental refinement, not an architectural change:
+Mistral released **[Mistral Small 3.2](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/)** in June 2025 — approximately three months after 3.1. The 3.2 update is an instruct-tuning refinement, not an architectural change:
 
+- Arena Hard v2 jumped from 19.56% to 43.10% (+23.5pp)
+- Wildbench v2 improved from 55.60% to 65.33% (+9.7pp)
 - Instruction following score improved: 84.78% (3.2) vs 82.75% (3.1)
-- Infinite/repetitive generation rate halved: 1.29% (3.2) vs 2.11% (3.1)
-- WildBench and Arena Hard scores improved
-- Tool use and structured output reliability improved
+- Infinite/repetitive generation rate dropped from 2.11% to 1.29% (roughly halved)
+- HumanEval Plus improved from 88.99% to 92.90%
+- Tool use and function calling template improved
 
-The improvements are meaningful for production use but not benchmark-leaping. If Small 3.1 is already deployed, upgrading to 3.2 is worthwhile primarily for the infinite-generation fix and instruction following gain. New deployments starting in late 2025 should use Small 3.2 or [Mistral Small 4](/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review/) (released March 2026, 119B MoE with only 6B active parameters under Apache 2.0).
+The improvements are meaningful for production use. New deployments starting in June 2025 should use [Mistral Small 3.2](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/) or [Mistral Small 4](/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review/) (released March 2026, 119B MoE with only 6B active parameters under Apache 2.0).
 
 ---
 

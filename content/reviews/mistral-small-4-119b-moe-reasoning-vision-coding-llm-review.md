@@ -23,7 +23,7 @@ That distinction matters immediately when assessing what Mistral has released he
 
 The name is confusing. The model is not.
 
-Companion to our **[Mistral AI review](/reviews/mistral-ai-le-chat-frontier-llm-company-review/)**, which covers the broader company model lineup, business model, and Le Chat platform. Also see our **[Mistral Small 3.1 review](/reviews/mistral-small-3-1-vision-24b-llm-review/)** for the 24B predecessor this model supersedes.
+Companion to our **[Mistral AI review](/reviews/mistral-ai-le-chat-frontier-llm-company-review/)**, which covers the broader company model lineup, business model, and Le Chat platform. Also see our **[Mistral Small 3.1 review](/reviews/mistral-small-3-1-vision-24b-llm-review/)** and **[Mistral Small 3.2 review](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/)** for the 24B predecessors this model supersedes.
 
 ---
 
@@ -41,7 +41,7 @@ Each served a different use case. Each had a different model ID on HuggingFace. 
 
 Mistral Small 4 is the consolidation: all three capability sets in a single model, behind a single API endpoint, under a single Apache 2.0 license. The consolidated approach is not unique to Mistral in 2026 — the direction of the industry since 2024 has been toward generalist architectures that degrade gracefully across task types rather than specialist models that excel narrowly. But the execution here is technically notable: Mistral achieved it in a MoE architecture that keeps active-parameter compute at 6.5B per token.
 
-The release arrived on March 16, 2026 — exactly one year after [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) launched, and roughly nine months after [Mistral Small 3.2](/reviews/mistral-ai-le-chat-frontier-llm-company-review/) refined the 3.1 base with better instruction following. The 3.x series remained 24B dense throughout. Small 4 breaks from that line entirely: different architecture class, different scale, different capability envelope.
+The release arrived on March 16, 2026 — exactly one year after [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) launched, and roughly nine months after [Mistral Small 3.2](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/) refined the 3.1 base with better instruction following. The 3.x series remained 24B dense throughout. Small 4 breaks from that line entirely: different architecture class, different scale, different capability envelope.
 
 ---
 
@@ -166,7 +166,7 @@ The implementation mirrors what Anthropic introduced with [Claude 3.7 Sonnet's](
 | Output | $0.60 per million tokens |
 | Cache read | $0.15 per million tokens |
 
-At $0.15/$0.60, Small 4 is significantly more expensive than [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) ($0.10/$0.30) and [Mistral Small 3.2](/reviews/mistral-ai-le-chat-frontier-llm-company-review/) — which also reflected a 24B dense model's lower operational cost. Small 4's API pricing is closer to mid-tier frontier model territory, reflecting the inference infrastructure required to serve 119B MoE weights at scale.
+At $0.15/$0.60, Small 4 is significantly more expensive than [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) ($0.10/$0.30) and [Mistral Small 3.2](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/) — which also reflected a 24B dense model's lower operational cost. Small 4's API pricing is closer to mid-tier frontier model territory, reflecting the inference infrastructure required to serve 119B MoE weights at scale.
 
 By comparison: GPT-4o Mini at $0.15/$0.60 (same price), but with a significantly lower GPQA Diamond (40.2% vs 71.2%). At identical price points, the benchmark case for Small 4 over GPT-4o Mini is compelling for knowledge-intensive tasks.
 

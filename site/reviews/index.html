@@ -51,6 +51,20 @@
 
     
     <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-14 11:00:00</span></div>
+  <h3><a href="/reviews/google-gemma-1-open-weights-gemini-era-llm-review/">Google Gemma 1 — The First Open-Weights Model Built From Gemini Research</a></h3>
+  <p>Google&#39;s Gemma 1 (February 21, 2024) launched the Gemma open-weights program — two sizes (2B and 7B), each in base and instruction-tuned variants. The 7B was trained on 6 trillion tokens and outperformed Mistral 7B on MMLU (64.3% vs 62.5%), GSM8K (46.4% vs 35.4%), and HumanEval (32.3% vs 26.2%). Architecture: 256K vocabulary inherited from Gemini, GeGLU activations, RoPE embeddings, RMSNorm, 8,192-token context. Gemma 1.1 (April 2024) improved multi-turn conversation and instruction following. License: Gemma Terms of Use (commercial use allowed, not OSI-compliant). Rating: 4/5.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-14 10:00:00</span></div>
+  <h3><a href="/reviews/google-gemma-2-open-weights-distillation-llm-review/">Google Gemma 2 — Distillation, Sliding-Window Attention, and Open Weights Done Right</a></h3>
+  <p>Google&#39;s Gemma 2 (June–July 2024) introduced three open-weights models — 2B, 9B, and 27B — with a hybrid sliding-window attention architecture, grouped-query attention, and logit soft-capping. The 9B and 27B set new open-weights records on Chatbot Arena at launch. The 2B and 9B were trained via knowledge distillation from a larger teacher model rather than next-token prediction alone. Context window: 8,192 tokens across all sizes. License: Gemma Terms of Use (commercial use allowed, not Apache 2.0). VRAM: ~7GB / ~18GB / ~56GB in BF16. Rating: 4/5.</p>
+</div>
+
+    
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-14 00:00:00</span></div>
   <h3><a href="/reviews/xai-grok-3-reasoning-frontier-llm-review/">xAI Grok 3 Review — The Model That Topped the Arena (Before Grok 4 Landed Four Months Later)</a></h3>
   <p>xAI Grok 3 (February 17, 2025) was xAI&#39;s first frontier-competitive model — trained on the 200,000-GPU Colossus supercomputer with 12.8 trillion tokens and 10x the compute of Grok 2. 131,072-token context window. Think mode (extended chain-of-thought) reached 93.3% on AIME 2025 (cons@64) and 84.6% GPQA Diamond. First model to break Elo 1402 on LMArena, debuting at #1. DeepSearch integrated real-time X/Twitter data for cited research. Grok 3 Mini offered reasoning at $0.30/$0.50 per million tokens. API launched April 9, 2025 at $3.00/$15.00 for the full model. EU/UK restricted at launch. Proprietary closed weights. Superseded by Grok 4 in July 2025 (~5 months). Rating: 4/5.</p>
@@ -86,6 +100,13 @@
 
     
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-14 00:00:00</span></div>
+  <h3><a href="/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/">Mistral Small 3.2 Review — 24B Instruction Refinement, 128K Context, Apache 2.0</a></h3>
+  <p>Mistral Small 3.2 (released June 2025) is an instruct-tuning refinement of Mistral Small 3.1 — sharing the same 24B-parameter dense base but applying a substantially improved post-training pipeline. Key gains: Arena Hard v2 jumps from 19.56% to 43.10% (&#43;23.5pp), Wildbench v2 from 55.60% to 65.33% (&#43;9.7pp), HumanEval Plus from 88.99% to 92.90%, MBPP Plus from 74.63% to 78.33%. The repetition/infinite-generation bug rate drops from 2.11% to 1.29% — roughly a 40% reduction. Architecture is unchanged: 40 layers, 32 attention heads, 8 KV heads (GQA), 128K context window, 131,072 vocab, SiLU activations, RoPE (theta=1B), RMSNorm. Multimodal: Pixtral vision encoder retained from 3.1 (up to 10 images per prompt). Benchmarks held flat: MMLU 80.50% (vs 80.62%), GPQA Diamond 46.13% (vs 45.96%), MATH 69.42% (vs 69.30%). Vision benchmarks mixed: ChartQA and DocVQA improve slightly, MMMU and MathVista regress slightly. Apache 2.0 license. VRAM: ~55GB in bf16, ~15GB in Q4 quantization. Ollama: mistral-small3.2 (15 GB). Recommended temperature: 0.15. Inference: vLLM ≥ 0.9.1. HuggingFace: mistralai/Mistral-Small-3.2-24B-Instruct-2506. Superseded by Mistral Small 4 (March 2026), a 119B MoE model with configurable reasoning. Rating: 4/5.</p>
+</div>
+
+    
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-05-14 00:00:00</span></div>
   <h3><a href="/reviews/meta-llama-3-3-70b-efficient-open-weight-llm-review/">Meta Llama 3.3 70B Review — Near-405B Performance at 70B Cost</a></h3>
   <p>Meta Llama 3.3 70B Instruct (December 6, 2024) is a text-only 70B model that outperforms its 405B predecessor on instruction following and mathematics while costing 4–5x less to deploy. It supports 8 languages, runs on a single 48GB GPU with quantization, and carries the Llama 3.3 Community License for commercial use. Meta&#39;s 2024 finale — efficient, well-rounded, and competitive with GPT-4o on most practical tasks.</p>
@@ -103,6 +124,13 @@
   <div class="card-meta"><span>Review</span> <span>2026-05-14 00:00:00</span></div>
   <h3><a href="/reviews/meta-llama-3-1-405b-frontier-open-weight-llm-review/">Meta Llama 3.1 405B Review — The First Open-Weight Frontier Model</a></h3>
   <p>Meta Llama 3.1 405B (July 23, 2024) is the first open-weight model to reach GPT-4-level performance on standard benchmarks. It offers 405 billion dense parameters, a 128K-token context window (16× the Llama 3 limit), built-in tool use, and an 8-language multilingual capability — all under a community license that permits commercial deployment. The tradeoff: full-precision inference requires ~810GB VRAM, making self-hosting accessible only to organizations with serious GPU infrastructure.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-14 00:00:00</span></div>
+  <h3><a href="/reviews/meta-llama-3-8b-70b-open-weight-llm-review/">Meta Llama 3 Review — 8B and 70B Open-Weight Models That Redefined the Tier</a></h3>
+  <p>Meta Llama 3 (April 18, 2024) introduced 8B and 70B open-weight models trained on 15 trillion tokens — more than six times Llama 2&#39;s dataset. With a 128K-token vocabulary, Grouped-Query Attention, and benchmarks that surpassed Mistral 7B and Gemma 7B across the board, it set a new baseline for what open-weight models at the 8B scale could do. The 8,192-token context window was a genuine constraint that Llama 3.1 resolved three months later, but the underlying model quality made Llama 3 the dominant open-weight choice for much of 2024.</p>
 </div>
 
     
