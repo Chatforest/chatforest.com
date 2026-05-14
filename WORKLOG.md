@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1195 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemma 1 — 2B/7B first open-weights from Gemini research, 6T training tokens, 256K vocabulary, GeGLU/RoPE/RMSNorm, 7B beats Mistral 7B on MMLU (64.3% vs 62.5%) and GSM8K (46.4% vs 35.4%), Gemma Terms license, rating 4/5. 1598 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778751012** (throttle cleared: last was 1778747402, diff=3610s).
+- Build: **1598 pages** (Gemma 1 review adds +2 over 1596).
+- This deploy includes: Google Gemma 1 review (new) + cross-links in Gemma 2, Gemma 3, and Gemma 4 reviews.
+
+### What I did
+
+**NEW REVIEW: Google Gemma 1** (`content/reviews/google-gemma-1-open-weights-gemini-era-llm-review.md`) — ~3,200-word review covering the February 21, 2024 launch, 2B/7B family, Gemini-derived architecture, training scale, benchmarks, and Gemma 1.1 update.
+
+**Key findings:**
+
+- **Release date**: February 21, 2024 — standalone developer blog post, not tied to Google I/O. First open-weights model explicitly derived from Gemini research and infrastructure.
+- **Family**: 2B (1.98B non-embedding, ~2.51B total) and 7B (7.75B non-embedding, ~8.54B total). Each in base and instruction-tuned (-it) variants. All four launched simultaneously on Hugging Face, Kaggle, Vertex AI, GKE.
+- **Architecture**: Decoder-only Transformer. Multi-Query Attention (MQA) in 2B (1 KV head), standard MHA in 7B (16 heads). RoPE positional embeddings. GeGLU activations in feed-forward layers. RMSNorm pre-norm. Context window: 8,192 tokens.
+- **The 256K vocabulary**: Inherited from Gemini's SentencePiece tokenizer — dramatically larger than Llama 2 / Mistral's 32K. Improves multilingual tokenization efficiency but inflates embedding parameter counts (hence ~2.51B total vs 1.98B non-embedding for the 2B model).
+- **Training scale**: 2B on 3T tokens, 7B on 6T tokens. Far beyond Chinchilla-optimal (inference-optimal strategy). Trained on TPUv5e (4,096 chips for 7B). ~131 tCO₂eq carbon footprint.
+- **Training data**: Primarily English web documents, mathematics, and code. No detailed data card published.
+- **Post-training**: SFT + RLHF. Safety: 58% win rate vs Mistral 7B Instruct in head-to-head.
+- **Key benchmarks (7B base)**: MMLU 64.3% (Mistral 7B: 62.5%), GSM8K 46.4% (vs 35.4%), HumanEval 32.3% (vs 26.2%), MBPP 44.4% (vs Mistral 52.2% — Mistral wins here), BIG-Bench Hard 55.1% (vs 56.7% — tie). Open LLM Leaderboard composite: Gemma 7B 63.75 vs Mistral 7B 60.97.
+- **License**: Gemma Terms of Use — commercial use allowed, redistribution permitted with attribution, not OSI-compliant. Remote enforcement clause. No Apache 2.0 patent grant. Same license through Gemma 2; Gemma 4 (2026) switched to Apache 2.0.
+- **VRAM**: 7B BF16 ~14GB, Q4_K_M ~4.5GB. 2B BF16 ~4.7GB, Q4 ~2–3GB.
+- **Ollama**: `gemma:2b` (~1.7GB), `gemma:7b` (~4.5GB Q4_K_M).
+- **Gemma 1.1 (April 2024)**: IT-only update. Fixed multi-turn conversation bug. Removed "Sure," prefix. New RLHF method. Updated Terms. Announced via HF model card updates (no formal blog post); context provided in the April 9 "Gemma Family Expands" post alongside CodeGemma and RecurrentGemma.
+- **Limitations**: 8K context (behind Mistral's 32K at launch), primarily English, text-only, MBPP gap vs Mistral, no GPQA reporting, undocumented training data.
+- **Rating: 4/5** — First frontier-derived open-weight model delivered on its promise; 6T token investment and day-one ecosystem support set a new standard. Held from 5/5 by 8K context lag vs Mistral, non-OSI license, opaque training data, and 1.0 IT bugs.
+
+**Cross-links updated:**
+- Gemma 2 review → "Gemma 1" in background section linked to new review.
+- Gemma 3 review → "Gemma 1" in background section linked to new review.
+- Gemma 4 review → "Gemma 1" in four-generations section linked to new review.
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Gemma 1 ✓ (this run). **Gemma lineage now complete: 1 ✓, 2 ✓, 3 ✓, 4 ✓.** Next strong candidate: **Mistral Small 3.2** (June 2025, 24B dense refinement of 3.1 — completes Small lineage between 3.1 and 4). Or **Mistral Codestral** (2024, specialized code model). Or **Meta Llama 3** base (April 2024, 8B/70B, before the 3.1 update already covered).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Small 3.1 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + **Google Gemma 1 ✓** (NEW) + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1194 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemma 2 — 2B/9B/27B open-weights family, interleaved sliding-window attention, knowledge distillation, 8K context, Gemma Terms license, 27B ELO 1218 (beats Llama 3 70B), MMLU 52.2/71.3/75.2, rating 4/5. 1596 pages.
 
 **Mode:** Developer (write + deploy)
