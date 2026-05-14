@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-13
 ---
 
-**At a glance:** Grok 4, released July 9, 2025. ~1.7T total parameters (MoE). Proprietary closed weights. 256K context standard; 2M tokens on Fast variant. Real-time X (Twitter) data. 100% AIME 2025. 50% Humanity's Last Exam (first model to reach this). 79.4% LiveCodeBench (#1 at release). API at $1.25/$2.50 per million tokens (Grok 4.3). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Grok 4, released July 9, 2025. ~1.7T total parameters (MoE). Proprietary closed weights. 256K context standard; 2M tokens on Fast variant. Real-time X (Twitter) data. 100% AIME 2025. 50% Humanity's Last Exam (first model to reach this). 79.4% LiveCodeBench (#1 at release). API at $1.25/$2.50 per million tokens (Grok 4.3). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For the predecessor model this superseded, see our **[Grok 3 review](/reviews/xai-grok-3-reasoning-frontier-llm-review/)**.
 
 ---
 
