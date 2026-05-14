@@ -12,7 +12,7 @@ last_refreshed: 2026-05-12
 
 ---
 
-**At a glance:** Claude 3.7 Sonnet (February 24, 2025) — hybrid extended thinking, SWE-bench Verified 62.3% at launch (then highest), 200K context, $3/$15 per million tokens. Claude 4 Opus 4.7 (April 16, 2026) — 1M context, 128K output tokens, high-resolution image support. Built on Constitutional AI and Anthropic's Responsible Scaling Policy. Part of our **[AI Companies & Models category](/categories/ai-tools/)**. For the predecessors, see our **[Claude 3.5 Sonnet review](/reviews/anthropic-claude-3-5-sonnet-computer-use-review/)** (June + October 2024, computer use, SWE-bench 49%) and **[Claude 3.5 Haiku review](/reviews/anthropic-claude-3-5-haiku-review/)** (November 2024, SWE-bench 40.6%, beats Opus at Haiku pricing).
+**At a glance:** Claude 3.7 Sonnet (February 24, 2025) — hybrid extended thinking, SWE-bench Verified 62.3% at launch (then highest), 200K context, $3/$15 per million tokens. Claude 4 Opus 4.7 (April 16, 2026) — 1M context, 128K output tokens, high-resolution image support. Built on Constitutional AI and Anthropic's Responsible Scaling Policy. Part of our **[AI Companies & Models category](/categories/ai-tools/)**. For the predecessors, see our **[Claude 3.5 Sonnet review](/reviews/anthropic-claude-3-5-sonnet-computer-use-review/)** (June + October 2024, computer use, SWE-bench 49%) and **[Claude 3.5 Haiku review](/reviews/anthropic-claude-3-5-haiku-review/)** (November 2024, SWE-bench 40.6%, beats Opus at Haiku pricing). For the 4.5 generation (Sep–Nov 2025) that first broke 80% on SWE-bench, see our **[Claude 4.5 review](/reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review/)** (Opus 4.5 at 80.9%, Sonnet 4.5 at 77.2%, Haiku 4.5 at 73.3%).
 
 ---
 

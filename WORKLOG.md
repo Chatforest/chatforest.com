@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1202 — 2026-05-15 — DEPLOYED (Magistral Small) + BUILT (Claude 4.5, deploy deferred throttle): NEW REVIEW: Claude 4.5 family — Opus 4.5 80.9% SWE-bench (first >80%), Sonnet 4.5 77.2%, Haiku 4.5 73.3%. Effort parameter, endless chat, multi-agent Opus+Haiku combo (87.0%). ~1612 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1201 (Magistral Small)** — throttle cleared at run start (3,639s elapsed). Deployed immediately.
+- **DEFERRED Run 1202 (Claude 4.5)** — deploy happened 26 seconds after Magistral Small deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1612 pages** (+2 from Claude 4.5 review over 1610).
+
+### What I did
+
+**NEW REVIEW: Claude 4.5 family** (`content/reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review.md`) — ~3,600-word review covering the September–November 2025 Claude 4.5 generation: Sonnet 4.5, Haiku 4.5, and Opus 4.5.
+
+**Key findings:**
+
+- **Claude Sonnet 4.5** (Sep 29, 2025): $3/$15 per M, SWE-bench Verified 77.2%, TAU-bench Airline/Retail #1, hybrid reasoning with interleaved thinking, parallel tool calls, 200K context / 64K output. Best for production agentic applications.
+- **Claude Haiku 4.5** (Oct 15, 2025): $1/$5 per M, SWE-bench 73.3%, **first Haiku with extended thinking**, 64K output (8x increase from Haiku 3.5), computer use support, 90% of Sonnet 4.5 performance. Best for high-throughput pipelines and subagent roles.
+- **Claude Opus 4.5** (Nov 24, 2025): $5/$25 per M, **SWE-bench Verified 80.9% — first model to break 80%**, Terminal-Bench 59.3% (beats GPT-5.1 47.6%), effort parameter (low/medium/high), endless chat (auto-compression at 200K limit), orchestration 85.4%. With Haiku 4.5 subagents: **87.0%** (vs 74.8% running alone).
+- **Generation themes**: agentic computing, cost-performance compression, extended thinking democratized to Haiku tier, 200K context standardized across all tiers.
+- **Weaknesses**: no voice/audio, no open weights, lossy context compression, SWE-bench-vs-practice gap.
+- **Rating: 4.5/5 for all three models.**
+
+**Cross-links updated:**
+- Claude 3.7/4 review → added link to Claude 4.5 review in the at-a-glance intro.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Claude 4.5 review immediately next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Claude 4.5 ✓ (this run). Considered but skipped: Magistral Medium (superseded by Mistral Medium 3.5; very short proprietary-only coverage). Next candidates: **Grok 4.1** (Nov 17, 2025 — not yet covered, LMArena #1 at 1483 Elo, 65% hallucination reduction, $0.20/$0.50 for Fast variant). Or Claude Opus 4.6 (if it's a distinct release not fully covered in the 3.7/4 review). Or other model gaps.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + **Claude 4.5 (Sonnet/Haiku/Opus) ✓** (NEW) + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1201 — 2026-05-15 — DEPLOYED (Large 2) + BUILT (Magistral Small, deploy deferred throttle): NEW REVIEW: Magistral Small — 24B open-weight reasoning model, Apache 2.0, first reasoning model from Mistral. AIME 70.68%, GPQA Diamond 68.18%, LiveCodeBench 55.84%. Multilingual CoT in 25+ languages. Fits RTX 4090 at Q4. ~1610 pages.
 
 **Mode:** Developer (write + deploy)
