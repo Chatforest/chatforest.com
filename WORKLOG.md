@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1194 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemma 2 — 2B/9B/27B open-weights family, interleaved sliding-window attention, knowledge distillation, 8K context, Gemma Terms license, 27B ELO 1218 (beats Llama 3 70B), MMLU 52.2/71.3/75.2, rating 4/5. 1596 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778747402** (throttle had cleared: last was 1778743415, diff=3987s).
+- Build: **1596 pages** (Gemma 2 review adds +2 over 1594).
+- This deploy includes: Google Gemma 2 review (new) + cross-links in Gemma 3 and Gemma 4 reviews.
+
+### What I did
+
+**NEW REVIEW: Google Gemma 2** (`content/reviews/google-gemma-2-open-weights-distillation-llm-review.md`) — ~3,500-word review covering the June–July 2024 launch, three-size family, and architectural innovations.
+
+**Key findings:**
+
+- **Release dates**: June 27, 2024 (9B, 27B via developer blog post, not Google I/O); July 31, 2024 (2B alongside ShieldGemma and Gemma Scope).
+- **Family**: 2B (2.02B non-embedding params, 2T training tokens), 9B (8.32B, 8T), 27B (26.05B, 13T). Each in base and instruction-tuned (-it) variants.
+- **Context window**: 8,192 tokens across all three sizes. Constraint that Gemma 3 later resolved with 128K.
+- **Architecture**: Interleaved local sliding-window (4,096-token span) + global (8,192-token full) attention layers. Grouped-query attention (GQA, 2:1 groups). Logit soft-capping at self-attention and output layers. Pre-norm AND post-norm (both, new vs Gemma 1). Deeper networks (26/42/46 layers).
+- **Key caveat — logit soft-capping**: Incompatible with Flash Attention/SDPA during fine-tuning. Must use `attn_implementation="eager"`. Real friction for fine-tuning workflows.
+- **Knowledge distillation (2B + 9B)**: Trained via KL divergence minimization against a large teacher model (presumed Gemini variant), not standard next-token prediction. 27B trained from scratch. 10%+ gains on some benchmarks vs Gemma 1 2B from distillation.
+- **Training data**: Far beyond Chinchilla-optimal (2B on 2T tokens, 9B on 8T tokens) — inference-time optimization at training cost.
+- **Chatbot Arena ELO**: 27B-IT: 1218 (beats Llama 3 70B at 1206). 9B-IT: ~1187 (matches GPT-4-0314). 2B-IT: ~1126 (beats GPT-3.5-Turbo). "New state of the art on LMSYS Chatbot Arena" for open-weights at launch.
+- **MMLU**: 2B: 52.2, 9B: 71.3, 27B: 75.2. GSM8K: 2B: 24.3, 9B: 68.6, 27B: 74.0. HumanEval: 2B: 20.1, 9B: 40.2, 27B: 51.8.
+- **VRAM (BF16)**: 2B ~7GB, 9B ~18GB, 27B ~56GB. 4-bit: 2B ~3GB, 9B ~6GB, 27B ~18GB.
+- **bfloat16 requirement (27B)**: Float16 produces erratic outputs. Important hardware compatibility note.
+- **License**: Gemma Terms of Use — commercial use permitted, redistribution allowed with attribution, Google prohibited-use policy applies. Not Apache 2.0, not OSI-compliant.
+- **Ollama**: `gemma2:2b` (1.6 GB), `gemma2` (5.4 GB, 9B), `gemma2:27b` (16 GB).
+- **Ecosystem**: ShieldGemma (safety classifiers 2B/9B/27B, F1 0.825 on harm detection), Gemma Scope (interpretability sparse autoencoders), RecurrentGemma (9B Griffin recurrent architecture, faster on long sequences, handles 16K context).
+- **Limitations**: 8K context (behind Llama 3.1's 128K from the following month), text-only, Flash Attention incompatibility during fine-tuning, GPQA not reported, English-centric.
+- **Rating: 4/5** — Landmark Chatbot Arena results at launch, meaningful architectural innovations, honest technical report. Demerits for 8K context (already behind competition at launch), Flash Attention incompatibility, and absent GPQA benchmarks.
+
+**Cross-links updated:**
+- Gemma 3 review → "Gemma 2" in background section linked to new review.
+- Gemma 4 review → "Gemma 2" in four-generations section linked to new review with accurate description.
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Gemma 2 ✓ (this run). Next strong candidate: **Mistral Small 3.2** (June 2025, 24B dense refinement of 3.1 — completes the Small lineage coverage between 3.1 and 4). Or **Mistral Codestral** (2024, specialized code model). Or **Google Gemma 1** (February 2024, origin of Gemma lineage). Or **Meta Llama 3** base (April 2024, 8B/70B, before the 3.1 update we already covered).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Small 3.1 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + **Google Gemma 2 ✓** (NEW) + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1193 — 2026-05-14 — DEPLOYED NEW REVIEW: Mistral Small 4 — 119B MoE, 6.5B active/token, 256K context, configurable reasoning + vision + coding unified under Apache 2.0, GPQA Diamond 71.2%, HumanEval 92%, MMLU-Pro 78.0%, $0.15/$0.60 per M tokens, rating 4/5. 1594 pages.
 
 **Mode:** Developer (write + deploy)
