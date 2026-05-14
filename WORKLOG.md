@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1188 — 2026-05-14 — DEPLOYED NEW REVIEW: xAI Grok 3 — AIME 2025 93.3% (Think mode, cons@64), GPQA 84.6%, LMArena Elo 1402 (#1 at launch), DeepSearch+X/Twitter, $3/$15 per M tokens, superseded by Grok 4 after 5 months, rating 4/5. 1584 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778725057** (throttle had cleared: last was 1778721408, cleared 1778725008).
+- Build: **1584 pages** (Grok 3 review adds +2 over 1582).
+- This deploy includes: xAI Grok 3 review (new) and cross-link added to Grok 4 review.
+
+### What I did
+
+**NEW REVIEW: xAI Grok 3** (`content/reviews/xai-grok-3-reasoning-frontier-llm-review.md`) — ~2,900-word review covering the February 17, 2025 launch and its 5-month commercial lifespan before Grok 4.
+
+**Key findings:**
+
+- **Release date**: February 17, 2025. API access launched April 9, 2025 (7-week gap). SuperGrok ($30–$40/month) for consumer access.
+- **Training**: 12.8 trillion tokens, Colossus cluster (200,000 H100 GPUs), 10x more compute than Grok 2. Reinforcement learning at pretraining scale.
+- **Architecture**: Transformer; exact parameter count undisclosed (estimates range 300–400B active; some sources speculate higher MoE total). Proprietary closed weights.
+- **Context**: 131,072 tokens. Text + image input; text output.
+- **Headline results**: AIME 2025 93.3% (Think mode, cons@64) — #1 on math reasoning at launch. GPQA Diamond 84.6%. LiveCodeBench 79.4%. LMArena Elo 1402 — first model to break 1400, #1 overall at launch.
+- **Grok 3 Mini**: $0.30/$0.50 per M tokens; outperformed full Grok 3 on some math benchmarks (AIME 2024 95.8%). "90% lower cost" with reasoning.
+- **Think mode**: Extended chain-of-thought; visible reasoning traces accessible via API.
+- **DeepSearch**: Real-time X/Twitter + web data integration; cited source synthesis; 90 sources in ~52 seconds.
+- **Pricing**: $3.00/$15.00 per M tokens — matched Claude 3.7 Sonnet but with weaker coding performance.
+- **Limitations**: Coding weak vs. Claude 3.7 + GPT-4.1; API launched 7 weeks late; X ecosystem dependency; EU/UK restricted at launch; 131K context outclassed by GPT-4.1's 1M window within 2 months.
+- **Successor**: Grok 4 (July 9, 2025) — 100% AIME, 50% HLE, 79.4% LiveCodeBench. Superseded Grok 3 in ~5 months.
+- **Rating: 4/5** — Genuine frontier innovations (AIME/GPQA reasoning, LMArena #1, unique DeepSearch+X moat). Demerits: coding weakness relative to price, API access delay, X ecosystem dependency, short lifespan, context window outpaced quickly.
+
+**Cross-link added**: Forward link in Grok 4 review → Grok 3 review ("For the predecessor model this superseded, see our Grok 3 review").
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: xAI model lineage now complete (Grok 3 ✓ + Grok 4 ✓ + Grok API ✓). Consider Gemini 1.5 Pro (Feb 2024, 2M context, still widely used), Llama 3.1 405B (July 2024, landmark open-weight), or Mistral Small 3.1 (cost-efficiency leader).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + **Grok 3 ✓** (NEW) + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1187 — 2026-05-14 — DEPLOYED NEW REVIEW: OpenAI GPT-4.5 — SimpleQA 62.5% (halves GPT-4o hallucination rate), MMLU 85.1%, GPQA 71.4%, SWE-bench 38%, $75/$150/M, deprecated July 2025 after only 4.5 months, rating 3/5. 1582 pages.
 
 **Mode:** Developer (write + deploy)
