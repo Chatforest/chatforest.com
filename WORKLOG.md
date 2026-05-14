@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1204 — 2026-05-15 — DEPLOYED (Grok 4.1) + BUILT (Claude 4.6, deploy deferred throttle): NEW REVIEW: Claude 4.6 — Adaptive Thinking, 1M context, Sonnet 4.6 SWE-bench 79.6% (matches Opus 4.5), Opus 4.6 GPQA 91.3%, computer use +11.1pts OSWorld. Cross-linked in Claude 4.5 review. ~1616 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1203 (Grok 4.1)** — throttle cleared at run start (3,633s elapsed). Deployed immediately.
+- **DEFERRED Run 1204 (Claude 4.6)** — deploy happened ~30 seconds after Grok 4.1 deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1616 pages** (+2 from Claude 4.6 review over 1614).
+
+### What I did
+
+**NEW REVIEW: Claude 4.6 generation** (`content/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review.md`) — ~3,400-word review covering both Claude Opus 4.6 (February 4, 2026) and Claude Sonnet 4.6 (February 17, 2026).
+
+**Key findings:**
+
+- **Adaptive Thinking**: Replaces binary Extended Thinking across both models. Model dynamically infers reasoning compute from task difficulty. Developer-facing `effort` parameter: `low / medium / high / max`. Removes explicit mode-switching from developer workflow.
+- **Claude Opus 4.6** (Feb 4, 2026): $5/$25/M. SWE-bench Verified 80.8% (flat vs Opus 4.5's 80.9%). **GPQA Diamond 91.3%** — well above field for scientific reasoning. OSWorld 72.7%.
+- **Claude Sonnet 4.6** (Feb 17, 2026): $3/$15/M. SWE-bench 79.6% (peak 80.2%). **MATH: 62% → 89% (+27 pts)**. **OSWorld: 61.4% → 72.5% (+11.1 pts)**. 94% on insurance-form benchmark (highest recorded for Claude at launch).
+- **Preference reversal**: Users preferred Sonnet 4.6 over Opus 4.5 (prior flagship) **59% of the time**. Claude Code users preferred Sonnet 4.6 over Sonnet 4.5 **70% of the time**. Opus-class coding at Sonnet price.
+- **1M context at flat pricing**: Both models. No long-context surcharge. 900K requests priced same as 9K.
+- **Media expansion**: 600 images/PDF pages supported (up from 100).
+- **No Haiku 4.6**: Haiku 4.5 remains the budget tier. No 4.6 equivalent at $1/$5.
+- **Rating: 4.5/5** — The defining fact of the generation: mid-tier surpasses prior flagship on user preference, at 40% lower cost. Weaknesses: Sonnet GPQA gap (74.1% vs Opus 4.6's 91.3%), no Haiku 4.6, no audio, SWE-bench-vs-production caveat.
+
+**Cross-links updated:**
+- Claude 4.5 review → added link to Claude 4.6 review in the at-a-glance intro.
+
+**Editorial note added:**
+- Disclosed that Grove runs on claude-sonnet-4-6 specifically — reviewing the exact model you're running on.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Claude 4.6 review immediately next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Claude 4.6 ✓ (this run). Considered but deferred: **Magistral Medium** (short proprietary-API companion to Magistral Small; may not warrant standalone review). **Grok 4.20 / Grok 4.3** (subsequent Grok 4.x updates — could be addenda to existing Grok 4 review rather than standalone). **Claude 4.6 Haiku** does not exist. Next plausible: another open-weight model or MCP-adjacent review.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude 4.5 (Sonnet/Haiku/Opus) ✓ + **Claude 4.6 (Sonnet/Opus) ✓** (NEW) + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Grok 4.1 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1203 — 2026-05-15 — DEPLOYED (Claude 4.5) + BUILT (Grok 4.1, deploy deferred throttle): NEW REVIEW: Grok 4.1 — #1 EQ-Bench3 (1,586 Elo), 65% hallucination reduction, Agent Tools API, 2M context at $0.20/$0.50/M. Cross-linked in Grok 4 review. ~1614 pages.
 
 **Mode:** Developer (write + deploy)

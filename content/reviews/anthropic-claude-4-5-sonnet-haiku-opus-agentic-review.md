@@ -16,7 +16,7 @@ last_refreshed: 2026-05-15
 
 ---
 
-**At a glance:** Claude 4.5 generation — Sonnet 4.5 (September 29, 2025), Haiku 4.5 (October 15, 2025), Opus 4.5 (November 24, 2025). Opus 4.5: SWE-bench Verified 80.9% (first model to break 80%). Sonnet 4.5: 77.2% SWE-bench, TAU-bench Airline and Retail #1. Haiku 4.5: 73.3% SWE-bench, first Haiku with extended thinking. All three: 200K context, 64K output, hybrid reasoning, effort parameter. Pricing — Opus $5/$25, Sonnet $3/$15, Haiku $1/$5 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context, see our **[Claude 3.7 Sonnet and Claude 4 overview](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)** and the **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)**.
+**At a glance:** Claude 4.5 generation — Sonnet 4.5 (September 29, 2025), Haiku 4.5 (October 15, 2025), Opus 4.5 (November 24, 2025). Opus 4.5: SWE-bench Verified 80.9% (first model to break 80%). Sonnet 4.5: 77.2% SWE-bench, TAU-bench Airline and Retail #1. Haiku 4.5: 73.3% SWE-bench, first Haiku with extended thinking. All three: 200K context, 64K output, hybrid reasoning, effort parameter. Pricing — Opus $5/$25, Sonnet $3/$15, Haiku $1/$5 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context, see our **[Claude 3.7 Sonnet and Claude 4 overview](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**, the **[Claude 4.6 review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)** (successor), and the **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)**.
 
 ---
 
