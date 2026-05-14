@@ -3,7 +3,7 @@
 > GPT-4o launched May 2024 as OpenAI's first natively multimodal model — unified text, audio, image, and video in a single network. GPT-4.1 followed April 2025 with 1M-token context, 54.6% SWE-bench coding, and API-first agentic design. We review both models: architecture, benchmarks, pricing, the Studio Ghibli copyright moment, the sycophancy rollback, and where OpenAI's flagship models stand against Claude, Gemini, and DeepSeek.
 
 
-*This review covers the GPT-4o/4.1 generation (May 2024 – April 2025). For the o-series reasoning models released alongside GPT-4.1, see our [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/). For OpenAI's current flagship models, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/).*
+*This review covers the GPT-4o/4.1 generation (May 2024 – April 2025). For the large-scale pretraining experiment that briefly occupied the gap between GPT-4o and GPT-4.1, see our [GPT-4.5 review](/reviews/openai-gpt-4-5-research-preview-llm-review/). For the o-series reasoning models released alongside GPT-4.1, see our [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/). For OpenAI's current flagship models, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/).*
 
 ---
 
