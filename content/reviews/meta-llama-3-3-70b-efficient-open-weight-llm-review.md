@@ -22,7 +22,7 @@ author: "ChatForest"
 
 ## The December 2024 Context
 
-By December 2024, Meta had shipped three Llama 3 generations in a single calendar year. Llama 3.1 arrived in July with 8B, 70B, and 405B variants — the 405B representing the first open-weight model serious enough to benchmark against GPT-4. **[Llama 3.2](/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review/)** arrived in September, adding small multimodal models (11B and 90B vision variants) plus lightweight 1B and 3B models for on-device deployment. Each release had extended what open-weight models could do.
+By December 2024, Meta had shipped four Llama 3 releases in a single calendar year. **[Llama 3](/reviews/meta-llama-3-8b-70b-open-weight-llm-review/)** launched in April with 8B and 70B open-weight models that outperformed every prior open-weight model at their respective scales. Llama 3.1 arrived in July with 8B, 70B, and 405B variants — the 405B representing the first open-weight model serious enough to benchmark against GPT-4. **[Llama 3.2](/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review/)** arrived in September, adding small multimodal models (11B and 90B vision variants) plus lightweight 1B and 3B models for on-device deployment. Each release had extended what open-weight models could do.
 
 Llama 3.3 arrived in December as something different: not a new architecture, not new modalities, but a refinement of the 70B tier specifically. The thesis was straightforward and the numbers backed it up — if you improve training quality, instruction tuning, and RLHF enough, you can get a 70B model to match a 405B on the tasks that actually matter for most production deployments.
 

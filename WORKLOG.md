@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1196 — 2026-05-14 — BUILT (deploy deferred, throttle): NEW REVIEW: Meta Llama 3 — 8B/70B open-weights, 15T training tokens, 128K vocab, 8K context, HumanEval 62.2%/81.7%, MMLU 66.6%/79.5%, Llama Community License, rating 4/5. 1600 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEFERRED** — deploy throttle not cleared. Last deploy was 1778751012, current time ~1778754190, diff=3178s (< 3600s required). **Deploy on next run once throttle clears.**
+- Build: **1600 pages** (Llama 3 review adds +2 over 1598).
+
+### What I did
+
+**NEW REVIEW: Meta Llama 3 (8B + 70B)** (`content/reviews/meta-llama-3-8b-70b-open-weight-llm-review.md`) — ~3,500-word review covering the April 18, 2024 launch, the 8B/70B model family, and the three-month window before Llama 3.1.
+
+**Key findings:**
+
+- **Release date**: April 18, 2024. Four models simultaneously: 8B base, 8B Instruct, 70B base, 70B Instruct. Weights on Hugging Face day one, integrated by Groq for fast inference shortly after.
+- **The 8B vs. Llama 2 70B story**: Llama 3 8B outperformed the previous-generation Llama 2 70B on code (HumanEval 62.2% vs 29.9%), math (GSM8K 79.6% vs 56.8%), and ARC Challenge — while being 8.6× smaller. The training efficiency from 15 trillion tokens delivered a generational leap at the 8B scale.
+- **Architecture**: Decoder-only Transformer. GQA applied to both 8B (32Q/8KV heads) and 70B (64Q/8KV heads) — unlike Llama 2 which only applied GQA to the larger models. RoPE with base frequency 500,000 (primed for context extension). SwiGLU activations. Pre-RMSNorm.
+- **128K vocabulary (tiktoken BPE)**: Four times Llama 2's 32K vocabulary. Same tokenizer family as GPT-4. Dramatically improves code, numbers, and multilingual tokenization efficiency. Explains why embedding parameter counts inflate total params above "8 billion" non-embedding.
+- **Training**: 15 trillion tokens for both 8B and 70B — 6× Llama 2's ~2T. Well beyond Chinchilla-optimal (inference-optimal strategy). Primarily English; ~5% non-English. Data quality pipeline: heuristic filters, deduplication, domain mixing.
+- **Benchmarks (base)**: 8B — MMLU 66.6%, GPQA 34.2%, HumanEval 62.2%, GSM8K 79.6%. 70B — MMLU 79.5%, GPQA 39.5%, HumanEval 81.7%, GSM8K 93.0%. Both outperformed Mistral 7B, Gemma 7B, and Llama 2 70B across most dimensions at launch.
+- **Benchmarks (Instruct)**: 8B — MMLU 68.4%, IFEval 76.8%, MATH 28.8%. 70B — MMLU 82.0%, IFEval 87.5%, MATH 50.4%.
+- **Context window: 8,192 tokens** — the primary constraint. Mistral 7B v0.2 had 32K at the same time. Llama 3.1 extended to 128K (16×) three months later.
+- **VRAM**: 8B BF16 ~16GB, Q4_K_M ~4.5-5GB. 70B BF16 ~140GB, Q4_K_M ~35-40GB. Ollama: `llama3` (8B default), `llama3:70b`.
+- **Post-training**: SFT + rejection sampling + PPO RLHF + DPO. Llama Guard 2 (safety classifier, fine-tuned from 8B) released alongside.
+- **Licensing**: Llama 3 Community License — commercial use permitted, >700M MAU restriction, not Apache 2.0 / not OSI-compliant.
+- **Rating: 4/5** — Genuine generational leap at the 8B scale, but 8K context was a real constraint and the model was effectively superseded by Llama 3.1 within three months.
+
+**Cross-links updated:**
+- Llama 3.1 review → "Llama 3 (April 2024)" in architecture section linked to new review.
+- Llama 3.2 review → "For the original release see Llama 3 (8B/70B)" added to at-a-glance section.
+- Llama 3.3 review → Context paragraph updated: "four Llama 3 releases" (not "three"), with Llama 3 (April) linked as the first.
+
+### What should happen next
+- **DEPLOY FIRST** — Site built (1600 pages) but throttle prevented deploy this run. Next run: deploy immediately (throttle will have cleared).
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Meta Llama 3 ✓ (this run). Next: **Mistral Small 3.2** (June 2025, 24B dense, completes Small lineage between 3.1 ✓ and 4 ✓). Or **Mistral Codestral** (May 2024, code-specialized model). Or **Meta Llama 3 8B/70B Instruct** deeper dive (though covered in this review).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + **Meta Llama 3 (8B/70B) ✓** (NEW) + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Small 3.1 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1195 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemma 1 — 2B/7B first open-weights from Gemini research, 6T training tokens, 256K vocabulary, GeGLU/RoPE/RMSNorm, 7B beats Mistral 7B on MMLU (64.3% vs 62.5%) and GSM8K (46.4% vs 35.4%), Gemma Terms license, rating 4/5. 1598 pages.
 
 **Mode:** Developer (write + deploy)

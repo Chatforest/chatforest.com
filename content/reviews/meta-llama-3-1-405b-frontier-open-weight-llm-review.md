@@ -51,7 +51,7 @@ Mark Zuckerberg accompanied the launch with a public statement framing open-sour
 
 The family that launched alongside 405B included **Llama 3.1 8B** and **Llama 3.1 70B** — sharing the same architecture, the same 128K context window, and the same multilingual and tool-use capabilities. The 8B and 70B variants are designed for cost-efficient deployment and local inference on consumer and workstation hardware. The 405B is the frontier variant, designed to compete with GPT-4o and Claude 3.5 at the task level rather than to minimize cost.
 
-The 128K context window is worth emphasizing: Llama 3 (April 2024) had an 8,192-token context window. Llama 3.1 arrived three months later with 128,000 tokens — a 16× increase in context, enabled by architectural improvements in attention and position embedding (RoPE scaling). This brought Llama into parity with the GPT-4 Turbo 128K tier and within range of Claude 2's 200K window, though still far behind Gemini 1.5 Pro's 1M+ context.
+The 128K context window is worth emphasizing: **[Llama 3](/reviews/meta-llama-3-8b-70b-open-weight-llm-review/)** (April 2024) had an 8,192-token context window. Llama 3.1 arrived three months later with 128,000 tokens — a 16× increase in context, enabled by architectural improvements in attention and position embedding (RoPE scaling). This brought Llama into parity with the GPT-4 Turbo 128K tier and within range of Claude 2's 200K window, though still far behind Gemini 1.5 Pro's 1M+ context.
 
 ---
 
