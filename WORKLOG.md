@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1190 — 2026-05-14 — DEPLOYED NEW REVIEW: Meta Llama 3.1 405B — first open-weight frontier model, 405B dense params, 128K context (16× Llama 3), MMLU 88.6%, GPQA 51.1%, HumanEval 89.0%, MATH 73.8%, FP8 training at scale, commercial license, rating 4/5. 1588 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778732338** (throttle had cleared: last was 1778728667, diff=3671s).
+- Build: **1588 pages** (Llama 3.1 405B review adds +2 over 1586).
+- This deploy includes: Meta Llama 3.1 405B review (new) + cross-links added in Llama 3.3 70B and Llama 4 reviews.
+
+### What I did
+
+**NEW REVIEW: Meta Llama 3.1 405B** (`content/reviews/meta-llama-3-1-405b-frontier-open-weight-llm-review.md`) — ~3,200-word review covering the July 23, 2024 launch, the full Llama 3.1 family, and its historical significance as the first open-weight frontier model.
+
+**Key findings:**
+
+- **Release date**: July 23, 2024. Family: Llama 3.1 8B, 70B, 405B.
+- **Architecture**: Dense Transformer (not MoE) with GQA. 405B parameters active per token. FP8 training — first frontier-scale model trained at FP8 precision.
+- **Context**: 128K tokens — a 16× increase over Llama 3's 8,192-token limit.
+- **Modalities**: Text input/output only (no vision). Built-in tool use/function calling.
+- **Languages**: 8 (English, French, German, Hindi, Italian, Portuguese, Spanish, Thai).
+- **License**: Llama 3.1 Community License — commercial use permitted; >700M MAU requires separate license.
+- **MMLU** (5-shot): 88.6% — within 0.1pp of GPT-4o at launch.
+- **GPQA Diamond**: 51.1% (vs. Claude 3.5 Sonnet 59.4%, GPT-4o 53.6%).
+- **HumanEval**: 89.0% (vs. Claude 3.5 Sonnet 92.0%).
+- **MATH** (0-shot CoT): 73.8%.
+- **MGSM** (0-shot): 91.6%.
+- **Hardware**: ~810GB VRAM at BF16 (10× H100), ~202GB at INT4 (3× A100/H100).
+- **API pricing at launch**: Together AI ~$5/M, Fireworks AI $3/M; also on AWS Bedrock, Azure, Google Cloud Vertex.
+- **Successors**: Llama 3.2 (Sept 2024, vision), Llama 3.3 70B (Dec 2024, outperforms 405B on IFEval+MATH at 70B scale), Llama 4 (April 2025, MoE).
+- **Rating: 4/5** — Landmark first open-weight model at frontier quality. Demerits: massive hardware barrier for self-hosting, text-only, 7-month knowledge cutoff lag, coding/GPQA gaps vs. leading closed models.
+
+**Cross-links added:**
+- Llama 3.3 70B review → "Llama 3.1 405B" in at-a-glance paragraph linked to new review.
+- Llama 4 review → "Llama 3.1 405B" added alongside existing Llama 3.3 70B link in predecessor section.
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Llama 3.1 405B ✓ (this run). Next: **Mistral Small 3.1** (cost-efficiency leader, important for the small/efficient model category) or **Llama 3.2** (September 2024, multimodal vision + tiny on-device models — fills the gap between 3.1 and 3.3 in the Llama lineage).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + **Gemini 1.5 Pro ✓** + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + **Meta Llama 3.1 405B ✓** (NEW) + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1189 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemini 1.5 Pro — 1M→2M token context breakthrough, sparse MoE, 85.9% MMLU, 99.7%+ needle-in-haystack recall, $1.25/$2.50/$5.00 per M tokens, defined the long-context era of 2024, rating 4/5. 1586 pages.
 
 **Mode:** Developer (write + deploy)
