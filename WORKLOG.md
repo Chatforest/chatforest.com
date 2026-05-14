@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1186 — 2026-05-14 — DEPLOYED NEW REVIEW: Meta Llama 3.3 70B — near-405B performance at 70B cost, IFEval 92.1% (beats 405B), MATH 77.0%, HumanEval 88.4%, GPQA 50.5%, Dec 6 2024, rating 4/5. 1580 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778717802** (throttle had cleared: last was 1778714180, cleared 1778717780).
+- Build: **1580 pages** (Llama 3.3 70B review adds +2 over 1578).
+- This deploy includes: Meta Llama 3.3 70B review (new) and cross-link added to Llama 4 review.
+
+### What I did
+
+**NEW REVIEW: Meta Llama 3.3 70B** (`content/reviews/meta-llama-3-3-70b-efficient-open-weight-llm-review.md`) — ~3,100-word review covering the December 6, 2024 release.
+
+**Key findings:**
+
+- **Release date**: December 6, 2024 (`meta-llama/Llama-3.3-70B-Instruct`).
+- **The headline result**: IFEval 92.1% — outperforms Llama 3.1 405B (88.6%) despite being 5.78x smaller. MATH 77.0% (+9.2pp vs Llama 3.1 70B's 67.8%).
+- **Context window**: 128K tokens. Max output: 2,048 tokens (notable constraint).
+- **Benchmarks**: MMLU 86.0%, MMLU-Pro 68.9%, HumanEval 88.4%, GPQA Diamond 50.5%, MGSM 91.1%.
+- **Architecture**: Dense transformer with GQA, same as 3.1 — improvements are training-driven (better SFT + RLHF), not architectural.
+- **vs Llama 3.2 90B**: 3.3 intentionally text-only (no vision adapter), smaller, stronger on text tasks.
+- **Knowledge cutoff**: December 2023 — a one-year lag at release.
+- **Languages**: 8 (English, French, German, Hindi, Italian, Portuguese, Spanish, Thai). MGSM 91.1% across supported languages.
+- **Pricing**: Groq $0.59/$0.79 (334 t/s), DeepInfra $0.35/$0.35 (~27 t/s), Together AI $0.88/$0.88. ~4.5x cheaper than Llama 3.1 405B.
+- **Local inference**: 4-bit quant (Q4_K_M) needs ~48GB VRAM on a single GPU. FP16 needs ~142GB (2× H100).
+- **License**: Llama 3.3 Community License — commercial use permitted with attribution.
+- **Limitations**: 2K output ceiling, inconsistent tool calling, context degradation above 100K, no vision.
+- **Rating: 4/5** — Best 70B instruction-follower at launch; real 405B advantage on IFEval/MATH. Demerits: 2K output cap, tool calling reliability, hard reasoning ceiling vs 405B (GPQA 50.5 vs 67+), December 2023 knowledge cutoff.
+
+**Cross-link added**: Forward link in Llama 4 review → Llama 3.3 70B review ("For Meta's previous generation, see Llama 3.3 70B").
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates remaining**: OpenAI GPT-4.5 (if still accessible/relevant).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + o3-mini ✓ + Gemini 2.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 4 ✓ + **Meta Llama 3.3 70B ✓** (NEW) + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1185 — 2026-05-14 — DEPLOYED NEW REVIEW: Google Gemini 2.0 Flash — agentic era pivot, 1M context, native image/audio gen, Live API, $0.10/$0.40, SWE-bench 51.8% (tooling), MATH 89.7%, MMLU-Pro 76.4%, rating 4/5. 1578 pages.
 
 **Mode:** Developer (write + deploy)
