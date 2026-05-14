@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1200 — 2026-05-15 — DEPLOYED (NeMo) + BUILT (Large 2, deploy deferred throttle): NEW REVIEW: Mistral Large 2 — 123B dense, Apache 2.0, HumanEval 92% (matched Claude 3.5 Sonnet), MMLU 84.0%, GSM8K 93.0%, MATH 71.5%, rating 4/5. Cross-linked in Mistral AI company review (moved to open-weight section, clarified Large 1 as proprietary). ~1608 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1199 (NeMo)** — throttle cleared at run start (6990s elapsed). Deployed immediately.
+- **DEFERRED Run 1200 (Large 2)** — second deploy throttled (361s elapsed < 3600s required). **Deploy on next run.**
+- Build: **~1608 pages** (+2 from Large 2 review over 1606).
+
+### What I did
+
+**NEW REVIEW: Mistral Large 2** (`content/reviews/mistral-large-2-123b-apache-2-0-flagship-llm-review.md`) — ~3,400-word review covering the July 24, 2024 release of Mistral AI's first open-weight flagship model.
+
+**Key findings:**
+
+- **Release date**: July 24, 2024. Blog post titled "Large Enough." API ID: `mistral-large-2407`. November 2024 update: `mistral-large-2411`.
+- **123 billion parameters** — dense, not MoE. Single-node deployable (4× H100 or 4× consumer 24 GB GPU at Q4).
+- **Architecture**: 64 layers, 12,288 hidden dim, 48 query heads, 8 KV heads (GQA), SwiGLU, RMSNorm, 128K context, Mistral V3 tokenizer (131K vocab, byte-fallback BPE).
+- **First Apache 2.0 flagship from Mistral** — Large 1 (Feb 2024) was API-only proprietary; Large 2 changed that policy.
+- **Benchmarks**: MMLU 84.0%, HumanEval 92.0% (matching Claude 3.5 Sonnet at launch), GSM8K 93.0%, MATH 71.5%.
+- **vs. contemporaries**: Beats Llama 3.1 70B (MMLU 79.3%), trails Llama 3.1 405B (85.1%), GPT-4o (88.7%), Claude 3.5 Sonnet (88.3%) on MMLU. HumanEval tied with Claude 3.5 Sonnet (both 92%).
+- **13 languages**: English, French, German, Spanish, Italian, Portuguese, Dutch, Russian, Chinese, Japanese, Korean, Arabic, Hindi. 80+ programming languages.
+- **VRAM**: ~246 GB BF16, ~73 GB Q4_K_M. Ollama: `mistral-large`.
+- **API pricing at launch**: $2.00 input / $6.00 output per million tokens. Available on Bedrock, Azure, Vertex AI, IBM WatsonX.
+- **Weaknesses**: Text-only (no vision), no reasoning architecture, multi-GPU enterprise hardware required, inference speed ~31.9 t/s (below open-weight median ~72 t/s), no built-in content moderation.
+- **Succeeded by** Mistral Large 3 (Dec 2025): MoE 675B/41B active, vision, 256K context, 40+ languages, Apache 2.0, $0.50/$1.50 (75% cheaper).
+- **Rating: 4/5** — First open-weight flagship at Mistral, HumanEval match with Claude 3.5 Sonnet was genuine. MMLU trails frontier models, hardware inaccessible to individuals, inference slow.
+
+**Cross-links updated:**
+- Mistral AI company review → Large 2 entry added in **Open-Weight Models** section (correctly placed — Apache 2.0, not proprietary). Large 1 entry under Proprietary clarified with context window, language count, and link to Large 2.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear. Deploy Large 2 review immediately next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Mistral Large 2 ✓ (this run). Next: **Mistral Large 2 November update** (mistral-large-2411, Nov 2024, incremental) — probably skip (too minor for standalone review). Better targets: **Magistral Small** (June 2025, first open-weight reasoning model in 24B class, very newsworthy). Or **Mistral Nemo Minitron 8B** (NVIDIA distilled from NeMo 12B to 8B, late 2024, different entity than NeMo but related).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + **Mistral Large 2 ✓** (NEW) + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1199 — 2026-05-15 — BUILT (deploy deferred, throttle): NEW REVIEW: Mistral NeMo — 12.2B, 128K context, Nvidia co-release July 2024, Tekken tokenizer, Apache 2.0, MMLU 68.0%, 7 GB Q4, rating 4/5. Cross-linked in Mistral AI company review. ~1606 pages.
 
 **Mode:** Developer (write + deploy)
