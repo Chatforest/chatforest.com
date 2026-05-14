@@ -553,30 +553,30 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-15 00:00:00</span></div>
+  <h3><a href="/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review/">Mistral Codestral Review — 22B Code Model, Fill-in-the-Middle, 32K Context</a></h3>
+  <p>Mistral Codestral (released May 29, 2024) is Mistral AI&#39;s first code-specialized model — a 22.2-billion-parameter dense Transformer with fill-in-the-middle (FIM) training baked in at pretraining. Context window: 32,768 tokens (32K). Covers 80&#43; programming languages including Python, Java, C/C&#43;&#43;, JavaScript, TypeScript, Bash, Swift, and Fortran. Benchmarks at launch: HumanEval pass@1 81.1% (beats Code Llama 70B at 67% and DeepSeek Coder 33B at ~79%), MBPP pass@1 78.2%, RepoBench exact match 34.0% (best at launch, attributed to 32K context window), CruxEval-O 51.3%. FIM uses dedicated sentinel tokens — supply prefix and suffix, model generates the middle, then emits EOT. Dedicated API endpoint: codestral.mistral.ai/v1/fim/completions. Hugging Face: mistralai/Codestral-22B-v0.1. Ollama: codestral. License: Mistral AI Non-Production License (MNPL) — NOT Apache 2.0, NOT OSI open-source; commercial use requires a separate paid license. Notable updates: Codestral Mamba (July 2024, 7B, Mamba2 architecture, Apache 2.0), Codestral 25.01 (January 2025, 256K context, faster generation). Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-15 00:00:00</span></div>
+  <h3><a href="/reviews/mistral-large-2-123b-apache-2-0-flagship-llm-review/">Mistral Large 2 Review — 123B Dense, 128K Context, Apache 2.0 Open-Weight Flagship</a></h3>
+  <p>Mistral Large 2, released July 24, 2024, is Mistral AI&#39;s first open-weight flagship model and its first model released under Apache 2.0 at flagship scale. The 123-billion-parameter dense Transformer trades raw benchmark ceiling against Llama 3.1 405B (3.3× more parameters) for single-node deployability: Q4_K_M at 73 GB fits on a 4× 24 GB GPU node without multi-node coordination. Context window is 128K tokens. Architecture: 64 layers, 12,288 hidden dim, 48 query heads, 8 KV heads (GQA), SwiGLU, RMSNorm, Mistral V3 tokenizer (131K vocab). Benchmarks for the instruct variant: MMLU 84.0% (5-shot), HumanEval 92.0% (pass@1), GSM8K 93.0%, MATH 71.5%. HumanEval 92% matched Claude 3.5 Sonnet at release — a notable achievement for an open-weight model. Supports 13 human languages (English, French, German, Spanish, Italian, Portuguese, Dutch, Russian, Chinese, Japanese, Korean, Arabic, Hindi) and 80&#43; programming languages. Native function calling and JSON output. November 2024 variant (mistral-large-2411) added incremental refinements. API pricing: $2.00 input / $6.00 output per million tokens. Ollama: mistral-large. Superseded by Mistral Large 3 (December 2, 2025), which shifts to MoE (675B total / 41B active), adds vision and 40&#43; languages under Apache 2.0 at dramatically lower API pricing ($0.50/$1.50). Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-15 00:00:00</span></div>
+  <h3><a href="/reviews/mistral-nemo-12b-128k-context-llm-review/">Mistral NeMo Review — 12B Model, 128K Context, Nvidia Co-Release, Apache 2.0</a></h3>
+  <p>Mistral NeMo (released July 18, 2024) is a 12.2-billion-parameter dense language model co-developed by Mistral AI and NVIDIA. Context window: 128,000 tokens (128K) — largest at its size class at launch. Architecture: 40 transformer layers, 5120 hidden dim, 32 attention heads with 8 KV heads (GQA), SwiGLU activation, RoPE theta=1M for long-context. New Tekken tokenizer (based on Tiktoken, 131K vocab, 100&#43; languages): ~30% more efficient for source code, Chinese, Italian, French, German, Spanish, and Russian; 2× more efficient for Korean; 3× more efficient for Arabic. Quantization-aware training enables FP8 inference without performance degradation. Benchmarks: MMLU 68.0% (5-shot), HellaSwag 83.5% (0-shot), Winogrande 76.8%, TriviaQA 73.8% (5-shot). VRAM: ~24 GB BF16; ~7 GB Q4 (runs on a single 8 GB GPU). Ollama: mistral-nemo. License: Apache 2.0. Also available as an NVIDIA NIM inference microservice. Identifier: mistralai/Mistral-Nemo-Instruct-2407. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-05-14 11:00:00</span></div>
   <h3><a href="/reviews/google-gemma-1-open-weights-gemini-era-llm-review/">Google Gemma 1 — The First Open-Weights Model Built From Gemini Research</a></h3>
   <p>Google&#39;s Gemma 1 (February 21, 2024) launched the Gemma open-weights program — two sizes (2B and 7B), each in base and instruction-tuned variants. The 7B was trained on 6 trillion tokens and outperformed Mistral 7B on MMLU (64.3% vs 62.5%), GSM8K (46.4% vs 35.4%), and HumanEval (32.3% vs 26.2%). Architecture: 256K vocabulary inherited from Gemini, GeGLU activations, RoPE embeddings, RMSNorm, 8,192-token context. Gemma 1.1 (April 2024) improved multi-turn conversation and instruction following. License: Gemma Terms of Use (commercial use allowed, not OSI-compliant). Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-14 10:00:00</span></div>
-  <h3><a href="/reviews/google-gemma-2-open-weights-distillation-llm-review/">Google Gemma 2 — Distillation, Sliding-Window Attention, and Open Weights Done Right</a></h3>
-  <p>Google&#39;s Gemma 2 (June–July 2024) introduced three open-weights models — 2B, 9B, and 27B — with a hybrid sliding-window attention architecture, grouped-query attention, and logit soft-capping. The 9B and 27B set new open-weights records on Chatbot Arena at launch. The 2B and 9B were trained via knowledge distillation from a larger teacher model rather than next-token prediction alone. Context window: 8,192 tokens across all sizes. License: Gemma Terms of Use (commercial use allowed, not Apache 2.0). VRAM: ~7GB / ~18GB / ~56GB in BF16. Rating: 4/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-14 00:00:00</span></div>
-  <h3><a href="/reviews/anthropic-claude-3-5-haiku-review/">Anthropic Claude 3.5 Haiku Review — Opus-Level Coding at Haiku Prices</a></h3>
-  <p>Claude 3.5 Haiku launched November 4, 2024, completing the Claude 3.5 tier. SWE-bench Verified 40.6% exceeded Claude 3 Opus (38%) and the original Claude 3 Sonnet — at Haiku-tier pricing of $0.80/$4 per million tokens. This review covers the benchmark profile, use case fit, pricing history, and where it stands in the Claude 3.5 family.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-14 00:00:00</span></div>
-  <h3><a href="/reviews/anthropic-claude-3-5-sonnet-computer-use-review/">Anthropic Claude 3.5 Sonnet Review — Computer Use, SWE-bench 49%, and the Model That Redefined the Sonnet Tier</a></h3>
-  <p>Claude 3.5 Sonnet launched June 20, 2024, setting a new SWE-bench record at 49.0% and outperforming Claude 3 Opus at roughly one-fifth the cost. The October 22, 2024 update introduced computer use — a public beta allowing the model to control a computer&#39;s graphical interface. This review covers both versions, the era they defined, and why Claude 3.5 Sonnet became the default model for serious coding work.</p>
 </div>
 
   

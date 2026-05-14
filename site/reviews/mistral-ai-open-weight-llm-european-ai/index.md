@@ -41,6 +41,10 @@ Mistral has released models across two tracks: **open-weight** (freely downloada
 
 **Mixtral 8x7B** (December 2023) — A **sparse Mixture of Experts** model that selects 2 of 8 expert networks per token. Effective active parameter count: ~13B during inference; total parameter count: ~46B. At the time of release, it matched or exceeded GPT-3.5 on most benchmarks while running at lower inference cost. The MoE design became a template: you do not need to activate all parameters to produce good outputs.
 
+**[Mistral NeMo](/reviews/mistral-nemo-12b-128k-context-llm-review/)** (July 2024) — A 12.2B dense model co-developed with NVIDIA, notable for being the first open-weight model at the 12B scale to offer **128K context** under Apache 2.0. Introduced the **Tekken tokenizer** (131K vocab, Tiktoken-based) with 2–3× better compression for Korean and Arabic. MMLU 68.0%, HellaSwag 83.5%. Runs at ~7 GB Q4 VRAM. Also available as an NVIDIA NIM inference microservice with FP8 support. See our **[full Mistral NeMo review](/reviews/mistral-nemo-12b-128k-context-llm-review/)** for architecture, benchmarks, and deployment details.
+
+**[Mistral Large 2](/reviews/mistral-large-2-123b-apache-2-0-flagship-llm-review/)** (July 2024) — The first open-weight **flagship-scale** model from Mistral AI, released under Apache 2.0. 123B dense parameters, 128K context, 13 human languages, 80+ programming languages. HumanEval 92.0% (matching Claude 3.5 Sonnet at release), MMLU 84.0%, GSM8K 93.0%. Designed for single-node enterprise deployment (73 GB at Q4_K_M — four high-end GPUs). Ollama: `mistral-large`. Superseded by Mistral Large 3 (December 2025) in most use cases. See our **[full Mistral Large 2 review](/reviews/mistral-large-2-123b-apache-2-0-flagship-llm-review/)** for architecture, benchmarks, and hardware requirements.
+
 **Mistral Small 3.1** (March 2025) — A 24B dense model that added **multimodal vision** and a 128K context window (4× over the January 2025 Small 3 predecessor) without changing the Apache 2.0 license or consumer hardware requirements. DocVQA 94.08%, HumanEval 88.41%, MMLU 80.62%. Runs on a single RTX 4090. See our **[full Mistral Small 3.1 review](/reviews/mistral-small-3-1-vision-24b-llm-review/)** for benchmarks, vision scores, and deployment details.
 
 **Mistral Small 4** (March 2026) — A 119B Mixture-of-Experts model with only **6.5B active parameters per token**, 256K context window, and Apache 2.0 license. Consolidates the capabilities of three previously separate Mistral products (Magistral reasoning, Pixtral vision, Devstral coding) into a single model with configurable reasoning. GPQA Diamond 71.2%, MMLU-Pro 78.0%, HumanEval 92%. 157.8 tokens/second. $0.15/$0.60 per million tokens. See our **[full Mistral Small 4 review](/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review/)** for architecture, benchmarks, and hardware requirements.
@@ -51,9 +55,9 @@ Mistral has released models across two tracks: **open-weight** (freely downloada
 
 ### Proprietary Models
 
-**Mistral Large** (2024) — The first proprietary flagship, available via La Plateforme API. First to be released on Microsoft Azure as part of the partnership announcement.
+**Mistral Large 1** (February 2024) — The first proprietary flagship, available via La Plateforme API only — no open weights, no downloadable model. 32K context, fluent in 5 languages (English, French, Spanish, German, Italian). First Mistral model released on Microsoft Azure as part of the partnership announcement. Succeeded by Mistral Large 2 (July 2024, Apache 2.0, open-weight).
 
-**Codestral** (2024) — Specialized code generation model with a 32K context window. Targeted at developer tools and IDE integrations.
+**[Codestral](/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review/)** (2024) — Specialized 22B code generation model with native fill-in-the-middle training, 32K context window, 80+ languages. Targeted at developer tools and IDE integrations. Mistral AI Non-Production License.
 
 **Mistral Embed** (2024) — Embeddings model for semantic search and RAG pipelines.
 
