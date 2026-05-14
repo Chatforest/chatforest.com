@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1192 — 2026-05-14 — DEPLOYED NEW REVIEW: Meta Llama 3.2 — first multimodal Llama (11B/90B vision), first on-device Llama (1B/3B edge), 128K context all models, MMMU 60.3%, DocVQA 90.1%, GPQA Diamond 46.7% (90B), EU vision weight restriction (novel in Llama series), rating 4/5. 1592 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778739764** (throttle had cleared: last was 1778736039, diff=3725s).
+- Build: **1592 pages** (Llama 3.2 review adds +2 over 1590).
+- This deploy includes: Meta Llama 3.2 review (new) + cross-links added in Llama 3.1 405B and Llama 3.3 70B reviews.
+
+### What I did
+
+**NEW REVIEW: Meta Llama 3.2** (`content/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review.md`) — ~3,300-word review covering the September 25, 2024 launch at Meta Connect, the four-model family, and the two distinct engineering approaches used.
+
+**Key findings:**
+
+- **Release date**: September 25, 2024, at Meta Connect 2024. First multimodal open-weight Llama.
+- **Family**: 1B and 3B (text-only, edge/mobile) + 11B and 90B (vision + text, multimodal).
+- **Architecture (1B/3B)**: Structured single-shot pruning from Llama 3.1 8B + knowledge distillation using 8B and 70B teachers. First highly capable sub-4B Llama models.
+- **Architecture (11B/90B)**: ViT-H/14 vision encoder (630M params, 40 layers total) connected to frozen Llama 3.1 text backbone via cross-attention adapter inserted after every 4th LLM layer.
+- **Context**: 128K tokens for all four models — unprecedented context at 1B/3B scale at launch.
+- **Single image limit**: Vision models accept only one image per prompt at launch.
+- **Benchmarks (90B Vision)**: MMMU 60.3%, DocVQA 90.1%, VQAv2 78.1%, ChartQA 85.5%, AI2D 92.3%, MMLU 86.0%, GPQA Diamond 46.7%.
+- **Benchmarks (11B Vision)**: MMMU 50.7%, DocVQA 88.4%, VQAv2 75.2%.
+- **Benchmarks (3B text)**: MMLU 63.4%, IFEval 77.4% (rivals Llama 3.1 8B on instruction following).
+- **Hardware**: 1B ~3GB VRAM; 3B ~6-8GB; 11B ~22-24GB FP16 (fits single RTX 4090); 90B ~180GB FP16 (~45-50GB at 4-bit).
+- **On-device**: Day-one optimization for Qualcomm (QNN/Snapdragon NPU), MediaTek, Arm. Runs on iOS and Android.
+- **License**: Llama 3.2 Community License — **EU restriction on 11B/90B vision model weights** (first geographic restriction in Llama history). 1B/3B unrestricted.
+- **API pricing**: 11B Vision from ~$0.05/M (DeepInfra) to $0.37/M (Azure); 90B Vision ~$0.36/M (DeepInfra) to $2.04/M (Azure).
+- **vs GPT-4o Mini**: 90B Vision leads on DocVQA/ChartQA/AI2D; GPT-4o Mini leads on MATH (70.2% vs ~51.9%) and MMMU-Pro (36.5% vs 33.8%).
+- **Knowledge cutoff**: December 2023.
+- **Rating: 4/5** — Landmark dual release: first multimodal open-weight Llama + first on-device Llama family. Demerits: single-image limitation, EU vision weight ban (novel and consequential), significant MATH gap behind GPT-4o Mini, frozen-backbone adapter constraints vs. native multimodal architectures.
+
+**Cross-links added:**
+- Llama 3.1 405B review → successor list updated to include "Llama 3.2 (vision + edge models, September 2024)".
+- Llama 3.3 70B review → "Llama 3.2" in the December 2024 context section linked to new review.
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (2 days). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Llama 3.2 ✓ (this run). Next: **Mistral Small 4** (March 2026, 119B MoE with only 6B active parameters, Apache 2.0 — important because the 3.1→4 lineage jump is large and this model bridges Mistral's small-model series) or **Llama 3.2 Vision** additional detail (already covered — skip). Alternative: **Google Gemma 2** (June 2024, 2B/9B/27B) — fills gap in Gemma lineage between Gemma 1 and Gemma 3.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3.1 405B ✓ + **Meta Llama 3.2 ✓** (NEW) + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral Small 3.1 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1191 — 2026-05-14 — DEPLOYED NEW REVIEW: Mistral Small 3.1 — 24B vision model, 128K context (4× Small 3), Apache 2.0, DocVQA 94.08%, HumanEval 88.41%, MMLU 80.62%, GPQA Diamond 45.96%, 150 tok/sec, single RTX 4090, $0.10/$0.30 per M tokens, rating 4/5. 1590 pages.
 
 **Mode:** Developer (write + deploy)
