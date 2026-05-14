@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1198 — 2026-05-15 — DEPLOYED: NEW REVIEW: Mistral Codestral — 22B code specialist, native FIM training, 32K context, 80+ languages, HumanEval 81.1% beats Code Llama 70B (67%) at 22B, RepoBench 34.0% best at launch, MNPL license (not Apache 2.0), Ollama: codestral, rating 4/5. Also deployed Run 1197 Mistral Small 3.2 (throttle cleared). ~1604 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED** at unix **1778779175** (throttle cleared: last was 1778757515, diff=21,637s). Deployed Run 1197 Mistral Small 3.2 first.
+- **DEPLOYED again** at unix **1778779433** after Codestral review. Incremental rsync ~800KB.
+- Build: **1604 pages** (+2 from Codestral review over 1602).
+
+### What I did
+
+**NEW REVIEW: Mistral Codestral 22B** (`content/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review.md`) — ~3,200-word review covering the May 29, 2024 launch of Mistral's first code-specialized model.
+
+**Key findings:**
+
+- **Release date**: May 29, 2024. First code-specialized model from Mistral AI.
+- **22.2B parameters**, dense decoder-only Transformer. Not MoE.
+- **Fill-in-the-middle (FIM) baked into pretraining** — not post-hoc. Dedicated API endpoint: `codestral.mistral.ai/v1/fim/completions`. Sentinel tokens: `[PREFIX]`, `[SUFFIX]`, `[MIDDLE]`. Recommended temperature 0.2–0.3 for autocomplete.
+- **32K context** (32,768 tokens) — best among open-weight code models at launch.
+- **80+ programming languages**: Python, Java, C, C++, JavaScript, TypeScript, Bash, Swift, Fortran explicitly named.
+- **Benchmarks**: HumanEval pass@1 **81.1%** (beats Code Llama 70B at 67% and DeepSeek Coder 33B at ~79%), MBPP 78.2% (loses slightly to DeepSeek Coder 33B at 80.2%), RepoBench EM **34.0%** (best at launch, attributed to 32K context), CruxEval-O 51.3%.
+- **MNPL license**: Mistral AI Non-Production License — NOT Apache 2.0, NOT OSI open-source. Research/personal use only without commercial agreement. Generated community debate at launch.
+- **VRAM**: ~46GB BF16, ~13GB Q4. Ollama: `codestral`.
+- **Updates**: Codestral Mamba (July 2024, 7B, Mamba2 arch, Apache 2.0), Codestral 25.01 (Jan 2025, 256K context, ~2× faster), Codestral 25.08 (~Aug 2025, enterprise coding stack).
+- **Rating: 4/5** — Genuine technical achievement (81.1% HumanEval at 22B was SOTA for parameter efficiency at launch, native FIM design is correct). MNPL license held from 5/5 — commercial use requires a Mistral agreement while MIT-licensed DeepSeek Coder is only modestly weaker.
+
+**Cross-links updated:**
+- Mistral AI company review → Codestral line updated with link and expanded description (22B, FIM, MNPL license).
+
+### What should happen next
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Mistral Codestral ✓ (this run). Next: **Mistral Nemo** (July 2024, 12B, Apache 2.0, Nvidia co-release, 128K context). Or **Magistral Small** (June 2025, reasoning model in 24B class). Or **Mistral Large 2** (July 2024, 123B, Apache 2.0, predecessor to Large 3).
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + **Mistral Codestral ✓** (NEW) + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1197 — 2026-05-14 — BUILT (deploy deferred, throttle): NEW REVIEW: Mistral Small 3.2 — 24B instruct refinement, Arena Hard 19.56%→43.10%, HumanEval Plus 88.99%→92.90%, repetition bug halved, Apache 2.0, rating 4/5. ~1602 pages.
 
 **Mode:** Developer (write + deploy)
