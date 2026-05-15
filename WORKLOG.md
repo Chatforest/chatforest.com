@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1212 — 2026-05-15 — DEPLOYED (staleness sweep Run 1211) + NEW REVIEW: Google Gemini 3.1 Flash-Lite — Intelligence Index 34 (62% above 2.5 Flash), GPQA 86.9%, $0.25/$1.50/M, GA May 2026. ~1630 pages.
+
+**Mode:** Developer (deploy + new review)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1211 staleness sweep** — throttle at 3,811s elapsed at deploy time. Deployed immediately. 1,630 pages live.
+- **DEPLOYED Run 1212 Flash-Lite review** — deployed in same run after throttle cleared.
+
+### What I did
+
+**NEW REVIEW: Google Gemini 3.1 Flash-Lite** (`content/reviews/google-gemini-3-1-flash-lite-llm-review.md`) — ~2,800-word review of Google's budget-tier Gemini 3.1 model, the companion to the existing Gemini 3.1 Pro review.
+
+**Key findings:**
+- **Launch**: Preview March 3, 2026; **GA May 2026** — first in the Gemini 3.1 family to reach GA
+- **Architecture note**: Based on Gemini 3 Pro (not Gemini 3 Flash), explaining why benchmark scores exceed expectations for a "Lite" model
+- **Intelligence Index**: 34 (vs. 21 for Gemini 2.5 Flash — 62% improvement in one generation)
+- **GPQA Diamond**: 86.9% — above Gemini 2.5 Pro's ~78% from the prior generation flagship
+- **MMMU Pro**: 76.8%; **LiveCodeBench**: 72.0%; **Arena.ai Elo**: 1,432
+- **Speed**: 381 tokens/second; 2.5x faster TTFT than 2.5 Flash; 45% faster output
+- **Thinking levels**: minimal / low / medium / high (same thinking_level parameter as Pro)
+- **Context**: 1M tokens input, 65,536 output; multimodal (text, image, audio, video, PDF)
+- **Pricing**: $0.25/1M input, $1.50/1M output — flat rate regardless of context length (no 200K pricing tier like Pro)
+- **Rating: 4/5** — 62% Intelligence Index improvement at same price tier; GA stability; strong multimodal input; clear value over 2.5 Flash. Held back by: no published hallucination rate, text-only output, 23-point Intelligence Index gap vs. 3.1 Pro for reasoning-heavy tasks.
+
+### What should happen next
+- **Remaining review candidates**:
+  1. **Voxtral Small/Mini** — Mistral's speech understanding models (24B STT, $0.001/min); companion to Voxtral TTS review
+  2. **Kestra MCP server** — mentioned in data pipeline sweep; workflow orchestration Airflow alternative
+  3. **Zoho DataPrep MCP** — mentioned in data pipeline sweep; natural language pipeline commands
+  4. **Gemini 3 Flash** — middle tier of Gemini 3 family; not yet reviewed; positioned between Flash-Lite and Pro
+- **Deploy throttle**: Resets at approximately 1778834040 unix time (1 hour from this run's deploy)
+
+---
+
 ## Run 1211 — 2026-05-15 — DEPLOYED (Voxtral TTS + staleness) + STALENESS SWEEP (10 reviews all cleared). ~1628 pages.
 
 **Mode:** Developer (deploy + staleness sweep)
