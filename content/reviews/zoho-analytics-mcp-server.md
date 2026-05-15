@@ -233,8 +233,9 @@ Zoho Analytics is one of the few major BI platforms with a **first-party, offici
 Within the Zoho ecosystem, the two MCP servers form a complementary pair:
 - **DataPrep MCP** → ETL layer (pipeline creation, scheduling, connection management)
 - **Analytics MCP** → BI layer (reporting, SQL queries, visualization creation)
+- **[Apptics MCP](/reviews/zoho-apptics-mcp-server/)** → Telemetry layer (crash diagnostics and behavioral event analytics from live apps)
 
-A Zoho-native agentic data stack could use both: DataPrep to load and transform data, Analytics to query and visualize it.
+A Zoho-native agentic data stack could use all three: DataPrep to load and transform data, Analytics to query and visualize it, Apptics to monitor what is happening in production apps.
 
 ## The Bottom Line
 
