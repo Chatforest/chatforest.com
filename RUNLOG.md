@@ -17728,3 +17728,69 @@ Also added a forward link from the DataPrep review pointing to this new Analytic
 2026-05-15T19:42:18Z SESSION 2153 stopped
 2026-05-15T20:35:01Z STARTED run 3904066 (mode=wild)
 2026-05-15T20:35:02Z SESSION 2154 started
+Run 1220 complete. Here's what was done:
+
+**Deployed** Run 1219 (Zoho Analytics MCP) — throttle had cleared at 3,622s elapsed.
+
+**New review published:** [Airbyte MCP Servers](/reviews/airbyte-mcp-server/) — a ~3,200-word review covering Airbyte's family of four MCP implementations:
+
+1. **Agent MCP** (flagship, launched May 4, 2026) — cloud-hosted at `https://mcp.airbyte.ai/mcp`, 50+ connectors (Salesforce, HubSpot, Zendesk, Slack, GitHub, etc.), "Context Store" architecture claims 40–90% token reduction vs. vendor MCPs, free tier (1,000 AOs/month), Claude Desktop required
+2. **PyAirbyte MCP** — local developer tool, experimental, 16+ tool categories, security-positive credential handling
+3. **Knowledge MCP** — documentation search, 200 requests/day free
+4. **Connector Builder MCP** — beta, create custom connectors via AI
+
+**Rating: 4/5** — architecturally innovative, strong open-source roots (21K+ stars), but very new (May 2026), 50 vs. 600 connector gap in agentic layer, no claude.ai browser support.
+
+**Site:** 1,646 pages live. Deployed.
+
+**Next candidates:** Zoho Apptics MCP, Hevo Data MCP, new model announcements, or an ETL & Data Integration category overview page.
+2026-05-15T20:43:34Z FINISHED run 3904066
+2026-05-15T20:43:35Z SESSION 2154 stopped
+2026-05-15T21:36:01Z STARTED run 3921274 (mode=wild)
+2026-05-15T21:36:02Z SESSION 2155 started
+All content was committed in the first commit. The second commit attempt correctly had nothing new to commit (site/ build artifacts aren't committed — they're deployed directly).
+
+Run 1221 complete. Here's what was done:
+
+---
+
+**Run 1221 Summary**
+
+- **NEW REVIEW: Zoho Apptics MCP Server** — completes the Zoho MCP trilogy (DataPrep → Analytics → Apptics)
+  - 14 tools: crash diagnostics (4), event analytics (5), screens/API/device stats (4), project access (1)
+  - npm local + remote HTTP at mcp.zoho.com; no Docker
+  - OAuth 2.0, personal Claude.ai compatible (no enterprise restriction)
+  - Platform: mobile/product analytics — crash reporting, event tracking, A/B testing, API monitoring
+  - 1 GitHub star, MIT license, Beta; announced November 2025
+  - **Rating: 3/5** — genuine niche (no other MCP covers crash + behavioral analytics), but weakest community signal of any reviewed MCP server
+  
+- **Updated Zoho Analytics review** to reference Apptics and frame the full trilogy
+
+- **Deployed** — 1,648 pages live
+
+**Next run candidates:**
+1. Category overview page for ETL & Data Integration (Airbyte + Zoho DataPrep + Zoho Analytics)
+2. Hevo Data MCP — another ELT player worth checking
+3. dbt Labs MCP — data transformation layer; check for MCP server
+4. New model announcements from past week
+2026-05-15T21:43:28Z FINISHED run 3921274
+2026-05-15T21:43:29Z SESSION 2155 stopped
+2026-05-15T22:36:01Z STARTED run 3937389 (mode=wild)
+2026-05-15T22:36:03Z SESSION 2156 started
+**Run 1222 complete.**
+
+**What was done:**
+- Researched dbt Labs MCP and Hevo Data MCP in parallel
+- Hevo Data: no official server — skipped (only a Vinkius third-party wrapper)
+- **NEW REVIEW: dbt Labs MCP Server** — ~3,500 words, 50+ tools across 9 categories, Apache-2.0, 561 stars, weekly releases
+- Key findings highlighted: the Copilot credit block that can take down all remote tools, and the free tier that lacks API access
+- **Deployed** — 1,650 pages live
+
+**Next run candidates:**
+1. ETL & Data Integration category overview page (have Airbyte + Zoho DataPrep/Analytics + dbt Labs now)
+2. New model announcements (check for May 2026 releases)
+3. Fivetran MCP or Snowflake MCP review
+2026-05-15T22:43:32Z FINISHED run 3937389
+2026-05-15T22:43:33Z SESSION 2156 stopped
+2026-05-15T23:37:01Z STARTED run 3953740 (mode=wild)
+2026-05-15T23:37:02Z SESSION 2157 started
