@@ -29,7 +29,7 @@ The server exposes 13 tools split between read and write operations:
 - `add_code_connect_map` — creates new design-to-code component mappings
 - `send_code_connect_mappings` — finalizes and publishes mappings
 - `generate_figma_design` — captures live web pages and converts them to editable Figma frames (rate-limit exempt)
-- `generate_diagram` — creates FigJam diagrams from Mermaid syntax
+- `generate_diagram` — creates FigJam diagrams from Mermaid syntax; updated April 28, 2026 to also generate architecture diagrams and ERDs with database-relationship connector types (remote server only)
 - `create_design_system_rules` — *new* — creates rule files that give agents framework-specific context for translating designs into code
 
 The standout feature is `generate_figma_design` — code-to-canvas capture. No community MCP server can do this. You build something in code, and this tool pushes it back into Figma as an editable design. It closes the loop that every other design tool leaves open.
@@ -123,7 +123,7 @@ The community server has 13x the GitHub stars and 5.4x the PulseMCP traffic, and
 
 **Recommendation:** If you just need to translate designs to code, Framelink is the better tool — descriptive output, smaller payloads, accurate component nesting, and no seat-type rate limits. If you need the full design-code-design loop (especially code-to-canvas and Code Connect), the official server is the only option, and it requires a paid Figma plan. Note that Framelink had a critical RCE vulnerability (CVE-2025-15061) — now patched in v0.6.3 and later — which highlights the security tradeoff of self-hosted servers vs. Figma's managed infrastructure.
 
-## What's New (March 2026 Update)
+## What's New
 
 **Code-to-canvas breaks out of Claude Code.** The `generate_figma_design` tool — originally a Claude Code exclusive — [expanded to VS Code via GitHub Copilot](https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code/) (March 6, 2026), and now works in Cursor, Warp, Factory, Firebender, and Augment. [OpenAI's Codex integration](https://openai.com/index/figma-partnership/) launched February 26, 2026, with a bidirectional MCP server. This is the fastest expansion of any MCP server's client support we've tracked.
 
@@ -137,11 +137,13 @@ The community server has 13x the GitHub stars and 5.4x the PulseMCP traffic, and
 
 **[AI Credits pay-as-you-go](https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits).** Organization and Enterprise plans now have pay-as-you-go billing for AI credits ($0.03/credit), with Professional plans getting the option in May 2026.
 
+**FigJam Skills expand agent-driven diagramming (April 28, 2026).** The `generate_diagram` tool was updated to create architecture diagrams and ERDs directly — not just Mermaid-syntax diagrams — with new connector types built for database relationships (remote server only). Alongside it, three FigJam-specific skills launched: `figma-use-figjam` (foundational skill to read from and write to any FigJam board), `generate-project-plan` (converts docs, tickets, or codebases into structured visual FigJam project boards), and an updated `get_figjam` (summarizes existing FigJam board content). Previously, FigJam diagram generation required Mermaid syntax — agents can now ask for architecture or ER diagrams in natural language.
+
 ## The Bigger Picture
 
 The Figma MCP server tells an interesting story about the official-vs-community dynamic in the MCP ecosystem. The community Framelink server launched first, accumulated 14,300 stars, and optimized for the most common use case: reading designs and generating code. Figma's official server launched later with fewer stars but unique write capabilities that only the platform owner can provide.
 
-Q1 2026 shifted the balance. Figma's aggressive expansion of code-to-canvas support across 7+ IDE clients — and the OpenAI Codex partnership — shows the platform leveraging its unique position as the design system of record. Community servers can read from Figma, but only Figma can write back to the canvas. That moat is widening.
+Q1–Q2 2026 shifted the balance. Figma's aggressive expansion of code-to-canvas support across 7+ IDE clients, the OpenAI Codex partnership, and the April 28 FigJam Skills launch show the platform leveraging its unique position as the design system of record. Community servers can read from Figma, but only Figma can write back to the canvas — whether that's capturing live UI, creating Code Connect mappings, or generating architecture diagrams in FigJam. That moat is widening.
 
 Meanwhile, Framelink's [RCE vulnerability (CVE-2025-15061)](https://github.com/advisories/GHSA-8675-cg27-5c39) illustrates the security tradeoff in this space. Self-hosted MIT-licensed servers offer transparency and flexibility, but they also put the security burden on users. Figma's managed infrastructure handles that silently. For enterprise teams, this is an increasingly important consideration.
 
@@ -157,5 +159,5 @@ The Figma Dev Mode MCP server earns a 3.5/5 for delivering unique write capabili
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review is maintained by an AI research process (Claude Opus 4.6, Anthropic). We research publicly available data — GitHub, npm, PulseMCP, official docs — but have not tested this server hands-on. The project is operated by [Rob Nugen](https://robnugen.com). Last updated: 2026-04-11.*
+*This review is maintained by an AI research process (Claude Opus 4.6, Anthropic). We research publicly available data — GitHub, npm, PulseMCP, official docs — but have not tested this server hands-on. The project is operated by [Rob Nugen](https://robnugen.com). Last updated: 2026-05-15.*
 

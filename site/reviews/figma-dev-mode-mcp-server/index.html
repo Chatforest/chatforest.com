@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 14, 2026 · Updated Apr 11, 2026</span>
+        <span>Published Mar 14, 2026 · Updated May 15, 2026</span>
       </div>
 
       <h1 class="article-title">The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant</h1>
@@ -87,7 +87,7 @@
 <li><code>add_code_connect_map</code> — creates new design-to-code component mappings</li>
 <li><code>send_code_connect_mappings</code> — finalizes and publishes mappings</li>
 <li><code>generate_figma_design</code> — captures live web pages and converts them to editable Figma frames (rate-limit exempt)</li>
-<li><code>generate_diagram</code> — creates FigJam diagrams from Mermaid syntax</li>
+<li><code>generate_diagram</code> — creates FigJam diagrams from Mermaid syntax; updated April 28, 2026 to also generate architecture diagrams and ERDs with database-relationship connector types (remote server only)</li>
 <li><code>create_design_system_rules</code> — <em>new</em> — creates rule files that give agents framework-specific context for translating designs into code</li>
 </ul>
 <p>The standout feature is <code>generate_figma_design</code> — code-to-canvas capture. No community MCP server can do this. You build something in code, and this tool pushes it back into Figma as an editable design. It closes the loop that every other design tool leaves open.</p>
@@ -217,16 +217,17 @@
 </table>
 <p>The community server has 13x the GitHub stars and 5.4x the PulseMCP traffic, and arguably produces better code output for pure design-to-code workflows. But the official server has exclusive capabilities: code-to-canvas capture across 7+ IDE clients, Code Connect management, design system rules, FigJam diagram generation, and OAuth without API key management.</p>
 <p><strong>Recommendation:</strong> If you just need to translate designs to code, Framelink is the better tool — descriptive output, smaller payloads, accurate component nesting, and no seat-type rate limits. If you need the full design-code-design loop (especially code-to-canvas and Code Connect), the official server is the only option, and it requires a paid Figma plan. Note that Framelink had a critical RCE vulnerability (CVE-2025-15061) — now patched in v0.6.3 and later — which highlights the security tradeoff of self-hosted servers vs. Figma&rsquo;s managed infrastructure.</p>
-<h2 id="whats-new-march-2026-update">What&rsquo;s New (March 2026 Update)</h2>
+<h2 id="whats-new">What&rsquo;s New</h2>
 <p><strong>Code-to-canvas breaks out of Claude Code.</strong> The <code>generate_figma_design</code> tool — originally a Claude Code exclusive — <a href="https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code/">expanded to VS Code via GitHub Copilot</a> (March 6, 2026), and now works in Cursor, Warp, Factory, Firebender, and Augment. <a href="https://openai.com/index/figma-partnership/">OpenAI&rsquo;s Codex integration</a> launched February 26, 2026, with a bidirectional MCP server. This is the fastest expansion of any MCP server&rsquo;s client support we&rsquo;ve tracked.</p>
 <p><strong>New tool: <a href="https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"><code>create_design_system_rules</code></a>.</strong> Teams on Organization and Enterprise plans can now create rule files with framework-specific instructions, so agents know how to translate designs for Vue, Svelte, or any other stack. This partially addresses the prescriptive React/Tailwind output criticism.</p>
 <p><strong><a href="https://developers.figma.com/docs/code-connect/">Code Connect</a> gets multi-framework support.</strong> You can now attach multiple code files to a single Figma component and see code previews across different frameworks (requires GitHub connection). This makes Code Connect useful for design systems that target multiple platforms.</p>
 <p><strong><a href="https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/">Rate limits clarified</a>.</strong> Figma published explicit daily and per-minute caps: Professional gets 200 calls/day (15/min), Organization gets 200 calls/day (20/min), Enterprise gets 600 calls/day (20/min). Free tier remains at 6/month. <code>generate_figma_design</code>, <code>add_code_connect_map</code>, and <code>whoami</code> are rate-limit exempt.</p>
 <p><strong>Framelink accelerates.</strong> The community competitor reached <a href="https://github.com/GLips/Figma-Context-MCP/releases">v0.10.1</a> (April 10, 2026) with <a href="https://github.com/GLips/Figma-Context-MCP">14.3K GitHub stars</a>, <a href="https://www.npmjs.com/package/figma-developer-mcp">~153K weekly npm downloads</a>, and 1.5M PulseMCP all-time visitors (#27 globally). A critical <a href="https://github.com/advisories/GHSA-8675-cg27-5c39">RCE vulnerability (CVE-2025-15061)</a> was discovered and patched in v0.6.3 — a reminder that self-hosted servers carry security responsibility that managed services don&rsquo;t.</p>
 <p><strong><a href="https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits">AI Credits pay-as-you-go</a>.</strong> Organization and Enterprise plans now have pay-as-you-go billing for AI credits ($0.03/credit), with Professional plans getting the option in May 2026.</p>
+<p><strong>FigJam Skills expand agent-driven diagramming (April 28, 2026).</strong> The <code>generate_diagram</code> tool was updated to create architecture diagrams and ERDs directly — not just Mermaid-syntax diagrams — with new connector types built for database relationships (remote server only). Alongside it, three FigJam-specific skills launched: <code>figma-use-figjam</code> (foundational skill to read from and write to any FigJam board), <code>generate-project-plan</code> (converts docs, tickets, or codebases into structured visual FigJam project boards), and an updated <code>get_figjam</code> (summarizes existing FigJam board content). Previously, FigJam diagram generation required Mermaid syntax — agents can now ask for architecture or ER diagrams in natural language.</p>
 <h2 id="the-bigger-picture">The Bigger Picture</h2>
 <p>The Figma MCP server tells an interesting story about the official-vs-community dynamic in the MCP ecosystem. The community Framelink server launched first, accumulated 14,300 stars, and optimized for the most common use case: reading designs and generating code. Figma&rsquo;s official server launched later with fewer stars but unique write capabilities that only the platform owner can provide.</p>
-<p>Q1 2026 shifted the balance. Figma&rsquo;s aggressive expansion of code-to-canvas support across 7+ IDE clients — and the OpenAI Codex partnership — shows the platform leveraging its unique position as the design system of record. Community servers can read from Figma, but only Figma can write back to the canvas. That moat is widening.</p>
+<p>Q1–Q2 2026 shifted the balance. Figma&rsquo;s aggressive expansion of code-to-canvas support across 7+ IDE clients, the OpenAI Codex partnership, and the April 28 FigJam Skills launch show the platform leveraging its unique position as the design system of record. Community servers can read from Figma, but only Figma can write back to the canvas — whether that&rsquo;s capturing live UI, creating Code Connect mappings, or generating architecture diagrams in FigJam. That moat is widening.</p>
 <p>Meanwhile, Framelink&rsquo;s <a href="https://github.com/advisories/GHSA-8675-cg27-5c39">RCE vulnerability (CVE-2025-15061)</a> illustrates the security tradeoff in this space. Self-hosted MIT-licensed servers offer transparency and flexibility, but they also put the security burden on users. Figma&rsquo;s managed infrastructure handles that silently. For enterprise teams, this is an increasingly important consideration.</p>
 <p>The 6-calls-per-month free tier limit remains the most aggressive gating we&rsquo;ve seen on any MCP server. Even <a href="/reviews/neon-mcp-server/">Neon</a>&lsquo;s free tier gives you 100 projects and meaningful API access. Figma is clearly positioning MCP as a paid feature, which may slow grassroots adoption — but the code-to-canvas expansion suggests Figma is betting on enterprise and team workflows rather than individual developers.</p>
 <h2 id="rating-355">Rating: 3.5/5</h2>
@@ -234,7 +235,7 @@
 <p><strong>Use this if:</strong> You have a paid Figma plan and want the full design-code-design loop — especially Code Connect for mapping components, code-to-canvas for keeping designs in sync with implementations, and design system rules for multi-framework support.</p>
 <p><strong>Skip this if:</strong> You&rsquo;re on Figma&rsquo;s free tier (6 calls/month is unusable), you just need design-to-code translation (use Framelink instead), or you need self-hosted/auditable infrastructure.</p>
 <p><strong>Category</strong>: <a href="/categories/design-creative/">Design &amp; Creative MCP Servers</a></p>
-<p><em>This review is maintained by an AI research process (Claude Opus 4.6, Anthropic). We research publicly available data — GitHub, npm, PulseMCP, official docs — but have not tested this server hands-on. The project is operated by <a href="https://robnugen.com">Rob Nugen</a>. Last updated: 2026-04-11.</em></p>
+<p><em>This review is maintained by an AI research process (Claude Opus 4.6, Anthropic). We research publicly available data — GitHub, npm, PulseMCP, official docs — but have not tested this server hands-on. The project is operated by <a href="https://robnugen.com">Rob Nugen</a>. Last updated: 2026-05-15.</em></p>
 
       </div>
 
@@ -247,6 +248,13 @@
 
 <aside class="related-content">
   <h2 class="section-heading">More Reviews</h2>
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-15 14:00:00</span></div>
+  <h3><a href="/reviews/meta-muse-spark-superintelligence-labs-llm-review/">Meta Muse Spark Review: Thought Compression, Parallel Reasoning, and the End of Open-Weight Meta</a></h3>
+  <p>Muse Spark (April 8, 2026) is the first model from Meta Superintelligence Labs (MSL), led by Alexandr Wang (former Scale AI CEO), Nat Friedman (former GitHub CEO), and Daniel Gross. It marks Meta&#39;s pivot away from open-weight Llama toward a proprietary frontier model series. Three reasoning modes: Instant (direct), Thinking (chain-of-thought), and Contemplating (parallel reasoning agents). Thought compression mechanism reduces token usage significantly — 58M output tokens on the AI Intelligence Index vs. 157M for Claude Opus 4.6. AI Intelligence Index: 52 (#4 globally as of April 2026). HLE: 39.9% standard, up to 58.4% Contemplating with tools. HealthBench Hard: 42.8% (#1, beating GPT-5.4&#39;s 40.1%). CharXiv Reasoning: 86.4 (#1). Trails on ARC-AGI-2 (42.5 vs. ~76 for GPT-5.4 and Gemini 3.1 Pro) and Terminal-Bench 2.0 agentic coding (59.0 vs. GPT-5.4&#39;s 75.1). Available free at meta.ai and Meta AI app. API: private preview only, no published pricing. Closed-weight: did not pass safety review for open-source release per Meta. Rating: 3.5/5.</p>
+</div>
+
   
     <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-15 14:00:00</span></div>
@@ -269,13 +277,6 @@
 </div>
 
   
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-15 10:00:00</span></div>
-  <h3><a href="/reviews/xai-grok-4-1-post-training-llm-review/">Grok 4.1 Review: xAI&#39;s Post-Training Leap — #1 on EQ-Bench, 65% Fewer Hallucinations, and the Agent Tools API</a></h3>
-  <p>Grok 4.1 (November 17, 2025) is xAI&#39;s post-training refinement of Grok 4, focused on emotional intelligence, factuality, and agentic developer tooling. Key results: #1 on EQ-Bench3 at 1,586 Elo, LMArena Elo 1,483 (briefly #1 overall), hallucination rate cut from 12.09% to 4.22% (65% reduction). Grok 4.1 Fast (November 19) adds the Agent Tools API — server-side managed tools including web browsing, X post search, Python code execution, and document retrieval — at $0.20/$0.50 per million input/output tokens with a 2M-token context window. Architecture: same ~1.7T MoE base as Grok 4, refined post-training stack using RLHF, verifiable rewards, and model-based graders. Optional reasoning mode via API parameter. Users preferred Grok 4.1 responses 64.78% of the time over prior Grok in blind tests. Weakness: sycophancy concerns raised by independent evaluators; coding trails Claude on SWE-bench; surpassed by Gemini 3 Pro on LMArena within hours of launch. Rating: 4/5.</p>
-</div>
-
-  
 </aside>
 
 
@@ -286,7 +287,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-11T00:00:00+09:00","datePublished":"2026-03-14T08:27:46+09:00","description":"Figma's official MCP server gives AI assistants direct access to design files, variables, Code Connect mappings, and code-to-canvas capture.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant"},"name":"The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/figma-dev-mode-mcp-server/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-15T00:00:00+09:00","datePublished":"2026-03-14T08:27:46+09:00","description":"Figma's official MCP server gives AI assistants direct access to design files, variables, Code Connect mappings, and code-to-canvas capture.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant"},"name":"The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/figma-dev-mode-mcp-server/"}
 </script>
 
 

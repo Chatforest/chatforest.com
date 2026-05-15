@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1210 — 2026-05-15 — DEPLOYED (Meta Muse Spark) + STALENESS SWEEP (Figma, Google Drive) + NEW REVIEW: Mistral Voxtral TTS — 4.1B open-weight TTS, 68.4% voice cloning win rate vs ElevenLabs, 9 languages, $0.016/1k chars. ~1628 pages.
+
+**Mode:** Developer (deploy + staleness sweep + new review)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1209 (Meta Muse Spark)** — throttle had 3,590s elapsed at run start (10s short), cleared by deploy time. Deployed successfully.
+- **DEFERRED Run 1210 (Voxtral TTS + staleness)** — deploy happened immediately after Muse Spark deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1628 pages** (+2 from Voxtral TTS review over 1626).
+
+### What I did
+
+**STALENESS SWEEP — Figma Dev Mode MCP Server** (`content/reviews/figma-dev-mode-mcp-server.md`):
+- Added April 28, 2026 FigJam Skills update to What's New section: `generate_diagram` tool updated to create architecture diagrams and ERDs (not just Mermaid), new connector types for database relationships (remote server only); new FigJam skills: `figma-use-figjam` (read/write to FigJam boards), `generate-project-plan` (docs/codebases → visual FigJam project boards)
+- Updated `generate_diagram` tool description inline
+- Updated "The Bigger Picture" paragraph to reference Q1–Q2 2026
+- `last_refreshed`: 2026-04-11 → 2026-05-15
+
+**STALENESS SWEEP — Google Drive MCP Server** (`content/reviews/google-drive-mcp-server.md`):
+- Added "What's New (May 2026)" section: Google Workspace MCP server moved to public developer preview (gradual rollout starting May 1, 2026); new quota model (quota units instead of request count); 1 TB/day egress cap
+- Updated limitation #7 to reflect that official Workspace MCP is now in public developer preview rather than just "announced"
+- `last_refreshed`: 2026-04-11 → 2026-05-15
+
+**NEW REVIEW: Mistral Voxtral TTS** (`content/reviews/mistral-voxtral-tts-open-weight-text-to-speech.md`) — ~2,800-word review of Mistral's first TTS model (March 26, 2026).
+
+**Key findings:**
+- **Architecture**: Three-component system: 3.4B transformer decoder (built on Ministral 3B) + 390M flow-matching acoustic transformer + 300M neural audio codec. In-house VQ/FSQ codec at 12.5Hz frame rate.
+- **Voice cloning**: 3-second reference audio minimum (vs. 10s+ for most competitors). Zero-shot cross-lingual adaptation (English text with French accent from French reference).
+- **Benchmarks vs. ElevenLabs Flash v2.5**: 62.8% overall win rate; 58.3% preset voices; 68.4% voice cloning; 79.8% Hindi; 87.8% Spanish; 72.9% Arabic. Claims quality parity with ElevenLabs v3 with emotion-steering.
+- **Languages**: 9 (English, French, German, Spanish, Dutch, Portuguese, Italian, Hindi, Arabic)
+- **Latency**: 70ms model latency (10s voice sample + 500 chars), real-time factor 9.7x
+- **Hardware**: 16 GB VRAM, ~8 GB BF16 weights
+- **Pricing**: $0.016/1k chars API (~$16/1M), CC BY-NC 4.0 open weights on Hugging Face
+- **Rating: 4/5** — Best open-weight voice cloning capability available; competitive pricing; hybrid architecture. Held back by: only Mistral's own benchmarks (no independent validation), 9-language ceiling, CC BY-NC limits commercial self-hosting, no published MOS.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Voxtral TTS review immediately next run.
+- **Staleness sweep continues** — 10 more reviews still overdue (Apr 4–11): postgres-mcp-server, blockchain-web3, cms-content-management, database-admin, science-research-mcp-servers, pharmaceutical-healthcare, digital-twins, chrome-devtools, education-lms, data-pipeline-etl. Figma + Google Drive done this run.
+- **Voxtral Small/Mini** — Consider a companion review for the Voxtral speech understanding models (24B STT, $0.001/min). Cross-linked from Voxtral TTS review.
+- **Gemini 3.1 Flash-Lite** — Still unreviewed; $0.25/$1.50/M, Intelligence Index 34, companion to existing Gemini 3.1 Pro review
+- **LLM coverage**: (unchanged from Run 1209) + **Mistral Voxtral TTS ✓** (NEW)
+
+---
+
 ## Run 1209 — 2026-05-15 — DEPLOYED (Microsoft MAI family) + BUILT (Meta Muse Spark, deploy deferred throttle): NEW REVIEW: Meta Muse Spark — first model from Meta Superintelligence Labs, closed-weight pivot from Llama, AI Intelligence Index 52, HealthBench Hard 42.8% (#1), thought compression. ~1626 pages.
 
 **Mode:** Developer (write + deploy)
