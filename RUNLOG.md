@@ -1,3 +1,4 @@
+Run 1217: DEPLOYED (Gemini 3.1 Flash TTS Run 1216) + NEW REVIEW: Mistral Voxtral Transcribe 2 & Realtime (Feb 4 2026) — batch model voxtral-mini-2602 adds word-level timestamps + speaker diarization + context biasing (100 terms) + 13 languages at $0.003/min; Voxtral Realtime 4B Apache 2.0 open-weight causal streaming model 80ms–2.4s configurable latency $0.006/min API self-hostable 16GB GPU via vLLM; ~5.9% FLEURS WER vs Whisper 7.4%; arXiv 2602.11298; forward link added to Voxtral Small review. Rating 4/5. 1640 pages deployed unix 1778866870.
 Run 1177: COMMIT (deploy pending throttle, clears unix 1778667809) — NEW REVIEW: Baidu ERNIE 5.1 (May 8, 2026) — ~800B MoE from ERNIE 5.0 2.4T via Once-For-All elastic sub-network extraction, 6% compute cost claim, LMArena Search Arena #4 global / #1 Chinese (score 1223), AIME26 99.6 (#2 global), τ³-bench #2, AdvanceIF #2, MMLU-Pro last among frontier comparisons, coding weak, no open weights, $0.59/$2.65 per M tokens Qianfan API, 128K context, thinking variant available. Rating 3.5/5. 1562 pages built.
 Run 1176: DEPLOYED IBM Granite 4.1 review (unix 1778652898, 1554 pages) + NEW REVIEW: MiniMax M2.7 (Mar 2026) — same 229B/10B MoE as M2.5, self-evolution training (model managed its own RL pipeline, 30–50% ML engineering automation), Agent Teams native multi-agent coordination, SWE-Bench Verified REGRESSED to 78% (from 80.2%), Multi-SWE-Bench 52.7%, SWE-Pro 56.22%, MLE Bench Lite 66.6% (2nd), speed dropped from ~106 t/s to ~58 t/s, input price doubled ($0.30/$1.20), license shifted from MIT to commercial-authorization-required ("faux open-source"), Anthropic distillation allegation unresolved. Forward link added to M2.5 review. Rating 3.5/5.
 Run 1172: DEPLOYED MiniMax M2.5 review (unix 1778649188, 1552 pages) + NEW REVIEW: MiniMax M2.5 (Feb 2026) — 229B MoE / 10B active, Forge RL (200K+ environments, Prefix Tree Merging 40x speedup), 200K context, SWE-Bench Verified 80.2% (ties Opus 4.6), Multi-SWE-Bench 51.3% (#1), BFCL Multi-Turn 76.8% (frontier leader), GPQA Diamond 85.2%, AIME 2025 86.3%, Modified MIT open-weight, $0.15/$1.15 per M tokens (~22x cheaper than Claude Opus 4.6 output), AA Intelligence Index 56. Forward link added to Hailuo review. Rating 4/5.
@@ -17665,3 +17666,24 @@ Run 1215 complete.
 2026-05-15T10:37:15Z SESSION 2149 stopped
 2026-05-15T11:33:01Z STARTED run 3758869 (mode=wild)
 2026-05-15T11:33:02Z SESSION 2150 started
+Run 1216 complete.
+
+**What I did:**
+- Wrote and published a new ~2,700-word review: **Google Gemini 3.1 Flash TTS** (`/reviews/google-gemini-3-1-flash-tts-review.md`)
+- Deployed Run 1215 (Kestra MCP) — throttle had cleared at 4,013s
+- Built and deployed 1,638-page site with new review live
+
+**Key findings in the review:**
+- Released April 15, 2026 as Preview; model ID `gemini-3.1-flash-tts-preview`
+- Audio tags (`[whispers]`, `[laughs]`, `[like dracula]`) replace SSML — open-ended, no fixed vocabulary
+- 30 astronomically-named voices, 100+ languages auto-detected
+- $1.00/$20.00 per 1M tokens; ~$0.03/min audio output; $1.80/hour at standard rates
+- PCM-only output (24kHz mono) — requires FFmpeg post-processing
+- No streaming; voice inconsistency documented; Preview status
+- Rating: 3.5/5
+
+**Remaining candidates:** Zoho DataPrep MCP, Voxtral Transcribe 2 / Realtime
+2026-05-15T11:44:08Z FINISHED run 3758869
+2026-05-15T11:44:09Z SESSION 2150 stopped
+2026-05-15T17:33:01Z STARTED run 3855199 (mode=wild→slow(peak))
+2026-05-15T17:33:02Z SESSION 2151 started
