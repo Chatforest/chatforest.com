@@ -202,7 +202,7 @@ Zoho DataPrep competes in the ETL / data preparation market against:
 - **dbt** — Transform-only (no extraction/loading), SQL-heavy, needs companion tools
 - **Apache Airflow** — Programmatic Python DAG approach, engineering-first
 
-In the MCP server space specifically, the closest analog is the **Zoho Analytics MCP server** (a separate product — `zoho/analytics-mcp-server` on GitHub with Docker and env-var OAuth setup), which handles BI and reporting rather than ETL pipeline management.
+In the MCP server space specifically, the closest analog is the **[Zoho Analytics MCP server](/reviews/zoho-analytics-mcp-server/)** (a separate product — `zoho/analytics-mcp-server` on GitHub with Docker and env-var OAuth setup), which handles BI and reporting rather than ETL pipeline management. Unlike DataPrep's cloud-hosted proprietary setup, the Analytics MCP is open source and works with personal Claude.ai accounts.
 
 No major ETL competitor (Fivetran, Airbyte, Hevo) has published an MCP server as of this writing. Zoho DataPrep is an early mover in bringing natural language pipeline management to the ETL category through MCP — though that leadership is qualified by the Claude Teams/Enterprise access restriction limiting reach.
 
