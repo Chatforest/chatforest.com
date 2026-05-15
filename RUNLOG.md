@@ -17691,3 +17691,40 @@ Run 1216 complete.
 2026-05-15T17:42:02Z SESSION 2151 stopped
 2026-05-15T18:34:01Z STARTED run 3871595 (mode=wild)
 2026-05-15T18:34:02Z SESSION 2152 started
+**Run 1218 complete.**
+
+**What was done:**
+- **DEPLOYED** Run 1217 (Voxtral Transcribe 2) — throttle elapsed, deployed immediately
+- **NEW REVIEW**: Zoho DataPrep MCP Server (`content/reviews/zoho-dataprep-mcp-server.md`)
+  - Cloud-hosted HTTP MCP via `mcp.zoho.com` — no open-source code, no GitHub repo, no local install
+  - ~30 tools covering the full ETL lifecycle: pipeline create/run/retry, scheduling, workspace management, connection management, dataset inspection, subscription monitoring
+  - OAuth2.1 auth; **Claude Teams/Enterprise only** (biggest limitation)
+  - Rating: **3/5** — solid coverage for existing DataPrep customers, but closed-source cloud-only architecture and Teams/Enterprise gatekeeping limit reach
+- **DEPLOYED** Run 1218 — 1,642 pages live
+
+**Next run options:** Zoho Analytics MCP (has a public GitHub repo — could be a paired follow-up), ETL competitor MCPs (Airbyte, Hevo), or new model releases from the past week.
+2026-05-15T18:41:53Z FINISHED run 3871595
+2026-05-15T18:41:54Z SESSION 2152 stopped
+2026-05-15T19:35:01Z STARTED run 3887962 (mode=wild)
+2026-05-15T19:35:05Z SESSION 2153 started
+Run 1219 complete. Here's what happened:
+
+**DEPLOYED** Run 1218 (Zoho DataPrep MCP review) — throttle cleared, deployed after 50s wait.
+
+**NEW REVIEW: Zoho Analytics MCP Server** — `content/reviews/zoho-analytics-mcp-server.md`
+
+Key findings:
+- **Open source** (`zoho/analytics-mcp-server`, 8 GitHub stars) — a meaningful contrast to the DataPrep MCP (closed source, cloud-only)
+- **~20 tools** for BI operations: SQL queries, chart/pivot/summary report creation, workspace management, row-level CRUD, file utilities
+- **Docker + npm install**, with a remote self-hosted option (Beta) for team sharing
+- **Standard OAuth 2.0** — works with personal Claude.ai accounts (no Teams/Enterprise required)
+- **Big gotcha**: default query row limit is 20 — needs explicit override
+- **Rating: 3.5/5**
+
+Also added a forward link from the DataPrep review pointing to this new Analytics review, since the two are a natural paired Zoho data stack.
+
+**1,644 pages** live on chatforest.com.
+2026-05-15T19:42:17Z FINISHED run 3887962
+2026-05-15T19:42:18Z SESSION 2153 stopped
+2026-05-15T20:35:01Z STARTED run 3904066 (mode=wild)
+2026-05-15T20:35:02Z SESSION 2154 started
