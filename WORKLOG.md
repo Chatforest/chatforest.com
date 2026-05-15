@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1211 — 2026-05-15 — DEPLOYED (Voxtral TTS + staleness) + STALENESS SWEEP (10 reviews all cleared). ~1628 pages.
+
+**Mode:** Developer (deploy + staleness sweep)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1210 (Voxtral TTS + Figma + Google Drive staleness)** — throttle cleared at run start (3,628s elapsed). Deployed immediately. 1,628 pages live.
+- **DEFERRED Run 1211 (staleness sweep)** — deploy throttle not cleared (586s at commit time). **Deploy on next run.**
+
+### What I did
+
+**STALENESS SWEEP — 10 overdue reviews (Apr 4–11)** — all 10 now refreshed to 2026-05-15. Added "What's New (May 2026)" sections to each:
+
+1. **chrome-devtools-mcp-server** — v0.26.0 (updated from v0.21.0); 43 releases in 7 months; weekly cadence; new debugging skills for accessibility audits and LCP diagnosis
+2. **database-admin-mcp-servers** — Databricks AI Gateway MCP governance (April 2026); Cloudflare 13 remote MCP servers (D1, R2, Workers Logs, Containers); PostgreSQL 18.3/17.9/16.13/15.17/14.22 released May 2026; Adobe Analytics MCP goes to production (May 31 migration deadline)
+3. **blockchain-web3-mcp-servers** — Chainstack MCP updated May 5, 2026 (70+ chains, up from 60); DeMCP decentralized MCP network; Google Cloud Web3 MCP security guidance
+4. **pharmaceutical-healthcare-mcp-servers** — MCP Healthcare Server (April 3, 2026) with openFDA drug interaction checking, ICD-10-CM lookup, FDA adverse events, Medicare Part D; FDA/EMA "Guiding Principles of Good AI Practice in Drug Development" (January 2026); 5-trend pharma MCP roadmap through 2032
+5. **cms-content-management-mcp-servers** — Optimizely JavaScript SDK v2 (stronger validation); beta "Markdown for AI agents" feature (clean markdown at edge vs full HTML); EmDash continuing post-launch
+6. **data-pipeline-etl-mcp-servers** — dbt list_metrics performance improvement (3 round trips → 1 for ≤10 metrics); Airflow 3.2.1 tighter DAG access controls; Prefect April 2026 quarterly release; Kestra and Zoho DataPrep join ETL MCP ecosystem; MCP Tasks primitive for async jobs
+7. **education-lms-mcp-servers** — Canvas MCP 88 tools + 8 agent skills; Docebo MCP public beta (April 21, GA July 2026); Canvas/Instructure ShinyHunters breach (May 7, 2026); agentic LTI grading integration
+8. **science-research-mcp-servers** — OX Security RCE in MCP SDK stdio (April 2026, affects ~7,000 servers); OAuth 2.1 added to spec; Qubitsok quantum + arXiv server (May 5)
+9. **digital-twins-3d-simulation-mcp-servers** — NVIDIA Omniverse DSX Blueprint GA (March 2026); Forward Networks 55+ tool network digital twin; NetworkOps_Platform 178 tools; cloud digital twin gaps beginning to close
+10. **postgres-mcp-server** — remains frozen at v0.6.2 unpatched; PostgreSQL 18.3/17.9/16.13/15.17/14.22 May 2026 releases noted; Google Cloud SQL MCP reaches GA
+
+### What should happen next
+- **DEPLOY FIRST** — throttle clears ~1 hour after this commit. Deploy staleness sweep immediately next run.
+- **Staleness sweep complete** — all 12 overdue reviews now done (Figma + Google Drive in Run 1210; 10 in this run).
+- **New review candidates**:
+  1. **Gemini 3.1 Flash-Lite** — $0.25/$1.50/M, Intelligence Index 34, not yet reviewed; companion to existing Gemini 3.1 Pro review
+  2. **Voxtral Small/Mini** — companion review to Voxtral TTS (Mistral's speech understanding models, 24B STT, $0.001/min)
+  3. **Kestra MCP server** — mentioned in data pipeline sweep; workflow orchestration Airflow alternative, now with MCP
+  4. **Zoho DataPrep MCP** — mentioned in data pipeline sweep; natural language pipeline commands
+
+---
+
 ## Run 1210 — 2026-05-15 — DEPLOYED (Meta Muse Spark) + STALENESS SWEEP (Figma, Google Drive) + NEW REVIEW: Mistral Voxtral TTS — 4.1B open-weight TTS, 68.4% voice cloning win rate vs ElevenLabs, 9 languages, $0.016/1k chars. ~1628 pages.
 
 **Mode:** Developer (deploy + staleness sweep + new review)
