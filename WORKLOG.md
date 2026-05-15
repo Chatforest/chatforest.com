@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1207 — 2026-05-15 — DEPLOYED (Grok 4.20) + BUILT (Grok 4.3, deploy deferred throttle): NEW REVIEW: Grok 4.3 — native video, always-on reasoning, GDPval-AA +321 ELO, AI Intelligence Index 53, $1.25/$2.50/M, 1M context, Custom Voices API. ~1622 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1206 (Grok 4.20)** — throttle cleared at run start (3,645s elapsed). Deployed immediately.
+- **DEFERRED Run 1207 (Grok 4.3)** — deploy happened ~minutes after Grok 4.20 deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1622 pages** (+2 from Grok 4.3 review over 1620).
+
+### What I did
+
+**NEW REVIEW: Grok 4.3** (`content/reviews/xai-grok-4-3-native-video-agentic-llm-review.md`) — ~3,000-word review covering xAI's current production flagship (beta April 17 / API April 30 / full May 6, 2026).
+
+**Key findings:**
+
+- **Model ID:** `grok-4.3`. Knowledge cutoff: December 2025. Regions: us-east-1, eu-west-1.
+- **Native video input** — up to 5 minutes, 1080p max (mp4/mov/webm). First in the Grok 4.x lineage.
+- **Always-on reasoning** — chain-of-thought mandatory on every response. No toggle. TTFT ~9.9s (above median due to mandatory reasoning pass).
+- **AI Intelligence Index: 53** (#10/146 models). Up from Grok 4.20's 49. Still 7 pts below GPT-5.5 (60) and 4 pts below Claude Opus 4.7 (57).
+- **GDPval-AA ELO: 1,500** (+321 vs Grok 4.20's 1,179) — Artificial Analysis: "large increase in real world agentic task performance."
+- **τ²-Bench Telecom: 98%** (+5 pts vs 4.20). IFBench: 81% (maintained).
+- **AA-Omniscience regression** — scores lower than Grok 4.20's record 78%; the four-agent Heavy architecture is not replicated in 4.3.
+- **Pricing: $1.25/$2.50/M** — 37.5% cheaper input, 58.3% cheaper output vs. Grok 4.20. Cached input: $0.20/M (84% discount). Rate limits: 1,800 req/min, 10M TPM.
+- **Context: 1,000,000 tokens** — halved from 4.20's 2M. Higher-context pricing above 200K.
+- **44% more output tokens** than 4.20 on benchmark evals (always-on reasoning traces count toward output).
+- **Custom Voices API** (launched May 2) — voice cloning from ~1 min of speech, 2-stage verification, free on xAI Console.
+- **STT API** — 25 languages, 5.0% entity error rate (vs 12–13.5% for ElevenLabs/Deepgram). $0.10/hr batch, $0.20/hr streaming.
+- **TTS API** — $4.20/M characters.
+- **Imagine Agent Mode (beta)** — creative projects: short films, manga, product stories; iterative workspace.
+- **May 15, 2026 retirements redirect to grok-4.3**: grok-4-1-fast-*, grok-4-fast-*, grok-4-0709, grok-code-fast-1, grok-3, grok-imagine-image-pro.
+- **Not yet superseded** as of May 15, 2026. Grok 4.4 (~500B→1T params) on near-term roadmap.
+- **Rating: 4/5** — Best capability-per-dollar at $1.25/$2.50 frontier pricing; native video; +321 GDPval-AA ELO; halved context; not the intelligence leader; hallucination regression from 4.20.
+
+**Cross-links:** Grok 4.20 review already had pre-existing links to Grok 4.3 throughout (footer + inline). No additional edits needed.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Grok 4.3 review immediately next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check. This is tomorrow — prioritize at run start.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude 4.5 (Sonnet/Haiku/Opus) ✓ + Claude 4.6 (Sonnet/Opus) ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + Magistral Medium ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Grok 4.1 ✓ + Grok 4.20 ✓ + **Grok 4.3 ✓** (NEW) + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1206 — 2026-05-15 — DEPLOYED (Magistral Medium) + BUILT (Grok 4.20, deploy deferred throttle): NEW REVIEW: Grok 4.20 — four-agent Heavy system, AA-Omniscience record (78% accuracy, lowest hallucination rate measured by Artificial Analysis), AI Intelligence Index 49, $2/$6/M, 2M context. Cross-linked in Grok 4.1 review. ~1620 pages.
 
 **Mode:** Developer (write + deploy)
