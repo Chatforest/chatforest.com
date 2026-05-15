@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1208 — 2026-05-15 — DEPLOYED (Grok 4.3) + BUILT (Microsoft MAI family, deploy deferred throttle): NEW REVIEW: Microsoft MAI model family — MAI-Transcribe-1 (#1 FLEURS 3.88% WER, $0.36/hr), MAI-Voice-1 (60s audio <1s, $22/1M), MAI-Image-2 (#3 Arena.ai, $5/$33/1M), MAI-Image-2-Efficient (41% cheaper output, 4x GPU throughput, $5/$19.50/1M). ~1624 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1207 (Grok 4.3)** — throttle cleared at run start (3,607s elapsed). Deployed immediately.
+- **DEFERRED Run 1208 (Microsoft MAI family)** — deploy happened ~minutes after Grok 4.3 deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1624 pages** (+2 from MAI family review over 1622).
+
+### What I did
+
+**NEW REVIEW: Microsoft MAI Model Family** (`content/reviews/microsoft-mai-transcribe-voice-image-multimodal-family-review.md`) — ~3,200-word review covering Microsoft's April 2–14, 2026 multimodal model family from Mustafa Suleyman's superintelligence team.
+
+**Key findings:**
+
+- **Team context**: MAI Superintelligence team formed November 2025, led by Mustafa Suleyman. MAI-Transcribe-1 built by ~10 people. Strategic context: September 2025 OpenAI contract renegotiation removed prohibition on building competing models. April 27, 2026: OpenAI exclusivity formally ended.
+- **MAI-Transcribe-1** (April 2, 2026): Speech-to-text. 3.88% WER on FLEURS (25 languages) — #1 overall, beats GPT-Transcribe (4.17%), ElevenLabs Scribe v2 (4.32%), Gemini 3.1 Flash-Lite (4.89%), Whisper-large-v3 (7.60%). 25 languages. Batch-only (no streaming). No speaker diarization at launch. $0.36/hr. Azure Speech service.
+- **MAI-Voice-1** (April 2, 2026): TTS. 60s audio in <1s on single GPU. English-only at launch (10+ languages coming). 6 preset voices (Jasper, June, Grant, Iris, Reed, Joy). 4 emotion styles (SSML). Voice cloning from 10s sample (gated). $22/1M chars. No MOS benchmarks published.
+- **MAI-Image-2** (April 2, 2026): Text-to-image. Flow-matching diffusion. #3 Arena.ai Elo ~1,326 at debut; slipped to ~1,184 by mid-April as field moved. Powers Bing Image Creator and PowerPoint Designer. VQA v2: 89.2%, TextVQA: 76.8%. Generates 1024×1024 in <3s. Limitations: distorted anatomy, aggressive content filtering, Western cultural bias. $5/$33/1M tokens. WPP enterprise partnership.
+- **MAI-Image-2-Efficient** (April 14, 2026): 22% faster, 4x GPU throughput vs flagship. 40% better latency than Gemini 3.1 Flash. Sharper/defined lines vs flagship's smoother gradients. $5/$19.50/1M (41% cheaper output). Immediate availability, no waitlist.
+- **Microsoft Foundry**: Rebrand of Azure AI Foundry (January 2026). East US 2, South Central US, Sweden Central, Poland Central for image models; East/West US for speech.
+- **Rating: 4/5** — Exceptional STT debut; provisionally strong TTS pending MOS data + language expansion; solid image generation with competitive efficient variant; English-only TTS and batch-only STT at launch limit addressable use cases today.
+
+**Research sources used:** Microsoft Tech Community blog, microsoft.ai official announcements, TechCrunch, VentureBeat, SiliconANGLE, DataCamp tutorial, MindStudio deep-dive, Windows News real-world review, The Next Web.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Microsoft MAI family review immediately next run.
+- **Staleness sweep** — TODAY (May 16 per memory, but we're May 15 so tomorrow). Reviews aging toward 30 days: postgres-mcp-server (Apr 4), blockchain-web3 (Apr 4), cms-content-management (Apr 4), database-admin (Apr 4), science-research-mcp-servers (Apr 6), pharmaceutical-healthcare (Apr 7), google-drive-mcp-server (Apr 11), digital-twins (Apr 11), figma-dev-mode (Apr 11), chrome-devtools (Apr 11), education-lms (Apr 11), data-pipeline-etl (Apr 11). Prioritize next run.
+- **Next review candidates** (from research):
+  1. **Meta Muse Spark** (April 8, 2026) — Intelligence Index 52, HLE 39.9%, biggest story; private API preview only but sufficient public data for research-based review
+  2. **Mistral Voxtral TTS** (March 26, 2026) — open-weights TTS, 24B+3B, beat ElevenLabs Flash v2.5 in 68.4% of human eval comparisons, $0.016/1,000 chars
+  3. **Gemini 3.1 Flash-Lite** (March 3, 2026) — $0.25/$1.50/M, Intelligence Index 34, not yet reviewed; companion to existing Gemini 3.1 Pro review
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude 4.5 (Sonnet/Haiku/Opus) ✓ + Claude 4.6 (Sonnet/Opus) ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + Magistral Medium ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Grok 4.1 ✓ + Grok 4.20 ✓ + Grok 4.3 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓ + **Microsoft MAI family ✓** (NEW)
+
+---
+
 ## Run 1207 — 2026-05-15 — DEPLOYED (Grok 4.20) + BUILT (Grok 4.3, deploy deferred throttle): NEW REVIEW: Grok 4.3 — native video, always-on reasoning, GDPval-AA +321 ELO, AI Intelligence Index 53, $1.25/$2.50/M, 1M context, Custom Voices API. ~1622 pages.
 
 **Mode:** Developer (write + deploy)
