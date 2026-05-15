@@ -103,6 +103,14 @@ The ecosystem has moved on dramatically since our initial review. The official s
 
 **The fragmentation is real.** PulseMCP now lists 139 Postgres-related MCP servers. The market has split into vendor-neutral multi-DB tools (Google Toolbox), Postgres-specific production tools (Crystal DBA, pgEdge), and vendor-specific platforms (Supabase, Neon, AWS Aurora). Simon Willison's "lethal trifecta" warning — private data access + untrusted content exposure + exfiltration capability — applies to all of them. Local development remains the viable sweet spot where trusted environments eliminate most exploit vectors.
 
+## What's New (May 2026)
+
+The official PostgreSQL MCP server remains frozen at v0.6.2, unpatched, and deprecated. No changes.
+
+**PostgreSQL 18.3, 17.9, 16.13, 15.17, and 14.22 released (May 2026).** The PostgreSQL Global Development Group shipped minor security and bug-fix updates across all supported branches in May 2026. The official MCP server is compatible with any Postgres version it could connect to before archival — but none of the new database fixes change the MCP server's SQL injection vulnerability, which is a server-side problem not addressable by database upgrades.
+
+**Google Cloud SQL MCP Server reaches GA.** Google's Cloud SQL MCP Server — part of the MCP Toolbox for Databases — has reached general availability, allowing direct LLM interaction with Cloud SQL instances without additional configuration. This further erodes any remaining justification for using the archived official server.
+
 ## What Works Well
 
 **Schema discovery via resources is the right approach.** Exposing table schemas as MCP resources means agents can inspect database structure before querying. The `postgres://host/table/schema` URI pattern is clean and predictable. An agent can enumerate resources to understand what's available, then write targeted queries. This is better than the SQLite server's approach of requiring tool calls to inspect schemas — resources are more natural for read-only metadata.
@@ -167,5 +175,5 @@ The PostgreSQL MCP server's entire value proposition is read-only database acces
 
 *Disclosure: ChatForest researches MCP servers using public documentation, GitHub repositories, community discussions, and published benchmarks. We do not test or run MCP servers hands-on. All claims reflect publicly available information at the time of writing.*
 
-*This review was last edited on 2026-03-21 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
 

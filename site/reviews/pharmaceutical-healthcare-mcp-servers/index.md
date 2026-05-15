@@ -289,6 +289,14 @@ Despite being the deepest vertical MCP category, some areas remain uncovered:
 - **Pathology/Lab systems** — no LIS (Laboratory Information System) integration
 - **EMS/emergency dispatch** — no ambulance or emergency medical services coordination
 
+## What's New (May 2026)
+
+**MCP Healthcare Server launches with openFDA integration (April 3, 2026).** A new general-purpose [MCP Healthcare Server](https://conare.ai/marketplace/mcp/mcp-healthcare-server) became available combining several data sources under a single MCP interface: real-time drug interaction checking via the openFDA API, ICD-10-CM diagnosis code lookup and keyword search, FDA adverse event reports for specific medications, Medicare Part D prescribing statistics, and clinical guideline search via PubMed. This fills a gap for clinical decision support that previously required separate FHIR, PubMed, and openFDA MCP servers.
+
+**FDA and EMA joint guidance on AI in drug development (January 2026).** The FDA and EMA jointly released ["Guiding Principles of Good AI Practice in Drug Development"](https://intuitionlabs.ai/articles/model-context-protocol-mcp-in-pharma) — 10 key principles laying the foundation for using AI (including MCP-powered agents) in pharmaceutical workflows. This regulatory clarity is significant: it begins to define what "compliant" means for MCP servers used in GxP environments. Five trend areas are now shaping the pharma MCP roadmap through 2032: regulated extensions and compliance-by-design with HMCP/GxP profiles, certified MCP servers for clinical and lab data systems, agentic automation for clinical trials and manufacturing, auditability and model governance toolchains, and convergence with digital twins and edge orchestration.
+
+**LMS-integrated AI grading reaches healthcare education.** Agentic AI assessment tools that operate inside Canvas, Moodle, and Blackboard via LTI grade passback are now being piloted in medical school and nursing program curricula — an early signal that healthcare training institutions are connecting their LMS and clinical simulation environments through MCP.
+
 ## The Bottom Line
 
 Pharmaceutical and healthcare represents the **gold standard for vertical MCP development**. The combination of genuine depth (40+ servers across 7 subcategories), production-grade security (HIPAA-compliant audit logging, PHI protection, SMART on FHIR authentication), protocol-level innovation (Innovaccer's HMCP), institutional backing (WSO2, Innovaccer, OpenPharma), and the largest coordinated server collection of any industry we have reviewed makes this category exceptional.
@@ -301,5 +309,5 @@ The key enabler is FHIR — healthcare already had a standardized data interchan
 
 - [Utah Lets AI Renew Prescriptions Without a Doctor](/guides/utah-ai-prescription-renewal-doctronic/) — the first state-approved autonomous AI prescribing program, the jailbreak that exposed its vulnerabilities, and the expansion into psychiatric medications
 
-*This review was last edited on 2026-04-04 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
 

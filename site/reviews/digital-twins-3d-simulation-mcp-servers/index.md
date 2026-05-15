@@ -340,6 +340,14 @@ The biggest gaps in this category:
 - **No structural analysis** — no MCP server handles FEA for stress, strain, or fatigue analysis.
 - **Limited Autodesk coverage** — Fusion 360 has MCPs but AutoCAD, Revit, and Inventor are largely unserved (Autodesk recently announced official MCP servers but they're in early stages).
 
+## What's New (May 2026)
+
+**NVIDIA Omniverse DSX Blueprint reaches general availability (March 2026).** NVIDIA's [Vera Rubin DSX reference design](https://www.nvidia.com/en-us/industries/manufacturing/digital-twins/) and the Omniverse DSX Blueprint reached GA in March 2026, designed for large-scale AI factory design and digital twin simulation — power, cooling, software, and operations modeled together. Partner integrations cover the full AI factory stack. For the MCP category, this is relevant context: enterprise-grade digital twin infrastructure is maturing rapidly, but MCP integration with Omniverse is still a gap.
+
+**Forward Networks: 55+ tools for network digital twins (2026).** Forward Networks launched a digital twin MCP server offering 55+ tools for vendor-agnostic network path tracing and semantic search across forwarding tables and ACLs. This represents a new class of "network digital twin" — modeling network topology and behavior rather than physical objects — that sits between traditional physical simulation and IT infrastructure monitoring. NetworkOps_Platform offers a similar approach with 178 tools supporting Cisco, Juniper, Nokia, Arista, and Linux with RAG-powered chat and real-time topology visualization.
+
+**Cloud digital twin gap beginning to close.** The "What's Missing" section below flags Azure Digital Twins and AWS IoT TwinMaker as absent from the MCP ecosystem. In April 2026, nCircle Tech documented how MCP servers can break down fragmentation across BIM 360, ACC, Forge, and custom-built tools — creating a single source of truth for physical digital twins. No official Azure or AWS digital twin MCP servers have shipped, but the architectural blueprints are now widely published.
+
 ## Summary
 
 | Subcategory | Top Server | Stars | Rating |
@@ -359,5 +367,5 @@ The biggest gaps in this category:
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was last edited on 2026-04-11 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
 

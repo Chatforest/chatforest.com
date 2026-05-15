@@ -157,6 +157,16 @@ Multiple community CoinMarketCap MCP servers exist: **longmans/coin_api_mcp** pr
 
 **Bankless Onchain** — query onchain data including ERC-20 tokens, transaction history, and smart contract state. **kukapay/chainlist-mcp** — gives AI agents fast access to verified EVM chain information (RPC URLs, chain IDs, explorers, native tokens). **magnetai/mcp-free-usdc-transfer** — send USDC on Base for free using Coinbase CDP's MPC wallet technology. **SettleMint MCP** — enterprise blockchain platform integration for smart contract management, deployment, and blockchain network interaction. **OpenSea MCP** — official hosted server for NFT operations, token swaps, collection analytics, and wallet management across major chains. **BitGo MCP Server** (March 2026) — documentation-access MCP server from the institutional digital asset custody company BitGo (federally chartered BitGo Bank & Trust). Connects AI agents to BitGo's Developer Portal for wallet functionality, transaction flows, staking docs, webhooks, and policy features via natural language. Read-only — does not execute transactions or manage custody. **royyannick/awesome-blockchain-mcps** — a curated awesome-list specifically for blockchain and crypto MCP servers.
 
+## What's New (May 2026)
+
+**Chainstack MCP expands to 70+ chains (May 2026).** [Chainstack's MCP server](https://chainstack.com/mcp/) was updated May 5, 2026, adding structured access to live RPC data, smart contract storage, and on-chain state across 70+ chains — including Ethereum, Solana, BNB Smart Chain, Base, Arbitrum, Polygon, Hyperliquid, Monad, and MegaETH. This is the broadest single-server chain coverage yet, eclipsing EVM MCP Server's 60+ networks by also covering non-EVM chains.
+
+**MCP reaches "de facto protocol" status (April 2026).** The MCP ecosystem crossed 10,000 public servers and 97 million monthly SDK downloads by April 2026. For blockchain, this accelerated institutional adoption: BitGo's documentation MCP server, SettleMint's enterprise integration, and OpenSea's official server are all seeing broader use as developers treat MCP as the standard connection layer.
+
+**DeMCP: first decentralized MCP network launches.** DeMCP launched as a fully decentralized MCP network with pay-as-you-go LLM access (GPT-4, Claude) via stablecoins — an interesting experiment in applying blockchain payment rails to MCP server economics. Early-stage, but architecturally notable.
+
+**Web3 MCP security guidance from Google Cloud.** [Google Cloud published guidance](https://cloud.google.com/blog/products/identity-security/using-mcp-with-web3-how-to-secure-blockchain-interacting-agents/) on securing blockchain-interacting MCP agents, covering key management, transaction signing safety, and network isolation. Given the financial stakes, this is essential reading before deploying any write-capable blockchain MCP server.
+
 ## The bigger picture
 
 Blockchain and Web3 is a large but uneven MCP category. The **read side is strong** — between EVM MCP Server (60+ networks), Tatum (130+ networks), and CoinGecko (15,000+ coins), agents can access virtually any blockchain data. The **write side is risky** — servers like SendAI's Solana MCP and defi-trading-mcp enable real transaction execution, but safety controls are minimal. There's no standardized way to limit transaction amounts, require confirmation, or prevent agents from draining wallets.
@@ -169,5 +179,5 @@ The fragmentation is notable. Rather than a few comprehensive servers, the space
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
 

@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 16, 2026 · Updated Apr 7, 2026</span>
+        <span>Published Mar 16, 2026 · Updated May 15, 2026</span>
       </div>
 
       <h1 class="article-title">Science &amp; Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More</h1>
@@ -522,6 +522,11 @@
 <li><strong>Research Funding</strong> — no NIH Reporter, no NSF Awards, no grant search databases.</li>
 <li><strong>Peer Review &amp; Publishing</strong> — no manuscript submission, no reviewer assignment, no journal recommendation workflows.</li>
 </ul>
+<h2 id="whats-new-may-2026">What&rsquo;s New (May 2026)</h2>
+<p><strong>MCP SDK stdio RCE vulnerability disclosed (April 2026).</strong> OX Security disclosed a systemic remote code execution vulnerability in the MCP SDK&rsquo;s stdio transport layer — affecting all language SDKs and estimated at 150M+ downloads across 7,000+ servers. Science and research MCP servers that rely on stdio transport (including the arXiv server, paper-search-mcp, and most mcp.science components) are potentially affected. Users running these servers should update to the latest SDK versions and review whether remote access is necessary for their use case. Local-only deployments reduce risk significantly.</p>
+<p><strong>OAuth 2.1 added to MCP spec (April 2026).</strong> The MCP protocol added OAuth 2.1 authorization with incremental scope consent, enabling research MCP servers to request only the permissions they need rather than broad access grants. This is particularly relevant for institutional research environments where data governance is strict — servers accessing PubMed, institutional repositories, or subscription databases can now authenticate with minimal-scope credentials.</p>
+<p><strong>Qubitsok: quantum computing + arXiv server (May 5, 2026).</strong> A new server combining quantum computing job search and arXiv paper discovery launched in early May 2026 — reflecting growing interest in quantum-computing-aware research assistance. Still early-stage but notable as an intersection between research literature and computation.</p>
+<p><strong>mcp.science ecosystem reaches 12+ servers.</strong> The <a href="https://github.com/pathintegral-institute/mcp.science">pathintegral-institute/mcp.science</a> hub continues to add specialized scientific computing tools under its <code>uvx mcp-science &lt;name&gt;</code> unified installation pattern. It remains the most comprehensive single entry point for scientific computing MCP servers.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>Science and research MCP servers are <strong>strong for literature search and protein science, but thin everywhere else</strong>.</p>
 <p>The <strong>arXiv MCP server at 2,400 stars</strong> proves that researchers want AI-assisted paper discovery. The multi-source aggregators (paper-search-mcp covering 7 databases, Scientific-Papers-MCP covering 6 with 200M+ papers through CORE and OpenAlex) mean that literature review workflows are genuinely accelerated. Citation analysis through Semantic Scholar adds context to the raw search results.</p>
@@ -531,7 +536,7 @@
 <p><strong>Rating: 3.5 out of 5</strong> — academic paper search is excellent, scientific computing is solid, bioinformatics is surprisingly deep, but the absence of lab infrastructure, chemistry tools, genomics databases, and research workflow integration keeps this from a higher score. The arXiv server&rsquo;s 2,400 stars show strong demand; the ecosystem needs to follow that signal into the lab.</p>
 <hr>
 <p><em>This review covers MCP servers available as of March 2026. Star counts are approximate and change over time. ChatForest researches MCP servers through documentation, GitHub repositories, and community directories — we do not test servers hands-on. For corrections or additions, contact us via chatforest.com.</em></p>
-<p><em>This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -583,7 +588,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-07T00:00:00+09:00","datePublished":"2026-03-16T12:30:00+09:00","description":"Science and research MCP servers are turning AI agents into research assistants — searching papers, analyzing citations, querying protein databases, and running mathematical","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Science \u0026 Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More"},"name":"Science \u0026 Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/science-research-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-15T00:00:00+09:00","datePublished":"2026-03-16T12:30:00+09:00","description":"Science and research MCP servers are turning AI agents into research assistants — searching papers, analyzing citations, querying protein databases, and running mathematical","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Science \u0026 Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More"},"name":"Science \u0026 Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/science-research-mcp-servers/"}
 </script>
 
 

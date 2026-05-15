@@ -322,11 +322,21 @@ The gaps in education MCP servers are striking:
 
 The concentration around Canvas (6+ servers) versus the absence of Blackboard (0 servers) likely reflects Canvas's developer-friendly API and the university CS student demographic most likely to build MCP servers.
 
+## What's New (May 2026)
+
+**Canvas MCP grows to 88 tools and 8 agent skills.** [vishalsachdev/canvas-mcp](https://github.com/vishalsachdev/canvas-mcp) has expanded since our last refresh — tool count reached 88 (up from 92 in v1.2.0; version numbering varies, but the server added specialized agent skills including `canvas-course-qc` for pre-semester audits, `canvas-accessibility-auditor` for WCAG compliance, and `canvas-course-builder` for scaffolding courses from specs or templates). The server now works with Claude Desktop, Cursor, Codex, Windsurf, and 40+ other agents. Canvas MCP is compliant with Canvas LMS API 2024–2026 requirements (User-Agent header, per_page pagination).
+
+**Docebo launches MCP public beta (April 21, 2026).** [Docebo AgentHub](https://www.morningstar.com/news/business-wire/20260421016608/docebo-launches-docebo-agenthub-and-unites-skills-intelligence-enterprise-knowledge-and-agentic-ai-in-a-single-platform) launched on April 21, 2026, with the Docebo MCP Server entering public beta. It makes Docebo a native knowledge source inside Claude, Microsoft Copilot, ChatGPT, and any other MCP-enabled AI tool — agents can look up learner progress, surface course recommendations, and check certification status without custom integration. General availability planned for July 2026. Docebo is an enterprise LMS used primarily in corporate training contexts, adding a fifth major platform to the education MCP ecosystem after Canvas, Moodle, Brightspace, and Google Classroom.
+
+**Canvas/Instructure breach (May 7, 2026).** The hacking group ShinyHunters targeted Instructure — the company behind Canvas LMS — with ransom demands made public on May 7, 2026. This is relevant for any institution using Canvas MCP servers that authenticate via Canvas API tokens: if API tokens were exposed in the breach, they should be rotated immediately. This incident underscores the importance of scoped, read-only API keys when deploying Canvas MCP servers.
+
+**Agentic grading reaches LMS integrations.** AI grading tools are now operating inside Canvas, Moodle, and Blackboard via LTI grade passback — AI evaluates submissions with institutional reference examples, and grades flow back automatically. This is the LMS side of what the `rubric_assessment` tools in Canvas MCP servers enable: not just surfacing rubrics, but closing the loop with automated grade submission.
+
 ## The Bottom Line
 
 **Rating: 3.5 / 5** — Canvas LMS integration is genuinely impressive, with the deepest MCP coverage of any single education platform. Spaced repetition (Anki) and coding education (LeetCode) are well-served. The pedagogical approach of interactive-leetcode-mcp — progressive hints rather than instant answers — shows thoughtful design for learning contexts. EduBase's official server brings enterprise e-learning features. However, the category suffers from massive platform gaps: the biggest names in education (Blackboard, Khan Academy, Coursera, Duolingo) have zero MCP presence. Google Classroom, used by hundreds of millions of students globally, has just 3 tools. Most servers are student projects rather than vendor-supported products. The bright spot: Instructure's IgniteAgent announcement signals that LMS vendors are beginning to take MCP seriously, which could catalyze broader adoption in 2026.
 
 *ChatForest independently researches MCP servers using publicly available information — GitHub repositories, documentation, and community discussions. We do not have hands-on access to every server reviewed. Star counts reflect the time of research and may have changed. Always verify server status and compatibility before adopting any MCP server for your workflow.*
 
-*This review was last updated on 2026-04-11 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
 

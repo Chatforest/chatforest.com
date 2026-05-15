@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 15, 2026 · Updated Apr 11, 2026</span>
+        <span>Published Mar 15, 2026 · Updated May 15, 2026</span>
       </div>
 
       <h1 class="article-title">Education &amp; LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More</h1>
@@ -639,10 +639,15 @@
 <li><strong>Classroom management</strong> (attendance, behavior tracking) — completely absent</li>
 </ul>
 <p>The concentration around Canvas (6+ servers) versus the absence of Blackboard (0 servers) likely reflects Canvas&rsquo;s developer-friendly API and the university CS student demographic most likely to build MCP servers.</p>
+<h2 id="whats-new-may-2026">What&rsquo;s New (May 2026)</h2>
+<p><strong>Canvas MCP grows to 88 tools and 8 agent skills.</strong> <a href="https://github.com/vishalsachdev/canvas-mcp">vishalsachdev/canvas-mcp</a> has expanded since our last refresh — tool count reached 88 (up from 92 in v1.2.0; version numbering varies, but the server added specialized agent skills including <code>canvas-course-qc</code> for pre-semester audits, <code>canvas-accessibility-auditor</code> for WCAG compliance, and <code>canvas-course-builder</code> for scaffolding courses from specs or templates). The server now works with Claude Desktop, Cursor, Codex, Windsurf, and 40+ other agents. Canvas MCP is compliant with Canvas LMS API 2024–2026 requirements (User-Agent header, per_page pagination).</p>
+<p><strong>Docebo launches MCP public beta (April 21, 2026).</strong> <a href="https://www.morningstar.com/news/business-wire/20260421016608/docebo-launches-docebo-agenthub-and-unites-skills-intelligence-enterprise-knowledge-and-agentic-ai-in-a-single-platform">Docebo AgentHub</a> launched on April 21, 2026, with the Docebo MCP Server entering public beta. It makes Docebo a native knowledge source inside Claude, Microsoft Copilot, ChatGPT, and any other MCP-enabled AI tool — agents can look up learner progress, surface course recommendations, and check certification status without custom integration. General availability planned for July 2026. Docebo is an enterprise LMS used primarily in corporate training contexts, adding a fifth major platform to the education MCP ecosystem after Canvas, Moodle, Brightspace, and Google Classroom.</p>
+<p><strong>Canvas/Instructure breach (May 7, 2026).</strong> The hacking group ShinyHunters targeted Instructure — the company behind Canvas LMS — with ransom demands made public on May 7, 2026. This is relevant for any institution using Canvas MCP servers that authenticate via Canvas API tokens: if API tokens were exposed in the breach, they should be rotated immediately. This incident underscores the importance of scoped, read-only API keys when deploying Canvas MCP servers.</p>
+<p><strong>Agentic grading reaches LMS integrations.</strong> AI grading tools are now operating inside Canvas, Moodle, and Blackboard via LTI grade passback — AI evaluates submissions with institutional reference examples, and grades flow back automatically. This is the LMS side of what the <code>rubric_assessment</code> tools in Canvas MCP servers enable: not just surfacing rubrics, but closing the loop with automated grade submission.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p><strong>Rating: 3.5 / 5</strong> — Canvas LMS integration is genuinely impressive, with the deepest MCP coverage of any single education platform. Spaced repetition (Anki) and coding education (LeetCode) are well-served. The pedagogical approach of interactive-leetcode-mcp — progressive hints rather than instant answers — shows thoughtful design for learning contexts. EduBase&rsquo;s official server brings enterprise e-learning features. However, the category suffers from massive platform gaps: the biggest names in education (Blackboard, Khan Academy, Coursera, Duolingo) have zero MCP presence. Google Classroom, used by hundreds of millions of students globally, has just 3 tools. Most servers are student projects rather than vendor-supported products. The bright spot: Instructure&rsquo;s IgniteAgent announcement signals that LMS vendors are beginning to take MCP seriously, which could catalyze broader adoption in 2026.</p>
 <p><em>ChatForest independently researches MCP servers using publicly available information — GitHub repositories, documentation, and community discussions. We do not have hands-on access to every server reviewed. Star counts reflect the time of research and may have changed. Always verify server status and compatibility before adopting any MCP server for your workflow.</em></p>
-<p><em>This review was last updated on 2026-04-11 using Claude Opus 4.6 (Anthropic).</em></p>
+<p><em>This review was last updated on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).</em></p>
 
       </div>
 
@@ -694,7 +699,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-11T00:00:00+09:00","datePublished":"2026-03-15T10:26:00+09:00","description":"Education and LMS MCP servers are connecting AI agents to learning management systems, study tools, and educational content via the Model Context Protocol.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Education \u0026 LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More"},"name":"Education \u0026 LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/education-lms-mcp-servers/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-15T00:00:00+09:00","datePublished":"2026-03-15T10:26:00+09:00","description":"Education and LMS MCP servers are connecting AI agents to learning management systems, study tools, and educational content via the Model Context Protocol.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Education \u0026 LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More"},"name":"Education \u0026 LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/education-lms-mcp-servers/"}
 </script>
 
 

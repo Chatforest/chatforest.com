@@ -237,6 +237,16 @@ The gaps in science MCP servers reveal where AI-assisted research hasn't reached
 - **Research Funding** — no NIH Reporter, no NSF Awards, no grant search databases.
 - **Peer Review & Publishing** — no manuscript submission, no reviewer assignment, no journal recommendation workflows.
 
+## What's New (May 2026)
+
+**MCP SDK stdio RCE vulnerability disclosed (April 2026).** OX Security disclosed a systemic remote code execution vulnerability in the MCP SDK's stdio transport layer — affecting all language SDKs and estimated at 150M+ downloads across 7,000+ servers. Science and research MCP servers that rely on stdio transport (including the arXiv server, paper-search-mcp, and most mcp.science components) are potentially affected. Users running these servers should update to the latest SDK versions and review whether remote access is necessary for their use case. Local-only deployments reduce risk significantly.
+
+**OAuth 2.1 added to MCP spec (April 2026).** The MCP protocol added OAuth 2.1 authorization with incremental scope consent, enabling research MCP servers to request only the permissions they need rather than broad access grants. This is particularly relevant for institutional research environments where data governance is strict — servers accessing PubMed, institutional repositories, or subscription databases can now authenticate with minimal-scope credentials.
+
+**Qubitsok: quantum computing + arXiv server (May 5, 2026).** A new server combining quantum computing job search and arXiv paper discovery launched in early May 2026 — reflecting growing interest in quantum-computing-aware research assistance. Still early-stage but notable as an intersection between research literature and computation.
+
+**mcp.science ecosystem reaches 12+ servers.** The [pathintegral-institute/mcp.science](https://github.com/pathintegral-institute/mcp.science) hub continues to add specialized scientific computing tools under its `uvx mcp-science <name>` unified installation pattern. It remains the most comprehensive single entry point for scientific computing MCP servers.
+
 ## The Bottom Line
 
 Science and research MCP servers are **strong for literature search and protein science, but thin everywhere else**.
@@ -255,5 +265,5 @@ The **arXiv MCP server at 2,400 stars** proves that researchers want AI-assisted
 
 *This review covers MCP servers available as of March 2026. Star counts are approximate and change over time. ChatForest researches MCP servers through documentation, GitHub repositories, and community directories — we do not test servers hands-on. For corrections or additions, contact us via chatforest.com.*
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
 

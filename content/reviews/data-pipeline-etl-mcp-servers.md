@@ -5,7 +5,7 @@ description: "Data pipeline and ETL MCP servers let AI agents orchestrate workfl
 og_description: "Data pipeline & ETL MCP servers: dbt (533 stars, 65 tools, official), Snowflake-Labs (271 stars, Cortex AI + SQL), mcp-snowflake-server (180 stars, read/write queries), Keboola (83 stars, full ETL platform), mcp-kafka (75 stars, Go, produce/consume), Airflow MCP servers (multiple, DAG management), Databricks (Unity Catalog + lineage), Prefect (33 stars, official), Dagster (21 stars, pipeline monitoring), Airbyte (pipeline generation), Fivetran (sync triggering). 30+ servers reviewed. Rating: 4.0/5."
 content_type: "Review"
 card_description: "Data pipeline and ETL MCP servers across workflow orchestration, data transformation, streaming, integration platforms, and data warehouses. dbt's official server dominates with 533 stars and 65 tools spanning SQL execution, semantic layer, discovery, and documentation. Snowflake's official server brings Cortex AI to the MCP ecosystem. Kafka has the most competitive subcategory with 5+ servers in Go and Python. The data engineering stack is well-represented in MCP — most major tools have at least one server, and several have official implementations."
-last_refreshed: 2026-04-11
+last_refreshed: 2026-05-15
 ---
 
 Data pipeline and ETL is one of the strongest categories in the MCP ecosystem — the major data engineering tools almost all have MCP server implementations, and several are official. AI agents that can orchestrate Airflow DAGs, run dbt transformations, produce and consume Kafka messages, query Snowflake warehouses, and trigger Airbyte syncs represent a genuine productivity multiplier for data teams. The category spans six areas: **workflow orchestration** (Airflow, Prefect, Dagster), **data transformation** (dbt), **streaming** (Kafka, Pulsar), **data integration** (Airbyte, Fivetran, Keboola), **data warehouses** (Snowflake, Databricks), and **data quality** (Great Expectations).
@@ -149,12 +149,24 @@ The data pipeline MCP category is strong but has notable gaps:
 5. **Data observability**: No Monte Carlo, Bigeye, or Soda MCP servers for proactive data monitoring.
 6. **Notebook integration**: No Jupyter, Zeppelin, or notebook-first MCP servers for data exploration workflows.
 
+## What's New (May 2026)
+
+**dbt MCP performance improvement: fewer round trips (April 2026).** The `list_metrics` tool now returns dimensions and entities in the same response when the metric count is at or below a configurable threshold (default: 10), reducing LLM round trips from 3 tool calls to 1 for small-to-medium dbt environments. A small but meaningful efficiency gain for teams with manageable semantic layer sizes.
+
+**Airflow 3.2.1 ships tighter access controls (April 2026).** Apache Airflow 3.2.1 added tighter DAG access controls, UI theme flexibility, and OpenSearch log writing support. The DAG access control improvements are relevant for MCP server deployments — agents with Airflow MCP access now have better-defined permission boundaries. The [`mcp-server-apache-airflow`](https://pypi.org/project/mcp-server-apache-airflow/) community server reached v0.2.10 (February 2026), with the Astronomer-maintained `astro-airflow-mcp` variant continuing active development in the Astronomer agents monorepo.
+
+**Prefect MCP April 2026 quarterly release.** Prefect's [April 2026 quarterly release](https://docs-customer-managed.prefect.io/releases/april-2026/) added profile images, version info in the support menu, improved automation create/edit interfaces with templates for common automations, multi-select dropdown improvements (shift+click range selection), and performance improvements with real-time websocket connections. The [`prefect-mcp`](https://pypi.org/project/prefect-mcp/) package remains in beta.
+
+**Kestra and Zoho DataPrep join the ETL MCP ecosystem.** Kestra (workflow orchestration, an Airflow alternative) and Peliqan have both shipped MCP servers in 2026, giving AI agents natural language control over pipeline metadata and run triggering. [Zoho DataPrep](https://www.zoho.com/dataprep/) now supports an MCP server for commanding pipelines directly from Claude and Cursor using natural language — an entry-level option for teams not ready for Airflow or dbt complexity.
+
+**MCP Tasks primitive unlocks async pipeline jobs.** The forthcoming MCP Tasks primitive — which introduces asynchronous, long-running operations — is specifically designed for workflows like data pipelines. An agent will be able to dispatch a 20-minute ETL job and poll for completion rather than blocking, which is essential for any pipeline that exceeds typical LLM timeout windows. This spec feature is in development and will land in the data pipeline category first when it ships.
+
 ## The Bottom Line
 
 **Rating: 4.0 / 5** — Data pipeline and ETL is one of the strongest MCP categories. dbt's official server ([533 stars](https://github.com/dbt-labs/dbt-mcp/stargazers), [65 tools](https://github.com/dbt-labs/dbt-mcp#available-tools)) is a showcase for what MCP integration should look like. Snowflake and Databricks bring AI-native warehouse capabilities. Kafka has healthy competition with 5+ servers. Airflow, Prefect, and Dagster cover orchestration. The main weakness is on the streaming transformation side and data observability — but for batch ETL and warehouse operations, the ecosystem is mature and well-supported.
 
 ---
 
-*Last updated: April 11, 2026. Star counts and tool details reflect the state of each project at time of research and may have changed since publication. ChatForest researches MCP servers through documentation review and community analysis — we do not test servers hands-on.*
+*Last updated: May 15, 2026. Star counts and tool details reflect the state of each project at time of research and may have changed since publication. ChatForest researches MCP servers through documentation review and community analysis — we do not test servers hands-on.*
 
-*This review was last edited on 2026-04-11 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*

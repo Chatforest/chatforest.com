@@ -267,7 +267,13 @@ The CMS MCP ecosystem is one of the strongest in the entire MCP landscape. Offic
 
 **For greenfield AI-agent-first projects**: Cloudflare's EmDash is the first CMS where MCP is built in rather than bolted on. Very early (v0.1.0 preview) but architecturally compelling if you want agents to be first-class citizens from day one.
 
+## What's New (May 2026)
+
+**Optimizely JavaScript SDK v2 and AI-agent markdown (April 2026).** [Optimizely's 2026 release notes](https://support.optimizely.com/hc/en-us/articles/27677034133645-2026-CMS-SaaS-release-notes) include two agent-relevant updates: the JavaScript SDK v2 ships stronger validation, expanded content type support, and improved handling of Content and ContentReference properties. More interesting is the beta "Markdown for AI agents" feature — CMS 12 and CMS 13 can now deliver clean markdown versions of pages to AI agents at the edge rather than full HTML, reducing ingestion cost and improving AI response accuracy. This positions Optimizely as one of the first enterprise CMSes to optimize its output format for LLM consumption rather than browser rendering.
+
+**EmDash accelerates (v0.1.x to v0.2.x window).** Cloudflare's EmDash has continued shipping rapidly since its April 2026 preview launch. The "built-in MCP from day one" architecture has attracted attention from headless-CMS-adjacent teams looking for simpler deployment paths. Still early-stage, but now with community momentum building.
+
 **Rating: 4.5/5** — This is one of the strongest MCP categories overall. WordPress's Abilities API represents a genuinely novel approach to CMS-AI integration that other platforms will likely emulate. The breadth of official support is unmatched in the MCP ecosystem. Headless CMS platforms are pushing the frontier with remote hosted servers, OAuth authentication, and schema-aware operations. Ghost's comprehensive single-server coverage, Sanity's "always-fresh" agent rules, and Directus's dynamic prompts show real innovation. Deductions for fragmented WordPress ecosystem, missing major website builders (Squarespace, Wix), limited safety controls, and no cross-CMS content migration tooling.
 
-*This review was last edited on 2026-04-04 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
 
