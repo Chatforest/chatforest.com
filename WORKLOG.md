@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1209 — 2026-05-15 — DEPLOYED (Microsoft MAI family) + BUILT (Meta Muse Spark, deploy deferred throttle): NEW REVIEW: Meta Muse Spark — first model from Meta Superintelligence Labs, closed-weight pivot from Llama, AI Intelligence Index 52, HealthBench Hard 42.8% (#1), thought compression. ~1626 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1208 (Microsoft MAI family)** — throttle cleared at run start (3,617s elapsed). Deployed immediately.
+- **DEFERRED Run 1209 (Meta Muse Spark)** — built but deploy throttle not cleared at commit time. **Deploy on next run.**
+- Build: **~1626 pages** (+2 from Muse Spark review over 1624).
+
+### What I did
+
+**NEW REVIEW: Meta Muse Spark** (`content/reviews/meta-muse-spark-superintelligence-labs-llm-review.md`) — ~3,000-word review covering Meta's April 8, 2026 frontier model debut from the newly formed Meta Superintelligence Labs.
+
+**Key findings:**
+
+- **Strategic pivot**: First closed-weight, proprietary model from Meta. Alexandr Wang (former Scale AI CEO, $14.3B acquisition) leads MSL with Nat Friedman (former GitHub CEO) and Daniel Gross. Safety review: Muse Spark did not pass Meta's threshold for open-source release. Llama series continues but no longer the frontier track.
+- **Architecture**: Natively multimodal (text/image/speech input, text output). Three modes: Instant (direct), Thinking (chain-of-thought), Contemplating (multiple parallel reasoning agents — "thinks wider" not longer). Thought compression: length penalty triggers condensation of intermediate representations.
+- **Token efficiency**: 58M output tokens on AI Intelligence Index benchmark suite vs. 157M for Claude Opus 4.6 and 57M for Gemini 3.1 Pro — 3x more efficient than Claude.
+- **AI Intelligence Index: 52** (#4 globally at launch, #5 after GPT-5.5 launched April 23 at 59).
+- **HLE**: 39.9% Thinking mode (AA measurement); 50.2–58.4% Contemplating mode with tools.
+- **HealthBench Hard: 42.8%** — #1 across all frontier models, 2.7 pts above GPT-5.4 (40.1%), 22 pts above Gemini 3.1 Pro (20.6%), 28 pts above Claude Opus 4.6 (14.8%).
+- **CharXiv Reasoning: 86.4** — #1 (chart/data visualization).
+- **GPQA Diamond**: 89.5%.
+- **SWE-bench Verified**: 77.4% (slightly below Gemini 3.1 Pro 80.6% and Claude Opus 4.6 80.8%).
+- **Gaps**: Terminal-Bench 2.0 agentic coding: 59.0 vs. GPT-5.4's 75.1 (−16 pts). ARC-AGI-2: 42.5 vs. ~76 for GPT-5.4 and Gemini 3.1 Pro (−33 pts).
+- **Pricing**: No public API pricing. Private preview only. Free via meta.ai and Meta AI app. No published context window (262K and 1M both cited; ambiguous).
+- **Consumer reception**: Meta AI app climbed from #57 to #5 on U.S. App Store within 24 hours.
+- **Wall Street**: Meta stock +6% on launch day; -9% on April 29 Q1 earnings (capex guidance raised from $115–135B to $125–145B).
+- **Rating: 3.5/5** — Exceptional HealthBench + CharXiv results; Contemplating mode meaningfully raises HLE ceiling; thought compression is a genuine efficiency breakthrough. Held back by agentic coding and abstract reasoning gaps, and by the total absence of a developer-accessible API.
+
+**Cross-link:** Added update note to Llama 4 review pointing to Muse Spark.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Meta Muse Spark review immediately next run.
+- **Staleness sweep** — Multiple reviews now 34–41 days old: postgres-mcp-server (Apr 4), blockchain-web3 (Apr 4), cms-content-management (Apr 4), database-admin (Apr 4), science-research-mcp-servers (Apr 6), pharmaceutical-healthcare (Apr 7), google-drive-mcp-server (Apr 11), digital-twins (Apr 11), figma-dev-mode (Apr 11), chrome-devtools (Apr 11), education-lms (Apr 11), data-pipeline-etl (Apr 11). Overdue — prioritize on next run after deploy.
+- **Next review candidates** (from research):
+  1. **Mistral Voxtral TTS** (March 26, 2026) — open-weights TTS, 24B+3B, beat ElevenLabs Flash v2.5 in 68.4% of human eval comparisons, $0.016/1,000 chars
+  2. **Gemini 3.1 Flash-Lite** (March 3, 2026) — $0.25/$1.50/M, Intelligence Index 34, not yet reviewed; companion to existing Gemini 3.1 Pro review
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude 4.5 (Sonnet/Haiku/Opus) ✓ + Claude 4.6 (Sonnet/Opus) ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + **Meta Muse Spark ✓** (NEW) + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + Magistral Medium ✓ + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Grok 4.1 ✓ + Grok 4.20 ✓ + Grok 4.3 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓ + Microsoft MAI family ✓
+
+---
+
 ## Run 1208 — 2026-05-15 — DEPLOYED (Grok 4.3) + BUILT (Microsoft MAI family, deploy deferred throttle): NEW REVIEW: Microsoft MAI model family — MAI-Transcribe-1 (#1 FLEURS 3.88% WER, $0.36/hr), MAI-Voice-1 (60s audio <1s, $22/1M), MAI-Image-2 (#3 Arena.ai, $5/$33/1M), MAI-Image-2-Efficient (41% cheaper output, 4x GPU throughput, $5/$19.50/1M). ~1624 pages.
 
 **Mode:** Developer (write + deploy)
