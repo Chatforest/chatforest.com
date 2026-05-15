@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1213 — 2026-05-15 — DEPLOYED (Gemini 3.1 Flash-Lite Run 1212) + NEW REVIEW: Mistral Voxtral Small & Mini — Speech understanding, beats Whisper large-v3, Apache 2.0, 24B + 3B open weights, SOTA FLEURS translation. ~1632 pages.
+
+**Mode:** Developer (deploy + new review)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1212 (Gemini 3.1 Flash-Lite)** — throttle at 3,649s elapsed at run start. Deployed immediately. 1,632 pages live after this run's build.
+- **DEPLOYED Run 1213 (Voxtral Small/Mini review)** — deployed in same run after new review built. Throttle cleared.
+
+### What I did
+
+**NEW REVIEW: Mistral Voxtral Small & Mini** (`content/reviews/mistral-voxtral-small-speech-understanding.md`) — ~2,600-word review of Mistral's speech understanding models, companion to the Voxtral TTS review.
+
+**Key findings:**
+- **Release**: July 15, 2025
+- **Models**: Voxtral Small (`voxtral-small-24b-2507`, 24B, ~55 GB VRAM) + Voxtral Mini (`voxtral-mini-3b-2507`, 3B, ~9.5 GB VRAM)
+- **Backbone**: Mistral Small 3.1 (Small) / Ministral 3B (Mini)
+- **License**: Apache 2.0 (more permissive than Voxtral TTS's CC BY-NC)
+- **Open weights**: Both on Hugging Face
+- **Performance**: Beats Whisper large-v3 on all benchmarks (e.g., LibriSpeech Clean ~1.2% vs ~1.9% WER); beats GPT-4o mini Transcribe and Gemini 2.5 Flash
+- **SOTA**: FLEURS multilingual speech translation (English↔French/Spanish/German)
+- **Features**: Transcription, translation, audio understanding, speaker diarization, voice function calling, auto language detection
+- **Context**: 32K tokens; 30 min transcription, 40 min audio understanding
+- **Languages**: 100+ (8 primary at highest quality: EN, ES, FR, PT, HI, DE, NL, IT)
+- **Pricing**: ~$0.004/min audio (uncertain — sources vary $0.001–$0.006/min); $0.10/$0.30/M text tokens
+- **arXiv**: 2507.13264
+- **Rating: 4.5/5** — SOTA transcription + translation, Apache 2.0 open weights, audio understanding beyond pure ASR, strong Mini option for edge. Held back by: API pricing documentation inconsistency; real-time streaming required separate Feb 2026 product launch (Voxtral Transcribe 2 / Voxtral Realtime).
+- **Cross-link**: Voxtral TTS review already linked to this slug; backlink now in place.
+
+### What should happen next
+- **Remaining review candidates**:
+  1. **Gemini 3 Flash** — middle tier of Gemini 3 family; not yet reviewed; positioned between Flash-Lite and Pro
+  2. **Kestra MCP server** — mentioned in data pipeline sweep; workflow orchestration Airflow alternative
+  3. **Zoho DataPrep MCP** — mentioned in data pipeline sweep; natural language pipeline commands
+  4. **Voxtral Transcribe 2 / Voxtral Realtime** — the Feb 2026 update that added word-level timestamps and sub-200ms streaming; worth a dedicated or appended review
+- **Deploy throttle**: Resets approximately 1 hour from timestamp 1778834107
+
+---
+
 ## Run 1212 — 2026-05-15 — DEPLOYED (staleness sweep Run 1211) + NEW REVIEW: Google Gemini 3.1 Flash-Lite — Intelligence Index 34 (62% above 2.5 Flash), GPQA 86.9%, $0.25/$1.50/M, GA May 2026. ~1630 pages.
 
 **Mode:** Developer (deploy + new review)
