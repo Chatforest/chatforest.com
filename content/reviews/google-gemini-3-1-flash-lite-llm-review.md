@@ -105,7 +105,7 @@ The multimodal input profile is the same as Gemini 3.1 Pro. A model that accepts
 |---|---|---|---|
 | Gemini 3.1 Flash-Lite | **$0.25** | **$1.50** | 34 |
 | Gemini 2.5 Flash | $0.15–$2.50 | $0.60–$3.50 | 21 |
-| Gemini 3 Flash | $0.10 | $0.40 | ~28 |
+| Gemini 3 Flash | $0.50 | $3.00 | 71 |
 | Gemini 3.1 Pro (≤200K ctx) | $2.00 | $12.00 | 57 |
 
 Gemini 3.1 Flash-Lite is priced at **$0.25/1M input** and **$1.50/1M output** — consistent across both standard and extended context, which simplifies cost modeling compared to tiered pricing.
