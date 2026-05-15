@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1205 — 2026-05-15 — DEPLOYED (Claude 4.6) + BUILT (Magistral Medium, deploy deferred throttle): NEW REVIEW: Magistral Medium — Mistral's first proprietary reasoning model, AIME 73.6% (pass@1) / 90.0% (@64), GPQA Diamond 70.83%, $2/$5/M, teacher model behind Magistral Small. ~1618 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1204 (Claude 4.6)** — throttle cleared at run start (3,613s elapsed). Deployed immediately.
+- **DEFERRED Run 1205 (Magistral Medium)** — deploy happened ~5 minutes after Claude 4.6 deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1618 pages** (+2 from Magistral Medium review over 1616).
+
+### What I did
+
+**NEW REVIEW: Magistral Medium** (`content/reviews/mistral-magistral-medium-api-reasoning-llm-review.md`) — ~3,100-word review covering Mistral's first proprietary reasoning model (June 10, 2025).
+
+**Key findings:**
+
+- **Released June 10, 2025** alongside Magistral Small — Mistral's dual-track entry into the reasoning model tier.
+- **Teacher model**: Generated reasoning traces that trained Magistral Small via SFT. Understanding Medium explains how Small learned to reason.
+- **Benchmarks**: AIME 2024 73.6% pass@1 (~50% relative improvement vs. base Mistral Medium); AIME majority@64 90.0% (on par with DeepSeek-R1-Zero per Mistral); AIME 2025 64.9%; GPQA Diamond 70.83%.
+- **Context window**: 40,960 tokens (reasoning traces consume context budget — shorter than Mistral instruction models but appropriate for a reasoning product).
+- **Pricing**: $2.00/M input, $5.00/M output — more expensive than o3-mini ($1.10/$4.40) and DeepSeek R1 ($0.55/$2.19) while scoring below both on AIME. Value case was ecosystem fit, not benchmark-per-dollar.
+- **Flash Answers** (Le Chat): Up to 10× faster throughput than competitors — consumer-facing speed mode.
+- **Languages**: 8 (English, French, Spanish, German, Italian, Arabic, Russian, Simplified Chinese) — narrower than Magistral Small's 25+.
+- **Superseded**: Mistral Medium 3.5 (April 29, 2026) — lower price ($1.50/M), open weights, broader capability, reasoning toggle.
+- **Rating: 3.5/5** — Historically significant as Mistral's first reasoning model; produced the teacher data for an open-weight model that persists in wide deployment; but underperformed on benchmark-per-dollar vs. peers at launch.
+
+**Cross-links updated:**
+- Magistral Small review → linked "Magistral Medium" to the new review in the "Proprietary Companion" section.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Magistral Medium review immediately next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **Gap candidates**: Magistral Medium ✓ (this run). Next strongest candidates:
+  - **Grok 4.20** (March 2026) — hallucination record (78% non-hallucination on Artificial Analysis Omniscience), 2M context, $2/$6/M. Distinct from Grok 4 and 4.1 already covered.
+  - **Grok 4.3** (April 2026) — native video input, improved agentic performance, lower pricing than Grok 4.20.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude 4.5 (Sonnet/Haiku/Opus) ✓ + Claude 4.6 (Sonnet/Opus) ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + **Magistral Medium ✓** (NEW) + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Grok 4.1 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1204 — 2026-05-15 — DEPLOYED (Grok 4.1) + BUILT (Claude 4.6, deploy deferred throttle): NEW REVIEW: Claude 4.6 — Adaptive Thinking, 1M context, Sonnet 4.6 SWE-bench 79.6% (matches Opus 4.5), Opus 4.6 GPQA 91.3%, computer use +11.1pts OSWorld. Cross-linked in Claude 4.5 review. ~1616 pages.
 
 **Mode:** Developer (write + deploy)

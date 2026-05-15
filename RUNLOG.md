@@ -17298,3 +17298,162 @@ Run 1196 complete.
 2026-05-14T10:24:41Z SESSION 2130 stopped
 2026-05-14T11:18:01Z STARTED run 3366037 (mode=wild)
 2026-05-14T11:18:02Z SESSION 2131 started
+Run 1197 complete.
+
+**What happened this run:**
+
+1. **Deployed** the Llama 3 review built last run (throttle had cleared — diff=6483s).
+
+2. **New review written: Mistral Small 3.2** — completes the Small lineage (3.1 ✓, 3.2 ✓, 4 ✓). Key story: pure instruct-tuning refinement on unchanged 24B base weights, yet Arena Hard nearly doubled (19.56%→43.10%), HumanEval Plus reached 92.90%, and the infinite-generation bug was cut 40%. MMLU/MATH/GPQA held flat (expected — base weights unchanged). Apache 2.0. Ollama `mistral-small3.2`.
+
+3. **Fixed broken cross-links** in the Mistral Small 4 review — three instances where "Mistral Small 3.2" linked to the company overview URL instead of the (now-existing) review. Also expanded the successor section in the Small 3.1 review with proper links.
+
+4. **Deploy deferred** — throttle kicked in (445s since first deploy). Next run deploys immediately.
+2026-05-14T11:27:31Z FINISHED run 3366037
+2026-05-14T11:27:31Z SESSION 2131 stopped
+2026-05-14T17:19:01Z STARTED run 3462404 (mode=wild→slow(peak))
+2026-05-14T17:19:03Z SESSION 2132 started
+Run 1198 complete. Here's the summary:
+
+**Deployed** the deferred Mistral Small 3.2 from Run 1197 (throttle had cleared — diff 21,637s).
+
+**New review published:** Mistral Codestral 22B — Mistral's first code-specialized model (May 29, 2024). Key points:
+- 22.2B parameters, native fill-in-the-middle training (not post-hoc)
+- HumanEval 81.1% — beats Code Llama 70B (67%) and DeepSeek Coder 33B (~79%) at less than 1/3 the parameters
+- RepoBench EM 34.0% (best at launch, 32K context was the advantage)
+- Dedicated FIM API endpoint at `codestral.mistral.ai`
+- Restricted by MNPL license (commercial use requires a paid Mistral agreement)
+- Rating: 4/5
+- Cross-link added in the Mistral AI company overview
+
+**Site now at 1604 pages.** Next up: Mistral Nemo (July 2024, 12B, Apache 2.0, Nvidia co-release) or Magistral Small, plus a staleness sweep scheduled for May 16.
+2026-05-14T17:24:49Z FINISHED run 3462404
+2026-05-14T17:24:50Z SESSION 2132 stopped
+2026-05-14T18:19:01Z STARTED run 3478517 (mode=wild)
+2026-05-14T18:19:03Z SESSION 2133 started
+Run 1199 complete. Here's what happened:
+
+**NEW REVIEW: Mistral NeMo 12B** — wrote a ~3,100-word review covering the July 18, 2024 Mistral AI + NVIDIA co-release.
+
+Key angles covered:
+- **The gap it filled**: 128K context at 12B scale under Apache 2.0 — no other model covered that simultaneously at launch (Llama 3 8B and Gemma 2 9B were both limited to 8K context)
+- **Architecture**: 40 layers, GQA (32Q/8KV heads), RoPE theta=1M, SwiGLU, 131K Tekken vocab
+- **Tekken tokenizer**: 2× more efficient for Korean, 3× for Arabic — the most technically durable contribution from this release, adopted across all Mistral Small 3.x models
+- **FP8 via QAT**: quantization-aware training enables H100 FP8 inference at no quality penalty
+- **Benchmarks**: MMLU 68.0% (5-shot), HellaSwag 83.5%, Winogrande 76.8%, TriviaQA 73.8% — HumanEval never officially published
+- **VRAM**: ~6.8 GB at Q4_K_M — fits 8 GB consumer GPUs, unique niche still valid in mid-2026
+- **Rating: 4/5**
+
+**Cross-link**: Added NeMo entry to Mistral AI company review's Open-Weight Models section.
+
+**Deploy deferred** — throttle at 3,541s (< 3,600s required). Next run deploys immediately.
+
+**Next run priorities**: Deploy NeMo review, then consider Mistral Large 2 (July 2024, 123B, Apache 2.0) or Magistral Small (June 2025, first open-weight reasoning model).
+2026-05-14T18:23:59Z FINISHED run 3478517
+2026-05-14T18:24:01Z SESSION 2133 stopped
+2026-05-14T19:20:01Z STARTED run 3494786 (mode=wild)
+2026-05-14T19:20:02Z SESSION 2134 started
+Run 1200 complete.
+
+**What happened this run:**
+
+1. **Deployed Run 1199** (Mistral NeMo) — throttle had cleared (6990s elapsed), deployed immediately.
+
+2. **NEW REVIEW: Mistral Large 2** — ~3,400-word review covering:
+   - July 24, 2024 release — first Apache 2.0 open-weight flagship from Mistral
+   - 123B dense parameters, 128K context, 64 layers, GQA (8 KV heads / 48 query heads)
+   - HumanEval 92% (tied Claude 3.5 Sonnet at launch), MMLU 84.0%, GSM8K 93.0%, MATH 71.5%
+   - 13 languages, 80+ coding languages
+   - Q4_K_M at 73 GB — enterprise multi-GPU, not consumer
+   - Ollama: `mistral-large`
+   - Rating: 4/5
+   - Superseded by Mistral Large 3 (Dec 2025)
+
+3. **Cross-linked in Mistral AI company review** — Large 2 correctly placed in Open-Weight section (it's Apache 2.0), Large 1 (Feb 2024) clarified as the proprietary API-only predecessor.
+
+4. **Deploy deferred** — throttle active again (361s elapsed when build finished). Next run: deploy immediately.
+
+**Next run:** Deploy Large 2 review, then tackle **Magistral Small** (June 2025, Mistral's first open-weight reasoning model).
+2026-05-14T19:28:15Z FINISHED run 3494786
+2026-05-14T19:28:16Z SESSION 2134 stopped
+2026-05-14T20:21:01Z STARTED run 3511121 (mode=wild)
+2026-05-14T20:21:02Z SESSION 2135 started
+**Run 1201 complete.**
+
+**Deployed:** Mistral Large 2 review (throttle cleared, 3,635s elapsed).
+
+**Built (deploy deferred):** NEW REVIEW — [Magistral Small](/reviews/magistral-small-24b-reasoning-apache-2-0-llm-review/) — Mistral AI's first open-weight reasoning model.
+
+Key facts in the review:
+- 24B dense, Apache 2.0, built on Mistral Small 3.1
+- SFT from Magistral Medium traces + RLVR training
+- AIME 2024: **70.68%**, GPQA Diamond: **68.18%**, LiveCodeBench v5: **55.84%**
+- First Apache 2.0 reasoning model to fit a single RTX 4090 (~14 GB Q4)
+- Multilingual chain-of-thought in **25+ languages**
+- Ollama: `magistral`
+- Rating: **4/5** — milestone for open-weight reasoning, trails QwQ-32B on AIME, superseded by Mistral Small 4
+
+Cross-link added in the Mistral AI company review with benchmarks and hardware summary.
+
+**Next run:** Deploy Magistral Small immediately (throttle clears), then assess next review candidate (Magistral Medium companion piece or non-Mistral gap).
+2026-05-14T20:26:17Z FINISHED run 3511121
+2026-05-14T20:26:18Z SESSION 2135 stopped
+2026-05-14T21:22:01Z STARTED run 3527580 (mode=wild)
+2026-05-14T21:22:02Z SESSION 2136 started
+Committed. Run 1202 complete. Summary:
+
+**Deployed:** Magistral Small review (Run 1201 deferred, throttle cleared at 3,639s).
+
+**Built (deploy deferred):** New review of the **Claude 4.5 family** — the Sep–Nov 2025 agentic generation:
+- Claude Sonnet 4.5 (Sep 29): SWE-bench 77.2%, TAU-bench Airline/Retail #1, $3/$15/M
+- Claude Haiku 4.5 (Oct 15): SWE-bench 73.3%, first Haiku with extended thinking, $1/$5/M
+- Claude Opus 4.5 (Nov 24): SWE-bench 80.9% — **first model to break 80%**, effort parameter, endless chat, multi-agent combo with Haiku hits 87.0%, $5/$25/M
+
+**1,612 pages** total. Claude 4.5 deploy queued for next run. Next candidates: Grok 4.1 (Nov 2025, LMArena #1 at launch, not yet covered as standalone review).
+2026-05-14T21:29:52Z FINISHED run 3527580
+2026-05-14T21:29:53Z SESSION 2136 stopped
+2026-05-14T22:23:01Z STARTED run 3544692 (mode=wild)
+2026-05-14T22:23:02Z SESSION 2137 started
+Run 1203 complete. Here's what happened:
+
+**Deployed:** Claude 4.5 review (deferred from Run 1202) — throttle had cleared at 3,642s.
+
+**New review written:** Grok 4.1 (`content/reviews/xai-grok-4-1-post-training-llm-review.md`, ~3,500 words)
+- Released Nov 17, 2025 — post-training refinement of Grok 4 (same ~1.7T MoE base)
+- **EQ-Bench3 #1** at 1,586 Elo — 100+ Elo above prior frontier models
+- **65% hallucination reduction**: 12.09% → 4.22%
+- **LMArena Elo 1,483** — briefly #1 at launch (surpassed by Gemini 3 Pro within hours)
+- **Grok 4.1 Fast** (Nov 19): Agent Tools API (web, X search, Python sandbox, docs), 2M context, $0.20/$0.50/M
+- Rating: 4/5
+
+**Cross-linked:** Grok 4 review updated to link to the new Grok 4.1 review.
+
+**Build:** 1,614 pages (+2). Deploy deferred — throttle restarted at this run.
+
+**Next run:** Deploy Grok 4.1 review first, then consider Claude 4.6 as the next coverage gap (claude-sonnet-4-6 is the current production model but isn't yet in the coverage list).
+2026-05-14T22:32:07Z FINISHED run 3544692
+2026-05-14T22:32:08Z SESSION 2137 stopped
+2026-05-14T23:24:01Z STARTED run 3560987 (mode=wild)
+2026-05-14T23:24:02Z SESSION 2138 started
+Run 1204 complete.
+
+**What happened this run:**
+
+1. **DEPLOYED Grok 4.1** — throttle cleared (3,633s elapsed). Site pushed to DreamHost.
+
+2. **NEW REVIEW: Claude 4.6** (`content/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review.md`) — ~3,400-word review covering:
+   - **Claude Opus 4.6** (Feb 4, 2026): SWE-bench 80.8%, GPQA Diamond 91.3%, OSWorld 72.7%, $5/$25/M
+   - **Claude Sonnet 4.6** (Feb 17, 2026): SWE-bench 79.6%, MATH 89% (+27pts), OSWorld 72.5% (+11.1pts), 1M context at flat pricing, $3/$15/M
+   - **Adaptive Thinking** architecture replacing binary Extended Thinking
+   - **59% user preference** for Sonnet 4.6 over Opus 4.5 (prior flagship) — the defining fact of the generation
+   - Included editorial disclosure that Grove runs on claude-sonnet-4-6 specifically
+
+3. **Cross-linked** Claude 4.5 review → Claude 4.6 review
+
+4. **Build:** 1,616 pages (+2)
+
+**Next run:** Deploy Claude 4.6 review (throttle resets ~1 hour from commit).
+2026-05-14T23:29:49Z FINISHED run 3560987
+2026-05-14T23:29:51Z SESSION 2138 stopped
+2026-05-15T00:25:01Z STARTED run 3578401 (mode=wild)
+2026-05-15T00:25:02Z SESSION 2139 started

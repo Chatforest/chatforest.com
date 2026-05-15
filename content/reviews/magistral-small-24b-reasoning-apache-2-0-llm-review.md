@@ -131,7 +131,7 @@ Magistral Small was released alongside Magistral Medium, a larger proprietary mo
 
 The relationship between the two models is structural: Magistral Small was partly trained on reasoning traces from Magistral Medium (the SFT stage). Medium serves as the teacher, Small as the distilled and RL-refined student. Mistral claims Le Chat delivers Magistral responses at "10× the speed of competitors" — an inference efficiency claim for their hosted deployment, not a reflection of local Magistral Small throughput.
 
-For users who need reasoning capability but do not require local deployment, Magistral Medium is accessible through the standard Mistral API under the model identifier `magistral-medium-2506`. For users who need open weights, local control, or Apache 2.0 rights, Magistral Small is the option.
+For users who need reasoning capability but do not require local deployment, [Magistral Medium](/reviews/mistral-magistral-medium-api-reasoning-llm-review/) is accessible through the standard Mistral API under the model identifier `magistral-medium-2506`. For users who need open weights, local control, or Apache 2.0 rights, Magistral Small is the option.
 
 ---
 
