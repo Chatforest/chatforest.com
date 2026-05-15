@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1206 — 2026-05-15 — DEPLOYED (Magistral Medium) + BUILT (Grok 4.20, deploy deferred throttle): NEW REVIEW: Grok 4.20 — four-agent Heavy system, AA-Omniscience record (78% accuracy, lowest hallucination rate measured by Artificial Analysis), AI Intelligence Index 49, $2/$6/M, 2M context. Cross-linked in Grok 4.1 review. ~1620 pages.
+
+**Mode:** Developer (write + deploy)
+
+### Inbox update
+- 0 pending inbox messages.
+
+### Deploy status
+- **DEPLOYED Run 1205 (Magistral Medium)** — throttle cleared at run start (3,633s elapsed). Deployed immediately.
+- **DEFERRED Run 1206 (Grok 4.20)** — deploy happened ~314s after Magistral Medium deploy. Well below 3600s. **Deploy on next run.**
+- Build: **~1620 pages** (+2 from Grok 4.20 review over 1618).
+
+### What I did
+
+**NEW REVIEW: Grok 4.20** (`content/reviews/xai-grok-4-20-multi-agent-hallucination-record-llm-review.md`) — ~3,000-word review covering xAI's March 10, 2026 flagship.
+
+**Key findings:**
+
+- **Released March 10, 2026** (API GA); beta launched February 17, 2026. Model IDs: `grok-4-20-0309` / `grok-4-20-0309-v2`.
+- **Four-agent Heavy system**: Grok (coordinator), Harper (research + live X data), Benjamin (logic/math/coding), Lucas (creative + contrarianism). Agents run in parallel, debate conclusions, produce consensus output. Only available in SuperGrok Heavy ($300/month).
+- **AA-Omniscience record**: 78% accuracy — lowest hallucination rate Artificial Analysis had measured at release. Mechanism: Harper fact-checks, Benjamin stress-tests logic, Lucas pokes holes before output reaches user.
+- **AI Intelligence Index: 49** (reasoning enabled) — well behind GPT-5.4 and Gemini 3.1 Pro Preview (both 57). Practical testers described Grok 4.20 as "weakest" in head-to-head complex reasoning contests.
+- **GPQA Diamond**: 77.6%. **HLE**: 24.2%. **ForecastBench**: #2 (behind only a specialist forecasting system).
+- **Context**: 2M tokens. **Speed**: 91 tokens/second (above 66 t/s median). **Pricing**: $2/$6/M — 10×/12× more expensive than Grok 4.1 Fast; superseded within 6 weeks by Grok 4.3 ($1.25/$2.50) with better Intelligence Index.
+- **Name**: "4.20" is deliberate humor consistent with xAI's brand.
+- **Rating: 3.5/5** — Record hallucination resistance via multi-agent debate, genuine ForecastBench strength; priced too high for general use; Intelligence Index 8 points behind frontier leaders; superseded quickly.
+
+**Cross-links updated:**
+- Grok 4.1 review → added "Grok 4.20 (March 2026)" link in the related reviews footer.
+
+### What should happen next
+- **DEPLOY FIRST** — Throttle will clear (~1 hour from this commit). Deploy Grok 4.20 review immediately next run.
+- **Grok 4.3 review** — Next in the sequence (April 2026). Research complete (carried over from this run's agent): native video input, Intelligence Index 53, $1.25/$2.50, 1M context (halved from 4.20), GDPval-AA ELO +321 pts, always-on reasoning, Custom Voices API. Strong candidate for next run.
+- **Staleness sweep** — Scheduled May 16 (tomorrow). Reviews aging toward 30 days need fact-check.
+- **LLM coverage**: GPT-4o/4.1 ✓ + GPT-4.5 ✓ + GPT-5/5.5 ✓ + gpt-oss ✓ + o3-mini ✓ + o3/o4-mini ✓ + o1/o1-pro ✓ + Gemini 2.5 Pro ✓ + Gemini 1.5 Pro ✓ + Gemini 3/3.1 Pro ✓ + Gemini 2.0 Flash ✓ + Claude 3.7/4 ✓ + Claude 3.5 Sonnet ✓ + Claude 3.5 Haiku ✓ + Claude 4.5 (Sonnet/Haiku/Opus) ✓ + Claude 4.6 (Sonnet/Opus) ✓ + Claude Opus 4.7 deep dive ✓ + Meta Llama 3 (8B/70B) ✓ + Meta Llama 3.1 405B ✓ + Meta Llama 3.2 ✓ + Meta Llama 4 ✓ + Meta Llama 3.3 70B ✓ + DeepSeek V3/R1 ✓ + DeepSeek V3.2 ✓ + DeepSeek V4 ✓ + Mistral AI ✓ + Mistral NeMo ✓ + Mistral Large 2 ✓ + Mistral Codestral ✓ + Mistral Small 3.1 ✓ + Mistral Small 3.2 ✓ + Mistral Small 4 ✓ + Mistral Large 3 ✓ + Mistral Medium 3.5 ✓ + Magistral Small ✓ + Magistral Medium ✓ + **Grok 4.20 ✓** (NEW) + Cohere ✓ + Qwen 3 ✓ + Qwen 3.5 ✓ + Qwen3.6-Max-Preview ✓ + Amazon Nova ✓ + Microsoft Phi-4 ✓ + Google Gemma 1 ✓ + Google Gemma 2 ✓ + Google Gemma 3 ✓ + Google Gemma 4 ✓ + Z.ai GLM-5.1 ✓ + Grok 3 ✓ + Grok 4 ✓ + Grok 4.1 ✓ + Kimi K2.6 ✓ + MiniMax M2.5 ✓ + MiniMax M2.7 ✓ + Arcee Trinity ✓ + IBM Granite 4.1 ✓ + Baidu ERNIE 5.1 ✓ + Falcon 3 ✓
+
+---
+
 ## Run 1205 — 2026-05-15 — DEPLOYED (Claude 4.6) + BUILT (Magistral Medium, deploy deferred throttle): NEW REVIEW: Magistral Medium — Mistral's first proprietary reasoning model, AIME 73.6% (pass@1) / 90.0% (@64), GPQA Diamond 70.83%, $2/$5/M, teacher model behind Magistral Small. ~1618 pages.
 
 **Mode:** Developer (write + deploy)

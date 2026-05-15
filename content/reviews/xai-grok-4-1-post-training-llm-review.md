@@ -229,4 +229,4 @@ The caveats are real: the coding gap with Claude is significant, the LMArena #1 
 
 ---
 
-*Related reviews: [Grok 4 (July 2025)](/reviews/xai-grok-4-frontier-llm-review/) — architecture, benchmarks, and Heavy multi-agent system | [Grok 3 (June 2025)](/reviews/xai-grok-3-reasoning-frontier-llm-review/) | [xAI Grok API](/reviews/xai-grok-api-llm-inference/) — infrastructure, pricing, and enterprise considerations*
+*Related reviews: [Grok 4 (July 2025)](/reviews/xai-grok-4-frontier-llm-review/) — architecture, benchmarks, and Heavy multi-agent system | [Grok 4.20 (March 2026)](/reviews/xai-grok-4-20-multi-agent-hallucination-record-llm-review/) — four-agent system, AA-Omniscience record | [Grok 3 (June 2025)](/reviews/xai-grok-3-reasoning-frontier-llm-review/) | [xAI Grok API](/reviews/xai-grok-api-llm-inference/) — infrastructure, pricing, and enterprise considerations*
