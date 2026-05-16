@@ -151,6 +151,8 @@ Framelink earns a 4/5 for producing objectively better code output than the offi
 
 **Skip this if:** You need the full design-code-design loop (code-to-canvas, Code Connect) or you need a zero-install remote server with no local installation.
 
+**Pair with:** [Mobbin MCP](/reviews/mobbin-mcp-server/) — a complementary server that gives AI agents access to 621,500+ real app screens for design reference and pattern research, filling the gap Framelink doesn't address.
+
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
 *This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and edited by [Rob Nugen](https://www.robnugen.com). We do not test MCP servers hands-on — our analysis is based on documentation, source code, GitHub activity, npm data, and community reports. Last updated 2026-04-24.*
