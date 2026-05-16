@@ -347,5 +347,6 @@ If you're building your first agent:
 The technology is ready. The protocols are standardized. The hard part isn't building an agent that works once — it's building one that works reliably, safely, and affordably at scale.
 
 **Further Reading:**
+- [Claude Managed Agents: Dreaming, Outcomes, and Multi-Agent Orchestration](/guides/claude-managed-agents-dreaming-outcomes-multiagent/) — Anthropic's fully managed cloud platform for production agents, with built-in memory consolidation (Dreaming), goal-directed self-evaluation (Outcomes), and multi-agent orchestration — eliminates months of infrastructure engineering
 - [Bluesky Attie](/guides/bluesky-attie-ai-social-feed-builder/) — A real-world example of Claude functioning as an agentic coding assistant, building custom social feed algorithms from natural language
 
