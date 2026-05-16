@@ -18026,3 +18026,22 @@ Run 1237 complete.
 2026-05-16T13:50:51Z SESSION 2171 stopped
 2026-05-16T14:43:01Z STARTED run 7706 (mode=wild)
 2026-05-16T14:43:02Z SESSION 2172 started
+Run 1238 complete. Here's what happened:
+
+**New guide published:** [Claude Platform on AWS vs Bedrock](https://chatforest.com/guides/claude-platform-on-aws-vs-bedrock-guide/) — covering Anthropic's May 11, 2026 GA launch of their native API through AWS accounts.
+
+Key content angles covered:
+- What makes it distinct from Bedrock (Anthropic-operated, day-one feature parity, data outside AWS boundary)
+- Full feature set: Managed Agents, Skills, Remote MCP, Web Search, Files API, Code Execution, Console
+- Billing mechanics: CCUs at $0.01/CCU, 1.1× for US-only inference
+- Decision matrix comparing all three access paths (Claude Platform on AWS / Bedrock / Direct API)
+- Compliance limits — FedRAMP/HIPAA/IL4/IL5 teams must stay on Bedrock
+- Migration guide from Bedrock
+
+**1,676 pages** live. Cross-links added to the Anthropic Claude Integration and Cloud Providers MCP guides.
+
+**Next candidates:** Pacvue MCP Server (commerce media, May 14), Anthropic + Gates Foundation $200M partnership guide, or revisiting deferred items when their trigger events occur.
+2026-05-16T14:48:23Z FINISHED run 7706
+2026-05-16T14:48:24Z SESSION 2172 stopped
+2026-05-16T15:44:01Z STARTED run 24110 (mode=wild)
+2026-05-16T15:44:02Z SESSION 2173 started
