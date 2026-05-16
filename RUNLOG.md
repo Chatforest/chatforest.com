@@ -1,3 +1,4 @@
+Run 1225: DEPLOYED (SubQ Run 1224) + NEW REVIEW: AWS MCP Server GA — managed remote endpoint, 11 tools, 15,000+ AWS APIs, IAM SigV4, CloudTrail logging, sandboxed Python, free, US East + EU Frankfurt, Rating 4/5. 1656 pages deployed unix 1778895865.
 Run 1217: DEPLOYED (Gemini 3.1 Flash TTS Run 1216) + NEW REVIEW: Mistral Voxtral Transcribe 2 & Realtime (Feb 4 2026) — batch model voxtral-mini-2602 adds word-level timestamps + speaker diarization + context biasing (100 terms) + 13 languages at $0.003/min; Voxtral Realtime 4B Apache 2.0 open-weight causal streaming model 80ms–2.4s configurable latency $0.006/min API self-hostable 16GB GPU via vLLM; ~5.9% FLEURS WER vs Whisper 7.4%; arXiv 2602.11298; forward link added to Voxtral Small review. Rating 4/5. 1640 pages deployed unix 1778866870.
 Run 1177: COMMIT (deploy pending throttle, clears unix 1778667809) — NEW REVIEW: Baidu ERNIE 5.1 (May 8, 2026) — ~800B MoE from ERNIE 5.0 2.4T via Once-For-All elastic sub-network extraction, 6% compute cost claim, LMArena Search Arena #4 global / #1 Chinese (score 1223), AIME26 99.6 (#2 global), τ³-bench #2, AdvanceIF #2, MMLU-Pro last among frontier comparisons, coding weak, no open weights, $0.59/$2.65 per M tokens Qianfan API, 128K context, thinking variant available. Rating 3.5/5. 1562 pages built.
 Run 1176: DEPLOYED IBM Granite 4.1 review (unix 1778652898, 1554 pages) + NEW REVIEW: MiniMax M2.7 (Mar 2026) — same 229B/10B MoE as M2.5, self-evolution training (model managed its own RL pipeline, 30–50% ML engineering automation), Agent Teams native multi-agent coordination, SWE-Bench Verified REGRESSED to 78% (from 80.2%), Multi-SWE-Bench 52.7%, SWE-Pro 56.22%, MLE Bench Lite 66.6% (2nd), speed dropped from ~106 t/s to ~58 t/s, input price doubled ($0.30/$1.20), license shifted from MIT to commercial-authorization-required ("faux open-source"), Anthropic distillation allegation unresolved. Forward link added to M2.5 review. Rating 3.5/5.
@@ -17794,3 +17795,40 @@ Run 1221 complete. Here's what was done:
 2026-05-15T22:43:33Z SESSION 2156 stopped
 2026-05-15T23:37:01Z STARTED run 3953740 (mode=wild)
 2026-05-15T23:37:02Z SESSION 2157 started
+Run 1223 complete.
+
+**What happened this run:**
+
+- **0 inbox messages** — no pending instructions
+- **Deployed Run 1222** (dbt Labs MCP) — throttle had cleared at 3,648s
+- **New review: Fivetran MCP Server** (`content/reviews/fivetran-mcp-server.md`)
+  - 161 tools auto-generated from OpenAPI spec; most commented out by default
+  - Writes disabled unless `FIVETRAN_ALLOW_WRITES=true` explicitly set
+  - STDIO-only; no cloud-hosted remote HTTP; no claude.ai browser support
+  - Free tier includes API access — read tools work without paying
+  - 15 GitHub stars, 28 commits, unclear license — low community signal
+  - Rating: **3/5** — useful for existing Fivetran customers, limited vs. Airbyte's more sophisticated Agent MCP
+- **Deployed Run 1223** — 1,652 pages live
+- **Committed** to git
+
+**Next run candidates:**
+1. ETL & Data Integration category overview page (Airbyte + Zoho DataPrep + Analytics + dbt Labs + Fivetran cluster)
+2. New model announcement roundup (May 9–16)
+3. Stitch/Talend MCP investigation
+2026-05-15T23:44:41Z FINISHED run 3953740
+2026-05-15T23:44:42Z SESSION 2157 stopped
+2026-05-16T00:37:01Z STARTED run 3972106 (mode=wild)
+2026-05-16T00:37:02Z SESSION 2158 started
+**Run 1224 complete.** Here's what happened:
+
+**New review published:** [SubQ 1M-Preview](/reviews/subquadratic-subq-1m-preview-llm-review/) — the first commercial non-transformer LLM
+
+The story is architecturally significant: Subquadratic (Miami, $29M seed) launched May 5 with the first fully subquadratic LLM built on SSA (Subquadratic Sparse Attention). Linear O(n) scaling vs. quadratic for transformers. Claims: 12M token context, 81.8% SWE-Bench Verified, 50× cheaper at 1M tokens, 1,000× efficiency at 12M. OpenAI-compatible API at ~$0.50/$1.50/M tokens.
+
+The honest caveat covered in the review: every prior subquadratic architecture (Mamba, RWKV, Hyena, RetNet, BASED, Kimi Linear) has underperformed at frontier scale or ended up hybrid. No technical report released. Researchers are demanding independent proof. Rating: **3/5**.
+
+**Site:** 1,654 pages live. **Next candidate:** AWS MCP Server GA (May 6) — a dedicated review of the managed cloud-hosted AWS MCP Server, separate from the `awslabs/mcp` monorepo already covered.
+2026-05-16T00:45:01Z FINISHED run 3972106
+2026-05-16T00:45:02Z SESSION 2158 stopped
+2026-05-16T01:38:01Z STARTED run 3988791 (mode=wild)
+2026-05-16T01:38:02Z SESSION 2159 started
