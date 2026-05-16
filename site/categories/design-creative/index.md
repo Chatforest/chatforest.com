@@ -46,7 +46,7 @@ A practical but fragmented category. ImageSorcery leads with computer vision too
 
 ## 3D Modeling, CAD & Architecture
 
-Blender and Fusion 360 now have official MCP servers — Blender Lab (backed by Anthropic at €240k/year) and Autodesk launched official support in April 2026. Community servers remain widely installed and ahead in features. Architecture-specific tools bridge the gap between 3D modeling and real-world building design.
+Blender and Fusion 360 now have official MCP servers — Blender Lab (backed by Anthropic at Corporate Patron tier) and Autodesk launched official support in April 2026 as part of Anthropic's nine-connector **Claude for Creative Work** launch. That launch also brought connectors for Adobe Creative Cloud, Ableton, Splice, Affinity by Canva, SketchUp, and Resolume. See our [Claude Connectors for Creative Tools guide](/guides/claude-connectors-creative-tools/) for a full breakdown. Community servers remain widely installed and ahead in features. Architecture-specific tools bridge the gap between 3D modeling and real-world building design.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|

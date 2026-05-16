@@ -150,6 +150,8 @@ BlenderMCP collects anonymous usage data by default. You can disable it through 
 
 **AgentSeal security validation (March 30).** AgentSeal's runtime exploitation research confirmed BlenderMCP's `execute_blender_code` vulnerability as exploitable, not just theoretical. Filed issue #214 documenting prompt injection risks in tool descriptions (OWASP MCP03). The MCPTox benchmark found a 72.8% attack success rate across MCP servers when injecting instructions through tool interactions. All security PRs (#205 for Hunyuan3D SSRF/file read) remain unmerged after 40+ days.
 
+**Anthropic joins Blender Development Fund (April 28).** As part of launching nine Claude connectors for creative tools, Anthropic joined the Blender Development Fund as a Corporate Patron — a financial commitment to Blender's open-source development infrastructure, specifically supporting Python API development. The same launch included an official Claude connector for Blender (distinct from this community-built server), alongside connectors for Adobe Creative Cloud, Autodesk Fusion, Ableton, Splice, Affinity by Canva, SketchUp, Resolume Arena, and Resolume Wire. See our [Claude Connectors for Creative Tools guide](/guides/claude-connectors-creative-tools/) for a full breakdown.
+
 **Stars crossed 20K.** GitHub stars grew from 17,900 to 20,100 (+12%), forks from 1,700 to 2,000. PulseMCP all-time visitors surged from 841K to 1.3M (+55%), weekly from ~25.5K to 37.8K, and global rank improved from #55 to #45.
 
 **New issues.** #219 (incomplete JSON/MCP timeout), #221 (TypeError in Hyper3D image generation), #226 (pyiceberg build failure), #227 (Codex support request). Open issues grew from 31 to 36, open PRs from 24 to 29.
