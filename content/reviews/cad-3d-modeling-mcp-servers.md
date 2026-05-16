@@ -111,7 +111,7 @@ A second FreeCAD server ([lucygoodchild/freecad-mcp-server](https://github.com/l
 | Announced | April 28, 2026 (Fusion); April 9 (Product Help) |
 | Available | Autodesk App Store + autodesk.com/solutions/autodesk-ai/autodesk-mcp-servers |
 
-On April 28, 2026 — as part of Anthropic's "Claude for Creative Work" launch — Autodesk announced two official Fusion MCP servers:
+On April 28, 2026 — as part of Anthropic's "Claude for Creative Work" launch ([full guide](/guides/claude-connectors-creative-tools/)) — Autodesk announced two official Fusion MCP servers:
 
 **Autodesk Fusion MCP** runs locally alongside a running Fusion instance. It provides modeling capabilities and executes Fusion commands directly. Compatible with Claude Desktop, Cursor, and any MCP-capable HTTP client. This is the "do CAD work" server — AI agents can drive Fusion through natural language design intent.
 

@@ -141,6 +141,7 @@ Specific Creative Cloud integrations as of April 2026:
 
 **Cross-app AI (April 2026):**
 - **Firefly AI Assistant** — natural language agent that can operate across Photoshop, Premiere Pro, and Illustrator from a single prompt; represents Adobe's first step toward an agentic Creative Cloud workflow
+- **Claude Connector for Adobe Creative Cloud** — also on April 28, Anthropic launched an official Claude connector giving Claude 50+ tools across Photoshop, Premiere, Illustrator, Lightroom, InDesign, and Firefly. This is separate from Firefly's own AI: it's Claude reaching into Adobe apps, not Adobe's models generating content. See our [Claude Connectors for Creative Tools guide](/guides/claude-connectors-creative-tools/) for details.
 
 For teams and enterprises already paying for Creative Cloud, the AI video capabilities arrive at zero additional workflow cost. The Firefly model is available within subscription credit limits; partner models (Runway, Kling, Veo) require their own licensing or per-use billing within Firefly's interface.
 
