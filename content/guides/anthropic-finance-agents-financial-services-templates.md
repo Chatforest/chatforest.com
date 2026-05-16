@@ -143,6 +143,12 @@ The finance agent launch points at several things worth tracking:
 - **OpenAI's response** — InvestmentNews described the launch as accelerating an "arms race" with OpenAI in financial services. OpenAI's financial services positioning was not disclosed in sources reviewed for this guide.
 - **Audit and compliance certification** — Financial regulators (SEC, FCA, OCC) have not yet issued guidance on AI agent use in regulated workflows. The presence of full audit logs and human-approval gates in the Managed Agents runtime appears designed to anticipate this scrutiny.
 
+## Related Reading
+
+- [MCP and Finance: Market Data, Banking, Payments, Crypto, and Accounting](/guides/mcp-finance-fintech/) — comprehensive guide to the full financial MCP ecosystem, including the Moody's MCP app and Finance Agents platform connectors
+- [Claude Managed Agents: Dreaming, Outcomes, and Multi-Agent Orchestration](/guides/claude-managed-agents-dreaming-outcomes-multiagent/) — the underlying infrastructure the Finance Agents templates are built on
+- [The AI Agent Protocol Stack](/guides/ai-agent-protocol-stack-2026/) — how MCP, A2A, and other protocols layer together for agentic finance
+
 ---
 
 *This guide is based on Anthropic's May 5, 2026 announcement and supporting coverage from Bloomberg, Fortune, CNBC, and The Register. We do not have access to the Claude Platform and have not tested any of these templates directly. If details have changed, [let us know](mailto:hello@chatforest.com).*

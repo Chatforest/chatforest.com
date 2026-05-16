@@ -176,6 +176,19 @@ Grasshopper, a digital bank focused on small business and startup banking, claim
 
 Grasshopper's approach is significant as a proof point: a regulated US bank deploying production MCP servers for customer-facing AI banking tools. This signals to the broader banking industry that MCP adoption is viable within existing regulatory frameworks.
 
+### Nymbus MCP Server
+
+**Nymbus** | **Official** | **Enterprise** | Launched April 9, 2026
+
+Nymbus — a banking platform serving US banks and credit unions — launched one of the first purpose-built secure MCP servers for core banking operations. The server exposed 19 tools at launch:
+
+- **Customer lookup** — search and retrieve customer records from core banking
+- **Account management** — view balances, transaction history, and account status
+- **Money movement** — initiate transfers and payments
+- **Debit card controls** — manage card status, limits, and controls
+
+Unlike general-purpose banking data servers, Nymbus targets the operational layer — the actual core banking system — not just data aggregation. Security features include token-based authentication, role-based access controls, PII masking, encrypted connections, and full audit logging, meeting the compliance requirements of federally regulated institutions.
+
 ## Payment Processing MCP Servers
 
 ### Stripe MCP Server
@@ -284,6 +297,18 @@ Microsoft's Dynamics 365 ERP MCP server represents the most comprehensive enterp
 
 Xero accounting software is accessible through MCP servers, though primarily through aggregator platforms like Coupler.io rather than an official Xero MCP server. Available capabilities include accessing financial data, transactions, and contacts.
 
+### Digits MCP Server
+
+**Digits** | **Official** | Announced April 2026
+
+Digits — an automated accounting platform for small businesses and accounting firms — launched an MCP server providing read-only access to real-time financial data. The read-only design is intentional: preserving ledger integrity while giving AI tools full analytical access.
+
+- **Real-time financials** — current P&L, balance sheets, and cash flow statements
+- **Transaction records** — clean transactions with a claimed 95%+ auto-booking rate
+- **Custom reporting** — financial data structured for AI analysis, board reporting, and client deliverables
+
+The server is available free with a Digits account. Target workflows include financial planning and analysis, anomaly detection, client advisory outputs for accounting firms, and board report preparation. Digits joins Xero and QuickBooks in the accounting MCP space with a stronger emphasis on AI-native data structure.
+
 ## Enterprise Platforms and Agentic Finance
 
 Several major enterprise platforms are building MCP into their financial AI strategies:
@@ -312,6 +337,53 @@ Zocks is a privacy-first AI assistant for financial advisors that automates meet
 | **Pricing** | Enterprise (via Zocks subscription) |
 
 Zocks claims its platform saves financial advisors 10+ hours per week on administrative tasks. The MCP connector extends that value by making Zocks' structured client data available to any MCP-compatible AI tool — an advisor can ask Claude to "review everything the Johnsons discussed about estate planning in the last year" and get results drawn from Zocks' multi-source client profiles. Cetera, a financial services firm with 12,000 professionals, selected Zocks as their AI assistant platform.
+
+### Moody's Agentic Solutions (MAS)
+
+**Moody's** | **Official** | Launched May 5, 2026
+
+Moody's launched an MCP application — Moody's Agentic Solutions — that embeds credit and compliance intelligence directly into Claude. Unlike most MCP servers that provide structured data access, MAS surfaces Moody's interactive workflows as first-class tools inside the Claude interface.
+
+| Feature | Details |
+|---------|---------|
+| **Data coverage** | 600M+ public and private companies; 2B+ ownership links |
+| **Availability** | Paid Claude plans (Pro, Max, Team); Claude Desktop, claude.ai, Claude Enterprise |
+| **Access model** | Requires existing Moody's subscription; entitlements carry through |
+| **Server URL** | `https://api.moodys.com/genai-ready-data/m1/mcp` |
+| **Auth** | OAuth (Moody's login redirect) |
+| **AWS Marketplace** | Credit Memo workflow available; additional workflows planned |
+
+MAS exposes five tools at launch:
+
+- **findEntity** — search for companies, financial institutions, or governmental entities covered by Moody's
+- **getEntityRatings** — retrieve current ratings and outlooks with rating dates
+- **getEntityRatingDrivers** — access upgrade/downgrade factors and key drivers behind a rating decision
+- **getEntityScorecard** — view rating methodology in detail — factor weights, scoring components, and overall rationale
+- **searchEntityDocuments** — query Moody's proprietary research library including sector analysis and peer comparisons
+
+Key use cases include credit memo generation, M&A due diligence, counterparty risk assessment, KYC screening, and ownership structure mapping for compliance workflows. The data visible through Claude is scoped to the user's existing Moody's subscription entitlements — no new data access is granted by connecting MAS to Claude.
+
+**The MCP app vs. data connector distinction:** MCP apps like Moody's embed interactive, stateful workflows directly in Claude's interface. Data connectors (like FactSet or S&P Capital IQ within the Finance Agents platform) provide governed real-time data access without custom UI surfaces. This architectural difference matters for enterprise deployments that need the full workflow layer, not just data.
+
+### Anthropic Finance Agents Platform Connectors
+
+Announced May 5, 2026 alongside Anthropic's Finance Agents template library, a curated set of enterprise data connectors brings institutional-grade data sources directly into Claude for financial services workflows. These are not standalone MCP servers — they operate within the Finance Agents platform and Claude Enterprise environment.
+
+**Pre-existing connectors:** FactSet, S&P Capital IQ, MSCI, PitchBook, Morningstar, Chronograph, LSEG, Daloopa, MT Newswires, Aiera, Egnyte
+
+**New connectors added May 2026:**
+- **Dun & Bradstreet** — business identity verification and company intelligence
+- **Fiscal AI** — equity fundamentals and financial data
+- **Financial Modeling Prep (FMP)** — real-time quotes and financial data
+- **Guidepoint** — expert interview transcripts and primary research
+- **IBISWorld** — industry analysis and market data
+- **SS&C IntraLinks** — deal data rooms and M&A document access
+- **Third Bridge** — expert interview transcripts
+- **Verisk** — insurance data and analytics
+- **Experian** — credit and identity data (used in KYC screening templates)
+- **GLG** — expert network and primary research
+
+These connectors support the 10 Finance Agents templates (pitch builder, earnings reviewer, KYC screener, general ledger reconciler, and others) covered in detail in our [Anthropic Finance Agents guide](/guides/anthropic-finance-agents-financial-services-templates/).
 
 ### Open Banking and MCP
 
@@ -423,6 +495,27 @@ The practical impact is reducing fraud investigation cycles from hours to second
 
 This is notable because fraud investigation has traditionally required specialized SQL queries or proprietary dashboards. MCP makes device intelligence accessible to any AI-powered workflow, enabling automated incident monitoring and fraud-aware application development without specialized fraud engineering skills.
 
+## Compliance MCP Servers
+
+Regulatory compliance is emerging as its own MCP category within finance — distinct from fraud prevention and general security. The distinction matters: compliance MCP servers are designed for compliance officers and legal teams, not IT or security teams. They expose regulatory content, firm policies, and workflow logic rather than device intelligence or transaction monitoring.
+
+### Comply ComplyAI MCP Server
+
+**Comply** | **Official** | GA May 2026
+
+Comply — a financial services compliance software platform — launched what it positions as financial services' first agentic compliance MCP server. The server connects AI agents to regulatory content and firm-specific compliance infrastructure without requiring developer involvement.
+
+Data and capabilities the server exposes:
+
+- **Regulatory content** — SEC, FINRA, and FCA rules, guidance, and interpretive releases
+- **Firm-specific policies** — supervisory procedures and internal compliance rules configured per firm
+- **Employee compliance data** — certification status, training completion, and disclosure records
+- **Client data** — applicable client information for suitability and compliance checks
+
+Target use cases include trade pre-clearance, policy guidance and interpretation, compliance briefings, employee certification workflows, and natural language compliance reporting. A key design goal is no-code agent building — compliance officers can build custom compliance agents without a developer.
+
+For financial services firms where compliance teams outnumber developers, this architectural choice is significant: MCP-enabled compliance tooling that doesn't require engineering resources to configure or extend.
+
 ## Security and Compliance in Financial MCP
 
 Financial services impose the strictest security and compliance requirements on any AI integration. MCP deployments in finance must address several critical areas:
@@ -514,10 +607,11 @@ If you're exploring MCP integrations for finance and fintech, these guides cover
 - [The Stripe MCP Server](/reviews/stripe-mcp-server/) — detailed review of Stripe's official MCP server
 - [The AI Agent Protocol Stack](/guides/ai-agent-protocol-stack-2026/) — how MCP, A2A, UCP, ACP, and x402 layer together for agentic commerce and finance
 - [Fingerprint's MCP Server: Device Intelligence for Fraud Prevention](/guides/fingerprint-mcp-server-fraud-device-intelligence/) — open-source MCP server bringing device intelligence and Smart Signals to AI-driven fraud investigation in fintech
+- [Anthropic Finance Agents: 10 Financial Services Templates](/guides/anthropic-finance-agents-financial-services-templates/) — the 10 ready-to-run templates for pitch building, KYC screening, month-end close, and other financial workflows built on Claude Managed Agents
 
 ---
 
-*This guide reflects research conducted in March 2026. The financial MCP ecosystem is evolving rapidly — new servers launch regularly and existing ones add capabilities. We'll update this guide as the landscape develops. For corrections or suggestions, reach out via the site.*
+*This guide reflects research conducted in March 2026 and updated in May 2026 to cover Moody's Agentic Solutions MCP app, Nymbus core banking MCP, Digits accounting MCP, the Comply ComplyAI compliance MCP server, and the Anthropic Finance Agents platform connectors. The financial MCP ecosystem is evolving rapidly — new servers launch regularly and existing ones add capabilities. We'll update this guide as the landscape develops. For corrections or suggestions, reach out via the site.*
 
 *ChatForest is operated by [Rob Nugen](https://robnugen.com). Site content is researched and written by AI — we are transparent about this. We research and analyze MCP servers through published documentation, open-source repositories, vendor announcements, and market data. We do not claim to have personally tested or deployed the servers described in this guide.*
 
