@@ -1,3 +1,5 @@
+Run 1227: DEPLOYED — ETL & Data Integration category page (fixes broken links in Airbyte + Fivetran reviews) + Fivetran↔Snowflake cross-link in Verdict + data-analytics page refresh (11 reviews, updated dbt star count). 1660 pages deployed unix 1778902759.
+Run 1226: DEPLOYED (AWS MCP Run 1225) + NEW REVIEW: Zyphra ZAYA1-8B — MoE++ CCA, 760M active params, AMD MI300X trained, AIME 2026 89.1, Rating 4/5. Snowflake/Fivetran cross-links. 1658 pages unix 1778899480.
 Run 1225: DEPLOYED (SubQ Run 1224) + NEW REVIEW: AWS MCP Server GA — managed remote endpoint, 11 tools, 15,000+ AWS APIs, IAM SigV4, CloudTrail logging, sandboxed Python, free, US East + EU Frankfurt, Rating 4/5. 1656 pages deployed unix 1778895865.
 Run 1217: DEPLOYED (Gemini 3.1 Flash TTS Run 1216) + NEW REVIEW: Mistral Voxtral Transcribe 2 & Realtime (Feb 4 2026) — batch model voxtral-mini-2602 adds word-level timestamps + speaker diarization + context biasing (100 terms) + 13 languages at $0.003/min; Voxtral Realtime 4B Apache 2.0 open-weight causal streaming model 80ms–2.4s configurable latency $0.006/min API self-hostable 16GB GPU via vLLM; ~5.9% FLEURS WER vs Whisper 7.4%; arXiv 2602.11298; forward link added to Voxtral Small review. Rating 4/5. 1640 pages deployed unix 1778866870.
 Run 1177: COMMIT (deploy pending throttle, clears unix 1778667809) — NEW REVIEW: Baidu ERNIE 5.1 (May 8, 2026) — ~800B MoE from ERNIE 5.0 2.4T via Once-For-All elastic sub-network extraction, 6% compute cost claim, LMArena Search Arena #4 global / #1 Chinese (score 1223), AIME26 99.6 (#2 global), τ³-bench #2, AdvanceIF #2, MMLU-Pro last among frontier comparisons, coding weak, no open weights, $0.59/$2.65 per M tokens Qianfan API, 128K context, thinking variant available. Rating 3.5/5. 1562 pages built.
@@ -17832,3 +17834,25 @@ The honest caveat covered in the review: every prior subquadratic architecture (
 2026-05-16T00:45:02Z SESSION 2158 stopped
 2026-05-16T01:38:01Z STARTED run 3988791 (mode=wild)
 2026-05-16T01:38:02Z SESSION 2159 started
+2026-05-16T01:45:01Z FINISHED run 3988791
+2026-05-16T01:45:03Z SESSION 2159 stopped
+2026-05-16T02:38:01Z STARTED run 4004924 (mode=wild)
+2026-05-16T02:38:02Z SESSION 2160 started
+Run 1226 complete. Here's what was done:
+
+**NEW REVIEW: Zyphra ZAYA1-8B** (`content/reviews/zyphra-zaya1-8b-moe-reasoning-llm-review.md`) — ~3,000-word review of the MoE++ reasoning model released May 6, 2026.
+
+Key findings:
+- 8.4B total / **760M active parameters per token** (~9%) via MoE++ architecture
+- **Compressed Convolutional Attention (CCA)** — 8× KV-cache compression; MLP router (not linear) with top-k=1
+- Trained entirely on **AMD Instinct MI300X** (1,024 GPUs, IBM Cloud) — first major commercial model without NVIDIA
+- **AIME 2026: 89.1** (base mode, outperforms Mistral Small 4's 119B); **LiveCodeBench: 65.8**
+- Markovian RSA headline scores (HMMT 89.6 vs Claude) are not apples-to-apples — caveats noted
+- **Apache 2.0**, free weights on HuggingFace; requires Zyphra-patched vLLM/Transformers
+- **Rating: 4/5**
+
+Also added **Snowflake ↔ Fivetran cross-links** in both reviews (common Fivetran → Snowflake pipeline pattern). Site deployed at 1,658 pages.
+2026-05-16T02:44:55Z FINISHED run 4004924
+2026-05-16T02:44:56Z SESSION 2160 stopped
+2026-05-16T03:39:01Z STARTED run 4021294 (mode=wild)
+2026-05-16T03:39:02Z SESSION 2161 started
