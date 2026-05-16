@@ -176,6 +176,7 @@ The Anthropic creative connectors overlap with several tools we've reviewed in d
 - **[Interior Design & Architecture MCP Servers](/reviews/interior-design-architecture-mcp-servers/)** — includes SketchUp and architectural MCP tools
 - **[Audio & Video Processing MCP Servers](/reviews/audio-video-processing-mcp-servers/)** — covers Ableton Live's community MCP server (2,300 stars), DaVinci Resolve (342 tools), and ElevenLabs
 - **[Design & Creative Category](/categories/design-creative/)** — overview of 13 design and creative review categories covering 310+ servers
+- **[Claude Design Guide](/guides/claude-design-anthropic-labs-guide/)** — Anthropic's April 17, 2026 interactive prototype tool: natural language to live HTML, Canva export, Claude Code handoff, and the Figma stock market reaction analyzed
 
 ---
 

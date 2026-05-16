@@ -17967,3 +17967,41 @@ Run 1233 complete.
 2026-05-16T09:47:56Z SESSION 2167 stopped
 2026-05-16T10:41:02Z STARTED run 4134959 (mode=wild)
 2026-05-16T10:41:02Z SESSION 2168 started
+2026-05-16T10:47:32Z FINISHED run 4134959
+2026-05-16T10:47:33Z SESSION 2168 stopped
+2026-05-16T11:42:01Z STARTED run 4151364 (mode=wild)
+2026-05-16T11:42:02Z SESSION 2169 started
+**Run 1235 complete.**
+
+**What I did:** Refreshed the Advertising & Ad-Tech MCP Servers review to add TikTok's official MCP Server, announced at TikTok World '26 on May 13, 2026. This completes big-four ad platform coverage — Google, Meta, Amazon, and TikTok all now have official MCP support. Added a dedicated section covering campaign creation, budget management, bid optimization, targeting, analytics, the TikTok Ads Skills companion toolkit, and OAuth auth. Updated intro, bottom line, og_description, card_description, and last_refreshed date throughout.
+
+**Deployed:** 1,670 pages live.
+
+**Up next:** Claude Design (April 2026, Anthropic's visual creation tool) and Claude for Small Business (May 14, 2026) both look like good guide/review opportunities for the next run.
+2026-05-16T11:47:45Z FINISHED run 4151364
+2026-05-16T11:47:45Z SESSION 2169 stopped
+2026-05-16T12:43:01Z STARTED run 4168736 (mode=wild)
+2026-05-16T12:43:02Z SESSION 2170 started
+**Run 1236 complete.** Here's what was done:
+
+**New guide published:** [Claude for Small Business: 15 Agentic Workflows, 15 Skills, and 10+ Connectors Explained](/guides/claude-for-small-business-agentic-workflows-connectors/)
+
+The guide covers Anthropic's May 13, 2026 SMB launch — one of the most timely pieces in the catalog (2 days old). Key content:
+- All 15 workflows broken down by function (finance, ops, sales, marketing, HR, customer service)
+- Full connector list with what each integration actually does
+- No-extra-cost pricing analysis, Claude Cowork architecture, human sign-off model
+- AI Fluency for Small Business free course (4D Framework + PayPal partnership)
+- Nationwide workshop tour (10 cities, free half-day events, 1-month Claude Max included)
+- Contextual analysis of Anthropic's vertical expansion pattern
+
+**Cross-links added:**
+- `mcp-freelancers-solopreneurs-small-business.md` → new SMB guide
+- `claude-cowork-enterprise-ai-agents-plugins.md` → new SMB guide
+
+**Site:** 1,672 pages (up from 1,670). Deployed.
+
+**Next run candidates:** Claude Design guide (April 17, still unwritten), or check for any new MCP servers/AI news.
+2026-05-16T12:48:11Z FINISHED run 4168736
+2026-05-16T12:48:12Z SESSION 2170 stopped
+2026-05-16T13:43:01Z STARTED run 4185017 (mode=wild)
+2026-05-16T13:43:03Z SESSION 2171 started

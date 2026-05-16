@@ -7,7 +7,7 @@ Advertising and ad-tech MCP servers connect AI agents to campaign management pla
 
 This review covers the **advertising and ad-tech** vertical — Google Ads, Meta/Facebook Ads, TikTok Ads, multi-platform campaign management, ad protocol standards, and ad auditing tools. For SEO and organic search tools, see our [SEO & Search Optimization review](/reviews/seo-search-optimization-mcp-servers/). For marketing automation and email, see our [Email & Communication review](/reviews/gmail-mcp-servers/). For analytics platforms, see our [Analytics MCP review](/reviews/analytics-mcp-servers/).
 
-The headline findings: **Meta Ads has the most popular single server** — pipeboard-co/meta-ads-mcp at 819 stars with 24 tools for full campaign lifecycle management, now available as a cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** — 8+ servers including an official one from Google now at 404 stars. **Amazon Ads finally has open-source coverage** — MarketplaceAdPros fills the biggest gap from our previous review. **Programmatic DSPs are arriving** — StackAdapt and zMaticoo both launched official MCP servers in April 2026. **Multi-platform servers keep growing** — ads-mcp covers 4 networks while synter-mcp-server spans 9. **Ad auditing has exploded** — claude-ads tripled to 3.2k stars with 250+ checks.
+The headline findings: **TikTok launched an official MCP server** (May 13, 2026 at TikTok World '26) — Google, Meta, Amazon, and TikTok now all have official MCP support, completing the big-four ad platform coverage. **Meta Ads has the most popular single server** — pipeboard-co/meta-ads-mcp at 819 stars with 24 tools for full campaign lifecycle management, now available as a cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** — 8+ servers including an official one from Google now at 404 stars. **Amazon Ads finally has open-source coverage** — MarketplaceAdPros fills the biggest gap from our previous review. **Programmatic DSPs are arriving** — StackAdapt and zMaticoo both launched official MCP servers in April 2026. **Multi-platform servers keep growing** — ads-mcp covers 4 networks while synter-mcp-server spans 9. **Ad auditing has exploded** — claude-ads tripled to 3.2k stars with 250+ checks.
 
 **Category:** [Business & Productivity](/categories/business-productivity/)
 
@@ -143,6 +143,21 @@ Low star count but fills a niche — it's the only TypeScript-based Meta Ads ser
 ---
 
 ## TikTok Ads
+
+### TikTok MCP Server — Official Platform Integration *(May 2026)*
+
+**TikTok's official MCP server, announced at TikTok World '26 (May 13, 2026):**
+
+- **Campaign creation** — AI agents create and launch ad campaigns autonomously
+- **Budget management** — shift budgets across campaigns and ad groups without manual intervention
+- **Bid optimization** — adjust bids based on performance targets
+- **Targeting** — tweak audience targeting parameters through conversational AI
+- **Performance analytics** — retrieve detailed metrics, conversion data, and audience insights
+- **Creative analysis** — AI-powered review of ad creative effectiveness
+- **TikTok Ads Skills** — companion developer toolkit providing modular building blocks for custom AI agent workflows on top of TikTok's ad platform
+- **OAuth via TikTok Marketing API** — standard TikTok for Business developer credentials required
+
+TikTok announced the MCP server at TikTok World '26, their sixth annual global ad product summit, alongside a broader push toward autonomous AI-driven campaign management. The announcement joins Google, Meta, and Amazon in the cohort of major ad platforms with official MCP support — a significant milestone for the ad-tech MCP ecosystem. The companion TikTok Ads Skills toolkit is notable: rather than a monolithic server, it provides composable building blocks for development teams building custom ad agent workflows. Compatible with Claude and other MCP-compatible clients via TikTok Marketing API OAuth.
 
 ### AdsMCP/tiktok-ads-mcp-server — Campaign Management
 
@@ -354,11 +369,11 @@ The advertising MCP ecosystem has matured significantly since our last review, b
 
 ## The bottom line
 
-The advertising MCP ecosystem earns **4.5 out of 5**. This is the strongest and fastest-growing MCP vertical, driven by clear commercial value — AI agents managing ad spend have an obvious ROI case. **The biggest story this refresh is enterprise adoption** — StackAdapt became the first major programmatic DSP to launch an official MCP server, Amazon Ads now has open-source coverage via MarketplaceAdPros, and AdCP hit v3.0.0 as the industry converges on MCP as its agent integration standard. **Meta Ads continues to dominate single-platform servers** — pipeboard-co at 819 stars with a new cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** with 8+ servers and the official server growing to 404 stars and 3 tools. **Ad auditing exploded** — claude-ads tripled from 981 to 3,200 stars in six weeks with 250+ checks, PPC financial modeling, and A/B test design. **The programmatic advertising stack is arriving** — between StackAdapt, zMaticoo, Guideline, and the AdRoll/PubMatic agent-to-agent integration, MCP is spreading across the full advertising supply chain. The half-point deduction is for the continued lack of cross-platform attribution/measurement tools and no retail media network coverage — you can manage campaigns across platforms but can't yet close the attribution loop through MCP.
+The advertising MCP ecosystem earns **4.5 out of 5**. This is the strongest and fastest-growing MCP vertical, driven by clear commercial value — AI agents managing ad spend have an obvious ROI case. **The biggest story in May 2026 is TikTok's official MCP server** — announced at TikTok World '26 (May 13, 2026), TikTok joins Google, Meta, and Amazon as the fourth major ad platform with official MCP support. The big-four coverage is now complete. **StackAdapt remains the first major programmatic DSP** to launch an official MCP server, and AdCP hit v3.0.0 as the industry converges on MCP as its agent integration standard. **Meta Ads continues to dominate single-platform servers** — pipeboard-co at 819 stars with a cloud-hosted Remote MCP service. **Google Ads has the deepest ecosystem** with 8+ servers and the official server at 404 stars. **Ad auditing exploded** — claude-ads tripled from 981 to 3,200 stars with 250+ checks, PPC financial modeling, and A/B test design. **The programmatic advertising stack is maturing** — between StackAdapt, zMaticoo, Guideline, and the AdRoll/PubMatic agent-to-agent integration, MCP is spreading across the full advertising supply chain. The half-point deduction remains for the continued lack of cross-platform attribution/measurement tools and no retail media network coverage — you can manage campaigns across platforms but can't yet close the attribution loop through MCP.
 
 ---
 
-*Last updated: 2026-04-26. This review reflects publicly available repositories and documentation as of this date. ChatForest researches MCP servers through their documentation, README files, GitHub metadata, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. "Tools" refers to MCP tool definitions exposed by each server. Have a correction or addition? [Let us know.](/about/)*
+*Last updated: 2026-05-16. This review reflects publicly available repositories and documentation as of this date. ChatForest researches MCP servers through their documentation, README files, GitHub metadata, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. "Tools" refers to MCP tool definitions exposed by each server. Have a correction or addition? [Let us know.](/about/)*
 
-*This review was last edited on 2026-04-26 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-16 using Claude Sonnet 4.6 (Anthropic).*
 

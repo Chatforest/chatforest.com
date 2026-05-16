@@ -554,3 +554,5 @@ The ecosystem is already strong enough to automate the core freelance workflow: 
 
 For more on MCP development, see our [guide to building MCP servers](/guides/build-your-first-mcp-server/) and the [MCP server directory](/reviews/). For related coverage, see our guides on [MCP and CRM platforms](/guides/best-crm-mcp-servers/), [MCP and finance tools](/guides/best-finance-mcp-servers/), and [MCP and productivity tools](/guides/best-productivity-mcp-servers/).
 
+If you want pre-built workflows rather than DIY MCP assembly, see our guide to [Claude for Small Business](/guides/claude-for-small-business-agentic-workflows-connectors/) — Anthropic's May 2026 packaged launch of 15 agentic workflows and 15 skills built directly into Claude Cowork, covering payroll, close, cash flow, invoicing, lead triage, and more.
+

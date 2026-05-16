@@ -229,3 +229,5 @@ What makes Cowork worth watching is not any single feature — it is the converg
 
 Cowork is one player in a broader enterprise agent platform war — and the industry data on what's actually working is sobering. For the full picture on adoption rates, failure modes, and which deployments survive past pilot stage, see [The Enterprise AI Agent Reality Check: 40% Embedding, 40% Canceled](/guides/enterprise-ai-agent-adoption-reality-check-2026/).
 
+**Related:** Anthropic extended Cowork to small businesses in May 2026 with 15 pre-built agentic workflows, 15 reusable skills, and 10+ SMB-focused connectors (QuickBooks, PayPal, Square, Stripe, HubSpot, Webflow). See [Claude for Small Business: Workflows, Skills, and Connectors Explained](/guides/claude-for-small-business-agentic-workflows-connectors/).
+
