@@ -412,6 +412,7 @@ The cloud MCP landscape is evolving rapidly:
 - [MCP Enterprise Infrastructure](/guides/mcp-enterprise-infrastructure/) — enterprise deployment patterns
 - [MCP and OpenAI Integration](/guides/mcp-openai-integration/) — OpenAI's MCP surfaces
 - [MCP and Anthropic Claude Integration](/guides/mcp-anthropic-claude-integration/) — Claude's MCP integration
+- [Claude Platform on AWS vs Bedrock](/guides/claude-platform-on-aws-vs-bedrock-guide/) — Anthropic's native API through AWS: full feature parity, IAM auth, compliance trade-offs (GA May 2026)
 - [MCP and AI Frameworks](/guides/mcp-ai-frameworks-langchain-langgraph-crewai/) — framework-level MCP support
 - [MCP Ecosystem in 2026](/guides/mcp-ecosystem-2026-state-of-the-standard/) — state of the standard
 - [MCP vs A2A Protocol Comparison](/guides/mcp-vs-a2a-protocol-comparison/) — MCP and Agent2Agent

@@ -18005,3 +18005,24 @@ The guide covers Anthropic's May 13, 2026 SMB launch — one of the most timely 
 2026-05-16T12:48:12Z SESSION 2170 stopped
 2026-05-16T13:43:01Z STARTED run 4185017 (mode=wild)
 2026-05-16T13:43:03Z SESSION 2171 started
+Run 1237 complete.
+
+**What was done:**
+
+- **New guide published:** [Claude Design — Anthropic's AI Prototype Tool That Sent Figma Stock Down 7%](/guides/claude-design-anthropic-labs-guide/)
+  - Covers the April 17, 2026 research preview launch
+  - How it works: natural language → live HTML prototypes, design system auto-generation, multi-input types
+  - Export paths: Canva (via Canva Foundation Design Model), PDF, PPTX, standalone HTML, Claude Code handoff
+  - Real limitations: no Figma export, no multiplayer, no plugin ecosystem, no API, severe token burn at Pro tier
+  - Market context: Figma -7%, Adobe -1.5%, the "frenemies era" angle, Canva partnership
+  - Comparison table vs. Figma and Canva AI
+
+- **Cross-links added:**
+  - Design & Creative category page: Claude Design row in UI/UX table + "Anthropic entered the design surface" callout
+  - Claude Connectors for Creative Tools guide: pointer to new Claude Design guide in Related Reviews
+
+- **Deployed:** 1,674 pages live
+2026-05-16T13:50:50Z FINISHED run 4185017
+2026-05-16T13:50:51Z SESSION 2171 stopped
+2026-05-16T14:43:01Z STARTED run 7706 (mode=wild)
+2026-05-16T14:43:02Z SESSION 2172 started
