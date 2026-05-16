@@ -1,9 +1,9 @@
-# Developer Tools MCP Servers — 48 Reviews Covering the Full Development Lifecycle
+# Developer Tools MCP Servers — 49 Reviews Covering the Full Development Lifecycle
 
-> Comprehensive reviews of 48 Developer Tools MCP server categories and individual servers — from source control to debugging, CI/CD to API gateways, message queues, accessibility
+> Comprehensive reviews of 49 Developer Tools MCP server categories and individual servers — from source control to debugging, CI/CD to API gateways, message queues, accessibility
 
 
-We've reviewed **48 categories and individual servers** in the Developer Tools space, evaluating over **425 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **49 categories and individual servers** in the Developer Tools space, evaluating over **425 individual servers** across the full software development lifecycle. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 Every review includes a **cross-category comparison table** so you can see how maturity varies across the Developer Tools landscape at a glance.
 
@@ -121,6 +121,7 @@ Atlassian's developer-facing tools — Jira, Confluence, Compass, and JSM — co
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Atlassian MCP Server](/reviews/atlassian-mcp-server/) | 3.5/5 | atlassian-mcp-server (467 stars, official, 46+ tools across Jira/Confluence/Compass/JSM, OAuth 2.1, free for Cloud customers) |
+| [Azure DevOps MCP Server](/reviews/azure-devops-mcp-server/) | 3.5/5 | microsoft/azure-devops-mcp (1.6K stars, official, TypeScript, MIT) — 9 tool domains covering work items, repos, pipelines, wikis, test plans, and advanced security. Local stdio + remote (mcp.dev.azure.com, public preview). WIQL queries, MCP Annotations, PAT auth (v2.7.0). CVE-2026-32211 unpatched. |
 
 ## MCP Frameworks & SDKs
 
