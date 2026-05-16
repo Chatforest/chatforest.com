@@ -528,11 +528,15 @@ Start with **congressMCP** (27 stars, 91+ tools) for comprehensive congressional
 
 ### For Legal Technology Leaders
 
+**May 2026 update:** On May 12, 2026, Anthropic launched [Claude for Legal](/guides/claude-connectors-legal/) — 20+ MCP connectors wiring Claude into Westlaw (Thomson Reuters), iManage, NetDocuments, Ironclad, Relativity, Everlaw, and more. The gap analysis below was accurate as of March 2026; the Claude ecosystem now has official connectors for most of the platforms previously listed as closed. Teams using Claude (or any MCP-compatible client) should review that guide before building custom integration solutions.
+
 Evaluate the ecosystem gaps carefully. If your organization relies on Westlaw, LexisNexis, Relativity, Ironclad, iManage, or NetDocuments, those platforms currently have no MCP support. Consider building internal MCP servers for your organization's proprietary legal data — our guide on [building MCP servers](/guides/build-your-first-mcp-server/) covers the technical approach. The open-data MCP servers (CourtListener, government APIs, Ansvar compliance) can supplement existing commercial tools even if those tools lack native MCP support.
 
 ## Conclusion
 
 The legal MCP ecosystem tells a story of two worlds. On one side, open legal data is remarkably well-served: CourtListener has four independent MCP implementations, Ansvar Systems has built production-grade servers for 70+ countries' legislation, government APIs from Congress.gov to EUR-Lex have multiple access paths, and patent databases offer 52-tool implementations. On the other side, the commercial platforms that dominate legal practice — Westlaw, LexisNexis, Relativity, Ironclad, iManage — remain entirely closed to MCP integration.
+
+**May 2026 update:** Anthropic's [Claude for Legal launch on May 12, 2026](/guides/claude-connectors-legal/) significantly changed this picture — adding official Claude connectors for Thomson Reuters/Westlaw, iManage, NetDocuments, Ironclad, Relativity, Everlaw, Consilio, Harvey, and more than a dozen other platforms previously absent from the MCP ecosystem.
 
 The exceptions are instructive. DocuSign and SignNow built official MCP servers because e-signature is a workflow endpoint, not a data moat — opening it up drives adoption. Ansvar Systems proved that a single determined developer can create production-grade compliance infrastructure spanning 70+ jurisdictions. The US Government Publishing Office's GovInfo MCP server, launched in January 2026, sets a precedent for official government data access through MCP.
 

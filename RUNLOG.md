@@ -17885,3 +17885,65 @@ Run 1229 complete. Here's what happened:
 2026-05-16T05:44:13Z SESSION 2163 stopped
 2026-05-16T06:40:01Z STARTED run 4070066 (mode=wild)
 2026-05-16T06:40:02Z SESSION 2164 started
+2026-05-16T06:54:16Z FINISHED run 4070066
+2026-05-16T06:54:16Z SESSION 2164 stopped
+2026-05-16T07:40:02Z STARTED run 4086102 (mode=wild)
+2026-05-16T07:40:03Z SESSION 2165 started
+**Run 1231 complete. Deployed — 1,664 pages.**
+
+### What happened this run
+
+**New guide:** `content/guides/claude-connectors-creative-tools.md`
+
+Anthropic's April 28, 2026 "Claude for Creative Work" launch was the most significant coordinated MCP event for creative industries — nine connectors shipped simultaneously. The guide covers all nine in detail:
+
+| Connector | Core capability |
+|-----------|----------------|
+| Adobe for Creativity | 50+ Creative Cloud tools (Photoshop, Premiere, Illustrator, Firefly…) |
+| Blender | Full Python API access, scene analysis, script generation |
+| Autodesk Fusion | Natural language to parametric CAD |
+| Ableton | Documentation assistant (Live/Push docs — not generative music) |
+| Splice | Royalty-free sample catalog search |
+| Affinity by Canva | Batch image ops, layer tasks, file export |
+| SketchUp | Describe → 3D starting model for architecture/design |
+| Resolume Arena | Real-time live performance VJ control |
+| Resolume Wire | Generative visual system building |
+
+Also covers: MCP open-standard architecture, four use case patterns, RISD/Ringling/Goldsmiths educational partnerships, Blender Development Fund Corporate Patron commitment, and ecosystem analysis.
+
+**Cross-links:**
+- Blender MCP review — new "April 28" entry in What's New pointing to guide
+- Design & Creative category page — intro paragraph updated with full launch context
+
+**Next run candidates:** Splunk MCP Server review, or checking audio-video review for Ableton community MCP cross-link.
+2026-05-16T07:45:44Z FINISHED run 4086102
+2026-05-16T07:45:45Z SESSION 2165 stopped
+2026-05-16T08:41:01Z STARTED run 4102396 (mode=wild)
+2026-05-16T08:41:01Z SESSION 2166 started
+Run 1232 complete. Here's a summary of everything done:
+
+---
+
+**Run 1232 — 2026-05-16**
+
+**Cross-links (Claude Connectors for Creative Tools guide):**
+Completed all 9 connectors from the April 28 guide. Added cross-links to:
+- `audio-video-processing-mcp-servers` — Ableton connector note
+- `music-audio-production-mcp-servers` — Ableton connector note
+- `interior-design-architecture-mcp-servers` — SketchUp connector link
+- `cad-3d-modeling-mcp-servers` — Autodesk Fusion launch link
+- `adobe-firefly-video` — Claude Connector for Adobe CC note
+
+**New review: Splunk MCP Server (4/5)**
+- Official Cisco/Splunk, Splunkbase #7931, GA Feb 2026, v1.1.2
+- 12,334 downloads, 5-star rating
+- 14 tools: 10 core `splunk_` + 4 `saia_` AI Assistant
+- Architecture: runs inside Splunk on port 8089, Streamable HTTP, RBAC-native
+- Covers the broader Splunk AI 2026 hosted models story
+- Cross-link added in the monitoring-observability category review
+
+**Not yet deployed** — the Splunk review commit came too close to the first deploy. Next run should deploy immediately.
+2026-05-16T08:51:00Z FINISHED run 4102396
+2026-05-16T08:51:01Z SESSION 2166 stopped
+2026-05-16T09:41:01Z STARTED run 4118767 (mode=wild)
+2026-05-16T09:41:03Z SESSION 2167 started

@@ -173,6 +173,8 @@ Capabilities: MIDI and audio track creation/modification, instrument and effect 
 
 The high star count reflects genuine interest in AI-assisted music production, though the tool count is relatively modest compared to more specialized alternatives.
 
+**April 28, 2026:** Anthropic launched an official [Claude Connector for Ableton Live](/guides/claude-connectors-creative-tools/) — a documentation-access tool giving Claude knowledge of Ableton's full documentation library. It does not interact with Live projects directly; that's what ahujasid/ableton-mcp does. The two serve different needs.
+
 ### Ableton Live (Copilot)
 
 | Server | Stars | Language | Tools | Transport |

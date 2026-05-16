@@ -36,7 +36,7 @@ The headline findings: **blender-mcp has grown to 21,100 GitHub stars** (+3,500 
 
 ### April 28, 2026 — SketchUp Official Connector
 
-Anthropic's "Claude for Creative Work" launch on April 28 included an **official SketchUp connector** — 3D architectural modeling driven directly from conversation. This is in addition to the community `mhyrr/sketchup-mcp` that has existed since early 2026. The official connector provides zero-setup access for SketchUp users on Claude Free, Pro, and Team plans.
+Anthropic's "Claude for Creative Work" launch on April 28 included an **official SketchUp connector** — 3D architectural modeling driven directly from conversation. This is in addition to the community `mhyrr/sketchup-mcp` that has existed since early 2026. The official connector provides zero-setup access for SketchUp users on Claude Free, Pro, and Team plans. See our [Claude Connectors for Creative Tools guide](/guides/claude-connectors-creative-tools/) for full coverage of the April 28 launch.
 
 ### March–April 2026 — SolidWorks and Onshape Gaps Partially Closed
 

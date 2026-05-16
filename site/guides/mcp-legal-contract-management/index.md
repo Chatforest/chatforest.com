@@ -555,6 +555,7 @@ Deploy the EU and US compliance MCP servers from Ansvar Systems for regulatory t
 
 ## Related Guides
 
+- [Claude for Legal: 20+ Connectors and 12 Plugins Explained](/guides/claude-connectors-legal/) — May 2026 Anthropic launch covering Ironclad, DocuSign, Thomson Reuters/Westlaw, iManage, Harvey, Everlaw, Relativity, and more
 - [MCP and Enterprise Security](/guides/mcp-enterprise-infrastructure/) — security architecture patterns relevant to legal data protection
 - [MCP and Healthcare](/guides/mcp-healthcare-fhir/) — regulatory compliance patterns (HIPAA) applicable to health law
 - [MCP and Finance](/guides/mcp-finance-fintech/) — financial regulatory compliance (SOX, GLBA) and audit patterns

@@ -212,6 +212,8 @@ Uses almost all read-only VictoriaMetrics APIs: query metrics, explore data, lis
 
 **Limitation:** Requires Splunk subscription. Closed-source, available only via Splunkbase. No open-source community server with meaningful adoption. Enterprise pricing may exclude smaller teams.
 
+**See our dedicated review:** [Splunk MCP Server — full review with setup guide, tool breakdown, and security model](/reviews/splunk-mcp-server/) (Rating: 4/5)
+
 ### PagerDuty — 60+ Tools for Incident Management (NEW)
 
 | Aspect | Detail |

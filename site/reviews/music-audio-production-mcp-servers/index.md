@@ -28,6 +28,8 @@ The most popular music MCP server by far. Provides two-way socket-based communic
 
 The server uses a socket connection to a [MIDI Remote Script](https://github.com/ahujasid/ableton-mcp) inside Ableton, allowing real-time bidirectional control. At 2,412 stars, this is among the highest-starred MCP servers in any creative category.
 
+**April 28, 2026:** Anthropic launched an official [Claude Connector for Ableton Live](/guides/claude-connectors-creative-tools/) that gives Claude deep knowledge of Ableton's documentation library. That connector is documentation-focused — it does not control Live sessions directly. ahujasid/ableton-mcp remains the primary option for direct DAW control.
+
 ### Ableton Live — uisato/ableton-mcp-extended
 
 | Server | Stars | Language | License | Tools |
