@@ -16,7 +16,7 @@ The MCP integration gives AI agents natural-language control over existing Fivet
 
 ## What Fivetran Is
 
-Fivetran is a **fully managed ELT data pipeline service**. It connects source systems (SaaS APIs, databases, files) to destination data warehouses (Snowflake, BigQuery, Redshift, Databricks) and keeps them synchronized on a schedule. Key characteristics:
+Fivetran is a **fully managed ELT data pipeline service**. It connects source systems (SaaS APIs, databases, files) to destination data warehouses ([Snowflake](/reviews/snowflake-mcp-server/), BigQuery, Redshift, Databricks) and keeps them synchronized on a schedule. Key characteristics:
 
 - **700+ managed connectors** — databases (MySQL, PostgreSQL, MongoDB), SaaS apps (Salesforce, HubSpot, Zendesk, Google Analytics, Shopify), files (S3, SFTP), and events (Kafka)
 - **Fully managed** — no infrastructure to deploy; Fivetran runs all extraction, schema management, and load scheduling
