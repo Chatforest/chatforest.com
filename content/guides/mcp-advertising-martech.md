@@ -4,7 +4,7 @@ date: 2026-03-30T18:00:00+09:00
 description: "A comprehensive guide to 150+ MCP integrations for advertising and marketing technology — covering search/PPC advertising (Google Ads 10+ servers, Amazon Ads 32 stars), social"
 content_type: "Guide"
 card_description: "The MarTech landscape has grown to 15,384 tools in 2025 — a 100x increase over 15 years — and 77% of new tools are AI-native. AI marketing spend reached $64.6 billion in 2026. Yet most marketing teams still copy-paste data between platforms. MCP changes this by letting AI agents directly connect to advertising platforms, analytics tools, SEO software, and marketing automation systems through a single protocol. This guide covers 150+ MCP servers across advertising and MarTech — from Google Ads campaign management and Meta Ads optimization to SEO analysis, web analytics, email marketing, and programmatic advertising — plus architecture patterns for AI-orchestrated marketing operations."
-last_refreshed: 2026-04-04
+last_refreshed: 2026-05-17
 ---
 
 Marketing technology has become one of the most fragmented software categories in existence. Scott Brinker's 2025 MarTech landscape cataloged 15,384 tools — a 100x increase over 15 years, with 2,489 new tools added in the past year alone and 77% of them AI-native. The global MarTech market reached approximately $175–198 billion in 2025 and is projected to hit $297 billion by 2030 according to MarketsandMarkets. AI adoption in marketing has reached 91% of marketers actively using AI tools according to Jasper's 2026 report, up from 63% the prior year. The global AI marketing market hit an estimated $64.6 billion in 2026, projected to reach $107.5 billion by 2028.
@@ -13,7 +13,7 @@ Despite this explosion of tools and AI adoption, most marketing teams still manu
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to advertising platforms, analytics tools, SEO software, and marketing automation systems through a single protocol. Rather than building custom integrations for each advertising platform or analytics service, MCP-connected agents can manage ad campaigns, analyze website traffic, track SEO performance, and orchestrate email marketing through defined tool interfaces. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
-The MarTech MCP ecosystem reveals a clear pattern: platforms with robust APIs attract MCP servers quickly (Google Ads has 10+ implementations, Meta Ads has 8+), while walled-garden platforms and enterprise tools lag behind. Official vendor adoption is accelerating — Google, Ahrefs, SEMrush, DataForSEO, HubSpot, PostHog, Contentful, Sanity, and Resend all provide official MCP servers. But significant categories remain untouched: no A/B testing platforms have MCP support, affiliate marketing networks have zero presence, and Adobe Analytics remains disconnected.
+The MarTech MCP ecosystem reveals a clear pattern: platforms with robust APIs attract MCP servers quickly (Google Ads has 10+ implementations, Meta Ads has 8+), while walled-garden platforms and enterprise tools lag behind. Official vendor adoption is accelerating — Google, Ahrefs, SEMrush, DataForSEO, HubSpot, PostHog, Contentful, Sanity, Resend, and now TikTok (official Ads MCP, May 2026) all provide official MCP servers. Every major social advertising platform — Google, Meta, Amazon, and TikTok — now has official or semi-official MCP infrastructure. But significant categories remain untouched: no A/B testing platforms have MCP support, affiliate marketing networks have zero presence, and Adobe Analytics remains disconnected.
 
 This guide is research-based. We survey what MCP servers exist across the advertising and MarTech landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
@@ -113,9 +113,13 @@ Additional Meta implementations include EfrainTorres/armavita-meta-ads-mcp (26 s
 
 ### TikTok Ads
 
+**Official TikTok Ads MCP Server** (launched TikTok World, May 12, 2026)
+
+TikTok launched an official Ads MCP server at its annual TikTok World marketing conference, joining Google, Meta, and Amazon in opening ad infrastructure to third-party AI agents. The official server lets AI agents — including Claude and ChatGPT — plan, launch, and optimize campaigns end to end without requiring advertisers to operate through TikTok Ads Manager. Supported operations include campaign creation, bid adjustments, budget allocation, audience targeting, and performance analysis. TikTok also released **TikTok Ads Skills**, a developer toolkit of building blocks for constructing custom AI workflows on top of TikTok's ad infrastructure — covering campaign creation, performance insights, creative analysis, audience discovery, and budget optimization. The direction is consistent with the broader industry pattern: every major ad platform is building MCP infrastructure to keep advertiser workflows — and advertiser data — on-platform as AI agents increasingly mediate media buying.
+
 **AdsMCP/tiktok-ads-mcp-server** | 25 stars
 
-TikTok Marketing API integration enabling AI-driven campaign management on one of the fastest-growing advertising platforms.
+A community TikTok Marketing API integration that predates the official server. Useful for teams that need immediate access or customization beyond what the official server exposes.
 
 **ysntony/tiktok-ads-mcp** | 22 stars
 
@@ -393,7 +397,7 @@ SimilarWeb launched an official remote MCP server in September 2025, providing t
 | Google Ads | 10+ | google_ads_mcp (143) | Semi-official (Google) | Write access in official server |
 | Meta/Facebook Ads | 8+ | meta-ads-mcp (705) | None | No official Meta server |
 | Amazon Ads | 3+ | amazon_ads_mcp (32) | Official (beta) | Beta status |
-| TikTok Ads | 2+ | tiktok-ads-mcp-server (25) | None | Limited maturity |
+| TikTok Ads | 3+ | tiktok-ads-mcp-server (25) | Official (May 2026) | Official server launched TikTok World |
 | LinkedIn Ads | 3+ | linkedin-ads-mcp (5) | None | Very limited coverage |
 | SEO Tools | 20+ | mcp-gsc (305) | Ahrefs, SEMrush, DataForSEO, SE Ranking, Serpstat, Local Falcon | Moz minimal |
 | Google Analytics | 5+ | google-analytics-mcp (196) | Official (Google) | GA4-only focus |
