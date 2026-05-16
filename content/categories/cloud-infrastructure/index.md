@@ -1,12 +1,13 @@
 ---
-title: "Cloud & Infrastructure MCP Servers — 24 Reviews Covering AWS, Azure, Google Cloud, Containers, IaC, Serverless, Chaos Engineering, and More"
+title: "Cloud & Infrastructure MCP Servers — 25 Reviews Covering AWS, Azure, Google Cloud, Containers, IaC, Serverless, Chaos Engineering, and More"
 date: 2026-03-24T16:00:00+09:00
-description: "Comprehensive reviews of 24 Cloud & Infrastructure MCP server categories — from the big three cloud platforms to containers, infrastructure as code, serverless, chaos engineering"
-og_description: "24 Cloud & Infrastructure MCP server reviews covering AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform, Cloudflare, chaos engineering, serverless, networking, and more. 365+ servers evaluated."
+lastmod: 2026-05-16T22:00:00+09:00
+description: "Comprehensive reviews of 25 Cloud & Infrastructure MCP server categories — from the big three cloud platforms to containers, infrastructure as code, serverless, chaos engineering"
+og_description: "25 Cloud & Infrastructure MCP server reviews covering AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform, Cloudflare, chaos engineering, serverless, networking, and more. 365+ servers evaluated."
 content_type: "Category"
 ---
 
-We've reviewed **24 categories** of Cloud & Infrastructure MCP servers, evaluating over **365 individual servers** across the full infrastructure stack. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
+We've reviewed **25 entries** in the Cloud & Infrastructure MCP space, evaluating over **365 individual servers** across the full infrastructure stack. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
 This is our largest category — spanning the big three cloud platforms, container orchestration, infrastructure as code, serverless, chaos engineering, edge computing, networking, storage, and operational tooling.
 
@@ -14,13 +15,14 @@ This is our largest category — spanning the big three cloud platforms, contain
 
 ## Cloud Platforms
 
-The major cloud providers and their MCP ecosystems. All three have invested heavily — AWS leads on server count, Azure on enterprise integration, Google on cloud-native architecture.
+The major cloud providers and their MCP ecosystems. All three have invested heavily — AWS leads on server count, Azure on enterprise integration, Google on managed cloud-native architecture.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [AWS MCP Servers](/reviews/aws-mcp-servers/) | 4/5 | awslabs/mcp (8,500 stars, 68 official servers) — most ambitious MCP project in the ecosystem |
+| [AWS MCP Servers](/reviews/aws-mcp-servers/) | 4/5 | awslabs/mcp (8,900 stars, 54 active servers) — most ambitious MCP project in the ecosystem |
+| [AWS MCP Server (GA)](/reviews/aws-mcp-server-ga/) | 4/5 | Managed remote endpoint — 11 tools, 15,000+ AWS APIs, IAM SigV4 auth, CloudTrail logging, sandboxed Python. No local install. GA May 2026. |
 | [Azure & Microsoft MCP Servers](/reviews/azure-mcp-servers/) | 4/5 | Azure MCP Server (47+ services), built into Visual Studio 2026, 16+ specialized servers |
-| [Google Cloud MCP Servers](/reviews/google-cloud-mcp-servers/) | 4/5 | 18 managed remote MCP servers via googleapis.com endpoints, 15+ open-source servers |
+| [Google Cloud MCP Servers](/reviews/google-cloud-mcp-servers/) | 4.5/5 | 50+ managed remote servers (22+ GA) via googleapis.com endpoints — BigQuery, GKE, Cloud Run, Workspace, and more. MCP Toolbox v1.1.0 (14.9K stars). |
 
 ## Containers & Orchestration
 
@@ -89,13 +91,13 @@ Cloud storage, secret management, backup, and configuration — the operational 
 
 ## Category Overview
 
-Across all 23 reviews, clear patterns emerge:
+Across all 25 reviews, clear patterns emerge:
 
-**The big three are all-in — with different strategies.** AWS leads on sheer server count (68 official servers, 8,500 stars), treating MCP as a way to surface its entire service catalog. Azure bets on enterprise integration, embedding MCP directly into Visual Studio 2026. Google takes the most cloud-native approach with managed remote MCP servers accessible via googleapis.com endpoints. All three score 4/5 — the gap isn't in commitment, it's in philosophy.
+**The big three are all-in — with different strategies.** AWS leads on sheer server count (54 active servers in awslabs/mcp, 8,900 stars) and now ships a managed remote endpoint (AWS MCP Server GA) covering 15,000+ APIs through a single IAM-authenticated URL. Azure bets on enterprise integration, embedding MCP directly into Visual Studio 2026. Google has pulled ahead on the managed architecture bet: 50+ remote MCP servers (22+ GA) at googleapis.com endpoints, enabled by default when you enable a supported product — earning a 4.5/5 for clean cloud-native design. AWS's managed server also scores 4/5 as it matures past its two-region limitation.
 
 **Cloudflare is the standout.** At 4.5/5, Cloudflare's MCP server earns the highest rating in this category thanks to its novel Code Mode architecture — exposing 2,500+ API endpoints in just 1,000 tokens. While the big three optimize for breadth, Cloudflare optimizes for token efficiency. That's a bet on how AI agents actually work.
 
-**Containers and Kubernetes have the deepest community.** Five reviews cover the container ecosystem, with multiple servers exceeding 1,000 stars. Red Hat and Flux159 lead Kubernetes, Docker ships both infrastructure (MCP Gateway, Catalog) and management tools. No single server dominates — the ecosystem is healthy and competitive.
+**Containers and Kubernetes have the deepest community.** Five reviews cover the container ecosystem, with multiple servers exceeding 1,000 stars. Red Hat and Flux159 lead Kubernetes; Docker ships both infrastructure (MCP Gateway, Catalog) and management tools. No single server dominates — the ecosystem is healthy and competitive.
 
 **Infrastructure as Code is documentation-first.** HashiCorp's Terraform MCP server deliberately focuses on registry documentation, not execution. This philosophy — teach the AI to write correct IaC rather than letting it run `terraform apply` — shapes the entire IaC MCP space. Pulumi's Neo goes further with autonomous provisioning, but it's the exception.
 
