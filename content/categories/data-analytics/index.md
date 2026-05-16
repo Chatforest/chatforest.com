@@ -48,6 +48,7 @@ Product analytics vendors are shipping official MCP servers, though maturity var
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Analytics](/reviews/analytics-mcp-servers/) | 3.5/5 | Google Analytics (1,500 stars, official), PostHog (143 stars, 27+ tools, official), Amplitude (24+ tools, hosted, official), Mixpanel (official beta), Matomo (community, Rust) |
+| [Salesforce Data 360 MCP Server](/reviews/salesforce-data360-mcp-server/) | 3/5 | Official Salesforce (forcedotcom) server for Data Cloud / CDP configuration — 21 tool families, ~187 REST ops, three-tool facade; Java/Spring Boot; developer preview; 5 stars |
 
 ## Data Visualization
 
@@ -69,7 +70,7 @@ An early-stage sub-category despite the $4B+ market. Only one dedicated MCP serv
 
 ## Category Overview
 
-**11 reviews. 100+ servers evaluated. Average rating: 3.8/5.**
+**12 reviews. 100+ servers evaluated. Average rating: 3.8/5.**
 
 ### What stands out
 

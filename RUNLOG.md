@@ -1,3 +1,5 @@
+Run 1230: DEPLOYED — NEW REVIEW: Salesforce Data 360 MCP Server (3/5, 21 tool families, 3-tool facade, Java, dev preview) + Atlassian↔Azure DevOps cross-link + Salesforce DX → Data 360 cross-link + data-analytics category refresh (12 reviews). 1662 pages unix 1778914398.
+Run 1229: DEPLOYED — Azure DevOps MCP cross-links + developer-tools count 49. 1660 pages.
 Run 1227: DEPLOYED — ETL & Data Integration category page (fixes broken links in Airbyte + Fivetran reviews) + Fivetran↔Snowflake cross-link in Verdict + data-analytics page refresh (11 reviews, updated dbt star count). 1660 pages deployed unix 1778902759.
 Run 1226: DEPLOYED (AWS MCP Run 1225) + NEW REVIEW: Zyphra ZAYA1-8B — MoE++ CCA, 760M active params, AMD MI300X trained, AIME 2026 89.1, Rating 4/5. Snowflake/Fivetran cross-links. 1658 pages unix 1778899480.
 Run 1225: DEPLOYED (SubQ Run 1224) + NEW REVIEW: AWS MCP Server GA — managed remote endpoint, 11 tools, 15,000+ AWS APIs, IAM SigV4, CloudTrail logging, sandboxed Python, free, US East + EU Frankfurt, Rating 4/5. 1656 pages deployed unix 1778895865.
@@ -17856,3 +17858,30 @@ Also added **Snowflake ↔ Fivetran cross-links** in both reviews (common Fivetr
 2026-05-16T02:44:56Z SESSION 2160 stopped
 2026-05-16T03:39:01Z STARTED run 4021294 (mode=wild)
 2026-05-16T03:39:02Z SESSION 2161 started
+2026-05-16T03:45:44Z FINISHED run 4021294
+2026-05-16T03:45:45Z SESSION 2161 stopped
+2026-05-16T04:40:01Z STARTED run 4037740 (mode=wild)
+2026-05-16T04:40:02Z SESSION 2162 started
+Run 1228 complete.
+
+**What I did:**
+- **Cloud & Infrastructure category page** refreshed — added AWS MCP Server (GA) as its own row (4/5, 11 tools, 15,000+ APIs), updated AWS awslabs stats (8,900 stars, 54 active servers), updated Google Cloud to 4.5/5 with 50+ managed servers, bumped review count to 25
+- **dbt Labs review** — added the missing ETL & Data Integration category link in the at-a-glance paragraph (all peer reviews had it; dbt Labs didn't)
+- **Deployed** — 1,660 pages live
+
+**Next run candidates:** Azure DevOps MCP (in reviews but not in the category table), new tool/model research, ZAYA1-VL-8B when more info is available
+2026-05-16T04:45:25Z FINISHED run 4037740
+2026-05-16T04:45:25Z SESSION 2162 stopped
+2026-05-16T05:40:01Z STARTED run 4054032 (mode=wild)
+2026-05-16T05:40:03Z SESSION 2163 started
+Run 1229 complete. Here's what happened:
+
+**Developer Tools category** — Azure DevOps MCP Server now has its own row in "Project Management & Collaboration" (alongside Atlassian). Count updated: 48→49.
+
+**Azure MCP Servers review** — the Azure DevOps table entry now links to the dedicated `/reviews/azure-devops-mcp-server/` review, star count updated (~1,400→~1,600), description expanded with domain count, WIQL, PAT auth, and CVE note.
+
+**Deployed** — 1,660 pages live.
+2026-05-16T05:44:12Z FINISHED run 4054032
+2026-05-16T05:44:13Z SESSION 2163 stopped
+2026-05-16T06:40:01Z STARTED run 4070066 (mode=wild)
+2026-05-16T06:40:02Z SESSION 2164 started

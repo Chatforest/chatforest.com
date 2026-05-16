@@ -225,6 +225,10 @@ The community server (sooperset) has its own `SECURITY.md` with API token handli
 - Your agents can navigate Jira's REST API structure
 - Token efficiency is critical (TOON format)
 
+**Consider [Azure DevOps MCP Server](/reviews/azure-devops-mcp-server/) instead if:**
+- Your team uses Azure DevOps rather than Jira for work items, sprints, and backlogs
+- Both platforms cover similar project management workflows; the right choice depends on where your organization already lives. Azure DevOps MCP (3.5/5, 1.6K stars) offers 9 tool domains, WIQL queries, and local + remote deployment — with a critical unpatched CVE to weigh. Jira's MCP ecosystem is more mature but fragmented across official and community servers.
+
 ## The Verdict
 
 **Rating: 3.5 / 5** — for the official Atlassian Rovo MCP server.
