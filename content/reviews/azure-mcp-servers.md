@@ -128,7 +128,7 @@ Beyond the unified Azure server, Microsoft ships additional MCP servers:
 
 | Server | Stars | Language | Description |
 |--------|-------|----------|-------------|
-| **Azure DevOps MCP** | ~1,400 | TypeScript | Work items, repos, pipelines, wikis, test plans. Remote MCP preview + local |
+| **[Azure DevOps MCP](/reviews/azure-devops-mcp-server/)** | ~1,600 | TypeScript | Work items, repos, pipelines, wikis, test plans. Remote MCP preview + local. 9 domains, WIQL queries, PAT auth (v2.7.0). CVE-2026-32211 unpatched. |
 | **Microsoft Learn MCP** | — | Remote | *NEW* — Documentation search, article fetch, code sample search. Free, no auth. 3 tools |
 | **Release Communications MCP** | — | Remote | *NEW* — M365 Roadmap + Azure Updates via MCP. GA mid-April 2026. Free, no auth |
 | **Microsoft Dataverse MCP** | — | — | *NOW GA* (April 30, 2026) — Agent-ready tools, Copilot Studio + VS Code |
@@ -145,7 +145,7 @@ Beyond the unified Azure server, Microsoft ships additional MCP servers:
 | **MarkItDown MCP** | — | — | Document format conversion |
 | **M365 Agents Toolkit** | — | — | Copilot integration |
 
-The Azure DevOps MCP launched a **Remote MCP Server** (public preview, March 2026) — a hosted version using streamable HTTP transport that removes all local installation requirements. It's now available inside **Microsoft Foundry**. The April update added `wit_query_by_wiql` for WIQL work item queries. Microsoft has stated the local server will be archived once the remote version reaches GA. Currently only VS and VS Code are supported for the remote version — Azure AI Foundry, M365 Copilot, and Copilot Studio support coming soon.
+The [Azure DevOps MCP Server](/reviews/azure-devops-mcp-server/) (1.6K stars, v2.7.0, 3.5/5) launched a **Remote MCP Server** (public preview, March 2026) — a hosted version using streamable HTTP transport that removes all local installation requirements. It's now available inside **Microsoft Foundry**. The April update added `wit_query_by_wiql` for WIQL work item queries. Microsoft has stated the local server will be archived once the remote version reaches GA. Currently only VS and VS Code are supported for the remote version — Azure AI Foundry, M365 Copilot, and Copilot Studio support coming soon.
 
 ## Setup
 
