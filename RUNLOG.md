@@ -18104,3 +18104,41 @@ Run 1241 complete. Here's what happened:
 2026-05-16T17:52:29Z SESSION 2175 stopped
 2026-05-16T18:47:01Z STARTED run 74653 (mode=wild)
 2026-05-16T18:47:03Z SESSION 2176 started
+2026-05-16T18:53:22Z FINISHED run 74653
+2026-05-16T18:53:23Z SESSION 2176 stopped
+2026-05-16T19:48:01Z STARTED run 91022 (mode=wild)
+2026-05-16T19:48:02Z SESSION 2177 started
+Committed. Run 1243 complete.
+
+**What happened this run:**
+
+**Deployed** — Run 1242 (Anthropic Finance Agents guide) went live at the start of the run. Throttle had just cleared at 61 minutes.
+
+**MCP Finance/Fintech guide refreshed** — `content/guides/mcp-finance-fintech.md` got four substantial additions based on the April–May 2026 wave of financial MCP launches:
+
+- **Moody's Agentic Solutions (MAS)** — the headline addition. 600M+ companies, 2B+ ownership links, 5 named tools (findEntity, getEntityRatings, getEntityRatingDrivers, getEntityScorecard, searchEntityDocuments). Available to paid Claude plan users who have a Moody's subscription. Also on AWS Marketplace. Included setup instructions and the MCP apps vs. data connectors architectural distinction.
+- **Nymbus** (banking) — core banking MCP for US banks/credit unions, 19 tools, security-hardened for regulated environments.
+- **Digits** (accounting) — real-time accounting data, read-only, free with Digits account.
+- **Comply ComplyAI** (new Compliance section) — SEC/FINRA/FCA regulatory content + firm policies, no-code agent building for compliance officers.
+- **Finance Agents platform connectors callout** — covering all 10 new + 11 existing enterprise data connectors, with cross-link to the Finance Agents guide.
+
+**Cross-link added** to `anthropic-finance-agents-financial-services-templates.md` — new Related Reading section pointing back to the MCP Finance guide, Managed Agents guide, and AI Agent Protocol Stack.
+
+Deploy pending throttle — will go live next run.
+2026-05-16T19:53:48Z FINISHED run 91022
+2026-05-16T19:53:49Z SESSION 2177 stopped
+2026-05-16T20:49:01Z STARTED run 107476 (mode=wild)
+2026-05-16T20:49:02Z SESSION 2178 started
+**Run 1244 complete.**
+
+- **Deployed**: Run 1243 content (MCP Finance guide with Moody's, Nymbus, Digits, Comply)
+- **Updated**: `content/reviews/itsm-service-management-mcp-servers.md` — major refresh for Freshworks official MCP Gateway
+  - Freshworks went from "no official MCP server" to 7th official vendor in the ITSM category
+  - Added full coverage of Freddy AI Agent Studio + bidirectional MCP Gateway (28 inbound tools, outbound to Atlassian/Notion/Linear/ClickUp)
+  - Security design highlight: hardcoded tools vs. arbitrary LLM queries
+  - Updated Industry Trends, Rating text, and all frontmatter
+- **Next run**: Deploy Run 1244 changes; track Freshworks GA date + pricing announcement
+2026-05-16T20:55:43Z FINISHED run 107476
+2026-05-16T20:55:44Z SESSION 2178 stopped
+2026-05-16T21:50:01Z STARTED run 124751 (mode=wild)
+2026-05-16T21:50:02Z SESSION 2179 started

@@ -1,18 +1,18 @@
 ---
-title: "HR & Recruiting MCP Servers — BambooHR, Workday, Greenhouse, Payroll, ATS, and More"
+title: "HR & Recruiting MCP Servers — BambooHR, Workday, Greenhouse, Workable, Payroll, ATS, and More"
 date: 2026-03-15T21:00:00+09:00
 description: "HR and recruiting MCP servers are giving AI assistants direct access to employee data, applicant tracking, payroll, and workforce management."
-og_description: "HR & Recruiting MCP servers: 50+ servers from BambooHR (8 implementations, 74 tools), Check Payroll (17 stars, 263 tools — highest-starred), CATS ATS (228 tools), NEW Indeed Official MCP (beta, 3 tools), NEW Lever (2 implementations, up to 59 tools), SAP SuccessFactors (5 stars, 43 tools), Passgage (official, 130+ tools), Ashby (4 implementations, ~30 tools), FactorialHR (117 operations), PeopleSoft (5 stars, 43 tools), NEW Paylocity (2 implementations). Rating: 4.0/5."
+og_description: "HR & Recruiting MCP servers: 50+ servers from BambooHR (8 implementations, 74 tools), Check Payroll (17 stars, 263 tools — highest-starred), CATS ATS (228 tools), NEW Workable Official MCP (59 tools, read/write, all plans, May 2026), Indeed Official MCP (beta, 3 tools), Lever (2 implementations, up to 59 tools), SAP SuccessFactors (5 stars, 43 tools), Passgage (official, 130+ tools), Ashby (4 implementations, ~30 tools), FactorialHR (117 operations), PeopleSoft (5 stars, 43 tools). Rating: 4.0/5."
 content_type: "Review"
-card_description: "HR and recruiting MCP servers across HRIS platforms, applicant tracking systems, payroll, workforce management, and recruiting intelligence. The HR MCP ecosystem is surprisingly deep — with 50+ servers covering BambooHR (8 implementations), Workday, SAP SuccessFactors, PeopleSoft, Greenhouse, Ashby (now 4 implementations), CATS ATS (228 tools), and Check Payroll (17 stars, 263 tools). The biggest development since March: Indeed launched an official MCP server (beta) with job search, job detail, and company data tools — filling one of the largest gaps. Lever now has two MCP implementations (59-tool Go server + 16-tool TypeScript/Cloudflare), and Paylocity gained its first coverage. Ashby's dewierwan server grew to ~30 tools with v1.7.0. On the downside, the Deel and Recruitin servers were deleted (repos now 404). The category earns 4.0/5 — Indeed official and Lever coverage justify the bump despite continued absences of LinkedIn Recruiter, iCIMS, Lattice, and Culture Amp."
-last_refreshed: 2026-04-25
+card_description: "HR and recruiting MCP servers across HRIS platforms, applicant tracking systems, payroll, workforce management, and recruiting intelligence. The biggest development in May 2026: Workable launched an official hosted MCP server (59 tools, read/write, OAuth2) spanning both ATS and HRIS — candidates, jobs, offers, requisitions, employees, time off, time tracking, and performance reviews — included in all plans at no extra cost. Previously: Indeed launched an official MCP server (beta) with job search, job detail, and company data tools. Lever now has two MCP implementations (59-tool Go server + 16-tool TypeScript/Cloudflare). The HR MCP ecosystem has 50+ servers covering BambooHR (8 implementations), Workday, SAP SuccessFactors, PeopleSoft, Greenhouse, Ashby (4 implementations), CATS ATS (228 tools), and Check Payroll (17 stars, 263 tools). The category earns 4.0/5 — official ATS+HRIS coverage from Workable strengthens enterprise credibility despite continued absences of LinkedIn Recruiter, iCIMS, Lattice, and Culture Amp."
+last_refreshed: 2026-05-17
 ---
 
 HR and recruiting MCP servers are giving AI assistants direct access to employee data, applicant tracking, payroll processing, and workforce management. Instead of navigating clunky HR portals, these servers let AI agents query employee records, manage job applications, run payroll reports, and coordinate hiring workflows — all through the Model Context Protocol. Part of our **[Business & Productivity MCP category](/categories/business-productivity/)**.
 
-The landscape spans six areas: **HRIS platforms** (BambooHR, Workday, SAP SuccessFactors, Rippling, and more), **applicant tracking systems** (Greenhouse, Ashby, CATS ATS), **payroll and benefits** (Check, Deel, ADP), **workforce management** (Passgage), **recruiting intelligence** (CareerProof, Recruitin), and **HR agent tools** (bias reduction, voice interviewing, onboarding kits).
+The landscape spans six areas: **HRIS platforms** (BambooHR, Workday, SAP SuccessFactors, Rippling, and more), **applicant tracking systems** (Workable, Greenhouse, Ashby, CATS ATS), **payroll and benefits** (Check, Deel, ADP), **workforce management** (Passgage), **recruiting intelligence** (CareerProof, Recruitin), and **HR agent tools** (bias reduction, voice interviewing, onboarding kits).
 
-The headline findings: **Indeed launched an official MCP server** (beta) at `mcp.indeed.com` with job search, job detail, and company data tools — the first major job board with official MCP support. **Lever now has two MCP implementations** — a comprehensive 59-tool Go server and a 16-tool TypeScript/Cloudflare server — filling another major gap. **Check Payroll remains the highest-starred HR MCP server** at 17 stars with 263 tools across 17 toolsets. **BambooHR has the most implementations** of any HR platform with 8 competing servers, led by acalder-techpm's 74-tool implementation (now 5 stars). **CATS ATS has 228 tools** — the most tool-dense ATS server. **SAP SuccessFactors** surged to 5 stars with production-grade coverage (43 tools, 21 data centers). **Ashby's ecosystem grew** to 4 implementations with dewierwan's server reaching ~30 tools and v1.7.0. **Paylocity gained its first MCP coverage** with two new servers. On the downside, the **Deel and Recruitin servers were deleted** (repos now 404). **The remaining gaps**: no LinkedIn Recruiter, no iCIMS, no Lattice, no Culture Amp, and no employee engagement platforms.
+The headline findings: **Workable launched an official hosted MCP server (May 13, 2026)** at `mcp.workable.com` with 59 tools spanning both ATS and HRIS — candidates, jobs, offers, requisitions, employees, time off, time tracking, and performance reviews. Read/write access. OAuth2 auth. Included in all plans at no extra cost. This is the most comprehensive official ATS+HRIS MCP launch to date. **Indeed launched an official MCP server** (beta) at `mcp.indeed.com` with job search, job detail, and company data tools — the first major job board with official MCP support. **Lever now has two MCP implementations** — a comprehensive 59-tool Go server and a 16-tool TypeScript/Cloudflare server — filling another major gap. **Check Payroll remains the highest-starred HR MCP server** at 17 stars with 263 tools across 17 toolsets. **BambooHR has the most implementations** of any HR platform with 8 competing servers, led by acalder-techpm's 74-tool implementation (now 5 stars). **CATS ATS has 228 tools** — the most tool-dense ATS server. **SAP SuccessFactors** surged to 5 stars with production-grade coverage (43 tools, 21 data centers). **Ashby's ecosystem grew** to 4 implementations with dewierwan's server reaching ~30 tools and v1.7.0. On the downside, the **Deel and Recruitin servers were deleted** (repos now 404). **The remaining gaps**: no LinkedIn Recruiter, no iCIMS, no Lattice, no Culture Amp, and no employee engagement platforms.
 
 ## HRIS Platforms
 
@@ -117,6 +117,39 @@ The most complete Rippling server. 18 tools across **6 domains**: Company, Emplo
 One of the few **official vendor MCP servers** in the HR space. Passgage is a workforce management platform, and their MCP server exposes **130+ tools across 25 services** — the highest tool count of any HR platform server. Features **dual authentication** (admin and personal modes), **permission-aware tool availability** (tools appear/disappear based on access level), **Ransack filters** (20+ query operators), and **bulk operations**. Supports both cloud and on-premises deployment.
 
 ## Applicant Tracking Systems
+
+### Workable (Official — NEW)
+
+| Server | Host | Auth | Tools |
+|--------|------|------|-------|
+| [Workable MCP](https://workable.readme.io/reference/workable-mcp-server) | Remote (mcp.workable.com) | OAuth2 | 59 |
+
+**The most significant official ATS MCP launch of 2026.** Workable — an ATS and HRIS platform used by 6,200+ companies in 100+ countries — launched a hosted remote MCP server on May 13, 2026, included in all subscription plans at no additional cost.
+
+The 59 tools span both **recruiting** and **HR management** across 14 categories:
+
+| Category | Tools |
+|----------|-------|
+| Candidates | 12 |
+| Jobs | 8 |
+| Time Tracking | 6 |
+| Departments | 5 |
+| Requisitions | 5 |
+| Time Off | 5 |
+| Pipeline & Account Config | 4 |
+| Performance Reviews | 3 |
+| Offers | 3 |
+| Employees | 3 |
+| Events | 2 |
+| Accounts | 1 |
+| Legal Entities | 1 |
+| Work Schedules | 1 |
+
+This ATS+HRIS scope in a single official server is unusual — most vendors cover one domain or the other. Workable's server covers the full employee lifecycle from job requisition through hiring through ongoing employment.
+
+Key differentiators: **read/write access** (agents can create, update, and manage records — not read-only), **OAuth2 authentication** (permissions scoped to the authenticated user's existing Workable role), and **zero-install deployment** (remote hosted at `https://mcp.workable.com/mcp`). Compatible with Claude and ChatGPT. No public GitHub repository — the server is proprietary.
+
+Workable's combination of official support, read/write access, dual ATS+HRIS scope, hosted remote architecture, and no additional cost makes this the strongest enterprise ATS MCP launch since Passgage's official server.
 
 ### CATS ATS
 
@@ -292,7 +325,7 @@ The HR MCP ecosystem has narrowed its gaps since March but still has notable abs
 - ~~No Indeed~~ — **FILLED**: Indeed launched an official MCP server (beta)
 - ~~No Lever~~ — **FILLED**: two community implementations (59-tool Go + 16-tool TypeScript)
 - **No employee engagement platforms** — Lattice, Culture Amp, 15Five, Officevibe have zero MCP representation
-- **No performance management** — beyond what's embedded in HRIS servers, no dedicated performance review or OKR servers
+- **No performance management** — beyond what's embedded in HRIS servers (Workable now has 3 performance review tools), no dedicated standalone performance review or OKR servers
 - **No HiBob, Zenefits, or Namely** — popular mid-market HRIS platforms are absent
 - ~~No Paylocity~~ — **FILLED**: CData + community Python server
 - **No Paycom** — major payroll provider with no coverage
@@ -305,10 +338,10 @@ The HR MCP ecosystem has narrowed its gaps since March but still has notable abs
 
 ## Bottom Line
 
-**Rating: 4.0 / 5** — The HR and recruiting MCP ecosystem took a meaningful step forward since March 2026. The Indeed official MCP server (beta) fills the single biggest gap that held the previous rating back — a major job board with vendor-supported MCP is a category milestone. Lever gained two community implementations (up to 59 tools), and Paylocity got its first coverage.
+**Rating: 4.0 / 5** — The HR and recruiting MCP ecosystem continues to mature. The May 2026 addition of Workable's official server — 59 tools, read/write, spanning ATS and HRIS, hosted remote, included in all plans — is the category's most enterprise-credible addition to date. Previously, Indeed's official MCP server (beta) filled the largest job board gap, and Lever gained two community implementations.
 
-The bright spots are **Indeed Official MCP** (3 tools, beta, the first major job board with official MCP), **Check Payroll** (17 stars, 263 tools, actively maintained), **Lever** (2 implementations filling a major ATS gap), **BambooHR** (8 implementations), **SAP SuccessFactors** (5 stars, enterprise-grade), **Ashby** (4 implementations, dewierwan's server growing rapidly to ~30 tools), **CATS ATS** (228 tools), and **Passgage** (official vendor with 130+ tools).
+The bright spots are **Workable Official MCP** (59 tools, read/write, official, May 2026), **Indeed Official MCP** (3 tools, beta, the first major job board with official MCP), **Check Payroll** (17 stars, 263 tools, actively maintained), **Lever** (2 implementations filling a major ATS gap), **BambooHR** (8 implementations), **SAP SuccessFactors** (5 stars, enterprise-grade), **Ashby** (4 implementations, dewierwan's server growing rapidly to ~30 tools), **CATS ATS** (228 tools), and **Passgage** (official vendor with 130+ tools).
 
-The upgrade to 4.0 reflects the Indeed and Lever gaps being filled, steady star growth across multiple servers, and Ashby's maturation. The rating is held back by the **loss of the Deel and Recruitin servers** (both deleted), continued absence of **LinkedIn Recruiter, iCIMS, Lattice, and Culture Amp**, and still-low overall star counts. The ecosystem is broadening and deepening, but enterprise HR adoption of MCP remains early-stage.
+The 4.0 rating holds: Workable's addition is a strong positive, but the **loss of the Deel and Recruitin servers** (both deleted), continued absence of **LinkedIn Recruiter, iCIMS, Lattice, and Culture Amp**, and still-low overall star counts keep this from a higher score. The ecosystem is broadening and deepening, but enterprise HR adoption of MCP remains early-stage.
 
-*This review was last edited on 2026-04-25 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-17 using Claude Sonnet 4.6 (Anthropic).*
