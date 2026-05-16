@@ -31,11 +31,15 @@ Vendor investment is strong — Grafana, Microsoft, Tableau, and Google all have
 
 ## Data Pipelines & ETL
 
-The orchestration and transformation layer. dbt dominates with 60+ tools in its official server. Kafka has the most competitive community ecosystem with 5+ servers.
+The orchestration and transformation layer. dbt dominates with 60+ tools in its official server. Kafka has the most competitive community ecosystem with 5+ servers. The [ETL & Data Integration](/categories/etl-data-integration/) sub-category covers individual reviews of Airbyte, Fivetran, dbt Labs, and Zoho DataPrep in depth.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Data Pipeline & ETL](/reviews/data-pipeline-etl-mcp-servers/) | 4/5 | dbt (507 stars, 60+ tools), Airflow (44 stars, 45 tools), Kafka (76 stars, 5+ servers), Snowflake-Labs (255 stars, Cortex AI), Databricks (managed), Keboola (83 stars, full platform) |
+| [dbt Labs MCP Server](/reviews/dbt-labs-mcp-server/) | 4/5 | 50+ tools across SQL execution, Semantic Layer, Discovery API, CLI, job orchestration, codegen; Apache-2.0; 561 stars; weekly releases |
+| [Airbyte MCP Server](/reviews/airbyte-mcp-server/) | 4/5 | Four MCP implementations; Agent MCP (Context Store, 50+ connectors, 40–90% token reduction); 21,000+ platform stars; free tier |
+| [Fivetran MCP Server](/reviews/fivetran-mcp-server/) | 3/5 | 161 auto-generated tools from OpenAPI spec; writes disabled by default; STDIO-only; 700+ managed connectors; free tier API access |
+| [Zoho DataPrep MCP Server](/reviews/zoho-dataprep-mcp-server/) | 3/5 | ~30 tools for ETL pipeline orchestration; cloud-hosted HTTP; Claude Teams/Enterprise only |
 
 ## Analytics Platforms
 
@@ -65,13 +69,13 @@ An early-stage sub-category despite the $4B+ market. Only one dedicated MCP serv
 
 ## Category Overview
 
-**7 reviews. 100+ servers. Average rating: 3.8/5.**
+**11 reviews. 100+ servers evaluated. Average rating: 3.8/5.**
 
 ### What stands out
 
 **The warehouse tier is remarkably mature.** Data Warehouse & Lakehouse (4.5/5) and BI & Reporting (4.5/5) are the two highest-rated sub-categories. Every major vendor — ClickHouse, DuckDB, Snowflake, BigQuery, Databricks, Redshift, Grafana, Power BI, Tableau — has shipped official MCP servers. This level of vendor commitment is unmatched in most other MCP categories.
 
-**dbt is the standout tool.** With 507 stars and 60+ tools, dbt's official MCP server is one of the most comprehensive single-tool servers we've reviewed anywhere. It covers the full transformation lifecycle: project management, model execution, documentation, testing, and lineage exploration.
+**dbt is the standout tool.** With 561 stars and 50+ tools across 9 categories, dbt Labs' official MCP server is one of the most comprehensive single-tool servers we've reviewed anywhere. It covers the full transformation lifecycle: SQL execution, semantic layer queries, model lineage, dbt CLI operations, job orchestration, and code generation.
 
 **Visualization is surprisingly fragmented.** Despite being central to data work, visualization has no dominant vendor server. AntV leads by stars (3,800) but is most popular in the Chinese-language ecosystem. Western data teams lack a clear go-to MCP visualization tool. This is a gap waiting to be filled.
 

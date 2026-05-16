@@ -209,6 +209,8 @@ The reservations are about ecosystem maturity and architectural approach. Fiftee
 
 For Fivetran customers who want AI-native pipeline management, this is a workable integration. For teams choosing between ELT platforms and evaluating MCP maturity, Airbyte's agent ecosystem is further along.
 
+If you use [Snowflake](/reviews/snowflake-mcp-server/) as your destination warehouse — one of the most common Fivetran deployment patterns — the two MCP integrations complement each other directly: Fivetran MCP handles the pipeline control layer (connector status, sync triggers, destination configuration), while Snowflake MCP handles query and analysis on the data once it lands (Cortex Search, Cortex Analyst, SQL execution with permission controls). Pairing them gives AI agents end-to-end visibility from raw source ingestion to analytical query.
+
 **Rating: 3/5** — Covers the core use case for existing Fivetran customers; free tier API access is a genuine plus; write-protection default shows safety awareness. Held back by low community signal (15 stars, 28 commits), many tools disabled by default requiring code edits, STDIO-only deployment, unclear license, ambiguous official support status, and no architectural advantages over a simple API proxy.
 
 ---
