@@ -575,3 +575,4 @@ For developers building on Claude, MCP is already the primary extension mechanis
 - [Bluesky Attie](/guides/bluesky-attie-ai-social-feed-builder/) — Claude powers Bluesky's AI app for vibe-coding custom social feeds
 - [Claude Code Overtakes GitHub Copilot](/guides/claude-code-market-leader-2-5-billion-revenue/) — How Claude Code hit 41% market share and $2.5B revenue in under a year
 - [Claude Cowork — Enterprise AI Agent Platform](/guides/claude-cowork-enterprise-ai-agents-plugins/) — Cowork extends Claude's MCP integration to non-technical workers via plugin marketplaces and 12 new connectors
+- [Claude Platform on AWS vs Bedrock](/guides/claude-platform-on-aws-vs-bedrock-guide/) — Anthropic's native API through your AWS account: day-one feature parity, IAM auth, and the key compliance trade-offs vs Bedrock (GA May 2026)
