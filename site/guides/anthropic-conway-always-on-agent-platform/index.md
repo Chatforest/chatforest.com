@@ -123,6 +123,7 @@ For organizations already using Claude for agent workflows, Conway is worth watc
 
 **Related reading:**
 - [Claude Managed Agents: Dreaming, Outcomes, and Multi-Agent Orchestration](/guides/claude-managed-agents-dreaming-outcomes-multiagent/) — Anthropic's publicly available managed agent platform (April 2026 public beta) with memory consolidation, goal-directed self-evaluation, and multi-agent orchestration — the shipped infrastructure Conway is likely built on
+- [Agents for Financial Services: Anthropic's 10 Finance Templates](/guides/anthropic-finance-agents-financial-services-templates/) — The first major vertical application of Claude Managed Agents: ten ready-to-run templates for pitchbooks, KYC, month-end close, and more, with connectors to Moody's, FactSet, and a dozen other financial data platforms
 - [Claude Cowork — Enterprise AI Agent Platform](/guides/claude-cowork-enterprise-ai-agents-plugins/) — While Conway is an always-on agent runtime, Cowork is Anthropic's shipped enterprise product with plugin marketplaces, MCP connectors, and a Microsoft Copilot partnership
 - [Judge Blocks Pentagon's Ban on Anthropic](/guides/anthropic-pentagon-ban-judge-blocks-supply-chain-risk/) — Anthropic's refusal to remove safety guardrails from its $200M Pentagon contract led to a federal lawsuit and a ruling that the government's retaliation was likely unconstitutional. The outcome may shape how Conway and other Anthropic products are deployed in government contexts.
 

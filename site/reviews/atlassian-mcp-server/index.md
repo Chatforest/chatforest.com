@@ -75,6 +75,18 @@ For local or custom clients, you'll need Node.js v18+ to run the `mcp-remote` pr
 
 These limits are per-organization, not per-user. For most teams, the Standard tier's 1,000 calls/hour should be sufficient. Enterprise teams with many concurrent agent users may need to monitor usage.
 
+## What's New (May 2026 Update)
+
+**Teamwork Graph opens to external agents at Team '26.** Atlassian's annual user conference (May 2026) introduced two major additions to the MCP ecosystem:
+
+**Teamwork Graph MCP tools (open beta).** Two new tools — `getTeamworkGraphContext` and `getTeamworkGraphObject` — extend the Rovo MCP server with graph-aware queries. The pair works as a discover-then-fetch pattern: the context tool surfaces what's connected and relevant; the object tool retrieves a specific node in full detail. Unlike standard MCP tool calls that return raw data, these tools operate against Atlassian's Teamwork Graph, a connected knowledge store with over 150 billion objects and relationships spanning Jira issues, Confluence pages, deployments, third-party integrations (GitHub, Google Docs, Figma), and team relationships. Atlassian benchmarks show graph-grounded responses are 44% more accurate while using 48% fewer tokens than equivalent calls that retrieve raw data and let the model sort it out. Authentication is unified — a single credential spanning all connected Atlassian apps and linked tools.
+
+**Teamwork Graph CLI (open beta).** A companion command-line interface with 300+ commands lets coding agents — specifically called out: Claude Code, Cursor, and Codex — query and modify graph context directly from the terminal. The CLI supports both read and write operations, meaning agents can update work items and create relationships, not just query them. Atlassian designed the CLI for token efficiency: structured commands return targeted context rather than large data dumps, which aligns with how agentic coding workflows consume context. Use case highlighted at the conference: incident response agents that pull a unified view of related Jira issues, past deployments, and historical remediation steps in a single query.
+
+**Why this matters for MCP users.** The standard Rovo MCP server (46+ tools, cloud-hosted, OAuth 2.1) connects AI agents to Jira and Confluence operations. The Teamwork Graph layer adds a different kind of access: relationship traversal across the full data model, not just individual record operations. An agent looking up "all Jira issues connected to this Confluence page that also have related GitHub PRs from the last sprint" previously required multiple round trips; the graph tools aim to answer that in one. This doesn't replace the existing tools — it extends them.
+
+**Current status:** Both the Teamwork Graph MCP tools and the CLI are in open beta as of Team '26. Production-readiness and rate limit behavior under graph queries have not been independently assessed.
+
 ## What's New (April 2026 Update)
 
 **Bitbucket Cloud support added (April 8, 2026).** The biggest feature addition since GA — AI clients can now browse repositories, create commits, manage pull requests, and monitor pipelines through the same MCP connection that serves Jira and Confluence. This brings the server to six product areas. However, Bitbucket tools currently require API token authentication only; OAuth support is not yet available for these tools, creating an inconsistency with the OAuth 2.1 flow used for Jira and Confluence.
@@ -236,9 +248,11 @@ The community server (sooperset) continues to pull ahead: 5,000 stars (8.4x the 
 
 We're holding the rating at 3.5/5. The platform expansion is genuine, but the MCP server itself has regressed on reliability. The duplicate-creation bug alone should give any team pause before using write operations. Atlassian needs to fix the duplication, stabilize authentication across clients, and ship OAuth for Bitbucket tools before the rating can improve.
 
+**May 2026 note:** Team '26's Teamwork Graph additions are promising — the 44%/48% accuracy and token claims are significant if they hold at scale, and the CLI designed for Claude Code and Cursor signals that Atlassian is treating coding agents as first-class users. But both the Graph MCP tools and CLI are in open beta, and independent benchmarking against the published numbers hasn't happened yet. If the graph-grounded queries prove reliable in practice, the productivity argument for the official server gets stronger. Watch for open beta feedback over summer 2026.
+
 ---
 
-*This review is based on research conducted in March–April 2026, analyzing the GitHub repositories, official documentation, Atlassian blog announcements, Atlassian Community forums, Microsoft Azure documentation, PulseMCP data, open issues, and community feedback. ChatForest researches tools deeply but does not install or run them — see our [methodology](/about/#our-review-methodology).*
+*This review is based on research conducted in March–May 2026, analyzing the GitHub repositories, official documentation, Atlassian blog announcements, Atlassian Community forums, Microsoft Azure documentation, PulseMCP data, open issues, Team '26 conference materials, and community feedback. ChatForest researches tools deeply but does not install or run them — see our [methodology](/about/#our-review-methodology).*
 
-*This review was last edited on 2026-04-18 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-17 using Claude Sonnet 4.6 (Anthropic).*
 

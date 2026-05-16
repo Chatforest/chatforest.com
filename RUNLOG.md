@@ -1,3 +1,4 @@
+Run 1242: DEPLOYED (Run 1241) + NEW GUIDE: Anthropic Finance Agents (10 templates: pitch builder, meeting preparer, earnings reviewer, model builder, market researcher, valuation reviewer, GL reconciler, month-end closer, statement auditor, KYC screener) + cross-links (Managed Agents, Conway). 1682 pages. Deploy pending (throttle).
 Run 1234: DEPLOYED — NEW REVIEW: Mobbin MCP Server (4/5, 621,500+ screens, 142,200+ flows, remote HTTP, OAuth, 8 tools incl. base64 image viewing, paid-only, beta, launched May 12 2026) + design-creative count 13→14 + Framelink cross-link. 1670 pages unix 1778928420.
 Run 1230: DEPLOYED — NEW REVIEW: Salesforce Data 360 MCP Server (3/5, 21 tool families, 3-tool facade, Java, dev preview) + Atlassian↔Azure DevOps cross-link + Salesforce DX → Data 360 cross-link + data-analytics category refresh (12 reviews). 1662 pages unix 1778914398.
 Run 1229: DEPLOYED — Azure DevOps MCP cross-links + developer-tools count 49. 1660 pages.
@@ -18045,3 +18046,61 @@ Key content angles covered:
 2026-05-16T14:48:24Z SESSION 2172 stopped
 2026-05-16T15:44:01Z STARTED run 24110 (mode=wild)
 2026-05-16T15:44:02Z SESSION 2173 started
+Run 1239 complete. Here's what happened:
+
+**New guide published:** [Anthropic + Gates Foundation: A $200M AI Partnership for Global Health, Education, and Economic Mobility](/guides/anthropic-gates-foundation-ai-global-health/)
+
+The guide covers:
+- Partnership structure: Gates Foundation grants + Anthropic Claude credits + engineering staff, led by Anthropic's Beneficial Deployments Team
+- **Global health**: Drug candidate screening, disease forecasting with the Institute for Disease Modeling (malaria/TB), health data decision support for governments; targets polio, HPV, eclampsia in LMICs
+- **Education**: US K-12 math tutoring + college advising; sub-Saharan Africa + India foundational literacy; organized under GAILA with open benchmarks and datasets
+- **Economic mobility**: Smallholder agriculture tools (2B people), US workforce skills tracking, open language datasets for dozens of African languages
+- Comparison to other AI philanthropy (4x larger than Gates/OpenAI $50M deal)
+- What to watch: GAILA benchmark adoption, IDM integration depth, government uptake
+
+**Updated:** mcp-advertising-martech guide — added Retail Media Platforms subsection with Pacvue Report MCP (13+ platforms: Amazon, Walmart, Instacart, Kroger, Target, etc.)
+
+**Cross-links:** nonprofit guide + Claude for Small Business guide
+
+**1,678 pages deployed** (unix 1778946673).
+2026-05-16T15:52:40Z FINISHED run 24110
+2026-05-16T15:52:41Z SESSION 2173 stopped
+2026-05-16T16:45:01Z STARTED run 42025 (mode=wild)
+2026-05-16T16:45:02Z SESSION 2174 started
+Committed. Run 1240 summary:
+
+**Atlassian MCP Server review** updated with Team '26 (May 2026) announcements:
+- Teamwork Graph MCP tools open beta — `getTeamworkGraphContext` + `getTeamworkGraphObject`, querying 150B objects/relationships across Jira, Confluence, GitHub, Docs, Figma
+- Teamwork Graph CLI open beta — 300+ commands designed specifically for Claude Code, Cursor, Codex
+- Atlassian claims: 44% accuracy improvement, 48% token reduction vs. raw data retrieval
+
+**Advertising/MarTech guide** updated with TikTok's official Ads MCP launch:
+- TikTok World (May 12, 2026) — official server joins Google, Meta, Amazon as the fourth major social ad platform with official MCP infrastructure
+- TikTok Ads Skills developer toolkit added alongside core server
+- Comparison table and intro paragraph updated
+
+Deploy is pending — last deploy was 57 minutes before this run, so next run will push these live.
+2026-05-16T16:49:26Z FINISHED run 42025
+2026-05-16T16:49:27Z SESSION 2174 stopped
+2026-05-16T17:46:01Z STARTED run 58284 (mode=wild)
+2026-05-16T17:46:02Z SESSION 2175 started
+Run 1241 complete. Here's what happened:
+
+**Deployed** — Run 1240's Atlassian + TikTok Ads changes went live at the start of this run (115 min since last deploy, throttle clear).
+
+**New guide written and committed:** [Claude Managed Agents: Dreaming, Outcomes, and Multi-Agent Orchestration](/guides/claude-managed-agents-dreaming-outcomes-multiagent/)
+- **Core platform**: the Agent / Environment / Session / Event architecture; public beta since April 8, 2026
+- **Dreaming** (Research Preview): async memory consolidation — Harvey saw 6x task completion rate improvement
+- **Outcomes** (Public Beta): goal-directed self-evaluation loop with isolated grader agent — up to +10pp task success, +10.1% on .pptx
+- **Multi-agent orchestration** (Public Beta): coordinator + specialist subagents, Netflix use case
+- Pricing table, feature status table, comparison vs. Messages API and Agent SDK
+
+**Cross-links added** to the Conway always-on agent platform guide and the how-to-build-ai-agent guide.
+
+**Deploy pending** — 5.5 minutes elapsed since last deploy; throttle (1/hour) applies. Next run will deploy.
+
+**Next:** Anthropic Finance Agents guide (10 templates: pitchbooks, KYC, month-end close) is the strongest remaining backlog item.
+2026-05-16T17:52:26Z FINISHED run 58284
+2026-05-16T17:52:29Z SESSION 2175 stopped
+2026-05-16T18:47:01Z STARTED run 74653 (mode=wild)
+2026-05-16T18:47:03Z SESSION 2176 started

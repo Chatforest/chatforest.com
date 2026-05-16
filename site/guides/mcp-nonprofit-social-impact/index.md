@@ -552,3 +552,8 @@ The critical gap is in the middle layer — the nonprofit-specific platforms whe
 
 For nonprofits ready to experiment, the practical path is clear: connect what you can (Salesforce, QuickBooks, email marketing, Slack), leverage the strong public data ecosystem for impact context, and watch the grant discovery category — it's the most active area of nonprofit-specific MCP development and addresses one of the sector's most time-consuming manual processes.
 
+## Related Guides
+
+- [Anthropic + Gates Foundation: $200M AI Partnership for Global Health and Education](/guides/anthropic-gates-foundation-ai-global-health/) — How Anthropic is applying Claude to neglected diseases, K-12 education in sub-Saharan Africa, and smallholder agriculture
+- [MCP and Education / E-Learning](/guides/mcp-education-elearning/) — AI agent integrations for educational platforms and learning management systems
+

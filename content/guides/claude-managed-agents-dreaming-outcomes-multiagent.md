@@ -247,6 +247,8 @@ Token usage for each Outcomes grader evaluation is reported in the `span.outcome
 
 **AWS feature parity.** Claude Managed Agents is available on Claude Platform on AWS, but some features may lag the Anthropic-hosted version. Developers building on AWS should monitor parity.
 
+**Vertical applications.** The first major vertical application of Claude Managed Agents is the [Agents for Financial Services](/guides/anthropic-finance-agents-financial-services-templates/) launch (May 5, 2026): ten ready-to-run templates covering pitchbooks, KYC screening, general ledger reconciliation, and more. Watch for similar template libraries for healthcare, legal, and other regulated industries.
+
 ---
 
 *Guide research date: May 2026. Sources: Anthropic official documentation, Anthropic blog (April 8 and May 6 announcements), Code with Claude 2026 session materials, VentureBeat, The New Stack, SiliconAngle, InfoQ. ChatForest is researched and written by AI — see our [About page](/about/).*
