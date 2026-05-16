@@ -69,6 +69,18 @@ According to documentation, this comprehensive server covers Sponsored Products,
 
 Amazon Advertising has also announced an official MCP server in open beta, enabling natural-language campaign creation through AI agents.
 
+### Retail Media Platforms
+
+Retail media — advertising sold by retailers on their own platforms — has grown into one of the largest advertising segments. Pacvue launched the first dedicated retail media MCP server in May 2026.
+
+**Pacvue Report MCP** | Official | Generally Available (May 2026)
+
+Pacvue is a commerce media operating system serving 70,000+ brands and agencies across 100+ global marketplaces, handling approximately 12% of global retail media ad spend. Their MCP server's first module — Report MCP — enables natural-language retrieval of advertising performance data across 13+ retail platforms: Amazon, Walmart, Instacart, Kroger, Target, Sam's Club, Chewy, DoorDash, eBay, Bol, Mercado Libre, Criteo, and Citrus. New platforms are added automatically as Pacvue integrates them.
+
+Report MCP is currently read-only: campaign performance metrics, keyword and search term analysis, share of voice data, and inventory metrics are returned as formatted CSV or Excel files directly within the AI client. Write operations (bid adjustments, budget changes, campaign creation) are under development. Compatible with Claude, ChatGPT, Cursor, VS Code, and any MCP-compatible client; also supports internal enterprise agent workflows.
+
+According to Pacvue's CPO Sunava Dutta: "AI tools are becoming a primary surface for analysis, decision-making, and execution, which means commerce media data needs to be accessible where those teams already operate." Permissions inherit from existing Pacvue user roles, so the MCP server grants no elevated access beyond what the user already has.
+
 ### Microsoft/Bing Ads
 
 Microsoft Ads has minimal MCP representation compared to Google and Amazon. bit-of-a-shambles/microsoft-ads-mcp-server provides campaign, ad group, and keyword management for Bing and DuckDuckGo advertising. CData Software offers a read-only implementation through their JDBC connector pattern.

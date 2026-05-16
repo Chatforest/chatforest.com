@@ -555,3 +555,8 @@ The nonprofit MCP ecosystem is at an early but promising stage. The foundational
 The critical gap is in the middle layer — the nonprofit-specific platforms where organizations do their distinctive work. Donor management (Blackbaud, DonorPerfect, Bloomerang), grant management (Submittable, Fluxx), volunteer management (Galaxy Digital, VolunteerHub), and advocacy platforms (Capitol Canary, Quorum) have zero MCP coverage. Until these platforms adopt MCP or community developers build integrations, nonprofits must route their AI workflows through the general-purpose tools that happen to overlap with their stack.
 
 For nonprofits ready to experiment, the practical path is clear: connect what you can (Salesforce, QuickBooks, email marketing, Slack), leverage the strong public data ecosystem for impact context, and watch the grant discovery category — it's the most active area of nonprofit-specific MCP development and addresses one of the sector's most time-consuming manual processes.
+
+## Related Guides
+
+- [Anthropic + Gates Foundation: $200M AI Partnership for Global Health and Education](/guides/anthropic-gates-foundation-ai-global-health/) — How Anthropic is applying Claude to neglected diseases, K-12 education in sub-Saharan Africa, and smallholder agriculture
+- [MCP and Education / E-Learning](/guides/mcp-education-elearning/) — AI agent integrations for educational platforms and learning management systems

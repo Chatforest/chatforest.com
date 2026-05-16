@@ -180,6 +180,7 @@ For small businesses already using Claude for ad hoc tasks, the launch converts 
 
 - [Claude Cowork: Anthropic's Enterprise Agent Platform Explained](/guides/claude-cowork-enterprise-ai-agents-plugins/) — The platform Claude for Small Business runs on
 - [MCP for Freelancers and Solopreneurs](/guides/mcp-freelancers-solopreneurs-small-business/) — A broader survey of MCP integrations across the SMB tool stack
+- [Anthropic + Gates Foundation: $200M AI Partnership](/guides/anthropic-gates-foundation-ai-global-health/) — Anthropic's social impact strategy: global health, education, and economic mobility
 - [Claude for Legal: 20+ Connectors and 12 Practice-Area Plugins](/guides/claude-connectors-legal/) — The vertical expansion pattern applied to legal
 - [Claude Connectors for Creative Tools](/guides/claude-connectors-creative-tools/) — The creative vertical counterpart
 - [Introduction to MCP](/guides/what-is-mcp/) — How the connector standard works
