@@ -1,18 +1,20 @@
 ---
-title: "Banking & Fintech MCP Servers — Plaid, Adyen, Square, Marqeta, Revolut, Morningstar, Bloomberg, LoanPro, and More"
+title: "Banking & Fintech MCP Servers — Plaid, Adyen, Square, Marqeta, Nymbus, Moody's, Comply, Morningstar, and More"
 date: 2026-04-26T22:00:00+09:00
-description: "Banking and fintech MCP servers reviewed: Plaid official remote MCP + community servers (PlaidMCP C# encrypted storage, bank-mcp multi-provider 15K+ institutions), Adyen official (47 stars, alpha), Square official (95 stars, OAuth), Marqeta official (33 tools, card issuance), Revolut X trading (11 tools, read-only), Mercury community servers, Morningstar official (200K securities), Bloomberg community (blpapi-mcp 18 tools), EODHD (77 tools), Financial Datasets (OAuth 2.1), LoanPro official (Go, read-only), Ramp official (expense/card management), BANKSapi PSD2 (3K providers), Ntropy enrichment, Carrington Labs credit risk. Rating: 3.5/5."
-og_description: "Banking & fintech MCP servers: Plaid (official remote), Adyen (47 stars), Square (95 stars), Marqeta (33 tools), Revolut X (11 tools), Morningstar (200K securities), Bloomberg community, LoanPro, Ramp, BANKSapi PSD2. Rating: 3.5/5."
+description: "Banking and fintech MCP servers reviewed: Plaid official remote MCP + community servers, Adyen official (47 stars, alpha), Square official (95 stars, OAuth), Marqeta official (33 tools, card issuance), Nymbus core banking (19 tools, GA April 2026), Moody's Agentic Solutions (600M+ companies, GA May 2026), Comply RegTech (trade pre-clearance + policy guidance, GA May 2026), Revolut X trading (11 tools), Morningstar (200K securities), Bloomberg community, LoanPro, Ramp, BANKSapi PSD2. Rating: 4/5."
+og_description: "Banking & fintech MCP servers: Plaid (official remote), Nymbus core banking (19 tools), Moody's (600M+ companies, Anthropic partner), Comply (RegTech GA), Adyen, Square, Marqeta, Morningstar, LoanPro, Ramp. Rating: 4/5."
 content_type: "Review"
-card_description: "Banking and fintech are adopting MCP faster than expected — Plaid, Adyen, Square, Marqeta, Ramp, and Morningstar all ship official MCP servers, and community coverage fills many remaining gaps. Plaid offers a remote Dashboard MCP at api.dashboard.plaid.com/mcp plus an AI coding toolkit, while the community-built bank-mcp aggregates Plaid, Teller, Enable Banking, and Tink to cover 15,000+ institutions across US and Europe with a read-only, zero-network-attack-surface design. Adyen's alpha MCP (47 stars) translates natural language to payment API calls. Square's official server (95 stars) covers payments, orders, inventory, and customers via OAuth. Marqeta's official MCP exposes 33 tools for card issuance, spend controls, and disputes. Revolut X (official, 11 tools) provides read-only trading data. Morningstar covers 200,000+ securities with investment ratings and research. Bloomberg has a community wrapper requiring Terminal access. LoanPro's Go-based MCP handles loan and payment operations with compliance guardrails. Ramp's hosted MCP manages expenses, cards, and approvals. BANKSapi provides PSD2-licensed access to 3,000+ German providers. Ntropy enriches transactions with 95%+ merchant identification. Notable gaps: no core banking vendor MCP servers (Thought Machine, Mambu, Temenos), no major neobank servers beyond Revolut, no dedicated crypto banking MCP. Rating: 3.5/5 — strong official coverage from payment and data providers, but core banking and neobanks lag behind."
-last_refreshed: 2026-04-26
+card_description: "Banking and fintech MCP adoption has accelerated sharply in 2026 — Nymbus fills the long-standing core banking gap with 19 tools for customer lookup, account management, and money movement, while Moody's (an official Anthropic partner) brings credit ratings and compliance workflows for 600+ million companies natively into Claude Desktop, Claude.ai, and Claude Enterprise. Comply's RegTech MCP server adds trade pre-clearance, policy guidance agents, and compliance briefings for the 5,000+ financial firms in its network. Plaid, Adyen, Square, Marqeta, Ramp, and Morningstar continue to offer strong official MCP servers. The ecosystem is maturing: read-only defaults, PII exclusion, OAuth 2.1, and full audit logging are now standard patterns across financial MCP servers. Rating: 4/5 — the core banking and compliance gaps that held this review to 3.5 have been materially addressed."
+last_refreshed: 2026-05-17
 ---
 
-Banking and fintech represent some of the highest-stakes use cases for MCP — AI agents that can query account balances, enrich transactions, assess credit risk, and navigate payment APIs must do so with rigorous security and compliance. The ecosystem has moved faster than expected: major players like Plaid, Adyen, Square, Marqeta, and Morningstar all ship official MCP servers. Part of our **[Finance & Business MCP category](/categories/finance-business/)**.
+Banking and fintech represent some of the highest-stakes use cases for MCP — AI agents that can query account balances, enrich transactions, assess credit risk, and navigate payment APIs must do so with rigorous security and compliance. The ecosystem has moved faster than expected: major players like Plaid, Adyen, Square, Marqeta, Morningstar, and now Nymbus and Moody's all ship official MCP servers. Part of our **[Finance & Business MCP category](/categories/finance-business/)**.
 
-This review covers **open banking and account aggregation** (Plaid, TrueLayer, multi-provider), **payment processing** (Adyen, Square, Ramp), **banking-as-a-service** (Marqeta), **financial market data** (Morningstar, Bloomberg, EODHD, Financial Datasets), **neobank and challenger bank** integrations (Revolut, Mercury), **lending and credit** (LoanPro, Carrington Labs), **KYC/AML** (iDenfy, Kyonis), and **transaction enrichment** (Ntropy). For cryptocurrency and DeFi, see our [Cryptocurrency & DeFi MCP Servers](/reviews/cryptocurrency-defi-mcp-servers/) review. For payment-specific servers like Stripe and PayPal, see our dedicated [Stripe MCP Server](/reviews/stripe-mcp-server/) and [PayPal MCP Server](/reviews/paypal-mcp-server/) reviews.
+*May 2026 refresh: Added Nymbus (core banking, GA April 2026), Moody's Agentic Solutions (official Anthropic partner, GA May 2026), and Comply (financial services RegTech, GA May 2026).*
 
-The headline finding: **read-only design dominates** — most financial MCP servers deliberately exclude write operations to minimize risk. **Plaid leads open banking** with an official remote MCP server and multiple community implementations. **Payment processors are all-in** with Adyen, Square, and Marqeta shipping official servers. **Financial data is well-covered** by Morningstar (200K+ securities) and community Bloomberg access. **Core banking is completely absent** — no servers from Thought Machine, Mambu, Temenos, FIS, or Fiserv. **Security patterns are maturing** with OAuth 2.1, encrypted token storage, PII exclusion, and stdio-only transport gaining traction.
+This review covers **open banking and account aggregation** (Plaid, TrueLayer, multi-provider), **payment processing** (Adyen, Square, Ramp), **banking-as-a-service** (Marqeta), **core banking** (Nymbus), **credit and risk intelligence** (Moody's), **financial market data** (Morningstar, Bloomberg, EODHD, Financial Datasets), **neobank and challenger bank** integrations (Revolut, Mercury), **lending and credit** (LoanPro, Carrington Labs), **KYC, AML & compliance** (Comply, iDenfy, Kyonis), and **transaction enrichment** (Ntropy). For cryptocurrency and DeFi, see our [Cryptocurrency & DeFi MCP Servers](/reviews/cryptocurrency-defi-mcp-servers/) review. For payment-specific servers like Stripe and PayPal, see our dedicated [Stripe MCP Server](/reviews/stripe-mcp-server/) and [PayPal MCP Server](/reviews/paypal-mcp-server/) reviews.
+
+The headline finding: **read-only design dominates** — most financial MCP servers deliberately exclude write operations to minimize risk. **Plaid leads open banking** with an official remote MCP server and multiple community implementations. **Payment processors are all-in** with Adyen, Square, and Marqeta shipping official servers. **Core banking has arrived** — Nymbus ships 19 tools for real banking operations. **Moody's brings credit intelligence to Claude natively** as an official Anthropic partner covering 600M+ companies. **Security patterns are maturing** with OAuth 2.1, encrypted token storage, PII exclusion, and audit logging now standard.
 
 ## Open Banking & Account Aggregation
 
@@ -73,17 +75,36 @@ Payment MCP servers let AI agents interact with checkout, order management, and 
 
 A companion community server, **marqeta-diva-mcp** (zvika-finally), focuses on data insights, visualization, and analytics.
 
+## Core Banking
+
+Core banking MCP servers give AI agents access to account systems, customer records, and money movement within banking institutions. This was a notable gap in the financial MCP ecosystem until mid-2026.
+
+| Server | Language | Tools | Focus | Official |
+|--------|----------|-------|-------|----------|
+| Nymbus MCP Server | Closed/hosted | 19 tools | Core banking operations | Yes |
+
+**Nymbus** (GA April 9, 2026) is one of the **first MCP servers purpose-built for core banking operations**, addressing AI agent integration with banking core systems — a gap previously noted across the entire financial MCP ecosystem. Nymbus serves community banks, credit unions, and fintech brands running on the Nymbus Banking Platform.
+
+**19 tools** cover four operational areas: **customer lookup** (find accounts, retrieve customer profiles), **account management** (view account details, balances, transaction history), **money movement** (initiate and review transfers), and **debit card controls** (freeze/unfreeze, manage card status). Each institution controls which tools are enabled, which user roles can access them, and where additional approval is required before an operation executes.
+
+**Security architecture**: Token-based authentication, role-based access controls, **PII masking in logs** (transaction descriptions and customer data are scrubbed before logging), encrypted connections, and full audit logging of all AI agent actions. The design replaces per-tool custom integrations typical with legacy core systems — instead of each AI tool requiring its own integration with the core, Nymbus's MCP provides a single standardized connection layer.
+
+No public GitHub repo; closed commercial product bundled with the Nymbus Banking Platform. Institutions must be on the Nymbus platform to access it.
+
 ## Financial Market Data
 
 Financial data MCP servers provide stock prices, ratings, research, and analytics to AI agents.
 
 | Server | Stars | Language | Coverage | Tools | Official |
 |--------|-------|----------|----------|-------|----------|
+| Moody's Agentic Solutions | — | Hosted | 600M+ companies | Credit + compliance | Yes (Anthropic partner) |
 | Morningstar MCP | ~19 | Python | 200K+ securities | 2 main | Yes |
 | blpapi-mcp | — | — | Bloomberg Terminal | 18 tools | No |
 | EODHD MCP | — | — | Global markets | 77 tools | Semi-official |
 | Financial Datasets | — | Python | US stocks | 5 categories | Yes |
 | FinanceKit MCP | — | — | Stocks + crypto | 17 tools | No |
+
+**Moody's Agentic Solutions** (api.moodys.com/genai-ready-data/m1/mcp, GA May 5, 2026) is an official Anthropic partner product available natively in **Claude Desktop, Claude.ai, and Claude Enterprise**. It covers **600+ million public and private companies** through Moody's proprietary credit ratings and data. Two primary workflow categories: **credit analysis** (memo generation, peer comparisons, scorecard assessments) and **compliance workflows** (entity profiling, ownership structure mapping, adverse media screening, sanctions checks). Authentication uses MCP OAuth spec — users log in via Moody's credentials, and outputs are rendered as **interactive reports inline within Claude**, eliminating system-switching. No public GitHub repo; commercial product requiring a Moody's account. The Anthropic partnership, announced alongside the launch, positions this as a major signal that financial institutions will invest in Claude-native MCP tools.
 
 **Morningstar** ([Morningstar/morningstar-mcp-server](https://github.com/Morningstar/morningstar-mcp-server), 19 stars, MIT, Python) provides two main tools: `Datapoint` (market cap, ratings, fair value, closing price, total return, economic moat, EPS, NAV, fund size, sector, domicile) and `Articles` (editorial content, methodologies, thematic research, investment strategies). Covers **200,000+ global securities**. Integrated with Claude, ChatGPT, Copilot Studio, and Microsoft Foundry. Requires a licensed Morningstar account. Note: the GitHub repo is archived — development has moved to Morningstar's internal hosting.
 
@@ -125,13 +146,20 @@ No MCP servers found from **Chime, N26, Monzo, or Starling**.
 
 **Carrington Labs** (carringtonlabs.com/mcp-server, commercial) provides **deterministic credit risk assessments** — not probabilistic — with Cashflow Score, Credit Risk Model outputs, and explainability. Returns only a unique record ID and model outputs, **never personally identifiable information**. Score plus key factor explanations meet Equal Credit Opportunity Act requirements. Announced November 2025, broader availability expected.
 
-## KYC & AML
+## KYC, AML & Compliance
 
-| Server | Focus | Official |
-|--------|-------|----------|
-| iDenfy MCP | Documentation access (KYC/KYB/AML) | Yes |
-| Kyonis Compliance | KYC verification + AML screening | Yes |
-| Sardine | Fraud detection AI assistant | Yes (internal) |
+| Server | Focus | Customers | Official |
+|--------|-------|-----------|----------|
+| Comply (ComplyAI) | Trade pre-clearance + policy guidance + compliance briefings | 5,000+ financial firms | Yes |
+| iDenfy MCP | Documentation access (KYC/KYB/AML) | — | Yes |
+| Kyonis Compliance | KYC verification + AML screening | — | Yes |
+| Sardine | Fraud detection AI assistant | — | Yes (internal) |
+
+**Comply** (comply.com, GA May 2026) is the **first enterprise-grade MCP server for financial services compliance** according to Comply's positioning. Comply serves 5,000+ financial firms with trade surveillance, personal account dealing, and policy management tools — the MCP server extends those capabilities to AI agents.
+
+Three launch use cases: **trade pre-clearance agents** (employees submit pre-clearance requests via any MCP-compatible AI tool; compliance officers approve or deny with automated audit logs), **policy guidance agents** (AI agents answer firm-specific compliance questions sourced from the firm's own approved policies, surfaceable via Teams, Slack, or any connected AI client), and **morning briefing agents** (daily compliance summary covering open pre-clearance requests, outstanding certification gaps, and regulatory alerts). **No developer required** — compliance officers configure and deploy their own agents without code.
+
+Compatible orchestrators: Claude, Microsoft Copilot, and ChatGPT. No public GitHub repo; commercial product available through Comply's enterprise platform.
 
 **iDenfy** (documentation.idenfy.com/resources/mcp, launched April 2026) is a **documentation-access MCP server** — it searches iDenfy's live docs and returns API field names, endpoints, and working code examples. It **cannot trigger verification flows, access live data, dashboard, sessions, API keys, or customer data**. Free for all developers. Covers KYC, KYB, and AML products.
 
@@ -157,7 +185,7 @@ Financial MCP servers have developed distinct security patterns worth noting:
 
 ## What's Missing
 
-- **Core banking vendors**: No MCP servers from Thought Machine, Mambu, Temenos, FIS, or Fiserv. These vendors serve the world's largest banks but have not adopted MCP.
+- **Core banking tier-1 vendors**: Nymbus (community banks, credit unions) now ships 19 tools, but Thought Machine, Mambu, Temenos, FIS, and Fiserv — which serve the world's largest banks — still offer no MCP integration.
 - **Major neobanks**: Beyond Revolut, no MCP servers from Chime, N26, Monzo, Starling, or SoFi.
 - **Full Bloomberg access**: The community blpapi-mcp wrapper requires a Bloomberg Terminal license. No public Bloomberg MCP server exists.
 - **LSEG/Refinitiv**: Has partnered with Microsoft and Anthropic for managed MCP access but offers no self-hostable public server.
@@ -165,8 +193,8 @@ Financial MCP servers have developed distinct security patterns worth noting:
 - **Crypto banking**: While we cover crypto in our [Cryptocurrency & DeFi](/reviews/cryptocurrency-defi-mcp-servers/) review, there are no MCP servers bridging traditional banking with stablecoin or CBDC operations.
 - **Dedicated fraud prevention**: Sardine's MCP is internal-only. No public MCP servers for Featurespace, Feedzai, or other fraud platforms.
 
-## Rating: 3.5 / 5
+## Rating: 4 / 5
 
-The banking and fintech MCP ecosystem is **stronger than expected for a highly regulated industry**. Official servers from Plaid, Adyen, Square, Marqeta, Morningstar, Ramp, and LoanPro demonstrate genuine institutional commitment to MCP adoption. The community has filled important gaps with multi-provider aggregators like bank-mcp and Bloomberg Terminal wrappers. Security patterns are maturing appropriately — read-only defaults, PII exclusion, encrypted storage, and audit logging reflect the seriousness of financial data handling.
+The banking and fintech MCP ecosystem has matured significantly. Official servers from Plaid, Adyen, Square, Marqeta, Morningstar, Ramp, LoanPro, Nymbus, Moody's, and Comply represent genuine institutional commitment across every major financial services sub-category. The three May 2026 additions resolve the two most significant gaps in the April review: Nymbus breaks open core banking (19 tools, GA), and Comply brings enterprise compliance workflows to financial AI agents for the first time.
 
-However, the **complete absence of core banking vendors** is a significant gap. Thought Machine, Mambu, Temenos, FIS, and Fiserv serve the backbone of global banking but offer no MCP integration. Major neobanks beyond Revolut are also missing. The rating reflects strong coverage in payments and market data but weak representation from the institutions that actually hold deposits and process the majority of financial transactions.
+The remaining gaps — tier-1 core banking vendors (Temenos, FIS, Fiserv), major neobanks (Chime, Monzo), and public Bloomberg access — are real but increasingly narrow. Security patterns are now standard: read-only defaults, PII exclusion, OAuth 2.1, and full audit logging appear across virtually all financial MCP servers. The ecosystem's progress from the January 2026 baseline to May 2026 represents one of the fastest category maturity arcs in the broader MCP server landscape.
