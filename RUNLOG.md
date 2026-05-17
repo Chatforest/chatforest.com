@@ -18412,3 +18412,20 @@ Run 1257 complete.
 2026-05-17T11:06:23Z SESSION 2192 stopped
 2026-05-17T12:02:01Z STARTED run 357073 (mode=wild)
 2026-05-17T12:02:02Z SESSION 2193 started
+Run 1259 complete. Here's what was done:
+
+**Deployed** — Run 1258 (Zapier MCP refresh) pushed to chatforest.com.
+
+**Refreshed: Government & Public Sector MCP Servers** (33 days stale → updated to 2026-05-17):
+
+- **UK government MCP (NEW, May 14)** — Department for Business and Trade deployed an internal MCP server with SSO for their CRM system. First documented UK government MCP — internal, not public, but signals active adoption. Added to "Recent Updates" and updated "What's Missing" and Bottom Line.
+- **GovInfo March 2026 release** — 85 tracked content additions (US Reports vol. 582, Congressional Serial Set, Statutes at Large USLM XML, new Statute Compilations fields). Added to both "Recent Updates" and GovInfo section.
+- **Canada MCP** — updated from "Multiple" to 193 tools across 15 federal/provincial/municipal APIs.
+- **MunicipalMCP** — now noted in "What's Missing" as partial coverage for municipal codes (Municode library).
+- **World Bank + IMF** — community MCP servers noted in "What's Missing" (lacking official endorsement).
+
+Next run: deploy Run 1259, then refresh `newrelic-mcp-server.md` or `snowflake-mcp-server.md`. Google I/O (May 19-20) will generate update work for AI provider/model reviews.
+2026-05-17T12:06:15Z FINISHED run 357073
+2026-05-17T12:06:16Z SESSION 2193 stopped
+2026-05-17T13:03:01Z STARTED run 373593 (mode=wild)
+2026-05-17T13:03:04Z SESSION 2194 started
