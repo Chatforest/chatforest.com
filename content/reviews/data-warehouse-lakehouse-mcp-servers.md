@@ -1,11 +1,11 @@
 ---
-title: "Data Warehouse & Lakehouse MCP Servers — Snowflake, BigQuery, Databricks, ClickHouse, DuckDB, Redshift, and More"
+title: "Data Warehouse & Lakehouse MCP Servers — Snowflake, BigQuery, Databricks, ClickHouse, DuckDB, Teradata, Redshift, and More"
 date: 2026-03-17T16:30:00+09:00
-description: "Data warehouse and lakehouse MCP servers reviewed: ClickHouse official (764 stars), DuckDB/MotherDuck (473 stars, v1.0.5, NOW HTTP transport), Snowflake Labs (277 stars) + managed GA, Apache Doris NEW official (289 stars, 25+ tools), Databricks 4 managed servers (SQL NEW), BigQuery auto-enabled, Dremio NEW official (49 stars). Rating: 4.5/5."
-og_description: "Data Warehouse & Lakehouse MCP servers: ClickHouse official (764 stars), DuckDB/MotherDuck (473 stars v1.0.5 HTTP transport), Apache Doris official NEW (289 stars 25+ tools), Snowflake Labs (277 stars) + managed GA, BigQuery auto-enabled, Databricks 4 managed servers SQL NEW, Dremio official NEW, Redshift via AWS. 30+ servers reviewed. Rating: 4.5/5."
+description: "Data warehouse and lakehouse MCP servers reviewed: ClickHouse official (764 stars), DuckDB/MotherDuck (473 stars, v1.0.5, NOW HTTP transport), Snowflake Labs (277 stars) + managed GA, Apache Doris NEW official (289 stars, 25+ tools), Databricks 4 managed servers (SQL NEW), BigQuery auto-enabled, Dremio NEW official (49 stars), Teradata NEW official (v0.2.2, 190+ tools). Rating: 4.5/5."
+og_description: "Data Warehouse & Lakehouse MCP servers: ClickHouse official (764 stars), DuckDB/MotherDuck (473 stars v1.0.5 HTTP transport), Apache Doris official NEW (289 stars 25+ tools), Snowflake Labs (277 stars) + managed GA, BigQuery auto-enabled, Databricks 4 managed servers SQL NEW, Dremio official NEW, Teradata official NEW (v0.2.2, 190+ tools, in-database ML + AI), Redshift via AWS. 30+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Data warehousing has exceptional MCP coverage — every major platform has official or vendor-backed support. ClickHouse leads the open-source community with 764 stars. Apache Doris is a notable new official entry with 289 stars and 25+ tools. DuckDB/MotherDuck now supports HTTP transport. BigQuery is auto-enabled. Snowflake has both managed GA and open-source servers. Databricks added SQL as a 4th managed server. Dremio brings lakehouse analytics. This is one of the strongest enterprise MCP categories."
-last_refreshed: 2026-05-05
+card_description: "Data warehousing has exceptional MCP coverage — every major platform has official or vendor-backed support. ClickHouse leads the open-source community with 764 stars. Apache Doris is a notable new official entry with 289 stars and 25+ tools. DuckDB/MotherDuck now supports HTTP transport. BigQuery is auto-enabled. Snowflake has both managed GA and open-source servers. Databricks added SQL as a 4th managed server. Dremio brings lakehouse analytics. **Teradata now has an official MCP server (v0.2.2, May 2026)** with the broadest tool set of any data warehouse MCP server — 190+ tools spanning SQL execution, in-database ML via 120+ teradataml functions, in-database LLM inference (CompleteChat), Enterprise Feature Store, RAG pipelines, graph lineage, DBA operations, backup/restore, and data quality. This is one of the strongest enterprise MCP categories."
+last_refreshed: 2026-05-17
 ---
 
 Data warehousing and lakehouse platforms have some of the best MCP coverage in the entire ecosystem. Every major vendor — Snowflake, Google BigQuery, Databricks, ClickHouse, MotherDuck/DuckDB, Amazon Redshift, Apache Doris, and Dremio — now offers official or vendor-backed MCP servers. Enterprise AI platforms like Palantir Foundry — which go beyond traditional warehousing into ontology-centric data modeling — also have official MCP servers, covered in this roundup. This makes sense: data warehouses are where enterprise data lives, and connecting AI agents to structured data through SQL is one of the highest-value MCP use cases.
@@ -305,6 +305,72 @@ Dremio, the lakehouse analytics platform, now has an official MCP server enablin
 
 **Not official Dremio product support.** The repository notes this is open source software and not part of official Dremio product support.
 
+## Teradata — Official Server (NEW)
+
+| Detail | Info |
+|--------|------|
+| [Teradata/teradata-mcp-server](https://github.com/Teradata/teradata-mcp-server) | 51 stars |
+| Language | Python |
+| License | MIT |
+| Transport | stdio, streamable-HTTP, SSE |
+| Tools | 70+ static + 120+ teradataml ML tools |
+| Version | v0.2.2 (May 15, 2026) |
+
+Teradata's official MCP server debuted in August 2025 and has matured through a consistent release cadence into the most tool-rich data warehouse MCP server by raw count. Unlike competitors that focus narrowly on SQL execution and schema discovery, the Teradata server reflects Teradata's broader platform vision: bringing AI agents into the database rather than pulling data out to an AI stack.
+
+The 51-star count understates enterprise interest — the repo has **56 forks**, an unusually high fork-to-star ratio that indicates significant internal enterprise experimentation and customization.
+
+### What Works Well
+
+**In-database ML at scale.** The `[fs]` extras install 120+ `tdml_*` teradataml analytic functions as MCP tools — ANOVA, KMeans, GLM, XGBoost, SVM, NaiveBayesTextClassifier, NERExtractor, polynomial feature transforms, ROC analysis, and more. These run inside the Teradata engine, meaning agents can train and score ML models without moving data to an external stack. No other data warehouse MCP server offers anything comparable.
+
+**In-database LLM inference.** The `chat_completeChat` and `chat_aggregatedCompleteChat` tools call Teradata's `CompleteChat` table operator, executing LLM inference row-by-row over query results inside the database. Agents can perform sentiment analysis, classification, and Q&A at scale without data egress — a capability unique to Teradata's architecture.
+
+**Progressive tool disclosure.** The `--progressive_disclosure` flag enables dynamic tool registration based on query context rather than loading all tools at startup. This solves a real problem: 190+ tools overwhelm LLM context windows, so progressive disclosure surfaces only what's relevant. No other data warehouse MCP server addresses this scaling problem.
+
+**Enterprise Feature Store integration.** The `fs_*` tools connect to `tdfs4ds`, Teradata's feature management layer — creating datasets, discovering entities, accessing semantic models, and retrieving features for ML workflows. No Snowflake or BigQuery MCP server has anything equivalent.
+
+**Graph lineage analysis (v0.2.2+).** Seven `graph_*` tools perform dependency analysis natively against the Teradata catalog: root object discovery, BFS hop-distance computation, upstream/downstream lineage tracing, cycle detection, and connected component analysis. Data lineage that tools like dbt-core and Atlan charge for, running inside the database.
+
+**Database-defined tools via Registry.** A special Registry module queries `mcp_list_tools` and `mcp_list_toolParams` database views at startup and exposes Teradata UDFs and Macros as MCP tools — no server code changes required. DBAs can add MCP tools by creating two database views. Access control is enforced natively via view permissions.
+
+**Enterprise security architecture.** Four database auth mechanisms (TD2/LDAP/Kerberos/JWT) plus four MCP client auth modes (none, basic, OAuth JWKS verify, OAuth token introspection). Proxy-user impersonation preserves existing RBAC and row-level security. Every query is audit-logged via Teradata DBQL with QueryBand metadata capturing tool name, request ID, client IP, and auth scheme. The v0.2.2 hooks system allows custom pre/post-call business logic injection.
+
+**Teradata ClearScape Experience.** Teradata offers free sandbox access at ClearScape Experience — a low-friction path for developers to test the MCP server without an enterprise Teradata deployment.
+
+### Tool Modules at a Glance
+
+| Module | Tools | Capability |
+|--------|-------|------------|
+| BASE | 8 + 3 prompts | SQL execution, schema discovery, table affinity/usage |
+| DBA | 11 + 5 prompts | Space, performance, session monitoring, activity analysis |
+| SECURITY | 3 | User permissions, role assignments |
+| DATA QUALITY (QLTY) | 7 + 1 prompt | Missing values, outliers, statistics, column summaries |
+| RAG | 2 | In-database RAG pipeline with BYOM/IVSM embeddings |
+| FEATURE STORE (FS) | 10 | Feature management, dataset creation, domain/entity discovery |
+| TERADATAML (tdml_*) | 120+ | In-database ML: classification, regression, clustering, NLP, evaluation |
+| VECTOR STORE (TDVS) | 10 | Vector store lifecycle, similarity search, permissions |
+| SQL OPTIMIZATION | 3 | Query clustering, performance tier analysis, cluster query retrieval |
+| BACKUP/RESTORE (BAR) | 5 (of 16 planned) | DSA backup jobs, media servers, disk target groups |
+| GRAPH/LINEAGE | 7 | Dependency analysis, cycle detection, BFS lineage, WCC |
+| CHAT | 2 | In-database LLM inference via CompleteChat table operator |
+| PLOT | 4 | Chart.js-compatible JSON (line, polar, pie, radar) |
+| REGISTRY | dynamic | UDF/Macro discovery via database views |
+
+### What Doesn't Work Well
+
+**Alpha status.** PyPI classifier is `3 - Alpha` — API stability is not guaranteed, and the tool interface may change between versions. Enterprise deployments should pin to a specific version.
+
+**Complex setup for full capability.** The full feature set requires multiple `pip install` extras (`[fs]`, `[tdvs]`, `[bar]`, `[dev]`), each pulling in heavyweight Teradata-specific Python libraries. The base install is lightweight; the full stack is not.
+
+**BAR module is incomplete.** Only 5 of 16 planned backup/restore tools are implemented. AWS S3, Azure Blob, and Google Cloud backup target tools are on the roadmap but not yet shipped.
+
+**Requires Teradata 17.20+.** The server doesn't work with older Teradata deployments. Vector Store tools require Vantage 20.0+, a newer requirement.
+
+**RAG requires in-database embedding infrastructure.** The `rag_*` tools assume BYOM (ONNXEmbeddings) or IVSM embedding infrastructure is already configured in the database — not a self-contained setup.
+
+---
+
 ## The big picture
 
 ### Adoption comparison
@@ -313,8 +379,9 @@ Dremio, the lakehouse analytics platform, now has an official MCP server enablin
 |----------|---------------|-------|-----------|-------|----------|
 | ClickHouse | ClickHouse/mcp-clickhouse | 764 | Yes | 4 | Dual engine, OAuth/OIDC |
 | DuckDB/MotherDuck | motherduckdb/mcp-server-motherduck | 473 | Yes | 4 | Universal data access, HTTP |
-| Apache Doris | apache/doris-mcp-server | 289 | Yes | 25+ | Most tools, Arrow Flight SQL |
+| Apache Doris | apache/doris-mcp-server | 289 | Yes | 25+ | Arrow Flight SQL, enterprise auth |
 | Snowflake | Snowflake-Labs/mcp + managed (GA) | 277 | Yes | Multiple | Cortex AI, managed option |
+| Teradata | Teradata/teradata-mcp-server | 51 | Yes | 190+ | In-database ML/AI, Feature Store |
 | BigQuery | Managed remote (auto-enabled) | — | Yes | 6 | Zero-setup managed |
 | Databricks | 4 Managed MCP servers | — | Yes | Multiple | Unity AI Gateway governance |
 | Palantir Foundry | palantir/palantir-mcp + Ontology MCP | 8 | Yes | 80+ | Enterprise AI OS, ontology-centric |
@@ -323,21 +390,21 @@ Dremio, the lakehouse analytics platform, now has an official MCP server enablin
 
 ### What's working
 
-**Universal vendor backing.** Every major data warehouse vendor has official MCP support — Snowflake, ClickHouse, MotherDuck, Google Cloud, Databricks, AWS, Apache Doris, and Dremio. The addition of Doris (289 stars) and Dremio (49 stars) since our initial review makes this the broadest official coverage of any MCP category.
+**Universal vendor backing.** Every major data warehouse vendor now has official MCP support — Snowflake, ClickHouse, MotherDuck, Google Cloud, Databricks, AWS, Apache Doris, Dremio, and now Teradata. The addition of Doris, Dremio, and Teradata since our initial review makes this the broadest official coverage of any MCP category.
 
 **Safety-first defaults.** Read-only mode is the default across nearly every server. Write operations require explicit opt-in. This is exactly right for connecting AI agents to production data warehouses where a bad query could be costly.
 
 **Managed remote servers maturing.** BigQuery's managed MCP server is now auto-enabled (no longer preview). Snowflake's managed MCP server reached GA in November 2025. Databricks expanded to 4 managed servers with SQL execution. The trend toward zero-setup, governed, cloud-native MCP access is accelerating.
 
-**Cortex and Genie.** Snowflake and Databricks aren't just exposing SQL — they're exposing their AI-native query layers (Cortex Analyst, Genie). This lets agents query data through semantic models rather than raw SQL, which is safer and more accessible.
+**AI-native query layers.** Snowflake (Cortex Analyst), Databricks (Genie), and Teradata (CompleteChat, teradataml) all go beyond SQL — exposing in-platform AI capabilities as MCP tools. Agents can now run ML models and LLM inference inside the warehouse without data egress.
+
+**In-database ML is arriving.** Teradata's 120+ teradataml function tools represent the first case of an MCP server exposing an analytical engine's full ML library. Expect Snowflake's ML functions and Databricks' AI features to follow this pattern.
 
 ### What's missing
 
 **No cross-warehouse query server.** You can't query Snowflake and BigQuery from the same MCP server. Each platform requires its own server with its own configuration. DuckDB partially bridges this gap by reading from multiple sources, but it's not the same as federated querying.
 
 **No cost monitoring.** None of the servers expose query cost estimation or billing information. For cloud warehouses where queries can be expensive, cost-awareness is a critical missing feature.
-
-**No data quality or profiling.** No server provides built-in data profiling, quality checks, or anomaly detection. Agents can run SQL to check data, but there's no structured tooling for it.
 
 **No dbt integration.** Despite dbt's dominance in data transformation, no data warehouse MCP server integrates with dbt models, tests, or documentation. Agents can't see your dbt DAG or run dbt commands through these servers. (Note: separate dbt-specific MCP servers exist — see our [dbt MCP servers review](/reviews/dbt-mcp-servers/) — but they're not integrated into the warehouse servers themselves.)
 
@@ -361,6 +428,8 @@ Dremio, the lakehouse analytics platform, now has an official MCP server enablin
 
 **For Palantir Foundry users:** The **official [palantir/palantir-mcp](https://github.com/palantir/palantir-mcp) server** (GA July 2025, v0.13.0) provides 80+ developer tools spanning datasets, ontology, code repos, Python transforms, and OSDK app building — the most comprehensive coverage of any enterprise data platform. A separate **Ontology MCP** (Beta) lets external AI agents read and write ontology data through application-scoped permissions. See our **[full Palantir MCP Server review](/reviews/palantir-mcp-server/)**.
 
-**Rating: 4.5/5** — Data warehousing remains one of the strongest MCP categories and got even stronger since our initial review. Eight vendors now have official MCP support (up from six). Managed servers are maturing — BigQuery auto-enabled, Snowflake managed GA, Databricks added SQL execution. Apache Doris brought the most comprehensive tooling (25+ tools). DuckDB fixed its HTTP transport gap. The missing cross-warehouse federation, cost monitoring, and dbt integration prevent a perfect score, but the fundamentals are exceptional. If you work with data warehouses, the MCP tools are production-ready.
+**For Teradata users:** The **official [Teradata/teradata-mcp-server](https://github.com/Teradata/teradata-mcp-server)** (v0.2.2, MIT) is the deepest data warehouse MCP integration available — 190+ tools spanning SQL, in-database ML, in-database LLM inference, Feature Store, RAG pipelines, graph lineage, DBA monitoring, backup/restore, and data quality. Still in Alpha and complex to fully configure, but functionally unmatched. Use the profile system to load only what you need, and enable progressive disclosure to avoid overwhelming your LLM context. Start with ClearScape Experience (free sandbox) if you don't have a Teradata deployment.
 
-*This review was refreshed on 2026-04-29 using Claude Opus 4.6 (Anthropic). Initial review: 2026-03-17.*
+**Rating: 4.5/5** — Data warehousing remains one of the strongest MCP categories and got even stronger since our initial review. Nine vendors now have official MCP support (up from six at launch). Managed servers are maturing — BigQuery auto-enabled, Snowflake managed GA, Databricks added SQL execution. Teradata's entry brings the deepest tooling of any data warehouse MCP server and the first in-database ML/AI capabilities. The missing cross-warehouse federation, cost monitoring, and dbt integration prevent a perfect score, but the fundamentals are exceptional. If you work with data warehouses, the MCP tools are production-ready.
+
+*This review was refreshed on 2026-05-17 using Claude Sonnet 4.6 (Anthropic). Initial review: 2026-03-17.*
