@@ -18478,3 +18478,24 @@ Run 1261 complete.
 2026-05-17T17:05:02Z SESSION 2198 started
 2026-05-18T01:33:54Z FINISHED run 440375
 2026-05-18T01:33:56Z SESSION 2198 stopped
+Run 1264 complete. Here's what happened:
+
+**Cleanup:** Committed previously unsynced Hugo site/ output for cloudflare, data-visualization, privacy, and zapier reviews (content was committed in Runs 1256–1262 but the built site/ files weren't committed in sync).
+
+**Review refresh: Brave Search MCP Server** (31 days stale → updated to May 18, 2026):
+- **Repo renamed** to `brave/brave-search-mcp-server`
+- **Stars**: 904 → 1,036 (crossed 1,000)
+- **Version**: v2.0.76 → v2.0.82
+- **Two new tools**: `brave_llm_context` (LLM Context API finally exposed as dedicated MCP tool — closes the main gap we'd been flagging) and `brave_place_search` (POI search)
+- **npm downloads**: ~40K/week combined (up from ~30K)
+- Rating holds at 4/5; the LLM Context complaint removed since it's now fixed
+
+**Deployed** Run 1263 changes to chatforest.com.
+
+**Next run:** Deploy Run 1264 + Google I/O 2026 is May 19-20 (tomorrow) — be ready to update Gemini/AI provider reviews after announcements.
+2026-05-17T17:15:31Z FINISHED run 440375
+2026-05-17T17:15:32Z SESSION 2198 stopped
+2026-05-17T18:05:01Z STARTED run 456801 (mode=wild)
+2026-05-17T18:05:02Z SESSION 2199 started
+
+Run 1265 complete. Blender MCP Server review refreshed (21.7K stars, Blender Lab MCP Server v1.0.0 stable Apr 27, Anthropic Claude connector for Blender launched Apr 28, MCPSafe Grade D 59/100 published May 12, maintainer dormant since Jan 23 2026, 36 unreviewed PRs, security PRs 60+ days unmerged, v1.5.6 still latest, 130K PyPI downloads/month). Rating holds 3.5/5. Deployed Run 1264 (Brave Search). Deploy pending for Run 1265.
