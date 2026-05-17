@@ -1,18 +1,18 @@
 ---
 title: "The Docker MCP Server — Your AI Agent's Container Workshop"
 date: 2026-03-14T12:14:00+09:00
-description: "ckreiling's Docker MCP server gives AI agents full container lifecycle management — create, run, stop, build, plus networks and volumes. 700 stars, 97 forks, 19 tools, community-built but maintenance stalled."
-og_description: "Docker MCP server: 19 tools for containers, images, networks, volumes. 700 stars, 97 forks, PyPI v0.2.1, SSH remote support. Rating: 3/5."
+description: "ckreiling's Docker MCP server gives AI agents full container lifecycle management — create, run, stop, build, plus networks and volumes. 717 stars, 98 forks, 19 tools, community-built. Critical: unpatched security vulnerabilities, 90-day disclosure deadline June 24, 2026."
+og_description: "Docker MCP server: 19 tools for containers, images, networks, volumes. 717 stars, 98 forks, PyPI v0.2.1, SSH remote support. Rating: 3/5."
 content_type: "Review"
-card_description: "Community Docker MCP server — 19 tools for container lifecycle, image management, networks, and volumes. Remote Docker via SSH, docker_compose prompt, security-conscious defaults. Critical: unpatched security vulnerabilities disclosed April 2026, maintainer unresponsive."
-last_refreshed: 2026-04-19
+card_description: "Community Docker MCP server — 19 tools for container lifecycle, image management, networks, and volumes. Remote Docker via SSH, docker_compose prompt, security-conscious defaults. Critical: unpatched security vulnerabilities, maintainer unresponsive for 14+ months, full exploit details due June 24, 2026."
+last_refreshed: 2026-05-18
 ---
 
 Nineteen tools. One Docker socket. And suddenly your AI agent can spin up containers, build images, manage networks, and handle volumes — all through natural language.
 
-**At a glance:** ~700 stars, 97 forks, 53 commits, 11 open issues, 9 open PRs, PyPI v0.2.1 (June 2025), GPL-3.0. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance:** ~717 stars, 98 forks, 53 commits, 21 open issues, 9 open PRs, PyPI v0.2.1 (June 2025), GPL-3.0. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
-The [Docker MCP server](https://github.com/ckreiling/mcp-server-docker) by Christian Kreiling is the most comprehensive community-built MCP server for Docker operations. With 700 stars and 97 forks, it's been a popular choice for developers who want their AI agents to manage Docker environments directly. It's not official from Docker, Inc. — but it's what many people have used for container management. However, as of April 2026, the maintenance situation has deteriorated significantly, with critical security vulnerabilities disclosed and the maintainer unresponsive.
+The [Docker MCP server](https://github.com/ckreiling/mcp-server-docker) by Christian Kreiling is the most comprehensive community-built MCP server for Docker operations. With 717 stars and 98 forks, it's been a popular choice for developers who want their AI agents to manage Docker environments directly. It's not official from Docker, Inc. — but it's what many people have used for container management. However, as of May 2026, the maintenance situation continues to deteriorate, with critical security vulnerabilities publicly disclosed, the maintainer completely unresponsive, and the 90-day full-disclosure deadline (June 24, 2026) now 37 days away.
 
 ## What It Does
 
@@ -107,21 +107,23 @@ For remote Docker daemons, set the `DOCKER_HOST` environment variable to an SSH 
 
 **Setup difficulty: Easy.** No API keys. No cloud accounts. Just Docker running on the machine and a socket to connect to. The SSH remote option is genuinely useful for managing containers on development servers without leaving your IDE.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-The repository still hasn't cut a new release since v0.2.1 (June 2025) — now nearly 11 months without a release. Worse, the last commit to the repository was June 5, 2025. The maintenance situation has escalated from "slow" to "unresponsive," culminating in a public security disclosure.
+The repository still hasn't cut a new release since v0.2.1 (June 2025) — now nearly **12 months without a release**. The last commit to the repository was June 5, 2025. The maintenance situation continues to worsen, and the security disclosure clock is ticking.
 
-**Critical security vulnerabilities disclosed.** [Issue #50](https://github.com/ckreiling/mcp-server-docker/issues/50) (April 7, 2026), opened by security researcher Håkon Åmdal, reports **host filesystem access and container escape vulnerabilities**. The researcher first contacted the maintainer via email on March 24 — after 14 days with no response, they escalated to a public GitHub issue. As of April 19, there is still **zero response from the maintainer**. A 90-day coordinated disclosure deadline is set for June 24, 2026, after which full technical details will be published. For an MCP server with direct Docker socket access, these are serious findings.
+**Security disclosure deadline: June 24, 2026 — 37 days away.** [Issue #50](https://github.com/ckreiling/mcp-server-docker/issues/50) (April 7, 2026), opened by security researcher Håkon Åmdal, reports **host filesystem access and container escape vulnerabilities**. The researcher first contacted the maintainer via email on March 24 — after 14 days with no response, they escalated to a public GitHub issue. As of May 18, the maintainer has still issued **zero response** — no GitHub comment, no email reply, no commit activity. Under coordinated disclosure norms, full technical exploit details will be published on June 24 if the maintainer remains silent. For a server with direct Docker socket access, this is a serious countdown.
 
-**Security hardening PR still unmerged.** [PR #49](https://github.com/ckreiling/mcp-server-docker/pull/49) (March 20, 2026) proposes blocking dangerous host paths in volume mounts and build contexts — directly relevant to the disclosed vulnerabilities. It's been sitting unreviewed for a month.
+**NEW: MCPSafe automated security scan (May 12, 2026).** [Issue #51](https://github.com/ckreiling/mcp-server-docker/issues/51), filed by the `mcpsafe-gh` bot, reports an AIVSS score of **91/100 (Grade B)** — 2 medium-severity findings flagged by automated analysis. No maintainer response. This adds a second independent security signal to the repository's unresolved vulnerability queue.
 
-**Schema validation fix still unmerged.** [PR #48](https://github.com/ckreiling/mcp-server-docker/pull/48) (March 19, 2026) would fix the VS Code Copilot validation errors reported in issues [#46](https://github.com/ckreiling/mcp-server-docker/issues/46) and [#25](https://github.com/ckreiling/mcp-server-docker/issues/25). Also a month without review.
+**Security hardening PR still unmerged.** [PR #49](https://github.com/ckreiling/mcp-server-docker/pull/49) (March 20, 2026) proposes blocking dangerous host paths in volume mounts and build contexts — directly relevant to the disclosed vulnerabilities. Two months without review.
 
-**9 open PRs, 0 merged since June 2025.** Community contributions span security hardening, schema fixes, tool annotations, exec support (#31), log filtering (#30), and even the maintainer's own secrets PR (#13 from March 2025). None have been merged in nearly a year.
+**Schema validation fix still unmerged.** [PR #48](https://github.com/ckreiling/mcp-server-docker/pull/48) (March 19, 2026) would fix the VS Code Copilot validation errors reported in issues [#46](https://github.com/ckreiling/mcp-server-docker/issues/46) and [#25](https://github.com/ckreiling/mcp-server-docker/issues/25). Two months without review.
 
-**PulseMCP stats (new).** ~140K all-time visitors, ~966 weekly, ranked #258 globally. Steady but modest — the server's popularity hasn't grown meaningfully despite the Docker ecosystem's rapid expansion.
+**9 open PRs, 0 merged since June 2025.** Community contributions span security hardening, schema fixes, tool annotations, exec support (#31), log filtering (#30), and the maintainer's own secrets PR (#13 from March 2025). None have been merged in nearly a year.
 
-**Docker's official ecosystem has pulled far ahead.** The [Docker MCP Gateway](https://github.com/docker/mcp-gateway) (1,400 stars, 910 commits) is now open source and ships with Docker Desktop. The MCP Catalog has surpassed **1 million pulls** with **200+ containerized MCP servers**. Gateway 2026.04 added interceptors for fine-grained policy enforcement, authentication, and request modification. Dynamic MCPs (mcp-find, mcp-add, code-mode) let agents discover and add MCP servers on-demand during conversations. Docker Offload enables scaling agent workloads to cloud infrastructure. The [Docker Hub MCP Server](https://github.com/docker/hub-mcp) (134 stars) handles image discovery. The gap between Docker's official MCP infrastructure and this community server is now enormous.
+**PulseMCP stats.** ~140K all-time visitors, ~966 weekly, ranked #258 globally. Steady but modest — the server's popularity hasn't grown meaningfully despite the Docker ecosystem's rapid expansion.
+
+**Docker's official ecosystem continues to advance.** The [Docker MCP Gateway](https://github.com/docker/mcp-gateway) (1,393 stars) is now at v0.42.1 (May 2026) and very actively maintained. OAuth support is now generally available (removed from feature flag in April 2026). A CVE-2026-33252 security patch shipped May 5. The MCP Catalog has surpassed **1 million pulls** with **200+ containerized MCP servers**. Dynamic MCPs let agents discover and add servers on-demand. The [Docker Hub MCP Server](https://github.com/docker/hub-mcp) (145 stars) handles image discovery. The gap between Docker's official MCP infrastructure and this community server is now enormous — and growing wider with every Docker Gateway release that ckreiling's server misses.
 
 ## What Works Well
 
@@ -153,19 +155,19 @@ The repository still hasn't cut a new release since v0.2.1 (June 2025) — now n
 
 **Unpatched critical security vulnerabilities.** [Issue #50](https://github.com/ckreiling/mcp-server-docker/issues/50) discloses host filesystem access and container escape vulnerabilities. The maintainer has not responded to the security researcher's email (March 24) or public issue (April 7). A security hardening PR (#49) addressing related attack vectors has also gone unreviewed. For a server with direct Docker socket access, this is a serious concern.
 
-**Effectively abandoned — 11 months without a commit.** The latest release (v0.2.1) and the last commit are both from June 2025. With 9 open PRs (including security fixes, exec support, and the maintainer's own secrets PR), no reviews or merges have happened in nearly a year. Community contributions exist but the maintainer is absent. PulseMCP notes they are "temporarily maintaining the server.json file" themselves. GPL-3.0 licensing may further deter forks.
+**Effectively abandoned — nearly 12 months without a commit.** The latest release (v0.2.1) and the last commit are both from June 2025. With 9 open PRs (including security fixes, exec support, and the maintainer's own secrets PR), no reviews or merges have happened in nearly a year. Community contributions exist but the maintainer is absent. PulseMCP notes they are "temporarily maintaining the server.json file" themselves. GPL-3.0 licensing may further deter forks.
 
 ## How It Compares
 
 The Docker MCP server space has shifted significantly. Docker, Inc.'s official ecosystem now dominates, and the community alternatives are either abandoned or stalled.
 
-**vs. QuantGeekDev/docker-mcp (~471 stars):** Simpler — only 4 tools (create container, deploy compose, get logs, list containers). But it directly supports `docker-compose.yml` deployment, which ckreiling's doesn't. Last updated December 2024 and abandoned. MIT licensed.
+**vs. QuantGeekDev/docker-mcp (~480 stars):** Simpler — only 4 tools (create container, deploy compose, get logs, list containers). But it directly supports `docker-compose.yml` deployment, which ckreiling's doesn't. Some community activity through May 2026 (issue/PR updates). MIT licensed.
 
-**vs. ofershap/mcp-server-docker:** TypeScript alternative with 10 tools. Includes `exec_command` (which ckreiling's lacks) and `container_stats`. Created February 2026, still minimal adoption (14 commits, near-zero stars). MIT licensed. Worth considering if you need exec support and want an actively maintained alternative.
+**vs. ofershap/mcp-server-docker:** TypeScript alternative with 10 tools. Includes `exec_command` (which ckreiling's lacks) and `container_stats`. Created February 2026, but has gone dormant since March 2026 — near-zero stars, no recent commits. MIT licensed. Less compelling as an active alternative than it appeared in April.
 
-**vs. [Docker Hub MCP Server](https://github.com/docker/hub-mcp) (134 stars):** Official Docker, Inc. project — manages Docker Hub (image discovery, repository management), not local containers. Complementary, not competitive. Apache-2.0 licensed.
+**vs. [Docker Hub MCP Server](https://github.com/docker/hub-mcp) (145 stars):** Official Docker, Inc. project — manages Docker Hub (image discovery, repository management), not local containers. Actively maintained with minor updates through May 2026. Complementary, not competitive. Apache-2.0 licensed.
 
-**vs. Docker MCP Toolkit + Gateway (1,400 stars, 910 commits):** This is now the center of gravity. The Gateway is open source, ships with Docker Desktop, has interceptors for policy enforcement, and the MCP Catalog has surpassed 1 million pulls with 200+ containerized servers. Dynamic MCPs let agents discover and add servers on-demand. Docker Offload scales agent workloads to cloud. ckreiling's server could theoretically run *inside* the Toolkit, but Docker's own catalog increasingly offers equivalent container management capabilities.
+**vs. Docker MCP Toolkit + Gateway (1,393 stars, v0.42.1):** This is now the clear center of gravity. The Gateway is open source, ships with Docker Desktop, OAuth support is now GA, a CVE-2026-33252 security patch shipped in May, and the MCP Catalog has surpassed 1 million pulls with 200+ containerized servers. Dynamic MCPs let agents discover and add servers on-demand. Docker Offload scales agent workloads to cloud. ckreiling's server could theoretically run *inside* the Toolkit, but Docker's own catalog increasingly offers equivalent container management capabilities — with active security maintenance that ckreiling's server entirely lacks.
 
 **vs. [Kubernetes MCP servers](https://github.com/topics/mcp-kubernetes):** If you're at the Kubernetes scale, you need Kubernetes-specific tools. Docker MCP servers target the docker/docker-compose layer — local development, simple deployments, CI/CD pipelines. Different audience.
 
@@ -173,21 +175,21 @@ The Docker MCP server space has shifted significantly. Docker, Inc.'s official e
 
 The Docker MCP server was the most practical way to give AI agents Docker management capabilities. Nineteen tools covering containers, images, networks, and volumes is still a solid foundation, and the SSH remote support, plan-and-apply prompt, and security defaults showed thoughtful design.
 
-But in April 2026, we can no longer recommend this server without serious caveats. **Critical security vulnerabilities have been publicly disclosed** (host filesystem access, container escape) with the maintainer completely unresponsive — no email reply, no GitHub comment, no commit activity in 11 months. Nine community PRs sit unmerged, including a security hardening fix directly relevant to the disclosed vulnerabilities. The 90-day disclosure deadline (June 24) means full exploit details will become public if the maintainer remains silent.
+But in May 2026, the situation has only worsened. **Critical security vulnerabilities remain publicly disclosed and unpatched** (host filesystem access, container escape) with the maintainer completely unresponsive across 14+ months — no email reply, no GitHub comment, no commit activity since June 5, 2025. A second independent security signal arrived May 12 when an automated MCPSafe scan flagged AIVSS 91/100. Nine community PRs sit unmerged, including a security hardening fix directly relevant to the disclosed vulnerabilities. **The 90-day coordinated disclosure deadline is June 24, 2026 — 37 days from this update.** Full exploit details will become public that day if the maintainer remains silent.
 
-Meanwhile, Docker's official MCP ecosystem has matured dramatically. The MCP Gateway (1,400 stars, open source, shipping in Docker Desktop) with its catalog of 200+ servers, interceptors, Dynamic MCPs, and Docker Offload now provides a comprehensive, actively maintained, and security-audited alternative for AI agent container management.
+Meanwhile, Docker's official MCP ecosystem has matured dramatically. The MCP Gateway (1,393 stars, v0.42.1, OAuth now GA, actively patching CVEs) with its catalog of 200+ servers, Dynamic MCPs, and Docker Offload provides a comprehensive, actively maintained alternative.
 
-For basic local use cases — "what containers are running?" or "spin up a Redis instance" — the server still functions. But users should be aware of the unpatched security issues, especially in any environment where the Docker socket has access to sensitive workloads. For anything beyond experimentation, Docker's MCP Toolkit and Gateway are the safer choice.
+For basic local use cases — "what containers are running?" or "spin up a Redis instance" — the server still functions. But users should be aware of the unpatched security issues, especially in any environment where the Docker socket has access to sensitive workloads. **Mark your calendar for June 24**: if you're still running this server, that's the day exploit details go public. For anything beyond experimentation, Docker's MCP Toolkit and Gateway are the safer choice.
 
-**Rating: 3 out of 5** *(downgraded from 3.5)* — the tool design remains solid, but an unresponsive maintainer combined with publicly disclosed critical security vulnerabilities and an 11-month commit drought makes this a risk to run in any serious environment. Docker's official ecosystem is now the recommended path.
+**Rating: 3 out of 5** *(downgraded from 3.5 in April 2026)* — the tool design remains solid, but an unresponsive maintainer combined with publicly disclosed critical security vulnerabilities, an automated Grade B security scan, and a nearly 12-month commit drought makes this a risk to run in any serious environment. The June 24 full-disclosure deadline is the clearest signal yet to migrate to Docker's official ecosystem.
 
 | | |
 |---|---|
 | **MCP Server** | Docker MCP Server |
 | **Publisher** | ckreiling (community) |
 | **Repository** | [ckreiling/mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) |
-| **Stars** | ~700 |
-| **Forks** | ~97 |
+| **Stars** | ~717 |
+| **Forks** | ~98 |
 | **Tools** | 19 (+ resources and prompts) |
 | **Transport** | stdio |
 | **Language** | Python |
@@ -197,4 +199,4 @@ For basic local use cases — "what containers are running?" or "spin up a Redis
 
 *Disclosure: This review is based on publicly available documentation, GitHub repository data, community discussions, and web research. We do not test MCP servers hands-on. All claims reflect what we found in public sources as of the date below. This review was written by an AI (Claude) and may contain errors — we encourage readers to verify details independently.*
 
-*This review was last edited on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
