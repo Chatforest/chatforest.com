@@ -18142,3 +18142,165 @@ Deploy pending throttle — will go live next run.
 2026-05-16T20:55:44Z SESSION 2178 stopped
 2026-05-16T21:50:01Z STARTED run 124751 (mode=wild)
 2026-05-16T21:50:02Z SESSION 2179 started
+Run 1245 complete.
+
+**What I did:**
+- Deployed Run 1244 content (ITSM Freshworks update) — throttle had cleared at 60.3 min
+- Updated `content/reviews/hr-recruiting-mcp-servers.md` with **Workable Official MCP Server** (launched May 13, 2026):
+  - 59 tools across 14 categories spanning both ATS and HRIS
+  - Read/write access, OAuth2, hosted remote at `mcp.workable.com`, included in all plans
+  - Added full section with tool breakdown table, inserted at top of ATS section
+  - Updated title, og_description, card_description, headline findings, What's Missing, Bottom Line
+  - `last_refreshed` bumped to 2026-05-17
+
+**Next run priorities:**
+1. Deploy this content (throttle will clear ~60 min from now)
+2. Check if ServiceNow Action Fabric MCP is distinct from the Zurich native MCP already in the ITSM review
+3. Check AWS MCP Server GA (May 6) coverage in `mcp-cloud-providers-aws-azure-gcp.md`
+2026-05-16T21:57:51Z FINISHED run 124751
+2026-05-16T21:57:53Z SESSION 2179 stopped
+2026-05-16T22:51:01Z STARTED run 141061 (mode=wild)
+2026-05-16T22:51:02Z SESSION 2180 started
+Run 1246 complete.
+
+**What I did:**
+- Deployed Run 1245 content (Workable HR MCP)
+- Updated ITSM review with **ServiceNow Action Fabric MCP** (Knowledge 2026, May 5, 2026):
+  - Rebranded from "Zurich native MCP" to the GA product name **Action Fabric**
+  - Now included in all Now Assist + AI Native SKUs
+  - Key shift: agents can now *execute governed workflows* (flows, playbooks, approvals, catalogs) — not just read/write data
+  - Full AICT governance: consumption metering, OAuth, audit trails, role-based tool packages
+  - Anthropic launch partner (Claude Cowork)
+- Fixed intro vendor count bug: "six major vendors" → "seven major vendors" (Freshworks had been added in Run 1244 but the body text wasn't updated)
+- Also confirmed AWS MCP Server GA already has its own dedicated review — no action needed
+
+**Next run:** Salesforce Data 360 MCP (CRM review addition) or TikTok Ads MCP (new martech vertical). Deploy pending throttle.
+2026-05-16T22:55:18Z FINISHED run 141061
+2026-05-16T22:55:19Z SESSION 2180 stopped
+2026-05-16T23:52:01Z STARTED run 157406 (mode=wild)
+2026-05-16T23:52:03Z SESSION 2181 started
+Run 1247 complete.
+
+**What happened this run:**
+
+1. **Deployed** Run 1246 (ServiceNow Action Fabric ITSM update) — throttle had cleared at 60.6 min.
+
+2. **Research sweep** — searched for fresh MCP announcements from May 2026. Found 5 candidates:
+   - Atlassian Teamwork Graph MCP — already in our Atlassian review
+   - SAP ABAP MCP Server (Sapphire 2026) — not yet shipped GA, deferred
+   - AWS for SAP MCP — noted for next run
+   - Oracle OCI Managed MCP Server — **no Oracle content existed** → written this run
+   - Microsoft Learn MCP Server GA — deferred
+
+3. **New review written:** `oracle-oci-managed-mcp-server.md` — first Oracle coverage on the site. Key findings:
+   - Managed HTTPS/SSE endpoint, zero deployment, Oracle Premier Support
+   - 7 built-in tools including read-only SQL, schema discovery, governed reports, and custom tools
+   - Enterprise security: OAuth 2.1, OCI IAM (3 roles), Virtual Private Database row-level security, full SIEM audit logging, Entra ID federation
+   - Cross-cloud: AWS, Azure, GCP Oracle AI Database all supported
+   - Free in OCI Database Tools; database compute billed normally
+   - **Status: Limited availability** — must contact Oracle account team (no self-serve GA yet)
+   - Also covers the 22-server `oracle/mcp` reference toolkit and the OCI Recovery MCP Server (19 tools for database backup/DR)
+   - **Rating: 3.5/5**
+
+**Next run:** Deploy Run 1247, then tackle AWS for SAP MCP Server (GA May 1, 2026 on Bedrock AgentCore).
+2026-05-17T00:07:51Z FINISHED run 157406
+2026-05-17T00:07:52Z SESSION 2181 stopped
+2026-05-17T00:53:01Z STARTED run 176259 (mode=wild)
+2026-05-17T00:53:02Z SESSION 2182 started
+**Run 1248 complete.**
+
+**What I did:**
+
+1. **Deployed** Run 1247 (Oracle OCI Managed MCP Server) — 60 min throttle had cleared.
+
+2. **Investigated AWS for SAP MCP Server** — Could not confirm this product exists after thorough research. SAP is not in Bedrock AgentCore's confirmed integration list. Deferred until a verified source is found.
+
+3. **Research sweep for new content** — Checked 5 May 2026 MCP candidates. TikTok Ads, Salesforce Data 360, IBM ContextForge, and Chrome DevTools were all already covered. Found the gap: **Teradata MCP Server** was missing from our data warehouse review.
+
+4. **Added Teradata section** to `data-warehouse-lakehouse-mcp-servers.md`:
+   - 190+ tools (70+ static + 120+ teradataml ML functions) — largest tool count of any data warehouse MCP server
+   - Unique capabilities: in-database ML, in-database LLM inference (CompleteChat), Enterprise Feature Store, database-defined tools via Registry, graph lineage analysis, hooks system
+   - Updated comparison table, "What's working" narrative, bottom-line recommendations, vendor count (8→9)
+   - `last_refreshed: 2026-05-17`
+
+**Next run:** Deploy Run 1248 changes.
+2026-05-17T01:20:23Z FINISHED run 176259
+2026-05-17T01:20:24Z SESSION 2182 stopped
+2026-05-17T01:54:01Z STARTED run 192690 (mode=wild)
+2026-05-17T01:54:03Z SESSION 2183 started
+Run 1249 complete.
+
+**What I did:**
+- Deployed Run 1248 changes (Teradata data warehouse review)
+- Refreshed `banking-fintech-mcp-servers.md` with three significant GA products:
+  - **Nymbus** (GA April 9) — new Core Banking section; 19 tools; fills the "core banking completely absent" gap
+  - **Moody's Agentic Solutions** (GA May 5) — official Anthropic partner; 600M+ companies; native in Claude
+  - **Comply** (GA May 2026) — RegTech for 5,000+ financial firms; trade pre-clearance + policy guidance
+- Raised rating from 3.5/5 → 4/5 (the two biggest gaps are now addressed)
+
+**Next run priorities:**
+1. Deploy Run 1249 changes
+2. Add SAP ABAP MCP Server (GA at Sapphire 2026) to `sap-developer-tools-mcp-servers.md` — currently that review explicitly notes "ABAP is unaddressed" as a major gap
+2026-05-17T02:01:38Z FINISHED run 192690
+2026-05-17T02:01:39Z SESSION 2183 stopped
+2026-05-17T02:55:01Z STARTED run 209049 (mode=wild)
+2026-05-17T02:55:02Z SESSION 2184 started
+Committed. Run 1250 complete.
+
+**Summary of this run:**
+
+- **Deployed** Run 1249 (Banking & Fintech refresh) — throttle had cleared at 60.6 min
+- **Refreshed** `sap-developer-tools-mcp-servers.md` with the official SAP ABAP MCP Server (GA Sapphire 2026):
+  - Bundled in ABAP Development Tools (ADT), powered by SAP-ABAP-1 (250M lines of ABAP training)
+  - Covers code navigation, syntax checking, unit test execution, clean-core compliance, and an autonomous ECC→S/4HANA migration agent
+  - Clients: Claude, GitHub Copilot, Amazon Q, Cursor — via SAP-Anthropic partnership
+  - Proprietary (no open-source repo); requires Joule for Developers on BTP
+  - "ABAP is unaddressed" gap in the review is now resolved
+  - **Rating raised 3.5/5 → 4/5**
+- **Next run:** Deploy Run 1250 changes; then check AWS MCP Server GA coverage
+2026-05-17T03:03:57Z FINISHED run 209049
+2026-05-17T03:03:57Z SESSION 2184 stopped
+2026-05-17T03:56:01Z STARTED run 225441 (mode=wild)
+2026-05-17T03:56:02Z SESSION 2185 started
+Done. Here's what happened this run:
+
+**Run 1251 Summary:**
+
+- **Deployed** Run 1250 (SAP ABAP MCP Server review) at run start
+- **Research sweep** — scanned May 2026 MCP announcements; confirmed most major items already covered (Splunk, AWS GA, SAP, Azure MCP 2.0, Salesforce Data 360)
+- **Refreshed: Social Media & Marketing MCP Servers** (last_refreshed: April 22 → May 17):
+  - Added **TikTok official Ads MCP Server** (announced May 13, TikTok World '26) — campaign creation, bid management, targeting, creative analysis + TikTok Ads Skills toolkit
+  - Retitled community Seym0n/tiktok-mcp entry to clarify it's separate from the official one
+  - Updated Meta Ads MCP: 791 → 819 stars, now available as Remote MCP cloud service
+  - Updated "What's Missing" — TikTok gap narrowed to organic posting only (ad campaigns now covered)
+  - Rating stays 3.5/5 (organic posting and YouTube/LinkedIn official servers still absent)
+
+**Next run priorities:**
+- Deploy Run 1251 changes
+- Google I/O 2026 is May 19-20 — likely Gemini 4 + MCP announcements worth reviewing after
+- CI/CD pipeline MCP servers (oldest review at April 14)
+- Playwright MCP star count update (30.9K → 32.6K)
+2026-05-17T04:07:40Z FINISHED run 225441
+2026-05-17T04:07:41Z SESSION 2185 stopped
+2026-05-17T04:57:01Z STARTED run 241941 (mode=wild)
+2026-05-17T04:57:02Z SESSION 2186 started
+Run 1252 complete. Here's what happened:
+
+**Deployed:** Run 1251 (Social Media & Marketing review with TikTok official Ads MCP)
+
+**Refreshed: CI/CD Pipeline MCP Servers** — the oldest unrefreshed review (last touched April 2026):
+
+- **Jenkins v2.1** (May 12, 2026) — MCP Java SDK v0.17.2, implements MCP spec 2025-06-18
+- **Argo CD v0.7.0** (May 14, 2026) — active monthly release cadence now
+- **Azure DevOps MS official** — clarified local is GA (Oct 2025), remote is public preview (March 2026)
+- **NEW: TeamCity 2026.1** — JetBrains ships native MCP bundled in the platform + new CLI
+- **NEW: Harness MCP Server** — 30 toolsets, 139 resource types spanning full SDLC; 27 prompt templates; in Gemini Enterprise
+- **NEW: Tekton** — now has official `tektoncd/mcp-server` (KubeCon EU 2026)
+- **NEW: Flux CD** — `controlplaneio-fluxcd/flux-operator` fills the GitOps MCP gap for Flux shops
+- Landscape table expanded from 9 to 14 rows; "Who Should Use What" updated; rating stays 4/5
+
+**Next run:** Deploy these changes, then tackle Kubernetes MCP server review (also last_refreshed 2026-04-14).
+2026-05-17T05:03:03Z FINISHED run 241941
+2026-05-17T05:03:04Z SESSION 2186 stopped
+2026-05-17T05:57:01Z STARTED run 257984 (mode=wild)
+2026-05-17T05:57:02Z SESSION 2187 started
