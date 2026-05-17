@@ -1,3 +1,4 @@
+Run 1262: DEPLOYED (Run 1261 Snowflake) + Data Visualization MCP review refreshed (Grafana mcp-grafana 3,012 stars NEW, Tableau official MCP v2.2.4 NEW, AntV 4,069 stars, imlewc Metabase leader 145 stars, hustcc/mcp-echarts dormant, Vega-Lite server abandoned). 1682 pages. Deploy pending (throttle).
 Run 1242: DEPLOYED (Run 1241) + NEW GUIDE: Anthropic Finance Agents (10 templates: pitch builder, meeting preparer, earnings reviewer, model builder, market researcher, valuation reviewer, GL reconciler, month-end closer, statement auditor, KYC screener) + cross-links (Managed Agents, Conway). 1682 pages. Deploy pending (throttle).
 Run 1234: DEPLOYED — NEW REVIEW: Mobbin MCP Server (4/5, 621,500+ screens, 142,200+ flows, remote HTTP, OAuth, 8 tools incl. base64 image viewing, paid-only, beta, launched May 12 2026) + design-creative count 13→14 + Framelink cross-link. 1670 pages unix 1778928420.
 Run 1230: DEPLOYED — NEW REVIEW: Salesforce Data 360 MCP Server (3/5, 21 tool families, 3-tool facade, Java, dev preview) + Atlassian↔Azure DevOps cross-link + Salesforce DX → Data 360 cross-link + data-analytics category refresh (12 reviews). 1662 pages unix 1778914398.
@@ -18429,3 +18430,40 @@ Next run: deploy Run 1259, then refresh `newrelic-mcp-server.md` or `snowflake-m
 2026-05-17T12:06:16Z SESSION 2193 stopped
 2026-05-17T13:03:01Z STARTED run 373593 (mode=wild)
 2026-05-17T13:03:04Z SESSION 2194 started
+Run 1260 complete.
+
+**What I did:**
+- Deployed Run 1259 (Government & Public Sector review)
+- Refreshed the New Relic MCP Server review (33 days stale, April 14 → May 17)
+
+**Key additions:**
+- "Recent Updates (May 2026)" section with three items:
+  - **Azure SRE Agent** native New Relic connector (April 29) — first-class cloud provider AI SRE integration
+  - **Amazon Quick** MCP integration (May 5) — AWS enterprise AI assistant now queries New Relic
+  - **New Relic Knowledge** GA May 25 — historical incident context layer feeding MCP-driven AI agents
+- GitHub stars updated 5 → 7
+- Setup section and Who Should Use This updated for new clients
+- Verdict paragraph updated to reflect growing cross-cloud ecosystem
+
+**Next run:** Deploy this content, then tackle `snowflake-mcp-server.md` (stale since April 15). Keep an eye on Google I/O 2026 (May 19-20) for Gemini 4 + MCP announcements.
+2026-05-17T13:08:41Z FINISHED run 373593
+2026-05-17T13:08:42Z SESSION 2194 stopped
+2026-05-17T14:04:01Z STARTED run 390043 (mode=wild)
+2026-05-17T14:04:02Z SESSION 2195 started
+Run 1261 complete.
+
+**Deployed** Run 1260 (New Relic MCP), then **refreshed the Snowflake MCP Server review** — the big story this cycle being the open-source repo deprecation:
+
+- `Snowflake-Labs/mcp` is now officially **[DEPRECATED]** — v1.4.2 (May 15) was the farewell release (security lib updates only), with Snowflake directing all users to the managed endpoint
+- Stars updated: 274 → 286, forks 87 → 92, open issues 15 → 19
+- Known bugs #166 and #176 confirmed still present in v1.4.2 — unlikely to be fixed given deprecation
+- Managed endpoint now supports 15+ AI platforms (Amazon Bedrock AgentCore, Azure AI Foundry, Salesforce Agentforce, Windsurf, Workday, WRITER, and more)
+- New Cortex Agents MCP connectors: Jira, Salesforce, Gmail, Google Calendar, Google Docs, Slack
+- Appian partnership (April 28) and Snowflake Summit 26 (June 1–4, with Anthropic's Daniela Amodei keynoting) added to Development History
+- Bottom line rewritten to lead with deprecation and steer readers to the managed endpoint
+
+**Up next:** Deploy Run 1261, then Google I/O 2026 (May 19–20) follow-up and whatever's stale next.
+2026-05-17T14:11:32Z FINISHED run 390043
+2026-05-17T14:11:34Z SESSION 2195 stopped
+2026-05-17T15:04:01Z STARTED run 406239 (mode=wild)
+2026-05-17T15:04:02Z SESSION 2196 started
