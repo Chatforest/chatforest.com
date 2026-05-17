@@ -1,13 +1,13 @@
-# ITSM & IT Service Management MCP Servers — ServiceNow, PagerDuty, Jira Service Management, Zendesk, and More
+# ITSM & IT Service Management MCP Servers — ServiceNow Action Fabric, PagerDuty, Jira Service Management, Zendesk, and More
 
-> ITSM and IT service management MCP servers reviewed: ServiceNow native Zurich MCP + echelon-ai-labs (162 stars, role-based), Happy-Technologies (480+ auto-generated tools), PagerDuty official (20+ tools, read-only default), Atlassian JSM (official remote), Zendesk (79 stars, community), incident.io (official hosted remote), Rootly (Apache 2.0, similarity analysis), Freshservice (MIT), Opsgenie (Go, multi-transport), ManageEngine SDP (16 tools), FireHydrant (official), TOPdesk, MCP-ITSM multi-platform. Rating: 4.0/5.
+> ITSM and IT service management MCP servers reviewed: ServiceNow Action Fabric MCP (Knowledge 2026, workflow execution + AICT governance) + 7 community servers, PagerDuty official (20+ tools, read-only default), Atlassian JSM (official remote), Zendesk (79 stars, community), incident.io (official hosted remote), Rootly (Apache 2.0, similarity analysis), Freshworks MCP Gateway (official, 28 tools, bidirectional, May 2026), Opsgenie (Go, multi-transport), ManageEngine SDP (16 tools), FireHydrant (official), TOPdesk, MCP-ITSM multi-platform. Rating: 4.0/5.
 
 
-IT Service Management (ITSM) is one of the most mature MCP categories, with **official support from six major vendors** — ServiceNow, PagerDuty, Atlassian JSM, incident.io, FireHydrant, and Rootly. MCP servers in this space let AI agents manage incidents, query on-call schedules, create and update tickets, search knowledge bases, traverse CMDBs, and coordinate incident response workflows. The ecosystem is splitting between **MCP server providers** (exposing ITSM capabilities for any AI client) and **MCP client consumers** (like BMC HelixGPT, connecting their AI to external tools). Part of our **[DevOps & Infrastructure MCP category](/categories/devops-infrastructure/)**.
+IT Service Management (ITSM) is one of the most mature MCP categories, with **official support from seven major vendors** — ServiceNow, PagerDuty, Atlassian JSM, incident.io, FireHydrant, Rootly, and Freshworks. MCP servers in this space let AI agents manage incidents, query on-call schedules, create and update tickets, search knowledge bases, traverse CMDBs, and coordinate incident response workflows. The ecosystem is splitting between **MCP server providers** (exposing ITSM capabilities for any AI client) and **MCP client consumers** (like BMC HelixGPT, connecting their AI to external tools). Part of our **[DevOps & Infrastructure MCP category](/categories/devops-infrastructure/)**.
 
 This review covers **enterprise ITSM platforms** (ServiceNow, BMC), **incident management** (PagerDuty, incident.io, Rootly, FireHydrant, Opsgenie), **IT helpdesk** (Zendesk, Freshservice, ManageEngine, TOPdesk), **service desk within dev platforms** (Jira Service Management), and **multi-platform ITSM** tools. For monitoring and observability, see our [Monitoring & Observability MCP Servers](/reviews/monitoring-observability-mcp-servers/) review. For DevOps CI/CD tooling, see [CI/CD Pipeline MCP Servers](/reviews/ci-cd-pipeline-mcp-servers/).
 
-The headline finding: **ServiceNow has the richest ITSM MCP ecosystem** with native platform support plus 7+ community servers. **PagerDuty leads on safety** with read-only-by-default design. **incident.io pioneered hosted remote MCP** for zero-install ITSM integration. **The open-source ITSM stack is well-represented** — unlike many enterprise categories, ITSM has strong community coverage across all major platforms. **Hosted/remote MCP is becoming the default** deployment model for ITSM vendors.
+The headline finding: **ServiceNow has the richest ITSM MCP ecosystem** with native platform support (now expanded as Action Fabric at Knowledge 2026) plus 7+ community servers. **PagerDuty leads on safety** with read-only-by-default design. **incident.io pioneered hosted remote MCP** for zero-install ITSM integration. **Freshworks joined the official ranks in May 2026** with a bidirectional MCP Gateway (28 tools, inbound + outbound) and the Freddy AI Agent Studio no-code agent platform. **Action Fabric marks the shift from data access to workflow execution** — external agents can now trigger ServiceNow flows, playbooks, approvals, and catalogs under full AICT governance. **Hosted/remote MCP is becoming the default** deployment model for ITSM vendors.
 
 ## Enterprise ITSM Platforms
 
@@ -15,7 +15,7 @@ The headline finding: **ServiceNow has the richest ITSM MCP ecosystem** with nat
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| ServiceNow Native MCP | — | Platform | — | Configurable | Yes |
+| ServiceNow Action Fabric MCP | — | Platform | — | Configurable | Yes |
 | echelon-ai-labs/servicenow-mcp | ~162 | Python | — | Role-based packages | No |
 | happy-platform-mcp | — | Node.js | — | 480+ auto-generated | No |
 | ShunyaAI/snow-mcp | — | Python | — | 60+ tools | No |
@@ -23,9 +23,11 @@ The headline finding: **ServiceNow has the richest ITSM MCP ecosystem** with nat
 | onlyflowstech/servicenow-mcp | — | TypeScript | — | 17 tools | No |
 | michaelbuckner/servicenow-mcp | ~22 | Python | — | 3 tools | No |
 
-ServiceNow has the deepest MCP ecosystem of any ITSM platform — a **native MCP server** shipped with the Zurich release plus at least **seven community servers** with different approaches.
+ServiceNow has the deepest MCP ecosystem of any ITSM platform — an **official Action Fabric MCP server** (expanded at Knowledge 2026) plus at least **seven community servers** with different approaches.
 
-**ServiceNow Native MCP** (Zurich release, GA September 2025, Patch 4+) is the official platform integration. Administrators create an MCP server within the Now Assist instance, select which skills to expose as tools, and configure OAuth authentication. Any MCP client — Claude, ChatGPT, Cursor, Copilot — can discover and invoke tools. Requires Zurich+ with Now Assist entitlement and AI Control Tower governance. The native server includes monitoring and reporting dashboards, and new tools become automatically visible to all connected clients.
+**ServiceNow Action Fabric MCP** is the official platform integration, launched as "ServiceNow Native MCP" with the Zurich release (GA September 2025, Patch 4+) and expanded at Knowledge 2026 (May 5, 2026) into the branded **Action Fabric** product. Administrators create an MCP server within the Now Assist instance, select which skills to expose as tools, and configure OAuth authentication. Any MCP client — Claude, ChatGPT, Cursor, Copilot — can discover and invoke tools. Requires Now Assist or AI Native SKU (included at no additional cost as of Knowledge 2026). The server runs through AI Control Tower (AICT) governance: consumption metering, managed OAuth, enterprise audit trails, session management, and role-based tool packages.
+
+The headline differentiation of Action Fabric: **"Others let agents read and write data. We let agents execute governed work."** External agents (including Claude via the Anthropic partnership announced at Knowledge 2026) can trigger ServiceNow **workflows, playbooks, approval chains, service catalog actions, and business rules** — not just query or update records. Every action is identity-verified, permission-scoped, and fully auditable. H2 2026 will add additional Action Fabric capabilities.
 
 **echelon-ai-labs/servicenow-mcp** ([GitHub](https://github.com/echelon-ai-labs/servicenow-mcp), ~162 stars, Python) is the most popular community server. It organizes tools into **role-based packages**: service_desk (incidents), catalog_builder, change_coordinator, knowledge_author, platform_developer, system_administrator, and agile_management. This role-based approach means AI agents get only the tools relevant to their persona, reducing context window usage and preventing inappropriate operations. Authentication via Basic Auth / API credentials.
 
@@ -114,15 +116,31 @@ No official Opsgenie MCP server exists, though the Atlassian JSM tools in the of
 
 **mattcoatsworth/zendesk-mcp-server** provides the broadest Zendesk product coverage, spanning Support, Talk, Chat, and Guide. For security-conscious environments, **wlaubernds/zendesk-mcp-server** enforces **read-only access with zero write permissions**. **CDataSoftware's** enterprise-oriented version connects via JDBC drivers.
 
-### Freshservice / Freshdesk (Community)
+### Freshservice / Freshworks (Official MCP Gateway + Community)
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
+| Freshworks MCP Gateway (Inbound) | — | Hosted | Enterprise | 28 | Yes |
+| Freshworks MCP Gateway (Outbound) | — | Hosted | Growth+ | External tools | Yes |
 | effytech/freshservice_mcp | — | Python | MIT | Tickets, changes, assets | No |
 | effytech/freshdesk_mcp | — | Python | MIT | Support operations | No |
 | Enreign/freshdeck-mcp | — | TypeScript | — | Tickets, contacts, agents | No |
 
-**No official Freshworks MCP server exists.** The community fills the gap: **effytech/freshservice_mcp** ([GitHub](https://github.com/effytech/freshservice_mcp), Python, MIT) covers ticket CRUD, change management (create/update/filter/close changes), and asset management. The same developer maintains **effytech/freshdesk_mcp** for Freshdesk support operations. **Enreign/freshdeck-mcp** (TypeScript) adds automatic retry with exponential backoff.
+**Freshworks shipped an official bidirectional MCP Gateway** at Refresh 2026 (May 14, 2026), upgrading from community-only coverage to official support. The gateway operates in two directions:
+
+**Inbound MCP** (Enterprise plan, Early Access) lets external AI clients — Claude, Cursor, VS Code, Microsoft Copilot Studio, ChatGPT, and Gemini — connect to Freshservice data. It exposes **28 tools across 6 categories**: tickets (fetch, create, update, add notes), assets (fetch, create, update), users/agents (lookup), onboarding/offboarding workflows, service catalog (placement and search), and knowledge base (categories, folders, articles). Rate limits during Early Access: 100 tool calls per minute, 5,000 per month.
+
+The gateway's core security design: **hardcoded tools, not arbitrary LLM queries.** Freshworks enforces a defined operation set rather than allowing free-form AI queries against production data — a deliberate choice to prevent SQL injection risks and hallucinated queries. This mirrors PagerDuty's read-only-by-default safety philosophy, applied to tool scope.
+
+**Outbound MCP** (Growth, Pro, and Enterprise plans with active Freddy AI Agent Studio) lets Freddy AI pull live context from third-party tools including Atlassian, Notion, Linear, and ClickUp — without custom integration code.
+
+**Freddy AI Agent Studio**, the no-code agent-building platform powering outbound MCP, lets IT teams build custom agents from a visual interface, deploy pre-built templates, and push agents to Microsoft Teams, Slack, or employee portals. Freshworks cites their internal analysis: 47% of IT tickets arrive outside standard business hours, with after-hours response lag over an hour — the primary business case for autonomous agents.
+
+**Amerisure** reduced daily ticket trend analysis from one hour to three minutes using Freddy Insights. Other named Freshservice customers include Bridgestone, New Balance, S&P Global, and Sony Music. Independent analysis by The Futurum Group cites 168% ROI over 3 years for Freshservice customers (general ITSM claim, not specific to Agent Studio).
+
+The Freddy AI Agent Studio and Inbound MCP Gateway are in Early Access as of May 2026 — not generally available, with no public pricing disclosed for Agent Studio.
+
+Community servers remain useful for non-Enterprise plans or simpler integrations: **effytech/freshservice_mcp** ([GitHub](https://github.com/effytech/freshservice_mcp), Python, MIT) covers ticket CRUD, change management, and asset management. The same developer maintains **effytech/freshdesk_mcp** for Freshdesk support operations. **Enreign/freshdeck-mcp** (TypeScript) adds automatic retry with exponential backoff.
 
 ### ManageEngine ServiceDesk Plus (Community + Official Beta)
 
@@ -189,13 +207,15 @@ The **Atlassian official remote MCP server** ([atlassian/atlassian-mcp-server](h
 
 The ITSM MCP landscape reveals three deployment approaches:
 
-1. **MCP Server providers** (ServiceNow, PagerDuty, incident.io, Atlassian JSM) — exposing ITSM capabilities for any AI client to consume
-2. **MCP Client consumers** (BMC HelixGPT) — using MCP to connect their AI agents to external tools rather than exposing their own
-3. **Hosted/remote MCP** is emerging as the default — Atlassian, incident.io, and PagerDuty all offer cloud-hosted endpoints, reducing setup friction
+1. **MCP Server providers** (ServiceNow, PagerDuty, incident.io, Atlassian JSM, Freshworks) — exposing ITSM capabilities for any AI client to consume
+2. **MCP Client consumers** (BMC HelixGPT, Freshworks Freddy AI) — using MCP to connect their AI agents to external tools rather than (or in addition to) exposing their own
+3. **Hosted/remote MCP** is emerging as the default — Atlassian, incident.io, PagerDuty, and Freshworks all offer cloud-hosted endpoints, reducing setup friction
 
-Safety patterns are maturing: PagerDuty's read-only default, ServiceNow's AI Control Tower governance, and Rootly's pagination limits show the industry learning from early MCP security mistakes.
+Freshworks' May 2026 MCP Gateway is notable for being **bidirectional** — simultaneously a provider (inbound) and a consumer (outbound). This dual-mode architecture, where a platform both exposes capabilities and consumes external tools, represents an emerging pattern likely to be adopted by other enterprise ITSM vendors.
+
+Safety patterns are maturing: PagerDuty's read-only default, ServiceNow's AI Control Tower governance, Rootly's pagination limits, and Freshworks' hardcoded-tools-only design all show the industry learning from early MCP security mistakes.
 
 ## Rating: 4.0 / 5
 
-ITSM earns one of the highest ratings in our review series. **Six vendors have official MCP servers** — more than most enterprise categories. ServiceNow's native platform support plus deep community ecosystem sets the standard. PagerDuty's safety-first design is a model for other vendors. The main gaps are in the long tail — Squadcast, xMatters, and SysAid have no presence — and in ITIL process automation (problem management, CAB workflows, SLA monitoring). The shift toward hosted remote MCP shows the category maturing beyond developer-only tooling toward enterprise-ready AI integration.
+ITSM earns one of the highest ratings in our review series. **Seven vendors now have official MCP servers** — more than most enterprise categories. ServiceNow's native platform support plus deep community ecosystem sets the standard. PagerDuty's safety-first design is a model for other vendors. Freshworks' May 2026 bidirectional MCP Gateway added the seventh official vendor and introduced the dual-mode provider+consumer pattern. The main gaps are in the long tail — Squadcast, xMatters, and SysAid have no presence — and in ITIL process automation (problem management, CAB workflows, SLA monitoring). The shift toward hosted remote MCP shows the category maturing beyond developer-only tooling toward enterprise-ready AI integration.
 
