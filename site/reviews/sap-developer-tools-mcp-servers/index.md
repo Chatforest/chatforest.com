@@ -1,25 +1,26 @@
-# SAP Developer Tools MCP Servers — UI5, CAP, Fiori, and MDK for Agentic Coding
+# SAP Developer Tools MCP Servers — UI5, CAP, Fiori, MDK, and ABAP for Agentic Coding
 
-> SAP's official MCP servers for developer tooling reviewed: UI5 MCP (81 stars, 8+ tools, v0.2.9), CAP MCP (70 stars, v0.0.4, 2 tools), Fiori MCP (experimental, Fiori elements generation), MDK MCP (v0.3, 4 tools, mobile). All Apache-2.0. Rating: 3.5/5.
+> SAP's official MCP servers for developer tooling reviewed: UI5 MCP (81 stars, 8+ tools, v0.2.9), CAP MCP (70 stars, v0.0.4, 2 tools), Fiori MCP (experimental), MDK MCP (v0.3, 4 tools), and the new ABAP MCP Server (GA Sapphire 2026, bundled in ADT, code navigation + migration + clean-core). Rating: 4/5.
 
 
-SAP serves over 400,000 customers worldwide and has built one of the largest developer communities in enterprise software. For years, SAP development meant navigating dense toolchains: the Cloud Application Programming Model (CAP) for backend services, SAPUI5 (OpenAjax-based framework) and SAP Fiori elements for UX, the Mobile Development Kit (MDK) for mobile apps, and ABAP for legacy systems. In 2025, SAP made a coordinated move to bring MCP to this ecosystem — not via one generalist server, but four targeted servers, each covering a specific layer of the SAP development stack. Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
+SAP serves over 400,000 customers worldwide and has built one of the largest developer communities in enterprise software. For years, SAP development meant navigating dense toolchains: the Cloud Application Programming Model (CAP) for backend services, SAPUI5 (OpenAjax-based framework) and SAP Fiori elements for UX, the Mobile Development Kit (MDK) for mobile apps, and ABAP — the original SAP language running on hundreds of thousands of ERP and S/4HANA systems. In 2025, SAP made a coordinated move to bring MCP to this ecosystem, and at Sapphire 2026 (May 2026) they closed the final major gap by shipping an official ABAP MCP Server. Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
 
-The headline finding: **SAP is one of the most coordinated enterprise MCP adopters**, with four official servers all released within weeks of each other in September 2025, all Apache-2.0 licensed, all maintained by SAP engineering teams. The **UI5 MCP Server is the standout** — the most mature of the four, actively maintained at v0.2.9, and designed to solve a concrete problem (UI5 API hallucination). The **CAP server** is early but architecturally sound. The **Fiori server** is experimental and narrower in scope. The **MDK server** is the most complete for its niche. SAP officially recommends using all four together.
+The headline finding: **SAP is one of the most coordinated enterprise MCP adopters**, with five official servers now covering the full SAP development stack. The **UI5 MCP Server** is the most mature of the open-source servers — actively maintained at v0.2.9, designed to solve a concrete problem (UI5 API hallucination). The **CAP server** is architecturally sound for CDS-model-grounded development. The **Fiori** and **MDK servers** cover their respective niches. And the newly GA **ABAP MCP Server**, bundled in ABAP Development Tools and powered by SAP's own SAP-ABAP-1 foundation model, brings agentic capability to the language that runs most of the world's SAP systems. SAP officially recommends running all five together.
 
 ---
 
 ## Overview
 
-| Server | npm Package | Stars | Version | Status | License |
-|--------|------------|-------|---------|--------|---------|
-| UI5 MCP Server | `@ui5/mcp-server` | ~81 | v0.2.9 | Stable | Apache-2.0 |
-| CAP MCP Server | `@cap-js/mcp-server` | ~70 | v0.0.4 | Early | Apache-2.0 |
-| Fiori MCP Server | `@sap-ux/fiori-mcp-server` | — | v0.x | Experimental | Apache-2.0 |
-| MDK MCP Server | `@sap/mdk-mcp-server` | — | v0.3 | Beta | Apache-2.0 |
-| UI5 Web Components | `@ui5/webcomponents-mcp-server` | — | v0.x | Beta | Apache-2.0 |
+| Server | Distribution | Stars | Version | Status | License |
+|--------|-------------|-------|---------|--------|---------|
+| UI5 MCP Server | npm `@ui5/mcp-server` | ~81 | v0.2.9 | Stable | Apache-2.0 |
+| CAP MCP Server | npm `@cap-js/mcp-server` | ~70 | v0.0.4 | Early | Apache-2.0 |
+| Fiori MCP Server | npm `@sap-ux/fiori-mcp-server` | — | v0.x | Experimental | Apache-2.0 |
+| MDK MCP Server | npm `@sap/mdk-mcp-server` | — | v0.3 | Beta | Apache-2.0 |
+| UI5 Web Components | npm `@ui5/webcomponents-mcp-server` | — | v0.x | Beta | Apache-2.0 |
+| **ABAP MCP Server** | **Bundled in ADT (Eclipse + VS Code)** | — | GA May 2026 | **GA** | Proprietary |
 
-All five servers are available on npm and compatible with Claude Desktop, Claude Code, Cursor, Windsurf, VS Code (Copilot), GitHub Copilot, and Cline. All use stdio transport.
+The four open-source servers are available on npm and compatible with Claude Desktop, Claude Code, Cursor, Windsurf, VS Code (Copilot), GitHub Copilot, and Cline. All use stdio transport. The ABAP MCP Server ships inside SAP's ABAP Development Tools and integrates with Joule for Developers on SAP BTP.
 
 ---
 
@@ -167,6 +168,61 @@ v0.3 consolidated to 4 tools (optimized from more in earlier versions) plus adde
 
 ---
 
+## ABAP MCP Server — Official SAP ABAP Development Tools Integration
+
+**Distribution:** Bundled in ABAP Development Tools for Eclipse and VS Code · Official SAP product · GA May 2026 (Sapphire 2026) · Proprietary
+
+The ABAP MCP Server closes the most significant gap in SAP's MCP portfolio. ABAP — the language powering hundreds of thousands of SAP ERP, ECC, and S/4HANA systems — was conspicuously absent from SAP's 2025 MCP launch. At Sapphire 2026, SAP shipped the ABAP MCP Server as part of a broader "agentic AI for ABAP" initiative. It is not a standalone npm package; it ships bundled inside SAP's official ABAP Development Tools (ADT) for both Eclipse and the new ABAP Cloud Extension for VS Code.
+
+Unlike the four open-source servers above, the ABAP MCP Server is proprietary and tightly integrated with **SAP-ABAP-1** — SAP's own ABAP foundation model, trained on 250 million lines of ABAP code — accessed via SAP AI Core on BTP as part of the Joule for Developers subscription.
+
+### Capabilities
+
+The ABAP MCP Server exposes classic ADT operations as MCP tools, making them available to any MCP-compatible AI coding assistant:
+
+| Capability | Description |
+|-----------|-------------|
+| Code navigation | Browse and locate ABAP objects across the system |
+| Object creation | Create ABAP development objects (programs, classes, function groups) |
+| Syntax checking | Run syntax validation on ABAP code |
+| Unit test execution | Execute ABAP Unit tests and return results |
+| Source retrieval | Retrieve source for ABAP programs, classes, Function Groups, Function Modules, and structures |
+| Clean-core compliance | Validate code against S/4HANA clean-core requirements |
+
+These capabilities are exposed to external AI clients — GitHub Copilot, Amazon Q Developer, Claude, and MCP-compatible IDEs like Cursor — without requiring those clients to implement ADT-specific protocols.
+
+### The ABAP Migration Agent
+
+The flagship use case shipping with the ABAP MCP Server is an autonomous **custom-code migration agent** for ECC → S/4HANA migration. The agent-driven workflow:
+
+1. Retrieve existing ECC source code via the ABAP MCP Server
+2. Check clean-core compatibility (identify deprecated APIs, direct table access, etc.)
+3. Generate a migrated S/4HANA version using SAP-ABAP-1
+4. Run ABAP Unit tests to validate correctness
+5. Return the migrated, tested code
+
+This is one of the first SAP-native multi-step agentic workflows using MCP as the execution layer — ABAP MCP is the tool surface that lets the agent interact with a live SAP system, not just generate code in a sandbox.
+
+### What Works Well
+
+**Fills the largest gap.** ABAP runs more enterprise business logic than any other SAP language. The community servers by Marian Zeis have been bridging this gap; the official ADT-bundled server brings first-party support, SAP-ABAP-1 model integration, and Joule for Developers licensing.
+
+**IDE agnosticism.** ABAP development was historically locked to Eclipse ADT. The MCP server decouples ABAP system access from the IDE — VS Code, Cursor, or any MCP-compatible assistant can now perform ABAP development tasks without Eclipse.
+
+**Multi-agent compatibility.** GitHub Copilot, Amazon Q Developer, and Claude are all explicitly supported via the SAP-Anthropic partnership (announced concurrently at Sapphire 2026). This is among the first cases where major AI coding assistants from competing vendors can all connect to the same ABAP system through a shared MCP protocol.
+
+**SAP-ABAP-1 grounding.** The underlying model is trained on 250 million lines of ABAP — more ABAP-specific training than any general-purpose LLM. Code generation and migration recommendations reflect actual ABAP patterns rather than extrapolated general programming knowledge.
+
+### What's Missing
+
+**Proprietary and bundled.** Unlike the four open-source servers, there is no public GitHub repository, no npm package, and no community-visible version history. Self-hosting, customization, or inspection of the server internals is not possible.
+
+**Requires Joule for Developers subscription.** Access to SAP-ABAP-1 and the agentic features runs through SAP AI Core on BTP under Joule for Developers licensing. As of Sapphire 2026, the promotion is free through September 2026; after that, consumption-based pricing via AI Units applies. Teams on-premise without BTP footprint face a higher barrier.
+
+**No RAP/Steampunk support at launch.** RESTful ABAP Programming Model (RAP) — the modern clean-core ABAP extension model — is not fully covered at GA. The migration agent focuses on classical ABAP to clean-core conversion, not new RAP development workflows.
+
+---
+
 ## UI5 Web Components MCP Server — Framework-Agnostic SAP UI Components
 
 **GitHub:** [UI5/webcomponents-mcp-server](https://github.com/UI5/webcomponents-mcp-server) · npm: `@ui5/webcomponents-mcp-server` · Apache-2.0
@@ -202,7 +258,7 @@ A [community-maintained list](https://github.com/marianfoo/sap-ai-mcp-servers) (
 
 ## Using the Stack Together
 
-SAP's recommended configuration for full-stack SAP development uses all four official servers simultaneously:
+SAP's recommended configuration for modern BTP development uses all four open-source servers simultaneously:
 
 ```json
 {
@@ -215,15 +271,17 @@ SAP's recommended configuration for full-stack SAP development uses all four off
 }
 ```
 
-The intended workflow: CAP defines your data service (CDS model, OData endpoint), the Fiori server generates the UI from the service, the UI5 server handles component-level development and linting, and the MDK server handles the mobile channel. Together they cover the full SAP BTP development stack for a modern project.
+The intended workflow: CAP defines your data service (CDS model, OData endpoint), the Fiori server generates the UI from the service, the UI5 server handles component-level development and linting, and the MDK server handles the mobile channel. Together they cover the full SAP BTP development stack for a modern cloud-native project.
 
-**IDE Support:** Cursor, Windsurf, GitHub Copilot (VS Code), Cline, Claude Code, Claude Desktop.
+**ABAP stack:** The ABAP MCP Server is configured separately, through ABAP Development Tools for VS Code — it connects directly to the SAP ABAP system via ADT and Joule for Developers on BTP, rather than an npx command.
+
+**IDE Support:** Cursor, Windsurf, GitHub Copilot (VS Code), Cline, Claude Code, Claude Desktop. ABAP MCP additionally supports Amazon Q Developer (officially tested by SAP) via the SAP-Anthropic partnership announced at Sapphire 2026.
 
 ---
 
 ## What's Not Covered
 
-**ABAP.** The official servers do not cover ABAP on-premise development. ABAP is the original SAP programming language running on hundreds of thousands of SAP ERP, S/4HANA, and ECC systems. Community servers fill some of this gap.
+**ABAP (now officially addressed).** As of Sapphire 2026, SAP ships an official ABAP MCP Server bundled in ABAP Development Tools. Classical ABAP development, syntax checking, unit tests, and S/4HANA migration workflows are now covered. RAP (RESTful ABAP Programming Model) support is partial at GA. Community servers by Marian Zeis remain valuable for teams without BTP/Joule for Developers access.
 
 **SAP Integration Suite / BTP Integration.** No official MCP server for iFlow development, API management, or the BTP Integration Suite.
 
@@ -231,26 +289,28 @@ The intended workflow: CAP defines your data service (CDS model, OData endpoint)
 
 **HANA.** No official SAP HANA MCP server from SAP directly (community options exist).
 
-**S/4HANA / Business Application Studio.** SAP Business Application Studio has no MCP server. S/4HANA extensions via RAP (RESTful ABAP Programming Model) are not covered.
+**Business Application Studio.** SAP Business Application Studio has no MCP server of its own, though it hosts MCP-compatible AI assistants that connect to the ABAP MCP Server.
 
 ---
 
 ## Assessment
 
-**Rating: 3.5/5**
+**Rating: 4/5** *(refreshed May 2026 — up from 3.5/5)*
 
-SAP has made a more coordinated MCP push than most enterprise software vendors of its scale. All four official servers launched in the same release window, all Apache-2.0, all targeting a coherent developer workflow. The UI5 MCP Server is the strongest of the group — actively maintained, meaningful tool count, solving a concrete pain point (API hallucination). The CAP server is architecturally sound despite being early-stage. Fiori and MDK are more specialized but complete for their audiences.
+SAP has made a more coordinated MCP push than any enterprise software vendor of comparable scale. The four open-source servers (UI5, CAP, Fiori, MDK) launched in a tight window in 2025, all Apache-2.0, targeting a coherent developer workflow. The UI5 MCP Server is the strongest of the open-source group — actively maintained, meaningful tool count, solving a concrete pain point (SAPUI5 API hallucination). The CAP server is architecturally sound. Fiori and MDK are more specialized but complete for their audiences.
 
-The gaps that prevent a higher rating: ABAP is unaddressed, S/4HANA extensions are unaddressed, and the Fiori server's experimental status and CAP-only constraint limit real-world applicability today. The star counts (81 for UI5, 70 for CAP) are modest — this ecosystem is in early adoption within the SAP developer community.
+The Sapphire 2026 addition of the **ABAP MCP Server** resolves the largest gap from the original review. ABAP is the language running most of the world's SAP systems, and its absence from the MCP portfolio was the most significant limitation. The official ADT-integrated server — powered by SAP-ABAP-1, supporting GitHub Copilot, Amazon Q, Claude, and Cursor, with an autonomous ECC→S/4HANA migration agent — is a substantial addition.
 
-For SAP developers, the UI5 MCP server in particular is worth adding immediately. The hallucination-prevention value alone justifies the setup.
+The rating stops at 4/5 because: the ABAP server is proprietary and requires a Joule for Developers subscription (breaking the otherwise clean Apache-2.0 story), SAP Integration Suite and Analytics Cloud remain unaddressed, and the Fiori server's experimental status persists.
+
+For SAP developers: the UI5 MCP Server is worth adding immediately; the ABAP MCP Server is worth evaluating seriously if your team is on BTP and facing S/4HANA migration work.
 
 | Aspect | Score | Notes |
 |--------|-------|-------|
-| Coverage | 3/5 | CAP + UI5 + Fiori + MDK covered; ABAP, Analytics, HANA absent |
-| Maturity | 3/5 | UI5 stable; CAP/Fiori/MDK early stage |
-| Tool depth | 4/5 | UI5 has 10 well-designed tools; CAP semantic search is clever |
+| Coverage | 4/5 | ABAP now officially addressed; Integration Suite, Analytics, HANA still absent |
+| Maturity | 3.5/5 | UI5 + ABAP stable; CAP/Fiori/MDK still early |
+| Tool depth | 4/5 | UI5 (10 tools) + ABAP migration agent are the standouts |
 | Adoption | 3/5 | 81 stars (UI5), 70 stars (CAP) — early but genuine traction |
-| Licensing | 5/5 | All Apache-2.0 — no BSL, no proprietary constraints |
-| **Overall** | **3.5/5** | Strongest enterprise framework MCP commitment in the ecosystem |
+| Licensing | 4/5 | Open-source servers all Apache-2.0; ABAP server proprietary (requires BTP/Joule) |
+| **Overall** | **4/5** | Most complete enterprise framework MCP commitment in the ecosystem |
 
