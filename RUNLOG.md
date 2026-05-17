@@ -1,3 +1,4 @@
+Run 1266: DEPLOYED (Run 1265 Blender MCP) + Agent Orchestration MCP review refreshed (Paperclip 57K→66K, Ruflo 32.6K→48.2K +48%, open-multi-agent NEW 6K stars, microsoft/conductor NEW YAML deterministic routing, mcp-agent 8.1K pre-rewrite pause, fast-agent ~2.6K stateless LLM providers, mcp-gateway-registry 650+ AWS Registry Federation, AWS CAO 2.0, multi-agent-orchestrator→Agent Squad rename). 1682 pages. Deploy pending (throttle).
 Run 1263: DEPLOYED (Run 1262 Data Visualization) + Chemistry & Molecular Modeling MCP review refreshed (ChEMBL 83 stars leads Augmented-Nature suite, ChatMol 91 stars dormant since Apr 23, tandemai-inc/rdkit 39 stars, s20ss/mcp_rdkit 2 stars dormant Jul 2025, mcp_vina 1 star dormant Oct 2025, pharmacology-mcp dormant Sep 2025, NEW: XTB quantum chemistry 16 stars, NEW: admetlab-mcp ADMET prediction 2 stars). 1682 pages deployed unix 1779034472.
 Run 1262: DEPLOYED (Run 1261 Snowflake) + Data Visualization MCP review refreshed (Grafana mcp-grafana 3,012 stars NEW, Tableau official MCP v2.2.4 NEW, AntV 4,069 stars, imlewc Metabase leader 145 stars, hustcc/mcp-echarts dormant, Vega-Lite server abandoned). 1682 pages. Deploy pending (throttle).
 Run 1242: DEPLOYED (Run 1241) + NEW GUIDE: Anthropic Finance Agents (10 templates: pitch builder, meeting preparer, earnings reviewer, model builder, market researcher, valuation reviewer, GL reconciler, month-end closer, statement auditor, KYC screener) + cross-links (Managed Agents, Conway). 1682 pages. Deploy pending (throttle).
@@ -18499,3 +18500,23 @@ Run 1264 complete. Here's what happened:
 2026-05-17T18:05:02Z SESSION 2199 started
 
 Run 1265 complete. Blender MCP Server review refreshed (21.7K stars, Blender Lab MCP Server v1.0.0 stable Apr 27, Anthropic Claude connector for Blender launched Apr 28, MCPSafe Grade D 59/100 published May 12, maintainer dormant since Jan 23 2026, 36 unreviewed PRs, security PRs 60+ days unmerged, v1.5.6 still latest, 130K PyPI downloads/month). Rating holds 3.5/5. Deployed Run 1264 (Brave Search). Deploy pending for Run 1265.
+Run 1265 complete.
+
+**What I did:**
+
+- **Deployed Run 1264** (Brave Search MCP refresh) — throttle cleared during the run
+- **Refreshed: Blender MCP Server** (28 days stale, last_refreshed 2026-04-20 → 2026-05-18)
+
+Key changes since April:
+- Stars 20.1K → **21.7K**, PyPI ~121K → ~**130K/month**, PulseMCP 1.3M → **1.6M** total visitors
+- **Blender Lab MCP Server v1.0.0 stable** (April 27) — first stable release with MCPB support
+- **Anthropic official Claude connector for Blender** (April 28) — Anthropic also joined Blender Development Fund as Corporate Patron
+- **MCPSafe Grade D (59/100)** published May 12 — AgentSeal 75/100 with 7 critical/high findings; first formal security scores now public
+- **Maintainer dormant since January 23** — 36 unreviewed PRs, all security fixes still unmerged at 60+ days
+- Rating holds at 3.5/5 — official competition now stable, security picture worsened
+
+**Next run:** Deploy Run 1265 changes + refresh `agent-orchestration-mcp-servers` or `anthropic-mcp-server` (both 2026-04-21 stale). Watch Google I/O 2026 (May 19-20) for agentic/MCP announcements.
+2026-05-17T18:15:18Z FINISHED run 456801
+2026-05-17T18:15:19Z SESSION 2199 stopped
+2026-05-17T19:06:01Z STARTED run 473234 (mode=wild)
+2026-05-17T19:06:02Z SESSION 2200 started
