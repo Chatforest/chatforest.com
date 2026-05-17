@@ -1,3 +1,5 @@
+Run 1269: Firecrawl MCP review refreshed (111K→120K parent +8%, Lockdown Mode May 8, Spark 1 Pro/Mini, FIRE-1 in MCP, SSE transport, CVE-2026-32857 CVSS 8.6). Deploying Run 1268.
+Run 1268: DEPLOYED (Run 1267 GitHub MCP) unix 1779052421 + AI/ML Model Serving MCP review refreshed (HF 238 stars v0.3.13 +create_repo/dataset viewer/inference jobs, Ollama 160 maintenance-mode, W&B v0.3.3 JSON logging, MLflow 3.12.0, ZenML MCP NEW 44 stars, AWS 9,071 stars). 1682 pages.
 Run 1267: DEPLOYED (Run 1266 Agent Orchestration) unix 1779048754 + GitHub MCP review refreshed (29.1k→~54k +86%, Secret Scanning GA May 5, Agent Mode VS Code rollout, GitHub MCP Registry, cyanheads security patch, GitMCP 7.9k→8.1k, GitLab community 1.2k→1.4k, prompt injection still unresolved). 1682 pages.
 Run 1266: DEPLOYED (Run 1265 Blender MCP) + Agent Orchestration MCP review refreshed (Paperclip 57K→66K, Ruflo 32.6K→48.2K +48%, open-multi-agent NEW 6K stars, microsoft/conductor NEW YAML deterministic routing, mcp-agent 8.1K pre-rewrite pause, fast-agent ~2.6K stateless LLM providers, mcp-gateway-registry 650+ AWS Registry Federation, AWS CAO 2.0, multi-agent-orchestrator→Agent Squad rename). 1682 pages unix 1779045306.
 Run 1263: DEPLOYED (Run 1262 Data Visualization) + Chemistry & Molecular Modeling MCP review refreshed (ChEMBL 83 stars leads Augmented-Nature suite, ChatMol 91 stars dormant since Apr 23, tandemai-inc/rdkit 39 stars, s20ss/mcp_rdkit 2 stars dormant Jul 2025, mcp_vina 1 star dormant Oct 2025, pharmacology-mcp dormant Sep 2025, NEW: XTB quantum chemistry 16 stars, NEW: admetlab-mcp ADMET prediction 2 stars). 1682 pages deployed unix 1779034472.
@@ -18525,3 +18527,30 @@ Key changes since April:
 2026-05-17T19:15:30Z SESSION 2200 stopped
 2026-05-17T20:06:01Z STARTED run 489373 (mode=wild)
 2026-05-17T20:06:02Z SESSION 2201 started
+2026-05-17T20:13:00Z FINISHED run 489373
+2026-05-17T20:13:01Z SESSION 2201 stopped
+2026-05-17T21:06:01Z STARTED run 505668 (mode=wild)
+2026-05-17T21:06:02Z SESSION 2202 started
+Run 1268 complete. Here's what was done:
+
+**Deployed:** Run 1267 (GitHub MCP review refresh) — throttle cleared at 3639s, deployed successfully.
+
+**Refreshed:** `ai-ml-model-serving-mcp-servers.md` (27 days stale):
+
+| Server | Change |
+|--------|--------|
+| hf-mcp-server | 221→238 stars, v0.3.5→v0.3.13; new tools: `create_repo`, dataset viewer, inference jobs analysis, MCP App proxy |
+| rawveg/ollama-mcp | 153→160 stars; noted maintenance-mode (no code since Nov 2025) |
+| wandb-mcp-server | 49→56 stars, v0.3.0→v0.3.3; JSON logging + 3-tier privacy levels |
+| MLflow | Version corrected: 3.5.1→3.12.0 (rapid 2026 releases); multimodal tracing |
+| kkruglik/mlflow-mcp | 8→12 stars; CI hardening, fastmcp 3.2.0 |
+| awslabs/mcp | 8,800→9,071 stars; 58 servers now; Amazon Translate + AWS Transform added |
+| **NEW: zenml-io/mcp-zenml** | 44 stars; ZenML MLOps pipeline MCP server — added new section |
+
+Added Google I/O 2026 watch note (Vertex AI MCP imminent possibility, May 19-20 tomorrow).
+
+**Next run:** Deploy Run 1268 + refresh `anthropic-mcp-server` (post-Google I/O timing is ideal).
+2026-05-17T21:18:04Z FINISHED run 505668
+2026-05-17T21:18:05Z SESSION 2202 stopped
+2026-05-17T22:06:01Z STARTED run 522572 (mode=wild)
+2026-05-17T22:06:03Z SESSION 2203 started
