@@ -7,7 +7,20 @@ Chemistry and molecular modeling MCP servers let AI agents search chemical datab
 
 This review covers MCP servers for **chemistry and molecular modeling** — cheminformatics toolkits ([RDKit](https://www.rdkit.org/)), chemical databases ([PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [DrugBank](https://go.drugbank.com/)), molecular visualization ([PyMOL](https://pymol.org/), [ChimeraX](https://www.cgl.ucsf.edu/chimerax/)), docking simulation ([AutoDock Vina](https://vina.scripps.edu/), [DiffDock](https://github.com/gcorso/DiffDock)), protein structure ([AlphaFold](https://alphafold.ebi.ac.uk/), [PDB](https://www.rcsb.org/)), molecular dynamics ([LAMMPS](https://www.lammps.org/), [GROMACS](https://www.gromacs.org/)), and pharmacology databases. For broader life sciences and genomics, see our [Bioinformatics & Life Sciences review](/reviews/bioinformatics-life-sciences-mcp-servers/). For numerical computing and symbolic math, see our [Scientific Computing & Mathematics review](/reviews/scientific-computing-mathematics-mcp-servers/).
 
-The headline findings: **[ChatMol](https://github.com/ChatMol)/molecule-mcp leads visualization** (~89 stars) — connecting [PyMOL](https://pymol.org/) and [ChimeraX](https://www.cgl.ucsf.edu/chimerax/) to AI agents. **[RDKit](https://www.rdkit.org/) gets two MCP servers** for full cheminformatics access through natural language. **[Augmented-Nature](https://github.com/Augmented-Nature) ships a prolific suite** of database-access servers ([PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [AlphaFold](https://alphafold.ebi.ac.uk/), [PDB](https://www.rcsb.org/), [STRING-db](https://string-db.org/), [SureChEMBL](https://www.surechembl.org/)). **BioChemAIgent integrates five docking methods** in one multi-agent framework. **No major chemical software vendor ships an official MCP server** — a notable gap compared to [MathWorks](https://www.mathworks.com/)' [MATLAB](https://www.mathworks.com/products/matlab.html) support.
+## Recent Updates (May 2026)
+
+- **ChatMol/molecule-mcp** reaches 91 stars but has been dormant since April 23 — no new releases
+- **Augmented-Nature suite** star counts now confirmed: ChEMBL leads at 83 stars, PubChem 36, AlphaFold 34, PDB 24, STRING-db 4, SureChEMBL 7 (dormant since January 2026)
+- **tandemai-inc/rdkit-mcp-server** now at 39 stars; last commit May 4 (eval tooling update)
+- **s20ss/mcp_rdkit** effectively dormant — 2 stars, no activity since July 2025
+- **NEW: PhelanShao/xtb-mcp-server** (16 stars) — XTB semi-empirical quantum chemistry via MCP, partially fills the quantum chemistry gap noted in our previous review
+- **NEW: ToxMCP/admetlab-mcp** (2 stars) — wraps ADMETlab 3.0 for absorption/distribution/metabolism/excretion/toxicity prediction, partially fills the ADMET gap
+- **NEW: dovas-net/chimeraX-mcp** (4 stars, active as of May 17) — dedicated UCSF ChimeraX MCP server, separate from ChatMol's dual-backend approach
+- **NEW: bivex/SmiledMCP** — unified chemistry server (PubChem search, molecular analysis, equation balancing, format conversion); 13 commits in April–May
+- **shogo-d-nakamura/mcp_vina** dormant since October 2025 — only 1 star; docking gap remains in practice
+- **longevity-genie/pharmacology-mcp** dormant since September 2025
+
+The headline findings: **[ChatMol](https://github.com/ChatMol)/molecule-mcp leads visualization** (91 stars) — connecting [PyMOL](https://pymol.org/) and [ChimeraX](https://www.cgl.ucsf.edu/chimerax/) to AI agents. **[RDKit](https://www.rdkit.org/) gets two MCP servers** for full cheminformatics access through natural language. **[Augmented-Nature](https://github.com/Augmented-Nature) ships a prolific suite** of database-access servers ([PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [AlphaFold](https://alphafold.ebi.ac.uk/), [PDB](https://www.rcsb.org/), [STRING-db](https://string-db.org/), [SureChEMBL](https://www.surechembl.org/)). **BioChemAIgent integrates five docking methods** in one multi-agent framework. **No major chemical software vendor ships an official MCP server** — a notable gap compared to [MathWorks](https://www.mathworks.com/)' [MATLAB](https://www.mathworks.com/products/matlab.html) support.
 
 ## Molecular Visualization
 
@@ -15,9 +28,9 @@ The headline findings: **[ChatMol](https://github.com/ChatMol)/molecule-mcp lead
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [molecule-mcp](https://github.com/ChatMol/molecule-mcp) | ~89 | Python | — |
+| [molecule-mcp](https://github.com/ChatMol/molecule-mcp) | 91 | Python | — |
 
-The **highest-starred chemistry MCP server** we found. Molecule-MCP connects AI agents to [PyMOL](https://pymol.org/) and [UCSF ChimeraX](https://www.cgl.ucsf.edu/chimerax/) — the two most widely used molecular visualization tools in structural biology and chemistry.
+The **highest-starred chemistry MCP server** we found. Dormant since April 23, 2026 — no new commits or releases in the May 2026 review window. Molecule-MCP connects AI agents to [PyMOL](https://pymol.org/) and [UCSF ChimeraX](https://www.cgl.ucsf.edu/chimerax/) — the two most widely used molecular visualization tools in structural biology and chemistry.
 
 ### What Works Well
 
@@ -39,7 +52,7 @@ The **highest-starred chemistry MCP server** we found. Molecule-MCP connects AI 
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [rdkit-mcp-server](https://github.com/tandemai-inc/rdkit-mcp-server) | — | Python | — |
+| [rdkit-mcp-server](https://github.com/tandemai-inc/rdkit-mcp-server) | 39 | Python | — |
 
 Built by [TandemAI](https://github.com/tandemai-inc), this server aims to **expose every function in [RDKit](https://www.rdkit.org/) 2025.3.1** via MCP — molecular property calculation, fingerprinting, similarity search, substructure matching, and more, all through natural language without writing code.
 
@@ -53,9 +66,9 @@ Built by [TandemAI](https://github.com/tandemai-inc), this server aims to **expo
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [mcp_rdkit](https://github.com/s20ss/mcp_rdkit) | — | Python | — |
+| [mcp_rdkit](https://github.com/s20ss/mcp_rdkit) | 2 | Python | — |
 
-A complementary [RDKit](https://www.rdkit.org/) MCP server focused on **molecular visualization, descriptor calculation, and chemical interaction tools**. Listed on MCP marketplaces as "RDKit Chemical Informatics Server" — provides a more curated subset of RDKit functionality compared to tandemai-inc's comprehensive approach.
+A complementary [RDKit](https://www.rdkit.org/) MCP server focused on **molecular visualization, descriptor calculation, and chemical interaction tools**. Listed on MCP marketplaces as "RDKit Chemical Informatics Server" — provides a more curated subset of RDKit functionality compared to tandemai-inc's comprehensive approach. **Dormant since July 2025** — no new activity; tandemai-inc's server is the active choice for RDKit via MCP.
 
 ## Chemical Databases
 
@@ -63,7 +76,7 @@ A complementary [RDKit](https://www.rdkit.org/) MCP server focused on **molecula
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [PubChem-MCP-Server](https://github.com/Augmented-Nature/PubChem-MCP-Server) | — | Node.js | — |
+| [PubChem-MCP-Server](https://github.com/Augmented-Nature/PubChem-MCP-Server) | 36 | Node.js | — |
 
 Access to **over 110 million chemical compounds** through [PubChem](https://pubchem.ncbi.nlm.nih.gov/)'s REST API — molecular properties, bioassay data, and cheminformatics tools. Part of [Augmented-Nature](https://github.com/Augmented-Nature)'s extensive suite of scientific database MCP servers.
 
@@ -71,15 +84,15 @@ Access to **over 110 million chemical compounds** through [PubChem](https://pubc
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [pubchem-mcp-server](https://github.com/cyanheads/pubchem-mcp-server) | — | — | — |
+| [pubchem-mcp-server](https://github.com/cyanheads/pubchem-mcp-server) | 9 | TypeScript | — |
 
-An independent [PubChem](https://pubchem.ncbi.nlm.nih.gov/) MCP implementation providing comprehensive LLM tools for the [PubChem PUG REST API](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest). Offers an alternative to the Augmented-Nature version.
+An independent [PubChem](https://pubchem.ncbi.nlm.nih.gov/) MCP implementation providing comprehensive LLM tools for the [PubChem PUG REST API](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest). Supports STDIO and Streamable HTTP; released v0.1.19 on May 16, 2026 — actively maintained. Offers an alternative to the Augmented-Nature version.
 
 ### Augmented-Nature/ChEMBL-MCP-Server
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [ChEMBL-MCP-Server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) | — | Python | — |
+| [ChEMBL-MCP-Server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) | 83 | Python | — |
 
 **22 specialized tools** for drug discovery research via the [ChEMBL REST API](https://www.ebi.ac.uk/chembl/api/data/docs):
 
@@ -97,7 +110,7 @@ An independent [PubChem](https://pubchem.ncbi.nlm.nih.gov/) MCP implementation p
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [drugbank-mcp-server](https://github.com/openpharma-org/drugbank-mcp-server) | — | TypeScript | MIT |
+| [drugbank-mcp-server](https://github.com/openpharma-org/drugbank-mcp-server) | 9 | TypeScript | MIT |
 
 Access to **17,430+ drugs** with a high-performance [SQLite](https://www.sqlite.org/) backend:
 
@@ -113,9 +126,9 @@ A single unified `drugbank_info` tool with 16 methods. The SQLite approach means
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [pharmacology-mcp](https://github.com/longevity-genie/pharmacology-mcp) | — | Python | — |
+| [pharmacology-mcp](https://github.com/longevity-genie/pharmacology-mcp) | 6 | Python | — |
 
-Connects to the **[Guide to PHARMACOLOGY](https://www.guidetopharmacology.org/)** — the authoritative reference for drug targets, ligands, and interactions maintained by [IUPHAR/BPS](https://www.guidetopharmacology.org/about.jsp). Built with [FastMCP](https://github.com/jlowin/fastmcp) for type safety and natural language queries.
+Connects to the **[Guide to PHARMACOLOGY](https://www.guidetopharmacology.org/)** — the authoritative reference for drug targets, ligands, and interactions maintained by [IUPHAR/BPS](https://www.guidetopharmacology.org/about.jsp). **Dormant since September 2025** — no new releases or commits. Built with [FastMCP](https://github.com/jlowin/fastmcp) for type safety and natural language queries.
 
 Part of the **[Holy Bio MCP](https://github.com/longevity-genie/holy-bio-mcp)** framework, which bundles 50+ specialized bioinformatics tools under a unified configuration — pharmacology, [OpenGenes](https://opengenes.org/) (aging/longevity), and more.
 
@@ -133,9 +146,9 @@ Part of the **[Holy Bio MCP](https://github.com/longevity-genie/holy-bio-mcp)** 
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [mcp_vina](https://github.com/shogo-d-nakamura/mcp_vina) | — | Python | — |
+| [mcp_vina](https://github.com/shogo-d-nakamura/mcp_vina) | 1 | Python | — |
 
-**[AutoDock Vina](https://vina.scripps.edu/) docking from [SMILES](https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System) input.** Provide a SMILES string and a target protein name, and the server handles ligand preparation, receptor setup, and docking simulation. Currently supports AKT1 as a target, with the architecture designed for additional targets.
+**[AutoDock Vina](https://vina.scripps.edu/) docking from [SMILES](https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System) input.** **Dormant since October 2025** — 1 star, no new target support added. Provide a SMILES string and a target protein name, and the server handles ligand preparation, receptor setup, and docking simulation. Currently supports AKT1 as a target, with the architecture designed for additional targets.
 
 ### What Works Well
 
@@ -163,7 +176,7 @@ Built on [CrewAI](https://www.crewai.com/) multi-agent architecture with PubChem
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [AlphaFold-MCP-Server](https://github.com/Augmented-Nature/AlphaFold-MCP-Server) | — | Node.js | — |
+| [AlphaFold-MCP-Server](https://github.com/Augmented-Nature/AlphaFold-MCP-Server) | 34 | Node.js | — |
 
 Access to the **[AlphaFold Protein Structure Database](https://alphafold.ebi.ac.uk/)** — structure retrieval by [UniProt](https://www.uniprot.org/) ID, multi-format downloads (PDB, CIF, BCIF, JSON), confidence scoring (pLDDT), region analysis, search by protein/gene/organism, and batch processing.
 
@@ -173,7 +186,7 @@ All data retrieved directly from the official [AlphaFold API](https://alphafold.
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [PDB-MCP-Server](https://github.com/Augmented-Nature/PDB-MCP-Server) | — | Node.js | — |
+| [PDB-MCP-Server](https://github.com/Augmented-Nature/PDB-MCP-Server) | 24 | Node.js | — |
 
 Access to the **[Protein Data Bank](https://www.rcsb.org/)** — the worldwide repository of experimentally determined 3D structures of proteins, nucleic acids, and complex assemblies. Search by keyword, PDB ID, or [UniProt](https://www.uniprot.org/) accession. Download coordinates in PDB, mmCIF, mmTF, or XML format. Quality metrics included.
 
@@ -181,7 +194,7 @@ Access to the **[Protein Data Bank](https://www.rcsb.org/)** — the worldwide r
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [STRING-db-MCP-Server](https://github.com/Augmented-Nature/STRING-db-MCP-Server) | — | Node.js | — |
+| [STRING-db-MCP-Server](https://github.com/Augmented-Nature/STRING-db-MCP-Server) | 4 | Node.js | — |
 
 **Protein interaction network analysis** via the [STRING database](https://string-db.org/) — interaction partners, functional enrichment, comparative genomics, and network visualization data. Useful for understanding protein function in biological context.
 
@@ -191,7 +204,7 @@ Access to the **[Protein Data Bank](https://www.rcsb.org/)** — the worldwide r
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [MCP_LAMMPS](https://github.com/Chenghao-Wu/MCP_LAMMPS) | — | Python | — |
+| [MCP_LAMMPS](https://github.com/Chenghao-Wu/MCP_LAMMPS) | 12 | Python | — |
 
 **[LAMMPS](https://www.lammps.org/) molecular dynamics** through MCP — enables AI assistants to set up, configure, and run molecular dynamics simulations for autonomous computational materials design. Experimental status, part of a research workflow combining LLMs with atomistic simulation.
 
@@ -211,37 +224,63 @@ Converts between **[ChemDraw](https://revvitysignals.com/products/research/chemd
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [SureChEMBL-MCP-Server](https://github.com/Augmented-Nature/SureChEMBL-MCP-Server) | — | Node.js | — |
+| [SureChEMBL-MCP-Server](https://github.com/Augmented-Nature/SureChEMBL-MCP-Server) | 7 | Node.js | — |
 
-Access to the **[SureChEMBL](https://www.surechembl.org/) chemical patent database** — search patents by chemical structure, discover novel compounds in patent literature, and analyze patent-chemistry relationships. Valuable for IP landscaping in drug discovery.
+Access to the **[SureChEMBL](https://www.surechembl.org/) chemical patent database** — search patents by chemical structure, discover novel compounds in patent literature, and analyze patent-chemistry relationships. Valuable for IP landscaping in drug discovery. **Dormant since January 2026** — 7 stars; no new commits.
 
 ## The Augmented-Nature Suite
 
 One organization deserves special mention: **[Augmented-Nature](https://github.com/Augmented-Nature)** ships MCP servers for nearly every major scientific database — [PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [AlphaFold](https://alphafold.ebi.ac.uk/), [PDB](https://www.rcsb.org/), [STRING-db](https://string-db.org/), [SureChEMBL](https://www.surechembl.org/), [UniProt](https://www.uniprot.org/), and [Reactome](https://reactome.org/). Their approach is consistent (Node.js, REST API wrappers, standard MCP protocol) and comprehensive.
 
-The trade-off: most of these servers have low star counts and appear to be generated with a consistent template. The question is whether they're production-tested or primarily proof-of-concept wrappers. For researchers who need quick API access through MCP, they fill an important gap.
+Star counts as of May 2026: ChEMBL leads at **83 stars**, followed by PubChem (36), AlphaFold (34), PDB (24), SureChEMBL (7, dormant), STRING-db (4). ChEMBL's 83 stars is a genuine signal of community adoption — it's the most-starred chemistry-specific server in the ecosystem after ChatMol.
+
+The trade-off: these servers appear to use a consistent generation template and most have been inactive since March–April 2026 — no new commits in the May review window. The question is whether they're production-tested or primarily proof-of-concept wrappers. For researchers who need quick API access through MCP, they fill an important gap.
+
+## Quantum Chemistry
+
+### PhelanShao/xtb-mcp-server
+
+| Server | Stars | Language | License |
+|--------|-------|----------|---------|
+| [xtb-mcp-server](https://github.com/PhelanShao/xtb-mcp-server) | 16 | Python | — |
+
+The closest thing to a quantum chemistry MCP server in the public ecosystem: **XTB semi-empirical tight-binding calculations via MCP**. Supports [xTB](https://xtb-docs.readthedocs.io/) (Extended Tight-Binding) — a fast semi-empirical quantum chemistry method suitable for conformer searches, geometry optimization, and property prediction on drug-sized molecules. Works with Claude, Cursor, and Windsurf. Last updated April 22, 2026.
+
+XTB sits below DFT (Gaussian, ORCA, Psi4) in accuracy but far above molecular mechanics — it's a practical choice for screening and pre-filtering in drug discovery workflows. This is not a full quantum chemistry server, but it's the only public MCP-connected quantum chemistry tool as of May 2026.
+
+## ADMET Prediction
+
+### ToxMCP/admetlab-mcp
+
+| Server | Stars | Language | License |
+|--------|-------|----------|---------|
+| [admetlab-mcp](https://github.com/ToxMCP/admetlab-mcp) | 2 | Python | — |
+
+Wraps **[ADMETlab 3.0](https://admetlab3.scbdd.com/)** — a widely-used web platform for ADMET (Absorption, Distribution, Metabolism, Excretion, Toxicity) prediction — as an MCP server. Provides molecule washing (standardization), ADMET property prediction, molecular rendering, and CSV result retrieval.
+
+This is an early-stage entry (2 stars, minimal community adoption), but it addresses one of the most-requested gaps in the chemistry MCP ecosystem: computational toxicology and pharmacokinetics screening through natural language. A TaraSPande/admet-mcp server also appeared in May 2026 (brand new, no description yet).
 
 ## What's Missing
 
 Notable gaps in the chemistry MCP ecosystem:
 
-- **Quantum chemistry** — no [Gaussian](https://gaussian.com/), [ORCA](https://www.faccts.de/orca/), [NWChem](https://nwchemgit.github.io/), or [Psi4](https://psicode.org/) MCP servers
+- **Quantum chemistry (partially filled)** — [xtb-mcp-server](https://github.com/PhelanShao/xtb-mcp-server) covers XTB semi-empirical calculations; but no [Gaussian](https://gaussian.com/), [ORCA](https://www.faccts.de/orca/), [NWChem](https://nwchemgit.github.io/), or [Psi4](https://psicode.org/) MCP servers exist for full DFT/ab initio work
+- **ADMET prediction (partially filled)** — [admetlab-mcp](https://github.com/ToxMCP/admetlab-mcp) wraps ADMETlab 3.0 (2 stars, early-stage); gap is covered in principle but community adoption is near zero
 - **Commercial drug discovery platforms** — no [Schrödinger](https://www.schrodinger.com/) (Maestro/Glide), no [Chemical Computing Group](https://www.chemcomp.com/) (MOE), no [OpenEye](https://www.eyesopen.com/)
 - **Molecular dynamics beyond LAMMPS** — no [AMBER](https://ambermd.org/), [NAMD](https://www.ks.uiuc.edu/Research/namd/), or [Desmond](https://www.schrodinger.com/products/desmond) servers
-- **ADMET prediction** — no dedicated absorption/distribution/metabolism/excretion/toxicity server
 - **Retrosynthesis** — no AI-driven retrosynthetic analysis (e.g., [ASKCOS](https://askcos.mit.edu/), [IBM RXN](https://rxn.res.ibm.com/))
 - **Spectroscopy** — no NMR, mass spectrometry, or IR analysis servers
 - **Materials science** — no [Materials Studio](https://www.3ds.com/products/biovia/materials-studio), [VASP](https://www.vasp.at/) (though VASPilot exists as a separate multi-agent system), or [Quantum ESPRESSO](https://www.quantum-espresso.org/) MCP servers
 
 ## The Bottom Line
 
-**Rating: 3.5/5** — Chemistry MCP servers cover an impressive breadth for such a specialized field: from database queries ([PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [DrugBank](https://go.drugbank.com/)) through cheminformatics ([RDKit](https://www.rdkit.org/)) to molecular visualization ([PyMOL](https://pymol.org/)/[ChimeraX](https://www.cgl.ucsf.edu/chimerax/)), docking ([Vina](https://vina.scripps.edu/), [DiffDock](https://github.com/gcorso/DiffDock)), and molecular dynamics ([LAMMPS](https://www.lammps.org/)). The BioChemAIgent framework shows where multi-agent drug discovery is heading.
+**Rating: 3.5/5** — Chemistry MCP servers cover an impressive breadth for such a specialized field: from database queries ([PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/) 83 stars, [DrugBank](https://go.drugbank.com/)) through cheminformatics ([RDKit](https://www.rdkit.org/)) to molecular visualization ([PyMOL](https://pymol.org/)/[ChimeraX](https://www.cgl.ucsf.edu/chimerax/)), and molecular dynamics ([LAMMPS](https://www.lammps.org/)). Two previously-noted gaps are now partially filled: [XTB semi-empirical quantum chemistry](https://github.com/PhelanShao/xtb-mcp-server) and [ADMET prediction via ADMETlab 3.0](https://github.com/ToxMCP/admetlab-mcp).
 
-But star counts are low across the board (~89 max), which means limited community testing. No major chemical software vendor ships an official MCP server — contrast this with [MathWorks](https://www.mathworks.com/)' official [MATLAB server](https://github.com/mathworks/matlab-mcp) or [DocuSign](https://www.docusign.com/)'s official e-signature server. Critical computational chemistry workflows (quantum chemistry, retrosynthesis, ADMET) have zero MCP coverage. The [Augmented-Nature](https://github.com/Augmented-Nature) suite provides breadth but uncertain depth.
+The rating holds at 3.5/5: the breadth is real but most established servers have gone quiet in May 2026. ChatMol (91 stars) is dormant. The autodock Vina server (1 star) is dormant since October 2025. No major chemical software vendor ships an official MCP server — contrast this with [MathWorks](https://www.mathworks.com/)' official [MATLAB server](https://github.com/mathworks/matlab-mcp). The [Augmented-Nature](https://github.com/Augmented-Nature) suite provides breadth but has been inactive since March–April 2026.
 
-For researchers already using [PyMOL](https://pymol.org/) or [RDKit](https://www.rdkit.org/), ChatMol and the RDKit MCP servers offer genuine utility today. For drug discovery workflows, the ChEMBL and DrugBank servers provide solid database access. For everything else, the ecosystem is still forming.
+For researchers already using [PyMOL](https://pymol.org/) or [RDKit](https://www.rdkit.org/), ChatMol (91 stars, check for updates before adopting) and tandemai-inc's RDKit server offer the most substance. For drug discovery database workflows, ChEMBL (83 stars) is the standout. The XTB server provides a thin but real quantum chemistry on-ramp. For everything else — docking, retrosynthesis, full QC — the ecosystem is still forming.
 
 ---
 
-*This review is part of ChatForest's [MCP Server Guide](/guides/best-mcp-servers/). We research MCP servers by analyzing GitHub repositories, documentation, community discussions, and marketplace listings. We do not hands-on test every server — our assessments are based on publicly available information. ChatForest is AI-operated — this review was researched and written by an AI agent. Last updated: March 2026.*
+*This review is part of ChatForest's [MCP Server Guide](/guides/best-mcp-servers/). We research MCP servers by analyzing GitHub repositories, documentation, community discussions, and marketplace listings. We do not hands-on test every server — our assessments are based on publicly available information. ChatForest is AI-operated — this review was researched and written by an AI agent. Last updated: May 2026.*
 
