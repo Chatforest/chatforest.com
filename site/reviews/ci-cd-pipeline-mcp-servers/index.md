@@ -63,6 +63,23 @@ Tools cover item management (get, query, build), node operations, queue manageme
 
 If you can't install the official plugin on your Jenkins instance, this is the best alternative.
 
+## Jordan-Jarvis/jenkins-mcp-enterprise — Enterprise Grade
+
+| Detail | Info |
+|--------|------|
+| [Jordan-Jarvis/jenkins-mcp-enterprise](https://github.com/Jordan-Jarvis/jenkins-mcp-enterprise) | ~27 stars |
+| Language | Python |
+| Status | Actively developed |
+
+An enterprise-focused Jenkins MCP server that goes well beyond the other two implementations. Key capabilities:
+
+- **AI-powered build failure diagnostics** with hierarchical sub-build discovery — traces failures across multi-stage pipelines automatically
+- **Multi-instance Jenkins management** with load-balanced routing — manage a fleet of Jenkins servers from a single MCP connection
+- **Massive log handling (10+ GB)** with intelligent streaming and chunking — avoids the context window overflow that crashes other servers on large monorepo builds
+- **Vector-powered semantic search** across build history — find similar past failures without knowing the exact job name or timestamp
+
+If you're managing enterprise Jenkins at scale — multiple instances, 10+ GB build logs, coordinated failure analysis — this server is worth evaluating despite its early star count.
+
 ## CircleCI — Official Server
 
 | Detail | Info |
@@ -89,7 +106,13 @@ If you can't install the official plugin on your Jenkins instance, this is the b
 
 **Config validation.** The `config_helper` tool lets an AI agent validate CircleCI configuration files, catching syntax errors and suggesting improvements before you push. This is genuinely useful for complex CircleCI configs.
 
-**Multiple deployment options.** NPX, Docker, or self-managed remote server. [CircleCI](https://circleci.com/) also provides an official cookbook repository with examples and integration guides.
+**Multiple deployment options.** NPX, Docker, or self-managed remote server. [CircleCI](https://circleci.com/) also provides an official cookbook repository with examples and integration guides. Available on AWS Marketplace.
+
+**Rollback operations.** `run_rollback_pipeline` with guided parameter collection and environment selection. Most CI/CD servers stop at diagnosing failures — this one can actually roll back.
+
+**Resource optimization.** `find_underused_resource_classes` identifies jobs running on oversized compute, and `download_usage_api_data` pulls usage export CSVs. Useful for cost management on large CircleCI accounts.
+
+**OpenTelemetry observability.** Tool invocations, durations, and error rates are exported as OpenTelemetry metrics, giving you visibility into how AI agents are using the MCP server itself — not just the pipelines.
 
 ### What Doesn't Work Well
 
@@ -174,6 +197,20 @@ This is the only MCP server in this review that focuses on the deployment side o
 [Buildkite](https://buildkite.com/)'s official MCP server exposes pipeline data — builds, jobs, test results — to AI tools and editors. It covers both [Buildkite Pipelines](https://buildkite.com/pipelines) and [Test Engine](https://buildkite.com/test-engine), meaning you get build status and test analytics in one server.
 
 Active development — [v1.0.0](https://github.com/buildkite/buildkite-mcp-server/releases/tag/v1.0.0) shipped March 2026, signaling production readiness. Smaller community than [CircleCI](https://circleci.com/)'s server but well-maintained by Buildkite's team.
+
+### What Works Well
+
+**Remote MCP server.** Buildkite offers a fully managed, publicly available remote MCP endpoint requiring no local installation — just authenticate and connect.
+
+**Cluster management.** v0.12.0 added 12 tools for cluster and queue CRUD operations, enabling AI agents to manage Buildkite infrastructure, not just read from it.
+
+**Build workflow tools.** v1.0.0 added `cancel_build`, `rebuild_build`, `retry_job`, and `get_job_env` — the full loop of "check failure, inspect environment, retry" is now doable in one MCP session.
+
+**Safety-conscious development.** In v0.13.0, Buildkite proactively removed `delete_cluster` and `delete_cluster_queue` tools — a rare example of a CI/CD MCP server deliberately reducing its own attack surface. This kind of restraint matters in production CI/CD tooling.
+
+### What Doesn't Work Well
+
+**Smaller market share.** Buildkite is well-regarded in the industry but serves a narrower audience than Jenkins, GitHub Actions, or CircleCI.
 
 ## Azure DevOps — Community Server
 

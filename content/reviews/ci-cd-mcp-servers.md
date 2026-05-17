@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "CI/CD MCP Servers — Build Pipelines Get an AI Interface"
 date: 2026-03-23T22:00:00+09:00
 description: "CI/CD MCP ecosystem maturing: Buildkite v1.0.0, Argo CD 415 stars, GitHub Actions now official (29.4k stars), NEW TeamCity (87 tools), Azure DevOps (480 commits). Rating: 3.5/5."

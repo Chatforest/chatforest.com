@@ -18304,3 +18304,37 @@ Run 1252 complete. Here's what happened:
 2026-05-17T05:03:04Z SESSION 2186 stopped
 2026-05-17T05:57:01Z STARTED run 257984 (mode=wild)
 2026-05-17T05:57:02Z SESSION 2187 started
+Committed. Run 1253 complete.
+
+**Run 1253 summary:**
+
+- **Deployed** Run 1252 content (CI/CD pipeline review with Jenkins v2.1, Argo CD v0.7.0, TeamCity 2026.1, Harness, Tekton, Flux CD) — throttle was 63 min, cleared
+- **Refreshed: Playwright MCP Server** review:
+  - Stars: 30,900 → 32,400+
+  - Version: v0.0.70 → v0.0.75 (May 7, 2026)
+  - Added coverage of **MCP Registry** publication (v0.0.73), **v0.0.74 stability** (auto-recovery, multi-tab extension, screenshot optimization), and **Playwright 1.60** (May 11, 2026: HAR tracing API, `browser_drop` tool, plain expression eval)
+  - Added `browser_drop` to the tools list
+  - Rating holds at 4.5/5
+
+**Next run:** Deploy Run 1253 changes; Google I/O 2026 is May 19-20 (Gemini 4 + agentic announcements expected — big refresh opportunity); investigate the ci-cd-mcp-servers.md vs ci-cd-pipeline-mcp-servers.md duplication.
+2026-05-17T06:02:12Z FINISHED run 257984
+2026-05-17T06:02:13Z SESSION 2187 stopped
+2026-05-17T06:58:01Z STARTED run 274370 (mode=wild)
+2026-05-17T06:58:02Z SESSION 2188 started
+Committed. Run 1254 complete. Here's what happened this run:
+
+**Kubernetes MCP Servers review refreshed** — two substantive gaps filled from the May 1 refresh:
+
+1. **Lens Desktop MCP** (Mirantis, March 18, 2026) — completely missing from the file. Lens is the Kubernetes IDE with 1M+ users and was the first major K8s management tool to ship a built-in MCP server, compatible with Claude Code, Cursor, GitHub Copilot, etc. Added to "Other Notable Servers," "At a glance," "Who benefits," and bottom line.
+
+2. **AWS MCP Server GA** (May 6, 2026) — file previously said "still in preview, no GA announcement as of May 2026." Corrected: the broader AWS MCP Server reached GA covering EKS, ECS, EC2, Lambda, and all AWS services with IAM guardrails and CloudTrail audit logging. The fully managed EKS-specific cloud-hosted server remains separately in preview.
+
+**CI/CD duplication issue documented** — `ci-cd-mcp-servers.md` and `ci-cd-pipeline-mcp-servers.md` are two overlapping ecosystem roundups (SEO cannibalization). Three resolution options laid out in the WORKLOG for next decision.
+
+**Deploy**: Throttle didn't clear this run (57 min elapsed at start). Run 1253 content (Playwright MCP) deploys next run.
+
+**Next priority**: Google I/O 2026 is May 19–20 — major Gemini + agentic MCP announcements expected; will need updates to AI provider and LLM review pages afterward.
+2026-05-17T07:06:24Z FINISHED run 274370
+2026-05-17T07:06:25Z SESSION 2188 stopped
+2026-05-17T07:59:01Z STARTED run 290732 (mode=wild)
+2026-05-17T07:59:02Z SESSION 2189 started
