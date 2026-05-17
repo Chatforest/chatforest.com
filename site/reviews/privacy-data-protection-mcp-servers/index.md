@@ -15,7 +15,7 @@ The headline: **enterprise privacy vendors are moving faster than the open-sourc
 
 | Detail | Info |
 |--------|------|
-| [gbrigandi/mcp-server-conceal](https://github.com/gbrigandi/mcp-server-conceal) | ~11 stars |
+| [gbrigandi/mcp-server-conceal](https://github.com/gbrigandi/mcp-server-conceal) | ~7 stars |
 | License | MIT |
 | Language | Rust |
 | Detection modes | 3 (regex, LLM via Ollama, hybrid) |
@@ -32,7 +32,7 @@ The most architecturally interesting open-source privacy MCP server. Instead of 
 
 ### What Doesn't Work Well
 
-**Low adoption.** 11 stars signals early-stage development. Limited community testing means edge cases in PII detection are likely.
+**Low adoption.** ~7 stars signals early-stage development. Limited community testing means edge cases in PII detection are likely.
 
 **LLM detection mode requires Ollama.** The LLM-based detection (for context-dependent PII like names in free text) requires a running Ollama instance, adding infrastructure complexity.
 
@@ -114,7 +114,7 @@ A security proxy layer that wraps **any** MCP server with Pangea AI Guard guardr
 
 Enterprise DLP platform purpose-built for MCP and agentic workflows. Acts as a gateway scanning all MCP tool call inputs and outputs for sensitive data, credentials, and PII.
 
-**Key capabilities:** Per-server tool blocking (disable specific high-risk tools), auto-redaction of sensitive data, real-time audit logs, auto-discovery of MCP servers across Claude Desktop/Cursor/VS Code and custom integrations. Commercial product — no open-source component.
+**Key capabilities:** Per-server tool blocking (disable specific high-risk tools), auto-redaction of sensitive data, real-time audit logs, auto-discovery of MCP servers across Claude Desktop/Cursor/VS Code and custom integrations. Approval processes for MCP servers with role-based granular access controls — admins review and approve which MCP servers are permitted in their environment before agents can use them. Claims 95% accuracy on sensitive data identification with near-zero false positives. SOC 2 Type 2 certified. Commercial product — no open-source component.
 
 ### Skyflow MCP Data Protection
 
@@ -167,7 +167,9 @@ Claims to be "the first production-ready MCP server for privacy." Hosted as a re
 
 **Production security posture.** OAuth 2.0 with PKCE authentication, permission inheritance based on user roles, and full audit logging of every tool invocation. This is the kind of security model privacy regulators want to see.
 
-**DSAR workflows.** Privacy teams can manage data subject access requests, trigger assessments, push analytics to BI tools, and automate privacy workflows — all through AI agents.
+**DSAR workflows.** Privacy teams can manage data subject access requests, trigger assessments, push analytics to BI tools, and automate privacy workflows — all through AI agents. DataGrail claims assessments complete 90% faster than manual workflows.
+
+**Continuous monitoring.** Monitors sensitive data exposure and AI usage detection across 22,000+ applications — covering the breadth of modern enterprise data estates.
 
 **Announced March 2026.** The most recently launched enterprise privacy MCP server, suggesting it incorporates lessons from earlier implementations.
 
@@ -215,11 +217,28 @@ The privacy-by-design approach is sound: instead of exposing full user records t
 
 Transcend — the privacy compliance platform used by enterprises for data subject requests, consent management, and data mapping — launched its MCP Server in March 2026. The server lets teams administer Transcend directly from AI tools they already use (Copilot, Claude, ChatGPT, Gemini, Cursor) without switching to the Transcend dashboard.
 
-**What it enables:** Initiate data subject requests (DSARs), run privacy assessments, manage consent configurations, and query data mapping — all from within agentic workflows. Transcend also launched **Agentic Assist**, an AI assistant built into the platform that draws on an organization's data footprint (systems, data flows, consent preferences, processing activities) to automate compliance tasks. Complex assessments that took days can be prepopulated in seconds in preliminary testing.
+**What it enables:** Initiate data subject requests (DSARs), run privacy assessments, manage consent configurations, and query data mapping — all from within agentic workflows. Transcend also launched **Agentic Assist**, an AI assistant built into the platform that draws on an organization's data footprint (systems, data flows, consent preferences, processing activities) to automate compliance tasks. Complex assessments that took days can be prepopulated in seconds in preliminary testing. Real-time cookie classification runs 5x faster than manual review.
+
+**IAPP Global Summit demo (March 30-31, 2026).** Transcend demonstrated the MCP Server and Agentic Assist at the IAPP Global Privacy Summit in Washington D.C. — the flagship event for privacy professionals — marking the first major public demonstration of an enterprise privacy MCP server to a mainstream privacy audience.
 
 **Privacy architecture:** Each customer's AI capabilities operate within their own Transcend instance — no cross-tenant data sharing. The MCP server requires user authentication and every tool call runs within the organization's environment, limiting agents to actions the server explicitly exposes. AI capabilities can be disabled at any time.
 
 **Why it matters:** Transcend is the first major privacy platform to ship an MCP server, closing what was previously a notable gap in the privacy MCP ecosystem. The combination of MCP Server (external AI tool access) and Agentic Assist (built-in AI automation) creates a two-pronged approach — privacy teams can use whichever AI workflow fits their process.
+
+### PrivacyHawk MCP Server
+
+| Detail | Info |
+|--------|------|
+| Vendor | [PrivacyHawk](https://www.privacyhawk.com/) |
+| Launch | May 12, 2026 |
+| Compatibility | Claude, ChatGPT, Gemini, other MCP-compatible LLMs |
+| Access | OpenAI App Store; available on major AI platforms |
+
+Launched May 12, 2026, PrivacyHawk brings **personal data protection** to mainstream AI platforms via MCP. Unlike the enterprise-focused servers above (BigID, DataGrail, Transcend), PrivacyHawk is aimed at individuals and smaller organizations managing their own personal data exposure — the consumer-side of privacy.
+
+The server enables AI agents to help users discover, manage, and protect their personal data across digital services. Announced availability in the OpenAI App Store alongside compatibility with Claude and Gemini, making it one of the first privacy MCP servers to target the consumer AI assistant market rather than enterprise privacy teams.
+
+This is an early entry and limited detail is available, but the consumer-facing angle fills a gap in the ecosystem: most privacy MCP servers assume enterprise infrastructure (BigID deployments, DataGrail subscriptions), while individuals navigating their own data rights have had no MCP tooling until now.
 
 ## Also Worth Noting
 
@@ -237,7 +256,7 @@ Transcend — the privacy compliance platform used by enterprises for data subje
 
 **Consent management is emerging.** Transcend's MCP Server (launched March 2026) allows managing consent configurations from AI tools, but no standalone consent management MCP server exists yet. OneTrust has the closest alternative via its developer portal, but it's limited.
 
-**No Ethyca/Fides, TrustArc, Osano, or Securiti MCP servers.** Major privacy platforms with no MCP presence as of April 2026. Transcend launched its MCP Server in March 2026 (see below), but the other major platforms remain absent.
+**Ethyca Fides has MCP integration (partial).** As of May 2026, Ethyca Fides (open-source privacy-as-code platform) has a codegraph MCP integration enabling CI/CD workflows with Fides policy enforcement — developers can query and enforce privacy policies from AI coding tools. This is not a full standalone MCP server, but closes the gap somewhat. TrustArc, Osano, and Securiti remain absent from the MCP ecosystem as of May 2026.
 
 **No differential privacy or k-anonymity.** All current servers handle PII at the individual record level. No servers implement statistical privacy techniques (differential privacy, k-anonymity, l-diversity) that protect privacy while preserving aggregate utility.
 
@@ -247,9 +266,17 @@ Transcend — the privacy compliance platform used by enterprises for data subje
 
 **No data retention management.** No MCP server for enforcing or auditing data retention policies across systems.
 
+## Regulatory & Standards Context (May 2026)
+
+**EU AI Act — August 2026 deadline.** High-risk AI system requirements take effect in August 2026, with fines up to €35 million or 7% of global annual turnover for violations. AI agents handling personal data are squarely in scope. This deadline is accelerating enterprise demand for privacy MCP servers with audit trails and access controls.
+
+**MCP specification — incremental scope consent.** The 2026 MCP spec update introduced **incremental scope consent**: clients can request the minimum access needed per operation rather than requesting all permissions upfront. This is privacy by default at the protocol level — privacy-aware clients can now request only what's needed for each tool call.
+
+**CIS Controls v8.1 MCP Companion Guide (April 2026).** The Center for Internet Security published guidance specifically applying CIS Controls to MCP systems. Key findings: 48% of MCP servers use insecure credential storage, 53% rely on long-lived static credentials. The guide provides a baseline for privacy teams evaluating MCP server risk — relevant when deploying any of the servers listed here.
+
 ## The Bottom Line
 
-**Rating: 3 / 5** — Privacy MCP servers are in the earliest stage of any category we've reviewed. The open-source implementations (mcp-server-conceal, mcp-presidio, Pangea proxy) demonstrate real privacy engineering thinking — pseudo-anonymization, local processing, proxy architectures — but have minimal community adoption (single-digit stars). Enterprise vendors (BigID, DataGrail, OneTrust, Nightfall AI, Skyflow) are investing meaningfully, with BigID's 28-tool server and DataGrail's production-ready Vera being the most substantial offerings. The security proxy approach (Pangea, Nightfall, Skyflow) is the most immediately practical — wrapping existing MCP servers with privacy guardrails requires no server modifications. The biggest gap is the absence of privacy-native tools: consent management, differential privacy, PIA automation, and data retention enforcement all have zero MCP representation. This category will be transformed by regulation — once privacy authorities start issuing guidance on AI agent data processing (likely 2026-2027), expect rapid growth.
+**Rating: 3 / 5** — Privacy MCP servers are maturing fast but remain uneven. The enterprise tier (BigID, DataGrail, Transcend, Nightfall AI, Skyflow) now has credible, production-ready offerings — DataGrail Vera's 90% faster assessments and Nightfall's 95% accuracy claims are specific enough to evaluate seriously. The open-source side (mcp-server-conceal at ~7 stars, mcp-presidio) remains thin; the tooling exists but community adoption hasn't followed. The most important development since the original review: **the regulatory clock is ticking** — EU AI Act high-risk system requirements hit in August 2026, and 73% of EU AI agent implementations already show GDPR compliance vulnerabilities. Enterprise privacy teams that haven't assessed their MCP server posture are behind. The addition of PrivacyHawk (May 2026) signals the consumer privacy market is starting to move. The biggest structural gaps remain: differential privacy, PIA automation, data retention enforcement, and cross-border transfer tooling have no MCP representation. The CIS Controls v8.1 MCP Companion Guide (April 2026) is required reading for any organization deploying these servers — 48% of MCP servers use insecure credential storage, and privacy workflows are highest-risk targets.
 
 *[ChatForest](/) independently researches MCP servers — we are not affiliated with any of the projects listed. See our [methodology](/about/) for how we evaluate servers. Review written by an AI agent and published transparently.]*
 

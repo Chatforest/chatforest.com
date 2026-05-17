@@ -3,7 +3,7 @@
 > Cloudflare's MCP server ecosystem gives AI assistants access to their entire platform — over 2,500 API endpoints across Workers, R2, D1, DNS, Zero Trust, and more.
 
 
-**At a glance:** 3,600 stars (product servers) / 357 stars (Code Mode), 371 forks, ~19K npm monthly downloads, 16 specialized servers, ~122K estimated all-time PulseMCP visitors, last release March 31, 2026. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance:** ~3,200 stars (product servers) / 357 stars (Code Mode), ~19K npm monthly downloads, 16 specialized servers, ~122K estimated all-time PulseMCP visitors, last release May 13, 2026. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The Cloudflare MCP server is the most ambitious MCP implementation we've reviewed. Instead of one server with a fixed set of tools, Cloudflare ships an entire ecosystem: a main API server that covers 2,500+ endpoints through a novel "Code Mode" approach, plus 16 specialized product servers for everything from Workers builds to DNS analytics to browser rendering.
 
@@ -111,6 +111,23 @@ Since our last review, Cloudflare has been exceptionally active across the MCP e
 
 **Stars grew from 3,557 to ~3,600** (product servers) and **277 to 357** (Code Mode, +29%). NPM downloads surged from ~11K to ~19K/month (+73%). PulseMCP shows ~122K all-time estimated visitors (up from ~102K). The Code Mode repo's faster star growth rate suggests the architectural approach is gaining traction.
 
+## What's New (May 2026 Update)
+
+**Browser Run rebuilt on Cloudflare Containers (May 13).** The Browser Rendering server (`browser.mcp.cloudflare.com`) received a major infrastructure upgrade. It now runs on Cloudflare Containers, which brings four concrete improvements for MCP users:
+
+- **4x browser capacity** — can now spin up 60 browsers per minute (was ~15) and handle up to 120 concurrent sessions
+- **50%+ faster Quick Action response times** — page fetching, markdown conversion, and screenshot operations are measurably faster
+- **Chrome DevTools Protocol (CDP) support** — Browser Run now exposes CDP endpoints, letting MCP clients connect to it as a remote browser. Claude Desktop, Cursor, and OpenCode can all use Browser Run as a cloud-hosted browser without running Chrome locally.
+- **WebMCP** — websites can now declare available actions for agents by embedding structured metadata. This extends the Browser Rendering server from passive scraping toward active agent-website integration.
+
+This is the most significant upgrade to any individual product server since the April ecosystem launch. For teams using Browser Run for AI-assisted web workflows, the capacity and latency improvements remove the practical ceiling that made it feel experimental.
+
+**Enterprise MCP reference architecture detailed guide (May 13).** Cloudflare published a comprehensive enterprise deployment blueprint combining remote MCP servers, Cloudflare Access (OAuth-based authorization), MCP Server Portals, AI Gateway (logging, rate limiting, cost tracking), and Cloudflare Gateway (Shadow MCP Detection, DLP). The guide addresses the three main enterprise objections to MCP adoption: security (Zero Trust enforcement on every tool call), observability (AI Gateway logs all requests and responses), and cost control (rate limiting at the gateway level).
+
+**Issue #95 (Claude Code auth) — still unresolved.** As of May 2026, API Token mode remains broken with Claude Code because it always initiates OAuth discovery before forwarding custom Authorization headers. No workaround exists; Claude Code users must use browser-based OAuth.
+
+**Issue #320 (GraphQL injection) — status unclear.** The string interpolation vulnerability in `fetchTypeDetails` had two community fix PRs (#321 and #330) submitted in March. Neither was confirmed merged as of this update; the fix may have landed quietly.
+
 ## What's Good
 
 **Code Mode is genuinely innovative.** This is the first MCP server we've reviewed that solves the "too many tools" problem architecturally rather than by limiting scope. Traditional MCP servers face a fundamental tension: more tools means more capability but more context consumption. An MCP server with 2,500 individual tool definitions would be unusable — 1.17 million tokens just for tool schemas. Code Mode collapses that to ~1,000 tokens by having the agent write code against a typed API instead. It's the difference between giving someone a menu with 2,500 items versus giving them a search bar and a kitchen.
@@ -175,7 +192,7 @@ The dual role as both MCP server provider and MCP hosting platform is strategica
 
 ## Rating: 4.5/5
 
-The Cloudflare MCP server earns a 4.5/5 — our highest rating — for solving the fundamental scalability problem in MCP with Code Mode, providing the broadest platform coverage of any single MCP server (2,500+ endpoints), and backing it with 16 specialized product servers that are all remote-first with proper OAuth authentication. The V8 sandbox execution model is genuinely secure, the `?codemode=false` fallback addresses agent competency concerns, and the enterprise architecture with Portal Code Mode and Shadow MCP Detection shows Cloudflare thinking about real deployment scenarios. It loses half a point for the unpatched GraphQL injection (#320, 34 days), the Claude Code auth incompatibility (#95), the audit log schema fragility (#352), and the still-fragmented repository structure. The innovation and execution velocity remain exceptional — npm downloads up 73%, Code Mode stars up 29% — but the security response time needs to improve to maintain this rating.
+The Cloudflare MCP server earns a 4.5/5 — our highest rating — for solving the fundamental scalability problem in MCP with Code Mode, providing the broadest platform coverage of any single MCP server (2,500+ endpoints), and backing it with 16 specialized product servers that are all remote-first with proper OAuth authentication. The V8 sandbox execution model is genuinely secure, the `?codemode=false` fallback addresses agent competency concerns, and the enterprise architecture with Portal Code Mode and Shadow MCP Detection shows Cloudflare thinking about real deployment scenarios. The May 2026 Browser Run upgrade (4x capacity, 50%+ faster, CDP support, WebMCP) shows the product servers are actively evolving, not just launched and forgotten. It loses half a point for the Claude Code auth incompatibility (#95, still unresolved), the audit log schema fragility (#352), the still-fragmented repository structure, and the uncertain status of the GraphQL injection fix (#320). The innovation and execution velocity remain exceptional — but the security response time needs to improve to maintain this rating.
 
 **Use this if:** You manage Cloudflare infrastructure and want AI-assisted operations across Workers, R2, D1, DNS, security, or any of their 2,500+ API endpoints.
 
@@ -187,5 +204,5 @@ The Cloudflare MCP server earns a 4.5/5 — our highest rating — for solving t
 
 *Disclosure: We research MCP servers using publicly available documentation, GitHub repositories, community discussions, and ecosystem data. We do not test or install MCP servers hands-on. All claims are based on published sources.*
 
-*This review was last updated on 2026-04-18 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-05-17 using Claude Opus 4.6 (Anthropic).*
 
