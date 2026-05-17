@@ -2,17 +2,17 @@
 title: "Social Media & Marketing MCP Servers — Twitter/X, Bluesky, Instagram, LinkedIn, Meta Ads, Google Ads, SEO, and More"
 date: 2026-03-15T09:55:00+09:00
 description: "Social media and marketing MCP servers are turning AI agents into social media managers, ad campaign operators, and SEO analysts — letting them post content, analyze engagement"
-og_description: "Social Media & Marketing MCP servers: XActions (203 stars, 51+ tools, no API fees — most comprehensive X/Twitter toolkit), pipeboard-co/meta-ads-mcp (791 stars, 489 commits, 133 releases — enterprise Meta Ads), DataWhisker/x-mcp-server (65 stars, 16 tools), mcpware/instagram-mcp (23 tools, TypeScript rewrite), cameronrye/atproto-mcp (57 tools for Bluesky/AT Protocol), google_ads_mcp (read-only GAQL, v23.1 API), cnych/seo-mcp (225 stars, Ahrefs scraper), Ahrefs remote MCP (mcp.ahrefs.com, paid Lite+), HubSpot MCP GA (read+write CRM, marketing content), Iterable (26-105 tools), Buffer MCP (10 tools, GraphQL API), PostPlanify/Publora multi-platform scheduling. 50+ servers reviewed. Rating: 3.5/5."
+og_description: "Social Media & Marketing MCP servers: TikTok official MCP server (May 2026, TikTok World '26, ad campaign management + TikTok Ads Skills), XActions (203 stars, 51+ tools, no API fees), pipeboard-co/meta-ads-mcp (819 stars, 489 commits, 133+ releases — enterprise Meta Ads), DataWhisker/x-mcp-server (65 stars, 16 tools), mcpware/instagram-mcp (23 tools, TypeScript rewrite), cameronrye/atproto-mcp (57 tools for Bluesky/AT Protocol), google_ads_mcp (read-only GAQL, v23.1 API), cnych/seo-mcp (225 stars, Ahrefs scraper), Ahrefs remote MCP (mcp.ahrefs.com, paid Lite+), HubSpot MCP GA (read+write CRM, marketing content), Iterable (26-105 tools), Buffer MCP (10 tools, GraphQL API), PostPlanify/Publora multi-platform scheduling. 50+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Social media and marketing MCP servers across posting, analytics, advertising, SEO, and email marketing. The landscape has matured significantly since March 2026: Meta Ads MCP hit 791 stars with 133 releases, XActions emerged as a 203-star no-API-fee Twitter toolkit with 51+ tools, HubSpot MCP went GA with read+write CRM access, Ahrefs moved to a paid remote MCP server at mcp.ahrefs.com, Google Ads MCP is officially read-only by design, and new multi-platform scheduling servers (PostPlanify, Publora, Buffer MCP) bring AI-native social management to every major platform. Instagram's mcpware rewrite delivers 23 Graph API tools. Twitter/X still has no official server but the community now offers 10+ alternatives."
-last_refreshed: 2026-04-22
+card_description: "Social media and marketing MCP servers across posting, analytics, advertising, SEO, and email marketing. **TikTok launched an official Ads MCP server** (May 13, 2026, TikTok World '26) — AI agents can now create campaigns, set bids, adjust budgets, modify targeting, and analyze creative performance via the TikTok Marketing API. Meta Ads MCP surged to 819 stars with enterprise Remote MCP. XActions remains the 51-tool no-API-fee Twitter/X toolkit. HubSpot MCP is GA with read+write CRM access. Multi-platform scheduling servers (PostPlanify, Publora, Buffer MCP) cover 10–13 platforms. Instagram's mcpware rewrite delivers 23 Graph API tools. Twitter/X and LinkedIn still have no official servers; YouTube organic posting remains a gap."
+last_refreshed: 2026-05-17
 ---
 
 Social media and marketing MCP servers are turning AI agents into social media managers, ad campaign operators, and SEO analysts. Instead of toggling between dashboards and scheduling tools, these servers let agents post content, analyze engagement, manage ad campaigns, track rankings, and coordinate multi-platform publishing — all through the Model Context Protocol.
 
 The landscape spans six areas: **Twitter/X posting and analytics** (the most fragmented category with 10+ competing servers, now led by XActions at 203 stars), **Bluesky and decentralized social** (the AT Protocol's developer-friendly ecosystem), **Instagram and LinkedIn** (business-focused integrations via Graph API and community servers), **advertising and paid media** (Meta Ads dominates at 791 stars with 133 releases), **SEO and content marketing** (Ahrefs moved to paid remote MCP, community scrapers persist), and **email marketing and scheduling** (Iterable's official 105-tool server plus new multi-platform scheduling entrants).
 
-The headline findings: **Meta Ads MCP remains the category leader** at 791 stars with 489 commits and 133 releases — the most actively developed server in this category. **XActions is the new Twitter/X powerhouse** at 203 stars with 51+ MCP tools and no API fees, using browser automation to bypass the $100/month API barrier. **HubSpot MCP went GA** with read+write CRM access and marketing content objects. **Ahrefs killed its local MCP server** in favor of a paid remote server at api.ahrefs.com/mcp. **Multi-platform scheduling via MCP is now real** — PostPlanify, Publora, Buffer, and Oktopost all ship production MCP servers for AI-native social media management. **Twitter/X still has no official server**, but the community now offers 10+ alternatives with overlapping features.
+The headline findings: **TikTok launched an official Ads MCP server** at TikTok World '26 (May 13, 2026) — AI agents can create and manage ad campaigns, set bids, shift budgets, adjust targeting, and analyze creative performance via TikTok's Marketing API, accompanied by the TikTok Ads Skills developer toolkit. **Meta Ads MCP remains the category leader** at 819 stars with 489 commits and 133+ releases — the most actively developed server in this category. **XActions is the new Twitter/X powerhouse** at 203 stars with 51+ MCP tools and no API fees, using browser automation to bypass the $100/month API barrier. **HubSpot MCP went GA** with read+write CRM access and marketing content objects. **Ahrefs killed its local MCP server** in favor of a paid remote server at api.ahrefs.com/mcp. **Multi-platform scheduling via MCP is now real** — PostPlanify, Publora, Buffer, and Oktopost all ship production MCP servers for AI-native social media management. **Twitter/X still has no official server**, but the community now offers 10+ alternatives with overlapping features.
 
 **Category:** [Business & Productivity](/categories/business-productivity/)
 
@@ -157,13 +157,28 @@ Still does exactly one thing: **extract subtitles from YouTube videos** using yt
 
 The massive gap remains — there's no comprehensive YouTube MCP server with upload, analytics, channel management, or comment moderation capabilities.
 
-### Seym0n/tiktok-mcp
+### TikTok Ads MCP Server — Official Platform Integration *(May 2026)*
+
+**TikTok's official MCP server, announced at TikTok World '26 (May 13, 2026):**
+
+- **Campaign creation** — AI agents create and launch ad campaigns autonomously via TikTok Marketing API
+- **Budget management** — shift budgets across campaigns and ad groups without manual intervention
+- **Bid optimization** — adjust bids based on performance targets
+- **Targeting** — modify audience targeting parameters through conversational AI
+- **Creative analysis** — AI-powered review of ad creative effectiveness
+- **TikTok Ads Skills** — companion developer toolkit providing modular building blocks for custom ad agent workflows on top of TikTok's infrastructure (campaign creation, performance insights, creative analysis, audience discovery, budget optimization)
+- **Google Analytics integration** — supported at launch for cross-platform attribution
+- **Compatible with Claude, ChatGPT** — via TikTok Marketing API OAuth
+
+TikTok announced the MCP server and Ads Skills toolkit at their sixth annual global ad product summit, with early access via a sign-up portal (agentic-hub). This is **the first official write-capable MCP server from TikTok** — AI agents can now do the full operational work of running TikTok ad campaigns without manual Ads Manager interaction. Access is still controlled early access (not full public GA). For a deeper dive into TikTok alongside Google, Meta, and Amazon, see our [Advertising & Ad-Tech MCP Servers](/reviews/advertising-ad-tech-mcp-servers/) category review.
+
+### Seym0n/tiktok-mcp — Community Read-Only Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
 | [Seym0n/tiktok-mcp](https://github.com/Seym0n/tiktok-mcp) | ~148 | JavaScript | MIT | 3 |
 
-Stars up from 137 to ~148. Still read-only with three tools (subtitle retrieval, post details, search). No posting or account management.
+Stars up from 137 to ~148. Still read-only with three tools (subtitle retrieval, post details, search). Predates the official TikTok Ads MCP. Useful for content analysis workflows that don't require ad management.
 
 ### Multi-Platform Scheduling Servers (NEW Category)
 
@@ -189,13 +204,13 @@ Still the most ambitious multi-platform server: **75+ tools across 13 social net
 
 ## Advertising & Paid Media
 
-### pipeboard-co/meta-ads-mcp (Category Leader — Now 791 Stars)
+### pipeboard-co/meta-ads-mcp (Category Leader — Now 819 Stars)
 
 | Server | Stars | Commits | Releases | Language | License | Tools |
 |--------|-------|---------|----------|----------|---------|-------|
-| [pipeboard-co/meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | 791 | 489 | 133 | Python | BSL 1.1 → Apache 2.0 (2029) | 26 |
+| [pipeboard-co/meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | 819 | 489+ | 133+ | Python | BSL 1.1 → Apache 2.0 (2029) | 26 |
 
-Stars up from 628 to **791** (+26%). Commits up from unknown to **489** on main. **133 releases** — extraordinary for a single-platform MCP. Now supports Streamable HTTP transport alongside stdio. The most mature Meta Ads MCP server in the ecosystem.
+Stars up from 628 (March) to **819** (+30%). **133+ releases** — extraordinary for a single-platform MCP. Now supports Streamable HTTP transport alongside stdio and is available as a cloud-hosted Remote MCP service. The most mature Meta Ads MCP server in the ecosystem.
 
 **26 tools** covering account/campaign management, creative operations, performance analytics, targeting, budget management, and OAuth. Note: legacy objectives (BRAND_AWARENESS, LINK_CLICKS, CONVERSIONS, APP_INSTALLS) are no longer valid for new campaigns — use OUTCOME-based objectives.
 
@@ -307,10 +322,13 @@ The social media and marketing MCP ecosystem remains the broadest we've reviewed
 - **Multi-platform scheduling** is now a real category (PostPlanify, Publora, Buffer, Oktopost, OpenTweet)
 - **Ahrefs** committed to remote MCP as its primary AI integration path
 
+**What's changed since April 2026:**
+- **TikTok now has an official Ads MCP server** (early access, May 13, 2026) — write-capable for ad campaigns
+
 **What hasn't changed:**
 - **Twitter/X** still has no official server (10+ community alternatives)
 - **YouTube** (503 stars) still only extracts subtitles
-- **TikTok** is still read-only
+- **TikTok organic posting** still unavailable — the official MCP is ad campaigns only
 - **LinkedIn** still has no official server
 - **Google Ads** is intentionally read-only
 
@@ -318,17 +336,17 @@ The social media and marketing MCP ecosystem remains the broadest we've reviewed
 
 - **Official Twitter/X MCP server** — the most fragmented category with no vendor support
 - **YouTube upload and analytics** — the 503-star server only reads subtitles
-- **TikTok posting** — only read-only analysis available
+- **TikTok organic posting** — the official TikTok MCP (May 2026) covers ad campaigns only; organic content creation and publishing via MCP remains unavailable
 - **LinkedIn official server** — one of the largest professional networks with no official MCP support
 - **Cross-platform analytics dashboard** — no server aggregates metrics across social platforms
 - **Organic social scheduling with analytics** — new scheduling servers exist but analytics coverage is thin
 
 ## Rating: 3.5 / 5
 
-The social media and marketing MCP space holds at **3.5/5** — the breadth continues to impress with 50+ servers covering every major platform and marketing channel, and the depth has genuinely improved in key areas. Meta Ads MCP at 791 stars with 133 releases is approaching enterprise maturity. HubSpot MCP going GA with read+write CRM access sets a new standard for vendor commitment. XActions' 51-tool, no-API-fee approach to Twitter/X is a creative solution to the API cost barrier. The emergence of multi-platform scheduling servers (PostPlanify, Publora, Buffer MCP) adds a practical new layer.
+The social media and marketing MCP space holds at **3.5/5** — the breadth continues to impress with 50+ servers covering every major platform and marketing channel, and the depth has genuinely improved in key areas. **TikTok's official Ads MCP server** (May 2026) closes a meaningful gap — AI agents can now create and manage TikTok ad campaigns without manual Ads Manager interaction, and the TikTok Ads Skills toolkit makes it extensible for custom workflows. Meta Ads MCP at 819 stars with 133+ releases is approaching enterprise maturity, now available as a cloud-hosted Remote MCP service. HubSpot MCP going GA with read+write CRM access sets a new standard for vendor commitment. XActions' 51-tool, no-API-fee approach to Twitter/X is a creative solution to the API cost barrier. The emergence of multi-platform scheduling servers (PostPlanify, Publora, Buffer MCP) adds a practical new layer.
 
-The deductions remain: **Twitter fragmentation** (10+ servers, no official one, API cost barrier driving browser automation workarounds), **YouTube's single-tool limitation** (most starred server only extracts subtitles — the biggest gap relative to platform importance), **read-only video platforms** (no posting to YouTube or TikTok), **Google Ads is intentionally read-only**, and **LinkedIn's complete absence of official support**. The Ahrefs shift to paid-only remote MCP narrows free SEO tooling options.
+The deductions remain: **Twitter fragmentation** (10+ servers, no official one, API cost barrier driving browser automation workarounds), **YouTube's single-tool limitation** (most starred server only extracts subtitles — the biggest gap relative to platform importance), **TikTok organic posting still missing** (the official TikTok MCP covers ads only), **Google Ads is intentionally read-only**, and **LinkedIn's complete absence of official support**. The Ahrefs shift to paid-only remote MCP narrows free SEO tooling options.
 
-For **social media managers**, the new multi-platform scheduling servers (PostPlanify, Publora) plus Buffer MCP provide genuine AI-native workflows. For **ad campaign managers**, Meta Ads MCP is enterprise-ready and Adspirer offers unified cross-platform coverage. For **SEO professionals**, Ahrefs remote MCP is the cleanest path if you have a paid plan; cnych/seo-mcp still works for free but is scraper-dependent. For **email marketers and CRM teams**, HubSpot GA + Iterable set the standard. The category would jump to 4.0 if YouTube, TikTok, and LinkedIn provided official MCP servers with write capabilities.
+For **social media managers**, the new multi-platform scheduling servers (PostPlanify, Publora) plus Buffer MCP provide genuine AI-native workflows. For **ad campaign managers**, Meta Ads MCP (Meta) and the new TikTok Ads MCP (TikTok) are the first-party choices; Adspirer and ads-mcp cover all four major platforms together. For **SEO professionals**, Ahrefs remote MCP is the cleanest path if you have a paid plan; cnych/seo-mcp still works for free but is scraper-dependent. For **email marketers and CRM teams**, HubSpot GA + Iterable set the standard. The category would reach 4.0 when YouTube and LinkedIn join Google, Meta, Amazon, and TikTok with official write-capable MCP servers.
 
-*This review was last edited on 2026-04-22 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-17 using Claude Sonnet 4.6 (Anthropic).*
