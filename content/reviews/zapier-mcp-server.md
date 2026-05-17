@@ -5,10 +5,10 @@ description: "Zapier's official MCP server connects AI agents to 9,000+ apps and
 og_description: "Zapier MCP Server: 9,000+ apps, 40,000+ actions, hosted remote endpoint, OAuth built-in. Task-based pricing. Rating: 3/5."
 content_type: "Review"
 card_description: "Official remote MCP server from the largest automation platform. Connects AI agents to 9,000+ apps through Zapier's hosted infrastructure. Two modes: Agentic (14 meta-tools, Beta) and Classic (manual action selection). No self-hosting option. Each MCP call costs 2 Zapier tasks."
-last_refreshed: 2026-04-15
+last_refreshed: 2026-05-17
 ---
 
-**At a glance:** 30 GitHub stars, 14 forks, remote-only (hosted), Streamable HTTP + SSE transport, 9,000+ apps, 40,000+ actions, $5B valuation, ~$300M+ revenue (2026 projected).
+**At a glance:** ~45 GitHub stars, 19 forks, remote-only (hosted), Streamable HTTP + SSE transport, 9,000+ apps, 40,000+ actions, $5B valuation, ~$300M+ revenue (2026 projected).
 
 Zapier MCP is the **official MCP server from the world's largest automation platform**. It connects AI agents like Claude, ChatGPT, and Cursor to 9,000+ apps and 40,000+ actions through Zapier's hosted infrastructure — no self-hosting, no local setup, no OAuth plumbing. Two configuration modes are available: **Classic** (manually select actions via web dashboard) and **Agentic** (Beta — 14 built-in meta-tools for in-chat action discovery and execution).
 
@@ -103,6 +103,18 @@ This is the widest client support of any MCP server we've reviewed — partly be
 ### MCP Client by Zapier (Beta)
 
 In addition to being an MCP *server*, Zapier now also functions as an MCP *client*. The [MCP Client by Zapier](https://zapier.com/apps/mcp-client-by-zapier/integrations) lets you connect external remote MCP servers into your Zaps — making Zapier bidirectional in the MCP ecosystem. Triggers include "New Tool Result" and "New Tool"; actions include "Run tool" for executing tools on connected MCP servers. MCP Client only supports Streamable HTTP and SSE transports, and each tool call costs 2 tasks. This is currently in beta.
+
+### Zapier Agents MCP Server (Separate)
+
+Zapier also offers a distinct [Agents MCP Server](https://zapier.com/mcp/agents) that goes in the opposite direction: it lets external AI tools (Claude, Cursor, etc.) trigger **Zapier Agents** — the platform's autonomous AI assistant product. The primary tool exposed is **Run Agent**, which executes a Zapier Agent and can pause until the Agent responds. This is separate from the main Zapier MCP server; configure it at zapier.com/mcp/agents if you want AI clients to invoke your Agent workflows rather than raw app actions.
+
+## Recent Updates (May 2026)
+
+**Tool Bundle Sharing (Open Beta)** — You can now export your MCP server's tool configuration as a shareable link. Teammates click the link, see your tool list, and import the bundle to their own MCP server in one step. Credentials and connected accounts are never shared — only the tool configuration. Useful for onboarding teams to a standard Zapier MCP setup without everyone manually recreating the same action list.
+
+**Action Naming** — Actions can now be assigned custom display names, making it easier to call them by a meaningful label within your AI tool rather than relying on Zapier's default action naming.
+
+**AI Field Suggestions** — When configuring actions, Zapier can now suggest field values automatically, reducing the manual effort required to set up complex actions in the web dashboard.
 
 ## App Coverage
 
@@ -203,7 +215,7 @@ Zapier MCP has the widest app coverage of any MCP server — 9,000+ apps and 40,
 
 ---
 
-*This review reflects research conducted in March–April 2026. Zapier MCP is actively evolving — check the [GitHub repository](https://github.com/zapier/zapier-mcp) and [documentation](https://docs.zapier.com/mcp/home) for the latest information.*
+*This review reflects research conducted in March–May 2026. Zapier MCP is actively evolving — check the [GitHub repository](https://github.com/zapier/zapier-mcp) and [documentation](https://docs.zapier.com/mcp/home) for the latest information.*
 
 **Category**: [Business & Productivity](/categories/business-productivity/)
 
