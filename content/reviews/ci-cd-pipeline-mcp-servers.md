@@ -1,16 +1,16 @@
 ---
-title: "CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, and More"
+title: "CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, TeamCity, Harness, and More"
 date: 2026-03-17T18:00:00+09:00
-description: "CI/CD pipeline MCP servers reviewed: Jenkins (official plugin, 76 stars, 15+ tools), CircleCI (83 stars, 14 tools), GitHub Actions (via github-mcp-server, 28.9k stars), Argo CD"
-og_description: "CI/CD pipeline MCP servers: Jenkins (official plugin, 15+ tools), CircleCI (83 stars, 14 tools), GitHub Actions (28.9k stars), Argo CD (398 stars), Buildkite, Azure DevOps, GitLab. 15+ servers reviewed. Rating: 4/5."
+description: "CI/CD pipeline MCP servers reviewed: Jenkins (v2.1 plugin), CircleCI (14 tools), GitHub Actions (via github-mcp-server), Argo CD (v0.7.0), TeamCity 2026.1, Harness (30 toolsets, 139 resource types), Buildkite, Azure DevOps"
+og_description: "CI/CD pipeline MCP servers: Jenkins (v2.1 plugin, 15+ tools), CircleCI (14 tools), GitHub Actions, Argo CD (v0.7.0), TeamCity 2026.1 native MCP, Harness (30 toolsets, 139 types), Buildkite, Azure DevOps, GitLab, Tekton, Flux CD. 18+ servers reviewed. Rating: 4/5."
 content_type: "Review"
-card_description: "CI/CD pipelines now have strong MCP coverage. Jenkins has an official plugin, CircleCI and GitHub Actions offer deep build intelligence, and Argo CD brings GitOps deployment management. The ecosystem is broad but fragmented across platforms."
-last_refreshed: 2026-04-15
+card_description: "CI/CD pipelines now have comprehensive MCP coverage. Jenkins v2.1, Argo CD v0.7.0, and TeamCity 2026.1 native MCP shipped in May 2026. Harness adds 30 toolsets across the full SDLC. The ecosystem is broad but fragmented across platforms."
+last_refreshed: 2026-05-17
 ---
 
 CI/CD is one of the better-covered categories in the MCP ecosystem — and that makes sense. Developers spend enormous amounts of time context-switching between their editor and their CI dashboard to check build statuses, debug failures, and re-trigger pipelines. MCP servers that bring pipeline data into the AI assistant eliminate that context switch.
 
-The landscape breaks into three tiers: platform-native official servers ([Jenkins](https://www.jenkins.io/), [CircleCI](https://circleci.com/), [GitHub](https://github.com/features/actions), [GitLab](https://about.gitlab.com/), [Buildkite](https://buildkite.com/), [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/)), GitOps deployment servers ([Argo CD](https://argo-cd.readthedocs.io/en/stable/)), and community alternatives that fill gaps. Most of these are actively maintained and backed by the CI/CD vendors themselves.
+The landscape breaks into three tiers: platform-native official servers ([Jenkins](https://www.jenkins.io/) v2.1, [CircleCI](https://circleci.com/), [GitHub](https://github.com/features/actions), [GitLab](https://about.gitlab.com/), [Buildkite](https://buildkite.com/), [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), [TeamCity](https://www.jetbrains.com/teamcity/) 2026.1, [Harness](https://www.harness.io/)), GitOps deployment servers ([Argo CD](https://argo-cd.readthedocs.io/en/stable/) v0.7.0, [Flux CD](https://fluxcd.io/), [Tekton](https://tekton.dev/)), and community alternatives that fill gaps. The May 2026 wave of updates — Jenkins v2.1, Argo CD v0.7.0, TeamCity native MCP, Tekton and Flux CD official servers — means essentially every major CI/CD platform now has official coverage.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -23,9 +23,10 @@ The landscape breaks into three tiers: platform-native official servers ([Jenkin
 | Transport | stdio, SSE, Streamable HTTP |
 | License | MIT |
 | Requires | [Jenkins 2.533+](https://www.jenkins.io/changelog/2.533/) |
+| Latest | [v2.1](https://plugins.jenkins.io/mcp-server/) (May 12, 2026) |
 | Plugin page | [plugins.jenkins.io/mcp-server](https://plugins.jenkins.io/mcp-server/) |
 
-The official [Jenkins](https://www.jenkins.io/) MCP Server plugin runs inside Jenkins itself as a standard plugin. It exposes 15+ tools across four categories:
+The official [Jenkins](https://www.jenkins.io/) MCP Server plugin runs inside Jenkins itself as a standard plugin. v2.1 (May 12, 2026) upgrades to MCP Java SDK v0.17.2 and implements MCP spec 2025-06-18. It exposes 15+ tools across four categories:
 
 **Job Management** — List jobs, get job details, trigger builds. The basics of interacting with Jenkins from an AI assistant.
 
@@ -143,7 +144,7 @@ This is the most popular MCP server by stars (28.9k), though that's because it c
 | Language | TypeScript |
 | Transport | stdio, HTTP stream |
 | License | Apache 2.0 |
-| Latest | [v0.6.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.6.0) (March 2026) |
+| Latest | [v0.7.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.7.0) (May 14, 2026) |
 
 [Argo CD](https://argo-cd.readthedocs.io/en/stable/) is the dominant GitOps deployment tool for [Kubernetes](https://kubernetes.io/), and its MCP server — maintained by [Akuity](https://akuity.io/) — brings deployment management into AI assistants. 12 tools cover:
 
@@ -163,7 +164,7 @@ This is the only MCP server in this review that focuses on the deployment side o
 
 **Kubernetes-only.** If you're not on [Kubernetes](https://kubernetes.io/) with [Argo CD](https://argo-cd.readthedocs.io/en/stable/), this server has no value. It's narrow by design.
 
-**Release cadence picking up.** [v0.6.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.6.0) shipped March 2026, after a gap following v0.5.0 in October 2025. For a 398-star project backed by [Akuity](https://akuity.io/), the pace is improving.
+**Active releases.** [v0.7.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.7.0) shipped May 14, 2026, following v0.6.0 in March and v0.5.0 in October 2025. The cadence is now roughly monthly, which is healthy for a project backed by [Akuity](https://akuity.io/).
 
 ## Buildkite — Official Server
 
@@ -192,7 +193,9 @@ The most popular [Azure DevOps](https://azure.microsoft.com/en-us/products/devop
 
 For CI/CD specifically, it provides pipeline execution and monitoring tools. But like the GitHub MCP server, pipelines are one part of a broader platform integration. [Microsoft](https://www.microsoft.com/) has also released an [official Azure DevOps MCP Server](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview) in public preview, which runs locally and provides access to builds, releases, and test plans.
 
-If your team is on [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), you have two solid options — the mature community server or Microsoft's official offering.
+Microsoft's official server now has two deployment modes: the **local version** reached general availability in October 2025 (VS Code + Visual Studio with GitHub Copilot agent mode), and a **remote version** entered public preview in March 2026 via Microsoft Foundry. Microsoft has indicated it plans to eventually consolidate on the remote version and archive the local repo.
+
+If your team is on [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), you have two solid options — the mature community server or Microsoft's official GA offering.
 
 ## GitLab — Built-in MCP Server
 
@@ -208,24 +211,85 @@ For CI/CD, it can retrieve pipelines for merge requests and get job details for 
 
 Community alternatives include [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) (1,400 stars) for teams wanting more customization.
 
+## TeamCity — Official MCP in 2026.1
+
+| Detail | Info |
+|--------|------|
+| Platform | [TeamCity 2026.1](https://blog.jetbrains.com/teamcity/2026/05/teamcity-20261/) |
+| Publisher | [JetBrains](https://www.jetbrains.com/) |
+| Transport | Native (bundled in TeamCity) |
+| Status | GA (May 2026) |
+
+[JetBrains](https://www.jetbrains.com/) shipped native MCP support in [TeamCity 2026.1](https://blog.jetbrains.com/teamcity/2026/05/teamcity-20261/) (May 2026), alongside a new TeamCity CLI. TeamCity is one of the most widely deployed enterprise CI/CD platforms — particularly in .NET and JVM shops — so this is a meaningful addition to the landscape. The MCP integration exposes build pipelines, run history, and test results through the standard MCP interface.
+
+Community implementations also exist — [itcaat/teamcity-mcp](https://github.com/itcaat/teamcity-mcp) (Go-based, MIT) and a TypeScript server exposing 87 typed tools — but the native 2026.1 support is the authoritative path for TeamCity shops.
+
+### What Works Well
+
+**Bundled in the platform.** No separate installation, no API token juggling — MCP comes with your TeamCity upgrade. This is the right approach for enterprise software.
+
+**New CLI companion.** The 2026.1 CLI adds programmatic access that complements MCP, useful for scripting alongside AI-driven workflows.
+
+### What Doesn't Work Well
+
+**Requires 2026.1.** Teams on older TeamCity versions won't have it. Enterprise upgrade cycles can be slow.
+
+## Harness — Full SDLC Coverage
+
+| Detail | Info |
+|--------|------|
+| [Harness MCP Server](https://developer.harness.io/docs/platform/harness-ai/harness-mcp-server/) | Official |
+| Publisher | [Harness](https://www.harness.io/) |
+| Resource types | 139 across 30 toolsets |
+| Prompt templates | 27 pre-built |
+| Transport | stdio |
+| Status | GA |
+
+[Harness](https://www.harness.io/) is one of the most comprehensive MCP servers in the CI/CD space — and it extends well beyond CI/CD. The server covers 30 toolsets with 139 resource types spanning the full software delivery lifecycle: CI/CD, GitOps, Feature Management, Cloud Cost Management, Security Testing (STO), Chaos Engineering, and broader SDLC management. 27 pre-built prompt templates accelerate common agent workflows.
+
+Harness is also available in [Google's Gemini Enterprise](https://workspace.google.com/products/gemini/) alongside Google Cloud integration, giving it a second distribution channel beyond direct MCP configuration.
+
+### What Works Well
+
+**Breadth across the SDLC.** No other CI/CD MCP server covers cloud cost, feature flags, chaos engineering, and security testing in one place. Teams that use Harness for the full platform get a single server for all of it.
+
+**Safety guardrails.** Write operations require user confirmation via elicitation, reducing the risk of an agent accidentally triggering destructive pipeline actions.
+
+**27 prompt templates.** Pre-built workflows for common tasks — debugging a failed build, checking feature flag status, reviewing cloud spend — reduce the prompt engineering burden.
+
+### What Doesn't Work Well
+
+**Harness-only.** The breadth only matters if you're already a Harness customer. Teams using GitHub Actions + Terraform + LaunchDarkly won't benefit from having all these tools in one Harness server.
+
+**30 toolsets is a lot.** Context window management becomes a concern. Teams will want to selectively enable toolsets rather than loading all 139 resource types at once.
+
 ## Other Notable Servers
 
 **[Woodpecker CI](https://woodpecker-ci.org/)** — [denysvitali/woodpecker-ci-mcp](https://github.com/denysvitali/woodpecker-ci-mcp) (4 stars) provides pipeline management, build status monitoring, and repository management for [Woodpecker CI](https://woodpecker-ci.org/). There's also a specialized pipeline failure analysis server for Woodpecker with IDE integration.
 
-**[Tekton](https://tekton.dev/)** — An [OpenShift Pipelines Tekton MCP server](https://www.pulsemcp.com/servers/openshift-pipelines-tekton) enables natural language control of [Tekton](https://tekton.dev/) CI/CD pipelines in [Kubernetes](https://kubernetes.io/) environments.
+**[Tekton](https://tekton.dev/)** — [tektoncd/mcp-server](https://github.com/tektoncd/mcp-server) is now an official server from the Tekton project (demonstrated at KubeCon EU 2026). It focuses on tektoncd/pipeline objects with future expansion planned, and integrates with Artifact Hub for task and pipeline discovery. An earlier [OpenShift Pipelines Tekton MCP server](https://www.pulsemcp.com/servers/openshift-pipelines-tekton) also provides natural language control of [Tekton](https://tekton.dev/) pipelines in [Kubernetes](https://kubernetes.io/) environments.
+
+**[Flux CD](https://fluxcd.io/)** — [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) includes an MCP server for AI-assisted GitOps, demonstrated at KubeCon EU 2026 (published April 21, 2026). Flux is one of the two dominant GitOps tools for Kubernetes (alongside Argo CD), and this fills an important gap for teams that chose Flux over Argo CD. The integration focuses on Flux Operator resources and GitOps reconciliation workflows.
+
+**[Drone CI](https://www.drone.io/)** — Community implementation [madappa-sharath/drone-ci-mcp](https://github.com/madappa-sharath/drone-ci-mcp) exposes Drone CI/CD pipelines as MCP tools. Early stage but covers the basics for teams on the Drone/Harness Drone stack.
 
 ## The Landscape
 
 | Platform | Server | Stars | Tools | Official? |
 |----------|--------|-------|-------|-----------|
-| [Jenkins](https://www.jenkins.io/) | [jenkinsci/mcp-server-plugin](https://github.com/jenkinsci/mcp-server-plugin) | 76 | 15+ | Yes |
+| [Jenkins](https://www.jenkins.io/) | [jenkinsci/mcp-server-plugin](https://github.com/jenkinsci/mcp-server-plugin) v2.1 | 76 | 15+ | Yes |
 | [Jenkins](https://www.jenkins.io/) | [lanbaoshen/mcp-jenkins](https://github.com/lanbaoshen/mcp-jenkins) | 112 | 10+ | No |
 | [CircleCI](https://circleci.com/) | [CircleCI-Public/mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | 83 | 14 | Yes |
-| [GitHub Actions](https://github.com/features/actions) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 28,900 | 6+ (Actions) | Yes |
-| [Argo CD](https://argo-cd.readthedocs.io/en/stable/) | [akuity/argocd-mcp](https://github.com/akuity/argocd-mcp) | 398 | 12 | Yes ([Akuity](https://akuity.io/)) |
+| [GitHub Actions](https://github.com/features/actions) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 28,900+ | 6+ (Actions) | Yes |
+| [Argo CD](https://argo-cd.readthedocs.io/en/stable/) | [akuity/argocd-mcp](https://github.com/akuity/argocd-mcp) v0.7.0 | 398 | 12 | Yes ([Akuity](https://akuity.io/)) |
 | [Buildkite](https://buildkite.com/) | [buildkite/buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | 50 | — | Yes |
 | [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) | [Tiberriver256/mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) | 358 | 20+ | No |
+| [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) | [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) (local GA + remote preview) | — | — | Yes |
 | [GitLab](https://about.gitlab.com/) | [Built-in](https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/) | — | — | Yes |
+| [TeamCity](https://www.jetbrains.com/teamcity/) | Native in [TeamCity 2026.1](https://blog.jetbrains.com/teamcity/2026/05/teamcity-20261/) | — | — | Yes |
+| [Harness](https://www.harness.io/) | [Harness MCP Server](https://developer.harness.io/docs/platform/harness-ai/harness-mcp-server/) | — | 139 types / 30 toolsets | Yes |
+| [Tekton](https://tekton.dev/) | [tektoncd/mcp-server](https://github.com/tektoncd/mcp-server) | — | — | Yes |
+| [Flux CD](https://fluxcd.io/) | [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) | — | — | Yes |
 | [Woodpecker](https://woodpecker-ci.org/) | [denysvitali/woodpecker-ci-mcp](https://github.com/denysvitali/woodpecker-ci-mcp) | 4 | 6+ | No |
 
 ## Who Should Use What
@@ -240,13 +304,21 @@ Community alternatives include [zereight/gitlab-mcp](https://github.com/zereight
 
 **[Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) teams:** The community server (358 stars) is mature and well-maintained. [Microsoft's official offering](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview) is in public preview.
 
-**Multi-platform teams:** You'll likely need 2-3 servers — one for your CI platform, one for your deployment tool, and possibly one for your code host.
+**[TeamCity](https://www.jetbrains.com/teamcity/) shops:** Upgrade to 2026.1 and use the native MCP support — no separate configuration required. If you're on an older version, community servers (itcaat/teamcity-mcp) fill the gap.
+
+**[Harness](https://www.harness.io/) customers:** The Harness MCP server is the broadest option in the space — 30 toolsets covering CI/CD through cloud cost, feature flags, and chaos engineering in one configuration. Enable only the toolsets relevant to your workflows to manage context window size.
+
+**[Flux CD](https://fluxcd.io/) teams:** [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) now covers GitOps deployment management the same way Argo CD's server does for Argo shops. Combine with your CI platform's MCP server.
+
+**Multi-platform teams:** You'll likely need 2-3 servers — one for your CI platform, one for your deployment tool (Argo CD or Flux CD), and possibly one for your code host.
 
 ## Rating: 4/5
 
-The CI/CD MCP server ecosystem is strong. Every major CI/CD platform has at least one MCP server, most are officially maintained, and several offer genuinely useful platform-specific features (CircleCI's flaky test detection, Jenkins's multi-transport support, Argo CD's resource-level Kubernetes visibility).
+The CI/CD MCP server ecosystem continues to strengthen. May 2026 brought Jenkins v2.1 (updated to MCP spec 2025-06-18), Argo CD v0.7.0, TeamCity 2026.1's native MCP bundled into the platform, and Tekton/Flux CD official servers demonstrated at KubeCon EU 2026. Every major CI/CD platform now has official MCP coverage.
 
-The main gap is standardization. Each server exposes different tools with different naming conventions, so there's no unified "CI/CD MCP interface" that works across platforms. If you switch from CircleCI to GitHub Actions, your agent workflows need to change too. That's the nature of platform-specific tools, but it limits the reusability of agent workflows across CI/CD platforms.
+Harness represents the most ambitious server in the category — 30 toolsets and 139 resource types spans far beyond build/deploy into cost management, feature flags, and chaos engineering. It's not for every team, but it shows what a comprehensive SDLC MCP server can look like.
+
+The main gap remains standardization. Each server exposes different tools with different naming conventions, so there's no unified "CI/CD MCP interface" that works across platforms. If you switch from CircleCI to GitHub Actions, your agent workflows need to change too. That's the nature of platform-specific tools, but it limits the reusability of agent workflows across CI/CD platforms.
 
 Still — being able to ask your AI assistant "why did the build fail?" and getting an actual answer from your CI system, without opening a browser, is a meaningful productivity improvement. The ecosystem is mature enough to recommend for production use.
 
