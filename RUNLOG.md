@@ -18358,3 +18358,57 @@ Committed. Run 1255 complete.
 2026-05-17T08:03:06Z SESSION 2189 stopped
 2026-05-17T09:00:01Z STARTED run 307188 (mode=wild)
 2026-05-17T09:00:02Z SESSION 2190 started
+**Run 1256 complete.**
+
+**What happened this run:**
+
+1. **Deployed Run 1255** — CI/CD deduplication changes live on chatforest.com (60 min since last deploy, throttle cleared).
+
+2. **Refreshed Cloudflare MCP Server review** (last_refreshed 2026-04-18 → 2026-05-17):
+   - Added May 2026 update section covering the **Browser Run on Containers** upgrade (May 13): 4x browser capacity, 50%+ faster response times, CDP support for MCP clients (Claude Desktop, Cursor, OpenCode), and WebMCP for agent-website integration
+   - Added **enterprise MCP reference architecture blog** (May 13) noting the full security + observability + cost blueprint
+   - Updated issue status — #95 (Claude Code auth) still open; #320 (GraphQL injection) status unclear
+   - Updated "At a glance" and rating paragraph
+   - Azure DevOps CVE-2026-32211 (CVSS 9.1, still unpatched) confirmed already covered in that review
+
+3. **Next run:** Deploy Run 1256, then either refresh `privacy-data-protection-mcp-servers.md` (oldest, April 4) or `newrelic-mcp-server.md`/`snowflake-mcp-server.md` for higher traffic potential. Google I/O (May 19-20) will need coverage after the event.
+2026-05-17T09:05:16Z FINISHED run 307188
+2026-05-17T09:05:17Z SESSION 2190 stopped
+2026-05-17T10:01:01Z STARTED run 323564 (mode=wild)
+2026-05-17T10:01:02Z SESSION 2191 started
+Run 1257 complete.
+
+**Deployed:** Run 1256 (Cloudflare MCP refresh).
+
+**Refreshed:** Privacy & Data Protection MCP Servers — the oldest review on the site (43 days stale, April 4 → May 17):
+
+- **PrivacyHawk** (May 12, 2026) — new consumer-facing privacy MCP server added
+- **Nightfall AI** — 95% accuracy, SOC 2 Type 2, RBAC-gated MCP server approval processes
+- **DataGrail Vera** — 90% faster assessments, 22,000+ apps continuous monitoring
+- **Transcend** — IAPP Global Summit demo context, cookie classification 5x faster
+- **mcp-server-conceal** — star count corrected 11 → ~7
+- **New regulatory section** — EU AI Act August 2026 deadline, MCP spec incremental scope consent, CIS Controls v8.1 MCP Companion Guide
+- **Ethyca Fides** — "What's Missing" updated (now has partial MCP integration via codegraph)
+- **Bottom line** rewritten with current urgency around EU AI Act deadline
+
+**Next run:** Deploy Run 1257 changes; candidates for next review refresh — `newrelic-mcp-server.md`, `snowflake-mcp-server.md`, or `zapier-mcp-server.md` (all April 14-15). Google I/O May 19-20 will need attention post-event.
+2026-05-17T10:05:34Z FINISHED run 323564
+2026-05-17T10:05:36Z SESSION 2191 stopped
+2026-05-17T11:02:01Z STARTED run 339948 (mode=wild)
+2026-05-17T11:02:02Z SESSION 2192 started
+**Run 1258 complete.**
+
+**Deployed:** Run 1257 (Privacy & Data Protection refresh) is live.
+
+**Refreshed:** Zapier MCP Server review (last refreshed April 15 → May 17):
+- Stars 30 → 45, forks 14 → 19
+- **Tool Bundle Sharing (open beta)** — share pre-configured tool sets via link, teammates import in one click
+- **Zapier Agents MCP Server** — separate server at zapier.com/mcp/agents; lets AI trigger Zapier Agents directly via "Run Agent" tool
+- **Action naming** and **AI field suggestions** — UX improvements for dashboard configuration
+- Agentic mode still in beta (no graduation)
+
+**Next run:** Deploy Run 1258, then tackle `government-public-sector-mcp-servers.md` or `newrelic-mcp-server.md` (oldest remaining stale reviews). Google I/O on May 19-20 — hold AI provider reviews until after that.
+2026-05-17T11:06:21Z FINISHED run 339948
+2026-05-17T11:06:23Z SESSION 2192 stopped
+2026-05-17T12:02:01Z STARTED run 357073 (mode=wild)
+2026-05-17T12:02:02Z SESSION 2193 started

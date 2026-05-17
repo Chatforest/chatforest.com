@@ -3,6 +3,14 @@
 > Government and public sector MCP servers are connecting AI agents to official data, legislation, procurement, and civic infrastructure.
 
 
+## Recent Updates (May 2026)
+
+**GovInfo March 2026 Release** — The U.S. GPO added 85 tracked content changes including United States Reports volumes through volume 582 (2017), digitized Congressional Serial Set volumes, additional digitized U.S. Statutes at Large in USLM XML, and new fields in Statute Compilations responses (display title, official title, original law number, amended law number). The MCP endpoint coverage grows with each release.
+
+**UK Government Internal MCP (May 14, 2026)** — The Department for Business and Trade (DBT) published a [blog post](https://digitaltrade.blog.gov.uk/2026/05/14/using-single-sign-on-and-mcp-to-safely-connect-ai-to-live-government-data/) describing their deployment of an MCP server connected to their CRM system via Single Sign-On (SSO) within a Virtual Private Cloud. This is the first documented UK government MCP implementation — though internal rather than a public data endpoint. The post details OAuth 2.0 patterns for "safely connecting AI to live government data" and signals that UK government IT teams are actively adopting MCP for secure internal tooling. Public government APIs remain unaddressed.
+
+---
+
 Government MCP servers are connecting AI agents to official data, legislation, procurement systems, and civic infrastructure. Instead of manually navigating government portals, downloading CSV files, or parsing complex API documentation, these servers let AI assistants query census data, track legislation across 50 states, search federal contracts, calculate taxes, analyze campaign finance, and access open data portals — all through the Model Context Protocol.
 
 The landscape spans eight areas: **official agency servers** (GovInfo, Census Bureau, India NSO, France data.gouv.fr, GSA), **mega-aggregators** (multi-API collections spanning dozens of federal data sources), **legislative & congressional** (bill tracking, voting records, parliamentary intelligence), **census & demographics** (population data, statistical analysis), **open data portals** (Data.gov, Socrata, international equivalents), **government procurement** (contracts, spending, tenders), **tax & revenue** (IRS calculations, compliance), and **elections & campaign finance** (FEC data, political research).
@@ -26,6 +34,8 @@ Among the **first official U.S. federal MCP servers**, [released as a public pre
 - **Presidential documents** — executive orders, proclamations, memoranda
 
 The server exposes two tools — **searchGovInfo** (discovery) and **describePackageOrGranule** (retrieval with HTML/PDF/XML renditions and MODS/PREMIS metadata) — via the endpoint `https://api.govinfo.gov/mcp` ([GPO documentation](https://github.com/usgpo/api/blob/main/docs/mcp.md)). Requires a free API key from [govinfo.gov](https://www.govinfo.gov/api-signup).
+
+The server's content coverage expands with each GPO release cycle. The [March 2026 release](https://www.govinfo.gov/features/march-2026-release-notes) added 85 tracked changes including United States Reports through volume 582, digitized Congressional Serial Set volumes, and additional Statutes at Large in USLM XML format.
 
 A community implementation by [Travis-Prall/govinfo-mcp](https://github.com/Travis-Prall/govinfo-mcp) (5 stars, Python) predates the official server by ~7 months, built against the existing GovInfo API before GPO launched their native MCP endpoint.
 
@@ -243,9 +253,9 @@ Available on [npm as @melaodoidao/datagov-mcp-server](https://www.npmjs.com/pack
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [krunal16-c/gov-ca-mcp](https://github.com/krunal16-c/gov-ca-mcp) | — | Python | — | Multiple |
+| [krunal16-c/gov-ca-mcp](https://github.com/krunal16-c/gov-ca-mcp) | — | Python | — | 193 tools |
 
-Two MCP servers in one: **Dataset MCP** for 250,000+ Canadian government datasets and **Transportation MCP** for bridges, tunnels, airports, ports, and railways with Statistics Canada cost data.
+Two MCP servers in one: **Dataset MCP** for 250,000+ Canadian government datasets and **Transportation MCP** for bridges, tunnels, airports, ports, and railways with Statistics Canada cost data. Combined coverage spans **193 tools across 15 federal, provincial, and municipal government APIs** — making it one of the most comprehensive single-country government MCP packages outside the U.S.
 
 ## Government Procurement & Spending
 
@@ -400,15 +410,15 @@ Japan's official statistics portal (e-Stat) — 3,000+ statistical tables coveri
 
 The gaps reveal what official government technology priorities haven't reached yet:
 
-- **Municipal/city services** — no 311 systems, no building permits, no utility management, no local government portals
+- **Municipal/city services** — [MunicipalMCP](https://lobehub.com/mcp/yourusername-municipalmcp) now covers municipal codes and ordinances from the Municode digital library (thousands of U.S. municipalities), but active city services — 311 systems, building permits, utility management, real-time local government portals — remain absent
 - **Voting/elections administration** — only campaign finance exists; no voter registration, ballot tracking, or election results
 - **Social services** — no benefits eligibility, unemployment insurance, welfare, or social security
 - **Immigration/visa** — no visa processing, passport status, or immigration court data
 - **Public transportation** — no transit APIs, no GTFS feeds through MCP
 - **Emergency management** — no FEMA, no emergency alerts, no disaster response coordination
 - **Public education** — no school district data, no education statistics beyond Census
-- **Most G20 nations** — UK, Germany, Australia, South Korea, Brazil, and most major economies have no official MCP servers
-- **Intergovernmental organizations** — no United Nations, World Bank, or IMF data via MCP (World Bank has excellent APIs that could be wrapped)
+- **Most G20 nations** — Germany, Australia, South Korea, Brazil, and most major economies have no official MCP servers; the UK has an internal government MCP (May 2026) but no public data endpoint
+- **Intergovernmental organizations** — community-built [World Bank Data MCP](https://github.com/llnormll/world-bank-data-mcp) and [IMF Data MCP](https://github.com/c-cf/imf-data-mcp) servers exist, but both lack official endorsement; no UN data via MCP
 
 ## The Bottom Line
 
@@ -420,7 +430,7 @@ The community ecosystem is equally impressive. The [300-tool US Government Open 
 
 Procurement and legislative tracking are the practical winners. Government contractors can integrate SAM.gov and USASpending.gov data via [15 tools](https://github.com/blencorp/capture-mcp-server) directly into AI workflows, or use [GovTribe's 50+ commercial tools](https://docs.govtribe.com/user-guide/integrations/govtribe-mcp). Policy analysts can track legislation across all 50 states simultaneously via [LegiScan MCP](https://github.com/sh-patterson/legiscan-mcp). Tax professionals get [39 tools](https://github.com/dma9527/irs-taxpayer-mcp) for federal and state calculations — including TY2025 One Big Beautiful Bill Act updates — without sending data to external services.
 
-The category loses a full point for international coverage — outside the U.S., France, India, Canada, and Japan, government MCP adoption is nearly nonexistent. The municipal gap is also significant: cities generate enormous amounts of public data through 311 systems, permit offices, and transit authorities, but none of it is accessible through MCP yet.
+The category loses a full point for international coverage — outside the U.S., France, India, Canada, and Japan, government MCP adoption is nearly nonexistent. The UK's DBT internal deployment (May 2026) is an encouraging signal — a major European government is actively building with MCP — but it's internal tooling connected to a CRM system, not a public data endpoint. Germany, Australia, and most G20 governments remain absent. Community-built World Bank and IMF MCP servers exist but lack official backing. The municipal gap is also significant: MunicipalMCP covers Municode's municipal code library, but active city services — 311 systems, permit offices, transit — remain inaccessible through MCP.
 
 For civic technologists, policy researchers, government contractors, and anyone who regularly works with public data, this is one of the most practically useful categories in the MCP ecosystem. The official agency backing provides a level of data authority and reliability that community-wrapped APIs cannot match.
 
@@ -428,5 +438,5 @@ For civic technologists, policy researchers, government contractors, and anyone 
 
 *Site operated by [Rob Nugen](https://robnugen.com).*
 
-*This review was last updated on 2026-04-14 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-05-17 using Claude Sonnet 4.6 (Anthropic).*
 
