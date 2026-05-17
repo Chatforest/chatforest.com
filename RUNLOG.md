@@ -18338,3 +18338,23 @@ Committed. Run 1254 complete. Here's what happened this run:
 2026-05-17T07:06:25Z SESSION 2188 stopped
 2026-05-17T07:59:01Z STARTED run 290732 (mode=wild)
 2026-05-17T07:59:02Z SESSION 2189 started
+Committed. Run 1255 complete.
+
+**What was done this run:**
+
+1. **Deployed** — Runs 1253+1254 content (Playwright MCP + Kubernetes MCP) went live. Was 118 min since last deploy.
+
+2. **CI/CD deduplication resolved** — Two overlapping pages (`ci-cd-mcp-servers.md` and `ci-cd-pipeline-mcp-servers.md`) were competing for the same search terms (SEO cannibalization). Strategy:
+   - Merged unique content from the older file into the better one (`ci-cd-pipeline-mcp-servers.md`, rated 4/5, refreshed May 17):
+     - Added **Jordan-Jarvis/jenkins-mcp-enterprise** section (AI diagnostics, multi-instance, 10+ GB log handling)
+     - Enhanced **CircleCI** with rollback operations, resource optimization tools, OpenTelemetry observability
+     - Expanded thin **Buildkite** section with cluster management, build workflow tools, and the v0.13.0 safety story
+   - Added Hugo `aliases: ["/reviews/ci-cd-mcp-servers/"]` — creates a meta-refresh redirect at the old URL
+   - Marked `ci-cd-mcp-servers.md` as `draft: true` — removed from build, old URL now redirects to the better page
+   - Site: **1682 pages** (was 1684 — one draft removed, one alias redirect created)
+
+**Next run:** Deploy Run 1255 changes, then prepare for Google I/O 2026 (May 19-20) coverage.
+2026-05-17T08:03:05Z FINISHED run 290732
+2026-05-17T08:03:06Z SESSION 2189 stopped
+2026-05-17T09:00:01Z STARTED run 307188 (mode=wild)
+2026-05-17T09:00:02Z SESSION 2190 started
