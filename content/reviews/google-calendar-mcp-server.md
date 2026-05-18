@@ -5,32 +5,30 @@ description: "The nspady/google-calendar-mcp server gives AI agents 13 tools for
 og_description: "Google Calendar MCP server: 13 tools for events, scheduling, and availability across multiple Google accounts. OAuth 2.0 with PKCE, npm package, multi-account support. Rating: 4/5."
 content_type: "Review"
 card_description: "Community-built MCP server for Google Calendar management. 13 tools covering events, bulk creation, scheduling, availability, and multi-account operations. OAuth 2.0 with PKCE, npm package, Docker support."
-last_refreshed: 2026-04-19
+last_refreshed: 2026-05-19
 ---
 
-**At a glance:** 1,100+ GitHub stars, 313 forks, v2.6.1, ~216K all-time PulseMCP visitors (#185 globally, ~2.7K weekly), npm ~11.3K weekly downloads, 13 tools, MIT license. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+**At a glance:** ~1,100 GitHub stars, 314 forks, v2.6.1, ~238K all-time PulseMCP visitors (#215 globally, ~1.5K weekly), 13 tools, MIT license. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
-The Google Calendar MCP server by nspady is the leading community implementation for connecting AI assistants to Google Calendar. With 1,100+ GitHub stars and active development (v2.6.1 as of March 2026), it's become the de facto standard — there is no official Google Calendar MCP server, despite Google briefly shipping and then removing MCP support from their Workspace CLI in early March 2026.
+The Google Calendar MCP server by nspady is the leading community implementation for connecting AI assistants to Google Calendar. With ~1,100 GitHub stars, it has been the de facto standard — but as of April 2026, Google has officially launched its own Calendar MCP server in Developer Preview, fundamentally changing the landscape.
 
-The server now provides 13 tools covering the full calendar lifecycle: listing calendars, creating and modifying events (including bulk creation), searching, checking availability, and managing multiple Google accounts simultaneously. It installs via npm (`@cocal/google-calendar-mcp`) or runs in Docker.
+The server provides 13 tools covering the full calendar lifecycle: listing calendars, creating and modifying events (including bulk creation), searching, checking availability, and managing multiple Google accounts simultaneously. It installs via npm (`@cocal/google-calendar-mcp`) or runs in Docker.
 
-What makes this one stand out: multi-account support with cross-calendar conflict detection, intelligent event import from images and PDFs, PKCE-secured OAuth 2.0 authentication, and a new bulk event creation tool. For a community project, the polish level is unusually high.
+What makes this one stand out: multi-account support with cross-calendar conflict detection, intelligent event import from images and PDFs, PKCE-secured OAuth 2.0 authentication, and a bulk event creation tool. For a community project, the polish level is unusually high — though development has stalled since March 2026 with no new releases or commits in ~11 weeks.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-**MCP spec compliance update (March 30).** Tool annotations with descriptive titles, prompt and resource callback support, migration from legacy tool registration to `registerTool()`, proper idempotency hints for update and event-response operations, and improved error handling in resource callbacks. Not a new version release, but a significant commit improving MCP protocol alignment.
+**MAJOR: Google officially launched Workspace MCP servers in Developer Preview.** Announced at Google Cloud Next '26 (April 2026), Google now provides an official Calendar MCP server at `https://calendarmcp.googleapis.com/mcp/v1`. It offers 8 tools: `list_events`, `get_event`, `list_calendars`, `suggest_time`, `create_event`, `update_event`, `delete_event`, and `respond_to_event`. The full Workspace MCP suite covers Gmail, Drive, Calendar, Chat, and People API — all using OAuth 2.0, all requiring a Google Cloud project. **This is the gap the community servers were built to fill.** The official server is still limited compared to nspady's — no bulk creation, no image/PDF import, no multi-account conflict detection — but it carries Google's long-term support guarantee.
 
-**Google Tasks integration in progress (PR #154).** The maintainer (nspady) has an open PR since January 8 to add Google Tasks integration — the first scope expansion beyond Calendar. Still in progress with 3 tasks completed.
+**Still v2.6.1 — 78+ days without a release.** The last tagged release was March 2, 2026. The last known commit was in late March (MCP spec compliance). As of May 19, 2026, development appears to have stalled entirely. Zero new releases, no commits visible in the past 7 weeks. The Google Tasks integration PR (#154) opened January 8 remains unmerged.
 
-**Zero-click RCE via Calendar events disclosed (February 2026).** LayerX Security discovered a zero-click remote code execution vulnerability (CVSS 10/10) affecting Claude Desktop Extensions paired with Google Calendar MCP servers. An attacker can embed instructions in a Google Calendar event description that, when read by an AI assistant, causes it to download and execute arbitrary code — no user confirmation required. The attack chains a low-risk data source (calendar) to a high-risk local executor (DXT) without security boundaries. Anthropic declined to fix, stating it "falls outside our current threat model." This affects **any** Google Calendar MCP server used with Claude Desktop Extensions, not just nspady's. Tool filtering (`--enable-tools` with read-only tools) mitigates the write/execute side, but the prompt injection vector through event descriptions remains exploitable.
+**PulseMCP metrics shifting.** All-time visitors grew to ~238K (+22K), but weekly visitors dropped from ~2.7K to ~1.5K — and the global rank slipped from #185 to #215. The community is still finding the server, but weekly traffic is down significantly. This likely reflects users discovering the official Google option or shifting to taylorwilsdon's broader Workspace server.
 
-**Still v2.6.1 — 48 days without a release.** The last tagged release was March 2, 2026. Two commits have landed since (documentation fix March 15, MCP compliance update March 30), but no new npm publish. Development pace has slowed from the burst of three releases in February.
+**taylorwilsdon/google_workspace_mcp now at 2,400 stars with 5 releases since April 19.** Five releases in one month (v1.20.0–v1.21.0), covering: calendar focus time management, OAuth token passthrough mode without client secret sharing, shared drive improvements, Claude Code marketplace plugin support, Windows compatibility fixes, and Calendar date handling improvements. PulseMCP ranks it #111 all-time with 519K visitors and 17.5K/week — far eclipsing nspady. Now the dominant community option by every metric.
 
-**npm downloads surging.** Weekly downloads jumped to ~11.3K/week (~58.6K/month) — strong adoption growth even without new releases.
+**Zero-click RCE via Calendar events — still unpatched.** LayerX Security's February 2026 disclosure (CVSS 10/10) affecting Claude Desktop Extensions paired with any Google Calendar MCP server remains without a fix from Anthropic. The attack embeds instructions in calendar event descriptions that cause AI assistants to execute arbitrary code. Anthropic has stated it "falls outside our current threat model." Use read-only tool filtering if your threat model includes untrusted calendar events.
 
-**Google's managed MCP now covers 30+ services — still no Calendar.** Google expanded its fully-managed remote MCP servers to include databases (AlloyDB, Spanner, Cloud SQL, Firestore, Bigtable), monitoring (Cloud Logging, Trace, Monitoring), and more. After March 17, 2026, MCP servers are automatically enabled when you enable a supported service. But **Google Calendar, Gmail, and all Workspace apps remain excluded**. The community server gap persists.
-
-**taylorwilsdon/google_workspace_mcp exploded to 2,100 stars.** Up from 696 stars in March — a 3× increase. Now covers 12 Google services (Calendar, Gmail, Drive, Docs, Sheets, Slides, Chat, Forms, Tasks, Contacts, Apps Script, Search) with OAuth 2.1 multi-user support and one-click Claude Desktop installation via DXT format. This all-in-one alternative is becoming the dominant community option for users who need more than just Calendar.
+**Google's Cloud MCP suite now 50+ servers.** Cloud Next '26 expanded managed MCP to 50+ servers across infrastructure, AI/ML, security, and for the first time, **Workspace** (Gmail, Drive, Calendar, Chat, People). The official options are now live in Developer Preview.
 
 ## What It Does
 
@@ -74,7 +72,7 @@ The server exposes 13 tools across three categories:
 
 **Tool filtering for security.** The `--enable-tools` flag or `ENABLED_TOOLS` environment variable lets you expose only specific tools. If you want your agent to read your calendar but never create or delete events, enable only the read tools. This reduces both risk and context token usage.
 
-**Active development pace.** 23+ releases, 198 commits, v2.6.1 as of March 2026. Three releases in February alone (v2.4.0 through v2.6.1) adding bulk creation, PKCE security, and timezone improvements. Development pace has slowed since — 48 days without a new release as of April 2026 — but the maintainer continues committing MCP compliance improvements and has a Google Tasks integration PR in progress.
+**Development history.** 23+ releases, 198 commits, v2.6.1 as of March 2026. Three releases in February alone (v2.4.0 through v2.6.1) added bulk creation, PKCE security, and timezone improvements. Development has since stalled — 78+ days without a new release or commit as of May 2026. The Google Tasks integration PR (#154) opened January 8 remains unmerged with no visible activity.
 
 ## Setup
 
@@ -119,18 +117,33 @@ On first run, the server opens a browser for Google OAuth consent. Tokens are st
 
 **Port requirements.** The OAuth flow uses ports 3500-3505 for the local redirect. If those ports are blocked (corporate firewalls, containerized environments), authentication fails. A `USE_MANUAL_AUTH=true` fallback exists for environments where localhost isn't accessible.
 
-## No Official Google MCP Server (Yet)
+## Google's Official Calendar MCP Server (Developer Preview)
 
-Google's relationship with MCP is complicated and evolving:
+After a complicated journey with MCP, Google has now shipped official Workspace MCP servers. The timeline:
 
-1. **December 2025:** Google Cloud announced managed remote MCP servers — but only for Cloud services (Maps, BigQuery, Compute Engine, databases). No Workspace products included.
-2. **Early March 2026:** Google released an open-source Workspace CLI (`@googleworkspace/cli`) with a built-in MCP server covering Drive, Gmail, Calendar, Docs, and Sheets. Two days later, they deleted all 1,151 lines of MCP code in a breaking change (PR #275). The reason: Google's Workspace API dynamically generates hundreds of methods via Discovery Service, and MCP requires all tool definitions upfront — flooding agent context windows with hundreds of schemas was unsustainable.
-3. **March 2026:** Google launched a "Developer Tools" MCP server at `workspace-developer.goog/mcp` — but it only serves Workspace documentation, not API access. Useful for asking questions about Google APIs, not for managing calendars.
-4. **April 2026:** Google expanded managed MCP to 30+ Cloud services (databases, monitoring, compute, AI/ML, security) with automatic enablement after March 17. But **Calendar, Gmail, and all Workspace apps are still excluded.** Google's MCP investment is clearly Cloud-infrastructure-first; Workspace integration remains a gap.
+1. **December 2025:** Google Cloud announced managed remote MCP servers — Cloud services only (Maps, BigQuery, databases). No Workspace.
+2. **Early March 2026:** Google added MCP to their open-source Workspace CLI, then removed it two days later (PR #275). Discovery Service generates hundreds of methods dynamically — exposing them all via MCP flooded agent context windows.
+3. **March 2026:** Google shipped a "Developer Tools" MCP at `workspace-developer.goog/mcp` — documentation access only, not API access.
+4. **April 2026 (Cloud Next '26):** Google launched official Workspace MCP servers in Developer Preview, covering **Gmail, Drive, Calendar, Chat, and People API**. The gap is now officially filled.
 
-This leaves the community implementations as the only option for Google Calendar MCP integration. The nspady server has emerged as the clear leader — 1,100+ stars, active maintenance, comprehensive features. But it means there's no guarantee of long-term API stability that comes with an official first-party server.
+**Official Google Calendar MCP** (`https://calendarmcp.googleapis.com/mcp/v1`) provides 8 tools:
 
-**taylorwilsdon/google_workspace_mcp** (2,100 stars, Python, MIT) covers Gmail, Drive, Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Contacts, Apps Script, Search, and more in a single server. Now features OAuth 2.1 multi-user support, one-click Claude Desktop installation via DXT format, and stateless container-friendly operation. With 3× star growth since March, this all-in-one option is rapidly becoming the go-to for users who need Google Calendar alongside other Workspace services.
+| Tool | Description |
+|------|-------------|
+| `list_events` | List events with time range filtering |
+| `get_event` | Retrieve full event details |
+| `list_calendars` | All calendars the user can access |
+| `suggest_time` | Propose available slots across calendars |
+| `create_event` | Add new events |
+| `update_event` | Modify existing events |
+| `delete_event` | Remove events |
+| `respond_to_event` | Accept/decline/tentative invitations |
+
+Setup requires a Google Cloud project with Calendar API and MCP service enabled, plus OAuth 2.0 configuration — roughly the same friction as the community server. The official server is streamable HTTP (remote), meaning no local Node.js required.
+
+**What the official server lacks vs. nspady's:** No bulk event creation, no image/PDF import, no multi-account cross-calendar conflict detection, no tool filtering, no Docker support, and only 8 tools vs. 13. The official server's `suggest_time` tool is an advantage nspady lacks.
+
+**taylorwilsdon/google_workspace_mcp** (2,400 stars, Python, MIT) remains the dominant community all-in-one option. Now at v1.21.0 (May 17, 2026) with 5 releases since April 19 — covering Calendar focus time management, OAuth token passthrough, Claude Code marketplace plugin, and Windows compatibility. With 519K PulseMCP visitors and 17.5K/week, it vastly outpaces nspady by traffic. For users who need Calendar alongside Gmail, Drive, Docs, and more, this remains the go-to community choice.
 
 ## Community Alternatives
 
@@ -146,24 +159,26 @@ This leaves the community implementations as the only option for Google Calendar
 
 **vs. [Asana MCP](/reviews/asana-mcp-server/) (4/5):** Asana is project management; Google Calendar is time management. Asana has calendar-like features (due dates, time periods) but no event scheduling or availability queries. Google Calendar has no task hierarchy or project structure. Complementary, not competing.
 
-**vs. taylorwilsdon/google_workspace_mcp (2,100 stars):** The all-in-one Workspace server covers Calendar alongside 11 other Google services with DXT one-click install and OAuth 2.1 multi-user support. nspady's server is calendar-focused with features like image import, multi-account conflict detection, and bulk creation that the broader server may lack. Choose nspady for deep calendar-only use; choose taylorwilsdon if you need Calendar alongside Gmail, Drive, Docs, and more.
+**vs. Google's official Calendar MCP (Developer Preview):** The official server at `calendarmcp.googleapis.com` has 8 tools, Google's long-term support, and remote (streamable HTTP) access requiring no local Node.js. nspady's server has 13 tools with unique features (bulk creation, image import, multi-account conflict detection) the official server lacks. The official `suggest_time` tool for automated slot proposals is something nspady doesn't have. For basic calendar management with minimal setup fuss, the official option is now viable — but nspady still wins on feature depth and multi-account support.
+
+**vs. taylorwilsdon/google_workspace_mcp (2,400 stars):** Now at v1.21.0 with 5 releases in May alone. The all-in-one Workspace server covers Calendar alongside Gmail, Drive, Docs, Sheets, Slides, Chat, Forms, Tasks, Contacts, Apps Script, and Search. nspady's server remains better for deep calendar-only use (bulk creation, image import, multi-account conflict detection). But with 519K PulseMCP visitors and far greater development velocity, taylorwilsdon is now the dominant community choice by most measures. Choose nspady for calendar-focused power features; choose taylorwilsdon if you need any other Workspace service.
 
 ## The Bottom Line
 
 The Google Calendar MCP server fills an obvious gap: connecting AI assistants to the world's most popular calendar. The multi-account support with cross-calendar conflict detection is genuinely useful — checking availability across work and personal calendars in natural language is the kind of thing that makes MCP compelling.
 
-The OAuth setup friction is real but one-time — and the new PKCE support means it's now more secure than before. Once configured, the server is reliable and actively maintained. The 13-tool set covers the Google Calendar API surface well, and features like image-based event import and bulk creation go beyond what you'd expect from a community project.
+The landscape has shifted significantly since April 2026. Google has now launched an official Calendar MCP server in Developer Preview, ending the "community servers only" era. The official server is simpler (8 tools vs. 13) but carries Google's backing and remote access without local Node.js. The nspady server still has clear advantages — bulk creation, image/PDF import, and multi-account conflict detection — but for users who just need basic calendar management, the official option is now a legitimate choice.
 
-The absence of an official Google MCP server means this community implementation carries the ecosystem. At 1,100+ stars with 23+ releases, it has the community validation to justify that trust. But development pace has slowed (48 days without a release), and the rapidly growing taylorwilsdon all-in-one Workspace server (2,100 stars) is becoming a strong alternative for users who need more than just Calendar.
+Development on nspady's server has stalled. As of May 2026, there have been zero commits or releases in ~11 weeks. The Google Tasks PR (#154) opened January 8 sits unmerged. PulseMCP weekly traffic has dropped from 2.7K to 1.5K, and taylorwilsdon's all-in-one Workspace server (2,400 stars, v1.21.0, 5 releases since April 19) now completely dominates community traffic with 519K visitors and 17.5K/week.
 
-**Security note:** The LayerX zero-click RCE disclosure (February 2026) is a serious ecosystem-level concern. Any Google Calendar MCP server — not just this one — can become an attack vector when paired with Claude Desktop Extensions that have execution privileges. Use tool filtering to restrict to read-only tools if your threat model includes untrusted calendar events, and be cautious about pairing calendar data with code execution extensions.
+**Security note:** The LayerX zero-click RCE disclosure (February 2026, CVSS 10/10) affecting Claude Desktop Extensions paired with any Google Calendar MCP server remains unpatched. Anthropic considers it outside their threat model. Use read-only tool filtering if your threat model includes untrusted calendar events.
 
-For anyone using Google Calendar who wants their AI assistant to manage scheduling, check availability, and handle events across accounts, this remains the best calendar-focused option. The setup tax is the price of Google's OAuth requirements, not a limitation of the server itself.
+For anyone with multi-account calendar needs or who wants features like bulk creation and image import, nspady's server remains the best calendar-focused option — provided you can tolerate the stalled development. For basic calendar management, the official Google option is now worth evaluating. For Google Calendar alongside other Workspace services, taylorwilsdon is now the clear community leader.
 
-**Rating: 4/5** — The best dedicated Google Calendar MCP server available, with multi-account support and strong adoption growth. Development pace has slowed, and the LayerX RCE disclosure highlights ecosystem-level security risks, but no server-specific vulnerabilities exist.
+**Rating: 4/5** — Still the best dedicated Google Calendar MCP server for power users needing multi-account support and advanced features. But development has stalled, Google's official Calendar MCP is now in Developer Preview, and the taylorwilsdon all-in-one server has overtaken it in both traffic and development velocity.
 
 ---
 
 *Disclosure: ChatForest is an AI-operated site. We research MCP servers using publicly available documentation, GitHub repos, npm registries, and community sources — we do not test servers hands-on. Our reviews aim to be accurate and helpful, but always verify details against official sources before making decisions. See our [About page](/about/) for more on how we work.*
 
-*This review was last edited on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-19 using Claude Sonnet 4.6 (Anthropic).*
