@@ -2,10 +2,10 @@
 title: "Music & Audio Production MCP Servers — Ableton Live, Logic Pro, REAPER, Pro Tools, FL Studio, Bitwig, Spotify, ElevenLabs, and More"
 date: 2026-03-15T16:30:00+09:00
 description: "Music and audio production MCP servers are connecting AI agents to DAWs, MIDI tools, music streaming platforms, AI music generators, synthesizers, notation software, and audio analysis libraries."
-og_description: "Music & audio MCP servers: Ableton Live (2,412 stars, 4 implementations), Logic Pro (13 stars, NEW), Pro Tools (7 stars, NEW), REAPER (50 stars, bonfire-audio), Bitwig (42 stars, NEW), Spotify (595 stars), ElevenLabs (1,309 stars, official TTS), rekordbox DJ (38 stars), MiniMax (1,400 stars, official), MuseScore (38 stars), SuperCollider (19 stars), Epidemic Sound (official). Rating: 4.5/5."
+og_description: "Music & audio MCP servers: Ableton Live (~2,500 stars, 4 implementations), Cubase (2 servers NEW — hedidjs + cubase-mix-bot fill the gap), Logic Pro (13 stars), Pro Tools (7 stars), REAPER (50 stars, bonfire-audio), Bitwig (42 stars), Spotify (595 stars), ElevenLabs (official TTS, v0.4.0 May 11), rekordbox DJ (38 stars), MiniMax (1,400 stars, official), AceDataCloud/SunoMCP (new Suno integration), mcp-music-studio (ABC+Strudel). Rating: 4.5/5."
 content_type: "Review"
-card_description: "Music and audio production MCP servers for DAWs, MIDI tools, streaming platforms, AI music generators, synthesizers, notation software, and audio analysis. The music MCP ecosystem has expanded significantly in early 2026. Ableton Live dominates DAW integration with four independent implementations — ahujasid/ableton-mcp (2,412 stars) is the most popular MCP server in any creative domain, while uisato/ableton-mcp-extended (161 stars) adds ElevenLabs voice integration and UDP high-performance mode. Logic Pro now has two MCP servers — koltyj/logic-pro-mcp (13 stars) uses five control channels simultaneously (CoreMIDI, Accessibility API, CGEvent, AppleScript, OSC) with intelligent fallback routing, filling the biggest gap noted in previous reviews. Pro Tools has skrul/protools-mcp-server (7 stars) using the official PTSL gRPC API with 36 tools. Bitwig Studio has WeModulate/bitwig-mcp-server (42 stars) and fabb/WigAI (25 stars). REAPER moved to bonfire-audio/reaper-mcp (50 stars) under a new organization. FL Studio has calvinw/fl-studio-mcp (12 stars) for piano roll interaction. MIDI tooling spans virtual ports (sandst1/mcp-server-midi), file generation (tubone24/midi-mcp-server, 35 stars), DAW-ready composition (s2d01/daw-midi-generator-mcp), hardware synthesizer control (nanassound/midi_ctrl for Arturia MicroFreak), and an Electron bridge (tezza1971/mcp-midi). Music streaming is led by varunneal/spotify-mcp (595 stars, marked inactive March 2026) and marcelmarais/spotify-mcp-server (294 stars), with Tidal (keenanbb/tidal-mcp), Apple Music (kennethreitz/mcp-applemusic, 84 stars, macOS only), and YouTube Music (21 stars) also covered. AI music generation includes the official MiniMax-AI/MiniMax-MCP (1,400 stars) with music_generation tool, lioensky/MCP-Suno (25 stars), and pasie15/mcp-server-musicgpt (24 tools). The official ElevenLabs MCP server (1,309 stars) is the standout for voice/TTS. DJ workflows are served by davehenke/rekordbox-mcp (38 stars) with library analytics and playlist management. Audio plugin hosting has agrathwohl/carla-mcp-server (11 stars) controlling VST/LV2/CLAP plugins via Carla. Music theory/analysis has brightlikethelight/music21-mcp-server (20 stars) with key detection, harmony analysis, and counterpoint generation. Music notation has two MuseScore implementations — ghchen99/mcp-musescore (38 stars) with WebSocket plugin and batch operations. Audio synthesis has two SuperCollider servers — Tok/SuperColliderMCP (19 stars) for OSC-based synthesis and agrathwohl/supercollider-mcp with 26 tools for live coding. Audio analysis includes hugohow/mcp-music-analysis (22 stars) with librosa and Whisper integration, misbahsy/video-audio-mcp (70 stars) with 30+ FFmpeg tools, and An-3/an3-audacity-mcp (22 stars) for Audacity control. Epidemic Sound launched an official MCP server (beta, September 2025) for context-aware music discovery. Remaining gaps: no Cubase/Studio One MCP servers; no SoundCloud/Deezer streaming servers; no Udio AI music generation; no sheet music OCR; no spatial audio/Dolby Atmos tools; no music rights/royalty management; no Traktor/Serato/VirtualDJ (only rekordbox). The category earns 4.5/5 — DAW coverage now spans six platforms including the industry-standard Logic Pro and Pro Tools, the MIDI ecosystem is creative and varied, streaming has expanded to Tidal, DJ workflows arrived with rekordbox, audio plugin control exists via Carla, and music theory analysis is now available. The official servers from ElevenLabs, MiniMax, and Epidemic Sound signal strong commercial interest."
-last_refreshed: 2026-04-16
+card_description: "Music and audio production MCP servers for DAWs, MIDI tools, streaming platforms, AI music generators, synthesizers, notation software, and audio analysis. May 2026 update: Cubase now has two MCP servers — hedidjs/cubase-mcp and jehandy/cubase-mix-bot fill the long-standing gap, bringing total DAW coverage to seven platforms. Ableton Live dominates with four implementations — ahujasid/ableton-mcp (~2,500 stars) remains the most popular MCP server in any creative domain, with a LofiFren fork adding 33 personality modes and ~35 extra tools. Logic Pro has koltyj/logic-pro-mcp (13 stars) using five control channels (CoreMIDI, Accessibility API, CGEvent, AppleScript, OSC). Pro Tools has skrul/protools-mcp-server (7 stars) via the official PTSL gRPC API. Bitwig has WeModulate/bitwig-mcp-server (42 stars) and fabb/WigAI. REAPER has bonfire-audio/reaper-mcp (50 stars). FL Studio has calvinw/fl-studio-mcp. New: linxule/mcp-music-studio offers two-mode composition (ABC notation + Strudel live coding) with inline Claude Desktop UI. AceDataCloud/SunoMCP is now the primary Suno integration (replacing the deleted sandraschi server), with managed hosting and Claude.ai OAuth. ElevenLabs MCP v0.4.0 (May 11, 2026) added a new tool and extended response timeouts to 300 seconds. Google Lyria 3 Pro is on Vertex AI with Gen Media MCP tools support — a community standalone MCP wrapper is the next likely development. MIDI tooling spans virtual ports, file generation, hardware synth control (Arturia MicroFreak), and Electron bridges. Streaming: Spotify (595 stars, inactive + 294-star active alternative), Tidal, Apple Music, YouTube Music. AI music generation: MiniMax (1,400 stars, official), AceDataCloud/SunoMCP, MusicGPT (24 tools). ElevenLabs official server is the standout for voice/TTS. DJ: rekordbox-mcp (38 stars). Audio plugins: Carla MCP (VST/LV2/CLAP). Music theory: music21-mcp (key detection, harmony, counterpoint). Notation: two MuseScore servers. Synthesis: two SuperCollider servers. Analysis: librosa/Whisper, FFmpeg (70 stars), Audacity. Commercial: Epidemic Sound (official, context-aware licensing). Remaining gaps: Studio One; Udio; SoundCloud/Deezer; spatial audio; music rights. Rating: 4.5/5."
+last_refreshed: 2026-05-18
 ---
 
 *Part of the [Media & Entertainment](/categories/media-entertainment/) category.*
@@ -14,7 +14,7 @@ Music and audio production MCP servers are connecting AI agents to digital audio
 
 The landscape spans ten areas: **DAW integration** (Ableton Live, Logic Pro, REAPER, Pro Tools, FL Studio, Bitwig), **MIDI tools** (virtual ports, file generation, hardware synthesizer control), **music streaming** (Spotify, Tidal, Apple Music, YouTube Music), **AI music generation** (MiniMax, Suno, MusicGPT), **voice & TTS** (ElevenLabs), **DJ & live performance** (rekordbox), **audio plugins** (Carla VST/LV2 host), **music notation & theory** (MuseScore, music21), **audio synthesis** (SuperCollider), and **audio analysis & processing** (librosa, FFmpeg, Audacity).
 
-The headline findings: **The biggest gap is now filled — Logic Pro has MCP servers.** [koltyj/logic-pro-mcp](https://github.com/koltyj/logic-pro-mcp) (13 stars) uses five control channels simultaneously (CoreMIDI, Accessibility API, CGEvent, AppleScript, OSC) with intelligent fallback routing. **Pro Tools and Bitwig also joined the ecosystem**, bringing total DAW coverage to six platforms. **Ableton Live remains the most integrated creative software** — four implementations, led by [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) with 2,412 stars. **MiniMax shipped the highest-starred AI music MCP server** — [MiniMax-AI/MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) (1,400 stars) is the official server with music generation, voice cloning, and text-to-audio. **ElevenLabs remains the standout for voice/TTS** — [1,309 stars](https://github.com/elevenlabs/elevenlabs-mcp), MIT-licensed, with TTS, voice cloning, transcription, and audio isolation. **DJ workflows arrived** — [davehenke/rekordbox-mcp](https://github.com/davehenke/rekordbox-mcp) (38 stars) brings library analytics and playlist management to AI agents. **[Epidemic Sound became the first music licensing platform to launch an MCP server](https://www.epidemicsound.com/blog/mcp-server/)** — signaling that the music industry sees AI agents as a distribution channel.
+The headline findings: **Cubase now has MCP servers** — [hedidjs/cubase-mcp](https://github.com/hedidjs/cubase-mcp) and [jehandy/cubase-mix-bot](https://github.com/jehandy/cubase-mix-bot) fill the last major DAW gap, bringing total coverage to seven platforms (though both are macOS-only, MIDI-based). **Ableton Live remains the most integrated creative software** — four implementations led by [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) with ~2,500 stars, plus a notable fork [LofiFren/ableton-mcp-lofifren](https://github.com/LofiFren/ableton-mcp-lofifren) adding 33 personality modes and ~35 extra tools. **Logic Pro and Pro Tools were added in previous cycles** — [koltyj/logic-pro-mcp](https://github.com/koltyj/logic-pro-mcp) (five control channels) and [skrul/protools-mcp-server](https://github.com/skrul/protools-mcp-server) (official PTSL gRPC API) remain the leading implementations. **New two-mode music studio** — [linxule/mcp-music-studio](https://github.com/linxule/mcp-music-studio) offers ABC notation composition and Strudel live coding with an interactive UI rendering inline in Claude Desktop. **Suno integration renewed** — [AceDataCloud/SunoMCP](https://github.com/AceDataCloud/SunoMCP) is the new primary Suno server after sandraschi/suno-mcp was deleted, with managed hosting and Claude.ai OAuth. **MiniMax remains the highest-starred AI music MCP server** — [MiniMax-AI/MiniMax-MCP](https://github.com/MiniMax-AI/MiniMax-MCP) (1,400 stars). **ElevenLabs MCP v0.4.0 (May 11, 2026)** added a new tool and extended response timeouts. **Google Lyria 3 Pro is now on Vertex AI** with Gen Media MCP tools support — a standalone community MCP wrapper is anticipated. **[Epidemic Sound remains the first music licensing platform with an MCP server](https://www.epidemicsound.com/blog/mcp-server/)** — signaling that the music industry sees AI agents as a distribution channel.
 
 ## DAW Integration
 
@@ -31,7 +31,7 @@ The most popular music MCP server by far. Provides two-way socket-based communic
 - **MIDI clip creation and editing** with note insertion
 - **Playback control** and session manipulation
 
-The server uses a socket connection to a [MIDI Remote Script](https://github.com/ahujasid/ableton-mcp) inside Ableton, allowing real-time bidirectional control. At 2,412 stars, this is among the highest-starred MCP servers in any creative category.
+The server uses a socket connection to a [MIDI Remote Script](https://github.com/ahujasid/ableton-mcp) inside Ableton, allowing real-time bidirectional control. At ~2,500 stars, this is among the highest-starred MCP servers in any creative category. **May 2026:** [LofiFren/ableton-mcp-lofifren](https://github.com/LofiFren/ableton-mcp-lofifren) is a notable fork adding a 33-personality style system, ~35 extra MCP tools, batch commands, and an arrangement-view beta.
 
 **April 28, 2026:** Anthropic launched an official [Claude Connector for Ableton Live](/guides/claude-connectors-creative-tools/) that gives Claude deep knowledge of Ableton's documentation library. That connector is documentation-focused — it does not control Live sessions directly. ahujasid/ableton-mcp remains the primary option for direct DAW control.
 
@@ -109,6 +109,24 @@ Enables Claude to interact directly with FL Studio's piano roll:
 - `clear_queue()` — discard pending requests
 
 Creates melodies, chord progressions, and musical patterns through natural language with automatic real-time updates via built-in keystroke triggers. Fully functional on macOS; Windows support is partial.
+
+### Cubase — hedidjs/cubase-mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [hedidjs/cubase-mcp](https://github.com/hedidjs/cubase-mcp) | — | Python | — | Multiple |
+
+An MCP server enabling Claude to control Steinberg Cubase via Virtual MIDI. Requires configuring a Virtual MIDI Port on macOS and setting up a Cubase Generic Remote that maps incoming MIDI messages to Cubase actions. Real-time communication via a Python script. **This fills the Cubase gap noted in previous reviews** — Cubase was the single largest remaining DAW absent from the MCP ecosystem.
+
+### Cubase — jehandy/cubase-mix-bot
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [jehandy/cubase-mix-bot](https://github.com/jehandy/cubase-mix-bot) | — | — | — | Multiple |
+
+An MCP server for Cubase 13 Pro using the official Cubase MIDI Remote API and communicating over macOS IAC Driver MIDI ports. Supports transport control (play, stop, record, loop, rewind to start, metronome), mixer access, and locator navigation. The MIDI Remote API gives it a slightly more stable foundation than pure UI automation.
+
+**Note:** Both Cubase MCP servers are macOS-only and rely on MIDI routing rather than a programmatic scripting API — Steinberg does not expose a full scriptable control surface API equivalent to Ableton's Remote Script system. A [Steinberg community thread](https://forums.steinberg.net/t/full-scripting-api-for-cubase-the-ai-integration-gap-is-now-a-competitive-threat/1026258) discusses the competitive pressure this creates. These implementations are functional but inherently limited compared to DAWs with proper scripting APIs.
 
 ### Logic Pro — koltyj/logic-pro-mcp
 
@@ -279,9 +297,13 @@ A Tidal MCP server providing access to the Tidal music streaming platform. Avail
 
 The official [MiniMax](https://www.minimax.io/) MCP server — by far the highest-starred AI music generation MCP server. Includes a `music_generation` tool powered by the music-1.5 model, plus text-to-audio, voice cloning, and voice design capabilities. At 1,400 stars, this dwarfs every other AI music MCP server and signals serious commercial investment in the space.
 
-### Suno AI — sandraschi/suno-mcp (Removed)
+### Suno AI — AceDataCloud/SunoMCP
 
-**This repository has been confirmed deleted as of April 2026.** Previously the most comprehensive Suno integration (34 stars), using Playwright browser automation for music generation from text prompts, stem extraction, and Suno Studio tools. No longer available.
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [AceDataCloud/SunoMCP](https://github.com/AceDataCloud/SunoMCP) | — | Python | — | Multiple |
+
+A Suno AI MCP server via the [Ace Data Cloud](https://platform.acedata.cloud/) API, available as `pip install mcp-suno`. Supports music generation from text prompts (inspiration mode), custom lyrics + style, song extension, cover/remix creation, and lyrics generation. Returns full audio tracks. Can connect directly on Claude.ai via OAuth with no local installation. Includes a managed hosted MCP server option. **This is the primary Suno integration after sandraschi/suno-mcp was deleted in April 2026.**
 
 ### Suno AI — lioensky/MCP-Suno
 
@@ -289,7 +311,7 @@ The official [MiniMax](https://www.minimax.io/) MCP server — by far the highes
 |--------|-------|----------|---------|-------|
 | [lioensky/MCP-Suno](https://github.com/lioensky/MCP-Suno) | ~25 | JavaScript | — | 1 tool |
 
-A lighter Suno integration with a single `generate_music_suno` tool supporting custom and inspiration modes, continuation for extending existing songs, and configurable model versions (chirp-v3-0 through chirp-v4).
+A lighter Suno integration with a single `generate_music_suno` tool supporting custom and inspiration modes, continuation for extending existing songs, and configurable model versions (chirp-v3-0 through chirp-v4). Less actively maintained than AceDataCloud/SunoMCP.
 
 ### MiniMax Music — falahgs/mcp-minimax-music-server
 
@@ -315,6 +337,20 @@ The most tool-rich AI audio server, integrating the MusicGPT API for:
 
 24 tools across 6 categories make this the broadest single audio MCP server, though it requires the MusicGPT commercial API.
 
+### MCP Music Studio — linxule/mcp-music-studio
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [linxule/mcp-music-studio](https://github.com/linxule/mcp-music-studio) | — | TypeScript | MIT | Multiple |
+
+A two-mode MCP music studio combining scored composition and live performance in a single server:
+
+- **Scored composition mode** — ABC notation with sheet music rendering, 30+ instruments (piano, strings, brass, woodwinds, synths), 8 style presets (rock, jazz, bossa, waltz, march, reggae, folk, classical), and visual note highlighting during playback
+- **Live performance mode** — [Strudel](https://strudel.cc/) live coding REPL with TidalCycles pattern syntax and a full Strudel guide (7 reference topics) accessible via `get-strudel-guide` tool
+- **Inline Claude Desktop UI** — renders an interactive ext-apps UI directly inside Claude Desktop, claude.ai, and other MCP clients without a separate browser
+
+Forked from Anthropic's Sheet Music Server MCP ext-app example. A companion server, [williamzujkowski/strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server), focuses exclusively on Strudel.cc live coding patterns.
+
 ## Voice & Text-to-Speech
 
 ### ElevenLabs — elevenlabs/elevenlabs-mcp (Official)
@@ -335,7 +371,7 @@ The official [ElevenLabs](https://elevenlabs.io/) MCP server — the highest-sta
 - Configurable output modes (files, resources, or both)
 - Data residency support for enterprise users
 
-Works with Claude Desktop, Cursor, Windsurf, OpenAI Agents, and other MCP clients. [63 commits and 10+ releases](https://github.com/elevenlabs/elevenlabs-mcp/releases) indicate active maintenance.
+Works with Claude Desktop, Cursor, Windsurf, OpenAI Agents, and other MCP clients. Active development with regular releases — **v0.4.0** shipped May 11, 2026, adding a new tool, increased MCP response timeout to 300 seconds, and SDK updates including conversation tags, batch calling filters, and MCP response timeout configuration.
 
 ## Music Notation
 
@@ -514,9 +550,9 @@ Available via MCP, HTTP REST API, and CLI interfaces. Note: MCP connection succe
 
 The music MCP ecosystem has narrowed its gaps significantly but some remain:
 
-- **DAWs** — Cubase and Studio One still have no MCP servers despite significant professional user bases
+- **DAWs** — Cubase now has two community servers ([hedidjs/cubase-mcp](https://github.com/hedidjs/cubase-mcp) and [jehandy/cubase-mix-bot](https://github.com/jehandy/cubase-mix-bot)), both macOS-only via MIDI routing. Studio One still has no MCP server.
 - **Streaming platforms** — no SoundCloud, Deezer, or Amazon Music servers (Tidal gap was recently filled)
-- **AI music generation** — no Udio integration despite being Suno's main competitor; no Google Lyria MCP wrapper
+- **AI music generation** — no Udio integration despite being Suno's main competitor; Google Lyria 3 and Lyria 3 Pro are now on Vertex AI with API access and a "Gen Media MCP tools" reference, but no standalone community MCP server yet — watch for this to change around or after Google I/O 2026 (May 19–20)
 - **Sheet music OCR** — no optical music recognition for scanning physical scores
 - **Podcast production** — no dedicated podcast editing workflow (only basic Audacity control)
 - **DJ/live performance** — rekordbox has a server, but no Traktor, Serato, or VirtualDJ integration
@@ -524,15 +560,15 @@ The music MCP ecosystem has narrowed its gaps significantly but some remain:
 - **Spatial audio** — no Dolby Atmos, Ambisonics, or binaural processing tools
 - **Music rights** — no royalty tracking, ISRC management, or distribution platform integration
 - **Hardware** — only one hardware synth integration (Arturia MicroFreak); no support for other MIDI controllers, drum machines, or modular synths
-- **Logic Pro / Pro Tools limitations** — both exist but rely on UI automation / limited APIs rather than deep DAW integration; no access to automation curves or region MIDI data
+- **Logic Pro / Pro Tools / Cubase limitations** — Logic Pro and Pro Tools rely on UI automation / limited APIs; Cubase servers use MIDI routing rather than a proper scripting API; none provide access to automation curves or region MIDI data
 
 ## The Bottom Line
 
-The music and audio production MCP ecosystem earns **4.5 out of 5** — up from 4.0 in our last review, reflecting substantial expansion across multiple categories. Ableton Live integration remains exceptional — four independent implementations with the flagship at [2,412 stars](https://github.com/ahujasid/ableton-mcp) makes it the best-served creative application in the entire MCP ecosystem. But the biggest story since our last review is that **Logic Pro and Pro Tools now have MCP servers**, filling what was previously the single largest gap. [koltyj/logic-pro-mcp](https://github.com/koltyj/logic-pro-mcp) uses five control channels for robust Logic Pro integration, while [skrul/protools-mcp-server](https://github.com/skrul/protools-mcp-server) leverages the official PTSL gRPC API. Bitwig also gained two implementations. Total DAW coverage now spans six platforms.
+The music and audio production MCP ecosystem earns **4.5 out of 5** — a rating that holds from our last review, reflecting continued strong coverage with meaningful incremental additions in May 2026. Ableton Live integration remains exceptional — the flagship [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) has grown to ~2,500 stars, and a notable fork ([LofiFren/ableton-mcp-lofifren](https://github.com/LofiFren/ableton-mcp-lofifren)) adds 33 personality modes and ~35 extra tools for producers who want more creative control. The biggest development this cycle is **Cubase filling its gap** — [hedidjs/cubase-mcp](https://github.com/hedidjs/cubase-mcp) and [jehandy/cubase-mix-bot](https://github.com/jehandy/cubase-mix-bot) bring Cubase into the MCP ecosystem for the first time, though both are macOS-only and work via MIDI routing rather than a proper scripting API. Total DAW coverage now spans seven platforms (Ableton, Logic Pro, REAPER, Pro Tools, FL Studio, Bitwig, and now Cubase).
 
-Beyond DAWs, the ecosystem expanded in several directions: **DJ workflows** arrived with [rekordbox-mcp](https://github.com/davehenke/rekordbox-mcp) (38 stars), **audio plugin hosting** appeared via [Carla MCP](https://github.com/agrathwohl/carla-mcp-server) (VST/LV2/CLAP), **music theory analysis** launched with [music21-mcp](https://github.com/brightlikethelight/music21-mcp-server) (key detection, harmony, counterpoint), **Tidal streaming** coverage was added, and the official [MiniMax MCP](https://github.com/MiniMax-AI/MiniMax-MCP) (1,400 stars) became the highest-starred AI music generation server. The official [ElevenLabs server](https://github.com/elevenlabs/elevenlabs-mcp) (1,309 stars) remains the standard for voice/TTS, and [Epidemic Sound](https://www.epidemicsound.com/blog/mcp-server/) continues as a pioneer in AI-native music licensing.
+Other May 2026 additions: **[AceDataCloud/SunoMCP](https://github.com/AceDataCloud/SunoMCP)** is now the primary Suno integration (replacing the deleted sandraschi server), with managed hosting and Claude.ai OAuth. **[linxule/mcp-music-studio](https://github.com/linxule/mcp-music-studio)** is an interesting two-mode server offering both ABC notation score composition and Strudel live coding with an inline interactive UI. **ElevenLabs MCP v0.4.0** (May 11) shipped a new tool and extended response timeouts to 300 seconds. **Google Lyria 3 Pro** is now on Vertex AI with Gen Media MCP tools support — a community standalone MCP wrapper is the next likely development, especially with Google I/O 2026 (May 19–20) approaching.
 
-The remaining limitations are narrower: Cubase and Studio One still have no MCP presence, the Logic Pro and Pro Tools servers rely on UI automation rather than deep API access, and there's still no Udio, spatial audio, or music rights management. But for producers working across Ableton, Logic Pro, REAPER, Pro Tools, FL Studio, or Bitwig, AI-assisted music production through MCP is now remarkably capable.
+The remaining limitations: Studio One still has no MCP presence, the Cubase/Logic Pro/Pro Tools servers lack deep API access (no automation curves, no region MIDI data), and there's still no Udio, spatial audio, or music rights management. But for producers across seven major DAWs, AI-assisted music production through MCP has become genuinely broad.
 
 ---
 
@@ -540,7 +576,7 @@ The remaining limitations are narrower: Cubase and Studio One still have no MCP 
 
 **Can MCP servers control my DAW in real time?**
 
-Yes — six DAWs now have MCP support. Ableton Live has the best coverage — [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) (2,412 stars) connects through Ableton's MIDI Remote Script and lets your AI agent create tracks, add MIDI clips, adjust mixer settings, and control playback in real time. Logic Pro now has [koltyj/logic-pro-mcp](https://github.com/koltyj/logic-pro-mcp) (13 stars) using five control channels. Pro Tools has [skrul/protools-mcp-server](https://github.com/skrul/protools-mcp-server) using the official PTSL gRPC API. REAPER has [bonfire-audio/reaper-mcp](https://github.com/bonfire-audio/reaper-mcp) for mixing and mastering workflows. Bitwig has [WeModulate/bitwig-mcp-server](https://github.com/WeModulate/bitwig-mcp-server) (42 stars). FL Studio has basic piano roll interaction. Cubase and Studio One still have no MCP servers.
+Yes — seven DAWs now have MCP support. Ableton Live has the best coverage — [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) (~2,500 stars) connects through Ableton's MIDI Remote Script and lets your AI agent create tracks, add MIDI clips, adjust mixer settings, and control playback in real time. Logic Pro has [koltyj/logic-pro-mcp](https://github.com/koltyj/logic-pro-mcp) using five control channels. Pro Tools has [skrul/protools-mcp-server](https://github.com/skrul/protools-mcp-server) using the official PTSL gRPC API. REAPER has [bonfire-audio/reaper-mcp](https://github.com/bonfire-audio/reaper-mcp) for mixing and mastering workflows. Bitwig has [WeModulate/bitwig-mcp-server](https://github.com/WeModulate/bitwig-mcp-server). FL Studio has basic piano roll interaction. Cubase now has [hedidjs/cubase-mcp](https://github.com/hedidjs/cubase-mcp) and [jehandy/cubase-mix-bot](https://github.com/jehandy/cubase-mix-bot) (both macOS-only, MIDI-based). Studio One still has no MCP server.
 
 **Can I generate music from text prompts using MCP?**
 
@@ -568,7 +604,7 @@ Yes — the MIDI ecosystem is one of the strongest areas. [sandst1/mcp-server-mi
       "name": "Can MCP servers control my DAW in real time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — six DAWs now have MCP support. Ableton Live has the best coverage (ahujasid/ableton-mcp, 2,412 stars). Logic Pro has koltyj/logic-pro-mcp using five control channels. Pro Tools has skrul/protools-mcp-server using the official PTSL gRPC API. REAPER, Bitwig, and FL Studio also have servers. Cubase and Studio One still have no MCP servers."
+        "text": "Yes — seven DAWs now have MCP support. Ableton Live has the best coverage (ahujasid/ableton-mcp, ~2,500 stars). Logic Pro has koltyj/logic-pro-mcp using five control channels. Pro Tools has skrul/protools-mcp-server using the official PTSL gRPC API. REAPER, Bitwig, and FL Studio also have servers. Cubase now has hedidjs/cubase-mcp and jehandy/cubase-mix-bot (both macOS-only, MIDI-based). Studio One still has no MCP server."
       }
     },
     {
