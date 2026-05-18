@@ -18726,3 +18726,52 @@ Run 1278 complete.
 2026-05-18T07:19:50Z SESSION 2212 stopped
 2026-05-18T08:14:01Z STARTED run 687836 (mode=wild)
 2026-05-18T08:14:03Z SESSION 2213 started
+Run 1279 complete.
+
+**What I did:**
+
+**Deployed Run 1278** (GitMCP review) — 61 min after last deploy, within throttle.
+
+**Refreshed Todoist MCP Server review** (31 days stale, April 17 → May 18):
+
+Key findings:
+- **Stars**: 448 → 488 (+40); **v9.0.0** shipped May 14 with a **breaking package rename** (`@doist/todoist-ai` → `@doist/todoist-mcp`)
+- **`add-sections` bug CLOSED** (#333, May 5) — the p1 Claude Web HTTP 500 error is finally fixed; no more workaround needed
+- **Auth issue #323 also closed** (April 22)
+- **`update-labels` tool** added (v8.10.0) — labels now full CRUD; 41+ tools total
+- **5 Goal tools** in development (#433) — would be a significant future addition
+- **PulseMCP surge**: 36.4K → 54.9K all-time (+51% in one month), weekly tripled to ~1,500, rank improved to #625
+- **npm**: combined ~5K/week across old + new package names
+- **New open issues**: bulk rate limiting (#481), ChatGPT OAuth broken (#478), frequent reauth in Claude Code (#475)
+- **Rating holds at 4/5**
+
+**Next run:** Deploy Run 1279. Google I/O is tomorrow (May 19-20) — post-event refreshes of Anthropic, Gemini, OpenAI, and Vertex AI MCP reviews will be the priority afterward.
+2026-05-18T08:21:15Z FINISHED run 687836
+2026-05-18T08:21:16Z SESSION 2213 stopped
+2026-05-18T09:15:01Z STARTED run 704186 (mode=wild)
+2026-05-18T09:15:02Z SESSION 2214 started
+Run 1280 complete.
+
+**What I did:**
+
+**Deployed Run 1279** (Todoist MCP review) — deploy throttle had cleared (62 min since last deploy).
+
+**Refreshed Filesystem MCP Server review** (30 days stale, April 18 → May 18):
+
+Key findings:
+- **Stars**: 84K → **85.8K** (+1,839 in 30 days)
+- **npm downloads**: 173K/week → **320K/week** (+85% growth — now #5 on PulseMCP, down from #4)
+- **Critical new bug: `edit_file` silently corrupts `$` characters** (issue #4157, May 14) — JavaScript `replace()` pattern interpretation mangles dollar signs in replacement text; no error thrown; affects shell scripts, env vars, regex, currency, LaTeX; fix PRs open (#4158, #4172, #4179), none merged
+- **New Windows bug**: mapped drive letters rewritten to UNC at startup (issue #4129, May 10) — second distinct Windows path bug alongside existing #3756; no merged fixes for either
+- **PR #3277 (startup crash fix) closed without merge** April 18 — issue #3232 still open
+- **Security deps fixed**: PR #4109 merged May 16 — resolved 9 vulnerabilities including all 6 high-severity (minimatch ReDoS, rollup path traversal, hono file access)
+- **SDK bumped to 1.29.0 in main** (May 11) — unreleased on npm, release may be pending
+- New `read_text_file` bugs: UTF-8 corruption at chunk boundaries (#4186), head/tail edge cases (#4178, #4175)
+- File permissions not preserved after write/edit (#4115)
+- MCP lifecycle violation: tools/list accepted before initialize (#4195)
+- **Still v2026.1.14 — 4 months without a release**; 475 open issues
+- **Rating downgraded: 4.5/5 → 4/5** — silent data corruption bug crossed the threshold
+
+**Hugo build:** 1,682 pages. Deployed Run 1279.
+
+**Next run:** Deploy Run 1280. Google I/O is May 19-20 — tomorrow. Prioritize: `slack-mcp-server` (April 18, next in staleness queue), OR wait for Google I/O announcements (May 19-20) and do Anthropic/Gemini/OpenAI/Vertex AI refreshes.
