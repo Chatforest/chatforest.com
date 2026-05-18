@@ -1,14 +1,14 @@
 ---
 title: "The Vercel MCP Server — Deployment Monitoring and Management Through Your AI Assistant"
 date: 2026-03-14T08:19:19+09:00
-description: "Vercel's official MCP server gives AI assistants authenticated access to your projects, deployments, logs, and domains. 13 tools, OAuth authentication, remote-first architecture."
-og_description: "Vercel's official MCP server connects AI assistants to your deployment platform — projects, logs, domains, and more. 13 tools, OAuth, remote server at mcp.vercel.com. Rating: 3.5/5."
+description: "Vercel's official MCP server gives AI assistants authenticated access to your projects, deployments, logs, and domains. 19 tools, OAuth authentication, remote-first architecture."
+og_description: "Vercel's official MCP server connects AI assistants to your deployment platform — projects, logs, domains, and more. 19 tools, OAuth, remote server at mcp.vercel.com. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Vercel's first-party MCP server for AI-assisted deployment management. OAuth authentication, 13 tools covering projects, deployments, logs, domains, and documentation — all from a remote server at mcp.vercel.com."
-last_refreshed: 2026-04-18
+card_description: "Vercel's first-party MCP server for AI-assisted deployment management. OAuth authentication, 19 tools covering projects, deployments, logs, domains, toolbar threads, and documentation — all from a remote server at mcp.vercel.com."
+last_refreshed: 2026-05-18
 ---
 
-**At a glance:** Remote server at mcp.vercel.com, OAuth authentication, 13 tools, Streamable HTTP transport. 12 approved MCP clients (Claude, Cursor, VS Code Copilot, ChatGPT, Codex CLI, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, Gemini CLI). PulseMCP ~162K all-time visitors (#235 globally, ~8K weekly, #183 this week). Public beta. Free. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance:** Remote server at mcp.vercel.com, OAuth authentication, 19 tools, Streamable HTTP transport. 12 approved MCP clients (Claude Code, Claude.ai, ChatGPT, Codex CLI, Cursor, VS Code Copilot, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, Gemini CLI). PulseMCP ~216K all-time visitors (#231 globally, ~10.2K weekly). Public beta. Free. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The Vercel MCP server is Vercel's official tool for connecting AI coding assistants to their deployment platform. It launched in August 2025 as a hosted remote server at `mcp.vercel.com` — no npm package to install, no stdio process to manage. Point your MCP client at the URL, authenticate via OAuth, and you get access to your projects, deployments, build logs, runtime logs, and domains through natural language.
 
@@ -16,9 +16,21 @@ It implements the latest MCP specifications: Streamable HTTP transport and MCP A
 
 The key question: does wrapping the Vercel dashboard in MCP tools actually make deployment workflows better, or is this a thin layer over what the CLI and dashboard already do well?
 
+## What's New (May 2026 Updates)
+
+The biggest change since April is tool expansion — the server has grown from 13 to 19 tools with the addition of a Toolbar category.
+
+**Toolbar tools added (6 new tools).** Agents can now interact with Vercel Toolbar comment threads on preview deployments. The new tools cover the full comment workflow: `list_toolbar_threads`, `get_toolbar_thread`, `change_toolbar_thread_resolve_status`, `reply_to_toolbar_thread`, `edit_toolbar_message`, and `add_toolbar_reaction`. This is useful for teams that use Vercel's in-browser review tools to annotate staging deployments — agents can now read those comments, respond, or close threads.
+
+**Environment variable management confirmed on roadmap.** After sustained community pressure on the Vercel forums, Vercel acknowledged that env var tools (`list_env`, `get_env`, `set_env`, `delete_env`) are on the roadmap. No timeline was given, but it's the first time they've publicly confirmed this is coming. Currently the #1 requested feature.
+
+**PulseMCP traffic surged.** Weekly visitors climbed from ~8K to ~10.2K (+28%), and all-time estimated visitors reached ~216K (+33% from ~162K). The server moved from #235 to #231 globally. Unlike some servers that plateau after initial launch interest, Vercel's traffic is still growing — likely driven by the continued expansion of AI coding tools that use Vercel for deployment.
+
+**Still in public beta — nine months in.** The server launched August 2025 and remains in public beta as of May 2026, with no GA date announced.
+
 ## What It Does
 
-The server exposes 13 tools across five categories:
+The server exposes 19 tools across six categories:
 
 **Documentation (1 tool)**
 - `search_documentation` — search Vercel docs by topic, returning relevant sections without leaving your AI assistant
@@ -37,6 +49,14 @@ The server exposes 13 tools across five categories:
 **Domain Management (2 tools)**
 - `check_domain_availability_and_price` — check domain availability and pricing
 - `buy_domain` — purchase a domain (requires full registrant PII)
+
+**Toolbar (6 tools)**
+- `list_toolbar_threads` — list comment threads on a preview deployment via Vercel Toolbar
+- `get_toolbar_thread` — get a specific comment thread
+- `change_toolbar_thread_resolve_status` — resolve or reopen a thread
+- `reply_to_toolbar_thread` — post a reply to a thread
+- `edit_toolbar_message` — edit a message in a thread
+- `add_toolbar_reaction` — add an emoji reaction to a message
 
 **Access & CLI (3 tools)**
 - `get_access_to_vercel_url` — create temporary shareable links for protected deployments
@@ -97,11 +117,11 @@ First connection opens a browser for OAuth consent. You select your Vercel team,
 
 ## What's Not
 
-**The tool count is thin.** 13 tools for a platform as feature-rich as Vercel feels like just the beginning. There's no environment variable management, no serverless function configuration, no edge config, no KV/Blob storage access, no analytics, no firewall rules, no preview deployment comments. The Vercel dashboard and CLI can do far more than this server exposes.
+**The tool count is still thin.** 19 tools (up from 13) for a platform as feature-rich as Vercel covers only a fraction of what's available. There's still no environment variable management, no serverless function configuration, no edge config, no KV/Blob storage access, no analytics, no firewall rules. The six new Toolbar tools are useful for preview comment workflows, but they don't address the platform depth users need. Vercel has acknowledged env vars are on the roadmap, but the broader gap remains wide. The Vercel dashboard and CLI can do far more than this server exposes.
 
 **Client allowlisting limits adoption.** Only Vercel-approved clients can connect. If your MCP client isn't on the list, you're out of luck. This trades openness for security, but it means you can't use this with every MCP-compatible tool. The approved list has expanded to 12 clients — Claude Code, Claude Desktop, ChatGPT, Codex CLI, Cursor, VS Code Copilot, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, and Gemini CLI. That covers most major AI coding tools, but niche or enterprise-internal clients still can't connect.
 
-**Still in public beta after 8+ months.** Launched August 2025, still beta as of April 2026. The API surface could change, tools could be added or removed, and stability isn't guaranteed. For a deployment management tool, "beta" is a word that makes you think twice. The tool count has stayed at 13 since launch — no new tools added in eight months of public beta.
+**Still in public beta after 9+ months.** Launched August 2025, still beta as of May 2026 with no GA date announced. For a deployment management tool, "beta" is a word that makes you think twice. The 6 new Toolbar tools show active development, but the core platform gaps (env vars, analytics, edge config) that existed at launch remain unresolved.
 
 **Domain purchase feels out of place.** The `buy_domain` tool requires full registrant PII (name, address, phone, email) and makes an irreversible purchase. Giving an AI assistant the ability to buy domains feels like it should require more safeguards than a single tool call. There's no confirmation step in the MCP protocol itself — your client's tool approval is the only gate.
 
@@ -137,16 +157,16 @@ But the server itself is surprisingly conservative in what it exposes. Vercel's 
 
 This feels like a deliberate "start small, expand carefully" approach rather than a limitation. Vercel likely doesn't want an AI assistant accidentally modifying production environment variables or firewall rules before they've built proper safeguards. Given that the domain purchase tool already raises eyebrows, caution is probably the right call.
 
-The public beta status after eight months — with zero new tools added — raises questions about whether Vercel is iterating on this server at all, or whether it's been deprioritized in favor of the broader MCP hosting platform (mcp-handler, MCP Apps, Workflow SDK). For users, the practical impact is that what you see today is likely what you'll get for a while.
+The addition of six Toolbar tools in 2026 shows active iteration, but the server is still only covering a fraction of Vercel's platform — and the most-requested feature (environment variables) has been on the roadmap for months without a delivery date.
 
-**Vercel's broader MCP strategy continues to expand — while the MCP server stays still.** On March 4, Vercel launched [MCP Apps support](https://vercel.com/changelog/mcp-apps-support-on-vercel) — a provider-agnostic standard for embedded UIs that run inside iframes in Cursor, Claude.ai, and ChatGPT. The [Next.js DevTools MCP](https://github.com/vercel/next-devtools-mcp) server gives coding agents access to runtime errors, routes, logs, and app state directly from the dev server (138K PulseMCP visitors, 716 GitHub stars). In April 2026, Vercel added Claude Opus 4.7 to its AI Gateway (optimized for long-running agents with task budgets), launched Vercel Flags GA for feature management, and shipped Workflow SDK updates with enhanced replay retry and tool-calling reliability. The platform narrative is clearly "agentic systems" — but the MCP server itself hasn't gained a single new tool since August 2025. The gap between Vercel's platform ambitions and their MCP server's capabilities is growing wider each month.
+**Vercel's broader MCP strategy continues to expand — the MCP server is slowly following.** On March 4, Vercel launched [MCP Apps support](https://vercel.com/changelog/mcp-apps-support-on-vercel) — a provider-agnostic standard for embedded UIs that run inside iframes in Cursor, Claude.ai, and ChatGPT. The [Next.js DevTools MCP](https://github.com/vercel/next-devtools-mcp) server gives coding agents access to runtime errors, routes, logs, and app state directly from the dev server. Vercel's platform narrative is clearly "agentic systems" — and the MCP server is beginning to reflect that with new tooling. But the gap between Vercel's platform capabilities and what the MCP server exposes remains large. When env vars, analytics, and edge config arrive, the rating will deserve another look.
 
 ## Rating: 3.5/5
 
-The Vercel MCP server earns a 3.5/5 for delivering a solid remote-first architecture with strong security (OAuth + client allowlisting) and genuinely useful log querying capabilities. The runtime logs tool alone justifies installation if you deploy on Vercel. It loses points for a thin tool set that covers only a fraction of Vercel's platform (no environment variables, no analytics, no edge config), the CLI passthrough approach for deployments, public beta status after eight months with zero new tools, and the client allowlist that limits which MCP clients can connect. PulseMCP traffic has declined from ~169K to ~162K all-time, with weekly visitors dropping from ~10.5K to ~8K — suggesting initial curiosity is fading without new capabilities to sustain interest. The community alternatives offer more tools today, and Vercel's MCP server risks falling behind if it doesn't expand soon.
+The Vercel MCP server holds at 3.5/5. The addition of six Toolbar tools (13 → 19 total) shows active development and is a meaningful improvement for teams using preview deployment reviews. PulseMCP traffic has rebounded strongly — ~216K all-time (+33%), ~10.2K weekly (+28%), rank #231 — indicating sustained and growing user interest. But the core criticisms remain: no environment variable management, no analytics, no edge config or KV storage, CLI passthrough for deployments, public beta status now nine months in, and the client allowlist that limits which MCP clients can connect. Env vars are acknowledged on the roadmap, which is progress, but it's still just a promise. Community alternatives like Quegenx's server still offer more platform coverage today.
 
 **Use this if:** You deploy on Vercel and want AI-assisted deployment monitoring — especially build failure diagnosis and runtime log querying.
 
 **Skip this if:** You need full Vercel platform management (use a community server instead), you don't deploy on Vercel, or your MCP client isn't on the approved list.
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) based on publicly available documentation, Vercel's official docs, and web sources. We have not installed or directly tested this MCP server. Last updated 2026-04-18.*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) based on publicly available documentation, Vercel's official docs, and web sources. We have not installed or directly tested this MCP server. Last updated 2026-05-18.*
