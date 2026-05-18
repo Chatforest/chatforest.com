@@ -2,15 +2,15 @@
 title: "The Memory MCP Server — A Knowledge Graph That Needs a Better Brain"
 date: 2026-03-14T01:31:46+09:00
 description: "The official Knowledge Graph Memory MCP server gives agents persistent memory across conversations."
-og_description: "The official Memory MCP server gives agents persistent memory via a knowledge graph. Simple but stagnant — 3 months without a release, no benchmark scores, and alternatives like OMEGA (95.4% LongMemEval) and agentmemory (96.2%) have leapt ahead. Rating: 3.5/5."
+og_description: "The official Memory MCP server gives agents persistent memory via a knowledge graph. Simple but stagnant — 4 months without a release, a security fix merged but not shipped, and a new LongMemEval-V2 benchmark raising the bar further. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Anthropic's knowledge graph memory server for persistent agent context. 74.6K weekly PulseMCP visitors, ~44.5K npm downloads — but read_graph context bombing is now an OWASP-recognized risk, and alternatives like Graphiti (25K stars) have pulled far ahead. The LongMemEval benchmark era has arrived, and simple knowledge graphs can't compete."
-last_refreshed: 2026-04-19
+card_description: "Anthropic's knowledge graph memory server for persistent agent context. ~68.5K weekly npm downloads (+54% in 30 days) despite 4 months without a release — and a security audit fix merged May 16 that hasn't reached npm yet. Graphiti (26K stars) and Letta keep shipping; the Memory server keeps waiting."
+last_refreshed: 2026-05-19
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 84,000+ GitHub stars (monorepo), ~44,500 weekly npm downloads, v2026.1.26 (last release January 2026 — now 3 months without a release), 9 tools, maintained but stagnant, ~74.6K weekly PulseMCP visitors (#20 globally, ~2.4M all-time)
+**At a glance:** 84,000+ GitHub stars (monorepo), ~68,500 weekly npm downloads, v2026.1.26 (last release January 2026 — now 4 months without a release), 9 tools, maintained but stagnant, ~71,400 weekly PulseMCP visitors (#24 globally, ~2.7M all-time)
 
 The Memory MCP server (`@modelcontextprotocol/server-memory`) is Anthropic's official solution for giving AI agents persistent memory across conversations. It maintains a local knowledge graph — entities, relations, and observations stored as JSONL — that agents can read and update over time. The idea is simple: your agent remembers who you are, what you're working on, and what you've told it before.
 
@@ -93,31 +93,33 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 
 **Setup difficulty: Very easy.** One line in your MCP config. The Docker approach needs a named volume for persistence (otherwise your memories disappear when the container stops), but that's standard Docker practice.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-**Three months without a release.** The last published version remains v2026.1.26, released in January 2026. In the three months since, the Memory server has received no new features, no new tools, and no architectural changes. The `servers` monorepo (84,000+ stars) remains active, but the Memory server specifically appears to be in maintenance-only mode. For comparison, alternatives like OMEGA (25 MCP tools), MemPalace (29 MCP tools), and agentmemory have all shipped major updates in the same period.
+**Four months without a release — but with an unshipped security fix.** The last published npm version remains v2026.1.26 (January 2026). That's now four months without a published release. In the meantime, however, development continues in the `servers` monorepo: PR #4049 (atomic file writes + expanded tool descriptions) and PR #4090 (type field validation fix) sit open and unmerged. More urgently, PR #4109 — "npm audit fix for high/medium security alerts" — was merged on May 16, 2026, but the security dependency fixes it contains have not yet been published to npm users via a new release. Anyone using `@modelcontextprotocol/server-memory` from npm is running a version that predates this security maintenance. The project's commit history is active (84 commits, 66 files changed since the 2026.1.26 tag), but the release pipeline appears stalled.
 
-**OWASP MCP Top 10 context over-sharing risk persists.** OWASP's March 2026 MCP Top 10 identified "context over-sharing" as a recognized risk category. The Memory server's `read_graph` tool — which dumps the entire knowledge graph into the conversation context — remains a textbook example, and no mitigations have been added. OWASP recommends isolated context windows per user/task, context expiration policies, and access controls on context retrieval. The Memory server implements none of these.
+**npm downloads surged despite stagnation.** Weekly downloads jumped from ~44,500 to ~68,500 — a 54% increase in 30 days. This is counterintuitive: the server has received no new features and no new release, yet substantially more people are downloading it. The most likely explanation is increased AI assistant adoption generally, with the Memory server benefiting as a simple, zero-configuration starting point for agent memory. Growth at the top of the funnel, even if sophisticated users move on quickly.
 
-**The LongMemEval benchmark era has arrived.** The agent memory space now has a standardized benchmark: LongMemEval (Wang et al., ICLR 2025), which tests 500 questions across recall, reasoning, temporal understanding, and abstention. This has created a quantifiable leaderboard that makes the Memory server's limitations measurable:
-- **Supermemory** claims ~99% using ASMR (Agentic Search and Memory Retrieval) — an experimental pipeline using parallel LLM agents, not yet in production (production system sits at ~85%)
-- **agentmemory** (Jordan McCann) scored 96.2% (481/500), built solo in 16 days for ~$1K — demonstrating that even one-person projects can dramatically outperform the Memory server's approach
-- **OMEGA** scored 95.4% — local-first, zero external dependencies, 25 MCP tools, AES-256 encryption at rest
+**LongMemEval-V2 launched May 12, 2026.** A second-generation benchmark for agent memory evaluation (Di Wu, Zixiang Ji, et al.) launched with 451 manually curated questions covering five core memory abilities, with test histories up to 500 trajectories (~115M tokens). This is a substantially harder benchmark than the original. Early scores on LME-V2 show top performers in the 69–73% range — a reset that may make some prior LME-v1 score comparisons less directly applicable. The Memory server still has no benchmark scores on either version.
+
+**The original LongMemEval leaderboard remains unchanged.** The benchmark positions from the April review stand:
+- **Supermemory** claims ~99% using ASMR (parallel LLM agents) — experimental
+- **agentmemory** (Jordan McCann) scored 96.2% (481/500), built solo in 16 days for ~$1K
+- **OMEGA** scored 95.4% — local-first, zero external dependencies, 25 MCP tools, AES-256 encryption
+- **Mem0 Temporal Reasoning** scored 94.8% (launched May 12)
 - **Mastra Observational Memory** scored 94.87% using GPT-5-mini
-- **Zep/Graphiti** scored 71.2% with GPT-4o — even the "lower" scorer in this group far exceeds what string-matching `search_nodes` can deliver
-- The Memory server has no benchmark scores, no semantic retrieval, and no temporal reasoning — it would score poorly on any standardized test
+- **Zep/Graphiti** scored 71.2% — "lower" scorer that still vastly outperforms string-matching retrieval
+- The Memory server has no benchmark scores on any version of this test
 
-**Alternatives landscape continues accelerating.** Key changes since the last update:
-- **Graphiti/Zep** has grown to ~25,100 GitHub stars. Zep reports 50% month-over-month ARR growth, 240+ customers including Fortune 500 companies. CVE-2026-32247 (Cypher injection) was disclosed but patched in v0.28.2
-- **mem0 SDK v2.0.0** launched April 16 — major overhaul with single-pass extraction (~50% latency reduction), hybrid retrieval (semantic + BM25 + entity-graph boosting), entity linking replacing graph memory (Neo4j no longer required). However, GHSA-5gv3-2fv6-jvhx (SQL/Cypher injection, CVSS 8.1) was disclosed April 17 and remains unpatched
-- **Letta** continues as a full agent memory runtime with OS-inspired tiered architecture
-- **Hindsight** offers all four retrieval strategies at every tier including free self-hosted
-- **MemPalace** (29 MCP tools, memory palace architecture) and **agentmemory** (complete memory operating system) have emerged as credible new competitors
-- The competitive field is now so crowded that multiple comparison articles (Atlan, Vectorize, TECHSY) rank and compare 6-8 memory systems, and the official Memory server typically doesn't appear in the comparison at all
+**OWASP MCP Top 10 active, context over-sharing persists.** The OWASP MCP Top 10 project received updates as recently as May 11, 2026 (references and tooling additions). The context over-sharing threat category — which the Memory server's `read_graph` tool exemplifies — remains formally documented. No mitigations have been added to the Memory server.
 
-**MCP ecosystem security concerns growing.** While no CVEs have been filed against the Memory server specifically, the broader MCP ecosystem saw notable security disclosures in March-April 2026: CVE-2026-39313 (mcp-framework memory exhaustion), CVE-2026-29787 (mcp-memory-service information disclosure exposing OS version, paths, and resource metrics), and CVE-2026-26118 (Microsoft MCP server tool hijacking). VulnerableMCP.info now tracks 30+ MCP-specific CVEs. The Memory server's lack of access controls and plaintext storage remain concerns in this environment.
+**Alternatives landscape updates.** Key changes since April 19:
+- **Graphiti/Zep** grew to ~26,200 GitHub stars (+1,100). v0.29.0 released April 27: major efficiency improvements, cheaper ingestion, search pipeline rework, saga abstraction
+- **mem0** reached ~56,000 GitHub stars. SQL/Cypher injection (GHSA-5gv3-2fv6-jvhx, CVSS 8.1) from April 17 was patched in v2.0.2 (May 7). CLI v0.2.5 (May 14) adds `mem0 init --agent` for instant unclaimed API key setup
+- **Letta** v0.16.8 (May 14): security fix — switched from pickle to JSON for sandbox-to-server tool result transport; v0.16.7 increased context window default from 32K to 128K tokens
+- **Mastra** continues active releases (v1.33.0–v1.35.0, May 13–15) with focus on token estimation accuracy and message replay fixes
+- **MemPalace** (29 MCP tools) and **agentmemory** remain competitive; no major updates found in this window
 
-**PulseMCP traffic growing.** The Memory server now draws ~74,600 weekly visitors on PulseMCP (up 22% from ~61,200 in March) with ~2.4 million all-time visitors, ranking #20 globally (up from #21). Traffic growth reflects sustained interest in the agent memory problem, but increasingly this interest translates to evaluating and choosing alternatives.
+**PulseMCP traffic stabilizing.** Weekly visitors: ~71,400 (down from ~74,600 in April). All-time: ~2.7M (up from ~2.4M). Global rank: #24 (down from #20) — the Memory server's relative position is eroding as newer, specialized memory servers gain traction on PulseMCP.
 
 ## What Works Well
 
@@ -147,15 +149,15 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 
 ## Compared to Alternatives
 
-**vs. Zep/Graphiti (25,100 GitHub stars, MCP Server 1.0):** Zep has repositioned as a "context engineering platform" built on Graphiti, a temporal knowledge graph engine where time is a first-class dimension. Now at 25.1K stars with 50% month-over-month ARR growth and 240+ customers including Fortune 500. Scores 71.2% on LongMemEval — far below the frontier but still dramatically better than what string-matching retrieval can achieve. The clear winner for anything beyond personal use. See our [Zep/Graphiti review](/reviews/zep-graphiti-mcp-server/).
+**vs. Zep/Graphiti (26,200 GitHub stars, MCP Server 1.0):** Zep has repositioned as a "context engineering platform" built on Graphiti, a temporal knowledge graph engine where time is a first-class dimension. Now at 26.2K stars with 50% month-over-month ARR growth and 240+ customers including Fortune 500. v0.29.0 (April 27) delivered major efficiency improvements, cheaper ingestion, and a reworked search pipeline. Scores 71.2% on LongMemEval — far below the frontier but still dramatically better than what string-matching retrieval can achieve. The clear winner for anything beyond personal use. See our [Zep/Graphiti review](/reviews/zep-graphiti-mcp-server/).
 
-**vs. mem0 (MemZero, SDK v2.0.0):** SDK v2.0.0 launched April 16 with single-pass extraction (~50% latency reduction), hybrid retrieval (semantic + BM25 + entity-graph boosting), and entity linking replacing graph memory — Neo4j no longer required. Graph features still paywalled at $249/month (Pro tier). Open-source OpenMemory option remains available. Note: SQL/Cypher injection vulnerability (GHSA-5gv3-2fv6-jvhx, CVSS 8.1) disclosed April 17, unpatched. See our [mem0 review](/reviews/mem0-mcp-server/).
+**vs. mem0 (~56,000 GitHub stars, SDK v2.0.2):** SDK v2.0.0 launched April 16 with single-pass extraction (~50% latency reduction), hybrid retrieval (semantic + BM25 + entity-graph boosting), and entity linking replacing graph memory — Neo4j no longer required. Graph features still paywalled at $249/month (Pro tier). OpenMemory (self-hosted local option) was sunset in May 2026, with users directed to the Mem0 self-hosted server. SQL/Cypher injection (GHSA-5gv3-2fv6-jvhx, CVSS 8.1) was patched in v2.0.2 (May 7). Temporal Reasoning now scores 94.8% on LongMemEval. See our [mem0 review](/reviews/mem0-mcp-server/).
 
 **vs. OMEGA (95.4% LongMemEval):** Local-first, zero external dependencies (no API keys, no cloud, no Docker, no Neo4j). Uses SQLite + ONNX for local embeddings with AES-256 encryption at rest. 25 MCP tools. The strongest argument for "simple doesn't mean limited" — OMEGA is as easy to set up as the Memory server but dramatically more capable.
 
 **vs. agentmemory (96.2% LongMemEval):** Built solo in 16 days for ~$1K by a single developer. A complete memory operating system with retrieval engine, knowledge graph, consolidation pipeline, and evaluation harness. Demonstrates that the Memory server's simplicity isn't a design virtue — it's just missing features.
 
-**vs. Letta (formerly MemGPT):** A full agent runtime where agents actively manage their own memory using an OS-inspired tiered architecture — core memory, archival memory, and recall memory. A high-performance Rust-based MCP server provides 7 consolidated tools covering 103 operations with 68-96% response size reduction. A fundamentally different approach: instead of a memory *tool*, Letta is a memory *platform*. Overkill for personal assistant memory; worth considering for agentic workflows.
+**vs. Letta (formerly MemGPT):** A full agent runtime where agents actively manage their own memory using an OS-inspired tiered architecture — core memory, archival memory, and recall memory. A high-performance Rust-based MCP server provides 7 consolidated tools covering 103 operations with 68-96% response size reduction. v0.16.8 (May 14) added a security fix switching from pickle to JSON for tool result transport; v0.16.7 increased the default context window from 32K to 128K tokens. A fundamentally different approach: instead of a memory *tool*, Letta is a memory *platform*. Overkill for personal assistant memory; worth considering for agentic workflows.
 
 **vs. Hindsight (91.4% LongMemEval):** Offers all four retrieval strategies — vector, graph, temporal, and keyword — at every tier, including the free self-hosted option. Provides more retrieval depth than mem0 Pro without the price jump, plus Python, TypeScript, and Go SDKs with MCP-first integration. Worth evaluating if you want graph + temporal memory without Zep's infrastructure requirements.
 
@@ -183,9 +185,13 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 - You need guaranteed consistency (no deduplication or conflict resolution)
 
 {{< verdict rating="3.5" summary="The right idea, but the market has moved on — and now it's measurable" >}}
-The Memory MCP server still solves a real problem — agents that remember are dramatically more useful than agents that don't. The entity-relation-observation model is intuitive, the JSONL storage is transparent and portable, and setup takes 30 seconds. For personal use with a small knowledge graph in a single context, it works and it's not archived. But the competitive landscape has moved from "alternatives exist" to "alternatives have verified benchmark scores." OMEGA scores 95.4% on LongMemEval with zero external dependencies. agentmemory hit 96.2% built by a solo developer in 16 days. Supermemory claims ~99% experimentally. The Memory server has no benchmark scores, no semantic retrieval, no temporal reasoning, and hasn't had a release in three months. It remains the right choice if you want the simplest possible persistent memory with zero configuration — but even that niche is under pressure from OMEGA, which is equally simple to set up but dramatically more capable. If you're starting a new project in April 2026, start with OMEGA (for local-first simplicity), Zep/Graphiti (for temporal graphs), Hindsight (for multi-strategy retrieval), or Letta (for agent-managed memory). The official server proved the concept; the ecosystem has built the production-ready implementations — and now has the benchmarks to prove it.
+The Memory MCP server still solves a real problem — agents that remember are dramatically more useful than agents that don't. The entity-relation-observation model is intuitive, the JSONL storage is transparent and portable, and setup takes 30 seconds. A 54% jump in weekly npm downloads (to ~68,500) suggests it remains many developers' first stop for agent memory — and for good reason. For personal use with a small knowledge graph in a single context, it works and it's not archived.
+
+But the stagnation is deepening. It's now four months without a published release. A security audit fix merged on May 16 still hasn't reached npm — users remain on a version that predates the fix. The LongMemEval-V2 benchmark launched in May 2026 raises the bar further, and the Memory server has no scores on any version. OMEGA scores 95.4% on original LongMemEval with zero external dependencies. agentmemory hit 96.2% built by a solo developer in 16 days. The competitive field now includes a second-generation benchmark, and the Memory server's response is silence.
+
+If you're starting a new project in May 2026, start with OMEGA (for local-first simplicity with real benchmarks), Zep/Graphiti (for temporal graphs — v0.29.0 just shipped), Hindsight (for multi-strategy retrieval), or Letta (for agent-managed memory). The official server proved the concept; the ecosystem has built the production-ready implementations — and the benchmarks to prove it.
 {{< /verdict >}}
 
 *ChatForest does not test MCP servers hands-on. This review is based on documentation analysis, source code review, GitHub issue tracking, npm download data, PulseMCP analytics, community benchmarks, OWASP MCP Top 10 security framework analysis, and comparative research across the agent memory ecosystem. We have no affiliation with Anthropic, Zep, mem0, Letta, or any memory server vendor.*
 
-*This review was last updated on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-05-19 using Claude Sonnet 4.6 (Anthropic).*

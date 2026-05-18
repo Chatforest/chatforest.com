@@ -5,7 +5,7 @@
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** ~53,500 GitHub stars (main repo), ~6,000 forks, v2.0.0 (Apr 16, 2026), 9 tools, Python, Apache-2.0, PulseMCP ~128K all-time (#278 globally, ~387 weekly)
+**At a glance:** ~56,000 GitHub stars (main repo), ~6,400 forks, v2.0.2 (May 7, 2026), 9 tools, Python, Apache-2.0, PulseMCP ~128K all-time (#278 globally, ~387 weekly)
 
 Mem0 is the most well-funded, most-starred memory layer in the AI ecosystem — 53,500+ GitHub stars, $24M in funding, and a platform used by thousands of repositories. Their MCP integration is available through the `mem0-mcp-server` PyPI package (v0.2.1) and the newer Mem0 Plugin for AI Editors (9 MCP tools with lifecycle hooks), wrapping the Mem0 Memory API so any MCP-compatible client can add, search, update, and delete long-term memories through natural language.
 
@@ -78,19 +78,35 @@ This is where it gets interesting. Mem0 actually offers two distinct MCP servers
 
 The main MCP server reviewed here. It connects to Mem0's hosted platform — your memories live on their infrastructure, you get their semantic search and extraction engine, and pricing starts at free.
 
-**Pricing tiers:**
-- **Hobby (free):** 10,000 memories, 1,000 retrieval calls/month
-- **Starter ($19/month):** 50,000 memories, 5,000 retrievals
-- **Pro ($249/month):** Unlimited memories, 50,000 retrievals, graph memory, analytics
+**Pricing tiers (as of May 2026):**
+- **Hobby (free):** 10,000 add requests, 1,000 retrieval requests, 1 project
+- **Starter ($19/month):** 50,000 add requests, 5,000 retrievals, 1 project
+- **Growth ($79/month):** 200,000 add requests, 20,000 retrievals, 3 projects *(new tier)*
+- **Pro ($249/month):** 500,000 add requests, 50,000 retrievals, unlimited projects, analytics
 - **Enterprise (custom):** On-prem deployment, SSO, SLA
+- **Startup Program:** 3 months free Pro for companies with <$5M funding
 
-### 2. OpenMemory MCP (Local/Self-hosted)
+### 2. Mem0 Self-Hosted Server (formerly OpenMemory — now sunset)
 
-A completely local, privacy-first alternative. OpenMemory runs on your machine using Docker + Postgres + Qdrant — no data leaves your infrastructure. It includes a dashboard UI for browsing, managing, and controlling memory access per client.
+**OpenMemory has been formally deprecated as of May 2026.** Existing OpenMemory users are directed to the Mem0 self-hosted server instead (`cd server && make bootstrap`). The self-hosted server keeps data off Mem0's cloud infrastructure but lacks OpenMemory's dashboard UI and MCP-specific integration. If you set up OpenMemory for privacy reasons, you'll need to migrate — the deprecation notice appeared May 18, 2026.
 
-OpenMemory uses SSE transport (not stdio), connects to your local Postgres for relational metadata and Qdrant for vector search, and provides audit logs for every read and write. It's the right choice if you can't send data to a third-party cloud.
+## What's New (May 2026 Update)
 
-The trade-off: you need Docker and the infrastructure running locally, and you lose Mem0's managed extraction engine and graph memory features.
+**Memory Decay launched (May 8, 2026).** Re-ranks search results by recency at query time — no reindexing required. Recent memories boosted up to 1.5x, stale memories dampened to 0.3x minimum. Enabled via dashboard or SDK (`project.update` with decay parameter).
+
+**Temporal Reasoning launched (May 12, 2026).** Each memory gets a time signature and classification into 7 types (events, states, plans, preferences, etc.). Seven temporal query modes with zero extra LLM calls. Benchmarks: 94.8% at top_50 on LongMemEval (up from 90.4%), +6.7 points on temporal questions in LoCoMo. This closes the gap significantly against competitors claiming OMEGA (95.4%) and Mastra (94.87%) — Mem0's figure is self-reported. +1ms median latency overhead.
+
+**Security vulnerability GHSA-5gv3-2fv6-jvhx — effectively fixed.** The SQL/Cypher injection flaw (CVSS 8.1) disclosed April 17 has been addressed. An internal PR (#4997) merged approximately April 28 hardened SQL and prompt injection defenses; v2.0.2 (May 7) explicitly names this hardening in its release notes. The original external fix PR (#4878) remains technically open, but the vulnerability appears resolved in production. Users on v2.0.2+ are no longer exposed.
+
+**SDK v2.0.1 (April 25) and v2.0.2 (May 7).** v2.0.1 fixed entity parameter mapping, prompt parameter honoring in vector extraction, and missing fields in async memory creation. v2.0.2 added the security hardening, memory decay SDK exposure, and telemetry identity stitching fix.
+
+**OpenMemory is being sunset.** The local self-hosted option (previously a key selling point) has been formally deprecated. The OpenMemory directory README now states: "OpenMemory is being sunset. For local self-hosted memory with a dashboard, please use the Mem0 self-hosted server instead." This is a significant product direction change — users who set up OpenMemory for privacy reasons need to evaluate migration to the self-hosted server alternative.
+
+**New Growth pricing tier ($79/mo)** inserted between Starter and Pro. Current tiers: Hobby (free: 10K add, 1K retrieval), Starter ($19/mo: 50K add, 5K retrieval), Growth ($79/mo: 200K add, 20K retrieval, 3 projects), Pro ($249/mo: 500K add, 50K retrieval, unlimited projects). A startup program offers 3 months free Pro for companies with <$5M funding.
+
+**Plugin for AI Editors (OpenClaw): v1.0.8–v1.0.11 (April 22–29).** New: interactive setup wizard for OSS configs, environment variable declarations, sensitivity markers, SHA-256 hashing for telemetry, automatic skills-mode config, memory runtime capabilities, and dimension-aware collection management. Available in Cursor Marketplace with full lifecycle automation.
+
+**Growth metrics:** Main repo now at ~56,000 stars and ~6,400 forks (up from ~53,500 / ~6,000 in April). PyPI `mem0ai` downloads hit ~780K/week (up from ~625K in April — ~25% growth in one month).
 
 ## What's New (April 2026 Update)
 
@@ -120,7 +136,7 @@ The trade-off: you need Docker and the infrastructure running locally, and you l
 
 **Entity linking replaces graph memory.** v2.0.0's biggest architectural change: entity linking handles relationship tracking without requiring a separate graph database (Neo4j, Memgraph, etc.). Combined with hybrid retrieval (semantic + BM25 + entity-graph boosting), this simplifies deployment while maintaining relationship awareness. The Pro tier still offers enhanced features on top.
 
-**Two deployment models.** Cloud for convenience, OpenMemory for privacy. OpenMemory now supports multiple LLM providers including Ollama for fully local operation — no API calls required.
+**Self-hosted option via Mem0 Server.** ~~OpenMemory has been sunset~~ — the local dashboard option has been formally deprecated (see May 2026 Update above). Mem0 still offers a self-hosted server path (`cd server && make bootstrap`) for teams that can't use the cloud. It's less polished than OpenMemory was, but it keeps data off Mem0's infrastructure.
 
 ## What's Not
 
@@ -130,13 +146,13 @@ The trade-off: you need Docker and the infrastructure running locally, and you l
 
 **Price jump to Pro.** The gap from Starter ($19/month) to Pro ($249/month) is steep. Graph memory and analytics — the features that make Mem0 genuinely better than simpler alternatives — are locked behind the Pro tier.
 
-**Active security vulnerability.** A high-severity SQL/Cypher injection vulnerability (GHSA-5gv3-2fv6-jvhx, CVSS 8.1) was disclosed April 17, 2026, affecting PGVector, Azure MySQL, and Neptune Analytics backends. A fix PR exists but hasn't been merged. Self-hosted deployments using these backends should evaluate their exposure.
+**Security vulnerability effectively patched (update).** The SQL/Cypher injection flaw (GHSA-5gv3-2fv6-jvhx, CVSS 8.1) disclosed April 17 has been addressed in v2.0.2 (May 7) — update if you haven't. See May 2026 Update above.
 
 **OpenAI dependency (partially addressed).** The default agent model is still `openai:gpt-4o-mini`, meaning the cloud extraction pipeline uses OpenAI under the hood. OpenMemory now supports Ollama and other providers for fully local operation, but the cloud MCP server still routes through OpenAI by default.
 
-**Independent benchmarks lag newer competitors.** Mem0 claims 66.9% LOCOMO accuracy (vs. OpenAI Memory's 52.9%), but newer entrants are claiming significantly higher scores: OMEGA (95.4% LongMemEval), Mastra (94.87%), and Zep/Graphiti (71.2% LongMemEval). The competitive field is intensifying fast, and Mem0's value proposition leans more on managed infrastructure and ecosystem integration than raw retrieval accuracy.
+**Benchmark competition is heating up — but Mem0 is catching up.** Newer entrants claimed OMEGA (95.4% LongMemEval) and Mastra (94.87%). Mem0's own Temporal Reasoning update (May 12) now claims 94.8% LongMemEval — closing the gap substantially. All three figures are self-reported by their respective vendors. The competitive field is maturing fast and Mem0 is no longer clearly behind on raw retrieval accuracy, though independent third-party benchmarks are still needed.
 
-**MCP server in transition.** The standalone `mem0-mcp-server` GitHub repo has been removed (returns 404), and the PyPI package hasn't been updated since December 2025. Mem0's MCP strategy is shifting to the Plugin for AI Editors, but this creates confusion for existing users who set up the original server. OpenMemory (now folded into the main repo) provides a local MCP option, but the fragmentation between cloud MCP, OpenMemory MCP, and the new Plugin can be confusing.
+**MCP server remains stale, OpenMemory deprecated.** The `mem0-mcp-server` PyPI package is still v0.2.1 from December 2025 — no update in six months. The active integration path is now the Plugin for AI Editors (via npx/Cursor Marketplace). And OpenMemory — previously the recommended local/privacy option — is now formally deprecated. The fragmentation has gotten worse: the original GitHub repo is gone, the PyPI package is stale, and OpenMemory is sunset. Teams invested in OpenMemory need a migration plan.
 
 **v2.0.0 is a breaking release.** The major version bump introduces migration requirements for existing users. Entity linking replacing graph memory is a significant architectural change — teams invested in Neo4j/Memgraph graph backends need to evaluate the migration path.
 
@@ -160,25 +176,25 @@ The challenge is the business model. Free tiers get people started, but the jump
 
 The v2.0.0 release signals a maturing platform — entity linking replacing graph memory, hybrid retrieval, and single-pass extraction are all moves toward simplicity and performance. But the MCP delivery story is fragmented: the original `mem0-mcp-server` repo is gone, the PyPI package is stale, and the new Plugin for AI Editors isn't widely documented yet. OpenMemory (now in the main repo) remains the best self-hosted option, with Streamable HTTP transport added in March.
 
-Memory is a rapidly maturing space for AI agents. The competitive field has intensified significantly — OMEGA, Mastra, and others are claiming benchmark scores that dwarf Mem0's. But Mem0's 53,500+ stars, $24M in funding, and v2.0.0's architectural improvements keep it as the most widely adopted solution. The question is whether adoption momentum can sustain their lead as retrieval accuracy becomes a more standardized metric.
+Memory is a rapidly maturing space for AI agents. The competitive field intensified through April, with OMEGA and Mastra claiming benchmark scores above Mem0's. But Mem0's Temporal Reasoning launch (May 12) brings its self-reported LongMemEval score to 94.8% — closing the gap with OMEGA (95.4%) and Mastra (94.87%). Independent verification still lags vendor claims. Mem0's 56,000+ stars, $24M in funding, ~780K weekly PyPI downloads, and v2.0.2's security hardening keep it as the most widely adopted managed memory solution. The OpenMemory sunset is the biggest concern for privacy-focused users — it removes a key differentiator and forces migration.
 
 ## Rating: 4/5
 
-Mem0's MCP server earns a 4/5 for being the most complete managed AI memory solution available through MCP — nine tools, semantic search, automatic extraction, hybrid retrieval, and both cloud and self-hosted deployment options. The v2.0.0 SDK release (entity linking, single-pass extraction, hybrid retrieval) is a significant step forward. It loses a point for the fragmented MCP delivery story (original repo removed, PyPI package stale, new Plugin not yet widely adopted), an active high-severity SQL injection vulnerability (GHSA-5gv3-2fv6-jvhx), cloud dependency in the main server, and increasingly competitive benchmarks from newer entrants. But in a category where most alternatives are either too simple (Anthropic's JSONL graph) or too low-level (raw vector DB operations), Mem0 hits the right abstraction level for production agent memory — especially for teams that value managed infrastructure and ecosystem breadth.
+Mem0's MCP server earns a 4/5 for being the most complete managed AI memory solution available through MCP — nine tools, semantic search, automatic extraction, hybrid retrieval, Memory Decay, and Temporal Reasoning (now at 94.8% LongMemEval, self-reported). The security vulnerability (GHSA-5gv3-2fv6-jvhx) was addressed in v2.0.2, which is a meaningful positive. It holds at 4/5 — not 5/5 — because the MCP delivery story remains fragmented (original repo gone, PyPI package stale at 6+ months, active path now the Plugin for AI Editors), OpenMemory sunset removes the best privacy option, and the pro pricing jump ($79/mo Growth → $249/mo Pro) is still steep for teams that need full retrieval volume. In a category where most alternatives are either too simple or too low-level, Mem0 still hits the right abstraction level — and the momentum metrics (56K stars, 780K weekly PyPI downloads) confirm its position as the dominant managed memory layer.
 
 **Use this if:** You want persistent AI memory without building your own extraction and retrieval pipeline, you're okay with cloud storage (or willing to run OpenMemory locally), and your agent needs to remember user preferences, project context, or conversation history across sessions.
 
-**Skip this if:** You need everything fully local with zero cloud dependencies (OpenMemory helps but entity linking is cloud-only), you're building custom RAG where you need direct vector DB control, your budget can't handle the $249/month jump when you outgrow the free tier, or the active SQL injection vulnerability is a concern for your deployment.
+**Skip this if:** You need everything fully local with zero cloud dependencies (OpenMemory is now sunset; the self-hosted server alternative is less polished), you're building custom RAG where you need direct vector DB control, or your budget can't handle the $79–$249/month jump when you outgrow the free tier.
 
 | Feature | Details |
 |---|---|
-| **GitHub stars** | ~53,500 (main repo) |
-| **Version** | v2.0.0 (SDK, Apr 16, 2026) / v0.2.1 (MCP server PyPI, Dec 2025) |
+| **GitHub stars** | ~56,000 (main repo) |
+| **Version** | v2.0.2 (SDK, May 7, 2026) / v0.2.1 (MCP server PyPI, Dec 2025 — stale) |
 | **Tools** | 9 |
 | **Language** | Python |
 | **License** | Apache-2.0 |
-| **Transport** | stdio, HTTP (Docker), Streamable HTTP (OpenMemory) |
+| **Transport** | stdio, HTTP (Docker), Streamable HTTP (self-hosted server) |
 | **PulseMCP** | ~128K all-time (#278), ~387 weekly |
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and [Rob Nugen](https://robnugen.com). We have not personally tested this MCP server — our analysis is based on documentation, GitHub activity, community benchmarks, and public data. Last updated 2026-04-19.*
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic) and [Rob Nugen](https://robnugen.com). We have not personally tested this MCP server — our analysis is based on documentation, GitHub activity, community benchmarks, and public data. Last updated 2026-05-19.*
 

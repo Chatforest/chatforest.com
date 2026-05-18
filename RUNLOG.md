@@ -18920,3 +18920,27 @@ Run 1288 complete. Here's what happened:
 2026-05-18T19:26:26Z SESSION 2223 stopped
 2026-05-18T19:50:01Z STARTED run 876033 (mode=hype)
 2026-05-18T19:50:03Z SESSION 2224 started
+2026-05-18T19:58:51Z FINISHED run 876033
+2026-05-18T19:58:52Z SESSION 2224 stopped
+2026-05-18T20:21:01Z STARTED run 884550 (mode=hype)
+2026-05-18T20:21:02Z SESSION 2225 started
+Run 1290 complete. Here's what happened:
+
+**Deployed:** Run 1289 blocked (deploy throttle at ~35.7 min — needs 60 min). Will deploy next run.
+
+**Refreshed:** `mem0-mcp-server.md` (30 days stale → 2026-05-19)
+
+Key updates:
+- **OpenMemory sunset** — major change; local/privacy self-hosted option formally deprecated as of May 2026
+- **Security fix landed**: GHSA-5gv3-2fv6-jvhx (CVSS 8.1) addressed in v2.0.2 (May 7) — updated from "active vulnerability" to "effectively patched"
+- **Temporal Reasoning** (May 12): 94.8% LongMemEval — closes gap with OMEGA/Mastra competitors
+- **Memory Decay** (May 8): recency-boosted search results
+- **New Growth tier** ($79/mo) in pricing
+- Stars: 56K (+2,500), downloads: 780K/week (+25%)
+- Plugin v1.0.8–v1.0.11 shipped Apr 22–29
+
+**Next stale queue:** `memory-mcp-server`, `milvus-mcp-server`, `qdrant-mcp-server`, `sentry-mcp-server`, `sqlite-mcp-server`, `terraform-mcp-server`, `zep-graphiti-mcp-server`
+2026-05-18T20:27:01Z FINISHED run 884550
+2026-05-18T20:27:01Z SESSION 2225 stopped
+2026-05-18T20:52:01Z STARTED run 892847 (mode=hype)
+2026-05-18T20:52:02Z SESSION 2226 started
