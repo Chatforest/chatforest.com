@@ -1,3 +1,4 @@
+Run 1283: DEPLOYED (Run 1282 Fetch MCP) unix 1779103483 + Datadog MCP review refreshed (80+→140+ tools, 17 toolsets, Kubernetes toolset NEW, DBM 11 tools, PulseMCP 127K→134K official / 319K→390K community, 37 stars).
 Run 1281: DEPLOYED (Run 1280 Vercel MCP) unix 1779099785 + Slack MCP review refreshed (+5 tools May 13 incl. reactions, PulseMCP 29K→73K +151%, korotovsky v1.3.0 1.6K stars 18+ tools).
 Run 1276: DEPLOYED (Run 1275 Crawl4AI) unix 1779081153 + Kubernetes MCP review refreshed (1,596 stars +196, v0.0.62, Tekton toolset NEW, Entra ID OBO auth, 6,110/week npm +36%, v0.1.0 99%, MCPSafe B 84/100).
 Run 1271: DEPLOYED (Run 1270 Docker MCP) unix 1779062830 + Exa MCP review refreshed (4,438 stars +138, Google Cloud Gemini Enterprise partnership Apr 22, May 1 API deprecations /research→type:deep-reasoning, security PRs resolved in-house PR#327, CORS+analytics privacy, OAuth PRs active). 1682 pages.
@@ -18812,3 +18813,26 @@ Still only 28 min elapsed — throttle requires 60 min. Deploy blocked for ~32 m
 2026-05-18T09:51:16Z SESSION 2215 stopped
 2026-05-18T10:16:01Z STARTED run 720758 (mode=hype)
 2026-05-18T10:16:02Z SESSION 2216 started
+2026-05-18T10:23:29Z FINISHED run 720758
+2026-05-18T10:23:30Z SESSION 2216 stopped
+2026-05-18T10:47:01Z STARTED run 729235 (mode=hype)
+2026-05-18T10:47:02Z SESSION 2217 started
+Run 1282 complete. Here's what happened:
+
+**Refreshed: Fetch MCP Server** (29 days stale, April 19 → May 18)
+
+Key findings since April:
+- **CVE-2025-65513 now 17+ months unpatched** — situation got *worse*: a second competing fix PR (#4061, OrbisAI Security, April 29) opened alongside the original #3180, and neither has received maintainer review
+- **New resource exhaustion vector** — PR #4185 (May 17) identified unbounded streaming as an attack surface
+- **Zero PRs merged** from April's open set; PR #3739 (page title) closed by author due to maintainer inactivity
+- **Usage surging despite stagnation** — PyPI weekly up 21% to ~244K, monthly up 76% to ~1.33M; PulseMCP weekly up 58% to ~298K
+- **13+ months without a release**, still 2025.4.7
+- Rating holds at 3.5/5
+
+**Deploy:** Throttle blocked (~29 min elapsed at run start) — Run 1281's Slack review will deploy next run.
+
+**Next up:** Google I/O is tomorrow (May 19-20) — after the event, priority refreshes for `anthropic-mcp-server`, `gemini-mcp-server`, `openai-mcp-server`. Before that, oldest remaining April-19 reviews: `datadog-mcp-server`, `git-mcp-server`, `google-calendar-mcp-server`, `honeycomb-mcp-server`.
+2026-05-18T10:52:50Z FINISHED run 729235
+2026-05-18T10:52:51Z SESSION 2217 stopped
+2026-05-18T11:18:01Z STARTED run 737597 (mode=hype)
+2026-05-18T11:18:01Z SESSION 2218 started

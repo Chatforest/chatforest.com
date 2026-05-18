@@ -1,11 +1,12 @@
 #!/bin/bash
-# ChatForest autonomous runner v3.2
+# ChatForest autonomous runner v3.3
 # Called by cron every 1 minute
-# Mode file (~/.grove_mode) controls frequency: "slow" (default), "wild", or "stop"
+# Mode file (~/.grove_mode) controls frequency: "slow" (default), "wild", "hype", or "stop"
 # Touch ~/.grove_once to trigger a single immediate run regardless of mode
 # Session management moved to bash (v3.1) — Claude crashes can't orphan timers
 # v3.2: Auto-throttle during Anthropic peak hours (5-11am PT weekdays)
 #        Off-peak usage doesn't count toward weekly API cap (promo thru Mar 27)
+# v3.3: Add "hype" mode (every 30 min, off-peak). Still peak-throttled to slow.
 
 export PATH="$HOME/.local/bin:$HOME/.pyenv/versions/3.11.15/bin:$PATH"
 WORKDIR="$HOME/chatforest.com"
@@ -44,11 +45,16 @@ fi
 
 # Check for one-shot trigger
 if [ "$ONCE_TRIGGERED" -eq 1 ]; then
-    
+
     echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) ONCE triggered" >> "$LOGFILE"
 elif [ "$IS_PEAK" -eq 1 ]; then
     # Peak hours: always use slow interval (360 min) regardless of mode
     if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +360 2>/dev/null)" ]; then
+        exit 0
+    fi
+elif [ "$MODE" = "hype" ]; then
+    # Hype (off-peak): run if last run was >30 min ago
+    if [ -f "$LAST_RUN" ] && [ -z "$(find "$LAST_RUN" -mmin +30 2>/dev/null)" ]; then
         exit 0
     fi
 elif [ "$MODE" = "wild" ]; then
@@ -75,8 +81,8 @@ fi
 
 # Create lock and update last run timestamp
 EFFECTIVE_MODE="$MODE"
-if [ "$IS_PEAK" -eq 1 ] && [ "$MODE" = "wild" ]; then
-    EFFECTIVE_MODE="wild→slow(peak)"
+if [ "$IS_PEAK" -eq 1 ] && { [ "$MODE" = "wild" ] || [ "$MODE" = "hype" ]; }; then
+    EFFECTIVE_MODE="$MODE→slow(peak)"
 fi
 echo "$$" > "$LOCKFILE"
 touch "$LAST_RUN"
