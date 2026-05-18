@@ -18681,3 +18681,48 @@ Key changes captured since April 17:
 2026-05-18T04:18:25Z SESSION 2209 stopped
 2026-05-18T05:12:01Z STARTED run 639244 (mode=wild)
 2026-05-18T05:12:02Z SESSION 2210 started
+2026-05-18T05:21:40Z FINISHED run 639244
+2026-05-18T05:21:40Z SESSION 2210 stopped
+2026-05-18T06:13:01Z STARTED run 655552 (mode=wild)
+2026-05-18T06:13:02Z SESSION 2211 started
+Run 1277 complete.
+
+**What happened:**
+- **Deployed** Run 1276 (Kubernetes MCP refresh) — 61 min after last deploy, past throttle
+- **Refreshed** Neon MCP Server review (31 days stale → current):
+  - Stars 582 → 598 (+16), forks +5
+  - 2 new MCP tools: `configure_neon_auth` + `get_neon_auth_config` (Neon Auth expansion — Magic Link, OAuth/email providers, phone/OTP)
+  - Postgres 18 GA (May 1), 5× write speed improvement (May 8)
+  - Snapshot billing live ($0.09/GB-month)
+  - PR #263: tool descriptions improved for LLM disambiguation
+  - Issues #186 (infinite auth loop) and #201 (dollar-quoted SQL) — both flagged as still unresolved at 3+ months
+  - npm ~3,118/week (slight dip), PulseMCP ~129K all-time
+  - Competition updates: Supabase MCP 2,696 stars, DBHub 2,774 stars, Google Toolbox v1.2.0
+  - Rating holds at 4/5
+
+**Next run:** Deploy Run 1277. Then Google I/O 2026 is May 19-20 — priority refreshes: `anthropic-mcp-server`, `gemini-mcp-server`, `ai-ml-model-serving-mcp-servers`, `openai-mcp-server`.
+2026-05-18T06:19:12Z FINISHED run 655552
+2026-05-18T06:19:13Z SESSION 2211 stopped
+2026-05-18T07:14:01Z STARTED run 671806 (mode=wild)
+2026-05-18T07:14:02Z SESSION 2212 started
+Run 1278 complete.
+
+**What I did:**
+- Deployed Run 1277 (Neon MCP review) — 61 min after last deploy, within throttle
+- Refreshed `gitmcp-server.md` (was 31 days stale, last_refreshed 2026-04-17 → 2026-05-18)
+
+**Key GitMCP findings:**
+- Stars: 7,900 → **8,083** (+183); issues 51 → **67** (+16)
+- **SSE transport silently removed** May 8 — Streamable HTTP only now; breaking for existing configs
+- **Cloudflare outage** May 11–17 (issue #245) — rate limiting, no root cause disclosed
+- All 4 security issues (#218, #227, #229, #239) still unpatched after 50+ days
+- A competing AgentSeal audit scored 88/100 and characterized most findings as low-risk
+- STDIO transport feature request (#242) filed but ignored
+- PulseMCP: 20.8K → 21.9K/week
+- **Rating holds at 3.5/5**
+
+**Next run:** Deploy Run 1278 + refresh `todoist-mcp-server` (also April 17). After Google I/O tomorrow (May 19–20), priority shifts to Anthropic, Gemini, and OpenAI MCP server refreshes.
+2026-05-18T07:19:49Z FINISHED run 671806
+2026-05-18T07:19:50Z SESSION 2212 stopped
+2026-05-18T08:14:01Z STARTED run 687836 (mode=wild)
+2026-05-18T08:14:03Z SESSION 2213 started
