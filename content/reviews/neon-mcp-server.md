@@ -5,12 +5,12 @@ description: "Neon's official MCP server brings serverless Postgres management, 
 og_description: "Neon's official MCP server lets AI agents manage serverless Postgres with branch-based migrations, OAuth auth, and 20 tools. The best cloud database MCP experience available. Rating: 4/5."
 content_type: "Review"
 card_description: "Neon's first-party MCP server for AI-assisted serverless Postgres management. OAuth authentication, 20 tools covering project management, branch-based migrations, query tuning, and SQL execution — the most thoughtful database MCP server we've reviewed."
-last_refreshed: 2026-04-17
+last_refreshed: 2026-05-18
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-*At a glance: 582 GitHub stars, 104 forks, ~194 commits, 12+ contributors, last commit Apr 16 2026, npm v0.6.5 (deprecated — remote server preferred), 20+ tools, MIT license, ~3,284 npm downloads/week, PulseMCP ~115K all-time visitors (#301 globally, ~1,100 weekly). Neon platform: acquired by Databricks for $1B (May 2025), Postgres 14–18 support, storage $0.35/GB-month, Lakebase GA on Azure, Agent Plan for AI platforms.*
+*At a glance: 598 GitHub stars, 109 forks, ~194 commits, 12+ contributors, last commit May 14 2026, npm v0.6.5 (deprecated — remote server preferred), 22+ tools, MIT license, ~3,118 npm downloads/week, PulseMCP ~129K all-time visitors (#340 globally, ~834 weekly). Neon platform: acquired by Databricks for $1B (May 2025), Postgres 14–18 support (Postgres 18 GA May 2026), storage $0.35/GB-month + snapshot billing $0.09/GB-month (from May 1), Lakebase GA on Azure, Agent Plan for AI platforms.*
 
 The Neon MCP server is Neon's official tool for connecting AI coding agents to their serverless Postgres platform. Instead of clicking through the Neon console or writing CLI commands, your agent can create projects, branch databases, run migrations, tune queries, and execute SQL — all through natural language.
 
@@ -50,6 +50,8 @@ The server exposes 20 tools organized across five categories:
 
 **Authentication & Data API**
 - `provision_neon_auth` — set up authentication for your database
+- `configure_neon_auth` — configure OAuth providers, email providers, Magic Link, and phone/OTP authentication (added May 2026)
+- `get_neon_auth_config` — retrieve current authentication configuration for a project (added May 2026)
 - `get_connection_string` — retrieve connection details for a database
 
 **Documentation**
@@ -114,19 +116,27 @@ This automatically configures the MCP server for Claude Code, Cursor, or VS Code
 
 **Supply chain hardening.** PR #215 (April 2026) SHA-pinned all GitHub Action references and added least-privilege permission blocks — the kind of security hygiene that most MCP servers still lack.
 
+**Neon Auth expansion.** May 2026 added two new MCP tools: `configure_neon_auth` (OAuth providers, email providers, Magic Link, phone/OTP, custom app names per branch) and `get_neon_auth_config`. Wildcard trusted domains for preview deployments are now supported. This brings full authentication management — not just initial setup — into the MCP interface.
+
+**Postgres 18 now GA.** As of May 1, 2026, Neon is generally available on Postgres 18 — extending support from Postgres 14 through 18. If you're on an older major version, this is the upgrade path.
+
+**5× write performance.** In May 2026, Neon disabled full-page writes (FPW) in Postgres, relying on their storage engine's redundancy instead. The result is up to 5× faster writes on write-heavy workloads — a meaningful platform improvement unrelated to the MCP server directly but material to the underlying service.
+
+**Improved LLM tool disambiguation (PR #263).** All tool descriptions were rewritten in imperative action-verb format with explicit "Do not use when X — use Y instead" lines. This directly addresses the LLM tool selection accuracy problem that Neon had previously improved to 100% via prompt engineering. The new format is cleaner and more consistent.
+
 ## What's Not
 
 **Neon-only.** This server works exclusively with Neon's serverless Postgres. If your database is on RDS, Supabase, or self-hosted Postgres, this server is useless to you. It's a management API wrapper, not a generic Postgres client. Compare this to [Postgres MCP Pro](https://github.com/crystalcreates/postgresql-mcp-pro) which connects to any Postgres instance.
 
 **Development only.** Neon's own documentation states the server is "intended for local development and IDE integrations only" and is "not recommended for production environments." The concern is that LLMs might execute powerful operations (like `delete_project`) without adequate confirmation. This is honest, but it limits the server's utility for operations work.
 
-**OAuth still has rough edges.** While API key authentication now exists for headless environments, the OAuth flow still has some reported issues. The token refresh race condition (#209) was fixed in April 2026 using a SingleFlight pattern with database locking, and the OAuth state/headers regression (#210) was also resolved. But the infinite authorization loop (#186, open since February) and the foundational OAuth design concerns around dynamic client registration (#66, open since May 2025) remain unresolved. The security audit request (#207) was completed and closed in April 2026.
+**OAuth still has rough edges.** While API key authentication now exists for headless environments, the OAuth flow still has some reported issues. The token refresh race condition (#209) was fixed in April 2026 using a SingleFlight pattern with database locking, and the OAuth state/headers regression (#210) was also resolved. But the infinite authorization loop (**#186, open since February 2026 — still unresolved as of May 2026**) and the foundational OAuth design concerns around dynamic client registration (#66, open since May 2025) remain unresolved. New in May 2026: PR #266 (OAuth redirect_uri validation fix) is open but not yet merged. The security audit request (#207) was completed and closed in April 2026.
 
 **Tool count can confuse LLMs.** Neon themselves discovered that LLMs struggled to select the right tool from their 20+ tool set, with initial accuracy at only 60%. They fixed this through better tool descriptions and added scope fields to all 29 definitions, but the underlying problem — that more tools means more potential for misrouting — remains a design tension. PR #208 (March 2026) continues refining tool descriptions for better agent selection.
 
 **Read-only mode exists but is maturing.** The grant-scoped access control supports read-only mode via URL query parameters (migrated from headers in April 2026). This only applies to the remote server with OAuth grants. The migration safety model still relies on branches for write operations.
 
-**Dollar-quoted SQL breaks migrations.** Issue #201 (February 2026) reports that `prepare_database_migration` fails on dollar-quoted strings — a common pattern in Postgres stored procedures. This is a real usability gap for teams with non-trivial schemas.
+**Dollar-quoted SQL breaks migrations.** Issue #201 (February 2026) reports that `prepare_database_migration` fails on dollar-quoted strings — a common pattern in Postgres stored procedures. **Still unresolved as of May 2026** — three months without a fix or even a linked PR. This is a real usability gap for teams with non-trivial schemas.
 
 ## How It Compares
 
@@ -142,7 +152,9 @@ This automatically configures the MCP server for Claude Code, Cursor, or VS Code
 | **Remote server** | Yes | Yes | No | Yes |
 | **Free tier** | Yes (100 CU-hrs/mo) | Yes | N/A | GCP credits |
 
-The competitive landscape has shifted since our initial review. Supabase now has OAuth-based MCP with edge function support. Google's MCP Toolbox supports 40+ data sources. But Neon remains the only database MCP server with branch-based migration safety — and that's still the killer differentiator.
+The competitive landscape continues to shift. Supabase MCP reached v0.8.0 in April 2026, adding RLS advisory injection and 2,696 stars. DBHub now has 2,774 stars and improved AI routing in its tool metadata. Google's MCP Toolbox hit v1.2.0 in May 2026 with HTTPS/TLS support, BigQuery semantic search, and Cloud Storage management — three releases in roughly five weeks. All three are actively maintained and growing faster in stars than Neon MCP.
+
+Neon remains the only database MCP server with branch-based migration safety — and that's still the killer differentiator.
 
 If you're already on Neon or starting a new project, this is excellent. If you need multi-database support, [DBHub](https://github.com/bytebase/dbhub) (ultra-efficient at 1.4K tokens vs 19K+ for competitors) or Google's MCP Toolbox are better fits.
 
@@ -158,18 +170,22 @@ The grant-scoped access control — now migrated from headers to URL query param
 
 April 2026 brought a burst of important fixes: the token refresh race condition (#209) and OAuth state regression (#210) were both resolved, and the security audit (#207) was completed and closed. The OpenAI verification support (PR #225) signals Neon is positioning the MCP server for multi-platform compatibility beyond Claude. Supply chain hardening (SHA-pinned CI actions, least-privilege permissions) shows security maturity.
 
-On the platform side, Neon's Databricks-backed **Agent Plan** — custom resource limits and credits for AI platforms provisioning thousands of databases — suggests Neon sees AI agents as a primary use case, not an afterthought. Lakebase (Neon's technology powering Databricks) is now GA on 14 Azure regions, and snapshot storage billing ($0.09/GB-month) starts May 1, 2026.
+May 2026 brought platform advances: **Postgres 18 is now GA** on Neon (May 1), the platform now covers Postgres 14 through 18. Neon disabled full-page writes (FPW) in its storage engine, delivering **up to 5× write performance** on write-heavy workloads (May 8) — a real-world improvement for any schema migration workflows running through the MCP server. Snapshot storage billing ($0.09/GB-month) also went live on May 1, adding a new cost consideration for projects with heavy branching.
 
-The tradeoff is still vendor lock-in. Every improvement Neon makes to this server makes you more dependent on Neon's platform. The branch-based migration workflow — the server's best feature — only works because of Neon's copy-on-write storage architecture. You can't get this on vanilla Postgres. But with storage at $0.35/GB-month and Postgres 14–18 support, the lock-in penalty keeps shrinking.
+**Neon Auth expansion** in May 2026 added `configure_neon_auth` and `get_neon_auth_config` to the MCP toolset — bringing full authentication management (OAuth providers, email providers, Magic Link, phone/OTP, wildcard trusted domains for preview branches) into the MCP interface. Tool descriptions were also rewritten for LLM disambiguation (PR #263), improving on the prompt engineering work that brought tool selection accuracy to 100%. One-click Neon MCP setup is now available for the Kiro IDE alongside Cursor, Claude Code, and VS Code.
 
-Open issues worth watching: the dollar-quoted SQL bug (#201) and the infinite auth loop (#186). At 11 open issues and 17 open PRs (mostly Dependabot), the project is actively maintained — the April 2026 fixes addressed the most critical outstanding problems.
+On the platform side, Neon's Databricks-backed **Agent Plan** — custom resource limits and credits for AI platforms provisioning thousands of databases — suggests Neon sees AI agents as a primary use case, not an afterthought. Lakebase (Neon's technology powering Databricks) is GA on 14 Azure regions.
+
+The tradeoff is still vendor lock-in. Every improvement Neon makes to this server makes you more dependent on Neon's platform. The branch-based migration workflow — the server's best feature — only works because of Neon's copy-on-write storage architecture. You can't get this on vanilla Postgres. But with storage at $0.35/GB-month and Postgres 14–18 now covering the latest release, the lock-in penalty keeps shrinking.
+
+Open issues worth watching: the **dollar-quoted SQL bug (#201, still unresolved at 3+ months)** and the **infinite auth loop (#186, 3+ months)**. At 34 open issues as of May 2026, the project is active but some long-running problems need attention — particularly #201, which blocks anyone using PL/pgSQL stored procedures.
 
 ## Rating: 4/5
 
-The Neon MCP server earns a 4/5 for being the most capable and thoughtfully designed database MCP server available. The branch-based migration workflow is genuinely innovative, the remote-first architecture with grant-scoped access control sets the right standard, and the 20+ tool coverage is comprehensive without being bloated. It loses a point for Neon-only lock-in, the unresolved infinite auth loop (#186), and the dollar-quoted SQL migration bug (#201). But the trajectory is strong — the April 2026 fixes addressed the token refresh race condition and OAuth state regression, the security audit is complete, and OpenAI verification support shows multi-platform ambition. If you're building on Neon — or willing to start — this is the database MCP server to use.
+The Neon MCP server earns a 4/5 for being the most capable and thoughtfully designed database MCP server available. The branch-based migration workflow is genuinely innovative, the remote-first architecture with grant-scoped access control sets the right standard, and the 22+ tool coverage is comprehensive without being bloated. The May 2026 Neon Auth expansion (OAuth providers, Magic Link, phone/OTP) and Postgres 18 GA strengthen the platform substantially. It loses a point for Neon-only lock-in and two long-running unresolved bugs: the infinite auth loop (#186, 3+ months) and the dollar-quoted SQL migration bug (#201, 3+ months). Both are blockers for meaningful segments of users. But the trajectory is strong — 5× write performance, Kiro IDE integration, improved tool descriptions, and a clear agent-first roadmap. If you're building on Neon — or willing to start — this is the database MCP server to use.
 
 **Use this if:** You're building on Neon serverless Postgres and want AI-assisted database management with real safety guarantees.
 
 **Skip this if:** Your database is on RDS, Supabase, or self-hosted Postgres — this server literally cannot connect to it. Look at [Supabase MCP](https://supabase.com/features/mcp-server) for Supabase, or [DBHub](https://github.com/bytebase/dbhub) for multi-database support.
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, npm data, and community reports. Last edited 2026-04-17.*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, npm data, and community reports. Last edited 2026-05-18.*
