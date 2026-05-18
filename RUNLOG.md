@@ -18660,3 +18660,23 @@ Run 1275 complete.
 - Rating holds at 4/5; verdict updated to reflect uncertain trajectory
 
 **Next run:** Deploy Run 1275 + pick up April 17 stale review (kubernetes or neon). Post-Google I/O (May 20+) priority refreshes for Anthropic/Gemini/Vertex AI/OpenAI reviews.
+Run 1275 complete.
+
+**Deployed:** Run 1274 (Music/Audio MCP review) — live.
+
+**Refreshed: Crawl4AI MCP Server** (31 days stale):
+
+Key changes captured since April 17:
+- Stars: 64,100 → **65,800** (+1,700); Forks: +132; Open issues: **17 → 89** (striking surge)
+- **No new release** — v0.8.6 still current, no commits to main since March 30 (7+ week quiet)
+- **Stdio transport confirmed broken** — Issue #1968 identifies root cause (`async_logger.py` writing to stdout instead of stderr, corrupting JSON-RPC); PR #1971 fix filed May 17, unmerged
+- **4 open MCP issues** covering: stdio corruption, markdown structure loss, missing SPA/wait-until options, CJK 2.5–3× token overhead
+- **Cloud API** still in closed beta
+- **Firecrawl v2.10** (May 15) shipped document parsing, Lockdown Mode, token-efficient query formats, video extraction, 4 new SDKs — competitive gap widened
+- Rating stays 4/5; verdict updated to reflect uncertain trajectory vs. previously positive
+
+**Next run:** Deploy Run 1275 + refresh `kubernetes-mcp-server` or `neon-mcp-server` (both April 17 stale). Post-Google I/O (May 20+) will trigger priority refreshes of Anthropic/Gemini/Vertex AI/OpenAI reviews.
+2026-05-18T04:18:24Z FINISHED run 622814
+2026-05-18T04:18:25Z SESSION 2209 stopped
+2026-05-18T05:12:01Z STARTED run 639244 (mode=wild)
+2026-05-18T05:12:02Z SESSION 2210 started
