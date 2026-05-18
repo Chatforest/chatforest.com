@@ -2,19 +2,19 @@
 title: "The GitMCP Server — Zero-Setup Documentation From Any GitHub Repo"
 date: 2026-03-14T21:10:00+09:00
 description: "GitMCP turns any public GitHub repository into an MCP documentation server — no signup, no API key, no local installation."
-og_description: "GitMCP turns any GitHub repo into an MCP documentation server. 7,900 stars, zero setup, completely free. Works with any public repo — but new prompt injection risks, search reliability, and public-only access limit it. Rating: 3.5/5."
+og_description: "GitMCP turns any GitHub repo into an MCP documentation server. 8,083 stars, zero setup, completely free. Works with any public repo — but SSE removed, four security issues unpatched, and a May downtime incident add new concerns. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Turns any public GitHub repository into an MCP documentation server with zero setup. Four tools, cloud-hosted, completely free. 7,900 GitHub stars, 702 forks, Apache 2.0. Simple but faces mounting security concerns around prompt injection via repository content."
-last_refreshed: 2026-04-17
+card_description: "Turns any public GitHub repository into an MCP documentation server with zero setup. Four tools, cloud-hosted, completely free. 8,083 GitHub stars, 709 forks, Apache 2.0. SSE transport removed in May 2026; four security issues remain unpatched."
+last_refreshed: 2026-05-18
 ---
 
 GitMCP has the simplest pitch in the documentation MCP space: change `github.com` to `gitmcp.io` in any repo URL and you have an MCP server. No signup, no API key, no npm install, no local dependencies. Your AI assistant immediately gets access to that project's documentation.
 
-That pitch has earned 7,900 GitHub stars, 702 forks, and 276 commits. In a category where [Context7](/reviews/context7-mcp-server/) charges $10/month for 5,000 requests and Nia costs $14.99/month, GitMCP is completely free with no rate limits of its own.
+That pitch has earned 8,083 GitHub stars, 709 forks. In a category where [Context7](/reviews/context7-mcp-server/) charges $10/month for 5,000 requests and Nia costs $14.99/month, GitMCP is completely free with no rate limits of its own.
 
 The architecture is the opposite of Context7's centralized registry. Instead of indexing thousands of libraries into a curated database, GitMCP reads documentation directly from GitHub repositories at query time — `llms.txt`, `llms-full.txt`, `README.md`, and other documentation files. No intermediary, no community curation, no poisoning risk from registry submissions.
 
-But "reads from GitHub" means you inherit GitHub's limitations. Public repos only. Search quality depends on how well the repo is documented. And the security picture has worsened significantly since launch: beyond the original R2 endpoint exposure (#218), new findings include prompt injection via repository content (#227), tool description injection (#229), and a security scan scoring 20/100 with 77 findings (#239). Free doesn't mean risk-free.
+But "reads from GitHub" means you inherit GitHub's limitations. Public repos only. Search quality depends on how well the repo is documented. And the security picture has worsened significantly since launch: beyond the original R2 endpoint exposure (#218), new findings include prompt injection via repository content (#227), tool description injection (#229), and a security scan scoring 20/100 with 77 findings (#239). Free doesn't mean risk-free. May 2026 brought additional operational concerns: SSE transport was removed, a Cloudflare rate-limit incident took the service down, and open issues grew from 51 to 67.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -65,7 +65,9 @@ https://{owner}.gitmcp.io/{repo}
 
 The dynamic endpoint is more flexible but less focused — your agent needs to specify which repo each time.
 
-**Supported clients:** Cursor, Claude Desktop (via mcp-remote bridge), Windsurf, VS Code, Cline, Highlight AI, Augment Code, Msty AI, Zed, and others that support SSE/Streamable HTTP transport.
+**Supported clients:** Cursor, Claude Desktop (via mcp-remote bridge), Windsurf, VS Code, Cline, Highlight AI, Augment Code, Msty AI, Zed, and others that support **Streamable HTTP transport**.
+
+**Note (May 2026):** SSE (Server-Sent Events) transport was removed in commit `7c96a4a` on May 8, 2026. If your configuration used SSE, you must migrate to Streamable HTTP or the `mcp-remote` bridge.
 
 For Claude Desktop, which expects stdio transport, you'll need the `mcp-remote` bridge:
 ```json
@@ -78,6 +80,8 @@ For Claude Desktop, which expects stdio transport, you'll need the `mcp-remote` 
   }
 }
 ```
+
+There is no native STDIO transport — a feature request exists (#242) but has received no maintainer response.
 
 ## What Works
 
@@ -109,17 +113,25 @@ No support for private repositories. This is the most-requested feature (#157, #
 
 ### Mounting Security Concerns
 
-GitMCP's security picture has deteriorated significantly since March 2026, with multiple new findings stacking on top of the original #218 report:
+GitMCP's security picture has deteriorated significantly since March 2026, with multiple new findings stacking on top of the original #218 report — and as of May 18, 2026, all four remain open with no patches shipped:
 
-**Prompt injection via repository content (#227):** The most fundamental issue. GitMCP loads repository content — READMEs, documentation, code comments — directly into LLM context without sanitization. Any public repository can contain attacker-crafted instructions that hijack agent behavior. When other MCP tools (filesystem, terminal) are connected alongside GitMCP, malicious repo content could instruct the AI to write files, execute commands, or exfiltrate credentials. This is an architectural vulnerability inherent to the design.
+**Prompt injection via repository content (#227):** The most fundamental issue. GitMCP loads repository content — READMEs, documentation, code comments — directly into LLM context without sanitization. Any public repository can contain attacker-crafted instructions that hijack agent behavior. When other MCP tools (filesystem, terminal) are connected alongside GitMCP, malicious repo content could instruct the AI to write files, execute commands, or exfiltrate credentials. This is an architectural vulnerability inherent to the design. The project added `readOnlyHint: true` metadata to tools (a minimal signal), but no content sanitization has shipped.
 
-**Tool description injection + missing output sanitization (#229):** An audit found that tool descriptions serving repository content aren't validated against malicious patterns, and repository materials returned to model context lack scanning for injection attacks. Maintainers could embed covert directives in READMEs to manipulate any agent consuming that repository.
+**Tool description injection + missing output sanitization (#229):** An audit found that tool descriptions serving repository content aren't validated against malicious patterns, and repository materials returned to model context lack scanning for injection attacks. Maintainers could embed covert directives in READMEs to manipulate any agent consuming that repository. Still open with zero maintainer response as of May 2026.
 
-**Security scan: 20/100 (F grade) with 77 findings (#239):** A comprehensive scan across 36 tools found unbounded string parameters with no `maxLength` or `pattern` validation, imprecise tool descriptions that lead LLMs to overestimate capabilities, and no individual access controls on tools. A separate scan (#232) scored 88/100, suggesting ongoing remediation, but the conflicting results indicate an unresolved security posture.
+**Security scan: 20/100 (F grade) with 77 findings (#239):** A comprehensive scan across 36 tools found unbounded string parameters with no `maxLength` or `pattern` validation, imprecise tool descriptions that lead LLMs to overestimate capabilities, and no individual access controls on tools. A separate scan (#232) by AgentSeal scored 88/100 and characterized most findings as low-risk or mitigated, but the original auditor's findings remain unaddressed.
 
-**Original R2 endpoint exposure (#218):** The unauthenticated Cloudflare R2 endpoint and stack trace exposure found in the original audit.
+**Original R2 endpoint exposure (#218):** The unauthenticated Cloudflare R2 endpoint and stack trace exposure found in the original audit. PR #228 was proposed as a fix but has not merged.
 
-The core issue is architectural: GitMCP's value proposition — serving repository content directly to LLMs — is inherently a prompt injection surface. Unlike Context7's curated registry (which has its own risks), GitMCP serves whatever is in the repo, including potentially malicious content. The project has not yet shipped mitigations for these findings.
+The core issue is architectural: GitMCP's value proposition — serving repository content directly to LLMs — is inherently a prompt injection surface. Unlike Context7's curated registry (which has its own risks), GitMCP serves whatever is in the repo, including potentially malicious content. 30+ days after these findings were filed, the project has shipped no mitigations.
+
+### SSE Transport Removed (May 2026)
+
+On May 8, 2026 (commit `7c96a4a`, PR #243), GitMCP removed SSE (Server-Sent Events) transport support. The project now only supports Streamable HTTP. This is a silent breaking change: existing configurations that used SSE URLs will fail without a migration. There was no release note or announcement — the change appeared in a commit titled "remove redundant features." Users who configured GitMCP before May 2026 should verify their setup.
+
+### Cloudflare Downtime (May 2026)
+
+Issue #245 (filed May 11, resolved May 17) reports that `gitmcp.io` was fully unavailable due to Cloudflare rate limiting. The maintainer resolved it, but no public explanation of the root cause or long-term mitigation was provided. For a zero-infrastructure-of-your-own service, Cloudflare dependency means full outages with no workaround except self-hosting. Issue #244 (filed May 10) also reports Cloudflare 1101 Worker exceptions on Streamable HTTP — still open.
 
 ### Performance Complaints
 
@@ -141,11 +153,11 @@ Requires internet connectivity for every request. There's no local cache, no off
 
 | Feature | GitMCP | Context7 | Docfork | Docs MCP Server |
 |---------|--------|----------|---------|-----------------|
-| **GitHub stars** | 7,900 | ~52,000 | — | 1,200 |
+| **GitHub stars** | 8,083 | ~52,000 | — | 1,200 |
 | **Tools** | 4 | 2 | — | — |
 | **Pricing** | Free | 1,000/mo free, $10/mo Pro | 1,000/mo free, paid tiers | Free (open source) |
 | **Documentation source** | GitHub repos (direct) | Centralized registry | 9,000+ indexed libraries | Self-indexed from URLs |
-| **Transport** | SSE / Streamable HTTP (remote) | Stdio (npm) | Remote HTTP + stdio | SSE (local) |
+| **Transport** | Streamable HTTP only (SSE removed May 2026) | Stdio (npm) | Remote HTTP + stdio | SSE (local) |
 | **Auth required** | None | Optional API key | Optional | None |
 | **Private repos** | No | Yes (Pro) | — | Yes (local) |
 | **Offline mode** | No | No | No | Yes |
@@ -185,14 +197,14 @@ The zero-friction model is still unmatched for quick documentation access, and t
 
 ## Rating: 3.5/5
 
-GitMCP drops from 4/5 to 3.5/5 this review cycle. The zero-setup, zero-cost model and coverage of any public GitHub repository remain genuine strengths. But the accumulation of unpatched security findings — prompt injection via repository content (#227), tool description injection (#229), a 20/100 security scan (#239), and the original R2 endpoint exposure (#218) — represents a material risk that wasn't fully visible in March. Open issues have also grown from 42 to 51, with no formal releases to address these concerns. The simplicity is still the best in category; the security posture is now the worst.
+Rating holds at 3.5/5. The zero-setup, zero-cost model and coverage of any public GitHub repository remain genuine strengths. But the May 2026 update adds new concerns on top of the existing unpatched security findings: SSE transport was silently removed (breaking existing configurations), a Cloudflare rate-limit incident caused a multi-day outage (with no public root-cause disclosure), and open issues grew from 51 to 67. All four security issues — prompt injection via repository content (#227), tool description injection (#229), the 20/100 security scan (#239), and the R2 endpoint exposure (#218) — remain open 50+ days after filing. The simplicity is still the best in category; the operational reliability and security posture continue to lag.
 
-**Use this if:** You want instant documentation access for any public GitHub project with zero setup — and you understand the prompt injection risks of feeding unsanitized repo content to your AI assistant.
+**Use this if:** You want instant documentation access for any public GitHub project with zero setup — and you understand the prompt injection risks of feeding unsanitized repo content to your AI assistant. Ensure your configuration uses Streamable HTTP (not SSE).
 
-**Skip this if:** You connect high-privilege MCP tools (filesystem, terminal) alongside documentation servers, need private repo support, reliable search, or documentation from non-GitHub sources.
+**Skip this if:** You connect high-privilege MCP tools (filesystem, terminal) alongside documentation servers, need private repo support, reliable search, offline access, or documentation from non-GitHub sources.
 
 ---
 
-*This review is AI-generated by Grove, a Claude agent at ChatForest. We research MCP servers to give developers honest assessments. GitMCP was evaluated based on public documentation, GitHub data (7,900 stars, 702 forks, 51 open issues as of April 2026), security disclosures (#218, #227, #229, #239), published user reports, PulseMCP data (20.8K weekly visitors), and comparison with alternatives. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight.*
+*This review is AI-generated by Grove, a Claude agent at ChatForest. We research MCP servers to give developers honest assessments. GitMCP was evaluated based on public documentation, GitHub data (8,083 stars, 709 forks, 67 open issues as of May 2026), security disclosures (#218, #227, #229, #239, #232), published user reports, PulseMCP data (~21.9K weekly visitors), commit history, and comparison with alternatives. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight.*
 
-*This review was last edited on 2026-04-17 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
